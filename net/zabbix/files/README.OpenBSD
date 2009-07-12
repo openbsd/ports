@@ -1,7 +1,8 @@
-$OpenBSD: README.OpenBSD,v 1.1 2009/06/03 17:54:12 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2009/07/12 19:51:51 ajacoutot Exp $
 
 This document gives information relevant to using ZABBIX on OpenBSD.
-The original documentation is available as a PDF file at ${HOMEPAGE}
+The original documentation is available as a PDF file at
+    ${HOMEPAGE}
 (or via the -doc subpackage of the zabbix port) but may not be
 redistributed. 
 
@@ -22,17 +23,19 @@ PHP modules are installed.
 - the PDF document, a package which must be 'built' locally because it
 can not be redistributed.
 
-To have the ZABBIX server start at boot time, you have to adapt
-the configuration file in ${SYSCONFDIR}/zabbix/zabbix_server.conf,
-create the directory /var/run/zabbix (owned by the _zabbix user),
-and insert the following into /etc/rc.local.
+Next, you ou have to adapt the configuration files under
+    ${SYSCONFDIR}/zabbix/
 
-if [ -x ${PREFIX}/bin/zabbix_server ]; then
-        echo -n ' zabbix';      ${PREFIX}/bin/zabbix_server
+To have the ZABBIX server start at boot time, insert the following into
+/etc/rc.local:
+
+if [ -x ${TRUEPREFIX}/sbin/zabbix_server ]; then
+	install -d -o _zabbix /var/run/zabbix
+	echo -n ' zabbix_server'; ${TRUEPREFIX}/sbin/zabbix_server
 fi
 
-For the proxy, follow the same procedure, replacing zabbix_server
-with zabbix_proxy.
+For the proxy and the client, follow the same procedure, replacing
+zabbix_server with zabbix_proxy or zabbix_clientd.
 
 The web frontend works reasonably well with OpenBSD's chroot'ed
 httpd (the "Status of ZABBIX" page uses /bin/ps and /dev/kmem to
@@ -52,8 +55,8 @@ changes, stop and start httpd.
 
 Next you must create the database following the relevant set of
 instructions below. When this is done you can proceed to configure
-through the web interface at http://your_machine/zabbix/setup.php.
-
+through the web interface at http://<hostname>/zabbix/setup.php.
+(default user is 'admin' with password 'zabbix')
 
 == MySQL ==
 
@@ -77,14 +80,15 @@ and set DBSocket in the ZABBIX configuration appropriately.
 Connect to MySQL, and create a user and database for ZABBIX;
 
 	$ mysql -u root -p
-	create user zabbix@localhost identified by 'password';
-	create database zabbix;
-	grant all on zabbix.* to zabbix@localhost;
+	mysql> create user zabbix@localhost identified by 'password';
+	mysql> create database zabbix;
+	mysql> grant all on zabbix.* to zabbix@localhost;
+	mysql> quit
 
 Then initialize the database from the files installed in
 ${PREFIX}/share/examples/zabbix:
 
-	$ cd ${PREFIX}/share/zabbix/schema
+	$ cd ${TRUEPREFIX}/share/zabbix/schema
 	$ mysql -uzabbix -p[password] zabbix < mysql.sql
 	$ cd ../data
 	$ mysql -uzabbix -p[password] zabbix < data.sql	     ## N.B. slow!!
@@ -104,7 +108,7 @@ And initialize the database:
 	$ psql -U zabbix
 	psql> create database zabbix;
 	psql> \q
-	$ cd ${PREFIX}/share/zabbix/schema
+	$ cd ${TRUEPREFIX}/share/zabbix/schema
 	$ cat postgresql.sql | psql -U zabbix zabbix
 	$ cd ../data
 	$ cat data.sql | psql -U zabbix zabbix

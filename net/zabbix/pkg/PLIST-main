@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/06/03 17:54:12 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/07/12 19:51:51 ajacoutot Exp $
 @newgroup _zabbix:623
 @newuser _zabbix:623:_zabbix:daemon:zabbix user:/nonexistent:/sbin/nologin
 @bin sbin/zabbix_agent
@@ -9,7 +9,11 @@ share/doc/zabbix/
 share/doc/zabbix/README.OpenBSD
 share/examples/zabbix/
 @sample ${SYSCONFDIR}/zabbix/
+@mode 640
+@group _zabbix
 share/examples/zabbix/zabbix_agent.conf
 @sample ${SYSCONFDIR}/zabbix/zabbix_agent.conf
 share/examples/zabbix/zabbix_agentd.conf
 @sample ${SYSCONFDIR}/zabbix/zabbix_agentd.conf
+@mode
+@group
