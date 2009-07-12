@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/07/12 20:32:02 ajacoutot Exp $
 
 COMMENT=		VNC Client for the GNOME Desktop
 
 GNOME_VERSION=		0.5.2
 GNOME_PROJECT=		vinagre
-PKGNAME=		${DISTNAME}p11
+PKGNAME=		${DISTNAME}p12
 
 CATEGORIES=		net
 
-HOMEPAGE=		http://www.gnome.org/projects/vinagre/
+HOMEPAGE=		http://projects.gnome.org/vinagre/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

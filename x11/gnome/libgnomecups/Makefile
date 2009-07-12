@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2009/05/22 12:17:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/07/12 20:32:02 ajacoutot Exp $
 
 COMMENT=		GNOME library for CUPS interaction
 
 GNOME_PROJECT=		libgnomecups
 GNOME_VERSION=		0.2.3
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 SHARED_LIBS=		gnomecups-1.0	1.0 # .1.0
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
+HOMEPAGE=		http://projects.gnome.org/gnome-print/
 
 # LGPLv2/GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

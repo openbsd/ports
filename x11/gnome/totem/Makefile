@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2009/07/12 20:32:02 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.22.2
-PKGNAME=	${DISTNAME}p22
+PKGNAME=	${DISTNAME}p23
 
 CATEGORIES=	multimedia
 
-HOMEPAGE=	http://www.gnome.org/projects/totem/
+HOMEPAGE=	http://projects.gnome.org/totem/
 
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

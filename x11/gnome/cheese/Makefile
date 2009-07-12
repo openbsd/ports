@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2009/06/16 14:41:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/07/12 20:32:02 ajacoutot Exp $
 
 COMMENT=	PhotoBooth inspired application
 
 GNOME_PROJECT=	cheese
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 
 CATEGORIES=	multimedia
 
-HOMEPAGE=	http://www.gnome.org/projects/cheese/
+HOMEPAGE=	http://projects.gnome.org/cheese/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
