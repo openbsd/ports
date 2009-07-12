@@ -1,15 +1,21 @@
-# $OpenBSD: Makefile,v 1.41 2009/06/11 18:38:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2009/07/12 20:33:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		lightweight GNOME text editor
 
+# PLIST regen is needed for at least the following ports when
+# the gedit plugins directory changes:
+# (i.e. ${LOCALBASE}/lib/gedit-2/plugins)
+# x11/gnome/gedit-plugins
+# x11/gnome/seahorse-plugins
+
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p7
+PKGNAME=		${DISTNAME}p8
 CATEGORIES=		editors
 
-HOMEPAGE=		http://www.gnome.org/projects/gedit/
+HOMEPAGE=		http://projects.gnome.org/gedit/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
