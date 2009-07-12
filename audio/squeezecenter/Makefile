@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/01/28 01:36:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/07/12 19:58:28 sthen Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
-V =		7.3.2
+V =		7.3.3
 PKGNAME =	squeezecenter-${V}
 DISTNAME =	squeezecenter-${V}-noCPAN
 CATEGORIES =	audio net
@@ -113,5 +113,6 @@ do-install:
 	cd ${WRKSRC}/; tar cf - Firmware Graphics HTML IR MySQL Plugins \
 	    SQL strings.txt | tar xf - -C ${PREFIX}/${SSSHAREDIR}/
 	touch ${PREFIX}/share/examples/squeezecenter/empty
+	find ${PREFIX} -name '*.orig' -print0 | xargs -0 rm
 
 .include <bsd.port.mk>

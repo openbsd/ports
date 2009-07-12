@@ -1,8 +1,8 @@
-$OpenBSD: patch-convert_conf,v 1.2 2009/01/28 01:36:00 sthen Exp $
---- convert.conf.orig	Tue Jan 20 02:35:56 2009
-+++ convert.conf	Wed Jan 21 02:05:04 2009
-@@ -160,7 +160,7 @@ wvp wav * *
- ## you can comment this out if you want to use LAME to transcode AAC/MOV files to MP3.
+$OpenBSD: patch-convert_conf,v 1.3 2009/07/12 19:58:28 sthen Exp $
+--- convert.conf.orig	Mon Jun 15 23:02:33 2009
++++ convert.conf	Sat Jul  4 15:00:23 2009
+@@ -175,7 +175,7 @@ aac wav * *
+ 
  mov aif * *
  	# FR
 -	[mov123] $FILE$
@@ -10,7 +10,7 @@ $OpenBSD: patch-convert_conf,v 1.2 2009/01/28 01:36:00 sthen Exp $
  
  wma wma * *
  	-
-@@ -199,7 +199,7 @@ ape flc * *
+@@ -222,7 +222,7 @@ aac flc * *
  
  mov flc * *
  	# FR

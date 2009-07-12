@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/28 01:36:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/07/12 19:58:28 sthen Exp $
 @newgroup _squeezecenter:610
 @newuser _squeezecenter:610:_squeezecenter:daemon:squeezecenter user:/nonexistent:/sbin/nologin
 bin/scanner.pl
@@ -93,7 +93,6 @@ libdata/perl5/site_perl/Slim/Menu/TrackInfo.pm
 libdata/perl5/site_perl/Slim/Music/
 libdata/perl5/site_perl/Slim/Music/Artwork.pm
 libdata/perl5/site_perl/Slim/Music/Import.pm
-@comment libdata/perl5/site_perl/Slim/Music/Import.pm.orig
 libdata/perl5/site_perl/Slim/Music/Info.pm
 libdata/perl5/site_perl/Slim/Music/MusicFolderScan.pm
 libdata/perl5/site_perl/Slim/Music/PlaylistFolderScan.pm
@@ -189,6 +188,18 @@ libdata/perl5/site_perl/Slim/Plugin/CLI/Plugin.pm
 libdata/perl5/site_perl/Slim/Plugin/CLI/Settings.pm
 libdata/perl5/site_perl/Slim/Plugin/CLI/install.xml
 libdata/perl5/site_perl/Slim/Plugin/CLI/strings.txt
+libdata/perl5/site_perl/Slim/Plugin/Classical/
+libdata/perl5/site_perl/Slim/Plugin/Classical/HTML/
+libdata/perl5/site_perl/Slim/Plugin/Classical/HTML/EN/
+libdata/perl5/site_perl/Slim/Plugin/Classical/HTML/EN/plugins/
+libdata/perl5/site_perl/Slim/Plugin/Classical/HTML/EN/plugins/Classical/
+libdata/perl5/site_perl/Slim/Plugin/Classical/HTML/EN/plugins/Classical/html/
+libdata/perl5/site_perl/Slim/Plugin/Classical/HTML/EN/plugins/Classical/html/images/
+libdata/perl5/site_perl/Slim/Plugin/Classical/HTML/EN/plugins/Classical/html/images/icon.png
+libdata/perl5/site_perl/Slim/Plugin/Classical/Plugin.pm
+libdata/perl5/site_perl/Slim/Plugin/Classical/ProtocolHandler.pm
+libdata/perl5/site_perl/Slim/Plugin/Classical/install.xml
+libdata/perl5/site_perl/Slim/Plugin/Classical/strings.txt
 libdata/perl5/site_perl/Slim/Plugin/DateTime/
 libdata/perl5/site_perl/Slim/Plugin/DateTime/HTML/
 libdata/perl5/site_perl/Slim/Plugin/DateTime/HTML/EN/
@@ -334,7 +345,6 @@ libdata/perl5/site_perl/Slim/Plugin/LastFM/HTML/EN/plugins/LastFM/html/images/
 libdata/perl5/site_perl/Slim/Plugin/LastFM/HTML/EN/plugins/LastFM/html/images/icon.png
 libdata/perl5/site_perl/Slim/Plugin/LastFM/Plugin.pm
 libdata/perl5/site_perl/Slim/Plugin/LastFM/ProtocolHandler.pm
-@comment libdata/perl5/site_perl/Slim/Plugin/LastFM/ProtocolHandler.pm.orig
 libdata/perl5/site_perl/Slim/Plugin/LastFM/install.xml
 libdata/perl5/site_perl/Slim/Plugin/LastFM/strings.txt
 libdata/perl5/site_perl/Slim/Plugin/LineIn/
@@ -384,6 +394,18 @@ libdata/perl5/site_perl/Slim/Plugin/MP3tunes/HTML/EN/plugins/MP3tunes/html/image
 libdata/perl5/site_perl/Slim/Plugin/MP3tunes/Plugin.pm
 libdata/perl5/site_perl/Slim/Plugin/MP3tunes/install.xml
 libdata/perl5/site_perl/Slim/Plugin/MP3tunes/strings.txt
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/HTML/
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/HTML/EN/
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/HTML/EN/plugins/
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/HTML/EN/plugins/Mediafly/
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/HTML/EN/plugins/Mediafly/html/
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/HTML/EN/plugins/Mediafly/html/images/
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/HTML/EN/plugins/Mediafly/html/images/icon.png
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/Plugin.pm
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/ProtocolHandler.pm
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/install.xml
+libdata/perl5/site_perl/Slim/Plugin/Mediafly/strings.txt
 libdata/perl5/site_perl/Slim/Plugin/MusicMagic/
 libdata/perl5/site_perl/Slim/Plugin/MusicMagic/ClientSettings.pm
 libdata/perl5/site_perl/Slim/Plugin/MusicMagic/Common.pm
@@ -408,6 +430,18 @@ libdata/perl5/site_perl/Slim/Plugin/MusicMagic/ProtocolHandler.pm
 libdata/perl5/site_perl/Slim/Plugin/MusicMagic/Settings.pm
 libdata/perl5/site_perl/Slim/Plugin/MusicMagic/install.xml
 libdata/perl5/site_perl/Slim/Plugin/MusicMagic/strings.txt
+libdata/perl5/site_perl/Slim/Plugin/Napster/
+libdata/perl5/site_perl/Slim/Plugin/Napster/HTML/
+libdata/perl5/site_perl/Slim/Plugin/Napster/HTML/EN/
+libdata/perl5/site_perl/Slim/Plugin/Napster/HTML/EN/plugins/
+libdata/perl5/site_perl/Slim/Plugin/Napster/HTML/EN/plugins/Napster/
+libdata/perl5/site_perl/Slim/Plugin/Napster/HTML/EN/plugins/Napster/html/
+libdata/perl5/site_perl/Slim/Plugin/Napster/HTML/EN/plugins/Napster/html/images/
+libdata/perl5/site_perl/Slim/Plugin/Napster/HTML/EN/plugins/Napster/html/images/icon.png
+libdata/perl5/site_perl/Slim/Plugin/Napster/Plugin.pm
+libdata/perl5/site_perl/Slim/Plugin/Napster/ProtocolHandler.pm
+libdata/perl5/site_perl/Slim/Plugin/Napster/install.xml
+libdata/perl5/site_perl/Slim/Plugin/Napster/strings.txt
 libdata/perl5/site_perl/Slim/Plugin/OPMLBased.pm
 libdata/perl5/site_perl/Slim/Plugin/Pandora/
 libdata/perl5/site_perl/Slim/Plugin/Pandora/HTML/
@@ -613,7 +647,6 @@ libdata/perl5/site_perl/Slim/Schema/GenreTrack.pm
 libdata/perl5/site_perl/Slim/Schema/MetaInformation.pm
 libdata/perl5/site_perl/Slim/Schema/PageBar.pm
 libdata/perl5/site_perl/Slim/Schema/Playlist.pm
-@comment libdata/perl5/site_perl/Slim/Schema/Playlist.pm.orig
 libdata/perl5/site_perl/Slim/Schema/PlaylistTrack.pm
 libdata/perl5/site_perl/Slim/Schema/Progress.pm
 libdata/perl5/site_perl/Slim/Schema/Rescan.pm
@@ -663,8 +696,6 @@ libdata/perl5/site_perl/Slim/Utils/OS/Suse.pm
 libdata/perl5/site_perl/Slim/Utils/OS/Unix.pm
 libdata/perl5/site_perl/Slim/Utils/OS/Win32.pm
 libdata/perl5/site_perl/Slim/Utils/OSDetect.pm
-@comment libdata/perl5/site_perl/Slim/Utils/OSDetect.pm.bak
-@comment libdata/perl5/site_perl/Slim/Utils/OSDetect.pm.orig
 libdata/perl5/site_perl/Slim/Utils/PerfMon.pm
 libdata/perl5/site_perl/Slim/Utils/PerlRunTime.pm
 libdata/perl5/site_perl/Slim/Utils/PluginManager.pm
@@ -742,7 +773,6 @@ libdata/perl5/site_perl/Slim/Web/Template/Context.pm
 libdata/perl5/site_perl/Slim/Web/UPnPMediaServer.pm
 libdata/perl5/site_perl/Slim/Web/XMLBrowser.pm
 libdata/perl5/site_perl/Slim/bootstrap.pm
-@comment libdata/perl5/site_perl/Slim/bootstrap.pm.orig
 libdata/squeezecenter/
 libdata/squeezecenter/Audio/
 libdata/squeezecenter/Audio/APE.pm
@@ -758,6 +788,8 @@ libdata/squeezecenter/Audio/Wav/Tools.pm
 libdata/squeezecenter/Audio/Wav/Write/
 libdata/squeezecenter/Audio/Wav/Write.pm
 libdata/squeezecenter/Audio/Wav/Write/Header.pm
+libdata/squeezecenter/CGI/
+libdata/squeezecenter/CGI/Cookie.pm
 libdata/squeezecenter/Cache/
 libdata/squeezecenter/Cache/FileBackend.pm
 libdata/squeezecenter/Log/
@@ -807,16 +839,16 @@ share/squeezecenter/
 share/squeezecenter/Firmware/
 share/squeezecenter/Firmware/boom.version
 share/squeezecenter/Firmware/boom_30.bin
-share/squeezecenter/Firmware/boom_43.bin
+share/squeezecenter/Firmware/boom_47.bin
 share/squeezecenter/Firmware/receiver.version
-share/squeezecenter/Firmware/receiver_58.bin
+share/squeezecenter/Firmware/receiver_62.bin
 share/squeezecenter/Firmware/squeezebox.version
 share/squeezecenter/Firmware/squeezebox2.version
-share/squeezecenter/Firmware/squeezebox2_123.bin
+share/squeezecenter/Firmware/squeezebox2_127.bin
 share/squeezecenter/Firmware/squeezebox_10.bin
 share/squeezecenter/Firmware/squeezebox_40.bin
 share/squeezecenter/Firmware/transporter.version
-share/squeezecenter/Firmware/transporter_73.bin
+share/squeezecenter/Firmware/transporter_77.bin
 share/squeezecenter/Graphics/
 share/squeezecenter/Graphics/CODE2000.HTM
 share/squeezecenter/Graphics/CODE2000.TTF
@@ -1100,7 +1132,6 @@ share/squeezecenter/HTML/EN/html/ext/
 share/squeezecenter/HTML/EN/html/ext/adapter/
 share/squeezecenter/HTML/EN/html/ext/adapter/ext/
 share/squeezecenter/HTML/EN/html/ext/adapter/ext/ext-base.js
-share/squeezecenter/HTML/EN/html/ext/ext-all-debug.js
 share/squeezecenter/HTML/EN/html/ext/ext-all.js
 share/squeezecenter/HTML/EN/html/ext/license.txt
 share/squeezecenter/HTML/EN/html/ext/resources/
@@ -1969,4 +2000,6 @@ share/squeezecenter/SQL/mysql/schema_8_down.sql
 share/squeezecenter/SQL/mysql/schema_8_up.sql
 share/squeezecenter/SQL/mysql/schema_clear.sql
 share/squeezecenter/SQL/mysql/schema_optimize.sql
+share/squeezecenter/SQL/slimservice/
+share/squeezecenter/SQL/slimservice/slimservice-sqlite.sql
 share/squeezecenter/strings.txt
