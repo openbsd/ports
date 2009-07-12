@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2009/07/12 20:43:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.229 2009/07/12 23:27:25 jolan Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -56,6 +56,7 @@
      SUBDIR += libcdaudio
      SUBDIR += libcddb
      SUBDIR += libcdio
+     SUBDIR += libdca
      SUBDIR += libgpod
      SUBDIR += libid3tag
      SUBDIR += libmad
