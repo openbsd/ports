@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2009/07/12 20:07:00 ajacoutot Exp $
 
 COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p10
+PKGNAME=		${DISTNAME}p11
 SHARED_LIBS +=	cryptui              0.0      # .0.0
 CATEGORIES=		security
 
-HOMEPAGE=		http://www.gnome.org/projects/seahorse/
+HOMEPAGE=		http://projects.gnome.org/seahorse/
 
 # GPLv2/LGPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +26,6 @@ WANTLIB += gp11 gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread sasl2 ssl tasn1 xml2 z
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		lber,ldap::databases/openldap \
 			notify::devel/libnotify \
 			soup-2.4::devel/libsoup \
