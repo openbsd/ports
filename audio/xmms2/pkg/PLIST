@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/08 17:08:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/07/12 20:25:00 ajacoutot Exp $
 @bin bin/nyxmms2
 @bin bin/vistest
 @bin bin/vistest-fft
@@ -70,12 +70,23 @@ include/xmms2/xmmsclient/xmmsclient-glib.h
 include/xmms2/xmmsclient/xmmsclient-qt.h
 include/xmms2/xmmsclient/xmmsclient.h
 @lib lib/libxmmsclient++-glib.so.${LIBxmmsclient++-glib_VERSION}
+@lib lib/libxmmsclient++.so.${LIBxmmsclient++_VERSION}
 @lib lib/libxmmsclient-glib.so.${LIBxmmsclient-glib_VERSION}
 @lib lib/libxmmsclient.so.${LIBxmmsclient_VERSION}
 lib/pkgconfig/xmms2-client-cpp-glib.pc
+lib/pkgconfig/xmms2-client-cpp.pc
 lib/pkgconfig/xmms2-client-glib.pc
 lib/pkgconfig/xmms2-client.pc
 lib/pkgconfig/xmms2-plugin.pc
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/__init__.py
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/collections.py
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/consts.py
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/glib.py
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/propdict.py
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/qt3.py
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/sync.py
+lib/python${MODPY_VERSION}/site-packages/xmmsclient/xmmsapi.so
 lib/xmms2/
 lib/xmms2/libxmms_ao.so
 lib/xmms2/libxmms_apefile.so

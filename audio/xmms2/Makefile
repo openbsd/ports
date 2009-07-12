@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/08 17:08:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/07/12 20:25:00 ajacoutot Exp $
 
 COMMENT =		audio player daemon with library management
 
 V =			0.6
 DISTNAME =		xmms2-${V}DrMattDestruction
-PKGNAME =		xmms2-${V}p0
+PKGNAME =		xmms2-${V}p1
 
+SHARED_LIBS +=		xmmsclient++		0.0 # 3.0.0
 SHARED_LIBS +=		xmmsclient++-glib	0.0 # 1.0.0
 SHARED_LIBS +=		xmmsclient-glib		0.0 # 1.0.0
 SHARED_LIBS +=		xmmsclient		0.0 # 5.0.0
@@ -31,12 +32,15 @@ MODULES =		lang/python \
 			perl
 
 WANTLIB += a52 c faac faad m mp3lame ncurses ogg pthread readline
-WANTLIB += theora vorbis vorbisenc vorbisfile x264 z
+WANTLIB += theora util vorbis vorbisenc vorbisfile x264 z
 
-MODPY_RUNDEP =		No
 NO_REGRESS =		Yes
 
-LIB_DEPENDS =		gio-2.0.>=1800,glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
+BUILD_DEPENDS =		::devel/pyrex \
+			::devel/boost
+
+LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
+			gio-2.0.>=1800,glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 			avcodec.>=13,avutil.>=6::graphics/ffmpeg \
 			ao.>=3::audio/libao \
 			jack.>=0::audio/jack \
@@ -47,7 +51,8 @@ LIB_DEPENDS =		gio-2.0.>=1800,glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::deve
 			mad.>=2::audio/libmad \
 			avahi-client,avahi-common,avahi-glib::net/avahi
 
-WSCRIPT_PATCHES =	src/clients/lib/xmmsclient++-glib/wscript \
+WSCRIPT_PATCHES =	src/clients/lib/xmmsclient++/wscript \
+			src/clients/lib/xmmsclient++-glib/wscript \
 			src/clients/lib/xmmsclient-glib/wscript \
 			src/clients/lib/xmmsclient/wscript
 pre-configure:
@@ -63,7 +68,7 @@ do-configure:
 		--without-plugins=speex,sun \
 		--with-default-output-plugin=ao \
 		--disable-shmvis-server \
-		--without-optionals=dns_sd,medialib-updater,python,tests,xmmsclient++,xmmsclient-cf,xmmsclient-ecore,ruby \
+		--without-optionals=dns_sd,medialib-updater,tests,xmmsclient-cf,xmmsclient-ecore,ruby \
 		--without-plugins=airplay,alsa,cdda,coreaudio,faad,ices,mac,mms,modplug,mpg123,musepack,nms,ofa,oss,pulse,samba,sid,vocoder,waveout,wavpack
 
 do-build:
@@ -77,7 +82,5 @@ do-install:
 	/usr/bin/pod2man ${WRKSRC}/src/clients/lib/perl/pm/XMMSClient.pm > ${WRKDIR}/Audio::XMMSClient.3p
 	/usr/bin/pod2man ${WRKSRC}/src/clients/lib/perl/pm/XMMSClient/Glib.pm > ${WRKDIR}/Audio::XMMSClient::Glib.3p
 	${INSTALL_MAN} ${WRKDIR}/*.3p ${PREFIX}/man/man3p/
-
-
 
 .include <bsd.port.mk>

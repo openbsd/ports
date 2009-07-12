@@ -1,0 +1,17 @@
+$OpenBSD: patch-wafadmin_Tools_python_py,v 1.1 2009/07/12 20:25:00 ajacoutot Exp $
+
+We remove the flag "-pthread" because waf is complety incapable to
+treat it correctly when it is in LIB_PYEMBED variable (it adds '-l').
+
+--- wafadmin/Tools/python.py.orig	Tue Apr 21 19:51:11 2009
++++ wafadmin/Tools/python.py	Sun Jun  7 20:46:40 2009
+@@ -219,6 +219,9 @@ int main(int argc, char *argv[]) { Py_Initialize(); Py
+ 	result = False
+ 	name = 'python' + env['PYTHON_VERSION']
+
++	env['LIB_PYEMBED'].remove('-pthread')
++	env['LINKFLAGS_PYEMBED'].append('-pthread')
++
+ 	if python_LIBDIR is not None:
+ 		path = [python_LIBDIR]
+ 		result = conf.check(lib=name, uselib='PYEMBED', libpath=path)
