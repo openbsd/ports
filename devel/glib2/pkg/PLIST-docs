@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.16 2008/11/22 17:23:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.17 2009/07/12 20:38:09 ajacoutot Exp $
 @conflict glib2-<2.4.6
 share/gtk-doc/
 share/gtk-doc/html/
@@ -69,6 +69,7 @@ share/gtk-doc/html/gio/index.html
 share/gtk-doc/html/gio/index.sgml
 share/gtk-doc/html/gio/ix01.html
 share/gtk-doc/html/gio/ix02.html
+share/gtk-doc/html/gio/ix03.html
 share/gtk-doc/html/gio/left.png
 share/gtk-doc/html/gio/migrating.html
 share/gtk-doc/html/gio/pt01.html
@@ -178,6 +179,7 @@ share/gtk-doc/html/glib/ix08.html
 share/gtk-doc/html/glib/ix09.html
 share/gtk-doc/html/glib/ix10.html
 share/gtk-doc/html/glib/ix11.html
+share/gtk-doc/html/glib/ix12.html
 share/gtk-doc/html/glib/left.png
 share/gtk-doc/html/glib/mainloop-states.gif
 share/gtk-doc/html/glib/right.png

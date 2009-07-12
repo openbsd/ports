@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2008/10/27 21:28:01 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/07/12 20:38:09 ajacoutot Exp $
 @pkgpath devel/glib2
 %%SHARED%%
 @bin bin/glib-genmarshal
@@ -93,6 +93,7 @@ include/glib-2.0/glib/gmessages.h
 include/glib-2.0/glib/gnode.h
 include/glib-2.0/glib/goption.h
 include/glib-2.0/glib/gpattern.h
+include/glib-2.0/glib/gpoll.h
 include/glib-2.0/glib/gprimes.h
 include/glib-2.0/glib/gprintf.h
 include/glib-2.0/glib/gqsort.h
@@ -203,6 +204,9 @@ share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/glib20.mo
 share/locale/ca/LC_MESSAGES/glib20.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/glib20.mo
 share/locale/cs/LC_MESSAGES/glib20.mo
 share/locale/cy/
 share/locale/cy/LC_MESSAGES/

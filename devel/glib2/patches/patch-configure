@@ -1,30 +1,30 @@
-$OpenBSD: patch-configure,v 1.13 2008/11/24 16:05:03 ajacoutot Exp $
---- configure.orig	Mon Nov 24 10:13:53 2008
-+++ configure	Mon Nov 24 10:14:14 2008
-@@ -35533,7 +35533,7 @@ if test "${ac_cv_lib_fam_FAMOpen+set}" = set; then
+$OpenBSD: patch-configure,v 1.14 2009/07/12 20:38:09 ajacoutot Exp $
+--- configure.orig	Sat Jun 27 06:21:02 2009
++++ configure	Wed Jul  1 12:54:41 2009
+@@ -35637,7 +35637,7 @@ if test "${ac_cv_lib_fam_FAMOpen+set}" = set; then
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lfam  $LIBS"
-+LIBS="-lm -lfam  $LIBS"
++LIBS="-lfam -lm $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -35750,7 +35750,7 @@ if test "${ac_cv_lib_fam_FAMNoExists+set}" = set; then
+@@ -35854,7 +35854,7 @@ if test "${ac_cv_lib_fam_FAMNoExists+set}" = set; then
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lfam  $LIBS"
-+LIBS="-lm -lfam  $LIBS"
++LIBS="-lfam -lm $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -35817,7 +35817,7 @@ _ACEOF
+@@ -35921,7 +35921,7 @@ _ACEOF
  
  fi
  
 -     FAM_LIBS="-lfam"
-+     FAM_LIBS="-lm -lfam"
++     FAM_LIBS="-lfam -lm"
       fam_support=yes
  else
    { $as_echo "$as_me:$LINENO: WARNING: *** FAM support will not be built (header files not found) ***" >&5

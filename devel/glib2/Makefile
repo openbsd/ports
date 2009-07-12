@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.61 2009/04/21 13:02:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2009/07/12 20:38:09 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 COMMENT-fam=		fam(3) gio module
 
-VERSION=		2.18.4
+VERSION=		2.20.4
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}p3
+PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 PKGNAME-fam=		glib2-fam-${VERSION}
 
@@ -14,11 +14,11 @@ CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org/
 
-SHARED_LIBS+=	glib-2.0		1800.1 #.1800.3
-SHARED_LIBS+=	gobject-2.0		1800.1
-SHARED_LIBS+=	gmodule-2.0		1800.1
-SHARED_LIBS+=	gthread-2.0		1800.1
-SHARED_LIBS+=	gio-2.0			1800.2
+SHARED_LIBS+=	glib-2.0		1801.0 # .2000.2
+SHARED_LIBS+=	gobject-2.0		1801.0 # .2000.2
+SHARED_LIBS+=	gmodule-2.0		1801.0 # .2000.2
+SHARED_LIBS+=	gthread-2.0		1801.0 # .2000.2
+SHARED_LIBS+=	gio-2.0			1801.0 # .2000.2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/2.18/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=		.tar.bz2
 
 MULTI_PACKAGES=		-main -docs -fam
@@ -52,6 +52,8 @@ WANTLIB-fam=		m rpcsvc stdc++
 .if ${MACHINE_ARCH} == "powerpc"
 PATCH_LIST=		patch-* PPC-patch-glib_Makefile_in
 .endif
+
+REGRESS_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
