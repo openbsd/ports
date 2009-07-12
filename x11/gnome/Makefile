@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2009/06/21 11:15:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2009/07/12 19:54:34 ajacoutot Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -87,6 +87,7 @@
      SUBDIR += scan
      SUBDIR += screensaver
      SUBDIR += seahorse
+     SUBDIR += seahorse-plugins
      SUBDIR += session
      SUBDIR += settings-daemon
      SUBDIR += speech
