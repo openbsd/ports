@@ -1,0 +1,21 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2009/07/12 20:43:22 ajacoutot Exp $
+--- setup.py.orig	Mon Dec  1 17:27:05 2008
++++ setup.py	Tue May 26 23:48:01 2009
+@@ -76,7 +76,7 @@ cfg.read(['build.cfg'])
+ 
+ 
+ ext_modules = [
+-    Extension('picard.util.astrcmp', sources=['picard/util/astrcmp.cpp']),
++    Extension('picard.util.astrcmp', sources=['picard/util/astrcmp.cpp'], extra_link_args=['-fPIC']),
+ ]
+ 
+ if cfg.getboolean('build', 'with-libofa'):
+@@ -529,7 +529,7 @@ if do_py2app:
+ 
+ # FIXME: this should check for the actual command ('install' vs. 'bdist_nsis', 'py2app', ...), not installed libraries
+ if py2exe is None and do_py2app is False:
+-    args['data_files'].append(('share/icons', ('picard-16.png', 'picard-32.png')))
++    args['data_files'].append(('share/pixmaps', ('picard-16.png', 'picard-32.png')))
+     args['data_files'].append(('share/applications', ('picard.desktop',)))
+ 
+ 

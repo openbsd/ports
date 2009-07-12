@@ -1,0 +1,3 @@
+To be able to use the plugins, you need to create a link as follow:
+    mkdir -p ~/.config/MusicBrainz/Picard/ && \
+      ln -s ${PREFIX}/share/picard/ ~/.config/MusicBrainz/Picard/plugins
