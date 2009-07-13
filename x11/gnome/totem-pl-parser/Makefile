@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/07/12 20:32:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/07/13 13:27:07 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GObject-based parsing library
 
 GNOME_PROJECT=	totem-pl-parser
 GNOME_VERSION=	2.24.4
-PKGNAME=	${PKGNAME}p0
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS +=	totem-plparser		1.0 # .12.5
 SHARED_LIBS +=	totem-plparser-mini	1.0 # .12.5
 
