@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2009/05/05 11:40:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2009/07/13 19:35:58 naddy Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -78,6 +78,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-faac \
 		--disable-select \
 		--enable-theora \
+		--disable-libdca \
 		--enable-menu \
 		--enable-iconv \
 		--enable-cdparanoia \
