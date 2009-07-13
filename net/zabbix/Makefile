@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/07/12 19:51:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/07/13 07:21:01 ajacoutot Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -125,10 +125,10 @@ post-install:
 	cd ${WRKSRC}/upgrades/ && tar -cf - dbpatches | \
 		tar -C ${PREFIX}/share/zabbix -xf -
 	touch ${WRKINST}/${PREFIX-web}/zabbix/conf/zabbix.conf.php
-	chown www ${WRKINST}/${PREFIX-web}/zabbix/conf/zabbix.conf.php
 	chown ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/share/doc/zabbix/README.OpenBSD \
 		${DESTDIR}${PREFIX-web}/conf/modules.sample/zabbix.conf \
-		${DESTDIR}${PREFIX-web}/conf/php5.sample/zabbix.ini
+		${DESTDIR}${PREFIX-web}/conf/php5.sample/zabbix.ini \
+		${DESTDIR}/${PREFIX-web}/zabbix/conf/zabbix.conf.php
 
 .include <bsd.port.mk>
