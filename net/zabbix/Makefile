@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/07/13 07:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/07/13 17:13:01 ajacoutot Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -8,9 +8,9 @@ COMMENT-doc =		network and application monitoring - non-free documentation
 VERSION =		1.6.4
 MAJOR =			${VERSION:R}
 DISTNAME =		zabbix-${VERSION}
-PKGNAME-main =		zabbix-agent-${VERSION}p4
+FULLPKGNAME-main =	zabbix-agent-${VERSION}p5
 PKGNAME-server =	zabbix-server-${VERSION}p5
-PKGNAME-doc =		zabbix-doc-${VERSION}p1
+FULLPKGNAME-doc =	zabbix-doc-${VERSION}p2
 PKGNAME-web =		zabbix-web-${VERSION}p4
 CATEGORIES =		net
 
@@ -124,11 +124,9 @@ post-install:
 	# Script to easy upgrading from previous major version
 	cd ${WRKSRC}/upgrades/ && tar -cf - dbpatches | \
 		tar -C ${PREFIX}/share/zabbix -xf -
-	touch ${WRKINST}/${PREFIX-web}/zabbix/conf/zabbix.conf.php
 	chown ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/share/doc/zabbix/README.OpenBSD \
 		${DESTDIR}${PREFIX-web}/conf/modules.sample/zabbix.conf \
-		${DESTDIR}${PREFIX-web}/conf/php5.sample/zabbix.ini \
-		${DESTDIR}/${PREFIX-web}/zabbix/conf/zabbix.conf.php
+		${DESTDIR}${PREFIX-web}/conf/php5.sample/zabbix.ini
 
 .include <bsd.port.mk>

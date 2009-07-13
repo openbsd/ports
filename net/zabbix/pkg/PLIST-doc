@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-doc,v 1.1 2009/05/03 22:32:01 sthen Exp $
+@comment $OpenBSD: PLIST-doc,v 1.2 2009/07/13 17:13:01 ajacoutot Exp $
 @conflict zabbix-server-<1.6.4p2
+@pkgpath net/zabbix,-doc,mysql
+@pkgpath net/zabbix,-doc,pgsql
 share/doc/zabbix/
 share/doc/zabbix/ZABBIX_Manual_v${MAJOR}_rev17.pdf
