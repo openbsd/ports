@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_devmgr4_py,v 1.1 2009/07/13 08:14:29 ajacoutot Exp $
+--- ui/devmgr4.py.orig	Thu Jul  2 18:36:13 2009
++++ ui/devmgr4.py	Thu Jul  2 18:36:25 2009
+@@ -2749,7 +2749,7 @@ class DevMgr4(DevMgr4_base):
+         if utils.which('hp-setup'):
+             cmd = 'hp-setup -u'
+         else:
+-            cmd = 'python ./setup.py --gui'
++            cmd = '${MODPY_BIN} ./setup.py --gui'
+ 
+         log.debug(cmd)
+         utils.run(cmd, log_output=True, password_func=None, timeout=1)

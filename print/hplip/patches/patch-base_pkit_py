@@ -1,0 +1,23 @@
+$OpenBSD: patch-base_pkit_py,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+--- base/pkit.py.orig	Thu Jun 25 21:05:53 2009
++++ base/pkit.py	Thu Jul  2 18:38:28 2009
+@@ -277,8 +277,8 @@ def copyPluginFiles(src_dir):
+         SANELIBDIR = '/usr/lib64/sane'
+         LIBDIR = '/usr/lib64'
+     else:
+-        SANELIBDIR = '/usr/lib/sane'
+-        LIBDIR = '/usr/lib'
++        SANELIBDIR = '${LOCALBASE}/lib/sane'
++        LIBDIR = '${LOCALBASE}/lib'
+ 
+     copies = []
+ 
+@@ -400,7 +400,7 @@ def run_plugin_command(required=True, plugin_reason=PL
+     if utils.which("hp-plugin"):
+         cmd = su_sudo % ("hp-plugin -u %s --reason %s" % (req, plugin_reason))
+     else:
+-        cmd = su_sudo % ("python ./plugin.py -u %s --reason %s" % (req, plugin_reason))
++        cmd = su_sudo % ("${MODPY_BIN} ./plugin.py -u %s --reason %s" % (req, plugin_reason))
+ 
+     log.debug("%s" % cmd)
+     status, output = utils.run(cmd, log_output=True, password_func=None, timeout=1)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_uninstalling_html,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+--- doc/uninstalling.html.orig	Thu Jul  2 17:28:54 2009
++++ doc/uninstalling.html	Thu Jul  2 17:29:17 2009
+@@ -17,7 +17,7 @@
+ 
+ <h3 class="showhide_heading" id="Startup">Uninstalling HPLIP</h3><br>To
+ uninstall HPLIP you can run "make uninstall" from within the HPLIP
+-source directory or you can run "rm -rf /usr/share/hplip" which will
++source directory or you can run "rm -rf ${PREFIX}/share/hplip" which will
+ remove the HPLIP files.<br><br>The HPLIP source directory is created
+ when HPLIP is initially installed. Usually in
+ /home/user/Desktop/hplip-version where version is the hplip version.

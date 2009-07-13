@@ -4,11 +4,6 @@ give the _cups user r/w access to /dev/{usb,ugen}*
 * the printer must attach as a ugen(4) device which means you need to
 disable ulpt in your kernel - see config(8).
 
-* to provides persistent data and event services to HPLIP client
-applications, you must start the hpssd daemon (it needs to be done
-before the cupsd spooler is started).  As root:
- ${PREFIX}/sbin/hpssd
-
 * to make the hpaio backend available to SANE, simply add "hpaio" to
 its configuration file.  As root:
- echo "hpaio" >> ${SYSCONFDIR}/sane.d/dll.conf
+    echo "hpaio" >> ${SYSCONFDIR}/sane.d/dll.conf

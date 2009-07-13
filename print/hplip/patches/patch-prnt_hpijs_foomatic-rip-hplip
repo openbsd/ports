@@ -1,0 +1,66 @@
+$OpenBSD: patch-prnt_hpijs_foomatic-rip-hplip,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+--- prnt/hpijs/foomatic-rip-hplip.orig	Thu Jun 25 21:04:19 2009
++++ prnt/hpijs/foomatic-rip-hplip	Mon Jul 13 10:01:05 2009
+@@ -44,19 +44,19 @@
+ # possibly other stuff.	 The default path is often fine on Linux, but
+ # may not be on other systems.
+ #
+-my $execpath = "/usr/bin:/usr/local/bin:/usr/bin:/bin";
++my $execpath = "/usr/bin:${LOCALBASE}/bin:/usr/bin:/bin";
+ 
+ # CUPS raster drivers are searched here
+-my $cupsfilterpath = "/usr/lib/cups/filter:/usr/local/lib/cups/filter:/usr/local/libexec/cups/filter:/opt/cups/filter:/usr/lib/cups/filter";
++my $cupsfilterpath = "/usr/lib/cups/filter:/usr/local/lib/cups/filter:${LOCALBASE}/libexec/cups/filter:/opt/cups/filter:/usr/lib/cups/filter";
+ 
+ # Location of the configuration file "filter.conf", this file can be
+ # used to change the settings of foomatic-rip without editing
+ # foomatic-rip. itself. This variable must contain the full pathname 
+ # of the directory which contains the configuration file, usually
+-# "/etc/foomatic".
++# "${SYSCONFDIR}/foomatic".
+ # Some versions of configure do not fully expand $sysconfdir
+-my $prefix = "/usr";
+-my $configpath = "/etc/foomatic";
++my $prefix = "${PREFIX}";
++my $configpath = "${SYSCONFDIR}/foomatic";
+ 
+ # For the stuff below, the settings in the configuration file have priority.
+ 
+@@ -66,7 +66,7 @@
+ 
+ # Enter here your personal command for converting non-postscript files
+ # (especially text) to PostScript. If you leave it blank, at first the
+-# line "textfilter: ..." from /etc/foomatic/filter.conf is read and
++# line "textfilter: ..." from ${SYSCONFDIR}/foomatic/filter.conf is read and
+ # then the commands given on the list below are tried, beginning with
+ # the first one.
+ # You can set this to "a2ps", "enscript" or "mpage" to select one of the 
+@@ -97,7 +97,7 @@
+ # Set debug to 1 to enable the debug logfile for this filter; it will
+ # appear as defined by $logfile. It will contain status from this
+ # filter, plus the renderer's stderr output. You can also add a line
+-# "debug: 1" to your /etc/foomatic/filter.conf to get all your
++# "debug: 1" to your ${SYSCONFDIR}/foomatic/filter.conf to get all your
+ # Foomatic filters into debug mode.
+ #
+ # WARNING: This logfile is a security hole; do not use in production.
+@@ -761,7 +761,7 @@
+     $cups_filename );
+ if ($spooler eq 'cups') {
+ 
+-    # Use CUPS font path ("FontPath" in /etc/cups/cupsd.conf)
++    # Use CUPS font path ("FontPath" in ${SYSCONFDIR}/cups/cupsd.conf)
+     if ($ENV{'CUPS_FONTPATH'}) {
+ 	$ENV{'GS_LIB'} = $ENV{'CUPS_FONTPATH'} .
+ 	    ($ENV{'GS_LIB'} ? ":$ENV{'GS_LIB'}" : "");
+@@ -1038,8 +1038,8 @@
+ 	    $ppdfile = "$configpath/direct/${printer}.ppd";
+ 	} elsif (-r "$configpath/${printer}.ppd") { # system dir
+ 	    $ppdfile = "$configpath/${printer}.ppd";
+-	} elsif (-r "/etc/cups/ppd/${printer}.ppd") { # CUPS config dir
+-	    $ppdfile = "/etc/cups/ppd/${printer}.ppd";
++	} elsif (-r "${SYSCONFDIR}/cups/ppd/${printer}.ppd") { # CUPS config dir
++	    $ppdfile = "${SYSCONFDIR}/cups/ppd/${printer}.ppd";
+ 	} elsif (-r "/usr/local/etc/cups/ppd/${printer}.ppd") {
+ 	    $ppdfile = "/usr/local/etc/cups/ppd/${printer}.ppd";
+ 	} elsif (-r "/usr/share/ppr/PPDFiles/${printer}.ppd") { # PPR PPDs

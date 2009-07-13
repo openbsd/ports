@@ -1,3 +1,4 @@
 The Hewlett-Packard Linux Imaging and Printing (HPLIP) system provides a
 unified single and multi-function connectivity driver solution. It
 provides support for print, scan, fax and toolbox.
+This package provides the HPLIP graphical tools.

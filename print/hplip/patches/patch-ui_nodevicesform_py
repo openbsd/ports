@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_nodevicesform_py,v 1.1 2009/07/13 08:14:29 ajacoutot Exp $
+--- ui/nodevicesform.py.orig	Thu Jul  2 18:36:33 2009
++++ ui/nodevicesform.py	Thu Jul  2 18:36:42 2009
+@@ -56,7 +56,7 @@ class NoDevicesForm(NoDevicesForm_base):
+         if utils.which('hp-setup'):
+             cmd = 'hp-setup -u'
+         else:
+-            cmd = 'python ./setup.py -u'
++            cmd = '${MODPY_BIN} ./setup.py -u'
+ 
+         log.debug(cmd)
+         utils.run(cmd, log_output=True, password_func=None, timeout=1)

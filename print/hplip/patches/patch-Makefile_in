@@ -1,66 +1,74 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2008/06/05 19:10:43 ajacoutot Exp $
---- Makefile.in.orig	Fri Dec 14 23:31:14 2007
-+++ Makefile.in	Thu Jun  5 15:18:29 2008
-@@ -1883,7 +1883,7 @@ lib_LTLIBRARIES = $(am__append_4)
- @DOC_BUILD_TRUE@www243dir = $(docdir)/install/step4/suse
- @DOC_BUILD_TRUE@dist_www243_DATA = $(wwwsrc)/install/step4/suse/*
- @DOC_BUILD_TRUE@www251dir = $(docdir)/install/manual
--@DOC_BUILD_TRUE@dist_www251_DATA = $(wwwsrc)/install/manual/*
-+@DOC_BUILD_TRUE@dist_www251_DATA = $(wwwsrc)/install/manual/*.html
- @DOC_BUILD_TRUE@www252dir = $(docdir)/install/manual/distros
- @DOC_BUILD_TRUE@dist_www252_DATA = $(wwwsrc)/install/manual/distros/*
- @DOC_BUILD_TRUE@www261dir = $(docdir)/install/install
-@@ -1895,7 +1895,7 @@ lib_LTLIBRARIES = $(am__append_4)
- @DOC_BUILD_TRUE@www5dir = $(docdir)/supported_devices
- @DOC_BUILD_TRUE@dist_www5_DATA = $(wwwsrc)/supported_devices/*
- @DOC_BUILD_TRUE@www6dir = $(docdir)/tech_docs
--@DOC_BUILD_TRUE@dist_www6_DATA = $(wwwsrc)/tech_docs/*
-+@DOC_BUILD_TRUE@dist_www6_DATA = $(wwwsrc)/tech_docs/*.html
- @DOC_BUILD_TRUE@www61dir = $(docdir)/tech_docs/man_pages
- @DOC_BUILD_TRUE@dist_www61_DATA = $(wwwsrc)/tech_docs/man_pages/*
- @DOC_BUILD_TRUE@www7dir = $(docdir)/troubleshooting
-@@ -1947,7 +1947,7 @@ lib_LTLIBRARIES = $(am__append_4)
- @HPLIP_BUILD_TRUE@localzdir = $(hplipdir)/data/localization
- @HPLIP_BUILD_TRUE@dist_postscript_DATA = data/ps/testpage.ps.gz data/ps/clean_page.pdf.gz
- @HPLIP_BUILD_TRUE@dist_models_DATA = data/models/models.dat
--@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@dist_images_DATA = data/images/*
-+@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@dist_images_DATA = data/images/*.png
- @HPLIP_BUILD_TRUE@dist_pcl_DATA = data/pcl/align1_8xx.pcl.gz data/pcl/align1_9xx.pcl.gz data/pcl/align2_8xx.pcl.gz data/pcl/align3_8xx.pcl.gz data/pcl/align4_8xx.pcl.gz \
- @HPLIP_BUILD_TRUE@	data/pcl/align5_8xx.pcl.gz data/pcl/align2_9xx.pcl.gz data/pcl/align3_9xx.pcl.gz data/pcl/align4_450.pcl.gz data/pcl/align6_450.pcl.gz \
- @HPLIP_BUILD_TRUE@	data/pcl/colorcal1_450.pcl.gz data/pcl/colorcal2_450.pcl.gz data/pcl/crbcal.pcl.gz data/pcl/crcaldone.pcl.gz data/pcl/crcbcal.pcl.gz data/pcl/crccal.pcl.gz \
-@@ -2000,7 +2000,7 @@ lib_LTLIBRARIES = $(am__append_4)
- @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@	  scan/sane/common.c scan/sane/common.h scan/sane/soap.h scan/sane/sanei_debug.h scan/sane/sanei.h \
- @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@	  scan/sane/soap_stub.c scan/sane/sanei_init_debug.c
- 
--@DARWIN_BUILD_FALSE@@HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -version-info 1:0:0
-+@DARWIN_BUILD_FALSE@@HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -version-info 1:0:0 -module -avoid-version
- #	  scan/sane/soap.c scan/sane/webScanC.c scan/sane/webScanClient.c scan/sane/stdsoap2.c \
- #	  scan/sane/dime.c scan/sane/dime.h scan/sane/webScanStub.h scan/sane/webScanH.h scan/sane/stdsoap2.h scan/sane/webScan.nsmap
+$OpenBSD: patch-Makefile_in,v 1.4 2009/07/13 08:14:28 ajacoutot Exp $
+--- Makefile.in.orig	Thu Jun 25 22:02:19 2009
++++ Makefile.in	Thu Jul  2 16:18:41 2009
+@@ -3608,7 +3608,7 @@ cups_drv = prnt/drv/hpcups.drv
+ @DARWIN_BUILD_FALSE@@HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -version-info 1:0:0
  @DARWIN_BUILD_TRUE@@HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -module -framework CoreFoundation -version-info 1:0:0
-@@ -7175,7 +7175,7 @@ install-data-am: install-cupsextLTLIBRARIES install-di
- 	install-dist_localzDATA install-dist_modelsDATA \
- 	install-dist_pcardSCRIPTS install-dist_pclDATA \
- 	install-dist_pluginsSCRIPTS install-dist_postscriptDATA \
--	install-dist_prntSCRIPTS install-dist_rulesDATA \
-+	install-dist_prntSCRIPTS \
- 	install-dist_scanSCRIPTS install-dist_uiSCRIPTS \
- 	install-dist_unrelDATA install-dist_www0DATA \
- 	install-dist_www1DATA install-dist_www21DATA \
-@@ -7186,8 +7186,8 @@ install-data-am: install-cupsextLTLIBRARIES install-di
- 	install-dist_www261DATA install-dist_www2DATA \
- 	install-dist_www3DATA install-dist_www4DATA \
- 	install-dist_www5DATA install-dist_www61DATA \
--	install-dist_www6DATA install-dist_www7DATA install-docDATA \
--	install-hpPROGRAMS install-hplip_confDATA \
-+	install-dist_www6DATA install-dist_www7DATA \
-+	install-hpPROGRAMS \
- 	install-hplip_desktopDATA install-hpmudextLTLIBRARIES \
- 	install-libsane_hpaioLTLIBRARIES install-pcardextLTLIBRARIES \
- 	install-scanextLTLIBRARIES
-@@ -7322,17 +7322,6 @@ uninstall-am: uninstall-binPROGRAMS uninstall-cupsextL
+ # The following is a interlibrary dependency that must be compiled first.
+-@HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LIBADD = libhpip.la libhpmud.la $(DBUS_LIBS) -lcups -ldl
++@HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LIBADD = libhpip.la libhpmud.la $(DBUS_LIBS) -lcups
+ #libsane_hpaio_la_CFLAGS = -DWITH_NONAMESPACES -DSOAP_DEBUG
+ @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_CFLAGS = $(DBUS_CFLAGS)
+ 
+@@ -3632,7 +3632,7 @@ cups_drv = prnt/drv/hpcups.drv
+ # hp-mkuri.
+ @HPLIP_BUILD_TRUE@hp_mkuridir = $(bindir)
+ @HPLIP_BUILD_TRUE@hp_mkuri_SOURCES = io/hpmud/hp-mkuri.c
+-@HPLIP_BUILD_TRUE@hp_mkuri_LDADD = -ldl libhpmud.la
++@HPLIP_BUILD_TRUE@hp_mkuri_LDADD = libhpmud.la
+ 
+ # hpmud.rules
+ @HPLIP_BUILD_TRUE@rulesdir = /etc/udev/rules.d
+@@ -3813,7 +3813,7 @@ cups_drv = prnt/drv/hpcups.drv
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_SOURCES = prnt/hpijs/PrinterProperties.cpp prnt/hpijs/PrinterProperties.h prnt/hpijs/bug.h
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CXXFLAGS = $(libapdk_la_CXXFLAGS)
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CFLAGS = $(libapdk_la_CFLAGS)
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_LDADD = libapdk.la -ljpeg -ldl
++@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_LDADD = libapdk.la -ljpeg
+ 
+ # hplip.desktop
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hplip_desktopdir = $(icondir)
+@@ -3880,15 +3880,15 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+ 
+ @HPIJS_INSTALL_TRUE@hpijs_CXXFLAGS = $(libapdk_la_CXXFLAGS)
+ @HPIJS_INSTALL_TRUE@hpijs_CFLAGS = $(libapdk_la_CFLAGS)
+-@HPIJS_INSTALL_TRUE@@HPLIP_BUILD_FALSE@hpijs_LDADD = libapdk.la -ljpeg -ldl
+-@HPIJS_INSTALL_TRUE@@HPLIP_BUILD_TRUE@hpijs_LDADD = libapdk.la -ljpeg -ldl libhpip.la libhpmud.la $(DBUS_LIBS)
++@HPIJS_INSTALL_TRUE@@HPLIP_BUILD_FALSE@hpijs_LDADD = libapdk.la -ljpeg
++@HPIJS_INSTALL_TRUE@@HPLIP_BUILD_TRUE@hpijs_LDADD = libapdk.la -ljpeg libhpip.la libhpmud.la $(DBUS_LIBS)
+ 
+ # hpcups
+ @HPCUPS_INSTALL_TRUE@hpcupsdir = $(cupsfilterdir)
+ @HPCUPS_INSTALL_TRUE@hpcups_SOURCES = prnt/hpijs/hpcups.cpp prnt/hpijs/hpcups.h prnt/hpijs/services.cpp prnt/hpijs/services.h prnt/hpijs/hpiom.c prnt/hpijs/hpiom.h prnt/hpijs/bug.h prnt/hpijs/hpimage.cpp prnt/hpijs/hpimage.h
+ @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(libapdk_la_CXXFLAGS)
+ @HPCUPS_INSTALL_TRUE@hpcups_CFLAGS = $(libapdk_la_CFLAGS)
+-@HPCUPS_INSTALL_TRUE@hpcups_LDADD = libapdk.la -ljpeg -ldl libhpip.la libhpmud.la $(DBUS_LIBS) -lcups -lcupsimage
++@HPCUPS_INSTALL_TRUE@hpcups_LDADD = libapdk.la -ljpeg libhpip.la libhpmud.la $(DBUS_LIBS) -lcups -lcupsimage
+ # hpcupsfax
+ @FAX_BUILD_TRUE@@HPCUPS_INSTALL_TRUE@hpcupsfaxdir = $(cupsfilterdir)
+ @FAX_BUILD_TRUE@@HPCUPS_INSTALL_TRUE@hpcupsfax_SOURCES = prnt/hpijs/hpcupsfax.cpp prnt/hpijs/hpcupsfax.h
+@@ -6752,7 +6752,7 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
+ 	install-cupsextLTLIBRARIES install-dist_baseSCRIPTS \
+ 	install-dist_cacSCRIPTS install-dist_cmdSCRIPTS \
+ 	install-dist_copierSCRIPTS install-dist_faxSCRIPTS \
+-	install-dist_halpreDATA install-dist_hpcupsfaxppdDATA \
++	install-dist_hpcupsfaxppdDATA \
+ 	install-dist_hpfaxSCRIPTS install-dist_hpijsfaxppdDATA \
+ 	install-dist_hplipSCRIPTS install-dist_hplip_stateDATA \
+ 	install-dist_images_128x128DATA install-dist_images_16x16DATA \
+@@ -6767,7 +6767,7 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
+ 	install-dist_policykit_dbus_shareDATA \
+ 	install-dist_policykit_policyDATA install-dist_postscriptDATA \
+ 	install-dist_ppdDATA install-dist_prntSCRIPTS \
+-	install-dist_ripSCRIPTS install-dist_rulesDATA \
++	install-dist_ripSCRIPTS \
+ 	install-dist_scanSCRIPTS install-dist_ui4SCRIPTS \
+ 	install-dist_uiSCRIPTS install-dist_unrelDATA \
+ 	install-dist_www0DATA install-dist_www3DATA \
+@@ -6948,17 +6948,6 @@ uninstall-am: uninstall-binPROGRAMS uninstall-cupsdrv2
  
  
- install-data-hook: install-foo 
+ install-data-hook:
 -#	   If scanner build, add hpaio entry to sane dll.conf.
 -@HPLIP_BUILD_TRUE@	if [ "$(scan_build)" = "yes" ]; then \
 -@HPLIP_BUILD_TRUE@	   $(mkinstalldirs) $(DESTDIR)/etc/sane.d; \
@@ -73,18 +81,5 @@ $OpenBSD: patch-Makefile_in,v 1.3 2008/06/05 19:10:43 ajacoutot Exp $
 -@HPLIP_BUILD_TRUE@	   fi \
 -@HPLIP_BUILD_TRUE@	fi
  #	   Create hp-xxx commands in bindir.
- @HPLIP_BUILD_TRUE@	$(mkinstalldirs) $(DESTDIR)$(bindir)
- @HPLIP_BUILD_TRUE@	for i in $(dist_cmd_SCRIPTS); do \
-@@ -7352,12 +7341,7 @@ install-foo:
- 	if [ "$(foomatic_ppd_install)" = "yes" ]; then \
- 	   $(mkinstalldirs) $(DESTDIR)$(hpppddir); \
- 	   $(INSTALL_DATA) $(foomatic_ppd_printers) $(DESTDIR)$(hpppddir); \
--	   $(INSTALL_DATA) $(foomatic_ps_printers) $(DESTDIR)$(hpppddir); \
- 	   for i in $(foomatic_ppd_printers); do \
--		  id=`basename $$i`; \
--		  gzip -f $(DESTDIR)$(hpppddir)/$$id; \
--	   done; \
--	   for i in $(foomatic_ps_printers); do \
- 		  id=`basename $$i`; \
- 		  gzip -f $(DESTDIR)$(hpppddir)/$$id; \
- 	   done; \
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	$(mkinstalldirs) $(DESTDIR)$(bindir)
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	for i in $(dist_cmd_SCRIPTS); do \

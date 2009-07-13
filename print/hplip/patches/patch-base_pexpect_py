@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_pexpect_py,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+--- base/pexpect.py.orig	Thu Jul  2 17:31:51 2009
++++ base/pexpect.py	Thu Jul  2 17:32:39 2009
+@@ -142,7 +142,7 @@ def run (command, timeout=-1, withexitstatus=False, ev
+     Examples:
+     Start the apache daemon on the local machine:
+         from pexpect import *
+-        run ("/usr/local/apache/bin/apachectl start")
++        run ("/usr/sbin/apachectl start")
+     Check in a file using SVN:
+         from pexpect import *
+         run ("svn ci -m 'automatic commit' my_file.py")

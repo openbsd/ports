@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_codes_py,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+--- base/codes.py.orig	Thu Jul  2 14:07:17 2009
++++ base/codes.py	Thu Jul  2 14:07:29 2009
+@@ -266,7 +266,7 @@ EVENT_RAISE_DEVICE_MANAGER = 9001
+ #EVENT_JOB_STORAGE_UI_REQUEST = 9002 # sent by hplipjs CUPS filter for job storage UI
+ EVENT_HISTORY_UPDATE = 9003 # sent by hp-systray to hp-toolbox when a device's history changes
+ EVENT_USER_CONFIGURATION_CHANGED = 9004 # sent when ~/.hplip/hplip.conf has been changed by another app.
+-EVENT_SYS_CONFIGURATION_CHANGED = 9005 # sent when /etc/hp/hplip.conf has been changed by another app.
++EVENT_SYS_CONFIGURATION_CHANGED = 9005 # sent when ${SYSCONFDIR}/hp/hplip.conf has been changed by another app.
+ EVENT_DEVICE_UPDATE_REQUESTED = 9010
+ EVENT_DEVICE_UPDATE_REPLY = 9011
+ EVENT_DEVICE_START_POLLING = 9020

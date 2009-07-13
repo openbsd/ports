@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-hpcups,v 1.1 2009/07/13 08:14:29 ajacoutot Exp $
+@bin libexec/cups/filter/hpcups
+@bin libexec/cups/filter/hpcupsfax
+share/cups/drv/hp/hpcups.drv

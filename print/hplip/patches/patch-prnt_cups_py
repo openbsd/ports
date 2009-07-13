@@ -1,0 +1,70 @@
+$OpenBSD: patch-prnt_cups_py,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+--- prnt/cups.py.orig	Thu Jun 25 21:04:19 2009
++++ prnt/cups.py	Thu Jul  2 17:25:18 2009
+@@ -186,8 +186,8 @@ ppd_pat = re.compile(r'''.*hp-(.*?)(-.*)*\.ppd.*''', r
+ 
+ def getPPDPath(addtional_paths=None):
+     """
+-        Returns the CUPS ppd path (not the foomatic one under /usr/share/ppd).
+-        Usually this is /usr/share/cups/model.
++        Returns the CUPS ppd path (not the foomatic one under ${LOCALBASE}/share/ppd).
++        Usually this is ${LOCALBASE}/share/cups/model.
+     """
+     if addtional_paths is None:
+         addtional_paths = []
+@@ -202,9 +202,9 @@ def getPPDPath(addtional_paths=None):
+ 
+ def getAllowableMIMETypes():
+     """
+-        Scan all /etc/cups/*.convs files for allowable file formats.
++        Scan all ${SYSCONFDIR}/cups/*.convs files for allowable file formats.
+     """
+-    files = glob.glob("/etc/cups/*.convs")
++    files = glob.glob("${SYSCONFDIR}/cups/*.convs")
+ 
+     allowable_mime_types = []
+ 
+@@ -266,11 +266,11 @@ def getSystemPPDs():
+     else: # 1.2.x
+         log.debug("(CUPS 1.2.x) Getting list of PPDs using CUPS_GET_PPDS...")
+         ppd_dict = cupsext.getPPDList()
+-        cups_ppd_path = getPPDPath() # usually /usr/share/cups/model
+-        foomatic_ppd_path = sys_conf.get('dirs', 'ppdbase', '/usr/share/ppd')
++        cups_ppd_path = getPPDPath() # usually ${LOCALBASE}/share/cups/model
++        foomatic_ppd_path = sys_conf.get('dirs', 'ppdbase', '${LOCALBASE}/share/ppd')
+ 
+         if not foomatic_ppd_path or not os.path.exists(foomatic_ppd_path):
+-            foomatic_ppd_path = '/usr/share/ppd'
++            foomatic_ppd_path = '${LOCALBASE}/share/foomatic/db/source/PPD'
+ 
+         log.debug("CUPS PPD base path = %s" % cups_ppd_path)
+         log.debug("Foomatic PPD base path = %s" % foomatic_ppd_path)
+@@ -289,8 +289,8 @@ def getSystemPPDs():
+                         'gutenprint' in ppd):
+ 
+                     # PPD files returned by CUPS_GET_PPDS (and by lpinfo -m)
+-                    # can be relative to /usr/share/ppd/ or to
+-                    # /usr/share/cups/model/. Not sure why this is.
++                    # can be relative to ${LOCALBASE}/share/ppd/ or to
++                    # ${LOCALBASE}/share/cups/model/. Not sure why this is.
+                     # Here we will try both and see which one it is...
+ 
+                     if os.path.exists(ppd):
+@@ -348,7 +348,7 @@ number_pat = re.compile(r""".*?(\d+)""", re.IGNORECASE
+ STRIP_STRINGS2 = ['foomatic:', 'hp-', 'hp_', 'hp ', '.gz', '.ppd',
+                   'drv:', '-pcl', '-pcl3', '-jetready',
+                  '-zxs', '-zjs', '-ps', '-postscript',
+-                 '-jr', '-lidl', '-lidil', '-ldl', '-hpijs']
++                 '-jr', '-lidl', '-lidil', '-hpijs']
+ 
+ 
+ for p in models.TECH_CLASS_PDLS.values():
+@@ -527,7 +527,7 @@ def getPPDFile2(stripped_model, ppds): # New PPD find
+ 
+ 
+ def getErrorLogLevel():
+-    cups_conf = '/etc/cups/cupsd.conf'
++    cups_conf = '${SYSCONFDIR}/cups/cupsd.conf'
+     try:
+         f = file(cups_conf, 'r')
+     except OSError:

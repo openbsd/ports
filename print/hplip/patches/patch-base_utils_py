@@ -1,0 +1,39 @@
+$OpenBSD: patch-base_utils_py,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+--- base/utils.py.orig	Thu Jul  2 18:38:37 2009
++++ base/utils.py	Thu Jul  2 18:38:55 2009
+@@ -469,7 +469,7 @@ class UserSettings(object): # Note: Deprecated after 2
+         if len(path):
+             self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'
+         else:
+-            self.cmd_pcard = 'python %HOME%/unload.py -d %DEVICE_URI%'
++            self.cmd_pcard = '${MODPY_BIN} %HOME%/unload.py -d %DEVICE_URI%'
+ 
+         # Copy
+         path = which('hp-makecopies')
+@@ -477,7 +477,7 @@ class UserSettings(object): # Note: Deprecated after 2
+         if len(path):
+             self.cmd_copy = 'hp-makecopies -d %DEVICE_URI%'
+         else:
+-            self.cmd_copy = 'python %HOME%/makecopies.py -d %DEVICE_URI%'
++            self.cmd_copy = '${MODPY_BIN} %HOME%/makecopies.py -d %DEVICE_URI%'
+ 
+         # Fax
+         path = which('hp-sendfax')
+@@ -485,7 +485,7 @@ class UserSettings(object): # Note: Deprecated after 2
+         if len(path):
+             self.cmd_fax = 'hp-sendfax -d %FAX_URI%'
+         else:
+-            self.cmd_fax = 'python %HOME%/sendfax.py -d %FAX_URI%'
++            self.cmd_fax = '${MODPY_BIN} %HOME%/sendfax.py -d %FAX_URI%'
+ 
+         # Fax Address Book
+         path = which('hp-fab')
+@@ -493,7 +493,7 @@ class UserSettings(object): # Note: Deprecated after 2
+         if len(path):
+             self.cmd_fab = 'hp-fab'
+         else:
+-            self.cmd_fab = 'python %HOME%/fab.py'
++            self.cmd_fab = '${MODPY_BIN} %HOME%/fab.py'
+ 
+     def load(self):
+         self.loadDefaults()

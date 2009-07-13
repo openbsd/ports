@@ -1,0 +1,17 @@
+$OpenBSD: patch-base_magic_py,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+--- base/magic.py.orig	Thu Jul  2 18:39:01 2009
++++ base/magic.py	Thu Jul  2 18:40:12 2009
+@@ -255,10 +255,9 @@ magic = [
+     [0L, 'string', '=', '#! /usr/bin/python', 'application/x-python'],
+     [0L, 'string', '=', '#! /usr/bin/python', 'application/x-python'],
+     [0L, 'string', '=', 'eval "exec /usr/bin/python', 'application/x-python'],
+-    [0L, 'string', '=', '#!/usr/local/bin/python', 'application/x-python'],
+-    [0L, 'string', '=', '#! /usr/local/bin/python', 'application/x-python'],
+-    [0L, 'string', '=', '#! /usr/local/bin/python', 'application/x-python'],
+-    [0L, 'string', '=', 'eval "exec /usr/local/bin/python', 'application/x-python'],
++    [0L, 'string', '=', '#!${MODPY_BIN}', 'application/x-python'],
++    [0L, 'string', '=', '#! ${MODPY_BIN}', 'application/x-python'],
++    [0L, 'string', '=', 'eval "exec ${MODPY_BIN}', 'application/x-python'],
+     [0L, 'string', '=', '#!/usr/bin/env python', 'application/x-python'],
+     [0L, 'string', '=', '#! /usr/bin/env python', 'application/x-python'],
+     [0L, 'string', '=', '#!/bin/rc', 'text/script'],

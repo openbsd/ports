@@ -1,21 +1,21 @@
-$OpenBSD: patch-fax_backend_hpfax_py,v 1.1 2009/02/02 10:47:11 ajacoutot Exp $
---- fax/backend/hpfax.py.orig	Mon Feb  2 10:51:15 2009
-+++ fax/backend/hpfax.py	Mon Feb  2 10:51:28 2009
-@@ -41,7 +41,7 @@ CUPS_BACKEND_STOP = 4 #  Job failed, stop queue
- CUPS_BACKEND_CANCEL = 5 # Job failed, cancel job
+$OpenBSD: patch-fax_backend_hpfax_py,v 1.2 2009/07/13 08:14:28 ajacoutot Exp $
+--- fax/backend/hpfax.py.orig	Thu Jul  2 14:13:47 2009
++++ fax/backend/hpfax.py	Thu Jul  2 14:14:02 2009
+@@ -46,7 +46,7 @@ PIPE_BUF = 4096
  
+ job_id = 0
  pid = os.getpid()
 -config_file = '/etc/hp/hplip.conf'
 +config_file = '${SYSCONFDIR}/hp/hplip.conf'
  home_dir = ''
  
- if os.path.exists(config_file):
-@@ -54,7 +54,7 @@ if os.path.exists(config_file):
-         syslog.syslog(syslog.LOG_CRIT, "hpfax[%d]: error: Error setting home directory: home= under [dirs] not found." % pid)
+ 
+@@ -65,7 +65,7 @@ if os.path.exists(config_file):
+         bug("Error setting home directory: home= under [dirs] not found.")
          sys.exit(1)
  else:
--    syslog.syslog(syslog.LOG_CRIT, "hpfax[%d]: error: Error setting home directory: /etc/hp/hplip.conf not found." % pid)
-+    syslog.syslog(syslog.LOG_CRIT, "hpfax[%d]: error: Error setting home directory: ${SYSCONFDIR}/hp/hplip.conf not found." % pid)
+-    bug("Error setting home directory: /etc/hp/hplip.conf not found")
++    bug("Error setting home directory: ${SYSCONFDIR}/hp/hplip.conf not found")
      sys.exit(1)
  
  if not home_dir or not os.path.exists(home_dir):

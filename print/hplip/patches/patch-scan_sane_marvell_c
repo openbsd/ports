@@ -1,0 +1,18 @@
+$OpenBSD: patch-scan_sane_marvell_c,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+--- scan/sane/marvell.c.orig	Thu Jul  2 14:35:52 2009
++++ scan/sane/marvell.c	Thu Jul  2 14:36:00 2009
+@@ -29,13 +29,13 @@
+ #define _GNU_SOURCE
+ #endif
+ 
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netdb.h>
+ #include <stdarg.h>
+ #include <syslog.h>
+ #include <stdio.h>
+ #include <string.h>
+-#include <sys/types.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <math.h>

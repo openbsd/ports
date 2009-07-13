@@ -1,0 +1,12 @@
+$OpenBSD: patch-prnt_hpijs_hpijs_cpp,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+--- prnt/hpijs/hpijs.cpp.orig	Thu Jul  2 14:12:15 2009
++++ prnt/hpijs/hpijs.cpp	Thu Jul  2 14:12:24 2009
+@@ -76,7 +76,7 @@ void setLogLevel(UXServices *pSS)
+     FILE    *fp;
+     char    str[258];
+     char    *p;
+-    fp = fopen ("/etc/cups/cupsd.conf", "r");
++    fp = fopen ("${SYSCONFDIR}/cups/cupsd.conf", "r");
+     if (fp == NULL)
+         return;
+     while (!feof (fp))

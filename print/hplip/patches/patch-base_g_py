@@ -1,27 +1,27 @@
-$OpenBSD: patch-base_g_py,v 1.1 2009/02/02 10:47:11 ajacoutot Exp $
-
-Fix for:
-CVE-2008-2940
-CVE-2008-2941
-
---- base/g.py.orig	Fri Oct 12 23:03:17 2007
-+++ base/g.py	Mon Feb  2 10:50:44 2009
-@@ -132,8 +132,9 @@ class Config(dict):
-         self.__setitem__(sect, val)
+$OpenBSD: patch-base_g_py,v 1.2 2009/07/13 08:14:28 ajacoutot Exp $
+--- base/g.py.orig	Thu Jun 25 21:05:53 2009
++++ base/g.py	Thu Jul  2 17:34:08 2009
+@@ -131,12 +131,12 @@ class ConfigBase(object):
  
- # Config file: directories and ports
--prop.sys_config_file = '/etc/hp/hplip.conf'
-+prop.sys_config_file = '${SYSCONFDIR}/hp/hplip.conf'
- prop.user_dir = os.path.expanduser('~/.hplip')
-+prop.alerts_config_file = '${SYSCONFDIR}/hp/alerts.conf'
- 
- os.umask(0037)
- try:
-@@ -154,6 +155,7 @@ if not os.path.exists(prop.user_config_file):
-     
- sys_cfg = Config(prop.sys_config_file, True)
- user_cfg = Config(prop.user_config_file)
-+alerts_cfg = Config(prop.alerts_config_file)
+ class SysConfig(ConfigBase):
+     def __init__(self):
+-        ConfigBase.__init__(self, '/etc/hp/hplip.conf')
++        ConfigBase.__init__(self, '${SYSCONFDIR}/hp/hplip.conf')
  
  
- # Language settings
+ class State(ConfigBase):
+     def __init__(self):
+-        ConfigBase.__init__(self, '/var/lib/hp/hplip.state')
++        ConfigBase.__init__(self, '/var/db/hp/hplip.state')
+ 
+ 
+ class UserConfig(ConfigBase):
+@@ -234,7 +234,7 @@ prop.max_message_len = 8192
+ prop.max_message_read = 65536
+ prop.read_timeout = 90
+ 
+-prop.ppd_search_path = '/usr/share;/usr/local/share;/usr/lib;/usr/local/lib;/usr/libexec;/opt;/usr/lib64'
++prop.ppd_search_path = '/usr/share;${LOCALBASE}/share;${LOCALBASE}/share/foomatic/db/source/PPD/HP;/usr/lib;/usr/local/lib;/usr/libexec;/opt;/usr/lib64'
+ prop.ppd_search_pattern = 'HP-*.ppd.*'
+ prop.ppd_download_url = 'http://www.linuxprinting.org/ppd-o-matic.cgi'
+ prop.ppd_file_suffix = '-hpijs.ppd'

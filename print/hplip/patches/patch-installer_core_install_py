@@ -1,58 +1,127 @@
-$OpenBSD: patch-installer_core_install_py,v 1.3 2009/02/02 10:47:12 ajacoutot Exp $
---- installer/core_install.py.orig	Tue Dec 11 19:41:47 2007
-+++ installer/core_install.py	Mon Feb  2 10:51:04 2009
-@@ -184,7 +184,7 @@ class CoreInstall(object):
-             'reportlab':        (False, ['fax'], "Reportlab - PDF library for Python", self.check_reportlab), 
-             'python23':         (True,  ['fax'], "Python 2.3 or greater - Required for fax functionality", self.check_python23),
+$OpenBSD: patch-installer_core_install_py,v 1.4 2009/07/13 08:14:28 ajacoutot Exp $
+--- installer/core_install.py.orig	Thu Jun 25 21:05:43 2009
++++ installer/core_install.py	Thu Jul  2 18:36:05 2009
+@@ -190,7 +190,7 @@ class CoreInstall(object):
+         self.endian = utils.LITTLE_ENDIAN
+         self.distro, self.distro_name, self.distro_version = DISTRO_UNKNOWN, '', DISTRO_VER_UNKNOWN
+         self.distro_version_supported = False
+-        self.install_location = '/usr'
++        self.install_location = '${PREFIX}'
+         self.hplip_present = False
+         self.have_dependencies = {}
+         self.native_cups = True
+@@ -824,14 +824,14 @@ class CoreInstall(object):
  
--            'ppdev':            (True,  ['parallel'], "ppdev - Parallel port support kernel module.", self.check_ppdev),
-+            'ppdev':            (False,  ['parallel'], "ppdev - Parallel port support kernel module.", self.check_ppdev),
- 
-             'pyqt':             (True,  ['gui'], "PyQt - Qt interface for Python", self.check_pyqt),
- 
-@@ -545,23 +545,23 @@ class CoreInstall(object):
-         return check_tool('gcc --version', 0) and check_tool('g++ --version', 0)
  
      def check_make(self):
 -        return check_tool('make --version', 3.0)
-+        return check_tool('true', 0)
++        return True
+ 
  
      def check_libusb(self):
          if not check_lib('libusb'):
              return False
  
--        return len(locate_file_contains("usb.h", '/usr/include', 'usb_init(void)')) > 0
-+        return len(locate_file_contains("usb.h", '${LOCALBASE}/include', 'usb_init(void)')) > 0
+-        return len(locate_file_contains("usb.h", '/usr/include', 'usb_init(void)'))
++        return len(locate_file_contains("usb.h", '${LOCALBASE}/include', 'usb_init(void)'))
  
  
      def check_libjpeg(self):
-         return check_lib("libjpeg") and check_file("jpeglib.h")
+@@ -839,11 +839,11 @@ class CoreInstall(object):
+ 
  
      def check_libcrypto(self):
 -        return check_lib("libcrypto") and check_file("crypto.h")
 +        return True
  
+ 
      def check_libpthread(self):
 -        return check_lib("libpthread") and check_file("pthread.h")
 +        return True
  
+ 
      def check_libnetsnmp(self):
-         return check_lib("libnetsnmp") and check_file("net-snmp-config.h")
-@@ -599,7 +599,7 @@ class CoreInstall(object):
-         return check_lib('libsane')
+@@ -895,7 +895,7 @@ class CoreInstall(object):
+ 
  
      def check_sane_devel(self):
--        return len(locate_file_contains("sane.h", '/usr/include', 'extern SANE_Status sane_init')) > 0
-+        return len(locate_file_contains("sane.h", '${LOCALBASE}/include', 'extern SANE_Status sane_init')) > 0
+-        return len(locate_file_contains("sane.h", '/usr/include', 'extern SANE_Status sane_init'))
++        return len(locate_file_contains("sane.h", '${LOCALBASE}/include', 'extern SANE_Status sane_init'))
+ 
  
      def check_xsane(self):
-         if os.getenv('DISPLAY'):
-@@ -683,7 +683,7 @@ class CoreInstall(object):
+@@ -984,9 +984,8 @@ class CoreInstall(object):
+ 
+ 
+     def check_dbus(self):
+-        log.debug("Checking for dbus running and header files present (dbus-devel)...")
+-        return check_ps(['dbus-daemon'])  and \
+-            len(locate_file_contains("dbus-message.h", '/usr/include', 'dbus_message_new_signal'))
++        log.debug("Checking for dbus header files present (dbus-devel)...")
++        return check_file("dbus-message.h", "${LOCALBASE}/include")
+ 
+ 
+     def check_cups_devel(self):
+@@ -1004,12 +1003,12 @@ class CoreInstall(object):
+ 
+ 
+     def check_cups_image(self):
+-      return check_file("raster.h", "/usr/include/cups")
++      return check_file("raster.h", "${LOCALBASE}/include/cups")
+ 
  
      def check_hplip(self):
          log.debug("Checking for HPLIP...")
--        return check_ps(['hpiod', 'hpssd']) and locate_files('hplip.conf', '/etc/hp')
-+        return check_ps(['hpiod', 'hpssd']) and locate_files('hplip.conf', '${SYSCONFDIR}/hp')
+-        return locate_files('hplip.conf', '/etc/hp')
++        return locate_files('hplip.conf', '${SYSCONFDIR}/hp')
+ 
  
      def check_hpssd(self):
-         log.debug("Checking for hpssd...")
+@@ -1034,14 +1033,14 @@ class CoreInstall(object):
+     def check_cupsddk(self):
+         log.debug("Checking for cups-ddk...")
+         # TODO: Compute these paths some way or another...
+-        #return check_tool("/usr/lib/cups/driver/drv list") and os.path.exists("/usr/share/cupsddk/include/media.defs")
+-        return (check_file('drv', "/usr/lib/cups/driver") or check_file('drv', "/usr/lib64/cups/driver")) and \
+-            check_file('media.defs', "/usr/share/cupsddk/include")
++        #return check_tool("${LOCALBASE}/libexec/cups/driver/drv list") and os.path.exists("/usr/share/cupsddk/include/media.defs")
++        return (check_file('drv', "${LOCALBASE}/libexec/cups/driver") or check_file('drv', "/usr/lib64/cups/driver")) and \
++            check_file('media.defs', "${LOCALBASE}/share/cupsddk/include")
+ 
+ 
+     def check_policykit(self):
+         log.debug("Checking for PolicyKit...")
+-        return check_file('PolicyKit.conf', "/etc/PolicyKit") and check_file('org.gnome.PolicyKit.AuthorizationManager.service', "/usr/share/dbus-1/services")
++        return check_file('PolicyKit.conf', "${SYSCONFDIR}/PolicyKit") and check_file('org.gnome.PolicyKit.AuthorizationManager.service', "${LOCALBASE}/share/dbus-1/services")
+ 
+ 
+     def check_pkg_mgr(self):
+@@ -1220,7 +1219,7 @@ class CoreInstall(object):
+             cmd = self.su_sudo() % '/etc/init.d/cupsys restart'
+ 
+         else:
+-            cmd = self.su_sudo() % 'killall -HUP cupsd'
++            cmd = self.su_sudo() % 'pkill -HUP cupsd'
+ 
+         self.run(cmd)
+ 
+@@ -1512,7 +1511,7 @@ class CoreInstall(object):
+     def pre_build(self):
+         cmds = []
+         if self.get_distro_ver_data('fix_ppd_symlink', False):
+-            cmds.append(self.su_sudo() % 'python ./installer/fix_symlink.py')
++            cmds.append(self.su_sudo() % '${MODPY_BIN} ./installer/fix_symlink.py')
+ 
+         return cmds
+ 
+@@ -1681,8 +1680,8 @@ class CoreInstall(object):
+         url = "http://hplip.sf.net/plugin.conf"
+         home = sys_conf.get('dirs', 'home')
+ 
+-        if os.path.exists('/etc/hp/plugin.conf'):
+-            url = "file:///etc/hp/plugin.conf"
++        if os.path.exists('${SYSCONFDIR}/hp/plugin.conf'):
++            url = "file:///${SYSCONFDIR}/hp/plugin.conf"
+ 
+         elif os.path.exists(os.path.join(home, 'plugin.conf')):
+             url = "file://" + os.path.join(home, 'plugin.conf')

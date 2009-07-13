@@ -1,0 +1,30 @@
+$OpenBSD: patch-ui4_devmgr5_py,v 1.1 2009/07/13 08:14:29 ajacoutot Exp $
+--- ui4/devmgr5.py.orig	Thu Jun 25 21:05:46 2009
++++ ui4/devmgr5.py	Thu Jul  2 18:37:04 2009
+@@ -987,7 +987,7 @@ class DevMgr5(QMainWindow,  Ui_MainWindow):
+                     return
+ 
+                 hplip_conf = ConfigParser.ConfigParser()
+-                fp = open("/etc/hp/hplip.conf", "r")
++                fp = open("${SYSCONFDIR}/hp/hplip.conf", "r")
+                 hplip_conf.readfp(fp)
+                 fp.close()
+ 
+@@ -2032,7 +2032,7 @@ class DevMgr5(QMainWindow,  Ui_MainWindow):
+         if utils.which('hp-setup'):
+             cmd = 'hp-setup --gui'
+         else:
+-            cmd = 'python ./setup.py --gui'
++            cmd = '${MODPY_BIN} ./setup.py --gui'
+ 
+         log.debug(cmd)
+         utils.run(cmd, log_output=True, password_func=None, timeout=1)
+@@ -2044,7 +2044,7 @@ class DevMgr5(QMainWindow,  Ui_MainWindow):
+         if utils.which('hp-setup'):
+             cmd = 'hp-setup --gui --remove'
+         else:
+-            cmd = 'python ./setup.py --gui --remove'
++            cmd = '${MODPY_BIN} ./setup.py --gui --remove'
+ 
+         if self.cur_device_uri is not None:
+             cmd += ' --device=%s' % self.cur_device_uri

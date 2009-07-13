@@ -1,16 +1,25 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/23 18:05:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/07/13 08:14:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	HP Unix imaging and printing
 COMMENT-hpijs=	HP Inkjet driver for ghostscript
-COMMENT-docs=	html documentation for HPLIP
+COMMENT-hpcups=	HP native CUPS driver
+COMMENT-libs=	HPLIP backend libraries
+COMMENT-gui=	HPLIP graphical tools
 
-V=		2.7.12
+V=		3.9.6b
 DISTNAME=	hplip-${V}
-PKGNAME-main=	${DISTNAME}p4
-PKGNAME-hpijs=	hpijs-${V}p3
-PKGNAME-docs=	hplip-docs-${V}p2
+
+PKGNAME-main=	${DISTNAME}
+PKGNAME-hpijs=	hpijs-${V}
+PKGNAME-hpcups=	hpcups-${V}
+PKGNAME-libs=	hplip-libs-${V}
+PKGNAME-gui=	hplip-gui-${V}
+
+SHARED_LIBS +=  hpmud		1.0 # .0.5
+SHARED_LIBS +=  hpip		1.0 # .0.1
+SHARED_LIBS +=  sane-hpaio	0.0 # .1.0
 
 SHARED_LIBS+=	hpmud		0.0	# .0.0
 SHARED_LIBS+=	hpip		0.0	# .0.1
@@ -27,76 +36,113 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=hplip/}
 
-MULTI_PACKAGES=	-main -hpijs -docs
+MULTI_PACKAGES=	-main -hpijs -hpcups -libs -gui
 
 MODPY_RUNDEP=	No
 
-WANTLIB += avahi-client avahi-common c crypto dbus-1 exif gphoto2
-WANTLIB += gphoto2_port jpeg ltdl m pthread tiff usb z
+WANTLIB += crypto m pthread
 
-LIB_DEPENDS=	sane.>=1::graphics/sane-backends \
-		netsnmp.>=7::net/net-snmp \
-		cups.>=3::print/cups
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += avahi-client avahi-common c crypto dbus-1 exif gphoto2
+WANTLIB-main += gphoto2_port jpeg ltdl netsnmp tiff usb z
 
 LIB_DEPENDS-main=${LIB_DEPENDS} \
-		hpip,hpmud::${BASE_PKGPATH},-hpijs
+		sane.>=1::graphics/sane-backends \
+		cups.>=3::print/cups \
+		hpip,hpmud::print/hplip,-libs
 RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		::print/py-reportlab/reportlab \
-		::x11/py-qt3 \
+		::x11/dbus-python \
+		::devel/py-notify \
+		:hpijs-*|hpcups-*:print/hplip,-hpcups
+
+WANTLIB-hpijs += ${WANTLIB}
+WANTLIB-hpijs += c jpeg netsnmp stdc++ usb
+LIB_DEPENDS-hpijs= hpip,hpmud::print/hplip,-libs \
+		dbus-1.>=7::x11/dbus
+RUN_DEPENDS-hpijs= ::print/foomatic-filters
+
+WANTLIB-hpcups += ${WANTLIB}
+WANTLIB-hpcups += c jpeg netsnmp stdc++ usb
+LIB_DEPENDS-hpcups= hpip,hpmud::print/hplip,-libs \
+		dbus-1.>=7::x11/dbus \
+		cups.>=3,cupsimage::print/cups
+RUN_DEPENDS-hpcups= ::print/foomatic-filters
+
+LIB_DEPENDS-libs= netsnmp.>=7::net/net-snmp \
+		usb.>=9::devel/libusb
+
+WANTLIB-gui +=	# empty
+RUN_DEPENDS-gui= ::x11/py-qt4 \
+		::print/hplip,-main \
 		:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS-gui= # empty
 
-WANTLIB-hpijs=	${WANTLIB} stdc++
-RUN_DEPENDS-hpijs=::print/foomatic-filters
+MODULES=	devel/gettext \
+		lang/python
 
-WANTLIB-docs=
-LIB_DEPENDS-docs=
-RUN_DEPENDS-docs=
-PKG_ARCH-docs=	*
-
-MODULES=	devel/gettext lang/python
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
+FAKE_FLAGS=	hplip_confdir=${PREFIX}/share/examples/hplip/hp \
+		hplip_statedir=${PREFIX}/share/examples/hplip/db
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
-		--with-hpppddir=${LOCALBASE}/share/foomatic/db/source/PPD/HP \
-		--with-cupsbackenddir=${LOCALBASE}/libexec/cups/backend \
-		--with-icondir=${LOCALBASE}/share/applications \
+		--with-hpppddir=${PREFIX}/share/foomatic/db/source/PPD/HP \
+		--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
+		--with-cupsfilterdir=${PREFIX}/libexec/cups/filter \
+		--with-icondir=${PREFIX}/share/applications \
+		--with-systraydir=${PREFIX}/share/examples/hplip/xdg/autostart \
+		--with-drvdir=${PREFIX}/share/cups/drv/hp \
 		--with-docdir=${PREFIX}/share/doc/hplip \
 		--disable-dependency-tracking \
 		--disable-pp-build \
+		--disable-policykit \
+		--disable-qt3 \
+		--enable-qt4 \
+		--enable-doc-build \
+		--enable-hpijs-install \
+		--enable-hpcups-install \
 		--enable-gui-build \
+		--enable-network-build \
+		--enable-scan-build \
+		--enable-fax-build \
+		--enable-dbus-build \
+		--enable-foomatic-rip-hplip-install \
 		--enable-foomatic-ppd-install \
-		--disable-foomatic-xml-install
+		--enable-foomatic-drv-install
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		am_cv_pathless_PYTHON=python${MODPY_VERSION}
-
-post-extract:
-	@find ${WRKSRC} -type d -name CVS -exec rm -rf {} \; 2> /dev/null
+		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 pre-configure:
 	@find ${WRKSRC} -name \*.py | \
 		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g'
-	${SUBST_CMD} ${WRKSRC}/prnt/hpijs/globals.cpp \
-		${WRKSRC}/base/g.py \
-		${WRKSRC}/base/service.py \
-		${WRKSRC}/installer/core_install.py \
-		${WRKSRC}/installer/dcheck.py \
-		${WRKSRC}/fax/backend/hpfax.py \
-		${WRKSRC}/hpssd.py \
+	${SUBST_CMD} ${WRKSRC}/prnt/cups.py \
+		${WRKSRC}/prnt/hpijs/hpcups.cpp \
+		${WRKSRC}/prnt/hpijs/hpcupsfax.cpp \
+		${WRKSRC}/prnt/hpijs/foomatic-rip-hplip \
+		${WRKSRC}/prnt/hpijs/hpijs.cpp \
+		${WRKSRC}/prnt/hpijs/globals.cpp \
+		${WRKSRC}/doc/troubleshooting.html \
 		${WRKSRC}/check.py \
-		${WRKSRC}/doc/release_notes.html \
-		${WRKSRC}/doc/tech_docs/man_pages/hpssd.html
-
-post-install:
-	@ln -s ${TRUEPREFIX}/share/hplip/hpssd.py ${PREFIX}/sbin/hpssd
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/hplip
-	${INSTALL_DATA} ${WRKSRC}/hplip.conf \
-		${PREFIX}/share/examples/hplip
-	${INSTALL_DATA_DIR} ${PREFIX}/share/hplip/data/images/distros
-	${INSTALL_DATA} ${WRKSRC}/data/images/distros/*.png \
-		${PREFIX}/share/hplip/data/images/distros
+		${WRKSRC}/ui4/devmgr5.py \
+		${WRKSRC}/fax/backend/hpfax.py \
+		${WRKSRC}/base/codes.py \
+		${WRKSRC}/base/g.py \
+		${WRKSRC}/prnt/cups.py \
+		${WRKSRC}/installer/core_install.py \
+		${WRKSRC}/doc/upgrading.html \
+		${WRKSRC}/doc/uninstalling.html \
+		${WRKSRC}/fax/coverpages.py \
+		${WRKSRC}/base/pkit.py \
+		${WRKSRC}/prnt/hpijs/foomatic-rip-hplip \
+		${WRKSRC}/installer/dcheck.py \
+		${WRKSRC}/base/magic.py \
+		${WRKSRC}/base/utils.py \
+		${WRKSRC}/scan.py \
+		${WRKSRC}/ui4/nodevicesdialog.py \
+		${WRKSRC}/ui/devmgr4.py \
+		${WRKSRC}/ui/nodevicesform.py
 
 .include <bsd.port.mk>

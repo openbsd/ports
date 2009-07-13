@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_upgrading_html,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
+--- doc/upgrading.html.orig	Thu Jul  2 17:27:36 2009
++++ doc/upgrading.html	Thu Jul  2 17:27:51 2009
+@@ -17,7 +17,7 @@
+ 
+ <h3 class="showhide_heading" id="Startup">Upgrading HPLIP</h3><br>Upgrading
+ HPLIP is done by first removing the current installed version of HPLIP
+-installed and then installing the newer version of HPLIP.<br><br>Remove HPLIP by either running "make uninstall" in the HPLIP source directory or by running "rm -rf /usr/share/hplip".<br><br>If you have a preinstalled version of HPLIP you can uninstall it by using the package manager that your system uses.<br><br>Install
++installed and then installing the newer version of HPLIP.<br><br>Remove HPLIP by either running "make uninstall" in the HPLIP source directory or by running "rm -rf ${PREFIX}/share/hplip".<br><br>If you have a preinstalled version of HPLIP you can uninstall it by using the package manager that your system uses.<br><br>Install
+ the newer version of HPLIP by downloading and then running the
+ automatic installer or by using the manual steps. More information on downloading and
+ installing HPLIP is available on our <a href="http://hplip.sf.net">website</a>.<br></div>
