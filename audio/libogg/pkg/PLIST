@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/12/03 21:14:22 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/07/13 15:47:55 naddy Exp $
 include/ogg/
 include/ogg/config_types.h
 include/ogg/ogg.h
@@ -75,11 +75,10 @@ share/doc/libogg/ogg/oggpack_writetrunc.html
 share/doc/libogg/ogg/overview.html
 share/doc/libogg/ogg/reference.html
 share/doc/libogg/ogg/style.css
-share/doc/libogg/ogg/vorbis_comment.html
-share/doc/libogg/ogg/vorbis_info.html
 share/doc/libogg/oggstream.html
 share/doc/libogg/rfc3533.txt
-share/doc/libogg/rfc3534.txt
+share/doc/libogg/rfc5334.txt
+share/doc/libogg/skeleton.html
 share/doc/libogg/stream.png
 share/doc/libogg/vorbisword2.png
 share/doc/libogg/white-ogg.png

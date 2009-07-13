@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_libogg_Makefile_in,v 1.1 2005/12/03 21:14:22 naddy Exp $
---- doc/libogg/Makefile.in.orig	Mon Nov 28 05:26:30 2005
-+++ doc/libogg/Makefile.in	Fri Dec  2 16:18:24 2005
-@@ -168,7 +168,7 @@ sbindir = @sbindir@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-doc_libogg_Makefile_in,v 1.2 2009/07/13 15:47:55 naddy Exp $
+--- doc/libogg/Makefile.in.orig	Sat Jul  4 23:04:34 2009
++++ doc/libogg/Makefile.in	Sat Jul  4 23:05:05 2009
+@@ -144,7 +144,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/ogg
 +docdir = $(datadir)/doc/$(PACKAGE)/ogg
- doc_DATA = bitpacking.html datastructures.html decoding.html encoding.html\
- 	general.html index.html ogg_packet.html ogg_packet_clear.html\
- 	ogg_page.html ogg_page_bos.html ogg_page_checksum_set.html\
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2005/12/03 21:14:22 naddy Exp $
---- configure.orig	Mon Nov 28 05:26:32 2005
-+++ configure	Fri Dec  2 16:17:30 2005
-@@ -19088,7 +19088,7 @@ if test -z "$GCC"; then
+$OpenBSD: patch-configure,v 1.8 2009/07/13 15:47:55 naddy Exp $
+--- configure.orig	Wed Jun 24 17:27:08 2009
++++ configure	Sat Jul  4 23:05:25 2009
+@@ -19928,7 +19928,7 @@ if test -z "$GCC"; then
  		;;
          *)
                  DEBUG="-g"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.7 2005/12/03 21:14:22 naddy Exp $
                  PROFILE="-g -p"
  		;;
          esac
-@@ -19111,8 +19111,8 @@ else
+@@ -20002,8 +20002,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  		;;
          *)
                  DEBUG="-g -Wall -fsigned-char"
