@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1 2009/07/13 15:48:55 naddy Exp $
+--- test/Makefile.in.orig	Mon Jul  6 17:54:48 2009
++++ test/Makefile.in	Mon Jul  6 17:55:08 2009
+@@ -204,7 +204,7 @@ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign
+ INCLUDES = -I$(top_srcdir)/include @OGG_CFLAGS@
+ test_SOURCES = util.c util.h write_read.c write_read.h test.c
+-test_LDADD = ../lib/libvorbisenc.la ../lib/libvorbis.la @OGG_LIBS@
++test_LDADD = ../lib/libvorbisenc.la ../lib/libvorbis.la @OGG_LIBS@ -lm
+ all: all-am
+ 
+ .SUFFIXES:

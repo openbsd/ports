@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.6 2007/07/30 15:29:36 naddy Exp $
---- lib/Makefile.in.orig	Sun Jul 29 17:16:42 2007
-+++ lib/Makefile.in	Sun Jul 29 17:19:08 2007
-@@ -62,13 +62,13 @@ libvorbis_la_OBJECTS = $(am_libvorbis_la_OBJECTS)
+$OpenBSD: patch-lib_Makefile_in,v 1.7 2009/07/13 15:48:55 naddy Exp $
+--- lib/Makefile.in.orig	Mon Jul  6 17:48:03 2009
++++ lib/Makefile.in	Mon Jul  6 17:50:16 2009
+@@ -64,13 +64,13 @@ libvorbis_la_OBJECTS = $(am_libvorbis_la_OBJECTS)
  libvorbis_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libvorbis_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -17,31 +17,31 @@ $OpenBSD: patch-lib_Makefile_in,v 1.6 2007/07/30 15:29:36 naddy Exp $
  am_libvorbisfile_la_OBJECTS = vorbisfile.lo
  libvorbisfile_la_OBJECTS = $(am_libvorbisfile_la_OBJECTS)
  libvorbisfile_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
-@@ -155,7 +155,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+@@ -169,7 +169,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@
 +LIBS = 
  LIBTOOL = @LIBTOOL@
+ LIBTOOL_DEPS = @LIBTOOL_DEPS@
  LN_S = @LN_S@
- LTLIBOBJS = @LTLIBOBJS@
-@@ -260,14 +260,14 @@ libvorbis_la_SOURCES = mdct.c smallft.c block.c envelo
+@@ -276,14 +276,14 @@ libvorbis_la_SOURCES = mdct.c smallft.c block.c envelo
  			registry.h scales.h window.h lookup.h lookup_data.h\
  			codec_internal.h backends.h bitrate.h 
  
 -libvorbis_la_LDFLAGS = -no-undefined -version-info @V_LIB_CURRENT@:@V_LIB_REVISION@:@V_LIB_AGE@
--libvorbis_la_LIBADD = @OGG_LIBS@ @VORBIS_LIBS@
+-libvorbis_la_LIBADD = @VORBIS_LIBS@ @OGG_LIBS@
 +libvorbis_la_LDFLAGS = -version-info @V_LIB_CURRENT@:@V_LIB_REVISION@:@V_LIB_AGE@
 +libvorbis_la_LIBADD = 
  libvorbisfile_la_SOURCES = vorbisfile.c
 -libvorbisfile_la_LDFLAGS = -no-undefined -version-info @VF_LIB_CURRENT@:@VF_LIB_REVISION@:@VF_LIB_AGE@
--libvorbisfile_la_LIBADD = libvorbis.la
+-libvorbisfile_la_LIBADD = libvorbis.la @OGG_LIBS@
 +libvorbisfile_la_LDFLAGS = -version-info @VF_LIB_CURRENT@:@VF_LIB_REVISION@:@VF_LIB_AGE@
 +libvorbisfile_la_LIBADD = 
  libvorbisenc_la_SOURCES = vorbisenc.c 
 -libvorbisenc_la_LDFLAGS = -no-undefined -version-info @VE_LIB_CURRENT@:@VE_LIB_REVISION@:@VE_LIB_AGE@
--libvorbisenc_la_LIBADD = libvorbis.la
+-libvorbisenc_la_LIBADD = libvorbis.la @OGG_LIBS@
 +libvorbisenc_la_LDFLAGS = -version-info @VE_LIB_CURRENT@:@VE_LIB_REVISION@:@VE_LIB_AGE@
 +libvorbisenc_la_LIBADD = 
  CLEANFILES = $(EXTRA_PROGRAMS)

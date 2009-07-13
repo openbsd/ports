@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/02/07 16:07:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/07/13 15:48:55 naddy Exp $
 include/vorbis/
 include/vorbis/codec.h
 include/vorbis/vorbisenc.h
@@ -16,31 +16,21 @@ lib/pkgconfig/vorbisfile.pc
 share/aclocal/
 share/aclocal/vorbis.m4
 share/doc/libvorbis/
-share/doc/libvorbis/Vorbis_I_spec.html
-share/doc/libvorbis/Vorbis_I_spec.pdf
-share/doc/libvorbis/components.png
-share/doc/libvorbis/draft-ietf-avt-rtp-vorbis-06.txt
-share/doc/libvorbis/draft-ietf-avt-rtp-vorbis-06.xml
 share/doc/libvorbis/eightphase.png
 share/doc/libvorbis/evenlsp.png
-share/doc/libvorbis/floor1-1.png
-share/doc/libvorbis/floor1-2.png
-share/doc/libvorbis/floor1-3.png
-share/doc/libvorbis/floor1-4.png
+share/doc/libvorbis/fish_xiph_org.png
 share/doc/libvorbis/floor1_inverse_dB_table.html
 share/doc/libvorbis/floorval.png
 share/doc/libvorbis/fourphase.png
 share/doc/libvorbis/framing.html
 share/doc/libvorbis/helper.html
-share/doc/libvorbis/hufftree-under.png
-share/doc/libvorbis/hufftree.png
 share/doc/libvorbis/index.html
 share/doc/libvorbis/lspmap.png
 share/doc/libvorbis/oddlsp.png
 share/doc/libvorbis/oggstream.html
 share/doc/libvorbis/programming.html
-share/doc/libvorbis/residue-pack.png
-share/doc/libvorbis/residue2.png
+share/doc/libvorbis/rfc5215.txt
+share/doc/libvorbis/rfc5215.xml
 share/doc/libvorbis/squarepolar.png
 share/doc/libvorbis/stereo.html
 share/doc/libvorbis/stream.png
@@ -127,8 +117,5 @@ share/doc/libvorbis/vorbisfile/vorbis_info.html
 share/doc/libvorbis/vorbisfile/vorbisfile_example_c.html
 share/doc/libvorbis/vorbisword2.png
 share/doc/libvorbis/wait.png
-share/doc/libvorbis/white-ogg.png
 share/doc/libvorbis/white-xifish.png
-share/doc/libvorbis/window1.png
-share/doc/libvorbis/window2.png
 %%SHARED%%
