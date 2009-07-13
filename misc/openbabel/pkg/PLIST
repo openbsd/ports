@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/08/20 16:08:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/07/13 09:40:03 ajacoutot Exp $
 %%SHARED%%
 @bin bin/babel
 @bin bin/obchiral
@@ -13,8 +13,8 @@
 @bin bin/obrotamer
 @bin bin/obrotate
 @bin bin/roundtrip
-include/inchi/
-include/inchi/inchi_api.h
+include/inchi102/
+include/inchi102/inchi_api.h
 include/openbabel-2.0/
 include/openbabel-2.0/openbabel/
 include/openbabel-2.0/openbabel/alias.h
@@ -177,6 +177,8 @@ lib/openbabel/${V}/mol2format.a
 lib/openbabel/${V}/mol2format.la
 lib/openbabel/${V}/moldenformat.a
 lib/openbabel/${V}/moldenformat.la
+lib/openbabel/${V}/molproformat.a
+lib/openbabel/${V}/molproformat.la
 lib/openbabel/${V}/molreportformat.a
 lib/openbabel/${V}/molreportformat.la
 lib/openbabel/${V}/mopacformat.a
@@ -193,6 +195,8 @@ lib/openbabel/${V}/nwchemformat.a
 lib/openbabel/${V}/nwchemformat.la
 lib/openbabel/${V}/opendxformat.a
 lib/openbabel/${V}/opendxformat.la
+lib/openbabel/${V}/outformat.a
+lib/openbabel/${V}/outformat.la
 lib/openbabel/${V}/pcmodelformat.a
 lib/openbabel/${V}/pcmodelformat.la
 lib/openbabel/${V}/pdbformat.a
@@ -227,6 +231,8 @@ lib/openbabel/${V}/turbomoleformat.a
 lib/openbabel/${V}/turbomoleformat.la
 lib/openbabel/${V}/unichemformat.a
 lib/openbabel/${V}/unichemformat.la
+lib/openbabel/${V}/vaspformat.a
+lib/openbabel/${V}/vaspformat.la
 lib/openbabel/${V}/viewmolformat.a
 lib/openbabel/${V}/viewmolformat.la
 lib/openbabel/${V}/xedformat.a
@@ -258,6 +264,7 @@ lib/pkgconfig/openbabel-2.0.pc
 @man man/man1/roundtrip.1
 share/openbabel/
 share/openbabel/${V}/
+share/openbabel/${V}/MACCS.txt
 share/openbabel/${V}/SMARTS_InteLigand.txt
 share/openbabel/${V}/UFF.prm
 share/openbabel/${V}/aromatic.txt

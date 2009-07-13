@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2008/08/20 16:08:11 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2009/07/13 09:40:02 ajacoutot Exp $
 @lib lib/libopenbabel.so.${LIBopenbabel_VERSION}
 lib/openbabel/${V}/APIInterface.so
 lib/openbabel/${V}/CSRformat.so
@@ -50,6 +50,7 @@ lib/openbabel/${V}/mmcifformat.so
 lib/openbabel/${V}/mmodformat.so
 lib/openbabel/${V}/mol2format.so
 lib/openbabel/${V}/moldenformat.so
+lib/openbabel/${V}/molproformat.so
 lib/openbabel/${V}/molreportformat.so
 lib/openbabel/${V}/mopacformat.so
 lib/openbabel/${V}/mpdformat.so
@@ -58,6 +59,7 @@ lib/openbabel/${V}/msiformat.so
 lib/openbabel/${V}/msmsformat.so
 lib/openbabel/${V}/nwchemformat.so
 lib/openbabel/${V}/opendxformat.so
+lib/openbabel/${V}/outformat.so
 lib/openbabel/${V}/pcmodelformat.so
 lib/openbabel/${V}/pdbformat.so
 lib/openbabel/${V}/pngformat.so
@@ -75,6 +77,7 @@ lib/openbabel/${V}/tinkerformat.so
 lib/openbabel/${V}/titleformat.so
 lib/openbabel/${V}/turbomoleformat.so
 lib/openbabel/${V}/unichemformat.so
+lib/openbabel/${V}/vaspformat.so
 lib/openbabel/${V}/viewmolformat.so
 lib/openbabel/${V}/xedformat.so
 lib/openbabel/${V}/xmlformat.so

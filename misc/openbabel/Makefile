@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2008/09/01 08:51:03 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2009/07/13 09:40:02 ajacoutot Exp $
 
 COMMENT=	chemistry file translation program
 
-V=		2.2.0
+V=		2.2.2
 DISTNAME=	openbabel-${V}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc
 
-SHARED_LIBS+=	openbabel	4.0	# .3.0
+SUBST_VARS=	V
+
+SHARED_LIBS+=	openbabel	5.0	# .3.0
 
 HOMEPAGE=	http://openbabel.sourceforge.net/
 
@@ -21,9 +22,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openbabel/}
 
-WANTLIB=	c iconv m stdc++ z
+WANTLIB=	c m stdc++ z
 
-SUBST_VARS=	V
+MODULES=	converters/libiconv
 
 BUILD_DEPENDS=	::devel/boost
 LIB_DEPENDS=	xml2.>=9::textproc/libxml
