@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/08/23 16:33:40 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2009/07/14 08:42:34 simon Exp $
 
 COMMENT =	documentation generator for postgresql databases
 
-DISTNAME =	postgresql_autodoc-1.31
+DISTNAME =	postgresql_autodoc-1.40
 CATEGORIES =	databases
 
 HOMEPAGE =	http://www.rbt.ca/autodoc/
@@ -24,15 +24,5 @@ WRKDIST =	${WRKDIR}/postgresql_autodoc
 
 PKG_ARCH =	*
 NO_REGRESS =	Yes
-
-do-build:
-	sed -e 's,@@TEMPLATE-DIR@@,${LOCALBASE}/share/postgresql_autodoc,' \
-		-e 's,/usr/bin/env perl,/usr/bin/perl,' \
-		${WRKSRC}/postgresql_autodoc.pl > ${WRKSRC}/postgresql_autodoc
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/postgresql_autodoc ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/postgresql_autodoc
-	${INSTALL_DATA} ${WRKSRC}/*.tmpl ${PREFIX}/share/postgresql_autodoc
 
 .include <bsd.port.mk>
