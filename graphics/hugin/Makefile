@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/21 15:54:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/07/14 10:28:25 sthen Exp $
 
 COMMENT =		panorama image stitcher
 
-DISTNAME =		hugin-0.8.0_rc4
+DISTNAME =		hugin-0.8.0_rc5
 PKGNAME =		${DISTNAME:S/_//}
 WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
