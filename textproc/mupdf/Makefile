@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/07/12 19:40:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2009/07/14 15:38:46 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-DISTNAME =	fitz-0.4
-PKGNAME =	${DISTNAME:S/fitz/mupdf/}p0
+PKGNAME =	mupdf-0.4p1
+DISTNAME =	mupdf-2009-07-07-source
 
 CATEGORIES =	textproc x11
 
@@ -17,14 +17,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	X11 Xext c freetype m z
+WANTLIB =	X11 Xext c freetype m pthread z
 
-# from darcs checkout
-MASTER_SITES =	http://spacehopper.org/mirrors/
+MASTER_SITES =	http://ccxvii.net/mupdf/download/
 
 BUILD_DEPENDS =	::devel/jam
 
-LIB_DEPENDS =	jasper::graphics/jasper \
+LIB_DEPENDS =	openjpeg::graphics/openjpeg \
 		jpeg.>=62::graphics/jpeg
 
 USE_X11 =		Yes
@@ -33,16 +32,16 @@ NO_REGRESS =		Yes
 
 JAMDEBUG =	-d x	# display command-lines
 JAMDEBUG +=	-q	# die quickly on build failure
-MAKE_ENV +=		CC=${CC} CXX=${CXX}
+MAKE_ENV +=	CC=${CC} CXX=${CXX}
 
 JAMFLAGS = \
 	-sALL_LOCATE_TARGET=${WRKBUILD} \
 	-sBUILD= \
-	-sHAVE_JASPER=yes \
+	-sHAVE_OPENJPEG=yes \
 	-sOPTIM="${CFLAGS}" \
 	-sOS=LINUX \
-	-sTHIRDPARTYINC="`freetype-config --cflags` -I${LOCALBASE}/include" \
-	-sTHIRDPARTYLIB="`freetype-config --libs` -L${LOCALBASE}/lib"
+	-sCXXFLAGS="${CXXFLAGS} `freetype-config --cflags` -I${LOCALBASE}/include -I${X11BASE}/include" \
+	-sLDFLAGS="${LDFLAGS} `freetype-config --libs` -L${LOCALBASE}/lib"
 
 FLAVORS +=	no_cjk
 FLAVOR ?=
@@ -55,6 +54,7 @@ SEPARATE_BUILD =	concurrent
 
 pre-configure:
 	cp ${FILESDIR}/fontres.c ${WRKSRC}/
+	${SUBST_CMD} ${WRKSRC}/Jamrules
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam ${JAMDEBUG} ${JAMFLAGS}

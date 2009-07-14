@@ -1,0 +1,14 @@
+$OpenBSD: patch-Jamrules,v 1.1 2009/07/14 15:38:46 sthen Exp $
+--- Jamrules.orig	Mon Jul 13 23:15:44 2009
++++ Jamrules	Mon Jul 13 23:16:05 2009
+@@ -53,8 +53,8 @@ if $(OS) = LINUX
+ 
+     BUILD_X11APP = true ;
+ 
+-    CCFLAGS = -Wall -std=gnu99 -I/usr/include/freetype2 ;
+-    LINKFLAGS = -L/usr/X11R6/lib ;
++    CCFLAGS = -Wall -std=gnu99 $(CXXFLAGS) ;
++    LINKFLAGS = $(LDFLAGS) ;
+     LINKLIBS = -lfreetype -ljpeg -lz -lm ;
+     APPLINKLIBS = -lX11 -lXext -lpthread ;
+ 
