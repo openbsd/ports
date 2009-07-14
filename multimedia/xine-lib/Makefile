@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2009/04/04 00:28:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2009/07/14 09:10:05 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	multimedia decoding library
 
 V=		1.1.16.3
 DISTNAME=	xine-lib-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
