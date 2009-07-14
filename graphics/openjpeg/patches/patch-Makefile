@@ -1,16 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.3 2007/12/03 00:36:44 todd Exp $
---- Makefile.orig	Mon Jun  4 08:27:25 2007
-+++ Makefile	Sun Dec  2 18:03:43 2007
-@@ -1,7 +1,7 @@
- # Linux makefile for OpenJPEG
- 
--VER_MAJOR = 2
--VER_MINOR = 1.2.0
-+VER_MAJOR ?= 2
-+VER_MINOR ?= 1.2.0
- 
- SRCS = ./libopenjpeg/bio.c ./libopenjpeg/cio.c ./libopenjpeg/dwt.c ./libopenjpeg/event.c ./libopenjpeg/image.c ./libopenjpeg/j2k.c ./libopenjpeg/j2k_lib.c ./libopenjpeg/jp2.c ./libopenjpeg/jpt.c ./libopenjpeg/mct.c ./libopenjpeg/mqc.c ./libopenjpeg/openjpeg.c ./libopenjpeg/pi.c ./libopenjpeg/raw.c ./libopenjpeg/t1.c ./libopenjpeg/t2.c ./libopenjpeg/tcd.c ./libopenjpeg/tgt.c
- INCLS = ./libopenjpeg/bio.h ./libopenjpeg/cio.h ./libopenjpeg/dwt.h ./libopenjpeg/event.h ./libopenjpeg/fix.h ./libopenjpeg/image.h ./libopenjpeg/int.h ./libopenjpeg/j2k.h ./libopenjpeg/j2k_lib.h ./libopenjpeg/jp2.h ./libopenjpeg/jpt.h ./libopenjpeg/mct.h ./libopenjpeg/mqc.h ./libopenjpeg/openjpeg.h ./libopenjpeg/pi.h ./libopenjpeg/raw.h ./libopenjpeg/t1.h ./libopenjpeg/t2.h ./libopenjpeg/tcd.h ./libopenjpeg/tgt.h ./libopenjpeg/opj_includes.h
+$OpenBSD: patch-Makefile,v 1.4 2009/07/14 15:35:24 sthen Exp $
+--- Makefile.orig	Fri Dec 21 10:39:41 2007
++++ Makefile	Tue Jul 14 13:51:57 2009
 @@ -11,7 +11,7 @@ INCLUDE = -Ilibopenjpeg
  CC = gcc
  AR = ar
@@ -23,9 +13,9 @@ $OpenBSD: patch-Makefile,v 1.3 2007/12/03 00:36:44 todd Exp $
 @@ -19,14 +19,15 @@ INSTALL_INCLUDE = $(PREFIX)/include
  DOS2UNIX = dos2unix
  
- COMPILERFLAGS = -O3 -fPIC
+ COMPILERFLAGS = -Wall -O3 -ffast-math -std=c99 -fPIC
 -LIBRARIES = -lstdc++
-+LIBRARIES = 
++LIBRARIES =
  
  MODULES = $(SRCS:.c=.o)
 +SOMODULES = $(SRCS:.c=.so)
@@ -56,7 +46,7 @@ $OpenBSD: patch-Makefile,v 1.3 2007/12/03 00:36:44 todd Exp $
 -$(SHAREDLIB): $(MODULES)
 -	$(CC) -s -shared -Wl,-soname,$(LIBNAME) -o $@ $(MODULES) $(LIBRARIES)
 +$(SHAREDLIB): $(SOMODULES)
-+	$(CC) -s -shared -fPIC -o $@ $(SOMODULES) $(LIBRARIES)
++	$(CC) -shared -fPIC -o $@ $(SOMODULES) $(LIBRARIES)
  
  install: OpenJPEG
 -	install -d '$(DESTDIR)$(INSTALL_LIBDIR)' '$(DESTDIR)$(INSTALL_INCLUDE)'

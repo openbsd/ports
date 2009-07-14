@@ -1,0 +1,17 @@
+$OpenBSD: patch-libopenjpeg_opj_malloc_h,v 1.1 2009/07/14 15:35:24 sthen Exp $
+--- libopenjpeg/opj_malloc.h.orig	Tue Jul 14 13:59:21 2009
++++ libopenjpeg/opj_malloc.h	Tue Jul 14 16:16:08 2009
+@@ -75,11 +75,11 @@ Allocate memory aligned to a 16 byte boundry
+ #else /* Not WIN32 */
+ 	#if defined(__sun)
+ 			#define HAVE_MEMALIGN
+-		#elif defined(__GNUC__)
++		#elif defined(__GNUC__) && !defined(__OpenBSD__)
+ 			#define HAVE_MEMALIGN
+ 			#include <malloc.h>		
+ 		/* Linux x86_64 and OSX always align allocations to 16 bytes */
+-		#elif !defined(__amd64__) && !defined(__APPLE__)	
++		#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(__OpenBSD__)
+ 			/* FIXME: Yes, this is a big assumption */
+ 			#define HAVE_POSIX_MEMALIGN
+ 	#endif
