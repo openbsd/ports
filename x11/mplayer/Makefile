@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2009/07/13 19:35:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.152 2009/07/14 19:43:07 naddy Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -9,7 +9,7 @@ V=			1.0rc2
 N=			mplayer
 DISTNAME=		MPlayer-${V}
 DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p24
+PKGNAME=		${N}-${V}p25
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -51,6 +51,7 @@ LIB_DEPENDS=	png::graphics/png \
 		xvidcore::multimedia/xvidcore \
 		x264.>=3::multimedia/x264 \
 		faad.>=2::audio/faad \
+		dca.>=0::audio/libdca \
 		mp3lame:lame-*:audio/lame \
 		dv::multimedia/libdv
 
@@ -78,7 +79,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-faac \
 		--disable-select \
 		--enable-theora \
-		--disable-libdca \
+		--enable-libdca \
 		--enable-menu \
 		--enable-iconv \
 		--enable-cdparanoia \

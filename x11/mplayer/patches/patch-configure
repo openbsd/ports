@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.51 2009/05/05 11:40:08 sthen Exp $
---- configure.orig	Sun Oct  7 22:49:33 2007
-+++ configure	Sun Apr 19 13:55:04 2009
+$OpenBSD: patch-configure,v 1.52 2009/07/14 19:43:07 naddy Exp $
+--- configure.orig	Sun Oct  7 21:49:33 2007
++++ configure	Mon Jul 13 23:49:43 2009
 @@ -76,7 +76,7 @@ cc_check() {
  }
  
@@ -167,6 +167,20 @@ $OpenBSD: patch-configure,v 1.51 2009/05/05 11:40:08 sthen Exp $
  else
    _def_zlib='#undef HAVE_ZLIB'
    _libavdecoders=`echo $_libavdecoders | sed -e s/FLASHSV_DECODER// -e s/PNG_DECODER// -e s/ZMBV_DECODER// -e s/DXA_DECODER// `
+@@ -5986,11 +6016,11 @@ if test "$_libdca" = auto ; then
+ #include <dts.h>
+ int main(void) { dts_init (0); return 0; }
+ EOF
+-  cc_check -ldts $_ld_lm && _libdca=yes
++  cc_check -ldca $_ld_lm && _libdca=yes
+ fi
+ if test "$_libdca" = yes ; then
+   _def_libdca='#define USE_LIBDCA 1'
+-  _ld_extra="$_ld_extra -ldts"
++  _ld_extra="$_ld_extra -ldca"
+   _codecmodules="libdca $_codecmodules"
+ else
+   _def_libdca='#undef USE_LIBDCA'
 @@ -6207,7 +6237,7 @@ if test "$_real" = auto ; then
    _real=no
    _res_comment="dynamic loader support needed"
