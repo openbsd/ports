@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/07/13 15:47:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2009/07/14 15:45:21 naddy Exp $
 
 COMMENT=	Ogg bitstream library
 
@@ -21,5 +21,8 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 SEPARATE_BUILD=	simple
+
+# required for MAKE_JOBS > 1
+MAKE_FLAGS=	MKDIR_P="mkdir -p"
 
 .include <bsd.port.mk>
