@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/15 10:44:42 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/user_import/
+${DRUPAL_MODS}/user_import/LICENSE.txt
+${DRUPAL_MODS}/user_import/README.txt
+${DRUPAL_MODS}/user_import/sample.txt
+${DRUPAL_MODS}/user_import/supported/
+${DRUPAL_MODS}/user_import/supported/nodeprofile.inc
+${DRUPAL_MODS}/user_import/supported/profile.inc
+${DRUPAL_MODS}/user_import/supported/subscribed.inc
+${DRUPAL_MODS}/user_import/supported/user.inc
+${DRUPAL_MODS}/user_import/supported/user_import.inc
+${DRUPAL_MODS}/user_import/supported/watchdog.inc
+${DRUPAL_MODS}/user_import/tests/
+${DRUPAL_MODS}/user_import/tests/user_import.test
+${DRUPAL_MODS}/user_import/tests/user_import_basics.test
+${DRUPAL_MODS}/user_import/tests/user_import_nodeprofile.test
+${DRUPAL_MODS}/user_import/tests/user_import_profile.test
+${DRUPAL_MODS}/user_import/user_import.info
+${DRUPAL_MODS}/user_import/user_import.install
+${DRUPAL_MODS}/user_import/user_import.module
