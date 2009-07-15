@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/03 14:07:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/07/15 10:33:39 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}/views/
@@ -7,6 +7,7 @@ ${DRUPAL_MODS}/views/LICENSE.txt
 ${DRUPAL_MODS}/views/README.txt
 ${DRUPAL_MODS}/views/css/
 ${DRUPAL_MODS}/views/css/views-admin.css
+${DRUPAL_MODS}/views/css/views-list-rtl.css
 ${DRUPAL_MODS}/views/css/views-list.css
 ${DRUPAL_MODS}/views/css/views-tabs.css
 ${DRUPAL_MODS}/views/css/views.css
@@ -23,6 +24,7 @@ ${DRUPAL_MODS}/views/handlers/views_handler_argument_numeric.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_argument_string.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_field.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_field_boolean.inc
+${DRUPAL_MODS}/views/handlers/views_handler_field_counter.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_field_custom.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_field_date.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_field_markup.inc
@@ -34,6 +36,7 @@ ${DRUPAL_MODS}/views/handlers/views_handler_filter_boolean_operator.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_filter_boolean_operator_string.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_filter_date.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_filter_equality.inc
+${DRUPAL_MODS}/views/handlers/views_handler_filter_float.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_filter_in_operator.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_filter_many_to_one.inc
 ${DRUPAL_MODS}/views/handlers/views_handler_filter_numeric.inc
@@ -60,6 +63,7 @@ ${DRUPAL_MODS}/views/help/display-feed.html
 ${DRUPAL_MODS}/views/help/display-page.html
 ${DRUPAL_MODS}/views/help/display.html
 ${DRUPAL_MODS}/views/help/embed.html
+${DRUPAL_MODS}/views/help/example-author-block.html
 ${DRUPAL_MODS}/views/help/example-recent-stories.html
 ${DRUPAL_MODS}/views/help/example-user-feed.html
 ${DRUPAL_MODS}/views/help/example-users-by-role.html
@@ -148,12 +152,17 @@ ${DRUPAL_MODS}/views/js/tabs.js
 ${DRUPAL_MODS}/views/modules/
 ${DRUPAL_MODS}/views/modules/aggregator/
 ${DRUPAL_MODS}/views/modules/aggregator.views.inc
+${DRUPAL_MODS}/views/modules/aggregator/views_handler_argument_aggregator_category_cid.inc
 ${DRUPAL_MODS}/views/modules/aggregator/views_handler_argument_aggregator_fid.inc
+${DRUPAL_MODS}/views/modules/aggregator/views_handler_field_aggregator_category.inc
 ${DRUPAL_MODS}/views/modules/aggregator/views_handler_field_aggregator_title_link.inc
+${DRUPAL_MODS}/views/modules/aggregator/views_handler_filter_aggregator_category_cid.inc
 ${DRUPAL_MODS}/views/modules/aggregator/views_plugin_row_aggregator_rss.inc
 ${DRUPAL_MODS}/views/modules/book.views.inc
+${DRUPAL_MODS}/views/modules/book.views_convert.inc
 ${DRUPAL_MODS}/views/modules/comment/
 ${DRUPAL_MODS}/views/modules/comment.views.inc
+${DRUPAL_MODS}/views/modules/comment.views_convert.inc
 ${DRUPAL_MODS}/views/modules/comment.views_default.inc
 ${DRUPAL_MODS}/views/modules/comment/views_handler_argument_comment_user_uid.inc
 ${DRUPAL_MODS}/views/modules/comment/views_handler_field_comment.inc
@@ -162,6 +171,7 @@ ${DRUPAL_MODS}/views/modules/comment/views_handler_field_comment_link.inc
 ${DRUPAL_MODS}/views/modules/comment/views_handler_field_comment_link_delete.inc
 ${DRUPAL_MODS}/views/modules/comment/views_handler_field_comment_link_edit.inc
 ${DRUPAL_MODS}/views/modules/comment/views_handler_field_comment_link_reply.inc
+${DRUPAL_MODS}/views/modules/comment/views_handler_field_comment_node_link.inc
 ${DRUPAL_MODS}/views/modules/comment/views_handler_field_comment_username.inc
 ${DRUPAL_MODS}/views/modules/comment/views_handler_field_ncs_last_comment_name.inc
 ${DRUPAL_MODS}/views/modules/comment/views_handler_field_ncs_last_updated.inc
@@ -175,6 +185,22 @@ ${DRUPAL_MODS}/views/modules/comment/views_handler_sort_ncs_last_comment_name.in
 ${DRUPAL_MODS}/views/modules/comment/views_handler_sort_ncs_last_updated.inc
 ${DRUPAL_MODS}/views/modules/comment/views_plugin_row_comment_rss.inc
 ${DRUPAL_MODS}/views/modules/comment/views_plugin_row_comment_view.inc
+${DRUPAL_MODS}/views/modules/contact/
+${DRUPAL_MODS}/views/modules/contact.views.inc
+${DRUPAL_MODS}/views/modules/contact/views_handler_field_contact_link.inc
+${DRUPAL_MODS}/views/modules/filter/
+${DRUPAL_MODS}/views/modules/filter.views.inc
+${DRUPAL_MODS}/views/modules/filter/views_handler_field_filter_format_name.inc
+${DRUPAL_MODS}/views/modules/locale/
+${DRUPAL_MODS}/views/modules/locale.views.inc
+${DRUPAL_MODS}/views/modules/locale/views_handler_argument_locale_group.inc
+${DRUPAL_MODS}/views/modules/locale/views_handler_argument_locale_language.inc
+${DRUPAL_MODS}/views/modules/locale/views_handler_field_locale_group.inc
+${DRUPAL_MODS}/views/modules/locale/views_handler_field_locale_language.inc
+${DRUPAL_MODS}/views/modules/locale/views_handler_field_locale_link_edit.inc
+${DRUPAL_MODS}/views/modules/locale/views_handler_filter_locale_group.inc
+${DRUPAL_MODS}/views/modules/locale/views_handler_filter_locale_language.inc
+${DRUPAL_MODS}/views/modules/locale/views_handler_filter_locale_version.inc
 ${DRUPAL_MODS}/views/modules/node/
 ${DRUPAL_MODS}/views/modules/node.views.inc
 ${DRUPAL_MODS}/views/modules/node.views_convert.inc
@@ -193,6 +219,7 @@ ${DRUPAL_MODS}/views/modules/node/views_handler_field_node_revision_link_delete.
 ${DRUPAL_MODS}/views/modules/node/views_handler_field_node_revision_link_revert.inc
 ${DRUPAL_MODS}/views/modules/node/views_handler_field_node_type.inc
 ${DRUPAL_MODS}/views/modules/node/views_handler_filter_history_user_timestamp.inc
+${DRUPAL_MODS}/views/modules/node/views_handler_filter_node_access.inc
 ${DRUPAL_MODS}/views/modules/node/views_handler_filter_node_status.inc
 ${DRUPAL_MODS}/views/modules/node/views_handler_filter_node_type.inc
 ${DRUPAL_MODS}/views/modules/node/views_plugin_argument_default_node.inc
@@ -202,16 +229,21 @@ ${DRUPAL_MODS}/views/modules/node/views_plugin_row_node_view.inc
 ${DRUPAL_MODS}/views/modules/poll.views.inc
 ${DRUPAL_MODS}/views/modules/profile/
 ${DRUPAL_MODS}/views/modules/profile.views.inc
+${DRUPAL_MODS}/views/modules/profile.views_convert.inc
 ${DRUPAL_MODS}/views/modules/profile/views_handler_field_profile_date.inc
 ${DRUPAL_MODS}/views/modules/profile/views_handler_field_profile_list.inc
 ${DRUPAL_MODS}/views/modules/profile/views_handler_filter_profile_selection.inc
 ${DRUPAL_MODS}/views/modules/search/
 ${DRUPAL_MODS}/views/modules/search.views.inc
+${DRUPAL_MODS}/views/modules/search.views_convert.inc
 ${DRUPAL_MODS}/views/modules/search.views_default.inc
+${DRUPAL_MODS}/views/modules/search/views_handler_field_search_score.inc
 ${DRUPAL_MODS}/views/modules/search/views_handler_filter_search.inc
+${DRUPAL_MODS}/views/modules/search/views_handler_sort_search_score.inc
 ${DRUPAL_MODS}/views/modules/search/views_plugin_row_search_view.inc
 ${DRUPAL_MODS}/views/modules/statistics/
 ${DRUPAL_MODS}/views/modules/statistics.views.inc
+${DRUPAL_MODS}/views/modules/statistics.views_convert.inc
 ${DRUPAL_MODS}/views/modules/statistics.views_default.inc
 ${DRUPAL_MODS}/views/modules/statistics/views_handler_field_accesslog_path.inc
 ${DRUPAL_MODS}/views/modules/system/
@@ -222,6 +254,7 @@ ${DRUPAL_MODS}/views/modules/system/views_handler_field_file_status.inc
 ${DRUPAL_MODS}/views/modules/system/views_handler_filter_file_status.inc
 ${DRUPAL_MODS}/views/modules/taxonomy/
 ${DRUPAL_MODS}/views/modules/taxonomy.views.inc
+${DRUPAL_MODS}/views/modules/taxonomy.views_convert.inc
 ${DRUPAL_MODS}/views/modules/taxonomy.views_default.inc
 ${DRUPAL_MODS}/views/modules/taxonomy/views_handler_argument_taxonomy.inc
 ${DRUPAL_MODS}/views/modules/taxonomy/views_handler_argument_term_node_tid.inc
@@ -231,6 +264,7 @@ ${DRUPAL_MODS}/views/modules/taxonomy/views_handler_argument_vocabulary_vid.inc
 ${DRUPAL_MODS}/views/modules/taxonomy/views_handler_field_taxonomy.inc
 ${DRUPAL_MODS}/views/modules/taxonomy/views_handler_field_term_node_tid.inc
 ${DRUPAL_MODS}/views/modules/taxonomy/views_handler_filter_term_node_tid.inc
+${DRUPAL_MODS}/views/modules/taxonomy/views_handler_filter_term_node_tid_depth.inc
 ${DRUPAL_MODS}/views/modules/taxonomy/views_handler_filter_vocabulary_vid.inc
 ${DRUPAL_MODS}/views/modules/taxonomy/views_plugin_argument_validate_taxonomy_term.inc
 ${DRUPAL_MODS}/views/modules/translation/
@@ -245,14 +279,17 @@ ${DRUPAL_MODS}/views/modules/translation/views_handler_filter_node_tnid_child.in
 ${DRUPAL_MODS}/views/modules/translation/views_handler_relationship_translation.inc
 ${DRUPAL_MODS}/views/modules/upload/
 ${DRUPAL_MODS}/views/modules/upload.views.inc
+${DRUPAL_MODS}/views/modules/upload.views_convert.inc
 ${DRUPAL_MODS}/views/modules/upload/views_handler_field_upload_description.inc
 ${DRUPAL_MODS}/views/modules/upload/views_handler_field_upload_fid.inc
 ${DRUPAL_MODS}/views/modules/upload/views_handler_filter_upload_fid.inc
 ${DRUPAL_MODS}/views/modules/user/
 ${DRUPAL_MODS}/views/modules/user.views.inc
+${DRUPAL_MODS}/views/modules/user.views_convert.inc
 ${DRUPAL_MODS}/views/modules/user/views_handler_argument_user_uid.inc
 ${DRUPAL_MODS}/views/modules/user/views_handler_argument_users_roles_rid.inc
 ${DRUPAL_MODS}/views/modules/user/views_handler_field_user.inc
+${DRUPAL_MODS}/views/modules/user/views_handler_field_user_language.inc
 ${DRUPAL_MODS}/views/modules/user/views_handler_field_user_link.inc
 ${DRUPAL_MODS}/views/modules/user/views_handler_field_user_link_delete.inc
 ${DRUPAL_MODS}/views/modules/user/views_handler_field_user_link_edit.inc
@@ -277,6 +314,9 @@ ${DRUPAL_MODS}/views/plugins/views_plugin_argument_default_php.inc
 ${DRUPAL_MODS}/views/plugins/views_plugin_argument_validate.inc
 ${DRUPAL_MODS}/views/plugins/views_plugin_argument_validate_numeric.inc
 ${DRUPAL_MODS}/views/plugins/views_plugin_argument_validate_php.inc
+${DRUPAL_MODS}/views/plugins/views_plugin_cache.inc
+${DRUPAL_MODS}/views/plugins/views_plugin_cache_none.inc
+${DRUPAL_MODS}/views/plugins/views_plugin_cache_time.inc
 ${DRUPAL_MODS}/views/plugins/views_plugin_display.inc
 ${DRUPAL_MODS}/views/plugins/views_plugin_display_attachment.inc
 ${DRUPAL_MODS}/views/plugins/views_plugin_display_block.inc
@@ -319,6 +359,10 @@ ${DRUPAL_MODS}/views/translations/de.po
 ${DRUPAL_MODS}/views/translations/eo.po
 ${DRUPAL_MODS}/views/translations/fr.po
 ${DRUPAL_MODS}/views/translations/it.po
+${DRUPAL_MODS}/views/translations/pl.po
+${DRUPAL_MODS}/views/translations/sv.po
+${DRUPAL_MODS}/views/translations/uk-ua.po
+${DRUPAL_MODS}/views/translations/uk.po
 ${DRUPAL_MODS}/views/translations/views.pot
 ${DRUPAL_MODS}/views/views.info
 ${DRUPAL_MODS}/views/views.install
