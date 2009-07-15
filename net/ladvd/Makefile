@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/09/22 22:32:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/07/15 08:51:35 weerd Exp $
 
-COMMENT =		LLDP/CDP sender for UNIX
+COMMENT =		link advertisement (LLDP/CDP etc) daemon
 
-DISTNAME =		ladvd-0.6.1
+DISTNAME =		ladvd-0.8
 CATEGORIES =		net
 
 HOMEPAGE =		http://blinkenlights.nl/software/ladvd/
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${HOMEPAGE}
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--with-user=_ladvd
+CONFIGURE_ARGS +=	--with-user=_ladvd --with-chroot-dir=/var/empty
 
-WANTLIB =		c
+WANTLIB =		c event
 
 .include <bsd.port.mk>
