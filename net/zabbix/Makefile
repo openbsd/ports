@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/07/13 17:13:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/07/15 12:28:06 ajacoutot Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -11,7 +11,7 @@ DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}p5
 PKGNAME-server =	zabbix-server-${VERSION}p5
 FULLPKGNAME-doc =	zabbix-doc-${VERSION}p2
-PKGNAME-web =		zabbix-web-${VERSION}p4
+PKGNAME-web =		zabbix-web-${VERSION}p5
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.zabbix.com/
@@ -64,7 +64,7 @@ PREFIX-web =		/var/www
 LIB_DEPENDS-web =
 RUN_DEPENDS-web =	::www/php5/extensions,-gd
 WANTLIB-web =
-ZABBIX_WEB =		${PREFIX-web}/htdocs/zabbix
+ZABBIX_WEB =		${PREFIX-web}/zabbix
 
 FLAVOR ?=		no_server
 

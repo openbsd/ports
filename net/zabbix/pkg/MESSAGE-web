@@ -1,0 +1,6 @@
+The Zabbix web frontend has been installed into
+${PREFIX-web}/zabbix
+
+You should point this to the DocumentRoot of your web-server:
+    # ln -s ../zabbix /var/www/htdocs/zabbix
+(make sure you use a relative symlink since Apache is chrooted)
