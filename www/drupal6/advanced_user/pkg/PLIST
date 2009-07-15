@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/15 10:41:15 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/advuser/
+${DRUPAL_MODS}/advuser/LICENSE.txt
+${DRUPAL_MODS}/advuser/README.txt
+${DRUPAL_MODS}/advuser/advuser.info
+${DRUPAL_MODS}/advuser/advuser.install
+${DRUPAL_MODS}/advuser/advuser.module
+${DRUPAL_MODS}/advuser/advuser_filters.inc
