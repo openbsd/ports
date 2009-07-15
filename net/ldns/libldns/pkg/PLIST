@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/06/03 15:03:10 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/07/15 22:13:45 jakob Exp $
 @conflict ldns-*
 %%SHARED%%
+bin/ldns-config
 include/ldns/
 include/ldns/buffer.h
 include/ldns/common.h
@@ -23,6 +24,8 @@ include/ldns/rdata.h
 include/ldns/resolver.h
 include/ldns/rr.h
 include/ldns/rr_functions.h
+include/ldns/sha1.h
+include/ldns/sha2.h
 include/ldns/str2host.h
 include/ldns/tsig.h
 include/ldns/update.h
