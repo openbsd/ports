@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2009/06/23 17:05:00 martynas Exp $
+# $OpenBSD: Makefile,v 1.83 2009/07/15 20:06:41 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's mail component
 
 VER=		2.0.0.22
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}
+PKGNAME=	mozilla-thunderbird-${VER}p0
 SO_VERSION=	13.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
@@ -105,7 +105,7 @@ MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-thunderbird
 
 DATADIRS=	chrome components defaults dictionaries extensions \
-		greprefs icons init.d res
+		greprefs icons init.d isp res
 
 post-extract:
 	@cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/widget/src/gtk2/

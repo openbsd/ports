@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/01/09 15:54:31 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.16 2009/07/15 20:06:41 martynas Exp $
 %%SHARED%%
 bin/mozilla-thunderbird
 bin/thunderbird
@@ -253,6 +253,13 @@ mozilla-thunderbird/icons/mozicon16.xpm
 mozilla-thunderbird/icons/mozicon50.xpm
 mozilla-thunderbird/init.d/
 mozilla-thunderbird/init.d/README
+mozilla-thunderbird/isp/
+mozilla-thunderbird/isp/SpamAssassin.sfd
+mozilla-thunderbird/isp/SpamPal.sfd
+mozilla-thunderbird/isp/en-US/
+mozilla-thunderbird/isp/en-US/gmail.rdf
+mozilla-thunderbird/isp/movemail.rdf
+mozilla-thunderbird/isp/rss.rdf
 @bin mozilla-thunderbird/mozilla-thunderbird-bin
 @bin mozilla-thunderbird/mozilla-xremote-client
 @bin mozilla-thunderbird/regxpcom
