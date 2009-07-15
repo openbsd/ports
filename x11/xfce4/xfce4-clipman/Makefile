@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2009/06/23 20:25:15 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2009/07/15 13:53:39 landry Exp $
 
 COMMENT=	Xfce4 clipboard history panel plugin
 
-XFCE_VERSION=	1.0.0
+XFCE_VERSION=	1.0.2
 XFCE_PLUGIN=	clipman
-PKGNAME=	${DISTNAME:S/-plugin//}p0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

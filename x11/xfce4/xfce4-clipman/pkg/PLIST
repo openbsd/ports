@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/04/22 07:41:20 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/07/15 13:53:39 landry Exp $
 @bin bin/xfce4-clipman-plugin
 @bin bin/xfce4-popup-clipman
 share/applications/xfce4-clipman-plugin.desktop
@@ -64,6 +64,9 @@ share/locale/uk/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/xfce4/
@@ -82,6 +85,13 @@ share/xfce4/doc/gl/images/clipman-menu.png
 share/xfce4/doc/gl/images/clipman-settings-actions.png
 share/xfce4/doc/gl/images/clipman-settings-general.png
 share/xfce4/doc/gl/xfce4-clipman-plugin.html
+share/xfce4/doc/ja/
+share/xfce4/doc/ja/images/
+share/xfce4/doc/ja/images/clipman-action-dialog.png
+share/xfce4/doc/ja/images/clipman-menu.png
+share/xfce4/doc/ja/images/clipman-settings-actions.png
+share/xfce4/doc/ja/images/clipman-settings-general.png
+share/xfce4/doc/ja/xfce4-clipman-plugin.html
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/xfce4-clipman-plugin.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
