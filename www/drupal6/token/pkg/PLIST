@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/15 10:44:20 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/token/
+${DRUPAL_MODS}/token/API.txt
+${DRUPAL_MODS}/token/LICENSE.txt
+${DRUPAL_MODS}/token/README.txt
+${DRUPAL_MODS}/token/token.info
+${DRUPAL_MODS}/token/token.install
+${DRUPAL_MODS}/token/token.module
+${DRUPAL_MODS}/token/token.rules.inc
+${DRUPAL_MODS}/token/token.test
+${DRUPAL_MODS}/token/tokenSTARTER.info
+${DRUPAL_MODS}/token/tokenSTARTER.module
+${DRUPAL_MODS}/token/token_actions.info
+${DRUPAL_MODS}/token/token_actions.module
+${DRUPAL_MODS}/token/token_comment.inc
+${DRUPAL_MODS}/token/token_node.inc
+${DRUPAL_MODS}/token/token_taxonomy.inc
+${DRUPAL_MODS}/token/token_user.inc
+${DRUPAL_MODS}/token/translations/
+${DRUPAL_MODS}/token/translations/da.po
+${DRUPAL_MODS}/token/translations/de.po
+${DRUPAL_MODS}/token/translations/es.po
+${DRUPAL_MODS}/token/translations/hu.po
+${DRUPAL_MODS}/token/translations/ja.po
+${DRUPAL_MODS}/token/translations/pl.po
+${DRUPAL_MODS}/token/translations/sk.po
+${DRUPAL_MODS}/token/translations/token.pot
+${DRUPAL_MODS}/token/translations/uk-ua.po
+${DRUPAL_MODS}/token/translations/uk.po
