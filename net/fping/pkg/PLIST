@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/10/28 23:49:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/07/15 08:25:31 sthen Exp $
 @man man/man8/fping.8
 @man man/man8/fping6.8
+@mode 4555
 @bin sbin/fping
 @bin sbin/fping6
+@mode
 share/doc/fping/
 share/doc/fping/COPYING
 share/doc/fping/README
