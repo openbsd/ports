@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.968 2009/07/13 12:21:44 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.969 2009/07/15 23:44:36 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -353,7 +353,6 @@ SUBPACKAGE ?= -
 SUBPACKAGE ?= -main
 .endif
 
-_FETCH_MAKEFILE_NAMES =
 FLAVOR ?=
 FLAVORS ?=
 PSEUDO_FLAVORS ?=
@@ -2494,7 +2493,7 @@ _fetch-makefile:
 .  if ${PERMIT_DISTFILES_CDROM:L} == "yes"
 	@echo -n " cdrom"
 .  endif
-	@echo ":: ${_FETCH_MAKEFILE_NAMES}"
+	@echo ": ${_FETCH_MAKEFILE_NAMES}"
 # write generic package dependencies
 	@echo ".PHONY: ${_FETCH_MAKEFILE_NAMES}"
 .  if ${RECURSIVE_FETCH_LIST:L} == "yes"
