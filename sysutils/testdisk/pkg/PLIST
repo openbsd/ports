@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/15 20:11:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/07/15 13:45:17 landry Exp $
 @man man/man1/photorec.1
 @man man/man1/testdisk.1
 @bin sbin/photorec
@@ -277,7 +277,7 @@ share/doc/testdisk-${VERSION}/html/template_infobox_photorec.html
 share/doc/testdisk-${VERSION}/html/template_infobox_testdisk.html
 share/doc/testdisk-${VERSION}/html/testdisk.html
 share/doc/testdisk-${VERSION}/html/testdisk1.html
-share/doc/testdisk-${VERSION}/html/testdisk_${VERSION}_release.html
+share/doc/testdisk-${VERSION}/html/testdisk_6.10_release.html
 share/doc/testdisk-${VERSION}/html/testdisk_6.4_release.html
 share/doc/testdisk-${VERSION}/html/testdisk_6.5_release.html
 share/doc/testdisk-${VERSION}/html/testdisk_6.6_release.html
