@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/16 08:40:54 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/scheduler/
+${DRUPAL_MODS}/scheduler/.project
+${DRUPAL_MODS}/scheduler/LICENSE.txt
+${DRUPAL_MODS}/scheduler/README.txt
+${DRUPAL_MODS}/scheduler/TODO.txt
+${DRUPAL_MODS}/scheduler/scheduler.info
+${DRUPAL_MODS}/scheduler/scheduler.install
+${DRUPAL_MODS}/scheduler/scheduler.module
+${DRUPAL_MODS}/scheduler/scheduler.views.inc
+${DRUPAL_MODS}/scheduler/translations/
+${DRUPAL_MODS}/scheduler/translations/da.po
+${DRUPAL_MODS}/scheduler/translations/de.po
+${DRUPAL_MODS}/scheduler/translations/fr.po
+${DRUPAL_MODS}/scheduler/translations/hu.po
+${DRUPAL_MODS}/scheduler/translations/ja.po
+${DRUPAL_MODS}/scheduler/translations/nl.po
+${DRUPAL_MODS}/scheduler/translations/sk.po
+${DRUPAL_MODS}/scheduler/translations/uk-ua.po
+${DRUPAL_MODS}/scheduler/translations/uk.po
