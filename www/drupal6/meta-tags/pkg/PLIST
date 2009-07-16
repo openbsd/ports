@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/16 08:38:53 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_LOCALE}words/
+${DRUPAL_LOCALE}words/LICENSE.txt
+${DRUPAL_LOCALE}words/README.txt
+${DRUPAL_LOCALE}words/metatags/
+${DRUPAL_LOCALE}words/metatags/Revisit-After.inc
+${DRUPAL_LOCALE}words/metatags/abstract.inc
+${DRUPAL_LOCALE}words/metatags/copyright.inc
+${DRUPAL_LOCALE}words/metatags/description.inc
+${DRUPAL_LOCALE}words/metatags/geourl.inc
+${DRUPAL_LOCALE}words/metatags/keywords.inc
+${DRUPAL_LOCALE}words/metatags/robots.inc
+${DRUPAL_LOCALE}words/node.tpl.php-example
+${DRUPAL_LOCALE}words/nodewords.admin.inc
+${DRUPAL_LOCALE}words/nodewords.info
+${DRUPAL_LOCALE}words/nodewords.install
+${DRUPAL_LOCALE}words/nodewords.module
+${DRUPAL_LOCALE}words/translations/
+${DRUPAL_LOCALE}words/translations/de.po
+${DRUPAL_LOCALE}words/translations/fr.po
+${DRUPAL_LOCALE}words/translations/ja.po
+${DRUPAL_LOCALE}words/translations/nodewords.pot
+${DRUPAL_LOCALE}words/translations/ru.po
