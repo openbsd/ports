@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/21 11:14:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/07/16 20:14:20 ajacoutot Exp $
 
 COMMENT=	monitor kerberos tickets
 
 GNOME_PROJECT=	krb5-auth-dialog
-GNOME_VERSION=	0.8
+GNOME_VERSION=	0.12
 
 CATEGORIES=	security
 
@@ -21,20 +21,21 @@ WANTLIB += crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 krb5 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += xml2 z
+WANTLIB += z
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	notify.>=2::devel/libnotify \
-		glade-2.0.>=1::devel/libglade2
+LIB_DEPENDS=	notify.>=2::devel/libnotify
 
 USE_X11=	Yes
 MODGCONF2_SCHEMAS_DIR= krb5-auth-dialog
+MODGNOME_HELP_FILES= Yes
+DESKTOP_FILES=	Yes
 
 FAKE_FLAGS=	autostartdir=${PREFIX}/share/examples/krb5-auth-dialog/xdg/autostart \
-		schemadir=${PREFIX}/${SCHEMAS_INSTDIR}
+		smallicondir=${PREFIX}/share/icons/hicolor/22x22/apps
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -42,7 +43,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		KRB5_LIBS="-lgssapi -lkrb5 -lasn1 -lcrypto"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-libnotify \
-		--disable-pkinit \
+		--enable-pkinit \
 		--disable-network-manager
 
 post-install:

@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_krb5-auth-dialog_c,v 1.1.1.1 2009/06/21 11:14:54 ajacoutot Exp $
+$OpenBSD: patch-src_krb5-auth-dialog_c,v 1.2 2009/07/16 20:14:20 ajacoutot Exp $
 
 XXX these should be handled by configure checks.
   krb5_get_init_creds_opt_set_pkinit: does not take 11 arguments.
   krb5_get_init_creds_opt_free: the context argument is an MIT extension.
 
---- src/krb5-auth-dialog.c.orig	Sun Jan 11 22:46:19 2009
-+++ src/krb5-auth-dialog.c	Sun Jun 21 12:14:51 2009
-@@ -23,6 +23,7 @@
+--- src/krb5-auth-dialog.c.orig	Thu Jul  2 15:04:35 2009
++++ src/krb5-auth-dialog.c	Wed Jul 15 14:34:40 2009
+@@ -25,6 +25,7 @@
  #include <stdlib.h>
  #include <time.h>
  #include <krb5.h>
@@ -14,30 +14,30 @@ XXX these should be handled by configure checks.
  #include <stdio.h>
  #include <sys/wait.h>
  #include <string.h>
-@@ -527,8 +528,6 @@ ka_auth_pkinit(Krb5AuthApplet* applet, krb5_creds* cre
+@@ -483,8 +484,6 @@ ka_auth_heimdal_pkinit(KaApplet* applet, krb5_creds* c
  						    kprincipal,
- 						    applet->pk_userid,
- 						    NULL, /* x509 anchors */
+ 						    pk_userid,
+ 						    pkinit_anchors,
 -						    NULL,
 -						    NULL,
  						    0,	  /* pk_use_enc_key */
  						    auth_dialog_prompter,
  						    applet, /* data */
-@@ -541,7 +540,7 @@ ka_auth_pkinit(Krb5AuthApplet* applet, krb5_creds* cre
- 	                                      NULL, auth_dialog_prompter, applet,
+@@ -498,7 +497,7 @@ ka_auth_heimdal_pkinit(KaApplet* applet, krb5_creds* c
  		                              0, NULL, opts);
  out:
--	krb5_get_init_creds_opt_free(kcontext, opts);
-+	krb5_get_init_creds_opt_free(opts);
+ 	if (opts)
+-		krb5_get_init_creds_opt_free(kcontext, opts);
++		krb5_get_init_creds_opt_free(opts);
  	return retval;
- #else  /* ENABLE_PKINIT */
- 	return 0;
-@@ -617,7 +616,7 @@ grab_credentials (Krb5AuthApplet* applet)
- 
+ }
+ #endif /* ! ENABLE_PKINIT */
+@@ -520,7 +519,7 @@ ka_auth_password(KaApplet* applet, krb5_creds* creds,
+ 					      0, NULL, opts);
  out:
- 	if (opt)
--		krb5_get_init_creds_opt_free(kcontext, opt);
-+		krb5_get_init_creds_opt_free(opt);
- 	krb5_free_cred_contents (kcontext, &my_creds);
- 	krb5_cc_close (kcontext, ccache);
+ 	if (opts)
+-		krb5_get_init_creds_opt_free(kcontext, opts);
++		krb5_get_init_creds_opt_free(opts);
+ 	return retval;
+ }
  

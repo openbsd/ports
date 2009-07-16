@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/21 11:14:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/07/16 20:14:20 ajacoutot Exp $
 @bin bin/krb5-auth-dialog
+@bin bin/krb5-auth-dialog-preferences
 @man man/man1/krb5-auth-dialog.1
+share/applications/krb5-auth-dialog-preferences.desktop
+share/dbus-1/services/org.gnome.KrbAuthDialog.service
 share/doc/krb5-auth-dialog/
 share/doc/krb5-auth-dialog/README
 share/examples/krb5-auth-dialog/
@@ -10,20 +13,79 @@ share/examples/krb5-auth-dialog/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/krb5-auth-dialog/xdg/autostart/krb5-auth-dialog.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/krb5-auth-dialog.desktop
-share/icons/
-share/icons/hicolor/
+share/gnome/help/krb5-auth-dialog/
+share/gnome/help/krb5-auth-dialog/C/
+share/gnome/help/krb5-auth-dialog/C/figures/
+share/gnome/help/krb5-auth-dialog/C/figures/ka-expired.png
+share/gnome/help/krb5-auth-dialog/C/figures/ka-expiring.png
+share/gnome/help/krb5-auth-dialog/C/figures/ka-valid.png
+share/gnome/help/krb5-auth-dialog/C/figures/trayicon-expired.png
+share/gnome/help/krb5-auth-dialog/C/figures/trayicon-expiring.png
+share/gnome/help/krb5-auth-dialog/C/figures/trayicon-valid.png
+share/gnome/help/krb5-auth-dialog/C/krb5-auth-dialog.xml
+share/gnome/help/krb5-auth-dialog/C/legal.xml
+share/gnome/help/krb5-auth-dialog/de/
+share/gnome/help/krb5-auth-dialog/de/figures/
+share/gnome/help/krb5-auth-dialog/de/figures/ka-expired.png
+share/gnome/help/krb5-auth-dialog/de/figures/ka-expiring.png
+share/gnome/help/krb5-auth-dialog/de/figures/ka-valid.png
+share/gnome/help/krb5-auth-dialog/de/figures/trayicon-expired.png
+share/gnome/help/krb5-auth-dialog/de/figures/trayicon-expiring.png
+share/gnome/help/krb5-auth-dialog/de/figures/trayicon-valid.png
+share/gnome/help/krb5-auth-dialog/de/krb5-auth-dialog.xml
+share/gnome/help/krb5-auth-dialog/es/
+share/gnome/help/krb5-auth-dialog/es/figures/
+share/gnome/help/krb5-auth-dialog/es/figures/ka-expired.png
+share/gnome/help/krb5-auth-dialog/es/figures/ka-expiring.png
+share/gnome/help/krb5-auth-dialog/es/figures/ka-valid.png
+share/gnome/help/krb5-auth-dialog/es/figures/trayicon-expired.png
+share/gnome/help/krb5-auth-dialog/es/figures/trayicon-expiring.png
+share/gnome/help/krb5-auth-dialog/es/figures/trayicon-valid.png
+share/gnome/help/krb5-auth-dialog/es/krb5-auth-dialog.xml
+share/gnome/help/krb5-auth-dialog/sv/
+share/gnome/help/krb5-auth-dialog/sv/figures/
+share/gnome/help/krb5-auth-dialog/sv/figures/ka-expired.png
+share/gnome/help/krb5-auth-dialog/sv/figures/ka-expiring.png
+share/gnome/help/krb5-auth-dialog/sv/figures/ka-valid.png
+share/gnome/help/krb5-auth-dialog/sv/figures/trayicon-expired.png
+share/gnome/help/krb5-auth-dialog/sv/figures/trayicon-expiring.png
+share/gnome/help/krb5-auth-dialog/sv/figures/trayicon-valid.png
+share/gnome/help/krb5-auth-dialog/sv/krb5-auth-dialog.xml
 share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
-share/icons/hicolor/22x22/apps/krb-expiring-ticket.png
-share/icons/hicolor/22x22/apps/krb-no-valid-ticket.png
-share/icons/hicolor/22x22/apps/krb-valid-ticket.png
+share/icons/hicolor/22x22/status/
+share/icons/hicolor/22x22/status/krb-expiring-ticket.png
+share/icons/hicolor/22x22/status/krb-no-valid-ticket.png
+share/icons/hicolor/22x22/status/krb-valid-ticket.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/status/
+share/icons/hicolor/48x48/status/krb-expiring-ticket.png
+share/icons/hicolor/48x48/status/krb-no-valid-ticket.png
+share/icons/hicolor/48x48/status/krb-valid-ticket.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/status/
+share/icons/hicolor/scalable/status/krb-expiring-ticket.svg
+share/icons/hicolor/scalable/status/krb-no-valid-ticket.svg
+share/icons/hicolor/scalable/status/krb-valid-ticket.svg
 share/krb5-auth-dialog/
-share/krb5-auth-dialog/krb5-auth-dialog.glade
+share/krb5-auth-dialog/krb5-auth-dialog-preferences.xml
+share/krb5-auth-dialog/krb5-auth-dialog.xml
 share/locale/de/LC_MESSAGES/krb5-auth-dialog.mo
+share/locale/es/LC_MESSAGES/krb5-auth-dialog.mo
+share/locale/fr/LC_MESSAGES/krb5-auth-dialog.mo
 share/locale/nb/LC_MESSAGES/krb5-auth-dialog.mo
+share/locale/pa/LC_MESSAGES/krb5-auth-dialog.mo
+share/locale/sv/LC_MESSAGES/krb5-auth-dialog.mo
+share/locale/uk/LC_MESSAGES/krb5-auth-dialog.mo
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/omf/krb5-auth-dialog/
+share/omf/krb5-auth-dialog/krb5-auth-dialog-C.omf
+share/omf/krb5-auth-dialog/krb5-auth-dialog-de.omf
+share/omf/krb5-auth-dialog/krb5-auth-dialog-es.omf
+share/omf/krb5-auth-dialog/krb5-auth-dialog-sv.omf
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/krb5-auth-dialog.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
