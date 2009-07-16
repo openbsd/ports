@@ -1,11 +1,11 @@
-$OpenBSD: patch-config_def_h,v 1.6 2009/04/26 13:23:31 sthen Exp $
---- config.def.h.orig	Mon Apr 20 15:49:55 2009
-+++ config.def.h	Mon Apr 20 15:53:36 2009
+$OpenBSD: patch-config_def_h,v 1.7 2009/07/16 15:12:39 jim Exp $
+--- config.def.h.orig	Tue Jul 14 14:07:55 2009
++++ config.def.h	Wed Jul 15 15:54:40 2009
 @@ -1,13 +1,13 @@
  /* See LICENSE file for copyright and license details. */
  
  /* appearance */
--static const char font[]            = "-*-terminus-medium-r-normal-*-14-*-*-*-*-*-*-*";
+-static const char font[]            = "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*";
 -static const char normbordercolor[] = "#cccccc";
 -static const char normbgcolor[]     = "#cccccc";
 -static const char normfgcolor[]     = "#000000";
@@ -19,19 +19,19 @@ $OpenBSD: patch-config_def_h,v 1.6 2009/04/26 13:23:31 sthen Exp $
 +static const char selbordercolor[]  = "#8888ff";
 +static const char selbgcolor[]      = "#404040";
 +static const char selfgcolor[]      = "#f0f0f0";
- static unsigned int borderpx        = 1;        /* border pixel of windows */
- static unsigned int snap            = 32;       /* snap pixel */
- static Bool showbar                 = True;     /* False means no bar */
-@@ -21,6 +21,8 @@ static Rule rules[] = {
- 	/* class      instance    title       tags mask     isfloating */
- 	{ "Gimp",     NULL,       NULL,       0,            True },
- 	{ "Firefox",  NULL,       NULL,       1 << 8,       True },
-+	{ "Xonix",    NULL,       NULL,       0,            True },
-+	{ NULL,       NULL,       "glxgears", 0,            True },
+ static const unsigned int borderpx  = 1;        /* border pixel of windows */
+ static const unsigned int snap      = 32;       /* snap pixel */
+ static const Bool showbar           = True;     /* False means no bar */
+@@ -20,6 +20,8 @@ static const Rule rules[] = {
+ 	/* class      instance    title       tags mask     isfloating   monitor */
+ 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
+ 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
++	{ "Xonix",    NULL,       NULL,       0,            True,        -1 },
++	{ NULL,       NULL,       "glxgears", 0,            True,        -1 },
  };
  
  /* layout(s) */
-@@ -47,7 +49,7 @@ static Layout layouts[] = {
+@@ -46,7 +48,7 @@ static const Layout layouts[] = {
  
  /* commands */
  static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
