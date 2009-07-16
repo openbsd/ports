@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/06 22:30:04 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2009/07/16 16:11:14 pyr Exp $
 
 COMMENT =	framework for web frameworks
 
 MODULES =	cpan
-DISTNAME =	Mojo-0.9002
+DISTNAME =	Mojo-0.991237
 CATEGORIES =	www
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>

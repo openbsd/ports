@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/12/16 07:52:43 simon Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/07/16 16:11:14 pyr Exp $
 bin/mojo
 bin/mojolicious
 ${P5SITE}/Mojo/
@@ -24,7 +24,9 @@ ${P5SITE}/Mojo/Filter/Chunked.pm
 ${P5SITE}/Mojo/Headers.pm
 ${P5SITE}/Mojo/HelloWorld.pm
 ${P5SITE}/Mojo/Home.pm
+${P5SITE}/Mojo/Loader/
 ${P5SITE}/Mojo/Loader.pm
+${P5SITE}/Mojo/Loader/Exception.pm
 ${P5SITE}/Mojo/Log.pm
 ${P5SITE}/Mojo/Manual/
 ${P5SITE}/Mojo/Manual.pod
@@ -32,16 +34,17 @@ ${P5SITE}/Mojo/Manual/CodingGuidelines.pod
 ${P5SITE}/Mojo/Manual/Cookbook.pod
 ${P5SITE}/Mojo/Manual/Deployment.pod
 ${P5SITE}/Mojo/Manual/FAQ.pod
-${P5SITE}/Mojo/Manual/FrameworkBuilding.pod
 ${P5SITE}/Mojo/Manual/GettingStarted.pod
-${P5SITE}/Mojo/Manual/HTTPGuide.pod
 ${P5SITE}/Mojo/Manual/Mojolicious.pod
+${P5SITE}/Mojo/Manual/MojoliciousExample.pod
+${P5SITE}/Mojo/Manual/Transaction.pod
 ${P5SITE}/Mojo/Message/
 ${P5SITE}/Mojo/Message.pm
 ${P5SITE}/Mojo/Message/Request.pm
 ${P5SITE}/Mojo/Message/Response.pm
 ${P5SITE}/Mojo/Parameters.pm
 ${P5SITE}/Mojo/Path.pm
+${P5SITE}/Mojo/Pipeline.pm
 ${P5SITE}/Mojo/Script/
 ${P5SITE}/Mojo/Script.pm
 ${P5SITE}/Mojo/Script/Cgi.pm
@@ -51,6 +54,7 @@ ${P5SITE}/Mojo/Script/Fastcgi.pm
 ${P5SITE}/Mojo/Script/Generate/
 ${P5SITE}/Mojo/Script/Generate.pm
 ${P5SITE}/Mojo/Script/Generate/App.pm
+${P5SITE}/Mojo/Script/Generate/Makefile.pm
 ${P5SITE}/Mojo/Script/Test.pm
 ${P5SITE}/Mojo/Scripts.pm
 ${P5SITE}/Mojo/Server/
@@ -61,7 +65,9 @@ ${P5SITE}/Mojo/Server/Daemon.pm
 ${P5SITE}/Mojo/Server/Daemon/Prefork.pm
 ${P5SITE}/Mojo/Server/FastCGI.pm
 ${P5SITE}/Mojo/Stateful.pm
+${P5SITE}/Mojo/Template/
 ${P5SITE}/Mojo/Template.pm
+${P5SITE}/Mojo/Template/Exception.pm
 ${P5SITE}/Mojo/Transaction.pm
 ${P5SITE}/Mojo/URL.pm
 ${P5SITE}/Mojo/Upload.pm
@@ -83,7 +89,6 @@ ${P5SITE}/Mojolicious/
 ${P5SITE}/Mojolicious.pm
 ${P5SITE}/Mojolicious/Context.pm
 ${P5SITE}/Mojolicious/Controller.pm
-${P5SITE}/Mojolicious/Dispatcher.pm
 ${P5SITE}/Mojolicious/Renderer.pm
 ${P5SITE}/Mojolicious/Script/
 ${P5SITE}/Mojolicious/Script/Daemon.pm
@@ -115,21 +120,23 @@ ${P5SITE}/Test/Mojo/Server.pm
 @man man/man3p/Mojo::HelloWorld.3p
 @man man/man3p/Mojo::Home.3p
 @man man/man3p/Mojo::Loader.3p
+@man man/man3p/Mojo::Loader::Exception.3p
 @man man/man3p/Mojo::Log.3p
 @man man/man3p/Mojo::Manual.3p
 @man man/man3p/Mojo::Manual::CodingGuidelines.3p
 @man man/man3p/Mojo::Manual::Cookbook.3p
 @man man/man3p/Mojo::Manual::Deployment.3p
 @man man/man3p/Mojo::Manual::FAQ.3p
-@man man/man3p/Mojo::Manual::FrameworkBuilding.3p
 @man man/man3p/Mojo::Manual::GettingStarted.3p
-@man man/man3p/Mojo::Manual::HTTPGuide.3p
 @man man/man3p/Mojo::Manual::Mojolicious.3p
+@man man/man3p/Mojo::Manual::MojoliciousExample.3p
+@man man/man3p/Mojo::Manual::Transaction.3p
 @man man/man3p/Mojo::Message.3p
 @man man/man3p/Mojo::Message::Request.3p
 @man man/man3p/Mojo::Message::Response.3p
 @man man/man3p/Mojo::Parameters.3p
 @man man/man3p/Mojo::Path.3p
+@man man/man3p/Mojo::Pipeline.3p
 @man man/man3p/Mojo::Script.3p
 @man man/man3p/Mojo::Script::Cgi.3p
 @man man/man3p/Mojo::Script::Daemon.3p
@@ -137,6 +144,7 @@ ${P5SITE}/Test/Mojo/Server.pm
 @man man/man3p/Mojo::Script::Fastcgi.3p
 @man man/man3p/Mojo::Script::Generate.3p
 @man man/man3p/Mojo::Script::Generate::App.3p
+@man man/man3p/Mojo::Script::Generate::Makefile.3p
 @man man/man3p/Mojo::Script::Test.3p
 @man man/man3p/Mojo::Scripts.3p
 @man man/man3p/Mojo::Server.3p
@@ -146,6 +154,7 @@ ${P5SITE}/Test/Mojo/Server.pm
 @man man/man3p/Mojo::Server::FastCGI.3p
 @man man/man3p/Mojo::Stateful.3p
 @man man/man3p/Mojo::Template.3p
+@man man/man3p/Mojo::Template::Exception.3p
 @man man/man3p/Mojo::Transaction.3p
 @man man/man3p/Mojo::URL.3p
 @man man/man3p/Mojo::Upload.3p
@@ -162,7 +171,6 @@ ${P5SITE}/Test/Mojo/Server.pm
 @man man/man3p/Mojolicious.3p
 @man man/man3p/Mojolicious::Context.3p
 @man man/man3p/Mojolicious::Controller.3p
-@man man/man3p/Mojolicious::Dispatcher.3p
 @man man/man3p/Mojolicious::Renderer.3p
 @man man/man3p/Mojolicious::Script::Daemon.3p
 @man man/man3p/Mojolicious::Script::Generate.3p
