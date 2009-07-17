@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/17 12:50:57 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/07/17 17:05:11 landry Exp $
 lib/claws-mail/plugins/rssyl.la
 lib/claws-mail/plugins/rssyl.so
 share/locale/ca/LC_MESSAGES/rssyl.mo
@@ -8,7 +8,9 @@ share/locale/es/LC_MESSAGES/rssyl.mo
 share/locale/fi/LC_MESSAGES/rssyl.mo
 share/locale/fr/LC_MESSAGES/rssyl.mo
 share/locale/hu/LC_MESSAGES/rssyl.mo
+share/locale/id/LC_MESSAGES/rssyl.mo
 share/locale/it/LC_MESSAGES/rssyl.mo
+share/locale/ja/LC_MESSAGES/rssyl.mo
 share/locale/pl/LC_MESSAGES/rssyl.mo
 share/locale/pt_BR/LC_MESSAGES/rssyl.mo
 share/locale/ru/LC_MESSAGES/rssyl.mo
