@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.3 2009/01/04 23:28:02 kurt Exp $
+@comment $OpenBSD: PLIST-examples,v 1.4 2009/07/17 13:38:56 kurt Exp $
 @pkgpath www/jakarta-tomcat/v4,-examples
 @owner _tomcat
 @group _tomcat
@@ -808,12 +808,14 @@ webapps/tomcat-docs/config/printer/realm.html
 webapps/tomcat-docs/config/printer/resources.html
 webapps/tomcat-docs/config/printer/server.html
 webapps/tomcat-docs/config/printer/service.html
+webapps/tomcat-docs/config/printer/systemprops.html
 webapps/tomcat-docs/config/printer/valve.html
 webapps/tomcat-docs/config/printer/webapp.html
 webapps/tomcat-docs/config/realm.html
 webapps/tomcat-docs/config/resources.html
 webapps/tomcat-docs/config/server.html
 webapps/tomcat-docs/config/service.html
+webapps/tomcat-docs/config/systemprops.html
 webapps/tomcat-docs/config/valve.html
 webapps/tomcat-docs/config/webapp.html
 webapps/tomcat-docs/html-manager-howto.html
