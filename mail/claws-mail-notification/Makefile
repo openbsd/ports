@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/05/03 19:51:42 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2009/07/17 17:04:08 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	notification plugin for Claws-mail
 
-VERSION=	0.20
+VERSION=	0.22
 DISTNAME=	notification_plugin-${VERSION}
 PKGNAME=	claws-mail-notification-${VERSION}p1
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
@@ -43,6 +43,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-static
+CONFIGURE_ARGS=	--disable-static \
+		--disable-libcanberra-gtk
 
 .include <bsd.port.mk>
