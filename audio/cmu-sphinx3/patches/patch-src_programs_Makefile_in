@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_programs_Makefile_in,v 1.1 2009/07/17 16:58:01 eric Exp $
+--- src/programs/Makefile.in.orig	Tue Jun 30 13:55:12 2009
++++ src/programs/Makefile.in	Tue Jun 30 13:55:37 2009
+@@ -283,7 +283,7 @@ LDADD = $(top_builddir)/src/libs3decoder/libs3decoder.
+ 	-lsphinxbase -lsphinxad -lm
+ 
+ sphinx3_livedecode_LDADD = $(top_builddir)/src/libs3decoder/libs3decoder.la \
+-	-lsphinxbase -lsphinxad -lm -lpthread  @ad_libs@ 
++	-lsphinxbase -lsphinxad -lm -pthread  @ad_libs@ 
+ 
+ INCLUDES = -I$(top_srcdir)/include \
+         -I$(top_builddir)/include
