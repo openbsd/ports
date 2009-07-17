@@ -1,0 +1,10 @@
+FileField provides an "File" field type to CCK. It provides many advantages over
+the Drupal core "Upload" module including:
+
+ * Per-field upload control (file extensions, file size).
+ * Per-node upload size limits.
+ * Multiple fields per content type.
+ * Customizable paths for saving uploads (plus token support for dynamic paths).
+ * Icons for uploaded file types.
+
+Most importanttly, it's a prerequesite for imagefield.
