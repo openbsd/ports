@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/17 10:15:59 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}/imageapi/
+${DRUPAL_MODS}/imageapi/LICENSE.txt
+${DRUPAL_MODS}/imageapi/README.txt
+${DRUPAL_MODS}/imageapi/imageapi.info
+${DRUPAL_MODS}/imageapi/imageapi.install
+${DRUPAL_MODS}/imageapi/imageapi.module
+${DRUPAL_MODS}/imageapi/imageapi_gd.info
+${DRUPAL_MODS}/imageapi/imageapi_gd.install
+${DRUPAL_MODS}/imageapi/imageapi_gd.module
+${DRUPAL_MODS}/imageapi/imageapi_imagemagick.info
+${DRUPAL_MODS}/imageapi/imageapi_imagemagick.module
+${DRUPAL_MODS}/imageapi/imagefilter.inc
+${DRUPAL_MODS}/imageapi/imagerotate.inc
+${DRUPAL_MODS}/imageapi/translations/
+${DRUPAL_MODS}/imageapi/translations/ja.po
