@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2009/01/13 21:55:40 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2009/07/17 07:35:56 ajacoutot Exp $
 
 COMMENT-main=		C++ interface for gtk2+
 COMMENT-docs=		C++ interface for gtk2+ documentation
 
 GNOME_PROJECT=		gtkmm
-GNOME_VERSION=		2.14.3
+GNOME_VERSION=		2.14.4
 PKGNAME-main=		gtk2mm-${VERSION}
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
 CATEGORIES=		devel x11

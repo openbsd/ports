@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtk_gtkmm_recentinfo_cc,v 1.1 2009/07/17 07:35:56 ajacoutot Exp $
+--- gtk/gtkmm/recentinfo.cc.orig	Thu Jul 16 10:08:31 2009
++++ gtk/gtkmm/recentinfo.cc	Thu Jul 16 10:08:47 2009
+@@ -189,7 +189,7 @@ bool RecentInfo::get_private_hint() const
+ 
+ bool RecentInfo::get_application_info(const Glib::ustring& app_name, Glib::StringArrayHandle& app_exec, guint& count, time_t& time) const
+ {
+-  return gtk_recent_info_get_application_info(const_cast<GtkRecentInfo*>(gobj()), app_name.c_str(), const_cast<const gchar**>((app_exec).data()), &(count), &(time));
++  return gtk_recent_info_get_application_info(const_cast<GtkRecentInfo*>(gobj()), app_name.c_str(), const_cast<gchar**>((app_exec).data()), &(count), &(time));
+ }
+ 
+ Glib::ustring RecentInfo::last_application() const
