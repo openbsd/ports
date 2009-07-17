@@ -1,7 +1,7 @@
-$OpenBSD: patch-samples_Makefile_in,v 1.2 2007/12/11 00:34:30 simon Exp $
---- samples/Makefile.in.orig	Thu Jan 26 16:59:17 2006
-+++ samples/Makefile.in	Sun Dec  9 21:49:14 2007
-@@ -571,9 +571,9 @@ uninstall-am: uninstall-binPROGRAMS uninstall-info-am
+$OpenBSD: patch-samples_Makefile_in,v 1.3 2009/07/17 10:45:05 sthen Exp $
+--- samples/Makefile.in.orig	Mon Mar 17 22:28:23 2008
++++ samples/Makefile.in	Mon Mar 17 22:28:35 2008
+@@ -573,9 +573,9 @@ uninstall-am: uninstall-binPROGRAMS uninstall-info-am
  
  
  install-exec-hook:
@@ -11,6 +11,6 @@ $OpenBSD: patch-samples_Makefile_in,v 1.2 2007/12/11 00:34:30 simon Exp $
 +	$(mkinstalldirs) ${DESTDIR}${datadir}/examples/iodbc
 +	cp $(srcdir)/iodbctest.c ${DESTDIR}${datadir}/examples/iodbc/iodbctest.c
 +	cp $(srcdir)/Makefile.sample ${DESTDIR}${datadir}/examples/iodbc/Makefile
+ @DARWIN_TRUE@	-/usr/bin/lipo ${DESTDIR}${bindir}/iodbctest -remove ppc64 -output ${DESTDIR}${bindir}/iodbctest
+ @DARWIN_TRUE@	-/usr/bin/lipo ${DESTDIR}${bindir}/iodbctestw -remove ppc64 -output ${DESTDIR}${bindir}/iodbctestw
  
- uninstall-hook:
- 	rm -f ${DESTDIR}${pkgdatadir}/samples/iodbctest.c

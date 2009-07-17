@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/01/09 18:49:28 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/07/17 10:45:05 sthen Exp $
 @pkgpath databases/iodbc
 %%SHARED%%
 bin/iodbc-config
-bin/iodbctest
-bin/iodbctestw
+@bin bin/iodbctest
+@bin bin/iodbctestw
 include/iodbcext.h
 include/iodbcinst.h
 include/iodbcunix.h

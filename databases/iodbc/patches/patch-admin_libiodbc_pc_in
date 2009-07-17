@@ -1,0 +1,10 @@
+$OpenBSD: patch-admin_libiodbc_pc_in,v 1.1 2009/07/17 10:45:05 sthen Exp $
+--- admin/libiodbc.pc.in.orig	Mon Jul  6 11:34:03 2009
++++ admin/libiodbc.pc.in	Mon Jul  6 11:34:18 2009
+@@ -88,5 +88,5 @@ Name: iODBC
+ Description: @PACKAGE_NAME@
+ Version: @PACKAGE_VERSION@
+ Requires:
+-Libs: -L${libdir} -liodbc -liodbcinst -ldl
++Libs: -L${libdir} -liodbc -liodbcinst
+ Cflags: -I${includedir}

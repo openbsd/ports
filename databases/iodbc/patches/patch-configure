@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2007/12/11 00:34:30 simon Exp $
---- configure.orig	Thu Jan 26 16:59:18 2006
-+++ configure	Sun Dec  9 21:49:14 2007
-@@ -22774,7 +22774,7 @@ fi
+$OpenBSD: patch-configure,v 1.3 2009/07/17 10:45:05 sthen Exp $
+--- configure.orig	Mon Oct  8 14:04:50 2007
++++ configure	Mon Mar 17 22:26:24 2008
+@@ -23126,7 +23126,7 @@ fi
  	echo "$as_me:$LINENO: checking for pthread_mutex_lock in -lpthread " >&5
  echo $ECHO_N "checking for pthread_mutex_lock in -lpthread ... $ECHO_C" >&6
  ac_save_LIBS="$LIBS"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.2 2007/12/11 00:34:30 simon Exp $
  
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
-@@ -22835,7 +22835,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = ye
+@@ -23187,7 +23187,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = ye
  echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
  
