@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/02/10 20:53:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/07/17 17:03:38 landry Exp $
 lib/claws-mail/plugins/gtkhtml2_viewer.la
 lib/claws-mail/plugins/gtkhtml2_viewer.so
 share/locale/ca/LC_MESSAGES/gtkhtml2_viewer.mo
@@ -8,7 +8,9 @@ share/locale/es/LC_MESSAGES/gtkhtml2_viewer.mo
 share/locale/fi/LC_MESSAGES/gtkhtml2_viewer.mo
 share/locale/fr/LC_MESSAGES/gtkhtml2_viewer.mo
 share/locale/hu/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/id/LC_MESSAGES/gtkhtml2_viewer.mo
 share/locale/it/LC_MESSAGES/gtkhtml2_viewer.mo
+share/locale/ja/LC_MESSAGES/gtkhtml2_viewer.mo
 share/locale/pl/LC_MESSAGES/gtkhtml2_viewer.mo
 share/locale/pt_BR/LC_MESSAGES/gtkhtml2_viewer.mo
 share/locale/ru/LC_MESSAGES/gtkhtml2_viewer.mo
