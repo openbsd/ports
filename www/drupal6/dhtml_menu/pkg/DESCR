@@ -1,0 +1,6 @@
+This allows the replacement of any menu by a dhtml version,
+in order to avoid lots of page loads.
+
+Note that activating this module is not enough, you have to
+also replace the menus (e.g., navigation) by their dhtml version
+on the administer/menu page.
