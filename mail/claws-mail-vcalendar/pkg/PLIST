@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/02/10 20:57:33 landry Exp $
-include/claws-mail/ical.h
+@comment $OpenBSD: PLIST,v 1.4 2009/07/17 17:05:44 landry Exp $
 include/claws-mail/plugins/vcalendar/
+include/claws-mail/plugins/vcalendar/ical.h
 include/claws-mail/plugins/vcalendar/vcal_interface.h
 lib/claws-mail/plugins/vcalendar.la
 lib/claws-mail/plugins/vcalendar.so
@@ -11,9 +11,12 @@ share/locale/es/LC_MESSAGES/vcalendar.mo
 share/locale/fi/LC_MESSAGES/vcalendar.mo
 share/locale/fr/LC_MESSAGES/vcalendar.mo
 share/locale/hu/LC_MESSAGES/vcalendar.mo
+share/locale/id/LC_MESSAGES/vcalendar.mo
 share/locale/it/LC_MESSAGES/vcalendar.mo
+share/locale/ja/LC_MESSAGES/vcalendar.mo
 share/locale/pl/LC_MESSAGES/vcalendar.mo
 share/locale/pt_BR/LC_MESSAGES/vcalendar.mo
+share/locale/ru/LC_MESSAGES/vcalendar.mo
 share/locale/sk/LC_MESSAGES/vcalendar.mo
 share/locale/sr/LC_MESSAGES/vcalendar.mo
 share/locale/zh_CN/LC_MESSAGES/vcalendar.mo
