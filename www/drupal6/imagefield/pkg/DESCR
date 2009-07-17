@@ -1,0 +1,5 @@
+ImageField provides an "Image" widget type to CCK. This module leverages the
+functionality of FileField and behaves nearly identically. ImageField widgets
+will give you a nice thumbnail preview of the image when uploaded, and provides
+a few display options (formatters) within CCK to display the images when the
+content is viewed.
