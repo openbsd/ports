@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/27 12:59:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/07/17 18:19:52 sthen Exp $
 
 COMMENT =		identify control points from groups of overlapping images
 
 DISTNAME =		autopano-sift-C-2.5.0
-PKGNAME =		${DISTNAME:S/C/c/}p1
+PKGNAME =		${DISTNAME:S/C/c/}p2
 
 CATEGORIES =		graphics
 
@@ -34,7 +34,7 @@ NO_REGRESS =		Yes
 
 # dos line-endings in file needing patch
 post-extract:
-	@perl -i -pe 's/\r$$//' ${WRKSRC}/CMakeLists.txt
+	@cd ${WRKSRC}; perl -i -pe 's/\r$$//' CMakeLists.txt APSCpp/APSCpp.c
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeModules/FindPNG.cmake

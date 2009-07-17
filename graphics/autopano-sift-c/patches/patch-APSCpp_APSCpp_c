@@ -1,0 +1,16 @@
+$OpenBSD: patch-APSCpp_APSCpp_c,v 1.1 2009/07/17 18:19:52 sthen Exp $
+
+comment-out function having no effect; drops RAM use by 30x.
+from upstream svn r3895
+
+--- APSCpp/APSCpp.c.orig	Wed Jul 23 23:16:59 2008
++++ APSCpp/APSCpp.c	Fri Jul 17 19:11:52 2009
+@@ -327,7 +327,7 @@ KeypointXMLList * GenerateKeyspp( char * imgname, int 
+ 	// create result map
+ 		pn = ImageMap_new( dwid, dhgt );
+ 	// smooth the source
+-		ImageMap_GaussianConvolution( picMap, 0.75 * Scale );
++		//ImageMap_GaussianConvolution( picMap, 0.75 * Scale ); // NO EFFECT.
+ 		LoweFeatureDetector_SetPreprocSigma( 0 );
+ 	// set up coordinate mapping
+ 		if( pdi ){			// ++ mode
