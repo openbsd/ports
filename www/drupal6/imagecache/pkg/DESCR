@@ -1,0 +1,10 @@
+ImageCache is a dynamic image manipulation and cache tool. It allows you to
+create a namespace that corresponds to a set of image manipulation actions. It
+generates a derivative image the first time it is requested from a namespace
+until the namespace or the entire imagecache is flushed.
+
+ImageCache presets can be put to use in various other modules. For example, when
+using CCK with the Imagefield module, you can use the "Display fields" local
+task tab to choose a preset to apply to images in that field. Similarly, you
+can specify a preset when displaying images attached to nodes using Imagefield
+in a View through the Views UI.
