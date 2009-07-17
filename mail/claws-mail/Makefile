@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/06/29 09:23:39 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2009/07/17 17:02:45 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,12 +8,12 @@ COMMENT-bogofilter=	bogofilter plugin
 COMMENT-clamav=		clamav plugin
 COMMENT-spamassassin=	spamassassin plugin
 
-V=			3.7.1
+V=			3.7.2
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}p0
+PKGNAME-main=			${DISTNAME}
 FULLPKGNAME-docs=		claws-mail-docs-${V}
-FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}p0
-FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}p0
+FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
+FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 CATEGORIES=		mail news
 
 HOMEPAGE=		http://www.claws-mail.org/
