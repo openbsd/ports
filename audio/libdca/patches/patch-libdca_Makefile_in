@@ -1,0 +1,11 @@
+$OpenBSD: patch-libdca_Makefile_in,v 1.1 2009/07/17 17:00:06 jolan Exp $
+--- libdca/Makefile.in.orig	Tue Apr 10 07:31:23 2007
++++ libdca/Makefile.in	Fri Jul 17 11:52:37 2009
+@@ -449,7 +449,6 @@ install-dvi: install-dvi-am
+ 
+ install-exec-am: install-libLTLIBRARIES
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ 
+ install-html: install-html-am
+ 

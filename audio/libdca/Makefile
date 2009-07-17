@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/07/12 23:26:08 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2009/07/17 17:00:06 jolan Exp $
 
 COMMENT=	free library for decoding DTS Coherent Acoustics streams
 V=		0.0.5
 DISTNAME=	libdca-${V}
+PKGNAME=	libdca-${V}p0
 EXTRACT_SUFX=	.tar.bz2
 SHARED_LIBS=	dca	0.0
 CATEGORIES=	audio
