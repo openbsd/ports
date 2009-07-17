@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/07 14:23:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/07/17 16:38:48 naddy Exp $
 
 COMMENT=	edit enlightenment's keybindings
 
 DISTNAME=	e16keyedit-0.5
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	x11
 
 # X11
@@ -21,7 +21,7 @@ WANTLIB += pixman-1 png z
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-RUN_DEPENDS=	:enlightenment-0.16*:x11/enlightenment
+RUN_DEPENDS=	:enlightenment->=0.16,<0.17:x11/enlightenment
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu

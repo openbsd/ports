@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2007/07/30 15:30:26 steven Exp $
+# $OpenBSD: Makefile,v 1.30 2009/07/17 16:38:48 naddy Exp $
 
 COMMENT=	checkbook balancing tool
 
 DISTNAME=	cbb-0.73
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	misc
 HOMEPAGE=	http://www.fifi.org/doc/cbb/html/
 
@@ -15,10 +15,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
-RUN_DEPENDS=	:plan-*:misc/plan \
-		:tk-8.4.*:x11/tk/8.4
+MODULES=	x11/tk
+MODTK_VERSION=	8.4
 
-NO_BUILD=       Yes
+RUN_DEPENDS=	::misc/plan \
+		${MODTK_RUN_DEPENDS}
+
+NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 
