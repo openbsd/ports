@@ -15,6 +15,7 @@ SUBDIR += dhtml_menu
 SUBDIR += filefield
 SUBDIR += imageapi
 SUBDIR += imagecache
+SUBDIR += imagecache_profiles
 SUBDIR += imagefield
 SUBDIR += locale-fr
 SUBDIR += locale-it
