@@ -1,0 +1,12 @@
+$OpenBSD: patch-includes_locale_inc,v 1.1 2009/07/17 09:33:12 espie Exp $
+--- includes/locale.inc.orig	Thu Jun 18 14:50:33 2009
++++ includes/locale.inc	Fri Jul 17 10:55:58 2009
+@@ -1271,7 +1271,7 @@ function _locale_import_one_string($op, $value = NULL,
+         $header = _locale_import_parse_header($value['msgstr']);
+ 
+         // Get the plural formula and update in database.
+-        if (isset($header["Plural-Forms"]) && $p = _locale_import_parse_plural_forms($header["Plural-Forms"], $file->filename)) {
++        if (isset($header["Plural-Forms"]) && $p = _locale_import_parse_plural_forms($header["Plural-Forms"], $file->filepath)) {
+           list($nplurals, $plural) = $p;
+           db_query("UPDATE {languages} SET plurals = %d, formula = '%s' WHERE language = '%s'", $nplurals, $plural, $lang);
+         }

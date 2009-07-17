@@ -39,3 +39,24 @@ In postgresql, assuming an `admin' account has all rights:
 
 createuser -U admin --pwprompt --no-superuser --createdb --no-createrole drupal
 createdb -U drupal -E UTF8 drupal
+
+Updating from a drupal5 installation:
+
+a lot of things now work. Major stumbling blocks:
+* views are lost. Recreating them may be quick, or very painful if you
+have a lot of them.
+* usernodes no longer exist.
+* image has been replaced by imagefield.
+
+- first back-up your installation, using backup and migrate
+- then DISABLE all 3rd party modules
+- put the drupal5 site offline
+- make sure you have enough space (database, website...)
+- install the drupal6 packages you need.
+- cp the defaults.settings.php to the settings.php, edit it to point to
+your existing database. You will often also need $update_free_access=TRUE
+- point your browser to update.php
+- assuming things work, go to the /admin page, enable the modules you need
+- rerun update.php
+- you will often need to reconstruct the permissions
+- don't forget to reset $update_free_access=FALSE
