@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2009/04/14 19:52:08 kili Exp $
+# $OpenBSD: Makefile,v 1.47 2009/07/18 09:06:26 sthen Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=			20080620
 DISTNAME=		ffmpeg-svn-${V}
-PKGNAME=		ffmpeg-${V}p8
+PKGNAME=		ffmpeg-${V}p9
 SHARED_LIBS=		avutil		6.0 \
 			avcodec		13.0 \
 			avformat	12.0 \
@@ -34,10 +34,11 @@ LIB_DEPENDS=		SDL.>=4::devel/sdl \
 			a52::audio/liba52 \
 			x264.>=3::multimedia/x264 \
 			theora::multimedia/libtheora \
+			schroedinger-1.0::multimedia/schroedinger \
 			Imlib2::graphics/imlib2 \
 			bz2.>=10::archivers/bzip2
 
-WANTLIB=		X11 Xext c freetype m pthread ogg ossaudio z
+WANTLIB=		X11 Xext c freetype m pthread ogg oil-0.3 ossaudio z
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -49,7 +50,7 @@ CFLAGS+=-fomit-frame-pointer
 
 # inter-library dependencies for the current configuration
 LIBavutil_EXTRALIBS=-lm
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfaac -lfaad -lmp3lame -lvorbis -lvorbisenc -la52 -ltheora -logg -lx264 -lz -lm -pthread -Wl,-rpath,${LOCALBASE}/lib 
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfaac -lfaad -lmp3lame -lvorbis -lvorbisenc -la52 -lschroedinger-1.0 -loil-0.3 -ltheora -logg -lx264 -lz -lm -pthread -Wl,-rpath,${LOCALBASE}/lib 
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lm -Wl,-rpath,${LOCALBASE}/lib
 LIBpostproc_EXTRALIBS=-lm
 LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lossaudio -lm -Wl,-rpath,${LOCALBASE}/lib -Wl,-rpath,${X11BASE}/lib
@@ -72,6 +73,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-libfaac \
 			--enable-libfaad \
 			--enable-libmp3lame \
+			--enable-libschroedinger \
 			--enable-libtheora \
 			--enable-libvorbis \
 			--enable-libx264 \
