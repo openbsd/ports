@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/06/08 14:27:03 phessler Exp $
+# $OpenBSD: Makefile,v 1.20 2009/07/18 15:07:51 sthen Exp $
 
 COMMENT=	convert Big5/GB encoded files to postscript
 
 DISTNAME=	bg5ps-1.3.0
-PKGNAME=	zh-${DISTNAME}p1
+PKGNAME=	zh-${DISTNAME}p2
 CATEGORIES=	chinese x11
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -17,17 +17,19 @@ WANTLIB=		c m
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
-PYTHON_VER=	2.4
-RUN_DEPENDS=	::chinese/arphicttf \
-		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+MODULES=	lang/python
+MODPY_VERSION=	2.4
+RUN_DEPENDS=	::chinese/arphicttf
 LIB_DEPENDS=	ttf.>=1::print/freetype
+
+# python.port.mk overrides various targets when CONFIGURE_STYLE is empty
+CONFIGURE_STYLE=none
 
 NO_REGRESS=	Yes
 
 pre-configure:
 	perl -pi -e \
-		"s|/usr/local/bin/python.*|${LOCALBASE}/bin/python${PYTHON_VER}|" \
-		${WRKSRC}/bg5ps
+		"s|/usr/local/bin/python.*|${MODPY_BIN}|" ${WRKSRC}/bg5ps
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/freetype1" \
 		LDFLAGS=-L${LOCALBASE}/lib \
