@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2009/07/18 21:37:53 naddy Exp $
 
 COMMENT-main=	OCR software
 COMMENT-gui=	gocr tcl/tk frontend
@@ -7,7 +7,7 @@ V=		0.44
 DISTNAME=	gocr-$V
 
 PKGNAME-main=	gocr-$V
-PKGNAME-gui=	gocr-gui-$V
+PKGNAME-gui=	gocr-gui-$Vp0
 
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jocr/}
@@ -31,8 +31,11 @@ FAKE_FLAGS+=	prefix=${PREFIX} exec_prefix=${PREFIX}
 
 MULTI_PACKAGES=	-main -gui
 
+MODULES=	x11/tk
+MODTK_VERSION=	8.4
+
 PKG_ARCH-gui=	*
-RUN_DEPENDS-gui=:tk-8.4.*:x11/tk/8.4 \
+RUN_DEPENDS-gui=${MODTK_RUN_DEPENDS} \
 		::graphics/xsane \
 		::textproc/p5-tkispell \
 		::graphics/gocr
