@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/10/13 19:44:37 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2009/07/18 19:23:55 naddy Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-gui=		Tk front-end to gpsbabel
@@ -6,7 +6,7 @@ COMMENT-gui=		Tk front-end to gpsbabel
 VERSION=		1.3.5
 DISTNAME=		gpsbabel-${VERSION}
 PKGNAME-main=		gpsbabel-${VERSION}
-PKGNAME-gui=		gpsbabel-gui-${VERSION}
+PKGNAME-gui=		gpsbabel-gui-${VERSION}p0
 CATEGORIES=		geo
 
 HOMEPAGE=		http://www.gpsbabel.org/
@@ -39,6 +39,9 @@ USE_GMAKE=		Yes
 NO_REGRESS=		Yes # expects FP conversion to be exact and invertible
 MULTI_PACKAGES=		-main -gui
 
+MODULES=		x11/tk
+MODTK_VERSION=		8.4
+
 BUILD_DEPENDS=		::textproc/libxslt \
 			::textproc/docbook \
 			::textproc/docbook-xsl
@@ -50,7 +53,7 @@ WANTLIB-main=		expat m c z
 LIB_DEPENDS-gui=
 PKG_ARCH-gui=	*
 RUN_DEPENDS-gui=	::geo/gpsbabel \
-			:tk-8.4.*:x11/tk/8.4
+			${MODTK_RUN_DEPENDS}
 
 post-build:
 	gmake -C ${WRKSRC} doc
