@@ -1,11 +1,65 @@
-$OpenBSD: patch-exo-open_main_c,v 1.1 2009/05/11 20:49:44 landry Exp $
---- exo-open/main.c.orig	Mon May 11 21:55:30 2009
-+++ exo-open/main.c	Mon May 11 21:55:48 2009
-@@ -110,6 +110,7 @@ main (int argc, char **argv)
-   g_option_context_set_help_enabled (context, FALSE);
-   g_option_context_add_main_entries (context, entries, GETTEXT_PACKAGE);
-   g_option_context_add_group (context, gtk_get_option_group (TRUE));
-+  g_option_context_set_ignore_unknown_options (context, TRUE);
-   if (!g_option_context_parse (context, &argc, &argv, &err))
+$OpenBSD: patch-exo-open_main_c,v 1.2 2009/07/18 08:21:35 landry Exp $
+--- exo-open/main.c.orig	Sat Jul 18 09:58:25 2009
++++ exo-open/main.c	Sat Jul 18 10:06:48 2009
+@@ -36,7 +36,17 @@
+ #include <exo/exo.h>
+ 
+ 
++/**
++ * For testing this code the following commands should work:
++ * 
++ * exo-open --launch WebBrowser http://xfce.org (bug #5461).
++ * exo-open http://xfce.org
++ * exo-open --launch TerminalEmulator ./script.sh 'something with a space' 'nospace' (bug #5132).
++ * exo-open --launch TerminalEmulator ssh -l username some.host.com
++ **/
+ 
++
++
+ static gboolean opt_help = FALSE;
+ static gboolean opt_version = FALSE;
+ static gchar   *opt_launch = NULL;
+@@ -143,6 +153,8 @@ main (int argc, char **argv)
      {
-       g_fprintf (stderr, "exo-open: %s.\n", err->message);
+       if (argc > 1)
+         {
++          /* NOTE: see the comment at the top of this document! */
++
+           /* combine all specified parameters to one parameter string */
+           join = g_string_new (NULL);
+           for (i = 1; argv[i] != NULL; i++)
+@@ -150,11 +162,18 @@ main (int argc, char **argv)
+               /* separate the arguments */
+               if (i > 1)
+                 join = g_string_append_c (join, ' ');
+-
+-              /* append the quoted argument */
+-              quoted = g_shell_quote (argv[i]);
+-              join = g_string_append (join, quoted);
+-              g_free (quoted);
++              
++              /* only quote arguments with spaces */
++              if (strchr (argv[i], ' ') != NULL)
++                {
++                  quoted = g_shell_quote (argv[i]);
++                  join = g_string_append (join, quoted);
++                  g_free (quoted);
++                }
++              else
++                {
++                  join = g_string_append (join, argv[i]);
++                }
+             }
+           parameter = g_string_free (join, FALSE);
+         }
+@@ -162,6 +181,10 @@ main (int argc, char **argv)
+         {
+           parameter = NULL;
+         }
++
++#ifndef NDEBUG
++      g_message ("launch=%s, wd=%s, parameters (%d)=%s", opt_launch, opt_working_directory, argc, parameter);
++#endif
+ 
+       /* run the preferred application */
+       if (!exo_execute_preferred_application (opt_launch, parameter, opt_working_directory, NULL, &err))
