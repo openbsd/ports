@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/04/17 21:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2009/07/18 08:53:48 sthen Exp $
 
      SUBDIR += avidemux
      SUBDIR += devede
@@ -29,6 +29,7 @@
      SUBDIR += pspvc
      SUBDIR += recordmydesktop
      SUBDIR += regionset
+     SUBDIR += schroedinger
      SUBDIR += streamdvd
      SUBDIR += subrip
      SUBDIR += subtitleripper
