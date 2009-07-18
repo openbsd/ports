@@ -1,0 +1,25 @@
+$OpenBSD: patch-schroedinger_schroasync-pthread_c,v 1.1.1.1 2009/07/18 08:53:08 sthen Exp $
+--- schroedinger/schroasync-pthread.c.orig	Thu Jul  2 15:32:36 2009
++++ schroedinger/schroasync-pthread.c	Thu Jul  2 15:35:33 2009
+@@ -20,6 +20,12 @@
+ #include <sys/sysctl.h>
+ #endif
+ 
++#if defined(__OpenBSD__)
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <machine/cpu.h>
++#endif
++
+ struct _SchroAsync {
+   int n_threads;
+   int n_threads_running;
+@@ -95,7 +101,7 @@ schro_async_new(int n_threads,
+       if (s) {
+         n_threads = atoi(s);
+       }
+-#elif defined(__APPLE__)
++#elif defined(__APPLE__) || defined(__OpenBSD__)
+       {
+         int    mib[]    = {CTL_HW, HW_NCPU};
+         size_t dataSize =  sizeof(int);

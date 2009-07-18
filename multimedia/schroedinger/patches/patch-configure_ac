@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2009/07/18 08:53:08 sthen Exp $
+--- configure.ac.orig	Wed Jul 15 02:49:57 2009
++++ configure.ac	Wed Jul 15 02:52:10 2009
+@@ -90,7 +90,11 @@ THREAD_IMPL=${with_thread}
+ AC_SUBST(THREAD_IMPL)
+ 
+ if test "x${with_thread}" = "xpthread" ; then
+-  case "$host_os" in 
++  case "$host_os" in
++    openbsd*)
++      PTHREAD_CFLAGS=
++      PTHREAD_LIBS=-pthread
++      ;;
+     *)
+       PTHREAD_CFLAGS=
+       PTHREAD_LIBS=-lpthread
+@@ -139,8 +143,6 @@ if test "x$SCHRO_CVS" = "xyes"
+ then
+   AS_COMPILER_FLAG(-Werror, SCHRO_CFLAGS="$SCHRO_CFLAGS -Werror")
+ fi
+-
+-AS_COMPILER_FLAG(-O3, CFLAGS=`echo $CFLAGS | sed s/O2/O3/`)
+ 
+ # Enable severe pain
+ #AS_COMPILER_FLAGS(COMPANY_CFLAGS,"-Wextra -Wno-missing-field-initializers -Wno-unused-parameter -Wold-style-definition -Wdeclaration-after-statement -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wmissing-noreturn -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Winline -Wformat-nonliteral -Wformat-security -Wswitch-enum -Wswitch-default")
