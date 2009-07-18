@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/03/20 18:21:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/07/18 08:25:06 sthen Exp $
 %%SHARED%%
-bin/oil-bugreport
+@bin bin/oil-bugreport
 include/liboil-0.3/
 include/liboil-0.3/liboil/
 include/liboil-0.3/liboil/liboil-stdint.h
