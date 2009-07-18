@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/24 22:44:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/07/18 17:41:10 kili Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://fyre.navi.cx/
@@ -25,12 +25,12 @@ MASTER_SITES=		http://releases.navi.cx/fyre/ \
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=		::misc/shared-mime-info \
-			::textproc/rarian
+BUILD_DEPENDS=		::textproc/rarian
 LIB_DEPENDS=		glade-2.0::devel/libglade2 \
 			IlmImf.>=4::graphics/openexr \
 			gnet-2.0::net/gnet
-RUN_DEPENDS=		::x11/hicolor-icon-theme
+RUN_DEPENDS=		::misc/shared-mime-info \
+			::x11/hicolor-icon-theme
 
 USE_GMAKE=		Yes
 USE_X11=		yes
