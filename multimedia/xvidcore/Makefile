@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/16 20:38:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2009/07/18 10:56:29 sthen Exp $
 
 COMMENT=	ISO MPEG-4 compliant video codec
 
 DISTNAME=	xvidcore-1.2.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xvid.org/downloads/
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	m
+WANTLIB=	m pthread
 
 WRKDIST=	${WRKDIR}/xvidcore
 WRKBUILD=	${WRKSRC}/build/generic
