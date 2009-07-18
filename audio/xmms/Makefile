@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2009/06/14 10:06:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2009/07/18 15:50:40 naddy Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
@@ -12,7 +12,7 @@ DISTNAME=		xmms-${VERSION}
 PKGNAME-main=		xmms-${VERSION}p5
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}p0
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}p0
-PKGNAME-mp3=		xmms-mp3-${VERSION}p0
+PKGNAME-mp3=		xmms-mp3-${VERSION}p1
 SHARED_LIBS=		xmms	4.2
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
@@ -76,7 +76,7 @@ RUN_DEPENDS-mikmod=	::audio/xmms
 
 PERMIT_PACKAGE_CDROM-mp3=	patent issues
 PERMIT_DISTFILES_CDROM-mp3= 	patent issues
-LIB_DEPENDS-mp3=	${LIB_DEPENDS} xmms.>=4:xmms-${VERSION}*:${BUILD_PKGPATH}
+LIB_DEPENDS-mp3=	${LIB_DEPENDS} xmms.>=4:xmms-${VERSION}:${BUILD_PKGPATH}
 WANTLIB-mp3=		${WANTLIB} z
 
 post-patch:

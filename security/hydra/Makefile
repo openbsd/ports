@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/01/05 22:10:06 rui Exp $
+# $OpenBSD: Makefile,v 1.34 2009/07/18 15:50:40 naddy Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
@@ -6,7 +6,7 @@ COMMENT-gui=	GTK frontend for hydra
 VERSION=	5.4
 DISTNAME=	hydra-5.4-src
 PKGNAME-main=	hydra-${VERSION}
-PKGNAME-gui=	hydra-gui-${VERSION}
+PKGNAME-gui=	hydra-gui-${VERSION}p0
 CATEGORIES=    	security
 
 HOMEPAGE=	http://thc.org/thc-hydra/
@@ -52,7 +52,7 @@ RUN_DEPENDS-main=
 WANTLIB-main=	${WANTLIB} ssl crypto
 LIB_DEPENDS-gui=gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		${MODGETTEXT_LIB_DEPENDS}
-RUN_DEPENDS-gui=:hydra-${VERSION}*:security/hydra,-main \
+RUN_DEPENDS-gui=:hydra-${VERSION}:security/hydra,-main \
 		${MODGETTEXT_RUN_DEPENDS}
 WANTLIB-gui=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
 		Xext Xi Xinerama Xrandr Xrender atk-1.0 freetype fontconfig \

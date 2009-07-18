@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2009/04/05 14:11:14 steven Exp $
+# $OpenBSD: Makefile,v 1.49 2009/07/18 15:50:40 naddy Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -11,10 +11,10 @@ COMMENT-browser=	HTML Browser Widget library for swt/eclipse
 ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p9
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p10
 PKGNAME-swt=		swt-${ECLIPSE_VER}p1
-PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}p1
-PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p0
+PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}p2
+PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p1
 SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-awt-gtk-3236	4.0 \
 			swt-gtk-3236		4.0 \
@@ -68,7 +68,7 @@ MULTI_PACKAGES=		-main -swt -gnome -browser
 
 RUN_DEPENDS-main=	::java/javaPathHelper \
 			${MODJAVA_RUN_DEPENDS} \
-			:swt-browser-${ECLIPSE_VER}*:devel/eclipse/sdk,-browser \
+			:swt-browser-${ECLIPSE_VER}:devel/eclipse/sdk,-browser \
 			::devel/desktop-file-utils
 LIB_DEPENDS-main=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
@@ -83,11 +83,11 @@ WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 LIB_DEPENDS-swt=	gtk-x11-2.0::x11/gtk+2
 WANTLIB-swt=		GL GLU Xtst m atk-1.0 cairo gthread-2.0
 
-RUN_DEPENDS-gnome=	:swt-${ECLIPSE_VER}*:devel/eclipse/sdk,-swt
+RUN_DEPENDS-gnome=	:swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
 LIB_DEPENDS-gnome=	gnomeui-2::x11/gnome/libgnomeui
 WANTLIB-gnome=		gnome-2 gnomevfs-2
 
-RUN_DEPENDS-browser=	:swt-${ECLIPSE_VER}*:devel/eclipse/sdk,-swt
+RUN_DEPENDS-browser=	:swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
 LIB_DEPENDS-browser=	xulrunner/gtkembedmoz,xulrunner/xpcom::devel/xulrunner
 WANTLIB-browser=	c nspr4 plc4 plds4
 
