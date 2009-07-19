@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/05 11:58:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/07/19 21:39:21 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	cross-platform interactive fiction player
 
 DISTNAME =	gargoyle-2008-12-25-sources
-PKGNAME =	gargoyle-20081225p0
+PKGNAME =	gargoyle-20081225p1
 
 # not a libtool port; any additional libs will need further changes.
 SHARED_LIBS =	garglk 0.0
