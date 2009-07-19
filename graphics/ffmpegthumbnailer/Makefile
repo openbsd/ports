@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/07/19 12:42:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/07/19 22:49:12 sthen Exp $
 
 COMMENT=	lightweight video thumbnailer for file managers
 
 DISTNAME=	ffmpegthumbnailer-1.1.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	graphics multimedia
 HOMEPAGE=	http://code.google.com/p/ffmpegthumbnailer
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://ffmpegthumbnailer.googlecode.com/files/
 
-LIB_DEPENDS=	avcodec.>=10,avformat.>=10,avutil.>=4,swscale.>=1::graphics/ffmpeg \
+LIB_DEPENDS=	avcodec.>=13.1,avformat.>=12,avutil.>=6,swscale.>=1:ffmpeg->=20080620p10:graphics/ffmpeg \
 		png.>=6::graphics/png
 
 WANTLIB=	a52 bz2 c faac faad m mp3lame ogg pthread \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2009/07/19 15:25:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2009/07/19 22:49:12 sthen Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 SHARED_LIBS +=	akode                2.1      # .2.0
 
 CATEGORIES=	audio multimedia x11/kde
@@ -25,7 +25,7 @@ LIB_DEPENDS=	FLAC.>=8::audio/flac \
 		speex::audio/speex \
 		vorbis,vorbisfile,vorbisenc::audio/libvorbis \
 		ltdl::devel/libtool,-ltdl \
-		avcodec.>=10,avformat.>=10,avutil.>=3::graphics/ffmpeg \
+		avcodec.>=13.1,avformat.>=12,avutil.>=6:ffmpeg->=20080620p10:graphics/ffmpeg \
 		jack::audio/jack
 
 WANTLIB=	a52 bz2 c faac faad samplerate m mp3lame ogg pthread \

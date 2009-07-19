@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2009/07/19 13:05:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2009/07/19 22:49:12 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		video stream processing tools
 
 DISTNAME=		transcode-1.0.5
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
@@ -37,7 +37,7 @@ PATCH_LIST=		patch-* gcc-*
 
 LIB_DEPENDS=		SDL.>=2::devel/sdl \
 			a52::audio/liba52 \
-			avcodec.>=10,avutil.>=4::graphics/ffmpeg \
+			avcodec.>=13.1,avutil.>=6:ffmpeg->=20080620p10:graphics/ffmpeg \
 			dv.>=4::multimedia/libdv \
 			dvdread.>=3::devel/libdvdread \
 			iconv.>=4::converters/libiconv \

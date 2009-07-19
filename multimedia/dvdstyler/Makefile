@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/07/19 12:54:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/07/19 22:49:12 sthen Exp $
 
 COMMENT=		DVD authoring application
 
 DISTNAME=		DVDStyler-1.7.0
-PKGNAME=		${DISTNAME:L}p1
+PKGNAME=		${DISTNAME:L}p2
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.dvdstyler.de/
@@ -39,7 +39,7 @@ BUILD_DEPENDS=		:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION}
 LIB_DEPENDS=		exif::graphics/libexif \
 			gnomeui-2::x11/gnome/libgnomeui \
 			wxsvg::x11/wxSVG \
-			avcodec.>=12,avformat.>=12,avutil.>=6,swscale.>=1::graphics/ffmpeg
+			avcodec.>=13.1,avformat.>=12,avutil.>=6,swscale.>=1:ffmpeg->=20080620p10:graphics/ffmpeg
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			::multimedia/dvdauthor \
                         ::multimedia/mjpegtools \
