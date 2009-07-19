@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/01/12 11:43:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/07/19 12:42:04 sthen Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 SHARED_LIBS +=	akode                2.1      # .2.0
 
 CATEGORIES=	audio multimedia x11/kde
@@ -29,7 +29,7 @@ LIB_DEPENDS=	FLAC.>=8::audio/flac \
 		jack::audio/jack
 
 WANTLIB=	a52 bz2 c faac faad samplerate m mp3lame ogg pthread \
-		stdc++ theora x264 z
+		schroedinger-1.0 stdc++ theora x264 z
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
