@@ -1,0 +1,16 @@
+$OpenBSD: patch-picard_const_py,v 1.1 2009/07/19 09:06:43 ajacoutot Exp $
+
+Quick and dirty patch to solve the bug in Picard when we use the command
+"pydoc -k". Also make the regress target works.
+
+--- picard/const.py.orig	Sat Jul 18 00:02:45 2009
++++ picard/const.py	Sat Jul 18 00:03:23 2009
+@@ -17,6 +17,8 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
++import __builtin__
++__builtin__.__dict__['N_'] = lambda a: a
+
+ # Host for PUID submissions
+ PUID_SUBMIT_HOST = "musicbrainz.org"

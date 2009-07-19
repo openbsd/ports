@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/07/12 20:43:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/07/19 09:06:43 ajacoutot Exp $
 
 COMMENT =		automatic audio files tagger
 
 MODPY_EGG_VERSION =	0.11
 DISTNAME =		picard-${MODPY_EGG_VERSION}
+PKGNAME = 		${DISTNAME}p0
 
 CATEGORIES =		audio
 
@@ -57,5 +58,8 @@ post-install:
 .for file in ${PLUGINS}
 	${INSTALL_DATA} ${WRKSRC}/contrib/plugins/${file} ${PREFIX}/share/picard/${file}
 .endfor
+
+do-regress:
+	cd ${WRKSRC} && ${MODPY_BIN} ./setup.py build_ext -i test
 
 .include <bsd.port.mk>
