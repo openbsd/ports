@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.47 2009/07/18 09:06:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2009/07/19 22:27:46 sthen Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=			20080620
 DISTNAME=		ffmpeg-svn-${V}
-PKGNAME=		ffmpeg-${V}p9
+PKGNAME=		ffmpeg-${V}p10
 SHARED_LIBS=		avutil		6.0 \
-			avcodec		13.0 \
+			avcodec		13.1 \
 			avformat	12.0 \
 			postproc	12.0 \
 			avdevice	2.0 \
