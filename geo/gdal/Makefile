@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/26 11:01:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/07/19 12:01:58 landry Exp $
 
 COMMENT-main=	translator library for geospatial data formats
 COMMENT-python=	python bindings and utilities for GDAL
 COMMENT-perl=	perl bindings for GDAL
 
-V=		1.6.0
+V=		1.6.1
 DISTNAME=	gdal-${V}
 
-PKGNAME-main=	${DISTNAME}p1
-PKGNAME-python=	py-${DISTNAME}p0
-PKGNAME-perl=   p5-Geo-GDAL-${V}p0
+PKGNAME-main=	${DISTNAME}
+PKGNAME-python=	py-${DISTNAME}
+PKGNAME-perl=   p5-Geo-GDAL-${V}
 
-SHARED_LIBS=	gdal 14.0
+SHARED_LIBS=	gdal 15.0
 CATEGORIES=	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -53,7 +53,7 @@ BUILD_DEPENDS+=	${RUN_DEPENDS} ::devel/swig
 MULTI_PACKAGES=	-main -python -perl
 
 MODPY_SETUPTOOLS=Yes
-MODPY_EGG_VERSION=1.6.0
+MODPY_EGG_VERSION=${V}
 
 NO_REGRESS=	Yes
 MAKE_FILE=	GNUmakefile
