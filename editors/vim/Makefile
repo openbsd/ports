@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.99 2009/06/17 01:53:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2009/07/19 20:22:01 ckuethe Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 DISTNAME=	vim-7.2
-REVISION=	190
+REVISION=	234
 VERSION=	7.2.${REVISION}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
-PKGNAME-main=	vim-${VERSION}p1
+PKGNAME-main=	vim-${VERSION}
 PKGNAME-lang=	vim-lang-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
@@ -24,9 +24,9 @@ DIST_SUBDIR=	vim72
 HOMEPAGE=	http://www.vim.org/
 MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
-PATCHFILES=	#
+PATCHFILES=	# 
 _patches!=	jot -w%03d - 1 ${REVISION} 1 | \
-	egrep -v '001|007|022|036|041|049|071|072|074|088|089|093|101|138|150|172|173|191'
+	egrep -v '001|007|022|036|041|049|071|072|074|088|089|093|101|138|150|172|173|191|194|204|205|206|212|216|219|233'
 .for p in ${_patches}
 PATCHFILES+=	7.2.${p}:0
 .endfor
@@ -53,7 +53,7 @@ FLAVOR?=	gtk2
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
-CONFIGURE_ARGS+=--with-tlib="curses" --enable-multibyte
+CONFIGURE_ARGS+=--with-tlib="curses" --enable-multibyte --enable-cscope
 
 .if ${FLAVOR:L:Mhuge}
 CONFIGURE_ARGS+=--with-features=huge
