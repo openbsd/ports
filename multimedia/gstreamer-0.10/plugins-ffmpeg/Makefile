@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/11 14:37:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/07/19 13:05:02 sthen Exp $
 
 COMMENT =		multimedia framework - ffmpeg plugin
 
 V =			0.10.5
 DISTNAME =		gst-ffmpeg-$V
-PKGNAME =		gstreamer-ffmpeg-$Vp1
+PKGNAME =		gstreamer-ffmpeg-$Vp2
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-ffmpeg/}
 
@@ -14,10 +14,9 @@ LIB_DEPENDS =		gstreamer-0.10,gstbase-0.10:gstreamer->=0.10:$P/core \
 
 AUTOCONF_VERSION =	2.62
 
-WANTLIB += 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv
-WANTLIB += 		intl m pcre xml2 z oil-0.3
-WANTLIB += 		a52 faac faad mp3lame ogg theora vorbis vorbisenc x264
-WANTLIB +=		bz2
+WANTLIB += a52 bz2 faac faad glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 iconv intl m mp3lame ogg oil-0.3 pcre schroedinger-1.0
+WANTLIB += theora vorbis vorbisenc x264 xml2 z
 
 CONFIGURE_ARGS +=	--with-system-ffmpeg
 
