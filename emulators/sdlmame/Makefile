@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/24 14:47:16 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2009/07/19 11:28:17 landry Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,10 +8,10 @@ MULTI_PACKAGES =	-main -tools
 COMMENT-main =		emulates a massive variety of arcades machines
 COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
-V =			0.130
+V =			0.132
 DISTNAME =		sdlmame${V:S/.//}
-PKGNAME-main =		sdlmame-${V}p1
-PKGNAME-tools =		sdlmame-tools-${V}p0
+PKGNAME-main =		sdlmame-${V}
+PKGNAME-tools =		sdlmame-tools-${V}
 
 CATEGORIES =		emulators games
 
