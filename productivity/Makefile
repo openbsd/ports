@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2009/06/04 02:22:53 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.27 2009/07/19 11:59:48 landry Exp $
 
      SUBDIR += bruce
      SUBDIR += calcurse
      SUBDIR += devtodo
      SUBDIR += fet
+     SUBDIR += glabels
      SUBDIR += gnucash
      SUBDIR += gnucash-docs
      SUBDIR += grisbi
