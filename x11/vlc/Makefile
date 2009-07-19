@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2009/04/14 19:52:08 kili Exp $
+# $OpenBSD: Makefile,v 1.80 2009/07/19 16:28:31 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	videolan client; multimedia player
 
 V=		0.8.6i
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}p4
+PKGNAME-main=	${DISTNAME}p5
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -48,7 +48,8 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 WANTLIB-main=	ICE SM X11 Xext Xinerama Xv Xxf86vm c freetype m ncurses \
 		pthread stdc++ usbhid z Xau Xdmcp Xrandr Xrender \
-		SDL jpeg tiff bz2 ogg vorbis vorbisenc faac mp3lame sndio
+		SDL jpeg tiff bz2 ogg vorbis vorbisenc faac mp3lame sndio \
+		oil-0.3 schroedinger-1.0
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.61
