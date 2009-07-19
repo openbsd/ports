@@ -1,0 +1,5 @@
+gLabels is a small stand-alone program for creating labels and business
+cards using a laser or ink-jet printer. It can uses csv files, vcard
+files or evolution address book as a data source. It knows a lot of
+label/card size & formats, but you can also create your own templates
+using the builtin template designer.

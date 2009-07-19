@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/07/19 11:59:05 landry Exp $
+@lib lib/libglabels.so.${LIBglabels_VERSION}
