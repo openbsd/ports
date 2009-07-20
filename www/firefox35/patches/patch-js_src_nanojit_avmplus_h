@@ -1,0 +1,11 @@
+$OpenBSD: patch-js_src_nanojit_avmplus_h,v 1.1 2009/07/20 23:41:34 martynas Exp $
+--- js/src/nanojit/avmplus.h.orig	Wed Jul 15 18:34:51 2009
++++ js/src/nanojit/avmplus.h	Tue Jul 21 02:36:28 2009
+@@ -41,6 +41,7 @@
+ 
+ #if defined(AVMPLUS_UNIX)
+ #include <unistd.h>
++#include <sys/types.h>
+ #include <sys/mman.h>
+ #endif
+ 
