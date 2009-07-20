@@ -1,6 +1,6 @@
-$OpenBSD: patch-js_src_configure_in,v 1.2 2009/06/23 17:55:57 martynas Exp $
---- js/src/configure.in.orig	Wed Jun 17 07:21:47 2009
-+++ js/src/configure.in	Tue Jun 23 13:33:37 2009
+$OpenBSD: patch-js_src_configure_in,v 1.3 2009/07/20 20:04:02 martynas Exp $
+--- js/src/configure.in.orig	Wed Jul 15 18:34:51 2009
++++ js/src/configure.in	Mon Jul 20 22:59:15 2009
 @@ -906,7 +906,7 @@ HOST_AR='$(AR)'
  HOST_AR_FLAGS='$(AR_FLAGS)'
  
@@ -19,3 +19,12 @@ $OpenBSD: patch-js_src_configure_in,v 1.2 2009/06/23 17:55:57 martynas Exp $
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
+@@ -2504,7 +2504,7 @@ darwin*)
+ solaris*)
+     AC_DEFINE(AVMPLUS_UNIX)
+     ;;
+-freebsd*|kfreebsd*)
++freebsd*|kfreebsd*|openbsd*)
+     AC_DEFINE(AVMPLUS_UNIX)
+     ;;
+ *cygwin*|*mingw*|*mks*|*msvc*|*wince)
