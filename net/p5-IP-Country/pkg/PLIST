@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/20 13:59:20 merdely Exp $
+bin/ip2cc
+${P5SITE}/IP/
+@comment ${P5SITE}/IP/._Authority.pm
+${P5SITE}/IP/Authority/
+${P5SITE}/IP/Authority.pm
+@comment ${P5SITE}/IP/Authority/._auth.gif
+@comment ${P5SITE}/IP/Authority/._ipauth.gif
+${P5SITE}/IP/Authority/auth.gif
+${P5SITE}/IP/Authority/ipauth.gif
+${P5SITE}/IP/Country/
+${P5SITE}/IP/Country.pm
+@comment ${P5SITE}/IP/Country/._Fast.pm
+@comment ${P5SITE}/IP/Country/._MaxMind.pm
+@comment ${P5SITE}/IP/Country/._Medium.pm
+@comment ${P5SITE}/IP/Country/._Slow.pm
+${P5SITE}/IP/Country/Fast/
+${P5SITE}/IP/Country/Fast.pm
+@comment ${P5SITE}/IP/Country/Fast/._cc.gif
+@comment ${P5SITE}/IP/Country/Fast/._ip.gif
+${P5SITE}/IP/Country/Fast/cc.gif
+${P5SITE}/IP/Country/Fast/ip.gif
+${P5SITE}/IP/Country/MaxMind.pm
+${P5SITE}/IP/Country/Medium.pm
+${P5SITE}/IP/Country/Slow.pm
+@man man/man1/ip2cc.1
+@man man/man3p/IP::Authority.3p
+@man man/man3p/IP::Country.3p
+@man man/man3p/IP::Country::Fast.3p
+@man man/man3p/IP::Country::MaxMind.3p
+@man man/man3p/IP::Country::Medium.3p
+@man man/man3p/IP::Country::Slow.3p
