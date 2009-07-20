@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/06/12 17:46:56 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2009/07/20 14:24:15 naddy Exp $
 
 COMMENT-main=	Java servlet 2.5 and Java server pages 2.1 server
 COMMENT-examples=example applications and full documentation
@@ -7,7 +7,7 @@ V=		6.0.20
 DISTNAME=	apache-tomcat-${V}
 PKGNAME=	tomcat-${V}
 PKGNAME-main=	tomcat-${V}
-PKGNAME-examples=tomcat-examples-${V}
+PKGNAME-examples=tomcat-examples-${V}p0
 CATEGORIES=	www
 
 DISTFILES=	${DISTNAME}.tar.gz \
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	::archivers/gtar
 
 RUN_DEPENDS=	::java/javaPathHelper
 
-RUN_DEPENDS-examples=	:tomcat-6.*:www/tomcat/v6,-main
+RUN_DEPENDS-examples=	:tomcat->=6,<7:www/tomcat/v6,-main
 PREFIX-examples=	${CATALINA_BASE}
 
 # Apache Software License 2.0
