@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_celengine_astro_cpp,v 1.2 2008/05/10 17:25:52 ajacoutot Exp $
---- src/celengine/astro.cpp.orig	Wed Apr 23 23:17:16 2008
-+++ src/celengine/astro.cpp	Sat May 10 17:35:15 2008
-@@ -459,7 +459,7 @@ const char* astro::Date::toCStr(Format format) const
- {
-     static char date[255];
- 
--#ifdef __GNUC__
-+#if defined __GNUC__ && !defined __OpenBSD__
-     struct tm cal_time;
-     memset(&cal_time, 0, sizeof(cal_time));
-     cal_time.tm_year = year-1900;
+$OpenBSD: patch-src_celengine_astro_cpp,v 1.3 2009/07/20 10:35:20 ajacoutot Exp $
+--- src/celengine/astro.cpp.orig	Mon Jul 20 11:59:23 2009
++++ src/celengine/astro.cpp	Mon Jul 20 11:59:41 2009
+@@ -522,7 +522,7 @@ const char* astro::Date::toCStr(Format format) const
+     cal_time.tm_sec = (int)seconds;
+     cal_time.tm_wday = wday;
+     cal_time.tm_gmtoff = utc_offset;
+-#if defined(TARGET_OS_MAC) || defined(__FreeBSD__)
++#if defined(TARGET_OS_MAC) || defined(__FreeBSD__) || defined(__OpenBSD__)
+     // tm_zone is a non-const string field on the Mac and FreeBSD (why?)
+     cal_time.tm_zone = const_cast<char*>(tzname.c_str());
+ #else
