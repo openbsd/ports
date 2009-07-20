@@ -1,12 +1,12 @@
-$OpenBSD: patch-devede_executor_py,v 1.5 2008/08/20 08:30:36 ajacoutot Exp $
---- devede_executor.py.orig	Sat Aug 16 20:35:51 2008
-+++ devede_executor.py	Mon Aug 18 15:22:28 2008
-@@ -149,7 +149,7 @@ class executor:
+$OpenBSD: patch-devede_executor_py,v 1.6 2009/07/20 09:05:12 ajacoutot Exp $
+--- devede_executor.py.orig	Fri Jul 17 00:19:27 2009
++++ devede_executor.py	Mon Jul 20 10:56:35 2009
+@@ -150,7 +150,7 @@ class executor:
  		if sys.platform=='win32':
  			pathlist=[os.path.join(wd[0],"bin"),os.path.join(os.getcwd(),"bin"), r'C:\WINDOWS', r'C:\WINDOWS\system32', r'C:\WINNT']
  		else:
 -			pathlist=["/usr/bin","/usr/local/bin","/usr/share/bin","/usr/share/local/bin","/bin",os.path.join(wd[0],"bin")]
 +			pathlist=["${LOCALBASE}/bin","/usr/bin","/usr/local/bin","/usr/share/bin","/usr/share/local/bin","/bin",os.path.join(wd[0],"bin")]
  
- 		print "Launching program: "+str(program)
- 		print
+ 		print "Launching program: ",
+ 		for elemento in program:
