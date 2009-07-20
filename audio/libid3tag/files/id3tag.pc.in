@@ -1,0 +1,15 @@
+# $OpenBSD: id3tag.pc.in,v 1.1 2009/07/20 15:36:19 naddy Exp $
+# libid3tag pkg-config source file
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: id3tag
+Description: ID3 tag reading library
+Version: @VERSION@
+Requires:
+Conflicts:
+Libs: -L${libdir} -lid3tag -lz
+Cflags: -I${includedir}
