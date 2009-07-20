@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2009/04/26 11:01:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2009/07/20 19:44:48 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,10 +8,11 @@ COMMENT-zope=		database adapter for Zope
 
 VERSION=		1.1.21
 DISTNAME=		psycopg-${VERSION}
-PKGNAME=		py-${DISTNAME}p6
-PKGNAME-main=		py-${DISTNAME}p7
-FULLPKGNAME-examples=	py-psycopg-examples-${VERSION}p0
-FULLPKGNAME-zope=	py-psycopg-zope-${VERSION}p3
+PKGNAME=		py-${DISTNAME}
+PKGNAME-main=		py-${DISTNAME}p8
+FULLPKGNAME-examples=	py-psycopg-examples-${VERSION}p1
+FULLPKGPATH-examples=	databases/py-psycopg,-examples
+FULLPKGNAME-zope=	py-psycopg-zope-${VERSION}p4
 CATEGORIES=		databases
 
 HOMEPAGE=		http://initd.org/projects/psycopg1
@@ -27,27 +28,29 @@ WANTLIB-main=		crypto util pq
 MASTER_SITES=	http://initd.org/pub/software/psycopg/
 
 MODULES=	lang/python
-MODULES-zope=	www/zope
 
-BUILD_DEPENDS=	:postgresql-server-*:databases/postgresql,-server
-RUN_DEPENDS=	:postgresql-client-*:databases/postgresql
+BUILD_DEPENDS=	::databases/postgresql,-server
+RUN_DEPENDS=	::databases/postgresql
 
 FLAVORS=	python2.4 python2.5
 FLAVOR?=	python2.5
 
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
-MULTI_PACKAGES=	-main -zope
+MULTI_PACKAGES=	-main -examples -zope
 .elif ${FLAVOR:L:Mpython2.5} && !${FLAVOR:L:Npython2.5}
 MULTI_PACKAGES=	-main -examples
 .else
 ERRORS+=	"Fatal: You must select one version: ${FLAVORS}"
 .endif
 
-MODPY_VERSION=	${FLAVOR:S/python//}
-BUILD_DEPENDS+=	:py-mxDateTime->=2.0.0*-${FLAVOR}:devel/py-mxDateTime,${FLAVOR}
-RUN_DEPENDS+=	:py-mxDateTime->=2.0.0*-${FLAVOR}:devel/py-mxDateTime,${FLAVOR}
+MODPY_VERSION=	${FLAVOR:L:S/python//}
+BUILD_DEPENDS+=	:py-mxDateTime->=2.0.0-${FLAVOR:L}:devel/py-mxDateTime,${FLAVOR:L}
+RUN_DEPENDS+=	:py-mxDateTime->=2.0.0-${FLAVOR:L}:devel/py-mxDateTime,${FLAVOR:L}
 
-RUN_DEPENDS-zope=	:py-psycopg-${VERSION}*-python${MODZOPE_PYTHON_VERSION}:${BUILD_PKGPATH} \
+RUN_DEPENDS-examples=	:py-psycopg-${VERSION}:${PKGPATH}
+PKG_ARCH-examples=	*
+
+RUN_DEPENDS-zope=	:py-psycopg-${VERSION}-python2.4:${BUILD_PKGPATH} \
 			${MODPY_RUN_DEPENDS}
 PKG_ARCH-zope=		*
 
