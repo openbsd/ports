@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2009/07/12 20:01:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2009/07/20 14:27:05 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,8 @@ COMMENT-libpurple= multi-protocol instant messaging library
 VERSION=	2.5.8
 DISTNAME=	pidgin-${VERSION}
 PKGNAME=	pidgin-${VERSION}
-PKGNAME-main=	pidgin-${VERSION}
-FULLPKGNAME-finch=	finch-${VERSION}
+PKGNAME-main=	pidgin-${VERSION}p0
+PKGNAME-finch=	finch-${VERSION}p0
 FULLPKGNAME-libpurple= libpurple-${VERSION}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
@@ -49,10 +49,10 @@ MODULES=	devel/gettext \
 		lang/python \
 		devel/gconf2
 
-BUILD_DEPENDS=		:dbus-python-*:x11/dbus-python
-RUN_DEPENDS-main=	:dbus-python-*:x11/dbus-python \
-			:py-gtk2-*:x11/py-gtk2 \
-			:desktop-file-utils-*:devel/desktop-file-utils
+BUILD_DEPENDS=		::x11/dbus-python
+RUN_DEPENDS-main=	::x11/dbus-python \
+			::x11/py-gtk2 \
+			::devel/desktop-file-utils
 LIB_DEPENDS-main=	startup-notification-1::devel/startup-notification \
 			purple:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
 LIB_DEPENDS-finch=	purple:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
@@ -97,8 +97,8 @@ FLAVOR?=
 MULTI_PACKAGES= -main -finch -libpurple
 
 .if ${FLAVOR:L:Maudio}
-LIB_DEPENDS-main+=	gstreamer-0.10:gstreamer-0.10.*:multimedia/gstreamer-0.10/core
-LIB_DEPENDS-finch+=	gstreamer-0.10:gstreamer-0.10.*:multimedia/gstreamer-0.10/core
+LIB_DEPENDS-main+=	gstreamer-0.10:gstreamer->=0.10,<=0.11:multimedia/gstreamer-0.10/core
+LIB_DEPENDS-finch+=	gstreamer-0.10:gstreamer->=0.10,<=0.11:multimedia/gstreamer-0.10/core
 .else
 CONFIGURE_ARGS+=	--disable-gstreamer
 # --disable-gstreamer is not sufficient
