@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/07/21 06:59:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/07/21 14:24:52 jasper Exp $
 
 COMMENT=	Python client library for Google data APIs
 
@@ -24,7 +24,7 @@ REGRESS_IS_INTERACTIVE=	Yes
 
 do-regress: fake
 	@cd ${WRKSRC}/tests && ${MAKE_ENV} \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./run_all_tests.py
+		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./run_data_tests.py
 
 D=	${PREFIX}/share/doc/py-gdata
 E=	${PREFIX}/share/examples/py-gdata
