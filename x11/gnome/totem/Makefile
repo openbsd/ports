@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2009/07/12 20:32:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2009/07/21 13:21:48 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
@@ -35,15 +35,22 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-BUILD_DEPENDS=	::x11/py-gtk2 \
+# XXX make port-lib-depends-check happy (a52 and xklavier libs errors)
+# Missing library for a52
+# Can't resolve libspec a52
+# Can't call method "name" on an undefined value at /usr/libdata/perl5/OpenBSD/PackingList.pm line 371.
+BUILD_DEPENDS+=	::graphics/ffmpeg \
+		::x11/gnome/settings-daemon
+
+BUILD_DEPENDS+=	::x11/py-gtk2 \
 		::devel/iso-codes
-RUN_DEPENDS=	::x11/gnome/settings-daemon \
+RUN_DEPENDS+=	::x11/gnome/settings-daemon \
 		::x11/py-gtk2 \
 		:iso-codes-*:devel/iso-codes \
 		::x11/gromit \
 		::devel/py-gdata \
 		::net/galago-daemon
-LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
+LIB_DEPENDS+=	${MODPY_LIB_DEPENDS} \
 		totem-plparser::x11/gnome/totem-pl-parser \
 		galago::net/libgalago \
 		gnomeui-2::x11/gnome/libgnomeui \
