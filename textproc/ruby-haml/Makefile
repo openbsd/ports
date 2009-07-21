@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/05/19 22:41:24 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2009/07/21 07:22:16 msf Exp $
 
 COMMENT=		HTML Abstraction Markup Language for Ruby
 
-DISTNAME=		haml-2.0.9
+DISTNAME=		haml-2.2.1
 PKGNAME=		ruby-${DISTNAME}
 CATEGORIES=		textproc
 
@@ -20,12 +20,12 @@ MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
 
+RUN_DEPENDS=		::textproc/ruby-hpricot
+
 REGRESS_DEPENDS=	::devel/ruby-activesupport \
 			::devel/ruby-actionpack \
-			::textproc/ruby-redcloth \
-			::textproc/ruby-bluecloth \
 			::devel/ruby-rake \
-			::textproc/ruby-hpricot
+			::www/ruby-merb/merb
 
 do-regress:
 	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
