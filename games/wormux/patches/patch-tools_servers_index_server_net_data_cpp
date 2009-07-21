@@ -1,0 +1,22 @@
+$OpenBSD: patch-tools_servers_index_server_net_data_cpp,v 1.1 2009/07/21 19:16:49 landry Exp $
+We don't #define MSG_NOSIGNAL
+--- tools/servers/index_server/net_data.cpp.orig	Wed Jul 15 20:42:01 2009
++++ tools/servers/index_server/net_data.cpp	Wed Jul 15 20:42:27 2009
+@@ -247,7 +247,7 @@ bool NetData::SendInt(const int &nbr)
+   unsigned int u_nbr = *((unsigned int*)&nbr);
+   packet = htonl(u_nbr);
+ 
+-  if ( send(fd, &packet, sizeof(packet), MSG_NOSIGNAL) != sizeof(packet) ) {
++  if ( send(fd, &packet, sizeof(packet), 0) != sizeof(packet) ) {
+     PRINT_ERROR;
+     return false;
+   }
+@@ -262,7 +262,7 @@ bool NetData::SendStr(const std::string &full_str)
+   if (!SendInt((int)full_str.size()))
+     return false;
+ 
+-  if ( send(fd, full_str.c_str(), full_str.size(), MSG_NOSIGNAL) != ssize_t(full_str.size()) ) {
++  if ( send(fd, full_str.c_str(), full_str.size(), 0) != ssize_t(full_str.size()) ) {
+     PRINT_ERROR;
+     return false;
+   }

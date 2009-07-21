@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/04/26 12:31:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/07/21 19:16:49 landry Exp $
 @bin bin/wormux
+@bin bin/wormux-index-server
+@bin bin/wormux-server
 @man man/man6/wormux.6
 share/applications/wormux.desktop
 share/locale/bg/LC_MESSAGES/wormux.mo
@@ -28,6 +30,7 @@ share/locale/it/LC_MESSAGES/wormux.mo
 share/locale/lv/LC_MESSAGES/wormux.mo
 share/locale/nb/LC_MESSAGES/wormux.mo
 share/locale/nl/LC_MESSAGES/wormux.mo
+share/locale/nn/LC_MESSAGES/wormux.mo
 share/locale/pl/LC_MESSAGES/wormux.mo
 share/locale/pt/LC_MESSAGES/wormux.mo
 share/locale/pt_BR/LC_MESSAGES/wormux.mo
@@ -707,9 +710,7 @@ share/wormux/game_mode/classic.xml
 share/wormux/game_mode/classic_objects.xml
 share/wormux/game_mode/game_mode.dtd
 share/wormux/game_mode/objects.dtd
-share/wormux/game_mode/objects.xml
-share/wormux/game_mode/rope_objects.xml
-share/wormux/game_mode/rope_objects.xml~
+share/wormux/game_mode/skin_viewer.xml~
 share/wormux/game_mode/unlimited.xml
 share/wormux/game_mode/unlimited_objects.xml
 share/wormux/gfx/
@@ -869,6 +870,11 @@ share/wormux/map/electronik/background.png
 share/wormux/map/electronik/config.xml
 share/wormux/map/electronik/preview.jpg
 share/wormux/map/electronik/sky.jpg
+share/wormux/map/frog/
+share/wormux/map/frog/config.xml
+share/wormux/map/frog/map.png
+share/wormux/map/frog/preview.jpg
+share/wormux/map/frog/sky.jpg
 share/wormux/map/funkyIsland/
 share/wormux/map/funkyIsland/clouds.png
 share/wormux/map/funkyIsland/config.xml
@@ -1178,7 +1184,9 @@ share/wormux/sound/default/weapons/airhammer_selected.ogg
 share/wormux/sound/default/weapons/airhammer_used.ogg
 share/wormux/sound/default/weapons/anvil_collision.ogg
 share/wormux/sound/default/weapons/anvil_fall.ogg
+share/wormux/sound/default/weapons/auto_rocket_flying.ogg
 share/wormux/sound/default/weapons/baseball.ogg
+share/wormux/sound/default/weapons/blowtorch.ogg
 share/wormux/sound/default/weapons/cluzooka_hit.ogg
 share/wormux/sound/default/weapons/cluzooka_shot.ogg
 share/wormux/sound/default/weapons/construct.ogg
@@ -1186,6 +1194,7 @@ share/wormux/sound/default/weapons/disco_grenade_music.ogg
 share/wormux/sound/default/weapons/dynamite_exp.ogg
 share/wormux/sound/default/weapons/dynamite_fuze.ogg
 share/wormux/sound/default/weapons/embers.ogg
+share/wormux/sound/default/weapons/embers2.ogg
 share/wormux/sound/default/weapons/explosion.ogg
 share/wormux/sound/default/weapons/explosion2.ogg
 share/wormux/sound/default/weapons/explosion3.ogg
@@ -1209,6 +1218,8 @@ share/wormux/sound/default/weapons/ricoche1.ogg
 share/wormux/sound/default/weapons/ricoche2.ogg
 share/wormux/sound/default/weapons/ricoche3.ogg
 share/wormux/sound/default/weapons/riot_bomb_exp.ogg
+share/wormux/sound/default/weapons/riot_flying.ogg
+share/wormux/sound/default/weapons/rocket_flying.ogg
 share/wormux/sound/default/weapons/shotgun.ogg
 share/wormux/sound/default/weapons/slap.ogg
 share/wormux/sound/default/weapons/suicide.ogg

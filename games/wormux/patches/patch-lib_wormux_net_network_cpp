@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_wormux_net_network_cpp,v 1.1 2009/07/21 19:16:49 landry Exp $
+--- lib/wormux/net/network.cpp.orig	Wed Jul 15 20:22:41 2009
++++ lib/wormux/net/network.cpp	Wed Jul 15 20:24:13 2009
+@@ -23,6 +23,7 @@
+ #ifdef WIN32
+ #  include <winsock2.h>
+ #else
++#  include <sys/types.h>
+ #  include <sys/socket.h>
+ #  include <netdb.h>
+ #  include <netinet/in.h>
