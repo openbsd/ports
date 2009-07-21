@@ -1,0 +1,39 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/21 07:14:46 jasper Exp $
+@bin bin/twitux
+share/applications/twitux.desktop
+share/gnome/help/twitux/
+share/gnome/help/twitux/C/
+share/gnome/help/twitux/C/figures/
+share/gnome/help/twitux/C/figures/client.png
+share/gnome/help/twitux/C/legal.xml
+share/gnome/help/twitux/C/twitux.xml
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/twitux.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/twitux.svg
+share/locale/de/LC_MESSAGES/twitux.mo
+share/locale/es/LC_MESSAGES/twitux.mo
+share/locale/fr/LC_MESSAGES/twitux.mo
+share/locale/ja/LC_MESSAGES/twitux.mo
+share/locale/pt/LC_MESSAGES/twitux.mo
+share/locale/sv/LC_MESSAGES/twitux.mo
+share/omf/twitux/
+share/omf/twitux/twitux-C.omf
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/twitux.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/twitux/
+share/twitux/account_dlg.xml
+share/twitux/add_friend_dlg.xml
+share/twitux/lists_dlg.xml
+share/twitux/main_window.xml
+share/twitux/prefs_dlg.xml
+share/twitux/send_message_dlg.xml
+share/twitux/spell_dlg.xml
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
