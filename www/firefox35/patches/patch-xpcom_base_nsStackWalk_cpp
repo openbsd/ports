@@ -1,6 +1,6 @@
-$OpenBSD: patch-xpcom_base_nsStackWalk_cpp,v 1.1.1.1 2009/06/21 01:31:26 martynas Exp $
---- xpcom/base/nsStackWalk.cpp.orig	Wed Mar 12 00:46:31 2008
-+++ xpcom/base/nsStackWalk.cpp	Sun Apr 13 20:34:51 2008
+$OpenBSD: patch-xpcom_base_nsStackWalk_cpp,v 1.2 2009/07/21 19:43:05 martynas Exp $
+--- xpcom/base/nsStackWalk.cpp.orig	Wed Jul 15 18:36:06 2009
++++ xpcom/base/nsStackWalk.cpp	Tue Jul 21 21:15:09 2009
 @@ -1124,7 +1124,7 @@ NS_FormatCodeAddressDetails(void *aPC, const nsCodeAdd
  #define __USE_GNU
  #endif
@@ -10,3 +10,12 @@ $OpenBSD: patch-xpcom_base_nsStackWalk_cpp,v 1.1.1.1 2009/06/21 01:31:26 martyna
  #include <dlfcn.h>
  #endif
  
+@@ -1223,7 +1223,7 @@ myinit()
+     if (! initialized) {
+ #ifndef __GNUC__
+         void *handle;
+-        const char *libdem = "libdemangle.so.1";
++        const char *libdem = "libdemangle.so";
+ 
+         /* load libdemangle if we can and need to (only try this once) */
+         if ((handle = dlopen(libdem, RTLD_LAZY)) != NULL) {

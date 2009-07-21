@@ -1,0 +1,12 @@
+$OpenBSD: patch-widget_src_qt_nsSound_cpp,v 1.3 2009/07/21 19:43:04 martynas Exp $
+--- widget/src/qt/nsSound.cpp.orig	Wed Jul 15 18:36:06 2009
++++ widget/src/qt/nsSound.cpp	Tue Jul 21 21:18:28 2009
+@@ -123,7 +123,7 @@ nsSound::Init()
+ 
+     EsdOpenSoundType EsdOpenSound;
+ 
+-    elib = PR_LoadLibrary("libesd.so.0");
++    elib = PR_LoadLibrary("libesd.so");
+     if (!elib) return NS_ERROR_FAILURE;
+ 
+     EsdOpenSound = (EsdOpenSoundType) PR_FindFunctionSymbol(elib, "esd_open_sound");
