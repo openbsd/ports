@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2009/02/07 16:56:32 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2009/07/21 19:43:45 pea Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -39,6 +39,7 @@ include/postgresql/internal/port.h
 include/postgresql/internal/postgres_fe.h
 include/postgresql/internal/pqexpbuffer.h
 include/postgresql/libpq/
+include/postgresql/libpq-events.h
 include/postgresql/libpq-fe.h
 include/postgresql/libpq/libpq-fs.h
 include/postgresql/pg_config.h
@@ -104,6 +105,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/alter_conversion.7
 @man man/man7/alter_database.7
 @man man/man7/alter_domain.7
+@man man/man7/alter_foreign_data_wrapper.7
 @man man/man7/alter_function.7
 @man man/man7/alter_group.7
 @man man/man7/alter_index.7
@@ -114,6 +116,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/alter_role.7
 @man man/man7/alter_schema.7
 @man man/man7/alter_sequence.7
+@man man/man7/alter_server.7
 @man man/man7/alter_table.7
 @man man/man7/alter_tablespace.7
 @man man/man7/alter_text_search_configuration.7
@@ -123,6 +126,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/alter_trigger.7
 @man man/man7/alter_type.7
 @man man/man7/alter_user.7
+@man man/man7/alter_user_mapping.7
 @man man/man7/alter_view.7
 @man man/man7/analyze.7
 @man man/man7/begin.7
@@ -139,6 +143,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/create_conversion.7
 @man man/man7/create_database.7
 @man man/man7/create_domain.7
+@man man/man7/create_foreign_data_wrapper.7
 @man man/man7/create_function.7
 @man man/man7/create_group.7
 @man man/man7/create_index.7
@@ -150,6 +155,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/create_rule.7
 @man man/man7/create_schema.7
 @man man/man7/create_sequence.7
+@man man/man7/create_server.7
 @man man/man7/create_table.7
 @man man/man7/create_table_as.7
 @man man/man7/create_tablespace.7
@@ -160,6 +166,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/create_trigger.7
 @man man/man7/create_type.7
 @man man/man7/create_user.7
+@man man/man7/create_user_mapping.7
 @man man/man7/create_view.7
 @man man/man7/deallocate.7
 @man man/man7/declare.7
@@ -170,6 +177,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/drop_conversion.7
 @man man/man7/drop_database.7
 @man man/man7/drop_domain.7
+@man man/man7/drop_foreign_data_wrapper.7
 @man man/man7/drop_function.7
 @man man/man7/drop_group.7
 @man man/man7/drop_index.7
@@ -182,6 +190,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/drop_rule.7
 @man man/man7/drop_schema.7
 @man man/man7/drop_sequence.7
+@man man/man7/drop_server.7
 @man man/man7/drop_table.7
 @man man/man7/drop_tablespace.7
 @man man/man7/drop_text_search_configuration.7
@@ -191,6 +200,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/drop_trigger.7
 @man man/man7/drop_type.7
 @man man/man7/drop_user.7
+@man man/man7/drop_user_mapping.7
 @man man/man7/drop_view.7
 @man man/man7/end.7
 @man man/man7/execute.7
@@ -223,11 +233,13 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/set_transaction.7
 @man man/man7/show.7
 @man man/man7/start_transaction.7
+@man man/man7/table.7
 @man man/man7/truncate.7
 @man man/man7/unlisten.7
 @man man/man7/update.7
 @man man/man7/vacuum.7
 @man man/man7/values.7
+@man man/man7/with.7
 share/postgresql/
 share/postgresql/conversion_create.sql
 share/postgresql/information_schema.sql

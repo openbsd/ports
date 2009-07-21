@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-contrib,v 1.4 2008/07/18 06:57:30 brad Exp $
+@comment $OpenBSD: PLIST-contrib,v 1.5 2009/07/21 19:43:45 pea Exp $
 @conflict postgresql-uuid-*
 @pkgpath devel/uuid,-pgsql
 @bin bin/oid2name
@@ -6,22 +6,25 @@
 @bin bin/vacuumlo
 lib/postgresql/_int.so
 lib/postgresql/adminpack.so
+lib/postgresql/auto_explain.so
 lib/postgresql/autoinc.so
+lib/postgresql/btree_gin.so
 lib/postgresql/btree_gist.so
 lib/postgresql/chkpass.so
+lib/postgresql/citext.so
 lib/postgresql/cube.so
 lib/postgresql/dblink.so
 lib/postgresql/earthdistance.so
 lib/postgresql/fuzzystrmatch.so
 lib/postgresql/hstore.so
 lib/postgresql/insert_username.so
-lib/postgresql/int_aggregate.so
 lib/postgresql/isn.so
 lib/postgresql/lo.so
 lib/postgresql/ltree.so
 lib/postgresql/moddatetime.so
 lib/postgresql/pg_buffercache.so
 lib/postgresql/pg_freespacemap.so
+lib/postgresql/pg_stat_statements.so
 lib/postgresql/pg_trgm.so
 lib/postgresql/pgcrypto.so
 lib/postgresql/pgrowlocks.so
@@ -38,8 +41,10 @@ share/postgresql/contrib/
 share/postgresql/contrib/_int.sql
 share/postgresql/contrib/adminpack.sql
 share/postgresql/contrib/autoinc.sql
+share/postgresql/contrib/btree_gin.sql
 share/postgresql/contrib/btree_gist.sql
 share/postgresql/contrib/chkpass.sql
+share/postgresql/contrib/citext.sql
 share/postgresql/contrib/cube.sql
 share/postgresql/contrib/dblink.sql
 share/postgresql/contrib/dict_int.sql
@@ -56,6 +61,7 @@ share/postgresql/contrib/moddatetime.sql
 share/postgresql/contrib/pageinspect.sql
 share/postgresql/contrib/pg_buffercache.sql
 share/postgresql/contrib/pg_freespacemap.sql
+share/postgresql/contrib/pg_stat_statements.sql
 share/postgresql/contrib/pg_trgm.sql
 share/postgresql/contrib/pgcrypto.sql
 share/postgresql/contrib/pgrowlocks.sql
@@ -70,8 +76,10 @@ share/postgresql/contrib/timetravel.sql
 share/postgresql/contrib/tsearch2.sql
 share/postgresql/contrib/uninstall__int.sql
 share/postgresql/contrib/uninstall_adminpack.sql
+share/postgresql/contrib/uninstall_btree_gin.sql
 share/postgresql/contrib/uninstall_btree_gist.sql
 share/postgresql/contrib/uninstall_chkpass.sql
+share/postgresql/contrib/uninstall_citext.sql
 share/postgresql/contrib/uninstall_cube.sql
 share/postgresql/contrib/uninstall_dblink.sql
 share/postgresql/contrib/uninstall_dict_int.sql
@@ -86,6 +94,7 @@ share/postgresql/contrib/uninstall_ltree.sql
 share/postgresql/contrib/uninstall_pageinspect.sql
 share/postgresql/contrib/uninstall_pg_buffercache.sql
 share/postgresql/contrib/uninstall_pg_freespacemap.sql
+share/postgresql/contrib/uninstall_pg_stat_statements.sql
 share/postgresql/contrib/uninstall_pg_trgm.sql
 share/postgresql/contrib/uninstall_pgcrypto.sql
 share/postgresql/contrib/uninstall_pgrowlocks.sql
