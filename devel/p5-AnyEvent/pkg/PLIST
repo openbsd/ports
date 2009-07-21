@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/02/04 08:47:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/07/21 13:52:52 jasper Exp $
 ${P5SITE}/AnyEvent/
 ${P5SITE}/AnyEvent.pm
 ${P5SITE}/AnyEvent/DNS.pm
@@ -8,6 +8,7 @@ ${P5SITE}/AnyEvent/Impl/EV.pm
 ${P5SITE}/AnyEvent/Impl/Event.pm
 ${P5SITE}/AnyEvent/Impl/EventLib.pm
 ${P5SITE}/AnyEvent/Impl/Glib.pm
+${P5SITE}/AnyEvent/Impl/IOAsync.pm
 ${P5SITE}/AnyEvent/Impl/POE.pm
 ${P5SITE}/AnyEvent/Impl/Perl.pm
 ${P5SITE}/AnyEvent/Impl/Qt.pm
@@ -15,6 +16,7 @@ ${P5SITE}/AnyEvent/Impl/Tk.pm
 ${P5SITE}/AnyEvent/Intro.pod
 ${P5SITE}/AnyEvent/Socket.pm
 ${P5SITE}/AnyEvent/Strict.pm
+${P5SITE}/AnyEvent/TLS.pm
 ${P5SITE}/AnyEvent/Util.pm
 @man man/man3p/AnyEvent.3p
 @man man/man3p/AnyEvent::DNS.3p
@@ -23,6 +25,7 @@ ${P5SITE}/AnyEvent/Util.pm
 @man man/man3p/AnyEvent::Impl::Event.3p
 @man man/man3p/AnyEvent::Impl::EventLib.3p
 @man man/man3p/AnyEvent::Impl::Glib.3p
+@man man/man3p/AnyEvent::Impl::IOAsync.3p
 @man man/man3p/AnyEvent::Impl::POE.3p
 @man man/man3p/AnyEvent::Impl::Perl.3p
 @man man/man3p/AnyEvent::Impl::Qt.3p
@@ -30,8 +33,11 @@ ${P5SITE}/AnyEvent/Util.pm
 @man man/man3p/AnyEvent::Intro.3p
 @man man/man3p/AnyEvent::Socket.3p
 @man man/man3p/AnyEvent::Strict.3p
+@man man/man3p/AnyEvent::TLS.3p
 @man man/man3p/AnyEvent::Util.3p
 share/examples/p5-AnyEvent/
+share/examples/p5-AnyEvent/ae0.pl
+share/examples/p5-AnyEvent/ae2.pl
 share/examples/p5-AnyEvent/bench
 share/examples/p5-AnyEvent/bench2
 share/examples/p5-AnyEvent/connect
