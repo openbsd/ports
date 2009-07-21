@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2009/07/21 12:19:05 jasper Exp $
+
+Do not append -ldl.
+
+--- configure.orig	Tue Jul 21 14:13:09 2009
++++ configure	Tue Jul 21 14:13:12 2009
+@@ -25187,6 +25187,7 @@ elif test "z$with_openssl" != "z" ; then
+     case $host in
+ 	*-*-mingw*) openssl_exlibs=;;
+ 	*-*-osf5*) openssl_exlibs=;;
++	*-*-openbsd*) openssl_exlibs=;;
+ 	#FIXME: check if lib "dl" is required
+ 	*)          openssl_exlibs=-ldl;;
+     esac
