@@ -1,0 +1,16 @@
+$OpenBSD: patch-media_libsydneyaudio_src_Makefile_in,v 1.1 2009/07/21 12:12:37 martynas Exp $
+--- media/libsydneyaudio/src/Makefile.in.orig	Tue Jul 21 15:04:18 2009
++++ media/libsydneyaudio/src/Makefile.in	Tue Jul 21 15:05:20 2009
+@@ -71,6 +71,12 @@ CSRCS		= \
+ 		$(NULL)
+ endif
+ 
++ifeq ($(OS_ARCH),OpenBSD)
++CSRCS		= \
++		sydney_audio_sndio.c \
++		$(NULL)
++endif
++
+ ifeq ($(OS_ARCH),WINNT)
+ OS_LIBS += winmm.lib
+ endif

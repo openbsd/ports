@@ -1,0 +1,14 @@
+$OpenBSD: patch-layout_build_Makefile_in,v 1.1 2009/07/21 12:12:37 martynas Exp $
+--- layout/build/Makefile.in.orig	Tue Jul 21 15:04:18 2009
++++ layout/build/Makefile.in	Tue Jul 21 15:06:46 2009
+@@ -263,6 +263,10 @@ ifneq (,$(filter gtk2,$(MOZ_WIDGET_TOOLKIT)))
+ EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS)
+ endif
+ 
++# Sydney audio sndio backend.
++EXTRA_DSO_LDOPTS += -lsndio \
++		    $(NULL)
++
+ ifdef MOZ_SYDNEYAUDIO
+ ifeq ($(OS_ARCH),Darwin)
+ OS_LIBS += -framework CoreAudio -framework AudioToolbox -framework AudioUnit -framework Carbon
