@@ -1,0 +1,12 @@
+$OpenBSD: patch-media_libsydneyaudio_include_sydney_audio_h,v 1.1 2009/07/21 11:58:54 martynas Exp $
+--- media/libsydneyaudio/include/sydney_audio.h.orig	Wed Jul 15 18:35:02 2009
++++ media/libsydneyaudio/include/sydney_audio.h	Tue Jul 21 14:54:57 2009
+@@ -48,7 +48,7 @@ async-signal safe.
+ #if !defined (WIN32)
+ #include <sys/param.h>
+ #include <inttypes.h>
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/endian.h>
+ #endif
+ #else
