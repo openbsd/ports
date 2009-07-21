@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_yokadi_yokadid_py,v 1.1.1.1 2009/07/21 19:13:46 landry Exp $
+--- src/yokadi/yokadid.py.orig	Fri Jul 10 16:31:48 2009
++++ src/yokadi/yokadid.py	Wed Jul 15 22:20:17 2009
+@@ -157,8 +157,8 @@ def killYokadid(dbName):
+     @param dbName: only kill Yokadid running for this database
+     """
+     selfpid=os.getpid()
+-    for line in getoutput("ps -ef|grep python | grep [y]okadid.py ").split("\n"):
+-        pid=int(line.split()[1])
++    for line in getoutput("ps -x|grep python | grep [y]okadid ").split("\n"):
++        pid=int(line.split()[0])
+         if pid==selfpid:
+             continue
+         if dbName is None:

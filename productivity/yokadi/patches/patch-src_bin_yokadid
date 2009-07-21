@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_bin_yokadid,v 1.1.1.1 2009/07/21 19:13:46 landry Exp $
+--- src/bin/yokadid.orig	Wed Jul 15 21:58:14 2009
++++ src/bin/yokadid	Wed Jul 15 21:58:56 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ # -*- coding: utf-8 -*-
+ 
+ """This is just a wrapper to yokadi package that rely in standard python site-package

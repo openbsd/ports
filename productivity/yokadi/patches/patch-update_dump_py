@@ -1,0 +1,9 @@
+$OpenBSD: patch-update_dump_py,v 1.1.1.1 2009/07/21 19:13:46 landry Exp $
+--- update/dump.py.orig	Wed Jul 15 21:41:49 2009
++++ update/dump.py	Wed Jul 15 21:44:31 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ # -*- coding: UTF-8 -*-
+ """
+ Generates a data-only sqlite dump, with insert statements including column

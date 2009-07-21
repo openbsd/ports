@@ -1,0 +1,9 @@
+$OpenBSD: patch-update_update3to4,v 1.1.1.1 2009/07/21 19:13:46 landry Exp $
+--- update/update3to4.orig	Wed Jul 15 21:41:49 2009
++++ update/update3to4	Wed Jul 15 21:45:39 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ # -*- coding: UTF-8 -*-
+ """
+ Update from version 3 to version 4 of Yokadi DB
