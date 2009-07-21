@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/07/19 11:59:48 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2009/07/21 19:14:30 landry Exp $
 
      SUBDIR += bruce
      SUBDIR += calcurse
@@ -26,5 +26,6 @@
      SUBDIR += wyrd
      SUBDIR += xinvest
      SUBDIR += xquote
+     SUBDIR += yokadi
 
 .include <bsd.port.subdir.mk>
