@@ -1,0 +1,9 @@
+$OpenBSD: patch-build_tools_mkpkgconfig,v 1.1 2009/07/21 22:05:24 sthen Exp $
+--- build_tools/mkpkgconfig.orig	Thu Jun 18 20:50:21 2009
++++ build_tools/mkpkgconfig	Thu Jun 18 20:50:25 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ PPATH=$1
+ ## Make sure we were called from Makefile
+ 

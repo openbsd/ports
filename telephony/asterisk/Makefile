@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.56 2009/06/15 23:33:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2009/07/21 22:05:24 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-V=			1.4.25.1
+VER=			1.4.26
+# you can set PATCHVER=p0, p1 etc to bump everything,
+# this takes care of the subpackage/flavor maze
+PATCHVER=		
 CORESOUNDS=		1.4.15
-DISTNAME=		asterisk-$V
-FULLPKGNAME-main=	asterisk-$Vp0
-# N.B. overridden for h323 flavor below.
+DISTNAME=		asterisk-${VER:S/rc/-rc/}
+FULLPKGNAME-main=	asterisk-${VER}${PATCHVER}
 
 CATEGORIES=		telephony
 
@@ -112,7 +114,7 @@ CONFIGURE_ARGS+=	--with-netsnmp=${LOCALBASE}
 # XXX crashes at startup (bus error)
 #PSEUDO_FLAVORS+=	no_speex
 #.if ${FLAVOR:L:Mno_speex}
-#CONFIGURE_ARGS+=	--with-speex=no
+CONFIGURE_ARGS+=	--with-speex=no
 #.else
 #MULTI_PACKAGES+=	-speex
 #COMMENT-speex=		Speex codec for Asterisk
@@ -185,7 +187,7 @@ CPPFLAGS+=		-I${LOCALBASE}/include/openh323
 CONFIGURE_ARGS+=	--with-pwlib=${LOCALBASE}/lib \
 			--with-h323=${LOCALBASE}/lib
 WANTLIB-main+=		SDL avutil expat lber ldap ldap_r sasl2
-FULLPKGNAME-main=	asterisk-$Vp0-h323
+FULLPKGNAME-main=	asterisk-${VER}${PATCHVER}-h323
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_PROGRAM} include/asterisk/buildopts.h
@@ -197,8 +199,8 @@ CONFIGURE_ARGS+=	--with-pwlib=no \
 .endif
 
 .for i in ${MULTI_PACKAGES:S/-main//}
-FULLPKGNAME$i ?=	asterisk$i-$V
-RUN_DEPENDS$i +=	:asterisk-$V:telephony/asterisk
+FULLPKGNAME$i ?=	asterisk$i-${VER}${PATCHVER}
+RUN_DEPENDS$i +=	:asterisk-${VER}${PATCHVER}:telephony/asterisk
 .endfor
 
 MAKE_ENV=		ASTCFLAGS="${CFLAGS}" \
