@@ -3,7 +3,7 @@ phpLDAPAdmin has been installed into ${INSTDIR}
 Edit ${INSTDIR}/config/config.php to configure phpLDAPAdmin
 
 You should point this to the DocumentRoot of your web-server:
-   # ln -s ../phpldapadmin-${VERSION} /var/www/htdocs/phpldapadmin
+   # ln -s ../phpldapadmin /var/www/htdocs/phpldapadmin
 (make sure you use a relative symlink since Apache is chrooted)
 
 For jpeg photos to work properly, you must do this:       
