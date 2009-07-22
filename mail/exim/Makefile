@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2009/03/16 17:52:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2009/07/22 10:48:31 sthen Exp $
 
 COMMENT=	Flexible mail transfer agent
 DISTNAME=	exim-4.69
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.exim.org/pub/exim/exim4/ \
 		http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/ \
@@ -80,6 +80,7 @@ LIB_DEPENDS+=		sasl2::security/cyrus-sasl2
 
 EXIM_EXTRA_LIBS+=	-lwrap
 
+EXIM_MAKECAT+=		"AUTH_DOVECOT=yes\n"
 EXIM_MAKECAT+=		"BIN_DIRECTORY=${PREFIX}/bin\n"
 EXIM_MAKECAT+=		"CONFIGURE_FILE=${SYSCONFDIR}/exim/configure\n"
 EXIM_MAKECAT+=		"LOOKUP_INCLUDE=${EXIM_LOOKUP_INCLUDE}\n"

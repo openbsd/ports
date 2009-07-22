@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.22 2007/09/10 20:08:16 fkr Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/07/22 10:48:31 sthen Exp $
 @newgroup _exim:521
 @newuser _exim:521:_exim:daemon:Exim Account:/var/spool/exim:/sbin/nologin
 bin/exicyclog
 bin/exigrep
 @mode 4755
-bin/exim
+@bin bin/exim
 @mode
 bin/exim_checkaccess
-bin/exim_dbmbuild
-bin/exim_dumpdb
-bin/exim_fixdb
-bin/exim_lock
-bin/exim_tidydb
+@bin bin/exim_dbmbuild
+@bin bin/exim_dumpdb
+@bin bin/exim_fixdb
+@bin bin/exim_lock
+@bin bin/exim_tidydb
 bin/eximstats
 bin/exinext
 bin/exipick
