@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/06/04 04:19:16 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2009/07/22 20:44:20 landry Exp $
 
      SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
@@ -11,6 +11,7 @@
      SUBDIR+= ristretto
      SUBDIR+= terminal
      SUBDIR+= thunar
+     SUBDIR+= thunar-archive
      SUBDIR+= thunar-media-tags
      SUBDIR+= thunar-thumbnailers
      SUBDIR+= xfce-utils
