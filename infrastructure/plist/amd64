@@ -1,4 +1,4 @@
-# $OpenBSD: amd64,v 1.37 2009/03/06 23:19:38 pvalchev Exp $
+# $OpenBSD: amd64,v 1.38 2009/07/22 20:10:19 naddy Exp $
 # This is the master list of subdirs used to choose amd64 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -13,15 +13,15 @@ net/nmap
 #sysutils/cdrtools
 #mail/procmail
 #mail/fetchmail
-misc/screen
-#shells/zsh
+#misc/screen
+shells/zsh
 shells/bash
-#shells/tcsh
+shells/tcsh
 #devel/autoconf/2.59
 #devel/automake
 #books/autobook
 #devel/bison
-#mail/mutt/stable
+mail/mutt/stable
 #audio/libao
 #audio/vorbis-tools
 #audio/mpg321

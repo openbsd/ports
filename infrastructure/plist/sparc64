@@ -1,9 +1,8 @@
-# $OpenBSD: sparc64,v 1.34 2009/03/06 23:19:38 pvalchev Exp $
+# $OpenBSD: sparc64,v 1.35 2009/07/22 20:10:19 naddy Exp $
 # This is the master list of subdirs used to choose sparc64 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/rsync
-textproc/gdiff
 editors/vim,no_x11
 editors/emacs21
 archivers/unzip
@@ -14,8 +13,7 @@ net/pptp
 sysutils/cdrtools
 mail/fetchmail
 mail/procmail
-misc/screen
-net/samba
+#net/samba
 shells/zsh
 shells/bash
 shells/tcsh
@@ -26,29 +24,26 @@ print/gv
 devel/id-utils
 www/mozilla-firefox
 textproc/xpdf
-#x11/windowmaker
-#x11/windowmaker-extra
-#www/tidy
 editors/nedit
 #databases/openldap,-server
 x11/rxvt
 x11/xpostit
 x11/xdaliclock
 x11/xkeycaps
-audio/mp3cddb
+#audio/mp3cddb
 editors/nano
 textproc/antiword
-##editors/ted
-#lang/python/2.5
-#lang/python/2.5,-tools
-#www/mod_perl
+editors/ted
+lang/python/2.5
+lang/python/2.5,-tools
+www/mod_perl
 games/xkobo,harder
 games/xlife
 #cad/qcad
 #benchmarks/tcpblast
 graphics/gqview
 #net/epic4
-#net/irssi
+net/irssi
 #security/bsd-airtools
 #editors/abiword
 #archivers/zip
@@ -63,20 +58,4 @@ audio/mpg321
 net/ircII
 #x11/windowmaker
 #x11/windowmaker-extra
-www/tidy
-editors/nedit
-#databases/openldap,-server
-x11/rxvt
-x11/xpostit
-x11/xdaliclock
-x11/xkeycaps
-#audio/mp3cddb
-#editors/nano
-#textproc/antiword
-textproc/xpdf
-#editors/ted
-#lang/python/2.5
-#lang/python/2.5,-tools
-#www/mod_perl
-#games/xkobo,harder
-#games/xlife
+#www/tidy
