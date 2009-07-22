@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2007/09/15 21:30:26 simon Exp $
+# $OpenBSD: Makefile,v 1.42 2009/07/22 11:53:50 okan Exp $
 # Uses pthreads
 
 COMMENT=	performance test of sequential file I/O
 
-DISTNAME=	iozone3_203
-PKGNAME=	iozone-3.203
+DISTNAME=	iozone3_326
+PKGNAME=	iozone-3.326
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
 EXTRACT_SUFX=	.tar
@@ -24,11 +24,12 @@ NO_REGRESS=	Yes
 ALL_TARGET=	openbsd-threads
 
 MAKE_FILE=	makefile
+MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 
-WRKDIST=	${WRKDIR}/src/current
+WRKSRC=		${WRKDIST}/src/current
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iozone ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/docs/iozone.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIST}/docs/iozone.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_current_makefile,v 1.1 2009/07/22 11:53:51 okan Exp $
+--- src/current/makefile.orig	Sun Jun 21 18:19:37 2009
++++ src/current/makefile	Sun Jun 21 18:22:09 2009
+@@ -455,7 +455,7 @@ openbsd:	iozone_openbsd.o libbif.o fileop_openbsd.o
+ #
+ 
+ openbsd-threads:	iozone_openbsd-threads.o libbif.o
+-	$(CC) -O $(LDFLAGS) -pthread iozone_openbsd-threads.o \
++	$(CC) $(CFLAGS) $(LDFLAGS) -pthread iozone_openbsd-threads.o \
+ 		libbif.o -o iozone
+ 
+ #
+@@ -1199,10 +1199,10 @@ iozone_openbsd-threads.o:	iozone.c libbif.c
+ 	@echo ""
+ 	@echo "Build iozone for OpenBSD with threads"
+ 	@echo ""
+-	$(CC) -c -O -pthread -Dunix -Dbsd4_4 -DHAVE_ANSIC_C \
++	$(CC) -c $(CFLAGS) -pthread -Dunix -Dbsd4_4 -DHAVE_ANSIC_C \
+ 		-DNAME='"openbsd-threads"' $(CFLAGS) iozone.c \
+ 		-o iozone_openbsd-threads.o
+-	$(CC) -c -O -pthread -Dunix -Dbsd4_4 -DHAVE_ANSIC_C \
++	$(CC) -c $(CFLAGS) -pthread -Dunix -Dbsd4_4 -DHAVE_ANSIC_C \
+ 		$(CFLAGS) libbif.c -o libbif.o
+ 
+ iozone_OSFV3.o:	iozone.c libbif.c
