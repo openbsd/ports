@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_interp_engine_interp_h,v 1.1 2009/07/22 00:31:57 kurt Exp $
+--- src/interp/engine/interp.h.orig	Sat Feb 21 22:05:48 2009
++++ src/interp/engine/interp.h	Mon Jul  6 20:50:51 2009
+@@ -37,7 +37,7 @@
+ #include <sys/param.h>
+ #endif
+ 
+-#if (defined(BYTE_ORDER) && (BYTE_ORDER == BIG_ENDIAN)) || defined(_BIG_ENDIAN)
++#if (defined(BYTE_ORDER) && (BYTE_ORDER == BIG_ENDIAN)) || (!defined(BYTE_ORDER) && defined(_BIG_ENDIAN))
+ #define FLOAT_CONST(val) (uintptr_t)val << (sizeof(uintptr_t) * 8 - 32)
+ #else
+ #define FLOAT_CONST(val) val

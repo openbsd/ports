@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_interp_inlining_c,v 1.1 2009/07/22 00:31:57 kurt Exp $
+--- src/interp/inlining.c.orig	Tue Jan 20 20:59:48 2009
++++ src/interp/inlining.c	Fri Jun 19 12:07:26 2009
+@@ -927,7 +927,9 @@ void inlineBlock(MethodBlock *mb, BasicBlock *block, T
+        inlineBlocks doesn't free the blocks as previously scanned
+        blocks may be inlined later */
+ 
+-    while(start != end->next) {
++    end = end->next;
++
++    while(start != end) {
+         BasicBlock *next = start->next;
+ 
+         sysFree(start->opcodes);

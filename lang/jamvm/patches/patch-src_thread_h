@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_thread_h,v 1.1 2009/07/22 00:31:57 kurt Exp $
+--- src/thread.h.orig	Thu Jun 18 14:34:44 2009
++++ src/thread.h	Thu Jun 18 14:35:06 2009
+@@ -20,7 +20,6 @@
+  */
+ 
+ #ifndef CREATING
+-#include <alloca.h>
+ #include <pthread.h>
+ #include <setjmp.h>
+ #include <stdlib.h>
