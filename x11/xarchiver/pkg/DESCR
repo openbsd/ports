@@ -1,0 +1,4 @@
+Xarchiver is a lightweight desktop independent archive manager built
+with the GTK+2 toolkit. It supports 7-zip, arj, bzip2, gzip, rar, lha,
+lzma, lzop, deb, rpm, tar and zip archives if the corresponding
+commandline tools are available.

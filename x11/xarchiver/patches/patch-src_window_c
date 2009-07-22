@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_window_c,v 1.1.1.1 2009/07/22 20:39:58 landry Exp $
+--- src/window.c.orig	Tue Nov 11 09:31:45 2008
++++ src/window.c	Mon Jul 20 22:33:57 2009
+@@ -1447,7 +1447,7 @@ void xa_set_statusbar_message_for_displayed_rows(XArch
+ 	GtkTreeIter iter;
+ 	gint n_elem = 0,pos = 0,dirs = 0;
+ 	unsigned long int total_size = 0;
+-	unsigned long int size = 0;
++	guint64 size = 0;
+ 	XEntry *entry = NULL;
+ 
+ 	path = gtk_tree_path_new_first();
+@@ -1517,7 +1517,7 @@ void xa_row_selected (GtkTreeSelection *selection,XArc
+ 	GtkTreeModel *model;
+ 	gint selected = 0,pos = 0,dirs = 0;
+ 	unsigned long int total_size = 0;
+-	unsigned long int size = 0;
++	guint64 size = 0;
+ 	XEntry *entry;
+ 
+ 	switch (archive->type)
