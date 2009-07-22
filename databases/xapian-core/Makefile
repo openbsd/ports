@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/07/22 08:17:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/07/22 12:41:45 ajacoutot Exp $
 
 COMMENT=	search engine library
 
-V=		1.0.13
+V=		1.0.14
 DISTNAME=	xapian-core-${V}
 
-SHARED_LIBS +=  xapian               0.0      # .21.4
+SHARED_LIBS +=  xapian               0.1      # .21.5
 
-CATEGORIES=	databases
+CATEGORIES=	databases textproc
 
 HOMEPAGE=	http://xapian.org/
 
@@ -25,5 +25,7 @@ USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+
+REGRESS_TARGET=	check
 
 .include <bsd.port.mk>
