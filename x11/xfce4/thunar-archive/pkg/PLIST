@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/22 20:43:43 landry Exp $
+%%SHARED%%
+lib/thunarx-1/thunar-archive-plugin.a
+lib/thunarx-1/thunar-archive-plugin.la
+libexec/thunar-archive-plugin/ark.tap
+libexec/thunar-archive-plugin/file-roller.tap
+share/icons/hicolor/16x16/apps/tap-create.png
+share/icons/hicolor/16x16/apps/tap-extract-to.png
+share/icons/hicolor/16x16/apps/tap-extract.png
+share/locale/ca/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/cs/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/de/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/el/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/eo/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/eu/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/fr/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/hu/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/it/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/ja/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/nl/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/pa/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/pl/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/pt_BR/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/ru/LC_MESSAGES/thunar-archive-plugin.mo
+share/locale/zh_TW/LC_MESSAGES/thunar-archive-plugin.mo
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
