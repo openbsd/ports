@@ -1,0 +1,49 @@
+$OpenBSD: patch-tools_rgb2ycbcr_c,v 1.1 2009/07/22 13:15:00 jasper Exp $
+
+Fix several places in tiff2rgba and rgb2ycbcr that were being careless about
+possible integer overflow in calculation of buffer sizes.
+
+CVE-2009-2347
+
+
+--- tools/rgb2ycbcr.c.orig	Fri Sep  3 09:57:13 2004
++++ tools/rgb2ycbcr.c	Wed Jul 22 13:41:02 2009
+@@ -202,6 +202,17 @@ cvtClump(unsigned char* op, uint32* raster, uint32 ch,
+ #undef LumaBlue
+ #undef V2Code
+ 
++static tsize_t
++multiply(tsize_t m1, tsize_t m2)
++{
++    tsize_t prod = m1 * m2;
++
++    if (m1 && prod / m1 != m2)
++        prod = 0;		/* overflow */
++
++    return prod;
++}
++
+ /*
+  * Convert a strip of RGB data to YCbCr and
+  * sample to generate the output data.
+@@ -278,10 +289,19 @@ tiffcvt(TIFF* in, TIFF* out)
+ 	float floatv;
+ 	char *stringv;
+ 	uint32 longv;
++	tsize_t raster_size;
+ 
+ 	TIFFGetField(in, TIFFTAG_IMAGEWIDTH, &width);
+ 	TIFFGetField(in, TIFFTAG_IMAGELENGTH, &height);
+-	raster = (uint32*)_TIFFmalloc(width * height * sizeof (uint32));
++
++	raster_size = multiply(multiply(width, height), sizeof (uint32));
++	if (!raster_size) {
++		TIFFError(TIFFFileName(in),
++			  "Can't allocate buffer for raster of size %lux%lu",
++			  (unsigned long) width, (unsigned long) height);
++		return (0);
++	}
++	raster = (uint32*)_TIFFmalloc(raster_size);
+ 	if (raster == 0) {
+ 		TIFFError(TIFFFileName(in), "No space for raster buffer");
+ 		return (0);
