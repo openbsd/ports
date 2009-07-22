@@ -1,0 +1,5 @@
+Xapian is an opensource search engine library.
+It is a highly adaptable toolkit which allows developers to easily add
+advanced indexing and search facilities to their own applications. It
+supports the Probabilistic Information Retrieval model and also supports
+a rich set of boolean query operators.
