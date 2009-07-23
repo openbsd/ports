@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/23 15:16:45 ajacoutot Exp $
+bin/dbi2omega
+bin/htdig2omega
+bin/mbox2omega
+@bin bin/omindex
+@bin bin/scriptindex
+libexec/xapian-omega/
+libexec/xapian-omega/cgi-bin/
+@mode 111
+@bin libexec/xapian-omega/cgi-bin/omega
+@sample /var/www/cgi-bin/omega
+@mode
+@man man/man1/omindex.1
+@man man/man1/scriptindex.1
+share/doc/xapian-omega/
+share/doc/xapian-omega/cgiparams.html
+share/doc/xapian-omega/omegascript.html
+share/doc/xapian-omega/overview.html
+share/doc/xapian-omega/quickstart.html
+share/doc/xapian-omega/scriptindex.html
+share/doc/xapian-omega/termprefixes.html
+share/examples/xapian-omega/
+share/examples/xapian-omega/omega.conf
+@sample ${SYSCONFDIR}/omega.conf
+share/omega/
+share/omega/htdig2omega.script
+share/omega/mbox2omega.script
+share/omega/templates/
+@sample /var/omega/templates/
+share/omega/templates/godmode
+@sample /var/omega/templates/godmode
+share/omega/templates/inc/
+@sample /var/omega/templates/inc/
+share/omega/templates/inc/anyalldropbox
+@sample /var/omega/templates/inc/anyalldropbox
+share/omega/templates/inc/anyallradio
+@sample /var/omega/templates/inc/anyallradio
+share/omega/templates/inc/toptermsjs
+@sample /var/omega/templates/inc/toptermsjs
+share/omega/templates/opensearch
+@sample /var/omega/templates/opensearch
+share/omega/templates/query
+@sample /var/omega/templates/query
+share/omega/templates/topterms
+@sample /var/omega/templates/topterms
+share/omega/templates/xml
+@sample /var/omega/templates/xml
+@sample /var/omega/data/
+@sample /var/omega/cdb/

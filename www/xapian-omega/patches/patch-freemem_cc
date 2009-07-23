@@ -1,0 +1,13 @@
+$OpenBSD: patch-freemem_cc,v 1.1.1.1 2009/07/23 15:16:45 ajacoutot Exp $
+--- freemem.cc.orig	Tue Jul 21 18:39:14 2009
++++ freemem.cc	Wed Jul 22 14:55:29 2009
+@@ -24,6 +24,9 @@
+ #include <sys/types.h>
+ #include <limits.h>
+ #include <unistd.h>
++#ifdef __OpenBSD__
++# include <sys/param.h>
++#endif
+ #ifdef HAVE_SYS_SYSCTL_H
+ # include <sys/sysctl.h>
+ #endif
