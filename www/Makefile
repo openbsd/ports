@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.416 2009/06/23 17:58:38 martynas Exp $
+# $OpenBSD: Makefile,v 1.417 2009/07/23 15:17:28 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -403,6 +403,7 @@
      SUBDIR += www6to4
      SUBDIR += wwwcount
      SUBDIR += wwwoffle
+     SUBDIR += xapian-omega
      SUBDIR += xcache
      SUBDIR += xmhtml
      SUBDIR += xoops
