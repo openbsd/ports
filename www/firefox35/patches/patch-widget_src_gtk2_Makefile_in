@@ -1,0 +1,12 @@
+$OpenBSD: patch-widget_src_gtk2_Makefile_in,v 1.1 2009/07/23 17:17:41 martynas Exp $
+--- widget/src/gtk2/Makefile.in.orig	Tue Jul 21 23:02:17 2009
++++ widget/src/gtk2/Makefile.in	Tue Jul 21 23:12:02 2009
+@@ -175,6 +175,8 @@ DEFINES         += -DUSE_POSTSCRIPT
+ EXTRA_DSO_LDOPTS += -lgfxpsshar
+ endif
+ 
++# GTK2 widget sndio backend.
++EXTRA_DSO_LDOPTS += -lsndio
+ 
+ DEFINES		+= 
+ INCLUDES	+= \

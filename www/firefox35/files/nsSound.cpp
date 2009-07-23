@@ -1,4 +1,4 @@
-/*	$OpenBSD: nsSound.cpp,v 1.1 2009/07/19 15:30:16 martynas Exp $	*/
+/*	$OpenBSD: nsSound.cpp,v 1.2 2009/07/23 17:17:41 martynas Exp $	*/
 
 /*
  * Copyright (c) 2009 Martynas Venckus <martynas@openbsd.org>
@@ -85,16 +85,6 @@ typedef struct {
 
 typedef struct _ca_context ca_context;
 
-/* used to play the sounds from the find symbol call */
-typedef struct sio_hdl * (*SioOpenType)(char *, unsigned, int);
-typedef void (*SioCloseType)(struct sio_hdl *);
-typedef int (*SioSetparType)(struct sio_hdl *, struct sio_par *);
-typedef int (*SioGetparType)(struct sio_hdl *, struct sio_par *);
-typedef int (*SioStartType)(struct sio_hdl *);
-typedef size_t (*SioWriteType)(struct sio_hdl *, void *, size_t);
-typedef int (*SioEofType)(struct sio_hdl *);
-typedef void (*SioInitparType)(struct sio_par *);
-
 /* used to find and play common system event sounds */
 typedef int (*ca_context_create_fn) (ca_context **);
 typedef int (*ca_context_destroy_fn) (ca_context *);
@@ -106,7 +96,6 @@ static ca_context_destroy_fn ca_context_destroy;
 static ca_context_play_fn ca_context_play;
 static ca_context_change_props_fn ca_context_change_props;
 
-static PRLibrary *sndio_lib = nsnull;
 static PRLibrary *canberra_lib = nsnull;
 
 NS_IMPL_ISUPPORTS2(nsSound, nsISound, nsIStreamLoaderObserver)
@@ -119,30 +108,13 @@ RunSioThread(void *arg)
 
     td = (SioThreadData *)arg;
 
-    /* Close the stream if fail. */
-    SioCloseType SioClose =
-        (SioCloseType) PR_FindFunctionSymbol(sndio_lib, "sio_close");
-
     /* Write stream. */
-    SioWriteType SioWrite =
-        (SioWriteType) PR_FindFunctionSymbol(sndio_lib, "sio_write");
-    SioEofType SioEof =
-        (SioEofType) PR_FindFunctionSymbol(sndio_lib, "sio_eof");
-    if (!SioWrite || !SioEof) {
-        if (SioClose)
-            (*SioClose)(td->sndio_hdl);
-        free(td->audio);
-        free(td);
-        return;
-    }
-
-    if ((*SioWrite)(td->sndio_hdl, (void *)td->audio,
-        td->audio_len) == 0 && (*SioEof)(td->sndio_hdl)) {
+    if (sio_write(td->sndio_hdl, (void *)td->audio,
+        td->audio_len) == 0 && sio_eof(td->sndio_hdl)) {
         NS_WARNING("sio_write: couldn't write the stream");
     }
 
-    if (SioClose)
-        (*SioClose)(td->sndio_hdl);
+    sio_close(td->sndio_hdl);
 
     free(td->audio);
     free(td);
@@ -168,9 +140,6 @@ nsSound::Init()
         return NS_OK;
 
     mInited = PR_TRUE;
-
-    if (!sndio_lib)
-        sndio_lib = PR_LoadLibrary("libsndio.so");
 
     if (!canberra_lib) {
         canberra_lib = PR_LoadLibrary("libcanberra.so");
@@ -198,10 +167,6 @@ nsSound::Init()
 /* static */ void
 nsSound::Shutdown()
 {
-    if (sndio_lib) {
-        PR_UnloadLibrary(sndio_lib);
-        sndio_lib = nsnull;
-    }
     if (canberra_lib) {
         PR_UnloadLibrary(canberra_lib);
         canberra_lib = nsnull;
@@ -317,31 +282,14 @@ NS_IMETHODIMP nsSound::OnStreamComplete(nsIStreamLoader *aLoader,
         return NS_OK;
 
     /* Open up connection to sndio. */
-    SioOpenType SioOpen =
-        (SioOpenType) PR_FindFunctionSymbol(sndio_lib, "sio_open");
-    if (!SioOpen)
-        return NS_ERROR_FAILURE;
-
-    sndio_hdl = SioOpen(NULL, SIO_PLAY, 0);
+    sndio_hdl = sio_open(NULL, SIO_PLAY, 0);
     if (sndio_hdl == NULL) {
         NS_WARNING("sio_open: couldn't open the stream");
         return NS_ERROR_FAILURE;
     }
 
-    /* Close the stream if fail. */
-    SioCloseType SioClose =
-        (SioCloseType) PR_FindFunctionSymbol(sndio_lib, "sio_close");
-
     /* Initialize parameters structure. */
-    SioInitparType SioInitpar =
-        (SioInitparType) PR_FindFunctionSymbol(sndio_lib, "sio_initpar");
-    if (!SioInitpar) {
-        if (SioClose)
-            (*SioClose)(sndio_hdl);
-        return NS_ERROR_FAILURE;
-    }
-
-    (*SioInitpar)(&sndio_par);
+    sio_initpar(&sndio_par);
     sndio_par.bits = bits_per_sample;
     sndio_par.le = SIO_LE_NATIVE;
     sndio_par.pchan = channels;
@@ -350,23 +298,10 @@ NS_IMETHODIMP nsSound::OnStreamComplete(nsIStreamLoader *aLoader,
 
     /* Set and get configuration set.
        Put the stream into writing state. */
-    SioSetparType SioSetpar =
-        (SioSetparType) PR_FindFunctionSymbol(sndio_lib, "sio_setpar");
-    SioGetparType SioGetpar =
-        (SioGetparType) PR_FindFunctionSymbol(sndio_lib, "sio_getpar");
-    SioStartType SioStart =
-        (SioStartType) PR_FindFunctionSymbol(sndio_lib, "sio_start");
-    if (!SioSetpar || !SioGetpar || !SioStart) {
-        if (SioClose)
-            (*SioClose)(sndio_hdl);
-        return NS_ERROR_FAILURE;
-    }
-
-    if (!(*SioSetpar)(sndio_hdl, &sndio_par) ||
-        !(*SioGetpar)(sndio_hdl, &sndio_par) || !(*SioStart)(sndio_hdl)) {
+    if (!sio_setpar(sndio_hdl, &sndio_par) ||
+        !sio_getpar(sndio_hdl, &sndio_par) || !sio_start(sndio_hdl)) {
         NS_WARNING("sio_setpar: couldn't set configuration");
-        if (SioClose)
-            (*SioClose)(sndio_hdl);
+        sio_close(sndio_hdl);
         return NS_ERROR_FAILURE;
     }
 
@@ -374,15 +309,13 @@ NS_IMETHODIMP nsSound::OnStreamComplete(nsIStreamLoader *aLoader,
     if (sndio_par.bits != bits_per_sample || sndio_par.pchan != channels ||
         sndio_par.rate != samples_per_sec) {
         NS_WARNING("configuration is not available");
-        if (SioClose)
-            (*SioClose)(sndio_hdl);
+        sio_close(sndio_hdl);
         return NS_ERROR_FAILURE;
     }
 
     if ((td = (SioThreadData *) malloc(sizeof(SioThreadData))) == NULL ||
         (td->audio = malloc(audio_len * sizeof(*audio))) == NULL) {
-        if (SioClose)
-            (*SioClose)(sndio_hdl);
+        sio_close(sndio_hdl);
         return NS_ERROR_FAILURE;
     }
 
@@ -408,9 +341,6 @@ NS_METHOD nsSound::Play(nsIURL *aURL)
 
     if (!mInited)
         Init();
-
-    if (!sndio_lib)
-	    return NS_ERROR_FAILURE;
 
     nsCOMPtr<nsIStreamLoader> loader;
     rv = NS_NewStreamLoader(getter_AddRefs(loader), aURL, this);
