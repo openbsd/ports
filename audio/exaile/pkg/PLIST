@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/23 08:02:37 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/07/23 08:26:38 giovanni Exp $
 bin/exaile
 lib/python${MODPY_VERSION}/site-packages/exaile/
 lib/python${MODPY_VERSION}/site-packages/exaile/exaile.py
@@ -539,6 +539,7 @@ share/exaile/data/plugins/tagcovers/__init__.py
 share/exaile/data/plugins/tagcovers/__init__.pyc
 share/exaile/data/plugins/tagcovers/__init__.pyo
 share/exaile/xdg/
+@sample ${SYSCONFDIR}/xdg/
 share/exaile/xdg/exaile/
 @sample ${SYSCONFDIR}/xdg/exaile/
 share/exaile/xdg/exaile/settings.ini
