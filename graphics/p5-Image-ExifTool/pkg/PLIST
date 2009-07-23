@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/04/16 06:36:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/07/23 07:51:20 giovanni Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -35,6 +35,7 @@ ${P5SITE}/Image/ExifTool/FujiFilm.pm
 ${P5SITE}/Image/ExifTool/GIF.pm
 ${P5SITE}/Image/ExifTool/GPS.pm
 ${P5SITE}/Image/ExifTool/GeoTiff.pm
+${P5SITE}/Image/ExifTool/Geotag.pm
 ${P5SITE}/Image/ExifTool/HP.pm
 ${P5SITE}/Image/ExifTool/HTML.pm
 ${P5SITE}/Image/ExifTool/HtmlDump.pm
@@ -42,23 +43,30 @@ ${P5SITE}/Image/ExifTool/ICC_Profile.pm
 ${P5SITE}/Image/ExifTool/ID3.pm
 ${P5SITE}/Image/ExifTool/IPTC.pm
 ${P5SITE}/Image/ExifTool/ITC.pm
+${P5SITE}/Image/ExifTool/InDesign.pm
 ${P5SITE}/Image/ExifTool/JPEG.pm
+${P5SITE}/Image/ExifTool/JPEGDigest.pm
 ${P5SITE}/Image/ExifTool/JVC.pm
 ${P5SITE}/Image/ExifTool/Jpeg2000.pm
 ${P5SITE}/Image/ExifTool/Kodak.pm
 ${P5SITE}/Image/ExifTool/KyoceraRaw.pm
 ${P5SITE}/Image/ExifTool/Lang/
-${P5SITE}/Image/ExifTool/Lang/ch_s.pm
-${P5SITE}/Image/ExifTool/Lang/cz.pm
+${P5SITE}/Image/ExifTool/Lang/cs.pm
 ${P5SITE}/Image/ExifTool/Lang/de.pm
 ${P5SITE}/Image/ExifTool/Lang/en_ca.pm
 ${P5SITE}/Image/ExifTool/Lang/en_gb.pm
 ${P5SITE}/Image/ExifTool/Lang/es.pm
 ${P5SITE}/Image/ExifTool/Lang/fr.pm
 ${P5SITE}/Image/ExifTool/Lang/it.pm
-${P5SITE}/Image/ExifTool/Lang/jp.pm
+${P5SITE}/Image/ExifTool/Lang/ja.pm
+${P5SITE}/Image/ExifTool/Lang/ko.pm
 ${P5SITE}/Image/ExifTool/Lang/nl.pm
 ${P5SITE}/Image/ExifTool/Lang/pl.pm
+${P5SITE}/Image/ExifTool/Lang/ru.pm
+${P5SITE}/Image/ExifTool/Lang/sv.pm
+${P5SITE}/Image/ExifTool/Lang/tr.pm
+${P5SITE}/Image/ExifTool/Lang/zh_cn.pm
+${P5SITE}/Image/ExifTool/Lang/zh_tw.pm
 ${P5SITE}/Image/ExifTool/Leaf.pm
 ${P5SITE}/Image/ExifTool/MIE.pm
 ${P5SITE}/Image/ExifTool/MIEUnits.pod
@@ -66,6 +74,7 @@ ${P5SITE}/Image/ExifTool/MIFF.pm
 ${P5SITE}/Image/ExifTool/MNG.pm
 ${P5SITE}/Image/ExifTool/MPC.pm
 ${P5SITE}/Image/ExifTool/MPEG.pm
+${P5SITE}/Image/ExifTool/MPF.pm
 ${P5SITE}/Image/ExifTool/MakerNotes.pm
 ${P5SITE}/Image/ExifTool/Minolta.pm
 ${P5SITE}/Image/ExifTool/MinoltaRaw.pm
@@ -77,6 +86,7 @@ ${P5SITE}/Image/ExifTool/PICT.pm
 ${P5SITE}/Image/ExifTool/PNG.pm
 ${P5SITE}/Image/ExifTool/PPM.pm
 ${P5SITE}/Image/ExifTool/Panasonic.pm
+${P5SITE}/Image/ExifTool/PanasonicRaw.pm
 ${P5SITE}/Image/ExifTool/Pentax.pm
 ${P5SITE}/Image/ExifTool/PhotoMechanic.pm
 ${P5SITE}/Image/ExifTool/Photoshop.pm
@@ -94,6 +104,7 @@ ${P5SITE}/Image/ExifTool/Shortcuts.pm
 ${P5SITE}/Image/ExifTool/Sigma.pm
 ${P5SITE}/Image/ExifTool/SigmaRaw.pm
 ${P5SITE}/Image/ExifTool/Sony.pm
+${P5SITE}/Image/ExifTool/Stim.pm
 ${P5SITE}/Image/ExifTool/TagInfoXML.pm
 ${P5SITE}/Image/ExifTool/TagLookup.pm
 ${P5SITE}/Image/ExifTool/TagNames.pod
@@ -142,6 +153,7 @@ ${P5SITE}/Image/ExifTool/ZIP.pm
 @man man/man3p/Image::ExifTool::GIF.3p
 @man man/man3p/Image::ExifTool::GPS.3p
 @man man/man3p/Image::ExifTool::GeoTiff.3p
+@man man/man3p/Image::ExifTool::Geotag.3p
 @man man/man3p/Image::ExifTool::HP.3p
 @man man/man3p/Image::ExifTool::HTML.3p
 @man man/man3p/Image::ExifTool::HtmlDump.3p
@@ -149,22 +161,29 @@ ${P5SITE}/Image/ExifTool/ZIP.pm
 @man man/man3p/Image::ExifTool::ID3.3p
 @man man/man3p/Image::ExifTool::IPTC.3p
 @man man/man3p/Image::ExifTool::ITC.3p
+@man man/man3p/Image::ExifTool::InDesign.3p
 @man man/man3p/Image::ExifTool::JPEG.3p
+@man man/man3p/Image::ExifTool::JPEGDigest.3p
 @man man/man3p/Image::ExifTool::JVC.3p
 @man man/man3p/Image::ExifTool::Jpeg2000.3p
 @man man/man3p/Image::ExifTool::Kodak.3p
 @man man/man3p/Image::ExifTool::KyoceraRaw.3p
-@man man/man3p/Image::ExifTool::Lang::ch_s.3p
-@man man/man3p/Image::ExifTool::Lang::cz.3p
+@man man/man3p/Image::ExifTool::Lang::cs.3p
 @man man/man3p/Image::ExifTool::Lang::de.3p
 @man man/man3p/Image::ExifTool::Lang::en_ca.3p
 @man man/man3p/Image::ExifTool::Lang::en_gb.3p
 @man man/man3p/Image::ExifTool::Lang::es.3p
 @man man/man3p/Image::ExifTool::Lang::fr.3p
 @man man/man3p/Image::ExifTool::Lang::it.3p
-@man man/man3p/Image::ExifTool::Lang::jp.3p
+@man man/man3p/Image::ExifTool::Lang::ja.3p
+@man man/man3p/Image::ExifTool::Lang::ko.3p
 @man man/man3p/Image::ExifTool::Lang::nl.3p
 @man man/man3p/Image::ExifTool::Lang::pl.3p
+@man man/man3p/Image::ExifTool::Lang::ru.3p
+@man man/man3p/Image::ExifTool::Lang::sv.3p
+@man man/man3p/Image::ExifTool::Lang::tr.3p
+@man man/man3p/Image::ExifTool::Lang::zh_cn.3p
+@man man/man3p/Image::ExifTool::Lang::zh_tw.3p
 @man man/man3p/Image::ExifTool::Leaf.3p
 @man man/man3p/Image::ExifTool::MIE.3p
 @man man/man3p/Image::ExifTool::MIEUnits.3p
@@ -172,6 +191,7 @@ ${P5SITE}/Image/ExifTool/ZIP.pm
 @man man/man3p/Image::ExifTool::MNG.3p
 @man man/man3p/Image::ExifTool::MPC.3p
 @man man/man3p/Image::ExifTool::MPEG.3p
+@man man/man3p/Image::ExifTool::MPF.3p
 @man man/man3p/Image::ExifTool::MakerNotes.3p
 @man man/man3p/Image::ExifTool::Minolta.3p
 @man man/man3p/Image::ExifTool::MinoltaRaw.3p
@@ -183,6 +203,7 @@ ${P5SITE}/Image/ExifTool/ZIP.pm
 @man man/man3p/Image::ExifTool::PNG.3p
 @man man/man3p/Image::ExifTool::PPM.3p
 @man man/man3p/Image::ExifTool::Panasonic.3p
+@man man/man3p/Image::ExifTool::PanasonicRaw.3p
 @man man/man3p/Image::ExifTool::Pentax.3p
 @man man/man3p/Image::ExifTool::PhotoMechanic.3p
 @man man/man3p/Image::ExifTool::Photoshop.3p
@@ -199,6 +220,7 @@ ${P5SITE}/Image/ExifTool/ZIP.pm
 @man man/man3p/Image::ExifTool::Sigma.3p
 @man man/man3p/Image::ExifTool::SigmaRaw.3p
 @man man/man3p/Image::ExifTool::Sony.3p
+@man man/man3p/Image::ExifTool::Stim.3p
 @man man/man3p/Image::ExifTool::TagInfoXML.3p
 @man man/man3p/Image::ExifTool::TagLookup.3p
 @man man/man3p/Image::ExifTool::TagNames.3p
