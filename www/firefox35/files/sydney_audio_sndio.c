@@ -1,4 +1,4 @@
-/*	$OpenBSD: sydney_audio_sndio.c,v 1.1 2009/07/21 12:12:37 martynas Exp $	*/
+/* $OpenBSD: sydney_audio_sndio.c,v 1.2 2009/07/23 19:04:42 martynas Exp $ */
 
 /*
  * Copyright (c) 2009 Martynas Venckus <martynas@openbsd.org>
@@ -60,95 +60,59 @@
 
 #include "sydney_audio.h"
 
-typedef struct sa_buf sa_buf;
-struct sa_buf {
-	unsigned int size;	/* size of sound data */
-	sa_buf *next;		/* next buffer */
-	unsigned char data[];	/* sound data */
+struct sa_buffer {
+	struct sa_buffer *next;
+	unsigned int size;
+	unsigned char data[];
 };
 
 struct sa_stream {
-	struct sio_hdl *sndio_hdl;
+	struct sio_hdl *handle;
 	pthread_mutex_t mutex;
-	pthread_t thread_id;
-	int playing;
-	int64_t bytes_played;
-
-	/* used settings */
-	unsigned int rate;
-	unsigned int n_channels;
-	unsigned int precision;
-
-	/* buffer lists */
-	sa_buf *bl_head;
-	sa_buf *bl_tail;
+	pthread_t thread;
+	int64_t position;
+	unsigned int buffer, channels, format, rate;
+	struct sa_buffer *head, *tail;
 };
 
-/*
- * Use a default buffer size with enough room for one second of audio,
- * assuming stereo data at 44.1kHz with 32 bits per channel, and impose
- * a generous limit on the number of buffers.
- */
-#define BUF_SIZE    (2 * 44100 * 4)
-
-static void* audio_callback(void* s);
-static sa_buf *new_buffer(int size);
+static struct sa_buffer *allocate_buffer(size_t size);
+static void audio_callback(void *data);
 
 /*
- * -----------------------------------------------------------------------------
- * Startup and shutdown functions
- * -----------------------------------------------------------------------------
+ * STARTUP AND SHUTDOWN FUNCTIONS
  */
 
 int
 sa_stream_create_pcm(sa_stream_t **_s, const char *client_name,
     sa_mode_t mode, sa_pcm_format_t format, unsigned int rate,
-    unsigned int n_channels)
+    unsigned int channels)
 {
 	sa_stream_t *s;
 
-	/*
-	 * Make sure we return a NULL stream pointer on failure.
-	 */
 	if (_s == NULL)
 		return SA_ERROR_INVALID;
 
 	*_s = NULL;
 
-	/*
-	 * Check for supported modes.
-	 */
-	if (mode != SA_MODE_WRONLY)
+	if (mode != SA_MODE_WRONLY || (format != SA_PCM_FORMAT_S16_LE &&
+	    format != SA_PCM_FORMAT_S16_BE))
 		return SA_ERROR_NOT_SUPPORTED;
 
-	/*
-	 * Check for supported formats.
-	 */
-	if (format != SA_PCM_FORMAT_S16_LE)
-		return SA_ERROR_NOT_SUPPORTED;
-
-	/*
-	 * Allocate the instance and required resources.
-	 */
-	if ((s = malloc(sizeof(sa_stream_t))) == NULL)
+	s = malloc(sizeof(sa_stream_t));
+	if (s == NULL)
 		return SA_ERROR_OOM;
 
-	/*
-	 * Create a new mutex.
-	 */
 	if (pthread_mutex_init(&s->mutex, NULL) != 0) {
 		free(s);
 		return SA_ERROR_SYSTEM;
 	}
 
-	s->sndio_hdl = NULL;
+	s->handle = NULL;
+	s->channels = channels;
+	s->format = 16;
 	s->rate = rate;
-	s->n_channels = n_channels;
-	s->precision = 16;
-
-	s->playing = 0;
-	s->bytes_played = 0;
-	s->bl_tail = s->bl_head = NULL;
+	s->position = s->buffer = 0;
+	s->tail = s->head = NULL;
 
 	*_s = s;
 
@@ -158,53 +122,47 @@ sa_stream_create_pcm(sa_stream_t **_s, const char *client_name,
 int
 sa_stream_open(sa_stream_t *s)
 {
-	struct sio_hdl *sndio_hdl;
-	struct sio_par sndio_par;
+	struct sio_hdl *handle;
+	struct sio_par par;
 
 	if (s == NULL)
 		return SA_ERROR_NO_INIT;
 
-	if (s->sndio_hdl != NULL)
+	if (s->handle != NULL)
 		return SA_ERROR_INVALID;
 
-	sndio_hdl = sio_open(NULL, SIO_PLAY, 0);
-	if (sndio_hdl == 0) {
-		fprintf(stderr, "sydney_audio_sndio: sio_open failed\n");
+	handle = sio_open(NULL, SIO_PLAY, 0);
+	if (handle == NULL)
 		return SA_ERROR_NO_DEVICE;
-	}
 
-	sio_initpar(&sndio_par);
-	sndio_par.appbufsz = BUF_SIZE;
-	sndio_par.bits = s->precision;
-	sndio_par.le = SIO_LE_NATIVE;
-	sndio_par.pchan = s->n_channels;
-	sndio_par.rate = s->rate;
-	sndio_par.sig = 1;
+	sio_initpar(&par);
+	par.bits = s->format;
+	par.le = SIO_LE_NATIVE;
+	par.pchan = s->channels;
+	par.rate = s->rate;
+	par.sig = 1;
 
-	if (!sio_setpar(sndio_hdl, &sndio_par) || !sio_getpar(sndio_hdl,
-	    &sndio_par)) {
-		fprintf(stderr, "sydney_audio_sndio: sio_par failed\n");
-		sio_close(sndio_hdl);
+	if (!sio_setpar(handle, &par) || !sio_getpar(handle, &par)) {
+		sio_close(handle);
 		return SA_ERROR_NOT_SUPPORTED;
 	}
 
-	if (sndio_par.bits != s->precision ||
-	    sndio_par.le != SIO_LE_NATIVE ||
-	    sndio_par.pchan != s->n_channels ||
-	    sndio_par.rate != s->rate || sndio_par.sig != 1) {
-		fprintf(stderr, "sydney_audio_sndio: sndio "
-		    "configuration failed\n");
-		sio_close(sndio_hdl);
+	if (par.bits != s->format || par.le != SIO_LE_NATIVE ||
+	    par.pchan != s->channels || par.rate != s->rate || par.sig != 1) {
+		sio_close(handle);
 		return SA_ERROR_NOT_SUPPORTED;
 	}
 
-	if (!sio_start(sndio_hdl)) {
-		fprintf(stderr, "sydney_audio_sndio: sio_start failed\n");
-		sio_close(sndio_hdl);
+	if (!sio_start(handle)) {
+		sio_close(handle);
 		return SA_ERROR_NOT_SUPPORTED;
 	}
 
-	s->sndio_hdl = sndio_hdl;
+	s->buffer = par.bufsz;
+	s->handle = handle;
+
+	if (pthread_create(&s->thread, NULL, (void *)audio_callback, s) != 0)
+		return SA_ERROR_SYSTEM;
 
 	return SA_SUCCESS;
 }
@@ -212,163 +170,70 @@ sa_stream_open(sa_stream_t *s)
 int
 sa_stream_destroy(sa_stream_t *s)
 {
-	int result = SA_SUCCESS;
-
 	if (s == NULL)
 		return SA_SUCCESS;
 
 	pthread_mutex_lock(&s->mutex);
-
-	s->thread_id = 0;
-	while (s->bl_head != NULL) {
-		sa_buf *next = s->bl_head->next;
-		free(s->bl_head);
-		s->bl_head = next;
+	s->thread = 0;
+	while (s->head != NULL) {
+		struct sa_buffer *next = s->head->next;
+		free(s->head);
+		s->head = next;
 	}
-
 	pthread_mutex_unlock(&s->mutex);
 
 	if (pthread_mutex_destroy(&s->mutex) != 0)
-		result = SA_ERROR_SYSTEM;
+		return SA_ERROR_SYSTEM;
 
-	return result;
+	return SA_SUCCESS;
 }
 
 /*
- * -----------------------------------------------------------------------------
- * Data read and write functions
- * -----------------------------------------------------------------------------
+ * DATA READ AND WRITE FUNCTIONS
  */
 
 int
 sa_stream_write(sa_stream_t *s, const void *data, size_t nbytes)
 {
-	sa_buf *buf;
+	struct sa_buffer *buffer;
 
-	if (s == NULL || s->sndio_hdl == NULL)
+	if (s == NULL || s->handle == NULL)
 		return SA_ERROR_NO_INIT;
 
 	if (nbytes == 0)
 		return SA_SUCCESS;
 
-	/*
-	 * Append the new data to the end of our buffer list.
-	 */
-	buf = new_buffer(nbytes);
-	if (buf == NULL)
+	buffer = allocate_buffer(nbytes);
+	if (buffer == NULL)
 		return SA_ERROR_OOM;
 
-	memcpy(buf->data, data, nbytes);
+	memcpy(buffer->data, data, nbytes);
 
 	pthread_mutex_lock(&s->mutex);
-
-	if (!s->bl_head)
-		s->bl_head = buf;
+	if (!s->head)
+		s->head = buffer;
 	else
-		s->bl_tail->next = buf;
-
-	s->bl_tail = buf;
-
+		s->tail->next = buffer;
+	s->tail = buffer;
 	pthread_mutex_unlock(&s->mutex);
-
-	/*
-	 * Once we have our first block of audio data, enable the
-	 * audio callback function. This doesn't need to be protected
-	 * by the mutex, because s->playing is not used in the audio
-	 * callback thread, and it's probably better not to be
-	 * inside the lock when we enable the audio callback.
-	 */
-	if (!s->playing) {
-		s->playing = 1;
-		if (pthread_create(&s->thread_id, NULL, audio_callback,
-		    s) != 0)
-			return SA_ERROR_SYSTEM;
-	}
 
 	return SA_SUCCESS;
 }
 
-static void *
-audio_callback(void* data)
-{
-	sa_stream_t *s = (sa_stream_t*)data;
-	sa_buf *buf;
-	int nbytes_written, nbytes;
-
-	while (1) {
-		if (s->thread_id == 0) {
-			/*
-			 * Shut down the audio output device and
-			 * release resources.
-			 */
-			if (s->sndio_hdl != NULL)
-				sio_close(s->sndio_hdl);
-			free(s);
-
-			break;
-		}
-
-		while (1) {
-			pthread_mutex_lock(&s->mutex);
-
-			if (!s->bl_head) {
-				pthread_mutex_unlock(&s->mutex);
-				break;
-			}
-
-			buf = s->bl_head;
-			s->bl_head = s->bl_head->next;
-
-			pthread_mutex_unlock(&s->mutex);
-
-			nbytes = buf->size;
-			nbytes_written = sio_write(s->sndio_hdl,
-			    buf->data, nbytes);
-			if (nbytes != nbytes_written)
-				fprintf(stderr, "sydney_audio_sndio: "
-				    "sio_write short (%d vs. %d)\n",
-				    nbytes_written, nbytes);
-			free(buf);
-
-			pthread_mutex_lock(&s->mutex);
-			s->bytes_played += nbytes;
-			pthread_mutex_unlock(&s->mutex);
-		}
-	}
-
-	return NULL;
-}
-
 /*
- * -----------------------------------------------------------------------------
- * General query and support functions
- * -----------------------------------------------------------------------------
+ * GENERAL QUERY AND SUPPORT FUNCTIONS
  */
 
 int
 sa_stream_get_write_size(sa_stream_t *s, size_t *size)
 {
-	sa_buf *b;
-
-	if (s == NULL)
+	if (s == NULL || s->handle == NULL)
 		return SA_ERROR_NO_INIT;
 
-	/*
-	 * There is no interface to get the avaiable writing buffer
-	 * size in sun audio, we return max size here to force
-	 * sa_stream_write() to be called when there is data to be
-	 * played.
-	 */
-	*size = BUF_SIZE;
+	*size = s->buffer;
 
 	return SA_SUCCESS;
 }
-
-/*
- * -----------------------------------------------------------------------------
- * General query and support functions
- * -----------------------------------------------------------------------------
- */
 
 int
 sa_stream_get_position(sa_stream_t *s, sa_position_t position, int64_t *pos)
@@ -380,33 +245,68 @@ sa_stream_get_position(sa_stream_t *s, sa_position_t position, int64_t *pos)
 		return SA_ERROR_NOT_SUPPORTED;
 
 	pthread_mutex_lock(&s->mutex);
-	*pos = s->bytes_played;
+	*pos = s->position;
 	pthread_mutex_unlock(&s->mutex);
 
 	return SA_SUCCESS;
 }
 
-static sa_buf *
-new_buffer(int size)
-{
-	sa_buf *b;
+/*
+ * PRIVATE SNDIO API SPECIFIC FUNCTIONS
+ */
 
-	b = malloc(sizeof(sa_buf) + size);
-	if (b != NULL) {
-		b->size  = size;
-		b->next  = NULL;
+static struct sa_buffer *
+allocate_buffer(size_t size)
+{
+	struct sa_buffer *buffer;
+
+	buffer = malloc(sizeof(struct sa_buffer) + size);
+	if (buffer != NULL) {
+		buffer->next  = NULL;
+		buffer->size  = size;
 	}
 
-	return b;
+	return buffer;
+}
+
+static void
+audio_callback(void *data)
+{
+	sa_stream_t *s = (sa_stream_t *)data;
+	struct sa_buffer *buffer;
+
+	while (1) {
+		if (s->thread == 0) {
+			sio_close(s->handle);
+			free(s);
+
+			break;
+		}
+
+		pthread_mutex_lock(&s->mutex);
+		if (!s->head) {
+			pthread_mutex_unlock(&s->mutex);
+			continue;
+		}
+		buffer = s->head;
+		s->head = s->head->next;
+		pthread_mutex_unlock(&s->mutex);
+
+		sio_write(s->handle, buffer->data, buffer->size);
+
+		pthread_mutex_lock(&s->mutex);
+		s->position += buffer->size;
+		pthread_mutex_unlock(&s->mutex);
+
+		free(buffer);
+	}
 }
 
 /*
- * -----------------------------------------------------------------------------
- * Unsupported functions
- * -----------------------------------------------------------------------------
+ * UNSUPPORTED FUNCTIONS
  */
 
-#define UNSUPPORTED(func)   func { return SA_ERROR_NOT_SUPPORTED; }
+#define UNSUPPORTED(func)	func { return SA_ERROR_NOT_SUPPORTED; }
 
 UNSUPPORTED(int sa_stream_set_volume_abs(sa_stream_t *s, float vol))
 UNSUPPORTED(int sa_stream_get_volume_abs(sa_stream_t *s, float *vol))
