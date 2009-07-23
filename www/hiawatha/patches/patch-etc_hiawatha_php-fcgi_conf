@@ -1,8 +1,8 @@
-$OpenBSD: patch-etc_hiawatha_php-fcgi_conf,v 1.1 2008/12/29 17:17:15 ajacoutot Exp $
---- etc/hiawatha/php-fcgi.conf.orig	Mon Dec 29 17:57:07 2008
-+++ etc/hiawatha/php-fcgi.conf	Mon Dec 29 17:59:33 2008
-@@ -13,7 +13,7 @@
- 
+$OpenBSD: patch-etc_hiawatha_php-fcgi_conf,v 1.2 2009/07/23 05:54:15 ajacoutot Exp $
+--- etc/hiawatha/php-fcgi.conf.orig	Tue Jun  9 15:26:50 2009
++++ etc/hiawatha/php-fcgi.conf	Thu Jul 23 07:48:49 2009
+@@ -22,7 +22,7 @@ MaxRequests = 100
+ # PHP FastCGI servers to start.
  # Server = <php-cgi executable>;<binding>;<UID>[:<GIDs>][;<PHP configuration file>]
  #
 -#Server = /usr/bin/php5-cgi ; 127.0.0.1:2005 ; www-data

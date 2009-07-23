@@ -1,15 +1,17 @@
-$OpenBSD: patch-etc_hiawatha_cgi-wrapper_conf,v 1.5 2008/12/29 17:17:15 ajacoutot Exp $
---- etc/hiawatha/cgi-wrapper.conf.orig	Wed Feb 13 09:27:41 2008
-+++ etc/hiawatha/cgi-wrapper.conf	Sat Mar  8 21:22:31 2008
-@@ -4,9 +4,9 @@
- 
+$OpenBSD: patch-etc_hiawatha_cgi-wrapper_conf,v 1.6 2009/07/23 05:54:15 ajacoutot Exp $
+--- etc/hiawatha/cgi-wrapper.conf.orig	Thu Jul 23 07:47:20 2009
++++ etc/hiawatha/cgi-wrapper.conf	Thu Jul 23 07:47:54 2009
+@@ -5,10 +5,10 @@
  # CGIhandler = /path/to/cgi-handler
  #
+ #CGIhandler = /usr/bin/ssi-cgi
 -#CGIhandler = /usr/bin/php-cgi
 +#CGIhandler = ${LOCALBASE}/bin/php-fastcgi
  #CGIhandler = /usr/bin/perl
 -#CGIhandler = /usr/bin/python
+-#CGIhandler = /usr/bin/ruby
 +#CGIhandler = ${LOCALBASE}/bin/python
++#CGIhandler = ${LOCALBASE}/bin/ruby
  
  # Wrap = <wrap-id>;<cgiroot>;<userid>[:<group>]
  #
