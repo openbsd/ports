@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2009/05/31 21:12:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.43 2009/07/24 14:37:40 sthen Exp $
 
      SUBDIR += arc
      SUBDIR += bzip
@@ -18,6 +18,7 @@
      SUBDIR += lxsplit
      SUBDIR += lzma
      SUBDIR += lzo
+     SUBDIR += lzo2
      SUBDIR += lzop
      SUBDIR += macutil
      SUBDIR += makeself
