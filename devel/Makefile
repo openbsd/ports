@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.714 2009/06/22 19:35:36 landry Exp $
+# $OpenBSD: Makefile,v 1.715 2009/07/24 14:45:44 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -92,6 +92,7 @@
      SUBDIR += giggle
      SUBDIR += gindent
      SUBDIR += git
+     SUBDIR += git-cola
      SUBDIR += glade3
      SUBDIR += glib
      SUBDIR += glib2
