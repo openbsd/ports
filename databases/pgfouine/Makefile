@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/19 12:42:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/07/24 11:47:01 pea Exp $
 
 COMMENT =	PostgreSQL log analyzer
 
-DISTNAME =	pgfouine-1.0
+DISTNAME =	pgfouine-1.1
 CATEGORIES =	databases
 
 HOMEPAGE =	http://pgfouine.projects.postgresql.org/
 
-MAINTAINER =	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_FTP =	Yes
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 
-MASTER_SITES =	http://pgfoundry.org/frs/download.php/1334/ \
+MASTER_SITES =	http://pgfoundry.org/frs/download.php/2178/ \
 		http://pgfouine.projects.postgresql.org/releases/
 
 NO_BUILD =	Yes

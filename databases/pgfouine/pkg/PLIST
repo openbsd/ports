@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/29 13:37:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/07/24 11:47:02 pea Exp $
 bin/pgfouine
 bin/pgfouine_vacuum
 share/doc/pgfouine/
@@ -9,6 +9,7 @@ share/doc/pgfouine/pgfouine-tutorial.txt
 share/pgfouine/
 share/pgfouine/include/
 share/pgfouine/include/Accumulator.class.php
+share/pgfouine/include/CsvlogLogReader.class.php
 share/pgfouine/include/DurationLogObject.class.php
 share/pgfouine/include/ErrorLogObject.class.php
 share/pgfouine/include/GenericLogReader.class.php
@@ -52,6 +53,7 @@ share/pgfouine/include/postgresql/lines/PostgreSQLDetailLine.class.php
 share/pgfouine/include/postgresql/lines/PostgreSQLDurationLine.class.php
 share/pgfouine/include/postgresql/lines/PostgreSQLErrorLine.class.php
 share/pgfouine/include/postgresql/lines/PostgreSQLHintLine.class.php
+share/pgfouine/include/postgresql/lines/PostgreSQLLocationLine.class.php
 share/pgfouine/include/postgresql/lines/PostgreSQLLogLine.class.php
 share/pgfouine/include/postgresql/lines/PostgreSQLNoticeLine.class.php
 share/pgfouine/include/postgresql/lines/PostgreSQLPreparedStatementExecuteLine.class.php
@@ -62,6 +64,7 @@ share/pgfouine/include/postgresql/lines/PostgreSQLQueryStartWithDurationLine.cla
 share/pgfouine/include/postgresql/lines/PostgreSQLStatementLine.class.php
 share/pgfouine/include/postgresql/lines/PostgreSQLStatusLine.class.php
 share/pgfouine/include/postgresql/parsers/
+share/pgfouine/include/postgresql/parsers/CsvlogPostgreSQLParser.class.php
 share/pgfouine/include/postgresql/parsers/PostgreSQLParser.class.php
 share/pgfouine/include/postgresql/parsers/StderrPostgreSQLParser.class.php
 share/pgfouine/include/postgresql/parsers/SyslogPostgreSQLParser.class.php
@@ -123,8 +126,9 @@ share/pgfouine/include/reporting/artichow/Pie.class.php
 share/pgfouine/include/reporting/artichow/README
 share/pgfouine/include/reporting/artichow/ScatterPlot.class.php
 share/pgfouine/include/reporting/artichow/font/
-share/pgfouine/include/reporting/artichow/font/COPYRIGHT.TXT
-share/pgfouine/include/reporting/artichow/font/Vera.ttf
+share/pgfouine/include/reporting/artichow/font/DejaVuSans.ttf
+share/pgfouine/include/reporting/artichow/font/LICENSE
+share/pgfouine/include/reporting/artichow/font/README
 share/pgfouine/include/reporting/artichow/patterns/
 share/pgfouine/include/reporting/artichow/patterns/BarDepth.php
 share/pgfouine/include/reporting/artichow/patterns/LightLine.php
@@ -195,6 +199,7 @@ share/pgfouine/include/reporting/geshi/docs/CHANGES
 share/pgfouine/include/reporting/geshi/docs/COPYING
 share/pgfouine/include/reporting/geshi/docs/README
 share/pgfouine/include/reporting/geshi/docs/THANKS
+share/pgfouine/include/reporting/geshi/docs/TODO
 share/pgfouine/include/reporting/geshi/geshi/
 share/pgfouine/include/reporting/geshi/geshi.php
 share/pgfouine/include/reporting/geshi/geshi/sql.php
