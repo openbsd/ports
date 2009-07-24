@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_shellcode-generic_sch_generic_wget_cpp,v 1.1 2009/07/24 22:50:10 rui Exp $
+--- modules/shellcode-generic/sch_generic_wget.cpp.orig	Tue Jul 21 13:40:52 2009
++++ modules/shellcode-generic/sch_generic_wget.cpp	Tue Jul 21 13:41:26 2009
+@@ -149,7 +149,7 @@ sch_result Genericwget::handleShellcode(Message **msg)
+ 		start = i;
+ 
+ 		while (htmldec[i] != '&' &&
+-			   htmldec[i] != ';')
++			   htmldec[i] != ';' && i < htmldec.size())
+ 		{
+ 			i++;
+ 		}
