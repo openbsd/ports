@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2009/07/24 09:03:51 ajacoutot Exp $
+--- Makefile.in.orig	Wed Jul 22 10:03:29 2009
++++ Makefile.in	Wed Jul 22 10:03:53 2009
+@@ -233,7 +233,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = build util gmime src $(am__append_1) tests docs \
++SUBDIRS = build util gmime $(am__append_1) tests docs \
+ 	$(am__append_2) tools .
+ DISTCLEANFILES = iconv-detect.h
+ EXTRA_DIST = \

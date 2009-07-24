@@ -1,0 +1,11 @@
+$OpenBSD: patch-gmime-2_4_pc_in,v 1.1.1.1 2009/07/24 09:03:51 ajacoutot Exp $
+--- gmime-2.4.pc.in.orig	Wed Jul 22 10:07:11 2009
++++ gmime-2.4.pc.in	Wed Jul 22 10:07:20 2009
+@@ -7,6 +7,6 @@ includedir=@includedir@
+ Name: GMime
+ Version: @VERSION@
+ Description: MIME parser and utility library
+-Requires: glib-2.0,gobject-2.0
++Requires: glib-2.0,gobject-2.0,gthread-2.0
+ Libs: -L${libdir} @GMIME_LIBS@
+ Cflags: -I${includedir}/gmime-@GMIME_API_VERSION@ @GMIME_CFLAGS@
