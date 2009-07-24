@@ -1,0 +1,13 @@
+$OpenBSD: patch-filefield_module,v 1.1 2009/07/24 19:31:14 espie Exp $
+--- filefield.module.orig	Fri Jul  3 22:53:07 2009
++++ filefield.module	Fri Jul 24 21:15:41 2009
+@@ -180,7 +180,8 @@ function filefield_file_download($file) {
+       if (isset($nodes[$content['nid']])) {
+         continue; // Don't check the same node twice.
+       }
+-      if ($denied == FALSE && $node = node_load($content['nid']) && node_access('view', $node)) {
++      $node = node_load($content['nid']);
++      if ($denied == FALSE && node_access('view', $node) == FALSE) {
+         // You don't have permission to view the node this file is attached to.
+         $denied = TRUE;
+       }
