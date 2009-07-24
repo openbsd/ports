@@ -1,0 +1,9 @@
+$OpenBSD: patch-bin_git-cola,v 1.1.1.1 2009/07/24 14:44:29 msf Exp $
+--- bin/git-cola.orig	Fri Jul 24 22:50:21 2009
++++ bin/git-cola	Fri Jul 24 22:53:32 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ # -*- python-mode -*-
+ """Takes care of starting the main function
+ """
