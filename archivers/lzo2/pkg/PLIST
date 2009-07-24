@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/24 14:35:42 sthen Exp $
+%%SHARED%%
+include/lzo/
+include/lzo/lzo1.h
+include/lzo/lzo1a.h
+include/lzo/lzo1b.h
+include/lzo/lzo1c.h
+include/lzo/lzo1f.h
+include/lzo/lzo1x.h
+include/lzo/lzo1y.h
+include/lzo/lzo1z.h
+include/lzo/lzo2a.h
+include/lzo/lzo_asm.h
+include/lzo/lzoconf.h
+include/lzo/lzodefs.h
+include/lzo/lzoutil.h
+lib/liblzo2.a
+lib/liblzo2.la
+share/doc/lzo2/
+share/doc/lzo2/LZO.FAQ
+share/doc/lzo2/LZO.TXT
+share/doc/lzo2/LZOAPI.TXT
+share/doc/lzo2/LZOTEST.TXT
