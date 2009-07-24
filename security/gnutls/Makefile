@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2009/05/12 07:50:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/07/24 14:37:23 sthen Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
 DISTNAME=	gnutls-2.6.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security
 
 SHARED_LIBS=	gnutls-extra	14.0 \
@@ -31,7 +32,7 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	gcrypt.>=14::security/libgcrypt \
 		tasn1::security/libtasn1 \
-		lzo::archivers/lzo
+		lzo2::archivers/lzo2
 
 USE_LIBTOOL=	Yes
 

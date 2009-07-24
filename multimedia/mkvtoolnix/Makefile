@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2009/06/09 20:30:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2009/07/24 14:37:23 sthen Exp $
 
 COMMENT =	create, alter and inspect Matroska files
 
 DISTNAME =	mkvtoolnix-2.9.5
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	multimedia x11
 
 HOMEPAGE =	http://www.bunkus.org/videotools/mkvtoolnix/
@@ -24,7 +25,7 @@ EXTRACT_SUFX =	.tar.bz2
 MODULES =	converters/libiconv
 LIB_DEPENDS =	FLAC.>=7::audio/flac \
 		bz2.>=10::archivers/bzip2 \
-		lzo.>=1::archivers/lzo \
+		lzo2::archivers/lzo2 \
 		matroska:libmatroska->=0.8.1:multimedia/libmatroska \
 		vorbis.>=5::audio/libvorbis \
 		magic.>=1::devel/libmagic \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/05/24 20:03:47 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2009/07/24 14:37:23 sthen Exp $
 
 COMMENT=		file editor/viewer/analyzer for executables
 
 DISTNAME=		ht-2.0.17
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		editors
 
 HOMEPAGE=		http://hte.sourceforge.net/
@@ -25,7 +26,7 @@ USE_GMAKE=		Yes
 FLAVORS=		no_x11
 FLAVOR?=
 
-LIB_DEPENDS=		lzo::archivers/lzo
+LIB_DEPENDS=		lzo2::archivers/lzo2
 
 CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
