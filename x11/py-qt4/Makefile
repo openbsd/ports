@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/03 18:22:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/07/24 10:23:47 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-docs=	py-qt4 documentation
 V=		4.4.4
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
-PKGNAME-main=	py-qt4-${V}
+PKGNAME-main=	py-qt4-${V}p0
 PKGNAME-docs=	py-qt4-docs-${V}
 
 CATEGORIES=	x11 devel
@@ -77,6 +77,7 @@ CONFIGURE_ARGS+=--enable=${i}
 .endfor
 
 post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}/${MODPY_SITEPKG}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-qt4
 	cp -R ${WRKSRC}/doc/* ${PREFIX}/share/doc/py-qt4
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/py-qt4/*
