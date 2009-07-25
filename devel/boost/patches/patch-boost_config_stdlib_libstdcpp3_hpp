@@ -1,27 +1,23 @@
-$OpenBSD: patch-boost_config_stdlib_libstdcpp3_hpp,v 1.2 2008/01/06 00:01:15 deanna Exp $
---- boost/config/stdlib/libstdcpp3.hpp.orig	Thu Dec  1 10:00:33 2005
-+++ boost/config/stdlib/libstdcpp3.hpp	Mon Dec 31 02:29:05 2007
-@@ -29,6 +29,15 @@
- #  define _REENTRANT
- #endif
- 
-+// This is a hack for OpenBSD. Currently OpenBSD's gcc is compiled
-+// with thread model = single. Many references on the net indicate
-+// multithreaded c++ applications will have problems with c++
-+// exceptions and the high-speed caching allocator. However in
-+// practice we have many multithreaded c++ applications that haven't
-+// seen these problems. We may be playing with fire but...
-+#ifdef __OpenBSD__
-+#  define BOOST_HAS_THREADS
-+#else
- #ifdef __GLIBCXX__ // gcc 3.4 and greater:
- #  if defined(_GLIBCXX_HAVE_GTHR_DEFAULT) \
-         || defined(_GLIBCXX__PTHREADS)
-@@ -46,6 +55,7 @@
-         && !defined(_GLIBCPP__PTHREADS)
-    // disable thread support if the std lib was built single threaded:
- #  define BOOST_DISABLE_THREADS
-+#endif
+$OpenBSD: patch-boost_config_stdlib_libstdcpp3_hpp,v 1.3 2009/07/25 02:17:06 kurt Exp $
+--- boost/config/stdlib/libstdcpp3.hpp.orig	Mon Jan 23 15:50:27 2006
++++ boost/config/stdlib/libstdcpp3.hpp	Wed Apr 22 13:11:34 2009
+@@ -41,11 +41,14 @@
+ #  else
+ #     define BOOST_DISABLE_THREADS
+ #  endif
+-#elif defined(__GLIBCPP__) \
+-        && !defined(_GLIBCPP_HAVE_GTHR_DEFAULT) \
+-        && !defined(_GLIBCPP__PTHREADS)
+-   // disable thread support if the std lib was built single threaded:
+-#  define BOOST_DISABLE_THREADS
++#elif defined(__GLIBCPP__)
++#  if defined(_GLIBCPP_HAVE_GTHR_DEFAULT) \
++        || defined(_GLIBCPP__PTHREADS)
++#     define BOOST_HAS_THREADS
++#  else
++     // disable thread support if the std lib was built single threaded:
++#    define BOOST_DISABLE_THREADS
++#  endif
  #endif
  
  #if (defined(linux) || defined(__linux) || defined(__linux__)) && defined(__arm__) && defined(_GLIBCPP_HAVE_GTHR_DEFAULT)
