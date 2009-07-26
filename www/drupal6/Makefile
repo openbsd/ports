@@ -1,4 +1,4 @@
-# $OpenBS$
+# $OpenBSD: Makefile,v 1.7 2009/07/26 12:20:25 espie Exp $
 
 SUBDIR += FCKeditor
 SUBDIR += admin-menu
