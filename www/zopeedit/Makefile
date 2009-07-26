@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/04 08:42:53 winiger Exp $
+# $OpenBSD: Makefile,v 1.3 2009/07/26 20:09:18 naddy Exp $
 
 COMMENT=	client application for zope-externaleditor
 
 VERSION=	0.9.3
 DISTNAME=	zopeedit-${VERSION}-src
-PKGNAME=	zopeedit-${VERSION}
+PKGNAME=	zopeedit-${VERSION}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://plope.com/software/ExternalEditor
-
-MAINTAINER=	Marc Winiger <winiger@openbsd.org>
 
 # Zope Public License
 PERMIT_PACKAGE_FTP= 	Yes

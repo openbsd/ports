@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/28 14:29:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/07/26 20:09:18 naddy Exp $
 
 COMMENT=		freedesktop.org compliant system tray
 
 DISTNAME=		peksystray-0.4.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://sourceforge.net/projects/peksystray/
-
-MAINTAINER=		Marc Winiger <winiger@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2008/02/15 15:13:14 winiger Exp $
+# $OpenBSD: Makefile,v 1.4 2009/07/26 20:09:18 naddy Exp $
 
 COMMENT=	multi user weblog
 
 DISTNAME=	wordpress-mu-1.3.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://mu.wordpress.org/
-
-MAINTAINER=	Marc Winiger <winiger@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
