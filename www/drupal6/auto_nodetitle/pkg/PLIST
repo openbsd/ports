@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/03 14:07:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/07/26 12:20:07 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
-${DRUPAL_MODS}/auto_nodetitle/
-${DRUPAL_MODS}/auto_nodetitle/LICENSE.txt
-${DRUPAL_MODS}/auto_nodetitle/README.txt
-${DRUPAL_MODS}/auto_nodetitle/auto_nodetitle.info
-${DRUPAL_MODS}/auto_nodetitle/auto_nodetitle.install
-${DRUPAL_MODS}/auto_nodetitle/auto_nodetitle.module
-${DRUPAL_MODS}/auto_nodetitle/translations/
-${DRUPAL_MODS}/auto_nodetitle/translations/fr.po
-${DRUPAL_MODS}/auto_nodetitle/translations/hu.po
-${DRUPAL_MODS}/auto_nodetitle/translations/ja.po
+${DRUPAL_MODS}auto_nodetitle/
+${DRUPAL_MODS}auto_nodetitle/LICENSE.txt
+${DRUPAL_MODS}auto_nodetitle/README.txt
+${DRUPAL_MODS}auto_nodetitle/auto_nodetitle.info
+${DRUPAL_MODS}auto_nodetitle/auto_nodetitle.install
+${DRUPAL_MODS}auto_nodetitle/auto_nodetitle.module
+${DRUPAL_MODS}auto_nodetitle/translations/
+${DRUPAL_MODS}auto_nodetitle/translations/fr.po
+${DRUPAL_MODS}auto_nodetitle/translations/hu.po
+${DRUPAL_MODS}auto_nodetitle/translations/ja.po

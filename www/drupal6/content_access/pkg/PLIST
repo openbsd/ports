@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/15 10:41:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/07/26 12:20:07 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
-${DRUPAL_MODS}/content_access/
-${DRUPAL_MODS}/content_access/LICENSE.txt
-${DRUPAL_MODS}/content_access/README.txt
-${DRUPAL_MODS}/content_access/UPGRADE.txt
-${DRUPAL_MODS}/content_access/content_access.admin.inc
-${DRUPAL_MODS}/content_access/content_access.css
-${DRUPAL_MODS}/content_access/content_access.info
-${DRUPAL_MODS}/content_access/content_access.install
-${DRUPAL_MODS}/content_access/content_access.module
-${DRUPAL_MODS}/content_access/content_access.rules.inc
-${DRUPAL_MODS}/content_access/tests/
-${DRUPAL_MODS}/content_access/tests/content_access.test
-${DRUPAL_MODS}/content_access/tests/content_access_acl.test
-${DRUPAL_MODS}/content_access/tests/content_access_test_help.php
-${DRUPAL_MODS}/content_access/translations/
-${DRUPAL_MODS}/content_access/translations/de.po
+${DRUPAL_MODS}content_access/
+${DRUPAL_MODS}content_access/LICENSE.txt
+${DRUPAL_MODS}content_access/README.txt
+${DRUPAL_MODS}content_access/UPGRADE.txt
+${DRUPAL_MODS}content_access/content_access.admin.inc
+${DRUPAL_MODS}content_access/content_access.css
+${DRUPAL_MODS}content_access/content_access.info
+${DRUPAL_MODS}content_access/content_access.install
+${DRUPAL_MODS}content_access/content_access.module
+${DRUPAL_MODS}content_access/content_access.rules.inc
+${DRUPAL_MODS}content_access/tests/
+${DRUPAL_MODS}content_access/tests/content_access.test
+${DRUPAL_MODS}content_access/tests/content_access_acl.test
+${DRUPAL_MODS}content_access/tests/content_access_test_help.php
+${DRUPAL_MODS}content_access/translations/
+${DRUPAL_MODS}content_access/translations/de.po

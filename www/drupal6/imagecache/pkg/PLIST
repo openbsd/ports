@@ -1,24 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/17 10:16:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/07/26 12:20:07 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
-${DRUPAL_MODS}/imagecache/
-${DRUPAL_MODS}/imagecache/INSTALL.txt
-${DRUPAL_MODS}/imagecache/LICENSE.txt
-${DRUPAL_MODS}/imagecache/README.txt
-${DRUPAL_MODS}/imagecache/UPGRADE.txt
-${DRUPAL_MODS}/imagecache/imagecache.api.php
-${DRUPAL_MODS}/imagecache/imagecache.info
-${DRUPAL_MODS}/imagecache/imagecache.install
-${DRUPAL_MODS}/imagecache/imagecache.module
-${DRUPAL_MODS}/imagecache/imagecache_actions.inc
-${DRUPAL_MODS}/imagecache/imagecache_ui.info
-${DRUPAL_MODS}/imagecache/imagecache_ui.install
-${DRUPAL_MODS}/imagecache/imagecache_ui.module
-${DRUPAL_MODS}/imagecache/imagecache_ui.pages.inc
-${DRUPAL_MODS}/imagecache/sample.png
-${DRUPAL_MODS}/imagecache/tests/
-${DRUPAL_MODS}/imagecache/tests/imagecache_create_url.test
-${DRUPAL_MODS}/imagecache/translations/
-${DRUPAL_MODS}/imagecache/translations/de.po
-${DRUPAL_MODS}/imagecache/translations/fr.po
-${DRUPAL_MODS}/imagecache/translations/ja.po
+${DRUPAL_MODS}imagecache/
+${DRUPAL_MODS}imagecache/INSTALL.txt
+${DRUPAL_MODS}imagecache/LICENSE.txt
+${DRUPAL_MODS}imagecache/README.txt
+${DRUPAL_MODS}imagecache/UPGRADE.txt
+${DRUPAL_MODS}imagecache/imagecache.api.php
+${DRUPAL_MODS}imagecache/imagecache.info
+${DRUPAL_MODS}imagecache/imagecache.install
+${DRUPAL_MODS}imagecache/imagecache.module
+${DRUPAL_MODS}imagecache/imagecache_actions.inc
+${DRUPAL_MODS}imagecache/imagecache_ui.info
+${DRUPAL_MODS}imagecache/imagecache_ui.install
+${DRUPAL_MODS}imagecache/imagecache_ui.module
+${DRUPAL_MODS}imagecache/imagecache_ui.pages.inc
+${DRUPAL_MODS}imagecache/sample.png
+${DRUPAL_MODS}imagecache/tests/
+${DRUPAL_MODS}imagecache/tests/imagecache_create_url.test
+${DRUPAL_MODS}imagecache/translations/
+${DRUPAL_MODS}imagecache/translations/de.po
+${DRUPAL_MODS}imagecache/translations/fr.po
+${DRUPAL_MODS}imagecache/translations/ja.po

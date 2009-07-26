@@ -1,22 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/17 09:54:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/07/26 12:20:07 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
-${DRUPAL_MODS}/dhtml_menu/
-${DRUPAL_MODS}/dhtml_menu/LICENSE.txt
-${DRUPAL_MODS}/dhtml_menu/dhtml_menu.admin.inc
-${DRUPAL_MODS}/dhtml_menu/dhtml_menu.css
-${DRUPAL_MODS}/dhtml_menu/dhtml_menu.info
-${DRUPAL_MODS}/dhtml_menu/dhtml_menu.install
-${DRUPAL_MODS}/dhtml_menu/dhtml_menu.js
-${DRUPAL_MODS}/dhtml_menu/dhtml_menu.module
-${DRUPAL_MODS}/dhtml_menu/translations/
-${DRUPAL_MODS}/dhtml_menu/translations/de.po
-${DRUPAL_MODS}/dhtml_menu/translations/dhtml_menu.pot
-${DRUPAL_MODS}/dhtml_menu/translations/eo.po
-${DRUPAL_MODS}/dhtml_menu/translations/es.po
-${DRUPAL_MODS}/dhtml_menu/translations/fr.po
-${DRUPAL_MODS}/dhtml_menu/translations/nl.po
-${DRUPAL_MODS}/dhtml_menu/translations/pl.po
-${DRUPAL_MODS}/dhtml_menu/translations/sv.po
-${DRUPAL_MODS}/dhtml_menu/translations/uk-ua.po
-${DRUPAL_MODS}/dhtml_menu/translations/uk.po
+${DRUPAL_MODS}dhtml_menu/
+${DRUPAL_MODS}dhtml_menu/LICENSE.txt
+${DRUPAL_MODS}dhtml_menu/dhtml_menu.admin.inc
+${DRUPAL_MODS}dhtml_menu/dhtml_menu.css
+${DRUPAL_MODS}dhtml_menu/dhtml_menu.info
+${DRUPAL_MODS}dhtml_menu/dhtml_menu.install
+${DRUPAL_MODS}dhtml_menu/dhtml_menu.js
+${DRUPAL_MODS}dhtml_menu/dhtml_menu.module
+${DRUPAL_MODS}dhtml_menu/translations/
+${DRUPAL_MODS}dhtml_menu/translations/de.po
+${DRUPAL_MODS}dhtml_menu/translations/dhtml_menu.pot
+${DRUPAL_MODS}dhtml_menu/translations/eo.po
+${DRUPAL_MODS}dhtml_menu/translations/es.po
+${DRUPAL_MODS}dhtml_menu/translations/fr.po
+${DRUPAL_MODS}dhtml_menu/translations/nl.po
+${DRUPAL_MODS}dhtml_menu/translations/pl.po
+${DRUPAL_MODS}dhtml_menu/translations/sv.po
+${DRUPAL_MODS}dhtml_menu/translations/uk-ua.po
+${DRUPAL_MODS}dhtml_menu/translations/uk.po
