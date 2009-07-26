@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/04/14 18:37:31 steven Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/07/26 19:53:28 steven Exp $
 @bin bin/mathomatic
 @man man/man1/mathomatic.1
 share/applications/mathomatic.desktop
@@ -25,6 +25,7 @@ share/doc/mathomatic/html/matho-pascal.1.html
 share/doc/mathomatic/html/matho-primes.1.html
 share/doc/mathomatic/html/matho-sumsq.1.html
 share/doc/mathomatic/html/mathomatic.1.html
+share/doc/mathomatic/html/mathomatic16x16.png
 share/doc/mathomatic/html/open_book_nae_02.png
 share/doc/mathomatic/m4/
 share/doc/mathomatic/m4/README.txt
@@ -68,7 +69,6 @@ share/doc/mathomatic/tests/simplify.in
 share/doc/mathomatic/tests/test.in
 share/doc/mathomatic/tests/test1.in
 share/doc/mathomatic/tests/test2.in
-share/doc/mathomatic/tests/test3.in
 share/doc/mathomatic/tests/test6.in
 share/doc/mathomatic/tests/trig.in
 share/pixmaps/
