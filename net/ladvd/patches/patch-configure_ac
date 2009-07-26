@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_ac,v 1.1 2009/07/26 10:50:53 kili Exp $
+--- configure.ac.orig	Sun Jun 21 21:43:51 2009
++++ configure.ac	Wed Jul 22 12:29:58 2009
+@@ -31,6 +31,9 @@ case "$target_os" in
+ 	AC_DEFINE([TARGET_IS_FREEBSD], 1, [Define if target OS is FreeBSD])
+ 	;;
+     openbsd*)
++	case "$target" in
++	arm-*-openbsd*) use_pie=no;;
++	esac
+ 	AC_DEFINE([TARGET_IS_OPENBSD], 1, [Define if target OS is OpenBSD])
+ 	;;
+     *)
