@@ -1,21 +1,15 @@
-$OpenBSD: patch-apps_irssi_src_silc_core_silc-nicklist_c,v 1.1 2009/05/31 22:54:13 martynas Exp $
+$OpenBSD: patch-apps_irssi_src_silc_core_silc-nicklist_c,v 1.2 2009/07/26 15:39:52 martynas Exp $
 --- apps/irssi/src/silc/core/silc-nicklist.c.orig	Sat May 23 03:11:25 2009
-+++ apps/irssi/src/silc/core/silc-nicklist.c	Mon Jun  1 00:48:28 2009
-@@ -47,10 +47,15 @@ SILC_NICK_REC *silc_nicklist_insert(SILC_CHANNEL_REC *
++++ apps/irssi/src/silc/core/silc-nicklist.c	Sun Jul 26 15:52:06 2009
+@@ -47,8 +47,10 @@ SILC_NICK_REC *silc_nicklist_insert(SILC_CHANNEL_REC *
    rec->silc_user = user;
    rec->unique_id = user->client;
  
 -  if (user->mode & SILC_CHANNEL_UMODE_CHANOP)
-+
 +  if (user->mode & SILC_CHANNEL_UMODE_CHANOP) {
      rec->op = TRUE;
--  if (user->mode & SILC_CHANNEL_UMODE_CHANFO)
 +    strlcpy(rec->prefixes, "@", sizeof(rec->prefixes));
 +  }
-+  if (user->mode & SILC_CHANNEL_UMODE_CHANFO) {
+   if (user->mode & SILC_CHANNEL_UMODE_CHANFO)
      rec->founder = TRUE;
-+    strlcpy(rec->prefixes, "@", sizeof(rec->prefixes));
-+  }
    rec->send_massjoin = send_massjoin;
- 
-   nicklist_insert(CHANNEL(channel), (NICK_REC *) rec);

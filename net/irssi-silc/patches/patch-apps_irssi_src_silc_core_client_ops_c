@@ -1,0 +1,12 @@
+$OpenBSD: patch-apps_irssi_src_silc_core_client_ops_c,v 1.1 2009/07/26 15:39:52 martynas Exp $
+--- apps/irssi/src/silc/core/client_ops.c.orig	Sat May 23 03:11:25 2009
++++ apps/irssi/src/silc/core/client_ops.c	Sun Jul 26 15:59:30 2009
+@@ -1069,6 +1069,8 @@ void silc_notify(SilcClient client, SilcClientConnecti
+ 
+       nick = silc_nicklist_find(chanrec, client_entry2);
+       if (nick != NULL) {
++	strlcpy(nick->prefixes, (mode & SILC_CHANNEL_UMODE_CHANOP) ? "@" : "",
++	  sizeof(nick->prefixes));
+ 	nick->op = (mode & SILC_CHANNEL_UMODE_CHANOP) != 0;
+ 	nick->founder = (mode & SILC_CHANNEL_UMODE_CHANFO) != 0;
+ 	signal_emit("nick mode changed", 2, chanrec, nick);
