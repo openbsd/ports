@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/07/21 19:16:49 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2009/07/26 18:43:18 naddy Exp $
 
 COMMENT=		free software clone of Worms(R) game concept
 
@@ -29,7 +29,8 @@ LIB_DEPENDS=		SDL_gfx::devel/sdl-gfx \
 MODULES=		devel/gettext
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			MKDIR_P='mkdir -p'
 
 post-extract:
 	rm -Rf ${WRKSRC}/data/locale
