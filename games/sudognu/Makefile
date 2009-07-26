@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2009/04/05 18:59:39 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2009/07/26 19:54:10 steven Exp $
 
 COMMENT=	sudoku solver and creator
 
 DISTNAME=	sudognu-1.09
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
 
-HOMEPAGE=	http://sudognu.sourceforge.net/
+HOMEPAGE=	http://baaran.de/sudoku/index-en.shtml
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
