@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.20 2008/07/26 10:59:20 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.21 2009/07/26 12:14:05 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -8,6 +8,7 @@
 PORTSDIR_PATH ?= ${PORTSDIR}:${PORTSDIR}/mystuff
 TMPDIR ?= /tmp
 READMES_TOP ?= ${PORTSDIR}
+DANGEROUS ?= No
 
 
 .if !defined(PKGPATH)
@@ -102,6 +103,9 @@ _recursive_targets = \
 	license-check link-categories manpages-check package patch \
 	port-lib-depends-check print-package-signature regress reinstall \
 	unlink-categories update update-or-install update-or-install-all
+
+_dangerous_recursive_targets = \
+	makesum plist update-patches update-plist
 
 _recursive_describe_targets = \
 	describe dump-vars homepage-links print-plist print-plist-all \

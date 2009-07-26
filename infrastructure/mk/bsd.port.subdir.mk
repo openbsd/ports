@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.91 2009/04/11 14:56:31 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.92 2009/07/26 12:14:05 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -124,10 +124,23 @@ _subdir_fragment = \
 		_STARTDIR_SEEN=true; \
 	done
 
-.for __target in ${_recursive_targets}
+.if ${DANGEROUS:L} == "yes"
+.  for __target in ${_recursive_targets} ${_dangerous_recursive_targets}
 ${__target}:
 	@${_subdir_fragment}
-.endfor
+.  endfor
+.else
+.  for __target in ${_recursive_targets}
+${__target}:
+	@${_subdir_fragment}
+.  endfor
+
+${_dangerous_recursive_targets}:
+	@echo "Target $@ generally invoked in a single port dir"
+	@echo "If you really want to do it recursively"
+	@echo "make $@ DANGEROUS=Yes"
+	@exit 1
+.endif
 
 .for __target in ${_recursive_describe_targets}
 ${__target}:
