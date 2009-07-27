@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2009/02/17 10:47:00 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2009/07/27 15:19:15 sthen Exp $
+@conflict mysql-server-<=5.0.83
 @pkgpath databases/mysql
 @bin bin/mysql
 @bin bin/mysql_client_test
@@ -6,14 +7,14 @@ bin/mysql_config
 @bin bin/mysql_tzinfo_to_sql
 @bin bin/mysqladmin
 @bin bin/mysqlbinlog
+bin/mysqlbug
 @bin bin/mysqlcheck
 @bin bin/mysqldump
 bin/mysqldumpslow
 @bin bin/mysqlimport
 @bin bin/mysqlshow
+@bin bin/mysqlslap
 @bin bin/mysqltest
-@bin bin/mysqltestmanager-pwgen
-@bin bin/mysqltestmanagerc
 include/mysql/
 include/mysql/decimal.h
 include/mysql/errmsg.h
@@ -40,7 +41,7 @@ include/mysql/mysql_time.h
 include/mysql/mysql_version.h
 include/mysql/mysqld_ername.h
 include/mysql/mysqld_error.h
-include/mysql/raid.h
+include/mysql/plugin.h
 include/mysql/sql_common.h
 include/mysql/sql_state.h
 include/mysql/sslopt-case.h
@@ -48,21 +49,29 @@ include/mysql/sslopt-longopts.h
 include/mysql/sslopt-vars.h
 include/mysql/typelib.h
 @info info/mysql.info
+@lib lib/libmysqlclient.so.${LIBmysqlclient_VERSION}
+@lib lib/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
 lib/mysql/
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.la
+@lib lib/mysql/libmysqlclient.so.${LIBmysqlclient_VERSION}
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.la
-%%SHARED%%
+@lib lib/mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
+lib/mysql/plugin/
 @man man/man1/mysql.1
 @man man/man1/mysql_config.1
 @man man/man1/mysql_tzinfo_to_sql.1
 @man man/man1/mysqladmin.1
 @man man/man1/mysqlbinlog.1
+@man man/man1/mysqlbug.1
 @man man/man1/mysqlcheck.1
 @man man/man1/mysqldump.1
 @man man/man1/mysqldumpslow.1
 @man man/man1/mysqlimport.1
 @man man/man1/mysqlman.1
 @man man/man1/mysqlshow.1
+@man man/man1/mysqlslap.1
 @man man/man1/mysqltest.1
+share/aclocal/
+share/aclocal/mysql.m4

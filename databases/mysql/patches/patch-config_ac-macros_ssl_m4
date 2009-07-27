@@ -1,0 +1,24 @@
+$OpenBSD: patch-config_ac-macros_ssl_m4,v 1.1 2009/07/27 15:19:15 sthen Exp $
+--- config/ac-macros/ssl.m4.orig	Mon Jul 21 17:49:55 2008
++++ config/ac-macros/ssl.m4	Mon Jul 21 17:53:55 2008
+@@ -100,9 +100,19 @@ AC_DEFUN([MYSQL_FIND_OPENSSL], [
+   fi
+ 
+   #
++  # Set library paths
++  #
++  openssl_lib="$location/lib"
++  openssl_libs="-lssl -lcrypto"
++
++  #
+   # Try to link with openSSL libs in <location>
+   #
+-  openssl_libs="-L$location/lib/ -lssl -lcrypto"
++  if test "$openssl_lib" != "/usr/lib"
++  then
++    openssl_libs="-L$openssl_lib -lssl -lcrypto"
++  fi
++
+   MYSQL_CHECK_SSL_DIR([$openssl_includes], [$openssl_libs])
+ 
+   if test "$mysql_ssl_found" == "no"

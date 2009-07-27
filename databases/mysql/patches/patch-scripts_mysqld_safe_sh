@@ -1,85 +1,17 @@
-$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.12 2007/04/09 22:43:06 ckuethe Exp $
---- scripts/mysqld_safe.sh.orig	Mon Mar  5 20:21:13 2007
-+++ scripts/mysqld_safe.sh	Sat Mar 31 19:02:39 2007
-@@ -107,72 +107,12 @@ parse_arguments() {
- }
+$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.13 2009/07/27 15:19:15 sthen Exp $
+--- scripts/mysqld_safe.sh.orig	Tue Mar 31 10:38:52 2009
++++ scripts/mysqld_safe.sh	Wed May  6 04:27:09 2009
+@@ -18,7 +18,8 @@ niceness=0
+ logging=init
+ want_syslog=0
+ syslog_tag=
+-user='@MYSQLD_USER@'
++user='_mysql'
++group='_mysql'
+ pid_file=
+ err_log=
  
- 
--#
--# First, try to find BASEDIR and ledir (where mysqld is)
--# 
-+MY_BASEDIR_VERSION=@prefix@
-+ledir=@libexecdir@
-+DATADIR=@localstatedir@
- 
--MY_PWD=`pwd`
--# Check for the directories we would expect from a binary release install
--if test -f ./share/mysql/english/errmsg.sys -a -x ./bin/mysqld
--then
--  MY_BASEDIR_VERSION=$MY_PWD		# Where bin, share and data are
--  ledir=$MY_BASEDIR_VERSION/bin		# Where mysqld is
--# Check for the directories we would expect from a source install
--elif test -f ./share/mysql/english/errmsg.sys -a \
-- -x ./libexec/mysqld
--then
--  MY_BASEDIR_VERSION=$MY_PWD		# Where libexec, share and var are
--  ledir=$MY_BASEDIR_VERSION/libexec	# Where mysqld is
--# Since we didn't find anything, used the compiled-in defaults
--else
--  MY_BASEDIR_VERSION=@prefix@
--  ledir=@libexecdir@
--fi
--
--#
--# Second, try to find the data directory
--#
--
--# Try where the binary installs put it
--if test -d $MY_BASEDIR_VERSION/data/mysql
--then
--  DATADIR=$MY_BASEDIR_VERSION/data
--  if test -z "$defaults" -a -r "$DATADIR/my.cnf"
--  then
--    defaults="--defaults-extra-file=$DATADIR/my.cnf"
--  fi
--# Next try where the source installs put it
--elif test -d $MY_BASEDIR_VERSION/var/mysql
--then
--  DATADIR=$MY_BASEDIR_VERSION/var
--# Or just give up and use our compiled-in default
--else
--  DATADIR=@localstatedir@
--fi
--
--if test -z "$MYSQL_HOME"
--then 
--  if test -r "$MY_BASEDIR_VERSION/my.cnf" && test -r "$DATADIR/my.cnf"
--  then
--    echo "WARNING: Found two instances of my.cnf -"
--    echo "$MY_BASEDIR_VERSION/my.cnf and"
--    echo "$DATADIR/my.cnf"
--    echo "IGNORING $DATADIR/my.cnf"
--    echo
--    MYSQL_HOME=$MY_BASEDIR_VERSION
--  elif test -r "$DATADIR/my.cnf"
--  then
--    echo "WARNING: Found $DATADIR/my.cnf"
--    echo "Datadir is deprecated place for my.cnf, please move it to $MY_BASEDIR_VERSION"
--    echo
--    MYSQL_HOME=$DATADIR
--  else
--    MYSQL_HOME=$MY_BASEDIR_VERSION
--  fi
--fi
--export MYSQL_HOME
--
--user=@MYSQLD_USER@
-+user=_mysql
-+group=_mysql
- niceness=0
- 
- # these rely on $DATADIR by default, so we'll set them later on
-@@ -210,8 +150,8 @@ mysql_unix_port_dir=`dirname $safe_mysql_unix_port`
+@@ -407,8 +408,8 @@ mysql_unix_port_dir=`dirname $safe_mysql_unix_port`
  if [ ! -d $mysql_unix_port_dir ]
  then
    mkdir $mysql_unix_port_dir
@@ -89,21 +21,8 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.12 2007/04/09 22:43:06 ckuethe Exp $
 +  chmod 711 $mysql_unix_port_dir
  fi
  
- # Use the mysqld-max binary by default if the user doesn't specify a binary
-@@ -371,12 +311,6 @@ fi
- 
- echo "Starting $MYSQLD daemon with databases from $DATADIR"
- 
--# Does this work on all systems?
--#if type ulimit | grep "shell builtin" > /dev/null
--#then
--#  ulimit -n 256 > /dev/null 2>&1		# Fix for BSD and FreeBSD systems
--#fi
--
- echo "`date +'%y%m%d %H:%M:%S  mysqld started'`" >> $err_log
- while true
- do
-@@ -393,35 +327,6 @@ do
+ # If the user doesn't specify a binary, we assume name "mysqld"
+@@ -572,35 +573,6 @@ do
      break
    fi
  
@@ -116,7 +35,7 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.12 2007/04/09 22:43:06 ckuethe Exp $
 -    # kill -9 is used or the process won't react on the kill.
 -    numofproces=`ps xaww | grep -v "grep" | grep "$ledir/$MYSQLD\>" | grep -c "pid-file=$pid_file"`
 -
--    echo -e "\nNumber of processes running now: $numofproces" | tee -a $err_log
+-    log_notice "Number of processes running now: $numofproces"
 -    I=1
 -    while test "$I" -le "$numofproces"
 -    do 
@@ -129,13 +48,13 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.12 2007/04/09 22:43:06 ckuethe Exp $
 -      #    echo "TEST $I - $T **"
 -      if kill -9 $T
 -      then
--        echo "$MYSQLD process hanging, pid $T - killed" | tee -a $err_log
--      else 
+-        log_error "$MYSQLD process hanging, pid $T - killed"
+-      else
 -        break
 -      fi
 -      I=`expr $I + 1`
 -    done
 -  fi
-   echo "`date +'%y%m%d %H:%M:%S'`  mysqld restarted" | tee -a $err_log
+   log_notice "mysqld restarted"
  done
  

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-server,v 1.30 2008/08/24 08:40:03 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.31 2009/07/27 15:19:15 sthen Exp $
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
-@bin bin/comp_err
 @bin bin/innochecksum
 bin/msql2mysql
 @bin bin/my_print_defaults
@@ -10,20 +9,16 @@ bin/msql2mysql
 @bin bin/myisamlog
 @bin bin/myisampack
 bin/mysql_convert_table_format
-bin/mysql_explain_log
 bin/mysql_find_rows
 bin/mysql_fix_extensions
 bin/mysql_fix_privilege_tables
 bin/mysql_install_db
 bin/mysql_secure_installation
 bin/mysql_setpermission
-bin/mysql_tableinfo
 @bin bin/mysql_upgrade
-bin/mysql_upgrade_shell
 @bin bin/mysql_waitpid
 bin/mysql_zap
 bin/mysqlaccess
-bin/mysqlbug
 bin/mysqld_multi
 bin/mysqld_safe
 bin/mysqlhotcopy
@@ -38,12 +33,14 @@ lib/mysql/libmyisammrg.a
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libvio.a
+@comment lib/mysql/plugin/ha_example.a
+@comment lib/mysql/plugin/ha_example.la
+lib/mysql/plugin/ha_example.so.0.0
 @bin libexec/mysqld
 @bin libexec/mysqlmanager
 @man man/man1/comp_err.1
 @man man/man1/innochecksum.1
 @man man/man1/make_win_bin_dist.1
-@man man/man1/make_win_src_distribution.1
 @man man/man1/msql2mysql.1
 @man man/man1/my_print_defaults.1
 @man man/man1/myisam_ftdump.1
@@ -52,19 +49,16 @@ lib/mysql/libvio.a
 @man man/man1/myisampack.1
 @man man/man1/mysql.server.1
 @man man/man1/mysql_convert_table_format.1
-@man man/man1/mysql_explain_log.1
 @man man/man1/mysql_find_rows.1
 @man man/man1/mysql_fix_extensions.1
 @man man/man1/mysql_fix_privilege_tables.1
 @man man/man1/mysql_install_db.1
 @man man/man1/mysql_secure_installation.1
 @man man/man1/mysql_setpermission.1
-@man man/man1/mysql_tableinfo.1
 @man man/man1/mysql_upgrade.1
 @man man/man1/mysql_waitpid.1
 @man man/man1/mysql_zap.1
 @man man/man1/mysqlaccess.1
-@man man/man1/mysqlbug.1
 @man man/man1/mysqld_multi.1
 @man man/man1/mysqld_safe.1
 @man man/man1/mysqlhotcopy.1
@@ -72,7 +66,6 @@ lib/mysql/libvio.a
 @man man/man1/replace.1
 @man man/man1/resolve_stack_dump.1
 @man man/man1/resolveip.1
-@man man/man1/safe_mysqld.1
 @man man/man8/mysqld.8
 @man man/man8/mysqlmanager.8
 share/doc/mysql/
@@ -106,6 +99,9 @@ share/mysql/charsets/latin7.xml
 share/mysql/charsets/macce.xml
 share/mysql/charsets/macroman.xml
 share/mysql/charsets/swe7.xml
+@comment share/mysql/config.huge.ini
+@comment share/mysql/config.medium.ini
+@comment share/mysql/config.small.ini
 share/mysql/czech/
 share/mysql/czech/errmsg.sys
 share/mysql/danish/

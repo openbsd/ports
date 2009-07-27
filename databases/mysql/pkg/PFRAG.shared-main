@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/26 11:08:32 espie Exp $
-@lib lib/libmysqlclient.so.${LIBmysqlclient_VERSION}
-@lib lib/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
-@lib lib/mysql/libmysqlclient.so.${LIBmysqlclient_VERSION}
-@lib lib/mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}

@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.10 2008/08/24 08:40:03 brad Exp $
---- scripts/mysql_install_db.sh.orig	Mon Aug  4 08:20:02 2008
-+++ scripts/mysql_install_db.sh	Fri Aug  8 17:22:43 2008
-@@ -25,7 +25,8 @@ srcdir=""
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.11 2009/07/27 15:19:15 sthen Exp $
+--- scripts/mysql_install_db.sh.orig	Fri Feb 13 19:55:54 2009
++++ scripts/mysql_install_db.sh	Thu Mar  5 09:49:04 2009
+@@ -27,7 +27,8 @@ srcdir=""
  args=""
  defaults=""
  mysqld_opt=""
@@ -11,16 +11,16 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.10 2008/08/24 08:40:03 brad Exp 
  
  force=0
  in_rpm=0
-@@ -102,6 +103,8 @@ parse_arguments()
+@@ -108,6 +109,8 @@ parse_arguments()
          # as 'user' (crucial e.g. if log-bin=/some_other_path/
          # where a chown of datadir won't help)
- 	 user=`parse_arg "$arg"` ;;
+         user=`parse_arg "$arg"` ;;
 +      --group=*)
-+	 group=`parse_arg "$arg"` ;;
++        group=`parse_arg "$arg"` ;;
        --skip-name-resolve) ip_only=1 ;;
        --verbose) verbose=1 ;; # Obsolete
        --rpm) in_rpm=1 ;;
-@@ -321,7 +324,7 @@ do
+@@ -360,7 +363,7 @@ do
    fi
    if test -w / -a ! -z "$user"
    then
@@ -29,32 +29,32 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.10 2008/08/24 08:40:03 brad Exp 
    fi
  done
  
-@@ -364,11 +367,6 @@ then
-     echo
-   fi
- 
+@@ -437,10 +440,6 @@ fi
+ # the screen.
+ if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
+ then
 -  s_echo
 -  s_echo "To start mysqld at boot time you have to copy"
 -  s_echo "support-files/mysql.server to the right place for your system"
--  s_echo
 -
-   if test "$cross_bootstrap" -eq 0
-   then
-     # This is not a true installation on a running system.  The end user must
-@@ -389,16 +387,6 @@ then
-     echo
-     echo "See the manual for more instructions."
-     echo
+   echo
+   echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
+   echo "To do so, start the server, then issue the following commands:"
+@@ -456,17 +455,6 @@ then
+   echo "strongly recommended for production servers."
+   echo
+   echo "See the manual for more instructions."
 -
--    if test "$in_rpm" -eq 0
--    then
--      echo "You can start the MySQL daemon with:"
--      echo "cd @prefix@ ; $bindir/mysqld_safe &"
--      echo
--      echo "You can test the MySQL daemon with mysql-test-run.pl"
--      echo "cd mysql-test ; perl mysql-test-run.pl"
--      echo
--    fi
-     echo "Please report any problems with the @scriptdir@/mysqlbug script!"
-     echo
-     echo "The latest information about MySQL is available on the web at"
+-  if test "$in_rpm" -eq 0
+-  then
+-    echo
+-    echo "You can start the MySQL daemon with:"
+-    echo "cd $basedir ; $bindir/mysqld_safe &"
+-    echo
+-    echo "You can test the MySQL daemon with mysql-test-run.pl"
+-    echo "cd $basedir/mysql-test ; perl mysql-test-run.pl"
+-  fi
+-
+   echo
+   echo "Please report any problems with the $scriptdir/mysqlbug script!"
+   echo
