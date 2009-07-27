@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/07/26 12:20:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/07/27 12:39:05 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/CONTRIBUTORS.${LANG}.txt
@@ -33,8 +33,8 @@ ${DRUPAL_ROOT}/modules/locale/translations/
 ${DRUPAL_ROOT}/modules/locale/translations/modules-locale.${LANG}.po
 ${DRUPAL_ROOT}/modules/menu/translations/
 ${DRUPAL_ROOT}/modules/menu/translations/modules-menu.${LANG}.po
-${DRUPAL_LOCALE}translations/
-${DRUPAL_LOCALE}translations/modules-node.${LANG}.po
+${DRUPAL_ROOT}/modules/node/translations/
+${DRUPAL_ROOT}/modules/node/translations/modules-node.${LANG}.po
 ${DRUPAL_ROOT}/modules/openid/translations/
 ${DRUPAL_ROOT}/modules/openid/translations/modules-openid.${LANG}.po
 ${DRUPAL_ROOT}/modules/path/translations/
@@ -58,6 +58,7 @@ ${DRUPAL_ROOT}/modules/system/translations/general.${LANG}.po
 ${DRUPAL_ROOT}/modules/system/translations/includes.${LANG}.po
 ${DRUPAL_ROOT}/modules/system/translations/misc.${LANG}.po
 ${DRUPAL_ROOT}/modules/system/translations/modules-system.${LANG}.po
+@comment ${DRUPAL_ROOT}/modules/system/translations/modules-system.${LANG}.po.orig
 ${DRUPAL_ROOT}/modules/taxonomy/translations/
 ${DRUPAL_ROOT}/modules/taxonomy/translations/modules-taxonomy.${LANG}.po
 ${DRUPAL_ROOT}/modules/throttle/translations/
