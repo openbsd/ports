@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/11 18:27:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/07/27 21:44:14 martynas Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
 DISTNAME =		gecko-mediaplayer-0.9.5
@@ -23,7 +23,7 @@ WANTLIB =		ORBit-2 dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0 \
 MODULES =		devel/gettext \
 			devel/gconf2
 
-BUILD_DEPENDS =		:xulrunner-devel-*:devel/xulrunner,-devel
+BUILD_DEPENDS =		:xulrunner-devel-*:devel/xulrunner/1.8,-devel
 RUN_DEPENDS =		::x11/gnome-mplayer
 
 USE_X11 =		Yes

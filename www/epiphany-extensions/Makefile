@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/06/11 16:05:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2009/07/27 21:44:14 martynas Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 CATEGORIES=		www
 
@@ -25,11 +25,11 @@ MODULES=		lang/python \
 WANTLIB=	nspr4 pcre plc4 plds4
 
 BUILD_DEPENDS=	:gettext-*:devel/gettext \
-		:xulrunner-devel->=1.8.1:devel/xulrunner,-devel \
+		:xulrunner-devel->=1.8.1:devel/xulrunner/1.8,-devel \
 		:epiphany->=2.24.2:www/epiphany
 RUN_DEPENDS=	:gettext-*:devel/gettext \
 		:epiphany->=2.24.2:www/epiphany
-LIB_DEPENDS=	xulrunner/gtkembedmoz,xulrunner/mozjs,xulrunner/xpcom:xulrunner->=1.8.1:devel/xulrunner
+LIB_DEPENDS=	xulrunner/gtkembedmoz,xulrunner/mozjs,xulrunner/xpcom:xulrunner->=1.8.1:devel/xulrunner/1.8
 
 USE_X11=	Yes
 

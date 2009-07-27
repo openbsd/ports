@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2009/06/22 10:43:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2009/07/27 21:44:14 martynas Exp $
 
 COMMENT=	GNOME web browser based on gecko
 
 DISTNAME=	galeon-2.0.7
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 
 CATEGORIES=	www
 
@@ -33,7 +33,7 @@ MODULES=	devel/gettext \
 		textproc/intltool \
 		devel/gconf2
 
-BUILD_DEPENDS=	:xulrunner-devel->=1.8.1:devel/xulrunner,-devel \
+BUILD_DEPENDS=	:xulrunner-devel->=1.8.1:devel/xulrunner/1.8,-devel \
 		::textproc/rarian \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/desktop-file-utils \
@@ -43,7 +43,7 @@ RUN_DEPENDS=	::devel/desktop-file-utils \
 		::x11/gnome/themes \
 		::x11/gnome/yelp
 
-LIB_DEPENDS=	xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul:xulrunner->=1.8.1:devel/xulrunner \
+LIB_DEPENDS=	xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul:xulrunner->=1.8.1:devel/xulrunner/1.8 \
 		xml2::textproc/libxml \
 		gnome-desktop-2::x11/gnome/desktop \
 		gnomeui-2::x11/gnome/libgnomeui

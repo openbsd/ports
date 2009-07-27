@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/07/16 13:26:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/07/27 21:44:15 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,7 +35,7 @@ LIB_DEPENDS=	cryptui::x11/gnome/seahorse \
 		gtksourceview-2.0.>=2::x11/gtksourceview \
 		nautilus-extension.>=2::x11/gnome/nautilus\
 		panel-applet-2.>=1::x11/gnome/panel \
-		xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8.1:devel/xulrunner
+		xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8.1:devel/xulrunner/1.8
 
 RUN_DEPENDS=	:shared-mime-info->=0.21:misc/shared-mime-info \
 		::x11/gnome/gedit \

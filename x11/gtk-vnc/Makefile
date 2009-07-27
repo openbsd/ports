@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/07/27 21:44:15 martynas Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
@@ -56,7 +56,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=	--enable-plugin=no
 .else
 MULTI_PACKAGES+=	-plugin
-BUILD_DEPENDS+=		::devel/xulrunner,-devel
+BUILD_DEPENDS+=		::devel/xulrunner/1.8,-devel
 CONFIGURE_ARGS+=	--enable-plugin=yes
 CONFIGURE_ENV+=		MOZILLA_PLUGIN_CFLAGS="-I${LOCALBASE}/xulrunner/include/plugin \
 				-I${LOCALBASE}/xulrunner/include/java \

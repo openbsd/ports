@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2009/07/19 22:49:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2009/07/27 21:44:15 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -174,7 +174,7 @@ FLAVOR?=
 MULTI_PACKAGES+=-web
 COMMENT-web=	mozilla plugin for embedded media playback
 PKGNAME-web=	vlc-web-${V}p0
-BUILD_DEPENDS+=	:xulrunner-devel-*:devel/xulrunner,-devel
+BUILD_DEPENDS+=	:xulrunner-devel-*:devel/xulrunner/1.8,-devel
 CONFIGURE_ARGS+=--enable-mozilla
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/bin/xulrunner-config" \
 		XPIDL="${LOCALBASE}/xulrunner/xpidl"

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2009/07/27 21:44:15 martynas Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p7
+PKGNAME=		${DISTNAME}p8
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,14 +28,14 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=		::devel/xulrunner,-devel \
+BUILD_DEPENDS=		::devel/xulrunner/1.8,-devel \
 			::x11/gnome/doc-utils
 RUN_DEPENDS=		::misc/shared-mime-info \
 			::textproc/docbook-dsssl \
 			::x11/gnome/users-guide \
 			::x11/gnome/doc-utils
 LIB_DEPENDS=		startup-notification-1::devel/startup-notification \
-			xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunner,-main \
+			xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunner/1.8,-main \
 			gnomeui-2::x11/gnome/libgnomeui \
 			exslt,xslt::textproc/libxslt \
 			lzmadec::archivers/lzma \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/06/19 22:28:04 kurt Exp $
+# $OpenBSD: Makefile,v 1.14 2009/07/27 21:44:15 martynas Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
@@ -34,7 +34,7 @@ MODULES=	converters/libiconv gcc4
 MODGCC4_ARCHES=	*
 MODGCC4_LANGS=	java
 
-BUILD_DEPENDS=	::devel/xulrunner,-devel \
+BUILD_DEPENDS=	::devel/xulrunner/1.8,-devel \
 		::lang/antlr2
 
 RUN_DEPENDS=	::lang/gcc/4.2,-java,java \

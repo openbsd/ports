@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2009/07/12 20:34:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2009/07/27 21:44:14 martynas Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,7 @@ COMMENT=	GNOME web browser based on mozilla
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
@@ -30,7 +30,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		:xulrunner-devel->=1.8.1:devel/xulrunner,-devel
+		:xulrunner-devel->=1.8.1:devel/xulrunner/1.8,-devel
 RUN_DEPENDS=	:gnome-icon-theme-*:x11/gnome/icon-theme \
 		:gnome-themes-*:x11/gnome/themes \
 		:iso-codes-*:devel/iso-codes \
@@ -38,7 +38,7 @@ RUN_DEPENDS=	:gnome-icon-theme-*:x11/gnome/icon-theme \
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		gnome-desktop-2::x11/gnome/desktop \
 		gnomeui-2.>=1400::x11/gnome/libgnomeui \
-		xulrunner/gtkembedmoz,xulrunner/mozjs,xulrunner/xpcom,xulrunner/xul:xulrunner->=1.8.1:devel/xulrunner \
+		xulrunner/gtkembedmoz,xulrunner/mozjs,xulrunner/xpcom,xulrunner/xul:xulrunner->=1.8.1:devel/xulrunner/1.8 \
 		xml2.>=6.12::textproc/libxml \
 		xslt.>=1::textproc/libxslt \
 		execinfo::devel/libexecinfo \
