@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+# $OpenBSD: Makefile,v 1.2 2009/07/27 23:22:01 martynas Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
-VERSION=		1.9.0.7
+VERSION=		1.9.0.12
 PATCHLEVEL=
 DIRECTORY=		xulrunner1.9
 
@@ -17,7 +17,7 @@ MODULES+=		lang/python
 MODPY_RUNDEP=		No
 
 CONFIGURE_ARGS+=	--enable-default-toolkit=cairo-gtk2
-LIB_DEPENDS+=		sqlite3.>=10.0:sqlite3->=3.5:databases/sqlite3
+LIB_DEPENDS+=		sqlite3.>=13.0:sqlite3->=3.6.10:databases/sqlite3
 WANTLIB-devel+=		gobject-2.0
 
 MOB=			${WRKSRC}/dist/bin
