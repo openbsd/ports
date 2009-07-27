@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/05/26 08:21:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/07/27 07:16:50 ajacoutot Exp $
 bin/rednotebook
 lib/python${MODPY_VERSION}/site-packages/rednotebook/
 lib/python${MODPY_VERSION}/site-packages/rednotebook-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -90,12 +90,18 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/keepnote/undo.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/keepnote/undo.pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/mainWindow.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/mainWindow.pyc
+lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/options.py
+lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/options.pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/richtext.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/richtext.pyc
+lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/widgets.py
+lib/python${MODPY_VERSION}/site-packages/rednotebook/gui/widgets.pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/images/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/images/bulletlist.png
 lib/python${MODPY_VERSION}/site-packages/rednotebook/images/date.png
+lib/python${MODPY_VERSION}/site-packages/rednotebook/images/enter.png
 lib/python${MODPY_VERSION}/site-packages/rednotebook/images/image-x-generic.png
+lib/python${MODPY_VERSION}/site-packages/rednotebook/images/insert-image-16.png
 lib/python${MODPY_VERSION}/site-packages/rednotebook/images/insert-image-22.png
 lib/python${MODPY_VERSION}/site-packages/rednotebook/images/line.png
 lib/python${MODPY_VERSION}/site-packages/rednotebook/images/link.png
@@ -118,6 +124,8 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/templates.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/templates.pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/txt2tags.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/txt2tags.pyc
+lib/python${MODPY_VERSION}/site-packages/rednotebook/undo.py
+lib/python${MODPY_VERSION}/site-packages/rednotebook/undo.pyc
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/__init__.pyc
