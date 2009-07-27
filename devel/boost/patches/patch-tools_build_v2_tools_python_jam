@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_build_v2_tools_python_jam,v 1.2 2009/07/25 02:17:06 kurt Exp $
---- tools/build/v2/tools/python.jam.orig	Fri Jun  1 11:43:22 2007
-+++ tools/build/v2/tools/python.jam	Wed Apr 22 11:28:16 2009
+$OpenBSD: patch-tools_build_v2_tools_python_jam,v 1.3 2009/07/27 00:34:24 kurt Exp $
+--- tools/build/v2/tools/python.jam.orig	Wed Jan  9 03:11:51 2008
++++ tools/build/v2/tools/python.jam	Wed Jan  9 03:16:32 2008
 @@ -623,6 +623,7 @@ local rule system-library-dependencies ( target-os )
          case qnx* : return ;
          case darwin : return ;
          case windows : return ;
-+        case openbsd : return  <library>pthread <toolset>gcc:<library>util ;
++        case openbsd : return ;
  
          case hpux : return  <library>rt ;
  
