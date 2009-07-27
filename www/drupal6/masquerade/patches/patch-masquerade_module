@@ -1,0 +1,61 @@
+$OpenBSD: patch-masquerade_module,v 1.1 2009/07/27 13:00:26 espie Exp $
+--- masquerade.module.orig	Mon Jul 27 14:43:25 2009
++++ masquerade.module	Mon Jul 27 14:56:07 2009
+@@ -284,14 +284,21 @@ function masquerade_block_1($record) {
+  */
+ function masquerade_block_1_validate($form, &$form_state) {
+   unset($form);
+-  if ($form_state['values']['masquerade_user_field'] == '') {
++  $name = $form_state['values']['masquerade_user_field'];
++  if ($name == '') {
+     form_set_error('masquerade_user_field', t('You cannot masquerade as %anonymous!', array('%anonymous' => variable_get('anonymous', 'Anonymous'))));
+   }
+   if ($GLOBALS['masquerading']) {
+     form_set_error('masquerade_user_field', t('You are already masquerading!'));
+   }
+   global $user;
+-  $masq_user = user_load(array('name' => $form_state['values']['masquerade_user_field']));
++  if (module_exists('alt_login')) {
++    $alt_login = db_fetch_object(db_query("SELECT u.name FROM {users} u INNER JOIN {alt_login} al ON u.uid = al.uid WHERE al.alt_login = '%s'", $name));
++    if ($alt_login->name) {
++      $name = $alt_login->name;
++    }
++  }
++  $masq_user = user_load(array('name' => $name));
+   if (!$masq_user) {
+     form_set_error('masquerade_user_field', t('User %masq_as does not exist. Please enter a valid username.', array('%masq_as' => $form_state['values']['masquerade_user_field'])));
+   }
+@@ -308,15 +315,16 @@ function masquerade_block_1_validate($form, &$form_sta
+  */
+ function masquerade_block_1_submit($form, &$form_state) {
+   unset($form);
+-  $masq_user = user_load(array('name' => $form_state['values']['masquerade_user_field']));
+-
+-  if (module_exists('alt_login')) { // alt_login.module integration patch by espie.
++  $name = $form_state['values']['masquerade_user_field'];
++  if (module_exists('alt_login')) {
+     $alt_login = db_fetch_object(db_query("SELECT u.name FROM {users} u INNER JOIN {alt_login} al ON u.uid = al.uid WHERE al.alt_login = '%s'", $name));
+     if ($alt_login->name) {
+-      $masq_user = user_load(array('name' => $alt_login->name));
++      $name = $alt_login->name;
+     }
+   }
+ 
++  $masq_user = user_load(array('name' => $name));
++
+   masquerade_switch_user($masq_user->uid);
+ }
+ 
+@@ -328,6 +336,12 @@ function masquerade_autocomplete($string) {
+   $result = db_query_range("SELECT u.name FROM {users} u WHERE LOWER(u.name) LIKE LOWER('%s%%')", $string, 0, 10);
+   while ($user = db_fetch_object($result)) {
+     $matches[$user->name] = check_plain($user->name);
++  }
++  if (module_exists('alt_login')) {
++    $result = db_query_range("SELECT alt_login FROM {alt_login} u WHERE LOWER(alt_login) LIKE LOWER('%s%%')", $string, 0, 10);
++    while ($user = db_fetch_object($result)) {
++      $matches[$user->alt_login] = check_plain($user->alt_login);
++    }
+   }
+   print drupal_to_js($matches);
+   exit();
