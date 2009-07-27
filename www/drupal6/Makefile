@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/07/27 15:44:31 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2009/07/27 18:42:17 espie Exp $
 
 SUBDIR += FCKeditor
 SUBDIR += admin-menu
@@ -24,6 +24,7 @@ SUBDIR += locale-it
 SUBDIR += locale-ja
 SUBDIR += masquerade
 SUBDIR += meta-tags
+SUBDIR += nodeaccess_userreference
 SUBDIR += panels
 SUBDIR += pathauto
 SUBDIR += poormanscron
