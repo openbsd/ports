@@ -1,0 +1,7 @@
+Devel can slow down a drupal site by a great amount, but allows you to
+debug database queries/node grants to obtain the results you need.
+
+Activate the modules, then add the blocks where you want them, and make
+sure the roles have the correct permissions.
+
+Do not use on production sites, for obvious reasons...
