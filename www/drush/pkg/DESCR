@@ -1,0 +1,6 @@
+drush is a command line interpreter for drupal, so that
+you don't need to go through the web interface for
+most of the administration.
+
+Note that drush should be invoked from the directory
+where drupal is installed, or using the -r option.

@@ -1,0 +1,2 @@
+#! /bin/sh
+exec php ${PREFIX}/libexec/drush/drush.php "$@"
