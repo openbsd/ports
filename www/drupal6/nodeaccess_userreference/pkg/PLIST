@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/27 18:41:14 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}nodeaccess_userreference/
+${DRUPAL_MODS}nodeaccess_userreference/LICENSE.txt
+${DRUPAL_MODS}nodeaccess_userreference/nodeaccess_userreference.info
+${DRUPAL_MODS}nodeaccess_userreference/nodeaccess_userreference.install
+${DRUPAL_MODS}nodeaccess_userreference/nodeaccess_userreference.module
