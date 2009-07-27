@@ -1,0 +1,8 @@
+Panels allows the creation of complex layouts for nodes 
+by experienced users. In its easiest form, one can create
+a composite node of 'panels' content type referencing several
+other nodes and views, and have it display in two/three columns.
+
+This contrasts with the default site blocks construction, which
+affects the whole site and is not suited for a complex frontpage,
+since it bleeds into every page.
