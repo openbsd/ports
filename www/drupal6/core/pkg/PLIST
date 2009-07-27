@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/07/26 12:20:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/07/27 12:39:36 espie Exp $
 @option no-default-conflict
 @conflict drupal->=6,<7
 @owner ${DRUPAL_OWNER}
@@ -226,16 +226,16 @@ ${DRUPAL_ROOT}/modules/menu/menu.admin.inc
 ${DRUPAL_ROOT}/modules/menu/menu.info
 ${DRUPAL_ROOT}/modules/menu/menu.install
 ${DRUPAL_ROOT}/modules/menu/menu.module
-${DRUPAL_LOCALE}/
-${DRUPAL_LOCALE}content_types.inc
-${DRUPAL_LOCALE}node-rtl.css
-${DRUPAL_LOCALE}node.admin.inc
-${DRUPAL_LOCALE}node.css
-${DRUPAL_LOCALE}node.info
-${DRUPAL_LOCALE}node.install
-${DRUPAL_LOCALE}node.module
-${DRUPAL_LOCALE}node.pages.inc
-${DRUPAL_LOCALE}node.tpl.php
+${DRUPAL_ROOT}/modules/node/
+${DRUPAL_ROOT}/modules/node/content_types.inc
+${DRUPAL_ROOT}/modules/node/node-rtl.css
+${DRUPAL_ROOT}/modules/node/node.admin.inc
+${DRUPAL_ROOT}/modules/node/node.css
+${DRUPAL_ROOT}/modules/node/node.info
+${DRUPAL_ROOT}/modules/node/node.install
+${DRUPAL_ROOT}/modules/node/node.module
+${DRUPAL_ROOT}/modules/node/node.pages.inc
+${DRUPAL_ROOT}/modules/node/node.tpl.php
 ${DRUPAL_ROOT}/modules/openid/
 ${DRUPAL_ROOT}/modules/openid/login-bg.png
 ${DRUPAL_ROOT}/modules/openid/openid.css
