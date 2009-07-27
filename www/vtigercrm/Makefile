@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/08/20 08:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/07/27 11:54:26 ajacoutot Exp $
 
 COMMENT=	customer relationship management (CRM) software
 
-DISTNAME=	vtigercrm-5.0.4
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	vtigercrm-5.1.0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.vtiger.com/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - LGPLv2 - BSD
 # SugarCRM Public License (SPL) 1.1.2
