@@ -1,0 +1,12 @@
+$OpenBSD: patch-widget_src_gtk2_nsBidiKeyboard_cpp,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- widget/src/gtk2/nsBidiKeyboard.cpp.orig	Wed Apr 16 23:03:19 2008
++++ widget/src/gtk2/nsBidiKeyboard.cpp	Fri Jun 13 19:41:59 2008
+@@ -54,7 +54,7 @@ NS_IMPL_ISUPPORTS1(nsBidiKeyboard, nsIBidiKeyboard)
+ nsBidiKeyboard::nsBidiKeyboard()
+ {
+     if (!gtklib)
+-        gtklib = PR_LoadLibrary("libgtk-x11-2.0.so.0");
++        gtklib = PR_LoadLibrary("libgtk-x11-2.0.so");
+ 
+     if (gtklib && !GdkKeymapHaveBidiLayouts)
+             GdkKeymapHaveBidiLayouts = (GdkKeymapHaveBidiLayoutsType) PR_FindFunctionSymbol(gtklib, "gdk_keymap_have_bidi_layouts");

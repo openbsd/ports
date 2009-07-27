@@ -1,0 +1,12 @@
+$OpenBSD: patch-accessible_src_atk_nsAppRootAccessible_cpp,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- accessible/src/atk/nsAppRootAccessible.cpp.orig	Thu Oct 11 13:13:32 2007
++++ accessible/src/atk/nsAppRootAccessible.cpp	Fri Jun 13 19:31:10 2008
+@@ -55,7 +55,7 @@ typedef GType (* AtkGetTypeType) (void);
+ GType g_atk_hyperlink_impl_type = G_TYPE_INVALID;
+ static PRBool sATKChecked = PR_FALSE;
+ static PRLibrary *sATKLib = nsnull;
+-static const char sATKLibName[] = "libatk-1.0.so.0";
++static const char sATKLibName[] = "libatk-1.0.so";
+ static const char sATKHyperlinkImplGetTypeSymbol[] =
+     "atk_hyperlink_impl_get_type";
+ static const char sAccEnv [] = "GNOME_ACCESSIBILITY";

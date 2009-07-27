@@ -1,0 +1,12 @@
+$OpenBSD: patch-widget_src_gtk2_nsScreenManagerGtk_cpp,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- widget/src/gtk2/nsScreenManagerGtk.cpp.orig	Wed May  2 23:07:33 2007
++++ widget/src/gtk2/nsScreenManagerGtk.cpp	Tue May  6 03:27:26 2008
+@@ -80,7 +80,7 @@ nsScreenManagerGtk :: EnsureInit(void)
+     XineramaScreenInfo *screenInfo = NULL;
+ 
+     // We are leaking xineramalib, but there is no other way to do this.
+-    PRLibrary* xineramalib = PR_LoadLibrary("libXinerama.so.1");
++    PRLibrary* xineramalib = PR_LoadLibrary("libXinerama.so");
+     if (xineramalib) {
+       _XnrmIsActive_fn _XnrmIsActive = (_XnrmIsActive_fn)
+           PR_FindFunctionSymbol(xineramalib, "XineramaIsActive");

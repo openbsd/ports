@@ -1,0 +1,12 @@
+$OpenBSD: patch-widget_src_gtk2_nsSound_cpp,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- widget/src/gtk2/nsSound.cpp.orig	Sun May 20 11:56:36 2007
++++ widget/src/gtk2/nsSound.cpp	Sat Nov 17 16:18:43 2007
+@@ -115,7 +115,7 @@ nsSound::Init()
+ 
+     EsdOpenSoundType EsdOpenSound;
+ 
+-    elib = PR_LoadLibrary("libesd.so.0");
++    elib = PR_LoadLibrary("libesd.so");
+     if (!elib) return NS_ERROR_FAILURE;
+ 
+     EsdOpenSound = (EsdOpenSoundType) PR_FindFunctionSymbol(elib, "esd_open_sound");

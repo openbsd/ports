@@ -1,0 +1,10 @@
+$OpenBSD: patch-js_src_build_mk,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- js/src/build.mk.orig	Wed Feb 14 18:58:53 2007
++++ js/src/build.mk	Thu Aug 21 17:43:27 2008
+@@ -38,6 +38,5 @@
+ TIERS += js
+ 
+ tier_js_dirs += \
+-	js/src/fdlibm \
+ 	js/src \
+ 	$(NULL)

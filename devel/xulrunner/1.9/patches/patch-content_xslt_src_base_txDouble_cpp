@@ -1,0 +1,25 @@
+$OpenBSD: patch-content_xslt_src_base_txDouble_cpp,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- content/xslt/src/base/txDouble.cpp.orig	Fri Jan 25 10:02:04 2008
++++ content/xslt/src/base/txDouble.cpp	Thu Jun 19 22:39:42 2008
+@@ -49,14 +49,16 @@
+  * Utility class for doubles
+  */
+ 
++#define STRICT_ALIGN __attribute__ ((aligned (8)))
++
+ //-- Initialize Double related constants
+-const txdpun nanMask =    TX_DOUBLE_NaN;
++const txdpun nanMask STRICT_ALIGN =    TX_DOUBLE_NaN;
+ #ifdef IS_BIG_ENDIAN
+-const txdpun infMask =    {{TX_DOUBLE_HI32_EXPMASK, 0}};
+-const txdpun negInfMask = {{TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT, 0}};
++const txdpun infMask STRICT_ALIGN =    {{TX_DOUBLE_HI32_EXPMASK, 0}};
++const txdpun negInfMask STRICT_ALIGN = {{TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT, 0}};
+ #else
+-const txdpun infMask =    {{0, TX_DOUBLE_HI32_EXPMASK}};
+-const txdpun negInfMask = {{0, TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT}};
++const txdpun infMask STRICT_ALIGN =    {{0, TX_DOUBLE_HI32_EXPMASK}};
++const txdpun negInfMask STRICT_ALIGN = {{0, TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT}};
+ #endif
+ 
+ const double Double::NaN = nanMask.d;

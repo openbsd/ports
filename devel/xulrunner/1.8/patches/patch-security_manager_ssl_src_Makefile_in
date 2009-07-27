@@ -1,0 +1,14 @@
+$OpenBSD: patch-security_manager_ssl_src_Makefile_in,v 1.1.1.1 2009/07/27 21:36:01 martynas Exp $
+--- security/manager/ssl/src/Makefile.in.orig	Wed Jun  4 23:42:03 2008
++++ security/manager/ssl/src/Makefile.in	Fri Jul  4 19:17:49 2008
+@@ -127,7 +127,10 @@ REQUIRES	= nspr \
+ 
+ EXTRA_DEPS = $(NSS_DEP_LIBS)
+ 
++NSS_LIBDIR = $(shell $(NSS_CONFIG) --libdir)
++
+ DEFINES += -DNSS_ENABLE_ECC
++DEFINES += -DNSS_LIBDIR=\"$(NSS_LIBDIR)\"
+ 
+ # Use local includes because they are inserted before INCLUDES
+ # so that Mozilla's nss.h is used, not glibc's

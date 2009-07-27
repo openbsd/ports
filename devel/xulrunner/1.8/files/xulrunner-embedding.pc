@@ -1,0 +1,10 @@
+prefix=!!PREFIX!!
+exec_prefix=${prefix}
+libdir=${exec_prefix}/xulrunner
+includedir=${prefix}/xulrunner/include
+
+Name: xulrunner-embedding
+Description: Static library for version-independent embedding of the Mozilla runtime
+Version: !!VERSION!!
+Libs: -L${libdir} -lxpcomglue
+Cflags: -DXPCOM_GLUE -I${includedir} -I${includedir}/xpcom -I${includedir}/string -I${includedir}/gtkembedmoz

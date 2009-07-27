@@ -1,0 +1,29 @@
+$OpenBSD: patch-extensions_transformiix_source_base_Double_cpp,v 1.1.1.1 2009/07/27 21:36:01 martynas Exp $
+--- extensions/transformiix/source/base/Double.cpp.orig	Thu Jun 17 02:12:42 2004
++++ extensions/transformiix/source/base/Double.cpp	Sat Sep 10 09:47:31 2005
+@@ -115,17 +115,19 @@ typedef union txdpun {
+ #define TX_DOUBLE_HI32_EXPMASK   0x7ff00000
+ #define TX_DOUBLE_HI32_MANTMASK  0x000fffff
+ 
++#define STRICT_ALIGN __attribute__ ((aligned (8)))
++
+ //-- Initialize Double related constants
+ #ifdef IS_BIG_ENDIAN
+-const PRUint32 nanMask[2] =    {TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_MANTMASK,
++const PRUint32 nanMask[2] STRICT_ALIGN =    {TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_MANTMASK,
+                                 0xffffffff};
+-const PRUint32 infMask[2] =    {TX_DOUBLE_HI32_EXPMASK, 0};
+-const PRUint32 negInfMask[2] = {TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT, 0};
++const PRUint32 infMask[2] STRICT_ALIGN =    {TX_DOUBLE_HI32_EXPMASK, 0};
++const PRUint32 negInfMask[2] STRICT_ALIGN = {TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT, 0};
+ #else
+-const PRUint32 nanMask[2] =    {0xffffffff,
++const PRUint32 nanMask[2] STRICT_ALIGN =    {0xffffffff,
+                                 TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_MANTMASK};
+-const PRUint32 infMask[2] =    {0, TX_DOUBLE_HI32_EXPMASK};
+-const PRUint32 negInfMask[2] = {0, TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT};
++const PRUint32 infMask[2] STRICT_ALIGN =    {0, TX_DOUBLE_HI32_EXPMASK};
++const PRUint32 negInfMask[2] STRICT_ALIGN = {0, TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT};
+ #endif
+ 
+ const double Double::NaN = *((double*)nanMask);

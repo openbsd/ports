@@ -1,0 +1,9 @@
+$OpenBSD: patch-netwerk_cookie_src_Makefile_in,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- netwerk/cookie/src/Makefile.in.orig	Sun Oct  5 22:38:13 2008
++++ netwerk/cookie/src/Makefile.in	Sun Oct  5 22:40:34 2008
+@@ -60,5 +60,4 @@ CPPSRCS		= \
+ 
+ include $(topsrcdir)/config/rules.mk
+ 
+-CXXFLAGS += $(WARNINGS_AS_ERRORS)
+ DEFINES += -DIMPL_NS_NET

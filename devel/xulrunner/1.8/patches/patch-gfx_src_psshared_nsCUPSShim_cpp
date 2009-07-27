@@ -1,0 +1,12 @@
+$OpenBSD: patch-gfx_src_psshared_nsCUPSShim_cpp,v 1.1.1.1 2009/07/27 21:36:01 martynas Exp $
+--- gfx/src/psshared/nsCUPSShim.cpp.orig	Sun May  8 18:01:20 2005
++++ gfx/src/psshared/nsCUPSShim.cpp	Tue Jun  5 23:06:01 2007
+@@ -59,7 +59,7 @@ static const int gSymNameCt = sizeof(gSymName) / sizeo
+ PRBool
+ nsCUPSShim::Init()
+ {
+-    mCupsLib = PR_LoadLibrary("libcups.so.2");
++    mCupsLib = PR_LoadLibrary("libcups.so");
+     if (!mCupsLib)
+         return PR_FALSE;
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-widget_src_gtk2_nsIdleServiceGTK_cpp,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- widget/src/gtk2/nsIdleServiceGTK.cpp.orig	Thu Sep 27 19:53:48 2007
++++ widget/src/gtk2/nsIdleServiceGTK.cpp	Tue May  6 03:27:58 2008
+@@ -78,7 +78,7 @@ static void Initialize()
+ #endif
+ 
+     // This will leak - See comments in ~nsIdleServiceGTK().
+-    PRLibrary* xsslib = PR_LoadLibrary("libXss.so.1");
++    PRLibrary* xsslib = PR_LoadLibrary("libXss.so");
+     if (!xsslib) // ouch.
+     {
+ #ifdef PR_LOGGING

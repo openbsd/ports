@@ -1,0 +1,22 @@
+$OpenBSD: patch-config_autoconf_mk_in,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- config/autoconf.mk.in.orig	Thu Oct 11 21:50:54 2007
++++ config/autoconf.mk.in	Sun Nov 18 15:03:16 2007
+@@ -58,14 +58,14 @@ MOZ_PKG_SPECIAL = @MOZ_PKG_SPECIAL@
+ prefix		= @prefix@
+ exec_prefix	= @exec_prefix@
+ bindir		= @bindir@
+-includedir	= @includedir@/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
++includedir	= $(prefix)/xulrunner1.9/include
+ libdir		= @libdir@
+ datadir		= @datadir@
+ mandir		= @mandir@
+-idldir		= $(datadir)/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
++idldir		= $(prefix)/xulrunner1.9/idl
+ 
+-installdir	= $(libdir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
+-sdkdir		= $(libdir)/$(MOZ_APP_NAME)-devel-$(MOZ_APP_VERSION)
++installdir	= $(prefix)/xulrunner1.9
++sdkdir		= $(prefix)/xulrunner1.9
+ 
+ DIST		= $(DEPTH)/dist
+ LIBXUL_SDK      = @LIBXUL_SDK@

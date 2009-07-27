@@ -1,0 +1,45 @@
+$OpenBSD: patch-toolkit_components_url-classifier_src_nsUrlClassifierDBService_cpp,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- toolkit/components/url-classifier/src/nsUrlClassifierDBService.cpp.orig	Mon Aug 25 23:59:14 2008
++++ toolkit/components/url-classifier/src/nsUrlClassifierDBService.cpp	Tue Sep 23 20:37:33 2008
+@@ -2023,8 +2023,20 @@ nsUrlClassifierDBServiceWorker::GetShaEntries(PRUint32
+           return NS_ERROR_FAILURE;
+         }
+         const nsCSubstring& str = Substring(chunk, start, 4);
++#if 0
++        // You can't just cast a char* to an int* and access through it
+         const PRUint32 *p = reinterpret_cast<const PRUint32*>(str.BeginReading());
+         entry->mAddChunkId = PR_ntohl(*p);
++#else
++        // the old-school way...
++        union {
++          PRUint32 i;
++          char c[4];
++        } u;
++
++        memcpy(u.c, reinterpret_cast<const char *>(str.BeginReading()), 4);
++        entry->mAddChunkId = PR_ntohl(u.i);
++#endif
+         if (entry->mAddChunkId == 0) {
+           NS_WARNING("Received invalid chunk number.");
+           return NS_ERROR_FAILURE;
+@@ -2052,8 +2064,20 @@ nsUrlClassifierDBServiceWorker::GetShaEntries(PRUint32
+ 
+         if (chunkType == CHUNK_SUB) {
+           const nsCSubstring& str = Substring(chunk, start, 4);
++#if 0
++          // You can't just cast a char* to an int* and access through it
+           const PRUint32 *p = reinterpret_cast<const PRUint32*>(str.BeginReading());
+           entry->mAddChunkId = PR_ntohl(*p);
++#else
++          // the old-school way...
++          union {
++            PRUint32 i;
++            char c[4];
++          } u;
++
++          memcpy(u.c, reinterpret_cast<const char *>(str.BeginReading()), 4);
++          entry->mAddChunkId = PR_ntohl(u.i);
++#endif
+           if (entry->mAddChunkId == 0) {
+             NS_WARNING("Received invalid chunk number.");
+             return NS_ERROR_FAILURE;

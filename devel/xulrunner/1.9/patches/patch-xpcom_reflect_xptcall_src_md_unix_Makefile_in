@@ -1,0 +1,20 @@
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Wed Apr  9 09:34:20 2008
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sun Sep 14 16:48:09 2008
+@@ -192,7 +192,7 @@ endif
+ #
+ # OpenBSD/ARM
+ #
+-ifneq (,$(filter OpenBSDarmish OpenBSDzaurus,$(OS_ARCH)$(OS_TEST)))
++ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDarm)
+ CPPSRCS		:= xptcinvoke_arm_openbsd.cpp xptcstubs_arm_openbsd.cpp
+ endif
+ 
+@@ -340,6 +340,7 @@ endif
+ ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDpowerpc)
+ CPPSRCS		:= xptcinvoke_ppc_openbsd.cpp xptcstubs_ppc_openbsd.cpp
+ ASFILES		:= xptcinvoke_asm_ppc_openbsd.s xptcstubs_asm_ppc_openbsd.s
++AS		:= $(CC) -c -x assembler-with-cpp
+ endif
+ 
+ #

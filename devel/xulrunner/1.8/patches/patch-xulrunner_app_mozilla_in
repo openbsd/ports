@@ -1,0 +1,24 @@
+$OpenBSD: patch-xulrunner_app_mozilla_in,v 1.1.1.1 2009/07/27 21:36:01 martynas Exp $
+--- xulrunner/app/mozilla.in.orig	Fri Jan 11 05:20:02 2008
++++ xulrunner/app/mozilla.in	Mon Feb 11 00:11:31 2008
+@@ -93,6 +93,7 @@ moz_pis_startstop_scripts()
+ #set -x
+ 
+ moz_libdir=%MOZAPPDIR%
++MOZ_PLUGIN_PATH=${MOZ_PLUGIN_PATH:=_LOCALBASE_/lib/mozilla-plugins}
+ MRE_HOME=%MREDIR%
+ 
+ # Use run-mozilla.sh in the current dir if it exists
+@@ -270,7 +271,11 @@ do
+   esac
+ done
+ 
+-export MRE_HOME
++if [ `_X11BASE_/bin/fc-list | wc -l` -eq 0 ]; then
++	export GDK_USE_XFT=0
++fi
++
++export MOZ_PLUGIN_PATH MRE_HOME
+ 
+ ## Start addon scripts
+ moz_pis_startstop_scripts "start"

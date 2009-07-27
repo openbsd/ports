@@ -1,0 +1,11 @@
+--- xulrunner/setup/nsXULAppInstall.js.orig	Mon Feb 27 14:55:45 2006
++++ xulrunner/setup/nsXULAppInstall.js	Tue Dec 26 08:13:12 2006
+@@ -246,7 +246,7 @@ const AppInstall = {
+ #else
+       aDirectory = Components.classes["@mozilla.org/file/local;1"].
+         createInstance(nsILocalFile);
+-      aDirectory.initWithPath("/usr/lib");
++      aDirectory.initWithPath("_LOCALBASE_");
+       if (vendor)
+         aDirectory.append(vendor.toLowerCase());
+ #endif

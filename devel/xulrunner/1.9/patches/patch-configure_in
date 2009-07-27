@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+--- configure.in.orig	Thu Aug 14 13:00:32 2008
++++ configure.in	Tue Sep 23 20:37:31 2008
+@@ -128,7 +128,7 @@ LIBGNOME_VERSION=2.0
+ STARTUP_NOTIFICATION_VERSION=0.8
+ DBUS_VERSION=0.60
+ LCMS_VERSION=1.17
+-SQLITE_VERSION=3.5.9
++SQLITE_VERSION=3.5
+ 
+ MSMANIFEST_TOOL=
+ 
+@@ -2223,7 +2223,7 @@ case "$target" in
+ 	;;
+ 
+ *-openbsd*)
+-    DLL_SUFFIX=".so.1.0"
++    DLL_SUFFIX=".so.${SO_VERSION}"
+     DSO_CFLAGS=''
+     DSO_PIC_CFLAGS='-fPIC'
+     DSO_LDOPTS='-shared -fPIC'
+@@ -4047,7 +4047,7 @@ MOZ_ARG_WITH_BOOL(system-nss,
+     _USE_SYSTEM_NSS=1 )
+ 
+ if test -n "$_USE_SYSTEM_NSS"; then
+-    AM_PATH_NSS(3.12.0, [MOZ_NATIVE_NSS=1], [MOZ_NATIVE_NSS=])
++    AM_PATH_NSS(3.12, [MOZ_NATIVE_NSS=1], [MOZ_NATIVE_NSS=])
+ fi
+ 
+ if test -n "$MOZ_NATIVE_NSS"; then
