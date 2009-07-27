@@ -1,0 +1,23 @@
+$OpenBSD: patch-cherokee_source_interpreter_c,v 1.1 2009/07/27 17:06:16 sthen Exp $
+
+getgrnam_r() needs a larger buffer on OpenBSD (and some other systems).
+
+--- cherokee/source_interpreter.c.orig	Mon Jun 29 18:43:26 2009
++++ cherokee/source_interpreter.c	Thu Jul 23 23:58:55 2009
+@@ -37,6 +37,7 @@
+ 
+ #define ENTRIES "source,src,interpreter"
+ #define DEFAULT_TIMEOUT 10
++#define GRBUF_SIZE 8192
+ 
+ 
+ static void interpreter_free (void *src);
+@@ -280,7 +281,7 @@ cherokee_source_interpreter_configure (cherokee_source
+ 
+ 		} else if (equal_buf_str (&child->key, "group")) {
+ 			struct group grp;
+-			char         tmp[1024];
++			char         tmp[GRBUF_SIZE];
+ 		
+ 			ret = cherokee_getgrnam (child->val.buf, &grp, tmp, sizeof(tmp));
+ 			if (ret != ret_ok) {

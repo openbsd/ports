@@ -1,0 +1,23 @@
+$OpenBSD: patch-cherokee_server_c,v 1.1 2009/07/27 17:06:16 sthen Exp $
+
+getgrnam_r() needs a larger buffer on OpenBSD (and some other systems).
+
+--- cherokee/server.c.orig	Mon Jun 29 18:17:39 2009
++++ cherokee/server.c	Thu Jul 23 23:59:32 2009
+@@ -88,6 +88,7 @@
+ #include "source_interpreter.h"
+ 
+ #define ENTRIES "core,server"
++#define GRBUF_SIZE 8192
+ 
+ ret_t
+ cherokee_server_new  (cherokee_server_t **srv)
+@@ -1356,7 +1357,7 @@ configure_server_property (cherokee_config_node_t *con
+ 
+ 	} else if (equal_buf_str (&conf->key, "group")) {
+ 		struct group grp;
+-		char         tmp[1024];
++		char         tmp[GRBUF_SIZE];
+ 		
+ 		ret = cherokee_getgrnam (conf->val.buf, &grp, tmp, sizeof(tmp));
+ 		if (ret != ret_ok) {

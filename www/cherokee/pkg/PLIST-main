@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/05/15 06:57:18 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/07/27 17:06:16 sthen Exp $
 @newgroup _cherokee:608
 @newuser _cherokee:608:_cherokee:daemon:Cherokee HTTP Server:/var/empty:/sbin/nologin
 @bin bin/cget
@@ -89,6 +89,10 @@ lib/cherokee/libplugin_fastcgi.so
 lib/cherokee/libplugin_fcgi.so
 @comment lib/cherokee/libplugin_file.la
 lib/cherokee/libplugin_file.so
+@comment lib/cherokee/libplugin_from.la
+lib/cherokee/libplugin_from.so
+@comment lib/cherokee/libplugin_fullpath.la
+lib/cherokee/libplugin_fullpath.so
 @comment lib/cherokee/libplugin_gzip.la
 lib/cherokee/libplugin_gzip.so
 @comment lib/cherokee/libplugin_header.la
@@ -133,8 +137,6 @@ lib/cherokee/libplugin_secdownload.so
 lib/cherokee/libplugin_server_info.so
 @comment lib/cherokee/libplugin_ssi.la
 lib/cherokee/libplugin_ssi.so
-@comment lib/cherokee/libplugin_w3c.la
-lib/cherokee/libplugin_w3c.so
 @comment lib/cherokee/libplugin_wildcard.la
 lib/cherokee/libplugin_wildcard.so
 @comment lib/libcherokee-base.la
@@ -183,6 +185,8 @@ share/cherokee/admin/ModuleExists.py
 share/cherokee/admin/ModuleExtensions.py
 share/cherokee/admin/ModuleFcgi.py
 share/cherokee/admin/ModuleFile.py
+share/cherokee/admin/ModuleFrom.py
+share/cherokee/admin/ModuleFullpath.py
 share/cherokee/admin/ModuleGeoip.py
 share/cherokee/admin/ModuleHandler.py
 share/cherokee/admin/ModuleHeader.py
@@ -225,6 +229,15 @@ share/cherokee/admin/Rule.py
 share/cherokee/admin/RuleList.py
 share/cherokee/admin/Table.py
 share/cherokee/admin/Theme.py
+share/cherokee/admin/Wizard.py
+share/cherokee/admin/Wizard_Django.py
+share/cherokee/admin/Wizard_Drupal.py
+share/cherokee/admin/Wizard_HotLinking.py
+share/cherokee/admin/Wizard_Mailman.py
+share/cherokee/admin/Wizard_PHP.py
+share/cherokee/admin/Wizard_Redirect.py
+share/cherokee/admin/Wizard_RoR.py
+share/cherokee/admin/Wizard_WordPress.py
 share/cherokee/admin/cherokee.conf.sample
 share/cherokee/admin/config.py
 share/cherokee/admin/configured.py
@@ -243,12 +256,15 @@ share/cherokee/admin/static/css/cherokee.css
 share/cherokee/admin/static/css/reset-min.css
 share/cherokee/admin/static/css/thickbox.css
 share/cherokee/admin/static/images/
+share/cherokee/admin/static/images/arrow_ns.png
+share/cherokee/admin/static/images/arrow_ns_h.png
 share/cherokee/admin/static/images/background.png
 share/cherokee/admin/static/images/bin.png
 share/cherokee/admin/static/images/button-left.png
 share/cherokee/admin/static/images/button-right.png
 share/cherokee/admin/static/images/cherokee-logo-bar.png
 share/cherokee/admin/static/images/collapsed.gif
+share/cherokee/admin/static/images/cross.png
 share/cherokee/admin/static/images/dialog-error.png
 share/cherokee/admin/static/images/dialog-information.png
 share/cherokee/admin/static/images/dialog-warning.png
@@ -510,9 +526,20 @@ share/cherokee/admin/static/images/menu-highlight.png
 share/cherokee/admin/static/images/menu-sep.png
 share/cherokee/admin/static/images/offline.png
 share/cherokee/admin/static/images/online.png
+share/cherokee/admin/static/images/rulestable-th.png
 share/cherokee/admin/static/images/tab.png
+share/cherokee/admin/static/images/tick.png
 share/cherokee/admin/static/images/top-bar.png
 share/cherokee/admin/static/images/web_proud.jpg
+share/cherokee/admin/static/images/wizards/
+share/cherokee/admin/static/images/wizards/django.png
+share/cherokee/admin/static/images/wizards/drupal.png
+share/cherokee/admin/static/images/wizards/hotlinking.png
+share/cherokee/admin/static/images/wizards/mailman.png
+share/cherokee/admin/static/images/wizards/php.jpg
+share/cherokee/admin/static/images/wizards/redirect.jpg
+share/cherokee/admin/static/images/wizards/ror.png
+share/cherokee/admin/static/images/wizards/wordpress.png
 share/cherokee/admin/static/images/workarea.png
 share/cherokee/admin/static/js/
 share/cherokee/admin/static/js/common.js
@@ -528,7 +555,9 @@ share/cherokee/admin/static/js/ui.dialog.js
 share/cherokee/admin/static/js/ui.draggable.js
 share/cherokee/admin/static/js/ui.resizable.js
 share/cherokee/admin/static/js/ui.tabs.js
+share/cherokee/admin/static/js/wizards.js
 share/cherokee/admin/status.template.html
+share/cherokee/admin/util.py
 share/cherokee/admin/validations.py
 share/cherokee/deps/
 share/cherokee/deps/cgi.deps

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/05/15 06:57:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2009/07/27 17:06:16 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-ldap =	LDAP module for Cherokee web server
 COMMENT-mysql =	MySQL module for Cherokee web server
 COMMENT-streaming = Streaming module for Cherokee web server
 
-VERSION =	0.99.15
+VERSION =	0.99.20
 DIR =		0.99
 DISTNAME =	cherokee-${VERSION}
 
@@ -65,7 +65,7 @@ RUN_DEPENDS-mysql =	::${BASE_PKGPATH}
 
 LIB_DEPENDS-streaming =	avutil.>=6,avcodec.>=13,avformat.>=12::graphics/ffmpeg \
 			bz2::archivers/bzip2
-WANTLIB-streaming =	crypto
+WANTLIB-streaming =	crypto m
 RUN_DEPENDS-streaming = ::${BASE_PKGPATH}
 
 FLAVORS =	debug
@@ -81,7 +81,8 @@ FAKE_FLAGS =	cherokeeconfdir="${PREFIX}/share/examples/cherokee/etc" \
 CONFIGURE_STYLE =	gnu	
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			PHPCGI="${LOCALBASE}/bin/php-fastcgi"
+			PHPCGI="${LOCALBASE}/bin/php-fastcgi" \
+			ac_cv_func_getgrnam_r=no
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-static \
 			--sysconfdir=${SYSCONFDIR} \

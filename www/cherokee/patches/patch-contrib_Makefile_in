@@ -1,10 +1,10 @@
-$OpenBSD: patch-contrib_Makefile_in,v 1.3 2009/05/15 06:57:18 sthen Exp $
+$OpenBSD: patch-contrib_Makefile_in,v 1.4 2009/07/27 17:06:16 sthen Exp $
 
 remove gratuitous GNUism, allows building with /usr/bin/make
 
---- contrib/Makefile.in.orig	Thu Apr 30 11:20:10 2009
-+++ contrib/Makefile.in	Sun May  3 01:48:23 2009
-@@ -388,7 +388,7 @@ uninstall-am:
+--- contrib/Makefile.in.orig	Tue Jun  9 12:23:53 2009
++++ contrib/Makefile.in	Tue Jun  9 22:35:47 2009
+@@ -389,7 +389,7 @@ uninstall-am:
  
  
  cherokee: cherokee.pre
