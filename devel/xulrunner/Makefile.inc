@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2009/07/27 21:55:49 martynas Exp $
 
 #
 # For legacy reasons (smooth updates), directory is xulrunner.
@@ -14,7 +14,7 @@ COMMENT-devel=		devel files for Gecko
 DISTNAME=		mozilla
 PKGNAME=		xulrunner-${VERSION}
 PKGNAME-main=		xulrunner-${VERSION}${PATCHLEVEL}
-PKGNAME-devel=		xulrunner-devel-${VERSION}
+PKGNAME-devel=		xulrunner-devel-${VERSION}${PATCHLEVEL}
 
 CATEGORIES+=		devel
 
