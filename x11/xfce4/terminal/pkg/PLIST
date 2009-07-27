@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/04/28 19:45:05 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/07/27 19:58:10 landry Exp $
 @bin bin/Terminal
 bin/terminal
 libexec/TerminalHelp
 @man man/man1/Terminal.1
 share/Terminal/
 share/Terminal/Terminal-toolbars.ui
+share/Terminal/Terminal.glade
 share/applications/Terminal.desktop
 share/doc/Terminal/
 share/doc/Terminal/C/
@@ -13,11 +14,7 @@ share/doc/Terminal/C/copyright.html
 share/doc/Terminal/C/faq.html
 share/doc/Terminal/C/getting-started.html
 share/doc/Terminal/C/images/
-share/doc/Terminal/C/images/terminal-applications-dialog.png
-share/doc/Terminal/C/images/terminal-applications-menu.png
-share/doc/Terminal/C/images/terminal-choose-custom-webbrowser.png
 share/doc/Terminal/C/images/terminal-compose-shortcut.png
-share/doc/Terminal/C/images/terminal-edit-applications.png
 share/doc/Terminal/C/images/terminal-edit-preferences.png
 share/doc/Terminal/C/images/terminal-first-time.png
 share/doc/Terminal/C/images/terminal-multiple-tabs.png
@@ -32,17 +29,34 @@ share/doc/Terminal/C/index.html
 share/doc/Terminal/C/preferences.html
 share/doc/Terminal/C/support.html
 share/doc/Terminal/C/usage.html
+share/doc/Terminal/da/
+share/doc/Terminal/da/advanced.html
+share/doc/Terminal/da/copyright.html
+share/doc/Terminal/da/faq.html
+share/doc/Terminal/da/getting-started.html
+share/doc/Terminal/da/images/
+share/doc/Terminal/da/images/terminal-compose-shortcut.png
+share/doc/Terminal/da/images/terminal-edit-preferences.png
+share/doc/Terminal/da/images/terminal-first-time.png
+share/doc/Terminal/da/images/terminal-multiple-tabs.png
+share/doc/Terminal/da/images/terminal-preferences-advanced.png
+share/doc/Terminal/da/images/terminal-preferences-appearance.png
+share/doc/Terminal/da/images/terminal-preferences-colors.png
+share/doc/Terminal/da/images/terminal-preferences-general.png
+share/doc/Terminal/da/images/terminal-preferences-shortcuts.png
+share/doc/Terminal/da/images/terminal-set-title.png
+share/doc/Terminal/da/images/terminal-toolbars.png
+share/doc/Terminal/da/index.html
+share/doc/Terminal/da/preferences.html
+share/doc/Terminal/da/support.html
+share/doc/Terminal/da/usage.html
 share/doc/Terminal/fr/
 share/doc/Terminal/fr/advanced.html
 share/doc/Terminal/fr/copyright.html
 share/doc/Terminal/fr/faq.html
 share/doc/Terminal/fr/getting-started.html
 share/doc/Terminal/fr/images/
-share/doc/Terminal/fr/images/terminal-applications-dialog.png
-share/doc/Terminal/fr/images/terminal-applications-menu.png
-share/doc/Terminal/fr/images/terminal-choose-custom-webbrowser.png
 share/doc/Terminal/fr/images/terminal-compose-shortcut.png
-share/doc/Terminal/fr/images/terminal-edit-applications.png
 share/doc/Terminal/fr/images/terminal-edit-preferences.png
 share/doc/Terminal/fr/images/terminal-first-time.png
 share/doc/Terminal/fr/images/terminal-multiple-tabs.png
@@ -63,11 +77,7 @@ share/doc/Terminal/ja/copyright.html
 share/doc/Terminal/ja/faq.html
 share/doc/Terminal/ja/getting-started.html
 share/doc/Terminal/ja/images/
-share/doc/Terminal/ja/images/terminal-applications-dialog.png
-share/doc/Terminal/ja/images/terminal-applications-menu.png
-share/doc/Terminal/ja/images/terminal-choose-custom-webbrowser.png
 share/doc/Terminal/ja/images/terminal-compose-shortcut.png
-share/doc/Terminal/ja/images/terminal-edit-applications.png
 share/doc/Terminal/ja/images/terminal-edit-preferences.png
 share/doc/Terminal/ja/images/terminal-first-time.png
 share/doc/Terminal/ja/images/terminal-multiple-tabs.png
@@ -98,7 +108,6 @@ share/icons/hicolor/24x24/stock/
 share/icons/hicolor/24x24/stock/navigation/
 share/icons/hicolor/24x24/stock/navigation/stock_terminal-closetab.png
 share/icons/hicolor/24x24/stock/navigation/stock_terminal-closewindow.png
-share/icons/hicolor/24x24/stock/navigation/stock_terminal-fullscreen.png
 share/icons/hicolor/24x24/stock/navigation/stock_terminal-newtab.png
 share/icons/hicolor/24x24/stock/navigation/stock_terminal-newwindow.png
 share/icons/hicolor/24x24/stock/navigation/stock_terminal-reportbug.png
@@ -109,18 +118,16 @@ share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/Terminal.png
 share/icons/hicolor/48x48/stock/
 share/icons/hicolor/48x48/stock/navigation/
-share/icons/hicolor/48x48/stock/navigation/stock_terminal-advanced.png
-share/icons/hicolor/48x48/stock/navigation/stock_terminal-appearance.png
-share/icons/hicolor/48x48/stock/navigation/stock_terminal-colors.png
 share/icons/hicolor/48x48/stock/navigation/stock_terminal-compose.png
-share/icons/hicolor/48x48/stock/navigation/stock_terminal-general.png
-share/icons/hicolor/48x48/stock/navigation/stock_terminal-shortcuts.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/Terminal.svg
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/Terminal.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/Terminal.mo
 share/locale/be/LC_MESSAGES/Terminal.mo
 share/locale/ca/LC_MESSAGES/Terminal.mo
 share/locale/cs/LC_MESSAGES/Terminal.mo
@@ -145,6 +152,9 @@ share/locale/hu/LC_MESSAGES/Terminal.mo
 share/locale/id/LC_MESSAGES/Terminal.mo
 share/locale/it/LC_MESSAGES/Terminal.mo
 share/locale/ja/LC_MESSAGES/Terminal.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/Terminal.mo
 share/locale/ko/LC_MESSAGES/Terminal.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
@@ -173,6 +183,9 @@ share/locale/uk/LC_MESSAGES/Terminal.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/Terminal.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/Terminal.mo
 share/locale/vi/LC_MESSAGES/Terminal.mo
 share/locale/zh_CN/LC_MESSAGES/Terminal.mo
 share/locale/zh_TW/LC_MESSAGES/Terminal.mo
