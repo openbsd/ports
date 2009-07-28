@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/06/10 20:27:09 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2009/07/28 16:00:00 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,7 +6,7 @@ COMMENT=	powerful desktop search tool and indexer
 # as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.94
-PKGNAME=	tracker-search-${VERSION}p2
+PKGNAME=	tracker-search-${VERSION}p3
 
 SHARED_LIBS +=	stemmer              0.0      # .694.0
 SHARED_LIBS +=	tracker-common       0.0      # .694.0
@@ -50,7 +50,7 @@ LIB_DEPENDS=		vorbis::audio/libvorbis \
 			gsf-1::devel/libgsf \
 			notify::devel/libnotify \
 			exif::graphics/libexif \
-			gmime-2.0::mail/gmime \
+			gmime-2.0:gmime->=2.2,<2.4:mail/gmime \
 			gstbase-0.10,gstreamer-0.10::multimedia/gstreamer-0.10/core \
 			poppler-glib,poppler::print/poppler \
 			raptor::textproc/raptor \

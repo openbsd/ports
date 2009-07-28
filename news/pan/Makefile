@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2009/03/08 23:26:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2009/07/28 16:00:00 ajacoutot Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
 V=		0.132
 DISTNAME=	pan-${V}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	news x11
 
 HOMEPAGE=	http://pan.rebelbase.com/
@@ -29,7 +29,7 @@ MODULES=	devel/gettext \
 		textproc/intltool # regress target
 
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		gmime-2.0::mail/gmime \
+		gmime-2.0:gmime->=2.2,<2.4:mail/gmime \
 		gtkspell.>=1::textproc/gtkspell
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
