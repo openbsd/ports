@@ -1,0 +1,2 @@
+ifmcstat is a small tool to dump multicast group management statistics
+per interface.
