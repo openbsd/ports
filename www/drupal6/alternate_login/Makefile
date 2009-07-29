@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/07/27 13:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2009/07/29 11:31:58 espie Exp $
 
 COMMENT =	alternate logins for drupal
 
-DISTNAME = 	alt_login-6.x-1.0
-PKGNAME =	drupal6-alternate-login-1.0p1
+DISTNAME = 	alt_login-6.x-1.1
+PKGNAME =	drupal6-alternate-login-1.1
 
 .include <bsd.port.mk>
