@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/29 11:34:52 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}publishcontent/
+${DRUPAL_MODS}publishcontent/ChangeLog.txt
+${DRUPAL_MODS}publishcontent/LICENSE.txt
+${DRUPAL_MODS}publishcontent/README.txt
+${DRUPAL_MODS}publishcontent/publishcontent.info
+${DRUPAL_MODS}publishcontent/publishcontent.module
+${DRUPAL_MODS}publishcontent/publishcontent_views_handler_field_node_link.inc
+${DRUPAL_MODS}publishcontent/tests/
+${DRUPAL_MODS}publishcontent/tests/publishcontent.test
+${DRUPAL_MODS}publishcontent/translations/
+${DRUPAL_MODS}publishcontent/translations/de.po
+${DRUPAL_MODS}publishcontent/translations/fr.po
+${DRUPAL_MODS}publishcontent/translations/publishcontent.pot
