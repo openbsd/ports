@@ -1,0 +1,15 @@
+$OpenBSD: patch-imap_util_c,v 1.1 2009/07/29 20:26:45 sthen Exp $
+
+add hcache debug, re ticket #3296
+
+--- imap/util.c.orig	Wed Jun 10 05:17:20 2009
++++ imap/util.c	Wed Jul 29 20:48:32 2009
+@@ -129,6 +129,8 @@ HEADER* imap_hcache_get (IMAP_DATA* idata, unsigned in
+   {
+     if (*uv == idata->uid_validity)
+       h = mutt_hcache_restore ((unsigned char*)uv, NULL);
++    else
++      dprint (3, (debugfile, "hcache uidvalidity mismatch: %u", *uv));
+     FREE (&uv);
+   }
+ 
