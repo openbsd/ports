@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/06/14 17:01:56 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/07/30 17:35:35 sturm Exp $
 @conflict redhat_base-*
 emul/
 emul/fedora/
@@ -19,6 +19,7 @@ emul/fedora/etc/default/
 emul/fedora/etc/default/nss
 emul/fedora/etc/fonts/
 emul/fedora/etc/fonts/fonts.conf
+@comment emul/fedora/etc/fonts/fonts.conf.orig
 emul/fedora/etc/fonts/fonts.dtd
 emul/fedora/etc/fonts/local.conf
 emul/fedora/etc/gtk/
@@ -83,6 +84,7 @@ emul/fedora/etc/gtk/gtkrc.zh_TW.big5
 emul/fedora/etc/gtk/gtkrc.zh_TW.utf8
 emul/fedora/etc/ld.so.conf
 emul/fedora/etc/ld.so.conf.d/
+emul/fedora/etc/ld.so.conf.d/qt-${MACHINE_ARCH}.conf
 emul/fedora/etc/ld.so.conf.d/xorg-x11-${MACHINE_ARCH}.conf
 emul/fedora/etc/nsswitch.conf
 emul/fedora/etc/pango/
@@ -900,6 +902,8 @@ emul/fedora/usr/lib/libmenu.so.${LIBmenu_VERSION}
 emul/fedora/usr/lib/libmenuw.so
 emul/fedora/usr/lib/libmenuw.so.5
 emul/fedora/usr/lib/libmenuw.so.${LIBmenuw_VERSION}
+emul/fedora/usr/lib/libmng.so.1
+emul/fedora/usr/lib/libmng.so.1.0.0
 emul/fedora/usr/lib/libncurses.so
 emul/fedora/usr/lib/libncurses.so.5
 emul/fedora/usr/lib/libncurses.so.${LIBncurses_VERSION}
@@ -6005,6 +6009,21 @@ emul/fedora/usr/lib/pango/1.4.0/modules/pango-thai-fc.la
 emul/fedora/usr/lib/pango/1.4.0/modules/pango-thai-fc.so
 emul/fedora/usr/lib/pango/1.4.0/modules/pango-tibetan-fc.la
 emul/fedora/usr/lib/pango/1.4.0/modules/pango-tibetan-fc.so
+emul/fedora/usr/lib/qt-3.3/
+emul/fedora/usr/lib/qt-3.3/bin/
+emul/fedora/usr/lib/qt-3.3/lib/
+emul/fedora/usr/lib/qt-3.3/lib/libqt-mt.so.3
+emul/fedora/usr/lib/qt-3.3/lib/libqt-mt.so.${LIBqt-mt_VERSION}
+emul/fedora/usr/lib/qt-3.3/lib/libqt-mt.so.3.3.4
+emul/fedora/usr/lib/qt-3.3/lib/libqui.so.1
+emul/fedora/usr/lib/qt-3.3/lib/libqui.so.${LIBqui_VERSION}
+emul/fedora/usr/lib/qt-3.3/lib/libqui.so.1.0.0
+emul/fedora/usr/lib/qt-3.3/plugins/
+emul/fedora/usr/lib/qt-3.3/plugins/inputmethods/
+emul/fedora/usr/lib/qt-3.3/plugins/inputmethods/libqimsw-multi.so
+emul/fedora/usr/lib/qt-3.3/plugins/inputmethods/libqimsw-none.so
+emul/fedora/usr/lib/qt-3.3/plugins/inputmethods/libqsimple.so
+emul/fedora/usr/lib/qt-3.3/plugins/inputmethods/libqxim.so
 emul/fedora/usr/libexec/
 emul/fedora/usr/libexec/getconf/
 emul/fedora/usr/libexec/getconf/POSIX_V6_ILP32_OFF32

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/14 17:01:56 jsg Exp $
+# $OpenBSD: Makefile,v 1.10 2009/07/30 17:35:35 sturm Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core 4
 
-PKGNAME=	fedora_base-4.0p5
+PKGNAME=	fedora_base-4.0p6
 # clean up after make plist:
 #	- perl -pi -e "s,^\@lib ,," pkg/PLIST
 #	- change the 2nd LIBXaw_version to LIBXaw7_version in pkg/PLIST
@@ -53,6 +53,8 @@ SHARED_LIBS=	FS	6.0 \
 		panel	5.4 \
 		panelw	5.4 \
 		psres	1.0 \
+		qt-mt	3.3 \
+		qui	1.0 \
 		readline 5.0 \
 		xkbfile	1.0 \
 		xkbui	1.0
@@ -88,6 +90,7 @@ RPMS=		atk-1.9.1-1.i386.rpm \
 		libattr-2.4.24-1.FC4.1.i386.rpm:0 \
 		libgcc-4.0.2-8.fc4.i386.rpm:0 \
 		libjpeg-6b-34.i386.rpm \
+		libmng-1.0.9-1.i386.rpm \
 		libpng-1.2.8-2.i386.rpm \
 		libstdc++-4.0.2-8.fc4.i386.rpm:0 \
 		libtermcap-2.0.8-41.i386.rpm \
@@ -95,6 +98,7 @@ RPMS=		atk-1.9.1-1.i386.rpm \
 		libxml2-2.6.20-1.FC4.i386.rpm:0 \
 		ncurses-5.4-19.fc4.i386.rpm:0 \
 		pango-1.8.1-2.i386.rpm \
+		qt-3.3.4-15.5.i386.rpm:0 \
 		readline-5.0-3.i386.rpm \
 		termcap-5.4-7fc4.noarch.rpm:0 \
 		xorg-x11-deprecated-libs-6.8.2-37.FC4.49.2.1.i386.rpm:0 \
