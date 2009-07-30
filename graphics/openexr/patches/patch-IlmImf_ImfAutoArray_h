@@ -1,0 +1,16 @@
+$OpenBSD: patch-IlmImf_ImfAutoArray_h,v 1.1 2009/07/30 11:56:40 jasper Exp $
+
+Security fix for CVE-2009-1721, patch from Debian.
+Fix freeing uninitialized pointers in Imf::hufUncompress.
+
+--- IlmImf/ImfAutoArray.h.orig	Thu Jul 30 13:50:39 2009
++++ IlmImf/ImfAutoArray.h	Thu Jul 30 13:50:53 2009
+@@ -57,7 +57,7 @@ namespace Imf {
+     {
+       public:
+ 
+-	 AutoArray (): _data (new T [size]) {}
++	 AutoArray (): _data (new T [size]) {memset(_data, 0, size * sizeof(T));}
+ 	~AutoArray () {delete [] _data;}
+ 
+ 	operator T * ()			{return _data;}

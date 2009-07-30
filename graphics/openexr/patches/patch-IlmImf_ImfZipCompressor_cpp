@@ -1,0 +1,25 @@
+$OpenBSD: patch-IlmImf_ImfZipCompressor_cpp,v 1.1 2009/07/30 11:56:40 jasper Exp $
+
+Security fix for CVE-2009-1720, patch from Debian.
+Fix integer overflows in compressor constructors.
+
+--- IlmImf/ImfZipCompressor.cpp.orig	Thu Jul 30 13:48:08 2009
++++ IlmImf/ImfZipCompressor.cpp	Thu Jul 30 13:48:36 2009
+@@ -43,6 +43,7 @@
+ #include <ImfZipCompressor.h>
+ #include "Iex.h"
+ #include <zlib.h>
++#include <climits>
+ 
+ namespace Imf {
+ 
+@@ -58,6 +59,9 @@ ZipCompressor::ZipCompressor
+     _tmpBuffer (0),
+     _outBuffer (0)
+ {
++    if ((unsigned) maxScanLineSize > INT_MAX / (unsigned) numScanLines)
++	 throw Iex::InputExc ("Error: maxScanLineSize * numScanLines would overflow.");
++
+     _tmpBuffer =
+ 	new char [maxScanLineSize * numScanLines];
+ 

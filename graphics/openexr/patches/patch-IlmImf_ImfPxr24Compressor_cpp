@@ -1,0 +1,25 @@
+$OpenBSD: patch-IlmImf_ImfPxr24Compressor_cpp,v 1.1 2009/07/30 11:56:40 jasper Exp $
+
+Security fix for CVE-2009-1720, patch from Debian.
+Fix integer overflows in compressor constructors.
+
+--- IlmImf/ImfPxr24Compressor.cpp.orig	Thu Jul 30 13:46:34 2009
++++ IlmImf/ImfPxr24Compressor.cpp	Thu Jul 30 13:47:01 2009
+@@ -73,6 +73,7 @@
+ #include <zlib.h>
+ #include <assert.h>
+ #include <algorithm>
++#include <climits>
+ 
+ using namespace std;
+ using namespace Imath;
+@@ -186,6 +187,9 @@ Pxr24Compressor::Pxr24Compressor (const Header &hdr,
+     _channels (hdr.channels())
+ {
+     int maxInBytes = maxScanLineSize * numScanLines;
++
++    if ((unsigned) maxScanLineSize > INT_MAX / (unsigned) numScanLines)
++	 throw Iex::InputExc ("Error: maxScanLineSize * numScanLines would overflow.");
+ 
+     _tmpBuffer = new unsigned char [maxInBytes];
+     _outBuffer = new char [int (ceil (maxInBytes * 1.01)) + 100];

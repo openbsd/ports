@@ -1,0 +1,26 @@
+$OpenBSD: patch-IlmImf_ImfPreviewImage_cpp,v 1.1 2009/07/30 11:56:40 jasper Exp $
+
+Security fix for CVE-2009-1720, patch from Debian.
+Fix integer overflow in Imf::PreviewImage::PreviewImage.
+
+--- IlmImf/ImfPreviewImage.cpp.orig	Thu Jul 30 13:43:54 2009
++++ IlmImf/ImfPreviewImage.cpp	Thu Jul 30 13:44:28 2009
+@@ -40,6 +40,7 @@
+ //-----------------------------------------------------------------------------
+ 
+ #include <ImfPreviewImage.h>
++#include <climits>
+ #include "Iex.h"
+ 
+ namespace Imf {
+@@ -51,6 +52,10 @@ PreviewImage::PreviewImage (unsigned int width,
+ {
+     _width = width;
+     _height = height;
++
++    if ((_height && (_width > UINT_MAX / _height)) || (_width * _height > UINT_MAX / sizeof(PreviewRgba)))
++        throw Iex::ArgExc ("Invalid height and width.");
++
+     _pixels = new PreviewRgba [_width * _height];
+ 
+     if (pixels)
