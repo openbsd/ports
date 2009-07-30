@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/07/26 12:20:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/07/30 03:33:38 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}date/
@@ -177,6 +177,7 @@ ${DRUPAL_MODS}date/theme/date-vevent.tpl.php
 ${DRUPAL_MODS}date/theme/date-views-filter-form.tpl.php
 ${DRUPAL_MODS}date/theme/theme.inc
 ${DRUPAL_MODS}date/translations/
+${DRUPAL_MODS}date/translations/date_api.da.po
 ${DRUPAL_MODS}date/translations/date_api.de.po
 ${DRUPAL_MODS}date/translations/date_api.es.po
 ${DRUPAL_MODS}date/translations/date_api.fr.po
