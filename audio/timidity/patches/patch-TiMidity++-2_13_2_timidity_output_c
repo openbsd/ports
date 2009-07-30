@@ -1,0 +1,35 @@
+--- TiMidity++-2.13.2/timidity/output.c.orig	Thu May 13 18:32:34 2004
++++ TiMidity++-2.13.2/timidity/output.c	Tue Mar 24 01:00:15 2009
+@@ -112,6 +112,10 @@ extern PlayMode nas_play_mode;
+ extern PlayMode ao_play_mode;
+ #endif /* AU_AO */
+ 
++#ifdef AU_SNDIO
++extern PlayMode sndio_play_mode;
++#endif /* AU_SNDIO */
++
+ #ifndef __MACOS__
+ /* These are always compiled in. */
+ extern PlayMode raw_play_mode, wave_play_mode, au_play_mode, aiff_play_mode;
+@@ -165,7 +169,7 @@ PlayMode *play_mode_list[] = {
+ 
+ #if defined(AU_JACK)
+   &jack_play_mode,
+-#endif /* AU_PORTAUDIO */
++#endif /* AU_JACK */
+ 
+ #if defined(AU_NAS)
+   &nas_play_mode,
+@@ -173,7 +177,11 @@ PlayMode *play_mode_list[] = {
+ 
+ #if defined(AU_AO)
+   &ao_play_mode,
+-#endif /* AU_PORTAUDIO */
++#endif /* AU_AO */
++
++#if defined(AU_SNDIO)
++  &sndio_play_mode,
++#endif /* AU_SNDIO */
+ 
+ #ifndef __MACOS__
+   &wave_play_mode,

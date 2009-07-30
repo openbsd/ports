@@ -1,0 +1,10 @@
+--- TiMidity++-2.13.2/timidity/Makefile.am.orig	Mon May 31 17:05:29 2004
++++ TiMidity++-2.13.2/timidity/Makefile.am	Tue Mar 24 01:00:25 2009
+@@ -138,6 +138,7 @@ EXTRA_timidity_SOURCES = \
+ 	mfnode.h \
+ 	nas_a.c \
+ 	portaudio_a.c \
++	sndio_a.c \
+ 	sun_a.c \
+ 	vorbis_a.c \
+ 	flac_a.c \

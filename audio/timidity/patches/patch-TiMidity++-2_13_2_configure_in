@@ -1,0 +1,84 @@
+--- TiMidity++-2.13.2/configure.in.orig	Sun Oct  3 05:39:52 2004
++++ TiMidity++-2.13.2/configure.in	Tue Mar 24 01:31:03 2009
+@@ -81,7 +81,7 @@ if test "x$timidity_cv_debug" = "xno"; then
+ fi
+ AC_MSG_RESULT($timidity_cv_debug)
+ 
+-CFLAGS=${CFLAGS-"-O2"}
++dnl CFLAGS=${CFLAGS-"-O2"}
+ 
+ dnl --with-x turns on if `--with-x' is NOT specified.
+ if test "x$with_x" = x; then
+@@ -694,8 +694,9 @@ dnl speex(S):   Ogg Speex
+ dnl gogo(g):    MP3 GOGO
+ dnl jack(j):    JACK
+ dnl ao(O):      Libao
++dnl sndio(s):   sndio
+ 
+-audio_targets='default oss alsa sun hpux irix mme sb_dsp w32 alib nas arts esd vorbis flac gogo portaudio jack ao'
++audio_targets='default oss alsa sun hpux irix mme sb_dsp w32 alib nas arts esd vorbis flac gogo portaudio jack ao sndio'
+ 
+ AC_ARG_WITH(nas-library,
+   [  --with-nas-library=library NAS absolute library path(Don't use -laudio)])
+@@ -722,6 +723,7 @@ AC_ARG_ENABLE(audio,
+                               portaudio: PortAudio
+                               jack:      JACK
+                               ao:        Libao
++                              sndio:     Sndio
+                               vorbis:    Ogg Vorbis
+                               flac:      FLAC / OggFLAC
+                               speex:     Ogg Speex
+@@ -746,7 +748,7 @@ AC_ARG_WITH(default-output,
+   [  --with-default-output=<mode>  Specify default output mode (optional):
+                                 (default|alsa|alib|arts|nas|
+                                 esd|wav|au|aiff|list|vorbis|flac|speex|
+-                                gogo|portaudio|jack|ao)],
++                                gogo|portaudio|jack|ao|sndio)],
+   [ if test "$enable_audio" != no; then
+     DEFAULT_PLAYMODE=$withval
+     eval "au_enable_$DEFAULT_PLAYMODE=yes"
+@@ -1158,6 +1160,22 @@ else
+   AC_MSG_RESULT(no)
+ fi
+ 
++dnl sndio
++AC_MSG_CHECKING(enable_audio=sndio)
++if test "x$au_enable_sndio" = xyes; then
++  AC_MSG_RESULT([yes, configuring sndio])
++  AC_CHECK_HEADERS(sndio.h)
++  if test "x${ac_cv_header_sndio_h}" = xyes ; then
++    EXTRADEFS="$EXTRADEFS -DAU_SNDIO"
++    SYSEXTRAS="$SYSEXTRAS sndio_a.c"
++    EXTRALIBS="$EXTRALIBS -lsndio"
++  else
++    AC_MSG_WARN(Couldn't configure sndio.)
++  fi
++else
++  AC_MSG_RESULT(no)
++fi
++
+ dnl ogg's vorbis
+ AC_MSG_CHECKING(enable_audio=vorbis)
+ if test "x$au_enable_vorbis" = xyes; then
+@@ -1304,6 +1322,8 @@ case ".$DEFAULT_PLAYMODE" in
+   .speex)    TIMIDITY_OUTPUT_ID=S ;;
+   .gogo)     TIMIDITY_OUTPUT_ID=g ;;
+   .jack)     TIMIDITY_OUTPUT_ID=j ;;
++  .ao)       TIMIDITY_OUTPUT_ID=O ;;
++  .sndio)    TIMIDITY_OUTPUT_ID=s ;;
+   *)         TIMIDITY_OUTPUT_ID= ;;
+ esac
+ AC_MSG_RESULT($DEFAULT_PLAYMODE/$TIMIDITY_OUTPUT_ID)
+@@ -1506,10 +1526,10 @@ CONFIG_INTERFACE(slang,SLANG,s,
+     ])
+     AC_CHECK_HEADERS(slang/slang.h slang.h)
+   ],
+-  [ LIBS="$LIBS -lslang"
++  [ LIBS="$LIBS -lslang -ltermcap"
+     INTERFACE_SRCS="$INTERFACE_SRCS slang_c.c"
+   ],
+-  [ s_so_libs="-lslang"
++  [ s_so_libs="-lslang -ltermcap"
+     AC_CHECK_LIB(termcap,initscr,s_so_libs="$s_so_libs -ltermcap")
+   ])
+ 

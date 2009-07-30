@@ -1,0 +1,11 @@
+--- TiMidity++-2.13.2/timidity/freq.c.orig	Tue Sep  7 07:27:26 2004
++++ TiMidity++-2.13.2/timidity/freq.c	Tue Mar 24 01:00:15 2009
+@@ -371,7 +371,7 @@ float freq_fourier(Sample *sp, int *chord)
+     /* go out 2 zero crossings in both directions, starting at maxpos */
+     /* find the peaks after the 2nd crossing */
+     minoffset1 = 0;
+-    for (n = 0, oldamp = origdata[maxpos], i = maxpos - 1; i >= 0 && n < 2; i--)
++    for (n = 0, oldamp = origdata[maxpos], i = maxpos - 1; i > 0 && n < 2; i--)
+     {
+ 	amp = origdata[i];
+ 	if ((oldamp && amp == 0) || (oldamp > 0 && amp < 0) ||

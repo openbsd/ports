@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2007/11/22 12:52:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2009/07/30 19:35:00 jakemsr Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
@@ -20,12 +20,13 @@ PERMIT_PACKAGE_FTP=     copyrighted patches
 PERMIT_DISTFILES_CDROM= copyrighted patches
 PERMIT_DISTFILES_FTP=   copyrighted patches
 
-WANTLIB=		c m ncurses 
+WANTLIB=		c m ncurses sndio
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= --enable-audio=sun \
+CONFIGURE_STYLE=autoconf gnu
+AUTOCONF_VERSION = 2.59
+AUTOMAKE_VERSION = 1.9
+CONFIGURE_ARGS= --enable-audio=sndio,sun \
+		--with-default-output=sndio \
 		--enable-vt100 \
 		--enable-ncurses \
 		--enable-server \
@@ -41,8 +42,9 @@ USE_X11=	Yes
 LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
-		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
-		gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
+		fontconfig freetype glib-2.0 glitz gio-2.0 gmodule-2.0 \
+		gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pixman-1 png z
 .endif
 
 .if ${FLAVOR:L:Mxaw}
@@ -61,6 +63,17 @@ NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DATA_DIRS=	gsdrum00 gsdrum08 gsdrum40
+
+post-patch:
+	cp ${FILESDIR}/sndio_a.c \
+		${WRKSRC}/timidity/sndio_a.c
+	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal -I autoconf
+
+pre-configure:
+	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake \
+		--foreign --add-missing --copy
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/timidity/goemon
