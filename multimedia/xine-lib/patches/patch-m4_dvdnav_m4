@@ -1,0 +1,13 @@
+$OpenBSD: patch-m4_dvdnav_m4,v 1.1 2009/07/30 19:12:44 jakemsr Exp $
+--- m4/dvdnav.m4.orig	Thu Apr 17 09:54:27 2008
++++ m4/dvdnav.m4	Mon Jul 13 17:16:35 2009
+@@ -84,7 +84,8 @@ dnl checks the results of dvdnav-config to some extent
+ dnl
+       rm -f conf.dvdnavtest
+       AC_RUN_IFELSE([AC_LANG_SOURCE([[
+-#include <dvdnav.h>
++#include <stdint.h>
++#include <dvdnav/dvdnav.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

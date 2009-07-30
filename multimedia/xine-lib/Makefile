@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2009/07/14 09:10:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2009/07/30 19:12:44 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	multimedia decoding library
 
 V=		1.1.16.3
 DISTNAME=	xine-lib-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xext Xinerama Xrandr Xrender Xv XvMCW c \
-		expat fontconfig freetype jpeg lcms m pthread sndio \
+		dvdread expat fontconfig freetype jpeg lcms m pthread sndio \
 		usbhid z
 
 XINEAPI_REV=	1.26
@@ -34,7 +34,7 @@ LIB_DEPENDS=	FLAC.>=5::audio/flac \
 		SDL.>=3::devel/sdl \
 		a52::audio/liba52 \
 		avcodec.>=7,avutil.>=6,postproc.>=7::graphics/ffmpeg \
-		dvdnav.>=5::multimedia/libdvdnav \
+		dvdnav.>=6::multimedia/libdvdnav \
 		faad.>=2::audio/faad \
 		mad.>=2::audio/libmad \
 		mng.>=3::graphics/libmng \
