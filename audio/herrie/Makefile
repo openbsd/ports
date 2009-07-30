@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/10/16 17:29:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2009/07/30 19:14:33 jakemsr Exp $
 
 COMMENT=		minimalistic console-based audio player
 
 DISTNAME=		herrie-2.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://herrie.info/
@@ -12,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c ncurses ogg ossaudio pthread
+WANTLIB=		c ncurses ogg pthread
 
 MODULES=		devel/gettext
 
@@ -25,17 +26,20 @@ LIB_DEPENDS=		mad.>=2::audio/libmad \
 			sndfile.>=1::audio/libsndfile \
 			vorbis.>=5,vorbisfile.>=4::audio/libvorbis \
 			glib-2.0.>=1000.0,gthread-2.0.>=1000.0::devel/glib2 \
-			curl.>=9::net/curl
+			curl.>=9::net/curl \
+			ao:libao->=0.8.8p1:audio/libao
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV+= 	CONFDIR=${SYSCONFDIR} \
 			PREFIX=${PREFIX} \
-			LDFLAGS="-lvorbis -logg"
+			LDFLAGS="-lvorbis -logg" \
+			CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS= 	ncurses \
 			no_modplug \
 			no_strip \
 			no_xspf \
-			verbose
+			verbose \
+			ao
 
 NO_REGRESS=		Yes
 
