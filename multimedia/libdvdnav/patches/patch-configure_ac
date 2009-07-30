@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.2 2006/03/28 10:25:10 jakemsr Exp $
---- configure.ac.orig	Sat Mar 25 18:00:02 2006
-+++ configure.ac	Sat Mar 25 18:01:37 2006
-@@ -138,6 +138,11 @@ case $host in
+$OpenBSD: patch-configure_ac,v 1.3 2009/07/30 19:07:15 jakemsr Exp $
+--- configure.ac.orig	Sat Aug 30 06:02:17 2008
++++ configure.ac	Mon Sep 15 17:54:08 2008
+@@ -143,6 +143,11 @@ case $host in
      THREAD_CFLAGS="-I/usr/local/include -D_THREAD_SAFE"
      CFLAGS="$THREAD_CFLAGS $CFLAGS"
      ;;
@@ -13,7 +13,31 @@ $OpenBSD: patch-configure_ac,v 1.2 2006/03/28 10:25:10 jakemsr Exp $
    *mingw32* | *cygwin*)
      ;;
    *)
-@@ -174,7 +179,7 @@ dnl ------------------------------------
+@@ -178,27 +183,16 @@ esac
+ dnl ---------------------------------------------
+ dnl libdvdread
+ dnl ---------------------------------------------
+-AC_ARG_WITH([dvdread-config],
+-  [AS_HELP_STRING([--with-dvdread-config=PROG],
+-    [dvdread-config program to use @<:@default=from PATH@:>@])],
+-  [DVDREAD_CONFIG="$withval"],
+-  [dnl User didn't specify program, search PATH
+-  AC_PATH_PROG([DVDREAD_CONFIG], [dvdread-config], [no])
+-  test "x$DVDREAD_CONFIG" = xno && \
+-    AC_MSG_ERROR([dvdread-config required to link with libdvdread])
+-  ])
+-DVDREAD_CFLAGS=`$DVDREAD_CONFIG --cflags` || \
+-  AC_MSG_ERROR([Could not get libdvdread CFLAGS from $DVDREAD_CONFIG])
+-DVDREAD_LIBS=`$DVDREAD_CONFIG --libs` || \
+-  AC_MSG_ERROR([Could not get libdvdread LIBS from $DVDREAD_CONFIG])
+-AC_SUBST([DVDREAD_CFLAGS])
+-AC_SUBST([DVDREAD_LIBS])
++DVDREAD_CFLAGS="$DVDREAD_CFLAGS"
++DVDREAD_LIBS="$DVDREAD_LIBS"
++AC_SUBST(DVDREAD_CFLAGS)
++AC_SUBST(DVDREAD_LIBS)
+ 
+ dnl ---------------------------------------------
  dnl cflags
  dnl ---------------------------------------------
  dnl Common cflags for all platforms
