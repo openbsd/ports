@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/30 03:37:01 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}globalredirect/
+${DRUPAL_MODS}globalredirect/LICENSE.txt
+${DRUPAL_MODS}globalredirect/globalredirect.admin.inc
+${DRUPAL_MODS}globalredirect/globalredirect.info
+${DRUPAL_MODS}globalredirect/globalredirect.install
+${DRUPAL_MODS}globalredirect/globalredirect.module
+${DRUPAL_MODS}globalredirect/translations/
+${DRUPAL_MODS}globalredirect/translations/de.po
+${DRUPAL_MODS}globalredirect/translations/globalredirect.pot
