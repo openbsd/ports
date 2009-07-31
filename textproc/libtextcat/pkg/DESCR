@@ -1,0 +1,4 @@
+Libtextcat is a library with functions that implement the classification
+technique described in Cavnar & Trenkle, "N-Gram-Based Text
+Categorization". It was primarily developed for language guessing, a
+task on which it is known to perform with near-perfect accuracy.

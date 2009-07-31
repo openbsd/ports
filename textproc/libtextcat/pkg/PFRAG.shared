@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/07/31 15:42:58 ajacoutot Exp $
+@lib lib/libtextcat.so.${LIBtextcat_VERSION}
