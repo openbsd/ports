@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/05/19 15:21:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/07/31 09:55:56 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
 bin/zarafa-autorespond
 @bin bin/zarafa-dagent
+@bin bin/zarafa-fsck
 @bin bin/zarafa-gateway
 @bin bin/zarafa-ical
 @bin bin/zarafa-monitor
@@ -12,17 +13,18 @@ bin/zarafa-autorespond
 @bin bin/zarafa-spooler
 @bin bin/zarafa-stats
 include/icalmapi/
-include/icalmapi/attachments.h
-include/icalmapi/exception_changetype.h
+include/icalmapi/ICalToMAPI.h
+include/icalmapi/MAPIToICal.h
+include/icalmapi/icalitem.h
 include/icalmapi/icalmapi.h
-include/icalmapi/icalmapi_intern.h
+include/icalmapi/icalrecurrence.h
+include/icalmapi/icaluid.h
 include/icalmapi/nameids.h
-include/icalmapi/recurrence.h
-include/icalmapi/timeconversion.h
-include/icalmapi/timezone.h
-include/icalmapi/timezone_type.h
 include/icalmapi/valarm.h
+include/icalmapi/vconverter.h
 include/icalmapi/vevent.h
+include/icalmapi/vtimezone.h
+include/icalmapi/vtodo.h
 include/inetmapi/
 include/inetmapi/ECMapiUtils.h
 include/inetmapi/ECVMIMEUtils.h
@@ -32,6 +34,7 @@ include/inetmapi/VMIMEToMAPI.h
 include/inetmapi/inetmapi.h
 include/inetmapi/inputStreamMAPIAdapter.h
 include/inetmapi/mapiAttachment.h
+include/inetmapi/mapiTextPart.h
 include/inetmapi/options.h
 include/inetmapi/outputStreamMAPIAdapter.h
 include/inetmapi/tnef.h
@@ -48,6 +51,7 @@ include/mapi4linux/mapitags.h
 include/mapi4linux/mapiutil.h
 include/mapi4linux/mapix.h
 include/zarafa/CommonUtil.h
+include/zarafa/ECABEntryID.h
 include/zarafa/ECChannel.h
 include/zarafa/ECConfig.h
 include/zarafa/ECDebug.h
@@ -68,8 +72,12 @@ include/zarafa/IECImportAddressbookChanges.h
 include/zarafa/IECLicense.h
 include/zarafa/IECMultiStoreTable.h
 include/zarafa/IECSecurity.h
+include/zarafa/IECServerBehavior.h
+include/zarafa/IECServerMimic.h
 include/zarafa/IECServiceAdmin.h
+include/zarafa/IECSingleInstance.h
 include/zarafa/IECSpooler.h
+include/zarafa/IECStatsCollector.h
 include/zarafa/IECUnknown.h
 include/zarafa/IMAPIOffline.h
 include/zarafa/RecurrenceState.h
@@ -91,6 +99,7 @@ include/zarafa/my_getopt.h
 include/zarafa/namedprops.h
 include/zarafa/platform.h
 include/zarafa/platform.linux.h
+include/zarafa/recurrence.h
 include/zarafa/restrictionutil.h
 include/zarafa/rtfutil.h
 include/zarafa/str1252.h
@@ -120,6 +129,7 @@ lib/zarafa/ldapplugin.so
 @man man/man1/zarafa-admin.1
 @man man/man1/zarafa-backup.1
 @man man/man1/zarafa-dagent.1
+@man man/man1/zarafa-fsck.1
 @man man/man1/zarafa-gateway.1
 @man man/man1/zarafa-ical.1
 @comment @man man/man1/zarafa-licensed.1
@@ -134,6 +144,7 @@ lib/zarafa/ldapplugin.so
 @man man/man5/zarafa-gateway.cfg.5
 @man man/man5/zarafa-ical.cfg.5
 @man man/man5/zarafa-ldap.cfg.5
+@comment @man man/man5/zarafa-ldapms.cfg.5
 @comment @man man/man5/zarafa-licensed.cfg.5
 @man man/man5/zarafa-monitor.cfg.5
 @man man/man5/zarafa-server.cfg.5
@@ -170,7 +181,6 @@ share/examples/zarafa/ldap.active-directory.cfg
 @sample ${SYSCONFDIR}/zarafa/ldap.active-directory.cfg
 share/examples/zarafa/ldap.openldap.cfg
 @sample ${SYSCONFDIR}/zarafa/ldap.openldap.cfg
-@comment share/examples/zarafa/licensed.cfg
 share/examples/zarafa/monitor.cfg
 @sample ${SYSCONFDIR}/zarafa/monitor.cfg
 share/examples/zarafa/quotamail/
@@ -189,8 +199,6 @@ share/examples/zarafa/quotamail/userwarning.mail
 @sample ${SYSCONFDIR}/zarafa/quotamail/userwarning.mail
 share/examples/zarafa/report-ca/
 @sample ${SYSCONFDIR}/zarafa/report-ca/
-share/examples/zarafa/report-ca/ipsseg.crt
-@sample ${SYSCONFDIR}/zarafa/report-ca/ipsseg.crt
 share/examples/zarafa/server.cfg
 @mode 640
 @group _zarafa

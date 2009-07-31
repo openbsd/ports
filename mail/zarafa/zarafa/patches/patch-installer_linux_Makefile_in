@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot Exp $
---- installer/linux/Makefile.in.orig	Thu Mar 26 14:35:47 2009
-+++ installer/linux/Makefile.in	Fri Apr  3 19:36:34 2009
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.3 2009/07/31 09:55:56 ajacoutot Exp $
+--- installer/linux/Makefile.in.orig	Mon Jul 20 23:26:25 2009
++++ installer/linux/Makefile.in	Thu Jul 23 18:50:05 2009
 @@ -190,6 +190,7 @@ datadir = ${prefix}/share/zarafa
  datarootdir = @datarootdir@
  docdir = @docdir@
@@ -9,21 +9,29 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot 
  exec_prefix = @exec_prefix@
  host = @host@
  host_alias = @host_alias@
-@@ -218,12 +219,8 @@ target_alias = @target_alias@
+@@ -216,18 +217,13 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = /etc/zarafa/report-ca
+ target_alias = @target_alias@
  dist_data_DATA = server.cfg unix.cfg ldap.openldap.cfg ldap.active-directory.cfg \
- 	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg licensed.cfg \
+-	ldapms.openldap.cfg ldapms.active-directory.cfg \
+-	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg licensed.cfg \
++	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg \
  	zarafa.logrotate \
 -	zarafa-server.init.suse zarafa-spooler.init.suse zarafa-gateway.init.suse zarafa-monitor.init.suse zarafa-ical.init.suse \
 -	zarafa-server.init.fc zarafa-spooler.init.fc zarafa-gateway.init.fc zarafa-monitor.init.fc zarafa-ical.init.fc \
 -	zarafa-server.init.cbs4 zarafa-spooler.init.cbs4 zarafa-gateway.init.cbs4 zarafa-monitor.init.cbs4 zarafa-ical.init.cbs4 \
  	db-convert-4.1-to-4.2 db-convert-4.20-to-4.21 db-convert-4.20-to-innodb.sql db-calc-storesize db-convert-attachments-to-files \
 -	createuser.dotforward db-convert-4.2x-to-5.00 ssl-certificates.sh \
--	zarafa-licensed.init.cbs4 zarafa-licensed.init.suse zarafa-licensed.init.fc
+-	zarafa-licensed.init.cbs4 zarafa-licensed.init.suse zarafa-licensed.init.fc zarafa-dagent.init.cbs4 zarafa-dagent.init.suse zarafa-dagent.init.fc
 +	createuser.dotforward db-convert-4.2x-to-5.00 ssl-certificates.sh
  
  dist_bin_SCRIPTS = zarafa-autorespond
- dist_sysconf_DATA = ipsseg.crt
-@@ -290,12 +287,12 @@ distclean-libtool:
+-dist_sysconf_DATA = ipsseg.crt
++dist_sysconf_DATA =
+ all: all-am
+ 
+ .SUFFIXES:
+@@ -291,12 +287,12 @@ distclean-libtool:
  uninstall-info-am:
  install-dist_dataDATA: $(dist_data_DATA)
  	@$(NORMAL_INSTALL)

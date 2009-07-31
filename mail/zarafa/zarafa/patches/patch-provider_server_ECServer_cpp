@@ -1,9 +1,9 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- provider/server/ECServer.cpp.orig	Thu Dec 11 22:35:42 2008
-+++ provider/server/ECServer.cpp	Tue Dec 30 12:13:38 2008
-@@ -66,6 +66,10 @@
- #include "ECSoapServerConnection.h"
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.2 2009/07/31 09:55:56 ajacoutot Exp $
+--- provider/server/ECServer.cpp.orig	Wed Jul 22 16:21:20 2009
++++ provider/server/ECServer.cpp	Wed Jul 22 16:22:03 2009
+@@ -67,6 +67,10 @@
  #include <libintl.h>
+ #include <map>
  
 +#ifdef __OpenBSD__
 +#include <sys/resource.h>
@@ -12,12 +12,12 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.1.1.1 2009/02/16 09:44:37 ajaco
  #ifdef _DEBUG
  #define new DEBUG_NEW
  #undef THIS_FILE
-@@ -447,7 +451,7 @@ int running_server(char *szName, char *szConfig)
- 		{ "mysql_config_file",		"/etc/zarafa/my.cnf" },
+@@ -605,7 +609,7 @@ int running_server(char *szName, char *szConfig)
+ 		{ "mysql_config_file",			"/etc/zarafa/my.cnf" },
  #endif
- 		{ "attachment_storage",		"database" },
--		{ "attachment_path",		"/var/lib/zarafa" },
-+		{ "attachment_path",		"/var/db/zarafa" },
+ 		{ "attachment_storage",			"database" },
+-		{ "attachment_path",			"/var/lib/zarafa" },
++		{ "attachment_path",			"/var/db/zarafa" },
+ 		{ "attachment_compression",		"6" },
  
  		// Log options
- 		{ "log_method",				"file" },

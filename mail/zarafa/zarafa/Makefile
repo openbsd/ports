@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2009/06/19 12:47:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/07/31 09:55:56 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-php=	MAPI extensions for php5
 
-V=		6.20.6
+V=		6.30.0
 DISTNAME=	zarafa-${V}
 
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}
 PKGNAME-php=	php5-mapi-${V}
 
 CATEGORIES=	mail www productivity
@@ -30,17 +30,18 @@ BUILD_DEPENDS=	::www/php5/core \
 		::textproc/xmlto \
 		::net/curl
 
-WANTLIB-main=	asn1 c com_err crypto gssapi krb5 m pthread sasl2 ssl \
-		stdc++ z
+WANTLIB-main=	asn1 c com_err crypto gssapi krb5 m ncurses pthread \
+		sasl2 ssl stdc++ z
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
+		xml2.>=10::textproc/libxml \
 		mysqlclient.>=19::databases/mysql \
 		lber.>=9,ldap::databases/openldap \
 		uuid.>=13::devel/uuid \
 		execinfo::devel/libexecinfo \
 		vmime-zarafa::mail/zarafa/libvmime \
-		ical-zarafa,icalss-zarafa,icalvcal-zarafa::mail/zarafa/libical
+		ical-zarafa.>=1,icalss-zarafa.>=1::mail/zarafa/libical
 
-WANTLIB-php=	execinfo ical-zarafa icalss-zarafa icalvcal-zarafa \
+WANTLIB-php=	execinfo ical-zarafa icalss-zarafa \
 		uuid vmime-zarafa
 LIB_DEPENDS-php= ${MODGETTEXT_LIB_DEPENDS} \
 		common_mapi,common_util,freebusy,icalmapi,inetmapi,mapi::mail/zarafa/zarafa,-main
@@ -70,7 +71,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-oss \
 		--disable-perl \
 		--with-vmime-prefix=${LOCALBASE}/include/zarafa \
-		--with-ical-prefix=${LOCALBASE}/include/zarafa
+		--with-ical-prefix=${LOCALBASE}/include/
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/zarafa/report-ca \
 		USERSCRIPTDIR=${PREFIX}/share/examples/zarafa/userscripts \

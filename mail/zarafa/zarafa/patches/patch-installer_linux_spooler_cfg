@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_spooler_cfg,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- installer/linux/spooler.cfg.orig	Wed Dec 24 15:50:33 2008
-+++ installer/linux/spooler.cfg	Sun Jan 11 14:45:21 2009
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.2 2009/07/31 09:55:56 ajacoutot Exp $
+--- installer/linux/spooler.cfg.orig	Wed Jul 22 16:06:58 2009
++++ installer/linux/spooler.cfg	Wed Jul 22 16:07:44 2009
 @@ -8,16 +8,16 @@ smtp_server	=	localhost
  server_socket	=	file:///var/run/zarafa
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_server_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot Exp $
---- provider/server/Makefile.in.orig	Thu Mar 26 14:35:51 2009
-+++ provider/server/Makefile.in	Fri Apr  3 19:36:34 2009
-@@ -264,9 +264,10 @@ zarafa_server_LDADD = $(UUID_LIBS) $(INTL_LIBS) $(ICON
+$OpenBSD: patch-provider_server_Makefile_in,v 1.3 2009/07/31 09:55:56 ajacoutot Exp $
+--- provider/server/Makefile.in.orig	Thu Jul 23 10:35:54 2009
++++ provider/server/Makefile.in	Thu Jul 23 10:36:33 2009
+@@ -265,10 +265,11 @@ zarafa_server_LDADD = $(UUID_LIBS) $(INTL_LIBS) $(ICON
  	${top_builddir}/provider/soap/libgsoap.la								\
  	${top_builddir}/provider/soap/libsoapserver.la							\
  	${top_builddir}/provider/common/libzarafacommon.la						\
@@ -9,7 +9,9 @@ $OpenBSD: patch-provider_server_Makefile_in,v 1.2 2009/04/03 17:30:40 ajacoutot 
 +	${top_builddir}/mapi4linux/src/libmapi.la								\
  	${top_builddir}/common/libcommon_mapi.la								\
  	${top_builddir}/common/libcommon_ssl.la									\
+-	$(MYSQL_LIBS) $(SSL_LIBS) -lrt
 +	${top_builddir}/common/libcommon_util.la								\
- 	$(MYSQL_LIBS) $(SSL_LIBS) 
++	$(MYSQL_LIBS) $(SSL_LIBS)
  
  zarafa_server_SOURCES = ECServer.cpp  \
+ 						ECSoapServerConnection.h ECSoapServerConnection.cpp \

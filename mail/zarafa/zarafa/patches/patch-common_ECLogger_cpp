@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_ECLogger_cpp,v 1.1 2009/07/31 09:55:56 ajacoutot Exp $
+--- common/ECLogger.cpp.orig	Tue Jul 28 11:24:00 2009
++++ common/ECLogger.cpp	Tue Jul 28 11:24:18 2009
+@@ -272,8 +272,8 @@ ECLogger* CreateLogger(ECConfig *lpConfig, char *argv0
+ 			lpLogger = new ECLogger_File(atoi(lpConfig->GetSetting("log_level")), atoi(lpConfig->GetSetting("log_timestamp")), lpConfig->GetSetting("log_file"));
+ 			// chown file
+ 			if (pw || gr) {
+-				uid_t uid = -1;
+-				gid_t gid = -1;
++				uid_t uid;
++				gid_t gid;
+ 				if (pw)
+ 					uid = pw->pw_uid;
+ 				if (gr)

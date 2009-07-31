@@ -1,15 +1,6 @@
-$OpenBSD: patch-ECtools_ECTestTools_IMAPTest_IMAPtest_cpp,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
+$OpenBSD: patch-ECtools_ECTestTools_IMAPTest_IMAPtest_cpp,v 1.2 2009/07/31 09:55:56 ajacoutot Exp $
 --- ECtools/ECTestTools/IMAPTest/IMAPtest.cpp.orig	Wed Dec 24 20:17:57 2008
 +++ ECtools/ECTestTools/IMAPTest/IMAPtest.cpp	Sat Jan 10 16:33:23 2009
-@@ -108,7 +108,7 @@ int ReadResponse(std::string &strLine){
-         bFound=false;
-         if(strLine.substr(strLine.size()-3,1)=="}"){
-             c=0;
--            while(c < strLine.size()-4 && strLine.substr(strLine.size()-(4+c),1)!="{"){
-+            while(c < (int)strLine.size()-4 && strLine.substr(strLine.size()-(4+c),1)!="{"){
-                 c++;
-             }
-             if(strLine.substr(strLine.size()-(4+c),1)=="{"){
 @@ -167,7 +167,11 @@ void Log(LogLevelEnum loglvl, std::string strLog){
      struct tm *tm;
      std::string strLvl;

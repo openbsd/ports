@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.1.1.1 2009/02/16 09:44:38 ajacoutot Exp $
---- installer/linux/server.cfg.orig	Wed Dec 24 15:50:33 2008
-+++ installer/linux/server.cfg	Sun Jan 11 14:46:32 2009
-@@ -33,16 +33,16 @@ local_admin_users	= root
+$OpenBSD: patch-installer_linux_server_cfg,v 1.2 2009/07/31 09:55:56 ajacoutot Exp $
+--- installer/linux/server.cfg.orig	Mon Jul 20 18:41:00 2009
++++ installer/linux/server.cfg	Fri Jul 24 11:35:45 2009
+@@ -36,16 +36,16 @@ local_admin_users	= root
  system_email_address	= postmaster@localhost
  
  # drop privileges and run the process as this user
@@ -22,7 +22,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.1.1.1 2009/02/16 09:44:38 ajacout
  
  # session timeout for clients. Values lower than 300 will be upped to 300
  # automatically. If the server hears nothing from a client in session_timeout
-@@ -50,7 +50,7 @@ running_path = /
+@@ -53,7 +53,7 @@ running_path = /
  session_timeout		= 300
  
  # Socket to connect to for license server
@@ -31,16 +31,16 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.1.1.1 2009/02/16 09:44:38 ajacout
  
  ##############################################################
  # LOG SETTINGS
-@@ -89,7 +89,7 @@ mysql_database		= zarafa
+@@ -92,7 +92,7 @@ mysql_database		= zarafa
  attachment_storage	= database
  
  # When attachment_storage is 'files', use this path to store the files
 -attachment_path		= /var/lib/zarafa
 +attachment_path		= /var/db/zarafa
  
- ##############################################################
- #  SSL SETTINGS
-@@ -101,19 +101,19 @@ server_ssl_enabled	= no
+ # Compression level for attachments when attachment_storage is 'files'.
+ # Set compression level for attachments disabled=0, max=9
+@@ -108,19 +108,19 @@ server_ssl_enabled	= no
  server_ssl_port		= 237
  
  # Required Server certificate, contains the certificate and the private key parts
@@ -64,8 +64,11 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.1.1.1 2009/02/16 09:44:38 ajacout
  
  
  ##############################################################
-@@ -178,21 +178,21 @@ companyquota_warn      = 0
+@@ -187,23 +187,24 @@ companyquota_warn      = 0
+ # Name of the plugin that handles users
+ # Required, default = ldap
  # Values: ldap, unix, db
++# note: the unix plugin is not supported under OpenBSD
  user_plugin		= db
  
 -# configuration file of the user plugin, examples can be found in /usr/share/zarafa/example-config
@@ -95,3 +98,9 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.1.1.1 2009/02/16 09:44:38 ajacout
  
  ##############################################################
  # MISC SETTINGS
+@@ -250,4 +251,4 @@ client_update_enabled = false
+ 
+ # Place the correct Zarafa Outlook Client in this directory for
+ # Windows clients to download through the Zarafa server
+-client_update_path = /var/lib/zarafa/client
++client_update_path = /var/db/zarafa/client
