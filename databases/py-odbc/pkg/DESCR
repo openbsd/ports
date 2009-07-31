@@ -1,0 +1,4 @@
+pyodbc is a MIT-licensed Python module that allows you to use ODBC
+to connect to almost any database from Windows, Linux, OS/X, and
+more. It implements the Python Database API Specification v2.0 and
+additional features to simplify database programming.  
