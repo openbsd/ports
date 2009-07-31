@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.269 2009/06/13 07:50:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.270 2009/07/31 15:43:53 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -50,6 +50,7 @@
      SUBDIR += lgrind
      SUBDIR += libebml
      SUBDIR += libical
+     SUBDIR += libtextcat
      SUBDIR += libwpd
      SUBDIR += libxml
      SUBDIR += libxml++
