@@ -1,6 +1,6 @@
-$OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.1.1.1 2009/02/16 09:43:39 ajacoutot Exp $
---- php-webclient-ajax/config.php.dist.orig	Wed Dec 24 15:50:05 2008
-+++ php-webclient-ajax/config.php.dist	Thu Jan  8 11:22:48 2009
+$OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.2 2009/07/31 09:56:48 ajacoutot Exp $
+--- php-webclient-ajax/config.php.dist.orig	Mon Jul 20 18:40:05 2009
++++ php-webclient-ajax/config.php.dist	Fri Jul 24 00:43:57 2009
 @@ -11,9 +11,9 @@
  	define("CONFIG_CHECK", TRUE);
  
@@ -11,9 +11,9 @@ $OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.1.1.1 2009/02/16 09:43:39
 -	#define("DEFAULT_SERVER","http://localhost:236/zarafa");
 +	define("DEFAULT_SERVER","http://localhost:236/zarafa");
  
- 	// Name of the cookie that is used for the session, we can also use an external cookie
- 	if (isset($_REQUEST["external"]) && preg_match("/[a-z][a-z0-9_]+/i",$_REQUEST["external"])){
-@@ -43,7 +43,8 @@
+ 	// When using a single-signon system on your webserver, but Zarafa is on another server
+ 	// you can use https to access the zarafa server, and authenticate using an SSL certificate.
+@@ -51,7 +51,8 @@
  	// Define the server paths
  	set_include_path(BASE_PATH. PATH_SEPARATOR . 
  	                 BASE_PATH."server/PEAR/" .  PATH_SEPARATOR . 
@@ -23,7 +23,7 @@ $OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.1.1.1 2009/02/16 09:43:39
  
  	// Define the relative URL for dialogs, this string is appended with HTTP GET arguments
  	define("DIALOG_URL", "index.php?load=dialog&");
-@@ -83,7 +84,7 @@
+@@ -105,7 +106,7 @@
  
  	// Spellchecker, change here to enable
  	define('FCKEDITOR_SPELLCHECKER_ENABLED', false);
