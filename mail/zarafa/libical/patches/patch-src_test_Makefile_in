@@ -1,86 +1,111 @@
-$OpenBSD: patch-src_test_Makefile_in,v 1.1.1.1 2009/02/16 09:41:15 ajacoutot Exp $
---- src/test/Makefile.in.orig	Wed Jan 28 21:51:47 2009
-+++ src/test/Makefile.in	Wed Jan 28 21:54:01 2009
-@@ -82,7 +82,7 @@ python_val = @python_val@
- 
- noinst_PROGRAMS = copycluster regression parser storage stow recur testmime testvcal process testclassify
- 
--LDADD = ../libicalss/.libs/libicalss.a ../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a 
-+LDADD = ../libicalss/.libs/libicalss-zarafa.a ../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a 
- 
- INCLUDES =         -I. 				       -I../libicalvcal 		       -I$(srcdir)/../libicalvcal 	       -I$(srcdir) 			       -I../libical 			       -I$(srcdir)/../libical 		       -I../libicalss 			       -I$(srcdir)/../libicalss           
- 
-@@ -109,53 +109,53 @@ LDFLAGS = @LDFLAGS@
- LIBS = @LIBS@
- copycluster_OBJECTS =  copycluster.o
+$OpenBSD: patch-src_test_Makefile_in,v 1.2 2009/07/31 09:55:01 ajacoutot Exp $
+--- src/test/Makefile.in.orig	Tue Nov 25 17:28:22 2008
++++ src/test/Makefile.in	Thu Jul 23 15:09:31 2009
+@@ -59,29 +59,29 @@ copycluster_SOURCES = copycluster.c
+ copycluster_OBJECTS = copycluster.$(OBJEXT)
  copycluster_LDADD = $(LDADD)
--copycluster_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
--../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
-+copycluster_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
-+../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
- copycluster_LDFLAGS = 
- regression_OBJECTS =  regression.o
- regression_LDADD = $(LDADD)
--regression_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
--../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
-+regression_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
-+../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
- regression_LDFLAGS = 
- parser_OBJECTS =  icaltestparser.o
+ @WITH_CXX_BINDINGS_TRUE@am__DEPENDENCIES_1 =  \
+-@WITH_CXX_BINDINGS_TRUE@	../libical/libical_cxx.la
++@WITH_CXX_BINDINGS_TRUE@	../libical/libical_cxx-zarafa.la
+ am__DEPENDENCIES_2 =
+-copycluster_DEPENDENCIES = ../libicalss/libicalss.la \
+-	../libicalvcal/libicalvcal.la $(am__DEPENDENCIES_1) \
+-	../libical/libical.la $(am__DEPENDENCIES_2)
++copycluster_DEPENDENCIES = ../libicalss/libicalss-zarafa.la \
++	../libicalvcal/libicalvcal-zarafa.la $(am__DEPENDENCIES_1) \
++	../libical/libical-zarafa.la $(am__DEPENDENCIES_2)
+ am_parser_OBJECTS = icaltestparser.$(OBJEXT)
+ parser_OBJECTS = $(am_parser_OBJECTS)
  parser_LDADD = $(LDADD)
--parser_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
--../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
-+parser_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
-+../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
- parser_LDFLAGS = 
- storage_OBJECTS =  storage.o
- storage_LDADD = $(LDADD)
--storage_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
--../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
-+storage_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
-+../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
- storage_LDFLAGS = 
- stow_OBJECTS =  stow.o
- stow_LDADD = $(LDADD)
--stow_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
--../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
-+stow_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
-+../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
- stow_LDFLAGS = 
- recur_OBJECTS =  recur.o
- recur_LDADD = $(LDADD)
--recur_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
--../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
-+recur_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
-+../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
- recur_LDFLAGS = 
- testmime_OBJECTS =  testmime.o
- testmime_LDADD = $(LDADD)
--testmime_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
--../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
-+testmime_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
-+../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
- testmime_LDFLAGS = 
- testvcal_OBJECTS =  testvcal.o
- testvcal_LDADD = $(LDADD)
--testvcal_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
--../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
-+testvcal_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
-+../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
- testvcal_LDFLAGS = 
- process_OBJECTS =  process.o
+-parser_DEPENDENCIES = ../libicalss/libicalss.la \
+-	../libicalvcal/libicalvcal.la $(am__DEPENDENCIES_1) \
+-	../libical/libical.la $(am__DEPENDENCIES_2)
++parser_DEPENDENCIES = ../libicalss/libicalss-zarafa.la \
++	../libicalvcal/libicalvcal-zarafa.la $(am__DEPENDENCIES_1) \
++	../libical/libical-zarafa.la $(am__DEPENDENCIES_2)
+ process_SOURCES = process.c
+ process_OBJECTS = process.$(OBJEXT)
  process_LDADD = $(LDADD)
--process_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
--../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
-+process_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
-+../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
- process_LDFLAGS = 
- testclassify_OBJECTS =  testclassify.o
- testclassify_LDADD = $(LDADD)
--testclassify_DEPENDENCIES =  ../libicalss/.libs/libicalss.a \
--../libicalvcal/.libs/libicalvcal.a ../libical/.libs/libical.a
-+testclassify_DEPENDENCIES =  ../libicalss/.libs/libicalss-zarafa.a \
-+../libicalvcal/.libs/libicalvcal-zarafa.a ../libical/.libs/libical-zarafa.a
- testclassify_LDFLAGS = 
- CFLAGS = @CFLAGS@
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+-process_DEPENDENCIES = ../libicalss/libicalss.la \
+-	../libicalvcal/libicalvcal.la $(am__DEPENDENCIES_1) \
+-	../libical/libical.la $(am__DEPENDENCIES_2)
++process_DEPENDENCIES = ../libicalss/libicalss-zarafa.la \
++	../libicalvcal/libicalvcal-zarafa.la $(am__DEPENDENCIES_1) \
++	../libical/libical-zarafa.la $(am__DEPENDENCIES_2)
+ recur_SOURCES = recur.c
+ recur_OBJECTS = recur.$(OBJEXT)
+ recur_LDADD = $(LDADD)
+-recur_DEPENDENCIES = ../libicalss/libicalss.la \
+-	../libicalvcal/libicalvcal.la $(am__DEPENDENCIES_1) \
+-	../libical/libical.la $(am__DEPENDENCIES_2)
++recur_DEPENDENCIES = ../libicalss/libicalss-zarafa.la \
++	../libicalvcal/libicalvcal-zarafa.la $(am__DEPENDENCIES_1) \
++	../libical/libical-zarafa.la $(am__DEPENDENCIES_2)
+ am__regression_SOURCES_DIST = regression.c regression.h \
+ 	regression-component.c regression-classify.c \
+ 	regression-utils.c regression-recur.c regression-storage.c \
+@@ -93,33 +93,33 @@ am_regression_OBJECTS = regression.$(OBJEXT) \
+ 	regression-storage.$(OBJEXT) $(am__objects_1)
+ regression_OBJECTS = $(am_regression_OBJECTS)
+ regression_LDADD = $(LDADD)
+-regression_DEPENDENCIES = ../libicalss/libicalss.la \
+-	../libicalvcal/libicalvcal.la $(am__DEPENDENCIES_1) \
+-	../libical/libical.la $(am__DEPENDENCIES_2)
++regression_DEPENDENCIES = ../libicalss/libicalss-zarafa.la \
++	../libicalvcal/libicalvcal-zarafa.la $(am__DEPENDENCIES_1) \
++	../libical/libical-zarafa.la $(am__DEPENDENCIES_2)
+ stow_SOURCES = stow.c
+ stow_OBJECTS = stow.$(OBJEXT)
+ stow_LDADD = $(LDADD)
+-stow_DEPENDENCIES = ../libicalss/libicalss.la \
+-	../libicalvcal/libicalvcal.la $(am__DEPENDENCIES_1) \
+-	../libical/libical.la $(am__DEPENDENCIES_2)
++stow_DEPENDENCIES = ../libicalss/libicalss-zarafa.la \
++	../libicalvcal/libicalvcal-zarafa.la $(am__DEPENDENCIES_1) \
++	../libical/libical-zarafa.la $(am__DEPENDENCIES_2)
+ testmime_SOURCES = testmime.c
+ testmime_OBJECTS = testmime.$(OBJEXT)
+ testmime_LDADD = $(LDADD)
+-testmime_DEPENDENCIES = ../libicalss/libicalss.la \
+-	../libicalvcal/libicalvcal.la $(am__DEPENDENCIES_1) \
+-	../libical/libical.la $(am__DEPENDENCIES_2)
++testmime_DEPENDENCIES = ../libicalss/libicalss-zarafa.la \
++	../libicalvcal/libicalvcal-zarafa.la $(am__DEPENDENCIES_1) \
++	../libical/libical-zarafa.la $(am__DEPENDENCIES_2)
+ testvcal_SOURCES = testvcal.c
+ testvcal_OBJECTS = testvcal.$(OBJEXT)
+ testvcal_LDADD = $(LDADD)
+-testvcal_DEPENDENCIES = ../libicalss/libicalss.la \
+-	../libicalvcal/libicalvcal.la $(am__DEPENDENCIES_1) \
+-	../libical/libical.la $(am__DEPENDENCIES_2)
++testvcal_DEPENDENCIES = ../libicalss/libicalss-zarafa.la \
++	../libicalvcal/libicalvcal-zarafa.la $(am__DEPENDENCIES_1) \
++	../libical/libical-zarafa.la $(am__DEPENDENCIES_2)
+ timezones_SOURCES = timezones.c
+ timezones_OBJECTS = timezones.$(OBJEXT)
+ timezones_LDADD = $(LDADD)
+-timezones_DEPENDENCIES = ../libicalss/libicalss.la \
+-	../libicalvcal/libicalvcal.la $(am__DEPENDENCIES_1) \
+-	../libical/libical.la $(am__DEPENDENCIES_2)
++timezones_DEPENDENCIES = ../libicalss/libicalss-zarafa.la \
++	../libicalvcal/libicalvcal-zarafa.la $(am__DEPENDENCIES_1) \
++	../libical/libical-zarafa.la $(am__DEPENDENCIES_2)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -292,13 +292,13 @@ regression_SOURCES = regression.c regression.h regress
+ @WITH_CXX_BINDINGS_FALSE@cxx_inc = 
+ @WITH_CXX_BINDINGS_TRUE@cxx_inc = -DWITH_CXX_BINDINGS
+ @WITH_CXX_BINDINGS_FALSE@cxx_libs = 
+-@WITH_CXX_BINDINGS_TRUE@cxx_libs = ../libical/libical_cxx.la
++@WITH_CXX_BINDINGS_TRUE@cxx_libs = ../libical/libical_cxx-zarafa.la
+ @WITH_BDB4_FALSE@bdb4_inc = 
+ @WITH_BDB4_TRUE@bdb4_inc = -DWITH_BDB -I@BDB_DIR@/include
+ @WITH_BDB4_FALSE@bdb4_libs = 
+ @WITH_BDB4_TRUE@bdb4_libs = @BDB_DIR_LIB@/@BDB_LIB@
+ @OS_WIN32_FALSE@STOW = stow
+-LDADD = ../libicalss/libicalss.la ../libicalvcal/libicalvcal.la $(cxx_libs) ../libical/libical.la $(bdb4_libs)
++LDADD = ../libicalss/libicalss-zarafa.la ../libicalvcal/libicalvcal-zarafa.la $(cxx_libs) ../libical/libical-zarafa.la $(bdb4_libs)
+ INCLUDES = \
+ 	-I$(top_srcdir)					\
+ 	-I$(top_srcdir)/src				\

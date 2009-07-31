@@ -1,21 +1,28 @@
-$OpenBSD: patch-src_libicalss_Makefile_in,v 1.1.1.1 2009/02/16 09:41:15 ajacoutot Exp $
---- src/libicalss/Makefile.in.orig	Wed Jan 28 21:46:10 2009
-+++ src/libicalss/Makefile.in	Wed Jan 28 21:47:50 2009
-@@ -80,7 +80,7 @@ VERSION = @VERSION@
- YACC = @YACC@
- python_val = @python_val@
- 
--lib_LTLIBRARIES = libicalss.la
-+lib_LTLIBRARIES = libicalss-zarafa.la
- 
- YFLAGS = -d -v -p ss
- LFLAGS = -Pss 
-@@ -209,7 +209,7 @@ distclean-libtool:
- 
- maintainer-clean-libtool:
- 
--libicalss.la: $(libicalss_la_OBJECTS) $(libicalss_la_DEPENDENCIES)
-+libicalss-zarafa.la: $(libicalss_la_OBJECTS) $(libicalss_la_DEPENDENCIES)
+$OpenBSD: patch-src_libicalss_Makefile_in,v 1.2 2009/07/31 09:55:01 ajacoutot Exp $
+--- src/libicalss/Makefile.in.orig	Tue Nov 25 17:28:16 2008
++++ src/libicalss/Makefile.in	Thu Jul 23 15:22:57 2009
+@@ -296,10 +296,10 @@ AM_LFLAGS = -Pss 
+ @WITH_BDB4_TRUE@libicalssinclude_BDBHEADERS = icalbdbset.h icalbdbsetimpl.h
+ @WITH_BDB4_TRUE@BDB_LIBFILES = @BDB_DIR_LIB@/@BDB_LIB@
+ @WITH_CXX_BINDINGS_FALSE@cxx_lib = 
+-@WITH_CXX_BINDINGS_TRUE@cxx_lib = libicalss_cxx.la
++@WITH_CXX_BINDINGS_TRUE@cxx_lib = libicalss_cxx-zarafa.la
+ @WITH_CXX_BINDINGS_FALSE@cxx_headers = 
+ @WITH_CXX_BINDINGS_TRUE@cxx_headers = icalspanlist_cxx.h
+-lib_LTLIBRARIES = libicalss.la $(cxx_lib)
++lib_LTLIBRARIES = libicalss-zarafa.la $(cxx_lib)
+ INCLUDES = \
+ 	-I$(top_srcdir)/src	\
+ 	-I$(top_builddir)/src	\
+@@ -423,9 +423,9 @@ icalssyacc.h: icalssyacc.c
+ 	  rm -f icalssyacc.c; \
+ 	  $(MAKE) icalssyacc.c; \
+ 	else :; fi
+-libicalss.la: $(libicalss_la_OBJECTS) $(libicalss_la_DEPENDENCIES) 
++libicalss-zarafa.la: $(libicalss_la_OBJECTS) $(libicalss_la_DEPENDENCIES) 
  	$(LINK) -rpath $(libdir) $(libicalss_la_LDFLAGS) $(libicalss_la_OBJECTS) $(libicalss_la_LIBADD) $(LIBS)
- .l.c:
- 	$(LEX) $(AM_LFLAGS) $(LFLAGS) $< && mv $(LEX_OUTPUT_ROOT).c $@
+-libicalss_cxx.la: $(libicalss_cxx_la_OBJECTS) $(libicalss_cxx_la_DEPENDENCIES) 
++libicalss_cxx-zarafa.la: $(libicalss_cxx_la_OBJECTS) $(libicalss_cxx_la_DEPENDENCIES) 
+ 	$(CXXLINK) $(am_libicalss_cxx_la_rpath) $(libicalss_cxx_la_LDFLAGS) $(libicalss_cxx_la_OBJECTS) $(libicalss_cxx_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:

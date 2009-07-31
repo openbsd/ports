@@ -1,21 +1,39 @@
-$OpenBSD: patch-src_libicalvcal_Makefile_in,v 1.1.1.1 2009/02/16 09:41:15 ajacoutot Exp $
---- src/libicalvcal/Makefile.in.orig	Wed Jan 28 21:48:14 2009
-+++ src/libicalvcal/Makefile.in	Wed Jan 28 21:48:37 2009
-@@ -80,7 +80,7 @@ VERSION = @VERSION@
- YACC = @YACC@
- python_val = @python_val@
- 
+$OpenBSD: patch-src_libicalvcal_Makefile_in,v 1.2 2009/07/31 09:55:01 ajacoutot Exp $
+--- src/libicalvcal/Makefile.in.orig	Tue Nov 25 17:28:18 2008
++++ src/libicalvcal/Makefile.in	Thu Jul 23 14:53:37 2009
+@@ -60,7 +60,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" \
+ 	"$(DESTDIR)$(libicalvcalincludedir)"
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+-libicalvcal_la_DEPENDENCIES = ../libical/.libs/libical.la
++libicalvcal_la_DEPENDENCIES = ../libical/.libs/libical-zarafa.la
+ am__libicalvcal_la_SOURCES_DIST = icalvcal.h icalvcal.c port.h vcc.h \
+ 	vobject.h vobject.c vcaltmp.h vcaltmp.c vcc.c vcc.y
+ @DEV_FALSE@am__objects_1 = vcc.lo
+@@ -228,7 +228,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
 -lib_LTLIBRARIES = libicalvcal.la
 +lib_LTLIBRARIES = libicalvcal-zarafa.la
+ INCLUDES = \
+ 	-I$(top_srcdir)			\
+ 	-I$(top_srcdir)/src		\
+@@ -238,7 +238,7 @@ INCLUDES = \
+ 	-I$(top_srcdir)/src/libicalss
  
- INCLUDES =  	-I$(top_builddir)		-I$(top_srcdir)/src/libical		-I$(top_srcdir)/src/libicalss		-I$(srcdir)
- 
-@@ -200,7 +200,7 @@ distclean-libtool:
- 
- maintainer-clean-libtool:
- 
--libicalvcal.la: $(libicalvcal_la_OBJECTS) $(libicalvcal_la_DEPENDENCIES)
-+libicalvcal-zarafa.la: $(libicalvcal_la_OBJECTS) $(libicalvcal_la_DEPENDENCIES)
+ libicalvcal_la_LDFLAGS = -version-info 42:0:42
+-libicalvcal_la_LIBADD = ../libical/.libs/libical.la
++libicalvcal_la_LIBADD = ../libical/.libs/libical-zarafa.la
+ @DEV_FALSE@libicalvcal_la_DEVSOURCES = vcc.c
+ @DEV_TRUE@libicalvcal_la_DEVSOURCES = vcc.y
+ libicalvcal_la_SOURCES = \
+@@ -325,7 +325,7 @@ clean-libLTLIBRARIES:
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libicalvcal.la: $(libicalvcal_la_OBJECTS) $(libicalvcal_la_DEPENDENCIES) 
++libicalvcal-zarafa.la: $(libicalvcal_la_OBJECTS) $(libicalvcal_la_DEPENDENCIES) 
  	$(LINK) -rpath $(libdir) $(libicalvcal_la_LDFLAGS) $(libicalvcal_la_OBJECTS) $(libicalvcal_la_LIBADD) $(LIBS)
- .y.c:
- 	$(YACC) $(AM_YFLAGS) $(YFLAGS) $< && mv y.tab.c $*.c
+ 
+ mostlyclean-compile:

@@ -1,23 +1,33 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.1.1.1 2009/02/16 09:41:15 ajacoutot Exp $
---- examples/Makefile.in.orig	Wed Jan 28 21:57:41 2009
-+++ examples/Makefile.in	Wed Jan 28 21:58:36 2009
-@@ -82,7 +82,7 @@ python_val = @python_val@
- 
- noinst_PROGRAMS = doesnothing
- 
--LDADD = ../src/libical/libical.la ../src/libicalss/libicalss.la ../src/libicalvcal/libicalvcal.la
-+LDADD = ../src/libical/libical-zarafa.la ../src/libicalss/libicalss-zarafa.la ../src/libicalvcal/libicalvcal-zarafa.la
- 
- INCLUDES = -I. -I../src/libical -I$(srcdir)/../src/libical -I../src/libicalss -I../src/libicalvcal
- 
-@@ -101,8 +101,8 @@ LIBS = @LIBS@
- doesnothing_OBJECTS =  access_components.o \
- access_properties_and_parameters.o errors.o main.o parse_text.o
- doesnothing_LDADD = $(LDADD)
--doesnothing_DEPENDENCIES =  ../src/libical/libical.la \
--../src/libicalss/libicalss.la ../src/libicalvcal/libicalvcal.la
-+doesnothing_DEPENDENCIES =  ../src/libical/libical-zarafa.la \
-+../src/libicalss/libicalss-zarafa.la ../src/libicalvcal/libicalvcal-zarafa.la
- doesnothing_LDFLAGS = 
- CFLAGS = @CFLAGS@
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+$OpenBSD: patch-examples_Makefile_in,v 1.2 2009/07/31 09:55:01 ajacoutot Exp $
+--- examples/Makefile.in.orig	Tue Nov 25 17:28:08 2008
++++ examples/Makefile.in	Thu Jul 23 14:58:03 2009
+@@ -54,12 +54,12 @@ am_doesnothing_OBJECTS = access_components.$(OBJEXT) \
+ 	access_properties_and_parameters.$(OBJEXT) errors.$(OBJEXT) \
+ 	main.$(OBJEXT) parse_text.$(OBJEXT)
+ doesnothing_OBJECTS = $(am_doesnothing_OBJECTS)
+-@WITH_BDB4_FALSE@doesnothing_DEPENDENCIES = ../src/libical/libical.la \
+-@WITH_BDB4_FALSE@	../src/libicalss/libicalss.la \
+-@WITH_BDB4_FALSE@	../src/libicalvcal/libicalvcal.la
+-@WITH_BDB4_TRUE@doesnothing_DEPENDENCIES = ../src/libical/libical.la \
+-@WITH_BDB4_TRUE@	../src/libicalss/libicalss.la \
+-@WITH_BDB4_TRUE@	../src/libicalvcal/libicalvcal.la
++@WITH_BDB4_FALSE@doesnothing_DEPENDENCIES = ../src/libical/libical-zarafa.la \
++@WITH_BDB4_FALSE@	../src/libicalss/libicalss-zarafa.la \
++@WITH_BDB4_FALSE@	../src/libicalvcal/libicalvcal-zarafa.la
++@WITH_BDB4_TRUE@doesnothing_DEPENDENCIES = ../src/libical/libical-zarafa.la \
++@WITH_BDB4_TRUE@	../src/libicalss/libicalss-zarafa.la \
++@WITH_BDB4_TRUE@	../src/libicalvcal/libicalvcal-zarafa.la
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+@@ -215,8 +215,8 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-@WITH_BDB4_FALSE@doesnothing_LDADD = ../src/libical/libical.la ../src/libicalss/libicalss.la ../src/libicalvcal/libicalvcal.la
+-@WITH_BDB4_TRUE@doesnothing_LDADD = ../src/libical/libical.la ../src/libicalss/libicalss.la ../src/libicalvcal/libicalvcal.la @BDB_DIR_LIB@/@BDB_LIB@
++@WITH_BDB4_FALSE@doesnothing_LDADD = ../src/libical/libical-zarafa.la ../src/libicalss/libicalss-zarafa.la ../src/libicalvcal/libicalvcal-zarafa.la
++@WITH_BDB4_TRUE@doesnothing_LDADD = ../src/libical/libical-zarafa.la ../src/libicalss/libicalss-zarafa.la ../src/libicalvcal/libicalvcal-zarafa.la @BDB_DIR_LIB@/@BDB_LIB@
+ INCLUDES = -I. -I../src  -I../src/libical -I$(srcdir)/../src/libical -I../src/libicalss -I../src/libicalvcal 
+ doesnothing_SOURCES = \
+ 	access_components.c \

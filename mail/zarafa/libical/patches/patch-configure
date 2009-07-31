@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1 2009/07/31 09:55:01 ajacoutot Exp $
+--- configure.orig	Tue Nov 25 17:28:34 2008
++++ configure	Thu Jul 23 15:05:19 2009
+@@ -1908,7 +1908,7 @@ fi
+ 
+ 
+ # Define the identity of the package.
+- PACKAGE='libical'
++ PACKAGE='zarafa-libical'
+  VERSION='0.42'
+ 
+ 
+@@ -20545,6 +20545,16 @@ case "${host}" in
+         *-*-freebsdelf4* )
+ 		echo "$as_me:$LINENO: result: checking for pthread_create in -lpthread... -pthread (FreeBSD 4.x style)" >&5
+ echo "${ECHO_T}checking for pthread_create in -lpthread... -pthread (FreeBSD 4.x style)" >&6
++
++cat >>confdefs.h <<\_ACEOF
++#define HAVE_PTHREAD
++_ACEOF
++
++		PTHREAD_LIBS=-pthread;;
++
++        *openbsd* )
++		echo "$as_me:$LINENO: result: checking for pthread_create in -pthread..." >&5
++echo "${ECHO_T}checking for pthread_create in -pthread..." >&6
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_PTHREAD
