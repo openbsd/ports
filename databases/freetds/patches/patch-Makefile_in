@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2005/12/26 19:15:22 sturm Exp $
---- Makefile.in.orig	Wed Mar 30 02:51:55 2005
-+++ Makefile.in	Mon Dec 26 13:16:21 2005
-@@ -576,13 +576,6 @@ uninstall-info: uninstall-info-recursive
+$OpenBSD: patch-Makefile_in,v 1.6 2009/08/01 14:11:19 sthen Exp $
+--- Makefile.in.orig	Wed May  7 23:59:24 2008
++++ Makefile.in	Thu Oct 30 14:17:32 2008
+@@ -687,13 +687,6 @@ uninstall-info: uninstall-info-recursive
  
  
  install-data-local:
@@ -13,5 +13,5 @@ $OpenBSD: patch-Makefile_in,v 1.5 2005/12/26 19:15:22 sturm Exp $
 -		$(INSTALL_DATA) $(srcdir)/locales.conf $(ETC)/locales.conf; \
 -	fi
  
- # do not uninstall configuration files (they may have been changed)
- @DISTCHECK_BUILD_TRUE@uninstall-local:
+ clean-local:
+ 	find . \( -name \*.test_output -o -name \*.bb -o -name \*.bbg -o -name \*.da -o -name \*.gc\* \) -exec rm -f {} \;
