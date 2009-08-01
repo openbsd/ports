@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/02/01 22:54:43 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/08/01 03:28:47 fgsch Exp $
 bin/moin
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/Page.py
@@ -568,6 +568,12 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080000.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080000.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080100.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080100.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080200.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080200.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080300.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080300.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080400.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1080400.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/_conv160.py
@@ -749,6 +755,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/theme/modern.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/theme/modern.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/theme/modernized.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/theme/modernized.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/theme/modernized_cms.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/theme/modernized_cms.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/theme/rightsidebar.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/theme/rightsidebar.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/user.py
@@ -1354,6 +1362,7 @@ share/moin/htdocs/applets/FCKeditor/editor/lang/he.js
 share/moin/htdocs/applets/FCKeditor/editor/lang/hi.js
 share/moin/htdocs/applets/FCKeditor/editor/lang/hr.js
 share/moin/htdocs/applets/FCKeditor/editor/lang/hu.js
+share/moin/htdocs/applets/FCKeditor/editor/lang/is.js
 share/moin/htdocs/applets/FCKeditor/editor/lang/it.js
 share/moin/htdocs/applets/FCKeditor/editor/lang/ja.js
 share/moin/htdocs/applets/FCKeditor/editor/lang/km.js
@@ -1464,6 +1473,10 @@ share/moin/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.end.gif
 share/moin/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.expand.gif
 share/moin/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.separator.gif
 share/moin/htdocs/applets/FCKeditor/editor/skins/silver/images/toolbar.start.gif
+share/moin/htdocs/applets/FCKeditor/editor/wsc/
+share/moin/htdocs/applets/FCKeditor/editor/wsc/ciframe.html
+share/moin/htdocs/applets/FCKeditor/editor/wsc/tmpFrameset.html
+share/moin/htdocs/applets/FCKeditor/editor/wsc/w.html
 share/moin/htdocs/applets/FCKeditor/fckconfig.js
 share/moin/htdocs/applets/FCKeditor/fckeditor.afp
 share/moin/htdocs/applets/FCKeditor/fckeditor.asp
@@ -1830,6 +1843,7 @@ share/moin/server/mointwisted.cmd
 share/moin/server/mointwisted.py
 share/moin/server/test.wsgi
 share/moin/server/wikiserver.py
+share/moin/server/wikiserverconfig.py
 share/moin/underlay/
 share/moin/underlay/pages/
 share/moin/underlay/pages/AbandonedPages/
@@ -1951,7 +1965,6 @@ share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip3a.png
 share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip3b.png
 share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip5.png
 share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip6.png
-share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip6b.png
 share/moin/underlay/pages/HelpOnActions(2f)AttachFile/attachments/unzip7.png
 share/moin/underlay/pages/HelpOnActions(2f)AttachFile/current
 share/moin/underlay/pages/HelpOnActions(2f)AttachFile/revisions/
@@ -2086,6 +2099,10 @@ share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withFastCgi/
 share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withFastCgi/current
 share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withFastCgi/revisions/
 share/moin/underlay/pages/HelpOnInstalling(2f)ApacheOnWin32withFastCgi/revisions/00000001
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy/
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy/current
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy/revisions/
+share/moin/underlay/pages/HelpOnInstalling(2f)ApacheWithCherryPy/revisions/00000001
 share/moin/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/
 share/moin/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/current
 share/moin/underlay/pages/HelpOnInstalling(2f)ApacheWithModPython/revisions/
@@ -2123,6 +2140,8 @@ share/moin/underlay/pages/HelpOnInstalling(2f)TroubleShooting/current
 share/moin/underlay/pages/HelpOnInstalling(2f)TroubleShooting/revisions/
 share/moin/underlay/pages/HelpOnInstalling(2f)TroubleShooting/revisions/00000001
 share/moin/underlay/pages/HelpOnInstalling(2f)TwistedWeb/
+share/moin/underlay/pages/HelpOnInstalling(2f)TwistedWeb/attachments/
+share/moin/underlay/pages/HelpOnInstalling(2f)TwistedWeb/attachments/servicerunner.py
 share/moin/underlay/pages/HelpOnInstalling(2f)TwistedWeb/current
 share/moin/underlay/pages/HelpOnInstalling(2f)TwistedWeb/revisions/
 share/moin/underlay/pages/HelpOnInstalling(2f)TwistedWeb/revisions/00000001
@@ -2476,12 +2495,12 @@ share/moin/underlay/pages/SystemPagesInEnglishGroup/revisions/
 share/moin/underlay/pages/SystemPagesInEnglishGroup/revisions/00000001
 share/moin/underlay/pages/SystemPagesSetup/
 share/moin/underlay/pages/SystemPagesSetup/attachments/
+share/moin/underlay/pages/SystemPagesSetup/attachments/BrazilianPortuguese.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Bulgarian.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Croatian.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Czech.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Danish.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Dutch.zip
-share/moin/underlay/pages/SystemPagesSetup/attachments/EuropeanPortuguese.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/Finnish.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/French.zip
 share/moin/underlay/pages/SystemPagesSetup/attachments/German.zip
