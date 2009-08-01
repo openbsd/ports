@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2009/02/11 15:20:19 ajacoutot Exp $
---- configure.orig	Thu Apr 10 12:38:54 2008
-+++ configure	Tue Feb 10 16:34:10 2009
+$OpenBSD: patch-configure,v 1.7 2009/08/01 14:14:24 sthen Exp $
+--- configure.orig	Thu Apr 10 11:38:54 2008
++++ configure	Fri Jul 31 12:07:03 2009
 @@ -23474,7 +23474,6 @@ fi
  
  
@@ -9,24 +9,15 @@ $OpenBSD: patch-configure,v 1.6 2009/02/11 15:20:19 ajacoutot Exp $
  *) lib="lib";;
  esac
  
-@@ -24123,7 +24122,7 @@ then
- echo $ECHO_N "checking for freetds files... $ECHO_C" >&6; }
- 	for d in $dir /usr/local/freetds /usr /opt/freetds /opt/packages/freetds /opt/freetds-0.50
- 	do
--		if test -f "$d/include/tds.h" -a -e "$d/$lib/libtds$libext" -a -f "$d/include/tdsver.h"
-+		if [ -f "$d/include/tds.h" ] && [ -f "$d/include/tdsver.h" ]
+@@ -23716,7 +23715,7 @@ echo "${ECHO_T}found ODBC in $d" >&6; }
+ 			odbcdir=$d
+ 			break
+ 		fi
+-		if test -f $d/$lib/libiodbc$libext -a -f $d/include/sql.h
++		if test -f $d/$lib/libiodbc$libext* -a -f $d/include/sql.h
  		then
- 			{ echo "$as_me:$LINENO: result: found freetds in $d" >&5
- echo "${ECHO_T}found freetds in $d" >&6; }
-@@ -24146,7 +24145,7 @@ echo "$as_me: WARNING: tds backend not used" >&2;}
- 	else
- 		{ echo "$as_me:$LINENO: checking for freetds version" >&5
- echo $ECHO_N "checking for freetds version... $ECHO_C" >&6; }
--		freetdsvercheck="`grep \"^#define \(VERSION_NO \|TDS_VERSION_NO \)\" $freetds_incdir/tdsver.h|sed 's|^.*".*v\(.*\)"|\1|'`"
-+		freetdsvercheck="`grep "#define TDS_VERSION_NO" $freetds_incdir/tdsver.h|sed 's|^.*".*v\(.*\)"|\1|'`"
- 		if test "x$freetdsvercheck" = "x"
- 		then
- 			{ echo "$as_me:$LINENO: WARNING: freetds version check failed - backend not used" >&5
+ 			{ echo "$as_me:$LINENO: result: found iODBC in $d" >&5
+ echo "${ECHO_T}found iODBC in $d" >&6; }
 @@ -24970,7 +24969,7 @@ then
          microvers=`sqlite3 -version | cut -d '.' -f 3`
          { echo "$as_me:$LINENO: checking for sqlite version" >&5

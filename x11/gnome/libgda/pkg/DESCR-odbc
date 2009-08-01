@@ -2,4 +2,4 @@ GNOME Data Access (GDA) is an attempt to provide uniform access to
 different kinds of data sources (databases, information servers, mail
 spools, etc).
 
-This package provides the FreeTDS backend for libgda.
+This package provides the ODBC backend for libgda.

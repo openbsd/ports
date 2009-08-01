@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/23 07:31:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/01 14:14:24 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT-ldap=		LDAP backend for libgda
 COMMENT-mdb=		MS Access MDB backend for libgda
 COMMENT-mysql=		MySQL backend for libgda
 COMMENT-pgsql=		PostreSQL backend for libgda
-COMMENT-tds=		FreeTDS backend for libgda
+COMMENT-odbc=		ODBC backend for libgda
 
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		3.0.4
@@ -17,7 +17,7 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}p1v0
 PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}p1v0
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}p1v0
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}p1v0
-PKGNAME-tds=		libgda-tds-${GNOME_VERSION}p1v0
+PKGNAME-odbc=		libgda-odbc-${GNOME_VERSION}
 
 CATEGORIES=		databases
 
@@ -45,7 +45,7 @@ MODULES=		devel/gettext \
 
 SUBST_VARS=		GDA_MAJOR
 
-PSEUDO_FLAVORS=		no_ldap no_mdb no_mysql no_pgsql no_tds
+PSEUDO_FLAVORS=		no_ldap no_mdb no_mysql no_pgsql
 FLAVOR?=
 
 MULTI_PACKAGES=		-main
@@ -67,7 +67,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-bdb="${LOCALBASE}" \
 			--without-firebird \
 			--without-ibmdb2 \
-			--without-odbc \
 			--without-oracle \
 			--without-sybase \
 			--without-xbase
@@ -120,15 +119,18 @@ LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
 CONFIGURE_ARGS+=	--with-postgres="${LOCALBASE}"
 .endif
 
-.if ${FLAVOR:L:Mno_tds}
-CONFIGURE_ARGS+=	--without-tds
+.if ${FLAVOR:L:Mno_odbc}
+CONFIGURE_ARGS+=	--without-odbc
 .else
-MULTI_PACKAGES+=	-tds
-WANTLIB-tds=		${WANTLIB}
-LIB_DEPENDS-tds=	${LIB_DEPENDS} \
-			gda-3.0,gdasql-3.0::x11/gnome/libgda \
-			tds::databases/freetds
-CONFIGURE_ARGS+=	--with-tds="${LOCALBASE}" 
+MULTI_PACKAGES+=	-odbc
+WANTLIB-odbc=		${WANTLIB}
+LIB_DEPENDS-odbc=	${LIB_DEPENDS} \
+			iodbc::databases/iodbc \
+			gda-3.0,gdasql-3.0::x11/gnome/libgda
+CONFIGURE_ARGS+=	--with-odbc="${LOCALBASE}"
 .endif
+
+# abuses freetds API
+CONFIGURE_ARGS+=	--without-tds
 
 .include <bsd.port.mk>
