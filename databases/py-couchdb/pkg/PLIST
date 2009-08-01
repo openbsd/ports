@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/04 21:02:14 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/08/01 03:20:19 fgsch Exp $
 bin/couchdb-dump
 bin/couchdb-load
 bin/couchdb-replicate
@@ -18,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/couchdb/client.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/client.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/design.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/design.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/json.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/json.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/multipart.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/multipart.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/schema.py
