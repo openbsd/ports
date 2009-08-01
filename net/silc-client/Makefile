@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2009/03/29 09:13:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2009/08/01 12:58:06 sthen Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
-DISTNAME=	silc-client-1.1.7
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	silc-client-1.1.8
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/
@@ -38,6 +37,7 @@ SUBST_VARS=	CONFDIR
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
+# Should be 2.63
 AUTOCONF_VERSION= 2.61
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV+= ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
