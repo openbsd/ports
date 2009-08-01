@@ -1,17 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.4 2008/03/22 23:06:50 sthen Exp $
---- configure.ac.orig	Sun Nov 18 07:37:58 2007
-+++ configure.ac	Sat Mar  1 00:11:02 2008
-@@ -50,6 +50,9 @@ case "$target" in
-   *-*-netbsd*)
-     check_threads=true
-     ;;
-+  *-*-openbsd*)
-+    check_threads=true
-+    ;;
-   *-*-*bsd*)
-     check_threads=false
-     ;;
-@@ -94,9 +97,6 @@ AM_CONDITIONAL(SILC_X86_64, test x$cpu_x86_64 = xtrue)
+$OpenBSD: patch-configure_ac,v 1.5 2009/08/01 09:21:55 sthen Exp $
+--- configure.ac.orig	Sat Aug  1 10:15:08 2009
++++ configure.ac	Sat Aug  1 10:15:08 2009
+@@ -97,9 +97,6 @@ AM_CONDITIONAL(SILC_X86_64, test x$cpu_x86_64 = xtrue)
  AM_CONDITIONAL(SILC_POWERPC, test x$cpu_ppc = xtrue)
  AM_CONDITIONAL(SILC_IA64, test x$cpu_ia64 = xtrue)
  
@@ -21,7 +11,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2008/03/22 23:06:50 sthen Exp $
  AC_PROG_CC
  AC_C_INLINE
  AC_C_CONST
-@@ -468,59 +468,9 @@ fi
+@@ -471,59 +468,9 @@ fi
  ## Compiler and compiler flag checks
  ##
  
@@ -83,7 +73,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2008/03/22 23:06:50 sthen Exp $
  #
  # Workaround a bug in GCC 2.x which causes memory exhaustion
  # when compiling sha1 with optimizations on UltraSPARC.
-@@ -575,55 +525,6 @@ AC_DEFINE_UNQUOTED([SILC_DOCDIR], "$DOCDIR", [SILC_DOC
+@@ -578,55 +525,6 @@ AC_DEFINE_UNQUOTED([SILC_DOCDIR], "$DOCDIR", [SILC_DOC
  # SILC library checking
  compile_libs=true
  LIBSUBDIR=lib
