@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/09 00:21:29 espie Exp $
-bin/sqsh
+@comment $OpenBSD: PLIST,v 1.5 2009/08/01 14:11:45 sthen Exp $
+@bin bin/sqsh
 @man man/man1/sqsh.1
 share/examples/sqsh/
 share/examples/sqsh/global.sqshrc

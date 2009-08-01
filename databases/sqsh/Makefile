@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 20:34:03 simon Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/01 14:11:45 sthen Exp $
 
 DISTNAME=	sqsh-2.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	databases shells
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqsh/} ${HOMEPAGE}
 EXTRACT_SUFX=	-src.tar.gz
 
 MODULES=	devel/gettext
-LIB_DEPENDS=	tds.>=3,ct.>=2::databases/freetds
+LIB_DEPENDS=	ct.>=2::databases/freetds
 
 CONFIGURE_STYLE= gnu old
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf
