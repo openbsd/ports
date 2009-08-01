@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_update-desktop-database_c,v 1.5 2009/08/01 16:06:28 ajacoutot Exp $
+
+Under OpenBSD, desktop files are installed using INSTALL_DATA which is
+defined in ports/infrastructure/mk/bsd.port.mk as:
+    ${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE}
+SHAREMODE is defined under /usr/share/mk/bsd.own.mk as "444".
+
+That means desktop files are installed with mode 444 which is wrong
+because fd.o environments use these files to create menu structures,
+links to applications... and a user should be able to edit the link icon
+or menu he just created.
+
+--- src/update-desktop-database.c.orig	Sat Aug  1 08:11:42 2009
++++ src/update-desktop-database.c	Sat Aug  1 08:11:23 2009
+@@ -272,6 +272,10 @@ process_desktop_files (const char  *desktop_dir,
+         }
+ 
+       name = g_strdup_printf ("%s%s", prefix, filename);
++
++      if (chmod(full_path, 0644) != 0)
++          printf("Cannot give 644 perms to :%s", full_path);
++
+       process_desktop_file (full_path, name, &process_error);
+       g_free (name);
+ 
