@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/06/04 17:56:14 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/02 18:39:44 ian Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += gdal
@@ -8,6 +8,7 @@
      SUBDIR += gpstk
      SUBDIR += gpsbabel
      SUBDIR += jeoip
+     SUBDIR += josm
      SUBDIR += libchamplain
      SUBDIR += mapserver
      SUBDIR += openbsd-developers
