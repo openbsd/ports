@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/13 23:24:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/02 12:32:36 sthen Exp $
 
 COMMENT=	GL Extension Wrangler library
 
 DISTNAME=	glew-1.5.1-src
-PKGNAME=	${DISTNAME:S/-src//}
+PKGNAME=	${DISTNAME:S/-src//}p0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=glew/}
 EXTRACT_SUFX=	.tgz
@@ -43,7 +43,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/glewinfo ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/visualinfo ${PREFIX}/bin
 	if [ -f ${WRKSRC}/lib/libGLEW.so.* ]; then \
-	    ${INSTALL_PROGRAM} ${WRKSRC}/lib/libGLEW.so.* ${PREFIX}/lib; \
+	    ${INSTALL_DATA} ${WRKSRC}/lib/libGLEW.so.* ${PREFIX}/lib; \
 	fi
 	${INSTALL_DATA} ${WRKSRC}/lib/libGLEW.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/include/GL/*.h ${PREFIX}/include/GL

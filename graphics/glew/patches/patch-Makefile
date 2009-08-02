@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/04/13 23:24:01 sthen Exp $
---- Makefile.orig	Mon Apr 13 02:13:48 2009
-+++ Makefile	Mon Apr 13 02:15:10 2009
+$OpenBSD: patch-Makefile,v 1.2 2009/08/02 12:32:36 sthen Exp $
+--- Makefile.orig	Sun Aug  2 06:31:42 2009
++++ Makefile	Sun Aug  2 06:32:54 2009
 @@ -59,7 +59,7 @@ else
  OPT = $(POPT)
  endif
@@ -10,15 +10,17 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/04/13 23:24:01 sthen Exp $
  
  LIB.SRCS = src/glew.c
  LIB.OBJS = $(LIB.SRCS:.c=.o)
-@@ -85,11 +85,6 @@ lib/$(LIB.STATIC): $(LIB.OBJS)
+@@ -84,12 +84,7 @@ lib/$(LIB.STATIC): $(LIB.OBJS)
+ 	$(AR) cr $@ $^
  
  lib/$(LIB.SHARED): $(LIB.SOBJS)
- 	$(LD) $(LDFLAGS.SO) -o $@ $^ $(LIB.LDFLAGS) $(LIB.LIBS)
+-	$(LD) $(LDFLAGS.SO) -o $@ $^ $(LIB.LDFLAGS) $(LIB.LIBS)
 -ifeq ($(patsubst mingw%,mingw,$(SYSTEM)), mingw)
 -else
 -	$(LN) $(LIB.SHARED) lib/$(LIB.SONAME)
 -	$(LN) $(LIB.SHARED) lib/$(LIB.DEVLNK)
 -endif
++	$(LD) $(LDFLAGS.SO) -fPIC -o $@ $^ $(LIB.LDFLAGS) $(LIB.LIBS)
  
  bin/$(GLEWINFO.BIN): $(GLEWINFO.BIN.SRCS) lib/$(LIB.SHARED)
  	$(CC) $(CFLAGS) -o $@ $(GLEWINFO.BIN.SRCS) $(BIN.LIBS)
