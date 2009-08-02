@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_glob_glob_c,v 1.1 2009/08/02 15:32:01 naddy Exp $
+--- lib/glob/glob.c.orig	Thu Jul 30 22:29:19 2009
++++ lib/glob/glob.c	Thu Jul 30 22:30:07 2009
+@@ -1018,14 +1018,6 @@ glob_filename (pathname, flags)
+       if ((flags & GX_GLOBSTAR) && filename[0] == '*' && filename[1] == '*' && filename[2] == '\0')
+ 	{
+ 	  dflags |= GX_ALLDIRS|GX_ADDCURDIR;
+-#if 0
+-	  /* If we want all directories (dflags & GX_ALLDIRS) and we're not
+-	     being called recursively as something like `echo **/*.o'
+-	     ((flags & GX_ALLDIRS) == 0), we want to prevent glob_vector from
+-	     adding a null directory name to the front of the temp_results
+-	     array.  We turn off ADDCURDIR if not called recursively and
+-	     dlen == 0 */
+-#endif
+ 	  if (directory_len == 0 && (flags & GX_ALLDIRS) == 0)
+ 	    dflags &= ~GX_ADDCURDIR;
+ 	}

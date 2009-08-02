@@ -23,6 +23,10 @@ MD5 (bash/bash40-021) = WF1wG5eM62OWfcAg2zoiNA==
 MD5 (bash/bash40-022) = enDyYI+Q9qwMIFHl8cbEFA==
 MD5 (bash/bash40-023) = eiOqQWMN1P6NMBCKIA4tlg==
 MD5 (bash/bash40-024) = grpfyet4DrV9i3YooXt9dA==
+MD5 (bash/bash40-025) = sm+QB6xO71w3jxq8uJWQJQ==
+MD5 (bash/bash40-026) = g7yETILQowdA6Nkagji/qQ==
+MD5 (bash/bash40-027) = pBwYfwXsqwc4nBisyRIUxg==
+MD5 (bash/bash40-028) = /MNn5kcSZ9LjlyV+cDuBfQ==
 RMD160 (bash/bash-4.0.tar.gz) = gquksstHXCAwkEqdIq9iCN+oXrM=
 RMD160 (bash/bash40-001) = uPHBAAtc0S7O554ppz89V20K02g=
 RMD160 (bash/bash40-002) = vTYYBrz+MkVwY467GhJ/GX1eN1Y=
@@ -48,6 +52,10 @@ RMD160 (bash/bash40-021) = BXvsxwa5ClxV1RuqQl7pVG4/oJI=
 RMD160 (bash/bash40-022) = qcE0smDNS94dLDNStS3PXg8zNHY=
 RMD160 (bash/bash40-023) = 2/c+vptjrOthBoqfEzptSpRq95U=
 RMD160 (bash/bash40-024) = SExu9OC76Ifs/3VNsYqiXmIHVSk=
+RMD160 (bash/bash40-025) = P9ZMdSw+nzJHJFUkfeUv0IvuEYI=
+RMD160 (bash/bash40-026) = XtzoPUkQ4frcAE8LNbGoTWJKLfw=
+RMD160 (bash/bash40-027) = maK6WpsT2AA5mClm99GFMzh/ZrE=
+RMD160 (bash/bash40-028) = vJnpBOJRofMKlDWa/ELKIiX7Tyk=
 SHA1 (bash/bash-4.0.tar.gz) = K77TCHn59CTAkahGpIERwn0LI3A=
 SHA1 (bash/bash40-001) = 3EfVR77JOK/NezgoFv7IQHfzQS8=
 SHA1 (bash/bash40-002) = IdyUUSZUffA+N6O2jMS4C3iLnaY=
@@ -73,6 +81,10 @@ SHA1 (bash/bash40-021) = oceFBC+SuFVk3rQdFCqU3QRbnaw=
 SHA1 (bash/bash40-022) = cGA0STGoZrB3VOsLnUkDnfQTIFM=
 SHA1 (bash/bash40-023) = 5szbwUX4EgnARUHL/La6Vh5/6Oo=
 SHA1 (bash/bash40-024) = NHHmgxZ5gNyyl76+F/NGRt9WDOY=
+SHA1 (bash/bash40-025) = zNmNuwnxOyQMqVmG7FWuX0PjWbM=
+SHA1 (bash/bash40-026) = OangIz79WCj5LsdiVkNVf+Yo/gY=
+SHA1 (bash/bash40-027) = UJdu9zfOPAGVegWO9bSW4VLr56w=
+SHA1 (bash/bash40-028) = uz2Dt57TV8hr91/EHq8G6RPoTBA=
 SHA256 (bash/bash-4.0.tar.gz) = l5PTlPZAqVAwx31ayYlySv4ZaSGVbbdBvK8UGAHFBRg=
 SHA256 (bash/bash40-001) = 47UUIE5dp78a7PfQmBUUsjZ9S1KdptSkXQncKeLwAxs=
 SHA256 (bash/bash40-002) = SVEX5WYBm5ywq0lQSUWzDN2m5bWVl+Q+GOrh8GsdXPQ=
@@ -98,6 +110,10 @@ SHA256 (bash/bash40-021) = Akctb4sQSUGittTJrYI8sOfP5uXCDwsSqx1+sjyIEU0=
 SHA256 (bash/bash40-022) = BFodxxqhhj9zrXvgDsThjuPEPCD6/ljZ4sbFFZI1kBI=
 SHA256 (bash/bash40-023) = WAtSI3X3Yspd353ttkMe9Km26IfqJfwM4VLXR65d3IY=
 SHA256 (bash/bash40-024) = pZ66xH7+MblR4XMuQiPMclsnSMMxvsmCSDVcWsU3F6s=
+SHA256 (bash/bash40-025) = 93kA1jYDNHS8FdOcSUhRX9/nGBZOpmjt1k2NTVqPagg=
+SHA256 (bash/bash40-026) = qb30QJxmJVYYhL5YAmpSzLR2AEB/PVuNCInwWFBA9ss=
+SHA256 (bash/bash40-027) = 9l3Ca7G6zIpmYQzV9vK45wvo2MTjl+elrW8zBiJLd/I=
+SHA256 (bash/bash40-028) = WyIsuvOrHB2bTFlWoOKMrUlmD1dGrwjv4XTntHQCLRo=
 SIZE (bash/bash-4.0.tar.gz) = 6230779
 SIZE (bash/bash40-001) = 5156
 SIZE (bash/bash40-002) = 1220
@@ -123,3 +139,7 @@ SIZE (bash/bash40-021) = 1547
 SIZE (bash/bash40-022) = 1592
 SIZE (bash/bash40-023) = 2148
 SIZE (bash/bash40-024) = 3049
+SIZE (bash/bash40-025) = 3435
+SIZE (bash/bash40-026) = 1433
+SIZE (bash/bash40-027) = 2010
+SIZE (bash/bash40-028) = 5567
