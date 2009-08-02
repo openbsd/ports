@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-nagios,v 1.1.1.1 2009/08/02 19:12:15 jdixon Exp $
+libexec/nagios/check_resmon_xml_part

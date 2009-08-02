@@ -1,0 +1,62 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/08/02 19:12:15 jdixon Exp $
+libdata/perl5/site_perl/Resmon/
+libdata/perl5/site_perl/Resmon/Config.pm
+libdata/perl5/site_perl/Resmon/ExtComm.pm
+libdata/perl5/site_perl/Resmon/Module/
+libdata/perl5/site_perl/Resmon/Module.pm
+libdata/perl5/site_perl/Resmon/Module/A1000.pm
+libdata/perl5/site_perl/Resmon/Module/ADAPTEC.pm
+libdata/perl5/site_perl/Resmon/Module/ALTQSTAT.pm
+libdata/perl5/site_perl/Resmon/Module/BACULADIR.pm
+libdata/perl5/site_perl/Resmon/Module/BACULAJOBS.pm
+libdata/perl5/site_perl/Resmon/Module/BACULATAPE.pm
+libdata/perl5/site_perl/Resmon/Module/CPU.pm
+libdata/perl5/site_perl/Resmon/Module/DATE.pm
+libdata/perl5/site_perl/Resmon/Module/DHCPLEASES.pm
+libdata/perl5/site_perl/Resmon/Module/DISK.pm
+libdata/perl5/site_perl/Resmon/Module/DNS.pm
+libdata/perl5/site_perl/Resmon/Module/ECCMGR.pm
+libdata/perl5/site_perl/Resmon/Module/FAULTS.pm
+libdata/perl5/site_perl/Resmon/Module/FILEAGE.pm
+libdata/perl5/site_perl/Resmon/Module/FILECOUNT.pm
+libdata/perl5/site_perl/Resmon/Module/FILESIZE.pm
+libdata/perl5/site_perl/Resmon/Module/FRESHSVN.pm
+libdata/perl5/site_perl/Resmon/Module/INODES.pm
+libdata/perl5/site_perl/Resmon/Module/LARGEFILES.pm
+libdata/perl5/site_perl/Resmon/Module/LOAD.pm
+libdata/perl5/site_perl/Resmon/Module/LOGFILE.pm
+libdata/perl5/site_perl/Resmon/Module/MDSTAT.pm
+libdata/perl5/site_perl/Resmon/Module/NAGIOS.pm
+libdata/perl5/site_perl/Resmon/Module/NETBACKUPTAPE.pm
+libdata/perl5/site_perl/Resmon/Module/NETSTAT.pm
+libdata/perl5/site_perl/Resmon/Module/NEWFILES.pm
+libdata/perl5/site_perl/Resmon/Module/OLDFILES.pm
+libdata/perl5/site_perl/Resmon/Module/PGREP.pm
+libdata/perl5/site_perl/Resmon/Module/PING.pm
+libdata/perl5/site_perl/Resmon/Module/QUEUESIZE.pm
+libdata/perl5/site_perl/Resmon/Module/REMOTEFILESIZE.pm
+libdata/perl5/site_perl/Resmon/Module/RESMON.pm
+libdata/perl5/site_perl/Resmon/Module/ROMOUNT.pm
+libdata/perl5/site_perl/Resmon/Module/SCRIPT.pm
+libdata/perl5/site_perl/Resmon/Module/SIMPLESVN.pm
+libdata/perl5/site_perl/Resmon/Module/SMFMAINTENANCE.pm
+libdata/perl5/site_perl/Resmon/Module/SWAPSIZE.pm
+libdata/perl5/site_perl/Resmon/Module/TCPSERVICE.pm
+libdata/perl5/site_perl/Resmon/Module/TWRAID.pm
+libdata/perl5/site_perl/Resmon/Module/WALCHECK.pm
+libdata/perl5/site_perl/Resmon/Module/ZFSYNCHECK.pm
+libdata/perl5/site_perl/Resmon/Module/ZIMBRA.pm
+libdata/perl5/site_perl/Resmon/Module/ZPOOL.pm
+libdata/perl5/site_perl/Resmon/Module/ZPOOLERRS.pm
+libdata/perl5/site_perl/Resmon/Module/ZPOOLFREE.pm
+libdata/perl5/site_perl/Resmon/Status.pm
+libdata/perl5/site_perl/Resmon/Updater.pm
+@comment libexec/nagios/
+sbin/resmon
+@sample ${RESMONCONF}/
+@sample ${RESMONSTATE}/
+share/doc/resmon/
+share/doc/resmon/LICENSE
+share/examples/resmon/
+share/examples/resmon/resmon.conf.sample
+@sample ${RESMONCONF}/resmon.conf

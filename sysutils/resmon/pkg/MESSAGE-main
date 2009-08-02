@@ -1,0 +1,8 @@
+A sample config file for Resmon has been installed in
+${RESMONCONF}, edit it to suit your needs.
+
+To start, add the following to /etc/rc.local:
+
+if [ -x ${PREFIX}/sbin/resmon ]; then
+	echo -n ' resmon';	${PREFIX}/sbin/resmon -c ${RESMONCONF}/resmon.conf
+fi

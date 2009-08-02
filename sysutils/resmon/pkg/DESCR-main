@@ -1,0 +1,4 @@
+Resmon is a lightweight utility for local host monitoring that can be
+queried by tools such as nagios over http. One of the main design goals
+is portability: that resmon should require nothing more than a default
+install of Perl.

@@ -1,0 +1,59 @@
+$OpenBSD: patch-resmon_conf_sample,v 1.1.1.1 2009/08/02 19:12:15 jdixon Exp $
+--- resmon.conf.sample.orig	Fri Jan  2 14:30:32 2009
++++ resmon.conf.sample	Sun Aug  2 02:57:48 2009
+@@ -1,48 +1,21 @@
+ INTERVAL 60;
+ PORT 81;
+-STATUSFILE /var/run/resmon-status.txt;
++STATUSFILE ${RESMONSTATE}/status.txt;
+ TIMEOUT 10;
+ 
+-# Resmon health check. Shows the hostname, svn revision, and any problems with
+-# modules or the configuration file.
+ RESMON {
+   resmon : noop
+ }
+-LOGFILE {
+-  # Oracle alert file (look for ORA- lines)
+-  /usr/app/oracle/admin/DWP1/bdump/alert_QLP1.log : match => ORA-
+-}
+ TCPSERVICE {
+   ssh : host => 127.0.0.1, port => 22, timeout => 2
+ }
+ NETSTAT {
+-  oracle-listener    : localport => 1521, state => LISTEN, atleast => 1
+-  www1-dbconnections : localport => 1521, remoteip => 10.0.0.81, atleast => 2, limit => 50
+-  www2-dbconnections : localport => 1521, remoteip => 10.0.0.82, atleast => 2, limit => 50
+-  www3-dbconnections : localport => 1521, remoteip => 10.0.0.83, atleast => 2, limit => 50
+-  www4-dbconnections : localport => 1521, remoteip => 10.0.0.84, atleast => 2, limit => 50
+-  www5-dbconnections : localport => 1521, remoteip => 10.0.0.85, atleast => 2, limit => 50
++  ident : localport => 113, state => LISTEN, atleast => 1
+ }
+-A1000 {
+-  fa000_001				: status => Optimal
+-  ag028_003				: status => Optimal
+-  fd032_002				: status => Optimal
+-}
+ DISK {
+-  /data1				: limit => 95%, warnat => 70%
+-  /data2				: limit => 95%, warnat => 70%
+-  /data3				: limit => 95%, warnat => 70%
+-  /data/oradata/QLP2/statspack01	: limit => 95%
+-  /data/oradata/QLP2/redo01		: limit => 95%
+-  /data/oradata/QLP2/redo03		: limit => 95%
+-  /data/oradata/QLP2/redo04		: limit => 95%
+-  /data/oradata/QLP2/tools01		: limit => 95%
+-  /data/oradata/QLP2/redo02		: limit => 95%
+-  /data/oradata/QLP2/users01		: limit => 95%
+-  /data/oradata/QLP2/temp01		: limit => 95%
+-  /data/oradata/QLP2/data01		: limit => 95%
+-  /data/oradata/QLP2/index01		: limit => 95%
+-  /data/oradata/QLP2/system01		: limit => 95%
+-  /data/oradata/QLP2/arch01		: limit => 95%
+-  /data/oradata/QLP2/rbs01		: limit => 95%
++  /				: limit => 95%, warnat => 70%
++#  /tmp				: limit => 95%, warnat => 70%
++#  /usr				: limit => 95%, warnat => 70%
++#  /var				: limit => 95%, warnat => 70%
++#  /home				: limit => 95%, warnat => 70%
+ }
