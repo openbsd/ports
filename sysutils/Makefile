@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2009/06/18 19:47:07 landry Exp $
+# $OpenBSD: Makefile,v 1.176 2009/08/02 19:17:16 jdixon Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -103,6 +103,7 @@
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rancid
+     SUBDIR += resmon
      SUBDIR += rdiff-backup
      SUBDIR += rpl
      SUBDIR += rtty
