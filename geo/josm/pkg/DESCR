@@ -1,0 +1,10 @@
+JOSM is an editor for the free map of the world being built at
+OpenStreetMap (http://www.openstreetmap.org).  The current version
+supports a wide range of graphical editing operations and "pre-sets"
+for common objects, and works on stand- alone GPX tracks, GPX track
+data from the OSM database and existing nodes, line segments and
+metadata tags from the OSM database.
+
+Most of JOSM works nicely on OpenBSD. One exception is the WMS/Yahoo
+plugin, which requires a separate executable at present but which
+should someday be rewritten to use the Java 2D graphics API.

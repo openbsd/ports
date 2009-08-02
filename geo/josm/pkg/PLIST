@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/02 18:38:53 ian Exp $
+bin/josm
+@man man/cat1/josm.0
+share/applications/josm.desktop
+share/josm/
+share/josm/josm-latest.jar
+share/josm/osm_logo.png

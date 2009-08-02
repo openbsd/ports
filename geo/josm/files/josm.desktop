@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=JOSM OpenStreetMap Editor
+Comment=OpenStreetMap Graphical Editor
+Terminal=false
+Type=Application
+Categories=Graphics;Editor;
+MimeType=application/x-osm;
+Icon=${TRUEPREFIX}/share/josm/osm_logo.png
+Exec=${TRUEPREFIX}/bin/josm %f

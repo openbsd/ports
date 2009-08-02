@@ -1,0 +1,18 @@
+$OpenBSD: patch-build_xml,v 1.1.1.1 2009/08/02 18:38:53 ian Exp $
+--- build.xml.orig	Sat Aug  1 22:11:14 2009
++++ build.xml	Sat Aug  1 22:11:51 2009
+@@ -12,14 +12,7 @@
+ 
+ 	<target name="dist" depends="compile">
+ 
+-		<exec append="false" output="REVISION" executable="svn" failifexecutionfails="false">
+-			<env key="LANG" value="C"/>
+-			<arg value="info"/>
+-			<arg value="--xml"/>
+-			<arg value="."/>
+-		</exec>
+ 		<xmlproperty file="REVISION" prefix="version" keepRoot="false" collapseAttributes="true"/>
+-		<delete file="REVISION"/>
+ 		<property name="version.entry.commit.revision" value="UNKNOWN"/>
+ 		<property name="version.entry.commit.date" value="UNKNOWN"/>
+ 
