@@ -1,14 +1,17 @@
-$OpenBSD: patch-icc2ps_Makefile,v 1.1.1.1 2007/09/26 06:26:19 ajacoutot Exp $
---- icc2ps/Makefile.orig	Tue Sep 25 16:15:36 2007
-+++ icc2ps/Makefile	Tue Sep 25 16:15:43 2007
-@@ -1,10 +1,8 @@
+$OpenBSD: patch-icc2ps_Makefile,v 1.2 2009/08/03 13:10:09 giovanni Exp $
+--- icc2ps/Makefile.orig	Sun Mar  1 23:04:53 2009
++++ icc2ps/Makefile	Sun Jul 19 13:00:16 2009
+@@ -1,11 +1,11 @@
+ UNAME := $(shell uname)
 -PREFIX=	/usr
++
  BIN=	$(PREFIX)/bin
  SRC=	icc2ps.c xgetopt.c
  LIB=	cmscam97.c cmscnvrt.c cmserr.c cmsgamma.c cmsgmt.c cmsintrp.c cmsio1.c \
  	cmslut.c cmsmatsh.c cmsmtrx.c cmsnamed.c cmspack.c cmspcs.c cmsps2.c \
  	cmssamp.c cmswtpnt.c cmsxform.c cmsio0.c cmsvirt.c
 -CFLAGS=	-O3
- 
- all: foo2zjs-icc2ps
- 
++
+ INSTALL=install
+ ifeq ($(UNAME),SunOS)
+     INSTALL=/usr/ucb/install

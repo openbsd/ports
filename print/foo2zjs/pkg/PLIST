@@ -1,27 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/11/04 15:47:45 merdely Exp $
-bin/arm2hpdl
-bin/foo2hp
+@comment $OpenBSD: PLIST,v 1.3 2009/08/03 13:10:09 giovanni Exp $
+@bin bin/arm2hpdl
+@bin bin/foo2hiperc
+bin/foo2hiperc-wrapper
+@bin bin/foo2hp
 bin/foo2hp2600-wrapper
-bin/foo2lava
+@bin bin/foo2lava
 bin/foo2lava-wrapper
-bin/foo2oak
+@bin bin/foo2oak
 bin/foo2oak-wrapper
-bin/foo2qpdl
+@bin bin/foo2qpdl
 bin/foo2qpdl-wrapper
-bin/foo2slx
+@bin bin/foo2slx
 bin/foo2slx-wrapper
-bin/foo2xqx
+@bin bin/foo2xqx
 bin/foo2xqx-wrapper
-bin/foo2zjs
+@bin bin/foo2zjs
+@bin bin/foo2zjs-icc2ps
 bin/foo2zjs-pstops
 bin/foo2zjs-wrapper
-bin/lavadecode
-bin/oakdecode
-bin/opldecode
-bin/qpdldecode
-bin/slxdecode
-bin/xqxdecode
-bin/zjsdecode
+@bin bin/gipddecode
+@bin bin/hipercdecode
+@bin bin/lavadecode
+@bin bin/oakdecode
+@bin bin/opldecode
+bin/printer-profile
+@bin bin/qpdldecode
+@bin bin/slxdecode
+@bin bin/xqxdecode
+@bin bin/zjsdecode
+@man man/man1/arm2hpdl.1
+@man man/man1/foo2hiperc-wrapper.1
+@man man/man1/foo2hiperc.1
 @man man/man1/foo2hp.1
 @man man/man1/foo2hp2600-wrapper.1
 @man man/man1/foo2lava-wrapper.1
@@ -34,13 +43,17 @@ bin/zjsdecode
 @man man/man1/foo2slx.1
 @man man/man1/foo2xqx-wrapper.1
 @man man/man1/foo2xqx.1
+@man man/man1/foo2zjs-pstops.1
 @man man/man1/foo2zjs-wrapper.1
 @man man/man1/foo2zjs.1
+@man man/man1/hipercdecode.1
 @man man/man1/lavadecode.1
 @man man/man1/oakdecode.1
 @man man/man1/opldecode.1
+@man man/man1/printer-profile.1
 @man man/man1/qpdldecode.1
 @man man/man1/slxdecode.1
+@man man/man1/usb_printerid.1
 @man man/man1/xqxdecode.1
 @man man/man1/zjsdecode.1
 share/doc/foo2zjs/
@@ -49,6 +62,30 @@ share/doc/foo2zjs/README
 share/doc/foo2zjs/getweb
 share/doc/foo2zjs/manual.pdf
 share/doc/foo2zjs/msexpand
+@comment share/foo2hiperc/
+@comment share/foo2hiperc/icm/
+@comment share/foo2hp/
+@comment share/foo2hp/icm/
+@comment share/foo2lava/
+@comment share/foo2lava/icm/
+@comment share/foo2oak/
+@comment share/foo2oak/icm/
+share/foo2qpdl/
+share/foo2qpdl/crd/
+share/foo2qpdl/crd/CLP-300-1200x1200cms2
+share/foo2qpdl/crd/CLP-300-1200x600cms2
+share/foo2qpdl/crd/CLP-300-600x600cms2
+share/foo2qpdl/crd/CLP-300cms
+share/foo2qpdl/crd/CLP-600-1200x1200cms2
+share/foo2qpdl/crd/CLP-600-1200x600cms2
+share/foo2qpdl/crd/CLP-600-600x600cms2
+share/foo2qpdl/crd/CLP-600cms
+share/foo2qpdl/crd/black-text.ps
+@comment share/foo2qpdl/icm/
+@comment share/foo2slx/
+@comment share/foo2slx/icm/
+@comment share/foo2xqx/
+@comment share/foo2xqx/firmware/
 share/foo2zjs/
 share/foo2zjs/crd/
 share/foo2zjs/crd/2300w-1200@150-l250-kx,ucr100,0-per.crd
@@ -60,123 +97,66 @@ share/foo2zjs/crd/kx.crd
 share/foo2zjs/crd/prolog.ps
 share/foo2zjs/crd/screen1200.ps
 share/foo2zjs/crd/screen2400.ps
-share/foo2zjs/db/
-share/foo2zjs/db/source/
-share/foo2zjs/db/source/PPD/
-share/foo2zjs/db/source/PPD/Generic-OAKT_Printer.ppd.gz
-share/foo2zjs/db/source/PPD/Generic-ZjStream_Printer.ppd.gz
-share/foo2zjs/db/source/PPD/HP-Color_LaserJet_1500.ppd.gz
-share/foo2zjs/db/source/PPD/HP-Color_LaserJet_1600.ppd.gz
-share/foo2zjs/db/source/PPD/HP-Color_LaserJet_2600n.ppd.gz
-share/foo2zjs/db/source/PPD/HP-LaserJet_1000.ppd.gz
-share/foo2zjs/db/source/PPD/HP-LaserJet_1005.ppd.gz
-share/foo2zjs/db/source/PPD/HP-LaserJet_1018.ppd.gz
-share/foo2zjs/db/source/PPD/HP-LaserJet_1020.ppd.gz
-share/foo2zjs/db/source/PPD/HP-LaserJet_1022.ppd.gz
-share/foo2zjs/db/source/PPD/HP-LaserJet_M1005_MFP.ppd.gz
-share/foo2zjs/db/source/PPD/KonicaMinolta-magicolor_2480_MF.ppd.gz
-share/foo2zjs/db/source/PPD/KonicaMinolta-magicolor_2490_MF.ppd.gz
-share/foo2zjs/db/source/PPD/KonicaMinolta-magicolor_2530_DL.ppd.gz
-share/foo2zjs/db/source/PPD/Lexmark-C500.ppd.gz
-share/foo2zjs/db/source/PPD/Minolta-Color_PageWorks_Pro_L.ppd.gz
-share/foo2zjs/db/source/PPD/Minolta-magicolor_2200_DL.ppd.gz
-share/foo2zjs/db/source/PPD/Minolta-magicolor_2300_DL.ppd.gz
-share/foo2zjs/db/source/PPD/Minolta-magicolor_2430_DL.ppd.gz
-share/foo2zjs/db/source/PPD/Samsung-CLP-300.ppd.gz
-share/foo2zjs/db/source/PPD/Samsung-CLP-600.ppd.gz
-share/foo2zjs/db/source/PPD/Samsung-CLX-2160.ppd.gz
-share/foo2zjs/db/source/PPD/Samsung-CLX-3160.ppd.gz
-share/foo2zjs/db/source/PPD/Xerox-Phaser-6110.ppd.gz
-share/foo2zjs/db/source/PPD/Xerox-Phaser-6115MFP.ppd.gz
-share/foo2zjs/db/source/driver/
-share/foo2zjs/db/source/driver/foo2hp.xml
-share/foo2zjs/db/source/driver/foo2lava.xml
-share/foo2zjs/db/source/driver/foo2oak.xml
-share/foo2zjs/db/source/driver/foo2qpdl.xml
-share/foo2zjs/db/source/driver/foo2slx.xml
-share/foo2zjs/db/source/driver/foo2xqx.xml
-share/foo2zjs/db/source/driver/foo2zjs.xml
-share/foo2zjs/db/source/opt/
-share/foo2zjs/db/source/opt/foo2hp-BitsPerPlane.xml
-share/foo2zjs/db/source/opt/foo2hp-ColorMode.xml
-share/foo2zjs/db/source/opt/foo2hp-Duplex.xml
-share/foo2zjs/db/source/opt/foo2hp-ICM.xml
-share/foo2zjs/db/source/opt/foo2hp-InputSlot.xml
-share/foo2zjs/db/source/opt/foo2hp-MediaType.xml
-share/foo2zjs/db/source/opt/foo2hp-Quality.xml
-share/foo2zjs/db/source/opt/foo2lava-ColorMode.xml
-share/foo2zjs/db/source/opt/foo2lava-Duplex.xml
-share/foo2zjs/db/source/opt/foo2lava-ICM.xml
-share/foo2zjs/db/source/opt/foo2lava-InputSlot.xml
-share/foo2zjs/db/source/opt/foo2lava-MediaType.xml
-share/foo2zjs/db/source/opt/foo2lava-PageSize.xml
-share/foo2zjs/db/source/opt/foo2lava-PrinterType.xml
-share/foo2zjs/db/source/opt/foo2lava-Quality.xml
-share/foo2zjs/db/source/opt/foo2lava-Resolution.xml
-share/foo2zjs/db/source/opt/foo2oak-BitsPerPlane.xml
-share/foo2zjs/db/source/opt/foo2oak-ColorMode.xml
-share/foo2zjs/db/source/opt/foo2oak-ICM.xml
-share/foo2zjs/db/source/opt/foo2oak-InputSlot.xml
-share/foo2zjs/db/source/opt/foo2oak-MediaType.xml
-share/foo2zjs/db/source/opt/foo2qpdl-ColorMode.xml
-share/foo2zjs/db/source/opt/foo2qpdl-Duplex.xml
-share/foo2zjs/db/source/opt/foo2qpdl-ICM.xml
-share/foo2zjs/db/source/opt/foo2qpdl-InputSlot.xml
-share/foo2zjs/db/source/opt/foo2qpdl-MediaType.xml
-share/foo2zjs/db/source/opt/foo2qpdl-PageSize.xml
-share/foo2zjs/db/source/opt/foo2qpdl-Quality.xml
-share/foo2zjs/db/source/opt/foo2qpdl-Resolution.xml
-share/foo2zjs/db/source/opt/foo2slx-ColorMode.xml
-share/foo2zjs/db/source/opt/foo2slx-ICM.xml
-share/foo2zjs/db/source/opt/foo2slx-InputSlot.xml
-share/foo2zjs/db/source/opt/foo2slx-MediaType.xml
-share/foo2zjs/db/source/opt/foo2slx-PageSize.xml
-share/foo2zjs/db/source/opt/foo2slx-Resolution.xml
-share/foo2zjs/db/source/opt/foo2xqx-Duplex.xml
-share/foo2zjs/db/source/opt/foo2xqx-InputSlot.xml
-share/foo2zjs/db/source/opt/foo2xqx-MediaType.xml
-share/foo2zjs/db/source/opt/foo2xqx-Quality.xml
-share/foo2zjs/db/source/opt/foo2xqx-Resolution.xml
-share/foo2zjs/db/source/opt/foo2zjs-ColorMode.xml
-share/foo2zjs/db/source/opt/foo2zjs-Copies.xml
-share/foo2zjs/db/source/opt/foo2zjs-Duplex.xml
-share/foo2zjs/db/source/opt/foo2zjs-ICM.xml
-share/foo2zjs/db/source/opt/foo2zjs-InputSlot.xml
-share/foo2zjs/db/source/opt/foo2zjs-Intent.xml
-share/foo2zjs/db/source/opt/foo2zjs-MediaType.xml
-share/foo2zjs/db/source/opt/foo2zjs-Nup.xml
-share/foo2zjs/db/source/opt/foo2zjs-NupOrient.xml
-share/foo2zjs/db/source/opt/foo2zjs-PageSize.xml
-share/foo2zjs/db/source/opt/foo2zjs-PrinterType.xml
-share/foo2zjs/db/source/opt/foo2zjs-Quality.xml
-share/foo2zjs/db/source/opt/foo2zjs-Resolution.xml
-share/foo2zjs/db/source/printer/
-share/foo2zjs/db/source/printer/Generic-OAKT_Printer.xml
-share/foo2zjs/db/source/printer/Generic-ZjStream_Printer.xml
-share/foo2zjs/db/source/printer/HP-Color_LaserJet_1500.xml
-share/foo2zjs/db/source/printer/HP-Color_LaserJet_1600.xml
-share/foo2zjs/db/source/printer/HP-Color_LaserJet_2600n.xml
-share/foo2zjs/db/source/printer/HP-LaserJet_1000.xml
-share/foo2zjs/db/source/printer/HP-LaserJet_1005.xml
-share/foo2zjs/db/source/printer/HP-LaserJet_1018.xml
-share/foo2zjs/db/source/printer/HP-LaserJet_1020.xml
-share/foo2zjs/db/source/printer/HP-LaserJet_1022.xml
-share/foo2zjs/db/source/printer/HP-LaserJet_M1005_MFP.xml
-share/foo2zjs/db/source/printer/KonicaMinolta-magicolor_2480_MF.xml
-share/foo2zjs/db/source/printer/KonicaMinolta-magicolor_2490_MF.xml
-share/foo2zjs/db/source/printer/KonicaMinolta-magicolor_2530_DL.xml
-share/foo2zjs/db/source/printer/Lexmark-C500.xml
-share/foo2zjs/db/source/printer/Minolta-Color_PageWorks_Pro_L.xml
-share/foo2zjs/db/source/printer/Minolta-magicolor_2200_DL.xml
-share/foo2zjs/db/source/printer/Minolta-magicolor_2300_DL.xml
-share/foo2zjs/db/source/printer/Minolta-magicolor_2430_DL.xml
-share/foo2zjs/db/source/printer/Samsung-CLP-300.xml
-share/foo2zjs/db/source/printer/Samsung-CLP-600.xml
-share/foo2zjs/db/source/printer/Samsung-CLX-2160.xml
-share/foo2zjs/db/source/printer/Samsung-CLX-3160.xml
-share/foo2zjs/db/source/printer/Xerox-Phaser-6110.xml
-share/foo2zjs/db/source/printer/Xerox-Phaser-6115MFP.xml
-share/foo2zjs/firmware/
+@comment share/foo2zjs/firmware/
 share/foo2zjs/gamma-lookup.ps
 share/foo2zjs/gamma.ps
-share/foo2zjs/icm/
+@comment share/foo2zjs/icm/
+share/foomatic/
+share/foomatic/db/
+share/foomatic/db/source/
+share/foomatic/db/source/PPD/
+share/foomatic/db/source/PPD/Generic-OAKT_Printer.ppd.gz
+share/foomatic/db/source/PPD/Generic-ZjStream_Printer.ppd.gz
+share/foomatic/db/source/PPD/HP-Color_LaserJet_1500.ppd.gz
+share/foomatic/db/source/PPD/HP-Color_LaserJet_1600.ppd.gz
+share/foomatic/db/source/PPD/HP-Color_LaserJet_2600n.ppd.gz
+share/foomatic/db/source/PPD/HP-Color_LaserJet_CP1215.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_1000.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_1005.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_1018.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_1020.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_1022.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_M1005_MFP.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_M1120_MFP.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_M1319_MFP.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_P1005.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_P1006.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_P1007.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_P1008.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_P1505.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_P2014.ppd.gz
+share/foomatic/db/source/PPD/HP-LaserJet_P2035.ppd.gz
+share/foomatic/db/source/PPD/KONICA_MINOLTA-magicolor_1600W.ppd.gz
+share/foomatic/db/source/PPD/KONICA_MINOLTA-magicolor_1680MF.ppd.gz
+share/foomatic/db/source/PPD/KONICA_MINOLTA-magicolor_1690MF.ppd.gz
+share/foomatic/db/source/PPD/KONICA_MINOLTA-magicolor_2480_MF.ppd.gz
+share/foomatic/db/source/PPD/KONICA_MINOLTA-magicolor_2490_MF.ppd.gz
+share/foomatic/db/source/PPD/KONICA_MINOLTA-magicolor_2530_DL.ppd.gz
+share/foomatic/db/source/PPD/KONICA_MINOLTA-magicolor_4690MF.ppd.gz
+share/foomatic/db/source/PPD/Kyocera-KM-1635.ppd.gz
+share/foomatic/db/source/PPD/Kyocera-KM-2035.ppd.gz
+share/foomatic/db/source/PPD/Lexmark-C500.ppd.gz
+share/foomatic/db/source/PPD/Minolta-Color_PageWorks_Pro_L.ppd.gz
+share/foomatic/db/source/PPD/Minolta-magicolor_2200_DL.ppd.gz
+share/foomatic/db/source/PPD/Minolta-magicolor_2300_DL.ppd.gz
+share/foomatic/db/source/PPD/Minolta-magicolor_2430_DL.ppd.gz
+share/foomatic/db/source/PPD/Oki-C3100.ppd.gz
+share/foomatic/db/source/PPD/Oki-C3200.ppd.gz
+share/foomatic/db/source/PPD/Oki-C3300.ppd.gz
+share/foomatic/db/source/PPD/Oki-C3400.ppd.gz
+share/foomatic/db/source/PPD/Oki-C3530_MFP.ppd.gz
+share/foomatic/db/source/PPD/Oki-C5100.ppd.gz
+share/foomatic/db/source/PPD/Oki-C5200.ppd.gz
+share/foomatic/db/source/PPD/Oki-C5500.ppd.gz
+share/foomatic/db/source/PPD/Oki-C5600.ppd.gz
+share/foomatic/db/source/PPD/Oki-C5800.ppd.gz
+share/foomatic/db/source/PPD/Samsung-CLP-300.ppd.gz
+share/foomatic/db/source/PPD/Samsung-CLP-310.ppd.gz
+share/foomatic/db/source/PPD/Samsung-CLP-315.ppd.gz
+share/foomatic/db/source/PPD/Samsung-CLP-600.ppd.gz
+share/foomatic/db/source/PPD/Samsung-CLP-610.ppd.gz
+share/foomatic/db/source/PPD/Samsung-CLX-2160.ppd.gz
+share/foomatic/db/source/PPD/Samsung-CLX-3160.ppd.gz
+share/foomatic/db/source/PPD/Samsung-CLX-3175.ppd.gz
+share/foomatic/db/source/PPD/Xerox-Phaser_6110.ppd.gz
+share/foomatic/db/source/PPD/Xerox-Phaser_6115MFP.ppd.gz

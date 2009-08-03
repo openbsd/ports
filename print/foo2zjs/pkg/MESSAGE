@@ -2,7 +2,7 @@ If you are using or plan to use CUPS, you can make the PPD files
 available to CUPS by creating a symbolic link as in the following
 command:
 
-# ln -sf ${PREFIX}/share/foo2zjs/db/source/PPD \
-	${LOCALBASE}/share/cups/model/foo2zjs-db-ppds
+# ln -sf ${PREFIX}/share/foomatic/db/source/PPD \
+	${LOCALBASE}/share/cups/model/foomatic-db-ppds
 
 cupsd will need to be restarted to register the new PPDs.
