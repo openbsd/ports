@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2009/06/05 22:32:24 phessler Exp $
+# $OpenBSD: Makefile,v 1.194 2009/08/03 14:17:54 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -191,6 +191,7 @@
      SUBDIR += xminesweep
      SUBDIR += xmj
      SUBDIR += xmris
+     SUBDIR += xmoto
      SUBDIR += xneko
      SUBDIR += xonix
      SUBDIR += xpat2
