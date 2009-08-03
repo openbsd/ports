@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.715 2009/07/24 14:45:44 msf Exp $
+# $OpenBSD: Makefile,v 1.716 2009/08/03 14:15:53 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -210,6 +210,7 @@
      SUBDIR += netbeans
      SUBDIR += nspr
      SUBDIR += ocaml-calendar
+     SUBDIR += ode
      SUBDIR += omake
      SUBDIR += opencm
      SUBDIR += p5-Algorithm-Annotate
