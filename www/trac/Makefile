@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2009/07/26 17:39:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2009/08/03 13:14:17 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
 MODPY_EGG_VERSION=0.11.5
 DISTNAME=	Trac-${MODPY_EGG_VERSION}
-PKGNAME=	trac-${MODPY_EGG_VERSION}
+PKGNAME=	trac-${MODPY_EGG_VERSION}p0
 CATEGORIES=	www devel
 
 MAINTAINER=	Ben Lovett <ben@tilderoot.com>
@@ -26,10 +26,11 @@ MODULES=	lang/python
 
 RUN_DEPENDS=	::databases/py-sqlite2 \
 		::devel/subversion,-python \
+		::print/enscript \
 		::textproc/py-docutils \
 		::textproc/py-pygments \
 		:clearsilver-*-python:www/clearsilver,python \
-		::print/enscript
+		::www/py-genshi
 
 do-regress:
 	@cd ${WRKSRC} && PYTHONPATH=. ${MODPY_BIN} ./trac/test.py
