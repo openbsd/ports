@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/07/23 08:26:38 giovanni Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/03 13:15:44 giovanni Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
 VERSION =	0.3.0a3
 DISTNAME =	exaile-${VERSION}
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 CATEGORIES =	audio x11
 
@@ -49,6 +49,6 @@ ALL_TARGET =	compile
 SUBST_VARS +=	MODPY_SITEPKG
 
 post-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile ${WRKSRC}/plugins/Makefile
+	${SUBST_CMD} ${WRKSRC}/Makefile ${WRKSRC}/data/exaile.desktop ${WRKSRC}/plugins/Makefile
 
 .include <bsd.port.mk>

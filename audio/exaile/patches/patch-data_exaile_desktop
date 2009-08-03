@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_exaile_desktop,v 1.1 2009/08/03 13:15:44 giovanni Exp $
+--- data/exaile.desktop.orig	Mon Aug  3 09:29:10 2009
++++ data/exaile.desktop	Mon Aug  3 09:30:42 2009
+@@ -4,7 +4,7 @@ Type=Application
+ Name=Exaile Music Player
+ GenericName=Music Player
+ Comment=Listen to, explore, or manage your audio collection
+-Icon=exaile
++Icon=${TRUEPREFIX}/share/pixmaps/exaile.png
+ Exec=exaile %F
+ Terminal=false
+ Categories=AudioVideo;Audio;Player;GTK;
