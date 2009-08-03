@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/03 18:30:58 mglocker Exp $
+@bin sbin/apcd
+@bin sbin/apcmon
+@man man/man8/apcd.8
+@man man/man8/apcmon.8
+share/examples/apcd/
+share/examples/apcd/apcd.conf
+@sample ${SYSCONFDIR}/apcd.conf
