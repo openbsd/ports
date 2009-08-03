@@ -1,7 +1,88 @@
-$OpenBSD: patch-configure_ac,v 1.1 2007/11/18 17:36:18 martynas Exp $
---- configure.ac.orig	Tue Nov  6 16:45:06 2007
-+++ configure.ac	Fri Nov 16 00:26:36 2007
-@@ -613,8 +613,8 @@ if test -n "$with_silc_includes" || test -n "$with_sil
+$OpenBSD: patch-configure_ac,v 1.2 2009/08/03 21:29:47 martynas Exp $
+--- configure.ac.orig	Sat Aug  1 09:53:41 2009
++++ configure.ac	Sun Aug  2 22:20:58 2009
+@@ -51,7 +51,7 @@ case "$target" in
+     check_threads=true
+     ;;
+   *-*-openbsd*)
+-    check_threads=true
++    check_threads=false
+     ;;
+   *-*-*bsd*)
+     check_threads=false
+@@ -97,9 +97,6 @@ AM_CONDITIONAL(SILC_X86_64, test x$cpu_x86_64 = xtrue)
+ AM_CONDITIONAL(SILC_POWERPC, test x$cpu_ppc = xtrue)
+ AM_CONDITIONAL(SILC_IA64, test x$cpu_ia64 = xtrue)
+ 
+-# Control compiler optimizations
+-CFLAGS=`echo $CFLAGS | sed 's/-O[ 0123456789s]*//g'`
+-
+ AC_PROG_CC
+ AC_C_INLINE
+ AC_C_CONST
+@@ -471,59 +468,9 @@ fi
+ ## Compiler and compiler flag checks
+ ##
+ 
+-if test "$GCC"; then
+-  # GCC specific options
+-  if test "x$summary_debug" = "xyes"; then
+-    SILC_ADD_CFLAGS(-g)
+-  else
+-    SILC_ADD_CFLAGS(-g)
+-  fi
+-  SILC_ADD_CFLAGS(-Wall -finline-functions)
+-  SILC_ADD_CFLAGS(-Wno-pointer-sign)
+-else
+-  # Other compilers
+-  case "$target" in
+-    alpha*-dec-osf*)
+-      SILC_ADD_CFLAGS(-g3)
+-      ;;
+-    mips*-sgi-irix*)
+-      SILC_ADD_CFLAGS(-g3)
+-      ;;
+-    *)
+-      SILC_ADD_CFLAGS(-g)
+-      ;;
+-  esac
++SILC_ADD_CFLAGS(-Wall -finline-functions)
++SILC_ADD_CFLAGS(-Wno-pointer-sign)
+ 
+-  # Intel C++ Compiler needs -restrict
+-  if test "x$CC" = "xicc"; then
+-    SILC_ADD_CFLAGS(-restrict)
+-  fi
+-fi
+-
+-if test x$want_cc_optimizations = xtrue; then
+-  if test "$GCC"; then
+-    # GCC specific options
+-    if test "x$summary_debug" = "xyes"; then
+-      SILC_ADD_CFLAGS(-O)
+-    else
+-      SILC_ADD_CFLAGS(-O2)
+-    fi
+-  else
+-    # Other compilers
+-    case "$target" in
+-      alpha*-dec-osf*)
+-        SILC_ADD_CFLAGS(-O2, SILC_ADD_CFLAGS(-O))
+-        ;;
+-      mips*-sgi-irix*)
+-        SILC_ADD_CFLAGS(-O2, SILC_ADD_CFLAGS(-O))
+-        ;;
+-      *)
+-        SILC_ADD_CFLAGS(-O2, SILC_ADD_CFLAGS(-O))
+-        ;;
+-    esac
+-  fi
+-fi
+-
+ #
+ # Workaround a bug in GCC 2.x which causes memory exhaustion
+ # when compiling sha1 with optimizations on UltraSPARC.
+@@ -616,8 +563,8 @@ if test -n "$with_silc_includes" || test -n "$with_sil
  
  else
    # pkg-config check

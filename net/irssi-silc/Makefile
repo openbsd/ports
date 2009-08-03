@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2009/07/26 15:39:52 martynas Exp $
+# $OpenBSD: Makefile,v 1.20 2009/08/03 21:29:47 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	SILC plugin for irssi
 
-DISTNAME=	irssi-silc-1.1.7
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	irssi-silc-1.1.8
+PKGNAME=	${DISTNAME}
 
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://mirrors.protection.cx/~martynas/
+MASTER_SITES=	http://martynas.blarzwurst.de/distfiles/
 
 BUILD_DEPENDS=	::devel/gettext \
 		::devel/glib2
