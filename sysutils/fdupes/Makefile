@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/07 09:18:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/03 16:57:43 sthen Exp $
 
 COMMENT=	identify or delete duplicates
 
 DISTNAME=	fdupes-1.40
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	sysutils
-
-MAINTAINER=	Antti Harri <iku@openbsd.fi>
 
 HOMEPAGE=	http://netdial.caribe.net/~adrian2/fdupes.html
 MASTER_SITES=	${HOMEPAGE:fdupes.html=programs/}
