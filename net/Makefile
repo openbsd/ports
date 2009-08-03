@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.580 2009/07/29 21:25:21 weerd Exp $
+# $OpenBSD: Makefile,v 1.581 2009/08/03 11:15:45 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -355,6 +355,7 @@
      SUBDIR += py-curl
      SUBDIR += py-dns
      SUBDIR += py-dnspython
+     SUBDIR += py-dpkt
      SUBDIR += py-flowd
      SUBDIR += py-flowtools
      SUBDIR += py-impacket
