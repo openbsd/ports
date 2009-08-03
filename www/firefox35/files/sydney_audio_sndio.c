@@ -1,4 +1,4 @@
-/* $OpenBSD: sydney_audio_sndio.c,v 1.2 2009/07/23 19:04:42 martynas Exp $ */
+/* $OpenBSD: sydney_audio_sndio.c,v 1.3 2009/08/03 22:15:52 martynas Exp $ */
 
 /*
  * Copyright (c) 2009 Martynas Venckus <martynas@openbsd.org>
@@ -161,8 +161,11 @@ sa_stream_open(sa_stream_t *s)
 	s->buffer = par.bufsz;
 	s->handle = handle;
 
-	if (pthread_create(&s->thread, NULL, (void *)audio_callback, s) != 0)
+	if (pthread_create(&s->thread, NULL, (void *)audio_callback, s) != 0) {
+		s->handle = NULL;
+		sio_close(handle);
 		return SA_ERROR_SYSTEM;
+	}
 
 	return SA_SUCCESS;
 }
