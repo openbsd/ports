@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/02 21:02:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/03 20:48:26 ian Exp $
 
 COMMENT=		OpenStreetMap map editor
 
@@ -10,7 +10,7 @@ PKG_ARCH=		*
 CATEGORIES=		geo
 
 HOMEPAGE=		http://josm.openstreetmap.de/
-MASTER_SITES=		http://www.darwinsys.com/mirror/josm/
+MASTER_SITES=		http://www.darwinsys.com/mirror/
 
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
