@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/05/31 00:19:22 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/08/03 11:48:56 ajacoutot Exp $
 @bin bin/tmw
 @man man/man6/tmw.6
 share/applications/tmw.desktop
@@ -16,7 +16,6 @@ share/locale/eo/LC_MESSAGES/tmw.mo
 share/locale/es/LC_MESSAGES/tmw.mo
 share/locale/fi/LC_MESSAGES/tmw.mo
 share/locale/fr/LC_MESSAGES/tmw.mo
-share/locale/he/LC_MESSAGES/tmw.mo
 share/locale/hr/LC_MESSAGES/tmw.mo
 share/locale/id/LC_MESSAGES/tmw.mo
 share/locale/it/LC_MESSAGES/tmw.mo
@@ -40,7 +39,6 @@ share/tmw/data/fonts/dejavusans-bold.ttf
 share/tmw/data/fonts/dejavusans.ttf
 share/tmw/data/graphics/
 share/tmw/data/graphics/gui/
-share/tmw/data/graphics/gui/bg_quad_dis.png
 share/tmw/data/graphics/gui/bubble.png
 share/tmw/data/graphics/gui/button.png
 share/tmw/data/graphics/gui/button_disabled.png
@@ -51,7 +49,6 @@ share/tmw/data/graphics/gui/circle-gray.png
 share/tmw/data/graphics/gui/circle-green.png
 share/tmw/data/graphics/gui/close_button.png
 share/tmw/data/graphics/gui/deepbox.png
-share/tmw/data/graphics/gui/default.png
 share/tmw/data/graphics/gui/gui.xml
 share/tmw/data/graphics/gui/hscroll_left_default.png
 share/tmw/data/graphics/gui/hscroll_left_highlight.png
@@ -84,6 +81,7 @@ share/tmw/data/graphics/gui/vscroll_grey.png
 share/tmw/data/graphics/gui/vscroll_up_default.png
 share/tmw/data/graphics/gui/vscroll_up_highlight.png
 share/tmw/data/graphics/gui/vscroll_up_pressed.png
+share/tmw/data/graphics/gui/window.png
 share/tmw/data/graphics/images/
 share/tmw/data/graphics/images/error.png
 share/tmw/data/graphics/images/login_wallpaper.png
@@ -98,5 +96,6 @@ share/tmw/data/help/support.txt
 share/tmw/data/help/team.txt
 share/tmw/data/icons/
 share/tmw/data/icons/tmw.png
+share/tmw/data/icons/tmw.xpm
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
