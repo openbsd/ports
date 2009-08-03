@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/07/12 20:08:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2009/08/03 10:17:53 ajacoutot Exp $
 %%SHARED%%
 bin/vala-gen-introspect
 @bin bin/valac
@@ -61,6 +61,8 @@ share/vala/vapi/gio-unix-2.0.deps
 share/vala/vapi/gio-unix-2.0.vapi
 share/vala/vapi/glib-2.0.vapi
 share/vala/vapi/gmodule-2.0.vapi
+share/vala/vapi/gnet-2.0.deps
+share/vala/vapi/gnet-2.0.vapi
 share/vala/vapi/gnome-desktop-2.0.deps
 share/vala/vapi/gnome-desktop-2.0.vapi
 share/vala/vapi/gnome-keyring-1.vapi
@@ -121,6 +123,8 @@ share/vala/vapi/libdaemon.vapi
 share/vala/vapi/libepc-1.0.vapi
 share/vala/vapi/libftdi.deps
 share/vala/vapi/libftdi.vapi
+share/vala/vapi/libgdata.deps
+share/vala/vapi/libgdata.vapi
 share/vala/vapi/libglade-2.0.deps
 share/vala/vapi/libglade-2.0.vapi
 share/vala/vapi/libgnome-2.0.vapi
@@ -143,6 +147,8 @@ share/vala/vapi/libsexy.vapi
 share/vala/vapi/libsoup-2.2.vapi
 share/vala/vapi/libsoup-2.4.deps
 share/vala/vapi/libsoup-2.4.vapi
+share/vala/vapi/libusb-1.0.deps
+share/vala/vapi/libusb-1.0.vapi
 share/vala/vapi/libusb.vapi
 share/vala/vapi/libwnck-1.0.deps
 share/vala/vapi/libwnck-1.0.vapi
