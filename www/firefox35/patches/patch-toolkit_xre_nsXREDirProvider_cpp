@@ -1,7 +1,7 @@
-$OpenBSD: patch-toolkit_xre_nsXREDirProvider_cpp,v 1.1.1.1 2009/06/21 01:31:26 martynas Exp $
---- toolkit/xre/nsXREDirProvider.cpp.orig	Thu Mar  5 23:32:50 2009
-+++ toolkit/xre/nsXREDirProvider.cpp	Fri Mar 13 17:23:03 2009
-@@ -1136,11 +1136,7 @@ nsXREDirProvider::GetSystemExtensionsDirectory(nsILoca
+$OpenBSD: patch-toolkit_xre_nsXREDirProvider_cpp,v 1.2 2009/08/03 21:27:00 martynas Exp $
+--- toolkit/xre/nsXREDirProvider.cpp.orig	Thu Jul 30 18:30:33 2009
++++ toolkit/xre/nsXREDirProvider.cpp	Mon Aug  3 22:47:28 2009
+@@ -1144,11 +1144,7 @@ nsXREDirProvider::GetSystemExtensionsDirectory(nsILoca
    NS_ENSURE_SUCCESS(rv, rv);
  #elif defined(XP_UNIX)
    static const char *const sysSExtDir = 
