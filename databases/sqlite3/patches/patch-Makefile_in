@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.13 2009/04/16 20:09:58 martynas Exp $
---- Makefile.in.orig	Mon Mar 30 19:37:16 2009
-+++ Makefile.in	Sun Apr  5 11:14:52 2009
+$OpenBSD: patch-Makefile_in,v 1.14 2009/08/03 09:55:47 sthen Exp $
+--- Makefile.in.orig	Thu Jun 25 12:35:50 2009
++++ Makefile.in	Sun Jun 28 14:40:39 2009
 @@ -176,11 +176,11 @@ OBJS0 = alter.lo analyze.lo attach.lo auth.lo backup.l
          table.lo tokenize.lo trigger.lo update.lo \
          util.lo vacuum.lo \
@@ -43,7 +43,7 @@ $OpenBSD: patch-Makefile_in,v 1.13 2009/04/16 20:09:58 martynas Exp $
  		-rpath "$(TCLLIBDIR)" \
  		-version-info "8:6:8" \
  		-avoid-version
-@@ -505,6 +506,9 @@ lemon$(BEXE):	$(TOP)/tool/lemon.c $(TOP)/tool/lempar.c
+@@ -507,6 +508,9 @@ lemon$(BEXE):	$(TOP)/tool/lemon.c $(TOP)/tool/lempar.c
  sqlite3.lo:	sqlite3.c
  	$(LTCOMPILE) $(TEMP_STORE) -c sqlite3.c
  
@@ -53,7 +53,7 @@ $OpenBSD: patch-Makefile_in,v 1.13 2009/04/16 20:09:58 martynas Exp $
  # Rules to build individual files
  #
  alter.lo:	$(TOP)/src/alter.c $(HDR)
-@@ -808,6 +812,8 @@ clean:	
+@@ -810,6 +814,8 @@ clean:	
  
  distclean:	clean
  	rm -f config.log config.status libtool Makefile sqlite3.pc

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2009/05/12 23:20:52 simon Exp $
+# $OpenBSD: Makefile,v 1.47 2009/08/03 09:55:47 sthen Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
 COMMENT-lemon=	LEMON LALR(1) parser generator
-V=		3.6.13
+V=		3.6.16
 DISTNAME=	sqlite-${V}
-PKGNAME-main=	sqlite3-${V}p0
+PKGNAME-main=	sqlite3-${V}
 PKGNAME-tcl=	sqlite3-tcl-${V}
 PKGNAME-lemon=	lemon-${V}
 CATEGORIES=	databases
@@ -27,7 +27,8 @@ WANTLIB-lemon=	c
 
 USE_LIBTOOL=	Yes
 
-CFLAGS+=	-DSQLITE_ENABLE_COLUMN_METADATA
+CFLAGS+=	-DSQLITE_ENABLE_COLUMN_METADATA \
+		-DSQLITE_HAVE_ISNAN
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-threads-override-locks \

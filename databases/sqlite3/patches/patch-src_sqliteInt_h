@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sqliteInt_h,v 1.4 2009/04/16 20:09:58 martynas Exp $
---- src/sqliteInt.h.orig	Mon Mar 30 19:37:16 2009
-+++ src/sqliteInt.h	Sun Apr  5 11:14:52 2009
+$OpenBSD: patch-src_sqliteInt_h,v 1.5 2009/08/03 09:55:47 sthen Exp $
+--- src/sqliteInt.h.orig	Fri Jun 26 16:14:55 2009
++++ src/sqliteInt.h	Sun Jun 28 14:40:40 2009
 @@ -35,11 +35,6 @@
  #pragma warn -spa /* Suspicious pointer arithmetic */
  #endif
@@ -13,9 +13,9 @@ $OpenBSD: patch-src_sqliteInt_h,v 1.4 2009/04/16 20:09:58 martynas Exp $
  /*
  ** Include standard header files as necessary
  */
-@@ -416,33 +411,26 @@ typedef INT16_TYPE i16;            /* 2-byte signed in
- typedef UINT8_TYPE u8;             /* 1-byte unsigned integer */
- typedef INT8_TYPE i8;              /* 1-byte signed integer */
+@@ -439,33 +434,26 @@ typedef INT8_TYPE i8;              /* 1-byte signed in
+ */
+ #define SQLITE_MAX_U32  ((((u64)1)<<32)-1)
  
 -/*
 -** Macros to determine whether the machine is big or little endian,

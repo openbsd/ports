@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_os_unix_c,v 1.10 2009/05/12 23:20:52 simon Exp $
---- src/os_unix.c.orig	Thu Apr  9 20:41:18 2009
-+++ src/os_unix.c	Thu Apr 23 17:50:03 2009
+$OpenBSD: patch-src_os_unix_c,v 1.11 2009/08/03 09:55:47 sthen Exp $
+--- src/os_unix.c.orig	Thu Jun 25 12:45:58 2009
++++ src/os_unix.c	Sun Jun 28 14:40:40 2009
 @@ -111,6 +111,14 @@
  # define _LARGEFILE_SOURCE 1
  #endif
@@ -107,7 +107,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.10 2009/05/12 23:20:52 simon Exp $
  static int transferOwnership(unixFile *pFile){
    int rc;
    pthread_t hSelf;
-@@ -3936,7 +3947,7 @@ static void *unixDlOpen(sqlite3_vfs *NotUsed, const ch
+@@ -3937,7 +3948,7 @@ static void *unixDlOpen(sqlite3_vfs *NotUsed, const ch
  ** error message.
  */
  static void unixDlError(sqlite3_vfs *NotUsed, int nBuf, char *zBufOut){
@@ -116,7 +116,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.10 2009/05/12 23:20:52 simon Exp $
    UNUSED_PARAMETER(NotUsed);
    unixEnterMutex();
    zErr = dlerror();
-@@ -4002,7 +4013,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
+@@ -4003,7 +4014,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
  #if !defined(SQLITE_TEST)
    {
      int pid, fd;
@@ -125,7 +125,7 @@ $OpenBSD: patch-src_os_unix_c,v 1.10 2009/05/12 23:20:52 simon Exp $
      if( fd<0 ){
        time_t t;
        time(&t);
-@@ -4307,7 +4318,7 @@ static int proxyGenerateHostID(char *pHostID){
+@@ -4312,7 +4323,7 @@ static int proxyGenerateHostID(char *pHostID){
    
    memset(key, 0, HOSTIDLEN);
    len = 0;
