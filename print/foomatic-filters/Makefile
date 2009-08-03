@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/12/20 21:15:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/08/03 13:02:55 giovanni Exp $
 
 COMMENT=		Foomatic PPD print filters
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/
+MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/oldstuff/
 
 RUN_DEPENDS=		::print/ghostscript/gnu \
 			::print/a2ps
