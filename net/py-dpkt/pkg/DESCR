@@ -1,0 +1,3 @@
+dpkt is a BSD-licensed network packet manipulation library for Python,
+written by Dug Song, featuring fast, simple packet creation/parsing,
+with definitions for the basic TCP/IP protocols.
