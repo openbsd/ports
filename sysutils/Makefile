@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.176 2009/08/02 19:17:16 jdixon Exp $
+# $OpenBSD: Makefile,v 1.177 2009/08/03 21:36:29 mglocker Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
      SUBDIR += acx-firmware
      SUBDIR += anacron
      SUBDIR += apc-upsd
+     SUBDIR += apcd
      SUBDIR += autossh
      SUBDIR += bacula,mysql
      SUBDIR += bacula,pgsql
