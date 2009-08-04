@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2009/06/10 20:27:09 kili Exp $
+# $OpenBSD: Makefile,v 1.45 2009/08/04 14:41:53 martynas Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p7
+PKGNAME=		${DISTNAME}p8
 
 SHARED_LIBS +=  gnome-desktop-2      6.0      # .9.4
 
@@ -37,6 +37,8 @@ LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
+AUTOCONF_VERSION=	2.62
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports" \
 			--disable-scrollkeeper
