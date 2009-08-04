@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/04 14:00:21 martynas Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/04 15:13:02 martynas Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.12.3
+VERSION=		3.12.3.1
 DISTNAME=		nss-${VERSION}
-SO_VERSION=		23.0
+SO_VERSION=		23.1
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -25,7 +25,6 @@ WANTLIB += c pthread z
 
 MASTER_SITES=		http://ftp.eu.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${VERSION:S/./_/g}_RTM/src/ \
 			http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${VERSION:S/./_/g}_RTM/src/
-EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		nspr4.>=20.1,plc4.>=20.1,plds4.>=20.1:nspr->=4.8:devel/nspr \
 			sqlite3.>=13.3:sqlite3->=3.6.13:databases/sqlite3
