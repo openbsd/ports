@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2009/08/04 14:41:53 martynas Exp $
+# $OpenBSD: Makefile,v 1.46 2009/08/04 14:57:21 ajacoutot Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 
 SHARED_LIBS +=  gnome-desktop-2      6.0      # .9.4
 
@@ -28,7 +28,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		png popt ssl util xml2 z
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			lang/python
 
 RUN_DEPENDS=		::x11/gnome/py-gnome
 LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
