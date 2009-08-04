@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2009/08/04 14:57:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2009/08/04 15:00:20 ajacoutot Exp $
 
 COMMENT=		components for the GNOME desktop
 
@@ -38,8 +38,6 @@ LIB_DEPENDS=		gnomeui-2::x11/gnome/libgnomeui \
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
-AUTOCONF_VERSION=	2.62
-CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports" \
 			--disable-scrollkeeper
