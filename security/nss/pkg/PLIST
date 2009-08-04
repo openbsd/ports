@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/25 00:47:00 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/08/04 14:00:21 martynas Exp $
 @bin bin/certutil
 @bin bin/cmsutil
 @bin bin/crlutil
@@ -53,6 +53,7 @@ include/nss/nssilock.h
 include/nss/nsslocks.h
 include/nss/nssrwlk.h
 include/nss/nssrwlkt.h
+include/nss/nssutil.h
 include/nss/ocsp.h
 include/nss/ocspt.h
 include/nss/p12.h
@@ -99,7 +100,6 @@ include/nss/sslerr.h
 include/nss/sslproto.h
 include/nss/sslt.h
 include/nss/utilrename.h
-include/nss/watcomfx.h
 lib/libcrmf.a
 lib/libfreebl3.chk
 @lib lib/libfreebl3.so.${LIBfreebl3_VERSION}

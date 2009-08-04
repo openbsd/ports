@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/23 07:50:47 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/04 14:00:21 martynas Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.12
+VERSION=		3.12.3
 DISTNAME=		nss-${VERSION}
-PKGNAME=		${DISTNAME}p0
-SO_VERSION=		22.0
+SO_VERSION=		23.0
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -26,9 +25,10 @@ WANTLIB += c pthread z
 
 MASTER_SITES=		http://ftp.eu.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${VERSION:S/./_/g}_RTM/src/ \
 			http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${VERSION:S/./_/g}_RTM/src/
+EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=		nspr4.>=20,plc4.>=20,plds4.>=20:nspr->=4.7:devel/nspr \
-			sqlite3.>=10.0:sqlite3->=3.5:databases/sqlite3
+LIB_DEPENDS=		nspr4.>=20.1,plc4.>=20.1,plds4.>=20.1:nspr->=4.8:devel/nspr \
+			sqlite3.>=13.3:sqlite3->=3.6.13:databases/sqlite3
 
 MAKE_ENV=		BUILD_OPT=1 \
 			LOCALBASE="${LOCALBASE}" \
@@ -43,7 +43,7 @@ USE_GMAKE=		Yes
 
 WRKSRC=			${WRKDIST}/mozilla/security/nss
 NSSDIST=		${WRKDIST}/mozilla/dist
-NSSOBJ=			${NSSDIST}/OpenBSD`uname -r`_OPT.OBJ
+NSSOBJ=			${NSSDIST}/OpenBSD`uname -r`${OBJ64}_OPT.OBJ
 
 ALL_TARGET=		nss_build_all
 
@@ -72,3 +72,10 @@ do-regress:
 		LD_LIBRARY_PATH="${NSSOBJ}/lib" ./all.sh
 
 .include <bsd.port.mk>
+
+.for _m in ${MACHINE_ARCH}
+. if !empty(LP64_ARCHS:M${_m})
+MAKE_ENV+=		USE_64=1
+OBJ64=			_64
+. endif
+.endfor
