@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_lib_tests_Makefile_in,v 1.3 2008/12/15 21:26:04 martynas Exp $
---- mozilla/nsprpub/lib/tests/Makefile.in.orig	Sun May  4 01:28:43 2008
-+++ mozilla/nsprpub/lib/tests/Makefile.in	Fri Dec 12 05:57:31 2008
-@@ -127,6 +127,12 @@ ifeq (,$(filter-out OpenBSD,$(OS_ARCH)))
+$OpenBSD: patch-mozilla_nsprpub_lib_tests_Makefile_in,v 1.4 2009/08/04 13:56:09 martynas Exp $
+--- mozilla/nsprpub/lib/tests/Makefile.in.orig	Sun Feb 22 20:56:04 2009
++++ mozilla/nsprpub/lib/tests/Makefile.in	Sat Jun 20 23:38:30 2009
+@@ -117,6 +117,12 @@ ifeq (,$(filter-out OpenBSD,$(OS_ARCH)))
      endif
  endif
  

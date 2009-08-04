@@ -1,11 +1,11 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_pthreads_ptthread_c,v 1.1 2006/11/06 14:35:45 ajacoutot Exp $
---- mozilla/nsprpub/pr/src/pthreads/ptthread.c.orig	Sat Jul  2 00:26:37 2005
-+++ mozilla/nsprpub/pr/src/pthreads/ptthread.c	Sat Nov  4 13:15:29 2006
+$OpenBSD: patch-mozilla_nsprpub_pr_src_pthreads_ptthread_c,v 1.2 2009/08/04 13:56:09 martynas Exp $
+--- mozilla/nsprpub/pr/src/pthreads/ptthread.c.orig	Fri May  8 04:01:11 2009
++++ mozilla/nsprpub/pr/src/pthreads/ptthread.c	Sat Jun 20 23:38:30 2009
 @@ -51,6 +51,7 @@
  #include <unistd.h>
  #include <string.h>
  #include <signal.h>
 +#undef _POSIX_THREAD_PRIORITY_SCHEDULING
  
- /*
-  * Record whether or not we have the privilege to set the scheduling
+ #ifdef SYMBIAN
+ /* In Open C sched_get_priority_min/max do not work properly, so we undefine

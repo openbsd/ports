@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prinit_c,v 1.4 2008/07/25 00:42:34 martynas Exp $
---- mozilla/nsprpub/pr/src/misc/prinit.c.orig	Sat Apr 26 03:39:35 2008
-+++ mozilla/nsprpub/pr/src/misc/prinit.c	Fri Jun 13 21:58:54 2008
-@@ -417,8 +417,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prinit_c,v 1.5 2009/08/04 13:56:09 martynas Exp $
+--- mozilla/nsprpub/pr/src/misc/prinit.c.orig	Fri May  8 04:01:11 2009
++++ mozilla/nsprpub/pr/src/misc/prinit.c	Sat Jun 20 23:38:30 2009
+@@ -414,8 +414,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
          _PR_CleanupDtoa();
          _PR_CleanupCallOnce();
  		_PR_ShutdownLinker();
@@ -10,7 +10,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prinit_c,v 1.4 2008/07/25 00:42:34 m
          /* Release the primordial thread's private data, etc. */
          _PR_CleanupThread(me);
  
-@@ -429,6 +427,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+@@ -426,6 +424,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
  	    _PR_LogCleanup();
  
          /*
@@ -23,7 +23,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prinit_c,v 1.4 2008/07/25 00:42:34 m
           * This part should look like the end of _PR_NativeRunThread
           * and _PR_UserRunThread.
           */
-@@ -440,6 +444,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+@@ -437,6 +441,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
              PR_DELETE(me->stack);
              PR_DELETE(me);
          }

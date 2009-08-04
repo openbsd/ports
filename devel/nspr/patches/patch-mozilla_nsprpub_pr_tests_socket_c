@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_tests_socket_c,v 1.1 2006/11/09 19:00:39 ajacoutot Exp $
---- mozilla/nsprpub/pr/tests/socket.c.orig	Sun Apr 25 17:01:02 2004
-+++ mozilla/nsprpub/pr/tests/socket.c	Thu Nov  9 14:29:45 2006
-@@ -2245,6 +2245,7 @@ main(int argc, char **argv)
+$OpenBSD: patch-mozilla_nsprpub_pr_tests_socket_c,v 1.2 2009/08/04 13:56:09 martynas Exp $
+--- mozilla/nsprpub/pr/tests/socket.c.orig	Wed May  6 08:40:39 2009
++++ mozilla/nsprpub/pr/tests/socket.c	Sat Jun 20 23:38:30 2009
+@@ -2234,6 +2234,7 @@ int main(int argc, char **argv)
      /*
       * client-server test, Ipv6-Ipv4
       */
@@ -9,7 +9,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_socket_c,v 1.1 2006/11/09 19:00:39 ajac
  	client_domain = PR_AF_INET6;
  	printf("TCP Client/Server Test - IPv6/Ipv4\n");
      if (TCP_Socket_Client_Server_Test() < 0) {
-@@ -2252,9 +2253,11 @@ main(int argc, char **argv)
+@@ -2241,9 +2242,11 @@ int main(int argc, char **argv)
          goto done;
      } else
          printf("TCP_Socket_Client_Server_Test Passed\n");
@@ -21,7 +21,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_socket_c,v 1.1 2006/11/09 19:00:39 ajac
  	client_domain = PR_AF_INET;
  	server_domain = PR_AF_INET6;
  	printf("TCP Client/Server Test - IPv4/Ipv6\n");
-@@ -2263,6 +2266,7 @@ main(int argc, char **argv)
+@@ -2252,6 +2255,7 @@ int main(int argc, char **argv)
          goto done;
      } else
          printf("TCP_Socket_Client_Server_Test Passed\n");
@@ -29,7 +29,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_socket_c,v 1.1 2006/11/09 19:00:39 ajac
      /*
       * client-server test, Ipv6-Ipv6
       */
-@@ -2289,6 +2293,7 @@ main(int argc, char **argv)
+@@ -2281,6 +2285,7 @@ int main(int argc, char **argv)
      /*
       * run client-server test with UDP, IPv6/IPv4
       */
@@ -37,7 +37,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_socket_c,v 1.1 2006/11/09 19:00:39 ajac
  	printf("UDP Client/Server Test - IPv6/Ipv4\n");
  	client_domain = PR_AF_INET6;
  	server_domain = PR_AF_INET;
-@@ -2297,9 +2302,11 @@ main(int argc, char **argv)
+@@ -2289,9 +2294,11 @@ int main(int argc, char **argv)
          goto done;
      } else
          printf("UDP_Socket_Client_Server_Test Passed\n");
@@ -49,7 +49,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_socket_c,v 1.1 2006/11/09 19:00:39 ajac
  	printf("UDP Client/Server Test - IPv4/Ipv6\n");
  	client_domain = PR_AF_INET;
  	server_domain = PR_AF_INET6;
-@@ -2308,6 +2315,7 @@ main(int argc, char **argv)
+@@ -2300,6 +2307,7 @@ int main(int argc, char **argv)
          goto done;
      } else
          printf("UDP_Socket_Client_Server_Test Passed\n");

@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_sh,v 1.1 2008/07/25 00:42:34 martynas Exp $
---- mozilla/nsprpub/pr/tests/runtests.sh.orig	Sun Jan 27 02:45:13 2008
-+++ mozilla/nsprpub/pr/tests/runtests.sh	Sat Apr  5 22:26:43 2008
+$OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_sh,v 1.2 2009/08/04 13:56:09 martynas Exp $
+--- mozilla/nsprpub/pr/tests/runtests.sh.orig	Sun May 10 00:30:55 2009
++++ mozilla/nsprpub/pr/tests/runtests.sh	Sat Jun 20 23:38:30 2009
 @@ -90,11 +90,10 @@ fi
  # Tests not run (but should)
  #
@@ -23,7 +23,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_sh,v 1.1 2008/07/25 00:42:34 m
  formattm
  fsync
  gethost
-@@ -166,6 +166,7 @@ perf
+@@ -168,6 +168,7 @@ perf
  pipeping
  pipeping2
  pipeself
@@ -31,7 +31,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_sh,v 1.1 2008/07/25 00:42:34 m
  poll_nm
  poll_to
  pollable
-@@ -181,9 +182,6 @@ selct_er
+@@ -184,9 +185,6 @@ selct_er
  selct_nm
  selct_to
  selintr

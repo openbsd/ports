@@ -1,12 +1,19 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_tests_prpollml_c,v 1.1 2006/11/15 09:05:36 ajacoutot Exp $
---- mozilla/nsprpub/pr/tests/prpollml.c.orig	Sun Apr 25 17:01:02 2004
-+++ mozilla/nsprpub/pr/tests/prpollml.c	Sun Nov 12 13:18:20 2006
-@@ -47,7 +47,7 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_tests_prpollml_c,v 1.2 2009/08/04 13:56:09 martynas Exp $
+--- mozilla/nsprpub/pr/tests/prpollml.c.orig	Wed Mar 18 11:49:45 2009
++++ mozilla/nsprpub/pr/tests/prpollml.c	Sun Jun 21 16:37:17 2009
+@@ -47,14 +47,10 @@
  #include <stdlib.h>
  #include <string.h>
  
+-#ifdef SYMBIAN
+-#define POLL_DESC_COUNT 128
+-#else
 -#define POLL_DESC_COUNT 256  /* This should be greater than the
 +#define POLL_DESC_COUNT 120  /* This should be greater than the
                                * STACK_POLL_DESC_COUNT macro in
                                * ptio.c to cause syspoll_list to
                                * be created. */
+-#endif
+ 
+ static PRPollDesc pd[POLL_DESC_COUNT];
+ 

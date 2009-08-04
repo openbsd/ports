@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 martynas Exp $
---- mozilla/nsprpub/pr/src/misc/prdtoa.c.orig	Sat Nov 17 18:00:42 2007
-+++ mozilla/nsprpub/pr/src/misc/prdtoa.c	Sat Nov 17 18:14:54 2007
-@@ -37,42 +37,14 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.5 2009/08/04 13:56:09 martynas Exp $
+--- mozilla/nsprpub/pr/src/misc/prdtoa.c.orig	Fri Mar 20 05:41:21 2009
++++ mozilla/nsprpub/pr/src/misc/prdtoa.c	Sun Jun 21 00:03:35 2009
+@@ -47,42 +47,14 @@
  
  #include "primpl.h"
  
@@ -44,7 +44,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
  /****************************************************************
   *
   * The author of this software is David M. Gay.
-@@ -92,3303 +64,82 @@ void _PR_CleanupDtoa(void)
+@@ -102,3300 +74,82 @@ void _PR_CleanupDtoa(void)
   *
   ***************************************************************/
  
@@ -173,11 +173,6 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 - *	floating-point numbers and flushes underflows to zero rather
 - *	than implementing gradual underflow, then you must also #define
 - *	Sudden_Underflow.
-- * #define YES_ALIAS to permit aliasing certain double values with
-- *	arrays of ULongs.  This leads to slightly better code with
-- *	some compilers and was always used prior to 19990916, but it
-- *	is not strictly legal and can cause trouble with aggressively
-- *	optimizing compilers (e.g., gcc 2.95.1 under -O2).
 - * #define USE_LOCALE to use the current locale's decimal_point value.
 - * #define SET_INEXACT if IEEE arithmetic is being used and extra
 - *	computation should be done to set the inexact flag when the
@@ -331,11 +326,10 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 -
 -typedef union { double d; ULong L[2]; } U;
 -
--#ifdef YES_ALIAS
--#define dval(x) x
+-#define dval(x) (x).d
 -#ifdef IEEE_8087
--#define word0(x) ((ULong *)&x)[1]
--#define word1(x) ((ULong *)&x)[0]
+-#define word0(x) (x).L[1]
+-#define word1(x) (x).L[0]
 +typedef union {
 +        double d;
 +        ULong ul[2];
@@ -345,21 +339,11 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 +#define word0(x) ((x).ul[1])
 +#define word1(x) ((x).ul[0])
  #else
--#define word0(x) ((ULong *)&x)[0]
--#define word1(x) ((ULong *)&x)[1]
+-#define word0(x) (x).L[0]
+-#define word1(x) (x).L[1]
 +#define word0(x) ((x).ul[0])
 +#define word1(x) ((x).ul[1])
  #endif
--#else
--#ifdef IEEE_8087
--#define word0(x) ((U*)&x)->L[1]
--#define word1(x) ((U*)&x)->L[0]
--#else
--#define word0(x) ((U*)&x)->L[0]
--#define word1(x) ((U*)&x)->L[1]
--#endif
--#define dval(x) ((U*)&x)->d
--#endif
  
 -/* The following definition of Storeinc is appropriate for MIPS processors.
 - * An alternative that might be better on some machines is
@@ -486,13 +470,13 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 -#define Tiny1 0
 -#define Quick_max 15
 -#define Int_max 15
--#endif /* IBM, VAX */
+ #endif /* IBM, VAX */
 -#endif /* IEEE_Arith */
 -
 -#ifndef IEEE_Arith
 -#define ROUND_BIASED
  #endif
--
+ 
 -#ifdef RND_PRODQUOT
 -#define rounded_product(a,b) a = rnd_prod(a, b)
 -#define rounded_quotient(a,b) a = rnd_quot(a, b)
@@ -500,17 +484,17 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 -extern double rnd_prod(), rnd_quot();
 -#else
 -extern double rnd_prod(double, double), rnd_quot(double, double);
- #endif
+-#endif
 -#else
 -#define rounded_product(a,b) a *= b
 -#define rounded_quotient(a,b) a /= b
 -#endif
- 
--#define Big0 (Frac_mask1 | Exp_msk1*(DBL_MAX_EXP+Bias-1))
--#define Big1 0xffffffff
 +char *__dtoa(double d, int mode, int ndigits, int *decpt, int *sign, char **rve);
 +void __freedtoa(char *s);
  
+-#define Big0 (Frac_mask1 | Exp_msk1*(DBL_MAX_EXP+Bias-1))
+-#define Big1 0xffffffff
+-
 -#ifndef Pack_32
 -#define Pack_32
 +#ifdef __cplusplus
@@ -1174,14 +1158,15 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 - static double
 -ulp
 -#ifdef KR_headers
--	(x) double x;
+-	(dx) double dx;
 -#else
--	(double x)
+-	(double dx)
 -#endif
 -{
 -	register Long L;
--	double a;
+-	U x, a;
 -
+-	dval(x) = dx;
 -	L = (word0(x) & Exp_mask) - (P-1)*Exp_msk1;
 -#ifndef Avoid_Underflow
 -#ifndef Sudden_Underflow
@@ -1223,7 +1208,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 -{
 -	ULong *xa, *xa0, w, y, z;
 -	int k;
--	double d;
+-	U d;
 -#ifdef VAX
 -	ULong d0, d1;
 -#else
@@ -1286,11 +1271,12 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 - static Bigint *
 -d2b
 -#ifdef KR_headers
--	(d, e, bits) double d; int *e, *bits;
+-	(dd, e, bits) double dd; int *e, *bits;
 -#else
--	(double d, int *e, int *bits)
+-	(double dd, int *e, int *bits)
 -#endif
 -{
+-	U d;
 -	Bigint *b;
 -	int de, k;
 -	ULong *x, y, z;
@@ -1299,6 +1285,10 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 -#endif
 -#ifdef VAX
 -	ULong d0, d1;
+-#endif
+-
+-	dval(d) = dd;
+-#ifdef VAX
 -	d0 = word0(d) >> 16 | word0(d) << 16;
 -	d1 = word1(d) >> 16 | word1(d) << 16;
 -#else
@@ -1429,7 +1419,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 -	(Bigint *a, Bigint *b)
 -#endif
 -{
--	double da, db;
+-	U da, db;
 -	int k, ka, kb;
 -
 -	dval(da) = b2d(a, &ka);
@@ -1603,7 +1593,8 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 -	int bb2, bb5, bbe, bd2, bd5, bbbits, bs2, c, dsign,
 -		 e, e1, esign, i, j, k, nd, nd0, nf, nz, nz0, sign;
 -	CONST char *s, *s0, *s1;
--	double aadj, aadj1, adj, rv, rv0;
+-	double aadj, aadj1, adj;
+-	U aadj2, rv, rv0;
 -	Long L;
 -	ULong y, z;
 -	Bigint *bb, *bb1, *bd, *bd0, *bs, *delta;
@@ -2366,7 +2357,9 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 -					aadj = z;
 -					aadj1 = dsign ? aadj : -aadj;
 -					}
--				word0(aadj1) += (2*P+1)*Exp_msk1 - y;
+-				dval(aadj2) = aadj1;
+-				word0(aadj2) += (2*P+1)*Exp_msk1 - y;
+-				aadj1 = dval(aadj2);
 -				}
 -			adj = aadj1 * ulp(dval(rv));
 -			dval(rv) += adj;
@@ -2701,10 +2694,10 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 - static char *
 -dtoa
 -#ifdef KR_headers
--	(d, mode, ndigits, decpt, sign, rve)
--	double d; int mode, ndigits, *decpt, *sign; char **rve;
+-	(dd, mode, ndigits, decpt, sign, rve)
+-	double dd; int mode, ndigits, *decpt, *sign; char **rve;
 -#else
--	(double d, int mode, int ndigits, int *decpt, int *sign, char **rve)
+-	(double dd, int mode, int ndigits, int *decpt, int *sign, char **rve)
 -#endif
 -{
 - /*	Arguments ndigits, decpt, sign are similar to those
@@ -2750,7 +2743,8 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 -	ULong x;
 -#endif
 -	Bigint *b, *b1, *delta, *mlo, *mhi, *S;
--	double d2, ds, eps;
+-	U d, d2, eps;
+-	double ds;
 -	char *s, *s0;
 -#ifdef Honor_FLT_ROUNDS
 -	int rounding;
@@ -2766,6 +2760,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 -		}
 -#endif
 -
+-	dval(d) = dd;
 -	if (word0(d) & Sign_bit) {
 -		/* set sign for everything, including 0's and NaNs */
 -		*sign = 1;
@@ -3346,7 +3341,9 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
 -		++*s++;
 -		}
 -	else {
+-#ifdef Honor_FLT_ROUNDS
 - trimzeros:
+-#endif
 -		while(*--s == '0');
 -		s++;
 -		}
@@ -3384,7 +3381,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
  
  PR_IMPLEMENT(PRStatus)
  PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
-@@ -3404,7 +155,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
+@@ -3411,7 +165,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
          PR_SetError(PR_INVALID_ARGUMENT_ERROR, 0);
          return rv;
      }
@@ -3393,7 +3390,7 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
      if (!result) {
          PR_SetError(PR_OUT_OF_MEMORY_ERROR, 0);
          return rv;
-@@ -3419,7 +170,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
+@@ -3426,7 +180,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
          }
          rv = PR_SUCCESS;
      }
@@ -3402,24 +3399,19 @@ $OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prdtoa_c,v 1.4 2008/07/25 00:42:34 m
      return rv;  
  }
  
-@@ -3435,13 +186,15 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
- **   '+' or '-' after the 'e' in scientific notation
- */
- PR_IMPLEMENT(void)
--PR_cnvtf(char *buf,int bufsz, int prcsn,double fval)
-+PR_cnvtf(char *buf,int bufsz, int prcsn,double _fval)
- {
-     PRIntn decpt, sign, numdigits;
+@@ -3448,9 +202,9 @@ PR_cnvtf(char *buf, int bufsz, int prcsn, double dfval
      char *num, *nump;
      char *bufp = buf;
      char *endnum;
+-    U fval;
 +    _double fval;
  
-+    value(fval) = _fval;
+-    dval(fval) = dfval;
++    value(fval) = dfval;
      /* If anything fails, we store an empty string in 'buf' */
      num = (char*)PR_MALLOC(bufsz);
      if (num == NULL) {
-@@ -3449,7 +202,7 @@ PR_cnvtf(char *buf,int bufsz, int prcsn,double fval)
+@@ -3458,7 +212,7 @@ PR_cnvtf(char *buf, int bufsz, int prcsn, double dfval
          return;
      }
      /* XXX Why use mode 1? */

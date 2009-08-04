@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_configure_in,v 1.8 2008/12/15 21:26:04 martynas Exp $
---- mozilla/nsprpub/configure.in.orig	Tue Nov  4 20:07:15 2008
-+++ mozilla/nsprpub/configure.in	Fri Dec 12 05:57:31 2008
-@@ -1805,9 +1805,11 @@ mips-sony-newsos*)
+$OpenBSD: patch-mozilla_nsprpub_configure_in,v 1.9 2009/08/04 13:56:09 martynas Exp $
+--- mozilla/nsprpub/configure.in.orig	Sat May  2 02:08:00 2009
++++ mozilla/nsprpub/configure.in	Sat Jun 20 23:38:30 2009
+@@ -1809,9 +1809,11 @@ mips-sony-newsos*)
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)
      AC_DEFINE(HAVE_SOCKLEN_T)
@@ -14,7 +14,7 @@ $OpenBSD: patch-mozilla_nsprpub_configure_in,v 1.8 2008/12/15 21:26:04 martynas 
      DSO_CFLAGS=-fPIC
      MDCPUCFG_H=_openbsd.cfg
      PR_MD_CSRCS=openbsd.c
-@@ -2799,6 +2801,7 @@ config/autoconf.mk
+@@ -2871,6 +2873,7 @@ config/autoconf.mk
  config/nsprincl.mk
  config/nsprincl.sh
  config/nspr-config
