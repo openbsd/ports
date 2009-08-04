@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2009/06/15 19:03:23 jakob Exp $
---- Makefile.in.orig	Tue Apr 21 10:36:39 2009
-+++ Makefile.in	Thu Jun 11 22:26:31 2009
-@@ -386,7 +386,7 @@ endif
+$OpenBSD: patch-Makefile_in,v 1.7 2009/08/04 15:45:26 jakob Exp $
+--- Makefile.in.orig	Wed Jul 15 15:08:52 2009
++++ Makefile.in	Tue Aug  4 18:01:39 2009
+@@ -391,7 +391,7 @@ endif
  	if test ! -e $(DESTDIR)$(configfile); then $(INSTALL) -d `dirname $(DESTDIR)$(configfile)`; $(INSTALL) -c -m 644 doc/example.conf $(DESTDIR)$(configfile); fi
  	$(LIBTOOL) --mode=install cp $(srcdir)/libunbound/unbound.h $(DESTDIR)$(includedir)/unbound.h
  	$(LIBTOOL) --mode=install cp libunbound.la $(DESTDIR)$(libdir)
@@ -9,4 +9,4 @@ $OpenBSD: patch-Makefile_in,v 1.6 2009/06/15 19:03:23 jakob Exp $
 +#	$(LIBTOOL) --mode=finish $(DESTDIR)$(libdir)
  
  uninstall:
- 	rm -f -- $(DESTDIR)$(sbindir)/unbound $(DESTDIR)$(sbindir)/unbound-checkconf $(DESTDIR)$(sbindir)/unbound-host $(DESTDIR)$(sbindir)/unbound-control $(DESTDIR)$(sbindir)/unbound-control-setup
+ 	rm -f -- $(DESTDIR)$(sbindir)/unbound$(EXEEXT) $(DESTDIR)$(sbindir)/unbound-checkconf$(EXEEXT) $(DESTDIR)$(sbindir)/unbound-host$(EXEEXT) $(DESTDIR)$(sbindir)/unbound-control$(EXEEXT) $(DESTDIR)$(sbindir)/unbound-control-setup
