@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.27 2009/07/27 15:19:15 sthen Exp $
---- configure.in.orig	Tue Mar 31 10:35:39 2009
-+++ configure.in	Wed May  6 04:25:58 2009
+$OpenBSD: patch-configure_in,v 1.28 2009/08/05 14:24:33 sthen Exp $
+--- configure.in.orig	Mon Jul 13 19:08:44 2009
++++ configure.in	Tue Aug  4 06:55:37 2009
 @@ -468,44 +468,7 @@ AC_SUBST(ABI_CHECK)
  AC_PATH_PROG(PS, ps, ps)
  AC_MSG_CHECKING("how to check if pid exists")
@@ -47,7 +47,7 @@ $OpenBSD: patch-configure_in,v 1.27 2009/07/27 15:19:15 sthen Exp $
  AC_SUBST(FIND_PROC)
  AC_MSG_RESULT("$FIND_PROC")
  
-@@ -891,7 +854,8 @@ AC_ARG_WITH(libwrap,
+@@ -892,7 +855,8 @@ AC_ARG_WITH(libwrap,
      AC_CHECK_HEADER(tcpd.h,
        LIBS="-lwrap $LIBS"
        AC_MSG_CHECKING(for TCP wrappers library -lwrap)
@@ -57,33 +57,3 @@ $OpenBSD: patch-configure_in,v 1.27 2009/07/27 15:19:15 sthen Exp $
  int allow_severity = 0;
  int deny_severity  = 0;
  
-@@ -1621,29 +1585,6 @@ case $SYSTEM_TYPE in
- AC_SYS_RESTARTABLE_SYSCALLS
-     ;;
- esac
--
--# Build optimized or debug version ?
--# First check for gcc and g++
--if test "$ac_cv_prog_gcc" = "yes"
--then
--  DEBUG_CFLAGS="-g"
--  DEBUG_OPTIMIZE_CC="-O"
--  OPTIMIZE_CFLAGS="$MAX_C_OPTIMIZE"
--else
--  DEBUG_CFLAGS="-g"
--  DEBUG_OPTIMIZE_CC=""
--  OPTIMIZE_CFLAGS="-O"
--fi
--if test "$ac_cv_prog_cxx_g" = "yes"
--then
--  DEBUG_CXXFLAGS="-g"
--  DEBUG_OPTIMIZE_CXX="-O"
--  OPTIMIZE_CXXFLAGS="$MAX_CXX_OPTIMIZE"
--else
--  DEBUG_CXXFLAGS="-g"
--  DEBUG_OPTIMIZE_CXX=""
--  OPTIMIZE_CXXFLAGS="-O"
--fi
- 
- case $SYSTEM_TYPE in
-   *netware*)
