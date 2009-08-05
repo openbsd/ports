@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2008/01/04 18:38:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/05 20:40:46 steven Exp $
 
 COMMENT=	library of Fortran 77 linear algebra subroutines
 
 DISTNAME=	lapack-3.1.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS=	lapack 5.0
 
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.netlib.org/lapack/
-
-MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

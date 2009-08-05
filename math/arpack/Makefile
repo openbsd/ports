@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/05 20:40:46 steven Exp $
 
 COMMENT=	solve large scale eigenvalue problems
 
 DISTNAME=	arpack96
-PKGNAME=	arpack-96
+PKGNAME=	arpack-96p0
 SHARED_LIBS=	arpack 1.0
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.caam.rice.edu/software/ARPACK/
-
-MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # Rice BSD license (not in distfile)
 PERMIT_PACKAGE_CDROM=	Yes

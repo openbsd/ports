@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/05 20:40:46 steven Exp $
 
 COMMENT=	order a sparse matrix prior to Cholesky factorization
 
 VERSION=	2.2.0
 DISTNAME=	AMD-${VERSION}
-PKGNAME=	amd-${VERSION}
+PKGNAME=	amd-${VERSION}p0
 SHARED_LIBS=	amd	0.0 \
 		amdf77	0.0
 
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.cise.ufl.edu/research/sparse/amd/
-
-MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

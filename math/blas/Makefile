@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2009/08/05 20:40:46 steven Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
 VERSION=	1.0
 DISTNAME=	blas
-PKGNAME=	${DISTNAME}-${VERSION}p1
+PKGNAME=	${DISTNAME}-${VERSION}p2
 SHARED_LIBS=	blas	1.0
 
 CATEGORIES=	math
 DISTFILES=	blas.tgz manpages.tgz:0
 
 HOMEPAGE=	http://www.netlib.org/blas/
-
-MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # freely available
 PERMIT_PACKAGE_CDROM=	Yes
