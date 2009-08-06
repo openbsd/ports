@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_dispatch_predicates_py,v 1.1 2009/08/06 23:36:44 martynas Exp $
+--- src/dispatch/predicates.py.orig	Wed Apr 25 07:01:44 2007
++++ src/dispatch/predicates.py	Wed Aug  5 18:48:17 2009
+@@ -236,7 +236,7 @@ class OrExpr(LogicalExpr):
+ 
+         return or_, (EXPR_GETTER_ID,)
+ 
+-    [as(classmethod)]
++    [dispatch_as(classmethod)]
+     def immediate(klass,seq):
+         for item in seq:
+             if item:
+@@ -260,7 +260,7 @@ class AndExpr(LogicalExpr):
+ 
+         return and_, (EXPR_GETTER_ID,)
+ 
+-    [as(classmethod)]
++    [dispatch_as(classmethod)]
+     def immediate(klass,seq):
+         for item in seq:
+             if not item:
+@@ -278,7 +278,7 @@ class IfElse(LogicalExpr):
+             return get(argIds[2])
+         return ifelse, (EXPR_GETTER_ID,)
+ 
+-    [as(classmethod)]
++    [dispatch_as(classmethod)]
+     def immediate(klass,seq):
+         if seq[1]: return seq[0]
+         return seq[2]
