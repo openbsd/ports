@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/02/18 12:04:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/08/06 10:30:20 eric Exp $
 @bin bin/pgsql2shp
 @bin bin/shp2pgsql
-lib/postgresql/liblwgeom.so
-@comment lib/postgresql/liblwgeom.so.1
+lib/postgresql/postgis-1.4.so
 libexec/postgis/
 libexec/postgis/utils/
 libexec/postgis/utils/README
 libexec/postgis/utils/create_undef.pl
+libexec/postgis/utils/new_postgis_restore.pl
 libexec/postgis/utils/postgis_proc_upgrade.pl
 libexec/postgis/utils/postgis_restore.pl
 libexec/postgis/utils/profile_intersects.pl
@@ -14,10 +14,11 @@ libexec/postgis/utils/test_estimation.pl
 libexec/postgis/utils/test_joinestimation.pl
 @man man/man1/pgsql2shp.1
 @man man/man1/shp2pgsql.1
-share/doc/postgis/
-share/doc/postgis/README.postgis
-share/doc/postgis/postgis.html
+share/doc/postgresql/postgis/
+share/doc/postgresql/postgis/README.postgis
+share/doc/postgresql/postgis/postgis.html
 share/postgresql/contrib/
-share/postgresql/contrib/lwpostgis.sql
-share/postgresql/contrib/lwpostgis_upgrade.sql
+share/postgresql/contrib/postgis.sql
+share/postgresql/contrib/postgis_upgrade.sql
 share/postgresql/contrib/spatial_ref_sys.sql
+share/postgresql/contrib/uninstall_postgis.sql

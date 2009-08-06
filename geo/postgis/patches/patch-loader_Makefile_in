@@ -1,0 +1,12 @@
+$OpenBSD: patch-loader_Makefile_in,v 1.1 2009/08/06 10:30:20 eric Exp $
+--- loader/Makefile.in.orig	Mon Aug  3 12:24:41 2009
++++ loader/Makefile.in	Mon Aug  3 12:25:28 2009
+@@ -24,7 +24,7 @@ PGSQL_FE_CPPFLAGS=@PGSQL_FE_CPPFLAGS@
+ PGSQL_FE_LDFLAGS=@PGSQL_FE_LDFLAGS@
+ 
+ # iconv flags
+-ICONV_LDFLAGS=@ICONV_LDFLAGS@
++ICONV_LDFLAGS=-L${LOCALBASE}/lib @ICONV_LDFLAGS@
+ 
+ # liblwgeom
+ LIBLWGEOM=../liblwgeom/liblwgeom.a

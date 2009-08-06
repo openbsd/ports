@@ -1,0 +1,26 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2009/08/06 10:30:20 eric Exp $
+--- doc/Makefile.in.orig	Wed Jul  8 17:16:53 2009
++++ doc/Makefile.in	Mon Aug  3 14:07:35 2009
+@@ -41,8 +41,8 @@ DBLATEX = @DBLATEX@
+ IMAGEMAGICK = @IMAGEMAGICK@
+ 
+ # Directories for postgresql subdirectories
+-PGSQL_DOCDIR=@PGSQL_DOCDIR@
+-PGSQL_MANDIR=@PGSQL_MANDIR@
++PGSQL_DOCDIR=${WRKINST}@PGSQL_DOCDIR@
++PGSQL_MANDIR=${WRKINST}@PGSQL_MANDIR@
+ PGSQL_SHAREDIR=@PGSQL_SHAREDIR@
+ 
+ # If XSLTPROC or XSLBASE were not found during configure, we cannot
+@@ -77,11 +77,6 @@ chunked-html: postgis-out.xml
+ 		$(CHUNK_HTML_DOCBOOK_XSL) \
+ 		$<
+ 
+-html/postgis.html: postgis-out.xml
+-	$(XSLTPROC) $(XSLTPROC_COMMONOPTS) $(XSLTPROC_HTMLOPTS) \
+-		--output html/postgis.html \
+-		$(HTML_DOCBOOK_XSL) \
+-		$<
+ 
+ 
+ postgis-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}.${POSTGIS_MICRO_VERSION}.pdf: postgis-out.xml

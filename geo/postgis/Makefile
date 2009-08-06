@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/02/18 12:04:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/06 10:30:20 eric Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	geographic objects support for PostgreSQL
-DISTNAME=	postgis-1.3.5
+DISTNAME=	postgis-1.4.0
 CATEGORIES=	geo databases
 
 HOMEPAGE=	http://www.postgis.org/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}download/
 
-WANTLIB=	c
+WANTLIB=	c m
 MODULES=        converters/libiconv
 
 LIB_DEPENDS=	proj::devel/proj \
@@ -30,24 +30,19 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 USE_GMAKE=	Yes
 CONFIGURE_ENV=	PGXS=1 \
 		LDFLAGS=-L${LOCALBASE}/lib \
-		CPPFLAGS=-I${LOCALBASE}/include
+		CFLAGS=-I${LOCALBASE}/include
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-pgsql-src=${LOCALBASE}/lib/postgresql/pgxs \
-		--enable-autoconf \
-		--with-proj \
-		--with-geos \
-		--datadir=${PREFIX}/share/postgresql/contrib \
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share/postgresql/contrib \
 		--libdir=${PREFIX}/lib/postgresql
 
 post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/postgis/utils
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/*.pl ${PREFIX}/libexec/postgis/utils
 	${INSTALL_DATA} ${WRKSRC}/utils/README ${PREFIX}/libexec/postgis/utils
-	cd ${WRKSRC}/doc && ${MAKE_PROGRAM} install
+	cd ${WRKSRC}/doc && WRKINST=${WRKINST} ${MAKE_PROGRAM} install
 
-###
-### Note on running regress
-###
+# Note on running regress
+#
 # - make sure you do not have a postgresql server currently running
 # - as user _postgresql, in another terminal, run:
 #     $ mkdir /tmp/pg && initdb -D /tmp/pg -U postgres && postgres -D /tmp/pg   
