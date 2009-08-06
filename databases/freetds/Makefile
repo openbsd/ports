@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/08/01 14:11:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2009/08/06 10:13:41 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -29,6 +29,7 @@ WANTLIB=	c ncurses readline pthread
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
 
 MODULES=	converters/libiconv
+BUILD_DEPENDS=	::devel/doxygen
 LIB_DEPENDS=	iodbc,iodbcinst::databases/iodbc,-main
 
 FLAVORS=	msdblib
