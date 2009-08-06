@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.16 2008/07/16 20:15:48 brad Exp $
+@comment $OpenBSD: PLIST,v 1.17 2009/08/06 23:44:07 martynas Exp $
+@newgroup _ettercap:636
+@newuser _ettercap:636:_ettercap::ettercap:/nonexistent:/sbin/nologin
 @bin bin/ettercap
 @bin bin/etterfilter
 @bin bin/etterlog

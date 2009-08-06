@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_ettercap_8,v 1.1 2009/08/06 23:44:07 martynas Exp $
+--- man/ettercap.8.orig	Fri May 27 18:12:11 2005
++++ man/ettercap.8	Tue Aug  4 22:09:19 2009
+@@ -164,7 +164,7 @@ the subnet.
+ .SH PRIVILEGES DROPPING
+ ettercap needs root privileges to open the Link Layer sockets. After the
+ initialization phase, the root privs are not needed anymore, so ettercap drops
+-them to UID = 65535 (nobody). Since ettercap has to write (create) log files,
++them to UID = 636 (_ettercap). Since ettercap has to write (create) log files,
+ it must be executed in a directory with the right permissions (e.g. /tmp/). If
+ you want to drop privs to a different uid, you can export the environment
+ variable EC_UID with the value of the uid you want to drop the privs to (e.g.
