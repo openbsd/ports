@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2009/07/14 19:43:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.153 2009/08/06 10:46:42 mglocker Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -9,7 +9,7 @@ V=			1.0rc2
 N=			mplayer
 DISTNAME=		MPlayer-${V}
 DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p25
+PKGNAME=		${N}-${V}p26
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -56,7 +56,7 @@ LIB_DEPENDS=	png::graphics/png \
 		dv::multimedia/libdv
 
 BUILD_DEPENDS=	::net/livemedia \
-		:rtunes->=0.7:audio/rtunes
+		:rtunes->=0.8:audio/rtunes
 
 CONFDIR=	${SYSCONFDIR}/mplayer
 SUBST_VARS=	CONFDIR
