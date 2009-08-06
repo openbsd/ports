@@ -1,0 +1,12 @@
+$OpenBSD: patch-ode_demo_Makefile_in,v 1.1 2009/08/06 10:59:21 jasper Exp $
+--- ode/demo/Makefile.in.orig	Tue Aug  4 17:53:23 2009
++++ ode/demo/Makefile.in	Tue Aug  4 17:54:36 2009
+@@ -459,7 +459,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = -I$(abs_top_srcdir)/include \
+-	-DDRAWSTUFF_TEXTURE_PATH="\"$(abs_top_srcdir)/drawstuff/textures\"" \
++	-DDRAWSTUFF_TEXTURE_PATH="\"$(prefix)/share/examples/ode/textures\"" \
+ 	$(am__append_2)
+ @X11_TRUE@AM_LDFLAGS = $(X_PRE_LIBS) $(X_LIBS) $(X_EXTRA_LIBS)
+ 

@@ -1,9 +1,18 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2009/08/03 14:14:10 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2009/08/06 10:59:21 jasper Exp $
 
 s/-lpthread/-pthread/
 
---- configure.orig	Mon Jul 27 12:51:52 2009
-+++ configure	Mon Jul 27 12:52:20 2009
+--- configure.orig	Mon May 25 02:15:39 2009
++++ configure	Tue Aug  4 17:43:36 2009
+@@ -17197,7 +17197,7 @@ else
+         ODE_PRECISION=-DdSINGLE
+ fi
+ 
+-CPPFLAGS+=" $ODE_PRECISION"
++CPPFLAGS="$CPPFLAGS $ODE_PRECISION"
+ 
+ 
+ 
 @@ -19074,13 +19074,13 @@ else
  fi
  
