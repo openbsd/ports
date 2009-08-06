@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/06 20:39:29 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/06 12:48:18 benoit Exp $
 
 COMMENT=		'802.11 WEP and WPA-PSK keys cracking program'
 DISTNAME=		aircrack-ng-1.0-rc3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		security
 
-MASTER_SITES= 		http://download.aircrack-ng.org/
 HOMEPAGE=		http://www.aircrack-ng.org/
 
-MAINTAINER=		Benoit Lecocq <blq@arcane-labs.net>
+MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		c pthread crypto ssl z
+
+MASTER_SITES=		http://www.arcane-labs.net/download/OpenBSD/
 
 LIB_DEPENDS=		sqlite3::databases/sqlite3
 
