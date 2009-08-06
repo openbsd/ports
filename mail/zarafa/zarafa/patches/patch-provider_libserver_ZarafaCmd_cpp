@@ -1,4 +1,4 @@
-$OpenBSD: patch-provider_libserver_ZarafaCmd_cpp,v 1.7 2009/07/31 09:55:56 ajacoutot Exp $
+$OpenBSD: patch-provider_libserver_ZarafaCmd_cpp,v 1.8 2009/08/06 10:02:21 ajacoutot Exp $
 
 OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
 
@@ -28,7 +28,7 @@ OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
 -    	                        0, \
 -							    GetTimeOfDay() - dblStart); \
 +    times(&endTimes); \
-+    if(lpecSession) \
++    if(lpecSession) { \
 +    	lpecSession->AddClocks( (double)(endTimes.tms_utime - startTimes.tms_utime) / CLOCKS_PER_SEC, \
 +							    (double)(endTimes.tms_stime - startTimes.tms_stime) / CLOCKS_PER_SEC, \
 + 							    GetTimeOfDay() - dblStart); \
