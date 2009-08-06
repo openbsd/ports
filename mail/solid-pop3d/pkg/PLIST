@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/10/12 15:02:12 danh Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/08/06 23:40:47 martynas Exp $
+@newgroup _solid-pop3d:635
+@newuser _solid-pop3d:635:_solid-pop3d:daemon:solid-pop3d:/nonexistent:/sbin/nologin
 @man man/man5/dot-spop3d.5
 @man man/man5/spop3d.conf.5
 @man man/man8/spop3d.8

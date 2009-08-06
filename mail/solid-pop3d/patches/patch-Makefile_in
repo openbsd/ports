@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2000/08/15 20:36:58 danh Exp $
---- Makefile.in.orig	Fri Apr 21 12:29:57 2000
-+++ Makefile.in	Thu Aug 10 03:45:11 2000
+$OpenBSD: patch-Makefile_in,v 1.3 2009/08/06 23:40:47 martynas Exp $
+--- Makefile.in.orig	Fri Apr 21 18:29:57 2000
++++ Makefile.in	Tue Aug  4 21:57:06 2009
 @@ -45,7 +45,7 @@ all: all-recursive
  all-recursive:
  	@for subdir in $(SUBDIRS); do \
@@ -28,7 +28,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2000/08/15 20:36:58 danh Exp $
  	  || exit 1; \
  	done
  
-@@ -74,7 +74,7 @@ maintainer-clean: maintainer-clean-recur
+@@ -74,7 +74,7 @@ maintainer-clean: maintainer-clean-recursive distclean
  
  maintainer-clean-recursive:
  	@for subdir in $(SUBDIRS); do \
