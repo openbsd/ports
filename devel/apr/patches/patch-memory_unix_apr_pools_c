@@ -1,0 +1,61 @@
+$OpenBSD: patch-memory_unix_apr_pools_c,v 1.1 2009/08/06 22:20:21 steven Exp $
+
+SECURITY: CVE-2009-2412 (cve.mitre.org)
+Fix overflow in pools and rmm, where size alignment was taking place.
+
+--- memory/unix/apr_pools.c.orig	Thu Aug  6 18:50:47 2009
++++ memory/unix/apr_pools.c	Thu Aug  6 18:53:45 2009
+@@ -168,16 +168,19 @@ APR_DECLARE(void) apr_allocator_max_free_set(apr_alloc
+ }
+ 
+ static APR_INLINE
+-apr_memnode_t *allocator_alloc(apr_allocator_t *allocator, apr_size_t size)
++apr_memnode_t *allocator_alloc(apr_allocator_t *allocator, apr_size_t in_size)
+ {
+     apr_memnode_t *node, **ref;
+     apr_uint32_t max_index;
+-    apr_size_t i, index;
++    apr_size_t size, i, index;
+ 
+     /* Round up the block size to the next boundary, but always
+      * allocate at least a certain size (MIN_ALLOC).
+      */
+-    size = APR_ALIGN(size + APR_MEMNODE_T_SIZE, BOUNDARY_SIZE);
++    size = APR_ALIGN(in_size + APR_MEMNODE_T_SIZE, BOUNDARY_SIZE);
++    if (size < in_size) {
++        return NULL;
++    }
+     if (size < MIN_ALLOC)
+         size = MIN_ALLOC;
+ 
+@@ -591,13 +594,19 @@ APR_DECLARE(void) apr_pool_terminate(void)
+  * Memory allocation
+  */
+ 
+-APR_DECLARE(void *) apr_palloc(apr_pool_t *pool, apr_size_t size)
++APR_DECLARE(void *) apr_palloc(apr_pool_t *pool, apr_size_t in_size)
+ {
+     apr_memnode_t *active, *node;
+     void *mem;
+-    apr_size_t free_index;
++    apr_size_t size, free_index;
+ 
+-    size = APR_ALIGN_DEFAULT(size);
++    size = APR_ALIGN_DEFAULT(in_size);
++    if (size < in_size) {
++        if (pool->abort_fn)
++            pool->abort_fn(APR_ENOMEM);
++
++        return NULL;
++    }
+     active = pool->active;
+ 
+     /* If the active node has enough bytes left, use it. */
+@@ -662,7 +671,6 @@ APR_DECLARE(void *) apr_pcalloc(apr_pool_t *pool, apr_
+ {
+     void *mem;
+ 
+-    size = APR_ALIGN_DEFAULT(size);
+     if ((mem = apr_palloc(pool, size)) != NULL) {
+         memset(mem, 0, size);
+     }
