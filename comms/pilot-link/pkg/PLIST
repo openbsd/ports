@@ -1,47 +1,49 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/01/20 15:19:31 ajacoutot Exp $
-bin/pilot-addresses
-bin/pilot-clip
-bin/pilot-csd
-bin/pilot-debugsh
-bin/pilot-dedupe
-bin/pilot-dlpsh
-bin/pilot-file
-bin/pilot-foto
-bin/pilot-foto-treo600
-bin/pilot-foto-treo650
-bin/pilot-getram
-bin/pilot-getrom
-bin/pilot-getromtoken
-bin/pilot-hinotes
+@comment $OpenBSD: PLIST,v 1.15 2009/08/06 13:23:35 giovanni Exp $
+@bin bin/pilot-addresses
+@bin bin/pilot-clip
+@bin bin/pilot-csd
+@bin bin/pilot-debugsh
+@bin bin/pilot-dedupe
+@bin bin/pilot-dlpsh
+@bin bin/pilot-file
+@bin bin/pilot-foto
+@bin bin/pilot-foto-treo600
+@bin bin/pilot-foto-treo650
+@bin bin/pilot-getram
+@bin bin/pilot-getrom
+@bin bin/pilot-getromtoken
+@bin bin/pilot-hinotes
 bin/pilot-ietf2datebook
-bin/pilot-install-datebook
-bin/pilot-install-expenses
-bin/pilot-install-hinote
-bin/pilot-install-memo
-bin/pilot-install-netsync
-bin/pilot-install-todo
-bin/pilot-install-todos
-bin/pilot-install-user
-bin/pilot-memos
-bin/pilot-nredir
-bin/pilot-read-expenses
-bin/pilot-read-ical
-bin/pilot-read-notepad
-bin/pilot-read-palmpix
-bin/pilot-read-screenshot
-bin/pilot-read-todos
-bin/pilot-read-veo
-bin/pilot-reminders
-bin/pilot-schlep
+@bin bin/pilot-install-datebook
+@bin bin/pilot-install-expenses
+@bin bin/pilot-install-hinote
+@bin bin/pilot-install-memo
+@bin bin/pilot-install-netsync
+@bin bin/pilot-install-todo
+@bin bin/pilot-install-todos
+@bin bin/pilot-install-user
+@bin bin/pilot-memos
+@bin bin/pilot-nredir
+@bin bin/pilot-read-expenses
+@bin bin/pilot-read-ical
+@bin bin/pilot-read-notepad
+@bin bin/pilot-read-palmpix
+@bin bin/pilot-read-screenshot
+@bin bin/pilot-read-todos
+@bin bin/pilot-read-veo
+@bin bin/pilot-reminders
+@bin bin/pilot-schlep
 bin/pilot-sync-plan
 bin/pilot-undelete
-bin/pilot-wav
-bin/pilot-xfer
+@bin bin/pilot-wav
+@bin bin/pilot-xfer
 include/pi-address.h
 include/pi-appinfo.h
 include/pi-args.h
+include/pi-blob.h
 include/pi-bluetooth.h
 include/pi-buffer.h
+include/pi-calendar.h
 include/pi-cmp.h
 include/pi-contact.h
 include/pi-datebook.h
@@ -54,6 +56,7 @@ include/pi-foto.h
 include/pi-header.h
 include/pi-hinote.h
 include/pi-inet.h
+include/pi-location.h
 include/pi-macros.h
 include/pi-mail.h
 include/pi-md5.h
@@ -85,8 +88,8 @@ lib/libpisync.la
 lib/pkgconfig/
 lib/pkgconfig/pilot-link.pc
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.8/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.8/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.0/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.0/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/Pilot.pm
@@ -132,6 +135,8 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/PDA/Pilot/autosplit.ix
 @man man/man1/pilot-schlep.1
 @man man/man1/pilot-wav.1
 @man man/man1/pilot-xfer.1
+@man man/man3p/PDA::Pilot.3p
+@man man/man3p/PDA::Pilot.3pm
 @man man/man7/pilot-link.7
 share/aclocal/
 share/aclocal/pilot-link.m4
