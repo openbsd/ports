@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.122 2009/08/06 23:38:48 martynas Exp $
+$OpenBSD: user.list,v 1.123 2009/08/07 10:45:35 jasper Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -145,3 +145,4 @@ id  user		group		port options
 634 _mt-daapd		_mt-daapd	audio/mt-daapd
 635 _solid-pop3d	_solid-pop3d	mail/solid-pop3d
 636 _ettercap		_ettercap	net/ettercap
+637 _memcached		_memcached	misc/memcached
