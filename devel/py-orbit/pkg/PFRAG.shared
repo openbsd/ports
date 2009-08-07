@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/14 21:19:35 ajacoutot Exp $
-lib/python${MODPY_VERSION}/site-packages/ORBit.so
