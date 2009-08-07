@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/04/26 11:01:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/08/07 11:25:58 jasper Exp $
 
 COMMENT=	ORBit2 Python bindings
 
-V=		2.14.3
-DISTNAME=	pyorbit-${V}
-PKGNAME=	py-orbit-${V}p3
+GNOME_VERSION=	2.14.3
+GNOME_PROJECT=	pyorbit
+PKGNAME=	py-orbit-${VERSION}p4
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.pygtk.org/
@@ -15,19 +15,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pyorbit/2.14/}
-
 WANTLIB=	m util IDL-2 pcre glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0
 
 MODULES=	devel/gettext \
-		lang/python
+		lang/python \
+		x11/gnome
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		ORBit-2,ORBit-imodule-2::devel/ORBit2
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LIBS="-pthread -lm -lutil"
