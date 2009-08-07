@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/07/29 13:02:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/07 14:11:35 sthen Exp $
 
 COMMENT=		Version Control with Subversion
 
@@ -19,6 +19,8 @@ MASTER_SITES=		${HOMEPAGE}/en/$V/
 EXTRACT_SUFX=		.tar.bz2
 
 EXTRACT_ONLY=	
+BUILD_DEPENDS=		:bzip2-*:archivers/bzip2
+
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*
