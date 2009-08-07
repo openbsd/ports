@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/08/07 14:14:59 ajacoutot Exp $
+
+Our wxWidgets version is a bit older than the requested one.
+
+--- configure.orig	Sun Jun 21 14:25:23 2009
++++ configure	Fri Aug  7 14:30:32 2009
+@@ -3173,7 +3173,7 @@ else
+ fi
+ 
+ 
+-reqwx=2.8.8
++reqwx=2.8.7
+ 
+     if test x${WX_CONFIG_NAME+set} != xset ; then
+      WX_CONFIG_NAME=wx-config

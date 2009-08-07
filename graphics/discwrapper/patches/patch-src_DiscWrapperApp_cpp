@@ -1,0 +1,61 @@
+$OpenBSD: patch-src_DiscWrapperApp_cpp,v 1.1.1.1 2009/08/07 14:14:59 ajacoutot Exp $
+
+XXX locales does not play nice on OpenBSD.
+Do not hardcode paths.
+
+--- src/DiscWrapperApp.cpp.orig	Sun Jun  7 23:31:54 2009
++++ src/DiscWrapperApp.cpp	Fri Aug  7 16:08:20 2009
+@@ -45,27 +45,6 @@ bool DiscWrapperApp::OnInit()
+         wxFile file;
+         wxString path, tipsdir;
+         int LANG = wxLANGUAGE_DEFAULT;
+-        switch(wxLocale::GetSystemLanguage()){
+-            case wxLANGUAGE_GERMAN:
+-            case wxLANGUAGE_GERMAN_AUSTRIAN:
+-            case wxLANGUAGE_GERMAN_BELGIUM:
+-            case wxLANGUAGE_GERMAN_LIECHTENSTEIN:
+-            case wxLANGUAGE_GERMAN_LUXEMBOURG:
+-            case wxLANGUAGE_GERMAN_SWISS:
+-                LANG = wxLANGUAGE_GERMAN;
+-                break;
+-            case wxLANGUAGE_ENGLISH:
+-            case wxLANGUAGE_HUNGARIAN:
+-            case wxLANGUAGE_DANISH:
+-            case wxLANGUAGE_SPANISH:
+-            case wxLANGUAGE_SWEDISH:
+-            case wxLANGUAGE_POLISH:
+-                LANG = wxLANGUAGE_GERMAN;
+-                break;
+-            default:
+-                LANG = wxLANGUAGE_ENGLISH;
+-                break;
+-        }
+ 
+ 
+         CFs.LocalDir();
+@@ -89,11 +68,11 @@ bool DiscWrapperApp::OnInit()
+         }
+ 
+ 
+-        m_locale = new wxLocale( LANG );
++        m_locale = new wxLocale( wxLANGUAGE_DEFAULT );
+ 
+ #if defined(__UNIX__)
+-        if ( wxFile::Exists(_T("/usr/local/share/discwrapper/printermodels")) == true )
+-            path = _T("/usr/local/share/discwrapper/po");
++        if ( wxFile::Exists(_T("${LOCALBASE}/share/discwrapper/printermodels")) == true )
++            path = _T("${LOCALBASE}/share/discwrapper/po");
+         else
+             path = _T("/usr/share/discwrapper/po");
+ #elif defined(__WXMSW__)
+@@ -164,8 +143,8 @@ bool DiscWrapperApp::OnInit()
+         }
+ 
+ #if defined(__UNIX__)
+-        if ( wxFile::Exists(_T("/usr/local/share/discwrapper/printermodels")) == true )
+-            path = _T("/usr/local/share/discwrapper");
++        if ( wxFile::Exists(_T("${LOCALBASE}/share/discwrapper/printermodels")) == true )
++            path = _T("${LOCALBASE}/share/discwrapper");
+         else
+             path = _T("/usr/share/discwrapper");
+ #elif defined(__WXMSW__)
