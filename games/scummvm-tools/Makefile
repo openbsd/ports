@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/05/21 12:52:57 jsg Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/07 13:01:52 sthen Exp $
 # XXX hardcoded endian list
 
 COMMENT=	collection of various tools for scummvm
 DISTNAME=	scummvm-tools-0.13.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ogg stdc++ vorbis vorbisenc z
+WANTLIB=		c m ogg stdc++ z
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
@@ -29,7 +30,8 @@ CXXFLAGS+=	-DSCUMM_BIG_ENDIAN
 .endif
 
 LIB_DEPENDS=	FLAC::audio/flac \
-		png::graphics/png
+		png::graphics/png \
+		vorbis,vorbisenc::audio/libvorbis
 
 RUN_DEPENDS=	::audio/lame \
 		::audio/vorbis-tools
