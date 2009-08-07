@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.241 2009/06/06 05:19:20 phessler Exp $
+# $OpenBSD: Makefile,v 1.242 2009/08/07 14:15:51 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -33,6 +33,7 @@
      SUBDIR += dia,gnome
      SUBDIR += digikam
      SUBDIR += digikam-doc
+     SUBDIR += discwrapper
      SUBDIR += djview4
      SUBDIR += djvulibre
      SUBDIR += djvulibre,no_x11
