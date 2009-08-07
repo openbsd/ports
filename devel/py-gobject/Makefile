@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2009/04/26 11:01:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/08/07 11:20:10 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python bindings for glib2 gobject
 
-V=		2.16.1
-DISTNAME=	pygobject-${V}
-PKGNAME=	py-gobject-${V}p0
+GNOME_PROJECT=	pygobject
+GNOME_VERSION=	2.16.1
+PKGNAME=	py-gobject-${GNOME_VERSION}p1
 SHARED_LIBS +=  pyglib-2.0       0.0             # .0.0
 
 CATEGORIES=	devel x11
@@ -21,15 +21,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	pcre
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pygobject/${V:R}/}
-EXTRACT_SUFX=	.tar.bz2
-
 MODULES=	devel/gettext \
-		lang/python
+		lang/python \
+		x11/gnome
 
 LIB_DEPENDS=	gio-2.0.>=1800.0,glib-2.0.>=1800.0,gmodule-2.0.>=2.1800,gobject-2.0.>=1800.0,gthread-2.0.>=1800.0::devel/glib2
 
-USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 
 REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
