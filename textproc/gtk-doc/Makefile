@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/04/16 08:11:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/07 22:12:44 sthen Exp $
 
 COMMENT=	GTK C code documentation system
 
@@ -16,7 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		x11/gnome
+MODULES=		x11/gnome \
+			lang/python
+MODPY_RUNDEP=		No
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-xml-catalog=${WRKDIR}/catalog.xml
