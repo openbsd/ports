@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2009/08/07 20:32:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2009/08/07 22:11:08 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	multimedia decoding library
 
 V=		1.1.16.3
 DISTNAME=	xine-lib-${V}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
@@ -23,8 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xext Xinerama Xrandr Xrender Xv XvMCW c \
-		dvdread expat fontconfig freetype jpeg lcms m pthread sndio \
-		usbhid z
+		dvdread expat fontconfig freetype jpeg lcms m pthread-stubs \
+		pthread sndio usbhid xcb-shape xcb-shm xcb-xv xcb z
 
 XINEAPI_REV=	1.26
 SUBST_VARS+=	XINEAPI_REV
@@ -85,8 +85,7 @@ CONFIGURE_ARGS+=--disable-aalib \
 		--without-esound \
 		--without-imagemagick \
 		--without-jack \
-		--without-pulseaudio \
-		--without-xcb
+		--without-pulseaudio
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		FFMPEG_CPPFLAGS="$$(pkg-config --cflags libavcodec libpostproc)" \
