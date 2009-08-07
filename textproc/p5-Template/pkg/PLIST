@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/01/16 06:25:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/08/07 10:35:37 sthen Exp $
 bin/tpage
 bin/ttree
 ${P5ARCH}/
@@ -15,10 +15,6 @@ ${P5ARCH}/Template/FAQ.pod
 ${P5ARCH}/Template/Filters.pm
 ${P5ARCH}/Template/Grammar.pm
 ${P5ARCH}/Template/Iterator.pm
-${P5ARCH}/Template/Library/
-${P5ARCH}/Template/Library/HTML.pod
-${P5ARCH}/Template/Library/PostScript.pod
-${P5ARCH}/Template/Library/Splash.pod
 ${P5ARCH}/Template/Manual/
 ${P5ARCH}/Template/Manual.pod
 ${P5ARCH}/Template/Manual/Config.pod
@@ -28,7 +24,6 @@ ${P5ARCH}/Template/Manual/Filters.pod
 ${P5ARCH}/Template/Manual/Internals.pod
 ${P5ARCH}/Template/Manual/Intro.pod
 ${P5ARCH}/Template/Manual/Plugins.pod
-${P5ARCH}/Template/Manual/Refs.pod
 ${P5ARCH}/Template/Manual/Syntax.pod
 ${P5ARCH}/Template/Manual/VMethods.pod
 ${P5ARCH}/Template/Manual/Variables.pod
@@ -39,7 +34,7 @@ ${P5ARCH}/Template/Namespace/Constants.pm
 ${P5ARCH}/Template/Parser.pm
 ${P5ARCH}/Template/Plugin/
 ${P5ARCH}/Template/Plugin.pm
-${P5ARCH}/Template/Plugin/Autoformat.pm
+${P5ARCH}/Template/Plugin/Assert.pm
 ${P5ARCH}/Template/Plugin/CGI.pm
 ${P5ARCH}/Template/Plugin/Datafile.pm
 ${P5ARCH}/Template/Plugin/Date.pm
@@ -51,8 +46,10 @@ ${P5ARCH}/Template/Plugin/Format.pm
 ${P5ARCH}/Template/Plugin/HTML.pm
 ${P5ARCH}/Template/Plugin/Image.pm
 ${P5ARCH}/Template/Plugin/Iterator.pm
+${P5ARCH}/Template/Plugin/Math.pm
 ${P5ARCH}/Template/Plugin/Pod.pm
 ${P5ARCH}/Template/Plugin/Procedural.pm
+${P5ARCH}/Template/Plugin/Scalar.pm
 ${P5ARCH}/Template/Plugin/String.pm
 ${P5ARCH}/Template/Plugin/Table.pm
 ${P5ARCH}/Template/Plugin/URL.pm
@@ -68,6 +65,7 @@ ${P5ARCH}/Template/Stash/XS.pm
 ${P5ARCH}/Template/Test.pm
 ${P5ARCH}/Template/Toolkit.pod
 ${P5ARCH}/Template/Tools/
+${P5ARCH}/Template/Tools.pod
 ${P5ARCH}/Template/Tools/tpage.pod
 ${P5ARCH}/Template/Tools/ttree.pod
 ${P5ARCH}/Template/Tutorial/
@@ -89,14 +87,13 @@ ${P5ARCH}/auto/Template/Stash/XS/XS.so
 @man man/man3p/Template::Config.3p
 @man man/man3p/Template::Constants.3p
 @man man/man3p/Template::Context.3p
+@man man/man3p/Template::Directive.3p
 @man man/man3p/Template::Document.3p
 @man man/man3p/Template::Exception.3p
 @man man/man3p/Template::FAQ.3p
 @man man/man3p/Template::Filters.3p
+@man man/man3p/Template::Grammar.3p
 @man man/man3p/Template::Iterator.3p
-@man man/man3p/Template::Library::HTML.3p
-@man man/man3p/Template::Library::PostScript.3p
-@man man/man3p/Template::Library::Splash.3p
 @man man/man3p/Template::Manual.3p
 @man man/man3p/Template::Manual::Config.3p
 @man man/man3p/Template::Manual::Credits.3p
@@ -105,7 +102,6 @@ ${P5ARCH}/auto/Template/Stash/XS/XS.so
 @man man/man3p/Template::Manual::Internals.3p
 @man man/man3p/Template::Manual::Intro.3p
 @man man/man3p/Template::Manual::Plugins.3p
-@man man/man3p/Template::Manual::Refs.3p
 @man man/man3p/Template::Manual::Syntax.3p
 @man man/man3p/Template::Manual::VMethods.3p
 @man man/man3p/Template::Manual::Variables.3p
@@ -114,7 +110,7 @@ ${P5ARCH}/auto/Template/Stash/XS/XS.so
 @man man/man3p/Template::Namespace::Constants.3p
 @man man/man3p/Template::Parser.3p
 @man man/man3p/Template::Plugin.3p
-@man man/man3p/Template::Plugin::Autoformat.3p
+@man man/man3p/Template::Plugin::Assert.3p
 @man man/man3p/Template::Plugin::CGI.3p
 @man man/man3p/Template::Plugin::Datafile.3p
 @man man/man3p/Template::Plugin::Date.3p
@@ -126,8 +122,10 @@ ${P5ARCH}/auto/Template/Stash/XS/XS.so
 @man man/man3p/Template::Plugin::HTML.3p
 @man man/man3p/Template::Plugin::Image.3p
 @man man/man3p/Template::Plugin::Iterator.3p
+@man man/man3p/Template::Plugin::Math.3p
 @man man/man3p/Template::Plugin::Pod.3p
 @man man/man3p/Template::Plugin::Procedural.3p
+@man man/man3p/Template::Plugin::Scalar.3p
 @man man/man3p/Template::Plugin::String.3p
 @man man/man3p/Template::Plugin::Table.3p
 @man man/man3p/Template::Plugin::URL.3p
@@ -141,9 +139,11 @@ ${P5ARCH}/auto/Template/Stash/XS/XS.so
 @man man/man3p/Template::Stash::XS.3p
 @man man/man3p/Template::Test.3p
 @man man/man3p/Template::Toolkit.3p
+@man man/man3p/Template::Tools.3p
 @man man/man3p/Template::Tools::tpage.3p
 @man man/man3p/Template::Tools::ttree.3p
 @man man/man3p/Template::Tutorial.3p
 @man man/man3p/Template::Tutorial::Datafile.3p
 @man man/man3p/Template::Tutorial::Web.3p
+@man man/man3p/Template::VMethods.3p
 @man man/man3p/Template::View.3p
