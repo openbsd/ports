@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.2 2009/04/28 23:43:56 stsp Exp $
---- configure.ac.orig	Sat Feb  7 20:46:30 2009
-+++ configure.ac	Thu Feb 19 19:37:20 2009
+$OpenBSD: patch-configure_ac,v 1.3 2009/08/07 22:13:36 steven Exp $
+--- configure.ac.orig	Mon Jun  8 18:33:29 2009
++++ configure.ac	Thu Aug  6 17:10:17 2009
 @@ -6,7 +6,7 @@ AC_PREREQ(2.58)
  dnl Get the version of Subversion, using m4's esyscmd() command to do this
  dnl at m4-time, since AC_INIT() requires it then.
@@ -15,21 +15,25 @@ $OpenBSD: patch-configure_ac,v 1.2 2009/04/28 23:43:56 stsp Exp $
  fi
  
 -AC_SUBST([MKDIR], ["$INSTALL -d"])
-+AC_SUBST([MKDIR], ["mkdir -p"])
++AC_SUBST([MKDIR], ["/bin/mkdir -p"])
  
  # ==== Libraries, for which we may have source to build ======================
  
-@@ -447,7 +447,8 @@ if test "$enable_nls" = "yes"; then
-                    [
-                     AC_MSG_WARN([bindtextdomain() not found.  Disabling NLS.])
+@@ -448,10 +448,13 @@ if test "$enable_nls" = "yes"; then
                      enable_nls="no"
--                   ])
-+                   ], -liconv)
-+    AC_CHECK_LIB(iconv, libiconv_open)
-     if test "$enable_nls" = "yes"; then
-       AC_DEFINE(ENABLE_NLS, 1,
-                 [Define to 1 if translation of program messages to the user's
-@@ -749,7 +750,7 @@ AS_HELP_STRING([--enable-gprof],
+                    ])
+     if test "$enable_nls" = "no"; then
++      # Destroy the cached result so we can test again
++      unset ac_cv_search_bindtextdomain
+       # On some systems, libintl needs libiconv to link properly,
+       # so try again with -liconv.
+       AC_SEARCH_LIBS(bindtextdomain, [intl],
+                      [
++                      enable_nls="yes"
+                       # This is here so that -liconv ends up in LIBS
+                       # if it worked with -liconv.
+                       AC_CHECK_LIB(iconv, libiconv_open)
+@@ -762,7 +765,7 @@ AS_HELP_STRING([--enable-gprof],
  # Python: Used for testsuite, and bindings
  
  
