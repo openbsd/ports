@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/05/01 02:00:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/08/07 10:46:41 jasper Exp $
+@newgroup _memcached:637
+@newuser _memcached:637:_memcached:daemon:memcache daemon:/var/empty:/sbin/nologin
 @bin bin/memcached
-@bin bin/memcached-debug
 @man man/man1/memcached.1
+include/memcached/
+include/memcached/protocol_binary.h
 share/doc/memcached/
-share/doc/memcached/binary-protocol-plan.txt
 share/doc/memcached/memory_management.txt
 share/doc/memcached/protocol.txt
+share/doc/memcached/readme.txt
 share/doc/memcached/threads.txt

@@ -1,0 +1,14 @@
+$OpenBSD: patch-testapp_c,v 1.1 2009/08/07 10:46:41 jasper Exp $
+--- testapp.c.orig	Sat Jul 11 11:05:13 2009
++++ testapp.c	Sat Jul 11 11:05:23 2009
+@@ -233,8 +233,8 @@ static enum test_return test_safe_strtol(void) {
+ static enum test_return test_issue_44(void) {
+     char pidfile[80];
+     char buffer[256];
+-    sprintf(pidfile, "/tmp/memcached.%d", getpid());
+-    sprintf(buffer, "./memcached-debug -p 0 -P %s -d", pidfile);
++    snprintf(pidfile, 80, "/tmp/memcached.%d", getpid());
++    snprintf(buffer, 256, "./memcached-debug -p 0 -P %s -d", pidfile);
+     assert(system(buffer) == 0);
+     sleep(1);
+     FILE *fp = fopen(pidfile, "r");

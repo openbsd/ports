@@ -1,0 +1,97 @@
+$OpenBSD: patch-memcached_c,v 1.6 2009/08/07 10:46:41 jasper Exp $
+--- memcached.c.orig	Thu Jul  9 13:16:24 2009
++++ memcached.c	Sat Jul 11 11:01:39 2009
+@@ -93,7 +93,11 @@ static void write_and_free(conn *c, char *buf, int byt
+ static int ensure_iov_space(conn *c);
+ static int add_iov(conn *c, const void *buf, int len);
+ static int add_msghdr(conn *c);
++
++/* OpenBSD has this in sys/types.h already. */
++#ifndef _SYS_ENDIAN_H_
+ static uint64_t swap64(uint64_t in);
++#endif /* !_SYS_ENDIAN_H_ */
+ 
+ /* time handling */
+ static void set_current_time(void);  /* update the global variable holding
+@@ -976,6 +980,7 @@ static void write_bin_response(conn *c, void *d, int h
+     }
+ }
+ 
++#ifndef _SYS_ENDIAN_H_
+ /* Byte swap a 64-bit number */
+ static uint64_t swap64(uint64_t in) {
+ #ifdef ENDIAN_LITTLE
+@@ -991,8 +996,9 @@ static uint64_t swap64(uint64_t in) {
+ #else
+     /* big-endian machines don't need byte swapping */
+     return in;
+-#endif
++#endif /* !ENDIAN_LITTLE */
+ }
++#endif /* !_SYS_ENDIAN_H_ */
+ 
+ static void complete_incr_bin(conn *c) {
+     item *it;
+@@ -1278,12 +1284,14 @@ static void append_ascii_stats(const char *key, const 
+     char *pos = c->stats.buffer + c->stats.offset;
+     uint32_t nbytes;
+ 
++    size_t s_pos = sizeof(pos);
++
+     if (klen == 0 && vlen == 0) {
+-        nbytes = sprintf(pos, "END\r\n");
++        nbytes = snprintf(pos, s_pos, "END\r\n");
+     } else if (vlen == 0) {
+-        nbytes = sprintf(pos, "STAT %s\r\n", key);
++        nbytes = snprintf(pos, s_pos, "STAT %s\r\n", key);
+     } else {
+-        nbytes = sprintf(pos, "STAT %s %s\r\n", key, val);
++        nbytes = snprintf(pos, s_pos, "STAT %s %s\r\n", key, val);
+     }
+ 
+     c->stats.offset += nbytes;
+@@ -2248,6 +2256,7 @@ static inline void process_get_command(conn *c, token_
+     int stats_get_cmds   = 0;
+     int stats_get_misses = 0;
+     int stats_get_hits[MAX_NUMBER_OF_SLAB_CLASSES];
++    size_t s_suffix;
+     assert(c != NULL);
+ 
+     memset(&stats_get_hits, 0, sizeof(stats_get_hits));
+@@ -2326,7 +2335,9 @@ static inline void process_get_command(conn *c, token_
+                     return;
+                   }
+                   *(c->suffixlist + i) = suffix;
+-                  sprintf(suffix, " %llu\r\n", (unsigned long long)ITEM_get_cas(it));
++                  s_suffix = sizeof(suffix);
++                  snprintf(suffix, s_suffix,
++                      " %llu\r\n", (unsigned long long)ITEM_get_cas(it));
+                   if (add_iov(c, "VALUE ", 6) != 0 ||
+                       add_iov(c, ITEM_key(it), it->nkey) != 0 ||
+                       add_iov(c, ITEM_suffix(it), it->nsuffix - 2) != 0 ||
+@@ -2559,6 +2570,7 @@ enum delta_result_type do_add_delta(conn *c, item *it,
+     char *ptr;
+     uint64_t value;
+     int res;
++    size_t s_buf = sizeof(buf);
+ 
+     ptr = ITEM_data(it);
+ 
+@@ -2586,7 +2598,7 @@ enum delta_result_type do_add_delta(conn *c, item *it,
+     }
+     pthread_mutex_unlock(&c->thread->stats.mutex);
+ 
+-    sprintf(buf, "%llu", (unsigned long long)value);
++    snprintf(buf, s_buf, "%llu", (unsigned long long)value);
+     res = strlen(buf);
+     if (res + 2 > it->nbytes) { /* need to realloc */
+         item *new_it;
+@@ -3672,7 +3684,7 @@ static int server_socket_unix(const char *path, int ac
+     memset(&addr, 0, sizeof(addr));
+ 
+     addr.sun_family = AF_UNIX;
+-    strcpy(addr.sun_path, path);
++    strlcpy(addr.sun_path, path, sizeof(addr.sun_path));
+     old_umask = umask( ~(access_mask&0777));
+     if (bind(sfd, (struct sockaddr *)&addr, sizeof(addr)) == -1) {
+         perror("bind()");
