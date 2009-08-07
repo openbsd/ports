@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/01 07:15:03 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/07 08:36:52 fgsch Exp $
 
 COMMENT=		text-to-HTML conversion tool
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/python
 
-MASTER_SITES=	http://pypi.python.org/packages/source/M/Markdown/
+MASTER_SITES=	${MASTER_SITE_PYPI:=M/Markdown/}
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

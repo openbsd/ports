@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/26 11:50:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/07 08:36:52 fgsch Exp $
 
 COMMENT=		fast, optionally sandboxed, Python template engine
 
@@ -9,7 +9,7 @@ PKGNAME=		py-${DISTNAME:L}p0
 CATEGORIES=		www devel
 
 HOMEPAGE=		http://jinja.pocoo.org/2/
-MASTER_SITES=		http://pypi.python.org/packages/source/J/Jinja2/
+MASTER_SITES=		${MASTER_SITE_PYPI:=J/Jinja2/}
 
 MAINTAINER=		Damien Miller <djm@openbsd.org>
 

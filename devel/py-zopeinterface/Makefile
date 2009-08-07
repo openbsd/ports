@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/01 21:18:20 eric Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/07 08:36:52 fgsch Exp $
 
 COMMENT=	object interface infrastructure from Zope 3
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-MASTER_SITES=	http://pypi.python.org/packages/source/z/zope.interface/
+MASTER_SITES=	${MASTER_SITE_PYPI:=z/zope.interface/}
 
 MODULES=	lang/python
 

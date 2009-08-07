@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/16 08:56:32 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/07 08:36:52 fgsch Exp $
 
 COMMENT = 		Python charting module
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP = 	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP = 	Yes
 
-MASTER_SITES = 		http://pypi.python.org/packages/source/p/pycha/
+MASTER_SITES = 		${MASTER_SITE_PYPI:=p/pycha/}
 
 MODULES = 		lang/python
 USE_LIBTOOL = 		Yes

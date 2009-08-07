@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/05/15 16:31:45 jim Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/07 08:36:52 fgsch Exp $
 
 COMMENT =	Python interface to Amazon Web Services
 
@@ -9,7 +9,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	http://code.google.com/p/boto/
 MASTER_SITES =	http://boto.googlecode.com/files/ \
-		http://pypi.python.org/packages/source/b/boto/ \
+		${MASTER_SITE_PYPI:=b/boto/} \
 		http://release.ingeniweb.com/pypi.python.org-mirror/boto/
 
 MAINTAINER =	Jim Razmus II <jim@openbsd.org>

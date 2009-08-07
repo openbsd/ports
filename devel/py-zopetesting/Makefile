@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/01 21:11:11 eric Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/07 08:36:52 fgsch Exp $
 
 COMMENT=	testing frameworks from Zope 3
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-MASTER_SITES=	http://pypi.python.org/packages/source/z/zope.testing/
+MASTER_SITES=	${MASTER_SITE_PYPI:=z/zope.testing/}
 
 MODULES=	lang/python
 

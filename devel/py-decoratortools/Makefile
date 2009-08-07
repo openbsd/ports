@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/15 12:49:35 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/07 08:36:52 fgsch Exp $
 
 COMMENT=		class and function decorators
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://cheeseshop.python.org/packages/source/D/DecoratorTools/
+MASTER_SITES=		${MASTER_SITE_PYPI:=D/DecoratorTools/}
 EXTRACT_SUFX=		.zip
 
 MODULES=		lang/python

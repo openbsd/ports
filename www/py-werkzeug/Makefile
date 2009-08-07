@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/26 11:50:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/07 08:36:52 fgsch Exp $
 
 COMMENT=		WSGI utility collection
 
@@ -9,7 +9,7 @@ PKGNAME=		py-${DISTNAME:L}p0
 CATEGORIES=		www devel
 
 HOMEPAGE=		http://werkzeug.pocoo.org/
-MASTER_SITES=		http://pypi.python.org/packages/source/W/Werkzeug/
+MASTER_SITES=		${MASTER_SITE_PYPI:=W/Werkzeug/}
 
 MAINTAINER=		Damien Miller <djm@openbsd.org>
 
