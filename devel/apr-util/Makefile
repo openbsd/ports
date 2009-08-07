@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2009/03/11 21:02:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.25 2009/08/07 04:49:38 steven Exp $
 
 COMMENT=	companion library to APR
 
 V=		1.2.10
 DISTNAME=	apr-util-$V
-FULLPKGNAME=	apr-util${MT}-$Vp3${FLAVOR_EXT:S/-mt//}
+FULLPKGNAME=	apr-util${MT}-$Vp4${FLAVOR_EXT:S/-mt//}
 SHARED_LIBS +=	aprutil-1${MT}          2.11     # .2.11
 
 CATEGORIES=	devel
