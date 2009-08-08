@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/05 11:00:36 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/08 21:20:14 bernd Exp $
 
 COMMENT =	lean and RESTful interface to CouchDB
 
-DISTNAME =	couchrest-0.23
+DISTNAME =	couchrest-0.33
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	databases
 
@@ -20,7 +20,7 @@ MODULES =		lang/ruby
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		::converters/ruby-json \
-			::www/ruby-rest-client \
+			:ruby-rest-client->=1.0.3:www/ruby-rest-client \
 			::mail/ruby-mime-types
 
 CONFIGURE_STYLE =	ruby gem
