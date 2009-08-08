@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/08 09:37:41 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}compact_forms/
+${DRUPAL_MODS}compact_forms/CHANGELOG.txt
+${DRUPAL_MODS}compact_forms/LICENSE.txt
+${DRUPAL_MODS}compact_forms/README.txt
+${DRUPAL_MODS}compact_forms/compact_forms.admin.inc
+${DRUPAL_MODS}compact_forms/compact_forms.css
+${DRUPAL_MODS}compact_forms/compact_forms.info
+${DRUPAL_MODS}compact_forms/compact_forms.js
+${DRUPAL_MODS}compact_forms/compact_forms.module
