@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.29 2009/04/26 10:49:33 ajacoutot Exp $
+# $OpenBSD: python.port.mk,v 1.30 2009/08/08 21:58:10 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -7,6 +7,7 @@ SHARED_ONLY=		Yes
 
 CATEGORIES+=		lang/python
 
+# XXX x11/gtk+2 hardcodes this.
 MODPY_VERSION?=		2.5
 .if ${MODPY_VERSION} == 2.3
 MODPY_VSPEC = >=${MODPY_VERSION},<2.4
