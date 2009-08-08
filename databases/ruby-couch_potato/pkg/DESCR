@@ -1,0 +1,10 @@
+The goal of Couch Potato is to create a minimal framework in order
+to store and retrieve Ruby objects to/from CouchDB and create
+and query views.
+
+It follows the document/view/querying semantics established by
+CouchDB and won't try to mimic ActiveRecord behavior in any way
+as that IS BAD.
+
+Lastly Couch Potato aims to provide a seamless integration
+with Ruby on Rails, e.g. routing, form helpers etc.
