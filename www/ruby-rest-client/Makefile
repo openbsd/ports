@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/19 22:39:46 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/08 21:15:16 bernd Exp $
 
 COMMENT =	simple REST client for Ruby
 
-DISTNAME =	rest-client-0.9.2
+DISTNAME =	rest-client-1.0.3
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	www
 
@@ -26,6 +26,6 @@ REGRESS_DEPENDS =	::devel/ruby-rake \
 			::devel/ruby-rspec
 
 do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test spec
+	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake spec
 
 .include <bsd.port.mk>
