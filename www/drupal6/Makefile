@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/07/30 03:37:31 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/08 09:38:16 espie Exp $
 
 SUBDIR += FCKeditor
 SUBDIR += admin-menu
@@ -8,6 +8,7 @@ SUBDIR += alternate_login
 SUBDIR += auto_nodetitle
 SUBDIR += backup_migrate
 SUBDIR += cck
+SUBDIR += compact_forms
 SUBDIR += content_access
 SUBDIR += core
 SUBDIR += ctools
