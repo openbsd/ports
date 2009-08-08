@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/07/26 12:20:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/08/08 09:20:12 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}cck/
@@ -46,6 +46,7 @@ ${DRUPAL_MODS}cck/includes/content.token.inc
 ${DRUPAL_MODS}cck/includes/panels/
 ${DRUPAL_MODS}cck/includes/panels/content_types/
 ${DRUPAL_MODS}cck/includes/panels/content_types/content_field.inc
+${DRUPAL_MODS}cck/includes/panels/content_types/icon_cck_field.png
 ${DRUPAL_MODS}cck/includes/views/
 ${DRUPAL_MODS}cck/includes/views/content.views.inc
 ${DRUPAL_MODS}cck/includes/views/content.views_convert.inc
@@ -97,10 +98,10 @@ ${DRUPAL_MODS}cck/modules/fieldgroup/fieldgroup.css
 ${DRUPAL_MODS}cck/modules/fieldgroup/fieldgroup.info
 ${DRUPAL_MODS}cck/modules/fieldgroup/fieldgroup.install
 ${DRUPAL_MODS}cck/modules/fieldgroup/fieldgroup.module
-${DRUPAL_MODS}cck/modules/fieldgroup/fieldgroup.panels.inc
 ${DRUPAL_MODS}cck/modules/fieldgroup/panels/
 ${DRUPAL_MODS}cck/modules/fieldgroup/panels/content_types/
 ${DRUPAL_MODS}cck/modules/fieldgroup/panels/content_types/content_fieldgroup.inc
+${DRUPAL_MODS}cck/modules/fieldgroup/panels/content_types/icon_cck_field_group.png
 ${DRUPAL_MODS}cck/modules/fieldgroup/translations/
 ${DRUPAL_MODS}cck/modules/fieldgroup/translations/modules-fieldgroup-panels-content_types.de.po
 ${DRUPAL_MODS}cck/modules/fieldgroup/translations/modules-fieldgroup-panels-content_types.pot

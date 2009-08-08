@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/07/15 10:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/08 09:20:12 espie Exp $
 
 COMMENT =	content construction kit for drupal
 
-DISTNAME = 	cck-6.x-2.4
-PKGNAME =	drupal6-cck-2.4
+DISTNAME = 	cck-6.x-2.5
+PKGNAME =	drupal6-cck-2.5
 
 .include <bsd.port.mk>
