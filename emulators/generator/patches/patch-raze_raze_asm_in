@@ -1,0 +1,11 @@
+$OpenBSD: patch-raze_raze_asm_in,v 1.1 2009/08/08 17:27:19 okan Exp $
+--- raze/raze.asm.in.orig	Sat Oct 20 15:36:27 2001
++++ raze/raze.asm.in	Mon Aug  3 20:56:26 2009
+@@ -10,7 +10,6 @@
+ 
+ %macro cglobal 1 
+   global @UNDERSCORE@%1 
+-  %define %1 @UNDERSCORE@%1 
+ %endmacro
+ 
+ ; You are not expected to understand this.
