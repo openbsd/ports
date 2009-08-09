@@ -1,0 +1,15 @@
+$OpenBSD: patch-tool_nailgun_Makefile,v 1.1 2009/08/09 11:18:59 bernd Exp $
+--- tool/nailgun/Makefile.orig	Sun Aug  9 12:42:49 2009
++++ tool/nailgun/Makefile	Sun Aug  9 12:43:04 2009
+@@ -5,9 +5,9 @@
+ #
+ # Marty Lamb
+ 
+-CC=gcc
++#CC=gcc
+ WIN32_CC=/usr/local/mingw32/bin/mingw32-gcc
+-CFLAGS=-Wall -pedantic -s -O3
++CFLAGS+=-Wall -pedantic -s
+ 
+ ng: src/c/ng.c
+ 	@echo "Building ng client.  To build a Windows binary, type 'make ng.exe'"
