@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/08 21:38:37 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/09 08:36:46 bernd Exp $
 
 COMMENT =	CouchDB persistence layer written in Ruby
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP = Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = Yes
 
-MASTER_SITES =		http://gems.github.com/gems/
+MASTER_SITES =		${MASTER_SITE_GITHUB}
 
 MODULES =		lang/ruby
 BUILD_DEPENDS =		${RUN_DEPENDS}
