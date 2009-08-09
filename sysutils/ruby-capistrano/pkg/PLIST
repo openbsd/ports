@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/24 18:06:37 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/08/09 12:33:27 bernd Exp $
 bin/cap
 bin/capify
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
@@ -274,7 +274,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Actions
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Actions/Invocation/invoke_command-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Actions/Invocation/parallel-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Actions/Invocation/run-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Actions/Invocation/run_tree-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Actions/Invocation/sudo-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Actions/Invocation/sudo_prompt-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Actions/cdesc-Actions.yaml
@@ -296,6 +295,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Connect
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Connections/execute_on_servers-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Connections/failed%21-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Connections/has_failed%3f-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Connections/sessions-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Connections/teardown_connections_to-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Execution/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Execution/cdesc-Execution.yaml
@@ -307,6 +307,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Executi
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Execution/pop_task_call_frame-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Execution/push_task_call_frame-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Execution/rollback%21-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Execution/rollback_requests%3d-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Execution/rollback_requests-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Execution/task_call_frames-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Execution/transaction%3f-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Execution/transaction-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Configuration/Loading/
@@ -488,6 +491,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Deploy/SCM/Perforce/e
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Deploy/SCM/Perforce/handle_data-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Deploy/SCM/Perforce/head-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Deploy/SCM/Perforce/log-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Deploy/SCM/Perforce/next_revision-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Deploy/SCM/Perforce/query_revision-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Deploy/SCM/Perforce/sync-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Capistrano/Deploy/SCM/Subversion/
@@ -645,7 +649,6 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Rakefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/cap
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/capify
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/capistrano.gemspec
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/sample.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/24 18:06:37 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/09 12:33:27 bernd Exp $
 
 COMMENT=	execute commands in parallel on multiple remote machines
 
-DISTNAME=	capistrano-2.5.3
+DISTNAME=	capistrano-2.5.8
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	sysutils
 
