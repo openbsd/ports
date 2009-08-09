@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2009/08/03 21:36:29 mglocker Exp $
+# $OpenBSD: Makefile,v 1.178 2009/08/09 21:50:31 landry Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -146,6 +146,7 @@
      SUBDIR += upsd
      SUBDIR += usbutil
      SUBDIR += uvideo-firmware
+     SUBDIR += vifm
      SUBDIR += wdsetup
      SUBDIR += whowatch
      SUBDIR += wmapm
