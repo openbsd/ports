@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/06/03 16:40:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/09 20:08:04 sthen Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -24,7 +24,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBSSL_LIBS="-L/usr/lib -lssl -lcrypto" \
-			LIBSSL_CFLAGS="-I/usr/include"
+			LIBSSL_CFLAGS="-I/usr/include" \
+			ac_cv_prog_PYTHON="${MODPY_BIN}"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-ssl
 
