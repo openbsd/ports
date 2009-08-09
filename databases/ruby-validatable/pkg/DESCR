@@ -1,0 +1,4 @@
+The validatable library can be included with any Ruby class and
+provide ActiveRecord looking validations. The library follows
+ActiveRecord's lead for features that are similar and introduce new
+features.
