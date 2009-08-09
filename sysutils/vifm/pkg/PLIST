@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/09 21:49:33 landry Exp $
+bin/pauseme
+@bin bin/vifm
+share/vifm/
+share/vifm/vifm-help.txt
+share/vifm/vifm.txt
+share/vifm/vifm.vim
+share/vifm/vifmrc

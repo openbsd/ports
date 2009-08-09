@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_filelist_c,v 1.1.1.1 2009/08/09 21:49:33 landry Exp $
+yeah sure, alloc view->window_width -2 and access view->window_width + 1 ...
+--- src/filelist.c.orig	Mon Jun 16 17:21:25 2008
++++ src/filelist.c	Sun Aug  9 12:03:52 2009
+@@ -479,7 +479,7 @@ moveto_list_pos(FileView *view, int pos)
+ {
+ 	int redraw = 0;
+ 	int old_cursor = view->curr_line;
+-	char file_name[view->window_width -2];
++	char file_name[view->window_width + 2];
+ 	int x;
+ 
+ 	if(pos < 1)
+@@ -959,18 +959,20 @@ load_dir_list(FileView *view, int reload)
+ 	if(view->list_rows < 1)
+ 	{
+ 		char msg[64];
++		size_t size;
+ 		snprintf(msg, sizeof(msg), 
+ 				"The %s pattern %s did not match any files. It was reset.", 
+ 				view->filename_filter, view->invert==1 ? "inverted" : "");
+ 		status_bar_message(msg);
++		size = strlen("*") +1;
+ 		view->filename_filter = (char *)realloc(view->filename_filter,
+-				strlen("*") +1);
++				size);
+ 		if(view->filename_filter == NULL)
+ 		{
+ 			show_error_msg(" Memory Error ", "Unable to allocate enough memory");
+ 			return;
+ 		}
+-		snprintf(view->filename_filter, sizeof(view->filename_filter), "*");
++		snprintf(view->filename_filter, size, "*");
+ 		if(view->invert)
+ 			view->invert = 0;
+ 

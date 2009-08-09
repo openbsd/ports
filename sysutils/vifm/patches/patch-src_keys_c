@@ -1,0 +1,70 @@
+$OpenBSD: patch-src_keys_c,v 1.1.1.1 2009/08/09 21:49:33 landry Exp $
+--- src/keys.c.orig	Sat Jun 14 01:37:57 2008
++++ src/keys.c	Sat Aug  8 16:10:04 2009
+@@ -22,6 +22,7 @@
+ #include<string.h> /* strncpy */
+ #include<sys/time.h> /* select() */
+ #include<sys/types.h> /* select() */
++#include <sys/wait.h>
+ #include<unistd.h> /* select() */
+ 
+ #include "background.h"
+@@ -285,17 +286,19 @@ remove_filename_filter(FileView *view)
+ {
+ 	int found;
+ 	char file[NAME_MAX];
++	size_t size;
+ 
+ 	snprintf(file, sizeof(file), "%s",
+ 			view->dir_entry[view->list_pos].name);
+-	view->prev_filter = (char *)realloc(view->prev_filter,
+-			strlen(view->filename_filter) +1);
++	size = strlen(view->filename_filter) +1;
++	view->prev_filter = (char *)realloc(view->prev_filter, size);
+ 	snprintf(view->prev_filter, 
+-		sizeof(view->prev_filter), view->filename_filter);
++		size, "%s", view->filename_filter);
++	size = strlen("*") +1;
+ 	view->filename_filter = (char *)realloc(view->filename_filter,
+-			strlen("*") +1);
++			size);
+ 	snprintf(view->filename_filter, 
+-			sizeof(view->filename_filter), "*");
++			size, "*");
+ 	view->prev_invert = view->invert;
+ 	view->invert = 0;
+ 	load_dir_list(view, 0);
+@@ -311,13 +314,15 @@ restore_filename_filter(FileView *view)
+ {
+ 	int found;
+ 	char file[NAME_MAX];
++	size_t size;
+ 
+ 	snprintf(file, sizeof(file), "%s", 
+ 			view->dir_entry[view->list_pos].name);
+ 
++	size = strlen(view->prev_filter) +1;
+ 	view->filename_filter = (char *)realloc(view->filename_filter,
+-			strlen(view->prev_filter) +1);
+-	snprintf(view->filename_filter, sizeof(view->filename_filter), 
++			size);
++	snprintf(view->filename_filter, size, 
+ 			"%s", view->prev_filter);
+ 	view->invert = view->prev_invert;
+ 	load_dir_list(view, 0);
+@@ -809,6 +814,15 @@ main_key_press_cb(FileView *view)
+ 
+ 	while (!done)
+ 	{
++		if (sigchld_received) {
++			int status;
++			pid_t pid;
++
++			sigchld_received = 0;
++			while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
++				add_finished_job(pid, status);
++		}
++
+ 		if (curr_stats.freeze)
+ 			continue;
+ 

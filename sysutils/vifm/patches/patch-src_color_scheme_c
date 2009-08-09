@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_color_scheme_c,v 1.1.1.1 2009/08/09 21:49:33 landry Exp $
+--- src/color_scheme.c.orig	Sun Aug  9 11:02:55 2009
++++ src/color_scheme.c	Sun Aug  9 11:03:34 2009
+@@ -44,7 +44,7 @@ static void
+ load_default_colors()
+ {
+ 
+-	snprintf(col_schemes[0].name, PATH_MAX, "Default");
++	snprintf(col_schemes[0].name, NAME_MAX, "Default");
+ 	snprintf(col_schemes[0].dir, PATH_MAX, "/");
+ 
+ 	col_schemes[0].color[0].name = MENU_COLOR;
+@@ -262,7 +262,7 @@ read_color_scheme_file()
+ 					//		sizeof(Col_scheme *) +1);
+ 
+ 				snprintf(col_schemes[cfg.color_scheme_num].name,
+-						PATH_MAX, "%s", s1);
++						NAME_MAX, "%s", s1);
+ 
+ 				cfg.color_scheme_num++;
+ 

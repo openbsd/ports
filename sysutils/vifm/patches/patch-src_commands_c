@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_commands_c,v 1.1.1.1 2009/08/09 21:49:33 landry Exp $
+--- src/commands.c.orig	Sat Jun 14 02:56:58 2008
++++ src/commands.c	Sat Aug  8 15:03:34 2009
+@@ -963,6 +963,7 @@ static int
+ parse_command(FileView *view, char *command, cmd_t *cmd)
+ {
+ 	int result;
++	size_t size;
+ 
+ 	initialize_command_struct(cmd);
+ 
+@@ -1040,17 +1041,16 @@ parse_command(FileView *view, char *command, cmd_t *cm
+ 	/* Get the actual command name. */
+ 	if((cmd->builtin = command_is_reserved(cmd->cmd_name)) > -1)
+ 	{
+-		cmd->cmd_name = (char *)realloc(cmd->cmd_name, 
+-				strlen(reserved_commands[cmd->builtin]) +1);
+-		snprintf(cmd->cmd_name, sizeof(reserved_commands[cmd->builtin]),
+-				"%s", reserved_commands[cmd->builtin]);
++		size = strlen(reserved_commands[cmd->builtin]) +1;
++		cmd->cmd_name = realloc(cmd->cmd_name, size);
++		snprintf(cmd->cmd_name, size, "%s",
++		    reserved_commands[cmd->builtin]);
+ 	}
+ 	else if((cmd->is_user = is_user_command(cmd->cmd_name)) > -1)
+ 	{
+-		cmd->cmd_name =(char *)realloc(cmd->cmd_name,
+-				strlen(command_list[cmd->is_user].name) + 1);
+-		snprintf(cmd->cmd_name, sizeof(command_list[cmd->is_user].name),
+-				"%s", command_list[cmd->is_user].name);
++		size = strlen(command_list[cmd->is_user].name) + 1;
++		cmd->cmd_name = realloc(cmd->cmd_name, size);
++		snprintf(cmd->cmd_name, size, "%s", command_list[cmd->is_user].name);
+ 	}
+ 	else
+ 	{
+@@ -1276,7 +1276,7 @@ execute_builtin_command(FileView *view, cmd_t *cmd)
+ 					view->invert = 1;
+ 					view->filename_filter = (char *)realloc(view->filename_filter,
+ 						strlen(cmd->args) +2);
+-					snprintf(view->filename_filter, strlen(cmd->args) +1, 
++					snprintf(view->filename_filter, strlen(cmd->args) +2, 
+ 							"%s", cmd->args); 
+ 					load_dir_list(view, 1);
+ 					moveto_list_pos(view, 0);

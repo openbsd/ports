@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/08/09 21:49:33 landry Exp $
+--- src/Makefile.in.orig	Sun Aug  9 12:33:59 2009
++++ src/Makefile.in	Sun Aug  9 12:34:28 2009
+@@ -88,7 +88,7 @@ SED = @SED@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-pkgdata_DATA = vifm-help.txt 							 vifm.txt 							 vifm.vim 
++pkgdata_DATA = vifm-help.txt vifmrc							 vifm.txt 							 vifm.vim 
+ 
+ 
+ bin_PROGRAMS = vifm
