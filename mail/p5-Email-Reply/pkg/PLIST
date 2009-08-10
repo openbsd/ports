@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/10 17:51:56 jasper Exp $
+${P5SITE}/Email/Reply.pm
+@man man/man3p/Email::Reply.3p
