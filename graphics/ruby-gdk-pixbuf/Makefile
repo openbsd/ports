@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2009/08/10 16:37:12 msf Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,9 +20,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ruby-gnome/}
 
 MODULES=	lang/ruby
-LIB_DEPENDS=	gdk_pixbuf.>=2::graphics/gdk-pixbuf \
-		ruby.>=1.84::lang/ruby
+LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS} \
+		gdk_pixbuf.>=2::graphics/gdk-pixbuf
+
 RUN_DEPENDS=	:ruby-gtk->=0.34:x11/ruby-gtk
+
 WANTLIB=	c gmodule iconv intl gtk Xmu jpeg Xext Xi m X11 \
 		glib gdk z tiff png pthread-stubs xcb
 

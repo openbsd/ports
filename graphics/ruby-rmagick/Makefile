@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/24 17:41:48 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 16:37:12 msf Exp $
 
 SHARED_ONLY =	Yes
 
@@ -22,8 +22,8 @@ MODULES =	lang/ruby
 
 WANTLIB =	c freetype m z
 
-LIB_DEPENDS =	MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick \
-		ruby::lang/ruby
+LIB_DEPENDS =	${MODRUBY_LIB_DEPENDS} \
+		MagickCore.>=1,MagickWand.>=1::graphics/ImageMagick \
 
 CONFIGURE_STYLE = ruby gem
 

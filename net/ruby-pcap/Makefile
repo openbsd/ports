@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/06/22 17:00:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2009/08/10 16:40:15 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,7 +22,7 @@ MASTER_SITES=		http://www.goto.info.waseda.ac.jp/~fukusima/ruby/
 
 MODULES=		lang/ruby
 
-LIB_DEPENDS=		ruby.>=1.84::lang/ruby
+LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
 
 NO_REGRESS=	Yes
 

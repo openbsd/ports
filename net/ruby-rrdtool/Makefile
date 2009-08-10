@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/16 11:05:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 16:40:15 msf Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=rubyrrdtool/}
 MODULES=	lang/ruby
 
 GEM_SKIPDEPENDS= hoe
-LIB_DEPENDS=	ruby::lang/ruby \
+LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS} \
 		rrd:rrdtool->=1.2,<1.3:net/rrdtool
 
 CONFIGURE_STYLE=ruby gem
