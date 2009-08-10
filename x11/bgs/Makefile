@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/26 00:03:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/10 18:46:49 jasper Exp $
 
 COMMENT =		simple background setter
 
 VERSION =		0.5
 DISTNAME =		bgs-${VERSION}
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 CATEGORIES =		x11 graphics
 
 HOMEPAGE =		http://s01.de/~tox/index.cgi/proj_bgs
 MASTER_SITES =		http://s01.de/~tox/files/bgs/
-
-MAINTAINER =		James Turner <james@bsdgroup.org>
 
 # MIT/X
 PERMIT_PACKAGE_CDROM =	Yes
