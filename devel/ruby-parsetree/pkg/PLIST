@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/02/03 12:22:21 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/08/10 11:18:10 msf Exp $
 bin/parse_tree_abc
 bin/parse_tree_audit
 bin/parse_tree_deps
@@ -121,9 +121,11 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/TestUnifier.src/M00005
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/TestUnifier.src/M000057.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnboundMethod.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnboundMethod.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnboundMethod.src/M000081.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnboundMethod.src/M000079.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000080.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000081.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000082.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000083.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000084.html
@@ -131,13 +133,12 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M00008
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000086.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000087.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000088.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000089.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000090.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000091.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000092.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000093.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000094.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000095.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000096.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000097.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000098.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M000099.html
@@ -150,10 +151,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/UnifiedRuby.src/M00010
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Unifier.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Unifier.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Unifier.src/M000001.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Unique.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Unique.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Unique.src/M000079.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Unique.src/M000080.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/History_txt.html
@@ -164,11 +161,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/gauntlet_parsetree_r
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/parse_tree_extensions_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/parse_tree_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/unified_ruby_rb.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/unique_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/test/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/test/pt_testcase_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/test/something_rb.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/test/test_all_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/test/test_parse_tree_extensions_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/test/test_parse_tree_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/test/test_unified_ruby_rb.html
@@ -311,6 +306,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnifiedRuby/rewrite_defs-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnifiedRuby/rewrite_dmethod-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnifiedRuby/rewrite_dvar-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnifiedRuby/rewrite_fcall-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnifiedRuby/rewrite_flip2-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnifiedRuby/rewrite_flip3-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnifiedRuby/rewrite_masgn-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnifiedRuby/rewrite_op_asgn1-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnifiedRuby/rewrite_resbody-i.yaml
@@ -323,10 +320,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/UnifiedRuby/rewrite_zarray-i.yam
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Unifier/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Unifier/cdesc-Unifier.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Unifier/new-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Unique/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Unique/cdesc-Unique.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Unique/next-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Unique/reset-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/.autotest
@@ -347,11 +340,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/gauntlet_parsetree.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/parse_tree.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/parse_tree_extensions.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/unified_ruby.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/unique.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/pt_testcase.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/something.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_all.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_parse_tree.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_parse_tree_extensions.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/test_unified_ruby.rb
