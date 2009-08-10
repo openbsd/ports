@@ -1,6 +1,5 @@
-$OpenBSD: patch-src_config_torrc_sample_in,v 1.7 2008/09/19 21:51:00 rui Exp $
---- src/config/torrc.sample.in.orig	Tue Feb 26 19:56:28 2008
-+++ src/config/torrc.sample.in	Tue Aug  5 10:41:00 2008
+--- src/config/torrc.sample.in.orig	Mon May 25 19:38:04 2009
++++ src/config/torrc.sample.in	Mon Aug 10 23:02:40 2009
 @@ -37,18 +37,18 @@ SocksListenAddress 127.0.0.1 # accept connections only
  ## Send every possible message to @LOCALSTATEDIR@/log/tor/debug.log
  #Log debug file @LOCALSTATEDIR@/log/tor/debug.log
@@ -23,13 +22,10 @@ $OpenBSD: patch-src_config_torrc_sample_in,v 1.7 2008/09/19 21:51:00 rui Exp $
  
  ## The port on which Tor will listen for local connections from Tor
  ## controller applications, as documented in control-spec.txt.
-@@ -134,6 +134,9 @@ SocksListenAddress 127.0.0.1 # accept connections only
- #ExitPolicy accept *:119 # accept nntp as well as default exit policy
- #ExitPolicy reject *:* # no exits allowed
- #
+@@ -154,3 +154,6 @@ SocksListenAddress 127.0.0.1 # accept connections only
+ #BridgeRelay 1
+ #ExitPolicy reject *:*
+ 
 +## Revoke privileges
 +User _tor
 +Group _tor
- ################ This section is just for bridge relays ##############
- #
- ## Bridge relays (or "bridges" ) are Tor relays that aren't listed in the
