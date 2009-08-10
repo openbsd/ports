@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/03 00:48:51 pyr Exp $
+# $OpenBSD: Makefile,v 1.9 2009/08/10 16:51:38 msf Exp $
 
 COMMENT=		module that embeds Ruby into Apache
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://modruby.net/
 
 MAINTAINER=		Adam Montague <amontague@siriushosting.com>
 
-MODULES=		apache-module
+MODULES=		apache-module lang/ruby
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +23,7 @@ MODAPACHE_NAME=		ruby
 
 MASTER_SITES=		http://modruby.net/archive/
 
-LIB_DEPENDS=		ruby::lang/ruby
+LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	configure.rb

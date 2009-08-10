@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/05/19 22:22:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 16:48:28 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_RUBYFORGE:=hobix/}
 
 WANTLIB=		c m
-LIB_DEPENDS=		ruby::lang/ruby
+LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
 
 BUILD_DEPENDS=		::devel/ruby-rake
 

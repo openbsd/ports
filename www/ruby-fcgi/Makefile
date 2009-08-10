@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/15 00:01:25 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 16:51:38 msf Exp $
 
 COMMENT=	ruby FastCGI library
 
@@ -18,8 +18,8 @@ MODULES=	lang/ruby
 
 WANTLIB=	c m
 
-LIB_DEPENDS=	fcgi:fcgi->=2.4.0:www/fcgi \
-		ruby.>=1::lang/ruby
+LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS} \
+		fcgi:fcgi->=2.4.0:www/fcgi
 
 CONFIGURE_STYLE=ruby gem
 CONFIGURE_ARGS=	--with-fcgi-include=${LOCALBASE}/include \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/06/22 17:00:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/10 16:48:28 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -23,7 +23,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 WANTLIB=		c m
 MODULES=		lang/ruby
 
-LIB_DEPENDS=		ruby.>=1::lang/ruby \
+LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS} \
 			estraier.>=8::textproc/hyperestraier
 
 CONFIGURE_STYLE=	gnu

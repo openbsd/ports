@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/22 17:00:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/10 16:48:27 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -23,7 +23,7 @@ MASTER_SITES=		${HOMEPAGE}archive/
 
 MODULES=		lang/ruby
 
-LIB_DEPENDS=		ruby::lang/ruby
+LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	configure.rb
