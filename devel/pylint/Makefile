@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/15 13:03:42 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 14:18:30 sthen Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
 VERSION=		0.13.1
 DISTNAME=		pylint-${VERSION}
-PKGNAME-main=		pylint-${VERSION}p2
+PKGNAME-main=		pylint-${VERSION}p3
 PKGNAME-gui=		pylint-gui-${VERSION}p1
 CATEGORIES=		devel
 

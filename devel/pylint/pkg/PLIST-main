@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2007/10/20 13:01:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/08/10 14:18:30 sthen Exp $
 bin/pylint
 bin/symilar
 lib/python${MODPY_VERSION}/site-packages/pylint/
@@ -349,7 +349,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/input/w0401_cycle.pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/w0801_same.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/w0801_same.pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/
-lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/${MODPY_VERSION}_func_newstyle_exceptions.txt
+lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/2.5_func_newstyle_exceptions.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/builtin_module.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func___future___import_not_first_stmt.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func___name___access.txt
