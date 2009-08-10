@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/03 20:48:26 ian Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/10 14:50:58 sthen Exp $
 
 COMMENT=		OpenStreetMap map editor
 
@@ -24,6 +24,7 @@ MODULES=		java \
 			textproc/intltool
 MODJAVA_VER=		1.6+
 
+BUILD_DEPENDS=		::devel/apache-ant
 RUN_DEPENDS=		::java/javaPathHelper \
 			::devel/desktop-file-utils
 NO_REGRESS=		Yes
