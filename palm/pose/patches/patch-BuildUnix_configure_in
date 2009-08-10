@@ -1,6 +1,6 @@
-$OpenBSD: patch-BuildUnix_configure_in,v 1.2 2007/04/01 17:50:25 martynas Exp $
---- BuildUnix/configure.in.orig	Fri Mar 29 15:11:13 2002
-+++ BuildUnix/configure.in	Sun Apr  1 17:55:07 2007
+$OpenBSD: patch-BuildUnix_configure_in,v 1.3 2009/08/10 17:53:18 naddy Exp $
+--- BuildUnix/configure.in.orig	Fri Mar 29 06:11:13 2002
++++ BuildUnix/configure.in	Mon Aug 10 11:47:27 2009
 @@ -136,7 +136,7 @@ dnl ==================================================
  dnl Define the standard OMNITHREAD options
  dnl ========================================================
@@ -16,8 +16,8 @@ $OpenBSD: patch-BuildUnix_configure_in,v 1.2 2007/04/01 17:50:25 martynas Exp $
  		AC_CHECK_LIB(MesaGL, glXMakeCurrent, AC_DEFINE(HAVE_GL) GLLIB=" -lMesaGL",,\
 -		-L${ac_x_libraries} -lX11 -lXext $X_EXTRA_LIBS -lm), \
 -		-L${ac_x_libraries} -lX11 -lXext $X_EXTRA_LIBS -lm)
-+		-L${ac_x_libraries} -lXext -lX11 -lXdmcp -lXau $X_EXTRA_LIBS -lm), \
-+		-L${ac_x_libraries} -lXext -lX11 -lXdmcp -lXau $X_EXTRA_LIBS -lm)
++		-L${ac_x_libraries} -lXext -lX11 -lxcb -lpthread-stubs -lXdmcp -lXau $X_EXTRA_LIBS -lm), \
++		-L${ac_x_libraries} -lXext -lX11 -lxcb -lpthread-stubs -lXdmcp -lXau $X_EXTRA_LIBS -lm)
  )
  
  AC_CHECK_HEADER(GL/glu.h,
@@ -26,7 +26,7 @@ $OpenBSD: patch-BuildUnix_configure_in,v 1.2 2007/04/01 17:50:25 martynas Exp $
  dnl Temporarily add -lfltk and OTHER-LIBRARIES (cf AC_CHECK_LIB) to $LIBS
  save_LIBS="$LIBS"
 -LIBS="-lfltk ${GLLIB} -L${ac_x_libraries} -lXext -lX11 -lm $X_EXTRA_LIBS $LIBS"
-+LIBS="-lfltk ${GLLIB} -L${ac_x_libraries} -lXext -lX11 -lXdmcp -lXau -lm $X_EXTRA_LIBS $LIBS"
++LIBS="-lfltk ${GLLIB} -L${ac_x_libraries} -lXext -lX11 -lxcb -lpthread-stubs -lXdmcp -lXau -lm $X_EXTRA_LIBS $LIBS"
  
  AC_LANG_CPLUSPLUS
  AC_CACHE_CHECK([for 'int fl_height (void)' in -lfltk], pose_cv_lib_fltk_found,

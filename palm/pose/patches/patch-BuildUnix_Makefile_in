@@ -1,6 +1,6 @@
-$OpenBSD: patch-BuildUnix_Makefile_in,v 1.2 2007/04/01 17:50:25 martynas Exp $
---- BuildUnix/Makefile.in.orig	Fri Mar 29 15:11:21 2002
-+++ BuildUnix/Makefile.in	Sun Apr  1 18:13:24 2007
+$OpenBSD: patch-BuildUnix_Makefile_in,v 1.3 2009/08/10 17:53:18 naddy Exp $
+--- BuildUnix/Makefile.in.orig	Fri Mar 29 06:11:21 2002
++++ BuildUnix/Makefile.in	Mon Aug 10 11:45:50 2009
 @@ -74,7 +74,7 @@ POSER_CFLAGS = @POSER_CFLAGS@
  POSER_CXXFLAGS = @POSER_CXXFLAGS@
  RANLIB = @RANLIB@
@@ -15,7 +15,7 @@ $OpenBSD: patch-BuildUnix_Makefile_in,v 1.2 2007/04/01 17:50:25 martynas Exp $
  
  bin_PROGRAMS = pose
 -pose_LDADD = $(srcdir)/Gzip/libposergzip.a $(srcdir)/jpeg/libposerjpeg.a $(srcdir)/espws-2.0/libposerespws.a -lfltk -L/usr/local/lib $(X_LIBS) -lXext -lX11 $(THREAD_LIBS) $(GLLIB) -lm
-+pose_LDADD = $(srcdir)/Gzip/libposergzip.a $(srcdir)/jpeg/libposerjpeg.a $(srcdir)/espws-2.0/libposerespws.a -lfltk -L/usr/local/lib $(X_LIBS) -lXext -lX11 -lXdmcp -lXau $(THREAD_LIBS) $(GLLIB) -lm
++pose_LDADD = $(srcdir)/Gzip/libposergzip.a $(srcdir)/jpeg/libposerjpeg.a $(srcdir)/espws-2.0/libposerespws.a -lfltk -L/usr/local/lib $(X_LIBS) -lXext -lX11 -lxcb -lpthread-stubs -lXdmcp -lXau $(THREAD_LIBS) $(GLLIB) -lm
  pose_SOURCES = $(SRC_UNIX) $(SRC_UNIX_GEN) $(SRC_SHARED) $(SRC_SHARED_HARDWARE) $(SRC_PATCHES) $(SRC_TRG) $(SRC_UAE) $(SRC_PALM) $(SRC_THREAD)
  CLEANFILES = ResStrings.cpp EmDlgFltkFactory.h EmDlgFltkFactory.cpp config.cache config.log
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
