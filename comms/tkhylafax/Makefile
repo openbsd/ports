@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/05/07 14:47:15 giovanni Exp $
+# $OpenBSD: Makefile,v 1.25 2009/08/10 21:51:13 sthen Exp $
 
 COMMENT=	Tcl/Tk interface to Sam Leffler's fax package
 
@@ -20,6 +20,7 @@ MASTER_SITES=	ftp://ftp.hylafax.org/contrib/tkhylafax/ \
 		ftp://ftp.ntua.gr/pub/net/hylafax/contrib/tkhylafax/
 
 MODULES=	x11/tk
+BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS=	::comms/hylafax \
 		::print/gv
 
