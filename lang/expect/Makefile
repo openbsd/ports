@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2009/03/11 20:11:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2009/08/10 17:31:07 kili Exp $
 
 COMMENT=	sophisticated scripter based on Tcl/Tk
 
 DISTNAME=	expect-5.43.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	expect543 1.2
 CATEGORIES=	lang
 MASTER_SITES=	http://expect.nist.gov/old/
@@ -36,7 +36,7 @@ MODULES=	x11/tk
 LIB_DEPENDS+=	${MODTK_LIB_DEPENDS}
 CONFIGURE_ARGS+=--with-tkconfig="${MODTK_LIBDIR}" \
 		--with-tkinclude="${MODTK_INCDIR}"
-WANTLIB+=	X11
+WANTLIB+=	X11 pthread-stubs xcb
 .else
 MODULES=	lang/tcl
 LIB_DEPENDS+=	${MODTCL_LIB_DEPENDS}

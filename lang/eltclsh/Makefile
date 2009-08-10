@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/16 09:51:44 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2009/08/10 17:31:07 kili Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
 DISTNAME =	eltclsh-1.9
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES =	lang x11
 
 MASTER_SITES =	http://softs.laas.fr/openrobots/php/download.php/
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	 Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xrender Xss c edit expat fontconfig
-WANTLIB += freetype m termcap z
+WANTLIB += freetype m pthread-stubs termcap xcb z
 
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE =	gnu

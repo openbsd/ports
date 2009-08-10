@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/01/21 18:30:16 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2009/08/10 17:31:07 kili Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
@@ -13,6 +13,7 @@ CATEGORIES=	lang
 
 V=5e5
 DISTNAME=	scm-$V
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://people.csail.mit.edu/jaffer/SCM
@@ -58,7 +59,7 @@ FEATURES+=x
 OPTIONS+=--compiler-options=-I${X11BASE}/include --compiler-options=-O2
 OPTIONS+=--linker-options=-L${X11BASE}/lib
 SCM_DATA+=	x11.scm xevent.scm
-WANTLIB+=	X11
+WANTLIB+=	X11 pthread-stubs xcb
 USE_X11=	Yes
 .endif
 

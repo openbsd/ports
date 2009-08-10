@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/07/27 21:44:15 martynas Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/10 17:31:07 kili Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 COMMENT=	essential libraries for java
 
 DISTNAME=	classpath-0.98
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	lang java
 
@@ -51,7 +51,8 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 cairo \
 		dbus-1 expat fontconfig freetype gio-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gthread-2.0 intl m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png stdc++ z
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs \
+		stdc++ xcb z
 
 MASTER_SITES=	${MASTER_SITE_GNU:=classpath/}
 MASTER_SITES0=	http://archive.eclipse.org/eclipse/downloads/drops/R-3.2.2-200702121330/

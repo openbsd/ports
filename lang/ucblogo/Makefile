@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 17:31:07 kili Exp $
 
 COMMENT=	berkeley's implementation of the logo programming language
 DISTNAME=	ucblogo-5.5
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	lang
 
 MASTER_SITES=	http://mirrors.protection.cx/~jolan/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m termcap ICE SM X11
+WANTLIB=	ICE SM X11 c m pthread-stubs termcap xcb
 NO_REGRESS=	Yes
 USE_X11=	Yes
 

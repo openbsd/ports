@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2008/06/29 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/10 17:31:07 kili Exp $
 
 COMMENT-main=		programming language with generators, X11 and more
 COMMENT-main-no_x11=	programming language with generators
@@ -13,7 +13,7 @@ DISTFILES=	icon.v943src.tgz
 
 MULTI_PACKAGES=		-main -compiler
 
-PKGNAME-main=		icon-interp-${VERSION}p1
+PKGNAME-main=		icon-interp-${VERSION}p2
 PKGNAME-compiler= 	icon-compiler-${VERSION}
 
 # Public domain
@@ -44,7 +44,7 @@ WANTLIB-main=		c m pthread
 CONFIGURE_TARGET=	Configure
 .else
 CONFIGURE_TARGET=	X-Configure
-WANTLIB-main+=		X11 Xpm
+WANTLIB-main+=		X11 Xpm pthread-stubs xcb
 USE_X11=Yes
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.59 2009/06/25 01:49:54 jolan Exp $
+# $OpenBSD: Makefile.inc,v 1.60 2009/08/10 17:31:07 kili Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -62,7 +62,7 @@ RUN_DEPENDS-idle=	${RUN_DEPENDS} \
 			::lang/python/${VERSION},-tkinter
 LIB_DEPENDS-tkinter=	tcl84:tcl->=8.4,<8.5:lang/tcl/8.4 \
 			tk84:tk->=8.4,<8.5:x11/tk/8.4
-WANTLIB-tkinter=	X11
+WANTLIB-tkinter=	X11 pthread-stubs xcb
 
 FULLPKGNAME-bsddb=	python-bsddb-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-gdbm=	python-gdbm-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}

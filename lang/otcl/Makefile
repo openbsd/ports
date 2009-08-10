@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2009/03/15 13:14:43 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2009/08/10 17:31:07 kili Exp $
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
 
 COMMENT=	MIT Object Tcl
 
 V=		1.13
 DISTNAME=	otcl-src-$V
-PKGNAME=	otcl-$Vp0
+PKGNAME=	otcl-$Vp1
 SHARED_LIBS=	otcl 1.0
 CATEGORIES=	lang
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m X11 Xext tcl84
+WANTLIB=		X11 Xext c m pthread-stubs tcl84 xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=otcl-tclcl/}
 WRKDIST=	${WRKDIR}/otcl-$V
