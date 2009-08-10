@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/09/28 15:58:55 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2009/08/10 15:24:12 msf Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,7 +28,7 @@ WANTLIB=		c m
 # swig is needed to build the native extension
 BUILD_DEPENDS=		::devel/swig
 LIB_DEPENDS=		sqlite3.>=8:sqlite3->=3.3.4:databases/sqlite3 \
-			ruby.>=1::lang/ruby
+			${MODRUBY_LIB_DEPENDS}
 
 CONFIGURE_STYLE=	ruby gem
 

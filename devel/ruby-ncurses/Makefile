@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/06/22 17:00:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2009/08/10 15:27:13 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -23,7 +23,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/ruby
 
-LIB_DEPENDS=		ruby.>=1.84::lang/ruby
+LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
 
 CONFIGURE_STYLE=	ruby extconf
 

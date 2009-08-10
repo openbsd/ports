@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/06/22 17:00:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 15:24:12 msf Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,7 @@ MODULES=		lang/ruby
 
 WANTLIB=		c crypto m pthread ssl
 
-LIB_DEPENDS=		ruby.>=1::lang/ruby \
+LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS} \
 			ldap.>=9,ldap_r.>=9,lber.>=9::databases/openldap
 
 CONFIGURE_STYLE=	ruby extconf

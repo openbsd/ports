@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/27 11:34:00 pirofti Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 15:21:59 msf Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=id3lib-ruby/}
 
 MODULES=	lang/ruby
 WANTLIB=	c m stdc++ z
-LIB_DEPENDS=	ruby.>=1::lang/ruby \
+LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS} \
 		id3.>=4::audio/id3lib
 
 CONFIGURE_STYLE=	ruby gem

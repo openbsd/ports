@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/19 22:46:37 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/10 15:27:13 msf Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ MODULES=	lang/ruby
 
 WANTLIB=	c m
 
-LIB_DEPENDS=	ruby::lang/ruby
+LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS}
 
 CONFIGURE_STYLE=ruby gem
 
