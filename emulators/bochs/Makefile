@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2009/06/23 16:03:58 pirofti Exp $
+# $OpenBSD: Makefile,v 1.45 2009/08/10 06:31:09 kili Exp $
 
 COMMENT=	x86 machine simulator
 
 DISTNAME=	bochs-2.4.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
 
@@ -44,7 +45,7 @@ CONFIGURE_ARGS+= --with-nogui
 .else
 USE_X11=	Yes
 CONFIGURE_ARGS+= --with-x11
-WANTLIB+=	ICE SM X11 Xau Xdmcp
+WANTLIB+=	ICE SM X11 Xau Xdmcp pthread-stubs xcb
 .endif
 
 NO_REGRESS=	Yes

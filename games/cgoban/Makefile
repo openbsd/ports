@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/12/03 19:06:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/10 06:31:41 kili Exp $
 
 COMMENT=	X11 Go Toolset
 
 DISTNAME=	cgoban-1.9.12
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.igoweb.org/~wms/comp/cgoban/
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 c m
+WANTLIB=	X11 c m pthread-stubs xcb
 
 MASTER_SITES=	${HOMEPAGE}
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/05/14 07:56:19 pea Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 06:34:09 kili Exp $
 
 COMMENT =	personal accounting application
 
 DISTNAME =	homebank-4.0.3
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	productivity x11
 
 HOMEPAGE =	http://homebank.free.fr
@@ -25,7 +26,7 @@ WANTLIB = 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 	 	Xi Xinerama Xrandr Xrender c expat fontconfig freetype \
 	 	glitz png pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0 \
 	 	glib-2.0 gmodule-2.0 gobject-2.0 cairo m z stdc++ \
-		pixman-1  gio-2.0
+		pixman-1  gio-2.0 pthread-stubs xcb
 
 LIB_DEPENDS =	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		ofx.>=3::devel/libofx 

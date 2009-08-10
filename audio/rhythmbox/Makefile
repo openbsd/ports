@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2009/07/12 20:05:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2009/08/10 06:29:52 kili Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.3
+PKGNAME =		${DISTNAME}p0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 CATEGORIES=		audio
@@ -31,7 +32,8 @@ WANTLIB += gpg-error gssapi gstbase-0.10 gstcontroller-0.10 gstinterfaces-0.10
 WANTLIB += gstpbutils-0.10 gstreamer-0.10 gthread-2.0 gtk-x11-2.0
 WANTLIB += krb5 m neon nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png popt pthread proxy smime3 softokn3
-WANTLIB += soup-2.4 sqlite3 ssl ssl3 tasn1 util xml2 z
+WANTLIB += soup-2.4 sqlite3 ssl ssl3 tasn1 util xml2
+WANTLIB += pthread-stubs xcb z
 
 MODULES=		devel/gettext \
 			x11/gnome \

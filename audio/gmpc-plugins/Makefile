@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/28 21:58:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/10 06:29:52 kili Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,8 +7,8 @@ COMMENT-wikipedia =	wikipedia plugin for gmpc
 
 VERSION =	0.18.0
 DISTNAME =	gmpc-plugins-${VERSION}
-PKGNAME-main =		${DISTNAME}p2
-PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}p0
+PKGNAME-main =		${DISTNAME}p3
+PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}p1
 
 CATEGORIES =	audio
 
@@ -52,6 +52,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m mpd pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += sqlite3 stdc++ xml2 z
+WANTLIB += pthread-stubs xcb
 
 RUN_DEPENDS =	:gmpc->=${VERSION}:audio/gmpc \
 		::audio/vorbis-tools

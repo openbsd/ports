@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/06/04 07:09:34 giovanni Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:08 kili Exp $
 
 COMMENT =	powerful and simple qt4 editor
 
 V =		24.0.0
 DISTNAME =	tea-${V}
-PKGNAME =	teaqt-${V}
+PKGNAME =	teaqt-${V}p0
 CATEGORIES =	editors x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tea-editor/}
 EXTRACT_SUFX =	.tar.bz2
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =	ICE SM X11 Xext Xi Xinerama Xrender \
 		c expat fontconfig freetype glib-2.0 gobject-2.0 \
 		gthread-2.0 iconv intl m QtGui QtScript \
-		QtSvg QtXml png pthread stdc++ z
+		QtSvg QtXml png pthread stdc++ z pthread-stubs xcb
 
 LIB_DEPENDS =	aspell.>=16:aspell-*:textproc/aspell/core
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/02/16 15:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 06:32:05 kili Exp $
 COMMENT=	japanese handwriting
 
 DISTNAME=	uim-tomoe-gtk-0.2.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 HOMEPAGE= 	http://tomoe.sourceforge.jp/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=tomoe/17172/}
@@ -29,6 +29,6 @@ WANTLIB=	Xrender Xext X11 m z png freetype fontconfig \
 		pangoft2-1.0 cairo glitz atk-1.0 gobject-2.0 \
 		gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 c intl iconv \
 		tomoe Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi \
-		Xinerama Xrandr expat pcre pixman-1
+		Xinerama Xrandr expat pcre pixman-1 pthread-stubs xcb
 
 .include <bsd.port.mk>

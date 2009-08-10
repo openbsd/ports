@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/29 02:26:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/10 06:32:05 kili Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	scim plugin for qt
 
 DISTNAME=	scim-qtimm-0.9.4
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	inputmethods
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xdmcp stdc++
+WANTLIB=	X11 Xau Xdmcp pthread-stubs stdc++ xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
 EXTRACT_SUFX=	.tar.bz2

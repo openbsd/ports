@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/26 21:58:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:07 kili Exp $
 
 COMMENT-main=		free UML builder with extensions
 COMMENT-docs=		bouml documentation
@@ -6,7 +6,7 @@ COMMENT-docs=		bouml documentation
 V=			4.12.2
 DISTNAME=		bouml_$V
 PKGNAME=		bouml-$V
-PKGNAME-main=		bouml-$V
+PKGNAME-main=		bouml-$Vp0
 PKGNAME-docs=		bouml-docs-$V
 
 CATEGORIES=		devel x11
@@ -26,7 +26,7 @@ DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 
 MULTI_PACKAGES= 	-main -docs
 
-WANTLIB-main=		X11 Xext c m pthread stdc++
+WANTLIB-main=		X11 Xext c m pthread pthread-stubs stdc++ xcb
 
 RUN_DEPENDS-main=	::devel/desktop-file-utils
 

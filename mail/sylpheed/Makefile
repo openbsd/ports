@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.83 2009/03/09 21:32:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2009/08/10 06:32:43 kili Exp $
 
 COMMENT=	mail/news client in gtk+
 
 MAJOR=		2.5
 VERSION=	${MAJOR}.0
 DISTNAME=	sylpheed-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	mail news x11
 HOMEPAGE=	http://sylpheed.sraoss.jp/en
 
@@ -23,7 +23,7 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto enchant
 WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread ssl stdc++ z
+WANTLIB += pcre pixman-1 png pthread pthread-stubs ssl stdc++ xcb z
 
 RUN_DEPENDS=	::devel/desktop-file-utils
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${MAJOR}/

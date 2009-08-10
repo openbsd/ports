@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/16 21:29:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/10 06:33:43 kili Exp $
 
 COMMENT=	graphical MIB browser
 
 DISTNAME=	mbrowse-0.3.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 HOMEPAGE=	http://www.kill-9.org/mbrowse/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xext Xi c iconv intl m
+WANTLIB += X11 Xext Xi c iconv intl m pthread-stubs xcb
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/10 06:32:05 kili Exp $
 
 COMMENT=japanese handwriting recognition
 CATEGORIES=japanese
 HOMEPAGE=http://www.gtk.org/~otaylor/kanjipad/
 
 DISTNAME=kanjipad-1.2.1
-PKGNAME=${DISTNAME}p0
+PKGNAME=${DISTNAME}p1
 MASTER_SITES=ftp://ftp.gtk.org/pub/users/otaylor/kanjipad/
 
 # GPL
@@ -18,7 +18,7 @@ LIB_DEPENDS=gmodule,gtk,gdk::x11/gtk+ \
 	glib::devel/glib
 
 MODULES=	devel/gettext
-WANTLIB=	c Xext Xi X11 m
+WANTLIB=	X11 Xext Xi c m pthread-stubs xcb
 
 USE_X11=	Yes
 

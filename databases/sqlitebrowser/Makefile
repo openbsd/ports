@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/07/24 10:06:42 martynas Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:07 kili Exp $
 
 COMMENT=	graphical interface to sqlite databases
 DISTNAME=	sqlitebrowser-1.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 DISTFILES=	${DISTNAME}-src.tar.gz
 WRKDIST=	${WRKDIR}/sqlitebrowser
 CATEGORIES=	databases x11
@@ -13,7 +13,7 @@ MODULES=	x11/qt3
 NO_REGRESS=	Yes
 USE_X11=	Yes
 
-WANTLIB=	Xext m X11 stdc++ pthread c
+WANTLIB=	Xext m X11 c pthread pthread-stubs stdc++ xcb
 
 # Special: files are macintosh encoded.
 post-extract:

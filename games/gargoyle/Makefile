@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/07/19 21:39:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:42 kili Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	cross-platform interactive fiction player
 
 DISTNAME =	gargoyle-2008-12-25-sources
-PKGNAME =	gargoyle-20081225p1
+PKGNAME =	gargoyle-20081225p2
 
 # not a libtool port; any additional libs will need further changes.
 SHARED_LIBS =	garglk 0.0
@@ -27,7 +27,8 @@ PERMIT_DISTFILES_FTP =	missing a few licenses
 
 WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender c cairo expat fontconfig \
-		freetype iconv m pixman-1 pthread stdc++ vorbisfile z
+		freetype iconv m pixman-1 pthread pthread-stubs xcb stdc++ \
+		vorbisfile z
 
 MASTER_SITES =	http://garglk.googlecode.com/files/
 EXTRACT_SUFX =	.zip

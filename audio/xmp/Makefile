@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2008/06/18 18:08:06 miod Exp $
+# $OpenBSD: Makefile,v 1.31 2009/08/10 06:29:53 kili Exp $
 
 COMMENT-main=	extended module player
 COMMENT-xmms=	extended module player plugin for XMMS
 DISTNAME=	xmp-2.0.4
-PKGNAME-main=	${DISTNAME}p3
+PKGNAME-main=	${DISTNAME}p4
 PKGNAME-xmms=	xmms-${DISTNAME}p1
 CATEGORIES=	audio
 
@@ -37,7 +37,7 @@ RUN_DEPENDS-xmms=	::audio/xmms
 WANTLIB-xmms=
 
 LIB_DEPENDS-main=	esd.>=2::audio/esound
-WANTLIB-main=		X11 Xext c m
+WANTLIB-main=		X11 Xext c m pthread-stubs xcb
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

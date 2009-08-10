@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/11/13 14:54:32 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=	Mahjongg game for X11
 
 DISTNAME=       xmj
-PKGNAME=	xmj-1.0p1
+PKGNAME=	xmj-1.0p2
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext c
+WANTLIB=	X11 Xau Xdmcp Xext c pthread-stubs xcb
 
 CONFIGURE_STYLE=imake noman
 USE_X11=	Yes

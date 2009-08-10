@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/13 13:17:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/10 06:32:04 kili Exp $
 COMMENT=	japanese handwriting input widget
 
 DISTNAME=	libtomoe-gtk-0.1.0
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 
 HOMEPAGE= 	http://tomoe.sourceforge.jp/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=tomoe/17171/}
@@ -29,7 +29,8 @@ WANTLIB=	ICE SM Xrender Xext X11 m z png freetype fontconfig \
 		Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama \
 		Xrandr expat pcre gio-2.0 \
 		gmodule-2.0 glib-2.0 pangocairo-1.0 pango-1.0 \
-		pangoft2-1.0 cairo glitz atk-1.0 gobject-2.0 pixman-1
+		pangoft2-1.0 cairo glitz atk-1.0 gobject-2.0 pixman-1 \
+		pthread-stubs xcb
 
 USE_X11=	Yes
 

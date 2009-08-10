@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/07/19 11:29:12 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:09 kili Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -7,7 +7,7 @@ COMMENT =		emulates game consoles and old home computers
 
 V =			0.132
 DISTNAME =		sdlmess${V:S/.//}
-PKGNAME =		sdlmess-${V}
+PKGNAME =		sdlmess-${V}p0
 
 CATEGORIES =		emulators games
 
@@ -25,7 +25,7 @@ WANTLIB +=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB +=	Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB +=	expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB +=	gobject-2.0 gthread-2.0 iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB +=	pangoft2-1.0 pixman-1 png pthread z
+WANTLIB +=	pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb z
 
 MASTER_SITES =		http://rbelmont.mameworld.info/
 EXTRACT_SUFX =		.zip

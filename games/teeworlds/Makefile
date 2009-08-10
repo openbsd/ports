@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/04/05 16:59:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/10 06:31:42 kili Exp $
 
 COMMENT =	platform game featuring buggers equipped with weapons
 
 V =		0.5.1
 DISTNAME =	teeworlds-${V}-src
-PKGNAME =	teeworlds-${V}
+PKGNAME =	teeworlds-${V}p0
 CATEGORIES =	games
 
 MAINTAINER =	Jonathan Armani <dbd@asystant.net>
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	GL GLU X11 c m pthread stdc++ z
+WANTLIB =	GL GLU X11 c m pthread pthread-stubs stdc++ xcb z
 LIB_DEPENDS =	SDL::devel/sdl
 
 MODULES =	lang/python

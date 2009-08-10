@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2009/04/22 12:23:00 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/10 06:34:08 kili Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		vector font editor/converter
 
 DISTNAME=		fontforge_full-20090408
-PKGNAME=		${DISTNAME:S,_full,,}
+PKGNAME=		${DISTNAME:S,_full,,}p0
 EXTRACT_SUFX=		.tar.bz2
 SHARED_LIBS=		fontforge	2.0 \
 			gdraw		4.0 \
@@ -30,7 +30,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xft Xi Xrender c \
                         expat fontconfig freetype glib-2.0 glitz \
                         gmodule-2.0 gobject-2.0 m pcre pixman-1 \
-                        pthread util xkbfile xkbui z
+                        pthread pthread-stubs util xcb xkbfile xkbui z
  
 MODULES=		devel/gettext lang/python
 MODPY_VERSION=		2.5

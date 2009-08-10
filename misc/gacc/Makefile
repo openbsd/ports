@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2008/11/23 00:28:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/10 06:33:02 kili Exp $
 
 COMMENT=	personal accounts manager
 
 VERSION=	0.7.5
 DISTNAME=	gacc_${VERSION}.orig
-PKGNAME=	gacc-${VERSION}p2
+PKGNAME=	gacc-${VERSION}p3
 CATEGORIES=	misc productivity
 
 HOMEPAGE=	http://tnemeth.free.fr/projets/gAcc-en.html
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext Xi c glib gmodule iconv intl m
+WANTLIB=	X11 Xau Xdmcp Xext Xi c glib gmodule iconv intl m \
+		pthread-stubs xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gacc/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/17 01:20:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=	event viewer for qt4
 CATEGORIES=	devel x11
@@ -16,7 +16,7 @@ MAKE_FLAGS+=LIB$l_VERSION=$v
 DIST_SUBDIR=	qt4-eventsview-$V
 V=		0.1
 DISTNAME=	57337-eventsview
-PKGNAME=	qt4-eventsview-$Vp0
+PKGNAME=	qt4-eventsview-$Vp1
 MASTER_SITES=	http://qt-apps.org/CONTENT/content-files/
 
 WRKDIST=	${WRKDIR}/eventsview
@@ -40,7 +40,7 @@ LIB_DEPENDS=	glib-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 		lib/qt4/QtGui::x11/qt4
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
-WANTLIB += freetype iconv intl m png pthread stdc++ z
+WANTLIB += freetype iconv intl m png pthread pthread-stubs stdc++ xcb z
 
 SUBST_VARS=	SAMPLE
 

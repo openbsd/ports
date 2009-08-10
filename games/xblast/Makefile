@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2007/12/20 22:03:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=	graphical multi-player real-time strategy game for X11
 
 DISTNAME=	xblast-2.10.4
+PKGNAME=	${DISTNAME}p0
 DIST_SUBDIR=	xblast
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		images-2005-01-06${EXTRACT_SUFX} \
@@ -20,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c ICE m ossaudio X11
+WANTLIB=	ICE X11 c m ossaudio pthread-stubs xcb
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xblast/}
 

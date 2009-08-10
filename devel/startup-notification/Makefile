@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=		library for tracking application startup
 
 DISTNAME=		startup-notification-0.9
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel x11 x11/gnome
 
 SHARED_LIBS +=  startup-notification-1 1.0      # .0.0
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xau Xdmcp
+WANTLIB=		ICE SM X11 Xau Xdmcp pthread-stubs xcb
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/startup-notification/0.9/}
 EXTRACT_SUFX=		.tar.bz2

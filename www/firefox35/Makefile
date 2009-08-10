@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/03 22:15:51 martynas Exp $
+# $OpenBSD: Makefile,v 1.26 2009/08/10 06:34:56 kili Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.5.2
 DISTNAME=	mozilla-1.9.1
-PKGNAME=	firefox35-${VER}p0
+PKGNAME=	firefox35-${VER}p1
 SO_VERSION=	21.2
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -52,7 +52,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread stdc++ z sndio
+		pixman-1 png pthread pthread-stubs sndio stdc++ xcb z
 
 VMEM_WARNING=	Yes
 

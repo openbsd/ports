@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2009/03/11 16:58:37 jakob Exp $
+# $OpenBSD: Makefile,v 1.39 2009/08/10 06:33:43 kili Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool
 
 DISTNAME=	mtr-0.75
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -35,7 +35,7 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += iconv intl pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png z
+WANTLIB += png pthread-stubs xcb z
 .endif
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2009/03/06 20:44:24 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.31 2009/08/10 06:29:52 kili Exp $
 
 COMMENT=	GTK+2 program to synchronize an Apple iPod
 DISTNAME=	gtkpod-0.99.14
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=	id3tag.>=2::audio/libid3tag \
 
 WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
 		Xcomposite Xdamage c cairo expat fontconfig freetype m \
-		pthread z \
+		pthread pthread-stubs xcb z \
 		xml2 glitz png glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 atk-1.0 \
 		pixman-1 dbus-1 gio-2.0

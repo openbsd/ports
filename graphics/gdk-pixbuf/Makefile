@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2009/01/09 17:43:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2009/08/10 06:31:44 kili Exp $
 
 COMMENT=	GdkPixbuf graphics library
 
 DISTNAME=	gdk-pixbuf-0.22.0
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 SHARED_LIBS=	gdk_pixbuf		2.0	\
 		gdk_pixbuf_xlib		2.0
 CATEGORIES=	graphics
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gdk-pixbuf/0.22/}
 
-WANTLIB=	X11 Xau Xdmcp Xext Xi glib gmodule iconv intl m z
+WANTLIB=	X11 Xau Xdmcp Xext Xi glib gmodule iconv intl m pthread-stubs \
+		xcb z
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=2::graphics/png \
 		tiff.>=35.::graphics/tiff \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2009/06/11 18:27:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2009/08/10 06:33:44 kili Exp $
 
 COMMENT=	GTK+2 IRC client
 
 MAJOR=		2.8
 VERSION=	${MAJOR}.6
 DISTNAME=	xchat-${VERSION}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 
 CATEGORIES=	net x11
 
@@ -23,8 +23,8 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto dbus-1
 WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre perl pixman-1 png pthread ssl util
-WANTLIB += xml2 z
+WANTLIB += pangoft2-1.0 pcre perl pixman-1 png pthread pthread-stubs
+WANTLIB += ssl util xcb xml2 z
 
 MASTER_SITES=	${HOMEPAGE}files/source/${MAJOR}/ \
 		${MASTER_SITE_SOURCEFORGE:=xchat/}

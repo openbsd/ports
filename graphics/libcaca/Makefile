@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2008/09/04 20:33:24 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/10 06:31:45 kili Exp $
 
 COMMENT=		color ascii art library
 DISTNAME=		libcaca-0.9
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		graphics
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -26,7 +26,7 @@ CONFIGURE_ARGS+=	--disable-x11 \
 .else
 LIB_DEPENDS=    	Imlib2.>=1::graphics/imlib2
 USE_X11=		Yes
-WANTLIB+=		X11 Xext freetype
+WANTLIB+=		X11 Xext freetype pthread-stubs xcb
 .endif
 
 CONFIGURE_STYLE= 	gnu

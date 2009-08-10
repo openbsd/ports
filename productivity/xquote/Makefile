@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/02 09:35:42 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 06:34:09 kili Exp $
 
 COMMENT= 		WWW quote retrieval tool
 
 DISTNAME=		xquote-2.6.10
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		productivity x11
 
 HOMEPAGE= 		http://xinvest.dotsrc.org/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xpm Xt c m Xmu
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m pthread-stubs xcb
 
 MASTER_SITES=	${HOMEPAGE}
 

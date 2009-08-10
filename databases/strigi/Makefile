@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/28 17:11:43 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:07 kili Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	document indexer
@@ -6,6 +6,7 @@ CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	http://strigi.sourceforge.net
 DISTNAME =	strigi-0.5.10
+PKGNAME =	${DISTNAME}p0
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=strigi/}
 
@@ -28,7 +29,7 @@ LIB_DEPENDS =		clucene::textproc/clucene \
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrandr Xrender
 WANTLIB += c dbus-1 fontconfig freetype glib-2.0 gthread-2.0 iconv
-WANTLIB += m png pthread stdc++ z
+WANTLIB += m png pthread pthread-stubs stdc++ xcb z
 
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake

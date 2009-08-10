@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/06/22 17:00:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2009/08/10 06:31:45 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Ruby binding to Gdk-pixbuf
 
 VERSION=	0.34
 DISTNAME=	ruby-gnome-all-${VERSION}
-PKGNAME=	ruby-gdk-pixbuf-${VERSION}p11
+PKGNAME=	ruby-gdk-pixbuf-${VERSION}p12
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://ruby-gnome.sourceforge.net/
@@ -24,7 +24,7 @@ LIB_DEPENDS=	gdk_pixbuf.>=2::graphics/gdk-pixbuf \
 		ruby.>=1.84::lang/ruby
 RUN_DEPENDS=	:ruby-gtk->=0.34:x11/ruby-gtk
 WANTLIB=	c gmodule iconv intl gtk Xmu jpeg Xext Xi m X11 \
-		glib gdk z tiff png
+		glib gdk z tiff png pthread-stubs xcb
 
 CONFIGURE_STYLE= ruby extconf
 INSTALL_TARGET=	site-install

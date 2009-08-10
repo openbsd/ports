@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/07/18 15:50:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:08 kili Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
 
 VERSION=		22.3
 DISTNAME=		emacs-${VERSION}
-PKGNAME-main=		emacs-${VERSION}p0
+PKGNAME-main=		emacs-${VERSION}p1
 FULLPKGNAME-el=		emacs-el-${VERSION}p0
 FULLPKGPATH-el=		editors/emacs22,-el
 
@@ -70,7 +70,8 @@ WANTLIB-main+=		ICE SM X11 Xdmcp Xext Xft Xpm Xrender Xau Xcomposite \
 			Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
 			atk-1.0 cairo expat fontconfig freetype gio-2.0 \
 			glib-2.0 glitz gmodule-2.0 gobject-2.0 iconv intl \
-			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread z
+			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread \
+			pthread-stubs xcb z
 .else
 CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-toolkit-scroll-bars
 USE_X11=		Yes
@@ -78,7 +79,7 @@ LIB_DEPENDS-main=	jpeg::graphics/jpeg \
 			png::graphics/png \
 			tiff::graphics/tiff \
 			ungif::graphics/libungif 
-WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
+WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb z
 .endif
 
 RUN_DEPENDS-el=		:emacs-${VERSION}:${PKGPATH}

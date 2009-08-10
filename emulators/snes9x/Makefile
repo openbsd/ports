@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/09 15:17:06 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/10 06:31:09 kili Exp $
 
 COMMENT=	emulates the Super Nintendo Entertainment System
 
 DISTNAME=	snes9x-1.51-src
-PKGNAME=	${DISTNAME:S/-src//}
+PKGNAME=	${DISTNAME:S/-src//}p0
 CATEGORIES=	emulators games
 
 HOMEPAGE=	http://www.snes9x.com/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB+=	X11 Xext Xxf86dga Xxf86vm c m pthread stdc++ z
+WANTLIB+=	X11 Xext Xxf86dga Xxf86vm c m pthread pthread-stubs stdc++ xcb z
 
 MASTER_SITES=	http://vincent.grigorieff.free.fr/snes9x/ \
 		http://files.ipherswipsite.com/snes9x/

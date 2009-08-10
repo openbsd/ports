@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/07/18 11:29:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 06:31:44 kili Exp $
 
 COMMENT =		panorama image stitcher
 
 DISTNAME =		hugin-0.8.0
+PKGNAME=		${DISTNAME}p0
 #PKGNAME =		${DISTNAME:S/_//}
 #WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
@@ -26,7 +27,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =patents
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xext c m pthread stdc++ z
+WANTLIB =		GL GLU ICE SM X11 Xext c m pthread pthread-stubs xcb \
+			stdc++ z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2009/07/27 21:44:14 martynas Exp $
+# $OpenBSD: Makefile,v 1.51 2009/08/10 06:31:07 kili Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -11,7 +11,7 @@ COMMENT-browser=	HTML Browser Widget library for swt/eclipse
 ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
-PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p10
+PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p11
 PKGNAME-swt=		swt-${ECLIPSE_VER}p1
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}p2
 PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p2
@@ -78,7 +78,7 @@ WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			freetype atk-1.0 glib-2.0 gmodule-2.0 \
 			gobject-2.0 glitz png iconv intl \
 			pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo \
-			pixman-1 gio-2.0
+			pixman-1 gio-2.0 pthread-stubs xcb
 
 LIB_DEPENDS-swt=	gtk-x11-2.0::x11/gtk+2
 WANTLIB-swt=		GL GLU Xtst m atk-1.0 cairo gthread-2.0

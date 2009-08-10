@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/25 19:13:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/10 06:29:52 kili Exp $
 
 COMMENT =	graphical mp3/ogg file splitter
 
 DISTNAME =	mp3splt-gtk-0.5.4
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 CATEGORIES =	audio
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender c expat fontconfig freetype
-WANTLIB += glitz m pixman-1 pthread z
+WANTLIB += glitz m pixman-1 pthread pthread-stubs xcb z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mp3splt/}
 

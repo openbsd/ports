@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/07/19 22:49:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/10 06:31:44 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,8 @@ V=		0.0.22
 DISTNAME=	gegl-${V}
 CATEGORIES=	graphics devel
 
-PKGNAME-main=	gegl-${V}
-PKGNAME-plugins=gegl-plugins-${V}p1
+PKGNAME-main=	gegl-${V}p0
+PKGNAME-plugins=gegl-plugins-${V}p2
 
 SHARED_LIBS=	gegl-0.0	2.0 # .22.0
 
@@ -29,7 +29,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/${V:R}/
 MULTI_PACKAGES=	-main -plugins
 
 WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender glib-2.0 gmodule-2.0 \
-		gio-2.0 gobject-2.0 gthread-2.0 m pcre z
+		gio-2.0 gobject-2.0 gthread-2.0 m pcre pthread-stubs xcb z
 
 MODULES=	devel/gettext
 

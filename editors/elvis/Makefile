@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/12/11 13:58:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=	clone of the ex/vi text editor
 
 DISTNAME=	elvis-2.2_0
-PKGNAME=	${DISTNAME:S/_/./}
+PKGNAME=	${DISTNAME:S/_/./}p0
 CATEGORIES=	editors
 HOMEPAGE=	http://elvis.the-little-red-haired-girl.org/
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+= --with-x \
 		--x-libraries=${X11BASE}/lib
 CFLAGS+=	-I${X11BASE}/include/freetype2
 USE_X11=	Yes
-WANTLIB+=	X11 Xft Xpm
+WANTLIB+=	X11 Xft Xpm pthread-stubs xcb
 .endif
 
 NO_REGRESS=	Yes

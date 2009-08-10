@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2007/11/13 17:10:26 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2009/08/10 06:31:45 kili Exp $
 
 COMMENT=	two-dimensional drawing tool and hyper-object browser
 
 VERSION=	4.1.45
 DISTNAME=       tgif-QPL-${VERSION}
-PKGNAME=        tgif-${VERSION}p1
+PKGNAME=        tgif-${VERSION}p2
 CATEGORIES=	graphics
 
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-WANTLIB=	X11 Xau Xdmcp Xext c m
+WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 
 RUN_DEPENDS=	::graphics/netpbm
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/06/19 09:24:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/10 06:32:05 kili Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -13,11 +13,11 @@ V=		1.5.3
 DISTNAME=	uim-$V
 MASTER_SITES=	http://uim.googlecode.com/files/
 HOMEPAGE=	http://code.google.com/p/uim/
-PKGNAME-main=	uim-$Vp0
-PKGNAME-gtk=	uim-gtk-$Vp1
-PKGNAME-qt=	uim-qt-$Vp0
-PKGNAME-kde=	uim-kde-$Vp0
-PKGNAME-gnome=	uim-gnome-$Vp3
+PKGNAME-main=	uim-$Vp1
+PKGNAME-gtk=	uim-gtk-$Vp2
+PKGNAME-qt=	uim-qt-$Vp1
+PKGNAME-kde=	uim-kde-$Vp1
+PKGNAME-gnome=	uim-gnome-$Vp4
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -45,7 +45,7 @@ USE_X11=	Yes
 AUTOCONF_VERSION=	2.62
 SUBST_VARS=	MODQT_PLUGINS
 
-WANTLIB=	X11 Xau Xdmcp Xext c m
+WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 
 RUN_DEPENDS-main=${RUN_DEPENDS} \
 		:desktop-file-utils-*:devel/desktop-file-utils

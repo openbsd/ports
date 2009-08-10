@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2009/02/14 10:39:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2009/08/10 06:31:42 kili Exp $
 
 COMMENT-main=		Quake/Quake-world client
 COMMENT-server=		Quake world server
 CATEGORIES=		games
 
 FULLPKGNAME-server=	quakeworld-server-20000101p3
-PKGNAME-main=		quake-20000101p5
+PKGNAME-main=		quake-20000101p6
 DISTNAME=		quake-v6-bsd-kame
 PATCHFILES=		quake6-00-v6-20000202b.diff.gz:0
 PATCH_DIST_STRIP=	-p1
@@ -51,7 +51,7 @@ CFLAGS+=		-pthread
 .elif ${FLAVOR:L} == x11
 CONFIGURE_ARGS+=	--without-sdl --without-ggi
 MAKE_FLAGS=	
-WANTLIB-main=		c m X11 Xext
+WANTLIB-main=		X11 Xext c m pthread-stubs xcb
 .else
 BROKEN=			choose either sdl, ggi or x11
 .endif

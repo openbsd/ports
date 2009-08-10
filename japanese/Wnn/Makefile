@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.55 2008/08/30 11:16:59 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2009/08/10 06:32:05 kili Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -27,7 +27,7 @@ PKGNAME-zh =		zh-Wnn-4.2p0
 PKGNAME-zhdict =	zh-Wnndict-4.2p0
 PKGNAME-ko =		ko-Wnn-4.2p0
 PKGNAME-kodict =	ko-Wnndict-4.2p0
-PKGNAME-xwnmo =		Wnn-xwnmo-4.2
+PKGNAME-xwnmo =		Wnn-xwnmo-4.2p0
 PKGNAME-data =		Wnn-data-4.2
 
 WNNDICBASE =	/var
@@ -49,7 +49,7 @@ PREFIX-kodict =		${WNNDICBASE}
 WANTLIB-main =		c curses
 WANTLIB-zh =		c curses
 WANTLIB-ko =		c curses
-WANTLIB-xwnmo =		c Xt SM Xmu X11 Xext ICE
+WANTLIB-xwnmo =		ICE SM X11 Xext Xmu Xt c pthread-stubs xcb
 
 RUN_DEPENDS =		::japanese/Wnn,-data
 RUN_DEPENDS-data =	

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2008/03/29 16:35:13 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=	integrated LaTeX environment for KDE
 DISTNAME=	kile-2.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	editors x11/kde
 
 HOMEPAGE=	http://kile.sourceforge.net/
@@ -18,7 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext Xrender ICE SM c m pthread stdc++ util z \
-		fam rpcsvc art_lgpl_2 jpeg pcre pcreposix png idn
+		fam rpcsvc art_lgpl_2 jpeg pcre pcreposix png idn \
+		pthread-stubs xcb
 
 LIB_DEPENDS=	DCOP,kabc,katepartinterfaces.>=1,kdecore.>=4,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell.>=7,ktexteditor.>=1,kutils,kwalletclient,vcard::x11/kde/libs3
 	

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/01/25 02:07:06 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/10 06:29:52 kili Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,8 +7,8 @@ COMMENT-jack =	jack plugin for audacious
 
 V =		1.5.1
 DISTNAME =	audacious-plugins-$V
-PKGNAME-main =	${DISTNAME}
-PKGNAME-jack =	audacious-jack-$V
+PKGNAME-main =	${DISTNAME}p0
+PKGNAME-jack =	audacious-jack-$Vp0
 
 CATEGORIES =	audio multimedia
 
@@ -25,7 +25,7 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv \
 		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		png z
+		png pthread-stubs xcb z
 WANTLIB-main =	${WANTLIB} dbus-1 dbus-glib-1 mowgli ogg sndio stdc++
 WANTLIB-jack =	${WANTLIB} jack samplerate
 

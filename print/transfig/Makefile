@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2009/06/09 11:57:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2009/08/10 06:34:09 kili Exp $
 
 COMMENT=	tools to convert Xfig's .fig files
 
 VERSION=	3.2.5
 DISTNAME=	transfig.${VERSION}
-PKGNAME=	transfig-${VERSION}p0
+PKGNAME=	transfig-${VERSION}p1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mcj/}
 HOMEPAGE=	http://xfig.org/
@@ -26,7 +26,7 @@ USE_X11=	Yes
 
 FLAVORS=	a4
 FLAVOR?=
-WANTLIB=	m X11 c z Xpm
+WANTLIB=	X11 Xpm c m pthread-stubs xcb z
 
 .if ${FLAVOR:L:Ma4}
 PATCH_LIST=	patch-* a4-*

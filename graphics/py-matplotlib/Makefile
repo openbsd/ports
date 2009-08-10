@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2009/04/11 08:16:58 eric Exp $
+# $OpenBSD: Makefile,v 1.30 2009/08/10 06:31:45 kili Exp $
 
 VMEM_WARNING=	Yes
 
 COMMENT=	Python charting and plotting API
 
 DISTNAME=	matplotlib-0.98.5.2
-PKGNAME=	py-${DISTNAME}p1
+PKGNAME=	py-${DISTNAME}p2
 CATEGORIES=	graphics devel math
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/
@@ -22,7 +22,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gtk-x11-2.0 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		tcl84 tk84
+		pthread-stubs tcl84 tk84 xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=matplotlib/}
 

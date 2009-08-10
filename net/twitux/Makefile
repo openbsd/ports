@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/07/21 07:35:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/10 06:33:43 kili Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
 GNOME_PROJECT=		twitux
 GNOME_VERSION=		0.69
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=     	net
 
@@ -25,7 +25,7 @@ WANTLIB += dbus-glib-1 expat fontconfig freetype gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
 WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0 ltdl
 WANTLIB += m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread stdc++ tasn1 vorbis vorbisfile xml2 z
+WANTLIB += png pthread pthread-stubs stdc++ tasn1 vorbis vorbisfile xcb xml2 z
 
 BUILD_DEPENDS=	iso-codes-*:devel/iso-codes
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2008/10/28 12:09:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2009/08/10 06:29:52 kili Exp $
 
 COMMENT=	Motif CD player
 
 DISTNAME=	xmcd-2.6
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=	audio
 HOMEPAGE=	http://www.amb.org/xmcd/
 
@@ -12,7 +12,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xp Xpm Xt c curses termlib
+WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xp Xpm Xt c curses \
+		pthread-stubs termlib xcb
 
 MASTER_SITES=	http://humppa.nl/distfiles/
 

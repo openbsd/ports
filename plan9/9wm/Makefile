@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2008/05/30 09:41:21 fgsch Exp $
+# $OpenBSD: Makefile,v 1.25 2009/08/10 06:33:44 kili Exp $
 
 COMMENT=	8 1/2-like Window Manager for X11
 
 DISTNAME=	pre-9wm-1.2
-PKGNAME=	9wm-1.2prep0
+PKGNAME=	9wm-1.2prep1
 CATEGORIES=	plan9
 
 MASTER_SITES=	http://www.plig.org/xwinman/archive/9wm/
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB =	X11 Xau Xdmcp Xext c
+WANTLIB =	X11 Xau Xdmcp Xext c pthread-stubs xcb
 
 USE_X11=	Yes
 CONFIGURE_STYLE=imake

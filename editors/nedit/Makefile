@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2008/01/02 17:39:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2009/08/10 06:31:08 kili Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
 DISTNAME=		nedit-5.5
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX}
 PATCHFILES=		wrapmark.diff:0
 CATEGORIES=		editors x11
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	Xau Xdmcp Xft Xmu Xrender expat fontconfig freetype \
-		ICE SM X11 Xext Xp Xpm Xt c m iconv z
+		ICE SM X11 Xext Xp Xpm Xt c m iconv pthread-stubs xcb z
 
 USE_X11=		Yes
 USE_MOTIF=		Any

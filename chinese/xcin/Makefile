@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2008/01/30 14:04:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2009/08/10 06:30:30 kili Exp $
 
 COMMENT=	chinese input utility for X
 
 DISTNAME=	xcin-2.3.04-3
-PKGNAME=	zh-xcin-2.3.04p0
+PKGNAME=	zh-xcin-2.3.04p1
 CATEGORIES=	chinese
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 c
+WANTLIB=		X11 c pthread-stubs xcb
 
 RUN_DEPENDS=	::chinese/taipeifonts
 

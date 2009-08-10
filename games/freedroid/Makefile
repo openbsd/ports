@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/07/06 18:48:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	clone of the commodore 64 game paradroids
 DISTNAME=	freedroid-1.0.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freedroid/}
 
@@ -13,7 +14,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	SDL X11 Xext c jpeg m png pthread usbhid z vorbis
+WANTLIB=	SDL X11 Xext c jpeg m png pthread pthread-stubs usbhid vorbis \
+		xcb z
 
 USE_X11=	Yes
 

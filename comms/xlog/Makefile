@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/06 22:29:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/10 06:30:31 kili Exp $
 
 COMMENT=	X radio logging program
 
 DISTNAME=	xlog-1.5
-PKGNAME=	$(DISTNAME)p5
+PKGNAME=	$(DISTNAME)p6
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/xlog.html
@@ -19,7 +19,7 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 c cairo
 WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png xml2 z
+WANTLIB += pixman-1 png pthread-stubs xcb xml2 z
 
 RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
 			:shared-mime-info-*:misc/shared-mime-info

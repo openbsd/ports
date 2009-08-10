@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/10 06:31:09 kili Exp $
 
 
 COMMENT=	X11 based RTF editor
 V=		2.17
 DISTNAME=	ted-$V
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	editors textproc print
 HOMEPAGE=	http://www.nllgg.nl/Ted/
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		ICE SM X11 Xext Xmu Xpm Xp Xt c m z
+WANTLIB=		ICE SM X11 Xext Xmu Xpm Xp Xt c m pthread-stubs xcb z
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

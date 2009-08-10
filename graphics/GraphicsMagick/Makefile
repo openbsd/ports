@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/04/22 13:19:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 06:31:44 kili Exp $
 
 COMMENT=	image processing tools with stable ABI
 
 DISTNAME=	GraphicsMagick-1.3.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics devel
 
 SHARED_LIBS +=	GraphicsMagick       1.0      # .3.3
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--without-x \
 			--without-ttf \
 			--without-wmf
 .else
-WANTLIB+=		ICE SM X11 Xau Xdmcp Xext freetype
+WANTLIB+=		ICE SM X11 Xau Xdmcp Xext freetype pthread-stubs xcb
 USE_X11=		Yes
 LIB_DEPENDS+=		wmflite.>=7::graphics/libwmf
 BUILD_DEPENDS+=		:ghostscript-*:print/ghostscript/gnu

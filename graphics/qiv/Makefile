@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 20:09:43 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/10 06:31:45 kili Exp $
 
 COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
 DISTNAME=		qiv-2.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		graphics
 
 EXTRACT_SUFX=		-src.tgz
@@ -19,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xi c gdk glib gmodule gtk iconv intl \
-			jpeg m png tiff ungif z
+			jpeg m png pthread-stubs tiff ungif xcb z
 
 USE_GMAKE=		Yes
 USE_X11=		Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/11/13 17:10:25 steven Exp $
+# $OpenBSD: Makefile,v 1.20 2009/08/10 06:31:45 kili Exp $
 
 COMMENT=	play mpeg movies on X11
 
 DISTNAME=	mpeg_play-2.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	graphics
 
 MASTER_SITES=	http://bmrc.berkeley.edu/ftp/pub/multimedia/mpeg/play/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext c m
+WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 
 WRKDIST=	${WRKDIR}/mpeg_play
 CONFIGURE_STYLE=	imake

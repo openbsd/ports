@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.66 2009/07/22 10:48:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2009/08/10 06:32:42 kili Exp $
 
 COMMENT=	Flexible mail transfer agent
 DISTNAME=	exim-4.69
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.exim.org/pub/exim/exim4/ \
 		http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/ \
@@ -32,7 +32,7 @@ EXIM_MAKECAT+=		"WITH_OLD_DEMIME=yes\n"
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		Yes
 EXIM_MAKECAT+=		"EXIM_MONITOR=eximon.bin\n"
-WANTLIB+=		X11 Xaw Xext Xmu Xt
+WANTLIB+=		X11 Xaw Xext Xmu Xt pthread-stubs xcb
 .endif
 
 .if ${FLAVOR:L:Mmysql}

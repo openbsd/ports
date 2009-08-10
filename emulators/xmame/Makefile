@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/03/18 20:23:11 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2009/08/10 06:31:09 kili Exp $
 
 COMMENT-main=	emulates arcade machines and old home computers
 COMMENT-mame=	emulates a massive variety of arcade machines
@@ -7,9 +7,9 @@ COMMENT-mess=	emulates game consoles and old home computers
 VERSION=	0.104
 DISTNAME=	xmame-${VERSION}
 
-PKGNAME-main=	xmame+xmess-${VERSION}p3
-PKGNAME-mame=	xmame-${VERSION}p2
-PKGNAME-mess=	xmess-${VERSION}p2
+PKGNAME-main=	xmame+xmess-${VERSION}p4
+PKGNAME-mame=	xmame-${VERSION}p3
+PKGNAME-mess=	xmess-${VERSION}p3
 
 CATEGORIES=	emulators games
 MASTER_SITES=	ftp://xmame.kaupp.us/pub/xmame/ \
@@ -26,7 +26,8 @@ PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	may not sell
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xv Xxf86dga Xxf86vm expat c m usbhid z
+WANTLIB=		X11 Xext Xv Xxf86dga Xxf86vm expat c m pthread-stubs \
+			usbhid xcb z
 
 EXTRACT_SUFX=	.tar.bz2
 

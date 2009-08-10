@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2009/05/15 17:47:29 kurt Exp $
+# $OpenBSD: Makefile,v 1.59 2009/08/10 06:31:07 kili Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -7,8 +7,8 @@ COMMENT-main=		Java2(TM) Standard Edition Dev Kit v${V}
 COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.5.0.16
 PKGNAME=		jdk-${V}
-PKGNAME-main=		jdk-${V}p0
-PKGNAME-jre=		jre-${V}p0
+PKGNAME-main=		jdk-${V}p1
+PKGNAME-jre=		jre-${V}p1
 
 CATEGORIES=		devel devel/jdk java
 
@@ -44,7 +44,8 @@ BUILD_DEPENDS=		::archivers/gtar \
 			::archivers/bzip2
 USE_MOTIF=		openmotif
 MODULES=		converters/libiconv
-WANTLIB=		X11 Xext Xi Xp Xt Xtst c m ossaudio pthread stdc++ z
+WANTLIB=		X11 Xext Xi Xp Xt Xtst c m ossaudio pthread \
+			pthread-stubs xcb stdc++ z
 
 WANTLIB-main=		${WANTLIB} Xmu
 

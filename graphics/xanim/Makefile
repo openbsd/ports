@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2007/11/13 17:10:26 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2009/08/10 06:31:45 kili Exp $
 
 COMMENT=	X11 animation player with support for lots of formats
 
 DISTNAME=xanim-2.80.1
-PKGNAME=${DISTNAME}p1
+PKGNAME=${DISTNAME}p2
 WRKDIST=${WRKDIR}/xanim2801
 CATEGORIES= graphics x11
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No Fee
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m z
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m pthread-stubs xcb z
 
 USE_X11=	Yes
 

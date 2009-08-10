@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2009/08/06 23:44:07 martynas Exp $
+# $OpenBSD: Makefile,v 1.43 2009/08/10 06:33:43 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	multi-purpose sniffer/interceptor/logger
 
 VER=		0.7.3
 DISTNAME=	ettercap-NG-${VER}
-PKGNAME=	ettercap-${VER}p3
+PKGNAME=	ettercap-${VER}p4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
@@ -46,7 +46,7 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png
+WANTLIB += pixman-1 png pthread-stubs xcb
 .endif
 
 NO_REGRESS=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2009/04/13 23:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:41 kili Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 
 DISTNAME=	bzflag-2.0.8
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 
@@ -26,8 +26,8 @@ LIB_DEPENDS=	SDL.>=4::devel/sdl \
 		GLEW::graphics/glew
 
 WANTLIB=	GL GLU ICE SM X11 Xau Xdmcp Xext Xrandr Xrender \
-		c crypto idn m ncurses pthread sndio ssl stdc++ \
-		usbhid z
+		c crypto idn m ncurses pthread sndio ssl pthread-stubs \
+		stdc++ xcb usbhid z
 
 AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE= autoconf

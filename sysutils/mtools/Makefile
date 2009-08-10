@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.51 2009/08/10 06:34:30 kili Exp $
 
 COMMENT=	read/write/list/format DOS disks under Unix
 
 DATE=		20050317
 DISTNAME=	mtools-3.9.10
-PKGNAME=	${DISTNAME}.${DATE}p0
+PKGNAME=	${DISTNAME}.${DATE}p1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tux.org/pub/knaff/mtools/ \
 		${HOMEPAGE}
@@ -31,7 +31,7 @@ FLAVOR?=
 CONFIGURE_ARGS=		--with-x=no
 .else
 USE_X11=		Yes
-WANTLIB+=		ICE SM X11 Xau
+WANTLIB+=		ICE SM X11 Xau pthread-stubs xcb
 .endif
 
 pre-patch:

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 18:01:01 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	jezzball-style, penguin puzzle game
 
 DISTNAME=	icebreaker-1.2.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
 EXTRACT_SUFX=	.tgz
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		SDL X11 Xext c m pthread usbhid
+WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb
 
 LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer \
 		smpeg.>=1.3:smpeg-*:devel/smpeg

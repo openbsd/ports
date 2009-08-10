@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/18 01:07:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	Qt4 poker game with online capabilities
 
 V=		0.6.3
 DISTNAME=	PokerTH-${V}-src
-PKGNAME=	pokerth-${V}p0
+PKGNAME=	pokerth-${V}p1
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.pokerth.net/
@@ -24,7 +24,7 @@ EXTRACT_SUFX=	.tar.bz2
 WANTLIB=	ICE SDL SM X11 Xext Xi Xinerama \
 		Xrender c crypto fontconfig freetype glib-2.0 \
 		gthread-2.0 m png pthread stdc++ z QtGui ssl \
-		expat gobject-2.0
+		expat gobject-2.0 pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		x11/qt4

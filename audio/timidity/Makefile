@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2009/07/30 19:35:00 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.34 2009/08/10 06:29:52 kili Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
 V=		2.13.2
 DISTNAME=	TiMidity++-${V}
-PKGNAME=	timidity-${V}p1
+PKGNAME=	timidity-${V}p2
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
@@ -44,13 +44,13 @@ WANTLIB+=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat \
 		fontconfig freetype glib-2.0 glitz gio-2.0 gmodule-2.0 \
 		gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png z
+		pixman-1 png pthread-stubs xcb z
 .endif
 
 .if ${FLAVOR:L:Mxaw}
 CONFIGURE_ARGS+=--enable-xaw
 USE_X11=	Yes
-WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xt
+WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xt pthread-stubs xcb
 .endif
 
 .if ! ${FLAVOR:L:Mgtk2} && ! ${FLAVOR:L:Mxaw}

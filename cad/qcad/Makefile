@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2007/09/15 21:36:57 simon Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/10 06:30:30 kili Exp $
 
 COMMENT=	Qt-based 2D CAD system
 
 V=		2.0.5.0
 DISTNAME=	qcad-${V}-1-community.src
-PKGNAME=	qcad-${V}
+PKGNAME=	qcad-${V}p0
 CATEGORIES=	cad graphics
 
 HOMEPAGE=	http://www.ribbonsoft.com/qcad.html
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext c m pthread stdc++
+WANTLIB=		X11 Xext c m pthread pthread-stubs stdc++ xcb
 
 MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
 

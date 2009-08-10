@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2009/04/05 10:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2009/08/10 06:34:29 kili Exp $
 
 COMMENT=		GNOME panel applet that displays CPU and memory load
 
 DISTNAME=		bubblemon-2.0.12
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils x11/gnome
 
 HOMEPAGE=		http://www.nongnu.org/bubblemon/
@@ -24,7 +25,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
 		gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png popt \
-		pthread xml2 z
+		pthread pthread-stubs xcb xml2 z
 
 MODULES=		devel/gettext \
 			textproc/intltool

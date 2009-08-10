@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2007/12/16 00:04:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/10 06:31:45 kili Exp $
 
 COMMENT=		kde image database
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kphotoalbum-3.0
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://ktown.kde.org/kphotoalbum/
 MASTER_SITES=		${HOMEPAGE}download/
 
-WANTLIB=	ICE Xrender SM Xau Xdmcp Xext pthread stdc++ c X11 util m z \
-		art_lgpl_2 jpeg png idn fam rpcsvc
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg m \
+		png pthread pthread-stubs rpcsvc stdc++ util xcb z
 
 LIB_DEPENDS=	kdecore.>=6,DCOP,kdefx,kdesu,kdeui,kio,kmediaplayer,kparts,kwalletclient::x11/kde/libs3 \
 		kipi::graphics/libkipi \

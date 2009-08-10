@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2009/01/24 10:56:11 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.73 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.13
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p11
+PKGNAME=	${DISTNAME:L}p12
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -77,7 +77,7 @@ CONFIGURE_ARGS+= --without-x \
 		 --disable-video-x11
 .else
 USE_X11=	Yes
-WANTLIB+=	X11.>=10 Xau Xdmcp Xext Xrandr Xrender
+WANTLIB+=	X11.>=10 Xau Xdmcp Xext Xrandr Xrender pthread-stubs xcb
 .endif
 
 .if ${FLAVOR:L:Maltivec}

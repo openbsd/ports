@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/07/27 21:44:14 martynas Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/10 06:34:56 kili Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -10,9 +10,9 @@ SHARED_ONLY=	Yes
 
 VERSION=	0.5.6
 DISTNAME=	kazehakase-${VERSION}
-PKGNAME-main=	kazehakase-common-${VERSION}p0
-PKGNAME-gecko=	${DISTNAME}p2
-PKGNAME-webkit=	kazehakase-webkit-${VERSION}p1
+PKGNAME-main=	kazehakase-common-${VERSION}p1
+PKGNAME-gecko=	${DISTNAME}p3
+PKGNAME-webkit=	kazehakase-webkit-${VERSION}p2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/33533/}
 
 HOMEPAGE=	http://kazehakase.sourceforge.jp/
@@ -71,7 +71,8 @@ WANTLIB =		ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			Xrandr Xrender Xcomposite Xdamage expat fontconfig \
 			freetype m z png cairo iconv intl atk-1.0 gio-2.0 glib-2.0 \
 			gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 \
-			pangocairo-1.0 pangoft2-1.0 glitz pcre pixman-1 tasn1
+			pangocairo-1.0 pangoft2-1.0 glitz pcre pixman-1 tasn1 \
+			pthread-stubs xcb
 
 WANTLIB-main =		${WANTLIB} c gcrypt gpg-error pthread
 WANTLIB-gecko =		${WANTLIB} nspr4 plc4 plds4 gcrypt gpg-error

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/08 16:58:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 06:32:42 kili Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		webcal(endar) handler for GNOME
 
 GNOME_PROJECT=		evolution-webcal
 GNOME_VERSION=		2.24.0
-PKGNAME=		evolution-plugin-webcal-${GNOME_VERSION}p4
+PKGNAME=		evolution-plugin-webcal-${GNOME_VERSION}p5
 
 CATEGORIES=    		mail
 
@@ -28,7 +28,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnomecanvas-2 gnomevfs-2 gnutls gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png popt pthread xml2 z
+		pixman-1 png popt pthread pthread-stubs xcb xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \

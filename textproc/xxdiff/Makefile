@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2008/01/24 11:49:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2009/08/10 06:34:56 kili Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
 DISTNAME=	xxdiff-3.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	textproc x11
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xxdiff/}
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	X11 Xext c m png pthread stdc++
+WANTLIB=	X11 Xext c m png pthread pthread-stubs stdc++ xcb
 
 BUILD_DEPENDS=	:bison-*:devel/bison \
 		:tmake->=1.10:devel/tmake

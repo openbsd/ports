@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/12/06 17:03:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=		Z-code interpreter for X11
 
 DISTNAME=		zoom-1.1.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	games
 
 HOMEPAGE=		http://www.logicalshift.co.uk/unix/zoom/
@@ -14,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xft Xrender c expat \
-			fontconfig freetype m z
+			fontconfig freetype m pthread-stubs xcb z
 
 MASTER_SITES=		${HOMEPAGE}
 

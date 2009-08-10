@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2008/09/24 17:29:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2009/08/10 06:29:52 kili Exp $
 
 COMMENT-main=	lame ain't an MP3 encoder
 COMMENT-mp3x=	gtk frame analyzer
@@ -6,7 +6,7 @@ COMMENT-mp3x=	gtk frame analyzer
 V=		3.98.2
 DISTNAME=	lame-398-2
 PKGNAME-main=	lame-${V}
-PKGNAME-mp3x=	lame-mp3x-${V}
+PKGNAME-mp3x=	lame-mp3x-${V}p0
 
 SHARED_LIBS=	mp3lame	2.0	# .0.1
 
@@ -24,7 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m ncurses
 WANTLIB-main=	${WANTLIB}
-WANTLIB-mp3x=	${WANTLIB} X11 Xau Xdmcp Xext Xi glib gmodule
+WANTLIB-mp3x=	${WANTLIB} X11 Xau Xdmcp Xext Xi glib gmodule pthread-stubs \
+		xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
 

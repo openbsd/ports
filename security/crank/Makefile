@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/09/15 23:29:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/10 06:34:29 kili Exp $
 
 COMMENT=	classical cipher cryptanalysis toolkit
 
 DISTNAME=		crank-0.2.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		security
 
 HOMEPAGE=		http://crank.sourceforge.net/
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c glib gmodule iconv intl m X11 Xau Xdmcp Xext Xi
+WANTLIB=	X11 Xau Xdmcp Xext Xi c glib gmodule iconv intl m \
+		pthread-stubs xcb
 NO_REGRESS=	Yes
 USE_X11=	Yes
 USE_LIBTOOL=	Yes

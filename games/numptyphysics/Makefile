@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/23 00:20:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/10 06:31:42 kili Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
 
 DISTNAME =		numptyphysics-0.3.r20090104
-PKGNAME-main =		${DISTNAME}p2
+PKGNAME-main =		${DISTNAME}p3
 PKGNAME-npcomplete =	npcomplete-0.0.r20090116
 
 MULTI_PACKAGES =	-main -npcomplete
@@ -31,7 +31,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB-main =		X11 c m pthread stdc++ z
+WANTLIB-main =		X11 c m pthread pthread-stubs stdc++ xcb z
 
 RUN_DEPENDS-main =	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS-main =	SDL::devel/sdl \

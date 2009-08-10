@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	drive a toy wood engine
 
 DISTNAME=	Ri-li-2.0.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
 
 HOMEPAGE=	http://ri-li.sourceforge.net
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ri-li/}
 
-WANTLIB=	c m pthread stdc++ usbhid Xext X11
+WANTLIB=	Xext X11 c m pthread pthread-stubs stdc++ usbhid xcb
 
 EXTRACT_SUFX=	.tar.bz2
 

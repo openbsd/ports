@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 23:36:43 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2009/08/10 06:34:56 kili Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -6,14 +6,14 @@ COMMENT=		test-bed browser/authoring tool of the W3C
 
 AMAYA_VERSION=		5.1
 DISTNAME=		amaya-src-${AMAYA_VERSION}
-PKGNAME=		amaya-${AMAYA_VERSION}p3
+PKGNAME=		amaya-${AMAYA_VERSION}p4
 
 HOMEPAGE=		http://www.w3.org/Amaya/
 
 FLAVORS=		motif gtk
 FLAVOR?=		motif
 
-WANTLIB=		ICE SM X11 Xext Xp Xt c expat m z
+WANTLIB=		ICE SM X11 Xext Xp Xt c expat m pthread-stubs xcb z
 
 USE_X11=		Yes
 

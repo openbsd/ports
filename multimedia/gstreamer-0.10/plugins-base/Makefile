@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/06/10 20:27:09 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/10 06:33:02 kili Exp $
 
 COMMENT-main =		multimedia framework - plugins base
 COMMENT-gnome =		multimedia framework - gnome vfs plugin
@@ -10,13 +10,13 @@ COMMENT-pango =		multimedia framework - pango renderer
 
 V =			0.10.19
 DISTNAME =		gst-plugins-base-$V
-PKGNAME-main =		gstreamer-plugins-base-$Vp1
+PKGNAME-main =		gstreamer-plugins-base-$Vp2
 PKGNAME-gnome =		gstreamer-gnome-$Vp4
 PKGNAME-cdda =		gstreamer-cdda-$Vp2
 PKGNAME-ogg =		gstreamer-ogg-$Vp2
 PKGNAME-theora =	gstreamer-theora-$Vp2
 PKGNAME-vorbis =	gstreamer-vorbis-$Vp2
-PKGNAME-pango =		gstreamer-pango-$Vp2
+PKGNAME-pango =		gstreamer-pango-$Vp3
 MULTI_PACKAGES =	-main -gnome -cdda -ogg -theora -vorbis -pango
 
 SHARED_LIBS +=	gstinterfaces-0.10   0.2      # .8.0
@@ -42,7 +42,8 @@ LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:$P/core \
 
 WANTLIB-main =		${WANTLIB} \
 			Xv X11 ICE SM Xext Xau Xdmcp \
-			gstdataprotocol-0.10 gstcontroller-0.10 gstbase-0.10
+			gstdataprotocol-0.10 gstcontroller-0.10 gstbase-0.10 \
+			pthread-stubs xcb
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			oil-0.3::devel/liboil
 RUN_DEPENDS-main =	
@@ -81,7 +82,7 @@ LIB_DEPENDS-vorbis = 	${LIB_DEPENDS} \
 
 WANTLIB-pango =		${WANTLIB} \
 			X11 Xau Xdmcp expat fontconfig freetype \
-			gstbase-0.10
+			gstbase-0.10 pthread-stubs xcb
 LIB_DEPENDS-pango =	${LIB_DEPENDS} \
 			pango-1.0,pangoft2-1.0::devel/pango
 

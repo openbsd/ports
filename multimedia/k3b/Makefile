@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/09 02:13:01 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/10 06:33:02 kili Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-1.0.4
-PKGNAME =		${DISTNAME}p1
+PKGNAME =		${DISTNAME}p2
 
 SHARED_LIBS =		k3b	0.0	# 3.0
 SHARED_LIBS +=		k3bdevice	0.0	# 5.0
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		ICE SM X11 Xau Xdmcp Xext Xrender \
 			art_lgpl_2 c fam idn m ogg png pthread \
-			rpcsvc stdc++ util z
+			pthread-stubs rpcsvc stdc++ util xcb z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=k3b/}
 EXTRACT_SUFX =		.tar.bz2

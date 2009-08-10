@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/03 16:57:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:42 kili Exp $
 
 COMMENT-main=	tilt the floor to roll a ball through an obstacle course
 COMMENT-data=	data for Neverball/Neverputt
@@ -6,7 +6,7 @@ COMMENT-data=	data for Neverball/Neverputt
 V=		20081103
 DISTNAME=	neverball-$V
 PKGNAME=	neverball-$V
-PKGNAME-main=	neverball-$Vp0
+PKGNAME-main=	neverball-$Vp1
 PKGNAME-data=	neverball-data-$Vp0
 EXTRACT_SUFX=	.tar.bz2
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB-main=	GL SDL c m pthread z X11 iconv intl
+WANTLIB-main=	GL SDL X11 c iconv intl m pthread pthread-stubs xcb z
 
 LIB_DEPENDS-main=	ogg::audio/libogg \
 			vorbis,vorbisfile::audio/libvorbis \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2008/11/19 23:37:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/10 06:32:43 kili Exp $
 
 COMMENT=	simple program for plotting 2d mathematical functions
 
 DISTNAME=	geg-1.0.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	math
 
 MASTER_SITES=	http://www.infolaunch.com/~daveb/ \
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi c gdk gmodule m
+WANTLIB=		X11 Xext Xi c gdk gmodule m pthread-stubs xcb
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gtk.>=1.2::x11/gtk+ \

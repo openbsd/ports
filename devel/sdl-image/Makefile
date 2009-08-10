@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2008/11/07 00:36:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=	SDL image library
 DISTNAME=	SDL_image-1.2.4
-PKGNAME=	${DISTNAME:L:S/_/-/}p5
+PKGNAME=	${DISTNAME:L:S/_/-/}p6
 SHARED_LIBS=	SDL_image 2.0
 CATEGORIES=	devel graphics
 MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
@@ -25,7 +25,8 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		tiff.>=35::graphics/tiff \
 		jpeg.>=62.::graphics/jpeg
 
-WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender iconv m sndio usbhid z
+WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender iconv m pthread-stubs sndio \
+		usbhid xcb z
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-tif \

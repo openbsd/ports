@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/07/12 20:00:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 06:29:52 kili Exp $
 
 COMMENT=	implementation of the Freedesktop sound theme spec.
 
 V=		0.14
 DISTNAME=	libcanberra-${V}
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=  canberra             1.0      # .1.4
 SHARED_LIBS +=  canberra-gtk         0.0      # .0.4
@@ -27,6 +28,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread sndio xml2 z
+WANTLIB += pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		devel/gconf2

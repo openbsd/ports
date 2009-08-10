@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2009/07/19 22:27:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2009/08/10 06:31:44 kili Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=			20080620
 DISTNAME=		ffmpeg-svn-${V}
-PKGNAME=		ffmpeg-${V}p10
+PKGNAME=		ffmpeg-${V}p11
 SHARED_LIBS=		avutil		6.0 \
 			avcodec		13.1 \
 			avformat	12.0 \
@@ -38,7 +38,8 @@ LIB_DEPENDS=		SDL.>=4::devel/sdl \
 			Imlib2::graphics/imlib2 \
 			bz2.>=10::archivers/bzip2
 
-WANTLIB=		X11 Xext c freetype m pthread ogg oil-0.3 ossaudio z
+WANTLIB=		X11 Xext c freetype m ogg oil-0.3 ossaudio pthread \
+			pthread-stubs xcb z
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

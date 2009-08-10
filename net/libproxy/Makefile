@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/26 11:01:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 06:33:43 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,8 @@ COMMENT-gnome=	plugin for GNOME
 
 VERSION=	0.2.3
 DISTNAME=	libproxy-${VERSION}
-PKGNAME-main=	libproxy-${VERSION}p0
-PKGNAME-gnome=	libproxy-gnome-${VERSION}
+PKGNAME-main=	libproxy-${VERSION}p1
+PKGNAME-gnome=	libproxy-gnome-${VERSION}p0
 SHARED_LIBS +=  proxy          0.0               # .0.0
 CATEGORIES=	net
 
@@ -33,11 +33,12 @@ MULTI_PACKAGES=		-main -gnome
 LIB_DEPENDS-gnome=	proxy::${BUILD_PKGPATH},-main \
 			gconf-2::devel/gconf2
 
-WANTLIB-main=		ICE SM X11 Xau Xdmcp Xext Xmu Xt c m pthread
+WANTLIB-main=		ICE SM X11 Xau Xdmcp Xext Xmu Xt c m pthread \
+			pthread-stubs xcb
 
 WANTLIB-gnome =		ICE ORBit-2 SM X11 Xau Xdmcp Xext Xmu Xt dbus-1 dbus-glib-1 \
 			glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv \
-			intl m pcre
+			intl m pcre pthread-stubs xcb
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

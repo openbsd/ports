@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/10 06:34:29 kili Exp $
 
 COMMENT=	OTP and S/Key calculator for X
 
 DISTNAME=	otpCalc-0.97
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	security
 
 HOMEPAGE=	http://original.killa.net/infosec/otpCalc/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m X11 Xext Xi glib gmodule
+WANTLIB=		X11 Xext Xi c crypto m glib gmodule pthread-stubs xcb
 
 MASTER_SITES=	${HOMEPAGE}
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/30 18:25:32 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:09 kili Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-0.10.0.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		emulators
 HOMEPAGE=		http://fuse-emulator.sourceforge.net/
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xext Xau Xdmcp audiofile gcrypt gpg-error pcre \
-			bz2 c m z
+			bz2 c m z pthread-stubs xcb
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
 

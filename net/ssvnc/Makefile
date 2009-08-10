@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/06/23 20:57:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/08/10 06:33:43 kili Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -9,7 +9,7 @@ CATEGORIES =		net x11
 
 PKGNAME =		ssvnc-$V
 FULLPKGNAME-gui =	ssvnc-$V
-FULLPKGNAME-main =	ssvnc-viewer-$V
+FULLPKGNAME-main =	ssvnc-viewer-$Vp0
 
 HOMEPAGE =		http://www.karlrunge.com/x11vnc/ssvnc.html
 
@@ -34,7 +34,8 @@ NO_REGRESS =	Yes
 
 MODULES =	x11/tk
 
-WANTLIB-main =		X11 Xext c z ICE SM Xaw Xmu Xp Xpm Xt Xau Xdmcp
+WANTLIB-main =		ICE SM X11 Xau Xaw Xdmcp Xext Xpm Xmu Xp Xt c \
+			pthread-stubs xcb z
 LIB_DEPENDS-main =	jpeg.>=62.::graphics/jpeg
 
 WANTLIB-gui =		c crypto

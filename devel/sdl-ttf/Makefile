@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2009/04/25 13:28:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=	SDL TrueType fonts library
 
 V=		2.0.9
 DISTNAME=	SDL_ttf-${V}
-PKGNAME=	sdl-ttf-${V}
+PKGNAME=	sdl-ttf-${V}p0
 SHARED_LIBS=	SDL_ttf 7.0
 CATEGORIES=	devel graphics
 MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xrandr Xrender freetype iconv \
-			usbhid m z sndio
+			m pthread-stubs sndio usbhid xcb z
 
 LIB_DEPENDS=	SDL::devel/sdl
 

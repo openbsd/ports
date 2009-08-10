@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 19:00:55 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 06:33:44 kili Exp $
 
 COMMENT=	generate resources for PalmOS applications from text descr
 
 DISTNAME=	pilrc-2.8p5
-PKGNAME=	${DISTNAME:S/p5/.5/}
+PKGNAME=	${DISTNAME:S/p5/.5/}p0
 CATEGORIES=	palm devel
 
 HOMEPAGE=	http://www.ardiri.com/index.php?redir=palm\&cat=pilrc
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--disable-pilrcui
 USE_X11=	Yes
 LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2:gtk+-*:x11/gtk+
 CONFIGURE_ARGS= --enable-pilrcui
-WANTLIB+=	X11 Xext Xi glib gmodule iconv intl m
+WANTLIB+=	X11 Xext Xi glib gmodule iconv intl m pthread-stubs xcb
 .endif
 
 DOCDIR=		${PREFIX}/share/doc/pilrc

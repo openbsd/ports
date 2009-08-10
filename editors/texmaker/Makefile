@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/05/11 19:41:20 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:09 kili Exp $
 # $FreeBSD: ports/editors/texmaker/Makefile,v 1.2 2004/01/09 09:16:33 krion Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-1.11	
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		editors	
 
 HOMEPAGE=		http://www.xm1math.net/texmaker/
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes 
-WANTLIB=		X11 Xext c m pthread stdc++
+WANTLIB=		X11 Xext c m pthread pthread-stubs stdc++ xcb
 
 MASTER_SITES=		${HOMEPAGE}			
 EXTRACT_SUFX=		.tar.bz2

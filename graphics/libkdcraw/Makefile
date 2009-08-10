@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2008/07/18 22:03:11 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:45 kili Exp $
 
 COMMENT =	grab raw data from digital cameras
 
 DISTNAME =	libkdcraw-0.1.4
-PKGNAME =	${DISTNAME}
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	graphics devel
 
 HOMEPAGE =	http://www.kipi-plugins.org/drupal/
@@ -31,6 +31,7 @@ LIB_DEPENDS +=		lcms::graphics/lcms \
 RUN_DEPENDS =		::graphics/dcraw
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender c jpeg m png
 WANTLIB += util z art_lgpl_2 iconv intl idn
+WANTLIB += pthread-stubs xcb
 
 
 

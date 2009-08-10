@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2009/04/09 17:43:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.4.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.wesnoth.org/
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 c freetype m pthread stdc++ z
+WANTLIB=	X11 c freetype m pthread pthread-stubs stdc++ xcb z
 
 MODULES=	devel/gettext
 

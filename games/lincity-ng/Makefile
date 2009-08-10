@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/27 19:52:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	city simulation game
 
 DISTNAME=	lincity-ng-2.0
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games x11
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	GL SDL X11 c m pthread stdc++ z
+WANTLIB=	GL SDL X11 c m pthread pthread-stubs stdc++ xcb z
 
 MODULES=	converters/libiconv
 

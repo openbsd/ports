@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2009/06/16 21:03:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2009/08/10 06:34:08 kili Exp $
 
 COMMENT=	GNU PostScript interpreter
 
 VERSION=	8.63
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	11.0
 
@@ -126,7 +126,7 @@ USE_GTK=	No
 
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=	Yes
-WANTLIB+=	X11 Xt Xext
+WANTLIB+=	X11 Xt Xext pthread-stubs xcb
 DEVICES+=	${X11_DEVICES}
 SOC_LIBS+=	-L${X11BASE}/lib -lXt -lXt -lXext
 .endif

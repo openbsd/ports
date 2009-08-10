@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2008/11/19 17:26:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/10 06:30:31 kili Exp $
 
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
 DISTNAME =	wv-1.2.4
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 SHARED_LIBS =	wv-1.2		1.0 \
 		wv		1.0
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	ICE SM X11 Xau Xdmcp bz2 c expat freetype gio-2.0 \
-		gmodule-2.0 iconv intl jpeg m pcre png xml2 z
+		gmodule-2.0 iconv intl jpeg m pcre png pthread-stubs xcb xml2 z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wvware/}
 

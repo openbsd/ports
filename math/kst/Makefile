@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2008/07/28 23:56:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/10 06:32:43 kili Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
 
 DISTNAME=	kst-1.2.1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_ONLY=	Yes
 SHARED_LIBS=	kst		4.0 \
 		kstapp		4.0 \
@@ -43,6 +43,7 @@ LIB_DEPENDS+=	kdecore.>=6,kwalletclient,DCOP,kutils,kparts,kdeui,kdesu,kmdi,kio,
 
 WANTLIB=	c m util stdc++ pthread z X11 ICE Xrender SM Xext \
 		png jpeg art_lgpl_2 idn pcre pcreposix \
-		Xau Xdmcp fam rpcsvc ncurses readline qui
+		Xau Xdmcp fam rpcsvc ncurses readline qui \
+		pthread-stubs xcb
 
 .include <bsd.port.mk>

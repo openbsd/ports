@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/04/17 08:35:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 06:34:30 kili Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful KDE batch file renamer
 
 DISTNAME=	krename-3.0.14
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	sysutils x11 x11/kde
 
 EXTRACT_SUFX=	.tar.bz2
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender c jpeg m png pthread \
-		rpcsvc stdc++ util z
+		pthread-stubs rpcsvc stdc++ util xcb z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krename/}
 

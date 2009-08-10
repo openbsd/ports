@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=	Mr Do video arcade game for X11
 
 DISTNAME=	xmris.4.04
-PKGNAME=	xmris-4.04p0
+PKGNAME=	xmris-4.04p1
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xt c m
+WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xt c m pthread-stubs xcb
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=imake

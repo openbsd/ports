@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 18:01:03 simon Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=		wm-dockapp; chess game
 
 DISTNAME=		miniCHESS-0.8
-PKGNAME=		wm${DISTNAME:L}
+PKGNAME=		wm${DISTNAME:L}p0
 CATEGORIES=		games x11 x11/windowmaker
 
 HOMEPAGE=		http://www.foobargeek.com/miniCHESS/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xpm c
+WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 
 MASTER_SITES=		${HOMEPAGE}
 

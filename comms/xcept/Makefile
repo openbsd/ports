@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.25 2007/09/16 01:37:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.26 2009/08/10 06:30:31 kili Exp $
 
 COMMENT=	decoder for the CEPT (Btx) protocol
 
 DISTNAME=	xcept-2.1.2
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	comms
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 c
+WANTLIB=		X11 c pthread-stubs xcb
 
 MAKE_FLAGS=	SYSCONFDIR="${SYSCONFDIR}"
 

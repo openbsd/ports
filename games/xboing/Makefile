@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2007/12/07 10:25:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=	blockout style game for X11
 
 V=		2.4
 DISTNAME=	xboing${V}
-PKGNAME=	xboing-${V}p1
+PKGNAME=	xboing-${V}p2
 
 CATEGORIES=	games
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext Xpm c m ossaudio
+WANTLIB=	X11 Xau Xdmcp Xext Xpm c m ossaudio pthread-stubs xcb
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 

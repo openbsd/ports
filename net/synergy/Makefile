@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/21 05:46:26 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 06:33:43 kili Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
 DISTNAME=		synergy-1.3.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		net
 
 HOMEPAGE=		http://synergy2.sourceforge.net/
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE SM X11 Xext Xinerama Xtst c m pthread stdc++
+WANTLIB=		ICE SM X11 Xext Xinerama Xtst c m pthread \
+			pthread-stubs stdc++ xcb
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synergy2/}
 

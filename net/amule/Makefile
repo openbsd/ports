@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2007/12/18 15:56:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/10 06:33:43 kili Exp $
 
 COMMENT-main =	another eMule p2p client
 COMMENT-web =	webserver interface to amuled
@@ -10,7 +10,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
 MULTI_PACKAGES =-main -web -daemon
-PKGNAME-main =	amule-$Vp3
+PKGNAME-main =	amule-$Vp4
 PKGNAME-daemon =amuled-$V
 PKGNAME-web =	amuleweb-$V
 
@@ -33,7 +33,7 @@ WANTLIB =	c m pthread z stdc++
 USE_X11 =	Yes
 USE_GMAKE =	Yes
 
-WANTLIB-main =	${WANTLIB} X11 wx_gtk2_adv wx_gtk2_core
+WANTLIB-main =	${WANTLIB} X11 pthread-stubs wx_gtk2_adv wx_gtk2_core xcb
 WANTLIB-daemon =${WANTLIB} readline termcap
 WANTLIB-web =	${WANTLIB} png readline termcap
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/06/15 07:35:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 06:29:52 kili Exp $
 
 COMMENT=		last.fm client for GNOME
 
 V=			0.7.1
 DISTNAME=		vagalume_$V.orig
-PKGNAME=		vagalume-$V
+PKGNAME=		vagalume-$Vp0
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://vagalume.igalia.com/
@@ -24,7 +24,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png pthread ssl xml2 z
+		pcre pixman-1 png pthread pthread-stubs ssl xcb xml2 z
 
 MODULES+=		devel/gettext
 

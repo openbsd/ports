@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2009/01/25 02:02:19 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/10 06:29:52 kili Exp $
 
 SHARED_ONLY = 	Yes
 
 COMMENT = 	gtk+2 media player based on BMP and XMMS
 
 DISTNAME = 	audacious-1.5.1
+PKGNAME =	${DISTNAME}p0
 SHARED_LIBS = 	audclient	0.0
 
 CATEGORIES = 	audio multimedia
@@ -21,7 +22,7 @@ WANTLIB = 	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 png pthread z
+		pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb z
 
 MASTER_SITES = 	http://distfiles.atheme.org/
 

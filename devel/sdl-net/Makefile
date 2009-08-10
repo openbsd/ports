@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2008/11/07 00:42:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=	SDL cross-platform networking library
 
 V=		1.2.7
 DISTNAME=	SDL_net-${V}
-PKGNAME=	sdl-net-${V}p0
+PKGNAME=	sdl-net-${V}p1
 SHARED_LIBS=	SDL_net 1.1 # .0.7
 CATEGORIES=	devel net
 
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender iconv sndio usbhid m
+WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender iconv m pthread-stubs sndio \
+		usbhid xcb
 
 LIB_DEPENDS=	SDL::devel/sdl
 

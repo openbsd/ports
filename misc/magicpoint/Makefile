@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2009/02/18 08:15:50 giovanni Exp $
+# $OpenBSD: Makefile,v 1.49 2009/08/10 06:33:02 kili Exp $
 
 COMMENT=	X11-based presentation tool
 
 DISTNAME=	magicpoint-1.09a
 # hack
-PKGNAME=	magicpoint-1.11bp8
+PKGNAME=	magicpoint-1.11bp9
 CATEGORIES=	misc productivity
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c ICE jpeg lcms m SM util \
-		Xt Xau Xdmcp Xmu Xext X11 Xtst z
+		Xt Xau Xdmcp Xmu Xext X11 Xtst z \
+		pthread-stubs xcb
 
 # plus sign is for localized (i.e. Japanese) version
 LIB_DEPENDS+=	ttf.>=1::print/freetype \

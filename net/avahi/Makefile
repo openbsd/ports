@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/26 22:12:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 06:33:43 kili Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -10,8 +10,8 @@ DISTNAME=	avahi-${V}
 CATEGORIES=	net devel
 
 PKGNAME-main=	avahi-${V}p5
-PKGNAME-gtk=	avahi-gtk-${V}p1
-PKGNAME-qt3=	avahi-qt3-${V}p1
+PKGNAME-gtk=	avahi-gtk-${V}p2
+PKGNAME-qt3=	avahi-qt3-${V}p2
 PKGNAME-qt4=	avahi-qt4-${V}p1
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -73,7 +73,7 @@ WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		expat fontconfig freetype gdbm gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread xml2 z
+		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb xml2 z
 .else
 CONFIGURE_ARGS+= -disable-gtk \
 		--disable-python \
@@ -89,7 +89,7 @@ LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
 		avahi-common::net/avahi
 WANTLIB-qt3=	GL ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
-		freetype jpeg lcms m mng png z
+		freetype jpeg lcms m mng png pthread-stubs xcb z
 .else
 CONFIGURE_ARGS+= --disable-qt3
 .endif

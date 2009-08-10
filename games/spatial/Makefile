@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/12/05 14:08:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	3d tetris
 
 DISTNAME=	threedee
-PKGNAME=	spatial-1.0.1p0
+PKGNAME=	spatial-1.0.1p1
 CATEGORIES=	games
 
 EXTRACT_SUFX=	.tar.Z
@@ -29,6 +29,6 @@ do-install:
 
 USE_X11=	Yes
 NO_REGRESS=	Yes
-WANTLIB=	c m X11
+WANTLIB=	X11 c m pthread-stubs xcb
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2008/06/11 01:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/08/10 06:34:56 kili Exp $
 
 COMMENT=	graphical front end to Unix diff
 
 DISTNAME=	mgdiff
-PKGNAME=	${DISTNAME}-1.0p0
+PKGNAME=	${DISTNAME}-1.0p1
 CATEGORIES=	textproc
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c 
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c pthread-stubs xcb
 
 USE_X11=	Yes
 USE_MOTIF=	any

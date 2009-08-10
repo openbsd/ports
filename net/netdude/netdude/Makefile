@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2008/02/14 21:36:27 rui Exp $
+# $OpenBSD: Makefile,v 1.9 2009/08/10 06:33:43 kili Exp $
 
 COMMENT=	network traffic visualization and editing tool
 
 DISTNAME=	netdude-0.4.8a
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=	netdude::net/libnetdude/libnetdude \
 		glib.>=1,gmodule.>=1::devel/glib \
 		gdk,gtk::x11/gtk+
 
-WANTLIB=		Xau Xdmcp Xi X11 m c Xext pcap
+WANTLIB=		X11 Xau Xdmcp Xext Xi c m pcap pthread-stubs xcb
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes

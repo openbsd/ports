@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 19:00:55 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2009/08/10 06:33:44 kili Exp $
 
 COMMENT=	simple menu patterned after plan9
 
 DISTNAME=	9menu-1.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	plan9
 
 MASTER_SITES=	ftp://ftp.freefriends.org/arnold/Source/
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 c
+WANTLIB=		X11 c pthread-stubs xcb
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib -lX11"

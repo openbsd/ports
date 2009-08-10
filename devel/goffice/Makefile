@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/06/16 11:30:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 06:31:07 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.6.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 V=		${GNOME_VERSION}
 SHARED_LIBS +=	goffice-0.6          1.0      # .6.5
@@ -27,7 +27,7 @@ WANTLIB += gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomevfs-2 gobject-2.0 gsf-1 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png popt ssl util xml2 z
+WANTLIB += png popt pthread-stubs ssl util xcb xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome

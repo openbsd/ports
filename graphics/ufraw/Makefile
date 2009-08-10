@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2009/06/21 14:01:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:45 kili Exp $
 
 COMMENT=		read and manipulate raw images from digital cameras
 
 DISTNAME=		ufraw-0.15
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ufraw/}
@@ -22,7 +23,7 @@ WANTLIB=		atk-1.0 c cairo expat fontconfig freetype \
 			m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
 			pthread stdc++ X11 Xau Xcursor Xext Xfixes Xi \
 			Xinerama Xrandr Xcomposite Xdamage Xdmcp Xrender \
-			z jpeg tiff
+			z jpeg tiff pthread-stubs xcb
 
 LIB_DEPENDS=		gimp-2.0,gimpbase-2.0,gimpcolor-2.0,gimpconfig-2.0,gimpmath-2.0,gimpui-2.0,gimpwidgets-2.0,gimpmodule-2.0:gimp->=2,<3:graphics/gimp/stable \
 			lcms.>=1.15::graphics/lcms \

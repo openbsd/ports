@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2009/07/28 16:00:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2009/08/10 06:32:43 kili Exp $
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 DISTNAME=		mail-notification-5.4
-PKGNAME=		${DISTNAME}p9
+PKGNAME=		${DISTNAME}p10
 
 CATEGORIES=		mail
 
@@ -25,7 +25,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring \
 		gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png popt pthread ssl xml2 z
+		pixman-1 png popt pthread pthread-stubs ssl xcb xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=mailnotify/}
 

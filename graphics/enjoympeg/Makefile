@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:44 kili Exp $
 
 COMMENT=	mpeg-1 video player
 
 VERSION=	0.4.1
 DISTNAME=	enjoympeg-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://people.freenet.de/for_Ki/
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		SDL X11 Xext c m pthread usbhid
+WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb
 
 MASTER_SITES=	${HOMEPAGE}
 

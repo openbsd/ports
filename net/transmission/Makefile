@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2009/07/22 15:52:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2009/08/10 06:33:43 kili Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gui=	lightweight BitTorrent client with graphical interface
@@ -6,7 +6,7 @@ COMMENT-gui=	lightweight BitTorrent client with graphical interface
 VER=		1.73
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
-PKGNAME-gui=	transmission-gui-${VER}
+PKGNAME-gui=	transmission-gui-${VER}p0
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 
@@ -51,7 +51,7 @@ WANTLIB-gui=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 \
 		dbus-glib-1 expat fontconfig freetype gio-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 pangoft2-1.0 \
-		pangocairo-1.0 pixman-1 png pcre
+		pangocairo-1.0 pixman-1 png pcre pthread-stubs xcb
 LIB_DEPENDS+=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 		notify.>=2::devel/libnotify
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2009/07/28 16:00:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2009/08/10 06:33:44 kili Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
 V=		0.132
 DISTNAME=	pan-${V}
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	news x11
 
 HOMEPAGE=	http://pan.rebelbase.com/
@@ -21,7 +21,7 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread stdc++ z
+WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb z
 
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${V}/source/
 

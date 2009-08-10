@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2009/07/18 15:50:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2009/08/10 06:29:52 kili Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
@@ -9,10 +9,10 @@ SHARED_ONLY=		Yes
 
 VERSION=		1.2.11
 DISTNAME=		xmms-${VERSION}
-PKGNAME-main=		xmms-${VERSION}p5
-PKGNAME-vorbis=		xmms-vorbis-${VERSION}p0
-PKGNAME-mikmod=		xmms-mikmod-${VERSION}p0
-PKGNAME-mp3=		xmms-mp3-${VERSION}p1
+PKGNAME-main=		xmms-${VERSION}p6
+PKGNAME-vorbis=		xmms-vorbis-${VERSION}p1
+PKGNAME-mikmod=		xmms-mikmod-${VERSION}p1
+PKGNAME-mp3=		xmms-mp3-${VERSION}p2
 SHARED_LIBS=		xmms	4.2
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xau Xdmcp Xext Xi glib gmodule m
+WANTLIB=		X11 Xau Xdmcp Xext Xi glib gmodule m pthread-stubs xcb
 
 V=			1.2.x
 MASTER_SITES=		${HOMEPAGE}/files/$V/ \

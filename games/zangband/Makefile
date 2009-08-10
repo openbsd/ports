@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2008/06/12 17:06:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
 VERSION=	2.6.2
 DISTNAME=	zangband-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/ \
 		ftp://ftp.planetmirror.com/pub/angband/Variant/ZAngband/ \
@@ -35,7 +35,7 @@ FLAVOR?=
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x
-WANTLIB+=		ICE SM X11 Xaw Xmu Xt
+WANTLIB+=		ICE SM X11 Xaw Xmu Xt pthread-stubs xcb
 .else
 CONFIGURE_ARGS+=	--without-x
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2009/07/15 20:06:41 martynas Exp $
+# $OpenBSD: Makefile,v 1.84 2009/08/10 06:32:43 kili Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's mail component
 
 VER=		2.0.0.22
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p0
+PKGNAME=	mozilla-thunderbird-${VER}p1
 SO_VERSION=	13.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
@@ -41,8 +41,8 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 jpeg m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangox-1.0 pixman-1 png pthread stdc++
-WANTLIB += z
+WANTLIB += pangoft2-1.0 pangox-1.0 pixman-1 png pthread pthread-stubs
+WANTLIB += xcb stdc++ z
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/
 DISTFILES=	thunderbird-${VER}-source.tar.bz2

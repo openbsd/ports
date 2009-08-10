@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/23 10:55:40 giovanni Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=	powerful and simple GTK editor
 
 DISTNAME=	teagtk-17.6.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	editors x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tea-editor/}
 EXTRACT_SUFX=	.tar.bz2
@@ -27,7 +28,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xcomposite Xdamage Xrender expat fontconfig freetype z \
 		atk-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 glitz \
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 png cairo xml2 \
-		c m stdc++ pixman-1
+		c m stdc++ pixman-1 pthread-stubs xcb
 
 MODULES=	devel/gettext
 

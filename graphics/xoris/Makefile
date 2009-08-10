@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/05/06 22:32:19 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/10 06:31:45 kili Exp $
 
 COMMENT =	X11 pixel color grabber
 
 DISTNAME =	xoris-0.1d
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://gromnizki.unixdev.net/
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	X11 c
+WANTLIB =	X11 c pthread-stubs xcb
 
 CONFIGURE_STYLE = imake
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2007/12/18 09:30:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/08/10 06:29:52 kili Exp $
 
 COMMENT=	set the root window to the image of earth
 DISTNAME=	xearth-1.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	astro x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
 
@@ -12,7 +12,8 @@ PERMIT_PACKAGE_CDROM=   Cannot sell
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Cannot sell
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xt c m
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xt c m \
+			pthread-stubs xcb
 
 CONFIGURE_STYLE= imake
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2009/08/10 06:32:43 kili Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.15
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
@@ -51,7 +51,7 @@ REGRESS_IS_INTERACTIVE=	Yes
 REGRESS_FLAGS=		DISPLAY=${DISPLAY}
 USE_X11=		Yes
 USE_MOTIF=		openmotif
-WANTLIB+=		ICE SM X11 Xext Xmu Xp Xpm Xt 
+WANTLIB+=		ICE SM X11 Xext Xmu Xp Xpm Xt pthread-stubs xcb
 .  if ${FLAVOR:L:Mxmhtml}
 LIB_DEPENDS+=		XmHTML.>=1::www/xmhtml
 CONFIGURE_ARGS+=	--enable-xmhtml

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2009/06/19 17:50:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/10 06:29:52 kili Exp $
 # Uses pthreads
 
 COMMENT=		Music tracking tool for X11
 
 VERSION=		0.6.6
 DISTNAME=		soundtracker-${VERSION}
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		audio
 HOMEPAGE=		http://www.soundtracker.org/
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi c glib gmodule m pthread
+WANTLIB=		X11 Xext Xi c glib gmodule m pthread pthread-stubs xcb
 
 V=v0.6
 MASTER_SITES=		http://www.soundtracker.org/dl/$V/ \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/14 10:34:07 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/10 06:30:31 kili Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
 DISTNAME=	xastir-1.8.2
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=    	comms hamradio geo
 
 HOMEPAGE=	http://www.xastir.org/
@@ -40,7 +40,7 @@ CONFIGURE_ARGS=		--with-shapelib					\
 			--with-bdb-incdir=$(LOCALBASE)/include/db4
 
 WANTLIB=	ICE SM c pthread freetype Xt Xpm Xext m Xp X11 z	\
-		proj tiff iconv
+		proj pthread-stubs tiff xcb iconv
 
 LIB_DEPENDS=	curl::net/curl						\
 		shp::devel/shapelib					\

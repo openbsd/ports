@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/14 21:18:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2009/08/10 06:33:43 kili Exp $
 
 COMMENT=	irc client that uses Tcl/Tk
 
 DISTNAME=	quirc-0.9.84
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	net
 
 HOMEPAGE=	http://quirc.sourceforge.net/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=		ICE SM X11 c m stdc++ tcl84 
+WANTLIB=		ICE SM X11 c m pthread-stubs stdc++ tcl84 xcb
 
 MODULES=	x11/tk
 MODTCL_VERSION=	8.4

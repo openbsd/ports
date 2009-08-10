@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/06/07 00:08:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/10 06:34:09 kili Exp $
 
 COMMENT=	qt home accounting program
 
 DISTNAME=	qhacc-3.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	productivity x11
 
 HOMEPAGE=	http://qhacc.sourceforge.net/
@@ -26,7 +27,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xdmcp c m pthread stdc++
+WANTLIB += GL X11 Xau Xdmcp c m pthread pthread-stubs stdc++ xcb
 
 MODULES=	x11/qt3
 USE_X11=	Yes

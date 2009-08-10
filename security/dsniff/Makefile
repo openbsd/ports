@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2009/03/16 11:14:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2009/08/10 06:34:29 kili Exp $
 
 COMMENT=	sniffing tools for penetration testing
 
 DISTNAME=	dsniff-2.3
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=	security
 
 MASTER_SITES=	http://monkey.org/~dugsong/dsniff/
@@ -33,7 +33,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--without-x
 .else
 USE_X11=	Yes
-WANTLIB+=	ICE SM X11 Xmu
+WANTLIB+=	ICE SM X11 Xmu pthread-stubs xcb
 .endif
 
 NO_REGRESS=	Yes

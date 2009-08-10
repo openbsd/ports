@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/06/04 21:12:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 06:29:51 kili Exp $
 
 COMMENT=	free open source planetarium
 
 DISTNAME=	stellarium-0.10.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	astro x11
 
@@ -22,6 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=stellarium/}
 WANTLIB += GL GLU ICE SM X11 Xext Xi Xinerama Xrender c
 WANTLIB += fontconfig freetype glib-2.0 gthread-2.0 jpeg m png
 WANTLIB += pthread stdc++ z
+WANTLIB += pthread-stubs xcb
 
 USE_X11=	Yes
 

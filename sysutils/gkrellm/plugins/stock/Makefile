@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/09 22:42:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/10 06:34:30 kili Exp $
 
 COMMENT=	stock ticker for GkrellM2
 
 V=		0.5.1
 DISTNAME=	gkrellstock-${V}
-PKGNAME=	${DISTNAME}p10
+PKGNAME=	${DISTNAME}p11
 CATEGORIES=	misc
 
 HOMEPAGE=	http://gkrellstock.sourceforge.net/

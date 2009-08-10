@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/07/17 10:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/10 06:31:07 kili Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
@@ -8,7 +8,7 @@ V=			3.52.6
 DISTNAME=		libiodbc-$V
 PKGNAME=		iodbc-$V
 PKGNAME-main=		iodbc-$V
-PKGNAME-admin=		iodbc-admin-$V
+PKGNAME-admin=		iodbc-admin-$Vp0
 
 CATEGORIES=		databases
 
@@ -57,7 +57,7 @@ LIB_DEPENDS-main=	# this space intentionally left blank
 WANTLIB-admin= ${WANTLIB} \
 		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender expat fontconfig freetype \
-		m pixman-1 z
+		m pixman-1 pthread-stubs xcb z
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/iodbc

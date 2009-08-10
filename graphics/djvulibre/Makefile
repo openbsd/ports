@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/10/30 14:53:40 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:44 kili Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.21
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	djvulibre 21.0
 CATEGORIES=	graphics print
 
@@ -42,7 +43,7 @@ CONFIGURE_ARGS+=--without-x
 MODULES+=	x11/qt3
 MODQT_MT=	Yes
 USE_X11=	Yes
-WANTLIB+=	ICE SM X11 Xext Xau Xdmcp
+WANTLIB+=	ICE SM X11 Xext Xau Xdmcp pthread-stubs xcb
 CONFIGURE_ARGS+=--with-qt=${MODQT_LIBDIR}
 CONFIGURE_ENV+= QT_CFLAGS="-I${MODQT_INCDIR}" \
 		QT_LIBS="-L${MODQT_LIBDIR} -lqt-mt"

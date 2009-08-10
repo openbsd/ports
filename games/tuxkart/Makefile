@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/10 22:11:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/10 06:31:42 kili Exp $
 
 COMMENT =	tuxkart is a simple Go-Kart racing game.
 
 DISTNAME =	tuxkart-0.4.0
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	games
 
 HOMEPAGE =	http://tuxkart.sourceforge.net/
@@ -16,7 +17,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		GL ICE SM X11 Xext Xi Xmu c m pthread stdc++
+WANTLIB =		GL ICE SM X11 Xext Xi Xmu c m pthread pthread-stubs \
+			stdc++ xcb
 
 BUILD_DEPENDS =		::devel/plib
 

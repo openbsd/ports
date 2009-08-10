@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=	concurrent multi-player battle strategy game
 
 DISTNAME=	xbattle-5.4.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games
 
 MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext c m
+WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes

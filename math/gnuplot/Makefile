@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2009/04/19 15:06:50 steven Exp $
+# $OpenBSD: Makefile,v 1.38 2009/08/10 06:32:43 kili Exp $
 
 COMMENT=	command-driven interactive function plotting program
 
 V=		4.2
 PATCHLEVEL=	5
 DISTNAME=	gnuplot-${V}.${PATCHLEVEL}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
 
@@ -40,7 +41,7 @@ CONFIGURE_ARGS+= --without-x --without-gd
 .else
 LIB_DEPENDS=	gd.>=20::graphics/gd
 USE_X11=	Yes
-WANTLIB+=	X11 fontconfig freetype iconv jpeg png
+WANTLIB+=	X11 fontconfig freetype iconv jpeg png pthread-stubs xcb
 CONFIGURE_ARGS+= --with-x
 .endif
 

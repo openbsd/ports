@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/14 16:49:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:09 kili Exp $
 
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	emulators x11
 
 HOMEPAGE=	http://uae.coresystems.de/
@@ -16,7 +16,8 @@ WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 		Xcomposite Xdamage gio-2.0 \
 		Xrandr Xrender Xxf86dga Xxf86vm atk-1.0 c cairo expat \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread z
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread z \
+		pthread-stubs xcb
 
 MASTER_SITES=	ftp://ftp.coresystems.de/pub/uae/sources/develop/
 

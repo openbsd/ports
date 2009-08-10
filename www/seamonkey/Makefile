@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2009/06/24 01:08:05 martynas Exp $
+# $OpenBSD: Makefile,v 1.39 2009/08/10 06:34:56 kili Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	integrated mozilla application suite
 
 VER=		1.1.17
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p0
+PKGNAME=	seamonkey-${VER}p1
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -87,7 +87,7 @@ WANTLIB=	c glib-2.0 m pthread stdc++ \
 		Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 \
 		cairo expat fontconfig freetype glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pangox-1.0 pixman-1 png z gio-2.0
+		pangoft2-1.0 pangox-1.0 pixman-1 png pthread-stubs xcb z gio-2.0
 
 VMEM_WARNING=	Yes
 

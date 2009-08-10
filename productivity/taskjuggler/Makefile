@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/11 14:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/10 06:34:09 kili Exp $
 
 COMMENT=	project management tool
 
 DISTNAME=	taskjuggler-2.4.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	productivity
 SHARED_LIBS=	taskjuggler	4.0
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += DCOP ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c
 WANTLIB += fam iconv idn intl jpeg kabc kdecore kdefx kdeprint
 WANTLIB += kdesu kdeui khtml kio kjs kparts kresources ktexteditor
-WANTLIB += kutils kwalletclient m pcre pcreposix png pthread rpcsvc
-WANTLIB += stdc++ util vcard z
+WANTLIB += kutils kwalletclient m pcre pcreposix png pthread pthread-stubs
+WANTLIB += rpcsvc stdc++ util vcard xcb z
 
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.tar.bz2

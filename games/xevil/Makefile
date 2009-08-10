@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2007/12/07 17:28:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2009/08/10 06:31:43 kili Exp $
 #
 
 COMMENT=	side-view, fast-action, kill everything type of game
 
 V=		2.02r2
 DISTNAME=	xevilsrc${V}
-PKGNAME=	xevil-${V}
+PKGNAME=	xevil-${V}p0
 
 CATEGORIES=	games
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xpm c m stdc++
+WANTLIB=	X11 Xpm c m pthread-stubs stdc++ xcb
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

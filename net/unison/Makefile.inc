@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2008/12/03 23:44:44 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2009/08/10 06:33:43 kili Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
@@ -26,7 +26,7 @@ BUILD_DEPENDS+=	::x11/lablgtk
 LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 MAKE_FLAGS=	UISTYLE=gtk
 USE_X11=	Yes
-WANTLIB+=	X11 Xext Xi glib gmodule iconv intl
+WANTLIB+=	X11 Xext Xi glib gmodule iconv intl pthread-stubs xcb
 .endif
 
 # CFLAGS _must_ be empty.  This is an OCaml compiler.

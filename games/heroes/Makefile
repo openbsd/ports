@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/01/25 01:30:16 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	graphically improved game of yore
 
@@ -7,7 +7,7 @@ DATAVERSION=	1.5
 SOUNDVERSION=	1.0
 MUSICVERSION=	1.0
 DISTNAME=	heroes-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -49,7 +49,7 @@ LIB_DEPENDS+=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer
 
 CONFIGURE_ARGS+= --with-sdl="${LOCALBASE}"
-WANTLIB+=	X11 Xext pthread usbhid
+WANTLIB+=	X11 Xext pthread pthread-stubs usbhid xcb
 .else
 CONFIGURE_ARGS+= --without-sdl --without-sdl-mixer
 WANTLIB+=	gii

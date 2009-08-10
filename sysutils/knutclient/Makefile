@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/06/06 10:27:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/10 06:34:30 kili Exp $
 
 COMMENT=		KDE UPS Monitoring tool
 
 RELEASE=		0.6.0
 DISTNAME=		knutclient-${RELEASE}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		sysutils x11 x11/kde
 
 HOMEPAGE=		http://www.alo.cz/knutclient-pop-en.html
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		jpeg ICE SM X11 Xau Xdmcp Xext Xrender c m png \
-			pthread stdc++ util z idn iconv intl
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xrender c idn iconv intl \
+			jpeg m png pthread pthread-stubs stdc++ util xcb z
 
 MASTER_SITES=		ftp://ftp.buzuluk.cz/pub/alo/knutclient/
 

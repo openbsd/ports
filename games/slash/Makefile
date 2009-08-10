@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2009/03/25 18:16:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	dungeon explorin', hackin' game, but harder than nethack
 
 DISTNAME=	slash-e8
-PKGNAME=	slash-3.2.2.e8
+PKGNAME=	slash-3.2.2.e8p0
 CATEGORIES=	games
 
 MASTER_SITES=   ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
@@ -40,7 +40,7 @@ FLAVOR?=
 NETHACKCONFIG=${FILESDIR}/simple-config
 .else
 NETHACKCONFIG=${FILESDIR}/x-config
-WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt
+WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 USE_X11=	Yes
 .endif
 

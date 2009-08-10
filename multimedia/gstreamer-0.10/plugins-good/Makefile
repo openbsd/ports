@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2009/06/11 18:26:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2009/08/10 06:33:02 kili Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -19,9 +19,9 @@ COMMENT-wavpack =	multimedia framework - wavpack plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
-PKGNAME-main =		gstreamer-plugins-good-$Vp14v0
-PKGNAME-aalib =		gstreamer-aalib-$Vp4
-PKGNAME-cairo =		gstreamer-cairo-$Vp5
+PKGNAME-main =		gstreamer-plugins-good-$Vp15v0
+PKGNAME-aalib =		gstreamer-aalib-$Vp5
+PKGNAME-cairo =		gstreamer-cairo-$Vp6
 PKGNAME-gconf =		gstreamer-confelements-$Vp8
 PKGNAME-esd =		gstreamer-esd-$Vp5
 PKGNAME-flac =		gstreamer-flac-$Vp4
@@ -30,8 +30,8 @@ PKGNAME-taglib =	gstreamer-taglib-$Vp4
 PKGNAME-dv =		gstreamer-dv-$Vp4
 PKGNAME-jpeg =		gstreamer-jpeg-$Vp4
 PKGNAME-png =		gstreamer-png-$Vp5
-PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp6
-PKGNAME-caca =		gstreamer-libcaca-$Vp4
+PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp7
+PKGNAME-caca =		gstreamer-libcaca-$Vp5
 PKGNAME-shout =		gstreamer-shoutcast-$Vp4
 PKGNAME-soup =		gstreamer-libsoup-$Vp5
 PKGNAME-wavpack =	gstreamer-wavpack-$Vp3
@@ -57,20 +57,21 @@ LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:$P/core
 
 WANTLIB-main =		${WANTLIB} \
 			ICE SM X11 Xdamage Xext Xfixes sndio \
-			gstcontroller-0.10 gstbase-0.10 Xau Xdmcp
+			gstcontroller-0.10 gstbase-0.10 Xau Xdmcp \
+			pthread-stubs xcb
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			oil-0.3::devel/liboil \
 			gstaudio-0.10,gstinterfaces-0.10,gstnetbuffer-0.10,gstriff-0.10,gstrtp-0.10,gsttag-0.10,gstvideo-0.10,gstfft-0.10,gstrtsp-0.10,gstsdp-0.10::$P/plugins-base
 RUN_DEPENDS-main =	
 
 WANTLIB-aalib=		${WANTLIB} \
-			X11 ncurses gstbase-0.10 Xau Xdmcp
+			X11 ncurses gstbase-0.10 Xau Xdmcp pthread-stubs xcb
 LIB_DEPENDS-aalib =	${LIB_DEPENDS} \
 			aa::graphics/aalib
 
 WANTLIB-cairo =		${WANTLIB} \
 			X11 Xau Xdmcp Xrender fontconfig freetype \
-			pixman-1 glitz png gstbase-0.10 expat
+			pixman-1 glitz png gstbase-0.10 expat pthread-stubs xcb
 LIB_DEPENDS-cairo =	${LIB_DEPENDS} \
 			cairo::graphics/cairo
 
@@ -130,7 +131,8 @@ WANTLIB-gdk =		${WANTLIB} \
 			X11 Xcomposite Xdamage Xext Xrender atk-1.0 \
 			cairo fontconfig freetype gio-2.0 glitz pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 pixman-1 png gstbase-0.10 \
-			Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat
+			Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat \
+			pthread-stubs xcb
 
 LIB_DEPENDS-gdk =	${LIB_DEPENDS} \
 			gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2 \
@@ -139,7 +141,7 @@ LIB_DEPENDS-gdk =	${LIB_DEPENDS} \
 BUILD_DEPENDS +=	::graphics/libcaca
 
 WANTLIB-caca =		${WANTLIB} \
-			X11 gstbase-0.10 ncurses Xau Xdmcp
+			X11 gstbase-0.10 ncurses Xau Xdmcp pthread-stubs xcb
 
 LIB_DEPENDS-caca =	${LIB_DEPENDS}
 

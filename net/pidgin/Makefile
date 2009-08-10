@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2009/07/20 14:27:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2009/08/10 06:33:43 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,8 @@ COMMENT-libpurple= multi-protocol instant messaging library
 VERSION=	2.5.8
 DISTNAME=	pidgin-${VERSION}
 PKGNAME=	pidgin-${VERSION}
-PKGNAME-main=	pidgin-${VERSION}p0
-PKGNAME-finch=	finch-${VERSION}p0
+PKGNAME-main=	pidgin-${VERSION}p1
+PKGNAME-finch=	finch-${VERSION}p1
 FULLPKGNAME-libpurple= libpurple-${VERSION}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
@@ -38,11 +38,11 @@ WANTLIB-main=	X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xss atk-1.0 cairo \
 		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glitz gtk-x11-2.0 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 png stdc++ ${WANTLIB}
+		pangoft2-1.0 pixman-1 png pthread-stubs stdc++ xcb ${WANTLIB}
 
 WANTLIB-libpurple= crypto ssl ${WANTLIB}
 
-WANTLIB-finch=	X11 Xau Xdmcp panel ${WANTLIB}
+WANTLIB-finch=	X11 Xau Xdmcp panel pthread-stubs xcb ${WANTLIB}
 
 MODULES=	devel/gettext \
 		textproc/intltool \

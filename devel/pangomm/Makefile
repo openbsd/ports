@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/11 22:50:34 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/10 06:31:08 kili Exp $
 
 COMMENT =		C++ interface for pango
 
 DISTNAME =		pangomm-2.14.1
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		devel x11
 
 SHARED_LIBS +=		pangomm-1.4	7.0 #.1.30
@@ -26,7 +27,7 @@ LIB_DEPENDS =		pangoft2-1.0,pangocairo-1.0,pango-1.0::devel/pango \
 
 WANTLIB =		X11 Xau Xdmcp Xrender cairo expat fontconfig freetype \
 			glib-2.0 glitz gmodule-2.0 gobject-2.0 m pcre pixman-1 \
-			sigc-2.0 png z
+			png pthread-stubs sigc-2.0 xcb z
 USE_X11 =		Yes
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes

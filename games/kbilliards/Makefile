@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2009/01/29 22:28:58 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:42 kili Exp $
 
 COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
 DISTNAME=		kbilliards-0.8.7b
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 HOMEPAGE=		http://www.hostnotfound.it/kbilliards.php
 MASTER_SITES=		http://www.hostnotfound.it/kbilliards/
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 artsflow \
 		artsflow_idl audiofile bz2 c fam glib-2.0 \
 		gmodule-2.0 gthread-2.0 idn jpeg kmedia2_idl m mad \
-		mcop ogg pcre png pthread qt-mt qtmcop rpcsvc sndio \
+		mcop ogg pcre png pthread pthread-stubs qt-mt qtmcop rpcsvc sndio \
 		soundserver_idl stdc++ util vorbis vorbisenc \
-		vorbisfile z
+		vorbisfile xcb z
 
 MODULES=		x11/kde	devel/gettext
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2007/09/15 22:37:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.24 2009/08/10 06:33:44 kili Exp $
 COMMENT=	enhanced talk that allows for multiple parties
 
 DISTNAME=	ytalk-3.1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.iagora.com/~espel/ytalk/ \
@@ -26,7 +27,7 @@ FLAVOR?=
 CONFIGURE_ARGS+= --without-x
 .else
 USE_X11=	Yes
-WANTLIB+=	ICE SM X11 
+WANTLIB+=	ICE SM X11 pthread-stubs xcb
 .endif
 
 NO_REGRESS=	Yes

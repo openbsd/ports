@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2008/07/18 19:45:13 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/10 06:31:45 kili Exp $
 
 COMMENT =		kde interface to exif
 CATEGORIES =		graphics devel x11 x11/kde
 DISTNAME =		libkexif-0.2.5
-PKGNAME =		${DISTNAME}
+PKGNAME =		${DISTNAME}p0
 SHARED_LIBS =		kexif	2.2
 EXTRACT_SUFX =		.tar.bz2
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
@@ -14,7 +14,8 @@ LIB_DEPENDS +=	lib/qt3/qt-mt.>=3.33::x11/qt3 \
 		kdecore.>=6,DCOP,kdeui,kdefx::x11/kde/libs3 \
 		exif::graphics/libexif
 WANTLIB =	ICE Xrender SM Xext X11 util m z \
-		jpeg png art_lgpl_2 iconv idn intl Xau Xdmcp
+		jpeg png art_lgpl_2 iconv idn intl Xau Xdmcp \
+		pthread-stubs xcb
 MODULES =	x11/kde
 
 MODKDE_VERSION =	3.5

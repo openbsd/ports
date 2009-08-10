@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/29 09:49:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	drawing program for children
 
 DISTNAME=	tuxpaint-0.9.20
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 WANTLIB=	SDL X11 Xau Xdmcp Xrender c cairo expat \
 		fontconfig freetype gdk_pixbuf-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 m pixman-1 png \
-		pthread z
+		pthread pthread-stubs xcb z
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \

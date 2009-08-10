@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/10/27 00:07:00 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/10 06:31:07 kili Exp $
 
 COMMENT =	gui for sqlite
 CATEGORIES =	databases x11
 
 DISTNAME =	sqliteman-1.2.0
+PKGNAME =	${DISTNAME}p0
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sqliteman/}
 HOMEPAGE =	http://sourceforge.net/projects/sqliteman/
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB =	ICE SM X11 Xext Xi Xinerama Xrandr Xrender \
 		c fontconfig freetype m pthread stdc++ z png glib-2.0 \
-		gthread-2.0
+		gthread-2.0 pthread-stubs xcb
 
 MODULES =		devel/cmake
 CONFIGURE_STYLE =	cmake

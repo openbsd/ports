@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2009/07/19 22:49:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2009/08/10 06:33:02 kili Exp $
 # $FreeBSD: ports/multimedia/libquicktime/Makefile,v 1.19 2004/03/16 04:23:53 edwin Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for reading and writing quicktime files
 DISTNAME=		libquicktime-1.1.1
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		multimedia
 SHARED_LIBS=		quicktime	4.0
 
@@ -24,7 +24,7 @@ WANTLIB=	GL ICE SM X11 Xau Xaw Xcomposite Xcursor \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 m \
 		ogg ossaudio pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 pthread theora \
-		z oil-0.3 schroedinger-1.0
+		z oil-0.3 schroedinger-1.0 pthread-stubs xcb
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 

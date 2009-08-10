@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/21 01:59:50 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	go client and fully featured sgf editor
 
 DISTNAME=	qgo-1.5.4
+PKTNAME=	${DISTNAME}p0
 CATEGORIES=	games
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -12,7 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	c m pthread stdc++ X11 Xext SM ICE jpeg Xau Xdmcp
+WANTLIB=	X11 Xau Xdmcp Xext ICE SM c jpeg m pthread pthread-stubs \
+		stdc++ xcb
 
 MODULES=	x11/qt3
 

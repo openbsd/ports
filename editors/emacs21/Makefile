@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2009/07/17 16:38:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2009/08/10 06:31:08 kili Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -6,7 +6,7 @@ COMMENT-leim=		Library of Emacs Input Methods
 
 VERSION=		21.4
 DISTNAME=		emacs-${VERSION}
-PKGNAME-main=		${DISTNAME}p9
+PKGNAME-main=		${DISTNAME}p10
 FULLPKGNAME-el=		emacs-el-${VERSION}p1
 FULLPKGNAME-leim=	emacs-leim-${VERSION}p1
 
@@ -57,7 +57,7 @@ LIB_DEPENDS-main=	ungif.>=5::graphics/libungif \
 			jpeg.>=62::graphics/jpeg \
 			png.>=2::graphics/png \
 			tiff.>=35::graphics/tiff
-WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
+WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb z
 .endif
 
 RUN_DEPENDS=		:emacs-${VERSION}:${PKGPATH}

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2008/03/15 10:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/10 06:31:41 kili Exp $
 
 COMMENT=	real-time strategy game
 
 V=		2.5
 DISTNAME=	boswars-${V}-src
-PKGNAME=	boswars-${V}
+PKGNAME=	boswars-${V}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.boswars.org/
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.boswars.org/dist/releases/
 
-WANTLIB=	GL X11 c m ogg pthread stdc++ z
+WANTLIB=	GL X11 c m ogg pthread pthread-stubs stdc++ xcb z
 
 MODULES=	devel/scons
 MODSCONS_FLAGS=	CPPPATH="${CPPPATH} ${LOCALBASE}/include/libpng" \

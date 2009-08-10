@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2008/10/22 00:51:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/10 06:32:43 kili Exp $
 
 COMMENT=	interpreted language for scientific computing
 
 VERSION=	2.1
 DISTNAME=	yorick-${VERSION}.05
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	math devel
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 c m
+WANTLIB=	X11 c m pthread-stubs xcb
 USE_X11=	Yes
 
 Y_SITE=		${PREFIX}/share/yorick

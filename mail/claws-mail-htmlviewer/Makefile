@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/07/17 17:03:38 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/10 06:32:42 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	HTML renderer plugin for Claws Mail
 
 VERSION=	0.24
 DISTNAME=	gtkhtml2_viewer-${VERSION}
-PKGNAME=	claws-mail-htmlviewer-${VERSION}
+PKGNAME=	claws-mail-htmlviewer-${VERSION}p0
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 DIST_SUBDIR=	claws
@@ -35,7 +35,7 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr Xcomposite \
 		Xrender Xdamage pcre crypto fontconfig freetype m ssl z expat \
 		atk-1.0 pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo glitz png \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 gtk-x11-2.0 idn pixman-1
+		gobject-2.0 gtk-x11-2.0 idn pixman-1 pthread-stubs xcb
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

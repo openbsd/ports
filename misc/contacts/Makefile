@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/11 18:27:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/10 06:33:02 kili Exp $
 
 COMMENT=		lightweight addressbook
 
 GNOME_PROJECT=		contacts
 GNOME_VERSION=		0.10
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		misc
 
@@ -26,6 +26,7 @@ WANTLIB += gnutls gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
 WANTLIB += krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png popt pthread smime3 softokn3
 WANTLIB += soup-2.4 sqlite3 ssl ssl3 tasn1 util xml2 z
+WANTLIB += pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			x11/gnome \

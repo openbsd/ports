@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2007/09/15 20:09:42 simon Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/10 06:31:45 kili Exp $
 
 COMMENT=			3D image rendering package
 
 DISTNAME=			povray-3.1g
-PKGNAME=			${DISTNAME}p0
+PKGNAME=			${DISTNAME}p1
 CATEGORIES=			graphics
 
 HOMEPAGE=			http://www.povray.org
@@ -31,7 +31,7 @@ WRKDIST=			${WRKDIR}/povray31/source/unix
 .if !${FLAVOR:L:Mno_x11}
 ALL_TARGET=                     newxwin
 USE_X11=			Yes
-WANTLIB+=			X11
+WANTLIB+=			X11 pthread-stubs xcb
 .endif
 ALL_TARGET+=			newunix
 

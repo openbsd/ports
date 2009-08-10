@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2009/06/10 19:01:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.31 2009/08/10 06:31:07 kili Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -10,8 +10,8 @@ B=		b59
 DISTFILES=	openjdk-7-ea-src-${B}-14_may_2009.zip \
 		jibx_1_1_5.zip:0
 PKGNAME=	jdk-${V}
-PKGNAME-main=	jdk-${V}${B}p0
-PKGNAME-jre=	jre-${V}${B}p0
+PKGNAME-main=	jdk-${V}${B}p1
+PKGNAME-jre=	jre-${V}${B}p1
 
 CATEGORIES=	devel/jdk java
 

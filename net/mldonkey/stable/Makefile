@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/06/20 22:05:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.26 2009/08/10 06:33:43 kili Exp $
 
 COMMENT=	e-donkey client
 CATEGORIES=	net
@@ -9,7 +9,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m z pthread \
-			freetype png jpeg charset stdc++ fontconfig
+			freetype png jpeg charset stdc++ fontconfig \
+			pthread-stubs xcb
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_DIR=		${WRKSRC}/config
 AUTOCONF_VERSION=	2.61
@@ -20,7 +21,7 @@ HOMEPAGE=	http://mldonkey.sourceforge.net/Main_Page
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mldonkey/}
 DISTNAME=	mldonkey-2.9.1
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_ARGS+=--enable-gui=newgui1

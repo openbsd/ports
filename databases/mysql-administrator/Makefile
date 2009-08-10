@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2009/03/19 22:51:01 martynas Exp $
+# $OpenBSD: Makefile,v 1.21 2009/08/10 06:31:07 kili Exp $
 
 COMMENT=	visual administration console for MySQL
 
 DISTNAME=	mysql-gui-tools-5.0r12
-PKGNAME=	mysql-administrator-1.2.12p2
+PKGNAME=	mysql-administrator-1.2.12p3
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.mysql.com/products/tools/administrator/
@@ -23,7 +23,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo cairomm-1.0
 WANTLIB += crypto expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += giomm-2.4 glibmm-2.4 glitz gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pixman-1 png
-WANTLIB += pthread sigc-2.0 ssl stdc++ util z
+WANTLIB += pthread pthread-stubs sigc-2.0 ssl stdc++ util xcb z
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:mysql-gui-common->=5:devel/mysql-gui-common

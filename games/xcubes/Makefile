@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2009/08/10 06:31:43 kili Exp $
 #
 
 COMMENT=	cube puzzle for X11
 
 DISTNAME=	xcubes-5.5.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games
 
 # License: BSD
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c pthread-stubs xcb
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/xpuzzles/}
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/14 14:08:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	free Lemmings-like game
 
 DISTNAME=	pingus-0.7.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += SDL X11 Xi c m png pthread stdc++ z
+WANTLIB += SDL X11 Xi c m png pthread pthread-stubs xcb stdc++ z
 
 MODULES=	converters/libiconv \
 		devel/scons

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/18 12:54:28 martynas Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:42 kili Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT-server =	server for the frozen-bubble bubble popping game
 
 VER =			2.2.0
 DISTNAME =		frozen-bubble-${VER}
-PKGNAME-main =		${DISTNAME}p1
+PKGNAME-main =		${DISTNAME}p2
 PKGNAME-server =	frozen-bubble-server-${VER}p1
 CATEGORIES =		games
 
@@ -46,7 +46,7 @@ LIB_DEPENDS-main =	${MODGETTEXT_LIB_DEPENDS} \
 LIB_DEPENDS-server =	${MODGETTEXT_LIB_DEPENDS} \
 			glib-2.0::devel/glib2
 
-WANTLIB-main =		SDL X11 m pango-1.0 pthread
+WANTLIB-main =		SDL X11 m pango-1.0 pthread pthread-stubs xcb
 WANTLIB-server =	c
 
 MULTI_PACKAGES =	-main -server

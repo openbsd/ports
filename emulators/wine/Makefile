@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2009/05/25 15:33:10 ariane Exp $
+# $OpenBSD: Makefile,v 1.38 2009/08/10 06:31:09 kili Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	i386 amd64
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 COMMENT =		wine enables you to run windows binaries
 
 DISTNAME =		wine-1.1.21
+PKGNAME =		${DISTNAME}p0
 
 SHARED_LIBS =		wine 0.0
 
@@ -23,7 +24,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m z pthread ssl GL GLU crypto ossaudio ncurses \
 			ICE SM X11 Xext Xpm Xxf86dga Xxf86vm gphoto2 \
-			gphoto2_port jpeg lcms png sane xslt iconv drm
+			gphoto2_port jpeg lcms png sane xslt iconv drm \
+			pthread-stubs xcb
 
 MASTER_SITES =		http://ibiblio.org/pub/linux/system/emulators/wine/ \
 			http://prdownloads.sourceforge.net/wine/

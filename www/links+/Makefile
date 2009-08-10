@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2008/10/10 23:08:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2009/08/10 06:34:56 kili Exp $
 
 COMMENT=	graphics and text browser
 
 VER=		2.2
 DISTNAME=	links-${VER}
-PKGNAME=	links+-${VER}
+PKGNAME=	links+-${VER}p0
 
 CATEGORIES=	www
 
@@ -35,7 +35,7 @@ LIB_DEPENDS+=	jpeg.>=62::graphics/jpeg \
 		tiff.>=35::graphics/tiff
 USE_X11=	Yes
 CONFIGURE_ARGS+= --with-x --enable-graphics
-WANTLIB+=	X11
+WANTLIB+=	X11 pthread-stubs xcb
 .endif
 
 NO_REGRESS=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 18:01:00 simon Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/10 06:31:41 kili Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
 COMMENT-no_x11=		rogue-like game
 
 DISTNAME=		angband-3.0.6
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=     	games
 
 HOMEPAGE=		http://www.thangorodrim.net/angband.html
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--without-x
 .else
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x
-WANTLIB+=		ICE SM X11 Xaw Xext Xmu Xt
+WANTLIB+=		ICE SM X11 Xaw Xext Xmu Xt pthread-stubs xcb
 .endif
 
 do-install:

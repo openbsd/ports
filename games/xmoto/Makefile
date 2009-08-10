@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/03 14:16:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/10 06:31:43 kili Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
 V =	 	0.5.1
 DISTNAME =	xmoto-${V}-src
-PKGNAME =	xmoto-${V}
+PKGNAME =	xmoto-${V}p0
 CATEGORIES =	games
 
 MAINTAINER =	Jonathan Armani <dbd@asystant.net>
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += GL GLU SDL X11 c m pthread stdc++ z
+WANTLIB += GL GLU SDL X11 c m pthread pthread-stubs stdc++ xcb z
 
 MODULES=	devel/gettext
 

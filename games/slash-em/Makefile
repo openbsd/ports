@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2008/01/26 19:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	dungeon explorin', hackin', game.  Hard
 DISTNAME=	se007e7f1
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c termlib
 
-PKGNAME=slash-em-3.4.3.7e7f1p1
+PKGNAME=slash-em-3.4.3.7e7f1p2
 V=	3.4.3.7e7f1
 
 WRKDIST=${WRKDIR}/slashem-0.0.7E7F1
@@ -43,7 +43,7 @@ LIB_DEPENDS=qt.2.::x11/qt2
 .else
 NETHACKCONFIG=${FILESDIR}/x-config
 USE_X11=	Yes
-WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt
+WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 .endif
 
 RUN_DEPENDS=:hackdata-*:games/hackdata

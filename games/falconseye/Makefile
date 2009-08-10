@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2008/01/26 19:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	NetHack derivative
 
 VERSION=	1.9.3
 DISTNAME=	nethack_source_331_jtp_${VERSION:S/.//g}
-PKGNAME=	falconseye-${VERSION}p2
+PKGNAME=	falconseye-${VERSION}p3
 CATEGORIES=	games x11
 EXTRACT_SUFX=	.zip
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext c curses m pthread usbhid
+WANTLIB=		X11 Xext c curses m pthread pthread-stubs usbhid xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=falconseye/}
 

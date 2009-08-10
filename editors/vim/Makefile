@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2009/07/19 20:22:01 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.101 2009/08/10 06:31:09 kili Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -8,7 +8,7 @@ REVISION=	234
 VERSION=	7.2.${REVISION}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
-PKGNAME-main=	vim-${VERSION}
+PKGNAME-main=	vim-${VERSION}p0
 PKGNAME-lang=	vim-lang-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
@@ -90,12 +90,12 @@ CONFIGURE_ARGS+=--enable-gui="motif" --with-x --enable-fontset --enable-xim
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 USE_MOTIF=	any
 USE_X11=	Yes
-WANTLIB+=	ICE SM X11 Xext Xmu Xpm Xt
+WANTLIB+=	ICE SM X11 Xext Xmu Xpm Xt pthread-stubs xcb
 .elif ${FLAVOR:L:Mathena} && \
 	!${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
 USE_X11=	Yes
-WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt
+WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 .elif ${FLAVOR:L:Mgtk2} && \
 		!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
 MAKE_FLAGS+=	'LDFLAGS=-pthread'
@@ -107,7 +107,7 @@ WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
 	 	atk-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 png expat\
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo pthread\
 		glitz Xau Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
-		Xrandr pixman-1
+		Xrandr pixman-1 pthread-stubs xcb
 .else
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif

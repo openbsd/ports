@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/04 17:45:51 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:43 kili Exp $
 
 COMMENT =	desktop geographical information system
 
 DISTNAME =	qgis_1.0.2
-PKGNAME =	${DISTNAME:L:S/_/-/}p0
+PKGNAME =	${DISTNAME:L:S/_/-/}p1
 CATEGORIES =	geo x11
 
 SHARED_LIBS =	qgis_core	0.0 \
@@ -44,7 +44,7 @@ LIB_DEPENDS =	proj::devel/proj \
 WANTLIB =	ICE SM X11 Xext Xi Xinerama Xrandr Xrender \
 		fontconfig freetype glib-2.0 gthread-2.0 iconv \
 		c intl m png pthread stdc++ z expat gobject-2.0 \
-		python2.5 sqlite3 util
+		python2.5 sqlite3 util pthread-stubs xcb
 
 pre-configure:
 		${SUBST_CMD} ${WRKSRC}/cmake/Find{GDAL,GEOS,Postgres}.cmake

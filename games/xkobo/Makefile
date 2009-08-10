@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2007/11/13 14:54:31 steven Exp $
+# $OpenBSD: Makefile,v 1.22 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=	multi-way scrolling shoot'em up for X11, addictive
 
 DISTNAME=	xkobo-1.11
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}  \
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 	
-WANTLIB=	X11 Xau Xdmcp Xext c m stdc++
+WANTLIB=	X11 Xau Xdmcp Xext c m pthread-stubs stdc++ xcb
 
 CONFIGURE_STYLE=	imake
 

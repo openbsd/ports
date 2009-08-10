@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.45 2009/06/10 06:03:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2009/08/10 06:31:08 kili Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
 
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.20.5
-PKGNAME-main=		${DISTNAME}
-PKGNAME-python= 	py-${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
+PKGNAME-python= 	py-${DISTNAME}p0
 
 CATEGORIES=		devel
 
@@ -36,7 +36,7 @@ WANTLIB-python= 	X11 Xau Xcursor Xdmcp Xext Xfixes \
                         Xdamage atk-1.0 cairo expat fontconfig \
                         freetype m z gio-2.0 glib-2.0 glitz gmodule-2.0 \
                         gobject-2.0 ncurses pango-1.0 pangocairo-1.0 \
-                        pangoft2-1.0 pcre pixman-1 png z
+                        pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb z
 
 BUILD_DEPENDS=		${RUN_DEPENDS-python}
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \

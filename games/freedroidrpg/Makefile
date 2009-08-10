@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/15 15:28:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	isometric RPG game
 
 DISTNAME=	freedroidrpg-0.12
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freedroid/}
 
-WANTLIB=	GL SDL X11 c jpeg m ogg png pthread vorbis z
+WANTLIB=	GL SDL X11 c jpeg m ogg png pthread pthread-stubs vorbis xcb z
 
 MODULES=	devel/gettext
 USE_X11=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2009/01/21 10:50:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2009/08/10 06:29:52 kili Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=	grip-3.2.0
-PKGNAME=	${DISTNAME}p12
+PKGNAME=	${DISTNAME}p13
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.nostatic.org/grip/
@@ -27,7 +27,7 @@ WANTLIB=		c freetype crypto m X11 Xft ICE Xrender stdc++ SM \
 			gdk_pixbuf-2.0 gdk-x11-2.0 gnome-2 \
 			cairo pangocairo-1.0 idn \
 			Xcursor Xext Xfixes Xi Xinerama Xrandr gnome-keyring \
-			gailutil pixman-1
+			gailutil pixman-1 pthread-stubs xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grip/}
 

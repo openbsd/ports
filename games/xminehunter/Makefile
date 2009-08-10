@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 18:01:04 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=	Motif minesweeper game
 
 DISTNAME=	xminehunter-0.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
@@ -11,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xpm Xt c m stdc++
+WANTLIB=		X11 Xext Xpm Xt c m pthread-stubs stdc++ xcb
 
 USE_X11=	Yes
 USE_MOTIF=	any

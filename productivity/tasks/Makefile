@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/30 18:16:27 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/10 06:34:09 kili Exp $
 
 COMMENT=		lightweight tasklist
 
 DISTNAME=		tasks-0.13
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://pimlico-project.org/tasks.html
@@ -23,7 +23,7 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnomevfs-2 gnutls \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png popt pthread \
-		xml2 z dbus-1 gio-2.0 soup-2.4
+		xml2 z dbus-1 gio-2.0 soup-2.4 pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			textproc/intltool

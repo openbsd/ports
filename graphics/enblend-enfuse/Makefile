@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/21 13:09:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:44 kili Exp $
 
 VMEM_WARNING =	Yes
 # and I'm not joking! - don't waste build time on the following arch
@@ -13,7 +13,7 @@ MAKE_ENV +=	CXXNOOPT=-O1
 COMMENT =	blend seams in panoramic image mosaics
 
 DISTNAME =	enblend-enfuse-3.2
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://enblend.sourceforge.net/
@@ -26,7 +26,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=	GL GLU ICE SM X11 Xi Xmu c jpeg m pthread stdc++ z
+WANTLIB =	GL GLU ICE SM X11 Xi Xmu c jpeg m pthread pthread-stubs xcb \
+		stdc++ z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=enblend/}
 

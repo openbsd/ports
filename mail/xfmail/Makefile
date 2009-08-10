@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2009/03/16 19:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2009/08/10 06:32:43 kili Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -6,7 +6,7 @@ COMMENT=		xforms-based mail application for Unix
 
 V=			1.5.3
 DISTNAME=       	xfmail-${V}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 SHARED_LIBS=		editor	1.0 \
 			mail	1.0
 MODGNU_SHARED_LIBS=	editor	'' \
@@ -28,7 +28,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		GL ICE SM X11 Xau Xdmcp Xext Xpm c m stdc++
+WANTLIB=		GL ICE SM X11 Xau Xdmcp Xext Xpm c m pthread-stubs \
+			stdc++ xcb
 
 USE_X11=		Yes
 USE_LIBTOOL=	Yes

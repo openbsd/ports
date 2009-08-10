@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2009/06/10 09:45:33 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/10 06:33:43 kili Exp $
 
 COMMENT =		graphical network monitor
 
 DISTNAME =		etherape-0.9.7
+PKGNAME=		${DISTNAME}p0
 CATEGORIES =		net
 
 HOMEPAGE =		http://etherape.sourceforge.net/
@@ -23,7 +24,8 @@ WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gconf-2 gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
 WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcap pcre pixman-1 png popt pthread ssl util xml2 z
+WANTLIB += pcap pcre pixman-1 png popt pthread pthread-stubs ssl
+WANTLIB += util xcb xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=etherape/}
 

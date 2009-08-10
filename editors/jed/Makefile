@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2007/09/16 00:44:00 merdely Exp $
+# $OpenBSD: Makefile,v 1.30 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=	text editor
 
 DISTNAME=	jed-0.99-16
-PKGNAME=	jed-0.99.16
+PKGNAME=	jed-0.99.16p0
 CATEGORIES=	editors
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 		ftp://ftp.ntua.gr/pub/lang/slang/jed/v0.99/ \
@@ -33,7 +33,7 @@ ALL_TARGET=	all getmail
 .else
 USE_X11=	Yes
 ALL_TARGET=	all getmail xjed
-WANTLIB+=	X11 Xext Xft Xrender freetype
+WANTLIB+=	X11 Xext Xft Xrender freetype pthread-stubs xcb
 .endif
 
 NO_REGRESS=	Yes

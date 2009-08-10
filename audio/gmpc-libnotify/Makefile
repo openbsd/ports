@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/23 21:19:33 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/10 06:29:52 kili Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		alternative notification pop-up, for gmpc
 
 VERSION=		0.18.0
 DISTNAME=		gmpc-libnotify-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://gmpc.wikia.com/wiki/Plugins
@@ -26,6 +27,7 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m mpd pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png z
+WANTLIB += pthread-stubs xcb
 
 MODULES=		devel/gettext
 RUN_DEPENDS=		:gmpc->=${VERSION}:audio/gmpc \

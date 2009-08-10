@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/13 17:12:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:07 kili Exp $
 
 COMMENT=	generic game engine library
 
 VERSION=	0.1.2
 DISTNAME=	flatzebra-${VERSION}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS+=	flatzebra-0.1 1.0	# .2.0
 
 CATEGORIES=	devel games
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender m usbhid sndio
+WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender m pthread-stubs sndio \
+		usbhid xcb
 
 MASTER_SITES=	http://sarrazip.com/dev/
 

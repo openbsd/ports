@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/09/28 13:55:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2009/08/10 06:33:43 kili Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT-main=	network file distribution system
@@ -6,7 +6,7 @@ COMMENT-server=	network file distribution server
 
 VERSION=	16.1h
 DISTNAME=	cvsup-snap-${VERSION}
-PKGNAME-main=	cvsup-${VERSION}p1
+PKGNAME-main=	cvsup-${VERSION}p2
 PKGNAME-server=	cvsupd-${VERSION}p0
 CATEGORIES=	net devel
 HOMEPAGE=	http://www.cvsup.org/
@@ -39,7 +39,7 @@ M3FLAGS=	 -DPREFIX=${PREFIX} -DX11BASE=${X11BASE}
 M3FLAGS+=	-DNOGUI
 .else
 USE_X11=	Yes
-WANTLIB-main=	${WANTLIB} ICE SM X11 Xaw Xext Xmu Xt 
+WANTLIB-main=	${WANTLIB} ICE SM X11 Xaw Xext Xmu Xt pthread-stubs xcb
 .endif
 
 MAKE_FLAGS=	M3FLAGS="${M3FLAGS}"

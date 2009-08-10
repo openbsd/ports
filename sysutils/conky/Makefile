@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/05/10 19:07:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 06:34:29 kili Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
 ONLY_FOR_ARCHS= amd64 arm i386 macppc sparc sparc64
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS= amd64 arm i386 macppc sparc sparc64
 COMMENT=	light-weight system monitor
 
 DISTNAME=	conky-1.7.0
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
@@ -39,7 +40,7 @@ CONFIGURE_ARGS+=--disable-double-buffer \
 		--disable-x11
 .else
 WANTLIB+=	X11 Xau Xdamage Xdmcp Xext Xfixes Xft Xrender \
-		expat fontconfig freetype
+		expat fontconfig freetype pthread-stubs xcb
 USE_X11=	Yes
 .endif
 

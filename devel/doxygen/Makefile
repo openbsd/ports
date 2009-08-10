@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2008/01/22 20:03:31 eric Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 06:31:07 kili Exp $
 
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
 
 VERSION=	1.5.4
 DISTNAME=	doxygen-${VERSION}.src
-PKGNAME-main=	doxygen-${VERSION}
+PKGNAME-main=	doxygen-${VERSION}p0
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
 CATEGORIES=	devel textproc 
 
@@ -45,7 +45,7 @@ MODULES+=	x11/qt3
 MULTI_PACKAGES+=-gui
 .endif
 
-WANTLIB-gui=	${WANTLIB} X11 Xext pthread
+WANTLIB-gui=	${WANTLIB} X11 Xext pthread pthread-stubs xcb
 LIB_DEPENDS-gui=${MODQT_LIB_DEPENDS} \
 		${LIB_DEPENDS}
 RUN_DEPENDS-gui=:doxygen-${VERSION}:${BUILD_PKGPATH}

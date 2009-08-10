@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 18:01:02 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:42 kili Exp $
 
 COMMENT=	clone of atari game
 DISTNAME=	moon-lander-1.0
-PKGNAME=	moonlander-1.0
+PKGNAME=	moonlander-1.0p0
 CATEGORIES=	games x11
 MASTER_SITES=	http://downloads.daveblood.com/lunar_lander/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		SDL X11 Xext c m pthread usbhid
+WANTLIB=		SDL X11 Xext c m pthread pthread-stubs usbhid xcb
 
 LIB_DEPENDS=	SDL_image::devel/sdl-image \
 		SDL_mixer::devel/sdl-mixer

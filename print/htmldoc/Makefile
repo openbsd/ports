@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2009/01/16 07:52:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/08/10 06:34:09 kili Exp $
 
 COMMENT=	convert HTML pages to PDF/PS format
 
 V=			1.8.27
 DISTNAME=		htmldoc-${V}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=     	print www
 
 HOMEPAGE=		http://www.htmldoc.org/
@@ -34,7 +34,7 @@ LIB_DEPENDS=		jpeg.>=62::graphics/jpeg \
 			png.>=2::graphics/png
 .else
 LIB_DEPENDS=		fltk.>=1,fltk_images.>=1::x11/fltk
-WANTLIB+=		X11 Xau Xdmcp Xext Xpm jpeg png
+WANTLIB+=		X11 Xau Xdmcp Xext Xpm jpeg png pthread-stubs xcb
 USE_X11=		Yes
 .endif
 

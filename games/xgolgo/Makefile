@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2007/12/07 15:58:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/08/10 06:31:43 kili Exp $
 #
 
 COMMENT=	watch what you are doing -- are you hostile
 
 DISTNAME=	xeyes-g
-PKGNAME=	xgolgo-1.0p0
+PKGNAME=	xgolgo-1.0p1
 CATEGORIES=	games
 
 # BSD
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m pthread-stubs xcb
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 

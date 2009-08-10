@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2009/03/15 14:39:02 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/10 06:31:42 kili Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	educational game for children
 
 DISTNAME=	gcompris-8.4.7
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games education
 
 HOMEPAGE=	http://gcompris.net/
@@ -25,7 +25,8 @@ WANTLIB=	Xau Xdmcp X11 Xext Xrender Xcomposite atk-1.0 c cairo z \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 util pcre \
 		pangoft2-1.0 pixman-1 png pthread Xxf86vm expat Xcursor \
-		Xfixes Xi Xinerama Xrandr art_lgpl_2 gailutil gio-2.0
+		Xfixes Xi Xinerama Xrandr art_lgpl_2 gailutil gio-2.0 \
+		pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		lang/python \

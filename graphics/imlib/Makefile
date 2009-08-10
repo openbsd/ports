@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2009/01/09 17:43:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2009/08/10 06:31:44 kili Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	image manipulation library for X11
 
 V=		1.9.14
 DISTNAME=	imlib-${V}
-PKGNAME=	imlib-${V}p7
+PKGNAME=	imlib-${V}p8
 SHARED_LIBS=	Imlib		19.14	\
 		gdk_imlib	19.14
 CATEGORIES=	graphics devel
@@ -23,7 +23,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xi c glib gmodule m z Xau Xdmcp
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xi c glib gmodule m \
+			pthread-stubs xcb z
 
 VMEM_WARNING=	Yes
 

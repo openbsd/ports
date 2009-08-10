@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2008/09/15 21:58:19 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.39 2009/08/10 06:29:52 kili Exp $
 
 COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
 COMMENT-xmms=	XMMS input plugin for AAC files
 V=		2.6.1
 DISTNAME=	faad2-${V}
 PKGNAME-main=	faad-${V}
-PKGNAME-xmms=	faad-xmms-${V}
+PKGNAME-xmms=	faad-xmms-${V}p0
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
 SHARED_LIBS +=	faad                 2.0      # .0.0
@@ -52,7 +52,7 @@ LIB_DEPENDS-xmms=	xmms.>=3::audio/xmms \
 RUN_DEPENDS-xmms=	::audio/xmms
 WANTLIB-xmms=		${WANTLIB} \
 			X11 Xau Xdmcp Xext Xi iconv intl glib \
-			gmodule gtk gdk
+			gmodule gtk gdk pthread-stubs xcb
 WANTLIB-main=		${WANTLIB} c
 
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/02 12:32:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:44 kili Exp $
 
 COMMENT=	GL Extension Wrangler library
 
 DISTNAME=	glew-1.5.1-src
-PKGNAME=	${DISTNAME:S/-src//}p0
+PKGNAME=	${DISTNAME:S/-src//}p1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=glew/}
 EXTRACT_SUFX=	.tgz
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	GL GLU X11 Xext Xi Xmu c m
+WANTLIB=	GL GLU X11 Xext Xi Xmu c m pthread-stubs xcb
 
 WRKDIST=	${WRKDIR}/glew
 

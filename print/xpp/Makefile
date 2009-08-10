@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/05/22 13:51:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/10 06:34:09 kili Exp $
 
 COMMENT=		X Printing Panel
 
 DISTNAME=		xpp-1.5
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		print sysutils
 
 HOMEPAGE=		http://cups.sourceforge.net/xpp/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xdmcp Xext asn1 c crypto gcrypt gnutls
-WANTLIB += gpg-error gssapi krb5 m pthread stdc++ z
+WANTLIB += gpg-error gssapi krb5 m pthread pthread-stubs stdc++ xcb z
 
 MODULES=		devel/gettext
 

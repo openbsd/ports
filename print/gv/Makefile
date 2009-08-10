@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2009/03/12 18:13:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2009/08/10 06:34:08 kili Exp $
 
 COMMENT= 	PostScript and PDF previewer
 
 DISTNAME=	gv-3.5.8
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 CATEGORIES=	print
 
 HOMEPAGE=	http://wwwthep.physik.uni-mainz.de/~plass/gv/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xmu Xp Xpm Xt c m
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xmu Xp Xpm Xt c m pthread-stubs xcb
 
 LIB_DEPENDS=	Xaw3d.>=6.1::x11/Xaw3d
 RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu

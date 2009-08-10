@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2007/11/14 09:43:40 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2009/08/10 06:33:02 kili Exp $
 
 COMMENT=	view and manipulate contents of a tar file
 
 DISTNAME=	xtar-1.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	misc
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m pthread-stubs xcb
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes

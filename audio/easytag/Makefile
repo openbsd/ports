@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2009/01/30 03:26:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2009/08/10 06:29:52 kili Exp $
 
 COMMENT=		tag editor for various audio file formats
 
 DISTNAME=		easytag-2.1
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://easytag.sourceforge.net/
@@ -24,7 +24,7 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 			cairo expat fontconfig freetype gio-2.0 glib-2.0 \
 			glitz gmodule-2.0 gobject-2.0 m ogg pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
-			stdc++ z
+			pthread-stubs stdc++ xcb z
 
 RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=		id3.>=3::audio/id3lib \

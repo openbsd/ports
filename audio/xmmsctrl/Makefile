@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/10/26 20:22:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/10 06:29:53 kili Exp $
 
 COMMENT=	small utility to control XMMS from the command line
 
 DISTNAME=	xmmsctrl-1.9
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.cs.aau.dk/~adavid/utils/
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	xmms::audio/xmms
-WANTLIB=	X11 Xext Xi c gdk glib gmodule gtk m
+WANTLIB=	X11 Xext Xi c gdk glib gmodule gtk m pthread-stubs xcb
 
 MODULES=	devel/gettext
 

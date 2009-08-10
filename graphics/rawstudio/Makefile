@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/05/28 19:12:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:45 kili Exp $
 
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.2
+PKGNAME =	${DISTNAME}p0
 
 CATEGORIES =	graphics
 
@@ -27,7 +28,7 @@ WANTLIB =       X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
                 Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
                 fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
                 gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
-                pangoft2-1.0 pixman-1 pthread stdc++ z
+                pangoft2-1.0 pixman-1 pthread pthread-stubs stdc++ xcb z
 
 LIB_DEPENDS +=	dbus-1::x11/dbus \
 		exiv2::graphics/exiv2 \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/12 08:30:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/10 06:34:29 kili Exp $
 
 COMMENT=	GTK+2 secure notes manager
 
 DISTNAME=	gringotts-1.2.9
 CATEGORIES=	security
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 HOMEPAGE=	http://gringotts.berlios.de/
 
@@ -20,7 +20,7 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += z
+WANTLIB += pthread-stubs xcb z
 
 MASTER_SITES=	http://download.berlios.de/gringotts/
 

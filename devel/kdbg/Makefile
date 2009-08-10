@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2007/11/13 14:06:21 steven Exp $
+# $OpenBSD: Makefile,v 1.25 2009/08/10 06:31:07 kili Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	graphical debugger for KDE
 
 DISTNAME=	kdbg-1.2.5
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	devel
 HOMEPAGE=	http://members.nextra.at/johsixt/kdbg.html
 
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	art_lgpl_2 jpeg ICE SM X11 Xext Xrender c m \
-		fam rpcsvc png pthread stdc++ util z idn Xau Xdmcp
+		fam rpcsvc png pthread stdc++ util z idn Xau Xdmcp \
+		pthread-stubs xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kdbg/}
 

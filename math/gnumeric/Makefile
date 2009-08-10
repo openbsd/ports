@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2009/06/19 09:24:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2009/08/10 06:32:43 kili Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.8.4
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 
 SHARED_LIBS +=	spreadsheet     0.0
 CATEGORIES=    		math
@@ -26,8 +26,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
 		gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre perl pixman-1 png popt pthread ssl util z \
-		avahi-client avahi-common avahi-glib
+		pcre perl pixman-1 png popt pthread pthread-stubs ssl util xcb \
+		z avahi-client avahi-common avahi-glib
 
 MODULES=		devel/gettext \
 			x11/gnome \

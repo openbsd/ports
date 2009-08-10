@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2009/06/28 14:36:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2009/08/10 06:32:42 kili Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -8,8 +8,8 @@ COMMENT-plugins=	additionnal plugins for evolution
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.24.5
 
-PKGNAME-main=		${DISTNAME}p16
-PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p10
+PKGNAME-main=		${DISTNAME}p17
+PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p11
 
 CATEGORIES=		mail
 
@@ -47,7 +47,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		plc4 plds4 png popt sqlite3 ssl ssl3 stdc++ tasn1 \
 		util xml2 z avahi-client avahi-common avahi-glib \
-		c pthread
+		c pthread pthread-stubs xcb
 
 WANTLIB-main=	${WANTLIB} sasl2
 

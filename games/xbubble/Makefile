@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2007/12/07 15:59:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=	x bust a move clone
 
 DISTNAME=	xbubble-0.5.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.nongnu.org/xbubble/
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 c m z
+WANTLIB=		X11 c m pthread-stubs xcb z
 
 MASTER_SITES=		ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/ \
 			http://gentoo.osuosl.org/distfiles/

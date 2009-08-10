@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/15 11:42:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=	GTK+2 tool to edit subtitles
 
 DISTNAME=	subtitleeditor-0.13.6
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	graphics editors
 
 HOMEPAGE=	http://kitone.free.fr/subtitleeditor/
@@ -20,11 +20,11 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xcomposite Xdamage \
 		Xrender atk-1.0 atkmm-1.6 c cairo cairomm-1.0 expat \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gdkmm-2.4 glade-2.0 glib-2.0 glibmm-2.4 glitz \
-		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
+		gdkmm-2.4  gio-2.0 giomm-2.4 glade-2.0 glib-2.0 glibmm-2.4 \
+		glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pangomm-1.4 pixman-1 png pthread sigc-2.0 stdc++ \
-		xml2 z gio-2.0 giomm-2.4
+		pangomm-1.4 pixman-1 png pthread pthread-stubs \
+		sigc-2.0 stdc++ xcb xml2 z
 
 BUILD_DEPENDS=	:gstreamer-plugins-good-*:multimedia/gstreamer-0.10/plugins-good \
 		:iso-codes-*:devel/iso-codes

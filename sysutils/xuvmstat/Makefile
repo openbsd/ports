@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 21:14:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 06:34:30 kili Exp $
 
 COMMENT=	graphical display for the current uvm status
 
-PKGNAME=	xuvmstat-20050909
 DISTNAME=	xuvmstat20050909
+PKGNAME=	xuvmstat-20050909p0
 CATEGORIES=     sysutils x11
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
-WANTLIB=		X11 c 
+WANTLIB=		X11 c pthread-stubs xcb
 
 MASTER_SITES=	http://www.netbsd.org/~chuck/gz/
 

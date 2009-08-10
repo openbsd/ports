@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/10 06:31:44 kili Exp $
 
 DISTNAME=	cqcam-0.91
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	graphics
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_FLAGS=	CLIENTS="cli webcam"
 .else
-WANTLIB+=	X11 Xext Xi glib gmodule iconv intl
+WANTLIB+=	X11 Xext Xi glib gmodule iconv intl pthread-stubs xcb
 USE_X11=	Yes
 LIB_DEPENDS+=	gtk.>=1,gdk.>=1::x11/gtk+
 LIB_DEPENDS+=	xview,olgx::x11/xview/lib

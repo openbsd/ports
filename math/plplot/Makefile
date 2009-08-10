@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/06/28 16:17:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2009/08/10 06:32:43 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,11 +18,11 @@ SHARED_LIBS=	csirocsa	2.0	\
 		plplottcltkd	12.0	\
 		tclmatrixd	12.0
 
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-c++ =	plplot-c++-${VERSION}p0
-PKGNAME-f77=	plplot-f77-${VERSION}p0
-PKGNAME-octave=	plplot-octave-${VERSION}p0
-PKGNAME-tcl=	plplot-tcl-${VERSION}
+PKGNAME-main=	${DISTNAME}p1
+PKGNAME-c++ =	plplot-c++-${VERSION}p1
+PKGNAME-f77=	plplot-f77-${VERSION}p1
+PKGNAME-octave=	plplot-octave-${VERSION}p1
+PKGNAME-tcl=	plplot-tcl-${VERSION}p0
 
 CATEGORIES=	math graphics
 
@@ -84,7 +84,7 @@ MULTI_PACKAGES=	-main -c++ -f77
 #.endif
 
 myWANTLIB=	m z freetype Xau Xdmcp Xrender X11 Xext SM ICE expat \
-		fontconfig pixman-1 png
+		fontconfig pixman-1 png pthread-stubs xcb
 
 WANTLIB-main=		${myWANTLIB} c
 WANTLIB-c++ =		${myWANTLIB}

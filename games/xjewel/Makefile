@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2009/08/10 06:31:43 kili Exp $
 
 COMMENT=	dropping jewels game for X11
 
 DISTNAME=	xjewel-1.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games
 
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xau Xdmcp Xext c
+WANTLIB=		X11 Xau Xdmcp Xext c pthread-stubs xcb
 
 MAKE_FLAGS=		HSCORE_FILE=/var/games/xjewel.scores \
 			USERDEFS='-DICON_WINDOW -DUSE_SELECT -DGETPWENT' \

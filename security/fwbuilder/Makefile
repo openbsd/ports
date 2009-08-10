@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2009/06/19 11:12:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/10 06:34:29 kili Exp $
 
 COMMENT=	firewall GUI
 DISTNAME=	fwbuilder-3.0.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.fwbuilder.org/
@@ -45,6 +45,7 @@ USE_X11=	Yes
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB += freetype glib-2.0 gthread-2.0 iconv intl m netsnmp
 WANTLIB += png pthread stdc++ util xml2 xslt z expat gobject-2.0
+WANTLIB += pthread-stubs xcb
 
 post-install:
 	chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/*

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2009/06/10 20:27:09 kili Exp $
+# $OpenBSD: Makefile,v 1.49 2009/08/10 06:31:44 kili Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.6.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	gimp-2.0	266.0	\
 		gimpbase-2.0	266.0	\
 		gimpcolor-2.0	266.0	\
@@ -56,7 +56,8 @@ WANTLIB=	ICE SM X11 Xext Xmu Xpm Xrender Xt atk-1.0 c \
 		Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr \
 		expat Xcomposite Xdamage gthread-2.0 pcre \
 		ORBit-2 bz2 croco-0.6 crypto gconf-2 gio-2.0 \
-		gsf-1 rsvg-2 ssl util babl-0.0
+		gsf-1 rsvg-2 ssl util babl-0.0 \
+		pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		textproc/intltool

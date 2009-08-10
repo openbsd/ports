@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2009/07/24 14:37:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/10 06:31:08 kili Exp $
 
 COMMENT=		file editor/viewer/analyzer for executables
 
 DISTNAME=		ht-2.0.17
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		editors
 
 HOMEPAGE=		http://hte.sourceforge.net/
@@ -40,7 +40,7 @@ USE_X11=		Yes
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			X11BASE=${X11BASE}
 CONFIGURE_ARGS+=	--enable-x11-textmode
-WANTLIB+=		X11
+WANTLIB+=		X11 pthread-stubs xcb
 .endif
 
 do-install:

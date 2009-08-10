@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/06/19 12:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2009/08/10 06:34:09 kili Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	personal and small-business financial-accounting software
 
 GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.2.8
-PKGNAME =	${DISTNAME}p4
+PKGNAME =	${DISTNAME}p5
 
 SHARED_LIBS +=	gnc-backend-file-utils	0.0	# .0.0
 SHARED_LIBS +=	gnc-business-ledger	0.0	# .0.0
@@ -37,7 +37,7 @@ WANTLIB =	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomeui-2 gnomevfs-2 gobject-2.0 gsf-1 gsf-gnome-1 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png popt pthread ssl stdc++ util xml2 z \
+		pixman-1 png popt pthread pthread-stubs ssl stdc++ util xcb xml2 z \
 		avahi-client avahi-common avahi-glib
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnucash/} \

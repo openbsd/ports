@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/11 10:53:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 06:30:30 kili Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		circuit drawing and schematic capture
 
 BASEVER=		3.4
 DISTNAME=		xcircuit-${BASEVER}.27
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		cad
 
 HOMEPAGE=		http://opencircuitdesign.com/xcircuit/
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m z ICE Xt X11 SM Xpm tcl84
+WANTLIB=		c m z ICE Xt X11 SM Xpm pthread-stubs tcl84 xcb
 
 MASTER_SITES=		${HOMEPAGE}archive/
 EXTRACT_SUFX=		.tgz

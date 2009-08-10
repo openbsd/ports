@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2008/11/23 00:42:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2009/08/10 06:29:52 kili Exp $
 
 COMMENT=	full featured GTK Napster client
 DISTNAME=	lopster-1.2.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lopster/}
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	X11 Xext Xi c glib gmodule m pthread z
+WANTLIB=	X11 Xext Xi c glib gmodule m pthread pthread-stubs xcb z
 
 MODULES=	devel/gettext
 

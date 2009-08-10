@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2009/05/14 13:39:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2009/08/10 06:31:44 kili Exp $
 
 COMMENT=	Gtk-based graphic file viewer
 
 DISTNAME=	gqview-2.1.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gqview/}
 
@@ -19,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png z
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
+		pthread-stubs xcb z
 
 MODULES=	devel/gettext
 

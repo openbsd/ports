@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/02/09 10:45:36 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/10 06:34:29 kili Exp $
 
 COMMENT =	Qt Cryptographic Architecture
 SHARED_ONLY =	Yes
 
 DISTNAME =	qca-2.0.0
-PKGNAME =	qca2-2.0.0
+PKGNAME =	qca2-2.0.0p0
 CATEGORIES =	security
 SHARED_LIBS +=	qca	3.0
 
@@ -31,6 +31,6 @@ CONFIGURE_ENV +=	QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR}
 WANTLIB += QtGui
 WANTLIB += ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += c fontconfig freetype glib-2.0 gthread-2.0 iconv m
-WANTLIB += png pthread stdc++ z
+WANTLIB += png pthread pthread-stubs stdc++ xcb z
 			
 .include <bsd.port.mk>

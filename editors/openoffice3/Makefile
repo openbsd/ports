@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/07/06 23:33:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2009/08/10 06:31:08 kili Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -10,8 +10,8 @@ VERSION=	3.1.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOO310_m11
 PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}p6
-PKGNAME-kde=	openoffice-kde-${VERSION}
+PKGNAME-main=	openoffice-${VERSION}p7
+PKGNAME-kde=	openoffice-kde-${VERSION}p0
 PKGNAME-java=	openoffice-java-${VERSION}p1
 CATEGORIES=	editors productivity
 
@@ -103,14 +103,16 @@ WANTLIB-main=	ICE SM X11 Xau Xcomposite Xdamage Xdmcp Xext Xrender Xcursor \
 		Xfixes Xi Xinerama Xrandr atk-1.0 c cairo crypto expat \
 		fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 iconv intl jpeg m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 png pthread rasqal ssl util xml2 z icui18n icule 
+		pangoft2-1.0 pixman-1 png pthread rasqal ssl util xml2 z icui18n icule \
+		pthread-stubs xcb
 RUN_DEPENDS-main=	:desktop-file-utils-*:devel/desktop-file-utils
 
 MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	::editors/openoffice3
 LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
 			kabc,kdecore,kdeui,kio::x11/kde/libs3
-WANTLIB-kde=		X11 Xau Xdmcp Xext Xrandr Xrender estdc++ m
+WANTLIB-kde=		X11 Xau Xdmcp Xext Xrandr Xrender estdc++ m \
+			pthread-stubs xcb
 
 .if !${FLAVOR:L:Mno_java}
 MODULES+=		java

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/11 18:27:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/10 06:34:30 kili Exp $
 
 COMMENT=		send small notifications to your desktop
 
 DISTNAME=		notification-daemon-0.4.0
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.galago-project.org/
@@ -20,7 +20,7 @@ WANTLIB=	ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor Xdamage \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png pthread startup-notification-1 xml2 z
+		png pthread pthread-stubs startup-notification-1 xcb xml2 z
 
 MASTER_SITES=		${HOMEPAGE}/files/releases/source/notification-daemon/
 EXTRACT_SUFX=		.tar.bz2
