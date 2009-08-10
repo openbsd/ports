@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/03 18:23:27 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/10 22:02:52 sthen Exp $
 
 COMMENT=	graphical diff and merge tool
 
@@ -17,7 +17,8 @@ MASTER_SITES=	${MASTER_SITE_GNOME:=sources/meld/1.3/}
 
 USE_GMAKE=	Yes
 
-MODULES=	lang/python
+MODULES=	lang/python \
+		textproc/intltool
 
 BUILD_DEPENDS+=	::textproc/rarian
 
