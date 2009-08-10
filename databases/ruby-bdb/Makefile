@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/06/22 17:00:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/10 16:29:23 msf Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,8 +20,8 @@ MASTER_SITES=		ftp://moulon.inra.fr/pub/ruby/
 
 MODULES= 		lang/ruby
 
-LIB_DEPENDS=		lib/db4/db.>=4:db->=4,<5:databases/db/v4 \
-			ruby.>=1::lang/ruby
+LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS} \
+			lib/db4/db.>=4:db->=4,<5:databases/db/v4
 
 CONFIGURE_STYLE=	ruby extconf
 CONFIGURE_ARGS=		--with-db-include="${PREFIX}/include/db4" \

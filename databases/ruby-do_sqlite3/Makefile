@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/30 01:06:45 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/10 16:29:23 msf Exp $
 
 SHARED_ONLY =	Yes
 
@@ -24,7 +24,7 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		::databases/ruby-data_objects
 
 WANTLIB =		c m
-LIB_DEPENDS =		ruby::lang/ruby \
+LIB_DEPENDS =		${MODRUBY_LIB_DEPENDS} \
 			sqlite3::databases/sqlite3
 
 REGRESS_DEPENDS =	::devel/ruby-rake \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/22 17:00:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/10 16:29:23 msf Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,8 +23,8 @@ MODULES=	lang/ruby
 
 WANTLIB=	c m
 
-LIB_DEPENDS=	mysqlclient::databases/mysql \
-		ruby::lang/ruby
+LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS} \
+		mysqlclient::databases/mysql
 
 CONFIGURE_STYLE=ruby extconf
 

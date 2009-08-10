@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/07/13 20:50:19 claudio Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/10 16:29:23 msf Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,8 +22,8 @@ MASTER_SITES=   ${MASTER_SITE_RUBYFORGE:=ruby-pg/}
 
 MODULES=	lang/ruby
 
-LIB_DEPENDS=	pq.>=2::databases/postgresql \
-		ruby.>=1::lang/ruby
+LIB_DEPENDS=	${MODRUBY_LIB_DEPENDS} \
+		pq.>=2::databases/postgresql
 
 CONFIGURE_STYLE=ruby gem
 
