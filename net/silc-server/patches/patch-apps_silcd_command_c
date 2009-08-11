@@ -1,0 +1,12 @@
+$OpenBSD: patch-apps_silcd_command_c,v 1.3 2009/08/11 21:23:14 sthen Exp $
+--- apps/silcd/command.c.orig	Tue Aug 11 15:10:48 2009
++++ apps/silcd/command.c	Tue Aug 11 15:11:07 2009
+@@ -2379,7 +2379,7 @@ SILC_SERVER_CMD_FUNC(join)
+        channel will be global, based on our router name. */
+     if (!serv[0] && !server->config->local_channels) {
+       if (!server->standalone) {
+-	silc_snprintf(serv, sizeof(serv), server->router->server_name);
++	silc_snprintf(serv, sizeof(serv), "%s", server->router->server_name);
+       } else {
+ 	SilcServerConfigRouter *router;
+ 	router = silc_server_config_get_primary_router(server);

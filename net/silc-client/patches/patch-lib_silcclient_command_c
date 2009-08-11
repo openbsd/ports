@@ -1,0 +1,39 @@
+$OpenBSD: patch-lib_silcclient_command_c,v 1.1 2009/08/11 21:20:02 sthen Exp $
+--- lib/silcclient/command.c.orig	Tue Aug 11 15:03:47 2009
++++ lib/silcclient/command.c	Tue Aug 11 15:05:30 2009
+@@ -956,7 +956,7 @@ SILC_FSM_STATE(silc_client_command_topic)
+     }
+ 
+     if (client->internal->params->full_channel_names)
+-      silc_snprintf(tmp, sizeof(tmp), conn->current_channel->channel_name);
++      silc_snprintf(tmp, sizeof(tmp), "%s", conn->current_channel->channel_name);
+     else
+       silc_snprintf(tmp, sizeof(tmp), "%s%s%s",
+ 		    conn->current_channel->channel_name,
+@@ -2144,7 +2144,7 @@ SILC_FSM_STATE(silc_client_command_kick)
+     }
+ 
+     if (client->internal->params->full_channel_names)
+-      silc_snprintf(tmp, sizeof(tmp), conn->current_channel->channel_name);
++      silc_snprintf(tmp, sizeof(tmp), "%s", conn->current_channel->channel_name);
+     else
+       silc_snprintf(tmp, sizeof(tmp), "%s%s%s",
+ 		    conn->current_channel->channel_name,
+@@ -2554,7 +2554,7 @@ SILC_FSM_STATE(silc_client_command_leave)
+     }
+ 
+     if (client->internal->params->full_channel_names)
+-      silc_snprintf(tmp, sizeof(tmp), conn->current_channel->channel_name);
++      silc_snprintf(tmp, sizeof(tmp), "%s", conn->current_channel->channel_name);
+     else
+       silc_snprintf(tmp, sizeof(tmp), "%s%s%s",
+ 		    conn->current_channel->channel_name,
+@@ -2621,7 +2621,7 @@ SILC_FSM_STATE(silc_client_command_users)
+     }
+ 
+     if (conn->client->internal->params->full_channel_names)
+-      silc_snprintf(tmp, sizeof(tmp), conn->current_channel->channel_name);
++      silc_snprintf(tmp, sizeof(tmp), "%s", conn->current_channel->channel_name);
+     else
+       silc_snprintf(tmp, sizeof(tmp), "%s%s%s",
+ 		    conn->current_channel->channel_name,
