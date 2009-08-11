@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/23 20:56:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/11 08:42:09 ajacoutot Exp $
 
 COMMENT=	X Render extension test suite
 
 DISTNAME=	rendercheck-1.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.freedesktop.org/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xrender c
+WANTLIB=	X11 Xau Xdmcp Xrender c pthread-stubs xcb
 
 MASTER_SITES=	ftp://ftp.x.org/pub/individual/app/ \
 		ftp://ftp.gwdg.de/pub/x11/x.org/pub/individual/app/ \

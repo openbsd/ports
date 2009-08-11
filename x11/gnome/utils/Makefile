@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2009/08/11 08:39:39 ajacoutot Exp $
 
 COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p13
+PKGNAME=		${DISTNAME}p14
 
 SHARED_LIBS +=  gdict-1.0      6.0      # .6.3
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common \
-		avahi-glib bonobo-2 bonobo-activation \
+		avahi-glib bonobo-2 bonobo-activation pthread-stubs xcb \
 		bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 expat \
 		fontconfig freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/07/28 16:00:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/11 08:39:39 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,7 +6,7 @@ COMMENT=	powerful desktop search tool and indexer
 # as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.94
-PKGNAME=	tracker-search-${VERSION}p3
+PKGNAME=	tracker-search-${VERSION}p4
 
 SHARED_LIBS +=	stemmer              0.0      # .694.0
 SHARED_LIBS +=	tracker-common       0.0      # .694.0
@@ -41,7 +41,7 @@ WANTLIB += gtk-x11-2.0 idn jpeg krb5 m nspr4 nss3 ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png popt pthread smime3 softokn3 soup-2.4 ssl ssl3
 WANTLIB += startup-notification-1 tasn1 tiff totem-plparser util
-WANTLIB += xml2 xslt z
+WANTLIB += xml2 xslt z pthread-stubs xcb
 WANTLIB += avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS=		vorbis::audio/libvorbis \

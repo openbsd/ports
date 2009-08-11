@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/01/16 08:06:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/11 08:42:08 ajacoutot Exp $
 
 COMMENT=	small EWMH compliant pager
 
 DISTNAME=	netwmpager-1.11
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://onion.dynserv.net/~timo/netwmpager.html
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xft Xrender expat z c m \
-			fontconfig freetype 
+			fontconfig freetype pthread-stubs xcb
 
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/
 EXTRACT_SUFX=	.tar.bz2

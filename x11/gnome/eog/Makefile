@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2009/06/11 18:38:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		2.24.3.1
-PKGNAME=		${DISTNAME}p9
+PKGNAME=		${DISTNAME}p10
 
 CATEGORIES=		graphics
 
@@ -24,7 +24,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png popt pthread ssl startup-notification-1 \
-		util xml2 z
+		util xml2 z pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			x11/gnome \

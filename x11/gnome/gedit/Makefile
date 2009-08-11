@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2009/07/12 20:33:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2009/08/11 08:39:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,7 +12,7 @@ COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 CATEGORIES=		editors
 
 HOMEPAGE=		http://projects.gnome.org/gedit/
@@ -29,7 +29,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png pthread stdc++ util xml2 z
+		png pthread stdc++ util xml2 z pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		lang/python \

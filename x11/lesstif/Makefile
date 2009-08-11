@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2009/03/07 15:37:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2009/08/11 08:42:08 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
 COMMENT=	API-compatible clone of the Motif toolkit
 
 DISTNAME=	lesstif-0.92.6
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	Mrm	1.2 \
 		Uil	1.2 \
 		Xm	1.2
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xt c
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xt c pthread-stubs xcb
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2009/06/28 10:54:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
 GNOME_PROJECT=		gok
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p10
+PKGNAME=		${DISTNAME}p11
 
 HOMEPAGE=		http://live.gnome.org/Gok
 
@@ -24,7 +24,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
 		pthread ssl startup-notification-1 util xml2 z sndio \
-		avahi-client avahi-common avahi-glib
+		avahi-client avahi-common avahi-glib pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		x11/gnome \

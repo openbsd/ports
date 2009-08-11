@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/01/16 07:52:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/11 08:42:08 ajacoutot Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
 DISTNAME=	mrxvt-0.5.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://materm.sourceforge.net
@@ -23,7 +23,7 @@ LIB_DEPENDS=	jpeg.>=62.::graphics/jpeg \
 		png.>=2.::graphics/png
 
 WANTLIB=	ICE SM X11 Xrender Xpm c fontconfig freetype util m z \
-		Xft Xau Xdmcp expat
+		Xft Xau Xdmcp expat pthread-stubs xcb
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-menubar \

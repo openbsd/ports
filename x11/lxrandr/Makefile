@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/23 15:53:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/11 08:42:08 ajacoutot Exp $
 
 COMMENT=	simple xrandr config tool
 
 DISTNAME=	lxrandr-0.1
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	x11 sysutils
 
 HOMEPAGE=	http://lxde.org/
@@ -19,7 +21,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png z
+		pixman-1 png z pthread-stubs xcb
 
 MODULES=	devel/gettext
 

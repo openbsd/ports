@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2009/06/24 20:40:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2009/08/11 08:40:40 ajacoutot Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -6,8 +6,8 @@ CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
-PKGNAME-main =		${DISTNAME}p0
-PKGNAME-svn =		kdesvn-${VERSION}p2
+PKGNAME-main =		${DISTNAME}p1
+PKGNAME-svn =		kdesvn-${VERSION}p3
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -33,7 +33,7 @@ SEPARATE_BUILD =	flavored
 
 WANTLIB	=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg m \
 		png pthread stdc++ util z iconv idn \
-		Xau Xdmcp fam rpcsvc intl
+		Xau Xdmcp fam rpcsvc intl pthread-stubs xcb
 
 WANTLIB-main =	${WANTLIB} \
 		kabc kdeprint khtml kutils vcard kresources kparts kspell kjs \

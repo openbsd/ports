@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/19 23:41:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/11 08:42:09 ajacoutot Exp $
 
 COMMENT=	Motif-based table widget
 
 DISTNAME=	xbae-4.60.4
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 
 SHARED_LIBS=	Xbae 4.60
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xmu Xp Xpm Xrender Xt
-WANTLIB += expat fontconfig freetype iconv z iconv
+WANTLIB += expat fontconfig freetype z iconv pthread-stubs xcb
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xbae/}
 

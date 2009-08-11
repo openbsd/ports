@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2007/09/15 20:04:19 merdely Exp $
+# $OpenBSD: Makefile,v 1.45 2009/08/11 08:42:07 ajacoutot Exp $
 
 COMMENT=	small & pretty window manager for 8 and more bits displays
 
 DISTNAME=		blackbox-0.70.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://blackboxwm.sourceforge.net/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xau Xdmcp Xext Xft Xrender c expat m fontconfig \
-			freetype stdc++ z
+			freetype stdc++ z pthread-stubs xcb
 
 MODULES=		converters/libiconv
 

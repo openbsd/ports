@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2008/09/07 22:58:25 brad Exp $
+# $OpenBSD: Makefile,v 1.62 2009/08/11 08:40:40 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, network applications
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdenetwork-${VERSION}
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 MODKDE_VERSION =	3.5.8
 FLAVORS =		debug
 SHARED_LIBS +=	kopete               2.0      # .1.0
@@ -25,7 +25,7 @@ SEPARATE_BUILD =	flavored
 WANTLIB =	ICE SM X11 Xext Xi Xrender Xss Xtst Xxf86vm art_lgpl_2 c \
 		crypto gdk glib gmodule gtk iconv intl jpeg m pcre pcreposix \
 		png pthread ssl stdc++ util xml2 xslt z glib-2.0 gmodule-2.0 \
-		Xau Xdmcp fam rpcsvc
+		Xau Xdmcp fam rpcsvc pthread-stubs xcb
 
 post-configure:
 	@touch ${WRKSRC}/Makefile.in

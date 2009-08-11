@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/06/11 18:38:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=	graphical bug reporting tool for GNOME
 
 GNOME_PROJECT=	bug-buddy
 GNOME_VERSION=	2.24.2
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,7 +24,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gthread-2.0 gtk-x11-2.0 krb5 kvm m nspr4 nss3 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		plc4 plds4 png popt pthread soup-2.4 sqlite3 ssl ssl3 \
-		tasn1 util xml2 z
+		tasn1 util xml2 z pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		x11/gnome \

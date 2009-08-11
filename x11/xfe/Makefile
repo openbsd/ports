@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/01/24 15:35:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/11 08:42:09 ajacoutot Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
 DISTNAME= 	xfe-1.19.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES= 	x11
 
 HOMEPAGE=	http://roland65.free.fr/xfe/
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xfe/}
 
 WANTLIB=	X11 Xau Xdmcp Xft Xrender c expat fontconfig freetype \
-		m pthread stdc++ png z
+		m pthread stdc++ png z pthread-stubs xcb
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	FOX-1.6.>=1::devel/fox

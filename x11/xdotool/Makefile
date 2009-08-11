@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/02/01 13:38:19 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/11 08:42:09 ajacoutot Exp $
 
 COMMENT=	fake keyboard and mouse input
 
 DISTNAME=	xdotool-20090126
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.semicomplete.com/projects/xdotool/
@@ -16,7 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
 USE_X11=		Yes
-WANTLIB=		X11 Xau Xdmcp Xext Xtst c
+WANTLIB=		X11 Xau Xdmcp Xext Xtst c \
+			pthread-stubs xcb
 REGRESS_IS_INTERACTIVE=	Yes
 
 do-regress:

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/06/28 10:54:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=		screen reader and magnifier for GNOME desktop
 
 GNOME_PROJECT=		gnopernicus
 GNOME_VERSION=		1.1.2
-PKGNAME=		${DISTNAME}p14
+PKGNAME=		${DISTNAME}p15
 
 SHARED_LIBS +=  srutil               0.0      # .2.0
 SHARED_LIBS +=  srconf               0.0      # .2.0
@@ -36,6 +36,7 @@ WANTLIB += glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread spi ssl util xml2 z
+WANTLIB += pthread-stubs xcb
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::x11/gnome/libgail-gnome

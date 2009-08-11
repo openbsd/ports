@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2008/09/20 17:16:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/11 08:42:08 ajacoutot Exp $
 # XXX hardcoded apm list
 
 COMMENT=	window bar for holding application launchers
 DISTNAME=	matchbox-panel-0.9.3
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 
 MASTER_SITES=	${MASTER_SITES_MATCHBOX:=matchbox-panel/0.9/}
 
@@ -13,7 +13,8 @@ RUN_DEPENDS=	:matchbox-common-*:x11/matchbox/matchbox-common \
 MODULES=	devel/gettext
 WANTLIB=	X11 Xext Xft Xrender c fontconfig freetype m z \
 		glib-2.0.>=600.0 gmodule-2.0.>=600.0 gobject-2.0.>=600.0 jpeg \
-		pango-1.0 pangoft2-1.0 pangoxft-1.0 png Xau Xdmcp expat
+		pango-1.0 pangoft2-1.0 pangoxft-1.0 png Xau Xdmcp expat \
+		pthread-stubs xcb
 
 # not all powerpc support apm(4), hence the use of ${MACHINE} and macppc
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "arm" \

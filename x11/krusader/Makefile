@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/16 00:04:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/11 08:42:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	twin panel file manager for KDE
 
 DISTNAME=	krusader-1.80.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11 x11/kde
 
 HOMEPAGE=	http://krusader.sourceforge.net/
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krusader/}
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn \
-		jpeg m pcre pcreposix png pthread rpcsvc stdc++ util z
+		jpeg m pcre pcreposix png pthread rpcsvc stdc++ util z \
+		pthread-stubs xcb
 
 PORTHOME=	${WRKDIR}
 

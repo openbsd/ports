@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=		keyboard configuration library
 
 GNOME_PROJECT=		libgnomekbd
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 
 SHARED_LIBS +=	gnomekbd             3.0      # .3.0
 SHARED_LIBS +=	gnomekbdui           3.0      # .3.0
@@ -22,7 +22,7 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png pthread xkbfile xml2 z
+		pcre pixman-1 png pthread xkbfile xml2 z pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			x11/gnome \

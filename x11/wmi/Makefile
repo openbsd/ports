@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/05/19 14:49:37 jim Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/11 08:42:09 ajacoutot Exp $
 
 COMMENT=	window manager improved - key driven window manager
 
 DISTNAME=	wmi-10
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wmi.suckless.org/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xft Xrender c expat fontconfig
-WANTLIB += freetype m stdc++ z
+WANTLIB += freetype m stdc++ z pthread-stubs xcb
 
 MASTER_SITES=	http://code.suckless.org/dl/misc/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2009/07/12 20:32:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=	PhotoBooth inspired application
 
 GNOME_PROJECT=	cheese
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p10
+PKGNAME=	${DISTNAME}p11
 
 CATEGORIES=	multimedia
 
@@ -27,7 +27,7 @@ WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gnutls gobject-2.0
 WANTLIB += gpg-error gsf-1 gssapi gthread-2.0 gtk-x11-2.0 krb5
 WANTLIB += m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png popt pthread soup-2.4
-WANTLIB += sqlite3 ssl ssl3 tasn1 util xml2 z
+WANTLIB += sqlite3 ssl ssl3 tasn1 util xml2 z pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		x11/gnome \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/10 20:42:05 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/11 08:39:39 ajacoutot Exp $
 
 COMMENT=	nautilus Python bindings
 
 GNOME_PROJECT=	nautilus-python
 GNOME_VERSION=	0.5.1
-PKGNAME=	py-nautilus-${GNOME_VERSION}p4
+PKGNAME=	py-nautilus-${GNOME_VERSION}p5
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common \
-		avahi-glib bonobo-2 \
+		avahi-glib bonobo-2 pthread-stubs xcb \
 		bonobo-activation bonoboui-2 cairo crypto dbus-1 \
 		dbus-glib-1 eel-2 expat fontconfig freetype \
 		gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \

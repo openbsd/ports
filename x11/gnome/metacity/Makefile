@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2009/08/11 08:39:39 ajacoutot Exp $
 
 COMMENT=		lightweight window manager
 
 GNOME_PROJECT=		metacity
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 SHARED_LIBS +=  metacity-private     0.0      # .0.0
 CATEGORIES=		x11
 
@@ -19,7 +19,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		dbus-1 dbus-glib-1 expat fontconfig freetype gio-2.0 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png pthread z
+		png pthread z pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			x11/gnome \

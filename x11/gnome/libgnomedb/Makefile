@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/11 08:39:38 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	database widget library with data bound widgets
 
 GNOME_PROJECT=	libgnomedb
 GNOME_VERSION=	3.0.0
-PKGNAME=	${DISTNAME}p6v0
+PKGNAME=	${DISTNAME}p7v0
 
 SHARED_LIBS +=  gnomedb-3.0          1.0      # .4.0
 SHARED_LIBS +=  gnomedb_extra-3.0    1.0      # .4.0
@@ -31,7 +31,7 @@ WANTLIB += freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnomecanvas-2
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread rpcsvc stdc++
-WANTLIB += xml2 z
+WANTLIB += xml2 z pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			x11/gnome \

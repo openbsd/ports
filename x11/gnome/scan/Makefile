@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/07/12 20:32:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/11 08:39:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,8 @@ GNOME_PROJECT=	gnome-scan
 GNOME_VERSION=	0.6.2
 CATEGORIES=	graphics
 
-PKGNAME-main=	${DISTNAME}p1
-PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}p0
+PKGNAME-main=	${DISTNAME}p2
+PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}p1
 
 SHARED_LIBS=	gnomescan	0.0 # .0.0
 
@@ -30,7 +30,7 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gdk_pixbuf-2.0  glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread z gio-2.0 \
-		dbus-1 dbus-glib-1
+		dbus-1 dbus-glib-1 pthread-stubs xcb
 
 MULTI_PACKAGES=	-main -gimp
 

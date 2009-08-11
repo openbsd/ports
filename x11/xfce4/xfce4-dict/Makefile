@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/23 19:53:03 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/11 08:38:41 ajacoutot Exp $
 
 COMMENT=	Xfce4 dictionary application
 
 XFCE_VERSION=	0.4.1
 XFCE_GOODIE=	xfce4-dict
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -23,6 +23,6 @@ WANTLIB=	ICE SM X11 Xdmcp Xrender Xdamage Xau fontconfig freetype \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 pcre \
 		pangoft2-1.0 pangocairo-1.0 cairo glitz png pthread \
 		startup-notification-1 xfce4util pixman-1 gthread-2.0 \
-		xfcegui4
+		xfcegui4 pthread-stubs xcb
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2009/07/21 12:35:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/08/11 08:39:39 ajacoutot Exp $
 
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p12
+PKGNAME=		${DISTNAME}p13
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +23,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 		gobject-2.0 gstbase-0.10 gstreamer-0.10 gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png popt pthread ssl \
+		pcre pixman-1 png popt pthread ssl pthread-stubs xcb \
 		startup-notification-1 util xkbfile xklavier xml2 z
 
 MODULES=		devel/gettext \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/11 08:39:39 ajacoutot Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
 GNOME_PROJECT=	mousetweaks
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 
 HOMEPAGE=	http://live.gnome.org/Mousetweaks/Home
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
 		Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xtst \
-		art_lgpl_2 atk-1.0 bonobo-2 \
+		art_lgpl_2 atk-1.0 bonobo-2 pthread-stubs xcb \
 		bonobo-activation bonoboui-2 c cairo dbus-1 \
 		dbus-glib-1 expat fontconfig freetype gailutil \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 \

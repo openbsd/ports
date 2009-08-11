@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/23 19:53:03 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/11 08:38:41 ajacoutot Exp $
 
 COMMENT=	Thunar media tags plugin
 
 XFCE_VERSION=	0.1.2
 XFCE_GOODIE=	thunar-media-tags-plugin
-PKGNAME=	${DISTNAME:S/-plugin//}p5
+PKGNAME=	${DISTNAME:S/-plugin//}p6
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +20,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png rpcsvc startup-notification-1 stdc++ \
-		xfce4util z
+		xfce4util z pthread-stubs xcb
 
 LIB_DEPENDS=	thunarx-1.>=4,thunar-vfs-1.>=4::x11/xfce4/thunar \
 		tag.>=6,tag_c.>=1::audio/taglib

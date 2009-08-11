@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2009/03/16 12:53:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2009/08/11 08:40:40 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeutils-${VERSION}
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	khexeditcommon       1.0      # .0.0
 SHARED_LIBS +=	kcmlaptop            1.0      # .0.0
@@ -25,7 +25,7 @@ SEPARATE_BUILD =	flavored
 
 WANTLIB =	ICE SM X11 Xext Xrender Xtst art_lgpl_2 c crypto jpeg m \
 		png pthread stdc++ util z gmodule intl iconv Xi kvm glib \
-		idn Xau Xdmcp fam rpcsvc Xss
+		idn Xau Xdmcp fam rpcsvc Xss pthread-stubs xcb
 
 
 .include <bsd.port.mk>

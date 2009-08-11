@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2009/06/03 17:26:00 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2009/08/11 08:42:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GTK+2 Python bindings
 
 GNOME_PROJECT=	pygtk
 GNOME_VERSION=	2.14.1
-PKGNAME=	py-gtk2-${VERSION}p0
+PKGNAME=	py-gtk2-${VERSION}p1
 
 CATEGORIES=	x11
 
@@ -23,7 +23,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xml2
-WANTLIB += z
+WANTLIB += z pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		lang/python \

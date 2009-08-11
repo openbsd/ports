@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/01/03 23:02:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/11 08:42:09 ajacoutot Exp $
 
 COMMENT=		full-screen X11 task-switcher like Apple's Expose
 
 DISTNAME=		skippy-0.5.0
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		x11
 
 MASTER_SITES=		http://thegraveyard.org/files/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext Xft Xinerama Xrender c expat fontconfig \
-		freetype m z
+		freetype m z pthread-stubs xcb
 
 USE_X11=		Yes
 

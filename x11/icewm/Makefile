@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2009/03/05 08:08:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2009/08/11 08:42:08 ajacoutot Exp $
 
 COMMENT=	small and fast window manager
 
 DISTNAME=	icewm-1.2.37
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11	
 
 HOMEPAGE=	http://www.icewm.org/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xft Xinerama Xrandr Xrender \
 		c expat fontconfig freetype jpeg m png stdc++ tiff \
-		ungif z
+		ungif z pthread-stubs xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=icewm/}
 

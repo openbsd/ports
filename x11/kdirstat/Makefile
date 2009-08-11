@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2009/03/07 14:23:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/11 08:42:08 ajacoutot Exp $
 
 COMMENT=	graphical disk usage utility for KDE
 
 DISTNAME=	kdirstat-2.4.0
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	x11
 
 HOMEPAGE=	http://kdirstat.sourceforge.net/
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=  Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam
 WANTLIB += idn jpeg m png pthread rpcsvc stdc++ util z
+WANTLIB += pthread-stubs xcb
 
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.tar.bz2

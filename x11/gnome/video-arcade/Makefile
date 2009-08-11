@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/11 08:39:39 ajacoutot Exp $
 
 # XXX: Without category, history or nplayer files for now.
 
@@ -6,7 +6,7 @@ COMMENT=	MAME front-end for GNOME
 
 GNOME_PROJECT=	gnome-video-arcade
 GNOME_VERSION=	0.6.7
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 CATEGORIES=	emulators games
 
@@ -25,7 +25,7 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread sqlite3 startup-notification-1
-WANTLIB += xml2 z
+WANTLIB += xml2 z pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		x11/gnome \

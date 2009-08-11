@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2009/06/11 18:38:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	2.0.12
-PKGNAME=	${DISTNAME}p18
+PKGNAME=	${DISTNAME}p19
 
 CATEGORIES=	net multimedia
 
@@ -28,7 +28,7 @@ WANTLIB += gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4
 WANTLIB += nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png popt pt pthread smime3 sndio softokn3
 WANTLIB += soup-2.4 sqlite3 ssl ssl3 stdc++ tasn1 usbhid util
-WANTLIB += xml2 z
+WANTLIB += xml2 z pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		x11/gnome \

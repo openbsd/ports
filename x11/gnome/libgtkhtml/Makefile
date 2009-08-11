@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2009/02/11 15:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		libgtkhtml
 GNOME_VERSION=		2.11.1
 SHARED_LIBS +=	gtkhtml-2            1.1      # .0.0
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,7 +17,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png z
+		png z pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			x11/gnome

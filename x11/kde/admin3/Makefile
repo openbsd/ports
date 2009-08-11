@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2008/08/27 12:25:14 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2009/08/11 08:40:40 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, admin tools
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeadmin-${VERSION}
-PKGNAME =		${DISTNAME}
+PKGNAME =		${DISTNAME}p0
 MODKDE_VERSION ?=	3.5.8
 
 RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
@@ -15,6 +15,6 @@ SEPARATE_BUILD =	flavored
 
 WANTLIB =	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg kabc kresources \
 		kwalletclient m png pthread stdc++ util vcard z iconv idn \
-		Xau Xdmcp fam rpcsvc intl
+		Xau Xdmcp fam rpcsvc intl pthread-stubs xcb
 
 .include <bsd.port.mk>

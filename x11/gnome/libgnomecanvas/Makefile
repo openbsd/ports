@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/02/11 15:50:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=		graphics library for GNOME
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		libgnomecanvas
 GNOME_VERSION=		2.20.1.1
 SHARED_LIBS +=	gnomecanvas-2        2001.0   # .2001.0
 CATEGORIES=		x11
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +21,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png xml2 z
+		png xml2 z pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			x11/gnome

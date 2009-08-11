@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2009/06/28 10:54:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.24.3.1
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 CATEGORIES=		games
 
@@ -26,7 +26,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gobject-2.0 gpg-error gsf-1 gthread-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png popt pthread ssl stdc++ util xml2 z gstreamer-0.10 \
-		avahi-client avahi-common avahi-glib
+		avahi-client avahi-common avahi-glib pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			lang/python \

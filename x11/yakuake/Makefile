@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/04/17 08:35:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/11 08:42:09 ajacoutot Exp $
 
 COMMENT=	yet another kuake KDE terminal emulator
 
 DISTNAME=	yakuake-2.8.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11 x11/kde
 
 EXTRACT_SUFX=	.tar.bz2
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=yakuake/}
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn \
-		jpeg m png pthread rpcsvc stdc++ util z
+		jpeg m png pthread rpcsvc stdc++ util z pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		x11/kde

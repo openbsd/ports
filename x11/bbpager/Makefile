@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/01/22 20:39:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/11 08:42:07 ajacoutot Exp $
 
 COMMENT =	pager for the Blackbox window manager
 
 DISTNAME =	bbpager-0.4.7
+PKGNAME =	${DISTNAME}p0
+
 CATEGORIES =	x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=bbtools/}
 
@@ -21,7 +23,7 @@ BUILD_DEPENDS = ::x11/blackbox
 MODULES =	converters/libiconv
 
 WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xft Xrender c expat fontconfig \
-		freetype m stdc++ z
+		freetype m stdc++ z pthread-stubs xcb
 
 USE_X11 = Yes
 

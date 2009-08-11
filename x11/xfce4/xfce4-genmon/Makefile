@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/23 19:57:55 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/11 08:38:41 ajacoutot Exp $
 
 COMMENT=	Xfce4 generic scriptable monitor panel plugin
 
 XFCE_VERSION=	3.2
 XFCE_PLUGIN=	genmon
-PKGNAME=	${DISTNAME:S/-plugin//}p2
+PKGNAME=	${DISTNAME:S/-plugin//}p3
 
 # LGPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,6 +19,6 @@ WANTLIB=	X11 Xdmcp Xrender Xau Xdamage fontconfig freetype m z c \
 		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0 cairo glitz png \
-		pixman-1 xfce4util xfcegui4
+		pixman-1 xfce4util xfcegui4 pthread-stubs xcb
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/07 13:54:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/11 08:42:07 ajacoutot Exp $
 
 COMMENT=	complex graphical design & layout library
 DISTNAME=	edje-20071211
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+
 SHARED_LIBS +=	edje                 0.0      # .5.0
 
 # BSD
@@ -13,7 +14,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xinerama Xp Xrandr Xrender Xss c eet evas expat fontconfig
-WANTLIB += freetype iconv jpeg m pthread sndio usbhid z
+WANTLIB += freetype iconv jpeg m pthread sndio usbhid z pthread-stubs
+WANTLIB += xcb
 
 USE_X11=		Yes
 

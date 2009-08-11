@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2009/07/27 21:44:15 martynas Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/11 08:42:08 ajacoutot Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
 
 V=			0.3.8
 DISTNAME=		gtk-vnc-${V}
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 PKGNAME-plugin=		gtk-vnc-plugin-${V}p0
 
 SHARED_LIBS +=	gtk-vnc-1.0          1.0      # .0.1
@@ -29,7 +29,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gpg-error gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png tasn1 z
+		pcre pixman-1 png tasn1 z pthread-stubs xcb
+
 WANTLIB-main=	${WANTLIB} c pthread
 
 MULTI_PACKAGES=		-main

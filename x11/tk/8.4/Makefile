@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/01/16 00:02:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/11 08:42:09 ajacoutot Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
 V =			8.4.19
 DISTNAME =		tk${V}
-PKGNAME =		tk-${V}
+PKGNAME =		tk-${V}p0
 
 SHARED_LIBS =		tk84 1.1
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		X11 c m
+WANTLIB =		X11 c m pthread-stubs xcb
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz

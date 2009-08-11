@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/05/13 17:45:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2009/08/11 08:42:07 ajacoutot Exp $
 
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
@@ -6,7 +6,7 @@ COMMENT-kanji=	color japanese terminal emulator with transparency support
 V=		0.9.4
 DISTNAME=	Eterm-$V
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-PKGNAME=	eterm-$Vp0		# also see below
+PKGNAME=	eterm-$Vp1		# also see below
 SHARED_LIBS +=	Eterm                1.0      # .0.0
 CATEGORIES=	x11
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${HOMEPAGE}/download/ \
 		${MASTER_SITE_SOURCEFORGE:=eterm/}
 
 WANTLIB=	ICE Imlib2 SM X11 XRes Xau Xdmcp Xext Xmu Xt c freetype \
-		m util z
+		m util z pthread-stubs xcb
 
 LIB_DEPENDS=	ast::devel/libast \
 		ttf::print/freetype

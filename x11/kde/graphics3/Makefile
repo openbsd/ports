@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2009/06/24 20:40:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2009/08/11 08:40:40 ajacoutot Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -14,10 +14,10 @@ SEPARATE_BUILD =	flavored
 MULTI_PACKAGES =	-main -kpov -kamera -sane
 PKGNAME=${DISTNAME}
 
-PKGNAME-main =		${DISTNAME}
-PKGNAME-kamera =	kamera-${VERSION}
-PKGNAME-kpov =		kpovmodeller-${VERSION}
-PKGNAME-sane =		ksane-${VERSION}p0
+PKGNAME-main =		${DISTNAME}p0
+PKGNAME-kamera =	kamera-${VERSION}p0
+PKGNAME-kpov =		kpovmodeller-${VERSION}p0
+PKGNAME-sane =		ksane-${VERSION}p1
 
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
@@ -30,7 +30,8 @@ SHARED_LIBS +=	kscan                2.0      # .1.0
 BUILD_DEPENDS =		::print/texlive/base
 LIB_DEPENDS =		kdecore.>=6,DCOP,kio,kwalletclient,kdefx,kdeui,kdesu::x11/kde/libs3
 WANTLIB =		X11 art_lgpl_2 ICE png util jpeg z SM Xext \
-			m idn iconv Xau Xdmcp fam rpcsvc stdc++
+			m idn iconv Xau Xdmcp fam rpcsvc stdc++ \
+			pthread-stubs xcb
 
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2009/06/28 10:54:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -6,8 +6,8 @@ COMMENT-battstat=	GNOME applet for monitoring battery level
 GNOME_PROJECT=		gnome-applets
 GNOME_VERSION=		2.24.3.1
 
-PKGNAME-main=		gnome-applets2-${VERSION}p13
-PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}p10
+PKGNAME-main=		gnome-applets2-${VERSION}p14
+PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}p11
 
 CATEGORIES=		x11
 
@@ -26,7 +26,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png popt pthread ssl util xml2 z \
-		avahi-client avahi-common avahi-glib
+		avahi-client avahi-common avahi-glib pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			lang/python \

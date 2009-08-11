@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2009/06/11 18:38:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
 GNOME_PROJECT=		at-spi
 GNOME_VERSION=		1.24.1
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
@@ -23,7 +23,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xrandr Xrender Xtst atk-1.0 c cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png pthread z
+		pcre pixman-1 png pthread z pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			lang/python \

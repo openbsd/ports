@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/11 18:38:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/11 08:39:39 ajacoutot Exp $
 
 # dlopen() module
 SHARED_ONLY=	Yes
@@ -7,7 +7,7 @@ COMMENT=	open terminal from a nautilus folder
 
 GNOME_PROJECT=	nautilus-open-terminal
 GNOME_VERSION=	0.10
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 
 CATEGORIES=	sysutils
 
@@ -27,7 +27,7 @@ WANTLIB += gnome-desktop-2 gnome-keyring gnomecanvas-2 gnomeui-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
 WANTLIB += ssl startup-notification-1 util xml2 z
-WANTLIB += avahi-client avahi-common avahi-glib
+WANTLIB += avahi-client avahi-common avahi-glib pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		x11/gnome \

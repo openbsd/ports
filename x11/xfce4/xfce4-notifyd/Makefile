@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/03 19:39:57 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/11 08:38:41 ajacoutot Exp $
 
 COMMENT=	Xfce4 alternative notification daemon
 
 XFCE_VERSION=	0.1.0
 XFCE_GOODIE=	xfce4-notifyd
+PKGNAME=	${DISTNAME}p0
+
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfce4-notifyd/
 
 # GPLv2
@@ -23,6 +25,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread xfce4util xfconf-0 xml2 z
+		pixman-1 png pthread xfce4util xfconf-0 xml2 z pthread-stubs xcb
 
 .include <bsd.port.mk>

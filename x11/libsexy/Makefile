@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/07 15:37:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/11 08:42:08 ajacoutot Exp $
 
 COMMENT=	collection of additional GTK widgets
 
 DISTNAME=	libsexy-0.1.11
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS +=  sexy                 0.0      # .2.4
 CATEGORIES=	x11 devel
 
@@ -30,6 +30,6 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png z
+WANTLIB += png z pthread-stubs xcb
 
 .include <bsd.port.mk>

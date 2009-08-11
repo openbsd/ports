@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2009/07/27 21:44:15 martynas Exp $
+# $OpenBSD: Makefile,v 1.44 2009/08/11 08:39:39 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 m nspr4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png popt pthread ssl stdc++ util xml2 z
-WANTLIB += avahi-client avahi-common avahi-glib
+WANTLIB += avahi-client avahi-common avahi-glib pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			x11/gnome \

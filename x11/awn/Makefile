@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/16 12:03:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/11 08:42:07 ajacoutot Exp $
 
 COMMENT=		avant window navigator
 
 V=			0.3.2
 DISTNAME=		avant-window-navigator-$V
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 SHARED_LIBS +=	awn                  0.0      # .0.1
 CATEGORIES=		x11
 
@@ -34,7 +34,7 @@ WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png popt pthread ssl startup-notification-1 util xml2
-WANTLIB += z
+WANTLIB += z pthread-stubs xcb
 
 BUILD_DEPENDS=		::devel/py-xdg \
 			::x11/py-gtk2

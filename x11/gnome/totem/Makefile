@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2009/07/21 13:21:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2009/08/11 08:39:39 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.22.2
-PKGNAME=	${DISTNAME}p23
+PKGNAME=	${DISTNAME}p24
 
 CATEGORIES=	multimedia
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		Xrender Xtst Xxf86vm art_lgpl_2 asn1 atk-1.0 \
-		avahi-client avahi-common avahi-glib \
+		avahi-client avahi-common avahi-glib pthread-stubs xcb \
 		bonobo-2 bonobo-activation bonoboui-2 c cairo \
 		camel-1.2 com_err crypto dbus-1 dbus-glib-1 sqlite3 \
 		edataserver-1.2 expat fontconfig freetype gailutil \

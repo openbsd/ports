@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2009/03/07 15:37:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2009/08/11 08:42:08 ajacoutot Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-2.9.0
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 SHARED_LIBS=	kik	10.0 \
 		mkf	13.0
 CATEGORIES=	x11
@@ -19,7 +19,7 @@ WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png util z
+WANTLIB += pcre pixman-1 png util z pthread-stubs xcb
 
 HOMEPAGE=	http://mlterm.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mlterm/}

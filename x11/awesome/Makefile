@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/05/19 11:07:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/11 08:42:07 ajacoutot Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
 DISTNAME=		awesome-2.3.6
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		x11
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xinerama Xrandr Xau Xdmcp Xrender \
 			c cairo expat fontconfig freetype glitz \
 			gmodule-2.0 glib-2.0 gobject-2.0 iconv intl \
-			m pixman-1 png z
+			m pixman-1 png z pthread-stubs xcb
 
 MASTER_SITES=		${HOMEPAGE}/download/
 

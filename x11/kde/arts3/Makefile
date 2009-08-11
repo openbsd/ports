@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.68 2009/01/29 22:28:58 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.69 2009/08/11 08:40:40 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		arts-1.5.10
 MODKDE_VERSION ?=	3.5.8
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 
 SHARED_LIBS +=	mcop                 2.0      # .1.0
 SHARED_LIBS +=	artsflow_idl         2.0      # .1.0
@@ -38,7 +38,8 @@ CONFIGURE_ARGS +=	${ENABLE_SHARED} \
 			--without-esd
 
 WANTLIB =	ICE SM X11 Xext c iconv intl jpeg m png pthread \
-		sndio stdc++ vorbisenc z Xau Xdmcp pcre
+		sndio stdc++ vorbisenc z Xau Xdmcp pcre \
+		pthread-stubs xcb
 
 post-patch:
 	cp ${FILESDIR}/audioiosndio.cc ${WRKSRC}/flow

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/06/28 10:54:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/11 08:39:38 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		2.22.5
-PKGNAME=		${DISTNAME}p7
+PKGNAME=		${DISTNAME}p8
 CATEGORIES=		editors
 
 HOMEPAGE=		http://live.gnome.org/Gedit/Plugins
@@ -22,7 +22,7 @@ WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 gtksourceview-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png ssl util xml2 z \
-		avahi-client avahi-common avahi-glib
+		avahi-client avahi-common avahi-glib pthread-stubs xcb
 
 MODULES=		devel/gettext \
 			lang/python \

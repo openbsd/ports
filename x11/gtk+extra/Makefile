@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/06 21:10:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/11 08:42:08 ajacoutot Exp $
 
 COMMENT=	GTK+2 Extra Widget Set
 
 DISTNAME=	gtk+extra-2.1.1
+PKGNAME=	${DISTNAME}p0
+
 SHARED_LIBS +=  gtkextra-x11-2.0     0.0      # .1.0
 CATEGORIES=	x11 devel
 
@@ -20,7 +22,7 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png z
+WANTLIB += png z pthread-stubs xcb
 
 MODULES=	devel/gettext
 

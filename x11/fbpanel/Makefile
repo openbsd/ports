@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/05/30 21:34:16 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/11 08:42:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lightweight NETWM compliant desktop panel
 
 DISTNAME=	fbpanel-4.12
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 EXTRACT_SUFX=	.tgz
 
@@ -36,6 +36,6 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xmu Xrandr Xrender atk-1.0 c cairo expat
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread z
+WANTLIB += pangoft2-1.0 pixman-1 png pthread z pthread-stubs xcb
 
 .include <bsd.port.mk>

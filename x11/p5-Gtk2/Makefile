@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/06/07 08:47:57 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/11 08:42:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,8 @@ COMMENT=	set of modules to use Gtk+2 libraries from Perl
 
 MODULES=	cpan
 DISTNAME=	Gtk2-1.220
+PKGNAME=	p5-${DISTNAME}p0
+
 CATEGORIES=	x11
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -20,7 +22,7 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png z
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png z pthread-stubs xcb
 
 MODULES+=	devel/gettext
 

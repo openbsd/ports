@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/19 16:39:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/11 08:42:08 ajacoutot Exp $
 
 COMMENT=	.NET language binding for the GTK+2 toolkit
 
@@ -7,7 +7,7 @@ MINOR=		5
 VERSION=	2.${MAJOR}.${MINOR}
 
 DISTNAME=	gtk-sharp-${VERSION}
-PKGNAME=	mono-gtk2-${VERSION}
+PKGNAME=	mono-gtk2-${VERSION}p0
 CATEGORIES=	x11
 
 # LGPLv2
@@ -26,7 +26,8 @@ USE_LIBTOOL=	Yes
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xml2 z
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xml2 z \
+		pthread-stubs xcb
 
 MODULES=	devel/gettext lang/mono
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \

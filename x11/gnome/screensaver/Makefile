@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/06/25 00:38:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/11 08:39:39 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
 GNOME_VERSION=	2.24.1
-PKGNAME=	${DISTNAME}p10
+PKGNAME=	${DISTNAME}p11
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +23,8 @@ WANTLIB=	GL ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
 		pthread ssl startup-notification-1 util xkbfile \
-		xklavier xml2 z avahi-client avahi-common avahi-glib
+		xklavier xml2 z avahi-client avahi-common avahi-glib \
+		pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		x11/gnome \

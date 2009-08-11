@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/16 20:07:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/11 08:39:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	applications integration into Nautilus
 GNOME_PROJECT=	nautilus-sendto
 GNOME_VERSION=	1.0.1
 
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 
 CATEGORIES=	misc net
 
@@ -27,7 +27,7 @@ WANTLIB += gnomevfs-2 gnutls gobject-2.0 gpg-error gssapi gthread-2.0
 WANTLIB += gtk-x11-2.0 krb5 m ncurses nspr4 nss3 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 tasn1 util
-WANTLIB += xml2 z
+WANTLIB += xml2 z pthread-stubs xcb
 
 MODULES=	devel/gettext \
 		x11/gnome \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2009/03/23 09:57:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2009/08/11 08:40:40 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, addons
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeaddons-${VERSION}
-PKGNAME =		${DISTNAME}p1
+PKGNAME =		${DISTNAME}p2
 MODKDE_VERSION =	3.5.8
 
 RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
@@ -28,6 +28,6 @@ WANTLIB =	ICE SM X11 Xext Xi Xrender art_lgpl_2 artsflow artsflow_idl \
 		iconv intl jpeg kimproxy kmedia2_idl m mad mcop ogg \
 		pcre pcreposix png pthread qtmcop sndio soundserver_idl \
 		stdc++ usbhid util vorbis vorbisenc vorbisfile z \
-		gthread-2.0 idn Xau Xdmcp fam rpcsvc Xrandr
+		gthread-2.0 idn Xau Xdmcp fam rpcsvc Xrandr pthread-stubs xcb
 
 .include <bsd.port.mk>

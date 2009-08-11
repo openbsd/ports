@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/05/20 06:34:16 pea Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/11 08:42:09 ajacoutot Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-1.14.2
 CATEGORIES=		x11
+PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=roxterm/}
@@ -21,7 +22,7 @@ WANTLIB = 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		dbus-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 		m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png pthread xml2 z \
+		pcre pixman-1 png pthread xml2 z pthread-stubs xcb
 
 MODULES=		devel/gettext
 

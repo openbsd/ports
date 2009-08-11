@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2009/03/07 15:37:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2009/08/11 08:42:08 ajacoutot Exp $
 
 CATEGORIES=	x11
 
 COMMENT=	GUI for ogle
 DISTNAME=	ogle_gui-0.9.2
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr c expat gio-2.0 pcre pixman-1 pthread
-WANTLIB += z
+WANTLIB += z pthread-stubs xcb
 
 LIB_DEPENDS=	dvdcontrol.>=9,msgevents.>=6::x11/ogle \
 		xml2::textproc/libxml \
@@ -38,7 +38,7 @@ WANTLIB+=	Xi gdk glib gmodule xml
 LIB_DEPENDS+=	glade-2.0::devel/libglade2 \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 CONFIGURE_ARGS+=--enable-gtk2
-WANTLIB+=	ICE SM Xrender atk-1.0 fontconfig freetype glib-2.0 \
+WANTLIB+=	Xrender atk-1.0 fontconfig freetype glib-2.0 \
 		gmodule-2.0 gobject-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 cairo glitz png
 .endif

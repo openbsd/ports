@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2008/02/01 21:47:16 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/11 08:42:09 ajacoutot Exp $
 
 COMMENT=		Virtual desktop manager for X11
 
 VERSION=		0.4.0
 DISTNAME=		waimea-${VERSION}
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software_2fwaimea
@@ -19,7 +19,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=waimea/}
 
 USE_X11=		Yes
 WANTLIB=		SM ICE X11 Xau Xdmcp Xext Xinerama Xrender Xrandr \
-			Xft expat z stdc++ m c freetype fontconfig
+			Xft expat z stdc++ m c freetype fontconfig pthread-stubs xcb
+
 USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf

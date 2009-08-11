@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2009/08/06 10:46:42 mglocker Exp $
+# $OpenBSD: Makefile,v 1.154 2009/08/11 08:42:08 ajacoutot Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -9,7 +9,7 @@ V=			1.0rc2
 N=			mplayer
 DISTNAME=		MPlayer-${V}
 DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p26
+PKGNAME=		${N}-${V}p27
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c m ncurses pthread stdc++ util sndio z
 
 MASTER_SITES=		http://www1.mplayerhq.hu/MPlayer/releases/ \
@@ -139,7 +140,7 @@ WANTLIB+=	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xv Xxf86dga Xxf86vm \
 		atk-1.0 cairo expat fontconfig freetype gio-2.0 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1
+		pangocairo-1.0 pangoft2-1.0 pixman-1 pthread-stubs xcb
 MODULES=	devel/gettext
 .endif
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/11 08:39:39 ajacoutot Exp $
 
 COMMENT=		screen magnifier for the GNOME desktop
 
 GNOME_PROJECT=		gnome-mag
 GNOME_VERSION=		0.15.6
+PKGNAME=		${DISTNAME}p0
+
 SHARED_LIBS +=	gnome-mag            0.1      # .4.10
 CATEGORIES=		sysutils
 
@@ -21,7 +23,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gdk_pixbuf_xlib-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread z
+		pangoft2-1.0 pcre pixman-1 png pthread z pthread-stubs xcb
 
 USE_X11=		Yes
 
