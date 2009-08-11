@@ -1,0 +1,21 @@
+$OpenBSD: patch-python_pgq_status_py,v 1.1 2009/08/11 23:51:50 martynas Exp $
+--- python/pgq/status.py.orig	Wed Aug 12 02:18:28 2009
++++ python/pgq/status.py	Wed Aug 12 02:22:16 2009
+@@ -4,13 +4,13 @@
+ 
+ import sys, os, skytools
+ 
+-def ival(data, as = None):
++def ival(data, as_str = None):
+     "Format interval for output"
+-    if not as:
+-        as = data.split('.')[-1]
++    if not as_str:
++        as_str = data.split('.')[-1]
+     numfmt = 'FM9999999'
+     expr = "coalesce(to_char(extract(epoch from %s), '%s') || 's', 'NULL') as %s"
+-    return expr % (data, numfmt, as)
++    return expr % (data, numfmt, as_str)
+ 
+ class PGQStatus(skytools.DBScript):
+     def __init__(self, args, check = 0):
