@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2009/08/07 22:11:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2009/08/11 21:30:58 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	multimedia decoding library
 
 V=		1.1.16.3
 DISTNAME=	xine-lib-${V}
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
@@ -43,7 +43,8 @@ LIB_DEPENDS=	FLAC.>=5::audio/flac \
 		speex.>=3::audio/speex \
 		theora.>=1::multimedia/libtheora \
 		wavpack::audio/wavpack \
-		dca::audio/libdca
+		dca::audio/libdca \
+		mpcdec::audio/libmpcdec
 
 .if ${MACHINE_ARCH} == "i386"
 MAKE_FLAGS+=	TOMSMOCOMP_LINKS=
@@ -76,6 +77,7 @@ CONFIGURE_ARGS+=--disable-aalib \
 		--with-external-libdts=yes \
 		--with-external-libfaad=yes \
 		--with-external-libmad=yes \
+		--with-external-libmpcdec=yes \
 		--with-fontconfig \
 		--with-freetype \
 		--with-libflac \
