@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.21 2008/09/28 15:47:27 bernd Exp $
+# $OpenBSD: ruby.port.mk,v 1.22 2009/08/11 07:27:30 msf Exp $
 
 # ruby module
 
@@ -32,7 +32,7 @@ CONFIGURE_SCRIPT=	${LOCALBASE}/bin/ruby extconf.rb
 EXTRACT_SUFX=	.gem
 
 BUILD_DEPENDS+=		:ruby-gems->=1.3.0:devel/ruby-gems
-MODRUBY_RUN_DEPENDS+=	::devel/ruby-gems
+RUN_DEPENDS+=		::devel/ruby-gems
 NO_BUILD=	Yes
 
 SUBST_VARS+=	DISTNAME
