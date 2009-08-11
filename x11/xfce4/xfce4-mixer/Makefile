@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2009/08/11 08:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/11 19:58:24 landry Exp $
 
 COMMENT=	Xfce4 volume mixer
 
-XFCE_PROJECT=	xfce4-mixer
+XFCE_GOODIE=	xfce4-mixer
 PKGNAME=	${DISTNAME}p0
+HOMEPAGE=	http://www.xfce.org/projects/xfce4-mixer
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

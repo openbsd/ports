@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/11 08:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/08/11 19:58:23 landry Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
-XFCE_PROJECT=	orage
+XFCE_GOODIE=	orage
 PKGNAME=	${DISTNAME}p0
 
+HOMEPAGE=	http://www.xfce.org/projects/orage
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
