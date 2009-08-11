@@ -1,0 +1,59 @@
+$OpenBSD: patch-src_http-header-glue_c,v 1.1 2009/08/11 21:55:27 sthen Exp $
+--- src/http-header-glue.c.orig	Sat Aug  8 21:37:20 2009
++++ src/http-header-glue.c	Sat Aug  8 21:41:59 2009
+@@ -259,7 +259,7 @@ int http_response_handle_cachable(server *srv, connect
+ 					}
+ 
+ 					if (0 == strncmp(con->request.http_if_modified_since, mtime->ptr, used_len)) {
+-						con->http_status = 304;
++						if ('\0' == mtime->ptr[used_len]) con->http_status = 304;
+ 						return HANDLER_FINISHED;
+ 					} else {
+ 						char buf[sizeof("Sat, 23 Jul 2005 21:20:01 GMT")];
+@@ -281,15 +281,16 @@ int http_response_handle_cachable(server *srv, connect
+ 						strncpy(buf, con->request.http_if_modified_since, used_len);
+ 						buf[used_len] = '\0';
+ 
+-						tm.tm_isdst = 0;
+ 						if (NULL == strptime(buf, "%a, %d %b %Y %H:%M:%S GMT", &tm)) {
+ 							con->http_status = 412;
+ 							con->mode = DIRECT;
+ 							return HANDLER_FINISHED;
+ 						}
++						tm.tm_isdst = 0;
+ 						t_header = mktime(&tm);
+ 
+ 						strptime(mtime->ptr, "%a, %d %b %Y %H:%M:%S GMT", &tm);
++						tm.tm_isdst = 0;
+ 						t_file = mktime(&tm);
+ 
+ 						if (t_file > t_header) return HANDLER_GO_ON;
+@@ -318,7 +319,7 @@ int http_response_handle_cachable(server *srv, connect
+ 		}
+ 
+ 		if (0 == strncmp(con->request.http_if_modified_since, mtime->ptr, used_len)) {
+-			con->http_status = 304;
++			if ('\0' == mtime->ptr[used_len]) con->http_status = 304;
+ 			return HANDLER_FINISHED;
+ 		} else {
+ 			char buf[sizeof("Sat, 23 Jul 2005 21:20:01 GMT")];
+@@ -331,7 +332,6 @@ int http_response_handle_cachable(server *srv, connect
+ 			strncpy(buf, con->request.http_if_modified_since, used_len);
+ 			buf[used_len] = '\0';
+ 
+-			tm.tm_isdst = 0;
+ 			if (NULL == strptime(buf, "%a, %d %b %Y %H:%M:%S GMT", &tm)) {
+ 				/**
+ 				 * parsing failed, let's get out of here 
+@@ -340,9 +340,11 @@ int http_response_handle_cachable(server *srv, connect
+ 						"strptime() failed on", buf);
+ 				return HANDLER_GO_ON;
+ 			}
++			tm.tm_isdst = 0;
+ 			t_header = mktime(&tm);
+ 
+ 			strptime(mtime->ptr, "%a, %d %b %Y %H:%M:%S GMT", &tm);
++			tm.tm_isdst = 0;
+ 			t_file = mktime(&tm);
+ 
+ 			if (t_file > t_header) return HANDLER_GO_ON;
