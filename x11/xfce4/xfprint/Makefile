@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/11 08:38:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/11 19:54:01 landry Exp $
 
 COMMENT=	Xfce4 printing helper
 
 XFCE_PROJECT=	xfprint
 PKGNAME=	${DISTNAME}p1
 
+MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_PROJECT}/${XFCE_BRANCH}/
 SHARED_LIBS=	xfprint	0.1
 
 # GPLv2

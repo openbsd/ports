@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/11 08:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/11 19:54:01 landry Exp $
 
 COMMENT=	Xfce4 notification daemon
 
@@ -6,6 +6,7 @@ XFCE_VERSION=	0.3.7
 XFCE_GOODIE=	notification-daemon-xfce
 PKGNAME=	${DISTNAME}p7
 
+MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_GOODIE}/${XFCE_BRANCH}/
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
