@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/03/25 13:39:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/11 23:40:05 sthen Exp $
 
 COMMENT=	RSS Aggregator Without Delusions Of Grandeur
 
-MODPY_EGG_VERSION=	2.10
+MODPY_EGG_VERSION=	2.12
 DISTNAME=	rawdog-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www news
 
 HOMEPAGE=	http://offog.org/code/rawdog.html
