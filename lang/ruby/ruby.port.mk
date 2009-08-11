@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.24 2009/08/11 14:30:15 msf Exp $
+# $OpenBSD: ruby.port.mk,v 1.25 2009/08/11 15:28:41 bernd Exp $
 
 # ruby module
 
@@ -111,7 +111,7 @@ RSPEC_REGRESS_TARGET?=	spec
 .if !target(do-regress)
 .  if ${MODRUBY_REGRESS:L:Mrspec}
 .    if ${MODRUBY_REGRESS:L:Mrake}
-RAKE_REGRESS_TARGET?=	${RSPEC_REGRESS_TARGET}
+RAKE_REGRESS_TARGET=	${RSPEC_REGRESS_TARGET}
 .    else
 do-regress:
 	@cd ${WRKSRC} && ${RSPEC} ${RSPEC_REGRESS_TARGET}
