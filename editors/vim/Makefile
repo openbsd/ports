@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2009/08/10 06:31:09 kili Exp $
+# $OpenBSD: Makefile,v 1.102 2009/08/11 04:30:40 msf Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -74,9 +74,10 @@ WANTLIB+=	m pthread util
 .endif
 
 .if ${FLAVOR:L:Mruby}
+MODULES+=	lang/ruby
 CONFIGURE_ARGS+=--enable-rubyinterp
-MAKE_ENV+=	RUBY="${DEPBASE}/bin/ruby"
-LIB_DEPENDS+=	ruby::lang/ruby
+MAKE_ENV+=	RUBY="${RUBY}"
+LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 WANTLIB+=	m
 .endif
 
