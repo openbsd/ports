@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.23 2009/08/11 09:20:23 msf Exp $
+# $OpenBSD: ruby.port.mk,v 1.24 2009/08/11 14:30:15 msf Exp $
 
 # ruby module
 
@@ -7,6 +7,10 @@ CATEGORIES+=		lang/ruby
 MODRUBY_REV=		1.8
 
 RUBY=			${LOCALBASE}/bin/ruby
+RAKE=			${LOCALBASE}/bin/rake
+RSPEC=			${LOCALBASE}/bin/spec
+
+MODRUBY_REGRESS?=
 
 MODRUBY_LIB_DEPENDS=	ruby.>=2::lang/ruby
 MODRUBY_RUN_DEPENDS=	::lang/ruby
@@ -15,14 +19,22 @@ MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 # location of ruby libraries
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
 
-BUILD_DEPENDS+=		${MODRUBY_BUILD_DEPENDS}
-RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
-
 # common directories for ruby extensions
 # used to create docs and examples install path
 MODRUBY_DOCDIR=		${PREFIX}/share/doc/ruby
 MODRUBY_EXAMPLEDIR=	${PREFIX}/share/examples/ruby
 MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
+
+BUILD_DEPENDS+=		${MODRUBY_BUILD_DEPENDS}
+RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
+
+.if ${MODRUBY_REGRESS:L:Mrake}
+REGRESS_DEPENDS+=	::devel/ruby-rake
+.endif
+
+.if ${MODRUBY_REGRESS:L:Mrspec}
+REGRESS_DEPENDS+=	::devel/ruby-rspec
+.endif
 
 SUBST_VARS+=		MODRUBY_REV MODRUBY_ARCH
 
@@ -65,10 +77,6 @@ pre-fake:
 		pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}
 	@cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz
 .  endif
-# Most gems need a custom do-regress target. 
-.  if !target(do-regress)
-NO_REGRESS=	Yes
-.  endif
 .  if !target(do-install)
 do-install:
 	@${INSTALL_DATA_DIR} ${GEM_BASE}
@@ -89,12 +97,31 @@ MODRUBY_configure= \
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb setup
 .  endif
-.  if !target(do-regress)
-NO_REGRESS=Yes
-.  endif
 .  if !target(do-install)
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb install \
 		--prefix=${DESTDIR}
+.  endif
+.endif
+
+# regression stuff
+RAKE_REGRESS_TARGET?=	test
+RSPEC_REGRESS_TARGET?=	spec
+
+.if !target(do-regress)
+.  if ${MODRUBY_REGRESS:L:Mrspec}
+.    if ${MODRUBY_REGRESS:L:Mrake}
+RAKE_REGRESS_TARGET?=	${RSPEC_REGRESS_TARGET}
+.    else
+do-regress:
+	@cd ${WRKSRC} && ${RSPEC} ${RSPEC_REGRESS_TARGET}
+.    endif
+.  endif
+.  if ${MODRUBY_REGRESS:L:Mrake}
+do-regress:
+	@cd ${WRKSRC} && ${RAKE} ${RAKE_REGRESS_TARGET}
+.  endif
+.  if !${MODRUBY_REGRESS:L:Mrspec} && !${MODRUBY_REGRESS:L:Mrake}
+NO_REGRESS=YES
 .  endif
 .endif
