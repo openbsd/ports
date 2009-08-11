@@ -1,0 +1,14 @@
+$OpenBSD: patch-khashmir_test_py,v 1.1 2009/08/11 23:47:14 martynas Exp $
+--- khashmir/test.py.orig	Tue Jan 31 22:16:51 2006
++++ khashmir/test.py	Wed Aug 12 02:13:15 2009
+@@ -13,9 +13,8 @@ import unittest
+ import ktable, khashmir
+ import khash, node, knode
+ import actions
+-import test_krpc
+ import test_khashmir
+ import kstore
+ 
+-tests = unittest.defaultTestLoader.loadTestsFromNames(['kstore', 'khash', 'node', 'knode', 'actions',  'ktable', 'test_krpc', 'test_khashmir'])
++tests = unittest.defaultTestLoader.loadTestsFromNames(['kstore', 'khash', 'node', 'knode', 'actions',  'ktable', 'test_khashmir'])
+ result = unittest.TextTestRunner().run(tests)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/22 21:58:24 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/08/11 23:47:14 martynas Exp $
 @pkgpath net/BitTorrent
 bin/bittorrent-console
 bin/bittorrent-curses
@@ -9,6 +9,7 @@ bin/launchmany-curses
 bin/maketorrent-console
 bin/torrentinfo-console
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/
+lib/python${MODPY_VERSION}/site-packages/BitTorrent-4.4.0-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/BeautifulSupe.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/BeautifulSupe.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Choker.py
@@ -141,7 +142,6 @@ lib/python${MODPY_VERSION}/site-packages/khashmir/test.pyc
 lib/python${MODPY_VERSION}/site-packages/khashmir/test_khashmir.py
 lib/python${MODPY_VERSION}/site-packages/khashmir/test_khashmir.pyc
 lib/python${MODPY_VERSION}/site-packages/khashmir/test_krpc.py
-lib/python${MODPY_VERSION}/site-packages/khashmir/test_krpc.pyc
 lib/python${MODPY_VERSION}/site-packages/khashmir/test_kstore.py
 lib/python${MODPY_VERSION}/site-packages/khashmir/test_kstore.pyc
 lib/python${MODPY_VERSION}/site-packages/khashmir/unet.py
