@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2009/06/21 14:51:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2009/08/11 08:16:10 giovanni Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/CREDITS
@@ -130,6 +130,8 @@ phpMyAdmin/lang/thai-utf-8.inc.php
 phpMyAdmin/lang/translatecount.sh
 phpMyAdmin/lang/turkish-utf-8.inc.php
 phpMyAdmin/lang/ukrainian-utf-8.inc.php
+phpMyAdmin/lang/uzbek_cyrillic-utf-8.inc.php
+phpMyAdmin/lang/uzbek_latin-utf-8.inc.php
 phpMyAdmin/libraries/
 phpMyAdmin/libraries/.htaccess
 phpMyAdmin/libraries/Config.class.php
