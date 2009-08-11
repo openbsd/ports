@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2009/08/07 22:13:36 steven Exp $
+# $OpenBSD: Makefile,v 1.61 2009/08/11 08:14:42 msf Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -116,7 +116,8 @@ LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
 WANTLIB-ruby=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl \
 		asn1 gssapi krb5
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
-LIB_DEPENDS-ruby=	ruby.>=2::lang/ruby ${MODGETTEXT_LIB_DEPENDS}
+LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
+			${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
 LIB_DEPENDS-ruby+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
 .  endfor
