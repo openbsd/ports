@@ -1,21 +1,22 @@
-# $OpenBSD: ruby.port.mk,v 1.22 2009/08/11 07:27:30 msf Exp $
+# $OpenBSD: ruby.port.mk,v 1.23 2009/08/11 09:20:23 msf Exp $
 
 # ruby module
+
+CATEGORIES+=		lang/ruby
 
 MODRUBY_REV=		1.8
 
 RUBY=			${LOCALBASE}/bin/ruby
 
-MODRUBY_RUN_DEPENDS+=	::lang/ruby
-MODRUBY_LIB_DEPENDS+=	ruby.>=2::lang/ruby
-
-BUILD_DEPENDS+=		::lang/ruby
-RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
-
-CATEGORIES+=		lang/ruby
+MODRUBY_LIB_DEPENDS=	ruby.>=2::lang/ruby
+MODRUBY_RUN_DEPENDS=	::lang/ruby
+MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 
 # location of ruby libraries
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
+
+BUILD_DEPENDS+=		${MODRUBY_BUILD_DEPENDS}
+RUN_DEPENDS+=		${MODRUBY_RUN_DEPENDS}
 
 # common directories for ruby extensions
 # used to create docs and examples install path
