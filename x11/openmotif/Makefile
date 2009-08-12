@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.35 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2009/08/12 14:12:22 ajacoutot Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
 
 VERSION=		2.3.0
 DISTNAME=		openmotif-${VERSION}
-PKGNAME-main=		openmotif-${VERSION}p1
-PKGNAME-demos=		openmotif-demos-${VERSION}p2
+PKGNAME-main=		openmotif-${VERSION}p2
+PKGNAME-demos=		openmotif-demos-${VERSION}p3
 
 SHARED_LIBS=		Mrm	4.0	\
 			Uil	4.0	\
@@ -69,10 +69,12 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/config/cf/Motif.tmpl \
 	    ${PREFIX}/lib/X11/config/Motif.tmpl
 
-LIB_DEPENDS=		iconv.>=1.9::converters/libiconv
-LIB_DEPENDS-demos=	Xm.>=4.0,Mrm.>=4.0::x11/openmotif
+MODULES=		converters/libiconv
+
+LIB_DEPENDS-demos=	Xm.>=4.0,Mrm.>=4.0::x11/openmotif \
+			${MODLIBICONV_LIB_DEPENDS}
 WANTLIB=		ICE SM X11 Xext Xp Xt c Xau Xdmcp Xft Xmu Xrender \
-			expat fontconfig freetype z iconv pthread-stubs xcb
+			expat fontconfig freetype z pthread-stubs xcb
 WANTLIB-demos=		${WANTLIB} m
 
 # XXX  Large, complicated, only partially automated test suite available
