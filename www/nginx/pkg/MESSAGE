@@ -1,5 +1,5 @@
 Documentation on nginx can be found on the wiki:
-	http://wiki.codemongers.com/Main
+	http://wiki.nginx/org/
 
 You may want to put the following into your /etc/rc.local:
 
