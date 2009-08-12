@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/24 20:10:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/12 21:31:45 sthen Exp $
 
 # XXX WORK IN PROGRESS.
 
@@ -11,10 +11,14 @@ ONLY_FOR_ARCHS = i386
 COMMENT =	gcc4 front-end for LLVM
 
 GCC_V =		4.2.1
-LLVM_V =	2.6pre20090621
+LLVM_V =	2.6pre20090808
 DISTNAME =	llvm-gcc-4.2-${LLVM_V}.source
-PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}p0
-EXTRACT_SUFX =	.tar.bz2
+PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}
+EXTRACT_SUFX =	.tar.lzma
+
+do-extract:
+	cd ${WRKDIR} && \
+	    lzma -dc ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${TAR} xf -
 
 SHARED_LIBS =	ssp	0.0 \
 		objc	2.0 \
