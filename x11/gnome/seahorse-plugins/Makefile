@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/11 08:39:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/12 11:20:34 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,7 +30,9 @@ WANTLIB += gtk-x11-2.0 m notify nspr4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread
 WANTLIB += ssl util xml2 z pthread-stubs xcb
 
-BUILD_DEPENDS=	::www/epiphany
+BUILD_DEPENDS=	::devel/xulrunner/1.8,-devel \
+		::www/epiphany \
+		::x11/gnome/gedit
 
 LIB_DEPENDS=	cryptui::x11/gnome/seahorse \
 		gtksourceview-2.0.>=2::x11/gtksourceview \
