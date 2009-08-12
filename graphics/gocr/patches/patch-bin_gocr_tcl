@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_gocr_tcl,v 1.1.1.1 2006/10/30 08:17:30 ajacoutot Exp $
+$OpenBSD: patch-bin_gocr_tcl,v 1.2 2009/08/12 15:23:56 ajacoutot Exp $
 --- bin/gocr.tcl.orig	Fri Feb  6 10:38:46 2004
 +++ bin/gocr.tcl	Fri Oct 27 10:35:15 2006
 @@ -9,7 +9,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-bin_gocr_tcl,v 1.1.1.1 2006/10/30 08:17:30 ajacoutot Exp $
  #
  # this is a multiline comment in wish, but not in sh \
 -exec wish -f $0 $@
-+exec wish8.4 -f $0 $@
++exec ${MODTK_BIN} -f $0 $@
  
  set ver 0.3.6
  set gocrver 0.3.5

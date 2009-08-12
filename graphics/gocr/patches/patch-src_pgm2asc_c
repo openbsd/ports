@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_pgm2asc_c,v 1.2 2007/03/17 22:03:30 espie Exp $
---- src/pgm2asc.c.orig	Wed Feb  7 23:34:41 2007
-+++ src/pgm2asc.c	Mon Mar 12 19:20:30 2007
-@@ -1721,7 +1721,7 @@ int glue_broken_chars( pix *pp ){
+$OpenBSD: patch-src_pgm2asc_c,v 1.3 2009/08/12 15:23:56 ajacoutot Exp $
+--- src/pgm2asc.c.orig	Mon Jul 27 14:53:43 2009
++++ src/pgm2asc.c	Fri Aug  7 15:13:59 2009
+@@ -1729,7 +1729,7 @@ int glue_broken_chars( pix *pp ){
    	  }
          } end_for_each(&(JOB->res.boxlist));
  	box4=box5; // next nearest box within the same line

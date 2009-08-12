@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 19:49:51 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/08/12 15:23:56 ajacoutot Exp $
 @pkgpath graphics/gocr
-bin/gocr
-include/gocr.h
-lib/libPgm2asc.a
+@bin bin/gocr
 @man man/man1/gocr.1
 share/doc/gocr/
 share/doc/gocr/README

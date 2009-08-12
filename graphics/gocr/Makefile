@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2009/07/18 21:37:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/12 15:23:56 ajacoutot Exp $
 
 COMMENT-main=	OCR software
 COMMENT-gui=	gocr tcl/tk frontend
 
-V=		0.44
+V=		0.48
 DISTNAME=	gocr-$V
 
 PKGNAME-main=	gocr-$V
-PKGNAME-gui=	gocr-gui-$Vp0
+PKGNAME-gui=	gocr-gui-$V
 
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jocr/}
@@ -32,7 +32,6 @@ FAKE_FLAGS+=	prefix=${PREFIX} exec_prefix=${PREFIX}
 MULTI_PACKAGES=	-main -gui
 
 MODULES=	x11/tk
-MODTK_VERSION=	8.4
 
 PKG_ARCH-gui=	*
 RUN_DEPENDS-gui=${MODTK_RUN_DEPENDS} \
@@ -43,9 +42,12 @@ RUN_DEPENDS-gui=${MODTK_RUN_DEPENDS} \
 WANTLIB-main=	c m
 LIB_DEPENDS-main=netpbm.>=0::graphics/netpbm
 
+post-extract:
+	rm ${WRKSRC}/src/barcode.c.orig
+
 pre-configure:
-	perl -pi -e 's,\@\@LOCALBASE\@\@,${LOCALBASE},g' \
-		${WRKSRC}/man/man1/gocr.1
+	${SUBST_CMD} ${WRKSRC}/man/man1/gocr.1 \
+		${WRKSRC}/bin/gocr.tcl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gocr

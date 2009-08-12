@@ -1,14 +1,14 @@
-$OpenBSD: patch-man_man1_gocr_1,v 1.1.1.1 2006/10/30 08:17:30 ajacoutot Exp $
---- man/man1/gocr.1.orig	Sun Oct 29 18:18:16 2006
-+++ man/man1/gocr.1	Sun Oct 29 18:19:25 2006
-@@ -146,8 +146,8 @@ This man page documents \fBgocr\fR, vers
+$OpenBSD: patch-man_man1_gocr_1,v 1.2 2009/08/12 15:23:56 ajacoutot Exp $
+--- man/man1/gocr.1.orig	Sun Mar 29 17:56:14 2009
++++ man/man1/gocr.1	Fri Aug  7 15:13:59 2009
+@@ -150,8 +150,8 @@ This man page documents \fBgocr\fR, version 0.41.
  .SH REPORTING BUGS
  Report bugs to Joerg Schulenburg
  .SH SEE ALSO
 -More details can be found at /usr/share/doc/gocr-\fBX.XX\fR/gocr.html.
 -Also read /usr/share/doc/gocr-\fBX.XX\fR/README to learn, how to improve
-+More details can be found at @@LOCALBASE@@/share/doc/gocr/gocr.html.
-+Also read @@LOCALBASE@@/share/doc/gocr/README to learn, how to improve
++More details can be found at ${LOCALBASE}/share/doc/gocr/gocr.html.
++Also read ${LOCALBASE}/share/doc/gocr/README to learn, how to improve
  results.
  .SH EXAMPLES
  .TP
