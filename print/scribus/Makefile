@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2009/08/12 21:03:56 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.3.4
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=	print
 
 # These are actually internal modules, not generic shared libs
@@ -50,7 +50,8 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf gnu
+AUTOCONF_VERSION=2.60
 CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS} \
 		--with-extra-libs=${LOCALBASE}/lib \
 		--with-extra-includes=${LOCALBASE}/include/libpng:${LOCALBASE}/include
