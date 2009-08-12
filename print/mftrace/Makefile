@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/16 22:20:02 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/12 10:03:23 martynas Exp $
 
 COMMENT=	Scalable PostScript fonts for MetaFont
 
 CATEGORIES=	print
-DISTNAME=	mftrace-1.2.4
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	mftrace-1.2.15
 
-HOMEPAGE=	http://www.xs4all.nl/~hanwen/mftrace/
+HOMEPAGE=	http://lilypond.org/mftrace/
 
 MAINTAINER=	Matt Jibson <dolmant@gmail.com>
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://lilypond.org/download/sources/mftrace/
 
 WANTLIB=	c
 

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/25 10:42:23 steven Exp $
-bin/gf2pbm
+@comment $OpenBSD: PLIST,v 1.2 2009/08/12 10:03:23 martynas Exp $
+@bin bin/gf2pbm
 bin/mftrace
 lib/python${MODPY_VERSION}/site-packages/afm.py
 lib/python${MODPY_VERSION}/site-packages/afm.pyc

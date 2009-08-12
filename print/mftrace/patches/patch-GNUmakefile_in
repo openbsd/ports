@@ -1,16 +1,16 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.1.1.1 2006/06/25 10:42:23 steven Exp $
---- GNUmakefile.in.orig	Thu Apr 27 15:49:14 2006
-+++ GNUmakefile.in	Mon Jun 19 13:18:28 2006
-@@ -7,7 +7,7 @@ FILES= mftrace.py GNUmakefile.in \
+$OpenBSD: patch-GNUmakefile_in,v 1.2 2009/08/12 10:03:23 martynas Exp $
+--- GNUmakefile.in.orig	Sat Feb  3 02:34:52 2007
++++ GNUmakefile.in	Wed Aug 12 11:56:02 2009
+@@ -8,7 +8,7 @@ FILES= mftrace.py GNUmakefile.in \
  	README.texi README.txt ChangeLog \
  	mftrace.spec.in mftrace.spec \
  	$(PY_MODULES) configure configure.in config.h.in
--CFLAGS=-Wall -O2 -I.
-+CFLAGS+=-Wall -I.
- srcdir=@srcdir@
- VPATH=$(srcdir)
- NAME=mftrace
-@@ -15,7 +15,7 @@ MANPAGES=mftrace.1
+-CFLAGS = -Wall -O2
++CFLAGS += -Wall -O2
+ 
+ ## retain during override.
+ CFLAGS += -I.
+@@ -19,7 +19,7 @@ MANPAGES=mftrace.1
  VERSION=@VERSION@
  distdir=$(NAME)-$(VERSION)
  prefix=@prefix@
@@ -19,7 +19,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.1.1.1 2006/06/25 10:42:23 steven Exp $
  exec_prefix=@exec_prefix@
  bindir=@bindir@
  mandir=@mandir@
-@@ -65,7 +65,7 @@ install: mftrace gf2pbm $(PYC_MODULES) i
+@@ -76,7 +76,7 @@ install: mftrace gf2pbm $(PYC_MODULES) install-man ins
  
  install-py: $(PY_MODULES) $(PYC_MODULES) 
  	install -d $(DESTDIR)$(datadir)
