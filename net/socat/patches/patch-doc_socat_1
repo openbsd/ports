@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_socat_1,v 1.2 2008/06/05 19:46:34 rui Exp $
---- doc/socat.1.orig	Sat Feb  9 22:02:02 2008
-+++ doc/socat.1	Wed Jun  4 21:52:58 2008
-@@ -2772,11 +2772,11 @@ error\&. 
- .PP 
- .SH "FILES" 
+$OpenBSD: patch-doc_socat_1,v 1.3 2009/08/12 22:29:35 sthen Exp $
+--- doc/socat.1.orig	Thu May  7 11:03:10 2009
++++ doc/socat.1	Wed Aug 12 14:24:46 2009
+@@ -3467,11 +3467,11 @@ error\&. 
+ .SH "FILES"
+ 
  .PP 
 -/usr/bin/socat 
 +${LOCALBASE}/bin/socat
@@ -14,5 +14,5 @@ $OpenBSD: patch-doc_socat_1,v 1.2 2008/06/05 19:46:34 rui Exp $
 -/usr/bin/procan
 +${LOCALBASE}/bin/procan
  .PP 
- .SH "ENVIRONMENT VARIABLES" 
- .PP 
+ .SH "ENVIRONMENT VARIABLES"
+ 

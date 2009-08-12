@@ -1,13 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/03/17 22:00:15 jolan Exp $
-bin/filan
-bin/procan
-bin/socat
+@comment $OpenBSD: PLIST,v 1.3 2009/08/12 22:29:35 sthen Exp $
+@bin bin/filan
+@bin bin/procan
+@bin bin/socat
 @man man/man1/socat.1
 share/doc/socat/
 share/doc/socat/FAQ
 share/doc/socat/README
 share/doc/socat/SECURITY
 share/doc/socat/dest-unreach.css
+share/doc/socat/socat-genericsocket.html
 share/doc/socat/socat-multicast.html
 share/doc/socat/socat-openssltunnel.html
 share/doc/socat/socat-tun.html
