@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/12 12:44:13 ajacoutot Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
 V =		2.12.0
 DISTNAME =	lablgtk-$V
-PKGNAME =	lablgtk2-$Vp2
+PKGNAME =	lablgtk2-$Vp3
 CATEGORIES =	x11 devel
 
 HOMEPAGE =	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
-		freetype glib-2.0 glitz gio-2.0 gmodule-2.0 gobject-2.0 iconv \
-		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pixman-1 xml2 z \
+		freetype glib-2.0 glitz gio-2.0 gmodule-2.0 gobject-2.0 \
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pixman-1 xml2 z \
 		pthread-stubs xcb
 
 LIB_DEPENDS =	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
@@ -32,7 +32,8 @@ FAKE_FLAGS =	BINDIR=${WRKINST}${PREFIX}/bin \
 
 USE_X11 =	Yes
 USE_GMAKE =	Yes
-MODULES =	lang/ocaml
+MODULES =	lang/ocaml \
+		devel/gettext
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	USE_CC=1 ${MODOCAML_NATIVE:S/Yes/USE_DOTOPT=1/:S/No//} \
