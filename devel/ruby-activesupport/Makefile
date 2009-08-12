@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/04/04 10:18:42 bernd Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/12 03:35:29 msf Exp $
 
 COMMENT=	utility classes and extensions for rails framework 
 
@@ -16,7 +16,7 @@ MASTER_SITES=   ${MASTER_SITE_RUBYFORGE:=activesupport/}
 
 MODULES=	lang/ruby
 
-RUN_DEPENDS=	::lang/ruby,-iconv
+RUN_DEPENDS=	${MODRUBY_RUN_DEPENDS},-iconv
 
 CONFIGURE_STYLE=ruby gem
 
