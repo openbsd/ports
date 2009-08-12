@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/12 13:52:19 ajacoutot Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
 
-V=			0.3.8
-DISTNAME=		gtk-vnc-${V}
-PKGNAME-main=		${DISTNAME}p1
-PKGNAME-plugin=		gtk-vnc-plugin-${V}p0
+GNOME_PROJECT=		gtk-vnc
+GNOME_VERSION=		0.3.9
 
-SHARED_LIBS +=	gtk-vnc-1.0          1.0      # .0.1
+PKGNAME-main=		${DISTNAME}
+PKGNAME-plugin=		gtk-vnc-plugin-${GNOME_VERSION}
+
+SHARED_LIBS +=	gtk-vnc-1.0          1.1      # .0.1
+
 CATEGORIES=		x11 net
 
-HOMEPAGE=		http://gtk-vnc.sourceforge.net/
+HOMEPAGE=		http://live.gnome.org/gtk-vnc
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,10 +21,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtk-vnc/}
-
 MODULES=		devel/gettext \
-			lang/python
+			lang/python \
+			x11/gnome
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
@@ -39,17 +40,19 @@ FLAVOR?=
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::x11/py-gtk2
-LIB_DEPENDS=		gnutls.>=13::security/gnutls
+LIB_DEPENDS=		gnutls.>=13::security/gnutls \
+			sasl2.>=2::security/cyrus-sasl2
 LIB_DEPENDS-plugin=	${LIB_DEPENDS} \
 			gtk-vnc-1.0::${BASE_PKGPATH}
 
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-examples \
-			--with-python
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--with-examples \
+			--with-python \
+			--with-sasl \
+			--without-libview
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2008/12/11 12:36:31 jasper Exp $
---- configure.orig	Sun Dec  7 20:35:38 2008
-+++ configure	Wed Dec 10 23:19:36 2008
-@@ -2590,7 +2590,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
+$OpenBSD: patch-configure,v 1.4 2009/08/12 13:52:19 ajacoutot Exp $
+--- configure.orig	Tue Aug 11 14:24:30 2009
++++ configure	Wed Aug 12 15:23:54 2009
+@@ -2697,7 +2697,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
  do
    IFS=$as_save_IFS
    test -z "$as_dir" && as_dir=.
@@ -10,11 +10,11 @@ $OpenBSD: patch-configure,v 1.3 2008/12/11 12:36:31 jasper Exp $
  	 for ac_exec_ext in '' $ac_executable_extensions; do
  	   { test -f "$as_dir/$ac_prog$ac_exec_ext" && $as_test_x "$as_dir/$ac_prog$ac_exec_ext"; } || continue
  	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(
-@@ -20656,7 +20656,6 @@ openbsd*)
-     *)                         need_version=no  ;;
+@@ -21965,7 +21965,6 @@ openbsd*)
+     *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
 -  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+   if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in

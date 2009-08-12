@@ -1,24 +1,26 @@
-$OpenBSD: patch-gnulib_tests_Makefile_in,v 1.1 2008/12/11 12:36:31 jasper Exp $
+$OpenBSD: patch-gnulib_tests_Makefile_in,v 1.2 2009/08/12 13:52:19 ajacoutot Exp $
 
 Don't bother running these two useless (and failing) tests.
 
---- gnulib/tests/Makefile.in.orig	Wed Dec 10 23:41:52 2008
-+++ gnulib/tests/Makefile.in	Wed Dec 10 23:42:16 2008
-@@ -51,7 +51,6 @@ TESTS = test-alloca-opt$(EXEEXT) test-arpa_inet$(EXEEX
+--- gnulib/tests/Makefile.in.orig	Wed Aug 12 15:22:44 2009
++++ gnulib/tests/Makefile.in	Wed Aug 12 15:23:43 2009
+@@ -51,7 +51,7 @@ TESTS = test-alloca-opt$(EXEEXT) test-arpa_inet$(EXEEX
  	test-stdbool$(EXEEXT) test-stdint$(EXEEXT) test-stdio$(EXEEXT) \
  	test-stdlib$(EXEEXT) test-sys_socket$(EXEEXT) \
  	test-unistd$(EXEEXT) test-vasnprintf$(EXEEXT) \
--	test-vc-list-files-git.sh test-vc-list-files-cvs.sh \
- 	test-wchar$(EXEEXT)
+-	test-vc-list-files-git.sh test-wchar$(EXEEXT)
++	test-wchar$(EXEEXT)
  noinst_PROGRAMS =
  check_PROGRAMS = test-alloca-opt$(EXEEXT) test-arpa_inet$(EXEEXT) \
-@@ -577,8 +576,7 @@ EXTRA_DIST = test-alloca-opt.c test-arpa_inet.c test-e
+ 	test-errno$(EXEEXT) test-getaddrinfo$(EXEEXT) \
+@@ -586,8 +586,8 @@ EXTRA_DIST = test-alloca-opt.c test-arpa_inet.c test-e
  	test-getaddrinfo.c intprops.h test-netinet_in.c \
  	test-snprintf.c test-stdbool.c test-stdint.c test-stdio.c \
  	test-stdlib.c test-sys_socket.c test-unistd.c \
 -	test-vasnprintf.c test-vc-list-files-git.sh \
 -	test-vc-list-files-cvs.sh test-wchar.c
-+	test-vasnprintf.c test-wchar.c
++	test-vasnprintf.c \
++	test-wchar.c
  BUILT_SOURCES = 
  SUFFIXES = 
  MOSTLYCLEANFILES = core *.stackdump
