@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.15 2008/09/29 22:55:46 simon Exp $
+# $OpenBSD: perl.port.mk,v 1.16 2009/08/12 22:36:48 simon Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -33,6 +33,11 @@ MODPERL_configure = \
 		INSTALLMAN3DIR='${PREFIX}/man/man3p' \
 		INSTALLBIN='$${PREFIX}/bin' \
 		INSTALLSCRIPT='$${INSTALLBIN}' ${CONFIGURE_ARGS}
+
+.  if ${CONFIGURE_STYLE:L:Mmodinst}
+BUILD_DEPENDS +=	::devel/p5-Module-Install
+CONFIGURE_ARGS +=	--skipdeps
+.  endif
 .endif
 
 MODPERL_pre-fake = \
@@ -54,6 +59,11 @@ do-regress:
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /usr/bin/perl \
 		${MODPERL_BUILD} destdir=${WRKINST} ${FAKE_TARGET}
+.  endif
+.elif ${CONFIGURE_STYLE:L:Mmodinst}
+.  if !target(pre-configure)
+pre-configure:
+	@rm -rf ${WRKSRC}/inc/Module/*Install*
 .  endif
 .endif
 
