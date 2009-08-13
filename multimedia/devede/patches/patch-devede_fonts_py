@@ -1,11 +1,11 @@
-$OpenBSD: patch-devede_fonts_py,v 1.1 2009/08/07 17:19:14 ajacoutot Exp $
---- devede_fonts.py.orig	Fri Aug  7 19:07:52 2009
-+++ devede_fonts.py	Fri Aug  7 19:08:40 2009
+$OpenBSD: patch-devede_fonts_py,v 1.2 2009/08/13 21:09:55 kili Exp $
+--- devede_fonts.py.orig	Fri Jul 17 00:19:27 2009
++++ devede_fonts.py	Wed Aug 12 21:45:09 2009
 @@ -29,7 +29,7 @@ def prepare_devede_font(home,font_path):
  		It's made this way because Red Hat package mandates removing font files
  		from RPM files, so DeVeDe must search in several directories """
  	
--	path_list=[font_path,"/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf","/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf"]
+-	path_list=[font_path,"/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans.ttf","/usr/share/fonts/truetype/ttf-dejavu/dejavusans.ttf"]
 +	path_list=[font_path,"${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf","${LOCALBASE}/lib/X11/fonts/dejavu/dejavusans.ttf"]
  	
  	#if our font for subtitles isn't installed, we install it
