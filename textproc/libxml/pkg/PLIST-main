@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/06/01 14:56:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/08/13 09:29:47 sthen Exp $
 @pkgpath textproc/libxml
 %%SHARED%%
 bin/xml2-config
-bin/xmlcatalog
-bin/xmllint
+@bin bin/xmlcatalog
+@bin bin/xmllint
 include/libxml2/
 include/libxml2/libxml/
 include/libxml2/libxml/DOCBparser.h

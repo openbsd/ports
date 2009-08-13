@@ -1,0 +1,81 @@
+$OpenBSD: patch-parser_c,v 1.3 2009/08/13 09:29:47 sthen Exp $
+
+fix CVE-2009-2414, CVE-2009-2416, from Daniel Veillard via
+redhat bug 515195
+
+--- parser.c.orig	Tue Apr  8 15:47:58 2008
++++ parser.c	Thu Aug 13 10:04:54 2009
+@@ -4893,10 +4893,14 @@ xmlParseNotationType(xmlParserCtxtPtr ctxt) {
+ 	if (name == NULL) {
+ 	    xmlFatalErrMsg(ctxt, XML_ERR_NAME_REQUIRED,
+ 			   "Name expected in NOTATION declaration\n");
+-	    return(ret);
++            xmlFreeEnumeration(ret);
++	    return(NULL);
+ 	}
+ 	cur = xmlCreateEnumeration(name);
+-	if (cur == NULL) return(ret);
++	if (cur == NULL) {
++            xmlFreeEnumeration(ret);
++            return(NULL);
++        }
+ 	if (last == NULL) ret = last = cur;
+ 	else {
+ 	    last->next = cur;
+@@ -4906,9 +4910,8 @@ xmlParseNotationType(xmlParserCtxtPtr ctxt) {
+     } while (RAW == '|');
+     if (RAW != ')') {
+ 	xmlFatalErr(ctxt, XML_ERR_NOTATION_NOT_FINISHED, NULL);
+-	if ((last != NULL) && (last != ret))
+-	    xmlFreeEnumeration(last);
+-	return(ret);
++        xmlFreeEnumeration(ret);
++	return(NULL);
+     }
+     NEXT;
+     return(ret);
+@@ -4949,7 +4952,10 @@ xmlParseEnumerationType(xmlParserCtxtPtr ctxt) {
+ 	}
+ 	cur = xmlCreateEnumeration(name);
+ 	xmlFree(name);
+-	if (cur == NULL) return(ret);
++	if (cur == NULL) {
++            xmlFreeEnumeration(ret);
++            return(NULL);
++        }
+ 	if (last == NULL) ret = last = cur;
+ 	else {
+ 	    last->next = cur;
+@@ -5351,6 +5357,12 @@ xmlParseElementChildrenContentDecl (xmlParserCtxtPtr c
+     const xmlChar *elem;
+     xmlChar type = 0;
+ 
++    if (ctxt->depth > 128) {
++        xmlFatalErrMsgInt(ctxt, XML_ERR_ELEMCONTENT_NOT_FINISHED,
++                "xmlParseElementChildrenContentDecl : depth %d too deep\n",
++                          ctxt->depth);
++	return(NULL);
++    }
+     SKIP_BLANKS;
+     GROW;
+     if (RAW == '(') {
+@@ -5359,7 +5371,9 @@ xmlParseElementChildrenContentDecl (xmlParserCtxtPtr c
+         /* Recurse on first child */
+ 	NEXT;
+ 	SKIP_BLANKS;
++        ctxt->depth++;
+         cur = ret = xmlParseElementChildrenContentDecl(ctxt, inputid);
++        ctxt->depth--;
+ 	SKIP_BLANKS;
+ 	GROW;
+     } else {
+@@ -5491,7 +5505,9 @@ xmlParseElementChildrenContentDecl (xmlParserCtxtPtr c
+ 	    /* Recurse on second child */
+ 	    NEXT;
+ 	    SKIP_BLANKS;
++            ctxt->depth++;
+ 	    last = xmlParseElementChildrenContentDecl(ctxt, inputid);
++            ctxt->depth--;
+ 	    SKIP_BLANKS;
+ 	} else {
+ 	    elem = xmlParseName(ctxt);
