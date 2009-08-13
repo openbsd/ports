@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.3 2009/08/13 13:30:10 jasper Exp $
 
 COMMENT =	Python DB-API 2.0 compliant interface to PostgreSQL
 
