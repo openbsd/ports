@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2009/08/07 14:15:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.243 2009/08/13 23:50:30 sthen Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -174,6 +174,7 @@
      SUBDIR += py-pyx
      SUBDIR += pycha
      SUBDIR += qiv
+     SUBDIR += quesoglc
      SUBDIR += rawstudio
      SUBDIR += ruby-color
      SUBDIR += ruby-gd2
