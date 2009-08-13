@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/08/13 23:49:53 sthen Exp $
+@lib lib/libGLC.so.${LIBGLC_VERSION}

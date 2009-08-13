@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/13 23:49:53 sthen Exp $
+%%SHARED%%
+include/GL/
+include/GL/glc.h
+lib/libGLC.a
+lib/libGLC.la
+lib/pkgconfig/
+lib/pkgconfig/quesoglc.pc
