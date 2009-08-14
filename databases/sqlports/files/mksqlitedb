@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.13 2009/08/14 12:41:56 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.14 2009/08/14 14:02:11 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -134,7 +134,7 @@ sub render
 sub render_join
 {
 	my ($self, $table) = @_;
-	return " JOIN PATHS ".$self->{table}." ON ".$self->table.".ID=$table.".$self->name;
+	return " JOIN Paths ".$self->{table}." ON ".$self->table.".ID=$table.".$self->name;
 }
 
 package ValueColumn;
@@ -336,7 +336,7 @@ sub pathref
 {
 	my ($self, $name) = @_;
 	$name = "FULLPKGPATH" if !defined $name;
-	return "$name INTEGER NOT NULL REFERENCES PATHS(ID)";
+	return "$name INTEGER NOT NULL REFERENCES Paths(ID)";
 }
 
 sub value
