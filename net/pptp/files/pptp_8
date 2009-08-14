@@ -1,4 +1,4 @@
-.\" $OpenBSD: pptp_8,v 1.7 2009/03/08 21:57:24 stsp Exp $
+.\" $OpenBSD: pptp_8,v 1.8 2009/08/14 00:02:54 stsp Exp $
 .\" Manual page for pptp-1.1.0
 .\" Information gleaned from USING file in the distribution
 .\" SH section heading
@@ -109,7 +109,7 @@ This example assumes that you want to use
 .Nm
 to connect
 to a VPN and use the VPN connection as your default route.
-Let us assume that the VPN server was called vpn-gateway.net.
+Let us assume that the PPTP server is called pptp.example.net.
 .Pp
 First, edit
 .Pa /etc/ppp/ppp.conf
@@ -119,7 +119,7 @@ connection. See
 for details on the format of this file.
 .Bd -literal
   vpn:
-	set device "!/usr/local/sbin/pptp --nolaunchpppd vpn-gateway.net"
+	set device "!/usr/local/sbin/pptp --nolaunchpppd pptp.example.net"
 	set authname User
 	set authkey MySecret
 	set mppe 128 stateless
@@ -129,20 +129,20 @@ Next, you need to configure routing in
 .Pa /etc/ppp/ppp.linkup :
 .Bd -literal
   vpn: 
-    add default HISADDR
+    add! default HISADDR
 .Ed
 .Pp
-If vpn-gateway.net does not reside on the local network,
-we have to add a host route pointing to vpn-gateway.net in order to
+If pptp.example.net does not reside on the local network,
+we have to add a host route pointing to pptp.example.net in order to
 avoid a chicken-and-egg problem once the default route is set to
 the VPN tunnel.
-Assuming the standard default route is 42.42.42.42:
+Assuming the standard default route is 192.168.1.1:
 .Pp
 .Pa /etc/ppp/ppp.linkup :
 .Bd -literal
   vpn: 
-    add vpn-gateway.net 42.42.42.42
-    add default HISADDR
+    add pptp.example.net 192.168.1.1
+    add! default HISADDR
 .Ed
 .Pp
 If your default route is not fixed, for example if you connect
@@ -154,7 +154,7 @@ host route to the VPN gateway. For example:
 .Bd -literal
 	#!/bin/sh
         gw=`netstat -rn -f inet | grep ^default | awk '{print $2};'`
-        /sbin/route add -host vpn-gateway.net ${gw}
+        /sbin/route add -host pptp.example.net ${gw}
 .Ed
 .Pp
 Call the script from
@@ -168,7 +168,7 @@ Make sure the changes to the routing table are reversed in
 .Pa /etc/ppp/ppp.linkdown :
 .Bd -literal
   vpn:
-    delete vpn-gateway.net
+    delete pptp.example.net
 .Ed
 .Pp
 Restoring the previous default route in
@@ -187,8 +187,8 @@ This example assumes that you want to configure a router running
 OpenBSD to provide PPTP VPN access to a remote network for all hosts
 on your internal network.
 .Pp
-Let us assume that the VPN server was called vpn-gateway.net,
-and that the default route of our OpenBSD box was 42.42.42.42.
+Let us assume that the VPN server is called pptp.example.net,
+and that the default route of our OpenBSD box is 192.168.1.1.
 The remote network shall be 10.42.0.0/16; we want all traffic to
 this network to go through the VPN tunnel.
 .Pp
@@ -202,7 +202,7 @@ for details on the format of this file.
   default:
 	set log Phase Chat LCP IPCP CCP tun command
   vpn:
-	set device "!/usr/local/sbin/pptp --nolaunchpppd vpn-gateway.net"
+	set device "!/usr/local/sbin/pptp --nolaunchpppd pptp.example.net"
 	set authname User
 	set authkey MySecret
 	set mppe 128 stateless
@@ -222,14 +222,14 @@ More on that later.
     ! sh -c "/sbin/pfctl -a vpn -f /etc/pf.conf.vpn"
 .Ed
 .Pp
-If vpn-gateway.net resides inside 10.42.0.0/16, we have to add a host
-route pointing to vpn-gateway.net in order to avoid a chicken-and-egg
+If pptp.example.net resides inside 10.42.0.0/16, we have to add a host
+route pointing to pptp.example.net in order to avoid a chicken-and-egg
 problem once packets to 10.42.0.0/16 are routed through the tunnel.
 .Pp
 .Pa /etc/ppp/ppp.linkup :
 .Bd -literal
   vpn: 
-    add vpn-gateway.net 42.42.42.42
+    add pptp.example.net 192.168.1.1
     add 10.42.0.0/16 HISADDR
     ! sh -c "/sbin/pfctl -a vpn -f /etc/pf.conf.vpn"
 .Ed
@@ -243,7 +243,7 @@ For example:
 .Bd -literal
 	#!/bin/sh
         gw=`netstat -rn -f inet | grep ^default | awk '{print $2};'`
-        /sbin/route add -host vpn-gateway.net ${gw}
+        /sbin/route add -host pptp.example.net ${gw}
 .Ed
 .Pp
 Call the script from
@@ -262,7 +262,7 @@ reversed when the VPN connection drops:
   vpn:
     ! sh -c "/sbin/pfctl -a vpn -F all"
     delete 10.42.0.0/16
-    delete vpn-gateway.net
+    delete pptp.example.net
 .Ed
 .Pp
 To make
@@ -296,11 +296,11 @@ for example:
 
   # Allow ping from remote, and explicitly make sure our replies are
   # routed back through the tunnel.
-  pass in on $vpn_if reply-to ($vpn_if vpn-gateway.net) \e
+  pass in on $vpn_if reply-to ($vpn_if pptp.example.net) \e
 	inet proto icmp icmp-type echoreq keep state
 
   # Same for ssh.
-  pass in on $vpn_if reply-to ($vpn_if vpn-gateway.net) proto tcp \e
+  pass in on $vpn_if reply-to ($vpn_if pptp.example.net) proto tcp \e
 	from any to ($vpn_if) port ssh flags S/SA keep state
 .Ed
 .Pp
