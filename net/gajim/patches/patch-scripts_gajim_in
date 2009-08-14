@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_gajim_in,v 1.3 2009/08/14 09:36:30 pea Exp $
+--- scripts/gajim.in.orig	Fri Aug 14 08:33:57 2009
++++ scripts/gajim.in	Fri Aug 14 08:35:14 2009
+@@ -34,4 +34,8 @@ PYTHON_EXEC=@PYTHON@
+ 
+ cd ${datadir}/src
+ export PYTHONPATH="$PYTHONPATH:@LIBDIR@/gajim"
++
++# Gajim needs /usr/sbin/nslookup in PATH to look up SRV records.
++export PATH="/usr/sbin:$PATH"
++
+ exec ${PYTHON_EXEC} -OO $APP.py "$@"

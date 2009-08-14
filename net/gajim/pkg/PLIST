@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/01/13 11:40:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/08/14 09:36:30 pea Exp $
 bin/gajim
+bin/gajim-history-manager
 bin/gajim-remote
 lib/gajim/
 lib/gajim/gtkspell.la
@@ -312,7 +313,6 @@ share/gajim/data/glade/xml_console_window.glade
 share/gajim/data/glade/zeroconf_contact_context_menu.glade
 share/gajim/data/glade/zeroconf_context_menu.glade
 share/gajim/data/glade/zeroconf_information_window.glade
-share/gajim/data/glade/zeroconf_properties_window.glade
 share/gajim/data/iconsets/
 share/gajim/data/iconsets/crystal/
 share/gajim/data/iconsets/crystal/16x16/
@@ -669,6 +669,26 @@ share/gajim/data/iconsets/transports/aim/32x32/xa.png
 share/gajim/data/iconsets/transports/aim/48x48/
 share/gajim/data/iconsets/transports/aim/48x48/offline.png
 share/gajim/data/iconsets/transports/aim/48x48/online.png
+share/gajim/data/iconsets/transports/facebook/
+share/gajim/data/iconsets/transports/facebook/16x16/
+share/gajim/data/iconsets/transports/facebook/16x16/away.png
+share/gajim/data/iconsets/transports/facebook/16x16/chat.png
+share/gajim/data/iconsets/transports/facebook/16x16/dnd.png
+share/gajim/data/iconsets/transports/facebook/16x16/not_in_roster.png
+share/gajim/data/iconsets/transports/facebook/16x16/offline.png
+share/gajim/data/iconsets/transports/facebook/16x16/online.png
+share/gajim/data/iconsets/transports/facebook/16x16/xa.png
+share/gajim/data/iconsets/transports/facebook/32x32/
+share/gajim/data/iconsets/transports/facebook/32x32/away.png
+share/gajim/data/iconsets/transports/facebook/32x32/chat.png
+share/gajim/data/iconsets/transports/facebook/32x32/dnd.png
+share/gajim/data/iconsets/transports/facebook/32x32/not_in_roster.png
+share/gajim/data/iconsets/transports/facebook/32x32/offline.png
+share/gajim/data/iconsets/transports/facebook/32x32/online.png
+share/gajim/data/iconsets/transports/facebook/32x32/xa.png
+share/gajim/data/iconsets/transports/facebook/48x48/
+share/gajim/data/iconsets/transports/facebook/48x48/offline.png
+share/gajim/data/iconsets/transports/facebook/48x48/online.png
 share/gajim/data/iconsets/transports/gadu-gadu/
 share/gajim/data/iconsets/transports/gadu-gadu/16x16/
 share/gajim/data/iconsets/transports/gadu-gadu/16x16/away.png
@@ -935,6 +955,7 @@ share/gajim/data/pixmaps/agents/bytestreams.png
 share/gajim/data/pixmaps/agents/conference.png
 share/gajim/data/pixmaps/agents/disc.png
 share/gajim/data/pixmaps/agents/error.png
+share/gajim/data/pixmaps/agents/facebook.png
 share/gajim/data/pixmaps/agents/gadu-gadu.png
 share/gajim/data/pixmaps/agents/http-ws.png
 share/gajim/data/pixmaps/agents/icq.png
@@ -962,8 +983,11 @@ share/gajim/data/pixmaps/events/gc_invitation.png
 share/gajim/data/pixmaps/events/new_email_recv.png
 share/gajim/data/pixmaps/events/priv_msg_recv.png
 share/gajim/data/pixmaps/events/single_msg_recv.png
+share/gajim/data/pixmaps/events/subscription_request.png
+share/gajim/data/pixmaps/events/unsubscribed.png
 share/gajim/data/pixmaps/gajim.ico
 share/gajim/data/pixmaps/gajim.png
+share/gajim/data/pixmaps/gajim.svg
 share/gajim/data/pixmaps/gajim_about.png
 share/gajim/data/pixmaps/kbd_input.png
 share/gajim/data/pixmaps/muc_separator.png
@@ -1069,6 +1093,9 @@ share/gajim/src/common/helpers.pyo
 share/gajim/src/common/i18n.py
 share/gajim/src/common/i18n.pyc
 share/gajim/src/common/i18n.pyo
+share/gajim/src/common/latex.py
+share/gajim/src/common/latex.pyc
+share/gajim/src/common/latex.pyo
 share/gajim/src/common/logger.py
 share/gajim/src/common/logger.pyc
 share/gajim/src/common/logger.pyo
@@ -1329,6 +1356,7 @@ share/locale/uk/LC_MESSAGES/gajim.mo
 share/locale/zh_CN/LC_MESSAGES/gajim.mo
 share/pixmaps/
 share/pixmaps/gajim.png
+share/pixmaps/gajim.svg
 share/pixmaps/gajim_about.png
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
