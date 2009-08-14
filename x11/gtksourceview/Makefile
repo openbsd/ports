@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2009/08/14 10:09:38 giovanni Exp $
 
 COMMENT=		text widget that extends GTK2's GtkTextView widget
 
 MAJOR_VERSION=		2.0
 GNOME_PROJECT=		gtksourceview
-GNOME_VERSION=		2.4.2
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		2.6.2
 
-SHARED_LIBS +=	gtksourceview-2.0    2.0      # .0.0
+SHARED_LIBS +=	gtksourceview-2.0    3.0      # .0.0
 CATEGORIES=		x11
 
 SUBST_VARS=		MAJOR_VERSION
