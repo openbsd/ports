@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2009/08/14 09:22:21 pea Exp $
+--- configure.orig	Tue Aug 11 12:08:55 2009
++++ configure	Tue Aug 11 12:10:20 2009
+@@ -6163,7 +6163,7 @@ if test "${ac_cv_lib_ssl_SSL_library_init+set}" = set;
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lssl  $LIBS"
++LIBS="-lcrypto -lssl  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -6701,7 +6701,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 			if test "$PG_SSL" = "yes"
+ 			then
+-				LIBS="${PG_LIB}/libpq.a $CRYPT_LIB $LIBS -lssl $CRYPTO_LIB"
++				LIBS="${PG_LIB}/libpq.a $CRYPT_LIB $LIBS -lcrypto -lssl $CRYPTO_LIB"
+ 			else
+ 				LIBS="${PG_LIB}/libpq.a $CRYPT_LIB $LIBS $CRYPTO_LIB"
+ 			fi
