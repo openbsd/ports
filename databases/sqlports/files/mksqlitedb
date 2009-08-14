@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.11 2009/08/14 10:45:52 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.12 2009/08/14 11:31:37 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -109,11 +109,30 @@ sub default_name
 	return "VALUE";
 }
 
+sub new
+{
+	my ($class, $varclass, $name) = @_;
+	if (!defined $name) {
+		$name = $class->default_name;
+	}
+	bless {name => $name, k => $varclass->keyword_table }, $class;
+}
+
 sub render
 {
-	my ($self, $inserter, $class) = @_;
-	return $inserter->value($class->keyword_table, $self->name);
+	my ($self, $inserter) = @_;
+	return $inserter->value($self->{k}, $self->name);
 }
+
+package OptValueColumn;
+our @ISA = qw(ValueColumn);
+
+sub render
+{
+	my ($self, $inserter) = @_;
+	return $inserter->optvalue($self->{k}, $self->name);
+}
+
 
 package AbstractInserter;
 # this is the object to use to put stuff into the db...
@@ -136,7 +155,7 @@ sub make_table
 	return if defined $self->{tables_created}->{$class->table};
 
 	unshift(@columns, PathColumn->new);
-	my @l = map {$_->render($self, $class)} @columns;
+	my @l = map {$_->render($self)} @columns;
 	push(@l, $constraint) if defined $constraint;
 	$self->new_table($class->table, @l);
 }
@@ -221,8 +240,10 @@ sub create_tables
 	my ($self, $vars) = @_;
 
 	$self->db->commit;
-	$self->new_table("Ports", $self->pathref, 
-	    (map {$_." ".$vars->{$_}->sqltype($self) } sort @{$self->{varlist}}), "UNIQUE(FULLPKGPATH)");
+	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
+	unshift(@columns, PathColumn->new);
+	my @l = map {$_->render($self)} @columns;
+	$self->new_table("Ports", @l, "UNIQUE(FULLPKGPATH)");
 	$self->prepare_normal_inserter('Ports', @{$self->{varlist}});
 	$self->prepare_normal_inserter('Paths', 'PKGPATH');
 }
@@ -275,25 +296,14 @@ sub value
 	}
 }
 
-sub key
+sub optvalue
 {
-	my ($self, $class) = @_;
-	my $k = $class->keyword_table;
+	my ($self, $k, $name) = @_;
+	$name = "VALUE" if !defined $name;
 	if (defined $k) {
-		return "INTEGER NOT NULL REFERENCES $k(KEYREF)";
+		return "$name INTEGER REFERENCES $k(KEYREF)";
 	} else {
-		return "TEXT NOT NULL";
-	}
-}
-
-sub optkey
-{
-	my ($self, $class) = @_;
-	my $k = $class->keyword_table;
-	if (defined $k) {
-		return "INTEGER REFERENCES $k(KEYREF)";
-	} else {
-		return "TEXT";
+		return "$name TEXT";
 	}
 }
 
@@ -308,6 +318,7 @@ sub create_tables
 	while (my ($name, $class) = each %$vars) {
 		if (!defined( $class->table )) {
 			push(@{$self->{varlist}}, $name);
+			push(@{$self->{columnlist}}, $class->column($name));
 		} 
 		$class->create_table($self);
 	}
@@ -401,6 +412,7 @@ sub create_tables
 	    "PKGPATH TEXT NOT NULL");
 	while (my ($name, $class) = each %$vars) {
 		push(@{$self->{varlist}}, $name);
+		push(@{$self->{columnlist}}, $class->column($name));
 		$class->create_table($self);
 	}
 
@@ -420,6 +432,13 @@ sub value
 	my ($self, $k, $name) = @_;
 	$name = "VALUE" if !defined $name;
 	return "$name TEXT NOT NULL";
+}
+
+sub optvalue
+{
+	my ($self, $k, $name) = @_;
+	$name = "VALUE" if !defined $name;
+	return "$name TEXT";
 }
 
 sub key
@@ -495,9 +514,10 @@ sub add_value
 	$ins->add_to_port($self->var, $value);
 }
 
-sub sqltype
+sub column
 {
-	return "TEXT";
+	my ($self, $name) = @_;
+	return OptTextColumn->new($name);
 }
 
 sub table()
@@ -552,10 +572,10 @@ sub add
 	$self->add_value($ins, $self->keyword($ins, $self->value));
 }
 
-sub sqltype
+sub column
 {
-	my ($self, $inserter) = @_;
-	return $inserter->key($self);
+	my ($self, $name) = @_;
+	return ValueColumn->new($self, $name);
 }
 
 package ArchKeyVar;
@@ -574,10 +594,10 @@ sub add
 	}
 }
 
-sub sqltype
+sub column
 {
-	my ($self, $inserter) = @_;
-	return $inserter->optkey($self);
+	my ($self, $name) = @_;
+	return OptValueColumn->new($self, $name);
 }
 
 package YesNoVar;
@@ -589,9 +609,10 @@ sub add
 	$self->add_value($ins, $self->value =~ m/^Yes/i ? 1 : undef);
 }
 
-sub sqltype
+sub column
 {
-	return "INTEGER";
+	my ($self, $name) = @_;
+	return OptIntegerColumn->new($name);
 }
 
 # variable is always defined, but we don't need to store empty values.
@@ -655,11 +676,6 @@ sub table()
 	return "Depends";
 }
 
-sub sqltype
-{
-	return "TEXT";
-}
-
 package LibDependsVar;
 our @ISA=(qw(DependsVar));
 sub depends_type() { 'Library' }
@@ -702,7 +718,7 @@ sub create_table
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
 	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE)", 
-	    ValueColumn->new);
+	    ValueColumn->new($self));
 	$inserter->prepare_normal_inserter($self->table, "VALUE");
 }
 
@@ -710,8 +726,6 @@ sub keyword_table()
 {
 	return undef;
 }
-
-sub sqltype { "TEXT" }
 
 package MasterSitesVar;
 our @ISA=(qw(OptKeyVar));
@@ -732,7 +746,7 @@ sub create_table
 	$self->create_keyword_table($inserter);
 	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, N, VALUE)",
 	    OptIntegerColumn->new("N"),
-	    ValueColumn->new);
+	    ValueColumn->new($self));
 	$inserter->prepare_normal_inserter($self->table, "N", "VALUE");
 }
 
@@ -754,6 +768,12 @@ sub add
 	}
 }
 
+sub column
+{
+	my ($self, $name) = @_;
+	return OptTextColumn->new($name);
+}
+
 package ListKeyVar;
 our @ISA=(qw(SecondaryVar));
 
@@ -772,7 +792,7 @@ sub keyword_table()
 }
 
 package QuotedListVar;
-our @ISA=(qw(SecondaryVar));
+our @ISA=(qw(ListVar));
 
 sub add
 {
@@ -800,6 +820,12 @@ sub add
 	my ($self, $ins) = @_;
 	return if $self->value eq '';
 	$self->SUPER::add($ins);
+}
+
+sub column
+{
+	my ($self, $name) = @_;
+	return OptValueColumn->new($self, $name);
 }
 
 package FlavorsVar;
@@ -839,7 +865,7 @@ sub add
 }
 
 package ModulesVar;
-our @ISA=(qw(ListKeyVar));
+our @ISA=(qw(DefinedListKeyVar));
 sub table() { 'Modules' }
 sub keyword_table() { 'ModuleKeys' }
 
@@ -878,7 +904,7 @@ sub create_table
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
 	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE)",
-	    ValueColumn->new,
+	    ValueColumn->new($self),
 	    OptTextColumn->new("EXTRA"));
 	$inserter->prepare_normal_inserter($self->table, "VALUE", "EXTRA");
 }
@@ -922,7 +948,7 @@ sub create_table
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
 	$inserter->make_table($self, "UNIQUE (FULLPKGPATH, LIBNAME)",
-	    ValueColumn->new("LIBNAME"),
+	    ValueColumn->new($self, "LIBNAME"),
 	    TextColumn->new("VERSION"));
 	$inserter->prepare_normal_inserter($self->table, "LIBNAME", "VERSION");
 }
