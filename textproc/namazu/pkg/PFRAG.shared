@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/08/14 00:00:18 sthen Exp $
+@lib lib/libnmz.so.${LIBnmz_VERSION}

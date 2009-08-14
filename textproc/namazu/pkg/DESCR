@@ -1,0 +1,10 @@
+Namazu is a full-text indexer/search engine intended for easy use.
+Not only does it work as a small or medium scale Web search engine,
+but also as a personal search system for email or other files.
+
+It provides a CGI interface for web searches, and a command-line
+search tool. Third-party frontends are available such as namazu.el
+and Wanderlust on Emacs and Tknamazu on X Window System.
+
+Filters enable namazu to index various formats of files. Some are
+standalone (e.g. Mail/News); others require external dependencies.
