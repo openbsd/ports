@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2009/08/14 00:02:10 sthen Exp $
+--- configure.ac.orig	Mon Apr 20 07:10:12 2009
++++ configure.ac	Thu Aug 13 16:04:17 2009
+@@ -37,7 +37,8 @@ AC_CHECK_FUNCS([dup2 setenv strchr strdup strrchr strs
+ 
+ # Check for readline
+ AC_CHECK_HEADERS([readline/readline.h], [], [echo "Error: readline headers not found."; exit 1;])
+-AC_CHECK_LIB([readline], [open], [], [echo "Error: libreadline.so not found."; exit 1;])
++AC_SEARCH_LIBS(tgetent, termcap terminfo termlib)
++AC_CHECK_LIB([readline], [open], [], [echo "Error: libreadline.so not found."; exit 1;])
+ 
+ AC_CONFIG_FILES([Makefile src/Makefile])
+ AC_OUTPUT

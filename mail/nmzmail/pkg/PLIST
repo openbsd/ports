@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/14 00:02:10 sthen Exp $
+@bin bin/nmzmail
+@man man/man1/nmzmail.1

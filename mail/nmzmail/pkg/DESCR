@@ -1,0 +1,8 @@
+nmzmail is a tool to use the namazu search engine from within the
+mutt mail client to search mail stored in maildir folders. Based
+on the result of the namazu query, nmzmail generates a maildir
+folder containing symbolic links to the mails matching the query.
+A simple mutt macro makes it easy to use nmzmail from within mutt.
+
+nmzmail is pretty similar to mairix, but the code is much simpler,
+as it uses an external program as search engine.
