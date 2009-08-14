@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_xsane_c,v 1.1 2009/04/18 12:22:13 ajacoutot Exp $
+$OpenBSD: patch-src_xsane_c,v 1.2 2009/08/14 18:49:55 ajacoutot Exp $
 
 Close unneeded file descriptors.
 
---- src/xsane.c.orig	Sat Mar 29 09:56:30 2008
-+++ src/xsane.c	Sat Apr 18 13:29:24 2009
+--- src/xsane.c.orig	Wed Oct  2 13:02:50 2002
++++ src/xsane.c	Fri Aug 14 20:34:25 2009
 @@ -48,6 +48,8 @@
  
  #include <sys/wait.h>
@@ -13,7 +13,7 @@ Close unneeded file descriptors.
  /* ---------------------------------------------------------------------------------------------------------------------- */
  
  struct option long_options[] =
-@@ -3674,6 +3676,41 @@ static void xsane_show_gpl(GtkWidget *widget, gpointer
+@@ -3684,6 +3686,41 @@ static void xsane_show_gpl(GtkWidget *widget, gpointer
  
  /* ---------------------------------------------------------------------------------------------------------------------- */
  
@@ -55,7 +55,7 @@ Close unneeded file descriptors.
  static void xsane_show_doc_via_nsr(GtkWidget *widget, gpointer data) /* show via netscape remote */
  {
   char *name = (char *) data;
-@@ -3726,6 +3763,8 @@ static void xsane_show_doc_via_nsr(GtkWidget *widget, 
+@@ -3736,6 +3773,8 @@ static void xsane_show_doc_via_nsr(GtkWidget *widget, 
          ipc_file = fdopen(xsane.ipc_pipefd[1], "w");
        }
  
@@ -64,7 +64,7 @@ Close unneeded file descriptors.
        DBG(DBG_info, "trying to change user id for new subprocess:\n");
        DBG(DBG_info, "old effective uid = %d\n", (int) geteuid());
        setuid(getuid());
-@@ -3768,6 +3807,8 @@ static void xsane_show_doc_via_nsr(GtkWidget *widget, 
+@@ -3778,6 +3817,8 @@ static void xsane_show_doc_via_nsr(GtkWidget *widget, 
          ipc_file = fdopen(xsane.ipc_pipefd[1], "w");
        }
  
@@ -73,7 +73,7 @@ Close unneeded file descriptors.
        DBG(DBG_info, "trying to change user id for new subprocess:\n");
        DBG(DBG_info, "old effective uid = %d\n", (int) geteuid());
        setuid(getuid());
-@@ -3888,6 +3929,8 @@ static void xsane_show_doc(GtkWidget *widget, gpointer
+@@ -3898,6 +3939,8 @@ static void xsane_show_doc(GtkWidget *widget, gpointer
          close(xsane.ipc_pipefd[0]); /* close reading end of pipe */
          ipc_file = fdopen(xsane.ipc_pipefd[1], "w");
        }

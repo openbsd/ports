@@ -1,17 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/14 18:49:54 ajacoutot Exp $
 
 COMMENT=	scanner frontend for SANE
 
-DISTNAME=	xsane-0.996
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	xsane-0.997
 CATEGORIES=	graphics
 
-MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/xsane/ \
-		http://gd.tuwien.ac.at/hci/sane/xsane/ \
-		ftp://gd.tuwien.ac.at/hci/sane/xsane/ \
-		ftp://ftp.no.mostang.com/pub/sane/xsane/ \
-		ftp://ftp2.sane-project.org/pub/sane/xsane/ \
-		ftp://sunsite.uio.no/pub/sane/xsane/
+MASTER_SITES=	http://www.xsane.org/download/
 
 HOMEPAGE=	http://www.xsane.org/
 
