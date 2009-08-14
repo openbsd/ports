@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.270 2009/07/31 15:43:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.271 2009/08/14 00:03:36 sthen Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -64,6 +64,7 @@
      SUBDIR += mozilla-dicts
      SUBDIR += mupdf
      SUBDIR += mxml
+     SUBDIR += namazu
      SUBDIR += ocaml-rss
      SUBDIR += ocaml-xml-light
      SUBDIR += odt2txt
