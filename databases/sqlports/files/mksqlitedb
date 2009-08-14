@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.12 2009/08/14 11:31:37 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.13 2009/08/14 12:41:56 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -56,6 +56,17 @@ sub render
 	return $self->name." ".$self->sqltype;
 }
 
+sub render_view
+{
+	my ($self, $t) = @_;
+	return $t.".".$self->name." AS ".$self->name;
+}
+
+sub render_join
+{
+	return "";
+}
+
 package TextColumn;
 our @ISA = qw(Column);
 
@@ -86,13 +97,32 @@ sub sqltype
 	return "INTEGER";
 }
 
+package RefColumn;
+our @ISA = qw(Column);
+
+my $table = "T0001";
+
+sub table
+{
+	my $self = shift;
+	if (!defined $self->{table}) {
+		$self->{table} = $table++;
+	}
+	return $self->{table};
+}
 
 package PathColumn;
-our @ISA = qw(Column);
+our @ISA = qw(RefColumn);
 
 sub default_name
 {
 	return "FULLPKGPATH";
+}
+
+sub render_view
+{
+	my ($self, $t) = @_;
+	return $self->table.".FULLPKGPATH AS ".$self->name;
 }
 
 sub render
@@ -101,8 +131,14 @@ sub render
 	return $inserter->pathref($self->name);
 }
 
+sub render_join
+{
+	my ($self, $table) = @_;
+	return " JOIN PATHS ".$self->{table}." ON ".$self->table.".ID=$table.".$self->name;
+}
+
 package ValueColumn;
-our @ISA = qw(Column);
+our @ISA = qw(RefColumn);
 
 sub default_name
 {
@@ -122,6 +158,24 @@ sub render
 {
 	my ($self, $inserter) = @_;
 	return $inserter->value($self->{k}, $self->name);
+}
+
+sub render_view
+{
+	my ($self, $t) = @_;
+	if (defined $self->{k}) {
+		return $self->table.".VALUE AS ".$self->name;
+	} else {
+		return $self->SUPER::render_view($t);
+	}
+}
+
+sub render_join
+{
+	my ($self, $table) = @_;
+	if (defined $self->{k}) {
+		return " JOIN ".$self->{k}." ".$self->table." ON ".$self->table.".KEYREF=$table.".$self->name;
+	}
 }
 
 package OptValueColumn;
@@ -305,6 +359,24 @@ sub optvalue
 	} else {
 		return "$name TEXT";
 	}
+}
+
+sub make_table
+{
+	my ($self, $class, $constraint, @columns) = @_;
+
+	return if defined $self->{tables_created}->{$class->table};
+
+	$self->SUPER::make_table($class, $constraint, @columns);
+
+	unshift(@columns, PathColumn->new);
+	my $name = "_".$class->table;
+	my @l = map {$_->render_view($class->table) } @columns;
+	my @j = map {$_->render_join($class->table)} @columns;
+	my $v = "CREATE VIEW $name AS SELECT ".join(", ", @l). " FROM ".$class->table.join('', @j);
+	$self->db->do("DROP VIEW IF EXISTS $name");
+	print "$v\n" if $main::opt_v;
+	$self->db->do($v);
 }
 
 sub create_tables
