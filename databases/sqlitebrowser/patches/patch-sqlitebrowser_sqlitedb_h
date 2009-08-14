@@ -1,0 +1,29 @@
+$OpenBSD: patch-sqlitebrowser_sqlitedb_h,v 1.1 2009/08/14 12:44:26 espie Exp $
+--- sqlitebrowser/sqlitedb.h.orig	Thu Aug 13 20:20:25 2009
++++ sqlitebrowser/sqlitedb.h	Thu Aug 13 20:23:09 2009
+@@ -71,19 +71,22 @@ class DBBrowserIndex (private)
+ class DBBrowserTable
+     {    
+     public:
+-        DBBrowserTable() : name( 0 ) { }
+-        DBBrowserTable( const QString& wname,const QString& wsql )
+-            : name( wname), sql( wsql )
++        DBBrowserTable() : name( 0 ), isView( false ) { }
++        DBBrowserTable( const QString& wname,const QString& wsql, 
++	    bool wview = false )
++            : name( wname), sql( wsql ), isView(wview)
+         { }
+ 
+         void addField(int order, const QString& wfield,const QString& wtype);
+ 
+         QString getname() const { return name; }
+         QString getsql() const { return sql; }
++	bool getview() const { return isView; }
+         fieldMap fldmap;
+ private:
+         QString name;
+         QString sql;
++	bool isView;
+  };
+ 
+ 
