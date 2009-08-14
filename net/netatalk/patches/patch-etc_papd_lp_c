@@ -1,7 +1,95 @@
-$OpenBSD: patch-etc_papd_lp_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
+$OpenBSD: patch-etc_papd_lp_c,v 1.2 2009/08/14 19:09:22 naddy Exp $
+
+First 3 chunks resolve CVE-2008-5718
+
 --- etc/papd/lp.c.orig	Tue Jun  8 22:24:47 2004
-+++ etc/papd/lp.c	Sat Dec 31 01:31:29 2005
-@@ -377,7 +377,7 @@ int lp_init( out, sat )
++++ etc/papd/lp.c	Sat Jul 25 11:02:06 2009
+@@ -212,10 +212,37 @@ static void lp_setup_comments (charset_t dest)
+ 
+ #define is_var(a, b) (strncmp((a), (b), 2) == 0)
+ 
++static size_t quote(char *dest, char *src, const size_t bsize, size_t len)
++{
++size_t used = 0;
++
++    while (len && used < bsize ) {
++        switch (*src) {
++          case '$':
++          case '\\':
++          case '"':
++          case '`':
++            if (used + 2 > bsize )
++              return used;
++            *dest = '\\';
++            dest++;
++            used++;
++            break;
++        }
++        *dest = *src;
++        src++;
++        dest++;
++        len--;
++        used++;
++    }
++    return used;
++}
++
++
+ static char* pipexlate(char *src)
+ {
+     char *p, *q, *dest; 
+-    static char destbuf[MAXPATHLEN];
++    static char destbuf[MAXPATHLEN +1];
+     size_t destlen = MAXPATHLEN;
+     int len = 0;
+    
+@@ -224,13 +251,15 @@ static char* pipexlate(char *src)
+     if (!src)
+ 	return NULL;
+ 
+-    strncpy(dest, src, MAXPATHLEN);
+-    if ((p = strchr(src, '%')) == NULL) /* nothing to do */
++    memset(dest, 0, MAXPATHLEN +1);
++    if ((p = strchr(src, '%')) == NULL) { /* nothing to do */
++        strncpy(dest, src, MAXPATHLEN);
+         return destbuf;
+-
+-    /* first part of the path. just forward to the next variable. */
++    }
++    /* first part of the path. copy and forward to the next variable. */
+     len = MIN((size_t)(p - src), destlen);
+     if (len > 0) {
++        strncpy(dest, src, len);
+         destlen -= len;
+         dest += len;
+     }
+@@ -246,17 +275,20 @@ static char* pipexlate(char *src)
+             q =  lp.lp_created_for;
+         } else if (is_var(p, "%%")) {
+             q = "%";
+-        } else
+-            q = p;
++        } 
+ 
+         /* copy the stuff over. if we don't understand something that we
+          * should, just skip it over. */
+         if (q) {
+-            len = MIN(p == q ? 2 : strlen(q), destlen);
++            len = MIN(strlen(q), destlen);
++            len = quote(dest, q, destlen, len);
++        }
++        else {
++            len = MIN(2, destlen);
+             strncpy(dest, q, len);
+-            dest += len;
+-            destlen -= len;
+         }
++        dest += len;
++        destlen -= len;
+ 
+         /* stuff up to next $ */
+         src = p + 2;
+@@ -377,7 +409,7 @@ int lp_init( out, sat )
  	    FILE *cap_file;
  
  	    memset( auth_string, 0, 256 );
@@ -10,7 +98,7 @@ $OpenBSD: patch-etc_papd_lp_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
  		printer->p_authprintdir, addr_net/256, addr_net%256, 
  		addr_node);
  	    if (stat(addr_filename, &cap_st) == 0) {
-@@ -489,7 +489,7 @@ int lp_init( out, sat )
+@@ -489,7 +521,7 @@ int lp_init( out, sat )
  	lp.lp_seq = n;
  
  	n = ( n + 1 ) % 1000;
@@ -19,7 +107,7 @@ $OpenBSD: patch-etc_papd_lp_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
  	lseek( fd, 0L, 0 );
  	write( fd, buf, strlen( buf ));
  	close( fd );
-@@ -558,7 +558,7 @@ int lp_open( out, sat )
+@@ -558,7 +590,7 @@ int lp_open( out, sat )
  	}
          LOG(log_debug, logtype_papd, "lp_open: opened %s",  pipexlate(printer->p_printer) );
      } else {
@@ -28,7 +116,7 @@ $OpenBSD: patch-etc_papd_lp_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
  
  	if (( fd = open( name, O_WRONLY|O_CREAT|O_EXCL, 0660 )) < 0 ) {
  	    LOG(log_error, logtype_papd, "lp_open %s: %m", name );
-@@ -719,7 +719,7 @@ int lp_cancel()
+@@ -719,7 +751,7 @@ int lp_cancel()
      }
  
      for ( letter = 'A'; letter < lp.lp_letter; letter++ ) {
@@ -37,7 +125,7 @@ $OpenBSD: patch-etc_papd_lp_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
  	if ( unlink( name ) < 0 ) {
  	    LOG(log_error, logtype_papd, "lp_cancel unlink %s: %m", name );
  	}
-@@ -753,7 +753,7 @@ int lp_print()
+@@ -753,7 +785,7 @@ int lp_print()
  
      if ( printer->p_flags & P_SPOOLED ) {
  #ifndef HAVE_CUPS
@@ -46,7 +134,7 @@ $OpenBSD: patch-etc_papd_lp_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
  	if (( fd = open( tfname, O_WRONLY|O_EXCL|O_CREAT, 0660 )) < 0 ) {
  	    LOG(log_error, logtype_papd, "lp_print %s: %m", tfname );
  	    return 0;
-@@ -798,7 +798,7 @@ int lp_print()
+@@ -798,7 +830,7 @@ int lp_print()
  	}
  	fclose( cfile );
  
@@ -55,7 +143,7 @@ $OpenBSD: patch-etc_papd_lp_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
  	if ( link( tfname, cfname ) < 0 ) {
  	    LOG(log_error, logtype_papd, "lp_print can't link %s to %s: %m", cfname,
  		    tfname );
-@@ -811,7 +811,7 @@ int lp_print()
+@@ -811,7 +843,7 @@ int lp_print()
  	    return 0;
  	}
  
@@ -64,7 +152,7 @@ $OpenBSD: patch-etc_papd_lp_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
  	n = strlen( buf );
  	if ( write( s, buf, n ) != n ) {
  	    LOG(log_error, logtype_papd, "lp_print write: %m" );
-@@ -944,7 +944,7 @@ int lp_rmjob( job )
+@@ -944,7 +976,7 @@ int lp_rmjob( job )
  	return( -1 );
      }
  
@@ -73,7 +161,7 @@ $OpenBSD: patch-etc_papd_lp_c,v 1.1 2006/09/22 05:56:25 pvalchev Exp $
      n = strlen( buf );
      if ( write( s, buf, n ) != n ) {
  	LOG(log_error, logtype_papd, "lp_rmjob write: %m" );
-@@ -982,7 +982,7 @@ int lp_queue( out )
+@@ -982,7 +1014,7 @@ int lp_queue( out )
  	return( -1 );
      }
  
