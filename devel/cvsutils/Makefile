@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/14 11:32:46 sthen Exp $
 
 COMMENT=	collection of useful CVS scripts
 
-V=		0.2.3
-DISTNAME=	cvsutils-${V}
+DISTNAME=	cvsutils-0.2.5
 CATEGORIES=     devel
 
 HOMEPAGE=	http://www.red-bean.com/cvsutils/
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+
 MASTER_SITES=	${HOMEPAGE}releases/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
