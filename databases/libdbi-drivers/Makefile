@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/02 00:58:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/14 17:56:16 sthen Exp $
 
 V =			0.8.3-1
 COMMENT-main =		mysql driver for libdbi
@@ -7,11 +7,11 @@ COMMENT-sqlite =	sqlite driver for libdbi
 COMMENT-sqlite3 =	sqlite3 driver for libdbi
 COMMENT-freetds =	freetds driver for libdbi
 DISTNAME =		libdbi-drivers-$V
-PKGNAME-main =		libdbi-drivers-mysql-$V
-PKGNAME-pgsql =		libdbi-drivers-pgsql-$V
-PKGNAME-sqlite =	libdbi-drivers-sqlite-$V
-PKGNAME-sqlite3 =	libdbi-drivers-sqlite3-$V
-PKGNAME-freetds =	libdbi-drivers-freetds-$V
+PKGNAME-main =		libdbi-drivers-mysql-${V:S/-/./}
+PKGNAME-pgsql =		libdbi-drivers-pgsql-${V:S/-/./}
+PKGNAME-sqlite =	libdbi-drivers-sqlite-${V:S/-/./}
+PKGNAME-sqlite3 =	libdbi-drivers-sqlite3-${V:S/-/./}
+PKGNAME-freetds =	libdbi-drivers-freetds-${V:S/-/./}
 CATEGORIES =		databases
 
 HOMEPAGE =		http://libdbi-drivers.sourceforge.net/
