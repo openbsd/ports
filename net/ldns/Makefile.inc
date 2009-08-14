@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.6 2009/07/15 22:13:45 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2009/08/14 15:00:44 jakob Exp $
 
-VERSION=	1.6.0
+VERSION=	1.6.1
 
 DISTNAME=	ldns-${VERSION}
 
