@@ -1,0 +1,4 @@
+The workflow module allows the creation and assignment of arbitrary
+workflows to Drupal node types. Workflows are made up of workflow
+states. For example, a workflow with the states Draft, Review, and
+Published could be assigned to the Story node type.

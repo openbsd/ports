@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/15 12:56:30 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}workflow/
+${DRUPAL_MODS}workflow/LICENSE.txt
+${DRUPAL_MODS}workflow/README.txt
+${DRUPAL_MODS}workflow/includes/
+${DRUPAL_MODS}workflow/includes/workflow.views.inc
+${DRUPAL_MODS}workflow/includes/workflow.views_default.inc
+${DRUPAL_MODS}workflow/includes/workflow_views_handler_argument_state.inc
+${DRUPAL_MODS}workflow/includes/workflow_views_handler_field_sid.inc
+${DRUPAL_MODS}workflow/includes/workflow_views_handler_filter_sid.inc
+${DRUPAL_MODS}workflow/translations/
+${DRUPAL_MODS}workflow/translations/de.po
+${DRUPAL_MODS}workflow/translations/es.po
+${DRUPAL_MODS}workflow/translations/fr.po
+${DRUPAL_MODS}workflow/translations/hu.po
+${DRUPAL_MODS}workflow/translations/ja.po
+${DRUPAL_MODS}workflow/translations/workflow.pot
+${DRUPAL_MODS}workflow/workflow.admin.inc
+${DRUPAL_MODS}workflow/workflow.info
+${DRUPAL_MODS}workflow/workflow.install
+${DRUPAL_MODS}workflow/workflow.module
+${DRUPAL_MODS}workflow/workflow.pages.inc
+${DRUPAL_MODS}workflow/workflow_access.info
+${DRUPAL_MODS}workflow/workflow_access.install
+${DRUPAL_MODS}workflow/workflow_access.module
