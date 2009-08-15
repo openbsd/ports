@@ -1,0 +1,4 @@
+This module augments Views by allowing bulk operations to be executed on
+the nodes displayed by a view. It does so by showing a checkbox in front
+of each node, and adding a select box containing operations that can be
+applied on the selected nodes.
