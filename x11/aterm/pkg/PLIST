@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/17 14:34:02 millert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/08/15 16:40:27 ajacoutot Exp $
+@pkgpath ${BASE_PKGPATH},lite
+@pkgpath ${BASE_PKGPATH},lite,big5
 @mode 2755
 @group utmp
-bin/aterm
+@bin bin/aterm
 @mode
 @group
 @man man/man1/aterm.1
