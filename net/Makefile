@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.581 2009/08/03 11:15:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.582 2009/08/15 10:47:34 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -193,6 +193,7 @@
      SUBDIR += nepim
      SUBDIR += net-snmp
      SUBDIR += netatalk
+     SUBDIR += netbsd-iscsi-target
      SUBDIR += netdude
      SUBDIR += netfwd
      SUBDIR += netpipes
