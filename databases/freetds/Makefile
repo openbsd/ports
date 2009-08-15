@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/08/06 10:13:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2009/08/15 00:06:45 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -6,7 +6,7 @@ V=		0.82
 PATCHVER=	20090707
 DISTNAME=	freetds-$V
 PATCHFILES=	freetds-post82-${PATCHVER}.diff.gz:0
-PKGNAME=	${DISTNAME}.0.${PATCHVER}
+PKGNAME=	${DISTNAME}.0.${PATCHVER}p0
 
 SHARED_LIBS += ct                   4.0      # .4.0
 SHARED_LIBS += sybdb                6.0      # .5.0
@@ -24,13 +24,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES0=	http://spacehopper.org/mirrors/
 
-WANTLIB=	c ncurses readline pthread
+WANTLIB=	c ncurses readline pthread z
 
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
 
-MODULES=	converters/libiconv
+MODULES=	devel/gettext
 BUILD_DEPENDS=	::devel/doxygen
-LIB_DEPENDS=	iodbc,iodbcinst::databases/iodbc,-main
+LIB_DEPENDS=	iodbc,iodbcinst::databases/iodbc,-main \
+		gcrypt::security/libgcrypt \
+		gnutls::security/gnutls \
+		gpg-error::security/libgpg-error \
+		tasn1::security/libtasn1
 
 FLAVORS=	msdblib
 FLAVOR?=
@@ -38,10 +42,11 @@ FLAVOR?=
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-static \
-		--with-libiconv-prefix="${LOCALBASE}" \
 		--disable-threadsafe \
-		--with-iodbc="${LOCALBASE}"
+		--enable-static \
+		--with-gnutls \
+		--with-iodbc="${LOCALBASE}" \
+		--with-libiconv-prefix="${LOCALBASE}"
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
