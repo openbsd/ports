@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.716 2009/08/03 14:15:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.717 2009/08/15 17:35:25 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -50,6 +50,7 @@
      SUBDIR += cmake
      SUBDIR += commoncpp
      SUBDIR += cook
+     SUBDIR += coxpcall
      SUBDIR += cpphs
      SUBDIR += cppunit
      SUBDIR += cscope
