@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_gio-sharp_gio_gio-sharp_dll_config,v 1.1 2009/08/15 17:40:05 ajacoutot Exp $
+--- lib/gio-sharp/gio/gio-sharp.dll.config.orig	Sat Aug  8 00:22:29 2009
++++ lib/gio-sharp/gio/gio-sharp.dll.config	Sat Aug  8 00:23:36 2009
+@@ -1,6 +1,6 @@
+ <configuration>
+-  <dllmap dll="libgio-2.0-0.dll" target="libgio-2.0.so.0"/>
+-  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0.so.0"/>
+-  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so.0"/>
+-  <dllmap dll="libgthread-2.0-0.dll" target="libgthread-2.0.so.0"/>
++  <dllmap dll="libgio-2.0-0.dll" target="libgio-2.0.so"/>
++  <dllmap dll="libglib-2.0-0.dll" target="libglib-2.0.so"/>
++  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so"/>
++  <dllmap dll="libgthread-2.0-0.dll" target="libgthread-2.0.so"/>
+ </configuration>

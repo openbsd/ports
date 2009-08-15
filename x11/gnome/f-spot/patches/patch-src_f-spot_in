@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_f-spot_in,v 1.1.1.1 2008/10/17 10:39:17 jasper Exp $
---- src/f-spot.in.orig	Fri Oct 17 11:15:47 2008
-+++ src/f-spot.in	Fri Oct 17 11:20:28 2008
+$OpenBSD: patch-src_f-spot_in,v 1.2 2009/08/15 17:40:05 ajacoutot Exp $
+--- src/f-spot.in.orig	Wed Jul 22 15:53:14 2009
++++ src/f-spot.in	Sat Aug  8 00:25:43 2009
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  
  prefix=@prefix@
  exec_prefix=@exec_prefix@
-@@ -67,5 +67,5 @@ if $run_mdb; then
- elif $run_gdb; then
- 	gdb --eval-command=run --args mono $MONO_OPTIONS $EXE_TO_RUN "$@"
+@@ -99,5 +99,5 @@ elif $run_valgrind; then
+ elif $run_strace; then
+ 	strace -ttt -f -o /tmp/f-spot.strace mono $MONO_OPTIONS $EXE_TO_RUN "$@"
  else
 -	exec -a @PACKAGE@ $DBUSLAUNCH mono $MONO_OPTIONS $EXE_TO_RUN "$@"
 +	exec $DBUSLAUNCH mono $MONO_OPTIONS $EXE_TO_RUN "$@"

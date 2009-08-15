@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_f-spot_exe_config_in,v 1.1 2009/01/24 19:55:00 ajacoutot Exp $
---- src/f-spot.exe.config.in.orig	Sat Jan 24 20:42:37 2009
-+++ src/f-spot.exe.config.in	Sat Jan 24 20:43:06 2009
-@@ -13,5 +13,5 @@
+$OpenBSD: patch-src_f-spot_exe_config_in,v 1.2 2009/08/15 17:40:05 ajacoutot Exp $
+--- src/f-spot.exe.config.in.orig	Thu Jul  9 16:03:30 2009
++++ src/f-spot.exe.config.in	Sat Aug  8 00:25:43 2009
+@@ -12,5 +12,5 @@
    <dllmap dll="GL" target="libGL.so.1"/>
    <dllmap dll="libXcomposite.dll" target="libXcomposite.so.1"/>
    <dllmap dll="liblcms-1.0.0.dll" target="liblcms.so.1"/>
