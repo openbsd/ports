@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/08 09:38:16 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/15 12:58:19 espie Exp $
 
 SUBDIR += FCKeditor
 SUBDIR += admin-menu
@@ -40,6 +40,8 @@ SUBDIR += token
 SUBDIR += user_import
 SUBDIR += user_readonly
 SUBDIR += views
+SUBDIR += views_bulk_operations
 SUBDIR += webform
+SUBDIR += workflow
 
 .include <bsd.port.subdir.mk>
