@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.14 2009/08/14 14:02:11 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.15 2009/08/15 12:43:58 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -151,19 +151,25 @@ sub new
 	if (!defined $name) {
 		$name = $class->default_name;
 	}
-	bless {name => $name, k => $varclass->keyword_table }, $class;
+	bless {name => $name, class => $varclass }, $class;
+}
+
+sub k
+{
+	my $self = shift;
+	return $self->{class}->keyword_table;
 }
 
 sub render
 {
 	my ($self, $inserter) = @_;
-	return $inserter->value($self->{k}, $self->name);
+	return $inserter->value($self->k, $self->name);
 }
 
 sub render_view
 {
 	my ($self, $t) = @_;
-	if (defined $self->{k}) {
+	if (defined $self->k) {
 		return $self->table.".VALUE AS ".$self->name;
 	} else {
 		return $self->SUPER::render_view($t);
@@ -173,8 +179,8 @@ sub render_view
 sub render_join
 {
 	my ($self, $table) = @_;
-	if (defined $self->{k}) {
-		return " JOIN ".$self->{k}." ".$self->table." ON ".$self->table.".KEYREF=$table.".$self->name;
+	if (defined $self->k) {
+		return " JOIN ".$self->k." ".$self->table." ON ".$self->table.".KEYREF=$table.".$self->name;
 	}
 }
 
@@ -184,9 +190,8 @@ our @ISA = qw(ValueColumn);
 sub render
 {
 	my ($self, $inserter) = @_;
-	return $inserter->optvalue($self->{k}, $self->name);
+	return $inserter->optvalue($self->k, $self->name);
 }
-
 
 package AbstractInserter;
 # this is the object to use to put stuff into the db...
@@ -361,6 +366,20 @@ sub optvalue
 	}
 }
 
+sub create_view
+{
+	my ($self, $table, @columns) = @_;
+
+	unshift(@columns, PathColumn->new);
+	my $name = "_$table";
+	my @l = map {$_->render_view($table) } @columns;
+	my @j = map {$_->render_join($table)} @columns;
+	my $v = "CREATE VIEW $name AS SELECT ".join(", ", @l). " FROM ".$table.join('', @j);
+	$self->db->do("DROP VIEW IF EXISTS $name");
+	print "$v\n" if $main::opt_v;
+	$self->db->do($v);
+}
+
 sub make_table
 {
 	my ($self, $class, $constraint, @columns) = @_;
@@ -368,15 +387,7 @@ sub make_table
 	return if defined $self->{tables_created}->{$class->table};
 
 	$self->SUPER::make_table($class, $constraint, @columns);
-
-	unshift(@columns, PathColumn->new);
-	my $name = "_".$class->table;
-	my @l = map {$_->render_view($class->table) } @columns;
-	my @j = map {$_->render_join($class->table)} @columns;
-	my $v = "CREATE VIEW $name AS SELECT ".join(", ", @l). " FROM ".$class->table.join('', @j);
-	$self->db->do("DROP VIEW IF EXISTS $name");
-	print "$v\n" if $main::opt_v;
-	$self->db->do($v);
+	$self->create_view($class->table, @columns);
 }
 
 sub create_tables
@@ -388,14 +399,17 @@ sub create_tables
 	    "FULLPKGPATH TEXT NOT NULL UNIQUE", "PKGPATH INTEGER");
 
 	while (my ($name, $class) = each %$vars) {
+		my $c = $class->column($name);
 		if (!defined( $class->table )) {
 			push(@{$self->{varlist}}, $name);
-			push(@{$self->{columnlist}}, $class->column($name));
-		} 
+			push(@{$self->{columnlist}}, $c);
+		}
 		$class->create_table($self);
 	}
 
 	$self->SUPER::create_tables($vars);
+	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
+	$self->create_view("Ports", @columns);
 	$self->{find_pathkey} =  
 	    $self->prepare("SELECT ID From Paths WHERE FULLPKGPATH=(?)");
 }
