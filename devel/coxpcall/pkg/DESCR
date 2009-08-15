@@ -1,0 +1,6 @@
+Coxpcall encapsulates the protected calls with a coroutine based loop,
+so errors can be handled without the usual pcall/xpcall issues with
+coroutines.
+
+Using Coxpcall usually consists in simply loading the module and then
+replacing Lua pcall and xpcall by copcall and coxpcall.
