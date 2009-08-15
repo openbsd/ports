@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/01/20 10:43:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/15 01:03:33 sthen Exp $
 
 COMMENT=		flexible communications framework, feed component
 
 DISTNAME=		telepathy-feed-0.13
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-feed/}
 
