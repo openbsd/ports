@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/15 10:46:59 sthen Exp $
+@man man/man5/targets.5
+@man man/man8/iscsi-target.8
+@bin sbin/iscsi-target
+share/doc/iscsi
+@sample ${SYSCONFDIR}/iscsi/
