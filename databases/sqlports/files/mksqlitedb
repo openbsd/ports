@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.15 2009/08/15 12:43:58 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.16 2009/08/16 03:24:28 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -42,6 +42,14 @@ sub new
 		$name = $class->default_name;
 	}
 	bless {name => $name}, $class;
+}
+
+sub set_class
+{
+	my ($self, $varclass) = @_;
+
+	$self->{class} = $varclass;
+	return $self;
 }
 
 sub name
@@ -145,15 +153,6 @@ sub default_name
 	return "VALUE";
 }
 
-sub new
-{
-	my ($class, $varclass, $name) = @_;
-	if (!defined $name) {
-		$name = $class->default_name;
-	}
-	bless {name => $name, class => $varclass }, $class;
-}
-
 sub k
 {
 	my $self = shift;
@@ -214,6 +213,9 @@ sub make_table
 	return if defined $self->{tables_created}->{$class->table};
 
 	unshift(@columns, PathColumn->new);
+	for my $c (@columns) {
+		$c->set_class($class) unless defined $c->{class};
+	}
 	my @l = map {$_->render($self)} @columns;
 	push(@l, $constraint) if defined $constraint;
 	$self->new_table($class->table, @l);
@@ -603,7 +605,12 @@ sub add_value
 sub column
 {
 	my ($self, $name) = @_;
-	return OptTextColumn->new($name);
+	return $self->columntype->new($name)->set_class($self);
+}
+
+sub columntype
+{
+	return 'OptTextColumn';
 }
 
 sub table()
@@ -658,10 +665,9 @@ sub add
 	$self->add_value($ins, $self->keyword($ins, $self->value));
 }
 
-sub column
+sub columntype
 {
-	my ($self, $name) = @_;
-	return ValueColumn->new($self, $name);
+	return 'ValueColumn';
 }
 
 package ArchKeyVar;
@@ -680,10 +686,9 @@ sub add
 	}
 }
 
-sub column
+sub columntype
 {
-	my ($self, $name) = @_;
-	return OptValueColumn->new($self, $name);
+	return 'OptValueColumn';
 }
 
 package YesNoVar;
@@ -695,10 +700,9 @@ sub add
 	$self->add_value($ins, $self->value =~ m/^Yes/i ? 1 : undef);
 }
 
-sub column
+sub columntype
 {
-	my ($self, $name) = @_;
-	return OptIntegerColumn->new($name);
+	return 'OptIntegerColumn';
 }
 
 # variable is always defined, but we don't need to store empty values.
@@ -804,7 +808,7 @@ sub create_table
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
 	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE)", 
-	    ValueColumn->new($self));
+	    ValueColumn->new);
 	$inserter->prepare_normal_inserter($self->table, "VALUE");
 }
 
@@ -832,7 +836,7 @@ sub create_table
 	$self->create_keyword_table($inserter);
 	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, N, VALUE)",
 	    OptIntegerColumn->new("N"),
-	    ValueColumn->new($self));
+	    ValueColumn->new);
 	$inserter->prepare_normal_inserter($self->table, "N", "VALUE");
 }
 
@@ -854,10 +858,10 @@ sub add
 	}
 }
 
-sub column
+sub columntype
 {
 	my ($self, $name) = @_;
-	return OptTextColumn->new($name);
+	return 'OptTextColumn';
 }
 
 package ListKeyVar;
@@ -908,10 +912,9 @@ sub add
 	$self->SUPER::add($ins);
 }
 
-sub column
+sub columntype
 {
-	my ($self, $name) = @_;
-	return OptValueColumn->new($self, $name);
+	return 'OptValueColumn';
 }
 
 package FlavorsVar;
@@ -990,7 +993,7 @@ sub create_table
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
 	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE)",
-	    ValueColumn->new($self),
+	    ValueColumn->new,
 	    OptTextColumn->new("EXTRA"));
 	$inserter->prepare_normal_inserter($self->table, "VALUE", "EXTRA");
 }
@@ -1034,7 +1037,7 @@ sub create_table
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
 	$inserter->make_table($self, "UNIQUE (FULLPKGPATH, LIBNAME)",
-	    ValueColumn->new($self, "LIBNAME"),
+	    ValueColumn->new("LIBNAME"),
 	    TextColumn->new("VERSION"));
 	$inserter->prepare_normal_inserter($self->table, "LIBNAME", "VERSION");
 }
