@@ -1,0 +1,15 @@
+$OpenBSD: patch-imagick_helpers_c,v 1.1.1.1 2009/08/16 05:50:30 jolan Exp $
+--- imagick_helpers.c.orig	Thu Jan  1 03:13:08 1970
++++ imagick_helpers.c	Sat Aug 15 18:24:09 2009
+@@ -907,9 +907,9 @@ void initialize_imagick_constants()
+ 	IMAGICK_REGISTER_CONST_LONG("EVALUATE_MULTIPLICATIVENOISE", MultiplicativeNoiseEvaluateOperator);
+ 	IMAGICK_REGISTER_CONST_LONG("EVALUATE_POISSONNOISE", PoissonNoiseEvaluateOperator);
+ 	IMAGICK_REGISTER_CONST_LONG("EVALUATE_UNIFORMNOISE", UniformNoiseEvaluateOperator);
+-	IMAGICK_REGISTER_CONST_LONG("EVALUATE_COSINE", CosineEvaluateOperator);
++	/* IMAGICK_REGISTER_CONST_LONG("EVALUATE_COSINE", CosineEvaluateOperator);
+ 	IMAGICK_REGISTER_CONST_LONG("EVALUATE_SINE", SineEvaluateOperator);
+-	IMAGICK_REGISTER_CONST_LONG("EVALUATE_ADDMODULUS", AddModulusEvaluateOperator);
++	IMAGICK_REGISTER_CONST_LONG("EVALUATE_ADDMODULUS", AddModulusEvaluateOperator);*/
+ #endif	
+ 	IMAGICK_REGISTER_CONST_LONG("COLORSPACE_UNDEFINED", UndefinedColorspace);
+ 	IMAGICK_REGISTER_CONST_LONG("COLORSPACE_RGB", RGBColorspace);
