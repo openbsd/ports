@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/30 15:31:22 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/08/16 15:03:13 msf Exp $
 bin/r2r_show
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -100,7 +100,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Ruby2Ruby.src/M000091.
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Ruby2Ruby.src/M000092.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Ruby2Ruby.src/M000093.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Ruby2Ruby.src/M000094.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Ruby2Ruby.src/M000095.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/History_txt.html
@@ -208,7 +207,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Ruby2Ruby/rewrite_ensure-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Ruby2Ruby/rewrite_rescue-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Ruby2Ruby/rewrite_svalue-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Ruby2Ruby/splat-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Ruby2Ruby/translate-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Ruby2Ruby/util_dthing-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Ruby2Ruby/util_module_or_class-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid

@@ -1,29 +1,32 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/03 12:23:05 pirofti Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/16 15:03:13 msf Exp $
 
-COMMENT=	generating pure Ruby code easily from ParseTree's Sexps
+COMMENT =	generating pure Ruby code easily from ParseTree\'s Sexps
 
-DISTNAME=	ruby2ruby-1.2.2
-PKGNAME=	ruby-${DISTNAME}
-CATEGORIES=	devel
+DISTNAME =	ruby2ruby-1.2.4
+PKGNAME =	ruby-${DISTNAME}
+CATEGORIES =	devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=		${MASTER_SITE_RUBYFORGE:=seattlerb/}
+MASTER_SITES =		${MASTER_SITE_RUBYFORGE:=seattlerb/}
 
-MODULES=		lang/ruby
+MODULES =		lang/ruby
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/ruby-parsetree
+BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		:ruby-parsetree->=3.0:devel/ruby-parsetree \
+			:ruby-ruby_parser->=2.0:devel/ruby-ruby_parser \
+			:ruby-sexp_processor->=3.0:devel/ruby-sexp_processor
 
-GEM_SKIPDEPENDS=	hoe
+CONFIGURE_STYLE =	ruby gem
 
-CONFIGURE_STYLE=	ruby gem
+PKG_ARCH = *
 
-do-regress:
-	@cd ${WRKBUILD} && ${RUBY} -Ilib test/test_ruby2ruby.rb
+REGRESS_DEPENDS  =	:ruby-hoe->=2.3.3:devel/ruby-hoe
+
+MODRUBY_REGRESS  =	rake
 
 .include <bsd.port.mk>
