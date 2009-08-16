@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.38 2009/02/13 09:39:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2009/08/16 13:35:25 rui Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
 
 V=		5.4.2.1
 DISTNAME=	net-snmp-${V}
-PKGNAME-main=	${DISTNAME}p1
-PKGNAME-perl=	p5-SNMP-${V}p0
+PKGNAME-main=	${DISTNAME}p2
+PKGNAME-perl=	p5-SNMP-${V}p1
 SHARED_LIBS=	netsnmp		8.0	\
 		netsnmpagent	8.1	\
 		netsnmphelpers	8.0	\
@@ -16,8 +16,6 @@ CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 
 HOMEPAGE=	http://www.net-snmp.org
-
-MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
