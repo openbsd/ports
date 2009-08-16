@@ -1,0 +1,10 @@
+You can enable this module by creating a symbolic
+link from ${PREFIX}/conf/php5.sample/rar.ini to
+${PREFIX}/conf/php5/rar.ini.
+
+ln -fs ${PREFIX}/conf/php5.sample/rar.ini \
+        ${PREFIX}/conf/php5/rar.ini
+
+If you already have Apache running on your machine,
+you should not use "apachectl restart" - instead,
+you should fully stop and then restart the server.

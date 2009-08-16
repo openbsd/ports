@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/16 06:39:12 jolan Exp $
+@comment conf/php5.sample/
+@group bin
+conf/php5.sample/rar.ini
+@comment lib/
+@comment lib/php/
+@comment lib/php/modules/
+@owner root
+lib/php/modules/rar.so
+@owner
+@group
