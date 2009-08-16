@@ -1,0 +1,206 @@
+$OpenBSD: patch-ffmpeg_frame_c,v 1.1.1.1 2009/08/16 20:04:39 jolan Exp $
+--- ffmpeg_frame.c.orig	Mon Oct 13 18:02:01 2008
++++ ffmpeg_frame.c	Fri Nov 21 15:05:16 2008
+@@ -47,11 +47,6 @@
+ #include "ffmpeg_frame.h"
+ #include "ffmpeg_tools.h"
+ 
+-/* 
+-   include gd header from local include dir. This is a copy of gd.h that is 
+-   distributed with php-5.2.5. It is distributed along with ffmpeg-php to
+-   allow ffmpeg-php to be built without access to the php sources
+- */
+ #if HAVE_LIBGD20
+ #include "gd.h" 
+ 
+@@ -60,14 +55,23 @@
+     ZEND_FETCH_RESOURCE(gd_img, gdImagePtr, ret, -1, "Image", le_gd); \
+ }
+ 
+-// Borrowed from gd.c
+-#define gdImageBoundsSafeMacro(im, x, y) (!((((y) < (im)->cy1) || ((y) > (im)->cy2)) || (((x) < (im)->cx1) || ((x) > (im)->cx2))))
+-
+ static int le_gd; // this is only valid after calling 
+-                  // FFMPEG_PHP_FETCH_IMAGE_RESOURCE() 
++                  // FFMPEG_PHP_FETCH_IMAGE_RESOURCE() macro
+ 
+ #endif // HAVE_LIBGD20
+ 
++#define GET_FRAME_RESOURCE(ffmpeg_frame_object, ffmpeg_frame) {\
++	zval **_tmp_zval;\
++    if (zend_hash_find(Z_OBJPROP_P(ffmpeg_frame_object), "ffmpeg_frame",\
++                sizeof("ffmpeg_frame"), (void **)&_tmp_zval) == FAILURE) {\
++        zend_error(E_ERROR, "Unable to locate ffmpeg_frame resource in this object.");\
++        RETURN_FALSE;\
++    }\
++\
++    ZEND_FETCH_RESOURCE(ffmpeg_frame, ff_frame_context*, _tmp_zval, -1,\
++            "ffmpeg_frame", le_ffmpeg_frame);\
++}\
++
+ int le_ffmpeg_frame; // not static since it is used in ffmpeg_output_movie
+ 
+ static zend_class_entry *ffmpeg_frame_class_entry_ptr;
+@@ -83,16 +87,16 @@ zend_function_entry ffmpeg_frame_class_methods[] = {
+   
+ #if HAVE_LIBGD20
+     /* gd methods */
+-    PHP_MALIAS(ffmpeg_frame, togdimage,      toGDImage,     NULL, 0)
++    FFMPEG_PHP_MALIAS(ffmpeg_frame, togdimage,      toGDImage,     NULL, 0)
+ #endif // HAVE_LIBGD20
+ 
+     /* methods */
+-    PHP_MALIAS(ffmpeg_frame, getwidth,                    getWidth,                   NULL, 0)
+-    PHP_MALIAS(ffmpeg_frame, getheight,                   getHeight,                  NULL, 0)
+-    PHP_MALIAS(ffmpeg_frame, iskeyframe,                  isKeyFrame,                 NULL, 0)
+-    PHP_MALIAS(ffmpeg_frame, getpresentationtimestamp,    getPresentationTimestamp,   NULL, 0)
+-    PHP_MALIAS(ffmpeg_frame, getpts,                      getPresentationTimestamp,   NULL, 0)
+-	{NULL, NULL, NULL}
++    FFMPEG_PHP_MALIAS(ffmpeg_frame, getwidth,                    getWidth,                   NULL, 0)
++    FFMPEG_PHP_MALIAS(ffmpeg_frame, getheight,                   getHeight,                  NULL, 0)
++    FFMPEG_PHP_MALIAS(ffmpeg_frame, iskeyframe,                  isKeyFrame,                 NULL, 0)
++    FFMPEG_PHP_MALIAS(ffmpeg_frame, getpresentationtimestamp,    getPresentationTimestamp,   NULL, 0)
++    FFMPEG_PHP_MALIAS(ffmpeg_frame, getpts,                      getPresentationTimestamp,   NULL, 0)
++    FFMPEG_PHP_END_METHODS
+ };
+ /* }}} */
+ 
+@@ -286,13 +290,7 @@ static int _php_avframe_to_gd_image(AVFrame *frame, gd
+ 
+     for (y = 0; y < height; y++) {
+         for (x = 0; x < width; x++) {
+-		
+-			if (gdImageBoundsSafeMacro(dest, x, y)) {
+-                /* copy pixel to gdimage buffer zeroing the alpha channel */
+-                dest->tpixels[y][x] = src[x] & 0x00ffffff;
+-            } else {
+-                return -1;
+-            }
++            gdImageSetPixel(dest, x, y, src[x]);
+         }
+         src += width;
+     }
+@@ -301,29 +299,6 @@ static int _php_avframe_to_gd_image(AVFrame *frame, gd
+ /* }}} */
+ 
+ 
+-/* {{{ _php_gd_image_to_avframe()
+- */
+-static int _php_gd_image_to_avframe(gdImage *src, AVFrame *frame, int width, 
+-        int height) 
+-{
+-    int x, y;
+-    int *dest = (int*)frame->data[0];
+-
+-    for (y = 0; y < height; y++) {
+-        for (x = 0; x < width; x++) {
+-            if (gdImageBoundsSafeMacro(src, x, y)) {
+-                dest[x] = src->tpixels[y][x];
+-            } else {
+-                return -1;
+-            }
+-        }
+-        dest += width;
+-    }
+-    return 0;
+-}
+-/* }}} */
+-
+-
+ /* {{{ proto resource toGDImage()
+  */
+ FFMPEG_PHP_METHOD(ffmpeg_frame, toGDImage)
+@@ -349,93 +324,6 @@ FFMPEG_PHP_METHOD(ffmpeg_frame, toGDImage)
+ }
+ /* }}} */
+ 
+-
+-/* {{{ proto object _php_read_frame_from_file(mixed)
+- */
+-/*_php_read_frame_from_file(ff_frame_context *ff_frame, char* filename)
+-{
+-    AVFrame *frame = NULL;
+-    AVFormatContext *ic;
+-    AVFormatParameters *ap;
+-    int err;
+-
+-    // open the input file with generic libav function
+-    err = av_open_input_file(&ic, filename, NULL, 0, ap);
+-    if (err < 0) {
+-        zend_error(E_ERROR, "Can't open image file %d, %d", err, 
+-        AVERROR_NOFMT);
+-    }
+-
+-    
+-}*/
+-/* }}} */
+-
+-
+-/* {{{ proto object ffmpeg_frame(mixed)
+- */
+-FFMPEG_PHP_METHOD(ffmpeg_frame, ffmpeg_frame)
+-{
+-    zval **argv[1];
+-    AVFrame *frame;
+-    gdImage *gd_img;
+-    ff_frame_context *ff_frame;
+-    int width, height, ret;
+-
+-    if (ZEND_NUM_ARGS() != 1) {
+-        WRONG_PARAM_COUNT;
+-    }
+-
+-    /* retrieve argument */
+-    if (zend_get_parameters_array_ex(ZEND_NUM_ARGS(), argv) != SUCCESS) {
+-        php_error_docref(NULL TSRMLS_CC, E_ERROR,
+-                "Error parsing arguments");
+-    }
+-
+-    ff_frame = _php_alloc_ff_frame();
+-    
+-	ret = ZEND_REGISTER_RESOURCE(NULL, ff_frame, le_ffmpeg_frame);
+-    
+-    object_init_ex(getThis(), ffmpeg_frame_class_entry_ptr);
+-    add_property_resource(getThis(), "ffmpeg_frame", ret);
+-    
+-    switch (Z_TYPE_PP(argv[0])) {
+-        case IS_STRING:
+-            convert_to_string_ex(argv[0]);
+-            zend_error(E_ERROR, 
+-                  "Creating an ffmpeg_frame from a file is not implemented\n");
+-            //_php_read_frame_from_file(ff_frame, Z_STRVAL_PP(argv[0]));
+-            break;
+-        case IS_RESOURCE:
+-            FFMPEG_PHP_FETCH_IMAGE_RESOURCE(gd_img, argv[0]);
+-
+-            if (!gd_img->trueColor) {
+-                php_error_docref(NULL TSRMLS_CC, E_ERROR,
+-                        "First parameter must be a truecolor gd image.");
+-            }
+-
+-            width = gdImageSX(gd_img);
+-            height = gdImageSY(gd_img);
+-
+-            /* create a an av_frame and allocate space for it */
+-            frame = avcodec_alloc_frame();
+-            avpicture_alloc((AVPicture*)frame, PIX_FMT_RGBA32, width, height);
+-
+-            /* copy the gd image to the av_frame */
+-            _php_gd_image_to_avframe(gd_img, frame, width, height);
+-            
+-            /* set the ffmepg_frame to point to this av_frame */
+-            ff_frame->av_frame = frame;
+-            
+-            /* set the ffpmeg_frame's properties */
+-            ff_frame->width = width;
+-            ff_frame->height = height;
+-            ff_frame->pixel_format = PIX_FMT_RGBA32;
+-            break;
+-        default:
+-            zend_error(E_ERROR, "Invalid argument\n");
+-    }
+-}
+-/* }}} */
+ 
+ #endif /* HAVE_LIBGD20 */
+ 

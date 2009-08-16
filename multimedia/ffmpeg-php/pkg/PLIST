@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/16 20:04:39 jolan Exp $
+@comment lib/
+@comment lib/php/
+@comment lib/php/modules/
+@owner root
+@group bin
+lib/php/modules/ffmpeg.so
+@owner
+@group daemon

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ffmpeg_movie_h,v 1.1.1.1 2009/08/16 20:04:39 jolan Exp $
+--- ffmpeg_movie.h.orig	Mon Oct 13 14:41:03 2008
++++ ffmpeg_movie.h	Fri Nov 21 14:54:36 2008
+@@ -32,6 +32,8 @@
+ #ifndef FFMPEG_MOVIE_H
+ #define FFMPEG_MOVIE_H
+ 
++#include "php_ffmpeg.h"
++
+ /* movie constructor */
+ FFMPEG_PHP_METHOD(ffmpeg_movie, __construct);
+ 

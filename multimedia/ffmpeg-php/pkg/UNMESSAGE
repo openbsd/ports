@@ -1,0 +1,9 @@
+You can disable this module by removing the
+${PREFIX}/conf/php5/ffmpeg.ini symbolic link by
+issuing the following command: 
+
+rm -f ${PREFIX}/conf/php5/ffmpeg.ini
+
+If you already have Apache running on your machine,
+you should not use "apachectl restart" - instead,
+you should fully stop and then restart the server.

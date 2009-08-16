@@ -1,0 +1,55 @@
+$OpenBSD: patch-ffmpeg-php_c,v 1.1.1.1 2009/08/16 20:04:39 jolan Exp $
+--- ffmpeg-php.c.orig	Mon Oct 13 14:00:08 2008
++++ ffmpeg-php.c	Sun Aug 16 05:33:41 2009
+@@ -51,8 +51,9 @@
+ #include "ext/standard/info.h"
+ 
+ #include "php_ffmpeg.h"
++#include "ffmpeg_errorhandler.h"
+ 
+-#define FFMPEG_PHP_VERSION "0.6.0-svn"
++#define FFMPEG_PHP_VERSION "0.6.0+patches"
+ 
+ zend_module_entry ffmpeg_module_entry = {
+ #if ZEND_MODULE_API_NO >= 20010901
+@@ -78,7 +79,6 @@ ZEND_GET_MODULE(ffmpeg);
+ 
+ extern void register_ffmpeg_movie_class(int);
+ extern void register_ffmpeg_frame_class(int);
+-extern void ffmpeg_errorhandler(void *ptr, int level, const char *msg, va_list args);
+ 
+ PHP_INI_BEGIN()
+     PHP_INI_ENTRY("ffmpeg.allow_persistent", "0", PHP_INI_ALL, NULL)
+@@ -100,7 +100,9 @@ PHP_MINIT_FUNCTION(ffmpeg)
+  
+     if (INI_BOOL("ffmpeg.show_warnings")) {
+         av_log_set_callback(ffmpeg_errorhandler);
+-    } 
++    } else {
++        av_log_set_callback(ffmpeg_hide_errors);
++    }
+    
+     register_ffmpeg_movie_class(module_number);
+     register_ffmpeg_frame_class(module_number);
+@@ -119,6 +121,12 @@ PHP_MINIT_FUNCTION(ffmpeg)
+             avcodec_build(), CONST_CS | CONST_PERSISTENT);
+ #endif
+ 
++#if HAVE_LIBGD20
++    REGISTER_LONG_CONSTANT("FFMPEG_PHP_GD_ENABLED", 1, CONST_CS | CONST_PERSISTENT);
++#else
++    REGISTER_LONG_CONSTANT("FFMPEG_PHP_GD_ENABLED", 0, CONST_CS | CONST_PERSISTENT);
++#endif // HAVE_LIBGD20
++ 
+     return SUCCESS;
+ }
+ /* }}} */
+@@ -138,7 +146,7 @@ PHP_MSHUTDOWN_FUNCTION(ffmpeg)
+ 
+ 
+ /* {{{ php info function
+-   Add an entry for ffmpeg support in phpinfo() */
++   Add an entry for ffmpeg-php support in phpinfo() */
+ PHP_MINFO_FUNCTION(ffmpeg)
+ {
+     php_info_print_table_start();

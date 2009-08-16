@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_m4,v 1.1.1.1 2009/08/16 20:04:39 jolan Exp $
+--- config.m4.orig	Mon Oct 13 21:47:18 2008
++++ config.m4	Fri Nov 21 14:54:32 2008
+@@ -33,6 +33,7 @@ if test "$PHP_FFMPEG" != "no"; then
+     elif test -f $i/include/libavcodec/avcodec.h; then
+       dnl ffmpeg svn revision 12194 and newer put each header in its own dir
+       dnl so we have to include them all.
++      PHP_ADD_INCLUDE($i/include/)
+       PHP_ADD_INCLUDE($i/include/libavcodec/)
+       PHP_ADD_INCLUDE($i/include/libavformat/)
+       PHP_ADD_INCLUDE($i/include/libavutil/)

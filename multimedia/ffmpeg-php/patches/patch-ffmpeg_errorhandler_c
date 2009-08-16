@@ -1,0 +1,20 @@
+$OpenBSD: patch-ffmpeg_errorhandler_c,v 1.1.1.1 2009/08/16 20:04:39 jolan Exp $
+--- ffmpeg_errorhandler.c.orig	Wed Oct  8 12:22:39 2008
++++ ffmpeg_errorhandler.c	Fri Nov 21 14:54:38 2008
+@@ -59,6 +59,16 @@ void ffmpeg_errorhandler(void *ptr, int level, const c
+ }
+ /* }}} */
+ 
++
++/* {{{ ffmpeg_hide_errors()
++ */
++void ffmpeg_hide_errors(void *ptr, int level, const char *msg, va_list args)
++{
++    // NO OP
++}
++/* }}} */
++
++
+ /*
+  * Local variables:
+  * tab-width: 4
