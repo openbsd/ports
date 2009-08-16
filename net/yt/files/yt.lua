@@ -1,5 +1,5 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.22 2009/06/13 02:01:19 martynas Exp $
+-- $OpenBSD: yt.lua,v 1.23 2009/08/16 19:37:59 jsg Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -56,11 +56,24 @@ for i = 1, table.getn(urls) do
    pattern = "<title>(.-)</title>"
    title = assert(string.match(body, pattern))
 
-   -- Fetch high quality if available.
-   if (string.match(body, "yt.VideoQualityConstants.HIGH") ~= nil) and
-   ((string.match(body, "/watch_fullscreen%?.*fmt_map=[^&]*%%2C6[^%d]")~=nil) or
-   (string.match(body,"/watch_fullscreen%?.*fmt_map=6[^%d]")~=nil)) then
-      fmt = "&fmt=6"
+   -- Fetch high quality if available, just take the first format for now
+   --  5  320x240 H.263/MP3 mono FLV
+   --  6  320x240 H.263/MP3 mono FLV
+   -- 13  176x144 3GP/AMR mono 3GP 
+   -- 17  176x144 3GP/AAC mono 3GP
+   -- 18  480x360 480x270 H.264/AAC stereo MP4
+   -- 22 1280x720 H.264/AAC stereo MP4
+   -- 34 320x240 H.264/AAC stereo FLV
+   -- 35  640x480 640x360 H.264/AAC stereo FLV
+   mpeg4 = false
+   pattern = '"fmt_map": *"([%d]+)\/'
+   if (string.match(body, pattern) ~= nil) then
+      format = string.match(body, pattern)
+      nf = tonumber(format)
+      if nf == 18 or nf == 22 then
+         mpeg4 = true
+      end
+      fmt = "&fmt=" .. format
    else
       fmt = ""
    end
@@ -87,7 +100,7 @@ for i = 1, table.getn(urls) do
    e_mp4 = string.format("%q", mp4)
 
    -- Look for the video ID.
-   pattern = "/watch_fullscreen%?.*video_id=([^&\"]*)"
+   pattern = '"video_id": *"([^\"]*)"'
    video_id = string.match(body, pattern)
 
    -- Check for error such as "This video is not available in your country."
@@ -100,7 +113,7 @@ for i = 1, table.getn(urls) do
 
    if video_id then
       --- Look for the additional video ID.
-      pattern = "/watch_fullscreen%?.*&t=([^&\"]*)"
+      pattern = '"t": *"([^\"]*)"'
       t = assert(string.match(body, pattern))
       url = string.format("%q", base_url .. "?video_id=" .. video_id
          .. "&t=" .. t .. fmt)
@@ -116,13 +129,21 @@ for i = 1, table.getn(urls) do
    end
 
    -- Fetch the video.
+   if mpeg4 == true then
+        e_file = e_mp4
+        o_file = mp4
+   else
+        e_file = e_flv
+        o_file = flv
+   end
+   
    cmd = string.gsub(fetch, "<(%w+)>", { arguments = arguments,
-      url = url, file = e_flv })
+      url = url, file = e_file })
    assert(os.execute(cmd) == 0, "Failed")
 
    -- Convert it to MPEG.
-   if opts.n then
-      io.stderr:write("Done. Video saved in " .. flv .. ".\n")
+   if opts.n or mpeg4 == true then
+      io.stderr:write("Done. Video saved in " .. o_file .. ".\n")
    else
       cmd = string.gsub(convert, "<(%w+)>", { flv = e_flv, mp4 = e_mp4 })
       io.stderr:write("Converting ...\n")
