@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2009/01/30 02:40:55 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2009/08/16 12:59:27 msf Exp $
 
-VERSION ?=	0.9.10
+VERSION ?=	0.9.11
 PKGNAME ?=	ruby-${DISTNAME}
 CATEGORIES ?=	databases
 
@@ -21,3 +21,5 @@ BUILD_DEPENDS ?= ${RUN_DEPENDS}
 CONFIGURE_STYLE ?= ruby gem
 
 PKG_ARCH ?=	*
+
+MODRUBY_REGRESS ?= rake rspec
