@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_dynamic-preprocessors_dcerpc2_Makefile_in,v 1.1 2009/08/16 13:31:27 rui Exp $
+--- src/dynamic-preprocessors/dcerpc2/Makefile.in.orig	Wed Mar 11 14:19:28 2009
++++ src/dynamic-preprocessors/dcerpc2/Makefile.in	Wed Apr  8 15:58:27 2009
+@@ -418,7 +418,7 @@ distdir: $(DISTFILES)
+ check-am: all-am
+ check: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) check-am
+-all-am: Makefile $(LTLIBRARIES) all-local
++all-am: Makefile $(LTLIBRARIES)
+ installdirs:
+ 	for dir in "$(DESTDIR)$(libdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \

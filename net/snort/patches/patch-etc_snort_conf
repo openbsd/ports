@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_snort_conf,v 1.3 2009/02/12 22:12:08 rui Exp $
---- etc/snort.conf.orig	Mon Sep 15 18:28:02 2008
-+++ etc/snort.conf	Thu Nov  6 17:44:46 2008
+$OpenBSD: patch-etc_snort_conf,v 1.4 2009/08/16 13:31:27 rui Exp $
+--- etc/snort.conf.orig	Wed Mar 11 14:22:03 2009
++++ etc/snort.conf	Wed Apr  8 12:47:17 2009
 @@ -78,7 +78,10 @@ var SNMP_SERVERS $HOME_NET
  # like this:
  #

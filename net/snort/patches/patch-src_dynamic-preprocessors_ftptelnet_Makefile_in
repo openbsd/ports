@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_dynamic-preprocessors_ftptelnet_Makefile_in,v 1.3 2009/02/12 22:12:08 rui Exp $
---- src/dynamic-preprocessors/ftptelnet/Makefile.in.orig	Fri Jul 18 22:52:06 2008
-+++ src/dynamic-preprocessors/ftptelnet/Makefile.in	Fri Aug  8 14:57:43 2008
-@@ -414,7 +414,7 @@ distdir: $(DISTFILES)
+$OpenBSD: patch-src_dynamic-preprocessors_ftptelnet_Makefile_in,v 1.4 2009/08/16 13:31:27 rui Exp $
+--- src/dynamic-preprocessors/ftptelnet/Makefile.in.orig	Wed Mar 11 14:19:29 2009
++++ src/dynamic-preprocessors/ftptelnet/Makefile.in	Wed Apr  8 12:43:22 2009
+@@ -528,7 +528,7 @@ distdir: $(DISTFILES)
  check-am: all-am
  check: $(BUILT_SOURCES)
- 	$(MAKE) $(AM_MAKEFLAGS) check-am
+ 	$(MAKE) $(AM_MAKEFLAGS) check-recursive
 -all-am: Makefile $(LTLIBRARIES) all-local
 +all-am: Makefile $(LTLIBRARIES)
- installdirs:
+ installdirs: installdirs-recursive
+ installdirs-am:
  	for dir in "$(DESTDIR)$(libdir)"; do \
- 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \

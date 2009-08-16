@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_log_text_c,v 1.1 2009/02/12 22:12:08 rui Exp $
---- src/log_text.c.orig	Wed Apr 30 20:41:31 2008
-+++ src/log_text.c	Fri Aug  8 16:03:17 2008
-@@ -61,7 +61,7 @@ extern OptTreeNode *otn_tmp;    /* global ptr to curre
+$OpenBSD: patch-src_log_text_c,v 1.2 2009/08/16 13:31:27 rui Exp $
+--- src/log_text.c.orig	Mon Jan 26 22:49:57 2009
++++ src/log_text.c	Wed Apr  8 12:40:36 2009
+@@ -62,7 +62,7 @@ extern OptTreeNode *otn_tmp;    /* global ptr to curre
  void LogTimeStamp(TextLog* log, Packet* p)
  {
      char timestamp[TIMEBUF_SIZE];

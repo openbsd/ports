@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_util_c,v 1.2 2009/02/12 22:12:08 rui Exp $
---- src/util.c.orig	Tue Apr 15 20:13:56 2008
-+++ src/util.c	Fri Aug  8 14:57:45 2008
-@@ -406,12 +406,13 @@ int DisplayBanner()
+$OpenBSD: patch-src_util_c,v 1.3 2009/08/16 13:31:27 rui Exp $
+--- src/util.c.orig	Wed Mar 11 13:54:59 2009
++++ src/util.c	Wed Apr  8 12:40:37 2009
+@@ -418,12 +418,13 @@ int DisplayBanner()
   * Returns: void function
   *
   ****************************************************************************/
@@ -16,7 +16,7 @@ $OpenBSD: patch-src_util_c,v 1.2 2009/02/12 22:12:08 rui Exp $
      struct timezone tz;
      struct tm *lt;    /* place to stick the adjusted clock data */
  
-@@ -421,7 +422,9 @@ void ts_print(register const struct timeval *tvp, char
+@@ -433,7 +434,9 @@ void ts_print(register const struct timeval *tvp, char
          /* manual page (for linux) says tz is never used, so.. */
          bzero((char *) &tz, sizeof(tz));
          gettimeofday(&tv, &tz);

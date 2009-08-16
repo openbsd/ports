@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.53 2009/02/12 22:12:08 rui Exp $
+# $OpenBSD: Makefile,v 1.54 2009/08/16 13:31:27 rui Exp $
+
+SHARED_ONLY = 		Yes
 
 COMMENT =		highly flexible sniffer/NIDS
 
-DISTNAME =		snort-2.8.3.2
+DISTNAME = 		snort-2.8.4.1
 CATEGORIES =		net security
-MASTER_SITES =		${HOMEPAGE}dl/
+MASTER_SITES = 		http://dl.snort.org/snort-current/
 
 HOMEPAGE =		http://www.snort.org/
 
@@ -17,13 +19,14 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = 	Yes
 WANTLIB =		c m pcap
 
-SHARED_LIBS =		sf_engine 2.0 \
-			sf_dns_preproc 2.0 \
-			sf_ftptelnet_preproc 2.0 \
-			sf_smtp_preproc 2.0 \
-			sf_dcerpc_preproc 1.0 \
-			sf_ssh_preproc 1.0 \
-			sf_ssl_preproc 0.0 \
+SHARED_LIBS = 		sf_engine 3.0 \
+			sf_dce2_preproc 0.0 \
+			sf_dcerpc_preproc 2.0 \
+			sf_dns_preproc 3.0 \
+			sf_ftptelnet_preproc 3.0 \
+			sf_smtp_preproc 3.0 \
+			sf_ssh_preproc 2.0 \
+			sf_ssl_preproc 1.0 \
 			_sfdynamic_example_rule 0.0 \
 			_sfdynamic_preprocessor_example 0.0
 
