@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/16 18:35:33 martynas Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
-VERSION=		1.9.0.12
-PATCHLEVEL=		p0
+VERSION=		1.9.0.13
+#PATCHLEVEL=		p0
 DIRECTORY=		xulrunner1.9
 
 SO_VERSION=		1.0
