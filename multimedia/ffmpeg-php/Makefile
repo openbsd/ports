@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/16 20:04:39 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/16 20:10:06 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP support for ffmpeg
 DISTNAME=	ffmpeg-php-0.6.0
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tbz2
 CATEGORIES=	multimedia www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg-php/}
@@ -46,5 +47,10 @@ CONFIGURE_STYLE=gnu
 
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
+	@echo "extension=ffmpeg.so" > \
+		${PREFIX}/conf/php5.sample/ffmpeg.ini
 
 .include <bsd.port.mk>
