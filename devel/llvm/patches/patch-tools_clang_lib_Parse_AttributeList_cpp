@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_clang_lib_Parse_AttributeList_cpp,v 1.1 2009/08/16 09:54:28 jsg Exp $
+--- tools/clang/lib/Parse/AttributeList.cpp.orig	Sat Aug  8 01:35:04 2009
++++ tools/clang/lib/Parse/AttributeList.cpp	Sat Aug 15 14:12:37 2009
+@@ -76,6 +76,7 @@ AttributeList::Kind AttributeList::getKind(const Ident
+     break;
+   case 7:
+     if (!memcmp(Str, "aligned", 7)) return AT_aligned;
++    if (!memcmp(Str, "bounded", 7)) return IgnoredAttribute;
+     if (!memcmp(Str, "cleanup", 7)) return AT_cleanup;
+     if (!memcmp(Str, "nodebug", 7)) return AT_nodebug;
+     if (!memcmp(Str, "nonnull", 7)) return AT_nonnull;
