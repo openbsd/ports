@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libjasper_base_jas_init_c,v 1.1 2009/08/16 19:58:31 jolan Exp $
+--- src/libjasper/base/jas_init.c.orig	Fri Jan 19 15:43:05 2007
++++ src/libjasper/base/jas_init.c	Sun Aug 16 07:41:36 2009
+@@ -150,8 +150,8 @@ int jas_init()
+ 	/* We must not register the JasPer library exit handler until after
+ 	at least one memory allocation is performed.  This is desirable
+ 	as it ensures that the JasPer exit handler is called before the
+-	debug memory allocator exit handler. */
+-	atexit(jas_cleanup);
++	debug memory allocator exit handler.
++	atexit(jas_cleanup);*/
+ 
+ 	return 0;
+ }
