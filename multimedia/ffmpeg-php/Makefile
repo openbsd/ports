@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/17 01:40:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/17 04:00:16 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP support for ffmpeg
 DISTNAME=	ffmpeg-php-0.6.0
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 EXTRACT_SUFX=	.tbz2
 CATEGORIES=	multimedia www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg-php/}
@@ -33,7 +33,7 @@ BUILD_DEPENDS=	:pear-*:www/pear \
 LIB_DEPENDS=	avcodec,avformat,swscale::graphics/ffmpeg \
 		gd::graphics/gd
 RUN_DEPENDS=	:php5-core-*:www/php5/core \
-		:php5-mbstring-*:www/php5/extensions,-gd
+		:php5-gd-*:www/php5/extensions,-gd
 WANTLIB=	expat fontconfig freetype iconv jpeg m png z
 
 CONFIGURE_ARGS+=--enable-skip-gd-check
