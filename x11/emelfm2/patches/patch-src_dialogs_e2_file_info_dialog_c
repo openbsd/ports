@@ -1,38 +1,37 @@
-$OpenBSD: patch-src_dialogs_e2_file_info_dialog_c,v 1.1 2008/10/31 00:03:12 landry Exp $
+$OpenBSD: patch-src_dialogs_e2_file_info_dialog_c,v 1.2 2009/08/17 12:14:52 giovanni Exp $
 Our file(1) doesn't have all that fancy options.
---- src/dialogs/e2_file_info_dialog.c.orig	Thu Oct 30 23:50:08 2008
-+++ src/dialogs/e2_file_info_dialog.c	Thu Oct 30 23:56:51 2008
-@@ -66,7 +66,7 @@ static gboolean _e2_file_info_dialog_get_file_type (VP
- 	gpointer results;
+--- src/dialogs/e2_file_info_dialog.c.orig	Wed Jul  1 08:07:34 2009
++++ src/dialogs/e2_file_info_dialog.c	Fri Aug 14 10:43:58 2009
+@@ -134,7 +134,7 @@ static gboolean _e2_file_info_dialog_get_file_type (VP
+ #else
  //tag E2_BADQUOTES
- 	gchar *qp = e2_utils_quote_string (VPCSTR (localpath));
--	gchar *command = e2_utils_strcat ("file -bhnprs ", qp);
-+	gchar *command = e2_utils_strcat ("file -bNs ", qp);
- 	if (!e2_fs_get_command_output (command, &results))
- 	{
- 		g_free (qp);
-@@ -80,24 +80,6 @@ static gboolean _e2_file_info_dialog_get_file_type (VP
- 	*readable_type = results;
+ 		gchar *qp = e2_utils_quote_string (VPCSTR (localpath));
+-		gchar *command = e2_utils_strcat ("file -bhnprs ", qp);
++		gchar *command = e2_utils_strcat ("file -bNs ", qp);
+ 		gpointer results;
+ 		if (!e2_fs_get_command_output (command, &results))
+ 		{
+@@ -150,23 +150,6 @@ static gboolean _e2_file_info_dialog_get_file_type (VP
  
- 	*mime_type = e2_utils_get_mimetype (localpath);
--
--	if (*mime_type != NULL && g_str_has_prefix (*mime_type, "text/"))
--	{
--		//try to get encoding as well
--		command = e2_utils_strcat ("file -bhnpri ", qp);
--		if (e2_fs_get_command_output (command, &results))
+ 		*mime_type = e2_utils_get_mimetype (localpath);
+ 
+-		if (*mime_type != NULL && g_str_has_prefix (*mime_type, "text/"))
 -		{
--			g_strstrip ((gchar *)results);	//get rid of \n etc
--			if (*(gchar *)results != '\0')
+-			//try to get encoding as well
+-			command = e2_utils_strcat ("file -bhnpri ", qp);
+-			if (e2_fs_get_command_output (command, &results))
 -			{
--				g_free (*mime_type);
--				*mime_type = results;
+-				g_strstrip ((gchar *)results);	//get rid of \n etc
+-				if (*(gchar *)results != '\0')
+-				{
+-					g_free (*mime_type);
+-					*mime_type = results;
+-				}
+-				else
+-					g_free (results);
 -			}
--			else
--				g_free (results);
+-			g_free (command);
 -		}
--		g_free (command);
--	}
- 	g_free (qp);
+ 		g_free (qp);
  
- 	return TRUE;
+ 		return TRUE;
