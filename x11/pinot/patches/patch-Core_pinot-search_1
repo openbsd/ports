@@ -1,0 +1,15 @@
+$OpenBSD: patch-Core_pinot-search_1,v 1.1.1.1 2009/08/17 14:34:07 ajacoutot Exp $
+--- Core/pinot-search.1.orig	Tue Aug  4 15:11:15 2009
++++ Core/pinot-search.1	Tue Aug  4 15:11:41 2009
+@@ -44,9 +44,9 @@ query input is a file containing Xesam UL
+ .PP
+ Supported search engine types are : 'opensearch' 'sherlock' 'xapian'
+ .SH EXAMPLES
+-pinot\-search opensearch /usr/share/pinot/engines/KrustyDescription.xml "clowns"
++pinot\-search opensearch ${PREFIX}/share/pinot/engines/KrustyDescription.xml "clowns"
+ .PP
+-pinot\-search \fB\-\-max\fR 20 sherlock /usr/share/pinot/engines/Bozo.src "clowns"
++pinot\-search \fB\-\-max\fR 20 sherlock ${PREFIX}/share/pinot/engines/Bozo.src "clowns"
+ .PP
+ pinot\-search googleapi mygoogleapikey "clowns"
+ .PP

@@ -1,0 +1,13 @@
+$OpenBSD: patch-Core_DaemonState_cpp,v 1.1.1.1 2009/08/17 14:34:07 ajacoutot Exp $
+--- Core/DaemonState.cpp.orig	Fri Jul 31 13:57:14 2009
++++ Core/DaemonState.cpp	Fri Jul 31 13:58:28 2009
+@@ -36,6 +36,9 @@
+       #define CHECK_DISK_SPACE 1
+     #else
+       #ifdef HAVE_SYS_MOUNT_H
++       #if defined(__OpenBSD__)
++         #include <sys/param.h>
++       #endif
+         #include <sys/mount.h>
+         #define CHECK_DISK_SPACE 1
+       #endif

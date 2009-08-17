@@ -1,0 +1,30 @@
+$OpenBSD: patch-README,v 1.1.1.1 2009/08/17 14:34:07 ajacoutot Exp $
+--- README.orig	Tue Aug  4 15:12:33 2009
++++ README	Tue Aug  4 15:13:13 2009
+@@ -83,7 +83,7 @@ http://pinot.berlios.de/
+   http://mycroft.mozdev.org/ has got plenty of plugins. Beware that a lot are
+   out of date and will require some changes. Use pinot-search on the
+   command-line to run a quick check on a plugin, eg
+-  $ pinot-search sherlock /usr/share/pinot/engines/Bozo.src "clowns"
++  $ pinot-search sherlock ${PREFIX}/share/pinot/engines/Bozo.src "clowns"
+ 
+   Plugins are categorized by channels. For Sherlock plugins, the routeType
+   element under SEARCH specifies the name of the channel the plugin belongs to.
+@@ -142,7 +142,7 @@ http://pinot.berlios.de/
+ 
+   Pinot can index any directory configured under the Indexing tab of the
+   Preferences box. Monitoring is optional and should be disabled for the
+-  directories whose contents seldom change, eg /usr/share/doc.
++  directories whose contents seldom change, eg ${PREFIX}/share/doc.
+   Indexing and monitoring of directories is handled by the D-Bus service.
+ 
+   In 0.90 and newer, the daemon will skip symlinks that refer to locations
+@@ -475,7 +475,7 @@ http://pinot.berlios.de/
+   Pinot v0.90 and newer provide a "tagged cd" script that enables to change
+   a shell's current directory to the directory that matches the path elements
+   passed as parameter. For instance, after setting :
+-  $ alias pcd='. /usr/share/pinot/pinot-cd.sh'
++  $ alias pcd='. ${PREFIX}/share/pinot/pinot-cd.sh'
+   if ~/Documents is configured for indexing in Preferences, the following
+   command would change the current directory to ~/Documents/Web/Stats :
+   $ pcd Documents Stats

@@ -1,0 +1,95 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/17 14:34:07 ajacoutot Exp $
+@bin bin/pinot
+@bin bin/pinot-dbus-daemon
+@bin bin/pinot-index
+@bin bin/pinot-label
+bin/pinot-prefs
+@bin bin/pinot-search
+lib/deskbar-applet/
+lib/deskbar-applet/handlers/
+lib/deskbar-applet/handlers/pinot-live.py
+lib/deskbar-applet/modules-2.20-compatible/
+lib/deskbar-applet/modules-2.20-compatible/pinot-module.py
+lib/pinot/
+lib/pinot/backends/
+lib/pinot/backends/libxapianbackend.so
+lib/pinot/filters/
+lib/pinot/filters/libexifimagefilter.so
+lib/pinot/filters/libexternalfilter.so
+lib/pinot/filters/libmboxfilter.so
+lib/pinot/filters/libtaglibfilter.so
+@man man/man1/pinot-dbus-daemon.1
+@man man/man1/pinot-index.1
+@man man/man1/pinot-label.1
+@man man/man1/pinot-search.1
+@man man/man1/pinot.1
+share/applications/pinot-prefs.desktop
+share/applications/pinot.desktop
+share/dbus-1/services/de.berlios.Pinot.service
+share/doc/pinot/
+share/doc/pinot/README
+share/examples/pinot/
+share/examples/pinot/pinot/
+@sample ${SYSCONFDIR}/pinot/
+share/examples/pinot/pinot/external-filters.xml
+@sample ${SYSCONFDIR}/pinot/external-filters.xml
+share/examples/pinot/pinot/globalconfig.xml
+@sample ${SYSCONFDIR}/pinot/globalconfig.xml
+share/examples/pinot/pinot/textcat3_conf.txt
+@sample ${SYSCONFDIR}/pinot/textcat3_conf.txt
+share/examples/pinot/pinot/textcat_conf.txt
+@sample ${SYSCONFDIR}/pinot/textcat_conf.txt
+share/examples/pinot/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/pinot/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/pinot/xdg/autostart/pinot-dbus-daemon.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/pinot-dbus-daemon.desktop
+share/icons/hicolor/16x16/apps/pinot.png
+share/icons/hicolor/22x22/apps/pinot.png
+share/icons/hicolor/24x24/apps/pinot.png
+share/icons/hicolor/32x32/apps/pinot.png
+share/icons/hicolor/48x48/apps/pinot.png
+share/locale/de/LC_MESSAGES/pinot.mo
+share/locale/es/LC_MESSAGES/pinot.mo
+share/locale/fr/LC_MESSAGES/pinot.mo
+share/locale/he/LC_MESSAGES/pinot.mo
+share/locale/it/LC_MESSAGES/pinot.mo
+share/locale/ja/LC_MESSAGES/pinot.mo
+share/locale/nl/LC_MESSAGES/pinot.mo
+share/locale/pt/LC_MESSAGES/pinot.mo
+share/locale/pt_BR/LC_MESSAGES/pinot.mo
+share/locale/ru/LC_MESSAGES/pinot.mo
+share/locale/sv/LC_MESSAGES/pinot.mo
+share/locale/zh_CN/LC_MESSAGES/pinot.mo
+share/locale/zh_TW/LC_MESSAGES/pinot.mo
+share/pinot/
+share/pinot/YahooBOSS.src
+share/pinot/engines/
+share/pinot/engines/AmazonAPI.src
+share/pinot/engines/Bing.src
+share/pinot/engines/Clusty.src
+share/pinot/engines/Exalead.src
+share/pinot/engines/Freshmeat.src
+share/pinot/engines/Google.src
+share/pinot/engines/GoogleCodeSearch.src
+share/pinot/engines/IOIDescription.xml
+share/pinot/engines/KodersDescription.xml
+share/pinot/engines/OmegaDescription.xml
+share/pinot/engines/RollYOTopNews.src
+share/pinot/engines/Topix.src
+share/pinot/engines/UNData.src
+share/pinot/engines/Wikipedia.src
+share/pinot/engines/Yahoo.src
+share/pinot/metase-gtk2.glade
+share/pinot/metase-gtk2.gladep
+share/pinot/pinot-cd.sh
+share/pinot/pinot-check-file.sh
+share/pinot/pinot-dbus-daemon.xml
+share/pinot/pinot-enum-index.sh
+share/pinot/stopwords/
+share/pinot/xapian-powered.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

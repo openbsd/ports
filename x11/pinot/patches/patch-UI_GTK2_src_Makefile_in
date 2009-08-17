@@ -1,0 +1,12 @@
+$OpenBSD: patch-UI_GTK2_src_Makefile_in,v 1.1.1.1 2009/08/17 14:34:07 ajacoutot Exp $
+--- UI/GTK2/src/Makefile.in.orig	Mon Aug 17 13:35:22 2009
++++ UI/GTK2/src/Makefile.in	Mon Aug 17 13:35:33 2009
+@@ -324,7 +324,7 @@ AM_CXXFLAGS = @MISC_CFLAGS@ -I$(top_srcdir)/Utils \
+ 	@DBUS_CFLAGS@ @INDEX_CFLAGS@ @GTHREAD_CFLAGS@ @GTKMM_CFLAGS@ \
+ 	$(am__append_1)
+ pinot_LDFLAGS = \
+-	-rdynamic
++	-export-dynamic
+ 
+ pinot_LDADD = \
+ 	-L$(top_builddir)/Utils \

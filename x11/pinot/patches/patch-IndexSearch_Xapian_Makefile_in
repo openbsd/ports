@@ -1,0 +1,12 @@
+$OpenBSD: patch-IndexSearch_Xapian_Makefile_in,v 1.1.1.1 2009/08/17 14:34:07 ajacoutot Exp $
+--- IndexSearch/Xapian/Makefile.in.orig	Mon Aug 17 14:06:19 2009
++++ IndexSearch/Xapian/Makefile.in	Mon Aug 17 14:06:32 2009
+@@ -296,7 +296,7 @@ libxapianbackend_la_SOURCES = AbstractGenerator.cpp \
+ 	$(top_srcdir)/IndexSearch/xesam/XesamQLParser.cc \
+ 	$(top_srcdir)/IndexSearch/xesam/XesamQueryBuilder.cc \
+ 	$(am__append_1)
+-libxapianbackend_la_LDFLAGS = -module -shared -nostartfiles
++libxapianbackend_la_LDFLAGS = -module -avoid-version -shared -nostartfiles
+ libxapianbackend_la_LIBADD = \
+ 	-L$(top_builddir)/Utils \
+ 	-lBasicUtils \

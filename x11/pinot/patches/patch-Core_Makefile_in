@@ -1,0 +1,30 @@
+$OpenBSD: patch-Core_Makefile_in,v 1.1.1.1 2009/08/17 14:34:07 ajacoutot Exp $
+--- Core/Makefile.in.orig	Mon Aug 17 13:34:11 2009
++++ Core/Makefile.in	Mon Aug 17 13:34:54 2009
+@@ -303,7 +303,7 @@ AM_CXXFLAGS = @MISC_CFLAGS@ -I$(top_srcdir)/Utils \
+ 	@SQL_CFLAGS@ @HTTP_CFLAGS@ @XML_CFLAGS@ @DBUS_CFLAGS@ \
+ 	@INDEX_CFLAGS@ @GTHREAD_CFLAGS@ @GTKMM_CFLAGS@ $(am__append_1)
+ pinot_index_LDFLAGS = \
+-	-rdynamic
++	-export-dynamic
+ 
+ pinot_index_LDADD = \
+ 	-L$(top_builddir)/Utils \
+@@ -320,7 +320,7 @@ pinot_index_LDADD = \
+ pinot_index_SOURCES = pinot-index.cpp
+ pinot_index_DEPENDENCIES = libCore.la
+ pinot_search_LDFLAGS = \
+-	-rdynamic
++	-export-dynamic
+ 
+ pinot_search_LDADD = \
+ 	-L$(top_builddir)/Utils \
+@@ -337,7 +337,7 @@ pinot_search_SOURCES = \
+ 
+ pinot_search_DEPENDENCIES = libCore.la
+ pinot_dbus_daemon_LDFLAGS = \
+-	-rdynamic
++	-export-dynamic
+ 
+ pinot_dbus_daemon_LDADD = \
+ 	-L$(top_builddir)/Utils \

@@ -1,0 +1,41 @@
+$OpenBSD: patch-textcat_conf_txt,v 1.1.1.1 2009/08/17 14:34:07 ajacoutot Exp $
+--- textcat_conf.txt.orig	Tue Aug  4 15:17:05 2009
++++ textcat_conf.txt	Tue Aug  4 15:14:57 2009
+@@ -3,20 +3,20 @@
+ # The following languages are supported by Xapian::Stem
+ # Languages names MUST be in English
+ #
+-/usr/share/libtextcat/LM/danish.lm			danish
+-/usr/share/libtextcat/LM/dutch.lm			dutch
+-/usr/share/libtextcat/LM/english.lm			english
+-/usr/share/libtextcat/LM/finnish.lm			finnish
+-/usr/share/libtextcat/LM/french.lm			french
+-/usr/share/libtextcat/LM/german.lm			german
+-/usr/share/libtextcat/LM/hungarian.lm			hungarian
+-/usr/share/libtextcat/LM/italian.lm			italian
+-/usr/share/libtextcat/LM/norwegian.lm			norwegian
+-/usr/share/libtextcat/LM/portuguese.lm			portuguese
+-/usr/share/libtextcat/LM/romanian.lm			romanian
+-/usr/share/libtextcat/LM/russian-iso8859_5.lm		russian-iso8859_5
+-/usr/share/libtextcat/LM/russian-koi8_r.lm		russian-koi8_r
+-/usr/share/libtextcat/LM/russian-windows1251.lm		russian-windows1251
+-/usr/share/libtextcat/LM/spanish.lm			spanish
+-/usr/share/libtextcat/LM/swedish.lm			swedish
+-/usr/share/libtextcat/LM/turkish.lm			turkish
++${LOCALBASE}/share/libtextcat/LM/danish.lm			danish
++${LOCALBASE}/share/libtextcat/LM/dutch.lm			dutch
++${LOCALBASE}/share/libtextcat/LM/english.lm			english
++${LOCALBASE}/share/libtextcat/LM/finnish.lm			finnish
++${LOCALBASE}/share/libtextcat/LM/french.lm			french
++${LOCALBASE}/share/libtextcat/LM/german.lm			german
++${LOCALBASE}/share/libtextcat/LM/hungarian.lm			hungarian
++${LOCALBASE}/share/libtextcat/LM/italian.lm			italian
++${LOCALBASE}/share/libtextcat/LM/norwegian.lm			norwegian
++${LOCALBASE}/share/libtextcat/LM/portuguese.lm			portuguese
++${LOCALBASE}/share/libtextcat/LM/romanian.lm			romanian
++${LOCALBASE}/share/libtextcat/LM/russian-iso8859_5.lm		russian-iso8859_5
++${LOCALBASE}/share/libtextcat/LM/russian-koi8_r.lm		russian-koi8_r
++${LOCALBASE}/share/libtextcat/LM/russian-windows1251.lm		russian-windows1251
++${LOCALBASE}/share/libtextcat/LM/spanish.lm			spanish
++${LOCALBASE}/share/libtextcat/LM/swedish.lm			swedish
++${LOCALBASE}/share/libtextcat/LM/turkish.lm			turkish

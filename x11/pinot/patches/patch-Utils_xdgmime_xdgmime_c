@@ -1,0 +1,12 @@
+$OpenBSD: patch-Utils_xdgmime_xdgmime_c,v 1.1.1.1 2009/08/17 14:34:07 ajacoutot Exp $
+--- Utils/xdgmime/xdgmime.c.orig	Tue Aug  4 15:10:12 2009
++++ Utils/xdgmime/xdgmime.c	Tue Aug  4 15:10:39 2009
+@@ -230,7 +230,7 @@ xdg_run_command_on_dirs (XdgDirectoryFunc  func,
+ 
+   xdg_data_dirs = getenv ("XDG_DATA_DIRS");
+   if (xdg_data_dirs == NULL)
+-    xdg_data_dirs = "/usr/local/share/:/usr/share/";
++    xdg_data_dirs = "${LOCALBASE}/share/:/usr/share/";
+ 
+   ptr = xdg_data_dirs;
+ 
