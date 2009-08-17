@@ -1,6 +1,6 @@
-$OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
+$OpenBSD: patch-ffmpeg_frame_c,v 1.3 2009/08/17 01:40:30 jolan Exp $
 --- ffmpeg_frame.c.orig	Mon Oct 13 18:02:01 2008
-+++ ffmpeg_frame.c	Sun Aug 16 18:50:20 2009
++++ ffmpeg_frame.c	Sun Aug 16 20:01:01 2009
 @@ -31,7 +31,7 @@
     obligated to do so. If you do not wish to do so, delete this exception
     statement from your version.
@@ -10,15 +10,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
  
  #include "php.h"
  #include "php_ini.h"
-@@ -47,11 +47,15 @@
- #include "ffmpeg_frame.h"
- #include "ffmpeg_tools.h"
- 
-+#ifdef HAVE_CONFIG_H
-+#include "config.h"
-+#endif
-+
- /* 
+@@ -51,7 +51,7 @@
     include gd header from local include dir. This is a copy of gd.h that is 
     distributed with php-5.2.5. It is distributed along with ffmpeg-php to
     allow ffmpeg-php to be built without access to the php sources
@@ -27,17 +19,8 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
  #if HAVE_LIBGD20
  #include "gd.h" 
  
-@@ -60,11 +64,14 @@
-     ZEND_FETCH_RESOURCE(gd_img, gdImagePtr, ret, -1, "Image", le_gd); \
- }
- 
--// Borrowed from gd.c
--#define gdImageBoundsSafeMacro(im, x, y) (!((((y) < (im)->cy1) || ((y) > (im)->cy2)) || (((x) < (im)->cx1) || ((x) > (im)->cx2))))
-+#if PIX_FMT_RGBA32
-+#define FFMPEG_PHP_FFMPEG_RGB_PIX_FORMAT PIX_FMT_RGBA32
-+#else
-+#define FFMPEG_PHP_FFMPEG_RGB_PIX_FORMAT PIX_FMT_RGB32
-+#endif
+@@ -64,7 +64,7 @@
+ #define gdImageBoundsSafeMacro(im, x, y) (!((((y) < (im)->cy1) || ((y) > (im)->cy2)) || (((x) < (im)->cx1) || ((x) > (im)->cx2))))
  
  static int le_gd; // this is only valid after calling 
 -                  // FFMPEG_PHP_FETCH_IMAGE_RESOURCE() 
@@ -45,7 +28,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
  
  #endif // HAVE_LIBGD20
  
-@@ -72,39 +79,42 @@ int le_ffmpeg_frame; // not static since it is used in
+@@ -72,39 +72,40 @@ int le_ffmpeg_frame; // not static since it is used in
  
  static zend_class_entry *ffmpeg_frame_class_entry_ptr;
  zend_class_entry ffmpeg_frame_class_entry;
@@ -67,24 +50,23 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
      /* gd methods */
 -    PHP_MALIAS(ffmpeg_frame, togdimage,      toGDImage,     NULL, 0)
 +    FFMPEG_PHP_MALIAS(ffmpeg_frame, togdimage,      toGDImage,     NULL, 0)
-+
-+
  #endif // HAVE_LIBGD20
  
-     /* methods */
+-    /* methods */
 -    PHP_MALIAS(ffmpeg_frame, getwidth,                    getWidth,                   NULL, 0)
 -    PHP_MALIAS(ffmpeg_frame, getheight,                   getHeight,                  NULL, 0)
 -    PHP_MALIAS(ffmpeg_frame, iskeyframe,                  isKeyFrame,                 NULL, 0)
 -    PHP_MALIAS(ffmpeg_frame, getpresentationtimestamp,    getPresentationTimestamp,   NULL, 0)
 -    PHP_MALIAS(ffmpeg_frame, getpts,                      getPresentationTimestamp,   NULL, 0)
 -	{NULL, NULL, NULL}
-+    FFMPEG_PHP_MALIAS(ffmpeg_frame, getwidth,                    getWidth,                   NULL, 0)
-+    FFMPEG_PHP_MALIAS(ffmpeg_frame, getheight,                   getHeight,                  NULL, 0)
-+    FFMPEG_PHP_MALIAS(ffmpeg_frame, resize,                      resize,                     NULL, 0)
-+    FFMPEG_PHP_MALIAS(ffmpeg_frame, iskeyframe,                  isKeyFrame,                 NULL, 0)
-+    FFMPEG_PHP_MALIAS(ffmpeg_frame, getpresentationtimestamp,    getPresentationTimestamp,   NULL, 0)
-+    FFMPEG_PHP_MALIAS(ffmpeg_frame, getpts,                      getPresentationTimestamp,   NULL, 0)
-+    FFMPEG_PHP_END_METHODS
++        /* methods */
++        FFMPEG_PHP_MALIAS(ffmpeg_frame, getwidth,                    getWidth,                   NULL, 0)
++        FFMPEG_PHP_MALIAS(ffmpeg_frame, getheight,                   getHeight,                  NULL, 0)
++        FFMPEG_PHP_MALIAS(ffmpeg_frame, resize,                      resize,                     NULL, 0)
++        FFMPEG_PHP_MALIAS(ffmpeg_frame, iskeyframe,                  isKeyFrame,                 NULL, 0)
++        FFMPEG_PHP_MALIAS(ffmpeg_frame, getpresentationtimestamp,    getPresentationTimestamp,   NULL, 0)
++        FFMPEG_PHP_MALIAS(ffmpeg_frame, getpts,                      getPresentationTimestamp,   NULL, 0)
++        FFMPEG_PHP_END_METHODS
  };
  /* }}} */
  
@@ -102,7 +84,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
      if (!ff_frame) {
          zend_error(E_ERROR, "Error allocating ffmpeg_frame");
      }
-@@ -123,16 +133,16 @@ static ff_frame_context* _php_alloc_ff_frame()
+@@ -123,16 +124,16 @@ static ff_frame_context* _php_alloc_ff_frame()
     creates an ffmpeg_frame object, adds a ffmpeg_frame resource to the
     object, registers the resource and returns a direct pointer to the 
     resource.
@@ -125,7 +107,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
      object_init_ex(return_value, ffmpeg_frame_class_entry_ptr);
      add_property_resource(return_value, "ffmpeg_frame", ret);
      return ff_frame;
-@@ -141,7 +151,7 @@ ff_frame_context* _php_create_ffmpeg_frame(INTERNAL_FU
+@@ -141,7 +142,7 @@ ff_frame_context* _php_create_ffmpeg_frame(INTERNAL_FU
  
  
  /* {{{ _php_free_av_frame()
@@ -134,7 +116,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
  static void _php_free_av_frame(AVFrame *av_frame)
  {
      if (av_frame) {
-@@ -156,7 +166,7 @@ static void _php_free_av_frame(AVFrame *av_frame)
+@@ -156,7 +157,7 @@ static void _php_free_av_frame(AVFrame *av_frame)
  
  
  /* {{{ _php_free_ffmpeg_frame()
@@ -143,7 +125,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
  static void _php_free_ffmpeg_frame(zend_rsrc_list_entry *rsrc TSRMLS_DC)
  {
      ff_frame_context *ff_frame = (ff_frame_context*)rsrc->ptr;    
-@@ -167,7 +177,7 @@ static void _php_free_ffmpeg_frame(zend_rsrc_list_entr
+@@ -167,7 +168,7 @@ static void _php_free_ffmpeg_frame(zend_rsrc_list_entr
  
  
  /* {{{ register_ffmpeg_frame_class()
@@ -152,7 +134,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
  void register_ffmpeg_frame_class(int module_number)
  {
      TSRMLS_FETCH();
-@@ -187,36 +197,33 @@ void register_ffmpeg_frame_class(int module_number)
+@@ -187,36 +188,33 @@ void register_ffmpeg_frame_class(int module_number)
  
  /* {{{ _php_convert_frame()
  */
@@ -202,7 +184,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
      return result;
  }
  /* }}} */
-@@ -224,7 +231,7 @@ fail:
+@@ -224,7 +222,7 @@ fail:
  #if HAVE_LIBGD20
  
  /* {{{ _php_get_gd_image()
@@ -211,7 +193,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
  static int _php_get_gd_image(int w, int h)
  {
      zval *function_name, *width, *height;
-@@ -234,7 +241,7 @@ static int _php_get_gd_image(int w, int h)
+@@ -234,7 +232,7 @@ static int _php_get_gd_image(int w, int h)
      char *function_cname = "imagecreatetruecolor";
      int ret;
      TSRMLS_FETCH();
@@ -220,7 +202,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
      if (zend_hash_find(EG(function_table), function_cname, 
                  strlen(function_cname) + 1, (void **)&func) == FAILURE) {
          zend_error(E_ERROR, "Error can't find %s function", function_cname);
-@@ -255,11 +262,11 @@ static int _php_get_gd_image(int w, int h)
+@@ -255,11 +253,11 @@ static int _php_get_gd_image(int w, int h)
                  &retval, 2, argv, 0, NULL TSRMLS_CC) == FAILURE) {
          zend_error(E_ERROR, "Error calling %s function", function_cname);
      }
@@ -234,7 +216,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
      if (!retval || retval->type != IS_RESOURCE) {
          php_error_docref(NULL TSRMLS_CC, E_ERROR,
                  "Error creating GD Image");
-@@ -277,7 +284,7 @@ static int _php_get_gd_image(int w, int h)
+@@ -277,7 +275,7 @@ static int _php_get_gd_image(int w, int h)
  
  
  /* {{{ _php_avframe_to_gd_image()
@@ -243,7 +225,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
  static int _php_avframe_to_gd_image(AVFrame *frame, gdImage *dest, int width, 
          int height)
  {
-@@ -286,13 +293,8 @@ static int _php_avframe_to_gd_image(AVFrame *frame, gd
+@@ -286,13 +284,8 @@ static int _php_avframe_to_gd_image(AVFrame *frame, gd
  
      for (y = 0; y < height; y++) {
          for (x = 0; x < width; x++) {
@@ -255,11 +237,11 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
 -                return -1;
 -            }
 +            /* copy pixel to gdimage buffer zeroing the alpha channel */
-+            gdImageSetPixel(dest, x, y, src[x] & 0x00FFFFFF);
++            dest->tpixels[y][x] = src[x] & 0x00ffffff;
          }
          src += width;
      }
-@@ -302,7 +304,7 @@ static int _php_avframe_to_gd_image(AVFrame *frame, gd
+@@ -302,7 +295,7 @@ static int _php_avframe_to_gd_image(AVFrame *frame, gd
  
  
  /* {{{ _php_gd_image_to_avframe()
@@ -268,20 +250,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
  static int _php_gd_image_to_avframe(gdImage *src, AVFrame *frame, int width, 
          int height) 
  {
-@@ -311,11 +313,7 @@ static int _php_gd_image_to_avframe(gdImage *src, AVFr
- 
-     for (y = 0; y < height; y++) {
-         for (x = 0; x < width; x++) {
--            if (gdImageBoundsSafeMacro(src, x, y)) {
--                dest[x] = src->tpixels[y][x];
--            } else {
--                return -1;
--            }
-+            dest[x] = src->tpixels[y][x];
-         }
-         dest += width;
-     }
-@@ -325,7 +323,7 @@ static int _php_gd_image_to_avframe(gdImage *src, AVFr
+@@ -325,7 +318,7 @@ static int _php_gd_image_to_avframe(gdImage *src, AVFr
  
  
  /* {{{ proto resource toGDImage()
@@ -290,16 +259,16 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
  FFMPEG_PHP_METHOD(ffmpeg_frame, toGDImage)
  {
      ff_frame_context *ff_frame;
-@@ -333,7 +331,7 @@ FFMPEG_PHP_METHOD(ffmpeg_frame, toGDImage)
+@@ -333,7 +326,7 @@ FFMPEG_PHP_METHOD(ffmpeg_frame, toGDImage)
  
      GET_FRAME_RESOURCE(getThis(), ff_frame);
  
 -    _php_convert_frame(ff_frame, PIX_FMT_RGBA32);
-+    _php_convert_frame(ff_frame, FFMPEG_PHP_FFMPEG_RGB_PIX_FORMAT);
++    _php_convert_frame(ff_frame, PIX_FMT_RGB32);
  
      return_value->value.lval = _php_get_gd_image(ff_frame->width, 
              ff_frame->height);
-@@ -343,36 +341,15 @@ FFMPEG_PHP_METHOD(ffmpeg_frame, toGDImage)
+@@ -343,36 +336,15 @@ FFMPEG_PHP_METHOD(ffmpeg_frame, toGDImage)
      FFMPEG_PHP_FETCH_IMAGE_RESOURCE(gd_img, &return_value);
  
      if (_php_avframe_to_gd_image(ff_frame->av_frame, gd_img,
@@ -338,7 +307,7 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
  FFMPEG_PHP_METHOD(ffmpeg_frame, ffmpeg_frame)
  {
      zval **argv[1];
-@@ -392,17 +369,17 @@ FFMPEG_PHP_METHOD(ffmpeg_frame, ffmpeg_frame)
+@@ -392,17 +364,17 @@ FFMPEG_PHP_METHOD(ffmpeg_frame, ffmpeg_frame)
      }
  
      ff_frame = _php_alloc_ff_frame();
@@ -361,12 +330,12 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
              //_php_read_frame_from_file(ff_frame, Z_STRVAL_PP(argv[0]));
              break;
          case IS_RESOURCE:
-@@ -418,18 +395,18 @@ FFMPEG_PHP_METHOD(ffmpeg_frame, ffmpeg_frame)
+@@ -418,18 +390,18 @@ FFMPEG_PHP_METHOD(ffmpeg_frame, ffmpeg_frame)
  
              /* create a an av_frame and allocate space for it */
              frame = avcodec_alloc_frame();
 -            avpicture_alloc((AVPicture*)frame, PIX_FMT_RGBA32, width, height);
-+            avpicture_alloc((AVPicture*)frame, FFMPEG_PHP_FFMPEG_RGB_PIX_FORMAT, width, height);
++            avpicture_alloc((AVPicture*)frame, PIX_FMT_RGB32, width, height);
  
              /* copy the gd image to the av_frame */
              _php_gd_image_to_avframe(gd_img, frame, width, height);
@@ -380,11 +349,11 @@ $OpenBSD: patch-ffmpeg_frame_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
              ff_frame->width = width;
              ff_frame->height = height;
 -            ff_frame->pixel_format = PIX_FMT_RGBA32;
-+            ff_frame->pixel_format = FFMPEG_PHP_FFMPEG_RGB_PIX_FORMAT;
++            ff_frame->pixel_format = PIX_FMT_RGB32;
              break;
          default:
              zend_error(E_ERROR, "Invalid argument\n");
-@@ -441,53 +418,298 @@ FFMPEG_PHP_METHOD(ffmpeg_frame, ffmpeg_frame)
+@@ -441,53 +413,298 @@ FFMPEG_PHP_METHOD(ffmpeg_frame, ffmpeg_frame)
  
  
  /* {{{ proto int getPresentationTimestamp()
