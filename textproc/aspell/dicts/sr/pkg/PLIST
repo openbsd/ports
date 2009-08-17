@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/17 10:58:35 jasper Exp $
+lib/aspell/l-sr.cmap
+lib/aspell/l-sr.cset
+lib/aspell/sr.dat
+share/aspell/sr-cyrl-only.rws
+share/aspell/sr-cyrl.multi
+share/aspell/sr-latn-only.rws
+share/aspell/sr-latn.multi
+share/aspell/sr.multi
