@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/06 14:43:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/17 14:45:13 bernd Exp $
 
 COMMENT =	distributed, document-oriented database
 
-COUCH_VER =	0.9.0
+COUCH_VER =	0.9.1
 DISTNAME =	apache-couchdb-${COUCH_VER}
-PKGNAME =	${DISTNAME}p0
 CATEGORIES =	databases
 
 HOMEPAGE =	http://incubator.apache.org/couchdb/
@@ -42,8 +41,11 @@ CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 		 --with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 		 --with-js-include=${LOCALBASE}/include/js \
 		 --with-js-lib=${LOCALBASE}/lib
+# The 'erl -version' test in configure needs HOME to be set.
+CONFIGURE_ENV =	HOME=${PORTHOME}
 
 NO_REGRESS =	Yes
+PORTHOME =	${WRKDIR}
 
 SUBST_VARS +=	COUCH_VER
 
