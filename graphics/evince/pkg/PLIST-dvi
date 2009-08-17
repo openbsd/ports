@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-dvi,v 1.3 2009/06/07 05:32:02 ajacoutot Exp $
-lib/evince/backends/dvidocument.evince-backend
-lib/evince/backends/libdvidocument.la
-lib/evince/backends/libdvidocument.so
+@comment $OpenBSD: PLIST-dvi,v 1.4 2009/08/17 09:57:44 ajacoutot Exp $
+lib/evince/1/backends/dvidocument.evince-backend
+lib/evince/1/backends/libdvidocument.la
+lib/evince/1/backends/libdvidocument.so
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/evince-thumbnailer-dvi.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

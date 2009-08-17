@@ -1,4 +1,4 @@
-$OpenBSD: patch-shell_ev-window_c,v 1.1 2009/04/06 16:15:13 stsp Exp $
+$OpenBSD: patch-shell_ev-window_c,v 1.2 2009/08/17 09:57:44 ajacoutot Exp $
 
 Taken from http://bugzilla.gnome.org/show_bug.cgi?id=571051
 
@@ -7,9 +7,9 @@ Evince reloads documents automatically when they are changed while
 being displayed. Very annoying while editing LaTeX files and rebuilding
 the corresponding PDF.
 
---- shell/ev-window.c.orig	Mon Apr  6 16:34:01 2009
-+++ shell/ev-window.c	Mon Apr  6 16:34:10 2009
-@@ -926,6 +926,11 @@ setup_size_from_metadata (EvWindow *window)
+--- shell/ev-window.c.orig	Mon May 18 22:23:19 2009
++++ shell/ev-window.c	Sun Aug 16 13:39:38 2009
+@@ -1027,6 +1027,11 @@ setup_size_from_metadata (EvWindow *window)
  	GValue x = { 0, };
  	GValue y = { 0, };
  

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2009/08/17 09:57:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,15 +7,16 @@ COMMENT-djvu=	evince document viewer backend for djvu documents
 COMMENT-dvi=	evince document viewer backend for dvi documents
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	2.24.2
+GNOME_VERSION=	2.26.2
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p12
-PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}p4
-PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}p4
+PKGNAME-main=	${DISTNAME}
+PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
+PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 
-SHARED_LIBS=	evbackend	0.0 # .0.0
+SHARED_LIBS +=  evdocument 0.0                   # .1.0
+SHARED_LIBS +=  evview     0.0                   # .1.0
 
 HOMEPAGE=	http://www.gnome.org/projects/evince/
 
@@ -41,15 +42,14 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png pthread-stubs xcb xml2 z
+		pixman-1 png pthread-stubs xcb z
 
 WANTLIB-main=		${WANTLIB} ICE ORBit-2 SM c dbus-1 dbus-glib-1 \
 			gnome-keyring gs gthread-2.0 \
-			jpeg pthread tiff
+			jpeg pthread tiff xml2
 LIB_DEPENDS-main=	poppler.>=3,poppler-glib.>=3::print/poppler \
 			spectre::print/libspectre \
 			gnome-keyring::x11/gnome/keyring \
-			glade-2.0::devel/libglade2 \
 			${MODGCONF2_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
@@ -58,21 +58,27 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			::x11/gnome/icon-theme
 
 WANTLIB-djvu=		${WANTLIB} jpeg
-LIB_DEPENDS-djvu=	evbackend::${BASE_PKGPATH} \
-			djvulibre::graphics/djvulibre \
-			${MODGETTEXT_LIB_DEPENDS}
+# port-lib-depends-check misses these ones because the depending lib
+# is under lib/evince/1/backends/
+LIB_DEPENDS-djvu=	${MODGETTEXT_LIB_DEPENDS} \
+			evdocument::${BASE_PKGPATH} \
+			djvulibre.>=21::graphics/djvulibre
 RUN_DEPENDS-djvu=	${MODGCONF2_RUN_DEPENDS}
 
-WANTLIB-dvi=		${WANTLIB} gs spectre
-LIB_DEPENDS-dvi=	evbackend::${BASE_PKGPATH} \
-			kpathsea::print/texlive/base \
-			${MODGETTEXT_LIB_DEPENDS}
+WANTLIB-dvi=		${WANTLIB} gs
+# port-lib-depends-check misses these ones because the depending lib
+# is under lib/evince/1/backends/
+LIB_DEPENDS-dvi=	${MODGETTEXT_LIB_DEPENDS} \
+			evdocument::${BASE_PKGPATH} \
+			kpathsea.>=1::print/texlive/base \
+			spectre::print/libspectre
 RUN_DEPENDS-dvi=	${MODGCONF2_RUN_DEPENDS}
 
 USE_X11=		Yes
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	evince
+MODGCONF2_LIBDEP=	No
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
