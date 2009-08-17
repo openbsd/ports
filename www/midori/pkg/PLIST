@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/07/24 12:04:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/08/17 19:33:36 landry Exp $
 @bin bin/midori
 lib/midori/
+lib/midori/libadblock.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
 lib/midori/libfeed-panel.so
