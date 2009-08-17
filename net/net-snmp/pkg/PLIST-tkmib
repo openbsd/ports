@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-tkmib,v 1.1 2009/08/17 14:58:45 giovanni Exp $
+@conflict net-snmp-<5.4.2.1p3
+bin/tkmib
+@man man/man1/tkmib.1

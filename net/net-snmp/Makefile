@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.39 2009/08/16 13:35:25 rui Exp $
+# $OpenBSD: Makefile,v 1.40 2009/08/17 14:58:45 giovanni Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
+COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.4.2.1
 DISTNAME=	net-snmp-${V}
-PKGNAME-main=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 PKGNAME-perl=	p5-SNMP-${V}p1
+PKGNAME-tkmib=	net-snmp-tkmib-${V}
 SHARED_LIBS=	netsnmp		8.0	\
 		netsnmpagent	8.1	\
 		netsnmphelpers	8.0	\
@@ -24,9 +26,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB-main=		c crypto kvm m perl util wrap
 
-MULTI_PACKAGES=	-main -perl
+MULTI_PACKAGES=	-main -perl -tkmib
 
 LIB_DEPENDS-perl=	netsnmptrapd,netsnmpmibs,netsnmphelpers,netsnmpagent,netsnmp::net/net-snmp,-main
+RUN_DEPENDS-tkmib=	::net/net-snmp,-perl \
+			::x11/p5-Tk
 
 NET_SNMP_MIB_LIST= host disman/event-mib smux mibII/mta_sendmail
 

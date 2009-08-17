@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2008/10/12 08:21:21 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/08/17 14:58:45 giovanni Exp $
 @pkgpath net/net-snmp
 %%SHARED%%
 @bin bin/encode_keychange
@@ -26,7 +26,6 @@ bin/snmpinform
 @bin bin/snmpusm
 @bin bin/snmpvacm
 @bin bin/snmpwalk
-bin/tkmib
 bin/traptoemail
 include/net-snmp/
 include/net-snmp/agent/
@@ -218,7 +217,6 @@ lib/libnetsnmptrapd.la
 @man man/man1/snmpusm.1
 @man man/man1/snmpvacm.1
 @man man/man1/snmpwalk.1
-@man man/man1/tkmib.1
 @man man/man1/traptoemail.1
 @man man/man3/add_mibdir.3
 @man man/man3/add_module_replacement.3
