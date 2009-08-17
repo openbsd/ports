@@ -1,6 +1,6 @@
-$OpenBSD: patch-ffmpeg-php_c,v 1.1.1.1 2009/08/16 20:04:39 jolan Exp $
+$OpenBSD: patch-ffmpeg-php_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
 --- ffmpeg-php.c.orig	Mon Oct 13 14:00:08 2008
-+++ ffmpeg-php.c	Sun Aug 16 05:33:41 2009
++++ ffmpeg-php.c	Sun Aug 16 19:19:04 2009
 @@ -51,8 +51,9 @@
  #include "ext/standard/info.h"
  

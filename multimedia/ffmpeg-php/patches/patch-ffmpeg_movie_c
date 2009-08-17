@@ -1,37 +1,30 @@
-$OpenBSD: patch-ffmpeg_movie_c,v 1.1.1.1 2009/08/16 20:04:39 jolan Exp $
+$OpenBSD: patch-ffmpeg_movie_c,v 1.2 2009/08/17 00:24:38 jolan Exp $
 --- ffmpeg_movie.c.orig	Mon Oct 13 17:46:53 2008
-+++ ffmpeg_movie.c	Fri Nov 21 14:54:38 2008
-@@ -122,7 +122,7 @@ zend_function_entry ffmpeg_movie_class_methods[] = {
++++ ffmpeg_movie.c	Sun Aug 16 18:27:35 2009
+@@ -45,6 +45,7 @@
+ 
+ #include "ffmpeg_frame.h"
+ #include "ffmpeg_movie.h"
++#include "ffmpeg_tools.h"
+    
+ #define GET_MOVIE_RESOURCE(ff_movie_ctx) {\
+     zval **_tmp_zval;\
+@@ -122,7 +123,8 @@ zend_function_entry ffmpeg_movie_class_methods[] = {
      FFMPEG_PHP_MALIAS(ffmpeg_movie, getaudiobitrate,     getAudioBitRate,     NULL, 0)
      FFMPEG_PHP_MALIAS(ffmpeg_movie, getvideobitrate,     getVideoBitRate,     NULL, 0)
      FFMPEG_PHP_MALIAS(ffmpeg_movie, getpixelaspectratio, getPixelAspectRatio, NULL, 0)
 -    {NULL, NULL, NULL, 0, 0}
++
 +    FFMPEG_PHP_END_METHODS
  };
  /* }}} */
  
-@@ -501,7 +501,7 @@ static AVCodecContext* _php_get_decoder_context(ff_mov
-                     codec_id));
- 
-         if (!decoder) {
--            zend_error(E_ERROR, "Could not find decoder for %s", 
-+            zend_error(E_WARNING, "Could not find decoder for %s", 
-                     _php_get_filename(ffmovie_ctx));
-             return NULL;
-         }
-@@ -592,6 +592,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getAlbum)
- }
- /* }}} */
- 
-+
- /* {{{ proto string getGenre()
-  *  Return ID3 genre field from an mp3 file
+@@ -270,7 +272,7 @@ static int _php_open_movie_file(ff_movie_context *ffmo
+ /* {{{ proto object ffmpeg_movie(string filename) 
+    Constructor for ffmpeg_movie objects
   */
-@@ -619,6 +620,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getTrackNumber)
-     RETURN_LONG(ffmovie_ctx->fmt_ctx->track);
- }
- /* }}} */
-+
- 
- /* {{{ proto int getYear()
-  *  Return ID3 year field from an mp3 file
+-FFMPEG_PHP_METHOD(ffmpeg_movie, __construct)
++FFMPEG_PHP_CONSTRUCTOR(ffmpeg_movie, __construct)
+ {
+     int persistent = 0, hashkey_length = 0;
+     char *filename = NULL, *fullpath = NULL, *hashkey = NULL;
