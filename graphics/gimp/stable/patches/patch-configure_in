@@ -1,7 +1,23 @@
-$OpenBSD: patch-configure_in,v 1.7 2008/11/16 21:19:23 kili Exp $
---- configure.in.orig	Thu Oct 30 10:33:25 2008
-+++ configure.in	Fri Nov 14 09:03:17 2008
-@@ -1141,10 +1141,10 @@ if test "x$with_libmng" != xno && test -z "$MNG_LIBS" 
+$OpenBSD: patch-configure_in,v 1.8 2009/08/17 12:10:26 giovanni Exp $
+--- configure.in.orig	Wed Mar 11 17:06:21 2009
++++ configure.in	Thu Mar 19 17:28:47 2009
+@@ -419,14 +419,7 @@ AM_GLIB_GNU_GETTEXT
+ ###########
+ 
+ AC_MSG_CHECKING([for iso-codes])
+-PKG_CHECK_EXISTS(iso-codes,
+-  have_iso_codes="yes"
+-  AC_DEFINE(HAVE_ISO_CODES, 1,
+-  	    [Define to 1 if the iso-codes package is available])
+-  ISO_CODES_PREFIX=`$PKG_CONFIG --variable=prefix iso-codes`   
+-  ISO_CODES_LOCATION="$ISO_CODES_PREFIX/share/xml/iso-codes"
+-  ISO_CODES_LOCALEDIR="$ISO_CODES_PREFIX/$DATADIRNAME/locale",
+-  have_iso_codes="no (iso-codes package not found)")
++  have_iso_codes="no (iso-codes package not found)"
+ AC_MSG_RESULT($have_iso_codes)
+ 
+ AC_SUBST(ISO_CODES_LOCATION)
+@@ -1141,10 +1134,10 @@ if test "x$with_libmng" != xno && test -z "$MNG_LIBS" 
     test -n "$PNG_LIBS" && test -n "$JPEG_LIBS" && test -n "$Z_LIBS"; then
    AC_CHECK_LIB(mng, mng_create,
      [AC_CHECK_HEADER(libmng.h, mng_ok=yes)],
@@ -14,7 +30,7 @@ $OpenBSD: patch-configure_in,v 1.7 2008/11/16 21:19:23 kili Exp $
    else
      have_libmng="no (MNG header file not found)"
    fi
-@@ -1332,19 +1332,9 @@ if test "x$with_gnomevfs" != xno; then
+@@ -1332,19 +1325,9 @@ if test "x$with_gnomevfs" != xno; then
  
  gnome_vfs_modules="gnome-vfs-2.0 >= gnome_vfs_required_version"
  
