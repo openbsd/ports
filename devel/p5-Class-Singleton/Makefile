@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/17 05:21:40 kevlo Exp $
 
 COMMENT=		perl singleton pattern
 
 MODULES=		cpan
-DISTNAME=		Class-Singleton-1.03
+DISTNAME=		Class-Singleton-1.4
 CATEGORIES=		devel
 
 # Artistic
