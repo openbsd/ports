@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.582 2009/08/15 10:47:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.583 2009/08/17 23:06:06 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -28,6 +28,8 @@
      SUBDIR += axyftp
      SUBDIR += balance
      SUBDIR += bing
+     SUBDIR += bird
+     SUBDIR += bird,v6
      SUBDIR += bitchx
      SUBDIR += bitlbee
      SUBDIR += bluetooth-tools
