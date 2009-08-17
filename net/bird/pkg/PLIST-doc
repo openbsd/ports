@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST-doc,v 1.1.1.1 2009/08/17 23:03:58 sthen Exp $
+share/doc/bird/
+share/doc/bird/bird-1.html
+share/doc/bird/bird-2.html
+share/doc/bird/bird-3.html
+share/doc/bird/bird-4.html
+share/doc/bird/bird-5.html
+share/doc/bird/bird-6.html
+share/doc/bird/bird-7.html
+share/doc/bird/bird.html
+share/doc/bird/bird.ps
+share/doc/bird/prog-1.html
+share/doc/bird/prog-2.html
+share/doc/bird/prog-3.html
+share/doc/bird/prog-4.html
+share/doc/bird/prog-5.html
+share/doc/bird/prog-6.html
+share/doc/bird/prog-7.html
+share/doc/bird/prog-8.html
+share/doc/bird/prog.html
+share/doc/bird/prog.ps
