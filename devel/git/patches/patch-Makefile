@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Jul 29 10:06:16 2009
-+++ Makefile	Wed Jul 29 15:49:41 2009
-@@ -192,7 +192,7 @@ uname_V := $(shell sh -c 'uname -v 2>/dev/null || echo
+--- Makefile.orig	Wed Jul 29 10:18:18 2009
++++ Makefile	Sat Aug  1 10:41:01 2009
+@@ -212,7 +212,7 @@ uname_V := $(shell sh -c 'uname -v 2>/dev/null || echo
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -9,7 +9,7 @@
  LDFLAGS =
  ALL_CFLAGS = $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
-@@ -210,22 +210,16 @@ STRIP ?= strip
+@@ -230,22 +230,16 @@ STRIP ?= strip
  # runtime figures out where they are based on the path to the executable.
  # This can help installing the suite in a relocatable way.
  
@@ -35,8 +35,8 @@
 +ETC_GITCONFIG = $(SYSCONFDIR)/gitconfig
  lib = lib
  # DESTDIR=
- 
-@@ -249,16 +243,16 @@ GITWEB_SITE_FOOTER =
+ pathsep = :
+@@ -270,16 +264,16 @@ GITWEB_SITE_FOOTER =
  
  export prefix bindir sharedir sysconfdir
  
@@ -57,7 +57,7 @@
  
  export TCL_PATH TCLTK_PATH
  
-@@ -751,13 +745,12 @@ ifeq ($(uname_S),FreeBSD)
+@@ -791,13 +785,12 @@ ifeq ($(uname_S),FreeBSD)
  	endif
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -74,7 +74,7 @@
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -923,7 +916,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
+@@ -1009,7 +1002,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
  	PROGRAMS += git-imap-send$X
  endif
  ifndef NO_OPENSSL
@@ -83,7 +83,7 @@
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -1484,7 +1477,7 @@ all:: $(TEST_PROGRAMS)
+@@ -1589,7 +1582,7 @@ all:: $(TEST_PROGRAMS)
  
  export NO_SVN_TESTS
  

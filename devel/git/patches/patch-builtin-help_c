@@ -1,10 +1,10 @@
-$OpenBSD: patch-builtin-help_c,v 1.3 2009/05/18 19:23:58 bernd Exp $
+$OpenBSD: patch-builtin-help_c,v 1.4 2009/08/17 14:47:54 bernd Exp $
 
 Fix "warning: missing sentinel in function call" on 64bit archs.
 
---- builtin-help.c.orig	Thu May  7 06:29:04 2009
-+++ builtin-help.c	Fri May  8 09:52:09 2009
-@@ -123,7 +123,7 @@ static void exec_woman_emacs(const char *path, const c
+--- builtin-help.c.orig	Wed Jul 29 10:18:18 2009
++++ builtin-help.c	Sat Aug  1 10:41:01 2009
+@@ -119,7 +119,7 @@ static void exec_woman_emacs(const char *path, const c
  		if (!path)
  			path = "emacsclient";
  		strbuf_addf(&man_page, "(woman \"%s\")", page);
@@ -13,7 +13,7 @@ Fix "warning: missing sentinel in function call" on 64bit archs.
  		warning("failed to exec '%s': %s", path, strerror(errno));
  	}
  }
-@@ -151,7 +151,7 @@ static void exec_man_konqueror(const char *path, const
+@@ -147,7 +147,7 @@ static void exec_man_konqueror(const char *path, const
  		} else
  			path = "kfmclient";
  		strbuf_addf(&man_page, "man:%s(1)", page);
@@ -22,7 +22,7 @@ Fix "warning: missing sentinel in function call" on 64bit archs.
  		warning("failed to exec '%s': %s", path, strerror(errno));
  	}
  }
-@@ -160,7 +160,7 @@ static void exec_man_man(const char *path, const char 
+@@ -156,7 +156,7 @@ static void exec_man_man(const char *path, const char 
  {
  	if (!path)
  		path = "man";
@@ -31,7 +31,7 @@ Fix "warning: missing sentinel in function call" on 64bit archs.
  	warning("failed to exec '%s': %s", path, strerror(errno));
  }
  
-@@ -168,7 +168,7 @@ static void exec_man_cmd(const char *cmd, const char *
+@@ -164,7 +164,7 @@ static void exec_man_cmd(const char *cmd, const char *
  {
  	struct strbuf shell_cmd = STRBUF_INIT;
  	strbuf_addf(&shell_cmd, "%s %s", cmd, page);
@@ -40,7 +40,7 @@ Fix "warning: missing sentinel in function call" on 64bit archs.
  	warning("failed to exec '%s': %s", cmd, strerror(errno));
  }
  
-@@ -375,7 +375,7 @@ static void show_info_page(const char *git_cmd)
+@@ -371,7 +371,7 @@ static void show_info_page(const char *git_cmd)
  {
  	const char *page = cmd_to_page(git_cmd);
  	setenv("INFOPATH", system_path(GIT_INFO_PATH), 1);
