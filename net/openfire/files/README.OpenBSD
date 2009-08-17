@@ -19,3 +19,16 @@ Using openfire in an OpenBSD environment
    several directories to be writable by the _openfire user.  When you
    complete the installation process, you may wish to tighten permissions
    on __PREFIX__/openfire and its subdirectories.
+
+5) openfire's DIGEST-MD5 SASL mechanism does not interoperate very well.
+   If you experience issues with client authentication, you may need to
+   force the SASL mechanism to PLAIN by adding:
+
+   <sasl><mechs>PLAIN</mechs></sasl>
+
+   to:
+
+   __PREFIX__/conf/openfire.xml
+
+   Then restart openfire for the changes to take effect.
+
