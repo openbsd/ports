@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/08 12:42:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/08/17 09:36:00 kevlo Exp $
 ${P5SITE}/DateTime/
 ${P5SITE}/DateTime/Locale/
 ${P5SITE}/DateTime/Locale.pm
@@ -49,6 +49,9 @@ ${P5SITE}/DateTime/Locale/bg_BG.pm
 ${P5SITE}/DateTime/Locale/bn.pm
 ${P5SITE}/DateTime/Locale/bn_BD.pm
 ${P5SITE}/DateTime/Locale/bn_IN.pm
+${P5SITE}/DateTime/Locale/bo.pm
+${P5SITE}/DateTime/Locale/bo_CN.pm
+${P5SITE}/DateTime/Locale/bo_IN.pm
 ${P5SITE}/DateTime/Locale/bs.pm
 ${P5SITE}/DateTime/Locale/bs_BA.pm
 ${P5SITE}/DateTime/Locale/byn.pm
@@ -167,6 +170,8 @@ ${P5SITE}/DateTime/Locale/gez_ER.pm
 ${P5SITE}/DateTime/Locale/gez_ET.pm
 ${P5SITE}/DateTime/Locale/gl.pm
 ${P5SITE}/DateTime/Locale/gl_ES.pm
+${P5SITE}/DateTime/Locale/gsw.pm
+${P5SITE}/DateTime/Locale/gsw_CH.pm
 ${P5SITE}/DateTime/Locale/gu.pm
 ${P5SITE}/DateTime/Locale/gu_IN.pm
 ${P5SITE}/DateTime/Locale/gv.pm
@@ -240,8 +245,14 @@ ${P5SITE}/DateTime/Locale/kpe_GN.pm
 ${P5SITE}/DateTime/Locale/kpe_LR.pm
 ${P5SITE}/DateTime/Locale/ku.pm
 ${P5SITE}/DateTime/Locale/ku_Arab.pm
+${P5SITE}/DateTime/Locale/ku_Arab_IQ.pm
+${P5SITE}/DateTime/Locale/ku_Arab_IR.pm
+${P5SITE}/DateTime/Locale/ku_Arab_SY.pm
+${P5SITE}/DateTime/Locale/ku_IQ.pm
+${P5SITE}/DateTime/Locale/ku_IR.pm
 ${P5SITE}/DateTime/Locale/ku_Latn.pm
 ${P5SITE}/DateTime/Locale/ku_Latn_TR.pm
+${P5SITE}/DateTime/Locale/ku_SY.pm
 ${P5SITE}/DateTime/Locale/ku_TR.pm
 ${P5SITE}/DateTime/Locale/kw.pm
 ${P5SITE}/DateTime/Locale/kw_GB.pm
@@ -279,6 +290,8 @@ ${P5SITE}/DateTime/Locale/my.pm
 ${P5SITE}/DateTime/Locale/my_MM.pm
 ${P5SITE}/DateTime/Locale/nb.pm
 ${P5SITE}/DateTime/Locale/nb_NO.pm
+${P5SITE}/DateTime/Locale/nds.pm
+${P5SITE}/DateTime/Locale/nds_DE.pm
 ${P5SITE}/DateTime/Locale/ne.pm
 ${P5SITE}/DateTime/Locale/ne_IN.pm
 ${P5SITE}/DateTime/Locale/ne_NP.pm
@@ -294,6 +307,8 @@ ${P5SITE}/DateTime/Locale/nso.pm
 ${P5SITE}/DateTime/Locale/nso_ZA.pm
 ${P5SITE}/DateTime/Locale/ny.pm
 ${P5SITE}/DateTime/Locale/ny_MW.pm
+${P5SITE}/DateTime/Locale/oc.pm
+${P5SITE}/DateTime/Locale/oc_FR.pm
 ${P5SITE}/DateTime/Locale/om.pm
 ${P5SITE}/DateTime/Locale/om_ET.pm
 ${P5SITE}/DateTime/Locale/om_KE.pm
@@ -400,6 +415,8 @@ ${P5SITE}/DateTime/Locale/to.pm
 ${P5SITE}/DateTime/Locale/to_TO.pm
 ${P5SITE}/DateTime/Locale/tr.pm
 ${P5SITE}/DateTime/Locale/tr_TR.pm
+${P5SITE}/DateTime/Locale/trv.pm
+${P5SITE}/DateTime/Locale/trv_TW.pm
 ${P5SITE}/DateTime/Locale/ts.pm
 ${P5SITE}/DateTime/Locale/ts_ZA.pm
 ${P5SITE}/DateTime/Locale/tt.pm
@@ -502,6 +519,9 @@ ${P5SITE}/DateTime/LocaleCatalog.pm
 @man man/man3p/DateTime::Locale::bn.3p
 @man man/man3p/DateTime::Locale::bn_BD.3p
 @man man/man3p/DateTime::Locale::bn_IN.3p
+@man man/man3p/DateTime::Locale::bo.3p
+@man man/man3p/DateTime::Locale::bo_CN.3p
+@man man/man3p/DateTime::Locale::bo_IN.3p
 @man man/man3p/DateTime::Locale::bs.3p
 @man man/man3p/DateTime::Locale::bs_BA.3p
 @man man/man3p/DateTime::Locale::byn.3p
@@ -620,6 +640,8 @@ ${P5SITE}/DateTime/LocaleCatalog.pm
 @man man/man3p/DateTime::Locale::gez_ET.3p
 @man man/man3p/DateTime::Locale::gl.3p
 @man man/man3p/DateTime::Locale::gl_ES.3p
+@man man/man3p/DateTime::Locale::gsw.3p
+@man man/man3p/DateTime::Locale::gsw_CH.3p
 @man man/man3p/DateTime::Locale::gu.3p
 @man man/man3p/DateTime::Locale::gu_IN.3p
 @man man/man3p/DateTime::Locale::gv.3p
@@ -693,8 +715,14 @@ ${P5SITE}/DateTime/LocaleCatalog.pm
 @man man/man3p/DateTime::Locale::kpe_LR.3p
 @man man/man3p/DateTime::Locale::ku.3p
 @man man/man3p/DateTime::Locale::ku_Arab.3p
+@man man/man3p/DateTime::Locale::ku_Arab_IQ.3p
+@man man/man3p/DateTime::Locale::ku_Arab_IR.3p
+@man man/man3p/DateTime::Locale::ku_Arab_SY.3p
+@man man/man3p/DateTime::Locale::ku_IQ.3p
+@man man/man3p/DateTime::Locale::ku_IR.3p
 @man man/man3p/DateTime::Locale::ku_Latn.3p
 @man man/man3p/DateTime::Locale::ku_Latn_TR.3p
+@man man/man3p/DateTime::Locale::ku_SY.3p
 @man man/man3p/DateTime::Locale::ku_TR.3p
 @man man/man3p/DateTime::Locale::kw.3p
 @man man/man3p/DateTime::Locale::kw_GB.3p
@@ -732,6 +760,8 @@ ${P5SITE}/DateTime/LocaleCatalog.pm
 @man man/man3p/DateTime::Locale::my_MM.3p
 @man man/man3p/DateTime::Locale::nb.3p
 @man man/man3p/DateTime::Locale::nb_NO.3p
+@man man/man3p/DateTime::Locale::nds.3p
+@man man/man3p/DateTime::Locale::nds_DE.3p
 @man man/man3p/DateTime::Locale::ne.3p
 @man man/man3p/DateTime::Locale::ne_IN.3p
 @man man/man3p/DateTime::Locale::ne_NP.3p
@@ -747,6 +777,8 @@ ${P5SITE}/DateTime/LocaleCatalog.pm
 @man man/man3p/DateTime::Locale::nso_ZA.3p
 @man man/man3p/DateTime::Locale::ny.3p
 @man man/man3p/DateTime::Locale::ny_MW.3p
+@man man/man3p/DateTime::Locale::oc.3p
+@man man/man3p/DateTime::Locale::oc_FR.3p
 @man man/man3p/DateTime::Locale::om.3p
 @man man/man3p/DateTime::Locale::om_ET.3p
 @man man/man3p/DateTime::Locale::om_KE.3p
@@ -853,6 +885,8 @@ ${P5SITE}/DateTime/LocaleCatalog.pm
 @man man/man3p/DateTime::Locale::to_TO.3p
 @man man/man3p/DateTime::Locale::tr.3p
 @man man/man3p/DateTime::Locale::tr_TR.3p
+@man man/man3p/DateTime::Locale::trv.3p
+@man man/man3p/DateTime::Locale::trv_TW.3p
 @man man/man3p/DateTime::Locale::ts.3p
 @man man/man3p/DateTime::Locale::ts_ZA.3p
 @man man/man3p/DateTime::Locale::tt.3p
