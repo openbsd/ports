@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2008/11/13 17:07:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/08/18 23:15:16 jolan Exp $
 
 COMMENT=	spell checker designed to eventually replace Ispell
 
 DISTNAME=	aspell-0.60.6
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS +=  aspell               17.0     # .16.4
 SHARED_LIBS +=  pspell               17.0     # .16.4
 DIST_SUBDIR=	aspell
@@ -18,8 +18,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0 \
 		${DIST_EN}.tar.bz2:1
 
 HOMEPAGE=	http://aspell.net/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
