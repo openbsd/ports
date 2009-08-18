@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.12 2008/11/07 18:38:22 okan Exp $
+@comment $OpenBSD: PLIST,v 1.13 2009/08/18 17:11:15 okan Exp $
 @bin bin/ldrdf
 @bin bin/nasm
 @bin bin/ndisasm
 @bin bin/rdf2bin
 bin/rdf2com
-@bin bin/rdf2ihx
+bin/rdf2ihx
+bin/rdf2ith
+bin/rdf2srec
 @bin bin/rdfdump
 @bin bin/rdflib
 @bin bin/rdx
@@ -14,6 +16,9 @@ bin/rdf2com
 @man man/man1/ndisasm.1
 @man man/man1/rdf2bin.1
 @man man/man1/rdf2com.1
+@man man/man1/rdf2ihx.1
+@man man/man1/rdf2ith.1
+@man man/man1/rdf2srec.1
 @man man/man1/rdfdump.1
 @man man/man1/rdflib.1
 @man man/man1/rdx.1

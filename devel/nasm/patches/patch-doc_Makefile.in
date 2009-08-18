@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Wed Oct 29 13:57:33 2008
-+++ doc/Makefile.in	Sun Nov  2 21:43:50 2008
+--- doc/Makefile.in.orig	Mon Jul 20 01:22:29 2009
++++ doc/Makefile.in	Wed Jul 22 21:34:37 2009
 @@ -8,7 +8,7 @@ prefix		= @prefix@
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@
@@ -70,9 +70,9 @@
  	-rm -f *.aux *.cp *.fn *.ky *.pg *.log *.toc *.tp *.vr
  
  spotless: clean
-@@ -98,4 +93,4 @@ install: all
+@@ -99,4 +94,4 @@ install: all
  	$(INSTALL_DATA) info/* $(INSTALLROOT)$(infodir)
  	mkdir -p $(INSTALLROOT)$(docdir)/html
  	$(INSTALL_DATA) html/* $(INSTALLROOT)$(docdir)/html
 -	$(INSTALL_DATA) nasmdoc.ps nasmdoc.pdf nasmdoc.txt $(INSTALLROOT)$(docdir)
-+	$(INSTALL_DATA) nasmdoc.txt $(INSTALLROOT)$(docdir)
++	$(INSTALL_DATA) internal.doc nasmdoc.txt $(INSTALLROOT)$(docdir)
