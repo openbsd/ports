@@ -1,0 +1,11 @@
+$OpenBSD: patch-avilib_Makefile_in,v 1.1 2009/08/18 22:24:13 sthen Exp $
+--- avilib/Makefile.in.orig	Thu May  7 22:53:21 2009
++++ avilib/Makefile.in	Thu May  7 22:53:50 2009
+@@ -294,6 +294,7 @@ x_libraries = @x_libraries@
+ xvid_config = @xvid_config@
+ AM_CPPFLAGS = \
+ 	$(PTHREAD_CFLAGS) \
++	-I$(top_srcdir) \
+ 	$(XIO_CFLAGS)
+ 
+ noinst_LTLIBRARIES = libavi.la libwav.la

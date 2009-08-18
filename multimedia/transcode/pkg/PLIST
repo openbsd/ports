@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/09 02:13:01 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/08/18 22:24:14 sthen Exp $
 %%i386%%
 %%lzo%%
 %%mjpegtools%%
@@ -15,29 +15,18 @@
 @bin bin/tcmodinfo
 @bin bin/tcmp3cut
 @bin bin/tcprobe
-@bin bin/tcrequant
 @bin bin/tcscan
 @bin bin/tcxmlcheck
 @bin bin/tcxpm2rgb
+@bin bin/tcyait
 @bin bin/transcode
 lib/transcode/
 @comment lib/transcode/a52_decore.la
 lib/transcode/a52_decore.so
-@comment lib/transcode/af6_decore.la
-@comment lib/transcode/af6_decore.so
 @comment lib/transcode/export_ac3.la
 lib/transcode/export_ac3.so
-@comment lib/transcode/export_af6.conf
-@comment lib/transcode/export_debugppm.la
-lib/transcode/export_debugppm.so
-@comment lib/transcode/export_divx4.la
-@comment lib/transcode/export_divx4.so
-@comment lib/transcode/export_divx4raw.la
-@comment lib/transcode/export_divx4raw.so
 @comment lib/transcode/export_divx5.la
 @comment lib/transcode/export_divx5.so
-@comment lib/transcode/export_divx5raw.la
-@comment lib/transcode/export_divx5raw.so
 @comment lib/transcode/export_dv.la
 lib/transcode/export_dv.so
 @comment lib/transcode/export_dvraw.la
@@ -48,14 +37,8 @@ lib/transcode/export_ffmpeg.so
 lib/transcode/export_jpg.so
 @comment lib/transcode/export_lame.la
 lib/transcode/export_lame.so
-@comment lib/transcode/export_mjpeg.la
-lib/transcode/export_mjpeg.so
-@comment lib/transcode/export_mp1e.la
-lib/transcode/export_mp1e.so
 @comment lib/transcode/export_mp2.la
 lib/transcode/export_mp2.so
-@comment lib/transcode/export_net.la
-lib/transcode/export_net.so
 @comment lib/transcode/export_null.la
 lib/transcode/export_null.so
 @comment lib/transcode/export_ogg.la
@@ -68,15 +51,13 @@ lib/transcode/export_ppm.so
 lib/transcode/export_pvn.so
 @comment lib/transcode/export_raw.la
 lib/transcode/export_raw.so
+@comment lib/transcode/export_tcaud.la
+lib/transcode/export_tcaud.so
 @comment lib/transcode/export_toolame.la
 lib/transcode/export_toolame.so
 @comment lib/transcode/export_wav.la
 lib/transcode/export_wav.so
 lib/transcode/export_xvid.so
-@comment lib/transcode/export_xvid2.la
-@comment lib/transcode/export_xvid2.so
-@comment lib/transcode/export_xvid3.la
-@comment lib/transcode/export_xvid3.so
 @comment lib/transcode/export_xvid4.la
 lib/transcode/export_xvid4.so
 @comment lib/transcode/filter_29to23.la
@@ -91,16 +72,10 @@ lib/transcode/filter_aclip.so
 lib/transcode/filter_ascii.so
 @comment lib/transcode/filter_astat.la
 lib/transcode/filter_astat.so
-@comment lib/transcode/filter_clone.la
-lib/transcode/filter_clone.so
 @comment lib/transcode/filter_control.la
 lib/transcode/filter_control.so
 @comment lib/transcode/filter_cpaudio.la
 lib/transcode/filter_cpaudio.so
-@comment lib/transcode/filter_cshift.la
-lib/transcode/filter_cshift.so
-@comment lib/transcode/filter_cut.la
-lib/transcode/filter_cut.so
 @comment lib/transcode/filter_decimate.la
 lib/transcode/filter_decimate.so
 @comment lib/transcode/filter_denoise3d.la
@@ -144,8 +119,6 @@ lib/transcode/filter_mask.so
 lib/transcode/filter_modfps.so
 @comment lib/transcode/filter_msharpen.la
 lib/transcode/filter_msharpen.so
-@comment lib/transcode/filter_nored.la
-lib/transcode/filter_nored.so
 @comment lib/transcode/filter_normalize.la
 lib/transcode/filter_normalize.so
 @comment lib/transcode/filter_null.la
@@ -158,6 +131,8 @@ lib/transcode/filter_preview.so
 lib/transcode/filter_pv.so
 @comment lib/transcode/filter_resample.la
 lib/transcode/filter_resample.so
+@comment lib/transcode/filter_sdlview.la
+lib/transcode/filter_sdlview.so
 @comment lib/transcode/filter_skip.la
 lib/transcode/filter_skip.so
 @comment lib/transcode/filter_slowmo.la
@@ -170,32 +145,28 @@ lib/transcode/filter_smartdeinter.so
 lib/transcode/filter_smartyuv.so
 @comment lib/transcode/filter_smooth.la
 lib/transcode/filter_smooth.so
+@comment lib/transcode/filter_stabilize.la
+lib/transcode/filter_stabilize.so
 @comment lib/transcode/filter_subtitler.la
 lib/transcode/filter_subtitler.so
-@comment lib/transcode/filter_tc_audio.la
-lib/transcode/filter_tc_audio.so
-@comment lib/transcode/filter_tc_video.la
-lib/transcode/filter_tc_video.so
-@comment lib/transcode/filter_test.la
-lib/transcode/filter_test.so
 @comment lib/transcode/filter_testframe.la
 lib/transcode/filter_testframe.so
 @comment lib/transcode/filter_text.la
 lib/transcode/filter_text.so
+@comment lib/transcode/filter_transform.la
+lib/transcode/filter_transform.so
 @comment lib/transcode/filter_unsharp.la
 lib/transcode/filter_unsharp.so
-@comment lib/transcode/filter_videocore.la
-lib/transcode/filter_videocore.so
 @comment lib/transcode/filter_whitebalance.la
 lib/transcode/filter_whitebalance.so
 @comment lib/transcode/filter_xsharpen.la
 lib/transcode/filter_xsharpen.so
+@comment lib/transcode/filter_yait.la
+lib/transcode/filter_yait.so
 @comment lib/transcode/filter_yuvdenoise.la
 lib/transcode/filter_yuvdenoise.so
 @comment lib/transcode/filter_yuvmedian.la
 lib/transcode/filter_yuvmedian.so
-@comment lib/transcode/filter_yuy2toyv12.la
-lib/transcode/filter_yuy2toyv12.so
 @comment lib/transcode/import_ac3.la
 lib/transcode/import_ac3.so
 @comment lib/transcode/import_avi.la
@@ -204,61 +175,43 @@ lib/transcode/import_avi.so
 lib/transcode/import_bktr.so
 @comment lib/transcode/import_bsdav.la
 lib/transcode/import_bsdav.so
-@comment lib/transcode/import_divx.la
-lib/transcode/import_divx.so
 @comment lib/transcode/import_dv.la
 lib/transcode/import_dv.so
 @comment lib/transcode/import_dvd.la
 lib/transcode/import_dvd.so
-@comment lib/transcode/import_ffbin.la
-lib/transcode/import_ffbin.so
 @comment lib/transcode/import_ffmpeg.la
 lib/transcode/import_ffmpeg.so
-@comment lib/transcode/import_fraps.la
-lib/transcode/import_fraps.so
-@comment lib/transcode/import_lav.la
-lib/transcode/import_lav.so
+@comment lib/transcode/import_framegen.la
+lib/transcode/import_framegen.so
 @comment lib/transcode/import_mp3.la
 lib/transcode/import_mp3.so
 @comment lib/transcode/import_mpeg2.la
 lib/transcode/import_mpeg2.so
 @comment lib/transcode/import_mplayer.la
 lib/transcode/import_mplayer.so
-@comment lib/transcode/import_net.la
-lib/transcode/import_net.so
 @comment lib/transcode/import_null.la
 lib/transcode/import_null.so
-@comment lib/transcode/import_nvrec.la
-lib/transcode/import_nvrec.so
 @comment lib/transcode/import_ogg.la
 lib/transcode/import_ogg.so
 @comment lib/transcode/import_pvn.la
 lib/transcode/import_pvn.so
 @comment lib/transcode/import_raw.la
 lib/transcode/import_raw.so
-@comment lib/transcode/import_rawlist.la
-lib/transcode/import_rawlist.so
-@comment lib/transcode/import_sh.la
-lib/transcode/import_sh.so
 @comment lib/transcode/import_sunau.la
 lib/transcode/import_sunau.so
-@comment lib/transcode/import_vdrac3.la
-lib/transcode/import_vdrac3.so
+@comment lib/transcode/import_vag.la
+lib/transcode/import_vag.so
 @comment lib/transcode/import_vnc.la
 lib/transcode/import_vnc.so
 @comment lib/transcode/import_vob.la
 lib/transcode/import_vob.so
+@comment lib/transcode/import_x11.la
+lib/transcode/import_x11.so
 @comment lib/transcode/import_xml.la
 lib/transcode/import_xml.so
 @comment lib/transcode/import_xvid.la
 lib/transcode/import_xvid.so
-@comment lib/transcode/import_yuv.la
-lib/transcode/import_yuv.so
-@comment lib/transcode/import_yuv4mpeg.la
-lib/transcode/import_yuv4mpeg.so
 lib/transcode/parse_csv.awk
-@comment lib/transcode/xvid2.cfg
-@comment lib/transcode/xvid3.cfg
 lib/transcode/xvid4.cfg
 @man man/man1/avifix.1
 @man man/man1/aviindex.1
@@ -268,17 +221,21 @@ lib/transcode/xvid4.cfg
 @man man/man1/tccat.1
 @man man/man1/tcdecode.1
 @man man/man1/tcdemux.1
+@man man/man1/tcexport.1
 @man man/man1/tcextract.1
+@man man/man1/tcmodchain.1
 @man man/man1/tcmodinfo.1
 @man man/man1/tcprobe.1
 @man man/man1/tcpvmexportd.1
 @man man/man1/tcscan.1
 @man man/man1/tcxmlcheck.1
 @man man/man1/transcode.1
+@man man/man1/transcode_export.1
+@man man/man1/transcode_filter.1
+@man man/man1/transcode_import.1
 share/doc/transcode/
-share/doc/transcode/ChangeLog
+@comment share/doc/transcode/ChangeLog
 share/doc/transcode/DV-to-DVD-HOWTO.txt
-share/doc/transcode/OPTIMIZERS
 share/doc/transcode/README.Inverse.Telecine.txt
 share/doc/transcode/README.cluster
 share/doc/transcode/README.dv
@@ -287,16 +244,11 @@ share/doc/transcode/README.rip
 share/doc/transcode/README.sync
 share/doc/transcode/README.vcd
 share/doc/transcode/README.xvid-credits
-share/doc/transcode/architecture.txt
-share/doc/transcode/avi_comments.txt
-share/doc/transcode/clone.txt
-share/doc/transcode/export-API.txt
+share/doc/transcode/RELNOTES-0.6.13
+share/doc/transcode/RELNOTES-1.1.0
 share/doc/transcode/export_ffmpeg.txt
 share/doc/transcode/export_mp2.txt
-share/doc/transcode/export_mpeg.txt
-share/doc/transcode/export_pvm.txt
 share/doc/transcode/faq
-share/doc/transcode/filter-API.txt
 share/doc/transcode/filter-socket.txt
 share/doc/transcode/filter_dnr.txt
 share/doc/transcode/filter_logo.txt
@@ -349,13 +301,33 @@ share/doc/transcode/html/sub3-00000.png
 share/doc/transcode/html/subtitles.html
 share/doc/transcode/html/table.php
 share/doc/transcode/html/tc.png
-share/doc/transcode/ibp_support.txt
-share/doc/transcode/import-API.txt
 share/doc/transcode/import-xml.txt
 @comment share/doc/transcode/import_nvrec.txt
 @comment share/doc/transcode/import_v4l2.txt
+share/doc/transcode/import_x11.txt
 share/doc/transcode/import_yuv.txt
-share/doc/transcode/pvm.cfg
-share/doc/transcode/release-notes/
-share/doc/transcode/release-notes/README-0.6.13
+share/doc/transcode/pvm3/
+share/doc/transcode/pvm3/export_pvm.txt
+share/doc/transcode/pvm3/pvm_10x.cfg
+share/doc/transcode/pvm3/pvm_11x.cfg
+share/doc/transcode/pvm3/pvm_config.txt
+share/doc/transcode/tech/
+share/doc/transcode/tech/OPTIMIZERS
+share/doc/transcode/tech/architecture.txt
+share/doc/transcode/tech/avi_comments.txt
+share/doc/transcode/tech/clone.txt
+share/doc/transcode/tech/export-API.txt
+share/doc/transcode/tech/filter-API.txt
+share/doc/transcode/tech/filter_template.c
+share/doc/transcode/tech/html/
+share/doc/transcode/tech/html/index.html
+share/doc/transcode/tech/html/tc_basic.css
+share/doc/transcode/tech/html/tc_frame_buffer.html
+share/doc/transcode/tech/html/tc_input_rotation.html
+share/doc/transcode/tech/html/tc_libraries.html
+share/doc/transcode/tech/html/tc_logo.png
+share/doc/transcode/tech/ibp_support.txt
+share/doc/transcode/tech/import-API.txt
+share/doc/transcode/tech/libraries.txt
+share/doc/transcode/tech/module-system-API.txt
 share/doc/transcode/template.cfg.txt
