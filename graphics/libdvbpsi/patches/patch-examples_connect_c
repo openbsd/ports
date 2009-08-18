@@ -1,0 +1,11 @@
+$OpenBSD: patch-examples_connect_c,v 1.1 2009/08/18 23:41:12 jolan Exp $
+--- examples/connect.c.orig	Thu Jan 18 08:57:08 2007
++++ examples/connect.c	Tue Aug 18 18:03:22 2009
+@@ -38,7 +38,6 @@
+ #   include <netinet/if_ether.h>
+ #endif
+ #include <netdb.h>
+-#include <netinet/ip.h>
+ #include <netinet/udp.h>
+ #include <arpa/inet.h>
+ 
