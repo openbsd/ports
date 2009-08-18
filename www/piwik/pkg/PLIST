@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/07/30 07:48:21 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/08/18 14:48:14 giovanni Exp $
 @group daemon
 piwik/
 piwik/LICENSE
@@ -121,6 +121,7 @@ piwik/core/SmartyPlugins/function.url.php
 piwik/core/SmartyPlugins/modifier.escape.php
 piwik/core/SmartyPlugins/modifier.sumtime.php
 piwik/core/SmartyPlugins/modifier.translate.php
+piwik/core/SmartyPlugins/modifier.unescape.php
 piwik/core/SmartyPlugins/modifier.urlRewriteBasicView.php
 piwik/core/SmartyPlugins/modifier.urlRewriteWithParameters.php
 piwik/core/SmartyPlugins/outputfilter.cachebuster.php
@@ -147,13 +148,13 @@ piwik/core/Updates/0.2.12.php
 piwik/core/Updates/0.2.13.php
 piwik/core/Updates/0.2.24.php
 piwik/core/Updates/0.2.27.php
-piwik/core/Updates/0.2.32.php
 piwik/core/Updates/0.2.33.php
 piwik/core/Updates/0.2.34.php
 piwik/core/Updates/0.2.35.php
 piwik/core/Updates/0.2.37.php
 piwik/core/Updates/0.4.1.php
 piwik/core/Updates/0.4.2.php
+piwik/core/Updates/0.4.3.php
 piwik/core/Updates/0.4.php
 piwik/core/Url.php
 piwik/core/Version.php
@@ -184,6 +185,7 @@ piwik/core/Visualization/Chart/Pie.php
 piwik/core/Visualization/Chart/VerticalBar.php
 piwik/core/Visualization/Cloud.php
 piwik/core/Visualization/Sparkline.php
+piwik/core/iUpdate.php
 piwik/core/iView.php
 piwik/core/testMinimumPhpVersion.php
 piwik/index.php
@@ -810,10 +812,11 @@ piwik/plugins/CoreUpdater/
 piwik/plugins/CoreUpdater/Controller.php
 piwik/plugins/CoreUpdater/CoreUpdater.php
 piwik/plugins/CoreUpdater/templates/
+piwik/plugins/CoreUpdater/templates/cli_update_database_done.tpl
+piwik/plugins/CoreUpdater/templates/cli_update_welcome.tpl
 piwik/plugins/CoreUpdater/templates/footer.tpl
 piwik/plugins/CoreUpdater/templates/header.tpl
 piwik/plugins/CoreUpdater/templates/update_database_done.tpl
-piwik/plugins/CoreUpdater/templates/update_done.tpl
 piwik/plugins/CoreUpdater/templates/update_new_version_available.tpl
 piwik/plugins/CoreUpdater/templates/update_one_click_done.tpl
 piwik/plugins/CoreUpdater/templates/update_welcome.tpl
@@ -993,6 +996,7 @@ piwik/plugins/Referers/images/searchEngines/news.seekport.de.png
 piwik/plugins/Referers/images/searchEngines/nl.altavista.com.png
 piwik/plugins/Referers/images/searchEngines/nmsearch.3721.com.png
 piwik/plugins/Referers/images/searchEngines/nova.rambler.ru.png
+piwik/plugins/Referers/images/searchEngines/poisk.ru.png
 piwik/plugins/Referers/images/searchEngines/portal.1und1.de.png
 piwik/plugins/Referers/images/searchEngines/recherche.club-internet.fr.png
 piwik/plugins/Referers/images/searchEngines/recherche.francite.com.png
@@ -1063,6 +1067,7 @@ piwik/plugins/Referers/images/searchEngines/www.blogpulse.com.png
 piwik/plugins/Referers/images/searchEngines/www.cegetel.net.png
 piwik/plugins/Referers/images/searchEngines/www.chello.fr.png
 piwik/plugins/Referers/images/searchEngines/www.comcast.net.png
+piwik/plugins/Referers/images/searchEngines/www.daemon-search.com.png
 piwik/plugins/Referers/images/searchEngines/www.enrio.se.png
 piwik/plugins/Referers/images/searchEngines/www.eo.st.png
 piwik/plugins/Referers/images/searchEngines/www.eu.ixquick.com.png
