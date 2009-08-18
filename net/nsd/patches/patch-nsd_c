@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsd_c,v 1.6 2009/08/18 21:59:10 jakob Exp $
+--- nsd.c.orig	Tue Aug 18 15:05:36 2009
++++ nsd.c	Tue Aug 18 15:05:41 2009
+@@ -21,7 +21,7 @@
+ #include <grp.h>
+ #endif /* HAVE_GRP_H */
+ #ifdef HAVE_SETUSERCONTEXT
+-#include <logincap.h>
++#include <login_cap.h>
+ #endif /* HAVE_SETUSERCONTEXT */
+ 
+ #include <assert.h>
