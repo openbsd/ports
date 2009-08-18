@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/11/26 16:40:21 alek Exp $
-bin/xcdroast
+@comment $OpenBSD: PLIST,v 1.10 2009/08/18 23:58:56 jolan Exp $
+@bin bin/xcdroast
 lib/xcdroast-0.98/
 lib/xcdroast-0.98/bin/
-lib/xcdroast-0.98/bin/cddbtool
-lib/xcdroast-0.98/bin/rmtool
-lib/xcdroast-0.98/bin/vrfytool
-lib/xcdroast-0.98/bin/wavplay
-lib/xcdroast-0.98/bin/xcdrwrap
+@bin lib/xcdroast-0.98/bin/cddbtool
+@bin lib/xcdroast-0.98/bin/rmtool
+@bin lib/xcdroast-0.98/bin/vrfytool
+@bin lib/xcdroast-0.98/bin/wavplay
+@bin lib/xcdroast-0.98/bin/xcdrwrap
 lib/xcdroast-0.98/icons/
 lib/xcdroast-0.98/icons/burnproof.gif
 lib/xcdroast-0.98/icons/cddblogo.gif
@@ -22,8 +22,6 @@ lib/xcdroast-0.98/sound/
 lib/xcdroast-0.98/sound/test.wav
 @man man/man1/xcdroast.1
 share/locale/bg/LC_MESSAGES/xcdroast.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/xcdroast.mo
 share/locale/cs/LC_MESSAGES/xcdroast.mo
 share/locale/da/LC_MESSAGES/xcdroast.mo
@@ -58,9 +56,11 @@ share/locale/uk/LC_MESSAGES/xcdroast.mo
 share/locale/zh_CN.GB2312/
 share/locale/zh_CN.GB2312/LC_MESSAGES/
 share/locale/zh_CN.GB2312/LC_MESSAGES/xcdroast.mo
+share/locale/zh_CN/LC_MESSAGES/xcdroast.mo
 share/locale/zh_TW.Big5/
 share/locale/zh_TW.Big5/LC_MESSAGES/
 share/locale/zh_TW.Big5/LC_MESSAGES/xcdroast.mo
+share/locale/zh_TW/LC_MESSAGES/xcdroast.mo
 share/pixmaps/
 share/pixmaps/xcdricon.xpm
 @extra ${SYSCONFDIR}/xcdroast.conf
