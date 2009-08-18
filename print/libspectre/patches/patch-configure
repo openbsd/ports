@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1 2009/08/18 12:12:46 ajacoutot Exp $
+
+Use system ghostscript headers.
+
+--- configure.orig	Tue Aug 18 14:03:31 2009
++++ configure	Tue Aug 18 14:03:46 2009
+@@ -21754,7 +21754,7 @@ _ACEOF
+ 
+ fi
+ 
+-ac_config_files="$ac_config_files Makefile Doxyfile libspectre/Makefile libspectre/spectre-version.h libspectre/ghostscript/Makefile test/Makefile libspectre.pc"
++ac_config_files="$ac_config_files Makefile Doxyfile libspectre/Makefile libspectre/spectre-version.h test/Makefile libspectre.pc"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -22367,7 +22367,6 @@ do
+     "Doxyfile") CONFIG_FILES="$CONFIG_FILES Doxyfile" ;;
+     "libspectre/Makefile") CONFIG_FILES="$CONFIG_FILES libspectre/Makefile" ;;
+     "libspectre/spectre-version.h") CONFIG_FILES="$CONFIG_FILES libspectre/spectre-version.h" ;;
+-    "libspectre/ghostscript/Makefile") CONFIG_FILES="$CONFIG_FILES libspectre/ghostscript/Makefile" ;;
+     "test/Makefile") CONFIG_FILES="$CONFIG_FILES test/Makefile" ;;
+     "libspectre.pc") CONFIG_FILES="$CONFIG_FILES libspectre.pc" ;;
+ 
