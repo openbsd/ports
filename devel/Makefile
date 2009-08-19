@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.718 2009/08/16 15:46:15 msf Exp $
+# $OpenBSD: Makefile,v 1.719 2009/08/19 06:13:04 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -635,6 +635,7 @@
      SUBDIR += p5-accessors
      SUBDIR += p5-boolean
      SUBDIR += p5-capitalization
+     SUBDIR += p5-common-sense
      SUBDIR += p5-enum
      SUBDIR += p5-libintl
      SUBDIR += p5-namespace-clean
