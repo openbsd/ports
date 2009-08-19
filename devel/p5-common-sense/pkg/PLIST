@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/19 06:10:37 kevlo Exp $
+${P5SITE}/common/
+${P5SITE}/common/sense.pm
+@man man/man3p/common::sense.3p
