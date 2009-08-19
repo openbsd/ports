@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/07/24 14:20:49 espie Exp $
-bin/lxsplit
+@comment $OpenBSD: PLIST,v 1.3 2009/08/19 00:17:37 jolan Exp $
+@bin bin/lxsplit
 share/doc/lxsplit/
 share/doc/lxsplit/README
