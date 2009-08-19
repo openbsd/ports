@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.719 2009/08/19 06:13:04 kevlo Exp $
+# $OpenBSD: Makefile,v 1.720 2009/08/19 07:19:02 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -742,6 +742,7 @@
      SUBDIR += ruby-assistance
      SUBDIR += ruby-color-tools
      SUBDIR += ruby-columnize
+     SUBDIR += ruby-cucumber
      SUBDIR += ruby-daemons
      SUBDIR += ruby-debug
      SUBDIR += ruby-debug-base
@@ -762,6 +763,7 @@
      SUBDIR += ruby-needle
      SUBDIR += ruby-open4
      SUBDIR += ruby-parsetree
+     SUBDIR += ruby-polyglot
      SUBDIR += ruby-rack-test
      SUBDIR += ruby-rake
      SUBDIR += ruby-rcov
@@ -774,6 +776,7 @@
      SUBDIR += ruby-sexp
      SUBDIR += ruby-sexp_processor
      SUBDIR += ruby-systemtimer
+     SUBDIR += ruby-term-ansicolor
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-tzinfo
      SUBDIR += ruby-uuidtools
