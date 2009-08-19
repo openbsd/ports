@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.272 2009/08/15 18:19:58 jolan Exp $
+# $OpenBSD: Makefile,v 1.273 2009/08/19 07:23:17 msf Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -248,6 +248,7 @@
      SUBDIR += ruby-rss
      SUBDIR += ruby-rubigen
      SUBDIR += ruby-templater
+     SUBDIR += ruby-treetop
      SUBDIR += rxp
      SUBDIR += sablotron
      SUBDIR += sgmlformat
