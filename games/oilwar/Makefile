@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2008/11/05 18:35:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/19 01:34:45 jolan Exp $
 
 COMMENT=	sdl shoot 'em up; stop evil army from getting your oil
-
 DISTNAME=	OilWar-1.2.1
-PKGNAME=	${DISTNAME:L}p2
+PKGNAME=	${DISTNAME:L}p3
 CATEGORIES=	games x11
+MASTER_SITES=	http://openbsddistfiles.org/~jolan/
 
-MAINTAINER=	George W. Bush <president@whitehouse.gov>
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
