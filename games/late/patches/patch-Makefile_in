@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/08/19 01:24:57 jolan Exp $
+--- Makefile.in.orig	Wed Aug 20 15:28:57 2003
++++ Makefile.in	Tue Aug 18 20:18:36 2009
+@@ -133,7 +133,7 @@ target_vendor = @target_vendor@
+ 
+ SUBDIRS = src graphics data
+ 
+-scoredir = $(localstatedir)/lib/games
++scoredir = $(localstatedir)/games
+ 
+ EXTRA_DIST = \
+ 	autogen.sh 
+@@ -438,7 +438,7 @@ install-data: install-data-recursive
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
+ 
+ installcheck: installcheck-recursive
+ install-strip:

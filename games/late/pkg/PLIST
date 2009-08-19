@@ -1,41 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:09 espie Exp $
-bin/late
+@comment $OpenBSD: PLIST,v 1.3 2009/08/19 01:24:57 jolan Exp $
+@mode 2555
+@group games
+@bin bin/late
+@mode
+@group
+share/examples/late/
+share/examples/late/late.scores
+@mode 664
+@group games
+@sample /var/games/late.scores
+@mode
+@group
 share/late/
 share/late/data/
 share/late/data/level.txt
 share/late/graphics/
-share/late/graphics/Blob10.bmp
-share/late/graphics/Blob11.bmp
-share/late/graphics/Blob12.bmp
-share/late/graphics/Blob13.bmp
-share/late/graphics/Blob14.bmp
-share/late/graphics/Blob15.bmp
-share/late/graphics/Blob16.bmp
-share/late/graphics/Blob17.bmp
-share/late/graphics/Blob18.bmp
-share/late/graphics/Blob19.bmp
-share/late/graphics/Fire10.bmp
-share/late/graphics/Fire11.bmp
-share/late/graphics/Fire12.bmp
-share/late/graphics/Fire13.bmp
-share/late/graphics/Fire14.bmp
-share/late/graphics/Fire15.bmp
-share/late/graphics/Fire16.bmp
-share/late/graphics/Fire17.bmp
-share/late/graphics/Fire18.bmp
-share/late/graphics/Fire19.bmp
-share/late/graphics/Fire20.bmp
-share/late/graphics/Fire21.bmp
-share/late/graphics/Fire22.bmp
-share/late/graphics/Fire23.bmp
-share/late/graphics/Fire24.bmp
-share/late/graphics/back.jpg
 share/late/graphics/ball.bmp
-share/late/graphics/bluegrey.jpg
+share/late/graphics/battery.bmp
+share/late/graphics/blobstrip.bmp
+share/late/graphics/bonus.bmp
+share/late/graphics/bonus.jpg
+share/late/graphics/brpu.bmp
 share/late/graphics/chronoball.bmp
+share/late/graphics/cityscape1.jpg
+share/late/graphics/cityscape2.jpg
+share/late/graphics/clawball1.jpg
+share/late/graphics/clawball2.jpg
+share/late/graphics/firestrip.bmp
 share/late/graphics/font.bmp
 share/late/graphics/font2.bmp
-share/late/graphics/front.jpg
+share/late/graphics/grinder1.jpg
+share/late/graphics/grinder2.jpg
 share/late/graphics/kball.bmp
 share/late/graphics/kballa.bmp
 share/late/graphics/knifeh.bmp
@@ -44,21 +39,30 @@ share/late/graphics/knifehrt.bmp
 share/late/graphics/knifev.bmp
 share/late/graphics/knifevbt.bmp
 share/late/graphics/knifevtt.bmp
+share/late/graphics/latebg1.jpg
+share/late/graphics/latebg2.jpg
 share/late/graphics/lava.jpg
-share/late/graphics/lightning1.bmp
-share/late/graphics/lightning2.bmp
-share/late/graphics/lightning3.bmp
-share/late/graphics/lightning4.bmp
-share/late/graphics/lightning5.bmp
-share/late/graphics/lightning6.bmp
-share/late/graphics/lightning7.bmp
-share/late/graphics/lightning8.bmp
-share/late/graphics/lightning9.bmp
+share/late/graphics/lazerh.bmp
+share/late/graphics/lazerhlt.bmp
+share/late/graphics/lazerhrt.bmp
+share/late/graphics/lazerv.bmp
+share/late/graphics/lazervbt.bmp
+share/late/graphics/lazervtt.bmp
+share/late/graphics/life.bmp
+share/late/graphics/lightningstrip.bmp
+share/late/graphics/magnet.bmp
+share/late/graphics/magnetstill.bmp
 share/late/graphics/menu.jpg
 share/late/graphics/playerh.bmp
 share/late/graphics/playerv.bmp
+share/late/graphics/refinery1.jpg
+share/late/graphics/refinery2.jpg
 share/late/graphics/selection.bmp
-share/late/graphics/sidebar.jpg
+share/late/graphics/sidebar.bmp
+share/late/graphics/snake1.jpg
+share/late/graphics/snake2.jpg
+share/late/graphics/spaceship1.jpg
+share/late/graphics/spaceship2.jpg
 share/late/graphics/splitball1.bmp
 share/late/graphics/splitball2.bmp
 share/late/graphics/splitball3.bmp

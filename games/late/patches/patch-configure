@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2009/08/19 01:24:57 jolan Exp $
+--- configure.orig	Wed Aug 20 15:28:58 2003
++++ configure	Tue Aug 18 20:01:06 2009
+@@ -5200,6 +5200,8 @@ _ACEOF
+ 
+ fi
+ 
++LIBS="-lcompat $LIBS"
++
+ 
+ # Finally create all the generated files
+                                         ac_config_files="$ac_config_files Makefile src/Makefile graphics/Makefile data/Makefile"
