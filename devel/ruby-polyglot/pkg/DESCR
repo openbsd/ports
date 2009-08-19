@@ -1,0 +1,5 @@
+Polyglot provides a registry of file types that can be loaded by calling
+its improved version of require. 
+
+This supports the creation of DSLs having a syntax that is most
+appropriate to their purpose, instead of abusing the Ruby syntax.
