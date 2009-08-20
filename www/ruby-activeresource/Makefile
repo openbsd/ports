@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/04 10:18:42 bernd Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/20 22:57:03 bernd Exp $
 
 COMMENT=	wraps web resources in model classes
 
-DISTNAME=	activeresource-2.3.2
+DISTNAME=	activeresource-2.3.3
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	www
 
@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE:=activeresource/}
 MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:ruby-activesupport->=2.3.2:devel/ruby-activesupport
+RUN_DEPENDS=	:ruby-activesupport->=2.3.3:devel/ruby-activesupport
 
 CONFIGURE_STYLE=ruby gem
 

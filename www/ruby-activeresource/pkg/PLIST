@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/04/04 10:18:42 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/08/20 22:57:03 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -176,6 +176,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/BadRequest/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/BadRequest/cdesc-BadRequest.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/%3d%3d-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/as_json-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/cdesc-Base.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/clone-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/collection_path-c.yaml
@@ -218,7 +219,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/site%3d-c.ya
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/site-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/timeout%3d-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/timeout-c.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/to_json-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/to_param-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/to_xml-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActiveResource/Base/update-i.yaml
@@ -367,6 +367,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/base/load_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/base_errors_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/base_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/connection_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/debug.log
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/beast.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/customer.rb
