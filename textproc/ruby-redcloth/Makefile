@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2009/05/19 21:03:44 pirofti Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/20 22:29:38 bernd Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	module for using Textile in Ruby
 
-DISTNAME =	RedCloth-4.1.9
+DISTNAME =	RedCloth-4.2.2
 PKGNAME =	ruby-${DISTNAME:L}
 CATEGORIES =	textproc
 
-HOMEPAGE =	http://www.whytheluckystiff.net/ruby/redcloth/
+HOMEPAGE =	http://redcloth.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM = Yes
@@ -26,9 +26,6 @@ LIB_DEPENDS =	${MODRUBY_LIB_DEPENDS}
 
 CONFIGURE_STYLE = ruby gem
 
-REGRESS_DEPENDS =	::devel/ruby-echoe
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
+MODRUBY_REGRESS =	rspec
 
 .include <bsd.port.mk>
