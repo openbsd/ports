@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cheese-webcam_c,v 1.4 2009/06/16 14:41:03 ajacoutot Exp $
+$OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
 --- src/cheese-webcam.c.orig	Mon Jan 12 15:55:26 2009
-+++ src/cheese-webcam.c	Tue Jun 16 16:31:01 2009
++++ src/cheese-webcam.c	Thu Aug 20 16:12:04 2009
 @@ -32,13 +32,12 @@
  #include <gst/gst.h>
  #include <gdk-pixbuf/gdk-pixbuf.h>
@@ -169,7 +169,7 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.4 2009/06/16 14:41:03 ajacoutot Exp $
      }
      else
      {
-@@ -388,52 +287,63 @@ cheese_webcam_get_video_devices_from_hal (CheeseWebcam
+@@ -388,46 +287,56 @@ cheese_webcam_get_video_devices_from_hal (CheeseWebcam
        g_print ("Detected v4l2 device: %s\n", v2cap.card);
        g_print ("Driver: %s, version: %d\n", v2cap.driver, v2cap.version);
        /* g_print ("Bus info: %s\n", v2cap.bus_info); */ /* Doesn't seem anything useful */
@@ -241,10 +241,23 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.4 2009/06/16 14:41:03 ajacoutot Exp $
      priv->webcam_devices[0].num_video_formats = 0;
      priv->webcam_devices[0].video_formats     =
        g_array_new (FALSE, FALSE, sizeof (CheeseVideoFormat));
-     priv->webcam_devices[0].hal_udi = g_strdup ("cheese_fake_videodevice");
+@@ -435,6 +344,7 @@ fallback:
    }
  }
-+
  
++
  static void
  cheese_webcam_get_supported_framerates (CheeseVideoFormat *video_format, GstStructure *structure)
+ {
+@@ -671,9 +581,9 @@ cheese_webcam_get_webcam_device_data (CheeseWebcam    
+     if ((pipeline != NULL) && (err == NULL))
+     {
+       /* Start the pipeline and wait for max. 10 seconds for it to start up */
+-      gst_element_set_state (pipeline, GST_STATE_PLAYING);
++      /* XXX Disable this to make it startup instantly */
++      /* gst_element_set_state (pipeline, GST_STATE_PLAYING); */
+       ret = gst_element_get_state (pipeline, NULL, NULL, 10 * GST_SECOND);
+-
+       /* Check if any error messages were posted on the bus */
+       bus = gst_element_get_bus (pipeline);
+       msg = gst_bus_poll (bus, GST_MESSAGE_ERROR, 0);
