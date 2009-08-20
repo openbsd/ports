@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/01 15:41:57 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/20 23:14:15 bernd Exp $
 
 COMMENT =	HTML entity encoding and decoding for Ruby
 
-DISTNAME =	htmlentities-4.0.0
+DISTNAME =	htmlentities-4.1.0
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	textproc www
 
