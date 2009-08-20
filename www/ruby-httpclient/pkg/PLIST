@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/17 15:49:08 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/08/20 23:12:26 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -675,6 +675,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/httpclient/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/httpclient.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/httpclient/auth.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/httpclient/cacert.p7s
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/httpclient/cacert_sha1.p7s
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/httpclient/connection.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/httpclient/cookie.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/httpclient/http.rb
