@@ -1,0 +1,16 @@
+$OpenBSD: patch-driver_mlstring_c,v 1.1 2009/08/20 07:03:15 ajacoutot Exp $
+
+Fix local screen lock bypass vulnerability.
+Debian bug #539699.
+
+--- driver/mlstring.c.orig	Tue Apr 17 06:51:48 2007
++++ driver/mlstring.c	Thu Aug 20 08:59:21 2009
+@@ -153,6 +153,8 @@ mlstring_wrap(mlstring *mstring, XFontStruct *font, Di
+ 	  
+ 	  if (wrap_at == -1) /* No space found, hard wrap */
+ 	    wrap_at = line_length;
++	  else
++            wrap_at++; /* Leave space at the end of the line */
+ 
+ 	  newml = calloc(1, sizeof(*newml));
+ 	  if (!newml) /* OOM, don't bother trying to wrap */
