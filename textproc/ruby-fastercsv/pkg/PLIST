@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/24 14:41:49 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/08/20 22:59:56 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -211,6 +211,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/faster_csv.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/fastercsv.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/setup.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/line_endings.gz
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_csv_parsing.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_csv_writing.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/tc_data_converters.rb
