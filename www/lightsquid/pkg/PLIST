@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/08 22:03:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/08/20 21:51:58 rui Exp $
 htdocs/lightsquid/
 htdocs/lightsquid/.htaccess
 htdocs/lightsquid/bigfiles.cgi
@@ -22,7 +22,6 @@ htdocs/lightsquid/doc/skipuser.cfg
 htdocs/lightsquid/doc/templates.txt
 htdocs/lightsquid/doc/thanks.txt
 htdocs/lightsquid/doc/version.txt
-htdocs/lightsquid/fixreport.pl
 htdocs/lightsquid/get.cgi
 htdocs/lightsquid/graph.cgi
 htdocs/lightsquid/group_detail.cgi
@@ -58,8 +57,13 @@ htdocs/lightsquid/month_detail.cgi
 @group www
 @mode 775
 htdocs/lightsquid/report/
-@group
 @mode
+@group
+htdocs/lightsquid/tools/
+htdocs/lightsquid/tools/SiteAggregator/
+htdocs/lightsquid/tools/SiteAggregator/ReportExplorer.pl
+htdocs/lightsquid/tools/SiteAggregator/SiteAgregator.pl
+htdocs/lightsquid/tools/fixreport.pl
 htdocs/lightsquid/topsites.cgi
 htdocs/lightsquid/tpl/
 htdocs/lightsquid/tpl/base/
