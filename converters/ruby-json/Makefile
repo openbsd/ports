@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 15:23:14 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/20 21:55:41 bernd Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		JSON implementation for Ruby
 
-DISTNAME=		json-1.1.6
+DISTNAME=		json-1.1.7
 PKGNAME=		ruby-${DISTNAME}
 CATEGORIES=		converters
 
@@ -25,9 +25,6 @@ CONFIGURE_STYLE=	ruby gem
 WANTLIB=		c m
 LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS}
 
-REGRESS_DEPENDS=	::devel/ruby-rake
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
+MODRUBY_REGRESS=	rake
 
 .include <bsd.port.mk>
