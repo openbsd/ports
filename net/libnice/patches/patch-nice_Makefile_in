@@ -1,0 +1,21 @@
+$OpenBSD: patch-nice_Makefile_in,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
+--- nice/Makefile.in.orig	Wed Aug 19 11:42:48 2009
++++ nice/Makefile.in	Wed Aug 19 11:55:06 2009
+@@ -216,7 +216,6 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ERROR_CFLAGS = \
+ 	$(LIBNICE_CFLAGS) \
+-	-Wextra \
+ 	-Wundef \
+ 	-Wnested-externs \
+ 	-Wwrite-strings \
+@@ -226,8 +225,7 @@ ERROR_CFLAGS = \
+ 	-Wmissing-prototypes \
+ 	-Wstrict-prototypes \
+ 	-Wredundant-decls \
+-	-Wno-unused-parameter \
+-	-Wno-missing-field-initializers
++	-Wno-unused-parameter
+ 
+ # -Wold-style-definition -Winline -Wunreachable-code
+ CLEANFILES = *.gcno *.gcda libnice.symbols

@@ -1,0 +1,11 @@
+$OpenBSD: patch-stun_tests_test-format_c,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
+--- stun/tests/test-format.c.orig	Thu Aug 20 17:15:52 2009
++++ stun/tests/test-format.c	Thu Aug 20 17:15:55 2009
+@@ -52,6 +52,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <arpa/inet.h>
++#include <netinet/in.h>
+ #endif
+ 
+ 

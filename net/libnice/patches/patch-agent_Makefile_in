@@ -1,0 +1,32 @@
+$OpenBSD: patch-agent_Makefile_in,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
+--- agent/Makefile.in.orig	Wed Aug 19 11:39:52 2009
++++ agent/Makefile.in	Wed Aug 19 12:19:29 2009
+@@ -214,7 +214,6 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ERROR_CFLAGS = \
+ 	$(LIBNICE_CFLAGS) \
+-	-Wextra \
+ 	-Wundef \
+ 	-Wnested-externs \
+ 	-Wwrite-strings \
+@@ -224,8 +223,7 @@ ERROR_CFLAGS = \
+ 	-Wmissing-prototypes \
+ 	-Wstrict-prototypes \
+ 	-Wredundant-decls \
+-	-Wno-unused-parameter \
+-	-Wno-missing-field-initializers
++	-Wno-unused-parameter
+ 
+ # -Wold-style-definition -Winline -Wunreachable-code
+ CLEANFILES = *.gcno *.gcda $(BUILT_SOURCES)
+@@ -580,8 +578,8 @@ agent-signals-marshal.h: agent-signals-marshal.list
+ 
+ agent-signals-marshal.c: agent-signals-marshal.list Makefile.am
+ 	glib-genmarshal --body --prefix=agent_marshal $< > $@
+-	sed -i "1i#include \"agent-signals-marshal.h\"" $@
+-	sed -i -e 's/^}$$/(void)return_value;(void)invocation_hint;}/' $@
++	gsed -i "1i#include \"agent-signals-marshal.h\"" $@
++	gsed -i -e 's/^}$$/(void)return_value;(void)invocation_hint;}/' $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

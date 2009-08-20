@@ -1,0 +1,11 @@
+$OpenBSD: patch-stun_stunmessage_c,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
+--- stun/stunmessage.c.orig	Wed Aug 19 11:44:02 2009
++++ stun/stunmessage.c	Wed Aug 19 11:44:20 2009
+@@ -46,6 +46,7 @@
+ #else
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #endif
+ 
+ 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-stun_tests_test-parse_c,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
+--- stun/tests/test-parse.c.orig	Thu Aug 20 17:15:41 2009
++++ stun/tests/test-parse.c	Thu Aug 20 17:15:45 2009
+@@ -49,6 +49,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <arpa/inet.h>
++#include <netinet/in.h>
+ #endif
+ 
+ 

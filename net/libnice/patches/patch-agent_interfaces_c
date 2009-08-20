@@ -1,0 +1,11 @@
+$OpenBSD: patch-agent_interfaces_c,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
+--- agent/interfaces.c.orig	Wed Aug 19 12:20:47 2009
++++ agent/interfaces.c	Wed Aug 19 12:21:26 2009
+@@ -47,6 +47,7 @@
+ #include <net/if.h>
+ #include <net/if_arp.h>
+ #include <arpa/inet.h>
++#include <netinet/in.h>
+ 
+ #ifdef HAVE_GETIFADDRS
+ 

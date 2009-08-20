@@ -1,0 +1,21 @@
+$OpenBSD: patch-stun_tests_Makefile_in,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
+--- stun/tests/Makefile.in.orig	Wed Aug 19 11:41:43 2009
++++ stun/tests/Makefile.in	Wed Aug 19 11:55:06 2009
+@@ -217,7 +217,6 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ERROR_CFLAGS = \
+ 	$(LIBNICE_CFLAGS) \
+-	-Wextra \
+ 	-Wundef \
+ 	-Wnested-externs \
+ 	-Wwrite-strings \
+@@ -227,8 +226,7 @@ ERROR_CFLAGS = \
+ 	-Wmissing-prototypes \
+ 	-Wstrict-prototypes \
+ 	-Wredundant-decls \
+-	-Wno-unused-parameter \
+-	-Wno-missing-field-initializers
++	-Wno-unused-parameter
+ 
+ # -Wold-style-definition -Winline -Wunreachable-code
+ CLEANFILES = *.gcno *.gcda

@@ -1,0 +1,21 @@
+$OpenBSD: patch-random_Makefile_in,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
+--- random/Makefile.in.orig	Wed Aug 19 12:40:55 2009
++++ random/Makefile.in	Wed Aug 19 12:41:04 2009
+@@ -204,7 +204,6 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ERROR_CFLAGS = \
+ 	$(LIBNICE_CFLAGS) \
+-	-Wextra \
+ 	-Wundef \
+ 	-Wnested-externs \
+ 	-Wwrite-strings \
+@@ -214,8 +213,7 @@ ERROR_CFLAGS = \
+ 	-Wmissing-prototypes \
+ 	-Wstrict-prototypes \
+ 	-Wredundant-decls \
+-	-Wno-unused-parameter \
+-	-Wno-missing-field-initializers
++	-Wno-unused-parameter
+ 
+ # -Wold-style-definition -Winline -Wunreachable-code
+ CLEANFILES = *.gcno *.gcda

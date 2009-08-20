@@ -1,0 +1,21 @@
+$OpenBSD: patch-common_mk,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
+--- common.mk.orig	Wed Aug 19 11:40:35 2009
++++ common.mk	Wed Aug 19 11:40:43 2009
+@@ -1,7 +1,6 @@
+ 
+ ERROR_CFLAGS = \
+ 	$(LIBNICE_CFLAGS) \
+-	-Wextra \
+ 	-Wundef \
+ 	-Wnested-externs \
+ 	-Wwrite-strings \
+@@ -11,8 +10,7 @@ ERROR_CFLAGS = \
+ 	-Wmissing-prototypes \
+ 	-Wstrict-prototypes \
+ 	-Wredundant-decls \
+-	-Wno-unused-parameter \
+-	-Wno-missing-field-initializers
++	-Wno-unused-parameter
+ # -Wold-style-definition -Winline -Wunreachable-code
+ 
+ CLEANFILES = *.gcno *.gcda

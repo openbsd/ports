@@ -1,0 +1,21 @@
+$OpenBSD: patch-socket_Makefile_in,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
+--- socket/Makefile.in.orig	Wed Aug 19 11:43:10 2009
++++ socket/Makefile.in	Wed Aug 19 11:55:06 2009
+@@ -210,7 +210,6 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ERROR_CFLAGS = \
+ 	$(LIBNICE_CFLAGS) \
+-	-Wextra \
+ 	-Wundef \
+ 	-Wnested-externs \
+ 	-Wwrite-strings \
+@@ -220,8 +219,7 @@ ERROR_CFLAGS = \
+ 	-Wmissing-prototypes \
+ 	-Wstrict-prototypes \
+ 	-Wredundant-decls \
+-	-Wno-unused-parameter \
+-	-Wno-missing-field-initializers
++	-Wno-unused-parameter
+ 
+ # -Wold-style-definition -Winline -Wunreachable-code
+ CLEANFILES = *.gcno *.gcda

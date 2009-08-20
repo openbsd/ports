@@ -1,0 +1,26 @@
+$OpenBSD: patch-stun_tests_test-bind_c,v 1.1.1.1 2009/08/20 17:09:00 jasper Exp $
+--- stun/tests/test-bind.c.orig	Thu Aug 20 17:17:41 2009
++++ stun/tests/test-bind.c	Thu Aug 20 17:19:16 2009
+@@ -49,10 +49,6 @@
+ #ifdef _WIN32
+ #include <winsock2.h>
+ #include <ws2tcpip.h>
+-
+-#define MSG_DONTWAIT 0
+-#define MSG_NOSIGNAL 0
+-
+ #define alarm(...)
+ #define close closesocket
+ #else
+@@ -60,6 +56,11 @@
+ #include <sys/socket.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
++#endif
++
++#if defined(_WIN32) || defined(__OpenBSD__)
++#define MSG_DONTWAIT 0
++#define MSG_NOSIGNAL 0
+ #endif
+ 
+ #undef NDEBUG /* ensure assertions are built-in */
