@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/20 07:52:25 landry Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 
 VERSION =	0.90.3
 DISTNAME =	murrine-${VERSION}
-PKGNAME =	gtk2-murrine-engine-${VERSION}p2
+PKGNAME =	gtk2-murrine-engine-${VERSION}p3
 CATEGORIES =	x11
 
 HOMEPAGE =	http://cimitan.com/murrine/
@@ -54,8 +54,11 @@ USE_LIBTOOL =	Yes
 USE_X11 =	Yes
 USE_GMAKE =	Yes
 
+LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE =gnu 
-CONFIGURE_ARGS = --enable-animation \
+CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
+		--disable-static \
+		--enable-animation \
 		--disable-rgba
 
 post-install:
