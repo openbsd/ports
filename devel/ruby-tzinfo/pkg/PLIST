@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/24 15:29:45 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/08/20 22:13:00 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -621,6 +621,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Kabul.
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Kamchatka.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Karachi.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Kashgar.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Kathmandu.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Katmandu.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Kolkata.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/tzinfo/definitions/Asia/Krasnoyarsk.rb
