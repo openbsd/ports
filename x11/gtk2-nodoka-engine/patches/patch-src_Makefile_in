@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/08/20 19:25:40 landry Exp $
+--- src/Makefile.in.orig	Sat Nov  1 11:29:33 2008
++++ src/Makefile.in	Mon Aug 17 23:38:25 2009
+@@ -3,14 +3,12 @@ prefix = @prefix@
+ NODOKA_DIR=$(DESTDIR)$(prefix)/share/themes/Nodoka
+ 
+ install: 
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka/gtk-2.0/gtkrc				$(NODOKA_DIR)/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Aqua/gtk-2.0/gtkrc			$(NODOKA_DIR)-Aqua/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Gilouche/gtk-2.0/gtkrc			$(NODOKA_DIR)-Gilouche/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Looks/gtk-2.0/gtkrc			$(NODOKA_DIR)-Looks/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Midnight/gtk-2.0/gtkrc			$(NODOKA_DIR)-Midnight/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Rounded/gtk-2.0/gtkrc			$(NODOKA_DIR)-Rounded/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Silver/gtk-2.0/gtkrc			$(NODOKA_DIR)-Silver/gtk-2.0/gtkrc
+-	/usr/bin/install -Dp -m 0644 GTKThemes/Nodoka-Squared/gtk-2.0/gtkrc			$(NODOKA_DIR)-Squared/gtk-2.0/gtkrc
++	for d in Aqua Gilouche Looks Midnight Rounded Silver Squared ; do \
++		/usr/bin/install -d -m 0755 ${NODOKA_DIR}-$$d/gtk-2.0 ; \
++		/usr/bin/install -m 0644 GTKThemes/Nodoka-$$d/gtk-2.0/gtkrc ${NODOKA_DIR}-$$d/gtk-2.0/gtkrc ; \
++	done
++	/usr/bin/install -d -m 0755 ${NODOKA_DIR}/gtk-2.0
++	/usr/bin/install -m 0644 GTKThemes/Nodoka/gtk-2.0/gtkrc	${NODOKA_DIR}/gtk-2.0/gtkrc
+ 
+ uninstall: 
+ 	rm -rf $(NODOKA_DIR)
