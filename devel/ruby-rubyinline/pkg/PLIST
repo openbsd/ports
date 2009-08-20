@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/30 14:00:07 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/08/20 22:38:48 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -36,6 +36,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/C.src/M000032.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/C.src/M000033.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/C.src/M000034.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/C.src/M000035.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/C.src/M000036.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/CompilationError.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Inline.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
@@ -60,6 +61,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/C/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/C/accessor-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/C/add_compile_flags-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/C/add_link_flags-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/C/add_static-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/C/add_to_init-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/C/add_type_converter-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/C/alias_type_converter-i.yaml

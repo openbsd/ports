@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/30 14:00:07 pirofti Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/20 22:38:48 bernd Exp $
 
 COMMENT=		embed C/++ external module code in your Ruby script
 
-DISTNAME=		RubyInline-3.8.1
+DISTNAME=		RubyInline-3.8.3
 PKGNAME=		ruby-${DISTNAME:L}
 CATEGORIES=		devel
 
