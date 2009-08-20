@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/19 21:05:00 pirofti Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/20 22:18:26 bernd Exp $
 
 COMMENT =	sorts an array in column order
 
-VERSION =	0.3.0
+VERSION =	0.3.1
 DISTNAME =	columnize-${VERSION}
-PKGNAME =	ruby-${DISTNAME}p0
+PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	devel
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
@@ -22,8 +22,6 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
 
 PKG_ARCH=	*
-
-REGRESS_DEPENDS = ::devel/ruby-rake
 
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} test/test-columnize.rb
