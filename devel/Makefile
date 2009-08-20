@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.720 2009/08/19 07:19:02 msf Exp $
+# $OpenBSD: Makefile,v 1.721 2009/08/20 00:47:46 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -142,7 +142,6 @@
      SUBDIR += libconfuse
      SUBDIR += libdaemon
      SUBDIR += libdockapp
-     SUBDIR += libdvdplay
      SUBDIR += libdvdread
      SUBDIR += libelf
      SUBDIR += libexecinfo
