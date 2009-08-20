@@ -1,0 +1,21 @@
+$OpenBSD: patch-plugins_caldav_caldav-source_c,v 1.1 2009/08/20 07:52:01 ajacoutot Exp $
+
+Allow '@' in username in CalDav.
+See http://bugzilla.gnome.org/show_bug.cgi?id=503662
+
+--- plugins/caldav/caldav-source.c.orig	Mon Sep 22 12:56:08 2008
++++ plugins/caldav/caldav-source.c	Thu Aug 20 09:43:10 2009
+@@ -175,11 +175,12 @@ user_changed (GtkEntry *editable, ESource *source)
+ 	euri = e_uri_new (uri);
+ 	g_free (euri->user);
+ 
+-	if (user != NULL) {
++	if (user != NULL && *user) {
+ 		euri->user = g_strdup (user);
+ 		e_source_set_property (source, "auth", "1");
+ 	} else {
+ 		e_source_set_property (source, "auth", NULL);
++		euri->user = NULL;
+ 	}
+ 
+ 	e_source_set_property (source, "username", euri->user);

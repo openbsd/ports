@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2009/08/10 06:32:42 kili Exp $
+# $OpenBSD: Makefile,v 1.84 2009/08/20 07:52:01 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -8,7 +8,7 @@ COMMENT-plugins=	additionnal plugins for evolution
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.24.5
 
-PKGNAME-main=		${DISTNAME}p17
+PKGNAME-main=		${DISTNAME}p18
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p11
 
 CATEGORIES=		mail

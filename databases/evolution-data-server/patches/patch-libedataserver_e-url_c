@@ -1,0 +1,24 @@
+$OpenBSD: patch-libedataserver_e-url_c,v 1.1 2009/08/20 07:51:46 ajacoutot Exp $
+
+Allow '@' in username in CalDav.
+See http://bugzilla.gnome.org/show_bug.cgi?id=503662
+
+--- libedataserver/e-url.c.orig	Mon Sep 22 12:54:02 2008
++++ libedataserver/e-url.c	Thu Aug 20 09:46:31 2009
+@@ -180,6 +180,16 @@ e_uri_new (const char *uri_string)
+ 		slash = uri_string + strcspn (uri_string, "/#");
+ 		at = strchr (uri_string, '@');
+ 		if (at && at < slash) {
++			const char *at2;
++			/* this is for cases where username contains '@' at it, like:
++			   http://user@domain.com@server.addr.com/path
++			   We skip all at-s before the slash here. */
++
++			while (at2 = strchr (at + 1, '@'), at2 && at2 < slash) {
++				at = at2;
++			}
++		}
++		if (at && at < slash) {
+ 			colon = strchr (uri_string, ':');
+ 			if (colon && colon < at) {
+ 				uri->passwd = g_strndup (colon + 1, at - colon - 1);
