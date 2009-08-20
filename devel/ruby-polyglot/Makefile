@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/19 07:03:35 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/20 22:06:14 bernd Exp $
 
 COMMENT =	provides a registry of file types
 
-DISTNAME =	polyglot-0.2.6
+DISTNAME =	polyglot-0.2.8
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	devel
 
@@ -21,5 +21,8 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 PKG_ARCH =		*
+
+do-regress:
+	@cd ${WRKBUILD} && ${RUBY} test/test_polyglot.rb
 
 .include <bsd.port.mk>

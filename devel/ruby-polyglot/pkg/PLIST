@@ -1,11 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/19 07:03:35 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/08/20 22:06:14 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Kernel.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Kernel.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Kernel.src/M000001.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Kernel.src/M000003.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Polyglot/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Polyglot/NestedLoadError.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Polyglot/NestedLoadError.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Polyglot/NestedLoadError.src/M000001.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Polyglot/NestedLoadError.src/M000002.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/History_txt.html
@@ -26,6 +31,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Kernel/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Kernel/cdesc-Kernel.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Kernel/require-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Polyglot/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Polyglot/NestedLoadError/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Polyglot/NestedLoadError/cdesc-NestedLoadError.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Polyglot/NestedLoadError/new-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Polyglot/NestedLoadError/reraise-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Polyglot/VERSION/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Polyglot/VERSION/cdesc-VERSION.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Polyglot/cdesc-Polyglot.yaml
