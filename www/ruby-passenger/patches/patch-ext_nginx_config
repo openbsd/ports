@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_nginx_config,v 1.1.1.1 2009/08/20 20:36:12 bernd Exp $
+--- ext/nginx/config.orig	Sat May 23 11:02:29 2009
++++ ext/nginx/config	Tue Jun 23 23:06:13 2009
+@@ -25,7 +25,7 @@ NGX_ADDON_DEPS="$NGX_ADDON_DEPS \
+ CORE_LIBS="$CORE_LIBS  \
+     ${ngx_addon_dir}/libpassenger_common.a \
+     ${ngx_addon_dir}/libboost_oxt.a \
+-    -lstdc++ -lpthread"
++    -lstdc++ -pthread"
+ if test x`uname` = xOpenBSD; then
+     CORE_LIBS="$CORE_LIBS -lm"
+ fi

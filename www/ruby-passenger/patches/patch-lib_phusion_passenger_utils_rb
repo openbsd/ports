@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_phusion_passenger_utils_rb,v 1.1.1.1 2009/08/20 20:36:12 bernd Exp $
+--- lib/phusion_passenger/utils.rb.orig	Wed Jun 24 11:31:25 2009
++++ lib/phusion_passenger/utils.rb	Wed Jun 24 11:32:01 2009
+@@ -560,7 +560,7 @@ end
+ # Ruby's implementation of UNIXSocket#recv_io and UNIXSocket#send_io
+ # are broken on 64-bit FreeBSD 7 and x86_64/ppc64 OS X. So we override them
+ # with our own implementation.
+-if RUBY_PLATFORM =~ /freebsd/ || (RUBY_PLATFORM =~ /darwin/ && RUBY_PLATFORM !~ /universal/)
++if RUBY_PLATFORM =~ /freebsd/ || RUBY_PLATFORM =~ /openbsd/ || (RUBY_PLATFORM =~ /darwin/ && RUBY_PLATFORM !~ /universal/)
+ 	require 'socket'
+ 	UNIXSocket.class_eval do
+ 		def recv_io

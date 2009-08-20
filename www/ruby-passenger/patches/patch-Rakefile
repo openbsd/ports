@@ -1,0 +1,59 @@
+$OpenBSD: patch-Rakefile,v 1.1.1.1 2009/08/20 20:36:12 bernd Exp $
+--- Rakefile.orig	Wed Jun 10 10:12:29 2009
++++ Rakefile	Thu Aug 20 21:13:25 2009
+@@ -36,13 +36,13 @@ OPTIMIZE = ["yes", "on", "true"].include?(ENV['OPTIMIZ
+ 
+ include PlatformInfo
+ 
+-CC  = "gcc"
+-CXX = "g++"
++CC  = ENV['CC']
++CXX = ENV['CXX']
+ LIBEXT = PlatformInfo.library_extension
+ if OPTIMIZE
+-	OPTIMIZATION_FLAGS = "#{PlatformInfo.debugging_cflags} -O2 -DBOOST_DISABLE_ASSERTS"
++	OPTIMIZATION_FLAGS = "#{ENV['CFLAGS']} -DBOOST_DISABLE_ASSERTS"
+ else
+-	OPTIMIZATION_FLAGS = "#{PlatformInfo.debugging_cflags} -DPASSENGER_DEBUG -DBOOST_DISABLE_ASSERTS"
++	OPTIMIZATION_FLAGS = "#{ENV['CFLAGS']} #{PlatformInfo.debugging_cflags} -DPASSENGER_DEBUG -DBOOST_DISABLE_ASSERTS"
+ end
+ 
+ # Extra compiler flags that should always be passed to the C/C++ compiler.
+@@ -739,7 +739,7 @@ task :clobber => :'package:clean'
+ ##### Misc
+ 
+ desc "Create a fakeroot, useful for building native packages"
+-task :fakeroot => [:apache2, :native_support, :doc] do
++task :fakeroot => [:native_support, :doc] do
+ 	require 'rbconfig'
+ 	include Config
+ 	fakeroot = "pkg/fakeroot"
+@@ -747,11 +747,11 @@ task :fakeroot => [:apache2, :native_support, :doc] do
+ 	# We don't use CONFIG['archdir'] and the like because we want
+ 	# the files to be installed to /usr, and the Ruby interpreter
+ 	# on the packaging machine might be in /usr/local.
+-	libdir = "#{fakeroot}/usr/lib/ruby/#{CONFIG['ruby_version']}"
++	libdir = "#{fakeroot}/usr/local/lib/ruby/#{CONFIG['ruby_version']}"
+ 	extdir = "#{libdir}/#{CONFIG['arch']}"
+-	bindir = "#{fakeroot}/usr/bin"
+-	docdir = "#{fakeroot}/usr/share/doc/phusion_passenger"
+-	libexecdir = "#{fakeroot}/usr/lib/phusion_passenger"
++	bindir = "#{fakeroot}/usr/local/bin"
++	docdir = "#{fakeroot}/usr/local/share/doc/phusion_passenger"
++	libexecdir = "#{fakeroot}/usr/local/lib/phusion_passenger"
+ 	
+ 	sh "rm -rf #{fakeroot}"
+ 	sh "mkdir -p #{fakeroot}"
+@@ -766,9 +766,9 @@ task :fakeroot => [:apache2, :native_support, :doc] do
+ 	sh "cp bin/* #{bindir}/"
+ 	
+ 	sh "mkdir -p #{libexecdir}"
+-	sh "cp ext/apache2/mod_passenger.so #{libexecdir}/"
+-	sh "mv #{fakeroot}/usr/bin/passenger-spawn-server #{libexecdir}/"
+-	sh "cp ext/apache2/ApplicationPoolServerExecutable #{libexecdir}/"
++#	sh "cp ext/apache2/mod_passenger.so #{libexecdir}/"
++	sh "mv #{fakeroot}/usr/local/bin/passenger-spawn-server #{libexecdir}/"
++#	sh "cp ext/apache2/ApplicationPoolServerExecutable #{libexecdir}/"
+ 	
+ 	sh "mkdir -p #{docdir}"
+ 	sh "cp -R doc/* #{docdir}/"

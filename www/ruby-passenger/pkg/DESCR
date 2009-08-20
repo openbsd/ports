@@ -1,0 +1,5 @@
+Phusion Passenger is an Nginx module, which makes deploying Ruby
+and Ruby on Rails applications on Nginx a breeze. It follows the
+usual Ruby on Rails conventions, such as "Don't-Repeat-Yourself"
+and ease of setup, while at the same time providing enough
+flexibility.

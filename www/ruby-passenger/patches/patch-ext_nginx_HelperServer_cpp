@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_nginx_HelperServer_cpp,v 1.1.1.1 2009/08/20 20:36:12 bernd Exp $
+--- ext/nginx/HelperServer.cpp.orig	Wed Jun 10 10:12:29 2009
++++ ext/nginx/HelperServer.cpp	Tue Jun 23 23:05:05 2009
+@@ -709,7 +709,7 @@ class Server { (public)
+ 		}
+ 		
+ 		pool = ptr(new StandardApplicationPool(
+-			rootDir + "/bin/passenger-spawn-server",
++			rootDir + "/passenger-spawn-server",
+ 			"", ruby
+ 		));
+ 		pool->setMax(maxPoolSize);

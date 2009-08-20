@@ -1,0 +1,46 @@
+# $OpenBSD: nginx-passenger.conf.sample,v 1.1.1.1 2009/08/20 20:36:13 bernd Exp $
+#
+# Example nginx.conf for Phusion Passenger
+#
+# Please read the official Phusion Passenger user guide for nginx.
+# http://www.modrails.com/documentation/Users guide Nginx.html
+
+user _nginx;
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+error_log  /var/log/nginx/error.log;
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    keepalive_timeout  65;
+
+    # The passenger root. (passenger-config --root)
+    passenger_root /usr/local/lib/phusion_passenger;
+
+    # Some more
+    passenger_log_level 1;
+    passenger_ruby /usr/local/bin/ruby;
+
+    server {
+        listen       80;
+        server_name  localhost;
+
+        passenger_enabled on; # actually enable passenger for this vhost
+        rails_env production; # set the RAILS_ENV
+
+        # Path to the public folder of your rails app.
+        root   /var/nginx/app/public;
+
+        access_log  /var/log/nginx/access.log  main;
+    }
+}
