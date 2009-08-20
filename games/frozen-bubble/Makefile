@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/16 12:29:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/20 21:20:13 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -31,12 +31,11 @@ NO_REGRESS =		Yes
 MODULES =		perl \
 			devel/gettext
 
-BUILD_DEPENDS =		${RUN_DEPENDS-main} \
-			${RUN_DEPENDS-server}
-
-RUN_DEPENDS-main =	::devel/p5-SDL \
+BUILD_DEPENDS =		::devel/p5-SDL \
 			::devel/sdl-pango \
-			::devel/p5-Locale-gettext \
+			::devel/p5-Locale-gettext
+
+RUN_DEPENDS-main =	${BUILD_DEPENDS} \
 			::${BASE_PKGPATH},-server
 
 LIB_DEPENDS-main =	${MODGETTEXT_LIB_DEPENDS} \
