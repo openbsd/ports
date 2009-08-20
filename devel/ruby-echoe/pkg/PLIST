@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/31 18:20:26 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/08/20 22:23:49 bernd Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -7,6 +7,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Echoe.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Gem/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Gem.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Gem/Specification.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Net/HTTP.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Platform.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Rake.html
@@ -25,7 +28,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/echoe/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/echoe/client_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/echoe/extensions_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/echoe/net_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/echoe/platform_rb.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/echoe/rubygems_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/echoe_rb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/fr_class_index.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/fr_file_index.html
@@ -45,6 +50,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Gem/Specification/cdesc-Specific
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Gem/Specification/old_validate-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Gem/Specification/validate-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Gem/cdesc-Gem.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/HTTP/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/HTTP/cdesc-HTTP.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Net/cdesc-Net.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Platform/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Platform/cdesc-Platform.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Platform/gcc%3f-c.yaml
@@ -52,6 +61,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Platform/java%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Platform/make-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Platform/msvc%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Platform/rake-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Platform/suffix-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Platform/windows%3f-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Rake/SshDirPublisher/
@@ -85,5 +95,19 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/echoe/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/echoe.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/echoe/client.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/echoe/extensions.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/echoe/net.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/echoe/platform.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/echoe/rubygems.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/rake/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/rake/MIT-LICENSE
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/rake/lib/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/rake/lib/rake/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/rake/lib/rake/contrib/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/rake/lib/rake/contrib/compositepublisher.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/rake/lib/rake/contrib/ftptools.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/rake/lib/rake/contrib/publisher.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/rake/lib/rake/contrib/rubyforgepublisher.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/rake/lib/rake/contrib/sshpublisher.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/vendor/rake/lib/rake/contrib/sys.rb
 lib/ruby/gems/${MODRUBY_REV}/specifications/${DISTNAME}.gemspec
