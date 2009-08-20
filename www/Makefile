@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.420 2009/08/15 01:22:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.421 2009/08/20 20:38:09 bernd Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -354,6 +354,7 @@
      SUBDIR += ruby-httpclient
      SUBDIR += ruby-merb
      SUBDIR += ruby-mongrel
+     SUBDIR += ruby-passenger
      SUBDIR += ruby-rack
      SUBDIR += ruby-rails
      SUBDIR += ruby-rest-client
