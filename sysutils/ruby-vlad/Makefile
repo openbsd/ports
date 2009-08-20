@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/18 19:22:33 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/20 23:31:03 bernd Exp $
 
 COMMENT=		pragmatic application deployment automation
 
-DISTNAME=		vlad-1.3.2
+DISTNAME=		vlad-2.0.0
 PKGNAME=		ruby-${DISTNAME}
 CATEGORIES=		sysutils
 
@@ -27,7 +27,7 @@ RUN_DEPENDS=		::devel/ruby-rake \
 
 PKG_ARCH=		*
 
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
+MODRUBY_REGRESS=	rake
+REGRESS_DEPENDS=	::devel/ruby-minitest
 
 .include <bsd.port.mk>
