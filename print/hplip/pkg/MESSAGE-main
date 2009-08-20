@@ -1,7 +1,7 @@
 * HPLIP communication with the printer is done via CUPS so you need to
 give the _cups user r/w access to /dev/{usb,ugen}*
 
-* the printer must attach as a ugen(4) device which means you need to
+* USB printer must attach as a ugen(4) device which means you need to
 disable ulpt in your kernel - see config(8).
 
 * to make the hpaio backend available to SANE, simply add "hpaio" to

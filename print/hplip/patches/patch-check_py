@@ -1,7 +1,7 @@
-$OpenBSD: patch-check_py,v 1.2 2009/07/13 08:14:28 ajacoutot Exp $
---- check.py.orig	Thu Jun 25 21:05:57 2009
-+++ check.py	Thu Jul  2 18:22:41 2009
-@@ -337,7 +337,7 @@ try:
+$OpenBSD: patch-check_py,v 1.3 2009/08/20 08:07:48 ajacoutot Exp $
+--- check.py.orig	Tue Aug  4 23:37:39 2009
++++ check.py	Thu Aug 20 09:24:10 2009
+@@ -344,7 +344,7 @@ try:
              num_errors += 1
  
      if cups_ok:
@@ -10,7 +10,7 @@ $OpenBSD: patch-check_py,v 1.2 2009/07/13 08:14:28 ajacoutot Exp $
  
          try:
              f = file(cups_conf, 'r')
-@@ -368,11 +368,6 @@ try:
+@@ -375,11 +375,6 @@ try:
  
      log.info(log.bold("Checking for dbus/python-dbus..."))
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-check_py,v 1.2 2009/07/13 08:14:28 ajacoutot Exp $
      try:
          import dbus
          try:
-@@ -475,18 +470,18 @@ try:
+@@ -482,18 +477,18 @@ try:
              log.info("HPLIP %s currently installed in '%s'." % (v, home))
  
              log.info()
@@ -45,7 +45,7 @@ $OpenBSD: patch-check_py,v 1.2 2009/07/13 08:14:28 ajacoutot Exp $
              except (IOError, OSError), e:
                  log.error("Could not access file: %s" % e.strerror)
              else:
-@@ -600,7 +595,7 @@ try:
+@@ -607,7 +602,7 @@ try:
                  #log.info("Installed in HPLIP?: %s" % x)
                  log.info("Device URI: %s" % device_uri)
  
@@ -54,7 +54,7 @@ $OpenBSD: patch-check_py,v 1.2 2009/07/13 08:14:28 ajacoutot Exp $
  
                  if os.path.exists(ppd):
                      log.info("PPD: %s" % ppd)
-@@ -702,11 +697,11 @@ try:
+@@ -709,11 +704,11 @@ try:
  
          if scanning_enabled:
              tui.header("SANE CONFIGURATION")
@@ -69,7 +69,7 @@ $OpenBSD: patch-check_py,v 1.2 2009/07/13 08:14:28 ajacoutot Exp $
                  num_errors += 1
              else:
                  found = False
-@@ -718,7 +713,7 @@ try:
+@@ -725,7 +720,7 @@ try:
                      log.info("OK, found. SANE backend 'hpaio' is properly set up.")
                  else:
                      num_errors += 1

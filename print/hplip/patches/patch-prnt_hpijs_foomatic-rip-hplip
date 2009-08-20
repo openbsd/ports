@@ -1,7 +1,7 @@
-$OpenBSD: patch-prnt_hpijs_foomatic-rip-hplip,v 1.1 2009/07/13 08:14:28 ajacoutot Exp $
---- prnt/hpijs/foomatic-rip-hplip.orig	Thu Jun 25 21:04:19 2009
-+++ prnt/hpijs/foomatic-rip-hplip	Mon Jul 13 10:01:05 2009
-@@ -44,19 +44,19 @@
+$OpenBSD: patch-prnt_hpijs_foomatic-rip-hplip,v 1.2 2009/08/20 08:07:48 ajacoutot Exp $
+--- prnt/hpijs/foomatic-rip-hplip.orig	Tue Aug  4 23:35:41 2009
++++ prnt/hpijs/foomatic-rip-hplip	Thu Aug 20 09:24:11 2009
+@@ -44,19 +44,19 @@ my $ripversion='$Revision=3.0.2.131$';
  # possibly other stuff.	 The default path is often fine on Linux, but
  # may not be on other systems.
  #
@@ -26,7 +26,7 @@ $OpenBSD: patch-prnt_hpijs_foomatic-rip-hplip,v 1.1 2009/07/13 08:14:28 ajacouto
  
  # For the stuff below, the settings in the configuration file have priority.
  
-@@ -66,7 +66,7 @@
+@@ -66,7 +66,7 @@ my $accounting_prolog = "";
  
  # Enter here your personal command for converting non-postscript files
  # (especially text) to PostScript. If you leave it blank, at first the
@@ -35,7 +35,7 @@ $OpenBSD: patch-prnt_hpijs_foomatic-rip-hplip,v 1.1 2009/07/13 08:14:28 ajacouto
  # then the commands given on the list below are tried, beginning with
  # the first one.
  # You can set this to "a2ps", "enscript" or "mpage" to select one of the 
-@@ -97,7 +97,7 @@
+@@ -97,7 +97,7 @@ my $modern_shell = '';
  # Set debug to 1 to enable the debug logfile for this filter; it will
  # appear as defined by $logfile. It will contain status from this
  # filter, plus the renderer's stderr output. You can also add a line
@@ -44,7 +44,7 @@ $OpenBSD: patch-prnt_hpijs_foomatic-rip-hplip,v 1.1 2009/07/13 08:14:28 ajacouto
  # Foomatic filters into debug mode.
  #
  # WARNING: This logfile is a security hole; do not use in production.
-@@ -761,7 +761,7 @@
+@@ -761,7 +761,7 @@ my( $cups_jobid, $cups_user, $cups_jobtitle, $cups_cop
      $cups_filename );
  if ($spooler eq 'cups') {
  
@@ -53,7 +53,7 @@ $OpenBSD: patch-prnt_hpijs_foomatic-rip-hplip,v 1.1 2009/07/13 08:14:28 ajacouto
      if ($ENV{'CUPS_FONTPATH'}) {
  	$ENV{'GS_LIB'} = $ENV{'CUPS_FONTPATH'} .
  	    ($ENV{'GS_LIB'} ? ":$ENV{'GS_LIB'}" : "");
-@@ -1038,8 +1038,8 @@
+@@ -1038,8 +1038,8 @@ if (($spooler eq 'direct') || ($spooler eq 'cps') || (
  	    $ppdfile = "$configpath/direct/${printer}.ppd";
  	} elsif (-r "$configpath/${printer}.ppd") { # system dir
  	    $ppdfile = "$configpath/${printer}.ppd";
