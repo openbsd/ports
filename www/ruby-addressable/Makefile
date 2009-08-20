@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/31 12:48:46 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/20 22:21:50 bernd Exp $
 
 COMMENT =	replacement for Ruby's URI implementation
 
-DISTNAME = 	addressable-2.0.2
+DISTNAME = 	addressable-2.1.0
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	www
 
@@ -22,11 +22,8 @@ CONFIGURE_STYLE =	ruby gem
 
 PKG_ARCH =		*
 
-REGRESS_DEPENDS =	::devel/ruby-rake \
-			::devel/ruby-rspec \
-			::devel/ruby-rcov
+REGRESS_DEPENDS =	::devel/ruby-rcov
 
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake spec
+MODRUBY_REGRESS =	rake rspec
 
 .include <bsd.port.mk>
