@@ -1,5 +1,5 @@
---- Makefile.orig	Sat May 22 09:21:47 2004
-+++ Makefile	Sat Feb  5 17:25:47 2005
+--- Makefile.orig	Sun May 31 03:35:42 2009
++++ Makefile	Tue Jul 14 18:44:12 2009
 @@ -3,9 +3,6 @@
  # User Options
  #######################################################################
@@ -10,28 +10,35 @@
  # Font to use for statusbar in fullscreen mode
  STATUSBAR_FONT = "fixed"
  
-@@ -57,11 +54,6 @@ SS_RANDOMIZE = -r
+@@ -49,15 +46,6 @@ MAGIC = -DHAVE_MAGIC
  # Do not edit below here!
  ######################################################################
  
 -CC        = gcc
--CFLAGS    = -O2 -Wall -fomit-frame-pointer -finline-functions \
+-#CFLAGS    = -O -g -Wall
+-CFLAGS    = -O2 -Wall \
 -	    -fcaller-saves -ffast-math -fno-strength-reduce \
 -	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
+-#CFLAGS    = -O2 -Wall -fomit-frame-pointer -finline-functions \
+-#	    -fcaller-saves -ffast-math -fno-strength-reduce \
+-#	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
 -
- INCLUDES  = `imlib-config --cflags-gdk`
- LIBS      = `imlib-config --libs-gdk`
+ INCLUDES  := $(shell pkg-config --cflags gdk-2.0 imlib2)
+ LIBS      := $(shell pkg-config --libs gdk-2.0 imlib2)
  
-@@ -126,12 +118,6 @@ install: $(PROGRAM)
+@@ -136,13 +124,7 @@ distclean : clean
+ 
+ install: $(PROGRAM)
  	@echo "Installing QIV..."
- 	install -s -m 0755 $(PROGRAM) $(PREFIX)/bin
- 	install -m 0644 $(PROGRAM).1 $(PREFIX)/man/man1
+-	install -s -m 0755 $(PROGRAM) $(PREFIX)/bin
+-	install -m 0644 $(PROGRAM).1 $(PREFIX)/man/man1
 -	$(COMPRESS_PROG) $(PREFIX)/man/man1/$(PROGRAM).1
 -	@if ./qiv -f ./intro.jpg ; \
 -	then echo "-- Test Passed --" ; \
 -	else echo "-- Test Failed --" ; \
 -	fi
--	@echo -ne "\nDont forget to look into the \"qiv-command\" file and install it!\n-> cp qiv-command.example /usr/local/bin/qiv-command\n\n" 
+-	@echo -ne "\nDont forget to look into the \"qiv-command\" file and install it!\n-> cp qiv-command.example /usr/local/bin/qiv-command\n\n"
++	$(BSD_INSTALL_PROGRAM) $(PROGRAM) $(PREFIX)/bin
++	$(BSD_INSTALL_MAN) $(PROGRAM).1 $(PREFIX)/man/man1
  
- install-xscreensaver: install
- 	@echo "#!/bin/sh" > $(SS_PROG)
+ # the end... ;-)

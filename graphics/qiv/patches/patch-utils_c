@@ -1,10 +1,10 @@
---- utils.c.orig	Sat May 22 09:24:23 2004
-+++ utils.c	Sat Feb  5 17:25:47 2005
-@@ -272,7 +272,7 @@ void run_command(qiv_image *q, int n, ch
+--- utils.c.orig	Tue May 26 18:56:25 2009
++++ utils.c	Tue Jul 14 18:31:22 2009
+@@ -276,7 +276,7 @@ void run_command(qiv_image *q, char *n, char *filename
      dup2(pipe_stdout[1], 2);
      close(pipe_stdout[1]);
  
--    execlp("qiv-command", "qiv-command", nr, filename, 0);
+-    execlp("qiv-command", "qiv-command", nr, filename, NULL);
 +    execlp("qiv-command", "qiv-command", nr, filename, (void *)NULL);
      perror("Error calling qiv-command");
      abort();
