@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2009/08/20 10:41:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2009/08/20 10:43:13 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,11 +6,11 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.5.8
+VERSION=	2.5.9
 DISTNAME=	pidgin-${VERSION}
-PKGNAME=	pidgin-${VERSION}p0
-PKGNAME-main=	pidgin-${VERSION}p2
-PKGNAME-finch=	finch-${VERSION}p2
+PKGNAME=	pidgin-${VERSION}
+PKGNAME-main=	pidgin-${VERSION}
+PKGNAME-finch=	finch-${VERSION}
 FULLPKGNAME-libpurple= libpurple-${VERSION}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
