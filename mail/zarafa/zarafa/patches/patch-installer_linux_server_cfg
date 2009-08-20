@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.2 2009/07/31 09:55:56 ajacoutot Exp $
---- installer/linux/server.cfg.orig	Mon Jul 20 18:41:00 2009
-+++ installer/linux/server.cfg	Fri Jul 24 11:35:45 2009
+$OpenBSD: patch-installer_linux_server_cfg,v 1.3 2009/08/20 13:33:06 ajacoutot Exp $
+--- installer/linux/server.cfg.orig	Wed Aug 12 09:50:50 2009
++++ installer/linux/server.cfg	Thu Aug 20 14:51:19 2009
 @@ -36,16 +36,16 @@ local_admin_users	= root
  system_email_address	= postmaster@localhost
  
@@ -98,9 +98,12 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.2 2009/07/31 09:55:56 ajacoutot E
  
  ##############################################################
  # MISC SETTINGS
-@@ -250,4 +251,4 @@ client_update_enabled = false
+@@ -250,7 +251,7 @@ client_update_enabled = false
  
  # Place the correct Zarafa Outlook Client in this directory for
  # Windows clients to download through the Zarafa server
 -client_update_path = /var/lib/zarafa/client
 +client_update_path = /var/db/zarafa/client
+ 
+ # Everyone is a special internal group, which contains every user and group
+ # You may want to disable this group from the Global Addressbook by setting

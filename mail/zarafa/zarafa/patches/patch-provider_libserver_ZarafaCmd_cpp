@@ -1,10 +1,10 @@
-$OpenBSD: patch-provider_libserver_ZarafaCmd_cpp,v 1.8 2009/08/06 10:02:21 ajacoutot Exp $
+$OpenBSD: patch-provider_libserver_ZarafaCmd_cpp,v 1.9 2009/08/20 13:33:06 ajacoutot Exp $
 
 OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
 
---- provider/libserver/ZarafaCmd.cpp.orig	Mon Jul 20 23:52:30 2009
-+++ provider/libserver/ZarafaCmd.cpp	Thu Jul 30 14:32:35 2009
-@@ -682,11 +682,11 @@ double GetTimeOfDay();
+--- provider/libserver/ZarafaCmd.cpp.orig	Wed Aug 12 15:03:19 2009
++++ provider/libserver/ZarafaCmd.cpp	Thu Aug 20 14:51:20 2009
+@@ -688,11 +688,11 @@ double GetTimeOfDay();
  
  #define SOAP_ENTRY_FUNCTION_HEADER(resultvar, fname) \
      ECRESULT		er = erSuccess; \
@@ -18,17 +18,16 @@ OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
      if(soap->user && ((SOAPINFO *)soap->user)->lpCallBack) { \
          ((SOAPINFO *)soap->user)->lpCallBack(pthread_self(), (std::string) "[" + PrettyIP(soap->ip) + "] " + #fname, ((SOAPINFO*)soap->user)->ulCallBackParam); \
      } \
-@@ -698,11 +698,11 @@ double GetTimeOfDay();
+@@ -704,11 +704,11 @@ double GetTimeOfDay();
  #define SOAP_ENTRY_FUNCTION_FOOTER \
  __soapentry_exit: \
      *lpResultVar = er; \
 -    clock_gettime(CLOCK_THREAD_CPUTIME_ID, &endTimes); \
--    if(lpecSession) { \
++    times(&endTimes); \
+     if(lpecSession) { \
 -    	lpecSession->AddClocks( timespec2dbl(endTimes) - timespec2dbl(startTimes), \
 -    	                        0, \
 -							    GetTimeOfDay() - dblStart); \
-+    times(&endTimes); \
-+    if(lpecSession) { \
 +    	lpecSession->AddClocks( (double)(endTimes.tms_utime - startTimes.tms_utime) / CLOCKS_PER_SEC, \
 +							    (double)(endTimes.tms_stime - startTimes.tms_stime) / CLOCKS_PER_SEC, \
 + 							    GetTimeOfDay() - dblStart); \

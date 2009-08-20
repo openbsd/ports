@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.4 2009/07/31 09:55:56 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.5 2009/08/20 13:33:06 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -76,16 +76,14 @@ if [ "`pgrep zarafa`" ]; then
 	pkill zarafa-monitor
 	pkill zarafa-spooler
 	pkill zarafa-server
-	sleep 10
+	sleep 5
 	i=0
-	while [ $i -lt 60 ]
+	while [ $i -lt 15 ]
 		do
 		if [ "`pgrep zarafa\-`" ]; then
 			pkill zarafa\-
-			sleep 10
-			i=`expr $i + 10`
-		else
-			i=60
+			sleep 5
+			i=`expr $i + 5`
 		fi
 	done
 	pkill -9 zarafa\-
