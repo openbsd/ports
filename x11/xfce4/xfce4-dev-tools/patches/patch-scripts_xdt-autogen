@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_xdt-autogen,v 1.1.1.1 2009/08/20 20:58:14 landry Exp $
+--- scripts/xdt-autogen.in.in.orig	Wed Aug 19 03:51:31 2009
++++ scripts/xdt-autogen.in.in	Thu Aug 20 22:40:37 2009
+@@ -32,6 +32,8 @@ XDT_AUTOGEN_VERSION_MICRO="@VERSION_MICRO@"
+ XDT_AUTOGEN_VERSION_NANO="@VERSION_NANO@"
+ XDT_AUTOGEN_VERSION_REVISION="@VERSION_REVISION@"
+ 
++export AUTOCONF_VERSION=2.61
++export AUTOMAKE_VERSION=1.9
+ 
+ parse_configure_subdirs()
+ {

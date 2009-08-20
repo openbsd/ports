@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/20 20:58:14 landry Exp $
+bin/xdt-autogen
+bin/xdt-commit
+share/xfce4/
+share/xfce4/dev-tools/
+share/xfce4/dev-tools/m4macros/
+share/xfce4/dev-tools/m4macros/xdt-depends.m4
+share/xfce4/dev-tools/m4macros/xdt-features.m4
+share/xfce4/dev-tools/m4macros/xdt-i18n.m4
+share/xfce4/dev-tools/m4macros/xdt-python.m4
+share/xfce4/dev-tools/m4macros/xdt-xfce.m4
