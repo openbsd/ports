@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/07/21 07:22:16 msf Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/08/20 23:10:25 bernd Exp $
 bin/css2sass
 bin/haml
 bin/html2haml
@@ -47,7 +47,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Filters/Preserve.
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Filters/Ruby.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Filters/Sass.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Filters/Textile.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/HTML/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/HTML.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/HTML/Node.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Helpers/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Helpers.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Helpers/ActionViewExtensions.html
@@ -65,11 +67,13 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Util/StaticCondit
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Haml/Version.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Hpricot/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Hpricot.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Hpricot/BaseEle.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Hpricot/CData.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Hpricot/Comment.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Hpricot/Doc.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Hpricot/DocType.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Hpricot/Elem.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Hpricot/Node.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Hpricot/XMLDecl.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb.html
@@ -340,7 +344,12 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/Filters/Textile/render-i.ya
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/Filters/cdesc-Filters.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/Filters/defined-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/HTML/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/HTML/cdesc-.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/HTML/Node/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/HTML/Node/cdesc-Node.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/HTML/Node/to_haml-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/HTML/cdesc-HTML.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/HTML/new-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/HTML/render-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/HTML/to_haml-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/Helpers/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/Helpers/ActionViewExtensions/
@@ -417,6 +426,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/Version/version-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/cdesc-Haml.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Haml/init_rails-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/BaseEle/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/BaseEle/cdesc-BaseEle.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/CData/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/CData/cdesc-CData.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/CData/to_haml-i.yaml
@@ -432,6 +443,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/DocType/to_haml-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/Elem/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/Elem/cdesc-Elem.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/Elem/to_haml-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/Node/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/Node/cdesc-Node.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/XMLDecl/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/XMLDecl/cdesc-XMLDecl.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Hpricot/XMLDecl/to_haml-i.yaml
@@ -583,6 +596,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sass/Script/Parser/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sass/Script/Parser/parse-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sass/Script/Parser/parse-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sass/Script/Parser/parse_interpolated-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sass/Script/Parser/parse_mixin_definition_arglist-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sass/Script/Parser/parse_mixin_include_arglist-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sass/Script/String/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sass/Script/String/cdesc-String.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Sass/Script/UnaryOperation/
