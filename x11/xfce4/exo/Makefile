@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/11 08:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/08/20 20:21:12 landry Exp $
 
 COMMENT=	Xfce4 extension library
 
-XFCE_VERSION=	0.3.101
+XFCE_VERSION=	0.3.102
 XFCE_PROJECT=	exo
-PKGNAME=	${DISTNAME}p3
 
 SHARED_LIBS=	exo-0.3		5.0 \
 		exo-hal-0.3	5.0
@@ -21,6 +20,8 @@ MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 
 CONFIGURE_ARGS=	--disable-python
+CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \
+		ac_cv_header_sys_mount_h=yes
 
 BUILD_DEPENDS=	:p5-URI-*:www/p5-URI
 LIB_DEPENDS=	notify.>=2::devel/libnotify \

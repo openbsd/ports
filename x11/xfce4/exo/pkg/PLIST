@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/04/28 19:38:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/08/20 20:21:12 landry Exp $
 %%SHARED%%
 @bin bin/exo-csource
 @bin bin/exo-desktop-item-edit
@@ -124,6 +124,9 @@ share/icons/hicolor/48x48/apps/preferences-desktop-default-applications.png
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libexo-0.3.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/libexo-0.3.mo
 share/locale/be/LC_MESSAGES/libexo-0.3.mo
 share/locale/ca/LC_MESSAGES/libexo-0.3.mo
 share/locale/cs/LC_MESSAGES/libexo-0.3.mo
@@ -182,6 +185,9 @@ share/locale/uk/LC_MESSAGES/libexo-0.3.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/libexo-0.3.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/libexo-0.3.mo
 share/locale/zh_CN/LC_MESSAGES/libexo-0.3.mo
 share/locale/zh_TW/LC_MESSAGES/libexo-0.3.mo
 share/pixmaps/
@@ -198,6 +204,11 @@ share/xfce4/doc/C/images/exo-preferred-applications-webbrowser-custom.png
 share/xfce4/doc/C/images/exo-preferred-applications-webbrowser-menu.png
 share/xfce4/doc/da/
 share/xfce4/doc/da/exo-preferred-applications.html
+share/xfce4/doc/da/images/
+share/xfce4/doc/da/images/exo-preferred-applications-internet.png
+share/xfce4/doc/da/images/exo-preferred-applications-utilities.png
+share/xfce4/doc/da/images/exo-preferred-applications-webbrowser-custom.png
+share/xfce4/doc/da/images/exo-preferred-applications-webbrowser-menu.png
 share/xfce4/doc/es/
 share/xfce4/doc/es/exo-preferred-applications.html
 share/xfce4/doc/es/images/
@@ -214,6 +225,11 @@ share/xfce4/doc/fr/images/exo-preferred-applications-webbrowser-custom.png
 share/xfce4/doc/fr/images/exo-preferred-applications-webbrowser-menu.png
 share/xfce4/doc/gl/
 share/xfce4/doc/gl/exo-preferred-applications.html
+share/xfce4/doc/gl/images/
+share/xfce4/doc/gl/images/exo-preferred-applications-internet.png
+share/xfce4/doc/gl/images/exo-preferred-applications-utilities.png
+share/xfce4/doc/gl/images/exo-preferred-applications-webbrowser-custom.png
+share/xfce4/doc/gl/images/exo-preferred-applications-webbrowser-menu.png
 share/xfce4/doc/id/
 share/xfce4/doc/id/exo-preferred-applications.html
 share/xfce4/doc/id/images/
