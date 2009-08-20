@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/02/03 12:38:38 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/20 21:59:45 bernd Exp $
 
 COMMENT =	wrapper for ImageMagick command line tools
 
-DISTNAME =	mini_magick-1.2.3
+DISTNAME =	mini_magick-1.2.5
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	graphics
 
@@ -26,7 +26,8 @@ RUN_DEPENDS =		:ImageMagick-*:graphics/ImageMagick \
 
 PKG_ARCH =		*
 
-do-regress:
-	@cd ${WRKBUILD}/test && ${RUBY} test_mini_magick_test.rb
+MODRUBY_REGRESS =	rake
+
+REGRESS_DEPENDS =	:ImageMagick-*:graphics/ImageMagick
 
 .include <bsd.port.mk>
