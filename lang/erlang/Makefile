@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2008/09/18 23:16:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2009/08/20 17:37:28 sthen Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 
-V=		R12B-3
+V=		R12B-5
 DISTNAME=	otp_src_${V}
-PKGNAME=	erlang-12b.3p1
+PKGNAME=	erlang-12b.5
 CATEGORIES=	lang
 
 # Erlang Public License
@@ -45,56 +45,58 @@ DOC_DIR=	${PREFIX}/lib/erlang
 ERL_VERSIONS=	\
 ET_VSN  1.3 \
 GS_VSN  1.5.9 \
-IC_VSN  4.2.18 \
+IC_VSN  4.2.19 \
 TV_VSN  2.1.4.2 \
-SSH_VSN 0.9.9.6 \
-SSL_VSN 3.9 \
-ASN1_VSN        1.5.2 \
-EDOC_VSN        0.7.6 \
-HIPE_VSN        3.6.7 \
-ODBC_VSN        2.10.2 \
+SSH_VSN 1.0.2 \
+SSL_VSN 3.10 \
+ASN1_VSN        1.6.2 \
+EDOC_VSN        0.7.6.2 \
+HIPE_VSN        3.6.9 \
+ODBC_VSN        2.10.3 \
 PMAN_VSN        2.6 \
-SASL_VSN        2.1.5.3 \
-SNMP_VSN        4.11 \
-DIALYZER_VSN    1.8.1 \
-COSTIME_VSN     1.1.3 \
+SASL_VSN        2.1.5.4 \
+SNMP_VSN        4.12 \
+DIALYZER_VSN    1.8.3 \
+COSTIME_VSN     1.1.4 \
 PARSETOOLS_VSN  1.4.5 \
-INETS_VSN       5.0.9 \
-ORBER_VSN       3.6.9 \
+EUNIT_VSN       2.0 \
+INETS_VSN       5.0.12 \
+ORBER_VSN       3.6.10 \
 EMACS_VSN       2.4.13 \
-TOOLS_VSN       2.6.1 \
-TYPER_VSN       0.1.3 \
-XMERL_VSN       1.1.9 \
-COMMON_TEST_VSN 1.3.2 \
-SYNTAX_TOOLS_VSN        1.5.5 \
-EI_VSN  3.5.7 \
+TOOLS_VSN       2.6.2 \
+TYPER_VSN       0.1.5 \
+XMERL_VSN       1.1.10 \
+COMMON_TEST_VSN 1.3.4 \
+SYNTAX_TOOLS_VSN        1.5.6 \
+EI_VSN  3.5.9 \
 OTP_MIBS_VSN    1.0.4.1 \
 APPMON_VSN      2.1.9 \
-CRYPTO_VSN      1.5.2 \
-COMPILER_VSN    4.5.3 \
-DEBUGGER_VSN    3.1.1.3 \
-COSEVENT_VSN    2.1.3 \
+CRYPTO_VSN      1.5.3 \
+COMPILER_VSN    4.5.5 \
+DEBUGGER_VSN    3.1.1.4 \
+COSEVENT_VSN    2.1.4 \
 TOOLBAR_VSN     1.3.0.1 \
 INVISO_VSN      0.6 \
-KERNEL_VSN      2.12.3 \
-MEGACO_VSN      3.8 \
-MNESIA_VSN      4.4.3 \
-OS_MON_VSN      2.1.6 \
-TEST_SERVER_VSN 3.2.2 \
-STDLIB_VSN      1.15.3 \
+KERNEL_VSN      2.12.5 \
+MEGACO_VSN      3.9.1.1 \
+MNESIA_VSN      4.4.7 \
+OS_MON_VSN      2.1.8 \
+TEST_SERVER_VSN 3.2.4 \
+STDLIB_VSN      1.15.5 \
 DOCBUILDER_VSN  0.9.8.4 \
-COSFILETRANSFER_VSN     1.1.5 \
-JINTERFACE_VSN  1.4.1 \
-COSPROPERTY_VSN 1.1.6 \
-RUNTIME_TOOLS_VSN       1.7.2 \
-PERCEPT_VSN     0.7.2 \
+COSFILETRANSFER_VSN     1.1.6 \
+JINTERFACE_VSN  1.4.2 \
+COSPROPERTY_VSN 1.1.7 \
+RUNTIME_TOOLS_VSN       1.7.3 \
+PERCEPT_VSN     0.7.3 \
 OBSERVER_VSN    0.9.7.4 \
-COSEVENTDOMAIN_VSN      1.1.3 \
-COSTRANSACTIONS_VSN     1.2.4 \
-COSNOTIFICATION_VSN     1.1.7 \
+COSEVENTDOMAIN_VSN      1.1.4 \
+COSTRANSACTIONS_VSN     1.2.5 \
+COSNOTIFICATION_VSN     1.1.9 \
+PUBLIC_KEY_VSN  0.1 \
 SYSTEM_VSN      R12B \
 WEBTOOL_VSN     0.8.3.2 \
-ERTS_VSN        5.6.3
+ERTS_VSN        5.6.5
 
 .for _n _v in ${ERL_VERSIONS}
 ${_n}=${_v}     
