@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/07/31 09:56:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/08/20 13:33:53 ajacoutot Exp $
 zarafa-webaccess/
 @owner www
 @sample zarafa-webaccess/tmp/
@@ -76,6 +76,7 @@ zarafa-webaccess/client/layout/dialogs/modal/resolvenames.php
 zarafa-webaccess/client/layout/dialogs/modal/rule.php
 zarafa-webaccess/client/layout/dialogs/modal/rules.php
 zarafa-webaccess/client/layout/dialogs/modal/selectfolder.php
+zarafa-webaccess/client/layout/dialogs/modal/sendMRMailConfirmation.php
 zarafa-webaccess/client/layout/dialogs/modal/sharedfolder.php
 zarafa-webaccess/client/layout/dialogs/modal/signatures.php
 zarafa-webaccess/client/layout/dialogs/modal/usergroup.php
