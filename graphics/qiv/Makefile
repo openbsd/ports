@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/20 18:58:39 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/21 18:39:59 kili Exp $
 
 COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
 DISTNAME=		qiv-2.2.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		graphics
 
 EXTRACT_SUFX=		.tgz
@@ -21,12 +22,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-			Xext Xfixes Xi Xinerama Xrandr Xrender c \
-			cairo expat fontconfig freetype gio-2.0 \
-			glib-2.0 glitz gmodule-2.0 gobject-2.0 iconv \
-			intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-                        pixman-1 png pthread-stubs xcb z
+WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+			Xi Xinerama Xrandr Xrender c cairo expat fontconfig \
+			freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
+			gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+			pixman-1 png pthread-stubs xcb z
+
+MODULES=		devel/gettext
+
 USE_GMAKE=		Yes
 USE_X11=		Yes
 NO_REGRESS=		Yes
