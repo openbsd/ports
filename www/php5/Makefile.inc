@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.27 2009/07/20 16:30:14 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.28 2009/08/21 09:44:12 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 V=			5.2.10
-SUHOSIN_V=		0.9.27
+SUHOSIN_V=		0.9.29
 SUHOSIN_P_V=		0.9.7
 
 DISTNAME?=		php-${V}
