@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/16 06:39:51 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/21 20:26:08 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP support for zip archives
 DISTNAME=	zip-1.10.2
-PKGNAME=	pecl-${DISTNAME}
+PKGNAME=	pecl-${DISTNAME}p0
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	http://pecl.php.net/get/
 CATEGORIES=	archivers www
 
 HOMEPAGE=	http://pecl.php.net/package/zip/
+
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/16 06:39:51 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/08/21 20:26:08 jolan Exp $
+@pkgpath www/php5/extensions,-zip
 @comment conf/php5.sample/
 @group bin
 conf/php5.sample/zip.ini
