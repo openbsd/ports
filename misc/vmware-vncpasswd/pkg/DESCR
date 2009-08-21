@@ -1,0 +1,7 @@
+vmware-vncpasswd is a simple tool to generate the obfuscated password line
+for VMware's in-built VNC server which can be enabled by setting the following
+parameters in the .vmx file.
+
+RemoteDisplay.vnc.enabled = "true"
+RemoteDisplay.vnc.port = "5902"
+RemoteDisplay.vnc.key = "<obfuscated password>"
