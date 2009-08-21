@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2009/07/15 20:06:41 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.17 2009/08/21 16:40:42 martynas Exp $
 %%SHARED%%
 bin/mozilla-thunderbird
 bin/thunderbird
@@ -260,6 +260,7 @@ mozilla-thunderbird/isp/en-US/
 mozilla-thunderbird/isp/en-US/gmail.rdf
 mozilla-thunderbird/isp/movemail.rdf
 mozilla-thunderbird/isp/rss.rdf
+@lib mozilla-thunderbird/libsqlite3.so.${LIBsqlite3_VERSION}
 @bin mozilla-thunderbird/mozilla-thunderbird-bin
 @bin mozilla-thunderbird/mozilla-xremote-client
 @bin mozilla-thunderbird/regxpcom

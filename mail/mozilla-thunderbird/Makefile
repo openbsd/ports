@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.84 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.85 2009/08/21 16:40:42 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's mail component
 
-VER=		2.0.0.22
+VER=		2.0.0.23
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p1
+PKGNAME=	mozilla-thunderbird-${VER}
 SO_VERSION=	13.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
@@ -20,10 +20,10 @@ SO_VERSION=	13.0
 	import jar50 jsd ldap50 mail mailcomps mork mozfind mozjs mozldap \
 	msgsmime myspell necko necko2 nsappshell pipboot \
 	pipnss pippki pref prldap50 rdf remoteservice \
-	spellchecker storagecomps system-pref toolkitcomps transformiix \
-	txmgr uconv universalchardet wallet walletviewers webbrwsr websrvcs \
-	widget_gtk2 xmlextras xpcom xpcom_compat xpcom_compat_c xpcom_core \
-	xpconnect xpinstall xpistub
+	spellchecker sqlite3 storagecomps system-pref toolkitcomps \
+	transformiix txmgr uconv universalchardet wallet walletviewers \
+	webbrwsr websrvcs widget_gtk2 xmlextras xpcom xpcom_compat \
+	xpcom_compat_c xpcom_core xpconnect xpinstall xpistub
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
@@ -52,8 +52,8 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
-		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
+		nspr4.>=21,plc4.>=21,plds4.>=21:nspr->=4.8:devel/nspr \
+		nss3.>=23,smime3.>=23,softokn3.>=23,ssl3.>=23:nss->=3.12.3:security/nss
 
 VMEM_WARNING=	Yes
 
