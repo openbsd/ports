@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/19 20:59:40 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/21 08:45:44 bernd Exp $
 
 COMMENT =	small and fast replacement for test/unit
 
-DISTNAME =	minitest-1.3.1
+DISTNAME =	minitest-1.4.2
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	devel
 
@@ -22,9 +22,8 @@ CONFIGURE_STYLE = ruby gem
 
 PKG_ARCH =	*
 
-REGRESS_DEPENDS = ::devel/ruby-rake
+MODRUBY_REGRESS = rake
 
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake test
+REGRESS_DEPENDS = ::devel/ruby-hoe
 
 .include <bsd.port.mk>
