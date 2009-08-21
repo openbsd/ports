@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.17 2008/07/15 18:25:53 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.18 2009/08/21 13:21:19 ajacoutot Exp $
 @conflict openldap-client->=2.3.11,<=2.3.11p3
 @newgroup _openldap:544
 @newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
@@ -63,8 +63,12 @@ share/examples/openldap/schema/openldap.schema
 @sample ${SYSCONFDIR}/openldap/schema/openldap.schema
 share/examples/openldap/schema/ppolicy.schema
 @sample ${SYSCONFDIR}/openldap/schema/ppolicy.schema
+@mode 0640
+@group _openldap
 share/examples/openldap/slapd.conf
 @sample ${SYSCONFDIR}/openldap/slapd.conf
+@mode
+@group
 @mode 700
 @owner _openldap
 @group _openldap
