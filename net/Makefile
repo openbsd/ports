@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.584 2009/08/20 17:10:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.585 2009/08/21 09:41:36 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -491,6 +491,8 @@
      SUBDIR += ytalk
      SUBDIR += ytalk,no_x11
      SUBDIR += zabbix
+     SUBDIR += zabbix,mysql
+     SUBDIR += zabbix,pgsql
      SUBDIR += zenirc
      SUBDIR += znc
 
