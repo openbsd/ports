@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2009/05/08 12:38:27 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2009/08/21 14:58:25 landry Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -6,7 +6,7 @@ CATEGORIES+=		geo/libchamplain geo devel
 
 HOMEPAGE?=		http://projects.gnome.org/libchamplain/
 
-VERSION?=		0.3.0
+VERSION?=		0.3.5
 API_VERSION=		0.3
 SUBST_VARS=		API_VERSION
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
-MASTER_SITES?=		http://libchamplain.pierlux.com/release/${VERSION}/
+MASTER_SITES?=		http://download.gnome.org/sources/libchamplain/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 
 DIST_SUBDIR=		libchamplain
 

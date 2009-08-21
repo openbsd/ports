@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/05/08 12:38:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/08/21 14:58:25 landry Exp $
 @pkgpath geo/libchamplain/libchamplain-gtk
 bin/libchamplain-demo
 include/libchamplain-${API_VERSION}/
@@ -13,6 +13,9 @@ include/libchamplain-${API_VERSION}/champlain/champlain-map-source-factory.h
 include/libchamplain-${API_VERSION}/champlain/champlain-map-source.h
 include/libchamplain-${API_VERSION}/champlain/champlain-marker.h
 include/libchamplain-${API_VERSION}/champlain/champlain-network-map-source.h
+include/libchamplain-${API_VERSION}/champlain/champlain-point.h
+include/libchamplain-${API_VERSION}/champlain/champlain-polygon.h
+include/libchamplain-${API_VERSION}/champlain/champlain-selection-layer.h
 include/libchamplain-${API_VERSION}/champlain/champlain-tile.h
 include/libchamplain-${API_VERSION}/champlain/champlain-version.h
 include/libchamplain-${API_VERSION}/champlain/champlain-view.h
@@ -21,7 +24,7 @@ include/libchamplain-${API_VERSION}/champlain/champlain.h
 include/libchamplain-gtk-${API_VERSION}/
 include/libchamplain-gtk-${API_VERSION}/champlain-gtk/
 include/libchamplain-gtk-${API_VERSION}/champlain-gtk/champlain-gtk.h
-include/libchamplain-gtk-${API_VERSION}/champlain-gtk/champlain-view-embed.h
+include/libchamplain-gtk-${API_VERSION}/champlain-gtk/gtk-champlain-embed.h
 lib/libchamplain-${API_VERSION}.la
 @lib lib/libchamplain-${API_VERSION}.so.${LIBchamplain-0.3_VERSION}
 lib/libchamplain-gtk-${API_VERSION}.la
@@ -33,6 +36,7 @@ share/examples/libchamplain/animated-marker.c
 share/examples/libchamplain/launcher-gtk.c
 share/examples/libchamplain/launcher.c
 share/examples/libchamplain/markers.c
+share/examples/libchamplain/polygons.c
 share/gtk-doc/html/libchamplain/
 share/gtk-doc/html/libchamplain-gtk/
 share/gtk-doc/html/libchamplain-gtk/ch01.html
@@ -40,7 +44,7 @@ share/gtk-doc/html/libchamplain-gtk/home.png
 share/gtk-doc/html/libchamplain-gtk/index.html
 share/gtk-doc/html/libchamplain-gtk/index.sgml
 share/gtk-doc/html/libchamplain-gtk/left.png
-share/gtk-doc/html/libchamplain-gtk/libchamplain-gtk-ChamplainViewEmbed.html
+share/gtk-doc/html/libchamplain-gtk/libchamplain-gtk-GtkChamplainEmbed.html
 share/gtk-doc/html/libchamplain-gtk/libchamplain-gtk.devhelp
 share/gtk-doc/html/libchamplain-gtk/libchamplain-gtk.devhelp2
 share/gtk-doc/html/libchamplain-gtk/right.png
@@ -53,6 +57,7 @@ share/gtk-doc/html/libchamplain/ChamplainMapSource.html
 share/gtk-doc/html/libchamplain/ChamplainMapSourceFactory.html
 share/gtk-doc/html/libchamplain/ChamplainMarker.html
 share/gtk-doc/html/libchamplain/ChamplainNetworkMapSource.html
+share/gtk-doc/html/libchamplain/ChamplainPolygon.html
 share/gtk-doc/html/libchamplain/ChamplainTile.html
 share/gtk-doc/html/libchamplain/ChamplainView.html
 share/gtk-doc/html/libchamplain/ch01.html
@@ -71,6 +76,8 @@ share/gtk-doc/html/libchamplain/ix07.html
 share/gtk-doc/html/libchamplain/ix08.html
 share/gtk-doc/html/libchamplain/left.png
 share/gtk-doc/html/libchamplain/libchamplain-Champlain.html
+share/gtk-doc/html/libchamplain/libchamplain-ChamplainPoint.html
+share/gtk-doc/html/libchamplain/libchamplain-ChamplainSelectionLayer.html
 share/gtk-doc/html/libchamplain/libchamplain-ChamplainVersion.html
 share/gtk-doc/html/libchamplain/libchamplain.devhelp
 share/gtk-doc/html/libchamplain/libchamplain.devhelp2
