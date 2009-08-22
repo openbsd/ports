@@ -1,0 +1,12 @@
+cvs2svn is a tool to migrate as much information as possible from
+an existing CVS repository on a local filesystem to a new Subversion
+or GIT repository.
+
+It is able to infer information about changesets by looking at
+which files were committed together and attempts to reconstruct as
+much of your CVS repository's history as possible.
+
+Intermediate data is stored to on-disk databases so that cvs2svn
+can convert very large CVS repositories using a reasonable amount
+of RAM. Conversions are organized as multiple passes and can be
+restarted at an arbitrary pass in the case of problems.
