@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_luasocket_c,v 1.1 2005/11/25 15:09:44 pedro Exp $
---- src/luasocket.c.orig	Wed Nov 23 21:41:03 2005
-+++ src/luasocket.c	Wed Nov 23 21:41:40 2005
-@@ -21,7 +21,7 @@
- #include "lauxlib.h"
- 
- #if !defined(LUA_VERSION_NUM) || (LUA_VERSION_NUM < 501)
--#include "compat-5.1.h"
-+#include <luacompat.h>
- #endif
- 
- /*=========================================================================*\
+$OpenBSD: patch-src_luasocket_c,v 1.2 2009/08/22 20:28:40 robert Exp $
+--- src/luasocket.c.orig	Sat Aug 22 22:18:38 2009
++++ src/luasocket.c	Sat Aug 22 22:19:02 2009
+@@ -51,7 +51,7 @@ static const luaL_reg mod[] = {
+     {"auxiliar", auxiliar_open},
+     {"except", except_open},
+     {"timeout", timeout_open},
+-    {"buffer", buffer_open},
++    {"buffer", ls_buffer_open},
+     {"inet", inet_open},
+     {"tcp", tcp_open},
+     {"udp", udp_open},

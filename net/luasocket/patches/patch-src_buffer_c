@@ -1,23 +1,84 @@
-$OpenBSD: patch-src_buffer_c,v 1.1 2005/11/25 15:09:44 pedro Exp $
---- src/buffer.c.orig	Tue Nov 22 19:19:38 2005
-+++ src/buffer.c	Wed Nov 23 21:50:51 2005
-@@ -75,7 +75,9 @@ int buffer_meth_setstats(lua_State *L, p
+$OpenBSD: patch-src_buffer_c,v 1.2 2009/08/22 20:28:40 robert Exp $
+--- src/buffer.c.orig	Sat Aug 22 22:18:38 2009
++++ src/buffer.c	Sat Aug 22 22:19:02 2009
+@@ -33,7 +33,7 @@ static int sendraw(p_buffer buf, const char *data, siz
+ /*-------------------------------------------------------------------------*\
+ * Initializes module
  \*-------------------------------------------------------------------------*/
- int buffer_meth_send(lua_State *L, p_buffer buf) {
+-int buffer_open(lua_State *L) {
++int ls_buffer_open(lua_State *L) {
+     (void) L;
+     return 0;
+ }
+@@ -41,7 +41,7 @@ int buffer_open(lua_State *L) {
+ /*-------------------------------------------------------------------------*\
+ * Initializes C structure 
+ \*-------------------------------------------------------------------------*/
+-void buffer_init(p_buffer buf, p_io io, p_timeout tm) {
++void ls_buffer_init(p_buffer buf, p_io io, p_timeout tm) {
+ 	buf->first = buf->last = 0;
+     buf->io = io;
+     buf->tm = tm;
+@@ -52,7 +52,7 @@ void buffer_init(p_buffer buf, p_io io, p_timeout tm) 
+ /*-------------------------------------------------------------------------*\
+ * object:getstats() interface
+ \*-------------------------------------------------------------------------*/
+-int buffer_meth_getstats(lua_State *L, p_buffer buf) {
++int ls_buffer_meth_getstats(lua_State *L, p_buffer buf) {
+     lua_pushnumber(L, buf->received);
+     lua_pushnumber(L, buf->sent);
+     lua_pushnumber(L, timeout_gettime() - buf->birthday);
+@@ -62,7 +62,7 @@ int buffer_meth_getstats(lua_State *L, p_buffer buf) {
+ /*-------------------------------------------------------------------------*\
+ * object:setstats() interface
+ \*-------------------------------------------------------------------------*/
+-int buffer_meth_setstats(lua_State *L, p_buffer buf) {
++int ls_buffer_meth_setstats(lua_State *L, p_buffer buf) {
+     buf->received = (long) luaL_optnumber(L, 2, buf->received); 
+     buf->sent = (long) luaL_optnumber(L, 3, buf->sent); 
+     if (lua_isnumber(L, 4)) buf->birthday = timeout_gettime() - lua_tonumber(L, 4);
+@@ -73,7 +73,7 @@ int buffer_meth_setstats(lua_State *L, p_buffer buf) {
+ /*-------------------------------------------------------------------------*\
+ * object:send() interface
+ \*-------------------------------------------------------------------------*/
+-int buffer_meth_send(lua_State *L, p_buffer buf) {
++int ls_buffer_meth_send(lua_State *L, p_buffer buf) {
      int top = lua_gettop(L);
-+#ifdef LUASOCKET_DEBUG
+ #ifdef LUASOCKET_DEBUG
      p_timeout tm = timeout_markstart(buf->tm);
-+#endif
-     int err = IO_DONE;
-     size_t size = 0, sent = 0;
-     const char *data = luaL_checklstring(L, 2, &size);
-@@ -108,7 +110,9 @@ int buffer_meth_send(lua_State *L, p_buf
+@@ -108,7 +108,7 @@ int buffer_meth_send(lua_State *L, p_buffer buf) {
+ /*-------------------------------------------------------------------------*\
+ * object:receive() interface
  \*-------------------------------------------------------------------------*/
- int buffer_meth_receive(lua_State *L, p_buffer buf) {
+-int buffer_meth_receive(lua_State *L, p_buffer buf) {
++int ls_buffer_meth_receive(lua_State *L, p_buffer buf) {
      int err = IO_DONE, top = lua_gettop(L);
-+#ifdef LUASOCKET_DEBUG
+ #ifdef LUASOCKET_DEBUG
      p_timeout tm = timeout_markstart(buf->tm);
-+#endif
-     luaL_Buffer b;
-     size_t size;
-     const char *part = luaL_optlstring(L, 3, "", &size);
+@@ -153,7 +153,7 @@ int buffer_meth_receive(lua_State *L, p_buffer buf) {
+ /*-------------------------------------------------------------------------*\
+ * Determines if there is any data in the read buffer
+ \*-------------------------------------------------------------------------*/
+-int buffer_isempty(p_buffer buf) {
++int ls_buffer_isempty(p_buffer buf) {
+     return buf->first >= buf->last;
+ }
+ 
+@@ -243,7 +243,7 @@ static int recvline(p_buffer buf, luaL_Buffer *b) {
+ static void buffer_skip(p_buffer buf, size_t count) {
+     buf->received += count;
+     buf->first += count;
+-    if (buffer_isempty(buf)) 
++    if (ls_buffer_isempty(buf)) 
+         buf->first = buf->last = 0;
+ }
+ 
+@@ -255,7 +255,7 @@ static int buffer_get(p_buffer buf, const char **data,
+     int err = IO_DONE;
+     p_io io = buf->io;
+     p_timeout tm = buf->tm;
+-    if (buffer_isempty(buf)) {
++    if (ls_buffer_isempty(buf)) {
+         size_t got;
+         err = io->recv(io->ctx, buf->data, BUF_SIZE, &got, tm);
+         buf->first = 0;
