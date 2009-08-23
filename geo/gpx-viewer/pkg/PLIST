@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/23 17:37:07 landry Exp $
+@bin bin/gpx-viewer
+share/applications/gpx-viewer.desktop
+share/gpx-viewer/
+share/gpx-viewer/gpx-viewer-file-chooser.ui
+share/gpx-viewer/gpx-viewer.ui
+share/gpx-viewer/icons/
+share/gpx-viewer/icons/hicolor/
+share/gpx-viewer/icons/hicolor/scalable/
+share/gpx-viewer/icons/hicolor/scalable/status/
+share/gpx-viewer/icons/hicolor/scalable/status/pin-blue.svg
+share/gpx-viewer/icons/hicolor/scalable/status/pin-green.svg
+share/gpx-viewer/icons/hicolor/scalable/status/pin-grey.svg
+share/gpx-viewer/icons/hicolor/scalable/status/pin-orange.svg
+share/gpx-viewer/icons/hicolor/scalable/status/pin-purple.svg
+share/gpx-viewer/icons/hicolor/scalable/status/pin-red.svg
+share/gpx-viewer/icons/hicolor/scalable/status/pin-yellow.svg
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/gpx-viewer.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/gpx-viewer.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/gpx-viewer.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/gpx-viewer.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/gpx-viewer.svg
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/gpx-viewer.mo
+share/locale/cs/LC_MESSAGES/gpx-viewer.mo
+share/locale/de/LC_MESSAGES/gpx-viewer.mo
+share/locale/es/LC_MESSAGES/gpx-viewer.mo
+share/locale/it/LC_MESSAGES/gpx-viewer.mo
+share/locale/ru/LC_MESSAGES/gpx-viewer.mo
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

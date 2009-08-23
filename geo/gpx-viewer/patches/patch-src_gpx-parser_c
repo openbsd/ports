@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_gpx-parser_c,v 1.1.1.1 2009/08/23 17:37:07 landry Exp $
+remove leading second digits, and adjust strptime() call
+ours doesn't support %z nor %F, GNU extensions
+--- src/gpx-parser.c.orig	Thu Jul 16 23:05:19 2009
++++ src/gpx-parser.c	Fri Aug 21 14:59:46 2009
+@@ -21,6 +21,7 @@
+ #include <glib-object.h>
+ #include <float.h>
+ #include <math.h>
++#include <ctype.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <time.h>
+@@ -218,6 +219,7 @@ void gpx_point_set_position (GpxPoint* self, double la
+ /* Get the unix time. (calculated on first request, then cached ) */
+ time_t gpx_point_get_time (GpxPoint* self) {
+ 	time_t result;
++	char *c;
+ 	struct tm _tmp0_ = {0};
+ 	struct tm ta;
+ 	if (self->time == NULL) {
+@@ -229,7 +231,13 @@ time_t gpx_point_get_time (GpxPoint* self) {
+ 		return result;
+ 	}
+ 	ta = (memset (&_tmp0_, 0, sizeof (struct tm)), _tmp0_);
+-	strptime (self->time, "%FT%T%z", &ta);
++	/* remove trailing non-digits, strptime doesn't support %z */
++	for (c = self->time + strlen(self->time); !isdigit(*c); *c='\0', c--);
++	/* now remove trailing .000 if found */
++	c = strrchr(self->time,'.');
++	if (c != NULL);
++		*c = '\0';
++	strptime (self->time, "%Y-%m-%dT%T", &ta);
+ 	self->priv->utime = mktime (&ta);
+ 	result = self->priv->utime;
+ 	return result;

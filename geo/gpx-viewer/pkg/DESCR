@@ -1,0 +1,12 @@
+GPX Viewer is a simple program to visualize a gpx file. It uses
+libchamplain and cairo for the plot.
+It has the following features:
+- show multiple GPX files.
+- show waypoints and multiple tracks per gpx file.
+- highlight selected track.
+- show speed vs time graph.
+- show distance, duration, average, moving average, max speed, moving
+ time and gps points.
+- zooming.
+- smoothing of speed graph.
+- highlighting points in speed graph on map.
