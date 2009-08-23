@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2008/05/02 10:17:32 steven Exp $
+# $OpenBSD: Makefile,v 1.71 2009/08/23 15:01:32 matthieu Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT-main=	generic shared library support script
@@ -6,7 +6,7 @@ COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
 
 VERSION=	1.5.26
 DISTNAME=	libtool-${VERSION}
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p1
 PKGNAME-ltdl=	libltdl-${VERSION}
 SHARED_LIBS=		ltdl 4.4
 MODGNU_SHARED_LIBS=	ltdl '-no-undefined'
