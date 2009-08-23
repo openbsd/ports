@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2009/07/19 09:06:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/23 19:20:21 jasper Exp $
 
 COMMENT =		automatic audio files tagger
 
 MODPY_EGG_VERSION =	0.11
 DISTNAME =		picard-${MODPY_EGG_VERSION}
-PKGNAME = 		${DISTNAME}p0
+PKGNAME = 		${DISTNAME}p1
 
 CATEGORIES =		audio
 
-HOMEPAGE =		http://musicbrainz.org/
+HOMEPAGE =		http://musicbrainz.org/doc/Picard_Tagger
 
 MAINTAINER =		Amaury Gauthier <amaury.gauthier@etu.unilim.fr>
 
