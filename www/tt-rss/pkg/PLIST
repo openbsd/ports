@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/01 18:22:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/08/23 17:16:38 jasper Exp $
 @group daemon
 tt-rss/
 tt-rss/LICENSE
@@ -29,6 +29,7 @@ tt-rss/image.php
 tt-rss/images/
 tt-rss/images/art-inline.png
 tt-rss/images/art-pub-note.png
+tt-rss/images/art-set-unread.png
 tt-rss/images/art-zoom.png
 tt-rss/images/blank_icon.gif
 tt-rss/images/button.png
@@ -123,6 +124,10 @@ tt-rss/lib/xmlrpc/.empty
 tt-rss/lib/xmlrpc/README
 tt-rss/lib/xmlrpc/filelist.txt
 tt-rss/locale/
+tt-rss/locale/de_DE/
+tt-rss/locale/de_DE/LC_MESSAGES/
+tt-rss/locale/de_DE/LC_MESSAGES/messages.mo
+tt-rss/locale/de_DE/LC_MESSAGES/messages.po
 tt-rss/locale/fr_FR/
 tt-rss/locale/fr_FR/LC_MESSAGES/
 tt-rss/locale/fr_FR/LC_MESSAGES/messages.mo
@@ -244,6 +249,7 @@ tt-rss/schema/versions/mysql/52.sql
 tt-rss/schema/versions/mysql/53.sql
 tt-rss/schema/versions/mysql/54.sql
 tt-rss/schema/versions/mysql/55.sql
+tt-rss/schema/versions/mysql/56.sql
 tt-rss/schema/versions/mysql/6.sql
 tt-rss/schema/versions/mysql/7.sql
 tt-rss/schema/versions/mysql/8.sql
@@ -298,6 +304,7 @@ tt-rss/schema/versions/pgsql/52.sql
 tt-rss/schema/versions/pgsql/53.sql
 tt-rss/schema/versions/pgsql/54.sql
 tt-rss/schema/versions/pgsql/55.sql
+tt-rss/schema/versions/pgsql/56.sql
 tt-rss/schema/versions/pgsql/6.sql
 tt-rss/schema/versions/pgsql/7.sql
 tt-rss/schema/versions/pgsql/8.sql
