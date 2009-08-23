@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.3 2009/08/23 17:21:17 jasper Exp $
 
 COMMENT=		easy to use and powerfull CMS
 
