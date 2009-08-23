@@ -1,7 +1,7 @@
-$OpenBSD: patch-pngconf_h,v 1.7 2007/10/06 19:33:28 naddy Exp $
---- pngconf.h.orig	Sat Sep  8 05:22:56 2007
-+++ pngconf.h	Wed Oct  3 17:20:54 2007
-@@ -37,6 +37,11 @@
+$OpenBSD: patch-pngconf_h,v 1.8 2009/08/23 14:44:18 naddy Exp $
+--- pngconf.h.orig	Thu Aug 13 13:13:21 2009
++++ pngconf.h	Sun Aug 23 16:21:58 2009
+@@ -40,6 +40,11 @@
  #endif
  #endif
  
@@ -12,4 +12,4 @@ $OpenBSD: patch-pngconf_h,v 1.7 2007/10/06 19:33:28 naddy Exp $
 +
  /*
   * Added at libpng-1.2.8
-  *  
+  *
