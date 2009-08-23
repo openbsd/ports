@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.40 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.41 2009/08/23 19:30:21 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		0.12.3
-PKGNAME =		${DISTNAME}p0
+GNOME_VERSION=		0.12.4
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
+
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.rhythmbox.org/
@@ -48,7 +48,6 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			gnomeui-2::x11/gnome/libgnomeui \
 			gnome-media-profiles::x11/gnome/media \
 			totem-plparser::x11/gnome/totem-pl-parser \
-			sexy::x11/libsexy \
 			camel-1.2.>=10,edataserver-1.2::databases/evolution-data-server \
 			gstcdda-0.10,gsttag-0.10::multimedia/gstreamer-0.10/plugins-base,-cdda \
 			soup-gnome-2.4.>=1::devel/libsoup,-gnome
@@ -69,6 +68,7 @@ MODGCONF2_SCHEMAS_DIR=	rhythmbox
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--disable-silent-rules \
 			--with-database=tree \
 			--with-gnome-keyring \
 			--with-mdns=avahi \
@@ -83,12 +83,15 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-libbrasero-media \
 			--without-libnautilus-burn \
 			--disable-vala \
-			--disable-browser-plugin \
 			--disable-fm-radio \
 			--disable-lirc
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+# XXX TODO: plugins subpackage
+CONFIGURE_ARGS+=	--disable-browser-plugin
+CONFIGURE_ENV+=		MOZILLA_PLUGINDIR=${PREFIX}/lib/mozilla-plugins
 
 # The regression tests require a running instance of X.
 # You will also need to set the XAUTHORITY environment variable to point 

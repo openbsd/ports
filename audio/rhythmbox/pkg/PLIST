@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/07/12 20:05:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2009/08/23 19:30:21 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 lib/librhythmbox-core.la
@@ -524,6 +524,7 @@ share/locale/sr/LC_MESSAGES/rhythmbox.mo
 share/locale/sr@latin/LC_MESSAGES/rhythmbox.mo
 share/locale/sv/LC_MESSAGES/rhythmbox.mo
 share/locale/ta/LC_MESSAGES/rhythmbox.mo
+share/locale/te/LC_MESSAGES/rhythmbox.mo
 share/locale/th/LC_MESSAGES/rhythmbox.mo
 share/locale/tr/LC_MESSAGES/rhythmbox.mo
 share/locale/uk/LC_MESSAGES/rhythmbox.mo
