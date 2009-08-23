@@ -1,7 +1,7 @@
-$OpenBSD: patch-get_iplayer,v 1.13 2009/08/17 13:52:20 sthen Exp $
---- get_iplayer.orig	Sun Aug 16 15:29:01 2009
-+++ get_iplayer	Mon Aug 17 14:45:41 2009
-@@ -289,7 +289,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+$OpenBSD: patch-get_iplayer,v 1.14 2009/08/23 19:16:17 sthen Exp $
+--- get_iplayer.orig	Sat Aug 22 19:14:38 2009
++++ get_iplayer	Sun Aug 23 20:10:35 2009
+@@ -290,7 +290,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -10,7 +10,7 @@ $OpenBSD: patch-get_iplayer,v 1.13 2009/08/17 13:52:20 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -406,6 +406,7 @@ if ( ! keys %plugin_files ) {
+@@ -407,6 +407,7 @@ if ( ! keys %plugin_files ) {
  	$opt->{pluginsupdate} = 1;
  }
  # Update this script if required
@@ -18,7 +18,7 @@ $OpenBSD: patch-get_iplayer,v 1.13 2009/08/17 13:52:20 sthen Exp $
  update_script() if $opt->{update} || $opt->{pluginsupdate};
  
  
-@@ -589,7 +590,7 @@ sub find_matches {
+@@ -590,7 +591,7 @@ sub find_matches {
  	$binopts->{lame}	.= ' --quiet ' if $opt->{quiet};
  	$bin->{vlc}		= $opt->{vlc} || 'cvlc';
  	$binopts->{vlc}		= '-vv' if $opt->{verbose} || $opt->{debug};
@@ -27,7 +27,7 @@ $OpenBSD: patch-get_iplayer,v 1.13 2009/08/17 13:52:20 sthen Exp $
  	$bin->{tee}		= 'tee';
  	$bin->{flvstreamer}	= $opt->{flvstreamer} || $opt->{rtmpdump} || 'flvstreamer';
  	# quote binaries which allows for spaces in the path
-@@ -4503,7 +4504,7 @@ sub optional_list_entry_format {
+@@ -4521,7 +4522,7 @@ sub optional_list_entry_format {
  # Returns the modes to try for this prog type
  sub modelist {
  	my $prog = shift;
