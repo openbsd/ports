@@ -1,5 +1,5 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.23 2009/08/16 19:37:59 jsg Exp $
+-- $OpenBSD: yt.lua,v 1.24 2009/08/24 19:31:27 jsg Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -66,7 +66,7 @@ for i = 1, table.getn(urls) do
    -- 34 320x240 H.264/AAC stereo FLV
    -- 35  640x480 640x360 H.264/AAC stereo FLV
    mpeg4 = false
-   pattern = '"fmt_map": *"([%d]+)\/'
+   pattern = '"fmt_map": *"([%d]+)'
    if (string.match(body, pattern) ~= nil) then
       format = string.match(body, pattern)
       nf = tonumber(format)
