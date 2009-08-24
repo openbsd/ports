@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.6 2009/07/13 17:13:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.7 2009/08/24 12:28:48 jasper Exp $
 conf/modules.sample/zabbix.conf
 @comment conf/php5.sample/
 conf/php5.sample/zabbix.ini
@@ -29,9 +29,6 @@ zabbix/conf/
 zabbix/conf/COPYING
 zabbix/conf/maintenance.inc.php
 zabbix/config.php
-zabbix/create/
-zabbix/create/data.sql
-zabbix/create/mysql.sql
 zabbix/css.css
 zabbix/dashboard.php
 zabbix/discovery.php

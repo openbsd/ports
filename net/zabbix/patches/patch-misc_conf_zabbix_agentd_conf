@@ -1,7 +1,7 @@
-$OpenBSD: patch-misc_conf_zabbix_agentd_conf,v 1.1 2009/07/12 19:51:51 ajacoutot Exp $
---- misc/conf/zabbix_agentd.conf.orig	Thu Jul  2 09:48:17 2009
-+++ misc/conf/zabbix_agentd.conf	Thu Jul  2 10:41:09 2009
-@@ -65,12 +65,12 @@ DebugLevel=3
+$OpenBSD: patch-misc_conf_zabbix_agentd_conf,v 1.2 2009/08/24 12:28:48 jasper Exp $
+--- misc/conf/zabbix_agentd.conf.orig	Tue Jun 16 15:12:36 2009
++++ misc/conf/zabbix_agentd.conf	Mon Aug 24 14:12:01 2009
+@@ -67,12 +67,12 @@ DebugLevel=3
  
  # Name of PID file
  
