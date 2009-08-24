@@ -1,10 +1,10 @@
-$OpenBSD: patch-ccmain_pgedit_cpp,v 1.1 2009/03/05 08:09:40 ajacoutot Exp $
+$OpenBSD: patch-ccmain_pgedit_cpp,v 1.2 2009/08/24 07:12:40 ajacoutot Exp $
 
 Fix crash -- cf. http://www.win.tue.nl/~aeb/linux/ocr/tesseract.html
 
---- ccmain/pgedit.cpp.orig	Sat Feb 28 08:33:20 2009
-+++ ccmain/pgedit.cpp	Sat Feb 28 08:33:50 2009
-@@ -752,6 +752,9 @@ void pgeditor_read_file(                   // of seria
+--- ccmain/pgedit.cpp.orig	Wed Jun  3 00:54:27 2009
++++ ccmain/pgedit.cpp	Sun Aug 23 20:25:45 2009
+@@ -753,6 +753,9 @@ void pgeditor_read_file(                   // of seria
  
                                   // ptr to last dot
    filename_extension = strrchr(name.string(), '.');

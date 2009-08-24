@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/09/17 10:17:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/08/24 07:12:40 ajacoutot Exp $
 @bin bin/cntraining
 @bin bin/mftraining
 @bin bin/tesseract
@@ -279,6 +279,7 @@ share/tessdata/
 share/tessdata/configs/
 share/tessdata/configs/api_config
 share/tessdata/configs/box.train
+share/tessdata/configs/box.train.stderr
 share/tessdata/configs/inter
 share/tessdata/configs/kannada
 share/tessdata/configs/makebox

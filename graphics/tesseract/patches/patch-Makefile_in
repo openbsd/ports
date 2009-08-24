@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/09/17 10:17:27 ajacoutot Exp $
---- Makefile.in.orig	Sun Jul 13 18:34:58 2008
-+++ Makefile.in	Sun Jul 13 18:35:11 2008
-@@ -76,7 +76,7 @@ PACKAGE_YEAR = @PACKAGE_YEAR@
- RANLIB = @RANLIB@
- VERSION = @VERSION@
+$OpenBSD: patch-Makefile_in,v 1.2 2009/08/24 07:12:40 ajacoutot Exp $
+--- Makefile.in.orig	Tue Jun 30 18:24:21 2009
++++ Makefile.in	Sun Aug 23 20:30:34 2009
+@@ -177,7 +177,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  
+ # TODO(luc) Add 'doc' to this list when ready
 -SUBDIRS = ccstruct ccutil classify cutil dict pageseg image textord viewer wordrec ccmain training tessdata testing dlltest java
 +SUBDIRS = ccstruct ccutil classify cutil dict pageseg image textord viewer wordrec ccmain training tessdata testing dlltest
- 
- EXTRA_DIST = eurotext.tif phototest.tif ReleaseNotes tesseract.spec config       tesseract.dsp tesseract.dsw tesseract.vcproj tesseract.sln       StdAfx.cpp StdAfx.h tessdll.cpp tessdll.h tessdll.dsp tessdll.vcproj
- 
+ EXTRA_DIST = eurotext.tif phototest.tif ReleaseNotes tesseract.spec config \
+       tesseract.dsp tesseract.dsw tesseract.vcproj tesseract.sln \
+       StdAfx.cpp StdAfx.h tessdll.cpp tessdll.h tessdll.dsp tessdll.vcproj

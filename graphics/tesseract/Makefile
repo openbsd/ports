@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/05 08:09:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/24 07:12:40 ajacoutot Exp $
 
-COMMENT-main=	OCR Engine developed at HP Labs.
+COMMENT-main=	OCR Engine developed at HP Labs
 COMMENT-de=	German language data for tesseract
 COMMENT-es=	Spanish language data for tesseract
 COMMENT-fr=	French language data for tesseract
@@ -8,10 +8,10 @@ COMMENT-it=	Italian language data for tesseract
 COMMENT-nl=	Dutch language data for tesseract
 COMMENT-pt=	Portuguese (Brazilian) language data for tesseract
 
-DISTNAME=	tesseract-2.03
+DISTNAME=	tesseract-2.04
 CATEGORIES=	graphics textproc
 
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}
 PKGNAME-de=	tesseract-de-2.00
 PKGNAME-es=	tesseract-es-2.00
 PKGNAME-fr=	tesseract-fr-2.00

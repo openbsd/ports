@@ -1,20 +1,35 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2008/09/17 10:17:27 ajacoutot Exp $
---- configure.orig	Tue Apr 22 13:35:36 2008
-+++ configure	Sun Jul 13 19:08:04 2008
-@@ -7469,8 +7469,6 @@ fi
+$OpenBSD: patch-configure,v 1.2 2009/08/24 07:12:40 ajacoutot Exp $
+--- configure.orig	Sun Aug 23 20:39:20 2009
++++ configure	Sun Aug 23 20:39:38 2009
+@@ -8940,18 +8940,6 @@ ac_config_files="$ac_config_files testing/Makefile"
  
-           ac_config_files="$ac_config_files dlltest/Makefile"
+ ac_config_files="$ac_config_files dlltest/Makefile"
  
--          ac_config_files="$ac_config_files java/Makefile"
+-ac_config_files="$ac_config_files java/Makefile"
+-
+-ac_config_files="$ac_config_files java/com/Makefile"
+-
+-ac_config_files="$ac_config_files java/com/google/Makefile"
+-
+-ac_config_files="$ac_config_files java/com/google/scrollview/Makefile"
+-
+-ac_config_files="$ac_config_files java/com/google/scrollview/events/Makefile"
+-
+-ac_config_files="$ac_config_files java/com/google/scrollview/ui/Makefile"
 -
  # AC_CONFIG_FILES(doc/Doxyfile)
  # AC_CONFIG_FILES(doc/header.html)
  # AC_CONFIG_FILES(doc/footer.html)
-@@ -8030,7 +8028,6 @@ do
-   "tessdata/tessconfigs/Makefile" ) CONFIG_FILES="$CONFIG_FILES tessdata/tessconfigs/Makefile" ;;
-   "testing/Makefile" ) CONFIG_FILES="$CONFIG_FILES testing/Makefile" ;;
-   "dlltest/Makefile" ) CONFIG_FILES="$CONFIG_FILES dlltest/Makefile" ;;
--  "java/Makefile" ) CONFIG_FILES="$CONFIG_FILES java/Makefile" ;;
-   "default-1" ) CONFIG_COMMANDS="$CONFIG_COMMANDS default-1" ;;
-   "config_auto.h" ) CONFIG_HEADERS="$CONFIG_HEADERS config_auto.h:config/config.h.in" ;;
+@@ -9583,12 +9571,6 @@ do
+     "tessdata/tessconfigs/Makefile") CONFIG_FILES="$CONFIG_FILES tessdata/tessconfigs/Makefile" ;;
+     "testing/Makefile") CONFIG_FILES="$CONFIG_FILES testing/Makefile" ;;
+     "dlltest/Makefile") CONFIG_FILES="$CONFIG_FILES dlltest/Makefile" ;;
+-    "java/Makefile") CONFIG_FILES="$CONFIG_FILES java/Makefile" ;;
+-    "java/com/Makefile") CONFIG_FILES="$CONFIG_FILES java/com/Makefile" ;;
+-    "java/com/google/Makefile") CONFIG_FILES="$CONFIG_FILES java/com/google/Makefile" ;;
+-    "java/com/google/scrollview/Makefile") CONFIG_FILES="$CONFIG_FILES java/com/google/scrollview/Makefile" ;;
+-    "java/com/google/scrollview/events/Makefile") CONFIG_FILES="$CONFIG_FILES java/com/google/scrollview/events/Makefile" ;;
+-    "java/com/google/scrollview/ui/Makefile") CONFIG_FILES="$CONFIG_FILES java/com/google/scrollview/ui/Makefile" ;;
+ 
    *) { { echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
+ echo "$as_me: error: invalid argument: $ac_config_target" >&2;}
