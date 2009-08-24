@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/05 03:28:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/08/24 15:17:11 sthen Exp $
 bin/disc-cover
 @man man/man1/disc-cover.1
 share/disc-cover/
+share/disc-cover/backonly
 share/disc-cover/jewel
+share/disc-cover/jewel-picture
 share/disc-cover/letter-slim
+share/disc-cover/paper-box
 share/disc-cover/sleeve
 share/disc-cover/slim
 share/disc-cover/tape

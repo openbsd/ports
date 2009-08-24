@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2007/10/01 11:42:30 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2009/08/24 15:17:11 sthen Exp $
 
 COMMENT=	creates cover for audio cds using cddb and latex
 
-DISTNAME=	disc-cover-1.5.2
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	disc-cover-1.5.6
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} webserver-1.0${EXTRACT_SUFX}
+DIST_SUBDIR=	disc-cover
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.vanhemert.co.uk/disc-cover.html
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://home.wanadoo.nl/jano/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=disc-cover/}
 
 RUN_DEPENDS=	::print/texlive/base \
 		:ImageMagick-*:graphics/ImageMagick \
@@ -36,9 +37,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/disc-cover ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/disc-cover.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${EX_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/{index.cgi,online.cgi} ${EX_DIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/webserver/{index.cgi,online.cgi} ${EX_DIR}
 .for i in ${PNGS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${EX_DIR}
+	${INSTALL_DATA} ${WRKDIR}/webserver/${i} ${EX_DIR}
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/disc-cover
 	${INSTALL_DATA} ${WRKSRC}/templates/* ${PREFIX}/share/disc-cover
