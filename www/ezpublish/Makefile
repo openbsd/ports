@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/17 21:52:04 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/24 16:36:31 jasper Exp $
 
 COMMENT =	professional PHP application framework
 
-VERSION =	4.0.0
+VERSION =	4.1.3
 DISTNAME =	ezpublish-${VERSION}-gpl
 PKGNAME =	ezpublish-${VERSION}
 CATEGORIES =	www
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	${HOMEPAGE}content/download/218811/1467956/file/
+MASTER_SITES =	${HOMEPAGE}/content/download/270150/2473822/version/3/file/
 EXTRACT_SUFX =	.tar.bz2
 
 RUN_DEPENDS =	:php5-gd-*:www/php5/extensions,-gd \
