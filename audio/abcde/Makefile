@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 21:26:00 simon Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/24 14:38:47 sthen Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
@@ -17,10 +17,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MS=		http://www.hispalinux.es/~data/files/
+MS=		http://www.hispalinux.es/~data/files/ \
+		http://spacehopper.org/mirrors/
 MASTER_SITES=	${MS}
-MASTER_SITES0=	${MS}cd-discid/
-MASTER_SITES1=	http://lly.org/~rcw/id3/
+MASTER_SITES0=	${MS:=cd-discid/}
+MASTER_SITES1=	http://lly.org/~rcw/id3/old/ \
+		http://lly.org/~rcw/id3/
 DISTFILES=	${DISTNAME:S,-,_,}.orig.tar.gz \
 		cd-discid_${V2}.orig.tar.gz:0
 
