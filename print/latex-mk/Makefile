@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2007/10/01 11:42:30 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/24 07:03:02 jasper Exp $
 
 COMMENT=	set of Makefile fragments to manage LaTeX documents
 
-DISTNAME=	latex-mk-1.8
+DISTNAME=	latex-mk-1.9.1
 CATEGORIES=	print
 HOMEPAGE=	http://latex-mk.sourceforge.net/
 

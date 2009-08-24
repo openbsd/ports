@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/01/31 22:38:03 steven Exp $
---- Makefile.in.orig	Wed Jan 31 16:31:09 2007
-+++ Makefile.in	Wed Jan 31 16:31:11 2007
-@@ -193,7 +193,7 @@ MKSRCS = latex.mk.in latex.subdir.mk.in 
+$OpenBSD: patch-Makefile_in,v 1.2 2009/08/24 07:03:02 jasper Exp $
+--- Makefile.in.orig	Mon Aug 27 18:16:05 2007
++++ Makefile.in	Mon Aug 24 00:46:46 2009
+@@ -196,7 +196,7 @@ MKSRCS = latex.mk.in latex.subdir.mk.in lgrind.mk.in m
  BMKFILES = ${MKSRCS:.mk.in=.mk}
  GMKFILES = ${MKSRCS:.mk.in=.gmk}
  PSFILES = dated_draft.ps

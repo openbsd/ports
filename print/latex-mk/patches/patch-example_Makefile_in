@@ -1,6 +1,6 @@
-$OpenBSD: patch-example_Makefile_in,v 1.1.1.1 2007/01/31 22:38:03 steven Exp $
---- example/Makefile.in.orig	Fri Jun 23 05:35:20 2006
-+++ example/Makefile.in	Wed Jan 31 16:25:42 2007
+$OpenBSD: patch-example_Makefile_in,v 1.2 2009/08/24 07:03:02 jasper Exp $
+--- example/Makefile.in.orig	Mon Aug 27 18:15:55 2007
++++ example/Makefile.in	Mon Aug 24 00:46:46 2009
 @@ -17,7 +17,7 @@
  srcdir = @srcdir@
  top_srcdir = @top_srcdir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-example_Makefile_in,v 1.1.1.1 2007/01/31 22:38:03 steven Exp $
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  top_builddir = ..
-@@ -180,7 +180,7 @@ EXFILES = \
+@@ -181,7 +181,7 @@ EXFILES = \
  
  BMKFILES = ${MKSRCS:.in=.mk}
  GMKFILES = ${MKSRCS:.in=.gmk}

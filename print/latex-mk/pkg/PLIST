@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/31 22:38:03 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/08/24 07:03:02 jasper Exp $
 @comment bin/ieee-copyout
 bin/latex-mk
 @info info/latex-mk.info
@@ -26,6 +26,8 @@ share/latex-mk/latex.subdir.gmk
 share/latex-mk/latex.subdir.mk
 share/latex-mk/lgrind.gmk
 share/latex-mk/lgrind.mk
+share/latex-mk/mpost.gmk
+share/latex-mk/mpost.mk
 share/latex-mk/tgif.gmk
 share/latex-mk/tgif.mk
 share/latex-mk/xfig.gmk
