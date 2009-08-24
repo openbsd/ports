@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/10 08:48:22 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/24 15:28:21 sthen Exp $
 
 COMMENT=		curses front-end for various audio players
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${HOMEPAGE} \
+			http://spacehopper.org/mirrors/
 
 MODULES=		lang/python
 

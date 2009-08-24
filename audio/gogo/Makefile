@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.18 2009/08/24 15:28:21 sthen Exp $
 
 COMMENT=	686 class CPU optimized mp3 encoder
 DISTNAME=	gogo226a	
 PKGNAME=	gogo-2.26a
 CATEGORIES=	audio
-MASTER_SITES=	http://www.kurims.kyoto-u.ac.jp/~shigeo/soft/gogo2/src/
+MASTER_SITES=	http://www.kurims.kyoto-u.ac.jp/~shigeo/soft/gogo2/src/ \
+		http://spacehopper.org/mirrors/
 HOMEPAGE=	http://homepage1.nifty.com/herumi/gogo_e.html
 EXTRACT_SUFX=	.tgz
 

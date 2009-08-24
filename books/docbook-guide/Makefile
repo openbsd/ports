@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:34:35 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/24 15:28:21 sthen Exp $
 
 COMMENT=	the definite guide to DocBook
 
@@ -8,7 +8,8 @@ PKGNAME=	docbook-guide-${V}
 EXTRACT_SUFX=	.zip
 CATEGORIES=	books
 
-MASTER_SITES=	http://docbook.org/tdg/en/
+MASTER_SITES=	http://docbook.org/tdg/en/ \
+		http://spacehopper.org/mirrors/
 HOMEPAGE=	http://docbook.org/tdg/en/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
