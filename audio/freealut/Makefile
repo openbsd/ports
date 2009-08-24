@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/24 15:27:49 sthen Exp $
 
 COMMENT=	OpenAL Utility Toolkit
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	m ossaudio pthread
 
-MASTER_SITES=	http://www.openal.org/openal_webstf/downloads/
+MASTER_SITES=	http://connect.creativelabs.com/openal/Downloads/ALUT/
 
 LIB_DEPENDS=	openal.>=1.0::audio/openal
 

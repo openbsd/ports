@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/12/01 02:19:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/08/24 15:27:49 sthen Exp $
 COMMENT=	musepack decoder library
 
 DISTNAME=	libmpcdec-1.2.6
@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.musepack.net/
 
 MAINTAINER=	David Love <david@homeunix.org.uk>
 
-MASTER_SITES=	http://files2.musepack.net/source/
+MASTER_SITES=	http://files.musepack.net/source/
 EXTRACT_SUFX=	.tar.bz2
 
 # BSD
