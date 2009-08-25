@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/20 22:21:50 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/25 21:47:59 bernd Exp $
 
 COMMENT =	replacement for Ruby's URI implementation
 
-DISTNAME = 	addressable-2.1.0
+# databases/ruby-datamapper/core (0.9.11) needs 2.0.2
+# test before you update!
+DISTNAME = 	addressable-2.0.2
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	www
 
