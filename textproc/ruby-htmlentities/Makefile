@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/20 23:14:15 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/25 21:52:00 bernd Exp $
 
 COMMENT =	HTML entity encoding and decoding for Ruby
 
-DISTNAME =	htmlentities-4.1.0
+# www/ruby-typo needs 4.0.0. Check it before you update!
+DISTNAME =	htmlentities-4.0.0
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	textproc www
 
