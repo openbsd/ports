@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2009/08/18 22:24:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2009/08/25 13:16:40 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
-DISTNAME=	transcode-1.1.3
+DISTNAME=	transcode-1.1.4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2
@@ -89,11 +89,11 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LIBAVCODEC_EXTRA_LIBS="-pthread"
 
 .if ${FLAVOR:L:Mlzo}
-CONFIGURE_ARGS+=	--enable-lzo
-LIB_DEPENDS+=		lzo2::archivers/lzo2
-PKG_ARGS+=		-Dlzo=1
+CONFIGURE_ARGS+=--enable-lzo
+LIB_DEPENDS+=	lzo2::archivers/lzo2
+PKG_ARGS+=	-Dlzo=1
 .else
-PKG_ARGS+=		-Dlzo=0
+PKG_ARGS+=	-Dlzo=0
 .endif
 
 .if ${FLAVOR:L:Mmjpegtools}
