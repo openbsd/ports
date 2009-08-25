@@ -5,5 +5,3 @@ retrieval of current location of an iPhone.
 >> i = FindMyIphone.new(username,password)
 >> i.locateMe
 >> i.sendMessage("Foo bar")
-
-
