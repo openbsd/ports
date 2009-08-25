@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/06/13 17:14:42 jasper Exp $
---- Makefile.in.orig	Sun Sep  2 01:38:35 2007
-+++ Makefile.in	Fri Jun 13 10:19:23 2008
-@@ -998,7 +998,7 @@ info: info-recursive
+$OpenBSD: patch-Makefile_in,v 1.2 2009/08/25 17:52:43 jasper Exp $
+--- Makefile.in.orig	Fri Jul 10 14:48:59 2009
++++ Makefile.in	Tue Aug 25 19:34:11 2009
+@@ -2074,7 +2074,7 @@ info: info-recursive
  
  info-am:
  
@@ -9,4 +9,4 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/06/13 17:14:42 jasper Exp $
 +install-data-am: install-cupsDATA install-dataDATA \
  	install-iconDATA install-keyDATA
  
- install-exec-am: install-binPROGRAMS
+ install-dvi: install-dvi-recursive

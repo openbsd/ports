@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/13 17:14:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/08/25 17:52:43 jasper Exp $
 @bin bin/opennx
+@bin bin/watchreader
 share/applications/opennx-admin-gnome.desktop
 share/applications/opennx-gnome.desktop
 share/applications/opennx-wizard-gnome.desktop
