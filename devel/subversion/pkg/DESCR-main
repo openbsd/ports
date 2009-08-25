@@ -7,17 +7,15 @@ of your data, or examine the history of how your data changed.
 In this regard, many people think of a version control system as a
 sort of time machine.
 
-Due to known problems with Berkeley db on macppc you can only create
-filesystem (fsfs) based repositories. No problems exist when subversion
-is only used as a client, however.
-
 Note that you need to install the following subpackages to gain
 the appropriate functionality:
         -perl   Perl bindings to Subversion
         -python Python bindings to Subversion
         -ruby   Ruby bindings to Subversion
         -ap2    Apache httpd 2 modules for Subversion
+        -gnome-keyring Support for the gnome-keyring password store
 
-Also note that authentication credential caching is disabled by default
-by setting "store-passwords" to "no" in ${SYSCONFDIR}/subversion/config.
-This is a different default behaviour to a standard subversion install.
+Also note that plaintext-password caching is disabled by default
+by setting "store-plaintext-passwords" to "no" in ${SYSCONFDIR}/subversion/servers.
+This is a different default behaviour to a standard subversion install,
+which would ask the user before storing passwords in plaintext.

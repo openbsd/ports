@@ -1,4 +1,0 @@
-# $OpenBSD: config,v 1.1 2007/02/15 10:25:17 dlg Exp $
-
-[auth]
-store-passwords=no

@@ -1,0 +1,4 @@
+# $OpenBSD: servers,v 1.1 2009/08/25 10:26:20 stsp Exp $
+
+[global]
+store-plaintext-passwords=no

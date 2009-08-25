@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/04/28 23:43:57 stsp Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/08/25 10:26:20 stsp Exp $
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion
 %%SHARED%%
@@ -136,8 +136,8 @@ share/examples/subversion/client-side/svn2cl/svn2html.css
 share/examples/subversion/client-side/svn2cl/svn2html.xsl
 share/examples/subversion/client-side/svn_apply_autoprops.py
 share/examples/subversion/client-side/svn_export_empty_files.py
-share/examples/subversion/config
-@sample ${SYSCONFDIR}/subversion/config
+share/examples/subversion/servers
+@sample ${SYSCONFDIR}/subversion/servers
 share/examples/subversion/dumpprops.py
 share/examples/subversion/get-location-segments.py
 share/examples/subversion/getfile.py
