@@ -1,0 +1,2 @@
+Nokogiri is an HTML, XML, SAX and Reader parser written in Ruby.
+It has the ability to search documents via XPath or CSS3 selectors.
