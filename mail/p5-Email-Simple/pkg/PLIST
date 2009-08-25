@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/12 15:25:38 simon Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/08/25 17:15:34 jasper Exp $
 ${P5SITE}/Email/
 ${P5SITE}/Email/Simple/
 ${P5SITE}/Email/Simple.pm
 ${P5SITE}/Email/Simple/Header.pm
-${P5SITE}/Email/Simple/Headers.pm
 @man man/man3p/Email::Simple.3p
 @man man/man3p/Email::Simple::Header.3p
-@man man/man3p/Email::Simple::Headers.3p
