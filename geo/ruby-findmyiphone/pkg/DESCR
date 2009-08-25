@@ -1,0 +1,9 @@
+Ruby port of MobileMe screenscraper allowing message sending and
+retrieval of current location of an iPhone.
+
+>> require 'rubygems' ; require 'findmyiphone'
+>> i = FindMyIphone.new(username,password)
+>> i.locateMe
+>> i.sendMessage("Foo bar")
+
+
