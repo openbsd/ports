@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.17 2009/08/25 09:15:43 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.18 2009/08/25 09:23:03 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -382,7 +382,7 @@ sub create_view
 	my $name = "_$table";
 	my @l = map {$_->render_view($table) } @columns;
 	my @j = map {$_->render_join($table)} @columns;
-	my $v = "CREATE VIEW $name AS SELECT ".join(", ", @l). " FROM ".$table.join(' ', @j);
+	my $v = "CREATE VIEW $name AS SELECT ".join(", ", @l). " FROM ".$table.' '.join(' ', @j);
 	$self->db->do("DROP VIEW IF EXISTS $name");
 	print "$v\n" if $main::opt_v;
 	$self->db->do($v);
