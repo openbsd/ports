@@ -1,0 +1,14 @@
+$OpenBSD: patch-nest_attrs_h,v 1.1 2009/08/25 20:32:09 sthen Exp $
+
+Fixes bug related to AS2->AS4 conversion, from upstream repo.
+
+--- nest/attrs.h.orig	Tue Aug 25 20:56:30 2009
++++ nest/attrs.h	Tue Aug 25 20:56:53 2009
+@@ -28,6 +28,7 @@ int as_path_convert_to_old(struct adata *path, byte *d
+ int as_path_convert_to_new(struct adata *path, byte *dst, int req_as);
+ void as_path_format(struct adata *path, byte *buf, unsigned int size);
+ int as_path_getlen(struct adata *path);
++int as_path_getlen_int(struct adata *path, int bs);
+ int as_path_get_first(struct adata *path, u32 *orig_as);
+ int as_path_get_last(struct adata *path, u32 *last_as);
+ int as_path_is_member(struct adata *path, u32 as);
