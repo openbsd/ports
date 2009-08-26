@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2008/04/04 09:33:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/26 12:12:46 kili Exp $
 
 COMMENT=	cross-platform 3D audio API
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m
 
-MASTER_SITES=	http://www.openal.org/openal_webstf/downloads/
+MASTER_SITES=	http://openbsd.dead-parrot.de/distfiles/
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
