@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2009/08/09 08:35:07 bernd Exp $
+# $OpenBSD: Makefile,v 1.167 2009/08/26 16:53:46 sthen Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -20,6 +20,7 @@
      SUBDIR += libdbi-drivers
      SUBDIR += libpqxx
      SUBDIR += luasqlite3
+     SUBDIR += luma
      SUBDIR += maatkit
      SUBDIR += mdbtools/snapshot
      SUBDIR += mnemo
