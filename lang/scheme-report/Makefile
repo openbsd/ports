@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2009/08/26 10:53:10 kili Exp $
 
 COMMENT=	revised^5 report on scheme
 
@@ -11,7 +11,8 @@ EXTRACT_SUFX=	.txi
 EXTRACT_CASES=	*.txi) cp ${FULLDISTDIR}/$$archive ${WRKDIR};;
 WRKDIST=	${WRKDIR}
 
-MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scm/
+MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
+		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 
 do-build:
 	cd ${WRKDIR} && makeinfo --no-split r5rs.txi
