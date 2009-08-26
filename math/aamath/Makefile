@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/27 02:25:04 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2009/08/26 11:07:32 kili Exp $
 
 COMMENT=		ASCII art mathematics
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		http://openbsd.dead-parrot.de/distfiles/
 
 WANTLIB=		c m stdc++ termcap readline
 
