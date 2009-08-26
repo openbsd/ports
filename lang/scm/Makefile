@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/10 17:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2009/08/26 10:42:25 kili Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
@@ -18,7 +18,8 @@ EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://people.csail.mit.edu/jaffer/SCM
 
-MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/
+MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
+		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
