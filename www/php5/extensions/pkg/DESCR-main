@@ -3,8 +3,8 @@ now split into small sub-packages, designed to allow you to install
 modules independently of the main PHP engine.
 
 For example, to install the IMAP module, just pkg_add the
-php5-imap-${V}.tgz package and activate it using the
-'phpxs' command.
+php5-imap-${V}.tgz package and activate it by creating a symbolic
+link as described in the installation message.
 
 This package contains no files or dependencies and may be
 safely uninstalled.
