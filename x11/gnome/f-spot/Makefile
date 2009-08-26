@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2009/08/15 17:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/08/26 15:30:01 ajacoutot Exp $
 
-BROKEN=		segfault on startup
+BROKEN=			segfault on startup
 
 COMMENT=		personal photo management application for GNOME
 
-GNOME_VERSION=		0.6.0.0
+GNOME_VERSION=		0.6.1.1
 GNOME_PROJECT=		f-spot
+
 SHARED_LIBS +=	fspotjpegtran        0.0      # .0.0
 SHARED_LIBS +=	fspot                0.0      # .0.0
+
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.f-spot.org/
@@ -56,15 +58,14 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
-DLLMAP_FILES=	lib/Tao/Tao.OpenGl.Glu/Tao.OpenGl.Glu.dll.config \
-		lib/Tao/Tao.OpenGl.ExtensionLoader/Tao.OpenGl.ExtensionLoader.dll.config \
-		lib/Tao/Tao.OpenGl/Tao.OpenGl.dll.config \
-		lib/libgphoto2-sharp/libgphoto2-sharp.dll.config \
+DLLMAP_FILES=	lib/libgphoto2-sharp/libgphoto2-sharp.dll.config \
 		lib/dbus-sharp-glib/NDesk.DBus.GLib.dll.config \
-		src/FSpot.Utils.dll.config \
-		src/f-spot.exe.config.in \
-		src/Cms.dll.config.in \
+		lib/gtk-sharp-beans/gtk-sharp-beans.dll.config \
 		lib/gio-sharp/gio/gio-sharp.dll.config \
-		lib/mono-addins/Mono.Addins/Mono.Addins.dll.config
+		lib/mono-addins/Mono.Addins/Mono.Addins.dll.config \
+		src/FSpot.Widgets.dll.config \
+		src/FSpot.Utils.dll.config \
+		src/f-spot.exe.config \
+		src/Cms.dll.config
 
 .include <bsd.port.mk>
