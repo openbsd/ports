@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/10 06:34:56 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2009/08/26 19:30:19 sthen Exp $
 
 COMMENT=		full-featured text WWW browser
-DISTNAME=		elinks-0.11.6
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		elinks-0.11.7
 CATEGORIES=		www
 MASTER_SITES=		http://elinks.cz/download/
 
 HOMEPAGE=		http://elinks.cz/
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=		Edd Barrett <vext01@gmail.com>
 
 # GPL, v2 only
 PERMIT_PACKAGE_CDROM=	Yes
@@ -51,7 +50,7 @@ CONFIGURE_ARGS+=	--without-x
 .else
 CONFIGURE_ARGS+=	--with-x
 USE_X11=		Yes
-WANTLIB+=		X11 pthread-stubs xcb
+WANTLIB+=		X11
 .endif
 
 .include <bsd.port.mk>
