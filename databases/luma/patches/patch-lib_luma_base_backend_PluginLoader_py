@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_luma_base_backend_PluginLoader_py,v 1.1.1.1 2009/08/26 16:53:21 sthen Exp $
+--- lib/luma/base/backend/PluginLoader.py.orig	Wed Aug 26 14:54:17 2009
++++ lib/luma/base/backend/PluginLoader.py	Wed Aug 26 14:55:33 2009
+@@ -45,7 +45,9 @@ class PluginLoader(object):
+         self.PLUGINS = {}
+         
+         # get the base diretory of the plugins as a string
+-        self.pluginBaseDir = os.path.join(environment.lumaInstallationPrefix,  "lib", "luma", "plugins")
++        self.pluginBaseDir = os.path.join(environment.lumaInstallationPrefix,
++                                        "lib", "python" + sys.version[:3],
++                                        "site-packages", "luma", "plugins")
+         
+         self.pluginDirList = []
+         self.pluginDirList = self.getPluginList()
