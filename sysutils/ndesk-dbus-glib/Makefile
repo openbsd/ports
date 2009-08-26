@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2008/11/22 19:29:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/26 08:11:08 ajacoutot Exp $
 
 COMMENT=	C\# implementation of dbus - GLib integration
 DISTNAME=	ndesk-dbus-glib-0.4.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	sysutils
 
 MASTER_SITES=	http://www.ndesk.org/archive/ndesk-dbus/
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/mono
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::lang/mono \
 		::sysutils/ndesk-dbus
-RUN_DEPENDS=	::lang/mono
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
