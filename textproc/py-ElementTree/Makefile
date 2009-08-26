@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/03/23 21:45:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/08/26 00:09:12 sthen Exp $
 
 COMMENT=	pure-Python implementation of the ElementTree API
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	http://effbot.org/downloads/
+MASTER_SITES=	http://effbot.org/media/downloads/
 MODULES=	lang/python
 MODPY_VERSION=	2.4
 

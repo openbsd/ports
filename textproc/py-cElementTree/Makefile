@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/28 18:12:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/26 00:09:13 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	http://effbot.org/downloads/
+MASTER_SITES=	http://effbot.org/media/downloads/
 
 MODULES=	lang/python
 MODPY_VERSION=	2.4
