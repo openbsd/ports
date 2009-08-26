@@ -1,6 +1,6 @@
-$OpenBSD: patch-fig2dev_Imakefile,v 1.6 2008/08/28 19:02:55 sthen Exp $
---- fig2dev/Imakefile.orig	Thu Oct 27 17:56:02 2005
-+++ fig2dev/Imakefile	Wed Aug 20 13:20:52 2008
+$OpenBSD: patch-fig2dev_Imakefile,v 1.7 2009/08/26 13:40:54 sthen Exp $
+--- fig2dev/Imakefile.pat.orig	Fri Feb  6 18:42:00 2009
++++ fig2dev/Imakefile	Wed Aug 26 14:30:32 2009
 @@ -34,7 +34,7 @@ XCOMM ******
  XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
  XCOMM and installed xfig.

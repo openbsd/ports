@@ -1,6 +1,6 @@
-$OpenBSD: patch-transfig_sys_c,v 1.1 2003/04/04 14:28:36 naddy Exp $
---- transfig/sys.c.orig	Thu Apr  3 01:43:14 2003
-+++ transfig/sys.c	Thu Apr  3 01:43:45 2003
+$OpenBSD: patch-transfig_sys_c,v 1.2 2009/08/26 13:40:54 sthen Exp $
+--- transfig/sys.c.pat.orig	Wed Dec 18 21:34:08 2002
++++ transfig/sys.c	Wed Aug 26 14:30:32 2009
 @@ -15,6 +15,7 @@
   */
  
