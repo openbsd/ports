@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/07/08 11:32:57 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/08/26 08:43:33 landry Exp $
 @conflict thunar-thumbnailers-plugin-*
 libexec/dvi-thumbnailer
 libexec/eps-thumbnailer
@@ -8,7 +8,9 @@ libexec/odf-thumbnailer
 libexec/ogg-thumbnailer
 libexec/pdf-thumbnailer
 libexec/ps-thumbnailer
+libexec/psd-thumbnailer
 libexec/svgz-thumbnailer
+libexec/xcf-thumbnailer
 share/mime/packages/thunar-thumbnailers.xml
 share/thumbnailers/dvi-thumbnailer.desktop
 share/thumbnailers/eps-thumbnailer.desktop
@@ -18,6 +20,8 @@ share/thumbnailers/odf-thumbnailer.desktop
 share/thumbnailers/ogg-thumbnailer.desktop
 share/thumbnailers/pdf-thumbnailer.desktop
 share/thumbnailers/ps-thumbnailer.desktop
+share/thumbnailers/psd-thumbnailer.desktop
 share/thumbnailers/svgz-thumbnailer.desktop
+share/thumbnailers/xcf-thumbnailer.desktop
 @exec %D/bin/update-mime-database %D/share/mime/
 @unexec %D/bin/update-mime-database %D/share/mime/
