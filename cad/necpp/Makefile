@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:36:57 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/26 13:22:20 kili Exp $
 
 COMMENT=	NEC2++ antenna simulator
 
 DISTNAME=	necpp-1.2.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=    	cad hamradio
 
-HOMEPAGE=	http://www.physics.otago.ac.nz/research/electronics/nec/
-MASTER_SITES=	${HOMEPAGE}
+HOMEPAGE=	http://elec.otago.ac.nz/w/index.php/Necpp
+MASTER_SITES=	http://openbsd.dead-parrot.de/distfiles/
 
 MAINTAINER=	Jason Wright <jason@openbsd.org>
 
