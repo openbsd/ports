@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/07/15 08:25:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2009/08/26 00:38:32 sthen Exp $
 # $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
 
 COMMENT =		quickly ping N hosts w/o flooding the network
@@ -20,7 +20,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		http://fping.sourceforge.net/download/
+# upstream has no version number in filename
+#MASTER_SITES =		http://fping.sourceforge.net/download/
+MASTER_SITES =		http://spacehopper.org/mirrors/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--bindir=${PREFIX}/sbin
