@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/04/25 13:54:27 deanna Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/08/26 00:15:26 sthen Exp $
 @mode g+s
 @group games
-bin/xonix
+@bin bin/xonix
 @mode
 @group
 lib/X11/app-defaults/Xonix
