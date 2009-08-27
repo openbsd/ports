@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2009/08/27 01:09:29 jolan Exp $
+@lib lib/libffmpegthumbnailer.so.${LIBffmpegthumbnailer_VERSION}
