@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/10 06:34:08 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2009/08/27 11:11:04 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
 COMMENT-gimp=		Gimp print plug-in
 
-V=			5.2.3
+V=			5.2.4
 DISTNAME=		gutenprint-${V}
-PKGNAME-main=		${DISTNAME}p1
-PKGNAME-foomatic=	foomatic-db-${DISTNAME}p0
-PKGNAME-gimp=		gutenprint-gimp-${V}p1
+PKGNAME-main=		${DISTNAME}
+PKGNAME-foomatic=	foomatic-db-${DISTNAME}
+PKGNAME-gimp=		gutenprint-gimp-${V}
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -87,6 +87,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-cups=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
+			LIBS="-liconv -lintl" \
 			am_cv_prog_tar_ustar=plaintar
 
 .for i in DVIPS DB2PDF DVIPDF DB2PS DB2HTML DOXYGEN TEXI2HTML CONVERT

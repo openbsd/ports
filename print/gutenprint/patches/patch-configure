@@ -1,7 +1,21 @@
-$OpenBSD: patch-configure,v 1.2 2009/03/23 17:17:33 ajacoutot Exp $
---- configure.orig	Mon Dec 22 03:50:32 2008
-+++ configure	Sun Mar 22 12:44:50 2009
-@@ -26682,7 +26682,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+$OpenBSD: patch-configure,v 1.3 2009/08/27 11:11:04 ajacoutot Exp $
+--- configure.orig	Sun Jul 26 22:36:34 2009
++++ configure	Thu Aug 27 09:52:57 2009
+@@ -12660,12 +12660,11 @@ cat >>conftest.$ac_ext <<_ACEOF
+ #include <libintl.h>
+ $gt_revision_test_code
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
+ int
+ main ()
+ {
+ bindtextdomain ("", "");
+-return * gettext ("")$gt_expression_test_code + _nl_msg_cat_cntr + *_nl_domain_bindings
++return * gettext ("")$gt_expression_test_code + _nl_msg_cat_cntr
+   ;
+   return 0;
+ }
+@@ -18101,7 +18100,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  
    else
  
@@ -9,18 +23,4 @@ $OpenBSD: patch-configure,v 1.2 2009/03/23 17:17:33 ajacoutot Exp $
 +  for stp_ac_arg in '' ; do
      stp_ac_save_CFLAGS="${CFLAGS}"
  
-   { echo "$as_me:$LINENO: checking if ${CC} supports ${stp_ac_arg}" >&5
-@@ -32247,10 +32247,10 @@ XGETTEXT!$XGETTEXT$ac_delim
- XGETTEXT_015!$XGETTEXT_015$ac_delim
- MSGMERGE!$MSGMERGE$ac_delim
- INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
--LIBICONV!$LIBICONV$ac_delim
-+LIBICONV!$LTLIBICONV$ac_delim
- LTLIBICONV!$LTLIBICONV$ac_delim
--INTLLIBS!$INTLLIBS$ac_delim
--LIBINTL!$LIBINTL$ac_delim
-+INTLLIBS!$LTLIBINTL$ac_delim
-+LIBINTL!$LTLIBINTL$ac_delim
- LTLIBINTL!$LTLIBINTL$ac_delim
- POSUB!$POSUB$ac_delim
- USE_NLS_TRUE!$USE_NLS_TRUE$ac_delim
+   { $as_echo "$as_me:$LINENO: checking if ${CC} supports ${stp_ac_arg}" >&5

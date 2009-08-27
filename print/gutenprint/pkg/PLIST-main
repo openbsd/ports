@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/03/23 17:17:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/08/27 11:11:04 ajacoutot Exp $
 %%SHARED%%
 @bin bin/escputil
 @bin bin/ijsgutenprint.${MAJOR_V}
@@ -98,6 +98,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inks/f360_photo.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/f360_photo7_japan.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/f360_ultrachrome.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/f360_ultrachrome_k3.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inks/f360_ultrachrome_k3v.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/nx100.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/photo_gen0.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/photo_gen1.xml
@@ -129,11 +130,13 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/default.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/pro_roll_feed.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/r1800.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/r2400.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/r2880.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/rx680.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/rx700.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/spro5000.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/standard_roll_feed.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/
+share/gutenprint/${MAJOR_V}/xml/escp2/media/artisan.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/b500.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/c120.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/c64.xml
@@ -150,6 +153,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/media/f360_photo.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/f360_photo7_japan.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/f360_ultrachrome.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/f360_ultrachrome_k3.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/media/f360_ultrachrome_k3v.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/nx100.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/photo_gen0.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/photo_gen1.xml
@@ -272,6 +276,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_94.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_95.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_96.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_97.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_98.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/p1_5.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/picturemate.xml
@@ -348,6 +353,10 @@ share/locale/pt/
 share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/gutenprint.mo
 share/locale/pt/gutenprint_pt.po
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
+share/locale/ru/LC_MESSAGES/gutenprint.mo
+share/locale/ru/gutenprint_ru.po
 share/locale/sk/
 share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/gutenprint.mo
