@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2009/08/11 08:40:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2009/08/27 19:44:38 ajacoutot Exp $
 
 COMMENT = 		KDE personal information applications
 COMMENT-kpilot =	KDE interface to sync with Palm Pilot
 CATEGORIES =		x11 x11/kde productivity
 VERSION =		3.5.10
 DISTNAME =		kdepim-${VERSION}
-PKGNAME =		${DISTNAME}p1
+PKGNAME =		${DISTNAME}p2
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2
@@ -63,12 +63,14 @@ SHARED_LIBS +=	knotesscalix         0.0      # .0.0
 SHARED_LIBS +=	kpinterfaces         2.0      # .1.0
 SHARED_LIBS +=	kontact              2.0      # .1.0
 
+MODULES =	x11/kde devel/gettext
+
 LIB_DEPENDS +=	kdecore.>=6,artskde,kmedia2_idl,knewstuff,DCOP,kabc,kabc_file,kimproxy,kdefakes,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,kutils,kwalletclient,vcard::x11/kde/libs3
 
 WANTLIB =	Xss audiofile stdc++ sndio X11 jpeg util m \
 		vorbisfile gmodule-2.0 gthread-2.0 \
-		pcreposix intl vorbisenc qui SM pthread \
-		c artsflow ogg mcop png iconv Xext \
+		pcreposix vorbisenc qui SM pthread \
+		c artsflow ogg mcop png Xext \
 		artsflow_idl art_lgpl_2 mad qtmcop \
 		glib-2.0 ICE soundserver_idl Xrender \
 		gpg-error vorbis pcre z sasl2 idn \

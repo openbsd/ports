@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2009/08/11 08:40:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2009/08/27 19:44:38 ajacoutot Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-plugins =	Konqueror nsplugins, essentially native JDK
@@ -6,8 +6,8 @@ COMMENT-samba =		K Desktop Environment, samba support
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdebase-${VERSION}
-PKGNAME-main =		${DISTNAME}p3
-PKGNAME-samba =		kdesamba-${VERSION}p0
+PKGNAME-main =		${DISTNAME}p4
+PKGNAME-samba =		kdesamba-${VERSION}p1
 MODKDE_VERSION ?=	3.5.8
 SHARED_LIBS +=	konq                 7.0      # .6.0
 SHARED_LIBS +=	kateutils            1.0      # .0.0
@@ -26,9 +26,11 @@ SHARED_LIBS +=	kfontinst            1.0      # .0.0
 MULTI_PACKAGES =	-main -samba
 FLAVORS =		debug
 
+MODULES =	x11/kde devel/gettext
+
 LIB_DEPENDS =	kdecore.>=6,DCOP,kio,kdeui,kdefx,kdesu,kwalletclient::x11/kde/libs3
-WANTLIB =	ICE Xrender SM util X11 m z png jpeg art_lgpl_2 Xext idn iconv \
-		pthread-stubs xcb fam rpcsvc intl stdc++ Xdmcp Xau 
+WANTLIB =	ICE Xrender SM util X11 m z png jpeg art_lgpl_2 Xext idn \
+		pthread-stubs xcb fam rpcsvc stdc++ Xdmcp Xau 
 
 RUN_DEPENDS-main =${RUN_DEPENDS} \
 		:desktop-file-utils-*:devel/desktop-file-utils

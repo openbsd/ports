@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2009/08/11 08:40:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2009/08/27 19:44:38 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, aRTs
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		arts-1.5.10
 MODKDE_VERSION ?=	3.5.8
-PKGNAME =		${DISTNAME}p1
+PKGNAME =		${DISTNAME}p2
 
 SHARED_LIBS +=	mcop                 2.0      # .1.0
 SHARED_LIBS +=	artsflow_idl         2.0      # .1.0
@@ -24,6 +24,8 @@ SHARED_LIBS +=	gmcop                2.0      # .1.0
 SHARED_LIBS +=	qtmcop               2.0      # .1.0
 SHARED_LIBS +=	x11globalcomm        2.0      # .1.0
 
+MODULES =	x11/kde devel/gettext
+
 LIB_DEPENDS = 	audiofile::devel/libaudiofile \
 		glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2 \
 		vorbis,vorbisfile::audio/libvorbis \
@@ -37,7 +39,7 @@ CONFIGURE_ARGS +=	${ENABLE_SHARED} \
 			--without-jack \
 			--without-esd
 
-WANTLIB =	ICE SM X11 Xext c iconv intl jpeg m png pthread \
+WANTLIB =	ICE SM X11 Xext c jpeg m png pthread \
 		sndio stdc++ vorbisenc z Xau Xdmcp pcre \
 		pthread-stubs xcb
 

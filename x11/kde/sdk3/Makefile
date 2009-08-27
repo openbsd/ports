@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2009/08/11 08:40:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2009/08/27 19:44:38 ajacoutot Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -6,8 +6,8 @@ CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
-PKGNAME-main =		${DISTNAME}p1
-PKGNAME-svn =		kdesvn-${VERSION}p3
+PKGNAME-main =		${DISTNAME}p2
+PKGNAME-svn =		kdesvn-${VERSION}p4
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -17,6 +17,8 @@ SHARED_LIBS +=	kompareinterface     1.0      # .0.0
 SHARED_LIBS +=	kspy                 4.0      # .3.0
 SHARED_LIBS +=	kunittestgui         1.0      # .0.0
 MULTI_PACKAGES =	-main -svn
+
+MODULES =		x11/kde devel/gettext
 
 RUN_DEPENDS-main +=	:desktop-file-utils-*:devel/desktop-file-utils
 
@@ -32,8 +34,8 @@ FLAVORS =		debug
 SEPARATE_BUILD =	flavored
 
 WANTLIB	=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg m \
-		png pthread stdc++ util z iconv idn \
-		Xau Xdmcp fam rpcsvc intl pthread-stubs xcb
+		png pthread stdc++ util z idn \
+		Xau Xdmcp fam rpcsvc pthread-stubs xcb
 
 WANTLIB-main =	${WANTLIB} \
 		kabc kdeprint khtml kutils vcard kresources kparts kspell kjs \

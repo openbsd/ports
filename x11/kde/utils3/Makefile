@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.59 2009/08/11 08:40:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2009/08/27 19:44:39 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeutils-${VERSION}
-PKGNAME =		${DISTNAME}p1
+PKGNAME =		${DISTNAME}p2
 MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	khexeditcommon       1.0      # .0.0
 SHARED_LIBS +=	kcmlaptop            1.0      # .0.0
 SHARED_LIBS +=	kmilo                2.0      # .1.0
 SHARED_LIBS +=	kregexpeditorcommon  2.0      # .1.0
 SHARED_LIBS +=	ksimcore             2.0      # .1.0
+
+MODULES =	x11/kde devel/gettext
 
 RUN_DEPENDS +=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS =	DCOP,kabc,kdecore.>=6,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
@@ -24,7 +26,7 @@ LIB_DEPENDS =	DCOP,kabc,kdecore.>=6,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kresou
 SEPARATE_BUILD =	flavored
 
 WANTLIB =	ICE SM X11 Xext Xrender Xtst art_lgpl_2 c crypto jpeg m \
-		png pthread stdc++ util z gmodule intl iconv Xi kvm glib \
+		png pthread stdc++ util z gmodule Xi kvm glib \
 		idn Xau Xdmcp fam rpcsvc Xss pthread-stubs xcb
 
 

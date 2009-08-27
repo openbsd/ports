@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2009/08/11 08:40:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2009/08/27 19:44:38 ajacoutot Exp $
 
 COMMENT=		office suite for KDE
 
@@ -8,7 +8,7 @@ VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 
 DISTNAME=	koffice-${VERSION}
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 
 MASTER_SITES0=		ftp://ftp.kde.org/pub/kde/security_patches/
 PATCHFILES=		koffice-xpdf-CVE-2007-3387.diff:0 \
@@ -76,6 +76,8 @@ SEPARATE_BUILD=	flavored
 MODKDE_VERSION=	3.5.7
 AUTOCONF_VERSION=2.61
 
+MODULES =	x11/kde devel/gettext
+
 RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kspell,kabc,kjs,kresources,ktexteditor,kutils,kwalletclient,vcard,kspell2,knewstuff,kmdi::x11/kde/libs3 \
 		python2.5:python->=2.5,<2.6:lang/python/2.5 \
@@ -94,7 +96,7 @@ LIB_DEPENDS=	kdecore.>=4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kpart
 
 WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
 		freetype glib-2.0 gmodule-2.0 gobject-2.0 \
-		gsf-1 gthread-2.0 iconv intl jasper jpeg kmedia2_idl lcms \
+		gsf-1 gthread-2.0 jasper jpeg kmedia2_idl lcms \
 		m mad mcop ogg pcre pcreposix png pthread qtmcop sndio \
 		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
 		xml2 xslt z Xt termcap Xi fontconfig crypto readline ssl \
