@@ -1,0 +1,12 @@
+$OpenBSD: patch-sqlitedbbrowser_pro,v 1.1 2009/08/28 07:57:03 espie Exp $
+--- sqlitedbbrowser.pro.orig	Fri Aug 28 09:42:53 2009
++++ sqlitedbbrowser.pro	Fri Aug 28 09:42:57 2009
+@@ -1,7 +1,6 @@
+ TEMPLATE    =	subdirs
+ 
+-SUBDIRS	=	sqlitebrowser/sqlite_source \
+-		sqlitebrowser
++SUBDIRS	=	sqlitebrowser
+ 
+ 
+ 

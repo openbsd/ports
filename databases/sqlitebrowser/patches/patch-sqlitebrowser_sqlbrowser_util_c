@@ -1,0 +1,56 @@
+$OpenBSD: patch-sqlitebrowser_sqlbrowser_util_c,v 1.1 2009/08/28 07:57:03 espie Exp $
+--- sqlitebrowser/sqlbrowser_util.c.orig	Fri Aug 28 09:51:37 2009
++++ sqlitebrowser/sqlbrowser_util.c	Fri Aug 28 09:54:10 2009
+@@ -53,6 +53,34 @@ static void output_quoted_string(FILE *out, const char
+   }
+ }
+ 
++
++int myIsNumber(const char *z, int *realnum, u8 enc){
++  int incr = (enc==SQLITE_UTF8?1:2);
++  if( enc==SQLITE_UTF16BE ) z++;
++  if( *z=='-' || *z=='+' ) z += incr;
++  if( !isdigit(*(u8*)z) ){
++    return 0;
++  }
++  z += incr;
++  if( realnum ) *realnum = 0;
++  while( isdigit(*(u8*)z) ){ z += incr; }
++  if( *z=='.' ){
++    z += incr;
++    if( !isdigit(*(u8*)z) ) return 0;
++    while( isdigit(*(u8*)z) ){ z += incr; }
++    if( realnum ) *realnum = 1;
++  }
++  if( *z=='e' || *z=='E' ){
++    z += incr;
++    if( *z=='+' || *z=='-' ) z += incr;
++    if( !isdigit(*(u8*)z) ) return 0;
++    while( isdigit(*(u8*)z) ){ z += incr; }
++    if( realnum ) *realnum = 1;
++  }
++  return *z==0;
++}
++
++
+ /*
+ ** Output the given string with characters that are special to
+ ** HTML escaped.
+@@ -193,7 +221,7 @@ static int callback(void *pArg, int nArg, char **azArg
+         char *zSep = i>0 ? ",": "";
+         if( azArg[i]==0 ){
+           fprintf(p->out,"%sNULL",zSep);
+-        }else if( sqlite3IsNumber(azArg[i], NULL, SQLITE_UTF8) ){
++        }else if( myIsNumber(azArg[i], NULL, SQLITE_UTF8) ){
+           fprintf(p->out,"%s%s",zSep, azArg[i]);
+         }else{
+           if( zSep[0] ) fprintf(p->out,"%s",zSep);
+@@ -351,7 +379,7 @@ static int _all_whitespace(const char *z){
+ static int _is_command_terminator(const char *zLine){
+   while( isspace(*zLine) ){ zLine++; };
+   if( zLine[0]=='/' && _all_whitespace(&zLine[1]) ) return 1;  /* Oracle */
+-  if( sqlite3StrNICmp(zLine,"go",2)==0 && _all_whitespace(&zLine[2]) ){
++  if( strncasecmp(zLine,"go",2)==0 && _all_whitespace(&zLine[2]) ){
+     return 1;  /* SQL Server */
+   }
+   return 0;
