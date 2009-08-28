@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2009/08/28 01:02:20 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	cross-platform interactive fiction player
 
-DISTNAME =	gargoyle-2008-12-25-sources
-PKGNAME =	gargoyle-20081225p2
-
-# not a libtool port; any additional libs will need further changes.
-SHARED_LIBS =	garglk 0.0
+DISTNAME =	gargoyle-2009-08-25-sources
+PKGNAME =	gargoyle-20090825
 
 CATEGORIES =	games x11
 
@@ -18,12 +15,11 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # Various. Gargoyle is a frontend for various other included
 # programs under differing licenses; many GPL but some others.
-# Refer to ${WRKSRC}/License.txt. terps/alan{2,3} and the
-# Gargoyle Glk library lack a clear license.
-PERMIT_PACKAGE_CDROM =	missing a few licenses
-PERMIT_PACKAGE_FTP =	missing a few licenses
-PERMIT_DISTFILES_CDROM =missing a few licenses
-PERMIT_DISTFILES_FTP =	missing a few licenses
+# Refer to ${WRKSRC}/License.txt.
+PERMIT_PACKAGE_CDROM =	noncommercial only for some parts
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =noncommercial only for some parts
+PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender c cairo expat fontconfig \
@@ -57,34 +53,27 @@ INSTALL_TARGET =	install install_man
 JAMDEBUG =	-d x	# display command-lines
 JAMDEBUG +=	-q	# die quickly on build failure
 MAKE_ENV +=		CC=${CC} CXX=${CXX}
+DESTDIRNAME =		DESTPREFIX
 
 post-extract:
 	find ${WRKSRC} -name '*.orig' -print0 | xargs -0 rm
-
-# SUBST_CMD replaces $\ with $ which breaks this file.
-pre-configure:
-	perl -pi -e s,%PREFIX%,${PREFIX},g ${WRKSRC}/garglk/launcher.sh
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam ${JAMDEBUG}
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${ALL_FAKE_FLAGS} jam \
-		${JAMDEBUG} install
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${ALL_FAKE_FLAGS} \
+		DESTDIR=${PREFIX}/libexec/gargoyle jam ${JAMDEBUG} install
 
 post-install:
-	chmod -R og+rw ${WRKSRC}/build/dist
-	${INSTALL_PROGRAM_DIR} ${PREFIX}/libexec/gargoyle
-	for i in `find ${WRKSRC}/build/dist -type f ! \( -name "lib*.so*" \
-	    -or -name gargoyle \)`; \
-	    do ${INSTALL_PROGRAM} $$i ${PREFIX}/libexec/gargoyle; done
-	${INSTALL_DATA} ${WRKSRC}/build/dist/libgarglk.so* ${PREFIX}/lib
-	${INSTALL_SCRIPT} ${WRKSRC}/build/dist/gargoyle ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gargoyle
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gargoyle
+	${INSTALL_SCRIPT} ${WRKSRC}/build/openbsd.release/garglk/gargoyle \
+	    ${PREFIX}/libexec/gargoyle/
+	ln -s ${TRUEPREFIX}/libexec/gargoyle/gargoyle ${PREFIX}/bin/
 .for i in License.txt licenses/* garglk/*txt
 	cd ${WRKSRC} && ${INSTALL_DATA} $i ${PREFIX}/share/doc/gargoyle
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gargoyle
 	${INSTALL_DATA} ${WRKSRC}/garglk/garglk.ini \
 	    ${PREFIX}/share/examples/gargoyle
 
