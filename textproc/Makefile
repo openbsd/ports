@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.274 2009/08/25 17:08:03 avsm Exp $
+# $OpenBSD: Makefile,v 1.275 2009/08/29 13:36:24 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -129,6 +129,7 @@
      SUBDIR += p5-Syntax-Highlight-Perl
      SUBDIR += p5-Template
      SUBDIR += p5-Template-Plugin-Class
+     SUBDIR += p5-Template-Plugin-GD
      SUBDIR += p5-Template-Plugin-Markdown
      SUBDIR += p5-Template-Plugin-Number-Format
      SUBDIR += p5-Template-Provider-Encoding
