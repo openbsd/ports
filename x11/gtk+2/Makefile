@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2009/08/29 20:17:49 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -6,11 +6,13 @@ COMMENT-main=			multi-platform graphical toolkit
 COMMENT-docs=           	gtk+2 documentation
 COMMENT-cups=			gtk+2 CUPS print backend
 
-VERSION=			2.16.5
+VERSION=			2.16.6
 DISTNAME=			gtk+-${VERSION}
-PKGNAME-main=			gtk+2-${VERSION}p0
+
+PKGNAME-main=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
-PKGNAME-cups=			gtk+2-cups-${VERSION}p0
+PKGNAME-cups=			gtk+2-cups-${VERSION}
+
 CATEGORIES=			x11 devel
 
 SHARED_LIBS+=	gdk_pixbuf-2.0		1401.0 #.1600.2
