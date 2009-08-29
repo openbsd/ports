@@ -1,0 +1,204 @@
+--- icb.c.orig	2007-05-05 12:39:23.000000000 -0400
++++ icb.c	2009-08-12 12:22:00.000000000 -0400
+@@ -30,6 +30,12 @@
+ 
+ #include "icb.h"
+ 
++/*
++ * Keep alives will be sent after KEEPALIVE_TIMEOUT seconds of
++ * inactivity.
++ */
++#define KEEPALIVE_TIMEOUT 150
++
+ static char  icb_input_buf[ICB_BUFSIZE+1];
+ static char *icb_input_pos = icb_input_buf;
+ static int   icb_input_fill = 0;
+@@ -96,8 +102,8 @@ icb_dump_packet(IcbPacket *packet)
+ 	purple_debug_info("icb", "length:  %d\n", packet->length);
+ 	purple_debug_info("icb", "command: %c\n", packet->command);
+ 	for (i = 0; i < packet->nof; i++) {
+-		purple_debug_info("icb", "field %d: %d \"%s\"\n", i,
+-		                strlen(packet->fields[i]), packet->fields[i]);
++		purple_debug_info("icb", "field %d: %ld \"%s\"\n", i,
++		                (long)strlen(packet->fields[i]), packet->fields[i]);
+ 	} 
+ 
+ 	purple_debug_info("icb", "<- icb_dump_packet\n");
+@@ -143,14 +149,14 @@ IcbPacket *
+ icb_parse_buf()
+ {
+ 	char          *separator, *tmpbuf;
+-	unsigned char *size;
++	unsigned char size;
+ 	IcbPacket     *packet = NULL;
+ 
+ 	purple_debug_info("icb", "-> icb_parse_buf\n");
+ 
+ 	/* There has to be at least two chars in buffer: size and command */
+ 	if (icb_input_fill < 2) {
+-		purple_debug_info("icb", "Buffer is to short.  Only %d char(s)\n", icb_input_buf);
++		purple_debug_info("icb", "Buffer is to short.  Only %d char(s)\n", icb_input_fill);
+ 		return NULL;
+ 	}
+ 
+@@ -172,12 +178,12 @@ icb_parse_buf()
+ 		return NULL;
+ 	}
+ 
+-	size = icb_input_pos; /* Size of the package */
++	size = *(unsigned char *)icb_input_pos; /* Size of the package */
+ 	tmpbuf = icb_input_pos+1; /* Command sent in packet */
+ 
+ 	packet->nof = 0;
+ 	packet->fields = (char **) calloc(1, ICB_MAX_NO_FIELDS*sizeof(char *));
+-	packet->length = *size;
++	packet->length = size;
+ 	packet->command = *tmpbuf++;
+ 
+ 	separator = tmpbuf;
+@@ -220,6 +226,8 @@ icb_login_cb(gpointer data, gint source,
+ 
+ 	gc->inpa = purple_input_add(icb->fd, PURPLE_INPUT_READ, icb_input_cb, gc);
+ 
++	icb->sr_time = time(NULL);
++
+ 	purple_debug_info("icb", "<- icb_login_cb\n");
+ }
+ 
+@@ -263,18 +271,21 @@ icb_send(IcbSession *icb, char command, 
+ 	va_start(arg, params);
+ 	while (params-- > 0) {
+ 		field = va_arg(arg, const char *);
+-		fieldlen = strlen(field);
+-
+-		// -1 to leave space for NUL at the end of buffer
+-		if (fieldlen + size > ICB_PACKET_SIZE -1) {
+-			purple_debug_info("icb", "<- icb_send: too much data to write");
+-			va_end(arg);
+-			return -1;
+-		}
++		if (field != NULL) {
++			fieldlen = strlen(field);
+ 
+-		// field data
+-		strncpy(&packet[size], field, fieldlen);
+-		size += fieldlen;
++			// -1 to leave space for NUL at the end of buffer
++			if (fieldlen + size > ICB_PACKET_SIZE -1) {
++				purple_debug_info("icb", "<- icb_send: too much data to write");
++				va_end(arg);
++				return -1;
++			}
++
++			// field data
++			strncpy(&packet[size], field, fieldlen);
++			size += fieldlen;
++		} else
++			purple_debug_info("icb", "Skipping NULL param");
+ 
+ 		// separator
+ 		if (params != 0) {
+@@ -294,7 +305,8 @@ icb_send(IcbSession *icb, char command, 
+ 		purple_debug_info("icb", "write(): %d, %s\n", errno, strerror(errno));
+ 		purple_connection_error(purple_account_get_connection(icb->account),
+ 			_("Server has disconnected"));
+-	}
++	} else
++		icb->sr_time = time(NULL);
+ 
+ 	purple_debug_info("icb", "<- icb_send %d byte(s)\n", ret);
+ 
+@@ -403,7 +415,7 @@ icb_input_cb(gpointer data, gint source,
+ 
+ 	purple_debug_misc("icb", "-> icb_input_cb: fd=%d\n", icb->fd);
+ 
+-	purple_debug_misc("icb", "icb_input_pos - icb_input_buf=%d\n", icb_input_pos - icb_input_buf);
++	purple_debug_misc("icb", "icb_input_pos - icb_input_buf=%ld\n", icb_input_pos - icb_input_buf);
+ 	purple_debug_misc("icb", "icb_input_fill=%d\n", icb_input_fill);
+ 
+ 	if (icb->fd < 0) {
+@@ -427,6 +439,7 @@ icb_input_cb(gpointer data, gint source,
+ 	purple_debug_info("icb", "Now buffer is filled with %d char(s)\n", icb_input_fill);
+ 
+ 	while (icb_input_fill > 0 && (packet = icb_parse_buf()) != NULL) {
++		icb->sr_time = time(NULL);
+ 		icb_dump_packet(packet);
+ 		switch (packet->command) {
+ 			case ICB_CMD_PROTO_VERSION:
+@@ -826,6 +839,9 @@ moderator_just_left:
+ 					}
+ #endif
+ 				}
++			case ICB_CMD_PONG:
++				purple_debug_info("icb", "pong msg\n");
++				break;
+ 			default:
+ 				break;
+ 		}
+@@ -879,7 +895,7 @@ icb_send_chat(PurpleConnection *gc, int 
+ 	purple_debug_info("icb", "icb_send_chat\n");
+ 	purple_debug_info("icb", "id=%d, len=%d, msg=\"%s\"\n", id, len, message);
+ 
+-	tmp = purple_unescape_html(message);
++	tmp = purple_markup_strip_html(message);
+ 	
+ 	/* Split <message> into smaller chunks, as packed size is limited to
+ 	 * ICB_MAX_DATA_SIZE bytes.
+@@ -918,7 +934,7 @@ icb_send_im(PurpleConnection *gc, const 
+ 	purple_debug_info("icb", "icb_send_im\n");
+ 	purple_debug_info("icb", "who=\"%s\", len=%d, msg=\"%s\"\n", who, msglen, msg);
+ 
+-	tmp = purple_unescape_html(msg);
++	tmp = purple_markup_strip_html(msg);
+ 
+ 	/* max_msg_size is smaller than ICB_MAX_DATA_SIZE as IM packet looks like this:
+ 	 *   -gm,username message sent by user*
+@@ -989,10 +1005,17 @@ icb_join_chat(PurpleConnection *gc, GHas
+ 
+ 	group = g_hash_table_lookup(data, "group");
+ 
+-	purple_debug_info("icb", "group %s\n", group);
+-
+-	icb_send(icb, ICB_CMD_COMMAND, 2, "g", group);
++	/*
++	 * auto-reconnect calls icb_join_chat when group is not in the hash
++	 * table. ignore these calls gracefully instead of segfaulting in
++	 * icb_send.
++         */
++	if (group != NULL)  {
++		purple_debug_info("icb", "group %s\n", group);
+ 
++		icb_send(icb, ICB_CMD_COMMAND, 2, "g", group);
++	}
++		
+ 	purple_debug_info("icb", "<- icb_join_chat\n");
+ }
+ 
+@@ -1249,6 +1272,18 @@ icb_chat_info_defaults(PurpleConnection 
+         return defaults;
+ }
+ 
++static void icb_keepalive(PurpleConnection *gc)
++{
++	IcbSession     *icb = gc->proto_data;
++
++	purple_debug_misc("icb", "-> icb_keepalive\n");
++
++	if ((time(NULL) - icb->sr_time) >= KEEPALIVE_TIMEOUT)
++		icb_send(icb, ICB_CMD_PONG, 0);
++
++	purple_debug_misc("icb", "<- icb_keepalive\n");
++}
++
+ static PurplePlugin *icb_plugin = NULL;
+ 
+ static PurplePluginProtocolInfo prpl_info =
+@@ -1290,7 +1325,7 @@ static PurplePluginProtocolInfo prpl_inf
+ 	icb_leave_chat,		/* chat_leave */
+ 	NULL,			/* chat_whisper */
+ 	icb_send_chat,		/* chat_send */
+-	NULL,			/* keepalive */
++	icb_keepalive,		/* keepalive */
+ 	NULL,			/* register_user */
+ 	NULL,			/* get_cb_info */
+ 	NULL,			/* get_cb_away */
