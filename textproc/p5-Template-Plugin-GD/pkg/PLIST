@@ -1,0 +1,40 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/29 13:34:55 jasper Exp $
+${P5SITE}/Template/
+${P5SITE}/Template/Plugin/
+${P5SITE}/Template/Plugin/GD/
+${P5SITE}/Template/Plugin/GD.pm
+${P5SITE}/Template/Plugin/GD/Constants.pm
+${P5SITE}/Template/Plugin/GD/Graph/
+${P5SITE}/Template/Plugin/GD/Graph/area.pm
+${P5SITE}/Template/Plugin/GD/Graph/bars.pm
+${P5SITE}/Template/Plugin/GD/Graph/bars3d.pm
+${P5SITE}/Template/Plugin/GD/Graph/lines.pm
+${P5SITE}/Template/Plugin/GD/Graph/lines3d.pm
+${P5SITE}/Template/Plugin/GD/Graph/linespoints.pm
+${P5SITE}/Template/Plugin/GD/Graph/mixed.pm
+${P5SITE}/Template/Plugin/GD/Graph/pie.pm
+${P5SITE}/Template/Plugin/GD/Graph/pie3d.pm
+${P5SITE}/Template/Plugin/GD/Graph/points.pm
+${P5SITE}/Template/Plugin/GD/Image.pm
+${P5SITE}/Template/Plugin/GD/Polygon.pm
+${P5SITE}/Template/Plugin/GD/Text/
+${P5SITE}/Template/Plugin/GD/Text.pm
+${P5SITE}/Template/Plugin/GD/Text/Align.pm
+${P5SITE}/Template/Plugin/GD/Text/Wrap.pm
+@man man/man3p/Template::Plugin::GD.3p
+@man man/man3p/Template::Plugin::GD::Constants.3p
+@man man/man3p/Template::Plugin::GD::Graph::area.3p
+@man man/man3p/Template::Plugin::GD::Graph::bars.3p
+@man man/man3p/Template::Plugin::GD::Graph::bars3d.3p
+@man man/man3p/Template::Plugin::GD::Graph::lines.3p
+@man man/man3p/Template::Plugin::GD::Graph::lines3d.3p
+@man man/man3p/Template::Plugin::GD::Graph::linespoints.3p
+@man man/man3p/Template::Plugin::GD::Graph::mixed.3p
+@man man/man3p/Template::Plugin::GD::Graph::pie.3p
+@man man/man3p/Template::Plugin::GD::Graph::pie3d.3p
+@man man/man3p/Template::Plugin::GD::Graph::points.3p
+@man man/man3p/Template::Plugin::GD::Image.3p
+@man man/man3p/Template::Plugin::GD::Polygon.3p
+@man man/man3p/Template::Plugin::GD::Text.3p
+@man man/man3p/Template::Plugin::GD::Text::Align.3p
+@man man/man3p/Template::Plugin::GD::Text::Wrap.3p
