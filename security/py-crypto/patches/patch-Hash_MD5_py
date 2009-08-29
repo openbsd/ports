@@ -1,0 +1,29 @@
+$OpenBSD: patch-Hash_MD5_py,v 1.1 2009/08/29 15:17:48 fgsch Exp $
+--- Hash/MD5.py.orig	Sat Aug 29 14:48:13 2009
++++ Hash/MD5.py	Sat Aug 29 14:48:34 2009
+@@ -3,11 +3,19 @@
+ 
+ __revision__ = "$Id: patch-Hash_MD5_py,v 1.1 2009/08/29 15:17:48 fgsch Exp $"
+ 
+-from md5 import *
++try:
++    # The md5 module is deprecated in Python 2.6, so use hashlib when possible.
++    import hashlib
++    def new(data=""):
++        return hashlib.md5(data)
++    digest_size = new().digest_size
+ 
+-import md5
+-if hasattr(md5, 'digestsize'):
+-    digest_size = digestsize
+-    del digestsize
+-del md5
++except ImportError:
++    from md5 import *
++
++    import md5
++    if hasattr(md5, 'digestsize'):
++        digest_size = digestsize
++        del digestsize
++    del md5
+ 

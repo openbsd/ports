@@ -1,0 +1,29 @@
+$OpenBSD: patch-Hash_SHA_py,v 1.1 2009/08/29 15:17:48 fgsch Exp $
+--- Hash/SHA.py.orig	Sat Aug 29 14:49:24 2009
++++ Hash/SHA.py	Sat Aug 29 14:50:25 2009
+@@ -3,9 +3,19 @@
+ 
+ __revision__ = "$Id: patch-Hash_SHA_py,v 1.1 2009/08/29 15:17:48 fgsch Exp $"
+ 
+-from sha import *
+-import sha
+-if hasattr(sha, 'digestsize'):
+-    digest_size = digestsize
+-    del digestsize
+-del sha
++try:
++    # The sha module is deprecated in Python 2.6, so use hashlib when possible.
++    import hashlib
++    def new(data=""):
++        return hashlib.sha1(data)
++    digest_size = new().digest_size
++
++except ImportError:
++    from sha import *
++
++    import sha
++    if hasattr(sha, 'digestsize'):
++        digest_size = digestsize
++        del digestsize
++    del sha
++
