@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/08/29 13:45:09 jasper Exp $
 @pkgpath textproc/aspell/dicts/aspell-ca
 lib/aspell/ca.dat
 lib/aspell/ca_affix.dat
-share/aspell/ca.multi
-share/aspell/ca.rws
+share/aspell/ca-common.rws
+share/aspell/ca-general.multi
+share/aspell/ca-valencia-mes.rws
+share/aspell/ca-valencia.multi
+share/aspell/ca.alias
+share/aspell/catalan-general.alias
+share/aspell/catalan-valencia.alias
 share/aspell/catalan.alias
