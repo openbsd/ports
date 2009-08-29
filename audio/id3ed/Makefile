@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/24 15:27:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/29 12:42:46 jasper Exp $
 
 COMMENT=		interactive console id3 tag editor
 
 DISTNAME=		id3ed-1.10.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	audio
 
 HOMEPAGE=		http://users.dakotacom.net/~donut/programs/id3ed.html
