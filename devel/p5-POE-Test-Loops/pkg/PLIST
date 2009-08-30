@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/30 17:14:21 jasper Exp $
+bin/poe-gen-tests
+${P5SITE}/POE/
+${P5SITE}/POE/Test/
+${P5SITE}/POE/Test/DondeEstan.pm
+${P5SITE}/POE/Test/Loops/
+${P5SITE}/POE/Test/Loops.pm
+${P5SITE}/POE/Test/Loops/all_errors.pm
+${P5SITE}/POE/Test/Loops/comp_tcp.pm
+${P5SITE}/POE/Test/Loops/comp_tcp_concurrent.pm
+${P5SITE}/POE/Test/Loops/connect_errors.pm
+${P5SITE}/POE/Test/Loops/k_alarms.pm
+${P5SITE}/POE/Test/Loops/k_aliases.pm
+${P5SITE}/POE/Test/Loops/k_detach.pm
+${P5SITE}/POE/Test/Loops/k_selects.pm
+${P5SITE}/POE/Test/Loops/k_sig_child.pm
+${P5SITE}/POE/Test/Loops/k_signals.pm
+${P5SITE}/POE/Test/Loops/k_signals_rerun.pm
+${P5SITE}/POE/Test/Loops/sbk_signal_init.pm
+${P5SITE}/POE/Test/Loops/ses_nfa.pm
+${P5SITE}/POE/Test/Loops/ses_session.pm
+${P5SITE}/POE/Test/Loops/wheel_accept.pm
+${P5SITE}/POE/Test/Loops/wheel_curses.pm
+${P5SITE}/POE/Test/Loops/wheel_readline.pm
+${P5SITE}/POE/Test/Loops/wheel_readwrite.pm
+${P5SITE}/POE/Test/Loops/wheel_run.pm
+${P5SITE}/POE/Test/Loops/wheel_sf_ipv6.pm
+${P5SITE}/POE/Test/Loops/wheel_sf_tcp.pm
+${P5SITE}/POE/Test/Loops/wheel_sf_udp.pm
+${P5SITE}/POE/Test/Loops/wheel_sf_unix.pm
+${P5SITE}/POE/Test/Loops/wheel_tail.pm
+${P5SITE}/POE/Test/Loops/z_kogman_sig_order.pm
+${P5SITE}/POE/Test/Loops/z_merijn_sigchld_system.pm
+${P5SITE}/POE/Test/Loops/z_rt39872_sigchld_stop.pm
+${P5SITE}/POE/Test/Loops/z_steinert_signal_integrity.pm
+@man man/man1/poe-gen-tests.1
+@man man/man3p/POE::Test::Loops.3p
