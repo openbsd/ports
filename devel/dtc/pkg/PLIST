@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/30 16:40:16 jasper Exp $
+%%SHARED%%
+@bin bin/convert-dtsv0
+@bin bin/dtc
+@bin bin/ftdump
+include/fdt.h
+include/libfdt.h
+lib/libfdt.a
+share/doc/dtc/
+share/doc/dtc/dts-format.txt
+share/doc/dtc/manual.txt

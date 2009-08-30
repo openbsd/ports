@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/08/30 16:40:16 jasper Exp $
+lib/libfdt.so

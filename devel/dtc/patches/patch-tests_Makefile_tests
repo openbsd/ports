@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_Makefile_tests,v 1.1.1.1 2009/08/30 16:40:16 jasper Exp $
+--- tests/Makefile.tests.orig	Sun Aug 30 17:04:32 2009
++++ tests/Makefile.tests	Sun Aug 30 17:04:38 2009
+@@ -40,7 +40,7 @@ tests:	$(TESTS) $(TESTS_TREES)
+ 
+ $(LIB_TESTS): %: $(TESTS_PREFIX)testutils.o $(LIBFDT_archive)
+ 
+-$(DL_LIB_TESTS): %: $(TESTS_PREFIX)testutils.o $(LIBFDT_archive) -ldl
++$(DL_LIB_TESTS): %: $(TESTS_PREFIX)testutils.o $(LIBFDT_archive)
+ 
+ $(LIBTREE_TESTS): %: $(TESTS_PREFIX)testutils.o $(TESTS_PREFIX)trees.o $(LIBFDT_archive)
+ 

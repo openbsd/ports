@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/08/30 16:40:16 jasper Exp $
+--- Makefile.orig	Sun Aug 30 16:46:06 2009
++++ Makefile	Sun Aug 30 17:14:33 2009
+@@ -15,8 +15,8 @@ EXTRAVERSION =
+ LOCAL_VERSION =
+ CONFIG_LOCALVERSION =
+ 
+-CPPFLAGS = -I libfdt
+-CFLAGS = -Wall -g -Os -fPIC -Wpointer-arith -Wcast-qual
++CPPFLAGS ?= -I libfdt
++CFLAGS ?= -Wall -fPIC -Wpointer-arith -Wcast-qual
+ 
+ BISON = bison
+ LEX = flex
+@@ -198,12 +198,12 @@ clean: libfdt_clean tests_clean
+ # Generic compile rules
+ #
+ %: %.o
+-	@$(VECHO) LD $@
++	@$(VECHO) LD $(LDFLAGS) $@
+ 	$(LINK.c) -o $@ $^
+ 
+ %.o: %.c
+ 	@$(VECHO) CC $@
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -o $@ -c $<
++	$(CC) $(CPPFLAGS) $(LDFLAGS) $(CFLAGS) -o $@ -c $<
+ 
+ %.o: %.S
+ 	@$(VECHO) AS $@

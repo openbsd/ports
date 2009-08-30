@@ -1,0 +1,2 @@
+The Device Tree Compiler (DTC) compiles device-tree descriptions for
+booting PowerPC kernels on embedded systems without OpenFirmware.

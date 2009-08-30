@@ -1,0 +1,31 @@
+$OpenBSD: patch-libfdt_libfdt_env_h,v 1.1.1.1 2009/08/30 16:40:16 jasper Exp $
+
+Workaround compiler warnings.
+
+--- libfdt/libfdt_env.h.orig	Sun Aug 30 16:46:06 2009
++++ libfdt/libfdt_env.h	Sun Aug 30 17:19:46 2009
+@@ -5,19 +5,19 @@
+ #include <stdint.h>
+ #include <string.h>
+ 
+-#define _B(n)	((unsigned long long)((uint8_t *)&x)[n])
++#define _Z(n)	((unsigned long long)((uint8_t *)&x)[n])
+ static inline uint32_t fdt32_to_cpu(uint32_t x)
+ {
+-	return (_B(0) << 24) | (_B(1) << 16) | (_B(2) << 8) | _B(3);
++	return (_Z(0) << 24) | (_Z(1) << 16) | (_Z(2) << 8) | _Z(3);
+ }
+ #define cpu_to_fdt32(x) fdt32_to_cpu(x)
+ 
+ static inline uint64_t fdt64_to_cpu(uint64_t x)
+ {
+-	return (_B(0) << 56) | (_B(1) << 48) | (_B(2) << 40) | (_B(3) << 32)
+-		| (_B(4) << 24) | (_B(5) << 16) | (_B(6) << 8) | _B(7);
++	return (_Z(0) << 56) | (_Z(1) << 48) | (_Z(2) << 40) | (_Z(3) << 32)
++		| (_Z(4) << 24) | (_Z(5) << 16) | (_Z(6) << 8) | _Z(7);
+ }
+ #define cpu_to_fdt64(x) fdt64_to_cpu(x)
+-#undef _B
++#undef _Z
+ 
+ #endif /* _LIBFDT_ENV_H */
