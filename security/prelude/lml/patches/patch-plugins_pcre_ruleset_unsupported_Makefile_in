@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_pcre_ruleset_unsupported_Makefile_in,v 1.1 2009/08/30 20:37:16 rui Exp $
+--- plugins/pcre/ruleset/unsupported/Makefile.in.orig	Thu Aug 13 21:20:53 2009
++++ plugins/pcre/ruleset/unsupported/Makefile.in	Thu Aug 13 21:21:43 2009
+@@ -728,7 +728,7 @@ top_srcdir = @top_srcdir@
+ @ENABLE_UNSUPPORTED_RULESETS_TRUE@	zywall.rules		\
+ @ENABLE_UNSUPPORTED_RULESETS_TRUE@	zyxel.rules		
+ 
+-@ENABLE_UNSUPPORTED_RULESETS_TRUE@rulesetdir = $(configdir)/ruleset
++@ENABLE_UNSUPPORTED_RULESETS_TRUE@rulesetdir = $(prefix)/share/examples/prelude-lml/ruleset
+ @ENABLE_UNSUPPORTED_RULESETS_TRUE@EXTRA_DIST = $(ruleset_DATA)
+ all: all-am
+ 

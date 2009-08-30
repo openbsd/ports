@@ -1,12 +1,12 @@
-$OpenBSD: patch-plugins_pcre_ruleset_Makefile_in,v 1.5 2007/05/26 01:14:33 aanriot Exp $
---- plugins/pcre/ruleset/Makefile.in.orig	Wed May  2 11:19:40 2007
-+++ plugins/pcre/ruleset/Makefile.in	Thu May 17 13:16:34 2007
-@@ -358,7 +358,7 @@ build_alias = @build_alias@
- build_cpu = @build_cpu@
- build_os = @build_os@
- build_vendor = @build_vendor@
--configdir = @configdir@
-+configdir = @prefix@/share/examples/prelude-lml
- datadir = @datadir@
- datarootdir = @datarootdir@
- defined = @defined@
+$OpenBSD: patch-plugins_pcre_ruleset_Makefile_in,v 1.6 2009/08/30 20:37:16 rui Exp $
+--- plugins/pcre/ruleset/Makefile.in.orig	Thu Aug 13 21:22:21 2009
++++ plugins/pcre/ruleset/Makefile.in	Thu Aug 13 21:22:48 2009
+@@ -824,7 +824,7 @@ ruleset_DATA = \
+ 	webmin.rules		\
+ 	wu-ftp.rules
+ 
+-rulesetdir = $(configdir)/ruleset
++rulesetdir = $(prefix)/share/examples/prelude-lml/ruleset
+ EXTRA_DIST = $(ruleset_DATA)
+ all: all-recursive
+ 

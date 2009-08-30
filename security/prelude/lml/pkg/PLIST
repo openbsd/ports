@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/05/26 01:14:33 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/08/30 20:37:16 rui Exp $
 %%SHARED%%
-bin/prelude-lml
+@bin bin/prelude-lml
 include/prelude-lml/
 include/prelude-lml/prelude-lml.h
+@comment lib/charset.alias
 lib/prelude-lml/
-lib/prelude-lml/debug.a
 lib/prelude-lml/debug.la
-lib/prelude-lml/pcre.a
 lib/prelude-lml/pcre.la
 share/doc/prelude-lml/
 share/doc/prelude-lml/README.OpenBSD
@@ -24,6 +23,8 @@ share/examples/prelude-lml/ruleset/arbor.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/arbor.rules
 share/examples/prelude-lml/ruleset/arpwatch.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/arpwatch.rules
+share/examples/prelude-lml/ruleset/asterisk.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/asterisk.rules
 share/examples/prelude-lml/ruleset/bonding.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/bonding.rules
 share/examples/prelude-lml/ruleset/cacti-thold.rules
@@ -52,12 +53,16 @@ share/examples/prelude-lml/ruleset/grsecurity.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/grsecurity.rules
 share/examples/prelude-lml/ruleset/honeyd.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/honeyd.rules
+share/examples/prelude-lml/ruleset/honeytrap.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/honeytrap.rules
 share/examples/prelude-lml/ruleset/httpd.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/httpd.rules
 share/examples/prelude-lml/ruleset/ipchains.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/ipchains.rules
 share/examples/prelude-lml/ruleset/ipfw.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/ipfw.rules
+share/examples/prelude-lml/ruleset/kojoney.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/kojoney.rules
 share/examples/prelude-lml/ruleset/linksys-wap11.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/linksys-wap11.rules
 share/examples/prelude-lml/ruleset/modsecurity.rules
@@ -90,10 +95,14 @@ share/examples/prelude-lml/ruleset/portsentry.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/portsentry.rules
 share/examples/prelude-lml/ruleset/postfix.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/postfix.rules
+share/examples/prelude-lml/ruleset/ppp.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/ppp.rules
 share/examples/prelude-lml/ruleset/proftpd.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/proftpd.rules
 share/examples/prelude-lml/ruleset/qpopper.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/qpopper.rules
+share/examples/prelude-lml/ruleset/rishi.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/rishi.rules
 share/examples/prelude-lml/ruleset/selinux.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/selinux.rules
 share/examples/prelude-lml/ruleset/sendmail.rules
@@ -110,8 +119,12 @@ share/examples/prelude-lml/ruleset/squid.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/squid.rules
 share/examples/prelude-lml/ruleset/ssh.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/ssh.rules
+share/examples/prelude-lml/ruleset/su.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/su.rules
 share/examples/prelude-lml/ruleset/sudo.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/sudo.rules
+share/examples/prelude-lml/ruleset/suhosin.rules
+@sample ${SYSCONFDIR}/prelude-lml/ruleset/suhosin.rules
 share/examples/prelude-lml/ruleset/tripwire.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/tripwire.rules
 share/examples/prelude-lml/ruleset/vigor.rules

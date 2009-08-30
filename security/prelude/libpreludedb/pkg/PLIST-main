@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/06/04 09:37:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/08/30 20:37:16 rui Exp $
 @pkgpath security/prelude/libpreludedb
 bin/libpreludedb-config
-bin/preludedb-admin
+@bin bin/preludedb-admin
 include/libpreludedb/
 include/libpreludedb/preludedb-error.h
 include/libpreludedb/preludedb-path-selection.h
@@ -12,12 +12,10 @@ include/libpreludedb/preludedb-sql.h
 include/libpreludedb/preludedb-version.h
 include/libpreludedb/preludedb.h
 lib/libpreludedb/
-lib/libpreludedb.a
 lib/libpreludedb.la
 @lib lib/libpreludedb.so.${LIBpreludedb_VERSION}
 lib/libpreludedb/plugins/
 lib/libpreludedb/plugins/formats/
-lib/libpreludedb/plugins/formats/classic.a
 lib/libpreludedb/plugins/formats/classic.la
 lib/libpreludedb/plugins/formats/classic.so
 lib/libpreludedb/plugins/sql/
@@ -60,6 +58,7 @@ share/libpreludedb/classic/mysql-update-14-3.sql
 share/libpreludedb/classic/mysql-update-14-4.sql
 share/libpreludedb/classic/mysql-update-14-5.sql
 share/libpreludedb/classic/mysql-update-14-6.sql
+share/libpreludedb/classic/mysql-update-14-7.sql
 share/libpreludedb/classic/mysql.sql
 share/libpreludedb/classic/mysql2pgsql.sh
 share/libpreludedb/classic/mysql2sqlite.sh
@@ -69,8 +68,10 @@ share/libpreludedb/classic/pgsql-update-14-3.sql
 share/libpreludedb/classic/pgsql-update-14-4.sql
 share/libpreludedb/classic/pgsql-update-14-5.sql
 share/libpreludedb/classic/pgsql-update-14-6.sql
+share/libpreludedb/classic/pgsql-update-14-7.sql
 share/libpreludedb/classic/pgsql.sql
 share/libpreludedb/classic/sqlite-update-14-4.sql
 share/libpreludedb/classic/sqlite-update-14-5.sql
 share/libpreludedb/classic/sqlite-update-14-6.sql
+share/libpreludedb/classic/sqlite-update-14-7.sql
 share/libpreludedb/classic/sqlite.sql

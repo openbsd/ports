@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/06/04 09:37:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/08/30 20:37:16 rui Exp $
 @newgroup _prelude:564
 @newuser _prelude:564:564:daemon:Prelude IDS:/var/empty:/sbin/nologin
 %%SHARED%%
 bin/libprelude-config
 bin/prelude-adduser
-bin/prelude-admin
+@bin bin/prelude-admin
 include/libprelude/
 include/libprelude/common.h
 include/libprelude/daemonize.h
@@ -13,6 +13,7 @@ include/libprelude/idmef-class.h
 include/libprelude/idmef-criteria.h
 include/libprelude/idmef-criterion-value.h
 include/libprelude/idmef-data.h
+include/libprelude/idmef-message-helpers.h
 include/libprelude/idmef-message-id.h
 include/libprelude/idmef-message-print.h
 include/libprelude/idmef-message-read.h
@@ -50,10 +51,9 @@ include/libprelude/prelude-string.h
 include/libprelude/prelude-thread.h
 include/libprelude/prelude-timer.h
 include/libprelude/prelude.h
-include/libprelude/variable.h
 @comment lib/charset.alias
-lib/libprelude.a
 lib/libprelude.la
+lib/pkgconfig/libprelude.pc
 lib/python${MODPY_VERSION}/site-packages/prelude-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/prelude.py
 lib/python${MODPY_VERSION}/site-packages/prelude.pyc

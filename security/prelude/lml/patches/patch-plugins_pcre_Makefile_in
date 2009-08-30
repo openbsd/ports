@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_pcre_Makefile_in,v 1.1 2009/08/30 20:37:16 rui Exp $
+--- plugins/pcre/Makefile.in.orig	Thu Aug 13 20:07:59 2009
++++ plugins/pcre/Makefile.in	Thu Aug 13 20:08:29 2009
+@@ -741,7 +741,7 @@ build_cpu = @build_cpu@
+ build_os = @build_os@
+ build_vendor = @build_vendor@
+ builddir = @builddir@
+-configdir = @configdir@
++configdir = @prefix@/share/examples/prelude-lml
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+ docdir = @docdir@

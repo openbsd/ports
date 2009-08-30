@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/05/19 11:03:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/30 20:37:16 rui Exp $
 
 COMMENT=	Prelude sensors for Packet Filter
 
 DISTNAME=	prelude-pflogger-0.9.0-rc2
-PKGNAME=	prelude-pflogger-0.9.0rc2p3
+PKGNAME=	prelude-pflogger-0.9.0rc2p4
+
+MASTER_SITES=	http://www.prelude-ids.com/download/releases/prelude-pflogger/
 
 MODULES=	devel/gettext
 WANTLIB=	c gcrypt gnutls gpg-error pcap pthread tasn1 z

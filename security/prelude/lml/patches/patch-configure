@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.5 2007/05/26 01:14:33 aanriot Exp $
---- configure.orig	Wed May  2 11:19:35 2007
-+++ configure	Thu May 17 13:16:33 2007
-@@ -32322,7 +32322,7 @@ _ACEOF
- configdir=$sysconfdir/prelude-lml
+$OpenBSD: patch-configure,v 1.6 2009/08/30 20:37:16 rui Exp $
+--- configure.orig	Thu Aug 13 20:07:02 2009
++++ configure	Thu Aug 13 20:07:27 2009
+@@ -43051,7 +43051,7 @@ fi
+ configdir=$SYSCONFDIR/prelude-lml
  prelude_lml_conf=$configdir/prelude-lml.conf
  regex_conf=$configdir/plugins.rules
--metadata_dir=$localstatedir/lib/prelude-lml
-+metadata_dir=$localstatedir/prelude-lml
- plugindir=$libdir/prelude-lml
- log_plugin_dir=$plugindir
+-metadata_dir=$LOCALSTATEDIR/lib/prelude-lml
++metadata_dir=$LOCALSTATEDIR/prelude-lml
+ plugindir=$LIBDIR/prelude-lml
+ 
  

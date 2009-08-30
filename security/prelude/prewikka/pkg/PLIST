@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/08/27 17:52:23 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/08/30 20:37:16 rui Exp $
 bin/prewikka-httpd
 lib/python${MODPY_VERSION}/site-packages/prewikka/
+lib/python${MODPY_VERSION}/site-packages/prewikka-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/prewikka/Auth.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/Auth.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/CheetahFilters.py
@@ -31,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/User.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/User.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/__init__.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/prewikka/_threading_local.py
+lib/python${MODPY_VERSION}/site-packages/prewikka/_threading_local.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/localization.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/localization.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/
@@ -39,6 +42,11 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/modules/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/__init__.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/anonymous/
+lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/anonymous/__init__.py
+lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/anonymous/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/anonymous/anonymous.py
+lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/anonymous/anonymous.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/cgi/
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/cgi/__init__.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/cgi/__init__.pyc
@@ -49,6 +57,8 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/loginpassword/__i
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/loginpassword/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/loginpassword/loginpassword.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/modules/auth/loginpassword/loginpassword.pyc
+lib/python${MODPY_VERSION}/site-packages/prewikka/resolve.py
+lib/python${MODPY_VERSION}/site-packages/prewikka/resolve.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/siteconfig.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/siteconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/
@@ -70,6 +80,8 @@ lib/python${MODPY_VERSION}/site-packages/prewikka/templates/HeartbeatAnalyze.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/HeartbeatAnalyze.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/HeartbeatListing.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/HeartbeatListing.pyc
+lib/python${MODPY_VERSION}/site-packages/prewikka/templates/IDMEFBrowser.py
+lib/python${MODPY_VERSION}/site-packages/prewikka/templates/IDMEFBrowser.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/LoginPasswordForm.py
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/LoginPasswordForm.pyc
 lib/python${MODPY_VERSION}/site-packages/prewikka/templates/MessageDetails.py
@@ -128,6 +140,7 @@ share/doc/prewikka/README.OpenBSD
 share/locale/de/LC_MESSAGES/prewikka.mo
 share/locale/es/LC_MESSAGES/prewikka.mo
 share/locale/fr/LC_MESSAGES/prewikka.mo
+share/locale/pl/LC_MESSAGES/prewikka.mo
 share/locale/pt_BR/LC_MESSAGES/prewikka.mo
 share/locale/ru/LC_MESSAGES/prewikka.mo
 share/prewikka/
@@ -167,3 +180,4 @@ share/prewikka/htdocs/images/table_order_down.gif
 share/prewikka/htdocs/images/table_order_up.gif
 share/prewikka/htdocs/js/
 share/prewikka/htdocs/js/functions.js
+share/prewikka/htdocs/js/jquery.js

@@ -1,20 +1,45 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2007/05/26 01:14:33 aanriot Exp $
---- Makefile.in.orig	Wed May  2 11:19:41 2007
-+++ Makefile.in	Thu May 17 13:16:32 2007
-@@ -364,7 +364,7 @@ build_alias = @build_alias@
- build_cpu = @build_cpu@
+$OpenBSD: patch-Makefile_in,v 1.6 2009/08/30 20:37:16 rui Exp $
+--- Makefile.in.orig	Thu Jul 16 14:46:12 2009
++++ Makefile.in	Thu Aug 13 21:07:21 2009
+@@ -710,7 +710,7 @@ build_cpu = @build_cpu@
  build_os = @build_os@
  build_vendor = @build_vendor@
+ builddir = @builddir@
 -configdir = @configdir@
 +configdir = @prefix@/share/examples/prelude-lml
  datadir = @datadir@
  datarootdir = @datarootdir@
- defined = @defined@
-@@ -854,7 +854,6 @@ uninstall-info: uninstall-info-recursive
+ docdir = @docdir@
+@@ -1285,29 +1285,9 @@ uninstall-am: uninstall-local
  
  
  install-data-local:
 -	$(INSTALL) -m 700 -d $(DESTDIR)$(metadata_dir)
- 	@if test -f $(DESTDIR)$(configdir)/prelude-lml.conf; then         					\
- 		echo "********************************************************************************"; 	\
-                 echo;                                                                                    	\
+-	@if test -f $(DESTDIR)$(configdir)/prelude-lml.conf; then         					\
+-		echo "********************************************************************************"; 	\
+-                echo;                                                                                    	\
+-                echo "$(DESTDIR)$(configdir)/prelude-lml.conf already exist...";				\
+-                echo "Installing default configuration in $(DESTDIR)$(configdir)/prelude-lml.conf-dist";        \
+-                echo;                                                                                    	\
+-                echo "********************************************************************************"; 	\
+-		$(INSTALL) -m 600 $(top_srcdir)/prelude-lml.conf $(DESTDIR)$(configdir)/prelude-lml.conf-dist;  \
+-        else                                                                                             	\
+-                $(INSTALL) -m 600 $(top_srcdir)/prelude-lml.conf $(DESTDIR)$(configdir)/;                       \
+-        fi
+-	@if test -f $(DESTDIR)$(configdir)/plugins.rules; then         					\
+-		echo "********************************************************************************"; 	\
+-                echo;                                                                                    	\
+-                echo "$(DESTDIR)$(configdir)/plugins.rules already exist...";					\
+-                echo "Installing default configuration in $(DESTDIR)$(configdir)/plugins.rules-dist";	        \
+-                echo;                                                                                    	\
+-                echo "********************************************************************************"; 	\
+-		$(INSTALL) -m 600 $(top_srcdir)/plugins.rules $(DESTDIR)$(configdir)/plugins.rules-dist;	\
+-        else                                                                                             	\
+-		$(INSTALL) -m 600 $(top_srcdir)/plugins.rules $(DESTDIR)$(configdir)/;				\
+-        fi
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(configdir)
++	$(BSD_INSTALL_DATA) $(top_srcdir)/prelude-lml.conf $(DESTDIR)$(configdir)
++	$(BSD_INSTALL_DATA) $(top_srcdir)/plugins.rules $(DESTDIR)$(configdir)
+ 
+ uninstall-local:
+ 	rm -f $(DESTDIR)$(configdir)/prelude-lml.conf;	\

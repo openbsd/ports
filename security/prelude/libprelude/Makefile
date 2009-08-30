@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.22 2009/05/19 11:03:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2009/08/30 20:37:16 rui Exp $
 
 COMMENT=	Prelude framework library
 
-DISTNAME=	libprelude-0.9.15.1
-PKGNAME=	prelude-${DISTNAME}p5
+MODPY_EGG_VERSION=0.9.24.1
+DISTNAME=	libprelude-${MODPY_EGG_VERSION}
+PKGNAME=	prelude-${DISTNAME}
 
-MODPY_EGG_VERSION=0.0.0
+MASTER_SITES=	http://www.prelude-ids.com/download/releases/libprelude/
 
-SHARED_LIBS=	prelude	13.1	# .13.1
+SHARED_LIBS=	prelude	20.1
 
 MODULES=	devel/gettext \
 		lang/python
 
 CONFIGURE_STYLE=gnu
 
-WANTLIB=	c gcrypt pthread tasn1 z
+WANTLIB=	c gcrypt tasn1 z
 
 LIB_DEPENDS=	gpg-error.>=1::security/libgpg-error \
 		gnutls.>=12::security/gnutls

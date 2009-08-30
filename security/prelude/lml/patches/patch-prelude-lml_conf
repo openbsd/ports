@@ -1,0 +1,65 @@
+$OpenBSD: patch-prelude-lml_conf,v 1.1 2009/08/30 20:37:16 rui Exp $
+--- prelude-lml.conf.orig	Thu Aug 13 20:09:53 2009
++++ prelude-lml.conf	Thu Aug 13 20:13:55 2009
+@@ -63,10 +63,27 @@ include = /home/yoann/dev/prelude/bin/etc/prelude/defa
+ # already set. Use 'idmef-alter-force' if this is what you intend to do.
+ #
+ 
++[format=syslog]
++time-format = "%b %d %H:%M:%S"
++prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
++file = /var/log/authlog
++# udp-server = 0.0.0.0
+ 
+ [format=syslog]
+ time-format = "%b %d %H:%M:%S"
+ prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
++file = /var/log/daemon
++# udp-server = 0.0.0.0
++
++[format=syslog]
++time-format = "%b %d %H:%M:%S"
++prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
++file = /var/log/maillog
++# udp-server = 0.0.0.0
++
++[format=syslog]
++time-format = "%b %d %H:%M:%S"
++prefix-regex = "^(?P<timestamp>.{15}) (?P<hostname>\S+) (?:(?P<process>\S+?)(?:\[(?P<pid>[0-9]+)\])?: )?"
+ file = /var/log/messages
+ # udp-server = 0.0.0.0
+ 
+@@ -74,10 +91,10 @@ file = /var/log/messages
+ #
+ # Sample configuration for metalog:
+ #
+-[format=metalog]
+-prefix-regex = "^(?P<timestamp>.{15}) \[(?P<process>\S+)\] "
+-time-format = "%b %d %H:%M:%S"
+-file = /var/log/everything/current
++# [format=metalog]
++# prefix-regex = "^(?P<timestamp>.{15}) \[(?P<process>\S+)\] "
++# time-format = "%b %d %H:%M:%S"
++# file = /var/log/everything/current
+ # udp-server = 0.0.0.0
+ 
+ 
+@@ -87,15 +104,12 @@ file = /var/log/everything/current
+ [format=apache]
+ time-format = "%d/%b/%Y:%H:%M:%S"
+ prefix-regex = "(?P<hostname>\S+) \S+ \S+ \[(?P<timestamp>.{20}) [+-].{4}\] "
+-file = /var/log/httpd/access_log
+-file = /var/log/apache2/access_log
++file = /var/www/logs/access_log
+ 
+ [format=apache-error]
+ time-format = "%a %b %d %H:%M:%S %Y"
+-prefix-regex = "^\[(?P<timestamp>.{24})\] \S+ (\[client (?P<hostname>\S+)\] )?"
+-file = /var/log/httpd/error_log
+-file = /var/log/apache2/error_log
+-
++prefix-regex = "^\[(?P<timestamp>.{24})\]"
++file = /var/www/logs/error_log
+ 
+ 
+ #

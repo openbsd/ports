@@ -1,20 +1,85 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2007/08/27 17:45:39 aanriot Exp $
---- Makefile.in.orig	Thu Aug 23 17:54:22 2007
-+++ Makefile.in	Thu Aug 23 21:59:50 2007
-@@ -498,7 +498,7 @@ oldincludedir = @oldincludedir@
- pdfdir = @pdfdir@
- prefix = @prefix@
- prelude_admin_libs = @prelude_admin_libs@
--prelude_config_dir = @prelude_config_dir@
-+prelude_config_dir = @prefix@/share/examples/libprelude
- prelude_ident_file = @prelude_ident_file@
- prelude_spool_dir = @prelude_spool_dir@
- program_transform_name = @program_transform_name@
-@@ -1034,7 +1034,6 @@ prelude-config.h: $(top_builddir)/config.h
+$OpenBSD: patch-Makefile_in,v 1.6 2009/08/30 20:37:16 rui Exp $
+--- Makefile.in.orig	Tue Aug 11 16:05:56 2009
++++ Makefile.in	Thu Aug 13 16:49:58 2009
+@@ -708,7 +708,7 @@ POLL_H = @POLL_H@
+ PRAGMA_SYSTEM_HEADER = @PRAGMA_SYSTEM_HEADER@
+ PRELUDE_ADMIN_CFLAGS = @PRELUDE_ADMIN_CFLAGS@
+ PRELUDE_ADMIN_LIBS = @PRELUDE_ADMIN_LIBS@
+-PRELUDE_CONFIG_DIR = @PRELUDE_CONFIG_DIR@
++PRELUDE_CONFIG_DIR = @prefix@/share/examples/libprelude
+ PRELUDE_SPOOL_DIR = @PRELUDE_SPOOL_DIR@
+ PTHREAD_CFLAGS = @PTHREAD_CFLAGS@
+ PTHREAD_LDFLAGS = @PTHREAD_LDFLAGS@
+@@ -1525,65 +1525,13 @@ prelude-config.h: $(top_builddir)/config.h
  # Spool directory for report saving is mode 
  
  install-data-local:
--	$(INSTALL) -d -m 711 $(DESTDIR)$(prelude_spool_dir);
- 	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir);
- 	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir)/default;
- 	$(INSTALL) -d -m 711 $(DESTDIR)$(prelude_config_dir)/profile;
+-	$(INSTALL) -d -m 711 $(DESTDIR)$(PRELUDE_SPOOL_DIR);
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(PRELUDE_CONFIG_DIR);
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default;
+-	$(INSTALL) -d -m 711 $(DESTDIR)$(PRELUDE_CONFIG_DIR)/profile;
+-	@if test -f $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/client.conf; then							\
+-		echo;														\
+-		echo "********************************************************************************";          		\
+-                echo;														\
+-                echo "$(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/client.conf already exist...";					\
+-                echo "Installing default configuration in $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/client.conf-dist";		\
+-                echo;														\
+-                echo "********************************************************************************";			\
+-		echo;														\
+-		$(INSTALL) -m 644 $(top_builddir)/client.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/client.conf-dist;		\
+-        else															\
+-                $(INSTALL) -m 644 $(top_builddir)/client.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default;				\
+-        fi
+-
+-	@if test -f $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/global.conf; then							\
+-		echo;														\
+-		echo "********************************************************************************";          		\
+-                echo;														\
+-                echo "$(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/global.conf already exist...";					\
+-                echo "Installing default configuration in $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/global.conf-dist";		\
+-                echo;														\
+-                echo "********************************************************************************";			\
+-		echo;														\
+-		$(INSTALL) -m 644 $(top_builddir)/global.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/global.conf-dist;		\
+-        else															\
+-                $(INSTALL) -m 644 $(top_builddir)/global.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default;				\
+-        fi															
+-
+-	@if test -f $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/idmef-client.conf; then						\
+-		echo;														\
+-		echo "********************************************************************************";          		\
+-                echo;														\
+-                echo "$(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/idmef-client.conf already exist...";					\
+-                echo "Installing default configuration in $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/idmef-client.conf-dist";		\
+-                echo;														\
+-                echo "********************************************************************************";			\
+-		echo;														\
+-		$(INSTALL) -m 644 $(top_builddir)/idmef-client.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/idmef-client.conf-dist;\
+-        else															\
+-                $(INSTALL) -m 644 $(top_builddir)/idmef-client.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default;			\
+-        fi
+-
+-	@if test -f $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/tls.conf; then								\
+-		echo;														\
+-		echo "********************************************************************************";          		\
+-                echo;														\
+-                echo "$(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/tls.conf already exist...";						\
+-                echo "Installing default configuration in $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/tls.conf-dist";			\
+-                echo;														\
+-                echo "********************************************************************************";			\
+-		echo;														\
+-		$(INSTALL) -m 644 $(top_srcdir)/tls.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/tls.conf-dist;			\
+-        else															\
+-                $(INSTALL) -m 644 $(top_srcdir)/tls.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default;					\
+-	fi
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(PRELUDE_CONFIG_DIR)
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(PRELUDE_CONFIG_DIR)/profile
++	$(BSD_INSTALL_DATA) $(top_builddir)/client.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default
++	$(BSD_INSTALL_DATA) $(top_builddir)/global.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default
++	$(BSD_INSTALL_DATA) $(top_builddir)/idmef-client.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default
++	$(BSD_INSTALL_DATA) $(top_builddir)/tls.conf $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default 
+ 
+ uninstall-local:
+ 	rm -f $(DESTDIR)$(PRELUDE_CONFIG_DIR)/default/client.conf

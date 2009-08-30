@@ -1,32 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/08/27 17:49:59 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/08/30 20:37:16 rui Exp $
 %%SHARED%%
-bin/prelude-manager
+@bin bin/prelude-manager
 include/prelude-manager/
 include/prelude-manager/prelude-manager.h
 lib/prelude-manager/
 lib/prelude-manager/decodes/
-lib/prelude-manager/decodes/normalize.a
 lib/prelude-manager/decodes/normalize.la
 lib/prelude-manager/filters/
-lib/prelude-manager/filters/idmef-criteria.a
 lib/prelude-manager/filters/idmef-criteria.la
-lib/prelude-manager/filters/thresholding.a
 lib/prelude-manager/filters/thresholding.la
 lib/prelude-manager/filters/thresholding.so
 lib/prelude-manager/reports/
-lib/prelude-manager/reports/db.a
 lib/prelude-manager/reports/db.la
-lib/prelude-manager/reports/debug.a
 lib/prelude-manager/reports/debug.la
-lib/prelude-manager/reports/relaying.a
 lib/prelude-manager/reports/relaying.la
-lib/prelude-manager/reports/textmod.a
+lib/prelude-manager/reports/smtp.la
+lib/prelude-manager/reports/smtp.so
 lib/prelude-manager/reports/textmod.la
-lib/prelude-manager/reports/xmlmod.a
 lib/prelude-manager/reports/xmlmod.la
 @man man/man1/prelude-manager.1
 share/doc/prelude-manager/
 share/doc/prelude-manager/README.OpenBSD
+share/doc/prelude-manager/smtp/
+share/doc/prelude-manager/smtp/template.example
 share/examples/prelude-manager/
 @sample ${SYSCONFDIR}/prelude-manager/
 share/examples/prelude-manager/prelude-manager.conf

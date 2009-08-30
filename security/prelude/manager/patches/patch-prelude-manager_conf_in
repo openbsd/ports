@@ -1,14 +1,15 @@
-$OpenBSD: patch-prelude-manager_conf_in,v 1.6 2007/08/27 17:49:59 aanriot Exp $
---- prelude-manager.conf.in.orig	Mon Jun 18 09:34:13 2007
-+++ prelude-manager.conf.in	Fri Aug 24 19:07:38 2007
-@@ -28,8 +28,8 @@ listen = 127.0.0.1
- # Sets the user/group ID as which prelude-manager will run.
- # In order to use this option, prelude-manager must be run initially as root
+$OpenBSD: patch-prelude-manager_conf_in,v 1.7 2009/08/30 20:37:16 rui Exp $
+--- prelude-manager.conf.in.orig	Thu Aug 13 21:53:39 2009
++++ prelude-manager.conf.in	Thu Aug 13 21:54:04 2009
+@@ -29,9 +29,8 @@ listen = 127.0.0.1
+ # In order to use this option, prelude-manager must be run initially as
+ # root
  #
 -# user = prelude
 -# group = prelude
+-
 +user  = _prelude
 +group = _prelude
  
- 
- # Number of bits of the prime used in the Diffie Hellman key exchange.
+ # Number of second prelude-manager wait for an incoming client to
+ # successfully authenticate before droping the connection.
