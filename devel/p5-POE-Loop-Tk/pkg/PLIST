@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/30 22:08:34 jasper Exp $
+@conflict p5-POE-<1.266
+${P5SITE}/POE/Loop/Tk.pm
+${P5SITE}/POE/Loop/TkActiveState.pm
+${P5SITE}/POE/Loop/TkCommon.pm
+@man man/man3p/POE::Loop::Tk.3p
+@man man/man3p/POE::Loop::TkActiveState.3p
+@man man/man3p/POE::Loop::TkCommon.3p
