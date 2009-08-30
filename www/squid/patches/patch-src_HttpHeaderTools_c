@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_HttpHeaderTools_c,v 1.1 2009/08/30 21:52:44 jasper Exp $
+
+Security fix for CVE-2009-2855.
+Patch from upstream repository:
+http://www.squid-cache.org/Versions/v2/HEAD/changesets/12541.patch
+
+--- src/HttpHeaderTools.c.orig	Sun Aug 30 20:43:57 2009
++++ src/HttpHeaderTools.c	Sun Aug 30 20:44:54 2009
+@@ -239,6 +239,10 @@ int
+ strListGetItem(const String * str, char del, const char **item, int *ilen, const char **pos)
+ {
+     size_t len;
++    /* ',' is always enabled as field delimiter as this is required for
++     * processing merged header values properly, even if Cookie normally
++     * uses ';' as delimiter.
++     */
+     static char delim[3][8] =
+     {
+ 	"\"?,",
+@@ -261,16 +265,15 @@ strListGetItem(const String * str, char del, const cha
+     /* find next delimiter */
+     do {
+ 	*pos += strcspn(*pos, delim[quoted]);
+-	if (**pos == del)
+-	    break;
+ 	if (**pos == '"') {
+ 	    quoted = !quoted;
+ 	    *pos += 1;
+-	}
+-	if (quoted && **pos == '\\') {
++	} else if (quoted && **pos == '\\') {
+ 	    *pos += 1;
+ 	    if (**pos)
+ 		*pos += 1;
++	} else {
++	    break;		/* Delimiter found, marking the end of this value */
+ 	}
+     } while (**pos);
+     len = *pos - *item;		/* *pos points to del or '\0' */
