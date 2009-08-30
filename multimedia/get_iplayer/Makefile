@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/23 19:16:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2009/08/30 12:58:14 sthen Exp $
 
 COMMENT =		download BBC iPlayer and ITV programmes
 
-DISTNAME =		get_iplayer-2.18
+DISTNAME =		get_iplayer-2.22
 
 CATEGORIES =		multimedia
 
@@ -24,6 +24,7 @@ RUN_DEPENDS =		::audio/id3lib \
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
+PKG_ARCH =		*
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/get_iplayer

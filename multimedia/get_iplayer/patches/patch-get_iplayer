@@ -1,7 +1,23 @@
-$OpenBSD: patch-get_iplayer,v 1.14 2009/08/23 19:16:17 sthen Exp $
---- get_iplayer.orig	Sat Aug 22 19:14:38 2009
-+++ get_iplayer	Sun Aug 23 20:10:35 2009
-@@ -290,7 +290,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+$OpenBSD: patch-get_iplayer,v 1.15 2009/08/30 12:58:14 sthen Exp $
+
+- default to using id3tag not id3v2
+- follow hier(7) not Linux FHS for options file location
+
+--- get_iplayer.orig	Thu Aug 27 21:54:04 2009
++++ get_iplayer	Sun Aug 30 13:51:29 2009
+@@ -275,10 +275,7 @@ if ( defined $ENV{GETIPLAYERUSERPREFS} && $ENV{GETIPLA
+ # Options on unix-like systems
+ } elsif ( defined $ENV{HOME} ) {
+ 	$profile_dir = $opt_pre->{profiledir} || $ENV{HOME}.'/.get_iplayer';
+-	$optfile_system = '/var/lib/get_iplayer/options';
+-	if ( -f '/etc/get_iplayer/options' ) {
+-		logger "WARNING: System-wide options in /etc/get_iplayer/options are now ignored, please use /var/lib/get_iplayer/options instead\n";
+-	}
++	$optfile_system = '${SYSCONFDIR}/get_iplayer/options';
+ # Otherwise look for windows style file locations
+ } elsif ( defined $ENV{USERPROFILE} ) {
+ 	$profile_dir = $opt_pre->{profiledir} || $ENV{USERPROFILE}.'/.get_iplayer';
+@@ -289,7 +286,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -10,15 +26,15 @@ $OpenBSD: patch-get_iplayer,v 1.14 2009/08/23 19:16:17 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -407,6 +407,7 @@ if ( ! keys %plugin_files ) {
+@@ -406,6 +403,7 @@ if ( ! keys %plugin_files ) {
  	$opt->{pluginsupdate} = 1;
  }
  # Update this script if required
-+$opt->{packagemanager}='pkg_add';
++$opt->{packagemanager}='disable';
  update_script() if $opt->{update} || $opt->{pluginsupdate};
  
  
-@@ -590,7 +591,7 @@ sub find_matches {
+@@ -587,7 +585,7 @@ sub find_matches {
  	$binopts->{lame}	.= ' --quiet ' if $opt->{quiet};
  	$bin->{vlc}		= $opt->{vlc} || 'cvlc';
  	$binopts->{vlc}		= '-vv' if $opt->{verbose} || $opt->{debug};
@@ -27,7 +43,7 @@ $OpenBSD: patch-get_iplayer,v 1.14 2009/08/23 19:16:17 sthen Exp $
  	$bin->{tee}		= 'tee';
  	$bin->{flvstreamer}	= $opt->{flvstreamer} || $opt->{rtmpdump} || 'flvstreamer';
  	# quote binaries which allows for spaces in the path
-@@ -4521,7 +4522,7 @@ sub optional_list_entry_format {
+@@ -4567,7 +4565,7 @@ sub optional_list_entry_format {
  # Returns the modes to try for this prog type
  sub modelist {
  	my $prog = shift;
