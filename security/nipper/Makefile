@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/09/21 10:31:34 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/30 16:44:45 steven Exp $
 
 COMMENT =		audit network device configuration
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =No
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nipper/}
 EXTRACT_SUFX =		.tgz
 
 WANTLIB =		c m stdc++
