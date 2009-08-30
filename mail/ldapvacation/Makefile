@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/16 00:17:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/30 20:45:23 sthen Exp $
 
 COMMENT=	return 'I am not here' indication stored in a LDAP tree
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c pthread
 
-MASTER_SITES=  	ftp://ftp.etc.msys.ch/pub/sources/ldapvacation/
+MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	ldap_r.>=8,lber.>=8::databases/openldap

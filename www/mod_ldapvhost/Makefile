@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/03 00:48:51 pyr Exp $
+# $OpenBSD: Makefile,v 1.8 2009/08/30 20:45:24 sthen Exp $
 
 COMMENT=		Apache LDAP based virtual hosts module
 
@@ -10,7 +10,7 @@ HOMEPAGE=		https://www.msys.ch/products/unix/mod_ldapvhost/
 
 MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
-MASTER_SITES=		ftp://ftp.etc.msys.ch/pub/sources/mod_ldapvhost/
+MASTER_SITES=		http://www.etc.msys.ch/software/mod_ldapvhost/
 EXTRACT_SUFX=		.tgz
 MODULES+=		apache-module
 

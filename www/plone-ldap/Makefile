@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/30 11:24:26 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/30 20:45:24 sthen Exp $
 
 COMMENT=	LDAP adapter for Plone
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.etc.msys.ch/pub/sources/mirror/
+MASTER_SITES=	http://www.etc.msys.ch/software/mirror/
 
 MODULES=	www/zope
 PY_FLAVOR=	python${MODZOPE_PYTHON_VERSION}

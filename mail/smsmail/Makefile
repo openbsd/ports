@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/30 20:45:24 sthen Exp $
 
 COMMENT=	LDAP enabled MDA to deliver mails as SMS
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c pthread
 
-MASTER_SITES=  	ftp://ftp.etc.msys.ch/pub/sources/smsmail/
+MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	ldap_r.>=8,lber.>=8::databases/openldap

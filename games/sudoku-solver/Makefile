@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2008/01/04 17:48:35 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2009/08/30 20:45:23 sthen Exp $
 
 COMMENT=	sudoku puzzle solver with cli, gui, and web ui
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c Xt crypto iconv pthread z
 
-MASTER_SITES=  	ftp://ftp.etc.msys.ch/pub/sources/sudoku/
+MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 USE_X11=	Yes

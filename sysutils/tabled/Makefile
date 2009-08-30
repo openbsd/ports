@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/10/28 15:21:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/30 20:45:24 sthen Exp $
 
 COMMENT=	daemon to modify pf tables from userland
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=  	ftp://ftp.etc.msys.ch/pub/sources/tabled/
+MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 NO_REGRESS=	Yes

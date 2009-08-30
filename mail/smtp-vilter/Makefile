@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2008/10/28 15:21:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2009/08/30 20:45:24 sthen Exp $
 
 COMMENT=	sendmail milter to scan messages for viruses and spam
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m pthread milter
 
-MASTER_SITES=  	ftp://ftp.etc.msys.ch/pub/sources/smtp-vilter/
+MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 NO_REGRESS=	Yes
