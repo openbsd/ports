@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.76 2009/02/16 22:04:28 steven Exp $
+# $OpenBSD: libtool,v 1.77 2009/08/30 08:40:52 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -323,7 +323,7 @@ sub link
 
 	Trace::debug {"creating link command for library (linked ",
 		($shared) ? "dynam" : "stat", "ically)\n"};
-	
+
 	my @libflags;
 	my @cmd;
 	my $ltdir = $main::ltdir;
@@ -551,7 +551,7 @@ sub link
 	my $ltdir = $main::ltdir;
 	Trace::debug {"linking program (",
 		($shared) ? "dynam" : "stat", "ically)\n"};
-	
+
 	my @libflags;
 	my @cmd;
 	my $dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
@@ -937,7 +937,7 @@ if ($mode eq 'compile') {
 		my $objectlist = $opts{'objectlist'};
 		open(my $ol, '<', $objectlist) or die "cannot open $objectlist: $!\n";
 		my @objlist = <$ol>;
-		for (@objlist) { chomp; } 
+		for (@objlist) { chomp; }
 		$allpicobj = generate_objlist(\@objs, \@sobjs, \@objlist);
 	} else {
 		$allpicobj = generate_objlist(\@objs, \@sobjs, \@ARGV);
@@ -1105,7 +1105,7 @@ Usage: $0 [options]
 --mode=MODE - use operation mode MODE
 --quiet - do not print informational messages
 --silent - same as `--quiet'
---tag - 
+--tag -
 --version - print version of libtool
 EOF
 ;
@@ -1176,11 +1176,11 @@ sub internal_resolve_la
 		    $lainfo->{'cached_deplibs'} = [];
 		    $lainfo->{'cached_result'} = [];
 		    $lainfo->{'cached_pthread'} =
-			internal_resolve_la($level+1, 
-			    $lainfo->{'cached_result'}, 
-			    $lainfo->{'cached_deplibs'}, 
+			internal_resolve_la($level+1,
+			    $lainfo->{'cached_result'},
+			    $lainfo->{'cached_deplibs'},
 			    $lainfo->deplib_list);
-		    push(@{$lainfo->{'cached_deplibs'}}, 
+		    push(@{$lainfo->{'cached_deplibs'}},
 			@{$lainfo->deplib_list});
 		    if (@{$lainfo->{'cached_deplibs'}} > 50) {
 		    	$lainfo->{'cached_deplibs'} = reverse_zap_duplicates_ref($lainfo->{'cached_deplibs'});
@@ -1234,8 +1234,8 @@ sub resolve_la_list
 sub internal_parse_linkargs
 {
 	state $seen_pthread = 0;
-	my ($result, $deplibs, $Rresolved, $libsearchdirs, $orderedlibs, 
-	    $dirs, $libs, $libstofind, $args, 
+	my ($result, $deplibs, $Rresolved, $libsearchdirs, $orderedlibs,
+	    $dirs, $libs, $libstofind, $args,
 	    $la, $level) = @_;
 	Trace::debug {"parse_linkargs pass: ", ($la == 1) ? 1 : 2, ", level: $level\n"};
 	Trace::debug {"  args: @$args\n"};
@@ -1244,9 +1244,9 @@ sub internal_parse_linkargs
 		Trace::debug {"  processing $a\n"};
 		if (!$a || $a eq '' || $a =~ m/^\s+$/) {
 			# skip empty arguments
-		} elsif ($a eq '-lc') {	
+		} elsif ($a eq '-lc') {
 			# don't link explicitly with libc (just remove -lc)
-		} elsif ($a eq '-pthread' && !$seen_pthread) {	
+		} elsif ($a eq '-pthread' && !$seen_pthread) {
 			# XXX special treatment since it's not a -l flag
 			push @$deplibs, $a;
 			$seen_pthread = 1;
@@ -1292,9 +1292,9 @@ sub internal_parse_linkargs
 			}
 			if ($la) {
 				push(@$result, $a);
-				internal_parse_linkargs($result, $deplibs, 
-				    $Rresolved, $libsearchdirs, $orderedlibs, 
-				    $dirs, $libs, $libstofind, \@largs, $la, 
+				internal_parse_linkargs($result, $deplibs,
+				    $Rresolved, $libsearchdirs, $orderedlibs,
+				    $dirs, $libs, $libstofind, \@largs, $la,
 				    $level+1) if @largs;
 			} else {
 				push @$orderedlibs, $key;
@@ -1605,5 +1605,5 @@ sub guess_implicit_mode
 			$m = 'link';
 		}
 	}
-	return $m;	
+	return $m;
 }
