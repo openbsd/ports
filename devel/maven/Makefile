@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/26 09:38:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2009/08/30 22:05:25 stsp Exp $
 
 COMMENT=	software project management and comprehension tool
 
-DISTNAME=	maven-2.0
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	maven-2.2.1
+DISTNAME=	apache-${PKGNAME}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://maven.apache.org/
@@ -21,8 +21,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=maven/binaries/} \
 EXTRACT_SUFX=	-bin.tar.gz
 
 MODULES=	java
-MODJAVA_VER=	1.4+
-BUILD_DEPENDS=	::archivers/gtar
+MODJAVA_VER=	1.5+
 RUN_DEPENDS=	::java/javaPathHelper
 
 NO_BUILD=	Yes
@@ -30,14 +29,13 @@ NO_REGRESS=	Yes
 
 MAVEN_HOME=	${LOCALBASE}/${DISTNAME}
 SAMPLEDIR=	${PREFIX}/share/examples/maven
-TAR=		${LOCALBASE}/bin/gtar
 SUBST_VARS+=	DISTNAME
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DISTNAME}
 	${INSTALL_DATA_DIR} ${SAMPLEDIR}
 	cd ${WRKDIST} && \
-		tar -cf - bin core lib `find * -prune -type f` | \
+		tar -cf - bin boot lib `find * -prune -type f` | \
 		tar -C ${PREFIX}/${DISTNAME} -xf -
 	find ${WRKINST} -name \*.orig -or -name \*.bat -or -name \*.exe | \
 		xargs rm

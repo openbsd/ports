@@ -1,9 +1,9 @@
-$OpenBSD: patch-bin_mvn,v 1.1.1.1 2005/12/08 09:48:02 bernd Exp $
---- bin/mvn.orig	Wed Oct 19 21:11:17 2005
-+++ bin/mvn	Mon Dec  5 15:53:30 2005
-@@ -18,8 +18,8 @@
- #   Copyright (c) 2001-2002 The Apache Software Foundation.  All rights
- #   reserved.
+$OpenBSD: patch-bin_mvn,v 1.2 2009/08/30 22:05:32 stsp Exp $
+--- bin/mvn.orig	Thu Aug  6 20:18:08 2009
++++ bin/mvn	Mon Aug 24 01:28:30 2009
+@@ -41,8 +41,8 @@ while [ "$1" != "" ] ; do
+ 
+ done
  
 -if [ -f /etc/mavenrc ] ; then
 -  . /etc/mavenrc
