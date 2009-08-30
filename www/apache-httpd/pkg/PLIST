@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/05/15 15:46:58 claudio Exp $
+@comment $OpenBSD: PLIST,v 1.16 2009/08/30 18:06:07 fkr Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -268,6 +268,7 @@ share/doc/apache2/howto/public_html.html
 share/doc/apache2/howto/public_html.html.en
 share/doc/apache2/howto/public_html.html.ja.utf8
 share/doc/apache2/howto/public_html.html.ko.euc-kr
+share/doc/apache2/howto/public_html.html.tr.utf8
 share/doc/apache2/howto/ssi.html
 share/doc/apache2/howto/ssi.html.en
 share/doc/apache2/howto/ssi.html.ja.utf8
@@ -348,6 +349,7 @@ share/doc/apache2/misc/password_encryptions.html.en
 share/doc/apache2/misc/perf-tuning.html
 share/doc/apache2/misc/perf-tuning.html.en
 share/doc/apache2/misc/perf-tuning.html.ko.euc-kr
+share/doc/apache2/misc/perf-tuning.html.tr.utf8
 share/doc/apache2/misc/relevant_standards.html
 share/doc/apache2/misc/relevant_standards.html.en
 share/doc/apache2/misc/relevant_standards.html.ko.euc-kr
@@ -739,6 +741,7 @@ share/doc/apache2/programs/apachectl.html.tr.utf8
 share/doc/apache2/programs/apxs.html
 share/doc/apache2/programs/apxs.html.en
 share/doc/apache2/programs/apxs.html.ko.euc-kr
+share/doc/apache2/programs/apxs.html.tr.utf8
 share/doc/apache2/programs/configure.html
 share/doc/apache2/programs/configure.html.en
 share/doc/apache2/programs/configure.html.ko.euc-kr
@@ -746,23 +749,29 @@ share/doc/apache2/programs/configure.html.tr.utf8
 share/doc/apache2/programs/dbmmanage.html
 share/doc/apache2/programs/dbmmanage.html.en
 share/doc/apache2/programs/dbmmanage.html.ko.euc-kr
+share/doc/apache2/programs/dbmmanage.html.tr.utf8
 share/doc/apache2/programs/htcacheclean.html
 share/doc/apache2/programs/htcacheclean.html.en
 share/doc/apache2/programs/htcacheclean.html.ko.euc-kr
+share/doc/apache2/programs/htcacheclean.html.tr.utf8
 share/doc/apache2/programs/htdbm.html
 share/doc/apache2/programs/htdbm.html.en
+share/doc/apache2/programs/htdbm.html.tr.utf8
 share/doc/apache2/programs/htdigest.html
 share/doc/apache2/programs/htdigest.html.en
 share/doc/apache2/programs/htdigest.html.ko.euc-kr
+share/doc/apache2/programs/htdigest.html.tr.utf8
 share/doc/apache2/programs/htpasswd.html
 share/doc/apache2/programs/htpasswd.html.en
 share/doc/apache2/programs/htpasswd.html.ko.euc-kr
+share/doc/apache2/programs/htpasswd.html.tr.utf8
 share/doc/apache2/programs/httpd.html
 share/doc/apache2/programs/httpd.html.en
 share/doc/apache2/programs/httpd.html.ko.euc-kr
 share/doc/apache2/programs/httpd.html.tr.utf8
 share/doc/apache2/programs/httxt2dbm.html
 share/doc/apache2/programs/httxt2dbm.html.en
+share/doc/apache2/programs/httxt2dbm.html.tr.utf8
 share/doc/apache2/programs/index.html
 share/doc/apache2/programs/index.html.en
 share/doc/apache2/programs/index.html.es
@@ -772,15 +781,19 @@ share/doc/apache2/programs/index.html.tr.utf8
 share/doc/apache2/programs/logresolve.html
 share/doc/apache2/programs/logresolve.html.en
 share/doc/apache2/programs/logresolve.html.ko.euc-kr
+share/doc/apache2/programs/logresolve.html.tr.utf8
 share/doc/apache2/programs/other.html
 share/doc/apache2/programs/other.html.en
 share/doc/apache2/programs/other.html.ko.euc-kr
+share/doc/apache2/programs/other.html.tr.utf8
 share/doc/apache2/programs/rotatelogs.html
 share/doc/apache2/programs/rotatelogs.html.en
 share/doc/apache2/programs/rotatelogs.html.ko.euc-kr
+share/doc/apache2/programs/rotatelogs.html.tr.utf8
 share/doc/apache2/programs/suexec.html
 share/doc/apache2/programs/suexec.html.en
 share/doc/apache2/programs/suexec.html.ko.euc-kr
+share/doc/apache2/programs/suexec.html.tr.utf8
 share/doc/apache2/rewrite/
 share/doc/apache2/rewrite/index.html
 share/doc/apache2/rewrite/index.html.en
