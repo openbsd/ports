@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/09/01 09:54:49 jasper Exp $
-${P5SITE}/POE/
+@comment $OpenBSD: PLIST,v 1.5 2009/08/30 22:06:04 jasper Exp $
 ${P5SITE}/POE.pm
 ${P5SITE}/POE/Component/
 ${P5SITE}/POE/Component.pm
@@ -24,14 +23,9 @@ ${P5SITE}/POE/Filter/Stream.pm
 ${P5SITE}/POE/Kernel.pm
 ${P5SITE}/POE/Loop/
 ${P5SITE}/POE/Loop.pm
-${P5SITE}/POE/Loop/Event.pm
-${P5SITE}/POE/Loop/Gtk.pm
 ${P5SITE}/POE/Loop/IO_Poll.pm
 ${P5SITE}/POE/Loop/PerlSignals.pm
 ${P5SITE}/POE/Loop/Select.pm
-${P5SITE}/POE/Loop/Tk.pm
-${P5SITE}/POE/Loop/TkActiveState.pm
-${P5SITE}/POE/Loop/TkCommon.pm
 ${P5SITE}/POE/NFA.pm
 ${P5SITE}/POE/Pipe/
 ${P5SITE}/POE/Pipe.pm
@@ -79,14 +73,9 @@ ${P5SITE}/POE/Wheel/SocketFactory.pm
 @man man/man3p/POE::Filter::Stream.3p
 @man man/man3p/POE::Kernel.3p
 @man man/man3p/POE::Loop.3p
-@man man/man3p/POE::Loop::Event.3p
-@man man/man3p/POE::Loop::Gtk.3p
 @man man/man3p/POE::Loop::IO_Poll.3p
 @man man/man3p/POE::Loop::PerlSignals.3p
 @man man/man3p/POE::Loop::Select.3p
-@man man/man3p/POE::Loop::Tk.3p
-@man man/man3p/POE::Loop::TkActiveState.3p
-@man man/man3p/POE::Loop::TkCommon.3p
 @man man/man3p/POE::NFA.3p
 @man man/man3p/POE::Pipe.3p
 @man man/man3p/POE::Pipe::OneWay.3p
