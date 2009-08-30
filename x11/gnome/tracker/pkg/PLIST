@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/04/22 11:44:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/08/30 11:46:14 ajacoutot Exp $
 @bin bin/tracker-applet
 @bin bin/tracker-files
 @bin bin/tracker-info
@@ -45,6 +45,8 @@ include/tracker-keywords-glue.h
 include/tracker-metadata-glue.h
 include/tracker-search-glue.h
 include/tracker.h
+lib/deskbar-applet/
+lib/deskbar-applet/modules-2.20-compatible/
 lib/deskbar-applet/modules-2.20-compatible/tracker-module.py
 lib/libtracker-gtk.a
 lib/libtracker-gtk.la

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/11 08:39:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/08/30 11:46:14 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,7 +6,7 @@ COMMENT=	powerful desktop search tool and indexer
 # as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.94
-PKGNAME=	tracker-search-${VERSION}p4
+PKGNAME=	tracker-search-${VERSION}p5
 
 SHARED_LIBS +=	stemmer              0.0      # .694.0
 SHARED_LIBS +=	tracker-common       0.0      # .694.0
@@ -15,6 +15,22 @@ SHARED_LIBS +=	tracker-data         0.0      # .694.0
 SHARED_LIBS +=	trackerclient        0.0      # .694.0
 SHARED_LIBS +=	tracker-module       0.0      # .0.0
 SHARED_LIBS +=	tracker-gtk          0.0      # .694.0
+
+WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
+WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 avahi-client avahi-common
+WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 bz2
+WANTLIB += c cairo camel-1.2 com_err crypto curl dbus-1 dbus-glib-1
+WANTLIB += edataserver-1.2 execinfo expat fontconfig freetype
+WANTLIB += gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
+WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls
+WANTLIB += gobject-2.0 gpg-error gssapi gstbase-0.10 gstreamer-0.10
+WANTLIB += gthread-2.0 gtk-x11-2.0 idn jpeg krb5 m nspr4 nss3
+WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += plc4 plds4 png popt pthread pthread-stubs smime3 softokn3
+WANTLIB += soup-2.4 ssl ssl3 startup-notification-1 tasn1 tiff
+WANTLIB += util xcb xcb-atom xcb-aux xcb-event xml2 xslt z
 
 HOMEPAGE=	http://tracker-project.org/
 
@@ -28,22 +44,6 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 bonobo-2 bonobo-activation
-WANTLIB += bonoboui-2 bz2 c cairo camel-1.2 com_err crypto curl
-WANTLIB += dbus-1 dbus-glib-1 edataserver-1.2 expat fontconfig
-WANTLIB += freetype gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
-WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls
-WANTLIB += gobject-2.0 gpg-error gssapi gsttag-0.10 gthread-2.0
-WANTLIB += gtk-x11-2.0 idn jpeg krb5 m nspr4 nss3 ogg pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png popt pthread smime3 softokn3 soup-2.4 ssl ssl3
-WANTLIB += startup-notification-1 tasn1 tiff totem-plparser util
-WANTLIB += xml2 xslt z pthread-stubs xcb
-WANTLIB += avahi-client avahi-common avahi-glib
-
 LIB_DEPENDS=		vorbis::audio/libvorbis \
 			qdbm::databases/qdbm \
 			sqlite3::databases/sqlite3 \
@@ -51,16 +51,16 @@ LIB_DEPENDS=		vorbis::audio/libvorbis \
 			notify::devel/libnotify \
 			exif::graphics/libexif \
 			gmime-2.0:gmime->=2.2,<2.4:mail/gmime \
-			gstbase-0.10,gstreamer-0.10::multimedia/gstreamer-0.10/core \
+			gsttag-0.10::multimedia/gstreamer-0.10/plugins-base \
 			poppler-glib,poppler::print/poppler \
 			raptor::textproc/raptor \
-			gnome-desktop-2::x11/gnome/desktop
+			gnome-desktop-2::x11/gnome/desktop \
+			totem-plparser.>=1::x11/gnome/totem-pl-parser
 BUILD_DEPENDS=		::devel/xdg-utils \
 			::x11/gnome/deskbar-applet
 RUN_DEPENDS=		::devel/glib2,-fam \
 			::devel/xdg-utils \
-			::textproc/odt2txt \
-			::x11/gnome/deskbar-applet
+			::textproc/odt2txt
 
 DESKTOP_FILES=		Yes
 MODPY_RUNDEP=		No
