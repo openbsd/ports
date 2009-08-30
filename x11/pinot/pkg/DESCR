@@ -2,6 +2,3 @@ Pinot is a D-Bus service that crawls, indexes your documents and
 monitors them for changes, with a GTK-based user interface that enables
 to query the index built by the service or your favourite Web engine,
 and display and analyze the results.
-
-If you have the deskbar-applet package installed, you will be able to
-use the pinot-live.py or pinot-module.py plugins from the applet.
