@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/12/13 21:46:43 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/08/30 17:03:59 jasper Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/Manifest.pm
-@man man/man3p/Test::Manifest.3
