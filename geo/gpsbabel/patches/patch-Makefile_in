@@ -1,29 +1,29 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2008/08/21 05:20:53 ckuethe Exp $
---- Makefile.in.orig	Sat Apr 26 03:49:34 2008
-+++ Makefile.in	Wed Jul  2 22:04:22 2008
-@@ -91,7 +91,7 @@ LIBOBJS = queue.o route.o waypt.o filter_vecs.o util.o
+$OpenBSD: patch-Makefile_in,v 1.5 2009/08/31 22:48:17 ckuethe Exp $
+--- Makefile.in.orig	Tue Nov  4 16:23:11 2008
++++ Makefile.in	Tue Aug  4 20:24:40 2009
+@@ -94,7 +94,7 @@ LIBOBJS = queue.o route.o waypt.o filter_vecs.o util.o
            uuid.o formspec.o xmltag.o cet.o cet_util.o fatal.o rgbcolors.o \
  	  inifile.o garmin_fs.o gbsleep.o units.o @GBSER@ gbser.o \
- 	  gbfile.o parse.o avltree.o \
+ 	  gbfile.o parse.o avltree.o session.o \
 -	$(PALM_DB) $(GARMIN) $(JEEPS) $(SHAPE) @ZLIB@ $(FMTS) $(FILTERS)
 +	$(PALM_DB) $(GARMIN) $(JEEPS) @SHAPE@ @ZLIB@ $(FMTS) $(FILTERS)
  OBJS = main.o globals.o $(LIBOBJS) @FILEINFO@
  
  .c.o:
-@@ -185,7 +185,6 @@ dep:
- $(WEB)/htmldoc-$(DOCVERSION)/readme.html: FORCE
+@@ -188,7 +188,6 @@ dep:
+ $(WEB)/htmldoc-$(DOCVERSION)/index.html: FORCE
  	mkdir -p $(WEB)/htmldoc-$(DOCVERSION)
  	perl xmldoc/makedoc
 -	xmlwf xmldoc/readme.xml		#check for well-formedness
  	xmllint --noout --valid xmldoc/readme.xml    	#validate
  	xsltproc \
  	 --stringparam base.dir "$(WEB)/htmldoc-$(DOCVERSION)/" \
-@@ -232,7 +231,7 @@ gpsbabel.html: FORCE
- readme.txt: gpsbabel.html
- 	lynx -nolist -dump gpsbabel.html  > $@
+@@ -241,7 +240,7 @@ changes.html: FORCE
+ 	wget -O $(WEB)/changes.html http://www.gpsbabel.org/changes.html || exit 1
+ 	rm -f $(WEB)/changes.html.1 > /dev/null
  
--doc: gpsbabel $(WEB)/htmldoc-$(DOCVERSION)/readme.html gpsbabel.pdf # readme.txt
-+doc: gpsbabel $(WEB)/htmldoc-$(DOCVERSION)/readme.html # readme.txt
+-doc: gpsbabel $(WEB)/htmldoc-$(DOCVERSION)/index.html gpsbabel.pdf # readme.txt
++doc: gpsbabel $(WEB)/htmldoc-$(DOCVERSION)/index.html # readme.txt
  
  FORCE:
  
