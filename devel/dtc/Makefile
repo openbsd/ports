@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/30 16:40:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/08/31 11:48:29 ajacoutot Exp $
 
 COMMENT=		Device Tree Compiler
 
@@ -17,8 +17,10 @@ MASTER_SITES=		http://nedbsd.eu/~jasper/distfiles/
 
 WANTLIB += c
 
+BUILD_DEPENDS=		::devel/bison
+
 USE_GMAKE=		Yes
-MAKE_ENV+=		LDFLAGS="-fPIC"
+MAKE_ENV+=		V=1
 
 REGRESS_TARGET= 	check
 
