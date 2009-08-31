@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/30 11:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/31 20:48:56 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,7 +32,8 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS:=pinot/}
 
 MODULES=	devel/gettext
 
-BUILD_DEPENDS=	::devel/boost
+BUILD_DEPENDS=	::devel/boost \
+		::misc/shared-mime-info
 
 # XXX catppt - catdvi
 LIB_DEPENDS=	gtkmm-2.4.>=7,gdkmm-2.4,atkmm-1.6::x11/gtk2mm \
