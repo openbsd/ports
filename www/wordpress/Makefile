@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/11 23:43:17 martynas Exp $
+# $OpenBSD: Makefile,v 1.21 2009/08/31 23:05:57 merdely Exp $
 
 COMMENT =	standard compliant weblog
 
-DISTNAME =	wordpress-2.8.3
+DISTNAME =	wordpress-2.8.4
 CATEGORIES =	www
 
 HOMEPAGE =	http://wordpress.org/
@@ -27,9 +27,6 @@ INSTDIR =	${PREFIX}/wordpress
 WRKDIST =	${WRKDIR}/wordpress
 
 SUBST_VARS =	INSTDIR
-
-pre-configure:
-	find ${WRKDIST} -name "*.orig" -execdir rm {} \;
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/wordpress
