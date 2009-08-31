@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/24 12:28:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/08/31 20:52:29 jasper Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -9,7 +9,7 @@ VERSION =		1.6.5
 MAJOR =			${VERSION:R}
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
-PKGNAME-server =	zabbix-server-${VERSION}
+PKGNAME-server =	zabbix-server-${VERSION}p0
 FULLPKGNAME-doc =	zabbix-doc-${VERSION}
 PKGNAME-web =		zabbix-web-${VERSION}
 CATEGORIES =		net
@@ -44,7 +44,8 @@ WANTLIB-doc =
 
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			curl::net/curl \
-			netsnmp::net/net-snmp
+			netsnmp::net/net-snmp \
+			iksemel::textproc/iksemel
 RUN_DEPENDS-server =	::net/fping
 WANTLIB-server =	${WANTLIB} crypto idn ssl z
 
@@ -55,7 +56,8 @@ CONFIGURE_ARGS =	--enable-server \
 			--enable-ipv6 \
 			--with-libcurl \
 			--with-net-snmp \
-			--with-ldap
+			--with-ldap \
+			--with-jabber="${LOCALBASE}"
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_search___res_query=no
