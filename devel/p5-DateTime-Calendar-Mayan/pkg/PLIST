@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/31 10:05:29 kevlo Exp $
+${P5SITE}/DateTime/Calendar/
+${P5SITE}/DateTime/Calendar/Mayan.pm
+${P5SITE}/DateTime/Calendar/Mayan.pod
+@man man/man3p/DateTime::Calendar::Mayan.3p
