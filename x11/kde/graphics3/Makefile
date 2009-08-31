@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2009/08/27 19:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2009/08/31 18:51:02 kili Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -14,10 +14,10 @@ SEPARATE_BUILD =	flavored
 MULTI_PACKAGES =	-main -kpov -kamera -sane
 PKGNAME =		${DISTNAME}
 
-PKGNAME-main =		${DISTNAME}p1
-PKGNAME-kamera =	kamera-${VERSION}p1
-PKGNAME-kpov =		kpovmodeller-${VERSION}p1
-PKGNAME-sane =		ksane-${VERSION}p2
+PKGNAME-main =		${DISTNAME}p2
+PKGNAME-kamera =	kamera-${VERSION}p3
+PKGNAME-kpov =		kpovmodeller-${VERSION}p2
+PKGNAME-sane =		ksane-${VERSION}p3
 
 SHARED_LIBS +=	kghostviewlib        1.0      # .0.0
 SHARED_LIBS +=	kpovmodeler          1.0      # .0.0
@@ -28,13 +28,11 @@ SHARED_LIBS +=	kmultipage           1.0      # .0.0
 SHARED_LIBS +=	kscan                2.0      # .1.0
 
 MODULES =		x11/kde devel/gettext
-# only needed for the -sane subpackage
-MODULES +=		converters/libiconv
 
 BUILD_DEPENDS =		::print/texlive/base
 WANTLIB =		X11 art_lgpl_2 ICE png util jpeg z SM Xext \
 			m idn Xau Xdmcp fam rpcsvc stdc++ \
-			pthread-stubs xcb
+			pthread-stubs qt-mt xcb
 
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
@@ -63,15 +61,16 @@ WANTLIB-kpov =		${WANTLIB} GL freetype Xrender Xmu GLU c Xi \
 			Xt pthread
 
 LIB_DEPENDS-kamera = 	${MODGETTEXT_LIB_DEPENDS} \
+			gphoto2,gphoto2_port::graphics/libgphoto2 \
 			kdecore.>=6,DCOP,kio,kwalletclient,kdefx,kdeui,kdesu::x11/kde/libs3
 WANTLIB-kamera =	${WANTLIB} exif Xrender ltdl
 
 RUN_DEPENDS-sane =	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS-sane =	${MODLIBICONV_LIB_DEPENDS} \
+LIB_DEPENDS-sane =	${MODGETTEXT_LIB_DEPENDS} \
 			kdecore.>=6,DCOP,kio,kwalletclient,kdefx,kdeui,kdesu,ktexteditor,vcard,kabc,kparts,kresources,kspell,kdeprint::x11/kde/libs3 \
 			sane::graphics/sane-backends
 WANTLIB-sane =		${WANTLIB-kamera} usb tiff c ltdl pthread avahi-client avahi-common dbus-1 \
-			gphoto2,gphoto2_port
+			gphoto2 gphoto2_port 
 
 
 CONFIGURE_ENV +=	\
