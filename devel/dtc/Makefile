@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/31 11:48:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/08/31 16:17:14 ajacoutot Exp $
 
 COMMENT=		Device Tree Compiler
 
 DISTNAME=		dtc-0.1
+PKGNAME=		${DISTNAME}p0
+
 CATEGORIES=		sysutils devel
 
 HOMEPAGE=		http://www.jdl.com/
