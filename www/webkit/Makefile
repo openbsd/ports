@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2009/06/18 20:09:20 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2009/08/31 19:00:01 kili Exp $
 
 COMMENT =	open source web browser engine
 
 V = 1.1.10
 DISTNAME =	webkit-${V}
 # XXX do not remove v0
-PKGNAME =	webkit-${V}v0
+PKGNAME =	webkit-${V}p0v0
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -48,7 +48,7 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		expat fontconfig freetype gcrypt gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gnutls gobject-2.0 gpg-error gthread-2.0 intl jpeg m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread \
-		tasn1 z cairo pixman-1 png stdc++ xml2
+		tasn1 z cairo pixman-1 png pthread-stubs stdc++ xcb xml2
 
 LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0,gailutil::x11/gtk+2,-main \
 		icudata,icui18n,icuuc::textproc/icu4c \
