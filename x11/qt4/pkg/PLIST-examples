@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.20 2009/06/08 13:55:28 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.21 2009/09/01 18:24:28 espie Exp $
 @conflict qt4-<=4.2.2
 %%SHARED%%
 %%GCC4%%
@@ -301,12 +301,16 @@ lib/qt4/demos/spreadsheet/images/
 lib/qt4/demos/spreadsheet/images/interview.png
 lib/qt4/demos/spreadsheet/main.cpp
 lib/qt4/demos/spreadsheet/printview.cpp
+lib/qt4/demos/spreadsheet/printview.h
 @bin lib/qt4/demos/spreadsheet/spreadsheet
 lib/qt4/demos/spreadsheet/spreadsheet.cpp
+lib/qt4/demos/spreadsheet/spreadsheet.h
 lib/qt4/demos/spreadsheet/spreadsheet.pro
 lib/qt4/demos/spreadsheet/spreadsheet.qrc
 lib/qt4/demos/spreadsheet/spreadsheetdelegate.cpp
+lib/qt4/demos/spreadsheet/spreadsheetdelegate.h
 lib/qt4/demos/spreadsheet/spreadsheetitem.cpp
+lib/qt4/demos/spreadsheet/spreadsheetitem.h
 lib/qt4/demos/sqlbrowser/
 lib/qt4/demos/sqlbrowser/browser.cpp
 lib/qt4/demos/sqlbrowser/browser.h
@@ -1422,6 +1426,14 @@ lib/qt4/examples/network/ftp/images/cdtoparent.png
 lib/qt4/examples/network/ftp/images/dir.png
 lib/qt4/examples/network/ftp/images/file.png
 lib/qt4/examples/network/ftp/main.cpp
+lib/qt4/examples/network/googlesuggest/
+@bin lib/qt4/examples/network/googlesuggest/googlesuggest
+lib/qt4/examples/network/googlesuggest/googlesuggest.cpp
+lib/qt4/examples/network/googlesuggest/googlesuggest.h
+lib/qt4/examples/network/googlesuggest/googlesuggest.pro
+lib/qt4/examples/network/googlesuggest/main.cpp
+lib/qt4/examples/network/googlesuggest/searchbox.cpp
+lib/qt4/examples/network/googlesuggest/searchbox.h
 lib/qt4/examples/network/http/
 lib/qt4/examples/network/http/authenticationdialog.ui
 @bin lib/qt4/examples/network/http/http

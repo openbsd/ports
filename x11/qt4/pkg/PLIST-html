@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.19 2009/06/08 13:55:28 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.20 2009/09/01 18:24:28 espie Exp $
 share/doc/qt4/html/
 share/doc/qt4/html/3rdparty.html
 share/doc/qt4/html/abstractwidgets.html
@@ -906,6 +906,7 @@ share/doc/qt4/html/images/embedded-simpledecoration-example.png
 share/doc/qt4/html/images/embeddeddialogs-demo.png
 share/doc/qt4/html/images/extension-example.png
 share/doc/qt4/html/images/extension_more.png
+share/doc/qt4/html/images/fancybrowser-example.png
 share/doc/qt4/html/images/fetchmore-example.png
 share/doc/qt4/html/images/filedialogurls.png
 share/doc/qt4/html/images/filetree_1-example.png
@@ -924,6 +925,8 @@ share/doc/qt4/html/images/frames.png
 share/doc/qt4/html/images/fridgemagnets-example.png
 share/doc/qt4/html/images/ftp-example.png
 share/doc/qt4/html/images/geometry.png
+share/doc/qt4/html/images/googlechat-example.png
+share/doc/qt4/html/images/googlesuggest-example.png
 share/doc/qt4/html/images/grabber-example.png
 share/doc/qt4/html/images/gradientText.png
 share/doc/qt4/html/images/gradients-demo.png
@@ -1480,6 +1483,16 @@ share/doc/qt4/html/images/relationaltable.png
 share/doc/qt4/html/images/relationaltablemodel-example.png
 share/doc/qt4/html/images/remotecontrolledcar-car-example.png
 share/doc/qt4/html/images/resources.png
+share/doc/qt4/html/images/rgbController-arrangement.png
+share/doc/qt4/html/images/rgbController-configure-connection1.png
+share/doc/qt4/html/images/rgbController-configure-connection2.png
+share/doc/qt4/html/images/rgbController-final-layout.png
+share/doc/qt4/html/images/rgbController-form-gridLayout.png
+share/doc/qt4/html/images/rgbController-no-toplevel-layout.png
+share/doc/qt4/html/images/rgbController-property-editing.png
+share/doc/qt4/html/images/rgbController-screenshot.png
+share/doc/qt4/html/images/rgbController-selectForLayout.png
+share/doc/qt4/html/images/rgbController-signalsAndSlots.png
 share/doc/qt4/html/images/richtext-document.png
 share/doc/qt4/html/images/richtext-examples.png
 share/doc/qt4/html/images/rintersect.png
@@ -2025,6 +2038,13 @@ share/doc/qt4/html/network-ftp-ftpwindow-cpp.html
 share/doc/qt4/html/network-ftp-ftpwindow-h.html
 share/doc/qt4/html/network-ftp-main-cpp.html
 share/doc/qt4/html/network-ftp.html
+share/doc/qt4/html/network-googlesuggest-googlesuggest-cpp.html
+share/doc/qt4/html/network-googlesuggest-googlesuggest-h.html
+share/doc/qt4/html/network-googlesuggest-googlesuggest-pro.html
+share/doc/qt4/html/network-googlesuggest-main-cpp.html
+share/doc/qt4/html/network-googlesuggest-searchbox-cpp.html
+share/doc/qt4/html/network-googlesuggest-searchbox-h.html
+share/doc/qt4/html/network-googlesuggest.html
 share/doc/qt4/html/network-http-authenticationdialog-ui.html
 share/doc/qt4/html/network-http-http-pro.html
 share/doc/qt4/html/network-http-httpwindow-cpp.html
@@ -4809,6 +4829,13 @@ share/doc/qt4/html/uitools-textfinder.html
 share/doc/qt4/html/unicode.html
 share/doc/qt4/html/unix-signals.html
 share/doc/qt4/html/usingadaptors.html
+share/doc/qt4/html/webkit-fancybrowser-fancybrowser-pro.html
+share/doc/qt4/html/webkit-fancybrowser-jquery-min-js.html
+share/doc/qt4/html/webkit-fancybrowser-jquery-qrc.html
+share/doc/qt4/html/webkit-fancybrowser-main-cpp.html
+share/doc/qt4/html/webkit-fancybrowser-mainwindow-cpp.html
+share/doc/qt4/html/webkit-fancybrowser-mainwindow-h.html
+share/doc/qt4/html/webkit-fancybrowser.html
 share/doc/qt4/html/webkit-formextractor-formextractor-cpp.html
 share/doc/qt4/html/webkit-formextractor-formextractor-h.html
 share/doc/qt4/html/webkit-formextractor-formextractor-pro.html
@@ -4818,6 +4845,12 @@ share/doc/qt4/html/webkit-formextractor-main-cpp.html
 share/doc/qt4/html/webkit-formextractor-mainwindow-cpp.html
 share/doc/qt4/html/webkit-formextractor-mainwindow-h.html
 share/doc/qt4/html/webkit-formextractor.html
+share/doc/qt4/html/webkit-googlechat-form-ui.html
+share/doc/qt4/html/webkit-googlechat-googlechat-cpp.html
+share/doc/qt4/html/webkit-googlechat-googlechat-h.html
+share/doc/qt4/html/webkit-googlechat-googlechat-pro.html
+share/doc/qt4/html/webkit-googlechat-main-cpp.html
+share/doc/qt4/html/webkit-googlechat.html
 share/doc/qt4/html/webkit-previewer-main-cpp.html
 share/doc/qt4/html/webkit-previewer-mainwindow-cpp.html
 share/doc/qt4/html/webkit-previewer-mainwindow-h.html
@@ -5441,6 +5474,7 @@ share/doc/qt4/src/images/embedded-simpledecoration-example.png
 share/doc/qt4/src/images/embeddeddialogs-demo.png
 share/doc/qt4/src/images/extension-example.png
 share/doc/qt4/src/images/extension_more.png
+share/doc/qt4/src/images/fancybrowser-example.png
 share/doc/qt4/src/images/fetchmore-example.png
 share/doc/qt4/src/images/filedialogurls.png
 share/doc/qt4/src/images/filetree_1-example.png
@@ -5459,6 +5493,8 @@ share/doc/qt4/src/images/frames.png
 share/doc/qt4/src/images/fridgemagnets-example.png
 share/doc/qt4/src/images/ftp-example.png
 share/doc/qt4/src/images/geometry.png
+share/doc/qt4/src/images/googlechat-example.png
+share/doc/qt4/src/images/googlesuggest-example.png
 share/doc/qt4/src/images/grabber-example.png
 share/doc/qt4/src/images/gradientText.png
 share/doc/qt4/src/images/gradients-demo.png
@@ -6099,6 +6135,16 @@ share/doc/qt4/src/images/relationaltablemodel-example.png
 share/doc/qt4/src/images/remotecontrolledcar-car-example.png
 share/doc/qt4/src/images/remotecontrolledcar-controller-example.png
 share/doc/qt4/src/images/resources.png
+share/doc/qt4/src/images/rgbController-arrangement.png
+share/doc/qt4/src/images/rgbController-configure-connection1.png
+share/doc/qt4/src/images/rgbController-configure-connection2.png
+share/doc/qt4/src/images/rgbController-final-layout.png
+share/doc/qt4/src/images/rgbController-form-gridLayout.png
+share/doc/qt4/src/images/rgbController-no-toplevel-layout.png
+share/doc/qt4/src/images/rgbController-property-editing.png
+share/doc/qt4/src/images/rgbController-screenshot.png
+share/doc/qt4/src/images/rgbController-selectForLayout.png
+share/doc/qt4/src/images/rgbController-signalsAndSlots.png
 share/doc/qt4/src/images/richtext-document.png
 share/doc/qt4/src/images/richtext-examples.png
 share/doc/qt4/src/images/rintersect.png

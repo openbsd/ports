@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2009/06/08 13:55:28 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2009/09/01 18:24:28 espie Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 %%SHARED%%
@@ -2377,6 +2377,7 @@ include/X11/qt4/phonon/EffectDescriptionModel
 include/X11/qt4/phonon/EffectInterface
 include/X11/qt4/phonon/EffectParameter
 include/X11/qt4/phonon/EffectWidget
+include/X11/qt4/phonon/Global
 include/X11/qt4/phonon/MediaController
 include/X11/qt4/phonon/MediaNode
 include/X11/qt4/phonon/MediaObject
@@ -2599,6 +2600,7 @@ lib/qt4/mkspecs/features/win32/embed_manifest_dll.prf
 lib/qt4/mkspecs/features/win32/embed_manifest_exe.prf
 lib/qt4/mkspecs/features/win32/exceptions.prf
 lib/qt4/mkspecs/features/win32/exceptions_off.prf
+lib/qt4/mkspecs/features/win32/ltcg.prf
 lib/qt4/mkspecs/features/win32/opengl.prf
 lib/qt4/mkspecs/features/win32/qaxcontainer.prf
 lib/qt4/mkspecs/features/win32/qaxserver.prf
@@ -2983,20 +2985,26 @@ lib/qt4/translations/
 lib/qt4/translations/assistant_adp_de.qm
 lib/qt4/translations/assistant_adp_ja.qm
 lib/qt4/translations/assistant_adp_pl.qm
+lib/qt4/translations/assistant_adp_untranslated.qm
 lib/qt4/translations/assistant_adp_zh_CN.qm
 lib/qt4/translations/assistant_adp_zh_TW.qm
 lib/qt4/translations/assistant_de.qm
+lib/qt4/translations/assistant_ja.qm
 lib/qt4/translations/assistant_pl.qm
+lib/qt4/translations/assistant_untranslated.qm
 lib/qt4/translations/assistant_zh_CN.qm
 lib/qt4/translations/assistant_zh_TW.qm
 lib/qt4/translations/designer_de.qm
 lib/qt4/translations/designer_ja.qm
 lib/qt4/translations/designer_pl.qm
+lib/qt4/translations/designer_untranslated.qm
 lib/qt4/translations/designer_zh_CN.qm
 lib/qt4/translations/designer_zh_TW.qm
 lib/qt4/translations/linguist_de.qm
+lib/qt4/translations/linguist_fr.qm
 lib/qt4/translations/linguist_ja.qm
 lib/qt4/translations/linguist_pl.qm
+lib/qt4/translations/linguist_untranslated.qm
 lib/qt4/translations/linguist_zh_CN.qm
 lib/qt4/translations/linguist_zh_TW.qm
 lib/qt4/translations/qt_ar.qm
@@ -3004,7 +3012,9 @@ lib/qt4/translations/qt_de.qm
 lib/qt4/translations/qt_es.qm
 lib/qt4/translations/qt_fr.qm
 lib/qt4/translations/qt_help_de.qm
+lib/qt4/translations/qt_help_ja.qm
 lib/qt4/translations/qt_help_pl.qm
+lib/qt4/translations/qt_help_untranslated.qm
 lib/qt4/translations/qt_help_zh_CN.qm
 lib/qt4/translations/qt_help_zh_TW.qm
 lib/qt4/translations/qt_iw.qm
@@ -3015,12 +3025,15 @@ lib/qt4/translations/qt_ru.qm
 lib/qt4/translations/qt_sk.qm
 lib/qt4/translations/qt_sv.qm
 lib/qt4/translations/qt_uk.qm
+lib/qt4/translations/qt_untranslated.qm
 lib/qt4/translations/qt_zh_CN.qm
 lib/qt4/translations/qt_zh_TW.qm
 lib/qt4/translations/qtconfig_pl.qm
+lib/qt4/translations/qtconfig_untranslated.qm
 lib/qt4/translations/qtconfig_zh_CN.qm
 lib/qt4/translations/qtconfig_zh_TW.qm
 lib/qt4/translations/qvfb_pl.qm
+lib/qt4/translations/qvfb_untranslated.qm
 lib/qt4/translations/qvfb_zh_CN.qm
 lib/qt4/translations/qvfb_zh_TW.qm
 share/doc/qt4/

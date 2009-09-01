@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_corelib_io_qfsfileengine_unix_cpp,v 1.12 2009/06/08 13:55:28 espie Exp $
---- src/corelib/io/qfsfileengine_unix.cpp.orig	Wed Apr 22 01:57:41 2009
-+++ src/corelib/io/qfsfileengine_unix.cpp	Sun Jun  7 12:40:52 2009
-@@ -299,7 +299,7 @@ qint64 QFSFileEnginePrivate::nativeRead(char *data, qi
+$OpenBSD: patch-src_corelib_io_qfsfileengine_unix_cpp,v 1.13 2009/09/01 18:24:28 espie Exp $
+--- src/corelib/io/qfsfileengine_unix.cpp.orig	Sat Jun 20 06:57:57 2009
++++ src/corelib/io/qfsfileengine_unix.cpp	Sun Aug 30 15:55:35 2009
+@@ -297,7 +297,7 @@ qint64 QFSFileEnginePrivate::nativeRead(char *data, qi
                      int readByte = 0;
                      do {
                          readByte = fgetc(fh);

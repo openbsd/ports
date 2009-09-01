@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2009/06/08 13:55:28 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2009/09/01 18:24:28 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -44,8 +44,8 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		phonon 4.1
 
 
-VERSION =	4.5.1
-PKGVERSION =	4.5.1
+VERSION =	4.5.2
+PKGVERSION =	4.5.2
 DISTNAME =	qt-x11-opensource-src-${VERSION}
 
 

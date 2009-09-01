@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.GCC4-examples,v 1.1 2009/04/18 17:25:43 espie Exp $
+@comment $OpenBSD: PFRAG.GCC4-examples,v 1.2 2009/09/01 18:24:28 espie Exp $
 lib/qt4/demos/browser/
 lib/qt4/demos/browser/addbookmarkdialog.ui
 lib/qt4/demos/browser/autosaver.cpp
@@ -21,7 +21,16 @@ lib/qt4/demos/browser/cookiejar.cpp
 lib/qt4/demos/browser/cookiejar.h
 lib/qt4/demos/browser/cookies.ui
 lib/qt4/demos/browser/cookiesexceptions.ui
+lib/qt4/demos/browser/data/
 lib/qt4/demos/browser/data.qrc
+lib/qt4/demos/browser/data/addtab.png
+lib/qt4/demos/browser/data/browser.svg
+lib/qt4/demos/browser/data/closetab.png
+lib/qt4/demos/browser/data/data.qrc
+lib/qt4/demos/browser/data/defaultbookmarks.xbel
+lib/qt4/demos/browser/data/defaulticon.png
+lib/qt4/demos/browser/data/history.png
+lib/qt4/demos/browser/data/loading.gif
 lib/qt4/demos/browser/downloaditem.ui
 lib/qt4/demos/browser/downloadmanager.cpp
 lib/qt4/demos/browser/downloadmanager.h
@@ -62,6 +71,13 @@ lib/qt4/demos/browser/webview.h
 lib/qt4/demos/browser/xbel.cpp
 lib/qt4/demos/browser/xbel.h
 lib/qt4/examples/webkit/
+lib/qt4/examples/webkit/fancybrowser/
+@bin lib/qt4/examples/webkit/fancybrowser/fancybrowser
+lib/qt4/examples/webkit/fancybrowser/fancybrowser.pro
+lib/qt4/examples/webkit/fancybrowser/jquery.qrc
+lib/qt4/examples/webkit/fancybrowser/main.cpp
+lib/qt4/examples/webkit/fancybrowser/mainwindow.cpp
+lib/qt4/examples/webkit/fancybrowser/mainwindow.h
 lib/qt4/examples/webkit/formextractor/
 lib/qt4/examples/webkit/formextractor/form.html
 @bin lib/qt4/examples/webkit/formextractor/formExtractor
@@ -73,6 +89,13 @@ lib/qt4/examples/webkit/formextractor/formextractor.ui
 lib/qt4/examples/webkit/formextractor/main.cpp
 lib/qt4/examples/webkit/formextractor/mainwindow.cpp
 lib/qt4/examples/webkit/formextractor/mainwindow.h
+lib/qt4/examples/webkit/googlechat/
+lib/qt4/examples/webkit/googlechat/form.ui
+@bin lib/qt4/examples/webkit/googlechat/googlechat
+lib/qt4/examples/webkit/googlechat/googlechat.cpp
+lib/qt4/examples/webkit/googlechat/googlechat.h
+lib/qt4/examples/webkit/googlechat/googlechat.pro
+lib/qt4/examples/webkit/googlechat/main.cpp
 lib/qt4/examples/webkit/previewer/
 lib/qt4/examples/webkit/previewer/main.cpp
 lib/qt4/examples/webkit/previewer/mainwindow.cpp

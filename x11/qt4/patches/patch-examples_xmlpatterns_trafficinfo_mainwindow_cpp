@@ -1,7 +1,7 @@
-$OpenBSD: patch-examples_xmlpatterns_trafficinfo_mainwindow_cpp,v 1.1 2009/04/18 17:25:43 espie Exp $
---- examples/xmlpatterns/trafficinfo/mainwindow.cpp.orig	Tue Mar  3 23:23:28 2009
-+++ examples/xmlpatterns/trafficinfo/mainwindow.cpp	Tue Mar  3 23:24:05 2009
-@@ -112,7 +112,9 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
+$OpenBSD: patch-examples_xmlpatterns_trafficinfo_mainwindow_cpp,v 1.2 2009/09/01 18:24:28 espie Exp $
+--- examples/xmlpatterns/trafficinfo/mainwindow.cpp.orig	Sat Jun 20 06:57:53 2009
++++ examples/xmlpatterns/trafficinfo/mainwindow.cpp	Sun Aug 30 15:55:35 2009
+@@ -111,7 +111,9 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
  
  void MainWindow::paintEvent(QPaintEvent*)
  {
