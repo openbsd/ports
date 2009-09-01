@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/23 17:37:07 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/01 06:37:57 jasper Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.1.1
 DISTNAME =	gpx-viewer-${VERSION}
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES =	geo x11
 
@@ -22,7 +23,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		DATADIRNAME=share
 USE_GMAKE =		yes
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext \
+		textproc/intltool
 LIB_DEPENDS =	champlain-0.3,champlain-gtk-0.3:libchamplain->=0.3.5:geo/libchamplain/core
 RUN_DEPENDS =	::devel/desktop-file-utils
 
