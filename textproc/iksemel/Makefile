@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/02/18 13:53:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/01 07:19:45 ajacoutot Exp $
 
 COMMENT=		XML parser designed for Jabber applications
 DISTNAME=		iksemel-1.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 SHARED_LIBS=		iksemel		0.1	# .4.0
 
@@ -20,7 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://iksemel.googlecode.com/files/
 
-WANTLIB=		c gcrypt gpg-error iconv intl tasn1 z
+MODULES=		devel/gettext
+
+WANTLIB=		c gcrypt gpg-error tasn1 z
 LIB_DEPENDS=		gnutls.>=12::security/gnutls
 
 USE_LIBTOOL=		Yes
