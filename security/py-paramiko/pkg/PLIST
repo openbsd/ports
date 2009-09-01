@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/05/22 12:29:21 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.14 2009/09/01 01:29:02 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/paramiko/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -224,6 +224,7 @@ share/doc/py-paramiko/paramiko.transport-pysrc.html
 share/doc/py-paramiko/paramiko.transport.ChannelMap-class.html
 share/doc/py-paramiko/paramiko.util-module.html
 share/doc/py-paramiko/paramiko.util-pysrc.html
+share/doc/py-paramiko/paramiko.util.Counter-class.html
 share/doc/py-paramiko/paramiko.util.PFilter-class.html
 share/doc/py-paramiko/paramiko.util.enumerate-class.html
 share/doc/py-paramiko/paramiko.win_pageant-module.html
@@ -272,14 +273,13 @@ share/doc/py-paramiko/toc-paramiko.util-module.html
 share/doc/py-paramiko/toc-paramiko.win_pageant-module.html
 share/doc/py-paramiko/toc.html
 share/examples/py-paramiko/
-share/examples/py-paramiko/demos/
-share/examples/py-paramiko/demos/demo.py
-share/examples/py-paramiko/demos/demo_server.py
-share/examples/py-paramiko/demos/demo_sftp.py
-share/examples/py-paramiko/demos/demo_simple.py
-share/examples/py-paramiko/demos/forward.py
-share/examples/py-paramiko/demos/interactive.py
-share/examples/py-paramiko/demos/rforward.py
-share/examples/py-paramiko/demos/test_rsa.key
-share/examples/py-paramiko/demos/user_rsa_key
-share/examples/py-paramiko/demos/user_rsa_key.pub
+share/examples/py-paramiko/demo.py
+share/examples/py-paramiko/demo_server.py
+share/examples/py-paramiko/demo_sftp.py
+share/examples/py-paramiko/demo_simple.py
+share/examples/py-paramiko/forward.py
+share/examples/py-paramiko/interactive.py
+share/examples/py-paramiko/rforward.py
+share/examples/py-paramiko/test_rsa.key
+share/examples/py-paramiko/user_rsa_key
+share/examples/py-paramiko/user_rsa_key.pub
