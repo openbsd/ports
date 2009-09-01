@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/12 22:01:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2009/09/01 23:11:30 ckuethe Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
 
-V =		2009-02-R1
+V =		2009-06-R1
 DISTNAME =	spectools-$V
 PKGNAME =	spectrum-tools-$V
 
-FULLPKGNAME-main =  spectrum-tools-${V:S/-//g}p0
+FULLPKGNAME-main =  spectrum-tools-${V:S/-//g}
 FULLPKGNAME-utils = spectrum-tools-utils-${V:S/-//g}
 
 CATEGORIES =	net
