@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/01 02:14:52 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2009/09/01 09:49:01 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.2
 DISTNAME =	compiz-${V}
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 SHARED_LIBS =	decoration	0.0
 
@@ -25,13 +25,15 @@ WANTLIB =	GL GLU ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor \
 		atk-1.0 c cairo dbus-1 dbus-glib-1 execinfo expat fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-		iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 pthread pthread-stubs xcb xcb-atom xcb-aux \
 		xcb-event z
 
 MASTER_SITES =	http://releases.compiz-fusion.org/${V}/
 
-MODULES =	devel/gconf2
+MODULES =	devel/gconf2 \
+		devel/gettext
+
 MODGCONF2_SCHEMAS_DIR =	compiz
 
 LIB_DEPENDS =	png::graphics/png \
@@ -44,8 +46,12 @@ USE_X11 =	Yes
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 
+LIBTOOL_FLAGS=	--tag=disable-static
+
 CONFIGURE_STYLE	= gnu
-CONFIGURE_ARGS = --disable-inotify \
+CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
+		 --disable-static \
+		 --disable-inotify \
 		 --disable-fuse \
 		 --disable-librsvg \
 		 --disable-metacity \

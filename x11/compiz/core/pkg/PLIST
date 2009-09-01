@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/01 01:49:14 fgsch Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2009/09/01 09:49:01 ajacoutot Exp $
 @bin bin/compiz
 @bin bin/gtk-window-decorator
 include/compiz/
@@ -11,66 +10,62 @@ include/compiz/compiz-scale.h
 include/compiz/compiz.h
 include/compiz/decoration.h
 lib/compiz/
-lib/compiz/libannotate.a
-lib/compiz/libannotate.la
+@comment lib/compiz/libannotate.la
 lib/compiz/libannotate.so
-lib/compiz/libblur.a
-lib/compiz/libblur.la
-lib/compiz/libclone.a
-lib/compiz/libclone.la
-lib/compiz/libcommands.a
-lib/compiz/libcommands.la
-lib/compiz/libcube.a
-lib/compiz/libcube.la
-lib/compiz/libdbus.a
-lib/compiz/libdbus.la
+@comment lib/compiz/libblur.la
+lib/compiz/libblur.so
+@comment lib/compiz/libclone.la
+lib/compiz/libclone.so
+@comment lib/compiz/libcommands.la
+lib/compiz/libcommands.so
+@comment lib/compiz/libcube.la
+lib/compiz/libcube.so
+@comment lib/compiz/libdbus.la
 lib/compiz/libdbus.so
-lib/compiz/libdecoration.a
-lib/compiz/libdecoration.la
-lib/compiz/libfade.a
-lib/compiz/libfade.la
-lib/compiz/libgconf.a
-lib/compiz/libgconf.la
+@comment lib/compiz/libdecoration.la
+lib/compiz/libdecoration.so
+@comment lib/compiz/libfade.la
+lib/compiz/libfade.so
+@comment lib/compiz/libgconf.la
 lib/compiz/libgconf.so
-lib/compiz/libglib.a
-lib/compiz/libglib.la
+@comment lib/compiz/libglib.la
 lib/compiz/libglib.so
-lib/compiz/libgnomecompat.a
-lib/compiz/libgnomecompat.la
-lib/compiz/libini.a
-lib/compiz/libini.la
-lib/compiz/libminimize.a
-lib/compiz/libminimize.la
-lib/compiz/libmove.a
-lib/compiz/libmove.la
-lib/compiz/libobs.a
-lib/compiz/libobs.la
-lib/compiz/libplace.a
-lib/compiz/libplace.la
-lib/compiz/libpng.a
-lib/compiz/libpng.la
-lib/compiz/libregex.a
-lib/compiz/libregex.la
-lib/compiz/libresize.a
-lib/compiz/libresize.la
-lib/compiz/librotate.a
-lib/compiz/librotate.la
-lib/compiz/libscale.a
-lib/compiz/libscale.la
-lib/compiz/libscreenshot.a
-lib/compiz/libscreenshot.la
-lib/compiz/libswitcher.a
-lib/compiz/libswitcher.la
-lib/compiz/libvideo.a
-lib/compiz/libvideo.la
-lib/compiz/libwater.a
-lib/compiz/libwater.la
-lib/compiz/libwobbly.a
-lib/compiz/libwobbly.la
-lib/compiz/libzoom.a
-lib/compiz/libzoom.la
-lib/libdecoration.a
+@comment lib/compiz/libgnomecompat.la
+lib/compiz/libgnomecompat.so
+@comment lib/compiz/libini.la
+lib/compiz/libini.so
+@comment lib/compiz/libminimize.la
+lib/compiz/libminimize.so
+@comment lib/compiz/libmove.la
+lib/compiz/libmove.so
+@comment lib/compiz/libobs.la
+lib/compiz/libobs.so
+@comment lib/compiz/libplace.la
+lib/compiz/libplace.so
+@comment lib/compiz/libpng.la
+lib/compiz/libpng.so
+@comment lib/compiz/libregex.la
+lib/compiz/libregex.so
+@comment lib/compiz/libresize.la
+lib/compiz/libresize.so
+@comment lib/compiz/librotate.la
+lib/compiz/librotate.so
+@comment lib/compiz/libscale.la
+lib/compiz/libscale.so
+@comment lib/compiz/libscreenshot.la
+lib/compiz/libscreenshot.so
+@comment lib/compiz/libswitcher.la
+lib/compiz/libswitcher.so
+@comment lib/compiz/libvideo.la
+lib/compiz/libvideo.so
+@comment lib/compiz/libwater.la
+lib/compiz/libwater.so
+@comment lib/compiz/libwobbly.la
+lib/compiz/libwobbly.so
+@comment lib/compiz/libzoom.la
+lib/compiz/libzoom.so
 lib/libdecoration.la
+@lib lib/libdecoration.so.${LIBdecoration_VERSION}
 lib/pkgconfig/compiz-cube.pc
 lib/pkgconfig/compiz-gconf.pc
 lib/pkgconfig/compiz-scale.pc
