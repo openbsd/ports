@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/04/26 21:58:24 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/09/01 09:35:28 jasper Exp $
 @bin bin/bouml
 @bin bin/browsersort
 @bin bin/cpp_generator
@@ -17,6 +17,7 @@
 @bin bin/java_catalog
 @bin bin/java_generator
 @bin bin/java_reverse
+@bin bin/java_roundtrip
 @bin bin/php_generator
 @bin bin/php_reverse
 @bin bin/plug_out_upgrade
@@ -270,6 +271,8 @@ share/bouml/cpp_utilities/128768.bodies
 share/bouml/cpp_utilities/128896.bodies
 share/bouml/cpp_utilities/129.diagram
 share/bouml/cpp_utilities/129152.bodies
+share/bouml/cpp_utilities/129154
+share/bouml/cpp_utilities/129280
 share/bouml/cpp_utilities/129280.bodies
 share/bouml/cpp_utilities/129536.bodies
 share/bouml/cpp_utilities/129920.bodies
@@ -284,7 +287,72 @@ share/bouml/cpp_utilities/131968.bodies
 share/bouml/cpp_utilities/132224.bodies
 share/bouml/cpp_utilities/132480.bodies
 share/bouml/cpp_utilities/132738.bodies
+share/bouml/cpp_utilities/133888.bodies
+share/bouml/cpp_utilities/134272.bodies
+share/bouml/cpp_utilities/134528.bodies
+share/bouml/cpp_utilities/135040.bodies
+share/bouml/cpp_utilities/135296.bodies
+share/bouml/cpp_utilities/135424.bodies
+share/bouml/cpp_utilities/135680.bodies
+share/bouml/cpp_utilities/136064.bodies
+share/bouml/cpp_utilities/136320.bodies
+share/bouml/cpp_utilities/136576.bodies
+share/bouml/cpp_utilities/136832.bodies
+share/bouml/cpp_utilities/137088.bodies
+share/bouml/cpp_utilities/137344.bodies
+share/bouml/cpp_utilities/137600.bodies
+share/bouml/cpp_utilities/137856.bodies
+share/bouml/cpp_utilities/138112.bodies
+share/bouml/cpp_utilities/138368.bodies
+share/bouml/cpp_utilities/138624.bodies
+share/bouml/cpp_utilities/138880.bodies
+share/bouml/cpp_utilities/139136.bodies
+share/bouml/cpp_utilities/139392.bodies
+share/bouml/cpp_utilities/139648.bodies
+share/bouml/cpp_utilities/139904.bodies
+share/bouml/cpp_utilities/140160.bodies
+share/bouml/cpp_utilities/140416.bodies
 share/bouml/cpp_utilities/1408.bodies
+share/bouml/cpp_utilities/140928.bodies
+share/bouml/cpp_utilities/141184.bodies
+share/bouml/cpp_utilities/141440.bodies
+share/bouml/cpp_utilities/141696.bodies
+share/bouml/cpp_utilities/141952.bodies
+share/bouml/cpp_utilities/142208.bodies
+share/bouml/cpp_utilities/142464.bodies
+share/bouml/cpp_utilities/142720.bodies
+share/bouml/cpp_utilities/143104.bodies
+share/bouml/cpp_utilities/143360.bodies
+share/bouml/cpp_utilities/143744.bodies
+share/bouml/cpp_utilities/144000.bodies
+share/bouml/cpp_utilities/144256.bodies
+share/bouml/cpp_utilities/144640.bodies
+share/bouml/cpp_utilities/144896.bodies
+share/bouml/cpp_utilities/145024.bodies
+share/bouml/cpp_utilities/145152.bodies
+share/bouml/cpp_utilities/145408.bodies
+share/bouml/cpp_utilities/145920.bodies
+share/bouml/cpp_utilities/146432.bodies
+share/bouml/cpp_utilities/146560.bodies
+share/bouml/cpp_utilities/146816.bodies
+share/bouml/cpp_utilities/147072.bodies
+share/bouml/cpp_utilities/147328.bodies
+share/bouml/cpp_utilities/147584.bodies
+share/bouml/cpp_utilities/147840.bodies
+share/bouml/cpp_utilities/148224.bodies
+share/bouml/cpp_utilities/148480.bodies
+share/bouml/cpp_utilities/148736.bodies
+share/bouml/cpp_utilities/148992.bodies
+share/bouml/cpp_utilities/149248.bodies
+share/bouml/cpp_utilities/149376.bodies
+share/bouml/cpp_utilities/149632.bodies
+share/bouml/cpp_utilities/149888.bodies
+share/bouml/cpp_utilities/150144.bodies
+share/bouml/cpp_utilities/150400.bodies
+share/bouml/cpp_utilities/150656.bodies
+share/bouml/cpp_utilities/150912.bodies
+share/bouml/cpp_utilities/151168.bodies
+share/bouml/cpp_utilities/151424.bodies
 share/bouml/cpp_utilities/1536.bodies
 share/bouml/cpp_utilities/1664.bodies
 share/bouml/cpp_utilities/1792.bodies
@@ -329,6 +397,7 @@ share/bouml/cpp_utilities/cpp_utilities.prj
 share/bouml/cpp_utilities/generation_settings
 share/bouml/cpp_utilities/idl_includes
 share/bouml/cpp_utilities/java_imports
+share/bouml/cpp_utilities/python_imports
 share/bouml/cpp_utilities/stereotypes
 share/bouml/cpp_utilities/tools
 share/bouml/deploy/

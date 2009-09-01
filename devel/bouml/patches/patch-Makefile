@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2008/09/17 11:56:35 jasper Exp $
+$OpenBSD: patch-Makefile,v 1.2 2009/09/01 09:35:28 jasper Exp $
 
 Use INSTALL_DATA/INSTALL_PROGRAM here to make sure we end up with the correct
 permissions being set (cp -p).
 
---- Makefile.orig	Sat Apr  5 10:56:34 2008
-+++ Makefile	Mon Sep  8 10:49:49 2008
+--- Makefile.orig	Wed Jun 10 22:25:38 2009
++++ Makefile	Tue Sep  1 09:57:54 2009
 @@ -1,19 +1,19 @@
  # The directory where all the bouml files will be installed, you
  # can change it for instance because you don't have root permission
@@ -38,7 +38,7 @@ permissions being set (cp -p).
  
  SRC_DIRS = src \
  	src/CppGenerator \
-@@ -107,9 +107,9 @@ install:
+@@ -109,9 +109,9 @@ install:
  	then \
  		for i in 16 32 48 64; do \
  			mkdir -p "$(DESTDIR)$(BOUML_ICONS_PREFIX_DIR)/$$i"x"$$i/apps"; \
@@ -51,7 +51,7 @@ permissions being set (cp -p).
  		done; \
  	fi
  	if test -n "$(BOUML_UNIX_PIXMAPS_DIR)"; then \
-@@ -118,13 +118,8 @@ install:
+@@ -120,13 +120,8 @@ install:
  		cp -f projectControl.48.png "$(DESTDIR)$(BOUML_UNIX_PIXMAPS_DIR)/projectControl.png"; \
  		cp -f projectSynchro.48.png "$(DESTDIR)$(BOUML_UNIX_PIXMAPS_DIR)/projectSynchro.png"; \
  	fi
@@ -66,7 +66,7 @@ permissions being set (cp -p).
  	cd $(DESTDIR)$(BOUML_DIR) ; rm -f projectControl ; ln -s $(BOUML_LIB)/projectControl
  	cd $(DESTDIR)$(BOUML_DIR) ; rm -f projectSynchro ; ln -s $(BOUML_LIB)/projectSynchro
  	if test -n "$(BOUML_DESKTOP_DIR)" ; \
-@@ -144,7 +139,7 @@ install:
+@@ -146,7 +141,7 @@ install:
  		echo "Name=Project Control" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
  		echo "Type=Application" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
  		echo "Comment=Bouml project's files control" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
@@ -75,7 +75,7 @@ permissions being set (cp -p).
  		echo "TryExec=projectControl" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
  		echo "Icon=projectControl" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
  		echo "Categories=Development;" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectControl.desktop" ; \
-@@ -153,7 +148,7 @@ install:
+@@ -155,7 +150,7 @@ install:
  		echo "Name=Project Synchro" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectSynchro.desktop" ; \
  		echo "Type=Application" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectSynchro.desktop" ; \
  		echo "Comment=Bouml project's files synchronization" >> "$(DESTDIR)$(BOUML_DESKTOP_DIR)/projectSynchro.desktop" ; \

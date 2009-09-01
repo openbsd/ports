@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/01 09:35:28 jasper Exp $
 
 COMMENT-main=		free UML builder with extensions
 COMMENT-docs=		bouml documentation
 
-V=			4.12.2
+V=			4.13.1
 DISTNAME=		bouml_$V
 PKGNAME=		bouml-$V
-PKGNAME-main=		bouml-$Vp0
+PKGNAME-main=		bouml-$V
 PKGNAME-docs=		bouml-docs-$V
 
 CATEGORIES=		devel x11
