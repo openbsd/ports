@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.18 2009/03/18 23:23:20 sthen Exp $
---- configure.in.orig	Wed Mar 18 17:31:49 2009
-+++ configure.in	Wed Mar 18 18:09:40 2009
+$OpenBSD: patch-configure_in,v 1.19 2009/09/01 17:28:50 jasper Exp $
+--- configure.in.orig	Mon Jul 27 07:26:55 2009
++++ configure.in	Tue Sep  1 12:18:46 2009
 @@ -13,6 +13,7 @@ AC_PROG_CXX # lucene plugin needs this
  AC_HEADER_STDC
  AC_C_INLINE
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure_in,v 1.18 2009/03/18 23:23:20 sthen Exp $
  AM_ICONV
  
  AC_CHECK_HEADERS(strings.h stdint.h unistd.h dirent.h malloc.h inttypes.h \
-@@ -1809,74 +1810,15 @@ fi
+@@ -1809,74 +1810,16 @@ fi
  
  have_gssapi=no
  if test $want_gssapi != no; then
@@ -87,6 +87,7 @@ $OpenBSD: patch-configure_in,v 1.18 2009/03/18 23:23:20 sthen Exp $
 +		AC_DEFINE(HAVE_GSSAPI,, Build with GSSAPI support)
 +		AC_DEFINE(HAVE_GSSAPI_H,, Build with GSSAPI support)
 +		AC_DEFINE(HAVE_GSSKRB5_REGISTER_ACCEPTOR_IDENTITY,, Have the gsskrb5_register_acceptor_identity function)
++		AC_DEFINE(BUILTIN_GSSAPI,, GSSAPI support is built in)
 +		have_gssapi=yes
 +	])
 +	AUTH_LIBS="$LIBS -lkrb5 -lgssapi -lcrypto"
