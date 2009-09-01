@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.4 2009/04/25 22:07:37 okan Exp $
---- doc/Makefile.in.orig	Sat Apr 11 16:34:08 2009
-+++ doc/Makefile.in	Sat Apr 11 16:35:13 2009
-@@ -75,7 +75,7 @@ NROFF = nroff
+$OpenBSD: patch-doc_Makefile_in,v 1.5 2009/09/01 14:25:15 okan Exp $
+--- doc/Makefile.in.orig	Sat Apr 11 15:59:32 2009
++++ doc/Makefile.in	Thu May 28 17:32:35 2009
+@@ -69,7 +69,7 @@ NROFF = nroff
  MANS = $(man_MANS)
  docDATA_INSTALL = $(INSTALL_DATA)
  htmlDATA_INSTALL = $(INSTALL_DATA)
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.4 2009/04/25 22:07:37 okan Exp $
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
  ACLOCAL = @ACLOCAL@
  AMTAR = @AMTAR@
-@@ -771,7 +771,7 @@ info: info-am
+@@ -697,7 +697,7 @@ info: info-am
  
  info-am: $(INFO_DEPS)
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.4 2009/04/25 22:07:37 okan Exp $
  	install-man
  
  install-dvi: install-dvi-am
-@@ -892,7 +892,7 @@ uninstall-man: uninstall-man8
+@@ -818,7 +818,7 @@ uninstall-man: uninstall-man8
  
  .PHONY: all all-am check check-am clean clean-generic clean-libtool \
  	dist-info distclean distclean-generic distclean-libtool \

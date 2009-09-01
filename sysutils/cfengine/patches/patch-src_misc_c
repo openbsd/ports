@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_misc_c,v 1.7 2007/10/28 18:32:14 sturm Exp $
---- src/misc.c.orig	Sun Sep  2 16:36:12 2007
-+++ src/misc.c	Sun Sep  2 16:36:28 2007
-@@ -272,7 +272,7 @@ else if (pid == 0)                     /* child */
-    {
+$OpenBSD: patch-src_misc_c,v 1.8 2009/09/01 14:25:15 okan Exp $
+--- src/misc.c.orig	Wed Feb 11 00:55:36 2009
++++ src/misc.c	Thu May 28 17:32:35 2009
+@@ -273,7 +273,7 @@ else if (pid == 0)                     /* child */
+    ALARM_PID = -1;
     if (useshell)
        {
 -      if (execl("/bin/sh","sh","-c",comm,NULL) == -1)

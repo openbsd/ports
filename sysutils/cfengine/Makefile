@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2009/04/25 22:07:37 okan Exp $
+# $OpenBSD: Makefile,v 1.31 2009/09/01 14:25:15 okan Exp $
 
 COMMENT=	GNU system administration tool for networks
 
-DISTNAME=      	cfengine-2.2.9
+DISTNAME=      	cfengine-2.2.10
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.cfengine.org/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto m pthread
 
-MASTER_SITES=		${HOMEPAGE}downloads/
+MASTER_SITES=		${HOMEPAGE}tarballs/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-docs
