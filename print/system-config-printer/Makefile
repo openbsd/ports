@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2009/06/08 19:24:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/09/01 08:13:32 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
-DISTNAME=		system-config-printer-1.0.15
+DISTNAME=		system-config-printer-1.0.16
 CATEGORIES=		print sysutils
 
 HOMEPAGE=		http://cyberelk.net/tim/software/system-config-printer/
