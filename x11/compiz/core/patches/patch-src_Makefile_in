@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/09/01 01:49:14 fgsch Exp $
+--- src/Makefile.in.orig	Sun Aug  2 19:48:24 2009
++++ src/Makefile.in	Sun Aug  2 19:48:32 2009
+@@ -300,7 +300,7 @@ INCLUDES = \
+ 	-DIMAGEDIR=\"$(imagedir)\"   \
+ 	-DMETADATADIR=\"$(metadatadir)\"
+ 
+-compiz_LDADD = @COMPIZ_LIBS@ @GL_LIBS@ -lm
++compiz_LDADD = @COMPIZ_LIBS@ @GL_LIBS@ -lm -pthread
+ compiz_LDFLAGS = -export-dynamic
+ compiz_SOURCES = \
+ 	main.c	   \

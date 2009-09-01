@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_screen_c,v 1.1.1.1 2009/09/01 01:49:14 fgsch Exp $
+--- src/screen.c.orig	Sun Aug  2 07:24:01 2009
++++ src/screen.c	Sun Aug  2 07:24:08 2009
+@@ -3515,7 +3515,7 @@ runCommand (CompScreen *s,
+ 
+ 	putenv (screenString);
+ 
+-	exit (execl ("/bin/sh", "/bin/sh", "-c", command, NULL));
++	exit (execl ("/bin/sh", "/bin/sh", "-c", command, (char *)NULL));
+     }
+ }
+ 

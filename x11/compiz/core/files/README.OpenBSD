@@ -1,0 +1,14 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2009/09/01 01:49:14 fgsch Exp $
+
+At this point, only core functionality is provided. In particular,
+there is no configuration GUI, so use:
+
+gconftool-2 -s /apps/compiz/general/allscreens/options/active_plugins "[gconf,decoration,wobbly,minimize,png,cube,switcher,move,resize,place,rotate,zoom,scale,dbus,water]" -t list --list-type=string
+
+To start compiz:
+
+gtk-window-decorator &
+compiz --indirect-rendering gconf
+
+gtk-window-decorator is optional but will provide simple window
+decorations. Other window decorators and plugins will be forthcoming.
