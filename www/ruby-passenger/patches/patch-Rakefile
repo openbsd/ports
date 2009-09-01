@@ -1,6 +1,6 @@
-$OpenBSD: patch-Rakefile,v 1.1.1.1 2009/08/20 20:36:12 bernd Exp $
---- Rakefile.orig	Wed Jun 10 10:12:29 2009
-+++ Rakefile	Thu Aug 20 21:13:25 2009
+$OpenBSD: patch-Rakefile,v 1.2 2009/09/01 17:45:43 bernd Exp $
+--- Rakefile.orig	Tue Sep  1 10:51:22 2009
++++ Rakefile	Tue Sep  1 19:26:08 2009
 @@ -36,13 +36,13 @@ OPTIMIZE = ["yes", "on", "true"].include?(ENV['OPTIMIZ
  
  include PlatformInfo
@@ -19,8 +19,8 @@ $OpenBSD: patch-Rakefile,v 1.1.1.1 2009/08/20 20:36:12 bernd Exp $
  end
  
  # Extra compiler flags that should always be passed to the C/C++ compiler.
-@@ -739,7 +739,7 @@ task :clobber => :'package:clean'
- ##### Misc
+@@ -736,7 +736,7 @@ Rake::Task['package:force'].prerequisites.unshift(:doc
+ task :clobber => :'package:clean'
  
  desc "Create a fakeroot, useful for building native packages"
 -task :fakeroot => [:apache2, :native_support, :doc] do
@@ -28,7 +28,7 @@ $OpenBSD: patch-Rakefile,v 1.1.1.1 2009/08/20 20:36:12 bernd Exp $
  	require 'rbconfig'
  	include Config
  	fakeroot = "pkg/fakeroot"
-@@ -747,11 +747,11 @@ task :fakeroot => [:apache2, :native_support, :doc] do
+@@ -744,11 +744,11 @@ task :fakeroot => [:apache2, :native_support, :doc] do
  	# We don't use CONFIG['archdir'] and the like because we want
  	# the files to be installed to /usr, and the Ruby interpreter
  	# on the packaging machine might be in /usr/local.
@@ -44,7 +44,7 @@ $OpenBSD: patch-Rakefile,v 1.1.1.1 2009/08/20 20:36:12 bernd Exp $
  	
  	sh "rm -rf #{fakeroot}"
  	sh "mkdir -p #{fakeroot}"
-@@ -766,9 +766,9 @@ task :fakeroot => [:apache2, :native_support, :doc] do
+@@ -763,9 +763,9 @@ task :fakeroot => [:apache2, :native_support, :doc] do
  	sh "cp bin/* #{bindir}/"
  	
  	sh "mkdir -p #{libexecdir}"

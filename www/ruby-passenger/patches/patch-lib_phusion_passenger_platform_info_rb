@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_phusion_passenger_platform_info_rb,v 1.1.1.1 2009/08/20 20:36:12 bernd Exp $
---- lib/phusion_passenger/platform_info.rb.orig	Thu Apr 16 19:42:11 2009
-+++ lib/phusion_passenger/platform_info.rb	Thu Apr 16 21:20:04 2009
-@@ -360,6 +360,8 @@ public
+$OpenBSD: patch-lib_phusion_passenger_platform_info_rb,v 1.2 2009/09/01 17:45:43 bernd Exp $
+--- lib/phusion_passenger/platform_info.rb.orig	Mon Aug 31 15:39:27 2009
++++ lib/phusion_passenger/platform_info.rb	Tue Sep  1 19:26:08 2009
+@@ -361,6 +361,8 @@ public
  	def self.portability_ldflags
  		if RUBY_PLATFORM =~ /solaris/
  			return '-lxnet -lrt -lsocket -lnsl -lpthread'

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/20 20:36:13 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/09/01 17:45:43 bernd Exp $
 bin/passenger-config
 @comment bin/passenger-memory-stats
 bin/passenger-status
@@ -427,7 +427,9 @@ share/doc/phusion_passenger/rdoc/classes/PhusionPassenger/Railz/FrameworkSpawner
 share/doc/phusion_passenger/rdoc/classes/PhusionPassenger/Railz/RequestHandler.html
 share/doc/phusion_passenger/rdoc/classes/PhusionPassenger/SpawnManager.html
 share/doc/phusion_passenger/rdoc/classes/PhusionPassenger/UnknownError.html
+share/doc/phusion_passenger/rdoc/classes/PhusionPassenger/Utils/
 share/doc/phusion_passenger/rdoc/classes/PhusionPassenger/Utils.html
+share/doc/phusion_passenger/rdoc/classes/PhusionPassenger/Utils/PseudoIO.html
 share/doc/phusion_passenger/rdoc/classes/PhusionPassenger/VersionNotFound.html
 share/doc/phusion_passenger/rdoc/classes/PhusionPassenger/WSGI/
 share/doc/phusion_passenger/rdoc/classes/PhusionPassenger/WSGI.html
