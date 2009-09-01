@@ -1,0 +1,12 @@
+$OpenBSD: patch-PerlMagick_Makefile_PL_in,v 1.1 2009/09/01 14:22:27 okan Exp $
+--- PerlMagick/Makefile.PL.in.orig	Sun Aug 23 23:36:36 2009
++++ PerlMagick/Makefile.PL.in	Sun Aug 23 23:36:58 2009
+@@ -67,7 +67,7 @@ WriteMakefile
+    'INSTALLBIN'	=> '@BIN_DIR@',
+ 
+    # Library specification
+-   'LIBS'	=> ['-L@MAGICKLIBDIR@ -lGraphicsMagick @LDFLAGS@ @MAGICK_DEP_LIBS@'],
++   'LIBS'	=> ['-L@MAGICKLIBDIR@ @LDFLAGS@ -lGraphicsMagick @MAGICK_DEP_LIBS@'],
+ 
+    # Perl binary name (if a Perl binary is built)
+    'MAP_TARGET'	=> 'PerlMagick',

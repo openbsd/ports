@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2009/01/08 19:57:36 okan Exp $
---- configure.orig	Sun Nov 23 20:24:14 2008
-+++ configure	Mon Dec 29 08:58:53 2008
-@@ -19690,6 +19690,7 @@ with_ltdl='no'
+$OpenBSD: patch-configure,v 1.2 2009/09/01 14:22:27 okan Exp $
+--- configure.orig	Fri Jul 24 15:47:36 2009
++++ configure	Sat Aug 15 23:52:40 2009
+@@ -19820,6 +19820,7 @@ with_ltdl='no'
  if test "$libtool_build_shared_libs" != 'no' ; then
    with_ltdl='yes'
  fi
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.1 2009/01/08 19:57:36 okan Exp $
  
   if test "$with_ltdl" != 'no'; then
    WITH_LTDL_TRUE=
-@@ -37761,7 +37762,7 @@ fi
+@@ -38047,7 +38048,7 @@ fi
  #
  
  # Subdirectory under lib to place GraphicsMagick lib files
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.1 2009/01/08 19:57:36 okan Exp $
  
  cat >>confdefs.h <<_ACEOF
  #define MagickLibSubdir "$MagickLibSubdir"
-@@ -37865,7 +37866,7 @@ _ACEOF
+@@ -38151,7 +38152,7 @@ _ACEOF
  
  #
  # Path to GraphicsMagick share files
