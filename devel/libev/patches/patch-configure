@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/09/02 19:19:43 landry Exp $
+--- configure.orig	Mon Aug 31 19:50:25 2009
++++ configure	Mon Aug 31 19:50:34 2009
+@@ -19845,9 +19845,6 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ 
+ 
+ 
+-if test "x$GCC" = xyes ; then
+-  CFLAGS="$CFLAGS -O3"
+-fi
+ 
+ 
+ 

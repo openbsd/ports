@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/09/02 19:19:43 landry Exp $
+@lib lib/libev.so.${LIBev_VERSION}
