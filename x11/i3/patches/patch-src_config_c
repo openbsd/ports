@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_config_c,v 1.1.1.1 2009/09/02 19:26:17 landry Exp $
+--- src/config.c.orig	Wed Aug 19 14:39:09 2009
++++ src/config.c	Mon Aug 31 20:30:32 2009
+@@ -226,8 +226,8 @@ void load_configuration(xcb_connection_t *conn, const 
+                 /* We first check for ~/.i3/config, then for /etc/i3/config */
+                 char *globbed = glob_path("~/.i3/config");
+                 if ((handle = fopen(globbed, "r")) == NULL)
+-                        if ((handle = fopen("/etc/i3/config", "r")) == NULL)
+-                                die("Neither \"%s\" nor /etc/i3/config could be opened\n", globbed);
++                        if ((handle = fopen("${SYSCONFDIR}/i3/config", "r")) == NULL)
++                                die("Neither \"%s\" nor ${SYSCONFDIR}/i3/config could be opened\n", globbed);
+                 free(globbed);
+         }
+         char key[512], value[512], buffer[1026];
+@@ -312,7 +312,17 @@ void load_configuration(xcb_connection_t *conn, const 
+                                         rest++;
+                                 if (*rest != ' ')
+                                         die("Invalid binding (keysym)\n");
+-                                new->symbol = strndup(sym, (rest - sym));
++#if defined(__OpenBSD__)
++                               size_t len = strlen(sym);
++                               if( len > (rest - sym))
++                                       len = (rest - sym);
++                               new->symbol = malloc(len + 1);
++                               memcpy(new->symbol,sym,len+1);
++                               new->symbol[len]='\0';
++#else
++                                 new->symbol = strndup(sym, (rest - sym));
++#endif
++
+                         }
+                         rest++;
+                         LOG("keycode = %d, symbol = %s, modifiers = %d, command = *%s*\n", new->keycode, new->symbol, modifiers, rest);

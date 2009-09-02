@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_util_c,v 1.1.1.1 2009/09/02 19:26:17 landry Exp $
+--- src/util.c.orig	Wed Aug 19 14:39:09 2009
++++ src/util.c	Mon Aug 31 14:01:38 2009
+@@ -15,6 +15,9 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <sys/wait.h>
++#if defined(__OpenBSD__)
++#include <sys/cdefs.h>
++#endif
+ #include <stdarg.h>
+ #include <assert.h>
+ #include <iconv.h>
+@@ -466,3 +469,43 @@ done:
+         FREE(to_title_ucs);
+         return matching;
+ }
++
++
++#if defined(__OpenBSD__)
++
++/*
++ * Taken from FreeBSD
++ * Find the first occurrence of the byte string s in byte string l.
++ */
++
++void *
++memmem(const void *l, size_t l_len, const void *s, size_t s_len)
++{
++        register char *cur, *last;
++        const char *cl = (const char *)l;
++        const char *cs = (const char *)s;
++
++        /* we need something to compare */
++        if (l_len == 0 || s_len == 0)
++                return NULL;
++
++        /* "s" must be smaller or equal to "l" */
++        if (l_len < s_len)
++                return NULL;
++
++        /* special case where s_len == 1 */
++        if (s_len == 1)
++                return memchr(l, (int)*cs, l_len);
++
++        /* the last position where its possible to find "s" in "l" */
++        last = (char *)cl + l_len - s_len;
++
++        for (cur = (char *)cl; cur <= last; cur++)
++                if (cur[0] == cs[0] && memcmp(cur, cs, s_len) == 0)
++                        return cur;
++
++        return NULL; 
++}
++
++#endif
++

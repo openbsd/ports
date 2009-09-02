@@ -1,0 +1,23 @@
+$OpenBSD: patch-i3-msg_Makefile,v 1.1.1.1 2009/09/02 19:26:17 landry Exp $
+--- i3-msg/Makefile.orig	Wed Aug 19 14:39:09 2009
++++ i3-msg/Makefile	Mon Aug 31 20:33:37 2009
+@@ -9,17 +9,14 @@ HEADERS=$(wildcard *.h)
+ 
+ # Depend on the specific file (.c for each .o) and on all headers
+ %.o: %.c ${HEADERS}
+-	echo "CC $<"
+ 	$(CC) $(CFLAGS) -c -o $@ $<
+ 
+ all: ${FILES}
+-	echo "LINK i3-msg"
+ 	$(CC) -o i3-msg ${FILES} $(LDFLAGS)
+ 
+ install: all
+-	echo "INSTALL"
+-	$(INSTALL) -d -m 0755 $(DESTDIR)/usr/bin
+-	$(INSTALL) -m 0755 i3-msg $(DESTDIR)/usr/bin/
++	$(INSTALL) -d -m 0755 $(PREFIX)/bin
++	$(INSTALL) -m 0755 i3-msg $(PREFIX)/bin/
+ 
+ clean:
+ 	rm -f *.o

@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_util_h,v 1.1.1.1 2009/09/02 19:26:17 landry Exp $
+--- include/util.h.orig	Wed Aug 19 14:39:09 2009
++++ include/util.h	Mon Aug 31 14:01:38 2009
+@@ -161,4 +161,11 @@ void switch_layout_mode(xcb_connection_t *conn, Contai
+ Client *get_matching_client(xcb_connection_t *conn,
+                             const char *window_classtitle, Client *specific);
+ 
++/* 
++ * Add a copy of memmem for OpenBSD 
++ */ 
++#if defined(__OpenBSD__) 
++void * memmem(const void *l, size_t l_len, const void *s, size_t s_len); 
++#endif 
++
+ #endif

@@ -1,0 +1,29 @@
+$OpenBSD: patch-i3_config,v 1.1.1.1 2009/09/02 19:26:17 landry Exp $
+--- i3.config.orig	Wed Aug 19 14:39:09 2009
++++ i3.config	Wed Sep  2 21:23:04 2009
+@@ -4,7 +4,7 @@
+ # Tell i3 about your preferred terminal. You can refer to this as $terminal
+ # later. It is recommended to set this option to allow i3 to open a terminal
+ # containing the introduction on first start.
+-terminal /usr/bin/urxvt
++terminal ${X11BASE}/bin/xterm
+ 
+ # ISO 10646 = Unicode
+ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+@@ -83,14 +83,14 @@ bind Mod1+Shift+18 m9
+ bind Mod1+Shift+19 m10
+ 
+ # Mod1+Enter starts a new terminal
+-bind Mod1+36 exec /usr/bin/urxvt
++bind Mod1+36 exec ${X11BASE}/bin/xterm
+ 
+ # Mod1+Shift+q kills the current client
+ bind Mod1+Shift+24 kill
+ 
+ # Mod1+v starts dmenu and launches the selected application
+ # for now, we don’t have an own launcher
+-bind Mod1+55 exec /usr/bin/dmenu_run
++bind Mod1+55 exec ${LOCALBASE}/bin/dmenu_run
+ 
+ # Mod1+Shift+e exits i3
+ bind Mod1+Shift+26 exit

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/02 19:26:17 landry Exp $
+@bin bin/i3
+@bin bin/i3-msg
+@man man/man1/i3.1
+share/examples/i3/
+@sample ${SYSCONFDIR}/i3/
+share/examples/i3/config
+@sample ${SYSCONFDIR}/i3/config
+share/xsessions/
+share/xsessions/i3.desktop

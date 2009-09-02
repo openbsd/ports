@@ -1,0 +1,45 @@
+$OpenBSD: patch-common_mk,v 1.1.1.1 2009/09/02 19:26:17 landry Exp $
+--- common.mk.orig	Wed Aug 19 14:39:09 2009
++++ common.mk	Wed Sep  2 21:23:04 2009
+@@ -9,7 +9,7 @@ CFLAGS += -pipe
+ CFLAGS += -Wall
+ CFLAGS += -Wunused
+ CFLAGS += -Iinclude
+-CFLAGS += -I/usr/local/include
++CFLAGS += -I${LOCALBASE}/include
+ CFLAGS += -DI3_VERSION=\"${GIT_VERSION}\"
+ 
+ # Check if pkg-config is installed, because without pkg-config, the following
+@@ -38,7 +38,7 @@ LDFLAGS += -lxcb-icccm
+ LDFLAGS += -lxcb-xinerama
+ LDFLAGS += -lX11
+ LDFLAGS += -lev
+-LDFLAGS += -L/usr/local/lib -L/usr/pkg/lib
++LDFLAGS += -L${LOCALBASE}/lib -L/usr/pkg/lib
+ 
+ ifeq ($(UNAME),NetBSD)
+ # We need -idirafter instead of -I to prefer the system’s iconv over GNU libiconv
+@@ -50,6 +50,13 @@ ifeq ($(UNAME),FreeBSD)
+ LDFLAGS += -liconv
+ endif
+ 
++ifeq ($(UNAME),OpenBSD)
++CFLAGS += -ftrampolines
++CFLAGS += -I${X11BASE}/include
++LDFLAGS += -liconv
++LDFLAGS += -L${X11BASE}/lib
++endif
++
+ ifeq ($(UNAME),Linux)
+ CFLAGS += -D_GNU_SOURCE
+ endif
+@@ -61,9 +68,6 @@ CFLAGS += -g3
+ else
+ CFLAGS += -O2
+ endif
+-
+-# Don’t print command lines which are run
+-.SILENT:
+ 
+ # Always remake the following targets
+ .PHONY: install clean dist distclean
