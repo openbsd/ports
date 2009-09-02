@@ -1,0 +1,14 @@
+$OpenBSD: patch-libplanner_mrp-time_c,v 1.1 2009/09/02 07:44:16 ajacoutot Exp $
+
+Fix calendar calculation: UTC cannot have DST.
+
+--- libplanner/mrp-time.c.orig	Tue Jul 22 15:41:46 2008
++++ libplanner/mrp-time.c	Wed Sep  2 09:11:49 2009
+@@ -171,6 +171,7 @@ mrp_time_from_tm (struct tm *tm)
+ 	/* This is a hack. Set the timezone to UTC temporarily. */
+ 	old_tz = g_strdup (g_getenv ("TZ"));
+ 	g_setenv ("TZ", "UTC", TRUE);
++	tm->tm_isdst = 0;
+ 	
+ 	t = mktime (tm);
+ 
