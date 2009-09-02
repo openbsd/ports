@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/09/02 19:26:17 landry Exp $
+$OpenBSD: patch-Makefile,v 1.2 2009/09/02 20:05:34 bernd Exp $
 --- Makefile.orig	Wed Aug 19 14:39:09 2009
 +++ Makefile	Wed Sep  2 21:23:16 2009
 @@ -8,24 +8,20 @@ HEADERS=$(wildcard include/*.h)
@@ -27,7 +27,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/09/02 19:26:17 landry Exp $
 +	$(INSTALL) -d -m 0755 $(PREFIX)/share/examples/i3
 +	$(INSTALL) -d -m 0755 $(PREFIX)/share/xsessions
 +	$(INSTALL) -m 0755 i3 $(PREFIX)/bin/
-+	$(INSTALL) -m 4444 man/i3.1 $(PREFIX)/man/man1/
++	$(INSTALL) -m 0444 man/i3.1 $(PREFIX)/man/man1/
 +	test -e $(PREFIX)/etc/i3/config || $(INSTALL) -m 0644 i3.config $(PREFIX)/share/examples/i3/config
 +	$(INSTALL) -m 0644 i3.desktop $(PREFIX)/share/xsessions/
  	$(MAKE) TOPDIR=$(TOPDIR) -C i3-msg install
