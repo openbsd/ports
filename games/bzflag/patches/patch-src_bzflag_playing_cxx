@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_bzflag_playing_cxx,v 1.1 2006/09/22 03:42:57 pvalchev Exp $
---- src/bzflag/playing.cxx.orig	Sat Aug  5 04:59:14 2006
-+++ src/bzflag/playing.cxx	Sat Aug  5 04:59:28 2006
-@@ -6375,11 +6375,12 @@ static void		defaultErrorCallback(const 
+$OpenBSD: patch-src_bzflag_playing_cxx,v 1.2 2009/09/02 08:52:22 sthen Exp $
+--- src/bzflag/playing.cxx.orig	Tue Jun 24 18:10:21 2008
++++ src/bzflag/playing.cxx	Thu Apr  9 01:04:26 2009
+@@ -6433,11 +6433,12 @@ static void		defaultErrorCallback(const char* msg)
  
  static void		startupErrorCallback(const char* msg)
  {

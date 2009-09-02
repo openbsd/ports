@@ -1,38 +1,30 @@
-$OpenBSD: patch-configure_ac,v 1.3 2006/09/30 12:45:16 steven Exp $
---- configure.ac.orig	Mon Apr 17 16:11:11 2006
-+++ configure.ac	Sat Sep 23 09:43:43 2006
-@@ -73,12 +73,12 @@ AC_PROG_MAKE_SET
- AC_PROG_CC
- AC_PROG_CXX
+$OpenBSD: patch-configure_ac,v 1.4 2009/09/02 08:52:22 sthen Exp $
+--- configure.ac.orig	Wed Jun 25 14:00:55 2008
++++ configure.ac	Wed Apr 29 03:19:29 2009
+@@ -236,7 +236,7 @@ fi
+ AC_MSG_RESULT([$ac_ff_effect_directional]) 
  
--AC_PATH_PROG(CCACHE, ccache)
--if test "$CCACHE"
--then
--  CC="ccache $CC"
--  CXX="ccache $CXX"
--fi
-+dnl AC_PATH_PROG(CCACHE, ccache)
-+dnl if test "$CCACHE"
-+dnl then
-+dnl   CC="ccache $CC"
-+dnl   CXX="ccache $CXX"
-+dnl fi
- 
- AC_CHECK_TOOL(WINDRES, windres, :)
- 
-@@ -187,6 +187,7 @@ AC_CHECK_HEADERS( \
- 	SDL/SDL.h \
- 	X11/Xlib.h \
- 	bstring.h \
-+	arpa/nameser_compat.h \
- 	linux/input.h \
- 	stdint.h \
- 	sys/param.h \
-@@ -194,6 +195,7 @@ AC_CHECK_HEADERS( \
- 	values.h \
- 	dsound.h \
- )
-+# nameser_compat.h used by src/c-ares
- 
- #Checks for types
- #AM_CHECK_TYPES(socklen_t)
+ case $host_os in
+-     linux*|kfreebsd*|freebsd*|netbsd*|dragonfly*) linux=true;;
++     linux*|kfreebsd*|freebsd*|netbsd*|openbsd*|dragonfly*) linux=true;;
+      *) linux=false;;
+ esac
+ AM_CONDITIONAL(LINUX, $linux)
+@@ -690,7 +690,7 @@ esac
+ if test x$enable_debug = xyes ; then
+    FLAGS="$FLAGS -O0"
+    case $host_os in
+-     linux*|cygwin|mingw32*)
++     linux*|openbsd*|cygwin|mingw32*)
+ 	FLAGS="$FLAGS -Werror -Wshadow"
+ 	if test x$enable_profiling = xyes ; then
+ 	  FLAGS="$FLAGS -pg"
+@@ -708,7 +708,7 @@ if test x$enable_debug = xyes ; then
+     AC_DEFINE(DEBUG, 1, [Debugging enabled])
+ else
+     case $host_os in
+-	linux*|cygwin|mingw32*)
++	linux*|openbsd*|cygwin|mingw32*)
+ 	    FLAGS="$FLAGS -ffast-math -fno-exceptions"
+ 	    ;;
+ 	solaris*)

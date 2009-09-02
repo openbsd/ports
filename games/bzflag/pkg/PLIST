@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/04/13 23:29:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/09/02 08:52:22 sthen Exp $
 @bin bin/bzadmin
 @bin bin/bzflag
 @bin bin/bzfs
@@ -7,6 +7,7 @@
 @man man/man6/bzflag.6
 @man man/man6/bzfquery.6
 @man man/man6/bzfs.6
+share/applications/bzflag.desktop
 share/bzflag/
 share/bzflag/automatic_icon.png
 share/bzflag/blend_flash.png
@@ -177,3 +178,5 @@ share/bzflag/title.png
 share/bzflag/wall.png
 share/bzflag/water.png
 share/bzflag/zone_ground.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

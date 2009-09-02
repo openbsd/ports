@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:41 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2009/09/02 08:52:22 sthen Exp $
+
+# crashes the X server in some configurations on macppc
+NOT_FOR_ARCHS=	powerpc
 
 COMMENT=	graphical multiplayer 3D tank war game
 
-DISTNAME=	bzflag-2.0.8
-PKGNAME=	${DISTNAME}p7
+DISTNAME=	bzflag-2.0.12
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 
@@ -23,25 +25,30 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	SDL.>=4::devel/sdl \
 		curl.>=3::net/curl \
-		GLEW::graphics/glew
+		GLEW::graphics/glew \
+		cares::net/libcares
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-WANTLIB=	GL GLU ICE SM X11 Xau Xdmcp Xext Xrandr Xrender \
-		c crypto idn m ncurses pthread sndio ssl pthread-stubs \
-		stdc++ xcb usbhid z
+WANTLIB=	GL GLU ICE SM X11 Xau Xdmcp Xext Xrandr Xrender c \
+		crypto idn m ncurses pthread-stubs pthread sndio \
+		ssl stdc++ usbhid xcb z
 
-AUTOCONF_VERSION=2.59
+AUTOCONF_VERSION= 2.61
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS+=--enable-debug
+CONFIGURE_ARGS+= --disable-ccachetest \
+		 --with-glew
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_lib_cares_ares_init=no \
 		ac_cv_lib_bind_gethostent=no
 
 pre-build:
-	@sed -e 's|@LINUX_TRUE@||g ; s|@LINUX_FALSE@|#|g' \
-		${WRKSRC}/src/platform/Makefile.in > \
-		${WRKSRC}/src/platform/Makefile.sed
-	@mv ${WRKSRC}/src/platform/Makefile.sed \
-		${WRKSRC}/src/platform/Makefile.in
+	@perl -pi -e 's|\@LINUX_TRUE\@||g;' \
+	    -e 's|\@LINUX_FALSE\@|#|g;' \
+	    ${WRKSRC}/src/platform/Makefile.in
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	@mv ${PREFIX}/share/bzflag/bzflag.desktop \
+	    ${PREFIX}/share/applications
 
 .include <bsd.port.mk>

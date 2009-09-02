@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_mediafile_PNGImageFile_cxx,v 1.1 2006/09/30 12:45:16 steven Exp $
---- src/mediafile/PNGImageFile.cxx.orig	Fri Sep 22 13:10:00 2006
-+++ src/mediafile/PNGImageFile.cxx	Fri Sep 22 13:10:11 2006
-@@ -15,8 +15,7 @@
- #include <iostream>
+$OpenBSD: patch-src_mediafile_PNGImageFile_cxx,v 1.2 2009/09/02 08:52:22 sthen Exp $
+--- src/mediafile/PNGImageFile.cxx.orig	Sun Apr  6 01:30:49 2008
++++ src/mediafile/PNGImageFile.cxx	Thu Apr  9 01:04:26 2009
+@@ -16,8 +16,7 @@
+ #include <string.h>
  #include "Pack.h"
  #include "bzfio.h"
 -#include "../zlib/zconf.h"
