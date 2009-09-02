@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.726 2009/08/31 10:06:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.727 2009/09/02 19:09:48 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -146,6 +146,7 @@
      SUBDIR += libdockapp
      SUBDIR += libdvdread
      SUBDIR += libelf
+     SUBDIR += libev
      SUBDIR += libexecinfo
      SUBDIR += libfmt
      SUBDIR += libftdi
