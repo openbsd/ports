@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/07/09 01:57:44 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.16 2009/09/02 11:50:56 sthen Exp $
 %%SHARED%%
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffserver
+@bin bin/qt-faststart
 include/libavcodec/
 include/libavcodec/avcodec.h
 include/libavcodec/opt.h

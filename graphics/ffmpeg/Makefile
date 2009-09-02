@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.50 2009/09/02 11:50:56 sthen Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=			20080620
 DISTNAME=		ffmpeg-svn-${V}
-PKGNAME=		ffmpeg-${V}p11
+PKGNAME=		ffmpeg-${V}p12
 SHARED_LIBS=		avutil		6.0 \
 			avcodec		13.1 \
 			avformat	12.0 \
@@ -38,8 +38,7 @@ LIB_DEPENDS=		SDL.>=4::devel/sdl \
 			Imlib2::graphics/imlib2 \
 			bz2.>=10::archivers/bzip2
 
-WANTLIB=		X11 Xext c freetype m ogg oil-0.3 ossaudio pthread \
-			pthread-stubs xcb z
+WANTLIB=		X11 Xext c freetype m ogg oil-0.3 ossaudio pthread z
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -119,6 +118,7 @@ FAKE_FLAGS=		${VERSION_FLAGS} \
 CONFIGURE_ARGS+=	--disable-stripping
 .endif
 
+ALL_TARGET=		all tools/qt-faststart
 # regression tests incompatible with libswscale
 #REGRESS_TARGET=	codectest
 NO_REGRESS=		Yes
@@ -127,6 +127,7 @@ pre-configure:
 	-mkdir ${WRKTMP}
 
 post-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/tools/qt-faststart ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ffmpeg
 .for doc in faq ffmpeg-doc ffplay-doc ffserver-doc hooks
 	${INSTALL_DATA} ${WRKBUILD}/doc/${doc}.html ${PREFIX}/share/doc/ffmpeg
