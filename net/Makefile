@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.585 2009/08/21 09:41:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.586 2009/09/03 18:53:43 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -299,6 +299,7 @@
      SUBDIR += p5-POE-Component-Client-HTTP
      SUBDIR += p5-POE-Component-Client-Keepalive
      SUBDIR += p5-POE-Component-IRC
+     SUBDIR += p5-POE-Component-IRC-Plugin-RSS-Headlines
      SUBDIR += p5-POE-Component-Jabber
      SUBDIR += p5-POE-Component-Pcap
      SUBDIR += p5-POE-Component-Server-FTP
