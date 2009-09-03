@@ -1,0 +1,2 @@
+POE::Component::IRC::Plugin::RSS::Headlines - A POE::Component::IRC
+plugin that provides RSS headline retrieval by sending it events.
