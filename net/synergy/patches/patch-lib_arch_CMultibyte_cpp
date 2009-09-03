@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_arch_CMultibyte_cpp,v 1.1.1.1 2005/01/25 03:58:23 mbalmer Exp $
---- lib/arch/CMultibyte.cpp.orig	Fri Jan 21 22:26:26 2005
-+++ lib/arch/CMultibyte.cpp	Fri Jan 21 22:26:53 2005
-@@ -21,7 +21,7 @@
- #include <string.h>
+$OpenBSD: patch-lib_arch_CMultibyte_cpp,v 1.2 2009/09/03 18:05:36 pvalchev Exp $
+--- lib/arch/CMultibyte.cpp.orig	Tue Nov 29 20:33:24 2005
++++ lib/arch/CMultibyte.cpp	Wed Sep  2 14:18:01 2009
+@@ -24,7 +24,7 @@
+ #endif
  #if HAVE_WCHAR_H || defined(_MSC_VER)
  #	include <wchar.h>
 -#elif __APPLE__
