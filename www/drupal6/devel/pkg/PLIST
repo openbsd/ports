@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/27 15:43:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/09/03 13:20:22 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}devel/
@@ -126,8 +126,6 @@ ${DRUPAL_MODS}devel/krumo/skins/schablon.com/empty.gif
 ${DRUPAL_MODS}devel/krumo/skins/schablon.com/expanded.gif
 ${DRUPAL_MODS}devel/krumo/skins/schablon.com/skin.css
 ${DRUPAL_MODS}devel/loader-little.gif
-${DRUPAL_MODS}devel/macro.info
-${DRUPAL_MODS}devel/macro.module
 ${DRUPAL_MODS}devel/performance/
 ${DRUPAL_MODS}devel/performance/README.txt
 ${DRUPAL_MODS}devel/performance/performance.info
