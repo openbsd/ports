@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/07/26 12:20:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/09/03 13:20:04 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}imagecache/
@@ -22,3 +22,4 @@ ${DRUPAL_MODS}imagecache/translations/
 ${DRUPAL_MODS}imagecache/translations/de.po
 ${DRUPAL_MODS}imagecache/translations/fr.po
 ${DRUPAL_MODS}imagecache/translations/ja.po
+${DRUPAL_MODS}imagecache/translations/nl.po
