@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2009/09/03 09:29:16 kevlo Exp $
 
 COMMENT=	refresh perl %INC files when updated on disk
 
 MODULES=	cpan
-DISTNAME=	Module-Refresh-0.09
+DISTNAME=	Module-Refresh-0.13
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
