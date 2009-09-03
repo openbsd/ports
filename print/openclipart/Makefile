@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/09 17:19:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/09/03 06:49:55 jasper Exp $
 
 COMMENT=	desktop publishing clip-art
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/downloads/$V/
+EXTRACT_SUFX=	.tar.bz2
 
 PKG_ARCH=	*
 NO_BUILD=	Yes
