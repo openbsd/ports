@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.275 2009/08/29 13:36:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.276 2009/09/04 01:39:20 william Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -23,6 +23,7 @@
      SUBDIR += eruby
      SUBDIR += exempi
      SUBDIR += fcbanner
+     SUBDIR += filepp
      SUBDIR += gdiff
      SUBDIR += glimpse
      SUBDIR += gnuvd
