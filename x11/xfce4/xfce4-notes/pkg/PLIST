@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/06/23 20:13:19 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/09/04 19:09:20 landry Exp $
 @bin bin/xfce4-notes-settings
 @bin bin/xfce4-popup-notes
 libexec/xfce4/
@@ -24,6 +24,9 @@ share/icons/hicolor/scalable/apps/xfce4-notes-plugin.svg
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/da/LC_MESSAGES/xfce4-notes-plugin.mo
@@ -48,6 +51,9 @@ share/locale/pl/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/ro/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-notes-plugin.mo
