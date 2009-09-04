@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/04 16:05:55 landry Exp $
+${P5ARCH}/
+${P5ARCH}/Alien/
+${P5ARCH}/Alien/wxWidgets/
+${P5ARCH}/Alien/wxWidgets.pm
+${P5ARCH}/Alien/wxWidgets/Config/
+${P5ARCH}/Alien/wxWidgets/Config/gtk2_2_8_7_gcc_3_2.pm
+${P5ARCH}/Alien/wxWidgets/Utility.pm
+@man man/man3p/Alien::wxWidgets.3p
+@man man/man3p/Alien::wxWidgets::Utility.3p
