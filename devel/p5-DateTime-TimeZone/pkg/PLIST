@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/03/23 14:02:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/09/04 03:11:47 kevlo Exp $
 ${P5SITE}/DateTime/
 ${P5SITE}/DateTime/TimeZone/
 ${P5SITE}/DateTime/TimeZone.pm
@@ -377,7 +377,12 @@ ${P5SITE}/DateTime/TimeZone/MET.pm
 ${P5SITE}/DateTime/TimeZone/MST.pm
 ${P5SITE}/DateTime/TimeZone/MST7MDT.pm
 ${P5SITE}/DateTime/TimeZone/OffsetOnly.pm
+${P5SITE}/DateTime/TimeZone/OlsonDB/
 ${P5SITE}/DateTime/TimeZone/OlsonDB.pm
+${P5SITE}/DateTime/TimeZone/OlsonDB/Change.pm
+${P5SITE}/DateTime/TimeZone/OlsonDB/Observance.pm
+${P5SITE}/DateTime/TimeZone/OlsonDB/Rule.pm
+${P5SITE}/DateTime/TimeZone/OlsonDB/Zone.pm
 ${P5SITE}/DateTime/TimeZone/PST8PDT.pm
 ${P5SITE}/DateTime/TimeZone/Pacific/
 ${P5SITE}/DateTime/TimeZone/Pacific/Apia.pm
