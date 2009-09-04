@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2009/09/04 18:19:41 landry Exp $
+--- data/Makefile.in.orig	Mon Aug 31 21:41:31 2009
++++ data/Makefile.in	Mon Aug 31 21:41:48 2009
+@@ -6,7 +6,7 @@ datadir = @datarootdir@
+ all: $(TEMPLATE_ELEMSTYLES)
+ 
+ elemstyles-mapnik.xml: elemstyles-mapnik.xml.in
+-	perl ./compose-elemstyles.pl 0.4 '#f2eee8' $+ > $@.tmp
++	perl ./compose-elemstyles.pl 0.4 '#f2eee8' elemstyles-mapnik.xml.in > $@.tmp
+ 	mv $@.tmp $@
+ 
+ clean:

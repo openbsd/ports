@@ -1,0 +1,9 @@
+OSM2Go is an OSM editor designed to run on small devices.
+Current featureset includes:
+ * Managing multiple mapping projects.
+ * Adding, moving and deletion of ways and nodes and editing their tags.
+ * JOSM-style presets for speedy tagging.
+ * Import GPS traces or Live GPS trace for GPS-enabled devices
+ * WMS server support: NASA satellite imagery
+ * Limited relation support
+ * Upload and download changes to the OSM servers!

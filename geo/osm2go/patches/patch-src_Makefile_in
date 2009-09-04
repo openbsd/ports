@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/09/04 18:19:41 landry Exp $
+--- src/Makefile.in.orig	Thu Aug 20 20:34:05 2009
++++ src/Makefile.in	Tue Sep  1 04:04:38 2009
+@@ -48,8 +48,8 @@ clean:
+ 	rm -f osm2go *.o *~ */*~ \#*\# version.h *.bak
+ 
+ install: $(APP)
+-	install -d $(DESTDIR)$(PREFIX)$(bindir)
+-	install $(APP) $(DESTDIR)$(PREFIX)$(bindir)
++	install -d $(PREFIX)$(bindir)
++	install $(APP) $(PREFIX)$(bindir)
+ 
+ dep:
+ 	makedepend -Y -fMakefile.in *.c

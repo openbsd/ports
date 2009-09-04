@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_osm_c,v 1.1.1.1 2009/09/04 18:19:41 landry Exp $
+fix taken from gpx-viewer - to be removed once we support %F & %z
+--- src/osm.c.orig	Fri Jul 24 17:07:37 2009
++++ src/osm.c	Wed Sep  2 22:26:45 2009
+@@ -21,6 +21,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#include <ctype.h>
+ 
+ #define __USE_XOPEN
+ #include <time.h>
+@@ -91,15 +92,21 @@ static user_t *osm_user(osm_t *osm, char *name) {
+ 
+ static
+ time_t convert_iso8601(const char *str) {
++  char *c;
+   if(!str) return 0;
+ 
+   tzset();
+ 
++  char *s = strdup(str);
+   struct tm ctime;
+   memset(&ctime, 0, sizeof(struct tm));
+-  strptime(str, "%FT%T%z", &ctime);
+- 
+-  return mktime(&ctime) - timezone;
++  /* remove trailing non-digits, strptime doesn't support %z */
++  for (c = s + strlen(s); !isdigit(*c); *c='\0', c--);
++  /* now remove trailing .000 if found */
++  /* SEGV .. s[strcspn(s, ".")] = '\0'; */
++  strptime (s, "%Y-%m-%dT%T", &ctime);
++  free(s);
++  return mktime(&ctime);
+ }
+ 
+ /* -------------------- tag handling ----------------------- */

@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_osm2go-ubuntu_desktop,v 1.1.1.1 2009/09/04 18:19:41 landry Exp $
+--- data/osm2go-ubuntu.desktop.orig	Mon Aug 31 22:42:41 2009
++++ data/osm2go-ubuntu.desktop	Mon Aug 31 22:42:53 2009
+@@ -3,7 +3,7 @@ Version=1.0
+ Name=OSM2Go Map Editor
+ GenericName=Map Editor
+ Comment=Edit openstreetmap.org map data on the road
+-Exec=/usr/bin/osm2go
++Exec=${PREFIX}/bin/osm2go
+ Type=Application
+ Icon=osm2go
+ Terminal=false
