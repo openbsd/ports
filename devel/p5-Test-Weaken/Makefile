@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/19 18:31:15 jim Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/04 02:59:19 kevlo Exp $
 
 COMMENT =	test that freed memory objects were, indeed, freed
 
 MODULES =	cpan
-DISTNAME =	Test-Weaken-2.002000
+DISTNAME =	Test-Weaken-3.002000
 CATEGORIES =	devel
 
 # Perl
