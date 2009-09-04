@@ -1,0 +1,25 @@
+$OpenBSD: patch-switchuser_cpp,v 1.1 2009/09/04 20:24:25 landry Exp $
+--- switchuser.cpp.orig	Fri Sep  4 22:01:46 2009
++++ switchuser.cpp	Fri Sep  4 22:02:32 2009
+@@ -10,7 +10,7 @@
+ */
+ 
+ #include "switchuser.h"
+-
++#include "app.h"
+ using namespace std;
+ 
+ SwitchUser::SwitchUser(struct passwd *pw, Cfg *c, const string& display,
+@@ -53,10 +53,9 @@ void SwitchUser::Execute(const char* cmd) {
+ }
+ 
+ void SwitchUser::SetClientAuth(const char* mcookie) {
+-    int r;
++    bool r;
+     string home = string(Pw->pw_dir);
+     string authfile = home + "/.Xauthority";
+     remove(authfile.c_str());
+-    string cmd = cfg->getOption("xauth_path") + " -q -f " + authfile + " add :0 . " + mcookie;
+-    r = system(cmd.c_str());
++    r = Util::add_mcookie(mcookie, ":0", cfg->getOption("xauth_path"), authfile);
+ }

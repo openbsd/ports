@@ -1,0 +1,29 @@
+$OpenBSD: patch-app_h,v 1.1 2009/09/04 20:24:25 landry Exp $
+--- app.h.orig	Fri Sep  4 21:55:48 2009
++++ app.h	Fri Sep  4 22:04:27 2009
+@@ -28,6 +28,16 @@
+ #include "PAM.h"
+ #endif
+ 
++#include <string>
++
++namespace Util {
++   bool add_mcookie(const std::string &mcookie, const char *display,
++      const std::string &xauth_cmd, const std::string &authfile);
++   void srandom(unsigned long seed);
++   long random(void);
++   long makeseed(void);
++};
++
+ class App {
+ public:
+     App(int argc, char** argv);
+@@ -101,6 +111,8 @@ class App { (private)
+     
+     std::string themeName;
+     std::string mcookie;
++
++    const int mcookiesize;
+ };
+ 
+ 
