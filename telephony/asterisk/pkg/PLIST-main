@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2009/08/18 22:09:40 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2009/09/04 00:46:35 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict app_conference-<=20070710
 @newgroup _asterisk:545
@@ -255,10 +255,10 @@ share/asterisk/keys/
 share/asterisk/keys/freeworlddialup.pub
 share/asterisk/keys/iaxtel.pub
 share/asterisk/moh/
-share/asterisk/moh/.asterisk-moh-opsound-wav
-share/asterisk/moh/CHANGES-asterisk-moh-opsound-wav
-share/asterisk/moh/CREDITS-asterisk-moh-opsound-wav
-share/asterisk/moh/LICENSE-asterisk-moh-opsound-wav
+share/asterisk/moh/.asterisk-moh-freeplay-wav
+share/asterisk/moh/CHANGES-asterisk-moh-opsound-2.01
+share/asterisk/moh/CREDITS-asterisk-moh-opsound-2.01
+share/asterisk/moh/LICENSE-asterisk-moh-opsound-2.01
 share/asterisk/moh/macroform-cold_day.wav
 share/asterisk/moh/macroform-robot_dity.wav
 share/asterisk/moh/macroform-the_simplicity.wav
@@ -722,6 +722,7 @@ share/doc/asterisk/CODING-GUIDELINES
 share/doc/asterisk/COPYING
 share/doc/asterisk/CREDITS
 share/doc/asterisk/ChangeLog
+share/doc/asterisk/IAX2-security.pdf
 share/doc/asterisk/LICENSE
 share/doc/asterisk/PEERING
 share/doc/asterisk/README
@@ -770,7 +771,7 @@ share/doc/asterisk/misdn.txt
 share/doc/asterisk/model.txt
 share/doc/asterisk/modules.txt
 share/doc/asterisk/mp3.txt
-share/doc/asterisk/musiconhold-opsound.txt
+share/doc/asterisk/musiconhold-fpm.txt
 share/doc/asterisk/mysql.txt
 share/doc/asterisk/osp.txt
 share/doc/asterisk/privacy.txt
