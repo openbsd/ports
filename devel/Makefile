@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.727 2009/09/02 19:09:48 landry Exp $
+# $OpenBSD: Makefile,v 1.728 2009/09/04 16:09:23 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -225,6 +225,7 @@
      SUBDIR += p5-Algorithm-MDiff
      SUBDIR += p5-Algorithm-MarkovChain
      SUBDIR += p5-Algorithm-Permute
+     SUBDIR += p5-Alien-wxWidgets
      SUBDIR += p5-Any-Moose
      SUBDIR += p5-AnyEvent
      SUBDIR += p5-App-CLI
@@ -375,6 +376,7 @@
      SUBDIR += p5-ExtUtils-Depends
      SUBDIR += p5-ExtUtils-PkgConfig
      SUBDIR += p5-ExtUtils-XSBuilder
+     SUBDIR += p5-ExtUtils-XSpp
      SUBDIR += p5-File-Attributes
      SUBDIR += p5-File-Attributes-Recursive
      SUBDIR += p5-File-BOM
