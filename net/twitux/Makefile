@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/04 03:57:39 jolan Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
@@ -27,7 +27,7 @@ WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0 ltdl
 WANTLIB += m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs stdc++ tasn1 vorbis vorbisfile xcb xml2 z
 
-BUILD_DEPENDS=	iso-codes-*:devel/iso-codes
+BUILD_DEPENDS=	:iso-codes-*:devel/iso-codes
 
 LIB_DEPENDS=	soup-2.4::devel/libsoup \
 		sexy::x11/libsexy \
