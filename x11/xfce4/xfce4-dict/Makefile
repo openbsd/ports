@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/11 08:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/09/04 18:50:32 landry Exp $
 
 COMMENT=	Xfce4 dictionary application
 
-XFCE_VERSION=	0.4.1
+XFCE_VERSION=	0.5.3
 XFCE_GOODIE=	xfce4-dict
-PKGNAME=	${DISTNAME}p1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
