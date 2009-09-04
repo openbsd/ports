@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/07/15 13:53:39 landry Exp $
-@bin bin/xfce4-clipman-plugin
+@comment $OpenBSD: PLIST,v 1.8 2009/09/04 19:25:04 landry Exp $
+@bin bin/xfce4-clipman
+@bin bin/xfce4-clipman-settings
 @bin bin/xfce4-popup-clipman
+libexec/xfce4/
+libexec/xfce4/panel-plugins/
+@bin libexec/xfce4/panel-plugins/xfce4-clipman-plugin
 share/applications/xfce4-clipman-plugin.desktop
 share/examples/xfce4-clipman/
 @sample ${SYSCONFDIR}/xdg/
@@ -31,6 +35,9 @@ share/icons/hicolor/scalable/apps/xfce4-clipman-plugin.svg
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/da/LC_MESSAGES/xfce4-clipman-plugin.mo
@@ -67,6 +74,7 @@ share/locale/ur/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ur_PK/
 share/locale/ur_PK/LC_MESSAGES/
 share/locale/ur_PK/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/vi/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/xfce4/
@@ -78,6 +86,20 @@ share/xfce4/doc/C/images/clipman-menu.png
 share/xfce4/doc/C/images/clipman-settings-actions.png
 share/xfce4/doc/C/images/clipman-settings-general.png
 share/xfce4/doc/C/xfce4-clipman-plugin.html
+share/xfce4/doc/da/
+share/xfce4/doc/da/images/
+share/xfce4/doc/da/images/clipman-action-dialog.png
+share/xfce4/doc/da/images/clipman-menu.png
+share/xfce4/doc/da/images/clipman-settings-actions.png
+share/xfce4/doc/da/images/clipman-settings-general.png
+share/xfce4/doc/da/xfce4-clipman-plugin.html
+share/xfce4/doc/fr/
+share/xfce4/doc/fr/images/
+share/xfce4/doc/fr/images/clipman-action-dialog.png
+share/xfce4/doc/fr/images/clipman-menu.png
+share/xfce4/doc/fr/images/clipman-settings-actions.png
+share/xfce4/doc/fr/images/clipman-settings-general.png
+share/xfce4/doc/fr/xfce4-clipman-plugin.html
 share/xfce4/doc/gl/
 share/xfce4/doc/gl/images/
 share/xfce4/doc/gl/images/clipman-action-dialog.png
@@ -85,6 +107,13 @@ share/xfce4/doc/gl/images/clipman-menu.png
 share/xfce4/doc/gl/images/clipman-settings-actions.png
 share/xfce4/doc/gl/images/clipman-settings-general.png
 share/xfce4/doc/gl/xfce4-clipman-plugin.html
+share/xfce4/doc/it/
+share/xfce4/doc/it/images/
+share/xfce4/doc/it/images/clipman-action-dialog.png
+share/xfce4/doc/it/images/clipman-menu.png
+share/xfce4/doc/it/images/clipman-settings-actions.png
+share/xfce4/doc/it/images/clipman-settings-general.png
+share/xfce4/doc/it/xfce4-clipman-plugin.html
 share/xfce4/doc/ja/
 share/xfce4/doc/ja/images/
 share/xfce4/doc/ja/images/clipman-action-dialog.png
@@ -92,6 +121,13 @@ share/xfce4/doc/ja/images/clipman-menu.png
 share/xfce4/doc/ja/images/clipman-settings-actions.png
 share/xfce4/doc/ja/images/clipman-settings-general.png
 share/xfce4/doc/ja/xfce4-clipman-plugin.html
+share/xfce4/doc/zh_CN/
+share/xfce4/doc/zh_CN/images/
+share/xfce4/doc/zh_CN/images/clipman-action-dialog.png
+share/xfce4/doc/zh_CN/images/clipman-menu.png
+share/xfce4/doc/zh_CN/images/clipman-settings-actions.png
+share/xfce4/doc/zh_CN/images/clipman-settings-general.png
+share/xfce4/doc/zh_CN/xfce4-clipman-plugin.html
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/xfce4-clipman-plugin.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
