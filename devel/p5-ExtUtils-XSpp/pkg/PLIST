@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/04 16:07:49 landry Exp $
+bin/xspp
+${P5SITE}/ExtUtils/
+${P5SITE}/ExtUtils/XSpp/
+${P5SITE}/ExtUtils/XSpp.pm
+${P5SITE}/ExtUtils/XSpp.pod
+${P5SITE}/ExtUtils/XSpp/Driver.pm
+${P5SITE}/ExtUtils/XSpp/Grammar.pm
+${P5SITE}/ExtUtils/XSpp/Node.pm
+${P5SITE}/ExtUtils/XSpp/Parser.pm
+${P5SITE}/ExtUtils/XSpp/Typemap.pm
+@man man/man1/xspp.1
+@man man/man3p/ExtUtils::XSpp.3p
+@man man/man3p/ExtUtils::XSpp::Node.3p
+@man man/man3p/ExtUtils::XSpp::Parser.3p
+@man man/man3p/ExtUtils::XSpp::Typemap.3p
