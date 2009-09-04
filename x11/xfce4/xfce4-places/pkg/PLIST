@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/06/14 16:19:58 landry Exp $
-bin/xfce4-popup-places
+@comment $OpenBSD: PLIST,v 1.4 2009/09/04 18:50:57 landry Exp $
+@bin bin/xfce4-popup-places
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
-libexec/xfce4/panel-plugins/xfce4-places-plugin
+@bin libexec/xfce4/panel-plugins/xfce4-places-plugin
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce4-places-plugin.mo
@@ -21,14 +21,13 @@ share/locale/en_GB/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/eo/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/es/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/et/LC_MESSAGES/xfce4-places-plugin.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/fi/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/he/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-places-plugin.mo
+share/locale/id/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/ka/
@@ -42,18 +41,14 @@ share/locale/lv/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/xfce4-places-plugin.mo
-share/locale/nb_NO/
-share/locale/nb_NO/LC_MESSAGES/
-share/locale/nb_NO/LC_MESSAGES/xfce4-places-plugin.mo
+share/locale/nb/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/nl/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-places-plugin.mo
+share/locale/pt/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-places-plugin.mo
-share/locale/pt_PT/
-share/locale/pt_PT/LC_MESSAGES/
-share/locale/pt_PT/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/ro/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/sq/
@@ -62,6 +57,12 @@ share/locale/sq/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-places-plugin.mo
+share/locale/ur/
+share/locale/ur/LC_MESSAGES/
+share/locale/ur/LC_MESSAGES/xfce4-places-plugin.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-places-plugin.mo
 share/xfce4/
