@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2009/09/04 11:38:31 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
-DISTNAME=	geany-0.17
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	geany-0.18
+PKGNAME=	${DISTNAME}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.geany.org
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=geany/}
+MASTER_SITES=	http://download.geany.org/
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext \
