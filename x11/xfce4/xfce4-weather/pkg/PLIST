@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/06/17 19:09:21 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/09/04 18:49:25 landry Exp $
 @conflict xfce4-weather-plugin-*
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
@@ -109,6 +109,5 @@ share/xfce4/weather/icons/liquid/7.png
 share/xfce4/weather/icons/liquid/8.png
 share/xfce4/weather/icons/liquid/9.png
 share/xfce4/weather/icons/liquid/99.png
-share/xfce4/weather/icons/liquid/weather_channel.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
