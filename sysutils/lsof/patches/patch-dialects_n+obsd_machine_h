@@ -1,0 +1,16 @@
+$OpenBSD: patch-dialects_n+obsd_machine_h,v 1.1 2009/09/04 01:49:10 sthen Exp $
+
+XXX lsof needs adapting to cope with changes made to the name cache
+at f2k9 (Aug 2009). for now, disable name cache support so it works.
+
+--- dialects/n+obsd/machine.h.orig	Tue Sep  1 23:51:08 2009
++++ dialects/n+obsd/machine.h	Tue Sep  1 23:52:07 2009
+@@ -262,7 +262,7 @@
+  * NCACHELDSFX is a set of C commands to execute after calling ncache_load().
+  */
+ 
+-#define	HASNCACHE	1
++/* #define	HASNCACHE	1 */
+ /* #define	NCACHELDPFX	??? */
+ /* #define	NCACHELDSFX	??? */
+ 
