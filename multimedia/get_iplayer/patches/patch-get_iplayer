@@ -1,10 +1,10 @@
-$OpenBSD: patch-get_iplayer,v 1.15 2009/08/30 12:58:14 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.16 2009/09/05 15:54:25 sthen Exp $
 
 - default to using id3tag not id3v2
 - follow hier(7) not Linux FHS for options file location
 
---- get_iplayer.orig	Thu Aug 27 21:54:04 2009
-+++ get_iplayer	Sun Aug 30 13:51:29 2009
+--- get_iplayer.orig	Fri Sep  4 23:57:41 2009
++++ get_iplayer	Sat Sep  5 16:48:56 2009
 @@ -275,10 +275,7 @@ if ( defined $ENV{GETIPLAYERUSERPREFS} && $ENV{GETIPLA
  # Options on unix-like systems
  } elsif ( defined $ENV{HOME} ) {
@@ -34,16 +34,16 @@ $OpenBSD: patch-get_iplayer,v 1.15 2009/08/30 12:58:14 sthen Exp $
  update_script() if $opt->{update} || $opt->{pluginsupdate};
  
  
-@@ -587,7 +585,7 @@ sub find_matches {
- 	$binopts->{lame}	.= ' --quiet ' if $opt->{quiet};
+@@ -592,7 +590,7 @@ sub find_matches {
  	$bin->{vlc}		= $opt->{vlc} || 'cvlc';
- 	$binopts->{vlc}		= '-vv' if $opt->{verbose} || $opt->{debug};
+ 	push @{ $binopts->{vlc} }, '-vv' if $opt->{verbose} || $opt->{debug};
+ 
 -	$bin->{id3v2}		= $opt->{id3v2} || 'id3v2';
 +	$bin->{id3v2}		= $opt->{id3v2} || 'id3tag';
+ 
  	$bin->{tee}		= 'tee';
- 	$bin->{flvstreamer}	= $opt->{flvstreamer} || $opt->{rtmpdump} || 'flvstreamer';
- 	# quote binaries which allows for spaces in the path
-@@ -4567,7 +4565,7 @@ sub optional_list_entry_format {
+ 
+@@ -4712,7 +4710,7 @@ sub optional_list_entry_format {
  # Returns the modes to try for this prog type
  sub modelist {
  	my $prog = shift;
