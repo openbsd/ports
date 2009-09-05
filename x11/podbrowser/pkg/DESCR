@@ -1,0 +1,3 @@
+PodBrowser is a documentation browser for Perl. You can view the
+documentation for Perl's builtin functions, its "perldoc" pages,
+pragmatic modules and the default and user-installed modules.

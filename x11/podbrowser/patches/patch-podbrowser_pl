@@ -1,0 +1,12 @@
+$OpenBSD: patch-podbrowser_pl,v 1.1.1.1 2009/09/05 08:44:15 landry Exp $
+--- podbrowser.pl.orig	Fri Sep  4 04:15:06 2009
++++ podbrowser.pl	Fri Sep  4 04:15:13 2009
+@@ -56,7 +56,7 @@ textdomain(lc($NAME));
+ }
+ 
+ ### bits we'll be reusing:
+-chomp(my $OPENER	= `which gnome-open 2> /dev/null`);
++chomp(my $OPENER	= `which xdg-open 2> /dev/null`);
+ my $APP			= Gtk2::GladeXML->new($GLADE_FILE);
+ my $THEME		= get_an_icon_theme();
+ my $TIPS		= Gtk2::Tooltips->new;

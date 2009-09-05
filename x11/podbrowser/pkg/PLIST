@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/05 08:44:15 landry Exp $
+bin/html2ps-podbrowser
+bin/podbrowser
+@man man/man1/podbrowser.1
+share/applications/podbrowser.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/podbrowser.png
+share/podbrowser/
+share/podbrowser/podbrowser.glade
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
