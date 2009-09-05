@@ -1,8 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/03 18:20:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/09/05 16:17:35 sthen Exp $
 @bin bin/sip
 include/python${MODPY_VERSION}/sip.h
 lib/python${MODPY_VERSION}/site-packages/sip.so
 lib/python${MODPY_VERSION}/site-packages/sipconfig.py
 lib/python${MODPY_VERSION}/site-packages/sipdistutils.py
 share/doc/py-sip/
-share/doc/py-sip/sipref.txt
+share/doc/py-sip/annotations.txt
+share/doc/py-sip/build_system.txt
+share/doc/py-sip/builtin.txt
+share/doc/py-sip/c_api.txt
+share/doc/py-sip/command_line.txt
+share/doc/py-sip/directives.txt
+share/doc/py-sip/distutils.txt
+share/doc/py-sip/embedding.txt
+share/doc/py-sip/incompatibilities.txt
+share/doc/py-sip/index.txt
+share/doc/py-sip/installation.txt
+share/doc/py-sip/introduction.txt
+share/doc/py-sip/python_api.txt
+share/doc/py-sip/specification_files.txt
+share/doc/py-sip/using.txt
