@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.1 2009/09/05 08:55:51 sthen Exp $
+
+-Wdeclaration-after-statement is gcc 4-only.
+
+--- configure.orig	Wed Jul 29 23:21:22 2009
++++ configure	Wed Jul 29 23:21:44 2009
+@@ -5879,9 +5879,9 @@ fi
+ 
+ 
+ # Error out on compile warnings
+ if test "x$ac_cv_c_compiler_gnu" = xyes ; then
+-  CFLAGS="$CFLAGS -fno-strict-aliasing -Wall -Werror -g -std=gnu99 -Wdeclaration-after-statement -Wno-unused"
++  CFLAGS="$CFLAGS -fno-strict-aliasing -Wall -Werror -g -std=gnu99 -Wno-unused"
+ fi
+ 
+ # Checks for header files.
+ { echo "$as_me:$LINENO: checking for grep that handles long lines and -e" >&5
