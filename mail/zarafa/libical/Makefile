@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/07/31 09:55:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/09/05 12:59:26 ajacoutot Exp $
 
 COMMENT=	modified libical library for Zarafa
 
 DISTNAME=	libical-0.42
-PKGNAME=	zarafa-${DISTNAME}
+PKGNAME=	zarafa-${DISTNAME}p0
 
 # We patched the source to rename the libraries so that this package can
 # cohabitate with the "official" one (i.e. textproc/libical).
