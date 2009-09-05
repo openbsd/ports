@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.391 2009/09/01 01:51:55 fgsch Exp $
+# $OpenBSD: Makefile,v 1.392 2009/09/05 08:47:44 landry Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -103,6 +103,7 @@
      SUBDIR += hicolor-icon-theme
      SUBDIR += hs-x11-extras
      SUBDIR += human-icon-theme
+     SUBDIR += i3
      SUBDIR += icewm
      SUBDIR += icon-naming-utils
      SUBDIR += idesk
@@ -158,6 +159,8 @@
      SUBDIR += p5-Gnome2-Canvas
      SUBDIR += p5-Gtk2
      SUBDIR += p5-Gtk2-Ex-FormFactory
+     SUBDIR += p5-Gtk2-Ex-PodViewer
+     SUBDIR += p5-Gtk2-Ex-Simple-List
      SUBDIR += p5-Gtk2-GladeXML
      SUBDIR += p5-Tk
      SUBDIR += p5-Tk-ProgressBar-Mac
@@ -173,6 +176,7 @@
      SUBDIR += pidgin-libnotify
      SUBDIR += piewm
      SUBDIR += pinot
+     SUBDIR += podbrowser
      SUBDIR += pwm
      SUBDIR += py-Xlib
      SUBDIR += py-gtk2
