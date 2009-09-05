@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/07/24 10:23:47 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/09/05 16:18:43 sthen Exp $
 @bin bin/pylupdate4
 @bin bin/pyrcc4
 bin/pyuic4
@@ -31,6 +31,10 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/compiler.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/compiler.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/indenter.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/indenter.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/misc.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/misc.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/proxy_type.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/proxy_type.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/qobjectcreator.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/qobjectcreator.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Compiler/qtproxies.py
@@ -44,12 +48,29 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Loader/qobjectcreator.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/Loader/qobjectcreator.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/__init__.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/driver.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/driver.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/icon_cache.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/icon_cache.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/objcreator.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/objcreator.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/__init__.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/ascii_upper.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/ascii_upper.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/encode_utf8.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/encode_utf8.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/invoke.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/invoke.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/load_plugin.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/load_plugin.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/proxy_base.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/proxy_base.pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/string_io.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/port_v2/string_io.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/properties.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/properties.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/pyuic.py
@@ -57,6 +78,8 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/pyuic.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/uiparser.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/uiparser.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/phonon.py
+lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/phonon.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qaxcontainer.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qaxcontainer.pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qscintilla.py
@@ -252,6 +275,7 @@ share/sip/QtGui/qimageiohandler.sip
 share/sip/QtGui/qimagereader.sip
 share/sip/QtGui/qimagewriter.sip
 share/sip/QtGui/qinputcontext.sip
+share/sip/QtGui/qinputcontextfactory.sip
 share/sip/QtGui/qinputdialog.sip
 share/sip/QtGui/qitemdelegate.sip
 share/sip/QtGui/qitemeditorfactory.sip
@@ -295,6 +319,7 @@ share/sip/QtGui/qprogressbar.sip
 share/sip/QtGui/qprogressdialog.sip
 share/sip/QtGui/qproxymodel.sip
 share/sip/QtGui/qpushbutton.sip
+share/sip/QtGui/qpytextobject.sip
 share/sip/QtGui/qradiobutton.sip
 share/sip/QtGui/qregion.sip
 share/sip/QtGui/qrgb.sip
@@ -331,6 +356,7 @@ share/sip/QtGui/qtextbrowser.sip
 share/sip/QtGui/qtextcursor.sip
 share/sip/QtGui/qtextdocument.sip
 share/sip/QtGui/qtextdocumentfragment.sip
+share/sip/QtGui/qtextdocumentwriter.sip
 share/sip/QtGui/qtextedit.sip
 share/sip/QtGui/qtextformat.sip
 share/sip/QtGui/qtextlayout.sip
@@ -360,6 +386,7 @@ share/sip/QtGui/qx11embed_x11.sip
 share/sip/QtGui/qx11info_x11.sip
 share/sip/QtNetwork/
 share/sip/QtNetwork/QtNetworkmod.sip
+share/sip/QtNetwork/qabstractnetworkcache.sip
 share/sip/QtNetwork/qabstractsocket.sip
 share/sip/QtNetwork/qauthenticator.sip
 share/sip/QtNetwork/qftp.sip
@@ -370,6 +397,7 @@ share/sip/QtNetwork/qlocalserver.sip
 share/sip/QtNetwork/qlocalsocket.sip
 share/sip/QtNetwork/qnetworkaccessmanager.sip
 share/sip/QtNetwork/qnetworkcookie.sip
+share/sip/QtNetwork/qnetworkdiskcache.sip
 share/sip/QtNetwork/qnetworkinterface.sip
 share/sip/QtNetwork/qnetworkproxy.sip
 share/sip/QtNetwork/qnetworkreply.sip

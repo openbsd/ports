@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2009/07/24 10:23:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/09/05 16:18:43 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
 
-V=		4.4.4
+V=		4.5.4
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
-PKGNAME-main=	py-qt4-${V}p0
+PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
 
 CATEGORIES=	x11 devel
@@ -75,6 +75,17 @@ PYQTMODS=	QtCore QtGui QtNetwork QtOpenGL QtScript QtSql QtSvg \
 .for i in ${PYQTMODS}
 CONFIGURE_ARGS+=--enable=${i}
 .endfor
+
+MODPY_MAJOR=${MODPY_VERSION:C/\..*//}
+# the distfile has pyuic for both python 2 and 3, normally both are
+# installed and they're selected at runtime. this breaks bytecode
+# compilation for package generation, so just rm the wrong files.
+pre-configure:
+.if ${MODPY_MAJOR} == "2"
+	rm -r ${WRKSRC}/pyuic/uic/port_v2
+.else
+	rm -rf ${WRKSRC}/pyuic/uic/port_v3
+.endif
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}/${MODPY_SITEPKG}
