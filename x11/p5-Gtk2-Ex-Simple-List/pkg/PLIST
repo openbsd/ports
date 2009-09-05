@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/05 08:40:01 landry Exp $
+${P5SITE}/Gtk2/
+${P5SITE}/Gtk2/Ex/
+${P5SITE}/Gtk2/Ex/Simple/
+${P5SITE}/Gtk2/Ex/Simple/List.pm
+${P5SITE}/Gtk2/Ex/Simple/TiedCommon.pm
+${P5SITE}/Gtk2/Ex/Simple/TiedList.pm
+@man man/man3p/Gtk2::Ex::Simple::List.3p
+share/examples/p5-Gtk2-Ex-Simple-List/
+share/examples/p5-Gtk2-Ex-Simple-List/simple_list.pl

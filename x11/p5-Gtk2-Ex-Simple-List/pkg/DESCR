@@ -1,0 +1,4 @@
+Gtk2 has a powerful, but complex MVC (Model, View, Controller) system
+used to implement list and tree widgets. Gtk2::Ex::Simple::List
+automates the complex setup work and allows you to treat the list
+model as a more natural list of lists structure.
