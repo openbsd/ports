@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/09/05 15:52:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2009/09/05 15:54:16 sturm Exp $
 
 COMMENT=	collecting and processing thoughts according to GTD
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=thinkingrock/}
 
 MODULES=	java
-MODJAVA_VER=	1.5+
+MODJAVA_VER=	1.6+
 MODJAVA_JRERUN= Yes
 
 RUN_DEPENDS=	::java/javaPathHelper \
