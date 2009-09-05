@@ -1,7 +1,7 @@
-$OpenBSD: patch-platform8_lib_nbexec,v 1.1 2008/06/05 08:33:55 sturm Exp $
---- platform8/lib/nbexec.orig	Sun Jun  1 22:04:59 2008
-+++ platform8/lib/nbexec	Sun Jun  1 22:06:02 2008
-@@ -299,18 +299,18 @@ detect_gnome_proxy () {
+$OpenBSD: patch-platform9_lib_nbexec,v 1.1 2009/09/05 15:52:06 sturm Exp $
+--- platform9/lib/nbexec.orig	Thu Sep  3 07:44:10 2009
++++ platform9/lib/nbexec	Thu Sep  3 07:44:43 2009
+@@ -362,18 +362,18 @@ detect_gnome_proxy () {
  detect_kde_proxy () {
      kioslaverc="${HOME}/.kde/share/config/kioslaverc"
      if [ -f $kioslaverc ] ; then
@@ -21,6 +21,6 @@ $OpenBSD: patch-platform8_lib_nbexec,v 1.1 2008/06/05 08:33:55 sturm Exp $
          else
 -            if /bin/grep -q 'ProxyType=0' "$kioslaverc" ; then
 +            if /usr/bin/grep -q 'ProxyType=0' "$kioslaverc" ; then
-                 http_proxy_tmp="DIRECT"
-                 return 0
-             fi
+                 detect_system_proxy
+                 if [ -z "$http_proxy_tmp" ]; then
+                     http_proxy_tmp="DIRECT"
