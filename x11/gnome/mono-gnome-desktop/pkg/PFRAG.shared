@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/09/06 07:28:31 ajacoutot Exp $
+lib/libgnomepanelsharpglue-2.so
+lib/libgtkhtmlsharpglue-2.so
+lib/libgtksourceview2sharpglue-2.so
+lib/libvtesharpglue-2.so
+lib/libwncksharpglue-2.so
