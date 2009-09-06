@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/09/06 19:11:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2009/09/06 19:35:40 jolan Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	coroutine oriented portable asynchronous services for lua
 DISTNAME=	copas-1.1.5
-PKGNAME=	luacopas-1.1.5
+PKGNAME=	luacopas-1.1.5p0
 CATEGORIES=	devel
 MASTER_SITES=	http://luaforge.net/frs/download.php/4027/
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/lua
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-RUN_DEPENDS+=	::net/luasocket
+RUN_DEPENDS+=	::devel/coxpcall \
+		::net/luasocket
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/lua/5.1
