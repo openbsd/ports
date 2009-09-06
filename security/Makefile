@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2009/09/06 12:59:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.223 2009/09/06 13:10:10 jasper Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -122,6 +122,7 @@
      SUBDIR += p5-Crypt-Rijndael
      SUBDIR += p5-Crypt-SSLeay
      SUBDIR += p5-Crypt-SaltedHash
+     SUBDIR += p5-Crypt-Serpent
      SUBDIR += p5-Crypt-SmbHash
      SUBDIR += p5-Crypt-TripleDES
      SUBDIR += p5-Crypt-Twofish
