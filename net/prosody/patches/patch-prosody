@@ -1,0 +1,23 @@
+$OpenBSD: patch-prosody,v 1.1.1.1 2009/09/06 18:40:57 jolan Exp $
+--- prosody.orig	Wed Jul 29 12:54:55 2009
++++ prosody	Sun Sep  6 11:28:57 2009
+@@ -7,6 +7,19 @@
+ -- COPYING file in the source package for more information.
+ --
+ 
++require("posix")
++
++user = posix.getpasswd()
++if user.uid ~= 0 then
++	io.stderr:write("prosody must be started as root to drop privileges\n")
++	os.exit(1)
++end
++
++posix.setpid("U", "638")
++posix.setpid("u", "638")
++posix.setpid("G", "638")
++posix.setpid("g", "638")
++
+ -- Will be modified by configure script if run --
+ 
+ CFG_SOURCEDIR=os.getenv("PROSODY_SRCDIR");

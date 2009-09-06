@@ -1,0 +1,23 @@
+$OpenBSD: patch-prosodyctl,v 1.1.1.1 2009/09/06 18:40:57 jolan Exp $
+--- prosodyctl.orig	Wed Jul 29 12:54:55 2009
++++ prosodyctl	Sun Sep  6 11:30:04 2009
+@@ -9,6 +9,19 @@
+ 
+ -- prosodyctl - command-line controller for Prosody XMPP server
+ 
++require("posix")
++
++user = posix.getpasswd()
++if user.uid ~= 0 then
++	io.stderr:write("prosodyctl must be started as root to drop privileges\n")
++	os.exit(1)
++end
++
++posix.setpid("U", "638")
++posix.setpid("u", "638")
++posix.setpid("G", "638")
++posix.setpid("g", "638")
++
+ -- Will be modified by configure script if run --
+ 
+ CFG_SOURCEDIR=nil;
