@@ -1,0 +1,8 @@
+LuaSec is a binding for the OpenSSL library to provide TLS/SSL
+communication.  LuaSec delegates to LuaSocket the TCP connection
+establishment between the client and server.  Then LuaSec uses this
+connection to start a secure TLS/SSL session.
+
+Documentation may be found online at:
+
+http://www.inf.puc-rio.br/~brunoos/luasec/reference.html

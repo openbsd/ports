@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2009/09/06 14:29:32 jolan Exp $
+--- src/Makefile.orig	Fri Jul 24 12:02:36 2009
++++ src/Makefile	Sun Sep  6 09:08:31 2009
+@@ -13,7 +13,7 @@ LIBS=-lssl -lcrypto
+ 
+ WARN=-Wall -pedantic
+ 
+-BSD_CFLAGS=-O2 -fpic $(WARN) $(INCDIR) $(DEFS)
++BSD_CFLAGS=$(SAVECFLAGS) -fpic $(WARN) $(INCDIR) $(DEFS)
+ BSD_LDFLAGS=-O -shared -fpic $(LIBDIR)
+ 
+ LNX_CFLAGS=-O2 -fpic $(WARN) $(INCDIR) $(DEFS)
+@@ -24,8 +24,8 @@ MAC_CFLAGS=-O2 -fno-common $(WARN) $(INCDIR) $(DEFS)
+ MAC_LDFLAGS=-bundle -undefined dynamic_lookup $(LIBDIR)
+ 
+ CP=cp
+-CC=gcc
+-LD=$(MYENV) gcc
++#CC=$(CC)
++LD=$(MYENV) $(CC)
+ CFLAGS=$(MYCFLAGS)
+ LDFLAGS=$(MYLDFLAGS)
+ 
