@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/12/30 22:37:55 okan Exp $
+# $OpenBSD: Makefile,v 1.3 2009/09/06 14:00:12 okan Exp $
 
 COMMENT=	implementation of reStructuredText parser
 
-DISTNAME=	Text-Restructured-0.003037
+DISTNAME=	Text-Restructured-0.003040
 CATEGORIES=	textproc
 MODULES=	cpan
 
