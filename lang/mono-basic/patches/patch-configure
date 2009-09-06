@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/09/06 10:34:36 jolan Exp $
+--- configure.orig	Mon Jun  8 12:50:23 2009
++++ configure	Tue Sep  1 20:25:17 2009
+@@ -19,7 +19,7 @@ done
+ echo "prefix=$prefix" > build/config.make
+ echo "exec_prefix=\${prefix}" >> build/config.make
+ echo "mono_libdir=\${exec_prefix}/lib" >> build/config.make
+-echo "man_dir=\${exec_prefix}/share/man" >> build/config.make
++echo "man_dir=\${exec_prefix}/man" >> build/config.make
+ echo "man1_dir=\${man_dir}/man1" >> build/config.make
+ echo "MCS_FLAGS=-debug+" >> build/config.make
+ echo "RUNTIME=mono" >> build/config.make

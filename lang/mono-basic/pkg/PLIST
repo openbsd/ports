@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/06 10:34:36 jolan Exp $
+bin/vbnc
+lib/mono/
+lib/mono/2.0/
+lib/mono/2.0/Microsoft.VisualBasic.dll
+lib/mono/2.0/vbnc.exe
+lib/mono/2.0/vbnc.exe.mdb
+lib/mono/2.0/vbnc.rsp
+lib/mono/gac/
+lib/mono/gac/Microsoft.VisualBasic/
+lib/mono/gac/Microsoft.VisualBasic/8.0.0.0__b03f5f7f11d50a3a/
+lib/mono/gac/Microsoft.VisualBasic/8.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualBasic.dll
+lib/mono/gac/Microsoft.VisualBasic/8.0.0.0__b03f5f7f11d50a3a/Microsoft.VisualBasic.dll.mdb
+@man man/man1/vbnc.1
