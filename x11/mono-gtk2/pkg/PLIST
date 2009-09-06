@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/16 16:02:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/09/06 07:27:09 ajacoutot Exp $
 %%SHARED%%
 bin/gapi2-codegen
 bin/gapi2-fixup
@@ -199,6 +199,11 @@ lib/mono/gtk-sharp-2.0/policy.2.8.glib-sharp.dll
 lib/mono/gtk-sharp-2.0/policy.2.8.gtk-dotnet.dll
 lib/mono/gtk-sharp-2.0/policy.2.8.gtk-sharp.dll
 lib/mono/gtk-sharp-2.0/policy.2.8.pango-sharp.dll
+lib/monodoc/
+lib/monodoc/sources/
+lib/monodoc/sources/gtk-sharp-docs.source
+lib/monodoc/sources/gtk-sharp-docs.tree
+lib/monodoc/sources/gtk-sharp-docs.zip
 lib/pkgconfig/
 lib/pkgconfig/gapi-2.0.pc
 lib/pkgconfig/glade-sharp-2.0.pc
