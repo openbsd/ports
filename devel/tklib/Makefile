@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/18 09:10:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT =		Tk Standard Library
 
@@ -19,8 +19,7 @@ MODULES =		x11/tk
 BUILD_DEPENDS =		::devel/tcllib
 RUN_DEPENDS =		::devel/tcllib
 REGRESS_DEPENDS =	::devel/tcllib
-REGRESS_FLAGS =		DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
-REGRESS_IS_INTERACTIVE =Yes
+REGRESS_IS_INTERACTIVE =x11
 NO_BUILD =		Yes
 
 SCRIPTS_TCLSH =		canvas/city.tcl \
@@ -51,14 +50,6 @@ do-install:
 		${PKGDIR}/DESCR ${PREFIX}/man/mann/tklib.n tklib "${COMMENT}" 0.5
 	@chown root:bin ${PREFIX}/man/mann/tklib.n
 	@chmod 444 ${PREFIX}/man/mann/tklib.n
-
-# This regression test needs an X11 display
-pre-regress:
-.for i in DISPLAY XAUTHORITY
-.  if !defined($i)
-	@echo "$i needs to be set to run regress"; exit 1
-.  endif
-.endfor
 
 do-regress:
 	${SETENV} ${MAKE_ENV} ${REGRESS_FLAGS} \

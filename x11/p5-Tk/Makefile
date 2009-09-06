@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2008/11/12 09:58:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2009/09/06 10:46:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,16 +32,9 @@ PKG_ARCH-demo=		*
 
 USE_X11=	Yes
 
-REGRESS_IS_INTERACTIVE=	Yes
-REGRESS_FLAGS=	DISPLAY="${DISPLAY}" XAUTHORITY="${HOME}/.Xauthority"
+REGRESS_IS_INTERACTIVE=	x11
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/PNG/Makefile.PL
-
-pre-regress:
-.ifndef DISPLAY
-	@echo requires access to X11; exit 1
-.endif
-
 
 .include <bsd.port.mk>

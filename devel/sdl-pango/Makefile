@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=	SDL wrapper around the Pango library
 
@@ -39,9 +39,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
-# This regression test wants an X11 display
-REGRESS_IS_INTERACTIVE=	Yes
-REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE=	x11
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdl-pango

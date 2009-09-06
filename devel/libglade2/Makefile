@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.34 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
@@ -34,8 +34,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
-REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE= x11
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/libxml2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2009/08/29 20:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2009/09/06 10:46:25 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -79,11 +79,7 @@ CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/includ
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gtk+2
 
-# The regression tests require a running instance of X.
-# You will also need to set the XAUTHORITY environment variable to point
-# to the appropriate .Xauthority file.
-REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS=		DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE= x11
 
 # XXX we should use MODPY_BIN from the lang/python MODULE but
 # we do not want to build/run_depends on python

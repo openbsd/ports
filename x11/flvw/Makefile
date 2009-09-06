@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2008/01/04 18:38:52 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=		FLTK Virtual Styles, List, Table, and Complex Table Widgets
 
@@ -27,20 +27,11 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -DFLTK_1_0_COMPAT -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-# This regression test wants an X11 display
 REGRESS_TARGET=		check
-REGRESS_FLAGS=         DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
-REGRESS_IS_INTERACTIVE= Yes
+REGRESS_IS_INTERACTIVE= x11
 
 WRKDIST=		${WRKDIR}/flvw
 WRKSRC=			${WRKDIST}/1.0
-
-pre-regress:
-.for t in DISPLAY XAUTHORITY
-.if !defined($t)
-	@echo "$t needs to be set to run regress"; exit 1
-.endif
-.endfor
 
 do-regress:
 	@cd ${WRKBUILD}/test && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}

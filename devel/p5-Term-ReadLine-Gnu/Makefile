@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2008/10/02 20:35:10 simon Exp $
+# $OpenBSD: Makefile,v 1.20 2009/09/06 10:46:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,16 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		readline termcap
 
-# This regression test wants an X11 display
 REGRESS_DEPENDS=	:p5-Tk-*:x11/p5-Tk
-REGRESS_FLAGS=		TERM=${TERM} DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
-REGRESS_IS_INTERACTIVE=	Yes
-
-pre-regress:
-.for t in TERM DISPLAY XAUTHORITY
-.if !defined($t)
-	@echo "$t needs to be set to run regress"; exit 1
-.endif
-.endfor
+REGRESS_FLAGS=		TERM=${TERM}
+REGRESS_IS_INTERACTIVE=	x11
 
 .include <bsd.port.mk>

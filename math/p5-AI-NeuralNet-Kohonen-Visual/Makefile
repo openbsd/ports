@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/31 16:49:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=		visualisation of Kohonen's Self-Organizing Maps
 
@@ -18,11 +18,7 @@ USE_X11=		Yes
 RUN_DEPENDS=		::math/p5-AI-NeuralNet-Kohonen \
 			::x11/p5-Tk
 
-# The regression tests require a running instance of X.
-# You will also need to set the XAUTHORITY environment variable to point 
-# to the appropriate .Xauthority file. 
-REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE= x11
 
 .include <bsd.port.mk>
 

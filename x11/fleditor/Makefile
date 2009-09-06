@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2008/01/04 18:38:52 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=		Text Editor for FLTK
 
@@ -33,19 +33,10 @@ MAKE_ENV=		LIBfleditor_VERSION=${LIBfleditor_VERSION}
 
 WRKDIST=		${WRKDIR}/fl_editor
 
-# This regression test wants an X11 display
-REGRESS_FLAGS=         DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
-REGRESS_IS_INTERACTIVE= Yes
+REGRESS_IS_INTERACTIVE= x11
 
 post-patch:
 	@rmdir ${WRKSRC}/obj
-
-pre-regress:
-.for t in DISPLAY XAUTHORITY
-.if !defined($t)
-	@echo "$t needs to be set to run regress"; exit 1
-.endif
-.endfor
 
 do-install:
 	@${install_shared_frag}

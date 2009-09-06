@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/09/06 10:46:26 ajacoutot Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -34,9 +34,7 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			CONFIG_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/lib/tk8.5" \
 			DEMO_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/share/examples/tk8.5"
 
-REGRESS_FLAGS =		HOME=${TESTHOME} \
-			DISPLAY=${DISPLAY} \
-			XAUTHORITY=${XAUTHORITY}
+REGRESS_FLAGS =		HOME=${TESTHOME}
 
 SEPARATE_BUILD =	concurrent
 USE_X11 =		Yes
@@ -51,8 +49,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtk85_VERSION}"
 
-# This regression test wants an X11 display
-REGRESS_IS_INTERACTIVE =Yes
+REGRESS_IS_INTERACTIVE = x11
 
 FLAVORS =		threaded
 FLAVOR ?=
@@ -71,11 +68,6 @@ REGRESS_TARGET =	test
 TESTHOME =		${WRKDIR}/testhome
 
 pre-regress:
-.for t in DISPLAY XAUTHORITY
-.  if !defined($t)
-	@echo "$t needs to be set to run regress"; exit 1
-.  endif
-.endfor
 	@mkdir -p ${TESTHOME}
 
 post-install:

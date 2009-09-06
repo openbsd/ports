@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/05 16:47:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=		bridge that allows POE to be driven by Tk
 
@@ -21,10 +21,6 @@ RUN_DEPENDS+=		::x11/p5-Tk \
 
 USE_X11=		Yes
 
-# The regression tests require a running instance of X.
-# You will also need to set the XAUTHORITY environment variable to point 
-# to the appropriate .Xauthority file. 
-REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE= x11
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/01 04:38:49 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=	provides an interface roughly equivalent to Xlib
 
@@ -16,10 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
 
-REGRESS_FLAGS=	DISPLAY="${DISPLAY}" XAUTHORITY="${HOME}/.Xauthority"
-
 USE_X11=	Yes
 
-REGRESS_IS_INTERACTIVE=	Yes
+REGRESS_IS_INTERACTIVE=	x11
 
 .include <bsd.port.mk>

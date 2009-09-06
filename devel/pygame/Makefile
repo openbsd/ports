@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2009/09/06 10:46:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,9 +38,7 @@ DOCDIR=		${PREFIX}/share/doc/pygame
 DOCSUBDIRS=	ref tut tut/chimp tut/surfarray \
 		tut/tom
 
-# This regression test wants an X11 display
-REGRESS_IS_INTERACTIVE=	Yes
-REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE=	x11
 
 # fix perms
 post-extract:

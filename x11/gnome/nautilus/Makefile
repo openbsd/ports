@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2009/08/11 08:39:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -80,11 +80,7 @@ pre-configure:
 		perl -pi -e "s,%\'d,%d,g;" -e "s,%\'u,%u,g;" \
 			${WRKSRC}/$${i}; done
 
-# The regression tests require a running instance of X.
-# You will also need to set the XAUTHORITY environment variable to point
-# to the appropriate .Xauthority file.
-REGRESS_IS_INTERACTIVE=Yes
-REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE=x11
 
 .include <bsd.port.mk>
 

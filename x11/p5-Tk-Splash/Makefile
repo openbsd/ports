@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/04/06 21:29:32 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=	splash screen widget
 
@@ -17,7 +17,6 @@ MODULES=	cpan
 
 USE_X11=	Yes
 
-REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE= x11
 
 .include <bsd.port.mk>

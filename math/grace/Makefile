@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2009/09/06 10:46:25 ajacoutot Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
@@ -46,9 +46,7 @@ NO_REGRESS=		Yes
 ERRORS+=	"Fatal: Flavors 'no_x11' and 'xmhtml' are mutually exclusive."
 .  endif
 .else
-# 'make regress' needs X11 running
-REGRESS_IS_INTERACTIVE=	Yes
-REGRESS_FLAGS=		DISPLAY=${DISPLAY}
+REGRESS_IS_INTERACTIVE=	x11
 USE_X11=		Yes
 USE_MOTIF=		openmotif
 WANTLIB+=		ICE SM X11 Xext Xmu Xp Xpm Xt pthread-stubs xcb

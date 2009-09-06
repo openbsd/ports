@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/09/06 10:46:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,11 +33,7 @@ LIB_DEPENDS=	xml2.>=9::textproc/libxml \
 RUN_DEPENDS=	::devel/p5-Glib2 \
 		::x11/p5-Gtk2
 
-# The regression tests require a running instance of X.
-# You will also need to set the XAUTHORITY environment variable to point
-# to the appropriate .Xauthority file.
-REGRESS_IS_INTERACTIVE=Yes
-REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE=x11
 
 pre-configure:
 	perl -pi -e 's,!!CFLAGS!!,${CFLAGS},g' ${WRKSRC}/Makefile.PL

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2009/09/06 10:46:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -44,11 +44,7 @@ CONFIGURE_STYLE=gnu
 # pick bind_textdomain_codeset
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv"
 
-# The regression tests require a running instance of X.
-# You will also need to set the XAUTHORITY environment variable to point 
-# to the appropriate .Xauthority file. 
-REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE= x11
 
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \

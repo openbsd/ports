@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.39 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=	command-driven interactive function plotting program
 
@@ -31,8 +31,7 @@ CONFIGURE_ARGS=	--without-linux-vga --without-pdf \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-REGRESS_IS_INTERACTIVE=	Yes
-REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE=	x11
 
 SUBST_VARS=	V
 

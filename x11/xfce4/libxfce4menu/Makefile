@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/04/28 19:42:37 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/06 10:46:26 ajacoutot Exp $
 
 COMMENT=	Xfce4 freedesktop.org compliant menu implementation
 
@@ -23,11 +23,6 @@ BUILD_DEPENDS =		::x11/gtk+2
 # regress tests needs the menu file provided by xfdesktop
 REGRESS_DEPENDS =	::x11/xfce4/xfdesktop
 
-# The regression tests require a running instance of X.
-# You will also need to set the XAUTHORITY environment variable to point 
-# to the appropriate .Xauthority file.
-
-REGRESS_IS_INTERACTIVE =	Yes
-REGRESS_FLAGS =			DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE =	x11
 
 .include <bsd.port.mk>

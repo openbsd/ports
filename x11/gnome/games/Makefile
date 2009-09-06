@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/11 08:39:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
@@ -63,11 +63,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-# The regression tests require a running instance of X.
-# You will also need to set the XAUTHORITY environment variable to point 
-# to the appropriate .Xauthority file. 
-REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS=		DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE= x11
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/glchess/src/glchess.in.in \

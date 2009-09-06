@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/09/06 10:46:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -37,11 +37,6 @@ RUN_DEPENDS=	:p5-Glib2->=1.200:devel/p5-Glib2 \
 		::devel/p5-Pango \
 		:p5-Cairo->=1.00:graphics/p5-Cairo
 		
-# The regression tests require a running instance of X.
-# You will also need to set the XAUTHORITY environment variable to point 
-# to the appropriate .Xauthority file. 
-
-REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS=DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE= x11
 
 .include <bsd.port.mk>

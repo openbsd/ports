@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 18:46:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT =	fast light toolkit
 
@@ -55,9 +55,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 # shared libs are disabled until fltk2 stabilises
 CONFIGURE_ARGS=	--disable-shared
 
-# This regression test wants an X11 display
-REGRESS_IS_INTERACTIVE= Yes
-REGRESS_FLAGS=	DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE= x11
 
 do-regress:
 	@cd ${WRKSRC}/test && \

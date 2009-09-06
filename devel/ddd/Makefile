@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.49 2009/09/06 10:46:25 ajacoutot Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -20,10 +20,7 @@ WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xmu Xp Xpm Xt c m z stdc++ \
 
 MODULES=	converters/libiconv
 
-REGRESS_IS_INTERACTIVE=Yes
-# Note - we need ~/.XAuthority, which doesn't exist in
-# /${PKGNAME}_writes_to_home
-REGRESS_FLAGS=	"DISPLAY=$${DISPLAY}" "HOME=$${HOME}"
+REGRESS_IS_INTERACTIVE=x11
 
 VMEM_WARNING=	Yes
 USE_MOTIF=	any

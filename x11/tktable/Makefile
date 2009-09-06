@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/03/19 12:39:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2009/09/06 10:46:26 ajacoutot Exp $
 
 COMMENT =		table/matrix widget extension to Tcl/Tk
 
@@ -25,7 +25,6 @@ MODULES =		x11/tk
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS =		${BUILD_DEPENDS}
 FAKE_FLAGS =		INSTALL_PROGRAM="${INSTALL_DATA}"
-REGRESS_FLAGS =		DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
@@ -35,7 +34,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV +=	SHLIB_VERSION=${LIBTktable${VER}_VERSION}
 
-REGRESS_IS_INTERACTIVE =Yes
+REGRESS_IS_INTERACTIVE =x11
 REGRESS_TARGET =	test
 
 SCRIPTS_TCLSH =		basic.tcl buttons.tcl command.tcl debug.tcl dynarows.tcl \
@@ -59,13 +58,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tktable
 	${INSTALL_SCRIPT} ${SCRIPTS_TCLSH:S!^!${WRKSRC}/demos/!} ${PREFIX}/share/examples/tktable
 	${INSTALL_DATA} ${EXAMPLE_FILES:S!^!${WRKSRC}/demos/!} ${PREFIX}/share/examples/tktable
-
-# This regression test needs an X11 display
-pre-regress:
-.for i in DISPLAY XAUTHORITY
-.  if !defined($i)
-	@echo "$i needs to be set to run regress"; exit 1
-.  endif
-.endfor
 
 .include <bsd.port.mk>
