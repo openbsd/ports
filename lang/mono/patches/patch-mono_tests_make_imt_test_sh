@@ -1,0 +1,9 @@
+$OpenBSD: patch-mono_tests_make_imt_test_sh,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
+--- mono/tests/make_imt_test.sh.orig	Tue Aug  4 08:03:26 2009
++++ mono/tests/make_imt_test.sh	Tue Sep  1 14:25:04 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env sh
++#!/bin/sh
+ 
+ LOW=2000
+ HIGH=2000

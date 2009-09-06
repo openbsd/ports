@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_os_gc_wrapper_h,v 1.1 2009/03/15 02:19:31 kurt Exp $
---- mono/os/gc_wrapper.h.orig	Thu Mar 12 13:08:25 2009
-+++ mono/os/gc_wrapper.h	Thu Mar 12 13:14:30 2009
-@@ -29,6 +29,12 @@
+$OpenBSD: patch-mono_utils_gc_wrapper_h,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
+--- mono/utils/gc_wrapper.h.orig	Tue Sep  1 14:20:56 2009
++++ mono/utils/gc_wrapper.h	Tue Sep  1 14:21:25 2009
+@@ -33,6 +33,12 @@
  #       endif
  #	endif
  

@@ -1,0 +1,9 @@
+$OpenBSD: patch-web_mono-build_sh,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
+--- web/mono-build.sh.orig	Sun Aug 23 11:42:00 2009
++++ web/mono-build.sh	Sun Aug 23 11:42:09 2009
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env bash
++#!/bin/sh
+ 
+ # Script to automate the building of mono and its dependencies.
+ # Relies on wget being installed (could make it fall back to using

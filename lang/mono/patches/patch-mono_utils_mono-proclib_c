@@ -1,0 +1,13 @@
+$OpenBSD: patch-mono_utils_mono-proclib_c,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
+--- mono/utils/mono-proclib.c.orig	Sun Aug 23 12:22:41 2009
++++ mono/utils/mono-proclib.c	Sun Aug 23 12:22:52 2009
+@@ -13,6 +13,9 @@
+ #endif
+ 
+ /* FIXME: bsds untested */
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#include <sys/param.h>
++#endif
+ #if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
+ #include <sys/types.h>
+ #include <sys/sysctl.h>

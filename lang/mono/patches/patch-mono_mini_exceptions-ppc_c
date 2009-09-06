@@ -1,0 +1,46 @@
+$OpenBSD: patch-mono_mini_exceptions-ppc_c,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
+--- mono/mini/exceptions-ppc.c.orig	Wed Sep  2 17:38:25 2009
++++ mono/mini/exceptions-ppc.c	Wed Sep  2 17:39:10 2009
+@@ -640,6 +640,7 @@ mono_arch_sigctx_to_monoctx (void *ctx, MonoContext *m
+ #ifdef MONO_CROSS_COMPILE
+ 	g_assert_not_reached ();
+ #else
++#ifdef MONO_ARCH_USE_SIGACTION
+ 	os_ucontext *uc = ctx;
+ 
+ 	mctx->sc_ir = UCONTEXT_REG_NIP(uc);
+@@ -647,6 +648,7 @@ mono_arch_sigctx_to_monoctx (void *ctx, MonoContext *m
+ 	memcpy (&mctx->regs, &UCONTEXT_REG_Rn(uc, 13), sizeof (gulong) * MONO_SAVED_GREGS);
+ 	memcpy (&mctx->fregs, &UCONTEXT_REG_FPRn(uc, 14), sizeof (double) * MONO_SAVED_FREGS);
+ #endif
++#endif
+ }
+ 
+ void
+@@ -655,6 +657,7 @@ mono_arch_monoctx_to_sigctx (MonoContext *mctx, void *
+ #ifdef MONO_CROSS_COMPILE
+ 	g_assert_not_reached ();
+ #else
++#ifdef MONO_ARCH_USE_SIGACTION
+ 	os_ucontext *uc = ctx;
+ 
+ 	UCONTEXT_REG_NIP(uc) = mctx->sc_ir;
+@@ -662,6 +665,7 @@ mono_arch_monoctx_to_sigctx (MonoContext *mctx, void *
+ 	memcpy (&UCONTEXT_REG_Rn(uc, 13), &mctx->regs, sizeof (gulong) * MONO_SAVED_GREGS);
+ 	memcpy (&UCONTEXT_REG_FPRn(uc, 14), &mctx->fregs, sizeof (double) * MONO_SAVED_FREGS);
+ #endif
++#endif
+ }
+ 
+ gpointer
+@@ -670,8 +674,10 @@ mono_arch_ip_from_context (void *sigctx)
+ #ifdef MONO_CROSS_COMPILE
+ 	g_assert_not_reached ();
+ #else
++#ifdef MONO_ARCH_USE_SIGACTION
+ 	os_ucontext *uc = sigctx;
+ 	return (gpointer)UCONTEXT_REG_NIP(uc);
++#endif
+ #endif
+ }
+ 

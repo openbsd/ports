@@ -1,0 +1,11 @@
+$OpenBSD: patch-mono_io-layer_sockets_c,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
+--- mono/io-layer/sockets.c.orig	Tue Sep  1 14:43:23 2009
++++ mono/io-layer/sockets.c	Tue Sep  1 14:43:34 2009
+@@ -14,6 +14,7 @@
+ #include <string.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <sys/uio.h>
+ #ifdef HAVE_SYS_IOCTL_H
+ #  include <sys/ioctl.h>
+ #endif

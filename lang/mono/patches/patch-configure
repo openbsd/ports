@@ -1,7 +1,29 @@
-$OpenBSD: patch-configure,v 1.1 2009/01/21 16:06:59 ajacoutot Exp $
---- configure.orig	Wed Jan 21 15:49:57 2009
-+++ configure	Wed Jan 21 15:50:25 2009
-@@ -29044,13 +29044,13 @@ fi
+$OpenBSD: patch-configure,v 1.2 2009/09/06 07:25:27 ajacoutot Exp $
+--- configure.orig	Wed Aug 19 19:39:29 2009
++++ configure	Tue Sep  1 14:43:13 2009
+@@ -3013,8 +3013,11 @@ _ACEOF
+ 		;;
+ 	*-*-*openbsd*)
+ 		platform_win32=no
+-		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE -DGC_FREEBSD_THREADS -DPLATFORM_BSD"
+-		libmono_cflags="-D_THREAD_SAFE"
++		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE -DGC_FREEBSD_THREADS -DPLATFORM_BSD -D_GNU_SOURCE -D_REENTRANT -DUSE_MMAP"
++		if test "x$disable_munmap" != "xyes"; then
++			CPPFLAGS="$CPPFLAGS -DUSE_MUNMAP"
++		fi
++		libmono_cflags="-D_THREAD_SAFE -D_REENTRANT"
+ 		LDFLAGS="$LDFLAGS -pthread"
+ 		libmono_ldflags="-pthread"
+ 		need_link_unlink=yes
+@@ -22353,6 +22356,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <sys/param.h>
+ #include <$ac_header>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -29227,13 +29231,13 @@ fi
  
  		;;
  		*)
@@ -18,7 +40,7 @@ $OpenBSD: patch-configure,v 1.1 2009/01/21 16:06:59 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -29100,7 +29100,7 @@ fi
+@@ -29283,7 +29287,7 @@ fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_main" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_main" >&6; }
  if test $ac_cv_lib_pthread_main = yes; then
@@ -27,3 +49,39 @@ $OpenBSD: patch-configure,v 1.1 2009/01/21 16:06:59 ajacoutot Exp $
  fi
  
  		;;
+@@ -37294,6 +37298,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
+ #include <sys/types.h>
+ 		 #include <sys/sysctl.h>
+ 		 #include <sys/proc.h>
+@@ -37337,6 +37342,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/param.h>
+ #include <sys/types.h>
+ 		 #include <sys/sysctl.h>
+ 		 #include <sys/proc.h>
+@@ -39366,7 +39372,7 @@ echo "${ECHO_T}$try_dev_random" >&6; }
+ 
+ case "{$target}" in
+     *-openbsd*)
+-    NAME_DEV_RANDOM="/dev/srandom"
++    NAME_DEV_RANDOM="/dev/arandom"
+     ;;
+ 
+ 
+@@ -39870,8 +39876,8 @@ JIT_SUPPORTED=no
+ INTERP_SUPPORTED=no
+ LIBC="libc.so.6"
+ INTL="libc.so.6"
+-SQLITE="libsqlite.so.0"
+-SQLITE3="libsqlite3.so.0"
++SQLITE="libsqlite.so"
++SQLITE3="libsqlite3.so"
+ X11="libX11.so"
+ 
+ sizeof_register="SIZEOF_VOID_P"

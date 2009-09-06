@@ -1,9 +1,0 @@
-$OpenBSD: patch-mcs_class_Mono_WebBrowser_build-csproj2k5,v 1.1.1.1 2008/10/15 13:34:10 robert Exp $
---- mcs/class/Mono.WebBrowser/build-csproj2k5.orig	Tue Oct  7 22:32:05 2008
-+++ mcs/class/Mono.WebBrowser/build-csproj2k5	Tue Oct  7 22:32:08 2008
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- #
- # This script will generate SWF.cs.target from our System.Windows.Forms.dll.sources
- #

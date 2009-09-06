@@ -1,0 +1,15 @@
+$OpenBSD: patch-mcs_class_Mono_Security_Mono_Math_BigInteger_cs,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
+
+CVE-2007-5197 - BigInteger overflow.
+
+--- mcs/class/Mono.Security/Mono.Math/BigInteger.cs.orig	Wed Jul 15 20:54:27 2009
++++ mcs/class/Mono.Security/Mono.Math/BigInteger.cs	Fri Aug 28 13:52:19 2009
+@@ -1607,7 +1607,7 @@ namespace Mono.Math {
+ 						uint j = 1;
+ 
+ 						// Multiply and add
+-						for (; j < m.length; j++) {
++						for (; j < m.length && j < A.length; j++) {
+ 							c += (ulong)u_i * (ulong)*(mP++) + *(aSP++);
+ 							*(aDP++) = (uint)c;
+ 							c >>= 32;

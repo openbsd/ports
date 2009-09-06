@@ -1,9 +1,0 @@
-$OpenBSD: patch-scripts_mono-nunit_pc_in,v 1.1 2008/10/17 09:07:13 robert Exp $
---- scripts/mono-nunit.pc.in.orig	Fri Oct 17 10:57:31 2008
-+++ scripts/mono-nunit.pc.in	Fri Oct 17 10:57:40 2008
-@@ -1,4 +1,4 @@
--prefix=${pcfiledir}/../..
-+prefix=@prefix@
- exec_prefix=${prefix}
- libdir=${exec_prefix}/lib
- 
