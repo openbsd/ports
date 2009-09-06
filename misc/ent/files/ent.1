@@ -1,0 +1,37 @@
+.\" $OpenBSD: ent.1,v 1.1.1.1 2009/09/06 11:15:00 sthen Exp $
+.TH ent
+
+.SH NAME
+ent - pseudo random number sequence test
+
+.SH SYNOPSIS
+ent [ -b -c -f -t -u ] [ infile ]
+
+.SH DESCRIPTION
+
+Preforms Entropy, Chi-square, Arithmetic Mean, Monte-Carlo-Pi and Serial Correlation tests. 
+
+.SH OPTIONS
+
+.B -b
+	The input is treated as a stream of bits rather than bytes.
+
+.B -c
+	Print a table of the number of occurrences of each possible byte (or bit, if the -b option is also specified) value, and the fraction of the overall file made up by that value. Printable characters in the ISO 8859-1 Latin-1 character set are shown along with their decimal byte values.
+
+.B -f
+	Fold upper case letters to lower case before conducting tests. Folding is done based on the ISO 8859-1 Latin-1 character set.
+
+.B -t
+	Terse mode output is written in Comma Separated Value (CSV) format.
+
+.B -u
+	Print basic usage information.
+
+.SH FILES
+
+If no infile is specified, ent reads from stdin. Output is always written to stdout. ent processes one infile at a time.
+
+.SS TERSE MODE OUTPUT FORMAT
+
+In Terse mode, row 0 is a header row which identifies the content of row 1. If the -c option is specified, rows 2 and 3, which contain character count information, are appended. If the -b option is specified, only two type 3 rows are shown for bits 0 and 1. Otherwise, 256 type 3 rows are shown, one for each possible byte.

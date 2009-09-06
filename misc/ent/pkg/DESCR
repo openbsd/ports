@@ -1,0 +1,7 @@
+ent - a program which applies various tests (Entropy, Chi-square,
+Arithmetic Mean, Monte Carlo Value for Pi, Serial Correlation
+Coefficient) to sequences of bytes stored in files and reports the
+results of those tests. The program is useful for evaluating pseudo
+random number generators for encryption and statistical sampling
+applications, compression algorithms, and other applications where the
+information density of a file is of interest.
