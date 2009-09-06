@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:09 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/06 11:27:45 jasper Exp $
 
 COMMENT =		easy to use LaTeX and ConTeXt editor
 
 V = 			20090618
 DISTNAME =		texworks-svn-${V}
-PKGNAME = 		texworks-${V}p1
+PKGNAME = 		texworks-${V}p2
 CATEGORIES =		editors print
 HOMEPAGE =		http://www.tug.org/texworks/
 MAINTAINER =		Edd Barrett <vext01@gmail.com>
