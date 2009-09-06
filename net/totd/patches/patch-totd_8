@@ -1,0 +1,29 @@
+$OpenBSD: patch-totd_8,v 1.1 2009/09/06 21:14:10 stsp Exp $
+
+formatting error; s/I N-ADDR/IN-ADDR/g; s/IP 6.ARPA/IP6.ARPA/g
+
+--- totd.8.orig	Wed Feb  2 11:10:31 2005
++++ totd.8	Sun Aug 23 20:50:31 2009
+@@ -47,6 +47,7 @@ By default totd listens on wildcard sockets. This opti
+ \fBpidfile\fR <filename>
+ .br 
+ Changes the default filename for totd to write its process id into.
++.TP 
+ \fBstf\fR 
+ .br 
+ Enable 6to4 PTR rewriting.
+@@ -142,11 +143,11 @@ If multiple prefixed are configured, totd will cycle t
+ .LP 
+ To enable 6to4 PTR query translation trick, add the `stf' keyword to your totd config file. 6to4 reverse lookup is based on draft\-moore\-6to4\-dns\-00.txt, section 3.3:
+ .IP 
+-     When such a resolver received a PTR or NS query for a label that had a [x2002].IP 6.ARPA suffix, it would first attempt to satisfy that query from its cache, or failing that, by forwarding the query to an upstream server.  If that query failed due to a "no such domain" error,the resolver would then attempt to find the server for the {something}.[x2002].IP 6.ARPA label by issuing an NS query for {something}.I N\-ADDR.ARPA.
++     When such a resolver received a PTR or NS query for a label that had a [x2002].IP6.ARPA suffix, it would first attempt to satisfy that query from its cache, or failing that, by forwarding the query to an upstream server.  If that query failed due to a "no such domain" error,the resolver would then attempt to find the server for the {something}.[x2002].IP6.ARPA label by issuing an NS query for {something}.IN\-ADDR.ARPA.
+ .IP 
+-     If the original query was for PTR records, and one or more NS records were found for {something}.I N\-ADDR.ARPA, the resolver would then forward the original query for {something}.[x2002].IP 6.ARPA to one or more of those servers, and return the results from one of the forwarded queries if any were successful.
++     If the original query was for PTR records, and one or more NS records were found for {something}.IN\-ADDR.ARPA, the resolver would then forward the original query for {something}.[x2002].IP6.ARPA to one or more of those servers, and return the results from one of the forwarded queries if any were successful.
+ .IP 
+-     If the original query was for NS records, and one or more NS records were found for {something}.I N\-ADDR.ARPA, the resolver would then return the pseudo\-records corresponding to the IN\-ADDR.ARPA domains. Those pseudo\-records would NOT be marked as authoritative, and the resolver would NOT cache those records.
++     If the original query was for NS records, and one or more NS records were found for {something}.IN\-ADDR.ARPA, the resolver would then return the pseudo\-records corresponding to the IN\-ADDR.ARPA domains. Those pseudo\-records would NOT be marked as authoritative, and the resolver would NOT cache those records.
+ .SH "SCOPED ADDRESSES"
+ .LP 
+ Totd supports re\-writing of scoped addresses in DNS responses.

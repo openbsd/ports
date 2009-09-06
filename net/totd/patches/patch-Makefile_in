@@ -1,7 +1,16 @@
---- Makefile.in.orig	Thu Feb 28 20:59:47 2002
-+++ Makefile.in	Fri Mar 15 13:14:18 2002
-@@ -58,8 +58,8 @@
- 	        ${CC} ${LDFLAGS} -o ${PROG} ${OBJS} ${LDADD}
+--- Makefile.in.orig	Mon Jan 31 11:55:14 2005
++++ Makefile.in	Sun Aug 23 21:57:32 2009
+@@ -19,7 +19,7 @@ TOT_CONFIG_FILE=@sysconfdir@/totd.conf
+ 
+ INSTALL = /usr/bin/install
+ 
+-CFLAGS  = @CFLAGS@ @DEFS@  -Werror -Wall -DTOTCONF=\"$(TOT_CONFIG_FILE)\" @OPTFLAGS@ $(INCLUDEPATH)
++CFLAGS  = @CFLAGS@ @DEFS@ -Wall -DTOTCONF=\"$(TOT_CONFIG_FILE)\" @OPTFLAGS@ $(INCLUDEPATH)
+ 
+ # When debugging is enabled by --enable-malloc-debug flag to the configure
+ # script, the @DBMALLOC@ substitution will contain the empty string, thus
+@@ -66,8 +66,8 @@ libswill.a:	
+ 	-ranlib libswill.a
  
  install: $(PROG)
 -	$(INSTALL) -c -s -m 0555 -o bin -g bin $(PROG) $(INSTALLDIR)
