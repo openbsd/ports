@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_plugins_interpolation_qgsinterpolator_cpp,v 1.1 2009/09/06 11:19:17 landry Exp $
+isnan is in gnu_cxx namespace.
+--- src/plugins/interpolation/qgsinterpolator.cpp.orig	Thu Sep  3 22:51:38 2009
++++ src/plugins/interpolation/qgsinterpolator.cpp	Thu Sep  3 22:52:00 2009
+@@ -92,7 +92,7 @@ int QgsInterpolator::cacheBaseData()
+           continue;
+         }
+         attributeValue = att_it.value().toDouble( &attributeConversionOk );
+-        if ( !attributeConversionOk || isnan( attributeValue ) ) //don't consider vertices with attributes like 'nan' for the interpolation
++        if ( !attributeConversionOk || __gnu_cxx::isnan( attributeValue ) ) //don't consider vertices with attributes like 'nan' for the interpolation
+         {
+           continue;
+         }

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_app_attributetable_qgsattributetabledelegate_cpp,v 1.1 2009/09/06 11:19:17 landry Exp $
+Unroll some c++ too violent for g++3.3.
+--- src/app/attributetable/qgsattributetabledelegate.cpp.orig	Thu Sep  3 22:19:43 2009
++++ src/app/attributetable/qgsattributetabledelegate.cpp	Thu Sep  3 22:20:43 2009
+@@ -103,7 +103,9 @@ void QgsAttributeTableDelegate::paint( QPainter * pain
+   if ( option.state & QStyle::State_HasFocus )
+   {
+     QRect r = option.rect.adjusted( 1, 1, -1, -1 );
+-    QPen p( QBrush( QColor( 0, 255, 127 ) ), 2 );
++    QColor c = QColor( 0, 255, 127 );
++    QBrush b = QBrush( c );
++    QPen p( b, 2 );
+     painter->save();
+     painter->setPen( p );
+     painter->drawRect( r );

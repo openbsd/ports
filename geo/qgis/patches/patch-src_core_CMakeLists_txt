@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_core_CMakeLists_txt,v 1.1 2009/09/06 11:19:17 landry Exp $
+don't link with lpthread or the linux-only libdl.
+--- src/core/CMakeLists.txt.orig	Sun Aug  2 17:28:05 2009
++++ src/core/CMakeLists.txt	Fri Sep  4 02:56:08 2009
+@@ -280,7 +280,7 @@ IF (WITH_INTERNAL_SPATIALITE)
+     TARGET_LINK_LIBRARIES(qgis_core ${ICONV_LIBRARY})
+   ENDIF (WIN32 OR APPLE)
+   IF (UNIX)
+-    TARGET_LINK_LIBRARIES(qgis_core pthread dl)
++    TARGET_LINK_LIBRARIES(qgis_core)
+   ENDIF (UNIX)
+ ELSE (WITH_INTERNAL_SPATIALITE)
+   TARGET_LINK_LIBRARIES(qgis_core ${SQLITE3_LIBRARY})

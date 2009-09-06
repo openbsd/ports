@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.1.1.1 2009/06/01 23:14:58 landry Exp $
---- doc/CMakeLists.txt.orig	Mon Jun  1 15:50:39 2009
-+++ doc/CMakeLists.txt	Mon Jun  1 15:54:27 2009
-@@ -9,7 +9,7 @@ userguide.pdf
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.2 2009/09/06 11:19:17 landry Exp $
+--- doc/CMakeLists.txt.orig	Tue Jan  6 22:50:18 2009
++++ doc/CMakeLists.txt	Thu Sep  3 20:17:54 2009
+@@ -8,7 +8,7 @@ qgisdoc.css
  #SUBDIRS (images plugins install_guide)
  
  INSTALL(FILES ${DOC_FILES}
