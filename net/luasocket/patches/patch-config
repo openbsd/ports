@@ -1,49 +1,44 @@
-$OpenBSD: patch-config,v 1.4 2009/08/14 20:35:32 jsg Exp $
---- config.orig	Thu Apr 27 05:23:21 2006
-+++ config	Fri Aug 14 22:08:15 2009
-@@ -6,22 +6,22 @@
+$OpenBSD: patch-config,v 1.5 2009/09/06 13:46:58 jolan Exp $
+--- config.orig	Sun Oct 14 23:21:05 2007
++++ config	Sun Sep  6 08:25:57 2009
+@@ -6,17 +6,17 @@
  # Output file names
  #
  EXT=so
--SOCKET_V=2.0.1
--MIME_V=1.0.1
+-SOCKET_V=2.0.2
+-MIME_V=1.0.2
 -SOCKET_SO=socket.$(EXT).$(SOCKET_V) 
 -MIME_SO=mime.$(EXT).$(MIME_V)
 -UNIX_SO=unix.$(EXT)
 +SOCKET_V=2.0
 +MIME_V=1.0
-+SOCKET_SO= socket.so
-+MIME_SO= mime.so
-+UNIX_SO= unix.so
++SOCKET_SO=socket.so
++MIME_SO=mime.so
++UNIX_SO=unix.so
  
  #------
  # Lua includes and libraries
  #
--LUAINC=-I/usr/local/include/lua50
-+LUAINC= -I$(LOCALBASE)/include
- #LUAINC=-I/usr/local/include/lua5.1
+ #LUAINC=-I/usr/local/include/lua50
+-#LUAINC=-I/usr/local/include/lua5.1
++LUAINC=-I$(LOCALBASE)/include
+ #LUAINC=-Ilua-5.1.1/src
  
  #------
- # Compat-5.1 directory
- #
--COMPAT=compat-5.1r5
-+#COMPAT=compat-5.1r5
- 
- #------
- # Top of your Lua installation
-@@ -48,11 +48,11 @@ INSTALL_EXEC=cp
+@@ -49,11 +49,12 @@ INSTALL_EXEC=cp
  #------
  # Compiler and linker settings
  # for Linux
 -CC=gcc
 +CC=cc
  DEF=-DLUASOCKET_DEBUG 
--CFLAGS= $(LUAINC) -I$(COMPAT) $(DEF) -pedantic -Wall -O2 -fpic
+-CFLAGS= $(LUAINC) $(DEF) -pedantic -Wall -O2 -fpic
 -LDFLAGS=-O -shared -fpic
 -LD=gcc 
 +CFLAGS+= $(LUAINC) -fPIC -DPIC -DUNIX_HAS_SUN_LEN
 +LDFLAGS=-O -shared -fPIC
 +LD=cc 
++
  
  #------
  # End of makefile configuration

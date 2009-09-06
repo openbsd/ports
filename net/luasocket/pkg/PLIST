@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/07/30 04:42:52 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/09/06 13:46:58 jolan Exp $
 share/doc/luasocket/
 share/doc/luasocket/dns.html
 share/doc/luasocket/ftp.html
-share/doc/luasocket/home.html
 share/doc/luasocket/http.html
+share/doc/luasocket/index.html
 share/doc/luasocket/installation.html
 share/doc/luasocket/introduction.html
 share/doc/luasocket/ltn12.html
