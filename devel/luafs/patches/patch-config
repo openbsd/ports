@@ -1,13 +1,19 @@
-$OpenBSD: patch-config,v 1.6 2007/05/10 20:23:29 pedro Exp $
---- config.orig	Thu May 10 10:14:46 2007
-+++ config	Thu May 10 10:15:23 2007
-@@ -1,19 +1,18 @@
+$OpenBSD: patch-config,v 1.7 2009/09/06 19:25:22 jolan Exp $
+--- config.orig	Sun Sep  6 14:21:39 2009
++++ config	Sun Sep  6 14:22:00 2009
+@@ -1,24 +1,24 @@
  # Installation directories
+ 
+ # Default installation prefix
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ 
  # System's libraries directory (where binary libraries are installed)
--LUA_LIBDIR= /usr/local/lib/lua/5.1
-+LUA_LIBDIR= $(LOCALBASE)/lib
+-LUA_LIBDIR= $(PREFIX)/lib/lua/5.1
++LUA_LIBDIR= $(LOCALBASE)/lib/lua/5.1
+ 
  # Lua includes directory
--LUA_INC= /usr/local/include/lua51
+-LUA_INC= $(PREFIX)/include
 +LUA_INC= $(LOCALBASE)/include
  
  # OS dependent
@@ -18,11 +24,12 @@ $OpenBSD: patch-config,v 1.6 2007/05/10 20:23:29 pedro Exp $
 +LIBNAME= $T.so
  
  # Compilation directives
--WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings
+-WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings -pedantic
++#WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings -pedantic
  INCS= -I$(LUA_INC)
 -CFLAGS= $(WARN) $(INCS)
 -CC= gcc
 +CFLAGS+= -fPIC $(INCS)
-+CC= cc
++#CC= gcc
  
- # $Id: patch-config,v 1.6 2007/05/10 20:23:29 pedro Exp $
+ # $Id: patch-config,v 1.7 2009/09/06 19:25:22 jolan Exp $
