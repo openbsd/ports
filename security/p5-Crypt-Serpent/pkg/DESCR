@@ -1,0 +1,8 @@
+Crypt::Serpent is a Perl implementation of the Serpent block cipher.
+Serpent is a 128-bit block cipher, meaning that data is encrypted and
+decrypted in 128-bit chunks. The key length can vary, but for the
+purposes of the AES it is defined to be either 128, 192, or 256 bits.
+This block size and variable key length is standard among all AES
+candidates and was one of the major design requirements specified by
+NIST. The Serpent algorithm uses 32 rounds, or iterations of the main
+algorithm.
