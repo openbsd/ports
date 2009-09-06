@@ -1,9 +1,0 @@
-$OpenBSD: patch-gnome_gnome-sharp-2_0_pc_in,v 1.1.1.1 2008/10/16 20:48:07 robert Exp $
---- gnome/gnome-sharp-2.0.pc.in.orig	Thu Oct 16 19:43:39 2008
-+++ gnome/gnome-sharp-2.0.pc.in	Thu Oct 16 19:44:30 2008
-@@ -1,4 +1,4 @@
--prefix=${pcfiledir}/../..
-+prefix=@prefix@
- exec_prefix=${prefix}
- libdir=${exec_prefix}/lib
- gapidir=${prefix}/share/gapi-2.0
