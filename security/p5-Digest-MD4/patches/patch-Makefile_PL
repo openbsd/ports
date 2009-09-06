@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2009/09/06 12:58:36 jasper Exp $
+--- Makefile.PL.orig	Fri Sep  4 11:10:40 2009
++++ Makefile.PL	Fri Sep  4 11:10:50 2009
+@@ -17,7 +17,7 @@ if ($^O eq 'VMS') {
+     }
+ }
+ 
+-push(@extra, 'INSTALLDIRS'  => 'perl') if $] >= 5.008;
++push(@extra, 'INSTALLDIRS'  => 'site') if $] >= 5.008;
+ 
+ WriteMakefile(
+     'NAME'	   => 'Digest::MD4',
