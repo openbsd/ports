@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_util_c,v 1.6 2009/05/10 19:31:44 naddy Exp $
---- gtk/util.c.orig	Tue May  5 02:40:11 2009
-+++ gtk/util.c	Thu May  7 19:40:40 2009
-@@ -76,7 +76,7 @@ tr_strlsize( char *  buf,
+$OpenBSD: patch-gtk_util_c,v 1.7 2009/09/06 15:03:18 naddy Exp $
+--- gtk/util.c.orig	Wed Aug 19 03:02:44 2009
++++ gtk/util.c	Thu Aug 20 19:50:22 2009
+@@ -117,7 +117,7 @@ tr_strlsize( char *  buf,
  #else
      else if( size < (guint64)KILOBYTE_FACTOR )
          g_snprintf( buf, buflen,
@@ -10,7 +10,7 @@ $OpenBSD: patch-gtk_util_c,v 1.6 2009/05/10 19:31:44 naddy Exp $
                                (guint)size ), (guint)size );
      else
      {
-@@ -84,17 +84,17 @@ tr_strlsize( char *  buf,
+@@ -125,17 +125,17 @@ tr_strlsize( char *  buf,
          if( size < (guint64)MEGABYTE_FACTOR )
          {
              displayed_size = (gdouble) size / KILOBYTE_FACTOR;
@@ -31,7 +31,7 @@ $OpenBSD: patch-gtk_util_c,v 1.6 2009/05/10 19:31:44 naddy Exp $
          }
      }
  #endif
-@@ -109,13 +109,13 @@ tr_strlspeed( char * buf,
+@@ -150,13 +150,13 @@ tr_strlspeed( char * buf,
      const double speed = kb_sec;
  
      if( speed < 1000.0 )  /* 0.0 KB to 999.9 KB */
@@ -49,7 +49,7 @@ $OpenBSD: patch-gtk_util_c,v 1.6 2009/05/10 19:31:44 naddy Exp $
  
      return buf;
  }
-@@ -136,14 +136,14 @@ tr_strltime( char * buf,
+@@ -177,14 +177,14 @@ tr_strltime( char * buf,
      minutes = ( seconds % 3600 ) / 60;
      seconds = ( seconds % 3600 ) % 60;
  

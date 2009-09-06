@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.15 2009/07/22 15:52:07 naddy Exp $
---- configure.orig	Sat Jul 18 03:28:54 2009
-+++ configure	Sun Jul 19 14:13:32 2009
+$OpenBSD: patch-configure,v 1.16 2009/09/06 15:03:18 naddy Exp $
+--- configure.orig	Tue Aug 25 01:44:33 2009
++++ configure	Thu Sep  3 23:13:46 2009
 @@ -11317,8 +11317,8 @@ CC="$lt_save_CC"
  if test 0 = "0"; then
    supported_build=yes
