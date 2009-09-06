@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_plugins_compilergcc_compilergcc_cpp,v 1.1.1.1 2009/09/06 17:23:34 ajacoutot Exp $
+
+Don't look for cb_console_runner in WRKINST, always assume it is there and
+installed under PREFIX.
+
+--- src/plugins/compilergcc/compilergcc.cpp.orig	Wed Feb 27 14:15:26 2008
++++ src/plugins/compilergcc/compilergcc.cpp	Fri Sep  4 17:13:52 2009
+@@ -164,7 +164,7 @@ namespace
+ {
+     PluginRegistrant<CompilerGCC> reg(_T("Compiler"));
+ 
+-    static const wxString strCONSOLE_RUNNER(platform::windows ? _T("cb_console_runner.exe") : _T("cb_console_runner"));
++    static const wxString strCONSOLE_RUNNER(platform::windows ? _T("cb_console_runner.exe") : _T("${PREFIX}/bin/cb_console_runner"));
+     static const wxString strSLASH(_T("/"));
+     static const wxString strSPACE(_T(" "));
+     static const wxString strQUOTE(platform::windows ? _T("\"") : _T("'"));
+@@ -1646,8 +1646,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
+     }
+     wxString baseDir = ConfigManager::GetExecutableFolder();
+ 
+-    if (wxFileExists(baseDir + strSLASH + strCONSOLE_RUNNER))
+-        cmd << baseDir << strSLASH << strCONSOLE_RUNNER << strSPACE;
++    cmd << strCONSOLE_RUNNER << strSPACE;
+ 
+     if (!cmd.Replace(_T("$SCRIPT"), exe_filename))
+         // if they didn't specify $SCRIPT, append:
+@@ -1750,7 +1749,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+                         : EscapeSpaces(m_CdRun);
+     wxString crunnStr = platform::windows
+                         ? strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE
+-                        : EscapeSpaces(baseDir + strSLASH + strCONSOLE_RUNNER);
++                        : EscapeSpaces(strCONSOLE_RUNNER);
+     wxString hostapStr = platform::windows
+                         ? strQUOTE + target->GetHostApplication() + strQUOTE
+                         : EscapeSpaces(target->GetHostApplication());
+@@ -1784,8 +1783,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+         // should console runner be used?
+         if (target->GetUseConsoleRunner())
+         {
+-            if (wxFileExists(baseDir + strSLASH + strCONSOLE_RUNNER))
+-                command << crunnStr << strSPACE;
++            command << crunnStr << strSPACE;
+         }
+     }
+ 

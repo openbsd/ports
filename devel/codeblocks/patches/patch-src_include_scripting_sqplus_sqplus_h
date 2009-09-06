@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_include_scripting_sqplus_sqplus_h,v 1.1.1.1 2009/09/06 17:23:34 ajacoutot Exp $
+--- src/include/scripting/sqplus/sqplus.h.orig	Wed Sep  2 15:21:41 2009
++++ src/include/scripting/sqplus/sqplus.h	Wed Sep  2 15:22:20 2009
+@@ -16,7 +16,7 @@
+   #include <malloc/malloc.h>
+ #else
+   // C::B patch: support for FreeBSD
+-  #ifdef __FreeBSD__
++  #if defined __FreeBSD__ || defined __OpenBSD__
+     #include <stdlib.h>
+   #else
+     #include <malloc.h>

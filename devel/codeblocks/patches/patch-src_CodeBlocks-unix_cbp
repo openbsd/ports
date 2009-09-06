@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_CodeBlocks-unix_cbp,v 1.1.1.1 2009/09/06 17:23:34 ajacoutot Exp $
+--- src/CodeBlocks-unix.cbp.orig	Wed Sep  2 23:33:09 2009
++++ src/CodeBlocks-unix.cbp	Wed Sep  2 23:33:39 2009
+@@ -166,7 +166,6 @@
+ 				<Option projectResourceIncludeDirsRelation="0" />
+ 				<Option projectLibDirsRelation="2" />
+ 				<Compiler>
+-					<Add option="-DENABLE_BINRELOC" />
+ 					<Add directory="include" />
+ 					<Add directory="src/wxAUI" />
+ 					<Add directory="include/wxFlatNotebook/include" />

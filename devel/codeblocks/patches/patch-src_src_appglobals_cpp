@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_src_appglobals_cpp,v 1.1.1.1 2009/09/06 17:23:34 ajacoutot Exp $
+--- src/src/appglobals.cpp.orig	Wed Sep  2 15:20:15 2009
++++ src/src/appglobals.cpp	Wed Sep  2 15:21:09 2009
+@@ -43,6 +43,8 @@ namespace appglobals
+       const wxString AppPlatform = _T("Darwin");
+     #elif defined(__FreeBSD__)
+       const wxString AppPlatform = _T("FreeBSD");
++    #elif defined(__OpenBSD__)
++      const wxString AppPlatform = _T("OpenBSD");
+     #elif defined(__UNIX__)
+       const wxString AppPlatform = _T("Linux");
+     #else
