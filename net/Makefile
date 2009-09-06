@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.586 2009/09/03 18:53:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.587 2009/09/06 18:43:31 jolan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -345,6 +345,7 @@
      SUBDIR += pork
      SUBDIR += pptp
      SUBDIR += powerdns
+     SUBDIR += prosody
      SUBDIR += proxy-suite
      SUBDIR += psi
      SUBDIR += ptpd
