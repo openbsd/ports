@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2009/07/12 19:58:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2009/09/06 12:01:07 jolan Exp $
 
 COMMENT=		Common Unix Printing System
 
@@ -94,8 +94,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 			LIBGNUTLSCONFIG="pkg-config gnutls" \
 			ac_cv_path_CUPS_GHOSTSCRIPT="${LOCALBASE}/bin/gs"
 
-CFLAGS+=		"-I${LOCALBASE}/include" \
-			"-I${LOCALBASE}/include/libpng"
+CFLAGS+=		-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
 USE_GMAKE=		Yes
