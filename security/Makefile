@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2009/09/06 13:10:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.224 2009/09/06 14:31:23 jolan Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -74,6 +74,7 @@
      SUBDIR += logsentry
      SUBDIR += logsurfer
      SUBDIR += luacrypto
+     SUBDIR += luasec
      SUBDIR += lxnb
      SUBDIR += mcrypt
      SUBDIR += mhash
