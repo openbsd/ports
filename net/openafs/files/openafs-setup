@@ -633,7 +633,7 @@ retry bos restart localhost -all -cell $c -localauth
 
 log starting afs client
 retry mkdir -p /afs
-[ "$(mount | egrep "^/afs")" ] || mount -t xfs /dev/xfs0 /afs
+[ "$(mount | egrep "^/afs")" ] || mount -t nnpfs /dev/nnpfs0 /afs
 retry /usr/libexec/afsd -z --log=/var/log/afsd.log
 
 log authenticating $A

@@ -45,6 +45,7 @@ Add the below to /etc/rc.local:
 		vos listvol localhost -noauth 2> /dev/null| \
 		awk '
 		/ partition / { sub(":","",$9); part=$9; next; }
+		/\?\?.* K Not attached/ { printf "%s %s\n",part,$2; }
 		/R[OW].* K .*-line/ { printf "%s %s\n",part,$2; }'
 	)
 
@@ -61,7 +62,7 @@ Add the below to /etc/rc.local:
 		let i=i+1
 		vid=${volumes[$i]}
 		let i=i+1
-		bos salvage localhost $part $vid -localauth > /var/tmp/$vid.log 2>&1
+		bos salvage localhost $part $vid -orphans attach -localauth > /var/tmp/$vid.log 2>&1
 	done
 
         echo -n ")"
