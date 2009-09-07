@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/05 08:40:01 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/07 11:43:46 landry Exp $
 
 COMMENT =		A simple interface to Gtk2 complex MVC list widget
 
 MODULES =		cpan
 DISTNAME =		Gtk2-Ex-Simple-List-0.50
+PKGNAME =		p5-${DISTNAME}p0
 CATEGORIES =		x11
 
 MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
@@ -15,6 +16,8 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 RUN_DEPENDS =	::x11/p5-Gtk2
+
+BUILD_DEPENDS = ${RUN_DEPENDS}
 
 REGRESS_IS_INTERACTIVE =		X11
 
