@@ -1,0 +1,17 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/09/07 20:30:58 landry Exp $
+${P5ARCH}/auto/Wx/AUI/AUI.so
+${P5ARCH}/auto/Wx/Calendar/Calendar.so
+${P5ARCH}/auto/Wx/DND/DND.so
+${P5ARCH}/auto/Wx/DateTime/DateTime.so
+${P5ARCH}/auto/Wx/DocView/DocView.so
+${P5ARCH}/auto/Wx/FS/FS.so
+${P5ARCH}/auto/Wx/Grid/Grid.so
+${P5ARCH}/auto/Wx/Help/Help.so
+${P5ARCH}/auto/Wx/Html/Html.so
+${P5ARCH}/auto/Wx/MDI/MDI.so
+${P5ARCH}/auto/Wx/Print/Print.so
+${P5ARCH}/auto/Wx/RichText/RichText.so
+${P5ARCH}/auto/Wx/STC/STC.so
+${P5ARCH}/auto/Wx/Socket/Socket.so
+${P5ARCH}/auto/Wx/Wx.so
+${P5ARCH}/auto/Wx/XRC/XRC.so

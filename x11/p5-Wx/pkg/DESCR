@@ -1,0 +1,3 @@
+wxPerl is an extension module allowing the creation of GUI (Graphical
+User Interface) from Perl; it is built as a wrapper for the wxWidgets
+C++ GUI toolkit.
