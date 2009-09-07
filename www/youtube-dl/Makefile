@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/06/18 16:06:13 pirofti Exp $
+# $OpenBSD: Makefile,v 1.6 2009/09/07 14:21:35 pirofti Exp $
 
 COMMENT =	command-line program to download videos from YouTube.com
 
-V = 		2009.05.30
+V = 		2009.08.08
 DISTNAME =	${V}
 WRKDIST = 	${WRKDIR}/youtube-dl
 DIST_SUBDIR =	youtube-dl
