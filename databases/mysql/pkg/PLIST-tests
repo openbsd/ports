@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.33 2009/08/05 14:24:33 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.34 2009/09/07 21:35:34 sthen Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -135,6 +135,7 @@ share/mysql-test/extra/rpl_tests/rpl_extraSlave_Col.test
 share/mysql-test/extra/rpl_tests/rpl_failed_optimize.test
 share/mysql-test/extra/rpl_tests/rpl_flsh_tbls.test
 share/mysql-test/extra/rpl_tests/rpl_foreign_key.test
+share/mysql-test/extra/rpl_tests/rpl_get_master_version_and_clock.test
 share/mysql-test/extra/rpl_tests/rpl_insert_delayed.test
 share/mysql-test/extra/rpl_tests/rpl_insert_id.test
 share/mysql-test/extra/rpl_tests/rpl_insert_id_pk.test
@@ -456,6 +457,7 @@ share/mysql-test/r/binary.result
 share/mysql-test/r/binlog_tx_isolation.result
 share/mysql-test/r/bool.result
 share/mysql-test/r/bootstrap.result
+share/mysql-test/r/bug40113.result
 share/mysql-test/r/bug46080.result
 share/mysql-test/r/bulk_replace.result
 share/mysql-test/r/cache_innodb.result
@@ -829,10 +831,12 @@ share/mysql-test/r/partition_list.result
 share/mysql-test/r/partition_mgm.result
 share/mysql-test/r/partition_mgm_err.result
 share/mysql-test/r/partition_mgm_err2.result
+share/mysql-test/r/partition_not_embedded.result
 share/mysql-test/r/partition_not_windows.result
 share/mysql-test/r/partition_order.result
 share/mysql-test/r/partition_pruning.result
 share/mysql-test/r/partition_range.result
+share/mysql-test/r/partition_rename_longfilename.result
 share/mysql-test/r/partition_symlink.result
 share/mysql-test/r/partition_windows.result
 share/mysql-test/r/perror-win.result
@@ -1667,6 +1671,40 @@ share/mysql-test/suite/funcs_2/t/memory_charset.test
 share/mysql-test/suite/funcs_2/t/myisam_charset.test
 share/mysql-test/suite/funcs_2/t/ndb_charset.test
 share/mysql-test/suite/funcs_2/t/suite.opt
+share/mysql-test/suite/innodb/
+share/mysql-test/suite/innodb/include/
+share/mysql-test/suite/innodb/include/have_innodb_plugin.inc
+share/mysql-test/suite/innodb/include/innodb-index.inc
+share/mysql-test/suite/innodb/r/
+share/mysql-test/suite/innodb/r/innodb-analyze.result
+share/mysql-test/suite/innodb/r/innodb-index.result
+share/mysql-test/suite/innodb/r/innodb-index_ucs2.result
+share/mysql-test/suite/innodb/r/innodb-timeout.result
+share/mysql-test/suite/innodb/r/innodb-use-sys-malloc.result
+share/mysql-test/suite/innodb/r/innodb-zip.result
+share/mysql-test/suite/innodb/r/innodb_bug36169.result
+share/mysql-test/suite/innodb/r/innodb_bug36172.result
+share/mysql-test/suite/innodb/r/innodb_bug40360.result
+share/mysql-test/suite/innodb/r/innodb_bug41904.result
+share/mysql-test/suite/innodb/r/innodb_bug44032.result
+share/mysql-test/suite/innodb/r/innodb_file_format.result
+share/mysql-test/suite/innodb/r/innodb_information_schema.result
+share/mysql-test/suite/innodb/t/
+share/mysql-test/suite/innodb/t/disabled.def
+share/mysql-test/suite/innodb/t/innodb-analyze.test
+share/mysql-test/suite/innodb/t/innodb-index.test
+share/mysql-test/suite/innodb/t/innodb-index_ucs2.test
+share/mysql-test/suite/innodb/t/innodb-timeout.test
+share/mysql-test/suite/innodb/t/innodb-use-sys-malloc-master.opt
+share/mysql-test/suite/innodb/t/innodb-use-sys-malloc.test
+share/mysql-test/suite/innodb/t/innodb-zip.test
+share/mysql-test/suite/innodb/t/innodb_bug36169.test
+share/mysql-test/suite/innodb/t/innodb_bug36172.test
+share/mysql-test/suite/innodb/t/innodb_bug40360.test
+share/mysql-test/suite/innodb/t/innodb_bug41904.test
+share/mysql-test/suite/innodb/t/innodb_bug44032.test
+share/mysql-test/suite/innodb/t/innodb_file_format.test
+share/mysql-test/suite/innodb/t/innodb_information_schema.test
 share/mysql-test/suite/jp/
 share/mysql-test/suite/jp/include/
 share/mysql-test/suite/jp/include/trim_sjis.inc
@@ -2420,6 +2458,7 @@ share/mysql-test/suite/rpl/r/rpl_foreign_key_innodb.result
 share/mysql-test/suite/rpl/r/rpl_found_rows.result
 share/mysql-test/suite/rpl/r/rpl_free_items.result
 share/mysql-test/suite/rpl/r/rpl_get_lock.result
+share/mysql-test/suite/rpl/r/rpl_get_master_version_and_clock.result
 share/mysql-test/suite/rpl/r/rpl_grant.result
 share/mysql-test/suite/rpl/r/rpl_idempotency.result
 share/mysql-test/suite/rpl/r/rpl_ignore_grant.result
@@ -2675,6 +2714,7 @@ share/mysql-test/suite/rpl/t/rpl_found_rows.test
 share/mysql-test/suite/rpl/t/rpl_free_items-slave.opt
 share/mysql-test/suite/rpl/t/rpl_free_items.test
 share/mysql-test/suite/rpl/t/rpl_get_lock.test
+share/mysql-test/suite/rpl/t/rpl_get_master_version_and_clock.test
 share/mysql-test/suite/rpl/t/rpl_grant.test
 share/mysql-test/suite/rpl/t/rpl_idempotency-slave.opt
 share/mysql-test/suite/rpl/t/rpl_idempotency.test
@@ -3070,6 +3110,8 @@ share/mysql-test/t/bigint.test
 share/mysql-test/t/binary.test
 share/mysql-test/t/bool.test
 share/mysql-test/t/bootstrap.test
+share/mysql-test/t/bug40113-master.opt
+share/mysql-test/t/bug40113.test
 share/mysql-test/t/bug46080-master.opt
 share/mysql-test/t/bug46080.test
 share/mysql-test/t/bulk_replace.test
@@ -3453,11 +3495,13 @@ share/mysql-test/t/partition_list.test
 share/mysql-test/t/partition_mgm.test
 share/mysql-test/t/partition_mgm_err.test
 share/mysql-test/t/partition_mgm_err2.test
+share/mysql-test/t/partition_not_embedded.test
 share/mysql-test/t/partition_not_windows-master.opt
 share/mysql-test/t/partition_not_windows.test
 share/mysql-test/t/partition_order.test
 share/mysql-test/t/partition_pruning.test
 share/mysql-test/t/partition_range.test
+share/mysql-test/t/partition_rename_longfilename.test
 share/mysql-test/t/partition_symlink.test
 share/mysql-test/t/partition_windows.test
 share/mysql-test/t/perror-win.test
