@@ -1,12 +1,12 @@
-$OpenBSD: patch-config_f_h,v 1.3 2007/05/27 18:04:47 naddy Exp $
---- config_f.h.orig	Sat May 26 15:34:04 2007
-+++ config_f.h	Sat May 26 15:36:05 2007
+$OpenBSD: patch-config_f_h,v 1.4 2009/09/07 09:10:55 sthen Exp $
+--- config_f.h.orig	Thu Jun 25 13:10:56 2009
++++ config_f.h	Thu Jul 16 15:36:27 2009
 @@ -143,7 +143,7 @@
   *		This can be much slower and no memory statistics will be
   *		provided.
   */
--#if defined(__MACHTEN__) || defined(PURIFY) || defined(MALLOC_TRACE) || defined(_OSD_POSIX) || defined(__MVS__) || defined (__linux__)
-+#if defined(__MACHTEN__) || defined(PURIFY) || defined(MALLOC_TRACE) || defined(_OSD_POSIX) || defined(__MVS__) || defined (__linux__) || defined (__OpenBSD__)
+-#if defined(__MACHTEN__) || defined(PURIFY) || defined(MALLOC_TRACE) || defined(_OSD_POSIX) || defined(__MVS__)
++#if defined(__MACHTEN__) || defined(PURIFY) || defined(MALLOC_TRACE) || defined(_OSD_POSIX) || defined(__MVS__) || defined(__OpenBSD__)
  # define SYSMALLOC
  #else
  # undef SYSMALLOC

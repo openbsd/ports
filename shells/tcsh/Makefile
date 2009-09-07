@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2009/06/29 00:38:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2009/09/07 09:10:55 sthen Exp $
 
 COMMENT=	extended C-shell with many useful features
 
-DISTNAME=	tcsh-6.15.00
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	tcsh-6.17.00
 CATEGORIES=	shells
 HOMEPAGE=	http://www.tcsh.org/
 
@@ -22,8 +21,9 @@ CONFIGURE_STYLE=gnu
 
 ALL_TARGET=	all catalogs
 
-REGRESS_DEPENDS=:autoconf-2.59*:devel/autoconf/2.59
-REGRESS_FLAGS=	AUTOCONF_VERSION=2.59
+AUTOCONF_VERSION=2.59 
+REGRESS_DEPENDS=${MODGNU_AUTOCONF_DEPENDS}
+REGRESS_FLAGS=	AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcsh ${PREFIX}/bin/tcsh

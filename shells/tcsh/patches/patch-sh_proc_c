@@ -1,11 +1,7 @@
-$OpenBSD: patch-sh_proc_c,v 1.3 2009/06/29 00:38:27 sthen Exp $
-
-hunks in pkill() from http://people.freebsd.org/~mp/tcsh_kill.patch
-fix a problem with kill and backticked expressions
-
---- sh.proc.c.orig	Mon Jun 29 01:22:54 2009
-+++ sh.proc.c	Mon Jun 29 01:23:09 2009
-@@ -366,6 +366,7 @@ found:
+$OpenBSD: patch-sh_proc_c,v 1.4 2009/09/07 09:10:55 sthen Exp $
+--- sh.proc.c.orig	Thu Jun 25 22:15:37 2009
++++ sh.proc.c	Thu Jul 16 15:30:02 2009
+@@ -367,6 +367,7 @@ found:
  #ifdef notdef
  		jobflags & PAEXITED ||
  #endif /* notdef */
@@ -13,39 +9,3 @@ fix a problem with kill and backticked expressions
  		!eq(dcwd->di_name, fp->p_cwd->di_name))) {
  	    /* PWP: print a newline after ^C */
  		if (jobflags & PINTERRUPTED) {
-@@ -1428,13 +1429,6 @@ pkill(Char **v, int signum)
-     pid_t     pid;
-     Char *cp, **vp, **globbed;
- 
--    pchild_disabled++;
--    cleanup_push(&pchild_disabled, disabled_cleanup);
--    if (setintr) {
--	pintr_disabled++;
--	cleanup_push(&pintr_disabled, disabled_cleanup);
--    }
--
-     /* Avoid globbing %?x patterns */
-     for (vp = v; vp && *vp; vp++)
- 	if (**vp == '%')
-@@ -1444,6 +1438,12 @@ pkill(Char **v, int signum)
-     globbed = v;
-     cleanup_push(globbed, blk_cleanup);
- 
-+    pchild_disabled++;
-+    cleanup_push(&pchild_disabled, disabled_cleanup);
-+    if (setintr) {
-+	pintr_disabled++;
-+	cleanup_push(&pintr_disabled, disabled_cleanup);
-+    }
- 
-     while (v && (cp = *v)) {
- 	if (*cp == '%') {
-@@ -1516,7 +1516,7 @@ pkill(Char **v, int signum)
- cont:
- 	v++;
-     }
--    cleanup_until(&pchild_disabled);
-+    cleanup_until(globbed);
-     if (err1)
- 	stderror(ERR_SILENT);
- }
