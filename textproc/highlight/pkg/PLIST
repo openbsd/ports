@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/05/20 11:35:32 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/09/07 10:15:07 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -8,21 +8,6 @@ share/examples/highlight/
 share/examples/highlight/filetypes.conf
 @sample ${SYSCONFDIR}/highlight/filetypes.conf
 share/highlight/
-share/highlight/helpmsg/
-share/highlight/helpmsg/br.help
-share/highlight/helpmsg/cs.help
-share/highlight/helpmsg/de.help
-share/highlight/helpmsg/en.help
-share/highlight/helpmsg/es.help
-share/highlight/helpmsg/fr.help
-share/highlight/helpmsg/ja.help
-share/highlight/indentSchemes/
-share/highlight/indentSchemes/acid.indent
-share/highlight/indentSchemes/ansi.indent
-share/highlight/indentSchemes/gnu.indent
-share/highlight/indentSchemes/java.indent
-share/highlight/indentSchemes/kr.indent
-share/highlight/indentSchemes/linux.indent
 share/highlight/langDefs/
 share/highlight/langDefs/4gl.lang
 share/highlight/langDefs/a4c.lang
@@ -38,6 +23,7 @@ share/highlight/langDefs/as.lang
 share/highlight/langDefs/asm.lang
 share/highlight/langDefs/asp.lang
 share/highlight/langDefs/aspect.lang
+share/highlight/langDefs/ats.lang
 share/highlight/langDefs/au3.lang
 share/highlight/langDefs/avenue.lang
 share/highlight/langDefs/awk.lang
@@ -49,6 +35,7 @@ share/highlight/langDefs/boo.lang
 share/highlight/langDefs/c.lang
 share/highlight/langDefs/cb.lang
 share/highlight/langDefs/cfc.lang
+share/highlight/langDefs/chl.lang
 share/highlight/langDefs/clipper.lang
 share/highlight/langDefs/clojure.lang
 share/highlight/langDefs/clp.lang
@@ -72,9 +59,12 @@ share/highlight/langDefs/hcl.lang
 share/highlight/langDefs/httpd.lang
 share/highlight/langDefs/icn.lang
 share/highlight/langDefs/idl.lang
+share/highlight/langDefs/idlang.lang
+share/highlight/langDefs/ili.lang
 share/highlight/langDefs/ini.lang
 share/highlight/langDefs/inp.lang
 share/highlight/langDefs/io.lang
+share/highlight/langDefs/iss.lang
 share/highlight/langDefs/j.lang
 share/highlight/langDefs/java.lang
 share/highlight/langDefs/js.lang
@@ -92,6 +82,7 @@ share/highlight/langDefs/ly.lang
 share/highlight/langDefs/m.lang
 share/highlight/langDefs/make.lang
 share/highlight/langDefs/mel.lang
+share/highlight/langDefs/mercury.lang
 share/highlight/langDefs/mib.lang
 share/highlight/langDefs/miranda.lang
 share/highlight/langDefs/ml.lang
@@ -103,6 +94,7 @@ share/highlight/langDefs/mssql.lang
 share/highlight/langDefs/n.lang
 share/highlight/langDefs/nas.lang
 share/highlight/langDefs/nice.lang
+share/highlight/langDefs/nrx.lang
 share/highlight/langDefs/nsi.lang
 share/highlight/langDefs/nut.lang
 share/highlight/langDefs/oberon.lang
@@ -110,6 +102,7 @@ share/highlight/langDefs/objc.lang
 share/highlight/langDefs/octave.lang
 share/highlight/langDefs/oorexx.lang
 share/highlight/langDefs/os.lang
+share/highlight/langDefs/oz.lang
 share/highlight/langDefs/pas.lang
 share/highlight/langDefs/php.lang
 share/highlight/langDefs/pike.lang
@@ -128,6 +121,7 @@ share/highlight/langDefs/qmake.lang
 share/highlight/langDefs/qu.lang
 share/highlight/langDefs/r.lang
 share/highlight/langDefs/rb.lang
+share/highlight/langDefs/rebol.lang
 share/highlight/langDefs/rexx.lang
 share/highlight/langDefs/rnc.lang
 share/highlight/langDefs/s.lang
@@ -157,6 +151,7 @@ share/highlight/langDefs/vhd.lang
 share/highlight/langDefs/xml.lang
 share/highlight/langDefs/xpp.lang
 share/highlight/langDefs/y.lang
+share/highlight/langDefs/znn.lang
 share/highlight/themes/
 share/highlight/themes/acid.style
 share/highlight/themes/bipolar.style
@@ -172,11 +167,11 @@ share/highlight/themes/golden.style
 share/highlight/themes/greenlcd.style
 share/highlight/themes/ide-anjuta.style
 share/highlight/themes/ide-codewarrior.style
-share/highlight/themes/ide-devcpp.style
 share/highlight/themes/ide-eclipse.style
 share/highlight/themes/ide-kdev.style
 share/highlight/themes/ide-msvs2008.style
 share/highlight/themes/ide-xcode.style
+share/highlight/themes/jedit.style
 share/highlight/themes/kwrite.style
 share/highlight/themes/lucretia.style
 share/highlight/themes/matlab.style
