@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2009/09/08 21:56:34 landry Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT-wikipedia =	wikipedia plugin for gmpc
 
 VERSION =	0.18.0
 DISTNAME =	gmpc-plugins-${VERSION}
-PKGNAME-main =		${DISTNAME}p3
+PKGNAME-main =		${DISTNAME}p4
 PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}p1
 
 CATEGORIES =	audio
@@ -29,6 +29,8 @@ MULTI_PACKAGES =	-main
     ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "amd64"
 # XXX give it a chance to build on systems where webkit is not built
 MULTI_PACKAGES+=	-wikipedia
+.else
+CONFIGURE_ARGS+=	--disable-wikipedia
 .endif
 
 MODULES =	devel/gettext
@@ -64,7 +66,7 @@ USE_X11 =	Yes
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =gnu
-CONFIGURE_ARGS =--disable-mserver \
+CONFIGURE_ARGS+=--disable-mserver \
 		--disable-libnotify \
 		--disable-lirc
 
