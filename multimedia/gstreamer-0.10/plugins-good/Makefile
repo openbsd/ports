@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.45 2009/09/08 08:00:18 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -184,8 +184,9 @@ CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 post-extract:
 	cp -R ${FILESDIR} ${WRKSRC}/ext/libsndio
 
+# autopoint(1) uses HOME, make sure it exists
 pre-configure:
-	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	cd ${WRKSRC} && HOME=${WRKDIST} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} NOCONFIGURE="true" ./autogen.sh
 
 .include <bsd.port.mk>
