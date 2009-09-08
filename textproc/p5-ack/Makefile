@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/05 19:26:45 millert Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/08 11:51:13 landry Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
 MODULES=		cpan
-DISTNAME=		ack-1.88
+DISTNAME=		ack-1.90
 CPAN_AUTHOR=		PETDANCE
 CATEGORIES=		textproc
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 BUILD_DEPENDS=		::devel/p5-File-Next
 RUN_DEPENDS=		${BUILD_DEPENDS}
+REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 
 post-build:
 	@cp ${WRKBUILD}/ack-base ${WRKBUILD}/ack
