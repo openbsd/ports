@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/11/16 21:47:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/09/08 17:51:32 jasper Exp $
 @conflict py-gtk2-2.8.6*
 bin/pygobject-codegen-2.0
 include/pygtk-2.0/
 include/pygtk-2.0/pyglib.h
 include/pygtk-2.0/pygobject.h
-lib/libpyglib-2.0.a
-lib/libpyglib-2.0.la
-@lib lib/libpyglib-2.0.so.${LIBpyglib-2.0_VERSION}
+lib/libpyglib-2.0-python${MODPY_VERSION}.a
+lib/libpyglib-2.0-python${MODPY_VERSION}.la
+@lib lib/libpyglib-2.0-python${MODPY_VERSION}.so.${LIBpyglib-2.0-python2.5_VERSION}
 lib/pkgconfig/pygobject-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/dsextras.py
@@ -52,12 +52,39 @@ lib/python${MODPY_VERSION}/site-packages/pygtk.pyo
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/pygobject/
+share/gtk-doc/html/pygobject/class-gioappinfo.html
+share/gtk-doc/html/pygobject/class-gioapplaunchcontext.html
+share/gtk-doc/html/pygobject/class-gioasyncresult.html
+share/gtk-doc/html/pygobject/class-giocancellable.html
+share/gtk-doc/html/pygobject/class-giodrive.html
+share/gtk-doc/html/pygobject/class-gioemblem.html
+share/gtk-doc/html/pygobject/class-gioemblemedicon.html
+share/gtk-doc/html/pygobject/class-giofile.html
+share/gtk-doc/html/pygobject/class-giofileattributeinfo.html
+share/gtk-doc/html/pygobject/class-giofileenumerator.html
+share/gtk-doc/html/pygobject/class-giofileicon.html
+share/gtk-doc/html/pygobject/class-giofileinfo.html
+share/gtk-doc/html/pygobject/class-giofilemonitor.html
+share/gtk-doc/html/pygobject/class-gioicon.html
+share/gtk-doc/html/pygobject/class-gioinputstream.html
+share/gtk-doc/html/pygobject/class-gioloadableicon.html
+share/gtk-doc/html/pygobject/class-giomount.html
+share/gtk-doc/html/pygobject/class-giomountoperation.html
+share/gtk-doc/html/pygobject/class-giooutputstream.html
+share/gtk-doc/html/pygobject/class-gioseekable.html
+share/gtk-doc/html/pygobject/class-giosimpleasyncresult.html
+share/gtk-doc/html/pygobject/class-giothemedicon.html
+share/gtk-doc/html/pygobject/class-giovolume.html
+share/gtk-doc/html/pygobject/class-giovolumemonitor.html
 share/gtk-doc/html/pygobject/class-glibmaincontext.html
 share/gtk-doc/html/pygobject/class-glibmainloop.html
 share/gtk-doc/html/pygobject/class-gobject.html
 share/gtk-doc/html/pygobject/class-gobjectgboxed.html
 share/gtk-doc/html/pygobject/class-gobjectginterface.html
 share/gtk-doc/html/pygobject/class-gobjectgpointer.html
+share/gtk-doc/html/pygobject/gio-class-reference.html
+share/gtk-doc/html/pygobject/gio-constants.html
+share/gtk-doc/html/pygobject/glib-class-reference.html
 share/gtk-doc/html/pygobject/glib-constants.html
 share/gtk-doc/html/pygobject/glib-functions.html
 share/gtk-doc/html/pygobject/gobject-class-reference.html
@@ -77,6 +104,9 @@ share/pygobject/2.0/codegen/__init__.pyo
 share/pygobject/2.0/codegen/argtypes.py
 share/pygobject/2.0/codegen/argtypes.pyc
 share/pygobject/2.0/codegen/argtypes.pyo
+share/pygobject/2.0/codegen/code-coverage.py
+share/pygobject/2.0/codegen/code-coverage.pyc
+share/pygobject/2.0/codegen/code-coverage.pyo
 share/pygobject/2.0/codegen/codegen.py
 share/pygobject/2.0/codegen/codegen.pyc
 share/pygobject/2.0/codegen/codegen.pyo
@@ -86,12 +116,21 @@ share/pygobject/2.0/codegen/createdefs.pyo
 share/pygobject/2.0/codegen/definitions.py
 share/pygobject/2.0/codegen/definitions.pyc
 share/pygobject/2.0/codegen/definitions.pyo
+share/pygobject/2.0/codegen/defsconvert.py
+share/pygobject/2.0/codegen/defsconvert.pyc
+share/pygobject/2.0/codegen/defsconvert.pyo
+share/pygobject/2.0/codegen/defsgen.py
+share/pygobject/2.0/codegen/defsgen.pyc
+share/pygobject/2.0/codegen/defsgen.pyo
 share/pygobject/2.0/codegen/defsparser.py
 share/pygobject/2.0/codegen/defsparser.pyc
 share/pygobject/2.0/codegen/defsparser.pyo
 share/pygobject/2.0/codegen/docextract.py
 share/pygobject/2.0/codegen/docextract.pyc
 share/pygobject/2.0/codegen/docextract.pyo
+share/pygobject/2.0/codegen/docextract_to_xml.py
+share/pygobject/2.0/codegen/docextract_to_xml.pyc
+share/pygobject/2.0/codegen/docextract_to_xml.pyo
 share/pygobject/2.0/codegen/docgen.py
 share/pygobject/2.0/codegen/docgen.pyc
 share/pygobject/2.0/codegen/docgen.pyo
@@ -101,6 +140,9 @@ share/pygobject/2.0/codegen/h2def.pyo
 share/pygobject/2.0/codegen/mergedefs.py
 share/pygobject/2.0/codegen/mergedefs.pyc
 share/pygobject/2.0/codegen/mergedefs.pyo
+share/pygobject/2.0/codegen/missingdefs.py
+share/pygobject/2.0/codegen/missingdefs.pyc
+share/pygobject/2.0/codegen/missingdefs.pyo
 share/pygobject/2.0/codegen/mkskel.py
 share/pygobject/2.0/codegen/mkskel.pyc
 share/pygobject/2.0/codegen/mkskel.pyo
@@ -110,12 +152,16 @@ share/pygobject/2.0/codegen/override.pyo
 share/pygobject/2.0/codegen/reversewrapper.py
 share/pygobject/2.0/codegen/reversewrapper.pyc
 share/pygobject/2.0/codegen/reversewrapper.pyo
+share/pygobject/2.0/codegen/scanvirtuals.py
+share/pygobject/2.0/codegen/scanvirtuals.pyc
+share/pygobject/2.0/codegen/scanvirtuals.pyo
 share/pygobject/2.0/codegen/scmexpr.py
 share/pygobject/2.0/codegen/scmexpr.pyc
 share/pygobject/2.0/codegen/scmexpr.pyo
 share/pygobject/2.0/defs/
 share/pygobject/2.0/defs/gappinfo.override
 share/pygobject/2.0/defs/gapplaunchcontext.override
+share/pygobject/2.0/defs/gdrive.override
 share/pygobject/2.0/defs/gfile.override
 share/pygobject/2.0/defs/gfileattribute.override
 share/pygobject/2.0/defs/gfileenumerator.override
@@ -125,6 +171,7 @@ share/pygobject/2.0/defs/ginputstream.override
 share/pygobject/2.0/defs/gio-types.defs
 share/pygobject/2.0/defs/gio.defs
 share/pygobject/2.0/defs/gio.override
+share/pygobject/2.0/defs/gmount.override
 share/pygobject/2.0/defs/goutputstream.override
 share/pygobject/2.0/defs/gvolume.override
 share/pygobject/2.0/defs/gvolumemonitor.override

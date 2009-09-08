@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2009/09/06 10:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/09/08 17:51:32 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python bindings for glib2 gobject
 
 GNOME_PROJECT=	pygobject
-GNOME_VERSION=	2.16.1
-PKGNAME=	py-gobject-${GNOME_VERSION}p1
-SHARED_LIBS +=  pyglib-2.0       0.0             # .0.0
+GNOME_VERSION=	2.18.0
+PKGNAME=	py-gobject-${GNOME_VERSION}
+SHARED_LIBS +=  pyglib-2.0-python${MODPY_VERSION} 0.0      # .0.0
 
 CATEGORIES=	devel x11
 
