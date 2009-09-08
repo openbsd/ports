@@ -1,7 +1,7 @@
-$OpenBSD: patch-pidgin_gtkmain_c,v 1.8 2008/08/21 05:59:01 brad Exp $
---- pidgin/gtkmain.c.orig	Mon Aug 18 21:53:52 2008
-+++ pidgin/gtkmain.c	Wed Aug 20 00:48:35 2008
-@@ -89,6 +89,7 @@ static SnDisplay *sn_display = NULL;
+$OpenBSD: patch-pidgin_gtkmain_c,v 1.9 2009/09/08 06:35:24 steven Exp $
+--- pidgin/gtkmain.c.orig	Sat Sep  5 17:12:04 2009
++++ pidgin/gtkmain.c	Mon Sep  7 12:31:33 2009
+@@ -90,6 +90,7 @@ static SnDisplay *sn_display = NULL;
  #endif
  
  #ifdef HAVE_SIGNAL_H
@@ -9,7 +9,7 @@ $OpenBSD: patch-pidgin_gtkmain_c,v 1.8 2008/08/21 05:59:01 brad Exp $
  
  /*
   * Lists of signals we wish to catch and those we wish to ignore.
-@@ -159,6 +160,8 @@ clean_pid(void)
+@@ -160,6 +161,8 @@ clean_pid(void)
  	do {
  		pid = waitpid(-1, &status, WNOHANG);
  	} while (pid != 0 && pid != (pid_t)-1);

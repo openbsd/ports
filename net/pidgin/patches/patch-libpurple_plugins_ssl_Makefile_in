@@ -1,7 +1,7 @@
-$OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.17 2009/08/20 10:43:13 sthen Exp $
---- libpurple/plugins/ssl/Makefile.in.orig	Fri Aug 14 19:31:36 2009
-+++ libpurple/plugins/ssl/Makefile.in	Wed Aug 19 22:05:37 2009
-@@ -53,6 +53,12 @@ am__installdirs = "$(DESTDIR)$(plugindir)"
+$OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.18 2009/09/08 06:35:24 steven Exp $
+--- libpurple/plugins/ssl/Makefile.in.orig	Sat Sep  5 17:12:40 2009
++++ libpurple/plugins/ssl/Makefile.in	Mon Sep  7 11:08:19 2009
+@@ -57,6 +57,12 @@ am__installdirs = "$(DESTDIR)$(plugindir)"
  pluginLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(plugin_LTLIBRARIES)
  am__DEPENDENCIES_1 =
@@ -14,8 +14,8 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.17 2009/08/20 10:43:13 sth
  @PLUGINS_TRUE@ssl_gnutls_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
  @PLUGINS_TRUE@	$(am__DEPENDENCIES_1)
  am__ssl_gnutls_la_SOURCES_DIST = ssl-gnutls.c
-@@ -113,7 +119,7 @@ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOO
- 	$(LDFLAGS) -o $@
+@@ -107,7 +113,7 @@ LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CF
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  SOURCES = $(ssl_gnutls_la_SOURCES) $(ssl_nss_la_SOURCES) \
  	$(ssl_la_SOURCES)
 -DIST_SOURCES = $(am__ssl_gnutls_la_SOURCES_DIST) \
@@ -23,7 +23,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.17 2009/08/20 10:43:13 sth
  	$(am__ssl_nss_la_SOURCES_DIST) $(am__ssl_la_SOURCES_DIST)
  ETAGS = etags
  CTAGS = ctags
-@@ -177,6 +183,8 @@ GNT_MAJOR_VERSION = @GNT_MAJOR_VERSION@
+@@ -194,6 +200,8 @@ GNT_MAJOR_VERSION = @GNT_MAJOR_VERSION@
  GNT_MICRO_VERSION = @GNT_MICRO_VERSION@
  GNT_MINOR_VERSION = @GNT_MINOR_VERSION@
  GNT_VERSION = @GNT_VERSION@
@@ -32,7 +32,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.17 2009/08/20 10:43:13 sth
  GNUTLS_CFLAGS = @GNUTLS_CFLAGS@
  GNUTLS_LIBS = @GNUTLS_LIBS@
  GREP = @GREP@
-@@ -362,6 +370,7 @@ EXTRA_DIST = \
+@@ -454,6 +462,7 @@ EXTRA_DIST = \
  
  plugindir = $(libdir)/purple-$(PURPLE_MAJOR_VERSION)
  ssl_la_LDFLAGS = -module -avoid-version
@@ -40,7 +40,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.17 2009/08/20 10:43:13 sth
  ssl_gnutls_la_LDFLAGS = -module -avoid-version
  ssl_nss_la_LDFLAGS = -module -avoid-version
  @PLUGINS_TRUE@@USE_GNUTLS_FALSE@@USE_NSS_FALSE@plugin_LTLIBRARIES = \
-@@ -375,19 +384,25 @@ ssl_nss_la_LDFLAGS = -module -avoid-version
+@@ -467,19 +476,25 @@ ssl_nss_la_LDFLAGS = -module -avoid-version
  @PLUGINS_TRUE@@USE_GNUTLS_TRUE@@USE_NSS_FALSE@	ssl.la           \
  @PLUGINS_TRUE@@USE_GNUTLS_TRUE@@USE_NSS_FALSE@	ssl-gnutls.la
  
@@ -66,7 +66,7 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.17 2009/08/20 10:43:13 sth
  @PLUGINS_TRUE@ssl_gnutls_la_LIBADD = $(GLIB_LIBS) $(GNUTLS_LIBS)
  @PLUGINS_TRUE@ssl_nss_la_LIBADD = $(GLIB_LIBS) $(NSS_LIBS)
  AM_CPPFLAGS = \
-@@ -399,6 +414,7 @@ AM_CPPFLAGS = \
+@@ -491,6 +506,7 @@ AM_CPPFLAGS = \
  	$(GLIB_CFLAGS) \
  	$(PLUGIN_CFLAGS)
  
@@ -74,16 +74,16 @@ $OpenBSD: patch-libpurple_plugins_ssl_Makefile_in,v 1.17 2009/08/20 10:43:13 sth
  ssl_gnutls_la_CFLAGS = $(AM_CPPFLAGS) $(GNUTLS_CFLAGS)
  ssl_nss_la_CFLAGS = $(AM_CPPFLAGS) $(NSS_CFLAGS)
  all: all-am
-@@ -461,6 +477,8 @@ clean-pluginLTLIBRARIES:
+@@ -553,6 +569,8 @@ clean-pluginLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
 +ssl-openssl.la: $(ssl_openssl_la_OBJECTS) $(ssl_openssl_la_DEPENDENCIES)
 +	$(LINK) $(am_ssl_openssl_la_rpath) $(ssl_openssl_la_LDFLAGS) $(ssl_openssl_la_OBJECTS) $(ssl_openssl_la_LIBADD) $(LIBS)
  ssl-gnutls.la: $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_DEPENDENCIES) 
- 	$(ssl_gnutls_la_LINK) $(am_ssl_gnutls_la_rpath) $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_LIBADD) $(LIBS)
+ 	$(LINK) $(am_ssl_gnutls_la_rpath) $(ssl_gnutls_la_LDFLAGS) $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_LIBADD) $(LIBS)
  ssl-nss.la: $(ssl_nss_la_OBJECTS) $(ssl_nss_la_DEPENDENCIES) 
-@@ -475,6 +493,7 @@ distclean-compile:
+@@ -567,6 +585,7 @@ distclean-compile:
  	-rm -f *.tab.c
  
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl.Plo@am__quote@
