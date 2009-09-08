@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/09/17 13:54:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/09/08 14:02:45 ajacoutot Exp $
 
 COMMENT=		PDF backend for CUPS
 
-DISTNAME=		cups-pdf-2.4.7
+DISTNAME=		cups-pdf-2.5.0
 CATEGORIES=		print
 
 HOMEPAGE=		http://cip.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/

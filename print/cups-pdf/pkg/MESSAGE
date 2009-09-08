@@ -1,5 +1,4 @@
 You can add a pdfprinter to the CUPS printing systems by typing:
-
-lpadmin -p pdfprinter -E -v cups-pdf
+    lpadmin -p pdfprinter -v cups-pdf:/ -m CUPS-PDF.ppd -E
 
 You will find the "print" output in /var/spool/cups-pdf/<username>/
