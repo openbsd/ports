@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2009/08/03 14:17:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.195 2009/09/08 20:46:27 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -115,6 +115,7 @@
      SUBDIR += quake,
      SUBDIR += quake,ggi
      SUBDIR += quake2
+     SUBDIR += rftg
      SUBDIR += ri-li
      SUBDIR += roadfighter
      SUBDIR += rocksndiamonds
