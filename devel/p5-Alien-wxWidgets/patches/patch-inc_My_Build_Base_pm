@@ -1,0 +1,17 @@
+$OpenBSD: patch-inc_My_Build_Base_pm,v 1.1 2009/09/08 21:46:17 landry Exp $
+--- inc/My/Build/Base.pm.orig	Tue Sep  8 23:35:06 2009
++++ inc/My/Build/Base.pm	Tue Sep  8 23:35:41 2009
+@@ -367,12 +367,11 @@ sub awx_get_name {
+     my $e = sub { defined $_[0] ? ( $_[0] ) : () };
+     my $pv = sub { join '.', map { 0 + ( $_ || 0 ) }
+                                  ( $_[0] =~ /(\d+)\.(\d{1,3})(\d{0,3})/ ) } ;
+-    my $base = join '-', $args{toolkit}, $pv->( $args{version} ),
++    my $base = join '-', $args{toolkit},
+                    $e->( $args{debug} ? 'dbg' : undef ),
+                    $e->( $args{unicode} ? 'uni' : undef ),
+                    $e->( $args{mslu} ? 'mslu' : undef ),
+                    $e->( $args{compiler} ),
+-                   $e->( $args{compiler_version} ),
+                    ;
+ 
+     $base =~ s/\./_/g; $base =~ s/-/_/g;
