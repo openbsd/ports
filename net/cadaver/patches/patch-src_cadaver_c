@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cadaver_c,v 1.1 2004/04/14 17:10:34 lebel Exp $
---- src/cadaver.c.orig	Wed Apr 14 18:43:11 2004
-+++ src/cadaver.c	Wed Apr 14 18:45:10 2004
-@@ -711,7 +711,7 @@
+$OpenBSD: patch-src_cadaver_c,v 1.2 2009/09/08 15:33:15 jasper Exp $
+--- src/cadaver.c.orig	Tue Sep  8 16:35:26 2009
++++ src/cadaver.c	Tue Sep  8 16:35:44 2009
+@@ -707,7 +707,7 @@ static char **completion(const char *text, int start, 
      char *sep = strchr(rl_line_buffer, ' ');
  
      if (start == 0) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_cadaver_c,v 1.1 2004/04/14 17:10:34 lebel Exp $
      }
      else if (sep != NULL) {
  	char *cname = ne_strndup(rl_line_buffer, sep - rl_line_buffer);
-@@ -723,7 +723,7 @@
+@@ -719,7 +719,7 @@ static char **completion(const char *text, int start, 
  	    case parmscope_none:
  		break;
  	    case parmscope_local:
@@ -19,10 +19,10 @@ $OpenBSD: patch-src_cadaver_c,v 1.1 2004/04/14 17:10:34 lebel Exp $
  						rl_filename_completion_function);
  		break;
  	    case parmscope_option:
-@@ -731,7 +731,7 @@
+@@ -727,7 +727,7 @@ static char **completion(const char *text, int start, 
  		break;
  	    case parmscope_remote:
- 		if (have_connection) {
+ 		if (session.connected) {
 -		    matches = rl_completion_matches(text, remote_completion);
 +		    matches = rl_completion_matches((char *)text, remote_completion);
  		}

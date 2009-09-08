@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_glob_h,v 1.1 2009/09/08 15:33:15 jasper Exp $
+
+Don't redeclare size_t in some twisty way.
+
+--- lib/glob.h.orig	Tue Sep  8 16:38:10 2009
++++ lib/glob.h	Tue Sep  8 16:39:23 2009
+@@ -46,6 +46,7 @@ extern "C" {
+ # define __ptr_t	char *
+ #endif /* C++ or ANSI C.  */
+ 
++#if 0
+ /* We need `size_t' for the following definitions.  */
+ #ifndef __size_t
+ # if defined __GNUC__ && __GNUC__ >= 2
+@@ -60,7 +61,7 @@ typedef unsigned long int __size_t;
+ # undef __size_t
+ # define __size_t size_t
+ #endif
+-
++#endif
+ /* Bits set in the FLAGS argument to `glob'.  */
+ #define	GLOB_ERR	(1 << 0)/* Return on read errors.  */
+ #define	GLOB_MARK	(1 << 1)/* Append a slash to each name.  */

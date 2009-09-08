@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:39 espie Exp $
-bin/cadaver
+@comment $OpenBSD: PLIST,v 1.3 2009/09/08 15:33:15 jasper Exp $
+@bin bin/cadaver
 @man man/man1/cadaver.1
+share/locale/en@quot/LC_MESSAGES/cadaver.mo
+share/locale/es/LC_MESSAGES/cadaver.mo
+share/locale/it/LC_MESSAGES/cadaver.mo
