@@ -1,0 +1,112 @@
+$OpenBSD: patch-lib_Net_FTPServer_pm,v 1.1 2009/09/08 21:10:59 bluhm Exp $
+--- lib/Net/FTPServer.pm.orig	Fri Jul 15 12:10:22 2005
++++ lib/Net/FTPServer.pm	Thu Aug 27 17:13:15 2009
+@@ -4228,7 +4228,7 @@ sub _archive_generator_zip
+ 
+ 		 $zip->addMember ($memb);
+ 		 $memb->desiredCompressionMethod
+-		   (&{$ {Archive::Zip::}{COMPRESSION_DEFLATED}});
++		   (&Archive::Zip::COMPRESSION_DEFLATED);
+ 		 $memb->desiredCompressionLevel (9);
+ 	       }
+ 	 },
+@@ -4260,7 +4260,7 @@ sub _archive_generator_zip
+ 	if ($file)
+ 	  {
+ 	    unlink $tmpname;
+-	    $zip->writeToFileHandle ($file, 1) == &{$ {Archive::Zip::}{AZ_OK}}
++	    $zip->writeToFileHandle ($file, 1) == &Archive::Zip::AZ_OK
+ 	      or die "failed to write to zip file: $!";
+ 	    $file->seek (0, 0);
+ 	  }
+@@ -4269,7 +4269,7 @@ sub _archive_generator_zip
+     unless ($file)
+       {
+ 	$file = new IO::Scalar;
+-	$zip->writeToFileHandle ($file, 1) == &{$ {Archive::Zip::}{AZ_OK}}
++	$zip->writeToFileHandle ($file, 1) == &Archive::Zip::AZ_OK
+ 	  or die "failed to write to zip file: $!";
+ 	$file->seek (0, 0);
+       }
+@@ -8109,16 +8109,16 @@ sub _newFromFileHandle
+     $self->fileName ($filename);
+     $self->{externalFileName} = $filename;
+ 
+-    $self->{compressionMethod} = &{$ {Archive::Zip::}{COMPRESSION_STORED}};
++    $self->{compressionMethod} = &Archive::Zip::COMPRESSION_STORED;
+ 
+     my ($mode, $perms, $nlink, $user, $group, $size, $time) = $fileh->status;
+     $self->{compressedSize} = $self->{uncompressedSize} = $size;
+     $self->desiredCompressionMethod
+       ($self->compressedSize > 0
+-       ? &{$ {Archive::Zip::}{COMPRESSION_DEFLATED}}
+-       : &{$ {Archive::Zip::}{COMPRESSION_STORED}});
++       ? &Archive::Zip::COMPRESSION_DEFLATED
++       : &Archive::Zip::COMPRESSION_STORED);
+     $self->unixFileAttributes ($perms);
+-    $self->setLastModFileDateTimeFromUnix ($time);
++    $self->setLastModFileDateTimeFromUnix ($time) if $time;
+     $self->isTextFile (0);
+ 
+     $self;
+@@ -8136,7 +8136,7 @@ sub fh
+     return $self->{fh} if $self->{fh};
+ 
+     $self->{fh} = $self->{fileh}->open ("r")
+-      or return &{$ {Archive::Zip::}{AZ_IO_ERROR}};
++      or return &Archive::Zip::AZ_IO_ERROR;
+ 
+     $self->{fh};
+   }
+@@ -8146,17 +8146,17 @@ sub rewindData
+     my $self = shift;
+ 
+     my $status = $self->SUPER::rewindData (@_);
+-    return $status if $status != &{$ {Archive::Zip::}{AZ_OK}};
++    return $status if $status != &Archive::Zip::AZ_OK;
+ 
+-    return &{$ {Archive::Zip::}{AZ_IO_ERROR}} unless $self->fh;
++    return &Archive::Zip::AZ_IO_ERROR unless $self->fh;
+ 
+     # Not all personalities can seek backwards in the stream. Close
+     # the file and reopen it instead.
+-    $self->endRead == &{$ {Archive::Zip::}{AZ_OK}}
+-      or return &{$ {Archive::Zip::}{AZ_IO_ERROR}};
++    $self->endRead == &Archive::Zip::AZ_OK
++      or return &Archive::Zip::AZ_IO_ERROR;
+     $self->fh;
+ 
+-    return &{$ {Archive::Zip::}{AZ_OK}};
++    return &Archive::Zip::AZ_OK;
+   }
+ 
+ sub _readRawChunk
+@@ -8165,12 +8165,12 @@ sub _readRawChunk
+     my $dataref = shift;
+     my $chunksize = shift;
+ 
+-    return (0, &{$ {Archive::Zip::}{AZ_OK}}) unless $chunksize;
++    return (0, &Archive::Zip::AZ_OK) unless $chunksize;
+ 
+     my $bytesread = $self->fh->sysread ($$dataref, $chunksize)
+-      or return (0, &{$ {Archive::Zip::}{AZ_IO_ERROR}});
++      or return (0, &Archive::Zip::AZ_IO_ERROR);
+ 
+-    return ($bytesread, &{$ {Archive::Zip::}{AZ_OK}});
++    return ($bytesread, &Archive::Zip::AZ_OK);
+   }
+ 
+ sub endRead
+@@ -8180,10 +8180,10 @@ sub endRead
+     if ($self->{fh})
+       {
+ 	$self->{fh}->close
+-	  or return &{$ {Archive::Zip::}{AZ_IO_ERROR}};
++	  or return &Archive::Zip::AZ_IO_ERROR;
+ 	delete $self->{fh};
+       }
+-    return &{$ {Archive::Zip::}{AZ_OK}};
++    return &Archive::Zip::AZ_OK;
+   }
+ 
+ 1 # So that the require or use succeeds.
