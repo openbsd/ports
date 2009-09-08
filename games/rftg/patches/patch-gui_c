@@ -1,0 +1,12 @@
+$OpenBSD: patch-gui_c,v 1.1.1.1 2009/09/08 20:45:04 espie Exp $
+--- gui.c.orig	Tue Sep  8 21:26:55 2009
++++ gui.c	Tue Sep  8 21:27:07 2009
+@@ -239,7 +239,7 @@ static void load_image_bundle(void)
+ 	int count, x;
+ 
+ 	/* Create bundle file handle */
+-	bundle = g_file_new_for_path("images.data");
++	bundle = g_file_new_for_path(DATADIR "images.data");
+ 
+ 	/* Open file for reading */
+ 	fs = G_INPUT_STREAM(g_file_read(bundle, NULL, NULL));

@@ -1,0 +1,12 @@
+$OpenBSD: patch-init_c,v 1.1.1.1 2009/09/08 20:45:04 espie Exp $
+--- init.c.orig	Tue Sep  8 21:11:25 2009
++++ init.c	Tue Sep  8 21:11:39 2009
+@@ -245,7 +245,7 @@ void read_cards(void)
+ 	int i, code, phase;
+ 
+ 	/* Open card database */
+-	fff = fopen("cards.txt", "r");
++	fff = fopen(DATADIR "cards.txt", "r");
+ 
+ 	/* Check for failure */
+ 	if (!fff)
