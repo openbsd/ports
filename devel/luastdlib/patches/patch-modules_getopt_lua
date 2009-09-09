@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_getopt_lua,v 1.1 2009/09/09 18:31:33 jolan Exp $
+--- modules/getopt.lua.orig	Wed Feb 18 17:28:54 2009
++++ modules/getopt.lua	Wed Sep  9 13:28:20 2009
+@@ -88,6 +86,7 @@ function getOpt (argIn, options)
+       parseOpt (opt, arg)
+     end
+   end
++  argOut.n = #argOut
+   return argOut, optOut, errors
+ end
+ 

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/11 05:04:37 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2009/09/09 18:31:33 jolan Exp $
 
+PKG_ARCH=	*
 COMMENT=	lua library of common programming tasks
-
-DISTNAME=	stdlib
-V=		4
-PKGNAME=	luastdlib-${V}p1
-DIST_SUBDIR=	${DISTNAME}
+DISTNAME=	stdlib-12
+PKGNAME=	luastdlib-12
 CATEGORIES=	devel
 
-MASTER_SITES=	http://luaforge.net/frs/download.php/2367/
+MASTER_SITES=	http://luaforge.net/frs/download.php/4232/
 HOMEPAGE=	http://luaforge.net/projects/stdlib/
 
 # MIT
@@ -20,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/lua
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-RUN_DEPENDS+=	::devel/luarexlib
+WRKDIST=	${WRKDIR}/stdlib
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/lua/5.1

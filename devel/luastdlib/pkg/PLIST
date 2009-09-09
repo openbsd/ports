@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/12 09:39:40 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/09/09 18:31:33 jolan Exp $
 share/lua/5.1/base.lua
 share/lua/5.1/debug_ext.lua
 share/lua/5.1/getopt.lua
@@ -9,7 +9,6 @@ share/lua/5.1/math_ext.lua
 share/lua/5.1/mbox.lua
 share/lua/5.1/object.lua
 share/lua/5.1/parser.lua
-share/lua/5.1/rex.lua
 share/lua/5.1/set.lua
 share/lua/5.1/std.lua
 share/lua/5.1/string_ext.lua
@@ -26,7 +25,6 @@ share/luastdlib/math_ext.html
 share/luastdlib/mbox.html
 share/luastdlib/object.html
 share/luastdlib/parser.html
-share/luastdlib/rex.html
 share/luastdlib/set.html
 share/luastdlib/std.html
 share/luastdlib/string_ext.html
