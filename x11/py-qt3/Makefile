@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/06/03 18:21:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/09/09 14:30:01 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	python Qt3 bindings
 
-V=		3.17.6
+V=		3.18.1
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt3-${V}
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	GL GLU X11 Xext Xmu c m pthread stdc++
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::devel/py-sip
+RUN_DEPENDS=	:py-sip->=4.8.1:devel/py-sip
 LIB_DEPENDS=	qui.>=2::x11/qt3
 
 NO_REGRESS=	Yes
