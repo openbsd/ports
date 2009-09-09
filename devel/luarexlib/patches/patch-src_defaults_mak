@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_defaults_mak,v 1.1 2009/09/09 18:02:01 jolan Exp $
+--- src/defaults.mak.orig	Sat Apr 21 13:29:10 2007
++++ src/defaults.mak	Wed Sep  9 12:13:33 2009
+@@ -1,13 +1,13 @@
+ # default settings for lrexlib
+ 
+-INC_LUA  =
+-LIB_LUA  =
++#INC_LUA  =
++#LIB_LUA  =
+ 
+ # If the default settings don't work for your system,
+ # try to uncomment and edit the settings below.
+ #INC_LUA  = -I/usr/include/lua5.1
+ #LIB_LUA  = -llua
+ 
+-MYCFLAGS = -W -Wall -g $(INC_LUA) $(INC_PCRE)
++MYCFLAGS = -W -Wall -fPIC $(INC_LUA) $(INC_PCRE)
+ AR = ar rcu
+-CC = gcc
++#CC = gcc
