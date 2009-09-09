@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/09/05 16:18:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2009/09/09 14:13:57 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-docs=	py-qt4 documentation
 V=		4.5.4
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
-PKGNAME-main=	py-qt4-${V}
+PKGNAME-main=	py-qt4-${V}p0
 PKGNAME-docs=	py-qt4-docs-${V}
 
 CATEGORIES=	x11 devel
@@ -35,7 +35,7 @@ RUN_DEPENDS-docs=
 PKG_ARCH-docs=	*
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:py-sip->=4.7.9:devel/py-sip \
+RUN_DEPENDS=	:py-sip->=4.8.1:devel/py-sip \
 		::x11/dbus-python
 LIB_DEPENDS=	QtAssistantClient,QtDesigner,QtGui,QtNetwork,QtOpenGL,QtScript,QtSql,QtSvg,QtTest,QtXml::x11/qt4 \
 		${MODPY_LIB_DEPENDS}
