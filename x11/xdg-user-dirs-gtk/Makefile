@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/09 06:31:33 ajacoutot Exp $
 
 COMMENT=	integration of xdg-user-dirs into GNOME/gtk+
 
 GNOME_PROJECT=	xdg-user-dirs-gtk
 GNOME_VERSION=	0.8
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 CATEGORIES=	x11 devel
 
@@ -33,7 +33,9 @@ USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+
+CFLAGS+=	-pthread
 
 FAKE_FLAGS=	autostartdir=${PREFIX}/share/examples/xdg-user-dirs-gtk/xdg/autostart
 
