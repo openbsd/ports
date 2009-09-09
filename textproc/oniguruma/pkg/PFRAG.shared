@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/09/09 17:46:29 jolan Exp $
+@lib lib/libonig.so.${LIBonig_VERSION}

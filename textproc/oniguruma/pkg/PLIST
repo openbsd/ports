@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/09 17:46:29 jolan Exp $
+%%SHARED%%
+bin/onig-config
+include/oniggnu.h
+include/onigposix.h
+include/oniguruma.h
+lib/libonig.a
+lib/libonig.la
