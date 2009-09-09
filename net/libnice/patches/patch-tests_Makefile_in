@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2009/09/09 22:13:08 jasper Exp $
+--- tests/Makefile.in.orig	Wed Sep  9 16:27:19 2009
++++ tests/Makefile.in	Wed Sep  9 16:27:40 2009
+@@ -240,7 +240,6 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ERROR_CFLAGS = \
+ 	$(LIBNICE_CFLAGS) \
+-	-Wextra \
+ 	-Wundef \
+ 	-Wnested-externs \
+ 	-Wwrite-strings \
+@@ -250,8 +249,7 @@ ERROR_CFLAGS = \
+ 	-Wmissing-prototypes \
+ 	-Wstrict-prototypes \
+ 	-Wredundant-decls \
+-	-Wno-unused-parameter \
+-	-Wno-missing-field-initializers
++	-Wno-unused-parameter
+ 
+ # -Wold-style-definition -Winline -Wunreachable-code
+ CLEANFILES = *.gcno *.gcda
