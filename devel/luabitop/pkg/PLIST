@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/09 19:39:47 jolan Exp $
+%%SHARED%%
+share/doc/luabitop/
+share/doc/luabitop/api.html
+share/doc/luabitop/bluequad-print.css
+share/doc/luabitop/bluequad.css
+share/doc/luabitop/changes.html
+share/doc/luabitop/contact.html
+share/doc/luabitop/img/
+share/doc/luabitop/img/contact.png
+share/doc/luabitop/index.html
+share/doc/luabitop/install.html
+share/doc/luabitop/semantics.html

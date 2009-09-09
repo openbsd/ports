@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/09/09 19:39:47 jolan Exp $
+lib/lua/5.1/bit.so
