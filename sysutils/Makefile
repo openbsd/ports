@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2009/08/09 21:50:31 landry Exp $
+# $OpenBSD: Makefile,v 1.179 2009/09/09 00:11:24 sthen Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -25,6 +25,7 @@
      SUBDIR += conky,no_x11
      SUBDIR += contool
      SUBDIR += d-feet
+     SUBDIR += dcfldd
      SUBDIR += diskrescue
      SUBDIR += dmassage
      SUBDIR += dmidecode
