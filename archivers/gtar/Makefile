@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2009/03/10 14:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2009/09/10 15:30:21 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
 DISTNAME=	tar-1.22
-PKGNAME=	g${DISTNAME}
+PKGNAME=	g${DISTNAME}p0
 CATEGORIES=	archivers
 HOMEPAGE=	http://www.gnu.org/software/tar/
 
@@ -19,8 +19,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=tar/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
-# Add xz once the lzma/xz confusion has settled down
-RUN_DEPENDS=	::archivers/bzip2 ::archivers/lzop
+RUN_DEPENDS=	::archivers/bzip2 ::archivers/lzop ::archivers/xz
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=g

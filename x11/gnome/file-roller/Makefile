@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2009/08/11 08:39:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2009/09/10 15:30:21 naddy Exp $
 
 COMMENT=		archive manager for GNOME
 
 GNOME_PROJECT=		file-roller
 GNOME_VERSION=		2.24.3
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 
 CATEGORIES=		archivers
 
@@ -30,10 +30,10 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-RUN_DEPENDS=		:gtar-*:archivers/gtar \
-			:lzma-*:archivers/lzma \
-			:unzip-*:archivers/unzip \
-			:zip-*:archivers/zip \
+RUN_DEPENDS=		::archivers/gtar \
+			::archivers/xz \
+			::archivers/unzip \
+			::archivers/zip \
 			::archivers/gcpio \
 			:rpm2cpio-*|rpm-*:converters/rpm2cpio
 LIB_DEPENDS=		gnomeui-2.>=1800::x11/gnome/libgnomeui \

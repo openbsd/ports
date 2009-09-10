@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/04/23 00:18:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/09/10 15:30:21 naddy Exp $
 
 COMMENT-main =		texlive texmf for laTeX/PdfTeX 
 COMMENT-full =		texlive texmf for XeTeX/ConTeXt and extra macros
@@ -17,7 +17,7 @@ NO_BUILD =		Yes
 NO_REGRESS =		Yes
 PKG_ARCH =		*
 
-BUILD_DEPENDS =		::archivers/lzma
+BUILD_DEPENDS =		::archivers/xz
 RUN_DEPENDS-full =	:texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
 			:texlive_base-${V}:print/texlive/base
 RUN_DEPENDS-docs = 	:texlive_base-${V}:print/texlive/base
@@ -27,7 +27,7 @@ MULTI_PACKAGES = 	-main -full -docs
 # Could do with bsd.port.mk understanding lzma
 do-extract:
 	cd ${WRKDIR} && \
-	lzma -dc ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${TAR} xf -
+	xz -dc ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${TAR} xf -
 
 do-install:
 	mv ${WRKDIST}/texmf ${PREFIX}/share

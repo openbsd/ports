@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2009/09/10 15:30:21 naddy Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -13,7 +13,7 @@ WANTLIB =		m X11 ICE freetype Xt pthread c Xext fontconfig \
 
 EXTRACT_SUFX =		.tar.lzma
 
-BUILD_DEPENDS =		:lzma-*:archivers/lzma
+BUILD_DEPENDS =		::archivers/xz
 RUN_DEPENDS =		:ghostscript-*:print/ghostscript/gnu \
 			:detex-*:print/detex \
 			:dvi2tty-*:print/dvi2tty \
@@ -74,7 +74,7 @@ SUBST_VARS +=		TRUEPREFIX
 # Also annoyingly loads of .orig files confuse update-patches
 do-extract:
 	cd ${WRKDIR} && \
-	lzma -dc ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${TAR} xf -
+	xz -dc ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${TAR} xf -
 	find ${WRKDIST} -name '*.orig' | xargs rm
 
 post-install:
