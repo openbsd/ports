@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/09 18:22:47 naddy Exp $
-bin/pflogx
+@comment $OpenBSD: PLIST,v 1.2 2009/09/10 22:27:29 jasper Exp $
+@bin bin/pflogx
 share/doc/pflogx/
 share/doc/pflogx/Changelog
 share/doc/pflogx/README
