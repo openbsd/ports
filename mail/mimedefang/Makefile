@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2008/10/29 14:36:12 okan Exp $
+# $OpenBSD: Makefile,v 1.11 2009/09/10 12:13:06 okan Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
-DISTNAME=	mimedefang-2.65
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	mimedefang-2.67
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.mimedefang.org/
@@ -21,12 +20,14 @@ WANTLIB=	c m perl pthread util milter
 
 RUN_DEPENDS=	:p5-MIME-tools-*:mail/p5-MIME-tools \
 		:p5-Digest-SHA1-*:security/p5-Digest-SHA1 \
-		:p5-HTML-Parser-*:www/p5-HTML-Parser
+		:p5-HTML-Parser-*:www/p5-HTML-Parser \
+		:p5-Unix-Syslog-*:sysutils/p5-Unix-Syslog
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-user=_mdefang \
-		--disable-anti-virus
+		--disable-anti-virus \
+		--enable-poll
 
 NO_REGRESS=	Yes
 
