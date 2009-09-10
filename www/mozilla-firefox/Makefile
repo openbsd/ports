@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2009/09/10 21:28:25 martynas Exp $
+# $OpenBSD: Makefile,v 1.125 2009/09/10 21:34:55 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.0.14
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}
+PKGNAME=	mozilla-firefox-${VER}p0
 SO_VERSION=	20.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -93,6 +93,7 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--enable-system-sqlite		\
 		--enable-canvas			\
 		--disable-libxul		\
+		--disable-crashreporter		\
 		--enable-official-branding
 
 # from browser/config/mozconfig
