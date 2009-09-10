@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_xz_util_c,v 1.1.1.1 2009/09/10 15:27:26 naddy Exp $
+--- src/xz/util.c.orig	Tue Sep  8 18:58:46 2009
++++ src/xz/util.c	Tue Sep  8 18:59:08 2009
+@@ -15,7 +15,7 @@
+ 
+ // Thousand separator for format strings is not supported outside POSIX.
+ // This is used in uint64_to_str() and double_to_str().
+-#ifdef DOSLIKE
++#if defined(DOSLIKE) || defined(__OpenBSD__)
+ #	define THOUSAND ""
+ #else
+ #	define THOUSAND "'"

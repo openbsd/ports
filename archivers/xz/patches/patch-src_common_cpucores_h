@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_common_cpucores_h,v 1.1.1.1 2009/09/10 15:27:26 naddy Exp $
+--- src/common/cpucores.h.orig	Tue Sep  8 17:08:04 2009
++++ src/common/cpucores.h	Tue Sep  8 17:08:16 2009
+@@ -40,7 +40,7 @@ cpucores(void)
+ 	int name[2] = { CTL_HW, HW_NCPU };
+ 	int cpus;
+ 	size_t cpus_size = sizeof(cpus);
+-	if (!sysctl(name, &cpus, &cpus_size, NULL, NULL)
++	if (!sysctl(name, 2, &cpus, &cpus_size, NULL, NULL)
+ 			&& cpus_size == sizeof(cpus) && cpus > 0)
+ 		ret = (uint32_t)(cpus);
+ #endif
