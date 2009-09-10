@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/14 00:02:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/09/10 16:51:43 sthen Exp $
 @bin bin/nmzmail
 @man man/man1/nmzmail.1
+share/doc/nmzmail/
+share/doc/nmzmail/README

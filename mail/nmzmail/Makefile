@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/14 00:02:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/10 16:51:43 sthen Exp $
 
 COMMENT=	fast maildir search engine
+
 DISTNAME=	nmzmail-1.1
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	mail textproc
 HOMEPAGE=	http://www.ecademix.com/JohannesHofmann/nmzmail.html
@@ -24,5 +26,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 # should be 2.63
 AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE=gnu autoconf
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nmzmail
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nmzmail/
 
 .include <bsd.port.mk>
