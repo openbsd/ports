@@ -1,6 +1,6 @@
---- configure.orig	Wed Mar 25 12:37:47 2009
-+++ configure	Wed Mar 25 16:14:39 2009
-@@ -7256,9 +7256,7 @@ CFLAGS=$save_CFLAGS
+--- configure.orig	Wed Sep  9 15:19:48 2009
++++ configure	Thu Sep 10 08:58:40 2009
+@@ -7259,9 +7259,7 @@ CFLAGS=$save_CFLAGS
  fi
  
  if test "$ac_cv_fpic" = "yes"; then
@@ -11,7 +11,7 @@
  fi
  { $as_echo "$as_me:$LINENO: result: $ac_cv_fpic" >&5
  $as_echo "$ac_cv_fpic" >&6; }
-@@ -10893,7 +10891,7 @@ $as_echo "$as_me: error: Berkeley DB 3.x or later was 
+@@ -10896,7 +10894,7 @@ $as_echo "$as_me: error: Berkeley DB 3.x or later was 
  
  
  
@@ -20,7 +20,7 @@
    CPPFLAGS="${BDB_INCADD} ${CPPFLAGS}"
  
    CYRUSDB_OBJS="$CYRUSDB_OBJS cyrusdb_berkeley.o"
-@@ -14632,7 +14630,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
+@@ -14635,7 +14633,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -29,7 +29,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -17143,7 +17141,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
+@@ -17792,7 +17790,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -38,7 +38,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -17234,7 +17232,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+set}" = set; th
+@@ -17883,7 +17881,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+set}" = set; th
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -47,7 +47,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -17710,8 +17708,8 @@ fi
+@@ -18359,8 +18357,8 @@ fi
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
@@ -58,7 +58,7 @@
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
      CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
-@@ -17895,7 +17893,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
+@@ -18544,7 +18542,7 @@ if test "${ac_cv_lib_resolv_res_search+set}" = set; th
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -67,7 +67,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -19638,6 +19636,8 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -19898,6 +19896,8 @@ cat >>conftest.$ac_ext <<_ACEOF
  extern "C"
  #endif
  char request_init ();

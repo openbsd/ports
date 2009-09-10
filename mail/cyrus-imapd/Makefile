@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2009/09/03 18:51:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2009/09/10 07:20:00 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
 
-V=		2.3.14
+V=		2.3.15
 DISTNAME=	cyrus-imapd-${V}
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
 CATEGORIES=	mail
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	yes
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/imap/
 
-WANTLIB=	crypto ssl
+WANTLIB=	crypto ssl z
 
 LIB_DEPENDS=	sasl2.>=2::security/cyrus-sasl2 \
 		lib/db4/db.>=4:db->=4,<5:databases/db/v4
@@ -81,7 +81,7 @@ PATCH_LIST+=	${WRKSRC}/contrib/drac_auth.patch \
 .endif
 
 WANTLIB-main=	${WANTLIB} asn1 c com_err gssapi krb5 pthread wrap
-WANTLIB-perl=	crypto ssl
+WANTLIB-perl=	${WANTLIB}
 
 NO_REGRESS=	Yes
 
