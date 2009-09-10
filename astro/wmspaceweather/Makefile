@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2009/09/10 22:17:52 jasper Exp $
 
 COMMENT=		wm-dockapp; space weather monitor
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 
-MASTER_SITES=		http://humppa.nl/distfiles/
+MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/
 
 MAKE_ENV=		CC="${CC}"
 USE_X11=		Yes

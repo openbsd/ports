@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.35 2009/09/10 22:17:53 jasper Exp $
 
 COMMENT=	Motif CD player
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xp Xpm Xt c curses \
 		pthread-stubs termlib xcb
 
-MASTER_SITES=	http://humppa.nl/distfiles/
+MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
 
 USE_X11=	Yes
 USE_MOTIF=	any

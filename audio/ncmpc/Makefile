@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/07/21 07:53:03 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2009/09/10 22:17:52 jasper Exp $
 
 # mips64 architecture does not support trampoline code yet
 NOT_FOR_ARCHS=		mips64
@@ -29,7 +29,7 @@ BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 
 MODULES=		devel/gettext
 
-MASTER_SITES=		http://humppa.nl/distfiles/
+MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/
 
 CONFIGURE_STYLE=	gnu
 AUTOMAKE_VERSION=	1.8

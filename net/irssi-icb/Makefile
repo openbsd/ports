@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/05/23 17:47:57 martynas Exp $
+# $OpenBSD: Makefile,v 1.18 2009/09/10 22:17:52 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	ICB plugin for irssi
 
 DISTNAME=	irssi-icb-0.14
 PKGNAME=	${DISTNAME}p3
-MASTER_SITES=   http://humppa.nl/distfiles/
+MASTER_SITES=   http://www.phil.uu.nl/~lievisse/distfiles/
 
 CATEGORIES=     net
 

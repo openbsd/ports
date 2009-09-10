@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:34:30 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/10 22:17:52 jasper Exp $
 
 COMMENT=		dockapp; gives access to X11's cut buffers
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		X11 Xext Xpm c pthread-stubs xcb
 
-MASTER_SITES=		http://humppa.nl/distfiles/
+MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/
 EXTRACT_SUFX=		.tgz
 
 USE_X11=		Yes

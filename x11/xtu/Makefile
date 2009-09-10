@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2008/09/16 09:04:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/09/10 22:17:53 jasper Exp $
 
 COMMENT=	configurable analog clock for X11
 DISTNAME=	xtu-1.3
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://humppa.nl/distfiles/
+MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
 
 WANTLIB=	X11 Xext c
 USE_X11=	Yes

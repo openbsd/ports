@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 01:40:28 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2009/09/10 22:17:52 jasper Exp $
 
 COMMENT=		parse pf logs to XML
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB= 		c expat m pcap stdc++
 
 MASTER_SITES=		${HOMEPAGE}releases/ \
-			http://humppa.nl/distfiles/
+			http://www.phil.uu.nl/~lievisse/distfiles/
 
 MAKE_FLAGS=		WITH_EXPAT=1 \
 			EXPAT_INCLUDEDIR="${X11BASE}/include" \

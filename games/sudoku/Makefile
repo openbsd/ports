@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 18:01:03 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2009/09/10 22:17:52 jasper Exp $
 
 COMMENT=		console based sudoku
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses
 
-MASTER_SITES=		http://humppa.nl/distfiles/ \
+MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/ \
 			http://www.laurasia.com.au/downloads/
 EXTRACT_SUFX=		.tgz
 

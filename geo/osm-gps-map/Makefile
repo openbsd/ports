@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2009/09/10 22:12:55 jasper Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://nedbsd.eu/~jasper/distfiles/
+MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/
 
 MODULES=		devel/gettext
 

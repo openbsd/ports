@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2009/09/10 22:17:52 jasper Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 SHARED_ONLY=		Yes
@@ -22,7 +22,7 @@ WANTLIB=		ICE GL SM X11 Xau Xdmcp Xext Xrandr Xrender Xxf86dga \
 			Xxf86vm c m ossaudio pthread pthread-stubs sndio \
 			usbhid xcb
 
-MASTER_SITES=		http://humppa.nl/distfiles/
+MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/
 
 MODULES=		converters/libiconv
 LIB_DEPENDS=		SDL::devel/sdl

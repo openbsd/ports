@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/06/23 08:33:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/09/10 22:12:55 jasper Exp $
 
 COMMENT=	File Alteration Monitor
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=	c m rpcsvc stdc++
 
 MASTER_SITES=	ftp://oss.sgi.com/projects/fam/download/stable/ \
-		http://nedbsd.eu/distfiles/
+		http://www.phil.uu.nl/~lievisse/distfiles/
 
 USE_LIBTOOL=	Yes
 
