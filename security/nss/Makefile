@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/08 12:57:17 martynas Exp $
+# $OpenBSD: Makefile,v 1.15 2009/09/10 21:38:26 martynas Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		libraries to support development of security-enabled apps
 
 VERSION=		3.12.3.1
 DISTNAME=		nss-${VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SO_VERSION=		23.2
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
@@ -55,7 +55,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/nss
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
 	@cd ${NSSDIST}/public && ${TAR} -chf - nss/ | \
-		${TAR} -xf - -C ${PREFIX}/include
+		find . -type d \
+			-exec ${INSTALL_DATA_DIR} ${PREFIX}/include/{} \; && \
+		find . ! -type d \
+			-exec ${INSTALL_DATA} {} ${PREFIX}/include/{} \;
 	@cd ${NSSOBJ}/lib && ${TAR} -chf - *.so.${SO_VERSION} | \
 		${TAR} -xf - -C ${PREFIX}/lib
 	@chmod 444 ${PREFIX}/lib/*.so.${SO_VERSION}
