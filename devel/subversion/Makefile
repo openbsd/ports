@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.62 2009/08/25 10:26:20 stsp Exp $
+# $OpenBSD: Makefile,v 1.63 2009/09/10 15:35:04 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
 COMMENT-python=		python interface to subversion
 COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
-COMMENT-gnome-keyring=	gnome-keyring support for subversion
 
 VERSION=		1.6.5
 DISTNAME=		subversion-${VERSION}
-PKGNAME=		${DISTNAME}
-PKGNAME-main=		${DISTNAME}
-PKGNAME-perl=		p5-SVN-${VERSION}
-PKGNAME-python=		py-subversion-${VERSION}
-PKGNAME-ruby=		ruby-subversion-${VERSION}
-PKGNAME-ap2=		ap2-subversion-${VERSION}
-PKGNAME-gnome-keyring=	gnome-keyring-subversion-${VERSION}
+PKGNAME-main=		${DISTNAME}p0
+FULLPKGNAME-perl=	p5-SVN-${VERSION}p0
+FULLPKGNAME-python=	py-subversion-${VERSION}p0
+FULLPKGNAME-ruby=	ruby-subversion-${VERSION}p0
+FULLPKGNAME-ap2=	ap2-subversion-${VERSION}p0
 
 SO_VERSION=	1.2
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -40,12 +37,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/downloads/
 EXTRACT_SUFX=	.tar.bz2
 
-PSEUDO_FLAVORS=	no_bindings no_ap2 no_gnome-keyring
+PSEUDO_FLAVORS=	no_bindings no_ap2
+FLAVORS=	gnome_keyring
 FLAVOR?=
 
 MODULES=	devel/gettext lang/python
 
-WANTLIB=	expat db z sqlite3
+WANTLIB=	expat db z
 
 LIB_DEPENDS=	neon.>=26:neon->=0.26.2:net/neon \
 		apr-1::devel/apr \
@@ -55,8 +53,7 @@ LIB_DEPENDS=	neon.>=26:neon->=0.26.2:net/neon \
 
 MULTI_PACKAGES=	-main
 
-WANTLIB-main=	${WANTLIB} c crypto iconv intl ssl \
-		asn1 gssapi krb5
+WANTLIB-main=	${WANTLIB} asn1 c crypto gssapi krb5 ssl
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 
 CONTRIB_HOOK_SCRIPTS=	case-insensitive.py pre-commit-check.py \
@@ -83,7 +80,7 @@ TOOLS_CLIENT_SIDE_SCRIPTS=	bash_completion change-svn-wc-format.py \
 
 .if !${FLAVOR:L:Mno_ap2}
 MULTI_PACKAGES+=	-ap2
-WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 expat
+WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 sqlite3
 LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in svn_delta-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 \
 	svn_fs_util-1 svn_repos-1 svn_subr-1
@@ -97,7 +94,7 @@ RUN_DEPENDS-ap2=	::www/apache-httpd
 MULTI_PACKAGES+=-perl -python -ruby
 SHARED_ONLY=	Yes
 
-WANTLIB-perl=	${WANTLIB} apr-1 aprutil-1
+WANTLIB-perl=		${WANTLIB} apr-1 aprutil-1 sqlite3
 RUN_DEPENDS-perl=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
@@ -105,16 +102,16 @@ LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS}
 LIB_DEPENDS-perl+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
 .  endfor
 
-WANTLIB-python=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl \
-		asn1 gssapi krb5
+WANTLIB-python=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi \
+			krb5 neon sasl2 sqlite3 ssl
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS}
 .  for _lib in ${SVN_LIBS}
 LIB_DEPENDS-python+=	${_lib}.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
 .  endfor
 
-WANTLIB-ruby=	${WANTLIB} apr-1 aprutil-1 crypto neon sasl2 ssl \
-		asn1 gssapi krb5
+WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi \
+			krb5 neon sasl2 sqlite3 ssl
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS}
@@ -126,25 +123,28 @@ MODULES+=	lang/ruby
 BUILD_DEPENDS+=	:swig->=1.3.36:devel/swig
 .endif
 
-.if !${FLAVOR:L:Mno_gnome-keyring}
-MULTI_PACKAGES+=	-gnome-keyring
+.if ${FLAVOR:L:Mgnome_keyring}
 SHARED_ONLY=	Yes
-LIB_DEPENDS-gnome-keyring=	dbus-1.>=7::x11/dbus \
-				glib-2.0::devel/glib2 \
-				gnome-keyring.>=4::x11/gnome/keyring \
-				pcre.>=2::devel/pcre \
-				${MODGETTEXT_LIB_DEPENDS} \
-				svn_subr-1.>=${SO_VERSION}:${PKGNAME}:devel/subversion,-main
-WANTLIB-gnome-keyring=	${WANTLIB} apr-1 aprutil-1 iconv
+LIB_DEPENDS-main+= ${LIB_DEPENDS} \
+		dbus-1.>=7::x11/dbus \
+		glib-2.0::devel/glib2 \
+		gnome-keyring.>=4::x11/gnome/keyring \
+		pcre.>=2::devel/pcre \
+		${MODGETTEXT_LIB_DEPENDS}
+zWANTLIB-main+=	apr-1 aprutil-1 iconv
 SHARED_LIBS+=	svn_auth_gnome_keyring-1 ${SO_VERSION}
 # gnome-keyring depends on dbus depends on pthread, so svn won't be able
-# to load libsvn_auth_gnome_keyring without this:
+# to load libsvn_auth_gnome_keyring without the main executable being compiled
+# and linked with -pthread. We want to avoid this as it causes problems with
+# our current threading implementation (which has to force stdin/stdout to
+# be non-blocking). As this affects -main it must be a FLAVOR.
 WANTLIB-main+=	pthread
 CFLAGS+=	-pthread
 .endif
 
 MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
 USE_LIBTOOL=	Yes
+# should be 2.63
 AUTOCONF_VERSION=2.62
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	PYTHON2=${MODPY_BIN}
@@ -178,9 +178,8 @@ pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
 
-.if !${FLAVOR:L:Mno_gnome-keyring}
+.if ${FLAVOR:L:Mgnome_keyring}
 CONFIGURE_ARGS+=--with-gnome-keyring
-REGRESS_DEPENDS+=:${PKGNAME-gnome-keyring}:devel/subversion,-gnome-keyring
 .endif
 
 .if !${FLAVOR:L:Mno_bindings}

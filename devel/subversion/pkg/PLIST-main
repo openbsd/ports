@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/08/25 10:26:20 stsp Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/09/10 15:35:04 sthen Exp $
+@conflict gnome-keyring-subversion-*
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion
 %%SHARED%%
+%%gnome_keyring%%
 @comment @bin bin/diff
 @comment @bin bin/diff3
 @comment @bin bin/diff4
@@ -57,6 +59,7 @@ include/subversion-1/svn_utf.h
 include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
 include/subversion-1/svn_xml.h
+@comment lib/apache2/
 lib/libsvn_client-1.a
 lib/libsvn_client-1.la
 lib/libsvn_delta-1.a
@@ -85,6 +88,12 @@ lib/libsvn_subr-1.a
 lib/libsvn_subr-1.la
 lib/libsvn_wc-1.a
 lib/libsvn_wc-1.la
+@comment lib/python${MODPY_VERSION}/
+@comment lib/python${MODPY_VERSION}/site-packages/
+@comment lib/ruby/
+@comment lib/ruby/site_ruby/
+@comment lib/ruby/site_ruby/${MODRUBY_REV}/
+@comment lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/
 @man man/man1/svn.1
 @man man/man1/svnadmin.1
 @man man/man1/svndumpfilter.1
@@ -136,8 +145,6 @@ share/examples/subversion/client-side/svn2cl/svn2html.css
 share/examples/subversion/client-side/svn2cl/svn2html.xsl
 share/examples/subversion/client-side/svn_apply_autoprops.py
 share/examples/subversion/client-side/svn_export_empty_files.py
-share/examples/subversion/servers
-@sample ${SYSCONFDIR}/subversion/servers
 share/examples/subversion/dumpprops.py
 share/examples/subversion/get-location-segments.py
 share/examples/subversion/getfile.py
@@ -190,6 +197,8 @@ share/examples/subversion/server-side/svn-backup-dumps.py
 share/examples/subversion/server-side/svn-fast-backup
 share/examples/subversion/server-side/svn-populate-node-origins-index.c
 share/examples/subversion/server-side/svn-tweak-author.py
+share/examples/subversion/servers
+@sample ${SYSCONFDIR}/subversion/servers
 share/examples/subversion/svnlog2html.rb
 share/examples/subversion/svnlook.py
 share/examples/subversion/svnlook.rb

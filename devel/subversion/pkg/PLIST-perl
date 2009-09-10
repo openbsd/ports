@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-perl,v 1.5 2009/04/28 23:43:57 stsp Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-perl,v 1.6 2009/09/10 15:35:04 sthen Exp $
 lib/libsvn_swig_perl-1.a
 lib/libsvn_swig_perl-1.la
+@lib lib/libsvn_swig_perl-1.so.${LIBsvn_swig_perl-1_VERSION}
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SVN/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SVN/Base.pm
@@ -16,18 +16,25 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Client/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Client/_Client.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Client/_Client.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Core/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Core/_Core.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Core/_Core.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Delta/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Delta/_Delta.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Delta/_Delta.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Fs/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Fs/_Fs.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Fs/_Fs.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Ra/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Ra/_Ra.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Ra/_Ra.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Repos/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Repos/_Repos.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Repos/_Repos.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Wc/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Wc/_Wc.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Wc/_Wc.so
 @man man/man3p/SVN::Base.3p
 @man man/man3p/SVN::Client.3p
 @man man/man3p/SVN::Core.3p

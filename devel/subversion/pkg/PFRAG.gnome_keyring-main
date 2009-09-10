@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.gnome_keyring-main,v 1.1 2009/09/10 15:35:04 sthen Exp $
+@conflict gnome-keyring-subversion-*
+@pkgpath devel/subversion,-gnome-keyring
+@comment lib/libsvn_auth_gnome_keyring-1.a
+@comment lib/libsvn_auth_gnome_keyring-1.la
+@lib lib/libsvn_auth_gnome_keyring-1.so.${LIBsvn_auth_gnome_keyring-1_VERSION}

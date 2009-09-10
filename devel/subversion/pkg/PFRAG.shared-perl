@@ -1,9 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-perl,v 1.2 2006/01/07 01:10:11 steven Exp $
-@lib lib/libsvn_swig_perl-1.so.${LIBsvn_swig_perl-1_VERSION}
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Client/_Client.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Core/_Core.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Delta/_Delta.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Fs/_Fs.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Ra/_Ra.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Repos/_Repos.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SVN/_Wc/_Wc.so

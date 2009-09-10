@@ -1,28 +1,34 @@
-@comment $OpenBSD: PLIST-python,v 1.6 2009/04/28 23:43:57 stsp Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-python,v 1.7 2009/09/10 15:35:04 sthen Exp $
 lib/libsvn_swig_py-1.a
 lib/libsvn_swig_py-1.la
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+@lib lib/libsvn_swig_py-1.so.${LIBsvn_swig_py-1_VERSION}
 lib/python${MODPY_VERSION}/site-packages/libsvn/
 lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/_client.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_client.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_client.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_core.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_core.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_core.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_delta.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_delta.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_delta.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_diff.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_diff.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_diff.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_fs.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_fs.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_fs.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_ra.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_ra.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_ra.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_repos.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_repos.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_repos.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.a
 lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.la
+lib/python${MODPY_VERSION}/site-packages/libsvn/_wc.so
 lib/python${MODPY_VERSION}/site-packages/libsvn/client.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/client.pyc
 lib/python${MODPY_VERSION}/site-packages/libsvn/core.py

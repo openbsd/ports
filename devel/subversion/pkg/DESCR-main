@@ -13,7 +13,8 @@ the appropriate functionality:
         -python Python bindings to Subversion
         -ruby   Ruby bindings to Subversion
         -ap2    Apache httpd 2 modules for Subversion
-        -gnome-keyring Support for the gnome-keyring password store
+Flavors:
+        gnome_keyring: Compile with support for gnome-keyring
 
 Also note that plaintext-password caching is disabled by default
 by setting "store-plaintext-passwords" to "no" in ${SYSCONFDIR}/subversion/servers.
