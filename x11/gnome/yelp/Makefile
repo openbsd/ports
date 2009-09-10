@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2009/08/11 08:39:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2009/09/10 15:33:15 naddy Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p9
+PKGNAME=		${DISTNAME}p10
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,7 +38,6 @@ LIB_DEPENDS=		startup-notification-1::devel/startup-notification \
 			xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunner/1.8,-main \
 			gnomeui-2::x11/gnome/libgnomeui \
 			exslt,xslt::textproc/libxslt \
-			lzmadec::archivers/lzma \
 			rarian::textproc/rarian
 
 USE_X11=		Yes
