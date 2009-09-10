@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_common_imagpng_cpp,v 1.1 2009/06/05 17:28:57 jasper Exp $
+$OpenBSD: patch-src_common_imagpng_cpp,v 1.2 2009/09/10 21:23:28 landry Exp $
 
 Security fix for part 1 or SA35292 (wxWidgets Double Free Vulnerability).
 Patch from upstream svn -r60875.
 
---- src/common/imagpng.cpp.orig	Thu Jun  4 18:43:31 2009
-+++ src/common/imagpng.cpp	Thu Jun  4 18:45:25 2009
-@@ -566,18 +566,16 @@ wxPNGHandler::LoadFile(wxImage *image,
+--- src/common/imagpng.cpp.orig	Fri Mar  6 13:10:56 2009
++++ src/common/imagpng.cpp	Fri Sep  4 23:57:40 2009
+@@ -568,18 +568,16 @@ wxPNGHandler::LoadFile(wxImage *image,
      if (!image->Ok())
          goto error;
  

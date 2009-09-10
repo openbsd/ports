@@ -1,8 +1,8 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.2 2007/10/23 11:28:10 steven Exp $
---- tests/Makefile.in.orig	Tue Sep 25 10:51:52 2007
-+++ tests/Makefile.in	Tue Oct  2 11:53:19 2007
-@@ -90,7 +90,7 @@ TEST_OBJECTS =  \
- TEST_ODEP =  $(___pch_testprec_test_testprec_h_gch___depname)
+$OpenBSD: patch-tests_Makefile_in,v 1.3 2009/09/10 21:23:28 landry Exp $
+--- tests/Makefile.in.orig	Fri Mar  6 13:11:16 2009
++++ tests/Makefile.in	Fri Sep  4 23:57:40 2009
+@@ -91,7 +91,7 @@ TEST_OBJECTS =  \
+ TEST_ODEP =  $(_____pch_testprec_test_testprec_h_gch___depname)
  TEST_GUI_CXXFLAGS = $(__test_gui_PCH_INC) -D__WX$(TOOLKIT)__ \
  	$(__WXUNIV_DEFINE_p) $(__EXCEPTIONS_DEFINE_p) $(__RTTI_DEFINE_p) \
 -	$(__THREAD_DEFINE_p) -I$(srcdir) $(__DLLFLAG_p) -I$(srcdir)/../samples \
@@ -10,25 +10,25 @@ $OpenBSD: patch-tests_Makefile_in,v 1.2 2007/10/23 11:28:10 steven Exp $
  	$(CPPUNIT_CFLAGS) $(CPPFLAGS) $(CXXFLAGS)
  TEST_GUI_OBJECTS =  \
  	$(__test_gui___win32rc) \
-@@ -130,7 +130,7 @@ PRINTFBENCH_ODEP =  $(___pch_testprec_printfbench_test
- @COND_USE_PCH_1@___pch_testprec_test_testprec_h_gch___depname \
- @COND_USE_PCH_1@	= .pch/testprec_test/testprec.h.gch
+@@ -133,7 +133,7 @@ PRINTFBENCH_ODEP = $(_____pch_testprec_printfbench_tes
+ @COND_USE_PCH_1@_____pch_testprec_test_testprec_h_gch___depname \
+ @COND_USE_PCH_1@	= ./.pch/testprec_test/testprec.h.gch
  COND_MONOLITHIC_0___WXLIB_NET_p = \
 -	-lwx_base$(WXBASEPORT)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_net-$(WX_RELEASE)$(HOST_SUFFIX)
 +	-lwx_base$(WXBASEPORT)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_net
  @COND_MONOLITHIC_0@__WXLIB_NET_p = $(COND_MONOLITHIC_0___WXLIB_NET_p)
  @COND_USE_GUI_1@__test_gui___depname = test_gui$(EXEEXT)
- @COND_PLATFORM_MAC_1@__test_gui___mac_setfilecmd = \
-@@ -164,7 +164,7 @@ COND_MONOLITHIC_0___WXLIB_NET_p = \
- @COND_USE_PCH_1@___pch_testprec_test_gui_testprec_h_gch___depname \
- @COND_USE_PCH_1@	= .pch/testprec_test_gui/testprec.h.gch
+ @COND_PLATFORM_MAC_0@__test_gui___mac_setfilecmd = @true
+@@ -171,7 +171,7 @@ COND_MONOLITHIC_0___WXLIB_NET_p = \
+ @COND_USE_PCH_1@_____pch_testprec_test_gui_testprec_h_gch___depname \
+ @COND_USE_PCH_1@	= ./.pch/testprec_test_gui/testprec.h.gch
  COND_MONOLITHIC_0___WXLIB_CORE_p = \
 -	-lwx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_core-$(WX_RELEASE)$(HOST_SUFFIX)
 +	-lwx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_core
  @COND_MONOLITHIC_0@__WXLIB_CORE_p = $(COND_MONOLITHIC_0___WXLIB_CORE_p)
- @COND_USE_GUI_1_WXUSE_LIBTIFF_BUILTIN@__LIB_TIFF_p \
- @COND_USE_GUI_1_WXUSE_LIBTIFF_BUILTIN@	= \
-@@ -194,7 +194,7 @@ COND_TOOLKIT_MAC___MACOSX_RESOURCES_p_1 = $(REZ) -d __
+ @COND_USE_GUI_1_wxUSE_LIBTIFF_builtin@__LIB_TIFF_p \
+ @COND_USE_GUI_1_wxUSE_LIBTIFF_builtin@	= \
+@@ -202,7 +202,7 @@ COND_TOOLKIT_MAC___MACOSX_RESOURCES_p_1 = $(REZ) -d __
  @COND_USE_THREADS_0@__THREAD_DEFINE_p = -DwxNO_THREADS
  @COND_SHARED_1@__DLLFLAG_p = -DWXUSINGDLL
  COND_MONOLITHIC_0___WXLIB_BASE_p = \

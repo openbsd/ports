@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.3 2008/01/22 20:31:11 steven Exp $
---- configure.in.orig	Wed Nov 21 13:41:55 2007
-+++ configure.in	Sun Jan  6 01:03:30 2008
-@@ -4065,7 +4065,7 @@ if test "$TOOLKIT" != "MSW" ; then
+$OpenBSD: patch-configure_in,v 1.4 2009/09/10 21:23:28 landry Exp $
+--- configure.in.orig	Fri Mar  6 13:10:54 2009
++++ configure.in	Fri Sep  4 23:57:38 2009
+@@ -4154,7 +4154,7 @@ if test "$TOOLKIT" != "MSW" ; then
  
          AC_CHECK_HEADER([sql.h], [found_sql_h=1],, [ ])
          if test "x$found_sql_h" = "x1" ; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.3 2008/01/22 20:31:11 steven Exp $
              [
                  AC_CHECK_LIB(unixodbc, SQLAllocEnv, ODBC_LINK=" -lunixodbc",
                  [
-@@ -4387,7 +4387,7 @@ UNICODE=0
+@@ -4478,7 +4478,7 @@ UNICODE=0
  lib_unicode_suffix=
  WX_CHARTYPE="ansi"
  if test "$wxUSE_UNICODE" = "yes"; then
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_in,v 1.3 2008/01/22 20:31:11 steven Exp $
      WX_CHARTYPE="unicode"
      UNICODE=1
  fi
-@@ -4396,8 +4396,8 @@ lib_debug_suffix=
+@@ -4487,8 +4487,8 @@ lib_debug_suffix=
  WX_DEBUGTYPE="release"
  DEBUG_FLAG=0
  if test "$wxUSE_DEBUG_FLAG" = "yes"; then
@@ -30,16 +30,16 @@ $OpenBSD: patch-configure_in,v 1.3 2008/01/22 20:31:11 steven Exp $
      DEBUG_FLAG=1
  fi
  
-@@ -4411,7 +4411,7 @@ fi
+@@ -4502,7 +4502,7 @@ fi
  
- WX_VERSION_TAG=`echo WX${lib_unicode_suffix}${lib_debug_suffix}${WX_LIB_FLAVOUR}_${WX_RELEASE} | tr a-z A-Z`
+ WX_VERSION_TAG=`echo WX${lib_unicode_suffix}${lib_debug_suffix}${WX_LIB_FLAVOUR}_${WX_RELEASE} | tr '[[a-z]]' '[[A-Z]]'`
  
 -TOOLCHAIN_NAME="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}${WX_LIB_FLAVOUR}-${WX_RELEASE}"
 +TOOLCHAIN_NAME="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}${WX_LIB_FLAVOUR}"
  
  TOOLCHAIN_FULLNAME="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}-${WX_CHARTYPE}-${WX_DEBUGTYPE}${config_linkage_component}-${WX_RELEASE}${WX_FLAVOUR}"
  
-@@ -4637,14 +4637,6 @@ if test "$wxUSE_WCHAR_T" = "yes"; then
+@@ -4728,14 +4728,6 @@ if test "$wxUSE_WCHAR_T" = "yes"; then
      if test "$USE_HPUX" = 1 -a "$GCC" != "yes"; then
          CPPFLAGS="-D_INCLUDE__STDC_A1_SOURCE $CPPFLAGS"
      fi
@@ -54,7 +54,7 @@ $OpenBSD: patch-configure_in,v 1.3 2008/01/22 20:31:11 steven Exp $
  else
      AC_MSG_WARN([Wide character support is unavailable])
  fi
-@@ -6020,8 +6012,37 @@ if test "$USE_UNIX" = "1" ; then
+@@ -6116,8 +6108,37 @@ if test "$USE_UNIX" = "1" ; then
          ])
      fi
  

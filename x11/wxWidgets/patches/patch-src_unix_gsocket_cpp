@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_unix_gsocket_cpp,v 1.1 2009/01/06 09:01:21 jasper Exp $
+$OpenBSD: patch-src_unix_gsocket_cpp,v 1.2 2009/09/10 21:23:28 landry Exp $
 
 The socket code in wxWidgets doesn't initialize the servent_data
 structure that is passed to getservbyname_r().  Programs that use this
@@ -6,9 +6,9 @@ code die with a segfault.  The attached patch zero-fills the buffer with
 memset().
 See upstream bugreport #10332.
 
---- src/unix/gsocket.cpp.orig	Wed Nov 21 13:43:17 2007
-+++ src/unix/gsocket.cpp	Mon Jan  5 16:26:31 2009
-@@ -2116,6 +2116,7 @@ GSocketError GAddress_INET_SetPortName(GAddress *addre
+--- src/unix/gsocket.cpp.orig	Fri Mar  6 13:11:38 2009
++++ src/unix/gsocket.cpp	Fri Sep  4 23:57:40 2009
+@@ -2131,6 +2131,7 @@ GSocketError GAddress_INET_SetPortName(GAddress *addre
    char buffer[1024];
  #endif
    struct servent serv;

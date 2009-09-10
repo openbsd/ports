@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/08/11 18:55:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/09/10 21:23:28 landry Exp $
 @conflict wxWidgets-headers-*
 @conflict wxWidgets-gtkheaders-*
 @conflict wxWidgets-x11univ-*
@@ -29,6 +29,7 @@ include/wx/arrstr.h
 include/wx/artprov.h
 include/wx/aui/
 include/wx/aui/aui.h
+include/wx/aui/auibar.h
 include/wx/aui/auibook.h
 include/wx/aui/dockart.h
 include/wx/aui/floatpane.h

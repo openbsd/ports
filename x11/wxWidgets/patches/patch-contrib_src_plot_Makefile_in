@@ -1,7 +1,7 @@
-$OpenBSD: patch-contrib_src_plot_Makefile_in,v 1.2 2007/10/23 11:28:10 steven Exp $
---- contrib/src/plot/Makefile.in.orig	Tue Sep 25 10:51:54 2007
-+++ contrib/src/plot/Makefile.in	Tue Oct  2 12:07:36 2007
-@@ -90,14 +90,14 @@ PLOTLIB_ODEP =  $(___pch_wxprec_plotlib_wx_wxprec_h_gc
+$OpenBSD: patch-contrib_src_plot_Makefile_in,v 1.3 2009/09/10 21:23:28 landry Exp $
+--- contrib/src/plot/Makefile.in.orig	Fri Mar  6 13:11:16 2009
++++ contrib/src/plot/Makefile.in	Sun Sep  6 11:17:55 2009
+@@ -91,14 +91,14 @@ PLOTLIB_ODEP =  $(_____pch_wxprec_plotlib_wx_wxprec_h_
  @COND_PLATFORM_WIN32_0@WXDLLNAMEPREFIXGUI = wx_$(PORTNAME)$(WXUNIVNAME)
  @COND_PLATFORM_WIN32_1@WXDLLNAMEPREFIXGUI = \
  @COND_PLATFORM_WIN32_1@	wx$(PORTNAME)$(WXUNIVNAME)$(WX_RELEASE_NODOT)
@@ -18,8 +18,8 @@ $OpenBSD: patch-contrib_src_plot_Makefile_in,v 1.2 2007/10/23 11:28:10 steven Ex
  @COND_SHARED_1@__plotdll___depname = $(COND_SHARED_1___plotdll___depname)
  @COND_WXUNIV_1@__WXUNIV_DEFINE_p_1 = --define __WXUNIVERSAL__
  @COND_USE_EXCEPTIONS_0@__EXCEPTIONS_DEFINE_p_1 = --define wxNO_EXCEPTIONS
-@@ -187,10 +187,10 @@ COND_WXUSE_REGEX_BUILTIN___LIB_REGEX_p = \
- @COND_WXUSE_EXPAT_BUILTIN@	-lwxexpat$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
+@@ -188,10 +188,10 @@ COND_wxUSE_REGEX_builtin___LIB_REGEX_p = \
+ @COND_wxUSE_EXPAT_builtin@	-lwxexpat$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
  @COND_PLATFORM_WIN32_1@__plotdll___win32rc = plotdll_version_rc.o
  COND_MONOLITHIC_0___WXLIB_CORE_p = \
 -	-lwx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_core-$(WX_RELEASE)$(HOST_SUFFIX)
@@ -31,10 +31,10 @@ $OpenBSD: patch-contrib_src_plot_Makefile_in,v 1.2 2007/10/23 11:28:10 steven Ex
  @COND_MONOLITHIC_0@__WXLIB_BASE_p = $(COND_MONOLITHIC_0___WXLIB_BASE_p)
  COND_SHARED_0___plotlib___depname = \
  	$(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_plot-$(WX_RELEASE)$(HOST_SUFFIX)$(LIBEXT)
-@@ -212,12 +212,11 @@ COND_SHARED_0___plotlib___depname = \
+@@ -213,12 +213,11 @@ COND_SHARED_0___plotlib___depname = \
  all: $(__plotdll___depname) $(__plotlib___depname)
  
- install: all $(__install_plotdll___depname) $(__install_plotlib___depname)
+ install: $(__install_plotdll___depname) $(__install_plotlib___depname)
 -	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)
  	for f in wx/plot/plot.h wx/plot/plot_dwn.bmp wx/plot/plot_enl.bmp wx/plot/plot_shr.bmp wx/plot/plot_up.bmp wx/plot/plot_zin.bmp wx/plot/plot_zot.bmp wx/plot/wxplot.rc; do \
 -	if test ! -d $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)/`dirname $$f` ; then \
@@ -42,22 +42,22 @@ $OpenBSD: patch-contrib_src_plot_Makefile_in,v 1.2 2007/10/23 11:28:10 steven Ex
 +	if test ! -d $(DESTDIR)$(includedir)/`dirname $$f` ; then \
 +	$(INSTALL_DIR) $(DESTDIR)$(includedir)/`dirname $$f`; \
  	fi; \
--	$(INSTALL_DATA) $(srcdir)/../../include//$$f $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)/$$f; \
-+	$(INSTALL_DATA) $(srcdir)/../../include//$$f $(DESTDIR)$(includedir)/$$f; \
+-	$(INSTALL_DATA) $(srcdir)/../../include/$$f $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)/$$f; \
++	$(INSTALL_DATA) $(srcdir)/../../include/$$f $(DESTDIR)$(includedir)/$$f; \
  	done
  
  uninstall: $(__uninstall_plotdll___depname) $(__uninstall_plotlib___depname)
-@@ -239,15 +238,14 @@ clean: 
+@@ -240,15 +239,14 @@ clean: 
  distclean: clean
  	rm -f config.cache config.log config.status bk-deps bk-make-pch shared-ld-sh Makefile
  
 -@COND_SHARED_1@$(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_plot$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__plotdll___targetsuf3): $(PLOTDLL_OBJECTS) $(__plotdll___win32rc)
 +@COND_SHARED_1@$(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_plot$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__plotdll___targetsuf3).$(LIBwx_gtk2_plot_VERSION): $(PLOTDLL_OBJECTS) $(__plotdll___win32rc)
- @COND_SHARED_1@	$(SHARED_LD_CXX) $@ $(PLOTDLL_OBJECTS) $(LDFLAGS)   -L$(LIBDIRNAME) $(__plotdll___macinstnamecmd) $(__plotdll___importlib) $(__plotdll___soname_flags) $(WXMACVERSION_CMD)  $(LIBS) $(__WXLIB_MONO_p) $(__LIB_TIFF_p) $(__LIB_JPEG_p) $(__LIB_PNG_p) $(EXTRALIBS_FOR_GUI) $(__LIB_ZLIB_p) $(__LIB_ODBC_p) $(__LIB_REGEX_p) $(__LIB_EXPAT_p) $(EXTRALIBS_FOR_BASE) $(__WXLIB_CORE_p)  $(__WXLIB_BASE_p)
+ @COND_SHARED_1@	$(SHARED_LD_CXX) $@ $(PLOTDLL_OBJECTS)    -L$(LIBDIRNAME) $(__plotdll___macinstnamecmd) $(__plotdll___importlib) $(__plotdll___soname_flags) $(WXMACVERSION_CMD) $(LDFLAGS)  $(__WXLIB_MONO_p) $(__LIB_TIFF_p) $(__LIB_JPEG_p) $(__LIB_PNG_p) $(EXTRALIBS_FOR_GUI) $(__LIB_ZLIB_p) $(__LIB_ODBC_p) $(__LIB_REGEX_p) $(__LIB_EXPAT_p) $(EXTRALIBS_FOR_BASE) $(__WXLIB_CORE_p)  $(__WXLIB_BASE_p)  $(LIBS)
  @COND_SHARED_1@	
  @COND_SHARED_1@	$(__plotdll___so_symlinks_cmd)
  
- @COND_SHARED_1@install_plotdll: 
+ @COND_SHARED_1@install_plotdll: $(__plotdll___depname)
  @COND_SHARED_1@	$(INSTALL_DIR) $(DESTDIR)$(libdir)
 -@COND_SHARED_1@	$(INSTALL_DATA) $(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_plot-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX) $(DESTDIR)$(libdir)
 -@COND_SHARED_1@	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_plot$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__plotdll___targetsuf3) $(DESTDIR)$(libdir)

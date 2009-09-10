@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils_wxrc_Makefile_in,v 1.2 2007/10/23 11:28:10 steven Exp $
---- utils/wxrc/Makefile.in.orig	Tue Sep 25 10:51:54 2007
-+++ utils/wxrc/Makefile.in	Tue Oct  2 12:13:11 2007
-@@ -68,15 +68,15 @@ WXRC_OBJECTS =  \
+$OpenBSD: patch-utils_wxrc_Makefile_in,v 1.3 2009/09/10 21:23:28 landry Exp $
+--- utils/wxrc/Makefile.in.orig	Fri Mar  6 13:11:16 2009
++++ utils/wxrc/Makefile.in	Fri Sep  4 23:57:40 2009
+@@ -70,15 +70,15 @@ WXRC_OBJECTS =  \
  @COND_USE_THREADS_0@__THREAD_DEFINE_p = -DwxNO_THREADS
  @COND_SHARED_1@__DLLFLAG_p = -DWXUSINGDLL
  COND_MONOLITHIC_0___WXLIB_XML_p = \
@@ -18,11 +18,11 @@ $OpenBSD: patch-utils_wxrc_Makefile_in,v 1.2 2007/10/23 11:28:10 steven Exp $
 -	-lwx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
 +	-lwx_$(PORTNAME)$(WXUNIVNAME)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)
  @COND_MONOLITHIC_1@__WXLIB_MONO_p = $(COND_MONOLITHIC_1___WXLIB_MONO_p)
- @COND_WXUSE_ZLIB_BUILTIN@__LIB_ZLIB_p = \
- @COND_WXUSE_ZLIB_BUILTIN@	-lwxzlib$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
-@@ -114,11 +114,7 @@ distclean: clean
+ @COND_wxUSE_ZLIB_builtin@__LIB_ZLIB_p = \
+ @COND_wxUSE_ZLIB_builtin@	-lwxzlib$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
+@@ -116,11 +116,7 @@ distclean: clean
  
- @COND_USE_XRC_1@install_wxrc: 
+ @COND_USE_XRC_1@install_wxrc: $(__wxrc___depname)
  @COND_USE_XRC_1@	$(INSTALL_DIR) $(DESTDIR)$(bindir)
 -@COND_USE_XRC_1@	$(INSTALL_PROGRAM) wxrc$(EXEEXT) $(DESTDIR)$(bindir)
 -@COND_USE_XRC_1@	rm -f $(DESTDIR)$(bindir)/wxrc$(EXEEXT) $(DESTDIR)$(bindir)/wxrc-$(WX_RELEASE)
