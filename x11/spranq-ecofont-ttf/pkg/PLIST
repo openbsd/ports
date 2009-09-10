@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/10 22:29:42 jasper Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/ecofont/
+lib/X11/fonts/ecofont/spranq_eco_sans_regular.ttf
