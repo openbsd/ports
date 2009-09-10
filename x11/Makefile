@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.393 2009/09/07 20:31:54 landry Exp $
+# $OpenBSD: Makefile,v 1.394 2009/09/10 22:31:57 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -217,6 +217,7 @@
      SUBDIR += slim
      SUBDIR += slim-themes
      SUBDIR += slock
+     SUBDIR += spranq-ecofont-ttf
      SUBDIR += stalonetray
      SUBDIR += swisswatch
      SUBDIR += tango-icon-theme
