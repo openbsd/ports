@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.39 2009/08/10 06:34:56 kili Exp $
+# $OpenBSD: Makefile,v 1.40 2009/09/10 21:45:38 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	integrated mozilla application suite
 
-VER=		1.1.17
+VER=		1.1.18
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p1
+PKGNAME=	seamonkey-${VER}
 
 SO_VERSION=	10.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -20,7 +20,7 @@ SO_VERSION=	10.0
 	msgdb msgimap msgmdn msgnews msgsmime myspell necko necko2 \
 	nsappshell nsprefm oji p3p permissions pipboot pipnss pippki \
 	pref profile rdf remoteservice searchservice spellchecker \
-	sroaming storagecomps system-pref transformiix txmgr \
+	sqlite3 sroaming storagecomps system-pref transformiix txmgr \
 	typeaheadfind uconv ucvmath universalchardet vcard wallet \
 	walletviewers webbrwsr websrvcs widget_gtk2 xmlextras \
 	xpcom_compat_c xpconnect xpinstall xremoteservice gfxpsshar \
@@ -41,23 +41,23 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
-MASTER_SITES0=	http://mirrors.protection.cx/~martynas/mozilla/seamonkey/langpacks/
+MASTER_SITES0=	http://www.openbsddistfiles.org/~martynas/mozilla/seamonkey/langpacks/
 
 LANGUAGES=	be-BY 1.1.9 \
 		ca-AD 1.1.15 \
 		cs-CZ 1.1.17 \
-		de-AT 1.1.17 \
+		de-AT 1.1.18 \
 		el-GR 1.1.2 \
 		es-ES 1.1.13 \
 		fr-FR 1.1.16 \
 		he-IL 1.1.2 \
 		hu-HU 1.1.16 \
 		it-IT 1.1.17 \
-		lt-LT 1.1.12 \
+		lt-LT 1.1.18 \
 		nl-NL 1.1.17 \
-		pl-PL 1.1.17 \
-		pt-BR 1.1.17 \
-		ru-RU 1.1.17 \
+		pl-PL 1.1.18 \
+		pt-BR 1.1.18 \
+		ru-RU 1.1.18 \
 		ur-PK 1.1.9 \
 		sv-SE 1.1.12
 BINLANGS=	be-BY el-GR fr-FR pl-PL pt-BR
@@ -78,8 +78,8 @@ BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
 		:unzip-*:archivers/unzip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		nspr4.>=17,plc4.>=17,plds4.>=17:nspr->=4.6.4p1:devel/nspr \
-		nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss
+		nspr4.>=21,plc4.>=21,plds4.>=21:nspr->=4.8:devel/nspr \
+		nss3.>=23,smime3.>=23,softokn3.>=23,ssl3.>=23:nss->=3.12.3:security/nss
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 WANTLIB=	c glib-2.0 m pthread stdc++ \

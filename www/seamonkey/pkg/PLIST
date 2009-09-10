@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/06/24 01:08:05 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/09/10 21:45:38 martynas Exp $
 @pkgpath www/seamonkey,-main
 bin/seamonkey
 @man man/man1/seamonkey.1
@@ -425,6 +425,7 @@ seamonkey/init.d/README
 @lib seamonkey/libmozjs.so.${LIBmozjs_VERSION}
 @lib seamonkey/libmsgbaseutil.so.${LIBmsgbaseutil_VERSION}
 @lib seamonkey/libprldap50.so.${LIBprldap50_VERSION}
+@lib seamonkey/libsqlite3.so.${LIBsqlite3_VERSION}
 @lib seamonkey/libxpcom.so.${LIBxpcom_VERSION}
 @lib seamonkey/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
 @lib seamonkey/libxpcom_core.so.${LIBxpcom_core_VERSION}
