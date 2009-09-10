@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/09/09 18:02:01 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2009/09/10 20:23:18 jolan Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	lua binding of posix and pcre regex libraries
 DISTNAME=	lrexlib-2.4.0
-PKGNAME=	luarexlib-2.4.0
+PKGNAME=	luarexlib-2.4.0p0
 CATEGORIES=	devel
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/3599/
@@ -24,6 +24,7 @@ MODULES=	lang/lua
 LIB_DEPENDS=	pcre.>=1.0::devel/pcre \
 		lua::lang/lua \
 		onig::textproc/oniguruma
+REGRESS_DEPENDS+=::devel/luarexlib
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1
@@ -35,10 +36,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/doc/luarexlib
 
 do-regress:
-	cp ${WRKDIST}/src/oniguruma/*.so \
-		${WRKDIST}/src/pcre/*.so \
-		${WRKDIST}/src/posix/*.so \
-		${WRKDIST}/test
+	cd ${WRKDIST}/test && lua runtest.lua -v onig
 	cd ${WRKDIST}/test && lua runtest.lua -v pcre
 	cd ${WRKDIST}/test && lua runtest.lua -v posix
 
