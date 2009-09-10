@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_imageutils_jpegcontent_cpp,v 1.1 2008/04/15 03:45:11 merdely Exp $
---- src/imageutils/jpegcontent.cpp.orig	Mon Apr 14 21:27:52 2008
-+++ src/imageutils/jpegcontent.cpp	Mon Apr 14 21:30:20 2008
+$OpenBSD: patch-src_imageutils_jpegcontent_cpp,v 1.2 2009/09/10 16:43:35 sthen Exp $
+
+second two hunks: adapt to exiv2 0.18, from Gentoo via FreeBSD
+
+--- src/imageutils/jpegcontent.cpp.orig	Fri Jul 17 23:00:09 2009
++++ src/imageutils/jpegcontent.cpp	Fri Jul 17 23:00:12 2009
 @@ -329,12 +329,17 @@ int JPEGContent::dotsPerMeter(const QString& keyName) 
  	//         2 = inches
  	//         3 = centimeters
@@ -22,3 +25,23 @@ $OpenBSD: patch-src_imageutils_jpegcontent_cpp,v 1.1 2008/04/15 03:45:11 merdely
  	}
  
  	return 0;
+@@ -589,7 +594,8 @@ void JPEGContent::applyPendingTransformation() {
+ QImage JPEGContent::thumbnail() const {
+ 	QImage image;
+ 	if (!d->mExifData.empty()) {
+-		Exiv2::DataBuf thumbnail = d->mExifData.copyThumbnail();
++		Exiv2::ExifThumbC thumb(d->mExifData);
++		Exiv2::DataBuf const thumbnail = thumb.copy();
+ 		image.loadFromData(thumbnail.pData_, thumbnail.size_);
+ 	}
+ 	return image;
+@@ -611,7 +617,8 @@ void JPEGContent::setThumbnail(const QImage& thumbnail
+ 		return;
+ 	}
+ 	
+-	d->mExifData.setJpegThumbnail((unsigned char*)array.data(), array.size());
++	Exiv2::ExifThumb thumb(d->mExifData);
++	thumb.setJpegThumbnail((unsigned char*)array.data(), array.size());
+ }
+ 
+ 
