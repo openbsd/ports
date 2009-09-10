@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2009/09/08 06:35:24 steven Exp $
+# $OpenBSD: Makefile,v 1.53 2009/09/10 17:49:21 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-libpurple= multi-protocol instant messaging library
 VERSION=	2.6.2
 DISTNAME=	pidgin-${VERSION}
 PKGNAME=	pidgin-${VERSION}
-PKGNAME-main=	pidgin-${VERSION}
+PKGNAME-main=	pidgin-${VERSION}p0
 PKGNAME-finch=	finch-${VERSION}
 FULLPKGNAME-libpurple= libpurple-${VERSION}
 CATEGORIES=	net
@@ -56,7 +56,7 @@ RUN_DEPENDS-main=	::x11/dbus-python \
 			::x11/py-gtk2 \
 			::devel/desktop-file-utils
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			startup-notification-1::devel/startup-notification \
+			startup-notification-1:startup-notification->=0.10:devel/startup-notification \
 			purple:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
 RUN_DEPENDS-finch=	# empty
 LIB_DEPENDS-finch=	${LIB_DEPENDS} \
