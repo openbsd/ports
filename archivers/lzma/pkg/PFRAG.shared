@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2006/07/17 12:10:22 steven Exp $
-@lib lib/liblzmadec.so.${LIBlzmadec_VERSION}
