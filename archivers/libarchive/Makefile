@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/04/18 18:22:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2009/09/10 15:31:43 naddy Exp $
 
 COMMENT=	library for reading and writing streaming archives
 
-V=		2.7.0
+V=		2.7.1
 DISTNAME=	libarchive-$V
-SHARED_LIBS +=  archive              4.0      # .9.0
+SHARED_LIBS +=  archive              5.0      # .9.1
 CATEGORIES=	archivers
 HOMEPAGE=	http://code.google.com/p/libarchive/
 
@@ -23,12 +23,12 @@ DISTFILES=	libarchive-$V.tar.gz \
 
 WANTLIB=	c crypto z
 LIB_DEPENDS=	bz2.>=10::archivers/bzip2 \
-		lzmadec.>=0::archivers/lzma
+		lzma.>=0::archivers/xz
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-lzma		# xz, liblzma
+		--without-lzmadec	# old LZMA utils
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build/autoconf
