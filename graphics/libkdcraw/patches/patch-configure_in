@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.2 2008/01/12 14:52:28 espie Exp $
---- configure.in.orig	Sun Dec 23 23:33:09 2007
-+++ configure.in	Sat Jan  5 12:52:50 2008
-@@ -117,7 +117,7 @@ then
+$OpenBSD: patch-configure_in,v 1.3 2009/09/10 16:43:41 sthen Exp $
+--- configure.in.orig	Wed Feb 25 10:03:11 2009
++++ configure.in	Sun Jun 28 16:46:10 2009
+@@ -115,7 +115,7 @@ then
      saved_cflags="$CFLAGS"
      saved_ldflags="$LDFLAGS"
      saved_libs=$LIBS
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.2 2008/01/12 14:52:28 espie Exp $
      CFLAGS="$CFLAGS $all_includes"
      LDFLAGS="$LDFLAGS $all_libraries"
  
-@@ -130,7 +130,7 @@ choke!
+@@ -128,7 +128,7 @@ choke!
  ], [
  cmsOpenProfileFromFile("foo", "r");
  ],

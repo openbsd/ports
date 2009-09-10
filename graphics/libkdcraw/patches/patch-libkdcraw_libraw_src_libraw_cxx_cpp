@@ -1,0 +1,11 @@
+$OpenBSD: patch-libkdcraw_libraw_src_libraw_cxx_cpp,v 1.1 2009/09/10 16:43:41 sthen Exp $
+--- libkdcraw/libraw/src/libraw_cxx.cpp.orig	Sun Jun 28 16:49:29 2009
++++ libkdcraw/libraw/src/libraw_cxx.cpp	Sun Jun 28 16:49:46 2009
+@@ -10,6 +10,7 @@
+ #include <float.h>
+ #include <math.h>
+ #ifndef WIN32
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #else
+ #include <winsock2.h>

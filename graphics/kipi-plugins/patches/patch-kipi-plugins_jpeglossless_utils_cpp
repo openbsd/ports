@@ -1,7 +1,7 @@
-$OpenBSD: patch-kipi-plugins_jpeglossless_utils_cpp,v 1.1 2008/07/19 11:58:57 espie Exp $
---- kipi-plugins/jpeglossless/utils.cpp.orig	Sat Jul 19 00:54:14 2008
-+++ kipi-plugins/jpeglossless/utils.cpp	Sat Jul 19 00:55:13 2008
-@@ -104,7 +104,8 @@ bool Utils::updateMetadataImageMagick(const QString& s
+$OpenBSD: patch-kipi-plugins_jpeglossless_utils_cpp,v 1.2 2009/09/10 16:43:41 sthen Exp $
+--- kipi-plugins/jpeglossless/utils.cpp.orig	Sat Oct 11 13:46:33 2008
++++ kipi-plugins/jpeglossless/utils.cpp	Sun Jun 28 18:10:45 2009
+@@ -109,7 +109,8 @@ bool Utils::updateMetadataImageMagick(const QString& s
      memcpy(exifData.data()+sizeof(exifHeader), ba.data(), ba.size());
      QByteArray iptcData = meta.getIptc(true);
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-kipi-plugins_jpeglossless_utils_cpp,v 1.1 2008/07/19 11:58:57 es
      exifTemp.setAutoDelete(true);
      QFile *exifFile = exifTemp.file();
      if ( !exifFile )
-@@ -116,7 +117,8 @@ bool Utils::updateMetadataImageMagick(const QString& s
+@@ -121,7 +122,8 @@ bool Utils::updateMetadataImageMagick(const QString& s
      streamExif.writeRawBytes(exifData.data(), exifData.size());
      exifFile->close();
  
