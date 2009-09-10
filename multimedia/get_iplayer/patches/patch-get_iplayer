@@ -1,11 +1,11 @@
-$OpenBSD: patch-get_iplayer,v 1.16 2009/09/05 15:54:25 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.17 2009/09/10 17:09:48 sthen Exp $
 
 - default to using id3tag not id3v2
 - follow hier(7) not Linux FHS for options file location
 
---- get_iplayer.orig	Fri Sep  4 23:57:41 2009
-+++ get_iplayer	Sat Sep  5 16:48:56 2009
-@@ -275,10 +275,7 @@ if ( defined $ENV{GETIPLAYERUSERPREFS} && $ENV{GETIPLA
+--- get_iplayer.orig	Wed Sep  9 23:06:57 2009
++++ get_iplayer	Thu Sep 10 18:04:57 2009
+@@ -298,10 +298,7 @@ if ( defined $ENV{GETIPLAYERUSERPREFS} && $ENV{GETIPLA
  # Options on unix-like systems
  } elsif ( defined $ENV{HOME} ) {
  	$profile_dir = $opt_pre->{profiledir} || $ENV{HOME}.'/.get_iplayer';
@@ -17,7 +17,7 @@ $OpenBSD: patch-get_iplayer,v 1.16 2009/09/05 15:54:25 sthen Exp $
  # Otherwise look for windows style file locations
  } elsif ( defined $ENV{USERPROFILE} ) {
  	$profile_dir = $opt_pre->{profiledir} || $ENV{USERPROFILE}.'/.get_iplayer';
-@@ -289,7 +286,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+@@ -312,7 +309,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -26,7 +26,7 @@ $OpenBSD: patch-get_iplayer,v 1.16 2009/09/05 15:54:25 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -406,6 +403,7 @@ if ( ! keys %plugin_files ) {
+@@ -431,6 +428,7 @@ if ( ! keys %plugin_files ) {
  	$opt->{pluginsupdate} = 1;
  }
  # Update this script if required
@@ -34,16 +34,16 @@ $OpenBSD: patch-get_iplayer,v 1.16 2009/09/05 15:54:25 sthen Exp $
  update_script() if $opt->{update} || $opt->{pluginsupdate};
  
  
-@@ -592,7 +590,7 @@ sub find_matches {
+@@ -616,7 +614,7 @@ sub find_matches {
  	$bin->{vlc}		= $opt->{vlc} || 'cvlc';
- 	push @{ $binopts->{vlc} }, '-vv' if $opt->{verbose} || $opt->{debug};
+ 	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
 -	$bin->{id3v2}		= $opt->{id3v2} || 'id3v2';
 +	$bin->{id3v2}		= $opt->{id3v2} || 'id3tag';
  
  	$bin->{tee}		= 'tee';
  
-@@ -4712,7 +4710,7 @@ sub optional_list_entry_format {
+@@ -4882,7 +4880,7 @@ sub optional_list_entry_format {
  # Returns the modes to try for this prog type
  sub modelist {
  	my $prog = shift;
