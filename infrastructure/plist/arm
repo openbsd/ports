@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.21 2009/02/03 23:15:01 sthen Exp $
+# $OpenBSD: arm,v 1.22 2009/09/11 07:53:45 sthen Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -115,7 +115,7 @@ databases/sqlite
 databases/sqlite3
 databases/postgresql
 security/pwsafe
-archivers/lzma
+archivers/xz
 archivers/zip
 audio/mpc
 audio/mpd
