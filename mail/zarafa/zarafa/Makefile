@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/27 20:02:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/09/11 16:33:52 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-php=	MAPI extensions for php5
 
-V=		6.30.1
+V=		6.30.2
 DISTNAME=	zarafa-${V}
 
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}
 PKGNAME-php=	php5-mapi-${V}
 
 CATEGORIES=	mail www productivity
@@ -38,7 +38,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		lber.>=9,ldap::databases/openldap \
 		uuid.>=13::devel/uuid \
 		execinfo::devel/libexecinfo \
-		vmime-zarafa::mail/zarafa/libvmime \
+		vmime-zarafa:zarafa-libvmime->=0.7.1p2:mail/zarafa/libvmime \
 		ical-zarafa.>=1,icalss-zarafa.>=1::mail/zarafa/libical
 
 WANTLIB-php=	execinfo ical-zarafa icalss-zarafa \

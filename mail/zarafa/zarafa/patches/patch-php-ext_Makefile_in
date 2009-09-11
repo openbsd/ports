@@ -1,21 +1,21 @@
-$OpenBSD: patch-php-ext_Makefile_in,v 1.4 2009/07/31 09:55:56 ajacoutot Exp $
---- php-ext/Makefile.in.orig	Wed Jul 22 16:10:27 2009
-+++ php-ext/Makefile.in	Wed Jul 22 16:11:47 2009
+$OpenBSD: patch-php-ext_Makefile_in,v 1.5 2009/09/11 16:33:52 ajacoutot Exp $
+--- php-ext/Makefile.in.orig	Fri Sep 11 13:21:29 2009
++++ php-ext/Makefile.in	Fri Sep 11 13:22:15 2009
 @@ -218,7 +218,7 @@ build_alias = @build_alias@
  build_cpu = @build_cpu@
  build_os = @build_os@
  build_vendor = @build_vendor@
--datadir = /usr/share/php/mapi
+-datadir = ${datarootdir}/php/mapi
 +datadir = ${PREFIX-php}/include/php/mapi
  datarootdir = @datarootdir@
  docdir = @docdir@
  dvidir = @dvidir@
-@@ -260,7 +260,7 @@ mapi_la_LDFLAGS = -module -avoid-version $(PHP_LDFLAGS
+@@ -262,7 +262,7 @@ mapi_la_LDFLAGS = -module -avoid-version \
  	${top_builddir}/common/libcommon_util.la \
  	${top_builddir}/libfreebusy/libfreebusy.la \
  	${top_builddir}/inetmapi/libinetmapi.la \
 -	$(PROG_LIBS) -lpthread
 +	$(PROG_LIBS) -pthread
  
- dist_data_DATA = include/mapi/mapicode.php include/mapi/mapidefs.php include/mapi/mapitags.php include/mapi/mapi.util.php include/mapi/class.recurrence.php include/mapi/class.meetingrequest.php include/mapi/class.freebusypublish.php include/mapi/mapiguid.php
  
+ # it seems linking libraries with -pthread will not contain -lpthread.
