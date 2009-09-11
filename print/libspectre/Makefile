@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/18 12:12:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/11 10:40:11 ajacoutot Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 SHARED_ONLY=	Yes
@@ -6,7 +6,7 @@ SHARED_ONLY=	Yes
 COMMENT=	library for rendering Postscript documents
 
 DISTNAME=	libspectre-0.2.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print
 
 SHARED_LIBS=	spectre 0.0	# .2.2
@@ -21,7 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/releases/
 
-LIB_DEPENDS=	gs.>=11::print/ghostscript/gnu
+# we want the 'display' device from ghostscript, which is not available
+# in the no_x11 FLAVOR
+LIB_DEPENDS=	gs.>=11:ghostscript-*-!no_x11:print/ghostscript/gnu
 
 USE_LIBTOOL=	Yes
 

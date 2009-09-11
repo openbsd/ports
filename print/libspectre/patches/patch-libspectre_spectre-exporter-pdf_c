@@ -1,0 +1,33 @@
+$OpenBSD: patch-libspectre_spectre-exporter-pdf_c,v 1.1 2009/09/11 10:40:11 ajacoutot Exp $
+
+Add missing first argument in exporter pdf.
+from upstream git 077182e1fe53131d7c88cc1a0f278403e60bdc32
+
+--- libspectre/spectre-exporter-pdf.c.orig	Fri Sep 11 11:57:42 2009
++++ libspectre/spectre-exporter-pdf.c	Fri Sep 11 11:58:24 2009
+@@ -27,7 +27,7 @@ static SpectreStatus
+ spectre_exporter_pdf_begin (SpectreExporter *exporter,
+ 			    const char      *filename)
+ {
+-	char *args[8];
++	char *args[9];
+ 	int arg = 0;
+ 	char *output_file;
+ 	
+@@ -40,6 +40,7 @@ spectre_exporter_pdf_begin (SpectreExporter *exporter,
+ 		return SPECTRE_STATUS_EXPORTER_ERROR;
+ 	}
+ 
++	args[arg++] = "libspectre"; /* This value doesn't really matter */
+ 	args[arg++] = "-dMaxBitmap=10000000";
+ 	args[arg++] = "-dBATCH";
+ 	args[arg++] = "-dNOPAUSE";
+@@ -50,7 +51,7 @@ spectre_exporter_pdf_begin (SpectreExporter *exporter,
+ 	args[arg++] = "-c";
+ 	args[arg++] = ".setpdfwrite";
+ 
+-	if (!spectre_gs_run (exporter->gs, 8, args)) {
++	if (!spectre_gs_run (exporter->gs, 9, args)) {
+ 		free (output_file);
+ 		spectre_gs_free (exporter->gs);
+ 		exporter->gs = NULL;
