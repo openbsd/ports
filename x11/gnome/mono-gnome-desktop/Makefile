@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/06 07:28:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/11 21:32:47 ajacoutot Exp $
 
 COMMENT=	.NET language bindings for the GNOME desktop
 
 GNOME_PROJECT=	gnome-desktop-sharp
 GNOME_VERSION=	2.24.0
-PKGNAME=	mono-gnome-desktop-${VERSION}
+PKGNAME=	mono-gnome-desktop-${VERSION}p0
 
 CATEGORIES=	x11
 
@@ -27,7 +27,7 @@ WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m ncurses pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread-stubs ssl
 WANTLIB += startup-notification-1 stdc++ util wnck-1 xcb xcb-atom
-WANTLIB += xcb-aux xcb-event xml2 z
+WANTLIB += xcb-aux xcb-event xml2 z enchant
 
 MODULES=	devel/gettext \
 		lang/mono \
@@ -38,7 +38,8 @@ LIB_DEPENDS=	panel-applet-2.>=2::x11/gnome/panel \
 		gtksourceview-2.0.>=3::x11/gtksourceview \
 		vte.>=13::devel/vte
 
-RUN_DEPENDS=	::x11/gnome/mono-gnome
+RUN_DEPENDS=	::x11/gnome/mono-gnome \
+		::x11/gnome/libgnomeprintui
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 DLLMAP_FILES=	gnomepanel/gnome-panel-sharp.dll.config \
