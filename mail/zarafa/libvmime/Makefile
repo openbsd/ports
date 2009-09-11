@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/09 18:22:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/11 16:31:27 ajacoutot Exp $
 
 COMMENT=	modified libvmime library for Zarafa
 
 DISTNAME=	libvmime-0.7.1
-PKGNAME=	zarafa-${DISTNAME}p1
+PKGNAME=	zarafa-${DISTNAME}p2
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		zarafa-vmime-patches.tar.gz
@@ -37,7 +37,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 # apply zarafa provided patches at pre-configure to not mess with our own
 pre-configure:
+	# doesn't apply and we use gcc3 anyway
+	rm ${WRKDIR}/vmime-gcc-4.4-support.diff
 	cd ${WRKSRC} && \
-		for i in ${WRKDIR}/*.diff; do patch -s -E -p1 < $$i; done
+		for i in ${WRKDIR}/*.diff; do patch -z .beforezarafa -s -E -p1 < $$i; done
  
 .include <bsd.port.mk>
