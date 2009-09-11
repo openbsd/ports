@@ -1,7 +1,7 @@
-$OpenBSD: patch-suballoc_cpp,v 1.4 2007/09/25 19:40:57 rui Exp $
---- suballoc.cpp.orig	Mon Sep 10 12:49:28 2007
-+++ suballoc.cpp	Mon Sep 24 17:14:20 2007
-@@ -31,10 +31,16 @@ inline void* SubAllocator::RemoveNode(int indx) 
+$OpenBSD: patch-suballoc_cpp,v 1.5 2009/09/11 16:14:01 naddy Exp $
+--- suballoc.cpp.orig	Mon Sep  7 17:52:05 2009
++++ suballoc.cpp	Mon Sep  7 17:53:22 2009
+@@ -31,12 +31,18 @@ inline void* SubAllocator::RemoveNode(int indx) 
    return RetVal;
  }
  
@@ -10,11 +10,13 @@ $OpenBSD: patch-suballoc_cpp,v 1.4 2007/09/25 19:40:57 rui Exp $
  
  inline uint SubAllocator::U2B(int NU) 
  { 
+   // We calculate the size of units in bytes based on real UNIT_SIZE.
+   // In original implementation it was 8*NU+4*NU.
 +#ifndef __STRICT_ALIGNMENT
-   return /*8*NU+4*NU*/UNIT_SIZE*NU;
+   return UNIT_SIZE*NU;
 +#else
 +  return (ROUND(UNIT_SIZE * NU));
-+#endif /* !__STRICT_ALIGNMENT */
++#endif
  }
  
  

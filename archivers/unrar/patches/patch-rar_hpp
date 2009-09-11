@@ -1,15 +1,15 @@
-$OpenBSD: patch-rar_hpp,v 1.6 2007/09/25 19:40:57 rui Exp $
---- rar.hpp.orig	Mon Sep 10 12:49:28 2007
-+++ rar.hpp	Mon Sep 24 17:14:20 2007
-@@ -18,6 +18,7 @@
- #include "int64.hpp"
+$OpenBSD: patch-rar_hpp,v 1.7 2009/09/11 16:14:01 naddy Exp $
+--- rar.hpp.orig	Sun Aug 16 13:09:36 2009
++++ rar.hpp	Mon Sep  7 17:51:10 2009
+@@ -17,6 +17,7 @@
+ #include "rarlang.hpp"
  #include "unicode.hpp"
  #include "errhnd.hpp"
 +#include "global.hpp"
  #include "array.hpp"
  #include "timefn.hpp"
  #include "options.hpp"
-@@ -73,8 +74,5 @@
+@@ -70,8 +71,5 @@
  #include "volume.hpp"
  #include "smallfn.hpp"
  #include "ulinks.hpp"

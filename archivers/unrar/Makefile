@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2008/12/31 18:43:07 rui Exp $
+# $OpenBSD: Makefile,v 1.44 2009/09/11 16:14:01 naddy Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
-DISTNAME=	unrarsrc-3.8.5
-PKGNAME=	unrar-3.85
+DISTNAME=	unrarsrc-3.9.6
+PKGNAME=	unrar-3.96
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/
@@ -29,7 +29,7 @@ MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 EXTRA_CFLAGS=	-O0
 .endif
 
-MAKE_FLAGS+=		EXTRA_CFLAGS=${EXTRA_CFLAGS}
+MAKE_FLAGS+=	EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/unrar ${PREFIX}/bin

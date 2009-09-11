@@ -1,7 +1,7 @@
-$OpenBSD: patch-os_hpp,v 1.4 2008/09/21 18:25:32 rui Exp $
---- os.hpp.orig	Sun Jun 15 13:42:13 2008
-+++ os.hpp	Sat Sep 20 21:56:10 2008
-@@ -228,12 +228,12 @@
+$OpenBSD: patch-os_hpp,v 1.5 2009/09/11 16:14:01 naddy Exp $
+--- os.hpp.orig	Sun Aug 16 13:09:36 2009
++++ os.hpp	Mon Sep  7 17:50:51 2009
+@@ -245,12 +245,12 @@
    #endif
  #endif
  
