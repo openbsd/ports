@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/09/10 01:16:40 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2009/09/11 18:13:06 naddy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	stat() with BSD 4.4 extentions
 
 DISTNAME=	BSD-stat-1.21
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	devel
 
 MAINTAINER=	Alexander Bluhm <bluhm@openbsd.org>
