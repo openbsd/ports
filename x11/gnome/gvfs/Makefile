@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/07 08:40:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/09/11 18:56:35 naddy Exp $
 
 COMMENT-main=		GNOME virtual file system
 COMMENT-smb=		samba module for GVFS
@@ -7,7 +7,7 @@ GNOME_PROJECT=		gvfs
 GNOME_VERSION=		1.0.3
 SHARED_LIBS +=	gvfscommon           1.0      # .0.0
 
-PKGNAME-main=		${DISTNAME}p7
+PKGNAME-main=		${DISTNAME}p8
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}p3
 
 # LGPLv2
@@ -27,7 +27,7 @@ WANTLIB=	ORBit-2 c dbus-1 dbus-glib-1 gconf-2 gio-2.0 glib-2.0 \
 
 LIB_DEPENDS=		gnome-keyring::x11/gnome/keyring
 
-WANTLIB-main=		${WANTLIB} bz2 gcrypt gnutls gpg-error lzmadec m \
+WANTLIB-main=		${WANTLIB} bz2 gcrypt gnutls gpg-error lzma m \
 			tasn1 xml2 z crypto
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archive::archivers/libarchive \
