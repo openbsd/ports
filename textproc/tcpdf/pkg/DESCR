@@ -1,0 +1,3 @@
+TCPDF is a PHP class for generating PDF documents without requiring
+external extensions.  TCPDF Supports UTF-8, Unicode, RTL languages and
+HTML.
