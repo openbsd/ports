@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/07 10:15:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/12 15:08:41 naddy Exp $
 
 COMMENT =		convert source code to markup formats
 
@@ -30,6 +30,7 @@ NO_REGRESS =		Yes
 SHARE_DIRS =		langDefs themes
 
 post-extract:
+	rm ${WRKSRC}/src/libhighlight.so.1.0
 	gunzip ${WRKSRC}/man/highlight.1.gz
 
 do-configure:
