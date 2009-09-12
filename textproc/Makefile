@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2009/09/09 17:47:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.278 2009/09/12 20:31:41 jolan Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -262,6 +262,7 @@
      SUBDIR += sp
      SUBDIR += spiff
      SUBDIR += swish-e
+     SUBDIR += tcpdf
      SUBDIR += texi2html
      SUBDIR += textutils
      SUBDIR += tre
