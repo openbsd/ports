@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/15 08:50:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/09/12 09:42:04 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -6,7 +6,7 @@ SHARED_ONLY =		Yes
 
 VERSION =		1.5.2
 DISTNAME =		kamailio-${VERSION}-tls_src
-PKGNAME-main =		kamailio-${VERSION}
+PKGNAME-main =		kamailio-${VERSION}p0
 PKGNAME-mysql =		kamailio-mysql-${VERSION}
 PKGNAME-postgresql =	kamailio-postgresql-${VERSION}
 #PKGNAME-radius =	kamailio-radius-${VERSION}		TODO
@@ -134,5 +134,9 @@ WANTLIB-perl =		c m perl util
 FULLPKGNAME$i ?=	kamailio$i-${VERSION}
 RUN_DEPENDS$i +=	:kamailio-${VERSION}:telephony/kamailio
 .endfor
+
+pre-configure:
+	@perl -pi -e '$$. == 1 && s,#!/bin/bash,#!/bin/sh,;' \
+	    -e 's,exit -1,exit 255,' ${WRKSRC}/scripts/kam*
 
 .include <bsd.port.mk>

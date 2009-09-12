@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_kamctlrc,v 1.1.1.1 2009/06/04 13:44:09 sthen Exp $
---- scripts/kamctlrc.orig	Thu Oct 23 12:04:49 2008
-+++ scripts/kamctlrc	Mon Nov  3 20:15:24 2008
-@@ -135,7 +135,7 @@
+$OpenBSD: patch-scripts_kamctlrc,v 1.2 2009/09/12 09:42:04 sthen Exp $
+--- scripts/kamctlrc.orig	Tue Jul 14 15:48:56 2009
++++ scripts/kamctlrc	Fri Sep 11 23:39:57 2009
+@@ -135,8 +135,12 @@
  
  ## OPENSER START Options
  ## PID file path - default is: /var/run/kamailio.pid
@@ -10,3 +10,8 @@ $OpenBSD: patch-scripts_kamctlrc,v 1.1.1.1 2009/06/04 13:44:09 sthen Exp $
  
  ## Extra start options - default is: not set
  # example: start Kamailio with 64MB share memory: STARTOPTIONS="-m 64"
+ # STARTOPTIONS=
++
++# Disable colour highlighting at the terminal
++NOHLPRINT=1
++
