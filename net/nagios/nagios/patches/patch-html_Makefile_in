@@ -1,7 +1,7 @@
-$OpenBSD: patch-html_Makefile_in,v 1.5 2008/11/09 10:18:56 sturm Exp $
---- html/Makefile.in.orig	Wed Jan  9 18:51:25 2008
-+++ html/Makefile.in	Sat Mar 15 19:53:53 2008
-@@ -33,39 +33,39 @@ distclean: clean
+$OpenBSD: patch-html_Makefile_in,v 1.6 2009/09/12 12:35:20 sturm Exp $
+--- html/Makefile.in.orig	Wed Jul  8 00:34:51 2009
++++ html/Makefile.in	Thu Sep 10 07:15:44 2009
+@@ -33,46 +33,46 @@ distclean: clean
  devclean: distclean
  
  install:
@@ -13,21 +13,27 @@ $OpenBSD: patch-html_Makefile_in,v 1.5 2008/11/09 10:18:56 sturm Exp $
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs/images
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images/logos
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/includes
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/ssi
 -	$(INSTALL) -m 664 $(INSTALL_OPTS) robots.txt $(DESTDIR)$(HTMLDIR)
 -	$(INSTALL) -m 664 $(INSTALL_OPTS) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)
-+#	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/media
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/media
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/stylesheets
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/contexthelp
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/docs
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/docs/images
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/images
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/images/logos
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/includes
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/ssi
 +	$(BSD_INSTALL_DATA) robots.txt $(DESTDIR)$(HTMLDIR)
 +	$(BSD_INSTALL_DATA) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
- 	for file in *.html; \
+ # Remove old HTML files (PHP files are used now)
+ 	rm -f $(DESTDIR)$(HTMLDIR)/index.html
+ 	rm -f $(DESTDIR)$(HTMLDIR)/main.html
+ 	rm -f $(DESTDIR)$(HTMLDIR)/side.html
+ 	for file in *.php; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR); done
 +	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR); done
  #	for file in media/*.wav; \
@@ -60,6 +66,9 @@ $OpenBSD: patch-html_Makefile_in,v 1.5 2008/11/09 10:18:56 sturm Exp $
  	for file in images/logos/*.*; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images/logos; done
 +	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/images/logos; done
+ 	for file in includes/*.*; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes; done
++	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/includes; done
  
  install-unstripped:
  	$(MAKE) install

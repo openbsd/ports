@@ -1,12 +1,11 @@
-$OpenBSD: chroot-cgi_Makefile_in,v 1.2 2008/03/18 20:25:11 sturm Exp $
---- cgi/Makefile.in.orig	Mon Jan 24 12:31:08 2005
-+++ cgi/Makefile.in	Mon Jan 24 12:31:39 2005
-@@ -36,7 +36,7 @@ CFLAGS=@CFLAGS@ @DEFS@ -DNSCGI
+--- cgi/Makefile.in.orig	Thu Sep 10 07:17:08 2009
++++ cgi/Makefile.in	Thu Sep 10 07:17:33 2009
+@@ -36,7 +36,7 @@
  #CFLAGS_DEBUG=-ggdb3 -g3
  #CFLAGS+=$(CFLAGS_WARN) $(CFLAGS_DEBUG)
  
 -LDFLAGS=@LDFLAGS@
 +LDFLAGS=-static @LDFLAGS@
- LIBS=@LIBS@ @GLIB_LIBS@
+ LIBS=@LIBS@
  
  CGIS=avail.cgi cmd.cgi config.cgi extinfo.cgi history.cgi notifications.cgi outages.cgi showlog.cgi status.cgi statuswml.cgi summary.cgi tac.cgi $(CGIEXTRAS)

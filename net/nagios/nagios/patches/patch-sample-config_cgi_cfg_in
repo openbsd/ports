@@ -1,7 +1,7 @@
-$OpenBSD: patch-sample-config_cgi_cfg_in,v 1.4 2008/12/24 20:03:42 sturm Exp $
---- sample-config/cgi.cfg.in.orig	Sun Nov 30 19:13:11 2008
-+++ sample-config/cgi.cfg.in	Wed Dec 24 20:54:08 2008
-@@ -240,7 +240,7 @@ default_statuswrl_layout=4
+$OpenBSD: patch-sample-config_cgi_cfg_in,v 1.5 2009/09/12 12:35:20 sturm Exp $
+--- sample-config/cgi.cfg.in.orig	Wed Jun 17 17:13:52 2009
++++ sample-config/cgi.cfg.in	Thu Sep 10 07:13:52 2009
+@@ -264,7 +264,7 @@ default_statuswrl_layout=4
  # OS and distribution, so you may have to tweak this to
  # work on your system.
  

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2009/08/07 17:18:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2009/09/12 12:35:20 sturm Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		3.0.6
+V=		3.2.0
 DISTNAME=	nagios-${V}
-PKGNAME-main=	nagios-${V}p1
-PKGNAME-web=	nagios-web-${V}p0
+PKGNAME-main=	nagios-${V}
+PKGNAME-web=	nagios-web-${V}
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.nagios.org/
@@ -23,12 +23,10 @@ MULTI_PACKAGES=	-main -web
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
-MODULES=	devel/gettext
-
 BUILD_DEPENDS=	:gd-*:graphics/gd
-LIB_DEPENDS=	glib-2.0::devel/glib2 \
-		ltdl.>=4::devel/libtool,-ltdl
-RUN_DEPENDS=	:nagios-plugins-*:net/nagios/plugins
+LIB_DEPENDS=	ltdl.>=4::devel/libtool,-ltdl
+RUN_DEPENDS=	:nagios-plugins-*:net/nagios/plugins \
+		::www/php5/core
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--datadir=/var/www/nagios \
@@ -67,11 +65,8 @@ WANTLIB-web=
 LIB_DEPENDS-web=
 RUN_DEPENDS-web=:nagios-${V}-chroot:net/nagios/nagios,chroot
 .else
-WANTLIB-web=	${WANTLIB} fontconfig freetype jpeg z
-LIB_DEPENDS-web=${MODGETTEXT_LIB_DEPENDS} \
-		glib-2.0::devel/glib2 \
-		gd::graphics/gd \
-		png::graphics/png
+WANTLIB-web=	${WANTLIB} fontconfig freetype jpeg png z
+LIB_DEPENDS-web=gd::graphics/gd
 RUN_DEPENDS-web=:nagios-${V}-!chroot:net/nagios/nagios
 .endif
 
@@ -81,7 +76,7 @@ NO_REGRESS=	Yes
 
 CFLAGS+=	-D_DIRENT_HAVE_D_TYPE
 
-CONFIG_FILES0=	cgi.cfg httpd.conf nagios.cfg resource.cfg
+CONFIG_FILES0=	cgi.cfg httpd.conf mrtg.cfg nagios.cfg resource.cfg
 CONFIG_FILES1=	commands.cfg contacts.cfg localhost.cfg printer.cfg switch.cfg \
 		templates.cfg timeperiods.cfg windows.cfg
 EXDIR=		${PREFIX}/share/examples/nagios

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.4 2008/11/09 10:18:56 sturm Exp $
+@comment $OpenBSD: PLIST-web,v 1.5 2009/09/12 12:35:20 sturm Exp $
 cgi-bin/nagios/
 @bin cgi-bin/nagios/avail.cgi
 @bin cgi-bin/nagios/cmd.cgi
@@ -16,6 +16,7 @@ cgi-bin/nagios/
 @bin cgi-bin/nagios/summary.cgi
 @bin cgi-bin/nagios/tac.cgi
 @bin cgi-bin/nagios/trends.cgi
+nagios/config.inc.php
 nagios/contexthelp/
 nagios/contexthelp/A1.html
 nagios/contexthelp/A2.html
@@ -177,6 +178,8 @@ nagios/docs/images/mrtg-servicestatechange.png
 nagios/docs/images/multiple-templates1.png
 nagios/docs/images/multiple-templates2.png
 nagios/docs/images/nagios.jpg
+nagios/docs/images/nagiosexchange.png
+nagios/docs/images/nagiossupport.png
 nagios/docs/images/ndoutils.png
 nagios/docs/images/network-outage1.png
 nagios/docs/images/network-outage2.png
@@ -220,6 +223,7 @@ nagios/docs/index.html
 nagios/docs/int-snmptrap.html
 nagios/docs/int-tcpwrappers.html
 nagios/docs/integration.html
+nagios/docs/knownissues.html
 nagios/docs/largeinstalltweaks.html
 nagios/docs/macrolist.html
 nagios/docs/macros.html
@@ -306,8 +310,9 @@ nagios/images/redudancy.png
 nagios/images/redundancy.png
 nagios/images/restart.gif
 nagios/images/right.gif
-nagios/images/sblogo.jpg
+nagios/images/sblogo.png
 nagios/images/serviceevent.gif
+nagios/images/sflogo.png
 nagios/images/splunk1.gif
 nagios/images/splunk2.gif
 nagios/images/start.gif
@@ -332,10 +337,13 @@ nagios/images/warning.png
 nagios/images/weblogo1.png
 nagios/images/zoom1.gif
 nagios/images/zoom2.gif
-nagios/index.html
-nagios/main.html
+nagios/includes/
+nagios/includes/utils.inc.php
+nagios/index.php
+nagios/main.php
+nagios/media/
 nagios/robots.txt
-nagios/side.html
+nagios/side.php
 nagios/ssi/
 nagios/stylesheets/
 nagios/stylesheets/avail.css
