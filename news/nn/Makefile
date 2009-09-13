@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/11/17 08:42:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/13 17:37:36 jasper Exp $
 
 NOT_FOR_ARCHS =		arm hppa hp300 sh
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c termlib
 
 MASTER_SITES =		ftp://ftp.nndev.org/pub/nn-6.7/ \
-                        http://humppa.nl/distfiles/
+                        http://www.phil.uu.nl/~lievisse/distfiles/
 EXTRACT_SUFX =		.tar.Z
 
 NO_REGRESS =		Yes
