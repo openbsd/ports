@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/31 20:48:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/13 16:49:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-0.94
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	x11 misc
 
@@ -33,7 +33,8 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS:=pinot/}
 MODULES=	devel/gettext
 
 BUILD_DEPENDS=	::devel/boost \
-		::misc/shared-mime-info
+		::misc/shared-mime-info \
+		:desktop-file-utils-*:devel/desktop-file-utils
 
 # XXX catppt - catdvi
 LIB_DEPENDS=	gtkmm-2.4.>=7,gdkmm-2.4,atkmm-1.6::x11/gtk2mm \
