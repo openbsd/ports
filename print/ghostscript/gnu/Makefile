@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2009/08/10 06:34:08 kili Exp $
+# $OpenBSD: Makefile,v 1.69 2009/09/13 20:59:16 ajacoutot Exp $
 
 COMMENT=	GNU PostScript interpreter
 
 VERSION=	8.63
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	11.0
 
@@ -106,6 +106,13 @@ SOC_LIBS =			-L${LOCALBASE}/lib -ljpeg -pthread
 CFLAGS+=	-DA4
 .endif
 
+# A word about the GTK_DEVICES and NOGTK_DEVICES variables.
+# Originally, the display device is used by the gtk+ versions of
+# ghostscript, but it works fine when called from external helpers or
+# libraries (e.g. libspectre). With the correct sorting of device
+# drivers, we can have a default output device set to x11 and a working
+# 'display' driver without enforcing the gtk FLAVOR.
+
 .if ${FLAVOR:L:Mgtk} && ${FLAVOR:L:Mno_x11}
 ERRORS+= "Fatal: Conflicting flavors: ${FLAVOR}"
 .elif ${FLAVOR:L:Mgtk}
@@ -114,20 +121,23 @@ MODULES+=	devel/gettext
 WANTLIB+=	Xcomposite Xcursor Xdamage Xau Xdmcp Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 cairo expat fontconfig freetype \
 		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1
+		pangocairo-1.0 pangoft2-1.0 pixman-1 pthread-stubs xcb
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
-DEVICES+=	${GTK_DEVICES}
 SOC_CFLAGS=	$$(pkg-config gtk+-2.0 --cflags)
 SOC_LIBS+=	$$(pkg-config gtk+-2.0 --libs)
 USE_GTK=	Yes
+GTK_DEVICES=	display
+NOGTK_DEVICES=
 .else
 USE_GTK=	No
+GTK_DEVICES=
+NOGTK_DEVICES= display
 .endif
 
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=	Yes
-WANTLIB+=	X11 Xt Xext pthread-stubs xcb
-DEVICES+=	${X11_DEVICES}
+WANTLIB+=	X11 Xt Xext
+DEVICES+=	${GTK_DEVICES} ${X11_DEVICES} ${NOGTK_DEVICES}
 SOC_LIBS+=	-L${X11BASE}/lib -lXt -lXt -lXext
 .endif
 
@@ -288,9 +298,6 @@ DEVICES+=	ijs
 
 # Cups
 DEVICES+=	cups
-
-# gtk (display driver)
-GTK_DEVICES=	display
 
 .include <bsd.port.mk>
 
