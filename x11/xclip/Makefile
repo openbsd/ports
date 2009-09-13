@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/09/10 21:42:22 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2009/09/13 18:26:53 martynas Exp $
 
 COMMENT=		command line interface to X selections
 DISTNAME=		xclip-0.11
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xclip/}
 HOMEPAGE=		http://xclip.sourceforge.net/
