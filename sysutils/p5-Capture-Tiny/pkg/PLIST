@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/13 19:46:32 jasper Exp $
+${P5SITE}/Capture/
+${P5SITE}/Capture/Tiny.pm
+${P5SITE}/Capture/Tiny.pod
+@man man/man3p/Capture::Tiny.3p
+share/examples/p5-Capture-Tiny/
+share/examples/p5-Capture-Tiny/tee.pl
