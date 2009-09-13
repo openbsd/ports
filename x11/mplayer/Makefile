@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2009/09/13 18:20:55 martynas Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -9,7 +9,7 @@ V=			1.0rc2
 N=			mplayer
 DISTNAME=		MPlayer-${V}
 DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p27
+PKGNAME=		${N}-${V}p28
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 

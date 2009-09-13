@@ -1,0 +1,11 @@
+$OpenBSD: patch-gui_wm_ws_c,v 1.1 2009/09/13 18:20:55 martynas Exp $
+--- gui/wm/ws.c.orig	Sun Oct  7 13:49:27 2007
++++ gui/wm/ws.c	Sun Sep 13 12:39:53 2009
+@@ -1157,6 +1157,7 @@ void wsCreateImage( wsTWindow * win,int Width,int Heig
+    win->xImage->data=win->Shminfo.shmaddr;
+    win->Shminfo.readOnly=0;
+    XShmAttach( wsDisplay,&win->Shminfo );
++   XSync(wsDisplay, False);
+    shmctl( win->Shminfo.shmid,IPC_RMID,0 );
+   }
+   else
