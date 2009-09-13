@@ -1,11 +1,12 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.24 2009/08/24 19:31:27 jsg Exp $
+-- $OpenBSD: yt.lua,v 1.25 2009/09/13 18:23:11 martynas Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
 
 getopt = require("getopt")
 http = require("socket.http")
+ltn12 = require("ltn12")
 
 -- Set this to a command capable of talking HTTP and following 3XX requests.
 fetch = "ftp <arguments> -o <file> <url>"
@@ -50,7 +51,13 @@ for i = 1, table.getn(urls) do
 
    -- Fetch the page holding the embedded video.
    io.stderr:write(string.format("Getting %s ...\n", url))
-   body = assert(http.request(url))
+   t = {  }
+   assert(http.request{
+      url = url,
+      sink = ltn12.sink.table(t),
+      proxy = os.getenv("http_proxy")
+   })
+   body = table.concat(t)
 
    -- Look for the video title.
    pattern = "<title>(.-)</title>"
