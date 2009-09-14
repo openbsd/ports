@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 22:36:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2009/09/14 13:18:46 sthen Exp $
 # $FreeBSD: ports/net/nslint/Makefile,v 1.10 2000/04/09 18:12:37 cpiazza Exp $
 
 COMMENT=		performs consistency checks on BIND files
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.ee.lbl.gov/
+MASTER_SITES=		ftp://ftp.ee.lbl.gov/old/
 
 FLAVORS=		static
 FLAVOR?=
