@@ -1,0 +1,8 @@
+The intent of this module is to provide a series of basic tests for
+scripts in the bin directory of your Perl distribution.  Further, it
+aims to provide them with perfect platform-compatibility and in a way
+that is as unobtrusive as possible. That is, if the program works on a
+platform, then Test::Script should also work on that platform.  In doing
+so, it is hoped that Test::Script can become a module that you can
+safely make a dependency of your module, without risking your module not
+working on some platform because of the dependency.

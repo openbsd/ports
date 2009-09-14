@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/14 21:17:43 jasper Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Script.pm
+@man man/man3p/Test::Script.3p
