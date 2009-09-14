@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/09/01 01:29:02 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2009/09/14 15:35:08 fgsch Exp $
 
 COMMENT = 	Python module that implements the SSH2 protocol
 
@@ -24,9 +24,7 @@ MODULES = 	lang/python
 MODPY_SETUPTOOLS = Yes
 
 RUN_DEPENDS = 	::security/py-crypto
-
-# will be removed once getaddrinfo is fixed
-NO_REGRESS =	Yes
+REGRESS_DEPENDS = ${RUN_DEPENDS}
 
 pre-build:
 	@perl -pi -e "s,^\#\!/usr/bin/env python,#!${MODPY_BIN}," \
