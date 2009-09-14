@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.730 2009/09/09 19:42:04 jolan Exp $
+# $OpenBSD: Makefile,v 1.731 2009/09/14 21:20:58 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -387,6 +387,7 @@
      SUBDIR += p5-File-DesktopEntry
      SUBDIR += p5-File-Find-Rule
      SUBDIR += p5-File-Find-Rule-Filesys-Virtual
+     SUBDIR += p5-File-Find-Rule-Perl
      SUBDIR += p5-File-Finder
      SUBDIR += p5-File-Flat
      SUBDIR += p5-File-HomeDir
@@ -591,6 +592,7 @@
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Coverage
      SUBDIR += p5-Test-Reporter
+     SUBDIR += p5-Test-Script
      SUBDIR += p5-Test-Spelling
      SUBDIR += p5-Test-Strict
      SUBDIR += p5-Test-Taint
