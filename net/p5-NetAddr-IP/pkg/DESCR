@@ -1,0 +1,4 @@
+This Perl module provides an object-oriented abstraction on top of
+IP addresses or IP subnets, that allows for easy manipulations.
+The internal representation of all IP objects is in 128 bit IPv6
+notation.  IPv4 and IPv6 objects may be freely mixed.
