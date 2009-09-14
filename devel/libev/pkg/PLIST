@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/02 19:19:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/09/14 15:53:09 landry Exp $
 %%SHARED%%
 include/ev++.h
 include/ev.h
-include/event.h
 lib/libev.a
 lib/libev.la
 @man man/man3/ev.3

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/02 19:19:43 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/14 15:53:09 landry Exp $
 
 COMMENT =	high-performance event loop library
 
 DISTNAME =	libev-3.8
 CATEGORIES =	devel
+PKGNAME =	${DISTNAME}p0
 
 MAINTAINER =	Bapt <baptiste.daroussin@gmail.com>
 
