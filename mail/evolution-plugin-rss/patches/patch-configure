@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.3 2008/11/23 12:04:27 ajacoutot Exp $
---- configure.orig	Sun Nov 23 12:06:58 2008
-+++ configure	Sun Nov 23 12:08:46 2008
-@@ -22108,11 +22108,8 @@ if test -n "$EVOLUTION_VERSION"; then
+$OpenBSD: patch-configure,v 1.4 2009/09/14 15:39:05 jasper Exp $
+--- configure.orig	Sun Sep 13 23:04:56 2009
++++ configure	Sun Sep 13 23:08:59 2009
+@@ -17593,11 +17593,8 @@ if test -n "$EVOLUTION_VERSION"; then
          EVOLUTION_BASE_VERSION=$EVOLUTION_VERSION
          EVOLUTION_BASE_VERSION_S=""
-         EVOLUTION_EXEC_VERSION=`pkg-config --variable=execversion evolution-shell 2>/dev/null`
+         EVOLUTION_EXEC_VERSION=`$PKG_CONFIG --variable=execversion evolution-shell 2>/dev/null`
 -        if test -n "$EVOLUTION_EXEC_VERSION"; then
 -                break;
 -        else

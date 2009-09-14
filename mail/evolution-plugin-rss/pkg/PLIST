@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/07 05:59:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/09/14 15:39:05 jasper Exp $
 @bin bin/evolution-import-rss
 lib/bonobo/servers/GNOME_Evolution_RSS_${EVO_VERSION}.server
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.a
@@ -9,6 +9,7 @@ lib/evolution/${EVO_VERSION}/plugins/org-gnome-evolution-rss.xml
 share/evolution/${EVO_VERSION}/errors/org-gnome-evolution-rss.error
 share/evolution/${EVO_VERSION}/glade/rss-html-rendering.glade
 share/evolution/${EVO_VERSION}/glade/rss-ui.glade
+share/evolution/${EVO_VERSION}/images/pix.png
 share/evolution/${EVO_VERSION}/images/rss-16.png
 share/evolution/${EVO_VERSION}/images/rss-22.png
 share/evolution/${EVO_VERSION}/images/rss-24.png
@@ -17,9 +18,29 @@ share/evolution/${EVO_VERSION}/images/rss-icon-unread.png
 share/evolution/${EVO_VERSION}/images/rss-text-html.png
 share/evolution/${EVO_VERSION}/images/rss-text-x-generic.png
 share/evolution/${EVO_VERSION}/images/rss.png
+share/locale/as/LC_MESSAGES/evolution-rss.mo
+share/locale/bn_IN/LC_MESSAGES/evolution-rss.mo
+share/locale/cs/LC_MESSAGES/evolution-rss.mo
 share/locale/en_AU/LC_MESSAGES/evolution-rss.mo
+share/locale/en_GB/LC_MESSAGES/evolution-rss.mo
+share/locale/es/LC_MESSAGES/evolution-rss.mo
+share/locale/fr/LC_MESSAGES/evolution-rss.mo
+share/locale/gl/LC_MESSAGES/evolution-rss.mo
+share/locale/gu/LC_MESSAGES/evolution-rss.mo
+share/locale/hi/LC_MESSAGES/evolution-rss.mo
+share/locale/it/LC_MESSAGES/evolution-rss.mo
+share/locale/kn/LC_MESSAGES/evolution-rss.mo
+share/locale/ml/LC_MESSAGES/evolution-rss.mo
+share/locale/mr/LC_MESSAGES/evolution-rss.mo
+share/locale/or/LC_MESSAGES/evolution-rss.mo
+share/locale/pt/LC_MESSAGES/evolution-rss.mo
 share/locale/ro/LC_MESSAGES/evolution-rss.mo
+share/locale/ru/LC_MESSAGES/evolution-rss.mo
 share/locale/sv/LC_MESSAGES/evolution-rss.mo
+share/locale/ta/LC_MESSAGES/evolution-rss.mo
+share/locale/te/LC_MESSAGES/evolution-rss.mo
+share/locale/th/LC_MESSAGES/evolution-rss.mo
+share/locale/zh_CN/LC_MESSAGES/evolution-rss.mo
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/evolution-rss.schemas

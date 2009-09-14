@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2008/11/23 17:44:22 ajacoutot Exp $
---- src/Makefile.in.orig	Wed Oct 29 19:45:50 2008
-+++ src/Makefile.in	Sun Nov 23 18:33:32 2008
-@@ -767,7 +767,7 @@ info: info-am
+$OpenBSD: patch-src_Makefile_in,v 1.4 2009/09/14 15:39:05 jasper Exp $
+--- src/Makefile.in.orig	Tue Aug 25 14:13:43 2009
++++ src/Makefile.in	Sun Sep 13 23:04:44 2009
+@@ -860,7 +860,7 @@ info: info-am
  
  info-am:
  
