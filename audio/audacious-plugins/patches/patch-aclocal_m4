@@ -1,7 +1,7 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2008/04/02 00:39:19 fgsch Exp $
---- aclocal.m4.orig	Mon Mar 31 21:44:46 2008
-+++ aclocal.m4	Mon Mar 31 21:44:53 2008
-@@ -419,7 +419,6 @@ m4_include([m4/buildsys.m4])
+$OpenBSD: patch-aclocal_m4,v 1.2 2009/09/15 21:49:55 fgsch Exp $
+--- aclocal.m4.orig	Mon Jul  6 23:40:39 2009
++++ aclocal.m4	Sat Aug  1 16:52:50 2009
+@@ -461,7 +461,6 @@ m4_include([m4/buildsys.m4])
  m4_include([m4/gettext.m4])
  m4_include([m4/iconv.m4])
  m4_include([m4/isc-posix.m4])

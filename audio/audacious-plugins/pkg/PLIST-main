@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/01/25 02:07:06 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/09/15 21:49:55 fgsch Exp $
 lib/audacious/
 lib/audacious/Container/
 lib/audacious/Container/m3u.so
@@ -16,23 +16,27 @@ lib/audacious/General/
 lib/audacious/General/alarm.so
 lib/audacious/General/aosd.so
 lib/audacious/General/gnomeshortcuts.so
+lib/audacious/General/gtkui.so
 lib/audacious/General/hotkey.so
 lib/audacious/General/scrobbler.so
+lib/audacious/General/skins.so
 lib/audacious/General/song_change.so
 lib/audacious/General/statusicon.so
+lib/audacious/General/streambrowser.so
+lib/audacious/General/vfstrace.so
 lib/audacious/Input/
 lib/audacious/Input/aac.so
 lib/audacious/Input/alac.so
 lib/audacious/Input/cdaudio-ng.so
 lib/audacious/Input/console.so
-lib/audacious/Input/cuesheet.so
+lib/audacious/Input/cuesheet_ng.so
 lib/audacious/Input/demac.so
 lib/audacious/Input/flacng.so
 lib/audacious/Input/madplug.so
 lib/audacious/Input/metronom.so
 lib/audacious/Input/modplug.so
 lib/audacious/Input/musepack.so
-lib/audacious/Input/sexypsf.so
+lib/audacious/Input/psf2.so
 lib/audacious/Input/sndfile.so
 lib/audacious/Input/timidity.so
 lib/audacious/Input/tonegen.so
@@ -41,15 +45,17 @@ lib/audacious/Input/vorbis.so
 lib/audacious/Input/vtx.so
 lib/audacious/Input/wavpack.so
 lib/audacious/Input/wma.so
+lib/audacious/Input/xsf.so
 lib/audacious/Output/
+lib/audacious/Output/crossfade.so
 lib/audacious/Output/filewriter.so
 lib/audacious/Output/null.so
 lib/audacious/Output/sndio.so
 lib/audacious/Output/sun.so
 lib/audacious/Transport/
+lib/audacious/Transport/gio.so
 lib/audacious/Transport/lastfm.so
 lib/audacious/Transport/neon.so
-lib/audacious/Transport/stdio.so
 lib/audacious/Visualization/
 lib/audacious/Visualization/blur_scope.so
 lib/audacious/Visualization/paranormal.so
@@ -57,6 +63,11 @@ lib/audacious/Visualization/rocklight.so
 lib/audacious/Visualization/spectrum.so
 share/audacious/images/audioscrobbler.png
 share/audacious/images/audioscrobbler_badge.png
+share/audacious/images/bookmarks.png
+share/audacious/images/shoutcast.png
+share/audacious/images/streambrowser-16x16.png
+share/audacious/images/streambrowser-64x64.png
+share/audacious/images/xiph.png
 share/audacious/paranormal/
 share/audacious/paranormal/Presets/
 share/audacious/paranormal/Presets/aerdan_-_bloody_vortex.pnv
@@ -100,6 +111,7 @@ share/locale/de/LC_MESSAGES/audacious-plugins.mo
 share/locale/et/LC_MESSAGES/audacious-plugins.mo
 share/locale/fr/LC_MESSAGES/audacious-plugins.mo
 share/locale/ja/LC_MESSAGES/audacious-plugins.mo
+share/locale/lv/LC_MESSAGES/audacious-plugins.mo
 share/locale/ro/LC_MESSAGES/audacious-plugins.mo
 share/locale/ru/LC_MESSAGES/audacious-plugins.mo
 share/locale/sk/LC_MESSAGES/audacious-plugins.mo

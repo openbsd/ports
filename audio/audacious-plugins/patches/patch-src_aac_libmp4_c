@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_aac_libmp4_c,v 1.4 2009/03/11 00:36:06 fgsch Exp $
---- src/aac/libmp4.c.orig	Fri May 23 23:44:19 2008
-+++ src/aac/libmp4.c	Tue Mar 10 20:48:31 2009
+$OpenBSD: patch-src_aac_libmp4_c,v 1.5 2009/09/15 21:49:55 fgsch Exp $
+--- src/aac/libmp4.c.orig	Mon Jul  6 23:40:36 2009
++++ src/aac/libmp4.c	Sat Aug  1 16:52:50 2009
 @@ -10,6 +10,8 @@
  #include <audacious/output.h>
  #include <audacious/i18n.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_aac_libmp4_c,v 1.4 2009/03/11 00:36:06 fgsch Exp $
  #define MP4_VERSION VERSION
  #define SBR_DEC
  
-@@ -88,7 +90,7 @@ static guint32 mp4_read_callback(void *data, void *buf
+@@ -93,7 +95,7 @@ static guint32 mp4_read_callback(void *data, void *buf
      return aud_vfs_fread(buffer, 1, len, (VFSFile *) data);
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_aac_libmp4_c,v 1.4 2009/03/11 00:36:06 fgsch Exp $
  {
      if (data == NULL)
          return -1;
-@@ -626,7 +628,7 @@ void my_decode_aac( InputPlayback *playback, char *fil
+@@ -648,7 +650,7 @@ void my_decode_aac( InputPlayback *playback, char *fil
      faacDecHandle   decoder = 0;
      guchar      streambuffer[BUFFER_SIZE];
      gulong      bufferconsumed = 0;
@@ -27,4 +27,4 @@ $OpenBSD: patch-src_aac_libmp4_c,v 1.4 2009/03/11 00:36:06 fgsch Exp $
 +    guint       samplerate = 0;
      guchar      channels = 0;
      gulong      buffervalid = 0;
-     gchar       *ttemp = NULL, *stemp = NULL;
+     gulong	ret = 0;
