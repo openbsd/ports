@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/09 10:32:49 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.8 2009/09/15 17:37:21 jasper Exp $
 
 COMMENT=		general purpose dynamic array
 
 DISTNAME=		Judy-1.0.4
-PKGNAME=		lib${DISTNAME}
+PKGNAME=		lib${DISTNAME}p0
 SHARED_LIBS +=	Judy                 1.4      # .1.4
 CATEGORIES=		devel
 
 HOMEPAGE=		http://judy.sourceforge.net/
-
-MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=   Yes

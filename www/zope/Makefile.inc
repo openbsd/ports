@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2009/01/03 21:27:25 kili Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2009/09/15 17:37:22 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,8 +8,6 @@ DISTNAME=	Zope-${VERSION}${PATCHLEVEL}-final
 CATEGORIES=     www
 
 HOMEPAGE=	http://www.zope.org/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # Zope Public License 2.1
 PERMIT_PACKAGE_CDROM=	Yes

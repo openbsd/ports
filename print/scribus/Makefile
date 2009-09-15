@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/12 21:03:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2009/09/15 17:37:22 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.3.4
-PKGNAME=	${DISTNAME}p8
+PKGNAME=	${DISTNAME}p9
 CATEGORIES=	print
 
 # These are actually internal modules, not generic shared libs
@@ -13,8 +13,6 @@ SHARED_LIBS=	scribus12format		0.0 \
 		scribus13format		0.0
 
 HOMEPAGE=	http://www.scribus.net/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM?=	Yes

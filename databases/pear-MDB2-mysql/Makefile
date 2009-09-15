@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2008/12/17 15:57:13 giovanni Exp $
+# $OpenBSD: Makefile,v 1.3 2009/09/15 17:37:21 jasper Exp $
 
 COMMENT=	database abstraction layer for PHP
 
 V=		1.4.1
 DISTNAME=	MDB2_Driver_mysql-${V}
-PKGNAME=	pear-MDB2-mysql-${V}p1
+PKGNAME=	pear-MDB2-mysql-${V}p2
 CATEGORIES=	net pear databases
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 MODULES=	www/pear
 
 # PHP License

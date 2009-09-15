@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/30 19:11:28 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/15 17:37:22 jasper Exp $
 
 COMMENT=	integrated Templates for PHP
 
 DISTNAME=	HTML_Template_IT-1.1.3
-PKGNAME=	pear-${DISTNAME:S/_/-/}p0
+PKGNAME=	pear-${DISTNAME:S/_/-/}p1
 CATEGORIES=	www pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 MODULES=	www/pear
 

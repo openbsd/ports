@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.29 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.30 2009/09/15 17:37:21 jasper Exp $
 
 COMMENT=	GTK-based LDAP client
 
 DISTNAME=	gq-1.0beta1
-PKGNAME=	${DISTNAME}p11
+PKGNAME=	${DISTNAME}p12
 CATEGORIES=	databases sysutils
 
 HOMEPAGE=	http://biot.com/gq/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

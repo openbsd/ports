@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/30 20:45:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/09/15 17:37:21 jasper Exp $
 
 COMMENT=	return 'I am not here' indication stored in a LDAP tree
 
 DISTNAME=	ldapvacation-1.1.3
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=    	mail
 
 HOMEPAGE=	http://www.etc.msys.ch/software/ldapvacation/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 SHARED_ONLY=	Yes
 

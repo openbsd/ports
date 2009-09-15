@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/30 20:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2009/09/15 17:37:22 jasper Exp $
 
 COMMENT=	daemon to modify pf tables from userland
 
 DISTNAME=	tabled-1.0.5
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=    	sysutils
 
 HOMEPAGE=	http://www.etc.msys.ch/software/tabled/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

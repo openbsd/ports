@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2008/02/02 11:56:13 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.22 2009/09/15 17:37:22 jasper Exp $
 
 COMMENT=		strip TeX/LaTeX codes from a file
 
 DISTNAME=		detex-2.8
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		print
 
 MASTER_SITES=		ftp://ftp.cs.purdue.edu/pub/trinkle/
 EXTRACT_SUFX=		.tar
-
-MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
 # NCSA/University of Illinois Open Source License
 PERMIT_PACKAGE_CDROM=	Yes

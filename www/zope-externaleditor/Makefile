@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2008/03/20 11:58:25 winiger Exp $
+# $OpenBSD: Makefile,v 1.6 2009/09/15 17:37:22 jasper Exp $
 
 COMMENT=	Zope product to use an external editor to edit Zope objects
 
 VERSION=	0.9.3
 DISTNAME=	ExternalEditor-${VERSION}-src
-PKGNAME=	zope-externaleditor-${VERSION}p0
+PKGNAME=	zope-externaleditor-${VERSION}p1
 CATEGORIES=	www
 
 HOMEPAGE=	http://plope.com/software/ExternalEditor/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # ZPL 
 PERMIT_PACKAGE_CDROM=	Yes

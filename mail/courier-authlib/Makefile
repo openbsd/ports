@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/05/15 14:16:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2009/09/15 17:37:21 jasper Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -7,11 +7,11 @@ COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
 DISTNAME=		courier-authlib-0.58
-PKGNAME-main=		${DISTNAME}p3
-PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}p4
-PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}p2
-PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}p2
-PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}p3
+PKGNAME-main=		${DISTNAME}p4
+PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}p5
+PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}p3
+PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}p3
+PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}p4
 
 SHARED_LIBS +=  courierauth          0.0      # .0.0
 SHARED_LIBS +=  courierauthsasl      0.0      # .0.0
@@ -26,7 +26,6 @@ SHARED_LIBS +=  authpipe             0.0      # .0.0
 
 CATEGORIES=		mail security
 HOMEPAGE=		http://www.courier-mta.org/authlib/
-MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

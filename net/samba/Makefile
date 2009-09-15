@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.105 2009/06/30 21:38:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.106 2009/09/15 17:37:21 jasper Exp $
 
 COMMENT-main=	SMB and CIFS client and server for UNIX
 COMMENT-docs=	additional documentation and examples for Samba
 
 DISTNAME=		samba-3.0.34
-PKGNAME-main=		${DISTNAME}p1
-FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
+PKGNAME-main=		${DISTNAME}p2
+FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}p0
 SHARED_LIBS=		smbclient	1.0 \
 			msrpc		1.0
 
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.samba.org/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

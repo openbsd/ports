@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.26 2009/02/03 23:15:41 simon Exp $
+# $OpenBSD: Makefile,v 1.27 2009/09/15 17:37:22 jasper Exp $
 
 COMMENT=	web server log file analysis program
 
 DISTNAME=	webalizer-2.01-10-RB21-src
-PKGNAME=	webalizer-2.01.10p7
+PKGNAME=	webalizer-2.01.10p8
 CATEGORIES=	www
 MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb21/
 
 HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 LIB_DEPENDS=	gd.>=18::graphics/gd \
 		GeoIP.>=5::net/GeoIP

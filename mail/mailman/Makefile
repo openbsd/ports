@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2009/05/02 09:56:44 djm Exp $
+# $OpenBSD: Makefile,v 1.53 2009/09/15 17:37:21 jasper Exp $
 
 COMMENT=	mailing list manager with web interface
 
 DISTNAME=	mailman-2.1.12
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.gnu.org/software/mailman/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

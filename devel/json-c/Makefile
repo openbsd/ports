@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/23 08:57:02 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/15 17:37:21 jasper Exp $
 
 COMMENT=		JSON implementation in C
 
 DISTNAME=		json-c-0.7
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel
 SHARED_LIBS=		json	1.0
-
-MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
 HOMEPAGE=		http://oss.metaparadigm.com/json-c/
 

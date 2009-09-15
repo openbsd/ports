@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/16 00:17:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2009/09/15 17:37:21 jasper Exp $
 
 COMMENT=	class that provides multiple interfaces for sending email
 
 DISTNAME=	Mail-1.1.14
-PKGNAME=	pear-${DISTNAME}p0
+PKGNAME=	pear-${DISTNAME}p1
 CATEGORIES=	mail pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 MODULES=	www/pear
 
 # PHP License

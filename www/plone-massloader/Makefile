@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/30 11:42:55 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/15 17:37:22 jasper Exp $
 
 COMMENT=	.zip file importer for Plone
 
 VERSION=	0.9
 DISTNAME=	MassLoader-${VERSION}
-PKGNAME=	plone-${DISTNAME:L}p0
+PKGNAME=	plone-${DISTNAME:L}p1
 CATEGORIES=	www
 HOMEPAGE=	http://plone.org/products/massloader
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL v2
 PERMIT_PACKAGE_CDROM=	Yes

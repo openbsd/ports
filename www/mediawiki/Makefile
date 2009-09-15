@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2009/03/31 08:31:35 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.19 2009/09/15 17:37:22 jasper Exp $
 
 COMMENT=	web-based collaborative editing environment
 
 DISTNAME=	mediawiki-1.14.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.mediawiki.org/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes

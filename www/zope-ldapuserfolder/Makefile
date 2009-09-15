@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2008/03/20 11:58:25 winiger Exp $
+# $OpenBSD: Makefile,v 1.9 2009/09/15 17:37:22 jasper Exp $
 
 COMMENT=	Zope LDAPUserFolder product
 
 VERSION=	2.8
 DISTNAME=	LDAPUserFolder-${VERSION}
-PKGNAME=	zope-${DISTNAME:L}p0
+PKGNAME=	zope-${DISTNAME:L}p1
 CATEGORIES=	www
 HOMEPAGE=	http://www.dataflake.org/software/ldapuserfolder
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # Zope Public License
 PERMIT_PACKAGE_CDROM=	Yes

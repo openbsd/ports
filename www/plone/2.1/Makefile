@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/02 13:07:37 djm Exp $
+# $OpenBSD: Makefile,v 1.3 2009/09/15 17:37:22 jasper Exp $
 
 DISTNAME=	Plone-2.1.4
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME=	${DISTNAME:L}p2
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${MODZOPE_PRODUCTSDIR}

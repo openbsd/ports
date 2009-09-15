@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/03/30 18:36:37 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.25 2009/09/15 17:37:22 jasper Exp $ 
 
 COMMENT=	web based calendar application using the horde framework
 
@@ -6,10 +6,9 @@ HORDE_MODULE=	kronolith
 HORDE_NAME=	Kronolith
 
 DISTNAME=	${HORDE_MODULE}-h3-2.3.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www mail
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

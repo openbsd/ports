@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2008/10/30 09:54:19 mbalmer Exp $ 
+# $OpenBSD: Makefile,v 1.15 2009/09/15 17:37:22 jasper Exp $ 
 
 COMMENT=	multiuser task list manager
 
@@ -6,10 +6,9 @@ HORDE_MODULE=	nag
 HORDE_NAME=	Nag
 
 DISTNAME=	${HORDE_MODULE}-h3-2.3.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 HOMEPAGE=	http://www.horde.org/${HORDE_MODULE}/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

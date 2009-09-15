@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2008/12/23 10:51:02 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.11 2009/09/15 17:37:22 jasper Exp $
 
 COMMENT=	web based bug tracking
 
 V=		1.1.6
 DISTNAME=	mantisbt-${V}
-PKGNAME=	mantis-${V}p1
+PKGNAME=	mantis-${V}p2
 CATEGORIES=	www
 HOMEPAGE=	http://www.mantisbt.org/
-
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

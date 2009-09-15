@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.54 2007/07/18 11:49:14 aanriot Exp $
+# $OpenBSD: Makefile,v 1.55 2009/09/15 17:37:21 jasper Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
 V=			4.1.1
 DISTNAME=		courier-imap-${V}
-PKGNAME-main=		${DISTNAME}p2
-FULLPKGNAME-pop3=	courier-pop3-${V}p0
+PKGNAME-main=		${DISTNAME}p3
+FULLPKGNAME-pop3=	courier-pop3-${V}p1
 
 CATEGORIES=		mail
 
@@ -14,7 +14,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=courier/}
 EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.courier-mta.org/imap/
-MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

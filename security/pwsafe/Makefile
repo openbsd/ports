@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:34:29 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2009/09/15 17:37:22 jasper Exp $
 
 COMMENT=		program that manages encrypted password databases
 DISTNAME=		pwsafe-0.2.0
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		security
 
 HOMEPAGE=		http://nsd.dyndns.org/pwsafe/
-
-MAINTAINER=		Marc Balmer <mbalmer@openbsd.org>
 
 #GPL
 PERMIT_PACKAGE_CDROM=	Yes
