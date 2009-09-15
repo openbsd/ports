@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/03/23 08:57:02 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/09/15 18:15:41 jasper Exp $
 %%SHARED%%
 include/json/
 include/json/arraylist.h
@@ -6,9 +6,11 @@ include/json/bits.h
 include/json/debug.h
 include/json/json.h
 include/json/json_object.h
+include/json/json_object_private.h
 include/json/json_tokener.h
 include/json/json_util.h
 include/json/linkhash.h
+include/json/printbuf.h
 lib/libjson.a
 lib/libjson.la
 lib/pkgconfig/
