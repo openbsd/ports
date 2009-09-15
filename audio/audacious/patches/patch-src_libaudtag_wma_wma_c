@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_libaudtag_wma_wma_c,v 1.1 2009/09/15 21:49:01 fgsch Exp $
+--- src/libaudtag/wma/wma.c.orig	Sat Aug  1 15:46:41 2009
++++ src/libaudtag/wma/wma.c	Sat Aug  1 15:46:45 2009
+@@ -1,6 +1,6 @@
+ /* functions for WMA file handling */
+ 
+-#include <glib-2.0/glib.h>
++#include <glib.h>
+ #include "wma.h"
+ #include "guid.h"
+ #include "wma_fmt.h"

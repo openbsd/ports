@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libaudtag_wma_wma_fmt_h,v 1.1 2009/09/15 21:49:01 fgsch Exp $
+--- src/libaudtag/wma/wma_fmt.h.orig	Sat Aug  1 15:44:21 2009
++++ src/libaudtag/wma/wma_fmt.h	Sat Aug  1 15:44:25 2009
+@@ -1,7 +1,7 @@
+ #ifndef AUD_WMA_FMT_H
+ #define AUD_WMA_FMT_H
+ 
+-#include <glib-2.0/glib.h>
++#include <glib.h>
+ 
+ #define ASF_HEADER_OBJECT_GUID				"75B22630-668E-11CF-A6D900AA0062CE6C"
+ #define ASF_FILE_PROPERTIES_OBJECT_GUID			"8CABDCA1-A947-11CF-8EE400C00C205365"

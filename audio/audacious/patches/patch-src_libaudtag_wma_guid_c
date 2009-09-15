@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_libaudtag_wma_guid_c,v 1.1 2009/09/15 21:49:01 fgsch Exp $
+--- src/libaudtag/wma/guid.c.orig	Sat Aug  1 15:46:12 2009
++++ src/libaudtag/wma/guid.c	Sat Aug  1 15:46:17 2009
+@@ -1,5 +1,5 @@
+ #include <string.h>
+-#include <glib-2.0/glib.h>
++#include <glib.h>
+ 
+ #include "libaudcore/vfs.h"
+ #include "guid.h"

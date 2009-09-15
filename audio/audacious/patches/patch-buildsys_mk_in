@@ -1,12 +1,12 @@
-$OpenBSD: patch-buildsys_mk_in,v 1.1 2008/04/02 00:39:19 fgsch Exp $
---- buildsys.mk.in.orig	Thu Mar 13 22:19:27 2008
-+++ buildsys.mk.in	Sun Mar 23 05:55:30 2008
-@@ -76,7 +76,7 @@ OBJS5 = ${OBJS4:.erl=.beam}
- OBJS += ${OBJS5:.m=.o}
- DEPS += ${OBJS:.o=.dep}
+$OpenBSD: patch-buildsys_mk_in,v 1.2 2009/09/15 21:49:01 fgsch Exp $
+--- buildsys.mk.in.orig	Mon Jul  6 23:39:11 2009
++++ buildsys.mk.in	Sat Aug  1 15:21:49 2009
+@@ -81,7 +81,7 @@ OBJS6 = ${OBJS5:.m=.o}
+ OBJS7 = ${OBJS6:.py=.pyc}
+ OBJS += ${OBJS7:.xpm=.o}
  
 -.SILENT:
 +#.SILENT:
- .SUFFIXES: .beam .c .cc .cxx .d .dep .erl .m
+ .SUFFIXES:
+ .SUFFIXES: .beam .c .cc .cxx .d .dep .erl .m .o .py .pyc .xpm
  .PHONY: all subdirs pre-depend depend install install-extra uninstall uninstall-extra clean distclean
- 

@@ -1,20 +1,15 @@
-$OpenBSD: patch-m4_buildsys_m4,v 1.1 2008/04/02 00:39:19 fgsch Exp $
---- m4/buildsys.m4.orig	Thu Mar 13 22:19:27 2008
-+++ m4/buildsys.m4	Wed Apr  2 01:35:47 2008
-@@ -106,14 +106,14 @@ AC_DEFUN([BUILDSYS_SHARED_LIB], [
- 			AC_MSG_RESULT(POSIX)
+$OpenBSD: patch-m4_buildsys_m4,v 1.2 2009/09/15 21:49:01 fgsch Exp $
+--- m4/buildsys.m4.orig	Sat Aug  1 15:26:59 2009
++++ m4/buildsys.m4	Sat Aug  1 15:27:59 2009
+@@ -88,9 +88,9 @@ AC_DEFUN([BUILDSYS_SHARED_LIB], [
+ 			AC_MSG_RESULT(Solaris)
  			LIB_CPPFLAGS='-DPIC'
  			LIB_CFLAGS='-fPIC'
--			LIB_LDFLAGS='-shared -fPIC -Wl,-soname,${LIB}.${LIB_MAJOR}'
+-			LIB_LDFLAGS='-shared -fPIC'
 +			LIB_LDFLAGS='-shared -fPIC -Wl,-soname,${LIB}'
  			LIB_PREFIX='lib'
- 			LIB_SUFFIX='.so'
+-			LIB_SUFFIX='.so.${LIB_MAJOR}.${LIB_MINOR}'
++			LIB_SUFFIX='.so'
  			PLUGIN_CPPFLAGS='-DPIC'
  			PLUGIN_CFLAGS='-fPIC'
  			PLUGIN_LDFLAGS='-shared -fPIC'
- 			PLUGIN_SUFFIX='.so'
--			INSTALL_LIB='${INSTALL} -m 755 $$i ${DESTDIR}${libdir}/$$i.${LIB_MAJOR}.${LIB_MINOR}.0 && ${LN_S} -f $$i.${LIB_MAJOR}.${LIB_MINOR}.0 ${DESTDIR}${libdir}/$$i.${LIB_MAJOR} && ${LN_S} -f $$i.${LIB_MAJOR}.${LIB_MINOR}.0 ${DESTDIR}${libdir}/$$i'
-+			INSTALL_LIB='${INSTALL} -m 755 $$i ${DESTDIR}${libdir}/$$i'
- 			UNINSTALL_LIB='rm -f ${DESTDIR}${libdir}/$$i ${DESTDIR}${libdir}/$$i.${LIB_MAJOR} ${DESTDIR}${libdir}/$$i.${LIB_MAJOR}.${LIB_MINOR}.0'
- 			CLEAN_LIB=''
- 			;;

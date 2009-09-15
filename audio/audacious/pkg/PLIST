@@ -1,21 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/25 02:02:19 fgsch Exp $
-@bin bin/audacious
-@bin bin/audtool
+@comment $OpenBSD: PLIST,v 1.7 2009/09/15 21:49:01 fgsch Exp $
+@bin bin/audacious2
+@bin bin/audtool2
 include/audacious/
 include/audacious/audconfig.h
 include/audacious/audctrl.h
 include/audacious/auddrct.h
+include/audacious/audtag.h
+include/audacious/audutil.h
 include/audacious/configdb.h
 include/audacious/custom_uri.h
 include/audacious/dbus-service.h
 include/audacious/dbus.h
 include/audacious/discovery.h
+include/audacious/equalizer_preset.h
 include/audacious/eventqueue.h
 include/audacious/flow.h
 include/audacious/hook.h
 include/audacious/i18n.h
 include/audacious/id3tag.h
 include/audacious/input.h
+include/audacious/interface.h
 include/audacious/main.h
 include/audacious/mime.h
 include/audacious/output.h
@@ -23,29 +27,37 @@ include/audacious/playback.h
 include/audacious/playlist.h
 include/audacious/playlist_container.h
 include/audacious/plugin.h
+include/audacious/preferences.h
 include/audacious/rcfile.h
-include/audacious/strings.h
-include/audacious/tuple.h
-include/audacious/tuple_compiler.h
-include/audacious/tuple_formatter.h
+include/audacious/scanner.h
 include/audacious/ui_fileinfopopup.h
 include/audacious/ui_plugin_menu.h
 include/audacious/ui_preferences.h
 include/audacious/util.h
-include/audacious/vfs.h
-include/audacious/vfs_buffer.h
-include/audacious/vfs_buffered_file.h
+include/audacious/vis_runner.h
 include/libSAD/
 include/libSAD/common.h
 include/libSAD/dither.h
 include/libSAD/libSAD.h
+include/libaudcore/
+include/libaudcore/audstrings.h
+include/libaudcore/tuple.h
+include/libaudcore/tuple_compiler.h
+include/libaudcore/tuple_formatter.h
+include/libaudcore/vfs.h
+include/libaudcore/vfs_buffer.h
+include/libaudcore/vfs_buffered_file.h
+lib/libSAD.so
 @lib lib/libaudclient.so.${LIBaudclient_VERSION}
+lib/libaudcore.so
 lib/libaudid3tag.so
+lib/libaudtag.so
+lib/libaudutil.so
 lib/pkgconfig/audacious.pc
 lib/pkgconfig/audclient.pc
-@man man/man1/audacious.1
-@man man/man1/audtool.1
-share/applications/audacious.desktop
+@man man/man1/audacious2.1
+@man man/man1/audtool2.1
+share/applications/audacious2.desktop
 share/audacious/
 share/audacious/Skins/
 share/audacious/Skins/Classic/
@@ -294,6 +306,7 @@ share/audacious/images/audacious_eq.xpm
 share/audacious/images/audacious_player.xpm
 share/audacious/images/audacious_playlist.xpm
 share/audacious/images/audio.png
+share/audacious/images/blue.png
 share/audacious/images/connectivity.png
 share/audacious/images/menu_playlist.png
 share/audacious/images/menu_plugin.png
@@ -308,6 +321,7 @@ share/audacious/ui/
 share/audacious/ui/carbon-menubar.ui
 share/audacious/ui/equalizer.ui
 share/audacious/ui/mainwin.ui
+share/audacious/ui/player.ui
 share/audacious/ui/playlist.ui
 share/locale/bg/LC_MESSAGES/audacious.mo
 share/locale/br/LC_MESSAGES/audacious.mo
@@ -318,6 +332,7 @@ share/locale/de/LC_MESSAGES/audacious.mo
 share/locale/el/LC_MESSAGES/audacious.mo
 share/locale/es/LC_MESSAGES/audacious.mo
 share/locale/et/LC_MESSAGES/audacious.mo
+share/locale/eu/LC_MESSAGES/audacious.mo
 share/locale/fi/LC_MESSAGES/audacious.mo
 share/locale/fr/LC_MESSAGES/audacious.mo
 share/locale/hi/LC_MESSAGES/audacious.mo
@@ -328,6 +343,7 @@ share/locale/ja/LC_MESSAGES/audacious.mo
 share/locale/ka/LC_MESSAGES/audacious.mo
 share/locale/ko/LC_MESSAGES/audacious.mo
 share/locale/lt/LC_MESSAGES/audacious.mo
+share/locale/lv/LC_MESSAGES/audacious.mo
 share/locale/mk/LC_MESSAGES/audacious.mo
 share/locale/nl/LC_MESSAGES/audacious.mo
 share/locale/pl/LC_MESSAGES/audacious.mo
@@ -345,6 +361,6 @@ share/locale/uk/LC_MESSAGES/audacious.mo
 share/locale/zh_CN/LC_MESSAGES/audacious.mo
 share/locale/zh_TW/LC_MESSAGES/audacious.mo
 share/pixmaps/
-share/pixmaps/audacious.png
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
+share/pixmaps/audacious2.png

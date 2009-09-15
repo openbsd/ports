@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libaudclient_Makefile,v 1.1 2008/04/02 00:39:19 fgsch Exp $
---- src/libaudclient/Makefile.orig	Wed Jan 30 01:51:39 2008
-+++ src/libaudclient/Makefile	Wed Jan 30 01:52:13 2008
+$OpenBSD: patch-src_libaudclient_Makefile,v 1.2 2009/09/15 21:49:01 fgsch Exp $
+--- src/libaudclient/Makefile.orig	Mon Jul  6 23:39:12 2009
++++ src/libaudclient/Makefile	Sat Aug  1 15:20:12 2009
 @@ -1,4 +1,4 @@
 -LIB = ${LIB_PREFIX}audclient${LIB_SUFFIX}
 +LIB = ${LIB_PREFIX}audclient${LIB_SUFFIX}.${LIBaudclient_VERSION}
- LIB_MAJOR = 1
+ LIB_MAJOR = 2
  LIB_MINOR = 0
  
