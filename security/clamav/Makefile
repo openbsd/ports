@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.45 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2009/09/15 18:06:28 sthen Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.95.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		security
 SHARED_LIBS=		clamav 12.0 \
 			clamunrar 2.0 \
 			clamunrar_iface 2.0
 
 HOMEPAGE=		http://www.clamav.net/
+
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
