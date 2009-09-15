@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2009/09/06 11:15:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.125 2009/09/15 20:10:52 jasper Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -89,7 +89,6 @@
      SUBDIR += tkcron
      SUBDIR += tkinfo
      SUBDIR += tkman
-     SUBDIR += tmux
      SUBDIR += tpwireless
      SUBDIR += ttyrec
      SUBDIR += viz
