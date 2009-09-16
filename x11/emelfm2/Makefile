@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/17 12:14:52 giovanni Exp $
+# $OpenBSD: Makefile,v 1.8 2009/09/16 15:50:26 giovanni Exp $
 
 COMMENT =		GTK+2 file manager
 
@@ -28,6 +28,7 @@ WANTLIB =	c cairo glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 		freetype gio-2.0 glitz pangoft2-1.0 pixman-1 png xcb \
 		m pango-1.0 pangocairo-1.0 pthread pthread-stubs z
 
+BUILD_DEPENDS =	::devel/libmagic
 RUN_DEPENDS =	::devel/desktop-file-utils \
 		::devel/xdg-utils
 
