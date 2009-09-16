@@ -1,6 +1,6 @@
-$OpenBSD: patch-gtk_details_c,v 1.11 2009/09/06 15:03:18 naddy Exp $
---- gtk/details.c.orig	Wed Aug 19 03:02:44 2009
-+++ gtk/details.c	Thu Aug 20 19:50:21 2009
+$OpenBSD: patch-gtk_details_c,v 1.12 2009/09/16 19:36:33 naddy Exp $
+--- gtk/details.c.orig	Mon Sep 14 05:51:05 2009
++++ gtk/details.c	Mon Sep 14 20:29:13 2009
 @@ -757,14 +757,14 @@ refreshInfo( struct DetailsImpl * di, tr_torrent ** to
              char piecebuf[128];
              tr_strlsize( piecebuf, (uint64_t)pieceSize, sizeof( piecebuf ) );
@@ -35,7 +35,7 @@ $OpenBSD: patch-gtk_details_c,v 1.11 2009/09/06 15:03:18 naddy Exp $
          gtk_label_set_text( GTK_LABEL( di->completed_lb ), buf );
      }
  
-@@ -1968,7 +1968,7 @@ torrent_inspector_set_torrents( GtkWidget * w, GSList 
+@@ -1973,7 +1973,7 @@ torrent_inspector_set_torrents( GtkWidget * w, GSList 
     {
          file_list_clear( di->file_list );
          tracker_list_clear( di->tracker_list );
