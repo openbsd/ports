@@ -1,26 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/11 09:36:17 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-main,v 1.1 2009/09/16 18:05:14 ajacoutot Exp $
+@pkgpath converters/libpst
 @bin bin/lspst
 @bin bin/pst2dii
 @bin bin/pst2ldif
 @bin bin/readpst
-@bin bin/readpstlog
-include/libpst-2/
-include/libpst-2/libpst/
-include/libpst-2/libpst/common.h
-include/libpst-2/libpst/libpst.h
-include/libpst-2/libpst/libstrfunc.h
-include/libpst-2/libpst/lzfu.h
-include/libpst-2/libpst/timeconv.h
-include/libpst-2/libpst/vbuf.h
+include/libpst-4/
+include/libpst-4/libpst/
+include/libpst-4/libpst/common.h
+include/libpst-4/libpst/libpst.h
+include/libpst-4/libpst/libstrfunc.h
+include/libpst-4/libpst/lzfu.h
+include/libpst-4/libpst/timeconv.h
+include/libpst-4/libpst/vbuf.h
 lib/libpst.a
 lib/libpst.la
+@lib lib/libpst.so.${LIBpst_VERSION}
 lib/pkgconfig/libpst.pc
 @man man/man1/lspst.1
 @man man/man1/pst2dii.1
 @man man/man1/pst2ldif.1
 @man man/man1/readpst.1
-@man man/man1/readpstlog.1
 @man man/man5/outlook.pst.5
 share/doc/libpst/
 share/doc/libpst/devel/
@@ -130,6 +129,7 @@ share/doc/libpst/devel/structpst__item__message__store.html
 share/doc/libpst/devel/structpst__item__message__store__coll__graph.map
 share/doc/libpst/devel/structpst__item__message__store__coll__graph.md5
 share/doc/libpst/devel/structpst__item__message__store__coll__graph.png
+share/doc/libpst/devel/structpst__recurrence.html
 share/doc/libpst/devel/structpst__string.html
 share/doc/libpst/devel/structpst__varbuf.html
 share/doc/libpst/devel/structpst__x__attrib__ll.html
@@ -148,10 +148,8 @@ share/doc/libpst/devel/vbuf_8h__incl.map
 share/doc/libpst/devel/vbuf_8h__incl.md5
 share/doc/libpst/devel/vbuf_8h__incl.png
 share/doc/libpst/index.html
-share/doc/libpst/libpst.pdf
 share/doc/libpst/rn01re01.html
 share/doc/libpst/rn01re02.html
 share/doc/libpst/rn01re03.html
 share/doc/libpst/rn01re04.html
 share/doc/libpst/rn01re05.html
-share/doc/libpst/rn01re06.html

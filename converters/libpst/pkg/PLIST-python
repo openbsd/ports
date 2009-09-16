@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-python,v 1.1 2009/09/16 18:05:14 ajacoutot Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/_libpst.a
+lib/python${MODPY_VERSION}/site-packages/_libpst.la
+lib/python${MODPY_VERSION}/site-packages/_libpst.so
