@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2009/09/06 10:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2009/09/16 12:58:44 jasper Exp $
 
 SHARED_ONLY=			Yes
 
@@ -9,7 +9,7 @@ COMMENT-cups=			gtk+2 CUPS print backend
 VERSION=			2.16.6
 DISTNAME=			gtk+-${VERSION}
 
-PKGNAME-main=			gtk+2-${VERSION}
+PKGNAME-main=			gtk+2-${VERSION}p0
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 PKGNAME-cups=			gtk+2-cups-${VERSION}
 

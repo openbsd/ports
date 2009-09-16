@@ -1,0 +1,18 @@
+$OpenBSD: patch-modules_printbackends_lpr_gtkprintbackendlpr_c,v 1.1 2009/09/16 12:58:44 jasper Exp $
+
+Fix for #503776, git f6ed1487bd2c5c2315a07ff2f9f4426102524743
+Prevents an application from crashing when printing to a non-existant printer.
+
+--- modules/printbackends/lpr/gtkprintbackendlpr.c.orig	Wed Sep 16 14:21:48 2009
++++ modules/printbackends/lpr/gtkprintbackendlpr.c	Wed Sep 16 14:22:28 2009
+@@ -281,7 +281,9 @@ lpr_write (GIOChannel   *source,
+     {
+       gsize bytes_written;
+ 
+-      g_io_channel_write_chars (ps->in, 
++      signal (SIGPIPE, SIG_IGN);
++
++      g_io_channel_write_chars (ps->in,
+                                 buf, 
+ 				bytes_read, 
+ 				&bytes_written, 
