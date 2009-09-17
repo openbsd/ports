@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/16 18:05:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/17 07:12:05 ajacoutot Exp $
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
@@ -29,7 +29,7 @@ MULTI_PACKAGES=		-main -python
 MODULES=		converters/libiconv \
 			lang/python
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS-main}
 RUN_DEPENDS-main=	::graphics/ImageMagick
 LIB_DEPENDS-main=	${MODLIBICONV_LIB_DEPENDS} \
 			gd.>=20::graphics/gd
