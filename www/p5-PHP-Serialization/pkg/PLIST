@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/17 00:09:16 sthen Exp $
+${P5SITE}/PHP/
+${P5SITE}/PHP/Serialization.pm
+@man man/man3p/PHP::Serialization.3p

@@ -1,0 +1,3 @@
+Provides a simple, quick means of serializing perl memory structures
+(including object data!) into a format that PHP can deserialize()
+and access, and vice versa.
