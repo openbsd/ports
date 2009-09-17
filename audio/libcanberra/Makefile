@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2009/09/17 17:43:43 ajacoutot Exp $
 
 COMMENT=	implementation of the Freedesktop sound theme spec.
 
-V=		0.14
+V=		0.17
 DISTNAME=	libcanberra-${V}
-PKGNAME=	${DISTNAME}p0
 
-SHARED_LIBS +=  canberra             1.0      # .1.4
-SHARED_LIBS +=  canberra-gtk         0.0      # .0.4
+SHARED_LIBS +=  canberra             1.1      # .2.1
+SHARED_LIBS +=  canberra-gtk         0.0      # .1.2
 
 CATEGORIES=	audio devel
 
@@ -46,7 +45,7 @@ LIB_DEPENDS=	vorbis,vorbisfile::audio/libvorbis \
 		ltdl::devel/libtool,-ltdl \
 		gstreamer-0.10::multimedia/gstreamer-0.10/core \
 		gdk_pixbuf-2.0.>=1400.0,gdk-x11-2.0.>=1400.0,gtk-x11-2.0.>=1400.0::x11/gtk+2
-RUN_DEPENDS=	::audio/sound-theme-freedesktop
+RUN_DEPENDS=	:sound-theme-freedesktop->=0.6:audio/sound-theme-freedesktop
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
@@ -60,7 +59,8 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--disable-oss \
 		--disable-alsa \
 		--disable-pulse \
-		--disable-tdb
+		--disable-tdb \
+		--enable-gtk-doc=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
