@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/11 23:51:50 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2009/09/17 13:43:47 pea Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
-MODPY_EGG_VERSION=	2.1.9
+MODPY_EGG_VERSION=	2.1.10
 DISTNAME=		skytools-${MODPY_EGG_VERSION}
-PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=	databases
 
@@ -20,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB= 	c
 
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2129/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2370/
 
 MODULES=	lang/python
 
