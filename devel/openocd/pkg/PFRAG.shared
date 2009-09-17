@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/09/17 21:59:46 sturm Exp $
+@lib lib/libopenocd.so.${LIBopenocd_VERSION}
