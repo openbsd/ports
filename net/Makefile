@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.589 2009/09/17 00:12:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.590 2009/09/17 00:35:54 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -325,6 +325,8 @@
      SUBDIR += pear-HTTP-Request
      SUBDIR += pear-Net-DNS
      SUBDIR += pear-Net-IMAP
+     SUBDIR += pear-Net-IPv4
+     SUBDIR += pear-Net-IPv6
      SUBDIR += pear-Net-LDAP
      SUBDIR += pear-Net-SMTP
      SUBDIR += pear-Net-Socket
