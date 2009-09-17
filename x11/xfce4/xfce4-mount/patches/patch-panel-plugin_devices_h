@@ -1,0 +1,18 @@
+$OpenBSD: patch-panel-plugin_devices_h,v 1.1.1.1 2009/09/17 22:05:16 landry Exp $
+Permit to build with debug enabled
+--- panel-plugin/devices.h.orig	Thu Sep 17 23:32:22 2009
++++ panel-plugin/devices.h	Thu Sep 17 23:32:28 2009
+@@ -25,13 +25,6 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, U
+ 
+ #include "helpers.h"
+ 
+-#ifdef DEBUG
+-#undef DEBUG
+-#endif
+-#ifdef DEBUG_TRACE
+-#undef DEBUG_TRACE
+-#endif
+-
+ /**
+  * An enum.
+  * NONE and ERROR as aliases.

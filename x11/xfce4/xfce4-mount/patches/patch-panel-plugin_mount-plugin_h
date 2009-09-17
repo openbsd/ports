@@ -1,0 +1,36 @@
+$OpenBSD: patch-panel-plugin_mount-plugin_h,v 1.1.1.1 2009/09/17 22:05:16 landry Exp $
+Force the use of sudo & full path to mount/umount
+--- panel-plugin/mount-plugin.h.orig	Sat May 17 11:49:09 2008
++++ panel-plugin/mount-plugin.h	Thu Sep 17 23:35:42 2009
+@@ -27,19 +27,13 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, U
+ #include <config.h>
+ #endif
+ 
+-#ifdef DEBUG
+-#undef DEBUG
+-#endif
+-#ifdef DEBUG_TRACE
+-#undef DEBUG_TRACE
+-#endif
+-
+ #include <gtk/gtk.h>
+ #include <libxfce4panel/xfce-panel-plugin.h>
+ #include <libxfce4util/libxfce4util.h>
+ #include <libxfcegui4/libxfcegui4.h>
+ 
+ #include <string.h>
++#include <stdlib.h>
+ 
+ #include "devices.h"
+ #include "helpers.h"
+@@ -49,8 +43,8 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, U
+ 
+ #define BORDER 6
+ 
+-#define DEFAULT_MOUNT_COMMAND "mount %d"
+-#define DEFAULT_UMOUNT_COMMAND "umount %d"
++#define DEFAULT_MOUNT_COMMAND "sudo /sbin/mount %d"
++#define DEFAULT_UMOUNT_COMMAND "sudo /sbin/umount %d"
+ 
+ #define DEFAULT_ICON PACKAGE_DATA_DIR"/icons/hicolor/scalable/apps/xfce-mount.svg"
+ 

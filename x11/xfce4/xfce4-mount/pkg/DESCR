@@ -1,0 +1,5 @@
+This plugin will display a list of items representing your various
+mounted and unmounted disk devices. If you click on an unmounted
+devices it will mount it and vice versa. There is no warning in case
+a device can't be mounted, but there is one when unmounting fails.
+User needs proper sudo(1) rights to mount/umount/eject devices.

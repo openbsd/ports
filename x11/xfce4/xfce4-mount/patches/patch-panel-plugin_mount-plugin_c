@@ -1,0 +1,18 @@
+$OpenBSD: patch-panel-plugin_mount-plugin_c,v 1.1.1.1 2009/09/17 22:05:16 landry Exp $
+--- panel-plugin/mount-plugin.c.orig	Thu Sep 17 22:56:11 2009
++++ panel-plugin/mount-plugin.c	Thu Sep 17 22:56:25 2009
+@@ -670,14 +670,6 @@ exlude_FSs_toggled (GtkWidget *widget, t_mounter_dialo
+ }
+ 
+ 
+-static gboolean
+-exclude_devicenames_toggled (GtkWidget *widget, t_mounter_dialog *md)
+-{
+-
+-
+-    return TRUE;
+-}
+-
+ static void
+ mounter_create_options (XfcePanelPlugin *plugin, t_mounter *mt)
+ {

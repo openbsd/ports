@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_fr_po,v 1.1.1.1 2009/09/17 22:05:16 landry Exp $
+--- po/fr.po.orig	Thu Sep 17 23:03:50 2009
++++ po/fr.po	Thu Sep 17 23:04:09 2009
+@@ -100,7 +100,7 @@ msgstr ""
+ 
+ #: ../panel-plugin/mount-plugin.c:220
+ msgid "<span foreground=\"#FF0000\">not mounted</span>"
+-msgstr "<span foreground=\"#000000\" size=\"%s\">non monté</span>"
++msgstr "<span foreground=\"#FF0000\">non monté</span>"
+ 
+ #: ../panel-plugin/mount-plugin.c:525
+ msgid "devices"
