@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2009/06/12 17:02:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2009/09/17 21:12:48 jasper Exp $
 #
 
      SUBDIR += R
@@ -42,6 +42,7 @@
      SUBDIR += maxima
      SUBDIR += mcl
      SUBDIR += mcsim
+     SUBDIR += minisat
      SUBDIR += moo
      SUBDIR += netcdf
      SUBDIR += ntl
