@@ -1,0 +1,12 @@
+$OpenBSD: patch-panel-plugin_callbacks_c,v 1.1.1.1 2009/09/17 22:02:31 landry Exp $
+--- panel-plugin/callbacks.c.orig	Thu Sep 17 20:54:55 2009
++++ panel-plugin/callbacks.c	Thu Sep 17 20:55:08 2009
+@@ -348,7 +348,7 @@ gchar* get_icon_file()
+ 		file_filter_add_mime_type(filter, "image/*");
+ 		file_chooser_add_filter(FILE_CHOOSER(chooser), filter);
+ 	}
+-	file_chooser_set_current_folder(FILE_CHOOSER(chooser), "/usr/share/pixmaps");//Maybe can be changed...
++	file_chooser_set_current_folder(FILE_CHOOSER(chooser), "${LOCALBASE}/share/pixmaps");//Maybe can be changed...
+ 	gtk_window_set_modal(GTK_WINDOW(chooser), TRUE);
+ 	gtk_window_set_transient_for(GTK_WINDOW(chooser),  _gtk_widget_get_parent_gtk_window(_dlg->vbox) );
+ 	if(gtk_dialog_run(GTK_DIALOG(chooser)) == GTK_RESPONSE_ACCEPT)
