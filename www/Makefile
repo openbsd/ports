@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.423 2009/08/25 17:10:47 avsm Exp $
+# $OpenBSD: Makefile,v 1.424 2009/09/17 00:12:20 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -246,6 +246,7 @@
      SUBDIR += p5-Maypole-Authentication-UserSessionCookie
      SUBDIR += p5-Mojo
      SUBDIR += p5-MojoX-Session
+     SUBDIR += p5-PHP-Serialization
      SUBDIR += p5-PHP-Session
      SUBDIR += p5-Plagger
      SUBDIR += p5-PodToHTML
