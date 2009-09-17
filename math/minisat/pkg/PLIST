@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/17 21:12:04 jasper Exp $
+@bin bin/minisat
+share/doc/minisat/
+share/doc/minisat/MiniSat.ps
