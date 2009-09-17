@@ -1,0 +1,6 @@
+This class allows you to:
+* check if an address is an IPv6 address
+* compress/uncompress IPv6 addresses
+* check for an IPv4 compatible ending in an IPv6 address
+* check the assigned address space of an IPv6 address
+* do netmask calculations
