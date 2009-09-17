@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/17 00:34:59 sthen Exp $
+@group daemon
+lib/
+lib/php/
+pear/lib/.registry/net_ipv4.reg
+pear/lib/Net/
+pear/lib/Net/IPv4.php
