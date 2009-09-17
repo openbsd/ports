@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/17 00:10:45 sthen Exp $
+@group daemon
+lib/
+lib/php/
+pear/lib/.registry/net_dns.reg
+pear/lib/Net/
+pear/lib/Net/DNS/
+pear/lib/Net/DNS.php
+pear/lib/Net/DNS/Header.php
+pear/lib/Net/DNS/Packet.php
+pear/lib/Net/DNS/Question.php
+pear/lib/Net/DNS/RR/
+pear/lib/Net/DNS/RR.php
+pear/lib/Net/DNS/RR/A.php
+pear/lib/Net/DNS/RR/AAAA.php
+pear/lib/Net/DNS/RR/CNAME.php
+pear/lib/Net/DNS/RR/HINFO.php
+pear/lib/Net/DNS/RR/MX.php
+pear/lib/Net/DNS/RR/NAPTR.php
+pear/lib/Net/DNS/RR/NS.php
+pear/lib/Net/DNS/RR/PTR.php
+pear/lib/Net/DNS/RR/SOA.php
+pear/lib/Net/DNS/RR/SRV.php
+pear/lib/Net/DNS/RR/TSIG.php
+pear/lib/Net/DNS/RR/TXT.php
+pear/lib/Net/DNS/Resolver.php
