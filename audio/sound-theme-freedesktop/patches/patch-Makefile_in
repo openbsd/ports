@@ -1,11 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.2 2009/09/17 17:36:12 ajacoutot Exp $
+
 There is not potfile yet, so the intltool-merge command is started
 without argument which gives an error ; it does not break the build
 itself although it looks like it does.
 
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/12/14 18:42:36 ajacoutot Exp $
---- Makefile.in.orig	Sun Dec 14 14:23:08 2008
-+++ Makefile.in	Sun Dec 14 14:23:22 2008
-@@ -685,7 +685,7 @@ uninstall-am: uninstall-themeDATA
+--- Makefile.in.orig	Fri Aug 28 02:36:09 2009
++++ Makefile.in	Thu Sep 17 19:31:31 2009
+@@ -761,7 +761,7 @@ uninstall-am: uninstall-themeDATA
  
  
  %.theme: %.theme.in
