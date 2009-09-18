@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:41 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/18 09:30:35 jasper Exp $
 
 COMMENT=	common file and directory routines for PHP
 
 DISTNAME=	File-1.2.2
-PKGNAME=	pear-${DISTNAME}p0
+PKGNAME=	pear-${DISTNAME}p1
 CATEGORIES=	textproc pear
 
 MASTER_SITES=	http://pear.php.net/get/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 MODULES=	www/pear
 
 RUN_DEPENDS=	:pear-XML-Tree-*:textproc/pear-XML-Tree
