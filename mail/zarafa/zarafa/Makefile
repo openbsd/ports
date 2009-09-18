@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/09/11 16:33:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/09/18 13:49:55 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-php=	MAPI extensions for php5
@@ -6,7 +6,7 @@ COMMENT-php=	MAPI extensions for php5
 V=		6.30.2
 DISTNAME=	zarafa-${V}
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-php=	php5-mapi-${V}
 
 CATEGORIES=	mail www productivity
@@ -98,7 +98,13 @@ pre-configure:
 
 post-install:
 	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/zarafa/README.OpenBSD
+	${SUBST_CMD} -c ${FILESDIR}/zarafa.m4 ${PREFIX}/share/examples/zarafa/zarafa.m4
+	${SUBST_CMD} -c ${FILESDIR}/local_zarafa.m4 ${PREFIX}/share/examples/zarafa/local_zarafa.m4
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/zarafa
+	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/share/examples/zarafa/zarafa.m4 \
+		${PREFIX}/share/examples/zarafa/local_zarafa.m4
+	chmod ${SHAREMODE} ${PREFIX}/share/examples/zarafa/zarafa.m4 \
+		${PREFIX}/share/examples/zarafa/local_zarafa.m4
 	${INSTALL_DATA_DIR} ${DESTDIR}/${PREFIX-php}/conf/php5.sample
 	echo "; Enable Zarafa mapi extension module\nextension=mapi.so" \
 		> ${WRKINST}/${PREFIX-php}/conf/php5.sample/${MODULE_NAME}.ini

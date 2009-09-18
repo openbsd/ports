@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/08/27 20:02:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/09/18 13:49:55 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -189,6 +189,12 @@ share/examples/zarafa/ldap.openldap.cfg
 @sample ${SYSCONFDIR}/zarafa/ldap.cfg
 @mode
 @group
+share/examples/zarafa/local_zarafa.m4
+@mode 0444
+@group bin
+@sample /usr/share/sendmail/feature/local_zarafa.m4
+@mode
+@group
 share/examples/zarafa/monitor.cfg
 @sample ${SYSCONFDIR}/zarafa/monitor.cfg
 share/examples/zarafa/quotamail/
@@ -252,6 +258,12 @@ share/examples/zarafa/userscripts/users_common.sh
 @sample ${SYSCONFDIR}/zarafa/userscripts/users_common.sh
 @mode
 share/examples/zarafa/zarafa.logrotate
+share/examples/zarafa/zarafa.m4
+@mode 0444
+@group bin
+@sample /usr/share/sendmail/mailer/zarafa.m4
+@mode
+@group
 share/examples/zarafa/zarafa.schema
 share/locale/de/LC_MESSAGES/zarafa.mo
 share/locale/es/LC_MESSAGES/zarafa.mo

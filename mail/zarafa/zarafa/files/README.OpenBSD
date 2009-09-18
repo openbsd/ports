@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.6 2009/08/27 20:02:04 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.7 2009/09/18 13:49:55 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -98,8 +98,10 @@ Mail delivery agent configuration
 The easiest way to use zarafa-dagent system-wide under a stock OpenBSD
 sendmail installation is to use procmail(1).
 See the following URL for other MTA integration:
-   http://www.zarafa.com/?q=en/faq/61
+    http://www.zarafa.com/?q=en/faq/61
 
+1. Using procmail.
+==================
 First, install the procmail package and configure ${SYSCONFDIR}/procmailrc
 the following way:
  
@@ -109,7 +111,18 @@ EXITCODE=$?
 
 Next, you need to add the following line to your sendmail.mc file then
 restart sendmail(8):
-   FEATURE(`local_procmail')dnl
+    FEATURE(`local_procmail')dnl
+
+2. Configuring sendmail to use the zarafa-dagent directly.
+==========================================================
+To enable the Zarafa dagent delivery from localhost, add the following
+lines to your sendmail.mc and restart sendmail(8):
+    FEATURE(`local_zarafa')dnl
+    MAILER(`local')dnl
+
+To enable the Zarafa dagent for all other deliveries add the following
+lines to sendmail.mc:
+    MAILER(`zarafa')dnl
 
 
 The PHP mapi module and OpenBSD Apache
