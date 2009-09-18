@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/17 21:12:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/18 09:31:33 jasper Exp $
 
-COMMENT=		minimalistic SAT solver
+COMMENT=		minimalistic Boolean satisfiability solver
 
 V=			1.14
 DISTNAME=		MiniSat_v$V.2006-Aug-29.src
-PKGNAME=		minisat-$V
+PKGNAME=		minisat-$Vp0
 CATEGORIES=		math
 
 HOMEPAGE=		http://minisat.se/
+
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
