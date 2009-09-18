@@ -1,5 +1,5 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.25 2009/09/13 18:23:11 martynas Exp $
+-- $OpenBSD: yt.lua,v 1.26 2009/09/18 21:10:03 martynas Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -126,7 +126,7 @@ for i = 1, table.getn(urls) do
          .. "&t=" .. t .. fmt)
    else
       -- We assume it's Google Video URL.
-      pattern = "'/googleplayer.swf%?videoUrl(.-)'"
+      pattern = "/googleplayer.swf%?videoUrl(.-)thumbnailUrl"
       url = assert(string.match(body, pattern))
       url = string.gsub (url, "\\x", "%%")
       url = string.gsub (url, "%%(%x%x)", function(h)
