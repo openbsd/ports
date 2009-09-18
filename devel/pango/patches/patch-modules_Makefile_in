@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_Makefile_in,v 1.15 2008/12/04 15:05:38 jasper Exp $
---- modules/Makefile.in.orig	Sun Nov 23 15:07:01 2008
-+++ modules/Makefile.in	Thu Dec  4 15:32:23 2008
-@@ -557,21 +557,11 @@ uninstall-am: uninstall-local
+$OpenBSD: patch-modules_Makefile_in,v 1.16 2009/09/18 10:21:53 ajacoutot Exp $
+--- modules/Makefile.in.orig	Mon Jul 20 22:59:47 2009
++++ modules/Makefile.in	Sun Sep 13 14:30:28 2009
+@@ -634,21 +634,11 @@ uninstall-am: uninstall-local
  @CROSS_COMPILING_FALSE@all-local: pango.modules
  
  install-data-local: $(top_builddir)/pango/pango-querymodules$(EXEEXT)

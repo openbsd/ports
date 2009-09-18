@@ -1,0 +1,12 @@
+$OpenBSD: patch-pango-view_Makefile_in,v 1.1 2009/09/18 10:21:53 ajacoutot Exp $
+--- pango-view/Makefile.in.orig	Sun Sep 13 14:34:18 2009
++++ pango-view/Makefile.in	Sun Sep 13 14:34:36 2009
+@@ -794,7 +794,7 @@ $(srcdir)/pango-view.1: ../configure.in $(pango_view_S
+ 	      (test -f "$@" || echo help2man is required to generate this file. >> "$@"));
+ 
+ install-data-hook:
+-	@cd "$(DESTDIR)$(man1dir)" && gzip -c pango-view.1 > pango-view.1.gz && $(RM) pango-view.1
++	@cd "$(DESTDIR)$(man1dir)"
+ 
+ uninstall-hook:
+ 	$(RM) "$(DESTDIR)$(man1dir)/pango-view.1.gz"

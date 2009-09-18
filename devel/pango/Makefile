@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.36 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.37 2009/09/18 10:21:53 ajacoutot Exp $
 
 COMMENT=		library for layout and rendering of text
 
-DISTNAME=		pango-1.22.4
-PKGNAME=		${DISTNAME}p1
-SHARED_LIBS += pango-1.0	   1800.0    # .2203.0
-SHARED_LIBS += pangox-1.0	   1800.0    # .2203.0
-SHARED_LIBS += pangoft2-1.0	   1800.0    # .2203.0
-SHARED_LIBS += pangoxft-1.0	   1800.0    # .2203.0
-SHARED_LIBS += pangocairo-1.0	   1800.0    # .2203.0
+V=			1.24.5
+DISTNAME=		pango-${V}
+
+SHARED_LIBS += pango-1.0	   1801.0    # .2400.5
+SHARED_LIBS += pangox-1.0	   1801.0    # .2400.5
+SHARED_LIBS += pangoft2-1.0	   1801.0    # .2400.5
+SHARED_LIBS += pangoxft-1.0	   1801.0    # .2400.5
+SHARED_LIBS += pangocairo-1.0	   1801.0    # .2400.5
 
 CATEGORIES=		devel x11
 
@@ -23,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xft Xrender c expat fontconfig freetype \
 		glitz m pcre pixman-1 png pthread-stubs xcb z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/pango/1.22/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/pango/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2008/12/04 15:05:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2009/09/18 10:21:53 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pango-querymodules
 @bin bin/pango-view
@@ -82,6 +82,7 @@ lib/pkgconfig/pangoft2.pc
 lib/pkgconfig/pangox.pc
 lib/pkgconfig/pangoxft.pc
 @man man/man1/pango-querymodules.1
+@man man/man1/pango-view.1
 share/examples/pango/
 @sample ${SYSCONFDIR}/pango/
 share/examples/pango/pango.modules
