@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2009/07/12 20:39:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2009/09/18 20:47:11 martynas Exp $
 @conflict gail-*
 @pkgpath x11/gtk+2
 @bin bin/gdk-pixbuf-csource
@@ -707,6 +707,4 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 share/themes/Raleigh/
 share/themes/Raleigh/gtk-2.0/
 share/themes/Raleigh/gtk-2.0/gtkrc
-@cwd /var/db
-@extra gtk-2.0/gtk.immodules
-@extra gtk-2.0/gdk-pixbuf.loaders
+@unexec rm -fr /var/db/gtk-2.0
