@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2009/08/18 09:13:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2009/09/18 10:24:24 ajacoutot Exp $
 
 COMMENT-main=		C++ interface for gtk2+
 COMMENT-docs=		C++ interface for gtk2+ documentation
 
 GNOME_PROJECT=		gtkmm
-GNOME_VERSION=		2.14.5
+GNOME_VERSION=		2.16.0
+
 PKGNAME-main=		gtk2mm-${VERSION}
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
+
 CATEGORIES=		devel x11
 
 SHARED_LIBS=		atkmm-1.6	8.0 \
@@ -14,8 +16,6 @@ SHARED_LIBS=		atkmm-1.6	8.0 \
 			gtkmm-2.4	8.0
 
 HOMEPAGE=		http://www.gtkmm.org/
-
-MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/01/11 22:58:37 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/09/18 10:24:24 ajacoutot Exp $
 @pkgpath x11/gtk2mm
 %%SHARED%%
 @bin bin/gtkmm-demo
@@ -114,6 +114,7 @@ include/gtkmm-2.4/gtkmm/accellabel.h
 include/gtkmm-2.4/gtkmm/accelmap.h
 include/gtkmm-2.4/gtkmm/action.h
 include/gtkmm-2.4/gtkmm/actiongroup.h
+include/gtkmm-2.4/gtkmm/activatable.h
 include/gtkmm-2.4/gtkmm/adjustment.h
 include/gtkmm-2.4/gtkmm/alignment.h
 include/gtkmm-2.4/gtkmm/arrow.h
@@ -197,6 +198,7 @@ include/gtkmm-2.4/gtkmm/misc.h
 include/gtkmm-2.4/gtkmm/notebook.h
 include/gtkmm-2.4/gtkmm/object.h
 include/gtkmm-2.4/gtkmm/optionmenu.h
+include/gtkmm-2.4/gtkmm/orientable.h
 include/gtkmm-2.4/gtkmm/pagesetup.h
 include/gtkmm-2.4/gtkmm/pagesetupunixdialog.h
 include/gtkmm-2.4/gtkmm/paned.h
@@ -215,6 +217,7 @@ include/gtkmm-2.4/gtkmm/private/accelgroup_p.h
 include/gtkmm-2.4/gtkmm/private/accellabel_p.h
 include/gtkmm-2.4/gtkmm/private/action_p.h
 include/gtkmm-2.4/gtkmm/private/actiongroup_p.h
+include/gtkmm-2.4/gtkmm/private/activatable_p.h
 include/gtkmm-2.4/gtkmm/private/adjustment_p.h
 include/gtkmm-2.4/gtkmm/private/alignment_p.h
 include/gtkmm-2.4/gtkmm/private/arrow_p.h
@@ -292,6 +295,7 @@ include/gtkmm-2.4/gtkmm/private/misc_p.h
 include/gtkmm-2.4/gtkmm/private/notebook_p.h
 include/gtkmm-2.4/gtkmm/private/object_p.h
 include/gtkmm-2.4/gtkmm/private/optionmenu_p.h
+include/gtkmm-2.4/gtkmm/private/orientable_p.h
 include/gtkmm-2.4/gtkmm/private/pagesetup_p.h
 include/gtkmm-2.4/gtkmm/private/pagesetupunixdialog_p.h
 include/gtkmm-2.4/gtkmm/private/paned_p.h
