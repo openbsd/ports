@@ -6,7 +6,7 @@ PUSHDIVERT(-1)
 ifdef(`ZARAFA_MAILER_ARGS',,
 		`define(`ZARAFA_MAILER_ARGS', zarafa-dagent $u)')
 ifdef(`ZARAFA_MAILER_PATH',,
-		`define(`ZARAFA_MAILER_PATH', ${PREFIX}/bin/zarafa-dagent)')
+		`define(`ZARAFA_MAILER_PATH', ${TRUEPREFIX}/bin/zarafa-dagent)')
 POPDIVERT
 #######################################
 ###   Zarafa Mailer specification   ###
