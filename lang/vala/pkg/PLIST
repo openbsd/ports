@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/08/03 10:17:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/09/18 07:44:50 ajacoutot Exp $
 %%SHARED%%
 bin/vala-gen-introspect
 @bin bin/valac
@@ -39,13 +39,20 @@ share/devhelp/books/vala/types.html
 share/devhelp/books/vala/vala.devhelp2
 share/vala/
 share/vala/vapi/
+share/vala/vapi/alsa.vapi
 share/vala/vapi/atk.vapi
 share/vala/vapi/bzlib.vapi
 share/vala/vapi/cairo-xcb.deps
 share/vala/vapi/cairo-xcb.vapi
 share/vala/vapi/cairo.vapi
+share/vala/vapi/clutter-1.0.deps
+share/vala/vapi/clutter-1.0.vapi
+share/vala/vapi/clutter-json-1.0.vapi
+share/vala/vapi/cogl-1.0.deps
+share/vala/vapi/cogl-1.0.vapi
 share/vala/vapi/curses.vapi
 share/vala/vapi/dbus-glib-1.vapi
+share/vala/vapi/dconf.vapi
 share/vala/vapi/enchant.vapi
 share/vala/vapi/fuse.deps
 share/vala/vapi/fuse.vapi
@@ -59,6 +66,7 @@ share/vala/vapi/gdk-x11-2.0.vapi
 share/vala/vapi/gio-2.0.vapi
 share/vala/vapi/gio-unix-2.0.deps
 share/vala/vapi/gio-unix-2.0.vapi
+share/vala/vapi/gl-1.0.vapi
 share/vala/vapi/glib-2.0.vapi
 share/vala/vapi/gmodule-2.0.vapi
 share/vala/vapi/gnet-2.0.deps
@@ -67,6 +75,7 @@ share/vala/vapi/gnome-desktop-2.0.deps
 share/vala/vapi/gnome-desktop-2.0.vapi
 share/vala/vapi/gnome-keyring-1.vapi
 share/vala/vapi/gnome-vfs-2.0.vapi
+share/vala/vapi/gnutls.vapi
 share/vala/vapi/gobject-2.0.vapi
 share/vala/vapi/goocanvas.deps
 share/vala/vapi/goocanvas.vapi
@@ -133,6 +142,7 @@ share/vala/vapi/libgnomeui-2.0.deps
 share/vala/vapi/libgnomeui-2.0.vapi
 share/vala/vapi/libgsf-1.deps
 share/vala/vapi/libgsf-1.vapi
+share/vala/vapi/libnl-1.vapi
 share/vala/vapi/libnotify.deps
 share/vala/vapi/libnotify.vapi
 share/vala/vapi/liboobs-1.vapi
@@ -153,6 +163,8 @@ share/vala/vapi/libusb.vapi
 share/vala/vapi/libwnck-1.0.deps
 share/vala/vapi/libwnck-1.0.vapi
 share/vala/vapi/libxml-2.0.vapi
+share/vala/vapi/linux.deps
+share/vala/vapi/linux.vapi
 share/vala/vapi/loudmouth-1.0.vapi
 share/vala/vapi/lua.vapi
 share/vala/vapi/mysql.vapi
@@ -165,6 +177,8 @@ share/vala/vapi/poppler-glib.vapi
 share/vala/vapi/posix.vapi
 share/vala/vapi/raptor.vapi
 share/vala/vapi/rasqal.vapi
+share/vala/vapi/rest.deps
+share/vala/vapi/rest.vapi
 share/vala/vapi/sdl-gfx.vapi
 share/vala/vapi/sdl-image.vapi
 share/vala/vapi/sdl-mixer.vapi
