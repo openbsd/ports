@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/10/24 08:51:58 wilfried Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/09/18 10:22:25 ajacoutot Exp $
 @option no-default-conflict
 @conflict libsigc++-2.*
 @pkgpath devel/libsigc++-2
@@ -19,55 +19,23 @@ include/sigc++-${V}/sigc++/adaptors/lambda/
 include/sigc++-${V}/sigc++/adaptors/lambda/base.h
 include/sigc++-${V}/sigc++/adaptors/lambda/group.h
 include/sigc++-${V}/sigc++/adaptors/lambda/lambda.h
-include/sigc++-${V}/sigc++/adaptors/lambda/macros/
-include/sigc++-${V}/sigc++/adaptors/lambda/macros/base.h.m4
-include/sigc++-${V}/sigc++/adaptors/lambda/macros/group.h.m4
-include/sigc++-${V}/sigc++/adaptors/lambda/macros/lambda.cc.m4
-include/sigc++-${V}/sigc++/adaptors/lambda/macros/operator.h.m4
-include/sigc++-${V}/sigc++/adaptors/lambda/macros/select.h.m4
 include/sigc++-${V}/sigc++/adaptors/lambda/operator.h
 include/sigc++-${V}/sigc++/adaptors/lambda/select.h
-include/sigc++-${V}/sigc++/adaptors/macros/
-include/sigc++-${V}/sigc++/adaptors/macros/adaptor_trait.h.m4
-include/sigc++-${V}/sigc++/adaptors/macros/bind.h.m4
-include/sigc++-${V}/sigc++/adaptors/macros/bind_return.h.m4
-include/sigc++-${V}/sigc++/adaptors/macros/compose.h.m4
-include/sigc++-${V}/sigc++/adaptors/macros/deduce_result_type.h.m4
-include/sigc++-${V}/sigc++/adaptors/macros/exception_catch.h.m4
-include/sigc++-${V}/sigc++/adaptors/macros/hide.h.m4
-include/sigc++-${V}/sigc++/adaptors/macros/retype.h.m4
-include/sigc++-${V}/sigc++/adaptors/macros/retype_return.h.m4
 include/sigc++-${V}/sigc++/adaptors/retype.h
 include/sigc++-${V}/sigc++/adaptors/retype_return.h
 include/sigc++-${V}/sigc++/bind.h
 include/sigc++-${V}/sigc++/bind_return.h
 include/sigc++-${V}/sigc++/class_slot.h
-include/sigc++-${V}/sigc++/compatibility.h
 include/sigc++-${V}/sigc++/connection.h
 include/sigc++-${V}/sigc++/functors/
 include/sigc++-${V}/sigc++/functors/functor_trait.h
 include/sigc++-${V}/sigc++/functors/functors.h
-include/sigc++-${V}/sigc++/functors/macros/
-include/sigc++-${V}/sigc++/functors/macros/functor_trait.h.m4
-include/sigc++-${V}/sigc++/functors/macros/mem_fun.h.m4
-include/sigc++-${V}/sigc++/functors/macros/ptr_fun.h.m4
-include/sigc++-${V}/sigc++/functors/macros/slot.h.m4
 include/sigc++-${V}/sigc++/functors/mem_fun.h
 include/sigc++-${V}/sigc++/functors/ptr_fun.h
 include/sigc++-${V}/sigc++/functors/slot.h
 include/sigc++-${V}/sigc++/functors/slot_base.h
 include/sigc++-${V}/sigc++/hide.h
 include/sigc++-${V}/sigc++/limit_reference.h
-include/sigc++-${V}/sigc++/macros/
-include/sigc++-${V}/sigc++/macros/class_slot.h.m4
-include/sigc++-${V}/sigc++/macros/hide.h.m4
-include/sigc++-${V}/sigc++/macros/limit_reference.h.m4
-include/sigc++-${V}/sigc++/macros/method_slot.h.m4
-include/sigc++-${V}/sigc++/macros/object_slot.h.m4
-include/sigc++-${V}/sigc++/macros/retype.h.m4
-include/sigc++-${V}/sigc++/macros/signal.h.m4
-include/sigc++-${V}/sigc++/macros/slot.h.m4
-include/sigc++-${V}/sigc++/macros/template.macros.m4
 include/sigc++-${V}/sigc++/method_slot.h
 include/sigc++-${V}/sigc++/object.h
 include/sigc++-${V}/sigc++/object_slot.h
