@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:09 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2009/09/18 10:25:47 ajacoutot Exp $
 
 COMMENT=		Gameboy Advance emulator
 
 VERSION=		1.7.2
 DISTNAME=		VisualBoyAdvance-src-${VERSION}
-PKGNAME=		vba-${VERSION}p4
+PKGNAME=		vba-${VERSION}p5
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://vba.ngemu.com/
@@ -55,5 +55,11 @@ CONFIGURE_ARGS+=	--enable-c-core
 .endif
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-src//}
+
+pre-configure:
+	perl -pi -e 's|# include "sigccompat.h"||g ; \
+		s|SigC::Connection|sigc::connection|g ; \
+		s|SigC::bind|sigc::bind|g ; \
+		s|SigC::slot|sigc::mem_fun|g' ${WRKSRC}/src/gtk/*.*
 
 .include <bsd.port.mk>
