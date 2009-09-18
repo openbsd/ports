@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_linux_MGTreeTooltip_h,v 1.1 2009/09/18 10:24:50 ajacoutot Exp $
+--- source/linux/MGTreeTooltip.h.orig	Mon Sep 14 23:17:05 2009
++++ source/linux/MGTreeTooltip.h	Mon Sep 14 23:17:23 2009
+@@ -39,7 +39,7 @@ class MGTreeTooltip : public Glib::Object {
+     
+     WillShowSignal _show_signal;
+     
+-    SigC::Connection _timeout;
++    sigc::connection _timeout;
+ 
+     void expose_event(GdkEventExpose *event);
+     void leave_event(GdkEventCrossing *event);

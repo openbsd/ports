@@ -1,7 +1,27 @@
-$OpenBSD: patch-source_linux_MGConnectDialog_cc,v 1.1 2008/04/08 13:37:19 jasper Exp $
---- source/linux/MGConnectDialog.cc.orig	Tue Apr  8 14:58:03 2008
-+++ source/linux/MGConnectDialog.cc	Tue Apr  8 14:58:12 2008
-@@ -683,7 +683,7 @@ void MGConnectDialog::show_connection_failed()
+$OpenBSD: patch-source_linux_MGConnectDialog_cc,v 1.2 2009/09/18 10:24:50 ajacoutot Exp $
+--- source/linux/MGConnectDialog.cc.orig	Tue Dec  5 23:44:08 2006
++++ source/linux/MGConnectDialog.cc	Mon Sep 14 23:20:43 2009
+@@ -659,9 +659,9 @@ void MGConnectDialog::open_connection_editor()
+   // select back the original item
+   ((Gtk::OptionMenu*)_xml->get_widget("connection_list"))->set_history(_current_selected_item);
+ 
+-  SigC::Connection c1= MGPreferencesEditor::instance()->signal_closed().connect(sigc::mem_fun(*this,
++  sigc::connection c1= MGPreferencesEditor::instance()->signal_closed().connect(sigc::mem_fun(*this,
+                                                                                            &MGConnectDialog::preferences_closed));
+-  SigC::Connection c2= MGPreferencesEditor::instance()->signal_changed().connect(sigc::mem_fun(*this,
++  sigc::connection c2= MGPreferencesEditor::instance()->signal_changed().connect(sigc::mem_fun(*this,
+                                                                                             &MGConnectDialog::preferences_changed));
+   MGPreferencesEditor::instance()->show(true);
+   MGPreferencesEditor::instance()->set_modal(true);
+@@ -676,14 +676,14 @@ void MGConnectDialog::show_connection_failed()
+ {
+   Gtk::Button *btn;
+   pid_t ping_pid= 0;
+-  SigC::Connection input_handler;
++  sigc::connection input_handler;
+   int rc;
+   bool pinging= false;
+   int myerror= 0;
    Glib::ustring title= _app_title + " " + _("Error");
    char *ping_args[]= 
    {
