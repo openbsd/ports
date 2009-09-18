@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2009/09/18 10:25:22 ajacoutot Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
 DISTNAME=		workrave-1.8.5
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.workrave.org/welcome/
@@ -47,6 +47,17 @@ CFLAGS+=		-DNDEBUG
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+pre-configure:
+	perl -pi -e 's|#include <sigc\+\+\/compatibility\.h>||g ; \
+		s|SigC::Signal|sigc::signal|g ; \
+		s|SigC::slot_class|sigc::mem_fun|g ; \
+		s|SigC::Connection|sigc::connection|g ; \
+		s|SigC::Slot|sigc::slot|g ; \
+		s|SigC::Object|sigc::trackable|g ; \
+		s|SigC::slot|sigc::mem_fun|g' \
+		${WRKSRC}/frontend/gtkmm/src/*.* \
+		${WRKSRC}/frontend/plugin/*/gtkmm/src/*.*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/workrave/sound/events
