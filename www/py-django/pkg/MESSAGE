@@ -2,7 +2,11 @@ Complete documentation on Django may be found in:
 ${PREFIX}/share/doc/${LNAME}/
 
 or online:
-http://www.djangoproject.com/documentation/1.0/
+http://docs.djangoproject.com/en/dev/
+
+Release notes about the changes that occurred in
+this release may be found online at:
+http://docs.djangoproject.com/en/dev/releases/${MODPY_EGG_VERSION}/
 
 If you want a database for Django you should install the Python
 database adapter(s) of your choice ('pkg_add py-psycopg2',

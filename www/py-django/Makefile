@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/03 17:02:54 ian Exp $
+# $OpenBSD: Makefile,v 1.8 2009/09/18 13:16:51 sthen Exp $
 
 COMMENT=	high-level Python web framework
 
-V=			1.0.2
-MODPY_EGG_VERSION=	${V}-final
+MODPY_EGG_VERSION=	1.1
 LNAME=			django
 DISTNAME=		Django-${MODPY_EGG_VERSION}
-PKGNAME=		py-${LNAME}-${V}
+PKGNAME=		py-${LNAME}-${MODPY_EGG_VERSION}
 CATEGORIES=		www
 
 HOMEPAGE=	http://www.djangoproject.com/
@@ -19,17 +18,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://media.djangoproject.com/releases/${V}/
+MASTER_SITES=	http://media.djangoproject.com/releases/${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
 
 NO_REGRESS=	Yes
 
-SUBST_VARS+=	V LNAME
+SUBST_VARS+=	LNAME
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${LNAME}
-	cd ${WRKSRC}/docs && \
-		find . ! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/${LNAME}/{} \;
+	cd ${WRKSRC}/docs && pax -rw * ${PREFIX}/share/doc/${LNAME}
 
 .include <bsd.port.mk>
