@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/10/28 11:27:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/09/18 10:23:27 ajacoutot Exp $
 @pkgpath devel/glib2mm
 %%SHARED%%
 include/giomm-${V}/
@@ -14,6 +14,8 @@ include/giomm-${V}/giomm/datainputstream.h
 include/giomm-${V}/giomm/dataoutputstream.h
 include/giomm-${V}/giomm/desktopappinfo.h
 include/giomm-${V}/giomm/drive.h
+include/giomm-${V}/giomm/emblem.h
+include/giomm-${V}/giomm/emblemedicon.h
 include/giomm-${V}/giomm/enums.h
 include/giomm-${V}/giomm/error.h
 include/giomm-${V}/giomm/file.h
@@ -33,6 +35,7 @@ include/giomm-${V}/giomm/init.h
 include/giomm-${V}/giomm/inputstream.h
 include/giomm-${V}/giomm/loadableicon.h
 include/giomm-${V}/giomm/memoryinputstream.h
+include/giomm-${V}/giomm/memoryoutputstream.h
 include/giomm-${V}/giomm/mount.h
 include/giomm-${V}/giomm/mountoperation.h
 include/giomm-${V}/giomm/outputstream.h
@@ -46,6 +49,8 @@ include/giomm-${V}/giomm/private/datainputstream_p.h
 include/giomm-${V}/giomm/private/dataoutputstream_p.h
 include/giomm-${V}/giomm/private/desktopappinfo_p.h
 include/giomm-${V}/giomm/private/drive_p.h
+include/giomm-${V}/giomm/private/emblem_p.h
+include/giomm-${V}/giomm/private/emblemedicon_p.h
 include/giomm-${V}/giomm/private/enums_p.h
 include/giomm-${V}/giomm/private/error_p.h
 include/giomm-${V}/giomm/private/file_p.h
@@ -64,6 +69,7 @@ include/giomm-${V}/giomm/private/icon_p.h
 include/giomm-${V}/giomm/private/inputstream_p.h
 include/giomm-${V}/giomm/private/loadableicon_p.h
 include/giomm-${V}/giomm/private/memoryinputstream_p.h
+include/giomm-${V}/giomm/private/memoryoutputstream_p.h
 include/giomm-${V}/giomm/private/mount_p.h
 include/giomm-${V}/giomm/private/mountoperation_p.h
 include/giomm-${V}/giomm/private/outputstream_p.h
@@ -174,8 +180,6 @@ lib/glibmm-${V}/
 lib/glibmm-${V}/include/
 lib/glibmm-${V}/include/glibmmconfig.h
 lib/glibmm-${V}/proc/
-lib/glibmm-${V}/proc/beautify_docs.pl
-lib/glibmm-${V}/proc/doxygen_to_devhelp.xsl
 lib/glibmm-${V}/proc/generate_wrap_init.pl
 lib/glibmm-${V}/proc/gmmproc
 lib/glibmm-${V}/proc/m4/
@@ -231,7 +235,9 @@ lib/pkgconfig/giomm-${V}.pc
 lib/pkgconfig/glibmm-${V}.pc
 share/aclocal/
 share/aclocal/glibmm_check_perl.m4
-share/devhelp/
-share/devhelp/books/
-share/devhelp/books/glibmm-${V}/
-share/devhelp/books/glibmm-${V}/glibmm-${V}.devhelp
+share/glibmm-${V}/
+share/glibmm-${V}/doctool/
+share/glibmm-${V}/doctool/doc-install.pl
+share/glibmm-${V}/doctool/doc-postprocess.pl
+share/glibmm-${V}/doctool/doxygen.css
+share/glibmm-${V}/doctool/tagfile-to-devhelp2.xsl

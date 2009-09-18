@@ -1,17 +1,17 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2009/03/23 17:46:32 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2009/09/18 10:23:27 ajacoutot Exp $
 
 main.cc: In function `void <unnamed>::show_examples()':
 main.cc:40: error: no matching function for call to `Glib::ustring::format(
    std::ios_base&(&)(std::ios_base&), std::_Setprecision, double)'
 
---- Makefile.in.orig	Mon Mar 23 17:55:23 2009
-+++ Makefile.in	Mon Mar 23 18:43:13 2009
-@@ -212,7 +212,7 @@ top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- ACLOCAL_AMFLAGS = -I scripts
--SUBDIRS = tools glib gio examples scripts tests MSVC_Net2005 MSVC_Net2008 docs
-+SUBDIRS = tools glib gio scripts MSVC_Net2005 MSVC_Net2008 docs
- DIST_SUBDIRS = $(SUBDIRS)
- EXTRA_DIST = build_shared/Makefile_build.am_fragment \
- 		  build_shared/Makefile_build_gensrc.am_fragment \
+--- Makefile.in.orig	Wed Sep 16 16:50:14 2009
++++ Makefile.in	Wed Sep 16 16:50:54 2009
+@@ -283,7 +283,7 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-warnings=fatal
+ @MAINTAINER_MODE_TRUE@src_subdirs = glib/src gio/src
+ @ENABLE_DOCUMENTATION_FALSE@doc_subdirs = 
+ @ENABLE_DOCUMENTATION_TRUE@doc_subdirs = docs
+-SUBDIRS = tools $(src_subdirs) glib/glibmm gio/giomm tests examples $(doc_subdirs)
++SUBDIRS = tools $(src_subdirs) glib/glibmm gio/giomm $(doc_subdirs)
+ glibmm_includedir = $(includedir)/$(GLIBMM_MODULE_NAME)
+ glibmm_include_HEADERS = glib/glibmm.h
+ glibmm_libincludedir = $(libdir)/$(GLIBMM_MODULE_NAME)/include
