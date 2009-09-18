@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/09/18 16:25:35 jasper Exp $
 
 COMMENT=		X Printing Panel
 
 DISTNAME=		xpp-1.5
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		print sysutils
 
 HOMEPAGE=		http://cups.sourceforge.net/xpp/
