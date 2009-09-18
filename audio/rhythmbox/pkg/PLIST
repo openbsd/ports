@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2009/08/23 19:30:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2009/09/18 12:11:12 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 lib/librhythmbox-core.la
@@ -6,12 +6,12 @@ lib/librhythmbox-core.la
 lib/rhythmbox/
 lib/rhythmbox/plugins/
 lib/rhythmbox/plugins/artdisplay/
-lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.py
-lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.pyc
-lib/rhythmbox/plugins/artdisplay/AmazonCoverArtSearch.pyo
 lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.py
 lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyc
 lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyo
+lib/rhythmbox/plugins/artdisplay/DiscogsCoverArtSearch.py
+lib/rhythmbox/plugins/artdisplay/DiscogsCoverArtSearch.pyc
+lib/rhythmbox/plugins/artdisplay/DiscogsCoverArtSearch.pyo
 lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.py
 lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyc
 lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyo
@@ -21,6 +21,9 @@ lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyo
 lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearchGIO.py
 lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearchGIO.pyc
 lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearchGIO.pyo
+lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.py
+lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.pyc
+lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.pyo
 lib/rhythmbox/plugins/artdisplay/PodcastCoverArtSearch.py
 lib/rhythmbox/plugins/artdisplay/PodcastCoverArtSearch.pyc
 lib/rhythmbox/plugins/artdisplay/PodcastCoverArtSearch.pyo
@@ -472,6 +475,7 @@ share/locale/az/LC_MESSAGES/rhythmbox.mo
 share/locale/be/LC_MESSAGES/rhythmbox.mo
 share/locale/be@latin/LC_MESSAGES/rhythmbox.mo
 share/locale/bg/LC_MESSAGES/rhythmbox.mo
+share/locale/br/LC_MESSAGES/rhythmbox.mo
 share/locale/ca/LC_MESSAGES/rhythmbox.mo
 share/locale/cs/LC_MESSAGES/rhythmbox.mo
 share/locale/cy/LC_MESSAGES/rhythmbox.mo
