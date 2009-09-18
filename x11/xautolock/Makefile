@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2008/02/01 21:55:23 steven Exp $
+# $OpenBSD: Makefile,v 1.15 2009/09/18 20:39:32 martynas Exp $
 
 COMMENT= 		fire up programs in case of user inactivity under X
 
-DISTNAME=		xautolock-2.1
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		xautolock-2.2
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
 

@@ -1,6 +1,6 @@
---- src/engine.c.orig
-+++ src/engine.c
-@@ -209,7 +209,7 @@
+--- src/engine.c.orig	Fri Dec 28 19:15:26 2007
++++ src/engine.c	Wed Sep 16 18:19:06 2009
+@@ -210,7 +210,7 @@ evaluateTriggers (Display* d)
  #else /* VMS */
    if (lockerPid)
    {
@@ -9,7 +9,7 @@
      union wait  status;      /* childs process status */
  #else /* !UTEKV && !SYSV && !SVR4 */
      int         status = 0;  /* childs process status */
-@@ -220,7 +220,7 @@
+@@ -221,7 +221,7 @@ evaluateTriggers (Display* d)
        (void) kill (lockerPid, SIGTERM);
      }
  

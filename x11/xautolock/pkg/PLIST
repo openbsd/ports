@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:33 espie Exp $
-bin/xautolock
+@comment $OpenBSD: PLIST,v 1.5 2009/09/18 20:39:32 martynas Exp $
+@bin bin/xautolock
 @man man/cat1/xautolock.0
