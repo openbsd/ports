@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2009/09/10 21:46:10 martynas Exp $
+# $OpenBSD: Makefile,v 1.11 2009/09/18 21:42:53 martynas Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GnuPG extension for SeaMonkey
 
-VER=		0.95.7
+VER=		0.96.0
 DISTNAME=	enigmail-${VER}
-PKGNAME=	enigmail-seamonkey-${VER}p6
+PKGNAME=	enigmail-seamonkey-${VER}
 
 CATEGORIES=	mail security
 
@@ -47,6 +47,9 @@ GUID=		{847b3a00-7ab1-11d4-8f02-006008948af5}
 GLOBALDIR=	${PREFIX}/seamonkey
 
 post-extract:
+	@perl -pi -e 's|(genxpi.*) (\$$\(TARGET_XPCOM_ABI\))|\1 "\2"|g' \
+		${WRKDIST}/Makefile.in
+	@perl -pi -e 's|[-_]?\$${xpcomAbi}||g' ${WRKDIST}/genxpi
 	@mv ${WRKDIST} ${MOZBASE}/mailnews/extensions
 
 do-build:

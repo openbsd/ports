@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/01/08 20:13:30 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/09/18 21:42:53 martynas Exp $
 seamonkey/chrome/enigmail-locale.jar
-seamonkey/chrome/enigmail-skin-tbird.jar
+seamonkey/chrome/enigmail-skin-seamonkey.jar
 seamonkey/chrome/enigmail-skin.jar
 seamonkey/chrome/enigmail.jar
 @unexec %D/seamonkey/chrome/regchrome %D/seamonkey/install.js %D/seamonkey/chrome/installed-chrome.txt uninstall
 seamonkey/chrome/regchrome
+seamonkey/components/enigMsgCompFields.js
 seamonkey/components/enigmail.js
 seamonkey/components/enigmail.xpt
 seamonkey/components/enigmime.xpt
@@ -20,3 +21,5 @@ seamonkey/install.js
 @exec TEMP=`mktemp -d` && cd %D/seamonkey && env HOME=$TEMP LD_LIBRARY_PATH=%D/seamonkey ./regxpcom && rm -fr $TEMP
 @unexec TEMP=`mktemp -d` && cd %D/seamonkey && env HOME=$TEMP LD_LIBRARY_PATH=%D/seamonkey ./regchrome && rm -fr $TEMP
 @unexec TEMP=`mktemp -d` && cd %D/seamonkey && env HOME=$TEMP LD_LIBRARY_PATH=%D/seamonkey ./regxpcom && rm -fr $TEMP
+seamonkey/wrappers/
+seamonkey/wrappers/gpg-wrapper.sh
