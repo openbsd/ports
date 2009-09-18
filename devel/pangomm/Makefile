@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2009/09/18 10:23:52 ajacoutot Exp $
 
 COMMENT =		C++ interface for pango
 
-DISTNAME =		pangomm-2.14.1
-PKGNAME =		${DISTNAME}p0
+V =			2.24.0
+DISTNAME =		pangomm-${V}
 CATEGORIES =		devel x11
 
-SHARED_LIBS +=		pangomm-1.4	7.0 #.1.30
+SHARED_LIBS +=		pangomm-1.4	8.0 #.1.30
 
 HOMEPAGE =		http://www.gtkmm.org/
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		${MASTER_SITE_GNOME:=sources/pangomm/2.14/}
+MASTER_SITES =		${MASTER_SITE_GNOME:=sources/pangomm/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/gettext

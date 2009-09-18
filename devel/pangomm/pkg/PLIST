@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/11 22:50:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/09/18 10:23:52 ajacoutot Exp $
 @conflict gtk2mm-<2.14
 %%SHARED%%
 include/pangomm-1.4/
@@ -363,6 +363,8 @@ share/doc/pangomm-1.4/docs/reference/html/namespacemembers_vars.html
 share/doc/pangomm-1.4/docs/reference/html/namespaces.html
 share/doc/pangomm-1.4/docs/reference/html/namespacesigc.html
 share/doc/pangomm-1.4/docs/reference/html/namespacestatic_01const_01std.html
+share/doc/pangomm-1.4/docs/reference/html/newin2p14s.html
+share/doc/pangomm-1.4/docs/reference/html/newin2p16s.html
 share/doc/pangomm-1.4/docs/reference/html/pages.html
 share/doc/pangomm-1.4/docs/reference/html/rectangle_8h.html
 share/doc/pangomm-1.4/docs/reference/html/renderer_8h.html
