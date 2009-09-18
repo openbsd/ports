@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/09/10 22:18:59 martynas Exp $
+# $OpenBSD: Makefile,v 1.28 2009/09/18 20:35:27 martynas Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.5.3
 DISTNAME=	mozilla-1.9.1
-PKGNAME=	firefox35-${VER}
+PKGNAME=	firefox35-${VER}p0
 SO_VERSION=	21.2
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -92,6 +92,7 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--enable-system-sqlite		\
 		--enable-canvas			\
 		--disable-libxul		\
+		--disable-crashreporter		\
 		--enable-official-branding
 
 # from browser/config/mozconfig
