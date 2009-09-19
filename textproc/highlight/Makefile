@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/12 15:08:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2009/09/19 15:26:30 benoit Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-2.11
+DISTNAME =		highlight-2.12
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -30,7 +30,6 @@ NO_REGRESS =		Yes
 SHARE_DIRS =		langDefs themes
 
 post-extract:
-	rm ${WRKSRC}/src/libhighlight.so.1.0
 	gunzip ${WRKSRC}/man/highlight.1.gz
 
 do-configure:

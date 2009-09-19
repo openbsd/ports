@@ -1,13 +1,14 @@
---- src/makefile.orig	Thu Apr 23 05:32:21 2009
-+++ src/makefile	Wed May 20 10:12:35 2009
-@@ -15,10 +15,6 @@
+--- src/makefile.orig	Thu Sep 10 11:36:52 2009
++++ src/makefile	Thu Sep 10 11:37:14 2009
+@@ -15,9 +15,9 @@
  
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
  
 -CXX=c++
--
++#CXX=c++
+ 
 -CFLAGS:=-O2 ${CFLAGS}
--
- # Source paths
- CORE_DIR=./core/
- CLI_DIR=./cli/
++#CFLAGS:=-O2 ${CFLAGS}
+ #CFLAGS:=-ggdb ${CFLAGS}
+ 
+ SO_VERSION=2.12
