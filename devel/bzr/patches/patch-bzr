@@ -1,9 +1,9 @@
-$OpenBSD: patch-bzr,v 1.2 2008/04/21 19:00:56 okan Exp $
---- bzr.orig	Thu Mar 20 03:12:09 2008
-+++ bzr	Tue Apr  1 20:44:37 2008
+$OpenBSD: patch-bzr,v 1.3 2009/09/19 22:08:52 fgsch Exp $
+--- bzr.orig	Thu Aug 20 09:41:03 2009
++++ bzr	Mon Sep 14 23:10:15 2009
 @@ -1,4 +1,4 @@
 -#! /usr/bin/env python
 +#! ${MODPY_BIN}
  
- # Copyright (C) 2005, 2006, 2007, 2008 Canonical Ltd
+ # Copyright (C) 2005, 2006, 2007, 2008, 2009 Canonical Ltd
  #

@@ -1,7 +1,7 @@
-$OpenBSD: patch-bzrlib_tests_test_diff_py,v 1.1 2008/04/21 19:00:56 okan Exp $
---- bzrlib/tests/test_diff.py.orig	Thu Mar 20 03:12:10 2008
-+++ bzrlib/tests/test_diff.py	Wed Apr  2 22:52:46 2008
-@@ -270,7 +270,7 @@ class TestDiffFiles(TestCaseInTempDir):
+$OpenBSD: patch-bzrlib_tests_test_diff_py,v 1.2 2009/09/19 22:08:52 fgsch Exp $
+--- bzrlib/tests/test_diff.py.orig	Thu Aug 20 09:41:09 2009
++++ bzrlib/tests/test_diff.py	Mon Sep 14 23:10:15 2009
+@@ -261,7 +261,7 @@ class TestDiffFiles(TestCaseInTempDir):
          # Make sure external_diff doesn't fail in the current LANG
          lines = external_udiff_lines(['\x00foobar\n'], ['foo\x00bar\n'])
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-bzrlib_tests_test_diff_py,v 1.1 2008/04/21 19:00:56 okan Exp $
          open('old', 'wb').write('\x00foobar\n')
          open('new', 'wb').write('foo\x00bar\n')
          pipe = subprocess.Popen(cmd, stdout=subprocess.PIPE,
-@@ -1257,7 +1257,7 @@ class TestDiffFromTool(TestCaseWithTransport):
+@@ -1309,7 +1309,7 @@ class TestDiffFromTool(TestCaseWithTransport):
  
      def test_execute(self):
          output = StringIO()
