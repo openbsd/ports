@@ -4,4 +4,3 @@ ${PREFIX}/conf/php5/${MODULE_NAME}.ini.
 
 ln -fs ${PREFIX}/conf/php5.sample/${MODULE_NAME}.ini \
 	${PREFIX}/conf/php5/${MODULE_NAME}.ini
-

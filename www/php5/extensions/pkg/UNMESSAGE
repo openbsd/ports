@@ -3,4 +3,3 @@ ${PREFIX}/conf/php5/${MODULE_NAME}.ini symbolic link by
 issuing the following command: 
 
 rm -f ${PREFIX}/conf/php5/${MODULE_NAME}.ini
-

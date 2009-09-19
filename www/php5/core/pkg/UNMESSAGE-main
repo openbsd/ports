@@ -3,4 +3,3 @@ remove the symbolic link from ${PHP_CONFIG_PATH}/modules
 by performing the following step as root:
 
  rm -rf ${PHP_CONFIG_PATH}/modules/php5.conf
-
