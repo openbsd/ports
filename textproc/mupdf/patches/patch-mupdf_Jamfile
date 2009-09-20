@@ -1,6 +1,6 @@
-$OpenBSD: patch-mupdf_Jamfile,v 1.1 2009/06/19 13:42:29 sthen Exp $
---- mupdf/Jamfile.orig	Thu Jun 18 23:31:10 2009
-+++ mupdf/Jamfile	Fri Jun 19 14:07:32 2009
+$OpenBSD: patch-mupdf_Jamfile,v 1.2 2009/09/20 10:22:03 sthen Exp $
+--- mupdf/Jamfile.orig	Sun Sep 20 01:27:21 2009
++++ mupdf/Jamfile	Sun Sep 20 01:34:05 2009
 @@ -4,7 +4,7 @@
  
  SubDir TOP mupdf ;
@@ -10,7 +10,7 @@ $OpenBSD: patch-mupdf_Jamfile,v 1.1 2009/06/19 13:42:29 sthen Exp $
  
  Main cmapdump : cmapdump.c ;
  LinkLibraries cmapdump : libfitz ;
-@@ -167,27 +167,27 @@ Library libcmaps : cmap_korean.c ;
+@@ -166,27 +166,27 @@ Library libcmaps : cmap_korean.c ;
  
  SubDir TOP fonts ;
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-mupdf_Jamfile,v 1.1 2009/06/19 13:42:29 sthen Exp $
      NimbusSanL-Bold.cff
      NimbusSanL-BoldItal.cff
      NimbusSanL-Regu.cff
-@@ -195,17 +195,17 @@ GenFile font_sans.c : fontdump
+@@ -194,17 +194,17 @@ GenFile font_sans.c : fontdump
      ;
  
  Library libfonts :
