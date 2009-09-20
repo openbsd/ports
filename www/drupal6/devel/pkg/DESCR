@@ -5,3 +5,6 @@ Activate the modules, then add the blocks where you want them, and make
 sure the roles have the correct permissions.
 
 Do not use on production sites, for obvious reasons...
+
+PLEASE NOTE: devel_themer is incompatible with dhtml_menu !!!!
+DO NOT activate them both at once.
