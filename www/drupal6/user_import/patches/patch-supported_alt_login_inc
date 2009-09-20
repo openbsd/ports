@@ -1,0 +1,37 @@
+$OpenBSD: patch-supported_alt_login_inc,v 1.1 2009/09/20 13:32:36 espie Exp $
+--- supported/alt_login.inc.orig	Sun Sep 20 15:30:34 2009
++++ supported/alt_login.inc	Sun Sep 20 15:30:20 2009
+@@ -0,0 +1,33 @@
++<?php
++// 
++
++if (module_exists('alt_login')) {
++
++  function alt_login_user_import_form_field_match() {
++
++    $options = array();
++    $options['alt_login']['alt_login'] = t('Alternate Login');
++
++    return $options;
++  }
++
++  function alt_login_user_import_data($settings, $update_setting, $column_settings, $module, $field_id, $data, $column_id) {
++
++    if ($module != 'alt_login') return;
++
++    if ($field_id == 'alt_login') {
++      $value = trim($data[$column_id]);
++    }
++
++    return $value;
++  }
++
++  function alt_login_user_import_pre_save($settings, $account, $fields, $errors, $update_setting_per_module) {
++
++    if (!empty($fields['alt_login']['alt_login'][0])) {
++      $account_add['alt_login'] = $fields['alt_login']['alt_login'][0];
++    }
++
++    return $account_add;
++  }
++}
