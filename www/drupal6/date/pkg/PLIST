@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/07/30 03:33:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/09/20 11:57:27 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}date/
@@ -110,6 +110,7 @@ ${DRUPAL_MODS}date/date_timezone/date_timezone.js
 ${DRUPAL_MODS}date/date_timezone/date_timezone.module
 ${DRUPAL_MODS}date/date_timezone/translations/
 ${DRUPAL_MODS}date/date_timezone/translations/date_timezone.de.po
+${DRUPAL_MODS}date/date_timezone/translations/date_timezone.es.po
 ${DRUPAL_MODS}date/date_timezone/translations/date_timezone.fr.po
 ${DRUPAL_MODS}date/date_timezone/translations/date_timezone.pot
 ${DRUPAL_MODS}date/date_timezone/translations/date_timezone.sv.po
@@ -119,6 +120,7 @@ ${DRUPAL_MODS}date/date_tools/date_tools.info
 ${DRUPAL_MODS}date/date_tools/date_tools.module
 ${DRUPAL_MODS}date/date_tools/translations/
 ${DRUPAL_MODS}date/date_tools/translations/date_tools.de.po
+${DRUPAL_MODS}date/date_tools/translations/date_tools.es.po
 ${DRUPAL_MODS}date/date_tools/translations/date_tools.fr.po
 ${DRUPAL_MODS}date/date_tools/translations/date_tools.pot
 ${DRUPAL_MODS}date/help/
@@ -181,6 +183,7 @@ ${DRUPAL_MODS}date/translations/date_api.da.po
 ${DRUPAL_MODS}date/translations/date_api.de.po
 ${DRUPAL_MODS}date/translations/date_api.es.po
 ${DRUPAL_MODS}date/translations/date_api.fr.po
+${DRUPAL_MODS}date/translations/date_api.he.po
 ${DRUPAL_MODS}date/translations/date_api.it.po
 ${DRUPAL_MODS}date/translations/date_api.nl.po
 ${DRUPAL_MODS}date/translations/date_api.pot
@@ -189,6 +192,7 @@ ${DRUPAL_MODS}date/translations/date_api.sv.po
 ${DRUPAL_MODS}date/translations/general.de.po
 ${DRUPAL_MODS}date/translations/general.es.po
 ${DRUPAL_MODS}date/translations/general.fr.po
+${DRUPAL_MODS}date/translations/general.he.po
 ${DRUPAL_MODS}date/translations/general.it.po
 ${DRUPAL_MODS}date/translations/general.nl.po
 ${DRUPAL_MODS}date/translations/general.pot
@@ -197,6 +201,7 @@ ${DRUPAL_MODS}date/translations/general.sv.po
 ${DRUPAL_MODS}date/translations/includes.de.po
 ${DRUPAL_MODS}date/translations/includes.es.po
 ${DRUPAL_MODS}date/translations/includes.fr.po
+${DRUPAL_MODS}date/translations/includes.he.po
 ${DRUPAL_MODS}date/translations/includes.it.po
 ${DRUPAL_MODS}date/translations/includes.nl.po
 ${DRUPAL_MODS}date/translations/includes.pot
@@ -205,6 +210,7 @@ ${DRUPAL_MODS}date/translations/includes.sv.po
 ${DRUPAL_MODS}date/translations/theme.de.po
 ${DRUPAL_MODS}date/translations/theme.es.po
 ${DRUPAL_MODS}date/translations/theme.fr.po
+${DRUPAL_MODS}date/translations/theme.he.po
 ${DRUPAL_MODS}date/translations/theme.it.po
 ${DRUPAL_MODS}date/translations/theme.nl.po
 ${DRUPAL_MODS}date/translations/theme.pot

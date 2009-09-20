@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/07/30 03:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/20 11:57:27 espie Exp $
 
 COMMENT =	date cck and api for drupal
 
-DISTNAME = 	date-6.x-2.3
-PKGNAME =	drupal6-date-2.3
+DISTNAME = 	date-6.x-2.4
+PKGNAME =	drupal6-date-2.4
 
 RUN_DEPENDS =	::www/drupal6/cck
 
