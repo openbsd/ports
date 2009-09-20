@@ -1,0 +1,101 @@
+$OpenBSD: patch-webform_report_inc,v 1.1 2009/09/20 13:29:33 espie Exp $
+--- webform_report.inc.orig	Wed Mar  4 06:05:12 2009
++++ webform_report.inc	Sun Sep 20 15:27:43 2009
+@@ -96,7 +96,7 @@ function theme_webform_results_submissions_header($nod
+     $columns[] = array('data' => t('User'), 'field' => 'name');
+     $columns[] = array('data' => t('IP Address'), 'field' => 'remote_addr');
+   }
+-  $columns[] = array('data' => t('Operations'), 'colspan' => 3);
++  $columns[] = array('data' => t('Operations'), 'colspan' => 4);
+ 
+   return $columns;
+ }
+@@ -135,10 +135,11 @@ function theme_webform_results_submissions($node, $sub
+     $row[] = l(t('View'), "node/$node->nid/submission/$sid");
+     if ((user_access('edit own webform submissions') && ($user->uid == $submission->uid)) || user_access('edit webform submissions')) {
+       $row[] = l(t('Edit'), "node/$node->nid/submission/$sid/edit");
++      $row[] = l(t('Choose as ref'), "node/$node->nid/submission/$sid/download");
+       $row[] = l(t('Delete'), "node/$node->nid/submission/$sid/delete", array('query' => drupal_get_destination()));
+     }
+     else {
+-      $row[count($row) - 1] = array('data' => $row[count($row) - 1], 'colspan' => 3);
++      $row[count($row) - 1] = array('data' => $row[count($row) - 1], 'colspan' => 4);
+     }
+     $rows[] = $row;
+   }
+@@ -299,7 +300,7 @@ function webform_results_clear_form_submit($form, &$fo
+ /**
+  * Form to configure the download of CSV files.
+  */
+-function webform_results_download_form(&$form_state, $node) {
++function webform_results_download_form(&$form_state, $node, $ref = NULL) {
+   module_load_include('inc', 'webform', 'webform_export');
+ 
+   $form = array();
+@@ -309,6 +310,10 @@ function webform_results_download_form(&$form_state, $
+     '#value' => $node,
+   );
+ 
++  $form['ref'] = array(
++    '#type' => 'value',
++    '#value' => $ref,
++  );
+   $form['format'] = array(
+     '#type' => 'radios',
+     '#title' => t('Export format'),
+@@ -341,7 +346,7 @@ function webform_results_download_form(&$form_state, $
+ }
+ 
+ function webform_results_download_form_submit(&$form, &$form_state) {
+-  webform_results_download($form_state['values']['node'], $form_state['values']['format'], $form_state['values']);
++  webform_results_download($form_state['values']['node'], $form_state['values']['format'], $form_state['values']['ref'], $form_state['values']);
+ }
+ 
+ /**
+@@ -376,7 +381,7 @@ function webform_results_download_form_submit(&$form, 
+  *   27 Feb 2005       ,1035,56 ,212   ,X         ,        ,        ,..,       ,X          ,X       ,X       ,..,X       ,How is this?
+  *
+  */
+-function webform_results_download($node, $format = 'delimiter', $options = array()) {
++function webform_results_download($node, $format = 'delimiter', $ref = NULL, $options = array()) {
+   module_load_include('inc', 'webform', 'webform_export');
+ 
+   if (empty($options)) {
+@@ -409,7 +414,13 @@ function webform_results_download($node, $format = 'de
+       $header[2] = array_merge($header[2], (array)$component_header[2]);
+     }
+   }
++  if (!is_null($ref)) {
++    $header[0] = array_merge($header[0], array('', ''));
++    $header[1] = array_merge($header[1], array('', ''));
++    $header[2] = array_merge($header[2], array(t('answered'), t('good')));
++  }
+ 
++
+   // Add headers to the file.
+   foreach ($header as $row) {
+     $exporter->add_row($handle, $row);
+@@ -421,6 +432,7 @@ function webform_results_download($node, $format = 'de
+   // Generate a row for each submission.
+   $row_count = 0;
+   foreach ($submissions as $sid => $submission) {
++    $results = array(0, 0);
+     $row = array();
+     $row[] = ++$row_count;
+     $row[] = $sid;
+@@ -441,6 +453,15 @@ function webform_results_download($node, $format = 'de
+           $row[] = $data;
+         }
+       }
++      if (!is_null($ref)) {
++        $csv_account_function = "_webform_csv_account_". $component['type'];
++        if (function_exists($csv_account_function)) {
++          $results = $csv_account_function($results, $submission->data[$cid], $submissions[$ref->nid]->data[$cid], $component);
++        }
++      }
++    }
++    if (!is_null($ref)) {
++      $row = array_merge($row, $results);
+     }
+     // Write data from submissions.
+     $data = $exporter->add_row($handle, $row);

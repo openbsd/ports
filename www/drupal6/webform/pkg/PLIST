@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/07/26 12:20:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/09/20 13:29:33 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}webform/
@@ -17,6 +17,7 @@ ${DRUPAL_MODS}webform/components/hidden.inc
 ${DRUPAL_MODS}webform/components/markup.inc
 ${DRUPAL_MODS}webform/components/pagebreak.inc
 ${DRUPAL_MODS}webform/components/select.inc
+@comment ${DRUPAL_MODS}webform/components/select.inc.orig
 ${DRUPAL_MODS}webform/components/textarea.inc
 ${DRUPAL_MODS}webform/components/textfield.inc
 ${DRUPAL_MODS}webform/components/time.inc
@@ -49,7 +50,10 @@ ${DRUPAL_MODS}webform/webform.info
 ${DRUPAL_MODS}webform/webform.install
 ${DRUPAL_MODS}webform/webform.js
 ${DRUPAL_MODS}webform/webform.module
+@comment ${DRUPAL_MODS}webform/webform.module.orig
 ${DRUPAL_MODS}webform/webform_components.inc
+@comment ${DRUPAL_MODS}webform/webform_components.inc.orig
 ${DRUPAL_MODS}webform/webform_export.inc
 ${DRUPAL_MODS}webform/webform_report.inc
+@comment ${DRUPAL_MODS}webform/webform_report.inc.orig
 ${DRUPAL_MODS}webform/webform_submissions.inc

@@ -1,0 +1,25 @@
+$OpenBSD: patch-components_select_inc,v 1.1 2009/09/20 13:29:33 espie Exp $
+--- components/select.inc.orig	Wed Mar  4 06:05:11 2009
++++ components/select.inc	Sun Sep 20 15:27:43 2009
+@@ -401,6 +401,21 @@ function _webform_table_data_select($data) {
+   return $output;
+ }
+ 
++function _webform_csv_account_select($results, $current, $ref, $component)
++{
++  if (is_null($current['value'])) {
++        return $results;
++  }
++  if (is_null($ref['value'])) {
++        return $results;
++  }
++  $results[0] += 1;
++  if ($current['value'] == $ref['value']) {
++        $results[1] += 1;
++  }
++  return $results;
++}
++
+ 
+ /**
+  * Return the header information for this component to be displayed in a comma

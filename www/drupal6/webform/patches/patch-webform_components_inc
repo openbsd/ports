@@ -1,0 +1,20 @@
+$OpenBSD: patch-webform_components_inc,v 1.1 2009/09/20 13:29:33 espie Exp $
+--- webform_components.inc.orig	Wed Jun  3 21:47:15 2009
++++ webform_components.inc	Sun Sep 20 15:26:56 2009
+@@ -187,7 +187,7 @@ function theme_webform_components_form($form) {
+ 
+       // Add each component to a table row.
+       $row_data = array(
+-        $indents . filter_xss($component['name']),
++        $indents . filter_xss(empty($component['name']) ? $component['form_key'] : $component['name']),
+         t($component['type']),
+         ($component['value'] == '') ? '-' : $component['value'],
+         drupal_render($form['components'][$cid]['mandatory']),
+@@ -296,7 +296,6 @@ function webform_component_edit_form($form_state, &$no
+     '#default_value' => $component['name'],
+     '#title' => t('Label'),
+     '#description' => t('This is used as a descriptive label when displaying this form element.'),
+-    '#required' => TRUE,
+     '#weight' => -2,
+     '#maxlength' => 255,
+   );
