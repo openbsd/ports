@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/15 12:57:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/09/20 12:26:51 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}views_bulk_operations/
@@ -6,6 +6,7 @@ ${DRUPAL_MODS}views_bulk_operations/LICENSE.txt
 ${DRUPAL_MODS}views_bulk_operations/README.txt
 ${DRUPAL_MODS}views_bulk_operations/actions_permissions.info
 ${DRUPAL_MODS}views_bulk_operations/actions_permissions.module
+${DRUPAL_MODS}views_bulk_operations/argument_selector.action.inc
 ${DRUPAL_MODS}views_bulk_operations/delete.action.inc
 ${DRUPAL_MODS}views_bulk_operations/fields.action.inc
 ${DRUPAL_MODS}views_bulk_operations/fields.action.js
@@ -15,9 +16,11 @@ ${DRUPAL_MODS}views_bulk_operations/script.action.inc
 ${DRUPAL_MODS}views_bulk_operations/taxonomy.action.inc
 ${DRUPAL_MODS}views_bulk_operations/translations/
 ${DRUPAL_MODS}views_bulk_operations/translations/fr.po
+${DRUPAL_MODS}views_bulk_operations/translations/ja.po
 ${DRUPAL_MODS}views_bulk_operations/user_roles.action.inc
 ${DRUPAL_MODS}views_bulk_operations/views_bulk_operations.css
 ${DRUPAL_MODS}views_bulk_operations/views_bulk_operations.info
+${DRUPAL_MODS}views_bulk_operations/views_bulk_operations.install
 ${DRUPAL_MODS}views_bulk_operations/views_bulk_operations.js
 ${DRUPAL_MODS}views_bulk_operations/views_bulk_operations.module
 ${DRUPAL_MODS}views_bulk_operations/views_bulk_operations.views.inc

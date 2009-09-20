@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/27 11:36:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/09/20 12:26:51 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}ctools/
@@ -9,6 +9,8 @@ ${DRUPAL_MODS}ctools/bulk_export/
 ${DRUPAL_MODS}ctools/bulk_export/bulk_export.css
 ${DRUPAL_MODS}ctools/bulk_export/bulk_export.info
 ${DRUPAL_MODS}ctools/bulk_export/bulk_export.module
+${DRUPAL_MODS}ctools/bulk_export/translations/
+${DRUPAL_MODS}ctools/bulk_export/translations/bulk_export.pot
 ${DRUPAL_MODS}ctools/css/
 ${DRUPAL_MODS}ctools/css/collapsible-div.css
 ${DRUPAL_MODS}ctools/css/context.css
@@ -19,6 +21,37 @@ ${DRUPAL_MODS}ctools/css/wizard.css
 ${DRUPAL_MODS}ctools/ctools.info
 ${DRUPAL_MODS}ctools/ctools.install
 ${DRUPAL_MODS}ctools/ctools.module
+${DRUPAL_MODS}ctools/ctools_plugin_example/
+${DRUPAL_MODS}ctools/ctools_plugin_example/ctools_plugin_example.info
+${DRUPAL_MODS}ctools/ctools_plugin_example/ctools_plugin_example.module
+${DRUPAL_MODS}ctools/ctools_plugin_example/ctools_plugin_example.pages_default.inc
+${DRUPAL_MODS}ctools/ctools_plugin_example/help/
+${DRUPAL_MODS}ctools/ctools_plugin_example/help/Access-Plugins--Determining-access-and-visibility.html
+${DRUPAL_MODS}ctools/ctools_plugin_example/help/Argument-Plugins--Starting-at-the-beginning.html
+${DRUPAL_MODS}ctools/ctools_plugin_example/help/Chaos-Tools--CTools--Plugin-Examples.html
+${DRUPAL_MODS}ctools/ctools_plugin_example/help/Chaos-Tools--Ctools--Plugin-Examples.html
+${DRUPAL_MODS}ctools/ctools_plugin_example/help/Content-Type-Plugins--Displaying-content-using-a-context.html
+${DRUPAL_MODS}ctools/ctools_plugin_example/help/Context-plugins--Creating-a--context--from-an-argument.html
+${DRUPAL_MODS}ctools/ctools_plugin_example/help/Module-setup-and-hooks.html
+${DRUPAL_MODS}ctools/ctools_plugin_example/help/Relationships--Letting-one-context-take-us-to-another.html
+${DRUPAL_MODS}ctools/ctools_plugin_example/help/ctools_plugin_example.help.ini
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/access/
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/access/arg_length.inc
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/access/example_role.inc
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/arguments/
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/arguments/simplecontext_arg.inc
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/content_types/
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/content_types/icon_example.png
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/content_types/no_context_content_type.inc
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/content_types/relcontext_content_type.inc
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/content_types/simplecontext_content_type.inc
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/contexts/
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/contexts/relcontext.inc
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/contexts/simplecontext.inc
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/panels.pages.inc
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/relationships/
+${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/relationships/relcontext_from_simplecontext.inc
 ${DRUPAL_MODS}ctools/delegator/
 ${DRUPAL_MODS}ctools/delegator/delegator.admin.inc
 ${DRUPAL_MODS}ctools/delegator/delegator.module
@@ -121,6 +154,10 @@ ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/user_view.inc
 ${DRUPAL_MODS}ctools/page_manager/theme/
 ${DRUPAL_MODS}ctools/page_manager/theme/page-manager-edit-page.tpl.php
 ${DRUPAL_MODS}ctools/page_manager/theme/page_manager.theme.inc
+${DRUPAL_MODS}ctools/page_manager/translations/
+${DRUPAL_MODS}ctools/page_manager/translations/page_manager.de.po
+${DRUPAL_MODS}ctools/page_manager/translations/page_manager.fr.po
+${DRUPAL_MODS}ctools/page_manager/translations/page_manager.pot
 ${DRUPAL_MODS}ctools/plugins/
 ${DRUPAL_MODS}ctools/plugins/access/
 ${DRUPAL_MODS}ctools/plugins/access/compare_users.inc
@@ -205,6 +242,14 @@ ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_menu.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_path.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_publishing.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_taxonomy.inc
+${DRUPAL_MODS}ctools/plugins/content_types/page/
+${DRUPAL_MODS}ctools/plugins/content_types/page/page_breadcrumb.inc
+${DRUPAL_MODS}ctools/plugins/content_types/page/page_help.inc
+${DRUPAL_MODS}ctools/plugins/content_types/page/page_messages.inc
+${DRUPAL_MODS}ctools/plugins/content_types/page/page_mission.inc
+${DRUPAL_MODS}ctools/plugins/content_types/page/page_slogan.inc
+${DRUPAL_MODS}ctools/plugins/content_types/page/page_tabs.inc
+${DRUPAL_MODS}ctools/plugins/content_types/page/page_title.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/term_context/
 ${DRUPAL_MODS}ctools/plugins/content_types/term_context/icon_term.png
 ${DRUPAL_MODS}ctools/plugins/content_types/term_context/term_description.inc
@@ -232,6 +277,12 @@ ${DRUPAL_MODS}ctools/plugins/relationships/book_parent.inc
 ${DRUPAL_MODS}ctools/plugins/relationships/term_from_node.inc
 ${DRUPAL_MODS}ctools/plugins/relationships/term_parent.inc
 ${DRUPAL_MODS}ctools/plugins/relationships/user_from_node.inc
+${DRUPAL_MODS}ctools/translations/
+${DRUPAL_MODS}ctools/translations/ctools.de.po
+${DRUPAL_MODS}ctools/translations/ctools.fr.po
+${DRUPAL_MODS}ctools/translations/ctools.pot
+${DRUPAL_MODS}ctools/translations/general.de.po
+${DRUPAL_MODS}ctools/translations/general.pot
 ${DRUPAL_MODS}ctools/views_content/
 ${DRUPAL_MODS}ctools/views_content/plugins/
 ${DRUPAL_MODS}ctools/views_content/plugins/content_types/
@@ -243,6 +294,10 @@ ${DRUPAL_MODS}ctools/views_content/plugins/content_types/views_panes.inc
 ${DRUPAL_MODS}ctools/views_content/plugins/views/
 ${DRUPAL_MODS}ctools/views_content/plugins/views/views_content.views.inc
 ${DRUPAL_MODS}ctools/views_content/plugins/views/views_content_plugin_display_panel_pane.inc
+${DRUPAL_MODS}ctools/views_content/translations/
+${DRUPAL_MODS}ctools/views_content/translations/views_content.de.po
+${DRUPAL_MODS}ctools/views_content/translations/views_content.fr.po
+${DRUPAL_MODS}ctools/views_content/translations/views_content.pot
 ${DRUPAL_MODS}ctools/views_content/views_content.admin.inc
 ${DRUPAL_MODS}ctools/views_content/views_content.info
 ${DRUPAL_MODS}ctools/views_content/views_content.module
