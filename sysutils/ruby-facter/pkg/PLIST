@@ -1,21 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/07/11 10:39:10 msf Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/09/21 07:31:14 msf Exp $
 bin/facter
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/
 lib/ruby/site_ruby/${MODRUBY_REV}/facter.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/Cfkey.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/architecture.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/domain.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/ec2.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/facterversion.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/fqdn.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/hardwareisa.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/hardwaremodel.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/hostname.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/id.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/interfaces.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/ipaddress.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/iphostnumber.rb
-lib/ruby/site_ruby/${MODRUBY_REV}/facter/ipmess.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/kernel.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/kernelmajversion.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/kernelrelease.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/kernelversion.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/lsb.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/lsbmajdistrelease.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/macaddress.rb
@@ -23,15 +26,20 @@ lib/ruby/site_ruby/${MODRUBY_REV}/facter/macosx.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/manufacturer.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/memory.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/netmask.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/network.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/operatingsystem.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/operatingsystemrelease.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/physicalprocessorcount.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/processor.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/ps.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/puppetversion.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/rubysitedir.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/rubyversion.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/selinux.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/ssh.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/timezone.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/uniqueid.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/uptime.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/util/
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/util/collection.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/util/confine.rb
@@ -47,5 +55,8 @@ lib/ruby/site_ruby/${MODRUBY_REV}/facter/util/plist.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/util/plist/generator.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/util/plist/parser.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/facter/util/resolution.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/util/uptime.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/util/values.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/facter/virtual.rb
 share/examples/ruby-facter/
 share/examples/ruby-facter/facter.conf

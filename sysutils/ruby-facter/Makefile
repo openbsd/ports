@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2008/07/12 08:07:23 msf Exp $
+# $OpenBSD: Makefile,v 1.9 2009/09/21 07:31:14 msf Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
-VERSION=	1.5.0
+VERSION=	1.5.6
 DISTNAME=	facter-${VERSION}
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	sysutils
-EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://reductivelabs.com/projects/facter/
 MASTER_SITES=	http://reductivelabs.com/downloads/facter/
