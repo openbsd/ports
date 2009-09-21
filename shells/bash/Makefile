@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2009/09/18 17:28:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2009/09/21 01:34:41 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-4.0
-PKGNAME=	${DISTNAME}.33
+PKGNAME=	${DISTNAME}.33p0
 CATEGORIES=	shells
 HOMEPAGE=	http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 
@@ -27,7 +27,7 @@ MODULES=	devel/gettext
 WANTLIB=	c termcap 
 
 BUILD_DEPENDS=	::devel/bison
-YACC=		${LOCALBASE}/bin/bison
+YACC=		${LOCALBASE}/bin/bison -y
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-multibyte	# missing wcscoll(3)
