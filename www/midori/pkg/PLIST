@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/08/17 19:33:36 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/09/21 08:01:25 landry Exp $
 @bin bin/midori
 lib/midori/
 lib/midori/libadblock.so
@@ -35,6 +35,8 @@ share/icons/hicolor/32x32/status/news-feed.png
 share/icons/hicolor/48x48/apps/midori.png
 share/icons/hicolor/48x48/categories/extension.png
 share/icons/hicolor/48x48/status/news-feed.png
+share/locale/ast/LC_MESSAGES/midori.mo
+share/locale/ca/LC_MESSAGES/midori.mo
 share/locale/cs/LC_MESSAGES/midori.mo
 share/locale/da/LC_MESSAGES/midori.mo
 share/locale/de/LC_MESSAGES/midori.mo
@@ -53,6 +55,7 @@ share/locale/ja/LC_MESSAGES/midori.mo
 share/locale/nl/LC_MESSAGES/midori.mo
 share/locale/pl/LC_MESSAGES/midori.mo
 share/locale/pt/LC_MESSAGES/midori.mo
+share/locale/pt_BR/LC_MESSAGES/midori.mo
 share/locale/ro/LC_MESSAGES/midori.mo
 share/locale/ru/LC_MESSAGES/midori.mo
 share/locale/sk/LC_MESSAGES/midori.mo
