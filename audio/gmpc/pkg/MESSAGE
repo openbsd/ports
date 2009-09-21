@@ -1,8 +1,0 @@
-For people upgrading from gmpc 0.15.1 or older, you will have to
-manually migrate your existing configuration:
-
-$ mv ~/.gmpc ~/.config/gmpc
-$ mv ~/.covers ~/.config/covers
-
-edit ~/.config/gmpc/gmpc.cfg, and adjust the path to profiles.cfg
-at line 'profile-file'.
