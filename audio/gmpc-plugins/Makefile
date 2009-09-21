@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2009/09/08 21:56:34 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2009/09/21 18:33:57 landry Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT-main =		bundle of plugins for gmpc
 COMMENT-wikipedia =	wikipedia plugin for gmpc
 
-VERSION =	0.18.0
+VERSION =	0.19.0
 DISTNAME =	gmpc-plugins-${VERSION}
-PKGNAME-main =		${DISTNAME}p4
-PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}p1
+PKGNAME-main =		${DISTNAME}
+PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
 
 CATEGORIES =	audio
 
@@ -37,18 +37,18 @@ MODULES =	devel/gettext
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			tag,tag_c:taglib->=1.5:audio/taglib \
-			xosd::x11/xosd \
+			dbus-glib-1::x11/dbus-glib \
 			avahi-client,avahi-common,avahi-glib::net/avahi
-WANTLIB-main = ${WANTLIB} crypto curl dbus-1 glade-2.0 idn pthread ssl
+WANTLIB-main = ${WANTLIB} dbus-1 glade-2.0
 
 LIB_DEPENDS-wikipedia =	${LIB_DEPENDS} \
 			webkit-1.0::www/webkit
-WANTLIB-wikipedia =	${WANTLIB} enchant gcrypt gnutls gpg-error \
+WANTLIB-wikipedia =	${WANTLIB} ICE SM Xt enchant gcrypt gnutls gpg-error \
 			icudata icui18n icuuc jpeg soup-2.4 tasn1 xslt \
 			gailutil
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo
 WANTLIB += expat fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m mpd pango-1.0
@@ -69,5 +69,8 @@ CONFIGURE_STYLE =gnu
 CONFIGURE_ARGS+=--disable-mserver \
 		--disable-libnotify \
 		--disable-lirc
+
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
