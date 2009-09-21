@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.34 2009/09/07 21:35:34 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.35 2009/09/21 13:10:18 sthen Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -144,6 +144,7 @@ share/mysql-test/extra/rpl_tests/rpl_loaddata.test
 share/mysql-test/extra/rpl_tests/rpl_loadfile.test
 share/mysql-test/extra/rpl_tests/rpl_log.test
 share/mysql-test/extra/rpl_tests/rpl_max_relay_size.test
+share/mysql-test/extra/rpl_tests/rpl_mixing_engines.test
 share/mysql-test/extra/rpl_tests/rpl_multi_query.test
 share/mysql-test/extra/rpl_tests/rpl_multi_update.test
 share/mysql-test/extra/rpl_tests/rpl_multi_update2.test
@@ -311,6 +312,7 @@ share/mysql-test/include/not_valgrind.inc
 share/mysql-test/include/not_windows.inc
 share/mysql-test/include/one_thread_per_connection.inc
 share/mysql-test/include/parser_bug21114.inc
+share/mysql-test/include/partition_date_range.inc
 share/mysql-test/include/ps_conv.inc
 share/mysql-test/include/ps_create.inc
 share/mysql-test/include/ps_ddl_1.inc
@@ -326,6 +328,7 @@ share/mysql-test/include/reset_master_and_slave.inc
 share/mysql-test/include/restart_mysqld.inc
 share/mysql-test/include/rowid_order.inc
 share/mysql-test/include/rpl_events.inc
+share/mysql-test/include/rpl_loaddata_charset.inc
 share/mysql-test/include/rpl_multi_engine.inc
 share/mysql-test/include/rpl_multi_engine2.inc
 share/mysql-test/include/rpl_multi_engine3.inc
@@ -531,6 +534,7 @@ share/mysql-test/r/delayed.result
 share/mysql-test/r/delete.result
 share/mysql-test/r/derived.result
 share/mysql-test/r/dirty_close.result
+share/mysql-test/r/disabled_partition.require
 share/mysql-test/r/distinct.result
 share/mysql-test/r/drop.result
 share/mysql-test/r/empty_table.result
@@ -820,6 +824,7 @@ share/mysql-test/r/partition_bug18198.result
 share/mysql-test/r/partition_charset.result
 share/mysql-test/r/partition_csv.result
 share/mysql-test/r/partition_datatype.result
+share/mysql-test/r/partition_disabled.result
 share/mysql-test/r/partition_error.result
 share/mysql-test/r/partition_federated.result
 share/mysql-test/r/partition_grant.result
@@ -1054,6 +1059,7 @@ share/mysql-test/std_data/loaddata5.dat
 share/mysql-test/std_data/loaddata6.dat
 share/mysql-test/std_data/loaddata_dq.dat
 share/mysql-test/std_data/loaddata_pair.dat
+share/mysql-test/std_data/loaddata_utf8.dat
 share/mysql-test/std_data/master-bin.000001
 share/mysql-test/std_data/ndb_backup50/
 share/mysql-test/std_data/ndb_backup50/BACKUP-1-0.1.Data
@@ -1100,6 +1106,7 @@ share/mysql-test/std_data/parts/part_supported_sql_funcs_int_date.inc
 share/mysql-test/std_data/parts/part_supported_sql_funcs_int_float.inc
 share/mysql-test/std_data/parts/part_supported_sql_funcs_int_int.inc
 share/mysql-test/std_data/parts/part_supported_sql_funcs_int_time.inc
+share/mysql-test/std_data/parts/t1.frm
 share/mysql-test/std_data/parts/t1_will_crash#P#p1_first_1024.MYD
 share/mysql-test/std_data/parts/t1_will_crash#P#p2.MYD
 share/mysql-test/std_data/parts/t1_will_crash#P#p2.MYI
@@ -2431,6 +2438,8 @@ share/mysql-test/suite/rpl/r/rpl_colSize.result
 share/mysql-test/suite/rpl/r/rpl_commit_after_flush.result
 share/mysql-test/suite/rpl/r/rpl_concurrency_error.result
 share/mysql-test/suite/rpl/r/rpl_create_database.result
+share/mysql-test/suite/rpl/r/rpl_create_if_not_exists.result
+share/mysql-test/suite/rpl/r/rpl_create_tmp_table_if_not_exists.result
 share/mysql-test/suite/rpl/r/rpl_critical_errors.result
 share/mysql-test/suite/rpl/r/rpl_critical_errors.result.txt
 share/mysql-test/suite/rpl/r/rpl_cross_version.result
@@ -2606,6 +2615,7 @@ share/mysql-test/suite/rpl/r/rpl_stm_insert_delayed.result
 share/mysql-test/suite/rpl/r/rpl_stm_loadfile.result
 share/mysql-test/suite/rpl/r/rpl_stm_log.result
 share/mysql-test/suite/rpl/r/rpl_stm_max_relay_size.result
+share/mysql-test/suite/rpl/r/rpl_stm_mixing_engines.result
 share/mysql-test/suite/rpl/r/rpl_stm_multi_query.result
 share/mysql-test/suite/rpl/r/rpl_stm_no_op.result
 share/mysql-test/suite/rpl/r/rpl_stm_reset_slave.result
@@ -2675,6 +2685,8 @@ share/mysql-test/suite/rpl/t/rpl_concurrency_error.test
 share/mysql-test/suite/rpl/t/rpl_create_database-master.opt
 share/mysql-test/suite/rpl/t/rpl_create_database-slave.opt
 share/mysql-test/suite/rpl/t/rpl_create_database.test
+share/mysql-test/suite/rpl/t/rpl_create_if_not_exists.test
+share/mysql-test/suite/rpl/t/rpl_create_tmp_table_if_not_exists.test
 share/mysql-test/suite/rpl/t/rpl_critical_errors.test
 share/mysql-test/suite/rpl/t/rpl_cross_version-master.opt
 share/mysql-test/suite/rpl/t/rpl_cross_version.test
@@ -2914,6 +2926,7 @@ share/mysql-test/suite/rpl/t/rpl_stm_log-master.opt
 share/mysql-test/suite/rpl/t/rpl_stm_log-slave.opt
 share/mysql-test/suite/rpl/t/rpl_stm_log.test
 share/mysql-test/suite/rpl/t/rpl_stm_max_relay_size.test
+share/mysql-test/suite/rpl/t/rpl_stm_mixing_engines.test
 share/mysql-test/suite/rpl/t/rpl_stm_multi_query.test
 share/mysql-test/suite/rpl/t/rpl_stm_no_op.test
 share/mysql-test/suite/rpl/t/rpl_stm_reset_slave.test
@@ -3483,6 +3496,8 @@ share/mysql-test/t/partition_bug18198.test
 share/mysql-test/t/partition_charset.test
 share/mysql-test/t/partition_csv.test
 share/mysql-test/t/partition_datatype.test
+share/mysql-test/t/partition_disabled-master.opt
+share/mysql-test/t/partition_disabled.test
 share/mysql-test/t/partition_error.test
 share/mysql-test/t/partition_federated.test
 share/mysql-test/t/partition_grant.test

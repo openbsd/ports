@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.32 2009/09/07 21:35:34 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.33 2009/09/21 13:10:18 sthen Exp $
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
 @bin bin/innochecksum
@@ -43,7 +43,6 @@ lib/mysql/plugin/ha_innodb_plugin.so.0.0
 @bin libexec/mysqlmanager
 @man man/man1/comp_err.1
 @man man/man1/innochecksum.1
-@man man/man1/make_win_bin_dist.1
 @man man/man1/msql2mysql.1
 @man man/man1/my_print_defaults.1
 @man man/man1/myisam_ftdump.1
