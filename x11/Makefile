@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.394 2009/09/10 22:31:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.395 2009/09/22 15:11:03 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -182,6 +182,7 @@
      SUBDIR += py-Xlib
      SUBDIR += py-gtk2
      SUBDIR += py-gtksourceview
+     SUBIDR += py-kiwi
      SUBDIR += py-osd
      SUBDIR += py-qt3
      SUBDIR += py-qt4
