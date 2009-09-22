@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_rmdConfig_py_in,v 1.1 2009/09/22 12:11:02 ajacoutot Exp $
+
+Disable sound by default as it requires configuration and will not
+work out-of-the-box.
+
+--- src/rmdConfig.py.in.orig	Tue Sep 22 14:08:30 2009
++++ src/rmdConfig.py.in	Tue Sep 22 14:08:40 2009
+@@ -8,7 +8,7 @@ locale_install_dir=os.path.join('@DATADIR@'.replace("$
+ 
+ default_values=[15,     #framerate
+                 0,      #cursor
+-                True,   #sound
++                False,  #sound
+                 1,      #full shots,0 on 1 off
+                 os.path.join(os.getenv('HOME'),'out.ogv'), #filename
+                 [-1,-1,-1,-1],  #recording area(<0 means auto)
