@@ -1,15 +1,6 @@
-$OpenBSD: patch-doc_hiawatha_1_in,v 1.6 2009/07/23 05:54:15 ajacoutot Exp $
---- doc/hiawatha.1.in.orig	Thu Jul  2 08:06:18 2009
-+++ doc/hiawatha.1.in	Thu Jul 23 07:48:49 2009
-@@ -23,7 +23,7 @@ hiawatha \- Advanced and secure webserver
- Hiawatha is a secure webserver for Unix. It has been written with 'being secure' as its main goal. Hiawatha has lots of features that no other webserver has. This and the fact that Hiawatha's source code is free of security-bugs, makes Hiawatha the most secure webserver available.
- .br
- 
--Hiawatha has been tested and runs perfectly on Linux, FreeBSD, MacOS X and Cygwin.
-+Hiawatha has been tested and runs perfectly on Linux, {Open,Free}BSD, MacOS X and Cygwin.
- 
- .\" ==========[ Configuration files ]==========================================
- .SH CONFIGURATION FILES
+$OpenBSD: patch-doc_hiawatha_1_in,v 1.7 2009/09/22 09:29:25 ajacoutot Exp $
+--- doc/hiawatha.1.in.orig	Tue Sep 22 11:02:23 2009
++++ doc/hiawatha.1.in	Tue Sep 22 11:04:59 2009
 @@ -150,12 +150,12 @@ Example: CGIextension = cgi
  .B CGIhandler = <CGI handler>:<extension>[, <extension>, ...]
  Specify the handler for a CGI extension. A handler is an executable which will 'run' the CGI script.
@@ -39,11 +30,11 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.6 2009/07/23 05:54:15 ajacoutot Exp $
  The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here.
  .br
 -Default = 65534:65534, example: ServerId = www-data
-+Default = 579:579, example: ServerId = www-data
++Default = 579:579, example: ServerId = _hiawatha
  .TP
  .B ServerRoot = <directory>
  Rootdirectory for the webserver. Hiawatha will chroot() to this directory after reading the configurationfile and writing the PID file. Cannot be used in combination with UserWebsites.
-@@ -816,7 +816,7 @@ and
+@@ -821,7 +821,7 @@ and
  .B UseGZfile
  
  .SH MIMETYPES
@@ -52,15 +43,15 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.6 2009/07/23 05:54:15 ajacoutot Exp $
  .TP
  .B <mimetype> <extension> [<extension> ...]
  Example: image/jpeg jpg jpeg jpe
-@@ -843,15 +843,15 @@ Unban all IP addresses.
+@@ -848,15 +848,15 @@ Unban all IP addresses.
  Clear the internal cache (requires that Hiawatha was not compiled with --disable-cache).
  
  .SH FILES
 -.B /usr/sbin/hiawatha
 +.B ${PREFIX}/sbin/hiawatha
  .br
--.B /etc/hiawatha/httpd.conf
-+.B ${SYSCONFDIR}/hiawatha/httpd.conf
+-.B /etc/hiawatha/hiawatha.conf
++.B ${SYSCONFDIR}/hiawatha/hiawatha.conf
  .br
 -.B /etc/hiawatha/mime.types
 +.B ${SYSCONFDIR}/hiawatha/mime.types
