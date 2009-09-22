@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.59 2009/03/05 05:38:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.60 2009/09/22 05:14:43 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
+SHARED_ONLY=	Yes
 
 COMMENT=	fast and customizable WWW browser
 
-V=		9.64
-OPERA_BUILD=	2480
-DISTNAME=	opera-${V}.gcc295-static-qt3.i386
+V=		10.00
+OPERA_BUILD=	4585
+DISTNAME=	opera-${V}.gcc4-shared-qt3.i386
 PKGNAME=	opera-${V}
 CATEGORIES=	www
 
@@ -31,7 +32,7 @@ MASTER_SITES_OPERA=	ftp://ftp.opera.com/pub/opera/ \
 			ftp://ftp.rge.com/pub/infosystems/opera/ \
 			http://www.rge.com/pub/infosystems/opera/
 
-MASTER_SITES=	${MASTER_SITES_OPERA:=linux/${V:S/.//}/final/en/i386/static/}
+MASTER_SITES=	${MASTER_SITES_OPERA:=linux/${V:S/.//}/final/en/i386/shared/}
 EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	::devel/desktop-file-utils \
@@ -40,7 +41,7 @@ RUN_DEPENDS=	::devel/desktop-file-utils \
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-WRKDIST=	${WRKDIR}/opera-$V-${OPERA_BUILD}.gcc295-static-qt3.i386
+WRKDIST=	${WRKDIR}/opera-$V-${OPERA_BUILD}.gcc4-shared-qt3.i386
 
 do-install:
 	cd ${WRKBUILD} && ./install.sh \
