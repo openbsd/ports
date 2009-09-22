@@ -1,0 +1,22 @@
+$OpenBSD: patch-mono_arch_arm_Makefile_in,v 1.1 2009/09/22 11:19:37 ajacoutot Exp $
+--- mono/arch/arm/Makefile.in.orig	Tue Sep 22 12:34:12 2009
++++ mono/arch/arm/Makefile.in	Tue Sep 22 12:34:25 2009
+@@ -525,15 +525,15 @@ uninstall-am:
+ 
+ 
+ arm_dpimacros.h: dpiops.sh mov_macros.th dpi_macros.th cmp_macros.th
+-	(cd $(srcdir); bash ./dpiops.sh) > $@t
++	(cd $(srcdir); sh ./dpiops.sh) > $@t
+ 	mv $@t $@
+ 
+ arm_fpamacros.h: fpaops.sh fpam_macros.th fpa_macros.th
+-	(cd $(srcdir); bash ./fpaops.sh) > $@t
++	(cd $(srcdir); sh ./fpaops.sh) > $@t
+ 	mv $@t $@
+ 
+ arm_vfpmacros.h: vfpops.sh vfpm_macros.th vfp_macros.th
+-	(cd $(srcdir); bash ./vfpops.sh) > $@t
++	(cd $(srcdir); sh ./vfpops.sh) > $@t
+ 	mv $@t $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

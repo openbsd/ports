@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2009/09/06 07:25:27 ajacoutot Exp $
---- configure.orig	Wed Aug 19 19:39:29 2009
-+++ configure	Tue Sep  1 14:43:13 2009
+$OpenBSD: patch-configure,v 1.3 2009/09/22 11:19:37 ajacoutot Exp $
+--- configure.orig	Sat Aug 15 03:06:17 2009
++++ configure	Mon Sep 21 23:43:54 2009
 @@ -3013,8 +3013,11 @@ _ACEOF
  		;;
  	*-*-*openbsd*)
@@ -85,3 +85,19 @@ $OpenBSD: patch-configure,v 1.2 2009/09/06 07:25:27 ajacoutot Exp $
  X11="libX11.so"
  
  sizeof_register="SIZEOF_VOID_P"
+@@ -40163,6 +40169,15 @@ _ACEOF
+ 		ACCESS_UNALIGNED="no"
+ 		JIT_SUPPORTED=yes
+ 		jit_wanted=true
++		;;
++	arm*-openbsd*)
++		TARGET=ARM;
++		arch_target=arm;
++		ACCESS_UNALIGNED="no"
++		JIT_SUPPORTED=no
++		jit_wanted=no
++		INTERP_SUPPORTED=yes
++		interp_wanted=true
+ 		;;
+ 	s390-*-linux*)
+ 		TARGET=S390;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-mono_arch_arm_dpiops_sh,v 1.1 2009/09/22 11:19:37 ajacoutot Exp $
+--- mono/arch/arm/dpiops.sh.orig	Tue Sep 22 08:26:16 2009
++++ mono/arch/arm/dpiops.sh	Tue Sep 22 08:26:31 2009
+@@ -6,7 +6,7 @@ MOV_OPCODES="MOV MVN"
+ 
+ # $1: opcode list
+ # $2: template
+-function gen() {
++gen() {
+ 	for i in $1; do
+ 		sed "s/<Op>/$i/g" $2.th
+ 	done
