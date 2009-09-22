@@ -1,0 +1,74 @@
+$OpenBSD: patch-mono_mini_exceptions-arm_c,v 1.1 2009/09/22 17:55:23 ajacoutot Exp $
+--- mono/mini/exceptions-arm.c.orig	Tue Sep 22 11:43:34 2009
++++ mono/mini/exceptions-arm.c	Tue Sep 22 11:34:31 2009
+@@ -12,7 +12,9 @@
+ #include <glib.h>
+ #include <signal.h>
+ #include <string.h>
++#if HAVE_UCONTEXT_H
+ #include <ucontext.h>
++#endif
+ 
+ #include <mono/arch/arm/arm-codegen.h>
+ #include <mono/metadata/appdomain.h>
+@@ -83,6 +85,7 @@ typedef struct ucontext {
+ #if __APPLE__
+ #define my_ucontext ucontext_t
+ #else
++#ifdef MONO_ARCH_USE_SIGACTION
+ typedef struct my_ucontext {
+ 	unsigned long       uc_flags;
+ 	struct my_ucontext *uc_link;
+@@ -97,6 +100,7 @@ typedef struct my_ucontext {
+ 	 */
+ } my_ucontext;
+ #endif
++#endif
+ 
+ #define restore_regs_from_context(ctx_reg,ip_reg,tmp_reg) do {	\
+ 		ARM_LDR_IMM (code, ip_reg, ctx_reg, G_STRUCT_OFFSET (MonoContext, eip));	\
+@@ -455,6 +459,7 @@ mono_arch_find_jit_info (MonoDomain *domain, MonoJitTl
+ void
+ mono_arch_sigctx_to_monoctx (void *sigctx, MonoContext *mctx)
+ {
++#ifdef MONO_ARCH_USE_SIGACTION
+ #if BROKEN_LINUX
+ 	struct ucontext *uc = sigctx;
+ 
+@@ -469,11 +474,13 @@ mono_arch_sigctx_to_monoctx (void *sigctx, MonoContext
+ 	mctx->ebp = UCONTEXT_REG_SP (my_uc);
+ 	memcpy (&mctx->regs, &UCONTEXT_REG_R4 (my_uc), sizeof (gulong) * 8);
+ #endif
++#endif
+ }
+ 
+ void
+ mono_arch_monoctx_to_sigctx (MonoContext *mctx, void *ctx)
+ {
++#ifdef MONO_ARCH_USE_SIGACTION
+ #if BROKEN_LINUX
+ 	struct ucontext *uc = ctx;
+ 
+@@ -488,6 +495,7 @@ mono_arch_monoctx_to_sigctx (MonoContext *mctx, void *
+ 	UCONTEXT_REG_SP (my_uc) = mctx->ebp;
+ 	memcpy (&UCONTEXT_REG_R4 (my_uc), &mctx->regs, sizeof (gulong) * 8);
+ #endif
++#endif
+ }
+ 
+ /*
+@@ -512,12 +520,14 @@ mono_arch_handle_exception (void *ctx, gpointer obj, g
+ gpointer
+ mono_arch_ip_from_context (void *sigctx)
+ {
++#ifdef MONO_ARCH_USE_SIGACTION
+ #if BROKEN_LINUX
+ 	struct ucontext *uc = sigctx;
+ 	return (gpointer)uc->uc_mcontext.gregs [ARMREG_PC];
+ #else
+ 	my_ucontext *my_uc = sigctx;
+ 	return (void*) UCONTEXT_REG_PC (my_uc);
++#endif
+ #endif
+ }
+ 

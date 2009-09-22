@@ -1,0 +1,13 @@
+$OpenBSD: patch-mono_mini_mini-arm_h,v 1.1 2009/09/22 17:55:23 ajacoutot Exp $
+--- mono/mini/mini-arm.h.orig	Tue Sep 22 11:43:58 2009
++++ mono/mini/mini-arm.h	Tue Sep 22 11:34:25 2009
+@@ -137,7 +137,9 @@ typedef struct MonoCompileArch {
+ #define ARM_FIRST_ARG_REG 0
+ #define ARM_LAST_ARG_REG 3
+ 
++#ifndef __OpenBSD__
+ #define MONO_ARCH_USE_SIGACTION 1
++#endif
+ #define MONO_ARCH_NEED_DIV_CHECK 1
+ 
+ #define MONO_ARCH_HAVE_THROW_CORLIB_EXCEPTION 1

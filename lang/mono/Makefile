@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2009/09/06 07:25:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/09/22 17:55:23 ajacoutot Exp $
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc
+ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
 
 COMMENT=	cross platform, open source .NET developement framework
 
