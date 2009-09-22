@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2008/10/19 20:35:01 jasper Exp $
---- configure.orig	Mon Jul 28 00:46:30 2008
-+++ configure	Tue Oct 14 13:56:57 2008
-@@ -950,14 +950,14 @@ localstatedir='${prefix}/var'
+$OpenBSD: patch-configure,v 1.8 2009/09/22 12:51:23 jasper Exp $
+--- configure.orig	Mon Sep  7 21:01:43 2009
++++ configure	Tue Sep 22 14:32:02 2009
+@@ -1242,14 +1242,14 @@ localstatedir='${prefix}/var'
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
  docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
@@ -18,16 +18,16 @@ $OpenBSD: patch-configure,v 1.7 2008/10/19 20:35:01 jasper Exp $
  
  ac_prev=
  ac_dashdash=
-@@ -21779,7 +21779,7 @@ HAVE_DECL_GETDELIM!$HAVE_DECL_GETDELIM$ac_delim
- HAVE_DECL_GETLINE!$HAVE_DECL_GETLINE$ac_delim
- REPLACE_GETLINE!$REPLACE_GETLINE$ac_delim
+@@ -34792,7 +34792,7 @@ SERVENT_LIB!$SERVENT_LIB$ac_delim
+ GETADDRINFO_LIB!$GETADDRINFO_LIB$ac_delim
+ GETHOSTNAME_LIB!$GETHOSTNAME_LIB$ac_delim
  GETOPT_H!$GETOPT_H$ac_delim
 -LIBINTL!$LIBINTL$ac_delim
 +LIBINTL!$LTLIBINTL$ac_delim
  LTLIBINTL!$LTLIBINTL$ac_delim
- GNULIB_CHOWN!$GNULIB_CHOWN$ac_delim
- GNULIB_DUP2!$GNULIB_DUP2$ac_delim
-@@ -21930,7 +21930,7 @@ XGETTEXT_015!$XGETTEXT_015$ac_delim
+ NEXT_SYS_TIME_H!$NEXT_SYS_TIME_H$ac_delim
+ NEXT_AS_FIRST_DIRECTIVE_SYS_TIME_H!$NEXT_AS_FIRST_DIRECTIVE_SYS_TIME_H$ac_delim
+@@ -35112,7 +35112,7 @@ XGETTEXT_015!$XGETTEXT_015$ac_delim
  MSGMERGE!$MSGMERGE$ac_delim
  XGETTEXT_EXTRA_OPTIONS!$XGETTEXT_EXTRA_OPTIONS$ac_delim
  INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
