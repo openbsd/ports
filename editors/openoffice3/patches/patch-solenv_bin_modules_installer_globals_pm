@@ -1,6 +1,6 @@
---- solenv/bin/modules/installer/globals.pm.orig.port	Fri Mar 20 11:11:01 2009
-+++ solenv/bin/modules/installer/globals.pm	Thu May  7 23:14:17 2009
-@@ -230,7 +230,7 @@ BEGIN
+--- solenv/bin/modules/installer/globals.pm.orig.port	Mon Jul 27 16:31:58 2009
++++ solenv/bin/modules/installer/globals.pm	Tue Sep 22 13:38:32 2009
+@@ -231,7 +231,7 @@ BEGIN
  	$jdklib = "";
  	$jrepath = "";
  	
