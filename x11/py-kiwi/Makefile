@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/22 15:09:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/22 21:35:35 jasper Exp $
 
 COMMENT=		framework and a set of enhanced PyGTK widgets
 
 V=			1.9.26
 DISTNAME=		kiwi-$V
-PKGNAME=		py-kiwi-$V
+PKGNAME=		py-kiwi-$Vp0
 CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://www.async.com.br/projects/kiwi/
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=          ${MASTER_SITE_GNOME:=sources/kiwi/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
-MODULES=		lang/python
+MODULES=		devel/gettext \
+			lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
