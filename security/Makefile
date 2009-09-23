@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2009/09/06 14:31:23 jolan Exp $
+# $OpenBSD: Makefile,v 1.225 2009/09/23 20:33:23 jasper Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -134,6 +134,7 @@
      SUBDIR += p5-Digest-MD5-M4p
      SUBDIR += p5-Digest-Nilsimsa
      SUBDIR += p5-Digest-SHA1
+     SUBDIR += p5-Digest-Skein
      SUBDIR += p5-GPG
      SUBDIR += p5-GSSAPI
      SUBDIR += p5-GnuPG
