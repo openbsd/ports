@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/23 20:30:55 jasper Exp $
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Digest/
+${P5ARCH}/Digest/Skein.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Digest/
+${P5ARCH}/auto/Digest/Skein/
+${P5ARCH}/auto/Digest/Skein/Skein.bs
+${P5ARCH}/auto/libskein/
+${P5ARCH}/auto/libskein/extralibs.ld
+${P5ARCH}/auto/libskein/libskein.a
+@man man/man3p/Digest::Skein.3p

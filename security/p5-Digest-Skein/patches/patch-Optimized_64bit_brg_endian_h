@@ -1,0 +1,12 @@
+$OpenBSD: patch-Optimized_64bit_brg_endian_h,v 1.1.1.1 2009/09/23 20:30:55 jasper Exp $
+--- Optimized_64bit/brg_endian.h.orig	Mon Sep 21 18:47:06 2009
++++ Optimized_64bit/brg_endian.h	Mon Sep 21 19:02:04 2009
+@@ -103,6 +103,8 @@
+ #  define PLATFORM_BYTE_ORDER IS_LITTLE_ENDIAN
+ #endif
+ 
++#define PLATFORM_BYTE_ORDER !!ENDIAN!!
++
+ /*  if the platform byte order could not be determined, then try to */
+ /*  set this define using common machine defines                    */
+ #if !defined(PLATFORM_BYTE_ORDER)

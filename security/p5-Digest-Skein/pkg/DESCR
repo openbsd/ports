@@ -1,0 +1,3 @@
+Digest::Skein implements the Skein digest algorithm, submitted to NIST
+for the SHA-3 competition. Skein is "Fast, Secure, Simple, Flexible,
+Efficient. And it rhymes with rain."
