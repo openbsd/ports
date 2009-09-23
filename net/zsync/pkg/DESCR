@@ -1,0 +1,19 @@
+zsync is a file transfer program. It allows you to download a file
+from a remote server, where you have a copy of an older version of
+the file on your computer already. zsync downloads only the new
+parts of the file.
+
+* Client-side rsync - zsync uses the rsync algorithm, but runs it
+on the client side, thus avoiding the high server load associated
+with rsync.
+
+* Rsync over HTTP - zsync provides transfers that are nearly as
+efficient as rsync -z or cvsup, without the need to run a special
+server application. All that is needed is an HTTP/1.1-compliant web
+server. So it works through firewalls and on shared hosting accounts,
+and gives less security worries.
+
+* Handling for compressed files - rsync is ineffective on compressed
+files, unless they are compressed with a patched version of gzip.
+zsync has special handling for gzipped files, which enables update
+transfers of files which are distributed in compressed form.
