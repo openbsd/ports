@@ -1,0 +1,15 @@
+$OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2009/09/23 19:35:14 jasper Exp $
+
+Ensure the translation files go into the right directory.
+
+--- po/Makefile.in.in.orig	Sun Aug 30 15:37:49 2009
++++ po/Makefile.in.in	Sun Aug 30 15:38:47 2009
+@@ -33,7 +33,7 @@ exec_prefix = @exec_prefix@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+ libdir = @libdir@
+-DATADIRNAME = @DATADIRNAME@
++DATADIRNAME = share
+ itlocaledir = $(prefix)/$(DATADIRNAME)/locale
+ subdir = po
+ install_sh = @install_sh@
