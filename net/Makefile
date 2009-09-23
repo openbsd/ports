@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.590 2009/09/17 00:35:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.591 2009/09/23 19:30:03 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -501,5 +501,6 @@
      SUBDIR += zabbix,pgsql
      SUBDIR += zenirc
      SUBDIR += znc
+     SUBDIR += zsync
 
 .include <bsd.port.subdir.mk>
