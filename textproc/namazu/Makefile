@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/14 00:00:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/09/23 14:14:04 sthen Exp $
 
 COMMENT=	small to medium scale full-text search engine
-DISTNAME=	namazu-2.0.19
+DISTNAME=	namazu-2.0.20
 
 SHARED_LIBS+=	nmz 0.0	# .8.1
 
