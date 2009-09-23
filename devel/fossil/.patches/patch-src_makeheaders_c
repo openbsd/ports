@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_makeheaders_c,v 1.1.1.1 2009/09/23 19:06:46 sthen Exp $
+--- src/makeheaders.c.orig	Fri Sep 11 19:07:27 2009
++++ src/makeheaders.c	Mon Sep 14 06:43:51 2009
+@@ -4,6 +4,7 @@ static const char ident[] = "@(#) $Header: /cvstrac/cv
+ ** appropriate header files.
+ */
+ #include <stdio.h>
++#include <stdint.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+ #include <memory.h>
+@@ -2137,7 +2138,7 @@ static int ParsePreprocessor(Token *pToken, int flags,
+       zArg++;
+     }
+     if( *zArg==0 || *zArg=='\n' ){ return 0; }
+-    nArg = pToken->nText + (int)pToken->zText - (int)zArg;
++    nArg = pToken->nText + (int)(intptr_t)pToken->zText - (int)(intptr_t)zArg;
+     if( nArg==9 && strncmp(zArg,"INTERFACE",9)==0 ){
+       PushIfMacro(0,0,0,pToken->nLine,PS_Interface);
+     }else if( nArg==16 && strncmp(zArg,"EXPORT_INTERFACE",16)==0 ){
+@@ -2156,7 +2157,7 @@ static int ParsePreprocessor(Token *pToken, int flags,
+       zArg++;
+     }
+     if( *zArg==0 || *zArg=='\n' ){ return 0; }
+-    nArg = pToken->nText + (int)pToken->zText - (int)zArg;
++    nArg = pToken->nText + (int)(intptr_t)pToken->zText - (int)(intptr_t)zArg;
+     PushIfMacro("defined",zArg,nArg,pToken->nLine,0);
+   }else if( nCmd==6 && strncmp(zCmd,"ifndef",6)==0 ){
+     /*
+@@ -2167,7 +2168,7 @@ static int ParsePreprocessor(Token *pToken, int flags,
+       zArg++;
+     }
+     if( *zArg==0 || *zArg=='\n' ){ return 0; }
+-    nArg = pToken->nText + (int)pToken->zText - (int)zArg;
++    nArg = pToken->nText + (int)(intptr_t)pToken->zText - (int)(intptr_t)zArg;
+     PushIfMacro("!defined",zArg,nArg,pToken->nLine,0);
+   }else if( nCmd==4 && strncmp(zCmd,"else",4)==0 ){
+     /*
+@@ -2952,7 +2953,7 @@ static void DocumentationDump(void){
+        pDecl->zName,
+        zLabel,
+        pDecl->zFile,
+-       pDecl->pComment ? (int)pDecl->pComment/sizeof(Token) : 0,
++       pDecl->pComment ? (int)(intptr_t)pDecl->pComment/sizeof(Token) : 0,
+        pDecl->pComment ? pDecl->pComment->nText+1 : 0,
+        pDecl->zIf ? strlen(pDecl->zIf)+1 : 0,
+        zDecl ? strlen(zDecl) : 0,

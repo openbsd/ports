@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/23 19:06:46 sthen Exp $
+@bin bin/fossil

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_main_mk,v 1.1.1.1 2009/09/23 19:06:46 sthen Exp $
+--- src/main.mk.orig	Mon Sep 14 06:57:57 2009
++++ src/main.mk	Mon Sep 14 06:58:36 2009
+@@ -729,7 +729,7 @@ zip.o:	zip_.c zip.h  $(SRCDIR)/config.h
+ 
+ zip.h:	headers
+ sqlite3.o:	$(SRCDIR)/sqlite3.c
+-	$(XTCC) -DSQLITE_OMIT_LOAD_EXTENSION=1 -DSQLITE_THREADSAFE=0 -DSQLITE_DEFAULT_FILE_FORMAT=4 -Dlocaltime=fossil_localtime -c $(SRCDIR)/sqlite3.c -o sqlite3.o
++	$(XTCC) -DHAVE_STDINT_H=1 -DHAVE_INTTYPES_H=1 -DSQLITE_OMIT_LOAD_EXTENSION=1 -DSQLITE_THREADSAFE=0 -DSQLITE_DEFAULT_FILE_FORMAT=4 -Dlocaltime=fossil_localtime -c $(SRCDIR)/sqlite3.c -o sqlite3.o
+ 
+ th.o:	$(SRCDIR)/th.c
+ 	$(XTCC) -I$(SRCDIR) -c $(SRCDIR)/th.c -o th.o
