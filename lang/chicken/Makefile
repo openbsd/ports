@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2008/08/20 00:06:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2009/09/23 20:56:22 jasper Exp $
 
 COMMENT=	practical and portable Scheme system
 
@@ -27,8 +27,8 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--without-libffi
 REGRESS_TARGET=		bench
 REGRESS_DEPENDS=	:${PKGNAME}:lang/chicken
 
