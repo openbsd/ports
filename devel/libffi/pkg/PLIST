@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/23 20:55:46 jasper Exp $
+@conflict gcj-*
+%%SHARED%%
+include/ffi.h
+include/ffitarget.h
+@info info/libffi.info
+lib/libffi.a
+lib/libffi.la
+lib/pkgconfig/
+lib/pkgconfig/libffi.pc
+@man man/man3/ffi.3
+@man man/man3/ffi_call.3
+@man man/man3/ffi_prep_cif.3

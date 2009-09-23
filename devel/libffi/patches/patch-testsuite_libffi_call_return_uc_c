@@ -1,0 +1,15 @@
+$OpenBSD: patch-testsuite_libffi_call_return_uc_c,v 1.1.1.1 2009/09/23 20:55:46 jasper Exp $
+
+Fix regression test, due to "comparison between signed and unsigned"
+
+--- testsuite/libffi.call/return_uc.c.orig	Sat Sep 19 16:11:15 2009
++++ testsuite/libffi.call/return_uc.c	Sat Sep 19 16:11:19 2009
+@@ -32,7 +32,7 @@ int main (void)
+        uc < (unsigned char) '\xff'; uc++)
+     {
+       ffi_call(&cif, FFI_FN(return_uc), &rint, values);
+-      CHECK(rint == (signed int) uc);
++      CHECK(rint == (unsigned int) uc);
+     }
+   exit(0);
+ }

@@ -1,0 +1,17 @@
+$OpenBSD: patch-testsuite_libffi_call_float2_c,v 1.1.1.1 2009/09/23 20:55:46 jasper Exp $
+
+The %Lf printf format expects "long double", so cast args accordingly.
+
+Patch from NetBSD.
+
+--- testsuite/libffi.call/float2.c.orig	Sat Sep 19 15:40:48 2009
++++ testsuite/libffi.call/float2.c	Sat Sep 19 15:41:30 2009
+@@ -44,7 +44,7 @@ int main (void)
+   /* This is ifdef'd out for now. long double support under SunOS/gcc
+      is pretty much non-existent.  You'll get the odd bus error in library
+      routines like printf().  */
+-  printf ("%Lf, %Lf, %Lf, %Lf\n", ld, ldblit(f), ld - ldblit(f), LDBL_EPSILON);
++  printf ("%Lf, %Lf, %Lf, %Lf\n", (long double)ld, (long double)ldblit(f), (long double)ld - ldblit(f), (long double)LDBL_EPSILON);
+ #endif
+ 
+   /* These are not always the same!! Check for a reasonable delta */

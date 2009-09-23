@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_Makefile_in,v 1.1.1.1 2009/09/23 20:55:46 jasper Exp $
+
+Install headers into a standard directory.
+
+--- include/Makefile.in.orig	Sat Sep 19 15:03:06 2009
++++ include/Makefile.in	Sat Sep 19 15:03:49 2009
+@@ -185,7 +185,7 @@ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign
+ DISTCLEANFILES = ffitarget.h
+ EXTRA_DIST = ffi.h.in ffi_common.h
+-includesdir = $(libdir)/@PACKAGE_NAME@-@PACKAGE_VERSION@/include
++includesdir = $(includedir)
+ nodist_includes_HEADERS = ffi.h ffitarget.h 
+ all: all-am
+ 
