@@ -1,5 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/25 16:18:31 ajacoutot Exp $
-bin/gxmessage
+@comment $OpenBSD: PLIST,v 1.2 2009/09/23 16:50:01 jasper Exp $
+@bin bin/gxmessage
+@info info/gxmessage.info
 @man man/man1/gxmessage.1
-share/pixmaps/
-share/pixmaps/gxmessage.png
+share/examples/gxmessage/
+share/examples/gxmessage/gtkrc
+share/examples/gxmessage/gxaddress
+share/examples/gxmessage/gxdialup
+share/examples/gxmessage/gxdict
+share/examples/gxmessage/gxman
+share/examples/gxmessage/gxview
+share/examples/gxmessage/nautilus-word-count
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/gxmessage.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

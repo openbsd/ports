@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/09/23 16:50:01 jasper Exp $
 
-COMMENT=	GTK2 based xmessage clone
+COMMENT=	GTK+2 based xmessage(1) clone
 
-DISTNAME=	gxmessage-2.6.2
-PKGNAME=	${DISTNAME}p5
+DISTNAME=	gxmessage-2.12.3
 CATEGORIES=	x11
 
 HOMEPAGE=	http://homepages.ihug.co.nz/~trmusson/programs.html\#gxmessage
 
-# GPLv2
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -22,10 +21,18 @@ WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += z pthread-stubs xcb
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 LIB_DEPENDS=	gdk-x11-2.0,gtk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gxmessage
+	${INSTALL_DATA} ${WRKSRC}/examples/* \
+		${PREFIX}/share/examples/gxmessage
 
 .include <bsd.port.mk>
