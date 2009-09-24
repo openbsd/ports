@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.7 2009/09/18 13:49:55 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.8 2009/09/24 19:37:51 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -115,13 +115,10 @@ restart sendmail(8):
 
 2. Configuring sendmail to use the zarafa-dagent directly.
 ==========================================================
-To enable the Zarafa dagent delivery from localhost, add the following
-lines to your sendmail.mc and restart sendmail(8):
+To enable the Zarafa dagent for all other deliveries (including
+localhost), add the following lines to your sendmail.mc and restart
+sendmail(8):
     FEATURE(`local_zarafa')dnl
-    MAILER(`local')dnl
-
-To enable the Zarafa dagent for all other deliveries add the following
-lines to sendmail.mc:
     MAILER(`zarafa')dnl
 
 
