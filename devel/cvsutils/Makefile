@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/14 11:32:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/09/24 21:48:48 sthen Exp $
 
 COMMENT=	collection of useful CVS scripts
 
 DISTNAME=	cvsutils-0.2.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=     devel
 
 HOMEPAGE=	http://www.red-bean.com/cvsutils/

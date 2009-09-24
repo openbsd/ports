@@ -1,0 +1,16 @@
+$OpenBSD: patch-cvsu_pl,v 1.1 2009/09/24 21:48:49 sthen Exp $
+
+This change made in 0.2.4 doesn't work reliably with the
+version of CVS in OpenBSD.
+
+--- cvsu.pl.orig	Mon Feb 25 15:31:21 2008
++++ cvsu.pl	Thu Sep 24 22:45:16 2009
+@@ -373,7 +373,7 @@ sub process_arg ($)
+ 	    file_status ("?");
+ 	} elsif ($revision{$file} eq "0") {
+ 	    file_status ("A");
+-	} elsif ($tstamp{$file} =~ /\+/) {
++	} elsif ($tstamp{$file} =~ /^Result of merge/) {
+ 	    file_status ("G");
+ 	} elsif ($tstamp{$file} !~
+ 		/^(...) (...) (..) (..):(..):(..) (....)$/) {
