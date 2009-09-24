@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/24 19:51:44 espie Exp $
+%%SHARED%%
+bin/gflags_completions.sh
+include/gflags/
+include/gflags/gflags.h
+include/gflags/gflags_completions.h
+include/google/
+include/google/gflags.h
+include/google/gflags_completions.h
+lib/libgflags.a
+lib/libgflags.la
+lib/libgflags_nothreads.a
+lib/libgflags_nothreads.la
+share/doc/gflags/
+share/doc/gflags/AUTHORS
+share/doc/gflags/COPYING
+share/doc/gflags/ChangeLog
+share/doc/gflags/INSTALL
+share/doc/gflags/NEWS
+share/doc/gflags/README
+share/doc/gflags/designstyle.css
+share/doc/gflags/gflags.html
