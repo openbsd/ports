@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/10 16:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/09/24 16:13:26 okan Exp $
 
 COMMENT=	fast maildir search engine
 
 DISTNAME=	nmzmail-1.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	mail textproc
 HOMEPAGE=	http://www.ecademix.com/JohannesHofmann/nmzmail.html
@@ -21,7 +21,7 @@ WANTLIB=	c readline termcap
 MASTER_SITES=	${HOMEPAGE:nmzmail.html=}
 
 BUILD_DEPENDS=	::textproc/namazu
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	::textproc/namazu # not autoconf
 
 # should be 2.63
 AUTOCONF_VERSION=2.61
