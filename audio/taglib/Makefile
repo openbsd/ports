@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2009/09/22 11:16:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2009/09/24 18:15:42 jasper Exp $
 
 COMMENT=	managing meta-data of audio formats
 DISTNAME=	taglib-1.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio devel
 
 MASTER_SITES=	http://ktown.kde.org/~wheeler/files/src/
@@ -22,6 +23,7 @@ WANTLIB=	stdc++ m z
 
 CONFIGURE_ENV=	LIBS="-lstdc++ -lm"
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--enable-mp4
+CONFIGURE_ARGS+=--enable-asf \
+		--enable-mp4
 
 .include <bsd.port.mk>
