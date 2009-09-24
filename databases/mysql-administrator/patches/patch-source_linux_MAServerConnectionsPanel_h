@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_linux_MAServerConnectionsPanel_h,v 1.1 2009/09/24 11:52:21 ajacoutot Exp $
+--- source/linux/MAServerConnectionsPanel.h.orig	Thu Sep 24 10:56:26 2009
++++ source/linux/MAServerConnectionsPanel.h	Thu Sep 24 12:55:05 2009
+@@ -87,7 +87,7 @@ class MAServerConnectionsPanel : public MAPanel {
+ 
+     Glib::RefPtr<Gdk::Pixbuf> _thread_icon;
+ 
+-    SigC::Connection _timer;
++    sigc::connection _timer;
+     
+     int _current_page;
+ 

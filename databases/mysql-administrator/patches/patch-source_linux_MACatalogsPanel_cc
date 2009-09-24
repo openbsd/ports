@@ -1,0 +1,30 @@
+$OpenBSD: patch-source_linux_MACatalogsPanel_cc,v 1.1 2009/09/24 11:52:21 ajacoutot Exp $
+--- source/linux/MACatalogsPanel.cc.orig	Thu Sep 24 10:57:09 2009
++++ source/linux/MACatalogsPanel.cc	Thu Sep 24 12:55:05 2009
+@@ -1488,7 +1488,7 @@ void MACatalogsPanel::maint_next_page()
+ 
+       _maint_dlg_xml->get_button("next_button")->set_sensitive(false);
+       _maint_dlg_xml->get_note("note")->set_current_page(4);
+-      SigC::Connection conn = Glib::signal_timeout().connect(sigc::mem_fun(*this, &MACatalogsPanel::maint_pulse_progressbar), 200);
++      sigc::connection conn = Glib::signal_timeout().connect(sigc::mem_fun(*this, &MACatalogsPanel::maint_pulse_progressbar), 200);
+ 
+       status= (MYX_TABLE_COMMAND_STATUSES*)
+         _data->get_instance()->perform_data_fetch3((MInstanceInfo::DataFetcher3)myx_optimize_table,
+@@ -1528,7 +1528,7 @@ void MACatalogsPanel::maint_next_page()
+ 
+       _maint_dlg_xml->get_button("next_button")->set_sensitive(false);
+       _maint_dlg_xml->get_note("note")->set_current_page(4);      
+-      SigC::Connection conn = Glib::signal_timeout().connect(sigc::mem_fun(*this, &MACatalogsPanel::maint_pulse_progressbar), 200);
++      sigc::connection conn = Glib::signal_timeout().connect(sigc::mem_fun(*this, &MACatalogsPanel::maint_pulse_progressbar), 200);
+ 
+       status= (MYX_TABLE_COMMAND_STATUSES*)
+         _data->get_instance()->perform_data_fetch3((MInstanceInfo::DataFetcher3)myx_check_table,
+@@ -1568,7 +1568,7 @@ void MACatalogsPanel::maint_next_page()
+ 
+       _maint_dlg_xml->get_button("next_button")->set_sensitive(false);
+       _maint_dlg_xml->get_note("note")->set_current_page(4);
+-      SigC::Connection conn = Glib::signal_timeout().connect(sigc::mem_fun(*this, &MACatalogsPanel::maint_pulse_progressbar), 200);
++      sigc::connection conn = Glib::signal_timeout().connect(sigc::mem_fun(*this, &MACatalogsPanel::maint_pulse_progressbar), 200);
+ 
+       status= (MYX_TABLE_COMMAND_STATUSES*)
+         _data->get_instance()->perform_data_fetch3((MInstanceInfo::DataFetcher3)myx_repair_table,

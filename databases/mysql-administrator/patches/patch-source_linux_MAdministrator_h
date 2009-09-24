@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_linux_MAdministrator_h,v 1.1 2009/09/24 11:52:21 ajacoutot Exp $
+--- source/linux/MAdministrator.h.orig	Thu Sep 24 10:56:08 2009
++++ source/linux/MAdministrator.h	Thu Sep 24 12:55:05 2009
+@@ -66,7 +66,7 @@ class MAdministrator : public Glib::ObjectBase {
+ 
+     sigc::signal0<void> _signal_prefs_changed;
+     
+-    SigC::Connection _pulse_conn;
++    sigc::connection _pulse_conn;
+     bool pulse_progress();
+     
+     void setup_sidebar();

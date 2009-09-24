@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_linux_MABackupPanel_cc,v 1.1 2009/09/24 11:52:21 ajacoutot Exp $
+--- source/linux/MABackupPanel.cc.orig	Thu Sep 24 12:54:51 2009
++++ source/linux/MABackupPanel.cc	Thu Sep 24 12:55:05 2009
+@@ -1282,7 +1282,7 @@ void MABackupPanel::perform_backup()
+ 
+   if (_inst->check_connection())
+   {
+-    SigC::Connection con= Glib::signal_timeout().connect(sigc::bind<void*>
++    sigc::connection con= Glib::signal_timeout().connect(sigc::bind<void*>
+                                                          (sigc::mem_fun(*this, &MABackupPanel::update_backup_progress),&arg.pdata),
+                                                          50);
+     dlg->show();
