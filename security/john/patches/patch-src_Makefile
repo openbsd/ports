@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_Makefile,v 1.4 2006/01/06 04:26:09 cathcart Exp $
---- src/Makefile.orig	Mon Dec 12 19:53:36 2005
-+++ src/Makefile	Thu Jan  5 19:40:05 2006
-@@ -249,7 +249,7 @@ openbsd-x86-any-a.out:
+$OpenBSD: patch-src_Makefile,v 1.5 2009/09/24 10:32:42 benoit Exp $
+--- src/Makefile.orig	Wed Sep  9 06:17:35 2009
++++ src/Makefile	Mon Sep 21 09:43:21 2009
+@@ -268,7 +268,7 @@ freebsd-x86-any-a.out:
  	$(LN) x86-any.h arch.h
  	$(MAKE) $(PROJ) \
  		JOHN_OBJS="$(JOHN_OBJS) x86.o" \
 -		ASFLAGS="$(ASFLAGS) -DUNDERSCORES -DALIGN_LOG -DBSD"
 +		ASFLAGS="$(ASFLAGS) -DBSD"
  
- openbsd-x86-64:
- 	$(LN) x86-64.h arch.h
-@@ -288,7 +288,7 @@ use-openbsd-sparc-a.out:
+ freebsd-alpha:
+ 	$(LN) alpha.h arch.h
+@@ -336,7 +336,7 @@ use-openbsd-sparc-a.out:
  	$(MAKE) $(NAIL) \
  		BENCH_DES_OBJS_DEPEND="$(BENCH_DES_OBJS_ORIG) sparc.o" \
  		JOHN_OBJS="$(JOHN_OBJS_ORIG) sparc.o" \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_params_h,v 1.5 2007/04/26 04:14:02 ray Exp $
---- src/params.h.orig	Mon Mar 20 00:34:15 2006
-+++ src/params.h	Sun Jul 16 20:07:29 2006
+$OpenBSD: patch-src_params_h,v 1.6 2009/09/24 10:32:42 benoit Exp $
+--- src/params.h.orig	Mon Sep 14 03:13:01 2009
++++ src/params.h	Mon Sep 21 09:43:22 2009
 @@ -49,15 +49,15 @@
   * notes above.
   */
