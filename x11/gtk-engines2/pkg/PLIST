@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2009/04/14 10:13:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2009/09/24 21:13:41 ajacoutot Exp $
 @conflict gtk-thinice-engine-*
 @conflict gtk2-clearlooks-engine-<0.6.2p8
 @conflict gnome-themes-<2.10
@@ -41,8 +41,10 @@ share/locale/ar/LC_MESSAGES/gtk-engines.mo
 share/locale/as/LC_MESSAGES/gtk-engines.mo
 share/locale/be@latin/LC_MESSAGES/gtk-engines.mo
 share/locale/bg/LC_MESSAGES/gtk-engines.mo
+share/locale/bn/LC_MESSAGES/gtk-engines.mo
 share/locale/bn_IN/LC_MESSAGES/gtk-engines.mo
 share/locale/ca/LC_MESSAGES/gtk-engines.mo
+share/locale/ca@valencia/LC_MESSAGES/gtk-engines.mo
 share/locale/cs/LC_MESSAGES/gtk-engines.mo
 share/locale/da/LC_MESSAGES/gtk-engines.mo
 share/locale/de/LC_MESSAGES/gtk-engines.mo
@@ -57,6 +59,7 @@ share/locale/fr/LC_MESSAGES/gtk-engines.mo
 share/locale/fur/
 share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gtk-engines.mo
+share/locale/ga/LC_MESSAGES/gtk-engines.mo
 share/locale/gl/LC_MESSAGES/gtk-engines.mo
 share/locale/gu/LC_MESSAGES/gtk-engines.mo
 share/locale/he/LC_MESSAGES/gtk-engines.mo
@@ -67,6 +70,7 @@ share/locale/ja/LC_MESSAGES/gtk-engines.mo
 share/locale/kn/LC_MESSAGES/gtk-engines.mo
 share/locale/ko/LC_MESSAGES/gtk-engines.mo
 share/locale/lt/LC_MESSAGES/gtk-engines.mo
+share/locale/mai/LC_MESSAGES/gtk-engines.mo
 share/locale/mk/LC_MESSAGES/gtk-engines.mo
 share/locale/ml/LC_MESSAGES/gtk-engines.mo
 share/locale/mr/LC_MESSAGES/gtk-engines.mo

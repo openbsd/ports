@@ -1,48 +1,106 @@
-$OpenBSD: patch-configure,v 1.5 2009/05/19 06:46:35 ajacoutot Exp $
---- configure.orig	Mon May  4 20:56:27 2009
-+++ configure	Tue May 19 08:30:39 2009
-@@ -12976,7 +12976,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
+$OpenBSD: patch-configure,v 1.6 2009/09/24 21:13:41 ajacoutot Exp $
+--- configure.orig	Thu Sep 24 22:36:30 2009
++++ configure	Thu Sep 24 22:36:52 2009
+@@ -11606,13 +11606,13 @@ done
+ 	 || test "$gt_cv_func_ngettext_libc" != "yes" \
+          || test "$ac_cv_func_bind_textdomain_codeset" != "yes" ; then
+ 
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for bindtextdomain in -lintl" >&5
+-$as_echo_n "checking for bindtextdomain in -lintl... " >&6; }
++        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for bindtextdomain in -liconv -lintl" >&5
++$as_echo_n "checking for bindtextdomain in -liconv -lintl... " >&6; }
+ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
-+LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -13042,7 +13042,7 @@ if test "${ac_cv_lib_intl_ngettext+set}" = set; then
++LIBS="-liconv -lintl  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -11643,13 +11643,13 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_intl_bindtextdomain" >&5
+ $as_echo "$ac_cv_lib_intl_bindtextdomain" >&6; }
+ if test "x$ac_cv_lib_intl_bindtextdomain" = x""yes; then :
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ngettext in -lintl" >&5
+-$as_echo_n "checking for ngettext in -lintl... " >&6; }
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ngettext in -liconv -lintl" >&5
++$as_echo_n "checking for ngettext in -liconv -lintl... " >&6; }
+ if test "${ac_cv_lib_intl_ngettext+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
-+LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -13108,7 +13108,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
++LIBS="-liconv -lintl  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -11680,13 +11680,13 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_intl_ngettext" >&5
+ $as_echo "$ac_cv_lib_intl_ngettext" >&6; }
+ if test "x$ac_cv_lib_intl_ngettext" = x""yes; then :
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dgettext in -lintl" >&5
+-$as_echo_n "checking for dgettext in -lintl... " >&6; }
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dgettext in -liconv -lintl" >&5
++$as_echo_n "checking for dgettext in -liconv -lintl... " >&6; }
+ if test "${ac_cv_lib_intl_dgettext+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
-+LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -13332,7 +13332,7 @@ fi
++LIBS="-liconv -lintl  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -11730,13 +11730,13 @@ fi
+ $as_echo_n "checking if -liconv is needed to use gettext... " >&6; }
+ 	  { $as_echo "$as_me:${as_lineno-$LINENO}: result: " >&5
+ $as_echo "" >&6; }
+-  	  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ngettext in -lintl" >&5
+-$as_echo_n "checking for ngettext in -lintl... " >&6; }
++  	  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ngettext in -liconv -lintl" >&5
++$as_echo_n "checking for ngettext in -liconv -lintl... " >&6; }
+ if test "${ac_cv_lib_intl_ngettext+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl -liconv $LIBS"
++LIBS="-liconv -lintl -liconv $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -11767,13 +11767,13 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_intl_ngettext" >&5
+ $as_echo "$ac_cv_lib_intl_ngettext" >&6; }
+ if test "x$ac_cv_lib_intl_ngettext" = x""yes; then :
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dcgettext in -lintl" >&5
+-$as_echo_n "checking for dcgettext in -lintl... " >&6; }
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dcgettext in -liconv -lintl" >&5
++$as_echo_n "checking for dcgettext in -liconv -lintl... " >&6; }
+ if test "${ac_cv_lib_intl_dcgettext+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl -liconv $LIBS"
++LIBS="-liconv -lintl -liconv $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -11823,7 +11823,7 @@ fi
          #
          if test "$gt_cv_func_dgettext_libintl" = "yes" ; then
            glib_save_LIBS="$LIBS"
 -          LIBS="$LIBS -lintl $libintl_extra_libs"
-+          LIBS="$LIBS -lintl -liconv $libintl_extra_libs"
++          LIBS="$LIBS -liconv -lintl $libintl_extra_libs"
            unset ac_cv_func_bind_textdomain_codeset
- 
- for ac_func in bind_textdomain_codeset
-@@ -13454,7 +13454,7 @@ done
+           for ac_func in bind_textdomain_codeset
+ do :
+@@ -11855,7 +11855,7 @@ done
        fi
  
        if test "$gt_cv_func_dgettext_libintl" = "yes"; then
 -        INTLLIBS="-lintl $libintl_extra_libs"
-+        INTLLIBS="-lintl -liconv $libintl_extra_libs"
++        INTLLIBS="-liconv -lintl $libintl_extra_libs"
        fi
  
        if test "$gt_cv_have_gettext" = "yes"; then
