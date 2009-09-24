@@ -1,8 +1,8 @@
-$OpenBSD: patch-makeiso_sh,v 1.1.1.1 2009/02/09 14:54:40 form Exp $
+$OpenBSD: patch-makeiso_sh,v 1.2 2009/09/24 04:57:08 form Exp $
 $RuOBSD: patch-makeiso_sh,v 1.2 2009/02/08 07:32:31 form Exp $
---- makeiso.sh.orig	Sun Nov 16 16:09:42 2008
-+++ makeiso.sh	Sat Feb  7 23:01:20 2009
-@@ -1,23 +1,19 @@
+--- makeiso.sh.orig	Thu Sep 24 11:10:56 2009
++++ makeiso.sh	Thu Sep 24 11:16:23 2009
+@@ -1,24 +1,22 @@
  #!/bin/sh
  
 -# check to see if the correct tools are installed
@@ -22,20 +22,22 @@ $RuOBSD: patch-makeiso_sh,v 1.2 2009/02/08 07:32:31 form Exp $
  
  #check to see if memtest.bin is present
 -if [ ! -w memtest.bin ]; then 
--	echo "makeiso.sh error: cannot find memtest.bin, did you compile it?" >&2 
 +if [ ! -r memtest.bin ]; then 
-+	echo "makeiso.sh error: cannot find memtest.bin, did you compile it?" >&2
+ 	echo "makeiso.sh error: cannot find memtest.bin, did you compile it?" >&2 
  	exit 1
  fi
  
++#check to see if memtest_s.bin is present
 +if [ ! -r memtest_s.bin ]; then 
 +	echo "makeiso.sh error: cannot find memtest_s.bin, did you compile it?" >&2
 +	exit 1
 +fi
  
++
  # enlarge the size of memtest.bin
  SIZE=$(wc -c memtest.bin | awk '{print $1}')
-@@ -26,20 +22,28 @@ dd if=/dev/zero of=fill.tmp bs=$FILL count=1
+ FILL=$((1474560 - $SIZE))
+@@ -26,20 +24,29 @@
  cat memtest.bin fill.tmp > memtest.img
  rm -f fill.tmp
  
@@ -48,14 +50,12 @@ $RuOBSD: patch-makeiso_sh,v 1.2 2009/02/08 07:32:31 form Exp $
 +
  echo "Generating iso image ..."
  
--mkdir "cd"
--mkdir "cd/boot"
+ mkdir "cd"
+ mkdir "cd/boot"
 -mv memtest.img cd/boot
-+mkdir cd
-+mkdir cd/boot
  cd cd
  
--# Create the cd.README
+ # Create the cd.README
 -echo -e "There is nothing to do here\r\r\nMemtest86+ is located on the bootsector of this CD\r\r\n" > README.TXT
 -echo -e "Just boot from this CD and Memtest86+ will launch" >> README.TXT
 +echo "There is nothing to do here!" > README.TXT
@@ -63,12 +63,12 @@ $RuOBSD: patch-makeiso_sh,v 1.2 2009/02/08 07:32:31 form Exp $
 +echo "Memtest86+ is located on the bootsector of this CD." >> README.TXT
 +echo "Just boot from this CD and Memtest86+ will launch." >> README.TXT
  
--mkisofs -A "MKISOFS 1.1.2" -p "Memtest86+ 2.11" -publisher "Samuel D. <sdemeule@memtest.org>" -b boot/memtest.img -c boot/boot.catalog -V "MT201" -o memtest.iso .
--mv memtest.iso ../mt211.iso
+-mkisofs -A "MKISOFS 1.1.2" -p "Memtest86+ 4.00" -publisher "Samuel D. <sdemeule@memtest.org>" -b boot/memtest.img -c boot/boot.catalog -V "MT201" -o memtest.iso .
+-mv memtest.iso ../mt400.iso
 -cd ..
 -rm -rf cd
 -
--echo "Done! Memtest86+ ISO is mt211.iso"
+-echo "Done! Memtest86+ 4.00 ISO is mt400.iso"
 +mv ../memtest.img boot
 +mkhybrid -J -V "Memtest86+ 2.11" -b boot/memtest.img -c boot/boot.catalog \
 +    -hide boot -hide-joliet boot -o ../memtest.iso .

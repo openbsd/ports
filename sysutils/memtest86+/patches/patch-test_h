@@ -1,0 +1,10 @@
+$OpenBSD: patch-test_h,v 1.1 2009/09/24 04:57:08 form Exp $
+--- test.h.orig	Tue Sep 22 07:35:46 2009
++++ test.h	Thu Sep 24 11:05:00 2009
+@@ -348,4 +348,4 @@
+ #define CPM_SEQ    3
+ 
+ #endif /* __ASSEMBLY__ */
+-#endif /* _TEST_H_ */
+\ No newline at end of file
++#endif /* _TEST_H_ */
