@@ -1,0 +1,15 @@
+$OpenBSD: patch-giscanner_Makefile_in,v 1.1.1.1 2009/09/24 20:08:09 jasper Exp $
+
+Install Python files into the correct directory.
+
+--- giscanner/Makefile.in.orig	Thu Sep 24 21:43:04 2009
++++ giscanner/Makefile.in	Thu Sep 24 21:44:10 2009
+@@ -18,7 +18,7 @@
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+-pkglibdir = $(libdir)/@PACKAGE@
++pkglibdir = ${MODPY_SITEPKG}/@PACKAGE@
+ pkglibexecdir = $(libexecdir)/@PACKAGE@
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+ install_sh_DATA = $(install_sh) -c -m 644
