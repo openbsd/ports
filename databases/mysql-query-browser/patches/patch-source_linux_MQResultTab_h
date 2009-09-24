@@ -1,0 +1,21 @@
+$OpenBSD: patch-source_linux_MQResultTab_h,v 1.1 2009/09/24 18:23:44 ajacoutot Exp $
+--- source/linux/MQResultTab.h.orig	Thu Sep 24 20:11:21 2009
++++ source/linux/MQResultTab.h	Thu Sep 24 20:12:29 2009
+@@ -45,7 +45,7 @@ class MQResultTab : public MQBaseTab {
+ 
+       Gtk::Paned *paned;
+ 
+-      SigC::Connection scroll_con;
++      sigc::connection scroll_con;
+     };
+     
+     enum CompareAction {
+@@ -71,7 +71,7 @@ class MQResultTab : public MQBaseTab {
+ 
+     bool _vertical;
+ 
+-    SigC::Connection _sync_con1, _sync_con2;
++    sigc::connection _sync_con1, _sync_con2;
+ 
+     void scrolled(MQResultSetView *sender);
+     void activated(MQResultSetView *sender);
