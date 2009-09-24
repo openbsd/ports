@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_Resolver_cc,v 1.7 2009/09/24 06:40:05 jasper Exp $
 --- src/Resolver.cc.orig	Tue Jan 27 22:43:12 2009
 +++ src/Resolver.cc	Thu Apr  2 17:47:17 2009
 @@ -764,8 +764,6 @@ void Resolver::LookupOne(const char *name)
