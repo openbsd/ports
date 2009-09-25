@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/03/05 10:34:25 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/09/25 16:12:41 giovanni Exp $
 @bin bin/isomaster
 @man man/man1/isomaster.1
 share/applications/isomaster.desktop
@@ -10,6 +10,8 @@ share/isomaster/icons/extract2-kearone.png
 share/isomaster/icons/folder-new-kearone.png
 share/isomaster/icons/go-back-kearone.png
 share/isomaster/icons/isomaster.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/isomaster.mo
@@ -34,6 +36,7 @@ share/locale/hr/LC_MESSAGES/isomaster.mo
 share/locale/hu/LC_MESSAGES/isomaster.mo
 share/locale/id/LC_MESSAGES/isomaster.mo
 share/locale/it/LC_MESSAGES/isomaster.mo
+share/locale/lv/LC_MESSAGES/isomaster.mo
 share/locale/nb/LC_MESSAGES/isomaster.mo
 share/locale/nl/LC_MESSAGES/isomaster.mo
 share/locale/nn/LC_MESSAGES/isomaster.mo
@@ -59,5 +62,3 @@ share/locale/tr/LC_MESSAGES/isomaster.mo
 share/locale/uk/LC_MESSAGES/isomaster.mo
 share/locale/zh_CN/LC_MESSAGES/isomaster.mo
 share/locale/zh_TW/LC_MESSAGES/isomaster.mo
-@exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database

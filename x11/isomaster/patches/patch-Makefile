@@ -1,12 +1,32 @@
-$OpenBSD: patch-Makefile,v 1.5 2008/03/28 11:31:49 ajacoutot Exp $
---- Makefile.orig	Wed Dec 12 22:48:16 2007
-+++ Makefile	Sat Mar 15 12:50:37 2008
-@@ -64,7 +64,7 @@ all: translations isomaster.desktop isomaster
+$OpenBSD: patch-Makefile,v 1.6 2009/09/25 16:12:41 giovanni Exp $
+--- Makefile.orig	Tue Sep  1 06:05:28 2009
++++ Makefile	Fri Sep 25 18:04:43 2009
+@@ -67,7 +67,7 @@ all: translations isomaster.desktop isomaster
  
  isomaster: $(OBJECTS) lib iniparser
  	@echo 'Linking isomaster'
--	@$(CC) $(OBJECTS) bk/bk.a iniparser-2.17/libiniparser.a $(CFLAGS) $(CPPFLAGS) `pkg-config --libs gtk+-2.0` -o isomaster
-+	@$(CC) $(OBJECTS) bk/bk.a iniparser-2.17/libiniparser.a $(CFLAGS) $(CPPFLAGS) -lcompat `pkg-config --libs gtk+-2.0` -o isomaster
+-	@$(CC) $(OBJECTS) bk/bk.a iniparser-2.17/libiniparser.a $(LDFLAGS) $(CFLAGS) $(CPPFLAGS) `pkg-config --libs gtk+-2.0` -o isomaster
++	@$(CC) $(OBJECTS) bk/bk.a iniparser-2.17/libiniparser.a $(LDFLAGS) $(CFLAGS) $(CPPFLAGS) -lcompat `pkg-config --libs gtk+-2.0` -o isomaster
  
  # static pattern rule
  $(OBJECTS): %.o: %.c %.h bk/bk.h Makefile
+@@ -102,7 +102,7 @@ endif
+ 
+ # for info about DESTDIR see http://www.gnu.org/prep/standards/html_node/DESTDIR.html
+ 
+-install: all bk-doc
++install: all
+ 	$(INSTALL) -d $(DESTDIR)$(BINPATH)
+ 	$(INSTALL) isomaster $(DESTDIR)$(BINPATH)
+ 	cd icons && $(MAKE) install
+@@ -113,10 +113,6 @@ endif
+ 	$(INSTALL) -m 644 isomaster.1 $(DESTDIR)$(MYMANPATH)
+ 	$(INSTALL) -d $(DESTDIR)$(DESKTOPPATH)
+ 	$(INSTALL) -m 644 isomaster.desktop $(DESTDIR)$(DESKTOPPATH)
+-	$(INSTALL) -d $(DESTDIR)$(MYDOCPATH)
+-	for FILE in bkisofs-manual/*html; do \
+-            $(INSTALL) -m 644 $$FILE $(DESTDIR)$(MYDOCPATH); \
+-        done;
+ 
+ uninstall: 
+ 	$(RM) $(DESTDIR)$(BINPATH)/isomaster
