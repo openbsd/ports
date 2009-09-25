@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2009/09/25 08:12:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2009/09/25 15:56:29 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,12 +7,15 @@ COMMENT=		lightweight HTML rendering/printing/editing engine
 GNOME_PROJECT=		gtkhtml
 GNOME_VERSION=		3.28.0
 API_VERSION=		3.14
-PKGNAME=		gtkhtml3-${VERSION}
+PKGNAME=		gtkhtml3-${VERSION}p0
 
 SHARED_LIBS +=	gtkhtml-3.14         3.0      # .20.0
 SHARED_LIBS +=	gtkhtml-editor       0.0      # .0.0
 
 CATEGORIES=    		www
+
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
