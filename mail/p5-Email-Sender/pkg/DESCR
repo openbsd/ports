@@ -1,0 +1,3 @@
+Email::Sender replaces the old and sometimes problematic Email::Send
+library, which did a decent job at handling very simple email sending
+tasks, but was not suitable for serious use, for a variety of reasons.

@@ -1,0 +1,54 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/25 17:06:55 jasper Exp $
+${P5SITE}/Email/Sender/
+${P5SITE}/Email/Sender.pm
+${P5SITE}/Email/Sender/Failure/
+${P5SITE}/Email/Sender/Failure.pm
+${P5SITE}/Email/Sender/Failure/Multi.pm
+${P5SITE}/Email/Sender/Failure/Permanent.pm
+${P5SITE}/Email/Sender/Failure/Temporary.pm
+${P5SITE}/Email/Sender/Manual/
+${P5SITE}/Email/Sender/Manual.pm
+${P5SITE}/Email/Sender/Manual/QuickStart.pm
+${P5SITE}/Email/Sender/Role/
+${P5SITE}/Email/Sender/Role/CommonSending.pm
+${P5SITE}/Email/Sender/Simple.pm
+${P5SITE}/Email/Sender/Success/
+${P5SITE}/Email/Sender/Success.pm
+${P5SITE}/Email/Sender/Success/Partial.pm
+${P5SITE}/Email/Sender/Transport/
+${P5SITE}/Email/Sender/Transport.pm
+${P5SITE}/Email/Sender/Transport/DevNull.pm
+${P5SITE}/Email/Sender/Transport/Failable.pm
+${P5SITE}/Email/Sender/Transport/Maildir.pm
+${P5SITE}/Email/Sender/Transport/Mbox.pm
+${P5SITE}/Email/Sender/Transport/Print.pm
+${P5SITE}/Email/Sender/Transport/SMTP/
+${P5SITE}/Email/Sender/Transport/SMTP.pm
+${P5SITE}/Email/Sender/Transport/SMTP/Persistent.pm
+${P5SITE}/Email/Sender/Transport/Sendmail.pm
+${P5SITE}/Email/Sender/Transport/Test.pm
+${P5SITE}/Email/Sender/Transport/Wrapper.pm
+${P5SITE}/Email/Sender/Util.pm
+@man man/man3p/Email::Sender.3p
+@man man/man3p/Email::Sender::Failure.3p
+@man man/man3p/Email::Sender::Failure::Multi.3p
+@man man/man3p/Email::Sender::Failure::Permanent.3p
+@man man/man3p/Email::Sender::Failure::Temporary.3p
+@man man/man3p/Email::Sender::Manual.3p
+@man man/man3p/Email::Sender::Manual::QuickStart.3p
+@man man/man3p/Email::Sender::Role::CommonSending.3p
+@man man/man3p/Email::Sender::Simple.3p
+@man man/man3p/Email::Sender::Success.3p
+@man man/man3p/Email::Sender::Success::Partial.3p
+@man man/man3p/Email::Sender::Transport.3p
+@man man/man3p/Email::Sender::Transport::DevNull.3p
+@man man/man3p/Email::Sender::Transport::Failable.3p
+@man man/man3p/Email::Sender::Transport::Maildir.3p
+@man man/man3p/Email::Sender::Transport::Mbox.3p
+@man man/man3p/Email::Sender::Transport::Print.3p
+@man man/man3p/Email::Sender::Transport::SMTP.3p
+@man man/man3p/Email::Sender::Transport::SMTP::Persistent.3p
+@man man/man3p/Email::Sender::Transport::Sendmail.3p
+@man man/man3p/Email::Sender::Transport::Test.3p
+@man man/man3p/Email::Sender::Transport::Wrapper.3p
+@man man/man3p/Email::Sender::Util.3p
