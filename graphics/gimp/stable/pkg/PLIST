@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2009/08/17 12:10:26 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/09/25 12:43:16 giovanni Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 %%SHARED%%
 bin/gimp
@@ -1941,6 +1941,8 @@ share/locale/km/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/km/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/km/LC_MESSAGES/gimp20-tips.mo
 share/locale/km/LC_MESSAGES/gimp20.mo
+share/locale/kn/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/kn/LC_MESSAGES/gimp20.mo
 share/locale/ko/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ko/LC_MESSAGES/gimp20-python.mo
 share/locale/ko/LC_MESSAGES/gimp20-script-fu.mo
@@ -1962,6 +1964,12 @@ share/locale/mk/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/mk/LC_MESSAGES/gimp20-tips.mo
 share/locale/mk/LC_MESSAGES/gimp20.mo
 share/locale/ml/LC_MESSAGES/gimp20.mo
+share/locale/mr/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/mr/LC_MESSAGES/gimp20-python.mo
+share/locale/mr/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/mr/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/mr/LC_MESSAGES/gimp20-tips.mo
+share/locale/mr/LC_MESSAGES/gimp20.mo
 share/locale/ms/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ms/LC_MESSAGES/gimp20-python.mo
 share/locale/ms/LC_MESSAGES/gimp20-script-fu.mo
@@ -1997,6 +2005,9 @@ share/locale/oc/LC_MESSAGES/gimp20-python.mo
 share/locale/oc/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/oc/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/oc/LC_MESSAGES/gimp20.mo
+share/locale/or/LC_MESSAGES/gimp20-python.mo
+share/locale/or/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/or/LC_MESSAGES/gimp20.mo
 share/locale/pa/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/pa/LC_MESSAGES/gimp20-python.mo
 share/locale/pa/LC_MESSAGES/gimp20-script-fu.mo
@@ -2039,6 +2050,7 @@ share/locale/rw/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/rw/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/rw/LC_MESSAGES/gimp20-tips.mo
 share/locale/rw/LC_MESSAGES/gimp20.mo
+share/locale/si/LC_MESSAGES/gimp20.mo
 share/locale/sk/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/sk/LC_MESSAGES/gimp20-python.mo
 share/locale/sk/LC_MESSAGES/gimp20-script-fu.mo
