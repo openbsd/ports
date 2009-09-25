@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.46 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.47 2009/09/25 08:10:36 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.20.5
-PKGNAME-main=		${DISTNAME}p0
-PKGNAME-python= 	py-${DISTNAME}p0
+GNOME_VERSION=		0.22.0
+PKGNAME-main=		${DISTNAME}
+PKGNAME-python= 	py-${DISTNAME}
 
 CATEGORIES=		devel
 
