@@ -1,6 +1,6 @@
-$OpenBSD: patch-scrotwm_conf,v 1.3 2009/03/26 10:27:56 pyr Exp $
---- scrotwm.conf.orig	Mon Mar 16 23:50:57 2009
-+++ scrotwm.conf	Mon Mar 16 23:52:00 2009
+$OpenBSD: patch-scrotwm_conf,v 1.4 2009/09/25 19:26:30 sthen Exp $
+--- scrotwm.conf.orig	Wed Sep 23 06:04:09 2009
++++ scrotwm.conf	Fri Sep 25 17:29:15 2009
 @@ -10,7 +10,7 @@ bar_border[1]		= rgb:00/80/80
  bar_color[1]		= black
  bar_font_color[1]	= rgb:a0/a0/a0
@@ -9,13 +9,15 @@ $OpenBSD: patch-scrotwm_conf,v 1.3 2009/03/26 10:27:56 pyr Exp $
 +#bar_action		= ${PREFIX}/share/scrotwm/baraction.sh
  #bar_delay		= 1
  clock_enabled		= 1
+ title_name_enabled	= 0
+@@ -18,8 +18,8 @@ title_class_enabled	= 0
  
-@@ -22,7 +22,7 @@ dialog_ratio		= 0.6
- 
- # screen shots
- # screenshot_enabled	= 1
--# screenshot_app	= screenshot.sh
-+# screenshot_app	= ${PREFIX}/share/scrotwm/screenshot.sh
- 
- # Split a non-Xrandr dual head setup into one region per monitor
- # (non-standard driver-based multihead is not seen by scrotwm)
+ # spawn app
+ # program[term]		= xterm
+-# program[screenshot_all]	= screenshot.sh full
+-# program[screenshot_wind]	= screenshot.sh window
++# program[screenshot_all]	= ${PREFIX}/share/scrotwm/screenshot.sh full
++# program[screenshot_wind]	= ${PREFIX}/share/scrotwm/screenshot.sh window
+ # program[lock]		= xlock
+ # program[initscr]	= initscreen.sh
+ # program[menu]		= dmenu_run -fn $bar_font -nb $bar_color -nf $bar_font_color -sb $bar_border -sf $bar_color

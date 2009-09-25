@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2009/05/31 18:29:53 pyr Exp $
+# $OpenBSD: Makefile,v 1.9 2009/09/25 19:26:30 sthen Exp $
 
 COMMENT=		small tiling window manager
 
-DISTNAME=		scrotwm-0.9.5
+DISTNAME=		scrotwm-0.9.7
+EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.peereboom.us/scrotwm/html/scrotwm.html
+HOMEPAGE=		http://www.scrotwm.org/
 MAINTAINER=		Pierre-Yves Ritschard <pyr@spootnik.org>
 
 # BSD
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=   http://spootnik.org/scrotwm/
+MASTER_SITES=	http://www.peereboom.us/scrotwm/snapshot/
 
 NO_REGRESS=     Yes
 WANTLIB=        c X11 Xrandr util

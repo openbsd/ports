@@ -1,12 +1,12 @@
-$OpenBSD: patch-scrotwm_c,v 1.5 2009/05/31 18:29:53 pyr Exp $
---- scrotwm.c.orig	Sun May 31 20:15:54 2009
-+++ scrotwm.c	Sun May 31 20:16:08 2009
-@@ -143,7 +143,7 @@ u_int32_t		swm_debug = 0
+$OpenBSD: patch-scrotwm_c,v 1.6 2009/09/25 19:26:30 sthen Exp $
+--- scrotwm.c.orig	Wed Sep 23 06:04:09 2009
++++ scrotwm.c	Fri Sep 25 17:28:03 2009
+@@ -146,7 +146,7 @@ u_int32_t		swm_debug = 0
  #define SWM_MAX_FONT_STEPS	(3)
  
  #ifndef SWM_LIB
--#define SWM_LIB			"/usr/X11R6/lib/swmhack.so"
-+#define SWM_LIB			"${PREFIX}/lib/swmhack.so"
+-#define SWM_LIB			"/usr/local/lib/libswmhack.so.0.0"
++#define SWM_LIB			"${PREFIX}/lib/libswmhack.so.0.0"
  #endif
  
  char			**start_argv;
