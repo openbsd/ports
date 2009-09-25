@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/25 19:37:14 sthen Exp $
+${P5SITE}/Mail/GnuPG.pm
+@man man/man3p/Mail::GnuPG.3p

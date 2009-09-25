@@ -1,0 +1,4 @@
+This module implements the creation and processing of GnuPG signed
+and encrypted emails. It provides functions to create PGP/MIME-type
+messages, and to check signatures. You need to have a different
+package to actually send or receive the message, though.
