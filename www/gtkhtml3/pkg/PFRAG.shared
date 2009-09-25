@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2008/11/16 21:55:13 jasper Exp $
-@lib lib/libgtkhtml-${API_VERSION}.so.${LIBgtkhtml-3.14_VERSION}
-@lib lib/libgtkhtml-editor.so.${LIBgtkhtml-editor_VERSION}
