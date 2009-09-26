@@ -1,4 +1,7 @@
-$OpenBSD: patch-common_mkiconlinks_sh,v 1.1 2008/11/21 18:22:38 jasper Exp $
+$OpenBSD: patch-common_mkiconlinks_sh,v 1.2 2009/09/26 19:13:29 ajacoutot Exp $
+
+Fix unsupported substitution.
+
 --- common/mkiconlinks.sh.orig	Fri Nov 14 18:31:18 2008
 +++ common/mkiconlinks.sh	Fri Nov 14 18:34:45 2008
 @@ -16,7 +16,7 @@ read NEXTLINE 
@@ -6,7 +9,7 @@ $OpenBSD: patch-common_mkiconlinks_sh,v 1.1 2008/11/21 18:22:38 jasper Exp $
  
  	# Skip lines beginning with '#'
 -	if [ ! "${NEXTLINE:0:1}" == '#' ]; then
-+	if [ ! X"`echo ${NEXTLINE} | head -1`" = X'#' ]; then
++	if ! echo ${NEXTLINE} | grep -q "^#" ; then
  		#Extract first field, minus its trailing colon
  		ORIG_FILE=`echo $NEXTLINE | awk '/:/{print $1}' | sed -e 's/://'`
  
