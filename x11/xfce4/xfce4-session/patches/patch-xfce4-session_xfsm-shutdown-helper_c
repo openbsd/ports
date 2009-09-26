@@ -1,0 +1,35 @@
+$OpenBSD: patch-xfce4-session_xfsm-shutdown-helper_c,v 1.1 2009/09/26 11:16:05 landry Exp $
+ultimate fix for http://bugzilla.xfce.org/show_bug.cgi?id=4849
+--- xfce4-session/xfsm-shutdown-helper.c.orig	Thu Sep 24 23:24:10 2009
++++ xfce4-session/xfsm-shutdown-helper.c	Thu Sep 24 23:25:34 2009
+@@ -554,8 +554,14 @@ xfsm_shutdown_helper_send_command (XfsmShutdownHelper 
+ 
+       if (ferror (helper->outfile))
+         {
+-          if (error && errno != EINTR)
++          if (errno == EINTR)
+             {
++              /* probably succeeded but the helper got killed */
++              return TRUE;
++            }
++
++          if (error)
++            {
+               g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno),
+                            _("Error sending command to shutdown helper: %s"),
+                            strerror (errno));
+@@ -565,7 +571,13 @@ xfsm_shutdown_helper_send_command (XfsmShutdownHelper 
+ 
+       if (fgets (response, 256, helper->infile) == NULL)
+         {
+-          if (error && errno != EINTR)
++          if (errno == EINTR)
++            {
++              /* probably succeeded but the helper got killed */
++              return TRUE;
++            }
++
++          if (error)
+             {
+               g_set_error (error, G_FILE_ERROR, g_file_error_from_errno (errno),
+                            _("Error receiving response from shutdown helper: %s"),

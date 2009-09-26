@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2009/08/11 08:38:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2009/09/26 11:16:05 landry Exp $
 
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 SHARED_LIBS +=	xfsm-4.6	0.0 # .0.0
 
