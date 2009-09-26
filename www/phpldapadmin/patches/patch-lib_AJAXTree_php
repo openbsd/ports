@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_AJAXTree_php,v 1.1 2009/09/26 10:02:57 bernd Exp $
+
+Fix for php > 5.2.10.
+
+--- lib/AJAXTree.php.orig	Sat Sep 26 11:58:15 2009
++++ lib/AJAXTree.php	Sat Sep 26 11:58:22 2009
+@@ -13,7 +13,7 @@ class AJAXTree extends PLMTree {
+ 	 * @param $first_child is this the first child ?
+ 	 * @param $last_child is this the last child ?
+ 	 */
+-	protected function draw_dn($dn,$level=0,$first_child=true,$last_child=true) {
++	protected function draw_dn($dn,$level,$first_child=true,$last_child=true) {
+ 		if (DEBUG_ENABLED)
+ 			debug_log('Entered with (%s,%s)',33,__FILE__,__LINE__,__METHOD__,$dn,$level);
+ 
