@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/26 13:16:05 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}schema/
+${DRUPAL_MODS}schema/LICENSE.txt
+${DRUPAL_MODS}schema/README.txt
+${DRUPAL_MODS}schema/engines/
+${DRUPAL_MODS}schema/engines/schema_mysql.inc
+${DRUPAL_MODS}schema/engines/schema_mysqli.inc
+${DRUPAL_MODS}schema/engines/schema_pgsql.inc
+${DRUPAL_MODS}schema/schema.info
+${DRUPAL_MODS}schema/schema.install
+${DRUPAL_MODS}schema/schema.module
+${DRUPAL_MODS}schema/schema_util.inc
+${DRUPAL_MODS}schema/tests/
+${DRUPAL_MODS}schema/tests/schema_regression.test
