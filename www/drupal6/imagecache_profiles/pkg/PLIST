@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/07/26 12:20:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/09/26 11:35:40 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}imagecache_profiles/
 ${DRUPAL_MODS}imagecache_profiles/LICENSE.txt
 ${DRUPAL_MODS}imagecache_profiles/README.txt
 ${DRUPAL_MODS}imagecache_profiles/imagecache_profiles.info
+${DRUPAL_MODS}imagecache_profiles/imagecache_profiles.install
 ${DRUPAL_MODS}imagecache_profiles/imagecache_profiles.module
+${DRUPAL_MODS}imagecache_profiles/views/
+${DRUPAL_MODS}imagecache_profiles/views/imagecache_profiles.views.inc
+${DRUPAL_MODS}imagecache_profiles/views/imagecache_profiles_handler_field_user_picture.inc
