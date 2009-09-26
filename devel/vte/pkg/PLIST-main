@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/09/25 08:10:36 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/09/26 13:02:25 jasper Exp $
 @pkgpath devel/vte
 %%SHARED%%
 @bin bin/vte
@@ -84,6 +84,7 @@ share/locale/ky/LC_MESSAGES/vte.mo
 share/locale/li/LC_MESSAGES/vte.mo
 share/locale/lt/LC_MESSAGES/vte.mo
 share/locale/lv/LC_MESSAGES/vte.mo
+share/locale/mai/LC_MESSAGES/vte.mo
 share/locale/mi/LC_MESSAGES/vte.mo
 share/locale/mk/LC_MESSAGES/vte.mo
 share/locale/ml/LC_MESSAGES/vte.mo
