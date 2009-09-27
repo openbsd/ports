@@ -1,0 +1,21 @@
+$OpenBSD: patch-installer_linux_ldap_openldap_cfg,v 1.1 2009/09/27 18:07:40 ajacoutot Exp $
+--- installer/linux/ldap.openldap.cfg.orig	Sun Sep 27 20:04:59 2009
++++ installer/linux/ldap.openldap.cfg	Sun Sep 27 20:05:32 2009
+@@ -29,7 +29,7 @@ ldap_server_charset = utf-8
+ # Optional, default = empty (anonymous bind)
+ # The userPassword attribute must be readable for this user if the
+ # ldap_authentication_method option is set to password.
+-ldap_bind_user = cn=admin,cn=users,dc=zarafa,dc=com
++ldap_bind_user =
+ 
+ # LDAP bind password
+ # Optional, default = empty (no password)
+@@ -151,7 +151,7 @@ ldap_nonactive_attribute =
+ # Choices: bind, password
+ # Active directory: bind
+ # LDAP: password
+-ldap_authentication_method = password
++ldap_authentication_method = bind
+ 
+ # Optional, default = cn
+ # Active directory: cn
