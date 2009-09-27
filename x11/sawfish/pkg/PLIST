@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/01/20 13:12:03 steven Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/09/27 16:56:10 jasper Exp $
 %%SHARED%%
-bin/sawfish
+@bin bin/sawfish
 bin/sawfish-client
 bin/sawfish-ui
 @info info/sawfish.info
@@ -13,7 +13,7 @@ libexec/sawfish/${VERSION}/${GNU_ARCH}/
 libexec/sawfish/${VERSION}/${GNU_ARCH}/DOC
 libexec/sawfish/${VERSION}/${GNU_ARCH}/gradient.a
 libexec/sawfish/${VERSION}/${GNU_ARCH}/gradient.la
-libexec/sawfish/${VERSION}/${GNU_ARCH}/gtk-style
+@bin libexec/sawfish/${VERSION}/${GNU_ARCH}/gtk-style
 libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/
 libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish-about
 libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish-menu
@@ -33,6 +33,9 @@ libexec/sawfish/${VERSION}/${GNU_ARCH}/selection.a
 libexec/sawfish/${VERSION}/${GNU_ARCH}/selection.la
 libexec/sawfish/${VERSION}/${GNU_ARCH}/x.a
 libexec/sawfish/${VERSION}/${GNU_ARCH}/x.la
+share/gnome/
+share/gnome/wm-properties/
+share/gnome/wm-properties/Sawfish.desktop
 share/locale/no/LC_MESSAGES/sawfish.mo
 share/pixmaps/
 share/pixmaps/sawfish-logo.png
