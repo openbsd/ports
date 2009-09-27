@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/09/27 19:14:44 landry Exp $
+@lib lib/libgtkhotkey.so.${LIBgtkhotkey_VERSION}

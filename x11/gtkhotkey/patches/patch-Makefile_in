@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2009/09/27 19:14:44 landry Exp $
+--- Makefile.in.orig	Thu Sep 24 22:21:24 2009
++++ Makefile.in	Thu Sep 24 22:21:58 2009
+@@ -693,7 +693,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-gtkhotkeydocDATA install-pkgconfigDATA
++install-data-am: install-pkgconfigDATA
+ 
+ install-dvi: install-dvi-recursive
+ 
