@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.395 2009/09/22 15:11:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.396 2009/09/27 19:18:21 landry Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += 915resolution
@@ -97,6 +97,7 @@
      SUBDIR += gtk2mm
      SUBDIR += gtkglarea
      SUBDIR += gtkglext
+     SUBDIR += gtkhotkey
      SUBDIR += gtksourceview
      SUBDIR += gtksourceviewmm
      SUBDIR += gxmessage
@@ -247,6 +248,7 @@
      SUBDIR += wampager
      SUBDIR += windowmaker
      SUBDIR += windowmaker-extra
+     SUBDIR += winwrangler
      SUBDIR += wm2
      SUBDIR += wmbutton
      SUBDIR += wmcalclock
