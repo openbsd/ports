@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/03 14:16:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/09/27 17:20:57 jasper Exp $
 @bin bin/xmoto
 @man man/man6/xmoto.6
 share/doc/xmoto/
@@ -71,6 +71,9 @@ share/locale/sk_SK/LC_MESSAGES/xmoto.mo
 share/locale/sv_SE/
 share/locale/sv_SE/LC_MESSAGES/
 share/locale/sv_SE/LC_MESSAGES/xmoto.mo
+share/locale/tr_TR/
+share/locale/tr_TR/LC_MESSAGES/
+share/locale/tr_TR/LC_MESSAGES/xmoto.mo
 share/locale/zh_TW/LC_MESSAGES/xmoto.mo
 share/xmoto/
 share/xmoto/Textures/

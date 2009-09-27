@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Replay_cpp,v 1.1 2009/09/27 17:20:57 jasper Exp $
+--- src/Replay.cpp.orig	Wed Sep 23 03:51:02 2009
++++ src/Replay.cpp	Wed Sep 23 03:47:34 2009
+@@ -156,7 +156,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 
+     v_replay.writeBuf(pcData, nDataSize);
+     
+     /* Chunks */
+-    v_replay << m_Chunks.size();
++    v_replay << (unsigned int)m_Chunks.size();
+     for(unsigned int i=0;i<m_Chunks.size();i++) {
+       v_replay << m_Chunks[i]->nNumStates;
+       v_replay.writeBuf(m_Chunks[i]->pcChunkData, m_nStateSize * m_Chunks[i]->nNumStates);
