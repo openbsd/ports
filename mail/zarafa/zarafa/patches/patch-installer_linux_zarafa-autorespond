@@ -1,0 +1,9 @@
+$OpenBSD: patch-installer_linux_zarafa-autorespond,v 1.1 2009/09/27 13:57:30 ajacoutot Exp $
+--- installer/linux/zarafa-autorespond.orig	Sun Sep 27 15:53:26 2009
++++ installer/linux/zarafa-autorespond	Sun Sep 27 15:53:45 2009
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ FROM=$1
+ TO=$2
