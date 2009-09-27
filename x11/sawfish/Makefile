@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.35 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2009/09/27 16:56:40 jasper Exp $
 
 COMMENT=	extensible window manager
 
-VERSION=	1.3
+VERSION=	1.3.3
 DISTNAME=	sawfish-${VERSION}
-PKGNAME=	${DISTNAME}p14
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sawmill/}
 
-HOMEPAGE=       http://sawmill.sourceforge.net/
+HOMEPAGE=       http://sawfish.wikia.com/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,12 +33,16 @@ SUBST_VARS=	GNU_ARCH VERSION
 
 USE_X11=	Yes
 USE_GMAKE=      Yes
+
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/etc
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --without-audiofile --without-esd \
-		 --disable-capplet --disable-themer \
-		 --disable-gnome-widgets --disable-linguas
+CONFIGURE_ARGS+= --without-audiofile \
+		--without-esd \
+		--disable-capplet \
+		--disable-themer \
+		--disable-gnome-widgets \
+		--disable-linguas
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I{X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PKG_CONFIG_PATH="/usr/X11R6/lib/pkgconfig"
