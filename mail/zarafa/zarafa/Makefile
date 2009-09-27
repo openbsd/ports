@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/09/27 13:57:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/09/27 14:00:50 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-php=	MAPI extensions for php5
@@ -88,7 +88,8 @@ pre-configure:
 			perl -pi -e 's/\r\n/\n/;' $$i; done
 	for i in ${SUB_SCRIPTS}; do \
 		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
-	${SUBST_CMD} ${WRKSRC}/php-ext/Makefile.in
+	${SUBST_CMD} ${WRKSRC}/php-ext/Makefile.in \
+		${WRKSRC}/spooler/DAgent.cpp
 	perl -pi -e 's,/usr/share/zarafa,${PREFIX}/share/examples/zarafa,g;' \
 		-e 's,/etc/zarafa,${SYSCONFDIR}/zarafa,g;' \
 		-e 's,/usr/bin,${PREFIX}/bin,g;' \
