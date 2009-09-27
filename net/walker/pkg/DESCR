@@ -1,0 +1,10 @@
+This is a proof-of-concept of a utility to download DNS zone contents
+even when AXFR is disabled on the server, assuming DNSSEC is used.
+Optionally it can also verify all digital signature RRs within a
+zone against the zone key. If you do not know what DNSSEC is, please
+refer to: RFC 2535, RFC 4033, RFC 4034, RFC 4035, "dnssec.net" (lots
+of DNSSEC information).
+
+The tool supports both the old DNSSEC according to RFC 2535 (i.e.,
+KEY/SIG) and the latest DNSSEC version according to RFC 4033 (i.e.,
+DNSKEY/RRSIG).

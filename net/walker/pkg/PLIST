@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/27 23:55:58 sthen Exp $
+bin/walker
+@man man/man1/walker.1
