@@ -1,10 +1,10 @@
-$OpenBSD: patch-get_iplayer,v 1.18 2009/09/21 22:30:58 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.19 2009/09/27 23:47:15 sthen Exp $
 
 - default to using id3tag not id3v2
 - follow hier(7) not Linux FHS for options file location
 
---- get_iplayer.orig	Mon Sep 21 17:21:01 2009
-+++ get_iplayer	Mon Sep 21 23:29:02 2009
+--- get_iplayer.orig	Sat Sep 26 10:14:59 2009
++++ get_iplayer	Mon Sep 28 00:36:57 2009
 @@ -304,10 +304,7 @@ if ( defined $ENV{GETIPLAYERUSERPREFS} && $ENV{GETIPLA
  # Options on unix-like systems
  } elsif ( defined $ENV{HOME} ) {
@@ -43,7 +43,7 @@ $OpenBSD: patch-get_iplayer,v 1.18 2009/09/21 22:30:58 sthen Exp $
  
  	$bin->{tee}		= 'tee';
  
-@@ -5180,7 +5178,7 @@ sub optional_list_entry_format {
+@@ -5182,7 +5180,7 @@ sub optional_list_entry_format {
  # Returns the modes to try for this prog type
  sub modelist {
  	my $prog = shift;
