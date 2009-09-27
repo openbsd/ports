@@ -1,0 +1,9 @@
+WinWrangler is a simple project whose aim is to add additional
+functionality to all standards compliant window managers. This means
+that it should work under Gnome, KDE and XFCE.
+WinWrangler provides a desktop daemon that can be controlled via
+desktop-wide hotkeys to do advanced window manipulations that are not
+normally provided by the window manager. For example tiling and
+intelligent expansion of windows.
+If the default shortcuts don't suit you, tweak
+~/.config/hotkeys/winwrangler.hotkeys
