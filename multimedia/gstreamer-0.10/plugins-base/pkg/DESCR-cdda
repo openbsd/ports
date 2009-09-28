@@ -1,2 +1,2 @@
 This package is part of the base plugins for gstreamer-${VERSION}.
-* cdparanoia  Read audio from CD in paranoid mode
+* cdparanoia     read audio from CD in paranoid mode

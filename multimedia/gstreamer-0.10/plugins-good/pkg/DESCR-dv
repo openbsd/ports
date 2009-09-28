@@ -1,2 +1,2 @@
-good plugin for gstreamer-${VERSION}
-* dv         DV video (smpte314) demuxer and decoder
+good plugin for gstreamer-${VERSION}.
+* dv     DV video (smpte314) demuxer and decoder

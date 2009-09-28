@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/09/28 18:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/09/28 19:52:15 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - plugins ugly
 COMMENT-sidplay =	multimedia framework - sidplay plugin
@@ -6,15 +6,15 @@ COMMENT-lame =		multimedia framework - lame plugin
 
 V =			0.10.7
 DISTNAME =		gst-plugins-ugly-$V
-PKGNAME-main =		gstreamer-plugins-ugly-$Vp2
-PKGNAME-sidplay =	gstreamer-sidplay-$Vp2
-PKGNAME-lame =		gstreamer-lame-$Vp2
+
+PKGNAME-main =		gstreamer-plugins-ugly-$Vp3
+PKGNAME-sidplay =	gstreamer-sidplay-$Vp3
+PKGNAME-lame =		gstreamer-lame-$Vp3
 
 MULTI_PACKAGES =	-main -sidplay -lame
 
 PERMIT_PACKAGE_CDROM =	Patent issues
 PERMIT_DISTFILES_CDROM =Patent issues
-SHARED_LIBS =
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-ugly/}
 
@@ -36,7 +36,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			mpeg2::graphics/libmpeg2 \
 			dvdread::devel/libdvdread
 RUN_DEPENDS-main =	
-
 			
 WANTLIB-sidplay =	${WANTLIB} stdc++
 LIB_DEPENDS-sidplay =	${LIB_DEPENDS} \

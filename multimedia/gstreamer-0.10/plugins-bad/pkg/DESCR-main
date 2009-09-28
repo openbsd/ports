@@ -1,18 +1,23 @@
-Those plugins for gstreamer-${VERSION} are deemed low quality for now.
+This package contains "bad" plugins for gstreamer-${VERSION}.
+The gstreamer people split plugins into:
+- base plugins (plugins-base)
+- plugins with good code and a good licence (plugins-good)
+- plugins with licence issues (plugins-ugly)
+- plugins with relatively bad code (plugins-bad)
 
-* cdxaparse                Parse a .dat file (VCD) into raw mpeg1
-* filter                   IIR, lpwsinc and bpwsinc audio filter elements
-* freeze                   Makes a stream from buffers of data
-* h264parse                Parse raw h264 streams
-* modplug                  various .mod audio decoding
-* nsfdec                   decode .nsf files
-* replaygain               ReplayGain analysis
-* rfbsrc                   connect to vnc
-* speed                    set speed/pitch on audio/raw streams (resampler)
-* tta                      TTA lossless audio format handling
-* videocrop                Crops video into a user-defined region
-* y4menc                   yuv4mpeg video encoder
-* gsm
+* cdxaparse      parse a .dat file (VCD) into raw mpeg1
+* filter         IIR, lpwsinc and bpwsinc audio filter elements
+* freeze         makes a stream from buffers of data
+* gsm            GSM encoder/decoder
+* h264parse      parse raw h264 streams
+* modplug        various .mod audio decoding
+* nsfdec         decode .nsf files
+* replaygain     ReplayGain analysis
+* rfbsrc         connect to vnc
+* speed          set speed/pitch on audio/raw streams (resampler)
+* tta            TTA lossless audio format handling
+* videocrop      crops video into a user-defined region
+* y4menc         yuv4mpeg video encoder
 
 The following plugins are in specific packages because of dependencies:
 

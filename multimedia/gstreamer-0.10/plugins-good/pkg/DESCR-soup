@@ -1,2 +1,2 @@
-good plugin for gstreamer-${VERSION}
-* souphttpsrc			soup http client plugin
+good plugin for gstreamer-${VERSION}.
+* souphttpsrc     soup http client plugin

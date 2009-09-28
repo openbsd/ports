@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2009/04/11 14:37:21 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2009/09/28 19:52:14 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -34,8 +34,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--localstatedir=/var/db \
 			--with-cachedir=/var/db/gstreamer-${VERSION} \
 			--disable-valgrind \
-			--disable-static \
-#			--enable-gtk-doc
+			--disable-static
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/libpng" \

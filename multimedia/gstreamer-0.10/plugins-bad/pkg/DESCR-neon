@@ -1,4 +1,3 @@
 This is a "bad" plugin for gstreamer-${VERSION}. It might be buggy or
 unfinished.
-
-* neon                              lib neon http client src  
+* neon     lib neon http client src  

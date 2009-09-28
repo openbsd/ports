@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2009/09/28 18:27:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2009/09/28 19:52:15 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
@@ -11,18 +11,18 @@ COMMENT-soup =		multimedia framework - libsoup plugin
 
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
-PKGNAME-main =		gstreamer-plugins-good-$Vp16v0
-PKGNAME-aalib =		gstreamer-aalib-$Vp5
-PKGNAME-gconf =		gstreamer-confelements-$Vp8
-PKGNAME-esd =		gstreamer-esd-$Vp5
-PKGNAME-dv =		gstreamer-dv-$Vp4
-PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp7
-PKGNAME-caca =		gstreamer-libcaca-$Vp5
-PKGNAME-soup =		gstreamer-libsoup-$Vp5
+
+PKGNAME-main =		gstreamer-plugins-good-$Vp76v0
+PKGNAME-aalib =		gstreamer-aalib-$Vp6
+PKGNAME-gconf =		gstreamer-confelements-$Vp9
+PKGNAME-esd =		gstreamer-esd-$Vp6
+PKGNAME-dv =		gstreamer-dv-$Vp5
+PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp8
+PKGNAME-caca =		gstreamer-libcaca-$Vp6
+PKGNAME-soup =		gstreamer-libsoup-$Vp6
 
 MULTI_PACKAGES =	-main -aalib -gconf -esd \
 			-dv -gdk -caca -soup
-SHARED_LIBS =
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-good/}
 
@@ -54,7 +54,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			speex::audio/speex \
 			gsttag-0.10::$P/plugins-base \
 			shout::net/libshout
-
 RUN_DEPENDS-main =	
 
 WANTLIB-aalib=		${WANTLIB} \
@@ -71,14 +70,12 @@ RUN_DEPENDS-gconf =	${RUN_DEPENDS} \
 
 WANTLIB-esd =		${WANTLIB} \
 			audiofile gstbase-0.10 sndio
-
 LIB_DEPENDS-esd=	${LIB_DEPENDS} \
 			esd::audio/esound \
 			gstaudio-0.10,gstinterfaces-0.10::$P/plugins-base
 
 WANTLIB-dv =		${WANTLIB} \
 			gstbase-0.10
-
 LIB_DEPENDS-dv =	${LIB_DEPENDS} \
 			dv::multimedia/libdv \
 			gstaudio-0.10,gstinterfaces-0.10::$P/plugins-base
@@ -89,27 +86,24 @@ WANTLIB-gdk =		${WANTLIB} \
 			pangocairo-1.0 pangoft2-1.0 pixman-1 png gstbase-0.10 \
 			Xau Xcursor Xdmcp Xfixes Xi Xinerama Xrandr expat \
 			pthread-stubs xcb
-
 LIB_DEPENDS-gdk =	${LIB_DEPENDS} \
 			gdk_pixbuf-2.0,gtk-x11-2.0,gdk-x11-2.0::x11/gtk+2 \
 			gstvideo-0.10::$P/plugins-base
 
-BUILD_DEPENDS +=	::graphics/libcaca
-
 WANTLIB-caca =		${WANTLIB} \
 			X11 gstbase-0.10 ncurses Xau Xdmcp pthread-stubs xcb
-
 LIB_DEPENDS-caca =	${LIB_DEPENDS}
 
 WANTLIB-soup =		${WANTLIB} \
 			gcrypt gio-2.0 gnutls gpg-error gstbase-0.10 \
 			tasn1 gsttag-0.10
-
 LIB_DEPENDS-soup =	${LIB_DEPENDS} \
 			soup-2.4::devel/libsoup
 
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} 
+			${MODGNU_AUTOMAKE_DEPENDS}  \
+			::graphics/libcaca
+
 AUTOMAKE_VERSION =	1.9
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \

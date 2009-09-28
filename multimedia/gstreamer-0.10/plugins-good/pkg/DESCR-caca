@@ -1,2 +1,2 @@
-good plugin for gstreamer-${VERSION}
-* cacasink                          Colored ASCII Art video sink
+good plugin for gstreamer-${VERSION}.
+* cacasink     colored ASCII art video sink

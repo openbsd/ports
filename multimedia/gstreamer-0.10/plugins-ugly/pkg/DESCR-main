@@ -1,10 +1,18 @@
-This package contains plugins for gstreamer-${VERSION} with a controversial
-licence or distribution issues.
+This package contains "ugly" plugins for gstreamer-${VERSION}.
+The gstreamer people split plugins into:
+- base plugins (plugins-base)
+- plugins with good code and a good licence (plugins-good)
+- plugins with licence issues (plugins-ugly)
+- plugins with relatively bad code (plugins-bad)
 
+* a52dec         decodes ATSC A/52 encoded audio streams
 * asf            demuxes and muxes audio and video in Microsoft's ASF format
-* dvdlpcmdec     Decode DVD LPCM frames into standard PCM
-* dvdsub         Decode DVD subtitles to AYUV video frames
-* iec958         Convert raw AC3 into IEC958 (S/PDIF) frames
+* dvdlpcmdec     decode DVD LPCM frames into standard PCM
+* dvdread        Access a DVD title/chapter/angle using libdvdread
+* dvdsub         aecode DVD subtitles to AYUV video frames
+* iec958         convert raw AC3 into IEC958 (S/PDIF) frames
+* mad            id3 tag manipulation and mp3 decoding based on the mad library
+* mpeg2dec       LibMpeg2 decoder
 * mpegaudioparse MPEG-1 layer 1/2/3 audio parser
 * mpegstream     MPEG system stream parser: mpeg1, mpeg2, dvd/vob
 * rmdemux        Realmedia stream demuxer
@@ -14,5 +22,4 @@ The following plugins are in specific packages because of dependencies:
 * siddec
 
 The following plugins are not built:
-
 * amrnb (support library not ported/not existing)

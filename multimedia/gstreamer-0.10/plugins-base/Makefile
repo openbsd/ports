@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/09/28 18:26:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/09/28 19:52:14 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - plugins base
 COMMENT-gnome =		multimedia framework - gnome vfs plugin
@@ -6,9 +6,11 @@ COMMENT-cdda =		multimedia framework - cd paranoia plugin
 
 V =			0.10.19
 DISTNAME =		gst-plugins-base-$V
-PKGNAME-main =		gstreamer-plugins-base-$Vp3
-PKGNAME-gnome =		gstreamer-gnome-$Vp4
-PKGNAME-cdda =		gstreamer-cdda-$Vp2
+
+PKGNAME-main =		gstreamer-plugins-base-$Vp4
+PKGNAME-gnome =		gstreamer-gnome-$Vp5
+PKGNAME-cdda =		gstreamer-cdda-$Vp3
+
 MULTI_PACKAGES =	-main -gnome -cdda
 
 SHARED_LIBS +=	gstinterfaces-0.10   0.2      # .8.0
@@ -41,7 +43,6 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			vorbis.>=7,vorbisenc::audio/libvorbis \
 			pango-1.0.>=1801,pangoft2-1.0::devel/pango \
 			theora.>=3::multimedia/libtheora
-
 RUN_DEPENDS-main =	
 			
 WANTLIB-gnome =		${WANTLIB} \

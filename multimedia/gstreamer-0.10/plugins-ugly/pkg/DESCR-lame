@@ -1,2 +1,2 @@
-plugin for gstreamer-${VERSION} with controversial licence
-* lame          encode MP3s with LAME    
+plugin for gstreamer-${VERSION} with controversial licence.
+* lame     encode MP3s with LAME

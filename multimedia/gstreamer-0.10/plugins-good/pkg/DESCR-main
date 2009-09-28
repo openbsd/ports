@@ -1,55 +1,58 @@
-This package contains some plugins for gstreamer-${VERSION}.
+This package contains "good" plugins for gstreamer-${VERSION}.
 The gstreamer people split plugins into:
 - base plugins (plugins-base)
 - plugins with good code and a good licence (plugins-good)
 - plugins with licence issues (plugins-ugly)
 - plugins with relatively bad code (plugins-bad)
 
-This package contains good plugins without too many external
-dependencies.
-
-* alaw            ALaw audio conversion routines
-* alpha           adds an alpha channel to video
-* alphacolor      RGB->YUV colorspace conversion preserving alpha channels
-* annodex         annodex stream manipulation/CMML (http://www.annodex.net)
-* apetag          APEv1/2 tag reader
-* audiofx         Audio effects plugin (stereo positioning)
-* auparse         parses au streams
-* avi             AVI stream handling (mux/demux)
-* cutter          audio cutter, split along silences
-* debug           elements for testing and debugging
-   breakmydata       randomly change data in the stream
-   navseek           Seek based on navigation keys left-right
-   progressreport    Periodically query and report on processing progress
-   testsink          perform a number of tests
-* efence          efence-like memory allocation of gstream buffers
-* effectv         effect plugins from the effectv project
-* flxdec          FLC/FLI/FLX video decoder
-* goom            GOOM visualization filter
-* icydemux        Demux ICY tags from a stream
-* id3demux        Demux ID3v1 and ID3v2 tags from a file
-* level           RMS/Peak/Decaying Peak Level messager for audio/raw
-* libsndio        default audio sink on OpenBSD
-* matroska        Matroska containers stream handling (muxer/demuxer)
-* mulaw           MuLaw audio encoder/decoder
-* multifile       save to sequentially named files
-* multipart       multipart stream manipulation (mux/demux)
-* navigationtest  Template for a navigation video filter
-* qtdemux         Quicktime stream demuxer
-* rtp             Real-time protocol plugins: asterisk, rtp, gsm, h263...
-* rtsp            transfer data via RTSP
-* shout2send
-* smpte           Apply the standard SMPTE transitions on video images
-* spectrum        run an FFT on signal and output spectrum data
-* speex
-* udp             transfer data via UDP
-* videobalance    Hue/saturation/brightness/contrast of video stream
-* videobox        resize a video: borders/cropping
-* videoflip       Flips and rotates video
-* videomixer      Mix multiple video streams
-* wavenc          Encode raw audio into WAV
-* wavparse        Parse a .wav file into raw audio
-* ximagesrc       X11 video input plugin using standard Xlib calls
+* alaw           ALaw audio conversion routines
+* alpha          adds an alpha channel to video
+* alphacolor     RGB->YUV colorspace conversion preserving alpha channels
+* annodex        annodex stream manipulation/CMML (http://www.annodex.net)
+* apetag         APEv1/2 tag reader
+* audiofx        audio effects plugin (stereo positioning)
+* auparse        parses au streams
+* avi            AVI stream handling (mux/demux)
+* cutter         audio cutter, split along silences
+* cairo          cairo-based text and time overlays on videos
+* debug          elements for testing and debugging
+   breakmydata      randomly change data in the stream
+   navseek          seek based on navigation keys left-right
+   progressreport   periodically query and report on processing progress
+   testsink         perform a number of tests
+* efence         efence-like memory allocation of gstream buffers
+* effectv        effect plugins from the effectv project
+* flac           FLAC Lossless compressor encoder/decoder
+* flxdec         FLC/FLI/FLX video decoder
+* goom           GOOM visualization filter
+* icydemux       demux ICY tags from a stream
+* id3demux       demux ID3v1 and ID3v2 tags from a file
+* jpeg           JPeg plugin library (decoder/encoder)
+* level          RMS/Peak/Decaying Peak Level messager for audio/raw
+* libsndio       default audio sink on OpenBSD
+* matroska       matroska containers stream handling (muxer/demuxer)
+* mulaw          MuLaw audio encoder/decoder
+* multifile      save to sequentially named files
+* multipart      multipart stream manipulation (mux/demux)
+* navigationtest Template for a navigation video filter
+* qtdemux        tuicktime stream demuxer
+* png            PNG plugin library
+* rtp            real-time protocol plugins: asterisk, rtp, gsm, h263...
+* rtsp           transfer data via RTSP
+* shout2send     sends data to an icecast server using libshout2
+* smpte          apply the standard SMPTE transitions on video images
+* spectrum       run an FFT on signal and output spectrum data
+* speex          peex decoder/encoder
+* taglib         write AP2/ID3v2 tags
+* udp            transfer data via UDP
+* videobalance   Hue/saturation/brightness/contrast of video stream
+* videobox       resize a video: borders/cropping
+* videoflip      flips and rotates video
+* videomixer     mix multiple video streams
+* wavenc         encode raw audio into WAV
+* wavpack        wavpack decoder
+* wavparse       parse a .wav file into raw audio
+* ximagesrc      X11 video input plugin using standard Xlib calls
 
 The following plugins are in specific packages because of dependencies:
 * aasink

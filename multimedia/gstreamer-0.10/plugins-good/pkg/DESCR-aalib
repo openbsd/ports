@@ -1,2 +1,2 @@
-good plugin for gstreamer-${VERSION}
-* aasink                            ASCII Art video sink
+good plugin for gstreamer-${VERSION}.
+* aasink     ASCII Art video sink
