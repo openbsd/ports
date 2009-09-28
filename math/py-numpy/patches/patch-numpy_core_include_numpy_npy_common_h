@@ -1,0 +1,26 @@
+$OpenBSD: patch-numpy_core_include_numpy_npy_common_h,v 1.1 2009/09/28 15:15:37 jasper Exp $
+
+py-numpy only checks for expl to determine whether extended-precision
+support is present.  since we don't have it yet;  it implements
+it's own.  however, on alpha, powerpc, it declared functions with
+types that conflict with C99 (double for *l), therefore failed.
+
+--- numpy/core/include/numpy/npy_common.h.orig	Sun Sep 27 17:35:01 2009
++++ numpy/core/include/numpy/npy_common.h	Sun Sep 27 17:35:21 2009
+@@ -58,14 +58,8 @@ typedef unsigned char npy_bool;
+ #define NPY_FALSE 0
+ #define NPY_TRUE 1
+ 
+-
+-#if NPY_SIZEOF_LONGDOUBLE == NPY_SIZEOF_DOUBLE
+-        typedef double npy_longdouble;
+-        #define NPY_LONGDOUBLE_FMT "g"
+-#else
+-        typedef long double npy_longdouble;
+-        #define NPY_LONGDOUBLE_FMT "Lg"
+-#endif
++typedef long double npy_longdouble;
++#define NPY_LONGDOUBLE_FMT "Lg"
+ 
+ #ifndef Py_USING_UNICODE
+ #error Must use Python with unicode enabled.

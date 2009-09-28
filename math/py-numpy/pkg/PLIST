@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/22 19:23:10 wcmaier Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/09/28 15:15:37 jasper Exp $
 bin/f2py${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/numpy/
 lib/python${MODPY_VERSION}/site-packages/numpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -23,8 +23,6 @@ lib/python${MODPY_VERSION}/site-packages/numpy/add_newdocs.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/
 lib/python${MODPY_VERSION}/site-packages/numpy/core/__init__.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/numpy/core/__svn_version__.py
-lib/python${MODPY_VERSION}/site-packages/numpy/core/__svn_version__.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/_internal.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/_internal.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/_sort.so
@@ -44,15 +42,21 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/__multiarray_a
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/__ufunc_api.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/arrayobject.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/arrayscalars.h
+lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/mingw_${MACHINE_ARCH}_fenv.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/multiarray_api.txt
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/ndarrayobject.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/noprefix.h
+lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/npy_common.h
+lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/npy_cpu.h
+lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/npy_endian.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/npy_interrupt.h
+lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/npy_math.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/numpyconfig.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/old_defines.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/oldnumeric.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/ufunc_api.txt
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/ufuncobject.h
+lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/utils.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/info.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/info.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/memmap.py
@@ -69,6 +73,8 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/scons_support.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/scons_support.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/setup.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/setup.pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/core/setup_common.py
+lib/python${MODPY_VERSION}/site-packages/numpy/core/setup_common.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/setupscons.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/setupscons.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/
@@ -78,6 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/data/recarray_from_fil
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_blasdot.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_defchararray.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_defmatrix.py
+lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_dtype.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_errstate.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_memmap.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_multiarray.py
@@ -91,6 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_ufunc.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_umath.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/tests/test_unicode.py
 lib/python${MODPY_VERSION}/site-packages/numpy/core/umath.so
+lib/python${MODPY_VERSION}/site-packages/numpy/core/umath_tests.so
 lib/python${MODPY_VERSION}/site-packages/numpy/ctypeslib.py
 lib/python${MODPY_VERSION}/site-packages/numpy/ctypeslib.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/
@@ -105,6 +113,8 @@ lib/python${MODPY_VERSION}/site-packages/numpy/distutils/ccompiler.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/command/
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/command/__init__.py
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/command/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/distutils/command/autodist.py
+lib/python${MODPY_VERSION}/site-packages/numpy/distutils/command/autodist.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/command/bdist_rpm.py
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/command/bdist_rpm.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/command/build.py
@@ -194,6 +204,8 @@ lib/python${MODPY_VERSION}/site-packages/numpy/distutils/line_endings.py
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/line_endings.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/log.py
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/log.pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/distutils/mingw/
+lib/python${MODPY_VERSION}/site-packages/numpy/distutils/mingw/gfortran_vs2003_hack.c
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/mingw32ccompiler.py
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/mingw32ccompiler.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/distutils/misc_util.py
@@ -260,6 +272,8 @@ lib/python${MODPY_VERSION}/site-packages/numpy/doc/basics.py
 lib/python${MODPY_VERSION}/site-packages/numpy/doc/basics.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/doc/broadcasting.py
 lib/python${MODPY_VERSION}/site-packages/numpy/doc/broadcasting.pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/doc/constants.py
+lib/python${MODPY_VERSION}/site-packages/numpy/doc/constants.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/doc/creation.py
 lib/python${MODPY_VERSION}/site-packages/numpy/doc/creation.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/doc/glossary.py
@@ -291,8 +305,6 @@ lib/python${MODPY_VERSION}/site-packages/numpy/dual.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/__init__.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/numpy/f2py/__svn_version__.py
-lib/python${MODPY_VERSION}/site-packages/numpy/f2py/__svn_version__.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/__version__.py
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/__version__.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/f2py/auxfuncs.py
@@ -404,6 +416,8 @@ lib/python${MODPY_VERSION}/site-packages/numpy/lib/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/_compiled_base.so
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/_datasource.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/_datasource.pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/lib/_iotools.py
+lib/python${MODPY_VERSION}/site-packages/numpy/lib/_iotools.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/arraysetops.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/arraysetops.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/arrayterator.py
@@ -428,6 +442,8 @@ lib/python${MODPY_VERSION}/site-packages/numpy/lib/machar.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/machar.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/polynomial.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/polynomial.pyc
+lib/python${MODPY_VERSION}/site-packages/numpy/lib/recfunctions.py
+lib/python${MODPY_VERSION}/site-packages/numpy/lib/recfunctions.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/scimath.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/scimath.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/setup.py
@@ -440,6 +456,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/lib/stride_tricks.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/stride_tricks.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test__datasource.py
+lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test__iotools.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test_arraysetops.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test_arrayterator.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test_financial.py
@@ -450,6 +467,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test_index_tricks.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test_io.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test_machar.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test_polynomial.py
+lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test_recfunctions.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test_regression.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test_shape_base.py
 lib/python${MODPY_VERSION}/site-packages/numpy/lib/tests/test_stride_tricks.py
@@ -479,6 +497,7 @@ lib/python${MODPY_VERSION}/site-packages/numpy/linalg/setup.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/setupscons.py
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/setupscons.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/tests/
+lib/python${MODPY_VERSION}/site-packages/numpy/linalg/tests/test_build.py
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/tests/test_linalg.py
 lib/python${MODPY_VERSION}/site-packages/numpy/linalg/tests/test_regression.py
 lib/python${MODPY_VERSION}/site-packages/numpy/ma/
@@ -639,13 +658,12 @@ lib/python${MODPY_VERSION}/site-packages/numpy/testing/nulltester.py
 lib/python${MODPY_VERSION}/site-packages/numpy/testing/nulltester.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/testing/numpytest.py
 lib/python${MODPY_VERSION}/site-packages/numpy/testing/numpytest.pyc
-lib/python${MODPY_VERSION}/site-packages/numpy/testing/parametric.py
-lib/python${MODPY_VERSION}/site-packages/numpy/testing/parametric.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/testing/setup.py
 lib/python${MODPY_VERSION}/site-packages/numpy/testing/setup.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/testing/setupscons.py
 lib/python${MODPY_VERSION}/site-packages/numpy/testing/setupscons.pyc
 lib/python${MODPY_VERSION}/site-packages/numpy/testing/tests/
+lib/python${MODPY_VERSION}/site-packages/numpy/testing/tests/test_decorators.py
 lib/python${MODPY_VERSION}/site-packages/numpy/testing/tests/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/numpy/testing/utils.py
 lib/python${MODPY_VERSION}/site-packages/numpy/testing/utils.pyc
