@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/17 20:28:27 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.3 2009/09/28 17:58:57 ajacoutot Exp $
 
 COMMENT=		minimal XML library
 
 DISTNAME=		mxml-2.5
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS=		mxml	0.1	# 1.4
 
@@ -21,6 +22,12 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		ftp://ftp.easysw.com/pub/mxml/2.5/
+
+# XXX lower optimization on powerpc:
+# mxmldoc-static segfaults during build
+.if ${MACHINE_ARCH} == "powerpc"
+CFLAGS+=	-O1
+.endif
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --disable-threads
