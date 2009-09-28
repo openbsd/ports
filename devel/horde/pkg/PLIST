@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/12/13 08:43:21 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/09/28 13:09:15 sthen Exp $
 horde/
 horde/COPYING
 horde/README
@@ -29,6 +29,7 @@ horde/admin/setup/config.php
 horde/admin/setup/diff.php
 horde/admin/setup/index.php
 horde/admin/setup/scripts.php
+horde/admin/signup_confirm.php
 horde/admin/sqlshell.php
 horde/admin/user.php
 @mode 700
@@ -300,7 +301,6 @@ horde/lib/Horde/Editor.php
 horde/lib/Horde/Editor/fckeditor.php
 horde/lib/Horde/Editor/tinymce.php
 horde/lib/Horde/Editor/xinha.php
-horde/lib/Horde/Exception.php
 horde/lib/Horde/Feed/
 horde/lib/Horde/Feed.php
 horde/lib/Horde/Feed/Atom.php
@@ -368,6 +368,7 @@ horde/lib/Horde/Image/Effect/gd/text_watermark.php
 horde/lib/Horde/Image/Effect/gd/unsharp_mask.php
 horde/lib/Horde/Image/Effect/im/
 horde/lib/Horde/Image/Effect/im/border.php
+horde/lib/Horde/Image/Effect/im/composite.php
 horde/lib/Horde/Image/Effect/im/drop_shadow.php
 horde/lib/Horde/Image/Effect/im/photo_stack.php
 horde/lib/Horde/Image/Effect/im/polaroid_image.php
@@ -383,6 +384,22 @@ horde/lib/Horde/Image/swf.php
 horde/lib/Horde/Kolab/
 horde/lib/Horde/Kolab.php
 horde/lib/Horde/Kolab/Deprecated.php
+horde/lib/Horde/Kolab/Filter/
+horde/lib/Horde/Kolab/Filter/Base.php
+horde/lib/Horde/Kolab/Filter/Content.php
+horde/lib/Horde/Kolab/Filter/Incoming.php
+horde/lib/Horde/Kolab/Filter/Outlook.php
+horde/lib/Horde/Kolab/Filter/Response.php
+horde/lib/Horde/Kolab/Filter/Transport/
+horde/lib/Horde/Kolab/Filter/Transport.php
+horde/lib/Horde/Kolab/Filter/Transport/DovecotLDA.php
+horde/lib/Horde/Kolab/Filter/Transport/LMTPTLS.php
+horde/lib/Horde/Kolab/Filter/Transport/drop.php
+horde/lib/Horde/Kolab/Filter/Transport/echo.php
+horde/lib/Horde/Kolab/Filter/Transport/lda.php
+horde/lib/Horde/Kolab/Filter/Transport/lmtp.php
+horde/lib/Horde/Kolab/Filter/Transport/smtp.php
+horde/lib/Horde/Kolab/Filter/Transport/stdout.php
 horde/lib/Horde/Kolab/Format/
 horde/lib/Horde/Kolab/Format.php
 horde/lib/Horde/Kolab/Format/Date.php
@@ -395,11 +412,19 @@ horde/lib/Horde/Kolab/Format/XML/event.php
 horde/lib/Horde/Kolab/Format/XML/hprefs.php
 horde/lib/Horde/Kolab/Format/XML/note.php
 horde/lib/Horde/Kolab/Format/XML/task.php
+horde/lib/Horde/Kolab/FreeBusy/
+horde/lib/Horde/Kolab/FreeBusy.php
+horde/lib/Horde/Kolab/FreeBusy/Access.php
+horde/lib/Horde/Kolab/FreeBusy/Cache.php
+horde/lib/Horde/Kolab/FreeBusy/Imap.php
+horde/lib/Horde/Kolab/FreeBusy/Report.php
+horde/lib/Horde/Kolab/FreeBusy/View.php
 horde/lib/Horde/Kolab/IMAP/
 horde/lib/Horde/Kolab/IMAP.php
 horde/lib/Horde/Kolab/IMAP/cclient.php
 horde/lib/Horde/Kolab/IMAP/pear.php
 horde/lib/Horde/Kolab/IMAP/test.php
+horde/lib/Horde/Kolab/Resource.php
 horde/lib/Horde/Kolab/Server/
 horde/lib/Horde/Kolab/Server.php
 horde/lib/Horde/Kolab/Server/Object/
@@ -426,6 +451,8 @@ horde/lib/Horde/Kolab/Storage/List.php
 horde/lib/Horde/Kolab/Storage/Perms.php
 horde/lib/Horde/Kolab/Test/
 horde/lib/Horde/Kolab/Test.php
+horde/lib/Horde/Kolab/Test/Filter.php
+horde/lib/Horde/Kolab/Test/FreeBusy.php
 horde/lib/Horde/Kolab/Test/Server.php
 horde/lib/Horde/Kolab/Test/Storage.php
 horde/lib/Horde/LDAP.php
@@ -1052,11 +1079,16 @@ horde/scripts/set_perms.sh
 horde/scripts/sql/
 horde/scripts/sql/README
 horde/scripts/sql/README.OCI8
+@comment no checksum
 horde/scripts/sql/create.msde.sql
+@comment no checksum
 horde/scripts/sql/create.mysql.sql
+@comment no checksum
 horde/scripts/sql/create.oci8.sql
+@comment no checksum
 horde/scripts/sql/create.pgsql.sql
 horde/scripts/sql/create.sql
+@comment no checksum
 horde/scripts/sql/create.sybase.sql
 horde/scripts/sql/create.xml
 horde/scripts/sql/horde_alarms.mssql.sql
@@ -1110,6 +1142,7 @@ horde/scripts/upgrades/2.2_to_3.0.pgsql.sql
 horde/scripts/upgrades/2005-09-22_horde_prefs_varchar2.oci8.sql
 horde/scripts/upgrades/2006-06-29_horde_prefs_indexes.sql
 horde/scripts/upgrades/2008-08-29_fix_mdb2_sequences.php
+horde/scripts/upgrades/2009-02-13_horde_sessionhandler_lastmodified_index.sql
 horde/scripts/upgrades/3.0_to_3.1.mysql.sql
 horde/scripts/upgrades/3.0_to_3.1.oci8.sql
 horde/scripts/upgrades/3.0_to_3.1.sql
@@ -1119,6 +1152,7 @@ horde/scripts/upgrades/3.1_to_3.2.oci8.sql
 horde/scripts/upgrades/3.1_to_3.2.pgsql.sql
 horde/scripts/upgrades/3.1_to_3.2.sql
 horde/scripts/upgrades/3.1_to_3.2.sybase.sql
+horde/scripts/upgrades/3.3_to_3.3.5.sql
 horde/scripts/upgrades/convert_datatree_groups_to_sql.php
 horde/scripts/upgrades/convert_datatree_perms_to_sql.php
 horde/scripts/upgrades/migrate_user_categories.php
@@ -1700,6 +1734,7 @@ horde/services/editor/xinha/modules/
 horde/services/editor/xinha/modules/ColorPicker/
 horde/services/editor/xinha/modules/ColorPicker/ColorPicker.js
 horde/services/editor/xinha/modules/ColorPicker/lang/
+horde/services/editor/xinha/modules/ColorPicker/lang/da.js
 horde/services/editor/xinha/modules/ColorPicker/lang/pt_br.js
 horde/services/editor/xinha/modules/ColorPicker/src/
 horde/services/editor/xinha/modules/ColorPicker/src/ColorPicker.js
@@ -1721,6 +1756,7 @@ horde/services/editor/xinha/modules/Dialogs/src/popupwin.js
 horde/services/editor/xinha/modules/FullScreen/
 horde/services/editor/xinha/modules/FullScreen/full-screen.js
 horde/services/editor/xinha/modules/FullScreen/lang/
+horde/services/editor/xinha/modules/FullScreen/lang/da.js
 horde/services/editor/xinha/modules/FullScreen/lang/de.js
 horde/services/editor/xinha/modules/FullScreen/lang/fr.js
 horde/services/editor/xinha/modules/FullScreen/lang/ja.js
@@ -1779,6 +1815,7 @@ horde/services/editor/xinha/plugins/CharacterMap/character-map.js
 horde/services/editor/xinha/plugins/CharacterMap/img/
 horde/services/editor/xinha/plugins/CharacterMap/img/ed_charmap.gif
 horde/services/editor/xinha/plugins/CharacterMap/lang/
+horde/services/editor/xinha/plugins/CharacterMap/lang/da.js
 horde/services/editor/xinha/plugins/CharacterMap/lang/de.js
 horde/services/editor/xinha/plugins/CharacterMap/lang/fr.js
 horde/services/editor/xinha/plugins/CharacterMap/lang/it.js
@@ -1795,6 +1832,7 @@ horde/services/editor/xinha/plugins/CharacterMap/src/character-map.js
 horde/services/editor/xinha/plugins/ContextMenu/
 horde/services/editor/xinha/plugins/ContextMenu/context-menu.js
 horde/services/editor/xinha/plugins/ContextMenu/lang/
+horde/services/editor/xinha/plugins/ContextMenu/lang/da.js
 horde/services/editor/xinha/plugins/ContextMenu/lang/de.js
 horde/services/editor/xinha/plugins/ContextMenu/lang/el.js
 horde/services/editor/xinha/plugins/ContextMenu/lang/fr.js
@@ -1821,6 +1859,7 @@ horde/services/editor/xinha/plugins/ListType/img/square.png
 horde/services/editor/xinha/plugins/ListType/img/upper-alpha.png
 horde/services/editor/xinha/plugins/ListType/img/upper-roman.png
 horde/services/editor/xinha/plugins/ListType/lang/
+horde/services/editor/xinha/plugins/ListType/lang/da.js
 horde/services/editor/xinha/plugins/ListType/lang/de.js
 horde/services/editor/xinha/plugins/ListType/lang/fr.js
 horde/services/editor/xinha/plugins/ListType/lang/ja.js

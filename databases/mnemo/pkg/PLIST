@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/10/30 09:55:27 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/09/28 13:09:15 sthen Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/LICENSE
 horde/${HORDE_MODULE}/README
@@ -9,6 +9,8 @@ horde/${HORDE_MODULE}/config/
 @mode 600
 horde/${HORDE_MODULE}/config/.htaccess
 horde/${HORDE_MODULE}/config/conf.xml
+horde/${HORDE_MODULE}/config/hooks.php.dist
+@sample horde/${HORDE_MODULE}/config/hooks.php
 horde/${HORDE_MODULE}/config/prefs.php.dist
 @sample horde/${HORDE_MODULE}/config/prefs.php
 @mode
@@ -155,6 +157,8 @@ horde/${HORDE_MODULE}/notepads/create.php
 horde/${HORDE_MODULE}/notepads/delete.php
 horde/${HORDE_MODULE}/notepads/edit.php
 horde/${HORDE_MODULE}/notepads/index.php
+horde/${HORDE_MODULE}/notes/
+horde/${HORDE_MODULE}/notes/index.php
 horde/${HORDE_MODULE}/po/
 horde/${HORDE_MODULE}/po/README
 horde/${HORDE_MODULE}/po/bg_BG.po
@@ -198,9 +202,13 @@ horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.sql
 horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.xml
 horde/${HORDE_MODULE}/scripts/upgrades/
 horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.mysql.sql
-horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.pgsq.sql
+horde/${HORDE_MODULE}/scripts/upgrades/1.1_to_2.0.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2.1_to_2.2.sql
+horde/${HORDE_MODULE}/scripts/upgrades/2.2.1_to_2.2.2.pgsql.sql
+horde/${HORDE_MODULE}/scripts/upgrades/2.2.1_to_2.2.2.sql
+horde/${HORDE_MODULE}/scripts/upgrades/2.2_to_2.2.1.pgsql.sql
 horde/${HORDE_MODULE}/scripts/upgrades/2.2_to_2.2.1.sql
+horde/${HORDE_MODULE}/scripts/upgrades/2008-09-23_fix_group_uid.sql
 horde/${HORDE_MODULE}/scripts/upgrades/convert_datatree_shares_to_sql.php
 horde/${HORDE_MODULE}/search.php
 horde/${HORDE_MODULE}/templates/

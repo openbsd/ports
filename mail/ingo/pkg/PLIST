@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/10/30 09:43:55 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/09/28 13:09:15 sthen Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/LICENSE
 horde/${HORDE_MODULE}/README
@@ -224,7 +224,9 @@ horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.oci8.sql
 horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.sql
 horde/${HORDE_MODULE}/scripts/sql/${HORDE_MODULE}.xml
 horde/${HORDE_MODULE}/scripts/upgrades/
+horde/${HORDE_MODULE}/scripts/upgrades/1.2.1_to_1.2.2.sql
 horde/${HORDE_MODULE}/scripts/upgrades/1.2_to_1.2.1.sql
+horde/${HORDE_MODULE}/scripts/upgrades/2008-09-23_fix_group_uid.sql
 horde/${HORDE_MODULE}/scripts/upgrades/convert_datatree_shares_to_sql.php
 horde/${HORDE_MODULE}/scripts/upgrades/convert_imp_filters.php
 horde/${HORDE_MODULE}/scripts/upgrades/convert_prefs_to_sql.php

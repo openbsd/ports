@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/10/30 09:54:19 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/09/28 13:09:15 sthen Exp $
 horde/${HORDE_MODULE}/
 horde/${HORDE_MODULE}/COPYING
 horde/${HORDE_MODULE}/README
@@ -9,6 +9,8 @@ horde/${HORDE_MODULE}/config/
 @mode 600
 horde/${HORDE_MODULE}/config/.htaccess
 horde/${HORDE_MODULE}/config/conf.xml
+horde/${HORDE_MODULE}/config/hooks.php.dist
+@sample horde/${HORDE_MODULE}/config/hooks.php
 horde/${HORDE_MODULE}/config/menu.php.dist
 @sample horde/${HORDE_MODULE}/config/menu.php
 horde/${HORDE_MODULE}/config/prefs.php.dist
@@ -247,12 +249,15 @@ horde/${HORDE_MODULE}/tasklists/delete.php
 horde/${HORDE_MODULE}/tasklists/edit.php
 horde/${HORDE_MODULE}/tasklists/index.php
 horde/${HORDE_MODULE}/tasklists/info.php
+horde/${HORDE_MODULE}/tasks/
+horde/${HORDE_MODULE}/tasks/index.php
 horde/${HORDE_MODULE}/templates/
 horde/${HORDE_MODULE}/templates/common-header.inc
 horde/${HORDE_MODULE}/templates/data/
 horde/${HORDE_MODULE}/templates/data/export.inc
 horde/${HORDE_MODULE}/templates/data/import.inc
 horde/${HORDE_MODULE}/templates/list/
+horde/${HORDE_MODULE}/templates/list.html.php
 horde/${HORDE_MODULE}/templates/list/empty.inc
 horde/${HORDE_MODULE}/templates/list/header.inc
 horde/${HORDE_MODULE}/templates/list/task_footers.inc
