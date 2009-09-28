@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/28 08:44:36 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}captcha/
+${DRUPAL_MODS}captcha/LICENSE.txt
+${DRUPAL_MODS}captcha/README.txt
+${DRUPAL_MODS}captcha/captcha.admin.inc
+${DRUPAL_MODS}captcha/captcha.inc
+${DRUPAL_MODS}captcha/captcha.info
+${DRUPAL_MODS}captcha/captcha.install
+${DRUPAL_MODS}captcha/captcha.js
+${DRUPAL_MODS}captcha/captcha.module
+${DRUPAL_MODS}captcha/captcha.test
+${DRUPAL_MODS}captcha/captcha_api.txt
+${DRUPAL_MODS}captcha/image_captcha/
+${DRUPAL_MODS}captcha/image_captcha/fonts/
+${DRUPAL_MODS}captcha/image_captcha/fonts/README.txt
+${DRUPAL_MODS}captcha/image_captcha/fonts/Tesox/
+${DRUPAL_MODS}captcha/image_captcha/fonts/Tesox/tesox.ttf
+${DRUPAL_MODS}captcha/image_captcha/fonts/Tesox/tesox_readme.txt
+${DRUPAL_MODS}captcha/image_captcha/fonts/Tuffy/
+${DRUPAL_MODS}captcha/image_captcha/fonts/Tuffy/README.txt
+${DRUPAL_MODS}captcha/image_captcha/fonts/Tuffy/Tuffy.ttf
+${DRUPAL_MODS}captcha/image_captcha/fonts/Tuffy/Tuffy_Bold.ttf
+${DRUPAL_MODS}captcha/image_captcha/image_captcha.admin.inc
+${DRUPAL_MODS}captcha/image_captcha/image_captcha.info
+${DRUPAL_MODS}captcha/image_captcha/image_captcha.install
+${DRUPAL_MODS}captcha/image_captcha/image_captcha.js
+${DRUPAL_MODS}captcha/image_captcha/image_captcha.module
+${DRUPAL_MODS}captcha/image_captcha/image_captcha.user.inc
+${DRUPAL_MODS}captcha/tests/
+${DRUPAL_MODS}captcha/tests/captcha.admin.test
+${DRUPAL_MODS}captcha/translations/
+${DRUPAL_MODS}captcha/translations/captcha-module.pot
+${DRUPAL_MODS}captcha/translations/da.po
+${DRUPAL_MODS}captcha/translations/de.po
+${DRUPAL_MODS}captcha/translations/fi.po
+${DRUPAL_MODS}captcha/translations/he.po
+${DRUPAL_MODS}captcha/translations/hu.po
+${DRUPAL_MODS}captcha/translations/it.po
+${DRUPAL_MODS}captcha/translations/lt.po
+${DRUPAL_MODS}captcha/translations/nl.po
+${DRUPAL_MODS}captcha/translations/pl.po
+${DRUPAL_MODS}captcha/translations/sv.po
+${DRUPAL_MODS}captcha/translations/uk-ua.po
+${DRUPAL_MODS}captcha/translations/uk.po

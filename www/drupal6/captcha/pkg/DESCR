@@ -1,0 +1,4 @@
+This allows the additions of challenges to any form.
+Challenges can be simple math operations, or captcha.
+To avoid annoying users, this module can remember who it already
+presented with a captcha, and not do so again in the future.
