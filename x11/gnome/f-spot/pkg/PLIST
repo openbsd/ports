@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/08/26 15:30:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/09/28 20:40:28 ajacoutot Exp $
 %%SHARED%%
 bin/f-spot
 bin/f-spot-sqlite-upgrade
@@ -269,6 +269,7 @@ share/locale/pt_BR/LC_MESSAGES/f-spot.mo
 share/locale/ru/LC_MESSAGES/f-spot.mo
 share/locale/rw/LC_MESSAGES/f-spot.mo
 share/locale/sk/LC_MESSAGES/f-spot.mo
+share/locale/sl/LC_MESSAGES/f-spot.mo
 share/locale/sr/LC_MESSAGES/f-spot.mo
 share/locale/sr@latin/LC_MESSAGES/f-spot.mo
 share/locale/sv/LC_MESSAGES/f-spot.mo
