@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/01 09:49:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/09/28 15:14:30 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.2
 DISTNAME =	compiz-${V}
-PKGNAME =	${DISTNAME}p1
+PKGNAME =	${DISTNAME}p2
 
 SHARED_LIBS =	decoration	0.0
 
@@ -32,7 +32,8 @@ WANTLIB =	GL GLU ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor \
 MASTER_SITES =	http://releases.compiz-fusion.org/${V}/
 
 MODULES =	devel/gconf2 \
-		devel/gettext
+		devel/gettext \
+		textproc/intltool
 
 MODGCONF2_SCHEMAS_DIR =	compiz
 
