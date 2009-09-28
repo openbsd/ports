@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2009/09/28 18:32:40 ajacoutot Exp $
 
 COMMENT=	flash rendering library
 DISTNAME=	swfdec-0.8.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	swfdec-0.8           0.0      # .90.0
 SHARED_LIBS +=	swfdec-gtk-0.8       0.0      # .90.0
 CATEGORIES=	graphics
@@ -26,12 +26,10 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 
 LIB_DEPENDS=	soup-2.4::devel/libsoup \
 		gstpbutils-0.10::multimedia/gstreamer-0.10/plugins-base \
-		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
-		a52::audio/liba52 \
-		faac::audio/faac
+		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
-RUN_DEPENDS=	:gstreamer-faad-*:multimedia/gstreamer-0.10/plugins-bad,-faad \
-		:gstreamer-mad-*:multimedia/gstreamer-0.10/plugins-ugly,-mad \
+RUN_DEPENDS=	::multimedia/gstreamer-0.10/plugins-bad \
+		::multimedia/gstreamer-0.10/plugins-ugly \
 		:gstreamer-ffmpeg-*:multimedia/gstreamer-0.10/plugins-ffmpeg
 MODULES=	devel/gettext
 

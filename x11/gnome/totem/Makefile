@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2009/08/11 08:39:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2009/09/28 18:33:48 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.22.2
-PKGNAME=	${DISTNAME}p24
+PKGNAME=	${DISTNAME}p25
 
 CATEGORIES=	multimedia
 
@@ -103,14 +103,9 @@ LIB_DEPENDS+=	gstaudio-0.10,gstinterfaces-0.10,gstpbutils-0.10,gstvideo-0.10::mu
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files
 BUILD_DEPENDS+=	:gstreamer-confelements-*:multimedia/gstreamer-0.10/plugins-good,-gconf
-RUN_DEPENDS+=	:gstreamer-vorbis-*:multimedia/gstreamer-0.10/plugins-base,-vorbis \
-		:gstreamer-ogg-*:multimedia/gstreamer-0.10/plugins-base,-ogg \
-		:gstreamer-jpeg-*:multimedia/gstreamer-0.10/plugins-good,-jpeg \
+RUN_DEPENDS+=	::multimedia/gstreamer-0.10/plugins-base \
 		:gstreamer-confelements-*:multimedia/gstreamer-0.10/plugins-good,-gconf \
-		:gstreamer-a52-*:multimedia/gstreamer-0.10/plugins-ugly,-a52 \
-		:gstreamer-mpeg2-*:multimedia/gstreamer-0.10/plugins-ugly,-mpeg2 \
-		:gstreamer-dvdread-*:multimedia/gstreamer-0.10/plugins-ugly,-dvdread \
-		:gstreamer-mad-*:multimedia/gstreamer-0.10/plugins-ugly,-mad \
+		::multimedia/gstreamer-0.10/plugins-ugly \
 		:gstreamer-ffmpeg->=0.10.5:multimedia/gstreamer-0.10/plugins-ffmpeg
 CONFIGURE_ARGS+=--enable-gstreamer \
 		--disable-xine

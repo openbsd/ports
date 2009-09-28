@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2009/08/20 14:14:12 robert Exp $
+# $OpenBSD: Makefile,v 1.23 2009/09/28 18:33:48 ajacoutot Exp $
 
 COMMENT=	PhotoBooth inspired application
 
 GNOME_PROJECT=	cheese
 GNOME_VERSION=	2.24.3
-PKGNAME=	${DISTNAME}p13
+PKGNAME=	${DISTNAME}p14
 
 CATEGORIES=	multimedia
 
@@ -37,13 +37,8 @@ LIB_DEPENDS=	camel-1.2.>=11,ebook-1.2,edataserver-1.2,smime3,softokn3::databases
 		rsvg-2.>=20::x11/gnome/librsvg \
 		gstinterfaces-0.10,gstreamer-0.10::multimedia/gstreamer-0.10/plugins-base \
 		gnomeui-2::x11/gnome/libgnomeui
-RUN_DEPENDS=	:gstreamer-ogg-*:multimedia/gstreamer-0.10/plugins-base,-ogg \
-		:gstreamer-theora-*:multimedia/gstreamer-0.10/plugins-base,-theora \
-		:gstreamer-vorbis-*:multimedia/gstreamer-0.10/plugins-base,-vorbis \
+RUN_DEPENDS=	::multimedia/gstreamer-0.10/plugins-base \
 		:gstreamer-confelements-*:multimedia/gstreamer-0.10/plugins-good,-gconf
-
-# gstreamer v4l2 plugin
-RUN_DEPENDS+=	::multimedia/gstreamer-0.10/plugins-good
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes

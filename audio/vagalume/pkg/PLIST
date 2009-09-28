@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/15 07:35:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/09/28 18:32:02 ajacoutot Exp $
 @bin bin/vagalume
 bin/vagalumectl
 @man man/man1/vagalume.1
 @man man/man1/vagalumectl.1
 share/applications/vagalume.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/vagalume.service
 share/icons/
 share/icons/hicolor/
