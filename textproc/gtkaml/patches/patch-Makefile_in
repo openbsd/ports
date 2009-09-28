@@ -1,14 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2009/03/22 19:19:24 ajacoutot Exp $
---- Makefile.in.orig	Sun Mar 22 20:09:29 2009
-+++ Makefile.in	Sun Mar 22 20:10:05 2009
-@@ -169,9 +169,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-Makefile_in,v 1.5 2009/09/28 16:56:26 ajacoutot Exp $
+--- Makefile.in.orig	Mon Sep 28 18:49:15 2009
++++ Makefile.in	Mon Sep 28 18:49:55 2009
+@@ -200,8 +200,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  SUBDIRS = src \
  	data \
- 	vapi \
--	tests \
--	tutorial \
--	examples/SimpleViewer2
-+	tutorial
+-	vapi \
+-	tests 
++	vapi
  
  gtkamldocdir = ${prefix}/doc/gtkaml
  EXTRA_DIST = \

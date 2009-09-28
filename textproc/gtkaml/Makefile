@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2009/06/02 04:04:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/09/28 16:56:26 ajacoutot Exp $
 
 COMMENT=		XML parser that extends the Vala.Parser
 
-DISTNAME=		gtkaml-0.2.7
+DISTNAME=		gtkaml-0.2.8
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://gtkaml.googlecode.com/
@@ -26,7 +26,7 @@ WANTLIB=		c glib-2.0 gobject-2.0 xml2
 USE_X11=		Yes
 
 BUILD_DEPENDS=		::x11/gtk+2
-LIB_DEPENDS=		vala.>=1:vala->=0.7.1:lang/vala
+LIB_DEPENDS=		vala.>=1:vala->=0.7.7:lang/vala
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
