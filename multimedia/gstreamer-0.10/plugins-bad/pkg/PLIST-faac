@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-faac,v 1.1.1.1 2007/01/11 18:12:36 espie Exp $
-lib/gstreamer-${VERSION}/libgstfaac.la
-lib/gstreamer-${VERSION}/libgstfaac.so

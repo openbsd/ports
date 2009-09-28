@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-a52,v 1.1 2007/01/10 02:14:04 espie Exp $
-@option no-default-conflict
-@conflict gstreamer-a52->=0.10
-lib/gstreamer-${VERSION}/libgsta52dec.la
-lib/gstreamer-${VERSION}/libgsta52dec.so

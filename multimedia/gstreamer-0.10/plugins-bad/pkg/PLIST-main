@@ -1,4 +1,17 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/06/01 07:19:05 sturm Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/09/28 18:28:03 ajacoutot Exp $
+@conflict gstreamer-bz2-*
+@conflict gstreamer-faac-*
+@conflict gstreamer-faad-*
+@conflict gstreamer-gsm-*
+@conflict gstreamer-ladspa-*
+@conflict gstreamer-meta-*
+@conflict gstreamer-musepack-*
+@conflict gstreamer-sdl-*
+@conflict gstreamer-sndfile-*
+@conflict gstreamer-swf-*
+@conflict gstreamer-tremor-*
+@conflict gstreamer-x264-*
+@conflict gstreamer-xvid-*
 include/gstreamer-${VERSION}/gst/app/
 include/gstreamer-${VERSION}/gst/app/gstappbuffer.h
 include/gstreamer-${VERSION}/gst/app/gstappsink.h
@@ -7,12 +20,18 @@ lib/gstreamer-${VERSION}/libgstapp.la
 lib/gstreamer-${VERSION}/libgstapp.so
 lib/gstreamer-${VERSION}/libgstbayer.la
 lib/gstreamer-${VERSION}/libgstbayer.so
+lib/gstreamer-${VERSION}/libgstbz2.la
+lib/gstreamer-${VERSION}/libgstbz2.so
 lib/gstreamer-${VERSION}/libgstcdxaparse.la
 lib/gstreamer-${VERSION}/libgstcdxaparse.so
 lib/gstreamer-${VERSION}/libgstdeinterlace.la
 lib/gstreamer-${VERSION}/libgstdeinterlace.so
 lib/gstreamer-${VERSION}/libgstdvdspu.la
 lib/gstreamer-${VERSION}/libgstdvdspu.so
+lib/gstreamer-${VERSION}/libgstfaac.la
+lib/gstreamer-${VERSION}/libgstfaac.so
+lib/gstreamer-${VERSION}/libgstfaad.la
+lib/gstreamer-${VERSION}/libgstfaad.so
 lib/gstreamer-${VERSION}/libgstfestival.la
 lib/gstreamer-${VERSION}/libgstfestival.so
 lib/gstreamer-${VERSION}/libgstfilter.la
@@ -21,10 +40,18 @@ lib/gstreamer-${VERSION}/libgstflvdemux.la
 lib/gstreamer-${VERSION}/libgstflvdemux.so
 lib/gstreamer-${VERSION}/libgstfreeze.la
 lib/gstreamer-${VERSION}/libgstfreeze.so
+lib/gstreamer-${VERSION}/libgstgsm.la
+lib/gstreamer-${VERSION}/libgstgsm.so
 lib/gstreamer-${VERSION}/libgsth264parse.la
 lib/gstreamer-${VERSION}/libgsth264parse.so
 lib/gstreamer-${VERSION}/libgstinterleave.la
 lib/gstreamer-${VERSION}/libgstinterleave.so
+lib/gstreamer-${VERSION}/libgstivorbis.la
+lib/gstreamer-${VERSION}/libgstivorbis.so
+lib/gstreamer-${VERSION}/libgstladspa.la
+lib/gstreamer-${VERSION}/libgstladspa.so
+lib/gstreamer-${VERSION}/libgstmetadata.la
+lib/gstreamer-${VERSION}/libgstmetadata.so
 lib/gstreamer-${VERSION}/libgstmodplug.la
 lib/gstreamer-${VERSION}/libgstmodplug.so
 lib/gstreamer-${VERSION}/libgstmpeg4videoparse.la
@@ -33,6 +60,8 @@ lib/gstreamer-${VERSION}/libgstmpegtsparse.la
 lib/gstreamer-${VERSION}/libgstmpegtsparse.so
 lib/gstreamer-${VERSION}/libgstmpegvideoparse.la
 lib/gstreamer-${VERSION}/libgstmpegvideoparse.so
+lib/gstreamer-${VERSION}/libgstmusepack.la
+lib/gstreamer-${VERSION}/libgstmusepack.so
 lib/gstreamer-${VERSION}/libgstmve.la
 lib/gstreamer-${VERSION}/libgstmve.so
 lib/gstreamer-${VERSION}/libgstnsf.la
@@ -47,10 +76,14 @@ lib/gstreamer-${VERSION}/libgstrfbsrc.la
 lib/gstreamer-${VERSION}/libgstrfbsrc.so
 lib/gstreamer-${VERSION}/libgstrtpmanager.la
 lib/gstreamer-${VERSION}/libgstrtpmanager.so
+lib/gstreamer-${VERSION}/libgstsdl.la
+lib/gstreamer-${VERSION}/libgstsdl.so
 lib/gstreamer-${VERSION}/libgstsdpelem.la
 lib/gstreamer-${VERSION}/libgstsdpelem.so
 lib/gstreamer-${VERSION}/libgstselector.la
 lib/gstreamer-${VERSION}/libgstselector.so
+lib/gstreamer-${VERSION}/libgstsndfile.la
+lib/gstreamer-${VERSION}/libgstsndfile.so
 lib/gstreamer-${VERSION}/libgstspeed.la
 lib/gstreamer-${VERSION}/libgstspeed.so
 lib/gstreamer-${VERSION}/libgstspeexresample.la
@@ -65,6 +98,10 @@ lib/gstreamer-${VERSION}/libgstvideosignal.la
 lib/gstreamer-${VERSION}/libgstvideosignal.so
 lib/gstreamer-${VERSION}/libgstvmnc.la
 lib/gstreamer-${VERSION}/libgstvmnc.so
+lib/gstreamer-${VERSION}/libgstx264.la
+lib/gstreamer-${VERSION}/libgstx264.so
+lib/gstreamer-${VERSION}/libgstxvid.la
+lib/gstreamer-${VERSION}/libgstxvid.so
 lib/gstreamer-${VERSION}/libgsty4menc.la
 lib/gstreamer-${VERSION}/libgsty4menc.so
 lib/libgstapp-${VERSION}.la

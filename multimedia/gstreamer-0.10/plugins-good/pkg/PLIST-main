@@ -1,5 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2009/04/11 14:37:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2009/09/28 18:27:13 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.7
+@conflict gstreamer-jpeg-*
+@conflict gstreamer-png-*
+@conflict gstreamer-cairo-*
+@conflict gstreamer-flac-*
+@conflict gstreamer-shout-*
+@conflict gstreamer-speex-*
+@conflict gstreamer-taglib-*
+@conflict gstreamer-wavpack-*
 lib/gstreamer-${VERSION}/libgstalaw.la
 lib/gstreamer-${VERSION}/libgstalaw.so
 lib/gstreamer-${VERSION}/libgstalpha.la
@@ -16,6 +24,8 @@ lib/gstreamer-${VERSION}/libgstauparse.la
 lib/gstreamer-${VERSION}/libgstauparse.so
 lib/gstreamer-${VERSION}/libgstavi.la
 lib/gstreamer-${VERSION}/libgstavi.so
+lib/gstreamer-${VERSION}/libgstcairo.la
+lib/gstreamer-${VERSION}/libgstcairo.so
 lib/gstreamer-${VERSION}/libgstcutter.la
 lib/gstreamer-${VERSION}/libgstcutter.so
 lib/gstreamer-${VERSION}/libgstdebug.la
@@ -26,6 +36,8 @@ lib/gstreamer-${VERSION}/libgsteffectv.la
 lib/gstreamer-${VERSION}/libgsteffectv.so
 lib/gstreamer-${VERSION}/libgstequalizer.la
 lib/gstreamer-${VERSION}/libgstequalizer.so
+lib/gstreamer-${VERSION}/libgstflac.la
+lib/gstreamer-${VERSION}/libgstflac.so
 lib/gstreamer-${VERSION}/libgstflxdec.la
 lib/gstreamer-${VERSION}/libgstflxdec.so
 lib/gstreamer-${VERSION}/libgstgamma.la
@@ -38,6 +50,8 @@ lib/gstreamer-${VERSION}/libgsticydemux.la
 lib/gstreamer-${VERSION}/libgsticydemux.so
 lib/gstreamer-${VERSION}/libgstid3demux.la
 lib/gstreamer-${VERSION}/libgstid3demux.so
+lib/gstreamer-${VERSION}/libgstjpeg.la
+lib/gstreamer-${VERSION}/libgstjpeg.so
 lib/gstreamer-${VERSION}/libgstlevel.la
 lib/gstreamer-${VERSION}/libgstlevel.so
 lib/gstreamer-${VERSION}/libgstlibsndio.la
@@ -56,18 +70,26 @@ lib/gstreamer-${VERSION}/libgstnavigationtest.la
 lib/gstreamer-${VERSION}/libgstnavigationtest.so
 @comment lib/gstreamer-${VERSION}/libgstossaudio.la
 @comment lib/gstreamer-${VERSION}/libgstossaudio.so
+lib/gstreamer-${VERSION}/libgstpng.la
+lib/gstreamer-${VERSION}/libgstpng.so
 lib/gstreamer-${VERSION}/libgstqtdemux.la
 lib/gstreamer-${VERSION}/libgstqtdemux.so
 lib/gstreamer-${VERSION}/libgstrtp.la
 lib/gstreamer-${VERSION}/libgstrtp.so
 lib/gstreamer-${VERSION}/libgstrtsp.la
 lib/gstreamer-${VERSION}/libgstrtsp.so
+lib/gstreamer-${VERSION}/libgstshout2.la
+lib/gstreamer-${VERSION}/libgstshout2.so
 lib/gstreamer-${VERSION}/libgstsmpte.la
 lib/gstreamer-${VERSION}/libgstsmpte.so
 lib/gstreamer-${VERSION}/libgstspectrum.la
 lib/gstreamer-${VERSION}/libgstspectrum.so
+lib/gstreamer-${VERSION}/libgstspeex.la
+lib/gstreamer-${VERSION}/libgstspeex.so
 lib/gstreamer-${VERSION}/libgstsunaudio.la
 lib/gstreamer-${VERSION}/libgstsunaudio.so
+lib/gstreamer-${VERSION}/libgsttaglib.la
+lib/gstreamer-${VERSION}/libgsttaglib.so
 lib/gstreamer-${VERSION}/libgstudp.la
 lib/gstreamer-${VERSION}/libgstudp.so
 lib/gstreamer-${VERSION}/libgstvideo4linux2.la
@@ -84,6 +106,8 @@ lib/gstreamer-${VERSION}/libgstvideomixer.la
 lib/gstreamer-${VERSION}/libgstvideomixer.so
 lib/gstreamer-${VERSION}/libgstwavenc.la
 lib/gstreamer-${VERSION}/libgstwavenc.so
+lib/gstreamer-${VERSION}/libgstwavpack.la
+lib/gstreamer-${VERSION}/libgstwavpack.so
 lib/gstreamer-${VERSION}/libgstwavparse.la
 lib/gstreamer-${VERSION}/libgstwavparse.so
 lib/gstreamer-${VERSION}/libgstximagesrc.la

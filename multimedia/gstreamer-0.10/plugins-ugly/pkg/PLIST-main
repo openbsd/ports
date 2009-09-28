@@ -1,12 +1,24 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/05/13 15:11:51 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/09/28 18:28:36 ajacoutot Exp $
+@conflict gstreamer-a52-*
+@conflict gstreamer-mad-*
+@conflict gstreamer-mpeg2-*
+@conflict gstreamer-dvdread-*
+lib/gstreamer-${VERSION}/libgsta52dec.la
+lib/gstreamer-${VERSION}/libgsta52dec.so
 lib/gstreamer-${VERSION}/libgstasf.la
 lib/gstreamer-${VERSION}/libgstasf.so
 lib/gstreamer-${VERSION}/libgstdvdlpcmdec.la
 lib/gstreamer-${VERSION}/libgstdvdlpcmdec.so
+lib/gstreamer-${VERSION}/libgstdvdread.la
+lib/gstreamer-${VERSION}/libgstdvdread.so
 lib/gstreamer-${VERSION}/libgstdvdsub.la
 lib/gstreamer-${VERSION}/libgstdvdsub.so
 lib/gstreamer-${VERSION}/libgstiec958.la
 lib/gstreamer-${VERSION}/libgstiec958.so
+lib/gstreamer-${VERSION}/libgstmad.la
+lib/gstreamer-${VERSION}/libgstmad.so
+lib/gstreamer-${VERSION}/libgstmpeg2dec.la
+lib/gstreamer-${VERSION}/libgstmpeg2dec.so
 lib/gstreamer-${VERSION}/libgstmpegaudioparse.la
 lib/gstreamer-${VERSION}/libgstmpegaudioparse.so
 lib/gstreamer-${VERSION}/libgstmpegstream.la

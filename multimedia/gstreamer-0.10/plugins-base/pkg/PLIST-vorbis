@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-vorbis,v 1.2 2007/01/09 20:00:23 espie Exp $
-@option no-default-conflict
-@conflict gstreamer-vorbis->=0.10
-lib/gstreamer-${VERSION}/libgstvorbis.la
-lib/gstreamer-${VERSION}/libgstvorbis.so

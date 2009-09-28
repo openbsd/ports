@@ -1,4 +1,0 @@
-This is a "bad" plugin for gstreamer-${VERSION}. It might be buggy or
-unfinished.
-
-* ivorbis       vorbis decoding using integer operations

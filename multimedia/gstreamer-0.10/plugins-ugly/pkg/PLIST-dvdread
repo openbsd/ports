@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-dvdread,v 1.1 2007/01/10 12:58:31 espie Exp $
-@option no-default-conflict
-@conflict gstreamer-dvdread->=0.10
-lib/gstreamer-${VERSION}/libgstdvdread.la
-lib/gstreamer-${VERSION}/libgstdvdread.so

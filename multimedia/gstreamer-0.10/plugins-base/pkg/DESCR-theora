@@ -1,2 +1,0 @@
-This package is part of the base plugins for gstreamer-${VERSION}.
-* theora    theora plugin library: encoder, decoder, parser

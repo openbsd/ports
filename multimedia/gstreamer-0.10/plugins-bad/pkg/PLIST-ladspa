@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-ladspa,v 1.1 2007/01/13 11:23:38 espie Exp $
-lib/gstreamer-${VERSION}/libgstladspa.la
-lib/gstreamer-${VERSION}/libgstladspa.so

@@ -10,11 +10,7 @@ licence or distribution issues.
 * rmdemux        Realmedia stream demuxer
 
 The following plugins are in specific packages because of dependencies:
-* a52dec
-* dvdread
 * lame
-* mad
-* mpeg2dec
 * siddec
 
 The following plugins are not built:

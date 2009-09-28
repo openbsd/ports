@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/05/13 15:11:51 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/09/28 18:26:38 ajacoutot Exp $
+@conflict gstreamer-ogg-*
+@conflict gstreamer-theora-*
+@conflict gstreamer-vorbis-*
+@conflict gstreamer-pango-*
 bin/gst-visualise-${VERSION}
 include/gstreamer-${VERSION}/gst/audio/
 include/gstreamer-${VERSION}/gst/audio/audio.h
@@ -91,6 +95,10 @@ lib/gstreamer-${VERSION}/libgstffmpegcolorspace.la
 lib/gstreamer-${VERSION}/libgstffmpegcolorspace.so
 lib/gstreamer-${VERSION}/libgstgdp.la
 lib/gstreamer-${VERSION}/libgstgdp.so
+lib/gstreamer-${VERSION}/libgstogg.la
+lib/gstreamer-${VERSION}/libgstogg.so
+lib/gstreamer-${VERSION}/libgstpango.la
+lib/gstreamer-${VERSION}/libgstpango.so
 lib/gstreamer-${VERSION}/libgstplaybin.la
 lib/gstreamer-${VERSION}/libgstplaybin.so
 lib/gstreamer-${VERSION}/libgstqueue2.la
@@ -99,6 +107,8 @@ lib/gstreamer-${VERSION}/libgstsubparse.la
 lib/gstreamer-${VERSION}/libgstsubparse.so
 lib/gstreamer-${VERSION}/libgsttcp.la
 lib/gstreamer-${VERSION}/libgsttcp.so
+lib/gstreamer-${VERSION}/libgsttheora.la
+lib/gstreamer-${VERSION}/libgsttheora.so
 lib/gstreamer-${VERSION}/libgsttypefindfunctions.la
 lib/gstreamer-${VERSION}/libgsttypefindfunctions.so
 lib/gstreamer-${VERSION}/libgstvideorate.la
@@ -109,6 +119,8 @@ lib/gstreamer-${VERSION}/libgstvideotestsrc.la
 lib/gstreamer-${VERSION}/libgstvideotestsrc.so
 lib/gstreamer-${VERSION}/libgstvolume.la
 lib/gstreamer-${VERSION}/libgstvolume.so
+lib/gstreamer-${VERSION}/libgstvorbis.la
+lib/gstreamer-${VERSION}/libgstvorbis.so
 lib/gstreamer-${VERSION}/libgstximagesink.la
 lib/gstreamer-${VERSION}/libgstximagesink.so
 lib/gstreamer-${VERSION}/libgstxvimagesink.la

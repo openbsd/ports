@@ -1,5 +1,3 @@
-@comment $OpenBSD: PLIST-lame,v 1.1 2007/01/10 02:14:04 espie Exp $
-@option no-default-conflict
-@conflict gstreamer-lame->=0.10
+@comment $OpenBSD: PLIST-lame,v 1.2 2009/09/28 18:28:36 ajacoutot Exp $
 lib/gstreamer-${VERSION}/libgstlame.la
 lib/gstreamer-${VERSION}/libgstlame.so

@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-speex,v 1.1 2007/01/09 22:01:28 espie Exp $
-@option no-default-conflict
-@conflict gstreamer-speex->=0.10
-lib/gstreamer-${VERSION}/libgstspeex.la
-lib/gstreamer-${VERSION}/libgstspeex.so

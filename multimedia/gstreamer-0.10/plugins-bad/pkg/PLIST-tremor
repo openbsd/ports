@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-tremor,v 1.1.1.1 2007/01/11 18:12:36 espie Exp $
-@option no-default-conflict
-@conflict gstreamer-tremor->=0.10
-lib/gstreamer-${VERSION}/libgstivorbis.la
-lib/gstreamer-${VERSION}/libgstivorbis.so

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-x264,v 1.1 2008/10/01 08:02:59 ajacoutot Exp $
-lib/gstreamer-${VERSION}/libgstx264.la
-lib/gstreamer-${VERSION}/libgstx264.so

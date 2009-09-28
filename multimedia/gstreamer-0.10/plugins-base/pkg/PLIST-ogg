@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-ogg,v 1.2 2007/01/09 20:00:23 espie Exp $
-@option no-default-conflict
-@conflict gstreamer-ogg->=0.10
-lib/gstreamer-${VERSION}/libgstogg.la
-lib/gstreamer-${VERSION}/libgstogg.so

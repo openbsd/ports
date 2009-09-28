@@ -12,22 +12,13 @@ Those plugins for gstreamer-${VERSION} are deemed low quality for now.
 * tta                      TTA lossless audio format handling
 * videocrop                Crops video into a user-defined region
 * y4menc                   yuv4mpeg video encoder
+* gsm
 
 The following plugins are in specific packages because of dependencies:
 
-* bz2
-* faac
-* faad
-* gsm
-* ladspa
 * mplex
-* musepack 
 * neon
 * real
-* sdl
-* x264
-* xvid
-
 
 The following plugins are not built:
 
@@ -38,7 +29,6 @@ The following plugins are not built:
 * mms (no libmms library)
 * mpeg2enc (depends on internals of mjpegtools)
 * musicbrainz (not ported yet)
-* neon (library needs an update)
 * soundtouch (no libsoundtouch)
 * spcdec (no library)
 * swfdec (library is out-of-date)

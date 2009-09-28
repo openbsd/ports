@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-faad,v 1.1.1.1 2007/01/11 18:12:36 espie Exp $
-@option no-default-conflict
-@conflict gstreamer-faad->=0.10
-lib/gstreamer-${VERSION}/libgstfaad.la
-lib/gstreamer-${VERSION}/libgstfaad.so

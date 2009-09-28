@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-mad,v 1.1 2007/01/10 02:14:04 espie Exp $
-@option no-default-conflict
-@conflict gstreamer-mad->=0.10
-lib/gstreamer-${VERSION}/libgstmad.la
-lib/gstreamer-${VERSION}/libgstmad.so

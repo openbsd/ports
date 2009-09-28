@@ -38,8 +38,10 @@ dependencies.
 * qtdemux         Quicktime stream demuxer
 * rtp             Real-time protocol plugins: asterisk, rtp, gsm, h263...
 * rtsp            transfer data via RTSP
+* shout2send
 * smpte           Apply the standard SMPTE transitions on video images
 * spectrum        run an FFT on signal and output spectrum data
+* speex
 * udp             transfer data via UDP
 * videobalance    Hue/saturation/brightness/contrast of video stream
 * videobox        resize a video: borders/cropping
@@ -49,23 +51,14 @@ dependencies.
 * wavparse        Parse a .wav file into raw audio
 * ximagesrc       X11 video input plugin using standard Xlib calls
 
-
 The following plugins are in specific packages because of dependencies:
 * aasink
 * cacasink
-* cairo
 * dv
 * esdsink
-* flac
 * autodetect & gconfelements
 * gdkpixbuf
-* jpeg
-* png
-* shout2send
 * soup
-* speex
-* taglib
-* wavpack
 
 The following plugins are not built:
 * 1394 (no firewire support yet)

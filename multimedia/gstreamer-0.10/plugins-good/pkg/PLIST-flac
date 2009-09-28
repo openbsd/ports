@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-flac,v 1.2 2007/01/10 12:58:31 espie Exp $
-@option no-default-conflict
-@conflict gstreamer-flac->=0.10
-lib/gstreamer-${VERSION}/libgstflac.la
-lib/gstreamer-${VERSION}/libgstflac.so

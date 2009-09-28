@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-pango,v 1.2 2007/01/09 20:00:23 espie Exp $
-lib/gstreamer-${VERSION}/libgstpango.la
-lib/gstreamer-${VERSION}/libgstpango.so

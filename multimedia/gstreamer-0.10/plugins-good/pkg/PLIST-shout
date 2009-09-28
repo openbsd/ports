@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-shout,v 1.1 2007/01/10 01:41:02 espie Exp $
-lib/gstreamer-${VERSION}/libgstshout2.la
-lib/gstreamer-${VERSION}/libgstshout2.so

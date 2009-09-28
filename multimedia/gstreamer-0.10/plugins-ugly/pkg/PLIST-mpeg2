@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-mpeg2,v 1.1 2007/01/10 12:58:31 espie Exp $
-@option no-default-conflict
-@conflict gstreamer-mpeg2->=0.10
-lib/gstreamer-${VERSION}/libgstmpeg2dec.la
-lib/gstreamer-${VERSION}/libgstmpeg2dec.so

@@ -23,10 +23,6 @@ with few or no dependencies.
 The following plugins are in specific packages because of dependencies:
 * cdparanoia
 * gnomevfs
-* ogg
-* pango
-* theora
-* vorbis
 
 The following plugins are not built:
 * alsa (linux specific)
