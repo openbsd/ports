@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/10/19 08:42:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/09/29 07:38:39 benoit Exp $
 @bin bin/dillo
 @bin bin/dpid
 bin/dpidc
@@ -20,6 +20,7 @@ lib/dillo/dpi/hello/
 @bin lib/dillo/dpi/hello/hello.filter.dpi
 lib/dillo/dpi/https/
 @bin lib/dillo/dpi/https/https.filter.dpi
+@man man/man1/dillo.1
 share/doc/dillo/
 share/doc/dillo/Cache.txt
 share/doc/dillo/Cookies.txt
@@ -37,3 +38,4 @@ share/examples/dillo/dillorc
 @sample ${SYSCONFDIR}/dillorc
 share/examples/dillo/dpidrc
 @sample ${SYSCONFDIR}/dpidrc
+share/examples/dillo/keysrc

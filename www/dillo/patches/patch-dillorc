@@ -1,19 +1,19 @@
-$OpenBSD: patch-dillorc,v 1.1 2008/11/03 11:05:25 ajacoutot Exp $
---- dillorc.orig	Mon Nov  3 11:45:40 2008
-+++ dillorc	Mon Nov  3 11:46:03 2008
-@@ -39,13 +39,13 @@
- # vw_fontname="new century schoolbook"
- # vw_fontname="helvetica"
- # vw_fontname="times"
--# vw_fontname="Bitstream vera Serif"
-+vw_fontname="Bitstream vera Serif"
- # vw_fontname="arial"
- #vw_fontname="DejaVu Sans"
+--- dillorc.orig	Wed Jun 10 05:35:25 2009
++++ dillorc	Tue Sep 22 17:43:18 2009
+@@ -45,11 +45,11 @@
+ # Ex. {helvetica, lucida, times, "new century schoolbook", utopia, ...}
+ # The values below represent the defaults.
+ #
+-#font_serif="DejaVu Serif"
+-#font_sans_serif="DejaVu Sans"
+-#font_cursive="DejaVu Sans"
+-#font_fantasy="DejaVu Sans"
+-#font_monospace="DejaVu Sans Mono"
++font_serif="Bitstream vera Serif"
++font_sans_serif="Bitstream vera Serif"
++font_cursive="Bitstream vera Serif"
++font_fantasy="Bitstream vera Serif"
++font_monospace="Bitstream Vera Sans Mono"
  
- # Fontname for fixed width rendering (mainly text quoted with <pre>)
- # fw_fontname=courier
--# fw_fontname="Bitstream Vera Sans Mono"
-+fw_fontname="Bitstream Vera Sans Mono"
- # fw_fontname="Andale Mono"
- #fw_fontname="DejaVu Sans Mono"
- 
+ # All font sizes are scaled by this value
+ # font_factor=1.5

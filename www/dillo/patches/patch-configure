@@ -1,12 +1,13 @@
-$OpenBSD: patch-configure,v 1.4 2008/10/19 08:42:55 ajacoutot Exp $
---- configure.orig	Fri Oct 17 06:47:30 2008
-+++ configure	Fri Oct 17 06:47:46 2008
-@@ -7604,14 +7604,6 @@ cat >d_size.h <<_______EOF
+--- configure.orig	Wed Jul  1 19:57:05 2009
++++ configure	Tue Sep 22 15:59:54 2009
+@@ -8344,16 +8344,6 @@
  
  #include "config.h"
  
 -#if HAVE_STDINT_H == 0
 -#include <stdint.h>
+-#elif defined(HAVE_INTTYPES_H)
+-#include <inttypes.h>
 -#else
 -typedef signed $gint16    int16_t;
 -typedef unsigned $gint16  uint16_t;

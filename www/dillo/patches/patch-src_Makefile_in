@@ -1,16 +1,17 @@
---- Makefile.in.orig	Wed Jul  1 19:56:55 2009
-+++ Makefile.in	Tue Sep 22 15:57:01 2009
-@@ -252,12 +252,12 @@
+--- src/Makefile.in.orig	Wed Jul  1 19:56:49 2009
++++ src/Makefile.in	Tue Sep 22 17:57:07 2009
+@@ -463,12 +463,12 @@
  uninstall-info-am:
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
 -	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
-+	$(mkdir_p) $(PREFIX)/share/examples/dillo/
++	test -z "$(PREFIX)/share/examples/dillo" || $(mkdir_p) "$(PREFIX)/share/examples/dillo"
  	@list='$(sysconf_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f=$(am__strip_dir) \
- 	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
 -	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
++	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(PREFIX)/share/examples/dillo/$$f'"; \
 +	  $(sysconfDATA_INSTALL) "$$d$$p" "$(PREFIX)/share/examples/dillo/$$f"; \
  	done
  

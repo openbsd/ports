@@ -1,24 +1,11 @@
-$OpenBSD: patch-dpid_Makefile_in,v 1.3 2008/10/19 08:42:55 ajacoutot Exp $
---- dpid/Makefile.in.orig	Fri Oct 10 16:48:19 2008
-+++ dpid/Makefile.in	Fri Oct 17 07:25:33 2008
-@@ -485,13 +485,13 @@ uninstall-am: uninstall-binPROGRAMS uninstall-binSCRIP
- 
- 
- install-data-local :
--	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
--	echo dpi_dir=$(libdir)/dillo/dpi > $(DESTDIR)$(sysconfdir)/dpidrc
--	echo >> $(DESTDIR)$(sysconfdir)/dpidrc
--	echo "proto.file=file/file.dpi" >> $(DESTDIR)$(sysconfdir)/dpidrc
--	echo "proto.ftp=ftp/ftp.filter.dpi" >> $(DESTDIR)$(sysconfdir)/dpidrc
--	echo "proto.https=https/https.filter.dpi" >> $(DESTDIR)$(sysconfdir)/dpidrc
--	echo "proto.data=datauri/datauri.filter.dpi" >> $(DESTDIR)$(sysconfdir)/dpidrc
-+	$(mkinstalldirs) $(PREFIX)/share/examples/dillo/
-+	echo dpi_dir=$(libdir)/dillo/dpi > $(PREFIX)/share/examples/dillo/dpidrc
-+	echo >> $(PREFIX)/share/examples/dillo/dpidrc
-+	echo "proto.file=file/file.dpi" >> $(PREFIX)/share/examples/dillo/dpidrc
-+	echo "proto.ftp=ftp/ftp.filter.dpi" >> $(PREFIX)/share/examples/dillo/dpidrc
-+	echo "proto.https=https/https.filter.dpi" >> $(PREFIX)/share/examples/dillo/dpidrc
-+	echo "proto.data=datauri/datauri.filter.dpi" >> $(PREFIX)/share/examples/dillo/dpidrc
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
+--- dpid/Makefile.in.orig	Tue Sep 22 17:44:57 2009
++++ dpid/Makefile.in	Tue Sep 22 17:45:30 2009
+@@ -415,7 +415,7 @@
+ check: check-am
+ all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(sysconfdir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" "$(PREFIX)/share/examples/dillo"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+ install: install-am
