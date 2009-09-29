@@ -1,5 +1,5 @@
-.\" $OpenBSD: mupdf.1,v 1.1.1.1 2009/06/02 22:15:08 sthen Exp $
-.Dd $Mdocdate: June 2 2009 $
+.\" $OpenBSD: mupdf.1,v 1.2 2009/09/29 23:59:40 sthen Exp $
+.Dd $Mdocdate: September 29 2009 $
 .Dt MUPDF 1
 .Os
 .Sh NAME
@@ -28,17 +28,21 @@ Open the document at page
 .It Fl z Ar zoom
 Open the document zoomed by
 .Ar zoom
-times.
-The value is taken as a multiplier, not a percentage.
+percent.
+Values less than 100 are silently ignored.
 .El
 .Sh KEY BINDINGS
 The following key bindings are available.
 .Pp
 .Bl -tag -width xxxxxxxxxxxx -compact
 .It l <
-rotate left
+rotate anti-clockwise by 90 degrees
 .It r >
-rotate right
+rotate clockwise by 90 degrees
+.It a
+rotate anti-clockwise by 15 degrees
+.It s
+rotate clockwise by 15 degrees
 .It u
 scroll up
 .\" .It up
