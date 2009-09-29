@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/29 04:36:19 jdixon Exp $
+${P5SITE}/HTTP/
+${P5SITE}/HTTP/Lite.pm
+@man man/man3p/HTTP::Lite.3p

@@ -1,0 +1,7 @@
+HTTP::Lite is a stand-alone lightweight HTTP/1.1 implementation
+for perl.  It is not intended as a replacement for the
+fully-featured LWP module.  Instead, it is intended for use in
+situations where it is desirable to install the minimal number of
+modules to achieve HTTP support, or where LWP is not a good
+candidate due to CPU overhead, such as slower processors.
+HTTP::Lite is also significantly faster than LWP.
