@@ -1,0 +1,3 @@
+Test::LeakTrace module provides several functions that trace 
+memory leaks.  This module scans arenas, the memory allocation
+system, so it can detect any leaked SVs in given blocks.

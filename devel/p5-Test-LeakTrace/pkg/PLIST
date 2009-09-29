@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/29 09:04:13 kevlo Exp $
+${P5ARCH}/
+${P5ARCH}/Test/
+${P5ARCH}/Test/LeakTrace/
+${P5ARCH}/Test/LeakTrace.pm
+${P5ARCH}/Test/LeakTrace/JA.pod
+${P5ARCH}/Test/LeakTrace/Script.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Test/
+${P5ARCH}/auto/Test/LeakTrace/
+${P5ARCH}/auto/Test/LeakTrace/LeakTrace.bs
+${P5ARCH}/auto/Test/LeakTrace/LeakTrace.so
+@man man/man3p/Test::LeakTrace.3p
+@man man/man3p/Test::LeakTrace::JA.3p
+@man man/man3p/Test::LeakTrace::Script.3p
