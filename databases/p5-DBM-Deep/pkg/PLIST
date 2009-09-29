@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/29 08:33:33 kevlo Exp $
+${P5SITE}/DBM/
+${P5SITE}/DBM/Deep/
+${P5SITE}/DBM/Deep.pm
+${P5SITE}/DBM/Deep.pod
+${P5SITE}/DBM/Deep/Array.pm
+${P5SITE}/DBM/Deep/Cookbook.pod
+${P5SITE}/DBM/Deep/Engine.pm
+${P5SITE}/DBM/Deep/File.pm
+${P5SITE}/DBM/Deep/Hash.pm
+${P5SITE}/DBM/Deep/Internals.pod
+@man man/man3p/DBM::Deep.3p
+@man man/man3p/DBM::Deep::Cookbook.3p
+@man man/man3p/DBM::Deep::Internals.3p
