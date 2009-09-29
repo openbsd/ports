@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.425 2009/09/29 04:38:17 jdixon Exp $
+# $OpenBSD: Makefile,v 1.426 2009/09/29 04:48:00 jdixon Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -10,6 +10,7 @@
      SUBDIR += apache-httpd
      SUBDIR += august
      SUBDIR += bk2site
+     SUBDIR += blogsum
      SUBDIR += bluefish
      SUBDIR += bozohttpd
      SUBDIR += bricolage
