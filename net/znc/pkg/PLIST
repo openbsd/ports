@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/19 23:19:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/09/29 21:40:59 sthen Exp $
 @bin bin/znc
 bin/znc-buildmod
 bin/znc-config
@@ -15,7 +15,9 @@ include/znc/IRCSock.h
 include/znc/MD5.h
 include/znc/Modules.h
 include/znc/Nick.h
+include/znc/SHA256.h
 include/znc/Server.h
+include/znc/Socket.h
 include/znc/Template.h
 include/znc/Timers.h
 include/znc/User.h
@@ -24,19 +26,22 @@ include/znc/ZNCString.h
 include/znc/defines.h
 include/znc/main.h
 include/znc/znc.h
-lib/pkgconfig/
 lib/pkgconfig/znc.pc
 lib/znc/
 lib/znc/admin.so
+lib/znc/adminlog.so
 lib/znc/autoattach.so
 lib/znc/autocycle.so
 lib/znc/autoop.so
+lib/znc/autoreply.so
 lib/znc/away.so
 lib/znc/awaynick.so
+lib/znc/buffextras.so
 lib/znc/chansaver.so
 lib/znc/crypt.so
 lib/znc/email.so
 lib/znc/fail2ban.so
+lib/znc/fixfreenode.so
 lib/znc/imapauth.so
 lib/znc/keepnick.so
 lib/znc/kickrejoin.so
@@ -47,6 +52,7 @@ lib/znc/partyline.so
 lib/znc/perform.so
 lib/znc/q.so
 lib/znc/raw.so
+lib/znc/route_replies.so
 lib/znc/sample.so
 lib/znc/savebuff.so
 lib/znc/schat.so
