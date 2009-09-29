@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/29 04:45:18 jdixon Exp $
+@owner root
+@group daemon
+blogsum/
+blogsum/Blogsum/
+@group bin
+blogsum/Blogsum/Config.pm.dist
+blogsum/admin.cgi
+@owner www
+@group daemon
+blogsum/data/
+@owner root
+blogsum/docs/
+@group bin
+blogsum/docs/LICENSE
+blogsum/docs/LICENSE.images
+blogsum/docs/README
+blogsum/docs/README.OpenBSD
+@group daemon
+blogsum/examples/
+@group bin
+blogsum/examples/create_sqlite.sql
+blogsum/examples/httpd-blogsum.conf
+blogsum/examples/wp2blogsum.pl
+blogsum/index.cgi
+blogsum/startup.pl
+@group daemon
+blogsum/themes/
+blogsum/themes/default/
+@group bin
+blogsum/themes/default/admin.tmpl
+@group daemon
+blogsum/themes/default/images/
+@group bin
+blogsum/themes/default/images/asterisk-green.gif
+blogsum/themes/default/images/asterisk-red.gif
+blogsum/themes/default/images/check.gif
+blogsum/themes/default/images/delete.gif
+blogsum/themes/default/images/draft-disabled.gif
+blogsum/themes/default/images/draft.gif
+blogsum/themes/default/images/play-disabled.gif
+blogsum/themes/default/images/play.gif
+blogsum/themes/default/images/plus.gif
+blogsum/themes/default/images/xml.gif
+blogsum/themes/default/index.tmpl
+blogsum/themes/default/style.css

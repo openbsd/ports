@@ -1,0 +1,46 @@
+# Blogsum README.OpenBSD
+# To finish installing Blogsum, the following steps must be completed.
+
+
+1)  Enable the mod_perl module:
+
+	$ sudo mod_perl-enable
+
+2)  Setup the SQLite database:
+
+	$ sudo -u www sqlite3 ${INSTDIR}/data/site.db < \
+		${EXAMPLESDIR}/create_sqlite.sql
+
+3)  Create your local configuration and modify as necessary:
+
+	$ sudo cp ${INSTDIR}/Blogsum/Config.pm.dist \
+		${INSTDIR}/Blogsum/Config.pm
+
+4)  If comments will be enabled, visit the CAPTCHA (http://www.captcha.net/)
+    project and register your account.  Add your keys to Config.pm.
+
+5)  Edit the example httpd-blogsum.conf and enable it for your site:
+
+	$ sudo cp ${EXAMPLESDIR}/httpd-blogsum.conf ${PREFIX}/conf/modules/
+
+6)  Create your AuthUserFile file as defined in httpd-blogsum.conf:
+
+	$ sudo htpasswd -c ${PREFIX}/conf/blogsum.htpasswd
+
+7)  Enable the following modules in ${PREFIX}/conf/httpd.conf:
+
+	LoadModule rewrite_module	/usr/lib/apache/modules/mod_rewrite.so
+	LoadModule proxy_module		/usr/lib/apache/modules/libproxy.so
+	LoadModule perl_module		/usr/lib/apache/modules/mod_perl.so
+
+8)  Stop and start your Apache service.
+
+
+The installation should now be complete.  Your blogsum installation can be
+viewed at /index.cgi.  Posts can be created and edited at /admin.cgi.
+
+Please refer to the online support resources if you have questions.
+
+	http://blogsum.obfuscurity.com/
+
+# EOF

@@ -1,0 +1,29 @@
+$OpenBSD: patch-examples_httpd-blogsum_conf,v 1.1.1.1 2009/09/29 04:45:18 jdixon Exp $
+--- examples/httpd-blogsum.conf.orig	Tue Sep 22 21:26:25 2009
++++ examples/httpd-blogsum.conf	Tue Sep 22 21:26:36 2009
+@@ -1,6 +1,6 @@
+ <VirtualHost *:80>
+ 	ServerName www.example.com
+-	DocumentRoot /var/www/blogsum
++	DocumentRoot ${INSTDIR}
+ 	DirectoryIndex index.cgi
+ 
+ 	Options +FollowSymlinks
+@@ -17,7 +17,7 @@
+ 	<LocationMatch ^/index.cgi>
+ 		SetHandler perl-script
+ 		PerlHandler Apache::PerlRun
+-		PerlRequire /var/www/blogsum/startup.pl
++		PerlRequire ${INSTDIR}/startup.pl
+ 		Options ExecCGI
+ 		Order deny,allow
+ 		Allow from all
+@@ -25,7 +25,7 @@
+ 	<LocationMatch ^/admin.cgi>
+ 		SetHandler perl-script
+ 		PerlHandler Apache::PerlRun
+-		PerlRequire /var/www/blogsum/startup.pl
++		PerlRequire ${INSTDIR}/startup.pl
+ 		Options ExecCGI
+ 		Order deny,allow
+ 		Allow from all
