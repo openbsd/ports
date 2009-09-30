@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.22 2009/09/11 07:53:45 sthen Exp $
+# $OpenBSD: arm,v 1.23 2009/09/30 07:52:12 sthen Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -12,7 +12,6 @@ net/nmap
 sysutils/cdrtools
 mail/procmail
 mail/fetchmail
-misc/tmux
 misc/screen
 graphics/gif2png
 devel/autoconf/2.59
