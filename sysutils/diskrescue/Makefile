@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/05/18 11:40:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/09/30 12:53:43 laurent Exp $
 
 COMMENT =		fancy dd
 
-DISTNAME =		diskrescue-0.1
-PKGNAME =		${DISTNAME}p0
+DISTNAME =		diskrescue-0.3
 
 CATEGORIES =		sysutils
 
