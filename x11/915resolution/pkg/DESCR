@@ -1,6 +1,0 @@
-This software changes the resolution of an available vbios mode. It
-patches only the RAM version of the video bios so the new resolution is
-lost each time you reboot.
-
-Because 915resolution requires write access to /dev/mem, the system must be
-at a securelevel <= 0.

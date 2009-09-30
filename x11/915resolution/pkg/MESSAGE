@@ -1,7 +1,0 @@
-To set the resolution at reboot, add something like this to
-rc.securelevel:
-
-if [ -x ${PREFIX}/sbin/915resolution ]; then
-	echo -n ' 915resolution'
-	${PREFIX}/sbin/915resolution 4d 1440 900 > /dev/null
-fi
