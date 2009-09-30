@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/09/28 15:15:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/09/30 11:51:30 landry Exp $
 bin/f2py${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/numpy/
 lib/python${MODPY_VERSION}/site-packages/numpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -42,7 +42,6 @@ lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/__multiarray_a
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/__ufunc_api.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/arrayobject.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/arrayscalars.h
-lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/mingw_${MACHINE_ARCH}_fenv.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/multiarray_api.txt
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/ndarrayobject.h
 lib/python${MODPY_VERSION}/site-packages/numpy/core/include/numpy/noprefix.h
