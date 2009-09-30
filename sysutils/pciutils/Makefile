@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/22 21:48:49 matthieu Exp $
+# $OpenBSD: Makefile,v 1.10 2009/09/30 05:24:24 matthieu Exp $
 
 NOT_FOR_ARCHS =		sparc m68k m88k vax
 
 COMMENT =		PCI bus configuration register access tools
 
 DISTNAME =		pciutils-3.1.2
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
@@ -26,5 +27,7 @@ MAKE_ENV =		CC="${CC}"
 FAKE_FLAGS =		PREFIX=${TRUEPREFIX} MANDIR=${TRUEPREFIX}/man
 
 NO_REGRESS =		Yes
+
+INSTALL_TARGET =        install install-lib
 
 .include <bsd.port.mk>

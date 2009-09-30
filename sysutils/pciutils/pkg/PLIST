@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/30 22:22:39 matthieu Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/09/30 05:24:24 matthieu Exp $
+include/pci/
+include/pci/config.h
+include/pci/header.h
+include/pci/pci.h
+include/pci/types.h
+lib/libpci.a
+lib/pkgconfig/
+lib/pkgconfig/libpci.pc
 @man man/man8/lspci.8
 @man man/man8/setpci.8
 @man man/man8/update-pciids.8
