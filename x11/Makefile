@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.396 2009/09/27 19:18:21 landry Exp $
+# $OpenBSD: Makefile,v 1.397 2009/09/30 00:46:11 sthen Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
-     SUBDIR += 915resolution
      SUBDIR += Xaw3d
      SUBDIR += XawMu
      SUBDIR += Xdialog
