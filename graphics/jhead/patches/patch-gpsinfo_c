@@ -1,7 +1,7 @@
-$OpenBSD: patch-gpsinfo_c,v 1.3 2008/10/21 23:47:52 okan Exp $
---- gpsinfo.c.orig	Sat Oct  4 12:10:35 2008
-+++ gpsinfo.c	Tue Oct 21 11:53:21 2008
-@@ -144,9 +144,10 @@ void ProcessGpsInfo(unsigned char * DirStart, int Byte
+$OpenBSD: patch-gpsinfo_c,v 1.4 2009/10/01 20:20:27 benoit Exp $
+--- gpsinfo.c.orig	Mon Mar  2 08:34:10 2009
++++ gpsinfo.c	Wed Sep 30 16:49:45 2009
+@@ -145,9 +145,10 @@ void ProcessGpsInfo(unsigned char * DirStart, int Byte
                      FmtString[3+a*7] = (char)('0'+digits);
  
                      Values[a] = ConvertAnyFormat(ValuePtr+a*ComponentSize, Format);
@@ -14,7 +14,7 @@ $OpenBSD: patch-gpsinfo_c,v 1.3 2008/10/21 23:47:52 okan Exp $
  
                  if (Tag == TAG_GPS_LAT){
                      strncpy(ImageInfo.GpsLat+2, TempString, 29);
-@@ -160,8 +161,8 @@ void ProcessGpsInfo(unsigned char * DirStart, int Byte
+@@ -161,8 +162,8 @@ void ProcessGpsInfo(unsigned char * DirStart, int Byte
                  break;
  
              case TAG_GPS_ALT:
