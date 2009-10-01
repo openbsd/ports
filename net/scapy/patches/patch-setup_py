@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2009/10/01 16:28:49 sthen Exp $
+--- setup.py.orig	Sun Sep 27 21:47:56 2009
++++ setup.py	Sun Sep 27 21:52:29 2009
+@@ -40,7 +40,7 @@ setup(
+     version = '2.0.1', 
+     packages=['scapy','scapy/arch', 'scapy/layers','scapy/asn1','scapy/tools','scapy/modules'],
+     scripts = ['bin/scapy','bin/UTscapy'],
+-    data_files = [('share/man/man1', ["doc/scapy.1.gz"])],
++    data_files = [('man/man1', ["doc/scapy.1"])],
+ 
+     # Metadata
+     author = 'Philippe BIONDI',

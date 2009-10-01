@@ -1,0 +1,15 @@
+$OpenBSD: patch-scapy_arch_unix_py,v 1.1 2009/10/01 16:28:49 sthen Exp $
+--- scapy/arch/unix.py.orig	Tue Sep 29 20:25:02 2009
++++ scapy/arch/unix.py	Tue Sep 29 20:26:50 2009
+@@ -61,7 +61,10 @@ def read_routes():
+         else:
+             rt = l.split()
+             dest,gw,flg = rt[:3]
+-            netif = rt[5+mtu_present+prio_present]
++            if 'L' in rt[4+mtu_present+prio_present]:
++		netif = rt[6+mtu_present+prio_present]
++	    else:
++		netif = rt[5+mtu_present+prio_present]
+         if flg.find("Lc") >= 0:
+             continue                
+         if dest == "default":
