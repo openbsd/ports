@@ -21,12 +21,6 @@ Adjust ${SYSCONFDIR}/my.cnf to put the mysql socket into the chroot.
 	[mysqld]
 	socket = /var/www/var/run/mysql/mysql.sock
 
-- file uploads require a tmp directory writable by www.
-.e.g., with the default php setup:
-
-	mkdir -p /var/www/tmp
-	chown www /var/www/tmp
-
 Don't forget to set the character set to utf8 in your database.
 
 In mysql, assuming you're connected as admin initially.

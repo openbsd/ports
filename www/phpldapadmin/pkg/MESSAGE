@@ -6,11 +6,8 @@ You should point this to the DocumentRoot of your web-server:
    # ln -s ../phpldapadmin /var/www/htdocs/phpldapadmin
 (make sure you use a relative symlink since Apache is chrooted)
 
-For jpeg photos to work properly, you must do this:       
-	# mkdir /var/www/tmp                 
-	# chown www:daemon /var/www/tmp       
-	# chmod 1755 /var/www/tmp       
-Where tmp is the $jpeg_temp_dir configured in config.php       
+For jpeg photos to work properly, you must configure jpeg_temp_dir in
+config.php.
 
 You can ensure you have a working install by accessing:
 http://<localhost>/phpldapadmin/index.php
