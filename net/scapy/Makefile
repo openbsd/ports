@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/01 16:28:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2009/10/01 16:42:12 sthen Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
@@ -40,6 +40,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/scapy
 	${INSTALL_DATA} ${DISTDIR}/ethertypes ${PREFIX}/share/examples/scapy
 
+# some tests require root. you may also need to increase
+# the number of bpf device nodes (/dev/bpf*) to ~40.
 do-regress:
 	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 	cd ${WRKSRC}/test; PATH=${WRKDIR}/bin:${PATH} ${WRKSRC}/test/run_tests
