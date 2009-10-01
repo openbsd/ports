@@ -1,0 +1,27 @@
+$OpenBSD: patch-read_c,v 1.1 2009/10/01 14:09:55 sthen Exp $
+--- read.c.orig	Sat Apr 12 16:21:29 2008
++++ read.c	Thu Oct  1 14:46:05 2009
+@@ -7,6 +7,7 @@
+ #include <errno.h>
+ #include <string.h>
+ #include <time.h>
++#include <unistd.h>
+ #include <curses.h>
+ #include "cnagios.h"
+ 
+@@ -24,7 +25,6 @@ int num_up, num_down;
+ int num_okay, num_warn, num_crit;
+ char last_update[21];
+ int last_update_int;
+-char *calc_duration();
+ 
+ extern int object_mode;
+ extern int sort_mode;
+@@ -33,6 +33,7 @@ extern int color;
+ 
+ /*------------------------------------------------------------------*/
+ 
++void
+ read_status()
+ {
+   int i, j;

@@ -1,0 +1,11 @@
+$OpenBSD: patch-debug_c,v 1.1 2009/10/01 14:09:55 sthen Exp $
+--- debug.c.orig	Thu Oct  1 14:38:24 2009
++++ debug.c	Thu Oct  1 14:38:28 2009
+@@ -9,6 +9,7 @@ extern int debugging;
+ 
+ /*------------------------------------------------------------------*/
+ 
++void
+ debug(msg,a,b,c,d,e,f,g,h,i,j,k)
+ char *msg;
+ {

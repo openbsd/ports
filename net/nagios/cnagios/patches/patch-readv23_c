@@ -1,0 +1,31 @@
+$OpenBSD: patch-readv23_c,v 1.1 2009/10/01 14:09:55 sthen Exp $
+--- readv23.c.orig	Sat Apr 12 16:21:29 2008
++++ readv23.c	Thu Oct  1 14:48:29 2009
+@@ -37,14 +37,18 @@ struct status_dot_dat_entry {
+  char *rhs;
+ };
+ 
++void parse_entry(struct status_dot_dat_entry *, char *);
++
+ /*------------------------------------------------------------------*/
+ 
++void
+ read_v23_status()
+ {
+   FILE *fp;
+   char buffer[MAX_CHARS_PER_LINE];
+   struct status_dot_dat_entry ent;
+-  int stamp, i;
++  int i;
++  long stamp;
+ 
+ #ifdef _DEBUG_READ_
+ debug("read_v23_status()...");
+@@ -346,6 +350,7 @@ debug("  plugin_output (post-munge) is %s",service_lis
+ 
+ /*------------------------------------------------------------------------------*/
+ 
++void
+ parse_entry(ent,str)
+ struct status_dot_dat_entry *ent;
+ char *str;

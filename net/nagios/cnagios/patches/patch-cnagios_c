@@ -1,0 +1,38 @@
+$OpenBSD: patch-cnagios_c,v 1.1 2009/10/01 14:09:55 sthen Exp $
+--- cnagios.c.orig	Sat Apr 12 16:21:29 2008
++++ cnagios.c	Thu Oct  1 13:43:46 2009
+@@ -12,6 +12,7 @@
+ #include <signal.h>
+ #include <sys/param.h>
+ #include <getopt.h>
++#include <unistd.h>
+ #include "cnagios.h"
+ #include "version.h"
+ 
+@@ -37,8 +38,11 @@ extern int age_filter_secs;
+ extern int age_okay_filter_secs;
+ extern int need_swipe;
+ 
++void usage();
++
+ /*------------------------------------------------------------------*/
+ 
++int
+ main(argc,argv)
+ int argc;
+ char *argv[];
+@@ -253,12 +257,13 @@ debug("");
+   /* destroy perl... */
+ 
+   perl_hook_free();
++  return(0);
+ 
+ }
+ 
+ /*------------------------------------------------------------------*/
+ 
+-usage()
++void usage()
+ {
+    printf("usage: cnagios [options]\n");
+    printf("  -A <age>         filter UP/OKAY objects by age less than <age>\n");

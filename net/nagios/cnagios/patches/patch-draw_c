@@ -1,0 +1,44 @@
+$OpenBSD: patch-draw_c,v 1.1 2009/10/01 14:09:55 sthen Exp $
+--- draw.c.orig	Sat Apr 12 16:21:29 2008
++++ draw.c	Thu Oct  1 14:33:55 2009
+@@ -5,8 +5,10 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <curses.h>
+ #include <string.h>
++#include <unistd.h>
+ #include "cnagios.h"
+ #include "version.h"
+ 
+@@ -49,20 +51,18 @@ extern int age_okay_filter_secs;
+ 
+ /*----------------------------------------------------------------------------*/
+ 
++void
+ draw_screen() 
+ {
+   int i, j;
+   int screen_line = 0;
+   char buf[MAX_TERM_WIDTH]; 
+   char buf2[MAX_TERM_WIDTH];
+-  FILE *fp;
+   struct obj_by_age *age_ptr;
+   struct seen_item *tmp, *prev;
+   int items_matched = 0, page_size, begin_item;
+   int total_items_matched = 0;
+-  int match_list[MAX_ITEMS];
+   int descr_width = 0;
+-  char *duration;
+   int duration_int;
+   int num_filters = 0;
+ 
+@@ -501,6 +501,7 @@ char *filter, *str;
+ 
+ /*----------------------------------------------------------------------------*/
+ 
++void
+ add_seen_item(idx)
+ int idx;
+ {

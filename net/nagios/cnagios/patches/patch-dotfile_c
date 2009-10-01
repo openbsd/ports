@@ -1,0 +1,28 @@
+$OpenBSD: patch-dotfile_c,v 1.1 2009/10/01 14:09:55 sthen Exp $
+--- dotfile.c.orig	Sat Apr 12 16:21:29 2008
++++ dotfile.c	Thu Oct  1 14:43:44 2009
+@@ -33,8 +33,11 @@ extern int host_level;
+ #define _DEBUG_DOTFILE_
+ #endif 
+ 
++void read_dot_file(char *);
++
+ /*------------------------------------------------------------------*/
+ 
++void
+ read_dot_files()
+ {
+   int i;
+@@ -54,10 +57,11 @@ read_dot_files()
+ 
+ /*------------------------------------------------------------------*/
+ 
++void
+ read_dot_file(filename)
+ char *filename;
+ {
+-  char *str_match, *tok1, *tok2, *tok3, *tok4;
++  char *tok1, *tok2, *tok3, *tok4;
+   FILE *fp;
+   char buf[MAX_CHARS_PER_LINE];
+   int l, fkey_num;

@@ -1,0 +1,11 @@
+$OpenBSD: patch-update_c,v 1.1 2009/10/01 14:09:55 sthen Exp $
+--- update.c.orig	Thu Oct  1 13:18:59 2009
++++ update.c	Thu Oct  1 13:19:05 2009
+@@ -8,6 +8,7 @@
+ 
+ #include "cnagios.h"
+ #include <signal.h>
++#include <unistd.h>
+ 
+ extern int need_swipe;
+ extern int polling_interval;

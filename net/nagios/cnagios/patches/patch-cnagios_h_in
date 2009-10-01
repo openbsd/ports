@@ -1,0 +1,25 @@
+$OpenBSD: patch-cnagios_h_in,v 1.1 2009/10/01 14:09:55 sthen Exp $
+--- cnagios.h.in.orig	Sat Apr 12 16:21:29 2008
++++ cnagios.h.in	Thu Oct  1 14:46:17 2009
+@@ -135,3 +135,21 @@ struct seen_item {
+   struct seen_item *next;
+ };
+ 
++void add_seen_item(int);
++char *calc_duration();
++int convert_level(char *);
++void draw_screen();
++int filter_doesnt_match(char *, char *);
++int filter_matches(char *, char *);
++void getch_loop();
++void help();
++int parse_age_filter(char *,int);
++void perl_hook(int, char *);
++void perl_hook_init();
++void perl_hook_free();
++int perl_regex_hook(char *,char *,int);
++void read_dot_files();
++void read_status();
++void read_v1_status();
++void read_v23_status();
++

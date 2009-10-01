@@ -1,0 +1,18 @@
+$OpenBSD: patch-help_c,v 1.1 2009/10/01 14:09:55 sthen Exp $
+--- help.c.orig	Sat Apr 12 16:21:29 2008
++++ help.c	Thu Oct  1 14:39:58 2009
+@@ -4,12 +4,14 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ #include <errno.h>
+ #include <curses.h>
+ #include "cnagios.h"
+ 
+ /*------------------------------------------------------------------*/
+ 
++void
+ help()
+ {
+   FILE *fp;

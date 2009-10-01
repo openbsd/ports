@@ -1,0 +1,35 @@
+$OpenBSD: patch-perl_c,v 1.1 2009/10/01 14:09:55 sthen Exp $
+--- perl.c.orig	Thu Oct  1 13:51:39 2009
++++ perl.c	Thu Oct  1 13:52:26 2009
+@@ -16,6 +16,7 @@ int sub_file_line;
+ 
+ /*------------------------------------------------------------------*/
+ 
++void
+ perl_hook_init() {
+   char *embedded_perl_file[] = {"",PERL_HOOK_FILE};
+   char junk[MAX_CHARS_PER_LINE];
+@@ -43,6 +44,7 @@ perl_hook_init() {
+ 
+ /*------------------------------------------------------------------*/
+ 
++void
+ perl_hook_free() {
+   PL_perl_destruct_level = 0;
+   perl_destruct(my_perl);
+@@ -51,6 +53,7 @@ perl_hook_free() {
+ 
+ /*------------------------------------------------------------------*/
+ 
++void
+ perl_hook(type,str)
+ int type;
+ char *str;
+@@ -84,6 +87,7 @@ char *str;
+ 
+ /*------------------------------------------------------------------*/
+ 
++int
+ perl_regex_hook(str,regex,mode)
+ char *str;
+ char *regex;
