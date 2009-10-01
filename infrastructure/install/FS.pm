@@ -1,4 +1,4 @@
-# $OpenBSD: FS.pm,v 1.8 2009/08/14 22:41:13 sthen Exp $
+# $OpenBSD: FS.pm,v 1.9 2009/10/01 19:38:40 matthieu Exp $
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -297,7 +297,7 @@ sub get_files
 	my $mtree = {};
 	OpenBSD::Mtree::parse($mtree, '/usr/local', '/etc/mtree/BSD.local.dist');
 	OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/4.4BSD.dist');
-	OpenBSD::Mtree::parse($mtree, '/usr/X11R6', '/etc/mtree/BSD.x11.dist');
+	OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/BSD.x11.dist');
 	$mtree->{'/usr/local/lib/X11'} = 1;
 	$mtree->{'/usr/local/include/X11'} = 1;
 	$mtree->{'/usr/local/lib/X11/app-defaults'} = 1;

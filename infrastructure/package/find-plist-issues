@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: find-plist-issues,v 1.7 2007/05/12 14:56:21 espie Exp $
+# $OpenBSD: find-plist-issues,v 1.8 2009/10/01 19:38:40 matthieu Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -350,7 +350,7 @@ try {
 
 OpenBSD::Mtree::parse($mtree, '/usr/local', '/etc/mtree/BSD.local.dist');
 OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/4.4BSD.dist');
-OpenBSD::Mtree::parse($mtree, '/usr/X11R6', '/etc/mtree/BSD.x11.dist');
+OpenBSD::Mtree::parse($mtree, '/', '/etc/mtree/BSD.x11.dist');
 $mtree->{'/usr/local/lib/X11'} = 1;
 $mtree->{'/usr/local/include/X11'} = 1;
 $mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
