@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/07/31 19:11:59 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/10/01 20:13:11 benoit Exp $
+lib/python${MODPY_VERSION}/site-packages/IPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/IPy.py
 lib/python${MODPY_VERSION}/site-packages/IPy.pyc
 lib/python${MODPY_VERSION}/site-packages/IPy.pyo
