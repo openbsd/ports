@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.592 2009/09/27 23:59:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.593 2009/10/01 16:29:04 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -408,7 +408,6 @@
      SUBDIR += samba,ads
      SUBDIR += samba,ldap
      SUBDIR += scapy
-     SUBDIR += scapy6
      SUBDIR += scli
      SUBDIR += sendxmpp
      SUBDIR += ser
