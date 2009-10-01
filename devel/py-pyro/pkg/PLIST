@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/15 11:53:11 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/10/01 14:12:00 benoit Exp $
 bin/pyro-es
 bin/pyro-esd
 bin/pyro-genguid
@@ -98,6 +98,7 @@ share/doc/py-pyro/9-security.html
 share/doc/py-pyro/LICENSE
 share/doc/py-pyro/PyroManual.html
 share/doc/py-pyro/index.html
+share/doc/py-pyro/pyro-large.png
 share/doc/py-pyro/pyromanual.css
 share/doc/py-pyro/pyromanual_print.css
 share/examples/py-pyro/
@@ -259,6 +260,17 @@ share/examples/py-pyro/maxclients/
 share/examples/py-pyro/maxclients/Readme.txt
 share/examples/py-pyro/maxclients/client.py
 share/examples/py-pyro/maxclients/server.py
+share/examples/py-pyro/mobilehierarchy/
+share/examples/py-pyro/mobilehierarchy/client.py
+share/examples/py-pyro/mobilehierarchy/clientmodule1.py
+share/examples/py-pyro/mobilehierarchy/clientmodule2.py
+share/examples/py-pyro/mobilehierarchy/clientmodule3.py
+share/examples/py-pyro/mobilehierarchy/readme.txt
+share/examples/py-pyro/mobilehierarchy/server/
+share/examples/py-pyro/mobilehierarchy/server/server.py
+share/examples/py-pyro/mobilehierarchy/server/servermodule1.py
+share/examples/py-pyro/mobilehierarchy/server/servermodule2.py
+share/examples/py-pyro/mobilehierarchy/server/servermodule3.py
 share/examples/py-pyro/multithread/
 share/examples/py-pyro/multithread/Readme.txt
 share/examples/py-pyro/multithread/client.py
@@ -290,6 +302,16 @@ share/examples/py-pyro/quickstart/client.py
 share/examples/py-pyro/quickstart/object.py
 share/examples/py-pyro/quickstart/pyrorun
 share/examples/py-pyro/quickstart/server.py
+share/examples/py-pyro/sessions/
+share/examples/py-pyro/sessions/Readme.txt
+share/examples/py-pyro/sessions/auth_client.py
+share/examples/py-pyro/sessions/auth_server.py
+share/examples/py-pyro/sessions/basic_client.py
+share/examples/py-pyro/sessions/basic_client2.py
+share/examples/py-pyro/sessions/basic_server.py
+share/examples/py-pyro/sessions/storage_client.py
+share/examples/py-pyro/sessions/storage_server_caller.py
+share/examples/py-pyro/sessions/storage_server_tls.py
 share/examples/py-pyro/simple/
 share/examples/py-pyro/simple/Readme.txt
 share/examples/py-pyro/simple/client.py
@@ -305,9 +327,11 @@ share/examples/py-pyro/ssl/client.py
 share/examples/py-pyro/ssl/server.py
 share/examples/py-pyro/stockquotes/
 share/examples/py-pyro/stockquotes/Client.py
+share/examples/py-pyro/stockquotes/Client_noNS.py
 share/examples/py-pyro/stockquotes/MClient.py
 share/examples/py-pyro/stockquotes/Readme.txt
 share/examples/py-pyro/stockquotes/Server.py
+share/examples/py-pyro/stockquotes/Server_noNS.py
 share/examples/py-pyro/stresstest/
 share/examples/py-pyro/stresstest/Readme.txt
 share/examples/py-pyro/stresstest/consumer.py
