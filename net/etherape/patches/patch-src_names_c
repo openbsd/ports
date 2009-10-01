@@ -1,0 +1,10 @@
+--- src/names.c.orig	Sat Sep 26 20:32:40 2009
++++ src/names.c	Mon Sep 28 11:34:10 2009
+@@ -17,6 +17,7 @@
+  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+ 
++#include <unistd.h>
+ #include <netinet/in.h>
+ #include "globals.h"
+ #include "names.h"

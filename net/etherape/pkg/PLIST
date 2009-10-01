@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/06/10 09:45:40 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/10/01 14:00:51 benoit Exp $
 @bin bin/etherape
 @man man/man1/etherape.1
 share/applications/etherape.desktop
@@ -20,7 +20,7 @@ share/etherape/doc/etherape/C/figures/pref_timings_dlg.png
 share/etherape/doc/etherape/C/figures/proto_info.png
 share/etherape/doc/etherape/C/figures/protocol_edit_dlg.png
 share/etherape/glade/
-share/etherape/glade/etherape.glade2
+share/etherape/glade/etherape.glade
 share/etherape/glade/etherape.png
 share/etherape/glade/pause.xpm
 share/etherape/glade/play.xpm
@@ -29,6 +29,7 @@ share/locale/es/LC_MESSAGES/etherape.mo
 share/locale/fr/LC_MESSAGES/etherape.mo
 share/locale/nl/LC_MESSAGES/etherape.mo
 share/locale/tr/LC_MESSAGES/etherape.mo
+share/omf/
 share/omf/etherape/
 share/omf/etherape/etherape-C.omf
 share/pixmaps/
