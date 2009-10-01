@@ -1,14 +1,13 @@
-$OpenBSD: patch-greylist_conf,v 1.4 2009/02/16 15:31:21 jakob Exp $
---- greylist.conf.orig	Wed Feb 27 06:01:47 2008
-+++ greylist.conf	Mon Feb 16 17:13:41 2009
+--- greylist.conf.orig	Thu Feb 12 23:39:01 2009
++++ greylist.conf	Wed Sep 30 22:18:38 2009
 @@ -6,13 +6,13 @@
  #
  
  pidfile "/var/run/milter-greylist.pid"
 -socket "/var/milter-greylist/milter-greylist.sock"
--dumpfile "/var/milter-greylist/greylist.db" 755
+-dumpfile "/var/milter-greylist/greylist.db" 600
 +socket "!!GREYLISTDIR!!/milter-greylist.sock"
-+dumpfile "!!GREYLISTDIR!!/greylist.db" 755
++dumpfile "!!GREYLISTDIR!!/greylist.db" 600
  dumpfreq 1
 -user "smmsp"
 +user "!!USERNAME!!"
