@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2009/09/22 06:55:11 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2009/10/01 12:22:32 ajacoutot Exp $
 @conflict php4-core-*
 @pkgpath www/php5/core
 @pkgpath www/php5/core,hardened
@@ -259,7 +259,6 @@ share/php5/include/main/streams/php_stream_plain_wrapper.h
 share/php5/include/main/streams/php_stream_transport.h
 share/php5/include/main/streams/php_stream_userspace.h
 share/php5/include/main/streams/php_streams_int.h
-!%%no_suhosin%%
 share/php5/include/main/win95nt.h
 share/php5/include/regex/
 share/php5/include/regex/cclass.h
@@ -268,5 +267,8 @@ share/php5/include/regex/regex.h
 share/php5/include/regex/regex2.h
 share/php5/include/regex/regex_extra.h
 share/php5/include/regex/utils.h
+!%%no_suhosin%%
+@mode 1777
+@sample /var/www/tmp/
 @extraunexec rm -fr ${PHP_CONFIG_PATH}/php5/
 @unexec-delete rm -fr ${PHP_CONFIG_PATH}/php5.sample/

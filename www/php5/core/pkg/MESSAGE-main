@@ -7,7 +7,3 @@ ln -s ${PHP_CONFIG_PATH}/modules.sample/php5.conf \
 
 The recommended php configuration has been installed
 to ${PHP_CONFIG_PATH}/php.ini.
- 
-Don't forget that the default OpenBSD httpd is chrooted
-into /var/www by default, so you may need to create support
-directories such as /var/www/tmp for PHP to work correctly.
