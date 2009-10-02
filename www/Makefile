@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.426 2009/09/29 04:48:00 jdixon Exp $
+# $OpenBSD: Makefile,v 1.427 2009/10/02 09:28:37 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -296,6 +296,7 @@
      SUBDIR += pecl-ssh2
      SUBDIR += pecl-swish
      SUBDIR += pecl-uploadprogress
+     SUBDIR += perlbal
      SUBDIR += php-openid
      SUBDIR += php5
      SUBDIR += phpicalendar
