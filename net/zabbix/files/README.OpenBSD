@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.3 2009/07/13 17:13:01 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.4 2009/10/02 14:09:10 ajacoutot Exp $
 
 This document gives information relevant to using ZABBIX on OpenBSD.
 The original documentation is available as a PDF file at
@@ -25,6 +25,8 @@ can not be redistributed.
 
 Next, you have to adapt the configuration files under
     ${SYSCONFDIR}/zabbix/
+(make sure your webserver can resolve hostnames; otherwise use IP
+addresses in the configuration files).
 
 To have the ZABBIX server start at boot time, insert the following into
 /etc/rc.local:
