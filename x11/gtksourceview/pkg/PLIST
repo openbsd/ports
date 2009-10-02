@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/08/14 10:09:39 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/10/02 14:04:24 jasper Exp $
 %%SHARED%%
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcebuffer.h
+include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcegutter.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceiter.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcelanguage.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcelanguagemanager.h
@@ -21,6 +22,7 @@ share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceBuffer.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceGutter.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceLanguage.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceLanguageManager.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceMark.html
@@ -29,9 +31,9 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyle.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyleScheme.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyleSchemeManager.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceView.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}-Searching-in-a-GtkSourceBuffer.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}.devhelp
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}.devhelp2
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-20-Searching-in-a-GtkSourceBuffer.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/home.png
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/index.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/index.sgml
@@ -59,6 +61,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/convert.py
 share/gtksourceview-${MAJOR_VERSION}/language-specs/cpp.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/csharp.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/css.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/cuda.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/d.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/def.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/desktop.lang
@@ -73,6 +76,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/erlang.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/forth.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/fortran.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/gap.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/glsl.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/gtk-doc.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/gtkrc.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/haddock.lang
@@ -91,6 +95,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/libtool.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/lua.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/m4.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/makefile.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/mallard.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/msil.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/nemerle.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/nsis.lang
@@ -149,6 +154,9 @@ share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/ca/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/cs/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/cy/
 share/locale/cy/LC_MESSAGES/
