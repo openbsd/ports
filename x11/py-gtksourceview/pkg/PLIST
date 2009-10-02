@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/04/29 19:48:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/10/02 14:05:23 jasper Exp $
 lib/pkgconfig/pygtksourceview-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtksourceview2.la
 lib/python${MODPY_VERSION}/site-packages/gtksourceview2.so
 share/gtk-doc/html/pygtksourceview2/
 share/gtk-doc/html/pygtksourceview2/class-gtksourcebuffer2.html
+share/gtk-doc/html/pygtksourceview2/class-gtksourcegutter2.html
 share/gtk-doc/html/pygtksourceview2/class-gtksourcelanguage2.html
 share/gtk-doc/html/pygtksourceview2/class-gtksourcelanguagemanager2.html
 share/gtk-doc/html/pygtksourceview2/class-gtksourcemark2.html
