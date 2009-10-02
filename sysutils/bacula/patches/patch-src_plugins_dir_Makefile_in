@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_plugins_dir_Makefile_in,v 1.1 2009/10/02 02:34:05 merdely Exp $
+--- src/plugins/dir/Makefile.in.orig	Mon Sep 21 21:00:47 2009
++++ src/plugins/dir/Makefile.in	Mon Sep 21 21:00:52 2009
+@@ -28,7 +28,7 @@ dir_plugins.o: ${DIRDIR}/dir_plugins.h ${DIRDIR}/dir_p
+ 	$(CXX) -I${SRCDIR} -I${DIRDIR} -DTEST_PROGRAM -c ${DIRDIR}/dir_plugins.c 
+ 
+ main: dir_plugins.o
+-	$(CXX) $(LDFLAGS) -L${LIBDIR} dir_plugins.o -o main -lbac -lpthread -lssl -l crypto -ldl
++	$(CXX) $(LDFLAGS) -L${LIBDIR} dir_plugins.o -o main -lbac -pthread -lssl -l crypto -ldl
+ 
+ example-plugin-dir.o: example-plugin-dir.c ${DIRDIR}/dir_plugins.h
+ 	$(CXX) $(DEFS) $(DEBUG) $(CPPFLAGS) -fPIC -I../.. -I${DIRDIR} -c example-plugin-dir.c

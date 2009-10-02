@@ -1,122 +1,69 @@
-$OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.4 2008/10/19 03:44:42 merdely Exp $
---- src/dird/bacula-dir.conf.in.orig	Thu Jun 19 15:44:34 2008
-+++ src/dird/bacula-dir.conf.in	Tue Jul  1 19:28:12 2008
-@@ -13,7 +13,8 @@
- #
+$OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.5 2009/10/02 02:34:05 merdely Exp $
+--- src/dird/bacula-dir.conf.in.orig	Wed Jul 15 18:05:40 2009
++++ src/dird/bacula-dir.conf.in	Tue Sep  1 22:38:31 2009
+@@ -14,6 +14,7 @@
  
  Director {                            # define myself
--  Name = @hostname@-dir
-+  Name = bacula-dir
+   Name = @basename@-dir
 +  DIRaddress = 127.0.0.1
    DIRport = @dir_port@                # where we listen for UA connections
    QueryFile = "@scriptdir@/query.sql"
    WorkingDirectory = "@working_dir@"
-@@ -27,7 +28,7 @@ JobDefs {
-   Name = "DefaultJob"
-   Type = Backup
-   Level = Incremental
--  Client = @hostname@-fd 
-+  Client = bacula-fd 
-   FileSet = "Full Set"
-   Schedule = "WeeklyCycle"
-   Storage = File
-@@ -48,7 +49,7 @@ Job {
- 
- #Job {
- #  Name = "Client2"
--#  Client = @hostname@2-fd
-+#  Client = client2-fd
- #  JobDefs = "DefaultJob"
- #  Write Bootstrap = "@working_dir@/Client2.bsr"
- #}
 @@ -79,8 +80,8 @@ Job {
  Job {
    Name = "RestoreFiles"
    Type = Restore
--  Client=@hostname@-fd                 
+-  Client=@basename@-fd                 
 -  FileSet="Full Set"                  
-+  Client = bacula-fd                 
++  Client = @basename@-fd                 
 +  FileSet = "Full Set"                  
    Storage = File                      
    Pool = Default
    Messages = Standard
-@@ -105,11 +106,7 @@ FileSet {
- #    if you have other partitons such as /usr or /home
- #    you will probably want to add them too.
- #
--#  By default this is defined to point to the Bacula build
--#    directory to give a reasonable FileSet to backup to
--#    disk storage during initial testing.
--#
--    File = @BUILD_DIR@
-+    File = /
-   }
- 
- #
-@@ -154,8 +151,8 @@ FileSet {
- 
+@@ -157,7 +158,7 @@ FileSet {
  # Client (File Services) to backup
  Client {
--  Name = @hostname@-fd
+   Name = @basename@-fd
 -  Address = @hostname@
-+  Name = bacula-fd
 +  Address = 127.0.0.1
    FDPort = @fd_port@
    Catalog = MyCatalog
    Password = "@fd_password@"          # password for FileDaemon
-@@ -169,8 +166,8 @@ Client {
+@@ -171,8 +172,8 @@ Client {
  #  You should change Name, Address, and Password before using
  #
  #Client {
--#  Name = @hostname@2-fd                
+-#  Name = @basename@2-fd                
 -#  Address = @hostname@2
 +#  Name = client2-fd                
 +#  Address = client2.my.domain
  #  FDPort = @fd_port@
  #  Catalog = MyCatalog
  #  Password = "@fd_password@2"         # password for FileDaemon 2
-@@ -184,7 +181,7 @@ Client {
- Storage {
-   Name = File
- # Do not use "localhost" here    
--  Address = @hostname@                # N.B. Use a fully qualified name here
-+  Address = 127.0.0.1                # N.B. Use a fully qualified name here
-   SDPort = @sd_port@
-   Password = "@sd_password@"
-   Device = FileStorage
-@@ -197,7 +194,7 @@ Storage {
+@@ -199,7 +200,7 @@ Storage {
  #Storage {
  #  Name = DDS-4    
  #  Do not use "localhost" here
 -#  Address = @hostname@                # N.B. Use a fully qualified name here
-+#  Address = 127.0.0.1                # N.B. Use a fully qualified name here
++#  Address = 127.0.0.1                 # N.B. Use a fully qualified name here
  #  SDPort = @sd_port@
  #  Password = "@sd_password@"          # password for Storage daemon
  #  Device = DDS-4                      # must be same as Device in Storage daemon
-@@ -209,7 +206,7 @@ Storage {
+@@ -211,7 +212,7 @@ Storage {
  #Storage {
  #  Name = "8mmDrive"
  #  Do not use "localhost" here
 -#  Address = @hostname@                # N.B. Use a fully qualified name here
-+#  Address = 127.0.0.1                # N.B. Use a fully qualified name here
++#  Address = 127.0.0.1                 # N.B. Use a fully qualified name here
  #  SDPort = @sd_port@
  #  Password = "@sd_password@"
  #  Device = "Exabyte 8mm"
-@@ -220,7 +217,7 @@ Storage {
+@@ -222,7 +223,7 @@ Storage {
  #Storage {
  #  Name = "DVD"
  #  Do not use "localhost" here
 -#  Address = @hostname@                # N.B. Use a fully qualified name here
-+#  Address = 127.0.0.1                # N.B. Use a fully qualified name here
++#  Address = 127.0.0.1                 # N.B. Use a fully qualified name here
  #  SDPort = @sd_port@
  #  Password = "@sd_password@"
  #  Device = "DVD Writer"
-@@ -296,7 +293,7 @@ Pool {
- # Restricted console used by tray-monitor to get the status of the director
- #
- Console {
--  Name = @hostname@-mon
-+  Name = bacula-mon
-   Password = "@mon_dir_password@"
-   CommandACL = status, .status
- }

@@ -1,40 +1,11 @@
-$OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.2 2008/02/07 02:53:35 merdely Exp $
---- src/stored/bacula-sd.conf.in.orig	Mon Apr 23 12:31:14 2007
-+++ src/stored/bacula-sd.conf.in	Sat Aug 11 12:06:26 2007
-@@ -11,7 +11,7 @@
- #
- 
- Storage {                             # definition of myself
--  Name = @hostname@-sd
-+  Name = bacula-sd
-   SDPort = @sd_port@                  # Director's port      
-   WorkingDirectory = "@working_dir@"
-   Pid Directory = "@piddir@"
-@@ -22,7 +22,7 @@ Storage {                             # definition of 
- # List Directors who are permitted to contact Storage daemon
- #
- Director {
--  Name = @hostname@-dir
-+  Name = bacula-dir
-   Password = "@sd_password@"
- }
- 
-@@ -31,7 +31,7 @@ Director {
- #   status of the storage daemon
- #
- Director {
--  Name = @hostname@-mon
-+  Name = bacula-mon
-   Password = "@mon_sd_password@"
-   Monitor = yes
- }
-@@ -60,15 +60,15 @@ Device {
- #  Name = Autochanger
+$OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.3 2009/10/02 02:34:05 merdely Exp $
+--- src/stored/bacula-sd.conf.in.orig	Wed Jul 15 09:59:59 2009
++++ src/stored/bacula-sd.conf.in	Tue Sep  1 22:34:25 2009
+@@ -68,14 +68,14 @@ Device {
  #  Device = Drive-1
  #  Device = Drive-2
--#  Changer Command = "/home/kern/bacula/bin/mtx-changer %c %o %S %a %d"
+ #  Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
 -#  Changer Device = /dev/sg0
-+#  Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
 +#  Changer Device = /dev/ch0
  #}
  
@@ -47,7 +18,7 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.2 2008/02/07 02:53:35 merdely E
  #  AutomaticMount = yes;               # when device opened, read it
  #  AlwaysOpen = yes;
  #  RemovableMedia = yes;
-@@ -90,7 +90,7 @@ Device {
+@@ -97,7 +97,7 @@ Device {
  #  Name = Drive-2                      #
  #  Drive Index = 1
  #  Media Type = DLT-8000
@@ -56,16 +27,16 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.2 2008/02/07 02:53:35 merdely E
  #  AutomaticMount = yes;               # when device opened, read it
  #  AlwaysOpen = yes;
  #  RemovableMedia = yes;
-@@ -114,7 +114,7 @@ Device {
- #  RemovableMedia = yes;
+@@ -122,7 +122,7 @@ Device {
  #  RandomAccess = no;
+ #  Maximum File Size = 3GB
  ## Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
 -## Changer Device = /dev/sg0
 +## Changer Device = /dev/ch0
  ## AutoChanger = yes
  #  # Enable the Alert command only if you have the mtx package loaded
  ## Alert Command = "sh -c 'tapeinfo -f %c |grep TapeAlert|cat'"
-@@ -129,7 +129,7 @@ Device {
+@@ -182,7 +182,7 @@ Device {
  #  Name = DDS-4 
  #  Description = "DDS-4 for FreeBSD"
  #  Media Type = DDS-4
@@ -74,39 +45,3 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.2 2008/02/07 02:53:35 merdely E
  #  AutomaticMount = yes;               # when device opened, read it
  #  AlwaysOpen = yes
  #  Offline On Unmount = no
-@@ -169,7 +169,7 @@ Device {
- #  Name = "DVD Writer"
- #  Media Type = DVD
- #  Device Type = DVD
--#  Archive Device = /dev/hdc
-+#  Archive Device = /dev/cd0
- #  LabelMedia = yes;                   # lets Bacula label unlabeled media
- #  Random Access = Yes;
- #  AutomaticMount = yes;               # when device opened, read it
-@@ -177,8 +177,8 @@ Device {
- #  AlwaysOpen = no;
- #  MaximumPartSize = 800M;
- #  RequiresMount = yes;
--#  MountPoint = /mnt/cdrom;
--#  MountCommand = "/bin/mount -t iso9660 -o ro %a %m";
-+#  MountPoint = /mnt;
-+#  MountCommand = "/bin/mount -t cd9660 -o ro %a %m";
- #  UnmountCommand = "/bin/umount %m";
- #  SpoolDirectory = /tmp/backup;
- #  WritePartCommand = "/etc/bacula/dvd-handler %a write %e %v"
-@@ -191,7 +191,7 @@ Device {
- #Device {
- #  Name = DDS-3
- #  Media Type = DDS-3
--#  Archive Device = /dev/nrst0
-+#  Archive Device = @TAPEDRIVE@
- #  Use MTIOCGET= no
- #  BSF at EOM = yes
- #  TWO EOF = no
-@@ -225,5 +225,5 @@ Device {
- #
- Messages {
-   Name = Standard
--  director = @hostname@-dir = all
-+  director = bacula-dir = all
- }

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2009/01/12 21:17:07 sthen Exp $
---- configure.orig	Sun Dec 28 10:41:33 2008
-+++ configure	Tue Jan  6 12:45:22 2009
-@@ -4008,7 +4008,7 @@ echo "${ECHO_T}no" >&6; }
+$OpenBSD: patch-configure,v 1.5 2009/10/02 02:34:05 merdely Exp $
+--- configure.orig	Fri Jul 10 15:12:39 2009
++++ configure	Mon Sep 21 20:59:33 2009
+@@ -4239,7 +4239,7 @@ echo "${ECHO_T}no" >&6; }
  fi
  
  
@@ -10,20 +10,46 @@ $OpenBSD: patch-configure,v 1.4 2009/01/12 21:17:07 sthen Exp $
     { { echo "$as_me:$LINENO: error: Unable to find C++ compiler" >&5
  echo "$as_me: error: Unable to find C++ compiler" >&2;}
     { (exit 1); exit 1; }; }
-@@ -29981,6 +29981,7 @@ openbsd)
- 	    platforms/openbsd/bacula-fd \
- 	    platforms/openbsd/bacula-sd \
- 	    platforms/openbsd/bacula-dir"
-+	largefile_support="yes"
+@@ -42224,13 +42224,13 @@ _ACEOF
+ fi
+ 
+ PTHREAD_LIB=""
+-{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -42286,7 +42286,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
+ if test $ac_cv_lib_pthread_pthread_create = yes; then
+-  PTHREAD_LIB="-lpthread"
++  PTHREAD_LIB="-pthread"
+ else
+ 
+        { echo "$as_me:$LINENO: checking for pthread_create in -lpthreads" >&5
+@@ -42715,6 +42715,7 @@ openbsd)
+        platforms/openbsd/bacula-fd \
+        platforms/openbsd/bacula-sd \
+        platforms/openbsd/bacula-dir"
++   largefile_support="yes"
    ;;
  redhat)
- 	if test -f /etc/whitebox-release ; then
-@@ -31765,7 +31766,7 @@ if test "${support_bat}" = "yes" ; then
-   QMAKEBIN="qmake"
+       ping -c 1 $hostname 2>&1 1>/dev/null
+@@ -45729,7 +45730,7 @@ echo "$as_me: error: Could not find qmake or qmake-qt4
+    QMAKEBIN="qmake"
  
-   if test "x$QMAKEQT4" != "xnone"; then
--    QMAKEBIN=qmake-qt4
-+    QMAKEBIN=${QMAKEQT4}
-   fi
+    if test "x$QMAKEQT4" != "xnone"; then
+-       QMAKEBIN=qmake-qt4
++       QMAKEBIN=${QMAKEQT4}
+    fi
  
- 
+    cd src/qt-console

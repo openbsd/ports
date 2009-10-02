@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST-server,v 1.5 2009/01/12 21:17:07 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.6 2009/10/02 02:34:05 merdely Exp $
 @conflict bacula-<2.2.7
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
 @newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
+%%SHARED%%
+lib/libbacsql.a
+lib/libbacsql.la
 libexec/bacula/
 libexec/bacula/bacula
 libexec/bacula/bacula-ctl-dir
@@ -27,10 +30,43 @@ libexec/bacula/make_catalog_backup
 libexec/bacula/make_${BACKEND}_tables
 libexec/bacula/mtx-changer
 libexec/bacula/query.sql
-libexec/bacula/startmysql
-libexec/bacula/stopmysql
+@comment libexec/bacula/startmysql
+@comment libexec/bacula/stopmysql
 libexec/bacula/update_bacula_tables
 libexec/bacula/update_${BACKEND}_tables
+libexec/bacula/updatedb/
+libexec/bacula/updatedb/README
+libexec/bacula/updatedb/update_bacula_tables_8_to_9
+libexec/bacula/updatedb/update_bdb_tables_8_to_9
+libexec/bacula/updatedb/update_mysql_tables_10_to_11
+@comment libexec/bacula/updatedb/update_mysql_tables_10_to_11.in
+libexec/bacula/updatedb/update_mysql_tables_4_to_5
+libexec/bacula/updatedb/update_mysql_tables_5_to_6
+libexec/bacula/updatedb/update_mysql_tables_6_to_7
+libexec/bacula/updatedb/update_mysql_tables_7_to_8
+libexec/bacula/updatedb/update_mysql_tables_8_to_9
+libexec/bacula/updatedb/update_mysql_tables_9_to_10
+@comment libexec/bacula/updatedb/update_mysql_tables_9_to_10.in
+@comment libexec/bacula/updatedb/update_postgresql_tables_10_to_11.in
+libexec/bacula/updatedb/update_postgresql_tables_10_to_11
+libexec/bacula/updatedb/update_postgresql_tables_7_to_8
+libexec/bacula/updatedb/update_postgresql_tables_8_to_9
+@comment libexec/bacula/updatedb/update_postgresql_tables_9_to_10.in
+libexec/bacula/updatedb/update_postgresql_tables_9_to_10
+libexec/bacula/updatedb/update_sqlite3_tables_10_to_11
+@comment libexec/bacula/updatedb/update_sqlite3_tables_10_to_11.in
+libexec/bacula/updatedb/update_sqlite3_tables_8_to_9
+libexec/bacula/updatedb/update_sqlite3_tables_9_to_10
+@comment libexec/bacula/updatedb/update_sqlite3_tables_9_to_10.in
+libexec/bacula/updatedb/update_sqlite_tables_10_to_11
+@comment libexec/bacula/updatedb/update_sqlite_tables_10_to_11.in
+libexec/bacula/updatedb/update_sqlite_tables_4_to_5
+libexec/bacula/updatedb/update_sqlite_tables_5_to_6
+libexec/bacula/updatedb/update_sqlite_tables_6_to_7
+libexec/bacula/updatedb/update_sqlite_tables_7_to_8
+libexec/bacula/updatedb/update_sqlite_tables_8_to_9
+libexec/bacula/updatedb/update_sqlite_tables_9_to_10
+@comment libexec/bacula/updatedb/update_sqlite_tables_9_to_10.in
 @comment @man man/man1/bacula-bgnome-console.1
 @comment @man man/man1/bacula-bwxconsole.1
 @comment @man man/man1/bacula-tray-monitor.1
@@ -59,7 +95,6 @@ libexec/bacula/update_${BACKEND}_tables
 sbin/btraceback
 @bin sbin/bwild
 @bin sbin/dbcheck
-share/doc/bacula/
 share/doc/bacula/README-server.OpenBSD
 @mode 750
 @owner _bacula

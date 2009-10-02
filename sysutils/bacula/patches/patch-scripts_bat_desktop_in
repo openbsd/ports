@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_bat_desktop_in,v 1.1 2009/10/02 02:34:05 merdely Exp $
+--- scripts/bat.desktop.in.orig	Tue Jun  2 01:03:45 2009
++++ scripts/bat.desktop.in	Tue Jun  2 01:03:55 2009
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=Bacula Administration Tool
+ Comment=Bacula Director Console
+-Icon=/usr/share/pixmaps/bat_icon.png
++Icon=${LOCALBASE}/pixmaps/bat_icon.png
+ Exec=@sbindir@/bat -c @sysconfdir@/bat.conf
+ Terminal=false
+ Type=Application

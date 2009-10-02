@@ -1,12 +1,9 @@
-$OpenBSD: patch-src_console_bconsole_conf_in,v 1.1.1.1 2007/07/20 11:02:14 robert Exp $
---- src/console/bconsole.conf.in.orig	Thu Jul 12 11:21:37 2007
-+++ src/console/bconsole.conf.in	Thu Jul 12 11:21:53 2007
-@@ -3,8 +3,8 @@
- #
- 
+$OpenBSD: patch-src_console_bconsole_conf_in,v 1.2 2009/10/02 02:34:05 merdely Exp $
+--- src/console/bconsole.conf.in.orig	Thu May 14 12:06:41 2009
++++ src/console/bconsole.conf.in	Tue Sep  1 22:31:52 2009
+@@ -5,6 +5,6 @@
  Director {
--  Name = @hostname@-dir
-+  Name = bacula-dir
+   Name = @basename@-dir
    DIRport = @dir_port@
 -  address = @hostname@
 +  address = 127.0.0.1

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1 2009/10/02 02:34:05 merdely Exp $
+lib/bpipe-fd.so
+@lib lib/libbac.so.${LIBbac_VERSION}
+@lib lib/libbaccfg.so.${LIBbaccfg_VERSION}
+@lib lib/libbacfind.so.${LIBbacfind_VERSION}
+@lib lib/libbacpy.so.${LIBbacpy_VERSION}

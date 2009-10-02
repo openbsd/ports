@@ -1,7 +1,11 @@
-$OpenBSD: patch-scripts_mtx-changer_in,v 1.3 2008/10/19 03:44:42 merdely Exp $
---- scripts/mtx-changer.in.orig	Wed Jul  2 16:49:44 2008
-+++ scripts/mtx-changer.in	Tue Jul  1 19:28:12 2008
-@@ -2,3 +2,3 @@
+$OpenBSD: patch-scripts_mtx-changer_in,v 1.4 2009/10/02 02:34:05 merdely Exp $
+
+XXX first hunk hand-rolled for CVS keyword, Id
+
+--- scripts/mtx-changer.in.orig	Fri Jul 18 09:44:03 2008
++++ scripts/mtx-changer.in	Mon Sep 21 20:58:36 2009
+@@ -1,4 +1,4 @@
+ #!/bin/sh
  #
 -# Bacula interface to mtx autoloader
 +# Bacula interface to chio autoloader
@@ -19,16 +23,19 @@ $OpenBSD: patch-scripts_mtx-changer_in,v 1.3 2008/10/19 03:44:42 merdely Exp $
  #   exit code, Bacula will assume the request failed.
  #
  
-@@ -173,17 +173,17 @@ debug "Parms: $ctl $cmd $slot $device $drive"
+@@ -143,7 +143,7 @@ debug "Parms: $ctl $cmd $slot $device $drive"
  
  case $cmd in 
     unload)
 -      debug "Doing mtx -f $ctl unload $slot $drive"
 +      debug "Doing chio -f $ctl move drive $drive slot $slot"
- #
- # enable the following line if you need to eject the cartridge
- #     mt -f $device offline
- #     sleep 10
+ 
+       if test ${offline} -eq 1 ; then
+ 	mt -f $device offline
+@@ -151,12 +151,12 @@ case $cmd in 
+       if test ${offline_sleep} -ne 0 ; then
+ 	sleep ${offline_sleep}
+       fi
 -      ${MTX} -f $ctl unload $slot $drive
 +      ${MTX} -f $ctl move drive $drive slot $slot
        ;;
@@ -39,27 +46,27 @@ $OpenBSD: patch-scripts_mtx-changer_in,v 1.3 2008/10/19 03:44:42 merdely Exp $
 +      debug "Doing chio -f $ctl move slot $slot drive $drive"
 +      ${MTX} -f $ctl move slot $slot drive $drive
        rtn=$?
- #
- # Increase the sleep time if you have a slow device
-@@ -194,36 +194,37 @@ case $cmd in 
+       if test ${load_sleep} -ne 0 ; then
+ 	sleep ${load_sleep}
+@@ -166,36 +166,33 @@ case $cmd in 
        ;;
  
     list) 
 -      debug "Doing mtx -f $ctl -- to list volumes"
 +      debug "Doing chio -f $ctl status -- to list volumes"
        make_temp_file
- # Enable the following if you are using barcodes and need an inventory
- #     ${MTX} -f $ctl inventory
+       if test ${inventory} -ne 0 ; then
+ 	${MTX} -f $ctl inventory
+       fi
        ${MTX} -f $ctl status >${TMPFILE}
        rtn=$?
--      cat ${TMPFILE} | grep " Storage Element [0-9]*:.*Full" | awk "{print \$3 \$4}" | sed "s/Full *\(:VolumeTag=\)*//"
-+      cat ${TMPFILE} | grep " *slot [0-9]*: <ACCESS,.*FULL.*>" | awk "{print \$2 \$4 \$5 \$6 \$7 \$8}"
- #
- # If you have a VXA PacketLoader and the above does not work, try
- #  turning it off and enabling the following line.
- #     cat ${TMPFILE} | grep " *Storage Element [0-9]*:.*Full" | sed "s/ Storage Element //" | sed "s/Full :VolumeTag=//"
- #
+-      if test ${vxa_packetloader} -ne 0 ; then
+-	cat ${TMPFILE} | grep " *Storage Element [0-9]*:.*Full" | sed "s/ Storage Element //" | sed "s/Full :VolumeTag=//"
+-      else
+-	cat ${TMPFILE} | grep " Storage Element [0-9]*:.*Full" | awk "{print \$3 \$4}" | sed "s/Full *\(:VolumeTag=\)*//"
+-      fi
 -      cat ${TMPFILE} | grep "^Data Transfer Element [0-9]*:Full (Storage Element [0-9]" | awk '{printf "%s:%s\n",$7,$10}'
++      cat ${TMPFILE} | grep " *Storage Element [0-9]*:.*Full" | sed "s/ Storage Element //" | sed "s/Full :VolumeTag=//"
 +      cat ${TMPFILE} | grep " *drive [0-9]*: <.*FULL.*>" | awk "{print \$2 \$4 \$5 \$6 \$7 \$8}" | sed "s/^/D/"
        rm -f ${TMPFILE} >/dev/null 2>&1
        exit $rtn

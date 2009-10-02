@@ -1,15 +1,35 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2008/10/19 03:44:42 merdely Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/10/02 02:34:05 merdely Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/10/02 02:34:05 merdely Exp $
 @conflict bacula-client-*
-@conflict bacula-server-<2.2.7
+@conflict bacula-server-<3.0.2
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
+lib/bpipe-fd.a
+lib/libbac.a
+@comment lib/libbac.la
+lib/libbaccfg.a
+@comment lib/libbaccfg.la
+lib/libbacfind.a
+@comment lib/libbacfind.la
+lib/libbacpy.a
+@comment lib/libbacpy.la
 libexec/bacula/
 libexec/bacula/bacula-ctl-fd
+libexec/bacula/mtx-changer.conf
 @man man/man8/bacula-fd.8
+sbin/bacula
 @bin sbin/bacula-fd
+share/applications/
 share/doc/bacula/
+@comment share/doc/bacula/ChangeLog
+@comment share/doc/bacula/INSTALL
+share/doc/bacula/LICENSE
+@comment share/doc/bacula/README
 share/doc/bacula/README-client.OpenBSD
+share/doc/bacula/ReleaseNotes
+@comment share/doc/bacula/VERIFYING
+share/doc/bacula/technotes
 share/examples/bacula/
 @mode 750
 @owner _bacula
@@ -24,3 +44,8 @@ share/examples/bacula/bacula-fd.conf
 @owner _bacula
 @group _bacula
 @sample ${BACULACONF}/bacula-fd.conf
+%%SHARED%%
+@mode
+@owner
+@group
+share/pixmaps/
