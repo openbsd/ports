@@ -1,0 +1,11 @@
+$OpenBSD: patch-gtk_Makefile_in,v 1.1.1.1 2009/10/02 13:35:08 pea Exp $
+--- gtk/Makefile.in.orig	Mon Sep 28 16:36:59 2009
++++ gtk/Makefile.in	Mon Sep 28 16:37:12 2009
+@@ -231,7 +231,6 @@ libgtkdatabox_la_SOURCES = \
+ 
+ libgtkdatabox_la_LDFLAGS = \
+ 		        -version-info $(LT_CURRENT)\
+-			-release $(LT_RELEASE)\
+ 			@GTK_LIBS@
+ 
+ include_HEADERS = \

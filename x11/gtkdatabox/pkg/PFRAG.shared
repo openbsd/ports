@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/10/02 13:35:08 pea Exp $
+@lib lib/libgtkdatabox.so.${LIBgtkdatabox_VERSION}
