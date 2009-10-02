@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2009/09/15 17:37:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.124 2009/10/02 16:03:02 pea Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -7,10 +7,10 @@ COMMENT-contrib=PostgreSQL RDBMS contributions
 
 VERSION=	8.4.1
 DISTNAME=	postgresql-${VERSION}
-PKGNAME-main=	postgresql-client-${VERSION}p0
-PKGNAME-server=	postgresql-server-${VERSION}p0
-PKGNAME-docs=	postgresql-docs-${VERSION}p0
-PKGNAME-contrib=postgresql-contrib-${VERSION}p0
+PKGNAME-main=	postgresql-client-${VERSION}p1
+PKGNAME-server=	postgresql-server-${VERSION}p1
+PKGNAME-docs=	postgresql-docs-${VERSION}p1
+PKGNAME-contrib=postgresql-contrib-${VERSION}p1
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.1 \
@@ -19,6 +19,8 @@ SHARED_LIBS=	ecpg		7.1 \
 		pq		5.2
 
 HOMEPAGE=	http://www.postgresql.org/
+
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
