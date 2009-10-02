@@ -1,0 +1,66 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/02 09:26:21 sthen Exp $
+bin/perlbal
+${P5SITE}/Perlbal/
+${P5SITE}/Perlbal.pm
+${P5SITE}/Perlbal/AIO.pm
+${P5SITE}/Perlbal/BackendHTTP.pm
+${P5SITE}/Perlbal/Cache.pm
+${P5SITE}/Perlbal/ChunkedUploadState.pm
+${P5SITE}/Perlbal/ClientHTTP.pm
+${P5SITE}/Perlbal/ClientHTTPBase.pm
+${P5SITE}/Perlbal/ClientManage.pm
+${P5SITE}/Perlbal/ClientProxy.pm
+${P5SITE}/Perlbal/CommandContext.pm
+${P5SITE}/Perlbal/HTTPHeaders.pm
+${P5SITE}/Perlbal/ManageCommand.pm
+${P5SITE}/Perlbal/Plugin/
+${P5SITE}/Perlbal/Plugin/AccessControl.pm
+${P5SITE}/Perlbal/Plugin/AutoRemoveLeadingDir.pm
+${P5SITE}/Perlbal/Plugin/Cgilike.pm
+${P5SITE}/Perlbal/Plugin/EchoService.pm
+${P5SITE}/Perlbal/Plugin/Highpri.pm
+${P5SITE}/Perlbal/Plugin/Include.pm
+${P5SITE}/Perlbal/Plugin/LazyCDN.pm
+${P5SITE}/Perlbal/Plugin/NotModified.pm
+${P5SITE}/Perlbal/Plugin/Palimg.pm
+${P5SITE}/Perlbal/Plugin/Queues.pm
+${P5SITE}/Perlbal/Plugin/Stats.pm
+${P5SITE}/Perlbal/Plugin/Vhosts.pm
+${P5SITE}/Perlbal/Plugin/Vpaths.pm
+${P5SITE}/Perlbal/Pool.pm
+${P5SITE}/Perlbal/ReproxyManager.pm
+${P5SITE}/Perlbal/Service.pm
+${P5SITE}/Perlbal/Socket.pm
+${P5SITE}/Perlbal/SocketSSL.pm
+${P5SITE}/Perlbal/TCPListener.pm
+${P5SITE}/Perlbal/Test/
+${P5SITE}/Perlbal/Test.pm
+${P5SITE}/Perlbal/Test/WebClient.pm
+${P5SITE}/Perlbal/Test/WebServer.pm
+${P5SITE}/Perlbal/UploadListener.pm
+${P5SITE}/Perlbal/Util.pm
+@man man/man1/perlbal.1
+@man man/man3p/Perlbal.3p
+@man man/man3p/Perlbal::Plugin::Cgilike.3p
+@man man/man3p/Perlbal::Plugin::Include.3p
+@man man/man3p/Perlbal::Plugin::Palimg.3p
+@man man/man3p/Perlbal::Test.3p
+@man man/man3p/Perlbal::Util.3p
+share/doc/p5-Perlbal/
+share/doc/p5-Perlbal/config-guide.txt
+share/doc/p5-Perlbal/hacking/
+share/doc/p5-Perlbal/hacking/classes.txt
+share/doc/p5-Perlbal/hacking/hooks.txt
+share/doc/p5-Perlbal/hacking/todo.txt
+share/doc/p5-Perlbal/http-versions.txt
+share/doc/p5-Perlbal/pool-parameters.txt
+share/doc/p5-Perlbal/reproxying.txt
+share/doc/p5-Perlbal/service-parameters.txt
+share/examples/p5-Perlbal/
+share/examples/p5-Perlbal/echoservice.conf
+share/examples/p5-Perlbal/load-balancer.conf
+share/examples/p5-Perlbal/nodelist.dat
+share/examples/p5-Perlbal/not-modified-plugin.conf
+share/examples/p5-Perlbal/ssl.conf
+share/examples/p5-Perlbal/virtual-hosts.conf
+share/examples/p5-Perlbal/webserver.conf

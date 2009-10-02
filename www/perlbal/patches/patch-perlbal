@@ -1,0 +1,12 @@
+$OpenBSD: patch-perlbal,v 1.1.1.1 2009/10/02 09:26:21 sthen Exp $
+--- perlbal.orig	Thu Oct  1 14:12:29 2009
++++ perlbal	Thu Oct  1 14:12:35 2009
+@@ -45,7 +45,7 @@ usage(1) unless
+                              'version'  => \$opt_version,
+                );
+ 
+-my $default_config = "/etc/perlbal/perlbal.conf";
++my $default_config = "${SYSCONFDIR}/perlbal/perlbal.conf";
+ $opt_config = $default_config if ! $opt_config && -e $default_config;
+ 
+ usage(0) if $opt_help;

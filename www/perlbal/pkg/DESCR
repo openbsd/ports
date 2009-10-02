@@ -1,0 +1,2 @@
+Perlbal is a single-threaded event-based server supporting HTTP
+load balancing, web serving, and a mix of the two.
