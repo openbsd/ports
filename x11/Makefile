@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.397 2009/09/30 00:46:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.398 2009/10/02 13:44:54 pea Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += Xaw3d
@@ -94,6 +94,7 @@
      SUBDIR += gtk2-nodoka-engine
      SUBDIR += gtk2-theme-switch
      SUBDIR += gtk2mm
+     SUBDIR += gtkdatabox
      SUBDIR += gtkglarea
      SUBDIR += gtkglext
      SUBDIR += gtkhotkey
@@ -118,6 +119,7 @@
      SUBDIR += kde
      SUBDIR += kdirstat
      SUBDIR += keynav
+     SUBDIR += klavaro
      SUBDIR += kmplayer
      SUBDIR += kountdown
      SUBDIR += krusader
