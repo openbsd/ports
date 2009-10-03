@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/12 20:30:07 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/03 16:37:21 jolan Exp $
 tcpdf/
 tcpdf/2dbarcodes.php
 tcpdf/CHANGELOG.TXT
@@ -90,6 +90,7 @@ tcpdf/examples/example_051.php
 tcpdf/examples/example_052.php
 tcpdf/examples/example_053.php
 tcpdf/examples/example_054.php
+tcpdf/examples/index.php
 tcpdf/fonts/
 tcpdf/fonts/.noencode
 tcpdf/fonts/README.TXT
