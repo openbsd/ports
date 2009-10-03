@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2008/10/26 16:23:58 simon Exp $
+# $OpenBSD: Makefile,v 1.50 2009/10/03 09:20:36 pea Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	unified perl interface for database access
 
 MODULES=	cpan
-DISTNAME=	DBI-1.607
+DISTNAME=	DBI-1.609
 CATEGORIES=	databases
 
 HOMEPAGE=	http://dbi.perl.org/
@@ -19,5 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:p5-PlRPC->=0.2017:net/p5-PlRPC
 BUILD_DEPENDS=	${RUN_DEPENDS}
+REGRESS_DEPENDS=::devel/p5-Test-Pod-Coverage
 
 .include <bsd.port.mk>
