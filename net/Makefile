@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.593 2009/10/01 16:29:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.594 2009/10/03 18:55:11 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -343,6 +343,7 @@
      SUBDIR += pidgin-tlen
      SUBDIR += pktstat
      SUBDIR += plushs
+     SUBDIR += pmacct
      SUBDIR += poink
      SUBDIR += pop3gwd
      SUBDIR += poptop
