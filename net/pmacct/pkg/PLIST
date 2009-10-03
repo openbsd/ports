@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/03 18:54:44 sthen Exp $
+@bin bin/pmacct
+@bin sbin/nfacctd
+@bin sbin/pmacctd
+@bin sbin/sfacctd
+%%mysql%%
+%%postgresql%%
+share/doc/pmacct/
+share/doc/pmacct/CONFIG-KEYS
+share/doc/pmacct/EXAMPLES
+share/doc/pmacct/INTERNALS
+share/doc/pmacct/PLUGINS
+share/doc/pmacct/README.64bit
+share/doc/pmacct/README.IPv6
+share/doc/pmacct/README.sqlite3
+share/doc/pmacct/SIGNALS
+share/doc/pmacct/TRIGGER_VARS
+share/examples/pmacct/
+share/examples/pmacct/agent_to_peer.map
+share/examples/pmacct/allow-list.example
+share/examples/pmacct/gnuplot-example.sh
+share/examples/pmacct/gnuplot.script.example
+share/examples/pmacct/mrtg-example.sh
+share/examples/pmacct/mrtg.conf.example
+share/examples/pmacct/networks.lst.example
+share/examples/pmacct/nfacctd-print.conf.example
+share/examples/pmacct/nfacctd-sql_v1.conf.example
+share/examples/pmacct/nfacctd-sql_v2.conf.example
+share/examples/pmacct/peers.map.example
+share/examples/pmacct/pmacctd-imt.conf.example
+share/examples/pmacct/pmacctd-multiple-plugins.conf.example
+share/examples/pmacct/pmacctd-sql_v1.conf.example
+share/examples/pmacct/pmacctd-sql_v2.conf.example
+share/examples/pmacct/pmacctd-sqlite3_v4.conf.example
+share/examples/pmacct/ports.lst.example
+share/examples/pmacct/pretag.map.example
+share/examples/pmacct/probe_netflow.conf.example
+share/examples/pmacct/probe_sflow.conf.example
+share/examples/pmacct/rrdtool-example.sh
+share/examples/pmacct/sql/
+share/examples/pmacct/sql/pmacct-create-table_bgp_v1.sqlite3
+share/examples/pmacct/sql/pmacct-create-table_v1.sqlite3
+share/examples/pmacct/sql/pmacct-create-table_v2.sqlite3
+share/examples/pmacct/sql/pmacct-create-table_v3.sqlite3
+share/examples/pmacct/sql/pmacct-create-table_v4.sqlite3
+share/examples/pmacct/sql/pmacct-create-table_v5.sqlite3
+share/examples/pmacct/sql/pmacct-create-table_v6.sqlite3
+share/examples/pmacct/sql/pmacct-create-table_v7.sqlite3

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_bgp_bgp_c,v 1.1.1.1 2009/10/03 18:54:44 sthen Exp $
+
+- missing prototypes cause pointer truncation on 64-bit arch
+
+--- src/bgp/bgp.c.orig	Thu Sep 17 02:10:52 2009
++++ src/bgp/bgp.c	Thu Sep 17 02:10:58 2009
+@@ -25,6 +25,7 @@
+ /* includes */
+ #include "pmacct.h"
+ #include "bgp.h"
++#include "bgp_hash.h"
+ #include "thread_pool.h"
+ 
+ /* variables to be exported away */

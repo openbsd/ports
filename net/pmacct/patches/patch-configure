@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/10/03 18:54:44 sthen Exp $
+--- configure.orig	Wed Sep  9 13:37:35 2009
++++ configure	Wed Sep 23 15:41:11 2009
+@@ -1079,7 +1079,7 @@ fi
+ 
+ 
+ if test "x$ac_cv_prog_gcc" = xyes ; then
+-  CFLAGS="-O2"
++  #CFLAGS="-O2"
+   case "$host_os" in
+     IRIX*)
+       CFLAGS="-mabi=n32 -fno-builtins ${CFLAGS}"
+@@ -3427,7 +3427,7 @@ EOF
+ 	  
+ 
+ 
+-	  LIBS="${LIBS} -lpthread"
++	  LIBS="${LIBS} -pthread"
+ 	  THREADS_SOURCES="thread_pool.c"
+ 	else
+           echo "$ac_t""no" 1>&6

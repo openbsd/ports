@@ -1,0 +1,12 @@
+@comment $OpenBSD: PFRAG.postgresql,v 1.1.1.1 2009/10/03 18:54:44 sthen Exp $
+@bin bin/pmpgplay
+share/doc/pmacct/README.pgsql
+share/examples/pmacct/sql/pmacct-create-db.pgsql
+share/examples/pmacct/sql/pmacct-create-table_bgp_v1.pgsql
+share/examples/pmacct/sql/pmacct-create-table_v1.pgsql
+share/examples/pmacct/sql/pmacct-create-table_v2.pgsql
+share/examples/pmacct/sql/pmacct-create-table_v3.pgsql
+share/examples/pmacct/sql/pmacct-create-table_v4.pgsql
+share/examples/pmacct/sql/pmacct-create-table_v5.pgsql
+share/examples/pmacct/sql/pmacct-create-table_v6.pgsql
+share/examples/pmacct/sql/pmacct-create-table_v7.pgsql

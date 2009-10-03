@@ -1,0 +1,12 @@
+@comment $OpenBSD: PFRAG.mysql,v 1.1.1.1 2009/10/03 18:54:44 sthen Exp $
+@bin bin/pmmyplay
+share/doc/pmacct/README.mysql
+share/examples/pmacct/sql/pmacct-create-db_bgp_v1.mysql
+share/examples/pmacct/sql/pmacct-create-db_v1.mysql
+share/examples/pmacct/sql/pmacct-create-db_v2.mysql
+share/examples/pmacct/sql/pmacct-create-db_v3.mysql
+share/examples/pmacct/sql/pmacct-create-db_v4.mysql
+share/examples/pmacct/sql/pmacct-create-db_v5.mysql
+share/examples/pmacct/sql/pmacct-create-db_v6.mysql
+share/examples/pmacct/sql/pmacct-create-db_v7.mysql
+share/examples/pmacct/sql/pmacct-grant-db.mysql

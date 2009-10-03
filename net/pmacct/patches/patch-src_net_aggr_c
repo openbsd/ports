@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_net_aggr_c,v 1.1.1.1 2009/10/03 18:54:44 sthen Exp $
+
+- missing prototypes cause pointer truncation on 64-bit arch
+
+--- src/net_aggr.c.orig	Thu Sep 17 02:08:51 2009
++++ src/net_aggr.c	Thu Sep 17 02:09:00 2009
+@@ -28,6 +28,7 @@
+ #include "plugin_hooks.h"
+ #include "net_aggr.h"
+ #include "jhash.h"
++#include "addr.h"
+ 
+ void load_networks(char *filename, struct networks_table *nt, struct networks_cache *nc)
+ {

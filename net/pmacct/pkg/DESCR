@@ -1,0 +1,23 @@
+pmacct is a set of passive network monitoring tools to measure, account,
+classify, aggregate and export IPv4 and IPv6 traffic, suitable to ISP, IXP,
+CDN, IP carrier, data-centre and hot-spot enviroments.
+
+Being able to collect flow data through libpcap, NetFlow and sFlow and
+optionally augment this by configuring peering with the included BGP
+daemon, granularity is fine enough for essential network management
+tasks such as billing, graphing network resource usage, analysing live
+or historical traffic trends, steering BGP peerings, real-time alerting,
+and certain SLA monitoring.
+
+Aggregation, flexible filtering, sampling and renormalization capabilities
+are provided to help cope with the large amounts of data produced by high-
+speed networks. Using either memory or database tables (MySQL, PostgreSQL,
+SQLite) as backend storage, pmacct can easily feed data into external
+tools, including RRDtool, GNUPlot, Net-SNMP, MRTG and Cacti.
+
+The default package provides SQLite support, available flavors are:
+
+	threads       compile with threads, required for BGP integration
+                      or running packet classification in parallel
+	mysql         compile with support for MySQL
+	postgresql    compile with support for PostgreSQL
