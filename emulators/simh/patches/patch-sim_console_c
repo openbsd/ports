@@ -1,0 +1,12 @@
+$OpenBSD: patch-sim_console_c,v 1.1 2009/10/03 01:57:33 form Exp $
+--- sim_console.c.orig	Sat Oct  3 08:40:24 2009
++++ sim_console.c	Sat Oct  3 08:42:11 2009
+@@ -111,7 +111,7 @@
+ /* Set/show data structures */
+ 
+ static CTAB set_con_tab[] = {
+-    { "WRU", &sim_set_kmap, KMAP_WRU | KMAP_NZ },
++    { "WRU", &sim_set_kmap, KMAP_WRU },
+     { "BRK", &sim_set_kmap, KMAP_BRK },
+     { "DEL", &sim_set_kmap, KMAP_DEL |KMAP_NZ },
+     { "PCHAR", &sim_set_pchar, 0 },
