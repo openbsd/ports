@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/18 10:23:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/04 18:19:22 ajacoutot Exp $
 
 COMMENT =		C++ interface for pango
 
-V =			2.24.0
+V =			2.26.0
 DISTNAME =		pangomm-${V}
 CATEGORIES =		devel x11
 
-SHARED_LIBS +=		pangomm-1.4	8.0 #.1.30
+SHARED_LIBS +=		pangomm-1.4	9.0 # .1.30
 
 HOMEPAGE =		http://www.gtkmm.org/
 
@@ -34,6 +34,7 @@ USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" \
+			MAKE=${MAKE_PROGRAM}
 
 .include <bsd.port.mk>
