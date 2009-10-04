@@ -1,0 +1,9 @@
+$OpenBSD: patch-icon-theme-installer,v 1.1 2009/10/04 08:08:13 ajacoutot Exp $
+--- icon-theme-installer.orig	Sun Oct  4 10:06:50 2009
++++ icon-theme-installer	Sun Oct  4 10:06:54 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # icon-theme-installer
+ # Copyright (C) 2006 Novell, Inc.

@@ -1,0 +1,9 @@
+$OpenBSD: patch-tools_f-spot-import,v 1.1 2009/10/04 08:08:13 ajacoutot Exp $
+--- tools/f-spot-import.orig	Sun Oct  4 10:06:59 2009
++++ tools/f-spot-import	Sun Oct  4 10:07:03 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash -x
++#!/bin/sh -x
+ 
+ udi="$1"
+ #xmessage $udi
