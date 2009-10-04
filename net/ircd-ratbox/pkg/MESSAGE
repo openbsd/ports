@@ -2,6 +2,6 @@ To start ircd-ratbox at boot time, edit ${SYSCONFDIR}/ircd-ratbox/ircd.conf
 as required and insert the following into /etc/rc.local:
 
 if [ -x ${TRUEPREFIX}/bin/ircd ]; then
-	echo -n ' ircd'
-	${TRUEPREFIX}/bin/ircd
+	install -d -o _ircd-ratbox /var/run/ircd-ratbox
+	echo -n ' ircd'; ${TRUEPREFIX}/bin/ircd
 fi

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/23 14:02:03 simon Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/10/04 12:56:23 fgsch Exp $
 @conflict irc-*
 @conflict ircd-hybrid-*
 @newgroup _ircd-ratbox:619
@@ -262,4 +262,3 @@ share/ircd-ratbox/help/users/whowas
 @owner _ircd-ratbox
 @group _ircd-ratbox
 @sample ${LOGDIR}/
-@sample /var/run/ircd-ratbox/

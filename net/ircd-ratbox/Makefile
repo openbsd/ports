@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/23 14:02:03 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2009/10/04 12:56:23 fgsch Exp $
 
 SHARED_ONLY =	Yes
-COMMENT =	advanced, stable and fast ircd
+COMMENT =	advanced, stable and fast irc server
 
 DISTNAME =	ircd-ratbox-3.0.4
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	net
 EXTRACT_SUFX =	.tar.bz2
 
@@ -54,7 +55,8 @@ DOCS =		README.cidr_bans challenge.txt modeg.txt \
 		tgchange.txt
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/doc/example.conf ${WRKSRC}/doc/example.efnet.conf
+	${SUBST_CMD} ${WRKSRC}/doc/example.conf \
+	    ${WRKSRC}/doc/example.efnet.conf
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ircd-ratbox
