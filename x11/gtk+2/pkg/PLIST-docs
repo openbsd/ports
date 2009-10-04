@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.25 2009/07/12 20:39:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.26 2009/10/04 18:17:57 ajacoutot Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
@@ -70,6 +70,7 @@ share/gtk-doc/html/gdk/api-index-2-10.html
 share/gtk-doc/html/gdk/api-index-2-12.html
 share/gtk-doc/html/gdk/api-index-2-14.html
 share/gtk-doc/html/gdk/api-index-2-16.html
+share/gtk-doc/html/gdk/api-index-2-18.html
 share/gtk-doc/html/gdk/api-index-2-2.html
 share/gtk-doc/html/gdk/api-index-2-4.html
 share/gtk-doc/html/gdk/api-index-2-6.html
@@ -242,6 +243,7 @@ share/gtk-doc/html/gtk/GtkDialog.html
 share/gtk-doc/html/gtk/GtkDrawingArea.html
 share/gtk-doc/html/gtk/GtkEditable.html
 share/gtk-doc/html/gtk/GtkEntry.html
+share/gtk-doc/html/gtk/GtkEntryBuffer.html
 share/gtk-doc/html/gtk/GtkEntryCompletion.html
 share/gtk-doc/html/gtk/GtkEventBox.html
 share/gtk-doc/html/gtk/GtkExpander.html
@@ -272,6 +274,7 @@ share/gtk-doc/html/gtk/GtkIconTheme.html
 share/gtk-doc/html/gtk/GtkIconView.html
 share/gtk-doc/html/gtk/GtkImage.html
 share/gtk-doc/html/gtk/GtkImageMenuItem.html
+share/gtk-doc/html/gtk/GtkInfoBar.html
 share/gtk-doc/html/gtk/GtkInputDialog.html
 share/gtk-doc/html/gtk/GtkInvisible.html
 share/gtk-doc/html/gtk/GtkItem.html
@@ -396,6 +399,7 @@ share/gtk-doc/html/gtk/api-index-2-10.html
 share/gtk-doc/html/gtk/api-index-2-12.html
 share/gtk-doc/html/gtk/api-index-2-14.html
 share/gtk-doc/html/gtk/api-index-2-16.html
+share/gtk-doc/html/gtk/api-index-2-18.html
 share/gtk-doc/html/gtk/api-index-2-2.html
 share/gtk-doc/html/gtk/api-index-2-4.html
 share/gtk-doc/html/gtk/api-index-2-6.html
@@ -527,6 +531,7 @@ share/gtk-doc/html/gtk/gtk-media-record.png
 share/gtk-doc/html/gtk/gtk-media-rewind-ltr.png
 share/gtk-doc/html/gtk/gtk-media-rewind-rtl.png
 share/gtk-doc/html/gtk/gtk-media-stop.png
+share/gtk-doc/html/gtk/gtk-migrating-ClientSideWindows.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkAboutDialog.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkAction.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkAssistant.html
@@ -539,6 +544,7 @@ share/gtk-doc/html/gtk/gtk-migrating-GtkLinkButton.html
 share/gtk-doc/html/gtk/gtk-migrating-GtkRecentChooser.html
 share/gtk-doc/html/gtk/gtk-migrating-checklist.html
 share/gtk-doc/html/gtk/gtk-migrating-entry-icons.html
+share/gtk-doc/html/gtk/gtk-migrating-label-links.html
 share/gtk-doc/html/gtk/gtk-migrating-tooltips.html
 share/gtk-doc/html/gtk/gtk-missing-image.png
 share/gtk-doc/html/gtk/gtk-network.png

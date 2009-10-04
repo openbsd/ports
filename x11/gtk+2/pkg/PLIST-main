@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2009/09/18 20:47:11 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2009/10/04 18:17:57 ajacoutot Exp $
 @conflict gail-*
 @pkgpath x11/gtk+2
 @bin bin/gdk-pixbuf-csource
@@ -117,6 +117,7 @@ include/gtk-2.0/gtk/gtkdnd.h
 include/gtk-2.0/gtk/gtkdrawingarea.h
 include/gtk-2.0/gtk/gtkeditable.h
 include/gtk-2.0/gtk/gtkentry.h
+include/gtk-2.0/gtk/gtkentrybuffer.h
 include/gtk-2.0/gtk/gtkentrycompletion.h
 include/gtk-2.0/gtk/gtkenums.h
 include/gtk-2.0/gtk/gtkeventbox.h
@@ -151,6 +152,7 @@ include/gtk-2.0/gtk/gtkimcontext.h
 include/gtk-2.0/gtk/gtkimcontextsimple.h
 include/gtk-2.0/gtk/gtkimmodule.h
 include/gtk-2.0/gtk/gtkimmulticontext.h
+include/gtk-2.0/gtk/gtkinfobar.h
 include/gtk-2.0/gtk/gtkinputdialog.h
 include/gtk-2.0/gtk/gtkinvisible.h
 include/gtk-2.0/gtk/gtkitem.h
@@ -335,9 +337,6 @@ lib/gtk-2.0/2.10.0/loaders/libpixbufloader-icns.so
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ico.a
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ico.la
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ico.so
-lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jasper.a
-lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jasper.la
-lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jasper.so
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jpeg.a
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jpeg.la
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-jpeg.so
@@ -430,6 +429,7 @@ share/gtk-2.0/demo/demo.ui
 share/gtk-2.0/demo/dialog.c
 share/gtk-2.0/demo/drawingarea.c
 share/gtk-2.0/demo/editable_cells.c
+share/gtk-2.0/demo/entry_buffer.c
 share/gtk-2.0/demo/entry_completion.c
 share/gtk-2.0/demo/expander.c
 share/gtk-2.0/demo/floppybuddy.gif
@@ -447,8 +447,12 @@ share/gtk-2.0/demo/hypertext.c
 share/gtk-2.0/demo/iconview.c
 share/gtk-2.0/demo/iconview_edit.c
 share/gtk-2.0/demo/images.c
+share/gtk-2.0/demo/infobar.c
+share/gtk-2.0/demo/links.c
 share/gtk-2.0/demo/list_store.c
 share/gtk-2.0/demo/menus.c
+share/gtk-2.0/demo/offscreen_window.c
+share/gtk-2.0/demo/offscreen_window2.c
 share/gtk-2.0/demo/panes.c
 share/gtk-2.0/demo/pickers.c
 share/gtk-2.0/demo/pixbufs.c

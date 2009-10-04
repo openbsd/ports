@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_input_Makefile_in,v 1.21 2009/07/12 20:39:33 ajacoutot Exp $
---- modules/input/Makefile.in.orig	Sun May 31 06:11:05 2009
-+++ modules/input/Makefile.in	Thu Jun 11 15:11:57 2009
-@@ -1344,13 +1344,6 @@ install-data-hook:
+$OpenBSD: patch-modules_input_Makefile_in,v 1.22 2009/10/04 18:17:57 ajacoutot Exp $
+--- modules/input/Makefile.in.orig	Wed Sep 23 04:22:51 2009
++++ modules/input/Makefile.in	Tue Sep 29 06:59:20 2009
+@@ -1239,13 +1239,6 @@ install-data-hook:
  	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
  	  echo "$(top_builddir)/gtk/gtk-query-immodules-2.0 > $(DESTDIR)$(sysconfdir)/gtk-2.0/gtk.immodules" ; \
  	  $(top_builddir)/gtk/gtk-query-immodules-2.0 > $(DESTDIR)$(sysconfdir)/gtk-2.0/gtk.immodules ; \
@@ -15,7 +15,7 @@ $OpenBSD: patch-modules_input_Makefile_in,v 1.21 2009/07/12 20:39:33 ajacoutot E
          fi
  
  uninstall-local:
-@@ -1359,6 +1352,7 @@ uninstall-local:
+@@ -1254,6 +1247,7 @@ uninstall-local:
  included-modules: $(noinst_LTLIBRARIES)
  
  gtk.immodules: Makefile.am $(module_LTLIBRARIES)

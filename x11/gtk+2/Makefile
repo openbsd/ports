@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2009/09/18 20:47:11 martynas Exp $
+# $OpenBSD: Makefile,v 1.86 2009/10/04 18:17:57 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -6,20 +6,20 @@ COMMENT-main=			multi-platform graphical toolkit
 COMMENT-docs=           	gtk+2 documentation
 COMMENT-cups=			gtk+2 CUPS print backend
 
-VERSION=			2.16.6
+VERSION=			2.18.1
 DISTNAME=			gtk+-${VERSION}
 
-PKGNAME-main=			gtk+2-${VERSION}p1
+PKGNAME-main=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
-PKGNAME-cups=			gtk+2-cups-${VERSION}p0
+PKGNAME-cups=			gtk+2-cups-${VERSION}
 
 CATEGORIES=			x11 devel
 
-SHARED_LIBS+=	gdk_pixbuf-2.0		1401.0 #.1600.2
-SHARED_LIBS+=	gdk-x11-2.0		1401.0 #.1600.2
-SHARED_LIBS+=	gtk-x11-2.0		1401.0 #.1600.2
-SHARED_LIBS+=	gdk_pixbuf_xlib-2.0	1401.0 #.1600.2
-SHARED_LIBS+=	gailutil		23.0   #.18.1
+SHARED_LIBS+=	gdk_pixbuf-2.0		1402.0 # .1800.1
+SHARED_LIBS+=	gdk-x11-2.0		1402.0 # .1800.1
+SHARED_LIBS+=	gtk-x11-2.0		1402.0 # .1800.1
+SHARED_LIBS+=	gdk_pixbuf_xlib-2.0	1402.0 # .1800.1
+SHARED_LIBS+=	gailutil		24.0   # .18.1
 
 HOMEPAGE=			http://www.gtk.org/
 
@@ -50,7 +50,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			atk-1.0.>=1809.0::devel/atk \
 			tiff.>=35::graphics/tiff \
 			png.>=3::graphics/png \
-			jasper::graphics/jasper \
 			jpeg.>=62::graphics/jpeg
 WANTLIB-main=		${WANTLIB} c pthread
 
