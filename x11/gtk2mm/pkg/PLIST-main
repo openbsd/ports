@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/09/18 10:24:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/10/04 18:19:57 ajacoutot Exp $
 @pkgpath x11/gtk2mm
 %%SHARED%%
-@bin bin/gtkmm-demo
 include/atkmm-1.6/
 include/atkmm-1.6/atkmm/
 include/atkmm-1.6/atkmm.h
@@ -178,6 +177,7 @@ include/gtkmm-2.4/gtkmm/icontheme.h
 include/gtkmm-2.4/gtkmm/iconview.h
 include/gtkmm-2.4/gtkmm/image.h
 include/gtkmm-2.4/gtkmm/imagemenuitem.h
+include/gtkmm-2.4/gtkmm/infobar.h
 include/gtkmm-2.4/gtkmm/inputdialog.h
 include/gtkmm-2.4/gtkmm/invisible.h
 include/gtkmm-2.4/gtkmm/item.h
@@ -277,6 +277,7 @@ include/gtkmm-2.4/gtkmm/private/icontheme_p.h
 include/gtkmm-2.4/gtkmm/private/iconview_p.h
 include/gtkmm-2.4/gtkmm/private/image_p.h
 include/gtkmm-2.4/gtkmm/private/imagemenuitem_p.h
+include/gtkmm-2.4/gtkmm/private/infobar_p.h
 include/gtkmm-2.4/gtkmm/private/inputdialog_p.h
 include/gtkmm-2.4/gtkmm/private/invisible_p.h
 include/gtkmm-2.4/gtkmm/private/item_p.h
@@ -462,14 +463,6 @@ lib/gdkmm-2.4/include/gdkmmconfig.h
 lib/gtkmm-2.4/
 lib/gtkmm-2.4/include/
 lib/gtkmm-2.4/include/gtkmmconfig.h
-lib/gtkmm-2.4/proc/
-lib/gtkmm-2.4/proc/m4/
-lib/gtkmm-2.4/proc/m4/convert.m4
-lib/gtkmm-2.4/proc/m4/convert_atk.m4
-lib/gtkmm-2.4/proc/m4/convert_gdk.m4
-lib/gtkmm-2.4/proc/m4/convert_gtk.m4
-lib/gtkmm-2.4/proc/m4/convert_gtkmm.m4
-lib/gtkmm-2.4/proc/m4/convert_pango.m4
 lib/libatkmm-1.6.a
 lib/libatkmm-1.6.la
 lib/libgdkmm-2.4.a
@@ -485,6 +478,11 @@ share/gtkmm-2.4/demo/
 share/gtkmm-2.4/demo/alphatest.png
 share/gtkmm-2.4/demo/apple-red.png
 share/gtkmm-2.4/demo/background.jpg
+share/gtkmm-2.4/demo/demo-common.cc
+share/gtkmm-2.4/demo/demo-common.h
+share/gtkmm-2.4/demo/demos.h
+share/gtkmm-2.4/demo/demowindow.cc
+share/gtkmm-2.4/demo/demowindow.h
 share/gtkmm-2.4/demo/example_appwindow.cc
 share/gtkmm-2.4/demo/example_buttonbox.cc
 share/gtkmm-2.4/demo/example_change_display.cc
@@ -514,3 +512,6 @@ share/gtkmm-2.4/demo/gnome-gmush.png
 share/gtkmm-2.4/demo/gnome-gsame.png
 share/gtkmm-2.4/demo/gnu-keys.png
 share/gtkmm-2.4/demo/gtk-logo-rgb.gif
+share/gtkmm-2.4/demo/main.cc
+share/gtkmm-2.4/demo/textwidget.cc
+share/gtkmm-2.4/demo/textwidget.h
