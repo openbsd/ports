@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_gtk_gsockgtk_cpp,v 1.1 2009/10/04 18:22:31 ajacoutot Exp $
+--- src/gtk/gsockgtk.cpp.orig	Fri Mar  6 13:11:40 2009
++++ src/gtk/gsockgtk.cpp	Fri Oct  2 09:58:20 2009
+@@ -15,8 +15,13 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ 
++// newer versions of glib define its own GSocket but we unfortunately use this
++// // name in our own (semi-)public header and so can't change it -- rename glib
++// // one instead
++#define GSocket GlibGSocket
+ #include <gdk/gdk.h>
+ #include <glib.h>
++#undef GSocket
+ 
+ #include "wx/gsocket.h"
+ #include "wx/unix/gsockunx.h"
