@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:09:42 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2009/10/04 00:12:42 william Exp $
 
 COMMENT=	OCR program for pnm files
 
-DISTNAME=	ocrad-0.17
+DISTNAME=	ocrad-0.18
 CATEGORIES=	graphics
 
-MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
+MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c m stdc++
 
 MASTER_SITES=	${MASTER_SITE_GNU:=ocrad/}
-EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE=gnu
 MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"

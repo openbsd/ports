@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/03 16:59:35 steven Exp $
-bin/ocrad
+@comment $OpenBSD: PLIST,v 1.2 2009/10/04 00:12:42 william Exp $
+@bin bin/ocrad
 @info info/ocrad.info
 @man man/man1/ocrad.1
 share/doc/ocrad/
