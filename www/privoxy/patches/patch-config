@@ -1,18 +1,6 @@
-$OpenBSD: patch-config,v 1.5 2009/03/26 18:58:03 merdely Exp $
---- config.orig	Sat Aug 16 06:48:27 2008
-+++ config	Thu Mar 26 14:23:35 2009
-@@ -166,8 +166,8 @@
- #      don't end up locked out from the information on why they were
- #      locked out in the first place!
- #
--trust-info-url  http://www.example.com/why_we_block.html
--trust-info-url  http://www.example.com/what_we_allow.html
-+#trust-info-url  http://www.example.com/why_we_block.html
-+#trust-info-url  http://www.example.com/what_we_allow.html
- #
- #
- #  1.3. admin-address
-@@ -267,7 +267,7 @@ trust-info-url  http://www.example.com/what_we_allow.h
+--- config~	Sat Mar 21 12:51:51 2009
++++ config	Sat Oct  3 16:12:45 2009
+@@ -267,7 +267,7 @@
  #
  #      No trailing "/", please.
  #
@@ -21,7 +9,7 @@ $OpenBSD: patch-config,v 1.5 2009/03/26 18:58:03 merdely Exp $
  #
  #
  #  2.2. templdir
-@@ -324,7 +324,7 @@ confdir .
+@@ -324,7 +324,7 @@
  #
  #      No trailing "/", please.
  #
