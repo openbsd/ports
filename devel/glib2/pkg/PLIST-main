@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/07/12 20:38:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2009/10/04 18:17:13 ajacoutot Exp $
 @pkgpath devel/glib2
 %%SHARED%%
 @bin bin/glib-genmarshal
@@ -9,12 +9,16 @@ bin/glib-mkenums
 include/gio-unix-2.0/
 include/gio-unix-2.0/gio/
 include/gio-unix-2.0/gio/gdesktopappinfo.h
+include/gio-unix-2.0/gio/gunixconnection.h
+include/gio-unix-2.0/gio/gunixfdmessage.h
 include/gio-unix-2.0/gio/gunixinputstream.h
 include/gio-unix-2.0/gio/gunixmounts.h
 include/gio-unix-2.0/gio/gunixoutputstream.h
+include/gio-unix-2.0/gio/gunixsocketaddress.h
 include/glib-2.0/
 include/glib-2.0/gio/
 include/glib-2.0/gio/gappinfo.h
+include/glib-2.0/gio/gasyncinitable.h
 include/glib-2.0/gio/gasyncresult.h
 include/glib-2.0/gio/gbufferedinputstream.h
 include/glib-2.0/gio/gbufferedoutputstream.h
@@ -31,12 +35,16 @@ include/glib-2.0/gio/gfileenumerator.h
 include/glib-2.0/gio/gfileicon.h
 include/glib-2.0/gio/gfileinfo.h
 include/glib-2.0/gio/gfileinputstream.h
+include/glib-2.0/gio/gfileiostream.h
 include/glib-2.0/gio/gfilemonitor.h
 include/glib-2.0/gio/gfilenamecompleter.h
 include/glib-2.0/gio/gfileoutputstream.h
 include/glib-2.0/gio/gfilterinputstream.h
 include/glib-2.0/gio/gfilteroutputstream.h
 include/glib-2.0/gio/gicon.h
+include/glib-2.0/gio/ginetaddress.h
+include/glib-2.0/gio/ginetsocketaddress.h
+include/glib-2.0/gio/ginitable.h
 include/glib-2.0/gio/ginputstream.h
 include/glib-2.0/gio/gio.h
 include/glib-2.0/gio/gioenums.h
@@ -44,6 +52,7 @@ include/glib-2.0/gio/gioenumtypes.h
 include/glib-2.0/gio/gioerror.h
 include/glib-2.0/gio/giomodule.h
 include/glib-2.0/gio/gioscheduler.h
+include/glib-2.0/gio/giostream.h
 include/glib-2.0/gio/giotypes.h
 include/glib-2.0/gio/gloadableicon.h
 include/glib-2.0/gio/gmemoryinputstream.h
@@ -51,10 +60,25 @@ include/glib-2.0/gio/gmemoryoutputstream.h
 include/glib-2.0/gio/gmount.h
 include/glib-2.0/gio/gmountoperation.h
 include/glib-2.0/gio/gnativevolumemonitor.h
+include/glib-2.0/gio/gnetworkaddress.h
+include/glib-2.0/gio/gnetworkservice.h
 include/glib-2.0/gio/goutputstream.h
+include/glib-2.0/gio/gresolver.h
 include/glib-2.0/gio/gseekable.h
 include/glib-2.0/gio/gsimpleasyncresult.h
+include/glib-2.0/gio/gsocket.h
+include/glib-2.0/gio/gsocketaddress.h
+include/glib-2.0/gio/gsocketaddressenumerator.h
+include/glib-2.0/gio/gsocketclient.h
+include/glib-2.0/gio/gsocketconnectable.h
+include/glib-2.0/gio/gsocketconnection.h
+include/glib-2.0/gio/gsocketcontrolmessage.h
+include/glib-2.0/gio/gsocketlistener.h
+include/glib-2.0/gio/gsocketservice.h
+include/glib-2.0/gio/gsrvtarget.h
+include/glib-2.0/gio/gtcpconnection.h
 include/glib-2.0/gio/gthemedicon.h
+include/glib-2.0/gio/gthreadedsocketservice.h
 include/glib-2.0/gio/gvfs.h
 include/glib-2.0/gio/gvolume.h
 include/glib-2.0/gio/gvolumemonitor.h
@@ -79,6 +103,7 @@ include/glib-2.0/glib/gerror.h
 include/glib-2.0/glib/gfileutils.h
 include/glib-2.0/glib/ghash.h
 include/glib-2.0/glib/ghook.h
+include/glib-2.0/glib/ghostutils.h
 include/glib-2.0/glib/gi18n-lib.h
 include/glib-2.0/glib/gi18n.h
 include/glib-2.0/glib/giochannel.h
@@ -172,7 +197,14 @@ lib/pkgconfig/gthread-2.0.pc
 @man man/man1/gtester.1
 share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
+share/gdb/
+share/gdb/auto-load/
+share/gdb/auto-load/libglib-2.0.so.0.1802.0-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.1802.0-gdb.py
 share/glib-2.0/
+share/glib-2.0/gdb/
+share/glib-2.0/gdb/glib.py
+share/glib-2.0/gdb/gobject.py
 share/glib-2.0/gettext/
 share/glib-2.0/gettext/mkinstalldirs
 share/glib-2.0/gettext/po/

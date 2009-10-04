@@ -1,7 +1,20 @@
-$OpenBSD: patch-configure,v 1.14 2009/07/12 20:38:09 ajacoutot Exp $
---- configure.orig	Sat Jun 27 06:21:02 2009
-+++ configure	Wed Jul  1 12:54:41 2009
-@@ -35637,7 +35637,7 @@ if test "${ac_cv_lib_fam_FAMOpen+set}" = set; then
+$OpenBSD: patch-configure,v 1.15 2009/10/04 18:17:13 ajacoutot Exp $
+--- configure.orig	Wed Sep 30 03:19:04 2009
++++ configure	Fri Oct  2 09:09:31 2009
+@@ -2822,9 +2822,9 @@ _ACEOF
+ 
+ # libtool versioning
+ LT_RELEASE=2.22
+-LT_CURRENT=2200
+-LT_REVISION=1
+-LT_AGE=2200
++LT_CURRENT=!!LIBglib-2.0_VERSION_R!!
++LT_REVISION=!!LIBglib-2.0_VERSION_E!!
++LT_AGE=!!LIBglib-2.0_VERSION_R!!
+ LT_CURRENT_MINUS_AGE=0
+ 
+ 
+@@ -38669,7 +38669,7 @@ if test "${ac_cv_lib_fam_FAMOpen+set}" = set; then
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -10,7 +23,7 @@ $OpenBSD: patch-configure,v 1.14 2009/07/12 20:38:09 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -35854,7 +35854,7 @@ if test "${ac_cv_lib_fam_FAMNoExists+set}" = set; then
+@@ -38886,7 +38886,7 @@ if test "${ac_cv_lib_fam_FAMNoExists+set}" = set; then
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -19,7 +32,7 @@ $OpenBSD: patch-configure,v 1.14 2009/07/12 20:38:09 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -35921,7 +35921,7 @@ _ACEOF
+@@ -38953,7 +38953,7 @@ _ACEOF
  
  fi
  

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2009/08/29 10:20:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2009/10/04 18:17:13 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 COMMENT-fam=		fam(3) gio module
 
-VERSION=		2.20.5
+VERSION=		2.22.1
 DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
@@ -14,11 +14,13 @@ CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org/
 
-SHARED_LIBS+=	glib-2.0		1801.0 # .2000.2
-SHARED_LIBS+=	gobject-2.0		1801.0 # .2000.2
-SHARED_LIBS+=	gmodule-2.0		1801.0 # .2000.2
-SHARED_LIBS+=	gthread-2.0		1801.0 # .2000.2
-SHARED_LIBS+=	gio-2.0			1801.0 # .2000.2
+# glib-2.0 and gobject-2.0 need to be in sync as glib-2.0 version is
+# used to install *-gdb.py files
+SHARED_LIBS+=	glib-2.0		1802.0 # .2200.1
+SHARED_LIBS+=	gobject-2.0		1802.0 # .2200.1
+SHARED_LIBS+=	gmodule-2.0		1802.0 # .2200.1
+SHARED_LIBS+=	gthread-2.0		1802.0 # .2200.1
+SHARED_LIBS+=	gio-2.0			1802.0 # .2200.1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -73,5 +75,8 @@ pre-configure:
 		-e "s,/usr/share,${LOCALBASE}/share,g;" \
 		-e "s,/etc/xdg,${SYSCONFDIR}/xdg,g" \
 		${WRKSRC}/glib/gutils.c ${WRKSRC}/gio/xdgmime/xdgmime.c
+	perl -pi -e 's,!!LIBglib-2.0_VERSION_R!!,${LIBglib-2.0_VERSION:R},g;' \
+		-e 's,!!LIBglib-2.0_VERSION_E!!,${LIBglib-2.0_VERSION:E},g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
