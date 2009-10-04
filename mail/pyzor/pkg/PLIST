@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/02 12:33:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/04 09:41:42 benoit Exp $
 bin/pyzor
 bin/pyzord
 lib/python${MODPY_VERSION}/site-packages/pyzor/
-lib/python${MODPY_VERSION}/site-packages/pyzor-0.4.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pyzor-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyzor/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyzor/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pyzor/client.py
