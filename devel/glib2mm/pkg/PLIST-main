@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/09/18 10:23:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/10/04 18:18:46 ajacoutot Exp $
 @pkgpath devel/glib2mm
 %%SHARED%%
 include/giomm-${V}/
@@ -25,6 +25,7 @@ include/giomm-${V}/giomm/fileenumerator.h
 include/giomm-${V}/giomm/fileicon.h
 include/giomm-${V}/giomm/fileinfo.h
 include/giomm-${V}/giomm/fileinputstream.h
+include/giomm-${V}/giomm/fileiostream.h
 include/giomm-${V}/giomm/filemonitor.h
 include/giomm-${V}/giomm/filenamecompleter.h
 include/giomm-${V}/giomm/fileoutputstream.h
@@ -33,6 +34,7 @@ include/giomm-${V}/giomm/filteroutputstream.h
 include/giomm-${V}/giomm/icon.h
 include/giomm-${V}/giomm/init.h
 include/giomm-${V}/giomm/inputstream.h
+include/giomm-${V}/giomm/iostream.h
 include/giomm-${V}/giomm/loadableicon.h
 include/giomm-${V}/giomm/memoryinputstream.h
 include/giomm-${V}/giomm/memoryoutputstream.h
@@ -60,6 +62,7 @@ include/giomm-${V}/giomm/private/fileenumerator_p.h
 include/giomm-${V}/giomm/private/fileicon_p.h
 include/giomm-${V}/giomm/private/fileinfo_p.h
 include/giomm-${V}/giomm/private/fileinputstream_p.h
+include/giomm-${V}/giomm/private/fileiostream_p.h
 include/giomm-${V}/giomm/private/filemonitor_p.h
 include/giomm-${V}/giomm/private/filenamecompleter_p.h
 include/giomm-${V}/giomm/private/fileoutputstream_p.h
@@ -67,6 +70,7 @@ include/giomm-${V}/giomm/private/filterinputstream_p.h
 include/giomm-${V}/giomm/private/filteroutputstream_p.h
 include/giomm-${V}/giomm/private/icon_p.h
 include/giomm-${V}/giomm/private/inputstream_p.h
+include/giomm-${V}/giomm/private/iostream_p.h
 include/giomm-${V}/giomm/private/loadableicon_p.h
 include/giomm-${V}/giomm/private/memoryinputstream_p.h
 include/giomm-${V}/giomm/private/memoryoutputstream_p.h
@@ -143,6 +147,7 @@ include/glibmm-${V}/glibmm/private/spawn_p.h
 include/glibmm-${V}/glibmm/private/thread_p.h
 include/glibmm-${V}/glibmm/private/unicode_p.h
 include/glibmm-${V}/glibmm/private/uriutils_p.h
+include/glibmm-${V}/glibmm/private/valuearray_p.h
 include/glibmm-${V}/glibmm/property.h
 include/glibmm-${V}/glibmm/propertyproxy.h
 include/glibmm-${V}/glibmm/propertyproxy_base.h
@@ -169,6 +174,7 @@ include/glibmm-${V}/glibmm/utility.h
 include/glibmm-${V}/glibmm/value.h
 include/glibmm-${V}/glibmm/value_basictypes.h
 include/glibmm-${V}/glibmm/value_custom.h
+include/glibmm-${V}/glibmm/valuearray.h
 include/glibmm-${V}/glibmm/wrap.h
 include/glibmm-${V}/glibmm/wrap_init.h
 include/glibmm-${V}/glibmm_generate_extra_defs/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.10 2009/09/18 10:23:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.11 2009/10/04 18:18:46 ajacoutot Exp $
 share/devhelp/
 share/devhelp/books/
 share/devhelp/books/glibmm-${V}/
@@ -62,6 +62,9 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1FileAttributeMatcher.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1FileEnumerator-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1FileEnumerator.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1FileEnumerator__coll__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1FileIOStream-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1FileIOStream.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1FileIOStream__coll__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1FileIcon-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1FileIcon.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1FileIcon__coll__graph.png
@@ -87,6 +90,9 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1FilterInputStream__coll__graph.
 share/doc/glibmm-${V}/reference/html/classGio_1_1FilterOutputStream-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1FilterOutputStream.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1FilterOutputStream__coll__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1IOStream-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1IOStream.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1IOStream__coll__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Icon-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Icon.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Icon__coll__graph.png
@@ -345,6 +351,8 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1Timer-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Timer.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueArray-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueArray.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__Boxed-members.html
@@ -575,6 +583,7 @@ share/doc/glibmm-${V}/reference/html/inherit__graph__62.png
 share/doc/glibmm-${V}/reference/html/inherit__graph__63.png
 share/doc/glibmm-${V}/reference/html/inherit__graph__64.png
 share/doc/glibmm-${V}/reference/html/inherit__graph__65.png
+share/doc/glibmm-${V}/reference/html/inherit__graph__66.png
 share/doc/glibmm-${V}/reference/html/inherit__graph__7.png
 share/doc/glibmm-${V}/reference/html/inherit__graph__8.png
 share/doc/glibmm-${V}/reference/html/inherit__graph__9.png
@@ -642,12 +651,14 @@ share/doc/glibmm-${V}/reference/html/namespacemembers_func_0x77.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_func_0x78.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_type.html
 share/doc/glibmm-${V}/reference/html/namespaces.html
+share/doc/glibmm-${V}/reference/html/namespacesigc.html
 share/doc/glibmm-${V}/reference/html/pages.html
 share/doc/glibmm-${V}/reference/html/since_2_12.html
 share/doc/glibmm-${V}/reference/html/since_2_14.html
 share/doc/glibmm-${V}/reference/html/since_2_16.html
 share/doc/glibmm-${V}/reference/html/since_2_18.html
 share/doc/glibmm-${V}/reference/html/since_2_20.html
+share/doc/glibmm-${V}/reference/html/since_2_22.html
 share/doc/glibmm-${V}/reference/html/since_2_6.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits-members.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits.html
