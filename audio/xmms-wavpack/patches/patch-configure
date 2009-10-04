@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2009/10/04 16:54:30 naddy Exp $
+--- configure.orig	Sun Oct  4 18:38:56 2009
++++ configure	Sun Oct  4 18:39:10 2009
+@@ -19850,7 +19850,7 @@ test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 
+ 
+-CXXFLAGS="$CXXFLAGS -O3 -fomit-frame-pointer"
++#CXXFLAGS="$CXXFLAGS -O3 -fomit-frame-pointer"
+ 
+ { echo "$as_me:$LINENO: checking for ANSI C header files" >&5
+ echo $ECHO_N "checking for ANSI C header files... $ECHO_C" >&6; }
