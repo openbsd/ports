@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2009/10/04 07:48:37 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -10,7 +10,7 @@ DISTNAME=	avahi-${V}
 CATEGORIES=	net devel
 
 PKGNAME-main=	avahi-${V}p5
-PKGNAME-gtk=	avahi-gtk-${V}p2
+PKGNAME-gtk=	avahi-gtk-${V}p3
 PKGNAME-qt3=	avahi-qt3-${V}p2
 PKGNAME-qt4=	avahi-qt4-${V}p1
 
@@ -64,10 +64,11 @@ BUILD_DEPENDS+=	:python-gdbm-*:lang/python/${MODPY_VERSION},-gdbm \
 LIB_DEPENDS-gtk= ${MODGETTEXT_LIB_DEPENDS} \
 		avahi-client,avahi-common,avahi-core,avahi-glib::net/avahi \
 		glade-2.0.>=1::devel/libglade2
-RUN_DEPENDS-gtk= ::devel/desktop-file-utils \
-		::devel/py-twisted/web \
+RUN_DEPENDS-gtk= :python-gdbm-*:lang/python/${MODPY_VERSION},-gdbm \
 		::x11/py-gtk2 \
-		::x11/dbus-python
+		::x11/dbus-python \
+		::devel/py-twisted/web \
+		::devel/desktop-file-utils
 WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
 		expat fontconfig freetype gdbm gdk-x11-2.0 \
