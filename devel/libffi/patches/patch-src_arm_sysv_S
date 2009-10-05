@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_arm_sysv_S,v 1.1.1.1 2009/09/23 20:55:46 jasper Exp $
+$OpenBSD: patch-src_arm_sysv_S,v 1.2 2009/10/05 20:50:07 jasper Exp $
 
-Fix build on arm. Patch from FreeBSD.
+As our as(1) is too old, and cannot deal with UNWIND. This patch fixes build on
+arm. It's taken from FreeBSD and can be removed when binutils is updated.
 
 --- src/arm/sysv.S.orig	Mon Jun 29 13:08:57 2009
 +++ src/arm/sysv.S	Mon Jun 29 13:11:11 2009
