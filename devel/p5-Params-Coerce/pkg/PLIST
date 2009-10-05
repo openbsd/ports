@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/05 12:52:16 kevlo Exp $
+${P5SITE}/Params/
+${P5SITE}/Params/Coerce.pm
+@man man/man3p/Params::Coerce.3p
