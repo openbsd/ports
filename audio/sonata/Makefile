@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2009/10/05 13:16:09 ajacoutot Exp $
 
 COMMENT=	elegant music player for MPD
 
-MODPY_EGG_VERSION=1.6.2
+MODPY_EGG_VERSION=1.6.2.1
 DISTNAME=	sonata-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://sonata.berlios.de/
@@ -23,8 +22,7 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs xcb z
 
-MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/ \
-		${MASTER_SITE_BERLIOS:=sonata/}
+MASTER_SITES=		${MASTER_SITE_BERLIOS:=sonata/}
 
 MODULES=	devel/gettext \
 		lang/python
