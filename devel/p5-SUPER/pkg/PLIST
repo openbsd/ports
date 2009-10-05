@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/05 12:53:44 kevlo Exp $
+${P5SITE}/SUPER.pm
+@man man/man3p/SUPER.3p
