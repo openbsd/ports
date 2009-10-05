@@ -1,0 +1,25 @@
+--- src/AudacityApp.cpp.orig	2009-07-26 09:24:25.000000000 -0500
++++ src/AudacityApp.cpp	2009-07-26 09:26:13.000000000 -0500
+@@ -21,6 +21,12 @@ It handles initialization and terminatio
+ #include <vld.h>
+ #endif
+ 
++// Newer versions of glib have a conflicting GSocket macro; the wxWindows
++// one is part of a semi-public interface so needs to be kept.
++#define GSocket GlibGSocket
++#include <gtk/gtk.h>
++#undef GSocket
++
+ #include "Audacity.h" // This should always be included first
+ 
+ #include <wx/defs.h>
+@@ -331,7 +336,8 @@ void QuitAudacity()
+ ///////////////////////////////////////////////////////////////////////////////
+ 
+ #include <dlfcn.h>
+-#include <gtk/gtk.h>
++#include <glib/gtypes.h>
++#include <glib-object.h>
+ 
+ typedef struct _GnomeProgram GnomeProgram;
+ typedef struct _GnomeModuleInfo GnomeModuleInfo;
