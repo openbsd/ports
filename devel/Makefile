@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.738 2009/09/29 09:05:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.739 2009/10/05 12:57:38 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -498,6 +498,7 @@
      SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Parallel-Forker
      SUBDIR += p5-Params-CallbackRequest
+     SUBDIR += p5-Params-Coerce
      SUBDIR += p5-Params-Util
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Paranoid
@@ -523,6 +524,7 @@
      SUBDIR += p5-Regexp-Shellish
      SUBDIR += p5-Return-Value
      SUBDIR += p5-SDL
+     SUBDIR += p5-SUPER
      SUBDIR += p5-SVN-Dump
      SUBDIR += p5-SVN-Mirror
      SUBDIR += p5-SVN-Notify
@@ -651,6 +653,7 @@
      SUBDIR += p5-YAML-Tiny
      SUBDIR += p5-YAML-XS
      SUBDIR += p5-accessors
+     SUBDIR += p5-aliased
      SUBDIR += p5-boolean
      SUBDIR += p5-capitalization
      SUBDIR += p5-common-sense
