@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2009/08/11 08:39:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2009/10/06 15:24:47 ajacoutot Exp $
 
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
 GNOME_VERSION=		0.22
-PKGNAME=		${DISTNAME}p11
+PKGNAME=		${DISTNAME}p12
 SHARED_LIBS +=	devhelp-1             1.0        # .0.0
 CATEGORIES=		textproc
 
@@ -25,6 +25,7 @@ WANTLIB += gtk-x11-2.0 icudata icui18n icuuc jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += soup-2.4 sqlite3 tasn1 xml2 xslt z
 WANTLIB += enchant stdc++ gailutil pthread-stubs xcb
+WANTLIB += execinfo xcb-atom xcb-aux xcb-event
 
 MODULES=		devel/gettext \
 			lang/python \
