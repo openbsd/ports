@@ -1,12 +1,13 @@
---- setup.py.orig	Tue Oct 21 10:26:08 2008
-+++ setup.py	Mon Mar  9 20:48:38 2009
+--- setup.py.orig	Sun Jun 28 18:39:44 2009
++++ setup.py	Sat Oct  3 23:10:10 2009
 @@ -25,7 +25,7 @@
        url = "http://www.schwarzvogel.de/software-pymetar.shtml",
        packages= [ "" ],
        py_modules=["pymetar"],
 -      scripts = [ "bin/weather.py" ], 
 -      data_files = [("share/doc/pymetar-%s/"%pymetar.__version__,
+-       ['README', 'COPYING', 'THANKS', 'TODO', 'bin/example.py', 'librarydoc.txt'])]
 +      scripts = [ "bin/pymet" ], 
 +      data_files = [("share/doc/py-metar",
-        ['README', 'COPYING', 'THANKS', 'librarydoc.txt'])]
++       ['README', 'COPYING', 'THANKS', 'librarydoc.txt'])]
        )
