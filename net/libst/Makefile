@@ -1,34 +1,34 @@
-# $OpenBSD: Makefile,v 1.14 2009/05/24 20:12:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2009/10/06 09:25:12 benoit Exp $
 
 # see md.h, add others
-ONLY_FOR_ARCHS=		amd64 alpha i386 sparc
+ONLY_FOR_ARCHS =	amd64 alpha i386 sparc
 
-COMMENT=		threaded library for writing Internet applications
+COMMENT =		threaded library for writing Internet applications
 
-DISTNAME=		st-1.8
-PKGNAME=		lib${DISTNAME}
-SHARED_LIBS=		st	2.0
-CATEGORIES=		net devel
+DISTNAME =		st-1.9
+PKGNAME =		lib${DISTNAME}
+SHARED_LIBS =		st	2.0
+CATEGORIES =		net devel
 
-HOMEPAGE=		http://state-threads.sourceforge.net/
+HOMEPAGE =		http://state-threads.sourceforge.net/
 
-MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
+MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # MPLv1.1 or GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=state-threads/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=state-threads/}
 
-MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS} -fPIC -DOPENBSD' \
+MAKE_FLAGS =		CC='${CC}' CFLAGS='${CFLAGS} -fPIC -DOPENBSD' \
 			LD='${CC}' LDFLAGS='-shared -fPIC' \
 			VERSION=${LIBst_VERSION}
 
-USE_GMAKE=		Yes
-ALL_TARGET=		openbsd-optimized
-NO_REGRESS=		Yes
+USE_GMAKE =		Yes
+ALL_TARGET =		openbsd-optimized
+NO_REGRESS =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} \
