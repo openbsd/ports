@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 21:40:01 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2009/10/06 15:50:09 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -22,7 +22,7 @@ EXTRACT_ONLY=
 
 DIST_SUBDIR=	rpm
 
-BUILD_DEPENDS=	:rpm->=3.0.6p1:misc/rpm
+BUILD_DEPENDS=	::converters/rpm2cpio
 RUN_DEPENDS=	::emulators/fedora/base \
 		::chinese/taipeifonts
 
