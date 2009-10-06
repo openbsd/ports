@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2008/06/18 20:10:48 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2009/10/06 16:03:04 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -15,7 +15,7 @@ MASTER_SITE_REDHAT=ftp://archive.download.redhat.com/pub/ \
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 
-BUILD_DEPENDS+=	:rpm->=3.0.6p1:misc/rpm
+BUILD_DEPENDS+=	::converters/rpm2cpio
 
 NO_BUILD=	Yes
 
