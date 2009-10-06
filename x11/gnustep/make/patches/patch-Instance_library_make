@@ -1,7 +1,7 @@
-$OpenBSD: patch-Instance_library_make,v 1.2 2008/05/05 09:31:30 ajacoutot Exp $
---- Instance/library.make.orig	Tue Mar 11 02:06:50 2008
-+++ Instance/library.make	Mon May  5 11:11:53 2008
-@@ -183,7 +183,7 @@ endif
+$OpenBSD: patch-Instance_library_make,v 1.3 2009/10/06 19:21:28 ajacoutot Exp $
+--- Instance/library.make.orig	Thu Mar 19 17:59:53 2009
++++ Instance/library.make	Tue Oct  6 20:36:23 2009
+@@ -184,7 +184,7 @@ endif
  ifneq ($(BUILD_DLL),yes)
  
  LIBRARY_FILE = $(LIBRARY_NAME_WITH_LIB)$(SHARED_LIBEXT)

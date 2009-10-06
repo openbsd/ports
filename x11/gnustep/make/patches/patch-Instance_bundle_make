@@ -1,7 +1,7 @@
-$OpenBSD: patch-Instance_bundle_make,v 1.4 2008/12/23 15:25:04 ajacoutot Exp $
---- Instance/bundle.make.orig	Tue Oct 21 13:18:05 2008
-+++ Instance/bundle.make	Tue Dec 23 13:47:10 2008
-@@ -87,6 +87,8 @@ endif
+$OpenBSD: patch-Instance_bundle_make,v 1.5 2009/10/06 19:21:28 ajacoutot Exp $
+--- Instance/bundle.make.orig	Thu Mar 19 17:59:53 2009
++++ Instance/bundle.make	Tue Oct  6 20:36:23 2009
+@@ -89,6 +89,8 @@ endif
  
  ifeq ($(BUILD_DLL),yes)
    BUNDLE_OBJ_EXT = $(DLL_LIBEXT)
