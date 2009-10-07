@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2009/07/23 08:03:42 giovanni Exp $
+# $OpenBSD: Makefile,v 1.231 2009/10/07 21:14:39 sthen Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -116,6 +116,7 @@
      SUBDIR += p5-Audio-MPD
      SUBDIR += p5-Audio-MPD-Common
      SUBDIR += p5-Audio-Musepack
+     SUBDIR += p5-Audio-Scan
      SUBDIR += p5-Audio-Scrobbler
      SUBDIR += p5-Audio-WMA
      SUBDIR += p5-CDDB-File
