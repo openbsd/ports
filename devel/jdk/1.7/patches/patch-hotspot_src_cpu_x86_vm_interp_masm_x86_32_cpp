@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_cpu_x86_vm_interp_masm_x86_32_cpp,v 1.3 2009/05/23 03:27:41 kurt Exp $
---- hotspot/src/cpu/x86/vm/interp_masm_x86_32.cpp.orig	Sat May 16 22:35:34 2009
-+++ hotspot/src/cpu/x86/vm/interp_masm_x86_32.cpp	Sat May 16 22:35:56 2009
+$OpenBSD: patch-hotspot_src_cpu_x86_vm_interp_masm_x86_32_cpp,v 1.4 2009/10/07 01:53:54 kurt Exp $
+--- hotspot/src/cpu/x86/vm/interp_masm_x86_32.cpp.orig	Thu Sep 17 03:48:09 2009
++++ hotspot/src/cpu/x86/vm/interp_masm_x86_32.cpp	Sat Sep 26 10:00:47 2009
 @@ -452,10 +452,10 @@ void InterpreterMacroAssembler::store_ptr_and_tag(int 
  void InterpreterMacroAssembler::tag_local(frame::Tag tag, int n) {
    if (TaggedStackInterpreter) {
@@ -40,7 +40,7 @@ $OpenBSD: patch-hotspot_src_cpu_x86_vm_interp_masm_x86_32_cpp,v 1.3 2009/05/23 0
    set_mdp_data_at(mdp, count_offset, reg2);
    jmp(done);
  }
-@@ -1454,7 +1454,7 @@ void InterpreterMacroAssembler::profile_switch_case(Re
+@@ -1456,7 +1456,7 @@ void InterpreterMacroAssembler::profile_switch_case(Re
      test_method_data_pointer(mdp, profile_continue);
  
      // Build the base (index * per_case_size_in_bytes()) + case_array_offset_in_bytes()

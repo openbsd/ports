@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/06/10 19:01:09 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/10/07 01:53:54 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8
 ${JDKHOME}/
@@ -411,27 +411,6 @@ ${JDKHOME}/jre/bin/
 @bin ${JDKHOME}/jre/bin/tnameserv
 @bin ${JDKHOME}/jre/bin/unpack200
 ${JDKHOME}/jre/lib/
-${JDKHOME}/jre/lib/applet/
-${JDKHOME}/jre/lib/calendars.properties
-${JDKHOME}/jre/lib/charsets.jar
-${JDKHOME}/jre/lib/classlist
-${JDKHOME}/jre/lib/cmm/
-${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
-${JDKHOME}/jre/lib/cmm/GRAY.pf
-${JDKHOME}/jre/lib/cmm/LINEAR_RGB.pf
-${JDKHOME}/jre/lib/cmm/PYCC.pf
-${JDKHOME}/jre/lib/cmm/sRGB.pf
-${JDKHOME}/jre/lib/content-types.properties
-${JDKHOME}/jre/lib/currency.data
-${JDKHOME}/jre/lib/ext/
-${JDKHOME}/jre/lib/ext/dnsns.jar
-${JDKHOME}/jre/lib/ext/localedata.jar
-${JDKHOME}/jre/lib/ext/meta-index
-${JDKHOME}/jre/lib/ext/sunjce_provider.jar
-${JDKHOME}/jre/lib/ext/sunpkcs11.jar
-${JDKHOME}/jre/lib/flavormap.properties
-${JDKHOME}/jre/lib/fontconfig.bfc
-${JDKHOME}/jre/lib/fontconfig.properties.src
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/libmawt.so
@@ -466,6 +445,7 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnpt.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/librmi.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsplashscreen.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsunecc.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libunpack.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libverify.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libzip.so
@@ -477,6 +457,28 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/libmawt.so
+${JDKHOME}/jre/lib/applet/
+${JDKHOME}/jre/lib/calendars.properties
+${JDKHOME}/jre/lib/charsets.jar
+${JDKHOME}/jre/lib/classlist
+${JDKHOME}/jre/lib/cmm/
+${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
+${JDKHOME}/jre/lib/cmm/GRAY.pf
+${JDKHOME}/jre/lib/cmm/LINEAR_RGB.pf
+${JDKHOME}/jre/lib/cmm/PYCC.pf
+${JDKHOME}/jre/lib/cmm/sRGB.pf
+${JDKHOME}/jre/lib/content-types.properties
+${JDKHOME}/jre/lib/currency.data
+${JDKHOME}/jre/lib/ext/
+${JDKHOME}/jre/lib/ext/dnsns.jar
+${JDKHOME}/jre/lib/ext/localedata.jar
+${JDKHOME}/jre/lib/ext/meta-index
+${JDKHOME}/jre/lib/ext/sunec.jar
+${JDKHOME}/jre/lib/ext/sunjce_provider.jar
+${JDKHOME}/jre/lib/ext/sunpkcs11.jar
+${JDKHOME}/jre/lib/flavormap.properties
+${JDKHOME}/jre/lib/fontconfig.bfc
+${JDKHOME}/jre/lib/fontconfig.properties.src
 ${JDKHOME}/jre/lib/im/
 ${JDKHOME}/jre/lib/im/indicim.jar
 ${JDKHOME}/jre/lib/im/thaiim.jar

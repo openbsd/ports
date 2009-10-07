@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.3 2009/06/10 19:01:09 kurt Exp $
---- hotspot/make/bsd/makefiles/saproc.make.orig	Sat May 30 11:21:11 2009
-+++ hotspot/make/bsd/makefiles/saproc.make	Tue Jun  2 12:37:59 2009
+$OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.4 2009/10/07 01:53:54 kurt Exp $
+--- hotspot/make/bsd/makefiles/saproc.make.orig	Sat Sep 26 10:00:44 2009
++++ hotspot/make/bsd/makefiles/saproc.make	Sat Sep 26 10:22:44 2009
 @@ -26,18 +26,30 @@
  
  # libsaproc[_g].so: serviceability agent
@@ -33,7 +33,7 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.3 2009/06/10 19:01:09
  
  SAMAPFILE = $(SASRCDIR)/mapfile
  
-@@ -51,7 +63,10 @@ checkAndBuildSA:
+@@ -56,7 +68,10 @@ checkAndBuildSA:
  	   $(MAKE) -f vm.make $(LIBSAPROC); \
  	fi
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.3 2009/06/10 19:01:09
  
  $(LIBSAPROC): $(SASRCFILES) $(SAMAPFILE)
  	$(QUIETLY) if [ "$(BOOT_JAVA_HOME)" = "" ]; then \
-@@ -64,11 +79,11 @@ $(LIBSAPROC): $(SASRCFILES) $(SAMAPFILE)
+@@ -69,12 +84,12 @@ $(LIBSAPROC): $(SASRCFILES) $(SAMAPFILE)
  	           -I$(SASRCDIR)                                        \
  	           -I$(GENERATED)                                       \
  	           -I$(BOOT_JAVA_HOME)/include                          \
@@ -53,6 +53,7 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.3 2009/06/10 19:01:09
 +	           -I$(BOOT_JAVA_HOME)/include/$(shell uname -s | tr "[:upper:]" "[:lower:]") \
  	           $(SASRCFILES)                                        \
  	           $(SA_LFLAGS)                                         \
+ 	           $(SA_DEBUG_CFLAGS)                                   \
  	           -o $@                                                \
 -	           -lthread_db
 +	           $(SALIBS)

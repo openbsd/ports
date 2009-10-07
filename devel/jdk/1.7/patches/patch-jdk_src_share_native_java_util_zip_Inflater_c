@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_share_native_java_util_zip_Inflater_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/share/native/java/util/zip/Inflater.c.orig	Tue Oct 30 05:03:39 2007
-+++ jdk/src/share/native/java/util/zip/Inflater.c	Wed Nov  7 19:15:59 2007
+$OpenBSD: patch-jdk_src_share_native_java_util_zip_Inflater_c,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/share/native/java/util/zip/Inflater.c.orig	Thu Sep 17 03:52:26 2009
++++ jdk/src/share/native/java/util/zip/Inflater.c	Sat Sep 26 10:00:48 2009
 @@ -67,6 +67,10 @@ Java_java_util_zip_Inflater_init(JNIEnv *env, jclass c
          return jlong_zero;
      } else {
@@ -12,7 +12,7 @@ $OpenBSD: patch-jdk_src_share_native_java_util_zip_Inflater_c,v 1.1 2008/03/19 1
          switch (inflateInit2(strm, nowrap ? -MAX_WBITS : MAX_WBITS)) {
            case Z_OK:
              return ptr_to_jlong(strm);
-@@ -202,6 +206,10 @@ Java_java_util_zip_Inflater_reset(JNIEnv *env, jclass 
+@@ -204,6 +208,10 @@ Java_java_util_zip_Inflater_reset(JNIEnv *env, jclass 
      if (inflateReset(jlong_to_ptr(strm)) != Z_OK) {
          JNU_ThrowInternalError(env, 0);
      }

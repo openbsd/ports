@@ -1,0 +1,20 @@
+$OpenBSD: patch-jdk_make_com_sun_nio_Makefile,v 1.1 2009/10/07 01:53:54 kurt Exp $
+--- jdk/make/com/sun/nio/Makefile.orig	Sun Sep 27 09:46:26 2009
++++ jdk/make/com/sun/nio/Makefile	Sun Sep 27 09:46:34 2009
+@@ -30,7 +30,16 @@
+ BUILDDIR = ../../..
+ include $(BUILDDIR)/common/Defs.gmk
+ 
++ifneq ($(PLATFORM), bsd)
+ SUBDIRS = sctp
++else
++ifeq ($(OS_VENDOR), FreeBSD)
++# FreeBSD 5.x and lower are unsupported, 6.x has no sctp support.
++ifneq ($(call MajorVersion,$(shell uname -r)), 6)
++SUBDIRS = sctp
++endif
++endif
++endif
+ all build clean clobber::
+ 	$(SUBDIRS-loop)
+ 

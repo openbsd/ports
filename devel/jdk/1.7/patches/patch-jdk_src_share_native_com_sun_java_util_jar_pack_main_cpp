@@ -1,19 +1,17 @@
-$OpenBSD: patch-jdk_src_share_native_com_sun_java_util_jar_pack_main_cpp,v 1.3 2009/06/10 19:01:09 kurt Exp $
---- jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp.orig	Thu May 14 03:30:18 2009
-+++ jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp	Tue Jun  2 12:14:34 2009
-@@ -22,6 +22,11 @@
+$OpenBSD: patch-jdk_src_share_native_com_sun_java_util_jar_pack_main_cpp,v 1.4 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp.orig	Thu Sep 17 03:52:25 2009
++++ jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp	Sun Sep 27 09:58:28 2009
+@@ -22,6 +22,9 @@
   * CA 95054 USA or visit www.sun.com if you need additional information or
   * have any questions.
   */
 +#ifdef _ALLBSD_SOURCE
 +#include <stdint.h>
-+#else
-+#include <sys/stdint.h>
 +#endif
  #include <sys/types.h>
  
  #include <stdio.h>
-@@ -35,7 +40,7 @@
+@@ -35,7 +38,7 @@
  
  #if defined(unix) && !defined(PRODUCT)
  #include "pthread.h"
@@ -22,7 +20,7 @@ $OpenBSD: patch-jdk_src_share_native_com_sun_java_util_jar_pack_main_cpp,v 1.3 2
  #endif
  
  #include "defines.h"
-@@ -58,9 +63,9 @@ int main(int argc, char **argv) {
+@@ -58,9 +61,9 @@ int main(int argc, char **argv) {
  // Single-threaded, implementation, not reentrant.
  // Includes a weak error check against MT access.
  #ifndef THREAD_SELF
@@ -34,7 +32,7 @@ $OpenBSD: patch-jdk_src_share_native_com_sun_java_util_jar_pack_main_cpp,v 1.3 2
  
  unpacker* unpacker::non_mt_current = null;
  unpacker* unpacker::current() {
-@@ -69,7 +74,7 @@ unpacker* unpacker::current() {
+@@ -69,7 +72,7 @@ unpacker* unpacker::current() {
  }
  static void set_current_unpacker(unpacker* u) {
    unpacker::non_mt_current = u;

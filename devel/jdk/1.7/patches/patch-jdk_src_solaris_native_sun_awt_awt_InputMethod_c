@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_InputMethod_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/sun/awt/awt_InputMethod.c.orig	Sat Dec  1 00:00:00 2007
-+++ jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Thu Feb 28 16:05:06 2008
+$OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_InputMethod_c,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/solaris/native/sun/awt/awt_InputMethod.c.orig	Thu Sep 17 03:52:32 2009
++++ jdk/src/solaris/native/sun/awt/awt_InputMethod.c	Sat Sep 26 10:12:03 2009
 @@ -69,7 +69,7 @@ static void PreeditDrawCallback(XIC, XPointer,
                                  XIMPreeditDrawCallbackStruct *);
  static void PreeditCaretCallback(XIC, XPointer,
@@ -162,7 +162,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_InputMethod_c,v 1.1 2008/03/1
  
  static void CommitStringCallback(XIC ic, XPointer client_data, XPointer call_data) {
      JNIEnv *env = GetJNIEnv();
-@@ -1522,14 +1522,14 @@ Java_sun_awt_motif_MInputMethod_openXIMNative(JNIEnv *
+@@ -1514,14 +1514,14 @@ Java_sun_awt_motif_MInputMethod_openXIMNative(JNIEnv *
  /* Use IMInstantiate call back only on Linux, as there is a bug in Solaris
     (4768335)
  */
@@ -179,7 +179,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_InputMethod_c,v 1.1 2008/03/1
      }
  #endif
  
-@@ -1593,13 +1593,13 @@ Java_sun_awt_motif_MInputMethod_createXICNative(JNIEnv
+@@ -1585,13 +1585,13 @@ Java_sun_awt_motif_MInputMethod_createXICNative(JNIEnv
  #endif /* XAWT */
      globalRef = (*env)->NewGlobalRef(env, this);
      pX11IMData->x11inputmethod = globalRef;
@@ -196,7 +196,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_InputMethod_c,v 1.1 2008/03/1
  
      pX11IMData->lookup_buf = 0;
      pX11IMData->lookup_buf_len = 0;
-@@ -1746,14 +1746,14 @@ Java_sun_awt_X11_XInputMethod_setXICFocusNative(JNIEnv
+@@ -1738,14 +1738,14 @@ Java_sun_awt_X11_XInputMethod_setXICFocusNative(JNIEnv
          setXICFocus(pX11IMData->current_ic, req);
          currentX11InputMethodInstance = pX11IMData->x11inputmethod;
          currentFocusWindow =  XtWindow(w);
@@ -213,7 +213,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_InputMethod_c,v 1.1 2008/03/1
          onoffStatusWindow(pX11IMData, 0, False);
          if (pX11IMData->current_ic != NULL)
  #endif
-@@ -1770,7 +1770,7 @@ JNIEXPORT void JNICALL
+@@ -1762,7 +1762,7 @@ JNIEXPORT void JNICALL
  Java_sun_awt_X11InputMethod_turnoffStatusWindow(JNIEnv *env,
                                                  jobject this)
  {
@@ -222,7 +222,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_InputMethod_c,v 1.1 2008/03/1
      X11InputMethodData *pX11IMData;
      StatusWindow *statusWindow;
  
-@@ -1867,7 +1867,7 @@ Java_sun_awt_motif_MInputMethod_configureStatusAreaNat
+@@ -1859,7 +1859,7 @@ Java_sun_awt_motif_MInputMethod_configureStatusAreaNat
      X11InputMethodData *pX11IMData;
      XVaNestedList status;
  
@@ -231,7 +231,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_InputMethod_c,v 1.1 2008/03/1
        /*do nothing for linux? */
  #else
      AWT_LOCK();
-@@ -1973,7 +1973,7 @@ JNIEXPORT jboolean JNICALL Java_sun_awt_X11InputMethod
+@@ -1965,7 +1965,7 @@ JNIEXPORT jboolean JNICALL Java_sun_awt_X11InputMethod
  JNIEXPORT void JNICALL Java_sun_awt_X11_XInputMethod_adjustStatusWindow
    (JNIEnv *env, jobject this, jlong window)
  {

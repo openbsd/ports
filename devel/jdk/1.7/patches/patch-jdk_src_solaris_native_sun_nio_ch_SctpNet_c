@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_SctpNet_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
---- jdk/src/solaris/native/sun/nio/ch/SctpNet.c.orig	Tue Jun  2 12:18:58 2009
-+++ jdk/src/solaris/native/sun/nio/ch/SctpNet.c	Tue Jun  2 12:19:06 2009
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_SctpNet_c,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/ch/SctpNet.c.orig	Thu Sep 17 03:52:33 2009
++++ jdk/src/solaris/native/sun/nio/ch/SctpNet.c	Sat Sep 26 10:12:04 2009
 @@ -55,6 +55,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad
   */
  jboolean loadSocketExtensionFuncs
@@ -9,7 +9,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_SctpNet_c,v 1.1 2009/06/10 19:
      if (dlopen(nativeSctpLib, RTLD_GLOBAL | RTLD_LAZY) == NULL) {
          JNU_ThrowByName(env, "java/lang/UnsupportedOperationException",
                dlerror());
-@@ -95,6 +96,7 @@ jboolean loadSocketExtensionFuncs
+@@ -102,6 +103,7 @@ jboolean loadSocketExtensionFuncs
                dlerror());
          return JNI_FALSE;
      }

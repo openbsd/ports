@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_src_share_native_sun_security_ec_oid_c,v 1.1 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/share/native/sun/security/ec/oid.c.orig	Sun Sep 27 10:03:43 2009
++++ jdk/src/share/native/sun/security/ec/oid.c	Sun Sep 27 10:03:51 2009
+@@ -59,7 +59,7 @@
+ #include <sys/types.h>
+ 
+ #ifndef _WIN32
+-#ifndef __linux__
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE)
+ #include <sys/systm.h>
+ #endif /* __linux__ */
+ #include <sys/param.h>

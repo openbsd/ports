@@ -1,6 +1,6 @@
-$OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.4 2009/06/10 19:01:09 kurt Exp $
---- corba/make/common/shared/Platform.gmk.orig	Thu May 14 03:25:58 2009
-+++ corba/make/common/shared/Platform.gmk	Wed Jun  3 16:07:27 2009
+$OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.5 2009/10/07 01:53:54 kurt Exp $
+--- corba/make/common/shared/Platform.gmk.orig	Thu Sep 17 03:47:23 2009
++++ corba/make/common/shared/Platform.gmk	Mon Oct  5 14:53:53 2009
 @@ -262,6 +262,89 @@ ifeq ($(SYSTEM_UNAME), Linux)
    MB_OF_MEMORY := $(shell free -m | fgrep Mem: | sed -e 's@\ \ *@ @g' | cut -d' ' -f2)
  endif
@@ -91,28 +91,22 @@ $OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.4 2009/06/10 19:01:09 
  # Windows with and without CYGWIN will be slightly different
  ifeq ($(SYSTEM_UNAME), Windows_NT)
    PLATFORM = windows
-@@ -373,7 +456,14 @@ endif
- #    build machines and adjustments will be made to prevent excessing
- #    system swapping during the build.
- #    If we don't know, assume 512. Subtract 128 from MB for VM MAX.
--#    Don't set VM max over 1024-128=896.
-+#    Don't set VM max over 1024-128=896, except on OpenBSD where
-+#    736 is the max.
-+ifeq ($(OS_VENDOR), OpenBSD)
-+  ABS_MAX_MEMORY := "736"
-+else
-+  ABS_MAX_MEMORY := "896"
+@@ -411,6 +494,18 @@ else
+   LOW_MEMORY_MACHINE := true
+   MAX_VM_MEMORY      := 384
+   MIN_VM_MEMORY      := 128
 +endif
 +
- ifneq ($(MB_OF_MEMORY),)
-   LOW_MEMORY_MACHINE := $(shell \
-     if [ $(MB_OF_MEMORY) -le 512 ] ; then \
-@@ -385,7 +475,7 @@ ifneq ($(MB_OF_MEMORY),)
-     if [ $(MB_OF_MEMORY) -le 1024 ] ; then \
-       expr $(MB_OF_MEMORY) '-' 128 ; \
-     else \
--      echo "896"; \
-+      echo $(ABS_MAX_MEMORY); \
-     fi)
-   MIN_VM_MEMORY := $(shell \
-     if [ $(MAX_VM_MEMORY) -le 128 ] ; then \
++# for OpenBSD/i386 limit to 736 max
++ifeq ($(OS_VENDOR), OpenBSD)
++  ifeq ($(ARCH_DATA_MODEL), 32)
++    MAX_VM_MEMORY := $(shell \
++      if [ $(MAX_VM_MEMORY) -gt 736 ] ; then \
++        echo "736"; \
++      else \
++        echo "$(MAX_VM_MEMORY)" ; \
++      fi)
++  endif
+ endif
+ 
+ REQUIRED_ZIP_VER = 2.2

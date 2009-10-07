@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_UnixNativeDispatcher_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/native/sun/nio/fs/UnixNativeDispatcher.c.orig	Fri May  8 03:35:08 2009
-+++ jdk/src/solaris/native/sun/nio/fs/UnixNativeDispatcher.c	Tue May 19 16:56:05 2009
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_UnixNativeDispatcher_c,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/fs/UnixNativeDispatcher.c.orig	Thu Sep 17 03:52:33 2009
++++ jdk/src/solaris/native/sun/nio/fs/UnixNativeDispatcher.c	Sun Sep 27 10:27:09 2009
 @@ -49,6 +49,11 @@
  #include <mntent.h>
  #endif
@@ -13,7 +13,16 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_UnixNativeDispatcher_c,v 1.1 2
  #include "jni.h"
  #include "jni_util.h"
  #include "jlong.h"
-@@ -1006,6 +1011,10 @@ Java_sun_nio_fs_UnixNativeDispatcher_getextmntent(JNIE
+@@ -213,6 +218,8 @@ Java_sun_nio_fs_UnixNativeDispatcher_init(JNIEnv* env,
+         flags |= sun_nio_fs_UnixNativeDispatcher_HAS_AT_SYSCALLS;
+     }
+ 
++    my_fdopendir_func = (fdopendir_func*) dlsym(RTLD_DEFAULT, "fdopendir");
++
+     return flags;
+ }
+ 
+@@ -1016,6 +1023,10 @@ Java_sun_nio_fs_UnixNativeDispatcher_getextmntent(JNIE
  {
  #ifdef __solaris__
      struct extmnttab ent;
@@ -24,7 +33,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_UnixNativeDispatcher_c,v 1.1 2
  #else
      struct mntent ent;
      char buf[1024];
-@@ -1034,6 +1043,25 @@ Java_sun_nio_fs_UnixNativeDispatcher_getextmntent(JNIE
+@@ -1044,6 +1055,25 @@ Java_sun_nio_fs_UnixNativeDispatcher_getextmntent(JNIE
          throwUnixException(env, errno);
          return -1;
      }

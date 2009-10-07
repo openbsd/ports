@@ -1,0 +1,26 @@
+$OpenBSD: patch-jdk_src_share_classes_sun_awt_OSInfo_java,v 1.1 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/share/classes/sun/awt/OSInfo.java.orig	Thu Sep 17 03:52:11 2009
++++ jdk/src/share/classes/sun/awt/OSInfo.java	Fri Oct  2 07:39:06 2009
+@@ -39,6 +39,7 @@ public class OSInfo {
+         WINDOWS,
+         LINUX,
+         SOLARIS,
++        BSD,
+         UNKNOWN
+     }
+ 
+@@ -98,6 +99,14 @@ public class OSInfo {
+ 
+             if (osName.contains("Solaris") || osName.contains("SunOS")) {
+                 return SOLARIS;
++            }
++
++            if (osName.contains("BSD")) {
++                return BSD;
++            }
++
++            if (osName.contains("Darwin")) {
++                return BSD;
+             }
+ 
+             // determine another OS here

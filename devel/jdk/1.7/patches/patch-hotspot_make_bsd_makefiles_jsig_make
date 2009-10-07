@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_jsig_make,v 1.2 2009/05/23 03:03:24 kurt Exp $
---- hotspot/make/bsd/makefiles/jsig.make.orig	Wed May 20 17:32:15 2009
-+++ hotspot/make/bsd/makefiles/jsig.make	Wed May 20 17:33:51 2009
+$OpenBSD: patch-hotspot_make_bsd_makefiles_jsig_make,v 1.3 2009/10/07 01:53:54 kurt Exp $
+--- hotspot/make/bsd/makefiles/jsig.make.orig	Sat Sep 26 10:00:44 2009
++++ hotspot/make/bsd/makefiles/jsig.make	Sat Sep 26 10:21:25 2009
 @@ -26,8 +26,13 @@
  
  # libjsig[_g].so: signal interposition library
@@ -16,18 +16,21 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_jsig_make,v 1.2 2009/05/23 03:03:24 k
  JSIGSRCDIR = $(GAMMADIR)/src/os/$(Platform_os_family)/vm
  
  DEST_JSIG  = $(JDK_LIBDIR)/$(LIBJSIG)
-@@ -39,12 +44,12 @@ LIBJSIG_MAPFILE = $(MAKEFILES_DIR)/mapfile-vers-jsig
+@@ -39,7 +44,7 @@ LIBJSIG_MAPFILE = $(MAKEFILES_DIR)/mapfile-vers-jsig
  # cause problems with interposing. See CR: 6466665
  # LFLAGS_JSIG += $(MAPFLAG:FILENAME=$(LIBJSIG_MAPFILE))
  
 -LFLAGS_JSIG += -D_GNU_SOURCE -D_REENTRANT $(LDFLAGS_HASH_STYLE)
 +LFLAGS_JSIG += -D_GNU_SOURCE -pthread $(LDFLAGS_HASH_STYLE)
  
+ # DEBUG_BINARIES overrides everything, use full -g debug information
+ ifeq ($(DEBUG_BINARIES), true)
+@@ -49,7 +54,7 @@ endif
  $(LIBJSIG): $(JSIGSRCDIR)/jsig.c $(LIBJSIG_MAPFILE)
  	@echo Making signal interposition lib...
  	$(QUIETLY) $(CC) $(SYMFLAG) $(ARCHFLAG) $(SHARED_FLAG) $(PICFLAG) \
--                         $(LFLAGS_JSIG) -o $@ $< -ldl
-+                         $(LFLAGS_JSIG) -o $@ $<
+-                         $(LFLAGS_JSIG) $(JSIG_DEBUG_CFLAGS) -o $@ $< -ldl
++                         $(LFLAGS_JSIG) $(JSIG_DEBUG_CFLAGS) -o $@ $<
  
  install_jsig: $(LIBJSIG)
  	@echo "Copying $(LIBJSIG) to $(DEST_JSIG)"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.5 2009/05/23 03:03:25 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.6 2009/10/07 01:53:54 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.7,<1.8
 ${JREHOME}/
@@ -17,27 +17,6 @@ ${JREHOME}/bin/
 @bin ${JREHOME}/bin/tnameserv
 @bin ${JREHOME}/bin/unpack200
 ${JREHOME}/lib/
-${JREHOME}/lib/applet/
-${JREHOME}/lib/calendars.properties
-${JREHOME}/lib/charsets.jar
-${JREHOME}/lib/classlist
-${JREHOME}/lib/cmm/
-${JREHOME}/lib/cmm/CIEXYZ.pf
-${JREHOME}/lib/cmm/GRAY.pf
-${JREHOME}/lib/cmm/LINEAR_RGB.pf
-${JREHOME}/lib/cmm/PYCC.pf
-${JREHOME}/lib/cmm/sRGB.pf
-${JREHOME}/lib/content-types.properties
-${JREHOME}/lib/currency.data
-${JREHOME}/lib/ext/
-${JREHOME}/lib/ext/dnsns.jar
-${JREHOME}/lib/ext/localedata.jar
-${JREHOME}/lib/ext/meta-index
-${JREHOME}/lib/ext/sunjce_provider.jar
-${JREHOME}/lib/ext/sunpkcs11.jar
-${JREHOME}/lib/flavormap.properties
-${JREHOME}/lib/fontconfig.bfc
-${JREHOME}/lib/fontconfig.properties.src
 ${JREHOME}/lib/${MACHINE_ARCH}/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/libmawt.so
@@ -70,6 +49,7 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libnio.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libnpt.so
 ${JREHOME}/lib/${MACHINE_ARCH}/librmi.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libsplashscreen.so
+${JREHOME}/lib/${MACHINE_ARCH}/libsunecc.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libunpack.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libverify.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libzip.so
@@ -81,6 +61,28 @@ ${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.so
 ${JREHOME}/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/libmawt.so
+${JREHOME}/lib/applet/
+${JREHOME}/lib/calendars.properties
+${JREHOME}/lib/charsets.jar
+${JREHOME}/lib/classlist
+${JREHOME}/lib/cmm/
+${JREHOME}/lib/cmm/CIEXYZ.pf
+${JREHOME}/lib/cmm/GRAY.pf
+${JREHOME}/lib/cmm/LINEAR_RGB.pf
+${JREHOME}/lib/cmm/PYCC.pf
+${JREHOME}/lib/cmm/sRGB.pf
+${JREHOME}/lib/content-types.properties
+${JREHOME}/lib/currency.data
+${JREHOME}/lib/ext/
+${JREHOME}/lib/ext/dnsns.jar
+${JREHOME}/lib/ext/localedata.jar
+${JREHOME}/lib/ext/meta-index
+${JREHOME}/lib/ext/sunec.jar
+${JREHOME}/lib/ext/sunjce_provider.jar
+${JREHOME}/lib/ext/sunpkcs11.jar
+${JREHOME}/lib/flavormap.properties
+${JREHOME}/lib/fontconfig.bfc
+${JREHOME}/lib/fontconfig.properties.src
 ${JREHOME}/lib/im/
 ${JREHOME}/lib/im/indicim.jar
 ${JREHOME}/lib/im/thaiim.jar

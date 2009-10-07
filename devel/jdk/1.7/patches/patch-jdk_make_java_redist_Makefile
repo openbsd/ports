@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_make_java_redist_Makefile,v 1.4 2009/06/10 19:01:09 kurt Exp $
---- jdk/make/java/redist/Makefile.orig	Thu May 14 03:29:41 2009
-+++ jdk/make/java/redist/Makefile	Tue Jun  2 12:13:48 2009
-@@ -311,7 +311,7 @@ $(LIBDIR)/fonts/%.ttf: $(CLOSED_SRC)/share/lib/fonts/%
+$OpenBSD: patch-jdk_make_java_redist_Makefile,v 1.5 2009/10/07 01:53:54 kurt Exp $
+--- jdk/make/java/redist/Makefile.orig	Thu Sep 17 03:51:40 2009
++++ jdk/make/java/redist/Makefile	Sat Sep 26 10:00:48 2009
+@@ -330,7 +330,7 @@ $(LIBDIR)/fonts/%.ttf: $(CLOSED_SRC)/share/lib/fonts/%
  $(FONTSDIRFILE): $(PLATFORM_SRC)/classes/sun/awt/motif/java.fonts.dir
  	$(install-file)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-jdk_make_java_redist_Makefile,v 1.4 2009/06/10 19:01:09 kurt Exp
  
  # The oblique fonts are only needed/wanted on Linux.
  
-@@ -325,7 +325,7 @@ $(LIBDIR)/oblique-fonts/%.ttf: $(CLOSED_SRC)/share/lib
+@@ -344,7 +344,7 @@ $(LIBDIR)/oblique-fonts/%.ttf: $(CLOSED_SRC)/share/lib
  $(OBLFONTSDIRFILE): $(PLATFORM_SRC)/classes/sun/awt/motif/java.oblique-fonts.dir
  	$(install-file)
  

@@ -1,14 +1,19 @@
-$OpenBSD: patch-jdk_src_share_native_sun_awt_medialib_mlib_image_h,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/share/native/sun/awt/medialib/mlib_image.h.orig	Tue Oct 30 05:03:47 2007
-+++ jdk/src/share/native/sun/awt/medialib/mlib_image.h	Wed Nov  7 18:16:19 2007
-@@ -27,6 +27,11 @@
+$OpenBSD: patch-jdk_src_share_native_sun_awt_medialib_mlib_image_h,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/share/native/sun/awt/medialib/mlib_image.h.orig	Thu Sep 17 03:52:27 2009
++++ jdk/src/share/native/sun/awt/medialib/mlib_image.h	Sun Sep 27 10:01:39 2009
+@@ -27,6 +27,16 @@
  #ifndef MLIB_IMAGE_H
  #define MLIB_IMAGE_H
  
 +#ifdef __OpenBSD__
 +#include <sys/types.h>
 +#endif
++#ifdef _ALLBSD_SOURCE
 +#include <machine/endian.h>
++#elif __linux__
++#define __USE_BSD 1
++#include <endian.h>
++#endif
 +
  #include <mlib_types.h>
  #include <mlib_status.h>

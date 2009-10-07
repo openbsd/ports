@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.5 2009/06/10 19:01:09 kurt Exp $
---- jdk/make/common/Defs-bsd.gmk.orig	Sat May 30 10:12:02 2009
-+++ jdk/make/common/Defs-bsd.gmk	Sat May 30 10:16:07 2009
+$OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.6 2009/10/07 01:53:54 kurt Exp $
+--- jdk/make/common/Defs-bsd.gmk.orig	Sun Sep 27 09:39:53 2009
++++ jdk/make/common/Defs-bsd.gmk	Sun Sep 27 09:48:31 2009
 @@ -43,12 +43,6 @@
  # Get shared JDK settings
  include $(JDK_MAKE_SHARED_DIR)/Defs.gmk
@@ -40,7 +40,7 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.5 2009/06/10 19:01:09 kurt Exp 
  CFLAGS_REQUIRED_ia64    += -fno-omit-frame-pointer -D_LITTLE_ENDIAN
  CFLAGS_REQUIRED_sparcv9 += -m64 -mcpu=v9
  LDFLAGS_COMMON_sparcv9  += -m64 -mcpu=v9
-@@ -180,7 +180,7 @@ ifeq ($(FASTDEBUG), true)
+@@ -186,7 +186,7 @@ ifeq ($(FASTDEBUG), true)
    CXXFLAGS_DBG	+= $(CC_OPT/$(FASTDEBUG_OPTIMIZATION_LEVEL))
  endif
  
@@ -49,7 +49,7 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.5 2009/06/10 19:01:09 kurt Exp 
  		  -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -D_REENTRANT
  
  ifeq ($(ARCH_DATA_MODEL), 64)
-@@ -193,33 +193,15 @@ ifneq ($(PRODUCT), java)
+@@ -199,33 +199,15 @@ ifneq ($(PRODUCT), java)
    CPPFLAGS_DBG    += -DLOGGING 
  endif
  
@@ -87,18 +87,19 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.5 2009/06/10 19:01:09 kurt Exp 
  
  #
  # -static-libgcc is a gcc-3 flag to statically link libgcc, gcc-2.9x always
-@@ -240,8 +222,8 @@ AUTOMATIC_PCH_OPTION = 
- #
+@@ -247,9 +229,9 @@ AUTOMATIC_PCH_OPTION = 
  ifeq ($(VARIANT), OPT)
    ifneq ($(NO_STRIP), true)
--    # Debug 'strip -g' leaves local function Elf symbols (better stack traces)
--    POST_STRIP_PROCESS = $(STRIP) -g
-+    # Debug 'strip -S' leaves local function Elf symbols (better stack traces)
-+    POST_STRIP_PROCESS = $(STRIP) -S
+     ifneq ($(DEBUG_BINARIES), true)
+-      # Debug 'strip -g' leaves local function Elf symbols (better stack
++      # Debug 'strip -S' leaves local function Elf symbols (better stack
+       # traces)
+-      POST_STRIP_PROCESS = $(STRIP) -g
++      POST_STRIP_PROCESS = $(STRIP) -S
+     endif
    endif
  endif
- 
-@@ -250,13 +232,9 @@ endif
+@@ -259,13 +241,9 @@ endif
  #
  LD_MAPFILE_FLAG = -Xlinker --version-script -Xlinker
  
@@ -115,7 +116,7 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.5 2009/06/10 19:01:09 kurt Exp 
  endif
  
  #
-@@ -285,7 +263,9 @@ override HAVE_ALTZONE            = false
+@@ -294,7 +272,9 @@ override HAVE_ALTZONE            = false
  override HAVE_FILIOH             = false
  override HAVE_GETHRTIME          = false
  override HAVE_GETHRVTIME         = false
@@ -125,7 +126,7 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.5 2009/06/10 19:01:09 kurt Exp 
  override LEX_LIBRARY             = -lfl
  ifeq ($(STATIC_CXX),true)
  override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
-@@ -297,12 +277,8 @@ override LIBSOCKET               =
+@@ -306,12 +286,8 @@ override LIBSOCKET               =
  override LIBTHREAD               =
  override MOOT_PRIORITIES         = true
  override NO_INTERRUPTIBLE_IO     = true
@@ -139,7 +140,7 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.5 2009/06/10 19:01:09 kurt Exp 
  override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
  override SUN_CMM_SUBDIR          =
  override THREADS_FLAG            = native
-@@ -322,6 +298,14 @@ override USE_EXECNAME            = true
+@@ -331,6 +307,14 @@ override USE_EXECNAME            = true
  # HAVE_DPS should only be "no" if the platform has no DPS headers or libs
  # DPS (Displayable PostScript) is available on Solaris machines
  HAVE_DPS = no

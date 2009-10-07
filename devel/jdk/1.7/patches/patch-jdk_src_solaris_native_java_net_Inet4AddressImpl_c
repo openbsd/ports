@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_net_Inet4AddressImpl_c,v 1.3 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/native/java/net/Inet4AddressImpl.c.orig	Fri May  8 03:35:07 2009
-+++ jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Mon May 18 17:29:09 2009
-@@ -35,17 +35,293 @@
+$OpenBSD: patch-jdk_src_solaris_native_java_net_Inet4AddressImpl_c,v 1.4 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/solaris/native/java/net/Inet4AddressImpl.c.orig	Thu Sep 17 03:52:32 2009
++++ jdk/src/solaris/native/java/net/Inet4AddressImpl.c	Sat Sep 26 10:12:03 2009
+@@ -36,17 +36,293 @@
  #include <stdlib.h>
  #include <ctype.h>
  
@@ -296,7 +296,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_Inet4AddressImpl_c,v 1.3 2009/05
  /* gethostname() is in libc.so but I can't find a header file for it */
  extern int gethostname(char *buf, int buf_len);
  #endif
-@@ -85,13 +361,13 @@ Java_java_net_Inet4AddressImpl_getLocalHostName(JNIEnv
+@@ -86,13 +362,13 @@ Java_java_net_Inet4AddressImpl_getLocalHostName(JNIEnv
          char buf2[HENT_BUF_SIZE];
          int h_error=0;
  
@@ -312,7 +312,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_Inet4AddressImpl_c,v 1.3 2009/05
              gethostbyaddr_r(hp->h_addr, hp->h_length, AF_INET,
                              &res2, buf2, sizeof(buf2), &hp, &h_error);
  #else
-@@ -179,7 +455,7 @@ Java_java_net_Inet4AddressImpl_lookupAllHostAddr(JNIEn
+@@ -180,7 +456,7 @@ Java_java_net_Inet4AddressImpl_lookupAllHostAddr(JNIEn
  #endif
  
      /* Try once, with our static buffer. */
@@ -321,7 +321,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_Inet4AddressImpl_c,v 1.3 2009/05
      gethostbyname_r(hostname, &res, buf, sizeof(buf), &hp, &h_error);
  #else
      hp = gethostbyname_r(hostname, &res, buf, sizeof(buf), &h_error);
-@@ -192,7 +468,7 @@ Java_java_net_Inet4AddressImpl_lookupAllHostAddr(JNIEn
+@@ -193,7 +469,7 @@ Java_java_net_Inet4AddressImpl_lookupAllHostAddr(JNIEn
       */
      if (hp == NULL && errno == ERANGE) {
          if ((tmp = (char*)malloc(BIG_HENT_BUF_SIZE))) {
@@ -330,7 +330,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_Inet4AddressImpl_c,v 1.3 2009/05
              gethostbyname_r(hostname, &res, tmp, BIG_HENT_BUF_SIZE,
                              &hp, &h_error);
  #else
-@@ -275,7 +551,7 @@ Java_java_net_Inet4AddressImpl_getHostByAddr(JNIEnv *e
+@@ -276,7 +552,7 @@ Java_java_net_Inet4AddressImpl_getHostByAddr(JNIEnv *e
      addr |= ((caddr[2] <<8) & 0xff00);
      addr |= (caddr[3] & 0xff);
      addr = htonl(addr);
@@ -339,7 +339,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_Inet4AddressImpl_c,v 1.3 2009/05
      gethostbyaddr_r((char *)&addr, sizeof(addr), AF_INET, &hent,
                      buf, sizeof(buf), &hp, &h_error);
  #else
-@@ -289,7 +565,7 @@ Java_java_net_Inet4AddressImpl_getHostByAddr(JNIEnv *e
+@@ -290,7 +566,7 @@ Java_java_net_Inet4AddressImpl_getHostByAddr(JNIEnv *e
       */
      if (hp == NULL && errno == ERANGE) {
          if ((tmp = (char*)malloc(BIG_HENT_BUF_SIZE))) {
@@ -348,7 +348,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_Inet4AddressImpl_c,v 1.3 2009/05
              gethostbyaddr_r((char *)&addr, sizeof(addr), AF_INET,
                              &hent, tmp, BIG_HENT_BUF_SIZE, &hp, &h_error);
  #else
-@@ -310,6 +586,8 @@ Java_java_net_Inet4AddressImpl_getHostByAddr(JNIEnv *e
+@@ -311,6 +587,8 @@ Java_java_net_Inet4AddressImpl_getHostByAddr(JNIEnv *e
      }
      return ret;
  }

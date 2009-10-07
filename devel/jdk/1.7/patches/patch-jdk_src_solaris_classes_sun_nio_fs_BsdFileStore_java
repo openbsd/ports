@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileStore_java,v 1.1 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/classes/sun/nio/fs/BsdFileStore.java.orig	Tue May 19 11:45:53 2009
-+++ jdk/src/solaris/classes/sun/nio/fs/BsdFileStore.java	Tue May 19 11:46:23 2009
-@@ -35,10 +35,6 @@ import java.io.IOException;
+$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileStore_java,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/solaris/classes/sun/nio/fs/BsdFileStore.java.orig	Sun Sep 27 11:02:06 2009
++++ jdk/src/solaris/classes/sun/nio/fs/BsdFileStore.java	Sun Sep 27 15:26:14 2009
+@@ -36,10 +36,6 @@ import java.io.IOException;
  class BsdFileStore
      extends UnixFileStore
  {
@@ -12,11 +12,30 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileStore_java,v 1.1 2009/
      BsdFileStore(UnixPath file) throws IOException {
          super(file);
      }
-@@ -86,12 +82,13 @@ class BsdFileStore
+@@ -54,7 +50,7 @@ class BsdFileStore
+      */
+     @Override
+     UnixMountEntry findMountEntry() throws IOException {
+-        BsdFileSystem fs = (BsdFileSystem)file().getFileSystem();
++        UnixFileSystem fs = file().getFileSystem();
+ 
+         // step 1: get realpath
+         UnixPath path = null;
+@@ -80,20 +76,20 @@ class BsdFileStore
+             parent = parent.getParent();
+         }
+ 
+-        // step 3: lookup mounted file systems (use /proc/mounts to ensure we
+-        // find the file system even when not in /etc/mtab)
++        // step 3: lookup mounted file systems
+         byte[] dir = path.asByteArray();
+-        for (UnixMountEntry entry: fs.getMountEntries("/proc/mounts")) {
++        for (UnixMountEntry entry: fs.getMountEntries()) {
+             if (Arrays.equals(dir, entry.dir()))
                  return entry;
          }
  
--        throw new IOException("Mount point not found in mtab");
+-        throw new IOException("Mount point not found");
 +        throw new IOException("Mount point not found in fstab");
      }
  
@@ -27,7 +46,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileStore_java,v 1.1 2009/
          try {
              int fd = path.openForAttributeAccess(false);
              try {
-@@ -108,11 +105,13 @@ class BsdFileStore
+@@ -110,11 +106,13 @@ class BsdFileStore
          } catch (IOException ignore) {
              // nothing we can do
          }
@@ -36,16 +55,26 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileStore_java,v 1.1 2009/
      }
  
      @Override
-     public boolean supportsFileAttributeView(String name) {
+     public boolean supportsFileAttributeView(Class<? extends FileAttributeView> type) {
 +/*
-         // support DosFileAttributeView and NamedAttributeView if extended
+         // support DosFileAttributeView and UserDefinedAttributeView if extended
          // attributes enabled
-         if (name.equals("dos") || name.equals("xattr")) {
-@@ -141,7 +140,7 @@ class BsdFileStore
+         if (type == DosFileAttributeView.class ||
+@@ -145,15 +143,18 @@ class BsdFileStore
              }
              return xattrEnabled;
          }
--
++*/
+         return super.supportsFileAttributeView(type);
+     }
+ 
+     @Override
+     public boolean supportsFileAttributeView(String name) {
++/*
+         if (name.equals("dos"))
+             return supportsFileAttributeView(DosFileAttributeView.class);
+         if (name.equals("user"))
+             return supportsFileAttributeView(UserDefinedFileAttributeView.class);
 +*/
          return super.supportsFileAttributeView(name);
      }

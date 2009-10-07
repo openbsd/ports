@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_SctpChannelImpl_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
---- jdk/src/solaris/native/sun/nio/ch/SctpChannelImpl.c.orig	Tue Jun  2 12:18:28 2009
-+++ jdk/src/solaris/native/sun/nio/ch/SctpChannelImpl.c	Tue Jun  2 12:18:37 2009
-@@ -338,11 +338,11 @@ void handlePeerAddrChange
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_SctpChannelImpl_c,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/ch/SctpChannelImpl.c.orig	Thu Sep 17 03:52:33 2009
++++ jdk/src/solaris/native/sun/nio/ch/SctpChannelImpl.c	Sat Sep 26 10:12:04 2009
+@@ -337,11 +337,11 @@ void handlePeerAddrChange
              break;
          case SCTP_ADDR_MADE_PRIM :
              event = sun_nio_ch_SctpPeerAddrChange_SCTP_ADDR_MADE_PRIM;

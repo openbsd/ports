@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.2 2009/06/10 19:01:09 kurt Exp $
---- jdk/src/solaris/classes/sun/nio/fs/BsdFileSystem.java.orig	Sat May 30 11:21:14 2009
-+++ jdk/src/solaris/classes/sun/nio/fs/BsdFileSystem.java	Tue Jun  2 12:15:02 2009
-@@ -31,55 +31,23 @@ import java.io.IOException;
+$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.3 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/solaris/classes/sun/nio/fs/BsdFileSystem.java.orig	Sun Sep 27 09:39:53 2009
++++ jdk/src/solaris/classes/sun/nio/fs/BsdFileSystem.java	Sun Sep 27 10:37:54 2009
+@@ -31,49 +31,23 @@ import java.io.IOException;
  import java.util.*;
  import java.security.AccessController;
  import sun.security.action.GetPropertyAction;
@@ -13,7 +13,6 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.2 2009
  
  class BsdFileSystem extends UnixFileSystem {
 -    private final boolean hasInotify;
--    private final boolean hasAtSysCalls;
  
      BsdFileSystem(UnixFileSystemProvider provider, String dir) {
          super(provider, dir);
@@ -21,14 +20,14 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.2 2009
 -        // assume X.Y[-Z] format
 -        String osversion = AccessController
 -            .doPrivileged(new GetPropertyAction("os.version"));
--        String[] vers = osversion.split("\\.", 0);
+-        String[] vers = Util.split(osversion, '.');
 -        assert vers.length >= 2;
 -
 -        int majorVersion = Integer.parseInt(vers[0]);
 -        int minorVersion = Integer.parseInt(vers[1]);
 -        int microVersion = 0;
 -        if (vers.length > 2) {
--            String[] microVers = vers[2].split("-", 0);
+-            String[] microVers = Util.split(vers[2], '-');
 -            microVersion = (microVers.length > 0) ?
 -                Integer.parseInt(microVers[0]) : 0;
 -        }
@@ -37,11 +36,6 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.2 2009
 -        this.hasInotify = ((majorVersion > 2) ||
 -            (majorVersion == 2 && minorVersion > 6) ||
 -            ((majorVersion == 2) && (minorVersion == 6) && (microVersion >= 13)));
--
--        // openat etc. available since 2.6.16
--        this.hasAtSysCalls = ((majorVersion > 2) ||
--            (majorVersion == 2 && minorVersion > 6) ||
--            ((majorVersion == 2) && (minorVersion == 6) && (microVersion >= 16)));
      }
  
      @Override
@@ -59,7 +53,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.2 2009
      }
  
      @Override
-@@ -88,10 +56,6 @@ class BsdFileSystem extends UnixFileSystem {
+@@ -82,10 +56,6 @@ class BsdFileSystem extends UnixFileSystem {
                                                                  UnixPath file,
                                                                  LinkOption... options)
      {
@@ -70,49 +64,44 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.2 2009
          return super.newFileAttributeView(view, file, options);
      }
  
-@@ -101,10 +65,6 @@ class BsdFileSystem extends UnixFileSystem {
-                                                   UnixPath file,
-                                                   LinkOption... options)
+@@ -95,10 +65,6 @@ class BsdFileSystem extends UnixFileSystem {
+                                                          UnixPath file,
+                                                          LinkOption... options)
      {
 -        if (name.equals("dos"))
 -            return new BsdDosFileAttributeView(file, followLinks(options));
--        if (name.equals("xattr"))
+-        if (name.equals("user"))
 -            return new BsdUserDefinedFileAttributeView(file, followLinks(options));
          return super.newFileAttributeView(name, file, options);
      }
  
-@@ -115,9 +75,6 @@ class BsdFileSystem extends UnixFileSystem {
+@@ -109,9 +75,6 @@ class BsdFileSystem extends UnixFileSystem {
          private static Set<String> supportedFileAttributeViews() {
              Set<String> result = new HashSet<String>();
              result.addAll(UnixFileSystem.standardFileAttributeViews());
 -            // additional Bsd-specific views
 -            result.add("dos");
--            result.add("xattr");
+-            result.add("user");
              return Collections.unmodifiableSet(result);
          }
      }
-@@ -129,32 +86,31 @@ class BsdFileSystem extends UnixFileSystem {
+@@ -123,40 +86,32 @@ class BsdFileSystem extends UnixFileSystem {
  
      @Override
      void copyNonPosixAttributes(int ofd, int nfd) {
 -        BsdUserDefinedFileAttributeView.copyExtendedAttributes(ofd, nfd);
      }
  
-     @Override
-     boolean supportsSecureDirectoryStreams() {
--        return hasAtSysCalls;
-+        return false;
-     }
- 
      /**
--     * Returns object to iterate over entries in /etc/mtab
+-     * Returns object to iterate over the mount entries in the given fstab file.
 +     * Returns object to iterate over mount entries
       */
-     @Override
-     Iterable<UnixMountEntry> getMountEntries() {
+-    Iterable<UnixMountEntry> getMountEntries(String fstab) {
++    @Override
++    Iterable<UnixMountEntry> getMountEntries() {
          ArrayList<UnixMountEntry> entries = new ArrayList<UnixMountEntry>();
          try {
--            long fp = setmntent("/etc/mtab".getBytes(), "r".getBytes());
+-            long fp = setmntent(fstab.getBytes(), "r".getBytes());
 +            long iter = BsdNativeDispatcher.getfsstat();
              try {
                  for (;;) {
@@ -129,3 +118,17 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdFileSystem_java,v 1.2 2009
              }
  
          } catch (UnixException x) {
+             // nothing we can do
+         }
+         return entries;
+-    }
+-
+-    /**
+-     * Returns object to iterate over the mount entries in /etc/mtab
+-     */
+-    @Override
+-    Iterable<UnixMountEntry> getMountEntries() {
+-        return getMountEntries("/etc/mtab");
+     }
+ 
+     @Override

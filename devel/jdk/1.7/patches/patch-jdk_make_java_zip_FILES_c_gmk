@@ -1,22 +1,22 @@
-$OpenBSD: patch-jdk_make_java_zip_FILES_c_gmk,v 1.2 2009/05/23 03:03:25 kurt Exp $
---- jdk/make/java/zip/FILES_c.gmk.orig	Fri May  8 03:34:15 2009
-+++ jdk/make/java/zip/FILES_c.gmk	Sat May  9 15:01:46 2009
-@@ -29,6 +29,10 @@ FILES_c = \
+$OpenBSD: patch-jdk_make_java_zip_FILES_c_gmk,v 1.3 2009/10/07 01:53:54 kurt Exp $
+--- jdk/make/java/zip/FILES_c.gmk.orig	Thu Sep 17 03:51:40 2009
++++ jdk/make/java/zip/FILES_c.gmk	Fri Oct  2 08:41:17 2009
+@@ -29,7 +29,10 @@ FILES_c = \
  	Deflater.c \
  	Inflater.c \
  	ZipFile.c \
+-	zip_util.c \
 +	zip_util.c
 +
 +ifneq ($(SYSTEM_ZLIB),true)
 +FILES_c += \
+ 	compress.c \
+ 	deflate.c \
+ 	gzio.c \
+@@ -41,4 +44,5 @@ FILES_c = \
+ 	uncompr.c \
  	zadler32.c \
  	zcrc32.c \
- 	deflate.c \
-@@ -39,5 +43,5 @@ FILES_c = \
- 	inftrees.c \
- 	infcodes.c \
- 	infutil.c \
--	inffast.c \
--	zip_util.c
-+	inffast.c
+-	zutil.c 
++	zutil.c
 +endif

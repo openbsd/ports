@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.4 2009/05/23 03:03:25 kurt Exp $
---- jdk/make/common/Defs.gmk.orig	Fri May  8 03:34:14 2009
-+++ jdk/make/common/Defs.gmk	Mon May 18 11:12:58 2009
+$OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.5 2009/10/07 01:53:54 kurt Exp $
+--- jdk/make/common/Defs.gmk.orig	Thu Sep 17 03:51:40 2009
++++ jdk/make/common/Defs.gmk	Sat Sep 26 10:00:47 2009
 @@ -181,6 +181,36 @@ ifdef OPENJDK
    endif
  endif # OPENJDK
@@ -46,7 +46,7 @@ $OpenBSD: patch-jdk_make_common_Defs_gmk,v 1.4 2009/05/23 03:03:25 kurt Exp $
    else
      ifeq ($(DEVTOOLS_FT_DIR_EXISTS), true)
        FREETYPE_LIB_PATH = $(DEVTOOLS_FT_DIR)/lib
-@@ -278,6 +309,10 @@ ifdef PROGRAM
+@@ -284,6 +315,10 @@ ifdef PROGRAM
  
    ifeq ($(PLATFORM), linux)
      LDLIBS_COMMON = -ldl

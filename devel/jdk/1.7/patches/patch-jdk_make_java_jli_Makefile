@@ -1,18 +1,17 @@
-$OpenBSD: patch-jdk_make_java_jli_Makefile,v 1.4 2009/05/23 03:03:25 kurt Exp $
---- jdk/make/java/jli/Makefile.orig	Fri May  8 03:34:15 2009
-+++ jdk/make/java/jli/Makefile	Mon May 18 11:28:33 2009
-@@ -44,8 +44,10 @@ MS_RUNTIME_STATIC = true
+$OpenBSD: patch-jdk_make_java_jli_Makefile,v 1.5 2009/10/07 01:53:54 kurt Exp $
+--- jdk/make/java/jli/Makefile.orig	Thu Sep 17 03:51:40 2009
++++ jdk/make/java/jli/Makefile	Sat Sep 26 10:24:44 2009
+@@ -44,7 +44,9 @@ MS_RUNTIME_STATIC = true
  
  include $(BUILDDIR)/common/Defs.gmk
  
 +ifneq ($(SYSTEM_ZLIB),true)
- ZLIB_VERSION = 1.1.3
  ZIP_SRC = $(SHARE_SRC)/native/java/util/zip/zlib-$(ZLIB_VERSION)
 +endif
  LAUNCHER_SHARE_SRC = $(SHARE_SRC)/bin
  LAUNCHER_PLATFORM_SRC = $(PLATFORM_SRC)/bin
  
-@@ -66,7 +68,10 @@ FILES_c = \
+@@ -65,13 +67,17 @@ FILES_c = \
  	parse_manifest.c \
  	version_comp.c \
  	wildcard.c \
@@ -22,17 +21,16 @@ $OpenBSD: patch-jdk_make_java_jli_Makefile,v 1.4 2009/05/23 03:03:25 kurt Exp $
 +ifneq ($(SYSTEM_ZLIB),true)
 +FILES_c += \
  	inflate.c \
- 	infblock.c \
  	inftrees.c \
-@@ -75,6 +80,7 @@ FILES_c = \
- 	infutil.c \
+ 	inffast.c \
  	zadler32.c \
+ 	zcrc32.c \
  	zutil.c
 +endif
  
  ifneq ($(PLATFORM), windows)
  
-@@ -91,15 +97,17 @@ ifeq ($(PLATFORM), solaris)
+@@ -88,15 +94,17 @@ ifeq ($(PLATFORM), solaris)
    LIBARCH_DEFINES += -DLIBARCH64NAME='"$(LIBARCH64)"'
  endif
  
@@ -51,7 +49,7 @@ $OpenBSD: patch-jdk_make_java_jli_Makefile,v 1.4 2009/05/23 03:03:25 kurt Exp $
  ifeq ($(USE_PTHREADS),true)
  	LDLIBS += -lpthread
  endif # USE_PTHREADS 
-@@ -123,7 +131,11 @@ endif
+@@ -120,7 +128,11 @@ endif
  
  OTHER_INCLUDES += -I$(LAUNCHER_SHARE_SRC)
  OTHER_INCLUDES += -I$(LAUNCHER_PLATFORM_SRC)
@@ -64,7 +62,7 @@ $OpenBSD: patch-jdk_make_java_jli_Makefile,v 1.4 2009/05/23 03:03:25 kurt Exp $
  
  #
  # Library to compile.
-@@ -161,7 +173,28 @@ library:: $(STATIC_LIBRARY)
+@@ -158,7 +170,28 @@ library:: $(STATIC_LIBRARY)
  
  endif	# PLATFORM
  

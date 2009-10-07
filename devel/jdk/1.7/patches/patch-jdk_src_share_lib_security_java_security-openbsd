@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_src_share_lib_security_java_security-openbsd,v 1.1 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/share/lib/security/java.security-openbsd.orig	Mon May 18 13:50:58 2009
-+++ jdk/src/share/lib/security/java.security-openbsd	Mon May 18 13:51:14 2009
-@@ -66,7 +66,14 @@ security.provider.8=sun.security.smartcardio.SunPCSC
+$OpenBSD: patch-jdk_src_share_lib_security_java_security-openbsd,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/share/lib/security/java.security-openbsd.orig	Sat Sep 26 10:00:46 2009
++++ jdk/src/share/lib/security/java.security-openbsd	Sat Sep 26 10:00:48 2009
+@@ -67,7 +67,14 @@ security.provider.9=sun.security.smartcardio.SunPCSC
  # On Windows systems, the URLs file:/dev/random and file:/dev/urandom
  # enables use of the Microsoft CryptoAPI seed functionality.
  #

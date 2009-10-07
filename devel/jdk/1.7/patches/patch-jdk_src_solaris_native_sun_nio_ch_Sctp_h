@@ -1,8 +1,8 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Sctp_h,v 1.1 2009/06/10 19:01:09 kurt Exp $
---- jdk/src/solaris/native/sun/nio/ch/Sctp.h.orig	Tue Jun  2 12:17:54 2009
-+++ jdk/src/solaris/native/sun/nio/ch/Sctp.h	Tue Jun  2 12:18:02 2009
-@@ -65,7 +65,7 @@ typedef int sctp_freepaddrs_func(void *addrs);
- typedef int sctp_bindx_func(int sock, void *addrs, int addrcnt, int flags);
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Sctp_h,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/ch/Sctp.h.orig	Thu Sep 17 03:52:33 2009
++++ jdk/src/solaris/native/sun/nio/ch/Sctp.h	Sun Sep 27 10:26:36 2009
+@@ -67,7 +67,7 @@ typedef int sctp_peeloff_func(int sock, sctp_assoc_t i
+ 
  
  
 -#else /* __linux__ */
@@ -10,9 +10,9 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Sctp_h,v 1.1 2009/06/10 19:01:
  #include <stdint.h>
  #include <linux/types.h>
  #include <sys/socket.h>
-@@ -316,13 +316,34 @@ typedef int sctp_getpaddrs_func(int sd, sctp_assoc_t i
- typedef int sctp_freepaddrs_func(struct sockaddr *addrs);
- typedef int sctp_bindx_func(int sd, struct sockaddr *addrs, int addrcnt, int flags);
+@@ -320,14 +320,37 @@ typedef int sctp_bindx_func(int sd, struct sockaddr *a
+ typedef int sctp_peeloff_func(int sock, sctp_assoc_t id);
+ 
  
 +#elif defined(__FreeBSD__) && __FreeBSD__ >= 7
 +
@@ -20,6 +20,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Sctp_h,v 1.1 2009/06/10 19:01:
 +#include <sys/types.h>
 +#include <sys/socket.h>
 +#include <netinet/sctp.h>
++#include <netinet/sctp_peeloff.h>
 +#include <netinet/sctp_uio.h>
 +#include "jni.h"
 +
@@ -32,6 +33,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Sctp_h,v 1.1 2009/06/10 19:01:
  sctp_getpaddrs_func* nio_sctp_getpaddrs;
  sctp_freepaddrs_func* nio_sctp_freepaddrs;
  sctp_bindx_func* nio_sctp_bindx;
+ sctp_peeloff_func* nio_sctp_peeloff;
 +
 +#else
 +
@@ -40,6 +42,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Sctp_h,v 1.1 2009/06/10 19:01:
 +#define nio_sctp_getpaddrs	sctp_getpaddrs
 +#define nio_sctp_freepaddrs	sctp_freepaddrs
 +#define nio_sctp_bindx		sctp_bindx
++#define nio_sctp_peeloff	sctp_peeloff
 +
 +#endif
  

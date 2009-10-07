@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_com_sun_java_pack_Makefile,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/make/com/sun/java/pack/Makefile.orig	Mon Aug  4 03:43:01 2008
-+++ jdk/make/com/sun/java/pack/Makefile	Wed Aug 13 13:39:36 2008
+$OpenBSD: patch-jdk_make_com_sun_java_pack_Makefile,v 1.3 2009/10/07 01:53:54 kurt Exp $
+--- jdk/make/com/sun/java/pack/Makefile.orig	Thu Sep 17 03:51:40 2009
++++ jdk/make/com/sun/java/pack/Makefile	Sat Sep 26 10:00:47 2009
 @@ -61,6 +61,7 @@ vpath %.cpp $(SHARE_SRC)/native/$(PKGDIR)
  
  
@@ -9,8 +9,8 @@ $OpenBSD: patch-jdk_make_com_sun_java_pack_Makefile,v 1.2 2009/01/04 23:25:16 ku
    ZIPOBJDIR = $(OUTPUTDIR)/tmp/sun/java.util.zip/zip/$(OBJDIRNAME)
  
    ZIPOBJS =  $(ZIPOBJDIR)/zcrc32.$(OBJECT_SUFFIX) \
-@@ -78,6 +79,10 @@ ifeq ($(STANDALONE),true)
-   ZINCLUDE=-I$(SHARE_SRC)/native/java/util/zip/zlib-1.1.3
+@@ -77,6 +78,10 @@ ifeq ($(STANDALONE),true)
+   ZINCLUDE=-I$(SHARE_SRC)/native/java/util/zip/zlib-$(ZLIB_VERSION)
    OTHER_CXXFLAGS += $(ZINCLUDE)
    LDDFLAGS += $(ZIPOBJS)
 + else
@@ -20,7 +20,7 @@ $OpenBSD: patch-jdk_make_com_sun_java_pack_Makefile,v 1.2 2009/01/04 23:25:16 ku
  else
    OTHER_CXXFLAGS += -DNO_ZLIB -DUNPACK_JNI
    OTHER_LDLIBS += $(JVMLIB)
-@@ -99,7 +104,11 @@ ifeq ($(PLATFORM), windows) 
+@@ -98,7 +103,11 @@ ifeq ($(PLATFORM), windows) 
    RES = $(OBJDIR)/$(PGRM).res
  else
    LDOUTPUT = -o #Have a space 

@@ -1,15 +1,19 @@
-$OpenBSD: patch-jdk_src_solaris_back_util_md_h,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/solaris/back/util_md.h.orig	Thu Sep 11 03:44:51 2008
-+++ jdk/src/solaris/back/util_md.h	Fri Sep 12 17:06:00 2008
-@@ -31,6 +31,7 @@
+$OpenBSD: patch-jdk_src_solaris_back_util_md_h,v 1.3 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/solaris/back/util_md.h.orig	Thu Sep 17 03:52:30 2009
++++ jdk/src/solaris/back/util_md.h	Sun Sep 27 10:08:46 2009
+@@ -31,6 +31,11 @@
  
  #include <limits.h>
  #include <sys/types.h>
++#ifdef _ALLBSD_SOURCE
 +#include <machine/endian.h>
++#elif __linux__
++#include <endian.h>
++#endif
  
  #ifdef _LP64
  typedef unsigned long UNSIGNED_JLONG;
-@@ -46,7 +47,7 @@ typedef unsigned long UNSIGNED_JINT;
+@@ -46,7 +51,7 @@ typedef unsigned long UNSIGNED_JINT;
  
  /* On little endian machines, convert java big endian numbers. */
  

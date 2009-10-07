@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_xawt_awt_Desktop_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/native/sun/xawt/awt_Desktop.c.orig	Mon May 18 20:32:31 2009
-+++ jdk/src/solaris/native/sun/xawt/awt_Desktop.c	Mon May 18 20:32:40 2009
+$OpenBSD: patch-jdk_src_solaris_native_sun_xawt_awt_Desktop_c,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/solaris/native/sun/xawt/awt_Desktop.c.orig	Thu Sep 17 03:52:33 2009
++++ jdk/src/solaris/native/sun/xawt/awt_Desktop.c	Fri Oct  2 08:47:21 2009
 @@ -24,6 +24,7 @@
   */
  
@@ -9,21 +9,41 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_xawt_awt_Desktop_c,v 1.1 2009/05/23 0
  #include <dlfcn.h>
  
  typedef int gboolean;
-@@ -36,7 +37,7 @@ int init(){
+@@ -36,12 +37,15 @@ int init(){
      gboolean (*gnome_vfs_init) (void);
      const char *errmsg;
  
 -    vfs_handle = dlopen("libgnomevfs-2.so.0", RTLD_LAZY);
 +    vfs_handle = dlopen(VERSIONED_JNI_LIB_NAME("gnomevfs-2", "0"), RTLD_LAZY);
      if (vfs_handle == NULL) {
++        vfs_handle = dlopen(JNI_LIB_NAME("gnomevfs-2"), RTLD_LAZY);
++        if (vfs_handle == NULL) {
  #ifdef INTERNAL_BUILD
-         fprintf(stderr, "can not load libgnomevfs-2.so\n");
-@@ -54,7 +55,7 @@ int init(){
+-        fprintf(stderr, "can not load libgnomevfs-2.so\n");
++            fprintf(stderr, "can not load libgnomevfs-2.so\n");
+ #endif
+-        return 0;
++            return 0;
++        }
+     }
+     dlerror(); /* Clear errors */
+     gnome_vfs_init = dlsym(vfs_handle, "gnome_vfs_init");
+@@ -54,12 +58,15 @@ int init(){
      // call gonme_vfs_init()
      (*gnome_vfs_init)();
  
 -    gnome_handle = dlopen("libgnome-2.so.0", RTLD_LAZY);
 +    gnome_handle = dlopen(VERSIONED_JNI_LIB_NAME("gnome-2", "0"), RTLD_LAZY);
      if (gnome_handle == NULL) {
++        gnome_handle = dlopen(JNI_LIB_NAME("gnome-2"), RTLD_LAZY);
++        if (gnome_handle == NULL) {
  #ifdef INTERNAL_BUILD
-         fprintf(stderr, "can not load libgnome-2.so\n");
+-        fprintf(stderr, "can not load libgnome-2.so\n");
++            fprintf(stderr, "can not load libgnome-2.so\n");
+ #endif
+-        return 0;
++            return 0;
++        }
+     }
+     dlerror(); /* Clear errors */
+     gnome_url_show = dlsym(gnome_handle, "gnome_url_show");

@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_genUnixConstants_c,v 1.1 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/native/sun/nio/fs/genUnixConstants.c.orig	Fri May  8 03:35:08 2009
-+++ jdk/src/solaris/native/sun/nio/fs/genUnixConstants.c	Wed May 20 10:15:26 2009
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_genUnixConstants_c,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/fs/genUnixConstants.c.orig	Thu Sep 17 03:52:33 2009
++++ jdk/src/solaris/native/sun/nio/fs/genUnixConstants.c	Sun Sep 27 10:28:59 2009
 @@ -63,7 +63,12 @@ int main(int argc, const char* argv[]) {
      DEFX(O_EXCL);
      DEFX(O_TRUNC);
@@ -13,29 +13,8 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_genUnixConstants_c,v 1.1 2009/
 +#endif
      DEFX(O_NOFOLLOW);
  
-     // flags used with openat/unlinkat/etc.
-@@ -75,6 +80,20 @@ int main(int argc, const char* argv[]) {
-     emitX("AT_SYMLINK_NOFOLLOW", 0x100);        // since 2.6.16
-     emitX("AT_REMOVEDIR", 0x200);
- #endif
-+#ifdef _ALLBSD_SOURCE
-+    // fdopendir() and fstatat() dont exist in FreeBSD and OpenBSD
-+    // at least. Use dummy values where needed.
-+#ifndef AT_SYMLINK_NOFOLLOW
-+    emitX("AT_SYMLINK_NOFOLLOW", 0x100);
-+#else
-+    DEFX(AT_SYMLINK_NOFOLLOW);
-+#endif
-+#ifndef AT_REMOVEDIR
-+    emitX("AT_REMOVEDIR", 0x200);
-+#else
-+    DEFX(AT_REMOVEDIR);
-+#endif
-+#endif // _ALLBSD_SOURCE
- 
      // mode masks
-     emitX("S_IAMB",
-@@ -116,7 +135,12 @@ int main(int argc, const char* argv[]) {
+@@ -106,7 +111,12 @@ int main(int argc, const char* argv[]) {
      DEF(ENOSYS);
      DEF(ELOOP);
      DEF(EROFS);
@@ -47,4 +26,4 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_genUnixConstants_c,v 1.1 2009/
 +#endif
      DEF(ERANGE);
  
-     out("}                                                                              ");
+     // flags used with openat/unlinkat/etc.

@@ -1,0 +1,16 @@
+$OpenBSD: patch-jdk_make_sun_security_ec_Makefile,v 1.1 2009/10/07 01:53:54 kurt Exp $
+--- jdk/make/sun/security/ec/Makefile.orig	Sun Sep 27 09:51:43 2009
++++ jdk/make/sun/security/ec/Makefile	Sun Sep 27 09:51:50 2009
+@@ -184,7 +184,11 @@ ifeq ($(NATIVE_ECC_AVAILABLE), true)
+   ifeq ($(PLATFORM), windows)
+     OTHER_LDLIBS += $(JVMLIB)
+   else
+-    OTHER_LDLIBS = -ldl $(JVMLIB) $(LIBCXX)
++    ifeq ($(PLATFORM), bsd)
++      OTHER_LDLIBS = $(JVMLIB) $(LIBCXX)
++    else
++      OTHER_LDLIBS = -ldl $(JVMLIB) $(LIBCXX)
++    endif
+   endif
+ 
+   include $(BUILDDIR)/common/Mapfile-vers.gmk

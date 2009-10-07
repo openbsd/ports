@@ -1,0 +1,13 @@
+$OpenBSD: patch-jdk_make_com_sun_nio_sctp_Makefile,v 1.1 2009/10/07 01:53:54 kurt Exp $
+--- jdk/make/com/sun/nio/sctp/Makefile.orig	Sun Sep 27 09:46:49 2009
++++ jdk/make/com/sun/nio/sctp/Makefile	Sun Sep 27 09:47:02 2009
+@@ -68,6 +68,9 @@ ifeq ($(PLATFORM), solaris)
+ #LIBSCTP = -lsctp
+ OTHER_LDLIBS += $(LIBSOCKET) -L$(LIBDIR)/$(LIBARCH) -lnet -lnio
+ endif # PLATFORM
++ifeq ($(PLATFORM), bsd)
++OTHER_LDLIBS += $(LIBSOCKET) -L$(LIBDIR)/$(LIBARCH) -lnet -lnio
++endif
+ 
+ else # windows
+ include $(BUILDDIR)/common/Classes.gmk

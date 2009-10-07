@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_make_common_shared_Sanity-Settings_gmk,v 1.1 2009/05/23 03:03:25 kurt Exp $
---- jdk/make/common/shared/Sanity-Settings.gmk.orig	Mon May 18 11:24:34 2009
-+++ jdk/make/common/shared/Sanity-Settings.gmk	Mon May 18 11:24:51 2009
-@@ -245,6 +245,7 @@ ifdef OPENJDK
+$OpenBSD: patch-jdk_make_common_shared_Sanity-Settings_gmk,v 1.2 2009/10/07 01:53:54 kurt Exp $
+--- jdk/make/common/shared/Sanity-Settings.gmk.orig	Thu Sep 17 03:51:40 2009
++++ jdk/make/common/shared/Sanity-Settings.gmk	Sat Sep 26 10:00:47 2009
+@@ -244,6 +244,7 @@ ifdef OPENJDK
    ALL_SETTINGS+=$(call addHeading,OpenJDK-specific settings)
    ALL_SETTINGS+=$(call addAltSetting,FREETYPE_HEADERS_PATH)
    ALL_SETTINGS+=$(call addAltSetting,FREETYPE_LIB_PATH)

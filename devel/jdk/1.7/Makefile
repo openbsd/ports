@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2009/10/07 01:53:54 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -6,12 +6,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 COMMENT-main=	Java2(TM) SE Dev Kit v${V} Early Access ${B}
 COMMENT-jre=	Java2(TM) SE Runtime Environment v${V} Early Access ${B}
 V=		1.7.0.00
-B=		b59
-DISTFILES=	openjdk-7-ea-src-${B}-14_may_2009.zip \
+B=		b72
+DISTFILES=	openjdk-7-ea-src-${B}-17_sep_2009.zip \
 		jibx_1_1_5.zip:0
 PKGNAME=	jdk-${V}
-PKGNAME-main=	jdk-${V}${B}p1
-PKGNAME-jre=	jre-${V}${B}p1
+PKGNAME-main=	jdk-${V}${B}
+PKGNAME-jre=	jre-${V}${B}
 
 CATEGORIES=	devel/jdk java
 
