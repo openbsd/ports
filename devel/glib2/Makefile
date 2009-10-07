@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2009/10/04 18:17:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2009/10/07 15:07:49 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 COMMENT-fam=		fam(3) gio module
 
-VERSION=		2.22.1
+VERSION=		2.22.2
 DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
@@ -16,11 +16,11 @@ HOMEPAGE=		http://www.gtk.org/
 
 # glib-2.0 and gobject-2.0 need to be in sync as glib-2.0 version is
 # used to install *-gdb.py files
-SHARED_LIBS+=	glib-2.0		1802.0 # .2200.1
-SHARED_LIBS+=	gobject-2.0		1802.0 # .2200.1
-SHARED_LIBS+=	gmodule-2.0		1802.0 # .2200.1
-SHARED_LIBS+=	gthread-2.0		1802.0 # .2200.1
-SHARED_LIBS+=	gio-2.0			1802.0 # .2200.1
+SHARED_LIBS+=	glib-2.0		1802.0 # .2200.2
+SHARED_LIBS+=	gobject-2.0		1802.0 # .2200.2
+SHARED_LIBS+=	gmodule-2.0		1802.0 # .2200.2
+SHARED_LIBS+=	gthread-2.0		1802.0 # .2200.2
+SHARED_LIBS+=	gio-2.0			1802.0 # .2200.2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
