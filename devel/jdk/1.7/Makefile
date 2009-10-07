@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/10/07 01:53:54 kurt Exp $
+# $OpenBSD: Makefile,v 1.33 2009/10/07 20:35:47 kili Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -23,8 +23,12 @@ FLAVOR?=
 
 HOMEPAGE=	http://openjdk.java.net/
 
-MASTER_SITES=	http://www.java.net/download/openjdk/jdk7/promoted/${B}/
-MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=jibx/}
+MASTER_SITES=	http://www.java.net/download/openjdk/jdk7/promoted/${B}/ \
+		http://openbsd.dead-parrot.de/distfiles/ \
+		http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=jibx/} \
+		http://openbsd.dead-parrot.de/distfiles/ \
+		http://www.phil.uu.nl/~lievisse/distfiles/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
