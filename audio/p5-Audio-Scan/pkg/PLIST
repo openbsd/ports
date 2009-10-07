@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/07 21:14:05 sthen Exp $
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Audio/
+${P5ARCH}/Audio/Scan.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Audio/
+${P5ARCH}/auto/Audio/Scan/
+${P5ARCH}/auto/Audio/Scan/Scan.bs
+@man man/man3p/Audio::Scan.3p

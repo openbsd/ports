@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/10/07 21:14:05 sthen Exp $
+${P5ARCH}/auto/Audio/Scan/Scan.so
