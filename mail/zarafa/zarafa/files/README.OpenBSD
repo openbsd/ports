@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.8 2009/09/24 19:37:51 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.9 2009/10/07 17:05:08 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -13,6 +13,7 @@ http://localhost:236.
 
 It is advised to tune the MySQL installation according to:
     http://zarafa.com/wiki/index.php/MySQL_tuning
+(especially for max_allowed_packet)
 
 
 Before Starting zarafa-server for the first time
