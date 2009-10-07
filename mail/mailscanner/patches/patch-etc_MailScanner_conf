@@ -1,7 +1,16 @@
-$OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
---- etc/MailScanner.conf.orig	Mon Jun  1 11:14:02 2009
-+++ etc/MailScanner.conf	Wed Jun  3 21:44:46 2009
-@@ -77,17 +77,17 @@
+$OpenBSD: patch-etc_MailScanner_conf,v 1.10 2009/10/07 20:59:29 sthen Exp $
+--- etc/MailScanner.conf.orig	Thu Aug 27 21:25:26 2009
++++ etc/MailScanner.conf	Fri Aug 28 19:01:33 2009
+@@ -43,7 +43,7 @@
+ #       normal shell wildcard characters such as "*".
+ #       For each setting, the last value read will be used by MailScanner.
+ #       At the end of this file, there is an "include" that will pull in
+-#       all the files in /opt/MailScanner/etc/conf.d so you can just add
++#       all the files in %SYSCONFDIR%/MailScanner/conf.d so you can just add
+ #       your own local changes in there, and not need to modify this file.
+ #
+ 
+@@ -88,17 +88,17 @@
  %web-site% = www.your-organisation.com
  
  # Configuration directory containing this file
@@ -23,7 +32,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # One other that is set automatically for you is %version% which is,
  # unsurprisingly, the string of the MailScanner version. It does not
-@@ -140,7 +140,7 @@ Queue Scan Interval = 6
+@@ -151,7 +151,7 @@ Queue Scan Interval = 6
  #    Example: /var/spool/mqueue.in/*
  # 3. The name of a file containing a list of directory names,
  #    which can in turn contain wildcards.
@@ -32,7 +41,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  #
  # If you are using sendmail and have your queues split into qf, df, xf
  # directories, then just specify the main directory, do not give me the
-@@ -172,7 +172,7 @@ Incoming Work Dir = /var/spool/MailScanner/incoming
+@@ -183,7 +183,7 @@ Incoming Work Dir = /var/spool/MailScanner/incoming
  Quarantine Dir = /var/spool/MailScanner/quarantine
  
  # Set where to store the process id number so you can stop MailScanner
@@ -41,7 +50,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # To avoid resource leaks, re-start periodically. Forces a re-read of all
  # the configuration files too, so new updates to the bad phishing sites list
-@@ -187,7 +187,7 @@ MTA = sendmail
+@@ -198,7 +198,7 @@ MTA = sendmail
  # Set how to invoke MTA when sending messages MailScanner has created
  # (e.g. to sender/recipient saying "found a virus in your message")
  # This can also be the filename of a ruleset.
@@ -50,7 +59,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # Sendmail2 is provided for Exim users.
  # It is the command used to attempt delivery of outgoing cleaned/disinfected
-@@ -195,9 +195,11 @@ Sendmail = /usr/lib/sendmail
+@@ -206,9 +206,11 @@ Sendmail = /usr/lib/sendmail
  # This is not usually required for sendmail.
  # This can also be the filename of a ruleset.
  #For Exim users: Sendmail2 = /usr/sbin/exim -C /etc/exim/exim_send.conf
@@ -64,7 +73,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  #
  # Incoming Work Dir Settings
-@@ -396,7 +398,7 @@ Deliver Unparsable TNEF = no
+@@ -407,7 +409,7 @@ Deliver Unparsable TNEF = no
  # may be. It helps protect against Denial Of Service attacks in TNEF files.
  # This can also be the filename of a ruleset.
  #TNEF Expander  = internal
@@ -73,7 +82,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # The maximum length of time the TNEF Expander is allowed to run for 1 message.
  # (in seconds)
-@@ -416,7 +418,7 @@ File Timeout = 20
+@@ -427,7 +429,7 @@ File Timeout = 20
  # This is used for expanding .gz files.
  # To disable gzipped file checking, set this value to blank
  # and the timeout to 0.
@@ -82,7 +91,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # The maximum length of time the "gunzip" command is allowed to run to expand
  # 1 attachment file (in seconds).
-@@ -432,7 +434,7 @@ Gunzip Timeout = 50
+@@ -443,7 +445,7 @@ Gunzip Timeout = 50
  # scanner, with one exception:
  # If using the clavavmodule virus scanner, this adds external RAR checking
  # to that scanner which is needed for archives which are RAR version 3.
@@ -91,7 +100,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # The maximum length of time the "unrar" command is allowed to run for 1
  # RAR archive (in seconds)
-@@ -536,7 +538,7 @@ Add Text Of Doc = no
+@@ -547,7 +549,7 @@ Add Text Of Doc = no
  # Using a ruleset here, you could have different output styles for
  # different people.
  # This can also be the filename of a ruleset.
@@ -100,7 +109,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # The maximum length of time the "antiword" command is allowed to run for 1
  # Word document (in seconds)
-@@ -649,7 +651,7 @@ Virus Scanning = yes
+@@ -660,7 +662,7 @@ Virus Scanning = yes
  #       want none, then specify "none".
  #
  # This *cannot* be the filename of a ruleset.
@@ -109,7 +118,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # The maximum length of time the commercial virus scanner is allowed to run
  # for 1 batch of messages (in seconds).
-@@ -777,19 +779,19 @@ Allowed Sophos Error Messages =
+@@ -807,19 +809,19 @@ Allowed Sophos Error Messages =
  # The directory (or a link to it) containing all the Sophos *.ide files.
  # This is only used by the "sophossavi" virus scanner, and is irrelevant
  # for all other scanners.
@@ -132,7 +141,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  #
  # Options specific to ClamAV Anti-Virus
-@@ -800,7 +802,7 @@ Monitors For Sophos Updates = /opt/sophos-av/lib/sav/*
+@@ -830,7 +832,7 @@ Monitors For Sophos Updates = /opt/sophos-av/lib/sav/*
  # detect when a ClamAV update has happened.
  # This is only used by the "clamavmodule" virus scanner, not the "clamav"
  # scanner setting.
@@ -141,7 +150,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # ClamAVModule only: set limits when scanning for viruses.
  #
-@@ -1478,7 +1480,7 @@ Sign Messages Already Processed = no
+@@ -1508,7 +1510,7 @@ Sign Messages Already Processed = no
  # magic token "_SIGNATURE_" in your email message, the signature will be
  # inserted just there, rather than at the end of the message.
  # This can also be the filename of a ruleset.
@@ -150,7 +159,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # If you are using HTML signatures, you can embed an image in the signature.
  # For the filename(s) of the image, see the settings "Signature Image
-@@ -1606,7 +1608,7 @@ Deliver Cleaned Messages = yes
+@@ -1636,7 +1638,7 @@ Deliver Cleaned Messages = yes
  # Do you want to notify the people who sent you messages containing
  # viruses or badly-named filenames?
  # This can also be the filename of a ruleset.
@@ -159,7 +168,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # *If* "Notify Senders" is set to yes, do you want to notify people
  # who sent you messages containing viruses?
-@@ -1668,7 +1670,7 @@ Scanned Subject Text = {Scanned}
+@@ -1698,7 +1700,7 @@ Scanned Subject Text = {Scanned}
  #      end   = Add text to the end of the subject line.
  # This makes filtering in Outlook very easy.
  # This can also be the filename of a ruleset.
@@ -168,7 +177,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # This is the text to add to the start of the subject if the
  # "Virus Modify Subject" option is set.
-@@ -1684,7 +1686,7 @@ Virus Subject Text = {Virus?}
+@@ -1714,7 +1716,7 @@ Virus Subject Text = {Virus?}
  #      end   = Add text to the end of the subject line.
  # This makes filtering in Outlook very easy.
  # This can also be the filename of a ruleset.
@@ -177,7 +186,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # This is the text to add to the start of the subject if the
  # "Filename Modify Subject" option is set.
-@@ -1702,7 +1704,7 @@ Filename Subject Text = {Filename?}
+@@ -1732,7 +1734,7 @@ Filename Subject Text = {Filename?}
  #      end   = Add text to the end of the subject line.
  # This makes filtering in Outlook very easy.
  # This can also be the filename of a ruleset.
@@ -186,7 +195,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # This is the text to add to the start of the subject if the
  # "Content Modify Subject" option is set.
-@@ -1721,7 +1723,7 @@ Content Subject Text = {Dangerous Content?}
+@@ -1751,7 +1753,7 @@ Content Subject Text = {Dangerous Content?}
  #      end   = Add text to the end of the subject line.
  # This makes filtering in Outlook very easy.
  # This can also be the filename of a ruleset.
@@ -195,7 +204,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # This is the text to add to the start of the subject if the
  # "Size Modify Subject" option is set.
-@@ -1740,7 +1742,7 @@ Size Subject Text = {Size}
+@@ -1770,7 +1772,7 @@ Size Subject Text = {Size}
  #      yes   = Add text to the start of the subject line, or
  #      end   = Add text to the end of the subject line.
  # This can also be the filename of a ruleset.
@@ -204,7 +213,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # This is the text to add to the start of the subject if the
  # "Disarmed Modify Subject" option is set.
-@@ -1770,7 +1772,7 @@ Phishing Subject Text = {Fraud?}
+@@ -1800,7 +1802,7 @@ Phishing Subject Text = {Fraud?}
  #      end   = Add text to the end of the subject line.
  # This makes filtering in Outlook very easy.
  # This can also be the filename of a ruleset.
@@ -213,7 +222,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # This is the text to add to the start of the subject if the
  # "Spam Modify Subject" option is set.
-@@ -1790,7 +1792,7 @@ Spam Subject Text = {Spam?}
+@@ -1820,7 +1822,7 @@ Spam Subject Text = {Spam?}
  #      yes   = Add text to the start of the subject line, or
  #      end   = Add text to the end of the subject line.
  # This can also be the filename of a ruleset.
@@ -222,7 +231,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # This is just like the "Spam Subject Text" option above, except that
  # it applies when the score from SpamAssassin is higher than the
-@@ -1880,7 +1882,7 @@ Missing Mail Archive Is = directory
+@@ -1910,7 +1912,7 @@ Missing Mail Archive Is = directory
  # Notify the local system administrators ("Notices To") when any infections
  # are found?
  # This can also be the filename of a ruleset.
@@ -231,7 +240,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # Include the full headers of each message in the notices sent to the local
  # system administrators?
-@@ -1935,7 +1937,7 @@ Virus Scanner Definitions = %etc-dir%/virus.scanners.c
+@@ -1965,7 +1967,7 @@ Virus Scanner Definitions = %etc-dir%/virus.scanners.c
  #       If you want to just disable the "Spam List" feature then set
  #       "Spam List =" (i.e. an empty list) in the setting below.
  # This can also be the filename of a ruleset.
@@ -240,7 +249,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # This is the list of spam blacklists (RBLs) which you are using.
  # See the "Spam List Definitions" file for more information about what
-@@ -2117,7 +2119,7 @@ Watermark Header = X-%org-name%-MailScanner-Watermark:
+@@ -2147,7 +2149,7 @@ Watermark Header = X-%org-name%-MailScanner-Watermark:
  
  # Do you want to find spam using the "SpamAssassin" package?
  # This can also be the filename of a ruleset.
@@ -249,7 +258,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # SpamAssassin is not very fast when scanning huge messages, so messages
  # bigger than this value will be truncated to this length for SpamAssassin
-@@ -2214,7 +2216,7 @@ Include Binary Attachments In SpamAssassin = no
+@@ -2244,7 +2246,7 @@ Include Binary Attachments In SpamAssassin = no
  # whatever SpamAssassin threshold they want. For example, they just look
  # for "sssss" for every message whose score is > 5, for example.
  # This can also be the filename of a ruleset.
@@ -258,7 +267,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # Many naive spammers send out the same message to lots of people.
  # These messages are very likely to have roughly the same SpamAssassin score.
-@@ -2668,14 +2670,14 @@ SpamAssassin Install Prefix =
+@@ -2698,14 +2700,14 @@ SpamAssassin Install Prefix =
  SpamAssassin Site Rules Dir = /etc/mail/spamassassin
  
  # The site-local rules are searched for here, and in prefix/etc/spamassassin,
@@ -275,7 +284,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  SpamAssassin Local Rules Dir =
  
  # The rules created by the "sa-update" tool are searched for here.
-@@ -2689,10 +2691,10 @@ SpamAssassin Local Rules Dir =
+@@ -2719,10 +2721,10 @@ SpamAssassin Local Rules Dir =
  SpamAssassin Local State Dir = # /var/lib/spamassassin
  
  # The default rules are searched for here, and in prefix/share/spamassassin,
@@ -288,7 +297,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  SpamAssassin Default Rules Dir =
  
  #
-@@ -2725,9 +2727,9 @@ MCP Actions = deliver
+@@ -2755,9 +2757,9 @@ MCP Actions = deliver
  High Scoring MCP Actions = deliver
  Bounce MCP As Attachment = no
  
@@ -300,7 +309,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  High Scoring MCP Subject Text = {MCP?}
  
  Is Definitely MCP = no
-@@ -2896,7 +2898,7 @@ Lockfile Dir = /var/spool/MailScanner/incoming/Locks
+@@ -2926,7 +2928,7 @@ Lockfile Dir = /var/spool/MailScanner/incoming/Locks
  # directory should be over-written by the installation or upgrade process.
  # All files starting with "." or ending with ".rpmnew" will be ignored,
  # all other files will be compiled and may be used with Custom Functions.
@@ -309,3 +318,10 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.9 2009/06/11 23:33:26 sthen Exp $
  
  # How to lock spool files.
  # Don't set this unless you *know* you need to.
+@@ -2985,5 +2987,5 @@ Minimum Code Status = supported
+ # They will be read and processed in alphabetical order.
+ #
+ #
+-include /opt/MailScanner/etc/conf.d/*
++include %SYSCONFDIR%/MailScanner/conf.d/*
+ 

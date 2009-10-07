@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_MailScanner,v 1.8 2009/05/23 21:30:05 sthen Exp $
---- bin/MailScanner.orig	Tue May 12 06:23:39 2009
-+++ bin/MailScanner	Sun May 17 06:52:31 2009
+$OpenBSD: patch-bin_MailScanner,v 1.9 2009/10/07 20:59:29 sthen Exp $
+--- bin/MailScanner.orig	Thu Aug 13 06:18:29 2009
++++ bin/MailScanner	Thu Aug 13 11:39:04 2009
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -I/opt/MailScanner/lib
 +#!/usr/bin/perl -I%PREFIX%/lib/MailScanner
@@ -16,7 +16,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.8 2009/05/23 21:30:05 sthen Exp $
      unshift @INC, $path;
    }
  
-@@ -208,8 +208,6 @@ if ($Versions) {
+@@ -209,8 +209,6 @@ if ($Versions) {
    my($module, $s, $v, $m);
  
    printf("Running on\n%s", `uname -a`);
@@ -25,7 +25,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.8 2009/05/23 21:30:05 sthen Exp $
    printf("This is Perl version %f (%vd)\n", $], $^V);
    print "\nThis is MailScanner version " . $MailScanner::Config::MailScannerVersion . "\n";
    print "Module versions are:\n";
-@@ -279,7 +277,7 @@ if ($WantLintOnly || $WantLintLiteOnly) {
+@@ -280,7 +278,7 @@ if ($WantLintOnly || $WantLintLiteOnly) {
  # Find the mailscanner.conf file, with a default just in case.
  my $ConfFile = $ARGV[0];
  # Use the default if we couldn't find theirs. Will save a lot of grief.
@@ -34,7 +34,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.8 2009/05/23 21:30:05 sthen Exp $
                                                         !(-f $ConfFile);
  
  # Do they just want a dump of the processing-database table?
-@@ -334,7 +332,7 @@ if (MailScanner::Config::QuickPeek($ConfFile, 'virussc
+@@ -335,7 +333,7 @@ if (MailScanner::Config::QuickPeek($ConfFile, 'virussc
  Currently you are using no virus scanners.
  This is probably not what you want.
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.8 2009/05/23 21:30:05 sthen Exp $
      Virus Scanners = clamav
  Then download
      http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/install-Clam-SA.tar.gz
-@@ -421,7 +419,7 @@ if ($WantLintOnly || $WantLintLiteOnly) {
+@@ -422,7 +420,7 @@ if ($WantLintOnly || $WantLintLiteOnly) {
    }
    my $cluid = MailScanner::Config::QuickPeek($ConfFile, 'runasuser');
    my $clgid = MailScanner::Config::QuickPeek($ConfFile, 'runasgroup');
@@ -52,7 +52,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.8 2009/05/23 21:30:05 sthen Exp $
    print STDERR "Error: Attempt to create locks in $lockdir failed!\n"
      if ($clr>>8) != 0;
  
-@@ -716,7 +714,7 @@ if ($locksdir eq "" || $locksdir =~ /tmp$/i) {
+@@ -719,7 +717,7 @@ if ($locksdir eq "" || $locksdir =~ /tmp$/i) {
    print STDERR "Please move your \"Lockfile Dir\" setting in MailScanner.conf.\n";
    print STDERR "It should point outside /tmp, preferably /var/spool/MailScanner/incoming/Locks\n";
  }

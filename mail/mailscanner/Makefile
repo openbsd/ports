@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2009/06/11 23:33:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2009/10/07 20:59:29 sthen Exp $
 
 COMMENT=	virus/spam scanning framework
 
-V=		4.77
-Vs=		10
+V=		4.78
+Vs=		17
 Vss=		${Vs}-1
 CATEGORIES=	mail
 MASTER_SITES=	http://mailscanner.info/files/4/tar/
@@ -48,8 +48,9 @@ post-extract:
 
 do-install:	install_libexec install_etc install_share install_lib install_bin
 
-BINS=	MailScanner df2mbox d2mbox update_bad_phishing_sites update_phishing_sites
-BINS+=	check_mailscanner clean.quarantine clean.SA.cache analyse_SpamAssassin_cache
+BINS=	MailScanner Quick.Peek df2mbox d2mbox update_bad_phishing_emails
+BINS+=	update_bad_phishing_sites update_phishing_sites check_mailscanner
+BINS+=	clean.quarantine clean.SA.cache analyse_SpamAssassin_cache
 BINS+=	mailscanner_create_locks processing_messages_alert
 
 _MS_sed_frag= _subst() { sed 's,%PREFIX%,${LOCALBASE},g;s,%SYSCONFDIR%,${SYSCONFDIR},g' \
@@ -79,11 +80,13 @@ ETC=	MailScanner.conf country.domains.conf filename.rules.conf
 ETC+=   filetype.rules.conf phishing.bad.sites.conf phishing.safe.sites.conf
 ETC+=	spam.assassin.prefs.conf spam.lists.conf virus.scanners.conf
 ETC+=	archives.filename.rules.conf archives.filetype.rules.conf
-ETC+=	mcp/mcp.spam.assassin.prefs.conf mcp/10_example.cf mcp/v320.pre
-ETC+=	rules/bounce.rules rules/max.message.size.rules rules/spam.whitelist.rules
+ETC+=	conf.d/README mcp/mcp.spam.assassin.prefs.conf mcp/10_example.cf
+ETC+=	mcp/v320.pre rules/bounce.rules rules/max.message.size.rules
+ETC+=	rules/spam.whitelist.rules
 
 install_etc:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/MailScanner
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/MailScanner/conf.d
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/MailScanner/mcp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/MailScanner/rules
 .for _f in ${ETC}

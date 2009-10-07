@@ -1,17 +1,34 @@
-$OpenBSD: patch-bin_update_virus_scanners,v 1.2 2009/01/28 15:16:17 sthen Exp $
---- bin/update_virus_scanners.orig	Mon Jan 12 16:32:30 2009
-+++ bin/update_virus_scanners	Sat Jan 17 09:27:40 2009
-@@ -1,9 +1,9 @@
+$OpenBSD: patch-bin_update_virus_scanners,v 1.3 2009/10/07 20:59:29 sthen Exp $
+--- bin/update_virus_scanners.orig	Thu Aug 27 00:23:09 2009
++++ bin/update_virus_scanners	Fri Aug 28 18:14:34 2009
+@@ -1,12 +1,12 @@
  #!/bin/sh
  
 -SCANNERSCONF=/opt/MailScanner/etc/virus.scanners.conf
--LOCKDIR=`perl -n -e 'print "$_" if chomp && s/^\s*Lock\s*file\s*Dir\s*=\s*([^\s#]+).*$/$1/i' /opt/MailScanner/etc/MailScanner.conf`
--RUNASU=`perl -n -e 'print "$_" if chomp && s/^\s*Run\s*As\s*User\s*=\s*([^\s#]+).*$/$1/i' /opt/MailScanner/etc/MailScanner.conf`
--RUNASG=`perl -n -e 'print "$_" if chomp && s/^\s*Run\s*As\s*Group\s*=\s*([^\s#]+).*$/$1/i' /opt/MailScanner/etc/MailScanner.conf`
+-#LOCKDIR=`perl -n -e 'print "$_" if chomp && s/^\s*Lock\s*file\s*Dir\s*=\s*([^\s#]+).*$/$1/i' /opt/MailScanner/etc/MailScanner.conf`
+-#RUNASU=`perl -n -e 'print "$_" if chomp && s/^\s*Run\s*As\s*User\s*=\s*([^\s#]+).*$/$1/i' /opt/MailScanner/etc/MailScanner.conf`
+-#RUNASG=`perl -n -e 'print "$_" if chomp && s/^\s*Run\s*As\s*Group\s*=\s*([^\s#]+).*$/$1/i' /opt/MailScanner/etc/MailScanner.conf`
+-LOCKDIR=`/opt/MailScanner/bin/Quick.Peek lockfiledir /opt/MailScanner/etc/MailScanner.conf`
+-RUNASU=`/opt/MailScanner/bin/Quick.Peek runasuser /opt/MailScanner/etc/MailScanner.conf`
+-RUNASG=`/opt/MailScanner/bin/Quick.Peek runasgroup /opt/MailScanner/etc/MailScanner.conf`
 +SCANNERSCONF=%SYSCONFDIR%/MailScanner/virus.scanners.conf
-+LOCKDIR=`perl -n -e 'print "$_" if chomp && s/^\s*Lock\s*file\s*Dir\s*=\s*([^\s#]+).*$/$1/i' %SYSCONFDIR%/MailScanner/MailScanner.conf`
-+RUNASU=`perl -n -e 'print "$_" if chomp && s/^\s*Run\s*As\s*User\s*=\s*([^\s#]+).*$/$1/i' %SYSCONFDIR%/MailScanner/MailScanner.conf`
-+RUNASG=`perl -n -e 'print "$_" if chomp && s/^\s*Run\s*As\s*Group\s*=\s*([^\s#]+).*$/$1/i' %SYSCONFDIR%/MailScanner/MailScanner.conf`
++#LOCKDIR=`perl -n -e 'print "$_" if chomp && s/^\s*Lock\s*file\s*Dir\s*=\s*([^\s#]+).*$/$1/i' %SYSCONFDIR%/MailScanner/MailScanner.conf`
++#RUNASU=`perl -n -e 'print "$_" if chomp && s/^\s*Run\s*As\s*User\s*=\s*([^\s#]+).*$/$1/i' %SYSCONFDIR%/MailScanner/MailScanner.conf`
++#RUNASG=`perl -n -e 'print "$_" if chomp && s/^\s*Run\s*As\s*Group\s*=\s*([^\s#]+).*$/$1/i' %SYSCONFDIR%/MailScanner/MailScanner.conf`
++LOCKDIR=`%PREFIX%/bin/Quick.Peek lockfiledir %SYSCONFDIR%/MailScanner/MailScanner.conf`
++RUNASU=`%PREFIX%/bin/Quick.Peek runasuser %SYSCONFDIR%/MailScanner/MailScanner.conf`
++RUNASG=`%PREFIX%/bin/Quick.Peek runasgroup %SYSCONFDIR%/MailScanner/MailScanner.conf`
  
  Disabled=no
  if [ "x$Disabled" = "xyes" ]; then
+@@ -35,8 +35,8 @@ else
+   GREP=grep
+ fi
+ 
+-[ -x /opt/MailScanner/bin/mailscanner_create_locks ] && \
+-/opt/MailScanner/bin/mailscanner_create_locks "$LOCKDIR" "$RUNASU" "$RUNASG"
++[ -x %PREFIX%/bin/mailscanner_create_locks ] && \
++%PREFIX%/bin/mailscanner_create_locks "$LOCKDIR" "$RUNASU" "$RUNASG"
+ 
+ cat ${SCANNERSCONF} | sed -e 's/#.*$//' | ${GREP} -e -wrapper | \
+ while read NAME WRAPPER PACKAGEDIR

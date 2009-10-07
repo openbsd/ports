@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_clean_SA_cache,v 1.1 2009/10/07 20:59:29 sthen Exp $
+--- bin/clean.SA.cache.orig	Fri Aug 28 18:21:12 2009
++++ bin/clean.SA.cache	Fri Aug 28 18:24:09 2009
+@@ -7,8 +7,8 @@ unless (eval { require "DBD/SQLite.pm" }) {
+   exit 0;
+ }
+ 
+-#$cachefile = `perl -n -e 'print "$_" if chomp && s/^\s*SpamAssassin\s*Cache\s*Database\s*File\s*=\s*(\S+)/$1/i' /etc/MailScanner/MailScanner.conf`;
+-$cachefile = `/opt/MailScanner/bin/Quick.Peek spamassassincachedatabasefile /etc/MailScanner/MailScanner.conf`;
++#$cachefile = `perl -n -e 'print "$_" if chomp && s/^\s*SpamAssassin\s*Cache\s*Database\s*File\s*=\s*(\S+)/$1/i' %SYSCONFDIR%/MailScanner/MailScanner.conf`;
++$cachefile = `%PREFIX%/bin/Quick.Peek spamassassincachedatabasefile %SYSCONFDIR%/MailScanner/MailScanner.conf`;
+ chomp $cachefile;
+ $cachefile = '/var/spool/MailScanner/incoming/SpamAssassin.cache.db' unless $cachefile;
+ 

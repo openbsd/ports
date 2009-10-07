@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_cron_update_spamassassin_cron,v 1.1 2009/10/07 20:59:29 sthen Exp $
+--- bin/cron/update_spamassassin.cron.orig	Fri Aug 28 18:35:43 2009
++++ bin/cron/update_spamassassin.cron	Fri Aug 28 18:36:38 2009
+@@ -14,7 +14,7 @@ fi
+ # the clock. 1800 seconds = 30 minutes.
+ # Set this to 0 to disable it.
+ UPDATEMAXDELAY=3600
+-MSSAUPDATE=/opt/MailScanner/bin/update_spamassassin
++MSSAUPDATE=%PREFIX%/bin/update_spamassassin
+ if [ -f /etc/sysconfig/MailScanner ] ; then
+         . /etc/sysconfig/MailScanner
+ fi

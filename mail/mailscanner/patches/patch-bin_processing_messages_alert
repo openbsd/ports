@@ -1,21 +1,30 @@
-$OpenBSD: patch-bin_processing_messages_alert,v 1.2 2009/05/23 21:30:05 sthen Exp $
---- bin/processing_messages_alert.orig	Wed May  6 15:39:02 2009
-+++ bin/processing_messages_alert	Wed May 13 19:32:41 2009
-@@ -1,16 +1,16 @@
+$OpenBSD: patch-bin_processing_messages_alert,v 1.3 2009/10/07 20:59:29 sthen Exp $
+--- bin/processing_messages_alert.orig	Tue Sep  8 10:21:09 2009
++++ bin/processing_messages_alert	Sat Sep 26 13:05:52 2009
+@@ -1,13 +1,13 @@
  #!/bin/sh
  
--noticesfrom=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*From\s*=\s*([^\s#]+).*$/$1/' /opt/MailScanner/etc/MailScanner.conf`
--localpostmaster=`perl -n -e 'print "$_" if chomp && s/^\s*Local\s*Postmaster\s*=\s*([^\s#]+).*$/$1/' /opt/MailScanner/etc/MailScanner.conf`
--noticesto=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*To\s*=\s*([^\s#]+).*$/$1/' /opt/MailScanner/etc/MailScanner.conf`
--sendnotices=`perl -n -e 'print "$_" if chomp && s/^\s*Send\s*Notices\s*=\s*([^\s#]+).*$/$1/' /opt/MailScanner/etc/MailScanner.conf`
-+noticesfrom=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*From\s*=\s*([^\s#]+).*$/$1/' %SYSCONFDIR%/MailScanner/MailScanner.conf`
-+localpostmaster=`perl -n -e 'print "$_" if chomp && s/^\s*Local\s*Postmaster\s*=\s*([^\s#]+).*$/$1/' %SYSCONFDIR%/MailScanner/MailScanner.conf`
-+noticesto=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*To\s*=\s*([^\s#]+).*$/$1/' %SYSCONFDIR%/MailScanner/MailScanner.conf`
-+sendnotices=`perl -n -e 'print "$_" if chomp && s/^\s*Send\s*Notices\s*=\s*([^\s#]+).*$/$1/' %SYSCONFDIR%/MailScanner/MailScanner.conf`
+-#noticesfrom=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*From\s*=\s*([^\s#]+).*$/$1/' /opt/MailScanner/etc/MailScanner.conf`
+-#localpostmaster=`perl -n -e 'print "$_" if chomp && s/^\s*Local\s*Postmaster\s*=\s*([^\s#]+).*$/$1/' /opt/MailScanner/etc/MailScanner.conf`
+-#noticesto=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*To\s*=\s*([^\s#]+).*$/$1/' /opt/MailScanner/etc/MailScanner.conf`
+-#sendnotices=`perl -n -e 'print "$_" if chomp && s/^\s*Send\s*Notices\s*=\s*([^\s#]+).*$/$1/' /opt/MailScanner/etc/MailScanner.conf`
+-noticesfrom=`/opt/MailScanner/bin/Quick.Peek noticesfrom /opt/MailScanner/etc/MailScanner.conf`
+-localpostmaster=`/opt/MailScanner/bin/Quick.Peek localpostmaster /opt/MailScanner/etc/MailScanner.conf`
+-noticesto=`/opt/MailScanner/bin/Quick.Peek noticesto /opt/MailScanner/etc/MailScanner.conf`
+-sendnotices=`/opt/MailScanner/bin/Quick.Peek sendnotices /opt/MailScanner/etc/MailScanner.conf`
++#noticesfrom=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*From\s*=\s*([^\s#]+).*$/$1/' %SYSCONFDIR%/MailScanner/MailScanner.conf`
++#localpostmaster=`perl -n -e 'print "$_" if chomp && s/^\s*Local\s*Postmaster\s*=\s*([^\s#]+).*$/$1/' %SYSCONFDIR%/MailScanner/MailScanner.conf`
++#noticesto=`perl -n -e 'print "$_" if chomp && s/^\s*Notices\s*To\s*=\s*([^\s#]+).*$/$1/' %SYSCONFDIR%/MailScanner/MailScanner.conf`
++#sendnotices=`perl -n -e 'print "$_" if chomp && s/^\s*Send\s*Notices\s*=\s*([^\s#]+).*$/$1/' %SYSCONFDIR%/MailScanner/MailScanner.conf`
++noticesfrom=`%PREFIX%/bin/Quick.Peek noticesfrom %SYSCONFDIR%/MailScanner/MailScanner.conf`
++localpostmaster=`%PREFIX%/bin/Quick.Peek localpostmaster %SYSCONFDIR%/MailScanner/MailScanner.conf`
++noticesto=`%PREFIX%/bin/Quick.Peek noticesto %SYSCONFDIR%/MailScanner/MailScanner.conf`
++sendnotices=`%PREFIX%/bin/Quick.Peek sendnotices %SYSCONFDIR%/MailScanner/MailScanner.conf`
  
  # Only do this if they want to send notices to postmaster at all
  if [ "x$sendnotices" = "xno" ]; then
-   exit 0
+@@ -21,7 +21,7 @@ if ( echo $noticesto | grep -q '^/' ); then
+   noticesto=$localpostmaster
  fi
  
 -alert=`/opt/MailScanner/bin/MailScanner --processing`

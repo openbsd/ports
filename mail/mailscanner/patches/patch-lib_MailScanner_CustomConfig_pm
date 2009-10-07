@@ -1,6 +1,15 @@
-$OpenBSD: patch-lib_MailScanner_CustomConfig_pm,v 1.3 2008/05/16 16:38:36 sthen Exp $
---- lib/MailScanner/CustomConfig.pm.orig	Sun Apr  6 12:44:33 2008
-+++ lib/MailScanner/CustomConfig.pm	Fri May  2 18:36:15 2008
+$OpenBSD: patch-lib_MailScanner_CustomConfig_pm,v 1.4 2009/10/07 20:59:29 sthen Exp $
+--- lib/MailScanner/CustomConfig.pm.orig	Sun Apr  6 12:07:16 2008
++++ lib/MailScanner/CustomConfig.pm	Fri Aug 28 18:52:24 2009
+@@ -765,7 +765,7 @@ my($hostname);
+ 
+ my $ConfFile = $ARGV[0];
+ $ConfFile = $ARGV[1] if $ConfFile =~ /^-+/i;
+-$ConfFile = '/opt/MailScanner/etc/MailScanner.conf' unless $ConfFile && -f $ConfFile;
++$ConfFile = '%SYSCONFDIR%/MailScanner/MailScanner.conf' unless $ConfFile && -f $ConfFile;
+ 
+ my ($AccessDB, $Refusal, $my_mta); # Generalized here for Multiple MTA support
+ $my_mta = lc(MailScanner::Config::QuickPeek($ConfFile, 'mta')) if $ConfFile &&
 @@ -1675,7 +1675,7 @@ __DATA__
  #      SO17 1BJ
  #      United Kingdom
