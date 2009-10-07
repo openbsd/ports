@@ -1,7 +1,7 @@
-$OpenBSD: patch-share_Makefile_in,v 1.3 2009/04/19 15:06:50 steven Exp $
---- share/Makefile.in.orig	Sat Mar 28 22:24:51 2009
-+++ share/Makefile.in	Mon Apr 13 18:54:19 2009
-@@ -193,7 +193,7 @@ top_builddir = @top_builddir@
+$OpenBSD: patch-share_Makefile_in,v 1.4 2009/10/07 20:01:07 sthen Exp $
+--- share/Makefile.in.orig	Thu Sep  3 04:03:46 2009
++++ share/Makefile.in	Wed Sep 30 14:39:48 2009
+@@ -194,7 +194,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign 1.2h
  EXTRA_DIST = Gnuplot.app-defaults
