@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_gmail_Makefile_in,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
+--- plugins/gmail/Makefile.in.orig	Wed Oct  7 11:05:28 2009
++++ plugins/gmail/Makefile.in	Wed Oct  7 11:05:45 2009
+@@ -278,7 +278,7 @@ libcsv_gmail_la_LTLIBRARIES = libcsvgmail.la
+ 
+ # Plugin sources
+ libcsvgmail_la_SOURCES = gmail_csv.c	gmail_csv.h
+-libcsvgmail_la_LDFLAGS = -version-info $(LIBCSV_GMAIL_CURRENT_VERSION):$(LIBCSV_GMAIL_REVISION_VERSION):$(LIBCSV_GMAIL_COMPAT_VERSION)
++libcsvgmail_la_LDFLAGS = -module -avoid-version
+ libcsv_gmail_LTLDFLAGS = -module -rpath./
+ 
+ # Include paths

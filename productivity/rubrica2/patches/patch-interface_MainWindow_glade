@@ -1,0 +1,21 @@
+$OpenBSD: patch-interface_MainWindow_glade,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
+--- interface/MainWindow.glade.orig	Wed Apr 30 11:41:37 2008
++++ interface/MainWindow.glade	Wed Oct  7 11:22:11 2009
+@@ -84,7 +84,7 @@
+             <child>
+               <widget class="GtkMenuItem" id="menuitem2">
+                 <property name="visible">True</property>
+-                <property name="label">_Modifica</property>
++                <property name="label">_Edit</property>
+                 <property name="use_underline">True</property>
+                 <child>
+                   <widget class="GtkMenu" id="menuitem2_menu">
+@@ -173,7 +173,7 @@
+             <child>
+               <widget class="GtkMenuItem" id="menuitem4">
+                 <property name="visible">True</property>
+-                <property name="label">A_iuto</property>
++                <property name="label">_Help</property>
+                 <property name="use_underline">True</property>
+                 <child>
+                   <widget class="GtkMenu" id="menuitem4_menu">

@@ -1,0 +1,8 @@
+Rubrica is an addressbook manager for the GNOME Environment.  It allows
+you to add personal data (name, surname, address, etc.), web links, irc
+and email addresses, telephone numbers, job information (company where
+contact works, company infos, contact's assigment, etc.) and notes.
+
+Rubrica can import/export addressbooks from/to GnomeCard, KAddressbook,
+Evolution, Csv file format, and an export addressboks to HTML and text
+format.

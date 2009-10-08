@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_csv_Makefile_in,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
+--- plugins/csv/Makefile.in.orig	Wed Oct  7 11:13:12 2009
++++ plugins/csv/Makefile.in	Wed Oct  7 11:13:49 2009
+@@ -278,7 +278,7 @@ libcsv_la_LTLIBRARIES = libcsv.la
+ 
+ # Plugin sources
+ libcsv_la_SOURCES = csv.c	csv.h
+-libcsv_la_LDFLAGS = -version-info $(LIBCSV_CURRENT_VERSION):$(LIBCSV_REVISION_VERSION):$(LIBCSV_COMPAT_VERSION)
++libcsv_la_LDFLAGS = -module -avoid-version
+ libcsv_LTLDFLAGS = -module -rpath./
+ 
+ # Include paths

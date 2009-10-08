@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
+--- configure.orig	Wed Oct  7 11:04:52 2009
++++ configure	Wed Oct  7 11:05:20 2009
+@@ -22637,7 +22637,7 @@ Configuration:
+ 	Plugins gui dir:        $libral_plugins_gui_dir
+ 	Pixmap  dir:		$rubrica_pixmaps_dir
+         Icons   dir:            $rubrica_icons_dir
+-	Config  dir:            ${sysconfdir}/gconf/schemas
++	Config  dir:            ${LOCALBASE}/schare/schemas/rubrica2
+ 	Code name:		$RUBRICA_CODE_NAME $RUBRICA_INFO_CODE_NAME
+ "
+ 

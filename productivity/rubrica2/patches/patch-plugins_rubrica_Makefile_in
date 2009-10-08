@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_rubrica_Makefile_in,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
+--- plugins/rubrica/Makefile.in.orig	Mon Jun 29 17:35:59 2009
++++ plugins/rubrica/Makefile.in	Wed Oct  7 11:06:11 2009
+@@ -283,7 +283,7 @@ librubrica_la_SOURCES = \
+ 	load.c		load.h		\
+ 	save.c		save.h
+ 
+-librubrica_la_LDFLAGS = -version-info $(LIBRUBRICA_CURRENT_VERSION):$(LIBRUBRICA_REVISION_VERSION):$(LIBRUBRICA_COMPAT_VERSION)
++librubrica_la_LDFLAGS = -module -avoid-version
+ librubrica_LTLDFLAGS = -module -rpath./
+ 
+ # Include paths

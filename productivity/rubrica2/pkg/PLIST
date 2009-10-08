@@ -1,0 +1,156 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
+@bin bin/rubrica2
+include/libral-1.0/
+include/libral-1.0/libral/
+include/libral-1.0/libral/abook.h
+include/libral-1.0/libral/address.h
+include/libral-1.0/libral/card.h
+include/libral-1.0/libral/company.h
+include/libral-1.0/libral/contact.h
+include/libral-1.0/libral/date.h
+include/libral-1.0/libral/error.h
+include/libral-1.0/libral/filter.h
+include/libral-1.0/libral/group.h
+include/libral-1.0/libral/group_box.h
+include/libral-1.0/libral/libral.h
+include/libral-1.0/libral/lookup.h
+include/libral-1.0/libral/manager.h
+include/libral-1.0/libral/net.h
+include/libral-1.0/libral/notes.h
+include/libral-1.0/libral/personal.h
+include/libral-1.0/libral/plugin.h
+include/libral-1.0/libral/ref.h
+include/libral-1.0/libral/rlib.h
+include/libral-1.0/libral/telephone.h
+include/libral-1.0/libral/timeout.h
+include/libral-1.0/libral/types.h
+include/libral-1.0/libral/utils.h
+include/libral-1.0/libral/work.h
+lib/libral/
+lib/libral.a
+lib/libral.la
+@lib lib/libral.so.${LIBral_VERSION}
+lib/libral/plugins/
+@comment lib/libral/plugins/libcsv.a
+@comment lib/libral/plugins/libcsv.la
+lib/libral/plugins/libcsv.so
+@comment lib/libral/plugins/libcsvgmail.a
+@comment lib/libral/plugins/libcsvgmail.la
+lib/libral/plugins/libcsvgmail.so
+@comment lib/libral/plugins/librubrica.a
+@comment lib/libral/plugins/librubrica.la
+lib/libral/plugins/librubrica.so
+@comment lib/libral/plugins/libvcard.a
+@comment lib/libral/plugins/libvcard.la
+lib/libral/plugins/libvcard.so
+lib/pkgconfig/libral.pc
+share/applications/rubrica2.desktop
+share/gtk-doc/html/libRAL/
+share/gtk-doc/html/libRAL/RAbook.html
+share/gtk-doc/html/libRAL/RAddress.html
+share/gtk-doc/html/libRAL/RCard.html
+share/gtk-doc/html/libRAL/RCompanyCard.html
+share/gtk-doc/html/libRAL/RContact.html
+share/gtk-doc/html/libRAL/RDate.html
+share/gtk-doc/html/libRAL/RFilter.html
+share/gtk-doc/html/libRAL/RGroup.html
+share/gtk-doc/html/libRAL/RGroupBox.html
+share/gtk-doc/html/libRAL/RNetAddress.html
+share/gtk-doc/html/libRAL/RNotes.html
+share/gtk-doc/html/libRAL/RPersonalCard.html
+share/gtk-doc/html/libRAL/RPlugin.html
+share/gtk-doc/html/libRAL/RRef.html
+share/gtk-doc/html/libRAL/RTelephone.html
+share/gtk-doc/html/libRAL/RTimeout.html
+share/gtk-doc/html/libRAL/RWork.html
+share/gtk-doc/html/libRAL/ch01.html
+share/gtk-doc/html/libRAL/home.png
+share/gtk-doc/html/libRAL/index.html
+share/gtk-doc/html/libRAL/index.sgml
+share/gtk-doc/html/libRAL/left.png
+share/gtk-doc/html/libRAL/libRAL-RCsv.html
+share/gtk-doc/html/libRAL/libRAL-RPluginManager.html
+share/gtk-doc/html/libRAL/libRAL-RRubrica.html
+share/gtk-doc/html/libRAL/libRAL-RVCard.html
+share/gtk-doc/html/libRAL/libRAL-error.html
+share/gtk-doc/html/libRAL/libRAL-io.html
+share/gtk-doc/html/libRAL/libRAL-load.html
+share/gtk-doc/html/libRAL/libRAL-lookup.html
+share/gtk-doc/html/libRAL/libRAL-rlib.html
+share/gtk-doc/html/libRAL/libRAL-save.html
+share/gtk-doc/html/libRAL/libRAL-types.html
+share/gtk-doc/html/libRAL/libRAL-utils.html
+share/gtk-doc/html/libRAL/libRAL.devhelp
+share/gtk-doc/html/libRAL/libRAL.devhelp2
+share/gtk-doc/html/libRAL/right.png
+share/gtk-doc/html/libRAL/style.css
+share/gtk-doc/html/libRAL/up.png
+share/locale/de/LC_MESSAGES/rubrica2.mo
+share/locale/fr/LC_MESSAGES/rubrica2.mo
+share/locale/it/LC_MESSAGES/rubrica2.mo
+share/locale/uk/LC_MESSAGES/rubrica2.mo
+share/mime-info/
+share/mime-info/rubrica2.keys
+share/mime-info/rubrica2.mime
+share/pixmaps/
+share/pixmaps/rubrica2/
+share/pixmaps/rubrica2/16x16/
+share/pixmaps/rubrica2/16x16/ccare.png
+share/pixmaps/rubrica2/16x16/green.png
+share/pixmaps/rubrica2/16x16/operator.png
+share/pixmaps/rubrica2/22x22/
+share/pixmaps/rubrica2/22x22/hicolor
+share/pixmaps/rubrica2/24x24/
+share/pixmaps/rubrica2/24x24/stuffs.png
+share/pixmaps/rubrica2/24x24/university.png
+share/pixmaps/rubrica2/48x48/
+share/pixmaps/rubrica2/48x48/all.png
+share/pixmaps/rubrica2/48x48/bussines.png
+share/pixmaps/rubrica2/48x48/chat.png
+share/pixmaps/rubrica2/48x48/contacts.png
+share/pixmaps/rubrica2/48x48/customer.png
+share/pixmaps/rubrica2/48x48/flame.png
+share/pixmaps/rubrica2/48x48/freebsd.png
+share/pixmaps/rubrica2/48x48/gnu.png
+share/pixmaps/rubrica2/48x48/hobbies.png
+share/pixmaps/rubrica2/48x48/keys.png
+share/pixmaps/rubrica2/48x48/lock.png
+share/pixmaps/rubrica2/48x48/mailbox.png
+share/pixmaps/rubrica2/48x48/net.png
+share/pixmaps/rubrica2/48x48/notes.png
+share/pixmaps/rubrica2/48x48/phone.png
+share/pixmaps/rubrica2/48x48/photo.png
+share/pixmaps/rubrica2/48x48/puzzle.png
+share/pixmaps/rubrica2/48x48/rate1.png
+share/pixmaps/rubrica2/48x48/rate2.png
+share/pixmaps/rubrica2/48x48/rate3.png
+share/pixmaps/rubrica2/48x48/rate4.png
+share/pixmaps/rubrica2/48x48/rate5.png
+share/pixmaps/rubrica2/48x48/role.png
+share/pixmaps/rubrica2/48x48/rubrica.png
+share/pixmaps/rubrica2/48x48/search-contact.png
+share/pixmaps/rubrica2/48x48/sport.png
+share/pixmaps/rubrica2/48x48/strategies.png
+share/pixmaps/rubrica2/48x48/tux.png
+share/pixmaps/rubrica2/scalable/
+share/pixmaps/rubrica2/scalable/card_photo.svg
+share/pixmaps/rubrica2/scalable/query.svg
+share/rubrica2/
+share/rubrica2/interface/
+share/rubrica2/interface/CompanyCard.glade
+share/rubrica2/interface/GroupManager.glade
+share/rubrica2/interface/MainWindow.glade
+share/rubrica2/interface/Menu.glade
+share/rubrica2/interface/MenuTrash.glade
+share/rubrica2/interface/PersonalCard.glade
+share/rubrica2/interface/Preferences.glade
+share/rubrica2/interface/Search.glade
+share/rubrica2/interface/logo.png
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/rubrica2.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec %D/bin/update-mime-database %D/share/mime

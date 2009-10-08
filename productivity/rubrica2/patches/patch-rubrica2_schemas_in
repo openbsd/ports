@@ -1,0 +1,40 @@
+$OpenBSD: patch-rubrica2_schemas_in,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
+--- rubrica2.schemas.in.orig	Wed Apr 30 11:41:37 2008
++++ rubrica2.schemas.in	Wed Oct  7 12:05:54 2009
+@@ -6,7 +6,7 @@
+ 		<applyto>/apps/rubrica2/file_format</applyto>
+ 		<owner>rubrica</owner>
+ 		<type>int</type>
+-		<default>@FILE_FORMAT@</default>
++		<default>@RUBRICA_FILE_FORMAT@</default>
+ 		<locale name="C">
+         		<short>rubrica file format</short>
+       		</locale>
+@@ -78,7 +78,7 @@
+ 		<applyto>/apps/rubrica2/file/folder</applyto>
+ 		<owner>rubrica</owner>
+ 		<type>string</type>
+-		<default>~/.rubrica2</default>
++		<default></default>
+ 		<locale name="C">
+ 			<short>rubrica's default folder</short>
+ 		</locale>
+@@ -88,7 +88,7 @@
+ 		<key>/schemas/apps/rubrica2/file/load_files</key>
+ 		<applyto>/apps/rubrica2/file/load_files</applyto>
+ 		<owner>rubrica</owner>
+-		<type>boolean</type>
++		<type>bool</type>
+ 		<default>false</default>
+ 		<locale name="C">
+ 			<short>Load addressbooks on startup</short>
+@@ -100,7 +100,8 @@
+ 		<applyto>/apps/rubrica2/file/files</applyto>
+ 		<owner>rubrica</owner>
+ 		<type>list</type>
+-		<default></default>
++		<list_type>string</list_type>
++		<default>[]</default>
+ 		<locale name="C">
+ 			<short>Files that rubrica will open at startup</short>
+ 		</locale>

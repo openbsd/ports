@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_test_libral_c,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
+--- test/test_libral.c.orig	Wed Oct  7 12:07:25 2009
++++ test/test_libral.c	Wed Oct  7 12:07:32 2009
+@@ -394,7 +394,7 @@ main (int argc, char* argv[])
+      programmers, another_user_made_group
+   */
+   group = r_group_new();
+-  g_object_set(group, "group-name", "bussines", NULL);
++  g_object_set(group, "group-name", "business", NULL);
+   r_card_add_group(R_CARD(cmp), group);
+ 
+   group = r_group_new();

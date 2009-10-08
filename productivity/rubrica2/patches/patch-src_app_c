@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_app_c,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
+--- src/app.c.orig	Wed Oct  7 12:07:40 2009
++++ src/app.c	Wed Oct  7 12:07:54 2009
+@@ -69,7 +69,7 @@ static RubricaDefaultCategories defcats[] = {
+   {"applications-multimedia",  "hobbies",       N_("hobbies")      },
+   {"sport",                    "sport",         N_("sport")        },
+ 
+-  {"bussines",                 "bussines",      N_("bussines")     },
++  {"bussines",                 "business",      N_("business")     },
+   {"system-file-manager",      "company",       N_("company")      },
+   {"application-certificate",  "legal",         N_("legal")        },
+   {"applications-office",      "office",        N_("office")       },
