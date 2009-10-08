@@ -10,7 +10,7 @@ read/write connections to the same mailbox are permitted. The server
 supports access control lists on mailboxes and storage quotas on mailbox
 hierarchies.
 
-Because of cyrus-imapd+OpenBSD mmap uncompatibility, the server runs in
+Because of cyrus-imapd+OpenBSD mmap incompatibility, the server runs in
 compat mode incuring a performance penalty under high load.
 
 Following man pages have been renamed to avoid conflicts with other
