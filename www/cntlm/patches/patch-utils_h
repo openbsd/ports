@@ -1,0 +1,18 @@
+$OpenBSD: patch-utils_h,v 1.1.1.1 2009/10/08 19:13:09 sthen Exp $
+--- utils.h.orig	Thu Oct  8 03:31:13 2009
++++ utils.h	Thu Oct  8 03:31:43 2009
+@@ -23,13 +23,13 @@
+ #define _UTILS_H
+ 
+ #include <pthread.h>
++#include <sys/param.h>
+ #include "config/config.h"
+ 
+ #define BUFSIZE			1024
+ #define MINIBUF_SIZE		50
+ #define VAL(var, type, offset)	*((type *)(var+offset))
+ #define MEM(var, type, offset)	(type *)(var+offset)
+-#define MIN(a, b)		((a) < (b) ? (a) : (b))
+ 
+ /*
+  * Two single-linked list types. First is for storing headers,

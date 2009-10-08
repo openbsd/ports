@@ -1,0 +1,11 @@
+$OpenBSD: patch-acl_c,v 1.1.1.1 2009/10/08 19:13:09 sthen Exp $
+--- acl.c.orig	Thu Oct  8 03:32:08 2009
++++ acl.c	Thu Oct  8 03:32:21 2009
+@@ -22,6 +22,7 @@
+ #include <syslog.h>
+ #include <string.h>
+ #include <stdlib.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>

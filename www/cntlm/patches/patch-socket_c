@@ -1,0 +1,11 @@
+$OpenBSD: patch-socket_c,v 1.1.1.1 2009/10/08 19:13:09 sthen Exp $
+--- socket.c.orig	Thu Oct  8 03:31:49 2009
++++ socket.c	Thu Oct  8 03:32:04 2009
+@@ -19,6 +19,7 @@
+  *
+  */
+ 
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>

@@ -1,0 +1,20 @@
+$OpenBSD: patch-ntlm_c,v 1.1.1.1 2009/10/08 19:13:09 sthen Exp $
+--- ntlm.c.orig	Thu Oct  8 08:04:39 2009
++++ ntlm.c	Thu Oct  8 08:05:27 2009
+@@ -22,6 +22,7 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <stdint.h>
++#include <inttypes.h>
+ 
+ #include "ntlm.h"
+ #include "swap.h"
+@@ -75,7 +76,7 @@ static void ntlm2_calc_resp(char **nthash, int *ntlen,
+ 
+ 	if (0 && debug) {
+ 		tmp = printmem(nonce, 8, 7);
+-		printf("NTLMv2:\n\t    Nonce: %s\n\tTimestamp: %lld\n", tmp, tw);
++		printf("NTLMv2:\n\t    Nonce: %s\n\tTimestamp: %"PRId64"\n", tmp, tw);
+ 		free(tmp);
+ 	}
+ 

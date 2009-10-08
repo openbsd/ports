@@ -1,0 +1,3 @@
+Cntlm is an http proxy server, written in pure C, that allows you to 
+authenticate via the proprietary NTLM protocol, so you can use web 
+sites and web proxies that require NTLM/NTLMv2 authorization.

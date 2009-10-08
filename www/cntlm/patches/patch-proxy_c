@@ -1,0 +1,64 @@
+$OpenBSD: patch-proxy_c,v 1.1.1.1 2009/10/08 19:13:09 sthen Exp $
+--- proxy.c.orig	Thu Nov 15 18:08:06 2007
++++ proxy.c	Thu Oct  8 08:08:07 2009
+@@ -530,6 +530,7 @@ bailout:
+ int make_connect(int sd, const char *thost) {
+ 	rr_data_t data1, data2;
+ 	int ret, closed;
++	hlist_t tl;
+ 
+ 	if (!sd || !thost || !strlen(thost))
+ 		return -1;
+@@ -540,9 +541,18 @@ int make_connect(int sd, const char *thost) {
+ 	data1->req = 1;
+ 	data1->method = strdup("CONNECT");
+ 	data1->url = strdup(thost);
+-	data1->http = strdup("0");
++	data1->http = strdup("1");
+ 	data1->headers = hlist_mod(data1->headers, "Proxy-Connection", "Keep-Alive", 1);
+ 
++	/*
++	 * Header replacement
++	 */
++	tl = header_list;
++	while (tl) {
++		data1->headers = hlist_mod(data1->headers, tl->key, tl->value, 1);
++		tl = tl->next;
++	}
++
+ 	if (debug)
+ 		printf("Starting authentication...\n");
+ 
+@@ -916,7 +926,7 @@ void *proxy_thread(void *client) {
+ 	char *tmp, *buf, *pos, *dom;
+ 	struct auth_s *tcreds;						/* Per-thread credentials; for NTLM-to-basic */
+ 
+-	int cd = (int)client;
++	int cd = (int)(uintptr_t)client;
+ 	int authok = 0;
+ 	int sd = 0;
+ 
+@@ -1387,7 +1397,7 @@ void *tunnel_thread(void *client) {
+ }
+ 
+ void *socks5_thread(void *client) {
+-	int cd = (int)client;
++	int cd = (int)(uintptr_t)client;
+ 	char *tmp, *thost, *tport, *uname, *upass;
+ 	unsigned char *bs, *auths, *addr;
+ 	unsigned short port;
+@@ -2618,11 +2628,11 @@ int main(int argc, char **argv) {
+ 
+ 					if (plist_in(proxyd_list, i)) {
+ 						if (!serialize)
+-							tid = pthread_create(&pthr, &pattr, proxy_thread, (void *)cd);
++							tid = pthread_create(&pthr, &pattr, proxy_thread, (void *)(uintptr_t)cd);
+ 						else
+-							proxy_thread((void *)cd);
++							proxy_thread((void *)(uintptr_t)cd);
+ 					} else if (plist_in(socksd_list, i)) {
+-						tid = pthread_create(&pthr, &pattr, socks5_thread, (void *)cd);
++						tid = pthread_create(&pthr, &pattr, socks5_thread, (void *)(uintptr_t)cd);
+ 					} else {
+ 						data = (struct thread_arg_s *)new(sizeof(struct thread_arg_s));
+ 						data->fd = cd;

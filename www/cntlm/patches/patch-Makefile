@@ -1,0 +1,46 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/10/08 19:13:09 sthen Exp $
+--- Makefile.orig	Tue Nov 20 17:18:24 2007
++++ Makefile	Thu Oct  8 05:03:34 2009
+@@ -2,9 +2,9 @@
+ # You can tweak these three variables to make things install where you
+ # like, but do not touch more unless you know what you are doing. ;)
+ #
+-SYSCONFDIR=/usr/local/etc
+-BINDIR=/usr/local/bin
+-MANDIR=/usr/local/man
++SYSCONFDIR=${DESTDIR}/etc/${NAME}
++BINDIR=${PREFIX}/bin
++MANDIR=${PREFIX}/man
+ 
+ #
+ # Careful now...
+@@ -13,8 +13,8 @@ MANDIR=/usr/local/man
+ #
+ CC=gcc
+ OBJS=utils.o ntlm.o xcrypt.o config.o socket.o acl.o auth.o http.o proxy.o 
+-CFLAGS=$(FLAGS) -std=c99 -Wall -pedantic -O3 -D__BSD_VISIBLE -D_ALL_SOURCE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -D_REENTRANT -DVERSION=\"`cat VERSION`\"
+-LDFLAGS=-lpthread
++CFLAGS=$(FLAGS) -std=c99 -Wall -pedantic -D__BSD_VISIBLE -D_ALL_SOURCE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -D_REENTRANT -DVERSION=\"`cat VERSION`\"
++LDFLAGS=-pthread
+ NAME=cntlm
+ VER=`cat VERSION`
+ DIR=`pwd`
+@@ -42,12 +42,13 @@ install: $(NAME)
+ 		install -O root -G system -M 644 -f $(MANDIR)/man1 doc/$(NAME).1; \
+ 		install -O root -G system -M 600 -c $(SYSCONFDIR) doc/$(NAME).conf; \
+ 	else \
+-		install -D -o root -g root -m 755 -s $(NAME) $(BINDIR)/$(NAME); \
+-		install -D -o root -g root -m 644 doc/$(NAME).1 $(MANDIR)/man1/$(NAME).1; \
+-		[ -f $(SYSCONFDIR)/$(NAME).conf -o -z "$(SYSCONFDIR)" ] \
+-			|| install -D -o root -g root -m 600 doc/$(NAME).conf $(SYSCONFDIR)/$(NAME).conf; \
++		install -d -m 0755 ${BINDIR}; \
++		install -o root -g bin -m 0555 -s ${NAME} ${BINDIR}/${NAME}; \
++		install -d -m 0755 ${MANDIR}/man1; \
++		install -o root -g bin -m 0444 doc/${NAME}.1 ${MANDIR}/man1/${NAME}.1; \
++		install -d -m 0755 ${PREFIX}/share/examples/${NAME}; \
++		install -o root -g bin -m 0444 doc/${NAME}.conf ${PREFIX}/share/examples/${NAME}/${NAME}.conf; \
+ 	fi
+-	@echo; echo "Cntlm will look for configuration in $(SYSCONFDIR)/$(NAME).conf"
+ 
+ rpm:
+ 	if [ `id -u` = 0 ]; then \
