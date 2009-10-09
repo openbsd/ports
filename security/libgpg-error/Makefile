@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/11 05:23:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/10/09 23:03:38 ajacoutot Exp $
 
 COMMENT=	error codes for GnuPG related software
 
-DISTNAME=	libgpg-error-1.5
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	libgpg-error-1.7
 CATEGORIES=	security devel
-SHARED_LIBS=	gpg-error	2.0
+SHARED_LIBS=	gpg-error	3.0 # .5.0
 
 HOMEPAGE=	http://www.gnupg.org/related_software/libgpg-error.en.html
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c
+WANTLIB=	c
 
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/libgpg-error/ \
 		ftp://gd.tuwien.ac.at/privacy/gnupg/libgpg-error/ \

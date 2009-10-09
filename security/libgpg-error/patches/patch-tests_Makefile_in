@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.3 2007/09/20 10:37:26 steven Exp $
---- tests/Makefile.in.orig	Thu Nov 30 16:00:11 2006
-+++ tests/Makefile.in	Fri Sep 14 21:05:31 2007
-@@ -74,7 +74,7 @@ am__EXEEXT_1 = t-strerror$(EXEEXT) t-syserror$(EXEEXT)
+$OpenBSD: patch-tests_Makefile_in,v 1.4 2009/10/09 23:03:38 ajacoutot Exp $
+--- tests/Makefile.in.orig	Wed Nov 26 14:34:02 2008
++++ tests/Makefile.in	Sat Oct 10 00:15:11 2009
+@@ -71,7 +71,7 @@ am__EXEEXT_1 = t-strerror$(EXEEXT) t-syserror$(EXEEXT)
  PROGRAMS = $(noinst_PROGRAMS)
  t_strerror_SOURCES = t-strerror.c
  t_strerror_OBJECTS = t-strerror.$(OBJEXT)
