@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2008/12/11 22:35:42 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2009/10/09 16:09:31 steven Exp $
 
 You will need to have a ~/.flickcurl.conf .
 
@@ -21,6 +21,4 @@ Visit your authentication url in a web browser to get a "frob".
 
 flickcurl -a <your frob>
 
-flickcurl will save the token in yor config file. Don't be fooled by
-'Try `flickcurl --help' for more information.'. Unless you see errors,
-it worked.
+flickcurl will save the token in your config file. 

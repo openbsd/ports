@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/11 22:35:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/09 16:09:31 steven Exp $
 %%SHARED%%
 @bin bin/flickcurl
 bin/flickcurl-config
@@ -20,11 +20,21 @@ share/gtk-doc/html/flickcurl/flickcurl-auth-authenticate.html
 share/gtk-doc/html/flickcurl/flickcurl-auth-register.html
 share/gtk-doc/html/flickcurl/flickcurl-auth-use.html
 share/gtk-doc/html/flickcurl/flickcurl-auth.html
+share/gtk-doc/html/flickcurl/flickcurl-searching-search-example.html
+share/gtk-doc/html/flickcurl/flickcurl-searching-search-extras.html
+share/gtk-doc/html/flickcurl/flickcurl-searching-search-paging.html
+share/gtk-doc/html/flickcurl/flickcurl-searching-search-parameters.html
+share/gtk-doc/html/flickcurl/flickcurl-searching-search-result-formats.html
+share/gtk-doc/html/flickcurl/flickcurl-searching-search-results.html
+share/gtk-doc/html/flickcurl/flickcurl-searching-search-run.html
+share/gtk-doc/html/flickcurl/flickcurl-searching.html
 share/gtk-doc/html/flickcurl/flickcurl-section-activity.html
 share/gtk-doc/html/flickcurl/flickcurl-section-auth.html
 share/gtk-doc/html/flickcurl/flickcurl-section-blogs.html
 share/gtk-doc/html/flickcurl/flickcurl-section-category.html
+share/gtk-doc/html/flickcurl/flickcurl-section-collections.html
 share/gtk-doc/html/flickcurl/flickcurl-section-comment.html
+share/gtk-doc/html/flickcurl/flickcurl-section-commons.html
 share/gtk-doc/html/flickcurl/flickcurl-section-contact.html
 share/gtk-doc/html/flickcurl/flickcurl-section-context.html
 share/gtk-doc/html/flickcurl/flickcurl-section-core.html
@@ -32,11 +42,14 @@ share/gtk-doc/html/flickcurl/flickcurl-section-exif.html
 share/gtk-doc/html/flickcurl/flickcurl-section-favorite.html
 share/gtk-doc/html/flickcurl/flickcurl-section-general.html
 share/gtk-doc/html/flickcurl/flickcurl-section-group.html
+share/gtk-doc/html/flickcurl/flickcurl-section-machinetags.html
 share/gtk-doc/html/flickcurl/flickcurl-section-misc.html
+share/gtk-doc/html/flickcurl/flickcurl-section-panda.html
 share/gtk-doc/html/flickcurl/flickcurl-section-people.html
 share/gtk-doc/html/flickcurl/flickcurl-section-person.html
 share/gtk-doc/html/flickcurl/flickcurl-section-photo.html
 share/gtk-doc/html/flickcurl/flickcurl-section-photoset.html
+share/gtk-doc/html/flickcurl/flickcurl-section-photoslist.html
 share/gtk-doc/html/flickcurl/flickcurl-section-place.html
 share/gtk-doc/html/flickcurl/flickcurl-section-prefs.html
 share/gtk-doc/html/flickcurl/flickcurl-section-reflection.html
@@ -51,8 +64,8 @@ share/gtk-doc/html/flickcurl/flickcurl.devhelp2
 share/gtk-doc/html/flickcurl/home.png
 share/gtk-doc/html/flickcurl/index.html
 share/gtk-doc/html/flickcurl/index.sgml
+share/gtk-doc/html/flickcurl/indexes.html
 share/gtk-doc/html/flickcurl/introduction.html
-share/gtk-doc/html/flickcurl/ix01.html
 share/gtk-doc/html/flickcurl/left.png
 share/gtk-doc/html/flickcurl/right.png
 share/gtk-doc/html/flickcurl/style.css
