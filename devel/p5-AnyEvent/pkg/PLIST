@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/07/21 13:52:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/10/09 23:24:21 sthen Exp $
+${P5SITE}/AE.pm
 ${P5SITE}/AnyEvent/
 ${P5SITE}/AnyEvent.pm
 ${P5SITE}/AnyEvent/DNS.pm
+${P5SITE}/AnyEvent/Debug.pm
 ${P5SITE}/AnyEvent/Handle.pm
 ${P5SITE}/AnyEvent/Impl/
 ${P5SITE}/AnyEvent/Impl/EV.pm
@@ -9,6 +11,7 @@ ${P5SITE}/AnyEvent/Impl/Event.pm
 ${P5SITE}/AnyEvent/Impl/EventLib.pm
 ${P5SITE}/AnyEvent/Impl/Glib.pm
 ${P5SITE}/AnyEvent/Impl/IOAsync.pm
+${P5SITE}/AnyEvent/Impl/Irssi.pm
 ${P5SITE}/AnyEvent/Impl/POE.pm
 ${P5SITE}/AnyEvent/Impl/Perl.pm
 ${P5SITE}/AnyEvent/Impl/Qt.pm
@@ -18,14 +21,17 @@ ${P5SITE}/AnyEvent/Socket.pm
 ${P5SITE}/AnyEvent/Strict.pm
 ${P5SITE}/AnyEvent/TLS.pm
 ${P5SITE}/AnyEvent/Util.pm
+@man man/man3p/AE.3p
 @man man/man3p/AnyEvent.3p
 @man man/man3p/AnyEvent::DNS.3p
+@man man/man3p/AnyEvent::Debug.3p
 @man man/man3p/AnyEvent::Handle.3p
 @man man/man3p/AnyEvent::Impl::EV.3p
 @man man/man3p/AnyEvent::Impl::Event.3p
 @man man/man3p/AnyEvent::Impl::EventLib.3p
 @man man/man3p/AnyEvent::Impl::Glib.3p
 @man man/man3p/AnyEvent::Impl::IOAsync.3p
+@man man/man3p/AnyEvent::Impl::Irssi.3p
 @man man/man3p/AnyEvent::Impl::POE.3p
 @man man/man3p/AnyEvent::Impl::Perl.3p
 @man man/man3p/AnyEvent::Impl::Qt.3p
