@@ -1,0 +1,14 @@
+For people upgrading from sawfish 1.3.3 or older, you will have to
+manually migrate your existing configuration:
+
+$ mv ~/.sawmillrc ~/.sawfishrc
+
+If you configuration file contains the line:
+
+(require 'sawmill-defaults)
+
+please change it to:
+
+(require 'sawfish-defaults)
+
+And restart sawfish.

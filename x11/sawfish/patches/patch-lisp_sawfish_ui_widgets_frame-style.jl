@@ -1,6 +1,7 @@
---- lisp/sawfish/ui/widgets/frame-style.jl.orig	Sun Jul 29 11:45:04 2007
-+++ lisp/sawfish/ui/widgets/frame-style.jl	Sun Sep 27 18:54:31 2009
-@@ -112,8 +112,7 @@
+$OpenBSD: patch-lisp_sawfish_ui_widgets_frame-style.jl,v 1.3 2009/10/09 13:06:30 jasper Exp $
+--- lisp/sawfish/ui/widgets/frame-style.jl.orig	Sun Sep 20 11:42:02 2009
++++ lisp/sawfish/ui/widgets/frame-style.jl	Sun Sep 27 19:54:16 2009
+@@ -113,8 +113,7 @@
  					  (setq full dir)
  					  (throw 'out t))
  				      (error))))
