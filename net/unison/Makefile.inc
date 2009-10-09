@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile.inc,v 1.8 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2009/10/09 07:13:40 giovanni Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.cis.upenn.edu/~bcpierce/unison/
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,7 +27,7 @@ BUILD_DEPENDS+=	::x11/lablgtk
 LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
 MAKE_FLAGS=	UISTYLE=gtk
 USE_X11=	Yes
-WANTLIB+=	X11 Xext Xi glib gmodule iconv intl pthread-stubs xcb
+WANTLIB+=	X11 Xext Xi glib gmodule iconv intl
 .endif
 
 # CFLAGS _must_ be empty.  This is an OCaml compiler.

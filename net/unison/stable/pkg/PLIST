@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/22 17:44:41 sturm Exp $
-bin/unison
+@comment $OpenBSD: PLIST,v 1.2 2009/10/09 07:13:41 giovanni Exp $
+@bin bin/unison
 share/doc/unison/
 share/doc/unison/BUGS.txt
 share/doc/unison/NEWS
