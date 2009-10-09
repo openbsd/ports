@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_file-method_c,v 1.1 2008/06/28 11:42:27 jasper Exp $
---- modules/file-method.c.orig	Sat Jun 28 13:25:57 2008
-+++ modules/file-method.c	Sat Jun 28 13:30:46 2008
-@@ -2377,7 +2377,18 @@ do_set_file_info (GnomeVFSMethod *method,
+$OpenBSD: patch-modules_file-method_c,v 1.2 2009/10/09 17:39:38 ajacoutot Exp $
+--- modules/file-method.c.orig	Mon May 25 10:37:05 2009
++++ modules/file-method.c	Thu Oct  8 17:05:14 2009
+@@ -2378,7 +2378,18 @@ do_set_file_info (GnomeVFSMethod *method,
  	}
  
  	if (mask & GNOME_VFS_SET_FILE_INFO_PERMISSIONS) {
