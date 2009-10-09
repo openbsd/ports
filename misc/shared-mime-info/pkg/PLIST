@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2009/07/19 10:44:59 kili Exp $
+@comment $OpenBSD: PLIST,v 1.19 2009/10/09 17:37:07 ajacoutot Exp $
 share/mime/
 share/mime/packages/
 share/mime/packages/freedesktop.org.xml
@@ -39,6 +39,7 @@ share/locale/ko/LC_MESSAGES/shared-mime-info.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/shared-mime-info.mo
+share/locale/lv/LC_MESSAGES/shared-mime-info.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/shared-mime-info.mo
