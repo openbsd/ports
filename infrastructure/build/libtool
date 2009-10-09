@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.78 2009/10/09 21:23:42 steven Exp $
+# $OpenBSD: libtool,v 1.79 2009/10/09 22:24:56 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -967,6 +967,8 @@ if ($mode eq 'compile') {
 		if ($opts{'export-dynamic'}) {
 			push(@ARGV, "-Wl,-E");
 		}
+		$shared = 1;
+	        $shared = 0 if ($opts{'static'});
 		my $objlist = \@objs;
 		if (@objs == 0) {
 		        if (@sobjs > 0) {
@@ -980,7 +982,7 @@ if ($mode eq 'compile') {
 		my $RPdirs = [];
 		@$RPdirs = (@Ropts, @RPopts, @Rresolved);
 
-		$program->link($ltprog, $ofile, $ofile, $odir, 1, $objlist, $libs, $libstofind, \%opts, $RPdirs, $seen_la_shared);
+		$program->link($ltprog, $ofile, $ofile, $odir, $shared, $objlist, $libs, $libstofind, \%opts, $RPdirs, $seen_la_shared);
 		if ($seen_la_shared) {
 			$program->write_wrapper($outfile);
 			chmod 0755, $outfile;
