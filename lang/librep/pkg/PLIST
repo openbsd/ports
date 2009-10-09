@@ -1,20 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/01/03 22:19:26 alek Exp $
-bin/rep
+@comment $OpenBSD: PLIST,v 1.7 2009/10/09 13:04:43 jasper Exp $
+%%SHARED%%
+@bin bin/rep
 bin/rep-config
-bin/rep-remote
+@bin bin/rep-remote
 bin/rep-xgettext
-bin/repdoc
+@bin bin/repdoc
 include/rep.h
+include/rep_gh.h
 include/rep_lisp.h
 include/rep_regexp.h
 include/rep_subrs.h
 @info info/librep.info
 lib/librep.a
 lib/librep.la
+lib/pkgconfig/librep.pc
 libexec/rep/
 libexec/rep/${VERSION}/
 libexec/rep/${VERSION}/${GNU_ARCH}/
-libexec/rep/${VERSION}/${GNU_ARCH}/DOC
+libexec/rep/${VERSION}/${GNU_ARCH}/doc-strings
 libexec/rep/${VERSION}/${GNU_ARCH}/emulate-gnu-tar
 libexec/rep/${VERSION}/${GNU_ARCH}/gdbm.a
 libexec/rep/${VERSION}/${GNU_ARCH}/gdbm.la
@@ -26,6 +29,9 @@ libexec/rep/${VERSION}/${GNU_ARCH}/rep/
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/data/
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/data/tables.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/data/tables.la
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/ffi.a
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/ffi.la
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/ffi.so
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/i18n/
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/i18n/gettext.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/i18n/gettext.la
@@ -47,6 +53,9 @@ libexec/rep/${VERSION}/${GNU_ARCH}/rep/lang/record-profile.la
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/util/
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/util/md5.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/util/md5.la
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/util/utf8.a
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/util/utf8.la
+libexec/rep/${VERSION}/${GNU_ARCH}/rep/util/utf8.so
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/vm/
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/vm/safe-interpreter.a
 libexec/rep/${VERSION}/${GNU_ARCH}/rep/vm/safe-interpreter.la
@@ -61,7 +70,6 @@ libexec/rep/${GNU_ARCH}/install-aliases
 libexec/rep/${GNU_ARCH}/libtool
 libexec/rep/${GNU_ARCH}/rep_config.h
 libexec/rep/${GNU_ARCH}/rules.mk
-share/aclocal/rep.m4
 share/emacs/site-lisp/rep-debugger.el
 share/rep/
 share/rep/${VERSION}/
@@ -240,12 +248,8 @@ share/rep/${VERSION}/lisp/rep/vm/compiler/no-lang.jl
 share/rep/${VERSION}/lisp/rep/vm/compiler/no-lang.jlc
 share/rep/${VERSION}/lisp/rep/vm/compiler/rep.jl
 share/rep/${VERSION}/lisp/rep/vm/compiler/rep.jlc
-share/rep/${VERSION}/lisp/rep/vm/compiler/scheme.jl
-share/rep/${VERSION}/lisp/rep/vm/compiler/scheme.jlc
 share/rep/${VERSION}/lisp/rep/vm/compiler/src.jl
 share/rep/${VERSION}/lisp/rep/vm/compiler/src.jlc
-share/rep/${VERSION}/lisp/rep/vm/compiler/unscheme.jl
-share/rep/${VERSION}/lisp/rep/vm/compiler/unscheme.jlc
 share/rep/${VERSION}/lisp/rep/vm/compiler/utils.jl
 share/rep/${VERSION}/lisp/rep/vm/compiler/utils.jlc
 share/rep/${VERSION}/lisp/rep/vm/disassembler.jl
@@ -266,30 +270,5 @@ share/rep/${VERSION}/lisp/rep/xml/reader.jl
 share/rep/${VERSION}/lisp/rep/xml/reader.jlc
 share/rep/${VERSION}/lisp/ring.jl
 share/rep/${VERSION}/lisp/ring.jlc
-share/rep/${VERSION}/lisp/scheme/
-share/rep/${VERSION}/lisp/scheme.jl
-share/rep/${VERSION}/lisp/scheme.jlc
-share/rep/${VERSION}/lisp/scheme/data.jl
-share/rep/${VERSION}/lisp/scheme/data.jlc
-share/rep/${VERSION}/lisp/scheme/misc.jl
-share/rep/${VERSION}/lisp/scheme/misc.jlc
-share/rep/${VERSION}/lisp/scheme/syntax-funs.jl
-share/rep/${VERSION}/lisp/scheme/syntax-funs.jlc
-share/rep/${VERSION}/lisp/scheme/syntax.jl
-share/rep/${VERSION}/lisp/scheme/syntax.jlc
-share/rep/${VERSION}/lisp/scheme/utils.jl
-share/rep/${VERSION}/lisp/scheme/utils.jlc
 share/rep/${VERSION}/lisp/symbol-table.jl
 share/rep/${VERSION}/lisp/symbol-table.jlc
-share/rep/${VERSION}/lisp/unscheme/
-share/rep/${VERSION}/lisp/unscheme.jl
-share/rep/${VERSION}/lisp/unscheme.jlc
-share/rep/${VERSION}/lisp/unscheme/data.jl
-share/rep/${VERSION}/lisp/unscheme/data.jlc
-share/rep/${VERSION}/lisp/unscheme/misc.jl
-share/rep/${VERSION}/lisp/unscheme/misc.jlc
-share/rep/${VERSION}/lisp/unscheme/syntax-funs.jl
-share/rep/${VERSION}/lisp/unscheme/syntax-funs.jlc
-share/rep/${VERSION}/lisp/unscheme/syntax.jl
-share/rep/${VERSION}/lisp/unscheme/syntax.jlc
-%%SHARED%%

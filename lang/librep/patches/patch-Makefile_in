@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/10/09 13:04:43 jasper Exp $
+--- Makefile.in.orig	Sun Sep 27 21:02:17 2009
++++ Makefile.in	Sun Sep 27 21:10:51 2009
+@@ -50,7 +50,6 @@ install : all installdirs
+ 	done
+ 	$(INSTALL_DATA) doc-strings $(DESTDIR)$(repexecdir)
+ 	$(INSTALL_SCRIPT) emulate-gnu-tar $(DESTDIR)$(repexecdir)
+-	$(INSTALL_SCRIPT) libtool $(DESTDIR)$(repcommonexecdir)
+ 	$(INSTALL_DATA) rules.mk $(DESTDIR)$(repcommonexecdir)
+ 	$(INSTALL_SCRIPT) install-aliases $(DESTDIR)$(repcommonexecdir)
+ 	$(INSTALL_DATA) rep-debugger.el $(DESTDIR)$(emacssitelispdir)

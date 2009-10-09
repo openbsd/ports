@@ -1,8 +1,8 @@
 This is a lightweight Lisp environment for UNIX. It contains a Lisp
 interpreter, byte-code compiler and virtual machine. Applications may
-use the Lisp interpreter as an extension language, or it may be used
-for standalone scripts.
+use the Lisp interpreter as an extension language, or it may be used for
+standalone scripts.
 
-Originally inspired by Emacs Lisp, the language dialect combines many
-of the elisp features while trying to remove some of the main
-deficiencies, with features from Common Lisp and Scheme.
+Originally inspired by Emacs Lisp, the language dialect combines many of
+the elisp features while trying to remove some of the main deficiencies,
+with features from Common Lisp and Scheme.

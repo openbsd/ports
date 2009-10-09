@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_rep-xgettext_jl,v 1.1 2009/10/09 13:04:43 jasper Exp $
+--- src/rep-xgettext.jl.orig	Sun Sep 27 20:47:50 2009
++++ src/rep-xgettext.jl	Sun Sep 27 20:48:02 2009
+@@ -1,4 +1,4 @@
+-#! /usr/bin/rep
++#!${PREFIX}/bin/rep
+ !#
+ 
+ ;; rep-xgettext.jl -- extract i18n strings from lisp scripts
