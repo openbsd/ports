@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/09/23 20:56:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/10/09 13:03:22 jasper Exp $
 
 COMMENT=	practical and portable Scheme system
 
 DISTNAME=	chicken-2.6
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=	chicken              1.0      # .0.0
 SHARED_LIBS +=	uchicken             1.0      # .0.0
@@ -26,9 +27,13 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
+LIB_DEPENDS+=		ffi::devel/libffi
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--without-libffi
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
 REGRESS_TARGET=		bench
 REGRESS_DEPENDS=	:${PKGNAME}:lang/chicken
 
@@ -40,5 +45,8 @@ EXTRA_CFLAGS=	-O0
 .endif
 
 MAKE_FLAGS+=		EXTRA_CFLAGS=${EXTRA_CFLAGS}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/cscbench.scm
 
 .include <bsd.port.mk>

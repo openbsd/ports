@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/04/24 17:07:19 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/10/09 13:03:22 jasper Exp $
 %%SHARED%%
-bin/chicken
-bin/chicken-profile
-bin/chicken-setup
-bin/csc
-bin/csi
+@bin bin/chicken
+@bin bin/chicken-profile
+@bin bin/chicken-setup
+@bin bin/csc
+@bin bin/csi
 include/chicken-config.h
 include/chicken-defaults.h
 include/chicken.h
