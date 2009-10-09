@@ -1,7 +1,7 @@
-$OpenBSD: patch-spellchecker_cpp,v 1.1.1.1 2009/04/20 10:29:05 giovanni Exp $
---- spellchecker.cpp.orig	Fri Apr 17 20:47:13 2009
-+++ spellchecker.cpp	Mon Apr 20 11:15:41 2009
-@@ -54,9 +54,6 @@ CSpellchecker::CSpellchecker (const QString &lang)
+$OpenBSD: patch-spellchecker_cpp,v 1.2 2009/10/09 13:04:25 giovanni Exp $
+--- spellchecker.cpp.orig	Wed Sep 30 12:14:59 2009
++++ spellchecker.cpp	Mon Oct  5 15:39:38 2009
+@@ -62,9 +62,6 @@ CSpellchecker::CSpellchecker (const QString &lang, con
  
  CSpellchecker::~CSpellchecker()
  {
