@@ -1,12 +1,15 @@
-# $OpenBSD: gnome.port.mk,v 1.21 2009/04/06 10:05:20 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.22 2009/10/09 16:05:51 steven Exp $
 #
 # Module for GNOME related ports
 #
 
-CATEGORIES+=		x11/gnome
+.if !defined(GNOME_PROJECT) || !defined(GNOME_VERSION)
+ERRORS+=	"Fatal: using GNOME module, but missing GNOME_PROJECT and/or GNOME_VERSION"
+.endif
 
+CATEGORIES+=		x11/gnome
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
-VERSION=		${GNOME_VERSION}
+VERSION?=		${GNOME_VERSION}
 
 .if ${NO_BUILD:L} == "no"
 USE_LIBTOOL?=		Yes
