@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2009/10/09 07:13:40 giovanni Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2009/10/09 18:01:19 giovanni Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
@@ -23,11 +23,13 @@ FLAVOR?=
 .if ${FLAVOR:L:Mno_x11}
 MAKE_FLAGS=	UISTYLE=text
 .else
-BUILD_DEPENDS+=	::x11/lablgtk
-LIB_DEPENDS=	gtk.>=1.2,gdk.>=1.2::x11/gtk+
-MAKE_FLAGS=	UISTYLE=gtk
+BUILD_DEPENDS+=	::x11/lablgtk2
+LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+MAKE_FLAGS=	UISTYLE=gtk2
 USE_X11=	Yes
-WANTLIB+=	X11 Xext Xi glib gmodule iconv intl
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender expat fontconfig freetype pixman-1 pthread-stubs
+WANTLIB += atk-1.0 iconv intl cairo glitz png xcb z
 .endif
 
 # CFLAGS _must_ be empty.  This is an OCaml compiler.
