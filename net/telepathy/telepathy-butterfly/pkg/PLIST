@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/20 10:27:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/10/09 17:25:25 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/butterfly/
 lib/python${MODPY_VERSION}/site-packages/butterfly/__init__.py
 lib/python${MODPY_VERSION}/site-packages/butterfly/__init__.pyc
@@ -31,15 +31,15 @@ lib/python${MODPY_VERSION}/site-packages/butterfly/connection.pyo
 lib/python${MODPY_VERSION}/site-packages/butterfly/connection_manager.py
 lib/python${MODPY_VERSION}/site-packages/butterfly/connection_manager.pyc
 lib/python${MODPY_VERSION}/site-packages/butterfly/connection_manager.pyo
+lib/python${MODPY_VERSION}/site-packages/butterfly/contacts.py
+lib/python${MODPY_VERSION}/site-packages/butterfly/contacts.pyc
+lib/python${MODPY_VERSION}/site-packages/butterfly/contacts.pyo
 lib/python${MODPY_VERSION}/site-packages/butterfly/handle.py
 lib/python${MODPY_VERSION}/site-packages/butterfly/handle.pyc
 lib/python${MODPY_VERSION}/site-packages/butterfly/handle.pyo
 lib/python${MODPY_VERSION}/site-packages/butterfly/presence.py
 lib/python${MODPY_VERSION}/site-packages/butterfly/presence.pyc
 lib/python${MODPY_VERSION}/site-packages/butterfly/presence.pyo
-lib/python${MODPY_VERSION}/site-packages/butterfly/simple_presence.py
-lib/python${MODPY_VERSION}/site-packages/butterfly/simple_presence.pyc
-lib/python${MODPY_VERSION}/site-packages/butterfly/simple_presence.pyo
 lib/python${MODPY_VERSION}/site-packages/butterfly/util/
 lib/python${MODPY_VERSION}/site-packages/butterfly/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/butterfly/util/__init__.pyc

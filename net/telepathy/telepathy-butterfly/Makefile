@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/24 20:07:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/10/09 17:25:25 jasper Exp $
 
 COMMENT=		flexible communications framework, MSN component
 
-DISTNAME=		telepathy-butterfly-0.3.3
-PKGNAME=		${DISTNAME}p3
+DISTNAME=		telepathy-butterfly-0.3.4
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-butterfly/}
 
