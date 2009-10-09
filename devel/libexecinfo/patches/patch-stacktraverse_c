@@ -1,0 +1,43 @@
+$OpenBSD: patch-stacktraverse_c,v 1.1 2009/10/09 15:10:13 jasper Exp $
+
+__builtin_return_address() and __builtin_frame_address()
+can't have a !0 argument on mips.
+
+--- stacktraverse.c.orig	Mon Jul 19 07:09:36 2004
++++ stacktraverse.c	Tue Oct  6 23:18:58 2009
+@@ -7,6 +7,9 @@ getreturnaddr(int level)
+ {
+ 
+     switch(level) {
++#ifdef __BUILTIN_HACK
++    case 0: return __builtin_return_address(0);
++#else
+     case 0: return __builtin_return_address(1);
+     case 1: return __builtin_return_address(2);
+     case 2: return __builtin_return_address(3);
+@@ -135,6 +138,7 @@ getreturnaddr(int level)
+     case 125: return __builtin_return_address(126);
+     case 126: return __builtin_return_address(127);
+     case 127: return __builtin_return_address(128);
++#endif
+     default: return NULL;
+     }
+ }
+@@ -148,6 +152,9 @@ getframeaddr(int level)
+ {
+ 
+     switch(level) {
++#ifdef __BUILTIN_HACK
++    case 0: return __builtin_frame_address(0);
++#else
+     case 0: return __builtin_frame_address(1);
+     case 1: return __builtin_frame_address(2);
+     case 2: return __builtin_frame_address(3);
+@@ -276,6 +283,7 @@ getframeaddr(int level)
+     case 125: return __builtin_frame_address(126);
+     case 126: return __builtin_frame_address(127);
+     case 127: return __builtin_frame_address(128);
++#endif
+     default: return NULL;
+     }
+ }

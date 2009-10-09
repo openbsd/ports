@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no_mips64,v 1.1 2009/10/09 15:10:14 jasper Exp $
+lib/libexecinfo_pic.a
