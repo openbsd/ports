@@ -1,0 +1,19 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2009/10/09 22:09:22 phessler Exp $
+--- CMakeLists.txt.orig	Sat Dec  6 21:51:54 2008
++++ CMakeLists.txt	Sun Jul  5 21:09:53 2009
+@@ -20,6 +20,7 @@ INCLUDE_DIRECTORIES(. BlinkenBMF/ SDL_gfx/ BlinkenLUA/
+ # Fixes a problem on FreeBSD - SDL_stdinc.h includes iconv.h, but that is in 
+ # /usr/local/include/iconv.h, which is not searched for include files...
+ INCLUDE_DIRECTORIES(/usr/local/include)
++LINK_DIRECTORIES(/usr/X11R6/lib)
+ 
+ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake-modules/)
+ 
+@@ -136,6 +137,7 @@ ENDIF(USE_THEORA)
+ TARGET_LINK_LIBRARIES(LostPixels ${SDL_LIBRARY})
+ TARGET_LINK_LIBRARIES(LostPixels ${SDLIMAGE_LIBRARY})
+ TARGET_LINK_LIBRARIES(LostPixels ${SDLTTF_LIBRARY})
++TARGET_LINK_LIBRARIES(LostPixels Xdmcp Xau X11 Xrender Xext Xrandr freetype)
+ 
+ IF(SDLNET_FOUND)
+ 	TARGET_LINK_LIBRARIES(LostPixels ${SDLNET_LIBRARY})

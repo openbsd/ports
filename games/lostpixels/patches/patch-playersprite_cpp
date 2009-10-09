@@ -1,0 +1,29 @@
+$OpenBSD: patch-playersprite_cpp,v 1.1.1.1 2009/10/09 22:09:22 phessler Exp $
+
+These files are missing in the distribution, so do not use them.
+
+--- playersprite.cpp.orig	Sat Dec  6 21:51:55 2008
++++ playersprite.cpp	Sun Jul  5 21:09:53 2009
+@@ -29,15 +29,15 @@ void initPlayerSprite() {
+ 	lastmove = PLAYERSPRITE_NOMOVE;
+ 	
+ 	// addFGObjGFX returns PSEUDO_FGOBJECTGFXNUM if loading fails
+-	playerspritegfx[PLAYERSPRITE_NOMOVE] = addFGObjGFX("sister_movenone.bmp", true);
++//	playerspritegfx[PLAYERSPRITE_NOMOVE] = addFGObjGFX("sister_movenone.bmp", true);
+ 	playerspritegfx[PLAYERSPRITE_LEFT] = addFGObjGFX("sister_moveleft.bmp", true);
+-	playerspritegfx[PLAYERSPRITE_LEFTUP] = addFGObjGFX("sister_moveleftup.bmp", true);
+-	playerspritegfx[PLAYERSPRITE_LEFTDOWN] = addFGObjGFX("sister_moveleftdown.bmp", true);
++//	playerspritegfx[PLAYERSPRITE_LEFTUP] = addFGObjGFX("sister_moveleftup.bmp", true);
++//	playerspritegfx[PLAYERSPRITE_LEFTDOWN] = addFGObjGFX("sister_moveleftdown.bmp", true);
+ 	playerspritegfx[PLAYERSPRITE_RIGHT] = addFGObjGFX("sister_moveright.bmp", true);
+-	playerspritegfx[PLAYERSPRITE_RIGHTUP] = addFGObjGFX("sister_moverightup.bmp", true);
+-	playerspritegfx[PLAYERSPRITE_RIGHTDOWN] = addFGObjGFX("sister_moverightdown.bmp", true);
+-	playerspritegfx[PLAYERSPRITE_UP] = addFGObjGFX("sister_moveup.bmp", true);
+-	playerspritegfx[PLAYERSPRITE_DOWN] = addFGObjGFX("sister_movedown.bmp", true);
++//	playerspritegfx[PLAYERSPRITE_RIGHTUP] = addFGObjGFX("sister_moverightup.bmp", true);
++//	playerspritegfx[PLAYERSPRITE_RIGHTDOWN] = addFGObjGFX("sister_moverightdown.bmp", true);
++//	playerspritegfx[PLAYERSPRITE_UP] = addFGObjGFX("sister_moveup.bmp", true);
++//	playerspritegfx[PLAYERSPRITE_DOWN] = addFGObjGFX("sister_movedown.bmp", true);
+ 	
+ 	playersprite = 0;
+ 	if(playerspritegfx[PLAYERSPRITE_LEFT] != PSEUDO_FGOBJECTGFXNUM) {

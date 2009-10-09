@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/09 22:09:22 phessler Exp $
+@bin bin/BlinkenPlayer
+@bin bin/blpmatrix
+@bin bin/blpviewer
+@bin bin/bmfcompress
+@bin bin/bmfdecompress
+@bin bin/bxxviewer
+@bin bin/lostpixels
+@bin bin/mcufviewer
+share/blinkensisters/
+share/blinkensisters/24c3.bmf
+share/blinkensisters/Gaposis Outline (BRK).ttf
+share/blinkensisters/Gas Huffer Phat.ttf
+share/blinkensisters/Georgia.ttf
+share/blinkensisters/Ghostmeat.ttf
+share/blinkensisters/basedata.bmf
+share/blinkensisters/icy.bmf
+share/blinkensisters/mz_escape.bmf
+share/blinkensisters/mz_moviepack.bmf
+share/blinkensisters/mz_pnog.bmf
+share/blinkensisters/mz_template.bmf
+share/blinkensisters/mz_xmas2007.bmf
+share/blinkensisters/s23_ivorytower.bmf
+share/blinkensisters/splash.jpg
+share/blinkensisters/theme_standard.bmf
+share/blinkensisters/theme_xmas2007.bmf
+share/doc/blinkensisters/
+share/doc/blinkensisters/AUTHORS
+share/doc/blinkensisters/HOWTOPLAY
+share/doc/blinkensisters/INSTALL
+share/doc/blinkensisters/LICENSE
+share/doc/blinkensisters/README
