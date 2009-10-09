@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/30 11:46:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/10/09 17:40:12 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
 # there is already audio/tracker, so this port has to live
 # as tracker-search.
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.6.94
-PKGNAME=	tracker-search-${VERSION}p5
+GNOME_VERSION=	0.6.95
+PKGNAME=	tracker-search-${VERSION}
 
-SHARED_LIBS +=	stemmer              0.0      # .694.0
-SHARED_LIBS +=	tracker-common       0.0      # .694.0
-SHARED_LIBS +=	tracker-db           0.0      # .694.0
-SHARED_LIBS +=	tracker-data         0.0      # .694.0
-SHARED_LIBS +=	trackerclient        0.0      # .694.0
+SHARED_LIBS +=	stemmer              0.1      # .695.0
+SHARED_LIBS +=	tracker-common       0.1      # .695.0
+SHARED_LIBS +=	tracker-db           0.1      # .695.0
+SHARED_LIBS +=	tracker-data         0.1      # .695.0
+SHARED_LIBS +=	trackerclient        0.1      # .695.0
 SHARED_LIBS +=	tracker-module       0.0      # .0.0
-SHARED_LIBS +=	tracker-gtk          0.0      # .694.0
+SHARED_LIBS +=	tracker-gtk          0.1      # .695.0
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr

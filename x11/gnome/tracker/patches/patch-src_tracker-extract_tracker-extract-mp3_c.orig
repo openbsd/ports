@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_tracker-extract_tracker-extract-mp3_c.orig,v 1.1 2009/10/09 17:40:12 ajacoutot Exp $
+
+- use glib's strndup(), instead of libc's version. Which may not be present
+  on every system.
+
+--- src/tracker-extract/tracker-extract-mp3.c.orig	Fri Apr 24 16:13:03 2009
++++ src/tracker-extract/tracker-extract-mp3.c	Fri Apr 24 16:13:11 2009
+@@ -826,7 +826,7 @@ get_id3v24_tags (const gchar *data,
+ 							  NULL, NULL, NULL);
+ 					break;
+ 				case 0x03 :
+-					word = strndup (&data[pos+11], csize-1);
++					word = g_strndup (&data[pos+11], csize-1);
+ 					break;
+ 
+ 				default:

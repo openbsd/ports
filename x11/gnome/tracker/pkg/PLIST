@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/08/30 11:46:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/10/09 17:40:12 ajacoutot Exp $
 @bin bin/tracker-applet
 @bin bin/tracker-files
 @bin bin/tracker-info
@@ -158,15 +158,6 @@ lib/tracker/libtracker-db.la
 lib/tracker/libtracker-module.a
 lib/tracker/libtracker-module.la
 @lib lib/tracker/libtracker-module.so.${LIBtracker-module_VERSION}
-lib/tracker/push-modules/
-lib/tracker/push-modules/daemon/
-lib/tracker/push-modules/daemon/libtracker-module_kmail-daemon-module.a
-lib/tracker/push-modules/daemon/libtracker-module_kmail-daemon-module.la
-lib/tracker/push-modules/daemon/libtracker-module_kmail-daemon-module.so
-lib/tracker/push-modules/indexer/
-lib/tracker/push-modules/indexer/libtracker-module_kmail-indexer-module.a
-lib/tracker/push-modules/indexer/libtracker-module_kmail-indexer-module.la
-lib/tracker/push-modules/indexer/libtracker-module_kmail-indexer-module.so
 @bin libexec/tracker-extract
 @bin libexec/tracker-indexer
 @bin libexec/trackerd

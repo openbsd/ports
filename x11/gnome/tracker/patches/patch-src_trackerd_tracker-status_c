@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_trackerd_tracker-status_c,v 1.1 2009/10/09 17:40:12 ajacoutot Exp $
+
+Reorder to prevent undefined reference to `low_disk_space_limit_cb'
+
+--- src/trackerd/tracker-status.c.orig	Sat Oct  3 17:58:04 2009
++++ src/trackerd/tracker-status.c	Sat Oct  3 17:58:22 2009
+@@ -89,6 +89,14 @@ static void disk_space_check_stop   (void);
+ static GStaticPrivate private_key = G_STATIC_PRIVATE_INIT;
+ 
+ static void
++low_disk_space_limit_cb (GObject    *gobject,
++			 GParamSpec *arg1,
++			 gpointer    user_data)
++{
++	disk_space_check_cb (NULL);
++}
++
++static void
+ private_free (gpointer data)
+ {
+ 	TrackerStatusPrivate *private;
+@@ -428,14 +436,6 @@ set_up_throttle (gboolean debugging)
+ 			}
+ 		}
+ 	}
+-}
+-
+-static void
+-low_disk_space_limit_cb (GObject    *gobject,
+-			 GParamSpec *arg1,
+-			 gpointer    user_data)
+-{
+-	disk_space_check_cb (NULL);
+ }
+ 
+ static void
