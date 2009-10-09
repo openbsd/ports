@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.595 2009/10/09 17:40:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.596 2009/10/09 17:48:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -314,6 +314,7 @@
      SUBDIR += p5-Validate-Net
      SUBDIR += p5-flowd
      SUBDIR += packit
+     SUBDIR += papyon
      SUBDIR += pavuk
      SUBDIR += pavuk,no_x11
      SUBDIR += pcapdiff
