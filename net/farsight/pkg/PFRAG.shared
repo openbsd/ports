@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/10/27 23:11:50 jasper Exp $
-lib/farsight-0.1-2/librawudp-transmitter.so
-lib/farsight-0.1-2/librtp-session.so
-@lib lib/libfarsight-0.1.so.${LIBfarsight-0.1_VERSION}
