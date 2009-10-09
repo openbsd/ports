@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/04/25 11:04:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/10/09 22:17:28 jasper Exp $
 %%SHARED%%
 include/atk-1.0/
 include/atk-1.0/atk/
@@ -53,6 +53,7 @@ share/gtk-doc/html/atk/AtkRegistry.html
 share/gtk-doc/html/atk/AtkRelation.html
 share/gtk-doc/html/atk/AtkRelationSet.html
 share/gtk-doc/html/atk/AtkSelection.html
+share/gtk-doc/html/atk/AtkStateSet.html
 share/gtk-doc/html/atk/AtkStreamableContent.html
 share/gtk-doc/html/atk/AtkTable.html
 share/gtk-doc/html/atk/AtkText.html
@@ -60,7 +61,6 @@ share/gtk-doc/html/atk/AtkUtil.html
 share/gtk-doc/html/atk/AtkValue.html
 share/gtk-doc/html/atk/atk-AtkHyperlinkImpl.html
 share/gtk-doc/html/atk/atk-AtkState.html
-share/gtk-doc/html/atk/atk-AtkStateSet.html
 share/gtk-doc/html/atk/atk.devhelp
 share/gtk-doc/html/atk/atk.devhelp2
 share/gtk-doc/html/atk/atk.html
