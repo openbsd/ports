@@ -1,11 +1,13 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2009/10/09 22:09:22 phessler Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2009/10/09 23:45:19 phessler Exp $
 --- CMakeLists.txt.orig	Sat Dec  6 21:51:54 2008
-+++ CMakeLists.txt	Sun Jul  5 21:09:53 2009
-@@ -20,6 +20,7 @@ INCLUDE_DIRECTORIES(. BlinkenBMF/ SDL_gfx/ BlinkenLUA/
++++ CMakeLists.txt	Sat Oct 10 01:19:48 2009
+@@ -19,7 +19,8 @@ endif(COMMAND cmake_policy)
+ INCLUDE_DIRECTORIES(. BlinkenBMF/ SDL_gfx/ BlinkenLUA/LuaBindings/headers/ BlinkenLUA/LuaMain/headers/ BlinkenLib/headers/)
  # Fixes a problem on FreeBSD - SDL_stdinc.h includes iconv.h, but that is in 
  # /usr/local/include/iconv.h, which is not searched for include files...
- INCLUDE_DIRECTORIES(/usr/local/include)
-+LINK_DIRECTORIES(/usr/X11R6/lib)
+-INCLUDE_DIRECTORIES(/usr/local/include)
++INCLUDE_DIRECTORIES(${TRUEPREFIX}/include)
++LINK_DIRECTORIES(${X11BASE}/lib)
  
  SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake-modules/)
  
