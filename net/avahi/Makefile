@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/09 17:36:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/10/09 18:17:25 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -57,6 +57,26 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		daemon::devel/libdaemon \
 		dbus-1::x11/dbus
 
+# only enable the mono subpackage on supported mono arches
+# see ONLY_FOR_ARCHS in lang/mono
+.if ${MACHINE_ARCH} == "amd64" ||${MACHINE_ARCH} == "i386" \
+ || ${MACHINE} == "powerpc"
+. if !${FLAVOR:L:Mno_mono}
+MULTI_PACKAGES+= -mono
+MODULES+=	lang/mono
+BUILD_DEPENDS+=	::lang/mono
+RUN_DEPENDS-mono= ::lang/mono
+LIB_DEPENDS-mono= # empty
+WANTLIB-mono=	# empty
+. else
+CONFIGURE_ARGS+= --disable-mono \
+		--disable-monodoc
+. endif
+.else
+CONFIGURE_ARGS+= --disable-mono \
+		--disable-monodoc
+.endif
+
 .if !${FLAVOR:L:Mno_gtk}
 MULTI_PACKAGES+= -gtk
 MODULES+=	lang/python
@@ -82,18 +102,6 @@ CONFIGURE_ARGS+= -disable-gtk \
 		--disable-python \
 		--disable-pygtk \
 		--disable-python-dbus
-.endif
-
-.if !${FLAVOR:L:Mno_mono}
-MULTI_PACKAGES+= -mono
-MODULES+=	lang/mono
-BUILD_DEPENDS+=	::lang/mono
-RUN_DEPENDS-mono= ::lang/mono
-LIB_DEPENDS-mono= # empty
-WANTLIB-mono=	# empty
-.else
-CONFIGURE_ARGS+= --disable-mono \
-		--disable-monodoc
 .endif
 
 .if !${FLAVOR:L:Mno_qt3}
