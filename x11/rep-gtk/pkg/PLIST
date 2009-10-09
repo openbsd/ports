@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/01/20 13:12:03 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/10/09 13:05:30 jasper Exp $
 %%SHARED%%
+lib/pkgconfig/
+lib/pkgconfig/rep-gtk.pc
 libexec/rep/${GNU_ARCH}/gui/
 libexec/rep/${GNU_ARCH}/gui/gtk-2/
 libexec/rep/${GNU_ARCH}/gui/gtk-2/gtk.a
