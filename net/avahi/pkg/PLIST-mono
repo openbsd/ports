@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST-mono,v 1.1 2009/10/09 17:36:20 ajacoutot Exp $
+lib/mono/avahi-sharp/
+lib/mono/avahi-sharp/avahi-sharp.dll
+lib/mono/avahi-ui-sharp/
+lib/mono/avahi-ui-sharp/avahi-ui-sharp.dll
+lib/mono/gac/avahi-sharp/
+lib/mono/gac/avahi-sharp/1.0.0.0__4d116c78973743f5/
+lib/mono/gac/avahi-sharp/1.0.0.0__4d116c78973743f5/avahi-sharp.dll
+lib/mono/gac/avahi-sharp/1.0.0.0__4d116c78973743f5/avahi-sharp.dll.config
+lib/mono/gac/avahi-sharp/1.0.0.0__4d116c78973743f5/avahi-sharp.dll.mdb
+lib/mono/gac/avahi-ui-sharp/
+lib/mono/gac/avahi-ui-sharp/0.0.0.0__4d116c78973743f5/
+lib/mono/gac/avahi-ui-sharp/0.0.0.0__4d116c78973743f5/avahi-ui-sharp.dll
+lib/mono/gac/avahi-ui-sharp/0.0.0.0__4d116c78973743f5/avahi-ui-sharp.dll.config
+lib/mono/gac/avahi-ui-sharp/0.0.0.0__4d116c78973743f5/avahi-ui-sharp.dll.mdb
+lib/monodoc/sources/avahi-sharp-docs.source
+lib/monodoc/sources/avahi-sharp-docs.tree
+lib/monodoc/sources/avahi-sharp-docs.zip
+lib/monodoc/sources/avahi-ui-sharp-docs.source
+lib/monodoc/sources/avahi-ui-sharp-docs.tree
+lib/monodoc/sources/avahi-ui-sharp-docs.zip
+lib/pkgconfig/avahi-sharp.pc
+lib/pkgconfig/avahi-ui-sharp.pc

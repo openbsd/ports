@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2009/10/04 07:48:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/10/09 17:36:20 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
+COMMENT-mono=	mono (.NET) bindings for avahi
 COMMENT-qt3=	qt3 bindings for avahi
 COMMENT-qt4=	qt4 bindings for avahi
 
@@ -11,6 +12,7 @@ CATEGORIES=	net devel
 
 PKGNAME-main=	avahi-${V}p5
 PKGNAME-gtk=	avahi-gtk-${V}p3
+PKGNAME-mono=	mono-avahi-${V}
 PKGNAME-qt3=	avahi-qt3-${V}p2
 PKGNAME-qt4=	avahi-qt4-${V}p1
 
@@ -37,7 +39,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-PSEUDO_FLAVORS=	no_gtk no_qt3 no_qt4
+PSEUDO_FLAVORS=	no_gtk no_mono no_qt3 no_qt4
 FLAVOR?=
 
 MULTI_PACKAGES=	-main
@@ -80,6 +82,18 @@ CONFIGURE_ARGS+= -disable-gtk \
 		--disable-python \
 		--disable-pygtk \
 		--disable-python-dbus
+.endif
+
+.if !${FLAVOR:L:Mno_mono}
+MULTI_PACKAGES+= -mono
+MODULES+=	lang/mono
+BUILD_DEPENDS+=	::lang/mono
+RUN_DEPENDS-mono= ::lang/mono
+LIB_DEPENDS-mono= # empty
+WANTLIB-mono=	# empty
+.else
+CONFIGURE_ARGS+= --disable-mono \
+		--disable-monodoc
 .endif
 
 .if !${FLAVOR:L:Mno_qt3}
@@ -132,8 +146,6 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-compat-libdns_sd \
 		--enable-core-docs \
 		--enable-tests \
-		--disable-mono \
-		--disable-monodoc \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
 		--disable-doxygen-xml \
@@ -148,6 +160,10 @@ CONFIGURE_ARGS+=--disable-autoipd
 
 FAKE_FLAGS=	SYSCONFDIR=${SYSCONFDIR}
 
+PC_FILES=	avahi-ui.pc avahi-client.pc avahi-compat-howl.pc \
+		avahi-compat-libdns_sd.pc avahi-core.pc avahi-glib.pc \
+		avahi-gobject.pc avahi-qt3.pc avahi-qt4.pc
+
 pre-configure:
 	find ${WRKSRC} -name Makefile.in -exec \
 		perl -pi -e 's,LIBINTL,INTLLIBS,g;' \
@@ -160,9 +176,9 @@ pre-configure:
 	perl -pi -e 's,-ldl,,g' ${WRKSRC}/configure \
 		${WRKSRC}/avahi-client/Makefile.in \
 		${WRKSRC}/avahi-daemon/Makefile.in
-	find ${WRKSRC} -name \*.pc.in -exec \
+	for i in ${PC_FILES}; do \
 		perl -pi -e 's,Libs:,Libs: -pthread,;' \
-			-e 's,Cflags:,Cflags: -pthread,' {} \;
+			-e 's,Cflags:,Cflags: -pthread,' ${WRKSRC}/$${i}.in; done
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
