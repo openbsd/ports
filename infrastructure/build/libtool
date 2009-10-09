@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.77 2009/08/30 08:40:52 steven Exp $
+# $OpenBSD: libtool,v 1.78 2009/10/09 21:23:42 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -338,7 +338,8 @@ sub link
 	my $argv = main::resolve_la_list(\@ARGV);
 	Trace::debug {"argvstring (post resolve_la): @$argv\n"};
 	my $orderedlibs = [];
-	$argv = main::parse_linkargs_list($argv, 0, $orderedlibs);
+	my $dummy = 0;
+	$argv = main::parse_linkargs_list($argv, 0, \$dummy, $orderedlibs);
 	Trace::debug {"orderedlibs = @$orderedlibs\n"};
 	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
 	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
@@ -547,6 +548,7 @@ sub link
 	my $libstofind = shift;
 	my $opts = shift;
 	my $RPdirs = shift;
+	my $seen_la_shared = shift;
 
 	my $ltdir = $main::ltdir;
 	Trace::debug {"linking program (",
@@ -554,14 +556,20 @@ sub link
 
 	my @libflags;
 	my @cmd;
-	my $dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
-	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
+	my $dst;
+	if ($seen_la_shared) {
+		$dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
+		mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
+	} else {
+		$dst = ($odir eq '.') ? $fname : "$odir/$fname";
+	}
 
 	Trace::debug {"argvstring (pre resolve_la): @ARGV\n"};
 	my $argv = main::resolve_la_list(\@ARGV);
 	Trace::debug {"argvstring (post resolve_la): @$argv\n"};
 	my $orderedlibs = [];
-	$argv = main::parse_linkargs_list($argv, 0, $orderedlibs);
+	my $dummy = 0;
+	$argv = main::parse_linkargs_list($argv, 0, \$dummy, $orderedlibs);
 	Trace::debug {"orderedlibs = @$orderedlibs\n"};
 	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
 	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
@@ -946,7 +954,9 @@ if ($mode eq 'compile') {
 	Trace::debug {"sobjs = @sobjs\n"};
 
 	my $orderedlibs = [];
-	my $args = parse_linkargs_list(\@ARGV, 1, $orderedlibs);
+	my $seen_la_shared = 0;
+	my $args = parse_linkargs_list(\@ARGV, 1, \$seen_la_shared, $orderedlibs);
+	Trace::debug {"found .la file referring to shared library, and will remember\n"};
 	@ARGV = @$args;
 	Trace::debug {"deplibs = @$deplibs\n"};
 
@@ -969,9 +979,12 @@ if ($mode eq 'compile') {
 		}
 		my $RPdirs = [];
 		@$RPdirs = (@Ropts, @RPopts, @Rresolved);
-		$program->link($ltprog, $ofile, $ofile, $odir, 1, $objlist, $libs, $libstofind, \%opts, $RPdirs);
-		$program->write_wrapper($outfile);
-		chmod 0755, $outfile;
+
+		$program->link($ltprog, $ofile, $ofile, $odir, 1, $objlist, $libs, $libstofind, \%opts, $RPdirs, $seen_la_shared);
+		if ($seen_la_shared) {
+			$program->write_wrapper($outfile);
+			chmod 0755, $outfile;
+		}
 	} elsif ($linkmode == LIBRARY) {
 		$shared = 1 if ($opts{'version-info'} ||
 				$opts{'avoid-version'} ||
@@ -1226,6 +1239,9 @@ sub resolve_la_list
 # -Lfoo, -lfoo, foo.a, foo.la
 # recursively find .la files corresponding to -l flags; if there is no .la
 # file, just inspect the library file itself for any dependencies.
+# XXX the variable $lashared will register whether or not a .la file is
+#     found which refers to a shared library
+#     this is used to decide where to link executables and create wrappers
 # pass 2 (la == 0)
 # -Lfoo, -lfoo, foo.a
 # no recursion in pass 2
@@ -1236,7 +1252,7 @@ sub internal_parse_linkargs
 	state $seen_pthread = 0;
 	my ($result, $deplibs, $Rresolved, $libsearchdirs, $orderedlibs,
 	    $dirs, $libs, $libstofind, $args,
-	    $la, $level) = @_;
+	    $lashared, $la, $level) = @_;
 	Trace::debug {"parse_linkargs pass: ", ($la == 1) ? 1 : 2, ", level: $level\n"};
 	Trace::debug {"  args: @$args\n"};
 
@@ -1318,6 +1334,9 @@ sub internal_parse_linkargs
 			my $dlname = $lainfo->{'dlname'};
 			my $oldlib = $lainfo->{'old_library'};
 			my $libdir = $lainfo->{'libdir'};
+			if ($dlname ne '') {
+				$$lashared = 1;
+			}
 			if ($la) {
 				push(@$result, $a);
 				push(@$deplibs, $fulla) if ($libdir ne '');
@@ -1359,11 +1378,11 @@ sub internal_parse_linkargs
 
 sub parse_linkargs_list
 {
-	my ($args, $la, $orderedlibs) = @_;
+	my ($args, $la, $lashared, $orderedlibs) = @_;
 
 	my $result = [];
 	internal_parse_linkargs($result, $deplibs, \@Rresolved, \@libsearchdirs, $orderedlibs, $dirs, $libs,
-	    $libstofind, $args, $la, 0);
+	    $libstofind, $args, $lashared, $la, 0);
 	return $result;
 }
 
