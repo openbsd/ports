@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:30:30 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2009/10/10 23:06:55 steven Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20070912
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	cad
 
 HOMEPAGE=	http://pcb.sourceforge.net/
@@ -24,12 +24,12 @@ WANTLIB += png pthread-stubs xcb z
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcb/}
 
 RUN_DEPENDS=	::devel/m4 \
-		:tk->=8.4,<8.5:x11/tk/8.4
+		${MODTK_RUN_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	gd.>=20::graphics/gd \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext x11/tk
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
