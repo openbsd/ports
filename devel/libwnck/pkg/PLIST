@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/11/25 13:26:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/10/10 13:40:20 jasper Exp $
+@bin bin/wnck-urgency-monitor
 @bin bin/wnckprop
 include/libwnck-1.0/
 include/libwnck-1.0/libwnck/
@@ -64,6 +65,9 @@ share/locale/am/LC_MESSAGES/libwnck.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libwnck.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/libwnck.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libwnck.mo
@@ -85,6 +89,9 @@ share/locale/ca/LC_MESSAGES/libwnck.mo
 share/locale/ca@valencia/
 share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/libwnck.mo
+share/locale/crh/
+share/locale/crh/LC_MESSAGES/
+share/locale/crh/LC_MESSAGES/libwnck.mo
 share/locale/cs/LC_MESSAGES/libwnck.mo
 share/locale/cy/
 share/locale/cy/LC_MESSAGES/
@@ -147,6 +154,9 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libwnck.mo
 share/locale/lv/LC_MESSAGES/libwnck.mo
+share/locale/mai/
+share/locale/mai/LC_MESSAGES/
+share/locale/mai/LC_MESSAGES/libwnck.mo
 share/locale/mi/
 share/locale/mi/LC_MESSAGES/
 share/locale/mi/LC_MESSAGES/libwnck.mo
