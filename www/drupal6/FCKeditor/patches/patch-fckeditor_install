@@ -1,0 +1,11 @@
+$OpenBSD: patch-fckeditor_install,v 1.1 2009/10/10 10:42:14 espie Exp $
+--- fckeditor.install.orig	Sat Oct 10 12:41:00 2009
++++ fckeditor.install	Sat Oct 10 12:41:13 2009
+@@ -99,6 +99,7 @@ function fckeditor_install() {
+   //edit-img-assist-textareas //img assist module
+   $arr['excl_mode'] = 0;
+   $arr['excl_fields'] = variable_get("fckeditor_exclude",
++  "edit-extra-items\n".
+   "edit-user-mail-welcome-body\n".
+   "edit-user-mail-admin-body\n".
+   "edit-user-mail-approval-body\n".
