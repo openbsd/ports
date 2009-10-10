@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/11 08:39:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/10/10 16:26:44 ajacoutot Exp $
 
 COMMENT=		C++ interface to the graphics library for GNOME
 
 GNOME_PROJECT=		libgnomecanvasmm
-GNOME_VERSION=		2.22.0
-SHARED_LIBS=		gnomecanvasmm-2.6	0.0	# .1.6
-PKGNAME=		${DISTNAME}p3
+GNOME_VERSION=		2.26.0
+SHARED_LIBS=		gnomecanvasmm-2.6	1.0	# .1.6
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,7 +30,6 @@ LIB_DEPENDS=		giomm-2.4,glibmm-2.4:glib2mm->=2.8:devel/glib2mm \
 
 USE_X11=		Yes
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--enable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
