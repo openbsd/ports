@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/10/10 13:55:44 phessler Exp $
+# $OpenBSD: Makefile,v 1.10 2009/10/10 22:51:48 sthen Exp $
 
 COMMENT=	cross-platform 3D audio API
 
 DISTNAME=	openal-0.0.8
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio
 SHARED_LIBS +=  openal               1.0      # .0.0
 

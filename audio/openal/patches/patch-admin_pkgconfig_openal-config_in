@@ -1,0 +1,15 @@
+$OpenBSD: patch-admin_pkgconfig_openal-config_in,v 1.1 2009/10/10 22:51:48 sthen Exp $
+--- admin/pkgconfig/openal-config.in.orig	Fri Oct  9 22:54:00 2009
++++ admin/pkgconfig/openal-config.in	Fri Oct  9 22:54:16 2009
+@@ -9,9 +9,9 @@ PACKAGE_VERSION="@PACKAGE_VERSION@"
+ # PTHREAD_CFLAGS="@PTHREAD_CFLAGS@"
+ # PTHREAD_LIBS="@PTHREAD_LIBS@"
+ 
+-openal_dynamic_ldflags="-lopenal"
++openal_dynamic_ldflags="-lopenal -lossaudio"
+ # TODO: configure should provide the following...
+-openal_static_ldflags="-lopenal"
++openal_static_ldflags="-lopenal -lossaudio"
+ 
+ prefix_set=no
+ echo_prefix=no

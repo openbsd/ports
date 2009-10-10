@@ -1,12 +1,14 @@
-$OpenBSD: patch-admin_pkgconfig_openal_pc_in,v 1.1 2008/04/04 09:33:10 jasper Exp $
+$OpenBSD: patch-admin_pkgconfig_openal_pc_in,v 1.2 2009/10/10 22:51:48 sthen Exp $
 --- admin/pkgconfig/openal.pc.in.orig	Sat Feb 11 04:36:55 2006
-+++ admin/pkgconfig/openal.pc.in	Tue Apr  1 15:41:59 2008
-@@ -5,7 +5,7 @@ includedir=@includedir@
++++ admin/pkgconfig/openal.pc.in	Fri Oct  9 20:29:07 2009
+@@ -5,8 +5,8 @@ includedir=@includedir@
  
  Name: OpenAL
  Description:  OpenAL is a cross-platform 3D audio API.
 -Requires: @requirements@
 +Requires:
  Version: @PACKAGE_VERSION@
- Libs: -L${libdir} -lopenal
+-Libs: -L${libdir} -lopenal
++Libs: -L${libdir} -lopenal -lossaudio
  Cflags: -I${includedir}
+ 
