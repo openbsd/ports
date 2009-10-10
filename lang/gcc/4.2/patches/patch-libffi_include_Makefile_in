@@ -1,0 +1,15 @@
+$OpenBSD: patch-libffi_include_Makefile_in,v 1.1 2009/10/10 22:48:29 jasper Exp $
+
+Don't install libffi headers, gcj links statically with libffi.
+
+--- libffi/include/Makefile.in.orig	Fri Oct  9 18:00:05 2009
++++ libffi/include/Makefile.in	Fri Oct  9 18:06:04 2009
+@@ -409,7 +409,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-toollibffiHEADERS
++install-data-am:
+ 
+ install-exec-am:
+ 

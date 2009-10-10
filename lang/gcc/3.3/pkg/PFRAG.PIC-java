@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.PIC-java,v 1.1.1.1 2005/01/03 15:21:30 espie Exp $
+@comment $OpenBSD: PFRAG.PIC-java,v 1.2 2009/10/10 22:48:29 jasper Exp $
 lib/fpic/lib-org-w3c-dom.a
 lib/fpic/lib-org-w3c-dom.la
 lib/fpic/lib-org-xml-sax.a
 lib/fpic/lib-org-xml-sax.la
-lib/fpic/libffi.a
-lib/fpic/libffi.la
+@comment lib/fpic/libffi.a
+@comment lib/fpic/libffi.la

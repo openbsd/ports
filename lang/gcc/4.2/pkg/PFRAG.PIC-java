@@ -1,13 +1,10 @@
-@comment $OpenBSD: PFRAG.PIC-java,v 1.1 2009/06/04 18:24:20 kurt Exp $
+@comment $OpenBSD: PFRAG.PIC-java,v 1.2 2009/10/10 22:48:29 jasper Exp $
 lib/fpic/
 lib/fpic/gcj-${V}/
 @comment lib/fpic/gcj-${V}/classmap.db
 lib/fpic/gcj-${V}/libjvm.a
 lib/fpic/gcj-${V}/libjvm.la
 @comment lib/fpic/gcj-${V}/libjvm.so
-lib/fpic/libffi.a
-lib/fpic/libffi.la
-@comment @lib lib/fpic/libffi.so.${LIBffi_VERSION}
 lib/fpic/libgcj-tools.a
 lib/fpic/libgcj-tools.la
 @comment @lib lib/fpic/libgcj-tools.so.${LIBgcj-tools_VERSION}

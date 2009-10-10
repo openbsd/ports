@@ -1,0 +1,32 @@
+$OpenBSD: patch-libffi_Makefile_in,v 1.1 2009/10/10 22:48:29 jasper Exp $
+
+Don't install libffi headers, gcj links statically with libffi.
+
+--- libffi/Makefile.in.orig	Tue Jan 28 02:44:57 2003
++++ libffi/Makefile.in	Sat Oct 10 11:11:00 2009
+@@ -651,19 +651,18 @@ install-info: install-info-recursive
+ all-recursive-am: fficonfig.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+-install-exec-am: install-toolexeclibLTLIBRARIES
+-install-exec: install-exec-recursive
++install-exec-am:
++install-exec:
+ 
+ install-data-am:
+-install-data: install-data-recursive
++install-data:
+ 
+-install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+-install: install-recursive
++install-am:
++install:
+ uninstall-am: uninstall-toolexeclibLTLIBRARIES
+ uninstall: uninstall-recursive
+ all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) fficonfig.h
+-all-redirect: all-recursive-am
++all-redirect:
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ installdirs: installdirs-recursive

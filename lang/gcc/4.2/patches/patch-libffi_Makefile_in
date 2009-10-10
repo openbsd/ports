@@ -1,6 +1,9 @@
-$OpenBSD: patch-libffi_Makefile_in,v 1.1 2009/06/04 18:24:20 kurt Exp $
---- libffi/Makefile.in.orig	Tue Apr 21 17:37:05 2009
-+++ libffi/Makefile.in	Tue Apr 21 17:40:07 2009
+$OpenBSD: patch-libffi_Makefile_in,v 1.2 2009/10/10 22:48:29 jasper Exp $
+
+Don't install libffi headers, gcj links statically with libffi.
+
+--- libffi/Makefile.in.orig	Mon May 19 16:28:07 2008
++++ libffi/Makefile.in	Fri Oct  9 18:16:33 2009
 @@ -428,7 +428,8 @@ nodist_libffi_la_SOURCES = $(am__append_1) $(am__appen
  libffi_convenience_la_SOURCES = $(libffi_la_SOURCES)
  nodist_libffi_convenience_la_SOURCES = $(nodist_libffi_la_SOURCES)
@@ -11,3 +14,16 @@ $OpenBSD: patch-libffi_Makefile_in,v 1.1 2009/06/04 18:24:20 kurt Exp $
  AM_CPPFLAGS = -I. -I$(top_srcdir)/include -Iinclude -I$(top_srcdir)/src
  AM_CCASFLAGS = $(AM_CPPFLAGS)
  all: fficonfig.h
+@@ -1203,9 +1204,9 @@ installdirs-am:
+ 	for dir in "$(DESTDIR)$(toolexeclibdir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+-install: install-recursive
+-install-exec: install-exec-recursive
+-install-data: install-data-recursive
++install:
++install-exec:
++install-data:
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am

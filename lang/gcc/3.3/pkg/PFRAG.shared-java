@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.shared-java,v 1.1.1.1 2005/01/03 15:21:30 espie Exp $
+@comment $OpenBSD: PFRAG.shared-java,v 1.2 2009/10/10 22:48:29 jasper Exp $
 @lib lib/lib-org-w3c-dom.so.0.0
 @lib lib/lib-org-xml-sax.so.0.0
-lib/libffi-2.00-beta.so
-lib/libffi.so
+@comment lib/libffi-2.00-beta.so
+@comment lib/libffi.so
 @comment @lib lib/libgc.so.1.2
 @lib lib/libgcj.so.4.0
