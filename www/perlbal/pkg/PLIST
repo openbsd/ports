@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/02 09:26:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/10 07:50:02 ajacoutot Exp $
 bin/perlbal
 ${P5SITE}/Perlbal/
 ${P5SITE}/Perlbal.pm
@@ -21,9 +21,11 @@ ${P5SITE}/Perlbal/Plugin/EchoService.pm
 ${P5SITE}/Perlbal/Plugin/Highpri.pm
 ${P5SITE}/Perlbal/Plugin/Include.pm
 ${P5SITE}/Perlbal/Plugin/LazyCDN.pm
+${P5SITE}/Perlbal/Plugin/MaxContentLength.pm
 ${P5SITE}/Perlbal/Plugin/NotModified.pm
 ${P5SITE}/Perlbal/Plugin/Palimg.pm
 ${P5SITE}/Perlbal/Plugin/Queues.pm
+${P5SITE}/Perlbal/Plugin/Redirect.pm
 ${P5SITE}/Perlbal/Plugin/Stats.pm
 ${P5SITE}/Perlbal/Plugin/Vhosts.pm
 ${P5SITE}/Perlbal/Plugin/Vpaths.pm
@@ -43,7 +45,9 @@ ${P5SITE}/Perlbal/Util.pm
 @man man/man3p/Perlbal.3p
 @man man/man3p/Perlbal::Plugin::Cgilike.3p
 @man man/man3p/Perlbal::Plugin::Include.3p
+@man man/man3p/Perlbal::Plugin::MaxContentLength.3p
 @man man/man3p/Perlbal::Plugin::Palimg.3p
+@man man/man3p/Perlbal::Plugin::Redirect.3p
 @man man/man3p/Perlbal::Test.3p
 @man man/man3p/Perlbal::Util.3p
 share/doc/p5-Perlbal/

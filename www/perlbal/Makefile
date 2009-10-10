@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/02 09:26:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/10 07:50:02 ajacoutot Exp $
 
 COMMENT=	Perl-based reverse proxy load balancer and web server
 
 MODULES=	cpan
-DISTNAME=	Perlbal-1.72
+DISTNAME=	Perlbal-1.73
 CATEGORIES=	www
 
 CPAN_AUTHOR=    DORMANDO
@@ -28,5 +28,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p5-Perlbal
 	${INSTALL_DATA} ${WRKSRC}/conf/* ${PREFIX}/share/examples/p5-Perlbal
 	cd ${WRKSRC}/doc && pax -rw * ${PREFIX}/share/doc/p5-Perlbal
+
+# XXX IO::AIO not ported yet
+# REGRESS_DEPENDS=
 
 .include <bsd.port.mk>
