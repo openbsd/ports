@@ -1,0 +1,12 @@
+$OpenBSD: patch-orte_mca_oob_tcp_oob_tcp_c,v 1.1.1.1 2009/10/10 18:11:42 jasper Exp $
+--- orte/mca/oob/tcp/oob_tcp.c.orig	Fri Aug 21 14:33:42 2009
++++ orte/mca/oob/tcp/oob_tcp.c	Fri Aug 21 15:08:55 2009
+@@ -513,7 +513,7 @@ mca_oob_tcp_create_listen(int *target_sd, unsigned sho
+         addrlen = res->ai_addrlen;
+         freeaddrinfo (res);
+         
+-#ifdef IPV6_V6ONLY
++#if defined(IPV6_V6ONLY) && !defined(__OpenBSD__)
+         /* in case of AF_INET6, disable v4-mapped addresses */
+         if (AF_INET6 == af_family) {
+             int flg = 0;

@@ -1,0 +1,62 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/10/10 18:11:42 jasper Exp $
+@lib lib/libmca_common_sm.so.${LIBmca_common_sm_VERSION}
+@lib lib/libmpi.so.${LIBmpi_VERSION}
+@lib lib/libmpi_cxx.so.${LIBmpi_cxx_VERSION}
+@lib lib/libmpi_f77.so.${LIBmpi_f77_VERSION}
+@lib lib/libopen-pal.so.${LIBopen-pal_VERSION}
+@lib lib/libopen-rte.so.${LIBopen-rte_VERSION}
+lib/openmpi/libompi_dbg_msgq.so
+lib/openmpi/mca_allocator_basic.so
+lib/openmpi/mca_allocator_bucket.so
+lib/openmpi/mca_bml_r2.so
+lib/openmpi/mca_btl_self.so
+lib/openmpi/mca_btl_sm.so
+lib/openmpi/mca_btl_tcp.so
+lib/openmpi/mca_carto_auto_detect.so
+lib/openmpi/mca_carto_file.so
+lib/openmpi/mca_coll_basic.so
+lib/openmpi/mca_coll_hierarch.so
+lib/openmpi/mca_coll_inter.so
+lib/openmpi/mca_coll_self.so
+lib/openmpi/mca_coll_sm.so
+lib/openmpi/mca_coll_sync.so
+lib/openmpi/mca_coll_tuned.so
+lib/openmpi/mca_crs_none.so
+lib/openmpi/mca_dpm_orte.so
+lib/openmpi/mca_errmgr_default.so
+lib/openmpi/mca_ess_env.so
+lib/openmpi/mca_ess_hnp.so
+lib/openmpi/mca_ess_singleton.so
+lib/openmpi/mca_ess_tool.so
+lib/openmpi/mca_filem_rsh.so
+lib/openmpi/mca_grpcomm_bad.so
+lib/openmpi/mca_grpcomm_basic.so
+lib/openmpi/mca_io_romio.so
+lib/openmpi/mca_iof_hnp.so
+lib/openmpi/mca_iof_orted.so
+lib/openmpi/mca_iof_tool.so
+lib/openmpi/mca_maffinity_first_use.so
+lib/openmpi/mca_mpool_fake.so
+lib/openmpi/mca_mpool_rdma.so
+lib/openmpi/mca_mpool_sm.so
+lib/openmpi/mca_notifier_syslog.so
+lib/openmpi/mca_odls_default.so
+lib/openmpi/mca_oob_tcp.so
+lib/openmpi/mca_osc_pt2pt.so
+lib/openmpi/mca_osc_rdma.so
+lib/openmpi/mca_plm_rsh.so
+lib/openmpi/mca_pml_cm.so
+lib/openmpi/mca_pml_csum.so
+lib/openmpi/mca_pml_ob1.so
+lib/openmpi/mca_pml_v.so
+lib/openmpi/mca_pubsub_orte.so
+lib/openmpi/mca_rcache_vma.so
+lib/openmpi/mca_rmaps_rank_file.so
+lib/openmpi/mca_rmaps_round_robin.so
+lib/openmpi/mca_rmaps_seq.so
+lib/openmpi/mca_rml_oob.so
+lib/openmpi/mca_routed_binomial.so
+lib/openmpi/mca_routed_direct.so
+lib/openmpi/mca_routed_linear.so
+lib/openmpi/mca_topo_unity.so
+lib/openmpi/mca_vprotocol_pessimist.so

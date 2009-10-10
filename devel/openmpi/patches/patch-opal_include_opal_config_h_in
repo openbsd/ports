@@ -1,0 +1,13 @@
+$OpenBSD: patch-opal_include_opal_config_h_in,v 1.1.1.1 2009/10/10 18:11:42 jasper Exp $
+--- opal/include/opal_config.h.in.orig	Fri Aug 21 14:03:01 2009
++++ opal/include/opal_config.h.in	Fri Aug 21 14:03:19 2009
+@@ -287,6 +287,9 @@
+ 
+ /* Define to 1 if you have the `openpty' function. */
+ #undef HAVE_OPENPTY
++#ifdef __OpenBSD__
++#define HAVE_OPENPTY 1
++#endif
+ 
+ /* Define to 1 if you have the `pipe' function. */
+ #undef HAVE_PIPE

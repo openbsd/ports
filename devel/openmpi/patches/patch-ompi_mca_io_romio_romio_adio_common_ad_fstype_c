@@ -1,0 +1,79 @@
+$OpenBSD: patch-ompi_mca_io_romio_romio_adio_common_ad_fstype_c,v 1.1.1.1 2009/10/10 18:11:42 jasper Exp $
+--- ompi/mca/io/romio/romio/adio/common/ad_fstype.c.orig	Fri Aug 21 08:54:47 2009
++++ ompi/mca/io/romio/romio/adio/common/ad_fstype.c	Fri Aug 21 08:56:05 2009
+@@ -30,7 +30,7 @@
+  *
+  * There are three more "general" mechanisms that we use for detecting
+  * file system type:
+- * - struct statfs's f_type field
++ * - struct statfs's f_fstypename field
+  * - struct statvfs's f_basetype field
+  * - struct stat's st_fstype field
+  *
+@@ -329,14 +329,14 @@ static void ADIO_FileSysType_fncall(char *filename, in
+     /* BlueGene is a special case: all file systems are AD_BGL, except for
+      * certain exceptions */
+     *fstype = ADIO_BGL;
+-    check_for_lockless_exceptions(fsbuf.f_type, fstype);
++    check_for_lockless_exceptions(fsbuf.f_fstypename, fstype);
+     *error_code = MPI_SUCCESS;
+     return;
+ #  endif
+ 
+-    /* FPRINTF(stderr, "%d\n", fsbuf.f_type);*/
++    /* FPRINTF(stderr, "%d\n", fsbuf.f_fstypename);*/
+ # ifdef NFS_SUPER_MAGIC
+-    if (fsbuf.f_type == NFS_SUPER_MAGIC) {
++    if (fsbuf.f_fstypename == NFS_SUPER_MAGIC) {
+ 	*fstype = ADIO_NFS;
+ 	return;
+     }
+@@ -345,42 +345,42 @@ static void ADIO_FileSysType_fncall(char *filename, in
+ /*#if defined(LINUX) && defined(ROMIO_LUSTRE)*/
+ #ifdef ROMIO_LUSTRE
+ #define LL_SUPER_MAGIC 0x0BD00BD0
+-    if (fsbuf.f_type == LL_SUPER_MAGIC) {
++    if (fsbuf.f_fstypename == LL_SUPER_MAGIC) {
+ 	*fstype = ADIO_LUSTRE;
+ 	return;
+     }
+ # endif
+ 
+ # ifdef PAN_KERNEL_FS_CLIENT_SUPER_MAGIC
+-    if (fsbuf.f_type == PAN_KERNEL_FS_CLIENT_SUPER_MAGIC) {
++    if (fsbuf.f_fstypename == PAN_KERNEL_FS_CLIENT_SUPER_MAGIC) {
+ 	*fstype = ADIO_PANFS;
+ 	return;
+     }
+ # endif
+ 
+ # ifdef MOUNT_NFS
+-    if (fsbuf.f_type == MOUNT_NFS) {
++    if (fsbuf.f_fstypename == MOUNT_NFS) {
+ 	*fstype = ADIO_NFS;
+ 	return;
+     }
+ # endif
+ 
+ # ifdef MOUNT_PFS
+-    if (fsbuf.f_type == MOUNT_PFS) {
++    if (fsbuf.f_fstypename == MOUNT_PFS) {
+ 	*fstype = ADIO_PFS;
+ 	return;
+     }
+ # endif
+ 
+ # ifdef PVFS_SUPER_MAGIC
+-    if (fsbuf.f_type == PVFS_SUPER_MAGIC) {
++    if (fsbuf.f_fstypename == PVFS_SUPER_MAGIC) {
+ 	*fstype = ADIO_PVFS;
+ 	return;
+     }
+ # endif
+ 
+ # ifdef PVFS2_SUPER_MAGIC
+-    if (fsbuf.f_type == PVFS2_SUPER_MAGIC) {
++    if (fsbuf.f_fstypename == PVFS2_SUPER_MAGIC) {
+ 	*fstype = ADIO_PVFS2;
+ 	return;
+     }
