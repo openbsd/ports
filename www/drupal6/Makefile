@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/09/28 08:45:03 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2009/10/10 13:43:19 espie Exp $
 
 SUBDIR += FCKeditor
 SUBDIR += admin-menu
@@ -16,6 +16,7 @@ SUBDIR += ctools
 SUBDIR += date
 SUBDIR += devel
 SUBDIR += dhtml_menu
+SUBDIR += draft
 SUBDIR += filefield
 SUBDIR += globalredirect
 SUBDIR += imageapi
