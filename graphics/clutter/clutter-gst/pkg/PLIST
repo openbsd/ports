@@ -1,14 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/15 17:44:51 jasper Exp $
-include/clutter-${MAJOR}/clutter-gst/
-include/clutter-${MAJOR}/clutter-gst/clutter-gst-audio.h
-include/clutter-${MAJOR}/clutter-gst/clutter-gst-shaders.h
-include/clutter-${MAJOR}/clutter-gst/clutter-gst-util.h
-include/clutter-${MAJOR}/clutter-gst/clutter-gst-version.h
-include/clutter-${MAJOR}/clutter-gst/clutter-gst-video-sink.h
-include/clutter-${MAJOR}/clutter-gst/clutter-gst-video-texture.h
-include/clutter-${MAJOR}/clutter-gst/clutter-gst.h
+@comment $OpenBSD: PLIST,v 1.2 2009/10/10 23:21:11 landry Exp $
+include/clutter-${API_VERSION}/clutter-gst/
+include/clutter-${API_VERSION}/clutter-gst/clutter-gst-audio.h
+include/clutter-${API_VERSION}/clutter-gst/clutter-gst-util.h
+include/clutter-${API_VERSION}/clutter-gst/clutter-gst-version.h
+include/clutter-${API_VERSION}/clutter-gst/clutter-gst-video-sink.h
+include/clutter-${API_VERSION}/clutter-gst/clutter-gst-video-texture.h
+include/clutter-${API_VERSION}/clutter-gst/clutter-gst.h
 lib/libclutter-gst-${MAJOR}.la
-@lib lib/libclutter-gst-${MAJOR}.so.${LIBclutter-gst-0.8_VERSION}
+@lib lib/libclutter-gst-${MAJOR}.so.${LIBclutter-gst-0.10_VERSION}
 lib/pkgconfig/clutter-gst-${MAJOR}.pc
 share/gtk-doc/html/clutter-gst/
 share/gtk-doc/html/clutter-gst/ClutterGstAudio.html
