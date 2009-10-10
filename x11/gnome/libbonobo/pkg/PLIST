@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2008/11/21 18:31:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2009/10/10 08:19:48 ajacoutot Exp $
 %%SHARED%%
 @bin bin/activation-client
 @bin bin/bonobo-activation-run-query
@@ -228,10 +228,16 @@ share/locale/bn/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/bn_IN/
 share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/br/
+share/locale/br/LC_MESSAGES/
+share/locale/br/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ca/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/cs/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/cy/
 share/locale/cy/LC_MESSAGES/
@@ -269,12 +275,17 @@ share/locale/hi/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/hr/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/hu/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/id/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/is/
+share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/it/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ja/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/kn/
+share/locale/kn/LC_MESSAGES/
+share/locale/kn/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ko/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
@@ -352,6 +363,8 @@ share/locale/th/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/tr/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/uk/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/vi/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/xh/
 share/locale/xh/LC_MESSAGES/
