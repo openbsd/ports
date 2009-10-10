@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2009/02/15 17:42:31 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2009/10/10 23:17:11 landry Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -23,5 +23,6 @@ LIBTOOL_FLAGS?=		--tag=disable-static
 
 CONFIGURE_STYLE?=	gnu
 
-MAJOR?=			0.8
-SUBST_VARS?=		MAJOR
+MAJOR?=			0.10
+API_VERSION?=		1.0
+SUBST_VARS?=		MAJOR API_VERSION
