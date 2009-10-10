@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.79 2009/10/09 22:24:56 steven Exp $
+# $OpenBSD: libtool,v 1.80 2009/10/10 09:50:11 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -382,7 +382,7 @@ sub link
 		main::get_symbollist($symbolsfile, $opts->{'export-symbols-regex'}, $objs);
 	}
 	foreach my $l (keys %$libstofind) {
-		my $libpath = main::find_lib($l);
+		my $libpath = main::find_lib($l, 1);
 		$libs->{$l} = $libpath if ($libpath);
 	}
 
@@ -557,7 +557,7 @@ sub link
 	my @libflags;
 	my @cmd;
 	my $dst;
-	if ($seen_la_shared) {
+	if ($shared && $seen_la_shared) {
 		$dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
 		mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
 	} else {
@@ -574,12 +574,6 @@ sub link
 	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
 	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
 
-	# static linking
-	if (!$shared) {
-		die "static linking of programs not supported yet\n";
-	}
-
-	# dynamic linking
 	my $symbolsfile;
 	if ($opts->{'export-symbols'}) {
 		$symbolsfile = $opts->{'export-symbols'};
@@ -591,7 +585,8 @@ sub link
 	$RPdirs = main::reverse_zap_duplicates_ref($RPdirs);
 	map { $_ = "-Wl,-rpath,$_" } @$RPdirs;
 	foreach my $l (keys %$libstofind) {
-		my $libpath = main::find_lib($l);
+		# here we find shared or static libraries
+		my $libpath = main::find_lib($l, $shared);
 		$libs->{$l} = $libpath if ($libpath);
 	}
 
@@ -623,6 +618,7 @@ sub link
 
 	@cmd = ($prog);
 	push @cmd, '-o', $dst;
+	push @cmd, '-static' if (!$shared);
 	push @cmd, @$argv;
 	push @cmd, @$objs if (@$objs);
 	push @cmd, "-L$ltdir", @libflags if (@libflags);
@@ -983,7 +979,7 @@ if ($mode eq 'compile') {
 		@$RPdirs = (@Ropts, @RPopts, @Rresolved);
 
 		$program->link($ltprog, $ofile, $ofile, $odir, $shared, $objlist, $libs, $libstofind, \%opts, $RPdirs, $seen_la_shared);
-		if ($seen_la_shared) {
+		if ($shared && $seen_la_shared) {
 			$program->write_wrapper($outfile);
 			chmod 0755, $outfile;
 		}
@@ -1416,6 +1412,7 @@ sub find_la
 sub find_lib
 {
 	my $libtofind = shift;
+	my $shared = shift;
 	my @ldconfigdirs = @_;	# search there last
 
 	my $libfile = 0;
@@ -1430,6 +1427,7 @@ sub find_lib
 	Trace::debug {"searching for $libtofind\n"};
 	Trace::debug {"search path= ", join(':', @sdirs), "\n"};
 	foreach my $sd (@sdirs) {
+	   if ($shared) {
 		# select correct library by sorting by version number only
 		@globbedlib = sort { my ($x,$y) =
 			map { /\.so\.(\d+\.\d+)$/; $1 } ($a,$b); $y <=> $x }
@@ -1445,6 +1443,15 @@ sub find_lib
 				last;
 			}
 		}
+	   } else {
+		# look for a static library
+		@globbedlib = glob "$sd/lib$libtofind.a";
+		if ($globbedlib[0]) {
+			Trace::debug {"found static $libtofind in $sd\n"};
+			$libfile = $globbedlib[0];
+			last;
+		}
+	   }
 	}
 	say "$libtofind not found!" if !$libfile;
 	return $libfile;
