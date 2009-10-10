@@ -1,12 +1,29 @@
-$OpenBSD: patch-lbdb_lib_sh_in,v 1.1.1.1 2008/06/15 07:22:57 sthen Exp $
---- lbdb_lib.sh.in.orig	Tue Mar 11 22:51:11 2008
-+++ lbdb_lib.sh.in	Tue Mar 11 22:51:37 2008
-@@ -67,7 +67,7 @@ lbdb_hostname()
- 		if test "x$hn" = "x" ; then
- 			hn=`lbdb_hn_sendmail`
- 			if test "x$hn" = "xNONE" ; then
+$OpenBSD: patch-lbdb_lib_sh_in,v 1.2 2009/10/10 10:48:49 sthen Exp $
+--- lbdb_lib.sh.in.orig	Sun Aug 13 10:53:21 2006
++++ lbdb_lib.sh.in	Sat Oct 10 03:10:21 2009
+@@ -57,24 +57,7 @@ lbdb_hostname()
+ 	elif test -f /etc/mailname; then
+ 		hn=`cat /etc/mailname`
+ 	else
+-		hn=""
+-		if test -r /etc/resolv.conf ; then
+-			hn="`sed -n -e 's/^[ 	]*domain[ 	]\{1,\}\([^ ]*\)/\1/p' /etc/resolv.conf`"
+-			if test "x$hn" = "x" ; then
+-				hn="`sed -n -e 's/^[ 	]*search[ 	]\{1,\}\([^ ]*\)/\1/p' /etc/resolv.conf`"
+-			fi
+-		fi
+-		if test "x$hn" = "x" ; then
+-			hn=`lbdb_hn_sendmail`
+-			if test "x$hn" = "xNONE" ; then
 -				for i in /etc/HOSTNAME /etc/hostname ; do
-+				for i in /etc/myname /etc/HOSTNAME /etc/hostname ; do
- 					if test -f $i ; then
- 						hn="`cat $i`"
- 						break;
+-					if test -f $i ; then
+-						hn="`cat $i`"
+-						break;
+-					fi
+-				done
+-			fi
+-		fi
++		hn=`hostname`
+ 	fi
+ 	echo "$hn"
+ }
