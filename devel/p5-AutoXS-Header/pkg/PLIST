@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/10 08:14:08 sthen Exp $
+${P5SITE}/AutoXS/
+${P5SITE}/AutoXS/Header.pm
+@man man/man3p/AutoXS::Header.3p
