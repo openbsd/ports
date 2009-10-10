@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.740 2009/10/10 08:17:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.741 2009/10/10 11:03:19 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -759,6 +759,7 @@
      SUBDIR += rats
      SUBDIR += re2c
      SUBDIR += remake
+     SUBDIR += rsvndump
      SUBDIR += ruby-abstract
      SUBDIR += ruby-actionpack
      SUBDIR += ruby-activesupport
