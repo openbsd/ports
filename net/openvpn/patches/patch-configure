@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2009/05/10 13:59:35 fkr Exp $
---- configure.orig	Sun May  3 03:42:03 2009
-+++ configure	Sun May  3 03:43:03 2009
-@@ -10326,8 +10326,6 @@ if test x"$acx_pthread_ok" = xyes; then
+$OpenBSD: patch-configure,v 1.2 2009/10/10 13:35:34 sthen Exp $
+--- configure.orig	Wed Oct  7 13:11:23 2009
++++ configure	Sat Oct 10 15:33:07 2009
+@@ -10373,8 +10373,6 @@ if test x"$acx_pthread_ok" = xyes; then
  
  	    case "$target" in
  	    *openbsd*)
