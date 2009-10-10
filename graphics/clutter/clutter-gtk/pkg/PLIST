@@ -1,21 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/15 17:45:30 jasper Exp $
-include/clutter-${MAJOR}/clutter-gtk/
-include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-embed.h
-include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-util.h
+@comment $OpenBSD: PLIST,v 1.2 2009/10/10 23:20:26 landry Exp $
+include/clutter-${API_VERSION}/clutter-gtk/
+include/clutter-${API_VERSION}/clutter-gtk/clutter-gtk.h
+include/clutter-${API_VERSION}/clutter-gtk/gtk-clutter-embed.h
+include/clutter-${API_VERSION}/clutter-gtk/gtk-clutter-scrollable.h
+include/clutter-${API_VERSION}/clutter-gtk/gtk-clutter-util.h
+include/clutter-${API_VERSION}/clutter-gtk/gtk-clutter-viewport.h
+include/clutter-${API_VERSION}/clutter-gtk/gtk-clutter-zoomable.h
 lib/libclutter-gtk-${MAJOR}.la
-@lib lib/libclutter-gtk-${MAJOR}.so.${LIBclutter-gtk-0.8_VERSION}
+@lib lib/libclutter-gtk-${MAJOR}.so.${LIBclutter-gtk-0.10_VERSION}
 lib/pkgconfig/clutter-gtk-${MAJOR}.pc
 share/gtk-doc/html/clutter-gtk/
 share/gtk-doc/html/clutter-gtk/GtkClutterEmbed.html
+share/gtk-doc/html/clutter-gtk/GtkClutterScrollable.html
+share/gtk-doc/html/clutter-gtk/GtkClutterViewport.html
+share/gtk-doc/html/clutter-gtk/GtkClutterZoomable.html
 share/gtk-doc/html/clutter-gtk/ch01.html
 share/gtk-doc/html/clutter-gtk/ch02.html
 share/gtk-doc/html/clutter-gtk/ch03.html
+share/gtk-doc/html/clutter-gtk/ch04.html
 share/gtk-doc/html/clutter-gtk/clutter-gtk-Utility-Functions.html
 share/gtk-doc/html/clutter-gtk/clutter-gtk.devhelp
 share/gtk-doc/html/clutter-gtk/clutter-gtk.devhelp2
 share/gtk-doc/html/clutter-gtk/home.png
 share/gtk-doc/html/clutter-gtk/index.html
 share/gtk-doc/html/clutter-gtk/index.sgml
+share/gtk-doc/html/clutter-gtk/ix01.html
+share/gtk-doc/html/clutter-gtk/ix02.html
+share/gtk-doc/html/clutter-gtk/ix03.html
+share/gtk-doc/html/clutter-gtk/ix04.html
+share/gtk-doc/html/clutter-gtk/ix05.html
+share/gtk-doc/html/clutter-gtk/ix06.html
 share/gtk-doc/html/clutter-gtk/left.png
 share/gtk-doc/html/clutter-gtk/license.html
 share/gtk-doc/html/clutter-gtk/right.png
