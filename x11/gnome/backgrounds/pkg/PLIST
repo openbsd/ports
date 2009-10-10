@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/03/17 14:28:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/10/10 12:44:40 jasper Exp $
 share/gnome-background-properties/
 share/gnome-background-properties/gnome-abstract.xml
 share/gnome-background-properties/gnome-nature.xml
@@ -30,6 +30,9 @@ share/locale/bn_IN/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ca/
 share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/cs/
 share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/gnome-backgrounds.mo
@@ -150,6 +153,9 @@ share/locale/mr/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/nb/
 share/locale/nb/LC_MESSAGES/
 share/locale/nb/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/nds/
+share/locale/nds/LC_MESSAGES/
+share/locale/nds/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/gnome-backgrounds.mo
