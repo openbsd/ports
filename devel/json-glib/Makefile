@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/05 18:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/10 11:05:55 steven Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
-DISTNAME=		json-glib-0.6.2
-SHARED_LIBS +=  json-glib-1.0        0.0      # .602.0
+GNOME_PROJECT=		json-glib
+GNOME_VERSION=		0.8.0
+
+SHARED_LIBS +=  json-glib-1.0        1.0      # .800.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://live.gnome.org/JsonGlib
@@ -14,11 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://folks.o-hand.com/~ebassi/sources/
-
 WANTLIB=		pcre
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext x11/gnome
 
 LIB_DEPENDS=		glib-2.0,gobject-2.0::devel/glib2
 
