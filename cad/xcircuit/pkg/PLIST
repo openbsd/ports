@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/11/19 17:18:41 okan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/10/10 22:41:40 steven Exp $
 bin/xcircuit
 lib/xcircuit-${BASEVER}/
 lib/xcircuit-${BASEVER}/analog.lps
@@ -136,7 +136,7 @@ lib/xcircuit-${BASEVER}/signal.lps
 lib/xcircuit-${BASEVER}/sue_xc.tcl
 lib/xcircuit-${BASEVER}/tkcon.tcl
 lib/xcircuit-${BASEVER}/wrapper.tcl
-lib/xcircuit-${BASEVER}/xcircexec
+@bin lib/xcircuit-${BASEVER}/xcircexec
 lib/xcircuit-${BASEVER}/xcircps2.pro
 lib/xcircuit-${BASEVER}/xcircuit.so
 lib/xcircuit-${BASEVER}/xcircuit.tcl
