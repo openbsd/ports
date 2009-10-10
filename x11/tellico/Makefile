@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/12 13:29:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/10/10 10:38:24 sthen Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
-DISTNAME=	tellico-1.3.4
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	tellico-1.3.6
 CATEGORIES=	x11 databases
 
 HOMEPAGE=	http://www.periapsis.org/tellico/
@@ -49,5 +48,7 @@ LIB_DEPENDS=	${MODQT_LIB_DEPENDS} \
 		poppler-qt.>=3,poppler::print/poppler,-qt \
 		tag::audio/taglib \
 		yaz::net/yaz
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
