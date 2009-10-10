@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/07 08:11:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/10/10 15:09:20 ajacoutot Exp $
+@newgroup _polkituser:639
+@newuser _polkituser:639:_polkituser::PolicyKit User:/var/empty:/sbin/nologin
 %%SHARED%%
 @bin bin/polkit-action
 @bin bin/polkit-auth
@@ -40,19 +42,25 @@ lib/pkgconfig/polkit-dbus.pc
 lib/pkgconfig/polkit-grant.pc
 lib/pkgconfig/polkit.pc
 @mode 2755
-libexec/polkit-explicit-grant-helper
-libexec/polkit-grant-helper
+@group _polkituser
+@bin libexec/polkit-explicit-grant-helper
+@bin libexec/polkit-grant-helper
 @mode 4750
-libexec/polkit-grant-helper-bsdauth
+@group
+@bin libexec/polkit-grant-helper-bsdauth
 @mode 2755
-libexec/polkit-read-auth-helper
+@group _polkituser
+@bin libexec/polkit-read-auth-helper
 @mode 4755
-libexec/polkit-resolve-exe-helper
+@bin libexec/polkit-resolve-exe-helper
 @mode 2755
-libexec/polkit-revoke-helper
+@bin libexec/polkit-revoke-helper
 @mode 4755
-libexec/polkit-set-default-helper
+@owner _polkituser
+@group
+@bin libexec/polkit-set-default-helper
 @mode
+@owner
 @bin libexec/polkitd
 @man man/man1/polkit-action.1
 @man man/man1/polkit-auth.1
@@ -82,6 +90,10 @@ share/examples/policykit/dbus-1/system.d/org.freedesktop.PolicyKit.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.PolicyKit.conf
 share/examples/policykit/profile.d/
 share/examples/policykit/profile.d/polkit-bash-completion.sh
+@sample /var/lib/
+@owner _polkituser
+@sample /var/lib/PolicyKit-public/
+@owner
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/polkit/

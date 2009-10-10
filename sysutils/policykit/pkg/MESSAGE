@@ -1,0 +1,5 @@
+XXX
+
+if [ -x "${PREFIX}/bin/polkit-auth ]; then
+	install -d -m 0770 -o _polkituser /var/run/PolicyKit
+fi

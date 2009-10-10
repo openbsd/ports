@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/07 08:30:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/10 15:09:20 ajacoutot Exp $
 
 COMMENT=	authorization framework
 
 DISTNAME=	PolicyKit-0.9
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME=	${DISTNAME:L}p2
+
 CATEGORIES=	sysutils security
 
 SHARED_LIBS+=	polkit-dbus	0.0 \
@@ -22,27 +23,29 @@ WANTLIB=	c
 
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
-MODULES=		textproc/intltool \
-			devel/gettext
+MODULES=	textproc/intltool \
+		devel/gettext
 
-BUILD_DEPENDS=		::textproc/gtk-doc
+BUILD_DEPENDS=	::textproc/gtk-doc
 
-AUTOCONF_VERSION=	2.62
-CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION= 2.62
+
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-man-pages \
-			--enable-gtk-doc \
-			--with-authfw=bsdauth \
-			--with-os-type=openbsd \
-			--enable-man-pages \
-			--disable-selinux
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--with-polkit-user=_polkituser \
+		--with-polkit-group=_polkituser \
+		--enable-man-pages \
+		--enable-gtk-doc \
+		--with-authfw=bsdauth \
+		--with-os-type=openbsd \
+		--enable-man-pages \
+		--disable-selinux
 
-USE_GMAKE=		Yes
-
+USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/policykit
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/policykit
 
 .include <bsd.port.mk>
