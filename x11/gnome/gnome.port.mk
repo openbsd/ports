@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.22 2009/10/09 16:05:51 steven Exp $
+# $OpenBSD: gnome.port.mk,v 1.23 2009/10/10 12:38:33 jasper Exp $
 #
 # Module for GNOME related ports
 #
@@ -40,3 +40,10 @@ MASTER_SITES?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/
 EXTRACT_SUFX?=		.tar.bz2
 
 USE_GMAKE?=		Yes
+
+# Disable "silent rules" aka clean build output (CC $FILE)
+.if defined(CONFIGURE_STYLE)
+. if ${CONFIGURE_STYLE:L} == "gnu" || ${CONFIGURE_STYLE:L} == "autoconf"
+  CONFIGURE_ARGS+=	--disable-silent-rules
+. endif
+.endif
