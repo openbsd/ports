@@ -1,0 +1,111 @@
+$OpenBSD: patch-configure,v 1.1 2009/10/10 09:51:52 ajacoutot Exp $
+
+Force the use of the bundled goffice.  It will prevent this package not
+building in the future in case our system goffice gets picked up (for
+now, it looks for a non-existing version and there's no configure switch
+to disable system goffice).  Besides this will loosen up dependency.
+
+--- configure.orig	Tue Mar 17 10:56:13 2009
++++ configure	Tue Mar 17 10:57:47 2009
+@@ -9707,90 +9707,6 @@ fi
+ 
+ 
+ 
+-GOFFICE_VERSION_REQUIRED='0.4.0'
+-goffice_modules="libgoffice-0.4 >= $GOFFICE_VERSION_REQUIRED"
+-
+-
+-pkg_failed=no
+-{ $as_echo "$as_me:$LINENO: checking for GOFFICE" >&5
+-$as_echo_n "checking for GOFFICE... " >&6; }
+-
+-if test -n "$GOFFICE_CFLAGS"; then
+-    pkg_cv_GOFFICE_CFLAGS="$GOFFICE_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$goffice_modules \"") >&5
+-  ($PKG_CONFIG --exists --print-errors " $goffice_modules ") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_GOFFICE_CFLAGS=`$PKG_CONFIG --cflags " $goffice_modules " 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$GOFFICE_LIBS"; then
+-    pkg_cv_GOFFICE_LIBS="$GOFFICE_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$goffice_modules \"") >&5
+-  ($PKG_CONFIG --exists --print-errors " $goffice_modules ") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_GOFFICE_LIBS=`$PKG_CONFIG --libs " $goffice_modules " 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        GOFFICE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors " $goffice_modules " 2>&1`
+-        else
+-	        GOFFICE_PKG_ERRORS=`$PKG_CONFIG --print-errors " $goffice_modules " 2>&1`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$GOFFICE_PKG_ERRORS" >&5
+-
+-	{ $as_echo "$as_me:$LINENO: result: no" >&5
+-$as_echo "no" >&6; }
+-
+-	HAVE_SYSTEM_GOFFICE=no
+-
+-elif test $pkg_failed = untried; then
+-
+-	HAVE_SYSTEM_GOFFICE=no
+-
+-else
+-	GOFFICE_CFLAGS=$pkg_cv_GOFFICE_CFLAGS
+-	GOFFICE_LIBS=$pkg_cv_GOFFICE_LIBS
+-        { $as_echo "$as_me:$LINENO: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-	HAVE_SYSTEM_GOFFICE=yes
+-	ABIWORD_REQUIRED_PKGS="$ABIWORD_REQUIRED_PKGS $goffice_modules"
+-
+-fi
+-
+-if test "x$PLATFORM" != "xunix" ; then
+-	HAVE_SYSTEM_GOFFICE=yes
+-fi
+-if test "x$HAVE_SYSTEM_GOFFICE" = "xyes" ; then
+-	abi_goffice_message="system"
+-else
+ 	# using builtin subset
+ 	abi_goffice_message="built in"
+ 
+@@ -9811,9 +9727,8 @@ else
+ 
+ 	goffice_gladedir='${goffice_datadir}/glade'
+ 
+-fi
+ 
+- if test "x$HAVE_SYSTEM_GOFFICE" = "xyes"; then
++if test "x$HAVE_SYSTEM_GOFFICE" = "xyes"; then
+   WITH_SYSTEM_GOFFICE_TRUE=
+   WITH_SYSTEM_GOFFICE_FALSE='#'
+ else

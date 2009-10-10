@@ -1,0 +1,33 @@
+$OpenBSD: patch-goffice-bits_goffice_goffice-config_h,v 1.1 2009/10/10 09:51:52 ajacoutot Exp $
+--- goffice-bits/goffice/goffice-config.h.orig	Mon Jun 29 10:26:22 2009
++++ goffice-bits/goffice/goffice-config.h	Mon Jun 29 10:26:56 2009
+@@ -204,29 +204,8 @@
+ /* Define to 1 if you have the <unistd.h> header file. */
+ #define HAVE_UNISTD_H 1
+ 
+-/* Name of package */
+-#define PACKAGE "goffice"
+-
+-/* Define to the address where bug reports for this package should be sent. */
+-#define PACKAGE_BUGREPORT "http://bugzilla.gnome.org/enter_bug.cgi?product=libgoffice"
+-
+-/* Define to the full name of this package. */
+-#define PACKAGE_NAME "goffice"
+-
+-/* Define to the full name and version of this package. */
+-#define PACKAGE_STRING "goffice 0.3.1"
+-
+-/* Define to the one symbol short name of this package. */
+-#define PACKAGE_TARNAME "goffice"
+-
+-/* Define to the version of this package. */
+-#define PACKAGE_VERSION "0.3.1"
+-
+ /* Define to 1 if you have the ANSI C header files. */
+ #define STDC_HEADERS 1
+-
+-/* Version number of package */
+-#define VERSION "0.3.1"
+ 
+ /* Define to 1 if `lex' declares `yytext' as a `char *' by default, not a
+    `char[]'. */
