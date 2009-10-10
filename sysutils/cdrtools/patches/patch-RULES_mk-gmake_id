@@ -1,0 +1,12 @@
+$OpenBSD: patch-RULES_mk-gmake_id,v 1.1 2009/10/10 09:25:11 espie Exp $
+--- RULES/mk-gmake.id.orig	Sat Oct 10 11:20:15 2009
++++ RULES/mk-gmake.id	Sat Oct 10 11:20:33 2009
+@@ -37,7 +37,7 @@ MAKEPROG=	gmake
+ 
+ ifndef		ARCH_DONE
+ 
+-__gmake_warn:=	$(shell cat $(SRCROOT)/$(RULESDIR)/gmake.wrn 1>&2; sleep 5)
++__gmake_warn:=	:
+ 
+ _MACHCMD=	(mach || uname -p || true)	2> /dev/null
+ _ARCHCMD=	(arch || /usr/ucb/arch || true)	2> /dev/null
