@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gpx-viewer_c,v 1.1 2009/10/10 23:35:26 landry Exp $
+--- src/gpx-viewer.c.orig	Thu Sep 24 21:30:58 2009
++++ src/gpx-viewer.c	Thu Sep 24 21:31:08 2009
+@@ -23,7 +23,7 @@
+ #include <glib/gi18n.h>
+ #include <champlain/champlain.h>
+ #include <champlain-gtk/champlain-gtk.h>
+-#include <clutter-gtk/gtk-clutter-embed.h>
++#include <clutter-gtk/clutter-gtk.h>
+ #include "gpx.h"
+ //#include "gpx-graph.h"
+ 

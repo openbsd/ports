@@ -1,0 +1,97 @@
+$OpenBSD: patch-configure,v 1.1 2009/10/10 23:35:26 landry Exp $
+--- configure.orig	Sat Oct 10 18:25:53 2009
++++ configure	Sat Oct 10 18:29:15 2009
+@@ -13827,15 +13827,15 @@ if test -n "$PKG_CONFIG"; then
+         if test -n "$PKG_CONFIG" && \
+     { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"
+         gtk+-2.0  >= 2.16
+-        champlain-gtk-0.3  >= 0.3.3
+-        champlain-0.3 >= 0.3.3
++        champlain-gtk-0.4  >= 0.3.3
++        champlain-0.4 >= 0.3.3
+         gmodule-2.0
+         libxml-2.0
+         \"") >&5
+   ($PKG_CONFIG --exists --print-errors "
+         gtk+-2.0  >= 2.16
+-        champlain-gtk-0.3  >= 0.3.3
+-        champlain-0.3 >= 0.3.3
++        champlain-gtk-0.4  >= 0.3.3
++        champlain-0.4 >= 0.3.3
+         gmodule-2.0
+         libxml-2.0
+         ") 2>&5
+@@ -13844,8 +13844,8 @@ if test -n "$PKG_CONFIG"; then
+   (exit $ac_status); }; then
+   pkg_cv_modules_CFLAGS=`$PKG_CONFIG --cflags "
+         gtk+-2.0  >= 2.16
+-        champlain-gtk-0.3  >= 0.3.3
+-        champlain-0.3 >= 0.3.3
++        champlain-gtk-0.4  >= 0.3.3
++        champlain-0.4 >= 0.3.3
+         gmodule-2.0
+         libxml-2.0
+         " 2>/dev/null`
+@@ -13863,15 +13863,15 @@ if test -n "$PKG_CONFIG"; then
+         if test -n "$PKG_CONFIG" && \
+     { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"
+         gtk+-2.0  >= 2.16
+-        champlain-gtk-0.3  >= 0.3.3
+-        champlain-0.3 >= 0.3.3
++        champlain-gtk-0.4  >= 0.3.3
++        champlain-0.4 >= 0.3.3
+         gmodule-2.0
+         libxml-2.0
+         \"") >&5
+   ($PKG_CONFIG --exists --print-errors "
+         gtk+-2.0  >= 2.16
+-        champlain-gtk-0.3  >= 0.3.3
+-        champlain-0.3 >= 0.3.3
++        champlain-gtk-0.4  >= 0.3.3
++        champlain-0.4 >= 0.3.3
+         gmodule-2.0
+         libxml-2.0
+         ") 2>&5
+@@ -13880,8 +13880,8 @@ if test -n "$PKG_CONFIG"; then
+   (exit $ac_status); }; then
+   pkg_cv_modules_LIBS=`$PKG_CONFIG --libs "
+         gtk+-2.0  >= 2.16
+-        champlain-gtk-0.3  >= 0.3.3
+-        champlain-0.3 >= 0.3.3
++        champlain-gtk-0.4  >= 0.3.3
++        champlain-0.4 >= 0.3.3
+         gmodule-2.0
+         libxml-2.0
+         " 2>/dev/null`
+@@ -13905,16 +13905,16 @@ fi
+         if test $_pkg_short_errors_supported = yes; then
+ 	        modules_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "
+         gtk+-2.0  >= 2.16
+-        champlain-gtk-0.3  >= 0.3.3
+-        champlain-0.3 >= 0.3.3
++        champlain-gtk-0.4  >= 0.3.3
++        champlain-0.4 >= 0.3.3
+         gmodule-2.0
+         libxml-2.0
+         "`
+         else
+ 	        modules_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "
+         gtk+-2.0  >= 2.16
+-        champlain-gtk-0.3  >= 0.3.3
+-        champlain-0.3 >= 0.3.3
++        champlain-gtk-0.4  >= 0.3.3
++        champlain-0.4 >= 0.3.3
+         gmodule-2.0
+         libxml-2.0
+         "`
+@@ -13924,8 +13924,8 @@ fi
+ 
+ 	{ { $as_echo "$as_me:$LINENO: error: Package requirements (
+         gtk+-2.0  >= 2.16
+-        champlain-gtk-0.3  >= 0.3.3
+-        champlain-0.3 >= 0.3.3
++        champlain-gtk-0.4  >= 0.3.3
++        champlain-0.4 >= 0.3.3
+         gmodule-2.0
+         libxml-2.0
+         ) were not met:
