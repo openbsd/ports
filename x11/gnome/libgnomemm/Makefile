@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/11 08:39:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/10/10 15:30:44 ajacoutot Exp $
 
 COMMENT=		C++ interface for libgnome
 
 GNOME_PROJECT=		libgnomemm
-GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p5
+GNOME_VERSION=		2.28.0
 
-SHARED_LIBS +=	gnomemm-2.6          0.0      # .1.5
+SHARED_LIBS +=	gnomemm-2.6	1.0      # .1.5
 
 HOMEPAGE=		http://gtkmm.sourceforge.net/
 
