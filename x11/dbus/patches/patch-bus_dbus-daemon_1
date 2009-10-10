@@ -1,14 +1,14 @@
-$OpenBSD: patch-bus_dbus-daemon_1,v 1.3 2009/01/28 14:16:19 jasper Exp $
---- bus/dbus-daemon.1.orig	Tue Jan  6 19:31:07 2009
-+++ bus/dbus-daemon.1	Tue Jan 27 03:38:09 2009
+$OpenBSD: patch-bus_dbus-daemon_1,v 1.4 2009/10/10 14:30:47 ajacoutot Exp $
+--- bus/dbus-daemon.1.orig	Sat Oct 10 12:48:43 2009
++++ bus/dbus-daemon.1	Sat Oct 10 12:50:45 2009
 @@ -30,9 +30,9 @@ a different configuration file.
  
  .PP
  The \-\-session option is equivalent to
--"\-\-config-file=/src/build/jhbuild/etc/dbus-1/session.conf" and the \-\-system
+-"\-\-config-file=/src/build/dbus/etc/dbus-1/session.conf" and the \-\-system
 +"\-\-config-file=${SYSCONFDIR}/dbus-1/session.conf" and the \-\-system
  option is equivalent to
--"\-\-config-file=/src/build/jhbuild/etc/dbus-1/system.conf". By creating 
+-"\-\-config-file=/src/build/dbus/etc/dbus-1/system.conf". By creating 
 +"\-\-config-file=${SYSCONFDIR}/dbus-1/system.conf". By creating 
  additional configuration files and using the \-\-config-file option,
  additional special-purpose message bus daemons could be created.
@@ -17,27 +17,18 @@ $OpenBSD: patch-bus_dbus-daemon_1,v 1.3 2009/01/28 14:16:19 jasper Exp $
  
  .PP
  The standard systemwide and per-session message bus setups are
--configured in the files "/src/build/jhbuild/etc/dbus-1/system.conf" and
--"/src/build/jhbuild/etc/dbus-1/session.conf".  These files normally
+-configured in the files "/src/build/dbus/etc/dbus-1/system.conf" and
+-"/src/build/dbus/etc/dbus-1/session.conf".  These files normally
 +configured in the files "${SYSCONFDIR}/dbus-1/system.conf" and
 +"${SYSCONFDIR}/dbus-1/session.conf".  These files normally
  <include> a system-local.conf or session-local.conf; you can put local
  overrides in those files to avoid modifying the primary configuration
  files.
-@@ -183,7 +183,7 @@ Only files ending in ".conf" are included.
- This is intended to allow extension of the system bus by particular
- packages. For example, if CUPS wants to be able to send out
- notification of printer queue changes, it could install a file to
--/src/build/jhbuild/etc/dbus-1/system.d that allowed all apps to receive
-+${SYSCONFDIR}/dbus-1/system.d that allowed all apps to receive
- this message and allowed the printer daemon user to send it.
- 
- .TP
 @@ -319,7 +319,7 @@ otherwise try your favorite search engine.
  .PP
  The <standard_session_servicedirs/> option is only relevant to the
  per-user-session bus daemon defined in
--/src/build/jhbuild/etc/dbus-1/session.conf. Putting it in any other
+-/src/build/dbus/etc/dbus-1/session.conf. Putting it in any other
 +${SYSCONFDIR}/dbus-1/session.conf. Putting it in any other
  configuration file would probably be nonsense.
  
@@ -46,13 +37,13 @@ $OpenBSD: patch-bus_dbus-daemon_1,v 1.3 2009/01/28 14:16:19 jasper Exp $
  .PP
  <standard_system_servicedirs/> specifies the standard system-wide
  activation directories that should be searched for service files.
--This option defaults to /src/build/jhbuild/share/dbus-1/system-services.
+-This option defaults to /src/build/dbus/share/dbus-1/system-services.
 +This option defaults to ${PREFIX}/share/dbus-1/system-services.
  
  .PP
  The <standard_system_servicedirs/> option is only relevant to the
  per-system bus daemon defined in
--/src/build/jhbuild/etc/dbus-1/system.conf. Putting it in any other
+-/src/build/dbus/etc/dbus-1/system.conf. Putting it in any other
 +${SYSCONFDIR}/dbus-1/system.conf. Putting it in any other
  configuration file would probably be nonsense.
  
@@ -61,7 +52,7 @@ $OpenBSD: patch-bus_dbus-daemon_1,v 1.3 2009/01/28 14:16:19 jasper Exp $
  
  .PP
  The <servicehelper/> option is only relevant to the per-system bus daemon
--defined in /src/build/jhbuild/etc/dbus-1/system.conf. Putting it in any other
+-defined in /src/build/dbus/etc/dbus-1/system.conf. Putting it in any other
 +defined in ${SYSCONFDIR}/dbus-1/system.conf. Putting it in any other
  configuration file would probably be nonsense.
  

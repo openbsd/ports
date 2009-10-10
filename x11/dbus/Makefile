@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.30 2009/08/11 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2009/10/10 14:30:47 ajacoutot Exp $
 
 # XXX patches/patch-configure_in disables PIE on arm. This is just a
 # temporary workaround until PIE works.
 
-COMMENT=		message bus system
+COMMENT=	message bus system
 
-DISTNAME=		dbus-1.2.14
-PKGNAME=		${DISTNAME}p2
-SHARED_LIBS+=		dbus-1	7.0
-CATEGORIES=		x11
+DISTNAME=	dbus-1.2.16
+SHARED_LIBS +=	dbus-1	7.1 # .7.0
+CATEGORIES=	x11
 
-HOMEPAGE=		http://dbus.freedesktop.org/
+HOMEPAGE=	http://dbus.freedesktop.org/
 
 # GPLv2+
 PERMIT_DISTFILES_CDROM=	Yes
@@ -18,30 +17,32 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		ICE X11 Xau Xdmcp SM c expat pthread pthread-stubs xcb
+WANTLIB=	ICE X11 Xau Xdmcp SM c expat pthread pthread-stubs xcb
 
-MASTER_SITES=		${HOMEPAGE}/releases/dbus/
+MASTER_SITES=	${HOMEPAGE}/releases/dbus/
 
-SEPARATE_BUILD=		simple
-USE_LIBTOOL=		Yes
-USE_X11=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.62
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread"
-CONFIGURE_ARGS=		--localstatedir=/var \
-			--with-dbus-user=_dbus \
-			--with-xml=expat \
-			--disable-xml-docs \
-			--disable-doxygen-docs \
-			--disable-abstract-sockets
+SEPARATE_BUILD=	simple
+
+USE_LIBTOOL=	Yes
+USE_X11=	Yes
+
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--with-dbus-user=_dbus \
+		--with-xml=expat \
+		--disable-xml-docs \
+		--disable-doxygen-docs \
+		--disable-abstract-sockets
+
 # Tests are disabled as they change the final dbus binaries
-#CONFIGURE_ARGS=		--enable-tests
-#CONFIGURE_ARGS=		--enable-verbose-mode
+#CONFIGURE_ARGS+=	--enable-tests
+#CONFIGURE_ARGS+=	--enable-verbose-mode
 
-FAKE_FLAGS=		sysconfdir=${TRUEPREFIX}/share/examples/dbus
+FAKE_FLAGS=	sysconfdir=${TRUEPREFIX}/share/examples/dbus
 
-pre-build:
+pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/bus/dbus-daemon.1 ${WRKSRC}/tools/dbus-uuidgen.1
 
 .include <bsd.port.mk>

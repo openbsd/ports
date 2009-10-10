@@ -1,7 +1,7 @@
-$OpenBSD: patch-dbus_Makefile_in,v 1.4 2009/01/28 14:16:19 jasper Exp $
---- dbus/Makefile.in.orig	Tue Jan  6 19:30:42 2009
-+++ dbus/Makefile.in	Tue Jan 27 03:38:09 2009
-@@ -308,7 +308,7 @@ top_builddir = @top_builddir@
+$OpenBSD: patch-dbus_Makefile_in,v 1.5 2009/10/10 14:30:47 ajacoutot Exp $
+--- dbus/Makefile.in.orig	Tue Jul 14 21:43:06 2009
++++ dbus/Makefile.in	Sat Oct 10 12:53:59 2009
+@@ -332,7 +332,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  configdir = $(sysconfdir)/dbus-1
  INCLUDES = -I$(top_builddir) -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) @PIC_CFLAGS@ -DDBUS_COMPILATION	\
