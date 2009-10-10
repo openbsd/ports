@@ -1,11 +1,11 @@
-$OpenBSD: patch-xml2po_xml2po_pc_in,v 1.1 2008/04/14 19:06:25 jasper Exp $
---- xml2po/xml2po.pc.in.orig	Mon Apr 14 21:01:01 2008
-+++ xml2po/xml2po.pc.in	Mon Apr 14 21:03:02 2008
+$OpenBSD: patch-xml2po_xml2po_pc_in,v 1.2 2009/10/10 13:49:57 ajacoutot Exp $
+--- xml2po/xml2po.pc.in.orig	Sat Oct 10 15:43:53 2009
++++ xml2po/xml2po.pc.in	Sat Oct 10 15:44:02 2009
 @@ -1,6 +1,6 @@
  prefix=@prefix@
  exec_prefix=${prefix}
 -datarootdir=@datarootdir@
 +datarootdir=${prefix}/share
- modesdir=@datadir@/xml2po
+ modesdir=@pythondir@/xml2po
  
  Name: xml2po
