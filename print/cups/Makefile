@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2009/09/06 12:01:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.56 2009/10/10 09:28:32 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
@@ -42,7 +42,7 @@ LIB_DEPENDS=		png.>=3::graphics/png \
 			dbus-1.>=7::x11/dbus \
 			gnutls.>=14::security/gnutls
 # only build the -main subpackage to prevent cyclic dependency
-LIB_DEPENDS+=		dns_sd::net/avahi,no_gtk,no_qt3,no_qt4
+LIB_DEPENDS+=		dns_sd::net/avahi,no_gtk,no_mono,no_qt3,no_qt4
 
 FAKE_FLAGS=		BINMODE=${BINMODE} \
 			SHAREMODE=${SHAREMODE} \

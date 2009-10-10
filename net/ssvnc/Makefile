@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2009/10/10 09:28:31 ajacoutot Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -40,7 +40,7 @@ LIB_DEPENDS-main =	jpeg.>=62.::graphics/jpeg
 
 WANTLIB-gui =		c crypto
 RUN_DEPENDS-gui =	::devel/desktop-file-utils \
-			::net/avahi,no_gtk,no_qt3,no_qt4 \
+			::net/avahi,no_gtk,no_mono,no_qt3,no_qt4 \
 			::net/ssvnc,-main \
 			::security/stunnel \
 			${MODTK_RUN_DEPENDS}
