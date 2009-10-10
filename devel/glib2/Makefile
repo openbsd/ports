@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2009/10/07 15:07:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2009/10/10 11:25:28 jasper Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -65,7 +65,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-fam \
 			--with-pcre=system \
 			--disable-selinux \
-			--disable-xattr
+			--disable-xattr \
+			--disable-silent-rules
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

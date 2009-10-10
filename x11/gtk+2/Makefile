@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2009/10/06 07:07:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2009/10/10 11:25:28 jasper Exp $
 
 SHARED_ONLY=			Yes
 
@@ -72,7 +72,8 @@ CONFIGURE_STYLE=		gnu
 CONFIGURE_ARGS=			${CONFIGURE_SHARED} \
 				--disable-gtk-doc \
 				--with-xinput=yes \
-				--disable-papi
+				--disable-papi \
+				--disable-silent-rules
 CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 				LDFLAGS="-L${LOCALBASE}/lib"
 
