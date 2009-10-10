@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/10 18:11:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/10 18:26:34 jasper Exp $
 
 COMMENT =		open source MPI-2 implementation
 
@@ -32,6 +32,6 @@ CONFIGURE_STYLE =	gnu
 
 # openmpi's otfinfo conflicts with the one from texlive
 post-install:
-	mv ${WRKINST}${LOCALBASE}/bin/otfinfo ${WRKINST}${LOCALBASE}/bin/otfinfompi
+	mv ${PREFIX}/bin/otfinfo ${PREFIX}/bin/otfinfompi
 
 .include <bsd.port.mk>
