@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/10 11:02:52 sthen Exp $
+@bin bin/rsvndump
+share/locale/de/LC_MESSAGES/rsvndump.mo
