@@ -1,9 +1,12 @@
-$OpenBSD: patch-RULES_mk-gmake_id,v 1.1 2008/06/19 17:43:10 naddy Exp $
---- RULES/mk-gmake.id.orig	Tue Jun 10 16:56:16 2008
-+++ RULES/mk-gmake.id	Tue Jun 10 16:56:53 2008
-@@ -37,7 +37,7 @@ ifndef		ARCH_DONE
+$OpenBSD: patch-RULES_mk-gmake_id,v 1.2 2009/10/10 09:18:51 espie Exp $
+--- RULES/mk-gmake.id.orig	Thu May  3 14:58:59 2007
++++ RULES/mk-gmake.id	Sat Oct 10 11:17:10 2009
+@@ -35,9 +35,9 @@ MAKEPROG=	gmake
  
- __gmake_warn:=	$(shell cat $(SRCROOT)/$(RULESDIR)/gmake.wrn 1>&2; sleep 2)
+ ifndef		ARCH_DONE
+ 
+-__gmake_warn:=	$(shell cat $(SRCROOT)/$(RULESDIR)/gmake.wrn 1>&2; sleep 2)
++__gmake_warn:=	:
  
 -_MACHCMD=	(mach || uname -p || true)	2> /dev/null
 +_MACHCMD=	(mach || machine || uname -p || true)	2> /dev/null
