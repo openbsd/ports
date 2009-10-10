@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2009/03/05 19:41:14 landry Exp $
+@comment $OpenBSD: PLIST,v 1.21 2009/10/10 13:45:31 jasper Exp $
 lib/pkgconfig/
 lib/pkgconfig/gnome-icon-theme.pc
 share/icons/
@@ -347,9 +347,7 @@ share/icons/gnome/16x16/actions/zoom-in.png
 share/icons/gnome/16x16/actions/zoom-original.png
 share/icons/gnome/16x16/actions/zoom-out.png
 share/icons/gnome/16x16/animations/
-share/icons/gnome/16x16/animations/gnome-spinner-rest.png
 share/icons/gnome/16x16/animations/gnome-spinner.png
-share/icons/gnome/16x16/animations/process-idle.png
 share/icons/gnome/16x16/animations/process-working.png
 share/icons/gnome/16x16/apps/
 share/icons/gnome/16x16/apps/access.png
@@ -2121,9 +2119,7 @@ share/icons/gnome/22x22/actions/zoom-in.png
 share/icons/gnome/22x22/actions/zoom-original.png
 share/icons/gnome/22x22/actions/zoom-out.png
 share/icons/gnome/22x22/animations/
-share/icons/gnome/22x22/animations/gnome-spinner-rest.png
 share/icons/gnome/22x22/animations/gnome-spinner.png
-share/icons/gnome/22x22/animations/process-idle.png
 share/icons/gnome/22x22/animations/process-working.png
 share/icons/gnome/22x22/apps/
 share/icons/gnome/22x22/apps/access.png
@@ -3109,11 +3105,6 @@ share/icons/gnome/24x24/actions/zoom-fit-best.png
 share/icons/gnome/24x24/actions/zoom-in.png
 share/icons/gnome/24x24/actions/zoom-original.png
 share/icons/gnome/24x24/actions/zoom-out.png
-share/icons/gnome/24x24/animations/
-share/icons/gnome/24x24/animations/gnome-spinner-rest.png
-share/icons/gnome/24x24/animations/gnome-spinner.png
-share/icons/gnome/24x24/animations/process-idle.png
-share/icons/gnome/24x24/animations/process-working.png
 share/icons/gnome/24x24/apps/
 share/icons/gnome/24x24/apps/access.png
 share/icons/gnome/24x24/apps/accessibility-directory.png
@@ -4727,9 +4718,7 @@ share/icons/gnome/32x32/actions/zoom-in.png
 share/icons/gnome/32x32/actions/zoom-original.png
 share/icons/gnome/32x32/actions/zoom-out.png
 share/icons/gnome/32x32/animations/
-share/icons/gnome/32x32/animations/gnome-spinner-rest.png
 share/icons/gnome/32x32/animations/gnome-spinner.png
-share/icons/gnome/32x32/animations/process-idle.png
 share/icons/gnome/32x32/animations/process-working.png
 share/icons/gnome/32x32/apps/
 share/icons/gnome/32x32/apps/access.png
@@ -5365,26 +5354,13 @@ share/icons/gnome/32x32/stock/generic/
 share/icons/gnome/32x32/stock/generic/stock_person.png
 share/icons/gnome/48x48/
 share/icons/gnome/48x48/actions/
-share/icons/gnome/48x48/actions/appointment-new.png
-share/icons/gnome/48x48/actions/appointment.png
-share/icons/gnome/48x48/actions/gnome-stock-mail-new.png
 share/icons/gnome/48x48/actions/mail-mark-junk.png
 share/icons/gnome/48x48/actions/mail-mark-not-junk.png
-share/icons/gnome/48x48/actions/mail-message-new.png
-share/icons/gnome/48x48/actions/mail-send-receive.png
-share/icons/gnome/48x48/actions/mail_new.png
 share/icons/gnome/48x48/actions/mail_spam.png
-share/icons/gnome/48x48/actions/stock_mail-compose.png
-share/icons/gnome/48x48/actions/stock_mail-send-receive.png
-share/icons/gnome/48x48/actions/stock_new-appointment.png
 share/icons/gnome/48x48/actions/stock_not-spam.png
 share/icons/gnome/48x48/actions/stock_spam.png
 share/icons/gnome/48x48/animations/
-share/icons/gnome/48x48/animations/gnome-searchtool-animation-rest.png
-share/icons/gnome/48x48/animations/gnome-searchtool-animation.png
-share/icons/gnome/48x48/animations/gnome-spinner-rest.png
 share/icons/gnome/48x48/animations/gnome-spinner.png
-share/icons/gnome/48x48/animations/process-idle.png
 share/icons/gnome/48x48/animations/process-working.png
 share/icons/gnome/48x48/apps/
 share/icons/gnome/48x48/apps/applets-screenshooter.png

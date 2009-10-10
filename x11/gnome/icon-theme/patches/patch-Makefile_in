@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2008/11/21 18:04:45 jasper Exp $
---- Makefile.in.orig	Tue Sep 23 14:02:45 2008
-+++ Makefile.in	Tue Oct 28 20:15:28 2008
-@@ -208,8 +208,8 @@ target_alias = @target_alias@
- themedir = @themedir@
+$OpenBSD: patch-Makefile_in,v 1.5 2009/10/10 13:45:31 jasper Exp $
+--- Makefile.in.orig	Tue Sep 22 03:41:00 2009
++++ Makefile.in	Sat Oct 10 12:49:10 2009
+@@ -235,8 +235,8 @@ themedir = @themedir@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -SUBDIRS = 8x8 16x16 22x22 24x24 32x32 48x48 scalable po
