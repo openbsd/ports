@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile,v 1.9 2009/07/26 19:53:28 steven Exp $
---- makefile.orig	Sat Jul 11 02:42:07 2009
-+++ makefile	Sun Jul 26 21:46:19 2009
+$OpenBSD: patch-makefile,v 1.10 2009/10/10 10:16:17 steven Exp $
+--- makefile.orig	Sat Sep  5 17:12:42 2009
++++ makefile	Sat Oct 10 12:13:26 2009
 @@ -6,7 +6,7 @@
  
  VERSION		= `cat VERSION`
@@ -10,7 +10,7 @@ $OpenBSD: patch-makefile,v 1.9 2009/07/26 19:53:28 steven Exp $
  LDLIBS		+= -lm # libraries to link
  
  # "make READLINE=1" to include readline support:
-@@ -16,7 +16,7 @@ LDLIBS		+= $(READLINE:1=-lreadline -lncurses)
+@@ -20,7 +20,7 @@ LDLIBS		+= $(READLINE:1=-lreadline -lncurses)
  # Install directories follow, installs everything in /usr/local by default:
  prefix		?= /usr/local
  bindir		?= $(prefix)/bin
