@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/10 09:28:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/10/10 12:39:29 ajacoutot Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -8,7 +8,7 @@ DISTNAME =		ssvnc-$V.src
 CATEGORIES =		net x11
 
 PKGNAME =		ssvnc-$V
-FULLPKGNAME-gui =	ssvnc-$V
+FULLPKGNAME-gui =	ssvnc-$Vp0
 FULLPKGNAME-main =	ssvnc-viewer-$Vp0
 
 HOMEPAGE =		http://www.karlrunge.com/x11vnc/ssvnc.html
