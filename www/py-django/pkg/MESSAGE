@@ -6,7 +6,7 @@ http://docs.djangoproject.com/en/dev/
 
 Release notes about the changes that occurred in
 this release may be found online at:
-http://docs.djangoproject.com/en/dev/releases/${MODPY_EGG_VERSION}/
+http://docs.djangoproject.com/en/dev/releases/1.1/
 
 If you want a database for Django you should install the Python
 database adapter(s) of your choice ('pkg_add py-psycopg2',
@@ -17,3 +17,4 @@ version 0.96 and 1.0 that may cause problems when upgrading
 projects.  A guide for upgrading projects can be found
 online at:
 http://docs.djangoproject.com/en/1.0/releases/1.0-porting-guide/
+

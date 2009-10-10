@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/09/18 13:16:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/10/10 17:09:03 steven Exp $
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/
@@ -2014,6 +2014,7 @@ share/doc/${LNAME}/internals/deprecation.txt
 share/doc/${LNAME}/internals/documentation.txt
 share/doc/${LNAME}/internals/index.txt
 share/doc/${LNAME}/internals/release-process.txt
+share/doc/${LNAME}/internals/svn.txt
 share/doc/${LNAME}/intro/
 share/doc/${LNAME}/intro/_images/
 share/doc/${LNAME}/intro/_images/admin01.png
@@ -2143,10 +2144,10 @@ share/doc/${LNAME}/releases/1.0-porting-guide.txt
 share/doc/${LNAME}/releases/1.0.1.txt
 share/doc/${LNAME}/releases/1.0.2.txt
 share/doc/${LNAME}/releases/1.0.txt
-share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}-alpha-1.txt
-share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}-beta-1.txt
-share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}-rc-1.txt
-share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}.txt
+share/doc/${LNAME}/releases/1.1-alpha-1.txt
+share/doc/${LNAME}/releases/1.1-beta-1.txt
+share/doc/${LNAME}/releases/1.1-rc-1.txt
+share/doc/${LNAME}/releases/1.1.txt
 share/doc/${LNAME}/releases/index.txt
 share/doc/${LNAME}/topics/
 share/doc/${LNAME}/topics/auth.txt
