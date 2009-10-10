@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/15 17:43:23 jasper Exp $
-include/clutter-${MAJOR}/clutter-box2d/
-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-collision.h
-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-contact.h
-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-joint.h
-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-marshal.h
-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-util.h
-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d.h
+@comment $OpenBSD: PLIST,v 1.2 2009/10/10 23:22:54 landry Exp $
+include/clutter-${API_VERSION}/clutter-box2d/
+include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d-collision.h
+include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d-contact.h
+include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d-joint.h
+include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d-marshal.h
+include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d-util.h
+include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d.h
 lib/libclutter-box2d-${MAJOR}.la
-@lib lib/libclutter-box2d-${MAJOR}.so.${LIBclutter-box2d-0.8_VERSION}
+@lib lib/libclutter-box2d-${MAJOR}.so.${LIBclutter-box2d-0.10_VERSION}
 lib/pkgconfig/clutter-box2d-${MAJOR}.pc
 share/gtk-doc/html/clutter-box2d/
 share/gtk-doc/html/clutter-box2d/ClutterBox2D.html

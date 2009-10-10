@@ -1,0 +1,22 @@
+$OpenBSD: patch-clutter-box2d_Makefile_in,v 1.1 2009/10/10 23:22:54 landry Exp $
+--- clutter-box2d/Makefile.in.orig	Sat Oct 10 16:34:57 2009
++++ clutter-box2d/Makefile.in	Sat Oct 10 16:35:23 2009
+@@ -269,7 +269,7 @@ DISTCLEANFILES = $(MARSHALFILES)
+ EXTRA_DIST = \
+ 	clutter-box2d-marshal.list
+ 
+-BUILT_GIRSOURCES = ClutterBox2D-@CLUTTER_BOX2D_API_VERSION@.gir
++BUILT_GIRSOURCES =
+ 
+ # INTROSPECTION_GIRDIR/INTROSPECTION_TYPELIBDIR aren't the right place to
+ # install anything - we need to install inside our prefix.
+@@ -585,8 +585,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-clutter_box2dheadersHEADERS install-girDATA \
+-	install-typelibsDATA
++install-data-am: install-clutter_box2dheadersHEADERS
+ 
+ install-dvi: install-dvi-am
+ 
