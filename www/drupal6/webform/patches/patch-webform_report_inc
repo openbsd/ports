@@ -1,6 +1,6 @@
-$OpenBSD: patch-webform_report_inc,v 1.1 2009/09/20 13:29:33 espie Exp $
+$OpenBSD: patch-webform_report_inc,v 1.2 2009/10/10 10:48:17 espie Exp $
 --- webform_report.inc.orig	Wed Mar  4 06:05:12 2009
-+++ webform_report.inc	Sun Sep 20 15:27:43 2009
++++ webform_report.inc	Fri Oct  9 17:30:57 2009
 @@ -96,7 +96,7 @@ function theme_webform_results_submissions_header($nod
      $columns[] = array('data' => t('User'), 'field' => 'name');
      $columns[] = array('data' => t('IP Address'), 'field' => 'remote_addr');
@@ -90,7 +90,7 @@ $OpenBSD: patch-webform_report_inc,v 1.1 2009/09/20 13:29:33 espie Exp $
 +      if (!is_null($ref)) {
 +        $csv_account_function = "_webform_csv_account_". $component['type'];
 +        if (function_exists($csv_account_function)) {
-+          $results = $csv_account_function($results, $submission->data[$cid], $submissions[$ref->nid]->data[$cid], $component);
++          $results = $csv_account_function($results, $submission->data[$cid], $submissions[$ref->sid]->data[$cid], $component);
 +        }
 +      }
 +    }

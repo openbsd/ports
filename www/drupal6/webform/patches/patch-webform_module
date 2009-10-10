@@ -1,13 +1,13 @@
-$OpenBSD: patch-webform_module,v 1.1 2009/09/20 13:29:33 espie Exp $
+$OpenBSD: patch-webform_module,v 1.2 2009/10/10 10:48:17 espie Exp $
 --- webform.module.orig	Fri Feb 27 23:35:15 2009
-+++ webform.module	Sun Sep 20 15:27:43 2009
++++ webform.module	Sat Oct 10 12:32:16 2009
 @@ -249,6 +249,17 @@ function webform_menu() {
      'weight' => 2,
      'type' => MENU_LOCAL_TASK,
    );
 +  $items['node/%webform_menu/submission/%webform_menu_submission/download'] = array(
 +    'title' => 'Download',
-+    'load arguments' => array(2),
++    'load arguments' => array(1),
 +    'page callback' => 'drupal_get_form',
 +    'page arguments' => array('webform_results_download_form', 1, 3),
 +    'access callback' => 'webform_results_access',
@@ -19,3 +19,22 @@ $OpenBSD: patch-webform_module,v 1.1 2009/09/20 13:29:33 espie Exp $
  
    return $items;
  }
+@@ -2099,6 +2110,7 @@ function theme_webform_mail_headers($form_values, $nod
+  */
+ function _webform_filter_values($string, $node = NULL, $submission = NULL, $strict = TRUE) {
+   global $user;
++  global $webform_uid_cached;
+ 
+   // Setup default token replacements.
+   $find = array('%site', '%date');
+@@ -2123,8 +2135,9 @@ function _webform_filter_values($string, $node = NULL,
+   $find[] = '%useremail';
+   $replace[] = isset($user->name) ? $user->name : '';
+   $replace[] = isset($user->mail) ? $user->mail : '';
+-  if ($user->uid && module_exists('profile')) {
++  if ($user->uid && module_exists('profile') && $webform_uid_cached != $user->uid) {
+     profile_load_profile($user);
++    $webform_uid_cached = $user->uid;
+   }
+ 
+   // Provide a list of candidates for token replacement.
