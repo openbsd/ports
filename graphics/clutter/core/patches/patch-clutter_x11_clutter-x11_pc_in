@@ -1,11 +1,11 @@
-$OpenBSD: patch-clutter_x11_clutter-x11_pc_in,v 1.1.1.1 2009/02/15 17:41:13 jasper Exp $
+$OpenBSD: patch-clutter_x11_clutter-x11_pc_in,v 1.2 2009/10/10 23:19:25 landry Exp $
 
 For some reason using ${requires} doesn't work as expected.
 
---- clutter/x11/clutter-x11.pc.in.orig	Fri Feb 13 11:24:42 2009
-+++ clutter/x11/clutter-x11.pc.in	Fri Feb 13 11:24:53 2009
-@@ -4,11 +4,10 @@ libdir=${exec_prefix}/lib
- includedir=${prefix}/include
+--- clutter/x11/clutter-x11.pc.in.orig	Sat Jul  4 20:48:24 2009
++++ clutter/x11/clutter-x11.pc.in	Sat Sep 19 11:41:30 2009
+@@ -4,11 +4,10 @@ libdir=@libdir@
+ includedir=@includedir@
  backend=@clutterbackend@
  apiversion=@CLUTTER_API_VERSION@
 -requires=@CLUTTER_REQUIRES@
