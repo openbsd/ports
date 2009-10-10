@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.739 2009/10/05 12:57:38 kevlo Exp $
+# $OpenBSD: Makefile,v 1.740 2009/10/10 08:17:09 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -241,6 +241,7 @@
      SUBDIR += p5-AppConfig-Std
      SUBDIR += p5-Array-Compare
      SUBDIR += p5-Array-Window
+     SUBDIR += p5-AutoXS-Header
      SUBDIR += p5-B-Deobfuscate
      SUBDIR += p5-B-Graph
      SUBDIR += p5-B-Hooks-EndOfScope
@@ -307,6 +308,7 @@
      SUBDIR += p5-Class-Virtual
      SUBDIR += p5-Class-WhiteHole
      SUBDIR += p5-Class-XPath
+     SUBDIR += p5-Class-XSAccessor
      SUBDIR += p5-Clone
      SUBDIR += p5-Config-Any
      SUBDIR += p5-Config-Auto
