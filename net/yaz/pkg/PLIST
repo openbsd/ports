@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/07 18:26:43 okan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/10/10 10:14:37 sthen Exp $
 %%SHARED%%
 bin/yaz-asncomp
 @bin bin/yaz-client
@@ -21,6 +21,7 @@ include/yaz/daemon.h
 include/yaz/diagbib1.h
 include/yaz/diagsru_update.h
 include/yaz/diagsrw.h
+include/yaz/errno.h
 include/yaz/icu.h
 include/yaz/ill-core.h
 include/yaz/ill.h
@@ -118,6 +119,7 @@ lib/pkgconfig/yaz.pc
 @man man/man1/yaz-illclient.1
 @man man/man1/yaz-marcdump.1
 @man man/man1/zoomsh.1
+@man man/man7/bib1-attr.7
 @man man/man7/yaz-log.7
 @man man/man7/yaz.7
 @man man/man8/yaz-config.8
@@ -130,6 +132,7 @@ share/doc/yaz/asn.external.html
 share/doc/yaz/asn.html
 share/doc/yaz/asn.pdu.html
 share/doc/yaz/asn.preparing.html
+share/doc/yaz/bib1.html
 share/doc/yaz/common/
 share/doc/yaz/common/id.png
 share/doc/yaz/common/style1.css
