@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/10 13:42:46 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}draft/
+${DRUPAL_MODS}draft/API.txt
+${DRUPAL_MODS}draft/CHANGELOG.txt
+${DRUPAL_MODS}draft/CONFIGURATION.txt
+${DRUPAL_MODS}draft/LICENSE.txt
+${DRUPAL_MODS}draft/README.txt
+${DRUPAL_MODS}draft/UPGRADE.txt
+${DRUPAL_MODS}draft/draft.admin.inc
+${DRUPAL_MODS}draft/draft.css
+${DRUPAL_MODS}draft/draft.info
+${DRUPAL_MODS}draft/draft.install
+${DRUPAL_MODS}draft/draft.js
+${DRUPAL_MODS}draft/draft.module
+${DRUPAL_MODS}draft/draft.page.inc
+${DRUPAL_MODS}draft/draft.theme.inc
+${DRUPAL_MODS}draft/draft_views/
+${DRUPAL_MODS}draft/draft_views/draft_views.info
+${DRUPAL_MODS}draft/draft_views/draft_views.install
+${DRUPAL_MODS}draft/draft_views/draft_views.module
+${DRUPAL_MODS}draft/draft_views/draft_views.views.inc
+${DRUPAL_MODS}draft/draft_views/draft_views.views_default.inc
+${DRUPAL_MODS}draft/draft_views/includes/
+${DRUPAL_MODS}draft/draft_views/includes/draft_views_views_handler_field_date_drafts_updated.inc
+${DRUPAL_MODS}draft/draft_views/includes/draft_views_views_handler_field_draft_data.inc
+${DRUPAL_MODS}draft/draft_views/includes/draft_views_views_handler_field_draft_node_type.inc
+${DRUPAL_MODS}draft/draft_views/includes/draft_views_views_handler_field_draft_view.inc
+${DRUPAL_MODS}draft/jquery.field.js
+${DRUPAL_MODS}draft/translations/
+${DRUPAL_MODS}draft/translations/it.po
+${DRUPAL_MODS}draft/translations/pt-br_16.po

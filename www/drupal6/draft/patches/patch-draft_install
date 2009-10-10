@@ -1,0 +1,16 @@
+$OpenBSD: patch-draft_install,v 1.1.1.1 2009/10/10 13:42:46 espie Exp $
+--- draft.install.orig	Sat Oct 10 15:17:15 2009
++++ draft.install	Sat Oct 10 15:17:30 2009
+@@ -37,10 +37,10 @@ function draft_schema() {
+       'fields' => array(
+         'draft_id' => array('description' => t("Primary key: Draft ID"), 'type' => 'serial', 'not null'    => TRUE),
+         'node_type' => array('description' => t("Node Type for the draft"), 'type' => 'varchar', 'length' => 32, 'not null' => TRUE),
+-        'uid' => array('description' => t("User who created the draft"), 'type' => 'int', 'length' => 11, 'not null'    => TRUE),
++        'uid' => array('description' => t("User who created the draft"), 'type' => 'int', 'not null'    => TRUE),
+         'title' => array('description' => t('Title data from the node type'), 'type' => 'varchar', 'length' => 255, 'not null' => FALSE),
+         'body' => array('description' => t('Body data from the node type'), 'type' => 'text', 'not null' => FALSE, 'size' => 'big'),
+-        'updated' => array('description' => t('Time of last update / creation'), 'type' => 'int', 'length' => 11, 'not null' => TRUE),
++        'updated' => array('description' => t('Time of last update / creation'), 'type' => 'int', 'not null' => TRUE),
+         'data' => array('description' => t('Serialized data about the draft we have saved'), 'type' => 'text', 'not null' => FALSE, 'size' => 'big'),
+         'cron_remove' => array('description' => t('Lets Cron know if it can remove the record'), 'type' => 'int', 'size' => 'tiny', 'not null' => TRUE, 'default' => 0),
+       ),

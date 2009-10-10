@@ -1,0 +1,6 @@
+draft uses ajax + serialization to store in-progress documents, so
+that they're always saved.
+
+Note that you must enable "save as draft" for each content-type for
+which you want the feature. Users will be able to access their drafts
+through  draft/list. That should be added to a reasonable menu as well.
