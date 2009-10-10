@@ -1,0 +1,15 @@
+$OpenBSD: patch-common_include_AL_alc_h,v 1.1 2009/10/10 13:55:44 phessler Exp $
+
+typedef void is illegal in newer versions of GCC
+
+--- common/include/AL/alc.h.orig	Sun May 17 21:50:13 2009
++++ common/include/AL/alc.h	Sun May 17 21:50:29 2009
+@@ -82,7 +82,7 @@ typedef float ALCfloat;
+ typedef double ALCdouble;
+ 
+ /** void type (for opaque pointers only) */
+-typedef void ALCvoid;
++#define ALCvoid void
+ 
+ 
+ /* Enumerant values begin at column 50. No tabs. */
