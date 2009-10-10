@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/11/21 18:51:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/10/10 16:17:29 ajacoutot Exp $
 %%SHARED%%
 include/libgnomecanvas-2.0/
 include/libgnomecanvas-2.0/libgnomecanvas/
@@ -64,6 +64,9 @@ share/locale/ang/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgnomecanvas-2.0.mo
@@ -79,6 +82,9 @@ share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/crh/
+share/locale/crh/LC_MESSAGES/
+share/locale/crh/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/cs/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/cy/
 share/locale/cy/LC_MESSAGES/
@@ -138,6 +144,9 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/lv/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/mai/
+share/locale/mai/LC_MESSAGES/
+share/locale/mai/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/mg/
 share/locale/mg/LC_MESSAGES/
 share/locale/mg/LC_MESSAGES/libgnomecanvas-2.0.mo
@@ -150,6 +159,9 @@ share/locale/ml/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
+share/locale/mr/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/libgnomecanvas-2.0.mo
@@ -182,16 +194,19 @@ share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/sr/LC_MESSAGES/libgnomecanvas-2.0.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/sr@ije/
 share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/sv/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/libgnomecanvas-2.0.mo
