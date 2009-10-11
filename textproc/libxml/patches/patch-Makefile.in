@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Apr  8 16:55:03 2008
-+++ Makefile.in	Sat Apr 26 10:51:02 2008
-@@ -584,7 +584,7 @@ testModule_DEPENDENCIES = $(DEPS)
+--- Makefile.in.orig	Tue Oct  6 18:39:59 2009
++++ Makefile.in	Sat Oct 10 16:35:20 2009
+@@ -675,7 +675,7 @@ testModule_DEPENDENCIES = $(DEPS)
  testModule_LDADD = $(LDADDS)
  noinst_LTLIBRARIES = testdso.la
  testdso_la_SOURCES = testdso.c
@@ -9,16 +9,25 @@
  testapi_SOURCES = testapi.c
  testapi_LDFLAGS = 
  testapi_DEPENDENCIES = $(DEPS)
-@@ -613,7 +613,7 @@ pkgconfig_DATA = libxml-2.0.pc
+@@ -708,7 +708,7 @@ pkgconfig_DATA = libxml-2.0.pc
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
 -DOC_MODULE = libxml2-$(VERSION)
 +DOC_MODULE = libxml2
  EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
- all: config.h
- 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
-@@ -1990,6 +1990,7 @@ SVGtests : xmllint$(EXEEXT)
+ 
+ #
+@@ -1706,7 +1706,7 @@ testapi.c: $(srcdir)/gentest.py
+ #testOOM_LDADD= $(LDADDS)
+ 
+ runtests:
+-	$(CHECKER) ./runtest$(EXEEXT) && $(CHECKER) ./testrecurse$(EXEEXT) &&$(CHECKER) ./testapi$(EXEEXT) && $(CHECKER) ./testchar$(EXEEXT)&& $(CHECKER) ./testdict$(EXEEXT) && $(CHECKER) ./runxmlconf$(EXEEXT)
++	$(CHECKER) ./runtest$(EXEEXT) ; $(CHECKER) ./testrecurse$(EXEEXT) &&$(CHECKER) ./testapi$(EXEEXT) && $(CHECKER) ./testchar$(EXEEXT)&& $(CHECKER) ./testdict$(EXEEXT) && $(CHECKER) ./runxmlconf$(EXEEXT)
+ 	@(if [ "@PYTHON_SUBDIR@" != "" ] ; then cd python ; \
+ 	    $(MAKE) MAKEFLAGS+=--silent tests ; fi)
+ 
+@@ -2211,6 +2211,7 @@ SVGtests : xmllint$(EXEEXT)
  	      grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
  	  else \
  	      echo Testing $$name ; \

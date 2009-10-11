@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/08/13 09:29:47 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/10/11 10:39:42 steven Exp $
 @pkgpath textproc/libxml
 %%SHARED%%
 bin/xml2-config
@@ -58,13 +58,12 @@ lib/libxml2.la
 lib/pkgconfig/
 lib/pkgconfig/libxml-2.0.pc
 lib/xml2Conf.sh
-share/aclocal/
-share/aclocal/libxml.m4
-@endfake
 @man man/man1/xml2-config.1
 @man man/man1/xmlcatalog.1
 @man man/man1/xmllint.1
 @man man/man3/libxml.3
+share/aclocal/
+share/aclocal/libxml.m4
 share/doc/libxml2/
 share/doc/libxml2/Copyright
 share/doc/libxml2/examples/

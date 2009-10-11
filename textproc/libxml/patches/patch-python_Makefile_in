@@ -1,7 +1,7 @@
-$OpenBSD: patch-python_Makefile_in,v 1.9 2008/05/06 18:53:01 steven Exp $
---- python/Makefile.in.orig	Tue Apr  8 16:55:02 2008
-+++ python/Makefile.in	Sat Apr 26 11:53:47 2008
-@@ -737,7 +737,7 @@ info: info-recursive
+$OpenBSD: patch-python_Makefile_in,v 1.10 2009/10/11 10:39:42 steven Exp $
+--- python/Makefile.in.orig	Tue Oct  6 18:39:58 2009
++++ python/Makefile.in	Sat Oct 10 16:33:46 2009
+@@ -821,7 +821,7 @@ info: info-recursive
  
  info-am:
  
