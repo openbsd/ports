@@ -1,0 +1,12 @@
+$OpenBSD: patch-metadata_metatree_c,v 1.1 2009/10/11 13:32:27 ajacoutot Exp $
+--- metadata/metatree.c.orig	Tue Sep  8 10:02:00 2009
++++ metadata/metatree.c	Sun Oct 11 12:21:27 2009
+@@ -303,7 +303,7 @@ is_on_nfs (char *filename)
+ 			  sizeof (statfs_buffer), 0);
+ # endif
+   if (statfs_result == 0)
+-    res = statfs_buffer.f_type == 0x6969;
++    res = statfs_buffer.f_fstypename == 0x6969;
+ 
+ #elif defined(USE_STATVFS) && defined(HAVE_STRUCT_STATVFS_F_BASETYPE)
+   statfs_result = statvfs (dirname, &statfs_buffer);

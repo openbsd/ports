@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/06/03 17:18:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/10/11 13:32:28 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -15,6 +15,7 @@ bin/gvfs-less
 @bin bin/gvfs-rename
 @bin bin/gvfs-rm
 @bin bin/gvfs-save
+@bin bin/gvfs-set-attribute
 @bin bin/gvfs-trash
 @bin bin/gvfs-tree
 include/gvfs-client/
@@ -29,6 +30,8 @@ lib/gio/modules/libgioremote-volume-monitor.a
 lib/gio/modules/libgioremote-volume-monitor.la
 lib/gio/modules/libgvfsdbus.a
 lib/gio/modules/libgvfsdbus.la
+lib/libgvfscommon-dnssd.a
+lib/libgvfscommon-dnssd.la
 lib/libgvfscommon.a
 lib/libgvfscommon.la
 @bin libexec/gvfsd
@@ -40,12 +43,14 @@ lib/libgvfscommon.la
 @bin libexec/gvfsd-ftp
 @bin libexec/gvfsd-http
 @bin libexec/gvfsd-localtest
+@bin libexec/gvfsd-metadata
 @bin libexec/gvfsd-network
 @bin libexec/gvfsd-sftp
 @bin libexec/gvfsd-trash
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/gvfs-daemon.service
+share/dbus-1/services/gvfs-metadata.service
 share/gvfs/
 @sample ${SYSCONFDIR}/bash_completion.d/
 share/gvfs/gvfs-bash-completion.sh
@@ -54,6 +59,7 @@ share/gvfs/mounts/
 share/gvfs/mounts/archive.mount
 @comment share/gvfs/mounts/burn.mount
 share/gvfs/mounts/computer.mount
+share/gvfs/mounts/dav+sd.mount
 share/gvfs/mounts/dav.mount
 share/gvfs/mounts/dns-sd.mount
 share/gvfs/mounts/ftp.mount
@@ -66,14 +72,23 @@ share/gvfs/remote-volume-monitors/
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gvfs.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/gvfs.mo
 share/locale/be@latin/
 share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/gvfs.mo
 share/locale/bg/LC_MESSAGES/gvfs.mo
+share/locale/bn/
+share/locale/bn/LC_MESSAGES/
+share/locale/bn/LC_MESSAGES/gvfs.mo
 share/locale/bn_IN/
 share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/gvfs.mo
 share/locale/ca/LC_MESSAGES/gvfs.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/gvfs.mo
 share/locale/cs/LC_MESSAGES/gvfs.mo
 share/locale/da/LC_MESSAGES/gvfs.mo
 share/locale/de/LC_MESSAGES/gvfs.mo
@@ -108,6 +123,10 @@ share/locale/ku/LC_MESSAGES/gvfs.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gvfs.mo
+share/locale/lv/LC_MESSAGES/gvfs.mo
+share/locale/mai/
+share/locale/mai/LC_MESSAGES/
+share/locale/mai/LC_MESSAGES/gvfs.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gvfs.mo
@@ -120,12 +139,16 @@ share/locale/mr/LC_MESSAGES/gvfs.mo
 share/locale/nb/LC_MESSAGES/gvfs.mo
 share/locale/nl/LC_MESSAGES/gvfs.mo
 share/locale/nn/LC_MESSAGES/gvfs.mo
+share/locale/or/
+share/locale/or/LC_MESSAGES/
+share/locale/or/LC_MESSAGES/gvfs.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gvfs.mo
 share/locale/pl/LC_MESSAGES/gvfs.mo
 share/locale/pt/LC_MESSAGES/gvfs.mo
 share/locale/pt_BR/LC_MESSAGES/gvfs.mo
+share/locale/ro/LC_MESSAGES/gvfs.mo
 share/locale/ru/LC_MESSAGES/gvfs.mo
 share/locale/sk/LC_MESSAGES/gvfs.mo
 share/locale/sl/LC_MESSAGES/gvfs.mo

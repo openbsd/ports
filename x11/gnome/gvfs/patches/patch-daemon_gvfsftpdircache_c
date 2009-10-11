@@ -1,0 +1,12 @@
+$OpenBSD: patch-daemon_gvfsftpdircache_c,v 1.1 2009/10/11 13:32:27 ajacoutot Exp $
+--- daemon/gvfsftpdircache.c.orig	Sun Oct 11 11:57:49 2009
++++ daemon/gvfsftpdircache.c	Sun Oct 11 12:02:41 2009
+@@ -586,7 +586,7 @@ g_vfs_ftp_dir_cache_funcs_process (GInputStream *     
+                                        type == 'l' ? G_FILE_TYPE_SYMBOLIC_LINK :
+                                        G_FILE_TYPE_DIRECTORY);
+ 
+-      if (unix)
++      if (is_unix)
+         g_file_info_set_is_hidden (info, result.fe_fnlen > 0 &&
+                                          result.fe_fname[0] == '.');
+ 
