@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/11 11:20:11 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/11 13:14:27 sthen Exp $
 ${P5SITE}/Class/
+${P5SITE}/Class/Inspector/
 ${P5SITE}/Class/Inspector.pm
+${P5SITE}/Class/Inspector/Functions.pm
 @man man/man3p/Class::Inspector.3p
+@man man/man3p/Class::Inspector::Functions.3p
