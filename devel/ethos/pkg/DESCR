@@ -1,0 +1,9 @@
+Ethos is a library that provides a consistent plugin interface for
+application extenders to target.  The more applications that use ethos
+for plugins, the faster the community can expand to provide new features
+to new projects.
+
+The core ethos library, libethos-1.0, only links against libgobject so
+that it is safe to use in GUI-less applications.  The GTK+ library,
+libethos-ui-1.0, provides widgets that can be embedded within your
+application to manage plugins during run-time.

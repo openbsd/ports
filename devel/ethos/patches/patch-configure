@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/10/11 11:31:13 landry Exp $
+--- configure.orig	Sun Oct 11 11:38:49 2009
++++ configure	Sun Oct 11 11:39:09 2009
+@@ -13974,7 +13974,7 @@ fi
+ 
+ 
+ 
+-ac_config_files="$ac_config_files build/autotools/shave-libtool build/autotools/shave Makefile ethos/Makefile ethos/ethos-version.h plugin-loaders/Makefile plugin-loaders/c/Makefile plugin-loaders/python/Makefile plugin-loaders/js/Makefile plugin-loaders/mono/Makefile bindings/Makefile bindings/vala/Makefile bindings/python/Makefile bindings/mono/Makefile examples/Makefile examples/simple-ui/Makefile examples/vala/Makefile tests/Makefile tests/c-plugins/Makefile tests/manager-dep/Makefile data/Makefile data/pixmaps/Makefile doc/Makefile doc/reference/Makefile doc/reference/version.xml ethos.pc ethos-ui.pc"
++ac_config_files="$ac_config_files build/autotools/shave-libtool build/autotools/shave Makefile ethos/Makefile ethos/ethos-version.h plugin-loaders/Makefile plugin-loaders/c/Makefile plugin-loaders/python/Makefile plugin-loaders/js/Makefile plugin-loaders/mono/Makefile bindings/Makefile bindings/vala/Makefile bindings/python/Makefile examples/Makefile examples/simple-ui/Makefile examples/vala/Makefile tests/Makefile tests/c-plugins/Makefile tests/manager-dep/Makefile data/Makefile data/pixmaps/Makefile doc/Makefile doc/reference/Makefile doc/reference/version.xml ethos.pc ethos-ui.pc"
+ 
+ 
+ cat >confcache <<\_ACEOF
+@@ -14937,7 +14937,6 @@ do
+     "bindings/Makefile") CONFIG_FILES="$CONFIG_FILES bindings/Makefile" ;;
+     "bindings/vala/Makefile") CONFIG_FILES="$CONFIG_FILES bindings/vala/Makefile" ;;
+     "bindings/python/Makefile") CONFIG_FILES="$CONFIG_FILES bindings/python/Makefile" ;;
+-    "bindings/mono/Makefile") CONFIG_FILES="$CONFIG_FILES bindings/mono/Makefile" ;;
+     "examples/Makefile") CONFIG_FILES="$CONFIG_FILES examples/Makefile" ;;
+     "examples/simple-ui/Makefile") CONFIG_FILES="$CONFIG_FILES examples/simple-ui/Makefile" ;;
+     "examples/vala/Makefile") CONFIG_FILES="$CONFIG_FILES examples/vala/Makefile" ;;
