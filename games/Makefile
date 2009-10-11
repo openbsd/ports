@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2009/10/11 14:02:13 phessler Exp $
+# $OpenBSD: Makefile,v 1.198 2009/10/11 18:54:22 landry Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -74,6 +74,7 @@
      SUBDIR += heroes
      SUBDIR += icebreaker
      SUBDIR += ivan
+     SUBDIR += jbrickshooter
      SUBDIR += kbilliards
      SUBDIR += kobodeluxe
      SUBDIR += kobodeluxe,harder
