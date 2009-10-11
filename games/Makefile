@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2009/10/11 18:54:22 landry Exp $
+# $OpenBSD: Makefile,v 1.199 2009/10/11 21:53:10 edd Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -133,6 +133,7 @@
      SUBDIR += slash,no_x11
      SUBDIR += slash-em
      SUBDIR += slash-em,no_x11
+     SUBDIR += snipe2d
      SUBDIR += spacehulk
      SUBDIR += spatial
      SUBDIR += speyes
