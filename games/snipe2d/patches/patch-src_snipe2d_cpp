@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_snipe2d_cpp,v 1.1.1.1 2009/10/11 21:50:14 edd Exp $
+--- src/snipe2d.cpp.orig	Sun Oct 11 20:10:17 2009
++++ src/snipe2d.cpp	Sun Oct 11 20:10:30 2009
+@@ -1589,7 +1589,7 @@ oes_uisignal (oesui_t *gui, oesui_signal_t *sig)
+     }
+   else if (0 == strcmp(signame, "url-oes"))
+     {
+-#define WEBBROWSER mozilla
++#define WEBBROWSER true
+       /* http://www.icculus.org/oes/ */
+       oes_web("http://www.icculus.org/oes/");
+     }

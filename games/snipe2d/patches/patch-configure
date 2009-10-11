@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/10/11 21:50:14 edd Exp $
+--- configure.orig	Thu Oct 19 05:38:43 2006
++++ configure	Sun Oct 11 22:56:54 2009
+@@ -6774,22 +6774,12 @@ _ACEOF
+ 
+ #These should be automagically determined somehow.
+ #CPU Instruction Set.  Should be automagic.
+-CPU_IS=`uname -m`
++CPU_IS=`arch -s`
+ 
+ 
+ 
+-echo $ac_n "ordering crap from http://www.amazon.com/gp/registry/296ST2NHEBO0Z" 1>&6
+-sleep 1
+-echo $ac_n ".$ac_c" 1>&6
+-sleep 1
+-echo $ac_n ".$ac_c" 1>&6
+-sleep 1
+-echo $ac_n ".$ac_c" 1>&6
+-sleep 1
+-echo $ac_n ".$ac_c" 1>&6
+-sleep 1
+-echo "$as_me:$LINENO: result:  complete!" >&5
+-echo "${ECHO_T} complete!" >&6
++echo $ac_n "*NOT* ordering crap from http://www.amazon.com/gp/registry/296ST2NHEBO0Z" 1>&6
++echo "${ECHO_T} yah right?!!" >&6
+ 
+                                         ac_config_files="$ac_config_files Makefile src/Makefile bin/Makefile src/snipe2d"
+ 

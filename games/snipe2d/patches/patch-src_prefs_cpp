@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_prefs_cpp,v 1.1.1.1 2009/10/11 21:50:14 edd Exp $
+--- src/prefs.cpp.orig	Sun Oct 11 20:09:26 2009
++++ src/prefs.cpp	Sun Oct 11 20:10:01 2009
+@@ -9,7 +9,7 @@
+ #include "binds.h"
+ 
+ /* default web browser. */
+-#define WWWBROWSER "mozilla"
++#define WWWBROWSER "true"
+ 
+ extern PREFS gPrefs;
+ struct passwd *pw_ent = 0;
