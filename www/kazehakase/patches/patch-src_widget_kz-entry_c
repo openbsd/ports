@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_widget_kz-entry_c,v 1.1 2009/10/11 11:14:18 landry Exp $
+--- src/widget/kz-entry.c.orig	Sun Oct 11 11:54:47 2009
++++ src/widget/kz-entry.c	Sun Oct 11 11:54:58 2009
+@@ -515,7 +515,7 @@ gtk_entry_create_layout (GtkEntry *entry,
+       
+ 		if (entry->visible)
+ 		{
+-			g_string_prepend_len (tmp_string, entry->text, entry->n_bytes);
++			g_string_prepend_len (tmp_string, entry->text, entry->x_n_bytes);
+ 			g_string_insert (tmp_string, cursor_index, preedit_string);
+ 		}
+ 		else
+@@ -524,7 +524,7 @@ gtk_entry_create_layout (GtkEntry *entry,
+ 			gint preedit_len_chars;
+ 			gunichar invisible_char;
+           
+-			ch_len = g_utf8_strlen (entry->text, entry->n_bytes);
++			ch_len = g_utf8_strlen (entry->text, entry->x_n_bytes);
+ 			preedit_len_chars = g_utf8_strlen (preedit_string, -1);
+ 			ch_len += preedit_len_chars;
+ 
+@@ -558,7 +558,7 @@ gtk_entry_create_layout (GtkEntry *entry,
+ 	{
+ 		if (entry->visible)
+ 		{
+-		pango_layout_set_text (layout, entry->text, entry->n_bytes);
++		pango_layout_set_text (layout, entry->text, entry->x_n_bytes);
+ 		}
+ 		else
+ 		{
