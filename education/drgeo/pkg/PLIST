@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/12/15 20:37:32 ajacoutot Exp $
-bin/drgeo
-share/applications/
+@comment $OpenBSD: PLIST,v 1.5 2009/10/11 18:51:20 kili Exp $
+@bin bin/drgeo
 share/applications/drgeo.desktop
 share/drgeo/
 share/drgeo/encode/
@@ -193,8 +192,6 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/drgeo.mo
 share/locale/es/LC_MESSAGES/drgeo.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/drgeo.mo
 share/locale/fr/LC_MESSAGES/drgeo.mo
 share/locale/ga/LC_MESSAGES/drgeo.mo
