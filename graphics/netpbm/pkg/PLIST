@@ -1,302 +1,302 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/06/11 18:22:06 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/10/11 19:36:15 naddy Exp $
 %%SHARED%%
-bin/411toppm
+@bin bin/411toppm
 bin/anytopnm
-bin/asciitopgm
-bin/atktopbm
-bin/bioradtopgm
-bin/bmptopnm
+@bin bin/asciitopgm
+@bin bin/atktopbm
+@bin bin/bioradtopgm
+@bin bin/bmptopnm
 bin/bmptoppm
-bin/brushtopbm
-bin/cmuwmtopbm
-bin/ddbugtopbm
-bin/escp2topbm
-bin/eyuvtoppm
-bin/fiascotopnm
-bin/fitstopnm
-bin/fstopgm
-bin/g3topbm
+@bin bin/brushtopbm
+@bin bin/cmuwmtopbm
+@bin bin/ddbugtopbm
+@bin bin/escp2topbm
+@bin bin/eyuvtoppm
+@bin bin/fiascotopnm
+@bin bin/fitstopnm
+@bin bin/fstopgm
+@bin bin/g3topbm
 bin/gemtopbm
-bin/gemtopnm
-bin/giftopnm
-bin/gouldtoppm
-bin/hdifftopam
-bin/hipstopgm
+@bin bin/gemtopnm
+@bin bin/giftopnm
+@bin bin/gouldtoppm
+@bin bin/hdifftopam
+@bin bin/hipstopgm
 @comment bin/hpcdtoppm
-bin/icontopbm
-bin/ilbmtoppm
-bin/imgtoppm
-bin/infotopam
-bin/jbigtopnm
-bin/jpeg2ktopam
-bin/jpegtopnm
-bin/leaftoppm
-bin/lispmtopgm
-bin/macptopbm
+@bin bin/icontopbm
+@bin bin/ilbmtoppm
+@bin bin/imgtoppm
+@bin bin/infotopam
+@bin bin/jbigtopnm
+@bin bin/jpeg2ktopam
+@bin bin/jpegtopnm
+@bin bin/leaftoppm
+@bin bin/lispmtopgm
+@bin bin/macptopbm
 bin/manweb
-bin/mdatopbm
-bin/mgrtopbm
-bin/mrftopbm
-bin/mtvtoppm
-bin/neotoppm
-bin/palmtopnm
-bin/pamarith
-bin/pamchannel
-bin/pamcomp
-bin/pamcut
-bin/pamdeinterlace
-bin/pamdice
-bin/pamditherbw
-bin/pamedge
-bin/pamendian
-bin/pamenlarge
-bin/pamfile
-bin/pamflip
-bin/pamfunc
-bin/pamgauss
-bin/pamlookup
-bin/pammasksharpen
-bin/pamoil
-bin/pamperspective
-bin/pampop9
-bin/pamscale
-bin/pamseq
-bin/pamsharpmap
-bin/pamsharpness
-bin/pamslice
-bin/pamstack
-bin/pamstereogram
-bin/pamstretch
+@bin bin/mdatopbm
+@bin bin/mgrtopbm
+@bin bin/mrftopbm
+@bin bin/mtvtoppm
+@bin bin/neotoppm
+@bin bin/palmtopnm
+@bin bin/pamarith
+@bin bin/pamchannel
+@bin bin/pamcomp
+@bin bin/pamcut
+@bin bin/pamdeinterlace
+@bin bin/pamdice
+@bin bin/pamditherbw
+@bin bin/pamedge
+@bin bin/pamendian
+@bin bin/pamenlarge
+@bin bin/pamfile
+@bin bin/pamflip
+@bin bin/pamfunc
+@bin bin/pamgauss
+@bin bin/pamlookup
+@bin bin/pammasksharpen
+@bin bin/pamoil
+@bin bin/pamperspective
+@bin bin/pampop9
+@bin bin/pamscale
+@bin bin/pamseq
+@bin bin/pamsharpmap
+@bin bin/pamsharpness
+@bin bin/pamslice
+@bin bin/pamstack
+@bin bin/pamstereogram
+@bin bin/pamstretch
 bin/pamstretch-gen
-bin/pamsumm
-bin/pamsummcol
-bin/pamtodjvurle
-bin/pamtohdiff
-bin/pamtohtmltbl
-bin/pamtojpeg2k
-bin/pamtopfm
-bin/pamtopnm
-bin/pamtotga
-bin/pamtouil
-bin/pbmclean
-bin/pbmlife
-bin/pbmmake
-bin/pbmmask
-bin/pbmpage
-bin/pbmpscale
-bin/pbmreduce
-bin/pbmtext
-bin/pbmtextps
-bin/pbmto10x
-bin/pbmto4425
-bin/pbmtoascii
-bin/pbmtoatk
-bin/pbmtobbnbg
-bin/pbmtocmuwm
-bin/pbmtodjvurle
-bin/pbmtoepsi
-bin/pbmtoepson
-bin/pbmtoescp2
-bin/pbmtog3
-bin/pbmtogem
-bin/pbmtogo
-bin/pbmtoibm23xx
-bin/pbmtoicon
-bin/pbmtolj
-bin/pbmtoln03
-bin/pbmtolps
-bin/pbmtomacp
-bin/pbmtomatrixorbital
-bin/pbmtomda
-bin/pbmtomgr
-bin/pbmtomrf
-bin/pbmtonokia
-bin/pbmtopgm
-bin/pbmtopi3
-bin/pbmtopk
-bin/pbmtoplot
-bin/pbmtoppa
-bin/pbmtopsg3
-bin/pbmtoptx
-bin/pbmtowbmp
-bin/pbmtox10bm
-bin/pbmtoxbm
-bin/pbmtoybm
-bin/pbmtozinc
-bin/pbmupc
-bin/pc1toppm
+@bin bin/pamsumm
+@bin bin/pamsummcol
+@bin bin/pamtodjvurle
+@bin bin/pamtohdiff
+@bin bin/pamtohtmltbl
+@bin bin/pamtojpeg2k
+@bin bin/pamtopfm
+@bin bin/pamtopnm
+@bin bin/pamtotga
+@bin bin/pamtouil
+@bin bin/pbmclean
+@bin bin/pbmlife
+@bin bin/pbmmake
+@bin bin/pbmmask
+@bin bin/pbmpage
+@bin bin/pbmpscale
+@bin bin/pbmreduce
+@bin bin/pbmtext
+@bin bin/pbmtextps
+@bin bin/pbmto10x
+@bin bin/pbmto4425
+@bin bin/pbmtoascii
+@bin bin/pbmtoatk
+@bin bin/pbmtobbnbg
+@bin bin/pbmtocmuwm
+@bin bin/pbmtodjvurle
+@bin bin/pbmtoepsi
+@bin bin/pbmtoepson
+@bin bin/pbmtoescp2
+@bin bin/pbmtog3
+@bin bin/pbmtogem
+@bin bin/pbmtogo
+@bin bin/pbmtoibm23xx
+@bin bin/pbmtoicon
+@bin bin/pbmtolj
+@bin bin/pbmtoln03
+@bin bin/pbmtolps
+@bin bin/pbmtomacp
+@bin bin/pbmtomatrixorbital
+@bin bin/pbmtomda
+@bin bin/pbmtomgr
+@bin bin/pbmtomrf
+@bin bin/pbmtonokia
+@bin bin/pbmtopgm
+@bin bin/pbmtopi3
+@bin bin/pbmtopk
+@bin bin/pbmtoplot
+@bin bin/pbmtoppa
+@bin bin/pbmtopsg3
+@bin bin/pbmtoptx
+@bin bin/pbmtowbmp
+@bin bin/pbmtox10bm
+@bin bin/pbmtoxbm
+@bin bin/pbmtoybm
+@bin bin/pbmtozinc
+@bin bin/pbmupc
+@bin bin/pc1toppm
 bin/pcdovtoppm
-bin/pcxtoppm
-bin/pfmtopam
-bin/pgmabel
-bin/pgmbentley
-bin/pgmcrater
+@bin bin/pcxtoppm
+@bin bin/pfmtopam
+@bin bin/pgmabel
+@bin bin/pgmbentley
+@bin bin/pgmcrater
 bin/pgmedge
-bin/pgmenhance
-bin/pgmhist
-bin/pgmkernel
-bin/pgmminkowski
-bin/pgmmorphconv
-bin/pgmnoise
+@bin bin/pgmenhance
+@bin bin/pgmhist
+@bin bin/pgmkernel
+@bin bin/pgmminkowski
+@bin bin/pgmmorphconv
+@bin bin/pgmnoise
 bin/pgmnorm
 bin/pgmoil
-bin/pgmramp
+@bin bin/pgmramp
 bin/pgmslice
-bin/pgmtexture
-bin/pgmtofs
-bin/pgmtolispm
-bin/pgmtopbm
-bin/pgmtopgm
-bin/pgmtoppm
-bin/pi1toppm
-bin/pi3topbm
-bin/picttoppm
-bin/pjtoppm
-bin/pktopbm
-bin/pngtopnm
-bin/pnmalias
+@bin bin/pgmtexture
+@bin bin/pgmtofs
+@bin bin/pgmtolispm
+@bin bin/pgmtopbm
+@bin bin/pgmtopgm
+@bin bin/pgmtoppm
+@bin bin/pi1toppm
+@bin bin/pi3topbm
+@bin bin/picttoppm
+@bin bin/pjtoppm
+@bin bin/pktopbm
+@bin bin/pngtopnm
+@bin bin/pnmalias
 bin/pnmarith
-bin/pnmcat
-bin/pnmcolormap
-bin/pnmcomp
-bin/pnmconvol
-bin/pnmcrop
-bin/pnmcut
-bin/pnmdepth
+@bin bin/pnmcat
+@bin bin/pnmcolormap
+@bin bin/pnmcomp
+@bin bin/pnmconvol
+@bin bin/pnmcrop
+@bin bin/pnmcut
+@bin bin/pnmdepth
 bin/pnmenlarge
 bin/pnmfile
 bin/pnmflip
-bin/pnmgamma
-bin/pnmhisteq
-bin/pnmhistmap
+@bin bin/pnmgamma
+@bin bin/pnmhisteq
+@bin bin/pnmhistmap
 bin/pnmindex
 bin/pnminterp
-bin/pnminvert
+@bin bin/pnminvert
 bin/pnmmargin
-bin/pnmmontage
-bin/pnmnlfilt
+@bin bin/pnmmontage
+@bin bin/pnmnlfilt
 bin/pnmnoraw
-bin/pnmnorm
-bin/pnmpad
-bin/pnmpaste
-bin/pnmpsnr
+@bin bin/pnmnorm
+@bin bin/pnmpad
+@bin bin/pnmpaste
+@bin bin/pnmpsnr
 bin/pnmquant
-bin/pnmremap
-bin/pnmrotate
-bin/pnmscale
-bin/pnmscalefixed
-bin/pnmshear
-bin/pnmsmooth
-bin/pnmsplit
-bin/pnmstitch
-bin/pnmtile
-bin/pnmtoddif
-bin/pnmtofiasco
-bin/pnmtofits
-bin/pnmtojbig
-bin/pnmtojpeg
-bin/pnmtopalm
-bin/pnmtopclxl
+@bin bin/pnmremap
+@bin bin/pnmrotate
+@bin bin/pnmscale
+@bin bin/pnmscalefixed
+@bin bin/pnmshear
+@bin bin/pnmsmooth
+@bin bin/pnmsplit
+@bin bin/pnmstitch
+@bin bin/pnmtile
+@bin bin/pnmtoddif
+@bin bin/pnmtofiasco
+@bin bin/pnmtofits
+@bin bin/pnmtojbig
+@bin bin/pnmtojpeg
+@bin bin/pnmtopalm
+@bin bin/pnmtopclxl
 bin/pnmtoplainpnm
-bin/pnmtopng
-bin/pnmtopnm
-bin/pnmtops
-bin/pnmtorast
-bin/pnmtorle
-bin/pnmtosgi
-bin/pnmtosir
-bin/pnmtotiff
-bin/pnmtotiffcmyk
-bin/pnmtoxwd
-bin/ppm3d
-bin/ppmbrighten
-bin/ppmchange
-bin/ppmcie
-bin/ppmcolormask
-bin/ppmcolors
-bin/ppmdim
-bin/ppmdist
-bin/ppmdither
+@bin bin/pnmtopng
+@bin bin/pnmtopnm
+@bin bin/pnmtops
+@bin bin/pnmtorast
+@bin bin/pnmtorle
+@bin bin/pnmtosgi
+@bin bin/pnmtosir
+@bin bin/pnmtotiff
+@bin bin/pnmtotiffcmyk
+@bin bin/pnmtoxwd
+@bin bin/ppm3d
+@bin bin/ppmbrighten
+@bin bin/ppmchange
+@bin bin/ppmcie
+@bin bin/ppmcolormask
+@bin bin/ppmcolors
+@bin bin/ppmdim
+@bin bin/ppmdist
+@bin bin/ppmdither
 bin/ppmfade
-bin/ppmflash
-bin/ppmforge
-bin/ppmglobe
-bin/ppmhist
-bin/ppmlabel
-bin/ppmmake
-bin/ppmmix
+@bin bin/ppmflash
+@bin bin/ppmforge
+@bin bin/ppmglobe
+@bin bin/ppmhist
+@bin bin/ppmlabel
+@bin bin/ppmmake
+@bin bin/ppmmix
 bin/ppmnorm
-bin/ppmntsc
-bin/ppmpat
+@bin bin/ppmntsc
+@bin bin/ppmpat
 bin/ppmquant
 bin/ppmquantall
 bin/ppmrainbow
-bin/ppmrelief
-bin/ppmrough
+@bin bin/ppmrelief
+@bin bin/ppmrough
 bin/ppmshadow
-bin/ppmshift
-bin/ppmspread
-bin/ppmtoacad
-bin/ppmtoarbtxt
-bin/ppmtobmp
-bin/ppmtoeyuv
-bin/ppmtogif
-bin/ppmtoicr
-bin/ppmtoilbm
+@bin bin/ppmshift
+@bin bin/ppmspread
+@bin bin/ppmtoacad
+@bin bin/ppmtoarbtxt
+@bin bin/ppmtobmp
+@bin bin/ppmtoeyuv
+@bin bin/ppmtogif
+@bin bin/ppmtoicr
+@bin bin/ppmtoilbm
 bin/ppmtojpeg
-bin/ppmtoleaf
-bin/ppmtolj
+@bin bin/ppmtoleaf
+@bin bin/ppmtolj
 bin/ppmtomap
-bin/ppmtomitsu
-bin/ppmtompeg
-bin/ppmtoneo
-bin/ppmtopcx
-bin/ppmtopgm
-bin/ppmtopi1
-bin/ppmtopict
-bin/ppmtopj
-bin/ppmtopjxl
-bin/ppmtoppm
-bin/ppmtopuzz
-bin/ppmtorgb3
-bin/ppmtosixel
-bin/ppmtoterm
+@bin bin/ppmtomitsu
+@bin bin/ppmtompeg
+@bin bin/ppmtoneo
+@bin bin/ppmtopcx
+@bin bin/ppmtopgm
+@bin bin/ppmtopi1
+@bin bin/ppmtopict
+@bin bin/ppmtopj
+@bin bin/ppmtopjxl
+@bin bin/ppmtoppm
+@bin bin/ppmtopuzz
+@bin bin/ppmtorgb3
+@bin bin/ppmtosixel
+@bin bin/ppmtoterm
 bin/ppmtouil
-bin/ppmtowinicon
-bin/ppmtoxpm
-bin/ppmtoyuv
-bin/ppmtoyuvsplit
-bin/ppmtv
-bin/ppmwheel
-bin/psidtopgm
-bin/pstopnm
-bin/qrttoppm
-bin/rasttopnm
-bin/rawtopgm
-bin/rawtoppm
-bin/rgb3toppm
-bin/rletopnm
-bin/sbigtopgm
-bin/sgitopnm
-bin/sirtopnm
-bin/sldtoppm
-bin/spctoppm
-bin/spottopgm
-bin/sputoppm
-bin/tgatoppm
-bin/thinkjettopbm
-bin/tifftopnm
-bin/wbmptopbm
-bin/winicontoppm
-bin/xbmtopbm
-bin/ximtoppm
-bin/xpmtoppm
-bin/xvminitoppm
-bin/xwdtopnm
-bin/ybmtopbm
-bin/yuvsplittoppm
-bin/yuvtoppm
-bin/zeisstopnm
+@bin bin/ppmtowinicon
+@bin bin/ppmtoxpm
+@bin bin/ppmtoyuv
+@bin bin/ppmtoyuvsplit
+@bin bin/ppmtv
+@bin bin/ppmwheel
+@bin bin/psidtopgm
+@bin bin/pstopnm
+@bin bin/qrttoppm
+@bin bin/rasttopnm
+@bin bin/rawtopgm
+@bin bin/rawtoppm
+@bin bin/rgb3toppm
+@bin bin/rletopnm
+@bin bin/sbigtopgm
+@bin bin/sgitopnm
+@bin bin/sirtopnm
+@bin bin/sldtoppm
+@bin bin/spctoppm
+@bin bin/spottopgm
+@bin bin/sputoppm
+@bin bin/tgatoppm
+@bin bin/thinkjettopbm
+@bin bin/tifftopnm
+@bin bin/wbmptopbm
+@bin bin/winicontoppm
+@bin bin/xbmtopbm
+@bin bin/ximtoppm
+@bin bin/xpmtoppm
+@bin bin/xvminitoppm
+@bin bin/xwdtopnm
+@bin bin/ybmtopbm
+@bin bin/yuvsplittoppm
+@bin bin/yuvtoppm
+@bin bin/zeisstopnm
 include/bitio.h
 include/colorname.h
 include/mallocvar.h

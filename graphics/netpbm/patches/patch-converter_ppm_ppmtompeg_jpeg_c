@@ -1,0 +1,15 @@
+$OpenBSD: patch-converter_ppm_ppmtompeg_jpeg_c,v 1.1 2009/10/11 19:36:15 naddy Exp $
+--- converter/ppm/ppmtompeg/jpeg.c.orig	Sun Oct 11 21:08:27 2009
++++ converter/ppm/ppmtompeg/jpeg.c	Sun Oct 11 21:14:24 2009
+@@ -481,7 +481,11 @@ ReadJPEG(mf, fp)
+ #ifdef JPEG4
+   buffer_height = 8;  /* could be 2, 4,8 rows high */
+ #else
++#if JPEG_LIB_VERSION < 70
+   buffer_height = cinfo.max_v_samp_factor * cinfo.min_DCT_scaled_size;
++#else
++  buffer_height = cinfo.max_v_samp_factor * cinfo.min_DCT_v_scaled_size;
++#endif
+ #endif
+   
+   for(cp=0,compptr = cinfo.comp_info;cp<cinfo.num_components;
