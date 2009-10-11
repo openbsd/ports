@@ -1,4 +1,4 @@
-$OpenBSD: patch-libedataserverui_e-source-selector_c,v 1.1 2009/08/18 13:29:40 ajacoutot Exp $
+$OpenBSD: patch-libedataserverui_e-source-selector_c,v 1.2 2009/10/11 12:42:41 jasper Exp $
 
 From upstream git:
 Remove an assertion in ESourceSelector.
@@ -6,10 +6,10 @@ Related to bug #541192. Something accessibility-related is causing the
 assertion to fail. The problem is still unknown, but the logic is more
 forgiving now.
 
---- libedataserverui/e-source-selector.c.orig	Tue Aug 18 14:19:19 2009
-+++ libedataserverui/e-source-selector.c	Tue Aug 18 14:21:24 2009
-@@ -525,18 +525,17 @@ pixbuf_cell_data_func (GtkTreeViewColumn *column,
- 	void *data;
+--- libedataserverui/e-source-selector.c.orig	Fri Aug  7 15:20:30 2009
++++ libedataserverui/e-source-selector.c	Sat Oct 10 19:13:13 2009
+@@ -523,18 +523,17 @@ pixbuf_cell_data_func (GtkTreeViewColumn *column,
+ 	gpointer data;
  
  	gtk_tree_model_get (model, iter, 0, &data, -1);
 +	g_return_if_fail (G_IS_OBJECT (data));

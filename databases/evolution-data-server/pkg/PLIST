@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2009/03/04 20:09:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2009/10/11 12:42:41 jasper Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/camel-address.h
@@ -194,6 +194,7 @@ include/evolution-data-server-${R}/libecal/
 include/evolution-data-server-${R}/libecal/e-cal-check-timezones.h
 include/evolution-data-server-${R}/libecal/e-cal-component.h
 include/evolution-data-server-${R}/libecal/e-cal-recur.h
+include/evolution-data-server-${R}/libecal/e-cal-system-timezone.h
 include/evolution-data-server-${R}/libecal/e-cal-time-util.h
 include/evolution-data-server-${R}/libecal/e-cal-types.h
 include/evolution-data-server-${R}/libecal/e-cal-util.h
@@ -216,8 +217,10 @@ include/evolution-data-server-${R}/libedata-cal/
 include/evolution-data-server-${R}/libedata-cal/Evolution-DataServer-Calendar.h
 include/evolution-data-server-${R}/libedata-cal/e-cal-backend-cache.h
 include/evolution-data-server-${R}/libedata-cal/e-cal-backend-factory.h
+include/evolution-data-server-${R}/libedata-cal/e-cal-backend-file-store.h
 include/evolution-data-server-${R}/libedata-cal/e-cal-backend-loader-factory.h
 include/evolution-data-server-${R}/libedata-cal/e-cal-backend-sexp.h
+include/evolution-data-server-${R}/libedata-cal/e-cal-backend-store.h
 include/evolution-data-server-${R}/libedata-cal/e-cal-backend-sync.h
 include/evolution-data-server-${R}/libedata-cal/e-cal-backend-util.h
 include/evolution-data-server-${R}/libedata-cal/e-cal-backend.h
@@ -254,6 +257,7 @@ include/evolution-data-server-${R}/libedataserver/md5-utils.h
 include/evolution-data-server-${R}/libedataserverui/
 include/evolution-data-server-${R}/libedataserverui/e-book-auth-util.h
 include/evolution-data-server-${R}/libedataserverui/e-categories-dialog.h
+include/evolution-data-server-${R}/libedataserverui/e-category-completion.h
 include/evolution-data-server-${R}/libedataserverui/e-cell-renderer-color.h
 include/evolution-data-server-${R}/libedataserverui/e-contact-store.h
 include/evolution-data-server-${R}/libedataserverui/e-destination-store.h
@@ -268,52 +272,6 @@ include/evolution-data-server-${R}/libedataserverui/e-source-option-menu.h
 include/evolution-data-server-${R}/libedataserverui/e-source-selector-dialog.h
 include/evolution-data-server-${R}/libedataserverui/e-source-selector.h
 include/evolution-data-server-${R}/libedataserverui/e-tree-model-generator.h
-include/evolution-data-server-${R}/libical/
-include/evolution-data-server-${R}/libical/ical.h
-include/evolution-data-server-${R}/libical/icalarray.h
-include/evolution-data-server-${R}/libical/icalattach.h
-include/evolution-data-server-${R}/libical/icalcalendar.h
-include/evolution-data-server-${R}/libical/icalclassify.h
-include/evolution-data-server-${R}/libical/icalcluster.h
-include/evolution-data-server-${R}/libical/icalcomponent.h
-include/evolution-data-server-${R}/libical/icalderivedparameter.h
-include/evolution-data-server-${R}/libical/icalderivedproperty.h
-include/evolution-data-server-${R}/libical/icalderivedvalue.h
-include/evolution-data-server-${R}/libical/icaldirset.h
-include/evolution-data-server-${R}/libical/icaldirsetimpl.h
-include/evolution-data-server-${R}/libical/icalduration.h
-include/evolution-data-server-${R}/libical/icalenums.h
-include/evolution-data-server-${R}/libical/icalerror.h
-include/evolution-data-server-${R}/libical/icalfileset.h
-include/evolution-data-server-${R}/libical/icalfilesetimpl.h
-include/evolution-data-server-${R}/libical/icalgauge.h
-include/evolution-data-server-${R}/libical/icalgaugeimpl.h
-include/evolution-data-server-${R}/libical/icallangbind.h
-include/evolution-data-server-${R}/libical/icalmemory.h
-include/evolution-data-server-${R}/libical/icalmessage.h
-include/evolution-data-server-${R}/libical/icalmime.h
-include/evolution-data-server-${R}/libical/icalparameter.h
-include/evolution-data-server-${R}/libical/icalparser.h
-include/evolution-data-server-${R}/libical/icalperiod.h
-include/evolution-data-server-${R}/libical/icalproperty.h
-include/evolution-data-server-${R}/libical/icalrecur.h
-include/evolution-data-server-${R}/libical/icalrestriction.h
-include/evolution-data-server-${R}/libical/icalset.h
-include/evolution-data-server-${R}/libical/icalspanlist.h
-include/evolution-data-server-${R}/libical/icalss.h
-include/evolution-data-server-${R}/libical/icalssyacc.h
-include/evolution-data-server-${R}/libical/icaltime.h
-include/evolution-data-server-${R}/libical/icaltimezone.h
-include/evolution-data-server-${R}/libical/icaltypes.h
-include/evolution-data-server-${R}/libical/icaltz-util.h
-include/evolution-data-server-${R}/libical/icalvalue.h
-include/evolution-data-server-${R}/libical/icalvcal.h
-include/evolution-data-server-${R}/libical/port.h
-include/evolution-data-server-${R}/libical/pvl.h
-include/evolution-data-server-${R}/libical/sspm.h
-include/evolution-data-server-${R}/libical/vcaltmp.h
-include/evolution-data-server-${R}/libical/vcc.h
-include/evolution-data-server-${R}/libical/vobject.h
 lib/bonobo/servers/GNOME_Evolution_DataServer_1.2.server
 lib/evolution-data-server-1.2/
 lib/evolution-data-server-1.2/camel-providers/
@@ -440,7 +398,7 @@ lib/pkgconfig/libgdata-1.2.pc
 lib/pkgconfig/libgdata-google-1.2.pc
 @bin libexec/camel-index-control-1.2
 @mode 4555
-libexec/camel-lock-helper-1.2
+@bin libexec/camel-lock-helper-1.2
 @mode
 @bin libexec/evolution-data-server-${R}
 share/evolution-data-server-${R}/
@@ -638,6 +596,7 @@ share/gtk-doc/html/libecal/ix01.html
 share/gtk-doc/html/libecal/left.png
 share/gtk-doc/html/libecal/libecal-e-cal-check-timezones.html
 share/gtk-doc/html/libecal/libecal-e-cal-recur.html
+share/gtk-doc/html/libecal/libecal-e-cal-system-timezone.html
 share/gtk-doc/html/libecal/libecal-e-cal-time-util.html
 share/gtk-doc/html/libecal/libecal-e-cal-types.html
 share/gtk-doc/html/libecal/libecal-e-cal-util.html
@@ -661,9 +620,6 @@ share/gtk-doc/html/libedata-book/index.html
 share/gtk-doc/html/libedata-book/index.sgml
 share/gtk-doc/html/libedata-book/ix01.html
 share/gtk-doc/html/libedata-book/left.png
-share/gtk-doc/html/libedata-book/libedata-book-EDataBookFactory.html
-share/gtk-doc/html/libedata-book/libedata-book-e-book-backend-db-cache.html
-share/gtk-doc/html/libedata-book/libedata-book-ximian-vcard.html
 share/gtk-doc/html/libedata-book/libedata-book.devhelp
 share/gtk-doc/html/libedata-book/libedata-book.devhelp2
 share/gtk-doc/html/libedata-book/right.png
@@ -684,7 +640,6 @@ share/gtk-doc/html/libedata-cal/index.html
 share/gtk-doc/html/libedata-cal/index.sgml
 share/gtk-doc/html/libedata-cal/ix01.html
 share/gtk-doc/html/libedata-cal/left.png
-share/gtk-doc/html/libedata-cal/libedata-cal-e-cal-backend-util.html
 share/gtk-doc/html/libedata-cal/libedata-cal.devhelp
 share/gtk-doc/html/libedata-cal/libedata-cal.devhelp2
 share/gtk-doc/html/libedata-cal/right.png
@@ -709,7 +664,6 @@ share/gtk-doc/html/libedataserver/left.png
 share/gtk-doc/html/libedataserver/libedataserver-EFlag.html
 share/gtk-doc/html/libedataserver/libedataserver-EProxy.html
 share/gtk-doc/html/libedataserver/libedataserver-ESExp.html
-share/gtk-doc/html/libedataserver/libedataserver-Version-Information.html
 share/gtk-doc/html/libedataserver/libedataserver-e-categories.html
 share/gtk-doc/html/libedataserver/libedataserver-e-iconv.html
 share/gtk-doc/html/libedataserver/libedataserver-e-memory.html
@@ -746,9 +700,6 @@ share/gtk-doc/html/libedataserverui/index.html
 share/gtk-doc/html/libedataserverui/index.sgml
 share/gtk-doc/html/libedataserverui/ix01.html
 share/gtk-doc/html/libedataserverui/left.png
-share/gtk-doc/html/libedataserverui/libedataserverui-ECellRendererColor.html
-share/gtk-doc/html/libedataserverui/libedataserverui-e-book-auth-util.html
-share/gtk-doc/html/libedataserverui/libedataserverui-e-data-server-ui-marshal.html
 share/gtk-doc/html/libedataserverui/libedataserverui-e-passwords.html
 share/gtk-doc/html/libedataserverui/libedataserverui.devhelp
 share/gtk-doc/html/libedataserverui/libedataserverui.devhelp2
@@ -762,6 +713,7 @@ share/idl/evolution-data-server-1.2/Evolution-DataServer.idl
 share/locale/am/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ar/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/as/LC_MESSAGES/evolution-data-server-${R}.mo
+share/locale/ast/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/az/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/be/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/bg/LC_MESSAGES/evolution-data-server-${R}.mo
@@ -769,6 +721,7 @@ share/locale/bn/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/bn_IN/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/bs/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ca/LC_MESSAGES/evolution-data-server-${R}.mo
+share/locale/ca@valencia/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/cs/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/cy/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/da/LC_MESSAGES/evolution-data-server-${R}.mo
@@ -801,11 +754,9 @@ share/locale/ka/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/kn/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ko/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ku/LC_MESSAGES/evolution-data-server-${R}.mo
-share/locale/la/
-share/locale/la/LC_MESSAGES/
-share/locale/la/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/lt/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/lv/LC_MESSAGES/evolution-data-server-${R}.mo
+share/locale/mai/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/mk/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ml/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/mn/LC_MESSAGES/evolution-data-server-${R}.mo
@@ -842,6 +793,7 @@ share/locale/xh/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-data-server-${R}.mo
+share/pixmaps/
 share/pixmaps/evolution-data-server/
 share/pixmaps/evolution-data-server/category_birthday_16.png
 share/pixmaps/evolution-data-server/category_business_16.png

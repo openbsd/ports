@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2009/10/11 12:42:41 jasper Exp $
+--- configure.ac.orig	Sat Oct 10 18:40:55 2009
++++ configure.ac	Sat Oct 10 18:41:04 2009
+@@ -1125,7 +1125,7 @@ if test "x${with_krb5}" != "xno"; then
+ 	LIBS_save="$LIBS"
+ 
+ 	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
+-	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
++	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lgssapi"
+ 	sunlibs="-lkrb5 -lgss"
+ 	AC_CACHE_CHECK([for Kerberos 5], [ac_cv_lib_kerberos5],
+ 	[
