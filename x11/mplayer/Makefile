@@ -1,43 +1,42 @@
-# $OpenBSD: Makefile,v 1.155 2009/09/13 18:20:55 martynas Exp $
+# $OpenBSD: Makefile,v 1.156 2009/10/11 13:36:23 edd Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
 
+SUBST_VARS += 		PREFIX
+
 COMMENT=		movie player supporting MPEG, DivX, AVI, ASF, MOV & more
 
-V=			1.0rc2
+V=			20090708
 N=			mplayer
-DISTNAME=		MPlayer-${V}
-DIST_SUBDIR=		${N}
-PKGNAME=		${N}-${V}p28
+DISTNAME=		mplayer-export-snapshot-${V}
+PKGNAME=		${N}-${V}
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
+WRKDIST = 		${WRKDIR}/mplayer-export-2009-07-08
+
 HOMEPAGE=		http://www.mplayerhq.hu/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto m ncurses oil-0.3 pthread stdc++ util sndio z 
 
-WANTLIB=		c m ncurses pthread stdc++ util sndio z
-
-MASTER_SITES=		http://www1.mplayerhq.hu/MPlayer/releases/ \
-			http://www2.mplayerhq.hu/MPlayer/releases/ \
-			http://www.mplayerhq.hu/MPlayer/releases/ \
-			http://ftp.lug.udel.edu/MPlayer/releases/
-
-# The skins tarball changes on a daily basis so it is mirrored
-# locally, do NOT change this.
-#MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
-MASTER_SITES0=		${MASTER_SITE_BACKUP}
+# snapshot
+#MASTER_SITES = 	http://www.mplayerhq.hu/MPlayer/releases/
+MASTER_SITES =		http://students.dec.bmth.ac.uk/ebarrett/distfiles/
 
 MAINTAINER=     Bjorn Sandell <biorn@chalmers.se>
 
-SKIN=		default
-SKINVER=	1.7
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}-${SKINVER}${EXTRACT_SUFX}:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+MODULES=        gcc4
+MODGCC4_ARCHES= powerpc
+
+MODULES+=	converters/libiconv
 
 .include <bsd.own.mk>
 
@@ -51,13 +50,29 @@ LIB_DEPENDS=	png::graphics/png \
 		ogg.>=5::audio/libogg \
 		xvidcore::multimedia/xvidcore \
 		x264.>=3::multimedia/x264 \
-		faad.>=2::audio/faad \
-		dca.>=0::audio/libdca \
 		mp3lame:lame-*:audio/lame \
-		dv::multimedia/libdv
+		dv::multimedia/libdv \
+		dvdnavmini:libdvdnav->=4.1.3:multimedia/libdvdnav \
+		dvdread::devel/libdvdread \
+		fribidi::devel/fribidi \
+		lcms::graphics/lcms \
+		mng::graphics/libmng \
+		vorbisidec::audio/tremor \
+		dca::audio/libdca \
+		bz2::archivers/bzip2 \
+		schroedinger-1.0::multimedia/schroedinger \
+		faac::audio/faad \
+		faad::audio/faac
 
 BUILD_DEPENDS=	::net/livemedia \
-		:rtunes->=0.8:audio/rtunes
+		:rtunes->=0.8:audio/rtunes \
+		:libxml-*:textproc/libxml \
+		:libxslt-*:textproc/libxslt \
+		::textproc/docbook \
+		::textproc/docbook-xsl \
+		::audio/tremor \
+		::devel/yasm \
+		::audio/ladspa
 
 CONFDIR=	${SYSCONFDIR}/mplayer
 SUBST_VARS=	CONFDIR
@@ -71,92 +86,69 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-nas \
 		--disable-liblzo \
 		--disable-caca \
-		--disable-vidix-internal \
-		--disable-vidix-external \
-		--enable-libdv \
+		--disable-vidix \
 		--disable-smb \
-		--disable-tremor-external \
-		--enable-tremor-internal \
-		--disable-faac \
 		--disable-select \
-		--enable-theora \
-		--enable-libdca \
+		--disable-langinfo \
+		--disable-openal \
+		--disable-libvorbis \
+		--disable-libcdio \
+		--disable-toolame \
+		--disable-dvdread-internal \
+		--disable-libdvdcss-internal \
+		--disable-faad-internal \
+		--disable-tremor-internal \
 		--enable-menu \
-		--enable-iconv \
-		--enable-cdparanoia \
-		--enable-x264 \
-		--enable-tv-v4l2 \
-		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
-		--with-extralibdir=${LOCALBASE}/lib \
-		--extra-libs-mplayer="$$(pkg-config --libs x264)" \
-		--extra-libs-mencoder="$$(pkg-config --libs x264)" \
 		--confdir=${CONFDIR} \
 		--mandir=${LOCALBASE}/man \
-		--disable-langinfo \
-		--disable-fribidi \
-		--disable-openal \
-		--disable-faad-internal \
-		--enable-faad-external \
-		--disable-libvorbis \
-		--disable-libcdio
+		--extra-cflags="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+		--extra-ldflags="-L${LOCALBASE}/lib" \
+		--disable-gui \
+		--disable-win32dll \
+		--disable-ggi
 
 CONFIGURE_ENV+=	TMPDIR="${WRKBUILD}"
 
-.if ${MACHINE_ARCH:Mi386}
+# bintools 2.15 does not do sse3 for i386/amd64
+.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
 CONFIGURE_ARGS+=--disable-ssse3
 .endif
 
+# again bintools 2.15 limits what we can do here too
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ARGS+=--disable-altivec
+CONFIGURE_ARGS+=--enable-runtime-cpudetection
 .endif
 
-FLAVORS=	sdl ggi debug mad no_x11 aa jack
+FLAVORS=	sdl debug mad no_x11 aa jack
 FLAVOR?=
 
+# again old binutils...
 .if ${MACHINE_ARCH:Marm}
 CONFIGURE_ARGS+=--disable-mp3lib
+CONFIGURE_ARGS+=--target=generic-openbsd
 FLAVOR+=	mad
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
-MODULES=	converters/libiconv
-.  if ${FLAVOR:L:Msdl} || ${FLAVOR:L:Mggi}
-ERRORS+="Fatal: nonsense combination of flavors"
-.  else
-CONFIGURE_ARGS+=--disable-gui \
-		--disable-gl \
+CONFIGURE_ARGS+=--disable-gl \
 		--disable-xv \
 		--disable-x11 \
 		--disable-fontconfig \
 		--disable-freetype
-.  endif
 .else
-CONFIGURE_ARGS+=--enable-gui \
-		--enable-gl
 USE_X11=	Yes
-LIB_DEPENDS+=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-WANTLIB+=	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender Xv Xxf86dga Xxf86vm \
-		atk-1.0 cairo expat fontconfig freetype gio-2.0 \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1 pthread-stubs xcb
-MODULES=	devel/gettext
+WANTLIB+=	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm fontconfig \
+		freetype 
+RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
 .endif
 
 .if ${FLAVOR:L:Msdl}
-CONFIGURE_ARGS+=--enable-sdl \
-		--with-sdl-config=${LOCALBASE}/bin/sdl-config
+CONFIGURE_ARGS+=--with-sdl-config=${LOCALBASE}/bin/sdl-config
 LIB_DEPENDS+=	SDL:sdl->=1.2.5:devel/sdl
 .else
 CONFIGURE_ARGS+=--disable-sdl
-.endif
-
-.if ${FLAVOR:L:Mggi}
-CONFIGURE_ARGS+=--enable-ggi
-LIB_DEPENDS+=	ggi::graphics/ggi
-.else
-CONFIGURE_ARGS+=--disable-ggi
 .endif
 
 .if ${FLAVOR:L:Mdebug}
@@ -164,24 +156,12 @@ CONFIGURE_ARGS+=--enable-debug=3
 .endif
 
 .if ${FLAVOR:L:Mmad}
-CONFIGURE_ARGS+=--enable-mad
 LIB_DEPENDS+=	mad.>=2::audio/libmad
 .else
 CONFIGURE_ARGS+=--disable-mad
 .endif
 
-.if ${MACHINE_ARCH:Mi386}
-CONFIGURE_ARGS+=--win32codecsdir=${LOCALBASE}/lib/win32 \
-		--enable-qtx \
-		--realcodecsdir=${LOCALBASE}/lib/win32
-.else
-CONFIGURE_ARGS+=--disable-win32dll \
-		--disable-qtx \
-		--disable-real
-.endif
-
 .if ${FLAVOR:L:Maa}
-CONFIGURE_ARGS+=--enable-aa
 .if ${FLAVOR:L:Mno_x11}
 LIB_DEPENDS+=	aa.>=1.3:aalib-*-no_x11:graphics/aalib,no_x11
 .else
@@ -192,7 +172,6 @@ CONFIGURE_ARGS+=--disable-aa
 .endif
 
 .if ${FLAVOR:L:Mjack}
-CONFIGURE_ARGS+=--enable-jack
 LIB_DEPENDS+=	jack::audio/jack
 .else
 CONFIGURE_ARGS+=--disable-jack
@@ -200,18 +179,27 @@ CONFIGURE_ARGS+=--disable-jack
 
 NO_REGRESS=	Yes
 
+# subst PREFIX in a patch, careful with update-patches!
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/DOCS/xml/configure
+
 post-patch:
-	@cp ${FILESDIR}/ao_rtunes.c ${FILESDIR}/ao_libsndio.c ${WRKSRC}/libao2
+	@cp ${FILESDIR}/ao_rtunes.c ${FILESDIR}/ao_sndio.c ${WRKSRC}/libao2
+	@cp ${FILESDIR}/ai_sndio.c ${WRKSRC}/stream
+
+post-build:
+	@cd ${WRKSRC}/DOCS/xml && ${MAKE_PROGRAM}
+
+DOCDIR =	${PREFIX}/share/doc/mplayer
+EXAMPLEDIR = 	${PREFIX}/share/examples/mplayer
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mplayer
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mplayer
-	${INSTALL_DATA_DIR} ${PREFIX}/share/mplayer/skins/${SKIN}
-	${INSTALL_DATA} ${WRKDIR}/${SKIN}/* ${PREFIX}/share/mplayer/skins/${SKIN}
+	${INSTALL_DATA_DIR} ${DOCDIR}
+	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	cd ${WRKDIST}/etc; ${INSTALL_DATA} input.conf menu.conf codecs.conf \
-		${PREFIX}/share/examples/mplayer
-	${INSTALL_DATA} ${WRKDIST}/etc/example.conf \
-		${PREFIX}/share/examples/mplayer/mplayer.conf
-	${INSTALL_DATA} ${WRKDIST}/DOCS/HTML/en/*.html ${PREFIX}/share/doc/mplayer
+		${EXAMPLEDIR}
+	${INSTALL_DATA} ${WRKDIST}/etc/example.conf ${EXAMPLEDIR}/mplayer.conf
+	${INSTALL_DATA} ${WRKDIST}/DOCS/HTML/en/*.html ${DOCDIR}
+	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${DOCDIR}
 
 .include <bsd.port.mk>

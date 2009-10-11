@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.23 2008/07/09 02:19:36 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.24 2009/10/11 13:36:23 edd Exp $
 @bin bin/mencoder
 @bin bin/mplayer
 @man man/man1/mencoder.1
 @man man/man1/mplayer.1
 share/doc/mplayer/
+share/doc/mplayer/README.OpenBSD
 share/doc/mplayer/aalib.html
+share/doc/mplayer/advaudio-channels.html
+share/doc/mplayer/advaudio-surround.html
+share/doc/mplayer/advaudio-volume.html
 share/doc/mplayer/advaudio.html
 share/doc/mplayer/aspect.html
-share/doc/mplayer/audio-codecs.html
-share/doc/mplayer/audio-formats.html
-share/doc/mplayer/audio.html
 share/doc/mplayer/bsd.html
 share/doc/mplayer/bugreports.html
 share/doc/mplayer/bugreports_advusers.html
@@ -19,30 +20,24 @@ share/doc/mplayer/bugreports_report.html
 share/doc/mplayer/bugreports_security.html
 share/doc/mplayer/bugreports_what.html
 share/doc/mplayer/bugreports_where.html
-share/doc/mplayer/bugs-audio.html
-share/doc/mplayer/bugs-special.html
-share/doc/mplayer/bugs.html
 share/doc/mplayer/caca.html
 share/doc/mplayer/cd-dvd.html
-share/doc/mplayer/codec-importing.html
-share/doc/mplayer/codecs.html
+share/doc/mplayer/codec-installation.html
 share/doc/mplayer/commandline.html
-share/doc/mplayer/containers.html
 share/doc/mplayer/control.html
 share/doc/mplayer/dfbmga.html
 share/doc/mplayer/dga.html
 share/doc/mplayer/directfb.html
 share/doc/mplayer/drives.html
+share/doc/mplayer/dummy.html
 share/doc/mplayer/dvd.html
 share/doc/mplayer/edl.html
 share/doc/mplayer/encoding-guide.html
-share/doc/mplayer/exotic_platforms.html
 share/doc/mplayer/faq.html
 share/doc/mplayer/fbdev.html
 share/doc/mplayer/features.html
 share/doc/mplayer/fonts-osd.html
 share/doc/mplayer/gui.html
-share/doc/mplayer/history.html
 share/doc/mplayer/howtoread.html
 share/doc/mplayer/index.html
 share/doc/mplayer/install.html
@@ -87,10 +82,8 @@ share/doc/mplayer/softreq.html
 share/doc/mplayer/streaming.html
 share/doc/mplayer/subosd.html
 share/doc/mplayer/svgalib.html
-share/doc/mplayer/sync.html
 share/doc/mplayer/tdfx_vid.html
 share/doc/mplayer/tdfxfb.html
-share/doc/mplayer/troubleshooting.html
 share/doc/mplayer/tv-input.html
 share/doc/mplayer/tv-teletext.html
 share/doc/mplayer/tv.html
@@ -99,8 +92,6 @@ share/doc/mplayer/unix.html
 share/doc/mplayer/usage.html
 share/doc/mplayer/vcd.html
 share/doc/mplayer/vesa.html
-share/doc/mplayer/video-codecs.html
-share/doc/mplayer/video-formats.html
 share/doc/mplayer/video.html
 share/doc/mplayer/vidix.html
 share/doc/mplayer/windows.html
@@ -114,5 +105,4 @@ share/examples/mplayer/input.conf
 share/examples/mplayer/menu.conf
 @sample ${CONFDIR}/menu.conf
 share/examples/mplayer/mplayer.conf
-!%%no_x11%%
 @extraunexec rm -rf ${CONFDIR}

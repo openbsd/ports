@@ -1,209 +1,166 @@
-$OpenBSD: patch-configure,v 1.52 2009/07/14 19:43:07 naddy Exp $
---- configure.orig	Sun Oct  7 21:49:33 2007
-+++ configure	Mon Jul 13 23:49:43 2009
-@@ -76,7 +76,7 @@ cc_check() {
- }
- 
- cxx_check() {
--  compile_check $TMPCPP $@ -lstdc++
-+  compile_check $TMPCPP $@ -lstdc++ -lm
- }
- 
- tmp_run() {
-@@ -397,6 +397,7 @@ Audio output:
+$OpenBSD: patch-configure,v 1.53 2009/10/11 13:36:23 edd Exp $
+--- configure.orig	Thu Jun 25 00:31:17 2009
++++ configure	Thu Aug 27 18:05:38 2009
+@@ -420,6 +420,7 @@ Audio output:
    --disable-nas          disable NAS audio output [autodetect]
    --disable-sgiaudio     disable SGI audio output [autodetect]
    --disable-sunaudio     disable Sun audio output [autodetect]
-+  --disable-libsndio     disable libsndio audio output [autodetect]
++  --disable-sndio        disable sndio audio output [autodetect]
+   --disable-dart         disable DART audio output [autodetect]
    --disable-win32waveout disable Windows waveout audio output [autodetect]
-   --disable-select       disable using select() on the audio device [enable]
- 
-@@ -501,7 +502,7 @@ _libavcodec_a=auto
- _libamr_nb=auto
- _libamr_wb=auto
- _libavdecoders_all=`sed -n 's/^[^#]*DEC.*(.*, *\(.*\)).*/\1_decoder/p' libavcodec/allcodecs.c | tr '[a-z]' '[A-Z]'`
--_libavdecoders=` echo $_libavdecoders_all | sed -e s/LIBFAAD_DECODER// -e s/MPEG4AAC_DECODER//  -e s/LIBA52_DECODER// -e s/LIBGSM_DECODER// -e s/LIBGSM_MS_DECODER// -e s/LIBVORBIS_DECODER// `
-+_libavdecoders=` echo $_libavdecoders_all | sed -e s/LIBFAAD_DECODER// -e s/MPEG4AAC_DECODER//  -e s/LIBA52_DECODER// -e s/LIBGSM_DECODER// -e s/LIBGSM_MS_DECODER// -e s/LIBVORBIS_DECODER// -e s/VORBIS_DECODER// `
- _libavencoders_all=`sed -n 's/^[^#]*ENC.*(.*, *\(.*\)).*/\1_encoder/p' libavcodec/allcodecs.c | tr '[a-z]' '[A-Z]'`
- _libavencoders=` echo $_libavencoders_all | sed -e s/LIBGSM_ENCODER// -e s/LIBGSM_MS_ENCODER// -e s/LIBTHEORA_ENCODER// `
- _libavparsers_all=`sed -n 's/^[^#]*PARSER.*(.*, *\(.*\)).*/\1_parser/p' libavcodec/allcodecs.c | tr '[a-z]' '[A-Z]'`
-@@ -598,6 +599,7 @@ _xf86keysym=auto
+   --disable-coreaudio    disable CoreAudio audio output [autodetect]
+@@ -651,6 +652,7 @@ _xf86keysym=auto
  _mlib=no #broken, thus disabled
  _sgiaudio=auto
  _sunaudio=auto
-+_libsndio=auto
++_sndio=auto
  _alsa=auto
  _fastmemcpy=yes
- _unrarlib=yes
-@@ -963,6 +965,8 @@ for ac_option do
+ _unrar_exec=auto
+@@ -1075,6 +1077,8 @@ for ac_option do
    --disable-mlib)	_mlib=no	;;
    --enable-sunaudio)	_sunaudio=yes	;;
    --disable-sunaudio)	_sunaudio=no	;;
-+  --enable-libsndio)	_libsndio=yes	;;
-+  --disable-libsndio)	_libsndio=no	;;
++  --enable-sndio)	_sndio=yes	;;
++  --disable-sndio)	_sndio=no	;;
    --enable-sgiaudio)	_sgiaudio=yes	;;
    --disable-sgiaudio)	_sgiaudio=no	;;
    --enable-alsa)	_alsa=yes	;;
-@@ -1557,6 +1561,8 @@ if x86 ; then
-   pparam=`echo $exts | sed -e s/k6_mtrr/mtrr/ -e s/cyrix_arr/mtrr/ -e s/centaur_mcr/mtrr/ \
-                            -e s/xmm/sse/ -e s/kni/sse/`
- 
-+  if x86_64 ; then pparam="3dnow 3dnowext mmx mmxext xmm sse sse2" ; fi
-+
-   for ext in $pparam ; do
-     eval test \"\$_$ext\" = auto 2>/dev/null && eval _$ext=kernel_check
-   done
-@@ -2323,7 +2329,7 @@ fi # if darwin && test "$cc_vendor" = "gnu" ; then
- # Checking for CFLAGS
- _install_strip="-s"
- if test "$_profile" != "" || test "$_debug" != "" ; then
--  CFLAGS="-W -Wall -O2 $_march $_mcpu $_pipe $_debug $_profile"
-+  CFLAGS="-W -Wall -O1 $_march $_mcpu $_pipe $_debug $_profile"
-   _install_strip=
- elif test -z "$CFLAGS" ; then
-   if test "$cc_vendor" = "intel" ; then
-@@ -3065,7 +3071,7 @@ int main(void) { pthread_t tid; return pthread_create 
+@@ -2374,7 +2378,7 @@ cat > $TMPC << EOF
+ int ff_extern;
+ EOF
+ cc_check -c || die "Symbol mangling check failed."
+-sym=$($_nm -P -g $TMPEXE)
++sym=$($_nm -g $TMPEXE | grep ff_extern | cut -d ' ' -f 3)
+ extern_prefix=${sym%%ff_extern*}
+ def_extern_prefix="#define EXTERN_PREFIX \"$extern_prefix\""
+ echores $extern_prefix
+@@ -3347,7 +3351,7 @@ int main(void) { pthread_t tid; return pthread_create(
  EOF
  _pthreads=no
- if not hpux ; then
+ if ! hpux ; then
 -  for _ld_tmp in "-lpthreadGC2" "" "-lpthread" "-pthread" ; do
 +  for _ld_tmp in "-lpthreadGC2" "" "-pthread" "-lpthread" ; do
      # for crosscompilation, we cannot execute the program, be happy if we can link statically
-     cc_check $_ld_tmp && (tmp_run || test "$_ld_static") && _ld_pthread="$_ld_tmp" && _pthreads=yes && break
+     cc_check $THREAD_CFLAGS $_ld_tmp && (tmp_run || test "$_ld_static") && _ld_pthread="$_ld_tmp" && _pthreads=yes && break
    done
-@@ -3108,7 +3114,7 @@ fi
- echores "$_rpath"
- 
- echocheck "iconv"
--if test "$_iconv" = auto ; then
-+if test "$_iconv" != no ; then
-   cat > $TMPC << EOF
- #include <stdio.h>
- #include <unistd.h>
-@@ -4369,6 +4375,8 @@ if test "$_aa" = yes ; then
-   _def_aa='#define HAVE_AA 1'
+@@ -4666,6 +4670,8 @@ if test "$_aa" = yes ; then
+   def_aa='#define CONFIG_AA 1'
    if cygwin ; then
-     _libs_mplayer="$_libs_mplayer `aalib-config --libs | cut -d " " -f 2,5,6`"
+     libs_mplayer="$libs_mplayer $(aalib-config --libs | cut -d " " -f 2,5,6)"
 +  else
-+    _libs_mplayer="$_libs_mplayer -laa"
++    libs_mplayer="$libs_mplayer $(aalib-config --libs)"
    fi
-   _vosrc="$_vosrc vo_aa.c"
    _vomodules="aa $_vomodules"
-@@ -4576,7 +4584,7 @@ fi
- echores "$_png"
- if test "$_png" = yes ; then
-   _def_png='#define HAVE_PNG 1'
--  _ld_extra="$_ld_extra -lpng -lz"
-+  _ld_extra="$_ld_extra -lpng -lz $_ld_lm"
-   _vosrc="$_vosrc vo_png.c"
-   _vomodules="png $_vomodules"
  else
-@@ -5129,7 +5137,8 @@ fi
- echocheck "JACK"
- if test "$_jack" = auto ; then
-   _jack=yes
--
-+fi
-+if test "$_jack" = yes ; then
- cat > $TMPC << EOF
- #include <jack/jack.h>
- int main(void) { jack_client_new("test"); return 0; }
-@@ -5303,6 +5312,27 @@ fi
+@@ -4911,14 +4917,14 @@ int main(void) {
+   return !p_ver || p_ver[0] == 0;
+ }
+ EOF
+-  if cc_check -lmng -lz $_ld_lm ; then
++  if cc_check -lmng -llcms -ljpeg -lz -lm $_ld_lm ; then
+     _mng=yes
+   fi
+ fi
+ echores "$_mng"
+ if test "$_mng" = yes ; then
+   def_mng='#define CONFIG_MNG 1'
+-  extra_ldflags="$extra_ldflags -lmng -lz"
++  extra_ldflags="$extra_ldflags -lmng -llcms -ljpeg -lz -lm"
+ else
+   def_mng='#undef CONFIG_MNG'
+ fi
+@@ -5510,6 +5516,7 @@ fi
+ if test "$_jack" = yes ; then
+   def_jack='#define CONFIG_JACK 1'
+   _aomodules="jack $_aomodules"
++  libs_mplayer="$libs_mplayer $(pkg-config --libs jack)"
+ else
+   _noaomodules="jack $_noaomodules"
+ fi
+@@ -5672,6 +5679,26 @@ fi
  echores "$_sunaudio"
  
  
-+echocheck "libsndio audio"
-+if test "$_libsndio" = auto ; then
++echocheck "sndio audio"
++if test "$_sndio" = auto ; then
 +  cat > $TMPC << EOF
 +#include <sndio.h>
 +int main(void) { struct sio_par par; sio_initpar(&par); return 0; }
 +EOF
-+  _libsndio=no
-+  cc_check -lsndio && _libsndio=yes
++  _sndio=no
++  cc_check -lsndio && _sndio=yes
 +fi
-+if test "$_libsndio" = yes ; then
-+  _def_libsndio='#define USE_LIBSNDIO_AUDIO 1'
-+  _aosrc="$_aosrc ao_libsndio.c"
-+  _aomodules="libsndio $_aomodules"
-+  _libs_mplayer="$_libs_mplayer -lsndio"
++if test "$_sndio" = yes ; then
++  def_sndio='#define CONFIG_SNDIO_AUDIO 1'
++  _aomodules="sndio $_aomodules"
++  extra_ldflags="$extra_ldflags -lsndio"
 +else
-+  _def_libsndio='#undef USE_LIBSNDIO_AUDIO'
-+  _noaomodules="libsndio $_noaomodules"
++  def_sndio='#undef CONFIG_SNDIO_AUDIO'
++  _noaomodules="sndio $_noaomodules"
 +fi
-+echores "$_libsndio"
++echores "$_sndio"
 +
 +
+ def_mlib='#define CONFIG_MLIB 0'
  if sunos; then
  echocheck "Sun mediaLib"
- if test "$_mlib" = auto ; then
-@@ -5343,7 +5373,7 @@ fi #if irix
- 
- 
- echocheck "VCD support"
--if linux || bsdos || freebsd || netbsd || sunos || darwin || mingw32; then
-+if linux || bsdos || freebsd || netbsd || sunos || darwin || mingw32 || openbsd ; then
-   _inputmodules="vcd $_inputmodules"
-   _def_vcd='#define HAVE_VCD 1'
-   _vcd="yes"
-@@ -5592,7 +5622,7 @@ int main()
- }
- EOF
-   _fontconfig=no
--  for _ld_tmp in "" "-lexpat -lfreetype" "-lexpat -lfreetype -lz" ; do
-+  for _ld_tmp in "" "-lexpat -lfreetype" "-lexpat -lfreetype -lz $_ld_lm" ; do
-     _ld_tmp="-lfontconfig $_ld_tmp"
-     cc_check $_ld_tmp && _fontconfig=yes && _ld_extra="$_ld_extra $_ld_tmp" && break
-   done
-@@ -5704,10 +5734,10 @@ cat > $TMPC << EOF
- int main(void) { (void) inflate(0, Z_NO_FLUSH); return 0; }
- EOF
- _zlib=no
--cc_check -lz && _zlib=yes
-+cc_check "-lz $_ld_lm" && _zlib=yes
- if test "$_zlib" = yes ; then
-   _def_zlib='#define HAVE_ZLIB 1'
--  _ld_extra="$_ld_extra -lz"
-+  _ld_extra="$_ld_extra -lz $_ld_lm"
- else
-   _def_zlib='#undef HAVE_ZLIB'
-   _libavdecoders=`echo $_libavdecoders | sed -e s/FLASHSV_DECODER// -e s/PNG_DECODER// -e s/ZMBV_DECODER// -e s/DXA_DECODER// `
-@@ -5986,11 +6016,11 @@ if test "$_libdca" = auto ; then
+@@ -5767,7 +5794,7 @@ elif dragonfly ; then
+ elif freebsd ; then
+   default_cdrom_device="/dev/acd0"
+ elif openbsd ; then
+-  default_cdrom_device="/dev/rcd0a"
++  default_cdrom_device="/dev/rcd0c"
+ elif sunos ; then
+   default_cdrom_device="/vol/dev/aliases/cdrom0"
+   # Modern Solaris versions use HAL instead of the vold daemon, the volfs
+@@ -6507,7 +6534,7 @@ if test "$_libdca" = auto ; then
  #include <dts.h>
- int main(void) { dts_init (0); return 0; }
+ int main(void) { dts_init(0); return 0; }
  EOF
--  cc_check -ldts $_ld_lm && _libdca=yes
-+  cc_check -ldca $_ld_lm && _libdca=yes
+-  for _ld_dca in -ldts -ldca ; do
++  for _ld_dca in -ldca ; do
+     cc_check $_ld_dca $_ld_lm && extra_ldflags="$extra_ldflags $_ld_dca" \
+       && _libdca=yes && break
+   done
+@@ -6557,7 +6584,7 @@ int main(void) { unsigned long x, y; faacEncOpen(48000
+ EOF
+   _faac=no
+   for _ld_faac in "-lfaac" "-lfaac -lmp4v2 -lstdc++" ; do
+-    cc_check -O4 $_ld_faac $_ld_lm && libs_mencoder="$libs_mencoder $_ld_faac" && _faac=yes && break
++    cc_check $_ld_faac $_ld_lm && libs_mencoder="$libs_mencoder $_ld_faac" && _faac=yes && break
+   done
  fi
- if test "$_libdca" = yes ; then
-   _def_libdca='#define USE_LIBDCA 1'
--  _ld_extra="$_ld_extra -ldts"
-+  _ld_extra="$_ld_extra -ldca"
-   _codecmodules="libdca $_codecmodules"
- else
-   _def_libdca='#undef USE_LIBDCA'
-@@ -6207,7 +6237,7 @@ if test "$_real" = auto ; then
-   _real=no
-   _res_comment="dynamic loader support needed"
-   if test "$_dl" = yes || test "$_win32dll" = yes &&
--     (linux || freebsd || netbsd || win32 || darwin) ; then
-+     (linux || freebsd || netbsd || openbsd || win32 || darwin) ; then
-     _real=yes
+ if test "$_faac" = yes ; then
+@@ -7560,6 +7587,15 @@ if test "$_tv_v4l2" = auto ; then
+ int main(void) { return 0; }
+ EOF
+     cc_check && _tv_v4l2=yes
++  else
++    cat > $TMPC <<EOF
++#include <stdlib.h>
++#include <sys/types.h>
++#include <sys/ioctl.h>
++#include <sys/videoio.h>
++int main(void) { return 0; }
++EOF
++    cc_check && _tv_v4l2=yes
    fi
  fi
-@@ -8151,6 +8181,7 @@ $_def_openal_h
- $_def_sys_asoundlib_h
- $_def_alsa_asoundlib_h
- $_def_sunaudio
-+$_def_libsndio
- $_def_sgiaudio
- $_def_win32waveout
- $_def_nas
-@@ -8240,7 +8271,7 @@ $_def_vcd
- #define DEFAULT_CDROM_DEVICE    "/dev/disk1"
- #define DEFAULT_DVD_DEVICE	"/dev/rdiskN"
- #elif defined(__OpenBSD__)
--#define DEFAULT_CDROM_DEVICE	"/dev/rcd0a"
-+#define DEFAULT_CDROM_DEVICE	"/dev/rcd0c"
- #define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
- #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
- #define DEFAULT_CDROM_DEVICE	"/dev/acd0"
+ if test "$_tv_v4l2" = yes ; then
+@@ -8303,6 +8339,7 @@ SPEEX = $_speex
+ STREAM_CACHE = $_stream_cache
+ SGIAUDIO = $_sgiaudio
+ SUNAUDIO = $_sunaudio
++SNDIO = $_sndio
+ SVGA = $_svga
+ TDFXFB = $_tdfxfb
+ TDFXVID = $_tdfxvid
+@@ -8677,6 +8714,7 @@ $def_ossaudio_devmixer
+ $def_pulse
+ $def_sgiaudio
+ $def_sunaudio
++$def_sndio
+ $def_win32waveout
+ 
+ $def_ladspa

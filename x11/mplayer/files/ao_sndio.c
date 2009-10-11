@@ -30,13 +30,13 @@
 #include "audio_out_internal.h"
 
 static ao_info_t info = {
-	"libsndio audio output",
+	"sndio audio output",
 	"sndio",
 	"Alexandre Ratchov <alex@caoua.org>",
 	""
 };
 
-LIBAO_EXTERN(libsndio)
+LIBAO_EXTERN(sndio)
 
 static struct sio_hdl *hdl = NULL;
 static struct sio_par par;
@@ -70,7 +70,7 @@ static int init(int rate, int channels, int format, int flags)
 
 	hdl = sio_open(NULL, SIO_PLAY, 0);
 	if (hdl == NULL) {
-		mp_msg(MSGT_AO, MSGL_ERR, "ao2: can't open libsndio\n");
+		mp_msg(MSGT_AO, MSGL_ERR, "ao2: can't open sndio\n");
 		return 0;
 	}
 

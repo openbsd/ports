@@ -1,30 +1,26 @@
-$OpenBSD: patch-DOCS_man_en_mplayer_1,v 1.1 2009/02/08 20:25:09 naddy Exp $
---- DOCS/man/en/mplayer.1.orig	Sun Feb  8 19:50:39 2009
-+++ DOCS/man/en/mplayer.1	Sun Feb  8 19:51:38 2009
-@@ -1177,7 +1177,7 @@ May be negative.
+$OpenBSD: patch-DOCS_man_en_mplayer_1,v 1.2 2009/10/11 13:36:23 edd Exp $
+--- DOCS/man/en/mplayer.1.orig	Mon Jul 13 19:05:24 2009
++++ DOCS/man/en/mplayer.1	Mon Jul 13 19:07:42 2009
+@@ -1288,7 +1288,7 @@ May be negative.
  .
  .TP
- .B \-cdrom-device <path to device>
+ .B \-cdrom\-device <path to device>
 -Specify the CD-ROM device (default: /dev/\:cdrom).
 +Specify the CD-ROM device (default: /dev/rcd0c).
  .
  .TP
  .B \-channels <number> (also see \-af channels)
-@@ -1300,7 +1300,7 @@ frequency before giving up (default: 30).
- .
- .TP
- .B \-dvd-device <path to device> (DVD only)
--Specify the DVD device (default: /dev/\:dvd).
-+Specify the DVD device (default: /dev/rcd0c).
- You can also specify a directory that contains files previously copied directly
- from a DVD (with e.g.\& vobcopy).
- Note that using \-dumpstream is usually a better way to
-@@ -10519,7 +10519,7 @@ mplayer dvd://1 \-dvdangle 2
+@@ -11207,11 +11207,11 @@ mplayer \-vo zr2 \-vf scale=352:288,zrmjpeg file.avi
  .PP
- .B Play from a different DVD device:
+ .B Play DTS-CD with passthrough:
  .nf
--mplayer dvd://1 \-dvd-device /dev/\:dvd2
-+mplayer dvd://1 \-dvd-device /dev/rcd1c
+-mplayer \-ac hwdts \-rawaudio format=0x2001 \-cdrom\-device /dev/cdrom cdda://
++mplayer \-ac hwdts \-rawaudio format=0x2001 \-cdrom\-device /dev/rcd0c cdda://
  .fi
+ .br
+ You can also use \-afm hwac3 instead of \-ac hwdts.
+-Adjust '/dev/cdrom' to match the CD-ROM device on your system.
++Adjust '/dev/rcd0c' to match the CD-ROM device on your system.
+ If your external receiver supports decoding raw DTS streams,
+ you can directly play it via cdda:// without setting format, hwac3 or hwdts.
  .
- .PP

@@ -1,12 +1,12 @@
-$OpenBSD: patch-libavutil_x86_cpu_h,v 1.1 2008/02/08 17:32:41 jakemsr Exp $
---- libavutil/x86_cpu.h.orig	Sat Jan 26 15:11:55 2008
-+++ libavutil/x86_cpu.h	Sat Jan 26 15:14:22 2008
-@@ -61,7 +61,7 @@
- #  define HAVE_7REGS 1
- #endif
+$OpenBSD: patch-libavutil_x86_cpu_h,v 1.2 2009/10/11 13:36:23 edd Exp $
+--- libavutil/x86_cpu.h.orig	Wed Jul 29 20:37:28 2009
++++ libavutil/x86_cpu.h	Wed Jul 29 20:37:58 2009
+@@ -69,7 +69,7 @@ typedef int x86_reg;
+ #define HAVE_7REGS (ARCH_X86_64 || (HAVE_EBX_AVAILABLE && HAVE_EBP_AVAILABLE))
+ #define HAVE_6REGS (ARCH_X86_64 || (HAVE_EBX_AVAILABLE || HAVE_EBP_AVAILABLE))
  
--#if defined(ARCH_X86_64) && defined(PIC)
-+#if defined(ARCH_X86_64)  /* && defined(PIC)) the stuff under this condition just isn't amd64 compatible */  
- #  define BROKEN_RELOCATIONS 1
+-#if ARCH_X86_64 && defined(PIC)
++#if ARCH_X86_64 /* && defined(PIC) */
+ #    define BROKEN_RELOCATIONS 1
  #endif
  

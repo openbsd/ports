@@ -1,13 +1,31 @@
-$OpenBSD: patch-libavcodec_Makefile,v 1.7 2008/02/08 17:32:41 jakemsr Exp $
---- libavcodec/Makefile.orig	Sun Oct  7 12:49:37 2007
-+++ libavcodec/Makefile	Mon Jan 21 14:07:36 2008
-@@ -420,6 +420,9 @@ ALTIVEC-OBJS-$(CONFIG_WMV3_DECODER)    += ppc/vc1dsp_a
- # -maltivec is needed in order to build AltiVec code.
- $(ALTIVEC-OBJS-yes): CFLAGS += -maltivec -mabi=altivec
+$OpenBSD: patch-libavcodec_Makefile,v 1.8 2009/10/11 13:36:23 edd Exp $
+--- libavcodec/Makefile.orig	Tue Jul  7 02:33:53 2009
++++ libavcodec/Makefile	Mon Jul 20 17:53:46 2009
+@@ -575,4 +575,27 @@ DIRS = alpha arm bfin mlib ppc ps2 sh4 sparc x86
  
-+# compiler optimizations cause problems
-+ppc/mpegvideo_altivec.o: CFLAGS += -O
+ include $(SUBDIR)../subdir.mak
+ 
++ifdef ARCH_X86_32
++ifeq (,$(findstring -O,$(CFLAGS)))
++x86/dsputil_mmx.o: CFLAGS += -O
++x86/flacdsp_mmx.o: CFLAGS += -O
++x86/fft_3dn.o: CFLAGS += -O
++x86/fft_3dn2.o: CFLAGS += -O
++x86/mlpdsp.o: CFLAGS += -O
++x86/snowdsp_mmx.o: CFLAGS += -O
++h264.o: CFLAGS += -O
++h264_parser.o: CFLAGS += -O
++cabac.o: CFLAGS += -O
++endif
++x86/dsputil_mmx.o: CFLAGS += -fomit-frame-pointer
++x86/flacdsp_mmx.o: CFLAGS += -fomit-frame-pointer
++x86/fft_3dn.o: CFLAGS += -fomit-frame-pointer
++x86/fft_3dn2.o: CFLAGS += -fomit-frame-pointer
++x86/mlpdsp.o: CFLAGS += -fomit-frame-pointer
++x86/snowdsp_mmx.o: CFLAGS += -fomit-frame-pointer
++h264.o: CFLAGS += -fomit-frame-pointer
++h264_parser.o: CFLAGS += -fomit-frame-pointer
++cabac.o: CFLAGS += -fomit-frame-pointer
++endif
 +
- # check_altivec must be built without -maltivec
- OBJS-$(HAVE_ALTIVEC)                   += $(ALTIVEC-OBJS-yes)       \
-                                           ppc/check_altivec.o
+ $(SUBDIR)dct-test$(EXESUF): $(SUBDIR)dctref.o

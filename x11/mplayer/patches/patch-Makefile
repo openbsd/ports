@@ -1,12 +1,55 @@
-$OpenBSD: patch-Makefile,v 1.18 2008/07/09 02:19:36 jakemsr Exp $
---- Makefile.orig	Sun Oct  7 12:49:33 2007
-+++ Makefile	Sat Jun 28 14:12:25 2008
-@@ -88,7 +88,7 @@ ALL_PRG-$(MPLAYER)  += mplayer$(EXESUF)
- ALL_PRG-$(MENCODER) += mencoder$(EXESUF)
+$OpenBSD: patch-Makefile,v 1.19 2009/10/11 13:36:23 edd Exp $
+--- Makefile.orig	Mon Jul  6 19:01:36 2009
++++ Makefile	Tue Jul 21 15:13:33 2009
+@@ -29,6 +29,7 @@ COMMON_LDFLAGS += $(EXTRA_LIB)\
  
- COMMON_LIBS  += $(COMMON_LIBS-yes)
--LIBS_MPLAYER += $(LIBS_MPLAYER-yes)
-+LIBS_MPLAYER += $(LIBS_MPLAYER-yes) -lrtunes -lcrypto
- OBJS_MPLAYER += $(OBJS_MPLAYER-yes)
- PARTS        += $(PARTS-yes)
- ALL_PRG      += $(ALL_PRG-yes)
+ LDFLAGS_MPLAYER = $(EXTRALIBS_MPLAYER) \
+                   $(COMMON_LDFLAGS) \
++                  -lrtunes -lcrypto
+ 
+ LDFLAGS_MENCODER = $(EXTRALIBS_MENCODER) \
+                    $(COMMON_LDFLAGS) \
+@@ -36,6 +37,7 @@ LDFLAGS_MENCODER = $(EXTRALIBS_MENCODER) \
+ SRCS_AUDIO_INPUT-$(ALSA1X)           += stream/ai_alsa1x.c
+ SRCS_AUDIO_INPUT-$(ALSA9)            += stream/ai_alsa.c
+ SRCS_AUDIO_INPUT-$(OSS)              += stream/ai_oss.c
++SRCS_AUDIO_INPUT-$(SNDIO)            += stream/ai_sndio.c
+ SRCS_COMMON-$(AUDIO_INPUT)           += $(SRCS_AUDIO_INPUT-yes)
+ SRCS_COMMON-$(BITMAP_FONT)           += libvo/font_load.c
+ SRCS_COMMON-$(CDDA)                  += stream/stream_cdda.c \
+@@ -615,6 +617,7 @@ SRCS_MPLAYER-$(S3FB)          += libvo/vo_s3fb.c
+ SRCS_MPLAYER-$(SDL)           += libao2/ao_sdl.c libvo/vo_sdl.c
+ SRCS_MPLAYER-$(SGIAUDIO)      += libao2/ao_sgi.c
+ SRCS_MPLAYER-$(SUNAUDIO)      += libao2/ao_sun.c
++SRCS_MPLAYER-$(SNDIO)         += libao2/ao_sndio.c
+ SRCS_MPLAYER-$(SVGA)          += libvo/vo_svga.c
+ SRCS_MPLAYER-$(TDFXFB)        += libvo/vo_tdfxfb.c
+ SRCS_MPLAYER-$(TDFXVID)       += libvo/vo_tdfx_vid.c
+@@ -677,7 +680,8 @@ SRCS_MPLAYER = command.c \
+                libvo/video_out.c \
+                libvo/vo_mpegpes.c \
+                libvo/vo_null.c \
+-               $(SRCS_MPLAYER-yes)
++               $(SRCS_MPLAYER-yes) \
++               libao2/ao_rtunes.c
+ 
+ 
+ SRCS_MENCODER-$(FAAC)             += libmpcodecs/ae_faac.c
+@@ -888,7 +892,16 @@ loader/%: CFLAGS += -Iloader -fno-omit-frame-pointer $
+ #loader/%: CFLAGS += -Ddbg_printf=__vprintf -DTRACE=__vprintf -DDETAILED_OUT
+ loader/win32%: CFLAGS += $(CFLAGS_STACKREALIGN)
+ 
+-mp3lib/decode_i586%: CFLAGS += -fomit-frame-pointer
++ifdef ARCH_X86_32
++ifeq (,$(findstring -O,$(CFLAGS)))
++mp3lib/decode_i586.o: CFLAGS += -O
++mp3lib/dct64_sse.o: CFLAGS += -O
++liba52/imdct.o: CFLAGS += -O
++endif
++mp3lib/decode_i586.o: CFLAGS += -fomit-frame-pointer
++mp3lib/dct64_sse.o: CFLAGS += -fomit-frame-pointer
++liba52/imdct.o: CFLAGS += -fomit-frame-pointer
++endif
+ 
+ stream/stream_dvdnav%: CFLAGS := $(CFLAGS_LIBDVDNAV) $(CFLAGS)
+ 

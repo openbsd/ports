@@ -1,0 +1,39 @@
+$OpenBSD: patch-DOCS_xml_configure,v 1.1 2009/10/11 13:36:23 edd Exp $
+--- DOCS/xml/configure.orig	Tue May 12 19:58:57 2009
++++ DOCS/xml/configure	Fri Jul 10 10:48:16 2009
+@@ -18,7 +18,8 @@ for _try_catalog in \
+   /usr/lib/sgml/catalog \
+   /usr/local/lib/sgml/catalog \
+   /usr/share/docbook-xml42/catalog.xml \
+-  /usr/share/sgml/docbook/xmlcatalog
++  /usr/share/sgml/docbook/xmlcatalog \
++  ${PREFIX}/share/sgml/catalog
+ do
+   if test -f "$_try_catalog"
+   then
+@@ -49,6 +50,7 @@ for _try_chunk_xsl in \
+   /usr/share/sgml/docbook/xsl-stylesheets*/html/chunk.xsl \
+   /usr/share/xml/docbook/stylesheet/nwalsh/current/html/chunk.xsl \
+   /opt/local/share/xsl/docbook-xsl/html/chunk.xsl \
++  ${PREFIX}/share/xsl/docbook/html/chunk.xsl
+ 
+ do
+   if test -f "$_try_chunk_xsl"
+@@ -78,6 +80,7 @@ for _try_docbook_xsl in \
+   /usr/share/sgml/docbook/xsl-stylesheets*/html/docbook.xsl \
+   /usr/share/xml/docbook/stylesheet/nwalsh/current/html/docbook.xsl \
+   /opt/local/share/xsl/docbook-xsl/html/docbook.xsl \
++  ${PREFIX}/share/xsl/docbook/html/docbook.xsl
+ 
+ do
+   if test -f "$_try_docbook_xsl"
+@@ -135,7 +138,8 @@ for _try_dtd in \
+   /usr/share/sgml/docbook/dtd/xml/*/docbookx.dtd \
+   /usr/share/docbook-xml*/docbookx.dtd \
+   /opt/local/share/xml/docbook*/*/docbookx.dtd \
+-  /usr/share/apps/ksgmltools2/docbook/*/docbookx.dtd
++  /usr/share/apps/ksgmltools2/docbook/*/docbookx.dtd \
++  ${PREFIX}/share/xml/docbook/*/docbookx.dtd
+ do
+   if test -f "$_try_dtd"
+   then

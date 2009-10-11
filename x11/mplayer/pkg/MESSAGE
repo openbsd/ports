@@ -1,2 +1,1 @@
-This package may need further setup. Run "pkg_info mplayer" to find out more
-and be sure to read the package description carefully.
+This package may need further setup. Please see ${PREFIX}/share/doc/mplayer/README.OpenBSD for some information regarding running MPlayer on OpenBSD.

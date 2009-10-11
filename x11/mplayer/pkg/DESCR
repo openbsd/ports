@@ -1,59 +1,18 @@
-MPlayer is a movie player for LINUX (runs on many other Unices, and
-non-x86 CPUs, see the documentation). It plays most MPEG, VOB, AVI,
-VIVO, ASF/WMV, QT/MOV, FLI, NuppelVideo, yuv4mpeg, FILM, RoQ, and some
-RealMedia files, supported by many native, XAnim, and Win32 DLL codecs.
-You can watch VideoCD, SVCD, DVD, 3ivx, FLI, and even DivX movies too
-(and you don't need the avifile library at all!).
+MPlayer is a media player.  It plays most MPEG, VOB, AVI, VIVO, ASF/WMV,
+QT/MOV, FLI, NuppelVideo, yuv4mpeg, FILM, RoQ, and some RealMedia files,
+supported by many native, XAnim, and Win32 DLL codecs.  You can watch
+VideoCD, SVCD, DVD, 3ivx, FLI, and even DivX movies too.
 
-Another big feature of mplayer is the wide range of supported output
-drivers.  It works with X11, Xv, DGA, OpenGL, SVGAlib, fbdev, AAlib, but
-you can use SDL (and this way all drivers of SDL), VESA (on every VESA
-compatible card, even without X!), and some lowlevel card-specific
-drivers (for Matrox, 3Dfx and Radeon) too! Most of them supports
-software or hardware scaling, so you can enjoy movies in fullscreen.
-MPlayer supports displaying through some hardware MPEG decoder boards,
-such as the DVB and DXR3/Hollywood+ !  And what about the nice big
-antialiased shaded subtitles (9 supported types!!!) with european/ISO
-8859-1,2 (hungarian, english, czech, etc), cyrillic, korean fonts, and
-OSD?
-
-MPlayer might fail due to lack of shared memory, e.g. when using gui mode
-under KDE.  Starting with OpenBSD 3.3, sysctl(8) can modify the shared
-memory parameters. In particular kern.shminfo.shmall might need to
-be raised, e.g. 
-
-sysctl kern.shminfo.shmall=32768
-
-On i386 mplayer can use win32 codecs if they are installed (package
-win32-codecs) and if the machdep.userldt sysctl is enabled, e.g. by
-entering
-
-sysctl machdep.userldt=1
-
-Both sysctl settings can also be achieved via /etc/sysctl.conf.
-
-On arm (e.g. Zaurus) you may encounter slow video output.
-In this case you can disable the X.Org screen rotation in
-/etc/X11/xorg.conf. Depending on the video you are playing
-you may want to pass the -framedrop or the -hardframedrop
-option to mplayer.
-By default we disable the internal mp3lib (mpg123), because
-it relies on the FPU. Instead of using mp3lib the mad flavor
-is enabled by default. If you want to use libmad as an audio
-decoder please pass the -ac mad option to mplayer.
+MPlayer supports a wide range of video output drivers.  It works with
+X11, Xv, DGA, OpenGL and optionally AAlib or SDL (and this way all
+drivers of SDL).  Most of them support software or hardware scaling,
+so you can enjoy movies in fullscreen.
 
 Flavors:
-
   sdl: enables sdl, requires devel/sdl
-
   ggi: enables ggi, requires graphics/ggi
-
   debug: enables debugging information
-
   mad: enables mad, requires audio/libmad
-
   no_x11: disables gui and most video output.
-
   aa: enables ascii art, requires graphics/aalib
-
   jack: enables jack, requires audio/jack

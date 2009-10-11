@@ -1,0 +1,32 @@
+Possible issues with using MPlayer on OpenBSD:
+
+all arches:
+  MPlayer might fail due to lack of shared memory, e.g. when using gui
+  mode under KDE.  Starting with OpenBSD 3.3, sysctl(8) can modify the
+  shared memory parameters. In particular kern.shminfo.shmall might need
+  to be raised, e.g. 
+
+  # sysctl kern.shminfo.shmall=32768
+
+  The GUI is deprecated so we stripped it from the build. You can use
+  x11/gnome-mplayer instead.
+
+i386:
+  win32 codecs were disabled in OpenBSD's build, as the open-source codecs
+  are now of decent quality.
+
+  Also note that MPlayer may sometimes fail to play a file (particularly
+  WMV files) unless machdep.userldt sysctl is enabled.
+
+arm:
+  You may encounter slow video output.  In this case you can disable
+  the X.Org screen rotation in /etc/X11/xorg.conf. Depending on the
+  video you are playing you may want to pass the -framedrop or the
+  -hardframedrop option to mplayer.
+
+  The internal mp3lib (mpg123) is disabled because it relies on the
+  FPU. Instead of using mp3lib the mad flavor is enabled by default.
+  If you want to use libmad as an audio decoder please pass the
+  '-ac mad' option to mplayer.
+
+See the package description for a list of FLAVORs and their meaning.

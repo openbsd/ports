@@ -1,0 +1,14 @@
+$OpenBSD: patch-DOCS_xml_en_cd-dvd_xml,v 1.1 2009/10/11 13:36:23 edd Exp $
+--- DOCS/xml/en/cd-dvd.xml.orig	Mon Jul 13 19:08:41 2009
++++ DOCS/xml/en/cd-dvd.xml	Mon Jul 13 19:10:04 2009
+@@ -202,8 +202,8 @@ For the complete list of available options, please rea
+ Syntax for a standard Video CD (VCD) is as follows:
+ <screen>mplayer vcd://<replaceable>&lt;track&gt;</replaceable> [-cdrom-device <replaceable>&lt;device&gt;</replaceable>]</screen>
+ Example:
+-<screen>mplayer vcd://2 -cdrom-device /dev/hdc</screen>
+-The default VCD device is <filename>/dev/cdrom</filename>. If your setup
++<screen>mplayer vcd://2 -cdrom-device /dev/rcd1c</screen>
++The default VCD device is <filename>/dev/rcd0c</filename>. If your setup
+ differs, make a symlink or specify the correct device on the command line
+ with the <option>-cdrom-device</option> option.
+ </para>

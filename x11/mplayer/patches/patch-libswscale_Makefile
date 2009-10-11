@@ -1,0 +1,14 @@
+$OpenBSD: patch-libswscale_Makefile,v 1.1 2009/10/11 13:36:23 edd Exp $
+--- libswscale/Makefile.orig	Sat Apr 18 06:52:00 2009
++++ libswscale/Makefile	Mon Jul 20 17:54:49 2009
+@@ -22,3 +22,10 @@ TESTPROGS = colorspace
+ DIRS = bfin mlib ppc sparc x86
+ 
+ include $(SUBDIR)../subdir.mak
++
++ifdef ARCH_X86_32
++ifeq (,$(findstring -O,$(CFLAGS)))
++x86/yuv2rgb_mmx.o: CFLAGS += -O
++endif
++x86/yuv2rgb_mmx.o: CFLAGS += -fomit-frame-pointer
++endif

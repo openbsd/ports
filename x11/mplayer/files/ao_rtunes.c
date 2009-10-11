@@ -22,7 +22,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "bswap.h"
+#include "libavutil/bswap.h"
 #include "subopt-helper.h"
 #include "libaf/af_format.h"
 #include "audio_out.h"

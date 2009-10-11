@@ -1,23 +1,29 @@
-$OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.1 2008/02/08 17:32:42 jakemsr Exp $
---- stream/tvi_bsdbt848.c.orig	Sun Oct  7 12:49:26 2007
-+++ stream/tvi_bsdbt848.c	Mon Dec 17 14:49:10 2007
-@@ -36,6 +36,7 @@
- #include <sys/time.h>
+$OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.2 2009/10/11 13:36:23 edd Exp $
+--- stream/tvi_bsdbt848.c.orig	Tue May 12 19:58:57 2009
++++ stream/tvi_bsdbt848.c	Sat Jul 11 06:45:32 2009
+@@ -37,9 +37,10 @@
  #include <signal.h>
  #include <string.h>
-+#include <errno.h>
+ #include <errno.h>
++#include <sys/ioctl.h>
  
  #include <sys/param.h>
- #ifdef USE_SUN_AUDIO
-@@ -50,6 +51,7 @@
+-#ifdef CONFIG_SUN_AUDIO
++#if defined(CONFIG_SUN_AUDIO) && !defined(CONFIG_SNDIO_AUDIO)
+ #include <sys/audioio.h>
+ #endif
+ 
+@@ -51,6 +52,9 @@
  #include IOCTL_BT848_H_NAME
  #endif
  
-+#ifndef __OpenBSD__
++#if defined(CONFIG_SNDIO_AUDIO)
++#include <sndio.h>
++#else
  #ifdef HAVE_SYS_SOUNDCARD_H
  #include <sys/soundcard.h>
  #else
-@@ -59,6 +61,7 @@
+@@ -60,6 +64,7 @@
  #include <machine/soundcard.h>
  #endif
  #endif
@@ -25,176 +31,171 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.1 2008/02/08 17:32:42 jakemsr Exp $
  
  #include "libaf/af_format.h"
  #include "libmpcodecs/img_format.h"
-@@ -141,9 +144,14 @@ typedef struct {
+@@ -89,7 +94,12 @@ typedef struct {
+ /* Audio */
+     char *dspdev;
+     int dspready;
++#if defined(CONFIG_SNDIO_AUDIO)
++    struct sio_hdl *hdl;
++    struct sio_par spar, gpar;
++#else
+     int dspfd;
++#endif
+     int dspsamplesize;
+     int dspstereo;
+     int dspspeed;
+@@ -206,7 +216,9 @@ static tvi_handle_t *tvi_init_bsdbt848(tv_param_t* tv_
  
- #include "tvi_def.h"
- 
-+static int sources[6] = { METEOR_INPUT_DEV1, METEOR_INPUT_DEV0, METEOR_INPUT_DEV2,
-+    METEOR_INPUT_DEV3, METEOR_INPUT_DEV_RGB, METEOR_INPUT_DEV_SVIDEO };
-+
-+
- static priv_t *G_private=NULL;
- 
- static int getinput(int innumber);
-+static int getsource(int insrc);
- 
- static void processframe(int signal)
- {
-@@ -314,7 +322,14 @@ static int control(priv_t *priv, int cmd, void *arg)
+     /* set audio device name */
+     if (!tv_param->adevice)
+-#ifdef CONFIG_SUN_AUDIO
++#if defined(CONFIG_SNDIO_AUDIO)
++        priv->dspdev = NULL;
++#elif defined(CONFIG_SUN_AUDIO)
+         priv->dspdev = strdup("/dev/sound");
+ #else
+         priv->dspdev = strdup("/dev/dsp");
+@@ -315,12 +327,19 @@ static int control(priv_t *priv, int cmd, void *arg)
          {
          int dspspeed = *(int *)arg;
  
-+#if defined(__OpenBSD__)
-+           audio_info_t audio_if;
-+           AUDIO_INITINFO(&audio_if);
-+           audio_if.record.sample_rate = dspspeed;
-+           if (ioctl(priv->dspfd, AUDIO_SETINFO, &audio_if) == -1)
++#if defined(CONFIG_SNDIO_AUDIO)
++           sio_initpar(&priv->spar);
++           priv->spar.rate = dspspeed;
++           if(!sio_setpar(priv->hdl, &priv->spar)) { printf("sio_setpar failed at %d\n", __LINE__); }
++           if(!sio_getpar(priv->hdl, &priv->gpar)) { printf("sio_getpar failed at %d\n", __LINE__); }
++           dspspeed = priv->gpar.rate;
 +#else
-            if(ioctl(priv->dspfd, SNDCTL_DSP_SPEED, &dspspeed) == -1) 
-+#endif
+            if(ioctl(priv->dspfd, SNDCTL_DSP_SPEED, &dspspeed) == -1)
              {
              mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848InvalidAudioRate, strerror(errno));
-             return(TVI_CONTROL_FALSE);
-@@ -525,7 +540,12 @@ static int init(priv_t *priv)
- int marg;
- int count;
- u_short tmp_fps;
-+int tuner_audio;
-+#if defined(__OpenBSD__)
-+audio_info_t audio_if;
+             return TVI_CONTROL_FALSE;
+             }
+-
 +#endif
+         priv->dspspeed = dspspeed;
  
-+
- G_private = priv; /* Oooh, sick */
- 
- /* Video Configuration */
-@@ -536,7 +556,7 @@ priv->iformat = METEOR_FMT_PAL;
- priv->maxheight = PAL_HEIGHT;
- priv->maxwidth = PAL_WIDTH;
- priv->maxfps = PAL_FPS;
--priv->source = METEOR_INPUT_DEV0;
-+priv->source = METEOR_INPUT_DEV1;
- priv->fps = priv->maxfps;
- 
- priv->starttime=0;
-@@ -622,13 +642,33 @@ if(priv->tunerfd < 0)
-     priv->tunerready = FALSE;
-     }
- 
-+if(ioctl(priv->tunerfd, BT848_GAUDIO, &tuner_audio) < 0)
-+    {
-+    perror("tuner get audio");
-+    priv->tunerready = FALSE;
-+    }
-+if(tuner_audio & AUDIO_MUTE)
-+    {
-+    tuner_audio = AUDIO_UNMUTE;
-+    if(ioctl(priv->tunerfd, BT848_SAUDIO, &tuner_audio) < 0)
-+        {
-+        perror("tuner unmute");
-+        priv->tunerready = FALSE;
-+        }
-+    }
-+
-+
- /* Audio Configuration */
- 
- priv->dspready = TRUE;
+         priv->dspframesize = priv->dspspeed*priv->dspsamplesize/8/
+@@ -629,12 +648,46 @@ priv->dspready = TRUE;
  priv->dspsamplesize = 16;
  priv->dspstereo = 1;
  priv->dspspeed = 44100;
-+#if defined (__OpenBSD__)
-+priv->dspfmt = AUDIO_ENCODING_SLINEAR_LE;
-+#else
++#if !defined(CONFIG_SNDIO_AUDIO)
  priv->dspfmt = AFMT_S16_LE;
 +#endif
  priv->dspbytesread = 0;
  priv->dsprate = priv->dspspeed * priv->dspsamplesize/8*(priv->dspstereo+1);
- priv->dspframesize = priv->dspspeed*priv->dspsamplesize/8/priv->fps * 
-@@ -642,6 +682,26 @@ if((priv->dspfd = open (priv->dspdev, O_RDONLY, 0)) < 
+ priv->dspframesize = priv->dspspeed*priv->dspsamplesize/8/priv->fps *
+                      (priv->dspstereo+1);
  
- marg = (256 << 16) | 12;
- 
-+#if defined(__OpenBSD__)
++#if defined(CONFIG_SNDIO_AUDIO)
 +
-+    AUDIO_INITINFO(&audio_if);
++if((priv->hdl = sio_open(priv->dspdev, SIO_REC, 0) == NULL))
++    {
++    mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848ErrorOpeningDspDev, strerror(errno));
++    priv->dspready = FALSE;
++    }
 +
-+    audio_if.record.precision = priv->dspsamplesize;
-+    audio_if.record.channels = priv->dspstereo+1;
-+    audio_if.record.sample_rate = priv->dspspeed;
-+    audio_if.record.encoding = priv->dspfmt;
++sio_initpar(&priv->spar);
++priv->spar.rchan = priv->dspstereo + 1;
++priv->spar.rate = priv->dspspeed;
++priv->spar.bits = priv->dspsamplesize;
++priv->spar.le = 1;
++priv->spar.sig = 1;
 +
-+    audio_if.mode = AUMODE_RECORD;
++if((priv->dspready == TRUE) &&
++    (!sio_setpar(priv->hdl, &priv->spar)))
++    {
++    mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848ErrorConfiguringDsp, strerror(errno));
++    sio_close(priv->hdl);
++    priv->dspready = FALSE;
++    }
 +
-+    if (ioctl(priv->dspfd, AUDIO_SETINFO, &audio_if) < 0)
-+        {
-+        perror ("AUDIO_SETINFO:ioctl");
-+        close(priv->dspfd);
-+        priv->dspready = FALSE;
-+        }
++if(!sio_start(priv->hdl))
++    {
++    mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848ErrorConfiguringDsp, strerror(errno));
++    sio_close(priv->hdl);
++    priv->dspready = FALSE;
++    }
 +
 +#else
 +
- if (ioctl(priv->dspfd, SNDCTL_DSP_SETFRAGMENT, &marg ) < 0 ) 
+ if((priv->dspfd = open (priv->dspdev, O_RDONLY, 0)) < 0)
      {
-     mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848IoctlFailed, "SNDCTL_DSP_SETFRAGMENT", strerror(errno));
-@@ -659,6 +719,8 @@ if((priv->dspready == TRUE) &&
+     mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848ErrorOpeningDspDev, strerror(errno));
+@@ -660,6 +713,8 @@ if((priv->dspready == TRUE) &&
      priv->dspready = FALSE;
      }
  
 +#endif
 +
- return(1);
+ return 1;
  }
  
-@@ -703,6 +765,7 @@ return(1);
- static int uninit(priv_t *priv)
- {
- int marg;
-+int tuner_audio;
+@@ -684,7 +739,9 @@ if(ioctl(priv->btfd, METEORSSIGNAL, &marg) < 0)
+     return 0;
+     }
  
- if(priv->videoready == FALSE) return(0);
++#if !defined(CONFIG_SNDIO_AUDIO)
+ read(priv->dspfd, &tmp, 2);
++#endif
  
-@@ -725,6 +788,15 @@ if(ioctl(priv->btfd, METEORCAPTUR, &marg) < 0 ) 
- close(priv->btfd);
+ gettimeofday(&curtime, NULL);
+ 
+@@ -723,10 +780,15 @@ if(ioctl(priv->btfd, METEORCAPTUR, &marg) < 0 )
+     return 0;
+     }
+ 
+-close(priv->btfd);
++#if defined(CONFIG_SNDIO_AUDIO)
++sio_close(priv->hdl);
++priv->hdl = NULL;
++#else
  close(priv->dspfd);
- 
-+tuner_audio = AUDIO_MUTE;
-+if(ioctl(priv->tunerfd, BT848_SAUDIO, &tuner_audio) < 0)
-+    {
-+    perror("tuner mute");
-+    priv->tunerready = FALSE;
-+    }
-+
-+close(priv->tunerfd);
-+
+-
  priv->dspfd = -1;
++#endif
++
++close(priv->btfd);
  priv->btfd = -1;
  
-@@ -869,22 +941,15 @@ if(ioctl(priv->dspfd, FIONREAD, &bytesavail) < 0) 
- /* When mencoder wants audio data, it wants data..
-    it won't go do anything else until it gets it :( */
+ priv->dspready = priv->videoready = FALSE;
+@@ -806,11 +868,19 @@ gettimeofday(&curtime, NULL);
  
--if(bytesavail == 0) return FRAGSIZE;
-+// if(bytesavail == 0) return FRAGSIZE;
+ /* Get exactly one frame of audio, which forces video sync to audio.. */
  
- return(bytesavail);
- }
++#if defined(CONFIG_SNDIO_AUDIO)
++bytesread=sio_read(priv->hdl, buffer, len);
++#else
+ bytesread=read(priv->dspfd, buffer, len);
++#endif
  
- static int getinput(int innumber)
+ while(bytesread < len)
+     {
++#if defined(CONFIG_SNDIO_AUDIO)
++    ret=sio_read(priv->hdl, &buffer[bytesread], len-bytesread);
++#else
+     ret=read(priv->dspfd, &buffer[bytesread], len-bytesread);
++#endif
+ 
+     if(ret == -1)
+         {
+@@ -845,13 +915,16 @@ return priv->dspbytesread * 1.0 / priv->dsprate;
+ static int get_audio_framesize(priv_t *priv)
  {
--switch(innumber)
--    {
--    case 0: return METEOR_INPUT_DEV0;     /* RCA   */
--    case 1: return METEOR_INPUT_DEV1;     /* Tuner */
--    case 2: return METEOR_INPUT_DEV2;     /* In 1  */
--    case 3: return METEOR_INPUT_DEV3;     /* In 2  */
--    case 4: return METEOR_INPUT_DEV_RGB;     /* RGB   */
--    case 5: return METEOR_INPUT_DEV_SVIDEO; /* SVid  */
--    }
--
-+if (sources[innumber])
-+    return sources[innumber];
-+    
- return 0;
- }
+ int bytesavail;
+-#ifdef CONFIG_SUN_AUDIO
++#if defined(CONFIG_SUN_AUDIO) && !defined(CONFIG_SNDIO_AUDIO)
+ struct audio_info auinf;
+ #endif
+ 
+ if(priv->dspready == FALSE) return 0;
+ 
+-#ifdef CONFIG_SUN_AUDIO
++#if defined(CONFIG_SNDIO_AUDIO)
++sio_getpar(priv->hdl, &priv->gpar);
++bytesavail = priv->gpar.round * priv->gpar.bps;
++#elif defined(CONFIG_SUN_AUDIO)
+ if(ioctl(priv->dspfd, AUDIO_GETINFO, &auinf) < 0)
+     {
+     mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848IoctlFailed, "AUDIO_GETINFO", strerror(errno));

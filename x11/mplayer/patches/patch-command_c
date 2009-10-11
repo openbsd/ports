@@ -1,0 +1,12 @@
+$OpenBSD: patch-command_c,v 1.1 2009/10/11 13:36:23 edd Exp $
+--- command.c.orig	Sun Jul 12 08:12:25 2009
++++ command.c	Sun Jul 12 08:12:46 2009
+@@ -3131,7 +3131,7 @@ int run_command(MPContext * mpctx, mp_cmd_t * cmd)
+ 	case MP_CMD_RUN:
+ #ifndef __MINGW32__
+ 	    if (!fork()) {
+-		execl("/bin/sh", "sh", "-c", cmd->args[0].v.s, NULL);
++		execl("/bin/sh", "sh", "-c", cmd->args[0].v.s, (char *)NULL);
+ 		exit(0);
+ 	    }
+ #endif
