@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/03/31 19:11:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2009/10/11 09:56:55 naddy Exp $
 #
 
      SUBDIR += algotutor
@@ -8,5 +8,6 @@
      SUBDIR += edict
      SUBDIR += gamgi
      SUBDIR += gtypist
+     SUBDIR += verbiste
 
 .include <bsd.port.subdir.mk>
