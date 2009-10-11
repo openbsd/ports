@@ -1,0 +1,14 @@
+This library has been designed to make it easier to access web services
+that claim to be "RESTful". However a reasonable description is that a
+RESTful service should have urls that represent remote objects which
+methods can then be called on.
+
+However it should be noted that the majority of services don't actually
+adhere to this strict definition. Instead their RESTful end-point
+usually has an API that is just simpler to use compared to other types
+of APIs they may support (XML-RPC, for instance.). It is this kind of
+API that this library is attempting to support.
+
+It comprises of two parts: the first aims to make it easier to make
+requests by providing a wrapper around libsoup [2], the second aids with
+XML parsing by wrapping libxml2 [3].
