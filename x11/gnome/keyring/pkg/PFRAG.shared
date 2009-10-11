@@ -1,4 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2008/11/21 18:06:05 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2009/10/11 08:33:27 ajacoutot Exp $
+lib/gnome-keyring/devel/gck-ssh-store-standalone.so
+lib/gnome-keyring/devel/gck-user-store-standalone.so
 lib/gnome-keyring/gnome-keyring-pkcs11.so
+lib/gnome-keyring/standalone/gck-roots-store-standalone.so
+@lib lib/libgcr.so.${LIBgcr_VERSION}
 @lib lib/libgnome-keyring.so.${LIBgnome-keyring_VERSION}
 @lib lib/libgp11.so.${LIBgp11_VERSION}
