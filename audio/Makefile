@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.231 2009/10/07 21:14:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.232 2009/10/11 14:21:00 landry Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -15,6 +15,7 @@
      SUBDIR += bmp
      SUBDIR += bonk
      SUBDIR += cdparanoia
+     SUBDIR += cmixer
      SUBDIR += cmt
      SUBDIR += cmu-sphinx3
      SUBDIR += cmu-sphinxbase
