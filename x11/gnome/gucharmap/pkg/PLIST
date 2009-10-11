@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/06/07 10:01:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/10/11 13:44:16 jasper Exp $
 %%SHARED%%
 bin/charmap
 bin/gnome-character-map
@@ -38,11 +38,21 @@ share/gnome/help/gucharmap/ca/figures/
 share/gnome/help/gucharmap/ca/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/ca/figures/gucharmap_window.png
 share/gnome/help/gucharmap/ca/gucharmap.xml
+share/gnome/help/gucharmap/cs/
+share/gnome/help/gucharmap/cs/figures/
+share/gnome/help/gucharmap/cs/figures/gucharmap_start_window.png
+share/gnome/help/gucharmap/cs/figures/gucharmap_window.png
+share/gnome/help/gucharmap/cs/gucharmap.xml
 share/gnome/help/gucharmap/de/
 share/gnome/help/gucharmap/de/figures/
 share/gnome/help/gucharmap/de/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/de/figures/gucharmap_window.png
 share/gnome/help/gucharmap/de/gucharmap.xml
+share/gnome/help/gucharmap/el/
+share/gnome/help/gucharmap/el/figures/
+share/gnome/help/gucharmap/el/figures/gucharmap_start_window.png
+share/gnome/help/gucharmap/el/figures/gucharmap_window.png
+share/gnome/help/gucharmap/el/gucharmap.xml
 share/gnome/help/gucharmap/en_GB/
 share/gnome/help/gucharmap/en_GB/figures/
 share/gnome/help/gucharmap/en_GB/figures/gucharmap_start_window.png
@@ -116,14 +126,20 @@ share/gnome/help/gucharmap/zh_TW/legal.xml
 share/locale/af/LC_MESSAGES/gucharmap.mo
 share/locale/am/LC_MESSAGES/gucharmap.mo
 share/locale/ar/LC_MESSAGES/gucharmap.mo
+share/locale/as/LC_MESSAGES/gucharmap.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/gucharmap.mo
 share/locale/az/LC_MESSAGES/gucharmap.mo
 share/locale/be/LC_MESSAGES/gucharmap.mo
 share/locale/be@latin/LC_MESSAGES/gucharmap.mo
 share/locale/bg/LC_MESSAGES/gucharmap.mo
 share/locale/bn/LC_MESSAGES/gucharmap.mo
 share/locale/bn_IN/LC_MESSAGES/gucharmap.mo
+share/locale/br/LC_MESSAGES/gucharmap.mo
 share/locale/bs/LC_MESSAGES/gucharmap.mo
 share/locale/ca/LC_MESSAGES/gucharmap.mo
+share/locale/ca@valencia/LC_MESSAGES/gucharmap.mo
 share/locale/cs/LC_MESSAGES/gucharmap.mo
 share/locale/cy/LC_MESSAGES/gucharmap.mo
 share/locale/da/LC_MESSAGES/gucharmap.mo
@@ -151,9 +167,11 @@ share/locale/is/LC_MESSAGES/gucharmap.mo
 share/locale/it/LC_MESSAGES/gucharmap.mo
 share/locale/ja/LC_MESSAGES/gucharmap.mo
 share/locale/ka/LC_MESSAGES/gucharmap.mo
+share/locale/kn/LC_MESSAGES/gucharmap.mo
 share/locale/ko/LC_MESSAGES/gucharmap.mo
 share/locale/lt/LC_MESSAGES/gucharmap.mo
 share/locale/lv/LC_MESSAGES/gucharmap.mo
+share/locale/mai/LC_MESSAGES/gucharmap.mo
 share/locale/mi/
 share/locale/mi/LC_MESSAGES/
 share/locale/mi/LC_MESSAGES/gucharmap.mo
@@ -197,7 +215,9 @@ share/omf/gucharmap/
 share/omf/gucharmap/gucharmap-C.omf
 share/omf/gucharmap/gucharmap-bg.omf
 share/omf/gucharmap/gucharmap-ca.omf
+share/omf/gucharmap/gucharmap-cs.omf
 share/omf/gucharmap/gucharmap-de.omf
+share/omf/gucharmap/gucharmap-el.omf
 share/omf/gucharmap/gucharmap-en_GB.omf
 share/omf/gucharmap/gucharmap-es.omf
 share/omf/gucharmap/gucharmap-fi.omf
