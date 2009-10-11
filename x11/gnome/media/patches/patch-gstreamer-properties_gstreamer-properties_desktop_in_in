@@ -1,7 +1,7 @@
-$OpenBSD: patch-gstreamer-properties_gstreamer-properties_desktop_in_in,v 1.1 2008/07/08 11:49:11 jasper Exp $
---- gstreamer-properties/gstreamer-properties.desktop.in.in.orig	Tue Jul  8 13:48:17 2008
-+++ gstreamer-properties/gstreamer-properties.desktop.in.in	Tue Jul  8 13:48:23 2008
-@@ -6,7 +6,7 @@ Exec=gstreamer-properties
+$OpenBSD: patch-gstreamer-properties_gstreamer-properties_desktop_in_in,v 1.2 2009/10/11 23:01:22 jasper Exp $
+--- gstreamer-properties/gstreamer-properties.desktop.in.in.orig	Mon Sep  7 15:20:13 2009
++++ gstreamer-properties/gstreamer-properties.desktop.in.in	Sun Oct 11 23:59:57 2009
+@@ -5,7 +5,7 @@ Exec=gstreamer-properties
  Icon=gstreamer-properties
  StartupNotify=true
  Terminal=false

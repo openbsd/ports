@@ -1,7 +1,7 @@
-$OpenBSD: patch-gstreamer-properties_pipeline-constants_c,v 1.4 2009/01/19 09:54:34 ajacoutot Exp $
---- gstreamer-properties/pipeline-constants.c.orig	Mon Sep  1 13:42:32 2008
-+++ gstreamer-properties/pipeline-constants.c	Mon Jan 12 15:34:21 2009
-@@ -76,6 +76,8 @@ GSTPPipelineDescription audiosink_pipelines[] = {
+$OpenBSD: patch-gstreamer-properties_pipeline-constants_c,v 1.5 2009/10/11 23:01:22 jasper Exp $
+--- gstreamer-properties/pipeline-constants.c.orig	Thu Aug 13 13:31:19 2009
++++ gstreamer-properties/pipeline-constants.c	Sun Oct 11 23:59:57 2009
+@@ -78,6 +78,8 @@ GSTPPipelineDescription audiosink_pipelines[] = {
        "osssink", NULL, FALSE, TEST_PIPE_SUPPLIED, audiosink_test_pipe, TRUE},
    {PIPE_TYPE_AUDIOSINK, 0, N_("PulseAudio Sound Server"),
        "pulsesink", NULL, FALSE, TEST_PIPE_SUPPLIED, audiosink_test_pipe, FALSE},
@@ -10,7 +10,7 @@ $OpenBSD: patch-gstreamer-properties_pipeline-constants_c,v 1.4 2009/01/19 09:54
    {PIPE_TYPE_AUDIOSINK, 0, N_("Custom"), NULL, NULL, TRUE, TEST_PIPE_SUPPLIED,
        audiosink_test_pipe, TRUE}
  };
-@@ -125,6 +127,8 @@ GSTPPipelineDescription audiosrc_pipelines[] = {
+@@ -127,6 +129,8 @@ GSTPPipelineDescription audiosrc_pipelines[] = {
        TEST_PIPE_AUDIOSINK, NULL, FALSE},
    {PIPE_TYPE_AUDIOSRC, 0, N_("PulseAudio Sound Server"), "pulsesrc", NULL,
        FALSE, TEST_PIPE_AUDIOSINK, NULL, FALSE},
