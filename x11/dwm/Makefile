@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2009/07/27 21:20:09 jim Exp $
+# $OpenBSD: Makefile,v 1.15 2009/10/11 13:30:38 jim Exp $
 
 COMMENT=		dynamic window manager
 
-DISTNAME=		dwm-5.6.1
+DISTNAME=		dwm-5.7.2
 
 CATEGORIES=		x11
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xinerama c
 
-MASTER_SITES=		http://code.suckless.org/dl/dwm/
+MASTER_SITES=		http://dl.suckless.org/dwm/
 
 RUN_DEPENDS=		:dmenu->=3.9:x11/dmenu \
 			::x11/terminus-font
