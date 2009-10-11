@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/11 13:14:03 sthen Exp $
 
 COMMENT=		find and use installed modules in a (sub)category
 
 MODULES=		cpan
-DISTNAME=		Module-Find-0.05
+DISTNAME=		Module-Find-0.08
 CATEGORIES=		devel
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
