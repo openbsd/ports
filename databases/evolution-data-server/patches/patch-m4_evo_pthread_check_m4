@@ -1,0 +1,17 @@
+$OpenBSD: patch-m4_evo_pthread_check_m4,v 1.1 2009/10/11 12:43:03 jasper Exp $
+--- m4/evo_pthread_check.m4.orig	Sat Oct 10 17:51:32 2009
++++ m4/evo_pthread_check.m4	Sat Oct 10 17:51:35 2009
+@@ -2,10 +2,10 @@ dnl EVO_PTHREAD_CHECK
+ #serial 0.1
+ AC_DEFUN([EVO_PTHREAD_CHECK],[
+ 	PTHREAD_LIB=""
+-	AC_CHECK_LIB(pthread, pthread_create, [PTHREAD_LIB="-lpthread"],
+-		[AC_CHECK_LIB(pthreads, pthread_create, [PTHREAD_LIB="-lpthreads"],
++	AC_CHECK_LIB(pthread, pthread_create, PTHREAD_LIB="-pthread",
++		[AC_CHECK_LIB(pthreads, pthread_create, PTHREAD_LIB="-pthreads",
+ 			[AC_CHECK_LIB(c_r, pthread_create, [PTHREAD_LIB="-lc_r"],
+-			[AC_CHECK_LIB(pthread, __pthread_attr_init_system, [PTHREAD_LIB="-lpthread"],
++			[AC_CHECK_LIB(pthread, __pthread_attr_init_system, PTHREAD_LIB="-pthread",
+ 				[AC_CHECK_FUNC(pthread_create)]
+ 			)]
+ 			)]
