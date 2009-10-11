@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/11/06 19:12:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2009/10/11 13:18:36 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -46,5 +46,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 # SASL support needs GNU SASL
 CONFIGURE_ARGS+= --disable-sasl
+
+# XXX check on update whether this is still necessary
+post-extract:
+	${INSTALL} -m 555 ${FILESDIR}/libgnutls-config ${WRKDIR}/bin
 
 .include <bsd.port.mk>
