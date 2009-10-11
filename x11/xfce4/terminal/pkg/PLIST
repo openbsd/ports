@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/07/27 19:58:10 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/10/11 09:54:24 landry Exp $
 @bin bin/Terminal
 bin/terminal
 libexec/TerminalHelp
@@ -71,6 +71,48 @@ share/doc/Terminal/fr/index.html
 share/doc/Terminal/fr/preferences.html
 share/doc/Terminal/fr/support.html
 share/doc/Terminal/fr/usage.html
+share/doc/Terminal/gl/
+share/doc/Terminal/gl/advanced.html
+share/doc/Terminal/gl/copyright.html
+share/doc/Terminal/gl/faq.html
+share/doc/Terminal/gl/getting-started.html
+share/doc/Terminal/gl/images/
+share/doc/Terminal/gl/images/terminal-compose-shortcut.png
+share/doc/Terminal/gl/images/terminal-edit-preferences.png
+share/doc/Terminal/gl/images/terminal-first-time.png
+share/doc/Terminal/gl/images/terminal-multiple-tabs.png
+share/doc/Terminal/gl/images/terminal-preferences-advanced.png
+share/doc/Terminal/gl/images/terminal-preferences-appearance.png
+share/doc/Terminal/gl/images/terminal-preferences-colors.png
+share/doc/Terminal/gl/images/terminal-preferences-general.png
+share/doc/Terminal/gl/images/terminal-preferences-shortcuts.png
+share/doc/Terminal/gl/images/terminal-set-title.png
+share/doc/Terminal/gl/images/terminal-toolbars.png
+share/doc/Terminal/gl/index.html
+share/doc/Terminal/gl/preferences.html
+share/doc/Terminal/gl/support.html
+share/doc/Terminal/gl/usage.html
+share/doc/Terminal/id/
+share/doc/Terminal/id/advanced.html
+share/doc/Terminal/id/copyright.html
+share/doc/Terminal/id/faq.html
+share/doc/Terminal/id/getting-started.html
+share/doc/Terminal/id/images/
+share/doc/Terminal/id/images/terminal-compose-shortcut.png
+share/doc/Terminal/id/images/terminal-edit-preferences.png
+share/doc/Terminal/id/images/terminal-first-time.png
+share/doc/Terminal/id/images/terminal-multiple-tabs.png
+share/doc/Terminal/id/images/terminal-preferences-advanced.png
+share/doc/Terminal/id/images/terminal-preferences-appearance.png
+share/doc/Terminal/id/images/terminal-preferences-colors.png
+share/doc/Terminal/id/images/terminal-preferences-general.png
+share/doc/Terminal/id/images/terminal-preferences-shortcuts.png
+share/doc/Terminal/id/images/terminal-set-title.png
+share/doc/Terminal/id/images/terminal-toolbars.png
+share/doc/Terminal/id/index.html
+share/doc/Terminal/id/preferences.html
+share/doc/Terminal/id/support.html
+share/doc/Terminal/id/usage.html
 share/doc/Terminal/ja/
 share/doc/Terminal/ja/advanced.html
 share/doc/Terminal/ja/copyright.html
