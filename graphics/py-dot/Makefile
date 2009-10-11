@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/05/11 12:41:32 pyr Exp $
+# $OpenBSD: Makefile,v 1.8 2009/10/11 18:52:39 kili Exp $
 
 COMMENT=	Python interface to Graphiz's Dot
 
-DISTNAME=	pydot-0.9.10
-PKGNAME=	${DISTNAME:S/py/py-/}p2
+V=		0.9.10
+DISTNAME=	pydot-$V
+PKGNAME=	${DISTNAME:S/py/py-/}p3
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://dkbza.org/pydot.html
@@ -21,6 +22,8 @@ MODULES=	lang/python
 BUILD_DEPENDS=	::devel/py-parsing
 RUN_DEPENDS=	::devel/py-parsing \
 		::math/graphviz
+
+SUBST_VARS=	V
 
 NO_REGRESS=	Yes
 
