@@ -1,17 +1,20 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/03/14 10:40:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/10/11 18:56:21 kili Exp $
 @pkgpath print/lilypond
 bin/abc2ly
 bin/convert-ly
 bin/etf2ly
+bin/lilymidi
 @bin bin/lilypond
 bin/lilypond-book
 bin/lilypond-invoke-editor
+bin/lilysong
 bin/midi2ly
 bin/musicxml2ly
-info/lilypond/
-@info info/lilypond/lilypond-internals.info
-@info info/lilypond/lilypond.info
-@info info/lilypond/music-glossary.info
+@info info/lilypond-internals.info
+@info info/lilypond-learning.info
+@info info/lilypond-program.info
+@info info/lilypond.info
+@info info/music-glossary.info
 lib/lilypond/
 lib/lilypond/${VERSION}/
 lib/lilypond/${VERSION}/python/
@@ -19,15 +22,18 @@ lib/lilypond/${VERSION}/python/midi.so
 @man man/man1/abc2ly.1
 @man man/man1/convert-ly.1
 @man man/man1/etf2ly.1
+@man man/man1/lilymidi.1
 @man man/man1/lilypond-book.1
 @man man/man1/lilypond-invoke-editor.1
 @man man/man1/lilypond.1
+@man man/man1/lilysong.1
 @man man/man1/midi2ly.1
 @man man/man1/musicxml2ly.1
 share/emacs/site-lisp/lilypond-font-lock.el
 share/emacs/site-lisp/lilypond-indent.el
 share/emacs/site-lisp/lilypond-init.el
 share/emacs/site-lisp/lilypond-mode.el
+share/emacs/site-lisp/lilypond-song.el
 share/emacs/site-lisp/lilypond-what-beat.el
 share/emacs/site-lisp/lilypond-words.el
 share/lilypond/
@@ -110,6 +116,7 @@ share/lilypond/${VERSION}/fonts/source/parmesan-dots.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-flags.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-generic.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-heads.mf
+share/lilypond/${VERSION}/fonts/source/parmesan-macros.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-rests.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-scripts.mf
 share/lilypond/${VERSION}/fonts/source/parmesan-timesig.mf
@@ -131,77 +138,44 @@ share/lilypond/${VERSION}/fonts/svg/emmentaler-18.svg
 share/lilypond/${VERSION}/fonts/svg/emmentaler-20.svg
 share/lilypond/${VERSION}/fonts/svg/emmentaler-23.svg
 share/lilypond/${VERSION}/fonts/svg/emmentaler-26.svg
-share/lilypond/${VERSION}/fonts/svg/feta-alphabet11.svg
-share/lilypond/${VERSION}/fonts/svg/feta-alphabet13.svg
-share/lilypond/${VERSION}/fonts/svg/feta-alphabet14.svg
-share/lilypond/${VERSION}/fonts/svg/feta-alphabet16.svg
-share/lilypond/${VERSION}/fonts/svg/feta-alphabet18.svg
-share/lilypond/${VERSION}/fonts/svg/feta-alphabet20.svg
-share/lilypond/${VERSION}/fonts/svg/feta-alphabet23.svg
-share/lilypond/${VERSION}/fonts/svg/feta-alphabet26.svg
-share/lilypond/${VERSION}/fonts/svg/feta-braces-a.svg
-share/lilypond/${VERSION}/fonts/svg/feta-braces-b.svg
-share/lilypond/${VERSION}/fonts/svg/feta-braces-c.svg
-share/lilypond/${VERSION}/fonts/svg/feta-braces-d.svg
-share/lilypond/${VERSION}/fonts/svg/feta-braces-e.svg
-share/lilypond/${VERSION}/fonts/svg/feta-braces-f.svg
-share/lilypond/${VERSION}/fonts/svg/feta-braces-g.svg
-share/lilypond/${VERSION}/fonts/svg/feta-braces-h.svg
-share/lilypond/${VERSION}/fonts/svg/feta-braces-i.svg
-share/lilypond/${VERSION}/fonts/svg/feta11.svg
-share/lilypond/${VERSION}/fonts/svg/feta13.svg
-share/lilypond/${VERSION}/fonts/svg/feta14.svg
-share/lilypond/${VERSION}/fonts/svg/feta16.svg
-share/lilypond/${VERSION}/fonts/svg/feta18.svg
-share/lilypond/${VERSION}/fonts/svg/feta20.svg
-share/lilypond/${VERSION}/fonts/svg/feta23.svg
-share/lilypond/${VERSION}/fonts/svg/feta26.svg
-share/lilypond/${VERSION}/fonts/svg/parmesan11.svg
-share/lilypond/${VERSION}/fonts/svg/parmesan13.svg
-share/lilypond/${VERSION}/fonts/svg/parmesan14.svg
-share/lilypond/${VERSION}/fonts/svg/parmesan16.svg
-share/lilypond/${VERSION}/fonts/svg/parmesan18.svg
-share/lilypond/${VERSION}/fonts/svg/parmesan20.svg
-share/lilypond/${VERSION}/fonts/svg/parmesan23.svg
-share/lilypond/${VERSION}/fonts/svg/parmesan26.svg
 share/lilypond/${VERSION}/fonts/type1/
-share/lilypond/${VERSION}/fonts/type1/feta-alphabet11.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-alphabet13.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-alphabet14.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-alphabet16.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-alphabet18.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-alphabet20.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-alphabet23.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-alphabet26.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-braces-a.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-braces-b.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-braces-c.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-braces-d.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-braces-e.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-braces-f.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-braces-g.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-braces-h.pfa
-share/lilypond/${VERSION}/fonts/type1/feta-braces-i.pfa
-share/lilypond/${VERSION}/fonts/type1/feta11.pfa
-share/lilypond/${VERSION}/fonts/type1/feta13.pfa
-share/lilypond/${VERSION}/fonts/type1/feta14.pfa
-share/lilypond/${VERSION}/fonts/type1/feta16.pfa
-share/lilypond/${VERSION}/fonts/type1/feta18.pfa
-share/lilypond/${VERSION}/fonts/type1/feta20.pfa
-share/lilypond/${VERSION}/fonts/type1/feta23.pfa
-share/lilypond/${VERSION}/fonts/type1/feta26.pfa
-share/lilypond/${VERSION}/fonts/type1/parmesan11.pfa
-share/lilypond/${VERSION}/fonts/type1/parmesan13.pfa
-share/lilypond/${VERSION}/fonts/type1/parmesan14.pfa
-share/lilypond/${VERSION}/fonts/type1/parmesan16.pfa
-share/lilypond/${VERSION}/fonts/type1/parmesan18.pfa
-share/lilypond/${VERSION}/fonts/type1/parmesan20.pfa
-share/lilypond/${VERSION}/fonts/type1/parmesan23.pfa
-share/lilypond/${VERSION}/fonts/type1/parmesan26.pfa
+share/lilypond/${VERSION}/fonts/type1/feta-alphabet11.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-alphabet13.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-alphabet14.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-alphabet16.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-alphabet18.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-alphabet20.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-alphabet23.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-alphabet26.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-braces-a.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-braces-b.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-braces-c.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-braces-d.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-braces-e.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-braces-f.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-braces-g.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-braces-h.pfb
+share/lilypond/${VERSION}/fonts/type1/feta-braces-i.pfb
+share/lilypond/${VERSION}/fonts/type1/feta11.pfb
+share/lilypond/${VERSION}/fonts/type1/feta13.pfb
+share/lilypond/${VERSION}/fonts/type1/feta14.pfb
+share/lilypond/${VERSION}/fonts/type1/feta16.pfb
+share/lilypond/${VERSION}/fonts/type1/feta18.pfb
+share/lilypond/${VERSION}/fonts/type1/feta20.pfb
+share/lilypond/${VERSION}/fonts/type1/feta23.pfb
+share/lilypond/${VERSION}/fonts/type1/feta26.pfb
+share/lilypond/${VERSION}/fonts/type1/parmesan11.pfb
+share/lilypond/${VERSION}/fonts/type1/parmesan13.pfb
+share/lilypond/${VERSION}/fonts/type1/parmesan14.pfb
+share/lilypond/${VERSION}/fonts/type1/parmesan16.pfb
+share/lilypond/${VERSION}/fonts/type1/parmesan18.pfb
+share/lilypond/${VERSION}/fonts/type1/parmesan20.pfb
+share/lilypond/${VERSION}/fonts/type1/parmesan23.pfb
+share/lilypond/${VERSION}/fonts/type1/parmesan26.pfb
 share/lilypond/${VERSION}/ly/
 share/lilypond/${VERSION}/ly/Welcome-to-LilyPond-MacOS.ly
 share/lilypond/${VERSION}/ly/Welcome_to_LilyPond.ly
-share/lilypond/${VERSION}/ly/accordion-defs-init.ly
+share/lilypond/${VERSION}/ly/arabic.ly
 share/lilypond/${VERSION}/ly/bagpipe.ly
 share/lilypond/${VERSION}/ly/catalan.ly
 share/lilypond/${VERSION}/ly/chord-modifiers-init.ly
@@ -212,21 +186,28 @@ share/lilypond/${VERSION}/ly/dynamic-scripts-init.ly
 share/lilypond/${VERSION}/ly/english.ly
 share/lilypond/${VERSION}/ly/engraver-init.ly
 share/lilypond/${VERSION}/ly/espanol.ly
+share/lilypond/${VERSION}/ly/festival.ly
 share/lilypond/${VERSION}/ly/generate-documentation.ly
 share/lilypond/${VERSION}/ly/generate-interface-doc-init.ly
 share/lilypond/${VERSION}/ly/grace-init.ly
-share/lilypond/${VERSION}/ly/gregorian-init.ly
+share/lilypond/${VERSION}/ly/graphviz-init.ly
+share/lilypond/${VERSION}/ly/gregorian.ly
 share/lilypond/${VERSION}/ly/init.ly
 share/lilypond/${VERSION}/ly/italiano.ly
 share/lilypond/${VERSION}/ly/lilypond-book-preamble.ly
+share/lilypond/${VERSION}/ly/makam.ly
+share/lilypond/${VERSION}/ly/markup-init.ly
 share/lilypond/${VERSION}/ly/midi-init.ly
 share/lilypond/${VERSION}/ly/music-functions-init.ly
 share/lilypond/${VERSION}/ly/nederlands.ly
 share/lilypond/${VERSION}/ly/norsk.ly
-share/lilypond/${VERSION}/ly/paper-defaults.ly
+share/lilypond/${VERSION}/ly/paper-defaults-init.ly
 share/lilypond/${VERSION}/ly/params-init.ly
 share/lilypond/${VERSION}/ly/performer-init.ly
 share/lilypond/${VERSION}/ly/portugues.ly
+share/lilypond/${VERSION}/ly/predefined-fretboards-init.ly
+share/lilypond/${VERSION}/ly/predefined-guitar-fretboards.ly
+share/lilypond/${VERSION}/ly/predefined-guitar-ninth-fretboards.ly
 share/lilypond/${VERSION}/ly/property-init.ly
 share/lilypond/${VERSION}/ly/scale-definitions-init.ly
 share/lilypond/${VERSION}/ly/script-init.ly
@@ -234,6 +215,7 @@ share/lilypond/${VERSION}/ly/spanners-init.ly
 share/lilypond/${VERSION}/ly/suomi.ly
 share/lilypond/${VERSION}/ly/svenska.ly
 share/lilypond/${VERSION}/ly/titling-init.ly
+share/lilypond/${VERSION}/ly/toc-init.ly
 share/lilypond/${VERSION}/ly/vlaams.ly
 share/lilypond/${VERSION}/ps/
 share/lilypond/${VERSION}/ps/lilyponddefs.ps
@@ -243,6 +225,8 @@ share/lilypond/${VERSION}/python/convertrules.py
 share/lilypond/${VERSION}/python/convertrules.pyc
 share/lilypond/${VERSION}/python/fontextract.py
 share/lilypond/${VERSION}/python/fontextract.pyc
+share/lilypond/${VERSION}/python/langdefs.py
+share/lilypond/${VERSION}/python/langdefs.pyc
 share/lilypond/${VERSION}/python/lilylib.py
 share/lilypond/${VERSION}/python/lilylib.pyc
 share/lilypond/${VERSION}/python/musicexp.py
@@ -263,6 +247,7 @@ share/lilypond/${VERSION}/scm/chord-generic-names.scm
 share/lilypond/${VERSION}/scm/chord-ignatzek-names.scm
 share/lilypond/${VERSION}/scm/chord-name.scm
 share/lilypond/${VERSION}/scm/clip-region.scm
+share/lilypond/${VERSION}/scm/coverage.scm
 share/lilypond/${VERSION}/scm/define-context-properties.scm
 share/lilypond/${VERSION}/scm/define-event-classes.scm
 share/lilypond/${VERSION}/scm/define-grob-interfaces.scm
@@ -276,6 +261,7 @@ share/lilypond/${VERSION}/scm/define-stencil-commands.scm
 share/lilypond/${VERSION}/scm/display-lily.scm
 share/lilypond/${VERSION}/scm/document-backend.scm
 share/lilypond/${VERSION}/scm/document-functions.scm
+share/lilypond/${VERSION}/scm/document-identifiers.scm
 share/lilypond/${VERSION}/scm/document-markup.scm
 share/lilypond/${VERSION}/scm/document-music.scm
 share/lilypond/${VERSION}/scm/document-translation.scm
@@ -284,17 +270,17 @@ share/lilypond/${VERSION}/scm/documentation-lib.scm
 share/lilypond/${VERSION}/scm/editor.scm
 share/lilypond/${VERSION}/scm/encoding.scm
 share/lilypond/${VERSION}/scm/file-cache.scm
+share/lilypond/${VERSION}/scm/flag-styles.scm
 share/lilypond/${VERSION}/scm/font.scm
 share/lilypond/${VERSION}/scm/framework-eps.scm
-share/lilypond/${VERSION}/scm/framework-gnome.scm
 share/lilypond/${VERSION}/scm/framework-null.scm
 share/lilypond/${VERSION}/scm/framework-ps.scm
 share/lilypond/${VERSION}/scm/framework-scm.scm
 share/lilypond/${VERSION}/scm/framework-socket.scm
 share/lilypond/${VERSION}/scm/framework-svg.scm
-share/lilypond/${VERSION}/scm/framework-tex.scm
-share/lilypond/${VERSION}/scm/framework-texstr.scm
 share/lilypond/${VERSION}/scm/fret-diagrams.scm
+share/lilypond/${VERSION}/scm/graphviz.scm
+share/lilypond/${VERSION}/scm/harp-pedals.scm
 share/lilypond/${VERSION}/scm/kpathsea.scm
 share/lilypond/${VERSION}/scm/layout-beam.scm
 share/lilypond/${VERSION}/scm/layout-page-dump.scm
@@ -304,24 +290,25 @@ share/lilypond/${VERSION}/scm/lily-library.scm
 share/lilypond/${VERSION}/scm/lily.scm
 share/lilypond/${VERSION}/scm/ly-syntax-constructors.scm
 share/lilypond/${VERSION}/scm/markup.scm
+share/lilypond/${VERSION}/scm/memory-trace.scm
 share/lilypond/${VERSION}/scm/midi.scm
 share/lilypond/${VERSION}/scm/music-functions.scm
-share/lilypond/${VERSION}/scm/output-gnome.scm
 share/lilypond/${VERSION}/scm/output-lib.scm
 share/lilypond/${VERSION}/scm/output-ps.scm
 share/lilypond/${VERSION}/scm/output-socket.scm
 share/lilypond/${VERSION}/scm/output-svg.scm
-share/lilypond/${VERSION}/scm/output-tex.scm
-share/lilypond/${VERSION}/scm/output-texstr.scm
 share/lilypond/${VERSION}/scm/page.scm
 share/lilypond/${VERSION}/scm/paper-system.scm
 share/lilypond/${VERSION}/scm/paper.scm
 share/lilypond/${VERSION}/scm/parser-clef.scm
 share/lilypond/${VERSION}/scm/parser-ly-from-scheme.scm
 share/lilypond/${VERSION}/scm/part-combiner.scm
+share/lilypond/${VERSION}/scm/predefined-fretboards.scm
 share/lilypond/${VERSION}/scm/ps-to-png.scm
 share/lilypond/${VERSION}/scm/safe-lily.scm
 share/lilypond/${VERSION}/scm/script.scm
+share/lilypond/${VERSION}/scm/song-util.scm
+share/lilypond/${VERSION}/scm/song.scm
 share/lilypond/${VERSION}/scm/standalone.scm
 share/lilypond/${VERSION}/scm/stencil.scm
 share/lilypond/${VERSION}/scm/titling.scm
@@ -329,9 +316,7 @@ share/lilypond/${VERSION}/scm/to-xml.scm
 share/lilypond/${VERSION}/scm/translation-functions.scm
 share/lilypond/${VERSION}/scm/x11-color.scm
 share/lilypond/${VERSION}/tex/
-share/lilypond/${VERSION}/tex/lily-ps-defs.tex
 share/lilypond/${VERSION}/tex/lilypond-tex-metrics.tex
-share/lilypond/${VERSION}/tex/lilyponddefs.tex
 share/lilypond/${VERSION}/vim/
 share/lilypond/${VERSION}/vim/compiler/
 share/lilypond/${VERSION}/vim/compiler/lilypond.vim
@@ -355,14 +340,19 @@ share/locale/it/LC_MESSAGES/lilypond.mo
 share/locale/ja/LC_MESSAGES/lilypond.mo
 share/locale/nl/LC_MESSAGES/lilypond.mo
 share/locale/ru/LC_MESSAGES/lilypond.mo
-share/locale/rw/LC_MESSAGES/lilypond.mo
 share/locale/sv/LC_MESSAGES/lilypond.mo
 share/locale/tr/LC_MESSAGES/lilypond.mo
+share/locale/uk/LC_MESSAGES/lilypond.mo
+share/locale/vi/LC_MESSAGES/lilypond.mo
 share/locale/zh_TW/LC_MESSAGES/lilypond.mo
 share/omf/
 share/omf/lilypond/
 share/omf/lilypond/${VERSION}/
 share/omf/lilypond/${VERSION}/lilypond-internals.html.omf
+share/omf/lilypond/${VERSION}/lilypond-learning.html.omf
+share/omf/lilypond/${VERSION}/lilypond-learning.pdf.omf
+share/omf/lilypond/${VERSION}/lilypond-program.html.omf
+share/omf/lilypond/${VERSION}/lilypond-program.pdf.omf
 share/omf/lilypond/${VERSION}/lilypond.html.omf
 share/omf/lilypond/${VERSION}/lilypond.pdf.omf
 share/omf/lilypond/${VERSION}/music-glossary.html.omf

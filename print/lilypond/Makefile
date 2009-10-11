@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2009/10/11 18:56:21 kili Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -8,10 +8,10 @@ SHARED_ONLY=		Yes
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
 
-VERSION=		2.10.33
+VERSION=		2.12.2
 DISTNAME=		lilypond-${VERSION}
 DISTNAME-docs=		${DISTNAME}-1.documentation
-PKGNAME-main=		lilypond-${VERSION}p5
+PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
 
@@ -24,7 +24,7 @@ HOMEPAGE=		http://lilypond.org/web/
 
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
@@ -41,7 +41,9 @@ AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	gnu
 CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			FLEXLEXER_PATH=/usr/include/g++
+			FLEXLEXER_PATH=/usr/include/g++ \
+			BASH=/bin/sh \
+			GREP=/usr/bin/grep
 CONFIGURE_ARGS+=	--disable-{debugging,optimising,pipe} \
 			--with-ncsb-dir=${LOCALBASE}/lib/X11/fonts/ghostscript
 USE_GMAKE=		Yes
@@ -56,11 +58,11 @@ PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
-WANTLIB-main=		X11 c expat fontconfig freetype m pthread-stubs \
-			stdc++ xcb z
+WANTLIB-main=		X11 c expat fontconfig freetype gmp ltdl m \
+			pthread stdc++ z
 MODULES=		devel/gettext lang/python
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			guile.>=15,guile-ltdl.>=1::lang/guile \
+			guile.>=20::lang/guile \
 			glib-2.0.>=1000,gmodule-2.0.>=1000,gobject-2.0.>=1000::devel/glib2 \
 			pango-1.0.>=1200,pangoft2-1.0.>=1200::devel/pango
 RUN_DEPENDS=		::print/ghostscript/gnu
@@ -68,6 +70,7 @@ BUILD_DEPENDS= 		::print/mftrace \
 			::devel/bison \
 			::archivers/bzip2 \
 			:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
+			::textproc/texi2html \
 			${RUN_DEPENDS}
 
 SUBST_VARS+=		VERSION

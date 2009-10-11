@@ -1,18 +1,15 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.2 2007/06/06 20:36:23 kili Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.3 2009/10/11 18:56:21 kili Exp $
 
 # No rsync, just use pax(1).
-# This isn't of any use yet, but hopefully it will be in the future when
-# we're able to build the documentation by ourselves.
 
---- GNUmakefile.in.orig	Sun Dec 24 17:45:50 2006
-+++ GNUmakefile.in	Wed Dec 27 17:30:35 2006
-@@ -57,7 +57,8 @@ doc: 
- 
+--- GNUmakefile.in.orig	Tue Jan 20 13:31:56 2009
++++ GNUmakefile.in	Wed Feb  4 20:21:26 2009
+@@ -73,6 +73,8 @@ install-help2man:
  install-WWW:
  	-$(INSTALL) -m 755 -d $(DESTDIR)$(webdir)
--	rsync -rl $(outdir)/offline-root/ $(DESTDIR)$(webdir)
-+	pax -rw -s @^$(outdir)/offline-root@@ \
+ 	rsync -rl --exclude='*.signature' $(outdir)/offline-root/ $(DESTDIR)$(webdir)
++	pax -rw -s "@^$(outdir)/offline-root@@" -s "@.*\.signature@@" \
 +		$(outdir)/offline-root $(DESTDIR)$(webdir)
- 	$(MAKE) -C Documentation/user local-install-WWW
- 	$(MAKE) -C Documentation/user install-info
  
+ install-info-WWW:
+ 	$(MAKE) -C Documentation/user install-info

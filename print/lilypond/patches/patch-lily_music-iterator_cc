@@ -1,0 +1,12 @@
+$OpenBSD: patch-lily_music-iterator_cc,v 1.1 2009/10/11 18:56:21 kili Exp $
+--- lily/music-iterator.cc.orig	Wed Feb 11 18:05:27 2009
++++ lily/music-iterator.cc	Wed Feb 11 18:06:56 2009
+@@ -211,7 +211,7 @@ Music_iterator::print_smob (SCM sm, SCM port, scm_prin
+   char s[1000];
+ 
+   Music_iterator *iter = unsmob_iterator (sm);
+-  sprintf (s, "#<%s>", iter->class_name ());
++  snprintf (s, sizeof(s), "#<%s>", iter->class_name ());
+   scm_puts (s, port);
+   return 1;
+ }

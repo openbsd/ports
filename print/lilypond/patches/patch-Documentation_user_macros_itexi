@@ -1,0 +1,79 @@
+$OpenBSD: patch-Documentation_user_macros_itexi,v 1.1 2009/10/11 18:56:21 kili Exp $
+
+We don't have bleeding-edge makeinfo.
+
+--- Documentation/user/macros.itexi.orig	Mon Jan 19 01:04:56 2009
++++ Documentation/user/macros.itexi	Wed Feb 11 19:21:13 2009
+@@ -27,17 +27,6 @@
+ @end macro
+ 
+ 
+-@c To get decent quotes in `foo' and ``foo''.
+-
+-@macro q{TEXT}
+-@quoteleft{}\TEXT\@quoteright{}
+-@end macro
+-
+-@macro qq{TEXT}
+-@quotedblleft{}\TEXT\@quotedblright{}
+-@end macro
+-
+-
+ @ifhtml
+ 
+ @macro warning{TEXT}
+@@ -46,6 +35,20 @@
+ @end cartouche
+ @end macro
+ 
++@c to get decent quotes in `foo'
++@macro q{TEXT}
++@html
++&lsquo;\TEXT\&rsquo;
++@end html
++@end macro
++
++@c to get decent quotes in ``foo''
++@macro qq{TEXT}
++@html
++&ldquo;\TEXT\&rdquo;
++@end html
++@end macro
++
+ @end ifhtml
+ 
+ @ifnothtml
+@@ -77,6 +80,16 @@
+ \TEXT\
+ @end macro
+ 
++@c to get decent quotes in `foo'
++@macro q{TEXT}
++`\TEXT\'
++@end macro
++
++@c to get decent quotes in ``foo''
++@macro qq{TEXT}
++``\TEXT\''
++@end macro
++
+ @end ifinfo
+ 
+ 
+@@ -397,6 +410,16 @@
+ @macro rinternalsnamed{TEXT,DISPLAY}
+ @lilyvindex{\TEXT\}
+ @ref{\TEXT\,,\DISPLAY\,lilypond-internals,Internals Reference}
++@end macro
++
++@c to get decent quotes in `foo'
++@macro q{TEXT}
++`\TEXT\'
++@end macro
++
++@c to get decent quotes in ``foo''
++@macro qq{TEXT}
++``\TEXT\''
+ @end macro
+ 
+ @end iftex

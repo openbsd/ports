@@ -1,0 +1,17 @@
+$OpenBSD: patch-lily_system-start-text_cc,v 1.1 2009/10/11 18:56:21 kili Exp $
+
+Make g++ 3.3.5 happy.
+
+--- lily/system-start-text.cc.orig	Mon Jan 19 01:04:57 2009
++++ lily/system-start-text.cc	Wed Feb 11 17:57:06 2009
+@@ -58,8 +58,8 @@ System_start_text::get_stencil (Grob *me_grob)
+       Interval p_extent_x = p->extent (X_AXIS);
+       Interval padding (0.0, max (0.0, indent - p_extent_x.length ()));
+       Real right_padding = padding.length () - padding.linear_combination (align_x);
+-      Box box (Interval (p_extent_x[LEFT], p_extent_x[RIGHT] + right_padding),
+-	       p->extent (Y_AXIS));
++      Interval ix (p_extent_x[LEFT], p_extent_x[RIGHT] + right_padding);
++      Box box (ix, p->extent (Y_AXIS));
+       Stencil *aligned_p = new Stencil (box, p->expr ());
+       return *aligned_p;
+     }
