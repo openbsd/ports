@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2009/10/11 13:36:23 edd Exp $
+# $OpenBSD: Makefile,v 1.157 2009/10/11 15:25:04 edd Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
@@ -10,7 +10,7 @@ COMMENT=		movie player supporting MPEG, DivX, AVI, ASF, MOV & more
 V=			20090708
 N=			mplayer
 DISTNAME=		mplayer-export-snapshot-${V}
-PKGNAME=		${N}-${V}
+PKGNAME=		${N}-${V}p0
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -29,7 +29,7 @@ WANTLIB=		c crypto m ncurses oil-0.3 pthread stdc++ util sndio z
 #MASTER_SITES = 	http://www.mplayerhq.hu/MPlayer/releases/
 MASTER_SITES =		http://students.dec.bmth.ac.uk/ebarrett/distfiles/
 
-MAINTAINER=     Bjorn Sandell <biorn@chalmers.se>
+MAINTAINER=     Edd Barrett <edd@openbsd.org>
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
