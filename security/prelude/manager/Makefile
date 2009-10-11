@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/10/11 13:11:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/10/11 13:15:56 ajacoutot Exp $
 
 COMMENT=	Prelude manager
 
@@ -14,6 +14,7 @@ CONFIGURE_STYLE=gnu
 LIB_DEPENDS=	xml2.>=9::textproc/libxml \
 		preludedb.>=4.9::security/prelude/libpreludedb
 
+# XXX check on update whether this is still necessary
 post-extract:
 	${INSTALL} -m 555 ${FILESDIR}/libgnutls-config ${WRKDIR}/bin
 
