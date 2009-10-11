@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.80 2009/10/10 09:50:11 steven Exp $
+# $OpenBSD: libtool,v 1.81 2009/10/11 14:21:56 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -496,8 +496,8 @@ sub new
 sub write_wrapper
 {
 	my $self = shift;
-	my $program = shift;
 
+	my $program = $self->{outfilepath};
 	my $ltdir = $main::ltdir;
 	my $version = $main::version;
 	open(my $pw, '>', $program) or die "cannot write $program: $!\n";
@@ -524,6 +524,8 @@ else
 fi
 EOF
 ;
+	close($pw);
+	chmod 0755, $program;
 }
 
 sub is_wrapper
@@ -538,26 +540,26 @@ sub is_wrapper
 sub link
 {
 	my $self = shift;
-	my $prog = shift;
-	my $la = shift;
-	my $fname = shift;
-	my $odir = shift;
-	my $shared = shift;
-	my $objs = shift;
+	my $ltprog = shift;
 	my $libs = shift;
 	my $libstofind = shift;
 	my $opts = shift;
-	my $RPdirs = shift;
 	my $seen_la_shared = shift;
 
 	my $ltdir = $main::ltdir;
 	Trace::debug {"linking program (",
-		($shared) ? "dynam" : "stat", "ically)\n"};
+		($self->{shared}) ? "dynam" : "stat", "ically)\n"};
+
+	my $fpath  = $self->{outfilepath};
+	my $RPdirs = $self->{RPdirs};
+
+	my $odir  = dirname  $fpath;
+	my $fname = basename $fpath;
 
 	my @libflags;
 	my @cmd;
 	my $dst;
-	if ($shared && $seen_la_shared) {
+	if ($self->{shared} && $seen_la_shared) {
 		$dst = ($odir eq '.') ? "$ltdir/$fname" : "$odir/$ltdir/$fname";
 		mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
 	} else {
@@ -578,15 +580,15 @@ sub link
 	if ($opts->{'export-symbols'}) {
 		$symbolsfile = $opts->{'export-symbols'};
 	} elsif ($opts->{'export-symbols-regex'}) {
-		$symbolsfile = "$odir/$ltdir/$la";
+		$symbolsfile = "$odir/$ltdir/$fname";
 		$symbolsfile =~ s/\.la$/.exp/;
-		main::get_symbollist($symbolsfile, $opts->{'export-symbols-regex'}, $objs);
+		main::get_symbollist($symbolsfile, $opts->{'export-symbols-regex'}, $self->{objlist});
 	}
 	$RPdirs = main::reverse_zap_duplicates_ref($RPdirs);
 	map { $_ = "-Wl,-rpath,$_" } @$RPdirs;
 	foreach my $l (keys %$libstofind) {
 		# here we find shared or static libraries
-		my $libpath = main::find_lib($l, $shared);
+		my $libpath = main::find_lib($l, $self->{shared});
 		$libs->{$l} = $libpath if ($libpath);
 	}
 
@@ -616,11 +618,11 @@ sub link
 		$libcounter++;
 	}
 
-	@cmd = ($prog);
+	@cmd = ($ltprog);
 	push @cmd, '-o', $dst;
-	push @cmd, '-static' if (!$shared);
+	push @cmd, '-static' if (!$self->{shared});
 	push @cmd, @$argv;
-	push @cmd, @$objs if (@$objs);
+	push @cmd, @{$self->{objlist}} if (@{$self->{objlist}});
 	push @cmd, "-L$ltdir", @libflags if (@libflags);
 	push @cmd, @$RPdirs if (@$RPdirs);
 	push @cmd, "-Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
@@ -921,7 +923,6 @@ if ($mode eq 'compile') {
 	}
 	Trace::debug {"outfile = $outfile\n"};
 	my $odir = dirname $outfile;
-	my $absodir = abs_path($odir);
 	my $ofile = basename $outfile;
 
 	# what are we linking?
@@ -958,30 +959,34 @@ if ($mode eq 'compile') {
 
 	if ($linkmode == PROGRAM) {
 		my $program = Program->new;
+		$program->{outfilepath} = $outfile;
 		# XXX give higher priority to dirs of not installed libs
 		# XXX no static linking yet here
 		if ($opts{'export-dynamic'}) {
 			push(@ARGV, "-Wl,-E");
 		}
-		$shared = 1;
-	        $shared = 0 if ($opts{'static'});
-		my $objlist = \@objs;
+		if ($opts{'static'}) {
+			$program->{shared} = 0;
+		} else {
+			$program->{shared} = 1;
+		}
 		if (@objs == 0) {
 		        if (@sobjs > 0) {
 				Trace::debug {"no non-pic libtool objects found, trying pic objects...\n"};
-				$objlist = \@sobjs;
+				$program->{objlist} = \@sobjs;
 			} elsif (@sobjs == 0) {
 				Trace::debug {"no libtool objects of any kind found\n"};
 				Trace::debug {"hoping for real objects in ARGV...\n"};
+				$program->{objlist} = \@objs;
 			}
 		}
 		my $RPdirs = [];
 		@$RPdirs = (@Ropts, @RPopts, @Rresolved);
+		$program->{RPdirs} = $RPdirs;
 
-		$program->link($ltprog, $ofile, $ofile, $odir, $shared, $objlist, $libs, $libstofind, \%opts, $RPdirs, $seen_la_shared);
+		$program->link($ltprog, $libs, $libstofind, \%opts, $seen_la_shared);
 		if ($shared && $seen_la_shared) {
-			$program->write_wrapper($outfile);
-			chmod 0755, $outfile;
+			$program->write_wrapper();
 		}
 	} elsif ($linkmode == LIBRARY) {
 		$shared = 1 if ($opts{'version-info'} ||
