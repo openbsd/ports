@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.61 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2009/10/11 10:40:22 steven Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
 
-VERSION=		1.1.24
+VERSION=		1.1.26
 DISTNAME=		libxslt-${VERSION}
-PKGNAME-main=		libxslt-${VERSION}p2
-PKGNAME-python= 	py-libxslt-${VERSION}p0
-SHARED_LIBS=		exslt	9.7 \
-			xslt	3.7
+PKGNAME-main=		libxslt-${VERSION}
+PKGNAME-python= 	py-libxslt-${VERSION}
+SHARED_LIBS=		exslt	9.8 \
+			xslt	3.8
 
 CATEGORIES=		textproc
 
@@ -41,7 +41,8 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-libxml-include-prefix="${LOCALBASE}/include/"
+			--with-libxml-include-prefix="${LOCALBASE}/include/" \
+			--with-html-subdir=libxslt/html
 
 .if !${FLAVOR:L:Mno_python}
 MULTI_PACKAGES+=	-python

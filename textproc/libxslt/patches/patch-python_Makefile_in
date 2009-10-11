@@ -1,10 +1,10 @@
-$OpenBSD: patch-python_Makefile_in,v 1.9 2008/12/26 10:54:21 jasper Exp $
+$OpenBSD: patch-python_Makefile_in,v 1.10 2009/10/11 10:40:22 steven Exp $
 
 Don't bother installing an empty file.
 
---- python/Makefile.in.orig	Tue Dec 23 17:27:28 2008
-+++ python/Makefile.in	Tue Dec 23 17:27:44 2008
-@@ -685,9 +685,6 @@ uninstall-am: uninstall-pythonLTLIBRARIES
+--- python/Makefile.in.orig	Thu Sep 24 16:43:14 2009
++++ python/Makefile.in	Sat Oct 10 18:11:17 2009
+@@ -780,9 +780,6 @@ uninstall-am: uninstall-pythonLTLIBRARIES
  @WITH_PYTHON_TRUE@install-data-local:
  @WITH_PYTHON_TRUE@	$(mkinstalldirs) $(DESTDIR)$(pythondir)
  @WITH_PYTHON_TRUE@	@INSTALL@ -m 0644 libxslt.py $(DESTDIR)$(pythondir)
