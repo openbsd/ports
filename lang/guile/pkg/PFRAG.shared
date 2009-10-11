@@ -1,6 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/09 07:04:59 alek Exp $
-@lib lib/libguile-ltdl.so.${LIBguile-ltdl_VERSION}
-@lib lib/libguile-srfi-srfi-13-14-v-1.so.${LIBguile-srfi-srfi-13-14-v-1_VERSION}
-@lib lib/libguile-srfi-srfi-4-v-1.so.${LIBguile-srfi-srfi-4-v-1_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.6 2009/10/11 18:49:12 kili Exp $
+@lib lib/libguile-srfi-srfi-1-v-3.so.${LIBguile-srfi-srfi-1-v-3_VERSION}
+@lib lib/libguile-srfi-srfi-13-14-v-3.so.${LIBguile-srfi-srfi-13-14-v-3_VERSION}
+@lib lib/libguile-srfi-srfi-4-v-3.so.${LIBguile-srfi-srfi-4-v-3_VERSION}
+@lib lib/libguile-srfi-srfi-60-v-2.so.${LIBguile-srfi-srfi-60-v-2_VERSION}
 @lib lib/libguile.so.${LIBguile_VERSION}
-@lib lib/libguilereadline-v-12.so.${LIBguilereadline-v-12_VERSION}
+@lib lib/libguilereadline-v-17.so.${LIBguilereadline-v-17_VERSION}
