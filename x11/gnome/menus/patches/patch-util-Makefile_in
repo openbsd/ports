@@ -1,11 +1,11 @@
-$OpenBSD: patch-util-Makefile_in,v 1.5 2008/11/21 18:14:12 jasper Exp $
---- util/Makefile.in.orig	Wed Oct 22 11:40:21 2008
-+++ util/Makefile.in	Wed Oct 29 01:02:00 2008
-@@ -261,6 +261,7 @@ gnome_menu_spec_test_SOURCES = \
+$OpenBSD: patch-util-Makefile_in,v 1.6 2009/10/11 10:05:34 jasper Exp $
+--- util/Makefile.in.orig	Thu Oct  1 13:24:51 2009
++++ util/Makefile.in	Sun Oct 11 01:47:51 2009
+@@ -314,6 +314,7 @@ gnome_menu_spec_test_SOURCES = \
  gnome_menu_spec_test_LDADD = \
  	../libmenu/libgnome-menu.la	\
  	$(GLIB_LIBS)			\
 +	-pthread \
  	$(NULL)
  
- all: all-am
+ @HAVE_PYTHON_FALSE@pyexampledir = 
