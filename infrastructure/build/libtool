@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.81 2009/10/11 14:21:56 steven Exp $
+# $OpenBSD: libtool,v 1.82 2009/10/11 18:40:03 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -985,7 +985,7 @@ if ($mode eq 'compile') {
 		$program->{RPdirs} = $RPdirs;
 
 		$program->link($ltprog, $libs, $libstofind, \%opts, $seen_la_shared);
-		if ($shared && $seen_la_shared) {
+		if ($program->{shared} && $seen_la_shared) {
 			$program->write_wrapper();
 		}
 	} elsif ($linkmode == LIBRARY) {
