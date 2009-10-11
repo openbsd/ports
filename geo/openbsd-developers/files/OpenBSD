@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.50 2009/06/05 17:37:16 nicm Exp $
+# $OpenBSD: OpenBSD,v 1.51 2009/10/11 13:43:26 phessler Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -16,7 +16,6 @@
 36.134		-86.70		"david"		# David Krause
 37.3706		-122.0138	"ckuethe"	# Chris Kuethe
 37.515049	-122.339528	"marc"		# Marco S. Hyman
-37.765205	-122.471109	"phessler"	# Peter Hessler
 38.9693		-77.3863	"jason"		# Jason L. Wright
 39.179910	-77.058420	"merdely"	# Michael Erdely
 39.5565		-77.0300	"jdixon"	# Jason Dixon
@@ -88,6 +87,7 @@
 52.28083	10.57271	"kili"		# Matthias Kilian
 52.35		4.62		"otto"		# Otto Moerbeek
 52.3667		9.71667		"reyk"		# Reyk Floeter
+52.3717		9.73416		"phessler"	# Peter Hessler
 52.5		21		"alek"		# Aleksander Piotrowski
 53.08566	8.13058		"fkr"		# Felix Kronlage
 53.13		9		"jufi"		# Jan-Uwe Finck
