@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.1 2008/11/21 17:35:04 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2009/10/11 18:13:37 jasper Exp $
 
 Fix some stupid egrep(1) misusage causing this function to always
 return 1.
 
---- configure.orig	Thu Nov 13 23:43:03 2008
-+++ configure	Thu Nov 13 23:43:08 2008
-@@ -24189,7 +24189,7 @@ disabled_plugins=
+--- configure.orig	Sun Oct 11 19:58:33 2009
++++ configure	Sun Oct 11 19:58:57 2009
+@@ -15690,7 +15690,7 @@ disabled_plugins=
  # Plugin specific checks
  # ================================================================
  check_plugin_defined() {

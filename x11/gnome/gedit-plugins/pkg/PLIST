@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/07 09:44:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/10/11 18:13:37 jasper Exp $
+lib/gedit-2/plugins/bookmarks.gedit-plugin
 lib/gedit-2/plugins/bracketcompletion.gedit-plugin
 lib/gedit-2/plugins/bracketcompletion.py
 lib/gedit-2/plugins/bracketcompletion.pyc
@@ -13,10 +14,6 @@ lib/gedit-2/plugins/colorpicker.py
 lib/gedit-2/plugins/colorpicker.pyc
 lib/gedit-2/plugins/colorpicker.pyo
 lib/gedit-2/plugins/drawspaces.gedit-plugin
-lib/gedit-2/plugins/drawspaces.glade
-lib/gedit-2/plugins/drawspaces.py
-lib/gedit-2/plugins/drawspaces.pyc
-lib/gedit-2/plugins/drawspaces.pyo
 lib/gedit-2/plugins/gpdefs.py
 lib/gedit-2/plugins/gpdefs.pyc
 lib/gedit-2/plugins/gpdefs.pyo
@@ -24,9 +21,15 @@ lib/gedit-2/plugins/joinlines.gedit-plugin
 lib/gedit-2/plugins/joinlines.py
 lib/gedit-2/plugins/joinlines.pyc
 lib/gedit-2/plugins/joinlines.pyo
+lib/gedit-2/plugins/libbookmarks.a
+lib/gedit-2/plugins/libbookmarks.la
+lib/gedit-2/plugins/libbookmarks.so
 lib/gedit-2/plugins/libcharmap.a
 lib/gedit-2/plugins/libcharmap.la
 lib/gedit-2/plugins/libcharmap.so
+lib/gedit-2/plugins/libdrawspaces.a
+lib/gedit-2/plugins/libdrawspaces.la
+lib/gedit-2/plugins/libdrawspaces.so
 lib/gedit-2/plugins/libshowtabbar.a
 lib/gedit-2/plugins/libshowtabbar.la
 lib/gedit-2/plugins/libshowtabbar.so
@@ -38,7 +41,6 @@ lib/gedit-2/plugins/sessionsaver/__init__.pyo
 lib/gedit-2/plugins/sessionsaver/dialogs.py
 lib/gedit-2/plugins/sessionsaver/dialogs.pyc
 lib/gedit-2/plugins/sessionsaver/dialogs.pyo
-lib/gedit-2/plugins/sessionsaver/sessionsaver.glade
 lib/gedit-2/plugins/sessionsaver/store.py
 lib/gedit-2/plugins/sessionsaver/store.pyc
 lib/gedit-2/plugins/sessionsaver/store.pyo
@@ -51,11 +53,19 @@ lib/gedit-2/plugins/terminal.gedit-plugin
 lib/gedit-2/plugins/terminal.py
 lib/gedit-2/plugins/terminal.pyc
 lib/gedit-2/plugins/terminal.pyo
+share/gedit-2/plugins/bookmarks/
+share/gedit-2/plugins/bookmarks/bookmark.png
+share/gedit-2/plugins/drawspaces/
+share/gedit-2/plugins/drawspaces/drawspaces.ui
+share/gedit-2/plugins/sessionsaver/
+share/gedit-2/plugins/sessionsaver/sessionsaver.ui
 share/locale/ar/LC_MESSAGES/gedit-plugins.mo
+share/locale/as/LC_MESSAGES/gedit-plugins.mo
 share/locale/az/LC_MESSAGES/gedit-plugins.mo
 share/locale/be/LC_MESSAGES/gedit-plugins.mo
 share/locale/be@latin/LC_MESSAGES/gedit-plugins.mo
 share/locale/bg/LC_MESSAGES/gedit-plugins.mo
+share/locale/bn_IN/LC_MESSAGES/gedit-plugins.mo
 share/locale/ca/LC_MESSAGES/gedit-plugins.mo
 share/locale/cs/LC_MESSAGES/gedit-plugins.mo
 share/locale/da/LC_MESSAGES/gedit-plugins.mo
@@ -85,6 +95,7 @@ share/locale/lv/LC_MESSAGES/gedit-plugins.mo
 share/locale/mk/LC_MESSAGES/gedit-plugins.mo
 share/locale/ml/LC_MESSAGES/gedit-plugins.mo
 share/locale/mn/LC_MESSAGES/gedit-plugins.mo
+share/locale/mr/LC_MESSAGES/gedit-plugins.mo
 share/locale/ms/LC_MESSAGES/gedit-plugins.mo
 share/locale/nb/LC_MESSAGES/gedit-plugins.mo
 share/locale/ne/LC_MESSAGES/gedit-plugins.mo
@@ -106,6 +117,7 @@ share/locale/sr/LC_MESSAGES/gedit-plugins.mo
 share/locale/sr@Latn/LC_MESSAGES/gedit-plugins.mo
 share/locale/sv/LC_MESSAGES/gedit-plugins.mo
 share/locale/ta/LC_MESSAGES/gedit-plugins.mo
+share/locale/te/LC_MESSAGES/gedit-plugins.mo
 share/locale/th/LC_MESSAGES/gedit-plugins.mo
 share/locale/tr/LC_MESSAGES/gedit-plugins.mo
 share/locale/uk/LC_MESSAGES/gedit-plugins.mo
