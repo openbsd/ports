@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/11 11:31:13 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/11 13:37:47 landry Exp $
 
 COMMENT =	plugin framework library
 
 VERSION =	0.2.0
 DISTNAME =	ethos-${VERSION}
+PKGNAME =	${DISTNAME}p0
 
-SHARED_LIBS=	cloader 0.0 \
-		pythonloader 0.0 \
-		ethos-1.0 0.0 \
+SHARED_LIBS=	ethos-1.0 0.0 \
 		ethos-ui-1.0 0.0
 
 CATEGORIES =	devel
@@ -22,7 +21,9 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-glibtest
+CONFIGURE_ARGS =	--disable-shave \
+			--disable-glibtest
+
 USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
 

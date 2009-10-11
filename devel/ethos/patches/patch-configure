@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2009/10/11 11:31:13 landry Exp $
---- configure.orig	Sun Oct 11 11:38:49 2009
-+++ configure	Sun Oct 11 11:39:09 2009
+$OpenBSD: patch-configure,v 1.2 2009/10/11 13:37:47 landry Exp $
+--- configure.orig	Wed Jun 17 21:39:05 2009
++++ configure	Sun Oct 11 14:58:01 2009
 @@ -13974,7 +13974,7 @@ fi
  
  

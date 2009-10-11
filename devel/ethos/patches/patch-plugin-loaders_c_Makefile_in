@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugin-loaders_c_Makefile_in,v 1.1 2009/10/11 13:37:47 landry Exp $
+--- plugin-loaders/c/Makefile.in.orig	Wed Jun 17 21:39:09 2009
++++ plugin-loaders/c/Makefile.in	Sun Oct 11 15:21:51 2009
+@@ -70,7 +70,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+-	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
++	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) -module -avoid-version \
+ 	$(LDFLAGS) -o $@
+ SOURCES = $(libcloader_la_SOURCES)
+ DIST_SOURCES = $(libcloader_la_SOURCES)

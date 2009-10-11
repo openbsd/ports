@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/11 11:31:13 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/11 13:37:48 landry Exp $
 %%SHARED%%
 include/ethos-1.0/
 include/ethos-1.0/ethos/
@@ -16,8 +16,10 @@ lib/ethos/
 lib/ethos/plugin-loaders/
 lib/ethos/plugin-loaders/libcloader.a
 lib/ethos/plugin-loaders/libcloader.la
+lib/ethos/plugin-loaders/libcloader.so
 lib/ethos/plugin-loaders/libpythonloader.a
 lib/ethos/plugin-loaders/libpythonloader.la
+lib/ethos/plugin-loaders/libpythonloader.so
 lib/libethos-1.0.a
 lib/libethos-1.0.la
 lib/libethos-ui-1.0.a
