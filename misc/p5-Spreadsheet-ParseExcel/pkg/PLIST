@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/02/03 23:12:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/10/11 09:44:59 steven Exp $
 ${P5SITE}/Spreadsheet/
 ${P5SITE}/Spreadsheet/ParseExcel/
 ${P5SITE}/Spreadsheet/ParseExcel.pm
@@ -50,5 +50,4 @@ share/examples/p5-Spreadsheet-ParseExcel/sample.pl
 share/examples/p5-Spreadsheet-ParseExcel/sampleOEM.pl
 share/examples/p5-Spreadsheet-ParseExcel/sample_j.pl
 share/examples/p5-Spreadsheet-ParseExcel/smpFile.pl
-share/examples/p5-Spreadsheet-ParseExcel/warning.pl
 share/examples/p5-Spreadsheet-ParseExcel/xls2csv.pl
