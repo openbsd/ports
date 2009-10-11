@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_crank_i,v 1.1 2009/10/11 18:58:58 kili Exp $
+--- src/crank.i.orig	Sun Aug 19 18:47:39 2001
++++ src/crank.i	Wed Feb  4 20:03:52 2009
+@@ -161,7 +161,7 @@ double fitness(instance *fitness, char *text);
+ gui_item *build_gui_item(instance *gui, instance *i); 
+ 
+ struct parameter_description {
+-    enum parameter_type type;
++    parameter_type type;
+     char *name;
+     char *data_one;
+     char *data_two;
+@@ -192,7 +192,7 @@ struct componant {
+     char *name;          
+     
+     /* A componant's type determines its use by Crank */
+-    enum componant_type type;
++    componant_type type;
+ 
+     /* String user can read as a summary of componant's behaviour */
+     char *description; 
+@@ -210,7 +210,7 @@ struct componant {
+ 
+ 
+ componant *lookup_componant(componant *componant_list, int n);
+-const char *componant_type_lookup(enum componant_type type);
++const char *componant_type_lookup(componant_type type);
+ void free_componant(componant *componant_record);
+ void free_componant_list(componant *componant_list);
+ 
+@@ -263,7 +263,7 @@ void unlock_callbacks(void);
+ int islocked(void);
+ 
+ char *parameter_enum_value_name(parameter_description *param_descrip, int value_index);
+-const char *parameter_type_lookup(enum parameter_type type);
++const char *parameter_type_lookup(parameter_type type);
+ 
+ char *file_load_text(char *filename);
+ int file_save_text(char *filename, char *text);

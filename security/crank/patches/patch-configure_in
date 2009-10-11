@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2009/10/11 18:58:58 kili Exp $
+--- configure.in.orig	Mon Aug 20 17:54:42 2001
++++ configure.in	Wed Feb  4 20:14:18 2009
+@@ -18,7 +18,7 @@ dnl Check to see if guile should be used
+ guile_shell=no
+ AC_ARG_WITH(guile,
+   [  --without-guile         disable guile shell (and also preferences / patches) [default=no]],  ,  
+-     AC_CHECK_LIB(guile, scm_set_smob_mark)
++     AC_CHECK_LIB(guile, scm_set_smob_mark, , , -pthread -lgmp -lm -lltdl)
+      guile_shell=yes
+    )
+ AM_CONDITIONAL(WITH_GUILE, test x$guile_shell = xyes)
