@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.398 2009/10/02 13:44:54 pea Exp $
+# $OpenBSD: Makefile,v 1.399 2009/10/11 09:26:19 landry Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += Xaw3d
@@ -85,7 +85,6 @@
      SUBDIR += gromit
      SUBDIR += gtk+
      SUBDIR += gtk+2
-     SUBDIR += gtk+extra
      SUBDIR += gtk-chtheme
      SUBDIR += gtk-engines2
      SUBDIR += gtk-vnc
