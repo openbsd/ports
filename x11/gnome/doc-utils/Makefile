@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2009/10/11 10:23:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2009/10/11 15:32:11 ajacoutot Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
 GNOME_PROJECT=	gnome-doc-utils
 GNOME_VERSION=	0.18.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	textproc
 
@@ -32,6 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/xml2po
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/xml2po/
 
 .include <bsd.port.mk>
