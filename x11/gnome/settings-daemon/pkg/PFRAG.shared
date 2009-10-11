@@ -1,15 +1,12 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/11/11 22:22:41 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2009/10/11 22:53:22 ajacoutot Exp $
 lib/gnome-settings-daemon-2.0/liba11y-keyboard.so
 lib/gnome-settings-daemon-2.0/libbackground.so
 lib/gnome-settings-daemon-2.0/libclipboard.so
-lib/gnome-settings-daemon-2.0/libdummy.so
 lib/gnome-settings-daemon-2.0/libfont.so
 lib/gnome-settings-daemon-2.0/libhousekeeping.so
 lib/gnome-settings-daemon-2.0/libkeybindings.so
 lib/gnome-settings-daemon-2.0/libkeyboard.so
-lib/gnome-settings-daemon-2.0/libmedia-keys.so
 lib/gnome-settings-daemon-2.0/libmouse.so
-lib/gnome-settings-daemon-2.0/libscreensaver.so
 lib/gnome-settings-daemon-2.0/libsound.so
 lib/gnome-settings-daemon-2.0/libtyping-break.so
 lib/gnome-settings-daemon-2.0/libxrandr.so

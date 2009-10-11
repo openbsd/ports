@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_sound_gsd-sound-manager_c,v 1.1.1.1 2008/11/11 22:22:41 jasper Exp $
---- plugins/sound/gsd-sound-manager.c.orig	Fri Aug  8 15:38:52 2008
-+++ plugins/sound/gsd-sound-manager.c	Fri Aug  8 15:39:12 2008
-@@ -28,6 +28,7 @@
+$OpenBSD: patch-plugins_sound_gsd-sound-manager_c,v 1.2 2009/10/11 22:53:22 ajacoutot Exp $
+--- plugins/sound/gsd-sound-manager.c.orig	Sun May  3 20:15:30 2009
++++ plugins/sound/gsd-sound-manager.c	Sun Oct 11 23:59:44 2009
+@@ -27,6 +27,7 @@
  #include <unistd.h>
  #include <string.h>
  #include <errno.h>
