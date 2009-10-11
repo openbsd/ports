@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/11/25 15:19:20 xsa Exp $
-lib/python${MODPY_VERSION}/site-packages/milter.so
