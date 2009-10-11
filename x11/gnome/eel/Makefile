@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2009/09/06 10:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2009/10/11 13:54:18 jasper Exp $
 
 COMMENT=		Eazel Extensions Library
 
 GNOME_PROJECT=		eel
-GNOME_VERSION=		2.24.1
-PKGNAME=		${DISTNAME}p5
+GNOME_VERSION=		2.26.0
 
-SHARED_LIBS +=	eel-2                22.0     # .26.1
+SHARED_LIBS +=	eel-2                23.0     # .28.0
 CATEGORIES=		devel
 
 # GPLv2/LGPLv2
@@ -15,23 +14,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
-		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common \
-		avahi-glib bonobo-2 bonobo-activation pthread-stubs xcb \
-		bonoboui-2 cairo crypto dbus-1 dbus-glib-1 expat \
-		fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 \
-		gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 \
-		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png popt ssl util xml2 z
+WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo
+WANTLIB += dbus-1 dbus-glib-1 execinfo expat fontconfig freetype
+WANTLIB += gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-atom xcb-aux
+WANTLIB += xcb-event xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		startup-notification-1::devel/startup-notification \
-			gnome-desktop-2.>=4::x11/gnome/desktop \
-			gnomeui-2::x11/gnome/libgnomeui
+			gnome-desktop-2.>=7::x11/gnome/desktop
 
 USE_X11=		Yes
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
