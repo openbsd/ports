@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2009/10/11 18:50:53 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.18 2009/10/11 19:40:07 jasper Exp $
 @bin bin/eog
 include/eog-2.20/
 include/eog-2.20/eog/
@@ -32,10 +31,13 @@ lib/eog/plugins/
 lib/eog/plugins/fullscreen.eog-plugin
 lib/eog/plugins/libfullscreen.a
 lib/eog/plugins/libfullscreen.la
+lib/eog/plugins/libfullscreen.so
 lib/eog/plugins/libreload.a
 lib/eog/plugins/libreload.la
+lib/eog/plugins/libreload.so
 lib/eog/plugins/libstatusbar-date.a
 lib/eog/plugins/libstatusbar-date.la
+lib/eog/plugins/libstatusbar-date.so
 lib/eog/plugins/reload.eog-plugin
 lib/eog/plugins/statusbar-date.eog-plugin
 lib/pkgconfig/eog.pc
@@ -281,27 +283,15 @@ share/gtk-doc/html/eog/left.png
 share/gtk-doc/html/eog/right.png
 share/gtk-doc/html/eog/style.css
 share/gtk-doc/html/eog/up.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/eog.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/eog.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/eog.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/eog.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/eog.svg
 share/locale/af/LC_MESSAGES/eog.mo
 share/locale/am/LC_MESSAGES/eog.mo
 share/locale/ar/LC_MESSAGES/eog.mo
 share/locale/as/LC_MESSAGES/eog.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/eog.mo
 share/locale/az/LC_MESSAGES/eog.mo
 share/locale/be/LC_MESSAGES/eog.mo
@@ -362,8 +352,6 @@ share/locale/oc/LC_MESSAGES/eog.mo
 share/locale/or/LC_MESSAGES/eog.mo
 share/locale/pa/LC_MESSAGES/eog.mo
 share/locale/pl/LC_MESSAGES/eog.mo
-share/locale/ps/
-share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/eog.mo
 share/locale/pt/LC_MESSAGES/eog.mo
 share/locale/pt_BR/LC_MESSAGES/eog.mo
@@ -380,17 +368,11 @@ share/locale/sv/LC_MESSAGES/eog.mo
 share/locale/ta/LC_MESSAGES/eog.mo
 share/locale/te/LC_MESSAGES/eog.mo
 share/locale/th/LC_MESSAGES/eog.mo
-share/locale/tk/
-share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/eog.mo
 share/locale/tr/LC_MESSAGES/eog.mo
 share/locale/ug/LC_MESSAGES/eog.mo
 share/locale/uk/LC_MESSAGES/eog.mo
-share/locale/uz/
-share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/eog.mo
-share/locale/uz@cyrillic/
-share/locale/uz@cyrillic/LC_MESSAGES/
 share/locale/uz@cyrillic/LC_MESSAGES/eog.mo
 share/locale/vi/LC_MESSAGES/eog.mo
 share/locale/wa/LC_MESSAGES/eog.mo

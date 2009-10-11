@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2008/11/21 17:25:34 jasper Exp $
-lib/eog/plugins/libfullscreen.so
-lib/eog/plugins/libreload.so
-lib/eog/plugins/libstatusbar-date.so

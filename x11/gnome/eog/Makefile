@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2009/10/11 18:50:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2009/10/11 19:40:07 jasper Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		2.28.0
+PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION}p0
 
 CATEGORIES=		graphics
 
@@ -24,6 +25,7 @@ WANTLIB += xcb-event xml2 z
 
 MODULES=		devel/gconf2 \
 			devel/gettext \
+			lang/python \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
@@ -40,7 +42,7 @@ MODGCONF2_SCHEMAS_DIR=	eog
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--disable-python \
+CONFIGURE_ARGS+=	--enable-python \
 			--without-xmp \
 			--with-libexif
 
