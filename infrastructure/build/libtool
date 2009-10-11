@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.82 2009/10/11 18:40:03 steven Exp $
+# $OpenBSD: libtool,v 1.83 2009/10/11 18:58:59 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1450,10 +1450,9 @@ sub find_lib
 		}
 	   } else {
 		# look for a static library
-		@globbedlib = glob "$sd/lib$libtofind.a";
-		if ($globbedlib[0]) {
+		if (-f "$sd/lib$libtofind.a") {
 			Trace::debug {"found static $libtofind in $sd\n"};
-			$libfile = $globbedlib[0];
+			$libfile = "$sd/lib$libtofind.a";
 			last;
 		}
 	   }
