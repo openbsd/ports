@@ -1,10 +1,10 @@
-$OpenBSD: patch-applets_clock_calendar-client_c,v 1.1 2008/11/21 18:15:45 jasper Exp $
+$OpenBSD: patch-applets_clock_calendar-client_c,v 1.2 2009/10/11 21:26:03 ajacoutot Exp $
 
 Pass UTC to evolution to prevent incorrect times from entering the database.
 
---- applets/clock/calendar-client.c.orig	Thu Oct 30 19:48:00 2008
-+++ applets/clock/calendar-client.c	Thu Oct 30 19:49:02 2008
-@@ -2124,7 +2124,7 @@ calendar_client_set_task_completed (CalendarClient *cl
+--- applets/clock/calendar-client.c.orig	Tue Aug 11 20:51:51 2009
++++ applets/clock/calendar-client.c	Sun Oct 11 19:57:31 2009
+@@ -2123,7 +2123,7 @@ calendar_client_set_task_completed (CalendarClient *cl
      {
        struct icaltimetype  completed_time;
  

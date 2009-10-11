@@ -1,9 +1,9 @@
-$OpenBSD: patch-gnome-panel_panel-util_c,v 1.1 2008/11/21 18:15:45 jasper Exp $
---- gnome-panel/panel-util.c.orig	Thu Oct 30 19:44:56 2008
-+++ gnome-panel/panel-util.c	Thu Oct 30 19:45:08 2008
-@@ -18,6 +18,7 @@
- 
- #include <dirent.h>
+$OpenBSD: patch-gnome-panel_panel-util_c,v 1.2 2009/10/11 21:26:03 ajacoutot Exp $
+--- gnome-panel/panel-util.c.orig	Sun Apr 19 19:45:09 2009
++++ gnome-panel/panel-util.c	Sun Oct 11 19:57:31 2009
+@@ -20,6 +20,7 @@
+ #include <errno.h>
+ #include <stdlib.h>
  #include <string.h>
 +#include <limits.h>
  #include <unistd.h>
