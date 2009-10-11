@@ -1,0 +1,30 @@
+$OpenBSD: patch-game_egoboo_sh,v 1.1.1.1 2009/10/11 14:01:39 phessler Exp $
+--- game/egoboo.sh.orig	Sat Apr 25 10:32:14 2009
++++ game/egoboo.sh	Sun Oct 11 15:34:16 2009
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-EGOBOO_PREFIX=${HOME}/.local
++EGOBOO_PREFIX="/usr/local"
+ EGOBOO_SHARED="${EGOBOO_PREFIX}/share/egoboo"
+ 
+ # exit on any error
+@@ -11,15 +11,15 @@ if [ ! -d ~/.egoboo ]; then
+ fi
+ 
+ if [ ! -f ~/.egoboo/setup.txt ]; then
+-    cp -a "${EGOBOO_SHARED}/setup.txt" ~/.egoboo
++    cp "${EGOBOO_SHARED}/setup.txt" ~/.egoboo
+ fi
+ 
+ if [ ! -f ~/.egoboo/controls.txt ]; then
+-    cp -a "${EGOBOO_SHARED}/controls.txt" ~/.egoboo
++    cp "${EGOBOO_SHARED}/controls.txt" ~/.egoboo
+ fi
+ 
+ if [ ! -d ~/.egoboo/players ]; then
+-    cp -a "${EGOBOO_SHARED}/players" ~/.egoboo
++    cp -r "${EGOBOO_SHARED}/players" ~/.egoboo
+ fi
+ 
+ if [ ! -d ~/.egoboo/basicdat ]; then
