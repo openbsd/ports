@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/03/25 09:03:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/10/11 14:15:15 ajacoutot Exp $
 bin/pygtk-codegen-2.0
 bin/pygtk-demo
 include/pygtk-2.0/pygtk/
@@ -192,6 +192,7 @@ share/gtk-doc/html/pygtk/class-gtkaccelmap.html
 share/gtk-doc/html/pygtk/class-gtkaccessible.html
 share/gtk-doc/html/pygtk/class-gtkaction.html
 share/gtk-doc/html/pygtk/class-gtkactiongroup.html
+share/gtk-doc/html/pygtk/class-gtkactivatable.html
 share/gtk-doc/html/pygtk/class-gtkadjustment.html
 share/gtk-doc/html/pygtk/class-gtkalignment.html
 share/gtk-doc/html/pygtk/class-gtkarrow.html
@@ -621,6 +622,7 @@ share/pygtk/2.0/defs/atk.defs
 share/pygtk/2.0/defs/gdk-2.10.defs
 share/pygtk/2.0/defs/gdk-2.12.defs
 share/pygtk/2.0/defs/gdk-2.14.defs
+share/pygtk/2.0/defs/gdk-2.16.defs
 share/pygtk/2.0/defs/gdk-base-types.defs
 share/pygtk/2.0/defs/gdk-base.defs
 share/pygtk/2.0/defs/gdk-types.defs
@@ -631,6 +633,8 @@ share/pygtk/2.0/defs/gtk-2.12-types.defs
 share/pygtk/2.0/defs/gtk-2.12.defs
 share/pygtk/2.0/defs/gtk-2.14-types.defs
 share/pygtk/2.0/defs/gtk-2.14.defs
+share/pygtk/2.0/defs/gtk-2.16-types.defs
+share/pygtk/2.0/defs/gtk-2.16.defs
 share/pygtk/2.0/defs/gtk-base-types.defs
 share/pygtk/2.0/defs/gtk-base.defs
 share/pygtk/2.0/defs/gtk-extrafuncs.defs
