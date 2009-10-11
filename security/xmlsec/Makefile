@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/07/21 12:19:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2009/10/11 10:39:35 ajacoutot Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
@@ -41,8 +41,7 @@ LIB_DEPENDS=		xslt.>=3::textproc/libxslt \
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--with-gnutls="${LOCALBASE}" \
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-nss \
 			--without-nspr
 
