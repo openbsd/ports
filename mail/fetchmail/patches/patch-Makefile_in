@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.11 2009/02/17 12:08:44 jasper Exp $
---- Makefile.in.orig	Sun Nov 16 15:18:48 2008
-+++ Makefile.in	Tue Feb 17 12:07:42 2009
-@@ -1407,7 +1407,7 @@ info: info-recursive
+$OpenBSD: patch-Makefile_in,v 1.12 2009/10/11 20:52:17 sthen Exp $
+--- Makefile.in.orig	Mon Oct  5 21:32:47 2009
++++ Makefile.in	Sun Oct 11 20:17:30 2009
+@@ -1424,7 +1424,7 @@ info: info-recursive
  
  info-am:
  
