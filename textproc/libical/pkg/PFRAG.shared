@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/12/28 17:32:12 okan Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2009/10/11 12:41:18 jasper Exp $
 @lib lib/libical.so.${LIBical_VERSION}
 @lib lib/libicalss.so.${LIBicalss_VERSION}
+@lib lib/libicalvcal.so.${LIBicalvcal_VERSION}

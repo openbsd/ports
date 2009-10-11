@@ -1,25 +1,24 @@
-$OpenBSD: patch-src_libicalss_Makefile_in,v 1.1 2008/07/18 14:20:34 espie Exp $
---- src/libicalss/Makefile.in.orig	Fri Jul 18 16:15:26 2008
-+++ src/libicalss/Makefile.in	Fri Jul 18 16:16:51 2008
-@@ -274,6 +274,10 @@ libicalss_la_LDFLAGS = -version-info 27:6:27
- libicalss_la_LIBADD = $(BDB_LIBFILES)
+$OpenBSD: patch-src_libicalss_Makefile_in,v 1.2 2009/10/11 12:41:18 jasper Exp $
+--- src/libicalss/Makefile.in.orig	Sat Oct 10 18:04:30 2009
++++ src/libicalss/Makefile.in	Sat Oct 10 18:05:33 2009
+@@ -309,6 +309,9 @@ INCLUDES = \
+ libicalss_la_LDFLAGS = -version-info 44:0:44
+ libicalss_la_LIBADD = $(BDB_LIBFILES) 
  @DEV_FALSE@libicalss_la_DEVSOURCES = icalsslexer.c icalssyacc.c
- @DEV_TRUE@libicalss_la_DEVSOURCES = icalsslexer.l icalssyacc.y
 +@DEV_TRUE@# just to get it built
 +@DEV_TRUE@$(srcdir)/icalgauge.c: icalssyacc.h
 +@DEV_TRUE@$(srcdir)/icalsslexer.c: icalssyacc.h 
-+
+ @DEV_TRUE@libicalss_la_DEVSOURCES = icalsslexer.l icalssyacc.y
  libicalss_la_SOURCES = \
  	icalcalendar.c		\
- 	icalcalendar.h		\
-@@ -654,10 +658,6 @@ uninstall-am: uninstall-info-am uninstall-libLTLIBRARI
+@@ -716,10 +719,6 @@ uninstall-am: uninstall-info-am uninstall-libLTLIBRARI
  
  
- all: icalss.h
+ all: icalss.h libical/icalss.h
 -
 -# just to get it built
 -$(srcdir)/icalgauge.c: icalssyacc.h
 -$(srcdir)/icalsslexer.c: icalssyacc.h 
  
  icalss.h: $(COMBINEDHEADERS)
- 	echo '#ifdef __cplusplus'         >  icalss.h
+ 	echo '#ifndef LIBICAL_ICALSS_H'   >  icalss.h

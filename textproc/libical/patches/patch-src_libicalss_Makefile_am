@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libicalss_Makefile_am,v 1.1 2008/07/18 14:20:34 espie Exp $
---- src/libicalss/Makefile.am.orig	Fri Jul 18 16:14:42 2008
-+++ src/libicalss/Makefile.am	Fri Jul 18 16:15:23 2008
+$OpenBSD: patch-src_libicalss_Makefile_am,v 1.2 2009/10/11 12:41:18 jasper Exp $
+--- src/libicalss/Makefile.am.orig	Sun Sep 27 04:38:52 2009
++++ src/libicalss/Makefile.am	Sat Oct 10 18:05:48 2009
 @@ -29,11 +29,7 @@ LEX_OUTPUT_ROOT = lex.ss
  
- all: icalss.h
+ all: icalss.h libical/icalss.h
  
 -# just to get it built
 -$(srcdir)/icalgauge.c: icalssyacc.h
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_libicalss_Makefile_am,v 1.1 2008/07/18 14:20:34 espie Exp $
  if WITH_BDB4
  BDB_INCLUDE=-I@BDB_DIR_INCLUDE@ -DWITH_BDB4
  BDB_SOURCEFILES=icalbdbset.c icalbdbset.h icalbdbsetimpl.h
-@@ -63,6 +59,11 @@ libicalss_la_LIBADD = $(BDB_LIBFILES)
+@@ -68,6 +64,11 @@ libicalss_la_LIBADD = $(BDB_LIBFILES) 
  
  if DEV
  libicalss_la_DEVSOURCES = icalsslexer.l icalssyacc.y

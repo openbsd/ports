@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/12/28 17:32:12 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/11 12:41:18 jasper Exp $
 
 COMMENT=	implementation of basic iCAL protocols
 
-DISTNAME=	libical-0.27
-SHARED_LIBS+=	ical	0.0 # .27.6
-SHARED_LIBS+=	icalss	0.0 # .27.6
+DISTNAME=	libical-0.44
+SHARED_LIBS +=  ical                 1.0      # .44.0
+SHARED_LIBS +=  icalss               1.0      # .44.0
+SHARED_LIBS +=  icalvcal             0.0      # .44.0
 
 CATEGORIES=	textproc
+
+HOMEPAGE=	http://freeassociation.sf.net/
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeassociation/}
 
 MAINTAINER=	Sebastian Reitenbach <sebastia@l00-bugdead-prods.de>

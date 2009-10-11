@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_libical_icaltz-util_c,v 1.1 2009/10/11 12:41:18 jasper Exp $
+--- src/libical/icaltz-util.c.orig	Sat Oct 10 18:09:08 2009
++++ src/libical/icaltz-util.c	Sat Oct 10 18:24:28 2009
+@@ -27,6 +27,14 @@
+ 
+ #if defined(sun) && defined(__SVR4)
+ #include <sys/byteorder.h>
++#elif defined(__OpenBSD__)
++#include <sys/types.h>
++#define __BYTE_ORDER	_BYTE_ORDER
++#define __LITTLE_ENDIAN	_LITTLE_ENDIAN
++#define __BIG_ENDIAN	_BIG_ENDIAN
++#define bswap_16	swap16
++#define bswap_32	swap32
++#define bswap_64	swap64
+ #else
+ # ifdef HAVE_BYTESWAP_H
+ #  include <byteswap.h>
+@@ -132,6 +140,8 @@ decode (const void *ptr)
+     if (sizeof (int) == 4)
+ #ifdef _BIG_ENDIAN
+         return *(const int *) ptr;
++#elif __OpenBSD__
++	return swap32 (*(const uint32_t *) ptr);
+ #else
+         return BSWAP_32 (*(const int *) ptr);
+ #endif
+@@ -426,7 +436,10 @@ icaltzutil_fetch_timezone (const char *location)
+ 		else
+ 			zp_idx = zidx;
+ 		/* DTSTART localtime uses TZOFFSETFROM UTC offset */
+-		trans = transitions [stdidx] + types [zp_idx].gmtoff;
++		if (num_trans)
++			trans = transitions [stdidx] + types [zidx].gmtoff;
++		else
++			trans = types [zidx].gmtoff;
+ 		icaltime = icaltime_from_timet (trans, 0);
+ 		dtstart = icaltime;
+ 		dtstart.year = 1970;
+@@ -465,7 +478,10 @@ icaltzutil_fetch_timezone (const char *location)
+ 		icalcomponent_add_property (dst_comp, icalprop);
+ 
+ 		/* DTSTART localtime uses TZOFFSETFROM UTC offset */
+-		trans = transitions [dstidx] + types [zp_idx].gmtoff;
++		if (num_trans)
++			trans = transitions [dstidx] + types [zidx].gmtoff;
++		else
++			trans = types [zidx].gmtoff;
+ 		icaltime = icaltime_from_timet (trans, 0);
+ 		dtstart = icaltime;
+ 		dtstart.year = 1970;
