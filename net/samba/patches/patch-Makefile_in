@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.11 2008/07/11 11:40:33 brad Exp $
---- Makefile.in.orig	Wed May 28 08:41:11 2008
-+++ Makefile.in	Fri Jul  4 00:36:10 2008
+$OpenBSD: patch-Makefile_in,v 1.12 2009/10/11 19:45:46 sthen Exp $
+--- Makefile.in.orig	Wed Sep 30 08:21:56 2009
++++ Makefile.in	Sat Oct 10 20:04:44 2009
 @@ -109,11 +109,13 @@ LOCKDIR = @lockdir@
  # the directory where pid files go
  PIDDIR = @piddir@
@@ -32,7 +32,7 @@ $OpenBSD: patch-Makefile_in,v 1.11 2008/07/11 11:40:33 brad Exp $
  
  PASSWD_FLAGS = -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\" -DPRIVATE_DIR=\"$(PRIVATE_DIR)\"
  PATH_FLAGS1 = -DCONFIGFILE=\"$(CONFIGFILE)\"  -DSBINDIR=\"$(SBINDIR)\"
-@@ -1152,11 +1154,10 @@ bin/libaddns.a: proto_exists $(LIBADDNS_OBJ)
+@@ -1159,11 +1161,10 @@ bin/libaddns.a: proto_exists $(LIBADDNS_OBJ)
  	@echo Linking libaddns non-shared library $@
  	@-$(AR) -rc $@ $(LIBADDNS_OBJ)
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-Makefile_in,v 1.11 2008/07/11 11:40:33 brad Exp $
  
  bin/libsmbclient.a: proto_exists $(LIBSMBCLIENT_OBJ)
  	@echo Linking libsmbclient non-shared library $@
-@@ -1172,10 +1173,9 @@ bin/libsmbsharemodes.a: proto_exists $(LIBSMBSHAREMODE
+@@ -1179,10 +1180,9 @@ bin/libsmbsharemodes.a: proto_exists $(LIBSMBSHAREMODE
  	@echo Linking libsmbsharemodes non-shared library $@
  	@-$(AR) -rc $@ $(LIBSMBSHAREMODES_OBJ)
  
@@ -59,7 +59,7 @@ $OpenBSD: patch-Makefile_in,v 1.11 2008/07/11 11:40:33 brad Exp $
  
  bin/libmsrpc.a: proto_exists $(CAC_OBJ)
  	@echo Linking libmsrpc non-shared library $@
-@@ -1623,14 +1623,14 @@ installswat: installdirs installmsg
+@@ -1633,14 +1633,14 @@ installswat: installdirs installmsg
  
  installclientlib: installdirs libsmbclient
  	@$(SHELL) $(srcdir)/script/installdirs.sh $(INSTALLPERMS) $(DESTDIR) $(LIBDIR)

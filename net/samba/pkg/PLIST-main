@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2009/05/14 17:05:46 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2009/10/11 19:45:46 sthen Exp $
 @conflict samba-docs-<=3.0.31p1
 @pkgpath ${BASE_PKGPATH}
 bin/eventlogadm
@@ -71,7 +71,6 @@ libexec/swat
 @man man/man7/libsmbclient.7
 @man man/man7/pam_winbind.7
 @man man/man7/samba.7
-@man man/man8/cifs.upcall.8
 @man man/man8/eventlogadm.8
 @man man/man8/idmap_ad.8
 @man man/man8/idmap_ldap.8
