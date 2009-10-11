@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.244 2009/08/16 05:51:33 jolan Exp $
+# $OpenBSD: Makefile,v 1.245 2009/10/11 09:59:53 sthen Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -89,6 +89,7 @@
      SUBDIR += inkscape
      SUBDIR += iview
      SUBDIR += jasper
+     SUBDIR += jbig2dec
      SUBDIR += jbigkit
      SUBDIR += jhead
      SUBDIR += jpeg
