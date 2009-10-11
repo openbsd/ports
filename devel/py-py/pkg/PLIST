@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/04/15 09:35:43 martynas Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2009/10/11 20:59:37 jasper Exp $
 bin/_docgen.py
 bin/_findpy.py
 bin/_makepyrelease.py
@@ -180,6 +179,7 @@ lib/python${MODPY_VERSION}/site-packages/py/c-extension/greenlet/README.txt
 lib/python${MODPY_VERSION}/site-packages/py/c-extension/greenlet/dummy_greenlet.py
 lib/python${MODPY_VERSION}/site-packages/py/c-extension/greenlet/greenlet.c
 lib/python${MODPY_VERSION}/site-packages/py/c-extension/greenlet/greenlet.h
+lib/python${MODPY_VERSION}/site-packages/py/c-extension/greenlet/greenlet.so
 lib/python${MODPY_VERSION}/site-packages/py/c-extension/greenlet/setup.py
 lib/python${MODPY_VERSION}/site-packages/py/c-extension/greenlet/slp_platformselect.h
 lib/python${MODPY_VERSION}/site-packages/py/c-extension/greenlet/switch_amd64_unix.h

@@ -1,14 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/22 08:38:21 xsa Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2009/10/11 20:59:37 jasper Exp $
 bin/pfreport
 bin/plog
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/Python_OpenBSD_bindings-0.1.2-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/openbsd/
 lib/python${MODPY_VERSION}/site-packages/openbsd/__init__.py
 lib/python${MODPY_VERSION}/site-packages/openbsd/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/openbsd/_ifconfig.so
+lib/python${MODPY_VERSION}/site-packages/openbsd/_kqueue.so
+lib/python${MODPY_VERSION}/site-packages/openbsd/_kvm.so
+lib/python${MODPY_VERSION}/site-packages/openbsd/_netstat.so
 lib/python${MODPY_VERSION}/site-packages/openbsd/_packetDescriptors.py
 lib/python${MODPY_VERSION}/site-packages/openbsd/_packetDescriptors.pyc
+lib/python${MODPY_VERSION}/site-packages/openbsd/_pcap.so
+lib/python${MODPY_VERSION}/site-packages/openbsd/_sysvar.so
+lib/python${MODPY_VERSION}/site-packages/openbsd/arc4random.so
 lib/python${MODPY_VERSION}/site-packages/openbsd/ifconfig.py
 lib/python${MODPY_VERSION}/site-packages/openbsd/ifconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/openbsd/kqueue.py

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/06/24 21:51:30 martynas Exp $
-lib/python${MODPY_VERSION}/site-packages/simplejson/_speedups.so

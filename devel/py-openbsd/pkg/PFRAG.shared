@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/12/22 08:38:21 xsa Exp $
-lib/python${MODPY_VERSION}/site-packages/openbsd/_ifconfig.so
-lib/python${MODPY_VERSION}/site-packages/openbsd/_kqueue.so
-lib/python${MODPY_VERSION}/site-packages/openbsd/_kvm.so
-lib/python${MODPY_VERSION}/site-packages/openbsd/_netstat.so
-lib/python${MODPY_VERSION}/site-packages/openbsd/_pcap.so
-lib/python${MODPY_VERSION}/site-packages/openbsd/_sysvar.so
-lib/python${MODPY_VERSION}/site-packages/openbsd/arc4random.so

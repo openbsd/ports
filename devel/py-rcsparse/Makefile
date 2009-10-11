@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/14 23:13:34 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2009/10/11 20:59:37 jasper Exp $
 
 COMMENT=		RCS parsing library for Python
 
@@ -7,7 +7,7 @@ CHANGESET=		40d822c6febd
 VERSION=		20060714
 DISTNAME=		rcsparse-${CHANGESET}
 EXTRACT_SUFX=		.tar.bz2
-PKGNAME=		rcsparse-${VERSION}p1
+PKGNAME=		rcsparse-${VERSION}p2
 CATEGORIES=     	devel
 
 PERMIT_PACKAGE_CDROM=	Yes

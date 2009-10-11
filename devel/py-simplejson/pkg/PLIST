@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/27 21:28:51 martynas Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2009/10/11 20:59:37 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/simplejson/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,6 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/simplejson/__init__.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/simplejson/_speedups.so
 lib/python${MODPY_VERSION}/site-packages/simplejson/decoder.py
 lib/python${MODPY_VERSION}/site-packages/simplejson/decoder.pyc
 lib/python${MODPY_VERSION}/site-packages/simplejson/encoder.py

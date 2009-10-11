@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/01/11 00:01:36 fgsch Exp $
-lib/python${MODPY_VERSION}/site-packages/psyco/_psyco.so

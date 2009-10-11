@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/23 21:43:16 martynas Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2009/10/11 20:59:37 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/RuleDispatch-0.5a0.dev_r2306-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/RuleDispatch-0.5a0.dev_r2306-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/RuleDispatch-0.5a0.dev_r2306-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -8,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/RuleDispatch-0.5a0.dev_r2306-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/dispatch/
 lib/python${MODPY_VERSION}/site-packages/dispatch/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dispatch/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/dispatch/_d_speedups.so
 lib/python${MODPY_VERSION}/site-packages/dispatch/ast_builder.py
 lib/python${MODPY_VERSION}/site-packages/dispatch/ast_builder.pyc
 lib/python${MODPY_VERSION}/site-packages/dispatch/combiners.py

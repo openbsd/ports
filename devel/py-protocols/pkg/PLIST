@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/23 21:41:54 martynas Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2009/10/11 20:59:37 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/PyProtocols-1.0a0dev_r2302-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyProtocols-1.0a0dev_r2302-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyProtocols-1.0a0dev_r2302-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -8,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/PyProtocols-1.0a0dev_r2302-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/protocols/
 lib/python${MODPY_VERSION}/site-packages/protocols/__init__.py
 lib/python${MODPY_VERSION}/site-packages/protocols/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/protocols/_speedups.so
 lib/python${MODPY_VERSION}/site-packages/protocols/adapters.py
 lib/python${MODPY_VERSION}/site-packages/protocols/adapters.pyc
 lib/python${MODPY_VERSION}/site-packages/protocols/advice.py

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/07/15 02:14:24 avsm Exp $
-lib/python${MODPY_VERSION}/site-packages/rcsparse.so

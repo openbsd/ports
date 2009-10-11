@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/06/24 10:29:41 martynas Exp $
-lib/python${MODPY_VERSION}/site-packages/py/c-extension/greenlet/greenlet.so

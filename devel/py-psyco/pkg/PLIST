@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/05/06 17:36:47 martynas Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2009/10/11 20:59:37 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/psyco/
 lib/python${MODPY_VERSION}/site-packages/psyco-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/psyco/__init__.py
 lib/python${MODPY_VERSION}/site-packages/psyco/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/psyco/_psyco.so
 lib/python${MODPY_VERSION}/site-packages/psyco/classes.py
 lib/python${MODPY_VERSION}/site-packages/psyco/classes.pyc
 lib/python${MODPY_VERSION}/site-packages/psyco/core.py

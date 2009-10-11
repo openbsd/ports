@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/06/23 21:43:16 martynas Exp $
-lib/python${MODPY_VERSION}/site-packages/dispatch/_d_speedups.so
