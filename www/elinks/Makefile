@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/10/11 14:06:20 edd Exp $
+# $OpenBSD: Makefile,v 1.17 2009/10/11 15:55:50 edd Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
@@ -39,6 +39,7 @@ FLAVORS=		lua no_x11
 FLAVOR?=		
 
 .if ${FLAVOR:L:Mlua}
+BROKEN=			has this ever worked?
 CONFIGURE_ARGS+=	--with-lua
 LIB_DEPENDS+=		lua.>=5.1::lang/lua
 WANTLIB+=		m
