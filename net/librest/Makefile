@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/11 10:21:02 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/11 10:34:11 landry Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
 VERSION =	0.6
 DISTNAME =	rest-${VERSION}
-PKGNAME =	librest-${VERSION}
+PKGNAME =	librest-${VERSION}p0
 
 CATEGORIES =	net devel
 
@@ -25,9 +25,10 @@ USE_LIBTOOL =	Yes
 # not really needed yet, see rest/rest-proxy.c
 CONFIGURE_ARGS =	--without-gnome
 
+MODULES =	devel/gettext
 LIB_DEPENDS =	soup-2.4::devel/libsoup
 
 WANTLIB += gcrypt gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0
-WANTLIB += gpg-error gthread-2.0 iconv intl m pcre tasn1 xml2 z
+WANTLIB += gpg-error gthread-2.0 m pcre tasn1 xml2 z
 
 .include <bsd.port.mk>

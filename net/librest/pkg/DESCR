@@ -10,5 +10,5 @@ of APIs they may support (XML-RPC, for instance.). It is this kind of
 API that this library is attempting to support.
 
 It comprises of two parts: the first aims to make it easier to make
-requests by providing a wrapper around libsoup [2], the second aids with
-XML parsing by wrapping libxml2 [3].
+requests by providing a wrapper around libsoup, the second aids with
+XML parsing by wrapping libxml2.
