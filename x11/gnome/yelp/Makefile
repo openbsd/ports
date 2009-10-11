@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2009/09/10 15:33:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2009/10/11 17:31:07 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
-GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p10
+GNOME_VERSION=		2.28.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,17 +11,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
-WANTLIB += bonoboui-2 bz2 c cairo crypto dbus-1 dbus-glib-1 expat
-WANTLIB += fontconfig freetype gailutil gcrypt gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0
-WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
-WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 m nspr4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png popt pthread ssl stdc++ util xml2 z
-WANTLIB += avahi-client avahi-common avahi-glib pthread-stubs xcb
+WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 bz2
+WANTLIB += c cairo dbus-1 dbus-glib-1 execinfo expat fontconfig
+WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gpg-error gthread-2.0
+WANTLIB += gtk-x11-2.0 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += stdc++ xcb xcb-atom xcb-aux xcb-event xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -36,7 +32,6 @@ RUN_DEPENDS=		::misc/shared-mime-info \
 			::x11/gnome/doc-utils
 LIB_DEPENDS=		startup-notification-1::devel/startup-notification \
 			xulrunner/gtkembedmoz,xulrunner/xpcom,xulrunner/xul::devel/xulrunner/1.8,-main \
-			gnomeui-2::x11/gnome/libgnomeui \
 			exslt,xslt::textproc/libxslt \
 			rarian::textproc/rarian
 
