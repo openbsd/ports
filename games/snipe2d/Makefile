@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/11 21:50:14 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/11 22:33:53 edd Exp $
 
 COMMENT =		overhead shooting game
 
 V = 			1.30
 DISTNAME =		orbital_eunuchs_sniper-${V}
-PKGNAME = 		snipe2d-${V}
+PKGNAME = 		snipe2d-${V}p0
 
 CATEGORIES =		games
 
@@ -18,12 +18,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=		c m pthread stdc++
+WANTLIB +=		SDL c m pthread stdc++
 
 MASTER_SITES =		http://icculus.org/oes/
 
-LIB_DEPENDS =		SDL.>=8::devel/sdl \
-			SDL_image.>=2::devel/sdl-image \
+LIB_DEPENDS =		SDL_image.>=2::devel/sdl-image \
 			SDL_mixer.>=3::devel/sdl-mixer
 
 USE_X11 =		Yes
