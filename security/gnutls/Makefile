@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/10/09 23:05:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/10/11 13:17:00 kili Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
@@ -40,6 +40,7 @@ PORTHOME=	${WRKDIR}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
+		--disable-guile \
 		--with-included-libcfg \
 		--with-lzo \
 		--with-libtasn1-prefix=${LOCALBASE} \
