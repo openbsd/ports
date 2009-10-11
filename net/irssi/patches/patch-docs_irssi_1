@@ -1,4 +1,4 @@
-$OpenBSD: patch-docs_irssi_1,v 1.3 2008/12/22 19:40:33 matthieu Exp $
+$OpenBSD: patch-docs_irssi_1,v 1.4 2009/10/11 15:23:51 okan Exp $
 --- docs/irssi.1.orig	Sat Oct  6 11:38:21 2007
 +++ docs/irssi.1	Wed Dec  3 22:58:13 2008
 @@ -65,10 +65,10 @@ display brief usage message.
@@ -6,11 +6,11 @@ $OpenBSD: patch-docs_irssi_1,v 1.3 2008/12/22 19:40:33 matthieu Exp $
  .B Irssi
  has been supplied with a huge amount of documentation. Check /help or look
 -at the files contained by /usr/share/doc/irssi*
-+at the files contained by /usr/local/share/irssi/* and /usr/local/share/doc/irssi/*
++at the files contained by ${PREFIX}/share/irssi/* and ${PREFIX}/share/doc/irssi/*
  .SH FILES
  .TP
 -.I /etc/irssi.conf
-+.I /etc/irssi/irssi.conf
++.I ${SYSCONFDIR}/irssi/irssi.conf
  Global configuration file
  .TP
  .I ~/.irssi/config
@@ -20,20 +20,20 @@ $OpenBSD: patch-docs_irssi_1,v 1.3 2008/12/22 19:40:33 matthieu Exp $
  .TP
 -.I /usr/share/irssi/help/
 -Directory including many help files
-+.I /usr/local/share/irssi/help/
++.I ${PREFIX}/share/irssi/help/
 +.RS .3
-+.I /usr/local/share/doc/irssi/
++.I ${PREFIX}/share/doc/irssi/
 +.RE
 +.RS
 +Directories including many help files
 +.RE
  .TP
 -.I /usr/share/irssi/scripts/
-+.I /etc/irssi/scripts/
++.I ${SYSCONFDIR}/irssi/scripts/
  Global scripts directory
  .TP
 -.I /usr/share/irssi/themes/
-+.I /etc/irssi/themes/
++.I ${SYSCONFDIR}/irssi/themes/
  Global themes directory
  .TP
  .I ~/.irssi/scripts/
