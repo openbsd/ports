@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.20 2009/09/01 18:24:28 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.21 2009/10/11 09:43:08 espie Exp $
 share/doc/qt4/html/
 share/doc/qt4/html/3rdparty.html
 share/doc/qt4/html/abstractwidgets.html
@@ -923,6 +923,8 @@ share/doc/qt4/html/images/framebufferobject-example.png
 share/doc/qt4/html/images/framebufferobject2-example.png
 share/doc/qt4/html/images/frames.png
 share/doc/qt4/html/images/fridgemagnets-example.png
+share/doc/qt4/html/images/frozencolumn-example.png
+share/doc/qt4/html/images/frozencolumn-tableview.png
 share/doc/qt4/html/images/ftp-example.png
 share/doc/qt4/html/images/geometry.png
 share/doc/qt4/html/images/googlechat-example.png
@@ -1839,6 +1841,12 @@ share/doc/qt4/html/itemviews-fetchmore-main-cpp.html
 share/doc/qt4/html/itemviews-fetchmore-window-cpp.html
 share/doc/qt4/html/itemviews-fetchmore-window-h.html
 share/doc/qt4/html/itemviews-fetchmore.html
+share/doc/qt4/html/itemviews-frozencolumn-freezetablewidget-cpp.html
+share/doc/qt4/html/itemviews-frozencolumn-freezetablewidget-h.html
+share/doc/qt4/html/itemviews-frozencolumn-frozencolumn-pro.html
+share/doc/qt4/html/itemviews-frozencolumn-grades-qrc.html
+share/doc/qt4/html/itemviews-frozencolumn-main-cpp.html
+share/doc/qt4/html/itemviews-frozencolumn.html
 share/doc/qt4/html/itemviews-pixelator-imagemodel-cpp.html
 share/doc/qt4/html/itemviews-pixelator-imagemodel-h.html
 share/doc/qt4/html/itemviews-pixelator-images-qrc.html
@@ -3748,6 +3756,7 @@ share/doc/qt4/html/qsql.html
 share/doc/qt4/html/qsqldatabase-members.html
 share/doc/qt4/html/qsqldatabase-qt3.html
 share/doc/qt4/html/qsqldatabase.html
+share/doc/qt4/html/qsqldatatype-table.html
 share/doc/qt4/html/qsqldriver-members.html
 share/doc/qt4/html/qsqldriver-qt3.html
 share/doc/qt4/html/qsqldriver.html
@@ -5491,6 +5500,8 @@ share/doc/qt4/src/images/framebufferobject-example.png
 share/doc/qt4/src/images/framebufferobject2-example.png
 share/doc/qt4/src/images/frames.png
 share/doc/qt4/src/images/fridgemagnets-example.png
+share/doc/qt4/src/images/frozencolumn-example.png
+share/doc/qt4/src/images/frozencolumn-tableview.png
 share/doc/qt4/src/images/ftp-example.png
 share/doc/qt4/src/images/geometry.png
 share/doc/qt4/src/images/googlechat-example.png

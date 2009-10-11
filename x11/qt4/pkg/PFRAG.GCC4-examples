@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.GCC4-examples,v 1.2 2009/09/01 18:24:28 espie Exp $
+@comment $OpenBSD: PFRAG.GCC4-examples,v 1.3 2009/10/11 09:43:08 espie Exp $
 lib/qt4/demos/browser/
 lib/qt4/demos/browser/addbookmarkdialog.ui
 lib/qt4/demos/browser/autosaver.cpp
@@ -80,7 +80,7 @@ lib/qt4/examples/webkit/fancybrowser/mainwindow.cpp
 lib/qt4/examples/webkit/fancybrowser/mainwindow.h
 lib/qt4/examples/webkit/formextractor/
 lib/qt4/examples/webkit/formextractor/form.html
-@bin lib/qt4/examples/webkit/formextractor/formExtractor
+@bin lib/qt4/examples/webkit/formextractor/formextractor
 lib/qt4/examples/webkit/formextractor/formextractor.cpp
 lib/qt4/examples/webkit/formextractor/formextractor.h
 lib/qt4/examples/webkit/formextractor/formextractor.pro

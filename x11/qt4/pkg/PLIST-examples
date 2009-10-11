@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.21 2009/09/01 18:24:28 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.22 2009/10/11 09:43:08 espie Exp $
 @conflict qt4-<=4.2.2
 %%SHARED%%
 %%GCC4%%
@@ -370,7 +370,6 @@ lib/qt4/demos/textedit/images/win/zoomout.png
 lib/qt4/demos/textedit/main.cpp
 @bin lib/qt4/demos/textedit/textedit
 lib/qt4/demos/textedit/textedit.cpp
-lib/qt4/demos/textedit/textedit.doc
 lib/qt4/demos/textedit/textedit.h
 lib/qt4/demos/textedit/textedit.pro
 lib/qt4/demos/textedit/textedit.qrc
@@ -1175,6 +1174,13 @@ lib/qt4/examples/itemviews/fetchmore/filelistmodel.h
 lib/qt4/examples/itemviews/fetchmore/main.cpp
 lib/qt4/examples/itemviews/fetchmore/window.cpp
 lib/qt4/examples/itemviews/fetchmore/window.h
+lib/qt4/examples/itemviews/frozencolumn/
+lib/qt4/examples/itemviews/frozencolumn/freezetablewidget.cpp
+lib/qt4/examples/itemviews/frozencolumn/freezetablewidget.h
+@bin lib/qt4/examples/itemviews/frozencolumn/frozencolumn
+lib/qt4/examples/itemviews/frozencolumn/frozencolumn.pro
+lib/qt4/examples/itemviews/frozencolumn/grades.qrc
+lib/qt4/examples/itemviews/frozencolumn/main.cpp
 lib/qt4/examples/itemviews/itemviews.pro
 lib/qt4/examples/itemviews/pixelator/
 lib/qt4/examples/itemviews/pixelator/imagemodel.cpp

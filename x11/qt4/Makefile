@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2009/09/01 18:24:28 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2009/10/11 09:43:08 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -44,8 +44,8 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		phonon 4.1
 
 
-VERSION =	4.5.2
-PKGVERSION =	4.5.2
+VERSION =	4.5.3
+PKGVERSION =	4.5.3
 DISTNAME =	qt-x11-opensource-src-${VERSION}
 
 
@@ -168,7 +168,7 @@ LIB_DEPENDS =		glib-2.0,gthread-2.0::devel/glib2
 WANTLIB =		iconv intl
 
 commonWANTLIB =		ICE Xrender c GLU SM freetype pthread Xinerama \
-			stdc++ Xext GL Xi m X11.>=10 z fontconfig \
+			Xext GL Xi m X11.>=10 z fontconfig \
 			expat
 commonLIB_DEPENDS =	png.>=2::graphics/png
 
@@ -232,6 +232,7 @@ WANTLIB-examples +=	sqlite3
 WANTLIB-main += sqlite3
 .else
 PKG_ARGS += -DGCC4=0
+commonWANTLIB += 	stdc++
 .endif
 
 QT_BASEDIR =	${PREFIX}/lib/qt4
