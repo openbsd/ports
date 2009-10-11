@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2009/09/06 10:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/10/11 19:02:08 kili Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.24.3.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 
 CATEGORIES=		games
 
@@ -18,15 +18,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
-		bonoboui-2 bz2 c cairo croco-0.6 crypto dbus-1 dbus-glib-1 \
-		expat fontconfig freetype gailutil gcrypt \
-		gdk-x11-2.0 gdk_pixbuf-2.0 ggz gio-2.0 glib-2.0 glitz \
-		gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 \
-		gobject-2.0 gpg-error gsf-1 gthread-2.0 gtk-x11-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png popt pthread ssl stdc++ util xml2 z gstreamer-0.10 \
-		avahi-client avahi-common avahi-glib pthread-stubs xcb
+		Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common \
+		avahi-glib bonobo-2 bonobo-activation bonoboui-2 bz2 c cairo \
+		croco-0.6 crypto dbus-1 dbus-glib-1 expat fontconfig freetype \
+		gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 ggz gio-2.0 \
+		glib-2.0 glitz gmodule-2.0 gmp gnome-2 gnome-keyring \
+		gnomecanvas-2 gnomevfs-2 gobject-2.0 gpg-error gsf-1 \
+		gstreamer-0.10 gthread-2.0 gtk-x11-2.0 ltdl m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt pthread \
+		pthread-stubs ssl stdc++ util xcb xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -36,7 +36,7 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		::x11/gnome/py-gnome-desktop \
 			::lang/guile
 LIB_DEPENDS=		ggzcore,ggzmod::games/ggz/ggz-client-libs \
-			guile-ltdl,guile::lang/guile \
+			guile::lang/guile \
 			gnomeui-2::x11/gnome/libgnomeui \
 			rsvg-2.>=18.0::x11/gnome/librsvg
 RUN_DEPENDS=		::x11/gnome/py-gnome-desktop \

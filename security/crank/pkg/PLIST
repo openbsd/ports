@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/04/07 15:14:46 steven Exp $
-bin/crank
+@comment $OpenBSD: PLIST,v 1.8 2009/10/11 18:57:51 kili Exp $
+@bin bin/crank
 @info info/crank.info
 lib/crank/
 lib/crank/plugins/
