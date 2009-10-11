@@ -1,0 +1,15 @@
+$OpenBSD: patch-gedit_gedit-local-document-saver_c,v 1.1 2009/10/11 18:13:25 jasper Exp $
+
+alias ENOTSUP to EOPNOTSUPP.
+
+--- gedit/gedit-local-document-saver.c.orig	Sun Oct 11 19:31:15 2009
++++ gedit/gedit-local-document-saver.c	Sun Oct 11 19:31:57 2009
+@@ -51,6 +51,8 @@
+ #define attr_copy_fd(x1, x2, x3, x4, x5, x6) (errno = ENOSYS, -1)
+ #endif
+ 
++#define ENOTSUP EOPNOTSUPP
++
+ #define BUFSIZE	8192 /* size of normal write buffer */
+ 
+ #define GEDIT_LOCAL_DOCUMENT_SAVER_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), \
