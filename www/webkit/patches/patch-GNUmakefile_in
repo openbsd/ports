@@ -1,7 +1,43 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.2 2009/06/01 05:51:31 landry Exp $
---- GNUmakefile.in.orig	Thu May 28 20:36:42 2009
-+++ GNUmakefile.in	Sun May 31 01:38:02 2009
-@@ -7655,9 +7655,10 @@ libJavaScriptCore_la_SOURCES = \
+$OpenBSD: patch-GNUmakefile_in,v 1.3 2009/10/11 18:31:12 landry Exp $
+--- GNUmakefile.in.orig	Tue Oct  6 15:18:56 2009
++++ GNUmakefile.in	Sat Oct 10 10:31:55 2009
+@@ -5622,7 +5622,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ AM_V_CC = $(am__v_CC_$(V))
+ am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
+-am__v_CC_0 = @echo "  CC    " $@;
++am__v_CC_0 = $@;
+ AM_V_at = $(am__v_at_$(V))
+ am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
+ am__v_at_0 = @
+@@ -5632,22 +5632,22 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ AM_V_CCLD = $(am__v_CCLD_$(V))
+ am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
+-am__v_CCLD_0 = @echo "  CCLD  " $@;
++am__v_CCLD_0 = $@;
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ AM_V_CXX = $(am__v_CXX_$(V))
+ am__v_CXX_ = $(am__v_CXX_$(AM_DEFAULT_VERBOSITY))
+-am__v_CXX_0 = @echo "  CXX   " $@;
++am__v_CXX_0 = $@;
+ CXXLD = $(CXX)
+ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+ 	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ AM_V_CXXLD = $(am__v_CXXLD_$(V))
+ am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
+-am__v_CXXLD_0 = @echo "  CXXLD " $@;
++am__v_CXXLD_0 = $@;
+ AM_V_GEN = $(am__v_GEN_$(V))
+ am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))
+-am__v_GEN_0 = @echo "  GEN   " $@;
++am__v_GEN_0 = $@;
+ SOURCES = $(TestNetscapePlugin_libtestnetscapeplugin_la_SOURCES) \
+ 	$(libJavaScriptCore_la_SOURCES) \
+ 	$(nodist_libJavaScriptCore_la_SOURCES) \
+@@ -8308,9 +8308,10 @@ libJavaScriptCore_la_SOURCES = \
  
  libJavaScriptCore_la_LIBADD = \
  	$(UNICODE_LIBS) \
@@ -14,7 +50,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.2 2009/06/01 05:51:31 landry Exp $
  libJavaScriptCore_la_CXXFLAGS = \
  	$(global_cxxflags) \
  	$(libJavaScriptCore_la_CFLAGS)
-@@ -7723,12 +7724,12 @@ libwebkit_1_0_la_CPPFLAGS = \
+@@ -8376,12 +8377,12 @@ libwebkit_1_0_la_CPPFLAGS = \
  	$(HILDON_CPPFLAGS)
  
  libwebkit_1_0_la_LDFLAGS = \
@@ -28,7 +64,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.2 2009/06/01 05:51:31 landry Exp $
  	libJavaScriptCore.la \
  	libWebCore.la \
  	libWebCoreJS.la \
-@@ -7847,7 +7848,7 @@ Programs_minidom_CFLAGS = \
+@@ -8498,7 +8499,7 @@ Programs_minidom_CFLAGS = \
  Programs_minidom_LDADD = \
  	 libJavaScriptCore.la \
  	 -lm \

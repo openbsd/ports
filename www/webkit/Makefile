@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2009/08/31 19:00:01 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2009/10/11 18:31:12 landry Exp $
 
 COMMENT =	open source web browser engine
 
-V = 1.1.10
+V = 1.1.15.2
 DISTNAME =	webkit-${V}
 # XXX do not remove v0
-PKGNAME =	webkit-${V}p0v0
+PKGNAME =	webkit-${V}v0
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -13,7 +13,7 @@ MASTER_SITES =	${HOMEPAGE}
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
-SHARED_LIBS =	webkit-1.0	0.3
+SHARED_LIBS =	webkit-1.0	1.0
 
 # LGPLv2 / BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -38,6 +38,13 @@ CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS =	--disable-video
 
+#LIB_DEPENDS+=	gstreamer-0.10,gstbase-0.10::multimedia/gstreamer-0.10/core \
+#		gstvideo-0.10::multimedia/gstreamer-0.10/plugins-base \
+#RUN_DEPENDS =	::multimedia/gstreamer-0.10/plugins-base,-ogg \
+#		::multimedia/gstreamer-0.10/plugins-base,-vorbis \
+#		::multimedia/gstreamer-0.10/plugins-base,-theora
+
+
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11"
 
@@ -55,8 +62,7 @@ LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0,gailutil::x11/gtk+2,-main \
 		sqlite3::databases/sqlite3 \
 		xslt::textproc/libxslt \
 		enchant::textproc/enchant \
-		soup-2.4:libsoup->=2.26:devel/libsoup
-
+		soup-2.4:libsoup->=2.28:devel/libsoup
 
 BUILD_DEPENDS =	::devel/bison \
 		::devel/gperf
