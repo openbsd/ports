@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/10/11 09:55:47 naddy Exp $
+@lib lib/libverbiste-0.1.so.${LIBverbiste-0.1_VERSION}

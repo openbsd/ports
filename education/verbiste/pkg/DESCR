@@ -1,0 +1,5 @@
+This package contains a database of French conjugation templates
+and a list of more than 7000 regular and irregular French verbs
+with their corresponding template.  One can obtain the complete
+conjugation for a verb from its infinitive form, and obtain the mode,
+tense and person from a conjugated verb.
