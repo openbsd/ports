@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/12/19 18:43:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/10/11 22:54:12 jasper Exp $
 lib/pkgconfig/gnome-python-desktop-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.pyc
@@ -51,6 +51,12 @@ share/examples/py-gnome-desktop/applet/
 share/examples/py-gnome-desktop/applet/GNOME_PythonAppletSample.server
 share/examples/py-gnome-desktop/applet/README
 share/examples/py-gnome-desktop/applet/applet.py
+share/examples/py-gnome-desktop/braseroburn/
+share/examples/py-gnome-desktop/braseroburn/write-audio-video.py
+share/examples/py-gnome-desktop/braseroburn/write-data.py
+share/examples/py-gnome-desktop/braseroburn/write-image.py
+share/examples/py-gnome-desktop/braseromedia/
+share/examples/py-gnome-desktop/braseromedia/drive_selection.py
 share/examples/py-gnome-desktop/gnomeprint/
 share/examples/py-gnome-desktop/gnomeprint/README
 share/examples/py-gnome-desktop/gnomeprint/example_01.py
