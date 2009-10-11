@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/08/10 13:57:40 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.10 2009/10/11 20:52:26 jasper Exp $
 @comment bin/characters4local.py
 @comment bin/companies4local.py
 @comment bin/imdbpy2sql.py
@@ -29,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/imdb/parser/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/common/
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/common/__init__.py
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/common/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/imdb/parser/common/cutils.so
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/common/locsql.py
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/common/locsql.pyc
 lib/python${MODPY_VERSION}/site-packages/imdb/parser/http/

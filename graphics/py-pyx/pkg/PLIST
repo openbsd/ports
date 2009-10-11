@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/31 11:32:30 eric Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2009/10/11 20:51:38 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/PyX-0.10-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyx/
 lib/python${MODPY_VERSION}/site-packages/pyx/__init__.py
@@ -33,6 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/pyx/epsfile.pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/font/
 lib/python${MODPY_VERSION}/site-packages/pyx/font/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyx/font/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyx/font/_t1code.so
 lib/python${MODPY_VERSION}/site-packages/pyx/font/afm.py
 lib/python${MODPY_VERSION}/site-packages/pyx/font/afm.pyc
 lib/python${MODPY_VERSION}/site-packages/pyx/font/encoding.py

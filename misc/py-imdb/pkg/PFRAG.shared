@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2008/06/21 19:39:04 millert Exp $
-lib/python${MODPY_VERSION}/site-packages/imdb/parser/common/cutils.so

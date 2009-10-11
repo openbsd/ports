@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/12/31 11:32:30 eric Exp $
-lib/python${MODPY_VERSION}/site-packages/pyx/font/_t1code.so
