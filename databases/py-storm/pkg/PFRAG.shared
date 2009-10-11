@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2008/01/06 17:09:36 merdely Exp $
-lib/python${MODPY_VERSION}/site-packages/storm/cextensions.so

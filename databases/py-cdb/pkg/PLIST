@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/11 19:03:10 xsa Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2009/10/11 16:36:31 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/cdbmodule.so
+lib/python${MODPY_VERSION}/site-packages/python_cdb-0.32-py${MODPY_VERSION}.egg-info
 share/doc/py-cdb/
 share/doc/py-cdb/README
 share/examples/py-cdb/

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/26 16:31:15 eric Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2009/10/11 16:36:31 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/storm/
 lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -14,6 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/storm/base.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/cache.py
 lib/python${MODPY_VERSION}/site-packages/storm/cache.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/cextensions.c
+lib/python${MODPY_VERSION}/site-packages/storm/cextensions.so
 lib/python${MODPY_VERSION}/site-packages/storm/database.py
 lib/python${MODPY_VERSION}/site-packages/storm/database.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/databases/

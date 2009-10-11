@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/10/11 19:03:10 xsa Exp $
-lib/python${MODPY_VERSION}/site-packages/cdbmodule.so
