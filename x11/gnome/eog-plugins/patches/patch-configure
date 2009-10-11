@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/10/11 20:37:20 jasper Exp $
+
+Fix some stupid egrep(1) misusage causing this function to always
+return 1.
+
+--- configure.orig	Sun Oct 11 21:13:39 2009
++++ configure	Sun Oct 11 21:14:02 2009
+@@ -15575,7 +15575,7 @@ disabled_plugins=
+ # *******************
+ 
+ check_plugin_defined() {
+-	if echo "$2" | egrep "\b($1)\b" > /dev/null;
++	if echo "$2" | egrep "$1" > /dev/null;
+ 	then
+ 		return 1
+ 	else
