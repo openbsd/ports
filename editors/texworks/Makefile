@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/06 11:27:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/10/11 14:06:20 edd Exp $
 
 COMMENT =		easy to use LaTeX and ConTeXt editor
 
 V = 			20090618
 DISTNAME =		texworks-svn-${V}
-PKGNAME = 		texworks-${V}p2
+PKGNAME = 		texworks-${V}p3
 CATEGORIES =		editors print
 HOMEPAGE =		http://www.tug.org/texworks/
-MAINTAINER =		Edd Barrett <vext01@gmail.com>
+MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

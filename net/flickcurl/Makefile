@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/09 16:09:31 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/11 14:06:20 edd Exp $
 
 COMMENT =		flickr API library and utility
 
 DISTNAME =		flickcurl-1.14
+PKGNAME = 		${DISTNAME}p0
+
 SHARED_LIBS +=  	flickcurl   1.0      # .1.0
 CATEGORIES =		net
 
 HOMEPAGE =		http://librdf.org/flickcurl/
-MAINTAINER =		Edd Barrett <vext01@gmail.com>
+MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # LGPLv2.1/GPLv2/Apachev2.0
 PERMIT_PACKAGE_CDROM =	Yes

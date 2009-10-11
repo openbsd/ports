@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/13 07:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/11 14:06:20 edd Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
 DISTNAME =	hunspell-1.2.8
+PKGNAME = 	${DISTNAME}p0
 
 SHARED_LIBS =	hunspell-1.2 	0.0 #	.0.0
 
@@ -10,7 +11,7 @@ CATEGORIES =	textproc
 
 HOMEPAGE =	http://hunspell.sourceforge.net
 
-MAINTAINER =	Edd Barrett <vext01@gmail.com>
+MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # GPL/LGPL/MPL
 PERMIT_PACKAGE_CDROM =	Yes

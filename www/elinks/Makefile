@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/26 19:30:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2009/10/11 14:06:20 edd Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 MASTER_SITES=		http://elinks.cz/download/
 
 HOMEPAGE=		http://elinks.cz/
 
-MAINTAINER=		Edd Barrett <vext01@gmail.com>
+MAINTAINER=		Edd Barrett <edd@openbsd.org>
 
 # GPL, v2 only
 PERMIT_PACKAGE_CDROM=	Yes
