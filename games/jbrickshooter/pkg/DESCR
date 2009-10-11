@@ -1,0 +1,7 @@
+The game field is a square of a hundred cells. The game starts with some
+colored bricks arranged randomly in the field. Empty cells are black.
+
+Each side of the field has three layers of bricks. Any brick that can
+move will show an arrow when the mouse is over it. Clicking the mouse
+starts the brick moving through the field in the direction of its arrow.
+When the brick hits another brick it stops.
