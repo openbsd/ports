@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.83 2009/10/11 18:58:59 steven Exp $
+# $OpenBSD: libtool,v 1.84 2009/10/11 20:50:33 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -970,6 +970,7 @@ if ($mode eq 'compile') {
 		} else {
 			$program->{shared} = 1;
 		}
+		$program->{objlist} = \@objs;
 		if (@objs == 0) {
 		        if (@sobjs > 0) {
 				Trace::debug {"no non-pic libtool objects found, trying pic objects...\n"};
@@ -977,7 +978,6 @@ if ($mode eq 'compile') {
 			} elsif (@sobjs == 0) {
 				Trace::debug {"no libtool objects of any kind found\n"};
 				Trace::debug {"hoping for real objects in ARGV...\n"};
-				$program->{objlist} = \@objs;
 			}
 		}
 		my $RPdirs = [];
