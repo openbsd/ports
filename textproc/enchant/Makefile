@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2009/01/12 13:04:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/10/11 23:47:12 ajacoutot Exp $
 
 COMMENT=	generic spell checking library/wrapper
 
-V=		1.4.2
+V=		1.5.0
 DISTNAME=	enchant-${V}
-PKGNAME=	${DISTNAME}p1
-SHARED_LIBS=	enchant	5.1 # .5.2
+SHARED_LIBS=	enchant	6.0 # .5.2
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.abisource.com/projects/enchant/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# LGPLv2
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
