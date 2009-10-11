@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/10/11 22:53:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2009/10/11 22:54:31 ajacoutot Exp $
 
 COMMENT=	GNOME settings daemon
 
@@ -28,6 +28,8 @@ BUILD_DEPENDS=	::textproc/rarian
 LIB_DEPENDS=	notify::devel/libnotify \
 		gnome-desktop-2.>=6::x11/gnome/desktop \
 		gnomekbd::x11/gnome/libgnomekbd
+
+# otherwise we end up without icons on minimal install
 RUN_DEPENDS=	::x11/gnome/icon-theme
 
 USE_X11=	Yes
