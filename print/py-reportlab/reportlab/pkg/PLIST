@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/11/05 09:44:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/10/11 17:51:30 jasper Exp $
 @conflict py-reportlab-barcode-*
 lib/python${MODPY_VERSION}/site-packages/Reportlab-2.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/_rl_accel.so
+lib/python${MODPY_VERSION}/site-packages/pyHnj.so
 lib/python${MODPY_VERSION}/site-packages/reportlab/
 lib/python${MODPY_VERSION}/site-packages/reportlab/README
 lib/python${MODPY_VERSION}/site-packages/reportlab/__init__.py
@@ -518,4 +520,4 @@ lib/python${MODPY_VERSION}/site-packages/reportlab/tools/pythonpoint/styles/proj
 lib/python${MODPY_VERSION}/site-packages/reportlab/tools/pythonpoint/styles/projection.pyc
 lib/python${MODPY_VERSION}/site-packages/reportlab/tools/pythonpoint/styles/standard.py
 lib/python${MODPY_VERSION}/site-packages/reportlab/tools/pythonpoint/styles/standard.pyc
-%%SHARED%%
+lib/python${MODPY_VERSION}/site-packages/sgmlop.so

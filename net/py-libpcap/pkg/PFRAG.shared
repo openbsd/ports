@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2005/05/17 07:39:20 xsa Exp $
-lib/python${MODPY_VERSION}/site-packages/_pcap.so

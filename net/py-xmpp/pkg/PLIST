@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/01 18:38:33 wcmaier Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2009/10/11 17:51:30 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/
 lib/python${MODPY_VERSION}/site-packages/pyxmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyxmpp/_xmlextra.so
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/all.py
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/all.pyc
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/cache.py

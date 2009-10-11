@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/11 04:13:35 alek Exp $
-lib/python${MODPY_VERSION}/site-packages/pyxmpp/_xmlextra.so

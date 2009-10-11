@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/11/04 22:38:52 steven Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2009/10/11 17:51:30 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/_pcap.so
 lib/python${MODPY_VERSION}/site-packages/pcap.py
 lib/python${MODPY_VERSION}/site-packages/pcap.pyc
 lib/python${MODPY_VERSION}/site-packages/pylibpcap-0.6.2-py${MODPY_VERSION}.egg-info

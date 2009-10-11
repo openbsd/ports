@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
-lib/python${MODPY_VERSION}/site-packages/_rl_accel.so
-lib/python${MODPY_VERSION}/site-packages/pyHnj.so
-lib/python${MODPY_VERSION}/site-packages/sgmlop.so

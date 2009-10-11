@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/03 02:13:30 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/11 17:51:30 jasper Exp $
 
 COMMENT=		simple Python framework for web-based applications
 
 MODPY_EGG_VERSION=	2.6
 DISTNAME=		Quixote-${MODPY_EGG_VERSION}
-PKGNAME=		py-quixote-${MODPY_EGG_VERSION}
+PKGNAME=		py-quixote-${MODPY_EGG_VERSION}p0
 
 CATEGORIES=		www
 
