@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2009/09/29 23:59:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2009/10/11 10:33:41 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-PKGNAME =	mupdf-0.4p5
+PKGNAME =	mupdf-0.4p6
 DISTNAME =	mupdf-2009-09-01-source
 
 CATEGORIES =	textproc x11
@@ -24,8 +24,9 @@ MASTER_SITES =	http://spacehopper.org/mirrors/
 
 BUILD_DEPENDS =	::devel/jam
 
-LIB_DEPENDS =	openjpeg::graphics/openjpeg \
-		jpeg.>=62::graphics/jpeg
+LIB_DEPENDS =	jbig2dec::graphics/jbig2dec \
+		jpeg.>=62::graphics/jpeg \
+		openjpeg::graphics/openjpeg
 
 USE_X11 =		Yes
 
@@ -39,6 +40,7 @@ JAMFLAGS = \
 	-sALL_LOCATE_TARGET=${WRKBUILD} \
 	-sBUILD= \
 	-sHAVE_OPENJPEG=yes \
+	-sHAVE_JBIG2DEC=yes \
 	-sOPTIM="${CFLAGS}" \
 	-sOS=LINUX \
 	-sCXXFLAGS="${CXXFLAGS} `freetype-config --cflags` -I${LOCALBASE}/include -I${X11BASE}/include" \
