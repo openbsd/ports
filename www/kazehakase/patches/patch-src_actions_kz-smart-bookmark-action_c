@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_actions_kz-smart-bookmark-action_c,v 1.1 2009/10/11 20:33:00 landry Exp $
+--- src/actions/kz-smart-bookmark-action.c.orig	Sun Oct 11 22:10:25 2009
++++ src/actions/kz-smart-bookmark-action.c	Sun Oct 11 22:12:03 2009
+@@ -884,21 +884,21 @@ update_icon_and_bgtext(KzSmartBookmarkAction *action)
+ 					      title);
+ 			kz_entry_set_arrow(KZ_ENTRY(entry),
+ 					   is_folder);
+-	
+-			if (favicon)
+-			{
+-				kz_entry_set_icon_from_pixbuf(KZ_ENTRY(entry),
+-							      favicon);
+-				g_object_unref(favicon);
+-			}
+-			else
+-			{
+-				kz_entry_set_icon_from_stock(KZ_ENTRY(entry),
+-					     		     stock_id,
+-				     			     GTK_ICON_SIZE_MENU);
+-			}
+-			gtk_widget_queue_resize(GTK_WIDGET(entry));
+ 		}
++		if (favicon)
++		{
++			gtk_entry_set_icon_from_pixbuf(entry,
++						      GTK_ENTRY_ICON_PRIMARY,
++						      favicon);
++			g_object_unref(favicon);
++		}
++		else
++		{
++			gtk_entry_set_icon_from_stock(entry,
++						      GTK_ENTRY_ICON_PRIMARY,
++						      stock_id);
++		}
++		gtk_widget_queue_resize(GTK_WIDGET(entry));
+ 	}
+ }
+ 

@@ -1,0 +1,78 @@
+$OpenBSD: patch-src_widget_kz-entry_h,v 1.1 2009/10/11 20:33:00 landry Exp $
+--- src/widget/kz-entry.h.orig	Tue Oct 28 16:09:13 2008
++++ src/widget/kz-entry.h	Sun Oct 11 21:34:08 2009
+@@ -1,4 +1,4 @@
+-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
++/* -*- Mode: C; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+ 
+ /*
+  *  Copyright (C) 2004 Hiroyuki Ikezoe
+@@ -35,56 +35,32 @@ G_BEGIN_DECLS
+ typedef struct _KzEntry           KzEntry;
+ typedef struct _KzEntryClass      KzEntryClass;
+ 
+-typedef enum
+-{
+-	KZ_ENTRY_ICON_EMPTY,
+-	KZ_ENTRY_ICON_PIXBUF,
+-	KZ_ENTRY_ICON_STOCK
+-} KzEntryIconType;
+-
+-
+ struct _KzEntry
+ {
+-	GtkEntry parent;
+-	gchar *backtext;
+-	
+-	KzEntryIconType icon_type;
+-  
+-	GdkWindow *icon_area;
+-	GdkPixbuf *pixbuf;
++    GtkEntry parent;
++    gchar *background_text;
+ 
+-	gchar *stock_id;
+-	GtkIconSize icon_size;
+-	
+-	gint icon_width;
+-	gint icon_height;
+-
+-	gboolean with_arrow;
+-	gboolean from_outside;
++    gboolean with_arrow;
+ };
+ 
+ struct _KzEntryClass
+ {
+-	GtkEntryClass parent_class;
+-	/* signals */
+-	void (*icon_pressed)   (KzEntry *entry, GdkEventButton *event);
++    GtkEntryClass parent_class;
+ };
+ 
+ GType      kz_entry_get_type                (void) G_GNUC_CONST;
+ GtkWidget *kz_entry_new                     (void);
+-GtkWidget *kz_entry_new_with_stock          (const gchar *stock_id, GtkIconSize size);
+ 
+ void       kz_entry_set_arrow               (KzEntry      *entry,
+-					     gboolean     arrow);
+-void       kz_entry_set_backtext            (KzEntry      *entry,
+-					     const gchar  *text);
+-void       kz_entry_set_icon_from_stock     (KzEntry      *entry,
+-					     const gchar  *stock_id,
+-					     GtkIconSize   size);
+-void       kz_entry_set_icon_from_pixbuf    (KzEntry      *entry,
+-					     GdkPixbuf    *icon);
+-G_CONST_RETURN gchar* kz_entry_get_backtext (KzEntry      *entry);
++                                             gboolean     arrow);
++void       kz_entry_set_backtext     (KzEntry      *entry,
++                                             const gchar  *text);
++G_CONST_RETURN gchar* kz_entry_get_backtext 
++                                            (KzEntry      *entry);
+ 
+ G_END_DECLS
+ 
+ #endif /* __KZ_ENTRY_H__ */
++/* 
++vi:ts=4:nowrap:ai:expandtab:sw=4
++*/

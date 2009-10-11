@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_kz-statusbar_c,v 1.1 2009/10/11 20:33:00 landry Exp $
+--- src/kz-statusbar.c.orig	Sun Oct 11 22:16:38 2009
++++ src/kz-statusbar.c	Sun Oct 11 22:17:26 2009
+@@ -144,7 +144,8 @@ kz_statusbar_init (KzStatusbar *bar)
+ 	gtk_widget_set_tooltip_text(toggle, _("Find direction"));
+ 
+ 	/* find entry */
+-	priv->find_area = kz_entry_new_with_stock(GTK_STOCK_FIND, GTK_ICON_SIZE_MENU);
++	priv->find_area = kz_entry_new();
++	gtk_entry_set_icon_from_stock(GTK_ENTRY(priv->find_area), GTK_ENTRY_ICON_PRIMARY, GTK_STOCK_FIND);
+ 
+ 	gtk_box_pack_start(GTK_BOX(bar), priv->find_area,
+ 			   FALSE, FALSE, 0); 
