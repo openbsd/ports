@@ -1,4 +1,4 @@
-$OpenBSD: patch-libfcgi_Makefile_in,v 1.2 2008/06/01 20:39:26 simon Exp $
+$OpenBSD: patch-libfcgi_Makefile_in,v 1.3 2009/10/11 19:47:25 steven Exp $
 --- libfcgi/Makefile.in.orig	Sun Jan 19 18:21:18 2003
 +++ libfcgi/Makefile.in	Fri May 23 07:12:26 2008
 @@ -115,7 +115,7 @@ libfcgi___la_SOURCES = $(INCLUDE_FILES)       \
@@ -6,7 +6,7 @@ $OpenBSD: patch-libfcgi_Makefile_in,v 1.2 2008/06/01 20:39:26 simon Exp $
  
  libfcgi___la_CFLAGS = @PTHREAD_CFLAGS@
 -libfcgi___la_LDFLAGS = -lfcgi -rpath @libdir@
-+libfcgi___la_LDFLAGS = ${LIBfcgi++_LTVERSION} -lfcgi -rpath @libdir@
++libfcgi___la_LDFLAGS = ${LIBfcgi++_LTVERSION} libfcgi.la -rpath @libdir@
  subdir = libfcgi
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = $(top_builddir)/fcgi_config.h
