@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2009/08/01 14:11:19 sthen Exp $
---- Makefile.in.orig	Wed May  7 23:59:24 2008
-+++ Makefile.in	Thu Oct 30 14:17:32 2008
-@@ -687,13 +687,6 @@ uninstall-info: uninstall-info-recursive
+$OpenBSD: patch-Makefile_in,v 1.7 2009/10/11 16:33:36 ajacoutot Exp $
+--- Makefile.in.orig	Sun Oct 11 18:21:53 2009
++++ Makefile.in	Sun Oct 11 18:21:53 2009
+@@ -688,13 +688,6 @@ uninstall-info: uninstall-info-recursive
  
  
  install-data-local:

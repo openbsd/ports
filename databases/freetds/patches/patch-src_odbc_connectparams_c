@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_odbc_connectparams_c,v 1.1 2009/08/01 14:11:19 sthen Exp $
---- src/odbc/connectparams.c.orig	Sun Jul  1 11:10:52 2007
-+++ src/odbc/connectparams.c	Thu Oct 30 14:17:32 2008
+$OpenBSD: patch-src_odbc_connectparams_c,v 1.2 2009/10/11 16:33:36 ajacoutot Exp $
+--- src/odbc/connectparams.c.orig	Sun Jul  1 12:10:52 2007
++++ src/odbc/connectparams.c	Sun Oct 11 18:21:53 2009
 @@ -46,7 +46,7 @@ TDS_RCSID(var, "$Id: connectparams.c,v 1.72 2007/07/01
   * by build scripts.
   */

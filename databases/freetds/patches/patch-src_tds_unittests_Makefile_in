@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tds_unittests_Makefile_in,v 1.4 2009/08/01 14:11:20 sthen Exp $
---- src/tds/unittests/Makefile.in.orig	Thu May  8 00:59:22 2008
-+++ src/tds/unittests/Makefile.in	Thu Oct 30 17:51:01 2008
+$OpenBSD: patch-src_tds_unittests_Makefile_in,v 1.5 2009/10/11 16:33:36 ajacoutot Exp $
+--- src/tds/unittests/Makefile.in.orig	Sun Oct 11 18:21:53 2009
++++ src/tds/unittests/Makefile.in	Sun Oct 11 18:21:53 2009
 @@ -198,7 +198,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LDFLAGS = @LDFLAGS@
  LIBICONV = @LIBICONV@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_tds_unittests_Makefile_in,v 1.4 2009/08/01 14:11:20 sthen Ex
  LIBTOOL = @LIBTOOL@
  LN_S = @LN_S@
  LTLIBICONV = @LTLIBICONV@
-@@ -623,7 +623,7 @@ check-am: all-am
+@@ -624,7 +624,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile
  installdirs:

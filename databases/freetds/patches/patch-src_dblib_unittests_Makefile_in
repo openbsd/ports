@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dblib_unittests_Makefile_in,v 1.4 2009/08/01 14:11:19 sthen Exp $
---- src/dblib/unittests/Makefile.in.orig	Wed May  7 23:59:19 2008
-+++ src/dblib/unittests/Makefile.in	Thu Oct 30 14:17:32 2008
-@@ -784,7 +784,7 @@ check-am: all-am
+$OpenBSD: patch-src_dblib_unittests_Makefile_in,v 1.5 2009/10/11 16:33:36 ajacoutot Exp $
+--- src/dblib/unittests/Makefile.in.orig	Sun Oct 11 18:21:53 2009
++++ src/dblib/unittests/Makefile.in	Sun Oct 11 18:21:53 2009
+@@ -785,7 +785,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile
  installdirs:

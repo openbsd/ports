@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.5 2009/10/11 16:33:36 ajacoutot Exp $
+--- configure.orig	Sun Oct 11 18:27:25 2009
++++ configure	Sun Oct 11 18:28:01 2009
+@@ -22997,8 +22997,8 @@ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_GNUTLS 1
+ _ACEOF
+ 
+-	CPPFLAGS="$CPPFLAGS `libgnutls-config --cflags`"
+-	NETWORK_LIBS="$NETWORK_LIBS `libgnutls-config --libs`"
++	CPPFLAGS="$CPPFLAGS `pkg-config gnutls --cflags`"
++	NETWORK_LIBS="$NETWORK_LIBS `pkg-config gnutls --libs`"
+ else
+ 	echo "$as_me:$LINENO: checking if openssl is wanted" >&5
+ echo $ECHO_N "checking if openssl is wanted... $ECHO_C" >&6

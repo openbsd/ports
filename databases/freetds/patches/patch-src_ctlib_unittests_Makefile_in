@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ctlib_unittests_Makefile_in,v 1.4 2009/08/01 14:11:19 sthen Exp $
---- src/ctlib/unittests/Makefile.in.orig	Wed May  7 23:59:18 2008
-+++ src/ctlib/unittests/Makefile.in	Thu Oct 30 14:17:32 2008
-@@ -735,7 +735,7 @@ check-am: all-am
+$OpenBSD: patch-src_ctlib_unittests_Makefile_in,v 1.5 2009/10/11 16:33:36 ajacoutot Exp $
+--- src/ctlib/unittests/Makefile.in.orig	Sun Oct 11 18:21:53 2009
++++ src/ctlib/unittests/Makefile.in	Sun Oct 11 18:21:53 2009
+@@ -736,7 +736,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile
  installdirs:
