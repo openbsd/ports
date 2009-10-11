@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.4 2009/09/17 17:43:43 ajacoutot Exp $
---- configure.ac.orig	Sat Sep 12 00:04:45 2009
-+++ configure.ac	Thu Sep 17 18:48:39 2009
+$OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
+--- configure.ac.orig	Sat Sep 19 05:05:11 2009
++++ configure.ac	Sun Oct 11 15:58:13 2009
 @@ -23,14 +23,14 @@ m4_define([ca_major],[0])
- m4_define([ca_minor],[17])
+ m4_define([ca_minor],[18])
  m4_define([ca_version],[ca_major.ca_minor])
  
 -AC_PREREQ(2.63)

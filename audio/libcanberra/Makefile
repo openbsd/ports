@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2009/09/17 17:43:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/10/11 14:11:58 ajacoutot Exp $
 
 COMMENT=	implementation of the Freedesktop sound theme spec.
 
-V=		0.17
+V=		0.18
 DISTNAME=	libcanberra-${V}
 
 SHARED_LIBS +=  canberra             1.1      # .2.1

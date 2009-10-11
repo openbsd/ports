@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/09/17 17:43:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/10/11 14:11:58 ajacoutot Exp $
 %%SHARED%%
 @bin bin/canberra-gtk-play
 include/canberra-gtk.h
@@ -46,11 +46,11 @@ share/gtk-doc/html/libcanberra/libcanberra.devhelp2
 share/gtk-doc/html/libcanberra/right.png
 share/gtk-doc/html/libcanberra/style.css
 share/gtk-doc/html/libcanberra/up.png
-share/vala/
-share/vala/vapi/
-share/vala/vapi/libcanberra-gtk.vapi
-share/vala/vapi/libcanberra.vapi
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/libcanberra.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/vala/
+share/vala/vapi/
+share/vala/vapi/libcanberra-gtk.vapi
+share/vala/vapi/libcanberra.vapi
