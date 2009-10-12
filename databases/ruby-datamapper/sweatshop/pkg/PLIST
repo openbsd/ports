@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/30 02:40:59 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/12 23:28:24 pirofti Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -36,9 +36,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DataMapper/Sweatshop/U
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DataMapper/Sweatshop/UniqueWorker.src/M000021.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/History_txt.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/History_rdoc.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/LICENSE.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/README_textile.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/README_rdoc.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/TODO.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/lib/dm-sweatshop/
@@ -90,10 +90,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/DataMapper/Sweatshop/record-c.ya
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/DataMapper/cdesc-DataMapper.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/created.rid
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/History.txt
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/History.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/LICENSE
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Manifest.txt
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README.textile
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README.rdoc
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Rakefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/TODO
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
