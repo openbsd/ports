@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2009/10/12 10:25:07 jasper Exp $
 
 COMMENT =	library for writing single instance application
 
 GNOME_PROJECT =	libunique
-GNOME_VERSION =	1.0.8
-PKGNAME =	${DISTNAME}p0
+GNOME_VERSION =	1.1.2
 
-SHARED_LIBS =	unique-1.0 0.0 #.2.6
+SHARED_LIBS +=  unique-1.0           1.0      # .100.2
 CATEGORIES =	devel
 
 HOMEPAGE =	http://live.gnome.org/LibUnique
@@ -24,7 +23,8 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--with-x \
-			--enable-gtk-doc=no
+			--enable-gtk-doc=no \
+			--enable-introspection=no
 
 MODULES =	devel/gettext \
 		x11/gnome
