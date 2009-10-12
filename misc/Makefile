@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2009/09/15 20:10:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.126 2009/10/12 12:41:02 nicm Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -91,6 +91,7 @@
      SUBDIR += tkman
      SUBDIR += tpwireless
      SUBDIR += ttyrec
+     SUBDIR += uniutils
      SUBDIR += viz
      SUBDIR += vmware-vncpasswd
      SUBDIR += vttest
