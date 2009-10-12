@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_core_main_c,v 1.1 2009/10/12 00:31:36 ajacoutot Exp $
+--- src/core/main.c.orig	Sun Oct 11 15:07:07 2009
++++ src/core/main.c	Sun Oct 11 15:07:43 2009
+@@ -58,7 +58,11 @@
+ 
+ #include <stdlib.h>
+ #include <sys/types.h>
++#if defined(__OpenBSD__)
++#include <sys/wait.h>
++#else
+ #include <wait.h>
++#endif /* __OpenBSD__ */
+ #include <stdio.h>
+ #include <string.h>
+ #include <signal.h>
