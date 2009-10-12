@@ -1,29 +1,22 @@
-$OpenBSD: patch-src_fr-command-7z_c,v 1.1 2008/11/23 00:11:18 jasper Exp $
+$OpenBSD: patch-src_fr-command-7z_c,v 1.2 2009/10/12 19:01:08 jasper Exp $
 
 Fix a crasher possible with 7z files.
 
---- src/fr-command-7z.c.orig	Sun Nov 23 01:01:39 2008
-+++ src/fr-command-7z.c	Sun Nov 23 01:05:32 2008
-@@ -125,13 +125,15 @@ list__process_line (char     *line,
- 	if (strcmp (line, "") == 0) {
- 		if (p7z_comm->fdata != NULL) {
- 			fdata = p7z_comm->fdata;
--			if (fdata->dir)
--				fdata->name = dir_name_from_path (fdata->full_path);
--			else
--				fdata->name = g_strdup (file_name_from_path (fdata->full_path));
--			fdata->path = remove_level_from_path (fdata->full_path);
--			fr_command_add_file (comm, fdata);
--			p7z_comm->fdata = NULL;
+--- src/fr-command-7z.c.orig	Mon Oct 12 20:49:39 2009
++++ src/fr-command-7z.c	Mon Oct 12 20:50:18 2009
+@@ -130,6 +130,7 @@ list__process_line (char     *line,
+ 			}
+ 			else {
+ 				fdata = p7z_comm->fdata;
 +			if (fdata->full_path) {
-+				if (fdata->dir)
-+					fdata->name = dir_name_from_path (fdata->full_path);
-+				else
-+					fdata->name = g_strdup (file_name_from_path (fdata->full_path));
-+				fdata->path = remove_level_from_path (fdata->full_path);
-+				fr_command_add_file (comm, fdata);
-+				p7z_comm->fdata = NULL;
+ 				if (fdata->dir)
+ 					fdata->name = dir_name_from_path (fdata->full_path);
+ 				else
+@@ -137,6 +138,7 @@ list__process_line (char     *line,
+ 				fdata->path = remove_level_from_path (fdata->full_path);
+ 				fr_command_add_file (comm, fdata);
+ 				p7z_comm->fdata = NULL;
 +			}
+ 			}
  		}
  		return;
- 	}
