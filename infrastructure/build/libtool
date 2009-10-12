@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.85 2009/10/12 09:58:22 steven Exp $
+# $OpenBSD: libtool,v 1.86 2009/10/12 18:14:55 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -740,6 +740,8 @@ if (!($mode && grep { $_ eq $mode } @valid_modes)) {
 $gp->configure('permute');
 
 if ($mode eq 'compile') {
+	my $lofile = LoFile->new;
+
 	$gp->getoptions('o=s'		=> \$opts{'o'},
 			'prefer-pic'	=> \$opts{'prefer-pic'},
 			'prefer-non-pic'=> \$opts{'prefer-non-pic'},
@@ -786,7 +788,6 @@ if ($mode eq 'compile') {
 	(my $nonpicobj = $ofile) =~ s/\.lo$/.o/;
 	my $picobj = "$ltdir/$nonpicobj";
 
-	my $lofile = LoFile->new;
 	$lofile->{picobj} = $picobj if $pic;
 	$lofile->{nonpicobj} = $nonpicobj if $nonpic;
 	$lofile->compile($ltprog, $odir, \@ARGV);
@@ -960,7 +961,6 @@ if ($mode eq 'compile') {
 		my $program = Program->new;
 		$program->{outfilepath} = $outfile;
 		# XXX give higher priority to dirs of not installed libs
-		# XXX no static linking yet here
 		if ($opts{'export-dynamic'}) {
 			push(@ARGV, "-Wl,-E");
 		}
@@ -988,6 +988,8 @@ if ($mode eq 'compile') {
 			$program->write_wrapper();
 		}
 	} elsif ($linkmode == LIBRARY) {
+		my $lainfo = LaFile->new;
+
 		$shared = 1 if ($opts{'version-info'} ||
 				$opts{'avoid-version'} ||
 				$opts{'module'});
@@ -1045,7 +1047,6 @@ if ($mode eq 'compile') {
 
 		Trace::debug {"SHARED: $shared\nSTATIC: $static\n"};
 
-		my $lainfo = LaFile->new;
 		$lainfo->{'libname'} = $libname;
 		if ($shared) {
 			$lainfo->{'dlname'} = $sharedlib;
@@ -1312,8 +1313,8 @@ sub internal_parse_linkargs
 				push(@$result, $a);
 				internal_parse_linkargs($result, $deplibs,
 				    $Rresolved, $libsearchdirs, $orderedlibs,
-				    $dirs, $libs, $libstofind, \@largs, $la,
-				    $level+1) if @largs;
+				    $dirs, $libs, $libstofind, \@largs,
+				    $lashared, $la, $level+1) if @largs;
 			} else {
 				push @$orderedlibs, $key;
 			}
