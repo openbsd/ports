@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/17 17:36:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/10/12 00:29:26 ajacoutot Exp $
 
 COMMENT=	XDG sound theme
 
-DISTNAME=	sound-theme-freedesktop-0.6
+DISTNAME=	sound-theme-freedesktop-0.7
 CATEGORIES=	audio
 
 EXTRACT_SUFX=	.tar.bz2
@@ -18,12 +18,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://0pointer.de/public/
+MASTER_SITES=	http://cgit.freedesktop.org/sound-theme-freedesktop/snapshot/
 
 MODULES=	textproc/intltool
 
-USE_GMAKE=	Yes
+BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
+		:${_AUTOMAKE_SPEC}:devel/automake/${AUTOMAKE_VERSION}
 
-CONFIGURE_STYLE=gnu
+USE_GMAKE=	Yes
+NO_REGRESS=	Yes
+
+AUTOMAKE_VERSION=1.9
+AUTOCONF_VERSION=2.62
+
+do-configure:
+	cd ${WRKSRC} && \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		./autogen.sh \
 
 .include <bsd.port.mk>
