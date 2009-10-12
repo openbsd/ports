@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/31 12:09:51 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/12 16:26:34 pirofti Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -54,10 +54,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/St
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Base.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Base.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Base.src/M000033.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Base.src/M000034.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Base.src/M000035.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Base.src/M000036.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Base.src/M000037.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/BasicAuth.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/BasicAuth.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/BasicAuth.src/M000019.html
@@ -66,8 +66,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/St
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/BasicAuth.src/M000022.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Form.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Form.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Form.src/M000037.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Form.src/M000038.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/Form.src/M000039.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/OpenID.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/OpenID.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/OpenID.src/M000023.html
@@ -80,6 +80,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/St
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/OpenID.src/M000030.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/OpenID.src/M000031.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/OpenID.src/M000032.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/Authentication/Strategies/Basic/OpenID.src/M000033.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/created.rid
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/files/LICENSE.html
@@ -176,6 +177,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Authentication/Strategies/B
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Authentication/Strategies/Basic/OpenID/on_success%21-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Authentication/Strategies/Basic/OpenID/openid_callback_url-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Authentication/Strategies/Basic/OpenID/openid_store-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Authentication/Strategies/Basic/OpenID/optional_reg_fields-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Authentication/Strategies/Basic/OpenID/required_reg_fields-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Authentication/Strategies/Basic/OpenID/run%21-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/Authentication/Strategies/Basic/cdesc-Basic.yaml
