@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/03/13 12:29:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/10/12 18:45:38 jasper Exp $
 @bin bin/magnifier
 include/gnome-mag-1.0/
 include/gnome-mag-1.0/magnifier/
@@ -49,6 +49,7 @@ share/locale/bn_IN/LC_MESSAGES/gnome-mag.mo
 share/locale/br/LC_MESSAGES/gnome-mag.mo
 share/locale/bs/LC_MESSAGES/gnome-mag.mo
 share/locale/ca/LC_MESSAGES/gnome-mag.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-mag.mo
 share/locale/cs/LC_MESSAGES/gnome-mag.mo
 share/locale/cy/LC_MESSAGES/gnome-mag.mo
 share/locale/da/LC_MESSAGES/gnome-mag.mo
@@ -82,6 +83,7 @@ share/locale/ku/LC_MESSAGES/gnome-mag.mo
 share/locale/ky/LC_MESSAGES/gnome-mag.mo
 share/locale/lt/LC_MESSAGES/gnome-mag.mo
 share/locale/lv/LC_MESSAGES/gnome-mag.mo
+share/locale/mai/LC_MESSAGES/gnome-mag.mo
 share/locale/mg/LC_MESSAGES/gnome-mag.mo
 share/locale/mi/LC_MESSAGES/gnome-mag.mo
 share/locale/mk/LC_MESSAGES/gnome-mag.mo
