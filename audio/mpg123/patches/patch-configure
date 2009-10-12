@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure,v 1.1 2009/10/12 23:45:21 naddy Exp $
+--- configure.orig	Thu Oct  8 23:29:52 2009
++++ configure	Mon Oct 12 19:05:00 2009
+@@ -12651,10 +12651,10 @@ fi
+ # opt-in for IEEE754 floating point action
+ # We want to make sure not to apply hacks relying on IEEE754 storage format on platforms where we did not make sure that this actually is valid.
+ # It _should_ be fine for about all computers still out there, but we play safe.
+-ieee=no
++ieee=yes
+ case $host in
+-  i?86-*|x86_64-*|powerpc*|sparc*)
+-    ieee=yes
++  vax-*)
++    ieee=no
+   ;;
+ esac
+ if test "x$ieee" = xyes; then
+@@ -14481,8 +14481,8 @@ esac
+ for i in $more_sources
+ do
+   # Echo make sure every file is only once in the list.
+-  echo "$DECODER_OBJ" | grep -v -w "$i\.\$(OBJEXT)" && DECODER_OBJ="$DECODER_OBJ $i.\$(OBJEXT)"
+-  echo "$DECODER_LOBJ" | grep -v -w "$i\.lo" && DECODER_LOBJ="$DECODER_LOBJ $i.lo"
++  echo "$DECODER_OBJ" | grep -q -v -w "$i\.\$(OBJEXT)" && DECODER_OBJ="$DECODER_OBJ $i.\$(OBJEXT)"
++  echo "$DECODER_LOBJ" | grep -q -v -w "$i\.lo" && DECODER_LOBJ="$DECODER_LOBJ $i.lo"
+ done
+ 
+ 
