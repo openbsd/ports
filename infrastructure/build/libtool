@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.86 2009/10/12 18:14:55 steven Exp $
+# $OpenBSD: libtool,v 1.87 2009/10/12 18:31:37 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -664,7 +664,6 @@ my @tags;		# list of --tag options passed to libtool
 my $deplibs = [];	# list of dependent libraries (both -L and -l flags)
 my $libs = {};		# libraries
 my $libstofind = {};
-#my $orderedlibs = [];	# ordered library keys (may contain duplicates)
 my $dirs = {};		# paths to find libraries
 
 # just to be clear:
@@ -950,9 +949,9 @@ if ($mode eq 'compile') {
 	Trace::debug {"objs = @objs\n"};
 	Trace::debug {"sobjs = @sobjs\n"};
 
-	my $orderedlibs = [];
 	my $seen_la_shared = 0;
-	my $args = parse_linkargs_list(\@ARGV, 1, \$seen_la_shared, $orderedlibs);
+	# last argument to parse_linkargs_list won't be used in pass 1
+	my $args = parse_linkargs_list(\@ARGV, 1, \$seen_la_shared, undef);
 	Trace::debug {"found .la file referring to shared library, and will remember\n"};
 	@ARGV = @$args;
 	Trace::debug {"deplibs = @$deplibs\n"};
@@ -1249,6 +1248,7 @@ sub resolve_la_list
 # -Lfoo, -lfoo, foo.a
 # no recursion in pass 2
 # fill orderedlibs array, which is the sequence after resolving all .la
+# (this list may contain duplicates)
 
 sub internal_parse_linkargs
 {
@@ -1312,7 +1312,7 @@ sub internal_parse_linkargs
 			if ($la) {
 				push(@$result, $a);
 				internal_parse_linkargs($result, $deplibs,
-				    $Rresolved, $libsearchdirs, $orderedlibs,
+				    $Rresolved, $libsearchdirs, undef,
 				    $dirs, $libs, $libstofind, \@largs,
 				    $lashared, $la, $level+1) if @largs;
 			} else {
