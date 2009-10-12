@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/10 06:34:29 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2009/10/12 11:17:59 steven Exp $
 
 COMMENT=	firewall GUI
-DISTNAME=	fwbuilder-3.0.4
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	fwbuilder-3.0.7
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.fwbuilder.org/

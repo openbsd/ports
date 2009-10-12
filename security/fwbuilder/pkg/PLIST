@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/04/13 14:12:02 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/10/12 11:17:59 steven Exp $
 @bin bin/fwb_iosacl
 @bin bin/fwb_ipf
 @bin bin/fwb_ipfw
@@ -36,10 +36,31 @@ share/doc/fwbuilder/README.policy_import
 share/doc/fwbuilder/README.routing
 ${SHARE}/
 ${SHARE}/help/
+${SHARE}/help/ipfw_Classify_en_US.html
 ${SHARE}/help/iptAdvancedDialog_en_US.html
+${SHARE}/help/iptables_Branch_en_US.html
+${SHARE}/help/iptables_Classify_en_US.html
+${SHARE}/help/iptables_Route_en_US.html
+${SHARE}/help/iptables_Tag_en_US.html
+${SHARE}/help/iptables_rule_options_en_US.html
 ${SHARE}/help/linux24AdvancedDialog_en_US.html
 ${SHARE}/help/main_en_US.html
 ${SHARE}/help/pfAdvancedDialog_en_US.html
+${SHARE}/help/pf_Branch_en_US.html
+${SHARE}/help/pf_Classify_en_US.html
+${SHARE}/help/pf_Route_en_US.html
+${SHARE}/help/pf_Tag_en_US.html
+${SHARE}/help/pf_rule_options_en_US.html
+${SHARE}/help/tip01_en_US.html
+${SHARE}/help/tip02_en_US.html
+${SHARE}/help/tip03_en_US.html
+${SHARE}/help/tip04_en_US.html
+${SHARE}/help/tip05_en_US.html
+${SHARE}/help/tip06_en_US.html
+${SHARE}/help/tip07_en_US.html
+${SHARE}/help/tip08_en_US.html
+${SHARE}/help/tip09_en_US.html
+${SHARE}/help/tip10_en_US.html
 ${SHARE}/locale/
 ${SHARE}/locale/fwbuilder_ja.qm
 ${SHARE}/locale/fwbuilder_ru.qm

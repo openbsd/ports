@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gui_ObjectManipulator_cpp,v 1.1 2009/10/12 11:17:59 steven Exp $
+--- src/gui/ObjectManipulator.cpp.orig	Fri Sep 18 23:28:37 2009
++++ src/gui/ObjectManipulator.cpp	Sat Sep 19 19:08:47 2009
+@@ -3423,7 +3423,7 @@ void ObjectManipulator::reopenCurrentItemParent()
+     QTreeWidgetItem *itm = current_tree_view->currentItem();
+     if (itm)
+         itm = itm->parent();
+-    if (!itm)
++    if (!itm || !itm->parent())
+         return;
+     itm->parent()->setExpanded(false);
+     itm->parent()->setExpanded(true);
