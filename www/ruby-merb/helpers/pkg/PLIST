@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/31 12:40:07 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/10/12 16:15:07 pirofti Exp $
 @conflict ruby-merb_helpers-<=0.9.7
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -422,6 +422,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/models/third_gene
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_check_box_specs/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_check_box_specs/basic.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_check_box_specs/basic_unchecked.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_check_box_specs/checked.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_check_box_specs/errors.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_check_box_specs/label.html.erb
@@ -454,12 +455,14 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_radio
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/basic.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/blank.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/label.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/multiple.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/prompt.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/with_options.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/with_options_with_blank.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_text_area_specs/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_text_area_specs/basic.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_text_area_specs/label.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_text_field_specs/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_text_field_specs/basic.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/button_specs/
@@ -551,11 +554,14 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/password_fi
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/password_field_specs/disabled.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_button_specs/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_button_specs/basic.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_button_specs/checked.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_button_specs/disabled.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_button_specs/label.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_button_specs/unchecked.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_group_specs/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_group_specs/attributes.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_group_specs/basic.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_group_specs/checked.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_group_specs/hash.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/radio_group_specs/specific_attributes.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/relative_date_span_specs/
@@ -568,8 +574,10 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/relative_da
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/relative_date_specs/relative_tomorrow.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/relative_date_specs/relative_yesterday.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/select_specs/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/select_specs/basic.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/select_specs/blank.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/select_specs/multiple.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/select_specs/selected.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/submit_specs/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/submit_specs/disabled_submit.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/submit_specs/submit_with_label.html.erb
@@ -589,6 +597,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/text_field_
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/text_field_specs/class.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/text_field_specs/disabled.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/text_field_specs/label.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/text_field_specs/symbolized_name.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/config/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/config/environments/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/config/environments/development.rb
@@ -603,13 +612,11 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/public/images/merb.jp
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/public/merb.fcgi
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/public/stylesheets/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/public/stylesheets/master.css
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb.main.pid
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb_helpers_config_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb_helpers_date_time_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb_helpers_form_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb_helpers_tag_helper_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb_helpers_text_spec.rb
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb_test.log
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/numeric_extlib_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/ordinalize_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec_helper.rb
