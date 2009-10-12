@@ -1,6 +1,6 @@
-$OpenBSD: patch-jpeg_c,v 1.1.1.1 2001/06/19 03:22:33 angelos Exp $
---- jpeg.c.orig	Fri Aug  4 19:35:07 1995
-+++ jpeg.c	Sun Jun 10 01:42:22 2001
+$OpenBSD: patch-jpeg_c,v 1.2 2009/10/12 22:44:56 naddy Exp $
+--- jpeg.c.orig	Sat Aug  5 01:35:07 1995
++++ jpeg.c	Tue Oct 13 00:42:55 2009
 @@ -65,6 +65,7 @@
   *==============*/
  
@@ -18,3 +18,15 @@ $OpenBSD: patch-jpeg_c,v 1.1.1.1 2001/06/19 03:22:33 angelos Exp $
  
  
  #define HEADER_SIZE 607   /*JFIF header size used on output images*/
+@@ -514,7 +515,11 @@ ReadJPEG(mf, fp)
+ #ifdef JPEG4
+   buffer_height = 8;  /* could be 2, 4,8 rows high */
+ #else
++#if JPEG_LIB_VERSION < 70
+   buffer_height = cinfo.max_v_samp_factor * cinfo.min_DCT_scaled_size;
++#else
++  buffer_height = cinfo.max_v_samp_factor * cinfo.min_DCT_v_scaled_size;
++#endif
+ #endif
+   
+   for(cp=0,compptr = cinfo.comp_info;cp<cinfo.num_components;
