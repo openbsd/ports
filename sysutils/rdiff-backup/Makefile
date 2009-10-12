@@ -1,11 +1,10 @@
-#	$OpenBSD: Makefile,v 1.5 2009/03/25 13:39:40 jasper Exp $
+#	$OpenBSD: Makefile,v 1.6 2009/10/12 23:01:22 jsg Exp $
 
 COMMENT=	incremental backup
 DISTNAME=	rdiff-backup-1.0.5
 PKGNAME=	${DISTNAME}p2
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.nongnu.org/rdiff-backup/
-MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
