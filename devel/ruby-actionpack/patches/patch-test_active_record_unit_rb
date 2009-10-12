@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_active_record_unit_rb,v 1.1 2009/10/12 14:26:01 pirofti Exp $
+--- test/active_record_unit.rb.orig	Mon Oct 12 17:17:30 2009
++++ test/active_record_unit.rb	Mon Oct 12 17:20:23 2009
+@@ -16,7 +16,7 @@ if defined?(ActiveRecord) && defined?(Fixtures)
+ else
+   $stderr.print 'Attempting to load Active Record... '
+   begin
+-    PATH_TO_AR = "#{File.dirname(__FILE__)}/../../activerecord/lib"
++    PATH_TO_AR = "/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib"
+     raise LoadError, "#{PATH_TO_AR} doesn't exist" unless File.directory?(PATH_TO_AR)
+     $LOAD_PATH.unshift PATH_TO_AR
+     require 'active_record'

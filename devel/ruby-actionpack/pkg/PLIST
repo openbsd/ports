@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/08/20 22:57:03 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.13 2009/10/12 14:26:01 pirofti Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -38,6 +38,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Asser
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Assertions/TagAssertions.src/M000242.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Base.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Base.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Base.src/M000311.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Base.src/M000312.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Base.src/M000313.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Base.src/M000314.html
@@ -69,7 +70,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Base.
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Base.src/M000340.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Base.src/M000341.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Base.src/M000342.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Base.src/M000343.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Benchmarking/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Benchmarking/ClassMethods.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Benchmarking/ClassMethods.src/
@@ -78,11 +78,11 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Bench
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/CGIHandler/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/CGIHandler.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/CGIHandler.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/CGIHandler.src/M000413.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/CGIHandler.src/M000412.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/CGIHandler/ProperStream.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/CGIHandler/ProperStream.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/CGIHandler/ProperStream.src/M000413.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/CGIHandler/ProperStream.src/M000414.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/CGIHandler/ProperStream.src/M000415.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Caching/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Caching.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Caching.src/
@@ -130,6 +130,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Cooki
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Cookies.src/M000195.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Dispatcher.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Dispatcher.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Dispatcher.src/M000344.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Dispatcher.src/M000345.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Dispatcher.src/M000346.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Dispatcher.src/M000347.html
@@ -141,7 +142,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Dispa
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Dispatcher.src/M000353.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Dispatcher.src/M000354.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Dispatcher.src/M000355.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Dispatcher.src/M000356.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Failsafe.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Failsafe.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Failsafe.src/M000282.html
@@ -299,15 +299,15 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloa
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloader.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloader.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloader.src/M000306.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloader.src/M000307.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloader/BodyWrapper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloader/BodyWrapper.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloader/BodyWrapper.src/M000307.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloader/BodyWrapper.src/M000308.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloader/BodyWrapper.src/M000309.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloader/BodyWrapper.src/M000310.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reloader/BodyWrapper.src/M000311.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000356.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000357.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000358.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000359.html
@@ -330,7 +330,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reque
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000376.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000377.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000378.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000379.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000380.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000381.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000382.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000383.html
@@ -348,18 +348,17 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Reque
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000395.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000396.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000397.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000398.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000399.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000400.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000401.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000402.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000403.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000404.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000406.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000405.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000407.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000408.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000409.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000410.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000411.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Request.src/M000412.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/RequestForgeryProtection/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/RequestForgeryProtection.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/RequestForgeryProtection.src/
@@ -534,7 +533,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/TestR
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/TestResponse.src/M000256.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/TestUploadedFile.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/TestUploadedFile.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/TestUploadedFile.src/M000344.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/TestUploadedFile.src/M000343.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Translation.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Translation.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionController/Translation.src/M000179.html
@@ -592,18 +591,18 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/Ass
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper.src/M000435.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper.src/M000434.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper/AtomBuilder.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper/AtomBuilder.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper/AtomBuilder.src/M000439.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper/AtomBuilder.src/M000438.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.src/M000435.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.src/M000436.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.src/M000437.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.src/M000438.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/BenchmarkHelper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/BenchmarkHelper.src/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/BenchmarkHelper.src/M000434.html
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/BenchmarkHelper.src/M000433.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/CacheHelper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/CacheHelper.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/CacheHelper.src/M000510.html
@@ -633,6 +632,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/Deb
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/DebugHelper.src/M000509.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormHelper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormHelper.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormHelper.src/M000423.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormHelper.src/M000424.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormHelper.src/M000425.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormHelper.src/M000426.html
@@ -642,9 +642,9 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/For
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormHelper.src/M000430.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormHelper.src/M000431.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormHelper.src/M000432.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormHelper.src/M000433.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormOptionsHelper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000443.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000444.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000445.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/FormOptionsHelper.src/M000446.html
@@ -738,10 +738,10 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/Rec
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/RecordTagHelper.src/M000464.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/SanitizeHelper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/SanitizeHelper.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/SanitizeHelper.src/M000439.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/SanitizeHelper.src/M000440.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/SanitizeHelper.src/M000441.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/SanitizeHelper.src/M000442.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/SanitizeHelper.src/M000443.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/ScriptaculousHelper.src/M000459.html
@@ -776,6 +776,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/Tra
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/TranslationHelper.src/M000454.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/UrlHelper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/UrlHelper.src/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000415.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000416.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000417.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000418.html
@@ -783,7 +784,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/Url
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000420.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000421.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000422.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Helpers/UrlHelper.src/M000423.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/Partials.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/ReloadableTemplate/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/ActionView/ReloadableTemplate.html
@@ -1445,9 +1445,8 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionController/Reloader/BodyWr
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionController/Reloader/BodyWrapper/method_missing-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionController/Reloader/BodyWrapper/new-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionController/Reloader/BodyWrapper/respond_to%3f-i.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionController/Reloader/call-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionController/Reloader/cdesc-Reloader.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionController/Reloader/new-c.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionController/Reloader/run-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionController/RenderError/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionController/RenderError/cdesc-RenderError.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionController/Request/
@@ -1860,6 +1859,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionView/Helpers/FormHelper/te
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionView/Helpers/FormOptionsHelper/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionView/Helpers/FormOptionsHelper/cdesc-FormOptionsHelper.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionView/Helpers/FormOptionsHelper/collection_select-i.yaml
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionView/Helpers/FormOptionsHelper/grouped_collection_select-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionView/Helpers/FormOptionsHelper/grouped_options_for_select-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionView/Helpers/FormOptionsHelper/option_groups_from_collection_for_select-i.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/ActionView/Helpers/FormOptionsHelper/options_for_select-i.yaml
@@ -2577,6 +2577,9 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/public/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/public/404.html
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/public/500.da.html
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/public/500.html
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/public/absolute/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/public/absolute/test.css
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/public/absolute/test.js
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/public/images/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/public/images/rails.png
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/fixtures/public/javascripts/
@@ -2710,6 +2713,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/date_helper_i18n_tes
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/date_helper_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/erb_util_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/form_helper_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/form_options_helper_i18n_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/form_options_helper_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/form_tag_helper_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/template/javascript_helper_test.rb
