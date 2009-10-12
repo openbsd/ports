@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2009/10/11 09:43:08 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2009/10/12 22:11:48 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -133,7 +133,8 @@ CONFIGURE_ARGS +=-release
 
 
 .if ${FLAVOR:L:Mno_examples}
-SUBTARGETS = 		sub-moc \
+SUBTARGETS = 		sub-tools-bootstrap \
+			sub-moc \
 			sub-rcc \
 			sub-uic \
 			sub-corelib \
