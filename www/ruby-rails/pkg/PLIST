@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/08/20 22:57:03 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/10/12 17:33:33 pirofti Exp $
 bin/rails
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/CHANGELOG
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/MIT-LICENSE
@@ -46,6 +48,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/initializers/session_store
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/locales/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/locales/en.yml
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/routes.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/configs/seeds.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/dispatches/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/dispatches/config.ru
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/dispatches/dispatch.fcgi
