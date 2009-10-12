@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.15 2008/02/09 16:52:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2009/10/12 10:18:32 ajacoutot Exp $
 %%SHARED%%
-bin/libgtop_daemon2
+@bin bin/libgtop_daemon2
 @mode 2555
 @group kmem
-bin/libgtop_server2
+@bin bin/libgtop_server2
 @mode
 @group
 include/libgtop-2.0/
@@ -144,8 +144,6 @@ share/locale/en_GB/LC_MESSAGES/libgtop-2.0.mo
 share/locale/eo/LC_MESSAGES/libgtop-2.0.mo
 share/locale/es/LC_MESSAGES/libgtop-2.0.mo
 share/locale/et/LC_MESSAGES/libgtop-2.0.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/libgtop-2.0.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
