@@ -1,0 +1,20 @@
+Uniutils consists of five programs for finding out what is in a Unicode
+file.
+
+uniname defaults to printing the character offset of each character, its
+byte offset, its hex code value, its encoding, the glyph itself, and its
+name.
+
+unidesc reports the character ranges to which different portions of the
+text belong. It can also be used to identify Unicode encodings (e.g.
+UTF-16be) flagged by magic numbers.
+
+unihist generates a histogram of the characters in its input, which must
+be encoded in UTF-8 Unicode.
+
+ExplicateUTF8 is intended for debugging or for learning about Unicode.
+It determines and explains the validity of a sequence of bytes as a UTF8
+encoding.
+
+unireverse is a filter that reverses UTF-8 strings character-by-
+character (as opposed to byte-by-byte).

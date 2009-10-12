@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/12 12:38:28 nicm Exp $
+@bin bin/ExplicateUTF8
+@bin bin/unidesc
+@bin bin/unifuzz
+@bin bin/unihist
+@bin bin/uniname
+@bin bin/unireverse
+@man man/man1/ExplicateUTF8.1
+@man man/man1/unidesc.1
+@man man/man1/unifuzz.1
+@man man/man1/unihist.1
+@man man/man1/uniname.1
+@man man/man1/unireverse.1
