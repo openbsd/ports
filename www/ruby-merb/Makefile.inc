@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.4 2009/01/31 12:40:06 bernd Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2009/10/12 15:34:12 pirofti Exp $
 
-VERSION ?=	1.0.8.1
+VERSION ?=	1.0.12
 PKGNAME ?=	ruby-${DISTNAME}
 CATEGORIES ?=	www
 
