@@ -1,7 +1,7 @@
-$OpenBSD: patch-thumbnailer_Makefile_in,v 1.4 2009/05/07 06:18:13 ajacoutot Exp $
---- thumbnailer/Makefile.in.orig	Thu May  7 02:00:58 2009
-+++ thumbnailer/Makefile.in	Thu May  7 08:03:24 2009
-@@ -286,8 +286,9 @@ schema_files = \
+$OpenBSD: patch-thumbnailer_Makefile_in,v 1.5 2009/10/12 10:19:32 jasper Exp $
+--- thumbnailer/Makefile.in.orig	Mon Oct 12 03:44:02 2009
++++ thumbnailer/Makefile.in	Mon Oct 12 12:10:39 2009
+@@ -288,8 +288,9 @@ schema_files = \
  	gsf-office-thumbnailer.schemas.in
  
  schemas = gsf-office-thumbnailer.schemas
