@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/10/12 23:01:22 jsg Exp $
+# $OpenBSD: Makefile,v 1.5 2009/10/12 23:52:08 naddy Exp $
 
 COMMENT=	Library for delta compression of streams
 DISTNAME=	librsync-0.9.7
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS=	rsync 1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=librsync/}
