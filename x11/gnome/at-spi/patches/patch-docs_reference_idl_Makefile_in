@@ -1,8 +1,8 @@
-$OpenBSD: patch-docs_reference_idl_Makefile_in,v 1.1 2008/11/21 17:00:48 jasper Exp $
---- docs/reference/idl/Makefile.in.orig	Fri Nov 21 16:51:07 2008
-+++ docs/reference/idl/Makefile.in	Fri Nov 21 16:51:12 2008
-@@ -255,7 +255,7 @@ sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-docs_reference_idl_Makefile_in,v 1.2 2009/10/12 18:10:37 jasper Exp $
+--- docs/reference/idl/Makefile.in.orig	Tue Sep 22 08:52:22 2009
++++ docs/reference/idl/Makefile.in	Mon Oct 12 14:13:40 2009
+@@ -228,7 +228,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  doxygen_configfile = Doxyfile
  EXTRA_DIST = Doxyfile README html
 -referencetopdir = $(datadir)/doc/at-spi-$(VERSION)/reference

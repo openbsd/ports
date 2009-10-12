@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/07 08:40:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/10/12 18:10:37 jasper Exp $
 include/at-spi-1.0/
 include/at-spi-1.0/cspi/
 include/at-spi-1.0/cspi/spi-impl.h
@@ -79,6 +79,13 @@ lib/python${MODPY_VERSION}/site-packages/pyatspi/utils.py
 lib/python${MODPY_VERSION}/site-packages/pyatspi/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/pyatspi/utils.pyo
 @bin libexec/at-spi-registryd
+share/at-spi/
+share/at-spi/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/at-spi/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/at-spi/xdg/autostart/at-spi-registryd.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/at-spi-registryd.desktop
 share/doc/at-spi/
 share/doc/at-spi/reference/
 share/doc/at-spi/reference/html/
@@ -132,7 +139,7 @@ share/doc/at-spi/reference/html/Accessibility__Value_8idl-source.html
 share/doc/at-spi/reference/html/Accessibility__Value_8idl.html
 share/doc/at-spi/reference/html/annotated.html
 share/doc/at-spi/reference/html/classes.html
-share/doc/at-spi/reference/html/dir_1c420e5db3d0f51c9ee20dd290d39df0.html
+share/doc/at-spi/reference/html/dir_a7fbb50c70f6b5de3e726d4621996acc.html
 share/doc/at-spi/reference/html/dirs.html
 share/doc/at-spi/reference/html/doxygen.css
 share/doc/at-spi/reference/html/doxygen.png
@@ -289,6 +296,8 @@ share/idl/at-spi-1.0/Accessibility_Text.idl
 share/idl/at-spi-1.0/Accessibility_Value.idl
 share/locale/ang/LC_MESSAGES/at-spi.mo
 share/locale/ar/LC_MESSAGES/at-spi.mo
+share/locale/as/LC_MESSAGES/at-spi.mo
+share/locale/ast/LC_MESSAGES/at-spi.mo
 share/locale/az/LC_MESSAGES/at-spi.mo
 share/locale/be/LC_MESSAGES/at-spi.mo
 share/locale/be@latin/LC_MESSAGES/at-spi.mo
@@ -297,6 +306,8 @@ share/locale/bn/LC_MESSAGES/at-spi.mo
 share/locale/bn_IN/LC_MESSAGES/at-spi.mo
 share/locale/bs/LC_MESSAGES/at-spi.mo
 share/locale/ca/LC_MESSAGES/at-spi.mo
+share/locale/ca@valencia/LC_MESSAGES/at-spi.mo
+share/locale/crh/LC_MESSAGES/at-spi.mo
 share/locale/cs/LC_MESSAGES/at-spi.mo
 share/locale/cy/LC_MESSAGES/at-spi.mo
 share/locale/da/LC_MESSAGES/at-spi.mo
@@ -324,18 +335,21 @@ share/locale/is/LC_MESSAGES/at-spi.mo
 share/locale/it/LC_MESSAGES/at-spi.mo
 share/locale/ja/LC_MESSAGES/at-spi.mo
 share/locale/ka/LC_MESSAGES/at-spi.mo
+share/locale/kn/LC_MESSAGES/at-spi.mo
 share/locale/ko/LC_MESSAGES/at-spi.mo
 share/locale/ku/LC_MESSAGES/at-spi.mo
 share/locale/lt/LC_MESSAGES/at-spi.mo
+share/locale/lv/LC_MESSAGES/at-spi.mo
+share/locale/mai/LC_MESSAGES/at-spi.mo
 share/locale/mk/LC_MESSAGES/at-spi.mo
 share/locale/ml/LC_MESSAGES/at-spi.mo
 share/locale/mn/LC_MESSAGES/at-spi.mo
 share/locale/mr/LC_MESSAGES/at-spi.mo
 share/locale/ms/LC_MESSAGES/at-spi.mo
 share/locale/nb/LC_MESSAGES/at-spi.mo
-share/locale/nds_DE/
-share/locale/nds_DE/LC_MESSAGES/
-share/locale/nds_DE/LC_MESSAGES/at-spi.mo
+share/locale/nds/
+share/locale/nds/LC_MESSAGES/
+share/locale/nds/LC_MESSAGES/at-spi.mo
 share/locale/ne/LC_MESSAGES/at-spi.mo
 share/locale/nl/LC_MESSAGES/at-spi.mo
 share/locale/nn/LC_MESSAGES/at-spi.mo
