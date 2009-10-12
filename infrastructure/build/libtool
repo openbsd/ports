@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.87 2009/10/12 18:31:37 steven Exp $
+# $OpenBSD: libtool,v 1.88 2009/10/12 19:02:14 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -338,8 +338,7 @@ sub link
 	my $argv = main::resolve_la_list(\@ARGV);
 	Trace::debug {"argvstring (post resolve_la): @$argv\n"};
 	my $orderedlibs = [];
-	my $dummy = 0;
-	$argv = main::parse_linkargs_list($argv, 0, \$dummy, $orderedlibs);
+	$argv = main::parse_linkargs_list($argv, 0, undef, $orderedlibs);
 	Trace::debug {"orderedlibs = @$orderedlibs\n"};
 	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
 	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
@@ -569,8 +568,7 @@ sub link
 	my $argv = main::resolve_la_list(\@ARGV);
 	Trace::debug {"argvstring (post resolve_la): @$argv\n"};
 	my $orderedlibs = [];
-	my $dummy = 0;
-	$argv = main::parse_linkargs_list($argv, 0, \$dummy, $orderedlibs);
+	$argv = main::parse_linkargs_list($argv, 0, undef, $orderedlibs);
 	Trace::debug {"orderedlibs = @$orderedlibs\n"};
 	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
 	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
@@ -1337,10 +1335,10 @@ sub internal_parse_linkargs
 			my $dlname = $lainfo->{'dlname'};
 			my $oldlib = $lainfo->{'old_library'};
 			my $libdir = $lainfo->{'libdir'};
-			if ($dlname ne '') {
-				$$lashared = 1;
-			}
 			if ($la) {
+				if ($dlname ne '') {
+					$$lashared = 1;
+				}
 				push(@$result, $a);
 				push(@$deplibs, $fulla) if ($libdir ne '');
 				next;
