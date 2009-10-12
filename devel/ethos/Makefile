@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/11 13:37:47 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/10/12 18:21:14 landry Exp $
 
 COMMENT =	plugin framework library
 
 VERSION =	0.2.0
 DISTNAME =	ethos-${VERSION}
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 SHARED_LIBS=	ethos-1.0 0.0 \
 		ethos-ui-1.0 0.0

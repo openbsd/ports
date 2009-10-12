@@ -1,7 +1,166 @@
-$OpenBSD: patch-configure,v 1.2 2009/10/11 13:37:47 landry Exp $
+$OpenBSD: patch-configure,v 1.3 2009/10/12 18:21:14 landry Exp $
 --- configure.orig	Wed Jun 17 21:39:05 2009
-+++ configure	Sun Oct 11 14:58:01 2009
-@@ -13974,7 +13974,7 @@ fi
++++ configure	Mon Oct 12 20:18:52 2009
+@@ -12908,81 +12908,6 @@ fi
+ 
+ enable_vala=no
+ 
+-pkg_failed=no
+-{ $as_echo "$as_me:$LINENO: checking for VALA" >&5
+-$as_echo_n "checking for VALA... " >&6; }
+-
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$VALA_CFLAGS"; then
+-        pkg_cv_VALA_CFLAGS="$VALA_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"vala-1.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "vala-1.0") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_VALA_CFLAGS=`$PKG_CONFIG --cflags "vala-1.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$VALA_LIBS"; then
+-        pkg_cv_VALA_LIBS="$VALA_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"vala-1.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "vala-1.0") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_VALA_LIBS=`$PKG_CONFIG --libs "vala-1.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        VALA_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "vala-1.0"`
+-        else
+-	        VALA_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "vala-1.0"`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$VALA_PKG_ERRORS" >&5
+-
+-	{ $as_echo "$as_me:$LINENO: result: no" >&5
+-$as_echo "no" >&6; }
+-                enable_vala=no
+-elif test $pkg_failed = untried; then
+-	enable_vala=no
+-else
+-	VALA_CFLAGS=$pkg_cv_VALA_CFLAGS
+-	VALA_LIBS=$pkg_cv_VALA_LIBS
+-        { $as_echo "$as_me:$LINENO: result: yes" >&5
+-$as_echo "yes" >&6; }
+-	enable_vala=yes
+-fi
+-if test "x$enable_vala" = "xyes"; then
+-	VAPI_DIR=`pkg-config --variable=vapidir vala-1.0`
+-else
+-	VAPI_DIR=
+-fi
+  if test "x$enable_vala" = "xyes"; then
+   ENABLE_VALA_TRUE=
+   ENABLE_VALA_FALSE='#'
+@@ -13665,76 +13590,7 @@ fi
+ 
+ 
+ 
+-pkg_failed=no
+-{ $as_echo "$as_me:$LINENO: checking for MONO" >&5
+-$as_echo_n "checking for MONO... " >&6; }
+-
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$MONO_CFLAGS"; then
+-        pkg_cv_MONO_CFLAGS="$MONO_CFLAGS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"mono >= 2.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "mono >= 2.0") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_MONO_CFLAGS=`$PKG_CONFIG --cflags "mono >= 2.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-if test -n "$PKG_CONFIG"; then
+-    if test -n "$MONO_LIBS"; then
+-        pkg_cv_MONO_LIBS="$MONO_LIBS"
+-    else
+-        if test -n "$PKG_CONFIG" && \
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"mono >= 2.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "mono >= 2.0") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_MONO_LIBS=`$PKG_CONFIG --libs "mono >= 2.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+-    fi
+-else
+-	pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        MONO_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "mono >= 2.0"`
+-        else
+-	        MONO_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "mono >= 2.0"`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$MONO_PKG_ERRORS" >&5
+-
+-	{ $as_echo "$as_me:$LINENO: result: no" >&5
+-$as_echo "no" >&6; }
+-                enable_mono=no
+-elif test $pkg_failed = untried; then
+ 	enable_mono=no
+-else
+-	MONO_CFLAGS=$pkg_cv_MONO_CFLAGS
+-	MONO_LIBS=$pkg_cv_MONO_LIBS
+-        { $as_echo "$as_me:$LINENO: result: yes" >&5
+-$as_echo "yes" >&6; }
+-	enable_mono=yes
+-fi
+  if test "x$enable_mono" = "xyes"; then
+   ENABLE_MONO_TRUE=
+   ENABLE_MONO_FALSE='#'
+@@ -13974,7 +13830,7 @@ fi
  
  
  
@@ -10,7 +169,7 @@ $OpenBSD: patch-configure,v 1.2 2009/10/11 13:37:47 landry Exp $
  
  
  cat >confcache <<\_ACEOF
-@@ -14937,7 +14937,6 @@ do
+@@ -14937,7 +14793,6 @@ do
      "bindings/Makefile") CONFIG_FILES="$CONFIG_FILES bindings/Makefile" ;;
      "bindings/vala/Makefile") CONFIG_FILES="$CONFIG_FILES bindings/vala/Makefile" ;;
      "bindings/python/Makefile") CONFIG_FILES="$CONFIG_FILES bindings/python/Makefile" ;;
