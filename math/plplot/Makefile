@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2009/10/12 23:11:08 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	advanced 2D and 3D scientific plotting library
 COMMENT-c++ =	C++ interface to plplot
 COMMENT-f77=	Fortran 77 interface to plplot
-COMMENT-octave=	Octave bindings for plplot
-COMMENT-tcl=	Tcl bindings for plplot
 
 VERSION=	5.8.0
 DISTNAME=	plplot-${VERSION}
@@ -21,8 +19,6 @@ SHARED_LIBS=	csirocsa	2.0	\
 PKGNAME-main=	${DISTNAME}p1
 PKGNAME-c++ =	plplot-c++-${VERSION}p1
 PKGNAME-f77=	plplot-f77-${VERSION}p1
-PKGNAME-octave=	plplot-octave-${VERSION}p1
-PKGNAME-tcl=	plplot-tcl-${VERSION}p0
 
 CATEGORIES=	math graphics
 
@@ -39,8 +35,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plplot/}
 
 MODULES=	devel/gettext
-#MODULES+=	lang/tcl
-#MODTCL_VERSION=	8.4
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
@@ -71,17 +65,9 @@ SUBST_VARS+=	GNU_ARCH
 
 DOCSRC=		${WRKSRC}/doc/docbook/src
 
-PSEUDO_FLAVORS=	no_octave
 FLAVOR?=
 
 MULTI_PACKAGES=	-main -c++ -f77
-# -tcl
-
-#.if ${FLAVOR:Mno_octave}
-#CONFIGURE_ARGS+= -D ENABLE_octave=OFF
-#.else
-#MULTI_PACKAGES+=-octave
-#.endif
 
 myWANTLIB=	m z freetype Xau Xdmcp Xrender X11 Xext SM ICE expat \
 		fontconfig pixman-1 png pthread-stubs xcb
@@ -89,8 +75,6 @@ myWANTLIB=	m z freetype Xau Xdmcp Xrender X11 Xext SM ICE expat \
 WANTLIB-main=		${myWANTLIB} c
 WANTLIB-c++ =		${myWANTLIB}
 WANTLIB-f77+=		${myWANTLIB} g2c
-#WANTLIB-octave+=	${myWANTLIB} g2c ncurses readline blas lapack fftw3
-#WANTLIB-tcl+=		${myWANTLIB} X11 Xau Xdmcp c
 
 myLIB_DEPENDS=	glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
 		pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango \
@@ -98,25 +82,15 @@ myLIB_DEPENDS=	glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
 		glitz::graphics/glitz \
 		${MODGETTEXT_LIB_DEPENDS}
 
-#		ltdl::devel/libtool,-ltdl
-
 LIB_DEPENDS-main=	${myLIB_DEPENDS}
 LIB_DEPENDS-c++ =	plplotd,csirocsa::math/plplot,-main \
 			${myLIB_DEPENDS}
 LIB_DEPENDS-f77=	plplotd,csirocsa::math/plplot,-main \
 			${myLIB_DEPENDS}
-#LIB_DEPENDS-octave=	plplotd,csirocsa::math/plplot,-main \
-#			cruft,octave,octinterp::math/octave \
-#			${myLIB_DEPENDS}
-#LIB_DEPENDS-tcl=	plplotd,csirocsa::math/plplot,-main \
-#			${MODTCL_LIB_DEPENDS} \
-#			${myLIB_DEPENDS}
 
 RUN_DEPENDS-main=	${MODLIBICONV_RUN_DEPENDS} ${myRUN_DEPENDS}
 RUN_DEPENDS-c++ =
 RUN_DEPENDS-f77=
-RUN_DEPENDS-octave=
-RUN_DEPENDS-tcl=
 
 pre-configure:
 	@perl -pi -e 's,tclsh,${MODTCL_BIN},' ${WRKSRC}/scripts/mktclIndex
