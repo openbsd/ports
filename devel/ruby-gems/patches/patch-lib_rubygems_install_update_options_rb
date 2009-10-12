@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_rubygems_install_update_options_rb,v 1.3 2008/09/28 15:45:18 bernd Exp $
+$OpenBSD: patch-lib_rubygems_install_update_options_rb,v 1.4 2009/10/12 17:18:00 bernd Exp $
 
 This is for GEM_SKIPDEPENDS in ruby.port.mk.
 
---- lib/rubygems/install_update_options.rb.orig	Tue Jun 24 20:56:30 2008
-+++ lib/rubygems/install_update_options.rb	Sun Sep 28 13:46:26 2008
-@@ -102,6 +102,16 @@ module Gem::InstallUpdateOptions
-                 "dependencies") do |value, options|
-       options[:development] = true
+--- lib/rubygems/install_update_options.rb.orig	Mon Jun 22 15:54:36 2009
++++ lib/rubygems/install_update_options.rb	Tue Sep  8 18:20:58 2009
+@@ -112,6 +112,16 @@ module Gem::InstallUpdateOptions
+                "prereleases.") do |value, options|
+       options[:prerelease] = true
      end
 +
 +    add_option(:"Install/Update", '-S', '--skip-dependencies DEPENDENCIES',
@@ -20,4 +20,4 @@ This is for GEM_SKIPDEPENDS in ruby.port.mk.
 +    end
    end
  
-   # Default options for the gem install command.
+   ##

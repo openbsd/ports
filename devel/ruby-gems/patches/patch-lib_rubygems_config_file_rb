@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_rubygems_config_file_rb,v 1.1 2008/09/28 15:45:18 bernd Exp $
---- lib/rubygems/config_file.rb.orig	Wed Sep 17 18:21:42 2008
-+++ lib/rubygems/config_file.rb	Sat Sep 27 23:02:54 2008
-@@ -41,7 +41,7 @@ class Gem::ConfigFile
+$OpenBSD: patch-lib_rubygems_config_file_rb,v 1.2 2009/10/12 17:18:00 bernd Exp $
+--- lib/rubygems/config_file.rb.orig	Thu Jun 25 14:37:14 2009
++++ lib/rubygems/config_file.rb	Tue Sep  8 18:20:58 2009
+@@ -47,7 +47,7 @@ class Gem::ConfigFile
  
        path.strip
      rescue LoadError
