@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2009/06/04 00:43:22 jasper Exp $
---- Makefile.in.orig	Wed Jun  3 18:38:47 2009
-+++ Makefile.in	Wed Jun  3 18:39:04 2009
-@@ -226,7 +226,7 @@ sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+$OpenBSD: patch-Makefile_in,v 1.6 2009/10/12 09:14:18 sthen Exp $
+--- Makefile.in.orig	Fri Oct  9 23:51:34 2009
++++ Makefile.in	Sun Oct 11 15:39:58 2009
+@@ -235,7 +235,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -SUBDIRS = m4m po libexif test doc binary contrib
