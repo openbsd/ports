@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2008/07/04 10:22:37 pyr Exp $
---- data/Makefile.in.orig	Thu Jul  3 17:05:09 2008
-+++ data/Makefile.in	Thu Jul  3 17:05:23 2008
-@@ -618,7 +618,7 @@ uninstall-man: uninstall-man1
+$OpenBSD: patch-data_Makefile_in,v 1.2 2009/10/12 18:07:11 jasper Exp $
+--- data/Makefile.in.orig	Fri Jul 17 16:30:39 2009
++++ data/Makefile.in	Mon Oct 12 20:05:04 2009
+@@ -601,7 +601,7 @@ uninstall-man: uninstall-man1
  @INTLTOOL_DESKTOP_RULE@
  
  install-icons:

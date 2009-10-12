@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/04 10:22:37 pyr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/12 18:07:11 jasper Exp $
 @bin bin/dates
 @man man/man1/dates.1
 share/applications/dates.desktop
@@ -33,6 +33,9 @@ share/icons/hicolor/scalable/apps/dates.svg
 share/locale/ca/LC_MESSAGES/Dates.mo
 share/locale/da/LC_MESSAGES/Dates.mo
 share/locale/de/LC_MESSAGES/Dates.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/Dates.mo
 share/locale/es/LC_MESSAGES/Dates.mo
 share/locale/et/LC_MESSAGES/Dates.mo
 share/locale/eu/LC_MESSAGES/Dates.mo
@@ -41,10 +44,16 @@ share/locale/fr/LC_MESSAGES/Dates.mo
 share/locale/it/LC_MESSAGES/Dates.mo
 share/locale/nb/LC_MESSAGES/Dates.mo
 share/locale/nl/LC_MESSAGES/Dates.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
+share/locale/pa/LC_MESSAGES/Dates.mo
 share/locale/pl/LC_MESSAGES/Dates.mo
 share/locale/pt_BR/LC_MESSAGES/Dates.mo
 share/locale/ru/LC_MESSAGES/Dates.mo
 share/locale/sv/LC_MESSAGES/Dates.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
+share/locale/th/LC_MESSAGES/Dates.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
