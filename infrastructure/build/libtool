@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.84 2009/10/11 20:50:33 steven Exp $
+# $OpenBSD: libtool,v 1.85 2009/10/12 09:58:22 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -420,7 +420,7 @@ sub link
 		$libcounter++;
 	}
 
-	@cmd = ($ltprog);
+	@cmd = @$ltprog;
 	push @cmd, $main::sharedflag, @main::picflags;
 	push @cmd, '-o', $dst;
 	push @cmd, @$argv;
@@ -457,13 +457,12 @@ EOF
 
 sub compile
 {
-	my ($self, $prog, $odir, $args) = @_;
+	my ($self, $compiler, $odir, $args) = @_;
 
 	my $ltdir = $main::ltdir;
 	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
-	my @compiler = split /\s+/, $prog;
 	if (defined $self->{picobj}) {
-		my @cmd = @compiler;
+		my @cmd = @$compiler;
 		push @cmd, @$args if (@$args);
 		push @cmd, @main::picflags, '-o';
 		my $o = ($odir eq '.') ? '' : "$odir/";
@@ -472,7 +471,7 @@ sub compile
 		Exec->command(@cmd);
 	}
 	if (defined $self->{nonpicobj}) {
-		my @cmd = @compiler;
+		my @cmd = @$compiler;
 		push @cmd, @$args if (@$args);
 		push @cmd, '-o';
 		my $o = ($odir eq '.') ? '' : "$odir/";
@@ -618,7 +617,7 @@ sub link
 		$libcounter++;
 	}
 
-	@cmd = ($ltprog);
+	@cmd = @$ltprog;
 	push @cmd, '-o', $dst;
 	push @cmd, '-static' if (!$self->{shared});
 	push @cmd, @$argv;
@@ -714,7 +713,18 @@ if ($verbose || $D) {
 	Exec->verbose_run;
 }
 # what are we going to run (cc, c++, ...)
-my $ltprog = shift @ARGV or die "no libtool command\n";
+my $ltprog = ();
+push @$ltprog, shift @ARGV or die "no libtool command\n";
+# deal with multi-arg ltprog
+print "ARGV = @ARGV\n";
+while (@ARGV) {
+	# just read arguments until the next option...
+	if ($ARGV[0] =~ m/^\-/) { last; }
+	my $arg = shift @ARGV;
+	push @$ltprog, $arg;
+	Trace::debug {" arg = \"$arg\"\n"};
+}
+Trace::debug {"ltprog = \"@$ltprog\"\n"};
 
 # check mode and guess it if needed
 if (!($mode && grep { $_ eq $mode } @valid_modes)) {
@@ -730,11 +740,6 @@ if (!($mode && grep { $_ eq $mode } @valid_modes)) {
 $gp->configure('permute');
 
 if ($mode eq 'compile') {
-	# deal with multi-arg ltprog
-	while (@ARGV && $ltprog !~ m/(cc|c\+\+|f77|g77|asm)$/) {
-		my $arg = shift @ARGV;
-		$ltprog .= " $arg";
-	}
 	$gp->getoptions('o=s'		=> \$opts{'o'},
 			'prefer-pic'	=> \$opts{'prefer-pic'},
 			'prefer-non-pic'=> \$opts{'prefer-non-pic'},
@@ -787,26 +792,21 @@ if ($mode eq 'compile') {
 	$lofile->compile($ltprog, $odir, \@ARGV);
 	$lofile->write($outfile);
 } elsif ($mode eq 'install') {
-	# deal with multi-arg ltprog (e.g. /bin/sh install-sh ...)
-	while (@ARGV && $ltprog !~ m/(install([.-]sh)?|cp)$/) {
-		my $arg = shift @ARGV;
-		$ltprog .= " $arg";
-	}
 	# we just parse the options in order to find the actual arguments
 	my @argvcopy = @ARGV;
 	my %install_opts;
-	if ($ltprog =~ m/install([.-]sh)?$/) {
+	if ($$ltprog[-1] =~ m/install([.-]sh)?$/) {
 		getopts('BbCcdf:g:m:o:pSs', \%install_opts);
 		if (@ARGV < 2 && (!defined $install_opts{'d'} && @ARGV == 1)) {
 			die "wrong number of arguments for install\n";
 		}
-	} elsif ($ltprog =~ m/cp$/) {
+	} elsif ($$ltprog[-1] =~ m/cp$/) {
 		getopts('HLPRfipr', \%install_opts);
 		if (@ARGV < 2) {
 			die "wrong number of arguments for install\n";
 		}
 	} else {
-		die "unsupported install program $ltprog\n";
+		die "unsupported install program $$ltprog[-1]\n";
 	}
 	my @instopts = @argvcopy[0 .. (@argvcopy - @ARGV - 1)];
 	my $dst = pop @ARGV;
@@ -839,7 +839,7 @@ if ($mode eq 'compile') {
 		Trace::debug {"dstdir = $dstdir\ndstfile = $dstfile\n"};
 		if ($srcfile =~ m/^\S+\.la$/) {
 			# we are installing a .la library
-			if ($ltprog =~ m/install([.-]sh)?$/) {
+			if ($$ltprog[-1] =~ m/install([.-]sh)?$/) {
 				push @instopts, '-m', '644' unless $addedmode;
 				$addedmode = 1;
 			}
@@ -864,21 +864,20 @@ if ($mode eq 'compile') {
 			$toinstall->{$s} = $dst;
 		}
 	}
-	my @prog = split /\s+/, $ltprog;
 	while (my ($s, $d) = each %$toinstall) {
 		my @realinstopts = @instopts;
 		# do not try to strip .la files
 		if ($s =~ m/\.la$/ || $d =~ m /\.la$/) {
 			@realinstopts = grep { $_ ne '-s' } @realinstopts;
 		}
-		Exec->command(@prog, @realinstopts, $s, $d);
+		Exec->command(@$ltprog, @realinstopts, $s, $d);
 	}
 	while (my ($d, $s) = each %$tosymlink) {
 		unlink("$dstdir/$d");
 		symlink($s, "$dstdir/$d");
 	}
 	if (defined $install_opts{'d'}) {
-		Exec->command(@prog, @instopts, @ARGV);
+		Exec->command(@$ltprog, @instopts, @ARGV);
 	}
 } elsif ($mode eq 'link') {
 	my $cmd;
@@ -1099,7 +1098,7 @@ if ($mode eq 'compile') {
 	exit 0;
 } elsif ($mode eq 'execute') {
 	# XXX check whether this is right
-	Exec->command($ltprog, @ARGV);
+	Exec->command(@$ltprog, @ARGV);
 } else {
 	die "MODE=$mode not implemented yet.\n";
 }
