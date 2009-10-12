@@ -1,7 +1,6 @@
-The BWidget toolkit is a high-level widget set for Tcl/Tk built using 
+The BWidget toolkit is a high-level widget set for Tcl/Tk built using
 native Tcl/Tk 8.x namespaces.
 
-The BWidgets have a professional look and feel as in other well known 
-Toolkits (Tix or Incr Widgets), but the concept is radically different 
-because everything is pure Tcl/Tk. No platform dependencies, and no 
-compiling required. The code is 100% Pure Tcl/Tk. 
+The BWidgets have a professional look and feel as in other well known
+Toolkits, but the concept is radically different because everything is
+pure Tcl/Tk.  No platform dependencies, and no compiling required.

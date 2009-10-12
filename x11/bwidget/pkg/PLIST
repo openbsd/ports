@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/22 19:09:55 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/12 12:33:59 sthen Exp $
 lib/bwidget/
 lib/bwidget/arrow.tcl
 lib/bwidget/bitmap.tcl
@@ -6,16 +6,6 @@ lib/bwidget/button.tcl
 lib/bwidget/buttonbox.tcl
 lib/bwidget/color.tcl
 lib/bwidget/combobox.tcl
-lib/bwidget/demo/
-lib/bwidget/demo/basic.tcl
-lib/bwidget/demo/bwidget.xbm
-lib/bwidget/demo/demo.tcl
-lib/bwidget/demo/dnd.tcl
-lib/bwidget/demo/manager.tcl
-lib/bwidget/demo/select.tcl
-lib/bwidget/demo/tmpldlg.tcl
-lib/bwidget/demo/tree.tcl
-lib/bwidget/demo/x1.xbm
 lib/bwidget/dialog.tcl
 lib/bwidget/dragsite.tcl
 lib/bwidget/dropsite.tcl
@@ -64,6 +54,9 @@ lib/bwidget/lang/de.rc
 lib/bwidget/lang/en.rc
 lib/bwidget/lang/es.rc
 lib/bwidget/lang/fr.rc
+lib/bwidget/lang/hu.rc
+lib/bwidget/lang/nl.rc
+lib/bwidget/lang/no.rc
 lib/bwidget/listbox.tcl
 lib/bwidget/mainframe.tcl
 lib/bwidget/messagedlg.tcl
@@ -81,8 +74,6 @@ lib/bwidget/scrollw.tcl
 lib/bwidget/separator.tcl
 lib/bwidget/spinbox.tcl
 lib/bwidget/statusbar.tcl
-lib/bwidget/tests/
-lib/bwidget/tests/entry.test
 lib/bwidget/titleframe.tcl
 lib/bwidget/tree.tcl
 lib/bwidget/utils.tcl
@@ -100,6 +91,7 @@ share/doc/bwidget/DragSite.html
 share/doc/bwidget/DropSite.html
 share/doc/bwidget/DynamicHelp.html
 share/doc/bwidget/Entry.html
+share/doc/bwidget/LICENSE.txt
 share/doc/bwidget/Label.html
 share/doc/bwidget/LabelEntry.html
 share/doc/bwidget/LabelFrame.html
@@ -129,3 +121,13 @@ share/doc/bwidget/contents.html
 share/doc/bwidget/index.html
 share/doc/bwidget/navtree.html
 share/doc/bwidget/options.htm
+share/examples/bwidget/
+share/examples/bwidget/basic.tcl
+share/examples/bwidget/bwidget.xbm
+share/examples/bwidget/demo.tcl
+share/examples/bwidget/dnd.tcl
+share/examples/bwidget/manager.tcl
+share/examples/bwidget/select.tcl
+share/examples/bwidget/tmpldlg.tcl
+share/examples/bwidget/tree.tcl
+share/examples/bwidget/x1.xbm
