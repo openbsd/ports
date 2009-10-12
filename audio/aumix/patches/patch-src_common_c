@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_common_c,v 1.1 2009/10/12 19:13:06 naddy Exp $
+--- src/common.c.orig	Mon Oct 12 21:03:51 2009
++++ src/common.c	Mon Oct 12 21:04:53 2009
+@@ -216,6 +216,10 @@ int             main(int argc, char *argv[])
+ #if defined (HAVE_GTK) || defined (HAVE_GTK1)
+ /* GTK+ stuff */
+ 	if (interactive == IN_GTK) {
++#ifdef HAVE_NLS
++		bind_textdomain_codeset((char *) PACKAGE, "UTF-8");
++#endif				/* HAVE_NLS */
++
+ #ifndef DUMMY_MIXER
+ 		if ((mixer_fd = open(device_filename, O_RDWR)) < 0)
+ 			return EOPENMIX;

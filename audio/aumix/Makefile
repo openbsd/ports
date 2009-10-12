@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2009/10/12 19:13:05 naddy Exp $
 
 COMMENT=	full-screen ncurses or GTK-based audio mixer
 
 DISTNAME=	aumix-2.8
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 CATEGORIES=	audio
 
 HOMEPAGE=	http://jpj.net/~trevor/aumix.html

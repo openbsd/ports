@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_aumix_1,v 1.2 2000/07/13 23:16:07 naddy Exp $
---- doc/aumix.1.orig	Tue Jul 11 01:42:56 2000
-+++ doc/aumix.1	Tue Jul 11 01:47:09 2000
-@@ -210,43 +210,6 @@ refresh screen
+$OpenBSD: patch-doc_aumix_1,v 1.3 2009/10/12 19:13:06 naddy Exp $
+--- doc/aumix.1.orig	Sat Sep  7 11:12:32 2002
++++ doc/aumix.1	Mon Oct 12 20:33:55 2009
+@@ -211,43 +211,6 @@ refresh screen
  ^Z, ^D and ^C also have their normal function (the screen is refreshed when
  .Nm
  is brought to the foreground).
@@ -45,7 +45,7 @@ $OpenBSD: patch-doc_aumix_1,v 1.2 2000/07/13 23:16:07 naddy Exp $
  .Sh ENVIRONMENT
  The
  .Ev HOME
-@@ -344,7 +307,5 @@ operating system, and the model of sound
+@@ -345,7 +308,5 @@ operating system, and the model of sound hardware is s
  to diagnose problems, so it is best if you include such details in
  any bug reports.
  .Sh SEE ALSO
