@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.2 2009/08/16 12:59:27 msf Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2009/10/12 22:28:46 pirofti Exp $
 
-VERSION ?=	0.9.11
+VERSION ?=	0.10.1
 PKGNAME ?=	ruby-${DISTNAME}
 CATEGORIES ?=	databases
 
