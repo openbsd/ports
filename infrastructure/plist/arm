@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.23 2009/09/30 07:52:12 sthen Exp $
+# $OpenBSD: arm,v 1.24 2009/10/12 12:40:17 sthen Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -27,17 +27,23 @@ mail/mutt/snapshot,sasl
 audio/libao
 audio/vorbis-tools
 audio/mpg321
+audio/mpg123
 audio/waveplay
 net/curl
 net/ircII
+net/ircd-hybrid
+net/ircd-ratbox
 devel/id-utils
 # www/konqueror-embedded
 textproc/antiword
+textproc/mupdf
 textproc/xpdf
 x11/rdesktop
 net/samba
 games/xkobo,harder
 games/xlife
+x11/qt3,no_examples
+#x11/qt3,no_mysql,no_postgresql,no_examples
 x11/xglobe
 graphics/mpeg_play
 benchmarks/tcpblast
@@ -63,6 +69,7 @@ emulators/fuse
 emulators/fuse-utils
 security/stunnel
 net/silc-client
+net/silc-server
 graphics/xfig
 x11/xautolock
 devel/gmake
@@ -80,8 +87,9 @@ games/xpat2
 audio/madplay
 audio/tremor-tools
 net/kismet
-# XXX warning mplayer not for CD just FTP
+# XXX warning mplayer/ffmpeg not for CD just FTP
 x11/mplayer
+graphics/ffmpeg
 shells/bash
 shells/tcsh
 shells/zsh
@@ -106,8 +114,6 @@ audio/xmms-tremor
 print/ps2eps
 print/texlive/base
 misc/dtach
-# Builds, but disabled for time reasons
-#x11/kde/base3
 net/ssvnc
 telephony/pjsua
 databases/sqlite
@@ -192,7 +198,6 @@ security/py-crypto
 math/gnuplot
 math/py-gnuplot
 net/scapy
-net/scapy6
 net/sharity-light
 net/sing
 net/sipsak
@@ -218,7 +223,6 @@ www/kazehakase
 databases/mdbtools/snapshot
 databases/luasqlite3
 devel/luaalarm
-devel/luabitlib
 devel/luacopas
 devel/luaevent
 devel/luafs
@@ -227,6 +231,7 @@ devel/luaposix
 devel/luarexlib
 devel/luarings
 devel/luastdlib
+devel/ccache
 graphics/luagd
 net/luasocket
 security/luacrypto
@@ -342,7 +347,6 @@ x11/liberation-fonts
 x11/wqy-bitmapfont
 x11/openbox
 x11/aterm
-x11/aterm,lite
 x11/py-gtk2
 x11/obmenu
 x11/oroborus
@@ -365,3 +369,7 @@ archivers/p7zip
 games/wesnoth,tinygui
 games/micropolis
 www/mozilla-firefox
+x11/kde/base3
+security/qca
+security/qca-tls
+x11/kde/network3
