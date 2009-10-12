@@ -1,0 +1,14 @@
+$OpenBSD: patch-mixer_GNOME_MixerApplet_xml,v 1.1 2009/10/12 12:03:27 jasper Exp $
+
+gnome-volume-control doesn't get build currently (see gnome/media/Makefile)
+
+--- mixer/GNOME_MixerApplet.xml.orig	Mon Oct 12 13:49:01 2009
++++ mixer/GNOME_MixerApplet.xml	Mon Oct 12 13:49:03 2009
+@@ -2,7 +2,6 @@
+   <popups>
+     <popup name="button3">
+       <menuitem name="Mute"     verb="Mute" _label="Mu_te"     type="toggle"/>
+-      <menuitem name="RunMixer" verb="RunMixer" _label="_Open Volume Control"/>
+       <separator/>
+       <menuitem name="Pref"     verb="Pref" _label="_Preferences"     pixtype="stock" pixname="gtk-properties"/>
+       <menuitem name="Help"     verb="Help" _label="_Help"     pixtype="stock" pixname="gtk-help"/>
