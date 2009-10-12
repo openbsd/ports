@@ -1,20 +1,17 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2009/01/31 16:06:26 jasper Exp $
-
-Don't build drivemount applet.
-
--- Makefile.in.orig	Sat Jan 31 16:52:54 2009
-+++ Makefile.in	Sat Jan 31 16:53:07 2009
-@@ -345,7 +345,6 @@ modemlights_applets = \
- @BUILD_INVEST_APPLET_TRUE@invest_applet_SUBDIR = invest-applet
+$OpenBSD: patch-Makefile_in,v 1.2 2009/10/12 11:38:11 jasper Exp $
+--- Makefile.in.orig	Mon Sep 21 08:19:35 2009
++++ Makefile.in	Mon Oct 12 13:13:03 2009
+@@ -324,7 +324,6 @@ modemlights_applets = \
+ @BUILD_MIXER_APPLET_TRUE@mixer_applet_SUBDIR = mixer
  always_built_SUBDIRS = \
  	charpick	\
 -	drivemount	\
  	geyes		\
  	mini-commander	\
  	gkb-new		\
-@@ -371,7 +370,6 @@ DIST_SUBDIRS = \
+@@ -349,7 +348,6 @@ SUBDIRS = \
+ DIST_SUBDIRS = \
  	po		\
- 	mixer		\
  	modemlights	\
 -	drivemount	\
  	charpick	\

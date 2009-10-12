@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.14 2008/11/21 17:50:05 jasper Exp $
---- configure.orig	Mon Nov 10 13:51:44 2008
-+++ configure	Mon Nov 10 13:57:13 2008
-@@ -14123,7 +14123,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+$OpenBSD: patch-configure,v 1.15 2009/10/12 11:38:11 jasper Exp $
+--- configure.orig	Mon Oct 12 13:09:24 2009
++++ configure	Mon Oct 12 13:12:34 2009
+@@ -14522,7 +14522,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then
+   $as_echo_n "(cached) " >&6
  else
  
 -	for am_cv_pathless_PYTHON in python python2 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 python1.6 python1.5 none; do
@@ -10,17 +10,17 @@ $OpenBSD: patch-configure,v 1.14 2008/11/21 17:50:05 jasper Exp $
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys, string
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -15543,7 +15543,7 @@ else
+@@ -15873,7 +15873,7 @@ else
  fi
  
  
 -
 +if false; then # force skip gnome settings daeon detection
  pkg_failed=no
- { echo "$as_me:$LINENO: checking for GNOME_SETTINGS_DAEMON" >&5
- echo $ECHO_N "checking for GNOME_SETTINGS_DAEMON... $ECHO_C" >&6; }
-@@ -15620,10 +15620,10 @@ if test "x$HAVE_GNOME_SETTINGS_DAEMON" = "xno"; then
- echo "$as_me: WARNING: gnome-settings-daemon DBUS API is required to build modem-applet." >&2;}
+ { $as_echo "$as_me:$LINENO: checking for GNOME_SETTINGS_DAEMON" >&5
+ $as_echo_n "checking for GNOME_SETTINGS_DAEMON... " >&6; }
+@@ -15950,10 +15950,10 @@ if test "x$HAVE_GNOME_SETTINGS_DAEMON" = "xno"; then
+ $as_echo "$as_me: WARNING: gnome-settings-daemon DBUS API is required to build modem-applet." >&2;}
  fi
  
 +fi # force skip gnome settings daemon detection
@@ -29,9 +29,9 @@ $OpenBSD: patch-configure,v 1.14 2008/11/21 17:50:05 jasper Exp $
  
 -
  pkg_failed=no
- { echo "$as_me:$LINENO: checking for LIBWNCK" >&5
- echo $ECHO_N "checking for LIBWNCK... $ECHO_C" >&6; }
-@@ -17150,7 +17150,7 @@ _ACEOF
+ { $as_echo "$as_me:$LINENO: checking for LIBWNCK" >&5
+ $as_echo_n "checking for LIBWNCK... " >&6; }
+@@ -17580,7 +17580,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -40,7 +40,16 @@ $OpenBSD: patch-configure,v 1.14 2008/11/21 17:50:05 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    GNOMELOCALEDIR="$ac_define_dir"
  
-@@ -20604,7 +20604,7 @@ _ACEOF
+@@ -20883,7 +20883,7 @@ builderdir="${pkgdatadir}/builder"
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+-  ac_define_dir=`eval echo $"${iconsdir}"`
++  ac_define_dir=`eval echo "${iconsdir}"`
+   ac_define_dir=`eval echo $ac_define_dir`
+   GNOME_ICONDIR="$ac_define_dir"
+ 
+@@ -20896,7 +20896,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -49,7 +58,7 @@ $OpenBSD: patch-configure,v 1.14 2008/11/21 17:50:05 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    GNOME_PIXMAPSDIR="$ac_define_dir"
  
-@@ -20617,7 +20617,7 @@ _ACEOF
+@@ -20909,7 +20909,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -58,7 +67,7 @@ $OpenBSD: patch-configure,v 1.14 2008/11/21 17:50:05 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    GTK_BUILDERDIR="$ac_define_dir"
  
-@@ -20630,7 +20630,7 @@ _ACEOF
+@@ -20922,7 +20922,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -67,7 +76,7 @@ $OpenBSD: patch-configure,v 1.14 2008/11/21 17:50:05 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    DATADIR="$ac_define_dir"
  
-@@ -20643,7 +20643,7 @@ _ACEOF
+@@ -20935,7 +20935,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -76,7 +85,7 @@ $OpenBSD: patch-configure,v 1.14 2008/11/21 17:50:05 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    SYSCONFDIR="$ac_define_dir"
  
-@@ -20656,7 +20656,7 @@ _ACEOF
+@@ -20948,7 +20948,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
@@ -85,7 +94,7 @@ $OpenBSD: patch-configure,v 1.14 2008/11/21 17:50:05 jasper Exp $
    ac_define_dir=`eval echo $ac_define_dir`
    LIBDIR="$ac_define_dir"
  
-@@ -20669,7 +20669,7 @@ _ACEOF
+@@ -20961,7 +20961,7 @@ _ACEOF
  
    test "x$prefix" = xNONE && prefix="$ac_default_prefix"
    test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
