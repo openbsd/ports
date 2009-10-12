@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/10/12 12:29:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/10/12 17:19:16 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,6 +11,9 @@ GNOME_VERSION=	2.18.0
 PKGNAME=	py-gobject-${GNOME_VERSION}p0v0
 
 SHARED_LIBS +=  pyglib-2.0-python${MODPY_VERSION} 0.0      # .0.0
+
+PYGLIB_VER=	${LIBpyglib-2.0-python${MODPY_VERSION}_VERSION}
+SUBST_VARS+=	PYGLIB_VER
 
 CATEGORIES=	devel x11
 
