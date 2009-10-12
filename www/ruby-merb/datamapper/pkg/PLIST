@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/31 12:13:34 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/12 16:03:00 pirofti Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -9,7 +9,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Application.src/M00000
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DataMapper/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DataMapper.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DataMapper/MerbDataMapper.html
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/DataMapper/Timestamp.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb.html
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/classes/Merb/DataMapperSession.html
@@ -93,8 +92,6 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Application/cdesc-Application.ya
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/DataMapper/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/DataMapper/MerbDataMapper/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/DataMapper/MerbDataMapper/cdesc-MerbDataMapper.yaml
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/DataMapper/Timestamp/
-lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/DataMapper/Timestamp/cdesc-Timestamp.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/DataMapper/cdesc-DataMapper.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/Merb/DataMapperSession/
