@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.91 2009/10/13 14:23:12 steven Exp $
+# $OpenBSD: libtool,v 1.92 2009/10/13 17:11:21 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -30,16 +30,13 @@ package main;
 use subs qw(
 	create_symlinks
 	find_la
-	find_lib
 	generate_objlist
 	get_search_dirs
 	guess_implicit_mode
 	help
 	notyet
-	parse_linkargs_list
 	parse_version_info
 	process_deplibs
-	resolve_la_list
 	reverse_zap_duplicates_ref
 	);
 
@@ -241,7 +238,7 @@ sub parse_linkargs1
 {
 	state $seen_pthread = 0;
 	my ($self, $deplibs, $Rresolved, $libsearchdirs,
-	    $dirs, $libs, $libstofind, $args, $level) = @_;
+	    $dirs, $libs, $args, $level) = @_;
 	Trace::debug {"parse_linkargs1, level: $level\n"};
 	Trace::debug {"  args: @$args\n"};
 	my $result   = $self->{result};
@@ -268,21 +265,21 @@ sub parse_linkargs1
 		} elsif ($a =~ m/^-l(.*)/) {
 			my @largs = ();
 			my $key = $1;
-			if (!exists $libstofind->{$key}) {
-				$libstofind->{$key} = 1;
+			if (!exists $libs->{$key}) {
+				$libs->{$key} = Library->new($key);
 				my $lafile = main::find_la($key, $dirs);
 				if ($lafile) {
 					push @$deplibs, $lafile;
 					push @$result, $lafile;
 					next;
 				} else {
-					my $libpath = main::find_lib($key, $dirs, 1, $libsearchdirs);
+					my $libpath = $libs->{$key}->find($dirs, 1, $libsearchdirs);
 					if (!$libpath) {
 						die "library $key could not be found.\n";
 					}
 					# avoid searching again later
-					$libs->{$key} = $libpath;
-					my @deps = main::inspect_lib($libpath);
+					$libs->{$key}->{fullpath} = $libpath;
+					my @deps = $libs->{$key}->inspect;
 					# push @$rdeplibs, @deps;
 					foreach my $d (@deps) {
 						my $k = basename $d;
@@ -295,12 +292,15 @@ sub parse_linkargs1
 			}
 			push(@$result, $a);
 			$self->parse_linkargs1($deplibs, $Rresolved, $libsearchdirs,
-			    $dirs, $libs, $libstofind, \@largs,
+			    $dirs, $libs, \@largs,
 			    $level+1) if @largs;
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.a$/) {
 			my $key = $2;
 			$key =~ s/^lib//;
-			$libs->{$key} = $a;
+			if (!exists $libs->{$key}) {
+				$libs->{$key} = Library->new($key);
+			}
+			$libs->{$key}->{fullpath} = $a;
 			push(@$result, $a);
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.la$/) {
 			my $key = $2;
@@ -332,7 +332,7 @@ sub parse_linkargs2
 {
 	state $seen_pthread = 0;
 	my ($self, $deplibs, $Rresolved, $libsearchdirs, $orderedlibs,
-	    $dirs, $libs, $libstofind) = @_;
+	    $dirs, $libs) = @_;
 	Trace::debug {"parse_linkargs2\n"};
 	Trace::debug {"  args: @{$self->{args}}\n"};
 	$self->{result} = [];
@@ -361,14 +361,17 @@ sub parse_linkargs2
 		} elsif ($a =~ m/^-l(.*)/) {
 			my @largs = ();
 			my $key = $1;
-			if (!exists $libstofind->{$key}) {
-				$libstofind->{$key} = 1;
+			if (!exists $libs->{$key}) {
+				$libs->{$key} = Library->new($key);
 			}
 			push @$orderedlibs, $key;
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.a$/) {
 			my $key = $2;
 			$key =~ s/^lib//;
-			$libs->{$key} = $a;
+			if (!exists $libs->{$key}) {
+				$libs->{$key} = Library->new($key);
+			}
+			$libs->{$key}->{fullpath} = $a;
 			push @$orderedlibs, $key;
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.la$/) {
 			my $key = $2;
@@ -388,16 +391,19 @@ sub parse_linkargs2
 			if ($d !~ m/\Q$main::ltdir\E$/ && $lainfo->{'installed'} eq 'no') {
 				$d .= "/$main::ltdir";
 			}
+			if (!exists $libs->{$key}) {
+				$libs->{$key} = Library->new($key);
+			}
 			# XXX in some cases there are multiple libs with the same name
 			# so probably need to use a different key
 			if ($dlname eq '') {
 				# static
-				$libs->{$key} = "$d/$oldlib";
+				$libs->{$key}->{fullpath} = "$d/$oldlib";
 			} else {
 				# shared
-				$libs->{$key} = "$d/$dlname";
+				$libs->{$key}->{fullpath} = "$d/$dlname";
 			}
-			Trace::debug {"\$libs{$key} = ", $libs->{$key}, "\n"};
+			Trace::debug {"\$libs{$key}->{fullpath} = ", $libs->{$key}->{fullpath}, "\n"};
 		} elsif ($a =~ m/^-Wl,(\S+)/) {
 			# libtool accepts a list of -Wl options separated
 			# by commas, and possibly with a trailing comma
@@ -577,7 +583,6 @@ sub link
 	my $objs = shift;
 	my $dirs = shift;
 	my $libs = shift;
-	my $libstofind = shift;
 	my $deplibs = shift;
 	my $parser = shift;
 	my $opts = shift;
@@ -600,7 +605,7 @@ sub link
 	Trace::debug {"argvstring (post resolve_la): @{$parser->{args}}\n"};
 	my $orderedlibs = [];
 	$parser->parse_linkargs2($deplibs, \@main::Rresolved, \@main::libsearchdirs,
-			$orderedlibs, $dirs, $libs, $libstofind);
+			$orderedlibs, $dirs, $libs);
 	Trace::debug {"orderedlibs = @$orderedlibs\n"};
 	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
 	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
@@ -608,7 +613,7 @@ sub link
 	# static linking
 	if (!$shared) {
 		Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
-		Trace::debug {"libfiles:\n", join("\n", (values %$libs)), "\n"};
+		Trace::debug {"libfiles:\n", join("\n", map { $_ = $_->{fullpath} } (values %$libs)), "\n"};
 		@cmd = ('ar', 'cru', $dst);
 		push @cmd, @$objs if (@$objs);
 		foreach my $k (@$finalorderedlibs) {
@@ -642,22 +647,24 @@ sub link
 		$symbolsfile =~ s/\.la$/.exp/;
 		main::get_symbollist($symbolsfile, $opts->{'export-symbols-regex'}, $objs);
 	}
-	foreach my $l (keys %$libstofind) {
-		my $libpath = main::find_lib($l, $dirs, 1);
-		$libs->{$l} = $libpath if ($libpath);
+	foreach my $l (values %$libs) {
+		if (!exists $l->{fullpath}) {
+			my $libpath = $l->find($dirs, 1);
+			$l->{fullpath} = $libpath if ($libpath);
+		}
 	}
 
 	my @libfiles = values %$libs;
 	Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
-	Trace::debug {"libfiles:\n", join("\n", @libfiles), "\n"};
+	Trace::debug {"libfiles:\n", join("\n", map { $_ = $_->{fullpath} } @libfiles), "\n"};
 
-	main::create_symlinks($ltdir, \@libfiles);
-	map { $_ = "$ltdir/". basename $_ } @libfiles;
-	Trace::debug {"symlinks to libfiles used for linking:\n", join("\n", @libfiles), "\n"};
+	main::create_symlinks($ltdir, $libs);
+#	map { $_ = "$ltdir/". basename $_ } @libfiles;
+#	Trace::debug {"symlinks to libfiles used for linking:\n", join("\n", @libfiles), "\n"};
 	my $prev_was_archive = 0;
 	my $libcounter = 0;
 	foreach my $k (@$finalorderedlibs) {
-		my $a = $libs->{$k} || die "ERROR: $k not found in \$libs";
+		my $a = $libs->{$k}->{fullpath} || die "ERROR: $k not found in \$libs";
 		if ($a =~ m/\.a$/) {
 			# don't make a -lfoo out of a static library
 			push @libflags, '-Wl,-whole-archive' unless $prev_was_archive;
@@ -803,7 +810,6 @@ sub link
 	my $ltprog = shift;
 	my $dirs = shift;
 	my $libs = shift;
-	my $libstofind = shift;
 	my $deplibs = shift;
 	my $parser = shift;
 	my $opts = shift;
@@ -834,7 +840,7 @@ sub link
 	Trace::debug {"argvstring (post resolve_la): @{$parser->{args}}\n"};
 	my $orderedlibs = [];
 	$parser->parse_linkargs2($deplibs, \@main::Rresolved, \@main::libsearchdirs,
-			$orderedlibs, $dirs, $libs, $libstofind);
+			$orderedlibs, $dirs, $libs);
 	Trace::debug {"orderedlibs = @$orderedlibs\n"};
 	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
 	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
@@ -849,22 +855,24 @@ sub link
 	}
 	$RPdirs = main::reverse_zap_duplicates_ref($RPdirs);
 	map { $_ = "-Wl,-rpath,$_" } @$RPdirs;
-	foreach my $l (keys %$libstofind) {
+	foreach my $l (values %$libs) {
 		# here we find shared or static libraries
-		my $libpath = main::find_lib($l, $dirs, $self->{shared});
-		$libs->{$l} = $libpath if ($libpath);
+		if (!exists $l->{fullpath}) {
+			my $libpath = $l->find($dirs, $self->{shared});
+			$l->{fullpath} = $libpath if ($libpath);
+		}
 	}
 
 	my @libfiles = values %$libs;
 	Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
-	Trace::debug {"libfiles:\n", join("\n", @libfiles), "\n"};
+	Trace::debug {"libfiles:\n", join("\n", map { $_ = $_->{fullpath} } @libfiles), "\n"};
 
-	main::create_symlinks($ltdir, \@libfiles);
-	map { $_ = "$ltdir/". basename $_ } @libfiles;
-	Trace::debug {"symlinks to libfiles used for linking:\n", join("\n", @libfiles), "\n"};
+	main::create_symlinks($ltdir, $libs);
+#	map { $_ = "$ltdir/". basename $_ } @libfiles;
+#	Trace::debug {"symlinks to libfiles used for linking:\n", join("\n", @libfiles), "\n"};
 	my $libcounter = 0;
 	foreach my $k (@$finalorderedlibs) {
-		my $a = $libs->{$k} || die "ERROR: $k not found in \$libs";
+		my $a = $libs->{$k}->{fullpath} || die "ERROR: $k not found in \$libs";
 		if ($a =~ m/\.a$/) {
 			# don't make a -lfoo out of a static library
 			push @libflags, $a;
@@ -890,6 +898,82 @@ sub link
 	push @cmd, @$RPdirs if (@$RPdirs);
 	push @cmd, "-Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
 	Exec->command(@cmd);
+}
+
+package Library;
+
+# find actual library filename
+# XXX pick the right one if multiple are found!
+sub find
+{
+	my ($self, $dirs, $shared, $ldconfigdirs) = @_;
+
+	my $libtofind = $self->{key};
+	my $libfile = 0;
+	my @globbedlib;
+
+	my $ltdir = $main::ltdir;
+	# sort dir search order by priority
+	# XXX not fully correct yet
+	my @sdirs = sort { $dirs->{$b} <=> $dirs->{$a} } keys %$dirs;
+	# search in .libs when priority is high
+	map { $_ = "$_/$ltdir" if (exists $dirs->{$_} && $dirs->{$_} > 3) } @sdirs;
+	push @sdirs, @$ldconfigdirs if ($ldconfigdirs);
+	Trace::debug {"searching for $libtofind\n"};
+	Trace::debug {"search path= ", join(':', @sdirs), "\n"};
+	foreach my $sd (@sdirs) {
+	   if ($shared) {
+		# select correct library by sorting by version number only
+		@globbedlib = sort { my ($x,$y) =
+			map { /\.so\.(\d+\.\d+)$/; $1 } ($a,$b); $y <=> $x }
+			glob "$sd/lib$libtofind.so.*.*";
+		if ($globbedlib[0]) {
+			Trace::debug {"found $libtofind in $sd\n"};
+			$libfile = $globbedlib[0];
+			last;
+		} else {	# XXX find static library instead?
+			if (-f "$sd/lib$libtofind.a") {
+				Trace::debug {"found static $libtofind in $sd\n"};
+				$libfile = "$sd/lib$libtofind.a";
+				last;
+			}
+		}
+	   } else {
+		# look for a static library
+		if (-f "$sd/lib$libtofind.a") {
+			Trace::debug {"found static $libtofind in $sd\n"};
+			$libfile = "$sd/lib$libtofind.a";
+			last;
+		}
+	   }
+	}
+	say "$libtofind not found!" if !$libfile;
+	return $libfile;
+}
+
+# give a list of library dependencies found in the actual shared library
+sub inspect
+{
+	my $self = shift;
+
+	my $filename = $self->{fullpath};
+	my @deps;
+	Trace::debug {"inspecting $filename for library dependencies...\n"};
+	open(my $fh, '-|', "objdump -p $filename");
+	while (<$fh>) {
+		if (m/\s+NEEDED\s+(\S+)\s*$/) {
+			push @deps, $1;
+		}
+	}
+	Trace::debug {"found ", (@deps == 0) ? 'no ' : '',
+		"deps for $filename\n@deps\n"};
+	return @deps;
+}
+
+sub new
+{
+	my ($class, $key) = @_;
+	bless { key => $key }, $class;
 }
 
 package main;
@@ -1138,7 +1222,6 @@ if ($mode eq 'compile') {
 	my @RPopts;		# -rpath options
 	my $deplibs = [];	# list of dependent libraries (both -L and -l flags)
 	my $libs = {};		# libraries
-	my $libstofind = {};
 	my $dirs = {};		# paths to find libraries
 	# put a priority in the dir hash
 	# always look here
@@ -1217,11 +1300,11 @@ if ($mode eq 'compile') {
 	my $seen_la_shared = 0;
 	$parser->{seen_la_shared} = \$seen_la_shared;
 	$parser->parse_linkargs1($deplibs, \@Rresolved, \@libsearchdirs,
-			$dirs, $libs, $libstofind, $parser->{args}, 0);
+			$dirs, $libs, $parser->{args}, 0);
 	$parser->{args} = $parser->{result};
 	Trace::debug {"end parse_linkargs1\n"};
 	Trace::debug {"deplibs = @$deplibs\n"};
-	my $seen_la_shared = ${$parser->{seen_la_shared}};
+	$seen_la_shared = ${$parser->{seen_la_shared}};
 
 	if ($linkmode == PROGRAM) {
 		my $program = Program->new;
@@ -1249,7 +1332,7 @@ if ($mode eq 'compile') {
 		@$RPdirs = (@Ropts, @RPopts, @Rresolved);
 		$program->{RPdirs} = $RPdirs;
 
-		$program->link($ltprog, $dirs, $libs, $libstofind, $deplibs, $parser, \%opts, $seen_la_shared);
+		$program->link($ltprog, $dirs, $libs, $deplibs, $parser, \%opts, $seen_la_shared);
 		if ($program->{shared} && $seen_la_shared) {
 			$program->write_wrapper();
 		}
@@ -1319,7 +1402,7 @@ if ($mode eq 'compile') {
 			$lainfo->{'library_names'} = $sharedlib;
 			$lainfo->{'library_names'} .= " $sharedlib_symlink"
 				if ($opts{'release'});
-			$lainfo->link($ltprog, $ofile, $sharedlib, $odir, 1, \@sobjs, $dirs, $libs, $libstofind, $deplibs, $parser, \%opts);
+			$lainfo->link($ltprog, $ofile, $sharedlib, $odir, 1, \@sobjs, $dirs, $libs, $deplibs, $parser, \%opts);
 			Trace::debug {"sharedlib: $sharedlib\n"};
 			$lainfo->{'current'} = $current;
 			$lainfo->{'revision'} = $revision;
@@ -1327,7 +1410,7 @@ if ($mode eq 'compile') {
 		}
 		if ($static) {
 			$lainfo->{'old_library'} = $staticlib;
-			$lainfo->link($ltprog, $ofile, $staticlib, $odir, 0, ($allpicobj) ? \@sobjs : \@objs, $dirs, $libs, $libstofind, $deplibs, $parser, \%opts);
+			$lainfo->link($ltprog, $ofile, $staticlib, $odir, 0, ($allpicobj) ? \@sobjs : \@objs, $dirs, $libs, $deplibs, $parser, \%opts);
 			Trace::debug {($convenience ? "convenience" : "static")." lib: $staticlib\n"};
 		}
 		$lainfo->{'installed'} = 'no';
@@ -1426,12 +1509,13 @@ sub parse_version_info
 sub create_symlinks
 {
 	my $dir = shift;
-	my $libfiles = shift;
+	my $libs = shift;
 
 	if (! -d $dir) {
 		mkdir $dir or die "cannot create directory: $!\n";
 	}
-	foreach my $f (@$libfiles) {
+	foreach my $l (values %$libs) {
+		my $f = $l->{fullpath};
 		next if ($f =~ m/\.a$/);
 		my $libfile = basename $f;
 		Trace::debug {"ln -s $f $dir/$libfile\n"};
@@ -1462,71 +1546,6 @@ sub find_la
 	}
 	Trace::debug {".la for $l not found!\n"};
 	return 0;
-}
-
-# find actual library filename
-# XXX pick the right one if multiple are found!
-sub find_lib
-{
-	my ($libtofind, $dirs, $shared, $ldconfigdirs) = @_;
-
-	my $libfile = 0;
-	my @globbedlib;
-
-	# sort dir search order by priority
-	# XXX not fully correct yet
-	my @sdirs = sort { $dirs->{$b} <=> $dirs->{$a} } keys %$dirs;
-	# search in .libs when priority is high
-	map { $_ = "$_/$ltdir" if (exists $dirs->{$_} && $dirs->{$_} > 3) } @sdirs;
-	push @sdirs, @$ldconfigdirs if ($ldconfigdirs);
-	Trace::debug {"searching for $libtofind\n"};
-	Trace::debug {"search path= ", join(':', @sdirs), "\n"};
-	foreach my $sd (@sdirs) {
-	   if ($shared) {
-		# select correct library by sorting by version number only
-		@globbedlib = sort { my ($x,$y) =
-			map { /\.so\.(\d+\.\d+)$/; $1 } ($a,$b); $y <=> $x }
-			glob "$sd/lib$libtofind.so.*.*";
-		if ($globbedlib[0]) {
-			Trace::debug {"found $libtofind in $sd\n"};
-			$libfile = $globbedlib[0];
-			last;
-		} else {	# XXX find static library instead?
-			if (-f "$sd/lib$libtofind.a") {
-				Trace::debug {"found static $libtofind in $sd\n"};
-				$libfile = "$sd/lib$libtofind.a";
-				last;
-			}
-		}
-	   } else {
-		# look for a static library
-		if (-f "$sd/lib$libtofind.a") {
-			Trace::debug {"found static $libtofind in $sd\n"};
-			$libfile = "$sd/lib$libtofind.a";
-			last;
-		}
-	   }
-	}
-	say "$libtofind not found!" if !$libfile;
-	return $libfile;
-}
-
-# give a list of library dependencies found in the actual shared library
-sub inspect_lib
-{
-	my $filename = shift;
-
-	my @deps;
-	Trace::debug {"inspecting $filename for library dependencies...\n"};
-	open(my $fh, '-|', "objdump -p $filename");
-	while (<$fh>) {
-		if (m/\s+NEEDED\s+(\S+)\s*$/) {
-			push @deps, $1;
-		}
-	}
-	Trace::debug {"found ", (@deps == 0) ? 'no ' : '',
-		"deps for $filename\n@deps\n"};
-	return @deps;
 }
 
 # prepare dependency_libs information for the .la file which is installed
