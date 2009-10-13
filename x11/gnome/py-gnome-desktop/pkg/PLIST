@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/11 22:54:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/10/13 11:13:12 ajacoutot Exp $
 lib/pkgconfig/gnome-python-desktop-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.pyo
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evince.la
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evince.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/ebook.la
@@ -112,6 +114,7 @@ share/pygtk/2.0/defs/_gnomedesktop.defs
 share/pygtk/2.0/defs/applet.defs
 share/pygtk/2.0/defs/art.defs
 share/pygtk/2.0/defs/ebook.defs
+share/pygtk/2.0/defs/evince.defs
 share/pygtk/2.0/defs/gnomekeyring.defs
 share/pygtk/2.0/defs/mediaprofiles.defs
 share/pygtk/2.0/defs/metacity.defs
