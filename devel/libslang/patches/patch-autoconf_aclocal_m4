@@ -1,49 +1,46 @@
-$OpenBSD: patch-autoconf_aclocal_m4,v 1.4 2006/01/07 14:19:29 bernd Exp $
---- autoconf/aclocal.m4.orig	Sun Mar 23 08:06:40 2003
-+++ autoconf/aclocal.m4	Sat Jan  7 14:36:59 2006
-@@ -86,7 +86,7 @@ case "$host_os" in
-       fi
-     fi
-   ;;
--  *osf*)
-+  *osf* | *openbsd*)
-     if test "X$GCC" = Xyes
-     then
-       RPATH="-Wl,-rpath,"
-@@ -482,8 +482,8 @@ AC_CHECK_HEADER(dlfcn.h,[
- AC_SUBST(DYNAMIC_LINK_LIB)
+$OpenBSD: patch-autoconf_aclocal_m4,v 1.5 2009/10/13 21:46:20 sthen Exp $
+--- autoconf/aclocal.m4.orig	Mon Sep  7 03:10:49 2009
++++ autoconf/aclocal.m4	Sat Oct 10 13:54:45 2009
+@@ -570,13 +570,13 @@ fi
  
+ dnl #Some defaults
  ELFLIB="lib\$(THIS_LIB).so"
 -ELFLIB_MAJOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION)"
--ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION).\$(ELF_MINOR_VERSION)"
+-ELFLIB_MAJOR_MINOR="\$(ELFLIB_MAJOR).\$(ELF_MINOR_VERSION)"
 +ELFLIB_MAJOR="\$(ELFLIB).\$(LIBslang_MAJOR)"
 +ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(LIBslang_MAJOR).\$(LIBslang_MINOR)"
+ ELFLIB_MAJOR_MINOR_MICRO="\$(ELFLIB_MAJOR_MINOR).\$(ELF_MICRO_VERSION)"
  
- case "$host_os" in
-   *linux* )
-@@ -571,6 +571,25 @@ case "$host_os" in
-      ELFLIB="lib\$(THIS_LIB).dylib"
-      ELFLIB_MAJOR="lib\$(THIS_LIB).\$(ELF_MAJOR_VERSION).dylib"
-      ELFLIB_MAJOR_MINOR="lib\$(THIS_LIB).\$(ELF_MAJOR_VERSION).\$(ELF_MINOR_VERSION).dylib"
-+     ;;
-+  *openbsd* )
-+     DYNAMIC_LINK_FLAGS=""
-+     ELF_CC="$CC"
-+     case `arch -s` in
-+       sparc64)
-+         ELF_CFLAGS="$CFLAGS -fPIC"
-+        ;;
-+       *)
-+         ELF_CFLAGS="$CFLAGS -fpic"
-+        ;;
-+     esac
-+     ELF_LINK="$CC -shared $ELF_CFLAGS"
-+     ELF_LINK_CMD="\$(ELF_LINK)"
-+     ELF_DEP_LIBS=
-+     CC_SHARED="$CC -shared $ELF_CFLAGS"
-+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
-+       DYNAMIC_LINK_FLAGS="-Wl,-E"
-+     fi
-      ;;
+ dnl# This specifies the target to use in the makefile to install the shared library
+ INSTALL_ELFLIB_TARGET="install-elf-and-links"
+-ELFLIB_BUILD_NAME="\$(ELFLIB_MAJOR_MINOR_MICRO)"
++ELFLIB_BUILD_NAME="\$(ELFLIB_MAJOR_MINOR)"
+ INSTALL_MODULE="\$(INSTALL_DATA)"
+ SLANG_DLL_CFLAGS=""
+ M_LIB="-lm"
+@@ -701,6 +701,25 @@ case "$host_os" in
+     ELF_LINK="\$(CC) \$(LDFLAGS) -shared -Wl,-O1 -Wl,--version-script,\$(VERSION_SCRIPT) -Wl,-soname,\$(ELFLIB_MAJOR)"
+     ELF_DEP_LIBS="\$(DL_LIB)"
+     CC_SHARED="\$(CC) \$(CFLAGS) -shared -fPIC"
++    ;;
++   *openbsd* )
++      DYNAMIC_LINK_FLAGS=""
++      ELF_CC="$CC"
++      case `arch -s` in
++        sparc64)
++          ELF_CFLAGS="$CFLAGS -fPIC"
++         ;;
++        *)
++          ELF_CFLAGS="$CFLAGS -fpic"
++         ;;
++      esac
++      ELF_LINK="$CC -shared $ELF_CFLAGS"
++      ELF_LINK_CMD="\$(ELF_LINK)"
++      ELF_DEP_LIBS=
++      CC_SHARED="$CC -shared $ELF_CFLAGS"
++      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
++        DYNAMIC_LINK_FLAGS="-Wl,-E"
++      fi
+     ;;
    * )
      echo "Note: ELF compiler for host_os=$host_os may be wrong"

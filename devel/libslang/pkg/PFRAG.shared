@@ -1,2 +1,15 @@
-@comment $OpenBSD: PFRAG.shared,v 1.11 2006/01/07 14:19:29 bernd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.12 2009/10/13 21:46:20 sthen Exp $
+@comment lib/libslang.so
 @lib lib/libslang.so.${LIBslang_VERSION}
+lib/slang/v2/modules/fcntl-module.so
+lib/slang/v2/modules/fork-module.so
+lib/slang/v2/modules/iconv-module.so
+lib/slang/v2/modules/pcre-module.so
+lib/slang/v2/modules/rand-module.so
+lib/slang/v2/modules/select-module.so
+lib/slang/v2/modules/slsmg-module.so
+lib/slang/v2/modules/socket-module.so
+lib/slang/v2/modules/sysconf-module.so
+lib/slang/v2/modules/termios-module.so
+lib/slang/v2/modules/varray-module.so
+lib/slang/v2/modules/zlib-module.so

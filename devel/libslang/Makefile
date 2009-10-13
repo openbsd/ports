@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.45 2007/09/16 02:53:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.46 2009/10/13 21:46:20 sthen Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
-VERSION=	1.4.9
-DISTNAME=	slang-${VERSION}
-PKGNAME=	libslang-${VERSION}p3
-SHARED_LIBS=	slang 14.9
+DISTNAME=	slang-2.2.1
+PKGNAME=	lib${DISTNAME}
+SHARED_LIBS=	slang 15.0
 
 CATEGORIES=	devel
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/ \
-		http://gd.tuwien.ac.at/editors/davis/slang/v1.4/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v2.2/ \
+		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v2.2/
 
 HOMEPAGE=	http://www.s-lang.org/
 
@@ -19,8 +18,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-AUTOCONF_VERSION=	2.13
+WANTLIB=		c m termcap z
+
+LIB_DEPENDS=		pcre::devel/pcre
+MODULES=		converters/libiconv
+
+AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_DIR=		${WRKSRC}/autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autoconf
 
 REGRESS_TARGET=		runtests
@@ -29,10 +34,8 @@ REGRESS_FLAGS=		TCAPLIB="-ltermlib"
 MAKE_ENV=		LIBslang_MAJOR=${LIBslang_VERSION:R} \
 			LIBslang_MINOR=${LIBslang_VERSION:E}
 
-pre-patch:
-.for f in aclocal.m4 configure.in
-	@cd ${WRKSRC} && ln -sf autoconf/${f} ${f}
-.endfor
+pre-configure:
+	cd ${AUTOCONF_DIR}; cp configure ..
 
 .include <bsd.port.mk>
 

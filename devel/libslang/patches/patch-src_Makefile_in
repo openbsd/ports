@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Sun Feb 10 02:39:19 2002
-+++ src/Makefile.in	Tue May  7 19:57:00 2002
-@@ -38,7 +38,7 @@ prefix = @prefix@
- exec_prefix = @exec_prefix@
+--- src/Makefile.in.orig	Mon Sep  7 02:10:49 2009
++++ src/Makefile.in	Wed Sep  9 21:57:37 2009
+@@ -45,7 +45,7 @@ exec_prefix = @exec_prefix@
  install_lib_dir = @libdir@
+ install_bin_dir = @bindir@
  install_include_dir = @includedir@
--install_doc_dir = $(prefix)/doc/slang
-+install_doc_dir = $(prefix)/share/doc/slang
+-install_doc_dir = $(prefix)/share/doc/slang/v@slang_major_version@
++install_doc_dir = $(prefix)/share/doc/slang/
  DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
- MODULE_INSTALL_DIR = @libdir@/slang/modules
+ MODULE_INSTALL_DIR = @libdir@/slang/v@slang_major_version@/modules
  #---------------------------------------------------------------------------
