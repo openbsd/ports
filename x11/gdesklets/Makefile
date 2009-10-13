@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/11 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/10/13 20:50:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		mini programs for your desktop
 
 V=			0.36.1
 DISTNAME=		gdesklets-${V}
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.gdesklets.de/
@@ -29,7 +29,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 bz2 cairo croco-0.6 \
 		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gsf-1 \
-		gtk-x11-2.0 kvm m pango-1.0 pangocairo-1.0 \
+		gtk-x11-2.0 kvm m pango-1.0 pangocairo-1.0 ffi \
 		pangoft2-1.0 pcre pixman-1 png xml2 z pthread-stubs xcb
 
 LIB_DEPENDS=		gtop-2.0::devel/libgtop2 \
