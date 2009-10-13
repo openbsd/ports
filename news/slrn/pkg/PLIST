@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.14 2007/05/25 00:50:50 aanriot Exp $
-bin/slrn
-bin/slrnpull
+@comment $OpenBSD: PLIST,v 1.15 2009/10/13 21:49:02 sthen Exp $
+@bin bin/slrn
+@bin bin/slrnpull
 @man man/man1/slrn.1
 @man man/man1/slrnpull.1
 share/doc/slrn/
@@ -45,18 +45,19 @@ share/locale/ru/LC_MESSAGES/slrn.mo
 share/locale/sv/LC_MESSAGES/slrn.mo
 share/locale/tr/LC_MESSAGES/slrn.mo
 share/slrn/
-share/slrn/macros/
-share/slrn/macros/color.sl
-share/slrn/macros/gsort.sl
-share/slrn/macros/ispell.sl
-share/slrn/macros/latin2.sl
-share/slrn/macros/multipart.sl
-share/slrn/macros/nn.sl
-share/slrn/macros/posthook.sl
-share/slrn/macros/search.sl
-share/slrn/macros/tin-art.sl
-share/slrn/macros/tin-group.sl
-share/slrn/macros/ttyprint.sl
-share/slrn/macros/util.sl
-share/slrn/macros/varset.sl
-share/slrn/macros/xcomment.sl
+share/slrn/slang/
+share/slrn/slang/color.sl
+share/slrn/slang/gsort.sl
+share/slrn/slang/ispell.sl
+share/slrn/slang/latin2.sl
+share/slrn/slang/multipart.sl
+share/slrn/slang/nn.sl
+share/slrn/slang/posthook.sl
+share/slrn/slang/search.sl
+share/slrn/slang/slrn.sl
+share/slrn/slang/tin-art.sl
+share/slrn/slang/tin-group.sl
+share/slrn/slang/ttyprint.sl
+share/slrn/slang/util.sl
+share/slrn/slang/varset.sl
+share/slrn/slang/xcomment.sl
