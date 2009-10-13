@@ -1,0 +1,78 @@
+$OpenBSD: patch-configure,v 1.1 2009/10/13 23:20:41 ajacoutot Exp $
+--- configure.orig	Tue Oct 13 23:22:10 2009
++++ configure	Tue Oct 13 23:22:34 2009
+@@ -13172,13 +13172,11 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
+         gio-2.0 >= \$GLIB_REQUIRED
+         gtk+-2.0 >= \$GTK_REQUIRED
+         dbus-glib-1 >= \$DBUS_GLIB_REQUIRED
+-        devkit-power-gobject >= \$DEVKIT_POWER_REQUIRED
+ \"") >&5
+   ($PKG_CONFIG --exists --print-errors "glib-2.0 >= $GLIB_REQUIRED
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-2.0 >= $GTK_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+ ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+@@ -13187,7 +13185,6 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-2.0 >= $GTK_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+ " 2>/dev/null`
+ else
+   pkg_failed=yes
+@@ -13203,13 +13200,11 @@ if test -n "$GNOME_SESSION_LIBS"; then
+         gio-2.0 >= \$GLIB_REQUIRED
+         gtk+-2.0 >= \$GTK_REQUIRED
+         dbus-glib-1 >= \$DBUS_GLIB_REQUIRED
+-        devkit-power-gobject >= \$DEVKIT_POWER_REQUIRED
+ \"") >&5
+   ($PKG_CONFIG --exists --print-errors "glib-2.0 >= $GLIB_REQUIRED
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-2.0 >= $GTK_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+ ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+@@ -13218,7 +13213,6 @@ if test -n "$GNOME_SESSION_LIBS"; then
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-2.0 >= $GTK_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+ " 2>/dev/null`
+ else
+   pkg_failed=yes
+@@ -13241,14 +13235,12 @@ fi
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-2.0 >= $GTK_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+ " 2>&1`
+         else
+ 	        GNOME_SESSION_PKG_ERRORS=`$PKG_CONFIG --print-errors "glib-2.0 >= $GLIB_REQUIRED
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-2.0 >= $GTK_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+ " 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+@@ -13258,7 +13250,6 @@ fi
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-2.0 >= $GTK_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+ ) were not met:
+ 
+ $GNOME_SESSION_PKG_ERRORS
+@@ -13274,7 +13265,6 @@ $as_echo "$as_me: error: Package requirements (glib-2.
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-2.0 >= $GTK_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        devkit-power-gobject >= $DEVKIT_POWER_REQUIRED
+ ) were not met:
+ 
+ $GNOME_SESSION_PKG_ERRORS

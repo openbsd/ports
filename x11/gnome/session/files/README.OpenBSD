@@ -1,23 +1,45 @@
-$OpenBSD: README.OpenBSD,v 1.26 2009/06/16 15:12:50 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.27 2009/10/13 23:20:41 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
+=========================
 
 * Introduction
-The gnome-session package will install a minimal working GNOME desktop.
-It provides you with the basic interface (including themes), a control
-panel, a terminal, a text editor and a lot more other utilities.
+  ------------
+The gnome-session package only takes care of installing minimal GNOME
+libraries.  For a satisfying GNOME user experience, it is advised to
+install at least the following packages:
+    sudo pkg_add eog \
+	file-roller \
+	gdm \
+	gedit \
+	gnome-audio \
+	gnome-backgrounds \
+	gnome-control-center \
+	gnome-media \
+	gnome-panel \
+	gnome-screensaver \
+	gnome-terminal \
+	gnome-themes \
+	gnome-utils
+
+(xscreensaver can be used instead of gnome-screensaver)
 
 This file will briefly explain to you how to make this experience more
 pleasant.
 
 * A note about accessibility
+  --------------------------
 If you want to make the GNOME applications "accessible" (e.g. nautilus),
 you'll need to install the libgail-gnome package which adds ATK
 interfaces for libbonoboui and libgnomeui widgets.
 
 * Installing more packages
+  ------------------------
 If your needs aren't satisfied yet, there are many other packages
 you can install. The most important ones will be mentioned by category:
+
+(if you have access to an OpenBSD ports tree, you can find most GNOME
+related ports under the x11/gnome category)
 
  - Accessibility
    * dasher - predictive text input system
@@ -44,6 +66,7 @@ you can install. The most important ones will be mentioned by category:
    * gnome-devel-docs - developer documentation
 
  - Utilities
+   * alacarte - simple menu editing tool
    * cheese - take photos and videos with your webcam
    * conduit - all-in-one synchronization application
    * evince - document viewer for multiple document formats
@@ -52,6 +75,7 @@ you can install. The most important ones will be mentioned by category:
    * gnome-games - collection of games
    * gnome-keyring-manager - keyring password management
    * gnome-scan - scanning application
+   * gnome-themes-extras - extra themes for GNOME
    * gnome-video-arcade - MAME front-end
    * gnomebaker - CD/DVD burning application
    * gucharmap - Unicode character map
@@ -59,6 +83,7 @@ you can install. The most important ones will be mentioned by category:
    * mergeant - database administration GUI
    * nautilus-open-terminal - open terminal from a nautilus folder
    * nautilus-sendto - integrate applications into Nautilus
+   * tango-icon-theme - Tango icon theme
    * pessulus - lockdown editor for desktop
    * planner - project management
    * seahorse - encryption keys manager
@@ -68,6 +93,7 @@ you can install. The most important ones will be mentioned by category:
    * xdg-user-dirs-gtk - manage well know user directories
 
 * Startup and more documentation
+  ------------------------------
 One can log in using the login manager, GDM. Or by using the 'startx' command.
 In order to use the latter, add a line like the following to your .xinitrc
 or .xsession script: 'exec ${TRUEPREFIX}/bin/gnome-session' .

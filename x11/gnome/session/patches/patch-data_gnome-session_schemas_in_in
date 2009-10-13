@@ -1,9 +1,9 @@
-$OpenBSD: patch-data_gnome-session_schemas_in,v 1.1 2009/02/17 10:22:02 ajacoutot Exp $
+$OpenBSD: patch-data_gnome-session_schemas_in_in,v 1.1 2009/10/13 23:20:42 ajacoutot Exp $
 
 Show splash screen by default.
 
---- data/gnome-session.schemas.in.orig	Tue Feb 17 11:22:57 2009
-+++ data/gnome-session.schemas.in	Tue Feb 17 11:23:10 2009
+--- data/gnome-session.schemas.in.in.orig	Wed Oct 14 01:08:12 2009
++++ data/gnome-session.schemas.in.in	Wed Oct 14 01:08:20 2009
 @@ -7,7 +7,7 @@
           <applyto>/apps/gnome-session/options/show_splash_screen</applyto>
           <owner>gnome</owner>
