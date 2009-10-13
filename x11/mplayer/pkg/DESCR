@@ -10,7 +10,6 @@ so you can enjoy movies in fullscreen.
 
 Flavors:
   sdl: enables sdl, requires devel/sdl
-  ggi: enables ggi, requires graphics/ggi
   debug: enables debugging information
   mad: enables mad, requires audio/libmad
   no_x11: disables gui and most video output.
