@@ -1,15 +1,18 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/08/17 09:57:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2009/10/13 11:00:39 ajacoutot Exp $
 @pkgpath graphics/evince
 @bin bin/evince
+@bin bin/evince-previewer
 @bin bin/evince-thumbnailer
 include/evince/
 include/evince/2.25/
 include/evince/2.25/evince-document.h
 include/evince/2.25/evince-view.h
 include/evince/2.25/libdocument/
+include/evince/2.25/libdocument/ev-annotation.h
 include/evince/2.25/libdocument/ev-async-renderer.h
 include/evince/2.25/libdocument/ev-attachment.h
 include/evince/2.25/libdocument/ev-backends-manager.h
+include/evince/2.25/libdocument/ev-document-annotations.h
 include/evince/2.25/libdocument/ev-document-factory.h
 include/evince/2.25/libdocument/ev-document-find.h
 include/evince/2.25/libdocument/ev-document-fonts.h
@@ -19,6 +22,7 @@ include/evince/2.25/libdocument/ev-document-info.h
 include/evince/2.25/libdocument/ev-document-layers.h
 include/evince/2.25/libdocument/ev-document-links.h
 include/evince/2.25/libdocument/ev-document-misc.h
+include/evince/2.25/libdocument/ev-document-print.h
 include/evince/2.25/libdocument/ev-document-security.h
 include/evince/2.25/libdocument/ev-document-thumbnails.h
 include/evince/2.25/libdocument/ev-document-transition.h
@@ -33,6 +37,7 @@ include/evince/2.25/libdocument/ev-layer.h
 include/evince/2.25/libdocument/ev-link-action.h
 include/evince/2.25/libdocument/ev-link-dest.h
 include/evince/2.25/libdocument/ev-link.h
+include/evince/2.25/libdocument/ev-mapping.h
 include/evince/2.25/libdocument/ev-page.h
 include/evince/2.25/libdocument/ev-render-context.h
 include/evince/2.25/libdocument/ev-selection.h
@@ -42,6 +47,7 @@ include/evince/2.25/libview/
 include/evince/2.25/libview/ev-job-scheduler.h
 include/evince/2.25/libview/ev-jobs.h
 include/evince/2.25/libview/ev-page-cache.h
+include/evince/2.25/libview/ev-stock-icons.h
 include/evince/2.25/libview/ev-view-type-builtins.h
 include/evince/2.25/libview/ev-view.h
 lib/evince/
@@ -68,6 +74,7 @@ lib/pkgconfig/evince-view-2.25.pc
 @man man/man1/evince.1
 share/applications/evince.desktop
 share/evince/
+share/evince/evince-previewer-ui.xml
 share/evince/evince-toolbar.xml
 share/evince/evince-ui.xml
 share/evince/hand-open.png
@@ -101,6 +108,9 @@ share/evince/icons/hicolor/32x32/actions/view-page-continuous.png
 share/evince/icons/hicolor/32x32/actions/view-page-facing.png
 share/evince/icons/hicolor/48x48/
 share/evince/icons/hicolor/48x48/actions/
+share/evince/icons/hicolor/48x48/actions/close.png
+share/evince/icons/hicolor/48x48/actions/resize-se.png
+share/evince/icons/hicolor/48x48/actions/resize-sw.png
 share/evince/icons/hicolor/48x48/actions/view-page-continuous.png
 share/evince/icons/hicolor/48x48/actions/view-page-facing.png
 share/gnome/help/evince/
@@ -185,6 +195,10 @@ share/gnome/help/evince/uk/
 share/gnome/help/evince/uk/evince.xml
 share/gnome/help/evince/uk/figures/
 share/gnome/help/evince/uk/figures/evince_start_window.png
+share/gnome/help/evince/vi/
+share/gnome/help/evince/vi/evince.xml
+share/gnome/help/evince/vi/figures/
+share/gnome/help/evince/vi/figures/evince_start_window.png
 share/gnome/help/evince/zh_CN/
 share/gnome/help/evince/zh_CN/evince.xml
 share/gnome/help/evince/zh_CN/figures/
@@ -200,12 +214,11 @@ share/gtk-doc/html/evince/evince-EvPasswordView.html
 share/gtk-doc/html/evince/evince-EvSidebar.html
 share/gtk-doc/html/evince/evince-EvSidebarAttachments.html
 share/gtk-doc/html/evince/evince-EvSidebarLinks.html
+share/gtk-doc/html/evince/evince-EvSidebarPage.html
 share/gtk-doc/html/evince/evince-EvSidebarThumbnails.html
 share/gtk-doc/html/evince/evince-ev-metadata-manager.html
 share/gtk-doc/html/evince/evince-ev-properties-dialog.html
 share/gtk-doc/html/evince/evince-ev-properties-fonts.html
-share/gtk-doc/html/evince/evince-ev-sidebar-page.html
-share/gtk-doc/html/evince/evince-ev-stock-icons.html
 share/gtk-doc/html/evince/evince-ev-utils.html
 share/gtk-doc/html/evince/evince-ev-window-title.html
 share/gtk-doc/html/evince/evince.devhelp
@@ -220,12 +233,25 @@ share/gtk-doc/html/evince/right.png
 share/gtk-doc/html/evince/style.css
 share/gtk-doc/html/evince/up.png
 share/gtk-doc/html/libevdocument/
+share/gtk-doc/html/libevdocument/EvAsyncRenderer.html
 share/gtk-doc/html/libevdocument/EvAttachment.html
+share/gtk-doc/html/libevdocument/EvDocument.html
+share/gtk-doc/html/libevdocument/EvDocumentFind.html
+share/gtk-doc/html/libevdocument/EvDocumentFonts.html
+share/gtk-doc/html/libevdocument/EvDocumentForms.html
+share/gtk-doc/html/libevdocument/EvDocumentImages.html
+share/gtk-doc/html/libevdocument/EvDocumentLayers.html
+share/gtk-doc/html/libevdocument/EvDocumentLinks.html
+share/gtk-doc/html/libevdocument/EvDocumentSecurity.html
+share/gtk-doc/html/libevdocument/EvDocumentThumbnails.html
+share/gtk-doc/html/libevdocument/EvDocumentTransition.html
+share/gtk-doc/html/libevdocument/EvFileExporter.html
 share/gtk-doc/html/libevdocument/EvFormFieldSignature.html
 share/gtk-doc/html/libevdocument/EvImage.html
 share/gtk-doc/html/libevdocument/EvLayer.html
 share/gtk-doc/html/libevdocument/EvPage.html
 share/gtk-doc/html/libevdocument/EvRenderContext.html
+share/gtk-doc/html/libevdocument/EvSelection.html
 share/gtk-doc/html/libevdocument/data.html
 share/gtk-doc/html/libevdocument/helper.html
 share/gtk-doc/html/libevdocument/home.png
@@ -233,28 +259,15 @@ share/gtk-doc/html/libevdocument/index.html
 share/gtk-doc/html/libevdocument/index.sgml
 share/gtk-doc/html/libevdocument/interfaces.html
 share/gtk-doc/html/libevdocument/left.png
-share/gtk-doc/html/libevdocument/libevdocument-ev-async-renderer.html
 share/gtk-doc/html/libevdocument/libevdocument-ev-backends-manager.html
 share/gtk-doc/html/libevdocument/libevdocument-ev-document-factory.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-document-find.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-document-fonts.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-document-forms.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-document-images.html
 share/gtk-doc/html/libevdocument/libevdocument-ev-document-info.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-document-layers.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-document-links.html
 share/gtk-doc/html/libevdocument/libevdocument-ev-document-misc.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-document-security.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-document-thumbnails.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-document-transition.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-document.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-file-exporter.html
 share/gtk-doc/html/libevdocument/libevdocument-ev-file-helpers.html
 share/gtk-doc/html/libevdocument/libevdocument-ev-init.html
 share/gtk-doc/html/libevdocument/libevdocument-ev-link-action.html
 share/gtk-doc/html/libevdocument/libevdocument-ev-link-dest.html
 share/gtk-doc/html/libevdocument/libevdocument-ev-link.html
-share/gtk-doc/html/libevdocument/libevdocument-ev-selection.html
 share/gtk-doc/html/libevdocument/libevdocument-ev-transition-effect.html
 share/gtk-doc/html/libevdocument/libevdocument.devhelp
 share/gtk-doc/html/libevdocument/libevdocument.devhelp2
@@ -262,14 +275,15 @@ share/gtk-doc/html/libevdocument/right.png
 share/gtk-doc/html/libevdocument/style.css
 share/gtk-doc/html/libevdocument/up.png
 share/gtk-doc/html/libevview/
-share/gtk-doc/html/libevview/EvJobExport.html
 share/gtk-doc/html/libevview/ch01.html
 share/gtk-doc/html/libevview/home.png
 share/gtk-doc/html/libevview/index.html
 share/gtk-doc/html/libevview/index.sgml
 share/gtk-doc/html/libevview/left.png
+share/gtk-doc/html/libevview/libevview-EvJobPrint.html
 share/gtk-doc/html/libevview/libevview-ev-job-scheduler.html
 share/gtk-doc/html/libevview/libevview-ev-page-cache.html
+share/gtk-doc/html/libevview/libevview-ev-stock-icons.html
 share/gtk-doc/html/libevview/libevview-ev-view.html
 share/gtk-doc/html/libevview/libevview.devhelp
 share/gtk-doc/html/libevview/libevview.devhelp2
@@ -292,6 +306,7 @@ share/locale/bn/LC_MESSAGES/evince.mo
 share/locale/bn_IN/LC_MESSAGES/evince.mo
 share/locale/br/LC_MESSAGES/evince.mo
 share/locale/ca/LC_MESSAGES/evince.mo
+share/locale/ca@valencia/LC_MESSAGES/evince.mo
 share/locale/cs/LC_MESSAGES/evince.mo
 share/locale/cy/LC_MESSAGES/evince.mo
 share/locale/da/LC_MESSAGES/evince.mo
@@ -379,6 +394,7 @@ share/omf/evince/evince-ru.omf
 share/omf/evince/evince-sr.omf
 share/omf/evince/evince-sv.omf
 share/omf/evince/evince-uk.omf
+share/omf/evince/evince-vi.omf
 share/omf/evince/evince-zh_CN.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
