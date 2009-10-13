@@ -1,0 +1,2 @@
+A Python package to parse and build CSS Cascading Style Sheets.
+DOM only, not any rendering facilities.
