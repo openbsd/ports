@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2009/10/11 22:38:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2009/10/13 20:08:47 ajacoutot Exp $
 
 COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	2.28.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS=	panel-applet-2       3.0      # .2.28
 
@@ -47,9 +47,6 @@ LIB_DEPENDS= 	camel-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2::da
 		gweather::x11/gnome/libgweather \
 		rsvg-2::x11/gnome/librsvg \
 		soup-gnome-2.4.>=1::devel/libsoup,-gnome
-
-# looks broken otherwise (no icons, default fonts, no theme...)
-RUN_DEPENDS=	::x11/gnome/settings-daemon
 
 MODGNOME_HELP_FILES= Yes
 USE_X11=	Yes
