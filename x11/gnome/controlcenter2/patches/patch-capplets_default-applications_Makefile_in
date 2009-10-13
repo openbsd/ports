@@ -1,7 +1,7 @@
-$OpenBSD: patch-capplets_default-applications_Makefile_in,v 1.1 2009/06/09 17:21:10 ajacoutot Exp $
---- capplets/default-applications/Makefile.in.orig	Tue Jun  9 18:57:15 2009
-+++ capplets/default-applications/Makefile.in	Tue Jun  9 18:57:34 2009
-@@ -346,7 +346,7 @@ dist_glade_DATA = gnome-default-applications-propertie
+$OpenBSD: patch-capplets_default-applications_Makefile_in,v 1.2 2009/10/13 19:09:05 ajacoutot Exp $
+--- capplets/default-applications/Makefile.in.orig	Mon Sep 21 13:06:38 2009
++++ capplets/default-applications/Makefile.in	Tue Oct 13 19:26:00 2009
+@@ -337,7 +337,7 @@ dist_ui_DATA = gnome-default-applications-properties.u
  desktopdir = $(datadir)/applications
  Desktop_in_files = default-applications.desktop.in
  desktop_DATA = $(Desktop_in_files:.desktop.in=.desktop)

@@ -1,21 +1,12 @@
-$OpenBSD: patch-capplets_common_gnome-theme-info_c,v 1.1 2009/06/09 17:21:10 ajacoutot Exp $
---- capplets/common/gnome-theme-info.c.orig	Tue Jun  9 19:04:02 2009
-+++ capplets/common/gnome-theme-info.c	Tue Jun  9 19:04:43 2009
-@@ -1853,7 +1853,7 @@ gnome_theme_init ()
-   g_object_unref (top_theme_dir);
- 
-   /* The weird /usr/share/icons */
--  top_theme_dir = g_file_new_for_path ("/usr/share/icons");
-+  top_theme_dir = g_file_new_for_path ("${PREFIX}/share/icons");
-   add_top_icon_theme_dir_monitor (top_theme_dir, 2, NULL);
-   g_object_unref (top_theme_dir);
- 
-@@ -1867,7 +1867,7 @@ gnome_theme_init ()
+$OpenBSD: patch-capplets_common_gnome-theme-info_c,v 1.2 2009/10/13 19:09:05 ajacoutot Exp $
+--- capplets/common/gnome-theme-info.c.orig	Tue Oct 13 19:21:56 2009
++++ capplets/common/gnome-theme-info.c	Tue Oct 13 19:22:46 2009
+@@ -1876,7 +1876,7 @@ gnome_theme_init ()
  #ifdef XCURSOR_ICONDIR
    /* if there's a separate xcursors dir, add that as well */
    if (strcmp (XCURSOR_ICONDIR, top_theme_dir_string) &&
 -      strcmp (XCURSOR_ICONDIR, "/usr/share/icons")) {
-+      strcmp (XCURSOR_ICONDIR, "${PREFIX}/share/icons")) {
++      strcmp (XCURSOR_ICONDIR, "${LOCALBASE}/share/icons")) {
      top_theme_dir = g_file_new_for_path (XCURSOR_ICONDIR);
-     if (g_file_query_exists (top_theme_dir, NULL))
-       add_top_icon_theme_dir_monitor (top_theme_dir, 1, NULL);
+     add_top_icon_theme_dir_monitor (top_theme_dir, 1, NULL);
+     g_object_unref (top_theme_dir);

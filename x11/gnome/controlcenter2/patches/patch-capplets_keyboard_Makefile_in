@@ -1,7 +1,7 @@
-$OpenBSD: patch-capplets_keyboard_Makefile_in,v 1.4 2008/11/21 17:02:50 jasper Exp $
---- capplets/keyboard/Makefile.in.orig	Tue Nov 11 21:00:29 2008
-+++ capplets/keyboard/Makefile.in	Tue Nov 11 21:00:46 2008
-@@ -205,7 +205,7 @@ LIBGNOMEKBDUI_LIBS = @LIBGNOMEKBDUI_LIBS@
+$OpenBSD: patch-capplets_keyboard_Makefile_in,v 1.5 2009/10/13 19:09:05 ajacoutot Exp $
+--- capplets/keyboard/Makefile.in.orig	Mon Sep 21 13:06:38 2009
++++ capplets/keyboard/Makefile.in	Tue Oct 13 19:26:00 2009
+@@ -202,7 +202,7 @@ LIBGNOMEKBDUI_LIBS = @LIBGNOMEKBDUI_LIBS@
  LIBGNOMEKBD_CFLAGS = @LIBGNOMEKBD_CFLAGS@
  LIBGNOMEKBD_LIBS = @LIBGNOMEKBD_LIBS@
  LIBOBJS = @LIBOBJS@

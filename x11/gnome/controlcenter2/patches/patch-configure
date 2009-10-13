@@ -1,7 +1,12 @@
-$OpenBSD: patch-configure,v 1.9 2008/11/21 17:02:50 jasper Exp $
---- configure.orig	Tue Nov 11 21:00:59 2008
-+++ configure	Tue Nov 11 21:01:15 2008
-@@ -25795,7 +25795,7 @@ if test `eval 'as_val=${'$as_ac_Header'}
+$OpenBSD: patch-configure,v 1.10 2009/10/13 19:09:05 ajacoutot Exp $
+
+XCURSOR_ICONDIR is set in CONFIGURE_ENV.
+We do not use the default ${X11BASE}/share/icons because ports (e.g.
+xcursor-themes) install cursor themes under ${LOCALBASE}/lib/X11/icons
+
+--- configure.orig	Mon Sep 21 13:06:35 2009
++++ configure	Tue Oct 13 20:50:44 2009
+@@ -17184,7 +17184,7 @@ as_val=`eval 'as_val=${'$as_ac_Header'}
    cat >>confdefs.h <<_ACEOF
  #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
@@ -10,3 +15,26 @@ $OpenBSD: patch-configure,v 1.9 2008/11/21 17:02:50 jasper Exp $
  fi
  
  done
+@@ -19240,22 +19240,9 @@ fi
+ 
+ 
+ 
+-if test x$have_xcursor = xyes; then
+-  { $as_echo "$as_me:$LINENO: checking for XCURSOR cursor location" >&5
+-$as_echo_n "checking for XCURSOR cursor location... " >&6; }
+-  XCURSOR_ICONDIR=$($PKG_CONFIG --variable=icondir xcursor)
+-  if test "x$XCURSOR_ICONDIR" != x; then
+-
+ cat >>confdefs.h <<_ACEOF
+ #define XCURSOR_ICONDIR "${XCURSOR_ICONDIR}"
+ _ACEOF
+-
+-  else
+-    XCURSOR_ICONDIR=none
+-  fi
+-  { $as_echo "$as_me:$LINENO: result: ${XCURSOR_ICONDIR}" >&5
+-$as_echo "${XCURSOR_ICONDIR}" >&6; }
+-fi
+ 
+ CAPPLET_LIBS="$CAPPLET_LIBS $XCURSOR_LIBS"
+ 
