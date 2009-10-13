@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2009/10/12 22:11:48 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2009/10/13 10:39:41 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -151,14 +151,15 @@ SUBTARGETS = 		sub-tools-bootstrap \
 			sub-xmlpatterns \
 			sub-phonon \
 			sub-svg \
+			sub-scripttools \
 			sub-plugins \
 			sub-tools \
 			sub-tools-qdoc3
 
 ALL_TARGET =		${SUBTARGETS}
 INSTALL_TARGET =	${SUBTARGETS:S/$/-install_subtargets/} \
-			install_htmldocs install_translations install_qmake \
-			install_mkspecs
+			install_htmldocs install_qchdocs install_docimages \
+			install_qmake install_mkspecs
 .else
 MULTI_PACKAGES +=	-examples
 PROGRAMS +=		qtdemo pixeltool
