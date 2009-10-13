@@ -1,9 +1,0 @@
-$OpenBSD: patch-getDefaultBinPaths_sh,v 1.1 2009/09/06 11:27:45 jasper Exp $
---- getDefaultBinPaths.sh.orig Thu Sep  3 18:24:09 2009
-+++ getDefaultBinPaths.sh      Thu Sep  3 18:24:15 2009
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- PATHFILE=./src/DefaultBinaryPaths.h
- 
