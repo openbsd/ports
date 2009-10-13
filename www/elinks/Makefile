@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2009/10/13 18:24:01 edd Exp $
+# $OpenBSD: Makefile,v 1.19 2009/10/13 20:50:27 edd Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		www
 MASTER_SITES=		http://elinks.cz/download/
 
