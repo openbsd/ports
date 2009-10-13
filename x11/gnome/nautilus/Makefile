@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2009/10/13 10:11:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2009/10/13 15:39:02 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
 # PLIST regen is needed for at least the following ports when
 # the nautilus extensions directory changes:
 # (e.g. ${LOCALBASE}/lib/nautilus/extensions-2.0)
+# graphics/evince
 # x11/gnome/file-roller
 # x11/gnome/nautilus-open-terminal
 # x11/gnome/nautilus-sendto
