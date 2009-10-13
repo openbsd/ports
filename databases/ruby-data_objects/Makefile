@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/30 00:54:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/13 19:59:38 pirofti Exp $
 
 COMMENT =	unified Ruby API for popular databases
 
-DISTNAME =	data_objects-0.9.11
+DISTNAME =	data_objects-0.10.0
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	databases
 
@@ -24,11 +24,9 @@ CONFIGURE_STYLE =	ruby gem
 
 PKG_ARCH =		*
 
+MODRUBY_REGRESS =	rspec
 REGRESS_DEPENDS =	::devel/ruby-rake \
 			::devel/ruby-rspec \
 			::devel/ruby-rcov
-
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake spec
 
 .include <bsd.port.mk>
