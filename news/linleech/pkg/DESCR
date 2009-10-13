@@ -1,9 +1,0 @@
-linleech is a utility that will search through all the articles in given 
-USENET groups and download those that meet your configured criteria.
-Via the use of S-Lang, a very granular control over what is downloaded is
-achieved; It can perform regexp matching on articles to fetch only those
-that you are interested in, alleviating you of the need to browse through
-a plethora of uninteresting articles.
-
-Another useful feature is the ability to perform arbitrary commands on each
-article as it is downloaded, such as uudecoding and moving it to an archive.

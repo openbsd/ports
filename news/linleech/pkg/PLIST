@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:21:21 espie Exp $
-bin/linleech
-share/doc/linleech/
-share/doc/linleech/README.linleech
-share/doc/linleech/auth.sl
-share/doc/linleech/script.example
