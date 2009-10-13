@@ -1,5 +1,8 @@
 RoundCube webmail has been installed into ${INSTDIR}
 
+With Apache, this directory must be granted at least these:
+    AllowOverride Indexes FileInfo Options
+
 Proceed to complete the installation or upgrade by reading:
 ${INSTDIR}/INSTALL
 ${INSTDIR}/UPGRADING

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/09/05 15:46:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2009/10/13 17:00:59 sthen Exp $
 
 COMMENT =	imap4 webmail client
 
-DISTNAME =	roundcubemail-0.3-stable
-PKGNAME =	${DISTNAME:S/-stable//}
+#DISTNAME =	roundcubemail-0.3-stable
+#PKGNAME =	${DISTNAME:S/-stable//}
+DISTNAME =	roundcubemail-0.3.0.3038
 CATEGORIES =	mail www
 HOMEPAGE =	http://www.roundcube.net/
 
@@ -15,7 +16,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=roundcubemail/}
+#MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=roundcubemail/}
+# svn export
+MASTER_SITES =	http://spacehopper.org/mirrors/
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
@@ -29,9 +32,9 @@ RUN_DEPENDS =	:php5-core-*:www/php5/core \
 		:php5-mbstring-*:www/php5/extensions,-mbstring
 
 do-install:
-	@cp -Rp ${WRKDIST} ${INSTDIR}
-	@mv ${INSTDIR}/config/mimetypes.php ${INSTDIR}/config/mimetypes.php.dist
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	@find ${INSTDIR} -name \*.orig -exec rm -f {} \;
+	cp -Rp ${WRKDIST} ${INSTDIR}
+	mv ${INSTDIR}/config/mimetypes.php ${INSTDIR}/config/mimetypes.php.dist
+	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
+	find ${INSTDIR} -name \*.orig -exec rm -f {} \;
 
 .include <bsd.port.mk>

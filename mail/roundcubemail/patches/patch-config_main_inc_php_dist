@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_main_inc_php_dist,v 1.6 2009/09/05 15:46:24 sthen Exp $
---- config/main.inc.php.dist.orig	Mon Jul 27 16:04:35 2009
-+++ config/main.inc.php.dist	Mon Aug  3 15:53:32 2009
-@@ -98,7 +98,7 @@ $rcmail_config['virtuser_query'] = '';
+$OpenBSD: patch-config_main_inc_php_dist,v 1.7 2009/10/13 17:00:59 sthen Exp $
+--- config/main.inc.php.dist.orig	Tue Oct 13 10:40:21 2009
++++ config/main.inc.php.dist	Tue Oct 13 13:55:04 2009
+@@ -94,7 +94,7 @@ $rcmail_config['virtuser_query'] = '';
  // to use SSL connection, set ssl://smtp.host.com
  // if left blank, the PHP mail() function is used
  // Use %h variable as replacement for user's IMAP hostname
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_main_inc_php_dist,v 1.6 2009/09/05 15:46:24 sthen Exp $
  
  // SMTP port (default is 25; 465 for SSL)
  $rcmail_config['smtp_port'] = 25;
-@@ -334,7 +334,7 @@ $rcmail_config['include_host_config'] = false;
+@@ -333,7 +333,7 @@ $rcmail_config['include_host_config'] = false;
  $rcmail_config['max_pagesize'] = 200;
  
  // mime magic database
