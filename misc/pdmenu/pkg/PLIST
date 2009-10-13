@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 17:54:16 espie Exp $
-bin/pdmenu
+@comment $OpenBSD: PLIST,v 1.4 2009/10/13 21:48:30 sthen Exp $
+@bin bin/pdmenu
 @man man/man1/pdmenu.1
 @man man/man5/pdmenurc.5
 share/examples/pdmenu/
@@ -14,3 +14,13 @@ share/examples/pdmenu/pdmenurc
 share/examples/pdmenu/pdmenurc.complex
 share/examples/pdmenu/pdmenurc.monitor
 share/examples/pdmenu/showdir.pl
+share/locale/
+share/locale/es/
+share/locale/es/LC_MESSAGES/
+share/locale/es/LC_MESSAGES/pdmenu.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
+share/locale/fr/LC_MESSAGES/pdmenu.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
+share/locale/ru/LC_MESSAGES/pdmenu.mo

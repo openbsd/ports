@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_ac,v 1.1 2009/10/13 21:48:30 sthen Exp $
+--- configure.ac.orig	Wed Dec 17 00:25:50 2008
++++ configure.ac	Sat Oct 10 14:31:52 2009
+@@ -52,10 +52,13 @@ if test "$SLANG_LIB_LOC" != "" ; then 
+ 	CFLAGS="-L$SLANG_LIB_LOC $CFLAGS"
+ fi
+ 
++AC_SEARCH_LIBS(tgetent, terminfo termlib)
++
+ dnl The function we check for in libslang is important, because
+ dnl we need to make sure we have the right version of slang.
+-AC_CHECK_LIB(slang, SLsig_block_signals,, 
+-	AC_MSG_ERROR(can't find required slang library or library is obsolete. Try setting the SLANG_LIB_LOC environment variable to point to the directory containing the slang library.))
++AC_CHECK_LIB(slang, SLsig_block_signals,
++	[AC_DEFINE(HAVE_LIBSLANG) LIBS="-lslang -lm $LIBS"],
++	AC_MSG_ERROR(can't find required slang library or library is obsolete. Try setting the SLANG_LIB_LOC environment variable to point to the directory containing the slang library.), -lm)
+ 
+ dnl Checks for header files.
+ AC_HEADER_STDC
