@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.92 2009/10/13 17:11:21 steven Exp $
+# $OpenBSD: libtool,v 1.93 2009/10/13 18:22:57 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -443,7 +443,10 @@ sub set
 sub stringize
 {
 	my ($self, $k) = @_;
-	return $self->{$k} || '';
+	if (defined $self->{$k}) {
+	       return $self->{$k};
+	}
+	return '';
 }
 
 sub read
@@ -570,6 +573,25 @@ dlpreopen=''
 libdir='$libdir'
 EOF
 ;
+}
+
+sub write_shared_libs_log
+{
+	my ($self, $origv) = @_;
+	my $libname = $self->stringize('libname');
+	my $v = $self->stringize('current') .'.'. $self->stringize('revision');
+	if (!defined $ENV{'SHARED_LIBS_LOG'}) {
+	       return;
+	}
+	my $logfile = $ENV{'SHARED_LIBS_LOG'};
+	my $fh;
+	if (! -f $logfile) {
+		open ($fh, '>', $logfile);
+		print $fh "# SHARED_LIBS+= <libname>      <obsd version> # <orig version>\n";
+		close $fh;
+	}
+	open ($fh, '>>', $logfile);
+	printf $fh "SHARED_LIBS +=\t%-20s %-8s # %s\n", $libname, $v, $origv;
 }
 
 sub link
@@ -1365,16 +1387,20 @@ if ($mode eq 'compile') {
 		}
 		$shared = 0 if $noshared;
 		my $sover = '0.0';
+		my $origver = 'unknown';
 		# environment overrides -version-info
 		(my $envlibname = $libname) =~ s/[.+-]/_/g;
 		my ($current, $revision, $age) = (0, 0, 0);
+		if ($opts{'version-info'}) {
+			($current, $revision, $age) = parse_version_info($opts{'version-info'});
+			$origver = "$current.$revision";
+			$sover = $origver;
+		}
 		if ($ENV{"${envlibname}_ltversion"}) {
+			# this takes priority over the previous
 			$sover = $ENV{"${envlibname}_ltversion"};
 			($current, $revision) = split /\./, $sover;
 			$age = 0;
-		} elsif ($opts{'version-info'}) {
-			($current, $revision, $age) = parse_version_info($opts{'version-info'});
-			$sover = "$current.$revision";
 		}
 		if ($opts{'release'}) {
 			$sharedlib_symlink = $sharedlib;
@@ -1441,6 +1467,7 @@ if ($mode eq 'compile') {
 			$lainfo->{'installed'} = 'yes';
 			# write .lai file (.la file that will be installed)
 			$lainfo->write($lai, $ofile);
+			$lainfo->write_shared_libs_log($origver);
 		}
 	}
 } elsif ($mode eq 'finish' || $mode eq 'clean' || $mode eq 'uninstall') {
