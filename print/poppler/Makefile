@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2009/10/13 10:19:37 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 
-V=		0.10.7
+V=		0.12.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
-PKGNAME-main=	poppler-$Vp0
+PKGNAME-main=	poppler-$V
 FULLPKGNAME-qt=	poppler-qt-$V
 FULLPKGNAME-qt4=poppler-qt4-$V
 
-SHARED_LIBS +=	poppler              5.0      # .2.0
-SHARED_LIBS +=	poppler-glib         5.0      # .4.0
-SHARED_LIBS +=	poppler-qt           5.0      # .2.0
-SHARED_LIBS +=	poppler-qt4          4.0      # .4.0
+SHARED_LIBS +=	poppler              6.0      # mirdochegal
+SHARED_LIBS +=	poppler-glib         6.0      # mirdochegal
+SHARED_LIBS +=	poppler-qt           6.0      # mirdochegal
+SHARED_LIBS +=	poppler-qt4          5.0      # mirdochegal
 
 HOMEPAGE=	http://poppler.freedesktop.org/
 
@@ -30,7 +30,9 @@ QT4INC=
 
 PSEUDO_FLAVORS=no_qt no_qt4
 MULTI_PACKAGES=-main
-FLAVOR?=
+FLAVOR-arm=no_qt4
+FLAVOR-powerpc=no_qt4
+FLAVOR?=${FLAVOR-${MACHINE_ARCH}}
 
 .if empty(FLAVOR:L:Mno_qt)
 MULTI_PACKAGES+=-qt
@@ -67,6 +69,7 @@ MODULES+=	devel/gettext
 
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
 		gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
+		lcms::graphics/lcms \
 		xml2::textproc/libxml
 LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} poppler::print/poppler
 LIB_DEPENDS-qt4=QtCore,QtGui,QtXml::x11/qt4 poppler::print/poppler
@@ -76,8 +79,8 @@ WANTLIB-main=	${WANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr gio-2.0 \
 		pangoft2-1.0 pixman-1 \
 		X11 Xau Xcomposite Xdamage Xdmcp Xrender cairo glitz pcre png \
 		pthread-stubs xcb
-WANTLIB-qt=	${WANTLIB} iconv xml2
-WANTLIB-qt4=	${WANTLIB} iconv xml2
+WANTLIB-qt=	${WANTLIB} iconv lcms xml2
+WANTLIB-qt4=	${WANTLIB} iconv lcms xml2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --enable-xpdf-headers \
