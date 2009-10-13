@@ -1,0 +1,12 @@
+$OpenBSD: patch-amavisd-agent,v 1.1 2009/10/13 13:29:18 giovanni Exp $
+--- amavisd-agent.orig	Mon Jul 20 17:50:55 2009
++++ amavisd-agent	Mon Jul 20 17:51:09 2009
+@@ -50,7 +50,7 @@ use BerkeleyDB;
+ 
+ my($dbfile) = 'snmp.db';
+ my($db_home) =  # DB databases directory
+-  defined $ENV{'AMAVISD_DB_HOME'} ? $ENV{'AMAVISD_DB_HOME'} : '/var/amavis/db';
++  defined $ENV{'AMAVISD_DB_HOME'} ? $ENV{'AMAVISD_DB_HOME'} : '/var/amavisd/db';
+ 
+ my($wakeuptime) = 10;  # -w, sleep time in seconds, may be fractional
+ my($repeatcount);      # -c, repeat count (when defined)

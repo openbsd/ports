@@ -1,0 +1,12 @@
+$OpenBSD: patch-amavisd-nanny,v 1.1 2009/10/13 13:29:18 giovanni Exp $
+--- amavisd-nanny.orig	Mon Jul 20 17:50:13 2009
++++ amavisd-nanny	Mon Jul 20 17:50:31 2009
+@@ -58,7 +58,7 @@ my($activettl) = 10*60; # stuck active children are se
+ 
+ my($dbfile) = 'nanny.db';
+ my($db_home) =  # DB databases directory
+-  defined $ENV{'AMAVISD_DB_HOME'} ? $ENV{'AMAVISD_DB_HOME'} : '/var/amavis/db';
++  defined $ENV{'AMAVISD_DB_HOME'} ? $ENV{'AMAVISD_DB_HOME'} : '/var/amavisd/db';
+ my($wakeuptime) = 2;  # -w, sleep time in seconds, may be fractional
+ my($repeatcount);     # -c, repeat count (when defined)
+ 

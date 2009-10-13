@@ -1,0 +1,12 @@
+$OpenBSD: patch-amavisd-snmp-subagent,v 1.1 2009/10/13 13:29:18 giovanni Exp $
+--- amavisd-snmp-subagent.orig	Mon Jul 20 17:51:16 2009
++++ amavisd-snmp-subagent	Mon Jul 20 17:51:40 2009
+@@ -64,7 +64,7 @@ $syslog_ident = $myproduct_name;
+ $syslog_facility = LOG_MAIL;
+ 
+ my($db_home) =  # DB databases directory
+-  defined $ENV{'AMAVISD_DB_HOME'} ? $ENV{'AMAVISD_DB_HOME'} : '/var/amavis/db';
++  defined $ENV{'AMAVISD_DB_HOME'} ? $ENV{'AMAVISD_DB_HOME'} : '/var/amavisd/db';
+ 
+ my($mta_queue_dir);
+ 
