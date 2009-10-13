@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/10/13 19:36:31 landry Exp $
+@lib lib/libpigment-0.3.so.${LIBpigment-0.3_VERSION}
+@lib lib/libpigment-gtk-0.3.so.${LIBpigment-gtk-0.3_VERSION}
+@lib lib/libpigment-imaging-0.3.so.${LIBpigment-imaging-0.3_VERSION}
+lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+lib/pigment-0.3/0.3.17/libpgmopengl.so

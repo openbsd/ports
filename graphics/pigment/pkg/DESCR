@@ -1,0 +1,6 @@
+Pigment is a library designed to easily build user interfaces for
+embedded multimedia. Its design allows to use it on several platforms,
+thanks to a plugin system allowing to choose the underlying graphical
+API.
+Note that it heavily uses OpenGL, so you need a decent hardware
+support for it.
