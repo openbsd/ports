@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.125 2009/10/10 15:08:12 ajacoutot Exp $
+$OpenBSD: user.list,v 1.126 2009/10/13 11:12:52 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -148,3 +148,4 @@ id  user		group		port options
 637 _memcached		_memcached	misc/memcached
 638 _prosody		_prosody	net/prosody
 639 _polkituser		_polkituser	sysutils/policykit
+640 _astmanproxy	_astmanproxy	telephony/astmanproxy
