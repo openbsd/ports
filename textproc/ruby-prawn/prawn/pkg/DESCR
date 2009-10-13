@@ -1,0 +1,7 @@
+Prawn: Fast, Nimble PDF Generation For Ruby
+
+Prawn takes the pain out of generating beautiful printable documents,
+while still remaining fast, tiny and nimble. It is also named after a
+majestic sea creature, and that has to count for something.
+It supports UTF-8, image embedding, flexible table drawing and has a
+simplified content positioning.
