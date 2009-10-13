@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/10/13 10:19:37 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2009/10/13 16:20:34 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -11,10 +11,10 @@ PKGNAME-main=	poppler-$V
 FULLPKGNAME-qt=	poppler-qt-$V
 FULLPKGNAME-qt4=poppler-qt4-$V
 
-SHARED_LIBS +=	poppler              6.0      # mirdochegal
-SHARED_LIBS +=	poppler-glib         6.0      # mirdochegal
-SHARED_LIBS +=	poppler-qt           6.0      # mirdochegal
-SHARED_LIBS +=	poppler-qt4          5.0      # mirdochegal
+SHARED_LIBS +=	poppler              6.0
+SHARED_LIBS +=	poppler-glib         6.0
+SHARED_LIBS +=	poppler-qt           6.0
+SHARED_LIBS +=	poppler-qt4          5.0
 
 HOMEPAGE=	http://poppler.freedesktop.org/
 
