@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2009/09/13 19:48:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.181 2009/10/13 15:30:38 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -57,8 +57,6 @@
      SUBDIR += knutclient
      SUBDIR += krename
      SUBDIR += ktsuss
-     SUBDIR += libgksu
-     SUBDIR += libgksuui
      SUBDIR += libretto-config
      SUBDIR += libstatgrab
      SUBDIR += login_fingerprint
