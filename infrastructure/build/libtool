@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.94 2009/10/13 20:56:45 steven Exp $
+# $OpenBSD: libtool,v 1.95 2009/10/13 21:19:15 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -29,7 +29,6 @@ package main;
 
 use subs qw(
 	create_symlinks
-	find_la
 	generate_objlist
 	get_search_dirs
 	guess_implicit_mode
@@ -267,7 +266,7 @@ sub parse_linkargs1
 			my $key = $1;
 			if (!exists $libs->{$key}) {
 				$libs->{$key} = Library->new($key);
-				my $lafile = main::find_la($key, $dirs);
+				my $lafile = LaFile->find($key, $dirs);
 				if ($lafile) {
 					push @$deplibs, $lafile;
 					push @$result, $lafile;
@@ -588,6 +587,29 @@ sub write_shared_libs_log
 	}
 	open ($fh, '>>', $logfile);
 	printf $fh "SHARED_LIBS +=\t%-20s %-8s # %s\n", $libname, $v, $origv;
+}
+
+# find .la file associated with a -llib flag
+# XXX pick the right one if multiple are found!
+sub find
+{
+	my ($self, $l, $dirs) = @_;
+
+	# sort dir search order by priority
+	# XXX not fully correct yet
+	my @sdirs = sort { $dirs->{$b} <=> $dirs->{$a} } keys %$dirs;
+	Trace::debug {"searching .la for $l\n"};
+	Trace::debug {"search path= ", join(':', @sdirs), "\n"};
+	foreach my $d (@sdirs) {
+		foreach my $la_candidate ("$d/lib$l.la", "$d/$l.a") {
+			if (-f $la_candidate) {
+				Trace::debug {"found $la_candidate\n"};
+				return $la_candidate;
+			}
+		}
+	}
+	Trace::debug {".la for $l not found!\n"};
+	return 0;
 }
 
 sub link
@@ -1542,29 +1564,6 @@ sub create_symlinks
 			symlink abs_path($f), "$dir/$libfile" or die "cannot create symlink: $!\n";
 		}
 	}
-}
-
-# find .la file associated with a -llib flag
-# XXX pick the right one if multiple are found!
-sub find_la
-{
-	my ($l, $dirs) = @_;
-
-	# sort dir search order by priority
-	# XXX not fully correct yet
-	my @sdirs = sort { $dirs->{$b} <=> $dirs->{$a} } keys %$dirs;
-	Trace::debug {"searching .la for $l\n"};
-	Trace::debug {"search path= ", join(':', @sdirs), "\n"};
-	foreach my $d (@sdirs) {
-		foreach my $la_candidate ("$d/lib$l.la", "$d/$l.a") {
-			if (-f $la_candidate) {
-				Trace::debug {"found $la_candidate\n"};
-				return $la_candidate;
-			}
-		}
-	}
-	Trace::debug {".la for $l not found!\n"};
-	return 0;
 }
 
 # prepare dependency_libs information for the .la file which is installed
