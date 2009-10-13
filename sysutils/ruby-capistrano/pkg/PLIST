@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/08/09 12:33:27 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/10/13 19:40:48 pirofti Exp $
 bin/cap
 bin/capify
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
@@ -649,6 +649,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Rakefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/cap
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/bin/capify
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/capistrano.gemspec
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/examples/sample.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
@@ -753,6 +754,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/deploy/scm/base_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/deploy/scm/git_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/deploy/scm/mercurial_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/deploy/scm/none_test.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/deploy/scm/subversion_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/deploy/strategy/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/deploy/strategy/copy_test.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/test/extensions_test.rb
