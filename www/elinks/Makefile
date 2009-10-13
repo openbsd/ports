@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2009/10/11 15:55:50 edd Exp $
+# $OpenBSD: Makefile,v 1.18 2009/10/13 18:24:01 edd Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		www
 MASTER_SITES=		http://elinks.cz/download/
 
@@ -17,25 +17,28 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/js -L${LOCALBASE}/lib \
+			-pthread"
+
 CONFIGURE_ARGS+=	--with-bzlib \
-			--without-spidermonkey \
 			--disable-xbel \
 			--disable-backtrace \
 			--enable-gopher \
 			--with-libiconv=${LOCALBASE}
+
 # don't hide compiler command lines
 MAKE_ENV=		V=true
 LIB_DEPENDS+=		bz2::archivers/bzip2 \
 			idn::devel/libidn
+
 USE_GMAKE=		Yes
 
 RUN_DEPENDS=		::devel/gettext
-WANTLIB=		crypto c z ssl
+WANTLIB=		crypto c z ssl pthread
 MODULES=		converters/libiconv
 
-FLAVORS=		lua no_x11
+FLAVORS=		lua no_x11 js
 FLAVOR?=		
 
 .if ${FLAVOR:L:Mlua}
@@ -54,5 +57,13 @@ CONFIGURE_ARGS+=	--with-x
 USE_X11=		Yes
 WANTLIB+=		X11
 .endif
+
+.if ${FLAVOR:L:Mjs}
+CONFIGURE_ARGS+=	--with-spidermonkey
+LIB_DEPENDS+=		js.>=2.0::lang/spidermonkey
+.else
+CONFIGURE_ARGS+=	--without-spidermonkey
+.endif
+
 
 .include <bsd.port.mk>
