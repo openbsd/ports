@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.280 2009/10/13 14:53:22 pirofti Exp $
+# $OpenBSD: Makefile,v 1.281 2009/10/13 15:13:38 pirofti Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -249,6 +249,7 @@
      SUBDIR += ruby-nokogiri
      SUBDIR += ruby-pdf-reader
      SUBDIR += ruby-pdf-writer
+     SUBDIR += ruby-prawn
      SUBDIR += ruby-randexp
      SUBDIR += ruby-redcloth
      SUBDIR += ruby-rss
