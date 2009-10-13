@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/24 15:36:14 bernd Exp $
+# $OpenBSD: Makefile,v 1.7 2009/10/13 21:14:55 pirofti Exp $
 
 COMMENT=		Ruby interface to gettext
 
-VERSION=		1.93.0
-DISTNAME=		gettext-${VERSION}
-PKGNAME=		ruby-gettext-${VERSION}
+DISTNAME=		gettext-2.0.4
+PKGNAME=		ruby-${DISTNAME}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.yotabanana.com/hiki/ruby-gettext.html
@@ -25,24 +24,6 @@ CONFIGURE_STYLE=	ruby gem
 
 PKG_ARCH=		*
 
-REGRESS_DEPENDS=	::devel/ruby-rake \
-			::www/ruby-rails \
-			::databases/mysql,-server \
-			:${PKGNAME}:${BASE_PKGPATH}
-
-pre-regress:
-	@perl -pi -e 's,/var/lib/mysql,/var/run/mysql,g' \
-		${WRKBUILD}/samples/rails/config/database.yml \
-		${WRKBUILD}/test/test_parser.rb \
-		${WRKBUILD}/test/rails/config/database.yml \
-		${WRKBUILD}/test/test_active_record.rb \
-		${WRKBUILD}/test/Rakefile
-	@perl -pi -e 's,2\.1\.0,2.1.2,g' \
-		${WRKBUILD}/test/rails/config/environment.rb
-
-do-regress:
-	@cd ${WRKBUILD}/test/rails && ${LOCALBASE}/bin/rake createdb
-	@cd ${WRKBUILD} && ${SETENV} TZ=Japan ${LOCALBASE}/bin/rake testunit
-	@cd ${WRKBUILD}/test/rails && ${LOCALBASE}/bin/rake dropdb
+MODRUBY_REGRESS =	rake
 
 .include <bsd.port.mk>
