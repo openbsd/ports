@@ -1,3 +1,0 @@
-This library comes from the gksu program. It provides a Gtk+ dialog and
-X authentication facilities for running programs as root or another user
-in a X session.
