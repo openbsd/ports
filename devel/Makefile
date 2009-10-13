@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.743 2009/10/11 11:32:00 landry Exp $
+# $OpenBSD: Makefile,v 1.744 2009/10/13 10:56:17 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -114,6 +114,7 @@
      SUBDIR += gputils
      SUBDIR += grcs
      SUBDIR += gsl
+     SUBDIR += gtkparasite
      SUBDIR += guichan
      SUBDIR += guilib
      SUBDIR += haddock
