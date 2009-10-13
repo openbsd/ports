@@ -1,0 +1,1897 @@
+rtld loading: 'python'
+exe load offset:  0x0
+head python
+obj python has python as head
+obj /usr/X11R6/lib/libGL.so.9.1 has python as head
+linking dep /usr/X11R6/lib/libGL.so.9.1 as child of python
+examining: 'python'
+loading: libutil.so.11.0 required by python
+obj /usr/lib/libutil.so.11.0 has python as head
+loading: libpython2.5.so.1.0 required by python
+obj /usr/local/lib/libpython2.5.so.1.0 has python as head
+loading: libm.so.5.1 required by python
+obj /usr/lib/libm.so.5.1 has python as head
+loading: libpthread.so.11.2 required by python
+obj /usr/lib/libpthread.so.11.2 has python as head
+loading: libstdc++.so.49.0 required by python
+obj /usr/lib/libstdc++.so.49.0 has python as head
+loading: libc.so.51.1 required by python
+obj /usr/lib/libc.so.51.1 has python as head
+linking dep /usr/local/lib/libpython2.5.so.1.0 as child of python
+linking dep /usr/lib/libutil.so.11.0 as child of python
+linking dep /usr/lib/libstdc++.so.49.0 as child of python
+linking dep /usr/lib/libm.so.5.1 as child of python
+linking dep /usr/lib/libpthread.so.11.2 as child of python
+linking dep /usr/lib/libc.so.51.1 as child of python
+examining: '/usr/X11R6/lib/libGL.so.9.1'
+loading: libXfixes.so.5.0 required by /usr/X11R6/lib/libGL.so.9.1
+obj /usr/X11R6/lib/libXfixes.so.5.0 has python as head
+loading: libdrm.so.2.4 required by /usr/X11R6/lib/libGL.so.9.1
+obj /usr/X11R6/lib/libdrm.so.2.4 has python as head
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libGL.so.9.1
+obj /usr/X11R6/lib/libX11.so.12.0 has python as head
+loading: libXdamage.so.3.1 required by /usr/X11R6/lib/libGL.so.9.1
+obj /usr/X11R6/lib/libXdamage.so.3.1 has python as head
+loading: libXext.so.10.0 required by /usr/X11R6/lib/libGL.so.9.1
+obj /usr/X11R6/lib/libXext.so.10.0 has python as head
+loading: libXxf86vm.so.5.0 required by /usr/X11R6/lib/libGL.so.9.1
+obj /usr/X11R6/lib/libXxf86vm.so.5.0 has python as head
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libGL.so.9.1
+linking dep /usr/X11R6/lib/libXext.so.10.0 as child of /usr/X11R6/lib/libGL.so.9.1
+linking dep /usr/X11R6/lib/libXxf86vm.so.5.0 as child of /usr/X11R6/lib/libGL.so.9.1
+linking dep /usr/X11R6/lib/libXdamage.so.3.1 as child of /usr/X11R6/lib/libGL.so.9.1
+linking dep /usr/X11R6/lib/libXfixes.so.5.0 as child of /usr/X11R6/lib/libGL.so.9.1
+linking dep /usr/X11R6/lib/libdrm.so.2.4 as child of /usr/X11R6/lib/libGL.so.9.1
+examining: '/usr/local/lib/libpython2.5.so.1.0'
+examining: '/usr/lib/libutil.so.11.0'
+examining: '/usr/lib/libstdc++.so.49.0'
+examining: '/usr/lib/libm.so.5.1'
+examining: '/usr/lib/libpthread.so.11.2'
+examining: '/usr/lib/libc.so.51.1'
+examining: '/usr/X11R6/lib/libX11.so.12.0'
+loading: libxcb.so.2.0 required by /usr/X11R6/lib/libX11.so.12.0
+obj /usr/X11R6/lib/libxcb.so.2.0 has python as head
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libX11.so.12.0
+obj /usr/X11R6/lib/libXdmcp.so.9.0 has python as head
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libX11.so.12.0
+obj /usr/X11R6/lib/libpthread-stubs.so.0.0 has python as head
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libX11.so.12.0
+obj /usr/X11R6/lib/libXau.so.9.0 has python as head
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/X11R6/lib/libX11.so.12.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libX11.so.12.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libX11.so.12.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libX11.so.12.0
+examining: '/usr/X11R6/lib/libXext.so.10.0'
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libXext.so.10.0
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libXext.so.10.0
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libXext.so.10.0
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libXext.so.10.0
+loading: libxcb.so.2.0 required by /usr/X11R6/lib/libXext.so.10.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libXext.so.10.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libXext.so.10.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libXext.so.10.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/X11R6/lib/libXext.so.10.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libXext.so.10.0
+examining: '/usr/X11R6/lib/libXxf86vm.so.5.0'
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libXxf86vm.so.5.0
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libXxf86vm.so.5.0
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libXxf86vm.so.5.0
+loading: libxcb.so.2.0 required by /usr/X11R6/lib/libXxf86vm.so.5.0
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libXxf86vm.so.5.0
+loading: libXext.so.10.0 required by /usr/X11R6/lib/libXxf86vm.so.5.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libXxf86vm.so.5.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libXxf86vm.so.5.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libXxf86vm.so.5.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/X11R6/lib/libXxf86vm.so.5.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libXxf86vm.so.5.0
+linking dep /usr/X11R6/lib/libXext.so.10.0 as child of /usr/X11R6/lib/libXxf86vm.so.5.0
+examining: '/usr/X11R6/lib/libXdamage.so.3.1'
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libXdamage.so.3.1
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libXdamage.so.3.1
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libXdamage.so.3.1
+loading: libXfixes.so.5.0 required by /usr/X11R6/lib/libXdamage.so.3.1
+loading: libxcb.so.2.0 required by /usr/X11R6/lib/libXdamage.so.3.1
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libXdamage.so.3.1
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libXdamage.so.3.1
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libXdamage.so.3.1
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libXdamage.so.3.1
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/X11R6/lib/libXdamage.so.3.1
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libXdamage.so.3.1
+linking dep /usr/X11R6/lib/libXfixes.so.5.0 as child of /usr/X11R6/lib/libXdamage.so.3.1
+examining: '/usr/X11R6/lib/libXfixes.so.5.0'
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libXfixes.so.5.0
+loading: libxcb.so.2.0 required by /usr/X11R6/lib/libXfixes.so.5.0
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libXfixes.so.5.0
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libXfixes.so.5.0
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libXfixes.so.5.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libXfixes.so.5.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libXfixes.so.5.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libXfixes.so.5.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/X11R6/lib/libXfixes.so.5.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libXfixes.so.5.0
+examining: '/usr/X11R6/lib/libdrm.so.2.4'
+examining: '/usr/X11R6/lib/libxcb.so.2.0'
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libxcb.so.2.0
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libxcb.so.2.0
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libxcb.so.2.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libxcb.so.2.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libxcb.so.2.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libxcb.so.2.0
+examining: '/usr/X11R6/lib/libpthread-stubs.so.0.0'
+examining: '/usr/X11R6/lib/libXau.so.9.0'
+examining: '/usr/X11R6/lib/libXdmcp.so.9.0'
+obj /usr/libexec/ld.so has python as head
+relocation took 0.011401
+	Start    End      Type Open Ref GrpRef Name
+	1c000000 3c004000 exe  1    0   0      python
+	03f53000 23f68000 rlib 0    1   0      /usr/X11R6/lib/libGL.so.9.1
+	05cc9000 25d13000 rlib 0    1   0      /usr/local/lib/libpython2.5.so.1.0
+	084b5000 284b9000 rlib 0    1   0      /usr/lib/libutil.so.11.0
+	02034000 2205a000 rlib 0    1   0      /usr/lib/libstdc++.so.49.0
+	043ae000 243b8000 rlib 0    1   0      /usr/lib/libm.so.5.1
+	006e2000 206eb000 rlib 0    1   0      /usr/lib/libpthread.so.11.2
+	06d44000 26d7d000 rlib 0    1   0      /usr/lib/libc.so.51.1
+	0e8d1000 2e94c000 rlib 0    5   0      /usr/X11R6/lib/libX11.so.12.0
+	02f21000 22f25000 rlib 0    2   0      /usr/X11R6/lib/libXext.so.10.0
+	0509c000 250a0000 rlib 0    1   0      /usr/X11R6/lib/libXxf86vm.so.5.0
+	0de04000 2de08000 rlib 0    1   0      /usr/X11R6/lib/libXdamage.so.3.1
+	0d9c9000 2d9cd000 rlib 0    2   0      /usr/X11R6/lib/libXfixes.so.5.0
+	000d5000 200d9000 rlib 0    1   0      /usr/X11R6/lib/libdrm.so.2.4
+	02662000 22667000 rlib 0    5   0      /usr/X11R6/lib/libxcb.so.2.0
+	0a31d000 2a321000 rlib 0    6   0      /usr/X11R6/lib/libpthread-stubs.so.0.0
+	0b464000 2b468000 rlib 0    6   0      /usr/X11R6/lib/libXau.so.9.0
+	02df6000 22dfb000 rlib 0    6   0      /usr/X11R6/lib/libXdmcp.so.9.0
+	09d25000 09d25000 rtld 0    1   0      /usr/libexec/ld.so
+symcache lookups 4689 hits 2053 ratio 43% hits
+dynamic loading done, success.
+doing ctors obj 0x7ec23d34 @0xa31d750: [/usr/X11R6/lib/libpthread-stubs.so.0.0]
+doing ctors obj 0x7ec23f04 @0xb464960: [/usr/X11R6/lib/libXau.so.9.0]
+doing ctors obj 0x7ec23b6c @0x2df6e60: [/usr/X11R6/lib/libXdmcp.so.9.0]
+doing ctors obj 0x7ec239a4 @0x2668d60: [/usr/X11R6/lib/libxcb.so.2.0]
+doing ctors obj 0x7ec231cc @0xe8e1c40: [/usr/X11R6/lib/libX11.so.12.0]
+doing ctors obj 0x7ec23564 @0x2f234d0: [/usr/X11R6/lib/libXext.so.10.0]
+doing ctors obj 0x7ec2372c @0x509cc30: [/usr/X11R6/lib/libXxf86vm.so.5.0]
+doing ctors obj 0x7f0c5e24 @0xd9c9f00: [/usr/X11R6/lib/libXfixes.so.5.0]
+doing ctors obj 0x7ec23394 @0xde04950: [/usr/X11R6/lib/libXdamage.so.3.1]
+doing ctors obj 0x7ec23004 @0xd6e00: [/usr/X11R6/lib/libdrm.so.2.4]
+doing ctors obj 0x7f0c504c @0x3f6b720: [/usr/X11R6/lib/libGL.so.9.1]
+doing ctors obj 0x7f0c544c @0x5ce0f20: [/usr/local/lib/libpython2.5.so.1.0]
+doing ctors obj 0x7f0c5264 @0x84b6bf0: [/usr/lib/libutil.so.11.0]
+doing ctors obj 0x7f0c59e4 @0x206f770: [/usr/lib/libstdc++.so.49.0]
+doing ctors obj 0x7f0c561c @0x43b05b0: [/usr/lib/libm.so.5.1]
+doing ctors obj 0x7f0c57fc @0x6e6780: [/usr/lib/libpthread.so.11.2]
+dlctl: _dl_thread_fnc set to 0x6f2f34
+doing ctors obj 0x7f0c5bcc @0x6d565d0: [/usr/lib/libc.so.51.1]
+entry point: 0x1c000c48
+dlopen: loading: /usr/local/lib/python2.5/lib-dynload/math.so
+head /usr/local/lib/python2.5/lib-dynload/math.so
+obj /usr/local/lib/python2.5/lib-dynload/math.so has /usr/local/lib/python2.5/lib-dynload/math.so as head
+linking /usr/local/lib/python2.5/lib-dynload/math.so as dlopen()ed
+head [/usr/local/lib/python2.5/lib-dynload/math.so]
+examining: '/usr/local/lib/python2.5/lib-dynload/math.so'
+loading: libm.so.5.1 required by /usr/local/lib/python2.5/lib-dynload/math.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/python2.5/lib-dynload/math.so
+tail /usr/local/lib/python2.5/lib-dynload/math.so
+doing ctors obj 0x7e77b02c @0x2edcf40: [/usr/local/lib/python2.5/lib-dynload/math.so]
+dlopen: /usr/local/lib/python2.5/lib-dynload/math.so: done (success).
+dlsym: initmath in /usr/local/lib/python2.5/lib-dynload/math.so: 0x2eddfe0
+dlopen: loading: /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+head /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/python2.5/site-packages/_pgmmodule.so has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+linking /usr/local/lib/python2.5/site-packages/_pgmmodule.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/_pgmmodule.so]
+examining: '/usr/local/lib/python2.5/site-packages/_pgmmodule.so'
+loading: libGL.so.9.1 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+loading: libgthread-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libgthread-2.0.so.1802.0 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libintl.so.4.0 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libiconv.so.6.0 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libz.so.4.1 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/lib/libz.so.4.1 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libgstreamer-0.10.so.0.2 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libgstreamer-0.10.so.0.2 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libgstvideo-0.10.so.0.2 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libgstvideo-0.10.so.0.2 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libgobject-2.0.so.1802.0 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libpcre.so.2.3 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libgstbase-0.10.so.0.2 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libgstbase-0.10.so.0.2 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libpigment-0.3.so.0.0 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libpigment-0.3.so.0.0 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libgdk_pixbuf-2.0.so.1402.0 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libgio-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libgio-2.0.so.1802.0 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libgmodule-2.0.so.1802.0 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libm.so.5.1 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+loading: libxml2.so.10.0 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libxml2.so.10.0 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+obj /usr/local/lib/libglib-2.0.so.1802.0 has /usr/local/lib/python2.5/site-packages/_pgmmodule.so as head
+linking dep /usr/local/lib/libpigment-0.3.so.0.0 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libgstvideo-0.10.so.0.2 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libgstbase-0.10.so.0.2 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+linking dep /usr/X11R6/lib/libGL.so.9.1 as child of /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+examining: '/usr/local/lib/libpigment-0.3.so.0.0'
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libgio-2.0.so.1802.0 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libGL.so.9.1 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libm.so.5.1 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libxml2.so.10.0 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libintl.so.4.0 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libz.so.4.1 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libgdk_pixbuf-2.0.so.1402.0 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libgthread-2.0.so.1802.0 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libgstreamer-0.10.so.0.2 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libiconv.so.6.0 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libgstvideo-0.10.so.0.2 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libgstbase-0.10.so.0.2 required by /usr/local/lib/libpigment-0.3.so.0.0
+loading: libpcre.so.2.3 required by /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libgstvideo-0.10.so.0.2 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libgstbase-0.10.so.0.2 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libpigment-0.3.so.0.0
+linking dep /usr/X11R6/lib/libGL.so.9.1 as child of /usr/local/lib/libpigment-0.3.so.0.0
+examining: '/usr/local/lib/libgstvideo-0.10.so.0.2'
+loading: libgstreamer-0.10.so.0.2 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+loading: libgstbase-0.10.so.0.2 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+loading: libpcre.so.2.3 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+loading: libintl.so.4.0 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+loading: libxml2.so.10.0 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+loading: libm.so.5.1 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+loading: libgthread-2.0.so.1802.0 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+loading: libiconv.so.6.0 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+loading: libz.so.4.1 required by /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/local/lib/libgstbase-0.10.so.0.2 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libgstvideo-0.10.so.0.2
+examining: '/usr/local/lib/libgstbase-0.10.so.0.2'
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libgstbase-0.10.so.0.2
+loading: /usr/local/lib/libgthread-2.0.so.1802.0 required by /usr/local/lib/libgstbase-0.10.so.0.2
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libgstbase-0.10.so.0.2
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/libgstbase-0.10.so.0.2
+loading: /usr/local/lib/libgstreamer-0.10.so.0.2 required by /usr/local/lib/libgstbase-0.10.so.0.2
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/libgstbase-0.10.so.0.2
+loading: libz.so.4.1 required by /usr/local/lib/libgstbase-0.10.so.0.2
+loading: /usr/local/lib/libxml2.so.10.0 required by /usr/local/lib/libgstbase-0.10.so.0.2
+loading: libm.so.5.1 required by /usr/local/lib/libgstbase-0.10.so.0.2
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libgstbase-0.10.so.0.2
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libgstbase-0.10.so.0.2
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/libgstbase-0.10.so.0.2
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/libgstbase-0.10.so.0.2
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libgstbase-0.10.so.0.2
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libgstbase-0.10.so.0.2
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libgstbase-0.10.so.0.2
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/libgstbase-0.10.so.0.2
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libgstbase-0.10.so.0.2
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgstbase-0.10.so.0.2
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgstbase-0.10.so.0.2
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgstbase-0.10.so.0.2
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgstbase-0.10.so.0.2
+examining: '/usr/local/lib/libgstreamer-0.10.so.0.2'
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/libgstreamer-0.10.so.0.2
+loading: libpcre.so.2.3 required by /usr/local/lib/libgstreamer-0.10.so.0.2
+loading: libiconv.so.6.0 required by /usr/local/lib/libgstreamer-0.10.so.0.2
+loading: libz.so.4.1 required by /usr/local/lib/libgstreamer-0.10.so.0.2
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/libgstreamer-0.10.so.0.2
+loading: libintl.so.4.0 required by /usr/local/lib/libgstreamer-0.10.so.0.2
+loading: libm.so.5.1 required by /usr/local/lib/libgstreamer-0.10.so.0.2
+loading: libgthread-2.0.so.1802.0 required by /usr/local/lib/libgstreamer-0.10.so.0.2
+loading: libxml2.so.10.0 required by /usr/local/lib/libgstreamer-0.10.so.0.2
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/libgstreamer-0.10.so.0.2
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libgstreamer-0.10.so.0.2
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/libgstreamer-0.10.so.0.2
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libgstreamer-0.10.so.0.2
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgstreamer-0.10.so.0.2
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgstreamer-0.10.so.0.2
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgstreamer-0.10.so.0.2
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/libgstreamer-0.10.so.0.2
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libgstreamer-0.10.so.0.2
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgstreamer-0.10.so.0.2
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libgstreamer-0.10.so.0.2
+examining: '/usr/local/lib/libgthread-2.0.so.1802.0'
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libgthread-2.0.so.1802.0
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libgthread-2.0.so.1802.0
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libgthread-2.0.so.1802.0
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libgthread-2.0.so.1802.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgthread-2.0.so.1802.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgthread-2.0.so.1802.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgthread-2.0.so.1802.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgthread-2.0.so.1802.0
+examining: '/usr/local/lib/libxml2.so.10.0'
+loading: libm.so.5.1 required by /usr/local/lib/libxml2.so.10.0
+loading: libz.so.4.1 required by /usr/local/lib/libxml2.so.10.0
+loading: libiconv.so.6.0 required by /usr/local/lib/libxml2.so.10.0
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libxml2.so.10.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libxml2.so.10.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libxml2.so.10.0
+examining: '/usr/lib/libz.so.4.1'
+examining: '/usr/local/lib/libgdk_pixbuf-2.0.so.1402.0'
+loading: libpcre.so.2.3 required by /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+loading: libgio-2.0.so.1802.0 required by /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+loading: libiconv.so.6.0 required by /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+loading: libintl.so.4.0 required by /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+loading: libm.so.5.1 required by /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+examining: '/usr/local/lib/libgio-2.0.so.1802.0'
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/libgio-2.0.so.1802.0
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libgio-2.0.so.1802.0
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libgio-2.0.so.1802.0
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libgio-2.0.so.1802.0
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libgio-2.0.so.1802.0
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/libgio-2.0.so.1802.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libgio-2.0.so.1802.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libgio-2.0.so.1802.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgio-2.0.so.1802.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgio-2.0.so.1802.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgio-2.0.so.1802.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgio-2.0.so.1802.0
+examining: '/usr/local/lib/libgobject-2.0.so.1802.0'
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libgobject-2.0.so.1802.0
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libgobject-2.0.so.1802.0
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libgobject-2.0.so.1802.0
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libgobject-2.0.so.1802.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgobject-2.0.so.1802.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgobject-2.0.so.1802.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgobject-2.0.so.1802.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgobject-2.0.so.1802.0
+examining: '/usr/local/lib/libgmodule-2.0.so.1802.0'
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libgmodule-2.0.so.1802.0
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libgmodule-2.0.so.1802.0
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libgmodule-2.0.so.1802.0
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libgmodule-2.0.so.1802.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgmodule-2.0.so.1802.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgmodule-2.0.so.1802.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgmodule-2.0.so.1802.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgmodule-2.0.so.1802.0
+examining: '/usr/local/lib/libglib-2.0.so.1802.0'
+loading: libiconv.so.6.0 required by /usr/local/lib/libglib-2.0.so.1802.0
+loading: libpcre.so.2.3 required by /usr/local/lib/libglib-2.0.so.1802.0
+loading: libintl.so.4.0 required by /usr/local/lib/libglib-2.0.so.1802.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libglib-2.0.so.1802.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libglib-2.0.so.1802.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libglib-2.0.so.1802.0
+examining: '/usr/local/lib/libpcre.so.2.3'
+examining: '/usr/local/lib/libintl.so.4.0'
+examining: '/usr/local/lib/libiconv.so.6.0'
+tail /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+doing ctors obj 0x8aa0a004 @0x1549f10: [/usr/local/lib/libpcre.so.2.3]
+doing ctors obj 0x892524dc @0xc08c8c0: [/usr/local/lib/libintl.so.4.0]
+doing ctors obj 0x892526a4 @0x5f45480: [/usr/local/lib/libiconv.so.6.0]
+doing ctors obj 0x8aa0ac94 @0x6adf5c0: [/usr/local/lib/libglib-2.0.so.1802.0]
+doing ctors obj 0x89252ddc @0x73458c0: [/usr/local/lib/libgobject-2.0.so.1802.0]
+doing ctors obj 0x8925230c @0x2823dd0: [/usr/local/lib/libgthread-2.0.so.1802.0]
+doing ctors obj 0x8aa0a8fc @0x2101c80: [/usr/local/lib/libgmodule-2.0.so.1802.0]
+doing ctors obj 0x8925286c @0x3d3550: [/usr/lib/libz.so.4.1]
+doing ctors obj 0x8aa0aacc @0x8babd60: [/usr/local/lib/libxml2.so.10.0]
+doing ctors obj 0x89252a34 @0x19366e0: [/usr/local/lib/libgstreamer-0.10.so.0.2]
+doing ctors obj 0x8aa0a1a4 @0xd4b0480: [/usr/local/lib/libgstbase-0.10.so.0.2]
+doing ctors obj 0x89252c04 @0x7d6e390: [/usr/local/lib/libgstvideo-0.10.so.0.2]
+doing ctors obj 0x8aa0a724 @0x7cc0290: [/usr/local/lib/libgio-2.0.so.1802.0]
+doing ctors obj 0x8aa0a54c @0x9fdef70: [/usr/local/lib/libgdk_pixbuf-2.0.so.1402.0]
+doing ctors obj 0x8aa0a374 @0xb9c4aa0: [/usr/local/lib/libpigment-0.3.so.0.0]
+doing ctors obj 0x8925202c @0x722d660: [/usr/local/lib/python2.5/site-packages/_pgmmodule.so]
+dlopen: /usr/local/lib/python2.5/site-packages/_pgmmodule.so: done (success).
+dlsym: init_pgm in /usr/local/lib/python2.5/site-packages/_pgmmodule.so: 0x722ede8
+dlopen: loading: /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+head /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+obj /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so has /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so as head
+linking /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so]
+examining: '/usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so'
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+loading: libpyglib-2.0-python2.5.so.0.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+obj /usr/local/lib/libpyglib-2.0-python2.5.so.0.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so as head
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+loading: /usr/local/lib/libgthread-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+linking dep /usr/local/lib/libpyglib-2.0-python2.5.so.0.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+examining: '/usr/local/lib/libpyglib-2.0-python2.5.so.0.0'
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+loading: libpcre.so.2.3 required by /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+loading: libgthread-2.0.so.1802.0 required by /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+loading: libiconv.so.6.0 required by /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+loading: libintl.so.4.0 required by /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libpyglib-2.0-python2.5.so.0.0
+tail /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so
+doing ctors obj 0x8a761314 @0x12033b0: [/usr/local/lib/libpyglib-2.0-python2.5.so.0.0]
+doing ctors obj 0x8a76102c @0xc10ba00: [/usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so]
+dlopen: /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so: done (success).
+dlsym: init_glib in /usr/local/lib/python2.5/site-packages/gtk-2.0/glib/_glib.so: 0xc10db90
+dlopen: loading: /usr/local/lib/python2.5/lib-dynload/strop.so
+head /usr/local/lib/python2.5/lib-dynload/strop.so
+obj /usr/local/lib/python2.5/lib-dynload/strop.so has /usr/local/lib/python2.5/lib-dynload/strop.so as head
+linking /usr/local/lib/python2.5/lib-dynload/strop.so as dlopen()ed
+head [/usr/local/lib/python2.5/lib-dynload/strop.so]
+examining: '/usr/local/lib/python2.5/lib-dynload/strop.so'
+tail /usr/local/lib/python2.5/lib-dynload/strop.so
+doing ctors obj 0x8189c02c @0xed83f40: [/usr/local/lib/python2.5/lib-dynload/strop.so]
+dlopen: /usr/local/lib/python2.5/lib-dynload/strop.so: done (success).
+dlsym: initstrop in /usr/local/lib/python2.5/lib-dynload/strop.so: 0xed865e4
+dlopen: loading: /usr/local/lib/python2.5/lib-dynload/_locale.so
+head /usr/local/lib/python2.5/lib-dynload/_locale.so
+obj /usr/local/lib/python2.5/lib-dynload/_locale.so has /usr/local/lib/python2.5/lib-dynload/_locale.so as head
+linking /usr/local/lib/python2.5/lib-dynload/_locale.so as dlopen()ed
+head [/usr/local/lib/python2.5/lib-dynload/_locale.so]
+examining: '/usr/local/lib/python2.5/lib-dynload/_locale.so'
+tail /usr/local/lib/python2.5/lib-dynload/_locale.so
+doing ctors obj 0x895a902c @0xedeae70: [/usr/local/lib/python2.5/lib-dynload/_locale.so]
+dlopen: /usr/local/lib/python2.5/lib-dynload/_locale.so: done (success).
+dlsym: init_locale in /usr/local/lib/python2.5/lib-dynload/_locale.so: 0xedec0b4
+dlopen: loading: /usr/local/lib/python2.5/lib-dynload/operator.so
+head /usr/local/lib/python2.5/lib-dynload/operator.so
+obj /usr/local/lib/python2.5/lib-dynload/operator.so has /usr/local/lib/python2.5/lib-dynload/operator.so as head
+linking /usr/local/lib/python2.5/lib-dynload/operator.so as dlopen()ed
+head [/usr/local/lib/python2.5/lib-dynload/operator.so]
+examining: '/usr/local/lib/python2.5/lib-dynload/operator.so'
+tail /usr/local/lib/python2.5/lib-dynload/operator.so
+doing ctors obj 0x8436f02c @0x24e6d80: [/usr/local/lib/python2.5/lib-dynload/operator.so]
+dlopen: /usr/local/lib/python2.5/lib-dynload/operator.so: done (success).
+dlsym: initoperator in /usr/local/lib/python2.5/lib-dynload/operator.so: 0x24e88a0
+dlopen: loading: /usr/local/lib/python2.5/lib-dynload/_struct.so
+head /usr/local/lib/python2.5/lib-dynload/_struct.so
+obj /usr/local/lib/python2.5/lib-dynload/_struct.so has /usr/local/lib/python2.5/lib-dynload/_struct.so as head
+linking /usr/local/lib/python2.5/lib-dynload/_struct.so as dlopen()ed
+head [/usr/local/lib/python2.5/lib-dynload/_struct.so]
+examining: '/usr/local/lib/python2.5/lib-dynload/_struct.so'
+tail /usr/local/lib/python2.5/lib-dynload/_struct.so
+doing ctors obj 0x834c702c @0x8ab5520: [/usr/local/lib/python2.5/lib-dynload/_struct.so]
+dlopen: /usr/local/lib/python2.5/lib-dynload/_struct.so: done (success).
+dlsym: init_struct in /usr/local/lib/python2.5/lib-dynload/_struct.so: 0x8ab7ffc
+dlopen: loading: /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+head /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+obj /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so has /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so as head
+linking /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so]
+examining: '/usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so'
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+loading: /usr/local/lib/libgthread-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+loading: libpyglib-2.0-python2.5.so.0.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+linking dep /usr/local/lib/libpyglib-2.0-python2.5.so.0.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+tail /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so
+doing ctors obj 0x81a2b02c @0x487af20: [/usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so]
+dlopen: /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so: done (success).
+dlsym: init_gobject in /usr/local/lib/python2.5/site-packages/gtk-2.0/gobject/_gobject.so: 0x48808d4
+dlopen: loading: libGL.so.9.1
+linking /usr/X11R6/lib/libGL.so.9.1 as dlopen()ed
+dlopen: libGL.so.9.1: done (success).
+dlopen: loading: /usr/local/lib/python2.5/lib-dynload/dl.so
+head /usr/local/lib/python2.5/lib-dynload/dl.so
+obj /usr/local/lib/python2.5/lib-dynload/dl.so has /usr/local/lib/python2.5/lib-dynload/dl.so as head
+linking /usr/local/lib/python2.5/lib-dynload/dl.so as dlopen()ed
+head [/usr/local/lib/python2.5/lib-dynload/dl.so]
+examining: '/usr/local/lib/python2.5/lib-dynload/dl.so'
+tail /usr/local/lib/python2.5/lib-dynload/dl.so
+doing ctors obj 0x8716c02c @0x86eda20: [/usr/local/lib/python2.5/lib-dynload/dl.so]
+dlopen: /usr/local/lib/python2.5/lib-dynload/dl.so: done (success).
+dlsym: initdl in /usr/local/lib/python2.5/lib-dynload/dl.so: 0x86ee144
+dlopen: loading: /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+head /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+obj /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so has /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so as head
+linking /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so]
+examining: '/usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so'
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+loading: libm.so.5.1 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+loading: libgstcontroller-0.10.so.1.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+obj /usr/local/lib/libgstcontroller-0.10.so.1.0 has /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so as head
+loading: libxml2.so.10.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+loading: libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+loading: libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+loading: libgstdataprotocol-0.10.so.0.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+obj /usr/local/lib/libgstdataprotocol-0.10.so.0.0 has /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so as head
+loading: libz.so.4.1 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+loading: libgstreamer-0.10.so.0.2 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+loading: libgstbase-0.10.so.0.2 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+loading: libgstnet-0.10.so.0.1 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+obj /usr/local/lib/libgstnet-0.10.so.0.1 has /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so as head
+loading: libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+loading: libgthread-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libgstcontroller-0.10.so.1.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libgstnet-0.10.so.0.1 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libgstdataprotocol-0.10.so.0.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libgstbase-0.10.so.0.2 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+examining: '/usr/local/lib/libgstcontroller-0.10.so.1.0'
+loading: libm.so.5.1 required by /usr/local/lib/libgstcontroller-0.10.so.1.0
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libgstcontroller-0.10.so.1.0
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/libgstcontroller-0.10.so.1.0
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libgstcontroller-0.10.so.1.0
+loading: /usr/local/lib/libgthread-2.0.so.1802.0 required by /usr/local/lib/libgstcontroller-0.10.so.1.0
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libgstcontroller-0.10.so.1.0
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/libgstcontroller-0.10.so.1.0
+loading: /usr/local/lib/libxml2.so.10.0 required by /usr/local/lib/libgstcontroller-0.10.so.1.0
+loading: /usr/local/lib/libgstreamer-0.10.so.0.2 required by /usr/local/lib/libgstcontroller-0.10.so.1.0
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libgstcontroller-0.10.so.1.0
+loading: libz.so.4.1 required by /usr/local/lib/libgstcontroller-0.10.so.1.0
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/libgstcontroller-0.10.so.1.0
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/libgstcontroller-0.10.so.1.0
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libgstcontroller-0.10.so.1.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libgstcontroller-0.10.so.1.0
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/libgstcontroller-0.10.so.1.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libgstcontroller-0.10.so.1.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgstcontroller-0.10.so.1.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgstcontroller-0.10.so.1.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgstcontroller-0.10.so.1.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgstcontroller-0.10.so.1.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libgstcontroller-0.10.so.1.0
+examining: '/usr/local/lib/libgstnet-0.10.so.0.1'
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/libgstnet-0.10.so.0.1
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libgstnet-0.10.so.0.1
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/libgstnet-0.10.so.0.1
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libgstnet-0.10.so.0.1
+loading: /usr/local/lib/libgthread-2.0.so.1802.0 required by /usr/local/lib/libgstnet-0.10.so.0.1
+loading: libm.so.5.1 required by /usr/local/lib/libgstnet-0.10.so.0.1
+loading: /usr/local/lib/libxml2.so.10.0 required by /usr/local/lib/libgstnet-0.10.so.0.1
+loading: /usr/local/lib/libgstreamer-0.10.so.0.2 required by /usr/local/lib/libgstnet-0.10.so.0.1
+loading: libz.so.4.1 required by /usr/local/lib/libgstnet-0.10.so.0.1
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libgstnet-0.10.so.0.1
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libgstnet-0.10.so.0.1
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/libgstnet-0.10.so.0.1
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/libgstnet-0.10.so.0.1
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libgstnet-0.10.so.0.1
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libgstnet-0.10.so.0.1
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libgstnet-0.10.so.0.1
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/libgstnet-0.10.so.0.1
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libgstnet-0.10.so.0.1
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgstnet-0.10.so.0.1
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgstnet-0.10.so.0.1
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgstnet-0.10.so.0.1
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgstnet-0.10.so.0.1
+examining: '/usr/local/lib/libgstdataprotocol-0.10.so.0.0'
+loading: /usr/local/lib/libxml2.so.10.0 required by /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+loading: libm.so.5.1 required by /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+loading: /usr/local/lib/libgthread-2.0.so.1802.0 required by /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+loading: libz.so.4.1 required by /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+loading: /usr/local/lib/libgstreamer-0.10.so.0.2 required by /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgstdataprotocol-0.10.so.0.0
+tail /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so
+doing ctors obj 0x81e2c37c @0x2fe6980: [/usr/local/lib/libgstcontroller-0.10.so.1.0]
+doing ctors obj 0x81e2c7f4 @0x60246a0: [/usr/local/lib/libgstnet-0.10.so.0.1]
+doing ctors obj 0x81e2c594 @0x2a4eef0: [/usr/local/lib/libgstdataprotocol-0.10.so.0.0]
+doing ctors obj 0x81e2c02c @0xf765990: [/usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so]
+dlopen: /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so: done (success).
+dlsym: init_gst in /usr/local/lib/python2.5/site-packages/gst-0.10/gst/_gst.so: 0xf7696bc
+dlopen: loading: /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+head /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+obj /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so has /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so as head
+linking /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so]
+examining: '/usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so'
+loading: libgthread-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+loading: libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+loading: libz.so.4.1 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+loading: libxml2.so.10.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+loading: libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+loading: libm.so.5.1 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+loading: libgstreamer-0.10.so.0.2 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+loading: libgstinterfaces-0.10.so.0.2 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+obj /usr/local/lib/libgstinterfaces-0.10.so.0.2 has /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so as head
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+loading: libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/local/lib/libgstinterfaces-0.10.so.0.2 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+examining: '/usr/local/lib/libgstinterfaces-0.10.so.0.2'
+loading: libintl.so.4.0 required by /usr/local/lib/libgstinterfaces-0.10.so.0.2
+loading: libpcre.so.2.3 required by /usr/local/lib/libgstinterfaces-0.10.so.0.2
+loading: libz.so.4.1 required by /usr/local/lib/libgstinterfaces-0.10.so.0.2
+loading: libgthread-2.0.so.1802.0 required by /usr/local/lib/libgstinterfaces-0.10.so.0.2
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/libgstinterfaces-0.10.so.0.2
+loading: libgstreamer-0.10.so.0.2 required by /usr/local/lib/libgstinterfaces-0.10.so.0.2
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/libgstinterfaces-0.10.so.0.2
+loading: libiconv.so.6.0 required by /usr/local/lib/libgstinterfaces-0.10.so.0.2
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/libgstinterfaces-0.10.so.0.2
+loading: libm.so.5.1 required by /usr/local/lib/libgstinterfaces-0.10.so.0.2
+loading: libxml2.so.10.0 required by /usr/local/lib/libgstinterfaces-0.10.so.0.2
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/libgstinterfaces-0.10.so.0.2
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libgstinterfaces-0.10.so.0.2
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libgstinterfaces-0.10.so.0.2
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/libgstinterfaces-0.10.so.0.2
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgstinterfaces-0.10.so.0.2
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgstinterfaces-0.10.so.0.2
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgstinterfaces-0.10.so.0.2
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/libgstinterfaces-0.10.so.0.2
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libgstinterfaces-0.10.so.0.2
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgstinterfaces-0.10.so.0.2
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libgstinterfaces-0.10.so.0.2
+tail /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so
+doing ctors obj 0x7f4933f4 @0xc545860: [/usr/local/lib/libgstinterfaces-0.10.so.0.2]
+doing ctors obj 0x7f49302c @0x316ae10: [/usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so]
+dlopen: /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so: done (success).
+dlsym: initinterfaces in /usr/local/lib/python2.5/site-packages/gst-0.10/gst/interfaces.so: 0x316b768
+dlopen: loading: /usr/local/lib/python2.5/site-packages/libxml2mod.so
+head /usr/local/lib/python2.5/site-packages/libxml2mod.so
+obj /usr/local/lib/python2.5/site-packages/libxml2mod.so has /usr/local/lib/python2.5/site-packages/libxml2mod.so as head
+linking /usr/local/lib/python2.5/site-packages/libxml2mod.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/libxml2mod.so]
+examining: '/usr/local/lib/python2.5/site-packages/libxml2mod.so'
+loading: libz.so.4.1 required by /usr/local/lib/python2.5/site-packages/libxml2mod.so
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/libxml2mod.so
+loading: libxml2.so.10.0 required by /usr/local/lib/python2.5/site-packages/libxml2mod.so
+loading: libm.so.5.1 required by /usr/local/lib/python2.5/site-packages/libxml2mod.so
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/python2.5/site-packages/libxml2mod.so
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/python2.5/site-packages/libxml2mod.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/libxml2mod.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/python2.5/site-packages/libxml2mod.so
+tail /usr/local/lib/python2.5/site-packages/libxml2mod.so
+doing ctors obj 0x83e9e02c @0xeca14f0: [/usr/local/lib/python2.5/site-packages/libxml2mod.so]
+dlopen: /usr/local/lib/python2.5/site-packages/libxml2mod.so: done (success).
+dlsym: initlibxml2mod in /usr/local/lib/python2.5/site-packages/libxml2mod.so: 0xeca9cd8
+dlopen: loading: /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+head /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+linking /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so]
+examining: '/usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so'
+loading: libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libgdk-x11-2.0.so.1402.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/local/lib/libgdk-x11-2.0.so.1402.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libX11.so.12.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libexpat.so.9.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/lib/libexpat.so.9.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libgio-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libgdk_pixbuf-2.0.so.1402.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libz.so.4.1 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libcairo.so.9.2 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/local/lib/libcairo.so.9.2 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libpangoft2-1.0.so.1801.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/local/lib/libpangoft2-1.0.so.1801.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libfontconfig.so.6.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/X11R6/lib/libfontconfig.so.6.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libpangocairo-1.0.so.1801.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/local/lib/libpangocairo-1.0.so.1801.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libXrender.so.5.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/X11R6/lib/libXrender.so.5.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libXext.so.10.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libXi.so.10.1 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/X11R6/lib/libXi.so.10.1 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libXdmcp.so.9.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libm.so.5.1 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libXau.so.9.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libXcomposite.so.3.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/X11R6/lib/libXcomposite.so.3.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libXinerama.so.5.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/X11R6/lib/libXinerama.so.5.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libatk-1.0.so.2400.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/local/lib/libatk-1.0.so.2400.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libpixman-1.so.15.8 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/X11R6/lib/libpixman-1.so.15.8 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libgtk-x11-2.0.so.1402.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/local/lib/libgtk-x11-2.0.so.1402.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libXdamage.so.3.1 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libxcb.so.2.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libfreetype.so.17.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/X11R6/lib/libfreetype.so.17.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libpango-1.0.so.1801.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/local/lib/libpango-1.0.so.1801.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libXrandr.so.6.1 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/X11R6/lib/libXrandr.so.6.1 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libXfixes.so.5.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libpng.so.8.1 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/local/lib/libpng.so.8.1 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libXcursor.so.4.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/X11R6/lib/libXcursor.so.4.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+loading: libglitz.so.2.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+obj /usr/local/lib/libglitz.so.2.0 has /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so as head
+linking dep /usr/local/lib/libgtk-x11-2.0.so.1402.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libgdk-x11-2.0.so.1402.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libpangocairo-1.0.so.1801.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libXinerama.so.5.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libXi.so.10.1 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libXrandr.so.6.1 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libXcursor.so.4.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libXcomposite.so.3.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libXext.so.10.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libXdamage.so.3.1 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libXfixes.so.5.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libatk-1.0.so.2400.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libcairo.so.9.2 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libpixman-1.so.15.8 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libglitz.so.2.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libpng.so.8.1 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libpangoft2-1.0.so.1801.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libpango-1.0.so.1801.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+examining: '/usr/local/lib/libgtk-x11-2.0.so.1402.0'
+loading: libz.so.4.1 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXrender.so.5.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXi.so.10.1 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXrandr.so.6.1 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXdmcp.so.9.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libglitz.so.2.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libX11.so.12.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: libpng.so.8.1 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libfontconfig.so.6.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXcursor.so.4.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: libgdk-x11-2.0.so.1402.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXdamage.so.3.1 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: libm.so.5.1 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libpangoft2-1.0.so.1801.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: libfreetype.so.17.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXext.so.10.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libgio-2.0.so.1802.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: libxcb.so.2.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libpixman-1.so.15.8 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libpango-1.0.so.1801.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXinerama.so.5.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXfixes.so.5.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libcairo.so.9.2 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libpangocairo-1.0.so.1801.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libatk-1.0.so.2400.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: libexpat.so.9.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXau.so.9.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXcomposite.so.3.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: libgdk_pixbuf-2.0.so.1402.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libgdk-x11-2.0.so.1402.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXinerama.so.5.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXi.so.10.1 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXrandr.so.6.1 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXcursor.so.4.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libpangocairo-1.0.so.1801.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXcomposite.so.3.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXext.so.10.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXdamage.so.3.1 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXfixes.so.5.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libatk-1.0.so.2400.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libcairo.so.9.2 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libpixman-1.so.15.8 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libglitz.so.2.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libpng.so.8.1 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libpangoft2-1.0.so.1801.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libpango-1.0.so.1801.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libgtk-x11-2.0.so.1402.0
+examining: '/usr/local/lib/libgdk-x11-2.0.so.1402.0'
+loading: /usr/X11R6/lib/libXau.so.9.0 required by /usr/local/lib/libgdk-x11-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXext.so.10.0 required by /usr/local/lib/libgdk-x11-2.0.so.1402.0
+examining: '/usr/local/lib/libpangocairo-1.0.so.1801.0'
+loading: /usr/X11R6/lib/libXau.so.9.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/X11R6/lib/libfontconfig.so.6.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/local/lib/libpangoft2-1.0.so.1801.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: libfreetype.so.17.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: libexpat.so.9.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/local/lib/libcairo.so.9.2 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/local/lib/libglitz.so.2.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: libm.so.5.1 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/X11R6/lib/libX11.so.12.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: libpng.so.8.1 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/local/lib/libpango-1.0.so.1801.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/X11R6/lib/libXrender.so.5.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/X11R6/lib/libXdmcp.so.9.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: /usr/X11R6/lib/libpixman-1.so.15.8 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/local/lib/libcairo.so.9.2 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/X11R6/lib/libpixman-1.so.15.8 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/local/lib/libglitz.so.2.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/local/lib/libpng.so.8.1 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/local/lib/libpangoft2-1.0.so.1801.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/local/lib/libpango-1.0.so.1801.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libpangocairo-1.0.so.1801.0
+examining: '/usr/X11R6/lib/libXinerama.so.5.0'
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libXinerama.so.5.0
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libXinerama.so.5.0
+loading: libXext.so.10.0 required by /usr/X11R6/lib/libXinerama.so.5.0
+loading: libxcb.so.2.0 required by /usr/X11R6/lib/libXinerama.so.5.0
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libXinerama.so.5.0
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libXinerama.so.5.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libXinerama.so.5.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libXinerama.so.5.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libXinerama.so.5.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/X11R6/lib/libXinerama.so.5.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libXinerama.so.5.0
+linking dep /usr/X11R6/lib/libXext.so.10.0 as child of /usr/X11R6/lib/libXinerama.so.5.0
+examining: '/usr/X11R6/lib/libXi.so.10.1'
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libXi.so.10.1
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libXi.so.10.1
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libXi.so.10.1
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libXi.so.10.1
+loading: libxcb.so.2.0 required by /usr/X11R6/lib/libXi.so.10.1
+loading: libXext.so.10.0 required by /usr/X11R6/lib/libXi.so.10.1
+linking dep /usr/X11R6/lib/libXext.so.10.0 as child of /usr/X11R6/lib/libXi.so.10.1
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libXi.so.10.1
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/X11R6/lib/libXi.so.10.1
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libXi.so.10.1
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libXi.so.10.1
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libXi.so.10.1
+examining: '/usr/X11R6/lib/libXrandr.so.6.1'
+loading: libXrender.so.5.0 required by /usr/X11R6/lib/libXrandr.so.6.1
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libXrandr.so.6.1
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libXrandr.so.6.1
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libXrandr.so.6.1
+loading: libXext.so.10.0 required by /usr/X11R6/lib/libXrandr.so.6.1
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libXrandr.so.6.1
+loading: libxcb.so.2.0 required by /usr/X11R6/lib/libXrandr.so.6.1
+linking dep /usr/X11R6/lib/libXext.so.10.0 as child of /usr/X11R6/lib/libXrandr.so.6.1
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/X11R6/lib/libXrandr.so.6.1
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libXrandr.so.6.1
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/X11R6/lib/libXrandr.so.6.1
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libXrandr.so.6.1
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libXrandr.so.6.1
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libXrandr.so.6.1
+examining: '/usr/X11R6/lib/libXcursor.so.4.0'
+loading: libXrender.so.5.0 required by /usr/X11R6/lib/libXcursor.so.4.0
+loading: libxcb.so.2.0 required by /usr/X11R6/lib/libXcursor.so.4.0
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libXcursor.so.4.0
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libXcursor.so.4.0
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libXcursor.so.4.0
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libXcursor.so.4.0
+loading: libXfixes.so.5.0 required by /usr/X11R6/lib/libXcursor.so.4.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libXcursor.so.4.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libXcursor.so.4.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libXcursor.so.4.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/X11R6/lib/libXcursor.so.4.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libXcursor.so.4.0
+linking dep /usr/X11R6/lib/libXfixes.so.5.0 as child of /usr/X11R6/lib/libXcursor.so.4.0
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/X11R6/lib/libXcursor.so.4.0
+examining: '/usr/X11R6/lib/libXcomposite.so.3.0'
+loading: libXext.so.10.0 required by /usr/X11R6/lib/libXcomposite.so.3.0
+loading: libxcb.so.2.0 required by /usr/X11R6/lib/libXcomposite.so.3.0
+loading: libXfixes.so.5.0 required by /usr/X11R6/lib/libXcomposite.so.3.0
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libXcomposite.so.3.0
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libXcomposite.so.3.0
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libXcomposite.so.3.0
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libXcomposite.so.3.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libXcomposite.so.3.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libXcomposite.so.3.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libXcomposite.so.3.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/X11R6/lib/libXcomposite.so.3.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libXcomposite.so.3.0
+linking dep /usr/X11R6/lib/libXext.so.10.0 as child of /usr/X11R6/lib/libXcomposite.so.3.0
+linking dep /usr/X11R6/lib/libXfixes.so.5.0 as child of /usr/X11R6/lib/libXcomposite.so.3.0
+examining: '/usr/local/lib/libatk-1.0.so.2400.0'
+loading: libpcre.so.2.3 required by /usr/local/lib/libatk-1.0.so.2400.0
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/libatk-1.0.so.2400.0
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/libatk-1.0.so.2400.0
+loading: libintl.so.4.0 required by /usr/local/lib/libatk-1.0.so.2400.0
+loading: libiconv.so.6.0 required by /usr/local/lib/libatk-1.0.so.2400.0
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/libatk-1.0.so.2400.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libatk-1.0.so.2400.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libatk-1.0.so.2400.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libatk-1.0.so.2400.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libatk-1.0.so.2400.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libatk-1.0.so.2400.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libatk-1.0.so.2400.0
+examining: '/usr/local/lib/libcairo.so.9.2'
+loading: libXau.so.9.0 required by /usr/local/lib/libcairo.so.9.2
+loading: libfontconfig.so.6.0 required by /usr/local/lib/libcairo.so.9.2
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/libcairo.so.9.2
+loading: libfreetype.so.17.0 required by /usr/local/lib/libcairo.so.9.2
+loading: libz.so.4.1 required by /usr/local/lib/libcairo.so.9.2
+loading: libpng.so.8.1 required by /usr/local/lib/libcairo.so.9.2
+loading: libxcb.so.2.0 required by /usr/local/lib/libcairo.so.9.2
+loading: libXdmcp.so.9.0 required by /usr/local/lib/libcairo.so.9.2
+loading: libexpat.so.9.0 required by /usr/local/lib/libcairo.so.9.2
+loading: libglitz.so.2.0 required by /usr/local/lib/libcairo.so.9.2
+loading: libm.so.5.1 required by /usr/local/lib/libcairo.so.9.2
+loading: libpixman-1.so.15.8 required by /usr/local/lib/libcairo.so.9.2
+loading: libX11.so.12.0 required by /usr/local/lib/libcairo.so.9.2
+loading: libXrender.so.5.0 required by /usr/local/lib/libcairo.so.9.2
+linking dep /usr/X11R6/lib/libpixman-1.so.15.8 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/local/lib/libglitz.so.2.0 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/local/lib/libpng.so.8.1 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libcairo.so.9.2
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libcairo.so.9.2
+examining: '/usr/X11R6/lib/libpixman-1.so.15.8'
+loading: libm.so.5.1 required by /usr/X11R6/lib/libpixman-1.so.15.8
+linking dep /usr/lib/libm.so.5.1 as child of /usr/X11R6/lib/libpixman-1.so.15.8
+examining: '/usr/local/lib/libglitz.so.2.0'
+loading: libm.so.5.1 required by /usr/local/lib/libglitz.so.2.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libglitz.so.2.0
+examining: '/usr/local/lib/libpng.so.8.1'
+examining: '/usr/X11R6/lib/libXrender.so.5.0'
+loading: libXdmcp.so.9.0 required by /usr/X11R6/lib/libXrender.so.5.0
+loading: libxcb.so.2.0 required by /usr/X11R6/lib/libXrender.so.5.0
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libXrender.so.5.0
+loading: libpthread-stubs.so.0.0 required by /usr/X11R6/lib/libXrender.so.5.0
+loading: libXau.so.9.0 required by /usr/X11R6/lib/libXrender.so.5.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/X11R6/lib/libXrender.so.5.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/X11R6/lib/libXrender.so.5.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/X11R6/lib/libXrender.so.5.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/X11R6/lib/libXrender.so.5.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libXrender.so.5.0
+examining: '/usr/local/lib/libpangoft2-1.0.so.1801.0'
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+loading: libz.so.4.1 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+loading: libfreetype.so.17.0 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+loading: libexpat.so.9.0 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+loading: /usr/local/lib/libpango-1.0.so.1801.0 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+loading: /usr/X11R6/lib/libfontconfig.so.6.0 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+loading: libm.so.5.1 required by /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/local/lib/libpango-1.0.so.1801.0 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libpangoft2-1.0.so.1801.0
+examining: '/usr/local/lib/libpango-1.0.so.1801.0'
+loading: libiconv.so.6.0 required by /usr/local/lib/libpango-1.0.so.1801.0
+loading: libintl.so.4.0 required by /usr/local/lib/libpango-1.0.so.1801.0
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/libpango-1.0.so.1801.0
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/libpango-1.0.so.1801.0
+loading: libpcre.so.2.3 required by /usr/local/lib/libpango-1.0.so.1801.0
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/libpango-1.0.so.1801.0
+loading: libm.so.5.1 required by /usr/local/lib/libpango-1.0.so.1801.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libpango-1.0.so.1801.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libpango-1.0.so.1801.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libpango-1.0.so.1801.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libpango-1.0.so.1801.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libpango-1.0.so.1801.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libpango-1.0.so.1801.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libpango-1.0.so.1801.0
+examining: '/usr/X11R6/lib/libfontconfig.so.6.0'
+loading: libfreetype.so.17.0 required by /usr/X11R6/lib/libfontconfig.so.6.0
+loading: libz.so.4.1 required by /usr/X11R6/lib/libfontconfig.so.6.0
+loading: libexpat.so.9.0 required by /usr/X11R6/lib/libfontconfig.so.6.0
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/X11R6/lib/libfontconfig.so.6.0
+linking dep /usr/lib/libz.so.4.1 as child of /usr/X11R6/lib/libfontconfig.so.6.0
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/X11R6/lib/libfontconfig.so.6.0
+examining: '/usr/lib/libexpat.so.9.0'
+examining: '/usr/X11R6/lib/libfreetype.so.17.0'
+tail /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so
+doing ctors obj 0x7e5b592c @0x53753a0: [/usr/X11R6/lib/libpixman-1.so.15.8]
+doing ctors obj 0x7e5b5cd4 @0xcddd400: [/usr/X11R6/lib/libfreetype.so.17.0]
+doing ctors obj 0x7d96b62c @0x1ccc1e0: [/usr/lib/libexpat.so.9.0]
+doing ctors obj 0x7d96bc74 @0x7828950: [/usr/X11R6/lib/libfontconfig.so.6.0]
+doing ctors obj 0x83716604 @0xbe56ec0: [/usr/local/lib/libglitz.so.2.0]
+doing ctors obj 0x8371626c @0x1bafa00: [/usr/local/lib/libpng.so.8.1]
+doing ctors obj 0x7e5b5024 @0xc962310: [/usr/X11R6/lib/libXrender.so.5.0]
+doing ctors obj 0x7d96b8cc @0xc4d57d0: [/usr/local/lib/libcairo.so.9.2]
+doing ctors obj 0x7e5b5ea4 @0xdbfccd0: [/usr/local/lib/libpango-1.0.so.1801.0]
+doing ctors obj 0x7d96ba9c @0x15a20a0: [/usr/local/lib/libpangoft2-1.0.so.1801.0]
+doing ctors obj 0x7d96be4c @0x3d2b480: [/usr/local/lib/libpangocairo-1.0.so.1801.0]
+doing ctors obj 0x7e5b558c @0xb2e7900: [/usr/X11R6/lib/libXinerama.so.5.0]
+doing ctors obj 0x7e5b51f4 @0x5ab52e0: [/usr/X11R6/lib/libXi.so.10.1]
+doing ctors obj 0x83716084 @0xfb73280: [/usr/X11R6/lib/libXrandr.so.6.1]
+doing ctors obj 0x83716414 @0x7afeae0: [/usr/X11R6/lib/libXcursor.so.4.0]
+doing ctors obj 0x7e5b53bc @0x8f62a10: [/usr/X11R6/lib/libXcomposite.so.3.0]
+doing ctors obj 0x7d96b45c @0xdd0d520: [/usr/local/lib/libgdk-x11-2.0.so.1402.0]
+doing ctors obj 0x7e5b575c @0xe706ad0: [/usr/local/lib/libatk-1.0.so.2400.0]
+doing ctors obj 0x7e5b5b04 @0x40180f0: [/usr/local/lib/libgtk-x11-2.0.so.1402.0]
+doing ctors obj 0x7d96b02c @0x9d7e2a0: [/usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so]
+dlopen: /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so: done (success).
+dlsym: init_gtk in /usr/local/lib/python2.5/site-packages/gtk-2.0/gtk/_gtk.so: 0x9d8e8b8
+dlopen: loading: /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+head /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+obj /usr/local/lib/python2.5/site-packages/cairo/_cairo.so has /usr/local/lib/python2.5/site-packages/cairo/_cairo.so as head
+linking /usr/local/lib/python2.5/site-packages/cairo/_cairo.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/cairo/_cairo.so]
+examining: '/usr/local/lib/python2.5/site-packages/cairo/_cairo.so'
+loading: libpixman-1.so.15.8 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libXau.so.9.0 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libglitz.so.2.0 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libX11.so.12.0 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libexpat.so.9.0 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libfreetype.so.17.0 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libm.so.5.1 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libxcb.so.2.0 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libXrender.so.5.0 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libXdmcp.so.9.0 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libcairo.so.9.2 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libz.so.4.1 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libpng.so.8.1 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+loading: libfontconfig.so.6.0 required by /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/local/lib/libcairo.so.9.2 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/X11R6/lib/libpixman-1.so.15.8 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/local/lib/libglitz.so.2.0 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/local/lib/libpng.so.8.1 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+tail /usr/local/lib/python2.5/site-packages/cairo/_cairo.so
+doing ctors obj 0x7e82802c @0x2fa0370: [/usr/local/lib/python2.5/site-packages/cairo/_cairo.so]
+dlopen: /usr/local/lib/python2.5/site-packages/cairo/_cairo.so: done (success).
+dlsym: init_cairo in /usr/local/lib/python2.5/site-packages/cairo/_cairo.so: 0x2fa1634
+dlopen: loading: /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+head /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+obj /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so has /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so as head
+linking /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so]
+examining: '/usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so'
+loading: /usr/local/lib/libgthread-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+loading: libpyglib-2.0-python2.5.so.0.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+loading: /usr/local/lib/libgio-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+linking dep /usr/local/lib/libpyglib-2.0-python2.5.so.0.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+tail /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so
+doing ctors obj 0x88c7102c @0x649a340: [/usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so]
+dlopen: /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so: done (success).
+dlsym: init_gio in /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/_gio.so: 0x649c628
+dlopen: loading: /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+head /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+obj /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so has /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so as head
+linking /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so]
+examining: '/usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so'
+loading: libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+loading: libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+loading: libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+loading: libgio-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+tail /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so
+doing ctors obj 0x8710a02c @0xb0744a0: [/usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so]
+dlopen: /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so: done (success).
+dlsym: initunix in /usr/local/lib/python2.5/site-packages/gtk-2.0/gio/unix.so: 0xb074928
+dlopen: loading: /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+head /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+obj /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so has /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so as head
+linking /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so]
+examining: '/usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so'
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libm.so.5.1 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libX11.so.12.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libXdmcp.so.9.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libxcb.so.2.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libpango-1.0.so.1801.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libXau.so.9.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/local/lib/libpango-1.0.so.1801.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+tail /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so
+doing ctors obj 0x85e2f02c @0x3e53c0: [/usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so]
+dlopen: /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so: done (success).
+dlsym: initpango in /usr/local/lib/python2.5/site-packages/gtk-2.0/pango.so: 0x3e6a38
+dlopen: loading: /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+head /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+obj /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so has /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so as head
+linking /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so]
+examining: '/usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so'
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+loading: libatk-1.0.so.2400.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+loading: libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+loading: libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+loading: libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+linking dep /usr/local/lib/libatk-1.0.so.2400.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+tail /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so
+doing ctors obj 0x7cc9602c @0x8ddcca0: [/usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so]
+dlopen: /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so: done (success).
+dlsym: initatk in /usr/local/lib/python2.5/site-packages/gtk-2.0/atk.so: 0x8dddfb8
+dlopen: loading: /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+head /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+obj /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so has /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so as head
+linking /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so]
+examining: '/usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so'
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libpangoft2-1.0.so.1801.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libglitz.so.2.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libcairo.so.9.2 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libxcb.so.2.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libXau.so.9.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libm.so.5.1 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libfreetype.so.17.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libpango-1.0.so.1801.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libpng.so.8.1 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libXdmcp.so.9.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libfontconfig.so.6.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libXrender.so.5.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libX11.so.12.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libpixman-1.so.15.8 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libexpat.so.9.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libpangocairo-1.0.so.1801.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+loading: libz.so.4.1 required by /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libpangocairo-1.0.so.1801.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libpangoft2-1.0.so.1801.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libpango-1.0.so.1801.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libcairo.so.9.2 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/X11R6/lib/libpixman-1.so.15.8 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libglitz.so.2.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/local/lib/libpng.so.8.1 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+tail /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so
+doing ctors obj 0x8bd9a02c @0xfa97620: [/usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so]
+dlopen: /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so: done (success).
+dlsym: initpangocairo in /usr/local/lib/python2.5/site-packages/gtk-2.0/pangocairo.so: 0xfa97ad8
+dlopen: loading: /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+head /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+obj /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so has /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so as head
+linking /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so]
+examining: '/usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so'
+loading: libm.so.5.1 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libpixman-1.so.15.8 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libGL.so.9.1 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libcairo.so.9.2 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libexpat.so.9.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libXdmcp.so.9.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libz.so.4.1 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libfontconfig.so.6.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libgio-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libgdk_pixbuf-2.0.so.1402.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libpng.so.8.1 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libXau.so.9.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libpigment-imaging-0.3.so.0.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+obj /usr/local/lib/libpigment-imaging-0.3.so.0.0 has /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so as head
+loading: libglitz.so.2.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libXrender.so.5.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libxcb.so.2.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libX11.so.12.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+loading: libfreetype.so.17.0 required by /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libpigment-imaging-0.3.so.0.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libcairo.so.9.2 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/X11R6/lib/libpixman-1.so.15.8 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libglitz.so.2.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libpng.so.8.1 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+linking dep /usr/X11R6/lib/libGL.so.9.1 as child of /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+examining: '/usr/local/lib/libpigment-imaging-0.3.so.0.0'
+loading: libgdk_pixbuf-2.0.so.1402.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libpng.so.8.1 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libiconv.so.6.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libfreetype.so.17.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libpcre.so.2.3 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libz.so.4.1 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libGL.so.9.1 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libxcb.so.2.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libm.so.5.1 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libfontconfig.so.6.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libcairo.so.9.2 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libXdmcp.so.9.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libintl.so.4.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libexpat.so.9.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libX11.so.12.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libglitz.so.2.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libpixman-1.so.15.8 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libgio-2.0.so.1802.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libXau.so.9.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+loading: libXrender.so.5.0 required by /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/local/lib/libcairo.so.9.2 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/X11R6/lib/libpixman-1.so.15.8 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/local/lib/libglitz.so.2.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/local/lib/libpng.so.8.1 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+linking dep /usr/X11R6/lib/libGL.so.9.1 as child of /usr/local/lib/libpigment-imaging-0.3.so.0.0
+tail /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so
+doing ctors obj 0x874fb53c @0xd322be0: [/usr/local/lib/libpigment-imaging-0.3.so.0.0]
+doing ctors obj 0x874fb02c @0x68c3ca0: [/usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so]
+dlopen: /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so: done (success).
+dlsym: init_pgmimaging in /usr/local/lib/python2.5/site-packages/_pgmimagingmodule.so: 0x68c3f88
+dlopen: loading: /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+head /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+obj /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so has /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so as head
+linking /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so as dlopen()ed
+head [/usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so]
+examining: '/usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so'
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libpangoft2-1.0.so.1801.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libcairo.so.9.2 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libXau.so.9.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libgobject-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libatk-1.0.so.2400.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libintl.so.4.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libpng.so.8.1 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libX11.so.12.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libgdk-x11-2.0.so.1402.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libgstreamer-0.10.so.0.2 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libXcomposite.so.3.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libxml2.so.10.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libpango-1.0.so.1801.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libiconv.so.6.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libgdk_pixbuf-2.0.so.1402.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libXdmcp.so.9.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libXi.so.10.1 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libpangocairo-1.0.so.1801.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libglib-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libgmodule-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libexpat.so.9.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libglitz.so.2.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libgstbase-0.10.so.0.2 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libz.so.4.1 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libgtk-x11-2.0.so.1402.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libpcre.so.2.3 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libpigment-gtk-0.3.so.0.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+obj /usr/local/lib/libpigment-gtk-0.3.so.0.0 has /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so as head
+loading: libxcb.so.2.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libpixman-1.so.15.8 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libgthread-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libXinerama.so.5.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libgstvideo-0.10.so.0.2 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libXcursor.so.4.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libfreetype.so.17.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libXrender.so.5.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libXrandr.so.6.1 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libXdamage.so.3.1 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libgio-2.0.so.1802.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libfontconfig.so.6.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libGL.so.9.1 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libXfixes.so.5.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libm.so.5.1 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libXext.so.10.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+loading: libpigment-0.3.so.0.0 required by /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libpigment-gtk-0.3.so.0.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libpigment-0.3.so.0.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libgstvideo-0.10.so.0.2 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libgstbase-0.10.so.0.2 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libgtk-x11-2.0.so.1402.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libgdk-x11-2.0.so.1402.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libpangocairo-1.0.so.1801.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libXinerama.so.5.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libXi.so.10.1 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libXrandr.so.6.1 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libXcursor.so.4.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libXcomposite.so.3.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libXext.so.10.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libXdamage.so.3.1 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libXfixes.so.5.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libatk-1.0.so.2400.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libcairo.so.9.2 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libpixman-1.so.15.8 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libglitz.so.2.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libpng.so.8.1 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libpangoft2-1.0.so.1801.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libpango-1.0.so.1801.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+linking dep /usr/X11R6/lib/libGL.so.9.1 as child of /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+examining: '/usr/local/lib/libpigment-gtk-0.3.so.0.0'
+loading: /usr/local/lib/libgstreamer-0.10.so.0.2 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libXinerama.so.5.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libatk-1.0.so.2400.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libpango-1.0.so.1801.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libgio-2.0.so.1802.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libX11.so.12.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: libz.so.4.1 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libgdk-x11-2.0.so.1402.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libglitz.so.2.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libcairo.so.9.2 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libgtk-x11-2.0.so.1402.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libXau.so.9.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libXdmcp.so.9.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libXcursor.so.4.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libgthread-2.0.so.1802.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libXdamage.so.3.1 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libfontconfig.so.6.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: libpng.so.8.1 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libpixman-1.so.15.8 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libpangoft2-1.0.so.1801.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libgstbase-0.10.so.0.2 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libpangocairo-1.0.so.1801.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libXcomposite.so.3.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libXi.so.10.1 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libXrender.so.5.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: libexpat.so.9.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libXext.so.10.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: libGL.so.9.1 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libXrandr.so.6.1 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: libxcb.so.2.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/X11R6/lib/libXfixes.so.5.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: libfreetype.so.17.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: libm.so.5.1 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libgstvideo-0.10.so.0.2 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: libpigment-0.3.so.0.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+loading: /usr/local/lib/libxml2.so.10.0 required by /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libpigment-0.3.so.0.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libgstvideo-0.10.so.0.2 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libgstbase-0.10.so.0.2 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libgtk-x11-2.0.so.1402.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libgdk-x11-2.0.so.1402.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libpangocairo-1.0.so.1801.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXinerama.so.5.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXi.so.10.1 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXrandr.so.6.1 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXcursor.so.4.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXcomposite.so.3.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXext.so.10.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXdamage.so.3.1 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXfixes.so.5.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libatk-1.0.so.2400.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libcairo.so.9.2 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libpixman-1.so.15.8 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libglitz.so.2.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libpng.so.8.1 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libpangoft2-1.0.so.1801.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libpango-1.0.so.1801.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+linking dep /usr/X11R6/lib/libGL.so.9.1 as child of /usr/local/lib/libpigment-gtk-0.3.so.0.0
+tail /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so
+doing ctors obj 0x8b81a72c @0x1d2120: [/usr/local/lib/libpigment-gtk-0.3.so.0.0]
+doing ctors obj 0x8b81a02c @0x555e000: [/usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so]
+dlopen: /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so: done (success).
+dlsym: init_pgmgtk in /usr/local/lib/python2.5/site-packages/_pgmgtkmodule.so: 0x555e338
+dlopen: loading: /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+head /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+obj /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so has /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so as head
+linking /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so as dlopen()ed
+head [/usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so]
+examining: '/usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so'
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libgstvideo-0.10.so.0.2 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libgthread-2.0.so.1802.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libgio-2.0.so.1802.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: libpigment-0.3.so.0.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: libGL.so.9.1 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libgstreamer-0.10.so.0.2 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libxml2.so.10.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libgstbase-0.10.so.0.2 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: libz.so.4.1 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+loading: libm.so.5.1 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libpigment-0.3.so.0.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libgstvideo-0.10.so.0.2 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libgstbase-0.10.so.0.2 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+linking dep /usr/X11R6/lib/libGL.so.9.1 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+tail /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+doing ctors obj 0x87e9c00c @0x6934bd0: [/usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so]
+dlopen: /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so: done (success).
+dlsym: pgm_plugin_desc in /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so: 0x26935460
+doing dtors obj 0x87e9c00c @0x6935790: [/usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so]
+unload_shlib called on /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+unload_shlib called on /usr/local/lib/libpigment-0.3.so.0.0
+unload_shlib called on /usr/local/lib/libgstvideo-0.10.so.0.2
+unload_shlib called on /usr/local/lib/libgstbase-0.10.so.0.2
+unload_shlib called on /usr/local/lib/libgstreamer-0.10.so.0.2
+unload_shlib called on /usr/local/lib/libgthread-2.0.so.1802.0
+unload_shlib called on /usr/local/lib/libxml2.so.10.0
+unload_shlib called on /usr/lib/libz.so.4.1
+unload_shlib called on /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0
+unload_shlib called on /usr/local/lib/libgio-2.0.so.1802.0
+unload_shlib called on /usr/local/lib/libgobject-2.0.so.1802.0
+unload_shlib called on /usr/local/lib/libgmodule-2.0.so.1802.0
+unload_shlib called on /usr/local/lib/libglib-2.0.so.1802.0
+unload_shlib called on /usr/local/lib/libpcre.so.2.3
+unload_shlib called on /usr/local/lib/libintl.so.4.0
+unload_shlib called on /usr/local/lib/libiconv.so.6.0
+unload_shlib called on /usr/lib/libm.so.5.1
+unload_shlib called on /usr/X11R6/lib/libGL.so.9.1
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib called on /usr/local/lib/python2.5/site-packages/_pgmmodule.so
+unload_shlib unloading on /usr/local/lib/pigment-0.3/0.3.17/libpgmboilerplate.so
+dlopen: loading: /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+head /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+obj /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so has /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so as head
+linking /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so as dlopen()ed
+head [/usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so]
+examining: '/usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so'
+loading: /usr/X11R6/lib/libX11.so.12.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: libz.so.4.1 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libgstvideo-0.10.so.0.2 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libpangoft2-1.0.so.1801.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: libfreetype.so.17.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: libexpat.so.9.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libpangocairo-1.0.so.1801.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: libm.so.5.1 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/X11R6/lib/libXrender.so.5.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libcairo.so.9.2 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libgstreamer-0.10.so.0.2 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libpango-1.0.so.1801.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libglitz.so.2.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: libpng.so.8.1 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libgio-2.0.so.1802.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: libGL.so.9.1 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: libpigment-0.3.so.0.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libgstbase-0.10.so.0.2 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libgthread-2.0.so.1802.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/X11R6/lib/libXdmcp.so.9.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/X11R6/lib/libXau.so.9.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libxml2.so.10.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/X11R6/lib/libpixman-1.so.15.8 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+obj /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0 has /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so as head
+loading: /usr/X11R6/lib/libfontconfig.so.6.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: libxcb.so.2.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+loading: /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 required by /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libpigment-0.3.so.0.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libgstvideo-0.10.so.0.2 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libgstbase-0.10.so.0.2 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libgstreamer-0.10.so.0.2 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libgthread-2.0.so.1802.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libxml2.so.10.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libpangocairo-1.0.so.1801.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libcairo.so.9.2 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/X11R6/lib/libpixman-1.so.15.8 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libglitz.so.2.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libpng.so.8.1 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/X11R6/lib/libXrender.so.5.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libpangoft2-1.0.so.1801.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libpango-1.0.so.1801.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/X11R6/lib/libfontconfig.so.6.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/X11R6/lib/libfreetype.so.17.0 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/lib/libz.so.4.1 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+linking dep /usr/X11R6/lib/libGL.so.9.1 as child of /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+examining: '/usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0'
+loading: /usr/local/lib/libgobject-2.0.so.1802.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXau.so.9.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: /usr/local/lib/libpcre.so.2.3 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: libpthread-stubs.so.0.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: /usr/X11R6/lib/libX11.so.12.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: /usr/local/lib/libgmodule-2.0.so.1802.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: libxcb.so.2.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: /usr/local/lib/libgio-2.0.so.1802.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: /usr/local/lib/libiconv.so.6.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: libm.so.5.1 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: libgdk_pixbuf-2.0.so.1402.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: /usr/local/lib/libintl.so.4.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: /usr/local/lib/libglib-2.0.so.1802.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+loading: /usr/X11R6/lib/libXdmcp.so.9.0 required by /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/local/lib/libgdk_pixbuf-2.0.so.1402.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/local/lib/libgio-2.0.so.1802.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/local/lib/libgobject-2.0.so.1802.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/local/lib/libgmodule-2.0.so.1802.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/local/lib/libglib-2.0.so.1802.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/local/lib/libpcre.so.2.3 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/local/lib/libintl.so.4.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/local/lib/libiconv.so.6.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libxcb.so.2.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libpthread-stubs.so.0.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXau.so.9.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/X11R6/lib/libXdmcp.so.9.0 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+linking dep /usr/lib/libm.so.5.1 as child of /usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0
+tail /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so
+doing ctors obj 0x87e9ccb4 @0xe741500: [/usr/local/lib/libgdk_pixbuf_xlib-2.0.so.1402.0]
+doing ctors obj 0x8027adbc @0x6dd6210: [/usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so]
+dlopen: /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so: done (success).
+dlsym: pgm_plugin_desc in /usr/local/lib/pigment-0.3/0.3.17/libpgmopengl.so: 0x26dd5020
+dlopen: loading: libGL.so.1
+dlopen: failed to open libGL.so.1
+dlopen: libGL.so.1: done (failed).
+dlopen: loading: /usr/X11R6/lib/modules/dri/i915_dri.so
+head /usr/X11R6/lib/modules/dri/i915_dri.so
+obj /usr/X11R6/lib/modules/dri/i915_dri.so has /usr/X11R6/lib/modules/dri/i915_dri.so as head
+linking /usr/X11R6/lib/modules/dri/i915_dri.so as dlopen()ed
+head [/usr/X11R6/lib/modules/dri/i915_dri.so]
+examining: '/usr/X11R6/lib/modules/dri/i915_dri.so'
+loading: libdrm.so.2.4 required by /usr/X11R6/lib/modules/dri/i915_dri.so
+loading: libm.so.5.1 required by /usr/X11R6/lib/modules/dri/i915_dri.so
+loading: libX11.so.12.0 required by /usr/X11R6/lib/modules/dri/i915_dri.so
+loading: libdrm_intel.so.1.1 required by /usr/X11R6/lib/modules/dri/i915_dri.so
+obj /usr/X11R6/lib/libdrm_intel.so.1.1 has /usr/X11R6/lib/modules/dri/i915_dri.so as head
+loading: libexpat.so.9.0 required by /usr/X11R6/lib/modules/dri/i915_dri.so
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/modules/dri/i915_dri.so
+linking dep /usr/lib/libexpat.so.9.0 as child of /usr/X11R6/lib/modules/dri/i915_dri.so
+linking dep /usr/X11R6/lib/libdrm.so.2.4 as child of /usr/X11R6/lib/modules/dri/i915_dri.so
+linking dep /usr/lib/libm.so.5.1 as child of /usr/X11R6/lib/modules/dri/i915_dri.so
+linking dep /usr/X11R6/lib/libdrm_intel.so.1.1 as child of /usr/X11R6/lib/modules/dri/i915_dri.so
+examining: '/usr/X11R6/lib/libdrm_intel.so.1.1'
+loading: libX11.so.12.0 required by /usr/X11R6/lib/libdrm_intel.so.1.1
+linking dep /usr/X11R6/lib/libX11.so.12.0 as child of /usr/X11R6/lib/libdrm_intel.so.1.1
+tail /usr/X11R6/lib/modules/dri/i915_dri.so
+doing ctors obj 0x7cebe26c @0x3641170: [/usr/X11R6/lib/libdrm_intel.so.1.1]
+doing ctors obj 0x7cebe04c @0x557e890: [/usr/X11R6/lib/modules/dri/i915_dri.so]
+dlopen: /usr/X11R6/lib/modules/dri/i915_dri.so: done (success).
+dlsym: __driDriverExtensions in /usr/X11R6/lib/modules/dri/i915_dri.so: 0x255c121c
+Failed to initialize GEM.  Falling back to classic.
+dlopen: loading: libXcursor.so.1
+dlopen: failed to open libXcursor.so.1
+dlopen: libXcursor.so.1: done (failed).
+dlopen: loading: libXcursor.so
+linking /usr/X11R6/lib/libXcursor.so.4.0 as dlopen()ed
+dlopen: libXcursor.so: done (success).
+dlsym: XcursorNoticeCreateBitmap in /usr/X11R6/lib/libXcursor.so.4.0: 0x7b035c0
+dlsym: XcursorNoticePutBitmap in /usr/X11R6/lib/libXcursor.so.4.0: 0x7b03944
+dlsym: XcursorTryShapeBitmapCursor in /usr/X11R6/lib/libXcursor.so.4.0: 0x7b03b5c

@@ -1,0 +1,26 @@
+$OpenBSD: patch-pgm_pgmmodule_c,v 1.1.1.1 2009/10/13 19:39:12 landry Exp $
+Needed for python to correctly view gl syms, has to be dlopened w/ RTLD_GLOBAL.
+--- pgm/pgmmodule.c.orig	Wed May 20 19:08:27 2009
++++ pgm/pgmmodule.c	Tue Oct 13 13:05:29 2009
+@@ -30,6 +30,7 @@
+ #include <pygobject.h>
+ #include <Python.h>
+ #include <pgm/pgm.h>
++#include <dlfcn.h>
+ 
+ void pypgm_register_classes (PyObject *d);
+ void pypgm_add_constants (PyObject *module, const gchar *strip_prefix);
+@@ -57,6 +58,13 @@ init_pgm (void)
+       argv = g_new (char *, argc);
+       for (i = 0; i < argc; i++)
+         argv[i] = g_strdup (PyString_AsString (PyList_GetItem (av, i)));
++    }
++
++  /* for an unknown reason python doesn't load libGL, so force it */
++  if (!dlopen ("libGL.so", RTLD_GLOBAL|RTLD_NOW))
++    {
++      perror(dlerror());
++       return;
+     }
+ 
+   if (!pgm_init_check (&argc, &argv))
