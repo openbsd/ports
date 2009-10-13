@@ -1,11 +1,13 @@
-$OpenBSD: patch-mail_em-utils_h,v 1.1 2007/11/21 16:18:15 jasper Exp $
---- mail/em-utils.h.orig	Wed Oct 31 19:12:05 2007
-+++ mail/em-utils.h	Wed Oct 31 19:12:18 2007
-@@ -23,6 +23,7 @@
+$OpenBSD: patch-mail_em-utils_h,v 1.2 2009/10/13 22:07:04 jasper Exp $
+--- mail/em-utils.h.orig	Tue Oct 13 15:18:12 2009
++++ mail/em-utils.h	Tue Oct 13 15:18:30 2009
+@@ -23,8 +23,8 @@
  #ifndef __EM_UTILS_H__
  #define __EM_UTILS_H__
  
-+#include <sys/types.h>
- #include <glib.h>
+-#include <gtk/gtk.h>
+ #include <sys/types.h>
++#include <gtk/gtk.h>
  
- #ifdef __cplusplus
+ #include <mail/em-format.h>
+ 

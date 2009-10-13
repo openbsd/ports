@@ -1,24 +1,15 @@
-$OpenBSD: patch-widgets_e-timezone-dialog_e-timezone-dialog_c,v 1.6 2009/02/03 15:54:24 ajacoutot Exp $
---- widgets/e-timezone-dialog/e-timezone-dialog.c.orig	Mon Oct 13 10:43:29 2008
-+++ widgets/e-timezone-dialog/e-timezone-dialog.c	Tue Feb  3 13:41:13 2009
-@@ -77,8 +77,6 @@ struct _ETimezoneDialogPrivate {
- 
- #ifndef G_OS_WIN32 /* Declared properly in time.h already */
- extern char *tzname[2];
--extern long timezone;
--extern int daylight;
- #endif
- 
- static void e_timezone_dialog_class_init	(ETimezoneDialogClass *class);
-@@ -329,7 +327,6 @@ e_timezone_dialog_construct (ETimezoneDialog *etd)
+$OpenBSD: patch-widgets_e-timezone-dialog_e-timezone-dialog_c,v 1.7 2009/10/13 22:07:04 jasper Exp $
+--- widgets/e-timezone-dialog/e-timezone-dialog.c.orig	Tue Oct 13 15:25:09 2009
++++ widgets/e-timezone-dialog/e-timezone-dialog.c	Tue Oct 13 15:25:50 2009
+@@ -321,7 +321,6 @@ e_timezone_dialog_construct (ETimezoneDialog *etd)
  	return NULL;
  }
  
 -#if 0
- static int
+ static gint
  get_local_offset (void)
  {
-@@ -342,10 +339,11 @@ get_local_offset (void)
+@@ -334,10 +333,11 @@ get_local_offset (void)
  	t_gmt = mktime (&gmt);
  	t_local = mktime (&local);
  	diff = t_local - t_gmt;
@@ -31,12 +22,3 @@ $OpenBSD: patch-widgets_e-timezone-dialog_e-timezone-dialog_c,v 1.6 2009/02/03 1
  
  static icaltimezone*
  get_local_timezone(void)
-@@ -353,7 +351,7 @@ get_local_timezone(void)
- 	icaltimezone *zone;
- 
- 	tzset();
--	zone =  icaltimezone_get_builtin_timezone_from_offset (-timezone, tzname[0]);
-+	zone =  icaltimezone_get_builtin_timezone_from_offset (-get_local_offset(), tzname[0]);
- 
- 	return zone;
- }

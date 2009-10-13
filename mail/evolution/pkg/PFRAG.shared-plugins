@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-plugins,v 1.1 2009/03/22 16:00:29 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared-plugins,v 1.2 2009/10/13 22:07:04 jasper Exp $
 lib/evolution/${R}/plugins/liborg-gnome-audio-inline.so
 lib/evolution/${R}/plugins/liborg-gnome-backup-restore.so
 lib/evolution/${R}/plugins/liborg-gnome-copy-tool.so
@@ -6,12 +6,9 @@ lib/evolution/${R}/plugins/liborg-gnome-default-mailer.so
 lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.so
-lib/evolution/${R}/plugins/liborg-gnome-evolution-mail-attachments-import-ics.so
-lib/evolution/${R}/plugins/liborg-gnome-face.so
 lib/evolution/${R}/plugins/liborg-gnome-mail-notification.so
 lib/evolution/${R}/plugins/liborg-gnome-mail-to-task.so
 lib/evolution/${R}/plugins/liborg-gnome-mailing-list-actions.so
-lib/evolution/${R}/plugins/liborg-gnome-mark-calendar-offline.so
 lib/evolution/${R}/plugins/liborg-gnome-prefer-plain.so
 lib/evolution/${R}/plugins/liborg-gnome-save-calendar.so
 lib/evolution/${R}/plugins/liborg-gnome-select-one-source.so

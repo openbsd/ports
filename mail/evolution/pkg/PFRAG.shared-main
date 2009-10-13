@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2009/06/17 19:51:25 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.3 2009/10/13 22:07:04 jasper Exp $
 lib/evolution/${R}/components/libevolution-addressbook.so
 lib/evolution/${R}/components/libevolution-calendar.so
 lib/evolution/${R}/components/libevolution-mail.so
@@ -17,9 +17,11 @@ lib/evolution/${R}/components/libevolution-mail.so
 @lib lib/evolution/${R}/libevolution-a11y.so.${LIBevolution-a11y_VERSION}
 @lib lib/evolution/${R}/libevolution-addressbook-a11y.so.${LIBevolution-addressbook-a11y_VERSION}
 @lib lib/evolution/${R}/libevolution-addressbook-importers.so.${LIBevolution-addressbook-importers_VERSION}
+@lib lib/evolution/${R}/libevolution-cal-shared.so.${LIBevolution-cal-shared_VERSION}
 @lib lib/evolution/${R}/libevolution-calendar-a11y.so.${LIBevolution-calendar-a11y_VERSION}
 @lib lib/evolution/${R}/libevolution-calendar-importers.so.${LIBevolution-calendar-importers_VERSION}
 @lib lib/evolution/${R}/libevolution-mail-importers.so.${LIBevolution-mail-importers_VERSION}
+@lib lib/evolution/${R}/libevolution-mail-shared.so.${LIBevolution-mail-shared_VERSION}
 @lib lib/evolution/${R}/libevolution-smime.so.${LIBevolution-smime_VERSION}
 @lib lib/evolution/${R}/libevolution-widgets-a11y.so.${LIBevolution-widgets-a11y_VERSION}
 @lib lib/evolution/${R}/libfilter.so.${LIBfilter_VERSION}
@@ -42,5 +44,7 @@ lib/evolution/${R}/plugins/liborg-gnome-imap-features.so
 lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.so
 lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.so
 lib/evolution/${R}/plugins/liborg-gnome-plugin-manager.so
+lib/evolution/${R}/plugins/liborg-gnome-pst-import.so
 lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.so
 lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.so
+lib/evolution/${R}/plugins/liborg-gnome-vcard-inline.so

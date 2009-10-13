@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-plugins,v 1.4 2009/06/10 13:31:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-plugins,v 1.5 2009/10/13 22:07:04 jasper Exp $
 %%SHARED%%
 lib/evolution/${R}/plugins/attachment-reminder.glade
 lib/evolution/${R}/plugins/liborg-gnome-audio-inline.a
@@ -15,18 +15,12 @@ lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.a
 lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.la
 lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.a
 lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.la
-lib/evolution/${R}/plugins/liborg-gnome-evolution-mail-attachments-import-ics.a
-lib/evolution/${R}/plugins/liborg-gnome-evolution-mail-attachments-import-ics.la
-lib/evolution/${R}/plugins/liborg-gnome-face.a
-lib/evolution/${R}/plugins/liborg-gnome-face.la
 lib/evolution/${R}/plugins/liborg-gnome-mail-notification.a
 lib/evolution/${R}/plugins/liborg-gnome-mail-notification.la
 lib/evolution/${R}/plugins/liborg-gnome-mail-to-task.a
 lib/evolution/${R}/plugins/liborg-gnome-mail-to-task.la
 lib/evolution/${R}/plugins/liborg-gnome-mailing-list-actions.a
 lib/evolution/${R}/plugins/liborg-gnome-mailing-list-actions.la
-lib/evolution/${R}/plugins/liborg-gnome-mark-calendar-offline.a
-lib/evolution/${R}/plugins/liborg-gnome-mark-calendar-offline.la
 lib/evolution/${R}/plugins/liborg-gnome-prefer-plain.a
 lib/evolution/${R}/plugins/liborg-gnome-prefer-plain.la
 lib/evolution/${R}/plugins/liborg-gnome-save-calendar.a
@@ -45,14 +39,11 @@ lib/evolution/${R}/plugins/org-gnome-default-mailer.eplug
 lib/evolution/${R}/plugins/org-gnome-email-custom-header.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-attachment-reminder.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-bbdb.eplug
-lib/evolution/${R}/plugins/org-gnome-evolution-mail-attachments-import-ics.eplug
-lib/evolution/${R}/plugins/org-gnome-face.eplug
 lib/evolution/${R}/plugins/org-gnome-mail-notification.eplug
 lib/evolution/${R}/plugins/org-gnome-mail-to-task.eplug
 lib/evolution/${R}/plugins/org-gnome-mail-to-task.xml
 lib/evolution/${R}/plugins/org-gnome-mailing-list-actions.eplug
 lib/evolution/${R}/plugins/org-gnome-mailing-list-actions.xml
-lib/evolution/${R}/plugins/org-gnome-mark-calendar-offline.eplug
 lib/evolution/${R}/plugins/org-gnome-prefer-plain.eplug
 lib/evolution/${R}/plugins/org-gnome-save-calendar.eplug
 lib/evolution/${R}/plugins/org-gnome-select-one-source.eplug
@@ -63,7 +54,6 @@ lib/evolution/${R}/plugins/templates.glade
 share/evolution/${R}/errors/org-gnome-attachment-reminder.error
 share/evolution/${R}/errors/org-gnome-backup-restore.error
 share/evolution/${R}/errors/org-gnome-default-mailer.error
-share/evolution/${R}/errors/org-gnome-face.errors.xml
 share/evolution/${R}/errors/org-gnome-mailing-list-actions.error
 share/evolution/${R}/glade/email-custom-header.glade
 share/evolution/${R}/glade/org-gnome-email-custom-header.glade

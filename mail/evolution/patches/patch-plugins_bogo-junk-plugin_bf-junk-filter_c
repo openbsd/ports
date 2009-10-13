@@ -1,8 +1,8 @@
-$OpenBSD: patch-plugins_bogo-junk-plugin_bf-junk-filter_c,v 1.1 2009/03/22 16:00:28 ajacoutot Exp $
---- plugins/bogo-junk-plugin/bf-junk-filter.c.orig	Fri Mar 20 12:12:29 2009
-+++ plugins/bogo-junk-plugin/bf-junk-filter.c	Fri Mar 20 12:13:04 2009
-@@ -48,7 +48,7 @@
- 
+$OpenBSD: patch-plugins_bogo-junk-plugin_bf-junk-filter_c,v 1.2 2009/10/13 22:07:04 jasper Exp $
+--- plugins/bogo-junk-plugin/bf-junk-filter.c.orig	Mon Jul 13 09:45:13 2009
++++ plugins/bogo-junk-plugin/bf-junk-filter.c	Tue Oct 13 15:30:41 2009
+@@ -53,7 +53,7 @@
+ #include <gconf/gconf-client.h>
  
  #ifndef BOGOFILTER_BINARY
 -#define BOGOFILTER_BINARY "/usr/bin/bogofilter"

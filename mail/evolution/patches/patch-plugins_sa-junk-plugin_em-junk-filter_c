@@ -1,14 +1,14 @@
-$OpenBSD: patch-plugins_sa-junk-plugin_em-junk-filter_c,v 1.1 2009/03/22 16:00:28 ajacoutot Exp $
---- plugins/sa-junk-plugin/em-junk-filter.c.orig	Fri Mar 20 12:13:24 2009
-+++ plugins/sa-junk-plugin/em-junk-filter.c	Fri Mar 20 12:14:04 2009
-@@ -90,8 +90,8 @@ static volatile gboolean em_junk_sa_local_only;
+$OpenBSD: patch-plugins_sa-junk-plugin_em-junk-filter_c,v 1.2 2009/10/13 22:07:04 jasper Exp $
+--- plugins/sa-junk-plugin/em-junk-filter.c.orig	Tue Oct 13 15:24:03 2009
++++ plugins/sa-junk-plugin/em-junk-filter.c	Tue Oct 13 15:24:24 2009
+@@ -88,8 +88,8 @@ static volatile gboolean em_junk_sa_local_only;
  static volatile gboolean em_junk_sa_use_daemon;
- static char * em_junk_sa_preferred_socket_path;
+ static gchar * em_junk_sa_preferred_socket_path;
  
--static char *em_junk_sa_spamc_binaries [3] = {"spamc", "/usr/sbin/spamc", NULL};
--static char *em_junk_sa_spamd_binaries [3] = {"spamd", "/usr/sbin/spamd", NULL};
-+static char *em_junk_sa_spamc_binaries [3] = {"spamc", "${LOCALBASE}/bin/spamc", NULL};
-+static char *em_junk_sa_spamd_binaries [3] = {"spamd", "${LOCALBASE}/bin/spamd", NULL};
+-static const gchar *em_junk_sa_spamc_binaries [4] = {"spamc", "/usr/bin/spamc", "/usr/sbin/spamc", NULL};
+-static const gchar *em_junk_sa_spamd_binaries [4] = {"spamd", "/usr/bin/spamd", "/usr/sbin/spamd", NULL};
++static const gchar *em_junk_sa_spamc_binaries [4] = {"spamc", "${LOCALBASE}/bin/spamc", "/usr/sbin/spamc", NULL};
++static const gchar *em_junk_sa_spamd_binaries [4] = {"spamd", "${LOCALBASE}/bin/spamd", "/usr/sbin/spamd", NULL};
  
  #define SPAMD_RESTARTS_SIZE 8
  static time_t em_junk_sa_spamd_restarts [SPAMD_RESTARTS_SIZE] = {0, 0, 0, 0, 0, 0, 0, 0};
