@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.90 2009/10/13 13:55:12 steven Exp $
+# $OpenBSD: libtool,v 1.91 2009/10/13 14:23:12 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -245,7 +245,7 @@ sub parse_linkargs1
 	Trace::debug {"parse_linkargs1, level: $level\n"};
 	Trace::debug {"  args: @$args\n"};
 	my $result   = $self->{result};
-	my $lashared = $self->{lashared};
+	my $lashared = $self->{seen_la_shared};
 
 	foreach my $a (@$args) {
 		Trace::debug {"  processing $a\n"};
@@ -1212,15 +1212,16 @@ if ($mode eq 'compile') {
 	Trace::debug {"objs = @objs\n"};
 	Trace::debug {"sobjs = @sobjs\n"};
 
-	my $seen_la_shared = 0;
 	my $parser = Parser->new(\@ARGV);
 	$parser->{result} = [];
-	$parser->{seen_la_shared} = 0;
+	my $seen_la_shared = 0;
+	$parser->{seen_la_shared} = \$seen_la_shared;
 	$parser->parse_linkargs1($deplibs, \@Rresolved, \@libsearchdirs,
 			$dirs, $libs, $libstofind, $parser->{args}, 0);
 	$parser->{args} = $parser->{result};
 	Trace::debug {"end parse_linkargs1\n"};
 	Trace::debug {"deplibs = @$deplibs\n"};
+	my $seen_la_shared = ${$parser->{seen_la_shared}};
 
 	if ($linkmode == PROGRAM) {
 		my $program = Program->new;
