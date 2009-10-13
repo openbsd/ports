@@ -1,0 +1,6 @@
+Parasite is a debugging and development tool that runs inside your GTK+
+application's process. It can inspect your application, giving you
+detailed information on your UI, such as the hierarchy, X window IDs,
+widget properties, and more. You can modify properties on the fly in
+order to experiment with the look of your UI.  To use it, run
+GTK_MODULES=gtkparasite gtk_app.
