@@ -1,7 +1,7 @@
-$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2006/07/12 08:45:58 espie Exp $
---- aclocal.m4.orig	Sat May 21 17:39:19 2005
-+++ aclocal.m4	Wed Jul 12 10:39:55 2006
-@@ -269,6 +269,14 @@ AC_DEFUN(mr_ENABLE_SHARED, [
+$OpenBSD: patch-aclocal_m4,v 1.2 2009/10/13 00:00:37 ajacoutot Exp $
+--- aclocal.m4.orig	Fri May 23 10:17:56 2008
++++ aclocal.m4	Mon Oct 12 12:20:22 2009
+@@ -288,6 +288,14 @@ AC_DEFUN(mr_ENABLE_SHARED, [
  	  mr_enable_shared=no
  	fi
  	;;
