@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2009/10/13 21:47:59 sthen Exp $
+--- src/Makefile.in.orig	Sat Oct 10 17:56:33 2009
++++ src/Makefile.in	Sat Oct 10 17:56:45 2009
+@@ -22,7 +22,7 @@ prefix		= @prefix@
+ exec_prefix	= @exec_prefix@
+ datarootdir	= @datarootdir@
+ BIN_DIR		= $(prefix)/bin
+-MAN_DIR		= $(datarootdir)/man
++MAN_DIR		= $(prefix)/man
+ DOC_DIR		= $(datarootdir)/doc/most
+ SYS_INITFILE	= @sysconfdir@/most.conf
+ MKINSDIR	= ../autoconf/mkinsdir.sh
