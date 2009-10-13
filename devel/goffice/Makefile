@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2009/10/13 16:44:28 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,9 +6,8 @@ COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.6.6
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
-V=		${GNOME_VERSION}
 SHARED_LIBS +=	goffice-0.6          1.0      # .6.5
 CATEGORIES=	devel
 
@@ -42,6 +41,6 @@ CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-gtk-doc=no
 
-SUBST_VARS=		V
+SUBST_VARS=		GNOME_VERSION
 
 .include <bsd.port.mk>
