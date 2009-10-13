@@ -3,7 +3,7 @@ distfiles
 locks
 logs
 mystuff
-obj
+pobj
 packages
 plist
 sqlports

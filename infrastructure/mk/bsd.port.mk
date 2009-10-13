@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.970 2009/07/26 12:14:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.971 2009/10/13 14:39:23 landry Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -72,9 +72,9 @@ RECURSIVE_FETCH_LIST ?= No
 WRKDIR_LINKNAME ?= 
 _FETCH_MAKEFILE ?= /dev/stdout
 .if ${USE_SYSTRACE:L} == "yes"
-WRKOBJDIR ?!= readlink -fn ${PORTSDIR}/obj
+WRKOBJDIR ?!= readlink -fn ${PORTSDIR}/pobj
 .else
-WRKOBJDIR ?= ${PORTSDIR}/obj
+WRKOBJDIR ?= ${PORTSDIR}/pobj
 .endif
 FAKEOBJDIR ?=
 BULK_TARGETS ?=
