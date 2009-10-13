@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/16 21:29:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/10/13 15:07:45 ajacoutot Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
 V=		3.0.4
-PKGNAME=	filezilla-$Vp2
+PKGNAME=	filezilla-$Vp3
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
 
@@ -34,6 +34,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GMAKE=	Yes
 WRKDIST=	${WRKDIR}/filezilla-$V
+
+# XXX check on update whether this is still necessary
+post-extract:
+	${INSTALL} -m 555 ${FILESDIR}/libgnutls-config ${WRKDIR}/bin
 
 do-regress:
 	@cd ${WRKBUILD}/tests && ${MAKE_PROGRAM} check-TESTS
