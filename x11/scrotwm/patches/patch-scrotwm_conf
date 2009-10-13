@@ -1,6 +1,5 @@
-$OpenBSD: patch-scrotwm_conf,v 1.4 2009/09/25 19:26:30 sthen Exp $
---- scrotwm.conf.orig	Wed Sep 23 06:04:09 2009
-+++ scrotwm.conf	Fri Sep 25 17:29:15 2009
+--- scrotwm.conf.orig	Wed Oct  7 10:15:33 2009
++++ scrotwm.conf	Wed Oct  7 10:17:10 2009
 @@ -10,7 +10,7 @@ bar_border[1]		= rgb:00/80/80
  bar_color[1]		= black
  bar_font_color[1]	= rgb:a0/a0/a0
@@ -8,9 +7,9 @@ $OpenBSD: patch-scrotwm_conf,v 1.4 2009/09/25 19:26:30 sthen Exp $
 -#bar_action		= baraction.sh
 +#bar_action		= ${PREFIX}/share/scrotwm/baraction.sh
  #bar_delay		= 1
+ stack_enabled		= 1
  clock_enabled		= 1
- title_name_enabled	= 0
-@@ -18,8 +18,8 @@ title_class_enabled	= 0
+@@ -19,10 +19,10 @@ title_class_enabled	= 0
  
  # spawn app
  # program[term]		= xterm
@@ -19,5 +18,8 @@ $OpenBSD: patch-scrotwm_conf,v 1.4 2009/09/25 19:26:30 sthen Exp $
 +# program[screenshot_all]	= ${PREFIX}/share/scrotwm/screenshot.sh full
 +# program[screenshot_wind]	= ${PREFIX}/share/scrotwm/screenshot.sh window
  # program[lock]		= xlock
- # program[initscr]	= initscreen.sh
+-# program[initscr]	= initscreen.sh
++# program[initscr]	= ${PREFIX}/share/scrotwm/initscreen.sh
  # program[menu]		= dmenu_run -fn $bar_font -nb $bar_color -nf $bar_font_color -sb $bar_border -sf $bar_color
+ spawn_term		= xterm
+ 
