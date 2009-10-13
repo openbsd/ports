@@ -15,9 +15,6 @@ i386:
   win32 codecs were disabled in OpenBSD's build, as the open-source codecs
   are now of decent quality.
 
-  Also note that MPlayer may sometimes fail to play a file (particularly
-  WMV files) unless machdep.userldt sysctl is enabled.
-
 arm:
   You may encounter slow video output.  In this case you can disable
   the X.Org screen rotation in /etc/X11/xorg.conf. Depending on the
