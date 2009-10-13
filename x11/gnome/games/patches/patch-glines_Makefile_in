@@ -1,11 +1,11 @@
-$OpenBSD: patch-glines_Makefile_in,v 1.3 2009/03/22 20:56:52 jasper Exp $
+$OpenBSD: patch-glines_Makefile_in,v 1.4 2009/10/13 00:00:41 jasper Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- glines/Makefile.in.orig	Sun Mar 22 20:27:23 2009
-+++ glines/Makefile.in	Sun Mar 22 21:43:15 2009
-@@ -340,7 +340,7 @@ psdir = @psdir@
+--- glines/Makefile.in.orig	Tue Oct 13 00:38:51 2009
++++ glines/Makefile.in	Tue Oct 13 00:39:27 2009
+@@ -426,7 +426,7 @@ psdir = @psdir@
  pyexecdir = @pyexecdir@
  pythondir = @pythondir@
  sbindir = @sbindir@
@@ -14,14 +14,20 @@ into /var/games/ later.
  scores_group = @scores_group@
  scores_user = @scores_user@
  setgid = @setgid@
-@@ -872,10 +872,7 @@ install-scorefiles-local:
+@@ -1073,16 +1073,11 @@ install-scorefiles-local:
  	fi
  	-for i in ${SCOREFILES} ; do \
  	  touch $(DESTDIR)$(scoredir)/glines.$$i.scores; \
 -	  chown $(scores_user):$(scores_group) $(DESTDIR)$(scoredir)/glines.$$i.scores; \
 -	  chmod 664 $(DESTDIR)$(scoredir)/glines.$$i.scores; \
  	done
--	-if test "x$(setgid)" = "xtrue"; then chgrp $(scores_group) $(DESTDIR)$(bindir)/glines && chmod 2555 $(DESTDIR)$(bindir)/glines ; fi
  
  install-data-local: install-schemas-local install-scorefiles-local
+ 
+ install-exec-hook:
+-	-if test "$(setgid)" = "true"; then \
+-	  chgrp $(scores_group) $(DESTDIR)$(bindir)/glines && chmod 2555 $(DESTDIR)$(bindir)/glines ;\
+-	fi
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

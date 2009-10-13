@@ -1,7 +1,8 @@
-$OpenBSD: patch-glchess_src_lib_scene_opengl_png_py,v 1.1.1.1 2008/11/22 23:42:56 jasper Exp $
---- glchess/src/lib/scene/opengl/png.py.orig	Mon Nov 17 20:24:21 2008
-+++ glchess/src/lib/scene/opengl/png.py	Mon Nov 17 20:24:29 2008
-@@ -1,4 +1,4 @@
+$OpenBSD: patch-glchess_src_lib_scene_opengl_png_py,v 1.2 2009/10/13 00:00:41 jasper Exp $
+--- glchess/src/lib/scene/opengl/png.py.orig	Wed Sep  2 20:49:11 2009
++++ glchess/src/lib/scene/opengl/png.py	Tue Oct 13 00:46:35 2009
+@@ -1,5 +1,5 @@
+ # -*- coding: utf-8 -*-
 -#!/usr/bin/env python
 +#!${MODPY_BIN}
  # png.py - PNG encoder in pure Python

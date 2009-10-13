@@ -1,11 +1,11 @@
-$OpenBSD: patch-mahjongg_Makefile_in,v 1.3 2009/03/22 20:56:52 jasper Exp $
+$OpenBSD: patch-mahjongg_Makefile_in,v 1.4 2009/10/13 00:00:42 jasper Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- mahjongg/Makefile.in.orig	Sun Mar 22 20:27:27 2009
-+++ mahjongg/Makefile.in	Sun Mar 22 21:43:15 2009
-@@ -344,7 +344,7 @@ psdir = @psdir@
+--- mahjongg/Makefile.in.orig	Tue Oct 13 00:45:19 2009
++++ mahjongg/Makefile.in	Tue Oct 13 00:45:37 2009
+@@ -428,7 +428,7 @@ psdir = @psdir@
  pyexecdir = @pyexecdir@
  pythondir = @pythondir@
  sbindir = @sbindir@
@@ -14,14 +14,18 @@ into /var/games/ later.
  scores_group = @scores_group@
  scores_user = @scores_user@
  setgid = @setgid@
-@@ -937,10 +937,7 @@ install-scorefiles-local:
+@@ -1148,14 +1148,9 @@ install-scorefiles-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-for i in easy difficult confounding pyramid tictactoe cloud dragon bridges ziggurat; do \
  		touch $(DESTDIR)$(scoredir)/mahjongg.$$i.scores; \
 -		chown $(scores_user):$(scores_group) $(DESTDIR)$(scoredir)/mahjongg.$$i.scores; \
 -		chmod 664 $(DESTDIR)$(scoredir)/mahjongg.$$i.scores; \
  	done
--	-if test "x$(setgid)" = "xtrue"; then chgrp $(scores_group) $(DESTDIR)$(bindir)/mahjongg && chmod 2555 $(DESTDIR)$(bindir)/mahjongg ; fi
+ 
+ install-exec-hook:
+-	-if test "$(setgid)" = "true"; then \
+-	  chgrp $(scores_group) $(DESTDIR)$(bindir)/mahjongg && chmod 2555 $(DESTDIR)$(bindir)/mahjongg ;\
+-	fi
  
  install-data-local: install-schemas-local install-scorefiles-local
  

@@ -1,11 +1,11 @@
-$OpenBSD: patch-gnibbles_Makefile_in,v 1.3 2009/03/22 20:56:52 jasper Exp $
+$OpenBSD: patch-gnibbles_Makefile_in,v 1.4 2009/10/13 00:00:41 jasper Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- gnibbles/Makefile.in.orig	Sun Mar 22 20:27:24 2009
-+++ gnibbles/Makefile.in	Sun Mar 22 21:43:15 2009
-@@ -381,7 +381,7 @@ psdir = @psdir@
+--- gnibbles/Makefile.in.orig	Tue Oct 13 00:39:34 2009
++++ gnibbles/Makefile.in	Tue Oct 13 00:39:55 2009
+@@ -471,7 +471,7 @@ psdir = @psdir@
  pyexecdir = @pyexecdir@
  pythondir = @pythondir@
  sbindir = @sbindir@
@@ -14,14 +14,18 @@ into /var/games/ later.
  scores_group = @scores_group@
  scores_user = @scores_user@
  setgid = @setgid@
-@@ -1212,10 +1212,7 @@ install-data-local: $(ggzclient_dsc_in_files:.dsc.in=.
+@@ -1461,14 +1461,9 @@ install-data-local: $(ggzclient_dsc_in_files:.dsc.in=.
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-for i in ${SCOREFILES} ; do \
  	   touch $(DESTDIR)$(scoredir)/gnibbles.$$i.scores; \
 -	   chown $(scores_user):$(scores_group) $(DESTDIR)$(scoredir)/gnibbles.$$i.scores; \
 -	   chmod 664 $(DESTDIR)$(scoredir)/gnibbles.$$i.scores; \
  	 done
--	-if test "x$(setgid)" = "xtrue"; then chgrp $(scores_group) $(DESTDIR)$(bindir)/gnibbles && chmod 2555 $(DESTDIR)$(bindir)/gnibbles ; fi
+ 
+ install-exec-hook:
+-	-if test "$(setgid)" = "true"; then \
+-	  chgrp $(scores_group) $(DESTDIR)$(bindir)/gnibbles && chmod 2555 $(DESTDIR)$(bindir)/gnibbles ;\
+-	fi
  
  uninstall-local:
  @GGZ_CLIENT_TRUE@	-$(GGZ_CONFIG) -D --remove --modfile=gnibbles-client.dsc

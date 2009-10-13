@@ -1,8 +1,9 @@
-$OpenBSD: patch-gnome-sudoku_src_gnome-sudoku_in_in,v 1.1.1.1 2008/11/22 23:42:56 jasper Exp $
---- gnome-sudoku/src/gnome-sudoku.in.in.orig	Mon Nov 17 20:25:07 2008
-+++ gnome-sudoku/src/gnome-sudoku.in.in	Mon Nov 17 20:25:14 2008
-@@ -1,4 +1,4 @@
--#! /usr/bin/env python
+$OpenBSD: patch-gnome-sudoku_src_gnome-sudoku_in_in,v 1.2 2009/10/13 00:00:41 jasper Exp $
+--- gnome-sudoku/src/gnome-sudoku.in.in.orig	Tue May 19 02:13:04 2009
++++ gnome-sudoku/src/gnome-sudoku.in.in	Tue Oct 13 00:46:35 2009
+@@ -1,5 +1,5 @@
+ #! /usr/bin/env python
+-# -*- coding: utf-8 -*-
 +#!${MODPY_BIN}
  
  # GNOME Sudoku is a simple sudoku generator and player. Sudoku is a 

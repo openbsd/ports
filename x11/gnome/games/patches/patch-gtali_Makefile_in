@@ -1,11 +1,11 @@
-$OpenBSD: patch-gtali_Makefile_in,v 1.3 2009/03/22 20:56:52 jasper Exp $
+$OpenBSD: patch-gtali_Makefile_in,v 1.4 2009/10/13 00:00:42 jasper Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- gtali/Makefile.in.orig	Sun Mar 22 20:27:26 2009
-+++ gtali/Makefile.in	Sun Mar 22 21:43:15 2009
-@@ -324,7 +324,7 @@ psdir = @psdir@
+--- gtali/Makefile.in.orig	Tue Oct 13 00:43:24 2009
++++ gtali/Makefile.in	Tue Oct 13 00:43:46 2009
+@@ -426,7 +426,7 @@ psdir = @psdir@
  pyexecdir = @pyexecdir@
  pythondir = @pythondir@
  sbindir = @sbindir@
@@ -14,7 +14,7 @@ into /var/games/ later.
  scores_group = @scores_group@
  scores_user = @scores_user@
  setgid = @setgid@
-@@ -799,12 +799,7 @@ install-data-local:
+@@ -1095,16 +1095,9 @@ install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-if test -e $(DESTDIR)$(scoredir)/gtali.scores ; then mv $(DESTDIR)$(scoredir)/gtali.scores $(DESTDIR)$(scoredir)/gtali.Regular.scores ; fi
  	-touch $(DESTDIR)$(scoredir)/gtali.Regular.scores
@@ -22,8 +22,12 @@ into /var/games/ later.
 -	-chmod 664 $(DESTDIR)$(scoredir)/gtali.Regular.scores	
  	-touch $(DESTDIR)$(scoredir)/gtali.Colors.scores
 -	-chown $(scores_user):$(scores_group) $(DESTDIR)$(scoredir)/gtali.Colors.scores
--	-chmod 664 $(DESTDIR)$(scoredir)/gtali.Colors.scores	
--	-if test "x$(setgid)" = "xtrue"; then chgrp $(scores_group) $(DESTDIR)$(bindir)/gtali && chmod 2555 $(DESTDIR)$(bindir)/gtali ; fi
+-	-chmod 664 $(DESTDIR)$(scoredir)/gtali.Colors.scores
+ 
+ install-exec-hook:
+-	-if test "$(setgid)" = "true"; then \
+-	  chgrp $(scores_group) $(DESTDIR)$(bindir)/gtali && chmod 2555 $(DESTDIR)$(bindir)/gtali ;\
+-	fi
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
