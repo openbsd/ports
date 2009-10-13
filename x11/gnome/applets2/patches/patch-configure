@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.15 2009/10/12 11:38:11 jasper Exp $
+$OpenBSD: patch-configure,v 1.16 2009/10/13 18:12:59 ajacoutot Exp $
 --- configure.orig	Mon Oct 12 13:09:24 2009
 +++ configure	Mon Oct 12 13:12:34 2009
 @@ -14522,7 +14522,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.15 2009/10/12 11:38:11 jasper Exp $
  
  
 -
-+if false; then # force skip gnome settings daeon detection
++if false; then # force skip gnome settings daemon detection
  pkg_failed=no
  { $as_echo "$as_me:$LINENO: checking for GNOME_SETTINGS_DAEMON" >&5
  $as_echo_n "checking for GNOME_SETTINGS_DAEMON... " >&6; }
