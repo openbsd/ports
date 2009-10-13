@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2009/10/11 09:59:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.246 2009/10/13 19:42:01 landry Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -156,6 +156,7 @@
      SUBDIR += p5-SVG
      SUBDIR += p5-SVG-Graph
      SUBDIR += pecl-imagick
+     SUBDIR += pigment
      SUBDIR += png
      SUBDIR += png2ico
      SUBDIR += pngcrush
@@ -174,6 +175,7 @@
      SUBDIR += py-matplotlib
      SUBDIR += py-opengl
      SUBDIR += py-pyx
+     SUBDIR += py-pigment
      SUBDIR += pycha
      SUBDIR += qiv
      SUBDIR += quesoglc
