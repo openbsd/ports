@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2009/03/23 18:39:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2009/10/13 23:22:45 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
@@ -234,11 +234,7 @@ share/locale/te/LC_MESSAGES/gdm.mo
 share/locale/th/LC_MESSAGES/gdm.mo
 share/locale/tr/LC_MESSAGES/gdm.mo
 share/locale/uk/LC_MESSAGES/gdm.mo
-share/locale/uz/
-share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/gdm.mo
-share/locale/uz@cyrillic/
-share/locale/uz@cyrillic/LC_MESSAGES/
 share/locale/uz@cyrillic/LC_MESSAGES/gdm.mo
 share/locale/vi/LC_MESSAGES/gdm.mo
 share/locale/wa/LC_MESSAGES/gdm.mo
@@ -287,7 +283,7 @@ share/pixmaps/gdm-foot-logo.png
 share/pixmaps/nobody.png
 share/pixmaps/nohost.png
 share/xsessions/
-share/xsessions/gnome.desktop
+@comment share/xsessions/gnome.desktop
 share/xsessions/ssh.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
