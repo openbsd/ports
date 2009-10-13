@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/30 02:08:38 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/13 18:38:47 pirofti Exp $
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/
@@ -28,6 +28,7 @@ lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/rdoc/rdoc-style.css
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/BCrypt/
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/BCrypt/Engine/
+lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/BCrypt/Engine/autodetect_cost-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/BCrypt/Engine/calibrate-c.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/BCrypt/Engine/cdesc-Engine.yaml
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/ri/BCrypt/Engine/generate_salt-c.yaml
@@ -58,16 +59,22 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/COPYING
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/README
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/Rakefile
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/Makefile
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/bcrypt.c
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/bcrypt.o
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/bcrypt_ext.c
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/bcrypt_ext.o
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/bcrypt_ext.so
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/blf.h
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/blowfish.c
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/blowfish.o
-lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/extconf.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/jruby/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/jruby/bcrypt_jruby/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/jruby/bcrypt_jruby/BCrypt.class
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/jruby/bcrypt_jruby/BCrypt.java
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/Makefile
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/bcrypt.c
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/bcrypt.h
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/bcrypt.o
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/bcrypt_ext.c
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/bcrypt_ext.o
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/bcrypt_ext.so
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/blf.h
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/blowfish.c
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/blowfish.o
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/ext/mri/extconf.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/bcrypt.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/lib/bcrypt_ext.so

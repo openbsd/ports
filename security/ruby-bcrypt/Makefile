@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/05/19 22:44:21 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2009/10/13 18:38:47 pirofti Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Ruby binding for the bcrypt() password hashing algorithm
 
-VERSION =	2.0.5
+VERSION =	2.1.2
 DISTNAME =	bcrypt-ruby-${VERSION}
 PKGNAME =	ruby-bcrypt-${VERSION}
 CATEGORIES =	security
@@ -32,7 +32,6 @@ REGRESS_DEPENDS =	::devel/ruby-rake \
 			::devel/ruby-diff-lcs \
 			:${PKGNAME}:${BASE_PKGPATH}
 
-do-regress:
-	@cd ${WRKBUILD} && ${LOCALBASE}/bin/rake spec
+MODRUBY_REGRESS =	rake rspec
 
 .include <bsd.port.mk>
