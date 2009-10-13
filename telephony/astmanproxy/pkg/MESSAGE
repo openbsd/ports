@@ -1,0 +1,6 @@
+To use SSL with astmanproxy, you can create a certificate like this:
+
+# umask 077; \
+  openssl req -newkey rsa:1024 -keyout /tmp/ssl.pem \
+    -nodes -x509 -days 365 -out /tmp/ssl.pem \
+    -config /etc/astmanproxy/proxy-ssl.conf

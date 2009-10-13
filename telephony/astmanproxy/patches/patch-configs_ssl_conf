@@ -1,0 +1,12 @@
+$OpenBSD: patch-configs_ssl_conf,v 1.1.1.1 2009/10/13 11:10:41 sthen Exp $
+--- configs/ssl.conf.orig	Fri Jan 18 12:06:18 2008
++++ configs/ssl.conf	Fri Jan 18 12:06:27 2008
+@@ -9,7 +9,7 @@
+ # other options under the root_ca_distinguished_name section.
+ 
+ HOME                    = .
+-RANDFILE                = $ENV::HOME/.rnd
++RANDFILE                = /dev/arandom
+ 
+ [ ca ]
+ default_ca      = MyAsteriskCA

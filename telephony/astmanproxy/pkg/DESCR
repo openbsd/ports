@@ -1,0 +1,4 @@
+AstManProxy is a multi-threaded proxy server for the Asterisk
+Manager Interface. As well as straight proxying, it can also 
+translate between AMI and HTTP (with output in plaintext, XML,
+or CSV formats). SSL is also available (for both AMI and HTTP).

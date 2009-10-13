@@ -1,0 +1,37 @@
+$OpenBSD: patch-configs_astmanproxy_conf,v 1.1.1.1 2009/10/13 11:10:41 sthen Exp $
+--- configs/astmanproxy.conf.orig	Sat Jul  1 16:42:35 2006
++++ configs/astmanproxy.conf	Fri Jan 18 15:15:48 2008
+@@ -37,13 +37,13 @@ asteriskwritetimeout=100
+ clientwritetimeout=200
+ 
+ ; Our server-side SSL certificate; what we use when answering clients
+-certfile = /var/lib/asterisk/certs/proxy-server.pem
++certfile = /etc/astmanproxy/proxy-server.pem
+ 
+ ; Address for proxy to listen on, can be set to * or x.x.x.x format
+ ; recommend that you listen only on 127.0.0.1 or on an interface that
+ ; is otherwise locked down to a trusted host, since the proxy
+ ; currently provides NO authentication/authorization of its own
+-listenaddress = *
++listenaddress = 127.0.0.1
+ 
+ ; Port for proxy to listen on		
+ listenport = 1234
+@@ -62,8 +62,8 @@ authrequired = no
+ ; proxykey = foobar
+ 
+ ; local user and group for proxy to run as; will NOT run as root!
+-proc_user = nobody
+-proc_group = nobody
++proc_user = _astmanproxy
++proc_group = _astmanproxy
+ 
+ ; default input and output format for clients
+ ; inputformat = (standard|xml|http)
+@@ -93,5 +93,5 @@ autofilter = off
+ ; location of logfile -- will be owned by proc_user/proc_group
+ ; /opt/log location is good on Mac OS X
+ ;logfile = /opt/log/asterisk/astmanproxy.log
+-logfile = /var/log/asterisk/astmanproxy.log
++logfile = /var/log/astmanproxy/astmanproxy.log
+ 

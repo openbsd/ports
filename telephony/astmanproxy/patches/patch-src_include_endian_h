@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_include_endian_h,v 1.1.1.1 2009/10/13 11:10:41 sthen Exp $
+--- src/include/endian.h.orig	Fri Jan 18 11:11:28 2008
++++ src/include/endian.h	Fri Jan 18 11:13:09 2008
+@@ -29,9 +29,11 @@
+ #include <endian.h>
+ #elif defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__APPLE__)
+ #if defined(__OpenBSD__)
+-#include <machine/types.h>
+-#endif /* __OpenBSD__ */
++#include <sys/types.h>
++#include <sys/endian.h>
++#else
+ #include <machine/endian.h>
++#endif /* __OpenBSD__ */
+ #define __BYTE_ORDER BYTE_ORDER
+ #define __LITTLE_ENDIAN LITTLE_ENDIAN
+ #define __BIG_ENDIAN BIG_ENDIAN

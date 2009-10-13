@@ -1,0 +1,72 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/10/13 11:10:41 sthen Exp $
+--- Makefile.orig	Wed Sep 13 17:26:28 2006
++++ Makefile	Fri Jan 18 16:01:36 2008
+@@ -11,7 +11,7 @@ PERMDIR:=/etc/asterisk
+ PERMDIR_REAL := $(DESTDIR)/etc/asterisk
+ DISTDIR:=/var/www/html/astmanproxy
+ 
+-LIBDIR := $(DESTDIR)/usr/lib/astmanproxy
++LIBDIR ?= $(DESTDIR)/usr/lib/astmanproxy
+ CONFFILE := astmanproxy.conf
+ PERMFILE := astmanproxy.users
+ 
+@@ -27,7 +27,8 @@ SOBJS := $(HANDLERS:%=%.so)
+ LIBS := -lssl
+ 
+ # Add -g below for debug/GDB symbols
+-CFLAGS:=-Wall -O2 -D_REENTRANT -fPIC -Isrc/include -I/usr/include/openssl
++CFLAGS ?= -O2
++CFLAGS += -Wall -D_REENTRANT -fPIC -Isrc/include -I/usr/include/openssl
+ 
+ ifeq (${OSARCH},Darwin)  
+   LIBS+=-lresolv
+@@ -49,15 +50,21 @@ ifeq (${OSARCH},Darwin)  
+ else
+   #These are used for all but Darwin
+   CFLAGS+=-I-
++ifeq (${OSARCH},OpenBSD)
++  LIBS+=-pthread -lcrypto
++  MKTEMP=/usr/bin/mktemp
++else
+   LIBS+=-ldl -pthread
++  MKTEMP=/bin/mktemp
++endif
+   ASTLINK=-Wl,-E
+   SOLINK=-shared -Xlinker -x
+-  LOGDIR=/var/log/asterisk   
+-  CERTDIR := /var/lib/asterisk/certs
+-  MKTEMP=/bin/mktemp
++  LOGDIR ?= /var/log/asterisk   
++  CERTDIR ?= /var/lib/asterisk/certs
+ endif
+ 
+ MODDIR := $(LIBDIR)/modules
++MODDIR_REAL := $(LIBDIR)/modules
+ DEFINES:='-DPROXY_VERSION="$(VERSION)"' '-DCDIR="$(CONFDIR)"' '-DCFILE="$(CONFFILE)"'
+ DEFINES+='-DMDIR="$(MODDIR)"' '-DPDIR="$(PERMDIR)"' '-DPFILE="$(PERMFILE)"'
+ 
+@@ -137,12 +144,12 @@ certificate:
+ 	fi
+ 
+ 
+-install: uninstall all
++install: astmanproxy
+ 	install -d $(BINDIR)
+ 	install astmanproxy $(BINDIR)
+ 	install -d $(LIBDIR)
+-	install -d $(MODDIR)
+-	install $(SOBJS) $(MODDIR)
++	install -d $(MODDIR_REAL)
++	install $(SOBJS) $(MODDIR_REAL)
+ 	install -d $(CONFDIR_REAL)
+ 	if [ ! -f $(CONF_TARGET) ]; then \
+ 		install ./configs/$(CONFFILE) $(CONF_TARGET); \
+@@ -154,7 +161,7 @@ install: uninstall all
+ 
+ uninstall:
+ 	rm -f $(BINDIR)/astmanproxy
+-	cd $(MODDIR); rm -f $(SOBJS)
++	cd $(MODDIR_REAL); rm -f $(SOBJS)
+ 	@echo "Successfully uninstalled!"
+ 
+ dist: clean
