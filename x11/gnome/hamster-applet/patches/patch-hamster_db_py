@@ -1,0 +1,17 @@
+$OpenBSD: patch-hamster_db_py,v 1.1 2009/10/13 23:36:16 jasper Exp $
+--- hamster/db.py.orig	Wed Oct 14 01:01:58 2009
++++ hamster/db.py	Wed Oct 14 01:03:20 2009
+@@ -76,6 +76,13 @@ class Storage(storage.Storage):
+                 print 'Error:could not change mode on %s!' % (db_file)
+         self.__setup.im_func.complete = True
+         self.run_fixtures()
++
++	# In case we created the file read-only, change the mode.
++	if exists(HAMSTER_DB):
++	    try:
++	    	os.chmod(HAMSTER_DB, 0664)
++	    except Exception , msg:	
++	        print 'Error:could not change mode on %s!' % (HAMSTER_DB)
+     __setup.complete = False
+ 
+     def __get_category_list(self):
