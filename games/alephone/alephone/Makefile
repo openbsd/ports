@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.5 2009/05/18 05:59:23 phessler Exp $
+#	$OpenBSD: Makefile,v 1.6 2009/10/13 21:48:10 phessler Exp $
 
 DIST_SUBDIR ?=		alephone
 COMMENT =		open source game engine based on Marathon 2: Durandal
 
-DISTNAME =		AlephOne-20081226
-PKGNAME =		alephone-0.21.2
+DISTNAME =		AlephOne-20090909
+PKGNAME =		alephone-0.22
 
 EXTRACT_SUFX =		.tar.bz2
 CATEGORIES =		games x11
@@ -22,6 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=marathon/} \
 			http://www.treellama.org/alephone/
 WANTLIB = 		GL GLU SDL c m ogg pthread smpeg stdc++ z
+
 BUILD_DEPENDS =		::devel/automake/${AUTOMAKE_VER} \
 			::devel/autoconf/${AUTOCONF_VER}
 LIB_DEPENDS =		::devel/boost \
