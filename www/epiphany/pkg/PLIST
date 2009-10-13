@@ -1,20 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/06/07 06:44:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2009/10/13 09:57:41 jasper Exp $
 @bin bin/epiphany
 include/epiphany/
 include/epiphany/${M}/
 include/epiphany/${M}/epiphany/
 include/epiphany/${M}/epiphany/ephy-adblock-manager.h
 include/epiphany/${M}/epiphany/ephy-adblock.h
-include/epiphany/${M}/epiphany/ephy-base-embed.h
 include/epiphany/${M}/epiphany/ephy-bookmarks-type-builtins.h
 include/epiphany/${M}/epiphany/ephy-bookmarks.h
-include/epiphany/${M}/epiphany/ephy-command-manager.h
-include/epiphany/${M}/epiphany/ephy-cookie-manager.h
 include/epiphany/${M}/epiphany/ephy-dbus.h
 include/epiphany/${M}/epiphany/ephy-dialog.h
 include/epiphany/${M}/epiphany/ephy-embed-container.h
 include/epiphany/${M}/epiphany/ephy-embed-event.h
-include/epiphany/${M}/epiphany/ephy-embed-factory.h
 include/epiphany/${M}/epiphany/ephy-embed-persist.h
 include/epiphany/${M}/epiphany/ephy-embed-prefs.h
 include/epiphany/${M}/epiphany/ephy-embed-shell.h
@@ -24,7 +20,6 @@ include/epiphany/${M}/epiphany/ephy-embed-utils.h
 include/epiphany/${M}/epiphany/ephy-embed.h
 include/epiphany/${M}/epiphany/ephy-extension.h
 include/epiphany/${M}/epiphany/ephy-extensions-manager.h
-include/epiphany/${M}/epiphany/ephy-history-item.h
 include/epiphany/${M}/epiphany/ephy-history.h
 include/epiphany/${M}/epiphany/ephy-lib-type-builtins.h
 include/epiphany/${M}/epiphany/ephy-link.h
@@ -32,20 +27,15 @@ include/epiphany/${M}/epiphany/ephy-loader.h
 include/epiphany/${M}/epiphany/ephy-node-db.h
 include/epiphany/${M}/epiphany/ephy-node.h
 include/epiphany/${M}/epiphany/ephy-notebook.h
-include/epiphany/${M}/epiphany/ephy-password-manager.h
 include/epiphany/${M}/epiphany/ephy-permission-manager.h
 include/epiphany/${M}/epiphany/ephy-session.h
 include/epiphany/${M}/epiphany/ephy-shell.h
 include/epiphany/${M}/epiphany/ephy-state.h
 include/epiphany/${M}/epiphany/ephy-statusbar.h
 include/epiphany/${M}/epiphany/ephy-type-builtins.h
-include/epiphany/${M}/epiphany/ephy-version.h
+include/epiphany/${M}/epiphany/ephy-web-view.h
 include/epiphany/${M}/epiphany/ephy-window.h
-lib/epiphany/
-lib/epiphany/${M}/
-lib/epiphany/${M}/plugins/
-lib/epiphany/${M}/plugins/libdesktopfileplugin.la
-lib/epiphany/${M}/plugins/libdesktopfileplugin.so
+include/epiphany/${M}/epiphany/epiphany.h
 lib/pkgconfig/epiphany-${M}.pc
 @man man/man1/epiphany.1
 share/aclocal/epiphany.m4
@@ -55,14 +45,7 @@ share/dbus-1/services/org.gnome.Epiphany.service
 share/epiphany/
 share/epiphany/about.ini
 share/epiphany/art/
-share/epiphany/chrome/
-share/epiphany/chrome/app-chrome.manifest
-share/epiphany/chrome/branding/
-share/epiphany/chrome/branding/brand.dtd
-share/epiphany/chrome/branding/brand.properties
-share/epiphany/chrome/global/
-share/epiphany/chrome/global/about.xhtml
-share/epiphany/default-prefs.js
+share/epiphany/default-bookmarks.rdf
 share/epiphany/ephy-xml2ini.xsl
 share/epiphany/epiphany-bookmark-editor-ui.xml
 share/epiphany/epiphany-bookmarks-html.xsl
@@ -73,11 +56,11 @@ share/epiphany/epiphany-toolbar.xml
 share/epiphany/epiphany-ui.xml
 share/epiphany/epiphany.xhtml
 share/epiphany/glade/
-share/epiphany/glade/certificate-dialogs.glade
-share/epiphany/glade/epiphany.glade
-share/epiphany/glade/form-signing-dialog.glade
-share/epiphany/glade/prefs-dialog.glade
-share/epiphany/glade/print.glade
+share/epiphany/glade/certificate-dialogs.ui
+share/epiphany/glade/epiphany.ui
+share/epiphany/glade/form-signing-dialog.ui
+share/epiphany/glade/prefs-dialog.ui
+share/epiphany/glade/print.ui
 share/epiphany/icons/
 share/epiphany/icons/hicolor/
 share/epiphany/icons/hicolor/16x16/
@@ -268,17 +251,21 @@ share/gnome/help/epiphany/uk/figures/ephy-screenshot.png
 share/gtk-doc/html/epiphany/
 share/gtk-doc/html/epiphany/EphyCommandManager.html
 share/gtk-doc/html/epiphany/EphyEmbed.html
+share/gtk-doc/html/epiphany/EphyLocationEntry.html
 share/gtk-doc/html/epiphany/EphyNodeDb.html
+share/gtk-doc/html/epiphany/EphySearchEntry.html
+share/gtk-doc/html/epiphany/EphySpinner.html
 share/gtk-doc/html/epiphany/EphyWindow.html
+share/gtk-doc/html/epiphany/EphyZoomControl.html
 share/gtk-doc/html/epiphany/ch01.html
 share/gtk-doc/html/epiphany/ch02.html
+share/gtk-doc/html/epiphany/ch03.html
 share/gtk-doc/html/epiphany/epiphany-EphyEmbedFactory.html
 share/gtk-doc/html/epiphany/epiphany-EphyEmbedPersist.html
 share/gtk-doc/html/epiphany/epiphany-EphyEmbedSingle.html
 share/gtk-doc/html/epiphany/epiphany-EphyExtensionsManager.html
 share/gtk-doc/html/epiphany/epiphany-EphyGlade.html
 share/gtk-doc/html/epiphany/epiphany-EphyPermissionManager.html
-share/gtk-doc/html/epiphany/epiphany-ephy-cookie-manager.html
 share/gtk-doc/html/epiphany/epiphany-ephy-password-manager.html
 share/gtk-doc/html/epiphany/epiphany-ephy-session.html
 share/gtk-doc/html/epiphany/epiphany-ephy-shell.html
@@ -313,8 +300,10 @@ share/locale/be@latin/LC_MESSAGES/epiphany.mo
 share/locale/bg/LC_MESSAGES/epiphany.mo
 share/locale/bn/LC_MESSAGES/epiphany.mo
 share/locale/bn_IN/LC_MESSAGES/epiphany.mo
+share/locale/br/LC_MESSAGES/epiphany.mo
 share/locale/bs/LC_MESSAGES/epiphany.mo
 share/locale/ca/LC_MESSAGES/epiphany.mo
+share/locale/ca@valencia/LC_MESSAGES/epiphany.mo
 share/locale/cs/LC_MESSAGES/epiphany.mo
 share/locale/cy/LC_MESSAGES/epiphany.mo
 share/locale/da/LC_MESSAGES/epiphany.mo
@@ -336,7 +325,9 @@ share/locale/he/LC_MESSAGES/epiphany.mo
 share/locale/hi/LC_MESSAGES/epiphany.mo
 share/locale/hr/LC_MESSAGES/epiphany.mo
 share/locale/hu/LC_MESSAGES/epiphany.mo
+share/locale/hy/LC_MESSAGES/epiphany.mo
 share/locale/id/LC_MESSAGES/epiphany.mo
+share/locale/ig/LC_MESSAGES/epiphany.mo
 share/locale/is/LC_MESSAGES/epiphany.mo
 share/locale/it/LC_MESSAGES/epiphany.mo
 share/locale/ja/LC_MESSAGES/epiphany.mo
@@ -347,6 +338,7 @@ share/locale/ku/LC_MESSAGES/epiphany.mo
 share/locale/li/LC_MESSAGES/epiphany.mo
 share/locale/lt/LC_MESSAGES/epiphany.mo
 share/locale/lv/LC_MESSAGES/epiphany.mo
+share/locale/mai/LC_MESSAGES/epiphany.mo
 share/locale/mg/LC_MESSAGES/epiphany.mo
 share/locale/mi/LC_MESSAGES/epiphany.mo
 share/locale/mk/LC_MESSAGES/epiphany.mo
@@ -362,6 +354,7 @@ share/locale/oc/LC_MESSAGES/epiphany.mo
 share/locale/or/LC_MESSAGES/epiphany.mo
 share/locale/pa/LC_MESSAGES/epiphany.mo
 share/locale/pl/LC_MESSAGES/epiphany.mo
+share/locale/ps/LC_MESSAGES/epiphany.mo
 share/locale/pt/LC_MESSAGES/epiphany.mo
 share/locale/pt_BR/LC_MESSAGES/epiphany.mo
 share/locale/ro/LC_MESSAGES/epiphany.mo
@@ -380,8 +373,11 @@ share/locale/th/LC_MESSAGES/epiphany.mo
 share/locale/tk/LC_MESSAGES/epiphany.mo
 share/locale/tr/LC_MESSAGES/epiphany.mo
 share/locale/uk/LC_MESSAGES/epiphany.mo
+share/locale/uz/LC_MESSAGES/epiphany.mo
+share/locale/uz@cyrillic/LC_MESSAGES/epiphany.mo
 share/locale/vi/LC_MESSAGES/epiphany.mo
 share/locale/wa/LC_MESSAGES/epiphany.mo
+share/locale/yo/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany.mo
@@ -404,12 +400,9 @@ share/omf/epiphany/epiphany-oc.omf
 share/omf/epiphany/epiphany-ru.omf
 share/omf/epiphany/epiphany-sv.omf
 share/omf/epiphany/epiphany-uk.omf
-share/pygtk/2.0/defs/epiphany.defs
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/epiphany-fonts.schemas
 ${SCHEMAS_INSTDIR}/epiphany-lockdown.schemas
-${SCHEMAS_INSTDIR}/epiphany-pango.schemas
 ${SCHEMAS_INSTDIR}/epiphany.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
