@@ -1,24 +1,19 @@
-$OpenBSD: patch-src_orca_orca_in,v 1.4 2009/03/23 11:29:36 ajacoutot Exp $
---- src/orca/orca.in.orig	Fri Jan 23 22:35:24 2009
-+++ src/orca/orca.in	Thu Mar 19 12:12:37 2009
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- #
- # Orca
- #
-@@ -28,10 +28,6 @@
+$OpenBSD: patch-src_orca_orca_in,v 1.5 2009/10/13 14:21:16 jasper Exp $
+--- src/orca/orca.in.orig	Tue Oct 13 15:58:07 2009
++++ src/orca/orca.in	Tue Oct 13 15:59:10 2009
+@@ -28,11 +28,6 @@
  # __copyright__ = "Copyright (c) 2006-2008 Sun Microsystems Inc."
  # __license__   = "LGPL"
  
 -# Set the user's $PATH for this script.
 -#
--export PATH="${PATH}:/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/X11R6/bin"
+-PATH="${PATH}:/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/X11R6/bin"
+-export PATH
 -
  # Save the arguments away.
  #
  ARGS="$*"
-@@ -83,7 +79,7 @@ restoreXmodmap()
+@@ -84,7 +79,7 @@ restoreXmodmap()
  cleanup()
  {
      USERID=`id | cut -f2 -d= | cut -f1 -d\(`
@@ -27,21 +22,3 @@ $OpenBSD: patch-src_orca_orca_in,v 1.4 2009/03/23 11:29:36 ajacoutot Exp $
  	egrep "orca[.]orca|OAFIID[:]GNOME_Speech|OAFIID[:]GNOME_Magnifier|festival [-][-]server"|\
  	grep -v grep | awk '{ print $1 }'`
      IFS='
-@@ -137,7 +133,7 @@ if [ "x$LOGNAME" != "xgdm" ] ; then
-     fi
- fi
- 
--if [ `grep -c "\-q" <<< $ARGS` -gt 0 ] ; then
-+if [ `echo $ARGS | grep -c "\-q"` -gt 0 ] ; then
-     # If the user has done -q or --quit, that means to tell any
-     # existing orca process to quit.  So, we just do a cleanup.
-     #
-@@ -154,7 +150,7 @@ else
-     if [ "x$ARGS" = "x" ] ; then
-         CLEANUP=1
-     else
--        CLEANUP=`egrep -c "\-s|\-t|\-n|\-u|\-e|\-d" <<< $ARGS`
-+        CLEANUP=`echo $ARGS | egrep -c "\-s|\-t|\-n|\-u|\-e|\-d"`
-     fi
- 
-     # Clean up before running orca to get anything that might
