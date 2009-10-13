@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2009/10/13 11:01:22 jasper Exp $
 
 COMMENT=		lightweight tasklist
 
-DISTNAME=		tasks-0.13
-PKGNAME=		${DISTNAME}p2
+DISTNAME=		tasks-0.16
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://pimlico-project.org/tasks.html
@@ -16,14 +15,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://pimlico-project.org/sources/tasks/
 
-WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 \
-		bonobo-2 bonobo-activation c cairo expat \
-		fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glib-2.0 glitz gmodule-2.0 gnome-2 gnomevfs-2 gnutls \
-		gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1 png popt pthread \
-		xml2 z dbus-1 gio-2.0 soup-2.4 pthread-stubs xcb
+WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 bonobo-2
+WANTLIB += bonobo-activation c cairo dbus-1 expat fontconfig freetype
+WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += glitz gmodule-2.0 gnutls gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += ical icalss icalvcal m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 xcb xml2
+WANTLIB += z
 
 MODULES=		devel/gettext \
 			textproc/intltool
@@ -38,7 +37,6 @@ RUN_DEPENDS=		::devel/desktop-file-utils
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-gtk \
-			--disable-owl \
 			--disable-hildon \
 			--disable-omoko
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
