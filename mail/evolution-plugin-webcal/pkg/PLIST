@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/06/07 05:59:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/10/13 22:07:46 jasper Exp $
 @bin libexec/evolution-webcal
+share/locale/af/LC_MESSAGES/evolution-webcal.mo
 share/locale/ar/LC_MESSAGES/evolution-webcal.mo
 share/locale/as/LC_MESSAGES/evolution-webcal.mo
 share/locale/az/LC_MESSAGES/evolution-webcal.mo
@@ -9,6 +10,7 @@ share/locale/bn/LC_MESSAGES/evolution-webcal.mo
 share/locale/bn_IN/LC_MESSAGES/evolution-webcal.mo
 share/locale/bs/LC_MESSAGES/evolution-webcal.mo
 share/locale/ca/LC_MESSAGES/evolution-webcal.mo
+share/locale/ca@valencia/LC_MESSAGES/evolution-webcal.mo
 share/locale/cs/LC_MESSAGES/evolution-webcal.mo
 share/locale/cy/LC_MESSAGES/evolution-webcal.mo
 share/locale/da/LC_MESSAGES/evolution-webcal.mo
@@ -39,6 +41,7 @@ share/locale/ku/LC_MESSAGES/evolution-webcal.mo
 share/locale/ky/LC_MESSAGES/evolution-webcal.mo
 share/locale/lt/LC_MESSAGES/evolution-webcal.mo
 share/locale/lv/LC_MESSAGES/evolution-webcal.mo
+share/locale/mai/LC_MESSAGES/evolution-webcal.mo
 share/locale/mk/LC_MESSAGES/evolution-webcal.mo
 share/locale/ml/LC_MESSAGES/evolution-webcal.mo
 share/locale/mr/LC_MESSAGES/evolution-webcal.mo
