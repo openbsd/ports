@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/10/12 17:42:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/10/13 10:41:03 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,7 +6,7 @@ COMMENT=	powerful desktop search tool and indexer
 # as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.95
-PKGNAME=	tracker-search-${VERSION}
+PKGNAME=	tracker-search-${VERSION}p0
 
 SHARED_LIBS +=	stemmer              0.1      # .695.0
 SHARED_LIBS +=	tracker-common       0.1      # .695.0
@@ -30,7 +30,7 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 idn jpeg krb5 m nspr4 nss3
 WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png popt pthread pthread-stubs smime3 softokn3
 WANTLIB += soup-2.4 ssl ssl3 startup-notification-1 tasn1 tiff
-WANTLIB += util xcb xcb-atom xcb-aux xcb-event xml2 xslt z
+WANTLIB += util xcb xcb-atom xcb-aux xcb-event xml2 xslt z lcms
 
 HOMEPAGE=	http://tracker-project.org/
 
