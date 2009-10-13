@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.93 2009/10/13 18:22:57 steven Exp $
+# $OpenBSD: libtool,v 1.94 2009/10/13 20:56:45 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -295,16 +295,14 @@ sub parse_linkargs1
 			    $dirs, $libs, \@largs,
 			    $level+1) if @largs;
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.a$/) {
-			my $key = $2;
-			$key =~ s/^lib//;
+			(my $key = $2) =~ s/^lib//;
 			if (!exists $libs->{$key}) {
 				$libs->{$key} = Library->new($key);
 			}
 			$libs->{$key}->{fullpath} = $a;
 			push(@$result, $a);
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.la$/) {
-			my $key = $2;
-			$key =~ s/^lib//;
+			(my $key = $2) =~ s/^lib//;
 			my $d = main::abs_path(main::dirname($a));
 			$dirs->{$d} = 1;
 			my $fulla = main::abs_path($a);
@@ -366,16 +364,14 @@ sub parse_linkargs2
 			}
 			push @$orderedlibs, $key;
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.a$/) {
-			my $key = $2;
-			$key =~ s/^lib//;
+			(my $key = $2) =~ s/^lib//;
 			if (!exists $libs->{$key}) {
 				$libs->{$key} = Library->new($key);
 			}
 			$libs->{$key}->{fullpath} = $a;
 			push @$orderedlibs, $key;
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.la$/) {
-			my $key = $2;
-			$key =~ s/^lib//;
+			(my $key = $2) =~ s/^lib//;
 			my $d = main::abs_path(main::dirname($a));
 			$dirs->{$d} = 1;
 			my $fulla = main::abs_path($a);
@@ -665,8 +661,7 @@ sub link
 	if ($opts->{'export-symbols'}) {
 		$symbolsfile = $opts->{'export-symbols'};
 	} elsif ($opts->{'export-symbols-regex'}) {
-		$symbolsfile = "$odir/$ltdir/$la";
-		$symbolsfile =~ s/\.la$/.exp/;
+		($symbolsfile = "$odir/$ltdir/$la") =~ s/\.la$/.exp/;
 		main::get_symbollist($symbolsfile, $opts->{'export-symbols-regex'}, $objs);
 	}
 	foreach my $l (values %$libs) {
@@ -871,8 +866,7 @@ sub link
 	if ($opts->{'export-symbols'}) {
 		$symbolsfile = $opts->{'export-symbols'};
 	} elsif ($opts->{'export-symbols-regex'}) {
-		$symbolsfile = "$odir/$ltdir/$fname";
-		$symbolsfile =~ s/\.la$/.exp/;
+		($symbolsfile = "$odir/$ltdir/$fname") =~ s/\.la$/.exp/;
 		main::get_symbollist($symbolsfile, $opts->{'export-symbols-regex'}, $self->{objlist});
 	}
 	$RPdirs = main::reverse_zap_duplicates_ref($RPdirs);
@@ -1116,9 +1110,8 @@ if ($mode eq 'compile') {
 	my ($outfile, $odir, $ofile, $srcfile, $srcext);
 	# XXX check whether -c flag is present and if not, die?
 	if ($opts{'o'}) {
-		$outfile = $opts{'o'};
 		# fix extension if needed
-		$outfile =~ s/\.o$/.lo/;
+		($outfile = $opts{'o'}) =~ s/\.o$/.lo/;
 		$odir = dirname $outfile;
 		$ofile = basename $outfile;
 	} else {
@@ -1136,8 +1129,7 @@ if ($mode eq 'compile') {
 		$found or die "cannot find source file in command\n";
 		# the output file ends up in the current directory
 		$odir = '.';
-		$ofile = basename $srcfile;
-		$ofile =~ s/\.($srcext)$/.lo/i;
+		($ofile = basename $srcfile) =~ s/\.($srcext)$/.lo/i;
 		$outfile = "$odir/$ofile";
 	}
 	Trace::debug {"srcfile = $srcfile\n"} if $srcfile;
