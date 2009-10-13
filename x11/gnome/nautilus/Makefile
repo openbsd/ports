@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2009/09/06 10:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2009/10/13 10:11:30 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -11,8 +11,7 @@ COMMENT=		GNOME shell and file manager
 # x11/gnome/totem
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		2.24.2
-PKGNAME=		${DISTNAME}p10
+GNOME_VERSION=		2.28.0
 
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 CATEGORIES=		x11
@@ -25,17 +24,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
-		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common \
-		avahi-glib bonobo-2 bonobo-activation pthread-stubs xcb \
-		bonoboui-2 bz2 c cairo croco-0.6 crypto dbus-1 dbus-glib-1 \
-		expat fontconfig freetype gailutil gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 \
-		gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
-		gobject-2.0 gsf-1 gthread-2.0 gtk-x11-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt \
-		pthread ssl startup-notification-1 util xml2 z
+WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB += dbus-1 dbus-glib-1 execinfo expat fontconfig freetype
+WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
+WANTLIB += xcb-atom xcb-aux xcb-event xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -47,9 +43,8 @@ RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			:gvfs->=1.0.3:x11/gnome/gvfs
 LIB_DEPENDS=		exif::graphics/libexif \
 			gnome-desktop-2::x11/gnome/desktop \
-			eel-2.>=20.0::x11/gnome/eel \
-			rsvg-2.>=18.0::x11/gnome/librsvg \
-			trackerclient::x11/gnome/tracker
+			trackerclient::x11/gnome/tracker \
+			unique-1.0.>=1::devel/libunique
 
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
@@ -58,7 +53,9 @@ MODGCONF2_SCHEMAS_DIR=	nautilus
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--enable-tracker \
 			--disable-beagle \
-			--disable-update-mimedb
+			--disable-update-mimedb \
+			--disable-packagekit \
+			--enable-shave=no
 # XXX build error when textproc/exempi is installed
 CONFIGURE_ARGS+=	--enable-xmp=no
 
