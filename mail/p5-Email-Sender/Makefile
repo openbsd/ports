@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/25 17:06:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/14 10:48:07 sthen Exp $
 
 COMMENT= 	library for sending email
 
 MODULES=	cpan
 
-DISTNAME=	Email-Sender-0.091940
+DISTNAME=	Email-Sender-0.092840
 CATEGORIES=	mail
+
+MAINTAINER=	Stephan A. Rickauer <stephan.rickauer@startek.ch>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
