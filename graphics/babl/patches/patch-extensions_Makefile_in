@@ -1,12 +1,30 @@
-$OpenBSD: patch-extensions_Makefile_in,v 1.3 2008/10/03 10:07:41 ajacoutot Exp $
---- extensions/Makefile.in.orig	Thu Jun 12 23:50:53 2008
-+++ extensions/Makefile.in	Thu Oct  2 15:02:03 2008
-@@ -204,7 +204,7 @@ CFILES = $(wildcard $(srcdir)/*.c)
- SOBJS = $(subst $(srcdir)/,,$(CFILES:.c=$(SHREXT)))
- INSTALLED_ITEMS = $(subst $(srcdir),$(ext_dir),$(CFILES:.c=$(SHREXT)))
- EXTRA_DIST = $(wildcard *.[ch])
--@OS_WIN32_FALSE@LDADD = $(top_builddir)/babl/.libs/libbabl-$(BABL_API_VERSION)$(SHREXT) $(MATH_LIB)
-+@OS_WIN32_FALSE@LDADD = $(MATH_LIB)
- @OS_WIN32_TRUE@LDADD = $(no-undefined) $(libbabldlla) $(MATH_LIB)
- ext_dir = $(DESTDIR)$(libdir)/babl-@BABL_API_VERSION@
- all: all-am
+$OpenBSD: patch-extensions_Makefile_in,v 1.4 2009/10/14 14:19:18 ajacoutot Exp $
+--- extensions/Makefile.in.orig	Wed May 20 22:42:51 2009
++++ extensions/Makefile.in	Sun Oct 11 13:44:29 2009
+@@ -149,7 +149,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
+-LIBS = $(top_builddir)/babl/libbabl-@BABL_API_VERSION@.la $(MATH_LIB)
++LIBS = $(MATH_LIB)
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+@@ -233,7 +233,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-@OS_WIN32_FALSE@AM_LDFLAGS = -module
++@OS_WIN32_FALSE@AM_LDFLAGS = -module -avoid-version
+ @OS_WIN32_TRUE@AM_LDFLAGS = -module -no-undefined
+ noinst_HEADERS = util.h
+ AM_CPPFLAGS = \
+@@ -242,7 +242,7 @@ AM_CPPFLAGS = \
+ 	-I$(top_srcdir)/babl		\
+ 	-I$(top_srcdir)/extensions
+ 
+-extdir = $(DESTDIR)$(libdir)/babl-@BABL_API_VERSION@
++extdir = $(libdir)/babl-@BABL_API_VERSION@
+ ext_LTLIBRARIES = \
+ 	CIE-Lab.la      \
+ 	gegl-fixups.la  \
