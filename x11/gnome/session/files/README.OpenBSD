@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.27 2009/10/13 23:20:41 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.28 2009/10/14 16:16:17 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -73,7 +73,6 @@ related ports under the x11/gnome category)
    * gcalctool - desktop calculator
    * gconf-editor - editor for GConf settings
    * gnome-games - collection of games
-   * gnome-keyring-manager - keyring password management
    * gnome-scan - scanning application
    * gnome-themes-extras - extra themes for GNOME
    * gnome-video-arcade - MAME front-end
@@ -86,7 +85,7 @@ related ports under the x11/gnome category)
    * tango-icon-theme - Tango icon theme
    * pessulus - lockdown editor for desktop
    * planner - project management
-   * seahorse - encryption keys manager
+   * seahorse - encryption, keys and passwords manager
    * system-config-printer - printer (CUPS) administration tool
    * tomboy - desktop note-taking
    * totem - multimedia player
