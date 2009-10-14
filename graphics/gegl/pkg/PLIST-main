@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/01/03 14:58:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/10/14 14:19:38 ajacoutot Exp $
 @bin bin/gegl
 include/gegl-0.0/
 include/gegl-0.0/gegl-buffer.h
@@ -10,7 +10,9 @@ include/gegl-0.0/gegl-paramspecs.h
 include/gegl-0.0/gegl-path.h
 include/gegl-0.0/gegl-plugin.h
 include/gegl-0.0/gegl-simd.h
+include/gegl-0.0/gegl-types.h
 include/gegl-0.0/gegl-utils.h
+include/gegl-0.0/gegl-version.h
 include/gegl-0.0/gegl.h
 include/gegl-0.0/operation/
 include/gegl-0.0/operation/gegl-operation-area-filter.h
@@ -37,6 +39,10 @@ lib/gegl-0.0/bilateral-filter.so
 lib/gegl-0.0/box-blur.so
 @comment lib/gegl-0.0/brightness-contrast.la
 lib/gegl-0.0/brightness-contrast.so
+lib/gegl-0.0/buffer-sink.la
+lib/gegl-0.0/buffer-sink.so
+lib/gegl-0.0/buffer-source.la
+lib/gegl-0.0/buffer-source.so
 @comment lib/gegl-0.0/c2g.la
 lib/gegl-0.0/c2g.so
 @comment lib/gegl-0.0/checkerboard.la
@@ -103,8 +109,6 @@ lib/gegl-0.0/layer.so
 lib/gegl-0.0/levels.so
 @comment lib/gegl-0.0/lighten.la
 lib/gegl-0.0/lighten.so
-@comment lib/gegl-0.0/load-buffer.la
-lib/gegl-0.0/load-buffer.so
 @comment lib/gegl-0.0/load.la
 lib/gegl-0.0/load.so
 @comment lib/gegl-0.0/magick-load.la
@@ -139,20 +143,20 @@ lib/gegl-0.0/plus.so
 lib/gegl-0.0/png-load.so
 @comment lib/gegl-0.0/png-save.la
 lib/gegl-0.0/png-save.so
+lib/gegl-0.0/ppm-load.la
+lib/gegl-0.0/ppm-load.so
+lib/gegl-0.0/ppm-save.la
+lib/gegl-0.0/ppm-save.so
 @comment lib/gegl-0.0/raw-load.la
 lib/gegl-0.0/raw-load.so
 @comment lib/gegl-0.0/rectangle.la
 lib/gegl-0.0/rectangle.so
 @comment lib/gegl-0.0/remap.la
 lib/gegl-0.0/remap.so
-@comment lib/gegl-0.0/save-buffer.la
-lib/gegl-0.0/save-buffer.so
 @comment lib/gegl-0.0/save-pixbuf.la
 lib/gegl-0.0/save-pixbuf.so
 @comment lib/gegl-0.0/screen.la
 lib/gegl-0.0/screen.so
-@comment lib/gegl-0.0/shift.la
-lib/gegl-0.0/shift.so
 @comment lib/gegl-0.0/snn-mean.la
 lib/gegl-0.0/snn-mean.so
 @comment lib/gegl-0.0/soft-light.la
@@ -195,6 +199,8 @@ lib/gegl-0.0/tonemap.so
 lib/gegl-0.0/unsharp-mask.so
 @comment lib/gegl-0.0/value-invert.la
 lib/gegl-0.0/value-invert.so
+lib/gegl-0.0/weighted_blend.la
+lib/gegl-0.0/weighted_blend.so
 @comment lib/gegl-0.0/whitebalance.la
 lib/gegl-0.0/whitebalance.so
 @comment lib/gegl-0.0/write-buffer.la
