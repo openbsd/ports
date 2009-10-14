@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2009/10/13 23:22:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2009/10/14 08:20:19 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
@@ -253,7 +253,6 @@ share/omf/gdm/gdm-ko.omf
 share/omf/gdm/gdm-oc.omf
 share/omf/gdm/gdm-sv.omf
 share/omf/gdm/gdm-uk.omf
-share/pixmaps/
 share/pixmaps/faces/
 share/pixmaps/faces/astronaut.jpg
 share/pixmaps/faces/baseball.png

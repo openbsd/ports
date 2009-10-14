@@ -1,4 +1,4 @@
-Gdm (the GNOME Display Manager) is a highly configurable
-reimplementation of xdm, the X Display Manager. Gdm allows you to log
+GDM (the GNOME Display Manager) is a highly configurable
+reimplementation of xdm, the X Display Manager. GDM allows you to log
 into your system with the X Window System running and supports running
 several different X sessions on your local machine at the same time.

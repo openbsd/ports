@@ -1,0 +1,12 @@
+$OpenBSD: patch-gui_gdmsetup_desktop_in_in,v 1.1 2009/10/14 08:20:19 ajacoutot Exp $
+--- gui/gdmsetup.desktop.in.in.orig	Wed Oct 14 10:03:27 2009
++++ gui/gdmsetup.desktop.in.in	Wed Oct 14 10:03:55 2009
+@@ -3,7 +3,7 @@ Encoding=UTF-8
+ _Name=Login Window
+ _Comment=Configure GDM login window appearance and behavior
+ TryExec=@sbindir@/gdmsetup
+-Exec=@sbindir@/gdmsetup
++Exec=${LOCALBASE}/bin/ktsuss @sbindir@/gdmsetup
+ Icon=gdmsetup
+ StartupNotify=true
+ Terminal=false

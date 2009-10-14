@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2009/10/13 23:22:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2009/10/14 08:20:19 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.10
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -25,7 +25,8 @@ WANTLIB += pthread-stubs util wrap xcb xml2 z
 BUILD_DEPENDS=		::x11/gnome/zenity
 RUN_DEPENDS=		:sox-*:audio/sox \
 			:hicolor-icon-theme-*:x11/hicolor-icon-theme \
-			::x11/gnome/zenity
+			::x11/gnome/zenity \
+			::sysutils/ktsuss
 LIB_DEPENDS=		rsvg-2::x11/gnome/librsvg \
 			gnomecanvas-2.>=2002::x11/gnome/libgnomecanvas
 
@@ -61,6 +62,7 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples \
 
 pre-configure:
 	${SUBST_CMD} \
-		${WRKSRC}/config/{Init.in,PostSession.in,PreSession.in,Xsession.in,XKeepsCrashing}
+		${WRKSRC}/config/{Init.in,PostSession.in,PreSession.in,Xsession.in,XKeepsCrashing} \
+		${WRKSRC}/gui/gdmsetup.desktop.in.in
 
 .include <bsd.port.mk>
