@@ -1,9 +1,9 @@
-$OpenBSD: patch-pgp_seahorse-gpgme-io_c,v 1.1 2008/11/21 19:12:32 jasper Exp $
+$OpenBSD: patch-pgp_seahorse-gpgme-data_c,v 1.1 2009/10/14 16:11:04 ajacoutot Exp $
 
 OpenBSD doesn't define ENOTSUP, although it's defined in 1003.1
 
---- pgp/seahorse-gpgme-io.c.orig	Fri Nov 14 19:27:56 2008
-+++ pgp/seahorse-gpgme-io.c	Fri Nov 14 19:28:05 2008
+--- pgp/seahorse-gpgme-data.c.orig	Wed Oct 14 17:30:30 2009
++++ pgp/seahorse-gpgme-data.c	Wed Oct 14 17:30:44 2009
 @@ -86,7 +86,7 @@ handle_gio_error (GError *err)
  		errno = EPERM;
  		break;
