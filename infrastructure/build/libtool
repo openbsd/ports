@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.103 2009/10/14 14:28:22 steven Exp $
+# $OpenBSD: libtool,v 1.104 2009/10/14 16:03:02 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -645,11 +645,9 @@ sub link
 		@cmd = ('ar', 'cru', $dst);
 		push @cmd, @$objs if (@$objs);
 		foreach my $k (@$finalorderedlibs) {
-			unless (defined $libs->{$k}->{fullpath}) {
-				Trace::debug {"library $k not found in \%libs\n"};
-				next;
-			}
-			my $a = $libs->{$k}->{fullpath};
+			my $l = $libs->{$k};
+			$l->find($dirs, $self->{shared});
+			my $a = $l->{fullpath};
 			if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
 				# extract objects from archive
 				my $libfile = main::basename $a;
