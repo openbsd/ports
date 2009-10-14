@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/09/28 18:28:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/10/14 13:52:21 landry Exp $
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
 @conflict gstreamer-faad-*
@@ -52,6 +52,8 @@ lib/gstreamer-${VERSION}/libgstladspa.la
 lib/gstreamer-${VERSION}/libgstladspa.so
 lib/gstreamer-${VERSION}/libgstmetadata.la
 lib/gstreamer-${VERSION}/libgstmetadata.so
+lib/gstreamer-${VERSION}/libgstmms.la
+lib/gstreamer-${VERSION}/libgstmms.so
 lib/gstreamer-${VERSION}/libgstmodplug.la
 lib/gstreamer-${VERSION}/libgstmodplug.so
 lib/gstreamer-${VERSION}/libgstmpeg4videoparse.la

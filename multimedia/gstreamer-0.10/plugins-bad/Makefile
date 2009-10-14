@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/09/28 19:52:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/10/14 13:52:21 landry Exp $
 
 COMMENT-main =		multimedia framework - plugins bad
 COMMENT-neon =		multimedia framework - neon plugin
@@ -8,7 +8,7 @@ COMMENT-mplex =		multimedia framework - mplex plugin
 V =			0.10.7
 DISTNAME =		gst-plugins-bad-$V
 
-PKGNAME-main =		gstreamer-plugins-bad-${V}p8
+PKGNAME-main =		gstreamer-plugins-bad-${V}p9
 PKGNAME-neon =		gstreamer-neon-$Vp5
 PKGNAME-real =		gstreamer-real-$Vp4
 PKGNAME-mplex =		gstreamer-mplex-$Vp2
@@ -40,6 +40,7 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			exif.>=12::graphics/libexif \
 			xvidcore.>=4::multimedia/xvidcore \
 			SDL.>=8::devel/sdl \
+			mms::multimedia/libmms \
 			gsm::audio/gsm
 RUN_DEPENDS-main =
 
@@ -76,7 +77,6 @@ CONFIGURE_ARGS =	--disable-alsa \
 			--disable-fbdevsink \
 			--disable-gstalsa \
 			--disable-jack \
-			--disable-libmms \
 			--disable-mpeg2enc \
 			--disable-musicbrainz \
 			--disable-mythtvsrc \

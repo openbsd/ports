@@ -10,6 +10,7 @@ The gstreamer people split plugins into:
 * freeze         makes a stream from buffers of data
 * gsm            GSM encoder/decoder
 * h264parse      parse raw h264 streams
+* mms            access mms:// and mmsh:// streams
 * modplug        various .mod audio decoding
 * nsfdec         decode .nsf files
 * replaygain     ReplayGain analysis
@@ -31,7 +32,6 @@ The following plugins are not built:
 * dfbvideosink (no directFB on OpenBSD)
 * dtsdec (no dts library)
 * glimagesink (no accelerated GL support)
-* mms (no libmms library)
 * mpeg2enc (depends on internals of mjpegtools)
 * musicbrainz (not ported yet)
 * soundtouch (no libsoundtouch)
