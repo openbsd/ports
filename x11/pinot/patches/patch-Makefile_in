@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/10/14 11:37:40 ajacoutot Exp $
+--- Makefile.in.orig	Sat Jun 27 05:40:16 2009
++++ Makefile.in	Wed Oct 14 13:15:23 2009
+@@ -828,10 +828,10 @@ install-data-local:
+ 	@desktop-file-install --vendor="" --dir=$(DESTDIR)$(datadir)/applications $(srcdir)/pinot-prefs.desktop
+ 	@mkdir -p $(DESTDIR)${sysconfdir}/xdg/autostart
+ 	@desktop-file-install --vendor="" --dir=$(DESTDIR)${sysconfdir}/xdg/autostart $(srcdir)/pinot-dbus-daemon.desktop
+-	@mkdir -p $(DESTDIR)$(libdir)/deskbar-applet/handlers/
+-	$(INSTALL_DATA) $(srcdir)/scripts/python/pinot-live.py $(DESTDIR)$(libdir)/deskbar-applet/handlers/
+-	@mkdir -p $(DESTDIR)$(libdir)/deskbar-applet/modules-2.20-compatible/
+-	$(INSTALL_DATA) $(srcdir)/scripts/python/pinot-module.py $(DESTDIR)$(libdir)/deskbar-applet/modules-2.20-compatible/
++	@mkdir -p $(DESTDIR)$(libdir)/python${MODPY_VERSION}/site-packages/deskbar/handlers/
++	$(INSTALL_DATA) $(srcdir)/scripts/python/pinot-live.py $(DESTDIR)$(libdir)/python${MODPY_VERSION}/site-packages/deskbar/handlers/
++	@mkdir -p $(DESTDIR)$(libexecdir)/deskbar-applet/modules-2.20-compatible/
++	$(INSTALL_DATA) $(srcdir)/scripts/python/pinot-module.py $(DESTDIR)$(libexecdir)/deskbar-applet/modules-2.20-compatible/
+ 	$(INSTALL_DATA) $(srcdir)/scripts/bash/*.sh $(DESTDIR)$(datadir)/pinot/
+ 
+ uninstall-local:
