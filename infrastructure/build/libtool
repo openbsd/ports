@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.99 2009/10/14 12:28:44 steven Exp $
+# $OpenBSD: libtool,v 1.100 2009/10/14 13:42:41 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1123,7 +1123,6 @@ if ($verbose || $D) {
 }
 # what are we going to run (cc, c++, ...)
 my $ltprog = ();
-push @$ltprog, shift @ARGV or die "no libtool command\n";
 # deal with multi-arg ltprog
 print "ARGV = @ARGV\n";
 while (@ARGV) {
@@ -1132,8 +1131,12 @@ while (@ARGV) {
 	my $arg = shift @ARGV;
 	push @$ltprog, $arg;
 	Trace::debug {" arg = \"$arg\"\n"};
+	# if the current argument is an install program, stop immediately
+	if ($arg =~ /cp$/) { last; }
+	if ($arg =~ /install([-.]sh)?$/) { last; }
 }
 Trace::debug {"ltprog = \"@$ltprog\"\n"};
+if (@$ltprog == 0) { die "no libtool command\n" };
 
 # check mode and guess it if needed
 if (!($mode && grep { $_ eq $mode } @valid_modes)) {
@@ -1203,6 +1206,7 @@ if ($mode eq 'compile') {
 	# we just parse the options in order to find the actual arguments
 	my @argvcopy = @ARGV;
 	my %install_opts;
+	Trace::debug {"ltprog[-1]  = $$ltprog[-1]\n"};
 	if ($$ltprog[-1] =~ m/install([.-]sh)?$/) {
 		getopts('BbCcdf:g:m:o:pSs', \%install_opts);
 		if (@ARGV < 2 && (!defined $install_opts{'d'} && @ARGV == 1)) {
