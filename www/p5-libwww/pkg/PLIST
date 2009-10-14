@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2009/05/08 15:46:39 simon Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/10/14 15:26:06 pea Exp $
 bin/lwp-download
+bin/lwp-dump
 bin/lwp-mirror
 bin/lwp-request
 bin/lwp-rget
@@ -72,6 +73,7 @@ ${P5SITE}/WWW/RobotRules/AnyDBM_File.pm
 ${P5SITE}/lwpcook.pod
 ${P5SITE}/lwptut.pod
 @man man/man1/lwp-download.1
+@man man/man1/lwp-dump.1
 @man man/man1/lwp-mirror.1
 @man man/man1/lwp-request.1
 @man man/man1/lwp-rget.1
