@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/14 18:15:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/10/14 23:54:01 jasper Exp $
+include/pygda-4.0/
+include/pygda-4.0/pygdavalue_conversions.h
 lib/pkgconfig/gnome-python-extras-2.0.pc
+lib/pkgconfig/pygda-4.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/__init__.pyc
@@ -8,6 +11,8 @@ lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/recent.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/recent.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/trayicon.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/egg/trayicon.so
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gda.la
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gda.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gdl.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gdl.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtkhtml2.la
@@ -35,6 +40,10 @@ share/examples/py-gnome-extras/gtkhtml2/simple-browser.py
 share/examples/py-gnome-extras/gtkspell/
 share/examples/py-gnome-extras/gtkspell/spell.py
 share/examples/py-gnome-extras/gtkspell/test.py
+share/pygtk/2.0/argtypes/gda-arg-types.py
+share/pygtk/2.0/argtypes/gda-arg-types.pyc
+share/pygtk/2.0/argtypes/gda-arg-types.pyo
+share/pygtk/2.0/defs/gda.defs
 share/pygtk/2.0/defs/gtkhtml2.defs
 share/pygtk/2.0/defs/gtkmozembed.defs
 share/pygtk/2.0/defs/trayicon.defs
