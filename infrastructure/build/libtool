@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.98 2009/10/14 11:31:50 steven Exp $
+# $OpenBSD: libtool,v 1.99 2009/10/14 12:28:44 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1462,16 +1462,16 @@ if ($mode eq 'compile') {
 			($current, $revision) = split /\./, $sover;
 			$age = 0;
 		}
-		if ($opts{'release'}) {
+		if (defined $opts{'release'}) {
 			$sharedlib_symlink = $sharedlib;
  			$sharedlib = $libname.'-'.$opts{'release'}.'.so';
 		}
 		if ($opts{'avoid-version'} ||
-			($opts{'release'} && !$opts{'version-info'})) {
+			(defined $opts{'release'} && !$opts{'version-info'})) {
 			# don't add a version in these cases
 		} else {
 			$sharedlib .= ".$sover";
-			if ($opts{'release'}) {
+			if (defined $opts{'release'}) {
 				$sharedlib_symlink .= ".$sover";
 			}
 		}
@@ -1487,7 +1487,7 @@ if ($mode eq 'compile') {
 			$lainfo->{'dlname'} = $sharedlib;
 			$lainfo->{'library_names'} = $sharedlib;
 			$lainfo->{'library_names'} .= " $sharedlib_symlink"
-				if ($opts{'release'});
+				if (defined $opts{'release'});
 			$lainfo->link($ltprog, $ofile, $sharedlib, $odir, 1, \@sobjs, $dirs, $libs, $deplibs, $parser, \%opts);
 			Trace::debug {"sharedlib: $sharedlib\n"};
 			$lainfo->{'current'} = $current;
