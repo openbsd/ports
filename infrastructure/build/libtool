@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.102 2009/10/14 14:14:21 steven Exp $
+# $OpenBSD: libtool,v 1.103 2009/10/14 14:28:22 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1140,7 +1140,7 @@ if (@$ltprog == 0) { die "no libtool command\n" };
 
 # check mode and guess it if needed
 if (!($mode && grep { $_ eq $mode } @valid_modes)) {
-	$mode = guess_implicit_mode();
+	$mode = guess_implicit_mode($ltprog);
 	if ($mode) {
 		Trace::debug {"implicit mode: $mode\n"};
 	} else {
@@ -1765,15 +1765,18 @@ sub reverse_zap_duplicates_ref
 # try to guess libtool mode when it is not specified
 sub guess_implicit_mode
 {
+	my $ltprog = shift;
 	my $m = 0;
-	if ($ltprog =~ m/(install([.-]sh)?|cp)$/) {
+	for my $a (@$ltprog) {
+	   if ($a =~ m/(install([.-]sh)?|cp)$/) {
 		$m = 'install';
-	} elsif ($ltprog =~ m/cc|c\+\+/) {	# XXX improve test
+	   } elsif ($a =~ m/cc|c\+\+/) {	# XXX improve test
 		if (grep { $_ eq '-c' } @ARGV) {
 			$m = 'compile';
 		} else {
 			$m = 'link';
 		}
+	   }
 	}
 	return $m;
 }
