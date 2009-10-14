@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.96 2009/10/13 23:26:41 steven Exp $
+# $OpenBSD: libtool,v 1.97 2009/10/14 09:06:17 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1024,6 +1024,7 @@ sub new
 
 package main;
 
+use Config;
 use constant {
 	OBJECT	=> 0,
 	LIBRARY	=> 1,
@@ -1033,7 +1034,7 @@ use constant {
 our $version = '1.5.26'; # pretend to be this version of libtool
 my @no_shared_archs = qw(m88k vax);
 # XXX my $machine_arch = `machine -a`;
-my $machine_arch = 'amd64';
+my $machine_arch = $Config{'ARCH'};
 (my $gnu_arch = $machine_arch) =~ s/amd64/x86_64/;
 my @valid_modes = qw(clean compile execute finish install link uninstall);
 my @valid_src = qw(asm c cc cpp cxx f s);
@@ -1545,6 +1546,7 @@ sub notyet
 sub config
 {
 	print "objdir=$ltdir\n";
+	print "arch=$machine_arch\n";
 	print "...\n";
 	exit 0;
 }
