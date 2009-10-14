@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/07 06:41:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/10/14 21:36:12 jasper Exp $
 bin/gnc-fq-check
 bin/gnc-fq-dump
 bin/gnc-fq-helper
@@ -199,7 +199,7 @@ include/gnucash/table-layout.h
 include/gnucash/table-model.h
 include/gnucash/window-main-summarybar.h
 include/gnucash/window-report.h
-@info info/gnucash-design.info
+info/gnucash-design.info
 lib/gnucash/
 lib/gnucash/libgncmod-app-utils.a
 lib/gnucash/libgncmod-app-utils.la
@@ -357,7 +357,9 @@ share/gnucash/accounts/de_DE/acctchrt_otherasset.gnucash-xea
 share/gnucash/accounts/de_DE/acctchrt_otherloan.gnucash-xea
 share/gnucash/accounts/de_DE/acctchrt_skr03.gnucash-xea
 share/gnucash/accounts/de_DE/acctchrt_skr04.gnucash-xea
+share/gnucash/accounts/de_DE/acctchrt_skr49.gnucash-xea
 share/gnucash/accounts/de_DE/acctchrt_studium.gnucash-xea
+share/gnucash/accounts/de_DE/acctchrt_wohnungsw.gnucash-xea
 share/gnucash/accounts/el_GR/
 share/gnucash/accounts/el_GR/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/el_GR/acctchrt_carloan.gnucash-xea
@@ -633,6 +635,7 @@ share/gnucash/doc/NEWS
 share/gnucash/doc/README
 share/gnucash/doc/README-de.win32-bin.txt
 share/gnucash/doc/README-fr.win32-bin.txt
+share/gnucash/doc/README-it.win32-bin.txt
 share/gnucash/doc/README.dependencies
 share/gnucash/doc/README.francais
 share/gnucash/doc/README.german
