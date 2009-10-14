@@ -4,5 +4,6 @@ customizable and can be extended via Lua or Guile scripts. It is very
 portable and runs on a variety of platforms.
 
 Flavors:
+        js         - build with JavaScript support
         lua        - build with Lua support
         no_x11     - build without X11 support

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2009/10/13 20:50:27 edd Exp $
+# $OpenBSD: Makefile,v 1.20 2009/10/14 11:01:28 sthen Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		www
 MASTER_SITES=		http://elinks.cz/download/
 
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/js -L${LOCALBASE}/lib \
-			-pthread"
+			-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS+=	--with-bzlib \
 			--disable-xbel \
@@ -35,7 +34,7 @@ LIB_DEPENDS+=		bz2::archivers/bzip2 \
 USE_GMAKE=		Yes
 
 RUN_DEPENDS=		::devel/gettext
-WANTLIB=		crypto c z ssl pthread
+WANTLIB=		crypto c z ssl
 MODULES=		converters/libiconv
 
 FLAVORS=		lua no_x11 js
@@ -61,9 +60,10 @@ WANTLIB+=		X11
 .if ${FLAVOR:L:Mjs}
 CONFIGURE_ARGS+=	--with-spidermonkey
 LIB_DEPENDS+=		js.>=2.0::lang/spidermonkey
+WANTLIB+=		pthread
+CFLAGS+=		-I${LOCALBASE}/include/js -pthread
 .else
 CONFIGURE_ARGS+=	--without-spidermonkey
 .endif
-
 
 .include <bsd.port.mk>
