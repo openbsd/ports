@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_Makefile_in,v 1.1 2008/11/21 19:06:20 jasper Exp $
---- data/Makefile.in.orig	Tue Nov 18 14:01:44 2008
-+++ data/Makefile.in	Tue Nov 18 14:01:52 2008
-@@ -422,7 +422,7 @@ uninstall-am: uninstall-desktopDATA uninstall-gladeDAT
+$OpenBSD: patch-data_Makefile_in,v 1.2 2009/10/14 23:05:21 ajacoutot Exp $
+--- data/Makefile.in.orig	Mon Sep 21 18:29:02 2009
++++ data/Makefile.in	Thu Oct 15 00:55:53 2009
+@@ -468,7 +468,7 @@ uninstall-am: uninstall-desktopDATA uninstall-local un
  @INTLTOOL_DESKTOP_RULE@
  
  install-icons:			
