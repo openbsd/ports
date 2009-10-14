@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/06/07 09:06:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/10/14 12:24:06 ajacoutot Exp $
 @bin bin/devhelp
 include/devhelp-1.0/
 include/devhelp-1.0/devhelp/
@@ -33,7 +33,6 @@ share/devhelp/assistant/assistant.js
 share/devhelp/devhelp.defaults
 share/devhelp/dtd/
 share/devhelp/dtd/devhelp-1.dtd
-share/devhelp/images/
 share/devhelp/ui/
 share/devhelp/ui/devhelp.builder
 share/devhelp/ui/window.ui
@@ -52,6 +51,7 @@ share/locale/bg/LC_MESSAGES/devhelp.mo
 share/locale/bn/LC_MESSAGES/devhelp.mo
 share/locale/bn_IN/LC_MESSAGES/devhelp.mo
 share/locale/ca/LC_MESSAGES/devhelp.mo
+share/locale/ca@valencia/LC_MESSAGES/devhelp.mo
 share/locale/cs/LC_MESSAGES/devhelp.mo
 share/locale/da/LC_MESSAGES/devhelp.mo
 share/locale/de/LC_MESSAGES/devhelp.mo
@@ -76,6 +76,7 @@ share/locale/kn/LC_MESSAGES/devhelp.mo
 share/locale/ko/LC_MESSAGES/devhelp.mo
 share/locale/lt/LC_MESSAGES/devhelp.mo
 share/locale/lv/LC_MESSAGES/devhelp.mo
+share/locale/mai/LC_MESSAGES/devhelp.mo
 share/locale/mk/LC_MESSAGES/devhelp.mo
 share/locale/ml/LC_MESSAGES/devhelp.mo
 share/locale/ms/LC_MESSAGES/devhelp.mo
@@ -90,15 +91,14 @@ share/locale/pl/LC_MESSAGES/devhelp.mo
 share/locale/ps/LC_MESSAGES/devhelp.mo
 share/locale/pt/LC_MESSAGES/devhelp.mo
 share/locale/pt_BR/LC_MESSAGES/devhelp.mo
+share/locale/ro/LC_MESSAGES/devhelp.mo
 share/locale/ru/LC_MESSAGES/devhelp.mo
 share/locale/rw/LC_MESSAGES/devhelp.mo
 share/locale/sk/LC_MESSAGES/devhelp.mo
 share/locale/sl/LC_MESSAGES/devhelp.mo
 share/locale/sq/LC_MESSAGES/devhelp.mo
 share/locale/sr/LC_MESSAGES/devhelp.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/devhelp.mo
+share/locale/sr@latin/LC_MESSAGES/devhelp.mo
 share/locale/sv/LC_MESSAGES/devhelp.mo
 share/locale/ta/LC_MESSAGES/devhelp.mo
 share/locale/te/LC_MESSAGES/devhelp.mo
@@ -109,10 +109,6 @@ share/locale/vi/LC_MESSAGES/devhelp.mo
 share/locale/zh_CN/LC_MESSAGES/devhelp.mo
 share/locale/zh_HK/LC_MESSAGES/devhelp.mo
 share/locale/zh_TW/LC_MESSAGES/devhelp.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/devhelp.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
