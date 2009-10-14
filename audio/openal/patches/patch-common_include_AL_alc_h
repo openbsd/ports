@@ -1,9 +1,19 @@
-$OpenBSD: patch-common_include_AL_alc_h,v 1.1 2009/10/10 13:55:44 phessler Exp $
+$OpenBSD: patch-common_include_AL_alc_h,v 1.2 2009/10/14 14:27:34 naddy Exp $
 
+plain char is unsigned on some architectures
 typedef void is illegal in newer versions of GCC
 
---- common/include/AL/alc.h.orig	Sun May 17 21:50:13 2009
-+++ common/include/AL/alc.h	Sun May 17 21:50:29 2009
+--- common/include/AL/alc.h.orig	Sat Feb 11 10:36:55 2006
++++ common/include/AL/alc.h	Wed Oct 14 16:22:38 2009
+@@ -52,7 +52,7 @@ typedef char ALCboolean;
+ typedef char ALCchar;
+ 
+ /** signed 8-bit 2's complement integer */
+-typedef char ALCbyte;
++typedef signed char ALCbyte;
+ 
+ /** unsigned 8-bit integer */
+ typedef unsigned char ALCubyte;
 @@ -82,7 +82,7 @@ typedef float ALCfloat;
  typedef double ALCdouble;
  

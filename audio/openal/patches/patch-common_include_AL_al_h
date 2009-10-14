@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_include_AL_al_h,v 1.1 2009/10/14 14:27:34 naddy Exp $
+--- common/include/AL/al.h.orig	Wed Oct 14 16:22:21 2009
++++ common/include/AL/al.h	Wed Oct 14 16:22:52 2009
+@@ -73,7 +73,7 @@ typedef char ALboolean;
+ typedef char ALchar;
+ 
+ /** signed 8-bit 2's complement integer */
+-typedef char ALbyte;
++typedef signed char ALbyte;
+ 
+ /** unsigned 8-bit integer */
+ typedef unsigned char ALubyte;
