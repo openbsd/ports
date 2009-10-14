@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2009/10/13 23:36:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2009/10/14 12:08:23 ajacoutot Exp $
 
 COMMENT=		time tracker applet for GNOME
 
 GNOME_PROJECT=		hamster-applet
 GNOME_VERSION=		2.28.0
+PKGNAME=		${DISTNAME}p0
+
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://live.gnome.org/ProjectHamster
