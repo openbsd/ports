@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_ac,v 1.1 2009/10/14 23:18:31 kili Exp $
+
+/* no comment */
+
+--- configure.ac.orig	Sat Nov 15 10:02:35 2008
++++ configure.ac	Thu Oct 15 00:37:06 2009
+@@ -17,7 +17,10 @@ AC_PROG_CXX
+ AC_SEARCH_LIBS([tgetent],[ncurses termcap curses])
+ AC_CHECK_LIB([readline], [readline],,AC_MSG_ERROR([ERROR! readline not found...]))
+ GUILE_FLAGS
++sometimes_things_just_suck=$LDFLAGS
++LDFLAGS=$GUILE_LDFLAGS
+ AC_CHECK_LIB([guile],[scm_boot_guile],,AC_MSG_ERROR([ERROR! Guile 1.6 or above required.]))
++LDFLAGS=$sometimes_things_just_suck
+ 
+ AC_CHECK_PROG([PKGCONFIG], [pkg-config], [yes], [no])
+ if test "x$PKGCONFIG" = "xno"; then
