@@ -1,0 +1,75 @@
+$OpenBSD: patch-gnome-session_gsm-consolekit_c,v 1.1 2009/10/14 18:03:01 ajacoutot Exp $
+--- gnome-session/gsm-consolekit.c.orig	Wed Oct 14 18:58:53 2009
++++ gnome-session/gsm-consolekit.c	Wed Oct 14 18:59:45 2009
+@@ -299,8 +299,6 @@ gsm_consolekit_init (GsmConsolekit *manager)
+         error = NULL;
+ 
+         if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+-                g_warning ("Could not connect to ConsoleKit: %s",
+-                           error->message);
+                 g_error_free (error);
+         }
+ }
+@@ -424,8 +422,6 @@ gsm_consolekit_attempt_restart (GsmConsolekit *manager
+         error = NULL;
+ 
+         if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+-                g_warning ("Could not connect to ConsoleKit: %s",
+-                           error->message);
+                 emit_restart_complete (manager, error);
+                 g_error_free (error);
+                 return;
+@@ -456,8 +452,6 @@ gsm_consolekit_attempt_stop (GsmConsolekit *manager)
+         error = NULL;
+ 
+         if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+-                g_warning ("Could not connect to ConsoleKit: %s",
+-                           error->message);
+                 emit_stop_complete (manager, error);
+                 g_error_free (error);
+                 return;
+@@ -622,8 +616,6 @@ gsm_consolekit_set_session_idle (GsmConsolekit *manage
+         error = NULL;
+ 
+         if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+-                g_warning ("Could not connect to ConsoleKit: %s",
+-                           error->message);
+                 g_error_free (error);
+                 return;
+         }
+@@ -729,8 +721,6 @@ gsm_consolekit_can_switch_user (GsmConsolekit *manager
+         error = NULL;
+ 
+         if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+-                g_warning ("Could not connect to ConsoleKit: %s",
+-                           error->message);
+                 g_error_free (error);
+                 return FALSE;
+         }
+@@ -778,8 +768,6 @@ gsm_consolekit_can_restart (GsmConsolekit *manager)
+         error = NULL;
+ 
+         if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+-                g_warning ("Could not connect to ConsoleKit: %s",
+-                           error->message);
+                 g_error_free (error);
+                 return FALSE;
+         }
+@@ -805,8 +793,6 @@ gsm_consolekit_can_stop (GsmConsolekit *manager)
+         error = NULL;
+ 
+         if (!gsm_consolekit_ensure_ck_connection (manager, &error)) {
+-                g_warning ("Could not connect to ConsoleKit: %s",
+-                           error->message);
+                 g_error_free (error);
+                 return FALSE;
+         }
+@@ -840,8 +826,6 @@ gsm_consolekit_get_current_session_type (GsmConsolekit
+         gerror = NULL;
+ 
+         if (!gsm_consolekit_ensure_ck_connection (manager, &gerror)) {
+-                g_warning ("Could not connect to ConsoleKit: %s",
+-                           gerror->message);
+                 g_error_free (gerror);
+ 		goto out;
+         }
