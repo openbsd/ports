@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.101 2009/10/14 14:05:33 steven Exp $
+# $OpenBSD: libtool,v 1.102 2009/10/14 14:14:21 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -294,6 +294,8 @@ sub parse_linkargs1
 			if (!exists $libs->{$key}) {
 				$libs->{$key} = Library->new($key);
 			}
+			my $d = main::abs_path(main::dirname($a));
+			$dirs->{$d} = 1;
 			# override previously set type
 			$libs->{$key}->{type} = 'static';
 			$libs->{$key}->{fullpath} = $a;
@@ -985,7 +987,7 @@ sub find
 		push @sdirs, @$ldconfigdirs if ($ldconfigdirs);
 		Trace::debug {"searching for $libtofind\n"};
 		Trace::debug {"search path= ", join(':', @sdirs), "\n"};
-		Trace::debug {"search type= ", ($shared) ? 'shared' : 'static'};
+		Trace::debug {"search type= ", ($shared) ? 'shared' : 'static', "\n"};
 		foreach my $sd (@sdirs) {
 		   if ($shared) {
 			# select correct library by sorting by version number only
