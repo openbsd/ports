@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/11 08:39:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/10/14 10:11:55 ajacoutot Exp $
 
 # dlopen() module
 SHARED_ONLY=	Yes
@@ -6,8 +6,7 @@ SHARED_ONLY=	Yes
 COMMENT=	open terminal from a nautilus folder
 
 GNOME_PROJECT=	nautilus-open-terminal
-GNOME_VERSION=	0.10
-PKGNAME=	${DISTNAME}p5
+GNOME_VERSION=	0.17
 
 CATEGORIES=	sysutils
 
@@ -17,17 +16,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
-WANTLIB += bonoboui-2 cairo crypto dbus-1 dbus-glib-1 eel-2 expat
-WANTLIB += fontconfig freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
-WANTLIB += gnome-desktop-2 gnome-keyring gnomecanvas-2 gnomeui-2
-WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
-WANTLIB += ssl startup-notification-1 util xml2 z
-WANTLIB += avahi-client avahi-common avahi-glib pthread-stubs xcb
+WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo
+WANTLIB += dbus-1 dbus-glib-1 execinfo expat fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += gnome-desktop-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread-stubs startup-notification-1 xcb xcb-atom
+WANTLIB += xcb-aux xcb-event z
 
 MODULES=	devel/gettext \
 		x11/gnome \
