@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/14 11:37:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/10/14 11:40:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-0.94
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 CATEGORIES=	x11 misc
 
 HOMEPAGE=	http://pinot.berlios.de/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
