@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2009/05/23 16:34:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2009/10/14 10:27:28 benoit Exp $
 
 COMMENT=		extract files from InstallShield CAB archives
 
-DISTNAME=		unshield-0.5.1
+DISTNAME=		unshield-0.6
 SHARED_LIBS+=		unshield	2.0	# .0.0
 CATEGORIES=		archivers
 
