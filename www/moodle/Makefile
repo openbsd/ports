@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 20:38:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2009/10/14 18:03:17 espie Exp $
 
 COMMENT=	learning management system
 
 DISTNAME=	moodle-1.6.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	www education
 
 HOMEPAGE=	http://www.moodle.org/
@@ -30,17 +30,7 @@ SUBST_VARS=	INSTDIR
 
 RUN_DEPENDS=	:php5-gd-*:www/php5/extensions,-gd \
 		:php5-mbstring-*:www/php5/extensions,-mbstring
-
-FLAVORS=	mysql pgsql
-FLAVOR?=
-
-.if ${FLAVOR:L:Mmysql}
-RUN_DEPENDS+=	:php5-mysql-*:www/php5/extensions,-mysql
-.endif
-
-.if ${FLAVOR:L:Mpgsql}
-RUN_DEPENDS+=	:php5-pgsql-*:www/php5/extensions,-pgsql
-.endif
+RUN_DEPENDS+=	:php5-mysql-*|php5-pgsql-*:www/php5/extensions,-mysql
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}

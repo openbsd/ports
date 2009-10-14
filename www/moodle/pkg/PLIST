@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/10/16 14:00:18 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/10/14 18:03:17 espie Exp $
+@pkgpath www/moodle,mysql
+@pkgpath www/moodle,pgsql
 moodle/
 moodle/README.txt
 moodle/admin/
