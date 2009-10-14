@@ -1,12 +1,11 @@
 Change default menu name so that it does not get confused with
 xscreensaver preferences.
 
-$OpenBSD: patch-data_gnome-screensaver-preferences_desktop_in,v 1.1.1.1 2008/11/29 11:34:51 ajacoutot Exp $
---- data/gnome-screensaver-preferences.desktop.in.orig	Thu Nov 27 16:33:38 2008
-+++ data/gnome-screensaver-preferences.desktop.in	Thu Nov 27 16:33:47 2008
-@@ -1,6 +1,6 @@
+$OpenBSD: patch-data_gnome-screensaver-preferences_desktop_in,v 1.2 2009/10/14 09:55:24 ajacoutot Exp $
+--- data/gnome-screensaver-preferences.desktop.in.orig	Wed Oct 14 11:33:21 2009
++++ data/gnome-screensaver-preferences.desktop.in	Wed Oct 14 11:33:33 2009
+@@ -1,5 +1,5 @@
  [Desktop Entry]
- Encoding=UTF-8
 -_Name=Screensaver
 +_Name=Screensaver (GNOME)
  _Comment=Set your screensaver preferences

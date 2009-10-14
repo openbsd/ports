@@ -1,0 +1,21 @@
+$OpenBSD: patch-data_lock-dialog-default_ui,v 1.1 2009/10/14 09:55:24 ajacoutot Exp $
+--- data/lock-dialog-default.ui.orig	Wed Oct 14 11:33:56 2009
++++ data/lock-dialog-default.ui	Wed Oct 14 11:34:11 2009
+@@ -289,17 +289,6 @@
+                                   </object>
+                                 </child>
+                                 <child>
+-                                  <object class="GtkButton" id="auth-switch-button">
+-                                    <property name="visible">True</property>
+-                                    <property name="can_default">True</property>
+-                                    <property name="can_focus">True</property>
+-                                    <property name="label" translatable="yes">_Switch User</property>
+-                                    <property name="use_underline">True</property>
+-                                    <property name="relief">GTK_RELIEF_NORMAL</property>
+-                                    <property name="focus_on_click">False</property>
+-                                  </object>
+-                                </child>
+-                                <child>
+                                   <object class="GtkButton" id="auth-logout-button">
+                                     <property name="visible">True</property>
+                                     <property name="can_default">True</property>

@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_h_in,v 1.1 2009/06/04 00:45:39 ajacoutot Exp $
---- config.h.in.orig	Thu Nov 13 21:36:53 2008
-+++ config.h.in	Tue May 12 23:01:04 2009
+$OpenBSD: patch-config_h_in,v 1.2 2009/10/14 09:55:24 ajacoutot Exp $
+--- config.h.in.orig	Wed Aug 26 18:06:30 2009
++++ config.h.in	Wed Oct 14 11:35:09 2009
 @@ -12,6 +12,9 @@
  /* Define to 1 if you have the `bind_textdomain_codeset' function. */
  #undef HAVE_BIND_TEXTDOMAIN_CODESET
@@ -11,3 +11,13 @@ $OpenBSD: patch-config_h_in,v 1.1 2009/06/04 00:45:39 ajacoutot Exp $
  /* Define to 1 if you have the `clearenv' function. */
  #undef HAVE_CLEARENV
  
+@@ -168,9 +171,6 @@
+ 
+ /* Define to the one symbol short name of this package. */
+ #undef PACKAGE_TARNAME
+-
+-/* Define to the home page for this package. */
+-#undef PACKAGE_URL
+ 
+ /* Define to the version of this package. */
+ #undef PACKAGE_VERSION
