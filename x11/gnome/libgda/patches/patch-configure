@@ -1,29 +1,38 @@
-$OpenBSD: patch-configure,v 1.7 2009/08/01 14:14:24 sthen Exp $
---- configure.orig	Thu Apr 10 11:38:54 2008
-+++ configure	Fri Jul 31 12:07:03 2009
-@@ -23474,7 +23474,6 @@ fi
+$OpenBSD: patch-configure,v 1.8 2009/10/14 23:30:43 jasper Exp $
+--- configure.orig	Sat Oct 10 14:24:25 2009
++++ configure	Thu Oct 15 00:04:43 2009
+@@ -21701,7 +21701,6 @@ fi
  
  
  case $host_cpu in
--x86_64* | sparc64*) lib="lib64";;
+-x86_64* | sparc64* | s390x* | ppc64* | powerpc64* ) lib="lib64";;
  *) lib="lib";;
  esac
  
-@@ -23716,7 +23715,7 @@ echo "${ECHO_T}found ODBC in $d" >&6; }
- 			odbcdir=$d
- 			break
- 		fi
--		if test -f $d/$lib/libiodbc$libext -a -f $d/include/sql.h
-+		if test -f $d/$lib/libiodbc$libext* -a -f $d/include/sql.h
+@@ -21891,7 +21890,6 @@ _ACEOF
+ 				BDB_LIBS="-L${bdbdir}/bin -ldb47"
+ 				break
+ 			fi
+-
+ 			if test $platform_win32 = no -a -f $d/include/db.h -a -f $d/$lib/libdb$linklibext
+ 			then
+ 				{ $as_echo "$as_me:$LINENO: result: found Berkeley DB in $d" >&5
+@@ -21907,8 +21905,7 @@ _ACEOF
+ 				BDB_LIBS="-L${bdbdir}/${lib} -ldb"
+ 				break
+ 			fi
+-			if test $platform_win32 = no -a -f $d/include/db.h -a -f $d/lib/libdb$linklibext
+-			then
++			if [ $platform_win32 == "no" ]; then
+ 				{ $as_echo "$as_me:$LINENO: result: found Berkeley DB in $d" >&5
+ $as_echo "found Berkeley DB in $d" >&6; }
+ 
+@@ -21972,7 +21970,7 @@ then
+ $as_echo_n "checking for ODBC files... " >&6; }
+ 	for d in $dir /usr /usr/local
+ 	do
+-		if test -f $d/$lib/libodbc$linklibext -a -f $d/include/sql.h
++		if test -f $d/$lib/libodbc$linklibext* -a -f $d/include/sql.h
  		then
- 			{ echo "$as_me:$LINENO: result: found iODBC in $d" >&5
- echo "${ECHO_T}found iODBC in $d" >&6; }
-@@ -24970,7 +24969,7 @@ then
-         microvers=`sqlite3 -version | cut -d '.' -f 3`
-         { echo "$as_me:$LINENO: checking for sqlite version" >&5
- echo $ECHO_N "checking for sqlite version... $ECHO_C" >&6; }
--        if test $microvers -lt 100
-+        if test $microvers -lt 10
-         then
-                 { echo "$as_me:$LINENO: result: Version $realvers of SQLite does not implement required pragmas" >&5
- echo "${ECHO_T}Version $realvers of SQLite does not implement required pragmas" >&6; }
+ 			{ $as_echo "$as_me:$LINENO: result: found ODBC in $d" >&5
+ $as_echo "found ODBC in $d" >&6; }

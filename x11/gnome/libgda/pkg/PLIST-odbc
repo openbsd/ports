@@ -1,5 +1,2 @@
-@comment $OpenBSD: PLIST-odbc,v 1.1 2009/08/01 14:14:24 sthen Exp $
-lib/libgda-${GDA_MAJOR}/providers/libgda-odbc.la
-lib/libgda-${GDA_MAJOR}/providers/libgda-odbc.so
-lib/pkgconfig/libgda-odbc-${GDA_MAJOR}.pc
-share/libgda-${GDA_MAJOR}/odbc_specs_dsn.xml
+@comment $OpenBSD: PLIST-odbc,v 1.2 2009/10/14 23:30:43 jasper Exp $
+@comment This file intentionally left blank (upstream rewrites the backend).
