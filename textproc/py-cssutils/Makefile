@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/13 20:10:49 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/14 22:07:47 landry Exp $
 
 COMMENT =	python package to parse and build CSS
 
 CATEGORIES =	textproc
 
-VERSION =	0.9.6
-DISTNAME =	cssutils-${VERSION}
-PKGNAME =	py-${DISTNAME}
+MODPY_EGG_VERSION =	0.9.6
+DISTNAME =	cssutils-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME}p0
 MASTER_SITES =	http://cssutils.googlecode.com/files/
 
 EXTRACT_SUFX =	.zip
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 HOMEPAGE =	http://cthedot.de/cssutils/
 
 MODULES =	lang/python
-SUBST_VARS +=	VERSION
 
 MODPY_SETUPTOOLS =	Yes
 
