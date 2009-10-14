@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.47 2009/09/28 19:52:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2009/10/14 13:59:23 ajacoutot Exp $
 
 COMMENT-main =		multimedia framework - good plugins
 COMMENT-aalib =		multimedia framework - aalib plugin
-COMMENT-gconf =		multimedia framework - conf elements
 COMMENT-esd =		multimedia framework - esound plugin
 COMMENT-dv =		multimedia framework - dv plugin
 COMMENT-gdk =		multimedia framework - gdk pixbuf plugin
@@ -12,16 +11,15 @@ COMMENT-soup =		multimedia framework - libsoup plugin
 V =			0.10.8
 DISTNAME =		gst-plugins-good-$V
 
-PKGNAME-main =		gstreamer-plugins-good-$Vp76v0
+PKGNAME-main =		gstreamer-plugins-good-$Vp77v0
 PKGNAME-aalib =		gstreamer-aalib-$Vp6
-PKGNAME-gconf =		gstreamer-confelements-$Vp9
 PKGNAME-esd =		gstreamer-esd-$Vp6
 PKGNAME-dv =		gstreamer-dv-$Vp5
 PKGNAME-gdk =		gstreamer-gdk-pixbuf-$Vp8
 PKGNAME-caca =		gstreamer-libcaca-$Vp6
 PKGNAME-soup =		gstreamer-libsoup-$Vp6
 
-MULTI_PACKAGES =	-main -aalib -gconf -esd \
+MULTI_PACKAGES =	-main -aalib -esd \
 			-dv -gdk -caca -soup
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-good/}
@@ -43,8 +41,9 @@ WANTLIB-main =		${WANTLIB} \
 			gstcontroller-0.10 gstbase-0.10 Xau Xdmcp \
 			pthread-stubs xcb Xrender cairo expat \
 			fontconfig freetype glitz ogg pixman-1 png \
-			stdc++ theora vorbis
+			stdc++ theora vorbis ORBit-2 dbus-1 dbus-glib-1
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			${MODGCONF2_LIB_DEPENDS} \
 			oil-0.3::devel/liboil \
 			gstaudio-0.10,gstinterfaces-0.10,gstnetbuffer-0.10,gstriff-0.10,gstrtp-0.10,gsttag-0.10,gstvideo-0.10,gstfft-0.10,gstrtsp-0.10,gstsdp-0.10::$P/plugins-base \
 			FLAC.>=9::audio/flac \
@@ -54,19 +53,12 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			speex::audio/speex \
 			gsttag-0.10::$P/plugins-base \
 			shout::net/libshout
-RUN_DEPENDS-main =	
+RUN_DEPENDS-main =	${MODGCONF2_RUN_DEPENDS}
 
 WANTLIB-aalib=		${WANTLIB} \
 			X11 ncurses gstbase-0.10 Xau Xdmcp pthread-stubs xcb
 LIB_DEPENDS-aalib =	${LIB_DEPENDS} \
 			aa::graphics/aalib
-
-WANTLIB-gconf =		${WANTLIB} \
-			ORBit-2 dbus-1 dbus-glib-1
-LIB_DEPENDS-gconf =	${LIB_DEPENDS} \
-			${MODGCONF2_LIB_DEPENDS}
-RUN_DEPENDS-gconf =	${RUN_DEPENDS} \
-			${MODGCONF2_RUN_DEPENDS}
 
 WANTLIB-esd =		${WANTLIB} \
 			audiofile gstbase-0.10 sndio

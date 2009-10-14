@@ -12,6 +12,7 @@ The gstreamer people split plugins into:
 * apetag         APEv1/2 tag reader
 * audiofx        audio effects plugin (stereo positioning)
 * auparse        parses au streams
+* autodetect     auto-detection plugins for video/audio outputs
 * avi            AVI stream handling (mux/demux)
 * cutter         audio cutter, split along silences
 * cairo          cairo-based text and time overlays on videos
@@ -24,6 +25,7 @@ The gstreamer people split plugins into:
 * effectv        effect plugins from the effectv project
 * flac           FLAC Lossless compressor encoder/decoder
 * flxdec         FLC/FLI/FLX video decoder
+* gconfelements  elements wrapping the GStreamer/GConf audio/video output settings
 * goom           GOOM visualization filter
 * icydemux       demux ICY tags from a stream
 * id3demux       demux ID3v1 and ID3v2 tags from a file
@@ -59,7 +61,6 @@ The following plugins are in specific packages because of dependencies:
 * cacasink
 * dv
 * esdsink
-* autodetect & gconfelements
 * gdkpixbuf
 * soup
 

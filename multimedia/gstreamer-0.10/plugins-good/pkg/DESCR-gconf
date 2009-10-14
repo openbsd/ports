@@ -1,4 +1,0 @@
-good plugins for gstreamer-${VERSION}.
-* autodetect    auto-detection plugins for video/audio outputs
-* gconfelements elements wrapping the GStreamer/GConf 
-                audio/video output settings
