@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2009/10/14 15:46:56 jasper Exp $
+--- configure.ac.orig	Wed Oct 14 17:15:44 2009
++++ configure.ac	Wed Oct 14 17:15:59 2009
+@@ -33,7 +33,7 @@ dnl decide on error flags
+ AS_COMPILER_FLAG(-Wall, GST_WALL="yes", GST_WALL="no")
+ 
+ if test "x$GST_WALL" = "xyes"; then
+-  ERROR_CFLAGS="$GST_ERROR -Wall -Wdeclaration-after-statement"
++  ERROR_CFLAGS="$GST_ERROR -Wall"
+ 
+   if test "x$GST_CVS" = "xyes"; then
+     AS_COMPILER_FLAG(-Werror,ERROR_CFLAGS="$ERROR_CFLAGS -Werror",ERROR_CFLAGS="$ERROR_CFLAGS")

@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/14 15:46:56 jasper Exp $
+lib/gstreamer-${VERSION}/libfsselector.la
+lib/gstreamer-${VERSION}/libfsselector.so
+lib/gstreamer-${VERSION}/libgstgconfelements2.la
+lib/gstreamer-${VERSION}/libgstgconfelements2.so
+lib/gstreamer-${VERSION}/libgstjrtp.la
+lib/gstreamer-${VERSION}/libgstjrtp.so
+lib/gstreamer-${VERSION}/libgstmsgsm.la
+lib/gstreamer-${VERSION}/libgstmsgsm.so
+lib/gstreamer-${VERSION}/libgstnetsim.la
+lib/gstreamer-${VERSION}/libgstnetsim.so
+lib/gstreamer-${VERSION}/libgstrtpdemux.la
+lib/gstreamer-${VERSION}/libgstrtpdemux.so
+lib/gstreamer-${VERSION}/libgstrtpjitterbuffer.la
+lib/gstreamer-${VERSION}/libgstrtpjitterbuffer.so
+lib/gstreamer-${VERSION}/libgstrtppayloads.la
+lib/gstreamer-${VERSION}/libgstrtppayloads.so
