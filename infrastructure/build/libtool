@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.104 2009/10/14 16:03:02 steven Exp $
+# $OpenBSD: libtool,v 1.105 2009/10/14 18:22:03 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1122,7 +1122,7 @@ if ($verbose || $D) {
 # what are we going to run (cc, c++, ...)
 my $ltprog = ();
 # deal with multi-arg ltprog
-print "ARGV = @ARGV\n";
+Trace::debug {"ARGV = @ARGV\n"};
 while (@ARGV) {
 	# just read arguments until the next option...
 	if ($ARGV[0] =~ m/^\-/) { last; }
