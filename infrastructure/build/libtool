@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.100 2009/10/14 13:42:41 steven Exp $
+# $OpenBSD: libtool,v 1.101 2009/10/14 14:05:33 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -889,13 +889,11 @@ sub link
 		}
 		my $l = $libs->{$k};
 		# here we find shared or static libraries
-		if (!defined $l->{fullpath}) {
-			$l->find($dirs, $self->{shared});
-			if ($self->{shared}) {
-				$l->{type} = 'shared';
-			} else {
-				$l->{type} = 'static';
-			}
+		$l->find($dirs, $self->{shared});
+		if ($self->{shared}) {
+			$l->{type} = 'shared';
+		} else {
+			$l->{type} = 'static';
 		}
 	}
 
