@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/14 14:34:33 phessler Exp $
+bin/weland
+libexec/weland/
+libexec/weland/Weland.exe
