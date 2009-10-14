@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.105 2009/10/14 18:22:03 steven Exp $
+# $OpenBSD: libtool,v 1.106 2009/10/14 22:03:16 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -644,21 +644,6 @@ sub link
 		Trace::debug {"libfiles:\n", join("\n", map { $_->{fullpath} } (values %$libs)), "\n"};
 		@cmd = ('ar', 'cru', $dst);
 		push @cmd, @$objs if (@$objs);
-		foreach my $k (@$finalorderedlibs) {
-			my $l = $libs->{$k};
-			$l->find($dirs, $self->{shared});
-			my $a = $l->{fullpath};
-			if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
-				# extract objects from archive
-				my $libfile = main::basename $a;
-				my $xdir = "$odir/$ltdir/${la}x/$libfile";
-				main::extract_archive($xdir, $a);
-				my @kobjs = main::get_objlist_from_archive($a);
-				map { $_ = "$xdir/$_"; } @kobjs;
-				push @libflags, @kobjs;
-			}
-		}
-		push @cmd, @libflags if (@libflags);
 		Exec->command(@cmd);
 		Exec->command('ranlib', $dst);
 		return;
@@ -890,11 +875,6 @@ sub link
 		my $l = $libs->{$k};
 		# here we find shared or static libraries
 		$l->find($dirs, $self->{shared});
-		if ($self->{shared}) {
-			$l->{type} = 'shared';
-		} else {
-			$l->{type} = 'static';
-		}
 	}
 
 	my @libfiles = values %$libs;
@@ -904,7 +884,6 @@ sub link
 	main::create_symlinks($ltdir, $libs);
 #	map { $_ = "$ltdir/". basename $_ } @libfiles;
 #	Trace::debug {"symlinks to libfiles used for linking:\n", join("\n", @libfiles), "\n"};
-	my $libcounter = 0;
 	foreach my $k (@$finalorderedlibs) {
 		my $a = $libs->{$k}->{fullpath} || die "ERROR: $k not found in \$libs";
 		if ($a =~ m/\.a$/) {
@@ -920,7 +899,6 @@ sub link
 			}
 			push @libflags, "-l$lib";
 		}
-		$libcounter++;
 	}
 
 	@cmd = @$ltprog;
@@ -1017,9 +995,7 @@ sub find
 		die "$libtofind not found!\n";
 	}
 	$self->{fullpath} = $libfile;
-	$self->{type} = ($shared) ? 'shared' : 'static';
 	Trace::debug {"\$libs->{$self->{key}}->{fullpath} = ", $self->{fullpath}, "\n"};
-	Trace::debug {"\$libs->{$self->{key}}->{type} = ", $self->{type}, "\n"};
 }
 
 # give a list of library dependencies found in the actual shared library
