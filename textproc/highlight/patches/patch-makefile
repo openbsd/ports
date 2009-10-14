@@ -1,5 +1,5 @@
 --- makefile.orig	Wed Sep  2 00:11:16 2009
-+++ makefile	Thu Sep 10 11:40:18 2009
++++ makefile	Wed Oct 14 16:05:52 2009
 @@ -8,7 +8,6 @@
  DESTDIR =
  
@@ -8,3 +8,21 @@
  
  # Location of the highlight data files:
  data_dir = ${PREFIX}/share/highlight/
+@@ -17,7 +16,7 @@ data_dir = ${PREFIX}/share/highlight/
+ bin_dir = ${PREFIX}/bin/
+ 
+ # Location of the highlight man page:
+-man_dir = ${PREFIX}/share/man/man1/
++man_dir = ${PREFIX}/man/man1/
+ 
+ # Location of the highlight documentation:
+ doc_dir = ${PREFIX}/share/doc/highlight/
+@@ -26,7 +25,7 @@ doc_dir = ${PREFIX}/share/doc/highlight/
+ examples_dir = ${doc_dir}examples/
+ 
+ # Location of the highlight config files:
+-conf_dir = /etc/highlight/
++conf_dir = ${SYSCONFDIR}/highlight/
+ #conf_dir = ${PREFIX}/etc/highlight/
+ 
+ # Location of additional gui files

@@ -1,5 +1,5 @@
---- src/makefile.orig	Thu Sep 10 11:36:52 2009
-+++ src/makefile	Thu Sep 10 11:37:14 2009
+--- src/makefile.orig	Fri Oct  2 18:41:17 2009
++++ src/makefile	Wed Oct 14 16:02:47 2009
 @@ -15,9 +15,9 @@
  
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
@@ -11,4 +11,4 @@
 +#CFLAGS:=-O2 ${CFLAGS}
  #CFLAGS:=-ggdb ${CFLAGS}
  
- SO_VERSION=2.12
+ SO_VERSION=2.13

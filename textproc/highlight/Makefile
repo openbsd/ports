@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/09/19 15:26:30 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2009/10/14 15:04:06 giovanni Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-2.12
+DISTNAME =		highlight-2.13
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -33,9 +33,7 @@ post-extract:
 	gunzip ${WRKSRC}/man/highlight.1.gz
 
 do-configure:
-	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},' ${WRKSRC}/makefile \
-		${WRKSRC}/man/highlight.1
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/man/highlight.1
+	${SUBST_CMD} ${WRKSRC}/makefile ${WRKSRC}/man/highlight.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/highlight ${PREFIX}/bin
