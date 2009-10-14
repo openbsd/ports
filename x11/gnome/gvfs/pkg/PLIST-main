@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/10/11 13:32:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/10/14 09:01:39 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -47,6 +47,8 @@ lib/libgvfscommon.la
 @bin libexec/gvfsd-network
 @bin libexec/gvfsd-sftp
 @bin libexec/gvfsd-trash
+share/applications/
+share/applications/mount-archive.desktop
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/gvfs-daemon.service
@@ -175,3 +177,5 @@ share/locale/vi/LC_MESSAGES/gvfs.mo
 share/locale/zh_CN/LC_MESSAGES/gvfs.mo
 share/locale/zh_HK/LC_MESSAGES/gvfs.mo
 share/locale/zh_TW/LC_MESSAGES/gvfs.mo
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database

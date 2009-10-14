@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+_Name=Archive Mounter
+Exec=${TRUEPREFIX}/libexec/gvfsd-archive file=%u
+X-Gnome-Vfs-System=gio
+MimeType=application/x-cd-image;application/x-bzip-compressed-tar;application/x-compressed-tar;application/x-tar;application/x-cpio;application/x-zip;application/zip;application/x-lzma-compressed-tar;application/x-xz-compressed-tar;
+Terminal=false
+StartupNotify=false
+Type=Application
+NoDisplay=true
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gvfs
+X-GNOME-Bugzilla-Component=archive-backend
+X-GNOME-Bugzilla-Version=${GNOME_VERSION}

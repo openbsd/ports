@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/10/11 13:32:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/10/14 09:01:39 ajacoutot Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
@@ -6,7 +6,7 @@ COMMENT-smb=	samba module for GVFS
 GNOME_PROJECT=	gvfs
 GNOME_VERSION=	1.4.0
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
 
 SHARED_LIBS +=	gvfscommon           2.0      # .0.0
@@ -31,6 +31,8 @@ LIB_DEPENDS=	gnome-keyring::x11/gnome/keyring
 WANTLIB-main +=	${WANTLIB}
 WANTLIB-main += bz2 crypto gcrypt gnutls gpg-error lzma m proxy soup-2.4
 WANTLIB-main += sqlite3 tasn1 xml2 z
+
+DESKTOP_FILES=	Yes
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		archive::archivers/libarchive \
@@ -59,5 +61,14 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-bash-completion-dir="${PREFIX}/share/gvfs"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+SUBST_VARS+=	GNOME_VERSION
+
+post-install:
+	${SUBST_CMD} -c ${FILESDIR}/mount-archive.desktop.in \
+		${WRKSRC}/mount-archive.desktop
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/mount-archive.desktop \
+		${PREFIX}/share/applications/
 
 .include <bsd.port.mk>
