@@ -1,0 +1,12 @@
+$OpenBSD: patch-JavaScriptCore_wtf_Platform_h,v 1.1 2009/10/14 11:17:58 landry Exp $
+--- JavaScriptCore/wtf/Platform.h.orig	Sat Oct 10 10:52:41 2009
++++ JavaScriptCore/wtf/Platform.h	Sat Oct 10 10:53:23 2009
+@@ -630,7 +630,7 @@
+ #endif
+ 
+ #if !defined(WTF_USE_JSVALUE64) && !defined(WTF_USE_JSVALUE32) && !defined(WTF_USE_JSVALUE32_64)
+-#if PLATFORM(X86_64) && (PLATFORM(DARWIN) || PLATFORM(LINUX))
++#if (PLATFORM(SPARC64) || PLATFORM(X86_64)) && (PLATFORM(DARWIN) || PLATFORM(LINUX) || PLATFORM(OPENBSD))
+ #define WTF_USE_JSVALUE64 1
+ #elif PLATFORM(ARM) || PLATFORM(PPC64)
+ #define WTF_USE_JSVALUE32 1
