@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/10/13 10:41:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/10/14 09:26:58 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,7 +6,7 @@ COMMENT=	powerful desktop search tool and indexer
 # as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.95
-PKGNAME=	tracker-search-${VERSION}p0
+PKGNAME=	tracker-search-${VERSION}p1
 
 SHARED_LIBS +=	stemmer              0.1      # .695.0
 SHARED_LIBS +=	tracker-common       0.1      # .695.0
@@ -77,6 +77,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-libvorbis \
 		--enable-gdkpixbuf \
 		--enable-deskbar-applet \
+		--with-deskbar_applet_dir=${PREFIX}/libexec/deskbar-applet/modules-2.20-compatible \
 		--with-deskbar-applet-handler-dir="${LOCALBASE}/lib/python${MODPY_VERSION}/site-packages/deskbar/handlers/"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
