@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_gnaughty_c,v 1.1 2009/10/14 00:09:57 jasper Exp $
+--- src/gnaughty.c.orig	Tue May 26 19:14:03 2009
++++ src/gnaughty.c	Wed Oct 14 02:08:41 2009
+@@ -67,8 +67,10 @@ const gchar *porntypes[]={"Sticky Movies", \ 
+ 			  "Babes", \
+ 			  "Ethnic", \
+ 			  "Amateur", \
+-			  "Potpourri"
++			  "Potpourri", \
+ 			  "Gay", \
++			  "College", \
++			  "Ellen", \
+ 			  "Trannie"};
+ 
+ const gchar *pageurls[] = {"www.sublimedirectory.com/movies", \
+@@ -83,8 +85,10 @@ const gchar *pageurls[] = {"www.sublimedirectory.com/m
+ 			   "www.sublimedirectory.com/babes", \
+ 			   "www.sublimedirectory.com/ethnic", \
+ 			   "www.sublimedirectory.com/amateur", \
+-			   "www.sublimedirectory.com/potpourri"
++			   "www.sublimedirectory.com/potpourri", \
+ 			   "www.sublimedirectory.com/gay", \
++			   "www.sublimedirectory.com/college", \
++   			   "www.sublimedirectory.com/ellen", \
+ 			   "www.sublimedirectory.com/trannie"};
+ 
+ GList *alllinks[NUMPORNTYPES] = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL};
