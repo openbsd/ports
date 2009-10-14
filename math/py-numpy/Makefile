@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2009/09/30 11:51:30 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2009/10/14 18:44:04 sthen Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.3.0
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}p0
+PKGNAME=		py-${DISTNAME}p1
 CATEGORIES=		math devel
 
 HOMEPAGE=		http://numpy.scipy.org/
@@ -35,6 +35,6 @@ pre-build:
 
 do-regress: fake
 	${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
-	    'import numpy ; numpy.testing.NumpyTest(numpy).test(10)'
+	    'import numpy ; numpy.test()'
 
 .include <bsd.port.mk>
