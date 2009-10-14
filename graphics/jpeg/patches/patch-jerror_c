@@ -1,16 +1,12 @@
-$OpenBSD: patch-jerror_c,v 1.1 2005/04/03 23:26:22 brad Exp $
+$OpenBSD: patch-jerror_c,v 1.2 2009/10/14 13:03:44 naddy Exp $
 
-This one is slightly problematic, if an application
-choose to allocate more room for its error buffer than
-the recommanded JMSG_LENGTH_MAX the error message will
-get truncated.
+This one is slightly problematic.  If an application allocates less
+room for its error buffer than the recommended JMSG_LENGTH_MAX, the
+error message buffer will still overflow.
 
-There should be no loss of functionnality and I'm not
-aware of any app doing that.
-
---- jerror.c.orig	Sun Feb 22 02:03:15 1998
-+++ jerror.c	Sun Mar 27 04:01:51 2005
-@@ -190,9 +190,9 @@ format_message (j_common_ptr cinfo, char
+--- jerror.c.orig	Sat Oct 10 12:43:21 2009
++++ jerror.c	Sat Oct 10 12:43:52 2009
+@@ -190,9 +190,9 @@ format_message (j_common_ptr cinfo, char * buffer)
  
    /* Format the message into the passed buffer */
    if (isstring)

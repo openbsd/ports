@@ -1,20 +1,13 @@
-The Independent JPEG Group's JPEG software
-==========================================
+This package contains software to implement JPEG image encoding, decoding,
+and transcoding.  JPEG (pronounced "jay-peg") is a standardized compression
+method for full-color and gray-scale images.
 
-README for release 6 of 2-Aug-95
-================================
+This software implements JPEG baseline, extended-sequential, and progressive
+compression processes.
 
-This distribution contains the sixth public release of the Independent JPEG
-Group's free JPEG software.  You are welcome to redistribute this software and
-to use it for any purpose, subject to the conditions under LEGAL ISSUES, below.
-
-Serious users of this software (particularly those incorporating it into
-larger programs) should contact IJG at jpeg-info@uunet.uu.net to be added to
-our electronic mailing list.  Mailing list members are notified of updates
-and have a chance to participate in technical discussions, etc.
-
-This software is the work of Tom Lane, Philip Gladstone, Luis Ortiz, Jim
-Boucher, Lee Crocker, Julian Minguillon, George Phillips, Davide Rossi,
-Ge' Weijers, and other members of the Independent JPEG Group.
-
-IJG is not affiliated with the official ISO JPEG standards committee.
+A set of library routines for reading and writing JPEG image files is provided,
+plus two sample applications "cjpeg" and "djpeg", which use the library to
+perform conversion between JPEG and some other popular image file formats.
+Also included is "jpegtran", a utility for lossless transcoding between
+different JPEG processes, and "rdjpgcom" and "wrjpgcom", two simple
+applications for inserting and extracting textual comments in JFIF files.

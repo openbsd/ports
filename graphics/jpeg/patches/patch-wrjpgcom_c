@@ -1,0 +1,23 @@
+$OpenBSD: patch-wrjpgcom_c,v 1.1 2009/10/14 13:03:44 naddy Exp $
+--- wrjpgcom.c.orig	Sat Oct 10 12:35:12 2009
++++ wrjpgcom.c	Sat Oct 10 12:36:11 2009
+@@ -453,7 +453,7 @@ main (int argc, char **argv)
+ 	comment_arg = (char *) malloc((size_t) MAX_COM_LENGTH);
+ 	if (comment_arg == NULL)
+ 	  ERREXIT("Insufficient memory");
+-	strcpy(comment_arg, argv[argn]+1);
++	strlcpy(comment_arg, argv[argn]+1, MAX_COM_LENGTH);
+ 	for (;;) {
+ 	  comment_length = (unsigned int) strlen(comment_arg);
+ 	  if (comment_length > 0 && comment_arg[comment_length-1] == '"') {
+@@ -462,8 +462,8 @@ main (int argc, char **argv)
+ 	  }
+ 	  if (++argn >= argc)
+ 	    ERREXIT("Missing ending quote mark");
+-	  strcat(comment_arg, " ");
+-	  strcat(comment_arg, argv[argn]);
++	  strlcat(comment_arg, " ", MAX_COM_LENGTH);
++	  strlcat(comment_arg, argv[argn], MAX_COM_LENGTH);
+ 	}
+       }
+       comment_length = (unsigned int) strlen(comment_arg);
