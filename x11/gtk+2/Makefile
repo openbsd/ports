@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2009/10/10 11:25:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.89 2009/10/14 11:20:38 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -83,8 +83,9 @@ REGRESS_IS_INTERACTIVE= x11
 
 # XXX we should use MODPY_BIN from the lang/python MODULE but
 # we do not want to build/run_depends on python
+MODPY_VERSION= 2.5
 pre-configure:
-	perl -pi -e 's,/usr/bin/env python,${LOCALBASE}/bin/python2.5,' \
+	perl -pi -e 's,/usr/bin/env python,${LOCALBASE}/bin/python${MODPY_VERSION},' \
 		${WRKSRC}/gtk/gtk-builder-convert
 
 .include <bsd.port.mk>
