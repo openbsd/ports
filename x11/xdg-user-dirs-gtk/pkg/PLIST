@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/12 16:01:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/14 08:12:46 ajacoutot Exp $
 @bin bin/xdg-user-dirs-gtk-update
 share/examples/xdg-user-dirs-gtk/
 share/examples/xdg-user-dirs-gtk/xdg/
@@ -39,14 +39,10 @@ share/locale/oc/
 share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/pl/LC_MESSAGES/xdg-user-dirs-gtk.mo
-share/locale/ps/
-share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/pt/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/pt_BR/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/sk/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/sl/LC_MESSAGES/xdg-user-dirs-gtk.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/sv/LC_MESSAGES/xdg-user-dirs-gtk.mo
