@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/10/11 23:01:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2009/10/14 17:38:59 jasper Exp $
 
 # XXX: When the moon turns blue, and we have a new gstreamer,
 # re-enable gst-mixer and such.
@@ -7,6 +7,7 @@ COMMENT=		GNOME media utilities
 
 GNOME_PROJECT=		gnome-media
 GNOME_VERSION=		2.28.1
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=	gnome-media-profiles 0.0      # .0.0
 CATEGORIES=		x11
@@ -28,7 +29,7 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=		::multimedia/gstreamer-0.10/plugins-good,-gconf
+BUILD_DEPENDS=		::multimedia/gstreamer-0.10/plugins-good
 LIB_DEPENDS=		glade-2.0::devel/libglade2 \
 			gstreamer-0.10::multimedia/gstreamer-0.10/core \
 			pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango
@@ -37,7 +38,6 @@ MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-media
-CONFIGURE_ARGS+=	--disable-esound
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
