@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_epiphany_mozilla_mozilla-helper_h,v 1.1 2009/10/14 16:33:54 ajacoutot Exp $
+--- plugins/epiphany/mozilla/mozilla-helper.h.orig	Wed Oct 14 18:25:53 2009
++++ plugins/epiphany/mozilla/mozilla-helper.h	Wed Oct 14 18:26:08 2009
+@@ -23,7 +23,7 @@
+ 
+ #include <glib.h>
+ 
+-#include <epiphany/ephy-embed.h>
++#include <epiphany/epiphany.h>
+ 
+ G_BEGIN_DECLS
+ 

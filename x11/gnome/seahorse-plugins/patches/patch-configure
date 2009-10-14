@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2009/10/14 16:33:54 ajacoutot Exp $
+--- configure.orig	Wed Oct 14 18:23:20 2009
++++ configure	Wed Oct 14 18:23:33 2009
+@@ -17242,7 +17242,7 @@ MOZILLA_EXTRA_LIBS="$gecko_cv_extra_libs"
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Epiphany API version" >&5
+ $as_echo_n "checking for Epiphany API version... " >&6; }
+-apis="2.26 2.25 2.24"
++apis="2.28 2.26 2.25 2.24"
+ epiphany_api_version=
+ for api in $apis; do
+  if test -n "$PKG_CONFIG" && \

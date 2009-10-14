@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_epiphany_seahorse-extension_c,v 1.1 2009/10/14 16:33:54 ajacoutot Exp $
+--- plugins/epiphany/seahorse-extension.c.orig	Wed Oct 14 18:26:42 2009
++++ plugins/epiphany/seahorse-extension.c	Wed Oct 14 18:27:00 2009
+@@ -23,9 +23,7 @@
+ #include "seahorse-extension.h"
+ #include "mozilla/mozilla-helper.h"
+ 
+-#include <epiphany/ephy-extension.h>
+-#include <epiphany/ephy-embed.h>
+-#include <epiphany/ephy-embed-container.h>
++#include <epiphany/epiphany.h>
+ 
+ #include "eel-gconf-extensions.h"
+ #include "ephy-debug.h"

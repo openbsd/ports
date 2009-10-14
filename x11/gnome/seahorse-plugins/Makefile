@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/12 11:20:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/10/14 16:33:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	plugins and utilities for encryption in GNOME
+COMMENT=	plugins and utilities for seahorse
 
 GNOME_PROJECT=	seahorse-plugins
-GNOME_VERSION=	2.24.1
-PKGNAME=	${DISTNAME}p1
+GNOME_VERSION=	2.28.0
 
 CATEGORIES=	security
 
