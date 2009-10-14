@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2009/10/11 20:38:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.103 2009/10/14 16:15:01 jasper Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -43,7 +43,6 @@
      SUBDIR += hamster-applet
      SUBDIR += icon-theme
      SUBDIR += keyring
-     SUBDIR += keyring-manager
      SUBDIR += keyring-query
      SUBDIR += krb5-auth-dialog
      SUBDIR += libbonobo
