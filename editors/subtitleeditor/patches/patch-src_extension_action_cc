@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_extension_action_cc,v 1.1 2009/10/14 21:47:20 ajacoutot Exp $
+--- src/extension/action.cc.orig	Tue Oct 13 12:51:09 2009
++++ src/extension/action.cc	Tue Oct 13 12:52:26 2009
+@@ -86,8 +86,8 @@ Glib::RefPtr<Gtk::UIManager> Action::get_ui_manager()
+ 	se_debug(SE_DEBUG_PLUGINS);
+ 
+ 	SubtitleEditorWindow *window = SubtitleEditorWindow::get_instance();
+-
+-	g_return_val_if_fail(window, Glib::RefPtr<Gtk::UIManager>());
++	Glib::RefPtr<Gtk::UIManager> ref;
++	g_return_val_if_fail(window, ref);
+ 
+ 	return window->get_ui_manager();
+ }

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_extensionmanager_cc,v 1.1 2009/10/14 21:47:20 ajacoutot Exp $
+--- src/extensionmanager.cc.orig	Tue Oct 13 15:23:57 2009
++++ src/extensionmanager.cc	Tue Oct 13 15:23:19 2009
+@@ -458,8 +458,8 @@ void ExtensionManager::open_module(ExtensionInfo *info
+ 	}
+ 
+ 	//Fix: bug #12651 : 0.30.0 build error
+-	//ExtensionRegisterFunc extension_register = (ExtensionRegisterFunc)func;
+-	ExtensionRegisterFunc extension_register = reinterpret_cast<ExtensionRegisterFunc>(func);
++	ExtensionRegisterFunc extension_register = (ExtensionRegisterFunc)func;
++	//ExtensionRegisterFunc extension_register = reinterpret_cast<ExtensionRegisterFunc>(func);
+ 	
+ 	if(extension_register == NULL)
+ 		throw SubtitleError("reinterpret from the function to the ExtensionRegisterFunc failed");

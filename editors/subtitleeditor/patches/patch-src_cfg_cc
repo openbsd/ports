@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_cfg_cc,v 1.1 2009/10/14 21:47:20 ajacoutot Exp $
+--- src/cfg.cc.orig	Tue Oct 13 12:49:32 2009
++++ src/cfg.cc	Tue Oct 13 12:47:13 2009
+@@ -737,7 +737,8 @@ Glib::ustring	Config::get_value_string(const Glib::ust
+ 
+ 	bool state = get_value_string(group, key, value);
+ 	
+-	g_return_val_if_fail(state, Glib::ustring());
++	Glib::ustring t;
++	g_return_val_if_fail(state, t);
+ 
+ 	return value;
+ }
+@@ -750,8 +751,8 @@ Color	Config::get_value_color(const Glib::ustring &gro
+ 	Color value;
+ 
+ 	bool state = get_value_color(group, key, value);
+-	
+-	g_return_val_if_fail(state, Color());
++	Color c;
++	g_return_val_if_fail(state, c);
+ 
+ 	return value;
+ }
