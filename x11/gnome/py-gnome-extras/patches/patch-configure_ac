@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure_ac,v 1.1 2009/10/14 17:13:48 jasper Exp $
+
+Regenerated gdl.defs and updated dependency to gdl 2.27.92
+From upstream git.
+
+--- configure.ac.orig	Wed Oct 14 19:06:44 2009
++++ configure.ac	Wed Oct 14 19:07:20 2009
+@@ -310,14 +310,9 @@ dnl should we build the gdl module?
+ AC_ARG_BINDING([gdl], [ON])
+ if $build_gdl; then
+   have_gdl07=false
+-  PKG_CHECK_MODULES(GDL, [gdl-1.0 >= 0.7.1 gdl-gnome-1.0 >= 0.7.1 pygtk-2.0 >= pygtk_required_version], dnl
++  PKG_CHECK_MODULES(GDL, [gdl-1.0 >= 2.27.92 pygtk-2.0 >= pygtk_required_version], dnl
+                     [build_gdl=true; have_gdl07=true], build_gdl=false)
+ 
+-  dnl try again with no gnome and older version
+-  if ! $build_gdl; then
+-    PKG_CHECK_MODULES(GDL, [gdl-1.0 >= 0.6.1 pygtk-2.0 >= pygtk_required_version], dnl
+-                      build_gdl=true, build_gdl=false)
+-  fi
+ fi
+ 
+ AM_CONDITIONAL(BUILD_GDL, $build_gdl)

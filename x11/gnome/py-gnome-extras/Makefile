@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/11 08:39:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/10/14 17:13:48 jasper Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
 GNOME_PROJECT=	gnome-python-extras
-GNOME_VERSION=	2.19.1
-PKGNAME=	py-gnome-extras-${VERSION}p11
+GNOME_VERSION=	2.25.3
+PKGNAME=	py-gnome-extras-${VERSION}
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -16,36 +16,35 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
-WANTLIB += bonoboui-2 cairo crypto dbus-1 dbus-glib-1 enchant
-WANTLIB += expat fam fontconfig freetype gailutil gconf-2 gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0
-WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2
-WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 gtop-2.0 kvm m
-WANTLIB += nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png popt rpcsvc ssl startup-notification-1
-WANTLIB += stdc++ util xml2 z avahi-client avahi-common avahi-glib
-WANTLIB += pthread-stubs xcb pthread-stubs xcb
+WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
+WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 cairo
+WANTLIB += crypto dbus-1 dbus-glib-1 expat ffi fontconfig freetype
+WANTLIB += gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
+WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 plc4 plds4 png popt pthread-stubs ssl stdc++
+WANTLIB += util xcb xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			:xulrunner-devel->=1.8:devel/xulrunner/1.8,-devel \
-			::sysutils/libgksuui
+			:xulrunner-devel->=1.8:devel/xulrunner/1.8,-devel
 LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8:devel/xulrunner/1.8 \
-			gksu2::sysutils/libgksu \
 			gtkspell::textproc/gtkspell \
+			enchant::textproc/enchant \
 			gdl-1::x11/gnome/gdl \
-			gtkhtml-2::x11/gnome/libgtkhtml \
-			gda-3.0.>=1,gdasql-3.0,gda-report-3.0::x11/gnome/libgda
-RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome \
-			::sysutils/libgksuui
+			gtkhtml-2::x11/gnome/libgtkhtml
+#			gda-4.0.>=1,gdasql-4.0,gda-report-4.0::x11/gnome/libgda
+RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome
 REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 
 USE_X11=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
+AUTOCONF_VERSION=	2.62
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS= 	--with-gtkmozembed=xulrunner
