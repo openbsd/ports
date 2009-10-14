@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2009/05/27 13:43:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2009/10/14 09:21:02 benoit Exp $
 
 COMMENT =		word-based diff program
 
-DISTNAME=		dwdiff-1.5.2
+DISTNAME =		dwdiff-1.6.1
 CATEGORIES =		sysutils textproc
 
 HOMEPAGE =		http://os.ghalkes.nl/dwdiff.html
