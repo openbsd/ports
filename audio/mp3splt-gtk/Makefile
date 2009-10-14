@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/28 18:32:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/10/14 12:51:45 ajacoutot Exp $
 
 COMMENT =	graphical mp3/ogg file splitter
 
 DISTNAME =	mp3splt-gtk-0.5.4
-PKGNAME =	${DISTNAME}p2
+PKGNAME =	${DISTNAME}p3
 
 CATEGORIES =	audio
 
@@ -36,7 +36,7 @@ BUILD_DEPENDS =	::multimedia/gstreamer-0.10/plugins-base
 RUN_DEPENDS =	${BUILD_DEPENDS} \
 		:desktop-file-utils-*:devel/desktop-file-utils \
 		::multimedia/gstreamer-0.10/plugins-ugly \
-		:gstreamer-confelements-*:multimedia/gstreamer-0.10/plugins-good,-gconf
+		::multimedia/gstreamer-0.10/plugins-good
 
 MODULES =	devel/gettext
 
