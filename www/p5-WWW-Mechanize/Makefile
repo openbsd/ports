@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/14 15:27:14 pea Exp $
 
 COMMENT= 	handy web browsing in a Perl object
 
 MODULES=	cpan
 
-DISTNAME=	WWW-Mechanize-1.20
+DISTNAME=	WWW-Mechanize-1.60
 CATEGORIES=	www perl5
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:p5-libwww->=5.78:www/p5-libwww \
-		::devel/p5-Test-LongString
+		::devel/p5-Test-LongString \
+		::www/p5-HTTP-Server-Simple
 
 REGRESS_DEPENDS= ::devel/p5-PadWalker \
 		 ::devel/p5-Test-Memory-Cycle \
@@ -25,7 +26,5 @@ REGRESS_DEPENDS= ::devel/p5-PadWalker \
 		 ::devel/p5-Test-Pod-Coverage \
 		 ::devel/p5-Test-Taint \
 		 ::devel/p5-Test-Warn
-
-CONFIGURE_ARGS+= --mech-dump
 
 .include <bsd.port.mk>
