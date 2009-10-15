@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/10/11 15:32:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2009/10/15 15:28:23 jasper Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
@@ -30,6 +30,8 @@ USE_LIBTOOL=	No
 CONFIGURE_ARGS=	--disable-scrollkeeper
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS+=	pkgconfigdir="${PREFIX}/lib/pkgconfig/"
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
