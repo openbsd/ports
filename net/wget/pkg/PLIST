@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2008/10/09 18:50:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/10/15 08:27:12 benoit Exp $
 @bin bin/wget
 @info info/wget.info
 @man man/man1/wget.1
@@ -12,9 +12,14 @@ share/locale/cs/LC_MESSAGES/wget.mo
 share/locale/da/LC_MESSAGES/wget.mo
 share/locale/de/LC_MESSAGES/wget.mo
 share/locale/el/LC_MESSAGES/wget.mo
+share/locale/en@boldquot/LC_MESSAGES/wget.mo
+share/locale/en@quot/LC_MESSAGES/wget.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/wget.mo
+share/locale/en_US/
+share/locale/en_US/LC_MESSAGES/
+share/locale/en_US/LC_MESSAGES/wget.mo
 share/locale/eo/LC_MESSAGES/wget.mo
 share/locale/es/LC_MESSAGES/wget.mo
 share/locale/et/LC_MESSAGES/wget.mo
@@ -29,6 +34,9 @@ share/locale/hu/LC_MESSAGES/wget.mo
 share/locale/id/LC_MESSAGES/wget.mo
 share/locale/it/LC_MESSAGES/wget.mo
 share/locale/ja/LC_MESSAGES/wget.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/wget.mo
 share/locale/nb/LC_MESSAGES/wget.mo
 share/locale/nl/LC_MESSAGES/wget.mo
 share/locale/pl/LC_MESSAGES/wget.mo
