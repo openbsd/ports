@@ -1,28 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1 2009/06/16 20:07:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/15 11:57:42 ajacoutot Exp $
 @conflict nautilus-sendto-pidgin-*
 @pkgpath x11/gnome/nautilus-sendto,-main
 @bin bin/nautilus-sendto
 lib/nautilus/
 lib/nautilus-sendto/
 lib/nautilus-sendto/plugins/
-@comment lib/nautilus-sendto/plugins/libnstbluetooth.a
-@comment lib/nautilus-sendto/plugins/libnstbluetooth.la
-lib/nautilus-sendto/plugins/libnstbluetooth.so
-@comment lib/nautilus-sendto/plugins/libnstevolution.a
-@comment lib/nautilus-sendto/plugins/libnstevolution.la
-lib/nautilus-sendto/plugins/libnstevolution.so
 @comment lib/nautilus-sendto/plugins/libnstgajim.a
 @comment lib/nautilus-sendto/plugins/libnstgajim.la
 lib/nautilus-sendto/plugins/libnstgajim.so
 @comment lib/nautilus-sendto/plugins/libnstpidgin.a
 @comment lib/nautilus-sendto/plugins/libnstpidgin.la
 lib/nautilus-sendto/plugins/libnstpidgin.so
-@comment lib/nautilus-sendto/plugins/libnstsylpheed.a
-@comment lib/nautilus-sendto/plugins/libnstsylpheed.la
-lib/nautilus-sendto/plugins/libnstsylpheed.so
-@comment lib/nautilus-sendto/plugins/libnstthunderbird.a
-@comment lib/nautilus-sendto/plugins/libnstthunderbird.la
-lib/nautilus-sendto/plugins/libnstthunderbird.so
+@comment lib/nautilus-sendto/plugins/libnstremovable_devices.a
+@comment lib/nautilus-sendto/plugins/libnstremovable_devices.la
+lib/nautilus-sendto/plugins/libnstremovable_devices.so
 lib/nautilus/extensions-2.0/
 @comment lib/nautilus/extensions-2.0/libnautilus-sendto.a
 @comment lib/nautilus/extensions-2.0/libnautilus-sendto.la
@@ -33,9 +24,13 @@ lib/pidgin/
 lib/pidgin/nautilus.so
 @man man/man1/nautilus-sendto.1
 share/locale/ar/LC_MESSAGES/nautilus-sendto.mo
+share/locale/as/LC_MESSAGES/nautilus-sendto.mo
+share/locale/ast/LC_MESSAGES/nautilus-sendto.mo
 share/locale/be/LC_MESSAGES/nautilus-sendto.mo
 share/locale/be@latin/LC_MESSAGES/nautilus-sendto.mo
 share/locale/bg/LC_MESSAGES/nautilus-sendto.mo
+share/locale/bn_IN/LC_MESSAGES/nautilus-sendto.mo
+share/locale/br/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ca/LC_MESSAGES/nautilus-sendto.mo
 share/locale/cs/LC_MESSAGES/nautilus-sendto.mo
 share/locale/da/LC_MESSAGES/nautilus-sendto.mo
@@ -50,14 +45,18 @@ share/locale/eu/LC_MESSAGES/nautilus-sendto.mo
 share/locale/fi/LC_MESSAGES/nautilus-sendto.mo
 share/locale/fr/LC_MESSAGES/nautilus-sendto.mo
 share/locale/gl/LC_MESSAGES/nautilus-sendto.mo
+share/locale/gu/LC_MESSAGES/nautilus-sendto.mo
 share/locale/he/LC_MESSAGES/nautilus-sendto.mo
+share/locale/hi/LC_MESSAGES/nautilus-sendto.mo
 share/locale/hu/LC_MESSAGES/nautilus-sendto.mo
 share/locale/it/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ja/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ka/LC_MESSAGES/nautilus-sendto.mo
+share/locale/kn/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ko/LC_MESSAGES/nautilus-sendto.mo
 share/locale/lt/LC_MESSAGES/nautilus-sendto.mo
 share/locale/mk/LC_MESSAGES/nautilus-sendto.mo
+share/locale/mr/LC_MESSAGES/nautilus-sendto.mo
 share/locale/nb/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ne/LC_MESSAGES/nautilus-sendto.mo
 share/locale/nl/LC_MESSAGES/nautilus-sendto.mo
@@ -74,15 +73,17 @@ share/locale/sk/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sl/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sq/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sv/LC_MESSAGES/nautilus-sendto.mo
+share/locale/ta/LC_MESSAGES/nautilus-sendto.mo
+share/locale/te/LC_MESSAGES/nautilus-sendto.mo
 share/locale/th/LC_MESSAGES/nautilus-sendto.mo
 share/locale/uk/LC_MESSAGES/nautilus-sendto.mo
 share/locale/vi/LC_MESSAGES/nautilus-sendto.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-sendto.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-sendto.mo
 share/nautilus-sendto/
-share/nautilus-sendto/glade/
-share/nautilus-sendto/glade/nautilus-sendto.glade
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/nautilus-sendto/ui/
+share/nautilus-sendto/ui/nautilus-sendto.ui
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/nst.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
