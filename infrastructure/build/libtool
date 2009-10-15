@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.107 2009/10/15 09:39:45 steven Exp $
+# $OpenBSD: libtool,v 1.108 2009/10/15 11:16:10 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -640,9 +640,29 @@ sub link
 
 	# static linking
 	if (!$shared) {
-		Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
-		Trace::debug {"libfiles:\n", join("\n", map { $_->{fullpath} } (values %$libs)), "\n"};
 		@cmd = ('ar', 'cru', $dst);
+		foreach my $k (@$finalorderedlibs) {
+			my $l = $libs->{$k};
+			# XXX improve test
+			# this has to be done probably only with
+			# convenience libraries
+			next if (!defined $l->{lafile});
+			my $lainfo = LaFile->parse($l->{lafile});
+			print "dlname = ", $lainfo->stringize('dlname'), "\n";
+			next if ($lainfo->stringize('dlname') ne '');
+			$l->find($dirs, 0);
+			my $a = $l->{fullpath};
+			if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
+				# extract objects from archive
+				my $libfile = main::basename $a;
+				my $xdir = "$odir/$ltdir/${la}x/$libfile";
+				main::extract_archive($xdir, $a);
+				my @kobjs = main::get_objlist_from_archive($a);
+				map { $_ = "$xdir/$_"; } @kobjs;
+				push @libflags, @kobjs;
+			}
+		}
+		push @cmd, @libflags if (@libflags);
 		push @cmd, @$objs if (@$objs);
 		Exec->command(@cmd);
 		Exec->command('ranlib', $dst);
@@ -1668,6 +1688,18 @@ sub get_search_dirs
 		die "Can't find ldconfig\n";
         }
 	return @libsearchdirs;
+}
+
+sub extract_archive
+{
+	my $dir = shift;
+	my $archive = shift;
+
+	if (! -d $dir) {
+		Trace::debug {"mkdir -p $dir\n"};
+		File::Path::mkpath($dir);
+	}
+	Exec->chdir($dir)->command('ar', 'x', $archive);
 }
 
 sub get_objlist_from_archive
