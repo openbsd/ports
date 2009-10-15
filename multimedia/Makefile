@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2009/10/15 08:52:31 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2009/10/15 15:45:27 landry Exp $
 
      SUBDIR += avidemux
      SUBDIR += coherence
@@ -26,6 +26,7 @@
      SUBDIR += mjpegtools
      SUBDIR += mjpegtools,quicktime
      SUBDIR += mkvtoolnix
+     SUBDIR += moovida
      SUBDIR += mpgtx
      SUBDIR += oggconvert
      SUBDIR += ogmtools
