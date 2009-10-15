@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.108 2009/10/15 11:16:10 steven Exp $
+# $OpenBSD: libtool,v 1.109 2009/10/15 11:26:08 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -332,7 +332,7 @@ sub parse_linkargs1
 sub parse_linkargs2
 {
 	state $seen_pthread = 0;
-	my ($self, $deplibs, $Rresolved, $libsearchdirs, $orderedlibs,
+	my ($self, $Rresolved, $libsearchdirs, $orderedlibs,
 	    $dirs, $libs) = @_;
 	Trace::debug {"parse_linkargs2\n"};
 	Trace::debug {"  args: @{$self->{args}}\n"};
@@ -347,13 +347,11 @@ sub parse_linkargs2
 			# don't link explicitly with libc (just remove -lc)
 		} elsif ($a eq '-pthread' && !$seen_pthread) {
 			# XXX special treatment since it's not a -l flag
-			push @$deplibs, $a;
 			$seen_pthread = 1;
 			push(@$result, $a);
 		} elsif ($a =~ m/^-L(.*)/) {
 			if (!exists $dirs->{$1}) {
 				$dirs->{$1} = 1;
-				push @$deplibs, $a;
 			}
 		} elsif ($a =~ m/^-R(.*)/) {
 			# -R options originating from .la resolution
@@ -632,7 +630,7 @@ sub link
 	Trace::debug {"argvstring (post resolve_la): @{$parser->{args}}\n"};
 	my $orderedlibs = [];
 	$parser->{args} = $args;
-	$args = $parser->parse_linkargs2($deplibs, \@main::Rresolved,
+	$args = $parser->parse_linkargs2(\@main::Rresolved,
 			\@main::libsearchdirs, $orderedlibs, $dirs, $libs);
 	Trace::debug {"orderedlibs = @$orderedlibs\n"};
 	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
@@ -869,7 +867,7 @@ sub link
 	Trace::debug {"argvstring (post resolve_la): @{$parser->{args}}\n"};
 	my $orderedlibs = [];
 	$parser->{args} = $args;
-	$args = $parser->parse_linkargs2($deplibs, \@main::Rresolved,
+	$args = $parser->parse_linkargs2(\@main::Rresolved,
 		\@main::libsearchdirs, $orderedlibs, $dirs, $libs);
 	Trace::debug {"orderedlibs = @$orderedlibs\n"};
 	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
