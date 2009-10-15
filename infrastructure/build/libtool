@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.110 2009/10/15 13:46:23 steven Exp $
+# $OpenBSD: libtool,v 1.111 2009/10/15 13:48:11 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -260,7 +260,7 @@ sub parse_linkargs1
 			# -R options originating from .la resolution
 			# those from @ARGV are in @Ropts
 			push @$Rresolved, $1;
-		} elsif ($a =~ m/^-l(.*)/) {
+		} elsif ($a =~ m/^-l(\S+)/) {
 			my @largs = ();
 			my $key = $1;
 			if (!exists $libs->{$key}) {
