@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.66 2009/08/10 06:34:56 kili Exp $
+# $OpenBSD: Makefile,v 1.67 2009/10/15 12:51:13 edd Exp $
 
 COMMENT-main=	PDF viewer for X11
 COMMENT-utils=	PDF conversion tools
 
 DISTNAME=	xpdf-3.02
-PKGNAME-main=	xpdf-3.02.3p1
-PKGNAME-utils=	xpdf-utils-3.02.3
+PKGNAME-main=	xpdf-3.02.4
+PKGNAME-utils=	xpdf-utils-3.02.4
 CATEGORIES=	textproc x11
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		ftp://gd.tuwien.ac.at/publishing/xpdf/ \
 		ftp://tug.org/xpdf/
 PATCHFILES=	xpdf-3.02pl1.patch xpdf-3.02pl2.patch \
-		xpdf-3.02pl3.patch
+		xpdf-3.02pl3.patch xpdf-3.02pl4.patch
 PATCH_DIST_STRIP=-p1
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
@@ -43,8 +43,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS-utils} \
 			:${FULLPKGNAME-utils}:textproc/xpdf,-utils
 
 WANTLIB-utils=		c m pthread stdc++ z
-WANTLIB-main=		${WANTLIB-utils} ICE SM X11 Xext Xp Xpm Xt freetype \
-			pthread-stubs xcb
+WANTLIB-main=		${WANTLIB-utils} ICE SM X11 Xext Xp Xpm Xt freetype
 
 NO_REGRESS=	Yes
 
