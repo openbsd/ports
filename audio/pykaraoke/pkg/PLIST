@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/15 22:19:04 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/15 22:37:25 ajacoutot Exp $
 bin/cdg2mpg
 bin/pycdg
 bin/pykar
@@ -33,7 +33,6 @@ lib/python${MODPY_VERSION}/site-packages/pykversion.py
 lib/python${MODPY_VERSION}/site-packages/pykversion.pyc
 lib/python${MODPY_VERSION}/site-packages/pympg.py
 lib/python${MODPY_VERSION}/site-packages/pympg.pyc
-share/applications/
 share/applications/pykaraoke.desktop
 share/applications/pykaraoke_mini.desktop
 share/pykaraoke/
@@ -49,3 +48,5 @@ share/pykaraoke/icons/microphone.ico
 share/pykaraoke/icons/microphone.png
 share/pykaraoke/icons/pykaraoke.xpm
 share/pykaraoke/icons/splash.png
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
