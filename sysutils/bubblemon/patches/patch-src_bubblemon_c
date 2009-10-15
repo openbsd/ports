@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_bubblemon_c,v 1.5 2009/04/05 10:15:33 ajacoutot Exp $
---- src/bubblemon.c.orig	Sun Apr  5 11:48:09 2009
-+++ src/bubblemon.c	Sun Apr  5 11:49:57 2009
+$OpenBSD: patch-src_bubblemon_c,v 1.6 2009/10/15 11:50:28 ajacoutot Exp $
+--- src/bubblemon.c.orig	Mon Sep 14 21:48:46 2009
++++ src/bubblemon.c	Thu Oct 15 13:23:54 2009
 @@ -191,7 +191,7 @@ const char *bubblemon_getTooltip(bubblemon_t *bubblemo
      usage2string(swapstring,
  		 bubblemon->sysload.swapUsed,
  		 bubblemon->sysload.swapSize);
--    snprintf(loadstring, 90,
+-    snprintf(loadstring, 45,
 +    snprintf(loadstring, sizeof loadstring,
  	     _("\nSwap used: %s"),
  	     swapstring);
