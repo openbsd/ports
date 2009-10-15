@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_kit_kit-memory_c,v 1.1 2009/10/15 23:48:10 ajacoutot Exp $
+
+Quiet up useless spam.
+
+--- src/kit/kit-memory.c.orig	Fri Oct 16 01:39:22 2009
++++ src/kit/kit-memory.c	Fri Oct 16 01:39:53 2009
+@@ -364,8 +364,8 @@ kit_print_backtrace (void)
+         fflush (stderr);
+ 
+         free (syms);
+-#else
+-        fprintf (stderr, " Not built with -rdynamic so unable to print a backtrace\n");
++//#else
++//        fprintf (stderr, " Not built with -rdynamic so unable to print a backtrace\n");
+ #endif
+ }
+ 
