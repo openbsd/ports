@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.247 2009/10/15 11:50:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.248 2009/10/15 14:43:29 phessler Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -9,6 +9,7 @@
      SUBDIR += aalib
      SUBDIR += aalib,no_x11
      SUBDIR += agg
+     SUBDIR += allegropng
      SUBDIR += amide
      SUBDIR += animorph
      SUBDIR += aqsis
