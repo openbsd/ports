@@ -1,0 +1,65 @@
+$OpenBSD: patch-elisa_core_utils_misc_py,v 1.1 2009/10/15 15:44:41 landry Exp $
+We are not a 'distro', and we don't need to know which desktop our
+user runs. get_user_desktop_name() is only used to choose the
+gst audio sink, and autoaudiosink is the better choice.
+--- elisa/core/utils/misc.py.orig	Mon Oct 12 13:38:32 2009
++++ elisa/core/utils/misc.py	Mon Oct 12 13:39:30 2009
+@@ -203,11 +203,7 @@ def get_distro():
+     return distro
+ 
+ def get_os_name():
+-    distro = get_distro()
+-    if distro != "Unknown":
+-        return distro
+-    else:
+-        return platform.system().lower()
++    return platform.system().lower()
+ 
+ def linux_pidof(program_name):
+     """
+@@ -223,44 +219,7 @@ def linux_pidof(program_name):
+     return [int(pid) for pid in output.split()]
+ 
+ def get_user_desktop_name():
+-    """ Detect the Desktop environment used by the user. On windows
+-    this returns empty string. On other OSes we can currently detect
+-    gnome, kde and xfce.
+-
+-    @rtype: C{str}
+-    @returns: the desktop name used (either gnome, kde or xfce)
+-    """
+-    if platform.system() == 'Windows':
+-        desktop_name = ""
+-    else:
+-        # first try to get the DESKTOP_SESSION env var, which is set
+-        # by at least kdm and gdm
+-        desktop_name = os.getenv("DESKTOP_SESSION")
+-        if desktop_name in (None, 'default'):
+-            # if that fails, try some KDE env var
+-            if os.getenv('KDE_FULL_SESSION') is not None:
+-                desktop_name = 'kde'
+-            else:
+-                # or scan running processes
+-                # TODO: add more here
+-                progs = {'gnome-session': 'gnome',
+-                         # http://en.wikipedia.org/wiki/Gnome-panel
+-                         'gnome-panel': 'gnome',
+-                         'ksmserver': 'kde',
+-                         # http://docs.kde.org/stable/en/kdebase-runtime/userguide/the-kdeinit-mystery.html
+-                         'kdeinit': 'kde',
+-                         # http://www.xfce.org/documentation/4.2/manuals/xfce-mcs-manager
+-                         'xfce-mcs-manager': 'xfce',
+-                         # http://www.xfce.org/documentation/4.2/manuals/xfwm4
+-                         'xfwm4': 'xfce',
+-                         }
+-                for prog, name in progs.iteritems():
+-                    if linux_pidof(prog) != []:
+-                        desktop_name = name
+-                        break
+-            if desktop_name is None:
+-                desktop_name = ''
+-    return desktop_name
++    return "yourmom"
+ 
+ def pkg_resources_copy_dir(resource_spec, resource_dir, dest_dir):
+     """

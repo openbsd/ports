@@ -1,0 +1,12 @@
+Moovida (formerly known as Elisa) is an open source cross-platform media
+center solution designed to be simple for people not particularly
+familiar with computers. With Moovida you can enjoy:
+
+- Watch your pictures with previews and nicely animated slideshows.
+- Watch your movies and video clips as well as online ones.
+- Manage your music collection by artists or albums covers.
+- Moovida finds automatically medias on your network, from network
+  drives, Windows Mediaplayer, etc.
+- Detects automatically iPods, cameras, USB hard drives, etc.
+
+This package provides the core Moovida software.

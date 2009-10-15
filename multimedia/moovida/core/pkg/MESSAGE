@@ -1,0 +1,7 @@
+To have a good user experience with Moovida media center, install
+moovida-plugins-good, moovida-plugins-ugly and moovida-plugins-bad
+packages.
+Note that it heavily depends on GL effects, so you'll need harware
+acceleration for Moovida to work fine.
+If performance is poor, you can try setting vblank_mode=0 in
+environment before launching it.

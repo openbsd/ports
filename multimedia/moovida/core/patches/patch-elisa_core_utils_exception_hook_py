@@ -1,0 +1,27 @@
+$OpenBSD: patch-elisa_core_utils_exception_hook_py,v 1.1 2009/10/15 15:44:41 landry Exp $
+Instead of creating a new file for each traceback, let's append everything
+in the same garbage file..
+--- elisa/core/utils/exception_hook.py.orig	Wed Sep  9 16:15:26 2009
++++ elisa/core/utils/exception_hook.py	Wed Oct 14 16:46:04 2009
+@@ -91,17 +91,10 @@ def write_to_logfile(data, logdir = None):
+             return None
+ 
+     try:
+-        (fd, path) = tempfile.mkstemp(suffix='.txt', prefix="elisa_",
+-                                  dir=logdir)
+-    except OSError, e:
+-        print "Could not open tempfile in %r: %r", logdir, e
+-        traceback.print_exc()
+-        return None
+-
+-    try:
+-        file = os.fdopen(fd, 'w')
+-        file.write(data)
+-        file.close()
++        path='/tmp/elisa_errors.txt'
++        f = file(path, 'a')
++        f.write(data)
++        f.close()
+     except:
+         print "Tried to write a traceback to file %s but it failed:" % path
+         traceback.print_exc()
