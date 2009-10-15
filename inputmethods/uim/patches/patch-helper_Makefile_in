@@ -1,0 +1,17 @@
+$OpenBSD: patch-helper_Makefile_in,v 1.1 2009/10/15 20:46:40 ajacoutot Exp $
+--- helper/Makefile.in.orig	Sun Sep  7 10:59:50 2008
++++ helper/Makefile.in	Thu Oct 15 22:29:48 2009
+@@ -487,11 +487,12 @@ uim_pixmapsdir = @uim_pixmapsdir@
+ EXTRA_DIST = GNOME_UimApplet.server.in.in uim-dict-ui.xml.in
+ helper_defs = -DUIM_DATADIR=\""$(datadir)/@PACKAGE@"\"
+ @APPLET_GNOME_TRUE@uim_toolbar_applet_LDADD = @GTK2_LIBS@ @APPLET_GNOME_LIBS@ \
++@APPLET_GNOME_TRUE@			   `pkg-config --libs libgnomeui-2.0` \
+ @APPLET_GNOME_TRUE@			   $(top_builddir)/uim/libuim-scm.la \
+ @APPLET_GNOME_TRUE@			   $(top_builddir)/uim/libuim.la
+ 
+ @APPLET_GNOME_TRUE@uim_toolbar_applet_CPPFLAGS = $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
+-@APPLET_GNOME_TRUE@uim_toolbar_applet_CFLAGS = @GTK2_CFLAGS@ @APPLET_GNOME_CFLAGS@
++@APPLET_GNOME_TRUE@uim_toolbar_applet_CFLAGS = @GTK2_CFLAGS@ @APPLET_GNOME_CFLAGS@ `pkg-config --cflags libgnomeui-2.0`
+ # recent version of gcc has the option to suppress the warning
+ #uim_toolbar_applet_CFLAGS += -Wno-overlength-strings
+ @APPLET_GNOME_TRUE@uim_toolbar_applet_SOURCES = toolbar-applet-gnome.c toolbar-common-gtk.c
