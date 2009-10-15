@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_util_h,v 1.1.1.1 2009/10/15 14:39:50 phessler Exp $
+--- src/util.h.orig	Tue Jun  2 15:28:43 2009
++++ src/util.h	Tue Jun  2 15:29:15 2009
+@@ -21,6 +21,7 @@
+ #define _UTIL_H
+ 
+ #include <stdlib.h>
++#include <math.h>
+ #include "global.h"
+ #include "osspec.h"
+ 
