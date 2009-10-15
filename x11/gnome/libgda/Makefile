@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/10/14 23:30:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2009/10/15 00:27:18 ajacoutot Exp $
 
 #
 # XXX:
@@ -18,11 +18,11 @@ COMMENT-odbc=		ODBC backend for libgda
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		4.0.5
 
-PKGNAME-main=		${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
 #PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
-PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}
-PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
-PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
+PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}p0
+PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}p0
+PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}p0
 #PKGNAME-odbc=		libgda-odbc-${GNOME_VERSION}
 
 CATEGORIES=		databases
@@ -52,7 +52,8 @@ MODULES=		devel/gettext \
 
 SUBST_VARS=		GDA_MAJOR
 
-PSEUDO_FLAVORS=		no_ldap no_mdb no_mysql no_pgsql
+#PSEUDO_FLAVORS=	no_ldap no_mdb no_mysql no_odbc no_pgsql
+PSEUDO_FLAVORS=		no_mdb no_mysql no_pgsql
 FLAVOR?=
 
 MULTI_PACKAGES=		-main
@@ -84,16 +85,16 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4/" \
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
-.if ${FLAVOR:L:Mno_ldap}
+#.if ${FLAVOR:L:Mno_ldap}
 CONFIGURE_ARGS+=	--without-ldap
-.else
-MULTI_PACKAGES+=	-ldap
+#.else
+#MULTI_PACKAGES+=	-ldap
 #WANTLIB-ldap=		${WANTLIB} asn1 com_err crypto gssapi krb5 sasl2 ssl
 #LIB_DEPENDS-ldap=	${LIB_DEPENDS} \
 #			gda-3.0,gdasql-3.0::x11/gnome/libgda \
 #			lber.>=9,ldap::databases/openldap
-CONFIGURE_ARGS+=	--with-ldap="${LOCALBASE}"
-.endif
+#CONFIGURE_ARGS+=	--with-ldap="${LOCALBASE}"
+#.endif
 
 .if ${FLAVOR:L:Mno_mdb}
 CONFIGURE_ARGS+=	--without-mdb
@@ -101,7 +102,7 @@ CONFIGURE_ARGS+=	--without-mdb
 MULTI_PACKAGES+=	-mdb
 WANTLIB-mdb=		${WANTLIB} sqlite3
 LIB_DEPENDS-mdb=	${LIB_DEPENDS} \
-			gda-3.0,gdasql-3.0::x11/gnome/libgda \
+			gda-${GDA_MAJOR}::x11/gnome/libgda \
 			mdb.>=1::databases/mdbtools/snapshot
 CONFIGURE_ARGS+=	--with-mdb="${LOCALBASE}"
 .endif
@@ -112,7 +113,7 @@ CONFIGURE_ARGS+=	--without-mysql
 MULTI_PACKAGES+=	-mysql
 WANTLIB-mysql=		${WANTLIB} crypto sqlite3 ssl
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
-			gda-3.0,gdasql-3.0::x11/gnome/libgda \
+			gda-${GDA_MAJOR}::x11/gnome/libgda \
 			mysqlclient::databases/mysql
 CONFIGURE_ARGS+=	--with-mysql="${LOCALBASE}"
 .endif
@@ -123,21 +124,21 @@ CONFIGURE_ARGS+=	--without-postgresql
 MULTI_PACKAGES+=	-pgsql
 WANTLIB-pgsql=		${WANTLIB} sqlite3
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
-			gda-3.0,gdasql-3.0::x11/gnome/libgda \
+			gda-${GDA_MAJOR}::x11/gnome/libgda \
 			pq::databases/postgresql
 CONFIGURE_ARGS+=	--with-postgres="${LOCALBASE}"
 .endif
 
-.if ${FLAVOR:L:Mno_odbc}
+#.if ${FLAVOR:L:Mno_odbc}
 CONFIGURE_ARGS+=	--without-odbc
-.else
-MULTI_PACKAGES+=	-odbc
+#.else
+#MULTI_PACKAGES+=	-odbc
 #WANTLIB-odbc=
 #LIB_DEPENDS-odbc=	${LIB_DEPENDS} \
 #			iodbc::databases/iodbc \
 #			gda-3.0,gdasql-3.0::x11/gnome/libgda
-CONFIGURE_ARGS+=	--with-odbc="${LOCALBASE}"
-.endif
+#CONFIGURE_ARGS+=	--with-odbc="${LOCALBASE}"
+#.endif
 
 # abuses freetds API
 CONFIGURE_ARGS+=	--without-tds \
