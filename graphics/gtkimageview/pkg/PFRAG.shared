@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/10/15 11:50:20 sthen Exp $
+@lib lib/libgtkimageview.so.${LIBgtkimageview_VERSION}
