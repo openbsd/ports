@@ -1,0 +1,10 @@
+$OpenBSD: patch-setup_cfg,v 1.1.1.1 2009/10/15 22:19:04 phessler Exp $
+--- setup.cfg.orig	Thu Apr 16 02:11:41 2009
++++ setup.cfg	Thu Oct 15 23:33:52 2009
+@@ -27,4 +27,5 @@ group = Applications/Multimedia
+ requires=python,pygame,numeric,wxpython,timidity,freepats
+ 
+ [build_ext]
+-include_dirs = /usr/include/SDL
++sdl-location = ${LOCALBASE}
++include_dirs = ${LOCALBASE}/include/SDL

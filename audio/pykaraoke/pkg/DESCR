@@ -1,0 +1,15 @@
+PyKaraoke Features:
+
+  * CDG (MP3+G, OGG+G, WAV+G) playback - Play standard CDG karaoke files
+  * MIDI (.MID/.KAR) playback - Play MIDI format karaoke files
+  * MPEG playback - Play karaoke songs and movies in MPEG format
+  * Other formats - Play any other video formats by launching an 
+	external media player
+  * Playlist - Queue up songs, sit back and enjoy
+  * Searchable song database - Easily find your songs from the main screen
+  * Search inside ZIP files - Play MP3+G/MIDI files wrapped in ZIP files
+  * Cross-platform - Runs on Windows, Linux, BSD, OSX and GP2X
+  * Mini Frontend - Additional mini-frontend for low res displays and
+	 handhelds
+  * Export to MPEG - Convert CDG and KAR files to MPG files (command
+	line only)
