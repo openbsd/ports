@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.109 2009/10/15 11:26:08 steven Exp $
+# $OpenBSD: libtool,v 1.110 2009/10/15 13:46:23 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -318,6 +318,16 @@ sub parse_linkargs1
 			}
 			push(@$result, $a);
 			push(@$deplibs, $fulla) if ($libdir ne '');
+		} elsif ($a =~ m/(\S+\/)*(\S+)\.so(\.\d+){2}/) {
+			(my $key = $2) =~ s/^lib//;
+			my $d = main::abs_path(main::dirname($a));
+			$dirs->{$d} = 1;
+			if (!exists $libs->{$key}) {
+				$libs->{$key} = Library->new($key);
+			}
+			# not really normal argument
+			# -lfoo should be used instead, so convert it
+			push(@$result, "-l$key");
 		} else {
 			push(@$result, $a);
 		}
@@ -892,7 +902,11 @@ sub link
 		}
 		my $l = $libs->{$k};
 		# here we find shared or static libraries
-		$l->find($dirs, $self->{shared});
+		if (defined $l->{fullpath} && $l->{fullpath} =~ m/\.a$/) {
+			# static library was registered already, don't search
+		} else {
+			$l->find($dirs, $self->{shared});
+		}
 	}
 
 	my @libfiles = values %$libs;
