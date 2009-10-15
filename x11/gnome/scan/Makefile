@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/11 08:39:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2009/10/15 15:18:14 ajacoutot Exp $
+
+BROKEN=		dereferencing pointer (babl/gegl)
 
 SHARED_ONLY=	Yes
 

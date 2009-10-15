@@ -1,0 +1,44 @@
+$OpenBSD: patch-src_flegita-gimp-sink_c,v 1.1 2009/10/15 15:18:14 ajacoutot Exp $
+--- src/flegita-gimp-sink.c.orig	Thu Oct 15 16:56:50 2009
++++ src/flegita-gimp-sink.c	Thu Oct 15 16:57:01 2009
+@@ -46,7 +46,7 @@ struct _FlegitaGimpSinkPrivate
+ 	const GeglRectangle	*extent;
+ 	GeglRectangle	actual_extent;
+ 	gdouble			res;
+-	BablFormat		*format;
++	Babl		*format;
+ 	guint			image_type;
+ 	GimpPixelRgn	rgn;
+ 	gpointer		iter;
+@@ -136,7 +136,7 @@ static gint32
+ fgs_create_image(FlegitaGimpSink *sink)
+ {
+ 	FlegitaGimpSinkPrivate *priv = GET_PRIVATE (sink);
+-	BablFormat *format = NULL;
++	Babl *format = NULL;
+ 	guint image_type = 0;
+ 	guint image_base_type = 0;
+ 
+@@ -164,11 +164,11 @@ fgs_create_image(FlegitaGimpSink *sink)
+ 
+ /* Compute babl format and update layer type according to image type
+    (not incomming gegl buffer type) */
+-static BablFormat*
++static Babl*
+ fgs_compute_babl_format(FlegitaGimpSink *sink)
+ {
+ 	FlegitaGimpSinkPrivate *priv = GET_PRIVATE (sink);
+-	BablFormat *format = NULL;
++	Babl *format = NULL;
+ 	gchar*format_name = NULL;
+ 	gint i;
+ 	gint bps;
+@@ -196,7 +196,7 @@ fgs_compute_babl_format(FlegitaGimpSink *sink)
+ 
+ 	g_debug("Format is %s",	format_name);
+ 
+-	return (BablFormat*) babl_format (format_name);
++	return (Babl*) babl_format (format_name);
+ }
+ 
+ 
