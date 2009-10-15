@@ -1,0 +1,10 @@
+$OpenBSD: patch-splash_SplashErrorCodes_h,v 1.1 2009/10/15 20:43:40 kili Exp $
+--- splash/SplashErrorCodes.h.orig	Wed Sep  2 20:48:16 2009
++++ splash/SplashErrorCodes.h	Thu Oct 15 20:24:43 2009
+@@ -45,4 +45,6 @@
+ 
+ #define splashErrGeneric       255
+ 
++#define splashErrBadArg          9	// bad argument
++
+ #endif

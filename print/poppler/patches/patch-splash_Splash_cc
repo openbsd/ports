@@ -1,0 +1,31 @@
+$OpenBSD: patch-splash_Splash_cc,v 1.3 2009/10/15 20:43:40 kili Exp $
+--- splash/Splash.cc.orig	Wed Sep  2 20:48:16 2009
++++ splash/Splash.cc	Thu Oct 15 20:24:10 2009
+@@ -27,6 +27,7 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
++#include <limits.h>
+ #include "goo/gmem.h"
+ #include "SplashErrorCodes.h"
+ #include "SplashMath.h"
+@@ -2001,6 +2002,9 @@ SplashError Splash::fillImageMask(SplashImageMaskSourc
+   xq = w % scaledWidth;
+ 
+   // allocate pixel buffer
++  if (yp < 0 || yp > INT_MAX - 1) {
++    return splashErrBadArg;
++  }
+   pixBuf = (SplashColorPtr)gmallocn((yp + 1), w);
+ 
+   // initialize the pixel pipe
+@@ -2301,6 +2305,9 @@ SplashError Splash::drawImage(SplashImageSource src, v
+   xq = w % scaledWidth;
+ 
+   // allocate pixel buffers
++  if (yp < 0 || yp > INT_MAX - 1 || w > INT_MAX / nComps) {
++    return splashErrBadArg;
++  }
+   colorBuf = (SplashColorPtr)gmallocn3((yp + 1), w, nComps);
+   if (srcAlpha) {
+     alphaBuf = (Guchar *)gmallocn((yp + 1), w);

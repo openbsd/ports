@@ -1,0 +1,62 @@
+$OpenBSD: patch-splash_SplashBitmap_cc,v 1.1 2009/10/15 20:43:40 kili Exp $
+--- splash/SplashBitmap.cc.orig	Wed Sep  2 20:48:16 2009
++++ splash/SplashBitmap.cc	Thu Oct 15 20:29:09 2009
+@@ -28,6 +28,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <limits.h>
+ #include "goo/gmem.h"
+ #include "SplashErrorCodes.h"
+ #include "SplashBitmap.h"
+@@ -46,26 +47,44 @@ SplashBitmap::SplashBitmap(int widthA, int heightA, in
+   mode = modeA;
+   switch (mode) {
+   case splashModeMono1:
+-    rowSize = (width + 7) >> 3;
++    if (width > 0) {
++      rowSize = (width + 7) >> 3;
++    } else {
++      rowSize = -1;
++    }
+     break;
+   case splashModeMono8:
+-    rowSize = width;
++    if (width > 0) {
++      rowSize = width;
++    } else {
++      rowSize = -1;
++    }
+     break;
+   case splashModeRGB8:
+   case splashModeBGR8:
+-    rowSize = width * 3;
++    if (width > 0 && width <= INT_MAX / 3) {
++      rowSize = width * 3;
++    } else {
++      rowSize = -1;
++    }
+     break;
+   case splashModeXBGR8:
+     rowSize = width * 4;
+     break;
+ #if SPLASH_CMYK
+   case splashModeCMYK8:
+-    rowSize = width * 4;
++    if (width > 0 && width <= INT_MAX / 4) {
++      rowSize = width * 4;
++    } else {
++      rowSize = -1;
++    }
+     break;
+ #endif
+   }
+-  rowSize += rowPad - 1;
+-  rowSize -= rowSize % rowPad;
++  if (rowSize > 0) {
++    rowSize += rowPad - 1;
++    rowSize -= rowSize % rowPad;
++  }
+   data = (SplashColorPtr)gmallocn(rowSize, height);
+   if (!topDown) {
+     data += (height - 1) * rowSize;
