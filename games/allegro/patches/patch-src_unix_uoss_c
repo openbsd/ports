@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_unix_uoss_c,v 1.1.1.1 2009/10/15 14:38:06 phessler Exp $
+--- src/unix/uoss.c.orig	Sat Jun 16 03:52:28 2007
++++ src/unix/uoss.c	Thu Oct 15 13:12:43 2009
+@@ -193,7 +193,7 @@ static int open_oss_device(int input)
+ 
+    ustrzcpy(_oss_driver, sizeof(_oss_driver), get_config_string(uconvert_ascii("sound", tmp1),
+ 					                        uconvert_ascii("oss_driver", tmp2),
+-					                        uconvert_ascii("/dev/dsp", tmp3)));
++					                        uconvert_ascii("/dev/audio", tmp3)));
+ 
+    ustrzcpy(_oss_mixer_driver, sizeof(_oss_mixer_driver), get_config_string(uconvert_ascii("sound", tmp1),
+ 					                                    uconvert_ascii("oss_mixer_driver", tmp2),
+@@ -249,7 +249,7 @@ static int open_oss_device(int input)
+ 
+    bits = (_sound_bits == 8) ? 8 : 16;
+    stereo = (_sound_stereo) ? 1 : 0;
+-   freq = (_sound_freq > 0) ? _sound_freq : 45454;
++   freq = (_sound_freq > 0) ? _sound_freq : 48000;
+ 
+    /* fragment size is specified in samples, not in bytes */
+    fragsize = _oss_fragsize * (bits / 8) * (stereo ? 2 : 1);

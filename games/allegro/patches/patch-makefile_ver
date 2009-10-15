@@ -1,0 +1,14 @@
+$OpenBSD: patch-makefile_ver,v 1.1.1.1 2009/10/15 14:38:06 phessler Exp $
+--- makefile.ver.orig	Sun Jul 22 10:32:32 2007
++++ makefile.ver	Thu Oct 15 13:12:42 2009
+@@ -3,8 +3,8 @@
+ LIBRARY_VERSION = 42
+ 
+ # Shared library versions for Unix
+-shared_version = 4.2.3
+-shared_major_minor = 4.2
++shared_version ?= 4.2.3
++shared_major_minor ?= 4.2
+ 
+ # Compatibility version for Mac OS X
+ compatibility_version = 4.2.0

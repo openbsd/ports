@@ -1,0 +1,12 @@
+$OpenBSD: patch-misc_deplib_sh,v 1.1.1.1 2009/10/15 14:38:06 phessler Exp $
+--- misc/deplib.sh.orig	Sat May 17 14:58:09 2003
++++ misc/deplib.sh	Thu Oct 15 13:12:43 2009
+@@ -10,7 +10,7 @@ write_code() {
+     staticlib="lib${1}.a"
+     staticobj="\$(${2}_OBJECTS)"
+ 
+-    sharelib="lib${1}-\$(shared_version).so"
++    sharelib="lib${1}.so.\$(shared_major_minor)"
+     shareobj="\$(${2}_SHARED_OBJECTS)"
+ 
+     unsharelib="lib${1}_unsharable.a"

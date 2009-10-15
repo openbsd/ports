@@ -1,0 +1,12 @@
+$OpenBSD: patch-misc_allegro-config_in,v 1.1.1.1 2009/10/15 14:38:06 phessler Exp $
+--- misc/allegro-config.in.orig	Sun Jul 22 10:32:32 2007
++++ misc/allegro-config.in	Thu Oct 15 13:15:51 2009
+@@ -185,7 +185,7 @@ if test "$echo_libs" = "yes"; then
+    if test "$static_libs" = "yes"; then
+       echo $libdirs $allegro_ldflags -l${lib_type} $allegro_libs
+    else
+-      echo $libdirs $allegro_ldflags -l${lib_type}-${version} -l${lib_type}_unsharable
++      echo $libdirs $allegro_ldflags -l${lib_type} -l${lib_type}_unsharable
+    fi
+ fi
+ 

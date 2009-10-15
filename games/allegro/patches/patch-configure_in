@@ -1,0 +1,152 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2009/10/15 14:38:06 phessler Exp $
+--- configure.in.orig	Sun Jul 15 06:46:22 2007
++++ configure.in	Thu Oct 15 13:13:55 2009
+@@ -28,26 +28,26 @@ allegro_enable_asm=yes)
+ dnl Enable 8-bpp color depth (default).
+ AC_ARG_ENABLE(color8,
+ [  --enable-color8[=x]     enable support for 8-bpp modes [default=yes]],
+-test "X$enableval" != "Xno" && AC_DEFINE(ALLEGRO_COLOR8),
+-AC_DEFINE(ALLEGRO_COLOR8))
++test "X$enableval" != "Xno" && AC_DEFINE(ALLEGRO_COLOR8, 1, [enable support for 8-bpp modes]),
++AC_DEFINE(ALLEGRO_COLOR8, 1, [enable support for 8-bpp modes]))
+ 
+ dnl Enable 16-bpp color depth (default).
+ AC_ARG_ENABLE(color16,
+ [  --enable-color16[=x]    enable support for 16-bpp modes [default=yes]],
+-test "X$enableval" != "Xno" && AC_DEFINE(ALLEGRO_COLOR16),
+-AC_DEFINE(ALLEGRO_COLOR16))
++test "X$enableval" != "Xno" && AC_DEFINE(ALLEGRO_COLOR16, 1, [enable support for 16-bpp modes]),
++AC_DEFINE(ALLEGRO_COLOR16, 1, [enable support for 16-bpp modes]))
+ 
+ dnl Enable 24-bpp color depth (default).
+ AC_ARG_ENABLE(color24,
+ [  --enable-color24[=x]    enable support for 24-bpp modes [default=yes]],
+-test "X$enableval" != "Xno" && AC_DEFINE(ALLEGRO_COLOR24),
+-AC_DEFINE(ALLEGRO_COLOR24))
++test "X$enableval" != "Xno" && AC_DEFINE(ALLEGRO_COLOR24, 1, [enable support for 24-bpp modes]),
++AC_DEFINE(ALLEGRO_COLOR24, 1, [enable support for 24-bpp modes]))
+ 
+ dnl Enable 32-bpp color depth (default).
+ AC_ARG_ENABLE(color32,
+ [  --enable-color32[=x]    enable support for 32-bpp modes [default=yes]],
+-test "X$enableval" != "Xno" && AC_DEFINE(ALLEGRO_COLOR32),
+-AC_DEFINE(ALLEGRO_COLOR32))
++test "X$enableval" != "Xno" && AC_DEFINE(ALLEGRO_COLOR32, 1, [enable support for 32-bpp modes]),
++AC_DEFINE(ALLEGRO_COLOR32, 1, [enable support for 32-bpp modes]))
+ 
+ #-----------------------------------------------------------------------------#
+ 
+@@ -310,8 +310,8 @@ if test "X$allegro_build_static_programs" = "Xyes"; th
+   allegro_static_libraries=yes
+   _programs="statically linked $_programs"
+ else
+-  LIBALLEG="lib/unix/lib${LIB_TO_LINK}-\$(shared_version).so lib/unix/lib${LIB_TO_LINK}_unsharable.a"
+-  LINK_LIBALLEG="-Llib/unix -l${LIB_TO_LINK}-\$(shared_version) -l${LIB_TO_LINK}_unsharable -lm"
++  LIBALLEG="lib/unix/lib${LIB_TO_LINK}.so.\$(shared_major_minor) lib/unix/lib${LIB_TO_LINK}_unsharable.a"
++  LINK_LIBALLEG="-Llib/unix -l${LIB_TO_LINK} -l${LIB_TO_LINK}_unsharable -lm"
+   LINK_WITH_STATIC_LIBS=no
+   allegro_shared_libraries=yes
+   _programs="dynamically linked $_programs"
+@@ -350,15 +350,15 @@ if test "X$allegro_shared_libraries" = "Xyes"; then
+ 
+   _libraries="$_libraries shared"
+   if test "X$allegro_build_normal_library" = "Xyes"; then
+-    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballeg-\$(shared_version).so lib/unix/liballeg_unsharable.a"
++    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballeg.so.\$(shared_major_minor) lib/unix/liballeg_unsharable.a"
+     _libraries="$_libraries release"
+   fi
+   if test "X$allegro_build_debugging_library" = "Xyes"; then
+-    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballd-\$(shared_version).so lib/unix/liballd_unsharable.a"
++    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballd.so.\$(shared_major_minor) lib/unix/liballd_unsharable.a"
+     _libraries="$_libraries debug"
+   fi
+   if test "X$allegro_build_profiling_library" = "Xyes"; then
+-    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballp-\$(shared_version).so lib/unix/liballp_unsharable.a"
++    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballp.so.\$(shared_major_minor).so lib/unix/liballp_unsarable.a"
+     _libraries="$_libraries profile"
+   fi
+ fi
+@@ -591,13 +591,13 @@ case "$allegro_system" in
+     allegro_support_linux=yes
+ 
+     AC_CHECK_HEADER(sys/io.h,
+-      AC_DEFINE(ALLEGRO_HAVE_SYS_IO_H, 1))
++      AC_DEFINE(ALLEGRO_HAVE_SYS_IO_H, 1, [sys/io.h]))
+ 
+     AC_CHECK_HEADER(linux/joystick.h,
+-      AC_DEFINE(ALLEGRO_HAVE_LINUX_JOYSTICK_H, 1))
++      AC_DEFINE(ALLEGRO_HAVE_LINUX_JOYSTICK_H, 1, [linux/joystick.h]))
+ 
+     AC_CHECK_HEADER(linux/input.h,
+-      AC_DEFINE(ALLEGRO_HAVE_LINUX_INPUT_H, 1))
++      AC_DEFINE(ALLEGRO_HAVE_LINUX_INPUT_H, 1, [linux/input.h]))
+ 
+     if test "X$allegro_cv_processor_type" = "Xi386" -a "X$allegro_enable_vga" = "Xyes"; then
+       allegro_support_vga=yes
+@@ -752,13 +752,13 @@ AC_SUBST(AR)
+ #-----------------------------------------------------------------------------#
+ 
+ # Headers, features, functions and macros.
+-AC_CHECK_HEADER(dirent.h, AC_DEFINE(ALLEGRO_HAVE_DIRENT_H, 1))
+-AC_CHECK_HEADER(inttypes.h, AC_DEFINE(ALLEGRO_HAVE_INTTYPES_H, 1))
+-AC_CHECK_HEADER(stdint.h, AC_DEFINE(ALLEGRO_HAVE_STDINT_H, 1))
+-AC_CHECK_HEADER(sys/stat.h, AC_DEFINE(ALLEGRO_HAVE_SYS_STAT_H, 1))
+-AC_CHECK_HEADER(sys/time.h, AC_DEFINE(ALLEGRO_HAVE_SYS_TIME_H, 1))
+-AC_CHECK_HEADER(sys/time.h, AC_DEFINE(ALLEGRO_HAVE_SYS_TIME_H, 1))
+-AC_CHECK_HEADER(sys/utsname.h, AC_DEFINE(ALLEGRO_HAVE_SYS_UTSNAME_H, 1))
++AC_CHECK_HEADER(dirent.h, AC_DEFINE(ALLEGRO_HAVE_DIRENT_H, 1, [dirent.h]))
++AC_CHECK_HEADER(inttypes.h, AC_DEFINE(ALLEGRO_HAVE_INTTYPES_H, 1, [inttypes.h]))
++AC_CHECK_HEADER(stdint.h, AC_DEFINE(ALLEGRO_HAVE_STDINT_H, 1, [stdint.h]))
++AC_CHECK_HEADER(sys/stat.h, AC_DEFINE(ALLEGRO_HAVE_SYS_STAT_H, 1, [sys/stat.h]))
++AC_CHECK_HEADER(sys/time.h, AC_DEFINE(ALLEGRO_HAVE_SYS_TIME_H, 1, [sys/time.h]))
++AC_CHECK_HEADER(sys/time.h, AC_DEFINE(ALLEGRO_HAVE_SYS_TIME_H, 1, [sys/time.h]))
++AC_CHECK_HEADER(sys/utsname.h, AC_DEFINE(ALLEGRO_HAVE_SYS_UTSNAME_H, 1, [sys/utsname.h]))
+ 
+ # If the C compiler does not fully support the `const' keyword,
+ # define `const' to be empty.
+@@ -778,14 +778,14 @@ AC_TYPE_SIZE_T
+ # otherwise, define it to be `int'.
+ AC_TYPE_SIGNAL
+ 
+-AC_CHECK_FUNC(mmap, AC_DEFINE(ALLEGRO_HAVE_MMAP, 1))
+-AC_CHECK_FUNC(mprotect, AC_DEFINE(ALLEGRO_HAVE_MPROTECT, 1))
+-AC_CHECK_FUNC(memcmp, AC_DEFINE(ALLEGRO_HAVE_MEMCMP, 1))
+-AC_CHECK_FUNC(mkstemp, AC_DEFINE(ALLEGRO_HAVE_MKSTEMP, 1))
+-AC_CHECK_FUNC(stricmp, AC_DEFINE(ALLEGRO_HAVE_STRICMP, 1))
+-AC_CHECK_FUNC(strlwr, AC_DEFINE(ALLEGRO_HAVE_STRLWR, 1))
+-AC_CHECK_FUNC(strupr, AC_DEFINE(ALLEGRO_HAVE_STRUPR, 1))
+-AC_CHECK_FUNC(sysconf, AC_DEFINE(ALLEGRO_HAVE_SYSCONF, 1))
++AC_CHECK_FUNC(mmap, AC_DEFINE(ALLEGRO_HAVE_MMAP, 1, [mmap]))
++AC_CHECK_FUNC(mprotect, AC_DEFINE(ALLEGRO_HAVE_MPROTECT, 1, [mprotect]))
++AC_CHECK_FUNC(memcmp, AC_DEFINE(ALLEGRO_HAVE_MEMCMP, 1, [memcmp]))
++AC_CHECK_FUNC(mkstemp, AC_DEFINE(ALLEGRO_HAVE_MKSTEMP, 1, [mkstemp]))
++AC_CHECK_FUNC(stricmp, AC_DEFINE(ALLEGRO_HAVE_STRICMP, 1, [stricmp]))
++AC_CHECK_FUNC(strlwr, AC_DEFINE(ALLEGRO_HAVE_STRLWR, 1, [strlwr]))
++AC_CHECK_FUNC(strupr, AC_DEFINE(ALLEGRO_HAVE_STRUPR, 1, [strupr]))
++AC_CHECK_FUNC(sysconf, AC_DEFINE(ALLEGRO_HAVE_SYSCONF, 1, [sysconf]))
+ 
+ #-----------------------------------------------------------------------------#
+ 
+@@ -822,6 +822,7 @@ if test -n "$GCC"; then
+   else
+     TARGET_ARCH=
+   fi
++  TARGET_ARCH=
+   dnl Allow to specify additional flags.
+   CFLAGS="$CFLAGS $XCFLAGS"
+   WFLAGS="$WFLAGS $WCFLAGS"
+@@ -833,11 +834,11 @@ if test -n "$GCC"; then
+   if test "X$allegro_debug_with_dmalloc" = "Xyes"; then
+      ALLEGRO_DEBUG_CFLAGS="$ALLEGRO_DEBUG_CFLAGS -DDMALLOC"
+   fi
+-  ALLEGRO_PROFILE_CFLAGS="$CFLAGS -pg $TARGET_ARCH -O2 -funroll-loops -ffast-math $WFLAGS"
++  ALLEGRO_PROFILE_CFLAGS="$CFLAGS -pg $TARGET_ARCH $WFLAGS"
+   if test "X$allegro_cv_support_fomit_frame_pointer" = "Xyes"; then
+-    CFLAGS="$CFLAGS $TARGET_ARCH -O2 -funroll-loops -ffast-math -fomit-frame-pointer $WFLAGS"
++    CFLAGS="$CFLAGS $TARGET_ARCH $WFLAGS"
+   else
+-    CFLAGS="$CFLAGS $TARGET_ARCH -O2 -funroll-loops -ffast-math $WFLAGS"
++    CFLAGS="$CFLAGS $TARGET_ARCH $WFLAGS"
+   fi
+   ALLEGRO_SFLAGS="-x assembler-with-cpp"
+   ALLEGRO_SHAREDLIB_CFLAGS="-fPIC -DALLEGRO_SHARED"

@@ -1,0 +1,38 @@
+$OpenBSD: patch-makefile_in,v 1.1.1.1 2009/10/15 14:38:06 phessler Exp $
+--- makefile.in.orig	Wed Sep 19 15:19:25 2007
++++ makefile.in	Thu Oct 15 13:12:42 2009
+@@ -472,9 +472,9 @@ install-lib: lib modules
+ 	  fi; \
+ 	done
+ 	@for l in alleg alld allp; do \
+-	  if test -f $(LIBDIR)/lib$${l}-$(shared_version).so; then \
+-	    echo Installing $(LIBDIR)/lib$${l}-$(shared_version).so to $(DESTDIR)$(libdir); \
+-	    $(INSTALL_PROGRAM) $(LIBDIR)/lib$${l}-$(shared_version).so $(DESTDIR)$(libdir)/; \
++	  if test -f $(LIBDIR)/lib$${l}.so.$(shared_major_minor); then \
++	    echo Installing $(LIBDIR)/lib$${l}.so.$(shared_major_minor) to $(DESTDIR)$(libdir); \
++	    $(INSTALL_PROGRAM) $(LIBDIR)/lib$${l}.so.$(shared_major_minor) $(DESTDIR)$(libdir)/; \
+ 	    $(INSTALL_DATA) $(LIBDIR)/lib$${l}_unsharable.a $(DESTDIR)$(libdir)/; \
+ 	  fi; \
+ 	done
+@@ -489,21 +489,6 @@ install-lib: lib modules
+ 	$(mkinstalldirs) $(DESTDIR)$(bindir)
+ 	@echo Installing allegro-config to $(DESTDIR)$(bindir)
+ 	@$(INSTALL_PROGRAM) allegro-config $(DESTDIR)$(bindir)
+-	@if test -n "$(LIBDIR)/liball*-$(shared_version).so"; then \
+-		(cat /etc/ld.so.conf | grep $(libdir) >/dev/null || \
+-		 test $(libdir) = /lib || test $(libdir) = /usr/lib) \
+-		&& ($(LDCONFIG) $(libdir) || true) || (\
+-			echo "" ; \
+-			echo "Warning: shared library destination $(libdir) is not in ldd search path." ; \
+-			echo "Unless you add it to /etc/ld.so.conf, you must set LD_LIBRARY_PATH to include"; \
+-			echo "$(libdir) each time you want to run an Allegro program." ; \
+-		) ; \
+-	fi
+-	@for l in alleg alld allp; do \
+-	  if test -f $(DESTDIR)$(libdir)/lib$${l}-$(shared_version).so -a \! -h $(DESTDIR)$(libdir)/lib$${l}.so.${shared_major_minor}; then \
+-	    (cd $(DESTDIR)$(libdir); ln -s lib$${l}-$(shared_version).so lib$${l}.so.${shared_major_minor}); \
+-	  fi; \
+-	done
+ 	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/aclocal
+ 	@echo Installing allegro.m4 to $(DESTDIR)$(prefix)/share/aclocal
+ 	@$(INSTALL_DATA) misc/allegro.m4 $(DESTDIR)$(prefix)/share/aclocal
