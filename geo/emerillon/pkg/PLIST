@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/15 11:27:46 landry Exp $
+@bin bin/emerillon
+include/emerillon-0.1/
+include/emerillon-0.1/emerillon/
+include/emerillon-0.1/emerillon/emerillon.h
+include/emerillon-0.1/emerillon/sidebar.h
+include/emerillon-0.1/emerillon/window.h
+lib/emerillon/
+lib/emerillon/plugins/
+lib/emerillon/plugins/copy-link.emerillon-plugin
+lib/emerillon/plugins/map-position.emerillon-plugin
+lib/emerillon/plugins/placemarks.emerillon-plugin
+lib/emerillon/plugins/search.emerillon-plugin
+@comment lib/emerillon/plugins/libcopy-link.a
+@comment lib/emerillon/plugins/libcopy-link.la
+lib/emerillon/plugins/libcopy-link.so
+@comment lib/emerillon/plugins/libmap-position.a
+@comment lib/emerillon/plugins/libmap-position.la
+lib/emerillon/plugins/libmap-position.so
+@comment lib/emerillon/plugins/libplacemarks.a
+@comment lib/emerillon/plugins/libplacemarks.la
+lib/emerillon/plugins/libplacemarks.so
+@comment lib/emerillon/plugins/libsearch.a
+@comment lib/emerillon/plugins/libsearch.la
+lib/emerillon/plugins/libsearch.so
+share/locale/ar/LC_MESSAGES/emerillon.mo
+share/locale/fr/LC_MESSAGES/emerillon.mo
+share/locale/id/LC_MESSAGES/emerillon.mo
+share/locale/sl/LC_MESSAGES/emerillon.mo
+share/locale/sv/LC_MESSAGES/emerillon.mo
+lib/pkgconfig/emerillon.pc
+share/applications/emerillon.desktop
+share/emerillon/
+share/emerillon/emerillon-ui.xml
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/emerillon.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/15 11:27:46 landry Exp $
