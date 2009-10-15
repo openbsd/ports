@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/15 22:39:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/10/15 23:30:15 ajacoutot Exp $
 
 # XXX
 BROKEN=		WIP: does not work yet
@@ -6,7 +6,7 @@ BROKEN=		WIP: does not work yet
 COMMENT=	authorization framework
 
 DISTNAME=	PolicyKit-0.9
-PKGNAME=	${DISTNAME:L}p3
+PKGNAME=	${DISTNAME:L}p4
 
 CATEGORIES=	sysutils security
 

@@ -3,6 +3,7 @@ if [ -x "${PREFIX}/bin/polkit-auth ]; then
 	install -d -m 0770 -g _polkituser /var/run/PolicyKit
 fi
 
-While not mandatory, it is advised to use procfs with PolicyKit. Just
-`mkdir /proc' and add the following lines to your fstab(5):
+PolicyKit needs access to the process namespace using procfs. To do so,
+it needs a process file system. Just `mkdir /proc' and add the following
+lines to your fstab(5):
 /proc /proc procfs ro 0 0

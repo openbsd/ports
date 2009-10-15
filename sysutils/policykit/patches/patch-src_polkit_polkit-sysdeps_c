@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_polkit_polkit-sysdeps_c,v 1.1 2009/10/15 21:51:54 ajacoutot Exp $
+$OpenBSD: patch-src_polkit_polkit-sysdeps_c,v 1.2 2009/10/15 23:30:15 ajacoutot Exp $
 --- src/polkit/polkit-sysdeps.c.orig	Fri May 30 23:24:44 2008
 +++ src/polkit/polkit-sysdeps.c	Thu Oct 15 23:22:26 2009
 @@ -106,7 +106,7 @@ polkit_sysdeps_get_start_time_for_pid (pid_t pid)
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_polkit_polkit-sysdeps_c,v 1.1 2009/10/15 21:51:54 ajacoutot 
          start_time = (unsigned long long) (info.pr_start.tv_sec);
  #else
 -#ifdef __FreeBSD__
-+#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
  	filename = kit_strdup_printf ("/proc/%d/status", pid);
  #else
          filename = kit_strdup_printf ("/proc/%d/stat", pid);
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_polkit_polkit-sysdeps_c,v 1.1 2009/10/15 21:51:54 ajacoutot 
          }
  
 -#ifdef __FreeBSD__
-+#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
          tokens = kit_strsplit (contents, ' ', &num_tokens);
          if (tokens == NULL)
                  goto out;
