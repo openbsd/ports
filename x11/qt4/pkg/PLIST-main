@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2009/10/11 09:43:08 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2009/10/15 14:30:07 espie Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 %%SHARED%%
@@ -2419,6 +2419,7 @@ lib/qt4/bin/moc4
 @bin lib/qt4/bin/qdbuscpp2xml
 @bin lib/qt4/bin/qdbusviewer
 @bin lib/qt4/bin/qdbusxml2cpp
+@bin lib/qt4/bin/qdoc3
 @bin lib/qt4/bin/qhelpconverter
 @bin lib/qt4/bin/qhelpgenerator
 @bin lib/qt4/bin/qmake

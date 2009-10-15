@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2009/10/13 10:39:41 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2009/10/15 14:30:07 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -17,7 +17,7 @@ PKGNAME-examples =	qt4-examples-${PKGVERSION}
 PKGNAME-sqlite2 =	qt4-sqlite2-${PKGVERSION}
 PKGNAME-sqlite =	qt4-sqlite-${PKGVERSION}
 PKGNAME-tds =		qt4-tds-${PKGVERSION}
-PKGNAME-main =		qt4-${PKGVERSION}
+PKGNAME-main =		qt4-${VERSION}p0
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
@@ -271,6 +271,7 @@ post-install:
 	# programs
 	${INSTALL_PROGRAM_DIR} ${QT_BINDIR} 
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/{findtr,syncqt} ${QT_BINDIR}
+	${INSTALL_PROGRAM} ${WRKBUILD}/tools/qdoc3/qdoc3 ${QT_BINDIR}
 .for p in ${PROGRAMS4} 
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p4
 .endfor
