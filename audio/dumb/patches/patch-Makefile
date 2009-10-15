@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/10/15 14:35:29 phessler Exp $
+--- Makefile.orig	Sun Aug  7 18:18:41 2005
++++ Makefile	Tue Jun  2 14:17:21 2009
+@@ -41,10 +41,10 @@ else
+ ifdef USE_SGICC
+ CC := cc
+ else
+-CC := gcc
++CC ?= gcc
+ endif
+ endif
+-AR := ar
++AR ?= ar
+ 
+ 
+ # Configuration.
+@@ -231,8 +231,8 @@ DBGFLAGS := -DDEBUGMODE=1 -g3
+ endif
+ endif
+ 
+-CFLAGS_RELEASE := -Iinclude $(WFLAGS) $(OFLAGS)
+-CFLAGS_DEBUG := -Iinclude $(WFLAGS) $(DBGFLAGS)
++CFLAGS_RELEASE := -Iinclude ${CFLAGS} $(WFLAGS) $(OFLAGS)
++CFLAGS_DEBUG := -Iinclude ${CFLAGS} $(WFLAGS) $(DBGFLAGS)
+ 
+ LDFLAGS := -s
+ 

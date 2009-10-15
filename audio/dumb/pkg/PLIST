@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/15 14:35:29 phessler Exp $
+@bin bin/dumb2wav
+@bin bin/dumbout
+@bin bin/dumbplay
+include/aldumb.h
+include/dumb.h
+lib/libaldmb.a
+lib/libaldmd.a
+lib/libdumb.a
+lib/libdumbd.a

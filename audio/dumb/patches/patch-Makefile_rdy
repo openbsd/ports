@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_rdy,v 1.1.1.1 2009/10/15 14:35:29 phessler Exp $
+--- Makefile.rdy.orig	Sun Aug  7 18:18:39 2005
++++ Makefile.rdy	Tue Jun  2 14:07:18 2009
+@@ -231,8 +231,8 @@ DBGFLAGS := -DDEBUGMODE=1 -g3
+ endif
+ endif
+ 
+-CFLAGS_RELEASE := -Iinclude $(WFLAGS) $(OFLAGS)
+-CFLAGS_DEBUG := -Iinclude $(WFLAGS) $(DBGFLAGS)
++CFLAGS_RELEASE := -Iinclude -I/usr/local/include $(WFLAGS) $(OFLAGS)
++CFLAGS_DEBUG := -Iinclude -I${LOCALBASE}/include $(WFLAGS) $(DBGFLAGS)
+ 
+ LDFLAGS := -s
+ 
