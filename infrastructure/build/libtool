@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.106 2009/10/14 22:03:16 steven Exp $
+# $OpenBSD: libtool,v 1.107 2009/10/15 09:39:45 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1668,18 +1668,6 @@ sub get_search_dirs
 		die "Can't find ldconfig\n";
         }
 	return @libsearchdirs;
-}
-
-sub extract_archive
-{
-	my $dir = shift;
-	my $archive = shift;
-
-	if (! -d $dir) {
-		Trace::debug {"mkdir -p $dir\n"};
-		File::Path::mkpath($dir);
-	}
-	Exec->chdir($dir)->command('ar', 'x', $archive);
 }
 
 sub get_objlist_from_archive
