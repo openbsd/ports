@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_polkit_Makefile_in,v 1.1 2009/10/15 21:51:54 ajacoutot Exp $
+--- src/polkit/Makefile.in.orig	Thu Oct 15 22:41:24 2009
++++ src/polkit/Makefile.in	Thu Oct 15 22:42:07 2009
+@@ -807,19 +807,6 @@ clean-local :
+ # that location)
+ #
+ @POLKIT_AUTHDB_DEFAULT_TRUE@install-data-local:
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	mkdir -p $(DESTDIR)$(localstatedir)/lib/misc
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	touch $(DESTDIR)$(localstatedir)/lib/misc/PolicyKit.reload
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	-chown $(POLKIT_USER):$(POLKIT_GROUP) $(DESTDIR)$(localstatedir)/lib/misc/PolicyKit.reload
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	-chmod 664 $(DESTDIR)$(localstatedir)/lib/misc/PolicyKit.reload
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	mkdir -p $(DESTDIR)$(localstatedir)/lib/PolicyKit-public
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	mkdir -p $(DESTDIR)$(localstatedir)/lib/PolicyKit
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	mkdir -p $(DESTDIR)$(localstatedir)/run/PolicyKit
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	-chown $(POLKIT_USER) $(DESTDIR)$(localstatedir)/lib/PolicyKit-public
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	-chgrp $(POLKIT_GROUP) $(DESTDIR)$(localstatedir)/lib/PolicyKit
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	-chgrp $(POLKIT_GROUP) $(DESTDIR)$(localstatedir)/run/PolicyKit
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	-chmod 755 $(DESTDIR)$(localstatedir)/lib/PolicyKit-public
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	-chmod 770 $(DESTDIR)$(localstatedir)/lib/PolicyKit
+-@POLKIT_AUTHDB_DEFAULT_TRUE@	-chmod 770 $(DESTDIR)$(localstatedir)/run/PolicyKit
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/10/10 15:09:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/10/15 21:51:55 ajacoutot Exp $
 @newgroup _polkituser:639
 @newuser _polkituser:639:_polkituser::PolicyKit User:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -42,25 +42,27 @@ lib/pkgconfig/polkit-dbus.pc
 lib/pkgconfig/polkit-grant.pc
 lib/pkgconfig/polkit.pc
 @mode 2755
+@owner root
 @group _polkituser
 @bin libexec/polkit-explicit-grant-helper
 @bin libexec/polkit-grant-helper
 @mode 4750
-@group
 @bin libexec/polkit-grant-helper-bsdauth
 @mode 2755
-@group _polkituser
 @bin libexec/polkit-read-auth-helper
 @mode 4755
+@group wheel
 @bin libexec/polkit-resolve-exe-helper
 @mode 2755
+@group _polkituser
 @bin libexec/polkit-revoke-helper
 @mode 4755
 @owner _polkituser
-@group
+@group wheel
 @bin libexec/polkit-set-default-helper
 @mode
 @owner
+@group
 @bin libexec/polkitd
 @man man/man1/polkit-action.1
 @man man/man1/polkit-auth.1
@@ -89,73 +91,22 @@ share/examples/policykit/dbus-1/system.d/
 share/examples/policykit/dbus-1/system.d/org.freedesktop.PolicyKit.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.PolicyKit.conf
 share/examples/policykit/profile.d/
+@sample ${SYSCONFDIR}/profile.d/
 share/examples/policykit/profile.d/polkit-bash-completion.sh
+@sample ${SYSCONFDIR}/profile.d/polkit-bash-completion.sh
 @sample /var/lib/
+@mode 0770
+@group _polkituser
+@sample /var/lib/PolicyKit/
+@mode
 @owner _polkituser
+@group
 @sample /var/lib/PolicyKit-public/
 @owner
-share/gtk-doc/
-share/gtk-doc/html/
-share/gtk-doc/html/polkit/
-share/gtk-doc/html/polkit/PolicyKit.8.html
-share/gtk-doc/html/polkit/PolicyKit.conf.5.html
-share/gtk-doc/html/polkit/beyond-defaults.html
-share/gtk-doc/html/polkit/diagram-bus-model.png
-share/gtk-doc/html/polkit/diagram-interaction.png
-share/gtk-doc/html/polkit/home.png
-share/gtk-doc/html/polkit/index.html
-share/gtk-doc/html/polkit/index.sgml
-share/gtk-doc/html/polkit/intro-define-problem.html
-share/gtk-doc/html/polkit/introduction.html
-share/gtk-doc/html/polkit/ix01.html
-share/gtk-doc/html/polkit/ix02.html
-share/gtk-doc/html/polkit/ix03.html
-share/gtk-doc/html/polkit/ix04.html
-share/gtk-doc/html/polkit/left.png
-share/gtk-doc/html/polkit/license.html
-share/gtk-doc/html/polkit/model-authentication-agent.html
-share/gtk-doc/html/polkit/model-concepts.html
-share/gtk-doc/html/polkit/model-theory-of-operation.html
-share/gtk-doc/html/polkit/model.html
-share/gtk-doc/html/polkit/polkit-action.1.html
-share/gtk-doc/html/polkit/polkit-auth.1.html
-share/gtk-doc/html/polkit/polkit-conf.html
-share/gtk-doc/html/polkit/polkit-config-file-validate.1.html
-share/gtk-doc/html/polkit/polkit-policy-file-validate.1.html
-share/gtk-doc/html/polkit/polkit-polkit-action.html
-share/gtk-doc/html/polkit/polkit-polkit-authorization-constraint.html
-share/gtk-doc/html/polkit/polkit-polkit-authorization-db.html
-share/gtk-doc/html/polkit/polkit-polkit-authorization.html
-share/gtk-doc/html/polkit/polkit-polkit-caller.html
-share/gtk-doc/html/polkit/polkit-polkit-config.html
-share/gtk-doc/html/polkit/polkit-polkit-context.html
-share/gtk-doc/html/polkit/polkit-polkit-dbus.html
-share/gtk-doc/html/polkit/polkit-polkit-error.html
-share/gtk-doc/html/polkit/polkit-polkit-grant.html
-share/gtk-doc/html/polkit/polkit-polkit-policy-cache.html
-share/gtk-doc/html/polkit/polkit-polkit-policy-default.html
-share/gtk-doc/html/polkit/polkit-polkit-policy-file-entry.html
-share/gtk-doc/html/polkit/polkit-polkit-policy-file.html
-share/gtk-doc/html/polkit/polkit-polkit-result.html
-share/gtk-doc/html/polkit/polkit-polkit-seat.html
-share/gtk-doc/html/polkit/polkit-polkit-session.html
-share/gtk-doc/html/polkit/polkit-polkit-simple.html
-share/gtk-doc/html/polkit/polkit-polkit-sysdeps.html
-share/gtk-doc/html/polkit/polkit-polkit-types.html
-share/gtk-doc/html/polkit/polkit-spec-history.html
-share/gtk-doc/html/polkit/polkit.devhelp
-share/gtk-doc/html/polkit/polkit.devhelp2
-share/gtk-doc/html/polkit/ref-core.html
-share/gtk-doc/html/polkit/ref-design.html
-share/gtk-doc/html/polkit/right.png
-share/gtk-doc/html/polkit/style.css
-share/gtk-doc/html/polkit/tools-fileformats.html
-share/gtk-doc/html/polkit/up.png
-var/
-var/lib/
-var/lib/PolicyKit/
-var/lib/PolicyKit-public/
-var/lib/misc/
-var/lib/misc/PolicyKit.reload
-var/run/
-var/run/PolicyKit/
+@sample /var/lib/misc/
+@mode 0664
+@owner _polkituser
+@group _polkituser
+@sample /var/lib/misc/PolicyKit.reload
+@unexec-delete rm -rf /var/lib/PolicyKit
+@unexec-delete rm -rf /var/lib/misc

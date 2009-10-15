@@ -1,5 +1,8 @@
-XXX
-
+For proper PolicyKit usage, add the following lines to rc.local(8):
 if [ -x "${PREFIX}/bin/polkit-auth ]; then
-	install -d -m 0770 -o _polkituser /var/run/PolicyKit
+	install -d -m 0770 -g _polkituser /var/run/PolicyKit
 fi
+
+While not mandatory, it is advised to use procfs with PolicyKit. Just
+`mkdir /proc' and add the following lines to your fstab(5):
+/proc /proc procfs ro 0 0
