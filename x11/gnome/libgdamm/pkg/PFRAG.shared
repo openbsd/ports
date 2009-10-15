@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/06/05 22:15:35 jasper Exp $
-@lib lib/libgdamm-${GDA_MAJOR}.so.${LIBgdamm-3.0_VERSION}

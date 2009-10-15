@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/05 22:15:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/15 00:25:22 jasper Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		C++ interface to libgda
 
 GNOME_PROJECT=		libgdamm
-GNOME_VERSION=		3.0.1
-SHARED_LIBS +=  gdamm-3.0            0.0      # .10.0
+GNOME_VERSION=		3.99.16
+SHARED_LIBS +=  gdamm-4.0            0.0      # .11.0
 CATEGORIES+=		databases
 
-GDA_MAJOR=		3.0
+GDA_MAJOR=		4.0
 
 HOMEPAGE=		http://www.gtkmm.org/
 
@@ -20,13 +22,16 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/gettext \
 			x11/gnome
 
-WANTLIB += fam glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m
-WANTLIB += pcre rpcsvc sigc-2.0 stdc++ xml2 z
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += m pcre sigc-2.0 sqlite3 xml2 z
 
-BUILD_DEPENDS=		::devel/m4
+TAR=			${LOCALBASE}/bin/gtar
+
+BUILD_DEPENDS=		::archivers/gtar \
+			::devel/m4
 
 LIB_DEPENDS=		glibmm-2.4::devel/glib2mm \
-			gda-3.0,gdasql-3.0,gda-report-3.0::x11/gnome/libgda
+			gda-4.0::x11/gnome/libgda
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
