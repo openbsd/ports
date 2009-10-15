@@ -1,0 +1,12 @@
+$OpenBSD: patch-kpdf_xpdf_xpdf_PSOutputDev_cc,v 1.1 2009/10/15 15:50:25 kili Exp $
+--- kpdf/xpdf/xpdf/PSOutputDev.cc.orig	Mon Oct  8 11:48:37 2007
++++ kpdf/xpdf/xpdf/PSOutputDev.cc	Thu Oct 15 16:35:46 2009
+@@ -4386,7 +4386,7 @@ void PSOutputDev::doImageL1Sep(GfxImageColorMap *color
+ 	     width, -height, height);
+ 
+   // allocate a line buffer
+-  lineBuf = (Guchar *)gmalloc(4 * width);
++  lineBuf = (Guchar *)gmallocn(width, 4);
+ 
+   // set up to process the data stream
+   imgStr = new ImageStream(str, width, colorMap->getNumPixelComps(),

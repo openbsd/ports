@@ -1,0 +1,38 @@
+$OpenBSD: patch-kpdf_xpdf_splash_Splash_cc,v 1.1 2009/10/15 15:50:25 kili Exp $
+--- kpdf/xpdf/splash/Splash.cc.orig	Tue Aug 19 20:12:37 2008
++++ kpdf/xpdf/splash/Splash.cc	Thu Oct 15 16:35:46 2009
+@@ -12,6 +12,7 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
++#include <limits.h>
+ #include "gmem.h"
+ #include "SplashErrorCodes.h"
+ #include "SplashMath.h"
+@@ -1937,7 +1938,10 @@ SplashError Splash::fillImageMask(SplashImageMaskSourc
+   xq = w % scaledWidth;
+ 
+   // allocate pixel buffer
+-  pixBuf = (SplashColorPtr)gmalloc((yp + 1) * w);
++  if (yp < 0 || yp > INT_MAX - 1) {
++    return splashErrBadArg;
++  }
++  pixBuf = (SplashColorPtr)gmallocn(yp + 1, w);
+ 
+   // initialize the pixel pipe
+   pipeInit(&pipe, 0, 0, state->fillPattern, NULL, state->fillAlpha,
+@@ -2233,9 +2237,12 @@ SplashError Splash::drawImage(SplashImageSource src, v
+   xq = w % scaledWidth;
+ 
+   // allocate pixel buffers
+-  colorBuf = (SplashColorPtr)gmalloc((yp + 1) * w * nComps);
++  if (yp < 0 || yp > INT_MAX - 1 || w > INT_MAX / nComps) {
++    return splashErrBadArg;
++  }
++  colorBuf = (SplashColorPtr)gmallocn(yp + 1, w * nComps);
+   if (srcAlpha) {
+-    alphaBuf = (Guchar *)gmalloc((yp + 1) * w);
++    alphaBuf = (Guchar *)gmallocn(yp + 1, w);
+   } else {
+     alphaBuf = NULL;
+   }

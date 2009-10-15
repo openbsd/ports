@@ -1,0 +1,14 @@
+$OpenBSD: patch-kpdf_xpdf_xpdf_Stream_cc,v 1.2 2009/10/15 15:50:25 kili Exp $
+--- kpdf/xpdf/xpdf/Stream.cc.orig	Wed Feb 13 10:37:05 2008
++++ kpdf/xpdf/xpdf/Stream.cc	Thu Oct 15 16:35:46 2009
+@@ -323,6 +323,10 @@ ImageStream::ImageStream(Stream *strA, int widthA, int
+   } else {
+     imgLineSize = nVals;
+   }
++  if (width > INT_MAX / nComps) {
++    // force a call to gmallocn(-1,...), which will throw an exception
++    imgLineSize = -1;
++  }
+   imgLine = (Guchar *)gmallocn(imgLineSize, sizeof(Guchar));
+   imgIdx = nVals;
+ }
