@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.232 2009/10/11 14:21:00 landry Exp $
+# $OpenBSD: Makefile,v 1.233 2009/10/15 08:52:31 landry Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -147,6 +147,7 @@
      SUBDIR += py-mutagen
      SUBDIR += py-ogg
      SUBDIR += py-tagger
+     SUBDIR += py-tagpy
      SUBDIR += py-xmms
      SUBDIR += pympd
      SUBDIR += rhythmbox

@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.36 2009/10/14 13:48:14 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2009/10/15 08:52:31 landry Exp $
 
      SUBDIR += avidemux
+     SUBDIR += coherence
      SUBDIR += devede
      SUBDIR += dvdauthor
      SUBDIR += dvdbackup
