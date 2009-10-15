@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2008/11/21 17:02:50 jasper Exp $
-@lib lib/libgnome-window-settings.so.${LIBgnome-window-settings_VERSION}

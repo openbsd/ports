@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.32 2009/10/13 19:09:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2009/10/15 15:52:37 jasper Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @pkgpath x11/gnome/controlcenter2
-%%SHARED%%
 @bin bin/gnome-about-me
 @bin bin/gnome-appearance-properties
 bin/gnome-at-mobility
@@ -24,6 +23,7 @@ include/gnome-window-settings-2.0/gnome-window-manager.h
 include/gnome-window-settings-2.0/gnome-wm-manager.h
 lib/libgnome-window-settings.a
 lib/libgnome-window-settings.la
+@lib lib/libgnome-window-settings.so.${LIBgnome-window-settings_VERSION}
 lib/pkgconfig/gnome-default-applications.pc
 lib/pkgconfig/gnome-keybindings.pc
 lib/pkgconfig/gnome-window-settings-2.0.pc
@@ -45,7 +45,6 @@ share/applications/keybinding.desktop
 share/applications/keyboard.desktop
 @comment share/applications/mimeinfo.cache
 share/applications/window-properties.desktop
-share/desktop-directories/
 share/desktop-directories/gnomecc.directory
 share/examples/controlcenter2/
 share/examples/controlcenter2/xdg/
@@ -188,8 +187,6 @@ share/icons/hicolor/24x24/apps/gnome-settings-default-applications.png
 share/icons/hicolor/32x32/apps/gnome-display-properties.png
 share/icons/hicolor/32x32/apps/gnome-network-properties.png
 share/icons/hicolor/32x32/apps/gnome-settings-default-applications.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gnome-network-properties.png
 share/icons/hicolor/48x48/apps/gnome-settings-default-applications.png
 share/icons/hicolor/48x48/apps/typing-monitor.png
@@ -211,8 +208,6 @@ share/locale/br/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/crh/
-share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/cy/LC_MESSAGES/gnome-control-center-2.0.mo

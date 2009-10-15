@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.71 2009/10/13 19:09:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2009/10/15 15:52:37 jasper Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.28.0
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=	gnome-window-settings 3.0      # .1.0
 
@@ -62,7 +65,8 @@ CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		XCURSOR_ICONDIR=${LOCALBASE}/lib/X11/icons
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/controlcenter2
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/controlcenter2 \
+		pkgconfigdir=${PREFIX}/lib/pkgconfig/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/capplets/common/gnome-theme-info.c

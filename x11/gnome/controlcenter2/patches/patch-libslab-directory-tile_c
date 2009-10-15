@@ -1,12 +1,15 @@
-$OpenBSD: patch-libslab-directory-tile_c,v 1.4 2009/10/13 19:09:05 ajacoutot Exp $
+$OpenBSD: patch-libslab-directory-tile_c,v 1.5 2009/10/15 15:52:37 jasper Exp $
 --- libslab/directory-tile.c.orig	Mon Aug 24 13:13:11 2009
-+++ libslab/directory-tile.c	Tue Oct 13 19:26:01 2009
-@@ -624,7 +624,7 @@ static void
++++ libslab/directory-tile.c	Thu Oct 15 17:35:30 2009
+@@ -624,7 +624,11 @@ static void
  disown_spawned_child (gpointer user_data)
  {
  	setsid  ();
--	setpgrp ();
++#if defined(__OpenBSD__)
 +	setpgrp (0,0);
++#else
+ 	setpgrp ();
++#endif
  }
  
  static void
