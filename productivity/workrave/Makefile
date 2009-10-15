@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/09/18 10:25:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/10/15 23:53:48 jasper Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
 DISTNAME=		workrave-1.8.5
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.workrave.org/welcome/
@@ -45,8 +45,10 @@ USE_GMAKE=		Yes
 CFLAGS+=		-DNDEBUG
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+			`pkg-config --cflags libgnomeui-2.0`" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
+			`pkg-config --libs libgnomeui-2.0`"
 
 pre-configure:
 	perl -pi -e 's|#include <sigc\+\+\/compatibility\.h>||g ; \
