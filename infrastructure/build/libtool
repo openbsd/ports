@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.111 2009/10/15 13:48:11 steven Exp $
+# $OpenBSD: libtool,v 1.112 2009/10/15 15:20:34 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -656,9 +656,10 @@ sub link
 			# convenience libraries
 			next if (!defined $l->{lafile});
 			my $lainfo = LaFile->parse($l->{lafile});
-			print "dlname = ", $lainfo->stringize('dlname'), "\n";
 			next if ($lainfo->stringize('dlname') ne '');
-			$l->find($dirs, 0);
+			if (!defined $l->{fullpath}) {
+				$l->find($dirs, 0);
+			}
 			my $a = $l->{fullpath};
 			if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
 				# extract objects from archive
@@ -685,19 +686,18 @@ sub link
 		($symbolsfile = "$odir/$ltdir/$la") =~ s/\.la$/.exp/;
 		main::get_symbollist($symbolsfile, $opts->{'export-symbols-regex'}, $objs);
 	}
-	foreach my $l (values %$libs) {
+	foreach my $k (@$finalorderedlibs) {
+		my $l = $libs->{$k};
 		if (!defined $l->{fullpath}) {
 			$l->find($dirs, 1);
 		}
 	}
 
-	my @libfiles = values %$libs;
+	my @libobjects = values %$libs;
 	Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
-	Trace::debug {"libfiles:\n", join("\n", map { $_->{fullpath} } @libfiles), "\n"};
+	Trace::debug {"libfiles:\n", join("\n", map { $_->{fullpath} } @libobjects), "\n"};
 
 	main::create_symlinks($ltdir, $libs);
-#	map { $_ = "$ltdir/". basename $_ } @libfiles;
-#	Trace::debug {"symlinks to libfiles used for linking:\n", join("\n", @libfiles), "\n"};
 	my $prev_was_archive = 0;
 	my $libcounter = 0;
 	foreach my $k (@$finalorderedlibs) {
@@ -909,13 +909,11 @@ sub link
 		}
 	}
 
-	my @libfiles = values %$libs;
+	my @libobjects = values %$libs;
 	Trace::debug {"libs:\n", join("\n", (keys %$libs)), "\n"};
-	Trace::debug {"libfiles:\n", join("\n", map { $_->{fullpath} } @libfiles), "\n"};
+	Trace::debug {"libfiles:\n", join("\n", map { $_->{fullpath} } @libobjects), "\n"};
 
 	main::create_symlinks($ltdir, $libs);
-#	map { $_ = "$ltdir/". basename $_ } @libfiles;
-#	Trace::debug {"symlinks to libfiles used for linking:\n", join("\n", @libfiles), "\n"};
 	foreach my $k (@$finalorderedlibs) {
 		my $a = $libs->{$k}->{fullpath} || die "ERROR: $k not found in \$libs";
 		if ($a =~ m/\.a$/) {
