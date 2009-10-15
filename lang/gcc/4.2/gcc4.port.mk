@@ -1,11 +1,11 @@
-# $OpenBSD: gcc4.port.mk,v 1.4 2009/06/17 00:47:06 kurt Exp $
+# $OpenBSD: gcc4.port.mk,v 1.5 2009/10/15 18:02:33 steven Exp $
 
 MODGCC4_ARCHES?=
 MODGCC4_LANGS?=
 # Supported languages for now
 _MODGCC4CC=	cc
 _MODGCC4CXX=	c++
-_MODGCC4G77=	g77
+_MODGCC4FORTRAN=fortran
 _MODGCC4JAVA=	java
 
 .if ${MODGCC4_LANGS:L} != ${_MODGCC4JAVA}
@@ -29,10 +29,10 @@ LIB_DEPENDS+=	estdc++.>=7:libstdc++->=4.2,<4.3:lang/gcc/4.2,-estdc
 MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC4CXX} ${WRKDIR}/bin/g++;
 MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC4CXX} ${WRKDIR}/bin/${_MODGCC4CXX};
 .        endif
-.        if !empty(_MODGCC4G77:L:M${_j})
-BUILD_DEPENDS+=	::lang/gcc/4.2,-g77
-MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC4G77} ${WRKDIR}/bin/f77;
-MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC4G77} ${WRKDIR}/bin/${_MODGCC4G77};
+.        if !empty(_MODGCC4FORTRAN:L:M${_j})
+BUILD_DEPENDS+=	::lang/gcc/4.2,-f95
+LIB_DEPENDS+=	gfortran.>=2:g95->=4.2,<4.3:lang/gcc/4.2,-f95
+MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/eg${_MODGCC4FORTRAN} ${WRKDIR}/bin/g${_MODGCC4FORTRAN};
 .	 endif
 .        if !empty(_MODGCC4JAVA:L:M${_j})
 BUILD_DEPENDS+=	::lang/gcc/4.2,-java,java
