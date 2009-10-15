@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
---- src/cheese-webcam.c.orig	Mon Jan 12 15:55:26 2009
-+++ src/cheese-webcam.c	Thu Aug 20 16:12:04 2009
-@@ -32,13 +32,12 @@
+$OpenBSD: patch-src_cheese-webcam_c,v 1.6 2009/10/15 11:02:30 ajacoutot Exp $
+--- src/cheese-webcam.c.orig	Fri Sep 18 20:45:08 2009
++++ src/cheese-webcam.c	Thu Oct 15 12:46:40 2009
+@@ -31,13 +31,12 @@
  #include <gst/gst.h>
  #include <gdk-pixbuf/gdk-pixbuf.h>
  #include <X11/Xlib.h>
@@ -15,8 +15,8 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
 +#include <sys/videoio.h>
  
  #include "cheese-webcam.h"
- #include "cheese-flash.h"
-@@ -249,138 +248,38 @@ cheese_webcam_get_video_devices_from_hal (CheeseWebcam
+ 
+@@ -281,141 +280,40 @@ cheese_webcam_get_video_devices_from_hal (CheeseWebcam
  {
    CheeseWebcamPrivate *priv = CHEESE_WEBCAM_GET_PRIVATE (webcam);
  
@@ -33,21 +33,20 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
  
    priv->num_webcam_devices = 0;
  
--  g_print ("Probing devices with HAL...\n");
--
+   g_print ("Probing devices with HAL...\n");
+ 
 -  dbus_error_init (&error);
 -  hal_ctx = libhal_ctx_new ();
 -  if (hal_ctx == NULL)
-+  for (i = 0; i < max_devs; i++)
-   {
--    g_error ("error: libhal_ctx_new");
+-  {
+-    g_warning ("Could not create libhal context");
 -    dbus_error_free (&error);
 -    goto fallback;
 -  }
 -
 -  if (!libhal_ctx_set_dbus_connection (hal_ctx, dbus_bus_get (DBUS_BUS_SYSTEM, &error)))
 -  {
--    g_error ("error: libhal_ctx_set_dbus_connection: %s: %s", error.name, error.message);
+-    g_warning ("libhal_ctx_set_dbus_connection: %s: %s", error.name, error.message);
 -    dbus_error_free (&error);
 -    goto fallback;
 -  }
@@ -56,11 +55,11 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
 -  {
 -    if (dbus_error_is_set (&error))
 -    {
--      g_error ("error: libhal_ctx_init: %s: %s\n", error.name, error.message);
+-      g_warning ("libhal_ctx_init: %s: %s", error.name, error.message);
 -      dbus_error_free (&error);
 -    }
--    g_error ("Could not initialise connection to hald.\n"
--             "Normally this means the HAL daemon (hald) is not running or not ready");
+-    g_warning ("Could not initialise connection to hald.\n"
+-               "Normally this means the HAL daemon (hald) is not running or not ready");
 -    goto fallback;
 -  }
 -
@@ -68,7 +67,7 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
 -
 -  if (dbus_error_is_set (&error))
 -  {
--    g_error ("error: libhal_find_device_by_capability: %s: %s\n", error.name, error.message);
+-    g_warning ("libhal_find_device_by_capability: %s: %s", error.name, error.message);
 -    dbus_error_free (&error);
 -    goto fallback;
 -  }
@@ -78,39 +77,44 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
 -
 -  for (i = 0; i < num_udis; i++)
 -  {
++  for (i = 0; i < max_devs; i++)
++   {
      char                   *device;
 -    char                   *parent_udi = NULL;
--    char                   *subsystem = NULL;
+-    char                   *subsystem  = NULL;
      char                   *gstreamer_src, *product_name;
 +    struct stat s;
      struct v4l2_capability  v2cap;
 -    struct video_capability v1cap;
--    gint vendor_id = 0;
--    gint product_id = 0;
--    gchar *property_name = NULL;
+-    gint                    vendor_id     = 0;
+-    gint                    product_id    = 0;
+-    gchar                  *property_name = NULL;
  
 -    parent_udi = libhal_device_get_property_string (hal_ctx, udis[i], "info.parent", &error);
 -    if (dbus_error_is_set (&error))
 -    {
--      g_warning ("error getting parent for %s: %s: %s\n", udis[i], error.name, error.message);
+-      g_warning ("error getting parent for %s: %s: %s", udis[i], error.name, error.message);
 -      dbus_error_free (&error);
 -    }
 -
--    if (parent_udi != NULL) {
+-    if (parent_udi != NULL)
+-    {
 -      subsystem = libhal_device_get_property_string (hal_ctx, parent_udi, "info.subsystem", NULL);
 -      if (subsystem == NULL) continue;
 -      property_name = g_strjoin (".", subsystem, "vendor_id", NULL);
--      vendor_id = libhal_device_get_property_int (hal_ctx, parent_udi, property_name , &error);
--      if (dbus_error_is_set (&error)) {
--        g_warning ("error getting vendor id: %s: %s\n", error.name, error.message);
+-      vendor_id     = libhal_device_get_property_int (hal_ctx, parent_udi, property_name, &error);
+-      if (dbus_error_is_set (&error))
+-      {
+-        g_warning ("error getting vendor id: %s: %s", error.name, error.message);
 -        dbus_error_free (&error);
 -      }
 -      g_free (property_name);
 -
 -      property_name = g_strjoin (".", subsystem, "product_id", NULL);
--      product_id = libhal_device_get_property_int (hal_ctx, parent_udi, property_name, &error);
--      if (dbus_error_is_set (&error)) {
--        g_warning ("error getting product id: %s: %s\n", error.name, error.message);
+-      product_id    = libhal_device_get_property_int (hal_ctx, parent_udi, property_name, &error);
+-      if (dbus_error_is_set (&error))
+-      {
+-        g_warning ("error getting product id: %s: %s", error.name, error.message);
 -        dbus_error_free (&error);
 -      }
 -      g_free (property_name);
@@ -123,7 +127,7 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
 -    device = libhal_device_get_property_string (hal_ctx, udis[i], "video4linux.device", &error);
 -    if (dbus_error_is_set (&error))
 -    {
--      g_error ("error geting device for %s: %s: %s\n", udis[i], error.name, error.message);
+-      g_warning ("error getting V4L device for %s: %s: %s", udis[i], error.name, error.message);
 -      dbus_error_free (&error);
 +    dev_list[i].node = -1;
 +    device = g_strdup_printf("%s%d", "/dev/video", i);
@@ -142,7 +146,7 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
 -
      if ((fd = open (device, O_RDONLY | O_NONBLOCK)) < 0)
      {
-       g_error ("Failed to open %s: %s\n", device, strerror (errno));
+       g_warning ("Failed to open %s: %s", device, strerror (errno));
 -      libhal_free_string (device);
 +      free (device);
        continue;
@@ -153,8 +157,8 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
 -      ok = ioctl (fd, VIDIOCGCAP, &v1cap);
 -      if (ok < 0)
 -      {
--        g_error ("Error while probing v4l capabilities for %s: %s\n",
--                 device, strerror (errno));
+-        g_warning ("Error while probing v4l capabilities for %s: %s",
+-                   device, strerror (errno));
 -        libhal_free_string (device);
 -        close (fd);
 -        continue;
@@ -169,13 +173,7 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
      }
      else
      {
-@@ -388,46 +287,56 @@ cheese_webcam_get_video_devices_from_hal (CheeseWebcam
-       g_print ("Detected v4l2 device: %s\n", v2cap.card);
-       g_print ("Driver: %s, version: %d\n", v2cap.driver, v2cap.version);
-       /* g_print ("Bus info: %s\n", v2cap.bus_info); */ /* Doesn't seem anything useful */
--     g_print ("Capabilities: 0x%08X\n", v2cap.capabilities);
-+      g_print ("Capabilities: 0x%08X\n", v2cap.capabilities);
-       if (!(cap & V4L2_CAP_VIDEO_CAPTURE))
+@@ -429,20 +327,38 @@ cheese_webcam_get_video_devices_from_hal (CheeseWebcam
        {
          g_print ("Device %s seems to not have the capture capability, (radio tuner?)\n"
                   "Removing it from device list.\n", device);
@@ -219,10 +217,10 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
      priv->webcam_devices[priv->num_webcam_devices].num_video_formats = 0;
      priv->webcam_devices[priv->num_webcam_devices].video_formats     =
        g_array_new (FALSE, FALSE, sizeof (CheeseVideoFormat));
-     priv->webcam_devices[priv->num_webcam_devices].supported_resolutions =
+@@ -450,20 +366,13 @@ cheese_webcam_get_video_devices_from_hal (CheeseWebcam
        g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
      priv->num_webcam_devices++;
--
+ 
 -    libhal_free_string (device);
 -    close (fd);
    }
@@ -241,15 +239,7 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
      priv->webcam_devices[0].num_video_formats = 0;
      priv->webcam_devices[0].video_formats     =
        g_array_new (FALSE, FALSE, sizeof (CheeseVideoFormat));
-@@ -435,6 +344,7 @@ fallback:
-   }
- }
- 
-+
- static void
- cheese_webcam_get_supported_framerates (CheeseVideoFormat *video_format, GstStructure *structure)
- {
-@@ -671,9 +581,9 @@ cheese_webcam_get_webcam_device_data (CheeseWebcam    
+@@ -712,7 +621,8 @@ cheese_webcam_get_webcam_device_data (CheeseWebcam    
      if ((pipeline != NULL) && (err == NULL))
      {
        /* Start the pipeline and wait for max. 10 seconds for it to start up */
@@ -257,7 +247,5 @@ $OpenBSD: patch-src_cheese-webcam_c,v 1.5 2009/08/20 14:14:12 robert Exp $
 +      /* XXX Disable this to make it startup instantly */
 +      /* gst_element_set_state (pipeline, GST_STATE_PLAYING); */
        ret = gst_element_get_state (pipeline, NULL, NULL, 10 * GST_SECOND);
--
+ 
        /* Check if any error messages were posted on the bus */
-       bus = gst_element_get_bus (pipeline);
-       msg = gst_bus_poll (bus, GST_MESSAGE_ERROR, 0);
