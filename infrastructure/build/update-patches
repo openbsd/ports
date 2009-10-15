@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: update-patches,v 1.17 2007/10/01 20:39:23 naddy Exp $
+# $OpenBSD: update-patches,v 1.18 2009/10/15 10:48:05 phessler Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -29,7 +29,7 @@ keywords="Author|CVSHeader|Date|Header|Id|Name|Locker|Log|RCSfile|Revision"
 keywords="$keywords|Source|State|OpenBSD"
 
 # Find out all $PATCHORIG files and strip the name to what diff will use
-cd $WRKDIST && find . -type f -name '*'${PATCHORIG} | \
+cd "$WRKDIST" && find . -type f -name '*'${PATCHORIG} | \
     fgrep -v Oops.rej.orig | \
     fgrep -v $DISTORIG | \
     sed -e "s,^./\(.*\)\.${PATCHORIG#.*}\$,\1," | {
@@ -60,7 +60,7 @@ do
 		# found it, splice before diff part with diff
 		esc=`echo $file | sed -e 's,/,\\\\/,g'`
 		{ sed -e "/^--- $esc$PATCHORIG/,\$ d" <$i
-		    (cd $WRKDIST && diff -u -p -a ${DIFF_ARGS} "$file$PATCHORIG" "$file") } >$i.new
+		    (cd "$WRKDIST" && diff -u -p -a ${DIFF_ARGS} "$file$PATCHORIG" "$file") } >$i.new
 		# did it change ? mark it as changed
 		if diff ${DIFF_ARGS} -u \
 			-I "^--- `echo $file$PATCHORIG | sed 's/[.+]/\\\\&/g'`	" \
@@ -81,7 +81,7 @@ do
     patchname=patch-`echo $file|sed -e s,[\ /.],_,g`
     echo 1>&2 "No patch-* found for $file, creating $patchname"
     { echo "$"OpenBSD$; \
-	(cd $WRKDIST && diff -u -p -a ${DIFF_ARGS} "$file$PATCHORIG" "$file") }>$patchname
+	(cd "$WRKDIST" && diff -u -p -a ${DIFF_ARGS} "$file$PATCHORIG" "$file") }>$patchname
     edit="$edit $patchname"
     accounted="$accounted $patchname"
 done
@@ -111,7 +111,7 @@ else
     echo 1>&2 "No patch found"
 fi
 
-# Check for $Id: update-patches,v 1.17 2007/10/01 20:39:23 naddy Exp $ and similar bugs in all those patch files.
+# Check for $Id: update-patches,v 1.18 2009/10/15 10:48:05 phessler Exp $ and similar bugs in all those patch files.
 for i in $accounted
 do
     if sed -e '1,/^---/ d' $i|egrep -q '\$('"$keywords"').*\$'
