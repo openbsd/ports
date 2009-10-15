@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_fluidsynth_c,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
---- src/fluidsynth.c.orig	Sun Nov 11 02:09:48 2007
-+++ src/fluidsynth.c	Fri Feb 15 17:09:36 2008
+$OpenBSD: patch-src_fluidsynth_c,v 1.2 2009/10/15 15:44:50 jakemsr Exp $
+--- src/fluidsynth.c.orig	Tue Feb  3 23:45:02 2009
++++ src/fluidsynth.c	Tue Oct 13 20:57:00 2009
 @@ -212,9 +212,9 @@ int main(int argc, char** argv)
    int audio_channels = 0;
    int with_server = 0;
    int dump = 0;
 -  int connect_lash = 1;
-   char *optchars = "a:C:c:df:G:g:hijK:L:lm:no:R:r:sVvz:";
+   char *optchars = "a:C:c:df:G:g:hijK:L:lm:no:p:R:r:sVvz:";
  #ifdef LASH_ENABLED
 +  int connect_lash = 1;
    int enabled_lash = 0;		/* set to TRUE if lash gets enabled */
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_fluidsynth_c,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
        {"dump", 0, 0, 'd'},
        {"gain", 1, 0, 'g'},
        {"help", 0, 0, 'h'},
-@@ -343,9 +345,11 @@ int main(int argc, char** argv)
+@@ -344,9 +346,11 @@ int main(int argc, char** argv)
        audio_channels = atoi(optarg);
        fluid_settings_setint(settings, "synth.audio-channels", audio_channels);
        break;
@@ -34,7 +34,7 @@ $OpenBSD: patch-src_fluidsynth_c,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
      case 'm':
        fluid_settings_setstr(settings, "midi.driver", optarg);
        break;
-@@ -417,12 +421,14 @@ int main(int argc, char** argv)
+@@ -421,12 +425,14 @@ int main(int argc, char** argv)
  #endif
  
  #ifdef LASH_ENABLED

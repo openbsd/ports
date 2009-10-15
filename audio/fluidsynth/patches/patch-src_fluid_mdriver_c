@@ -1,34 +1,50 @@
-$OpenBSD: patch-src_fluid_mdriver_c,v 1.1 2008/12/26 08:45:12 jakemsr Exp $
---- src/fluid_mdriver.c.orig	Sat Dec 20 17:42:12 2008
-+++ src/fluid_mdriver.c	Sat Dec 20 17:43:01 2008
-@@ -38,13 +38,13 @@ void fluid_alsa_seq_driver_settings(fluid_settings_t* 
+--- src/fluid_mdriver.c.orig	Sun Mar  8 21:31:02 2009
++++ src/fluid_mdriver.c	Tue Oct 13 21:12:59 2009
+@@ -46,6 +46,15 @@ fluid_midi_driver_t *new_fluid_jack_midi_driver (fluid
+ int delete_fluid_jack_midi_driver(fluid_midi_driver_t *p);
  #endif
  
++/* SNDIO */
++#if SNDIO_SUPPORT
++fluid_midi_driver_t* new_fluid_sndio_midi_driver(fluid_settings_t* settings,
++					     handle_midi_event_func_t handler,
++					     void* event_handler_data);
++int delete_fluid_sndio_midi_driver(fluid_midi_driver_t* p);
++void fluid_sndio_midi_driver_settings(fluid_settings_t* settings);
++#endif
++
  /* OSS */
--#if OSS_SUPPORT
-+/* #if OSS_SUPPORT */
+ #if OSS_SUPPORT
  fluid_midi_driver_t* new_fluid_oss_midi_driver(fluid_settings_t* settings,
- 					     handle_midi_event_func_t handler,
- 					     void* event_handler_data);
- int delete_fluid_oss_midi_driver(fluid_midi_driver_t* p);
- void fluid_oss_midi_driver_settings(fluid_settings_t* settings);
--#endif
-+/* #endif */
- 
- /* Windows MIDI service */
+@@ -118,6 +127,12 @@ struct fluid_mdriver_definition_t fluid_midi_drivers[]
+     delete_fluid_alsa_seq_driver,
+     fluid_alsa_seq_driver_settings },
+ #endif
++#if SNDIO_SUPPORT
++  { "sndio",
++    new_fluid_sndio_midi_driver,
++    delete_fluid_sndio_midi_driver,
++    fluid_sndio_midi_driver_settings },
++#endif
  #if WINMIDI_SUPPORT
-@@ -78,12 +78,12 @@ struct fluid_mdriver_definition_t {
- 
- 
- struct fluid_mdriver_definition_t fluid_midi_drivers[] = {
--#if OSS_SUPPORT
-+/* #if OSS_SUPPORT */
-   { "oss",
-     new_fluid_oss_midi_driver,
-     delete_fluid_oss_midi_driver,
-     fluid_oss_midi_driver_settings },
--#endif
-+/* #endif */
+   { "winmidi",
+     new_fluid_winmidi_driver,
+@@ -152,6 +167,8 @@ void fluid_midi_driver_settings(fluid_settings_t* sett
+   fluid_settings_register_str(settings, "midi.driver", "jack", 0, NULL, NULL);
+ #elif OSS_SUPPORT
+   fluid_settings_register_str(settings, "midi.driver", "oss", 0, NULL, NULL);
++#elif SNDIO_SUPPORT
++  fluid_settings_register_str(settings, "midi.driver", "sndio", 0, NULL, NULL);
+ #elif WINMIDI_SUPPORT
+   fluid_settings_register_str(settings, "midi.driver", "winmidi", 0, NULL, NULL);
+ #elif MIDISHARE_SUPPORT
+@@ -166,6 +183,9 @@ void fluid_midi_driver_settings(fluid_settings_t* sett
  #if ALSA_SUPPORT
-   { "alsa_raw",
-     new_fluid_alsa_rawmidi_driver,
+   fluid_settings_add_option(settings, "midi.driver", "alsa_seq");
+   fluid_settings_add_option(settings, "midi.driver", "alsa_raw");
++#endif
++#if SNDIO_SUPPORT
++  fluid_settings_add_option(settings, "midi.driver", "sndio");
+ #endif
+ #if JACK_SUPPORT
+   fluid_settings_add_option(settings, "midi.driver", "jack");

@@ -1,43 +1,40 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1 2008/12/26 08:45:12 jakemsr Exp $
---- src/Makefile.am.orig	Sun Nov 11 12:06:28 2007
-+++ src/Makefile.am	Sat Dec 20 17:37:23 2008
-@@ -17,8 +17,12 @@ if MINGW32_SUPPORT
- fluid_windows = fluid_dll.c fluid_dsound.c fluid_winmidi.c
- endif
- 
--if OSS_SUPPORT
-+# if OSS_SUPPORT
+$OpenBSD: patch-src_Makefile_am,v 1.2 2009/10/15 15:44:50 jakemsr Exp $
+--- src/Makefile.am.orig	Tue Feb  3 23:34:02 2009
++++ src/Makefile.am	Tue Oct 13 21:12:04 2009
+@@ -33,6 +33,10 @@ if OSS_SUPPORT
  fluid_oss = fluid_oss.c
-+# endif
-+
-+if LIBSNDIO_SUPPORT
-+fluid_libsndio = fluid_libsndio.c
  endif
  
++if SNDIO_SUPPORT
++fluid_sndio = fluid_sndio.c
++endif
++
  # if LASH_SUPPORT || LADCCA_SUPPORT (Makefile supports OR?)
-@@ -33,7 +37,7 @@ endif
- 
+ if LASH_SUPPORT
+ fluid_lash = fluid_lash.c
+@@ -49,7 +53,7 @@ endif
  # Extra files and optional drivers
  EXTRA_DIST = fluid_dll.c fluid_dsound.c fluid_winmidi.c fluid_portaudio.c \
--	fluid_coreaudio.c fluid_alsa.c fluid_oss.c \
-+	fluid_coreaudio.c fluid_alsa.c fluid_oss.c fluid_libsndio.c \
- 	fluid_dsp_simple.c \
+ 	fluid_coreaudio.c fluid_alsa.c fluid_oss.c fluid_pulse.c \
+-	fluid_dsp_simple.c \
++	fluid_sndio.c fluid_dsp_simple.c \
  	fluid_sndmgr.c config_macos.h config_macosx.h config_macosx_pb.h \
- 	config_win32.h fluid_jack.c
-@@ -47,6 +51,7 @@ libfluidsynth_la_SOURCES = \
- 	$(fluid_jack) \
- 	$(fluid_lash) \
+ 	config_win32.h fluid_jack.c fluid_dart.c
+ 
+@@ -65,6 +69,7 @@ libfluidsynth_la_SOURCES = \
  	$(fluid_oss) \
-+	$(fluid_libsndio) \
+ 	$(fluid_portaudio) \
+ 	$(fluid_pulse) \
++	$(fluid_sndio) \
  	$(fluid_windows) \
+ 	$(fluid_dart) \
  	fluid_adriver.c \
- 	fluid_adriver.h \
-@@ -108,7 +113,7 @@ INCLUDES = -I$(top_srcdir)/include $(LASH_CFLAGS) $(LA
-   $(READLINE_CFLAGS) $(JACK_CFLAGS) $(ALSA_CFLAGS)
+@@ -129,7 +134,7 @@ INCLUDES = -I$(top_srcdir)/include $(LASH_CFLAGS) $(LA
  
  libfluidsynth_la_LIBADD = $(LIBFLUID_LIBS) $(LASH_LIBS) $(LADCCA_LIBS) \
--  $(READLINE_LIBS) $(COREAUDIO_LIBS) $(JACK_LIBS) $(ALSA_LIBS)
-+  $(READLINE_LIBS) $(COREAUDIO_LIBS) $(JACK_LIBS) $(ALSA_LIBS) $(LIBSNDIO_LIBS)
+   $(READLINE_LIBS) $(COREAUDIO_LIBS) $(COREMIDI_LIBS) $(JACK_LIBS) \
+-  $(ALSA_LIBS) $(PULSE_LIBS) $(PORTAUDIO_LIBS) $(DART_LIBS)
++  $(ALSA_LIBS) $(PULSE_LIBS) $(PORTAUDIO_LIBS) $(DART_LIBS) $(SNDIO_LIBS)
+ 
  libfluidsynth_la_LDFLAGS = \
  	-version-info @LT_VERSION_INFO@ \
- 	-export-dynamic $(LIBFLUID_LDFLAGS)

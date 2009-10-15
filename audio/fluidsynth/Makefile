@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/06 21:24:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/10/15 15:44:50 jakemsr Exp $
 
 COMMENT =		SoundFont2 software synthesizer
-DISTNAME =		fluidsynth-1.0.8
-PKGNAME =		${DISTNAME}p2
+DISTNAME =		fluidsynth-1.0.9
 
-SHARED_LIBS =		fluidsynth	0.0
+SHARED_LIBS =		fluidsynth	0.1
 
 CATEGORIES =		audio
 HOMEPAGE =		http://fluidsynth.resonance.org/trac
@@ -21,10 +20,6 @@ WANTLIB =		c m ncurses pthread readline sndio
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=fluid/}
 
-DEV_FLAGS =		-DDEVOSSAUDIO=\\\"/dev/audio\\\" \
-			-DDEVOSSMIDI=\\\"/dev/rmidi0\\\"
-MAKE_FLAGS =		CFLAGS="${CFLAGS} ${DEV_FLAGS}"
-
 LIB_DEPENDS =		jack::audio/jack
 
 AUTOCONF_VERSION =	2.61
@@ -38,10 +33,11 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-lash \
 			--disable-ladcca \
-			--disable-oss-support
+			--disable-oss-support \
+			--disable-portaudio-support
 
 post-patch:
-	cp ${FILESDIR}/fluid_libsndio.c ${WRKSRC}/src/
+	cp ${FILESDIR}/fluid_sndio.c ${WRKSRC}/src/
 
 pre-configure:
 	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \

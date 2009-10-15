@@ -1,52 +1,52 @@
-$OpenBSD: patch-src_fluid_adriver_c,v 1.1 2008/12/26 08:45:12 jakemsr Exp $
---- src/fluid_adriver.c.orig	Sat Oct 18 20:34:27 2008
-+++ src/fluid_adriver.c	Sat Oct 18 20:36:59 2008
-@@ -56,6 +56,15 @@ int delete_fluid_oss_audio_driver(fluid_audio_driver_t
+$OpenBSD: patch-src_fluid_adriver_c,v 1.2 2009/10/15 15:44:50 jakemsr Exp $
+--- src/fluid_adriver.c.orig	Sun Mar 15 18:02:15 2009
++++ src/fluid_adriver.c	Tue Oct 13 20:55:26 2009
+@@ -64,6 +64,15 @@ int delete_fluid_oss_audio_driver(fluid_audio_driver_t
  void fluid_oss_audio_driver_settings(fluid_settings_t* settings);
  #endif
  
-+#if LIBSNDIO_SUPPORT
-+fluid_audio_driver_t* new_fluid_libsndio_audio_driver(fluid_settings_t* settings,
++#if SNDIO_SUPPORT
++fluid_audio_driver_t* new_fluid_sndio_audio_driver(fluid_settings_t* settings,
 +						 fluid_synth_t* synth);
-+fluid_audio_driver_t* new_fluid_libsndio_audio_driver2(fluid_settings_t* settings,
++fluid_audio_driver_t* new_fluid_sndio_audio_driver2(fluid_settings_t* settings,
 +						fluid_audio_func_t func, void* data);
-+int delete_fluid_libsndio_audio_driver(fluid_audio_driver_t* p);
-+void fluid_libsndio_audio_driver_settings(fluid_settings_t* settings);
++int delete_fluid_sndio_audio_driver(fluid_audio_driver_t* p);
++void fluid_sndio_audio_driver_settings(fluid_settings_t* settings);
 +#endif
 +
  #if COREAUDIO_SUPPORT
  fluid_audio_driver_t* new_fluid_core_audio_driver(fluid_settings_t* settings,
  						  fluid_synth_t* synth);
-@@ -112,6 +121,13 @@ fluid_audriver_definition_t fluid_audio_drivers[] = {
-     delete_fluid_oss_audio_driver,
-     fluid_oss_audio_driver_settings },
+@@ -129,6 +138,13 @@ fluid_audriver_definition_t fluid_audio_drivers[] = {
+     delete_fluid_jack_audio_driver,
+     fluid_jack_audio_driver_settings },
  #endif
-+#if LIBSNDIO_SUPPORT
-+  { "libsndio",
-+    new_fluid_libsndio_audio_driver,
-+    new_fluid_libsndio_audio_driver2,
-+    delete_fluid_libsndio_audio_driver,
-+    fluid_libsndio_audio_driver_settings },
++#if SNDIO_SUPPORT
++  { "sndio",
++    new_fluid_sndio_audio_driver,
++    new_fluid_sndio_audio_driver2,
++    delete_fluid_sndio_audio_driver,
++    fluid_sndio_audio_driver_settings },
 +#endif
  #if ALSA_SUPPORT
    { "alsa",
      new_fluid_alsa_audio_driver,
-@@ -193,6 +209,8 @@ void fluid_audio_driver_settings(fluid_settings_t* set
-   /* Set the default driver */
- #if ALSA_SUPPORT
-   fluid_settings_register_str(settings, "audio.driver", "alsa", 0, NULL, NULL);
-+#elif LIBSNDIO_SUPPORT
-+  fluid_settings_register_str(settings, "audio.driver", "libsndio", 0, NULL, NULL);
+@@ -230,6 +246,8 @@ void fluid_audio_driver_settings(fluid_settings_t* set
+   fluid_settings_register_str(settings, "audio.driver", "pulseaudio", 0, NULL, NULL);
  #elif OSS_SUPPORT
    fluid_settings_register_str(settings, "audio.driver", "oss", 0, NULL, NULL);
++#elif SNDIO_SUPPORT
++  fluid_settings_register_str(settings, "audio.driver", "sndio", 0, NULL, NULL);
  #elif COREAUDIO_SUPPORT
-@@ -217,6 +235,9 @@ void fluid_audio_driver_settings(fluid_settings_t* set
+   fluid_settings_register_str(settings, "audio.driver", "coreaudio", 0, NULL, NULL);
+ #elif DSOUND_SUPPORT
+@@ -255,6 +273,9 @@ void fluid_audio_driver_settings(fluid_settings_t* set
  #endif
  #if OSS_SUPPORT
    fluid_settings_add_option(settings, "audio.driver", "oss");
 +#endif
-+#if LIBSNDIO_SUPPORT
-+  fluid_settings_add_option(settings, "audio.driver", "libsndio");
++#if SNDIO_SUPPORT
++  fluid_settings_add_option(settings, "audio.driver", "sndio");
  #endif
  #if COREAUDIO_SUPPORT
    fluid_settings_add_option(settings, "audio.driver", "coreaudio");

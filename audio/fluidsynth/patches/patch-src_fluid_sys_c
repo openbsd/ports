@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_fluid_sys_c,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
---- src/fluid_sys.c.orig	Sun Nov 11 11:47:30 2007
-+++ src/fluid_sys.c	Fri Feb 15 17:09:36 2008
-@@ -709,8 +709,10 @@ new_fluid_timer(int msec, fluid_timer_callback_t callb
+$OpenBSD: patch-src_fluid_sys_c,v 1.2 2009/10/15 15:44:50 jakemsr Exp $
+--- src/fluid_sys.c.orig	Tue Feb  3 23:29:24 2009
++++ src/fluid_sys.c	Tue Oct 13 20:47:41 2009
+@@ -889,8 +889,10 @@ new_fluid_timer(int msec, fluid_timer_callback_t callb
  {
    pthread_attr_t *attr = NULL;
    pthread_attr_t rt_attr;
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_fluid_sys_c,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
    int err;
  
    fluid_timer_t* timer = FLUID_NEW(fluid_timer_t);
-@@ -726,6 +728,7 @@ new_fluid_timer(int msec, fluid_timer_callback_t callb
+@@ -906,6 +908,7 @@ new_fluid_timer(int msec, fluid_timer_callback_t callb
    timer->auto_destroy = auto_destroy;
  
    err = pthread_attr_init(&rt_attr);
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_fluid_sys_c,v 1.1.1.1 2008/04/06 22:42:11 jakemsr Exp $
    if (err == 0) {
  	  err = pthread_attr_setschedpolicy(&rt_attr, SCHED_FIFO);
  	  if (err == 0) {
-@@ -736,6 +739,7 @@ new_fluid_timer(int msec, fluid_timer_callback_t callb
+@@ -916,6 +919,7 @@ new_fluid_timer(int msec, fluid_timer_callback_t callb
  		  }
  	  }
    }
