@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/17 07:12:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/10/15 11:13:57 sthen Exp $
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
@@ -48,7 +48,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-libpst-shared
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${MODPY_INCDIR}" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
-			PYTHON_LDFLAGS="-L${LOCALBASE}/lib -lpython${MODPY_VERSION} -lm"
+			PYTHON_LDFLAGS="-L${LOCALBASE}/lib -lpython${MODPY_VERSION} -lm" \
+			PYTHON_BIN="python${MODPY_VERSION}"
 
 CFLAGS+=		-pthread
 
