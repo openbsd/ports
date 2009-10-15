@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2009/10/15 08:50:49 landry Exp $
+Correctly depend on the right component of Twisted
+Needed for Moovida plugin, cf https://bugs.launchpad.net/elisa/+bug/401669
+--- setup.py.orig	Wed Oct 14 20:50:13 2009
++++ setup.py	Wed Oct 14 20:50:25 2009
+@@ -90,7 +90,8 @@ Kudos go to jmsizun, cjsmo, chewi, and lightyear.
+ if haz_setuptools == True:
+     setup_args['install_requires'] = [
+     'ConfigObj >= 4.3',
+-    'Twisted >= 2.5.0',
++    'Twisted_Core >= 2.5.0',
++    'Twisted_Web >= 2.5.0',
+     ]
+     setup_args['entry_points'] = """
+         [coherence.plugins.backend.media_server]

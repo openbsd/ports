@@ -1,0 +1,2 @@
+Coherence acts as a DLNA/UPnP MediaServer and exports local and remote
+media files via its backends to other UPnP clients.
