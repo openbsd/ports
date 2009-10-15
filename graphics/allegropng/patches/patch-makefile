@@ -1,0 +1,28 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2009/10/15 14:39:10 phessler Exp $
+--- makefile.orig	Tue Jun  2 14:39:19 2009
++++ makefile	Tue Jun  2 14:41:00 2009
+@@ -13,19 +13,19 @@ libalpng.a: $(OBJECTS)
+ 	ar crs libalpng.a $?
+ 
+ objects/%.o: %.c
+-	gcc $(CFLAGS) -O3 -Wall -Wextra -ansi -pedantic -Isrc -c $< -o $@ 
++	${CC} $(CFLAGS) -O3 -Wall -ansi -pedantic -Isrc -c $< -o $@ 
+ 
+ objects/%.o: src/%.c
+-	gcc $(CFLAGS) -O3 -Wall -Wextra -ansi -pedantic -Isrc -c $< -o $@ 
++	${CC} $(CFLAGS) -O3 -Wall -ansi -pedantic -Isrc -c $< -o $@ 
+ 
+ objects/%.o: src/inflate/%.c
+-	gcc $(CFLAGS) -O3 -Wall -Wextra -ansi -pedantic -Isrc -c $< -o $@ 
++	${CC} $(CFLAGS) -O3 -Wall -ansi -pedantic -Isrc -c $< -o $@ 
+ 
+ objects/%.o: src/quantization/%.c
+-	gcc $(CFLAGS) -O3 -Wall -Wextra -ansi -pedantic -Isrc -c $< -o $@ 
++	${CC} $(CFLAGS) -O3 -Wall -ansi -pedantic -Isrc -c $< -o $@ 
+ 
+ ex01: objects/ex01.o libalpng.a
+-	gcc $(LDFLAGS)  -s -O3 -Wall -Wextra -ansi -pedantic $^ -o $@ -Isrc -L. `allegro-config --libs`  
++	${CC} $(LDFLAGS)  -s -O3 -Wall -ansi -pedantic $^ -o $@ -Isrc -L. `allegro-config --libs`  
+ 
+ 
+ clean: 
