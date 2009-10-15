@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/01/07 16:35:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/10/15 11:28:55 sthen Exp $
 bin/awk
 @bin bin/gawk
 @bin bin/gawk-${V}
@@ -33,15 +33,14 @@ share/awk/rewind.awk
 share/awk/round.awk
 share/awk/strtonum.awk
 share/awk/zerofile.awk
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gawk.mo
 share/locale/da/LC_MESSAGES/gawk.mo
 share/locale/de/LC_MESSAGES/gawk.mo
 share/locale/es/LC_MESSAGES/gawk.mo
 share/locale/fr/LC_MESSAGES/gawk.mo
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gawk.mo
 share/locale/he/LC_MESSAGES/gawk.mo
+share/locale/id/LC_MESSAGES/gawk.mo
 share/locale/it/LC_MESSAGES/gawk.mo
 share/locale/ja/LC_MESSAGES/gawk.mo
 share/locale/nl/LC_MESSAGES/gawk.mo
@@ -53,6 +52,5 @@ share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gawk.mo
 share/locale/sv/LC_MESSAGES/gawk.mo
 share/locale/tr/LC_MESSAGES/gawk.mo
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gawk.mo
 share/locale/zh_CN/LC_MESSAGES/gawk.mo
