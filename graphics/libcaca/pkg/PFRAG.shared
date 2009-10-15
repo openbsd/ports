@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2009/10/15 23:27:09 jasper Exp $
+@lib lib/libcaca.so.${LIBcaca_VERSION}

@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2004/04/18 02:03:38 jolan Exp $
---- Makefile.in.orig	Mon Jan  5 13:38:54 2004
-+++ Makefile.in	Mon Jan  5 13:39:03 2004
-@@ -146,7 +146,7 @@
- bin_SCRIPTS = caca-config
- 
- doc_DATA = README BUGS TODO AUTHORS NEWS NOTES THANKS
--docdir = $(datadir)/doc/libcaca-dev
-+docdir = $(datadir)/doc/libcaca
- subdir = .
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/autotools/mkinstalldirs
+$OpenBSD: patch-Makefile_in,v 1.2 2009/10/15 23:27:09 jasper Exp $
+--- Makefile.in.orig	Fri Oct 16 00:40:07 2009
++++ Makefile.in	Fri Oct 16 00:40:20 2009
+@@ -236,7 +236,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = kernel caca src examples tests tools caca-sharp cxx python ruby doc
++SUBDIRS = kernel caca src examples tests tools cxx python ruby doc
+ DIST_SUBDIRS = $(SUBDIRS) win32
+ EXTRA_DIST = NOTES COPYING.GPL COPYING.LGPL bootstrap build-dos build-kernel build-win32 caca-config.in libcaca.spec libcaca.sln
+ AUTOMAKE_OPTIONS = dist-bzip2

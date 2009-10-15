@@ -1,0 +1,11 @@
+$OpenBSD: patch-caca_Makefile_in,v 1.1 2009/10/15 23:27:09 jasper Exp $
+--- caca/Makefile.in.orig	Thu Oct 15 23:17:22 2009
++++ caca/Makefile.in	Fri Oct 16 00:33:30 2009
+@@ -1006,7 +1006,6 @@ uninstall-am: uninstall-includeHEADERS uninstall-libLT
+ 
+ install-exec-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir)
+-	. libcaca.la; \
+ 	for x in $$library_names; do \
+ 	  ln -sf $$x $(DESTDIR)$(libdir)/$$(echo $$x | sed 's/caca/cucul/g'); \
+ 	done
