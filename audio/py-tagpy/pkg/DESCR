@@ -1,0 +1,7 @@
+TagPy is a set of Python bindings for Scott Wheeler's TagLib. It builds
+upon Boost.Python, a wrapper generation library which is part of the
+renowned Boost set of C++ libraries.
+
+Just like TagLib, TagPy can read and write ID3 tags in MP3, FLAC and
+MPC, access Xiph Comments in Ogg Vorbis Files and Ogg Flac Files and
+access APE tags in Musepack and MP3 files.
