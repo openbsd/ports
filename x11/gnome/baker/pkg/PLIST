@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/03/17 11:53:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/10/15 15:37:44 ajacoutot Exp $
 @bin bin/gnomebaker
 share/applications/gnomebaker.desktop
 share/gnome/help/gnomebaker/
@@ -161,8 +161,6 @@ share/locale/uk/LC_MESSAGES/gnomebaker.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/gnomebaker.mo
-share/locale/yi/
-share/locale/yi/LC_MESSAGES/
 share/locale/yi/LC_MESSAGES/gnomebaker.mo
 share/locale/zh/
 share/locale/zh/LC_MESSAGES/

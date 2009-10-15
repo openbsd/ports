@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/11 08:39:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/10/15 15:37:44 ajacoutot Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
 GNOME_PROJECT=		gnomebaker
 GNOME_VERSION=		0.6.4
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 CATEGORIES=		sysutils multimedia
 
 HOMEPAGE=		http://gnomebaker.sourceforge.net/
