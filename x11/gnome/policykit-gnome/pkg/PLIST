@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/07 08:18:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/15 23:51:06 ajacoutot Exp $
 %%SHARED%%
 @bin bin/polkit-gnome-authorization
 @bin bin/polkit-gnome-example
@@ -11,20 +11,15 @@ include/PolicyKit/polkit-gnome/polkit-gnome-toggle-action.h
 include/PolicyKit/polkit-gnome/polkit-gnome.h
 lib/libpolkit-gnome.a
 lib/libpolkit-gnome.la
-lib/pkgconfig/
 lib/pkgconfig/polkit-gnome.pc
 @bin libexec/polkit-gnome-manager
 share/PolicyKit/
 share/PolicyKit/policy/
 share/PolicyKit/policy/org.gnome.policykit.examples.policy
 share/applications/polkit-gnome-authorization.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/gnome-org.freedesktop.PolicyKit.AuthenticationAgent.service
 share/dbus-1/services/org.gnome.PolicyKit.AuthorizationManager.service
 share/dbus-1/services/org.gnome.PolicyKit.service
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/polkit-gnome/
 share/gtk-doc/html/polkit-gnome/PolKitGnomeAction.html
 share/gtk-doc/html/polkit-gnome/PolKitGnomeContext.html
@@ -52,13 +47,12 @@ share/gtk-doc/html/polkit-gnome/ref-core.html
 share/gtk-doc/html/polkit-gnome/right.png
 share/gtk-doc/html/polkit-gnome/style.css
 share/gtk-doc/html/polkit-gnome/up.png
+share/locale/ar/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/ca/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/cs/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/da/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/de/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/el/LC_MESSAGES/PolicyKit-gnome.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/es/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/fi/LC_MESSAGES/PolicyKit-gnome.mo
@@ -74,9 +68,8 @@ share/locale/sk/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/sv/LC_MESSAGES/PolicyKit-gnome.mo
 share/locale/zh_CN/LC_MESSAGES/PolicyKit-gnome.mo
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/policykit-gnome/*.schemas > /dev/null
-share/schemas/
-share/schemas/policykit-gnome/
-share/schemas/policykit-gnome/polkit-gnome.schemas
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/polkit-gnome.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/policykit-gnome/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database

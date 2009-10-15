@@ -1,0 +1,17 @@
+$OpenBSD: patch-polkit-gnome_polkit-gnome-action_c,v 1.1 2009/10/15 23:51:06 ajacoutot Exp $
+
+From Ubuntu via FreeBSD:
+fix a bug which can occur when trying to modify policies as a non-root
+user.
+
+--- polkit-gnome/polkit-gnome-action.c.orig	Tue Jul 22 19:00:53 2008
++++ polkit-gnome/polkit-gnome-action.c	Fri Oct 16 00:42:17 2009
+@@ -2062,6 +2062,8 @@ _button_clicked (GtkButton *button, PolKitGnomeAction 
+         case POLKIT_RESULT_ONLY_VIA_SELF_AUTH_KEEP_ALWAYS:
+                 /* g_debug ("blocking clicked"); */
+                 g_signal_stop_emission_by_name (button, "clicked");
++		if (action->priv->polkit_action != NULL)
++			g_signal_emit (action, signals [AUTH_START_SIGNAL], 0);
+                 break;
+ 
+         default:
