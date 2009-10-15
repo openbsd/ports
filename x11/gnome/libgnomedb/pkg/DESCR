@@ -1,7 +1,0 @@
-* Libgnomedb gives you a set of powerful widgets to show and edit data
-directly in the database, you can also create new Data Sources and
-conect to your preconfigured database server.
-
-* Libgnomedb is based in the GTK Object framework and allows you to
-create create new widgets that meets your needs using the flexibility of
-GObject.
