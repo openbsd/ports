@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2009/09/06 07:29:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/10/15 10:07:06 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
-GNOME_VERSION=	0.14.3
-PKGNAME=	${DISTNAME}
+GNOME_VERSION=	1.0.0
 
 CATEGORIES=	x11
 
@@ -42,12 +41,14 @@ RUN_DEPENDS=	::devel/mono-addins \
 		:shared-mime-info->=0.21:misc/shared-mime-info \
 		:gnome-icon-theme->=2.18.0:x11/gnome/icon-theme
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-evolution=no \
-		--enable-galago=no \
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-sketching=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# needs gmime-sharp and galago-sharp
+CONFIGURE_ARGS+= --enable-evolution=no \
+		--enable-galago=no
 
 # this is *.config.in on purpose (and not *.config)
 DLLMAP_FILES=	Tomboy/Tomboy.exe.config.in \
