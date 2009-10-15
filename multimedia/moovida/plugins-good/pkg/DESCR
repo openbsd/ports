@@ -1,0 +1,5 @@
+This package provides 'good' plugins for Moovida:
+- base
+- gnome (needs gnome-power-manager, won't work on OpenBSD)
+- hal (won't work on OpenBSD)
+- winscreensaver (useless on OpenBSD)

@@ -1,0 +1,5 @@
+This package provides 'ugly' plugins for Moovida:
+- flickr : browse pictures from flickr.
+- lirc (useless on OpenBSD)
+- shoutcast : browse shoutcast radios directory.
+- youtube : browse youtube video directory.

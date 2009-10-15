@@ -1,0 +1,26 @@
+This package provides 'bad' plugins for Moovida:
+- amazon : Amazon resource provider and metadata capability.
+- amp : Asynchronous Messaging Protocol implementation for IPC.
+- avahi : Discover the local network services using avahi.
+- coherence : UPnP related services.
+- daap : Access DAAP Shares.
+- database : Scan your local media and index it in the database.
+- discogs : Retrieve artist pictures from Discogs.com.
+- dvd : DVD plugin.
+- elisa_updater (MS-Windows only)
+- filtered_shares : Get a list of network shares.
+- gstreamer : GStreamer related components.
+- http_client : Generic HTTP client.
+- ipod : iPod devices support.
+- lastfm : Last.FM album cover art resource provider.
+- osso : OSSO service provider. (Maemo/hildon only)
+- pigment : Another pigment frontend.
+- poblesec : Poblesec frontend.
+- rss : Browse and play RSS stories.
+- search : General search architecture and system.
+- shelf : List all the available UI plugins on a shelf.
+- smbwin32 : Samba share provider (MS-Windows only)
+- themoviedb : Lookup for movies and get metadata about them.
+- thetvdb : Lookup for TV series and get metadata about them.
+- winremote : Win32 remote control support (MS-Windows only)
+- wmd : Listen for DEVICECHANGE win32 messages (MS-Windows only)

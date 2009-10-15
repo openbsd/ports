@@ -1,0 +1,31 @@
+$OpenBSD: patch-elisa_plugins_pigment_widgets_panel_py,v 1.1.1.1 2009/10/15 15:41:57 landry Exp $
+Workaround WTFBUG https://bugs.launchpad.net/elisa/+bug/379409
+--- elisa/plugins/pigment/widgets/panel.py.orig	Wed Sep  9 16:15:23 2009
++++ elisa/plugins/pigment/widgets/panel.py	Thu Oct 15 17:19:03 2009
+@@ -210,14 +210,26 @@ class PiecePanel(Widget):
+         self.bottom_right.set_position(x, y, az)
+ 
+     def _compute_border_sizes(self):
++        if isinstance(self.left_width,int) and self.left_width==0:
++            self.left_width = ValueWithUnit(0, "px")
++
+         fx, fy = self.get_factors_absolute(self.left_width.unit)
+         self._left_width = fx*self.left_width.value
+ 
++        if isinstance(self.right_width,int) and self.right_width==0:
++            self.right_width = ValueWithUnit(0, "px")
++
+         fx, fy = self.get_factors_absolute(self.right_width.unit)
+         self._right_width = fx*self.right_width.value
+ 
++        if isinstance(self.top_height,int) and self.top_height==0:
++            self.top_height = ValueWithUnit(0, "px")
++
+         fx, fy = self.get_factors_absolute(self.top_height.unit)
+         self._top_height = fy*self.top_height.value
++
++        if isinstance(self.bottom_height,int) and self.bottom_height==0:
++            self.bottom_height = ValueWithUnit(0, "px")
+ 
+         fx, fy = self.get_factors_absolute(self.bottom_height.unit)
+         self._bottom_height = fy*self.bottom_height.value
