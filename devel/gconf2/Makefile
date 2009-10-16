@@ -1,14 +1,19 @@
-# $OpenBSD: Makefile,v 1.34 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.35 2009/10/16 10:10:16 ajacoutot Exp $
 
 COMMENT=	configuration database system for GNOME
 
 GNOME_PROJECT=	GConf
 GNOME_VERSION=	2.24.0
-PKGNAME=	gconf2-${GNOME_VERSION}p1
+PKGNAME=	gconf2-${GNOME_VERSION}p2
+
 SHARED_LIBS +=	gconf-2              6.2      # .5.5
+
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnome.org/projects/gconf/
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_FTP=	Yes
