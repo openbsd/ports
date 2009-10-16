@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/05/03 22:26:27 djm Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/10/16 09:38:20 djm Exp $
 @option no-default-conflict
 @conflict python->=2.6,<2.7
 @conflict python-bz2->=2.6,<2.7
@@ -1257,7 +1257,7 @@ lib/python2.6/keyword.py
 lib/python2.6/keyword.pyc
 lib/python2.6/keyword.pyo
 lib/python2.6/lib-dynload/
-lib/python2.6/lib-dynload/Python-2.6.2-py2.6.egg-info
+lib/python2.6/lib-dynload/Python-2.6.3-py2.6.egg-info
 lib/python2.6/lib-dynload/_bisect.so
 lib/python2.6/lib-dynload/_bytesio.so
 lib/python2.6/lib-dynload/_codecs_cn.so
@@ -1322,9 +1322,9 @@ lib/python2.6/lib-dynload/zlib.so
 lib/python2.6/lib-old/
 lib/python2.6/lib2to3/
 lib/python2.6/lib2to3/Grammar.txt
-lib/python2.6/lib2to3/Grammar2.6.2.final.0.pickle
+lib/python2.6/lib2to3/Grammar2.6.3.final.0.pickle
 lib/python2.6/lib2to3/PatternGrammar.txt
-lib/python2.6/lib2to3/PatternGrammar2.6.2.final.0.pickle
+lib/python2.6/lib2to3/PatternGrammar2.6.3.final.0.pickle
 lib/python2.6/lib2to3/__init__.py
 lib/python2.6/lib2to3/__init__.pyc
 lib/python2.6/lib2to3/__init__.pyo

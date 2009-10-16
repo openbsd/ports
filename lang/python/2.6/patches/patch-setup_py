@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.3 2009/05/03 22:26:27 djm Exp $
---- setup.py.orig	Wed Apr  1 04:20:48 2009
-+++ setup.py	Sun Apr 19 10:28:55 2009
+$OpenBSD: patch-setup_py,v 1.4 2009/10/16 09:38:20 djm Exp $
+--- setup.py.orig	Sun Sep 20 20:37:33 2009
++++ setup.py	Mon Oct  5 07:12:38 2009
 @@ -19,6 +19,11 @@ from distutils.command.install_lib import install_lib
  # This global variable is used to hold the list of modules to be disabled.
  disabled_module_list = []
@@ -139,7 +139,7 @@ $OpenBSD: patch-setup_py,v 1.3 2009/05/03 22:26:27 djm Exp $
          else:
              missing.append('ossaudiodev')
  
-@@ -1494,7 +1509,7 @@ class PyBuildExt(build_ext):
+@@ -1505,7 +1520,7 @@ class PyBuildExt(build_ext):
          # For 8.4a2, the X11 headers are not included. Rather than include a
          # complicated search, this is a hard-coded path. It could bail out
          # if X11 libs are not found...
@@ -148,7 +148,7 @@ $OpenBSD: patch-setup_py,v 1.3 2009/05/03 22:26:27 djm Exp $
          frameworks = ['-framework', 'Tcl', '-framework', 'Tk']
  
          # All existing framework builds of Tcl/Tk don't support 64-bit
-@@ -1541,8 +1556,7 @@ class PyBuildExt(build_ext):
+@@ -1550,8 +1565,7 @@ class PyBuildExt(build_ext):
          # The versions with dots are used on Unix, and the versions without
          # dots on Windows, for detection by cygwin.
          tcllib = tklib = tcl_includes = tk_includes = None
@@ -158,7 +158,7 @@ $OpenBSD: patch-setup_py,v 1.3 2009/05/03 22:26:27 djm Exp $
              tklib = self.compiler.find_library_file(lib_dirs, 'tk' + version)
              tcllib = self.compiler.find_library_file(lib_dirs, 'tcl' + version)
              if tklib and tcllib:
-@@ -1583,17 +1597,9 @@ class PyBuildExt(build_ext):
+@@ -1592,17 +1606,9 @@ class PyBuildExt(build_ext):
          if platform == 'sunos5':
              include_dirs.append('/usr/openwin/include')
              added_lib_dirs.append('/usr/openwin/lib')
@@ -179,7 +179,7 @@ $OpenBSD: patch-setup_py,v 1.3 2009/05/03 22:26:27 djm Exp $
  
          # If Cygwin, then verify that X is installed before proceeding
          if platform == 'cygwin':
-@@ -1893,7 +1899,7 @@ def main():
+@@ -1902,7 +1908,7 @@ def main():
            # Scripts to install
            scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',
                       'Tools/scripts/2to3',

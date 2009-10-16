@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.2 2009/05/03 22:26:27 djm Exp $
---- configure.in.orig	Tue Mar 31 03:56:14 2009
-+++ configure.in	Sun Apr 19 10:28:55 2009
-@@ -253,7 +253,7 @@ case $ac_sys_system/$ac_sys_release in
+$OpenBSD: patch-configure_in,v 1.3 2009/10/16 09:38:20 djm Exp $
+--- configure.in.orig	Tue Sep 29 23:01:59 2009
++++ configure.in	Mon Oct  5 07:12:38 2009
+@@ -262,7 +262,7 @@ case $ac_sys_system/$ac_sys_release in
    # On OpenBSD, select(2) is not available if _XOPEN_SOURCE is defined,
    # even though select is a POSIX function. Reported by J. Ribbens.
    # Reconfirmed for OpenBSD 3.3 by Zachary Hamm, for 3.4 by Jason Ish.
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.2 2009/05/03 22:26:27 djm Exp $
      define_xopen_source=no
      # OpenBSD undoes our definition of __BSD_VISIBLE if _XOPEN_SOURCE is
      # also defined. This can be overridden by defining _BSD_SOURCE
-@@ -1683,27 +1683,13 @@ then
+@@ -1768,27 +1768,13 @@ then
  		;;
  	Linux*|GNU*|QNX*) LDSHARED='$(CC) -shared';;
  	BSD/OS*/4*) LDSHARED="gcc -shared";;
@@ -39,7 +39,7 @@ $OpenBSD: patch-configure_in,v 1.2 2009/05/03 22:26:27 djm Exp $
  	NetBSD*|DragonFly*) LDSHARED="cc -shared ${LDFLAGS}";;
  	OpenUNIX*|UnixWare*)
  		if test "$GCC" = "yes"
-@@ -1855,9 +1841,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-U
+@@ -1940,9 +1926,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-U
  
  # only check for sem_init if thread support is requested
  if test "$with_threads" = "yes" -o -z "$with_threads"; then
