@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2009/09/28 18:32:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/10/16 01:04:32 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	educational game for children
 
 DISTNAME=	gcompris-8.4.7
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	games education
 
 HOMEPAGE=	http://gcompris.net/
@@ -48,7 +48,6 @@ RUN_DEPENDS=	::games/gnuchess \
 		::cad/gnucap \
 		:desktop-file-utils-*:devel/desktop-file-utils \
 		::multimedia/gstreamer-0.10/plugins-base \
-		::multimedia/gstreamer-0.10/plugins-good,-gconf \
 		:yelp-*:x11/gnome/yelp
 
 USE_X11=	Yes
