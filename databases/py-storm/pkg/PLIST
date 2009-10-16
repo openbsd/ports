@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/10/11 16:36:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/10/16 15:17:02 eric Exp $
 lib/python${MODPY_VERSION}/site-packages/storm/
 lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/storm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -66,6 +66,8 @@ lib/python${MODPY_VERSION}/site-packages/storm/variables.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/zope/
 lib/python${MODPY_VERSION}/site-packages/storm/zope/__init__.py
 lib/python${MODPY_VERSION}/site-packages/storm/zope/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/storm/zope/adapters.py
+lib/python${MODPY_VERSION}/site-packages/storm/zope/adapters.pyc
 lib/python${MODPY_VERSION}/site-packages/storm/zope/configure.zcml
 lib/python${MODPY_VERSION}/site-packages/storm/zope/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/storm/zope/interfaces.pyc
