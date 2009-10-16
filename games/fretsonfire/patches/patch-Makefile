@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/10/16 23:11:39 phessler Exp $
+--- Makefile.orig	Thu Oct 15 17:09:04 2009
++++ Makefile	Thu Oct 15 17:09:38 2009
+@@ -2,7 +2,7 @@
+ # Frets on Fire Makefile
+ #
+ TOP=.
+-PYTHON=python
++PYTHON?=python
+ PLATFORM=$(shell uname)
+ 
+ include data/Makefile

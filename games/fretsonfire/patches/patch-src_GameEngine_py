@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_GameEngine_py,v 1.1.1.1 2009/10/16 23:11:39 phessler Exp $
+--- src/GameEngine.py.orig	Sun Sep  7 13:35:12 2008
++++ src/GameEngine.py	Sat Oct 10 17:03:32 2009
+@@ -53,14 +53,14 @@ Config.define("game",   "uploadurl",    str,   "http:/
+ Config.define("game",   "leftymode",    bool,  False, text = _("Lefty mode"),           options = {False: _("No"), True: _("Yes")})
+ Config.define("game",   "tapping",      bool,  True,  text = _("Tappable notes"),       options = {False: _("No"), True: _("Yes")})
+ Config.define("video",  "fullscreen",   bool,  False, text = _("Fullscreen Mode"),      options = {False: _("No"), True: _("Yes")})
+-Config.define("video",  "multisamples", int,   4,     text = _("Antialiasing Quality"), options = {0: _("None"), 2: _("2x"), 4: _("4x"), 6: _("6x"), 8: _("8x")})
++Config.define("video",  "multisamples", int,   0,     text = _("Antialiasing Quality"), options = {0: _("None"), 2: _("2x"), 4: _("4x"), 6: _("6x"), 8: _("8x")})
+ Config.define("video",  "resolution",   str,   "640x480")
+-Config.define("video",  "fps",          int,   80,    text = _("Frames per Second"), options = dict([(n, n) for n in range(1, 120)]))
++Config.define("video",  "fps",          int,   24,    text = _("Frames per Second"), options = dict([(n, n) for n in range(1, 120)]))
+ #Config.define("opengl", "svgquality",   int,   NORMAL_QUALITY,  text = _("SVG Quality"), options = {LOW_QUALITY: _("Low"), NORMAL_QUALITY: _("Normal"), HIGH_QUALITY: _("High")})
+-Config.define("audio",  "frequency",    int,   44100, text = _("Sample Frequency"), options = [8000, 11025, 22050, 32000, 44100, 48000])
++Config.define("audio",  "frequency",    int,   22050, text = _("Sample Frequency"), options = [8000, 11025, 22050, 32000, 44100, 48000])
+ Config.define("audio",  "bits",         int,   16,    text = _("Sample Bits"), options = [16, 8])
+ Config.define("audio",  "stereo",       bool,  True)
+-Config.define("audio",  "buffersize",   int,   2048,  text = _("Buffer Size"), options = [256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536])
++Config.define("audio",  "buffersize",   int,   4096,  text = _("Buffer Size"), options = [256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536])
+ Config.define("audio",  "delay",        int,   100,   text = _("A/V delay"), options = dict([(n, n) for n in range(0, 301)]))
+ Config.define("audio",  "screwupvol", float,   0.25,  text = _("Screw Up Sounds"), options = {0.0: _("Off"), .25: _("Quiet"), .5: _("Loud"), 1.0: _("Painful")})
+ Config.define("audio",  "guitarvol",  float,    1.0,  text = _("Guitar Volume"),   options = dict([(n / 100.0, "%02d/10" % (n / 9)) for n in range(0, 110, 10)]))
