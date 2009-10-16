@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/16 23:11:38 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/16 23:24:32 phessler Exp $
 
 V =			1.3.110
 COMMENT =		guitar hero clone
 DISTNAME =		FretsOnFire-${V}
-PKGNAME =		${DISTNAME:L}
+PKGNAME =		${DISTNAME:L}p0
 
 CATEGORIES =		games x11
 
@@ -30,19 +30,19 @@ WRKDIST =		"${WRKDIR}/Frets on Fire-${V}"
 NO_REGRESS =		Yes
 
 FFDIR =			${PREFIX}/share/fretsonfire
-SUBST_VARS +=		MODPY_VERSION
 
 pre-configure:
-		cp ${FILESDIR}/fretsonfire.sh ${WRKDIST}/
-		${SUBST_CMD} ${WRKDIST}/fretsonfire.sh
+			cp ${FILESDIR}/fretsonfire.sh ${WRKDIST}/
+			${SUBST_CMD} ${WRKDIST}/fretsonfire.sh
 
-post-install:
+do-install:
 			${INSTALL_DATA_DIR} ${FFDIR}/data
 			@cd ${WRKDIST}/data && pax -rw . ${FFDIR}/data
 			${INSTALL_DATA_DIR} ${FFDIR}/src
 			@cd ${WRKDIST}/src && pax -rw . ${FFDIR}/src
 			${INSTALL_DATA_DIR} ${FFDIR}/doc
 			@cd ${WRKDIST}/doc && pax -rw . ${FFDIR}/doc
+			${INSTALL_DATA} ${WRKDIST}/copying.txt ${FFDIR}
 			${INSTALL_SCRIPT} ${WRKDIST}/fretsonfire.sh \
 			    ${PREFIX}/bin/fretsonfire
 
