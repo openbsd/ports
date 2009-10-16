@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_pms_cpp,v 1.1 2009/10/16 22:16:44 edd Exp $
+--- src/pms.cpp.orig	Fri Oct 16 12:36:18 2009
++++ src/pms.cpp	Fri Oct 16 12:36:33 2009
+@@ -22,6 +22,7 @@
+  */
+ 
+ #include "pms.h"
++#include <sys/wait.h>
+ 
+ using namespace std;
+ 
