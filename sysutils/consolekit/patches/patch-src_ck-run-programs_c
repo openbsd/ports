@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_ck-run-programs_c,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+$OpenBSD: patch-src_ck-run-programs_c,v 1.2 2009/10/16 09:36:56 ajacoutot Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=17893
+
 --- src/ck-run-programs.c.orig	Sun May 31 19:37:54 2009
 +++ src/ck-run-programs.c	Sun May 31 19:38:07 2009
 @@ -225,6 +225,7 @@ ck_run_programs (const char *dirpath,

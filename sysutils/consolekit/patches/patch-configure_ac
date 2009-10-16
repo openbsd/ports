@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2009/10/16 09:36:56 ajacoutot Exp $
 --- configure.ac.orig	Sat May 30 23:09:15 2009
 +++ configure.ac	Sat May 30 23:10:16 2009
 @@ -176,6 +176,14 @@ dnl --------------------------------------------------
@@ -36,6 +36,3 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
     echo "         a huge SECURITY HOLE. I repeat: YOU NEED TO EDIT THE FILE"
     echo "         ConsoleKit.conf to match your distro/site to avoid NASTY SECURITY HOLES."
     echo ""
--fi
-\ No newline at end of file
-+fi

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.2 2009/10/16 09:36:56 ajacoutot Exp $
 --- src/ck-sysdeps-openbsd.c.orig	Sun May 31 04:10:36 2009
 +++ src/ck-sysdeps-openbsd.c	Sun May 31 19:24:53 2009
 @@ -0,0 +1,412 @@
@@ -7,7 +7,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.1.1.1 2009/06/07 02:55:19 robert Ex
 + * Copyright (C) 2006 William Jon McCann <mccann@jhu.edu>
 + * Copyright (C) 2007 Joe Marcus Clarke <marcus@FreeBSD.org>
 + * Copyright (C) 2008 Jared D. McNeill <jmcneill@NetBSD.org>
-+ * Copyright (C) 2009 Jared D. McNeill <robert@openbsd.org>
++ * Copyright (C) 2009 Robert Nagy <robert@openbsd.org>
 + *
 + * This program is free software; you can redistribute it and/or modify
 + * it under the terms of the GNU General Public License as published by

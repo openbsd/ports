@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_ck-session_c,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+$OpenBSD: patch-src_ck-session_c,v 1.2 2009/10/16 09:36:56 ajacoutot Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=18330
+
 --- src/ck-session.c.orig	Sun May 31 19:37:12 2009
 +++ src/ck-session.c	Sun May 31 19:37:38 2009
 @@ -1100,6 +1100,8 @@ ck_session_finalize (GObject *object)
