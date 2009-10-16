@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/09 16:56:43 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/16 09:14:18 phessler Exp $
 @bin bin/alephone
+@man man/man6/alephone.6
 share/AlephOne/
 share/AlephOne/Fonts
 share/AlephOne/MML/
