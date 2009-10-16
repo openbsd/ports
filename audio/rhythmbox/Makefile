@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2009/09/28 18:32:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2009/10/16 00:59:37 jasper Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.5
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -53,7 +53,6 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			gstcdda-0.10,gsttag-0.10::multimedia/gstreamer-0.10/plugins-base,-cdda \
 			soup-gnome-2.4.>=1::devel/libsoup,-gnome
 RUN_DEPENDS=		:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-gnome \
-			:gstreamer-plugins-good->=0.10.8:multimedia/gstreamer-0.10/plugins-good,-gconf \
 			::x11/gnome/icon-theme \
 			::multimedia/gstreamer-0.10/py-gstreamer
 REGRESS_DEPENDS=	::devel/check
