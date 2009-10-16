@@ -1,12 +1,17 @@
-# $OpenBSD: Makefile,v 1.40 2009/10/13 14:37:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2009/10/16 09:44:02 ajacoutot Exp $
 
 COMMENT=	editor for the GConf configuration system
 
 GNOME_PROJECT=	gconf-editor
 GNOME_VERSION=	2.28.0
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnome.org/projects/gconf/
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
