@@ -1,0 +1,19 @@
+$OpenBSD: patch-frontend_gtkmm_src_gnome_applet_Makefile_in,v 1.1 2009/10/16 00:58:43 ajacoutot Exp $
+
+Fix compilation with GNOME 2.28.
+
+--- frontend/gtkmm/src/gnome_applet/Makefile.in.orig	Fri Oct 16 02:55:34 2009
++++ frontend/gtkmm/src/gnome_applet/Makefile.in	Fri Oct 16 02:54:46 2009
+@@ -516,9 +516,9 @@ SUBDIRS = 
+ 
+ @HAVE_GNOME_TRUE@workrave_applet_SOURCES = WorkraveApplet.c
+ @HAVE_GNOME_TRUE@nodist_workrave_applet_SOURCES = $(IDL_C_GENERATED) $(IDL_A_GENERATED)
+-@HAVE_GNOME_TRUE@workrave_applet_LDADD = @APPLET_LIBS@
+-@HAVE_GNOME_TRUE@workrave_applet_CXXFLAGS = ${FLAGS}
+-@HAVE_GNOME_TRUE@workrave_applet_CFLAGS = ${FLAGS}
++@HAVE_GNOME_TRUE@workrave_applet_LDADD = @APPLET_LIBS@ `pkg-config --libs libgnomeui-2.0`
++@HAVE_GNOME_TRUE@workrave_applet_CXXFLAGS = ${FLAGS} `pkg-config --cflags libgnomeui-2.0
++@HAVE_GNOME_TRUE@workrave_applet_CFLAGS = ${FLAGS} `pkg-config --cflags libgnomeui-2.0`
+ all: all-recursive
+ 
+ .SUFFIXES:
