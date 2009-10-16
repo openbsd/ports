@@ -1,0 +1,22 @@
+$OpenBSD: patch-examples_Makefile_in,v 1.1 2009/10/16 10:56:04 jasper Exp $
+--- examples/Makefile.in.orig	Fri Oct 16 03:10:34 2009
++++ examples/Makefile.in	Fri Oct 16 03:11:53 2009
+@@ -36,8 +36,7 @@ noinst_PROGRAMS = first$(EXEEXT) second$(EXEEXT) pprin
+ 	procargs$(EXEEXT) df$(EXEEXT) netlist$(EXEEXT) \
+ 	mountlist$(EXEEXT) procmap$(EXEEXT) netload$(EXEEXT) \
+ 	sysdeps$(EXEEXT) timings$(EXEEXT) openfiles$(EXEEXT) \
+-	smp$(EXEEXT) proclist$(EXEEXT) mem$(EXEEXT) wd$(EXEEXT) \
+-	affinity$(EXEEXT)
++	smp$(EXEEXT) proclist$(EXEEXT) mem$(EXEEXT) wd$(EXEEXT)
+ subdir = examples
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in ChangeLog
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -109,7 +108,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
+ 	--mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-SOURCES = $(affinity_SOURCES) $(df_SOURCES) $(first_SOURCES) mem.c \
++SOURCES = $(df_SOURCES) $(first_SOURCES) mem.c \
+ 	$(mountlist_SOURCES) $(netlist_SOURCES) $(netload_SOURCES) \
+ 	$(openfiles_SOURCES) $(pprint_SOURCES) $(procargs_SOURCES) \
+ 	$(proclist_SOURCES) $(procmap_SOURCES) $(second_SOURCES) \

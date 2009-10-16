@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2009/10/12 10:18:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2009/10/16 10:56:04 jasper Exp $
 %%SHARED%%
 @bin bin/libgtop_daemon2
 @mode 2555
@@ -24,6 +24,7 @@ include/libgtop-2.0/glibtop/netload.h
 include/libgtop-2.0/glibtop/open.h
 include/libgtop-2.0/glibtop/parameter.h
 include/libgtop-2.0/glibtop/ppp.h
+include/libgtop-2.0/glibtop/procaffinity.h
 include/libgtop-2.0/glibtop/procargs.h
 include/libgtop-2.0/glibtop/prockernel.h
 include/libgtop-2.0/glibtop/proclist.h
@@ -110,6 +111,9 @@ share/locale/am/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libgtop-2.0.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/libgtop-2.0.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgtop-2.0.mo
@@ -125,6 +129,9 @@ share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ca/LC_MESSAGES/libgtop-2.0.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/libgtop-2.0.mo
 share/locale/cs/LC_MESSAGES/libgtop-2.0.mo
 share/locale/cy/
 share/locale/cy/LC_MESSAGES/
@@ -167,6 +174,9 @@ share/locale/ja/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/libgtop-2.0.mo
+share/locale/kn/
+share/locale/kn/LC_MESSAGES/
+share/locale/kn/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ko/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
@@ -174,10 +184,16 @@ share/locale/ku/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ky/
 share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/libgtop-2.0.mo
+share/locale/la/
+share/locale/la/LC_MESSAGES/
+share/locale/la/LC_MESSAGES/libgtop-2.0.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libgtop-2.0.mo
 share/locale/lv/LC_MESSAGES/libgtop-2.0.mo
+share/locale/mai/
+share/locale/mai/LC_MESSAGES/
+share/locale/mai/LC_MESSAGES/libgtop-2.0.mo
 share/locale/mg/
 share/locale/mg/LC_MESSAGES/
 share/locale/mg/LC_MESSAGES/libgtop-2.0.mo
@@ -193,6 +209,9 @@ share/locale/ml/LC_MESSAGES/libgtop-2.0.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/libgtop-2.0.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
+share/locale/mr/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/libgtop-2.0.mo
@@ -225,9 +244,9 @@ share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sr/LC_MESSAGES/libgtop-2.0.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/libgtop-2.0.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sv/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/

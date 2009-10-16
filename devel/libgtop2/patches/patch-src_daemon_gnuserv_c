@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_daemon_gnuserv_c,v 1.3 2008/02/09 16:52:25 ajacoutot Exp $
---- src/daemon/gnuserv.c.orig	Sat May 12 23:54:57 2007
-+++ src/daemon/gnuserv.c	Fri Dec 28 18:53:17 2007
-@@ -206,6 +206,12 @@ permitted (u_long host_addr, int fd)
+$OpenBSD: patch-src_daemon_gnuserv_c,v 1.4 2009/10/16 10:56:04 jasper Exp $
+--- src/daemon/gnuserv.c.orig	Sun Apr 19 01:29:49 2009
++++ src/daemon/gnuserv.c	Fri Oct 16 02:28:09 2009
+@@ -203,6 +203,12 @@ permitted (u_long host_addr, int fd)
  	    return FALSE;
  	}
  
