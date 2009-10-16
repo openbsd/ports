@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2009/10/15 14:44:27 phessler Exp $
+# $OpenBSD: Makefile,v 1.201 2009/10/16 23:12:26 phessler Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -57,6 +57,7 @@
      SUBDIR += freeciv
      SUBDIR += freedroid
      SUBDIR += freedroidrpg
+     SUBDIR += fretsonfire
      SUBDIR += frotz
      SUBDIR += frozen-bubble
      SUBDIR += gargoyle
