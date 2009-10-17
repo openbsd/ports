@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.14 2009/10/04 18:17:57 ajacoutot Exp $
---- gtk/Makefile.in.orig	Tue Sep 29 06:53:28 2009
-+++ gtk/Makefile.in	Tue Sep 29 06:54:19 2009
-@@ -932,7 +932,7 @@ SUBDIRS = theme-bits . tests
+$OpenBSD: patch-gtk_Makefile_in,v 1.15 2009/10/17 16:14:54 ajacoutot Exp $
+--- gtk/Makefile.in.orig	Sat Oct 17 03:53:00 2009
++++ gtk/Makefile.in	Sat Oct 17 17:52:05 2009
+@@ -935,7 +935,7 @@ SUBDIRS = theme-bits . tests
  DIST_SUBDIRS = theme-bits tests
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_FALSE@GTK_PRINT_BACKENDS = file,lpr
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_TRUE@GTK_PRINT_BACKENDS = file,papi

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2009/10/14 11:20:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2009/10/17 16:14:54 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=			multi-platform graphical toolkit
 COMMENT-docs=           	gtk+2 documentation
 COMMENT-cups=			gtk+2 CUPS print backend
 
-VERSION=			2.18.2
+VERSION=			2.18.3
 DISTNAME=			gtk+-${VERSION}
 
 PKGNAME-main=			gtk+2-${VERSION}
