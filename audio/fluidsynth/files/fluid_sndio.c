@@ -86,7 +86,6 @@ fluid_audio_driver_t*
 new_fluid_sndio_audio_driver(fluid_settings_t* settings, fluid_synth_t* synth)
 {
   fluid_sndio_audio_driver_t* dev = NULL;
-  int queuesize;
   double sample_rate;
   int periods, period_size;
   char* devname;
@@ -109,8 +108,6 @@ new_fluid_sndio_audio_driver(fluid_settings_t* settings, fluid_synth_t* synth)
   dev->callback = NULL;
   dev->data = NULL;
   dev->cont = 1;
-  dev->buffer_size = (int) period_size;
-  queuesize = (int) (periods * period_size);
 
   if (!fluid_settings_getstr(settings, "audio.sndio.device", &devname)) {
     devname = NULL;
@@ -132,21 +129,14 @@ new_fluid_sndio_audio_driver(fluid_settings_t* settings, fluid_synth_t* synth)
     dev->par.le = 1;
 #endif
     dev->read = fluid_synth_write_s16;
-    dev->buffer_byte_size = dev->buffer_size * 4;
 
   } else {
     FLUID_LOG(FLUID_ERR, "Unknown sample format");
     goto error_recovery;
   }
 
-  dev->buffer = FLUID_MALLOC(dev->buffer_byte_size);
-  if (dev->buffer == NULL) {
-    FLUID_LOG(FLUID_ERR, "Out of memory");
-    goto error_recovery;
-  }
-
-  dev->par.appbufsz = dev->buffer_size * periods;
-  dev->par.round = dev->buffer_size;
+  dev->par.appbufsz = period_size * periods;
+  dev->par.round = period_size;
 
   dev->par.pchan = 2;
   dev->par.rate = sample_rate;
@@ -162,6 +152,15 @@ new_fluid_sndio_audio_driver(fluid_settings_t* settings, fluid_synth_t* synth)
   } else if (dev->par.pchan != 2 || dev->par.rate != sample_rate ||
       dev->par.bits != 16) {
     FLUID_LOG(FLUID_ERR, "Couldn't set sndio audio parameters as desired");
+    goto error_recovery;
+  }
+
+  dev->buffer_size = dev->par.round;
+  dev->buffer_byte_size = dev->par.round * dev->par.bps * dev->par.pchan;
+
+  dev->buffer = FLUID_MALLOC(dev->buffer_byte_size);
+  if (dev->buffer == NULL) {
+    FLUID_LOG(FLUID_ERR, "Out of memory");
     goto error_recovery;
   }
 
@@ -192,7 +191,6 @@ fluid_audio_driver_t*
 new_fluid_sndio_audio_driver2(fluid_settings_t* settings, fluid_audio_func_t func, void* data)
 {
   fluid_sndio_audio_driver_t* dev = NULL;
-  int queuesize;
   double sample_rate;
   int periods, period_size;
   char* devname;
@@ -216,9 +214,6 @@ new_fluid_sndio_audio_driver2(fluid_settings_t* settings, fluid_audio_func_t fun
   dev->callback = func;
   dev->data = data;
   dev->cont = 1;
-  dev->buffer_size = (int) period_size;
-  queuesize = (int) (periods * period_size);
-  dev->buffer_byte_size = dev->buffer_size * 2 * 2; /* 2 channels * 16 bits audio */
 
   if (!fluid_settings_getstr(settings, "audio.sndio.device", &devname)) {
     devname = NULL;
@@ -232,8 +227,8 @@ new_fluid_sndio_audio_driver2(fluid_settings_t* settings, fluid_audio_func_t fun
 
   sio_initpar(&dev->par);
 
-  dev->par.appbufsz = dev->buffer_size * periods;
-  dev->par.round = dev->buffer_size;
+  dev->par.appbufsz = period_size * periods;
+  dev->par.round = period_size;
 
   dev->par.bits = 16;
 #ifdef WORDS_BIGENDIAN
@@ -259,8 +254,15 @@ new_fluid_sndio_audio_driver2(fluid_settings_t* settings, fluid_audio_func_t fun
     goto error_recovery;
   }
 
+  dev->buffer_size = dev->par.round;
+  dev->buffer_byte_size = dev->par.round * dev->par.bps * dev->par.pchan;
+
   /* allocate the buffers. FIXME!!! don't use interleaved samples */
   dev->buffer = FLUID_MALLOC(dev->buffer_byte_size);
+  if (dev->buffer == NULL) {
+    FLUID_LOG(FLUID_ERR, "Out of memory");
+    goto error_recovery;
+  }
   dev->buffers[0] = FLUID_ARRAY(float, dev->buffer_size);
   dev->buffers[1] = FLUID_ARRAY(float, dev->buffer_size);
   if ((dev->buffer == NULL) || (dev->buffers[0] == NULL) || (dev->buffers[1] == NULL)) {
@@ -443,7 +445,6 @@ fluid_sndio_midi_run(void *addr)
     /* read new data */
     n = mio_read(dev->hdl, buffer, MIDI_BUFLEN);
     if (n == 0 && mio_eof(dev->hdl)) {
-      fprintf(stderr, "cant read midi device\n");
       FLUID_LOG(FLUID_ERR, "Failed to read the midi input");
       dev->status = FLUID_MIDI_DONE;
     }
@@ -509,7 +510,7 @@ new_fluid_sndio_midi_driver(fluid_settings_t *settings,
   /* open the default hardware device. only use midi in. */
   dev->hdl = mio_open(device, MIO_IN, 0);
   if (dev->hdl == NULL) {
-    fprintf(stderr, "%s: couldn't open midi device\n");
+    FLUID_LOG(FLUID_ERR, "Couldn't open sndio midi device");
     goto error_recovery;
   }
 
