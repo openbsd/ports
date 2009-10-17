@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/10/07 20:59:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/10/17 16:25:49 sthen Exp $
 @conflict clamav-<0.94
 bin/MailScanner
 bin/Quick.Peek
@@ -13,6 +13,7 @@ bin/processing_messages_alert
 bin/update_bad_phishing_emails
 bin/update_bad_phishing_sites
 bin/update_phishing_sites
+bin/upgrade_MailScanner_conf
 lib/MailScanner/
 @sample /var/spool/MailScanner/
 @sample /var/spool/MailScanner/quarantine/

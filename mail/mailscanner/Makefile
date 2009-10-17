@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/10/07 20:59:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2009/10/17 16:25:49 sthen Exp $
 
 COMMENT=	virus/spam scanning framework
 
@@ -8,7 +8,7 @@ Vss=		${Vs}-1
 CATEGORIES=	mail
 MASTER_SITES=	http://mailscanner.info/files/4/tar/
 DISTNAME=	mailscanner-${V}.${Vss}
-PKGNAME=	mailscanner-${V}.${Vss:S/-/./}
+PKGNAME=	mailscanner-${V}.${Vss:S/-/./}p0
 DISTFILES=	MailScanner-install-${V}.${Vss}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/MailScanner-${V}.${Vss}
 
@@ -51,7 +51,7 @@ do-install:	install_libexec install_etc install_share install_lib install_bin
 BINS=	MailScanner Quick.Peek df2mbox d2mbox update_bad_phishing_emails
 BINS+=	update_bad_phishing_sites update_phishing_sites check_mailscanner
 BINS+=	clean.quarantine clean.SA.cache analyse_SpamAssassin_cache
-BINS+=	mailscanner_create_locks processing_messages_alert
+BINS+=	mailscanner_create_locks processing_messages_alert upgrade_MailScanner_conf
 
 _MS_sed_frag= _subst() { sed 's,%PREFIX%,${LOCALBASE},g;s,%SYSCONFDIR%,${SYSCONFDIR},g' \
 		"$$2" > ${WRKDIST}/file; \

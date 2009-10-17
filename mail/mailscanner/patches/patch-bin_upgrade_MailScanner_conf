@@ -1,12 +1,72 @@
-$OpenBSD: patch-bin_upgrade_MailScanner_conf,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
---- bin/upgrade_MailScanner_conf.orig	Fri Jul 27 10:52:56 2007
-+++ bin/upgrade_MailScanner_conf	Sun Aug  5 04:03:25 2007
-@@ -106,7 +106,7 @@ If you are using the tar distribution so that the old 
- /opt/MailScanner and the new one is in /opt/MailScanner.new then:
+$OpenBSD: patch-bin_upgrade_MailScanner_conf,v 1.2 2009/10/17 16:25:49 sthen Exp $
+--- bin/upgrade_MailScanner_conf.orig	Tue Aug 11 11:26:07 2009
++++ bin/upgrade_MailScanner_conf	Tue Oct 13 22:41:40 2009
+@@ -60,25 +60,12 @@ sub Usage {
+     print STDERR <<EOU;
+ Usage:
  
- cd /opt/MailScanner.new/etc/reports/en
+-RPM
+-===
+-If you are using the RPM distributions then try this:
+-
+-cd /etc/MailScanner
+-upgrade_MailScanner_conf MailScanner.conf MailScanner.conf.rpmnew > MailScanner.new
++cd %SYSCONFDIR%/MailScanner
++%PREFIX%/bin/upgrade_MailScanner_conf MailScanner.conf \\
++%PREFIX%/share/examples/MailScanner/MailScanner.conf > MailScanner.new
+ mv -f MailScanner.conf MailScanner.old
+ mv -f MailScanner.new  MailScanner.conf
+ 
+-TAR
+-===
+-If you are using the tar distribution so that the old version is in
+-/opt/MailScanner and the new one is in /opt/MailScanner.new then:
+-
+-cd /opt/MailScanner.new/etc
+-../bin/upgrade_MailScanner_conf /opt/MailScanner/etc/MailScanner.conf /opt/MailScanner.new/etc/MailScanner.conf > MailScanner.new
+-mv -f MailScanner.conf MailScanner.old
+-mv -f MailScanner.new  MailScanner.conf
+-
+ NOTE
+ ====
+ To keep your old comments in your original file, add "--keep-comments"
+@@ -91,25 +78,7 @@ EOU
+     print STDERR <<EOLANG;
+ Usage:
+ 
+-RPM
+-===
+-If you are using the RPM distributions then try this:
+ 
+-cd /etc/MailScanner/reports/en
+-upgrade_languages_conf languages.conf languages.conf.rpmnew > languages.new
+-mv -f languages.conf languages.old
+-mv -f languages.new  languages.conf
+-
+-TAR
+-===
+-If you are using the tar distribution so that the old version is in
+-/opt/MailScanner and the new one is in /opt/MailScanner.new then:
+-
+-cd /opt/MailScanner.new/etc/reports/en
 -../../../bin/upgrade_languages_conf /opt/MailScanner/etc/reports/en/languages.conf /opt/MailScanner.new/etc/reports/en/languages.conf > languages.new
-+../../../bin/upgrade_languages_conf %SYSCONFDIR%/MailScanner/reports/en/languages.conf /opt/MailScanner.new/etc/reports/en/languages.conf > languages.new
- mv -f languages.conf languages.old
- mv -f languages.new  languages.conf
+-mv -f languages.conf languages.old
+-mv -f languages.new  languages.conf
+-
+ NOTE
+ ====
+ To keep your old comments in your original file, add "--keep-comments"
+@@ -364,9 +333,11 @@ I would advise you to check on any parameters which ar
+ the default new conf file and the conf file you just created, so that you
+ find any parameters whose default values have changed.
+ If you ran this with a command like this
+-  upgrade_$filescore $filedot $filedot.rpmnew > $filenew
++%PREFIX%/bin/upgrade_MailScanner_conf %SYSCONFDIR%/MailScanner/MailScanner.conf \\
++%PREFIX%/share/examples/MailScanner/MailScanner.conf > MailScanner.new
++
+ then you should do
+-  diff -w $filedot.rpmnew $filenew
++  diff -w $filedot $filenew
+ and check for any differences in values you have not changed yourself.
  
+ EOL
