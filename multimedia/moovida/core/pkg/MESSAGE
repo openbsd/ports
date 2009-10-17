@@ -5,3 +5,6 @@ Note that it heavily depends on GL effects, so you'll need harware
 acceleration for Moovida to work fine.
 If performance is poor, you can try setting vblank_mode=0 in
 environment before launching it.
+After a first launch to make it create its default configuration file
+you have to edit ~/.moovida/moovida.conf to teach where to find your
+media files.
