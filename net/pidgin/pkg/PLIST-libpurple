@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.4 2009/09/08 06:35:24 steven Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.5 2009/10/17 19:34:34 steven Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @bin bin/purple-client-example
@@ -149,6 +149,7 @@ share/purple/ca-certs/AOL_Member_CA.pem
 share/purple/ca-certs/America_Online_Root_Certification_Authority_1.pem
 share/purple/ca-certs/CAcert_Class3.pem
 share/purple/ca-certs/CAcert_Root.pem
+share/purple/ca-certs/Entrust.net_Secure_Server_CA.pem
 share/purple/ca-certs/Equifax_Secure_CA.pem
 share/purple/ca-certs/Equifax_Secure_Global_eBusiness_CA-1.pem
 share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
