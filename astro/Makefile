@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2008/02/08 23:26:54 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2009/10/17 08:40:22 bernd Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += celestia
      SUBDIR += dgpsip
+     SUBDIR += gcal
      SUBDIR += jday
      SUBDIR += libnova
      SUBDIR += luna
