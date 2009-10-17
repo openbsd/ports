@@ -1,0 +1,6 @@
+Grap is a language for typesetting graphs specified and first
+implemented by Brian Kernighan and Jon Bentley at Bell Labs. It is an
+expressive language for describing graphs and incorporating them in
+typeset documents. It is implemented as a preprocessor to Kernigan's pic
+language for describing languages, so any system that can use pic can
+use grap. For sure, TeX and groff can use it.

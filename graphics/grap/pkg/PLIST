@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/17 08:29:20 bernd Exp $
+@bin bin/grap
+@man man/man1/grap.1
+share/doc/grap/
+share/doc/grap/CHANGES
+share/doc/grap/COPYRIGHT
+share/doc/grap/README
+share/doc/grap/grap.man
+share/examples/grap/
+share/examples/grap/400mpairs.d
+share/examples/grap/400mtimes.d
+share/examples/grap/400wpairs.d
+share/examples/grap/Makefile
+share/examples/grap/army.d
+share/examples/grap/boyhts.d
+share/examples/grap/cy_fatal.d
+share/examples/grap/example.ms
+share/examples/grap/internet.d
+share/examples/grap/prof2.d
+share/examples/grap/result.SQ_MESH.Fail1.S3.R0.Global.Random1500.succ.result
+share/examples/grap/result.SQ_MESH.Fail1.S3.R0.Hybrid.Random1500.succ.result
+share/examples/grap/result.SQ_MESH.Fail1.S3.R0.Local.Random1500.succ.result
+share/examples/grap/states.d
+share/examples/grap/states2.d
+share/examples/grap/states3.d
+share/examples/grap/usapop.d
+share/grap/
+share/grap/grap.defines
+share/grap/grap.tex.defines
