@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/10/17 08:39:34 bernd Exp $
+--- src/Makefile.in.orig	Wed Jun 14 00:04:06 2000
++++ src/Makefile.in	Mon Apr  2 09:32:46 2007
+@@ -136,7 +136,7 @@ MISC_LIBS = @LIBM@ @LIBS@
+ LIBS = $(INTL_LIBS) $(MISC_LIBS)
+ 
+ CFLAGS = @CFLAGS@
+-CPPFLAGS = -I$(srcdir) -I.. -I../intl -I$(top_srcdir)/intl -I$(top_builddir)/intl @CPPFLAGS@
++CPPFLAGS = -I$(srcdir) -I.. @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ 
+ transform = @program_transform_name@

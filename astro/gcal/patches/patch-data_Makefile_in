@@ -1,0 +1,17 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2009/10/17 08:39:34 bernd Exp $
+--- data/Makefile.in.orig	Wed Jun 14 00:03:09 2000
++++ data/Makefile.in	Mon Apr  2 09:36:40 2007
+@@ -180,12 +180,11 @@ default check installbin install-strip id ID tags TAGS
+ 
+ #### Start of install section. ####
+ 
+-install: installdirs installdates installdata
++install: installdirs installdates
+ 	@echo "All installs in $(subdir) done"
+ 
+ installdirs: $(top_srcdir)/mkinstalldirs
+ 	$(NORMAL_INSTALL)
+-	$(SHELL) $(top_srcdir)/mkinstalldirs $(homedir)
+ 	$(SHELL) $(top_srcdir)/mkinstalldirs $(packagedatadir)
+ 	if test -n "$(AWK)" || test -n "$(PERL)"; \
+ 	then \

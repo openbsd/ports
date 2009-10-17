@@ -1,0 +1,12 @@
+$OpenBSD: patch-misc_Makefile_in,v 1.1.1.1 2009/10/17 08:39:34 bernd Exp $
+--- misc/Makefile.in.orig	Mon Apr  2 10:11:49 2007
++++ misc/Makefile.in	Mon Apr  2 10:12:01 2007
+@@ -252,7 +252,7 @@ installaliasdirs: $(top_srcdir)/mkinstalldirs
+ 	$(NORMAL_INSTALL)
+ 	$(SHELL) $(top_srcdir)/mkinstalldirs $(localedir)
+ 
+-installalias: installalias-@USE_NLS@
++installalias:
+ installalias-yes: $(srcdir)/locale.alias installaliasdirs
+ 	$(NORMAL_INSTALL)
+ 	@if test ! -f "$(localedir)/locale.alias"; \

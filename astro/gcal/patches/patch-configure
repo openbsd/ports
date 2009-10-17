@@ -1,0 +1,75 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/10/17 08:39:34 bernd Exp $
+--- configure.orig	Wed Jun 14 14:58:07 2000
++++ configure	Mon Apr  2 10:04:52 2007
+@@ -2632,7 +2632,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2638 "configure"
+ #include "confdefs.h"
+@@ -2666,7 +2666,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = ye
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lintl $LIBS"
++  LIBS="-lintl -liconv $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -4334,7 +4334,7 @@ rm -f conftest*
+ fi
+ 
+ echo "$ac_t""$ac_cv_objext" 1>&6
+-OBJEXT=$ac_cv_objext
++OBJEXT=".$ac_cv_objext"
+ ac_objext=$ac_cv_objext
+ 
+ # Pull the hash mark out of the macro call to avoid m4 problems.
+@@ -5305,7 +5305,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 5311 "configure"
+ #include "confdefs.h"
+@@ -5345,7 +5345,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 5351 "configure"
+ #include "confdefs.h"
+@@ -6125,7 +6125,7 @@ fi
+ 
+ if test "$need_sys_lintl_for_regcmp" = yes; then
+   if test -z "`echo $LIBS | grep '\-lintl'`"; then
+-    LIBS="$LIBS -lintl"
++    LIBS="$LIBS -lintl -liconv"
+   fi
+ fi
+ 
+@@ -6316,7 +6316,7 @@ s%@CP@%$CP%g
+ s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
+ s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+-s%@LN_S@%$LN_S%g
++s%@LN_S@%%g
+ s%@CC@%$CC%g
+ s%@CPP@%$CPP%g
+ s%@LIBM@%$LIBM%g
+@@ -6332,7 +6332,7 @@ s%@GENCAT@%$GENCAT%g
+ s%@USE_INCLUDED_LIBINTL@%$USE_INCLUDED_LIBINTL%g
+ s%@CATALOGS@%$CATALOGS%g
+ s%@CATOBJEXT@%$CATOBJEXT%g
+-s%@DATADIRNAME@%$DATADIRNAME%g
++s%@DATADIRNAME@%share%g
+ s%@GMOFILES@%$GMOFILES%g
+ s%@INSTOBJEXT@%$INSTOBJEXT%g
+ s%@INTLDEPS@%$INTLDEPS%g
