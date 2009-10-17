@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.112 2009/10/15 15:20:34 steven Exp $
+# $OpenBSD: libtool,v 1.113 2009/10/17 14:40:22 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -305,16 +305,16 @@ sub parse_linkargs1
 			my $d = main::abs_path(main::dirname($a));
 			$dirs->{$d} = 1;
 			my $fulla = main::abs_path($a);
-			if (!exists $libs->{$key}) {
-				$libs->{$key} = Library->new($key);
-			}
-			$libs->{$key}->{lafile} = $fulla;
 			my $lainfo = LaFile->parse($fulla);
 			my $dlname = $lainfo->{'dlname'};
 			my $oldlib = $lainfo->{'old_library'};
 			my $libdir = $lainfo->{'libdir'};
 			if ($dlname ne '') {
 				$$lashared = 1;
+				if (!exists $libs->{$key}) {
+					$libs->{$key} = Library->new($key);
+					$libs->{$key}->{lafile} = $fulla;
+				}
 			}
 			push(@$result, $a);
 			push(@$deplibs, $fulla) if ($libdir ne '');
@@ -337,17 +337,21 @@ sub parse_linkargs1
 # pass 2
 # -Lfoo, -lfoo, foo.a
 # no recursion in pass 2
-# fill orderedlibs array, which is the sequence after resolving all .la
+# fill orderedlibs array, which is the sequence of shared libraries
+#   after resolving all .la
 # (this list may contain duplicates)
+# fill staticlibs array, which is the sequence of static and convenience
+#   libraries
 sub parse_linkargs2
 {
 	state $seen_pthread = 0;
-	my ($self, $Rresolved, $libsearchdirs, $orderedlibs,
+	my ($self, $Rresolved, $libsearchdirs, $orderedlibs, $staticlibs,
 	    $dirs, $libs) = @_;
 	Trace::debug {"parse_linkargs2\n"};
 	Trace::debug {"  args: @{$self->{args}}\n"};
 	$self->{result} = [];
 	my $result = $self->{result};
+	my $ltdir = $main::ltdir;
 
 	foreach my $a (@{$self->{args}}) {
 		Trace::debug {"  processing $a\n"};
@@ -383,16 +387,23 @@ sub parse_linkargs2
 			# override previously set type
 			$libs->{$key}->{type} = 'static';
 			$libs->{$key}->{fullpath} = $a;
-			push @$orderedlibs, $key;
+			push(@$staticlibs, $a);
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.la$/) {
 			(my $key = $2) =~ s/^lib//;
 			my $d = main::abs_path(main::dirname($a));
 			$dirs->{$d} = 1;
 			my $fulla = main::abs_path($a);
-			push @$orderedlibs, $key;
-			if (!exists $libs->{$key}) {
-				$libs->{$key} = Library->new($key);
-				$libs->{$key}->{lafile} = $fulla;
+			my $lainfo = LaFile->parse($fulla);
+			my $dlname = $lainfo->stringize('dlname');
+			my $oldlib = $lainfo->stringize('old_library');
+			if ($dlname eq '' && -f "$d/$ltdir/$oldlib") {
+				push @$staticlibs, "$d/$ltdir/$oldlib";
+			} else {
+				if (!exists $libs->{$key}) {
+					$libs->{$key} = Library->new($key);
+					$libs->{$key}->{lafile} = $fulla;
+				}
+				push @$orderedlibs, $key;
 			}
 		} elsif ($a =~ m/^-Wl,(\S+)/) {
 			# libtool accepts a list of -Wl options separated
@@ -639,9 +650,11 @@ sub link
 	my $args = $parser->resolve_la($deplibs);
 	Trace::debug {"argvstring (post resolve_la): @{$parser->{args}}\n"};
 	my $orderedlibs = [];
+	my $staticlibs = [];
 	$parser->{args} = $args;
 	$args = $parser->parse_linkargs2(\@main::Rresolved,
-			\@main::libsearchdirs, $orderedlibs, $dirs, $libs);
+			\@main::libsearchdirs, $orderedlibs, $staticlibs, $dirs, $libs);
+	Trace::debug {"staticlibs = \n", join("\n", @$staticlibs), "\n"};
 	Trace::debug {"orderedlibs = @$orderedlibs\n"};
 	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
 	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
@@ -649,6 +662,17 @@ sub link
 	# static linking
 	if (!$shared) {
 		@cmd = ('ar', 'cru', $dst);
+		foreach my $a (@$staticlibs) {
+			if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
+				# extract objects from archive
+				my $libfile = main::basename $a;
+				my $xdir = "$odir/$ltdir/${la}x/$libfile";
+				main::extract_archive($xdir, $a);
+				my @kobjs = main::get_objlist_from_archive($a);
+				map { $_ = "$xdir/$_"; } @kobjs;
+				push @libflags, @kobjs;
+			}
+		}
 		foreach my $k (@$finalorderedlibs) {
 			my $l = $libs->{$k};
 			# XXX improve test
@@ -730,6 +754,8 @@ sub link
 	push @cmd, '-o', $dst;
 	push @cmd, @$args if ($args);
 	push @cmd, @$objs if (@$objs);
+	push @cmd, '-Wl,-whole-archive', @$staticlibs, '-Wl,-no-whole-archive'
+       		if (@$staticlibs);
 	push @cmd, "-L$ltdir", @libflags if (@libflags);
 	push @cmd, "-Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
 	Exec->command(@cmd);
@@ -876,9 +902,11 @@ sub link
 	my $args = $parser->resolve_la($deplibs);
 	Trace::debug {"argvstring (post resolve_la): @{$parser->{args}}\n"};
 	my $orderedlibs = [];
+	my $staticlibs = [];
 	$parser->{args} = $args;
 	$args = $parser->parse_linkargs2(\@main::Rresolved,
-		\@main::libsearchdirs, $orderedlibs, $dirs, $libs);
+		\@main::libsearchdirs, $orderedlibs, $staticlibs, $dirs, $libs);
+	Trace::debug {"staticlibs = \n", join("\n", @$staticlibs), "\n"};
 	Trace::debug {"orderedlibs = @$orderedlibs\n"};
 	my $finalorderedlibs = main::reverse_zap_duplicates_ref($orderedlibs);
 	Trace::debug {"final orderedlibs = @$finalorderedlibs\n"};
@@ -936,6 +964,7 @@ sub link
 	push @cmd, '-static' if (!$self->{shared});
 	push @cmd, @$args if ($args);
 	push @cmd, @{$self->{objlist}} if (@{$self->{objlist}});
+	push @cmd, @$staticlibs if (@$staticlibs);
 	push @cmd, "-L$ltdir", @libflags if (@libflags);
 	push @cmd, @$RPdirs if (@$RPdirs);
 	push @cmd, "-Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
@@ -1612,6 +1641,7 @@ sub create_symlinks
 	}
 	foreach my $l (values %$libs) {
 		my $f = $l->{fullpath};
+		next if (!defined $f);
 		next if ($f =~ m/\.a$/);
 		my $libfile = basename $f;
 		Trace::debug {"ln -s $f $dir/$libfile\n"};
