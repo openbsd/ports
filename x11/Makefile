@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.399 2009/10/11 09:26:19 landry Exp $
+# $OpenBSD: Makefile,v 1.400 2009/10/18 22:27:07 edd Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += Xaw3d
@@ -219,6 +219,7 @@
      SUBDIR += slim
      SUBDIR += slim-themes
      SUBDIR += slock
+     SUBDIR += smplayer
      SUBDIR += spranq-ecofont-ttf
      SUBDIR += stalonetray
      SUBDIR += swisswatch
