@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_preferences_cpp,v 1.1.1.1 2009/10/18 22:24:45 edd Exp $
+--- src/preferences.cpp.orig	Mon Jul  6 22:51:36 2009
++++ src/preferences.cpp	Sat Oct 17 16:48:27 2009
+@@ -103,7 +103,7 @@ void Preferences::reset() {
+ 	softvol_max = 110; // 110 = default value in mplayer
+ 	use_scaletempo = Detect;
+ 	use_hwac3 = false;
+-	use_audio_equalizer = true;
++	use_audio_equalizer = false;
+ 
+ 	global_volume = true;
+ 	volume = 50;
+@@ -125,8 +125,8 @@ void Preferences::reset() {
+        Drives (CD/DVD)
+        *************** */
+ 
+-	dvd_device = "";
+-	cdrom_device = "";
++	dvd_device = "/dev/cd0c";
++	cdrom_device = "/dev/cd0c";
+ 
+ #ifndef Q_OS_WIN
+ 	// Try to set default values
+@@ -234,8 +234,8 @@ void Preferences::reset() {
+     mplayer_additional_video_filters="";
+     mplayer_additional_audio_filters="";
+ 
+-	log_mplayer = true;
+-	log_smplayer = true;
++	log_mplayer = false;
++	log_smplayer = false;
+ 	log_filter = ".*";
+ 	verbose_log = false;
+ 

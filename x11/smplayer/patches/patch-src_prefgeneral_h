@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_prefgeneral_h,v 1.1.1.1 2009/10/18 22:24:45 edd Exp $
+--- src/prefgeneral.h.orig	Sun Jul  5 12:59:57 2009
++++ src/prefgeneral.h	Sun Jul  5 13:00:10 2009
+@@ -24,6 +24,7 @@
+ #include "inforeader.h"
+ #include "deviceinfo.h"
+ #include "preferences.h"
++#include "filechooser.h"
+ 
+ #ifdef Q_OS_WIN
+ #define USE_DSOUND_DEVICES 1

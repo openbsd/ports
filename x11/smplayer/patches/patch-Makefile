@@ -1,0 +1,55 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/10/18 22:24:45 edd Exp $
+--- Makefile.orig	Wed Mar 11 02:21:41 2009
++++ Makefile	Sat Oct 17 16:46:41 2009
+@@ -5,7 +5,7 @@ PREFIX=/usr/local
+ CONF_PREFIX=$(PREFIX)
+ 
+ DATA_PATH=$(PREFIX)/share/smplayer
+-DOC_PATH=$(PREFIX)/share/doc/packages/smplayer
++DOC_PATH=$(PREFIX)/share/doc/smplayer
+ TRANSLATION_PATH=$(PREFIX)/share/smplayer/translations
+ THEMES_PATH=$(PREFIX)/share/smplayer/themes
+ SHORTCUTS_PATH=$(PREFIX)/share/smplayer/shortcuts
+@@ -17,8 +17,8 @@ KDE_PREFIX=$(PREFIX)
+ KDE_ICONS=$(KDE_PREFIX)/share/icons/hicolor/
+ KDE_APPLNK=$(KDE_PREFIX)/share/applications/
+ 
+-QMAKE=qmake
+-LRELEASE=lrelease
++QMAKE=qmake4
++LRELEASE=lrelease4
+ 
+ DEFS=DATA_PATH=\\\"$(DATA_PATH)\\\" \
+      TRANSLATION_PATH=\\\"$(TRANSLATION_PATH)\\\" \
+@@ -40,7 +40,8 @@ QMAKE_OPTS=DEFINES+=KDE_SUPPORT INCLUDEPATH+=$(KDE_INC
+ endif
+ 
+ src/smplayer:
+-	./get_svn_revision.sh
++# OpenBSD - this script doesnt work on OpenBSD and is not needed
++#	./get_svn_revision.sh
+ 	+cd src && $(QMAKE) $(QMAKE_OPTS) && $(DEFS) make
+ 	cd src && $(LRELEASE) smplayer.pro
+ 
+@@ -59,7 +60,7 @@ install: src/smplayer
+ 	install -m 644 Changelog *.txt $(DESTDIR)$(DOC_PATH)
+ 
+ 	-install -d $(DESTDIR)$(DOC_PATH)
+-	tar -C docs/ --exclude=.svn -c -f - . | tar -C $(DESTDIR)$(DOC_PATH) -x -f -
++	cp -r docs/* $(DESTDIR)$(DOC_PATH)
+ 
+ 	-install -d $(DESTDIR)$(SHORTCUTS_PATH)
+ 	cp src/shortcuts/* $(DESTDIR)$(SHORTCUTS_PATH)
+@@ -75,9 +76,9 @@ install: src/smplayer
+ 	-install -d $(DESTDIR)$(KDE_APPLNK)
+ 	install -m 644 smplayer.desktop $(DESTDIR)$(KDE_APPLNK)
+ 	install -m 644 smplayer_enqueue.desktop $(DESTDIR)$(KDE_APPLNK)
+-	-install -d $(DESTDIR)$(PREFIX)/share/man/man1/
+-	install -m 644 man/smplayer.1 $(DESTDIR)$(PREFIX)/share/man/man1/
+-	gzip -9 -f $(DESTDIR)$(PREFIX)/share/man/man1/smplayer.1
++	-install -d $(DESTDIR)$(PREFIX)/man/man1/
++	install -m 644 man/smplayer.1 $(DESTDIR)$(PREFIX)/man/man1/
++#	gzip -9 -f $(DESTDIR)$(PREFIX)/share/man/man1/smplayer.1
+ 
+ uninstall:
+ 	-rm -f $(PREFIX)/bin/smplayer
