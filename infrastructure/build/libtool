@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.113 2009/10/17 14:40:22 steven Exp $
+# $OpenBSD: libtool,v 1.114 2009/10/18 08:32:19 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -273,7 +273,6 @@ sub parse_linkargs1
 					next;
 				} else {
 					$libs->{$key}->find($dirs, 1, $libsearchdirs);
-					$libs->{$key}->{type} = 'shared';
 					my @deps = $libs->{$key}->inspect;
 					# push @$rdeplibs, @deps;
 					foreach my $d (@deps) {
@@ -296,8 +295,6 @@ sub parse_linkargs1
 			}
 			my $d = main::abs_path(main::dirname($a));
 			$dirs->{$d} = 1;
-			# override previously set type
-			$libs->{$key}->{type} = 'static';
 			$libs->{$key}->{fullpath} = $a;
 			push(@$result, $a);
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.la$/) {
@@ -376,7 +373,6 @@ sub parse_linkargs2
 			my $key = $1;
 			if (!exists $libs->{$key}) {
 				$libs->{$key} = Library->new($key);
-				$libs->{$key}->{type} = 'shared';
 			}
 			push @$orderedlibs, $key;
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.a$/) {
@@ -384,8 +380,6 @@ sub parse_linkargs2
 			if (!exists $libs->{$key}) {
 				$libs->{$key} = Library->new($key);
 			}
-			# override previously set type
-			$libs->{$key}->{type} = 'static';
 			$libs->{$key}->{fullpath} = $a;
 			push(@$staticlibs, $a);
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.la$/) {
