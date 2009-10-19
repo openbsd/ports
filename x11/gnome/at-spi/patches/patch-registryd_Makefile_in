@@ -1,7 +1,7 @@
-$OpenBSD: patch-registryd_Makefile_in,v 1.1 2009/10/12 18:10:37 jasper Exp $
---- registryd/Makefile.in.orig	Mon Oct 12 14:24:48 2009
-+++ registryd/Makefile.in	Mon Oct 12 14:25:42 2009
-@@ -288,7 +288,7 @@ at_spi_registryd_SOURCES = \
+$OpenBSD: patch-registryd_Makefile_in,v 1.2 2009/10/19 09:48:37 ajacoutot Exp $
+--- registryd/Makefile.in.orig	Mon Oct 19 04:59:15 2009
++++ registryd/Makefile.in	Mon Oct 19 11:34:58 2009
+@@ -310,7 +310,7 @@ at_spi_registryd_SOURCES = \
  LDADD = $(top_builddir)/libspi/libspi.la $(X_LIBS) $(SM_LIBS) $(XTST_LIBS) $(XEVIE_LIBS) $(REGISTRYD_LIBS) 
  serverinfodir = $(libdir)/bonobo/servers
  serverinfo_DATA = Accessibility_Registry.server

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2009/10/12 18:10:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2009/10/19 09:48:37 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
 GNOME_PROJECT=		at-spi
-GNOME_VERSION=		1.28.0
+GNOME_VERSION=		1.28.1
 
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
@@ -25,24 +25,25 @@ WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb z
 
-MODULES=		devel/gettext \
-			lang/python \
-			x11/gnome \
-			devel/gconf2
+MODULES=	devel/gettext \
+		lang/python \
+		x11/gnome \
+		devel/gconf2
 
-LIB_DEPENDS=		bonobo-2.>=1,bonobo-activation.>=5::x11/gnome/libbonobo \
-			gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=	bonobo-2.>=1,bonobo-activation.>=5::x11/gnome/libbonobo \
+		gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	at-spi
+MODGCONF2_LIBDEP=	No
 DESKTOP_FILES=		Yes
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 # not enabled in X.org
-CONFIGURE_ARGS+=	--disable-xevie
+CONFIGURE_ARGS+= --disable-xevie
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 REGRESS_IS_INTERACTIVE=	x11
 
