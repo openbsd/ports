@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/10/13 11:00:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2009/10/19 20:44:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	2.28.0
+GNOME_VERSION=	2.28.1
 
 CATEGORIES=	graphics print
 
@@ -76,8 +76,10 @@ LIB_DEPENDS-dvi= ${MODGETTEXT_LIB_DEPENDS} \
 		spectre::print/libspectre
 RUN_DEPENDS-dvi= ${MODGCONF2_RUN_DEPENDS}
 
-WANTLIB-nautilus= ${WANTLIB}
+WANTLIB-nautilus= ${WANTLIB} gthread-2.0
 LIB_DEPENDS-nautilus= evdocument::${BASE_PKGPATH} \
+		${MODGETTEXT_LIB_DEPENDS} \
+		${MODLIBICONV_LIB_DEPENDS} \
 		nautilus-extension.>=2::x11/gnome/nautilus
 RUN_DEPENDS-nautilus=
 
