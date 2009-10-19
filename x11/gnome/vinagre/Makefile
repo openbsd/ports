@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2009/10/15 09:43:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2009/10/19 12:10:44 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	VNC Client for the GNOME Desktop
 
-GNOME_VERSION=	2.28.0.1
+GNOME_VERSION=	2.28.1
 GNOME_PROJECT=	vinagre
 
 CATEGORIES=	net
