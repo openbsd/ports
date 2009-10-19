@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/10/11 22:53:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/10/19 16:35:36 ajacoutot Exp $
 @conflict control-center2-<=2.22
 %%SHARED%%
 include/gnome-settings-daemon-2.0/
@@ -68,21 +68,10 @@ share/gnome-settings-daemon/xrdb/General.ad
 share/gnome-settings-daemon/xrdb/Motif.ad
 share/gnome-settings-daemon/xrdb/Tk.ad
 share/gnome-settings-daemon/xrdb/Xaw.ad
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gsd-xrandr.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gsd-xrandr.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gsd-xrandr.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gsd-xrandr.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gsd-xrandr.svg
 share/locale/af/
 share/locale/af/LC_MESSAGES/
