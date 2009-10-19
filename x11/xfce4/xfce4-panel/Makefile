@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2009/08/11 08:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2009/10/19 19:55:54 landry Exp $
 
 COMMENT=	Xfce4 desktop panel
 
+XFCE_VERSION=	4.6.2
 XFCE_PROJECT=	xfce4-panel
-PKGNAME=	${DISTNAME}p2
 
 SHARED_LIBS=	xfce4panel	2.3	#2.2
 
@@ -25,7 +25,9 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
-		startup-notification-1 xfce4util z pthread-stubs xcb
+		startup-notification-1 xfce4util z pthread-stubs xcb \
+		execinfo xcb-atom xcb-aux xcb-event
+
 
 FAKE_FLAGS=	confdir=${PREFIX}/share/examples/xfce4-panel
 
