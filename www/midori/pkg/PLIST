@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/09/21 08:01:25 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/10/19 19:54:15 landry Exp $
 @bin bin/midori
 lib/midori/
 lib/midori/libadblock.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
+lib/midori/libdnsprefetch.so
 lib/midori/libfeed-panel.so
+lib/midori/libformhistory.so
 lib/midori/libmouse-gestures.so
 lib/midori/libpage-holder.so
 lib/midori/libshortcuts.so
@@ -52,6 +54,7 @@ share/locale/hu/LC_MESSAGES/midori.mo
 share/locale/id/LC_MESSAGES/midori.mo
 share/locale/it/LC_MESSAGES/midori.mo
 share/locale/ja/LC_MESSAGES/midori.mo
+share/locale/ko/LC_MESSAGES/midori.mo
 share/locale/nl/LC_MESSAGES/midori.mo
 share/locale/pl/LC_MESSAGES/midori.mo
 share/locale/pt/LC_MESSAGES/midori.mo
@@ -67,6 +70,8 @@ share/locale/uk/LC_MESSAGES/midori.mo
 share/locale/zh_CN/LC_MESSAGES/midori.mo
 share/locale/zh_TW/LC_MESSAGES/midori.mo
 share/midori/
+share/midori/autosuggestcontrol.css
+share/midori/autosuggestcontrol.js
 share/midori/res/
 share/midori/res/error.html
 share/midori/res/logo-shade.png
