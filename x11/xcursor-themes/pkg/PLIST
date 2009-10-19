@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/02/04 10:32:21 matthieu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/19 20:30:06 matthieu Exp $
 lib/X11/icons/
 lib/X11/icons/handhelds/
 lib/X11/icons/handhelds/cursors/
@@ -76,6 +76,7 @@ lib/X11/icons/redglass/cursors/top_left_corner
 lib/X11/icons/redglass/cursors/top_right_corner
 lib/X11/icons/redglass/cursors/top_side
 lib/X11/icons/redglass/cursors/top_tee
+lib/X11/icons/redglass/cursors/watch
 lib/X11/icons/redglass/cursors/xterm
 lib/X11/icons/whiteglass/
 lib/X11/icons/whiteglass/cursors/

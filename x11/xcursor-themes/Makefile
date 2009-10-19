@@ -1,9 +1,7 @@
-#	$OpenBSD: Makefile,v 1.5 2007/09/15 08:18:49 matthieu Exp $
+#	$OpenBSD: Makefile,v 1.6 2009/10/19 20:30:06 matthieu Exp $
 
 COMMENT=	X11 Cursors themes
-VERSION=	1.0.1
-DISTNAME=	xcursor-themes-X11R7.0-${VERSION}
-PKGNAME=	xcursor-themes-${VERSION}
+DISTNAME=	xcursor-themes-1.0.2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://wiki.X.Org/
@@ -21,10 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.x.org/pub/individual/data/ \
 		ftp://x.mirrors.skynet.be/pub/ftp.x.org/pub/individual/data/
 
-SEPARATE_BUILD= 	concurrent
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LOCALBASE="${LOCALBASE}"
+CONFIGURE_ARGS=		--with-cursordir=${LOCALBASE}/lib/X11/icons
 
 NO_REGRESS=		Yes
 
