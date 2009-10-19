@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/10/14 16:33:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/10/19 10:12:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	plugins and utilities for seahorse
 
 GNOME_PROJECT=	seahorse-plugins
-GNOME_VERSION=	2.28.0
+GNOME_VERSION=	2.28.1
 
 CATEGORIES=	security
 
@@ -24,10 +24,10 @@ WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 c
 WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
-WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error gpgme gthread-2.0
+WANTLIB += gnomevfs-2 gobject-2.0 gpg-error gpgme gthread-2.0
 WANTLIB += gtk-x11-2.0 m notify nspr4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread
-WANTLIB += ssl util xml2 z pthread-stubs xcb
+WANTLIB += pthread-stubs ssl util xcb xml2 z
 
 BUILD_DEPENDS=	::devel/xulrunner/1.8,-devel \
 		::www/epiphany \
