@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/04 12:56:23 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/19 21:01:16 fgsch Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	advanced, stable and fast irc server
 
 DISTNAME =	ircd-ratbox-3.0.4
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES =	net
 EXTRACT_SUFX =	.tar.bz2
 
@@ -49,6 +49,14 @@ CONFIGURE_ARGS =	--enable-ipv6 \
 			--enable-services \
 			--with-sqlite3=${LOCALBASE} \
 			--with-zlib-path=/usr
+
+# Hack to make the nick length configurable at build time
+NICKLEN ?=
+.if ${NICKLEN}
+FLAVORS =		nicklen-${NICKLEN}
+FLAVOR =		nicklen-${NICKLEN}
+CONFIGURE_ARGS +=	--with-nicklen=${NICKLEN}
+.endif
 
 DOCS =		README.cidr_bans challenge.txt modeg.txt \
 		modes.txt monitor.txt server-version-info services.txt \
