@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2009/10/14 12:24:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2009/10/19 20:38:07 ajacoutot Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
-GNOME_VERSION=	2.28.0
+GNOME_VERSION=	2.28.1
 
 SHARED_LIBS +=	devhelp-1             1.0        # .0.0
 
@@ -29,7 +29,8 @@ WANTLIB += xcb xcb-atom xcb-aux xcb-event xml2 xslt z
 
 MODULES=	devel/gettext \
 		lang/python \
-		x11/gnome
+		x11/gnome \
+		devel/gconf2
 
 BUILD_DEPENDS=	:gnome-doc-utils-*:x11/gnome/doc-utils
 LIB_DEPENDS=	wnck-1::devel/libwnck \
