@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/27 19:14:44 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/19 10:16:27 jasper Exp $
 
 COMMENT =	platform independent hotkey handling for Gtk+ applications
 
 
 DISTNAME =	gtkhotkey-0.2.1
+PKGNAME =	${DISTNAME}p0
 SHARED_LIBS =	gtkhotkey 0.0 #1.0
 CATEGORIES =	x11
 
@@ -18,7 +19,8 @@ PERMIT_DISTFILES_FTP =	Yes
 # launchpad sucks.
 MASTER_SITES =	http://launchpadlibrarian.net/31288851/
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext \
+		textproc/intltool
 USE_LIBTOOL =	Yes
 CONFIGURE_STYLE =gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
