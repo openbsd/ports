@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/12 18:21:14 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/19 12:11:12 landry Exp $
 
 COMMENT =	plugin framework library
 
 VERSION =	0.2.0
 DISTNAME =	ethos-${VERSION}
-PKGNAME =	${DISTNAME}p1
+PKGNAME =	${DISTNAME}p2
 
 SHARED_LIBS=	ethos-1.0 0.0 \
 		ethos-ui-1.0 0.0
@@ -29,6 +29,10 @@ USE_GMAKE =	Yes
 
 MODULES =	lang/python \
 		devel/gettext
+
+BUILD_DEPENDS +=	${RUN_DEPENDS}
+
+RUN_DEPENDS +=	::x11/py-gtk2
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2
