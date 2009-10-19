@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2009/10/13 22:07:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.88 2009/10/19 20:31:23 jasper Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -6,7 +6,7 @@ COMMENT-plugins=	additionnal plugins for evolution
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
 # in mail/evolution-plugin-rss/Makefile (and bump).
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		2.28.0
+GNOME_VERSION=		2.28.1
 
 # -plugins depends on the exact version of -main, so whenever -main is
 # bumped, -plugins needs a bump too

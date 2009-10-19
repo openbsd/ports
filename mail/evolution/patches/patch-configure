@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2009/10/13 22:07:04 jasper Exp $
---- configure.orig	Fri Sep 18 13:11:56 2009
-+++ configure	Tue Oct 13 15:30:41 2009
-@@ -19998,9 +19998,6 @@ LIBS=$ac_check_lib_save_LIBS
+$OpenBSD: patch-configure,v 1.11 2009/10/19 20:31:23 jasper Exp $
+--- configure.orig	Sun Oct 18 04:22:56 2009
++++ configure	Mon Oct 19 14:20:06 2009
+@@ -20083,9 +20083,6 @@ LIBS=$ac_check_lib_save_LIBS
  fi
  { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_query" >&5
  $as_echo "$ac_cv_lib_resolv_res_query" >&6; }
@@ -11,7 +11,7 @@ $OpenBSD: patch-configure,v 1.10 2009/10/13 22:07:04 jasper Exp $
  
  		{ $as_echo "$as_me:$LINENO: checking for bind in -lsocket" >&5
  $as_echo_n "checking for bind in -lsocket... " >&6; }
-@@ -20385,13 +20382,13 @@ _ACEOF
+@@ -20470,13 +20467,13 @@ _ACEOF
  
  
  	PTHREAD_LIB=""
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.10 2009/10/13 22:07:04 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -20451,7 +20448,7 @@ fi
+@@ -20536,7 +20533,7 @@ fi
  { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.10 2009/10/13 22:07:04 jasper Exp $
  else
    { $as_echo "$as_me:$LINENO: checking for pthread_create in -lpthreads" >&5
  $as_echo_n "checking for pthread_create in -lpthreads... " >&6; }
-@@ -22016,7 +22013,7 @@ if test "x${with_krb5}" != "xno"; then
+@@ -22101,7 +22098,7 @@ if test "x${with_krb5}" != "xno"; then
  	LIBS_save="$LIBS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
