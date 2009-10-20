@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/08/20 13:33:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/10/20 22:34:54 ajacoutot Exp $
 zarafa-webaccess/
 @owner www
 @sample zarafa-webaccess/tmp/
@@ -216,6 +216,7 @@ zarafa-webaccess/client/layout/img/icon_meeting_decline.gif
 zarafa-webaccess/client/layout/img/icon_meeting_tentative.gif
 zarafa-webaccess/client/layout/img/icon_meetingrequest.gif
 zarafa-webaccess/client/layout/img/icon_meetingrequest_accept.gif
+zarafa-webaccess/client/layout/img/icon_meetingrequest_cancel.gif
 zarafa-webaccess/client/layout/img/icon_meetingrequest_decline.gif
 zarafa-webaccess/client/layout/img/icon_meetingrequest_optionalattendee.gif
 zarafa-webaccess/client/layout/img/icon_meetingrequest_organizer.gif
