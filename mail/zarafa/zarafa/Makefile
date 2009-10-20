@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2009/10/07 17:05:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2009/10/20 22:34:26 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-php=	MAPI extensions for php5
 
-V=		6.30.2
+V=		6.30.3
 DISTNAME=	zarafa-${V}
 
-PKGNAME-main=	${DISTNAME}p5
+PKGNAME-main=	${DISTNAME}
 PKGNAME-php=	php5-mapi-${V}
 
 CATEGORIES=	mail www productivity
@@ -38,7 +38,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		lber.>=9,ldap::databases/openldap \
 		uuid.>=13::devel/uuid \
 		execinfo::devel/libexecinfo \
-		vmime-zarafa:zarafa-libvmime->=0.7.1p2:mail/zarafa/libvmime \
+		vmime-zarafa:zarafa-libvmime->=0.7.1p3:mail/zarafa/libvmime \
 		ical-zarafa.>=1,icalss-zarafa.>=1::mail/zarafa/libical
 
 WANTLIB-php=	execinfo ical-zarafa icalss-zarafa \
@@ -81,6 +81,10 @@ SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
 		createuser.d/00createstore deleteuser.d/99deletestore \
 		companies_common.sh users_common.sh
 
+CONF_FILES=	dagent.cfg gateway.cfg ical.cfg ldap.active-directory.cfg \
+		ldap.openldap.cfg monitor.cfg server.cfg spooler.cfg \
+		unix.cfg
+
 pre-configure:
 	cd ${WRKSRC}/installer/linux && \
 		for i in *.cfg createuser.dotforward ; do \
@@ -98,6 +102,8 @@ pre-configure:
 		${WRKSRC}/doc/manual.xml
 
 post-install:
+	for i in ${CONF_FILES}; do mv ${PREFIX}/share/doc/zarafa/$${i} \
+		${PREFIX}/share/examples/zarafa/; done
 	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/zarafa/README.OpenBSD
 	${SUBST_CMD} -c ${FILESDIR}/zarafa.m4 ${PREFIX}/share/examples/zarafa/zarafa.m4
 	${SUBST_CMD} -c ${FILESDIR}/local_zarafa.m4 ${PREFIX}/share/examples/zarafa/local_zarafa.m4

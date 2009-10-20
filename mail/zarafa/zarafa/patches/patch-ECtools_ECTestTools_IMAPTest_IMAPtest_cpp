@@ -1,7 +1,7 @@
-$OpenBSD: patch-ECtools_ECTestTools_IMAPTest_IMAPtest_cpp,v 1.2 2009/07/31 09:55:56 ajacoutot Exp $
---- ECtools/ECTestTools/IMAPTest/IMAPtest.cpp.orig	Wed Dec 24 20:17:57 2008
-+++ ECtools/ECTestTools/IMAPTest/IMAPtest.cpp	Sat Jan 10 16:33:23 2009
-@@ -167,7 +167,11 @@ void Log(LogLevelEnum loglvl, std::string strLog){
+$OpenBSD: patch-ECtools_ECTestTools_IMAPTest_IMAPtest_cpp,v 1.3 2009/10/20 22:34:26 ajacoutot Exp $
+--- ECtools/ECTestTools/IMAPTest/IMAPtest.cpp.orig	Fri Oct  9 22:34:37 2009
++++ ECtools/ECTestTools/IMAPTest/IMAPtest.cpp	Tue Oct 20 23:41:36 2009
+@@ -179,7 +179,11 @@ void Log(LogLevelEnum loglvl, std::string strLog){
      struct tm *tm;
      std::string strLvl;
      gettimeofday(&tv, &tz);

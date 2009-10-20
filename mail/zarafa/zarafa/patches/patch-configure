@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2009/07/31 09:55:56 ajacoutot Exp $
---- configure.orig	Mon Jul 20 23:26:17 2009
-+++ configure	Wed Jul 22 16:37:09 2009
-@@ -21635,12 +21635,7 @@ else
+$OpenBSD: patch-configure,v 1.4 2009/10/20 22:34:26 ajacoutot Exp $
+--- configure.orig	Fri Oct  9 22:08:24 2009
++++ configure	Tue Oct 20 23:41:36 2009
+@@ -21643,12 +21643,7 @@ else
    want_release=no
  fi
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure,v 1.3 2009/07/31 09:55:56 ajacoutot Exp $
  
  # Check whether --enable-oss was given.
  if test "${enable_oss+set}" = set; then
-@@ -22474,7 +22469,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -22482,7 +22477,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  _ACEOF
  
  		VMIME_CFLAGS=-I$VMIME_PREFIX
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.3 2009/07/31 09:55:56 ajacoutot Exp $
  
  else
  
-@@ -22757,7 +22752,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -22766,7 +22761,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
    ICAL_CFLAGS=-I$ICAL_PREFIX
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure,v 1.3 2009/07/31 09:55:56 ajacoutot Exp $
  else
    WITH_ICAL=no
  fi
-@@ -23532,13 +23527,13 @@ LIBS=$libs_keep
+@@ -23541,13 +23536,13 @@ LIBS=$libs_keep
  libs_keep=$LIBS
  # check lib, but do not set in link list
  
@@ -49,7 +49,7 @@ $OpenBSD: patch-configure,v 1.3 2009/07/31 09:55:56 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -23598,7 +23593,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
+@@ -23607,7 +23602,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  

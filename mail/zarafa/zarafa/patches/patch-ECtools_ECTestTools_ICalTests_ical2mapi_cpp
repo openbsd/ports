@@ -1,7 +1,7 @@
-$OpenBSD: patch-ECtools_ECTestTools_ICalTests_ical2mapi_cpp,v 1.1 2009/09/11 16:33:52 ajacoutot Exp $
---- ECtools/ECTestTools/ICalTests/ical2mapi.cpp.orig	Fri Sep 11 16:24:28 2009
-+++ ECtools/ECTestTools/ICalTests/ical2mapi.cpp	Fri Sep 11 16:24:57 2009
-@@ -168,7 +168,7 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-ECtools_ECTestTools_ICalTests_ical2mapi_cpp,v 1.2 2009/10/20 22:34:26 ajacoutot Exp $
+--- ECtools/ECTestTools/ICalTests/ical2mapi.cpp.orig	Fri Oct  9 22:34:37 2009
++++ ECtools/ECTestTools/ICalTests/ical2mapi.cpp	Tue Oct 20 23:41:36 2009
+@@ -180,7 +180,7 @@ int main(int argc, char *argv[]) {
  
  	CreateICalToMapi(lpInbox, lpAdrBook, &lpICalToMapi);
  

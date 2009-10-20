@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/09/18 13:49:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2009/10/20 22:34:26 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -154,8 +154,17 @@ share/doc/zarafa/
 share/doc/zarafa/AGPL-3
 share/doc/zarafa/README.OpenBSD
 share/doc/zarafa/UPGRADE.txt
+share/doc/zarafa/createuser.dotforward
+share/doc/zarafa/db-calc-storesize
+share/doc/zarafa/db-convert-4.1-to-4.2
+share/doc/zarafa/db-convert-4.20-to-4.21
+share/doc/zarafa/db-convert-4.20-to-innodb.sql
+share/doc/zarafa/db-convert-4.2x-to-5.00
+share/doc/zarafa/db-convert-attachments-to-files
 share/doc/zarafa/eula.txt
 share/doc/zarafa/performance-tuning.txt
+share/doc/zarafa/ssl-certificates.sh
+share/doc/zarafa/zarafa.logrotate
 share/examples/zarafa/
 @sample ${SYSCONFDIR}/zarafa/
 @mode 750
@@ -164,15 +173,8 @@ share/examples/zarafa/
 @mode
 @group
 @sample ${SYSCONFDIR}/zarafa/sslkeys/
-share/examples/zarafa/createuser.dotforward
 share/examples/zarafa/dagent.cfg
 @sample ${SYSCONFDIR}/zarafa/dagent.cfg
-share/examples/zarafa/db-calc-storesize
-share/examples/zarafa/db-convert-4.1-to-4.2
-share/examples/zarafa/db-convert-4.20-to-4.21
-share/examples/zarafa/db-convert-4.20-to-innodb.sql
-share/examples/zarafa/db-convert-4.2x-to-5.00
-share/examples/zarafa/db-convert-attachments-to-files
 share/examples/zarafa/gateway.cfg
 @sample ${SYSCONFDIR}/zarafa/gateway.cfg
 share/examples/zarafa/ical.cfg
@@ -221,7 +223,6 @@ share/examples/zarafa/server.cfg
 @group
 share/examples/zarafa/spooler.cfg
 @sample ${SYSCONFDIR}/zarafa/spooler.cfg
-share/examples/zarafa/ssl-certificates.sh
 @comment share/examples/zarafa/unix.cfg
 share/examples/zarafa/userscripts/
 @sample ${SYSCONFDIR}/zarafa/userscripts/
@@ -257,7 +258,6 @@ share/examples/zarafa/userscripts/groups_common.sh
 share/examples/zarafa/userscripts/users_common.sh
 @sample ${SYSCONFDIR}/zarafa/userscripts/users_common.sh
 @mode
-share/examples/zarafa/zarafa.logrotate
 share/examples/zarafa/zarafa.m4
 @mode 0444
 @group bin

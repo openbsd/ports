@@ -1,8 +1,8 @@
-$OpenBSD: patch-installer_userscripts_companies_common_sh,v 1.1.1.1 2009/02/16 09:44:38 ajacoutot Exp $
---- installer/userscripts/companies_common.sh.orig	Wed Dec 24 15:50:33 2008
-+++ installer/userscripts/companies_common.sh	Sun Jan  4 15:27:38 2009
+$OpenBSD: patch-installer_userscripts_companies_common_sh,v 1.2 2009/10/20 22:34:26 ajacoutot Exp $
+--- installer/userscripts/companies_common.sh.orig	Fri Oct  9 17:26:45 2009
++++ installer/userscripts/companies_common.sh	Tue Oct 20 23:41:36 2009
 @@ -1,7 +1,7 @@
- #! /bin/sh
+ # shell include script
  
  ZARAFA_LANG="--lang ${LC_MESSAGES:-en_EN}"
 -PATH=/bin:/usr/local/bin:/usr/bin

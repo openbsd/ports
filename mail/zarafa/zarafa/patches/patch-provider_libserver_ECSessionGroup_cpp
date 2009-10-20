@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_libserver_ECSessionGroup_cpp,v 1.1.1.1 2009/02/16 09:44:38 ajacoutot Exp $
---- provider/libserver/ECSessionGroup.cpp.orig	Wed Dec 24 20:17:59 2008
-+++ provider/libserver/ECSessionGroup.cpp	Wed Jan  7 16:02:55 2009
-@@ -38,6 +38,10 @@
+$OpenBSD: patch-provider_libserver_ECSessionGroup_cpp,v 1.2 2009/10/20 22:34:26 ajacoutot Exp $
+--- provider/libserver/ECSessionGroup.cpp.orig	Fri Oct  9 22:34:40 2009
++++ provider/libserver/ECSessionGroup.cpp	Tue Oct 20 23:41:37 2009
+@@ -50,6 +50,10 @@
  #include <mapidefs.h>
  #include <mapitags.h>
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-provider_libserver_ECSessionGroup_cpp,v 1.1.1.1 2009/02/16 09:44
  #include "ECSession.h"
  #include "ECSessionGroup.h"
  #include "SOAPUtils.h"
-@@ -46,6 +50,11 @@
+@@ -58,6 +62,11 @@
  #define new DEBUG_NEW
  #undef THIS_FILE
  static char THIS_FILE[] = __FILE__;

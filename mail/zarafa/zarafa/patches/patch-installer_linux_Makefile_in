@@ -1,7 +1,32 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.4 2009/09/11 16:33:52 ajacoutot Exp $
---- installer/linux/Makefile.in.orig	Tue Sep  1 02:28:36 2009
-+++ installer/linux/Makefile.in	Fri Sep 11 13:22:36 2009
-@@ -190,6 +190,7 @@ datadir = ${docdir}
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
+--- installer/linux/Makefile.in.orig	Fri Oct  9 22:08:33 2009
++++ installer/linux/Makefile.in	Tue Oct 20 23:42:54 2009
+@@ -57,22 +57,11 @@ SOURCES =
+ DIST_SOURCES =
+ am__dist_data_DATA_DIST = server.cfg unix.cfg ldap.openldap.cfg \
+ 	ldap.active-directory.cfg spooler.cfg gateway.cfg monitor.cfg \
+-	dagent.cfg ical.cfg zarafa.logrotate zarafa-server.init.suse \
+-	zarafa-spooler.init.suse zarafa-gateway.init.suse \
+-	zarafa-monitor.init.suse zarafa-ical.init.suse \
+-	zarafa-server.init.fc zarafa-spooler.init.fc \
+-	zarafa-gateway.init.fc zarafa-monitor.init.fc \
+-	zarafa-ical.init.fc zarafa-server.init.cbs4 \
+-	zarafa-spooler.init.cbs4 zarafa-gateway.init.cbs4 \
+-	zarafa-monitor.init.cbs4 zarafa-ical.init.cbs4 \
++	dagent.cfg ical.cfg zarafa.logrotate \
+ 	db-convert-4.1-to-4.2 db-convert-4.20-to-4.21 \
+ 	db-convert-4.20-to-innodb.sql db-calc-storesize \
+ 	db-convert-attachments-to-files createuser.dotforward \
+-	db-convert-4.2x-to-5.00 ssl-certificates.sh \
+-	zarafa-dagent.init.cbs4 zarafa-dagent.init.suse \
+-	zarafa-dagent.init.fc licensed.cfg ldapms.openldap.cfg \
+-	ldapms.active-directory.cfg zarafa-licensed.init.cbs4 \
+-	zarafa-licensed.init.suse zarafa-licensed.init.fc
++	db-convert-4.2x-to-5.00 ssl-certificates.sh
+ dist_dataDATA_INSTALL = $(INSTALL_DATA)
+ am__dist_sysconf_DATA_DIST = ipsseg.crt
+ dist_sysconfDATA_INSTALL = $(INSTALL_DATA)
+@@ -219,6 +208,7 @@ datadir = ${docdir}
  datarootdir = @datarootdir@
  docdir = @docdir@
  dvidir = @dvidir@
@@ -9,41 +34,16 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.4 2009/09/11 16:33:52 ajacoutot 
  exec_prefix = @exec_prefix@
  host = @host@
  host_alias = @host_alias@
-@@ -216,18 +217,13 @@ sharedstatedir = @sharedstatedir@
- sysconfdir = /etc/zarafa/report-ca
+@@ -248,12 +238,8 @@ sysconfdir = /etc/zarafa/report-ca
  target_alias = @target_alias@
  dist_data_DATA = server.cfg unix.cfg ldap.openldap.cfg ldap.active-directory.cfg \
--	ldapms.openldap.cfg ldapms.active-directory.cfg \
--	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg licensed.cfg \
-+	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg \
- 	zarafa.logrotate \
+ 	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg zarafa.logrotate \
 -	zarafa-server.init.suse zarafa-spooler.init.suse zarafa-gateway.init.suse zarafa-monitor.init.suse zarafa-ical.init.suse \
 -	zarafa-server.init.fc zarafa-spooler.init.fc zarafa-gateway.init.fc zarafa-monitor.init.fc zarafa-ical.init.fc \
 -	zarafa-server.init.cbs4 zarafa-spooler.init.cbs4 zarafa-gateway.init.cbs4 zarafa-monitor.init.cbs4 zarafa-ical.init.cbs4 \
  	db-convert-4.1-to-4.2 db-convert-4.20-to-4.21 db-convert-4.20-to-innodb.sql db-calc-storesize db-convert-attachments-to-files \
--	createuser.dotforward db-convert-4.2x-to-5.00 ssl-certificates.sh \
--	zarafa-licensed.init.cbs4 zarafa-licensed.init.suse zarafa-licensed.init.fc zarafa-dagent.init.cbs4 zarafa-dagent.init.suse zarafa-dagent.init.fc
-+	createuser.dotforward db-convert-4.2x-to-5.00 ssl-certificates.sh
- 
+ 	createuser.dotforward db-convert-4.2x-to-5.00 ssl-certificates.sh \
+-	zarafa-dagent.init.cbs4 zarafa-dagent.init.suse zarafa-dagent.init.fc\
+ $(am__append_1)
  dist_bin_SCRIPTS = zarafa-autorespond
--dist_sysconf_DATA = ipsseg.crt
-+dist_sysconf_DATA =
- all: all-am
- 
- .SUFFIXES:
-@@ -291,12 +287,12 @@ distclean-libtool:
- uninstall-info-am:
- install-dist_dataDATA: $(dist_data_DATA)
- 	@$(NORMAL_INSTALL)
--	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
-+	test -z "$(egdir)" || $(mkdir_p) "$(DESTDIR)$(egdir)"
- 	@list='$(dist_data_DATA)'; for p in $$list; do \
- 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
--	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
--	  $(dist_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
-+	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(egdir)/$$f'"; \
-+	  $(dist_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(egdir)/$$f"; \
- 	done
- 
- uninstall-dist_dataDATA:
+ @OSS_ONLY_FALSE@dist_sysconf_DATA = ipsseg.crt
