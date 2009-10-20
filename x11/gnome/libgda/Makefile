@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/10/15 00:27:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/10/20 10:41:42 kili Exp $
 
 #
 # XXX:
@@ -18,12 +18,12 @@ COMMENT-odbc=		ODBC backend for libgda
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		4.0.5
 
-PKGNAME-main=		${DISTNAME}p0
-#PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
-PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}p0
-PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}p0
-PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}p0
-#PKGNAME-odbc=		libgda-odbc-${GNOME_VERSION}
+PKGNAME-main=		${DISTNAME}v0
+#PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}v0
+PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}v0
+PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}v0
+PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}v0
+#PKGNAME-odbc=		libgda-odbc-${GNOME_VERSION}v0
 
 CATEGORIES=		databases
 
