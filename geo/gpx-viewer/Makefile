@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/10 23:35:26 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/20 19:57:57 landry Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.1.1
 DISTNAME =	gpx-viewer-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 CATEGORIES =	geo x11
 
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	http://edge.launchpad.net/gpx-viewer/trunk/${VERSION}/+download/
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		DATADIRNAME=share
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE =		yes
 
 MODULES =	devel/gettext \
