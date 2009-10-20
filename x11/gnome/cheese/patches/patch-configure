@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2009/10/15 11:02:30 ajacoutot Exp $
---- configure.orig	Thu Oct 15 12:33:04 2009
-+++ configure	Thu Oct 15 12:35:21 2009
-@@ -13524,12 +13524,11 @@ GTK_REQUIRED=2.17.4
+$OpenBSD: patch-configure,v 1.4 2009/10/20 06:58:45 ajacoutot Exp $
+--- configure.orig	Mon Oct 19 21:08:50 2009
++++ configure	Mon Oct 19 22:41:13 2009
+@@ -13527,12 +13527,11 @@ GTK_REQUIRED=2.17.4
  GDK_REQUIRED=2.14.0
  LIBGNOMEDESKTOP_REQUIRED=2.26.0
  GCONF_REQUIRED=2.16.0
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.3 2009/10/15 11:02:30 ajacoutot Exp $
  PANGOCAIRO_REQUIRED=1.18.0
  LIBRSVG_REQUIRED=2.18.0
  
-@@ -13556,7 +13555,6 @@ if test -n "$CHEESE_CFLAGS"; then
+@@ -13559,7 +13558,6 @@ if test -n "$CHEESE_CFLAGS"; then
    cairo >= \$CAIRO_REQUIRED \\
    dbus-1 >= \$DBUS_REQUIRED \\
    dbus-glib-1 >= \$DBUS_GLIB_REQUIRED \\
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.3 2009/10/15 11:02:30 ajacoutot Exp $
    pangocairo >= \$PANGOCAIRO_REQUIRED \\
    librsvg-2.0 >= \$LIBRSVG_REQUIRED\""; } >&5
    ($PKG_CONFIG --exists --print-errors "\
-@@ -13573,7 +13571,6 @@ if test -n "$CHEESE_CFLAGS"; then
+@@ -13576,7 +13574,6 @@ if test -n "$CHEESE_CFLAGS"; then
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
@@ -31,7 +31,7 @@ $OpenBSD: patch-configure,v 1.3 2009/10/15 11:02:30 ajacoutot Exp $
    pangocairo >= $PANGOCAIRO_REQUIRED \
    librsvg-2.0 >= $LIBRSVG_REQUIRED") 2>&5
    ac_status=$?
-@@ -13593,7 +13590,6 @@ if test -n "$CHEESE_CFLAGS"; then
+@@ -13596,7 +13593,6 @@ if test -n "$CHEESE_CFLAGS"; then
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
@@ -39,7 +39,7 @@ $OpenBSD: patch-configure,v 1.3 2009/10/15 11:02:30 ajacoutot Exp $
    pangocairo >= $PANGOCAIRO_REQUIRED \
    librsvg-2.0 >= $LIBRSVG_REQUIRED" 2>/dev/null`
  else
-@@ -13620,7 +13616,6 @@ if test -n "$CHEESE_LIBS"; then
+@@ -13623,7 +13619,6 @@ if test -n "$CHEESE_LIBS"; then
    cairo >= \$CAIRO_REQUIRED \\
    dbus-1 >= \$DBUS_REQUIRED \\
    dbus-glib-1 >= \$DBUS_GLIB_REQUIRED \\
@@ -47,7 +47,7 @@ $OpenBSD: patch-configure,v 1.3 2009/10/15 11:02:30 ajacoutot Exp $
    pangocairo >= \$PANGOCAIRO_REQUIRED \\
    librsvg-2.0 >= \$LIBRSVG_REQUIRED\""; } >&5
    ($PKG_CONFIG --exists --print-errors "\
-@@ -13637,7 +13632,6 @@ if test -n "$CHEESE_LIBS"; then
+@@ -13640,7 +13635,6 @@ if test -n "$CHEESE_LIBS"; then
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
@@ -55,7 +55,7 @@ $OpenBSD: patch-configure,v 1.3 2009/10/15 11:02:30 ajacoutot Exp $
    pangocairo >= $PANGOCAIRO_REQUIRED \
    librsvg-2.0 >= $LIBRSVG_REQUIRED") 2>&5
    ac_status=$?
-@@ -13657,7 +13651,6 @@ if test -n "$CHEESE_LIBS"; then
+@@ -13660,7 +13654,6 @@ if test -n "$CHEESE_LIBS"; then
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
@@ -63,7 +63,7 @@ $OpenBSD: patch-configure,v 1.3 2009/10/15 11:02:30 ajacoutot Exp $
    pangocairo >= $PANGOCAIRO_REQUIRED \
    librsvg-2.0 >= $LIBRSVG_REQUIRED" 2>/dev/null`
  else
-@@ -13691,7 +13684,6 @@ fi
+@@ -13694,7 +13687,6 @@ fi
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
@@ -71,7 +71,7 @@ $OpenBSD: patch-configure,v 1.3 2009/10/15 11:02:30 ajacoutot Exp $
    pangocairo >= $PANGOCAIRO_REQUIRED \
    librsvg-2.0 >= $LIBRSVG_REQUIRED" 2>&1`
          else
-@@ -13709,7 +13701,6 @@ fi
+@@ -13712,7 +13704,6 @@ fi
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
@@ -79,7 +79,7 @@ $OpenBSD: patch-configure,v 1.3 2009/10/15 11:02:30 ajacoutot Exp $
    pangocairo >= $PANGOCAIRO_REQUIRED \
    librsvg-2.0 >= $LIBRSVG_REQUIRED" 2>&1`
          fi
-@@ -13730,7 +13721,6 @@ fi
+@@ -13733,7 +13724,6 @@ fi
    cairo >= $CAIRO_REQUIRED \
    dbus-1 >= $DBUS_REQUIRED \
    dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
