@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2009/10/13 10:11:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2009/10/20 15:00:46 ajacoutot Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 @bin bin/nautilus-connect-server
@@ -54,21 +54,10 @@ share/gtk-doc/html/libnautilus-extension/pt01.html
 share/gtk-doc/html/libnautilus-extension/right.png
 share/gtk-doc/html/libnautilus-extension/style.css
 share/gtk-doc/html/libnautilus-extension/up.png
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/nautilus.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/nautilus.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/nautilus.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/nautilus.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/nautilus.svg
 share/locale/af/
 share/locale/af/LC_MESSAGES/
@@ -109,8 +98,6 @@ share/locale/eu/LC_MESSAGES/nautilus.mo
 share/locale/fa/LC_MESSAGES/nautilus.mo
 share/locale/fi/LC_MESSAGES/nautilus.mo
 share/locale/fr/LC_MESSAGES/nautilus.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/nautilus.mo
 share/locale/ga/LC_MESSAGES/nautilus.mo
 share/locale/gl/LC_MESSAGES/nautilus.mo
@@ -273,7 +260,6 @@ share/nautilus/ui/nautilus-list-view-ui.xml
 share/nautilus/ui/nautilus-navigation-window-ui.xml
 share/nautilus/ui/nautilus-shell-ui.xml
 share/nautilus/ui/nautilus-spatial-window-ui.xml
-share/pixmaps/
 share/pixmaps/nautilus/
 share/pixmaps/nautilus/audio.svg
 share/pixmaps/nautilus/backgrounds.png
