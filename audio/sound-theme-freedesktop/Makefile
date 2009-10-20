@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/12 00:29:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/10/20 16:42:44 ajacoutot Exp $
 
 COMMENT=	XDG sound theme
 
@@ -23,7 +23,7 @@ MASTER_SITES=	http://cgit.freedesktop.org/sound-theme-freedesktop/snapshot/
 MODULES=	textproc/intltool
 
 BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
-		:${_AUTOMAKE_SPEC}:devel/automake/${AUTOMAKE_VERSION}
+		:automake->=${AUTOMAKE_VERSION},<1.10:devel/automake/${AUTOMAKE_VERSION}
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
