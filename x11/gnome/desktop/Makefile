@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2009/10/10 14:05:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2009/10/20 14:48:35 jasper Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		2.28.0
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS +=  gnome-desktop-2      7.0      # .15.2
 CATEGORIES=		x11
 
@@ -22,9 +23,10 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread-stubs xcb xcb-atom xcb-aux xcb-event z
 
 MODULES=		devel/gettext \
-			x11/gnome \
-			lang/python
+			lang/python \
+			x11/gnome
 
+BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::x11/gnome/py-gnome
 LIB_DEPENDS=		startup-notification-1::devel/startup-notification
 
