@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2009/10/20 15:08:52 jasper Exp $
 
 COMMENT=		lightweight addressbook
 
 GNOME_PROJECT=		contacts
 GNOME_VERSION=		0.10
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 CATEGORIES=		misc
 
@@ -21,12 +21,12 @@ WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += asn1 atk-1.0 avahi-client avahi-common avahi-glib bonobo-2
 WANTLIB += bonobo-activation c cairo com_err crypto dbus-1 dbus-glib-1
 WANTLIB += expat fontconfig freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnomevfs-2
-WANTLIB += gnutls gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
-WANTLIB += krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png popt pthread smime3 softokn3
-WANTLIB += soup-2.4 sqlite3 ssl ssl3 tasn1 util xml2 z
-WANTLIB += pthread-stubs xcb
+WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0
+WANTLIB += gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4
+WANTLIB += nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += plc4 plds4 png pthread pthread-stubs smime3 softokn3
+WANTLIB += soup-2.4 sqlite3 ssl ssl3 tasn1 util xcb xml2 z
+
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -37,7 +37,8 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 MODGCONF2_SCHEMAS_DIR=	contacts
 
-LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server
+LIB_DEPENDS=		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
+			gnomevfs-2::x11/gnome/vfs2
 RUN_DEPENDS=		::devel/desktop-file-utils
 
 CONFIGURE_STYLE=	gnu
