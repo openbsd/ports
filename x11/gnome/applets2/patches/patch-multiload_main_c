@@ -1,0 +1,24 @@
+$OpenBSD: patch-multiload_main_c,v 1.1 2009/10/20 21:52:51 ajacoutot Exp $
+
+XXX
+Don't spawn an error when double-clicking on the system-monitor-applet:
+gnome-system-monitor is not available on OpenBSD currently.
+
+--- multiload/main.c.orig	Tue Oct 20 23:37:19 2009
++++ multiload/main.c	Tue Oct 20 23:38:46 2009
+@@ -116,6 +116,7 @@ start_procman (MultiloadApplet *ma)
+ 	}
+ 	g_free (monitor);
+ 
++/*
+ 	if (error) {
+ 		GtkWidget *dialog;
+ 
+@@ -139,6 +140,7 @@ start_procman (MultiloadApplet *ma)
+ 
+ 		g_error_free (error);
+ 	}
++*/
+ }
+               
+ static void
