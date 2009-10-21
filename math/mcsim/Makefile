@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 18:44:36 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2009/10/21 21:21:18 jasper Exp $
 
 COMMENT=	monte carlo simulation software
 
 DISTNAME=	mcsim-4.2.0
 CATEGORIES=	math
+PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	${MASTER_SITE_GNU:=mcsim/}
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
@@ -25,7 +26,7 @@ do-regress:
 	@(cd ${WRKSRC}/sim && chmod 755 Test_mcsim && ./Test_mcsim)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mod/mod ${PREFIX}/bin/mod
+	${INSTALL_PROGRAM} ${WRKSRC}/mod/mod ${PREFIX}/bin/mcmod
 	${INSTALL_PROGRAM} ${WRKSRC}/sim/mcsim ${PREFIX}/bin/mcsim
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mcsim
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${WRKSRC}/doc/MCSim* ${PREFIX}/share/doc/mcsim/
