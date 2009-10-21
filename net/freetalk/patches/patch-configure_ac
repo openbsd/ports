@@ -1,10 +1,20 @@
-$OpenBSD: patch-configure_ac,v 1.1 2009/10/14 23:18:31 kili Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2009/10/21 13:59:35 kili Exp $
 
 /* no comment */
 
 --- configure.ac.orig	Sat Nov 15 10:02:35 2008
-+++ configure.ac	Thu Oct 15 00:37:06 2009
-@@ -17,7 +17,10 @@ AC_PROG_CXX
++++ configure.ac	Wed Oct 21 15:38:52 2009
+@@ -14,10 +14,20 @@ AC_CONFIG_FILES([Makefile src/Makefile extensions/Make
+ AC_PROG_MAKE_SET
+ AC_PROG_CXX
+ 
++dnl Gettext Support
++AM_GNU_GETTEXT([external])
++AM_GNU_GETTEXT_VERSION([0.16.1])
++
++dnl AM_PO_SUBDIRS
++AM_ICONV
++
  AC_SEARCH_LIBS([tgetent],[ncurses termcap curses])
  AC_CHECK_LIB([readline], [readline],,AC_MSG_ERROR([ERROR! readline not found...]))
  GUILE_FLAGS
@@ -15,3 +25,16 @@ $OpenBSD: patch-configure_ac,v 1.1 2009/10/14 23:18:31 kili Exp $
  
  AC_CHECK_PROG([PKGCONFIG], [pkg-config], [yes], [no])
  if test "x$PKGCONFIG" = "xno"; then
+@@ -47,12 +57,5 @@ AC_CHECK_TYPES([error_t],
+ #define __need_error_t
+ #include <errno.h>
+ #endif])
+-
+-dnl Gettext Support
+-AM_GNU_GETTEXT([external])
+-AM_GNU_GETTEXT_VERSION([0.16.1])
+-
+-dnl AM_PO_SUBDIRS
+-AM_ICONV
+ 
+ AC_OUTPUT
