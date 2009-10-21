@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugin_Makefile_in,v 1.4 2009/08/12 13:52:19 ajacoutot Exp $
---- plugin/Makefile.in.orig	Tue Aug 11 14:24:27 2009
-+++ plugin/Makefile.in	Wed Aug 12 15:23:54 2009
-@@ -475,7 +475,7 @@ target_vendor = @target_vendor@
+$OpenBSD: patch-plugin_Makefile_in,v 1.5 2009/10/21 15:20:23 jasper Exp $
+--- plugin/Makefile.in.orig	Tue Oct 20 20:32:54 2009
++++ plugin/Makefile.in	Wed Oct 21 17:11:43 2009
+@@ -489,7 +489,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -10,7 +10,16 @@ $OpenBSD: patch-plugin_Makefile_in,v 1.4 2009/08/12 13:52:19 ajacoutot Exp $
  @ENABLE_PLUGIN_TRUE@plugin_LTLIBRARIES = gtk-vnc-plugin.la
  @ENABLE_PLUGIN_TRUE@gtk_vnc_plugin_la_SOURCES = \
  @ENABLE_PLUGIN_TRUE@	gtk-vnc-plugin.c gtk-vnc-plugin.h npshell.c npunix.c
-@@ -528,12 +528,12 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+@@ -503,7 +503,7 @@ top_srcdir = @top_srcdir@
+ 
+ @ENABLE_PLUGIN_TRUE@gtk_vnc_plugin_la_CFLAGS = \
+ @ENABLE_PLUGIN_TRUE@	-I$(top_srcdir)/src @GTK_CFLAGS@ \
+-@ENABLE_PLUGIN_TRUE@	@FIREFOX_PLUGIN_CFLAGS@ @WARNING_CFLAGS@ @WERROR_CFLAGS@
++@ENABLE_PLUGIN_TRUE@	@FIREFOX_PLUGIN_CFLAGS@ @WARNING_CFLAGS@
+ 
+ @ENABLE_PLUGIN_TRUE@EXTRA_DIST = README
+ @ENABLE_PLUGIN_TRUE@CLEANFILES = gtk-vnc-plugin.so
+@@ -542,12 +542,12 @@ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
  	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
  install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
  	@$(NORMAL_INSTALL)
@@ -26,7 +35,7 @@ $OpenBSD: patch-plugin_Makefile_in,v 1.4 2009/08/12 13:52:19 ajacoutot Exp $
  	  else :; fi; \
  	done
  
-@@ -541,8 +541,8 @@ uninstall-pluginLTLIBRARIES:
+@@ -555,8 +555,8 @@ uninstall-pluginLTLIBRARIES:
  	@$(NORMAL_UNINSTALL)
  	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
  	  p=$(am__strip_dir) \
@@ -37,7 +46,7 @@ $OpenBSD: patch-plugin_Makefile_in,v 1.4 2009/08/12 13:52:19 ajacoutot Exp $
  	done
  
  clean-pluginLTLIBRARIES:
-@@ -692,7 +692,7 @@ check: check-am
+@@ -706,7 +706,7 @@ check: check-am
  @ENABLE_PLUGIN_FALSE@all-local:
  all-am: Makefile $(LTLIBRARIES) all-local
  installdirs:

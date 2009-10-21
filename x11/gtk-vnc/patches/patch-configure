@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2009/08/12 13:52:19 ajacoutot Exp $
---- configure.orig	Tue Aug 11 14:24:30 2009
-+++ configure	Wed Aug 12 15:23:54 2009
-@@ -2697,7 +2697,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
+$OpenBSD: patch-configure,v 1.5 2009/10/21 15:20:23 jasper Exp $
+--- configure.orig	Tue Oct 20 20:32:57 2009
++++ configure	Wed Oct 21 14:00:07 2009
+@@ -2593,7 +2593,7 @@ for as_dir in $PATH$PATH_SEPARATOR/opt/sfw/bin
  do
    IFS=$as_save_IFS
    test -z "$as_dir" && as_dir=.
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2009/08/12 13:52:19 ajacoutot Exp $
  	 for ac_exec_ext in '' $ac_executable_extensions; do
  	   { test -f "$as_dir/$ac_prog$ac_exec_ext" && $as_test_x "$as_dir/$ac_prog$ac_exec_ext"; } || continue
  	   case `"$as_dir/$ac_prog$ac_exec_ext" --version 2>&1` in #(
-@@ -21965,7 +21965,6 @@ openbsd*)
+@@ -21906,7 +21906,6 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

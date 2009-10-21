@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/12 13:52:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/10/21 15:20:23 jasper Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
 
 GNOME_PROJECT=		gtk-vnc
-GNOME_VERSION=		0.3.9
+GNOME_VERSION=		0.3.10
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugin=		gtk-vnc-plugin-${GNOME_VERSION}
