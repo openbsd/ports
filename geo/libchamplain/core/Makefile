@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2009/10/10 23:34:09 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2009/10/21 12:19:03 landry Exp $
 
 COMMENT=		library to provide a Gtk+ widget to display maps
 
 DISTNAME=		libchamplain-${VERSION}
 
-SHARED_LIBS +=  champlain-0.4       0.0          # .0.0
-SHARED_LIBS +=  champlain-gtk-0.4   0.0          # .0.0
+SHARED_LIBS +=  champlain-0.4       0.1          # .0.0
+SHARED_LIBS +=  champlain-gtk-0.4   0.1          # .0.0
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo clutter-glx-1.0
@@ -19,7 +19,7 @@ MODULES=		devel/gettext
 
 LIB_DEPENDS=		sqlite3::databases/sqlite3 \
 			soup-2.4::devel/libsoup \
-			clutter-gtk-0.10::graphics/clutter/clutter-gtk
+			clutter-gtk-0.10:clutter-gtk->=0.10:graphics/clutter/clutter-gtk
 
 CONFIGURE_ARGS=	--enable-introspection=no
 
