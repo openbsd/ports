@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/13 14:21:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/10/21 12:28:39 jasper Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -169,6 +169,9 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/__init__.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/acroread.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/acroread.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/acroread.pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/ddu.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/ddu.pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/ddu.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/ekiga.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/ekiga.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/ekiga.pyo
