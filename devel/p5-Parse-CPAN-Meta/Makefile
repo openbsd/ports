@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/18 18:08:12 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/21 22:50:12 sthen Exp $
 
 COMMENT =	parse META.yml and other similar CPAN metadata files
 
 MODULES =	cpan
 DISTNAME =	Parse-CPAN-Meta-1.39
 CATEGORIES =	devel
+
+COMES_WITH =	4.7
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
