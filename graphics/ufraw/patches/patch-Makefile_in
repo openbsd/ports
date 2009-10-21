@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2009/06/21 14:01:28 sthen Exp $
---- Makefile.in.orig	Tue Dec 23 07:47:19 2008
-+++ Makefile.in	Thu Jun 18 02:48:27 2009
-@@ -94,7 +94,7 @@ am__nikon_curve_SOURCES_DIST = nikon_curve.c
+$OpenBSD: patch-Makefile_in,v 1.3 2009/10/21 22:44:52 sthen Exp $
+--- Makefile.in.orig	Fri Oct 16 02:37:53 2009
++++ Makefile.in	Wed Oct 21 23:31:27 2009
+@@ -116,7 +116,7 @@ am__nikon_curve_SOURCES_DIST = nikon_curve.c
  nikon_curve_OBJECTS = $(am_nikon_curve_OBJECTS)
  @MAKE_EXTRAS_TRUE@nikon_curve_DEPENDENCIES = $(am__DEPENDENCIES_1)
  nikon_curve_LINK = $(CCLD) $(nikon_curve_CFLAGS) $(CFLAGS) \
 -	$(nikon_curve_LDFLAGS) $(LDFLAGS) -o $@
 +	$(nikon_curve_LDFLAGS) $(LDFLAGS) -lstdc++ -o $@
- am_ufraw_OBJECTS = ufraw.$(OBJEXT)
- ufraw_OBJECTS = $(am_ufraw_OBJECTS)
- @UFRAW_WIN32_TRUE@am__DEPENDENCIES_2 = ufraw_icon.opc
+ ufraw_SOURCES = ufraw.c
+ ufraw_OBJECTS = ufraw.$(OBJEXT)
+ ufraw_LDADD = $(LDADD)

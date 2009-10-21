@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/21 14:01:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/10/21 22:44:52 sthen Exp $
 @comment bin/dcraw
 @bin bin/nikon-curve
 @bin bin/ufraw
@@ -11,6 +11,7 @@ lib/gimp/2.0/plug-ins/
 share/locale/ca/LC_MESSAGES/ufraw.mo
 share/locale/cs/LC_MESSAGES/ufraw.mo
 share/locale/da/LC_MESSAGES/ufraw.mo
+share/locale/de/LC_MESSAGES/ufraw.mo
 share/locale/es/LC_MESSAGES/ufraw.mo
 share/locale/fr/LC_MESSAGES/ufraw.mo
 share/locale/it/LC_MESSAGES/ufraw.mo
@@ -26,5 +27,6 @@ share/locale/sr@latin/
 share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/ufraw.mo
 share/locale/sv/LC_MESSAGES/ufraw.mo
+share/locale/zh_CN/LC_MESSAGES/ufraw.mo
 share/pixmaps/
 share/pixmaps/ufraw.png
