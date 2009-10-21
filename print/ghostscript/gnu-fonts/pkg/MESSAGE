@@ -8,6 +8,6 @@ scaled. Below is the relevant section from a typical xorg.conf file.
    FontPath   "/usr/X11R6/lib/X11/fonts/misc/"
    FontPath   "/usr/X11R6/lib/X11/fonts/75dpi/:unscaled"
    FontPath   "/usr/X11R6/lib/X11/fonts/100dpi/:unscaled"
-   FontPath   "${PREFIX}/lib/X11/fonts/ghostscript/"
+   FontPath   "${PREFIX}/share/ghostscript/fonts/"
    FontPath   "/usr/X11R6/lib/X11/fonts/Type1/"
 

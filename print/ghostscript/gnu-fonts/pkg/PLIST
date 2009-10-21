@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/08/03 15:15:20 kili Exp $
-lib/X11/fonts/
-lib/X11/fonts/ghostscript
+@comment $OpenBSD: PLIST,v 1.5 2009/10/21 14:19:01 kili Exp $
 share/ghostscript/
 @fontdir share/ghostscript/fonts/
 share/ghostscript/fonts/a010013l.afm
