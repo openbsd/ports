@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2009/10/11 10:28:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2009/10/21 10:06:42 jasper Exp $
 @bin bin/gnome-terminal
 share/applications/gnome-terminal.desktop
 share/gnome-terminal/
@@ -125,8 +125,6 @@ share/gnome/help/gnome-terminal/zh_TW/legal.xml
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
 share/locale/as/LC_MESSAGES/gnome-terminal.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gnome-terminal.mo
 share/locale/az/LC_MESSAGES/gnome-terminal.mo
 share/locale/be/LC_MESSAGES/gnome-terminal.mo
@@ -186,8 +184,6 @@ share/locale/oc/LC_MESSAGES/gnome-terminal.mo
 share/locale/or/LC_MESSAGES/gnome-terminal.mo
 share/locale/pa/LC_MESSAGES/gnome-terminal.mo
 share/locale/pl/LC_MESSAGES/gnome-terminal.mo
-share/locale/ps/
-share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/gnome-terminal.mo
 share/locale/pt/LC_MESSAGES/gnome-terminal.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-terminal.mo
