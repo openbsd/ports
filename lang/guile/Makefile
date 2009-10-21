@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2009/10/11 18:49:12 kili Exp $
+# $OpenBSD: Makefile,v 1.30 2009/10/21 13:54:52 kili Exp $
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
 VERSION=	1.8.7
 DISTNAME=	guile-${VERSION}
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	guile 20.0 \
 		guile-srfi-srfi-1-v-3 3.2 \
 		guile-srfi-srfi-13-14-v-3 3.1 \
@@ -33,7 +34,9 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_CFLAGS=-pthread \
+		PTHREAD_LIBS=-pthread
 
 V=		${VERSION:C,.[0-9]+$,,}
 SUBST_VARS=	V
