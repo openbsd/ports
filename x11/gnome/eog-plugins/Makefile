@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/11 20:37:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/21 12:20:01 jasper Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
-GNOME_VERSION=		2.28.0
+GNOME_VERSION=		2.28.1
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://live.gnome.org/EyeOfGnome/Plugins
@@ -27,9 +27,10 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-LIB_DEPENDS=    	champlain-0.4,champlain-gtk-0.4:libchamplain->=0.4.0:geo/libchamplain/core \
+LIB_DEPENDS=    	champlain-0.4,champlain-gtk-0.4:libchamplain->=0.4.1:geo/libchamplain/core \
 			gnutls::security/gnutls
 BUILD_DEPENDS=		${RUN_DEPENDS}
+# Depend on the same x.yy version of eog
 RUN_DEPENDS=		:eog->=2.28.0:x11/gnome/eog
 
 USE_X11=		Yes
