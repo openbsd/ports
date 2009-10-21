@@ -1,7 +1,7 @@
-$OpenBSD: patch-ECtools_zarafa-cfgchecker_Makefile_in,v 1.2 2009/10/20 22:34:26 ajacoutot Exp $
---- ECtools/zarafa-cfgchecker/Makefile.in.orig	Fri Oct  9 22:08:30 2009
-+++ ECtools/zarafa-cfgchecker/Makefile.in	Tue Oct 20 23:41:36 2009
-@@ -257,7 +257,9 @@ sharedstatedir = @sharedstatedir@
+$OpenBSD: patch-ECtools_zarafa-cfgchecker_Makefile_in,v 1.3 2009/10/21 09:59:54 ajacoutot Exp $
+--- ECtools/zarafa-cfgchecker/Makefile.in.orig	Fri Oct 16 20:39:20 2009
++++ ECtools/zarafa-cfgchecker/Makefile.in	Wed Oct 21 11:32:04 2009
+@@ -258,7 +258,9 @@ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX -I${top_srcdir}/common

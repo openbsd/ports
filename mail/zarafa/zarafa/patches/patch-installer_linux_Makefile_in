@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
---- installer/linux/Makefile.in.orig	Fri Oct  9 22:08:33 2009
-+++ installer/linux/Makefile.in	Tue Oct 20 23:42:54 2009
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.6 2009/10/21 09:59:54 ajacoutot Exp $
+--- installer/linux/Makefile.in.orig	Fri Oct 16 20:39:23 2009
++++ installer/linux/Makefile.in	Wed Oct 21 11:32:04 2009
 @@ -57,22 +57,11 @@ SOURCES =
  DIST_SOURCES =
  am__dist_data_DATA_DIST = server.cfg unix.cfg ldap.openldap.cfg \
@@ -26,7 +26,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.5 2009/10/20 22:34:26 ajacoutot 
  dist_dataDATA_INSTALL = $(INSTALL_DATA)
  am__dist_sysconf_DATA_DIST = ipsseg.crt
  dist_sysconfDATA_INSTALL = $(INSTALL_DATA)
-@@ -219,6 +208,7 @@ datadir = ${docdir}
+@@ -220,6 +209,7 @@ datadir = ${docdir}
  datarootdir = @datarootdir@
  docdir = @docdir@
  dvidir = @dvidir@
@@ -34,7 +34,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.5 2009/10/20 22:34:26 ajacoutot 
  exec_prefix = @exec_prefix@
  host = @host@
  host_alias = @host_alias@
-@@ -248,12 +238,8 @@ sysconfdir = /etc/zarafa/report-ca
+@@ -249,12 +239,8 @@ sysconfdir = /etc/zarafa/report-ca
  target_alias = @target_alias@
  dist_data_DATA = server.cfg unix.cfg ldap.openldap.cfg ldap.active-directory.cfg \
  	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg zarafa.logrotate \

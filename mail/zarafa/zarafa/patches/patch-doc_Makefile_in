@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.4 2009/10/20 22:34:26 ajacoutot Exp $
---- doc/Makefile.in.orig	Fri Oct  9 22:08:32 2009
-+++ doc/Makefile.in	Tue Oct 20 23:41:36 2009
-@@ -373,12 +373,12 @@ uninstall-man5:
+$OpenBSD: patch-doc_Makefile_in,v 1.5 2009/10/21 09:59:54 ajacoutot Exp $
+--- doc/Makefile.in.orig	Fri Oct 16 20:39:22 2009
++++ doc/Makefile.in	Wed Oct 21 11:32:04 2009
+@@ -374,12 +374,12 @@ uninstall-man5:
  	done
  install-dist_dataDATA: $(dist_data_DATA)
  	@$(NORMAL_INSTALL)
@@ -17,7 +17,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.4 2009/10/20 22:34:26 ajacoutot Exp $
  	done
  
  uninstall-dist_dataDATA:
-@@ -523,7 +523,7 @@ $(BUILT_SOURCES): manual.xml
+@@ -524,7 +524,7 @@ $(BUILT_SOURCES): manual.xml
  	@if [ -z $(PROG_XMLTO) ]; then \
  		echo Please install xmlto to generate manual pages; \
  	else \

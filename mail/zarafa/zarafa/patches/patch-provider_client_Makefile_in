@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_client_Makefile_in,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
---- provider/client/Makefile.in.orig	Fri Oct  9 22:08:36 2009
-+++ provider/client/Makefile.in	Tue Oct 20 23:41:37 2009
-@@ -329,7 +329,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX				\
+$OpenBSD: patch-provider_client_Makefile_in,v 1.6 2009/10/21 09:59:54 ajacoutot Exp $
+--- provider/client/Makefile.in.orig	Fri Oct 16 20:39:26 2009
++++ provider/client/Makefile.in	Wed Oct 21 11:32:04 2009
+@@ -330,7 +330,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX				\
  	-I${top_srcdir}/libfreebusy					\
  	-I${top_srcdir}/common
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-provider_client_Makefile_in,v 1.5 2009/10/20 22:34:26 ajacoutot 
  libzarafaclient_la_LIBADD = $(GSOAP_LIBS) $(SSL_LIBS)	\
  	${top_builddir}/provider/soap/libgsoap.la			\
  	${top_builddir}/provider/soap/libsoapclient.la		\
-@@ -341,7 +341,7 @@ libzarafaclient_la_LIBADD = $(GSOAP_LIBS) $(SSL_LIBS)	
+@@ -342,7 +342,7 @@ libzarafaclient_la_LIBADD = $(GSOAP_LIBS) $(SSL_LIBS)	
  	${top_builddir}/mapi4linux/src/libmapi.la			\
  	-lstdc++ $(UUID_LIBS)
  
