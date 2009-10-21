@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2009/10/15 16:17:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2009/10/21 10:08:10 jasper Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
 GNOME_PROJECT=		gok
-GNOME_VERSION=		2.28.0
+GNOME_VERSION=		2.28.1
 
 HOMEPAGE=		http://live.gnome.org/Gok
 
@@ -39,8 +39,7 @@ USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gok
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-scrollkeeper
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 # XXX X Window System Error ('BadLenght...')
 CONFIGURE_ARGS+=	--disable-xevie
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
