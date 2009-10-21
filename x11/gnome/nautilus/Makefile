@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2009/10/20 15:00:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2009/10/21 16:07:49 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -55,8 +55,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--enable-tracker \
 			--disable-beagle \
 			--disable-update-mimedb \
-			--disable-packagekit \
-			--enable-shave=no
+			--disable-packagekit
 # XXX build error when textproc/exempi is installed
 CONFIGURE_ARGS+=	--enable-xmp=no
 
