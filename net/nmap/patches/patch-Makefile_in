@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2008/09/17 18:09:54 kili Exp $
---- Makefile.in.orig	Fri Sep  5 07:32:06 2008
-+++ Makefile.in	Thu Sep 11 15:32:16 2008
-@@ -180,8 +180,8 @@ install-nmap: $(TARGET)
- 	$(INSTALL) -c -m 644 nmap-mac-prefixes $(DESTDIR)$(nmapdatadir)/
+$OpenBSD: patch-Makefile_in,v 1.10 2009/10/22 10:00:57 giovanni Exp $
+--- Makefile.in.orig	Wed Jun 24 23:35:54 2009
++++ Makefile.in	Tue Jul 21 20:16:43 2009
+@@ -217,8 +217,8 @@ $(NCATDIR)/ncat.h: nmap.h
+ 	sed -i -e 's/^#[ \t]*define[ \t]\+NCAT_VERSION[ \t]\+\(".*"\)/#define NCAT_VERSION "$(NMAP_VERSION)"/' $@
  
  # Update the version number used by Zenmap.
 -$(ZENMAPDIR)/zenmapCore/Version.py $(ZENMAPDIR)/share/zenmap/config/zenmap_version: nmap.h

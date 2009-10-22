@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2008/09/17 18:09:54 kili Exp $
---- configure.orig	Tue Sep  9 01:37:03 2008
-+++ configure	Mon Sep 15 09:30:03 2008
-@@ -6688,6 +6688,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-configure,v 1.10 2009/10/22 10:00:57 giovanni Exp $
+--- configure.orig	Wed Jun 24 23:35:54 2009
++++ configure	Tue Jul 21 19:57:38 2009
+@@ -7108,6 +7108,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  extern char pcap_version[];
  int main() {
    int major, minor1, minor2;
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.9 2008/09/17 18:09:54 kili Exp $
    sscanf(pcap_version,"%d.%d.%d", &major, &minor1, &minor2);
    if (major > 0)
      exit(0);
-@@ -7008,7 +7009,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -7439,7 +7440,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -18,12 +18,12 @@ $OpenBSD: patch-configure,v 1.9 2008/09/17 18:09:54 kili Exp $
  _ACEOF
  rm -f conftest.$ac_objext
  if { (ac_try="$ac_compile"
-@@ -7203,7 +7204,7 @@ if test $have_pcre != yes ; then
+@@ -7640,7 +7641,7 @@ if test $have_pcre != yes ; then
  else
  # We only need to check for and use this if we are NOT using included pcre
  
 -for ac_header in pcre/pcre.h
 +for ac_header in pcre.h
  do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then

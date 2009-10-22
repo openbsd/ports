@@ -1,0 +1,13 @@
+$OpenBSD: patch-ncat_docs_ncat_1,v 1.1 2009/10/22 10:00:57 giovanni Exp $
+--- ncat/docs/ncat.1.orig       Fri Oct  9 09:53:59 2009
++++ ncat/docs/ncat.1    Fri Oct  9 09:58:33 2009
+@@ -52,7 +52,8 @@
+ .ft B
+ .ne (2v + 1u)
+ .ie n \{\
+- \" if n (TTY output), use uppercase
++\" if n (TTY output), use uppercase
++.toupper \\$*
+ .\}
+ .el \{\
+ .nr an-break-flag 0

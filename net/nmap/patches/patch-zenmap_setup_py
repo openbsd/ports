@@ -1,7 +1,7 @@
-$OpenBSD: patch-zenmap_setup_py,v 1.5 2008/09/17 18:09:54 kili Exp $
---- zenmap/setup.py.orig	Fri Sep 12 06:41:38 2008
-+++ zenmap/setup.py	Tue Sep 16 08:54:24 2008
-@@ -126,12 +126,11 @@ def path_strip_prefix(path, prefix):
+$OpenBSD: patch-zenmap_setup_py,v 1.6 2009/10/22 10:00:57 giovanni Exp $
+--- zenmap/setup.py.orig	Thu May 28 08:26:49 2009
++++ zenmap/setup.py	Tue Jul 21 19:57:38 2009
+@@ -125,12 +125,11 @@ def path_strip_prefix(path, prefix):
  
  class my_install(install):
      def run(self):
@@ -15,7 +15,7 @@ $OpenBSD: patch-zenmap_setup_py,v 1.5 2008/09/17 18:09:54 kili Exp $
          self.write_installed_files()
  
      def get_installed_files(self):
-@@ -285,17 +284,10 @@ for dir in dirs:
+@@ -284,17 +283,10 @@ for dir in dirs:
                               "MISC_DIR": os.path.join(self.prefix, misc_dir),
                               "PIXMAPS_DIR": os.path.join(self.prefix, pixmaps_dir)}
  
@@ -36,7 +36,7 @@ $OpenBSD: patch-zenmap_setup_py,v 1.5 2008/09/17 18:09:54 kili Exp $
  
          # Replace the path definitions.
          for path, replacement in interesting_paths.items():
-@@ -316,11 +308,6 @@ for dir in dirs:
+@@ -315,11 +307,6 @@ for dir in dirs:
  
          desktop_filename = None
          root_desktop_filename = None

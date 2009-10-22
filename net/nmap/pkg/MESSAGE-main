@@ -1,0 +1,3 @@
+CAUTION!!! Using nmap with `-O' flag under OpenBSD machine with pf
+enabled might hang nmap. It's caused by properly working pf which
+will filter out all weird ip header flags sent by nmap.

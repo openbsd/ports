@@ -1,7 +1,15 @@
-$OpenBSD: patch-tcpip_cc,v 1.9 2008/09/17 18:09:54 kili Exp $
---- tcpip.cc.orig	Thu Sep  4 16:41:59 2008
-+++ tcpip.cc	Thu Sep 11 15:32:17 2008
-@@ -2244,7 +2244,7 @@ bool pcap_selectable_fd_valid() {
+--- tcpip.cc.orig	Wed Jun 24 23:35:54 2009
++++ tcpip.cc	Tue Jul 21 19:57:38 2009
+@@ -127,6 +127,8 @@
+ #endif /* NETINET_IF_ETHER_H */
+ #endif /* HAVE_NETINET_IF_ETHER_H */
+ 
++#include "sctp.h"
++
+ extern NmapOps o;
+ 
+ #ifdef WIN32
+@@ -2314,7 +2316,7 @@ bool pcap_selectable_fd_valid() {
     results.  If you just want to test whether the function is supported,
     use pcap_selectable_fd_valid() instead. */
  int my_pcap_get_selectable_fd(pcap_t *p) {

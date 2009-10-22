@@ -1,6 +1,6 @@
-$OpenBSD: patch-zenmap_install_scripts_unix_su-to-zenmap_sh,v 1.1 2008/09/17 18:09:54 kili Exp $
---- zenmap/install_scripts/unix/su-to-zenmap.sh.orig	Fri Aug 29 01:32:36 2008
-+++ zenmap/install_scripts/unix/su-to-zenmap.sh	Mon Sep 15 09:38:05 2008
+$OpenBSD: patch-zenmap_install_scripts_unix_su-to-zenmap_sh,v 1.2 2009/10/22 10:00:57 giovanni Exp $
+--- zenmap/install_scripts/unix/su-to-zenmap.sh.orig	Sun May  3 06:33:50 2009
++++ zenmap/install_scripts/unix/su-to-zenmap.sh	Thu Oct  1 18:46:30 2009
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
