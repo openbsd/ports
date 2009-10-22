@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/12 14:05:03 pirofti Exp $
+# $OpenBSD: Makefile,v 1.6 2009/10/22 10:40:33 pirofti Exp $
 
 NOT_FOR_ARCHS =	arm
 
 COMMENT =	library for efficient computations 
 
 DISTNAME =	cln-1.3.1
-PKGNAME =	${DISTNAME}
+PKGNAME =	${DISTNAME}p0
 SHARED_LIBS +=  cln                  1.0      # .5.2
 CATEGORIES =	devel
 

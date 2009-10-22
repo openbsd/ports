@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/10/22 10:40:33 pirofti Exp $
+--- Makefile.in.orig	Thu Oct 22 13:16:23 2009
++++ Makefile.in	Thu Oct 22 13:16:33 2009
+@@ -279,8 +279,8 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = src tests examples doc benchmarks
+-DIST_SUBDIRS = src tests examples doc benchmarks
++SUBDIRS = src tests doc benchmarks
++DIST_SUBDIRS = src tests doc benchmarks
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = cln.pc
+ EXTRA_DIST = cln.pc.in cln.spec.in include/cln/config.h.in \
