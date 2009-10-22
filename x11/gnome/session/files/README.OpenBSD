@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.28 2009/10/14 16:16:17 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.29 2009/10/22 16:47:37 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -45,7 +45,6 @@ related ports under the x11/gnome category)
    * dasher - predictive text input system
    * gnome-mag - screen magnifier
    * gnome-speech - speech module
-   * gnopernicus - screen reader and magnifier
    * gok - on-screen keyboard
    * libgail-gnome - ATK interface to other applications (see above)
    * mousetweaks - mouse accessibility enhancements
