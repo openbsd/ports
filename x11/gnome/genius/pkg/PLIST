@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/15 11:50:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/22 13:18:24 ajacoutot Exp $
 %%SHARED%%
 @bin bin/genius
 @bin bin/gnome-genius
@@ -28,6 +28,7 @@ share/genius/
 share/genius/gel/
 share/genius/gel/calculus/
 share/genius/gel/calculus/differentiation.gel
+share/genius/gel/calculus/fourier.gel
 share/genius/gel/calculus/integration.gel
 share/genius/gel/calculus/limits.gel
 share/genius/gel/calculus/loader.gel
