@@ -1,7 +1,29 @@
-$OpenBSD: patch-happyhttp_cpp,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
---- happyhttp.cpp.orig	Thu Aug 28 11:08:27 2008
-+++ happyhttp.cpp	Tue Jan 27 13:47:09 2009
-@@ -357,7 +357,7 @@ void Connection::putrequest( const char* method, const
+$OpenBSD: patch-happyhttp_cpp,v 1.2 2009/10/22 23:07:54 sthen Exp $
+--- happyhttp.cpp.orig	Thu Aug 28 12:08:27 2008
++++ happyhttp.cpp	Thu Oct 15 17:41:39 2009
+@@ -28,12 +28,12 @@
+ #include "happyhttp.h"
+ 
+ #ifndef WIN32
++	#include <cerrno>
+ //	#include <sys/types.h>
+ 	#include <sys/socket.h>
+ 	#include <netinet/in.h>
+ 	#include <arpa/inet.h>
+ 	#include <netdb.h>	// for gethostbyname()
+-	#include <errno.h>
+ #endif
+ 
+ #ifdef WIN32
+@@ -48,7 +48,6 @@
+ 
+ #include <string>
+ #include <vector>
+-#include <string>
+ #include <algorithm>
+ 
+ 
+@@ -357,7 +356,7 @@ void Connection::putrequest( const char* method, const
  	m_State = REQ_STARTED;
  
  	char req[ 512 ];
@@ -10,7 +32,7 @@ $OpenBSD: patch-happyhttp_cpp,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
  	m_Buffer.push_back( req );
  
  	putheader( "Host", m_Host.c_str() );	// required for HTTP1.1
-@@ -381,7 +381,7 @@ void Connection::putheader( const char* header, const 
+@@ -381,7 +380,7 @@ void Connection::putheader( const char* header, const 
  void Connection::putheader( const char* header, int numericvalue )
  {
  	char buf[32];

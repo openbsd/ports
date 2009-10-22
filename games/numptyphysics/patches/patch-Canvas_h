@@ -1,0 +1,12 @@
+$OpenBSD: patch-Canvas_h,v 1.1 2009/10/22 23:07:54 sthen Exp $
+--- Canvas.h.orig	Thu Oct 15 08:59:08 2009
++++ Canvas.h	Thu Oct 15 08:59:56 2009
+@@ -68,7 +68,7 @@ class Window : public Canvas
+ class Image : public Canvas
+ {
+  public:
+-  Image( const char* file, bool alpha=false );
++  explicit Image( const char* file, bool alpha=false );
+ };
+ 
+ 

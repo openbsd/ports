@@ -1,0 +1,23 @@
+$OpenBSD: patch-ZipFile_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
+--- ZipFile.cpp.orig	Tue Nov 11 17:54:38 2008
++++ ZipFile.cpp	Thu Oct 15 14:14:50 2009
+@@ -110,16 +110,16 @@ int uncompress_int(unsigned char *dest, int *destLen, 
+ ZipFile::ZipFile(const std::string& fn)
+ {
+   m_temp = NULL;
+-  m_fd=open(fn.c_str(), O_RDONLY);
++  if ( m_fd=open(fn.c_str(), O_RDONLY) == -1) throw "open failed";
+   struct stat stat;
+-  fstat(m_fd, &stat);	  
++  if ( fstat(m_fd, &stat) != 0 ) throw "fstat failed";
+   m_dataLen = stat.st_size;
+   // TODO - win32
+   m_data = (unsigned char*)mmap(NULL,m_dataLen,PROT_READ,MAP_PRIVATE, m_fd, 0);
+   if ( !m_data ) throw "mmap failed";
+   if ( *(int*)&m_data[0] != 0x04034b50 ) throw "bad zip magic";
+   m_eoc = (zip_eoc*)&m_data[m_dataLen-sizeof(zip_eoc)];
+-  m_firstcd = (zip_cd*)&m_data[m_eoc->zipeofst];
++  m_firstcd = m_eoc ? (zip_cd*)&m_data[m_eoc->zipeofst] : 0;
+   if ( m_eoc && m_firstcd ) {
+     m_entries = m_eoc->zipenum;
+   } else {

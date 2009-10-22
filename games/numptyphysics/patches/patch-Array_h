@@ -1,0 +1,26 @@
+$OpenBSD: patch-Array_h,v 1.1 2009/10/22 23:07:54 sthen Exp $
+--- Array.h.orig	Mon Jun 23 17:34:19 2008
++++ Array.h	Thu Oct 15 14:39:45 2009
+@@ -31,18 +31,18 @@ class Array
+   
+  Array( int n, const T* d ) : m_data(NULL), m_size(0), m_capacity(0)
+   {
+-    if ( n ) {
++    if ( n > 0 ) {
+       capacity( n );
+-      memcpy( m_data, d, n * sizeof(T) );
++      if ( m_data ) memcpy( m_data, d, n * sizeof(T) );
+       m_size = n;
+     }
+   }
+ 
+   Array( const Array& other ) : m_data(NULL), m_size(0), m_capacity(0)
+   {
+-    if ( other.size() ) {
++    if ( other.size() > 0 ) {
+       capacity( other.size() );
+-      memcpy( m_data, other.m_data, other.size() * sizeof(T) );
++      if ( m_data ) memcpy( m_data, other.m_data, other.size() * sizeof(T) );
+       m_size = other.size();
+     }
+   }

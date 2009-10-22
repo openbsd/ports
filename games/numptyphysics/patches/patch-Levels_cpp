@@ -1,0 +1,11 @@
+$OpenBSD: patch-Levels_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
+--- Levels.cpp.orig	Tue Nov 11 17:54:38 2008
++++ Levels.cpp	Thu Oct 15 18:05:58 2009
+@@ -84,6 +84,7 @@ bool Levels::addLevel( const string& file, int rank, i
+     if ( m_levels[i]->file == file
+ 	 && m_levels[i]->index == index ) {
+       printf("addLevel %s already present!\n",file.c_str());
++      delete e;
+       return false;
+     } else if ( m_levels[i]->rank > rank ) {
+       printf("addLevel %s at %d\n",file.c_str(),i);

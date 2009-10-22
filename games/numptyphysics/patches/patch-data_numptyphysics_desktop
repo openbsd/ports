@@ -1,9 +1,13 @@
-$OpenBSD: patch-data_numptyphysics_desktop,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
---- data/numptyphysics.desktop.orig	Tue Jan 27 21:21:18 2009
-+++ data/numptyphysics.desktop	Tue Jan 27 21:22:00 2009
-@@ -4,10 +4,9 @@ Version=1.0
+$OpenBSD: patch-data_numptyphysics_desktop,v 1.2 2009/10/22 23:07:54 sthen Exp $
+--- data/numptyphysics.desktop.orig	Wed Nov 26 15:53:08 2008
++++ data/numptyphysics.desktop	Thu Oct 15 15:57:45 2009
+@@ -1,25 +1,12 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Version=1.0
  Type=Application
  Name=Numpty Physics
++Comment=Physics based drawing puzzle game
  Categories=Game;LogicGame;
 -Exec=/usr/bin/numptyphysics
 +Exec=numptyphysics
@@ -12,4 +16,17 @@ $OpenBSD: patch-data_numptyphysics_desktop,v 1.1.1.1 2009/01/28 10:12:35 sthen E
 -X-Icon-path=/usr/share/pixmaps
  X-Window-Icon=numptyphysics
  X-Window-Icon-Dimmed=numptyphysics
- X-HildonDesk-ShowInToolbar=true
+-X-HildonDesk-ShowInToolbar=true
+-X-Osso-Type=application/x-executable
+-X-Osso-Service=org.maemo.garage.numptyphysics
+-MimeType=application/x-numptyphysics-level;application/x-numptyphysics-collection
+-
+-[X-Osso-URI-Actions]
+-http=X-Osso-URI-Action-Open;
+-nptp=X-Osso-URI-Action-Open;
+-
+-[X-Osso-URI-Action-Open]
+-Method=mime_open
+-Name=uri_link_play
+-TranslationDomain=osso-uri
++MimeType=application/x-numptyphysics-level;application/x-numptyphysics-collection;

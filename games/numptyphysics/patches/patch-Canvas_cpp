@@ -1,0 +1,56 @@
+$OpenBSD: patch-Canvas_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
+--- Canvas.cpp.orig	Sun Nov 16 16:50:27 2008
++++ Canvas.cpp	Fri Oct 16 13:41:23 2009
+@@ -661,23 +661,14 @@ void Window::setSubName( const char *sub )
+ 
+ Image::Image( const char* file, bool alpha )
+ {
+-  alpha = false;
+-  std::string f( "data/" );
++  std::string f( DEFAULT_RESOURCE_PATH "/" );
+   SDL_Surface* img = IMG_Load((f+file).c_str());
+-  if ( !img ) {
+-    f = std::string( DEFAULT_RESOURCE_PATH "/" );
+-    img = IMG_Load((f+file).c_str());
+-  }
+   if ( img ) {
+     printf("loaded image %s\n",(f+file).c_str());
+-    if ( alpha ) {
+-      m_state = SDL_DisplayFormatAlpha( img );
+-    } else {
+       m_state = SDL_DisplayFormat( img );
+ //       SDL_SetColorKey( SURFACE(this),
+ // 		       SDL_SRCCOLORKEY|SDL_RLEACCEL,
+ // 		       makeColour( 0x00ff00ff ) );
+-    }
+     if ( m_state ) {
+       SDL_FreeSurface( img );
+     } else {
+@@ -723,15 +714,24 @@ int Canvas::writeBMP( const char* filename ) const
+     Uint32 bpp;
+     bpp = SURFACE(this)->format->BytesPerPixel;
+ 
+-    fwrite( &head, 14, 1, f );
+-    fwrite( &info, 40, 1, f );
++    if ( fwrite( &head, 14, 1, f ) != 1 ) {
++	fclose( f );
++	return -1;
++    }
++    if ( fwrite( &info, 40, 1, f ) != 1 ) {
++	fclose( f );
++	return -1;
++    }
+     for ( int y=h-1; y>=0; y-- ) {
+       for ( int x=0; x<w; x++ ) {
+ 	int p = readPixel( x, y );
+ 	if ( bpp==2 ) {
+ 	  p = R16G16B16_TO_RGB888( R16(p), G16(p), B16(p) );
+ 	}
+-	fwrite( &p, 3, 1, f );
++	if ( fwrite( &p, 3, 1, f ) != 1 ) {
++	  fclose( f );
++	  return -1;
++	}
+       }
+     }
+     fclose(f);

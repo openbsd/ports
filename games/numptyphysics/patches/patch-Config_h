@@ -1,6 +1,15 @@
-$OpenBSD: patch-Config_h,v 1.1.1.1 2009/01/28 10:12:35 sthen Exp $
---- Config.h.orig	Tue Jan 27 21:59:35 2009
-+++ Config.h	Tue Jan 27 21:59:47 2009
+$OpenBSD: patch-Config_h,v 1.2 2009/10/22 23:07:54 sthen Exp $
+--- Config.h.orig	Fri Oct 31 18:04:08 2008
++++ Config.h	Sun Oct 18 17:12:02 2009
+@@ -37,7 +37,7 @@
+ #  define CLICK_TOLERANCE   16 //PIXELs 
+ #else
+ #  define ITERATION_RATE    60 //fps
+-#  define RENDER_RATE       20 //fps
++#  define RENDER_RATE       60 //fps
+ #  define SOLVER_ITERATIONS 10
+ #  define JOINT_TOLERANCE   4.0f //PIXELs
+ #  define SELECT_TOLERANCE  5.0f //PIXELS_PER_METREf)
 @@ -51,7 +51,7 @@
  
  

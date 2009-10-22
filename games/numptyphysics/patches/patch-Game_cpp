@@ -1,0 +1,76 @@
+$OpenBSD: patch-Game_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
+--- Game.cpp.orig	Tue Nov 11 17:54:38 2008
++++ Game.cpp	Fri Oct 16 13:39:01 2009
+@@ -29,11 +29,11 @@
+ #include <SDL/SDL_image.h>
+ 
+ #include <cstdio>
++#include <cerrno>
+ #include <iostream>
+ #include <sstream>
+ #include <fstream>
+ #include <memory.h>
+-#include <errno.h>
+ #include <sys/stat.h>
+ 
+ using namespace std;
+@@ -80,7 +80,7 @@ class Transform (public)
+     }
+   }
+ private:
+-  Transform() {}
++  Transform() : m_bypass(false) {}
+   bool m_bypass;
+   b2Mat22 m_rot;
+   b2Mat22 m_invrot;
+@@ -176,6 +176,7 @@ class Stroke (public)
+     m_attributes = 0;
+     m_origin = m_rawPath.point(0);
+     m_rawPath.translate( -m_origin );
++    m_body = NULL;
+     reset();
+   }  
+ 
+@@ -185,6 +186,7 @@ class Stroke (public)
+     m_colour = brushColours[DEFAULT_BRUSH];
+     m_attributes = 0;
+     m_origin = Vec2(400,240);
++    m_body = NULL;
+     reset();
+     const char *s = str.c_str();
+     while ( *s && *s!=':' && *s!='\n' ) {
+@@ -866,7 +868,7 @@ class DemoLog : public Array<DemoEntry> (public)
+   void appendFromString( const std::string& str ) 
+   {
+     const char *s = str.c_str();
+-    int t, o, v1, v2, v3;
++    int t, o = 0, v1, v2, v3;
+     char c;
+     SDL_Event ev = {0};
+     ev.type = 0xff;
+@@ -944,6 +946,12 @@ class DemoRecorder (private)
+ class DemoPlayer
+ {
+ public:
++  DemoPlayer()
++    : m_playing(false),
++      m_log(0),
++      m_index(0),
++      m_lastTick(0),
++      m_lastTickTime(0) {}
+ 
+   void start( const DemoLog* log ) 
+   {
+@@ -1555,11 +1563,7 @@ int npmain(int argc, char** argv)
+ 	}
+       } else {
+ 	struct stat st;
+-	if ( stat("Game.cpp",&st)==0 ) {
+-	  game.levels().addPath( "data" );
+-	} else {
+-	  game.levels().addPath( DEFAULT_LEVEL_PATH );
+-	}
++	game.levels().addPath( DEFAULT_LEVEL_PATH );
+ 	game.levels().addPath( Config::userDataDir().c_str() );
+       }
+       game.gotoLevel(0);
