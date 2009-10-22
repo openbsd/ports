@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2009/10/10 14:05:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2009/10/22 13:32:17 ajacoutot Exp $
 %%SHARED%%
 bin/gnome-about
 include/gnome-desktop-2.0/
@@ -140,6 +140,7 @@ share/gtk-doc/html/gnome-desktop/GnomeRRLabeler.html
 share/gtk-doc/html/gnome-desktop/background.html
 share/gtk-doc/html/gnome-desktop/gnome-desktop-GnomeDesktopItem.html
 share/gtk-doc/html/gnome-desktop/gnome-desktop-Miscellaneous-Functions.html
+share/gtk-doc/html/gnome-desktop/gnome-desktop-Miscellaneous-Thumbnail-Functions.html
 share/gtk-doc/html/gnome-desktop/gnome-desktop-gnome-rr-config.html
 share/gtk-doc/html/gnome-desktop/gnome-desktop-gnome-rr-crtc.html
 share/gtk-doc/html/gnome-desktop/gnome-desktop-gnome-rr-mode.html
@@ -230,8 +231,6 @@ share/locale/mn/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/mr/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nb/LC_MESSAGES/gnome-desktop-2.0.mo
-share/locale/nds/
-share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ne/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-desktop-2.0.mo
