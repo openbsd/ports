@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2009/05/29 20:12:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2009/10/22 09:09:26 ajacoutot Exp $
 
 COMMENT=	web-based payroll and time management suite
 
-V=		2.2.22
+V=		3.0.0
 DISTNAME=	TimeTrex_Standard_Edition_v${V}
 PKGNAME=	timetrex-${V}
 CATEGORIES=	www productivity
@@ -10,8 +10,6 @@ CATEGORIES=	www productivity
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://www.timetrex.com/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # TimeTrex Public License Version 1.1.0 ("TPL")
 # (i.e modified MPL)

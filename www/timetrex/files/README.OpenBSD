@@ -1,34 +1,35 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2008/09/17 10:08:23 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2009/10/22 09:09:26 ajacoutot Exp $
 
-Post-install/update instructions for TimeTrex.
+Post-install/update instructions for TimeTrex
+=============================================
 
 Depending on the database you wish to access, you'll need the
 corresponding PHP module.  e.g:
-  for MySQL you'll need to install php5-mysql
-  for PostreSQL you'll need to install php5-pgsql
+    for MySQL you'll need to install php5-mysql
+    for PostreSQL you'll need to install php5-pgsql
 
 The administrator Guide is available as a PDF here:
-  ${TRUEPREFIX}/timetrex/documentation/Administrator_Guide_Standard_Edition_en.pdf
+    ${TRUEPREFIX}/timetrex/documentation/Administrator_Guide_Standard_Edition_en.pdf
 
 
 Installation
-============
+------------
 
 * Creating a dedicated user and database for TimeTrex.
   While TimeTrex supports MySQL and PostreSQL, MySQL will be used in the
   following example.
 
-  $ mysql -u root -p mysql
-  mysql> CREATE DATABASE `timetrex`;
-  mysql> USE `timetrex`;
-  mysql> GRANT ALL PRIVILEGES ON `timetrex` . *
-      -> TO 'timetrex'@'localhost' IDENTIFIED BY 'yourpassword';
-  mysql> QUIT
+    $ mysql -u root -p mysql
+    mysql> CREATE DATABASE `timetrex`;
+    mysql> USE `timetrex`;
+    mysql> GRANT ALL PRIVILEGES ON `timetrex` . *
+        -> TO 'timetrex'@'localhost' IDENTIFIED BY 'yourpassword';
+    mysql> QUIT
 
   If using MySQL, you must ensure that you have the proper time zone
   support by running the following command:
 
-  $ ${LOCALBASE}/bin/mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -p -u root mysql
+    $ ${LOCALBASE}/bin/mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -p -u root mysql
 
 * Configuring your /var/www/conf/php.ini for TimeTrex:
   - memory_limit needs to be set to at least 512M
@@ -39,21 +40,21 @@ Installation
   jobs running TimeTrex will fail to operate correctly.
   Add the following line to root's crontab:
 
-  * * * * * sudo -u www ${LOCALBASE}/bin/php ${TRUEPREFIX}/timetrex/maint/cron.php > /dev/null 2>&1
+    * * * * * sudo -u www ${LOCALBASE}/bin/php ${TRUEPREFIX}/timetrex/maint/cron.php > /dev/null 2>&1
 
   If the php binary cannot access the default MySQL socket using the
   same path that the PHP module uses (because the module run in a
   chrooted installation), as root:
-    # cp /var/www/conf/php.ini /var/www/conf/php-cli.ini
+      # cp /var/www/conf/php.ini /var/www/conf/php-cli.ini
   then edit the mysql.default_socket path in /var/www/conf/php-cli.ini
 
 * Finishing the installation.
   Point your web browser to:
-  http://<hostname>/timetrex/interface/install/install.php
+    http://<hostname>/timetrex/interface/install/install.php
 
 
 Update
-======
+------
 
 * IMPORTANT!
   Create a backup of your current installation and timetrex database.
@@ -62,8 +63,8 @@ Update
   data ever again!
 
 * Edit ${TRUEPREFIX}/timetrex/timetrex.ini.php and set:
-  installer_enabled = TRUE
+    installer_enabled = TRUE
 
 * Finishing the update.
   Point your web browser to:
-  http://<hostname>/timetrex/interface/install/install.php
+    http://<hostname>/timetrex/interface/install/install.php
