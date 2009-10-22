@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/03/17 19:09:42 jasper Exp $
-@lib lib/gnopernicus-1.0/libbrl.so.${LIBbrl_VERSION}
-@lib lib/gnopernicus-1.0/libke.so.${LIBke_VERSION}
-@lib lib/gnopernicus-1.0/libmag.so.${LIBmag_VERSION}
-@lib lib/gnopernicus-1.0/libsrconf.so.${LIBsrconf_VERSION}
-@lib lib/gnopernicus-1.0/libsrlow.so.${LIBsrlow_VERSION}
-@lib lib/gnopernicus-1.0/libsrs.so.${LIBsrs_VERSION}
-@lib lib/gnopernicus-1.0/libsrutil.so.${LIBsrutil_VERSION}
