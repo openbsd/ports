@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/12/22 14:44:26 giovanni Exp $
+# $OpenBSD: Makefile,v 1.3 2009/10/22 15:55:10 giovanni Exp $
 
 COMMENT =	MySQL backup scripts
 
-V =		2.1
+V =		2.1.1
 DISTNAME =	MySQL-zrm-$V
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	databases perl5
