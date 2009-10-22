@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/06/07 09:06:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/10/22 12:53:49 ajacoutot Exp $
 @bin bin/dasher
 @man man/man1/dasher.1
 share/applications/dasher.desktop
@@ -478,5 +478,7 @@ share/omf/dasher/dasher-sv.omf
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/dasher.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
