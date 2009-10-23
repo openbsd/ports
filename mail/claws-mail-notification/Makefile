@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/10 06:32:42 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2009/10/23 17:13:41 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	notification plugin for Claws-mail
 
-VERSION=	0.22
+VERSION=	0.23
 DISTNAME=	notification_plugin-${VERSION}
-PKGNAME=	claws-mail-notification-${VERSION}p2
+PKGNAME=	claws-mail-notification-${VERSION}
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 DIST_SUBDIR=	claws

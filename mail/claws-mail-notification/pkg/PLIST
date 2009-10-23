@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/07/17 17:04:08 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/10/23 17:13:41 landry Exp $
 lib/claws-mail/plugins/notification_plugin.la
 lib/claws-mail/plugins/notification_plugin.so
 share/locale/ca/LC_MESSAGES/notification_plugin.mo
 share/locale/cs/LC_MESSAGES/notification_plugin.mo
+share/locale/es/LC_MESSAGES/notification_plugin.mo
 share/locale/fi/LC_MESSAGES/notification_plugin.mo
 share/locale/fr/LC_MESSAGES/notification_plugin.mo
 share/locale/hu/LC_MESSAGES/notification_plugin.mo
