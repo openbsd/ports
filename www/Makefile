@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.431 2009/10/23 17:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.432 2009/10/23 17:25:31 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -388,7 +388,6 @@
      SUBDIR += tntnet
      SUBDIR += tomcat
      SUBDIR += trac
-     SUBDIR += trac-adminplugin
      SUBDIR += trac-ldapplugin
      SUBDIR += tracnav
      SUBDIR += transproxy
