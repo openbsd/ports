@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2009/07/17 17:02:45 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2009/10/23 17:12:36 landry Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
 @bin bin/claws-mail
@@ -245,10 +245,8 @@ lib/claws-mail/plugins/smime.la
 lib/claws-mail/plugins/smime.so
 lib/claws-mail/plugins/trayicon.la
 lib/claws-mail/plugins/trayicon.so
-lib/pkgconfig/
 lib/pkgconfig/claws-mail.pc
 @man man/man1/claws-mail.1
-share/applications/
 share/applications/claws-mail.desktop
 share/claws-mail/
 share/claws-mail/tools/
@@ -291,23 +289,13 @@ share/claws-mail/tools/thunderbird-filters-convertor.pl
 share/claws-mail/tools/uudec
 share/claws-mail/tools/uuooffice
 share/claws-mail/tools/vcard2xml.py
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/claws-mail.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/claws-mail.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/claws-mail.png
 share/locale/bg/LC_MESSAGES/claws-mail.mo
 share/locale/ca/LC_MESSAGES/claws-mail.mo
 share/locale/cs/LC_MESSAGES/claws-mail.mo
 share/locale/de/LC_MESSAGES/claws-mail.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/claws-mail.mo
 share/locale/es/LC_MESSAGES/claws-mail.mo
 share/locale/fi/LC_MESSAGES/claws-mail.mo
