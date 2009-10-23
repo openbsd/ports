@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.57 2009/09/15 17:37:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2009/10/23 10:26:17 sthen Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
 DISTNAME=		Mail-SpamAssassin-3.2.5
-PKGNAME=		p5-${DISTNAME}p2
+PKGNAME=		p5-${DISTNAME}p3
 CATEGORIES=		mail perl5
+
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 HOMEPAGE=		http://spamassassin.apache.org/
 

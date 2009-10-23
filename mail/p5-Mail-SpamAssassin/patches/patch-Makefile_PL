@@ -1,7 +1,20 @@
-$OpenBSD: patch-Makefile_PL,v 1.9 2008/09/04 06:42:12 brad Exp $
---- Makefile.PL.orig	Tue Jun 10 05:21:07 2008
-+++ Makefile.PL	Thu Sep  4 01:06:56 2008
-@@ -907,7 +907,7 @@ sub MY::install {
+$OpenBSD: patch-Makefile_PL,v 1.10 2009/10/23 10:26:18 sthen Exp $
+--- Makefile.PL.orig	Tue Jun 10 10:21:07 2008
++++ Makefile.PL	Fri Oct 23 11:19:10 2009
+@@ -139,7 +139,11 @@ my(
+ 
+ # MakeMaker prior to 6.11 doesn't support DESTDIR which is needed for
+ # packaging with builddir!=destdir. See bug 2388.
+-$mm_knows_destdir    = $ExtUtils::MakeMaker::Recognized_Att_Keys{DESTDIR};
++# $mm_knows_destdir    = $ExtUtils::MakeMaker::Recognized_Att_Keys{DESTDIR};
++#
++# The above hack uses private MakeMaker API, and fails with Perl 5.10.1.
++# Hardcode it.
++$mm_knows_destdir    = 1;
+ $mm_has_good_destdir = $mm_version >= 6.11;
+ # Add DESTDIR hack only if it's requested (and necessary)
+ $mm_needs_destdir    = $opt{'destdir'} && !$mm_has_good_destdir;
+@@ -907,7 +911,7 @@ sub MY::install {
  
    foreach (@code) {
      # Add our install targets as a dependency to all top-level install targets
