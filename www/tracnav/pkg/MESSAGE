@@ -1,0 +1,4 @@
+To enable TracNav for your project, add the following to your
+project's /path/to/projenv/conf/trac.ini file:
+[components]
+tracnav.* = enabled

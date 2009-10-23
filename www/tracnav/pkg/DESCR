@@ -1,0 +1,11 @@
+The TracNav macro implements a fully customizable navigation bar
+for the Trac wiki engine.
+
+The contents of the navigation bar is a wiki page itself and can
+be edited like any other wiki page through the web interface. The
+navigation bar supports hierarchical ordering of topics.
+
+The design of TracNav mimics the design of the TracGuideToc that
+was originally supplied with Trac. The drawback of TracGuideToc is
+that it is not customizable without editing its source code and
+that it does not support hierarchical ordering.
