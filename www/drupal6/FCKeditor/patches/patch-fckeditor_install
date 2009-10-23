@@ -1,4 +1,4 @@
-$OpenBSD: patch-fckeditor_install,v 1.1 2009/10/10 10:42:14 espie Exp $
+$OpenBSD: patch-fckeditor_install,v 1.2 2009/10/23 10:10:54 espie Exp $
 --- fckeditor.install.orig	Sat Oct 10 12:41:00 2009
 +++ fckeditor.install	Sat Oct 10 12:41:13 2009
 @@ -99,6 +99,7 @@ function fckeditor_install() {

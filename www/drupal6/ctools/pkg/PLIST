@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/09/20 12:26:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/10/23 10:10:54 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}ctools/
@@ -29,7 +29,6 @@ ${DRUPAL_MODS}ctools/ctools_plugin_example/help/
 ${DRUPAL_MODS}ctools/ctools_plugin_example/help/Access-Plugins--Determining-access-and-visibility.html
 ${DRUPAL_MODS}ctools/ctools_plugin_example/help/Argument-Plugins--Starting-at-the-beginning.html
 ${DRUPAL_MODS}ctools/ctools_plugin_example/help/Chaos-Tools--CTools--Plugin-Examples.html
-${DRUPAL_MODS}ctools/ctools_plugin_example/help/Chaos-Tools--Ctools--Plugin-Examples.html
 ${DRUPAL_MODS}ctools/ctools_plugin_example/help/Content-Type-Plugins--Displaying-content-using-a-context.html
 ${DRUPAL_MODS}ctools/ctools_plugin_example/help/Context-plugins--Creating-a--context--from-an-argument.html
 ${DRUPAL_MODS}ctools/ctools_plugin_example/help/Module-setup-and-hooks.html
@@ -84,6 +83,7 @@ ${DRUPAL_MODS}ctools/images/status-active.gif
 ${DRUPAL_MODS}ctools/images/throbber.gif
 ${DRUPAL_MODS}ctools/includes/
 ${DRUPAL_MODS}ctools/includes/ajax.inc
+${DRUPAL_MODS}ctools/includes/cleanstring.inc
 ${DRUPAL_MODS}ctools/includes/collapsible.theme.inc
 ${DRUPAL_MODS}ctools/includes/content.inc
 ${DRUPAL_MODS}ctools/includes/content.menu.inc
@@ -136,6 +136,7 @@ ${DRUPAL_MODS}ctools/page_manager/help/page_manager.help.ini
 ${DRUPAL_MODS}ctools/page_manager/help/variants.html
 ${DRUPAL_MODS}ctools/page_manager/images/
 ${DRUPAL_MODS}ctools/page_manager/images/arrow-active.png
+${DRUPAL_MODS}ctools/page_manager/images/locked-other.png
 ${DRUPAL_MODS}ctools/page_manager/images/locked.png
 ${DRUPAL_MODS}ctools/page_manager/js/
 ${DRUPAL_MODS}ctools/page_manager/js/page-list.js
@@ -145,10 +146,16 @@ ${DRUPAL_MODS}ctools/page_manager/page_manager.install
 ${DRUPAL_MODS}ctools/page_manager/page_manager.module
 ${DRUPAL_MODS}ctools/page_manager/plugins/
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/
+${DRUPAL_MODS}ctools/page_manager/plugins/tasks/blog.inc
+${DRUPAL_MODS}ctools/page_manager/plugins/tasks/blog_user.inc
+${DRUPAL_MODS}ctools/page_manager/plugins/tasks/contact_site.inc
+${DRUPAL_MODS}ctools/page_manager/plugins/tasks/contact_user.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/node_edit.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/node_view.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/page.admin.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/page.inc
+${DRUPAL_MODS}ctools/page_manager/plugins/tasks/poll.inc
+${DRUPAL_MODS}ctools/page_manager/plugins/tasks/search.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/term_view.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/user_view.inc
 ${DRUPAL_MODS}ctools/page_manager/theme/
@@ -169,6 +176,7 @@ ${DRUPAL_MODS}ctools/plugins/access/perm.inc
 ${DRUPAL_MODS}ctools/plugins/access/php.inc
 ${DRUPAL_MODS}ctools/plugins/access/role.inc
 ${DRUPAL_MODS}ctools/plugins/access/site_language.inc
+${DRUPAL_MODS}ctools/plugins/access/term.inc
 ${DRUPAL_MODS}ctools/plugins/access/term_vocabulary.inc
 ${DRUPAL_MODS}ctools/plugins/arguments/
 ${DRUPAL_MODS}ctools/plugins/arguments/nid.inc
@@ -178,6 +186,7 @@ ${DRUPAL_MODS}ctools/plugins/arguments/string.inc
 ${DRUPAL_MODS}ctools/plugins/arguments/term.inc
 ${DRUPAL_MODS}ctools/plugins/arguments/terms.inc
 ${DRUPAL_MODS}ctools/plugins/arguments/uid.inc
+${DRUPAL_MODS}ctools/plugins/arguments/user_name.inc
 ${DRUPAL_MODS}ctools/plugins/arguments/vid.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/
 ${DRUPAL_MODS}ctools/plugins/content_types/block/
@@ -206,6 +215,10 @@ ${DRUPAL_MODS}ctools/plugins/content_types/block/icon_core_syndicate.png
 ${DRUPAL_MODS}ctools/plugins/content_types/block/icon_core_userlogin.png
 ${DRUPAL_MODS}ctools/plugins/content_types/block/icon_core_whosnew.png
 ${DRUPAL_MODS}ctools/plugins/content_types/block/icon_core_whosonline.png
+${DRUPAL_MODS}ctools/plugins/content_types/contact/
+${DRUPAL_MODS}ctools/plugins/content_types/contact/contact.inc
+${DRUPAL_MODS}ctools/plugins/content_types/contact/icon_contact.png
+${DRUPAL_MODS}ctools/plugins/content_types/contact/user_contact.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/custom/
 ${DRUPAL_MODS}ctools/plugins/content_types/custom/custom.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/custom/icon_block_custom.png
@@ -244,12 +257,17 @@ ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_publishing.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_taxonomy.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/page/
 ${DRUPAL_MODS}ctools/plugins/content_types/page/page_breadcrumb.inc
+${DRUPAL_MODS}ctools/plugins/content_types/page/page_footer_message.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/page/page_help.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/page/page_messages.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/page/page_mission.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/page/page_slogan.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/page/page_tabs.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/page/page_title.inc
+${DRUPAL_MODS}ctools/plugins/content_types/search/
+${DRUPAL_MODS}ctools/plugins/content_types/search/icon_search.png
+${DRUPAL_MODS}ctools/plugins/content_types/search/search_form.inc
+${DRUPAL_MODS}ctools/plugins/content_types/search/search_result.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/term_context/
 ${DRUPAL_MODS}ctools/plugins/content_types/term_context/icon_term.png
 ${DRUPAL_MODS}ctools/plugins/content_types/term_context/term_description.inc
