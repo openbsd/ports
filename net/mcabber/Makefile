@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/16 18:14:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/10/23 09:07:09 jasper Exp $
 
 COMMENT=		console jabber client
-DISTNAME=		mcabber-0.9.9
+DISTNAME=		mcabber-0.9.10
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.lilotux.net/~mikael/mcabber/
@@ -32,6 +32,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--enable-gpgme \
 			--with-ssl \
 			--disable-aspell \
+			--disable-enchant \
 			--enable-otr \
 			--enable-sigwinch \
 			--with-libotr-prefix=${LOCALBASE}/lib \
