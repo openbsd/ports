@@ -1,6 +1,6 @@
-$OpenBSD: patch-vsftpd_conf,v 1.7 2009/03/27 11:54:49 sthen Exp $
---- vsftpd.conf.orig	Wed Dec 17 20:31:40 2008
-+++ vsftpd.conf	Fri Mar 27 09:09:19 2009
+$OpenBSD: patch-vsftpd_conf,v 1.8 2009/10/23 22:50:00 sthen Exp $
+--- vsftpd.conf.orig	Mon Oct 19 03:04:23 2009
++++ vsftpd.conf	Wed Oct 21 10:41:01 2009
 @@ -8,11 +8,17 @@
  # Please read the vsftpd.conf.5 manual page to get a full idea of vsftpd's
  # capabilities.
@@ -30,10 +30,10 @@ $OpenBSD: patch-vsftpd_conf,v 1.7 2009/03/27 11:54:49 sthen Exp $
  #
  # Enable this and the server will recognise asynchronous ABOR requests. Not
  # recommended for security (the code is non-trivial). Not enabling it,
-@@ -92,9 +98,9 @@ connect_from_port_20=YES
- # You may specify an explicit list of local users to chroot() to their home
+@@ -93,9 +99,9 @@ connect_from_port_20=YES
  # directory. If chroot_local_user is YES, then this list becomes a list of
  # users to NOT chroot().
+ #chroot_local_user=YES
 -#chroot_list_enable=YES
 +chroot_list_enable=YES
  # (default follows)
@@ -42,7 +42,7 @@ $OpenBSD: patch-vsftpd_conf,v 1.7 2009/03/27 11:54:49 sthen Exp $
  #
  # You may activate the "-R" option to the builtin ls. This is disabled by
  # default to avoid remote users being able to cause excessive I/O on large
-@@ -102,6 +108,35 @@ connect_from_port_20=YES
+@@ -103,6 +109,35 @@ connect_from_port_20=YES
  # the presence of the "-R" option, so there is a strong case for enabling it.
  #ls_recurse_enable=YES
  #

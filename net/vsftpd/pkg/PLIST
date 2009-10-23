@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/05/31 00:10:12 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/10/23 22:50:00 sthen Exp $
 @newgroup _vsftpd:513
 @newuser _vsftpd:513:_vsftpd:daemon:vsftpd user:/nonexistent:/sbin/nologin
 @man man/man5/vsftpd.conf.5
 @man man/man8/vsftpd.8
-sbin/vsftpd
+@bin sbin/vsftpd
 share/doc/vsftpd/
 share/doc/vsftpd/FAQ
 share/doc/vsftpd/INSTALL
