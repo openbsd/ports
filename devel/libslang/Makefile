@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2009/10/13 21:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2009/10/23 09:23:11 sthen Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
 DISTNAME=	slang-2.2.1
-PKGNAME=	lib${DISTNAME}
+PKGNAME=	lib${DISTNAME}p0
 SHARED_LIBS=	slang 15.0
 
 CATEGORIES=	devel
@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m termcap z
 
-LIB_DEPENDS=		pcre::devel/pcre
+LIB_DEPENDS=		pcre::devel/pcre \
+			onig::textproc/oniguruma
 MODULES=		converters/libiconv
 
 AUTOCONF_VERSION=	2.61

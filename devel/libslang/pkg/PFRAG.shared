@@ -1,9 +1,10 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2009/10/13 21:46:20 sthen Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.13 2009/10/23 09:23:11 sthen Exp $
 @comment lib/libslang.so
 @lib lib/libslang.so.${LIBslang_VERSION}
 lib/slang/v2/modules/fcntl-module.so
 lib/slang/v2/modules/fork-module.so
 lib/slang/v2/modules/iconv-module.so
+lib/slang/v2/modules/onig-module.so
 lib/slang/v2/modules/pcre-module.so
 lib/slang/v2/modules/rand-module.so
 lib/slang/v2/modules/select-module.so
