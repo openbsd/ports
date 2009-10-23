@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/10 22:48:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/10/23 15:39:51 jasper Exp $
 
-# hppa, m88k - not tested yet
+# m88k - not tested yet
 # mips64 - OpenBSD doesn't provide a cacheflush/cachectl (yet)
 # vax - libffi hasn't been ported to vax, and most likely never will.
-NOT_FOR_ARCHS= 		hppa m88k mips64 vax
+NOT_FOR_ARCHS= 		m88k mips64 vax
 
 COMMENT=		Foreign Function Interface
 
