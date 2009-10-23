@@ -1,6 +1,6 @@
-$OpenBSD: patch-webform_module,v 1.2 2009/10/10 10:48:17 espie Exp $
---- webform.module.orig	Fri Feb 27 23:35:15 2009
-+++ webform.module	Sat Oct 10 12:32:16 2009
+$OpenBSD: patch-webform_module,v 1.3 2009/10/23 10:18:35 espie Exp $
+--- webform.module.orig	Thu Oct 15 03:26:46 2009
++++ webform.module	Fri Oct 23 12:17:56 2009
 @@ -249,6 +249,17 @@ function webform_menu() {
      'weight' => 2,
      'type' => MENU_LOCAL_TASK,
@@ -19,22 +19,22 @@ $OpenBSD: patch-webform_module,v 1.2 2009/10/10 10:48:17 espie Exp $
  
    return $items;
  }
-@@ -2099,6 +2110,7 @@ function theme_webform_mail_headers($form_values, $nod
+@@ -2117,6 +2128,7 @@ function theme_webform_mail_headers($form_values, $nod
   */
- function _webform_filter_values($string, $node = NULL, $submission = NULL, $strict = TRUE) {
+ function _webform_filter_values($string, $node = NULL, $submission = NULL, $strict = TRUE, $allow_anonymous = FALSE) {
    global $user;
 +  global $webform_uid_cached;
+   static $replacements;
  
    // Setup default token replacements.
-   $find = array('%site', '%date');
-@@ -2123,8 +2135,9 @@ function _webform_filter_values($string, $node = NULL,
-   $find[] = '%useremail';
-   $replace[] = isset($user->name) ? $user->name : '';
-   $replace[] = isset($user->mail) ? $user->mail : '';
--  if ($user->uid && module_exists('profile')) {
-+  if ($user->uid && module_exists('profile') && $webform_uid_cached != $user->uid) {
-     profile_load_profile($user);
-+    $webform_uid_cached = $user->uid;
-   }
+@@ -2157,8 +2169,9 @@ function _webform_filter_values($string, $node = NULL,
+     $replacements['unsafe']['%username'] = isset($user->name) ? $user->name : '';
+     $replacements['unsafe']['%useremail'] = isset($user->mail) ? $user->mail : '';
+     $replacements['unsafe']['%ip_address'] = ip_address();
+-    if ($user->uid && module_exists('profile')) {
++    if ($user->uid && module_exists('profile') && $webform_uid_cached != $user->uid) {
+       profile_load_profile($user);
++      $webform_uid_cached = $user->uid;
+     }
+     $special_tokens['unsafe']['%profile'] = $user;
  
-   // Provide a list of candidates for token replacement.
