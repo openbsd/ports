@@ -1,6 +1,2 @@
 To ensure correct operation of GnomeBaker, the user needs RW access to
 the CD/DVD device(s).
-
-You have to restart the GConf daemon by killing it before running
-GnomeBaker for the first time.  As a regular user:
-  gconftool-2 --shutdown && sudo gnomebaker
