@@ -1,3 +1,0 @@
-You have to restart the GConf daemon by killing it before running Ekiga
-for the first time.  As a regular user:
-  gconftool-2 --shutdown && ekiga
