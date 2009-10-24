@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/14 23:13:34 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2009/10/24 10:23:41 ajacoutot Exp $
 
 COMMENT=		C++ interface to GConf
 
 GNOME_PROJECT=		gconfmm
-GNOME_VERSION=		2.24.0
+GNOME_VERSION=		2.28.0
+
 SHARED_LIBS +=		gconfmm-2.6	0.1	# .1.6
+
 CATEGORIES=		devel
-PKGNAME=		${DISTNAME}p0
 
 HOMEPAGE=		http://www.gtkmm.org/
 
@@ -30,7 +31,6 @@ LIB_DEPENDS=		ORBit-2::devel/ORBit2 \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-static
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

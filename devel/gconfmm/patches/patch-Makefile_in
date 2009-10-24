@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2009/01/14 10:38:33 jasper Exp $
---- Makefile.in.orig	Sun Sep 21 15:34:08 2008
-+++ Makefile.in	Wed Jan 14 10:09:41 2009
-@@ -198,7 +198,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-Makefile_in,v 1.6 2009/10/24 10:23:41 ajacoutot Exp $
+--- Makefile.in.orig	Mon Sep 21 13:02:04 2009
++++ Makefile.in	Fri Oct 23 01:16:50 2009
+@@ -234,7 +234,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
