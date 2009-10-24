@@ -1,0 +1,15 @@
+$OpenBSD: patch-gconf_gconf-client_c,v 1.1 2009/10/24 10:23:02 ajacoutot Exp $
+
+http://bugzilla.gnome.org/show_bug.cgi?id=582865
+
+--- gconf/gconf-client.c.orig	Fri Oct 23 06:38:24 2009
++++ gconf/gconf-client.c	Fri Oct 23 06:38:40 2009
+@@ -2025,7 +2025,7 @@ gconf_client_lookup (GConfClient *client,
+     {
+       g_free (dir);
+       trace ("Negative cache hit on %s", key);
+-      return TRUE;
++      return FALSE;
+     }
+ 
+     g_free (dir);

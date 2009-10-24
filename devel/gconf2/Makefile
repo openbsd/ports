@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2009/10/16 10:10:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2009/10/24 10:23:02 ajacoutot Exp $
 
 COMMENT=	configuration database system for GNOME
 
 GNOME_PROJECT=	GConf
-GNOME_VERSION=	2.24.0
-PKGNAME=	gconf2-${GNOME_VERSION}p2
+GNOME_VERSION=	2.28.0
+PKGNAME=	gconf2-${GNOME_VERSION}
 
 SHARED_LIBS +=	gconf-2              6.2      # .5.5
 
@@ -40,7 +40,11 @@ USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+		--without-openldap
+
+# needs policykit
+CONFIGURE_ARGS+= --disable-defaults-service
 
 FAKE_FLAGS=	sysgconfdir=${PREFIX}/share/examples/gconf2
 

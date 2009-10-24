@@ -1,0 +1,12 @@
+$OpenBSD: patch-defaults_gconf-defaults_c,v 1.1 2009/10/24 10:23:02 ajacoutot Exp $
+--- defaults/gconf-defaults.c.orig	Fri Oct 23 01:59:12 2009
++++ defaults/gconf-defaults.c	Fri Oct 23 02:00:29 2009
+@@ -810,7 +810,7 @@ do_copy (GConfDefaults          *mechanism,
+ 	else {
+ 		adata->annotation_key = "org.gnome.gconf.defaults.set-system.prefix";
+ 		adata->default_action = "org.gnome.gconf.defaults.set-system";
+-		cdata->dest_address = "xml:merged:" SYSGCONFDIR "/gconf.xml.system";
++		cdata->dest_address = "xml:merged:" SYSGCONFDIR "/gconf.xml.defaults";
+ 	}
+ 
+         polkit_authority_enumerate_actions (mechanism->priv->auth,

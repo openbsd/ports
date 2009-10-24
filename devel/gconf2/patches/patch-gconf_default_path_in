@@ -1,6 +1,6 @@
-$OpenBSD: patch-gconf_default_path_in,v 1.5 2007/04/24 12:53:38 jasper Exp $
---- gconf/default.path.in.orig	Mon Mar 19 01:21:37 2007
-+++ gconf/default.path.in	Mon Mar 19 01:22:39 2007
+$OpenBSD: patch-gconf_default_path_in,v 1.6 2009/10/24 10:23:02 ajacoutot Exp $
+--- gconf/default.path.in.orig	Wed Aug 19 17:35:32 2009
++++ gconf/default.path.in	Fri Oct 23 01:43:28 2009
 @@ -6,12 +6,12 @@
  # See the GConf manual for details
  
@@ -16,7 +16,13 @@ $OpenBSD: patch-gconf_default_path_in,v 1.5 2007/04/24 12:53:38 jasper Exp $
  
  # Now see where users want us to look - basically the user can stick arbitrary 
  # sources in a ~/.gconf.path file and they're inserted here
-@@ -23,10 +23,10 @@ xml:readwrite:$(HOME)/.gconf
+@@ -21,15 +21,15 @@ include "$(HOME)/.gconf.path"
+ xml:readwrite:$(HOME)/.gconf
+ 
+ # Location for system-wide settings that are set by the defaults mechanism
+-xml:readonly:/etc/gconf/gconf.xml.system
++xml:readonly:/var/db/gconf/gconf.xml.system
+ 
  # To read in any defaults settings that the Sys Admin may have created
  # prior to a desktop system upgrade. The SysAdmin can stick default values
  # system-wide in this file.

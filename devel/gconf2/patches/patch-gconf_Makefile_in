@@ -1,7 +1,7 @@
-$OpenBSD: patch-gconf_Makefile_in,v 1.13 2008/11/16 21:43:20 jasper Exp $
---- gconf/Makefile.in.orig	Mon Sep 22 20:03:55 2008
-+++ gconf/Makefile.in	Tue Oct 28 15:01:29 2008
-@@ -313,7 +313,7 @@ INCLUDES = \
+$OpenBSD: patch-gconf_Makefile_in,v 1.14 2009/10/24 10:23:02 ajacoutot Exp $
+--- gconf/Makefile.in.orig	Tue Sep 22 14:54:12 2009
++++ gconf/Makefile.in	Fri Oct 23 01:04:16 2009
+@@ -301,7 +301,7 @@ INCLUDES = \
  	-DGCONF_LOCALE_DIR=\""$(datadir)/locale"\"			\
          -DGCONF_SRCDIR=\""$(absolute_top_srcdir)"\"			\
  	-DGCONF_CONFDIR=\""$(sysgconfdir)/$(MAJOR_VERSION)"\"		\
