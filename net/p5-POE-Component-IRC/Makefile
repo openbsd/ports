@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/30 17:24:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2009/10/25 22:25:06 jasper Exp $
 
 COMMENT=	event-driven IRC-client module
 
-DISTNAME=	POE-Component-IRC-6.10
+DISTNAME=	POE-Component-IRC-6.16
 CATEGORIES=	net
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	cpan
 
 RUN_DEPENDS=	::devel/p5-POE \
-		:p5-POE-Component-Pluggable->=1.12:devel/p5-POE-Component-Pluggable \
+		:p5-POE-Component-Pluggable->=1.24:devel/p5-POE-Component-Pluggable \
 		:p5-POE-Component-Client-DNS->=0.99:net/p5-POE-Component-Client-DNS \
 		:p5-POE-Filter-IRCD->=1.7:net/p5-POE-Filter-IRCD
 
