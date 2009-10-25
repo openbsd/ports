@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2009/10/16 23:12:26 phessler Exp $
+# $OpenBSD: Makefile,v 1.202 2009/10/25 11:14:10 landry Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -182,6 +182,7 @@
      SUBDIR += xbreaky
      SUBDIR += xbubble
      SUBDIR += xchomp
+     SUBDIR += xcowsay
      SUBDIR += xcubes
      SUBDIR += xdeblock
      SUBDIR += xdino
