@@ -9,13 +9,3 @@
  DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
  MODULE_INSTALL_DIR = @libdir@/slang/v@slang_major_version@/modules
  #---------------------------------------------------------------------------
-@@ -90,6 +90,9 @@ ALL_ELF_CFLAGS		= $(ELF_CFLAGS) -Dunix $(THIS_LIB_DEFI
- COMPILE_CMD		= $(CC) -c $(ALL_CFLAGS)
- ELFCOMPILE_CMD		= $(ELF_CC) -c $(ALL_ELF_CFLAGS)
- ELF_LINK_CMD		= $(ELF_LINK)
-+
-+# GCC 3.3 optimizer problems: http://marc.info/?m=125562659714004
-+slarrfun_C_FLAGS	= -O0
- 
- NORMAL_LIB = lib$(THIS_LIB).a
- OBJDIR_NORMAL_LIB = $(OBJDIR)/$(NORMAL_LIB)
