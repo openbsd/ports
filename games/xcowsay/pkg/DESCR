@@ -1,0 +1,12 @@
+xcowsay displays a cute cow and message on your desktop. Inspired by the
+ original cowsay.
+ * Fully configurable!
+ * Calculates display time from amount of text
+ * Dream mode - display images in the bubble
+ * Can draw thought and speech bubbles
+ * Three different sized cows provided
+ * fortune(6) wrapper program: xcowfortune - cow will deliver pearls of
+ wisdom!
+ * Replace the naffness that is xmessage(1)
+ * Should work with any window manager
+ * Supports UTF-8 characters properly
