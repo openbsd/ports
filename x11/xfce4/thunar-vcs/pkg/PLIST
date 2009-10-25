@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/29 20:06:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/25 17:50:49 landry Exp $
 %%SHARED%%
 lib/thunarx-1/
 lib/thunarx-1/thunar-vcs-plugin.a

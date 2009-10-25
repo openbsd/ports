@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/29 20:06:24 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/25 17:50:49 landry Exp $
 
 COMMENT =	Thunar vcs integration plugin
 
-XFCE_VERSION =	0.1.0
+XFCE_VERSION =	0.1.1
 THUNAR_PLUGIN =	thunar-vcs-plugin
 
 # GPLv2
@@ -29,5 +29,6 @@ WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gssapi gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg krb5 m neon pcre pixman-1 png pthread
 WANTLIB += pthread-stubs rpcsvc sasl2 sqlite3 ssl startup-notification-1
 WANTLIB += stdc++ xcb xcb-atom xcb-aux xcb-event xfce4util z
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0
 
 .include <bsd.port.mk>

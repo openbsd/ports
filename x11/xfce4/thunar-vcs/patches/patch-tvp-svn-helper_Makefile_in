@@ -1,15 +1,7 @@
-$OpenBSD: patch-tvp-svn-helper_Makefile_in,v 1.1.1.1 2009/09/29 20:06:24 landry Exp $
---- tvp-svn-helper/Makefile.in.orig	Sun Sep 27 16:47:30 2009
-+++ tvp-svn-helper/Makefile.in	Tue Sep 29 21:40:22 2009
-@@ -362,6 +362,7 @@ tvp_svn_helper_SOURCES = \
- 	tsh-trust-dialog.c
- 
- tvp_svn_helper_CPPFLAGS = \
-+	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
- 	-DG_LOG_DOMAIN=\"tvp-svn-helper\"
- 
- tvp_svn_helper_CFLAGS = \
-@@ -378,6 +379,7 @@ tvp_svn_helper_LDFLAGS = \
+$OpenBSD: patch-tvp-svn-helper_Makefile_in,v 1.2 2009/10/25 17:50:49 landry Exp $
+--- tvp-svn-helper/Makefile.in.orig	Fri Oct 23 21:20:37 2009
++++ tvp-svn-helper/Makefile.in	Sat Oct 24 13:01:52 2009
+@@ -379,6 +379,7 @@ tvp_svn_helper_LDFLAGS = \
  	$(GTK_LIBS)							\
  	$(GLIB_LIBS)							\
  	$(GOBJECT_LIBS)							\
