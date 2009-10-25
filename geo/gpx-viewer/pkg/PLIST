@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/23 17:37:07 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/25 17:54:18 landry Exp $
 @bin bin/gpx-viewer
 share/applications/gpx-viewer.desktop
 share/gpx-viewer/
@@ -40,6 +40,7 @@ share/locale/de/LC_MESSAGES/gpx-viewer.mo
 share/locale/es/LC_MESSAGES/gpx-viewer.mo
 share/locale/it/LC_MESSAGES/gpx-viewer.mo
 share/locale/ru/LC_MESSAGES/gpx-viewer.mo
+share/locale/zh_CN/LC_MESSAGES/gpx-viewer.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
