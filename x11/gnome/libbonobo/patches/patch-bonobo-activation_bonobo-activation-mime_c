@@ -1,0 +1,23 @@
+$OpenBSD: patch-bonobo-activation_bonobo-activation-mime_c,v 1.1 2009/10/25 20:16:42 ajacoutot Exp $
+
+Fix memory corruption.
+From upstream git 54eefb49521cdb3e173ca0809d1395d9f5d215b3
+
+--- bonobo-activation/bonobo-activation-mime.c.orig	Sun Oct 25 21:08:18 2009
++++ bonobo-activation/bonobo-activation-mime.c	Sun Oct 25 21:09:13 2009
+@@ -292,7 +292,6 @@ gnome_vfs_mime_get_short_list_components (const char *
+ 	query = g_strconcat ("bonobo:supported_mime_types.has_one (['", mime_type, 
+ 			     "', '", supertype,
+ 			     "', '*'])", NULL);
+-	g_free (supertype);
+ 	
+         /* Prefer something that matches the exact type to something
+            that matches the supertype */
+@@ -313,6 +312,7 @@ gnome_vfs_mime_get_short_list_components (const char *
+ 		components_list = NULL;
+ 	}
+ 
++	g_free (supertype);
+ 	g_free (query);
+ 	g_free (sort[0]);
+ 	g_free (sort[1]);
