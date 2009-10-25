@@ -1,11 +1,11 @@
-$OpenBSD: patch-get_iplayer,v 1.20 2009/10/10 10:42:42 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.21 2009/10/25 20:01:12 sthen Exp $
 
 - default to using id3tag not id3v2
 - follow hier(7) not Linux FHS for options file location
 
---- get_iplayer.orig	Fri Oct  2 14:04:23 2009
-+++ get_iplayer	Sat Oct 10 12:39:11 2009
-@@ -304,10 +304,7 @@ if ( defined $ENV{GETIPLAYERUSERPREFS} && $ENV{GETIPLA
+--- get_iplayer.orig	Sat Oct 24 18:03:56 2009
++++ get_iplayer	Sun Oct 25 19:52:53 2009
+@@ -305,10 +305,7 @@ if ( defined $ENV{GETIPLAYERUSERPREFS} && $ENV{GETIPLA
  # Options on unix-like systems
  } elsif ( defined $ENV{HOME} ) {
  	$profile_dir = $opt_pre->{profiledir} || $ENV{HOME}.'/.get_iplayer';
@@ -17,7 +17,7 @@ $OpenBSD: patch-get_iplayer,v 1.20 2009/10/10 10:42:42 sthen Exp $
  # Otherwise look for windows style file locations
  } elsif ( defined $ENV{USERPROFILE} ) {
  	$profile_dir = $opt_pre->{profiledir} || $ENV{USERPROFILE}.'/.get_iplayer';
-@@ -318,7 +315,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+@@ -319,7 +316,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -26,7 +26,7 @@ $OpenBSD: patch-get_iplayer,v 1.20 2009/10/10 10:42:42 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -439,6 +436,7 @@ if ( ! keys %plugin_files ) {
+@@ -440,6 +437,7 @@ if ( ! keys %plugin_files ) {
  	$opt->{pluginsupdate} = 1;
  }
  # Update this script if required
@@ -34,16 +34,25 @@ $OpenBSD: patch-get_iplayer,v 1.20 2009/10/10 10:42:42 sthen Exp $
  update_script() if $opt->{update} || $opt->{pluginsupdate};
  
  
-@@ -632,7 +630,7 @@ sub find_matches {
- 	$bin->{vlc}		= $opt->{vlc} || 'cvlc';
+@@ -636,7 +634,7 @@ sub find_matches {
+ 	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
 -	$bin->{id3v2}		= $opt->{id3v2} || 'id3v2';
 +	$bin->{id3v2}		= $opt->{id3v2} || 'id3tag';
+ 	$bin->{AtomicParsley}	= $opt->{AtomicParsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
- 
-@@ -5189,7 +5187,7 @@ sub optional_list_entry_format {
+@@ -3631,7 +3629,7 @@ sub tag_file {
+ 		my ( $id3_name, $id3_episode, $id3_desc, $id3_channel ) = ( $prog->{name}, $prog->{episode}, $prog->{desc}, $prog->{channel} );
+ 		s|"|\\"|g for ($id3_name, $id3_episode, $id3_desc, $id3_channel);
+ 		# Only tag if the required tool exists
+-		if ( main::exists_in_path('id3v2') ) {
++		if ( main::exists_in_path('id3tag') ) {
+ 			main::logger "INFO: id3 tagging $prog->{ext} file\n";
+ 			my @cmd = (
+ 				$bin->{id3v2}, 
+@@ -5311,7 +5309,7 @@ sub optional_list_entry_format {
  # Returns the modes to try for this prog type
  sub modelist {
  	my $prog = shift;
