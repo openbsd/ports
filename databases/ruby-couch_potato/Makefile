@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/09 08:36:46 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2009/10/25 13:22:06 msf Exp $
 
 COMMENT =	CouchDB persistence layer written in Ruby
 
-VERSION =	0.2.8
-DISTNAME =	langalex-couch_potato-${VERSION}
+VERSION =	0.2.12
+DISTNAME =	couch_potato-${VERSION}
 PKGNAME =	ruby-couch_potato-${VERSION}
 CATEGORIES =	databases
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP = Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = Yes
 
-MASTER_SITES =		${MASTER_SITE_GITHUB}
+MASTER_SITES =		${MASTER_SITE_GEMCUTTER}
 
 MODULES =		lang/ruby
 BUILD_DEPENDS =		${RUN_DEPENDS}
