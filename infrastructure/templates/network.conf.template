@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.136 2009/08/26 11:53:20 kili Exp $
+# $OpenBSD: network.conf.template,v 1.137 2009/10/25 10:59:47 msf Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -285,3 +285,6 @@ MASTER_SITE_PYPI +=	\
 
 MASTER_SITE_GITHUB+= \
 	http://gems.github.com/gems/
+
+MASTER_SITE_GEMCUTTER+= \
+	http://gemcutter.org/gems/
