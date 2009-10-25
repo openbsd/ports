@@ -1,0 +1,22 @@
+$OpenBSD: patch-source_blender_blenlib_intern_threads_c,v 1.1 2009/10/25 22:41:25 steven Exp $
+--- source/blender/blenlib/intern/threads.c.orig	Wed Oct 14 17:39:51 2009
++++ source/blender/blenlib/intern/threads.c	Wed Oct 14 17:41:08 2009
+@@ -46,6 +46,9 @@
+ #elif defined(__APPLE__)
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
++#elif defined(__OpenBSD__)
++#include <sys/param.h>
++#include <sys/sysctl.h>
+ #else
+ #include <unistd.h> 
+ #endif
+@@ -272,7 +275,7 @@ int BLI_system_thread_count( void )
+ 	GetSystemInfo(&info);
+ 	t = (int) info.dwNumberOfProcessors;
+ #else 
+-#	ifdef __APPLE__
++#	if defined(__APPLE__) || defined(__OpenBSD__)
+ 	int mib[2];
+ 	size_t len;
+ 	

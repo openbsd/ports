@@ -1,0 +1,22 @@
+$OpenBSD: patch-tools_btools_py,v 1.1 2009/10/25 22:41:25 steven Exp $
+--- tools/btools.py.orig	Wed Oct 14 23:51:17 2009
++++ tools/btools.py	Wed Oct 14 23:54:38 2009
+@@ -35,6 +35,7 @@ def validate_arguments(args, bc):
+ 			'WITH_BF_DDS',
+ 			'WITH_BF_FFMPEG', 'BF_FFMPEG_LIB','BF_FFMPEG_EXTRA', 'BF_FFMPEG',  'BF_FFMPEG_INC',
+ 			'WITH_BF_OGG', 'BF_OGG', 'BF_OGG_LIB',
++			'BF_GLEW', 'BF_GLEW_LIB', 'BF_GLEW_LIBPATH',
+ 			'WITH_BF_JPEG', 'BF_JPEG', 'BF_JPEG_INC', 'BF_JPEG_LIB', 'BF_JPEG_LIBPATH',
+ 			'WITH_BF_OPENJPEG', 'BF_OPENJPEG', 'BF_OPENJPEG_INC', 'BF_OPENJPEG_LIB', 'BF_OPENJPEG_LIBPATH',
+ 			'WITH_BF_REDCODE', 'BF_REDCODE', 'BF_REDCODE_INC', 'BF_REDCODE_LIB', 'BF_REDCODE_LIBPATH',
+@@ -220,6 +221,10 @@ def read_opts(cfg, args):
+ 		('BF_JPEG_INC', 'JPEG include path', ''),
+ 		('BF_JPEG_LIB', 'JPEG library', ''),
+ 		('BF_JPEG_LIBPATH', 'JPEG library path', ''),
++
++		('BF_GLEW', 'GLEW base path', ''),
++		('BF_GLEW_LIB', 'GLEW library', ''),
++		('BF_GLEW_LIBPATH', 'GLEW library path', ''),
+ 
+ 		(BoolVariable('WITH_BF_OPENJPEG', 'Use OPENJPEG if true', False)),
+ 		('BF_OPENJPEG', 'OPENJPEG base path', ''),

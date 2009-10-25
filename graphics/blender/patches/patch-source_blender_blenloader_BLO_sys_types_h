@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_blender_blenloader_BLO_sys_types_h,v 1.1 2009/10/25 22:41:25 steven Exp $
+--- source/blender/blenloader/BLO_sys_types.h.orig	Wed Oct 14 18:22:55 2009
++++ source/blender/blenloader/BLO_sys_types.h	Wed Oct 14 18:22:59 2009
+@@ -87,7 +87,7 @@ typedef unsigned long uintptr_t;
+ 
+ #include <inttypes.h>
+ 
+-#elif defined(FREE_WINDOWS)
++#elif defined(__OpenBSD__) || defined(FREE_WINDOWS)
+ 
+ #include <stdint.h>
+ 

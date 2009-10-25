@@ -1,12 +1,12 @@
-$OpenBSD: patch-SConstruct,v 1.5 2007/09/20 19:58:49 steven Exp $
---- SConstruct.orig	Tue Sep 18 06:59:24 2007
-+++ SConstruct	Tue Sep 18 19:14:05 2007
-@@ -424,7 +424,7 @@ if env['WITH_BF_PLAYER']:
+$OpenBSD: patch-SConstruct,v 1.6 2009/10/25 22:41:25 steven Exp $
+--- SConstruct.orig	Tue Sep  1 17:23:49 2009
++++ SConstruct	Sat Oct 10 19:25:41 2009
+@@ -596,7 +596,7 @@ if env['WITH_BF_PLAYER']:
  
  if not env['WITH_BF_GAMEENGINE']:
-     blendernogame = env.Alias('blendernogame', B.program_list)
--    Depends(blendernogame,installtarget)
-+#    Depends(blendernogame,installtarget)
+ 	blendernogame = env.Alias('blendernogame', B.program_list)
+-	Depends(blendernogame,installtarget)
++#	Depends(blendernogame,installtarget)
  
- Depends(nsiscmd, allinstall)
- 
+ if 'blenderlite' in B.targets:
+ 	blenderlite = env.Alias('blenderlite', B.program_list)

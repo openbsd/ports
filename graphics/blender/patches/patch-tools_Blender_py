@@ -1,38 +1,38 @@
-$OpenBSD: patch-tools_Blender_py,v 1.2 2007/05/25 12:19:14 steven Exp $
---- tools/Blender.py.orig	Fri Apr 13 17:24:35 2007
-+++ tools/Blender.py	Sun May 20 14:53:12 2007
-@@ -99,7 +99,7 @@ def create_blender_liblist(lenv = None, libtype = None
-         curlib = libs[libtype]
-         for sk in sortlist:
-             v = curlib[sk]
--            lst.append('#' + root_build_dir + 'lib/'+lenv['LIBPREFIX'] + v + lenv['LIBSUFFIX'])
-+            lst.append(root_build_dir + 'lib/'+lenv['LIBPREFIX'] + v + lenv['LIBSUFFIX'])
+$OpenBSD: patch-tools_Blender_py,v 1.3 2009/10/25 22:41:25 steven Exp $
+--- tools/Blender.py.orig	Tue Sep  1 17:21:54 2009
++++ tools/Blender.py	Wed Oct 14 23:43:51 2009
+@@ -116,6 +116,7 @@ def setup_staticlibs(lenv):
+ 		'/usr/lib',
+ 		lenv['BF_OPENGL_LIBPATH'],
+ 		lenv['BF_JPEG_LIBPATH'],
++		lenv['BF_GLEW_LIBPATH'],
+ 		lenv['BF_PNG_LIBPATH'],
+ 		lenv['BF_ZLIB_LIBPATH'],
+ 		lenv['BF_ICONV_LIBPATH']
+@@ -156,7 +157,8 @@ def setup_syslibs(lenv):
+ 		
+ 		lenv['BF_JPEG_LIB'],
+ 		lenv['BF_PNG_LIB'],
+-		lenv['BF_ZLIB_LIB']
++		lenv['BF_ZLIB_LIB'],
++		lenv['BF_GLEW_LIB']
+ 		]
  
-     return lst
- 
-@@ -368,7 +368,7 @@ class BlenderEnvironment(SConsEnvironment):
-         
-         print bc.HEADER+'Configuring resource '+bc.ENDC+bc.OKGREEN+libname+bc.ENDC
-         lenv = self.Copy()
--        res = lenv.RES('#'+root_build_dir+'lib/'+libname, source)
-+        res = lenv.RES(root_build_dir+'lib/'+libname, source)
-       
-         SConsEnvironment.Default(self, res)
-         resources.append(res)
-@@ -383,6 +383,7 @@ class BlenderEnvironment(SConsEnvironment):
-             else:
-                 print bc.HEADER+'Configuring library '+bc.ENDC+bc.OKGREEN+libname + bc.ENDC
-             lenv = self.Copy()
-+            lenv['CCFLAGS'] = Split(lenv['CCFLAGS'])
-             lenv.Append(CPPPATH=includes)
-             lenv.Append(CPPDEFINES=defines)
-             if lenv['WITH_BF_GAMEENGINE']:
-@@ -404,7 +405,7 @@ class BlenderEnvironment(SConsEnvironment):
-                 lenv.Append(CXXFLAGS = compileflags)
-             lenv.Append(CCFLAGS = Split(lenv['C_WARN']))
-             lenv.Append(CXXFLAGS = Split(lenv['CC_WARN']))
--            lib = lenv.Library(target= '#'+root_build_dir+'lib/'+libname, source=sources)
-+            lib = lenv.Library(target= root_build_dir+'lib/'+libname, source=sources)
-             SConsEnvironment.Default(self, lib) # we add to default target, because this way we get some kind of progress info during build
-         else:
-             print bc.WARNING+'Not building '+bc.ENDC+bc.OKGREEN+libname+bc.ENDC+' for '+bc.OKBLUE+'BF_QUICK'+bc.ENDC
+ 	if lenv['WITH_BF_PYTHON'] and not lenv['WITH_BF_STATICPYTHON']:
+@@ -398,7 +400,7 @@ class BlenderEnvironment(SConsEnvironment):
+ 		
+ 		print bc.HEADER+'Configuring resource '+bc.ENDC+bc.OKGREEN+libname+bc.ENDC
+ 		lenv = self.Clone()
+-		res = lenv.RES('#'+root_build_dir+'lib/'+libname, source)
++		res = lenv.RES(root_build_dir+'lib/'+libname, source)
+ 		
+ 		SConsEnvironment.Default(self, res)
+ 		resources.append(res)
+@@ -421,6 +423,7 @@ class BlenderEnvironment(SConsEnvironment):
+ 			else:
+ 				print bc.HEADER+'Configuring library '+bc.ENDC+bc.OKGREEN+libname + bc.ENDC
+ 			lenv = self.Clone()
++			lenv['CCFLAGS'] = Split(lenv['CCFLAGS'])
+ 			lenv.Append(CPPPATH=includes)
+ 			lenv.Append(CPPDEFINES=defines)
+ 			if lenv['BF_DEBUG'] or (libname in quickdebug):

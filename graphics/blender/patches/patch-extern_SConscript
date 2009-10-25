@@ -1,0 +1,12 @@
+$OpenBSD: patch-extern_SConscript,v 1.1 2009/10/25 22:41:25 steven Exp $
+--- extern/SConscript.orig	Wed Oct 14 18:53:57 2009
++++ extern/SConscript	Wed Oct 14 18:54:08 2009
+@@ -2,7 +2,7 @@
+ 
+ Import('env')
+ 
+-SConscript(['glew/SConscript'])
++# SConscript(['glew/SConscript'])
+ 
+ if env['WITH_BF_GAMEENGINE']:
+ 	if env['WITH_BF_SOLID']:

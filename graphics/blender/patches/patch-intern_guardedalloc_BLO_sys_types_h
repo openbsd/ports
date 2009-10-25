@@ -1,0 +1,12 @@
+$OpenBSD: patch-intern_guardedalloc_BLO_sys_types_h,v 1.1 2009/10/25 22:41:25 steven Exp $
+--- intern/guardedalloc/BLO_sys_types.h.orig	Sat Oct 10 19:58:00 2009
++++ intern/guardedalloc/BLO_sys_types.h	Sat Oct 10 19:58:30 2009
+@@ -91,7 +91,7 @@ typedef unsigned long uintptr_t;
+ 
+ #include <inttypes.h>
+ 
+-#elif defined(FREE_WINDOWS)
++#elif defined(__OpenBSD__) || defined(FREE_WINDOWS)
+ 
+ #include <stdint.h>
+ 

@@ -1,15 +1,12 @@
-$OpenBSD: patch-source_blender_blenkernel_intern_blender_c,v 1.4 2007/05/25 12:19:14 steven Exp $
---- source/blender/blenkernel/intern/blender.c.orig	Mon Apr  2 18:06:02 2007
-+++ source/blender/blenkernel/intern/blender.c	Sun May 20 14:53:09 2007
-@@ -712,9 +712,10 @@ void BKE_undo_save_quit(void)
- 	/* no undo state to save */
- 	if(undobase.first==undobase.last) return;
+$OpenBSD: patch-source_blender_blenkernel_intern_blender_c,v 1.5 2009/10/25 22:41:25 steven Exp $
+--- source/blender/blenkernel/intern/blender.c.orig	Tue Sep  1 17:21:17 2009
++++ source/blender/blenkernel/intern/blender.c	Sat Oct 10 20:40:48 2009
+@@ -769,7 +769,7 @@ void BKE_undo_save_quit(void)
  		
-+	strlcpy(U.tempdir, BLI_gethome(), sizeof(U.tempdir));
- 	BLI_make_file_string("/", str, U.tempdir, "quit.blend");
+ 	BLI_make_file_string("/", str, btempdir, "quit.blend");
  
 -	file = open(str,O_BINARY+O_WRONLY+O_CREAT+O_TRUNC, 0666);
 +	file = open(str,O_WRONLY|O_CREAT|O_TRUNC, 0666);
  	if(file == -1) {
- 		printf("Unable to save %s\n", str);
+ 		error("Unable to save %s, check you have permissions", str);
  		return;

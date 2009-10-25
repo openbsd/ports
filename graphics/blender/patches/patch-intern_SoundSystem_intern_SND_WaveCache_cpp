@@ -1,7 +1,7 @@
-$OpenBSD: patch-intern_SoundSystem_intern_SND_WaveCache_cpp,v 1.1 2005/11/24 22:22:57 steven Exp $
---- intern/SoundSystem/intern/SND_WaveCache.cpp.orig	Mon Oct 17 08:43:26 2005
-+++ intern/SoundSystem/intern/SND_WaveCache.cpp	Mon Oct 17 08:45:19 2005
-@@ -48,7 +48,7 @@
+$OpenBSD: patch-intern_SoundSystem_intern_SND_WaveCache_cpp,v 1.2 2009/10/25 22:41:25 steven Exp $
+--- intern/SoundSystem/intern/SND_WaveCache.cpp.orig	Tue Sep  1 17:20:34 2009
++++ intern/SoundSystem/intern/SND_WaveCache.cpp	Sat Oct 10 19:25:00 2009
+@@ -45,7 +45,7 @@
  #ifdef __APPLE__
  # include <sys/malloc.h>
  #else

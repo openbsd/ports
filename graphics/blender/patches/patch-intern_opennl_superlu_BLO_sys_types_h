@@ -1,0 +1,12 @@
+$OpenBSD: patch-intern_opennl_superlu_BLO_sys_types_h,v 1.1 2009/10/25 22:41:25 steven Exp $
+--- intern/opennl/superlu/BLO_sys_types.h.orig	Sat Oct 10 20:07:22 2009
++++ intern/opennl/superlu/BLO_sys_types.h	Sat Oct 10 20:07:46 2009
+@@ -92,7 +92,7 @@ typedef unsigned long uintptr_t;
+ 
+ #include <inttypes.h>
+ 
+-#elif defined(FREE_WINDOWS)
++#elif defined(__OpenBSD__) || defined(FREE_WINDOWS)
+ 
+ #include <stdint.h>
+ 

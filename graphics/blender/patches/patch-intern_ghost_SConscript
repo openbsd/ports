@@ -1,12 +1,12 @@
-$OpenBSD: patch-intern_ghost_SConscript,v 1.2 2007/05/25 12:19:14 steven Exp $
---- intern/ghost/SConscript.orig	Mon Nov 13 07:40:08 2006
-+++ intern/ghost/SConscript	Sat Mar 24 08:20:39 2007
+$OpenBSD: patch-intern_ghost_SConscript,v 1.3 2009/10/25 22:41:25 steven Exp $
+--- intern/ghost/SConscript.orig	Tue Sep  1 17:20:28 2009
++++ intern/ghost/SConscript	Sat Oct 10 19:26:07 2009
 @@ -10,7 +10,7 @@ sources = env.Glob('intern/*.cpp')
  
  pf = ['GHOST_DisplayManager', 'GHOST_System', 'GHOST_Window']
  
--if window_system in ('linux2', 'openbsd3', 'sunos5', 'freebsd6'):
-+if window_system in ('linux2', 'openbsd3', 'openbsd4', 'sunos5', 'freebsd6'):
+-if window_system in ('linux2', 'openbsd3', 'sunos5', 'freebsd6', 'irix6'):
++if window_system in ('linux2', 'openbsd3', 'openbsd4', 'sunos5', 'freebsd6', 'irix6'):
      for f in pf:
          sources.remove('intern' + os.sep + f + 'Win32.cpp')
          sources.remove('intern' + os.sep + f + 'Carbon.cpp')
