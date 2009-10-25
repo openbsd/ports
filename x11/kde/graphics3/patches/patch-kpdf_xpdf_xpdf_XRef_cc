@@ -1,6 +1,6 @@
-$OpenBSD: patch-kpdf_xpdf_xpdf_XRef_cc,v 1.2 2009/10/15 15:50:25 kili Exp $
---- kpdf/xpdf/xpdf/XRef.cc.orig	Thu Oct 15 16:32:56 2009
-+++ kpdf/xpdf/xpdf/XRef.cc	Thu Oct 15 16:35:46 2009
+$OpenBSD: patch-kpdf_xpdf_xpdf_XRef_cc,v 1.3 2009/10/25 12:45:53 kili Exp $
+--- kpdf/xpdf/xpdf/XRef.cc.orig	Mon May 14 09:39:30 2007
++++ kpdf/xpdf/xpdf/XRef.cc	Sun Oct 25 13:04:29 2009
 @@ -52,6 +52,8 @@ class ObjectStream { (public)
    // generation 0.
    ObjectStream(XRef *xref, int objStrNumA);
@@ -52,6 +52,30 @@ $OpenBSD: patch-kpdf_xpdf_xpdf_XRef_cc,v 1.2 2009/10/15 15:50:25 kili Exp $
  }
  
  ObjectStream::~ObjectStream() {
+@@ -771,19 +782,19 @@ void XRef::setEncryption(int permFlagsA, GBool ownerPa
+ }
+ 
+ GBool XRef::okToPrint(GBool ignoreOwnerPW) {
+-  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permPrint);
++  return (1);
+ }
+ 
+ GBool XRef::okToChange(GBool ignoreOwnerPW) {
+-  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permChange);
++  return (1);
+ }
+ 
+ GBool XRef::okToCopy(GBool ignoreOwnerPW) {
+-  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permCopy);
++  return (1);
+ }
+ 
+ GBool XRef::okToAddNotes(GBool ignoreOwnerPW) {
+-  return (!ignoreOwnerPW && ownerPasswordOk) || (permFlags & permNotes);
++  return (1);
+ }
+ 
+ Object *XRef::fetch(int num, int gen, Object *obj) {
 @@ -837,6 +848,11 @@ Object *XRef::fetch(int num, int gen, Object *obj) {
  	delete objStr;
        }
