@@ -1,0 +1,16 @@
+$OpenBSD: patch-gedit_gedit-metadata-manager_c,v 1.1 2009/10/26 22:23:49 jasper Exp $
+
+gedit-2.28.0.log:gedit-metadata-manager.c: In function `save_item':
+gedit-2.28.0.log:gedit-metadata-manager.c:455: warning: long int format, different type arg (arg 2)
+
+--- gedit/gedit-metadata-manager.c.orig	Sun Oct 25 22:30:52 2009
++++ gedit/gedit-metadata-manager.c	Sun Oct 25 22:31:23 2009
+@@ -452,7 +452,7 @@ save_item (const gchar *key, const gpointer *data, xml
+ 	gedit_debug_message (DEBUG_METADATA, "uri: %s", key);
+ #endif	
+ 
+-	atime = g_strdup_printf ("%ld", item->atime);
++	atime = g_strdup_printf ("%lld", (long long)item->atime);
+ 	xmlSetProp (xml_node, (const xmlChar *)"atime", (const xmlChar *)atime);	
+ 
+ #ifdef GEDIT_METADATA_VERBOSE_DEBUG
