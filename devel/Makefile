@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.745 2009/10/13 21:00:02 pirofti Exp $
+# $OpenBSD: Makefile,v 1.746 2009/10/26 16:58:50 jim Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -375,7 +375,7 @@
      SUBDIR += p5-Devel-Trace
      SUBDIR += p5-Devel-ptkdb
      SUBDIR += p5-Directory-Scratch
-     SUBDIR += p5-Env-PS1 
+     SUBDIR += p5-Env-PS1
      SUBDIR += p5-Error
      SUBDIR += p5-Event
      SUBDIR += p5-Event-ExecFlow
@@ -553,6 +553,7 @@
      SUBDIR += p5-Spiffy
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Format
+     SUBDIR += p5-String-RewritePrefix
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-Sub-Exporter
      SUBDIR += p5-Sub-Identify
@@ -643,6 +644,7 @@
      SUBDIR += p5-Tree-Simple
      SUBDIR += p5-Tree-Simple-View
      SUBDIR += p5-Tree-Simple-VisitorFactory
+     SUBDIR += p5-Try-Tiny
      SUBDIR += p5-Universal-can
      SUBDIR += p5-Universal-exports
      SUBDIR += p5-Universal-isa
@@ -664,6 +666,7 @@
      SUBDIR += p5-common-sense
      SUBDIR += p5-enum
      SUBDIR += p5-libintl
+     SUBDIR += p5-namespace-autoclean
      SUBDIR += p5-namespace-clean
      SUBDIR += p5-parent
      SUBDIR += p5-prefork
