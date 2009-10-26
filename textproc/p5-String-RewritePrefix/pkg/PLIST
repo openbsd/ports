@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/26 16:22:57 jim Exp $
+${P5SITE}/String/
+${P5SITE}/String/RewritePrefix.pm
+@man man/man3p/String::RewritePrefix.3p
