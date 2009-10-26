@@ -1,0 +1,12 @@
+$OpenBSD: patch-Xvnc_programs_Xserver_Imakefile,v 1.1 2009/10/26 17:33:58 sthen Exp $
+--- Xvnc/programs/Xserver/Imakefile.orig	Mon Oct 26 07:06:46 2009
++++ Xvnc/programs/Xserver/Imakefile	Mon Oct 26 07:07:13 2009
+@@ -140,7 +140,7 @@ XPFBLIBS = dix/LibraryTargetName(xpstubs)
+ #if BuildLBX || GzipFontCompression
+            ZLIB = GzipLibrary
+ #endif
+-             OS = os/LibraryTargetName(os) $(XAULIB) $(XDMCPLIB)
++             OS = os/LibraryTargetName(os) dix/libdix.a $(XAULIB) $(XDMCPLIB)
+         BSDEMUL = $(DEPXBSDLIB)
+             MFB = mfb/LibraryTargetName(mfb)
+             CFB = cfb/LibraryTargetName(cfb) cfb16/LibraryTargetName(cfb) cfb24/LibraryTargetName(cfb) cfb32/LibraryTargetName(cfb)

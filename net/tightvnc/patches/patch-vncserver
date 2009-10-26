@@ -1,7 +1,7 @@
-$OpenBSD: patch-vncserver,v 1.4 2009/01/19 08:01:34 pea Exp $
---- vncserver.orig	Thu Apr 26 12:57:06 2007
-+++ vncserver	Fri Dec  5 12:37:37 2008
-@@ -76,13 +76,23 @@ unless ($xauthorityFile) {
+$OpenBSD: patch-vncserver,v 1.5 2009/10/26 17:33:58 sthen Exp $
+--- vncserver.orig	Thu Feb 12 15:27:18 2009
++++ vncserver	Mon Oct 26 06:53:56 2009
+@@ -66,13 +66,23 @@ unless ($xauthorityFile) {
      }
  }
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-vncserver,v 1.4 2009/01/19 08:01:34 pea Exp $
  
  &Usage() if ($opt{'-help'} || $opt{'-h'} || $opt{'--help'});
  
-@@ -105,6 +115,25 @@ if ($opt{'-pixelformat'}) {
+@@ -95,6 +105,25 @@ if ($opt{'-pixelformat'}) {
  
  &CheckGeometryAndDepth();
  
@@ -52,7 +52,7 @@ $OpenBSD: patch-vncserver,v 1.4 2009/01/19 08:01:34 pea Exp $
  if ($opt{'-name'}) {
      $desktopName = $opt{'-name'};
  }
-@@ -236,6 +265,7 @@ if (-e "/tmp/.X11-unix/X$displayNumber") {
+@@ -226,6 +255,7 @@ if (-e "/tmp/.X11-unix/X$displayNumber") {
      $ENV{DISPLAY}= "$host:$displayNumber";
  }
  $ENV{VNCDESKTOP}= $desktopName;
@@ -60,7 +60,7 @@ $OpenBSD: patch-vncserver,v 1.4 2009/01/19 08:01:34 pea Exp $
  
  system("$xstartup >> " . &quotedString($desktopLog) . " 2>&1 &");
  
-@@ -247,6 +277,8 @@ exit;
+@@ -237,6 +267,8 @@ exit;
  # CheckGeometryAndDepth simply makes sure that the geometry and depth values
  # are sensible.
  #
