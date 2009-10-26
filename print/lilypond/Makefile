@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/10/11 18:56:21 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2009/10/26 19:15:15 kili Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -45,7 +45,7 @@ CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			BASH=/bin/sh \
 			GREP=/usr/bin/grep
 CONFIGURE_ARGS+=	--disable-{debugging,optimising,pipe} \
-			--with-ncsb-dir=${LOCALBASE}/lib/X11/fonts/ghostscript
+			--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
 USE_GMAKE=		Yes
 USE_X11=		Yes
 MAKE_FILE=		GNUmakefile
