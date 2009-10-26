@@ -1,0 +1,4 @@
+The namespace::autoclean pragma will remove all imported symbols at the
+end of the current package's compile cycle.  Functions called in the
+package itself will still be bound by their name, but they won't show up
+as methods on your class or instances.
