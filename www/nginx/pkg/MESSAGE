@@ -1,9 +1,9 @@
 Documentation on nginx can be found on the wiki:
-	http://wiki.nginx/org/
+	http://wiki.nginx.org/
 
 You may want to put the following into your /etc/rc.local:
 
 # start nginx
 if [ -x ${PREFIX}/sbin/nginx ]; then
-        echo -n ' nginx'; ${PREFIX}/sbin/nginx
+	echo -n ' nginx'; ${PREFIX}/sbin/nginx
 fi
