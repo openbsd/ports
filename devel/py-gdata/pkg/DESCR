@@ -15,12 +15,13 @@ services:
 	- YouTube Data API
 	- Google Webmaster Tools Data API
 	- Blogger Data API
-        - Google Health API
-        - Google Book Search API
-        - Google Analytics API
-        - Google Finance API
+	- Google Health API
+	- Google Book Search API
+	- Google Analytics API
+	- Google Finance API
+	- Google Maps Data API
+	- Google Sites Data API
 	- core Google data API functionality
-
 The core Google data code provides sufficient functionality to use this
 library with any Google data API (even if a module hasn't been written
 for it yet). For example, this client can be used with the Notebook API.
