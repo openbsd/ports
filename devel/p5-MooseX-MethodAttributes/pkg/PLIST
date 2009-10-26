@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/19 00:44:12 jim Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/26 16:51:13 jim Exp $
 ${P5SITE}/MooseX/MethodAttributes/
 ${P5SITE}/MooseX/MethodAttributes.pm
 ${P5SITE}/MooseX/MethodAttributes/Inheritable.pm
 ${P5SITE}/MooseX/MethodAttributes/Role/
+${P5SITE}/MooseX/MethodAttributes/Role.pm
 ${P5SITE}/MooseX/MethodAttributes/Role/AttrContainer/
 ${P5SITE}/MooseX/MethodAttributes/Role/AttrContainer.pm
 ${P5SITE}/MooseX/MethodAttributes/Role/AttrContainer/Inheritable.pm
@@ -13,9 +14,14 @@ ${P5SITE}/MooseX/MethodAttributes/Role/Meta/Method/
 ${P5SITE}/MooseX/MethodAttributes/Role/Meta/Method.pm
 ${P5SITE}/MooseX/MethodAttributes/Role/Meta/Method/MaybeWrapped.pm
 ${P5SITE}/MooseX/MethodAttributes/Role/Meta/Method/Wrapped.pm
+${P5SITE}/MooseX/MethodAttributes/Role/Meta/Role/
 ${P5SITE}/MooseX/MethodAttributes/Role/Meta/Role.pm
+${P5SITE}/MooseX/MethodAttributes/Role/Meta/Role/Application/
+${P5SITE}/MooseX/MethodAttributes/Role/Meta/Role/Application.pm
+${P5SITE}/MooseX/MethodAttributes/Role/Meta/Role/Application/Summation.pm
 @man man/man3p/MooseX::MethodAttributes.3p
 @man man/man3p/MooseX::MethodAttributes::Inheritable.3p
+@man man/man3p/MooseX::MethodAttributes::Role.3p
 @man man/man3p/MooseX::MethodAttributes::Role::AttrContainer.3p
 @man man/man3p/MooseX::MethodAttributes::Role::AttrContainer::Inheritable.3p
 @man man/man3p/MooseX::MethodAttributes::Role::Meta::Class.3p
@@ -24,3 +30,5 @@ ${P5SITE}/MooseX/MethodAttributes/Role/Meta/Role.pm
 @man man/man3p/MooseX::MethodAttributes::Role::Meta::Method::MaybeWrapped.3p
 @man man/man3p/MooseX::MethodAttributes::Role::Meta::Method::Wrapped.3p
 @man man/man3p/MooseX::MethodAttributes::Role::Meta::Role.3p
+@man man/man3p/MooseX::MethodAttributes::Role::Meta::Role::Application.3p
+@man man/man3p/MooseX::MethodAttributes::Role::Meta::Role::Application::Summation.3p
