@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/06/19 00:28:30 jim Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/10/26 16:44:41 jim Exp $
 ${P5SITE}/Moose/
 ${P5SITE}/Moose.pm
 ${P5SITE}/Moose/Cookbook/
@@ -60,7 +60,26 @@ ${P5SITE}/Moose/Manual/Roles.pod
 ${P5SITE}/Moose/Manual/Types.pod
 ${P5SITE}/Moose/Manual/Unsweetened.pod
 ${P5SITE}/Moose/Meta/
+${P5SITE}/Moose/Meta/Attribute/
 ${P5SITE}/Moose/Meta/Attribute.pm
+${P5SITE}/Moose/Meta/Attribute/Native/
+${P5SITE}/Moose/Meta/Attribute/Native.pm
+${P5SITE}/Moose/Meta/Attribute/Native/MethodProvider/
+${P5SITE}/Moose/Meta/Attribute/Native/MethodProvider/Array.pm
+${P5SITE}/Moose/Meta/Attribute/Native/MethodProvider/Bool.pm
+${P5SITE}/Moose/Meta/Attribute/Native/MethodProvider/Code.pm
+${P5SITE}/Moose/Meta/Attribute/Native/MethodProvider/Counter.pm
+${P5SITE}/Moose/Meta/Attribute/Native/MethodProvider/Hash.pm
+${P5SITE}/Moose/Meta/Attribute/Native/MethodProvider/String.pm
+${P5SITE}/Moose/Meta/Attribute/Native/Trait/
+${P5SITE}/Moose/Meta/Attribute/Native/Trait.pm
+${P5SITE}/Moose/Meta/Attribute/Native/Trait/Array.pm
+${P5SITE}/Moose/Meta/Attribute/Native/Trait/Bool.pm
+${P5SITE}/Moose/Meta/Attribute/Native/Trait/Code.pm
+${P5SITE}/Moose/Meta/Attribute/Native/Trait/Counter.pm
+${P5SITE}/Moose/Meta/Attribute/Native/Trait/Hash.pm
+${P5SITE}/Moose/Meta/Attribute/Native/Trait/Number.pm
+${P5SITE}/Moose/Meta/Attribute/Native/Trait/String.pm
 ${P5SITE}/Moose/Meta/Class/
 ${P5SITE}/Moose/Meta/Class.pm
 ${P5SITE}/Moose/Meta/Class/Immutable/
@@ -93,6 +112,7 @@ ${P5SITE}/Moose/Meta/TypeCoercion/Union.pm
 ${P5SITE}/Moose/Meta/TypeConstraint/
 ${P5SITE}/Moose/Meta/TypeConstraint.pm
 ${P5SITE}/Moose/Meta/TypeConstraint/Class.pm
+${P5SITE}/Moose/Meta/TypeConstraint/DuckType.pm
 ${P5SITE}/Moose/Meta/TypeConstraint/Enum.pm
 ${P5SITE}/Moose/Meta/TypeConstraint/Parameterizable.pm
 ${P5SITE}/Moose/Meta/TypeConstraint/Parameterized.pm
@@ -164,6 +184,21 @@ ${P5SITE}/oose.pm
 @man man/man3p/Moose::Manual::Types.3p
 @man man/man3p/Moose::Manual::Unsweetened.3p
 @man man/man3p/Moose::Meta::Attribute.3p
+@man man/man3p/Moose::Meta::Attribute::Native.3p
+@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::Array.3p
+@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::Bool.3p
+@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::Code.3p
+@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::Counter.3p
+@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::Hash.3p
+@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::String.3p
+@man man/man3p/Moose::Meta::Attribute::Native::Trait.3p
+@man man/man3p/Moose::Meta::Attribute::Native::Trait::Array.3p
+@man man/man3p/Moose::Meta::Attribute::Native::Trait::Bool.3p
+@man man/man3p/Moose::Meta::Attribute::Native::Trait::Code.3p
+@man man/man3p/Moose::Meta::Attribute::Native::Trait::Counter.3p
+@man man/man3p/Moose::Meta::Attribute::Native::Trait::Hash.3p
+@man man/man3p/Moose::Meta::Attribute::Native::Trait::Number.3p
+@man man/man3p/Moose::Meta::Attribute::Native::Trait::String.3p
 @man man/man3p/Moose::Meta::Class.3p
 @man man/man3p/Moose::Meta::Class::Immutable::Trait.3p
 @man man/man3p/Moose::Meta::Instance.3p
@@ -188,6 +223,7 @@ ${P5SITE}/oose.pm
 @man man/man3p/Moose::Meta::TypeCoercion::Union.3p
 @man man/man3p/Moose::Meta::TypeConstraint.3p
 @man man/man3p/Moose::Meta::TypeConstraint::Class.3p
+@man man/man3p/Moose::Meta::TypeConstraint::DuckType.3p
 @man man/man3p/Moose::Meta::TypeConstraint::Enum.3p
 @man man/man3p/Moose::Meta::TypeConstraint::Parameterizable.3p
 @man man/man3p/Moose::Meta::TypeConstraint::Parameterized.3p
