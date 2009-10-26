@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: gen-package-pages,v 1.18 2009/05/07 00:10:44 pvalchev Exp $
+# $OpenBSD: gen-package-pages,v 1.19 2009/10/26 20:17:15 pvalchev Exp $
 
 # Copyright (c) 2004 Michael Coulter
 #
@@ -40,7 +40,7 @@ use subs qw(dprint gen_arch_page gen_pkg_page gen_pkg_listing_page getfile
     htmlfile gen_index_page arch_body arch_foot arch_head index_head 
     index_foot pkg_list pkg_long);
 
-our $osrev = "4.5";
+our $osrev = "4.6";
 our $debug = 0;
 our $html;
 
@@ -106,6 +106,7 @@ sub gen_arch_page
 		next if ($file =~ /^\./);
 		next if ($file =~ /^index.txt$/);
 		next if ($file =~ /^pkglocatedb$/);
+		next if ($file =~ /^SHA256$/);
 
 		dprint "generating package for $arch/$file\n";
 		my $package = OpenBSD::PackageLocator->find("$pkgpath/$arch/$file");
