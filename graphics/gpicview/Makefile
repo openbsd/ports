@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2009/10/26 14:14:14 landry Exp $
 
 COMMENT =	simple and fast image viewer for X
 
-DISTNAME =	gpicview-0.1.11
-PKGNAME=	${DISTNAME}p0
+DISTNAME =	gpicview-0.2.1
 
 CATEGORIES =	graphics x11
+
+MAINTAINER =	Stephan A. Rickauer <stephan.rickauer@startek.ch>
 
 HOMEPAGE =	http://lxde.org/
 
@@ -27,9 +28,14 @@ MODULES =	devel/gettext
 
 LIB_DEPENDS =	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
+MODULES +=      textproc/intltool
 
+USE_GMAKE =	yes
 USE_X11 =	yes
 USE_LIBTOOL =	yes
+
+# regress tests in po dir are broken
+NO_REGRESS =	yes
 
 CONFIGURE_STYLE = gnu
 
