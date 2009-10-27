@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_jed_rc,v 1.4 2009/10/13 21:46:46 sthen Exp $
+$OpenBSD: patch-lib_jed_rc,v 1.5 2009/10/27 21:51:53 sthen Exp $
 --- lib/jed.rc.orig	Mon Feb 13 18:51:58 2006
 +++ lib/jed.rc	Sat Oct 10 18:08:25 2009
 @@ -149,7 +149,7 @@ WRAP_INDENTS	= 0;	% Non zero indents next line after w
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_jed_rc,v 1.4 2009/10/13 21:46:46 sthen Exp $
  
  #ifdef IBMPC_SYSTEM
  % If non-zero, treat file names as case sensitive
-@@ -237,4 +237,21 @@ define dired_hook ()
+@@ -237,4 +237,20 @@ define dired_hook ()
  {
     %local_unsetkey ("^K");
     %local_setkey ("dired_kill_line", "^K");
@@ -28,7 +28,6 @@ $OpenBSD: patch-lib_jed_rc,v 1.4 2009/10/13 21:46:46 sthen Exp $
 +	C_BRA_NEWLINE = 0;
 +	C_CONTINUED_OFFSET = 0;
 +	C_Colon_Offset = 0;
-+	C_Class_Offset = 0;
 +	C_Comment_Column = 0;
 +     }
  }
