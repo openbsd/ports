@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2009/10/27 00:17:38 jim Exp $
 
 COMMENT=	cross-platform path manipulation
 
 MODULES=	cpan
-DISTNAME=	Path-Class-0.16
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Path-Class-0.17
 CATEGORIES=	devel
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
