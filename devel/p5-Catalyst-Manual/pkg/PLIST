@@ -1,34 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/02/02 00:30:56 simon Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/10/27 00:42:26 jim Exp $
 ${P5SITE}/Catalyst/
 ${P5SITE}/Catalyst/Manual/
 @comment ${P5SITE}/Catalyst/Manual.pm
 ${P5SITE}/Catalyst/Manual/About.pod
 ${P5SITE}/Catalyst/Manual/Actions.pod
+${P5SITE}/Catalyst/Manual/CatalystAndMoose.pod
+${P5SITE}/Catalyst/Manual/Components.pod
 ${P5SITE}/Catalyst/Manual/Cookbook.pod
 ${P5SITE}/Catalyst/Manual/DevelopmentProcess.pod
 ${P5SITE}/Catalyst/Manual/ExtendingCatalyst.pod
 ${P5SITE}/Catalyst/Manual/Internals.pod
 ${P5SITE}/Catalyst/Manual/Intro.pod
-${P5SITE}/Catalyst/Manual/Plugins.pod
+${P5SITE}/Catalyst/Manual/Plugins.pm
 ${P5SITE}/Catalyst/Manual/Tutorial/
 ${P5SITE}/Catalyst/Manual/Tutorial.pod
-${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD/
-${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD.pod
-${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD/FormBuilder.pod
-${P5SITE}/Catalyst/Manual/Tutorial/AdvancedCRUD/FormFu.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Appendices.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Authentication.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Authorization.pod
-${P5SITE}/Catalyst/Manual/Tutorial/BasicCRUD.pod
-${P5SITE}/Catalyst/Manual/Tutorial/CatalystBasics.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Debugging.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Intro.pod
-${P5SITE}/Catalyst/Manual/Tutorial/MoreCatalystBasics.pod
-${P5SITE}/Catalyst/Manual/Tutorial/Testing.pod
+${P5SITE}/Catalyst/Manual/Tutorial/01_Intro.pod
+${P5SITE}/Catalyst/Manual/Tutorial/02_CatalystBasics.pod
+${P5SITE}/Catalyst/Manual/Tutorial/03_MoreCatalystBasics.pod
+${P5SITE}/Catalyst/Manual/Tutorial/04_BasicCRUD.pod
+${P5SITE}/Catalyst/Manual/Tutorial/05_Authentication.pod
+${P5SITE}/Catalyst/Manual/Tutorial/06_Authorization.pod
+${P5SITE}/Catalyst/Manual/Tutorial/07_Debugging.pod
+${P5SITE}/Catalyst/Manual/Tutorial/08_Testing.pod
+${P5SITE}/Catalyst/Manual/Tutorial/09_AdvancedCRUD/
+${P5SITE}/Catalyst/Manual/Tutorial/09_AdvancedCRUD.pod
+${P5SITE}/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormBuilder.pod
+${P5SITE}/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormFu.pod
+${P5SITE}/Catalyst/Manual/Tutorial/10_Appendices.pod
 ${P5SITE}/Catalyst/Manual/WritingPlugins.pod
 @comment @man man/man3p/Catalyst::Manual.3p
 @man man/man3p/Catalyst::Manual::About.3p
 @man man/man3p/Catalyst::Manual::Actions.3p
+@man man/man3p/Catalyst::Manual::CatalystAndMoose.3p
+@man man/man3p/Catalyst::Manual::Components.3p
 @man man/man3p/Catalyst::Manual::Cookbook.3p
 @man man/man3p/Catalyst::Manual::DevelopmentProcess.3p
 @man man/man3p/Catalyst::Manual::ExtendingCatalyst.3p
@@ -36,16 +40,16 @@ ${P5SITE}/Catalyst/Manual/WritingPlugins.pod
 @man man/man3p/Catalyst::Manual::Intro.3p
 @man man/man3p/Catalyst::Manual::Plugins.3p
 @man man/man3p/Catalyst::Manual::Tutorial.3p
-@man man/man3p/Catalyst::Manual::Tutorial::AdvancedCRUD.3p
-@man man/man3p/Catalyst::Manual::Tutorial::AdvancedCRUD::FormBuilder.3p
-@man man/man3p/Catalyst::Manual::Tutorial::AdvancedCRUD::FormFu.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Appendices.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Authentication.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Authorization.3p
-@man man/man3p/Catalyst::Manual::Tutorial::BasicCRUD.3p
-@man man/man3p/Catalyst::Manual::Tutorial::CatalystBasics.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Debugging.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Intro.3p
-@man man/man3p/Catalyst::Manual::Tutorial::MoreCatalystBasics.3p
-@man man/man3p/Catalyst::Manual::Tutorial::Testing.3p
+@man man/man3p/Catalyst::Manual::Tutorial::01_Intro.3p
+@man man/man3p/Catalyst::Manual::Tutorial::02_CatalystBasics.3p
+@man man/man3p/Catalyst::Manual::Tutorial::03_MoreCatalystBasics.3p
+@man man/man3p/Catalyst::Manual::Tutorial::04_BasicCRUD.3p
+@man man/man3p/Catalyst::Manual::Tutorial::05_Authentication.3p
+@man man/man3p/Catalyst::Manual::Tutorial::06_Authorization.3p
+@man man/man3p/Catalyst::Manual::Tutorial::07_Debugging.3p
+@man man/man3p/Catalyst::Manual::Tutorial::08_Testing.3p
+@man man/man3p/Catalyst::Manual::Tutorial::09_AdvancedCRUD.3p
+@man man/man3p/Catalyst::Manual::Tutorial::09_AdvancedCRUD::09_FormBuilder.3p
+@man man/man3p/Catalyst::Manual::Tutorial::09_AdvancedCRUD::09_FormFu.3p
+@man man/man3p/Catalyst::Manual::Tutorial::10_Appendices.3p
 @man man/man3p/Catalyst::Manual::WritingPlugins.3p

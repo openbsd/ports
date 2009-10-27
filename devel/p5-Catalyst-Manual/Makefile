@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/02/02 00:30:56 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2009/10/27 00:42:26 jim Exp $
 
 COMMENT=	catalyst documentation
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Manual-5.7016
+DISTNAME=	Catalyst-Manual-5.8001
 CATEGORIES=	devel
 
 # there was a version with six digits behind the dot and we need to pad
