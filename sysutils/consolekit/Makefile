@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/16 09:36:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/27 12:00:22 jasper Exp $
 
 BROKEN=		WIP does not work yet
 
 COMMENT=	Framework for defining and tracking users
 
 DISTNAME=	ConsoleKit-0.3.0
-PKGNAME=	${DISTNAME:L}p1
+PKGNAME=	${DISTNAME:L}p2
 
 CATEGORIES=	sysutils	
 
