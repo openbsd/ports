@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/22 13:51:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/27 14:36:44 ajacoutot Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
 DISTNAME=	splix-2.0.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print
 
 EXTRACT_SUFX=	.tar.bz2
@@ -25,6 +25,8 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	cups.>=3,cupsimage::print/cups \
 		jbig.>=2::graphics/jbigkit
+# pstoraster
+RUN_DEPENDS=	::print/ghostscript/gnu
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
