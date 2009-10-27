@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/27 02:23:55 kevlo Exp $
+${P5SITE}/Declare/
+${P5SITE}/Declare/Constraints/
+${P5SITE}/Declare/Constraints/Simple/
+${P5SITE}/Declare/Constraints/Simple.pm
+${P5SITE}/Declare/Constraints/Simple/Library/
+${P5SITE}/Declare/Constraints/Simple/Library.pm
+${P5SITE}/Declare/Constraints/Simple/Library/Array.pm
+${P5SITE}/Declare/Constraints/Simple/Library/Base.pm
+${P5SITE}/Declare/Constraints/Simple/Library/Exportable.pm
+${P5SITE}/Declare/Constraints/Simple/Library/General.pm
+${P5SITE}/Declare/Constraints/Simple/Library/Hash.pm
+${P5SITE}/Declare/Constraints/Simple/Library/Numerical.pm
+${P5SITE}/Declare/Constraints/Simple/Library/OO.pm
+${P5SITE}/Declare/Constraints/Simple/Library/Operators.pm
+${P5SITE}/Declare/Constraints/Simple/Library/Referencial.pm
+${P5SITE}/Declare/Constraints/Simple/Library/Scalar.pm
+${P5SITE}/Declare/Constraints/Simple/Result.pm
+@man man/man3p/Declare::Constraints::Simple.3p
+@man man/man3p/Declare::Constraints::Simple::Library.3p
+@man man/man3p/Declare::Constraints::Simple::Library::Array.3p
+@man man/man3p/Declare::Constraints::Simple::Library::Base.3p
+@man man/man3p/Declare::Constraints::Simple::Library::Exportable.3p
+@man man/man3p/Declare::Constraints::Simple::Library::General.3p
+@man man/man3p/Declare::Constraints::Simple::Library::Hash.3p
+@man man/man3p/Declare::Constraints::Simple::Library::Numerical.3p
+@man man/man3p/Declare::Constraints::Simple::Library::OO.3p
+@man man/man3p/Declare::Constraints::Simple::Library::Operators.3p
+@man man/man3p/Declare::Constraints::Simple::Library::Referencial.3p
+@man man/man3p/Declare::Constraints::Simple::Library::Scalar.3p
+@man man/man3p/Declare::Constraints::Simple::Result.3p
