@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/10/26 16:35:24 jim Exp $
+# $OpenBSD: Makefile,v 1.10 2009/10/27 15:03:56 kevlo Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	meta object protocol for perl 5
 
 MODULES=	cpan
 DISTNAME=	Class-MOP-0.94
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 # perl
@@ -21,6 +22,9 @@ RUN_DEPENDS=	::devel/p5-Devel-GlobalDestruction \
 		:p5-Sub-Name->=0.04:devel/p5-Sub-Name \
 		::devel/p5-Task-Weaken
 
-REGRESS_DEPENDS= ::devel/p5-Test-Exception
+REGRESS_DEPENDS=::devel/p5-Test-Exception \
+		::devel/p5-Test-LeakTrace \
+		::devel/p5-Test-Output \
+		::devel/p5-SUPER
 
 .include <bsd.port.mk>
