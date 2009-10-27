@@ -1,7 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 00:04:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/27 00:51:42 jim Exp $
 ${P5SITE}/Catalyst/Devel.pm
 ${P5SITE}/Catalyst/Helper.pm
+${P5SITE}/Catalyst/Restarter/
+${P5SITE}/Catalyst/Restarter.pm
+${P5SITE}/Catalyst/Restarter/Forking.pm
+${P5SITE}/Catalyst/Restarter/Win32.pm
 ${P5SITE}/Module/Install/Catalyst.pm
 @man man/man3p/Catalyst::Devel.3p
 @man man/man3p/Catalyst::Helper.3p
+@man man/man3p/Catalyst::Restarter.3p
+@man man/man3p/Catalyst::Restarter::Forking.3p
+@man man/man3p/Catalyst::Restarter::Win32.3p
 @man man/man3p/Module::Install::Catalyst.3p
