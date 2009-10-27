@@ -1,0 +1,13 @@
+$OpenBSD: patch-plugins_CoreHome_templates_header_message_tpl,v 1.1 2009/10/27 08:48:04 giovanni Exp $
+--- plugins/CoreHome/templates/header_message.tpl.orig	Mon Oct 26 12:17:42 2009
++++ plugins/CoreHome/templates/header_message.tpl	Mon Oct 26 12:17:53 2009
+@@ -1,9 +1,6 @@
+ <span id="header_message">
+ {if  $piwikUrl == 'http://piwik.org/demo/'}
+ 	{'General_YouAreCurrentlyViewingDemoOfPiwik'|translate:"<a target='_blank' href='http://piwik.org'>Piwik</a>":"<a href='http://piwik.org/'>":"</a>":"<a href='http://piwik.org'>piwik.org</a>"}
+-{elseif $latest_version_available}
+-	<img src='themes/default/images/warning_small.png' alt='' style="vertical-align: middle;"> 
+-	{'General_PiwikXIsAvailablePleaseUpdateNow'|translate:$latest_version_available:"<br /><a href='index.php?module=CoreUpdater&action=newVersionAvailable'>":"</a>":"<a href='misc/redirectToUrl.php?url=http://piwik.org/changelog/' target='_blank'>":"</a>"}
+ {else}
+ 	{'General_PiwikIsACollaborativeProjectYouCanContribute'|translate:"<a href='misc/redirectToUrl.php?url=http://piwik.org'>":"$piwik_version</a>":"<br />":"<a target='_blank' href='misc/redirectToUrl.php?url=http://piwik.org/contribute/'>":"</a>"} 
+ {/if}

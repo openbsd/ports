@@ -1,0 +1,12 @@
+$OpenBSD: patch-core_PluginsManager_php,v 1.1 2009/10/27 08:48:04 giovanni Exp $
+--- core/PluginsManager.php.orig	Tue Oct 27 09:11:07 2009
++++ core/PluginsManager.php	Tue Oct 27 09:11:22 2009
+@@ -42,7 +42,7 @@ class Piwik_PluginsManager
+ 	protected $loadedPlugins = array();
+ 	
+ 	protected $doLoadAlwaysActivatedPlugins = true;
+-	protected $pluginToAlwaysActivate = array( 'CoreHome', 'CoreUpdater', 'CoreAdminHome', 'CorePluginsAdmin' );
++	protected $pluginToAlwaysActivate = array( 'CoreHome', 'CoreAdminHome', 'CorePluginsAdmin' );
+ 
+ 	static private $instance = null;
+ 	
