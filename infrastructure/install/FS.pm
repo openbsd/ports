@@ -1,4 +1,4 @@
-# $OpenBSD: FS.pm,v 1.9 2009/10/01 19:38:40 matthieu Exp $
+# $OpenBSD: FS.pm,v 1.10 2009/10/27 15:48:52 ajacoutot Exp $
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -109,7 +109,8 @@ sub is_shared_object
 	$filename = resolve_link($filename);
 	my $check=`/usr/bin/file \Q$filename\E`;
 	chomp $check;
-	if ($check =~m/\: ELF (32|64)-bit (MSB|LSB) shared object\,/ ||
+	if (($check =~m/\: ELF (32|64)-bit (MSB|LSB) shared object\,/ &&
+	    $check !~m/^.*(uses shared libs)/) ||
 	    $check =~m/OpenBSD\/.* demand paged shared library/) {
 	    	return 1;
 	} else {
@@ -131,7 +132,7 @@ sub is_binary
 	return 0 if -l $filename or ! -x $filename;
 	my $check=`/usr/bin/file \Q$filename\E`;
 	chomp $check;
-	if ($check =~m/\: (setuid |setgid |)ELF (32|64)-bit (MSB|LSB) executable\,.+ for OpenBSD\,/) {
+	if ($check =~m/\: (setuid |setgid |)ELF (32|64)-bit (MSB|LSB) (executable|shared object)\,.+ for OpenBSD\,/) {
 	    	return 1;
 	} else {
 		return 0;
