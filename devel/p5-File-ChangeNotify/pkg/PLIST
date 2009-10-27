@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/27 00:31:20 jim Exp $
+${P5SITE}/File/
+${P5SITE}/File/ChangeNotify/
+${P5SITE}/File/ChangeNotify.pm
+${P5SITE}/File/ChangeNotify/Event.pm
+${P5SITE}/File/ChangeNotify/Watcher/
+${P5SITE}/File/ChangeNotify/Watcher.pm
+${P5SITE}/File/ChangeNotify/Watcher/Default.pm
+${P5SITE}/File/ChangeNotify/Watcher/Inotify.pm
+@man man/man3p/File::ChangeNotify.3p
+@man man/man3p/File::ChangeNotify::Event.3p
+@man man/man3p/File::ChangeNotify::Watcher.3p
+@man man/man3p/File::ChangeNotify::Watcher::Default.3p
+@man man/man3p/File::ChangeNotify::Watcher::Inotify.3p

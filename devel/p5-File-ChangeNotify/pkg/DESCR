@@ -1,0 +1,2 @@
+Watch for changes to files, cross-platform style via an API for creating
+a File::ChangeNotify::Watcher subclass that will work on your platform.
