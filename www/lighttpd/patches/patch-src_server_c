@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_server_c,v 1.7 2009/10/27 23:02:11 sthen Exp $
+--- src/server.c.orig	Wed Oct 14 14:05:43 2009
++++ src/server.c	Mon Oct 19 16:44:37 2009
+@@ -211,7 +211,7 @@ static server *server_init(void) {
+ 		srv->mtime_cache[i].str = buffer_init();
+ 	}
+ 
+-	if ((NULL != (frandom = fopen("/dev/urandom", "rb")) || NULL != (frandom = fopen("/dev/random", "rb")))
++	if ((NULL != (frandom = fopen("/dev/arandom", "rb")) || NULL != (frandom = fopen("/dev/urandom", "rb")))
+ 	            && 1 == fread(srv->entropy, sizeof(srv->entropy), 1, frandom)) {
+ 		srand(*(unsigned int*)srv->entropy);
+ 		srv->is_real_entropy = 1;

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_mod_magnet_c,v 1.3 2009/10/27 23:02:11 sthen Exp $
+--- src/mod_magnet.c.orig	Mon Oct 26 20:15:11 2009
++++ src/mod_magnet.c	Mon Oct 26 20:15:41 2009
+@@ -170,6 +170,7 @@ static int magnet_pairs(lua_State *L) {
+ 		return lua_gettop(L);
+ 	} else {
+ 		lua_pushvalue(L, lua_upvalueindex(1));
++		lua_insert(L, 1);
+ 		lua_call(L, lua_gettop(L) - 1, LUA_MULTRET);
+ 		return lua_gettop(L);
+ 	}
