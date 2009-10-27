@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.747 2009/10/26 18:26:49 jim Exp $
+# $OpenBSD: Makefile,v 1.748 2009/10/27 00:39:50 jim Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -361,6 +361,7 @@
      SUBDIR += p5-DateTime-Set
      SUBDIR += p5-DateTime-TimeZone
      SUBDIR += p5-Devel-ebug
+     SUBDIR += p5-Devel-Caller
      SUBDIR += p5-Devel-Cover
      SUBDIR += p5-Devel-Cycle
      SUBDIR += p5-Devel-FastProf
@@ -393,6 +394,7 @@
      SUBDIR += p5-File-Attributes-Recursive
      SUBDIR += p5-File-BOM
      SUBDIR += p5-File-BaseDir
+     SUBDIR += p5-File-ChangeNotify
      SUBDIR += p5-File-Copy-Recursive
      SUBDIR += p5-File-CreationTime
      SUBDIR += p5-File-DesktopEntry
@@ -478,6 +480,8 @@
      SUBDIR += p5-MooseX-Clone
      SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
      SUBDIR += p5-MooseX-MethodAttributes
+     SUBDIR += p5-MooseX-Params-Validate
+     SUBDIR += p5-MooseX-SemiAffordanceAccessor
      SUBDIR += p5-MooseX-Types
      SUBDIR += p5-Mouse
      SUBDIR += p5-Net-Server
