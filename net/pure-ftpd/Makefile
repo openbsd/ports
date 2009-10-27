@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.41 2009/05/03 11:06:31 chl Exp $
+# $OpenBSD: Makefile,v 1.42 2009/10/27 23:26:37 sthen Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
-DISTNAME=	pure-ftpd-1.0.22
+DISTNAME=	pure-ftpd-1.0.24
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
-		ftp://ftp3.fr.pureftpd.org/pure-ftpd/releases/ \
+		ftp://ftp3.fr.pureftpd.org/pub/pure-ftpd/releases/ \
+		ftp://ftp4.fr.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \
-		ftp://ftp.es.pureftpd.org/mirror/pureftpd/latest/releases/ \
+		ftp://ftp.es.pureftpd.org/mirror/pure-ftpd/releases/ \
 		ftp://ftp.nl.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
-		ftp://ftp.cn.pureftpd.org/pub/pureftpd/pure-ftpd/releases/ \
 		${MASTER_SITE_SOURCEFORGE:=pureftpd/}
 
 HOMEPAGE=	http://www.pureftpd.org/
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+= --with-everything \
 
 MODULES=	converters/libiconv
 
-FLAVORS=	ldap mysql postgresql no_banner virtual_chroot
+FLAVORS=	ldap mysql postgresql virtual_chroot
 FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
@@ -58,10 +58,6 @@ CONFIGURE_ARGS+= --with-pgsql="${LOCALBASE}"
 DOCS+=	README.PGSQL
 CONF_FILE+= pureftpd-pgsql.conf
 WANTLIB+=	m z
-.endif
-
-.if ${FLAVOR:L:Mno_banner}
-CONFIGURE_ARGS+= --without-banner
 .endif
 
 .if ${FLAVOR:L:Mvirtual_chroot}
