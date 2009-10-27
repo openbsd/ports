@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/10/27 23:26:37 sthen Exp $
-@newgroup _pure-ftpd:641
-@newuser _pure-ftpd:641:_pure-ftpd:daemon:pure-ftpd user:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.11 2009/10/27 23:45:28 sthen Exp $
+@newgroup _pure-ftpd:642
+@newuser _pure-ftpd:642:_pure-ftpd:daemon:pure-ftpd user:/nonexistent:/sbin/nologin
 @bin bin/pure-pw
 @bin bin/pure-pwconvert
 @bin bin/pure-statsdecode
