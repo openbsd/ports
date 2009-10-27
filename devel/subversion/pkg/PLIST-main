@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/09/10 15:35:04 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2009/10/27 09:06:18 stsp Exp $
 @conflict gnome-keyring-subversion-*
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion
@@ -145,6 +145,11 @@ share/examples/subversion/client-side/svn2cl/svn2html.css
 share/examples/subversion/client-side/svn2cl/svn2html.xsl
 share/examples/subversion/client-side/svn_apply_autoprops.py
 share/examples/subversion/client-side/svn_export_empty_files.py
+share/examples/subversion/client-side/svn_load_dirs/
+share/examples/subversion/client-side/svn_load_dirs/LICENSE_AFL3.txt
+share/examples/subversion/client-side/svn_load_dirs/svn_load_dirs.README
+share/examples/subversion/client-side/svn_load_dirs/svn_load_dirs.pl
+share/examples/subversion/client-side/svn_load_dirs/svn_load_dirs_property_table.example
 share/examples/subversion/dumpprops.py
 share/examples/subversion/get-location-segments.py
 share/examples/subversion/getfile.py

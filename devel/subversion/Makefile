@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2009/09/10 15:35:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2009/10/27 09:06:13 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -6,13 +6,13 @@ COMMENT-python=		python interface to subversion
 COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 
-VERSION=		1.6.5
+VERSION=		1.6.6
 DISTNAME=		subversion-${VERSION}
-PKGNAME-main=		${DISTNAME}p0
-FULLPKGNAME-perl=	p5-SVN-${VERSION}p0
-FULLPKGNAME-python=	py-subversion-${VERSION}p0
-FULLPKGNAME-ruby=	ruby-subversion-${VERSION}p0
-FULLPKGNAME-ap2=	ap2-subversion-${VERSION}p0
+PKGNAME-main=		${DISTNAME}
+FULLPKGNAME-perl=	p5-SVN-${VERSION}
+FULLPKGNAME-python=	py-subversion-${VERSION}
+FULLPKGNAME-ruby=	ruby-subversion-${VERSION}
+FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 
 SO_VERSION=	1.2
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -71,6 +71,9 @@ TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
 CONTRIB_CLIENT_SIDE_SCRIPTS=	incremental-update.py search-svnlog.pl \
 	svn-clean svn-merge-vendor.py svn_apply_autoprops.py \
 	svn_export_empty_files.py
+
+SVN_LOAD_DIRS_FILES=	LICENSE_AFL3.txt svn_load_dirs.README \
+	svn_load_dirs.pl svn_load_dirs_property_table.example
 
 CONTRIB_SERVER_SIDE_SCRIPTS=	authz_svn_group.py fsfsverify.py \
 	svn-fast-backup svn-tweak-author.py
@@ -239,6 +242,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/cgi
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/client-side/emacs
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/client-side/svn2cl
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/client-side/svn_load_dirs
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/mailer
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/mailer/tests
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/enforcer
@@ -250,6 +254,10 @@ post-install:
 			${PREFIX}/share/examples/subversion/client-side/emacs
 	${INSTALL_DATA} ${WRKSRC}/contrib/client-side/svn2cl/* \
 			${PREFIX}/share/examples/subversion/client-side/svn2cl
+.for _file in ${SVN_LOAD_DIRS_FILES}
+	${INSTALL_DATA} ${WRKSRC}/contrib/client-side/svn_load_dirs/${_file} \
+			${PREFIX}/share/examples/subversion/client-side/svn_load_dirs
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/contrib/server-side/mod_dontdothat/* \
 			${PREFIX}/share/examples/subversion/server-side/mod_dontdothat
 .for _script in ${CONTRIB_CLIENT_SIDE_SCRIPTS}

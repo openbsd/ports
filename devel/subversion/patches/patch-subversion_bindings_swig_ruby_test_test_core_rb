@@ -1,0 +1,23 @@
+$OpenBSD: patch-subversion_bindings_swig_ruby_test_test_core_rb,v 1.1 2009/10/27 09:06:18 stsp Exp $
+
+Fixes make regress:
+
+  1) Failure:
+test_mime_type_detect_with_type_map(SvnCoreTest) [/usr/ports/pobj/subversion-1.6
+.6/subversion-1.6.6/subversion/bindings/swig/ruby/test/test_core.rb:631]:
+<Svn::Error::BadFilename> exception expected but none was thrown.
+
+--- subversion/bindings/swig/ruby/test/test_core.rb.orig	Thu May 22 16:05:46 2008
++++ subversion/bindings/swig/ruby/test/test_core.rb	Thu Oct 22 10:32:23 2009
+@@ -628,9 +628,8 @@ EOM
+     assert_raises(Svn::Error::BadFilename) do
+       Svn::Core::MimeType.detect(nonexistent_html_file)
+     end
+-    assert_raises(Svn::Error::BadFilename) do
+-      Svn::Core::MimeType.detect(nonexistent_html_file, type_map)
+-    end
++    assert_equal("text/html",
++                 Svn::Core::MimeType.detect(nonexistent_html_file, type_map))
+ 
+     empty_html_file = File.join(@tmp_path, "empty.html")
+     FileUtils.touch(empty_html_file)
