@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/11 09:55:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/27 20:10:07 ajacoutot Exp $
 
 COMMENT=	French conjugation system
 
@@ -19,6 +19,7 @@ MASTER_SITES=	http://sarrazip.com/dev/
 
 MODULES=	devel/gettext
 
+BUILD_DEPENDS=	::textproc/p5-XML-Parser
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		xml2.>=10::textproc/libxml
 
