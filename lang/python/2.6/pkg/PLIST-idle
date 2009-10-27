@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-idle,v 1.1 2008/10/18 12:03:56 djm Exp $
+@comment $OpenBSD: PLIST-idle,v 1.2 2009/10/27 23:35:09 sthen Exp $
 @option no-default-conflict
-@conflict python-idle->=2.6,<2.6
+@conflict python-idle->=2.6,<2.7
 @comment bin/idle
 bin/idle2.6
 lib/python2.6/idlelib/

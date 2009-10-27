@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-bsddb,v 1.1 2008/10/18 12:03:56 djm Exp $
+@comment $OpenBSD: PLIST-bsddb,v 1.2 2009/10/27 23:35:09 sthen Exp $
 @option no-default-conflict
-@conflict python-bsddb->=2.6,<2.6
+@conflict python-bsddb->=2.6,<2.7
 lib/python2.6/bsddb/
 lib/python2.6/bsddb/__init__.py
 lib/python2.6/bsddb/__init__.pyc
