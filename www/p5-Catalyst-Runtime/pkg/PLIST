@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/01/26 17:10:00 simon Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/10/27 00:44:58 jim Exp $
 @conflict p5-Catalyst-Manual-<5.701003
 bin/catalyst.pl
 ${P5SITE}/Catalyst/
@@ -6,10 +6,14 @@ ${P5SITE}/Catalyst.pm
 ${P5SITE}/Catalyst/Action.pm
 ${P5SITE}/Catalyst/ActionChain.pm
 ${P5SITE}/Catalyst/ActionContainer.pm
-${P5SITE}/Catalyst/AttrContainer.pm
 ${P5SITE}/Catalyst/Base.pm
+${P5SITE}/Catalyst/ClassData.pm
+${P5SITE}/Catalyst/Component/
 ${P5SITE}/Catalyst/Component.pm
+${P5SITE}/Catalyst/Component/ApplicationAttribute.pm
+${P5SITE}/Catalyst/Component/ContextClosure.pm
 ${P5SITE}/Catalyst/Controller.pm
+${P5SITE}/Catalyst/Delta.pod
 ${P5SITE}/Catalyst/DispatchType/
 ${P5SITE}/Catalyst/DispatchType.pm
 ${P5SITE}/Catalyst/DispatchType/Chained.pm
@@ -22,18 +26,12 @@ ${P5SITE}/Catalyst/Engine/
 ${P5SITE}/Catalyst/Engine.pm
 ${P5SITE}/Catalyst/Engine/CGI.pm
 ${P5SITE}/Catalyst/Engine/FastCGI.pm
-${P5SITE}/Catalyst/Engine/HTTP/
 ${P5SITE}/Catalyst/Engine/HTTP.pm
-${P5SITE}/Catalyst/Engine/HTTP/Restarter/
-${P5SITE}/Catalyst/Engine/HTTP/Restarter.pm
-${P5SITE}/Catalyst/Engine/HTTP/Restarter/Watcher.pm
+${P5SITE}/Catalyst/Exception/
 ${P5SITE}/Catalyst/Exception.pm
+${P5SITE}/Catalyst/Exception/Detach.pm
+${P5SITE}/Catalyst/Exception/Go.pm
 ${P5SITE}/Catalyst/Log.pm
-${P5SITE}/Catalyst/Manual/
-${P5SITE}/Catalyst/Manual.pm
-${P5SITE}/Catalyst/Manual/Installation/
-${P5SITE}/Catalyst/Manual/Installation.pod
-${P5SITE}/Catalyst/Manual/Installation/CentOS4.pod
 ${P5SITE}/Catalyst/Model.pm
 ${P5SITE}/Catalyst/Request/
 ${P5SITE}/Catalyst/Request.pm
@@ -42,6 +40,7 @@ ${P5SITE}/Catalyst/Response.pm
 ${P5SITE}/Catalyst/Runtime.pm
 ${P5SITE}/Catalyst/Stats.pm
 ${P5SITE}/Catalyst/Test.pm
+${P5SITE}/Catalyst/Upgrading.pod
 ${P5SITE}/Catalyst/Utils.pm
 ${P5SITE}/Catalyst/View.pm
 @man man/man1/catalyst.pl.1
@@ -49,10 +48,13 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::Action.3p
 @man man/man3p/Catalyst::ActionChain.3p
 @man man/man3p/Catalyst::ActionContainer.3p
-@man man/man3p/Catalyst::AttrContainer.3p
 @man man/man3p/Catalyst::Base.3p
+@man man/man3p/Catalyst::ClassData.3p
 @man man/man3p/Catalyst::Component.3p
+@man man/man3p/Catalyst::Component::ApplicationAttribute.3p
+@man man/man3p/Catalyst::Component::ContextClosure.3p
 @man man/man3p/Catalyst::Controller.3p
+@man man/man3p/Catalyst::Delta.3p
 @man man/man3p/Catalyst::DispatchType.3p
 @man man/man3p/Catalyst::DispatchType::Chained.3p
 @man man/man3p/Catalyst::DispatchType::Default.3p
@@ -64,13 +66,10 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::Engine::CGI.3p
 @man man/man3p/Catalyst::Engine::FastCGI.3p
 @man man/man3p/Catalyst::Engine::HTTP.3p
-@man man/man3p/Catalyst::Engine::HTTP::Restarter.3p
-@man man/man3p/Catalyst::Engine::HTTP::Restarter::Watcher.3p
 @man man/man3p/Catalyst::Exception.3p
+@man man/man3p/Catalyst::Exception::Detach.3p
+@man man/man3p/Catalyst::Exception::Go.3p
 @man man/man3p/Catalyst::Log.3p
-@man man/man3p/Catalyst::Manual.3p
-@man man/man3p/Catalyst::Manual::Installation.3p
-@man man/man3p/Catalyst::Manual::Installation::CentOS4.3p
 @man man/man3p/Catalyst::Model.3p
 @man man/man3p/Catalyst::Request.3p
 @man man/man3p/Catalyst::Request::Upload.3p
@@ -78,5 +77,6 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::Runtime.3p
 @man man/man3p/Catalyst::Stats.3p
 @man man/man3p/Catalyst::Test.3p
+@man man/man3p/Catalyst::Upgrading.3p
 @man man/man3p/Catalyst::Utils.3p
 @man man/man3p/Catalyst::View.3p
