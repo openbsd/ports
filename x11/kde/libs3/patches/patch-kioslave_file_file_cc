@@ -1,18 +1,6 @@
-$OpenBSD: patch-kioslave_file_file_cc,v 1.3 2007/03/31 23:33:34 espie Exp $
+$OpenBSD: patch-kioslave_file_file_cc,v 1.4 2009/10/27 14:38:15 jasper Exp $
 --- kioslave/file/file.cc.orig	Fri Mar 17 11:19:07 2006
 +++ kioslave/file/file.cc	Sat Mar 31 15:09:22 2007
-@@ -193,9 +193,11 @@ void FileProtocol::chmod( const KURL& url, int permiss
-             case EACCES:
-                 error( KIO::ERR_ACCESS_DENIED, url.path() );
-                 break;
-+#if defined(ENOTSUP)
-             case ENOTSUP:
-                 error( KIO::ERR_UNSUPPORTED_ACTION, url.path() );
-                 break;
-+#endif
-             case ENOSPC:
-                 error( KIO::ERR_DISK_FULL, url.path() );
-                 break;
 @@ -1445,6 +1447,9 @@ void FileProtocol::mount( bool _ro, const char *_fstyp
                                  dev.data()
                                  point.data()
