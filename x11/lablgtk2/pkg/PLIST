@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/16 06:13:19 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/10/27 09:25:38 giovanni Exp $
 %%SHARED%%
 bin/gdk_pixbuf_mlsource
 bin/lablgladecc2
 bin/lablgtk2
+lib/ocaml/
 lib/ocaml/lablgtk2/
 lib/ocaml/lablgtk2/gAction.cmi
 lib/ocaml/lablgtk2/gAction.ml
@@ -58,6 +59,7 @@ lib/ocaml/lablgtk2/gRange.cmi
 lib/ocaml/lablgtk2/gRange.ml
 lib/ocaml/lablgtk2/gRange.mli
 lib/ocaml/lablgtk2/gSourceView.mli
+lib/ocaml/lablgtk2/gSourceView2.mli
 lib/ocaml/lablgtk2/gText.cmi
 lib/ocaml/lablgtk2/gText.ml
 lib/ocaml/lablgtk2/gText.mli
@@ -147,12 +149,14 @@ lib/ocaml/lablgtk2/gtkRange.ml
 lib/ocaml/lablgtk2/gtkSignal.cmi
 lib/ocaml/lablgtk2/gtkSignal.ml
 lib/ocaml/lablgtk2/gtkSignal.mli
+lib/ocaml/lablgtk2/gtkSourceView2_types.mli
 lib/ocaml/lablgtk2/gtkSourceView_types.mli
 lib/ocaml/lablgtk2/gtkSpell.mli
 lib/ocaml/lablgtk2/gtkStock.cmi
 lib/ocaml/lablgtk2/gtkStock.ml
 lib/ocaml/lablgtk2/gtkText.cmi
 lib/ocaml/lablgtk2/gtkText.ml
+lib/ocaml/lablgtk2/gtkThInit.cmi
 lib/ocaml/lablgtk2/gtkThInit.cmo
 lib/ocaml/lablgtk2/gtkThInit.ml
 lib/ocaml/lablgtk2/gtkThread.cmi
@@ -165,8 +169,11 @@ lib/ocaml/lablgtk2/gtkWindow.cmi
 lib/ocaml/lablgtk2/gtkWindow.ml
 lib/ocaml/lablgtk2/gtk_tags.h
 lib/ocaml/lablgtk2/lablglade.cma
+lib/ocaml/lablgtk2/lablglade.cmxs
 lib/ocaml/lablgtk2/lablgtk.cma
+lib/ocaml/lablgtk2/lablgtk.cmxs
 lib/ocaml/lablgtk2/lablrsvg.cma
+lib/ocaml/lablgtk2/lablrsvg.cmxs
 lib/ocaml/lablgtk2/liblablglade2.a
 lib/ocaml/lablgtk2/liblablgtk2.a
 lib/ocaml/lablgtk2/liblablrsvg.a

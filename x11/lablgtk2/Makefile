@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/12 12:44:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/10/27 09:25:38 giovanni Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
-V =		2.12.0
+V =		2.14.0
 DISTNAME =	lablgtk-$V
-PKGNAME =	lablgtk2-$Vp3
+PKGNAME =	lablgtk2-$V
 CATEGORIES =	x11 devel
 
 HOMEPAGE =	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
@@ -38,8 +38,8 @@ MODULES =	lang/ocaml \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	USE_CC=1 ${MODOCAML_NATIVE:S/Yes/USE_DOTOPT=1/:S/No//} \
 		--without-gl --without-panel \
-		--without-gnomecanvas --without-gnomeui \
-		--without-gtkspell --without-gtksourceview --without-quartz
+		--without-gnomecanvas --without-gnomeui --without-gtksourceview \
+		--without-gtksourceview2 --without-gtkspell --without-quartz
 
 ALL_TARGET =	all ${MODOCAML_NATIVE:S/Yes/opt/:S/No//}
 
