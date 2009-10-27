@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/27 16:46:10 edd Exp $
+@bin bin/ziproxy
+@bin bin/ziproxylogtool
+@man man/man1/ziproxy.1
+@man man/man1/ziproxylogtool.1
+man/ru/
+man/ru/man1/
+@man man/ru/man1/ziproxy.1
+@man man/ru/man1/ziproxylogtool.1
+share/doc/ziproxy/
+share/doc/ziproxy/COPYING
+share/doc/ziproxy/CREDITS
+share/doc/ziproxy/JPEG2000.ru.txt
+share/doc/ziproxy/JPEG2000.txt
+share/doc/ziproxy/README
+share/doc/ziproxy/README.ru
+share/doc/ziproxy/README.tools
+share/doc/ziproxy/README.tools.ru
+share/examples/ziproxy/
+@sample ${SYSCONFDIR}/ziproxy/
+share/examples/ziproxy/bo_exception.list
+share/examples/ziproxy/deny.list
+share/examples/ziproxy/http.passwd
+share/examples/ziproxy/noprocess.list
+share/examples/ziproxy/replace.list
+share/examples/ziproxy/replace_ct.list
+share/examples/ziproxy/ziproxy.conf
+@sample ${SYSCONFDIR}/ziproxy/ziproxy.conf
+share/examples/ziproxy/ziproxy_genhtml_stats.sh
+@newgroup _ziproxy:641
+@newuser _ziproxy:641:641:daemon:Ziproxy Daemon:/var/empty:/sbin/nologin
+@mode 770
+@owner _ziproxy
+@group _ziproxy
+@sample /var/log/ziproxy/
+@extraunexec rm -rf /var/log/ziproxy/*

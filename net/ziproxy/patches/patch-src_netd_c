@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_netd_c,v 1.1.1.1 2009/10/27 16:46:10 edd Exp $
+--- src/netd.c.orig	Mon Sep 28 16:07:39 2009
++++ src/netd.c	Thu Oct 15 23:58:01 2009
+@@ -37,7 +37,10 @@
+ #include <sys/wait.h>
+ #include <time.h>
+ #include <assert.h>
++#include <pwd.h>
+ 
++#define ZIPROXY_USER "_ziproxy"
++
+ typedef int SOCKET;
+ typedef unsigned int UINT;
+ 
+@@ -132,6 +135,27 @@ int main(int argc, char **argv, char *env[])
+ 	struct tm *btime;
+ 	time_t cas;
+ 	int pipedes[2],logdes, i;
++
++	if (geteuid() == 0) {
++		/* We are root; drop privileges */
++		struct passwd *pw;
++
++		if ((pw = getpwnam(ZIPROXY_USER)) == NULL) {
++			fprintf(stderr, "No user %s.\n", ZIPROXY_USER);
++			exit(1);
++		}
++
++		if (setgroups(1, &pw->pw_gid) ||
++				setegid(pw->pw_gid) ||
++				setgid(pw->pw_gid) ||
++				seteuid(pw->pw_uid) ||
++			       	setuid(pw->pw_uid)) {
++			fprintf(stderr, "can not drop privileges to '%s'\n",
++					ZIPROXY_USER);
++			exit(1);
++		}
++		endpwent();
++	}
+ 	
+ 	command_options.addr_low.s_addr=0;
+ 

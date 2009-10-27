@@ -1,0 +1,9 @@
+A sample configuration file has been installed to:
+${SYSCONFDIR}/ziproxy/ziproxy.conf.
+
+To start ziproxy at boot, add the following to /etc/rc.local:
+
+if [ -x ${PREFIX}/bin/ziproxy ]; then
+        echo -n ' ziproxy'
+        ${PREFIX}/bin/ziproxy -d > /var/run/ziproxy.pid
+fi
