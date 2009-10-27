@@ -1,0 +1,1 @@
+Extension of Params::Validate for using Moose's types.
