@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/27 11:14:37 sthen Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}phpmailer/
+${DRUPAL_MODS}phpmailer/CHANGELOG.txt
+${DRUPAL_MODS}phpmailer/LICENSE.txt
+${DRUPAL_MODS}phpmailer/README.txt
+${DRUPAL_MODS}phpmailer/includes/
+${DRUPAL_MODS}phpmailer/includes/phpmailer.class.inc
+${DRUPAL_MODS}phpmailer/includes/phpmailer.drupal.inc
+${DRUPAL_MODS}phpmailer/includes/phpmailer.mimemail.inc
+${DRUPAL_MODS}phpmailer/phpmailer/
+${DRUPAL_MODS}phpmailer/phpmailer.admin.inc
+${DRUPAL_MODS}phpmailer/phpmailer.info
+${DRUPAL_MODS}phpmailer/phpmailer.install
+${DRUPAL_MODS}phpmailer/phpmailer.module
+@comment ${DRUPAL_MODS}phpmailer/phpmailer/COPYHERE.txt
+${DRUPAL_MODS}phpmailer/phpmailer/class.phpmailer.php
+@comment ${DRUPAL_MODS}phpmailer/phpmailer/class.phpmailer.php.orig
+${DRUPAL_MODS}phpmailer/phpmailer/class.smtp.php

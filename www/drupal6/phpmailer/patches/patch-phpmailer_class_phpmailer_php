@@ -1,0 +1,37 @@
+$OpenBSD: patch-phpmailer_class_phpmailer_php,v 1.1.1.1 2009/10/27 11:14:37 sthen Exp $
+--- phpmailer/class.phpmailer.php.orig	Sat Nov  8 17:23:04 2008
++++ phpmailer/class.phpmailer.php	Fri Apr 24 21:53:37 2009
+@@ -278,9 +278,9 @@ class PHPMailer {
+    */
+   public function IsHTML($bool) {
+     if($bool == true) {
+-      $this->ContentType = 'text/html';
++      $this->ContentType = $this->is_html = 'text/html';
+     } else {
+-      $this->ContentType = 'text/plain';
++      $this->ContentType = $this->is_html = 'text/plain';
+     }
+   }
+ 
+@@ -924,7 +924,6 @@ class PHPMailer {
+       $result .= sprintf("Message-ID: <%s@%s>%s", $uniq_id, $this->ServerHostname(), $this->LE);
+     }
+     $result .= $this->HeaderLine('X-Priority', $this->Priority);
+-    $result .= $this->HeaderLine('X-Mailer', 'PHPMailer (phpmailer.codeworxtech.com) [version ' . $this->Version . ']');
+ 
+     if($this->ConfirmReadingTo != '') {
+       $result .= $this->HeaderLine('Disposition-Notification-To', '<' . trim($this->ConfirmReadingTo) . '>');
+@@ -1005,7 +1004,12 @@ class PHPMailer {
+         $result .= $this->EncodeString($this->Body, $this->Encoding);
+         break;
+       case 'attachments':
+-        $result .= $this->GetBoundary($this->boundary[1], '', '', '');
++        if ($this->is_html) {
++          $result .= $this->GetBoundary($this->boundary[1], '', $this->is_html, '');
++        }
++        else {
++          $result .= $this->GetBoundary($this->boundary[1], '', '', '');
++        }
+         $result .= $this->EncodeString($this->Body, $this->Encoding);
+         $result .= $this->LE;
+         $result .= $this->AttachAll();

@@ -1,0 +1,5 @@
+This module integrates PHPMailer with Drupal, both as native
+drupal_mail() wrapper, and as part of the Mime Mail module,
+allowing you to send mail directly by SMTP (optionally with
+authentication/encryption). Avoids sending mail with PHP's
+mail() function (which needs /bin/sh in the chroot jail).
