@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/27 00:28:50 jim Exp $
+${P5ARCH}/Devel/
+${P5ARCH}/Devel/Caller.pm
+${P5ARCH}/auto/Devel/
+${P5ARCH}/auto/Devel/Caller/
+${P5ARCH}/auto/Devel/Caller/Caller.bs
+${P5ARCH}/auto/Devel/Caller/Caller.so
+@man man/man3p/Devel::Caller.3p
