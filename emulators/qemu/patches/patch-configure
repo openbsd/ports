@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.11 2008/06/19 05:51:17 todd Exp $
---- configure.orig	Sun Jan  6 13:38:42 2008
-+++ configure	Tue Jun 17 19:36:42 2008
+$OpenBSD: patch-configure,v 1.12 2009/10/27 13:07:49 jasper Exp $
+--- configure.orig	Sun Jan  6 20:38:42 2008
++++ configure	Tue Oct 27 14:01:40 2009
 @@ -21,10 +21,10 @@ prefix=""
  interp_prefix="/usr/gnemul/qemu-%M"
  static="no"
@@ -117,12 +117,11 @@ $OpenBSD: patch-configure,v 1.11 2008/06/19 05:51:17 todd Exp $
  fi
  if test "$coreaudio" = "yes" ; then
    echo "CONFIG_COREAUDIO=yes" >> $config_mak
-@@ -953,6 +967,13 @@ if test "$cocoa" = "yes" ; then
+@@ -953,6 +967,12 @@ if test "$cocoa" = "yes" ; then
      echo "CONFIG_COCOA=yes" >> $config_mak
  fi
  
 +if [ "$openbsd" = "yes" ] ; then
-+  echo "#define ENOTSUP 4096" >> $config_h
 +  echo "#define qemu_siginfo siginfo_t" >> $config_h
 +else
 +  echo "#define qemu_siginfo struct siginfo" >> $config_h
@@ -131,7 +130,7 @@ $OpenBSD: patch-configure,v 1.11 2008/06/19 05:51:17 todd Exp $
  # XXX: suppress that
  if [ "$bsd" = "yes" ] ; then
    echo "#define O_LARGEFILE 0" >> $config_h
-@@ -961,6 +982,19 @@ if [ "$bsd" = "yes" ] ; then
+@@ -961,6 +981,19 @@ if [ "$bsd" = "yes" ] ; then
  fi
  
  echo "#define CONFIG_UNAME_RELEASE \"$uname_release\"" >> $config_h
