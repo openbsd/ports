@@ -1,14 +1,10 @@
-$OpenBSD: patch-libfprint_fp_internal_h,v 1.1.1.1 2009/03/24 19:01:04 robert Exp $
---- libfprint/fp_internal.h.orig	Tue Mar 24 17:28:48 2009
-+++ libfprint/fp_internal.h	Tue Mar 24 17:28:34 2009
-@@ -62,6 +62,18 @@ void fpi_log(enum fpi_log_level, const char *component
+$OpenBSD: patch-libfprint_fp_internal_h,v 1.2 2009/10/27 06:16:03 jasper Exp $
+--- libfprint/fp_internal.h.orig	Thu Mar 20 14:37:33 2008
++++ libfprint/fp_internal.h	Tue Oct 27 07:14:56 2009
+@@ -62,6 +62,14 @@ void fpi_log(enum fpi_log_level, const char *component
  #define fp_warn(fmt...) _fpi_log(LOG_LEVEL_WARNING, fmt)
  #define fp_err(fmt...) _fpi_log(LOG_LEVEL_ERROR, fmt)
  
-+#if !defined(ENOTSUP) && defined(EOPNOTSUPP)
-+#define ENOTSUP EOPNOTSUPP
-+#endif
-+
 +#if !defined(ENODATA) && defined(ENOENT)
 +#define ENODATA ENOENT
 +#endif
