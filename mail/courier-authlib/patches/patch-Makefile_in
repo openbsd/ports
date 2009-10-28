@@ -1,0 +1,64 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2009/10/28 14:18:05 giovanni Exp $
+--- Makefile.in.orig	Sat Jun 27 18:09:13 2009
++++ Makefile.in	Wed Jul 15 13:21:59 2009
+@@ -511,7 +511,7 @@ CLEANFILES = authldaprc.h authmysqlrc.h authdaemonrc.h
+ 
+ DISTCLEANFILES = dbobj.config README_authlib.html
+ commonlibdep = libcourierauthcommon.la
+-commonldflags = -module -rpath $(pkglibdir) -export-symbols-regex 'courier_auth.*_init' -avoid-version
++commonldflags = -module -rpath $(pkglibdir) -export-symbols-regex 'courier_auth.*_init'
+ commonlibadd = libcourierauthcommon.la
+ libcourierauthcommon_t = @CRYPTLIBS@
+ libcourierauthcommon_la_SOURCES = \
+@@ -526,7 +526,7 @@ libcourierauthcommon_la_SOURCES = \
+ 
+ libcourierauthcommon_la_DEPENDENCIES = libcourierauth.la
+ libcourierauthcommon_la_LIBADD = libcourierauth.la
+-libcourierauthcommon_la_LDFLAGS = $(libcourierauthcommon_t:%=-Wl,%) -avoid-version
++libcourierauthcommon_la_LDFLAGS = $(libcourierauthcommon_t:%=-Wl,%)
+ libcourierauth_la_SOURCES = authdaemon.c authdaemonlib.c preauthdaemon.c \
+ 	authmoduser2.c authmoduser3.c debug.c \
+ 	courierauthdebug.h \
+@@ -535,7 +535,7 @@ libcourierauth_la_SOURCES = authdaemon.c authdaemonlib
+ libcourierauth_la_LIBADD = libhmac/libhmac.la md5/libmd5.la sha1/libsha1.la numlib/libnumlib.la \
+ 	random128/librandom128.la rfc822/libencode.la
+ 
+-libcourierauth_la_LDFLAGS = @NETLIBS@ -avoid-version
++libcourierauth_la_LDFLAGS = @NETLIBS@
+ 
+ # The userdb module
+ libauthuserdb_t = userdb/libuserdb.la @dblibrary@ @LIBGDBM@ @LIBDB@
+@@ -627,7 +627,7 @@ libcourierauthsasl_la_SOURCES = \
+ 	authsaslfrombase64.c authsasltobase64.c
+ 
+ libcourierauthsasl_la_LIBADD = libcourierauth.la
+-libcourierauthsasl_la_LDFLAGS = -export-symbols-regex '^auth_sasl|auth_sasl_ex$$' -avoid-version
++libcourierauthsasl_la_LDFLAGS = -export-symbols-regex '^auth_sasl|auth_sasl_ex$$'
+ libcourierauthsaslclient_la_SOURCES = courierauthsaslclient.h \
+ 	authsaslclient.c authsaslclient.h authsaslclientcram.c \
+ 	authsaslclientcrammd5.c authsaslclientcramsha1.c \
+@@ -636,7 +636,7 @@ libcourierauthsaslclient_la_SOURCES = courierauthsaslc
+ 	authsaslfrombase64.c authsasltobase64.c
+ 
+ libcourierauthsaslclient_la_LIBADD = libcourierauth.la
+-libcourierauthsaslclient_la_LDFLAGS = -export-symbols-regex '^auth_sasl_client$$' -avoid-version
++libcourierauthsaslclient_la_LDFLAGS = -export-symbols-regex '^auth_sasl_client$$'
+ include_HEADERS = courier_auth_config.h courierauth.h courierauthsasl.h \
+ 	courierauthsaslclient.h courierauthdebug.h
+ 
+@@ -1828,7 +1828,6 @@ install-exec-hook:
+ 				$(DESTDIR)$(sbindir)/userdbpw ; \
+ 		$(INSTALL_SCRIPT) userdb-test-cram-md5.pl \
+ 				$(DESTDIR)$(sbindir)/userdb-test-cram-md5
+-	for f in $(pkglib_LTLIBRARIES); do . ./$$f; rm -f $(DESTDIR)$(pkglibdir)/$$dlname.0 $(DESTDIR)$(pkglibdir)/$$dlname.0.0; ln -s $$dlname $(DESTDIR)$(pkglibdir)/$$dlname.0; done
+ 
+ uninstall-hook: uninstall-authldaprc uninstall-authdaemonrc uninstall-authmysqlrc uninstall-authpgsqlrc
+ 	rm -f $(DESTDIR)$(pkglibexecdir)/authdaemond
+@@ -1839,7 +1838,6 @@ uninstall-hook: uninstall-authldaprc uninstall-authdae
+ 				$(DESTDIR)$(sbindir)/userdb \
+ 				$(DESTDIR)$(sbindir)/userdbpw \
+ 				$(DESTDIR)$(sbindir)/userdb-test-cram-md5
+-	for f in $(pkglib_LTLIBRARIES); do . ./$$f; rm -f $(DESTDIR)$(pkglibdir)/$$dlname.0; done
+ 
+ authlib.html: authlib.html.in
+ 	$(SHELL) ./config.status --file=authlib.html

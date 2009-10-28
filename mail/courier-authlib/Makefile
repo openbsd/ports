@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/09/15 17:37:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2009/10/28 14:18:04 giovanni Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -6,15 +6,15 @@ COMMENT-mysql=		mysql authentication module for courier-authLib
 COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
-DISTNAME=		courier-authlib-0.58
-PKGNAME-main=		${DISTNAME}p4
-PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}p5
-PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}p3
-PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}p3
-PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}p4
+DISTNAME=		courier-authlib-0.62.4
+PKGNAME-main=		${DISTNAME}
+PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
+PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
+PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}
+PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}
 
 SHARED_LIBS +=  courierauth          0.0      # .0.0
-SHARED_LIBS +=  courierauthsasl      0.0      # .0.0
+SHARED_LIBS +=  courierauthsasl      1.0      # .0.0
 SHARED_LIBS +=  courierauthsaslclient 0.0     # .0.0
 SHARED_LIBS +=  courierauthcommon    0.0      # .0.0
 SHARED_LIBS +=  authuserdb           0.0      # .0.0
@@ -27,7 +27,9 @@ SHARED_LIBS +=  authpipe             0.0      # .0.0
 CATEGORIES=		mail security
 HOMEPAGE=		http://www.courier-mta.org/authlib/
 
-# GPL
+MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
+
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -63,6 +65,7 @@ CONFIGURE_ARGS+=	--enable-static \
 			--libdir=${PREFIX}/lib \
 			--includedir=${PREFIX}/include \
 			--enable-ltdl-install=no \
+			--with-ltdl-lib=${LOCALBASE}/lib \
 			--cache-file=${WRKDIR}/courier-authlib.cache
 
 RUN_DEPENDS-main=	:expect-*:lang/expect,no_tk
@@ -75,6 +78,7 @@ FLAVOR?=
 PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql no_userdb
 
 WANTLIB-main=		c
+
 LIB_DEPENDS-main=	ltdl::devel/libtool,-ltdl
 
 WANTLIB-ldap=		crypto ssl asn1 com_err gssapi krb5

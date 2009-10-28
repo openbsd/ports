@@ -1,24 +1,20 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2006/11/03 11:45:31 mbalmer Exp $
---- configure.orig	Fri Jan  6 20:38:09 2006
-+++ configure	Fri Jan  6 20:39:31 2006
-@@ -25688,8 +25688,8 @@ if test -x "$COURIERCONFIG"
- then
+$OpenBSD: patch-configure,v 1.2 2009/10/28 14:18:05 giovanni Exp $
+--- configure.orig	Sat Jun 27 18:09:14 2009
++++ configure	Wed Jul 15 13:21:59 2009
+@@ -19444,7 +19444,7 @@ then
  	$COURIERCONFIG >conftest.out || exit 1
  	sed -n '/^mail/p' <conftest.out >conftest2.out || exit 1
--	. conftest2.out
+ 	. ./conftest2.out
 -	rm -f conftest.out conftest2.out
-+	. ./conftest2.out
 +	rm -f ./conftest.out ./conftest2.out
  
  	cmailuser="$mailuser"
  	cmailgroup="$mailgroup"
-@@ -25700,8 +25700,8 @@ if test -x "$bindir/courierauthconfig"
- then
+@@ -19456,7 +19456,7 @@ then
  	$bindir/courierauthconfig --configfiles >conftest.out || exit 1
  	sed -n '/^mail/p' <conftest.out >conftest2.out || exit 1
--	. conftest2.out
+ 	. ./conftest2.out
 -	rm -f conftest.out conftest2.out
-+	. ./conftest2.out
 +	rm -f ./conftest.out ./conftest2.out
  
  	cmailuser="$mailuser"
