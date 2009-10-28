@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/10/26 16:44:41 jim Exp $
+# $OpenBSD: Makefile,v 1.10 2009/10/28 02:08:08 kevlo Exp $
 
 COMMENT=	complete modern object system for perl 5
 
 MODULES=	cpan
 DISTNAME=	Moose-0.92
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 # perl
@@ -23,8 +24,14 @@ RUN_DEPENDS=	:p5-Class-MOP->=0.94:devel/p5-Class-MOP \
 		::devel/p5-Task-Weaken \
 		::devel/p5-Try-Tiny
 
-REGRESS_DEPENDS=::devel/p5-Locale-US \
+REGRESS_DEPENDS=::databases/p5-DBM-Deep \
+		::devel/p5-DateTime-Calendar-Mayan \
+		::devel/p5-DateTime-Format-MySQL \
+		::devel/p5-Declare-Constraints-Simple \
+		::devel/p5-IO-String \
+		::devel/p5-Locale-US \
 		::devel/p5-Module-Refresh \
+		::devel/p5-Params-Coerce \
 		::devel/p5-Test-Deep \
 		::devel/p5-Test-Exception \
 		::devel/p5-Test-LongString \
