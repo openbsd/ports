@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/28 11:15:15 sthen Exp $
+${P5SITE}/Set/
+${P5SITE}/Set/Crontab.pm
+@man man/man3p/Set::Crontab.3p
