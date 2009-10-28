@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/10/14 09:26:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/10/28 20:28:18 jasper Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,7 +6,7 @@ COMMENT=	powerful desktop search tool and indexer
 # as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.95
-PKGNAME=	tracker-search-${VERSION}p1
+PKGNAME=	tracker-search-${VERSION}p2
 
 SHARED_LIBS +=	stemmer              0.1      # .695.0
 SHARED_LIBS +=	tracker-common       0.1      # .695.0
