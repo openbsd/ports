@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.749 2009/10/27 02:25:37 kevlo Exp $
+# $OpenBSD: Makefile,v 1.750 2009/10/28 23:16:21 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -84,6 +84,7 @@
      SUBDIR += ffcall
      SUBDIR += flatzebra
      SUBDIR += flawfinder
+     SUBDIR += flex
      SUBDIR += fossil
      SUBDIR += fox
      SUBDIR += fribidi
