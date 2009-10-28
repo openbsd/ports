@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2009/09/16 19:36:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2009/10/28 19:38:11 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gui=	lightweight BitTorrent client with graphical interface
 
-VER=		1.75
+VER=		1.76
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gui=	transmission-gui-${VER}
@@ -35,7 +35,9 @@ LIB_DEPENDS=	curl.>=13::net/curl
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-shared --disable-wx
+CONFIGURE_ARGS=	--disable-shared \
+		--disable-silent-rules \
+		--disable-wx
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		OPENSSL_CFLAGS="-I/usr/include" \

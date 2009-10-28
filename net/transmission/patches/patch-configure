@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.17 2009/09/16 19:36:33 naddy Exp $
---- configure.orig	Mon Sep 14 05:53:50 2009
-+++ configure	Mon Sep 14 20:29:13 2009
-@@ -11317,8 +11317,8 @@ CC="$lt_save_CC"
+$OpenBSD: patch-configure,v 1.18 2009/10/28 19:38:11 naddy Exp $
+--- configure.orig	Sun Oct 25 02:50:02 2009
++++ configure	Tue Oct 27 23:32:44 2009
+@@ -11335,8 +11335,8 @@ CC="$lt_save_CC"
  if test 0 = "0"; then
    supported_build=yes
    if test "x$GCC" = "xyes" ; then
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.17 2009/09/16 19:36:33 naddy Exp $
    fi
    CPPFLAGS="$CPPFLAGS -DNDEBUG"
  else
-@@ -16404,7 +16404,7 @@ esac
+@@ -16422,7 +16422,7 @@ esac
  
  if test "x$GCC" = "xyes" ; then
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure,v 1.17 2009/09/16 19:36:33 naddy Exp $
  
          { $as_echo "$as_me:$LINENO: checking gcc version" >&5
  $as_echo_n "checking gcc version... " >&6; }
-@@ -16416,7 +16416,7 @@ $as_echo_n "checking gcc version... " >&6; }
+@@ -16434,7 +16434,7 @@ $as_echo_n "checking gcc version... " >&6; }
      { $as_echo "$as_me:$LINENO: result: $GCC_VERSION" >&5
  $as_echo "$GCC_VERSION" >&6; }
      if test $GCC_VERSION_NUM -ge 304; then
