@@ -1,5 +1,5 @@
 You now need to edit appropriately the Courier-IMAP configuration files
-installed in ${SYSCONFDIR}/courier/.
+installed in ${SYSCONFDIR}/.
 
 Pay particular attention to the details in imapd.cnf, and read ssl(8) if
 necessary. You MUST set the CN in imapd.cnf to the hostname by which

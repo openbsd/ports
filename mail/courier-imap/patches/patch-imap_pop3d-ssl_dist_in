@@ -1,16 +1,16 @@
-$OpenBSD: patch-imap_pop3d-ssl_dist_in,v 1.5 2006/11/03 16:19:56 mbalmer Exp $
---- imap/pop3d-ssl.dist.in.orig	Mon Aug  1 00:27:59 2005
-+++ imap/pop3d-ssl.dist.in	Mon Aug  1 00:30:03 2005
-@@ -140,7 +140,7 @@ TLS_STARTTLS_PROTOCOL=TLS1
- # servers, and is optional for SSL/TLS clients.  TLS_CERTFILE is usually
- # treated as confidential, and must not be world-readable.
+$OpenBSD: patch-imap_pop3d-ssl_dist_in,v 1.6 2009/10/28 14:20:19 giovanni Exp $
+--- imap/pop3d-ssl.dist.in.orig	Sat Jul 12 22:17:25 2008
++++ imap/pop3d-ssl.dist.in	Mon Jun 15 15:31:54 2009
+@@ -248,7 +248,7 @@ TLS_CERTS=X509
  #
--TLS_CERTFILE=@datadir@/pop3d.pem
+ # This is an experimental feature.
+ 
+-TLS_CERTFILE=@mydatadir@/pop3d.pem
 +TLS_CERTFILE=/etc/ssl/private/pop3d.pem
  
  ##NAME: TLS_TRUSTCERTS:0
  #
-@@ -180,8 +180,8 @@ TLS_VERIFYPEER=NONE
+@@ -308,8 +308,8 @@ TLS_VERIFYPEER=NONE
  # problems with SSL clients.  Disable SSL caching by commenting out the
  # following settings:
  

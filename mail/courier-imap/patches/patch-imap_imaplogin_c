@@ -1,7 +1,7 @@
-$OpenBSD: patch-imap_imaplogin_c,v 1.1 2006/11/03 16:19:56 mbalmer Exp $
---- imap/imaplogin.c.orig	Sat Aug  6 15:39:08 2005
-+++ imap/imaplogin.c	Sat Aug  6 15:39:52 2005
-@@ -247,7 +247,7 @@ int login_callback(struct authinfo *ainf
+$OpenBSD: patch-imap_imaplogin_c,v 1.2 2009/10/28 14:20:19 giovanni Exp $
+--- imap/imaplogin.c.orig	Sun Jun 29 22:18:36 2008
++++ imap/imaplogin.c	Mon Jun 15 15:25:07 2009
+@@ -235,7 +235,7 @@ int login_callback(struct authinfo *ainfo, void *dummy
  					execl(imapd, imapd,
  					      ainfo->maildir ?
  					      ainfo->maildir:defaultmaildir,

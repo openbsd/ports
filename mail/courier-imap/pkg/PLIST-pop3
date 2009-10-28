@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-pop3,v 1.5 2006/11/03 16:20:58 mbalmer Exp $
+@comment $OpenBSD: PLIST-pop3,v 1.6 2009/10/28 14:20:19 giovanni Exp $
 @newgroup _courier:571
 @newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
-bin/pop3d
+@bin bin/pop3d
 libexec/pop3d-ssl.rc
 libexec/pop3d.rc
 @man man/man8/mkpop3dcert.8
 sbin/mkpop3dcert
-sbin/pop3login
+@bin sbin/pop3login
 @mode 600
 share/examples/courier/pop3d-ssl.dist
 @sample ${SYSCONFDIR}/pop3d-ssl

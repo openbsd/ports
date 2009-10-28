@@ -1,46 +1,66 @@
-$OpenBSD: patch-imap_mkimapdcert_in,v 1.6 2006/11/03 16:19:56 mbalmer Exp $
---- imap/mkimapdcert.in.orig	Mon Aug  1 00:35:38 2005
-+++ imap/mkimapdcert.in	Mon Aug  1 00:37:31 2005
-@@ -12,28 +12,29 @@
- test -x @OPENSSL@ || exit 0
+$OpenBSD: patch-imap_mkimapdcert_in,v 1.7 2009/10/28 14:20:19 giovanni Exp $
+--- imap/mkimapdcert.in.orig	Sun Nov  4 21:49:58 2007
++++ imap/mkimapdcert.in	Mon Jun 15 15:30:20 2009
+@@ -17,42 +17,43 @@ else
+ fi
  
  prefix="@prefix@"
 +SSLDIR="/etc/ssl/private"
  
--if test -f @datadir@/imapd.pem
+-if test -f @mydatadir@/imapd.pem
 +if test -f ${SSLDIR}/imapd.pem
  then
--	echo "@datadir@/imapd.pem already exists."
+-	echo "@mydatadir@/imapd.pem already exists."
 +	echo "${SSLDIR}/imapd.pem already exists."
  	exit 1
  fi
  
  umask 077
--cp /dev/null @datadir@/imapd.pem
--chmod 600 @datadir@/imapd.pem
--chown @mailuser@ @datadir@/imapd.pem
-+cp /dev/null ${SSLDIR}/imapd.pem
-+chmod 600 ${SSLDIR}/imapd.pem
-+chown @mailuser@ ${SSLDIR}/imapd.pem
  
  cleanup() {
--	rm -f @datadir@/imapd.pem
--	rm -f @datadir@/imapd.rand
+-	rm -f @mydatadir@/imapd.pem
+-	rm -f @mydatadir@/imapd.rand
+-	rm -f @mydatadir@/imapd.key
+-	rm -f @mydatadir@/imapd.cert
 +	rm -f ${SSLDIR}/imapd.pem
 +	rm -f ${SSLDIR}/imapd.rand
++	rm -f ${SSLDIR}/imapd.key
++	rm -f ${SSLDIR}/imapd.cert
  	exit 1
  }
  
--cd @datadir@
--dd if=@RANDOMV@ of=@datadir@/imapd.rand count=1 2>/dev/null
+-cd @mydatadir@
 +cd ${SSLDIR}
-+dd if=@RANDOMV@ of=${SSLDIR}/imapd.rand count=1 2>/dev/null
- @OPENSSL@ req -new -x509 -days 365 -nodes \
--	-config @sysconfdir@/imapd.cnf -out @datadir@/imapd.pem -keyout @datadir@/imapd.pem || cleanup
--@OPENSSL@ gendh -rand @datadir@/imapd.rand 512 >>@datadir@/imapd.pem || cleanup
--@OPENSSL@ x509 -subject -dates -fingerprint -noout -in @datadir@/imapd.pem || cleanup
--rm -f @datadir@/imapd.rand
-+	-config @sysconfdir@/imapd.cnf -out ${SSLDIR}/imapd.pem -keyout ${SSLDIR}/imapd.pem || cleanup
-+@OPENSSL@ gendh -rand ${SSLDIR}/imapd.rand 512 >>${SSLDIR}/imapd.pem || cleanup
-+@OPENSSL@ x509 -subject -dates -fingerprint -noout -in ${SSLDIR}/imapd.pem || cleanup
-+rm -f ${SSLDIR}/imapd.rand
+ 
+ if test "@ssllib@" = "openssl"
+ then
+-	cp /dev/null @mydatadir@/imapd.pem
+-	chmod 600 @mydatadir@/imapd.pem
+-	chown @mailuser@ @mydatadir@/imapd.pem
++	cp /dev/null ${SSLDIR}/imapd.pem
++	chmod 600 ${SSLDIR}/imapd.pem
++	chown @mailuser@ ${SSLDIR}/imapd.pem
+ 
+-	dd if=@RANDOMV@ of=@mydatadir@/imapd.rand count=1 2>/dev/null
++	dd if=@RANDOMV@ of=${SSLDIR}/imapd.rand count=1 2>/dev/null
+ 	@OPENSSL@ req -new -x509 -days 365 -nodes \
+-		  -config @sysconfdir@/imapd.cnf -out @mydatadir@/imapd.pem -keyout @mydatadir@/imapd.pem || cleanup
+-	@OPENSSL@ gendh -rand @mydatadir@/imapd.rand 512 >>@mydatadir@/imapd.pem || cleanup
+-	@OPENSSL@ x509 -subject -dates -fingerprint -noout -in @mydatadir@/imapd.pem || cleanup
+-	rm -f @mydatadir@/imapd.rand
++		  -config @sysconfdir@/imapd.cnf -out ${SSLDIR}/imapd.pem -keyout ${SSLDIR}/imapd.pem || cleanup
++	@OPENSSL@ gendh -rand ${SSLDIR}/imapd.rand 512 >>${SSLDIR}/imapd.pem || cleanup
++	@OPENSSL@ x509 -subject -dates -fingerprint -noout -in ${SSLDIR}/imapd.pem || cleanup
++	rm -f ${SSLDIR}/imapd.rand
+ else
+-	cp /dev/null @mydatadir@/imapd.key
+-	chmod 600 @mydatadir@/imapd.key
+-	cp /dev/null @mydatadir@/imapd.cert
+-	chmod 600 @mydatadir@/imapd.cert
++	cp /dev/null ${SSLDIR}/imapd.key
++	chmod 600 ${SSLDIR}/imapd.key
++	cp /dev/null ${SSLDIR}/imapd.cert
++	chmod 600 ${SSLDIR}/imapd.cert
+ 
+ 	@CERTTOOL@ --generate-privkey --outfile imapd.key
+ 	@CERTTOOL@ --generate-self-signed --load-privkey imapd.key --outfile imapd.cert --template @sysconfdir@/imapd.cnf

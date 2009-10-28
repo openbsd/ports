@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/06/22 07:34:45 mbalmer Exp $
-@pkgpath ${BASE_PKGPATH}
+@comment $OpenBSD: PLIST-main,v 1.3 2009/10/28 14:20:19 giovanni Exp $
 @conflict imap-uw-*
 @conflict courier-utils-*
+@pkgpath ${BASE_PKGPATH}
 @newgroup _courier:571
 @newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
-bin/couriertls
-bin/deliverquota
-bin/imapd
-bin/maildiracl
-bin/maildirkw
-bin/maildirmake
-libexec/couriertcpd
+@bin bin/couriertls
+@bin bin/deliverquota
+@bin bin/imapd
+@bin bin/maildiracl
+@bin bin/maildirkw
+@bin bin/maildirmake
+@bin libexec/couriertcpd
 libexec/imapd-ssl.rc
 libexec/imapd.rc
-libexec/makedatprog
+@bin libexec/makedatprog
 @man man/man1/couriertcpd.1
 @man man/man1/maildiracl.1
 @man man/man1/maildirkw.1
@@ -21,7 +21,7 @@ libexec/makedatprog
 @man man/man8/deliverquota.8
 @man man/man8/imapd.8
 @man man/man8/mkimapdcert.8
-sbin/imaplogin
+@bin sbin/imaplogin
 sbin/mkimapdcert
 sbin/sharedindexinstall
 sbin/sharedindexsplit

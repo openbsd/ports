@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.55 2009/09/15 17:37:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2009/10/28 14:20:19 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			4.1.1
+V=			4.6.0
 DISTNAME=		courier-imap-${V}
-PKGNAME-main=		${DISTNAME}p3
-FULLPKGNAME-pop3=	courier-pop3-${V}p1
+PKGNAME-main=		${DISTNAME}
+FULLPKGNAME-pop3=	courier-pop3-${V}
 
 CATEGORIES=		mail
 
@@ -14,8 +14,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=courier/}
 EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.courier-mta.org/imap/
+MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -36,7 +37,7 @@ LIB_DEPENDS=		courierauthsasl.>=0,courierauth.>=0::mail/courier-authlib
 COURIERSTATE=           /var/run/courier
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
 SUBST_VARS=		COURIERSTATE
-SYSCONFDIR=/etc/courier
+SYSCONFDIR=		/etc/courier
 
 CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
 			--datadir=${PREFIX}/sbin \
@@ -94,11 +95,18 @@ CNFFILES=		etc/courier/imapd-ssl.dist etc/courier/imapd.dist \
 			etc/courier/imapd.cnf etc/courier/pop3d.cnf \
 			etc/courier/quotawarnmsg.example
 
+# Regression tests need ulimit -p 256 and are not compatible
+# with no_trashquota and imap_bugs flavors.
+# If those flavors are not built you can do regress tests with
+# ulimit -p 256
+# make regress NO_REGRESS=NO
+NO_REGRESS=		Yes
+
 post-extract:
 	@perl -pi -e 's,\@datadir\@\/imapd.rand,\/dev\/arandom,g' \
-	    ${WRKSRC}/imap/imapd.cnf.in
+	    ${WRKSRC}/imap/imapd.cnf.openssl.in
 	@perl -pi -e 's,\@datadir\@\/imapd.rand,\/dev\/arandom,g' \
-	    ${WRKSRC}/imap/pop3d.cnf.in
+	    ${WRKSRC}/imap/pop3d.cnf.openssl.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/courier

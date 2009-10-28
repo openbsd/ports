@@ -1,5 +1,5 @@
 You now need to edit appropriately the Courier-POP3 configuration files
-installed in ${SYSCONFDIR}/courier/.
+installed in ${SYSCONFDIR}/.
 
 To use POP3-SSL, be sure to read ssl(8) and run the mkpop3dcert script
 if you require a self-signed certificate.
