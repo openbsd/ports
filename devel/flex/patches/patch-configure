@@ -1,0 +1,38 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/10/28 23:13:56 sthen Exp $
+--- configure.orig	Tue Feb 26 21:34:02 2008
++++ configure	Tue Jun  9 20:51:58 2009
+@@ -4651,6 +4651,9 @@ _ACEOF
+ 
+ 
+ 
++LIBICONV=$LTLIBICONV
++LIBINTL=$LTLIBINTL
++INTLLIBS=$LTLIBINTL
+ 
+ for ac_prog in 'bison -y' byacc
+ do
+@@ -6602,15 +6605,15 @@ test -n "$M4" || M4="m4"
+ if test x"$M4" != x; then
+   echo "$as_me:$LINENO: checking for GNU m4" >&5
+ echo $ECHO_N "checking for GNU m4... $ECHO_C" >&6
+-  case `$M4 --help < /dev/null 2>&1` in
+-    *prefix-builtins*) echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6 ;;
+-    *) echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6 ;
+-       { { echo "$as_me:$LINENO: error: GNU M4 1.4 is required" >&5
+-echo "$as_me: error: GNU M4 1.4 is required" >&2;}
+-   { (exit 1); exit 1; }; } ;;
+-  esac
++#  case `$M4 --help < /dev/null 2>&1` in
++#    *prefix-builtins*) echo "$as_me:$LINENO: result: yes" >&5
++#echo "${ECHO_T}yes" >&6 ;;
++#    *) echo "$as_me:$LINENO: result: no" >&5
++#echo "${ECHO_T}no" >&6 ;
++#       { { echo "$as_me:$LINENO: error: GNU M4 1.4 is required" >&5
++#echo "$as_me: error: GNU M4 1.4 is required" >&2;}
++#   { (exit 1); exit 1; }; } ;;
++#  esac
+ else
+    { { echo "$as_me:$LINENO: error: GNU M4 1.4 is required" >&5
+ echo "$as_me: error: GNU M4 1.4 is required" >&2;}

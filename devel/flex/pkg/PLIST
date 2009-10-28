@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/28 23:13:56 sthen Exp $
+@bin bin/gflex
+include/flex/
+include/flex/FlexLexer.h
+@info info/flex.info
+lib/flex/
+lib/flex/libfl.a
+lib/flex/libfl_pic.a
+@man man/man1/gflex.1
+share/locale/ca/LC_MESSAGES/flex.mo
+share/locale/da/LC_MESSAGES/flex.mo
+share/locale/de/LC_MESSAGES/flex.mo
+share/locale/es/LC_MESSAGES/flex.mo
+share/locale/fr/LC_MESSAGES/flex.mo
+share/locale/ga/LC_MESSAGES/flex.mo
+share/locale/ko/LC_MESSAGES/flex.mo
+share/locale/nl/LC_MESSAGES/flex.mo
+share/locale/pl/LC_MESSAGES/flex.mo
+share/locale/pt_BR/LC_MESSAGES/flex.mo
+share/locale/ro/LC_MESSAGES/flex.mo
+share/locale/ru/LC_MESSAGES/flex.mo
+share/locale/sv/LC_MESSAGES/flex.mo
+share/locale/tr/LC_MESSAGES/flex.mo
+share/locale/vi/LC_MESSAGES/flex.mo
+share/locale/zh_CN/LC_MESSAGES/flex.mo
