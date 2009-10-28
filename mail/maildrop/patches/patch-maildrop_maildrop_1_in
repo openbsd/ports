@@ -1,12 +1,12 @@
-$OpenBSD: patch-maildrop_maildrop_1_in,v 1.2 2008/05/07 20:02:47 mbalmer Exp $
---- maildrop/maildrop.1.in.orig	Sun Apr 22 17:26:55 2007
-+++ maildrop/maildrop.1.in	Sun May  4 12:18:19 2008
-@@ -184,7 +184,7 @@ is not owned by the user, or if it has any group or wo
+$OpenBSD: patch-maildrop_maildrop_1_in,v 1.3 2009/10/28 14:21:38 giovanni Exp $
+--- maildrop/maildrop.1.in.orig	Sun May 10 16:53:44 2009
++++ maildrop/maildrop.1.in	Wed Jun 24 18:28:11 2009
+@@ -344,7 +344,7 @@ is not owned by the user, or if it has any group or wo
  \fBmaildrop\fR
- is heavily optimized and tries to use as little resources as possible.
+ is heavily optimized and tries to use as little resources as possible\&.
  \fBmaildrop\fR
--reads smalle messages into memory, then filters and/or delivers the message directly from memory. For larger messages,
-+reads smaller messages into memory, then filters and/or delivers the message directly from memory. For larger messages,
+-reads smalle messages into memory, then filters and/or delivers the message directly from memory\&. For larger messages,
++reads smaller messages into memory, then filters and/or delivers the message directly from memory\&. For larger messages,
  \fBmaildrop\fR
- accesses the message directly from the file. If the standard input is not a file,
+ accesses the message directly from the file\&. If the standard input is not a file,
  \fBmaildrop\fR

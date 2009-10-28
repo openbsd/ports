@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/05/07 20:02:47 mbalmer Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/10/28 14:21:38 giovanni Exp $
 @pkgpath mail/maildrop
 @newgroup _courier:571
 @newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
 @owner _courier
 @group _courier
-bin/lockmail
+@bin bin/lockmail
 @owner
 @group
-bin/mailbot
+@bin bin/mailbot
 @owner _courier
 @group _courier
-bin/maildrop
+@bin bin/maildrop
 @owner
 @group
 bin/makedat
-bin/makedatprog
-bin/makemime
-bin/reformail
-bin/reformime
+@bin bin/makedatprog
+@bin bin/makemime
+@bin bin/reformail
+@bin bin/reformime
 @man man/man1/lockmail.1
 @man man/man1/mailbot.1
 @man man/man1/maildrop.1

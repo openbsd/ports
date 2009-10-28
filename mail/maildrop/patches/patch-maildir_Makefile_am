@@ -1,7 +1,7 @@
-$OpenBSD: patch-maildir_Makefile_am,v 1.1 2006/11/03 13:52:19 mbalmer Exp $
---- maildir/Makefile.am.orig	Sat Jan  7 22:49:37 2006
-+++ maildir/Makefile.am	Sat Jan  7 22:53:22 2006
-@@ -115,16 +115,16 @@ mailbot.h: config.status
+$OpenBSD: patch-maildir_Makefile_am,v 1.2 2009/10/28 14:21:38 giovanni Exp $
+--- maildir/Makefile.am.orig	Sun Aug 24 23:33:59 2008
++++ maildir/Makefile.am	Wed Jun 24 18:04:41 2009
+@@ -114,16 +114,16 @@ mailbot.h: config.status
  	echo '#define MAILBOT "@MAILBOT@"' >mailbot.h
  
  maildirsharedrc.h: config.status
