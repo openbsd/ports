@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/09 22:13:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/28 23:20:31 jasper Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	GLib ICE implementation
 
 DISTNAME =	libnice-0.0.9
-PKGNAME =	${DISTNAME}p1
+PKGNAME =	${DISTNAME}p2
 SHARED_LIBS +=  nice                 0.0      # .5.0
 CATEGORIES =	net
 
 HOMEPAGE =	http://nice.freedesktop.org/
 
-MAINTAINER =	Tom <tdmurphy4@gmail.com>
+MAINTAINER =	Tom Murphy <openbsd@pertho.net>
 
 # LGPLv2.1/MPLv1.1
 PERMIT_PACKAGE_CDROM =	Yes
