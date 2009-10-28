@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_AudioIO_h,v 1.1 2009/10/28 18:40:13 jakemsr Exp $
+--- src/AudioIO.h.orig	Mon Oct 19 01:07:01 2009
++++ src/AudioIO.h	Mon Oct 19 01:24:50 2009
+@@ -22,7 +22,7 @@
+ #include "portmidi.h"
+ #include "porttime.h"
+ #endif // EXPERIMENTAL_MIDI_OUT
+-#include "allegro.h"
++#include "../lib-src/portsmf/allegro.h"
+ #endif // USE_MIDI
+ 
+ #if USE_PORTMIXER

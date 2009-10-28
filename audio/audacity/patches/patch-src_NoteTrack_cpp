@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_NoteTrack_cpp,v 1.1 2009/10/28 18:40:13 jakemsr Exp $
+--- src/NoteTrack.cpp.orig	Mon Oct 19 01:25:14 2009
++++ src/NoteTrack.cpp	Mon Oct 19 01:25:36 2009
+@@ -23,7 +23,7 @@
+ 
+ #if defined(USE_MIDI)
+ 
+-#include "allegro.h"
++#include "../lib-src/portsmf/allegro.h"
+ /* REQUIRES PORTMIDI */
+ //#include "portmidi.h"
+ //#include "porttime.h"

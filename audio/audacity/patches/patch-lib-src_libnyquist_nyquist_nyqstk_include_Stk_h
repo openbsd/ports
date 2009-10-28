@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib-src_libnyquist_nyquist_nyqstk_include_Stk_h,v 1.1 2009/10/28 18:40:13 jakemsr Exp $
+--- lib-src/libnyquist/nyquist/nyqstk/include/Stk.h.orig	Sat Oct 17 15:24:11 2009
++++ lib-src/libnyquist/nyquist/nyqstk/include/Stk.h	Sat Oct 17 15:24:11 2009
+@@ -127,13 +127,13 @@ class Stk (public)
+   static void setRawwavePath(std::string path);
+ 
+   //! Static method which byte-swaps a 16-bit data type.
+-  static void swap16(unsigned char *ptr);
++  static void NYswap16(unsigned char *ptr);
+ 
+   //! Static method which byte-swaps a 32-bit data type.
+-  static void swap32(unsigned char *ptr);
++  static void NYswap32(unsigned char *ptr);
+ 
+   //! Static method which byte-swaps a 64-bit data type.
+-  static void swap64(unsigned char *ptr);
++  static void NYswap64(unsigned char *ptr);
+ 
+   //! Static cross-platform method to sleep for a number of milliseconds.
+   static void sleep(unsigned long milliseconds);

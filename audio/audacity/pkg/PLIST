@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/03/14 03:49:43 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/10/28 18:40:13 jakemsr Exp $
 @bin bin/audacity
 @man man/man1/audacity.1
 share/applications/audacity.desktop
@@ -7,7 +7,10 @@ share/audacity/audacity.xpm
 share/audacity/nyquist/
 share/audacity/nyquist/bug.lsp
 share/audacity/nyquist/dspprims.lsp
+share/audacity/nyquist/envelopes.lsp
+share/audacity/nyquist/equalizer.lsp
 share/audacity/nyquist/evalenv.lsp
+share/audacity/nyquist/fileio.lsp
 share/audacity/nyquist/follow.lsp
 share/audacity/nyquist/init.lsp
 share/audacity/nyquist/misc.lsp
@@ -16,13 +19,16 @@ share/audacity/nyquist/nyqmisc.lsp
 share/audacity/nyquist/nyquist.lsp
 share/audacity/nyquist/printrec.lsp
 share/audacity/nyquist/profile.lsp
+share/audacity/nyquist/sal-parse.lsp
+share/audacity/nyquist/sal.lsp
 share/audacity/nyquist/seq.lsp
 share/audacity/nyquist/seqfnint.lsp
 share/audacity/nyquist/seqmidi.lsp
 share/audacity/nyquist/sndfnint.lsp
+share/audacity/nyquist/stk.lsp
 share/audacity/nyquist/system.lsp
-share/audacity/nyquist/test.lsp
 share/audacity/nyquist/xlinit.lsp
+share/audacity/nyquist/xm.lsp
 share/audacity/plug-ins/
 share/audacity/plug-ins/SilenceMarker.ny
 share/audacity/plug-ins/beat.ny
@@ -92,6 +98,7 @@ share/locale/oc/
 share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/audacity.mo
 share/locale/pl/LC_MESSAGES/audacity.mo
+share/locale/pt/LC_MESSAGES/audacity.mo
 share/locale/pt_BR/LC_MESSAGES/audacity.mo
 share/locale/ro/LC_MESSAGES/audacity.mo
 share/locale/ru/LC_MESSAGES/audacity.mo

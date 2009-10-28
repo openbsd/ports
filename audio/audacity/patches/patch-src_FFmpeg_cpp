@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_FFmpeg_cpp,v 1.2 2009/03/14 03:49:43 jakemsr Exp $
---- src/FFmpeg.cpp.orig	Tue Jan 27 12:50:58 2009
-+++ src/FFmpeg.cpp	Tue Feb 10 03:21:35 2009
-@@ -249,11 +249,13 @@ class FindFFmpegDialog : public wxDialog (public)
+$OpenBSD: patch-src_FFmpeg_cpp,v 1.3 2009/10/28 18:40:13 jakemsr Exp $
+--- src/FFmpeg.cpp.orig	Mon Aug 31 03:45:39 2009
++++ src/FFmpeg.cpp	Sat Oct 17 14:29:54 2009
+@@ -485,11 +485,13 @@ class FindFFmpegDialog : public wxDialog (public)
        }
     }
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_FFmpeg_cpp,v 1.2 2009/03/14 03:49:43 jakemsr Exp $
  
     wxString GetLibPath()
     {
-@@ -275,7 +277,9 @@ class FindFFmpegDialog : public wxDialog (public)
+@@ -511,7 +513,9 @@ class FindFFmpegDialog : public wxDialog (public)
  
  BEGIN_EVENT_TABLE(FindFFmpegDialog, wxDialog)
     EVT_BUTTON(ID_FFMPEG_BROWSE, FindFFmpegDialog::OnBrowse)
@@ -25,38 +25,3 @@ $OpenBSD: patch-src_FFmpeg_cpp,v 1.2 2009/03/14 03:49:43 jakemsr Exp $
  END_EVENT_TABLE()
  
  
-@@ -565,7 +569,7 @@ bool FFmpegLibs::InitLibs(wxString libpath_format, boo
-    INITDYN(avformat,av_init_packet);
-    INITDYN(avformat,av_codec_get_id);
-    INITDYN(avformat,av_codec_get_tag);
--   INITDYN(avformat,avformat_version);
-+   // INITDYN(avformat,avformat_version);
- 
-    INITDYN(codec,avcodec_init);
-    INITDYN(codec,avcodec_find_encoder);
-@@ -611,19 +615,19 @@ bool FFmpegLibs::InitLibs(wxString libpath_format, boo
-    
-    wxLogMessage(wxT("Retrieving library version."));
-    int avcver = this->avcodec_version();
--   int avfver = this->avformat_version();
--   int avuver = this->avutil_version();
-+   int avfver = this->avcodec_version();
-+   int avuver = this->avcodec_version();
-    mAVCodecVersion = wxString::Format(wxT("%d.%d.%d"),avcver >> 16 & 0xFF, avcver >> 8 & 0xFF, avcver & 0xFF);
-    mAVFormatVersion = wxString::Format(wxT("%d.%d.%d"),avfver >> 16 & 0xFF, avfver >> 8 & 0xFF, avfver & 0xFF);
-    mAVUtilVersion = wxString::Format(wxT("%d.%d.%d"),avuver >> 16 & 0xFF, avuver >> 8 & 0xFF, avuver & 0xFF);
- 
-    wxLogMessage(wxT("AVCodec version 0x%06x - %s (built against 0x%06x - %s)"),avcver,mAVCodecVersion.c_str(),LIBAVCODEC_VERSION_INT,wxString::FromUTF8(AV_STRINGIFY(LIBAVCODEC_VERSION)).c_str());
--   wxLogMessage(wxT("AVFormat version 0x%06x - %s (built against 0x%06x - %s)"),avfver,mAVFormatVersion.c_str(),LIBAVFORMAT_VERSION_INT,wxString::FromUTF8(AV_STRINGIFY(LIBAVFORMAT_VERSION)).c_str());
--   wxLogMessage(wxT("AVUtil version 0x%06x - %s (built against 0x%06x - %s)"),avuver,mAVUtilVersion.c_str(),LIBAVUTIL_VERSION_INT,wxString::FromUTF8(AV_STRINGIFY(LIBAVUTIL_VERSION)).c_str());
-+   wxLogMessage(wxT("AVFormat version 0x%06x - %s (built against 0x%06x - %s)"),avfver,mAVFormatVersion.c_str(),LIBAVCODEC_VERSION_INT,wxString::FromUTF8(AV_STRINGIFY(LIBAVCODEC_VERSION)).c_str());
-+   wxLogMessage(wxT("AVUtil version 0x%06x - %s (built against 0x%06x - %s)"),avuver,mAVUtilVersion.c_str(),LIBAVCODEC_VERSION_INT,wxString::FromUTF8(AV_STRINGIFY(LIBAVCODEC_VERSION)).c_str());
- 
-    int avcverdiff = (avcver >> 16 & 0xFF) - int(LIBAVCODEC_VERSION_MAJOR);
--   int avfverdiff = (avfver >> 16 & 0xFF) - int(LIBAVFORMAT_VERSION_MAJOR);
--   int avuverdiff = (avuver >> 16 & 0xFF) - int(LIBAVUTIL_VERSION_MAJOR);
-+   int avfverdiff = (avfver >> 16 & 0xFF) - int(LIBAVCODEC_VERSION_MAJOR);
-+   int avuverdiff = (avuver >> 16 & 0xFF) - int(LIBAVCODEC_VERSION_MAJOR);
-    wxLogMessage(wxT("AVCodec version mismatch is %d"),avcverdiff);
-    wxLogMessage(wxT("AVFormat version mismatch is %d"),avfverdiff);
-    wxLogMessage(wxT("AVUtil version mismatch is %d"),avuverdiff);

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_export_ExportMP3_cpp,v 1.8 2009/03/14 03:49:43 jakemsr Exp $
---- src/export/ExportMP3.cpp.orig	Tue Jan 27 12:50:58 2009
-+++ src/export/ExportMP3.cpp	Mon Mar  9 00:50:23 2009
+$OpenBSD: patch-src_export_ExportMP3_cpp,v 1.9 2009/10/28 18:40:13 jakemsr Exp $
+--- src/export/ExportMP3.cpp.orig	Mon Aug 31 03:45:40 2009
++++ src/export/ExportMP3.cpp	Sat Oct 17 14:29:54 2009
 @@ -575,8 +575,9 @@ class FindDialog : public wxDialog (public)
                 mPathText = S.AddTextBox(wxT(""), mLibPath.GetFullPath(), 0);
              }
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_export_ExportMP3_cpp,v 1.8 2009/03/14 03:49:43 jakemsr Exp $
           }
           S.EndMultiColumn();
  
-@@ -1360,7 +1361,7 @@ wxString MP3Exporter::GetLibraryName()
+@@ -1361,7 +1362,7 @@ wxString MP3Exporter::GetLibraryName()
  
  wxString MP3Exporter::GetLibraryTypeString()
  {

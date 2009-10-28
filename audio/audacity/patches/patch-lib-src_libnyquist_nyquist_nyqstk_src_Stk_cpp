@@ -1,0 +1,30 @@
+$OpenBSD: patch-lib-src_libnyquist_nyquist_nyqstk_src_Stk_cpp,v 1.1 2009/10/28 18:40:13 jakemsr Exp $
+--- lib-src/libnyquist/nyquist/nyqstk/src/Stk.cpp.orig	Sat Oct 17 15:28:37 2009
++++ lib-src/libnyquist/nyquist/nyqstk/src/Stk.cpp	Sat Oct 17 15:29:43 2009
+@@ -46,7 +46,7 @@ void Stk :: setRawwavePath( std::string path )
+     rawwavepath_ += "/";
+ }
+ 
+-void Stk :: swap16(unsigned char *ptr)
++void Stk :: NYswap16(unsigned char *ptr)
+ {
+   register unsigned char val;
+ 
+@@ -56,7 +56,7 @@ void Stk :: swap16(unsigned char *ptr)
+   *(ptr+1) = val;
+ }
+ 
+-void Stk :: swap32(unsigned char *ptr)
++void Stk :: NYswap32(unsigned char *ptr)
+ {
+   register unsigned char val;
+ 
+@@ -72,7 +72,7 @@ void Stk :: swap32(unsigned char *ptr)
+   *(ptr+1) = val;
+ }
+ 
+-void Stk :: swap64(unsigned char *ptr)
++void Stk :: NYswap64(unsigned char *ptr)
+ {
+   register unsigned char val;
+ 

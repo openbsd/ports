@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2009/10/05 13:59:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2009/10/28 18:40:13 jakemsr Exp $
 
 COMMENT=	free audio editor
 
-V=		1.3.7
+V=		1.3.9
 DISTNAME=	audacity-minsrc-${V}
-PKGNAME=	audacity-${V}p1
+PKGNAME=	audacity-${V}
 CATEGORIES=	audio
 
 EXTRACT_SUFX=	.tar.bz2
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	c expat glib-2.0 gobject-2.0 gtk-x11-2.0 \
-		m ogg pthread sndfile sndio stdc++
+		jack m ogg pthread sndfile sndio stdc++
 
 BUILD_DEPENDS=	::archivers/zip
 LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_aui,wx_gtk2_html,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_qa,wx_base,wx_gtk2_core,wx_gtk2_richtext:wxWidgets-gtk2->=2.8.6:x11/wxWidgets \
@@ -33,7 +33,8 @@ LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_aui,wx_gtk2_html,wx_gtk2_adv,wx_gt
 		mad.>=2::audio/libmad \
 		portaudio::audio/portaudio-svn \
 		SoundTouch::audio/soundtouch \
-		vamp-hostsdk.>=1::audio/vamp-plugin-sdk
+		vamp-hostsdk.>=1::audio/vamp-plugin-sdk \
+		tag::audio/taglib
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		:shared-mime-info-*:misc/shared-mime-info
 
@@ -51,7 +52,8 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} \
 			${WRKSRC}/lib-src/lib-widget-extra \
 			${WRKSRC}/lib-src/portsmf \
 			${WRKSRC}/lib-src/FileDialog \
-			${WRKSRC}/lib-src/portmixer
+			${WRKSRC}/lib-src/sbsms \
+			${WRKSRC}/lib-src/libnyquist
 
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-unicode \
@@ -73,9 +75,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-redland \
 			--without-slv2 \
 			--without-liblrdf \
-			--with-midi=local \
-			--with-portmixer=local \
-			--with-portaudio=system
+			--with-portmixer=no
 
 MAKE_FLAGS=		CC="${CC}"
 WRKDIST=		${WRKDIR}/audacity-src-${V}
