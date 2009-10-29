@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2009/10/11 18:31:12 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2009/10/29 16:46:09 sthen Exp $
 
 COMMENT =	open source web browser engine
 
 V = 1.1.15.2
 DISTNAME =	webkit-${V}
-# XXX do not remove v0
-PKGNAME =	webkit-${V}v0
+# XXX do not remove v0. pX comes before vX.
+PKGNAME =	webkit-${V}p0v0
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -46,7 +46,8 @@ CONFIGURE_ARGS =	--disable-video
 
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11" \
+		ac_cv_path_FLEX=${LOCALBASE}/bin/gflex
 
 MAKE_FILE =	GNUmakefile
 
@@ -65,6 +66,7 @@ LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0,gailutil::x11/gtk+2,-main \
 		soup-2.4:libsoup->=2.28:devel/libsoup
 
 BUILD_DEPENDS =	::devel/bison \
+		::devel/flex \
 		::devel/gperf
 
 .include <bsd.port.mk>
