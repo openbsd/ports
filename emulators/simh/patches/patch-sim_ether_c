@@ -1,6 +1,6 @@
-$OpenBSD: patch-sim_ether_c,v 1.10 2009/10/29 09:07:22 form Exp $
+$OpenBSD: patch-sim_ether_c,v 1.11 2009/10/29 10:09:14 form Exp $
 --- sim_ether.c.orig	Thu Apr 24 17:11:42 2008
-+++ sim_ether.c	Thu Oct 29 14:53:26 2009
++++ sim_ether.c	Thu Oct 29 15:54:38 2009
 @@ -919,7 +919,7 @@
        /* probably is not ethX and has no description */
        savname = eth_getname_byname(name, temp);
@@ -10,7 +10,7 @@ $OpenBSD: patch-sim_ether_c,v 1.10 2009/10/29 09:07:22 form Exp $
      }
    }
  
-@@ -945,14 +945,14 @@
+@@ -945,14 +945,19 @@
    dev->dptr = dptr;
    dev->dbit = dbit;
  
@@ -21,6 +21,11 @@ $OpenBSD: patch-sim_ether_c,v 1.10 2009/10/29 09:07:22 form Exp $
    {
      int one = 1;
      ioctl(pcap_fileno(dev->handle), BIOCSHDRCMPLT, &one);
++#ifdef __OpenBSD__
++    /* set direction filter */
++    one = BPF_DIRECTION_OUT;
++    ioctl(pcap_fileno(dev->handle), BIOCSDIRFILT, &one);
++#endif /* __OpenBSD__ */
    }
 -#endif /* xBSD */
 +#endif /* __FreeBSD__ || __NetBSD__ || __OpenBSD__ */
