@@ -1,26 +1,31 @@
-# $OpenBSD: Makefile,v 1.17 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.18 2009/10/29 23:10:53 steven Exp $
 
-COMMENT=	frontend to crontab
+COMMENT =	Tk frontend to crontab
 
-DISTNAME=	tkcron-2.12
-CATEGORIES=	misc 
+DISTNAME =	tkcron-2.12
+PKGNAME =	${DISTNAME}p0
+CATEGORIES =	misc 
 
-MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/
-EXTRACT_SUFX=	.tcl.gz
+MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-RUN_DEPENDS=	::x11/tk/8.4
+MASTER_SITES =	ftp://ftp.tcl.tk/pub/tcl/mirror/ftp.procplace.com/alcatel/code/
+EXTRACT_SUFX =	.tcl.gz
+MODULES =	x11/tk
+RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
+NO_BUILD =	Yes
+NO_REGRESS =	Yes
+PKG_ARCH =	*
+WRKDIST =	${WRKDIR}
 
-EXTRACT_CASES=*) gunzip -c ${FULLDISTDIR}/$$archive >tkcron.tcl;;
-WRKDIST=	${WRKDIR}
+pre-configure:
+	@${MODTCL_WISH_ADJ} ${WRKSRC}/${DISTNAME}.tcl
 
-post-extract:
-	@cp ${FILESDIR}/Makefile ${WRKSRC}
-
-NO_REGRESS=	Yes
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME}.tcl ${PREFIX}/bin/tkcron
 
 .include <bsd.port.mk>

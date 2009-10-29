@@ -1,6 +1,2 @@
-Tkcron is a frontend to crontab which allows the user to conveniently 
-add/modify/install/remove cron jobs.
-
-This is crontab version 2.12
-
-	Sander
+Tkcron is a Tk frontend to crontab which allows the user to
+conveniently add/modify/install/remove cron jobs.

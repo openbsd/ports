@@ -1,0 +1,19 @@
+$OpenBSD: patch-tkcron-2_12_tcl,v 1.1 2009/10/29 23:10:53 steven Exp $
+--- tkcron-2.12.tcl.orig	Thu Oct 29 12:43:13 2009
++++ tkcron-2.12.tcl	Thu Oct 29 12:43:46 2009
+@@ -1,4 +1,6 @@
+-#!/usr/local/bin/wish
++#! /bin/sh
++# \
++exec wish "$0" ${1+"$@"}
+
+ # A simple interface to ease the creation of crontab jobs
+ # Cedric BEUST (beust@sophia.inria.fr)
+@@ -281,6 +283,7 @@ proc getEntryFromGadgets {} {
+
+ # Return the crontab string as a list
+ proc parseCrontabFile {str} {
++    set result ""
+     set crontablist [split $str \n]
+     set listlength [llength $crontablist]
+     for {set i 0} {$i < $listlength} {incr i 1} {
