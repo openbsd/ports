@@ -1,7 +1,7 @@
-$OpenBSD: patch-sim_ether_c,v 1.9 2007/07/24 20:45:41 kili Exp $
---- sim_ether.c.orig	Thu May 17 12:08:20 2007
-+++ sim_ether.c	Sun Jul 22 19:37:59 2007
-@@ -919,7 +919,7 @@ t_stat eth_open(ETH_DEV* dev, char* name, DEVICE* dptr
+$OpenBSD: patch-sim_ether_c,v 1.10 2009/10/29 09:07:22 form Exp $
+--- sim_ether.c.orig	Thu Apr 24 17:11:42 2008
++++ sim_ether.c	Thu Oct 29 14:53:26 2009
+@@ -919,7 +919,7 @@
        /* probably is not ethX and has no description */
        savname = eth_getname_byname(name, temp);
        if (savname == 0) /* didn't translate */
@@ -10,3 +10,20 @@ $OpenBSD: patch-sim_ether_c,v 1.9 2007/07/24 20:45:41 kili Exp $
      }
    }
  
+@@ -945,14 +945,14 @@
+   dev->dptr = dptr;
+   dev->dbit = dbit;
+ 
+-#if !defined(HAS_PCAP_SENDPACKET) && defined (xBSD) && !defined (__APPLE__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+   /* Tell the kernel that the header is fully-formed when it gets it.
+      This is required in order to fake the src address. */
+   {
+     int one = 1;
+     ioctl(pcap_fileno(dev->handle), BIOCSHDRCMPLT, &one);
+   }
+-#endif /* xBSD */
++#endif /* __FreeBSD__ || __NetBSD__ || __OpenBSD__ */
+ 
+ #if defined (USE_READER_THREAD)
+   {
