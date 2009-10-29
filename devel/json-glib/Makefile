@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/10 11:05:55 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2009/10/29 18:00:52 jasper Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
 GNOME_PROJECT=		json-glib
-GNOME_VERSION=		0.8.0
+GNOME_VERSION=		0.8.2
 
-SHARED_LIBS +=  json-glib-1.0        1.0      # .800.0
+SHARED_LIBS +=  json-glib-1.0        1.0      # .800.2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://live.gnome.org/JsonGlib
