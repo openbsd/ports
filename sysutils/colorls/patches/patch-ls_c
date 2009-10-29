@@ -1,7 +1,7 @@
-$OpenBSD: patch-ls_c,v 1.10 2009/02/14 16:39:28 naddy Exp $
---- ls.c.orig	Sat Feb 14 17:24:38 2009
-+++ ls.c	Sat Feb 14 17:28:28 2009
-@@ -62,6 +62,10 @@ static char rcsid[] = "$OpenBSD: ls.c,v 1.33 2008/12/3
+$OpenBSD: patch-ls_c,v 1.11 2009/10/29 20:10:39 naddy Exp $
+--- ls.c.orig	Wed Oct 28 00:59:21 2009
++++ ls.c	Thu Oct 29 20:21:13 2009
+@@ -48,6 +48,10 @@
  #include <string.h>
  #include <unistd.h>
  #include <util.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-ls_c,v 1.10 2009/02/14 16:39:28 naddy Exp $
  
  #include "ls.h"
  #include "extern.h"
-@@ -104,6 +108,15 @@ int f_statustime;		/* use time of last mode change */
+@@ -90,6 +94,15 @@ int f_statustime;		/* use time of last mode change */
  int f_stream;			/* stream format */
  int f_type;			/* add type character for non-regular files */
  int f_typedir;			/* add type character for directories */
@@ -28,7 +28,7 @@ $OpenBSD: patch-ls_c,v 1.10 2009/02/14 16:39:28 naddy Exp $
  
  int rval;
  
-@@ -115,6 +128,11 @@ ls_main(int argc, char *argv[])
+@@ -101,6 +114,11 @@ ls_main(int argc, char *argv[])
  	int ch, fts_options, notused;
  	int kflag = 0;
  	char *p;
@@ -40,7 +40,7 @@ $OpenBSD: patch-ls_c,v 1.10 2009/02/14 16:39:28 naddy Exp $
  
  	/* Terminal defaults to -Cq, non-terminal defaults to -1. */
  	if (isatty(STDOUT_FILENO)) {
-@@ -132,7 +150,7 @@ ls_main(int argc, char *argv[])
+@@ -122,7 +140,7 @@ ls_main(int argc, char *argv[])
  		f_listdot = 1;
  
  	fts_options = FTS_PHYSICAL;
@@ -49,7 +49,7 @@ $OpenBSD: patch-ls_c,v 1.10 2009/02/14 16:39:28 naddy Exp $
  		switch (ch) {
  		/*
  		 * The -1, -C and -l, -m, -n and -x options all override each
-@@ -186,6 +204,9 @@ ls_main(int argc, char *argv[])
+@@ -176,6 +194,9 @@ ls_main(int argc, char *argv[])
  		case 'F':
  			f_type = 1;
  			break;
@@ -59,7 +59,7 @@ $OpenBSD: patch-ls_c,v 1.10 2009/02/14 16:39:28 naddy Exp $
  		case 'L':
  			fts_options &= ~FTS_PHYSICAL;
  			fts_options |= FTS_LOGICAL;
-@@ -255,11 +276,46 @@ ls_main(int argc, char *argv[])
+@@ -245,11 +266,46 @@ ls_main(int argc, char *argv[])
  	if (f_grouponly == -1)
  		f_grouponly = 0;
  

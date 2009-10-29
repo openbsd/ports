@@ -1,7 +1,7 @@
-$OpenBSD: patch-util_c,v 1.5 2007/08/11 17:52:11 naddy Exp $
---- util.c.orig	Wed Apr 25 10:16:10 2007
-+++ util.c	Sat Aug 11 19:30:28 2007
-@@ -67,7 +67,11 @@ void
+$OpenBSD: patch-util_c,v 1.6 2009/10/29 20:10:39 naddy Exp $
+--- util.c.orig	Wed Oct 28 00:59:21 2009
++++ util.c	Thu Oct 29 20:21:26 2009
+@@ -59,7 +59,11 @@ void
  usage(void)
  {
  	(void)fprintf(stderr,

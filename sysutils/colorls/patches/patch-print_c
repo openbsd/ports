@@ -1,7 +1,7 @@
-$OpenBSD: patch-print_c,v 1.7 2007/08/11 17:52:11 naddy Exp $
---- print.c.orig	Mon May  7 20:39:28 2007
-+++ print.c	Sat Aug 11 19:28:48 2007
-@@ -56,6 +56,11 @@ static char rcsid[] = "$OpenBSD: print.c,v 1.25 2007/0
+$OpenBSD: patch-print_c,v 1.8 2009/10/29 20:10:39 naddy Exp $
+--- print.c.orig	Wed Oct 28 00:59:21 2009
++++ print.c	Thu Oct 29 20:21:22 2009
+@@ -48,6 +48,11 @@
  #include <tzfile.h>
  #include <unistd.h>
  #include <util.h>
@@ -13,7 +13,7 @@ $OpenBSD: patch-print_c,v 1.7 2007/08/11 17:52:11 naddy Exp $
  
  #include "ls.h"
  #include "extern.h"
-@@ -66,9 +71,39 @@ static void	printsize(size_t, off_t);
+@@ -58,9 +63,39 @@ static void	printsize(size_t, off_t);
  static void	printtime(time_t);
  static int	printtype(u_int);
  static int	compute_columns(DISPLAY *, int *);
@@ -53,7 +53,7 @@ $OpenBSD: patch-print_c,v 1.7 2007/08/11 17:52:11 naddy Exp $
  void
  printscol(DISPLAY *dp)
  {
-@@ -89,6 +124,9 @@ printlong(DISPLAY *dp)
+@@ -81,6 +116,9 @@ printlong(DISPLAY *dp)
  	FTSENT *p;
  	NAMES *np;
  	char buf[20];
@@ -63,7 +63,7 @@ $OpenBSD: patch-print_c,v 1.7 2007/08/11 17:52:11 naddy Exp $
  
  	if (dp->list->fts_level != FTS_ROOTLEVEL && (f_longform || f_size))
  		(void)printf("total %lu\n", howmany(dp->btotal, blocksize));
-@@ -124,7 +162,15 @@ printlong(DISPLAY *dp)
+@@ -116,7 +154,15 @@ printlong(DISPLAY *dp)
  			printtime(sp->st_ctime);
  		else
  			printtime(sp->st_mtime);
@@ -79,7 +79,7 @@ $OpenBSD: patch-print_c,v 1.7 2007/08/11 17:52:11 naddy Exp $
  		if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  			(void)printtype(sp->st_mode);
  		if (S_ISLNK(sp->st_mode))
-@@ -224,6 +270,9 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
+@@ -216,6 +262,9 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
  {
  	struct stat *sp;
  	int chcnt;
@@ -89,7 +89,7 @@ $OpenBSD: patch-print_c,v 1.7 2007/08/11 17:52:11 naddy Exp $
  
  	sp = p->fts_statp;
  	chcnt = 0;
-@@ -232,7 +281,15 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
+@@ -224,7 +273,15 @@ printaname(FTSENT *p, u_long inodefield, u_long sizefi
  	if (f_size)
  		chcnt += printf("%*qd ",
  		    (int)sizefield, howmany(sp->st_blocks, blocksize));
@@ -105,7 +105,7 @@ $OpenBSD: patch-print_c,v 1.7 2007/08/11 17:52:11 naddy Exp $
  	if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  		chcnt += printtype(sp->st_mode);
  	return (chcnt);
-@@ -346,6 +403,151 @@ printtype(u_int mode)
+@@ -338,6 +395,151 @@ printtype(u_int mode)
  	}
  	return (0);
  }
