@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/04 17:55:39 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/29 19:34:12 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -8,11 +8,12 @@ COMMENT-utils=	mapserver utilities
 COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 
-DISTNAME=	mapserver-5.4.0
+V =		5.4.2
+DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
-PKGNAME-utils=	mapserver-utils-5.4.0
-PKGNAME-php=	php5-mapscript-5.4.0
-PKGNAME-perl=	p5-mapscript-5.4.0
+PKGNAME-utils=	mapserver-utils-${V}
+PKGNAME-php=	php5-mapscript-${V}
+PKGNAME-perl=	p5-mapscript-${V}
 
 CATEGORIES=	geo www
 
@@ -70,8 +71,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 UTILS=	shp2img shp2pdf legend shptree shptreevis shptreetst scalebar \
 	sortshp tile4ms msencrypt mapserver-config
 
-PREFIX-main=	/var/www/
-PREFIX-php=	/var/www/
+PREFIX-main=	/var/www
+PREFIX-php=	/var/www
 
 SUBST_VARS+=	PREFIX-php PREFIX-main
 
