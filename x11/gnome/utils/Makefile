@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2009/10/21 15:45:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2009/10/29 19:32:16 ajacoutot Exp $
 
 COMMENT=		GNOME utility programs
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=		canberra,canberra-gtk::audio/libcanberra \
 			gnomecanvas-2::x11/gnome/libgnomecanvas \
 			gtop-2.0.>=7::devel/libgtop2 \
 			panel-applet-2::x11/gnome/panel
+# needed for at least baobab and gnome-system-log
 RUN_DEPENDS=		::x11/gnome/gvfs
 
 MODULES=		devel/gettext \
