@@ -1,12 +1,12 @@
-$OpenBSD: patch-data_exaile_desktop,v 1.1 2009/08/03 13:15:44 giovanni Exp $
---- data/exaile.desktop.orig	Mon Aug  3 09:29:10 2009
-+++ data/exaile.desktop	Mon Aug  3 09:30:42 2009
-@@ -4,7 +4,7 @@ Type=Application
- Name=Exaile Music Player
- GenericName=Music Player
- Comment=Listen to, explore, or manage your audio collection
+$OpenBSD: patch-data_exaile_desktop,v 1.2 2009/10/29 08:33:47 giovanni Exp $
+--- data/exaile.desktop.orig	Mon Aug 24 23:25:03 2009
++++ data/exaile.desktop	Wed Sep  2 10:41:29 2009
+@@ -32,7 +32,7 @@ Comment[pl]=Słuchanie, przeglądanie i modyfikowanie 
+ Comment[sv]=Spela, utforska och hantera din musiksamling
+ Comment[pt_BR]=Escute, gerencie ou edite sua coleção de músicas
+ Comment[ro]=Ascultați, răsfoiți sau editați-vă colecția de muzică
 -Icon=exaile
-+Icon=${TRUEPREFIX}/share/pixmaps/exaile.png
++Icon=/usr/local/share/pixmaps/exaile.png
  Exec=exaile %F
  Terminal=false
- Categories=AudioVideo;Audio;Player;GTK;
+ MimeType=audio/musepack;application/musepack;application/x-ape;audio/ape;audio/x-ape;audio/x-musepack;application/x-musepack;audio/x-mp3;application/x-id3;audio/mpeg;audio/x-mpeg;audio/x-mpeg-3;audio/mpeg3;audio/mp3;audio/x-m4a;audio/mpc;audio/x-mpc;audio/mp;audio/x-mp;application/ogg;application/x-ogg;audio/vorbis;audio/x-vorbis;audio/ogg;audio/x-ogg;audio/x-flac;application/x-flac;audio/flac;

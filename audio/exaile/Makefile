@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/16 00:57:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/10/29 08:33:46 giovanni Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
-VERSION =	0.3.0a3
-DISTNAME =	exaile-${VERSION}
-PKGNAME =	${DISTNAME}p3
+V =		0.3.0.1
+DISTNAME =	exaile-${V}
 
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://www.exaile.org/
 
-MASTER_SITES =	http://www.exaile.org/files/ \
-		http://wickedmachine.net/~jsa/FreeBSD/distfiles/
+MASTER_SITES = http://www.launchpad.net/exaile/0.3.0/$V/+download/
 
-# GPLv3
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
@@ -41,7 +39,6 @@ USE_X11 =	Yes
 USE_GMAKE =	Yes
 NO_REGRESS =	Yes
 
-WRKDIST =	${WRKDIR}/exaile
 CONFIGURE_STYLE =none
 ALL_TARGET =	compile
 SUBST_VARS +=	MODPY_SITEPKG

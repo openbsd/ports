@@ -1,0 +1,9 @@
+--- tools/compilepo.sh.orig	Wed Sep  2 11:13:56 2009
++++ tools/compilepo.sh	Wed Sep  2 11:14:37 2009
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+ 
+-outpath=$(echo "$1" | sed "s/.po/\/LC_MESSAGES/" -)
++outpath=$(echo "$1" | sed "s/.po/\/LC_MESSAGES/")
+ mkdir -p $outpath
+ msgmerge -o - $1 messages.pot | msgfmt -c -o $outpath/exaile.mo -
