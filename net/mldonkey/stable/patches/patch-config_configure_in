@@ -1,20 +1,7 @@
-$OpenBSD: patch-config_configure_in,v 1.10 2009/06/20 22:05:11 avsm Exp $
---- config/configure.in.orig	Sun Sep  9 16:15:08 2007
-+++ config/configure.in	Thu Nov 27 11:24:05 2008
-@@ -279,9 +279,9 @@ if test ! -z "$SUB_VERSION3"; then
-   MLDONKEY_VERSION=$MLDONKEY_VERSION.$SUB_VERSION3
- fi
- 
--REQUIRED_OCAML=3.10.0
--DOWNLOAD_OCAML_MAJOR=3.10
--DOWNLOAD_OCAML=3.10.0
-+REQUIRED_OCAML=3.11.1
-+DOWNLOAD_OCAML_MAJOR=3.11
-+DOWNLOAD_OCAML=3.11.1
- 
- REQUIRED_LABLGTK=1.2.7
- 
-@@ -850,7 +850,7 @@ if test "$GD" != "no"; then
+$OpenBSD: patch-config_configure_in,v 1.11 2009/10/29 08:28:10 giovanni Exp $
+--- config/configure.in.orig	Tue Oct 27 05:39:25 2009
++++ config/configure.in	Tue Oct 27 05:41:56 2009
+@@ -845,7 +845,7 @@ if test "$GD" != "no"; then
        PNG_LDFLAGS=`$PNGLIBCONFIG --ldflags`
        LDFLAGS="$LDFLAGS $PNG_LDFLAGS"
      fi
@@ -23,7 +10,7 @@ $OpenBSD: patch-config_configure_in,v 1.10 2009/06/20 22:05:11 avsm Exp $
  # restore variables
      LIBS=$SAVE_LIBS_PNG
      CFLAGS=$SAVE_CFLAGS_PNG
-@@ -878,7 +878,7 @@ if test "$GD" != "no"; then
+@@ -873,7 +873,7 @@ if test "$GD" != "no"; then
          GD=yes
  	GD_PNG=yes
          AC_MSG_RESULT(yes)
