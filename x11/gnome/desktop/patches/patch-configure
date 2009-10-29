@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.3 2009/10/29 08:35:34 jasper Exp $
+
+Pretend to be the correct version.
+
+--- configure.orig	Wed Oct 28 23:24:27 2009
++++ configure	Wed Oct 28 23:24:35 2009
+@@ -12385,7 +12385,7 @@ fi
+ 
+ GNOME_PLATFORM=2
+ GNOME_MINOR=28
+-GNOME_MICRO=0
++GNOME_MICRO=1
+ GNOME_DISTRIBUTOR="GNOME.Org"
+ GNOME_DATE=`date +"%Y-%m-%d"`
+ 
