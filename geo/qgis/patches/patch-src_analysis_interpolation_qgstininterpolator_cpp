@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_plugins_interpolation_qgstininterpolator_cpp,v 1.1 2009/09/06 11:19:17 landry Exp $
-isnan is in gnu_cxx namespace.
---- src/plugins/interpolation/qgstininterpolator.cpp.orig	Thu Sep  3 22:53:49 2009
-+++ src/plugins/interpolation/qgstininterpolator.cpp	Thu Sep  3 22:54:01 2009
+$OpenBSD: patch-src_analysis_interpolation_qgstininterpolator_cpp,v 1.1 2009/10/29 19:59:38 landry Exp $
+--- src/analysis/interpolation/qgstininterpolator.cpp.orig	Tue Oct 27 20:46:45 2009
++++ src/analysis/interpolation/qgstininterpolator.cpp	Tue Oct 27 20:47:08 2009
 @@ -161,7 +161,7 @@ int QgsTINInterpolator::insertData( QgsFeature* f, boo
        return 3;
      }

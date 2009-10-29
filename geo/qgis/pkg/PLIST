@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/09/06 11:19:17 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/10/29 19:59:38 landry Exp $
 %%SHARED%%
 @bin bin/qgis
 @bin bin/qgis_help
@@ -42,6 +42,7 @@ include/qgis/qgsfiledropedit.h
 include/qgis/qgsfreakoutshader.h
 include/qgis/qgsgenericprojectionselector.h
 include/qgis/qgsgeometry.h
+include/qgis/qgsgeometryanalyzer.h
 include/qgis/qgsgraduatedsymbolrenderer.h
 include/qgis/qgshttptransaction.h
 include/qgis/qgslabel.h
@@ -112,13 +113,13 @@ include/qgis/ui_qgsdetaileditemwidgetbase.h
 include/qgis/ui_qgsgenericprojectionselectorbase.h
 include/qgis/ui_qgsmessageviewer.h
 include/qgis/ui_qgsprojectionselectorbase.h
-lib/qgis/
 @man man/man1/qgis.1
 @man man/man1/qgis_help.1
 share/applications/qgis.desktop
 share/doc/qgis/
 share/doc/qgis/AUTHORS
 share/doc/qgis/CODING
+share/doc/qgis/CONTRIBUTORS
 share/doc/qgis/DONORS
 share/doc/qgis/INSTALL
 share/doc/qgis/SPONSORS
@@ -158,6 +159,7 @@ share/qgis/i18n/qgis_sq_AL.qm
 share/qgis/i18n/qgis_sv.qm
 share/qgis/i18n/qgis_th.qm
 share/qgis/i18n/qgis_tr.qm
+share/qgis/i18n/qgis_uk.qm
 share/qgis/i18n/qgis_vi.qm
 share/qgis/i18n/qgis_xh.qm
 share/qgis/i18n/qgis_zh_CN.qm
@@ -172,6 +174,7 @@ share/qgis/i18n/qt_pt.qm
 share/qgis/i18n/qt_ru.qm
 share/qgis/i18n/qt_sk.qm
 share/qgis/i18n/qt_sv.qm
+share/qgis/i18n/qt_uk.qm
 share/qgis/i18n/qt_zh_CN.qm
 share/qgis/i18n/qt_zh_TW.qm
 share/qgis/images/
@@ -421,6 +424,7 @@ share/qgis/resources/context_help/1033030847_sv_SE
 share/qgis/resources/context_help/151694916_de_DE
 share/qgis/resources/context_help/151694916_en_US
 share/qgis/resources/context_help/151694916_es_ES
+share/qgis/resources/context_help/151694916_pl_PL
 share/qgis/resources/context_help/151694916_sk_SK
 share/qgis/resources/context_help/151694916_sv_SE
 share/qgis/resources/context_help/165149618_de_DE
@@ -481,6 +485,7 @@ share/qgis/resources/context_help/939347163_sv_SE
 share/qgis/resources/context_help/94000531_de_DE
 share/qgis/resources/context_help/94000531_en_US
 share/qgis/resources/context_help/94000531_es_ES
+share/qgis/resources/context_help/94000531_pl_PL
 share/qgis/resources/context_help/94000531_sk_SK
 share/qgis/resources/context_help/985715179_de_DE
 share/qgis/resources/context_help/985715179_en_US
@@ -792,6 +797,7 @@ share/qgis/themes/default/mActionRemove.png
 share/qgis/themes/default/mActionRemoveAllFromOverview.png
 share/qgis/themes/default/mActionRemoveLayer.png
 share/qgis/themes/default/mActionRemoveSelectedFeature.png
+share/qgis/themes/default/mActionReshape.png
 share/qgis/themes/default/mActionSaveAsPDF.png
 share/qgis/themes/default/mActionSaveAsSVG.png
 share/qgis/themes/default/mActionSaveMapAsImage.png
