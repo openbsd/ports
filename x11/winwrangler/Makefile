@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/27 19:17:11 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/10/29 19:37:17 landry Exp $
 
 COMMENT =	desktop daemon to perform advanced window manipulations
 
-V =		0.2.3
+V =		0.2.4
 DISTNAME =	winwrangler-$V
 CATEGORIES =	x11
 
@@ -31,9 +31,10 @@ LIB_DEPENDS =	gtkhotkey::x11/gtkhotkey \
 
 WANTLIB += ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 gio-2.0 glib-2.0
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB += m pcre pixman-1 png pthread-stubs xcb xcb-atom xcb-aux
+WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pcre
+WANTLIB += pixman-1 png pthread-stubs xcb xcb-atom xcb-aux
 WANTLIB += xcb-event z
 
 .include <bsd.port.mk>
