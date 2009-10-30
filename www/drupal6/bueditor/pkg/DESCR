@@ -1,0 +1,8 @@
+A plain textarea editor aiming to facilitate code writing for Drupal.
+
+  * Editor interface and functionality are completely
+    customizable through administration pages.
+  * It supports role based editor interfaces.
+  * It's possible to create image or text buttons.
+  * Buttons can be customized to generate code snippets,
+    html tags, bbcode tags etc.

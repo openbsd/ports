@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/30 16:17:00 sthen Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}bueditor/
+${DRUPAL_MODS}bueditor/LICENSE.txt
+${DRUPAL_MODS}bueditor/README.txt
+${DRUPAL_MODS}bueditor/admin/
+${DRUPAL_MODS}bueditor/admin/admin.css
+${DRUPAL_MODS}bueditor/admin/admin.js
+${DRUPAL_MODS}bueditor/bueditor.admin.inc
+${DRUPAL_MODS}bueditor/bueditor.css
+${DRUPAL_MODS}bueditor/bueditor.info
+${DRUPAL_MODS}bueditor/bueditor.install
+${DRUPAL_MODS}bueditor/bueditor.js
+${DRUPAL_MODS}bueditor/bueditor.module
+${DRUPAL_MODS}bueditor/icons/
+${DRUPAL_MODS}bueditor/icons/README.txt
+${DRUPAL_MODS}bueditor/icons/bold.png
+${DRUPAL_MODS}bueditor/icons/headers.png
+${DRUPAL_MODS}bueditor/icons/help.png
+${DRUPAL_MODS}bueditor/icons/image.png
+${DRUPAL_MODS}bueditor/icons/italic.png
+${DRUPAL_MODS}bueditor/icons/link.png
+${DRUPAL_MODS}bueditor/icons/ol.png
+${DRUPAL_MODS}bueditor/icons/preview.png
+${DRUPAL_MODS}bueditor/icons/separator.png
+${DRUPAL_MODS}bueditor/icons/teaserbr.png
+${DRUPAL_MODS}bueditor/icons/ul.png
+${DRUPAL_MODS}bueditor/library/
+${DRUPAL_MODS}bueditor/library/README.txt
+${DRUPAL_MODS}bueditor/library/default_buttons_functions.js
