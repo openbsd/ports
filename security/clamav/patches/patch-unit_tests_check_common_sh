@@ -1,0 +1,12 @@
+$OpenBSD: patch-unit_tests_check_common_sh,v 1.1 2009/10/30 01:09:34 sthen Exp $
+--- unit_tests/check_common.sh.orig	Thu Oct 29 16:34:54 2009
++++ unit_tests/check_common.sh	Thu Oct 29 16:35:05 2009
+@@ -47,7 +47,7 @@ die()
+ 
+ # Setup test directory to avoid temporary and output file clashes
+ test_start() {
+-    ulimit -t 120; ulimit -d 512000; ulimit -v 512000;
++    ulimit -t 120; ulimit -d 512000;
+     (cd test-$1 2>/dev/null && killclamd || true)
+     rm -rf test-$1
+     mkdir test-$1

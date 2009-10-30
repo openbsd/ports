@@ -1,7 +1,7 @@
-$OpenBSD: patch-libclamav_Makefile_in,v 1.11 2009/06/11 10:50:49 sthen Exp $
---- libclamav/Makefile.in.orig	Wed Jun 10 17:40:16 2009
-+++ libclamav/Makefile.in	Thu Jun 11 11:05:36 2009
-@@ -424,7 +424,7 @@ EXTRA_DIST = $(am__append_4) regex/engine.c libclamav.
+$OpenBSD: patch-libclamav_Makefile_in,v 1.12 2009/10/30 01:09:34 sthen Exp $
+--- libclamav/Makefile.in.orig	Wed Oct 28 15:54:51 2009
++++ libclamav/Makefile.in	Thu Oct 29 16:33:55 2009
+@@ -470,7 +470,7 @@ EXTRA_DIST = $(am__append_4) regex/engine.c libclamav.
  	jsparse/generated/operators.h jsparse/generated/keywords.h \
  	jsparse/future_reserved_words.list jsparse/keywords.list \
  	jsparse/special_keywords.list jsparse/operators.gperf
@@ -10,7 +10,7 @@ $OpenBSD: patch-libclamav_Makefile_in,v 1.11 2009/06/11 10:50:49 sthen Exp $
  @ENABLE_UNRAR_TRUE@	@LIBCLAMAV_VERSION@ -no-undefined \
  @ENABLE_UNRAR_TRUE@	$(am__append_2)
  @ENABLE_UNRAR_TRUE@libclamunrar_la_SOURCES = \
-@@ -448,7 +448,7 @@ EXTRA_DIST = $(am__append_4) regex/engine.c libclamav.
+@@ -494,7 +494,7 @@ EXTRA_DIST = $(am__append_4) regex/engine.c libclamav.
  
  @ENABLE_UNRAR_TRUE@libclamunrar_iface_la_LIBADD = libclamunrar.la
  @ENABLE_UNRAR_TRUE@libclamunrar_iface_la_LDFLAGS = -module @TH_SAFE@ \
@@ -19,7 +19,7 @@ $OpenBSD: patch-libclamav_Makefile_in,v 1.11 2009/06/11 10:50:49 sthen Exp $
  @ENABLE_UNRAR_TRUE@	-no-undefined $(am__append_5)
  @ENABLE_UNRAR_TRUE@libclamunrar_iface_la_SOURCES = \
  @ENABLE_UNRAR_TRUE@	../libclamunrar_iface/unrar_iface.c \
-@@ -497,7 +497,7 @@ libclamav_internal_utils_nothreads_la_CFLAGS = -DCL_NO
+@@ -543,7 +543,7 @@ libclamav_internal_utils_nothreads_la_CFLAGS = -DCL_NO
  libclamav_la_LIBADD = @LIBLTDL@ $(IFACELIBADD) lzma/liblzma.la libclamav_internal_utils.la @LIBCLAMAV_LIBS@ @THREAD_LIBS@
  libclamav_la_DEPENDENCIES = @LTDLDEPS@ $(IFACEDEP) libclamav_internal_utils.la
  libclamav_la_CFLAGS = -DSEARCH_LIBDIR=\"$(libdir)\"
@@ -28,3 +28,13 @@ $OpenBSD: patch-libclamav_Makefile_in,v 1.11 2009/06/11 10:50:49 sthen Exp $
  	-no-undefined $(am__append_6)
  include_HEADERS = clamav.h
  libclamav_la_SOURCES = clamav.h matcher-ac.c matcher-ac.h matcher-bm.c \
+@@ -1830,6 +1830,9 @@ version.h: version.h.tmp
+ 	fi
+ 
+ version.h.tmp:
++	touch version.h.tmp
++
++NOT-version.h.tmp:
+ 	@test -f version.h || touch version.h;\
+ 	rm -f $@;\
+ 	REVISION="$$(LANG=C cd "$(top_srcdir)"; git describe --always 2>/dev/null)";\

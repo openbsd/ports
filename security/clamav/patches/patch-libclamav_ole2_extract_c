@@ -1,7 +1,7 @@
-$OpenBSD: patch-libclamav_ole2_extract_c,v 1.7 2008/07/08 22:38:12 sthen Exp $
---- libclamav/ole2_extract.c.orig	Tue Jun  3 11:47:19 2008
-+++ libclamav/ole2_extract.c	Thu Jun 12 17:32:13 2008
-@@ -142,7 +142,7 @@ typedef struct property_tag
+$OpenBSD: patch-libclamav_ole2_extract_c,v 1.8 2009/10/30 01:09:34 sthen Exp $
+--- libclamav/ole2_extract.c.orig	Wed Oct 28 15:34:13 2009
++++ libclamav/ole2_extract.c	Wed Oct 28 20:19:30 2009
+@@ -140,7 +140,7 @@ typedef struct property_tag
  static unsigned char magic_id[] = { 0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1};
  
  
