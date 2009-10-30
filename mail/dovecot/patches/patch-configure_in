@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.20 2009/09/15 22:56:16 sthen Exp $
+$OpenBSD: patch-configure_in,v 1.21 2009/10/30 11:43:48 sthen Exp $
 --- configure.in.orig	Sun Sep 13 22:12:28 2009
-+++ configure.in	Mon Sep 14 17:49:22 2009
-@@ -1812,74 +1813,16 @@ fi
++++ configure.in	Thu Oct 29 23:10:27 2009
+@@ -1812,74 +1812,16 @@ fi
  
  have_gssapi=no
  if test $want_gssapi != no; then
