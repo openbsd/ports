@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/10/27 11:15:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2009/10/30 16:18:43 sthen Exp $
 
 SUBDIR += FCKeditor
 SUBDIR += admin-menu
@@ -7,6 +7,7 @@ SUBDIR += advanced_user
 SUBDIR += alternate_login
 SUBDIR += auto_nodetitle
 SUBDIR += backup_migrate
+SUBDIR += bueditor
 SUBDIR += captcha
 SUBDIR += cck
 SUBDIR += compact_forms
@@ -38,6 +39,7 @@ SUBDIR += publishcontent
 SUBDIR += scheduler
 SUBDIR += schema
 SUBDIR += securelogin
+SUBDIR += theme-acquia-marina
 SUBDIR += theme-newsflash
 SUBDIR += themesettingsapi
 SUBDIR += token
