@@ -1,7 +1,7 @@
-$OpenBSD: patch-helpers_negotiate_auth_squid_kerb_auth_Makefile_in,v 1.2 2008/07/16 21:18:28 brad Exp $
---- helpers/negotiate_auth/squid_kerb_auth/Makefile.in.orig	Sun Nov 11 20:14:15 2007
-+++ helpers/negotiate_auth/squid_kerb_auth/Makefile.in	Sun Jun 29 03:10:24 2008
-@@ -268,12 +268,12 @@ LDADD = $(KERBLIBS)
+$OpenBSD: patch-helpers_negotiate_auth_squid_kerb_auth_Makefile_in,v 1.3 2009/10/30 00:56:57 sthen Exp $
+--- helpers/negotiate_auth/squid_kerb_auth/Makefile.in.orig	Wed Sep 16 18:36:24 2009
++++ helpers/negotiate_auth/squid_kerb_auth/Makefile.in	Wed Oct 28 19:16:46 2009
+@@ -225,12 +225,12 @@ LDADD = $(KERBLIBS)
  #-L$(top_builddir)/lib -lmiscutil $(XTRA_LIBS)
  
  # HEIMDAL

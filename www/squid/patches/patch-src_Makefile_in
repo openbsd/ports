@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.15 2008/07/16 21:18:28 brad Exp $
---- src/Makefile.in.orig	Wed Jan  2 20:16:40 2008
-+++ src/Makefile.in	Sun Jun 29 03:10:24 2008
-@@ -241,7 +241,7 @@ CPP = @CPP@
+$OpenBSD: patch-src_Makefile_in,v 1.16 2009/10/30 00:56:57 sthen Exp $
+--- src/Makefile.in.orig	Thu Apr 30 21:24:42 2009
++++ src/Makefile.in	Thu Oct 29 18:44:21 2009
+@@ -238,7 +238,7 @@ CPP = @CPP@
  CPPFLAGS = @CPPFLAGS@
  CRYPTLIB = @CRYPTLIB@
  CYGPATH_W = @CYGPATH_W@
@@ -10,16 +10,16 @@ $OpenBSD: patch-src_Makefile_in,v 1.15 2008/07/16 21:18:28 brad Exp $
  DEPDIR = @DEPDIR@
  DIGEST_AUTH_HELPERS = @DIGEST_AUTH_HELPERS@
  ECHO_C = @ECHO_C@
-@@ -397,7 +397,7 @@ program_transform_name = @program_transform_name@
- psdir = @psdir@
+@@ -354,7 +354,7 @@ psdir = @psdir@
  sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
+ srcdir = @srcdir@
 -sysconfdir = @sysconfdir@
 +sysconfdir = @sysconfdir@/squid
  target_alias = @target_alias@
- @USE_DNSSERVER_FALSE@DNSSOURCE = dns_internal.c
- @USE_DNSSERVER_TRUE@DNSSOURCE = dns.c
-@@ -650,8 +650,8 @@ EXTRA_DIST = \
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+@@ -610,8 +610,8 @@ EXTRA_DIST = \
  DEFAULT_HTTP_PORT = @CACHE_HTTP_PORT@
  DEFAULT_ICP_PORT = @CACHE_ICP_PORT@
  DEFAULT_PREFIX = $(prefix)
@@ -30,12 +30,12 @@ $OpenBSD: patch-src_Makefile_in,v 1.15 2008/07/16 21:18:28 brad Exp $
  DEFAULT_DNSSERVER = $(libexecdir)/`echo dnsserver | sed '$(transform);s/$$/$(EXEEXT)/'`
  DEFAULT_LOG_PREFIX = $(localstatedir)/logs
  DEFAULT_CACHE_LOG = $(DEFAULT_LOG_PREFIX)/cache.log
-@@ -926,37 +926,37 @@ distclean-compile:
- uninstall-info-am:
+@@ -885,37 +885,37 @@ distclean-compile:
+ @am__fastdepCC_FALSE@	$(COMPILE) -c `$(CYGPATH_W) '$<'`
  install-dataDATA: $(data_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
-+	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(prefix)/share/examples/squid"
+-	test -z "$(datadir)" || $(MKDIR_P) "$(DESTDIR)$(datadir)"
++	test -z "$(datadir)" || $(MKDIR_P) "$(DESTDIR)$(prefix)/share/examples/squid"
  	@list='$(data_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f=$(am__strip_dir) \
@@ -56,8 +56,8 @@ $OpenBSD: patch-src_Makefile_in,v 1.15 2008/07/16 21:18:28 brad Exp $
  	done
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
-+	test -z "$(DESTDIR)$(prefix)/share/examples/squid" || $(mkdir_p) "$(DESTDIR)$(prefix)/share/examples/squid"
+-	test -z "$(sysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
++	test -z "$(sysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(prefix)/share/examples/squid"
  	@list='$(sysconf_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f=$(am__strip_dir) \
@@ -78,16 +78,16 @@ $OpenBSD: patch-src_Makefile_in,v 1.15 2008/07/16 21:18:28 brad Exp $
  	done
  
  # This directory's subdirectories are mostly independent; you can cd
-@@ -1139,7 +1139,7 @@ check: $(BUILT_SOURCES)
+@@ -1097,7 +1097,7 @@ check: $(BUILT_SOURCES)
  all-am: Makefile $(PROGRAMS) $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:
 -	for dir in "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(datadir)" "$(DESTDIR)$(sysconfdir)"; do \
-+	for dir in "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(DESTDIR)$(prefix)/share/examples/squid"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
++	for dir in "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(prefix)/share/examples/squid"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: $(BUILT_SOURCES)
-@@ -1278,7 +1278,7 @@ cf.data: cf.data.pre Makefile
+@@ -1244,7 +1244,7 @@ cf.data: cf.data.pre Makefile
  	sed "\
  	s%@DEFAULT_HTTP_PORT@%$(DEFAULT_HTTP_PORT)%g;\
  	s%@DEFAULT_ICP_PORT@%$(DEFAULT_ICP_PORT)%g;\
