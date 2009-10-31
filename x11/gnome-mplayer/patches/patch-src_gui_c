@@ -1,34 +1,109 @@
-$OpenBSD: patch-src_gui_c,v 1.3 2009/04/14 09:38:39 ajacoutot Exp $
---- src/gui.c.orig	Sun Mar  8 01:29:15 2009
-+++ src/gui.c	Mon Apr 13 17:41:59 2009
-@@ -3550,7 +3550,7 @@ void menuitem_details_callback(GtkMenuItem * menuitem,
-             gtk_misc_set_alignment(GTK_MISC(label), 0.0, 0.0);
-             gtk_misc_set_padding(GTK_MISC(label), 12, 0);
-             gtk_table_attach_defaults(GTK_TABLE(details_table), label, 0, 1, i, i + 1);
--            buf = g_strdup_printf("%i Kb/s", (gint) (g_strtod(idle->video_bitrate, NULL) / 1024));
-+            buf = g_strdup_printf("%i Kb/s", (gint) (g_strtod(idle->video_bitrate, NULL) / 1000));
-             label = gtk_label_new(buf);
-             g_free(buf);
-             gtk_misc_set_alignment(GTK_MISC(label), 0.0, 0.0);
-@@ -3621,7 +3621,7 @@ void menuitem_details_callback(GtkMenuItem * menuitem,
-             gtk_table_attach_defaults(GTK_TABLE(details_table), label, 0, 1, i, i + 1);
-             if (idle != NULL) {
-                 buf =
--                    g_strdup_printf("%i Kb/s", (gint) (g_strtod(idle->audio_bitrate, NULL) / 1024));
-+                    g_strdup_printf("%i Kb/s", (gint) (g_strtod(idle->audio_bitrate, NULL) / 1000));
-                 label = gtk_label_new(buf);
-                 g_free(buf);
-                 gtk_misc_set_alignment(GTK_MISC(label), 0.0, 0.0);
-@@ -3636,7 +3636,7 @@ void menuitem_details_callback(GtkMenuItem * menuitem,
-             if (idle != NULL) {
-                 buf =
-                     g_strdup_printf("%i Kb/s",
--                                    (gint) (g_strtod(idle->audio_samplerate, NULL) / 1024));
-+                                    (gint) (g_strtod(idle->audio_samplerate, NULL) / 1000));
-                 label = gtk_label_new(buf);
-                 g_free(buf);
-                 gtk_misc_set_alignment(GTK_MISC(label), 0.0, 0.0);
-@@ -4104,32 +4104,41 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+$OpenBSD: patch-src_gui_c,v 1.4 2009/10/31 12:26:25 edd Exp $
+
+fixes from upstream svn:
+add disable_animation config option
+fix hidden cursor over menus
+
+add sun, sndio and rtunes to available audio backends
+
+--- src/gui.c.orig	Thu Sep 17 18:05:35 2009
++++ src/gui.c	Sun Oct 18 17:51:31 2009
+@@ -94,7 +94,9 @@ static void drawing_area_realized(GtkWidget * widget, 
+      * onwards, requesting the native window in a thread causes a BadWindowID,
+      * so we need to request it now. We could call gdk_window_ensure_native(),
+      * but that would mean we require GTK+ 2.18, so instead we call this */
++#ifdef GTK2_14_ENABLED
+     GDK_WINDOW_XID(gtk_widget_get_window(GTK_WIDGET(widget)));
++#endif
+ }
+ 
+ gint get_player_window()
+@@ -435,7 +437,7 @@ gboolean set_progress_value(void *data)
+         }
+         if (idle->cachepercent < 1.0 && state == PAUSED) {
+             text =
+-                g_strdup_printf(_("Paused | %2i%% \342\226\274"),
++                g_strdup_printf(_("Paused | %2i%%"),
+                                 (gint) (idle->cachepercent * 100));
+             gmtk_media_tracker_set_text(tracker, text);
+             g_free(text);
+@@ -561,7 +563,7 @@ gboolean set_progress_time(void *data)
+ 
+     if (idle->cachepercent > 0 && idle->cachepercent < 1.0 && !(playlist) && !forcecache
+         && !idle->streaming) {
+-        g_snprintf(idle->progress_text, 128, "%s | %2i%% \342\226\274", text,
++        g_snprintf(idle->progress_text, 128, "%s | %2i%%", text,
+                    (int) (idle->cachepercent * 100));
+     } else {
+         g_snprintf(idle->progress_text, 128, "%s", text);
+@@ -2427,23 +2429,33 @@ gboolean make_panel_and_mouse_invisible(gpointer data)
+ 
+     g_get_current_time(&currenttime);
+     g_time_val_add(&currenttime, -auto_hide_timeout * G_USEC_PER_SEC);
+-    if (last_movement_time > 0 && currenttime.tv_sec > last_movement_time) {
+-        cursor_source = gdk_pixmap_new(NULL, 1, 1, 1);
+-        cursor =
+-            gdk_cursor_new_from_pixmap(cursor_source, cursor_source, &cursor_color,
+-                                       &cursor_color, 0, 0);
+-        gdk_pixmap_unref(cursor_source);
+-        gdk_window_set_cursor(window->window, cursor);
+-        gdk_cursor_unref(cursor);
++	if (GTK_WIDGET_VISIBLE(menu_file)
++		|| GTK_WIDGET_VISIBLE(menu_edit)
++		|| GTK_WIDGET_VISIBLE(menu_view)
++		|| GTK_WIDGET_VISIBLE(menu_help)) {
++			
++		gdk_window_set_cursor(window->window, NULL);
++			
++	} else {
++		
++		if (last_movement_time > 0 && currenttime.tv_sec > last_movement_time) {
++		    cursor_source = gdk_pixmap_new(NULL, 1, 1, 1);
++		    cursor =
++		        gdk_cursor_new_from_pixmap(cursor_source, cursor_source, &cursor_color,
++		                                   &cursor_color, 0, 0);
++		    gdk_pixmap_unref(cursor_source);
++		    gdk_window_set_cursor(window->window, cursor);
++		    gdk_cursor_unref(cursor);
+ 
+-        if (use_pulse_flat_volume && !softvol) {
+-            if (idledata->mplayer_volume != idledata->volume) {
+-                idledata->volume = idledata->mplayer_volume;
+-                set_volume(idledata);
+-            }
+-        }
+-    }
+-
++		    if (use_pulse_flat_volume && !softvol) {
++		        if (idledata->mplayer_volume != idledata->volume) {
++		            idledata->volume = idledata->mplayer_volume;
++		            set_volume(idledata);
++		        }
++		    }
++		}
++	} 
++	
+     return FALSE;
+ }
+ 
+@@ -3671,6 +3683,8 @@ void config_apply(GtkWidget * widget, void *data)
+         !(gboolean) gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(config_embeddedfonts));
+     disable_pause_on_click =
+         !(gboolean) gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(config_pause_on_click));
++    disable_animation =
++	(gboolean) gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(config_disable_animation));
+     oldosd = osdlevel;
+     osdlevel = (gint) gtk_range_get_value(GTK_RANGE(config_osdlevel));
+     pplevel = (gint) gtk_range_get_value(GTK_RANGE(config_pplevel));
+@@ -3774,6 +3788,7 @@ void config_apply(GtkWidget * widget, void *data)
+     gm_pref_store_set_boolean(gm_store, DISABLEDEINTERLACE, disable_deinterlace);
+     gm_pref_store_set_boolean(gm_store, DISABLEFRAMEDROP, disable_framedrop);
+     gm_pref_store_set_boolean(gm_store, DISABLEPAUSEONCLICK, disable_pause_on_click);
++    gm_pref_store_set_boolean(gm_store, DISABLEANIMATION, disable_animation);
+     gm_pref_store_set_boolean(gm_store, SHOWPLAYLIST, playlist_visible);
+     gm_pref_store_set_boolean(gm_store, SHOWDETAILS, details_visible);
+     gm_pref_store_set_boolean(gm_store, USE_MEDIAKEYS, use_mediakeys);
+@@ -4697,32 +4712,41 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
      tooltip = gtk_tooltips_new();
      gtk_tooltips_set_tip(tooltip, config_ao,
                           _
@@ -77,3 +152,16 @@ $OpenBSD: patch-src_gui_c,v 1.3 2009/04/14 09:38:39 ajacoutot Exp $
              }
          }
      }
+@@ -5308,6 +5332,12 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+     config_pause_on_click = gtk_check_button_new_with_label(_("Pause playback on mouse click"));
+     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(config_pause_on_click), !disable_pause_on_click);
+     gtk_table_attach(GTK_TABLE(conf_table), config_pause_on_click, 0, 2, i, i + 1, GTK_FILL,
++                     GTK_SHRINK, 0, 0);
++    i++;
++
++    config_disable_animation = gtk_check_button_new_with_label(_("Disable Fullscreen Control Bar Animation"));
++    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(config_disable_animation), disable_animation);
++    gtk_table_attach(GTK_TABLE(conf_table), config_disable_animation, 0, 2, i, i + 1, GTK_FILL,
+                      GTK_SHRINK, 0, 0);
+     i++;
+ 

@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_thread_c,v 1.1 2009/10/31 12:26:25 edd Exp $
+
+volume and mute fixes from upstream svn
+
+--- src/thread.c.orig	Wed Oct 14 03:38:40 2009
++++ src/thread.c	Wed Oct 14 03:45:28 2009
+@@ -513,7 +513,12 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+                 idledata->mplayer_volume = volume;
+                 idledata->mute = (volume > 0);
+             }
+-        }
++        } else {
++			if (softvol) {
++		idledata->mplayer_volume = volume;
++		idledata->mute = (volume > 0);
++			}
++		}
+     }
+ 
+     if (strstr(mplayer_output->str, "ANS_chapters") != 0) {
+@@ -844,6 +849,7 @@ gboolean thread_query(gpointer data)
+         } else {
+ 
+             //send_command("get_time_pos\n");
++			send_command("get_time_length\n", TRUE);
+             send_command("get_property stream_pos\n", TRUE);
+             if (threaddata->streaming)
+                 send_command("get_property metadata\n", TRUE);

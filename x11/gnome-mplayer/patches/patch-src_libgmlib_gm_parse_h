@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libgmlib_gm_parse_h,v 1.1 2009/10/31 12:26:25 edd Exp $
+
+fix from upstream svn: missing include
+
+--- src/libgmlib/gm_parse.h.orig	Sun Oct 11 05:20:54 2009
++++ src/libgmlib/gm_parse.h	Sun Oct 11 05:23:57 2009
+@@ -29,6 +29,7 @@
+ #else
+ #include <stdio.h>
+ #endif
++#include <string.h>
+ 
+ #ifdef __cplusplus
+ extern "C" {

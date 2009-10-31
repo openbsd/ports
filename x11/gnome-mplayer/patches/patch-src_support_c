@@ -1,28 +1,166 @@
-$OpenBSD: patch-src_support_c,v 1.1 2009/04/14 09:38:39 ajacoutot Exp $
---- src/support.c.orig	Mon Apr 13 18:07:53 2009
-+++ src/support.c	Mon Apr 13 18:12:50 2009
-@@ -2061,6 +2061,24 @@ gint read_preference_int(gchar * key)
-     return value;
- }
+$OpenBSD: patch-src_support_c,v 1.2 2009/10/31 12:26:25 edd Exp $
+
+fixes from upstream svn:
+
+problem with playlist detection on glib < 2.22
+fix mute flag
+
+--- src/support.c.orig	Thu Sep 17 09:56:06 2009
++++ src/support.c	Fri Oct 16 03:29:51 2009
+@@ -39,6 +39,7 @@ gint detect_playlist(gchar * uri)
+     gchar *coltitle;
+     gint count;
+     gchar *path = NULL;
++    gchar *lower;
+ #ifdef GIO_ENABLED
+     GFile *file;
+     GFileInputStream *input;
+@@ -75,40 +76,37 @@ gint detect_playlist(gchar * uri)
+                 memset(buffer, 0, sizeof(buffer));
+                 g_input_stream_read((GInputStream *) input, buffer, sizeof(buffer), NULL, NULL);
+                 output = g_strsplit(buffer, "\n", 0);
+-                if (output[0] != NULL) {
+-                    g_strchomp(output[0]);
+-                    g_strchug(output[0]);
+-                }
++		lower = g_ascii_strdown(buffer, -1);
+                 // printf("buffer=%s\n",buffer);
+-                if (strstr(g_strdown(buffer), "[playlist]") != 0) {
++		if (strstr(lower, "[playlist]") != 0) {
+                     playlist = 1;
+                 }
  
-+gint read_preference_int_with_default(gchar * key, gint default_value)
-+{
-+    gint value = 0;
-+#ifdef HAVE_GCONF
-+    gchar *full_key = NULL;
-+
-+    full_key = g_strdup_printf("/apps/gnome-mplayer/preferences/%s", key);
-+    value = gconf_client_get_int(gconf, full_key, NULL);
-+    g_free(full_key);
-+#else
-+	if (g_key_file_has_key(config,"gnome-mplayer",key,NULL))
-+		value = g_key_file_get_integer(config, "gnome-mplayer", key, NULL);
-+	else
-+		value = default_value;
-+#endif
-+    return value;
-+}
-+
- gfloat read_preference_float(gchar * key)
- {
-     gfloat value = 0;
+-                if (strstr(g_strdown(buffer), "[reference]") != 0) {
++		if (strstr(lower, "[reference]") != 0) {
+                     playlist = 1;
+                 }
+ 
+-                if (strstr(g_strdown(buffer), "<asx") != 0) {
++		if (strstr(lower, "<asx") != 0) {
+                     playlist = 1;
+                 }
+ 
+-                if (strstr(g_strdown(buffer), "<smil>") != 0) {
++		if (strstr(lower, "<smil>") != 0) {
+                     playlist = 1;
+                 }
+ 
+-                if (strstr(g_strdown(buffer), "#extm3u") != 0) {
++		if (strstr(lower, "#extm3u") != 0) {
+                     playlist = 1;
+                 }
+ 
+-                if (strstr(g_strdown(buffer), "http://") != 0) {
++		if (strstr(lower, "http://") != 0) {
+                     playlist = 1;
+                 }
+ 
+-                if (strstr(g_strdown(buffer), "rtsp://") != 0) {
++		if (strstr(lower, "rtsp://") != 0) {
+                     playlist = 1;
+                 }
+ 
+-                if (strstr(g_strdown(buffer), "pnm://") != 0) {
++		if (strstr(lower, "pnm://") != 0) {
+                     playlist = 1;
+                 }
+ 
+@@ -129,6 +127,7 @@ gint detect_playlist(gchar * uri)
+                     }
+                     g_free(newuri);
+                 }
++		g_free(lower);
+                 g_strfreev(output);
+ 
+                 g_input_stream_close((GInputStream *) input, NULL, NULL);
+@@ -150,16 +149,12 @@ gint detect_playlist(gchar * uri)
+                     memset(buffer, 0, sizeof(buffer));
+                     size = fread(buffer, 1, sizeof(buffer) - 1, fp);
+                     output = g_strsplit(buffer, "\n", 0);
+-                    if (output[0] != NULL) {
+-                        g_strchomp(output[0]);
+-                        g_strchug(output[0]);
+-                    }
+                     //printf("buffer=%s\n",buffer);
+-                    if (strstr(g_strdown(buffer), "[playlist]") != 0) {
++		    if (strstr(lower, "[playlist]") != 0) {
+                         playlist = 1;
+                     }
+ 
+-                    if (strstr(g_strdown(buffer), "[reference]") != 0) {
++		    if (strstr(lower, "[reference]") != 0) {
+                         playlist = 1;
+                     }
+ 
+@@ -167,19 +162,19 @@ gint detect_playlist(gchar * uri)
+                         playlist = 1;
+                     }
+ 
+-                    if (strstr(g_strdown(buffer), "<asx") != 0) {
++		    if (strstr(lower, "<asx") != 0) {
+                         playlist = 1;
+                     }
+ 
+-                    if (strstr(g_strdown(buffer), "http://") != 0) {
++		    if (strstr(lower, "http://") != 0) {
+                         playlist = 1;
+                     }
+ 
+-                    if (strstr(g_strdown(buffer), "rtsp://") != 0) {
++		    if (strstr(lower, "rtsp://") != 0) {
+                         playlist = 1;
+                     }
+ 
+-                    if (strstr(g_strdown(buffer), "pnm://") != 0) {
++		    if (strstr(lower, "pnm://") != 0) {
+                         playlist = 1;
+                     }
+                     if (output[0] != NULL && g_file_test(output[0], G_FILE_TEST_EXISTS)) {
+@@ -193,7 +188,7 @@ gint detect_playlist(gchar * uri)
+                         }
+                         g_free(file);
+                     }
+-
++		    g_free(lower);
+                     g_strfreev(output);
+                 }
+                 fclose(fp);
+@@ -1431,7 +1426,7 @@ MetaData *get_metadata(gchar * uri)
+             if (strstr(lower, "=title") != NULL || strstr(lower, "=name") != NULL) {
+                 localtitle = strstr(output[ac + 1], "=") + 1;
+                 if (localtitle)
+-                    title = g_strstrip(metadata_to_utf8(localtitle));
++                    title = metadata_to_utf8(localtitle);
+                 else
+                     title = NULL;
+ 
+@@ -2253,9 +2248,13 @@ gdouble get_alsa_volume(gboolean show_details)
+             if (playback == 1) {
+                 vol = (gdouble) ((get_vol - pmin) * f_multi);
+             } else {
+-                idledata->mute = TRUE;
+                 vol = 0;
+             }
++			if (vol == 0) {
++				idledata->mute = TRUE;
++			} else {
++				idledata->mute = FALSE;
++			}
+             if (verbose && show_details) {
+                 printf("%s Playback is %i\n", mixer, playback);
+                 printf("%s Range is %li to %li \n", mixer, pmin, pmax);
+@@ -2292,9 +2291,13 @@ gdouble get_alsa_volume(gboolean show_details)
+             if (playback == 1) {
+                 vol = (gdouble) ((get_vol - pmin) * f_multi);
+             } else {
+-                idledata->mute = TRUE;
+                 vol = 0;
+             }
++			if (vol == 0) {
++				idledata->mute = TRUE;
++			} else {
++				idledata->mute = FALSE;
++			}
+             if (verbose && show_details) {
+                 printf("Master Playback is %i\n", playback);
+                 printf("Master Range is %li to %li \n", pmin, pmax);

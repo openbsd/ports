@@ -1,0 +1,133 @@
+$OpenBSD: patch-configure,v 1.1 2009/10/31 12:26:25 edd Exp $
+
+don't check for libgpod 0.6.x: it's not in our ports tree
+
+--- configure.orig	Fri Oct 16 03:37:57 2009
++++ configure	Fri Oct 16 03:39:08 2009
+@@ -653,8 +653,6 @@ GPOD_CFLAGS
+ GPOD07_LIBS
+ GPOD07_CFLAGS
+ GPOD_DEFINES
+-GPOD06_LIBS
+-GPOD06_CFLAGS
+ NOTIFY_DEFINES
+ NOTIFY_LIBS
+ NOTIFY_CFLAGS
+@@ -847,8 +845,6 @@ ALSA_CFLAGS
+ ALSA_LIBS
+ NOTIFY_CFLAGS
+ NOTIFY_LIBS
+-GPOD06_CFLAGS
+-GPOD06_LIBS
+ GPOD07_CFLAGS
+ GPOD07_LIBS
+ MUSICBRAINZ_CFLAGS
+@@ -1548,9 +1544,6 @@ Some influential environment variables:
+   NOTIFY_CFLAGS
+               C compiler flags for NOTIFY, overriding pkg-config
+   NOTIFY_LIBS linker flags for NOTIFY, overriding pkg-config
+-  GPOD06_CFLAGS
+-              C compiler flags for GPOD06, overriding pkg-config
+-  GPOD06_LIBS linker flags for GPOD06, overriding pkg-config
+   GPOD07_CFLAGS
+               C compiler flags for GPOD07, overriding pkg-config
+   GPOD07_LIBS linker flags for GPOD07, overriding pkg-config
+@@ -9658,87 +9651,6 @@ fi
+ if test "x$with_libgpod" != xno; then
+ 
+ pkg_failed=no
+-{ $as_echo "$as_me:$LINENO: checking for GPOD06" >&5
+-$as_echo_n "checking for GPOD06... " >&6; }
+-
+-if test -n "$GPOD06_CFLAGS"; then
+-    pkg_cv_GPOD06_CFLAGS="$GPOD06_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"libgpod-1.0 <= 0.6.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "libgpod-1.0 <= 0.6.0") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_GPOD06_CFLAGS=`$PKG_CONFIG --cflags "libgpod-1.0 <= 0.6.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$GPOD06_LIBS"; then
+-    pkg_cv_GPOD06_LIBS="$GPOD06_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"libgpod-1.0 <= 0.6.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "libgpod-1.0 <= 0.6.0") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_GPOD06_LIBS=`$PKG_CONFIG --libs "libgpod-1.0 <= 0.6.0" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        GPOD06_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "libgpod-1.0 <= 0.6.0" 2>&1`
+-        else
+-	        GPOD06_PKG_ERRORS=`$PKG_CONFIG --print-errors "libgpod-1.0 <= 0.6.0" 2>&1`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$GPOD06_PKG_ERRORS" >&5
+-
+-	{ $as_echo "$as_me:$LINENO: result: no" >&5
+-$as_echo "no" >&6; }
+-                { $as_echo "$as_me:$LINENO: WARNING: Compiling without libgpod 0.6.0 support" >&5
+-$as_echo "$as_me: WARNING: Compiling without libgpod 0.6.0 support" >&2;}
+-elif test $pkg_failed = untried; then
+-	{ $as_echo "$as_me:$LINENO: WARNING: Compiling without libgpod 0.6.0 support" >&5
+-$as_echo "$as_me: WARNING: Compiling without libgpod 0.6.0 support" >&2;}
+-else
+-	GPOD06_CFLAGS=$pkg_cv_GPOD06_CFLAGS
+-	GPOD06_LIBS=$pkg_cv_GPOD06_LIBS
+-        { $as_echo "$as_me:$LINENO: result: yes" >&5
+-$as_echo "yes" >&6; }
+-	GPOD_DEFINES="-DHAVE_GPOD -DGPOD_06"
+-cat >>confdefs.h <<\_ACEOF
+-#define GPOD_ENABLED 1
+-_ACEOF
+-
+-fi
+-
+-
+-
+-
+-fi
+-
+-
+-if test "x$with_libgpod" != xno; then
+-
+-pkg_failed=no
+ { $as_echo "$as_me:$LINENO: checking for GPOD07" >&5
+ $as_echo_n "checking for GPOD07... " >&6; }
+ 
+@@ -9817,8 +9729,8 @@ fi
+ fi
+ 
+ 
+-GPOD_CFLAGS="$GPOD06_CFLAGS $GPOD07_CFLAGS"
+-GPOD_LIBS="$GPOD06_LIBS $GPOD07_LIBS"
++GPOD_CFLAGS="$GPOD07_CFLAGS"
++GPOD_LIBS="$GPOD07_LIBS"
+ 
+ 
+ 

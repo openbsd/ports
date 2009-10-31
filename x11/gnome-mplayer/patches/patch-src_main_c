@@ -1,12 +1,27 @@
-$OpenBSD: patch-src_main_c,v 1.1 2009/04/14 09:38:39 ajacoutot Exp $
---- src/main.c.orig	Mon Apr 13 18:04:28 2009
-+++ src/main.c	Mon Apr 13 18:06:07 2009
-@@ -599,7 +599,7 @@ int main(int argc, char *argv[])
-     disable_embeddedfonts = read_preference_bool(DISABLEEMBEDDEDFONTS);
-     disable_pause_on_click = read_preference_bool(DISABLEPAUSEONCLICK);
-     disable_animation = read_preference_bool(DISABLEANIMATION);
--    auto_hide_timeout = read_preference_int(AUTOHIDETIMEOUT);
-+    auto_hide_timeout = read_preference_int_with_default(AUTOHIDETIMEOUT,auto_hide_timeout);
-     disable_cover_art_fetch = read_preference_bool(DISABLE_COVER_ART_FETCH);
-     use_mediakeys = read_preference_bool(USE_MEDIAKEYS);
-     metadata_codepage = read_preference_string(METADATACODEPAGE);
+$OpenBSD: patch-src_main_c,v 1.2 2009/10/31 12:26:25 edd Exp $
+
+set some sane defaults:
+
+use mplayer's software volume control (see pkg/MESSAGE)
+disable bar animation in full screen
+
+--- src/main.c.orig	Thu Sep 17 17:56:06 2009
++++ src/main.c	Sat Oct 17 17:53:22 2009
+@@ -699,7 +699,7 @@ int main(int argc, char *argv[])
+     playlist_visible = FALSE;
+     disable_fullscreen = FALSE;
+     disable_framedrop = FALSE;
+-    softvol = FALSE;
++    softvol = TRUE;
+     subtitlefont = NULL;
+     subtitle_codepage = NULL;
+     subtitle_color = NULL;
+@@ -711,7 +711,7 @@ int main(int argc, char *argv[])
+     reallyverbose = 0;
+     embedding_disabled = FALSE;
+     disable_pause_on_click = FALSE;
+-    disable_animation = FALSE;
++    disable_animation = TRUE;
+     auto_hide_timeout = 3;
+     use_mediakeys = TRUE;
+     use_defaultpl = FALSE;

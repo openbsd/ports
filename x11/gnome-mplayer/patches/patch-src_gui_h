@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_h,v 1.1 2009/10/31 12:26:25 edd Exp $
+
+fix from upstream svn (config_disable_animation)
+
+--- src/gui.h.orig	Sun Oct 18 17:35:23 2009
++++ src/gui.h	Sun Oct 18 17:36:11 2009
+@@ -253,6 +253,7 @@ GtkWidget *config_show_notification;
+ GtkWidget *config_thumb_position;
+ GtkWidget *config_use_mediakeys;
+ GtkWidget *config_use_defaultpl;
++GtkWidget *config_disable_animation;
+ 
+ GtkWidget *config_alang;
+ GtkWidget *config_slang;

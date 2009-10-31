@@ -1,0 +1,27 @@
+$OpenBSD: patch-gnome-mplayer_schemas_in,v 1.1 2009/10/31 12:26:25 edd Exp $
+
+set some sane defaults:
+
+use mplayer's software volume control (see pkg/MESSAGE)
+disable bar animation in full screen
+
+--- gnome-mplayer.schemas.in.orig	Wed Aug 26 21:26:18 2009
++++ gnome-mplayer.schemas.in	Sat Oct 17 17:54:29 2009
+@@ -222,7 +222,7 @@
+       <applyto>/apps/gnome-mplayer/preferences/disable_animation</applyto>
+       <owner>gnome-mplayer</owner>
+       <type>bool</type>
+-      <default>FALSE</default>
++      <default>TRUE</default>
+       <locale name="C">
+         <short>Disable Animation</short>
+         <long>Disable animation of fullscreen control bar sliding away</long>
+@@ -270,7 +270,7 @@
+       <applyto>/apps/gnome-mplayer/preferences/softvol</applyto>
+       <owner>gnome-mplayer</owner>
+       <type>bool</type>
+-      <default>FALSE</default>
++      <default>TRUE</default>
+       <locale name="C">
+         <short>Have mplayer use the softvol option</short>
+         <long>When set to TRUE the softvol option is passed to mplayer, useful for machines without pulseaudio</long>
