@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:32:04 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2009/10/31 12:50:02 kevlo Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	smart common input method platform
 
-DISTNAME=	scim-1.4.7
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	scim-1.4.9
 
-SHARED_LIBS +=  scim-1.0           0.0           # .10.3
-SHARED_LIBS +=  scim-x11utils-1.0  0.0           # .10.3
-SHARED_LIBS +=  scim-gtkutils-1.0  0.0           # .10.3
+SHARED_LIBS +=  scim-1.0           0.0           # .10.4
+SHARED_LIBS +=  scim-x11utils-1.0  0.0           # .10.4
+SHARED_LIBS +=  scim-gtkutils-1.0  0.0           # .10.4
 
 CATEGORIES=	inputmethods chinese japanese korean
 
@@ -36,11 +35,14 @@ MODULES=	devel/gettext \
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2
 
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/scim 
+
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--with-gtk-im-module-dir="${LOCALBASE}/lib/gtk-2.0/2.10.0/immodules"
 
 .include <bsd.port.mk>

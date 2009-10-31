@@ -1,0 +1,12 @@
+$OpenBSD: patch-configs_Makefile_in,v 1.1 2009/10/31 12:50:02 kevlo Exp $
+--- configs/Makefile.in.orig	Tue Oct 27 23:12:19 2009
++++ configs/Makefile.in	Tue Oct 27 23:12:28 2009
+@@ -290,7 +290,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ MAINTAINERCLEANFILES = Makefile.in
+ CLEANFILES = *.bak
+-@SCIM_BUILD_CONFIG_SIMPLE_TRUE@configdir = $(sysconfdir)/scim
++@SCIM_BUILD_CONFIG_SIMPLE_TRUE@configdir = $(sysconfdir)
+ @SCIM_BUILD_CONFIG_SIMPLE_TRUE@config_DATA = config global
+ #config_source_data = $(foreach file, $(config_DATA), $(srcdir)/$(file))
+ EXTRA_DIST = $(config_DATA)

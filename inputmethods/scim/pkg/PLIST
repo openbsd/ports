@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/29 02:21:46 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/10/31 12:50:02 kevlo Exp $
 @bin bin/scim
 @bin bin/scim-config-agent
 bin/scim-setup
@@ -49,9 +49,8 @@ include/scim-1.0/scim_types.h
 include/scim-1.0/scim_utility.h
 include/scim-1.0/x11/
 include/scim-1.0/x11/scim_x11_utils.h
-lib/gtk-2.0/immodules/
-lib/gtk-2.0/immodules/im-scim.la
-lib/gtk-2.0/immodules/im-scim.so
+lib/gtk-2.0/2.10.0/immodules/im-scim.la
+lib/gtk-2.0/2.10.0/immodules/im-scim.so
 lib/libscim-1.0.la
 @lib lib/libscim-1.0.so.${LIBscim-1.0_VERSION}
 lib/libscim-gtkutils-1.0.la
@@ -95,21 +94,40 @@ lib/scim-1.0/1.4.0/SetupUI/panel-gtk-setup.so
 @bin lib/scim-1.0/scim-helper-manager
 @bin lib/scim-1.0/scim-launcher
 @bin lib/scim-1.0/scim-panel-gtk
-share/applications/
 share/applications/scim-setup.desktop
 share/control-center-2.0/
 share/control-center-2.0/capplets/
 share/control-center-2.0/capplets/scim-setup.desktop
+share/examples/scim/
+share/examples/scim/config
+@sample ${SYSCONFDIR}/config
+share/examples/scim/global
+@sample ${SYSCONFDIR}/global
+share/locale/as/LC_MESSAGES/scim.mo
+share/locale/bn_IN/LC_MESSAGES/scim.mo
+share/locale/ca/LC_MESSAGES/scim.mo
 share/locale/cs/LC_MESSAGES/scim.mo
 share/locale/de/LC_MESSAGES/scim.mo
+share/locale/es/LC_MESSAGES/scim.mo
 share/locale/fi/LC_MESSAGES/scim.mo
 share/locale/fr/LC_MESSAGES/scim.mo
+share/locale/gu/LC_MESSAGES/scim.mo
+share/locale/hi/LC_MESSAGES/scim.mo
 share/locale/it/LC_MESSAGES/scim.mo
 share/locale/ja/LC_MESSAGES/scim.mo
+share/locale/kn/LC_MESSAGES/scim.mo
 share/locale/ko/LC_MESSAGES/scim.mo
+share/locale/ml/LC_MESSAGES/scim.mo
+share/locale/mr/LC_MESSAGES/scim.mo
 share/locale/nl/LC_MESSAGES/scim.mo
 share/locale/pa/LC_MESSAGES/scim.mo
+share/locale/pt_BR/LC_MESSAGES/scim.mo
+share/locale/ru/LC_MESSAGES/scim.mo
+share/locale/sk/LC_MESSAGES/scim.mo
 share/locale/sv/LC_MESSAGES/scim.mo
+share/locale/ta/LC_MESSAGES/scim.mo
+share/locale/te/LC_MESSAGES/scim.mo
+share/locale/vi/LC_MESSAGES/scim.mo
 share/locale/zh_CN/LC_MESSAGES/scim.mo
 share/locale/zh_TW/LC_MESSAGES/scim.mo
 share/pixmaps/
