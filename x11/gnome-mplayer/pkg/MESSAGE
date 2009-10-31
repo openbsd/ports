@@ -3,7 +3,3 @@ be running when using gnome-mplayer.
 
 MPlayer software volume control (softvol) is enabled by default because 
 there is no volume control in mplayer's sndio backend.
-
-With older (< 2.28.0) versions of the gconf2 package, be sure to kill 
-any gconfd-2 daemon that may be running before starting gnome-mplayer 
-for the first time.
