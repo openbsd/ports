@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2009/10/21 16:07:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2009/10/31 20:13:13 naddy Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -13,6 +13,7 @@ COMMENT=		GNOME shell and file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		2.28.1
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 CATEGORIES=		x11
@@ -64,18 +65,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 				-L${WRKBUILD}/libnautilus-adapter/.libs \
 				-L${WRKBUILD}/libnautilus-private/.libs \
 				-L${LOCALBASE}/lib"
-
-# fix a locale related display bug (which can lead to a crash)
-BROKEN_LOCALE=	src/file-manager/fm-directory-view.c \
-		libnautilus-private/nautilus-file.c \
-		src/file-manager/fm-directory-view.c \
-		src/file-manager/fm-properties-window.c \
-		libnautilus-private/nautilus-progress-info.c \
-		libnautilus-private/nautilus-file-operations.c
-pre-configure:
-	for i in ${BROKEN_LOCALE}; do \
-		perl -pi -e "s,%\'d,%d,g;" -e "s,%\'u,%u,g;" \
-			${WRKSRC}/$${i}; done
 
 REGRESS_IS_INTERACTIVE=x11
 
