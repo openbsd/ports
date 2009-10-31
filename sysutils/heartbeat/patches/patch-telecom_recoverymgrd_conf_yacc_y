@@ -1,0 +1,33 @@
+$OpenBSD: patch-telecom_recoverymgrd_conf_yacc_y,v 1.1 2009/10/31 20:27:51 naddy Exp $
+
+Our yacc does not include a predefined variable yyrcsid[] any longer.
+It also does not throw a warning.
+
+--- telecom/recoverymgrd/conf_yacc.y.orig	Fri Oct 30 11:07:38 2009
++++ telecom/recoverymgrd/conf_yacc.y	Fri Oct 30 11:09:17 2009
+@@ -37,16 +37,6 @@
+ extern int yylex(void);
+ /* #define DEBUG */
+ 
+-/* This conditional may not be a truly adequate test */
+-
+-#ifdef YYBYACC
+-#	define	MAKE_WARNINGS_GO_AWAY	{			\
+-						(void)yyrcsid;	\
+-					}
+-#else
+-#	define	MAKE_WARNINGS_GO_AWAY	/* Nothing */
+-#endif
+-
+ int yyget_lineno(void);
+ 
+ 
+@@ -62,7 +52,7 @@ int yyget_lineno(void);
+ commands: command commands 
+ 	| command
+ 	{
+-		MAKE_WARNINGS_GO_AWAY
++		/* Nothing */
+ 	};
+ 
+ command: userinfo FILENAME OPEN_CURLY events 

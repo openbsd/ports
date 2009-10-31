@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/26 11:01:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/10/31 20:27:51 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,11 +6,11 @@ COMMENT-main=	Linux HA cluster suite
 COMMENT-gui=	GUI management tool for heartbeat
 COMMENT-snmp=	snmp agent for heartbeat
 
-VERSION=	2.1.2-15
-DISTNAME=	obs-${VERSION}
+DISTNAME=	obs-2.1.2-15
+VERSION=	2.1.2.15
 PKGNAME=	heartbeat-${VERSION}
-PKGNAME-main=	heartbeat-${VERSION}p1
-PKGNAME-gui=	heartbeat-gui-${VERSION}p0
+PKGNAME-main=	heartbeat-${VERSION}
+PKGNAME-gui=	heartbeat-gui-${VERSION}
 PKGNAME-snmp=	heartbeat-snmp-${VERSION}
 
 EXTRACT_SUFX=   .tar.bz2
