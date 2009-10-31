@@ -1,11 +1,11 @@
-$OpenBSD: patch-scripts_util_ssvnc_tcl,v 1.1 2009/06/23 20:57:46 sthen Exp $
+$OpenBSD: patch-scripts_util_ssvnc_tcl,v 1.2 2009/10/31 16:03:01 sthen Exp $
 
 type sometimes returns "xx is a tracked alias for /foo/bar" which
 isn't handled. whence is sufficient and more reliable.
 
---- scripts/util/ssvnc.tcl.orig	Tue Jun 23 21:49:09 2009
-+++ scripts/util/ssvnc.tcl	Tue Jun 23 21:49:44 2009
-@@ -15453,7 +15453,7 @@ proc check_zeroconf_browse {} {
+--- scripts/util/ssvnc.tcl.orig	Wed Oct 28 15:50:07 2009
++++ scripts/util/ssvnc.tcl	Sat Oct 31 15:47:11 2009
+@@ -16026,7 +16026,7 @@ proc check_zeroconf_browse {} {
  		return 0;
  	}
  	set p ""
@@ -14,7 +14,7 @@ isn't handled. whence is sufficient and more reliable.
  	if {$r == 0} {
  		regsub {^.* is  *} $p "" p
  		regsub -all {[ \t\n\r]} $p "" p
-@@ -15463,7 +15463,7 @@ proc check_zeroconf_browse {} {
+@@ -16036,7 +16036,7 @@ proc check_zeroconf_browse {} {
  		}
  	}
  	set p ""
@@ -23,7 +23,7 @@ isn't handled. whence is sufficient and more reliable.
  	if {$r == 0} {
  		regsub {^.* is  *} $p "" p
  		regsub -all {[ \t\n\r]} $p "" p
-@@ -15478,7 +15478,7 @@ proc check_zeroconf_browse {} {
+@@ -16051,7 +16051,7 @@ proc check_zeroconf_browse {} {
  		}
  	}
  	set p ""
