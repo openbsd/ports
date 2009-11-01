@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/07/27 21:44:14 martynas Exp $
+# $OpenBSD: Makefile,v 1.8 2009/11/01 18:25:21 landry Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
-DISTNAME =		gecko-mediaplayer-0.9.5
-PKGNAME =		${DISTNAME}p3
+V =			0.9.8
+DISTNAME =		gecko-mediaplayer-$V
 CATEGORIES =		www
 
 MAINTAINER =		David Coppa <dcoppa@gmail.com>
@@ -17,14 +17,14 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		ORBit-2 dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0 \
-			gthread-2.0
+WANTLIB =		ORBit-2 dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 \
+			gobject-2.0 gthread-2.0
 
 MODULES =		devel/gettext \
 			devel/gconf2
 
-BUILD_DEPENDS =		:xulrunner-devel-*:devel/xulrunner/1.8,-devel
-RUN_DEPENDS =		::x11/gnome-mplayer
+BUILD_DEPENDS =		:xulrunner-devel->=1.9:devel/xulrunner/1.9,-devel
+RUN_DEPENDS =		:gnome-mplayer->=$V:x11/gnome-mplayer
 
 USE_X11 =		Yes
 USE_LIBTOOL =		Yes
@@ -33,10 +33,13 @@ MODGCONF2_SCHEMAS_DIR =	gecko-mediaplayer
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
-				-I${X11BASE}/include \
-				-I${LOCALBASE}/xulrunner/include/xpcom -DBSD" \
-			LDFLAGS="-L${LOCALBASE}/lib \
-				-L${X11BASE}/lib"
+			-I${X11BASE}/include \
+			-I${LOCALBASE}/xulrunner1.9/include \
+			-I${LOCALBASE}/xulrunner1.9/include/java \
+			-I${LOCALBASE}/xulrunner1.9/include/plugin -DOPENBSD \
+			-I${LOCALBASE}/xulrunner1.9/include/pref" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
 CONFIGURE_ARGS =	--with-gconf
 
 .include <bsd.port.mk>

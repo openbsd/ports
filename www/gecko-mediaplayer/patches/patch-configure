@@ -1,10 +1,33 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2009/03/16 13:00:19 ajacoutot Exp $
---- configure.orig	Wed Feb 11 15:49:36 2009
-+++ configure	Mon Mar 16 12:44:52 2009
-@@ -8375,225 +8375,6 @@ if test -n "$GECKO_CFLAGS"; then
-     pkg_cv_GECKO_CFLAGS="$GECKO_CFLAGS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
+$OpenBSD: patch-configure,v 1.2 2009/11/01 18:25:21 landry Exp $
+
+Remove unneeded checks related to xulrunner
+
+--- configure.orig	Thu Sep  3 13:28:25 2009
++++ configure	Mon Oct 12 06:40:06 2009
+@@ -8699,308 +8699,6 @@ fi
+ 
+ 
+ 
+-# Check whether --with-xulrunner-sdk was given.
+-if test "${with_xulrunner_sdk+set}" = set; then
+-  withval=$with_xulrunner_sdk;
+-	XULRUNNER_SDK_PREFIX=$with_xulrunner_sdk
+-	GECKO_CFLAGS="-I$XULRUNNER_SDK_PREFIX/include -I$XULRUNNER_SDK_PREFIX/include/plugin -I$XULRUNNER_SDK_PREFIX/include/nspr -I$XULRUNNER_SDK_PREFIX/include/xpcom -I$XULRUNNER_SDK_PREFIX/include/string -I$XULRUNNER_SDK_PREFIX/include/java"
+-	GECKO_LIBS="-L$XULRUNNER_SDK_PREFIX/lib -lxpcomglue_s -lxul -lxpcom -lplds4 -lplc4 -lnspr4 -lpthread -ldl"
+-
+-fi
+-
+-
+-if test "$GECKO_CFLAGS" = ""; then
+-
+-pkg_failed=no
+-{ $as_echo "$as_me:$LINENO: checking for GECKO" >&5
+-$as_echo_n "checking for GECKO... " >&6; }
+-
+-if test -n "$GECKO_CFLAGS"; then
+-    pkg_cv_GECKO_CFLAGS="$GECKO_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
 -    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"mozilla-plugin mozilla-xpcom\"") >&5
 -  ($PKG_CONFIG --exists --print-errors "mozilla-plugin mozilla-xpcom") 2>&5
 -  ac_status=$?
@@ -224,6 +247,69 @@ $OpenBSD: patch-configure,v 1.1.1.1 2009/03/16 13:00:19 ajacoutot Exp $
 -    pkg_cv_GECKO_CFLAGS="$GECKO_CFLAGS"
 - elif test -n "$PKG_CONFIG"; then
 -    if test -n "$PKG_CONFIG" && \
-     { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"xulrunner-plugin xulrunner-xpcom\"") >&5
-   ($PKG_CONFIG --exists --print-errors "xulrunner-plugin xulrunner-xpcom") 2>&5
-   ac_status=$?
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"xulrunner-plugin xulrunner-xpcom\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "xulrunner-plugin xulrunner-xpcom") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_GECKO_CFLAGS=`$PKG_CONFIG --cflags "xulrunner-plugin xulrunner-xpcom" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$GECKO_LIBS"; then
+-    pkg_cv_GECKO_LIBS="$GECKO_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"xulrunner-plugin xulrunner-xpcom\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "xulrunner-plugin xulrunner-xpcom") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; then
+-  pkg_cv_GECKO_LIBS=`$PKG_CONFIG --libs "xulrunner-plugin xulrunner-xpcom" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        GECKO_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "xulrunner-plugin xulrunner-xpcom" 2>&1`
+-        else
+-	        GECKO_PKG_ERRORS=`$PKG_CONFIG --print-errors "xulrunner-plugin xulrunner-xpcom" 2>&1`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$GECKO_PKG_ERRORS" >&5
+-
+-	{ $as_echo "$as_me:$LINENO: result: no" >&5
+-$as_echo "no" >&6; }
+-                { $as_echo "$as_me:$LINENO: WARNING: xulrunner-plugin not found, trying another" >&5
+-$as_echo "$as_me: WARNING: xulrunner-plugin not found, trying another" >&2;}
+-elif test $pkg_failed = untried; then
+-	{ $as_echo "$as_me:$LINENO: WARNING: xulrunner-plugin not found, trying another" >&5
+-$as_echo "$as_me: WARNING: xulrunner-plugin not found, trying another" >&2;}
+-else
+-	GECKO_CFLAGS=$pkg_cv_GECKO_CFLAGS
+-	GECKO_LIBS=$pkg_cv_GECKO_LIBS
+-        { $as_echo "$as_me:$LINENO: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-
+-fi
+-fi
+-
+ if test "$GECKO_CFLAGS" = ""; then
+ 
+ pkg_failed=no

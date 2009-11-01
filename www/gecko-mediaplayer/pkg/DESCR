@@ -1,3 +1,3 @@
-Gecko Media Player is a browser plugin that uses GNOME MPlayer to play
+Gecko Media Player is a browser plugin that uses gnome-mplayer to play
 media in a browser.  It should work with all browsers on Unix-like
 systems that use the NS4 API (Seamonkey, Firefox, Epiphany, etc).
