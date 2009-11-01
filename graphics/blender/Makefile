@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2009/10/25 22:41:24 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2009/11/01 13:10:52 jasper Exp $
 
 COMMENT=	3D creation software
 
 DISTNAME=	blender-2.49b
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.blender.org/
