@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/10 06:33:44 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2009/11/01 22:39:53 jasper Exp $
 
-.if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "sparc" && \
-    ${MACHINE_ARCH} != "sparc64"
-BROKEN=			varargs misuse, and unportable software
-.endif
+# varargs misuse, and unportable software
+ONLY_FOR_ARCHS= 	i386 sparc sparc64
 
 COMMENT=		Plan 9 compatibility libraries
 
