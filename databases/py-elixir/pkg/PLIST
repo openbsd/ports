@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/29 22:40:48 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/11/01 11:45:39 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/Elixir-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Elixir-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Elixir-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/Elixir-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/elixir/
 lib/python${MODPY_VERSION}/site-packages/elixir/__init__.py
 lib/python${MODPY_VERSION}/site-packages/elixir/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/elixir/collection.py
+lib/python${MODPY_VERSION}/site-packages/elixir/collection.pyc
 lib/python${MODPY_VERSION}/site-packages/elixir/entity.py
 lib/python${MODPY_VERSION}/site-packages/elixir/entity.pyc
 lib/python${MODPY_VERSION}/site-packages/elixir/events.py
@@ -21,6 +23,8 @@ lib/python${MODPY_VERSION}/site-packages/elixir/ext/encrypted.py
 lib/python${MODPY_VERSION}/site-packages/elixir/ext/encrypted.pyc
 lib/python${MODPY_VERSION}/site-packages/elixir/ext/list.py
 lib/python${MODPY_VERSION}/site-packages/elixir/ext/list.pyc
+lib/python${MODPY_VERSION}/site-packages/elixir/ext/perform_ddl.py
+lib/python${MODPY_VERSION}/site-packages/elixir/ext/perform_ddl.pyc
 lib/python${MODPY_VERSION}/site-packages/elixir/ext/versioned.py
 lib/python${MODPY_VERSION}/site-packages/elixir/ext/versioned.pyc
 lib/python${MODPY_VERSION}/site-packages/elixir/fields.py
