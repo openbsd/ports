@@ -1,0 +1,3 @@
+This module allows automated updates to your dyndns.org domain name to
+your current ip address. This is useful for people running servers that
+operate off dynamic ip addresses.
