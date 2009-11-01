@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.432 2009/10/23 17:25:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.433 2009/11/01 15:26:06 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -417,7 +417,6 @@
      SUBDIR += xapian-omega
      SUBDIR += xcache
      SUBDIR += xmhtml
-     SUBDIR += xoops
      SUBDIR += youtube-dl
      SUBDIR += yui
      SUBDIR += zendframework

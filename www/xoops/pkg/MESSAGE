@@ -1,8 +1,0 @@
-The XOOPS has been installed into ${INSTDIR}
-
-You should point this to the DocumentRoot of your web-server:
-   # ln -s ../xoops /var/www/htdocs/xoops
-   (make sure you use a relative symlink since Apache is chrooted)
-
-Proceed to complete the installation by reading:
-${INSTDIR}/docs/INSTALL.html
