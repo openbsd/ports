@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2009/09/29 08:34:18 kevlo Exp $
+# $OpenBSD: Makefile,v 1.169 2009/11/01 22:58:51 jasper Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += architect
@@ -165,6 +165,5 @@
      SUBDIR += tdb
      SUBDIR += xapian-core
      SUBDIR += xmysql
-     SUBDIR += xmysqladmin
 
 .include <bsd.port.subdir.mk>
