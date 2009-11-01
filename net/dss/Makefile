@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 22:36:53 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2009/11/01 22:37:41 jasper Exp $
 
 BROKEN=			security issues
 
@@ -13,7 +13,7 @@ DISTNAME=	DSS-4_1_3.src
 ONLY_FOR_ARCHS=		i386
 
 PKGNAME=		dss-${VERSION}
-FULLPKGNAME-server=	dss-server-${VERSION}p0
+FULLPKGNAME-server=	dss-server-${VERSION}p1
 PKGNAME-admin=		dss-admin-${VERSION}
 PKGNAME-examples=	dss-examples-${VERSION}
 PKGNAME-proxy=		dss-proxy-${VERSION}
@@ -28,7 +28,7 @@ PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
-HOMEPAGE=		http://developer.apple.com/darwin/projects/streaming/
+HOMEPAGE=		http://dss.macosforge.org/
 
 MULTI_PACKAGES=		-server -admin -examples -proxy
 SUBPACKAGE?=		-server
