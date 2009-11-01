@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_plugin_list_cpp,v 1.1 2009/11/01 20:34:20 landry Exp $
+
+fix incorrect usage of memmem() vs. memmem_compat()
+
+--- src/plugin_list.cpp.orig	Mon Oct 12 06:35:56 2009
++++ src/plugin_list.cpp	Mon Oct 12 06:36:40 2009
+@@ -356,7 +356,7 @@ GList *list_parse_qt2(GList * list, ListItem * item)
+                 return list;
+             } else {
+                 while (p != NULL) {
+-                    urlptr = (gchar *) memmem(p,datalen - (p - data), "url ", 4);
++                    urlptr = (gchar *) memmem_compat(p,datalen - (p - data), "url ", 4);
+                     
+ 
+                     if (urlptr == NULL) {
+@@ -385,7 +385,7 @@ GList *list_parse_qt2(GList * list, ListItem * item)
+                             item->id = -1;
+                             list = g_list_append(list, newitem);
+                         }
+-                        p = (gchar *) memmem(urlptr,datalen - (urlptr - data),"mmdr",4);
++                        p = (gchar *) memmem_compat(urlptr,datalen - (urlptr - data),"mmdr",4);
+                     }
+ 
+                 }

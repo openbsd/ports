@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_plugin_cpp,v 1.1 2009/11/01 20:34:20 landry Exp $
+
+fix for includes from upstream svn
+
+--- src/plugin.cpp.orig	Mon Oct 12 06:28:37 2009
++++ src/plugin.cpp	Mon Oct 12 06:28:54 2009
+@@ -42,9 +42,9 @@
+ #include "plugin_setup.h"
+ #include "plugin_types.h"
+ #include "plugin_dbus.h"
+-#include "nsIPrefBranch.h"
+-#include "nsIPrefService.h"
+-#include "nsIServiceManager.h"
++#include <nsIPrefBranch.h>
++#include <nsIPrefService.h>
++#include <nsIServiceManager.h>
+ 
+ nsIPrefBranch *prefBranch = NULL;
+ nsIPrefService *prefService = NULL;
