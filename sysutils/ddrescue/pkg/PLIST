@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/02 10:01:40 giovanni Exp $
+@bin bin/ddrescue
+@info info/ddrescue.info
+@man man/man1/ddrescue.1
