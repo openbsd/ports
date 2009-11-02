@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_clang_lib_Sema_SemaDeclAttr_cpp,v 1.1 2009/08/16 09:54:28 jsg Exp $
---- tools/clang/lib/Sema/SemaDeclAttr.cpp.orig	Sun Aug  9 00:01:03 2009
-+++ tools/clang/lib/Sema/SemaDeclAttr.cpp	Sat Aug 15 14:12:37 2009
-@@ -1213,7 +1213,8 @@ static void HandleFormatAttr(Decl *d, const AttributeL
+$OpenBSD: patch-tools_clang_lib_Sema_SemaDeclAttr_cpp,v 1.2 2009/11/02 22:53:27 jsg Exp $
+--- tools/clang/lib/Sema/SemaDeclAttr.cpp.orig	Thu Aug 20 01:56:48 2009
++++ tools/clang/lib/Sema/SemaDeclAttr.cpp	Sun Nov  1 22:18:19 2009
+@@ -1248,7 +1248,8 @@ static void HandleFormatAttr(Decl *d, const AttributeL
    case 5: Supported = !memcmp(Format, "scanf", 5); break;
    case 6: Supported = !memcmp(Format, "printf", 6); break;
    case 7: Supported = !memcmp(Format, "printf0", 7) ||

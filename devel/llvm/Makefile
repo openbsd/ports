@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2009/08/16 09:54:28 jsg Exp $
+# $OpenBSD: Makefile,v 1.18 2009/11/02 22:53:27 jsg Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
-LLVM_V =	2.6pre20090808
+LLVM_V =	2.6
 DISTNAME =	llvm-${LLVM_V}
-PKGNAME =	${DISTNAME}p1
-EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	devel
 
@@ -26,9 +24,14 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =	c m pthread
 
 #llvm+clang repackaged from SVN.
-MASTER_SITES =	http://spacehopper.org/mirrors/
-#MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
+#MASTER_SITES =	http://spacehopper.org/mirrors/
+MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
 #MASTER_SITES = ${MASTER_SITE_FREEBSD_LOCAL:=brooks/}
+
+DISTFILES= ${DISTNAME}.tar.gz clang-${LLVM_V}.tar.gz
+
+post-extract:
+	@mv ${WRKDIR}/clang-${LLVM_V} ${WRKDIST}/tools/clang
 
 MODULES =	gcc4 lang/python
 MODGCC4_LANGS =	c c++
@@ -72,6 +75,7 @@ pre-configure:
 # XXX googletest doesn't build
 
 post-install:
+	@ln -s ${TRUEPREFIX}/libexec/clang-cc ${PREFIX}/bin
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/llvm
 	@${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/ccc-analyzer \
