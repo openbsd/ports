@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2009/09/25 19:38:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.237 2009/11/02 17:00:21 sthen Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -17,6 +17,7 @@
      SUBDIR += bogofilter,qdbm
      SUBDIR += bogofilter,sqlite3
      SUBDIR += bulk_mailer
+     SUBDIR += clamnailer
      SUBDIR += clamsmtp
      SUBDIR += claws-mail
      SUBDIR += claws-mail,ldap
