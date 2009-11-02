@@ -1,7 +1,10 @@
-$OpenBSD: patch-lib_glob_glob_c,v 1.1 2009/08/02 15:32:01 naddy Exp $
---- lib/glob/glob.c.orig	Thu Jul 30 22:29:19 2009
-+++ lib/glob/glob.c	Thu Jul 30 22:30:07 2009
-@@ -1018,14 +1018,6 @@ glob_filename (pathname, flags)
+$OpenBSD: patch-lib_glob_glob_c,v 1.2 2009/11/02 18:12:29 naddy Exp $
+
+Nested comment.
+
+--- lib/glob/glob.c.orig	Mon Nov  2 13:27:53 2009
++++ lib/glob/glob.c	Mon Nov  2 13:27:53 2009
+@@ -1021,14 +1021,6 @@ glob_filename (pathname, flags)
        if ((flags & GX_GLOBSTAR) && filename[0] == '*' && filename[1] == '*' && filename[2] == '\0')
  	{
  	  dflags |= GX_ALLDIRS|GX_ADDCURDIR;

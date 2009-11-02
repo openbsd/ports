@@ -32,6 +32,8 @@ MD5 (bash/bash40-030) = VcvcjlFz19Wb8RE8P/WQ3A==
 MD5 (bash/bash40-031) = OJY1KBEzQW3p0TKVJRyrxw==
 MD5 (bash/bash40-032) = 1kbLSu2ODw0dR+6i7V82kA==
 MD5 (bash/bash40-033) = 0+d9KgoFFHisqMMNE97YNA==
+MD5 (bash/bash40-034) = BaVIB/04jnG6yJEq1TCsbQ==
+MD5 (bash/bash40-035) = /D2P24PMxAerf20besaiIQ==
 RMD160 (bash/bash-4.0.tar.gz) = gquksstHXCAwkEqdIq9iCN+oXrM=
 RMD160 (bash/bash40-001) = uPHBAAtc0S7O554ppz89V20K02g=
 RMD160 (bash/bash40-002) = vTYYBrz+MkVwY467GhJ/GX1eN1Y=
@@ -66,6 +68,8 @@ RMD160 (bash/bash40-030) = PMxCvo8WuEzRj+6R/T3UaROj8LA=
 RMD160 (bash/bash40-031) = 1GnhDXnrNQSYWjCsEicMImKhoMk=
 RMD160 (bash/bash40-032) = aQwTMG5NxhZvhrpAgyO5LnC2AnY=
 RMD160 (bash/bash40-033) = L7LSSiN95a4QnnKeqUvuduaDD5w=
+RMD160 (bash/bash40-034) = 1t90dNGreZeRMwiDranwkMqx2Qg=
+RMD160 (bash/bash40-035) = +CzlnxE0NV15JIgB2Q+yyMESrZM=
 SHA1 (bash/bash-4.0.tar.gz) = K77TCHn59CTAkahGpIERwn0LI3A=
 SHA1 (bash/bash40-001) = 3EfVR77JOK/NezgoFv7IQHfzQS8=
 SHA1 (bash/bash40-002) = IdyUUSZUffA+N6O2jMS4C3iLnaY=
@@ -100,6 +104,8 @@ SHA1 (bash/bash40-030) = Fkej5hdBU3RfbPclwdM+I7RPizk=
 SHA1 (bash/bash40-031) = fzSHNUgBDnGDAVSVwbotQeYfIV4=
 SHA1 (bash/bash40-032) = +ElcfHsiAR0khk4MQl030/UTSwE=
 SHA1 (bash/bash40-033) = /XeJVtkxWkjw3dpo59gC5IwDmSE=
+SHA1 (bash/bash40-034) = 6p8y3pY+IaMkwk6cFjoLDjy/ll8=
+SHA1 (bash/bash40-035) = eeZpikArB0UNO5q2ZPPvWmxT2Fw=
 SHA256 (bash/bash-4.0.tar.gz) = l5PTlPZAqVAwx31ayYlySv4ZaSGVbbdBvK8UGAHFBRg=
 SHA256 (bash/bash40-001) = 47UUIE5dp78a7PfQmBUUsjZ9S1KdptSkXQncKeLwAxs=
 SHA256 (bash/bash40-002) = SVEX5WYBm5ywq0lQSUWzDN2m5bWVl+Q+GOrh8GsdXPQ=
@@ -134,6 +140,8 @@ SHA256 (bash/bash40-030) = f4XeaDmmGAkiwv7Ib0wVADb8oJbkOgRqEX6X5Q6VivM=
 SHA256 (bash/bash40-031) = YD8xiQbuTNX9xqMjYLWaW2S8tQ45P+d9YRYmm6KP+ww=
 SHA256 (bash/bash40-032) = 6mtHNr7c9zy/KiVYosOgTjsYBkqXMKx+DAPhXRA/qt4=
 SHA256 (bash/bash40-033) = xJb24DKZQJJdvfwALsCLiwbcfm4yacpJD5mjh50tBPU=
+SHA256 (bash/bash40-034) = N9LzBMXCg2Ar3oGVpQHBnvWt4/tUlNJcoi/h8Ay7Qvc=
+SHA256 (bash/bash40-035) = GAbk76m33Hls7ArMQGLNUBsmRlkWmcFLSJnCZDjI9nM=
 SIZE (bash/bash-4.0.tar.gz) = 6230779
 SIZE (bash/bash40-001) = 5156
 SIZE (bash/bash40-002) = 1220
@@ -168,3 +176,5 @@ SIZE (bash/bash40-030) = 1649
 SIZE (bash/bash40-031) = 1633
 SIZE (bash/bash40-032) = 1154
 SIZE (bash/bash40-033) = 1380
+SIZE (bash/bash40-034) = 2160
+SIZE (bash/bash40-035) = 1884
