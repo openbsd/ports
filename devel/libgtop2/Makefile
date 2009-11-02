@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2009/10/16 10:56:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2009/11/02 20:19:06 jasper Exp $
 
 COMMENT=		portable library for obtaining system information
 
 GNOME_VERSION=		2.28.0
 GNOME_PROJECT=		libgtop
-PKGNAME=		libgtop2-${VERSION}
+PKGNAME=		libgtop2-${VERSION}p0
 
 SHARED_LIBS=		gtop-2.0	9.0	# .9.0
 

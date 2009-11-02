@@ -1,0 +1,39 @@
+$OpenBSD: patch-sysdeps_common_mountlist_c,v 1.1 2009/11/02 20:19:06 jasper Exp $
+--- sysdeps/common/mountlist.c.orig	Thu Oct 29 00:26:32 2009
++++ sysdeps/common/mountlist.c	Thu Oct 29 00:50:16 2009
+@@ -52,7 +52,9 @@ static struct mount_entry *read_filesystem_list (void)
+ 
+ #if defined (MOUNTED_GETFSSTAT)	/* __alpha running OSF_1 */
+ #  include <sys/mount.h>
+-#  include <sys/fs_types.h>
++#  if defined(HAVE_SYS_FSTYP_H)
++#    include <sys/fs_types.h>
++#  endif /* HAVE_SYS_FSTYP_H */
+ #endif /* MOUNTED_GETFSSTAT */
+ 
+ #ifdef MOUNTED_GETMNTENT1	/* 4.3BSD, SunOS, HP-UX, Dynix, Irix.  */
+@@ -298,7 +300,11 @@ read_filesystem_list (void)
+ 
+ #ifdef MOUNTED_GETMNTINFO	/* 4.4BSD.  */
+   {
++#if defined(STAT_STATVFS)
++    struct statvfs *fsp;
++#else
+     struct statfs *fsp;
++#endif /* STAT_STATVFS */
+     int entries;
+ 
+     entries = getmntinfo (&fsp, MNT_NOWAIT);
+@@ -374,7 +380,12 @@ read_filesystem_list (void)
+ 	me = (struct mount_entry *) g_malloc (sizeof (struct mount_entry));
+ 	me->me_devname = g_strdup (stats[counter].f_mntfromname);
+ 	me->me_mountdir = g_strdup (stats[counter].f_mntonname);
++/* XXX */
++#if defined(__OpenBSD__)
++	me->me_type = g_strdup (stats[counter].f_fstypename);
++#else
+ 	me->me_type = g_strdup (mnt_names[stats[counter].f_type]);
++#endif
+ 	me->me_dev = (dev_t) -1;	/* Magic; means not known yet. */
+ 	me->me_next = NULL;
+ 

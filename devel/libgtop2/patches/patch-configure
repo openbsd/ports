@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2009/10/16 10:56:04 jasper Exp $
+$OpenBSD: patch-configure,v 1.6 2009/11/02 20:19:06 jasper Exp $
 --- configure.orig	Mon Sep 21 09:57:13 2009
-+++ configure	Fri Oct 16 02:55:53 2009
++++ configure	Thu Oct 29 00:15:14 2009
 @@ -6763,10 +6763,12 @@ newos6*)
    ;;
  
@@ -81,7 +81,7 @@ $OpenBSD: patch-configure,v 1.5 2009/10/16 10:56:04 jasper Exp $
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  
-+#include <sys/param.>
++#include <sys/param.h>
  #include <sys/types.h>
  #include <sys/mount.h>
 -#include <sys/fs_types.h>
