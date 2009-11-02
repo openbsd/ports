@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/02 10:10:21 jasper Exp $
+${P5SITE}/WWW/Mechanize/TreeBuilder.pm
+@man man/man3p/WWW::Mechanize::TreeBuilder.3p

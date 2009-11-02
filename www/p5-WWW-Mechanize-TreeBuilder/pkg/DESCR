@@ -1,0 +1,14 @@
+This module combines WWW::Mechanize and HTML::TreeBuilder. Why? Because
+I've seen too much code like the following:
+
+ like($mech->content, qr{<p>some text</p>}, "Found the right tag");
+
+Which is just all flavours of wrong - its akin to processing XML with
+regexps.  Instead, do it like the following:
+
+ ok($mech->look_down(_tag => 'p', sub { $_[0]->as_trimmed_text eq 'some
+ text' })
+
+The anon-sub there is a bit icky, but this means that anyone should
+happen to add attributes to the <p> tag (such as an id or a class) it
+will still work and find the right tag.
