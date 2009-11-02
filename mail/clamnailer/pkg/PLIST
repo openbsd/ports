@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/02 17:00:02 sthen Exp $
+sbin/clamnailer
+@owner _clamav
+@group _clamav
+@mode 775
+@sample /var/db/clamnailer/
+@extraunexec rm -rf /var/db/clamnailer

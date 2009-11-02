@@ -1,0 +1,11 @@
+Spear phishing is a technique used by spammers and scammers to try
+to get your email username and password. They send you an email,
+often claiming to be from your email provider or employer, in which
+they say that your account will be deleted unless you supply them
+with your username and password "for authentication" or some other
+similar ruse. They say you must reply to the message giving them
+this information, or send a message to a particular address giving
+them this information.
+
+ClamNailer takes 2 lists of addresses commonly used in these
+attacks, and generates a ClamAV signature database to detect them.

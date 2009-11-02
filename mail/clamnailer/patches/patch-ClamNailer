@@ -1,0 +1,42 @@
+$OpenBSD: patch-ClamNailer,v 1.1.1.1 2009/11/02 17:00:02 sthen Exp $
+--- clamnailer.orig	Mon Nov  2 15:47:00 2009
++++ clamnailer	Mon Nov  2 15:47:15 2009
+@@ -20,9 +20,9 @@ use strict;
+ use POSIX;
+ 
+ # clamd's database directory
+-my $db = "/var/lib/clamav";
++my $db = "/var/db/clamav";
+ # ScamNailer download directory
+-my $work = "/var/cache/clamnailer";
++my $work = "/var/db/clamnailer";
+ # ScamNailer download location
+ my $url = "http://www.mailscanner.tv/";
+ 
+@@ -40,7 +40,7 @@ my $base = readlink "current";
+ die "readlink $work/current: $!" unless defined $base or $! == ENOENT;
+ 
+ if (!defined $base or $base ne $latest_base) {
+-	system "wget --quiet $url/$latest_base" and die "wget failed\n";
++	system "ftp $url/$latest_base > /dev/null" and die "ftp failed\n";
+ 	unlink 'current', glob "$base*" if defined $base;
+ 	symlink $latest_base, 'current' or die "symlink $work/current: $!\n";
+ 	$base = $latest_base;
+@@ -58,7 +58,7 @@ close $in;
+ 
+ for my $patch (1 .. $latest_patch) {
+ 	my $file = "$base.$patch";
+-	system "wget --quiet $url/$file" and die "wget failed\n" unless -f $file;
++	system "ftp $url/$file" and die "ftp failed\n" unless -f $file;
+ 	open my $in, '<', $file
+ 	    or die "open $work/$file: $!\n";
+ 	while (<$in>) {
+@@ -85,7 +85,7 @@ for my $addr (keys %addr) {
+ close $out or die "write > $work/scamnailer.tmp: $!\n";
+ 
+ # only install if file has changed
+-if (system "diff -q scamnailer.tmp scamnailer.ndb &>/dev/null") {
++if (system "diff -q scamnailer.tmp scamnailer.ndb > /dev/null 2>&1") {
+ 	# keep a local copy for future comparisons
+ 	system "cp scamnailer.tmp scamnailer.ndb" and die "cp failed\n";
+ 	# install where clamd will pick it up
