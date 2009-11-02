@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2009/10/13 17:00:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2009/11/02 17:20:10 sthen Exp $
 
 COMMENT =	imap4 webmail client
 
-#DISTNAME =	roundcubemail-0.3-stable
-#PKGNAME =	${DISTNAME:S/-stable//}
-DISTNAME =	roundcubemail-0.3.0.3038
+DISTNAME =	roundcubemail-0.3.1
 CATEGORIES =	mail www
 HOMEPAGE =	http://www.roundcube.net/
 
@@ -16,9 +14,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-#MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=roundcubemail/}
-# svn export
-MASTER_SITES =	http://spacehopper.org/mirrors/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=roundcubemail/}
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
@@ -35,6 +31,6 @@ do-install:
 	cp -Rp ${WRKDIST} ${INSTDIR}
 	mv ${INSTDIR}/config/mimetypes.php ${INSTDIR}/config/mimetypes.php.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} -name \*.orig -exec rm -f {} \;
+	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -exec rm -f {} \;
 
 .include <bsd.port.mk>
