@@ -1,7 +1,7 @@
-$OpenBSD: patch-var_Makefile_in,v 1.1 2009/08/17 14:45:13 bernd Exp $
---- var/Makefile.in.orig	Sat Aug  1 10:36:28 2009
-+++ var/Makefile.in	Sat Aug  1 10:36:42 2009
-@@ -310,7 +310,6 @@ info-am:
+$OpenBSD: patch-var_Makefile_in,v 1.2 2009/11/02 18:51:27 bernd Exp $
+--- var/Makefile.in.orig	Thu Oct  8 06:18:18 2009
++++ var/Makefile.in	Tue Oct 13 22:01:29 2009
+@@ -314,7 +314,6 @@ info-am:
  
  install-data-am:
  	@$(NORMAL_INSTALL)

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/17 14:45:13 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2009/11/02 18:51:27 bernd Exp $
 
 COMMENT =	distributed, document-oriented database
 
-COUCH_VER =	0.9.1
+COUCH_VER =	0.10.0
 DISTNAME =	apache-couchdb-${COUCH_VER}
 CATEGORIES =	databases
 
-HOMEPAGE =	http://incubator.apache.org/couchdb/
+HOMEPAGE =	http://couchdb.apache.org/
 
 MAINTAINER =	Benoit Chesneau <benoitc@metavers.net>
 
@@ -44,7 +44,7 @@ CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 # The 'erl -version' test in configure needs HOME to be set.
 CONFIGURE_ENV =	HOME=${PORTHOME}
 
-NO_REGRESS =	Yes
+REGRESS_TARGET = check
 PORTHOME =	${WRKDIR}
 
 SUBST_VARS +=	COUCH_VER
@@ -52,8 +52,8 @@ SUBST_VARS +=	COUCH_VER
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/couchdb
 	${INSTALL_DATA} ${WRKBUILD}/etc/couchdb/default.ini \
-	    ${PREFIX}/share/examples/couchdb/default.ini
+	    ${PREFIX}/share/examples/couchdb
 	${INSTALL_DATA} ${WRKBUILD}/etc/couchdb/local.ini \
-	    ${PREFIX}/share/examples/couchdb/local.ini
+	    ${PREFIX}/share/examples/couchdb
 
 .include <bsd.port.mk>
