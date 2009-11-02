@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/12 21:31:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2009/11/02 23:00:08 jsg Exp $
 
 # XXX WORK IN PROGRESS.
 
@@ -11,14 +11,9 @@ ONLY_FOR_ARCHS = i386
 COMMENT =	gcc4 front-end for LLVM
 
 GCC_V =		4.2.1
-LLVM_V =	2.6pre20090808
+LLVM_V =	2.6
 DISTNAME =	llvm-gcc-4.2-${LLVM_V}.source
 PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}
-EXTRACT_SUFX =	.tar.lzma
-
-do-extract:
-	cd ${WRKDIR} && \
-	    lzma -dc ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} | ${TAR} xf -
 
 SHARED_LIBS =	ssp	0.0 \
 		objc	2.0 \
@@ -37,8 +32,8 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB +=	c m pthread
 USE_LIBTOOL =	yes
 
-MASTER_SITES =  http://spacehopper.org/mirrors/
-#MASTER_SITES = http://llvm.org/releases/${LLVM_V}/
+#MASTER_SITES =  http://spacehopper.org/mirrors/
+MASTER_SITES = http://llvm.org/releases/${LLVM_V}/
 
 MODULES =	gcc4
 LIB_DEPENDS =	elf::devel/libelf
@@ -77,7 +72,7 @@ CONFIGURE_ARGS +=	--enable-checking
 
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/gcc
 
-WRKDIST =		${WRKDIR}/${DISTNAME:S/.source//}
+WRKDIST=		${WRKDIR}/${DISTNAME:S/gcc-/gcc/}
 WRKSRC =		${WRKDIST}/obj
 
 post-extract:

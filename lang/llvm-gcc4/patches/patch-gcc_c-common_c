@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_c-common_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
---- gcc/c-common.c.orig	Mon May  4 17:45:55 2009
-+++ gcc/c-common.c	Mon Jun 22 00:58:03 2009
+$OpenBSD: patch-gcc_c-common_c,v 1.2 2009/11/02 23:00:08 jsg Exp $
+--- gcc/c-common.c.orig	Mon Jul 27 20:38:17 2009
++++ gcc/c-common.c	Sat Oct 31 03:52:35 2009
 @@ -641,6 +641,8 @@ static tree handle_cleanup_attribute (tree *, tree, tr
  static tree handle_warn_unused_result_attribute (tree *, tree, tree, int,
  						 bool *);
@@ -19,7 +19,7 @@ $OpenBSD: patch-gcc_c-common_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
    { "visibility",	      1, 1, false, false, false,
  			      handle_visibility_attribute },
    { "tls_model",	      1, 1, true,  false, false,
-@@ -5807,6 +5811,15 @@ handle_vector_size_attribute (tree *node, tree name, t
+@@ -5810,6 +5814,15 @@ handle_vector_size_attribute (tree *node, tree name, t
    *node = reconstruct_complex_type (*node, new_type);
  
    return NULL_TREE;
