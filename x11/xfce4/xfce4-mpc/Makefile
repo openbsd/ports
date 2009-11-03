@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/11 08:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/11/03 21:14:57 landry Exp $
 
 COMMENT=	Xfce4 mpd client panel plugin
 
-XFCE_VERSION=	0.3.3
+XFCE_VERSION=	0.3.4
 XFCE_PLUGIN=	mpc
-PKGNAME=	${DISTNAME:S/-plugin//}p3
 
 # BSD-ISC
 PERMIT_DISTFILES_CDROM=	Yes
@@ -13,9 +12,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
-EXTRACT_SUFX=	.tar.gz
 
 CONFIGURE_ARGS=	--without-libmpd
+LIB_DEPENDS +=	exo-0.3::x11/xfce4/exo
 
 WANTLIB=	X11 Xdmcp Xrender Xdamage Xau fontconfig freetype m z c \
 		Xcursor Xext Xfixes Xi Xcomposite Xinerama Xrandr expat \
