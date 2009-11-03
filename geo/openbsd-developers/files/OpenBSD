@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.51 2009/10/11 13:43:26 phessler Exp $
+# $OpenBSD: OpenBSD,v 1.52 2009/11/03 14:10:24 stephan Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -49,6 +49,7 @@
 45.69296	3.25642		"landry"	# Landry Breuil
 47.29		19.3		"robert"	# Robert Nagy
 47.3154		7.3526		"mglocker"	# Marcus Glocker
+47.369024	8.538033	"stephan"	# Stephan A. Rickauer
 47.50		7.60		"dhartmei"	# Daniel Hartmeier
 47.532		7.648		"winiger"	# Marc Winiger
 47.581		7.589		"mbalmer"	# Marc Balmer
