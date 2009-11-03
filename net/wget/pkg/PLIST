@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.23 2009/10/15 08:27:12 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.24 2009/11/03 10:45:46 sthen Exp $
 @bin bin/wget
 @info info/wget.info
+@comment lib/charset.alias
 @man man/man1/wget.1
 share/examples/wget/
 share/examples/wget/sample.wgetrc
