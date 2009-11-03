@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_bubblegen_c,v 1.1 2009/11/03 19:55:57 landry Exp $
+Fix crash on non-24 bpp X
+--- src/bubblegen.c.orig	Tue Nov  3 20:50:51 2009
++++ src/bubblegen.c	Tue Nov  3 20:51:38 2009
+@@ -63,7 +63,10 @@ static void bubble_init(bubble_t *b, bubble_style_t st
+    GdkColormap *colormap;
+    GdkPoint tip_points[5];
+    
+-   b->pixmap = gdk_pixmap_new(NULL, b->width, b->height, 24);
++   GdkVisual *root_visual;
++   root_visual = gdk_visual_get_system();
++   b->pixmap = gdk_pixmap_new(NULL, b->width, b->height, root_visual->depth);
++   g_assert(b->pixmap);
+    b->gc = gdk_gc_new(b->pixmap);
+    
+    colormap = gdk_colormap_get_system();
