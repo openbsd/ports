@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2009/08/18 22:24:13 sthen Exp $
---- Makefile.in.orig	Thu May 14 01:40:50 2009
-+++ Makefile.in	Thu May 14 01:41:53 2009
-@@ -321,7 +321,6 @@ SUBDIRS = \
+$OpenBSD: patch-Makefile_in,v 1.2 2009/11/03 14:32:33 sthen Exp $
+--- Makefile.in.orig	Sat Oct 31 13:41:03 2009
++++ Makefile.in	Sun Nov  1 20:42:17 2009
+@@ -315,7 +315,6 @@ SUBDIRS = \
  	multiplex \
  	$(PVM3) \
  	src \

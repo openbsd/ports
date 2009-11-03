@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2009/08/25 13:16:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2009/11/03 14:32:33 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
-DISTNAME=	transcode-1.1.4
+DISTNAME=	transcode-1.1.5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2
@@ -73,6 +73,8 @@ CONFIGURE_ARGS+=--enable-a52 \
 		--enable-libdvdread \
 		--enable-libiconv \
 		--enable-libjpeg \
+		--enable-libmpeg2 \
+		--enable-libmpeg2convert \
 		--enable-libpostproc \
 		--enable-libxml2 \
 		--enable-netstream \
