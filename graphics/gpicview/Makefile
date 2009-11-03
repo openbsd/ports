@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/26 14:14:14 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2009/11/03 13:27:43 stephan Exp $
 
 COMMENT =	simple and fast image viewer for X
 
 DISTNAME =	gpicview-0.2.1
+PKGNAME =	${DISTNAME}p0
 
 CATEGORIES =	graphics x11
 
-MAINTAINER =	Stephan A. Rickauer <stephan.rickauer@startek.ch>
+MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
 
 HOMEPAGE =	http://lxde.org/
 

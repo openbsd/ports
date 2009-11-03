@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/25 17:15:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/11/03 13:27:43 stephan Exp $
 
 COMMENT=	simple module for handling email messages
 
 MODULES=	cpan
 DISTNAME=	Email-Simple-2.005
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	mail
 
-MAINTAINER=	Stephan A. Rickauer <stephan.rickauer@startek.ch>
+MAINTAINER=	Stephan A. Rickauer <stephan@openbsd.org>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

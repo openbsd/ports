@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2009/10/21 12:50:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/11/03 13:27:43 stephan Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
 DISTNAME= 	xfe-1.19.2
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES= 	x11
 
 HOMEPAGE=	http://roland65.free.fr/xfe/
 
-MAINTAINER=	Stephan A. Rickauer <stephan.rickauer@startek.ch>
+MAINTAINER=	Stephan A. Rickauer <stephan@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
