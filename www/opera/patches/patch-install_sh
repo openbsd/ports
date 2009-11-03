@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_sh,v 1.22 2009/09/22 05:14:43 sturm Exp $
---- install.sh.orig	Sun Aug 30 18:25:07 2009
-+++ install.sh	Wed Sep  2 20:04:25 2009
+$OpenBSD: patch-install_sh,v 1.23 2009/11/03 05:50:21 sturm Exp $
+--- install.sh.orig	Mon Oct 19 17:55:07 2009
++++ install.sh	Mon Nov  2 14:11:30 2009
 @@ -870,7 +870,7 @@ generate_wrapper()
      wrapper_contain="#!/bin/sh
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-install_sh,v 1.22 2009/09/22 05:14:43 sturm Exp $
  export OPERA_SCRIPT_PATH
  
  # Location of the Opera binaries
-@@ -925,9 +925,6 @@ if test \"\${OPERA_DIR}\" = '' ; then
+@@ -922,9 +922,6 @@ if test \"\${OPERA_DIR}\" = '' ; then
    fi
  fi
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-install_sh,v 1.22 2009/09/22 05:14:43 sturm Exp $
  # Native Java enviroment
  for d in \"\$OPERA_PERSONALDIR\" \"\$HOME/.opera\"
  do if test -f \"\$d/javapath.txt\"
-@@ -1063,9 +1060,6 @@ if test \"\${OPERA_JAVA_DIR}\"; then
+@@ -1060,9 +1057,6 @@ if test \"\${OPERA_JAVA_DIR}\"; then
      export LD_LIBRARY_PATH OPERA_JAVA_DIR
  fi
  

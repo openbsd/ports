@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2009/09/22 05:14:43 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.31 2009/11/03 05:50:21 sturm Exp $
 bin/opera
 lib/opera/
 lib/opera/plugins/
@@ -6,6 +6,8 @@ libexec/missingsyms.so
 libexec/opera
 libexec/operaplugincleaner
 libexec/operapluginwrapper
+libexec/operapluginwrapper-ia32-linux
+libexec/operapluginwrapper-native
 libexec/spellcheck.so
 libexec/works
 @man man/man1/opera.1
@@ -70,6 +72,9 @@ share/opera/lngcode.txt
 share/opera/locale/
 share/opera/locale/be/
 share/opera/locale/be/be.lng
+share/opera/locale/be/bookmarks.adr
+share/opera/locale/be/search.ini
+share/opera/locale/be/standard_speeddial.ini
 share/opera/locale/bg/
 share/opera/locale/bg/bg.lng
 share/opera/locale/cs/
@@ -86,7 +91,9 @@ share/opera/locale/el/
 share/opera/locale/el/el.lng
 share/opera/locale/en/
 share/opera/locale/en-GB/
+share/opera/locale/en-GB/bookmarks.adr
 share/opera/locale/en-GB/en-GB.lng
+share/opera/locale/en-GB/search.ini
 share/opera/locale/en-GB/standard_speeddial.ini
 share/opera/locale/en/bookmarks.adr
 share/opera/locale/en/en.lng
@@ -95,7 +102,10 @@ share/opera/locale/en/license.txt
 share/opera/locale/en/search.ini
 share/opera/locale/en/standard_speeddial.ini
 share/opera/locale/es-ES/
+share/opera/locale/es-ES/bookmarks.adr
 share/opera/locale/es-ES/es-ES.lng
+share/opera/locale/es-ES/search.ini
+share/opera/locale/es-ES/standard_speeddial.ini
 share/opera/locale/es-LA/
 share/opera/locale/es-LA/es-LA.lng
 share/opera/locale/et/
@@ -105,7 +115,10 @@ share/opera/locale/fi/fi.lng
 share/opera/locale/fr/
 share/opera/locale/fr-CA/
 share/opera/locale/fr-CA/fr-CA.lng
+share/opera/locale/fr/bookmarks.adr
 share/opera/locale/fr/fr.lng
+share/opera/locale/fr/search.ini
+share/opera/locale/fr/standard_speeddial.ini
 share/opera/locale/fy/
 share/opera/locale/fy/fy.lng
 share/opera/locale/hi/
@@ -120,7 +133,10 @@ share/opera/locale/id/bookmarks.adr
 share/opera/locale/id/id.lng
 share/opera/locale/id/standard_speeddial.ini
 share/opera/locale/it/
+share/opera/locale/it/bookmarks.adr
 share/opera/locale/it/it.lng
+share/opera/locale/it/search.ini
+share/opera/locale/it/standard_speeddial.ini
 share/opera/locale/ja/
 share/opera/locale/ja/bookmarks.adr
 share/opera/locale/ja/ja.lng
@@ -136,7 +152,10 @@ share/opera/locale/lt/lt.lng
 share/opera/locale/mk/
 share/opera/locale/mk/mk.lng
 share/opera/locale/nb/
+share/opera/locale/nb/bookmarks.adr
 share/opera/locale/nb/nb.lng
+share/opera/locale/nb/search.ini
+share/opera/locale/nb/standard_speeddial.ini
 share/opera/locale/nl/
 share/opera/locale/nl/nl.lng
 share/opera/locale/nn/
@@ -170,6 +189,9 @@ share/opera/locale/te/te.lng
 share/opera/locale/tr/
 share/opera/locale/tr/tr.lng
 share/opera/locale/uk/
+share/opera/locale/uk/bookmarks.adr
+share/opera/locale/uk/search.ini
+share/opera/locale/uk/standard_speeddial.ini
 share/opera/locale/uk/uk.lng
 share/opera/locale/zh-cn/
 share/opera/locale/zh-cn/bookmarks.adr
