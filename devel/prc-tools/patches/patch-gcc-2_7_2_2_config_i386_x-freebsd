@@ -1,7 +1,0 @@
-$OpenBSD: patch-gcc-2_7_2_2_config_i386_x-freebsd,v 1.2 2001/08/30 22:16:42 pvalchev Exp $
---- ../gcc-2.7.2.2/config/i386/x-freebsd.orig	Mon Oct 31 05:52:41 1994
-+++ ../gcc-2.7.2.2/config/i386/x-freebsd	Wed Aug 22 12:23:05 2001
-@@ -1,3 +1,2 @@
- # Don't run fixproto
- STMP_FIXPROTO =
--CLIB=-lgnumalloc
