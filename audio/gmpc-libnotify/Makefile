@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/21 19:28:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/11/04 23:13:34 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		alternative notification pop-up, for gmpc
 
 VERSION=		0.19.0
 DISTNAME=		gmpc-libnotify-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 HOMEPAGE=		http://gmpc.wikia.com/wiki/Plugins
@@ -27,7 +28,8 @@ WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m mpd pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread-stubs xcb z
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			textproc/intltool
 RUN_DEPENDS=		:gmpc->=${VERSION}:audio/gmpc \
 			:notification-daemon-*|notification-daemon-xfce-*:sysutils/notification-daemon
 BUILD_DEPENDS=		${RUN_DEPENDS}
