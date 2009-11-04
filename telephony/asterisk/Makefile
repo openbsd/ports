@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2009/09/04 00:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2009/11/04 21:49:42 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			1.4.26.2
+VER=			1.4.26.3
 # you can set PATCHVER=p0, p1 etc to bump everything,
 # this takes care of the subpackage/flavor maze
 PATCHVER=		
