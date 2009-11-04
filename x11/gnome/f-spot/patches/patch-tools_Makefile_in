@@ -1,10 +1,10 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.4 2009/09/17 20:07:18 ajacoutot Exp $
+$OpenBSD: patch-tools_Makefile_in,v 1.5 2009/11/04 18:17:58 ajacoutot Exp $
 
 The f-spot-import script needs HAL to work, which we don't have.
 
---- tools/Makefile.in.orig	Wed Sep 16 21:42:44 2009
-+++ tools/Makefile.in	Thu Sep 17 21:52:12 2009
-@@ -269,8 +269,7 @@ DISTCLEANFILES = \
+--- tools/Makefile.in.orig	Thu Oct 29 11:20:27 2009
++++ tools/Makefile.in	Wed Nov  4 19:05:36 2009
+@@ -284,8 +284,7 @@ DISTCLEANFILES = \
  
  saverdir = @GNOME_SCREENSAVER_SAVERDIR@
  saver_SCRIPTS = f-spot-screensaver
