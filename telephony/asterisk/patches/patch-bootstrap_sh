@@ -1,0 +1,14 @@
+$OpenBSD: patch-bootstrap_sh,v 1.1 2009/11/04 21:51:49 sthen Exp $
+--- bootstrap.sh.orig	Thu Oct 30 20:58:24 2008
++++ bootstrap.sh	Wed Nov  4 21:25:03 2009
+@@ -19,8 +19,8 @@ if [ $? = 0 ] ; then	# FreeBSD case
+ else	# linux case
+ 	MY_AC_VER=
+ 	MY_AM_VER=
+-	AUTOCONF_VERSION=2.60
+-	AUTOMAKE_VERSION=1.9
++	[ -z "$AUTOCONF_VERSION" ] && AUTOCONF_VERSION=2.60
++	[ -z "$AUTOMAKE_VERSION" ] && AUTOMAKE_VERSION=1.9
+ 	export AUTOCONF_VERSION
+ 	export AUTOMAKE_VERSION
+ fi
