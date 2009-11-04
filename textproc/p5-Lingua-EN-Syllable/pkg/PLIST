@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/04 13:19:44 jasper Exp $
+${P5SITE}/Lingua/
+${P5SITE}/Lingua/EN/
+${P5SITE}/Lingua/EN/Syllable.pm
+@man man/man3p/Lingua::EN::Syllable.3p
