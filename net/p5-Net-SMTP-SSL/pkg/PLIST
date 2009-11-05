@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/05 13:23:41 sthen Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/SMTP/
+${P5SITE}/Net/SMTP/SSL.pm
+@man man/man3p/Net::SMTP::SSL.3p

@@ -1,0 +1,2 @@
+Net::SMTP::SSL implements the same API as Net::SMTP, but uses
+IO::Socket::SSL for its network operations.
