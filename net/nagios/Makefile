@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2009/11/05 10:56:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/11/05 13:27:58 sthen Exp $
 
+  SUBDIR += check_email_delivery
   SUBDIR += check_sip
   SUBDIR += cnagios
   SUBDIR += nagios
