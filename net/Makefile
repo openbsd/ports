@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.602 2009/11/04 13:27:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.603 2009/11/05 13:25:46 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -275,6 +275,9 @@
      SUBDIR += p5-Net-Radius
      SUBDIR += p5-Net-RawIP
      SUBDIR += p5-Net-SFTP
+     SUBDIR += p5-Net-SMTP-SSL
+     SUBDIR += p5-Net-SMTP-TLS
+     SUBDIR += p5-Net-SMTP_auth
      SUBDIR += p5-Net-SNMP
      SUBDIR += p5-Net-SNPP
      SUBDIR += p5-Net-SSH-Expect
