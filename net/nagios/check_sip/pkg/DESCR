@@ -1,0 +1,2 @@
+check_sip is a plugin for Nagios that uses sipsak to test whether a
+SIP host can reply to an OPTIONS 'ping' or handle a REGISTER request.
