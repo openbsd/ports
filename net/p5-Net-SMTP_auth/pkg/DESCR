@@ -1,0 +1,7 @@
+Net::SMTP_auth is a small extension to G. Barr's Net::SMTP
+to authenticate to an SMTP server using one of the AUTH
+methods provided by Authen::SASL (see RFC2554 for details).
+This module can be expanded and is a very first implementation.
+
+NOTE: Net::SMTP can do authentication by itself (with a
+different Syntax).
