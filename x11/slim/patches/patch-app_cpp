@@ -1,10 +1,10 @@
-$OpenBSD: patch-app_cpp,v 1.1 2009/09/04 20:24:25 landry Exp $
+$OpenBSD: patch-app_cpp,v 1.2 2009/11/05 19:05:12 landry Exp $
 Slim used to spawn 'xauth add . <COOKIE>' via the system() call, so the
 cookie itself was visible.  On multi-user system one can poll for the
 xauth processes via ps and gather cookies for X sessions.
 fixes CVE-2009-1756
---- app.cpp.orig	Fri Sep  4 21:58:08 2009
-+++ app.cpp	Fri Sep  4 22:07:29 2009
+--- app.cpp.orig	Fri Sep 26 02:54:15 2008
++++ app.cpp	Wed Oct 28 19:31:08 2009
 @@ -32,6 +32,62 @@
  
  using namespace std;
@@ -68,7 +68,17 @@ fixes CVE-2009-1756
  #ifdef USE_PAM
  #include <string>
  
-@@ -131,12 +187,12 @@ void User1Signal(int sig) {
+@@ -104,7 +160,8 @@ extern App* LoginApp;
+ 
+ void CatchSignal(int sig) {
+     cerr << APPNAME << ": unexpected signal " << sig << endl;
+-    LoginApp->StopServer();
++    if (LoginApp->serverStarted)
++        LoginApp->StopServer();
+     LoginApp->RemoveLock();
+     exit(ERR_EXIT);
+ }
+@@ -131,12 +188,13 @@ void User1Signal(int sig) {
  App::App(int argc, char** argv):
      pam(conv, static_cast<void*>(&LoginPanel)){
  #else
@@ -77,13 +87,32 @@ fixes CVE-2009-1756
  #endif
      int tmp;
      ServerPID = -1;
++    serverStarted = false;
      testing = false;
 -    mcookie = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 +    mcookie = string(App::mcookiesize, 'a');
      daemonmode = false;
      force_nodaemon = false;
      firstlogin = true;
-@@ -1127,13 +1183,13 @@ string App::findValidRandomTheme(const string& set)
+@@ -856,6 +914,8 @@ int App::StartServer() {
+     char* args = new char[argOption.length()+2]; // NULL plus vt
+     strcpy(args, argOption.c_str());
+ 
++    serverStarted = false;
++
+     int argc = 1;
+     int pos = 0;
+     bool hasVtSet = false;
+@@ -935,7 +995,7 @@ int App::StartServer() {
+     }
+     
+     delete args;
+-
++    serverStarted = true;
+     return ServerPID;
+ }
+ 
+@@ -1127,13 +1187,13 @@ string App::findValidRandomTheme(const string& set)
          name = name.substr(0, name.length() - 1);
      }
  
@@ -99,7 +128,7 @@ fixes CVE-2009-1756
  
          name = Cfg::Trim(themes[sel]);
          themefile = string(THEMESDIR) +"/" + name + THEMESFILE;
-@@ -1159,34 +1215,32 @@ void App::replaceVariables(string& input,
+@@ -1159,34 +1219,32 @@ void App::replaceVariables(string& input,
      }
  }
  

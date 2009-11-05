@@ -1,7 +1,7 @@
-$OpenBSD: patch-slim_conf,v 1.3 2008/11/05 13:36:41 pea Exp $
+$OpenBSD: patch-slim_conf,v 1.4 2009/11/05 19:05:12 landry Exp $
 --- slim.conf.orig	Fri Sep 26 02:54:15 2008
-+++ slim.conf	Mon Nov  3 22:14:42 2008
-@@ -1,13 +1,14 @@
++++ slim.conf	Thu Nov  5 19:02:22 2009
+@@ -1,17 +1,18 @@
  # Path, X server and arguments (if needed)
  # Note: -xauth $authfile is automatically appended
 -default_path        ./:/bin:/usr/bin:/usr/local/bin
@@ -21,6 +21,11 @@ $OpenBSD: patch-slim_conf,v 1.3 2008/11/05 13:36:41 pea Exp $
  #suspend_cmd        /usr/sbin/suspend
  
  # Full path to the xauth binary
+-xauth_path         /usr/bin/xauth 
++xauth_path         ${X11BASE}/bin/xauth 
+ 
+ # Xauth file for server
+ authfile           /var/run/slim.auth
 @@ -32,8 +33,8 @@ authfile           /var/run/slim.auth
  # NOTE: if your system does not have bash you need
  # to adjust the command according to your preferred shell,
@@ -32,6 +37,15 @@ $OpenBSD: patch-slim_conf,v 1.3 2008/11/05 13:36:41 pea Exp $
  
  # Commands executed when starting and exiting a session.
  # They can be used for registering a X11 session with
+@@ -54,7 +55,7 @@ login_cmd           exec /bin/bash -login ~/.xinitrc %
+ sessions            xfce4,icewm,wmaker,blackbox
+ 
+ # Executed when pressing F11 (requires imagemagick)
+-screenshot_cmd      import -window root /slim.png
++screenshot_cmd      import -window root /tmp/slim.png
+ 
+ # welcome message. Available variables: %host, %domain
+ welcome_msg         Welcome to %host
 @@ -84,7 +85,7 @@ reboot_msg         The system is rebooting...
  current_theme       default
  

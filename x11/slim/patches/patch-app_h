@@ -1,6 +1,6 @@
-$OpenBSD: patch-app_h,v 1.1 2009/09/04 20:24:25 landry Exp $
---- app.h.orig	Fri Sep  4 21:55:48 2009
-+++ app.h	Fri Sep  4 22:04:27 2009
+$OpenBSD: patch-app_h,v 1.2 2009/11/05 19:05:12 landry Exp $
+--- app.h.orig	Fri Sep 26 02:54:15 2008
++++ app.h	Wed Oct 28 19:30:39 2009
 @@ -28,6 +28,16 @@
  #include "PAM.h"
  #endif
@@ -18,7 +18,15 @@ $OpenBSD: patch-app_h,v 1.1 2009/09/04 20:24:25 landry Exp $
  class App {
  public:
      App(int argc, char** argv);
-@@ -101,6 +111,8 @@ class App { (private)
+@@ -36,6 +46,7 @@ class App { (public)
+     int GetServerPID();
+     void StopServer();
+ 
++    bool serverStarted;
+     // Lock functions
+     void GetLock();
+     void RemoveLock();
+@@ -101,6 +112,8 @@ class App { (public)
      
      std::string themeName;
      std::string mcookie;
