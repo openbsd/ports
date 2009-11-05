@@ -1,0 +1,12 @@
+$OpenBSD: patch-check_email_delivery,v 1.1.1.1 2009/11/05 13:27:26 sthen Exp $
+--- check_email_delivery.orig	Thu Nov  5 11:14:49 2009
++++ check_email_delivery	Thu Nov  5 11:15:02 2009
+@@ -52,7 +52,7 @@ my $default_crit = 30;
+ my $default_warn = 15;
+ my $default_wait = 5;
+ my $default_timeout = 60;
+-my $libexec = "/usr/local/nagios/libexec";
++my $libexec = "${LOCALBASE}/libexec/nagios";
+ my $ok;
+ $ok = Getopt::Long::GetOptions(
+ 	"V|version"=>\$show_version,

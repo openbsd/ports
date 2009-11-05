@@ -1,0 +1,10 @@
+This package consists of three Nagios plugins.
+
+- check_smtp_send sends an email message with custom headers and body.
+
+- check_imap_receive uses an IMAP search to check an INBOX or folder
+for messages matching certain criteria. SSL support is available.
+
+- check_email_delivery uses the other two plugins (or you may provide
+alternatives) to check full email sending/delivery loops. As well as
+alerting via nagios, running statistics can be recorded to a file.

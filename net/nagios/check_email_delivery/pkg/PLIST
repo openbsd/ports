@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/05 13:27:26 sthen Exp $
+libexec/nagios/
+libexec/nagios/check_email_delivery
+libexec/nagios/check_imap_receive
+libexec/nagios/check_smtp_send
+@man man/man3p/check_email_delivery.3p
+@man man/man3p/check_imap_receive.3p
+@man man/man3p/check_smtp_send.3p
+share/doc/check_email_delivery/
+share/doc/check_email_delivery/README.txt
