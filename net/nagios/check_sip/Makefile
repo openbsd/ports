@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/05 10:56:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/05 11:19:41 sthen Exp $
 
 COMMENT=		Nagios plugin to check SIP
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 EXTRACT_SUFX=
 RUN_DEPENDS=		::net/sipsak
