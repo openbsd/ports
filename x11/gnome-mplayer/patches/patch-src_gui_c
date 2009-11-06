@@ -1,13 +1,14 @@
-$OpenBSD: patch-src_gui_c,v 1.4 2009/10/31 12:26:25 edd Exp $
+$OpenBSD: patch-src_gui_c,v 1.5 2009/11/06 16:57:23 edd Exp $
 
 fixes from upstream svn:
 add disable_animation config option
 fix hidden cursor over menus
+update volume control
 
 add sun, sndio and rtunes to available audio backends
 
---- src/gui.c.orig	Thu Sep 17 18:05:35 2009
-+++ src/gui.c	Sun Oct 18 17:51:31 2009
+--- src/gui.c.orig	Thu Sep 17 10:05:35 2009
++++ src/gui.c	Fri Nov  6 05:04:23 2009
 @@ -94,7 +94,9 @@ static void drawing_area_realized(GtkWidget * widget, 
       * onwards, requesting the native window in a thread causes a BadWindowID,
       * so we need to request it now. We could call gdk_window_ensure_native(),
@@ -18,7 +19,31 @@ add sun, sndio and rtunes to available audio backends
  }
  
  gint get_player_window()
-@@ -435,7 +437,7 @@ gboolean set_progress_value(void *data)
+@@ -108,6 +110,23 @@ gint get_player_window()
+     }
+ }
+ 
++gboolean update_volume(gpointer data)
++{
++	if (use_pulse_flat_volume && !softvol) {
++		if (state != QUIT) {
++			if (idledata->mplayer_volume + 1 != idledata->volume) {
++#ifdef GTK2_12_ENABLED
++				gtk_scale_button_set_value(GTK_SCALE_BUTTON(vol_slider), idledata->mplayer_volume);
++#else
++				gtk_range_set_value(GTK_RANGE(vol_slider), idledata->mplayer_volume);
++#endif
++			}
++		}
++	}
++
++	return FALSE;
++}
++
+ gboolean set_adjust_layout(gpointer data)
+ {
+     adjusting = FALSE;
+@@ -435,7 +454,7 @@ gboolean set_progress_value(void *data)
          }
          if (idle->cachepercent < 1.0 && state == PAUSED) {
              text =
@@ -27,7 +52,7 @@ add sun, sndio and rtunes to available audio backends
                                  (gint) (idle->cachepercent * 100));
              gmtk_media_tracker_set_text(tracker, text);
              g_free(text);
-@@ -561,7 +563,7 @@ gboolean set_progress_time(void *data)
+@@ -561,7 +580,7 @@ gboolean set_progress_time(void *data)
  
      if (idle->cachepercent > 0 && idle->cachepercent < 1.0 && !(playlist) && !forcecache
          && !idle->streaming) {
@@ -36,7 +61,102 @@ add sun, sndio and rtunes to available audio backends
                     (int) (idle->cachepercent * 100));
      } else {
          g_snprintf(idle->progress_text, 128, "%s", text);
-@@ -2427,23 +2429,33 @@ gboolean make_panel_and_mouse_invisible(gpointer data)
+@@ -595,17 +614,9 @@ gboolean set_volume_from_slider(gpointer data)
+     vol = (gint) gtk_range_get_value(GTK_RANGE(vol_slider));
+ #endif
+     if (!idledata->mute) {
+-        if (use_pulse_flat_volume && !softvol) {
+-            set_alsa_volume(TRUE, vol);
+-        } else {
+-            cmd = g_strdup_printf("volume %i 1\n", vol);
+-            send_command(cmd, FALSE);
+-            g_free(cmd);
+-        }
+-        send_command("get_property volume\n", FALSE);
+-        if (state == PAUSED || state == STOPPED) {
+-            send_command("pause\n", FALSE);
+-        }
++	cmd = g_strdup_printf("volume %i 1\n", vol);
++	send_command(cmd, FALSE);
++	g_free(cmd);
+     }
+ 
+     return FALSE;
+@@ -1416,6 +1427,8 @@ gboolean delete_callback(GtkWidget * widget, GdkEvent 
+     ok_to_play = FALSE;
+     dontplaynext = TRUE;
+ 
++    g_idle_remove_by_data(idledata);
++
+     if (remember_loc && !fullscreen && embed_window == 0) {
+         gm_store = gm_pref_store_new("gnome-mplayer");
+         gtk_window_get_position(GTK_WINDOW(window), &loc_window_x, &loc_window_y);
+@@ -2308,13 +2321,9 @@ void vol_slider_callback(GtkRange * range, gpointer us
+         g_free(cmd);
+         idledata->mute = TRUE;
+     } else {
+-        if (use_pulse_flat_volume && !softvol) {
+-            set_alsa_volume(TRUE, vol);
+-        } else {
+-            cmd = g_strdup_printf("volume %i 1\n", vol);
+-            send_command(cmd, TRUE);
+-            g_free(cmd);
+-        }
++        cmd = g_strdup_printf("volume %i 1\n", vol);
++        send_command(cmd, TRUE);
++        g_free(cmd);
+     }
+     if (idledata->volume != vol) {
+ 
+@@ -2323,24 +2332,18 @@ void vol_slider_callback(GtkRange * range, gpointer us
+         g_idle_add(set_volume_tip, idledata);
+         g_free(buf);
+     }
+-    send_command("get_property volume\n", TRUE);
+ 
+     dbus_send_rpsignal_with_double("RP_Volume", gtk_range_get_value(GTK_RANGE(vol_slider)));
+ 
+ }
+ 
+ #ifdef GTK2_12_ENABLED
+-void vol_button_callback(GtkVolumeButton * volume, gpointer user_data)
++void vol_button_value_changed_callback(GtkScaleButton * volume, gdouble value, gpointer data)
+ {
+-    gint vol;
++    gint vol = value;
+     gchar *cmd;
+     gchar *buf;
+ 
+-    if (rpcontrols != NULL && g_strcasecmp(rpcontrols, "volumeslider") == 0) {
+-        vol = (gint) gtk_range_get_value(GTK_RANGE(vol_slider));
+-    } else {
+-        vol = (gint) gtk_scale_button_get_value(GTK_SCALE_BUTTON(volume));
+-    }
+     if (idledata->mute && vol > 0) {
+         cmd = g_strdup_printf("mute 0\n");
+         send_command(cmd, TRUE);
+@@ -2356,6 +2359,7 @@ void vol_button_callback(GtkVolumeButton * volume, gpo
+         cmd = g_strdup_printf("volume %i 1\n", vol);
+         send_command(cmd, TRUE);
+         g_free(cmd);
++	idledata->volume = vol;
+     }
+     if (idledata->volume != vol) {
+ 
+@@ -2364,11 +2368,8 @@ void vol_button_callback(GtkVolumeButton * volume, gpo
+         g_idle_add(set_volume_tip, idledata);
+         g_free(buf);
+     }
+-    send_command("get_property volume\n", TRUE);
+ 
+-    dbus_send_rpsignal_with_double("RP_Volume",
+-                                   gtk_scale_button_get_value(GTK_SCALE_BUTTON(vol_slider)));
+-
++    dbus_send_rpsignal_with_double("RP_Volume", vol);
+ }
+ #endif
+ 
+@@ -2427,23 +2428,26 @@ gboolean make_panel_and_mouse_invisible(gpointer data)
  
      g_get_current_time(&currenttime);
      g_time_val_add(&currenttime, -auto_hide_timeout * G_USEC_PER_SEC);
@@ -48,6 +168,15 @@ add sun, sndio and rtunes to available audio backends
 -        gdk_pixmap_unref(cursor_source);
 -        gdk_window_set_cursor(window->window, cursor);
 -        gdk_cursor_unref(cursor);
+-
+-        if (use_pulse_flat_volume && !softvol) {
+-            if (idledata->mplayer_volume != idledata->volume) {
+-                idledata->volume = idledata->mplayer_volume;
+-                set_volume(idledata);
+-            }
+-        }
+-    }
+-
 +	if (GTK_WIDGET_VISIBLE(menu_file)
 +		|| GTK_WIDGET_VISIBLE(menu_edit)
 +		|| GTK_WIDGET_VISIBLE(menu_view)
@@ -65,28 +194,13 @@ add sun, sndio and rtunes to available audio backends
 +		    gdk_pixmap_unref(cursor_source);
 +		    gdk_window_set_cursor(window->window, cursor);
 +		    gdk_cursor_unref(cursor);
- 
--        if (use_pulse_flat_volume && !softvol) {
--            if (idledata->mplayer_volume != idledata->volume) {
--                idledata->volume = idledata->mplayer_volume;
--                set_volume(idledata);
--            }
--        }
--    }
--
-+		    if (use_pulse_flat_volume && !softvol) {
-+		        if (idledata->mplayer_volume != idledata->volume) {
-+		            idledata->volume = idledata->mplayer_volume;
-+		            set_volume(idledata);
-+		        }
-+		    }
 +		}
 +	} 
 +	
      return FALSE;
  }
  
-@@ -3671,6 +3683,8 @@ void config_apply(GtkWidget * widget, void *data)
+@@ -3671,6 +3675,8 @@ void config_apply(GtkWidget * widget, void *data)
          !(gboolean) gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(config_embeddedfonts));
      disable_pause_on_click =
          !(gboolean) gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(config_pause_on_click));
@@ -95,7 +209,7 @@ add sun, sndio and rtunes to available audio backends
      oldosd = osdlevel;
      osdlevel = (gint) gtk_range_get_value(GTK_RANGE(config_osdlevel));
      pplevel = (gint) gtk_range_get_value(GTK_RANGE(config_pplevel));
-@@ -3774,6 +3788,7 @@ void config_apply(GtkWidget * widget, void *data)
+@@ -3774,6 +3780,7 @@ void config_apply(GtkWidget * widget, void *data)
      gm_pref_store_set_boolean(gm_store, DISABLEDEINTERLACE, disable_deinterlace);
      gm_pref_store_set_boolean(gm_store, DISABLEFRAMEDROP, disable_framedrop);
      gm_pref_store_set_boolean(gm_store, DISABLEPAUSEONCLICK, disable_pause_on_click);
@@ -103,7 +217,7 @@ add sun, sndio and rtunes to available audio backends
      gm_pref_store_set_boolean(gm_store, SHOWPLAYLIST, playlist_visible);
      gm_pref_store_set_boolean(gm_store, SHOWDETAILS, details_visible);
      gm_pref_store_set_boolean(gm_store, USE_MEDIAKEYS, use_mediakeys);
-@@ -4697,32 +4712,41 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+@@ -4697,32 +4704,41 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
      tooltip = gtk_tooltips_new();
      gtk_tooltips_set_tip(tooltip, config_ao,
                           _
@@ -152,16 +266,52 @@ add sun, sndio and rtunes to available audio backends
              }
          }
      }
-@@ -5308,6 +5332,12 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
-     config_pause_on_click = gtk_check_button_new_with_label(_("Pause playback on mouse click"));
-     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(config_pause_on_click), !disable_pause_on_click);
-     gtk_table_attach(GTK_TABLE(conf_table), config_pause_on_click, 0, 2, i, i + 1, GTK_FILL,
-+                     GTK_SHRINK, 0, 0);
-+    i++;
-+
-+    config_disable_animation = gtk_check_button_new_with_label(_("Disable Fullscreen Control Bar Animation"));
-+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(config_disable_animation), disable_animation);
-+    gtk_table_attach(GTK_TABLE(conf_table), config_disable_animation, 0, 2, i, i + 1, GTK_FILL,
+@@ -5311,6 +5327,12 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
                       GTK_SHRINK, 0, 0);
      i++;
  
++    config_disable_animation = gtk_check_button_new_with_label(_("Disable Fullscreen Control Bar Animation"));
++    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(config_disable_animation), disable_animation);
++    gtk_table_attach(GTK_TABLE(conf_table), config_disable_animation, 0, 2, i, i + 1, GTK_FILL,
++                     GTK_SHRINK, 0, 0);
++    i++;
++
+     config_verbose = gtk_check_button_new_with_label(_("Verbose Debug Enabled"));
+     tooltip = gtk_tooltips_new();
+     gtk_tooltips_set_tip(tooltip, config_verbose,
+@@ -6235,7 +6257,6 @@ GtkWidget *create_window(gint windowid)
+     drawing_area = gtk_socket_new();
+     g_signal_connect(drawing_area, "realize", G_CALLBACK(drawing_area_realized), NULL);
+ 
+-
+     cover_art = gtk_image_new();
+     media_label = gtk_label_new("");
+     gtk_widget_set_size_request(media_label, 300, -1);
+@@ -6291,7 +6312,6 @@ GtkWidget *create_window(gint windowid)
+ 
+ 
+     // ok if the theme has all the icons we need, use them, otherwise use the default GNOME ones
+-
+     if (gtk_icon_theme_has_icon(icon_theme, "media-playback-start")
+         && gtk_icon_theme_has_icon(icon_theme, "media-playback-pause")
+         && gtk_icon_theme_has_icon(icon_theme, "media-playback-stop")
+@@ -6534,8 +6554,8 @@ GtkWidget *create_window(gint windowid)
+         else
+             gtk_object_set(GTK_OBJECT(vol_slider), "size", GTK_ICON_SIZE_MENU, NULL);
+ 
+-        g_signal_connect(G_OBJECT(vol_slider), "value_changed", G_CALLBACK(vol_button_callback),
+-                         NULL);
++        g_signal_connect(G_OBJECT(vol_slider), "value_changed", G_CALLBACK(vol_button_value_changed_callback),
++                         idledata);
+         gtk_button_set_relief(GTK_BUTTON(vol_slider), GTK_RELIEF_NONE);
+ #else
+         vol_slider = gtk_hscale_new_with_range(0.0, 100.0, 1.0);
+@@ -6543,7 +6563,7 @@ GtkWidget *create_window(gint windowid)
+         gtk_scale_set_draw_value(GTK_SCALE(vol_slider), FALSE);
+         gtk_range_set_value(GTK_RANGE(vol_slider), idledata->volume);
+         g_signal_connect(G_OBJECT(vol_slider), "value_changed", G_CALLBACK(vol_slider_callback),
+-                         NULL);
++                         idledata);
+ #endif
+     }
+     volume_tip = gtk_tooltips_new();

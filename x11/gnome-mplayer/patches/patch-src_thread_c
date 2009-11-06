@@ -1,28 +1,78 @@
-$OpenBSD: patch-src_thread_c,v 1.1 2009/10/31 12:26:25 edd Exp $
+$OpenBSD: patch-src_thread_c,v 1.2 2009/11/06 16:57:23 edd Exp $
 
 volume and mute fixes from upstream svn
 
---- src/thread.c.orig	Wed Oct 14 03:38:40 2009
-+++ src/thread.c	Wed Oct 14 03:45:28 2009
-@@ -513,7 +513,12 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
-                 idledata->mplayer_volume = volume;
-                 idledata->mute = (volume > 0);
-             }
+--- src/thread.c.orig	Thu Sep 17 10:01:44 2009
++++ src/thread.c	Fri Nov  6 05:43:59 2009
+@@ -269,7 +269,8 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+     GIOStatus status;
+     gchar *buf, *message = NULL;
+     gchar *cmd;
+-    gint pos, volume, i;
++    gint pos, i;
++    gfloat vol;
+     gfloat percent;
+     GError *error = NULL;
+     gchar *error_msg = NULL;
+@@ -506,14 +507,11 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+ 
+     if (strstr(mplayer_output->str, "ANS_volume") != 0) {
+         buf = strstr(mplayer_output->str, "ANS_volume");
+-        sscanf(buf, "ANS_volume=%i", &volume);
+-        if (!idledata->mute) {
+-            if (use_pulse_flat_volume && !softvol) {
+-                // Need to track what the master volume is, gui is updated in make mouse invisible
+-                idledata->mplayer_volume = volume;
+-                idledata->mute = (volume > 0);
+-            }
 -        }
-+        } else {
-+			if (softvol) {
-+		idledata->mplayer_volume = volume;
-+		idledata->mute = (volume > 0);
-+			}
-+		}
++	sscanf(buf, "ANS_volume=%f", &vol);
++	// Need to track what the master volume is, gui is updated in make mouse invisible
++	idledata->mplayer_volume = vol;
++	idledata->mute = !((gint)vol > 0);
++	g_idle_add(update_volume, idledata);
      }
  
      if (strstr(mplayer_output->str, "ANS_chapters") != 0) {
-@@ -844,6 +849,7 @@ gboolean thread_query(gpointer data)
-         } else {
+@@ -827,13 +825,6 @@ gboolean thread_query(gpointer data)
+         // but don't start polling until meter is visible
+         g_idle_add(map_af_export_file, idledata);
+     }
+-    // track volume control
+-    if (use_pulse_flat_volume && !softvol) {
+-        volume = (gint) get_alsa_volume(FALSE);
+-        idledata->volume = volume;
+-        if (!idledata->mute)
+-            g_idle_add(set_volume, idledata);
+-    }
  
-             //send_command("get_time_pos\n");
-+			send_command("get_time_length\n", TRUE);
-             send_command("get_property stream_pos\n", TRUE);
+     if (state == PLAYING) {
+         // size = write(std_in, "get_percent_pos\n", strlen("get_percent_pos\n"));
+@@ -842,9 +833,9 @@ gboolean thread_query(gpointer data)
+             g_idle_add(set_kill_mplayer,NULL);
+             return FALSE;
+         } else {
+-
+-            //send_command("get_time_pos\n");
+-            send_command("get_property stream_pos\n", TRUE);
++	     send_command("get_time_length\n", TRUE);
++	     send_command("get_property stream_pos\n", TRUE);
++	     send_command("get_property volume\n", TRUE);
              if (threaddata->streaming)
                  send_command("get_property metadata\n", TRUE);
+             g_idle_add(make_panel_and_mouse_invisible, NULL);
+@@ -979,11 +970,9 @@ gpointer launch_player(gpointer data)
+         argv[arg++] = g_strdup_printf("-softvol");
+ 
+     if (use_volume_option) {
+-        argv[arg++] = g_strdup_printf("-volume");
+-        if (idledata->mute)
+-            argv[arg++] = g_strdup_printf("0");
+-        else
+-            argv[arg++] = g_strdup_printf("%i", (gint) idledata->volume);
++	argv[arg++] = g_strdup_printf("-volume");
++	argv[arg++] = g_strdup_printf("%i", (gint) idledata->volume);
++	idledata->mplayer_volume = idledata->volume;
+     }
+ 
+     if (mixer != NULL && strlen(mixer) > 0) {
