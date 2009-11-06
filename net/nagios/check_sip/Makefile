@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/11/05 11:19:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2009/11/06 13:29:11 sthen Exp $
 
 COMMENT=		Nagios plugin to check SIP
 
-DISTNAME=		check_sip
-PKGNAME=		${DISTNAME}-20060929
+DISTNAME=		check_sip-20060929
 CATEGORIES=		net
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
@@ -22,10 +21,10 @@ NO_REGRESS=		Yes
 
 EXTRACT_SUFX=
 RUN_DEPENDS=		::net/sipsak
+WRKDIST=		${WRKDIR}
 
 do-extract:
-	@mkdir ${WRKSRC}
-	@cp ${DISTDIR}/${DISTNAME} ${WRKSRC}
+	@cp ${DISTDIR}/${DISTNAME} ${WRKSRC}/check_sip
 
 do-configure:
 	@${SUBST_CMD} ${WRKSRC}/check_sip
