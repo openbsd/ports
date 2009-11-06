@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/02 13:40:52 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/06 12:39:50 pea Exp $
 
 COMMENT =	touch typing tutor program
 
-DISTNAME =	klavaro-1.3.1
+DISTNAME =	klavaro-1.3.6
 
 CATEGORIES =	x11
 

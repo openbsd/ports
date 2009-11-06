@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/02 13:40:52 pea Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/11/06 12:39:50 pea Exp $
 @bin bin/klavaro
 @man man/man1/klavaro.1
 share/icons/
@@ -22,6 +22,8 @@ share/klavaro/
 share/klavaro/C.paragraphs
 share/klavaro/C.words
 share/klavaro/alphagrip5_us.kbd
+share/klavaro/ar.paragraphs
+share/klavaro/ar.words
 share/klavaro/azerty_be.kbd
 share/klavaro/azerty_fr.kbd
 share/klavaro/azerty_fr_ibook.kbd
@@ -85,6 +87,7 @@ share/klavaro/pl.words
 share/klavaro/progress.png
 share/klavaro/pt_BR.paragraphs
 share/klavaro/pt_BR.words
+share/klavaro/qwerty_ar.kbd
 share/klavaro/qwerty_br.kbd
 share/klavaro/qwerty_br_abnt2.kbd
 share/klavaro/qwerty_cz.kbd
@@ -116,6 +119,9 @@ share/klavaro/ur.paragraphs
 share/klavaro/ur.words
 share/klavaro/vi.paragraphs
 share/klavaro/vi.words
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/klavaro.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/klavaro.mo
