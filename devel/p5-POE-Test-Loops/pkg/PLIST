@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/30 17:14:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/11/06 02:16:59 kevlo Exp $
 bin/poe-gen-tests
 ${P5SITE}/POE/
 ${P5SITE}/POE/Test/
@@ -12,6 +12,7 @@ ${P5SITE}/POE/Test/Loops/connect_errors.pm
 ${P5SITE}/POE/Test/Loops/k_alarms.pm
 ${P5SITE}/POE/Test/Loops/k_aliases.pm
 ${P5SITE}/POE/Test/Loops/k_detach.pm
+${P5SITE}/POE/Test/Loops/k_run_returns.pm
 ${P5SITE}/POE/Test/Loops/k_selects.pm
 ${P5SITE}/POE/Test/Loops/k_sig_child.pm
 ${P5SITE}/POE/Test/Loops/k_signals.pm
@@ -30,7 +31,9 @@ ${P5SITE}/POE/Test/Loops/wheel_sf_udp.pm
 ${P5SITE}/POE/Test/Loops/wheel_sf_unix.pm
 ${P5SITE}/POE/Test/Loops/wheel_tail.pm
 ${P5SITE}/POE/Test/Loops/z_kogman_sig_order.pm
+${P5SITE}/POE/Test/Loops/z_leolo_wheel_run.pm
 ${P5SITE}/POE/Test/Loops/z_merijn_sigchld_system.pm
+${P5SITE}/POE/Test/Loops/z_rt39872_sigchld.pm
 ${P5SITE}/POE/Test/Loops/z_rt39872_sigchld_stop.pm
 ${P5SITE}/POE/Test/Loops/z_steinert_signal_integrity.pm
 @man man/man1/poe-gen-tests.1
