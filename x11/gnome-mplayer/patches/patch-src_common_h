@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_common_h,v 1.1 2009/11/06 17:01:56 edd Exp $
+
+fix from upstream svn (update volume control)
+
+--- src/common.h.orig	Fri Nov  6 05:49:24 2009
++++ src/common.h	Fri Nov  6 05:50:06 2009
+@@ -486,6 +486,7 @@ void dbus_disable_screensaver();
+ void menuitem_edit_random_callback(GtkMenuItem * menuitem, void *data);
+ 
+ gboolean update_audio_meter(gpointer data);
++gboolean update_volume(gpointer data);
+ 
+ void mplayer_shutdown();
+ gpointer launch_player(gpointer data);
