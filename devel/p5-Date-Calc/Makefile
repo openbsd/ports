@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2008/10/02 20:35:09 simon Exp $
+# $OpenBSD: Makefile,v 1.18 2009/11/06 09:19:34 giovanni Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	date calculations for the Gregorian calendar
 
 MODULES=	cpan
-DISTNAME=	Date-Calc-5.4
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Date-Calc-6.3
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
