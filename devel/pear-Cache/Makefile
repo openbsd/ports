@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/11/06 08:32:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2009/11/06 09:01:07 jasper Exp $
 
 COMMENT=	Framework for caching of arbitrary data for PHP
 
 DISTNAME=	Cache-1.5.4
 PKGNAME=	pear-${DISTNAME}p2
-CATEGORIES=	devel pear
+CATEGORIES=	devel
 
 MODULES=	www/pear
 

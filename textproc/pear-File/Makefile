@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/06 08:32:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/11/06 09:01:07 jasper Exp $
 
 COMMENT=	common file and directory routines for PHP
 
 DISTNAME=	File-1.2.2
 PKGNAME=	pear-${DISTNAME}p1
-CATEGORIES=	textproc pear
+CATEGORIES=	textproc
 
 MODULES=	www/pear
 

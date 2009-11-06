@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/06 08:32:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/11/06 09:01:08 jasper Exp $
 
 COMMENT=	Swiss-army knife for reading and writing XML files
 
 DISTNAME=	XML_Serializer-0.18.0
 PKGNAME=	pear-${DISTNAME:S/_/-/}p1
-CATEGORIES=	textproc pear
+CATEGORIES=	textproc
 
 MODULES=	www/pear
 

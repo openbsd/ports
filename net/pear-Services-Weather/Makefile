@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/11/06 08:37:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/11/06 09:01:07 jasper Exp $
 
 COMMENT=	interface to various online weather-services for PHP
 
 DISTNAME=	Services_Weather-1.4.0
 PKGNAME=	pear-${DISTNAME:S/_/-/}p2
-CATEGORIES=	net pear
+CATEGORIES=	net
 
 MODULES=	www/pear
 

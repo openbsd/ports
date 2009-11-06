@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/11/06 08:32:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/11/06 09:01:08 jasper Exp $
 
 COMMENT=	class for generating HTML form select elements for PHP
 
 DISTNAME=	HTML_Select-1.2.1
 PKGNAME=	pear-${DISTNAME:S/_/-/}p1
-CATEGORIES=	www pear
+CATEGORIES=	www
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

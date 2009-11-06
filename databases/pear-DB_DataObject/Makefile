@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/11/06 08:32:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/11/06 09:01:07 jasper Exp $
 
 COMMENT=	SQL builder, object interface to database tables
 
 DISTNAME=	DB_DataObject-1.8.10
 PKGNAME=	pear-${DISTNAME}
-CATEGORIES=	databases pear
+CATEGORIES=	databases
 
 MODULES=	www/pear
 

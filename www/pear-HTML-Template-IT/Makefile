@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/11/06 08:32:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/11/06 09:01:08 jasper Exp $
 
 COMMENT=	integrated Templates for PHP
 
 DISTNAME=	HTML_Template_IT-1.1.3
 PKGNAME=	pear-${DISTNAME:S/_/-/}p1
-CATEGORIES=	www pear
+CATEGORIES=	www
 
 MODULES=	www/pear
 
