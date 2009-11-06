@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/07/26 12:20:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/11/06 19:01:28 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
+@incompatibility drupal6-cck-<2.6
 ${DRUPAL_MODS}views/
 ${DRUPAL_MODS}views/CHANGELOG.txt
 ${DRUPAL_MODS}views/LICENSE.txt
@@ -51,6 +52,7 @@ ${DRUPAL_MODS}views/help/
 ${DRUPAL_MODS}views/help/about.html
 ${DRUPAL_MODS}views/help/analyze-theme.html
 ${DRUPAL_MODS}views/help/api-default-views.html
+${DRUPAL_MODS}views/help/api-example.html
 ${DRUPAL_MODS}views/help/api-handlers.html
 ${DRUPAL_MODS}views/help/api-plugins.html
 ${DRUPAL_MODS}views/help/api-tables.html
@@ -127,6 +129,7 @@ ${DRUPAL_MODS}views/help/view-type.html
 ${DRUPAL_MODS}views/help/views.help.ini
 ${DRUPAL_MODS}views/images/
 ${DRUPAL_MODS}views/images/arrow-active.png
+${DRUPAL_MODS}views/images/expanded-options.png
 ${DRUPAL_MODS}views/images/overridden.gif
 ${DRUPAL_MODS}views/images/sprites.png
 ${DRUPAL_MODS}views/images/status-active.gif
@@ -266,6 +269,7 @@ ${DRUPAL_MODS}views/modules/taxonomy/views_handler_field_term_node_tid.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_term_node_tid.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_term_node_tid_depth.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_vocabulary_vid.inc
+${DRUPAL_MODS}views/modules/taxonomy/views_handler_relationship_node_term_data.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_plugin_argument_validate_taxonomy_term.inc
 ${DRUPAL_MODS}views/modules/translation/
 ${DRUPAL_MODS}views/modules/translation.views.inc
@@ -328,9 +332,11 @@ ${DRUPAL_MODS}views/plugins/views_plugin_row_fields.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_default.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_grid.inc
+${DRUPAL_MODS}views/plugins/views_plugin_style_jump_menu.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_list.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_rss.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_summary.inc
+${DRUPAL_MODS}views/plugins/views_plugin_style_summary_jump_menu.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_summary_unformatted.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_table.inc
 ${DRUPAL_MODS}views/theme/
