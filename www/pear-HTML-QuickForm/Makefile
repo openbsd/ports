@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2009/11/06 08:32:37 jasper Exp $
 
 COMMENT=	package provides methods for HTML forms
 
 DISTNAME=	HTML_QuickForm-3.2.5
 PKGNAME=	pear-${DISTNAME:S/_/-/}p0
 CATEGORIES=	devel www pear
-
-MASTER_SITES=	http://pear.php.net/get/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

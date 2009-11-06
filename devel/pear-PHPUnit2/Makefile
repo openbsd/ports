@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:11 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2009/11/06 08:32:37 jasper Exp $
 
 COMMENT=	regression testing framework for PHP 5
 
 DISTNAME=	PHPUnit2-2.1.6
 PKGNAME=	pear-${DISTNAME}p1
 CATEGORIES=	devel pear
-
-MASTER_SITES=	http://pear.php.net/get/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 MODULES=	www/pear

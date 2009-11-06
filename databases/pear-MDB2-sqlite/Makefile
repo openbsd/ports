@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/22 15:47:52 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/06 08:32:36 jasper Exp $
 
 COMMENT =	SQLite database abstraction layer for PHP
 
@@ -6,9 +6,6 @@ V =		1.4.1
 DISTNAME =	MDB2_Driver_sqlite-${V}
 PKGNAME =	pear-MDB2-sqlite-${V}
 CATEGORIES =	net pear databases
-
-MASTER_SITES =	http://pear.php.net/get/
-EXTRACT_SUFX =	.tgz
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 MODULES =	www/pear

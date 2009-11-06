@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2009/11/06 08:32:37 jasper Exp $
 
 COMMENT=	SOAP Client/Server for PHP
 
 DISTNAME=	SOAP-0.12.0
 PKGNAME=	pear-${DISTNAME}p0
 CATEGORIES=	www pear
-
-MASTER_SITES=	http://pear.php.net/get/
-EXTRACT_SUFX=	.tgz
 
 MODULES=	www/pear
 

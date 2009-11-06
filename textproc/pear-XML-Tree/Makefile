@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/09/18 09:30:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/11/06 08:32:37 jasper Exp $
 
 COMMENT=	classes to represent XML data in PHP
 
 DISTNAME=	XML_Tree-1.1
 PKGNAME=	pear-${DISTNAME:S/_/-/}p2
 CATEGORIES=	textproc pear
-
-MASTER_SITES=	http://pear.php.net/get/
-EXTRACT_SUFX=	.tgz
 
 MODULES=	www/pear
 
