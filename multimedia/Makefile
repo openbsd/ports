@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2009/10/15 15:45:27 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2009/11/06 14:29:40 sthen Exp $
 
+     SUBDIR += atomicparsley
      SUBDIR += avidemux
      SUBDIR += coherence
      SUBDIR += devede
