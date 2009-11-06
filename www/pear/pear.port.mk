@@ -1,4 +1,4 @@
-# $OpenBSD: pear.port.mk,v 1.2 2009/11/06 08:32:37 jasper Exp $
+# $OpenBSD: pear.port.mk,v 1.3 2009/11/06 09:05:24 jasper Exp $
 # PHP PEAR module
 
 RUN_DEPENDS+=	:pear-*:www/pear
@@ -19,3 +19,5 @@ PEAR_PHPBIN=	${LOCALBASE}/bin/php
 
 MASTER_SITES?=	http://pear.php.net/get/
 EXTRACT_SUFX?=	.tgz
+
+CATEGORIES+=	pear
