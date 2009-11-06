@@ -1,19 +1,26 @@
-# $OpenBSD: Makefile,v 1.14 2009/11/06 09:01:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2009/11/06 15:28:09 stephan Exp $
 
-COMMENT=	logging utilities for PHP
+COMMENT =	logging utilities for PHP
 
-DISTNAME=	Log-1.9.9
-PKGNAME=	pear-${DISTNAME}p1
-CATEGORIES=	devel
+DISTNAME =	Log-1.11.5
+PKGNAME =	pear-${DISTNAME}
+CATEGORIES =	devel
 
-HOMEPAGE=	http://www.csh.rit.edu/~jon/projects/pear_log/
+HOMEPAGE =	http://pear.php.net/package/Log/
 
-MODULES=	www/pear
+MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
 
-# PHP License
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-		
+MODULES =	www/pear
+
+# MIT license
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+
+REGRESS_DEPENDS = ::${PKGPATH}
+
+do-regress:
+	cd ${WRKSRC}/tests; pear run-tests
+
 .include <bsd.port.mk>

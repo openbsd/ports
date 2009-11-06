@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/03/22 22:48:03 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/11/06 15:28:09 stephan Exp $
 @group daemon
 lib/
 lib/php/
@@ -10,22 +10,23 @@ pear/doc/
 @group daemon
 pear/doc/Log/
 pear/doc/Log/docs/
-pear/doc/Log/docs/examples/
-pear/doc/Log/docs/examples/composite.php
-pear/doc/Log/docs/examples/console.php
-pear/doc/Log/docs/examples/display.php
-pear/doc/Log/docs/examples/error_log.php
-pear/doc/Log/docs/examples/file.php
-pear/doc/Log/docs/examples/mail.php
-pear/doc/Log/docs/examples/null.php
-pear/doc/Log/docs/examples/observer_mail.php
-pear/doc/Log/docs/examples/pear_error_handler.php
-pear/doc/Log/docs/examples/php_error_handler.php
-pear/doc/Log/docs/examples/sql.php
-pear/doc/Log/docs/examples/sqlite.php
-pear/doc/Log/docs/examples/syslog.php
-pear/doc/Log/docs/examples/win.php
 pear/doc/Log/docs/guide.txt
+pear/doc/Log/examples/
+pear/doc/Log/examples/composite.php
+pear/doc/Log/examples/console.php
+pear/doc/Log/examples/display.php
+pear/doc/Log/examples/error_log.php
+pear/doc/Log/examples/file.php
+pear/doc/Log/examples/firebug.php
+pear/doc/Log/examples/mail.php
+pear/doc/Log/examples/null.php
+pear/doc/Log/examples/observer_mail.php
+pear/doc/Log/examples/pear_error_handler.php
+pear/doc/Log/examples/php_error_handler.php
+pear/doc/Log/examples/sql.php
+pear/doc/Log/examples/sqlite.php
+pear/doc/Log/examples/syslog.php
+pear/doc/Log/examples/win.php
 pear/lib/.registry/log.reg
 pear/lib/Log/
 pear/lib/Log.php
@@ -35,6 +36,7 @@ pear/lib/Log/daemon.php
 pear/lib/Log/display.php
 pear/lib/Log/error_log.php
 pear/lib/Log/file.php
+pear/lib/Log/firebug.php
 pear/lib/Log/mail.php
 pear/lib/Log/mcal.php
 pear/lib/Log/mdb2.php
@@ -46,17 +48,24 @@ pear/lib/Log/syslog.php
 pear/lib/Log/win.php
 pear/tests/Log/
 pear/tests/Log/tests/
+pear/tests/Log/tests/backtrace.phpt
 pear/tests/Log/tests/composite.phpt
 pear/tests/Log/tests/console.phpt
 pear/tests/Log/tests/display.phpt
 pear/tests/Log/tests/error_log.phpt
-pear/tests/Log/tests/extract.phpt
-pear/tests/Log/tests/extract2.phpt
+pear/tests/Log/tests/extract-zend1.phpt
+pear/tests/Log/tests/extract-zend2.0.phpt
+pear/tests/Log/tests/extract-zend2.2.phpt
 pear/tests/Log/tests/factory.phpt
 pear/tests/Log/tests/file.phpt
+pear/tests/Log/tests/firebug.phpt
+pear/tests/Log/tests/format.phpt
 pear/tests/Log/tests/levels.phpt
+pear/tests/Log/tests/masks.phpt
 pear/tests/Log/tests/null.phpt
 pear/tests/Log/tests/priority.phpt
 pear/tests/Log/tests/singleton.phpt
 pear/tests/Log/tests/sql_ident.phpt
 pear/tests/Log/tests/sqlite.phpt
+pear/tests/Log/tests/win-ob.phpt
+pear/tests/Log/tests/win.phpt
