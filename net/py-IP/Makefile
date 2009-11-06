@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2009/10/01 20:13:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2009/11/06 14:45:25 benoit Exp $
 
 COMMENT =	Python module to handle IPv4 and IPv6 address
 
-MODPY_EGG_VERSION =	0.64
+MODPY_EGG_VERSION =	0.70
 DISTNAME =		IPy-${MODPY_EGG_VERSION}
 PKGNAME =		py-IP-${MODPY_EGG_VERSION}
 CATEGORIES =		net
