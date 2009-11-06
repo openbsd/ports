@@ -1,0 +1,11 @@
+TileCache provides a Python-based WMS-C/TMS server, with pluggable
+caching mechanisms and rendering backends. In the simplest use case,
+TileCache requires only write access to a disk, the ability to run
+Python CGI scripts, and a WMS you want to be cached. With these
+resources, you can create your own local disk-based cache of any WMS
+server, and use the result in any WMS-C supporting client, like
+OpenLayers, or any TMS supporting client, like OpenLayers and worldKit.
+
+Note that you might need py-paste if you want to use Tilecache through
+WSGI or FastCGI, and/or py-memcached if you plan to use a Memcached
+caching backend. See http://tilecache.org/docs/README for details.

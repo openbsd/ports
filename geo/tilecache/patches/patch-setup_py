@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2009/11/06 18:44:45 landry Exp $
+--- setup.py.orig	Mon Jan 19 03:50:36 2009
++++ setup.py	Wed Nov  4 22:56:51 2009
+@@ -25,11 +25,7 @@ classifiers = [
+ # but put them in tilecache/tilecache.cfg using setuptools
+ # otherwise. 
+ extra = { }
+-if "--debian" in sys.argv:
+-   extra['data_files']=[('/etc', ['tilecache.cfg'])]
+-   sys.argv.remove("--debian")
+-else:
+-   extra['data_files']=[('TileCache', ['tilecache.cfg'])]
++extra['data_files']=[('${PREFIX}/share/examples/tilecache/', ['tilecache.cfg'])]
+     
+ setup(name='TileCache',
+       version='2.10',
