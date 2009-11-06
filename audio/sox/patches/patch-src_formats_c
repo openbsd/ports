@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_formats_c,v 1.1 2009/11/06 00:04:37 sthen Exp $
+--- src/formats.c.orig	Mon Nov  2 17:11:55 2009
++++ src/formats.c	Mon Nov  2 17:11:34 2009
+@@ -403,7 +403,7 @@ static void UNUSED rewind_pipe(FILE * fp)
+   /* To fix this #error, either simply remove the #error line and live without
+    * file-type detection with pipes, or add support for your compiler in the
+    * lines above.  Test with cat monkey.au | ./sox --info - */
+-  #error FIX NEEDED HERE
++  /* #error FIX NEEDED HERE */
+   #define NO_REWIND_PIPE
+   (void)fp;
+ #endif
