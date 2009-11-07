@@ -1,7 +1,7 @@
-$OpenBSD: patch-src-other_procedures_tcl,v 1.2 2008/11/10 20:18:14 steven Exp $
---- src/other_procedures.tcl.orig	Fri Feb  2 13:25:32 2007
-+++ src/other_procedures.tcl	Mon Nov 10 19:49:54 2008
-@@ -177,13 +177,13 @@ proc launch {burn_type burn_opt} {
+$OpenBSD: patch-src-other_procedures_tcl,v 1.3 2009/11/07 15:54:33 ajacoutot Exp $
+--- src/other_procedures.tcl.orig	Sat Aug 30 11:43:00 2008
++++ src/other_procedures.tcl	Sat Nov  7 15:47:32 2009
+@@ -176,13 +176,13 @@ proc launch {burn_type burn_opt} {
  		}
  	} elseif { $burn_type == "create_iso" } {
  		# burn_opt contains destination file for ISO image
@@ -18,3 +18,12 @@ $OpenBSD: patch-src-other_procedures_tcl,v 1.2 2008/11/10 20:18:14 steven Exp $
  		}
  	} elseif { $burn_type == "erase_dvd" } {
  		# $burn_opt= "" or "force" or "blank"
+@@ -448,7 +448,7 @@ proc disc_to_iso { disc_type } {
+ 		button .create_iso_window.f_dest_file.b_mess -highlightbackground blue -text "$i18n_choose_target_file" -command { set dest_file [tk_getSaveFile -filetypes {{ {ISO Image} { .iso } } {{All Files}  * } } -defaultextension .iso] }
+ 		entry .create_iso_window.f_dest_file.e_fp  -relief flat -highlightbackground blue -highlightcolor blue -readonlybackground #f5f5f5 -state readonly -textvariable dest_file -width 57
+ 	
+-		button .create_iso_window.b_create -highlightbackground red -text "$i18n_create" -command { if { $dest_file == "" } { tk_messageBox -icon error -message $i18n_error_target_file_ns -type ok -title $i18n_error } else {launch "create_iso" "[exec echo $dest_file | sed s/\ /\\\\\ /g -]"; destroy .create_iso_window} }
++		button .create_iso_window.b_create -highlightbackground red -text "$i18n_create" -command { if { $dest_file == "" } { tk_messageBox -icon error -message $i18n_error_target_file_ns -type ok -title $i18n_error } else {launch "create_iso" "[exec echo $dest_file | sed s/\ /\\\\\ /g]"; destroy .create_iso_window} }
+ 		button .create_iso_window.b_close -highlightbackground red -text "$i18n_close" -command { destroy .create_iso_window}
+ 	
+ 		pack .create_iso_window.f_dest_file.b_mess -side left -padx {12 12}

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_proc_refresh_cmd_line_tcl,v 1.1 2009/11/07 15:54:33 ajacoutot Exp $
+--- src/proc_refresh_cmd_line.tcl.orig	Fri Mar 28 13:15:04 2008
++++ src/proc_refresh_cmd_line.tcl	Sat Nov  7 15:49:52 2009
+@@ -127,9 +127,9 @@ proc refresh_cmd_line {} {
+ 				set local_burn_speed ""
+ 			}
+ 			if { $dvd_size <= 716800 } {
+-				set command_line "$burn_command $option_overburn $local_burn_speed $option_eject_cd  $option_tao_dao_cd dev=$burning_device [exec echo $iso_file | sed s/\ /\\\\\ /g -]"
++				set command_line "$burn_command $option_overburn $local_burn_speed $option_eject_cd  $option_tao_dao_cd dev=$burning_device [exec echo $iso_file | sed s/\ /\\\\\ /g]"
+ 			} else {
+-				set command_line "$burn_command $option_dvd_compat $local_burn_speed $option_overburn $t_session $burning_device=[exec echo $iso_file | sed s/\ /\\\\\ /g -]"
++				set command_line "$burn_command $option_dvd_compat $local_burn_speed $option_overburn $t_session $burning_device=[exec echo $iso_file | sed s/\ /\\\\\ /g]"
+ 			}
+ 			if { [.f_burn.go_button cget -state] == "disabled" } { .f_burn.go_button configure -state normal }
+ 		}
