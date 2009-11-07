@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/20 16:42:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/11/07 19:36:28 ajacoutot Exp $
 
 COMMENT=	XDG sound theme
 
@@ -24,6 +24,10 @@ MODULES=	textproc/intltool
 
 BUILD_DEPENDS=	:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION} \
 		:automake->=${AUTOMAKE_VERSION},<1.10:devel/automake/${AUTOMAKE_VERSION}
+
+# XXX needed for autoreconf:
+# aclocal:configure.ac:17: warning: macro `AM_GLIB_GNU_GETTEXT' not found in library
+BUILD_DEPENDS+= ::devel/glib2
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
