@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_krb5-auth-dialog_c,v 1.2 2009/07/16 20:14:20 ajacoutot Exp $
+$OpenBSD: patch-src_krb5-auth-dialog_c,v 1.3 2009/11/07 09:01:43 ajacoutot Exp $
 
 XXX these should be handled by configure checks.
   krb5_get_init_creds_opt_set_pkinit: does not take 11 arguments.
   krb5_get_init_creds_opt_free: the context argument is an MIT extension.
 
---- src/krb5-auth-dialog.c.orig	Thu Jul  2 15:04:35 2009
-+++ src/krb5-auth-dialog.c	Wed Jul 15 14:34:40 2009
+--- src/krb5-auth-dialog.c.orig	Tue Sep 29 13:37:14 2009
++++ src/krb5-auth-dialog.c	Sat Nov  7 09:54:39 2009
 @@ -25,6 +25,7 @@
  #include <stdlib.h>
  #include <time.h>
@@ -14,7 +14,16 @@ XXX these should be handled by configure checks.
  #include <stdio.h>
  #include <sys/wait.h>
  #include <string.h>
-@@ -483,8 +484,6 @@ ka_auth_heimdal_pkinit(KaApplet* applet, krb5_creds* c
+@@ -165,8 +166,6 @@ ka_get_error_message(krb5_context context, krb5_error_
+ 	krberr = krb5_get_error_message(context, err);
+ 	msg = g_strdup(krberr);
+ 	ka_krb5_free_error_message(context, krberr);
+-#else
+-#	error No detailed error message information
+ #endif
+ 	if (msg == NULL)
+ 		msg = g_strdup(_("unknown error"));
+@@ -619,8 +618,6 @@ ka_auth_heimdal_pkinit(KaApplet* applet, krb5_creds* c
  						    kprincipal,
  						    pk_userid,
  						    pkinit_anchors,
@@ -23,7 +32,7 @@ XXX these should be handled by configure checks.
  						    0,	  /* pk_use_enc_key */
  						    auth_dialog_prompter,
  						    applet, /* data */
-@@ -498,7 +497,7 @@ ka_auth_heimdal_pkinit(KaApplet* applet, krb5_creds* c
+@@ -634,7 +631,7 @@ ka_auth_heimdal_pkinit(KaApplet* applet, krb5_creds* c
  		                              0, NULL, opts);
  out:
  	if (opts)
@@ -32,7 +41,7 @@ XXX these should be handled by configure checks.
  	return retval;
  }
  #endif /* ! ENABLE_PKINIT */
-@@ -520,7 +519,7 @@ ka_auth_password(KaApplet* applet, krb5_creds* creds,
+@@ -656,7 +653,7 @@ ka_auth_password(KaApplet* applet, krb5_creds* creds,
  					      0, NULL, opts);
  out:
  	if (opts)

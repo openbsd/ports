@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/07/16 20:14:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/11/07 09:01:43 ajacoutot Exp $
 @bin bin/krb5-auth-dialog
 @bin bin/krb5-auth-dialog-preferences
+@man man/man1/krb5-auth-dialog-preferences.1
 @man man/man1/krb5-auth-dialog.1
 share/applications/krb5-auth-dialog-preferences.desktop
 share/dbus-1/services/org.gnome.KrbAuthDialog.service
@@ -72,16 +73,19 @@ share/krb5-auth-dialog/krb5-auth-dialog.xml
 share/locale/de/LC_MESSAGES/krb5-auth-dialog.mo
 share/locale/es/LC_MESSAGES/krb5-auth-dialog.mo
 share/locale/fr/LC_MESSAGES/krb5-auth-dialog.mo
+share/locale/gl/LC_MESSAGES/krb5-auth-dialog.mo
 share/locale/nb/LC_MESSAGES/krb5-auth-dialog.mo
 share/locale/pa/LC_MESSAGES/krb5-auth-dialog.mo
 share/locale/sv/LC_MESSAGES/krb5-auth-dialog.mo
 share/locale/uk/LC_MESSAGES/krb5-auth-dialog.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/locale/zh_HK/LC_MESSAGES/krb5-auth-dialog.mo
+share/locale/zh_TW/LC_MESSAGES/krb5-auth-dialog.mo
 share/omf/krb5-auth-dialog/
 share/omf/krb5-auth-dialog/krb5-auth-dialog-C.omf
 share/omf/krb5-auth-dialog/krb5-auth-dialog-de.omf
 share/omf/krb5-auth-dialog/krb5-auth-dialog-es.omf
 share/omf/krb5-auth-dialog/krb5-auth-dialog-sv.omf
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/krb5-auth-dialog.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
