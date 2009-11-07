@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/20 21:20:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2009/11/07 12:21:04 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT-server =	server for the frozen-bubble bubble popping game
 
 VER =			2.2.0
 DISTNAME =		frozen-bubble-${VER}
-PKGNAME-main =		${DISTNAME}p3
+PKGNAME-main =		${DISTNAME}p4
 PKGNAME-server =	frozen-bubble-server-${VER}p1
 CATEGORIES =		games
 
@@ -35,7 +35,9 @@ BUILD_DEPENDS =		::devel/p5-SDL \
 			::devel/sdl-pango \
 			::devel/p5-Locale-gettext
 
-RUN_DEPENDS-main =	${BUILD_DEPENDS} \
+RUN_DEPENDS-main =	::devel/p5-SDL \
+			::devel/sdl-pango \
+			::devel/p5-Locale-gettext \
 			::${BASE_PKGPATH},-server
 
 LIB_DEPENDS-main =	${MODGETTEXT_LIB_DEPENDS} \
