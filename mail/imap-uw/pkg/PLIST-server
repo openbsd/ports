@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-server,v 1.7 2008/10/15 14:29:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.8 2009/11/07 12:53:17 ajacoutot Exp $
 @conflict courier-imap-*
 @conflict courier-pop3-*
 @pkgpath ${BASE_PKGPATH}
+@pkgpath mail/imap-uw,-server,plaintext
 @bin bin/dmail
 @bin bin/tmail
 @bin libexec/imapd
@@ -84,3 +85,6 @@ share/doc/imap-uw/rfc/rfc5092.txt
 share/doc/imap-uw/rfc/rfc5161.txt
 share/doc/imap-uw/rfc/rfc5162.txt
 share/doc/imap-uw/rfc/rfc5234.txt
+share/examples/imap-uw/
+share/examples/imap-uw/c-client.cf
+@sample ${SYSCONFDIR}/c-client.cf

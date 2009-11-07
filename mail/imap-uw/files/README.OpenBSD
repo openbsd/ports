@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2008/10/15 14:29:04 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.3 2009/11/07 12:53:17 ajacoutot Exp $
 
 The ipop2d, ipop3d, and imapd daemons should be invoked by your
 /etc/inetd.conf file with lines such as:
@@ -32,3 +32,8 @@ permission on the /var/mail directory.  As root:
  chmod 775 /var/mail
 
 Note that there are security implications to this!
+
+
+By default, plaintext authentication over clear connection is disabled.
+While it is highly recommended not to do so, you may enable it in the
+${SYSCONFDIR}/c-client.cf file.

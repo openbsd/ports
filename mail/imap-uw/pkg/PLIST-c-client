@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-c-client,v 1.1 2007/10/30 10:12:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-c-client,v 1.2 2009/11/07 12:53:17 ajacoutot Exp $
 @pkgpath mail/c-client
+@pkgpath mail/imap-uw,-c-client,plaintext
 %%SHARED%%
 include/c-client/
 include/c-client/c-client.h

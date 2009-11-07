@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2009/01/15 16:39:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2009/11/07 12:53:17 ajacoutot Exp $
 
 COMMENT-server=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=University of Washington IMAP4rev1/POP2/POP3 mail utility
@@ -7,9 +7,9 @@ COMMENT-c-client=University of Washington's c-client mail access routines
 V=		2007e
 DISTNAME=	imap-${V}
 
-PKGNAME-server=	imap-uw-${V}
-PKGNAME-mailutil=mailutil-uw-${V}
-PKGNAME-c-client=c-client-${V}
+PKGNAME-server=	imap-uw-${V}p0
+PKGNAME-mailutil=mailutil-uw-${V}p0
+PKGNAME-c-client=c-client-${V}p0
 
 #WRKDIST=	${WRKDIR}/imap-2007b
 
@@ -41,19 +41,11 @@ WANTLIB-c-client=
 ALL_TARGET=	bso
 SHLIB=		libc-client.so.${LIBc-client_VERSION}
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss" IP=6 \
-		SHLIB="${SHLIB}" SHLIBNAME=${SHLIB} CC="${CC}"
+		SSLTYPE="unix.nopwd" SHLIB="${SHLIB}" SHLIBNAME=${SHLIB} \
+		CC="${CC}"
 
 MULTI_PACKAGES=	-server -mailutil -c-client
 SUBPACKAGE?=	-server
-
-FLAVORS=	plaintext
-FLAVOR?=
-
-.if ${FLAVOR:L:Mplaintext}
-MAKE_FLAGS+=	SSLTYPE="unix"
-.else
-MAKE_FLAGS+=	SSLTYPE="unix.nopwd"
-.endif
 
 NO_REGRESS=	Yes
 
@@ -77,8 +69,11 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/mailutil/mailutil.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/src/tmail/tmail.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/imap-uw
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/imap-uw
 	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/imap-uw/README.OpenBSD
+	${INSTALL_DATA} ${FILESDIR}/c-client.cf \
+		${PREFIX}/share/examples/imap-uw
 	tar -C ${WRKSRC}/docs -cf - . | \
 		tar -C ${PREFIX}/share/doc/imap-uw -xf -
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/imap-uw
