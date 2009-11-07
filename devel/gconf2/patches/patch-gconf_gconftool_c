@@ -1,4 +1,4 @@
-$OpenBSD: patch-gconf_gconftool_c,v 1.9 2009/10/24 10:23:02 ajacoutot Exp $
+$OpenBSD: patch-gconf_gconftool_c,v 1.10 2009/11/07 08:41:15 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=328697
 (patch from Fedora)
@@ -9,7 +9,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=328697
        ++args;
      }
  
-+  g_spawn_command_line_sync ("/usr/bin/pkill -TERM " GCONF_SERVERDIR "/" GCONFD, NULL, NULL, NULL, NULL);
++  g_spawn_command_line_sync ("/usr/bin/pkill -TERM -f " GCONF_SERVERDIR "/" GCONFD, NULL, NULL, NULL, NULL);
 +
    retval |= do_sync (conf);
    return retval;
