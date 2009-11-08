@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/10/02 02:34:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2009/11/08 01:26:08 merdely Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
-V=			3.0.2
+V=			3.0.3
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main

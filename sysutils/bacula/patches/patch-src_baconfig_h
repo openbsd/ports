@@ -1,0 +1,17 @@
+Alpha fails to build because ioctl_req_t is defined as unsigned long int.
+
+$OpenBSD: patch-src_baconfig_h,v 1.1 2009/11/08 01:26:08 merdely Exp $
+--- src/baconfig.h.orig	Fri Nov  6 10:46:05 2009
++++ src/baconfig.h	Fri Nov  6 10:45:43 2009
+@@ -647,6 +647,11 @@ int  m_msg(const char *file, int line, POOLMEM *&pool_
+ #define ioctl_req_t int
+ #endif
+ 
++#if defined (__OpenBSD__) && defined (__alpha__)
++#undef  ioctl_req_t
++#define ioctl_req_t unsigned long int
++#endif
++
+ #ifdef HAVE_OSF1_OS
+ #undef  ioctl_req_t
+ #define ioctl_req_t int
