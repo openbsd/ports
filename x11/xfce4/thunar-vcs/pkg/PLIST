@@ -1,18 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/25 17:50:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/11/08 17:31:14 landry Exp $
 %%SHARED%%
 lib/thunarx-1/
 lib/thunarx-1/thunar-vcs-plugin.a
 lib/thunarx-1/thunar-vcs-plugin.la
+@bin libexec/tvp-git-helper
 @bin libexec/tvp-svn-helper
 share/icons/
 share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/24x24/
 share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/git.png
 share/icons/hicolor/24x24/apps/subversion.png
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/git.png
 share/icons/hicolor/48x48/apps/subversion.png
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
