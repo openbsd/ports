@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_sound_h,v 1.1 2007/10/26 20:44:07 jasper Exp $
+$OpenBSD: patch-include_sound_h,v 1.2 2009/11/08 16:35:22 jasper Exp $
 --- include/sound.h.orig	Thu Sep  2 16:34:10 1999
-+++ include/sound.h	Fri Oct 26 22:33:32 2007
++++ include/sound.h	Sun Nov  8 17:35:10 2009
 @@ -212,17 +212,23 @@ struct SoundCacheBufferTag {
  
  

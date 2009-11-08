@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_h,v 1.1 2007/10/26 20:44:07 jasper Exp $
+$OpenBSD: patch-config_h,v 1.2 2009/11/08 16:35:22 jasper Exp $
 --- config.h.orig	Thu Sep  2 16:33:48 1999
-+++ config.h	Fri Oct 26 22:33:32 2007
++++ config.h	Sun Nov  8 17:35:10 2009
 @@ -51,7 +51,7 @@
   *  サウンド関係の設定
   */
