@@ -1,0 +1,11 @@
+$OpenBSD: patch-WebCore_plugins_PluginDatabase_cpp,v 1.1 2009/11/08 16:19:34 ajacoutot Exp $
+--- WebCore/plugins/PluginDatabase.cpp.orig	Sun Nov  8 11:32:38 2009
++++ WebCore/plugins/PluginDatabase.cpp	Sun Nov  8 11:33:22 2009
+@@ -339,6 +339,7 @@ Vector<String> PluginDatabase::defaultPluginDirectorie
+     userPluginPath.append(String("/.netscape/plugins"));
+     paths.append(userPluginPath);
+ 
++    paths.append("${LOCALBASE}/lib/mozilla-plugins");
+     paths.append("/usr/lib/browser/plugins");
+     paths.append("/usr/local/lib/mozilla/plugins");
+     paths.append("/usr/lib/firefox/plugins");

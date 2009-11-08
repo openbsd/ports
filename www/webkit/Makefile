@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2009/10/29 16:46:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2009/11/08 16:19:34 ajacoutot Exp $
 
 COMMENT =	open source web browser engine
 
 V = 1.1.15.2
 DISTNAME =	webkit-${V}
 # XXX do not remove v0. pX comes before vX.
-PKGNAME =	webkit-${V}p0v0
+PKGNAME =	webkit-${V}p1v0
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -68,5 +68,8 @@ LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0,gailutil::x11/gtk+2,-main \
 BUILD_DEPENDS =	::devel/bison \
 		::devel/flex \
 		::devel/gperf
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/WebCore/plugins/PluginDatabase.cpp
 
 .include <bsd.port.mk>
