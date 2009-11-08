@@ -1,3 +1,3 @@
 If you want to be able to use the "Print Preview", you must install
 evince. It is not included as a dependency as it pulls lots of other
-dependent packages.
+dependencies.
