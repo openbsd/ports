@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portslogger,v 1.14 2007/08/25 07:56:04 espie Exp $
+# $OpenBSD: portslogger,v 1.15 2009/11/08 09:24:11 espie Exp $
 # Copyright (c) 2001 Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -81,6 +81,12 @@ sub DESTROY
 }
 }
 
+use Getopt::Std;
+
+our $opt_s;
+
+getopts('s');
+
 if (@ARGV < 1) {
     print STDERR "Usage: $0 directory\n";
     exit 1;
@@ -94,6 +100,10 @@ my $ncontext = undef;
 my $context;
 
 while (<>) {
+	print unless $opt_s;
+	s/\cM+$//;
+	# zap fetch & pkg_add progress bar
+	s/^.*\cM//;
 	if (m/^\=\=\=\>\s+
 	    (?:
 		(?: Extracting|
@@ -123,18 +133,12 @@ while (<>) {
 			$logfile = new Logger $context;
 		}
 	} elsif (m/^\=\=\=\> Exiting\s+(.*)\s+with an error$/) {
-		$ncontext = $1;
-		if ($ncontext eq $context) {
-			undef $context;
-		}
+		undef $context;
 	}
 	unless (defined $context) {
 		$context = default;
 		$logfile = new Logger 'default';
 	}
-	# zap fetch progress bar
-	next if m/^\cM\s*\d+\%/;
 	$logfile->print($_);
-	print;
 }
 
