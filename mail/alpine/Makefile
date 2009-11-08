@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/01/23 11:41:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2009/11/08 08:22:53 ajacoutot Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
@@ -36,7 +36,7 @@ WANTLIB-main=	${WANTLIB} asn1 com_err crypto des gssapi kafs krb5 ssl
 MULTI_PACKAGES=	-main -pico -pilot
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	:c-client->=2007b-!plaintext:mail/imap-uw,-c-client \
+BUILD_DEPENDS=	:c-client->=2007b:mail/imap-uw,-c-client \
 		:aspell-*:textproc/aspell/core
 RUN_DEPENDS=	:aspell-*:textproc/aspell/core
 
