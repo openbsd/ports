@@ -1,7 +1,7 @@
-$OpenBSD: patch-makefile_unix,v 1.11 2009/09/11 16:14:01 naddy Exp $
---- makefile.unix.orig	Sun May  3 07:18:45 2009
-+++ makefile.unix	Mon Sep  7 17:49:20 2009
-@@ -107,9 +107,14 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o savepos.o sma
+$OpenBSD: patch-makefile_unix,v 1.12 2009/11/08 16:42:21 jasper Exp $
+--- makefile.unix.orig	Sat May  2 23:18:45 2009
++++ makefile.unix	Sun Nov  8 09:39:46 2009
+@@ -107,9 +107,17 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o savepos.o sma
  	resource.o match.o timefn.o rdwrfn.o consio.o options.o ulinks.o errhnd.o rarvm.o \
  	rijndael.o getbits.o sha1.o extinfo.o extract.o volume.o list.o find.o unpack.o cmddata.o
  
@@ -13,10 +13,13 @@ $OpenBSD: patch-makefile_unix,v 1.11 2009/09/11 16:14:01 naddy Exp $
 +recvol.o: recvol.cpp
 +	$(COMPILE) $(EXTRA_CFLAGS) -D$(WHAT) -c $<
 +
++extract.o: extract.cpp
++	$(COMPILE) $(EXTRA_CFLAGS) -D$(WHAT) -c $<
++
  all:	unrar
  
  install:	install-unrar
-@@ -122,7 +127,6 @@ clean:
+@@ -122,7 +130,6 @@ clean:
  unrar:	$(OBJECTS) $(UNRAR_OBJ)
  	@rm -f unrar
  	$(LINK) -o unrar $(LDFLAGS) $(OBJECTS) $(UNRAR_OBJ) $(LIBS)	
