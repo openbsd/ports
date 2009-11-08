@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2008/04/28 09:17:07 ajacoutot Exp $
---- Makefile.in.orig	Sun Apr 27 22:52:58 2008
-+++ Makefile.in	Mon Apr 28 10:33:46 2008
-@@ -1034,7 +1034,7 @@ console_cflags = \
+$OpenBSD: patch-Makefile_in,v 1.3 2009/11/08 11:06:48 ajacoutot Exp $
+--- Makefile.in.orig	Wed Nov  4 12:47:35 2009
++++ Makefile.in	Sun Nov  8 10:06:04 2009
+@@ -1053,7 +1053,7 @@ console_cflags = \
  	-DDATADIR=\""$(pioneers_datadir)"\" \
  	-DTHEMEDIR=\""$(pioneers_themedir_embed)"\" \
  	-DLOCALEDIR=\""$(pioneers_localedir)"\" \
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2008/04/28 09:17:07 ajacoutot Exp $
  	-DPIONEERS_SERVER_CONSOLE_PATH=\""$(bindir)/pioneers-server-console"\" \
  	-DPIONEERS_SERVER_GTK_PATH=\""$(bindir)/pioneers-server-gtk"\" \
  	-DPIONEERS_CLIENT_GTK_PATH=\""$(bindir)/pioneers"\" \
-@@ -1060,7 +1060,7 @@ gtk_libs = \
+@@ -1079,7 +1079,7 @@ gtk_libs = \
  	$(GNOME2_LIBS) \
  	$(GTK2_LIBS)
  

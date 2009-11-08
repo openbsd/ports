@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/03/14 10:40:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/11/08 11:06:48 ajacoutot Exp $
 @conflict gnocatan-*
 @pkgpath games/gnocatan
 @bin bin/pioneers
@@ -7,6 +7,7 @@
 @bin bin/pioneers-server-console
 @bin bin/pioneers-server-gtk
 @bin bin/pioneersai
+@man man/man6/pioneers-editor.6
 @man man/man6/pioneers-meta-server.6
 @man man/man6/pioneers-server-console.6
 @man man/man6/pioneers-server-gtk.6
@@ -99,17 +100,30 @@ share/pioneers/south_africa.game
 share/pioneers/square.game
 share/pioneers/star.game
 share/pioneers/themes/
+share/pioneers/themes/Classic/
+share/pioneers/themes/Classic/board.png
+share/pioneers/themes/Classic/desert.png
+share/pioneers/themes/Classic/field.png
+share/pioneers/themes/Classic/forest.png
+share/pioneers/themes/Classic/gold.png
+share/pioneers/themes/Classic/hill.png
+share/pioneers/themes/Classic/mountain.png
+share/pioneers/themes/Classic/pasture.png
+share/pioneers/themes/Classic/sea.png
+share/pioneers/themes/Classic/theme.cfg
 share/pioneers/themes/FreeCIV-like/
 share/pioneers/themes/FreeCIV-like/board.png
 share/pioneers/themes/FreeCIV-like/desert.png
 share/pioneers/themes/FreeCIV-like/field.png
 share/pioneers/themes/FreeCIV-like/forest.png
+share/pioneers/themes/FreeCIV-like/gold.png
 share/pioneers/themes/FreeCIV-like/hill.png
 share/pioneers/themes/FreeCIV-like/mountain.png
 share/pioneers/themes/FreeCIV-like/pasture.png
 share/pioneers/themes/FreeCIV-like/sea.png
 share/pioneers/themes/FreeCIV-like/theme.cfg
 share/pioneers/themes/Iceland/
+share/pioneers/themes/Iceland/board.png
 share/pioneers/themes/Iceland/desert.png
 share/pioneers/themes/Iceland/field_grain.png
 share/pioneers/themes/Iceland/forest_lumber.png
@@ -117,6 +131,7 @@ share/pioneers/themes/Iceland/gold.png
 share/pioneers/themes/Iceland/hill_brick.png
 share/pioneers/themes/Iceland/mountain_ore.png
 share/pioneers/themes/Iceland/pasture_wool.png
+share/pioneers/themes/Iceland/sea.png
 share/pioneers/themes/Iceland/theme.cfg
 share/pioneers/themes/Tiny/
 share/pioneers/themes/Tiny/board.png
@@ -145,16 +160,6 @@ share/pioneers/themes/Wesnoth-like/mountain.png
 share/pioneers/themes/Wesnoth-like/pasture.png
 share/pioneers/themes/Wesnoth-like/sea.png
 share/pioneers/themes/Wesnoth-like/theme.cfg
-share/pioneers/themes/board.png
-share/pioneers/themes/desert.png
-share/pioneers/themes/field.png
-share/pioneers/themes/forest.png
-share/pioneers/themes/gold.png
-share/pioneers/themes/hill.png
-share/pioneers/themes/mountain.png
-share/pioneers/themes/pasture.png
-share/pioneers/themes/plain.png
-share/pioneers/themes/sea.png
 share/pioneers/x.game
 share/pixmaps/pioneers/
 share/pixmaps/pioneers-editor.png
