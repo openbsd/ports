@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2009/11/08 17:37:33 ajacoutot Exp $
 
 COMMENT=	digital camera frontend
 
-DISTNAME=	gtkam-0.1.15
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	gtkam-0.1.16.1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://gphoto.sourceforge.net/proj/gtkam/

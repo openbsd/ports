@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gtkam-main_c,v 1.1 2007/10/25 10:53:53 ajacoutot Exp $
---- src/gtkam-main.c.orig	Thu Oct 25 09:09:55 2007
-+++ src/gtkam-main.c	Thu Oct 25 09:10:11 2007
-@@ -575,7 +575,7 @@ static GtkActionEntry entries[] = {
+$OpenBSD: patch-src_gtkam-main_c,v 1.2 2009/11/08 17:37:33 ajacoutot Exp $
+--- src/gtkam-main.c.orig	Sat Oct  4 16:03:24 2008
++++ src/gtkam-main.c	Sun Nov  8 18:17:57 2009
+@@ -574,7 +574,7 @@ static GtkActionEntry entries[] = {
  
  /* Toggle menu items */
  static GtkToggleActionEntry toggle_entries[] = {
