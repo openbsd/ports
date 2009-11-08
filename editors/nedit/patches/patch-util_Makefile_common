@@ -1,0 +1,16 @@
+$OpenBSD: patch-util_Makefile_common,v 1.1 2009/11/08 16:24:34 jasper Exp $
+
+Honor extra cflags (-O0) for mips64 to prevent an ICE.
+
+--- util/Makefile.common.orig	Sun Nov  8 09:09:25 2009
++++ util/Makefile.common	Sun Nov  8 09:15:33 2009
+@@ -15,6 +15,9 @@ libNUtil.a: $(OBJS)
+ printUtils.o: printUtils.c
+ 	$(CC) -c $(CFLAGS) $(PRINTFLAGS) printUtils.c
+ 
++fontsel.o: fontsel.c
++	$(CC) -c $(CFLAGS) $(EXTRA_CFLAGS) fontsel.c
++
+ # This is for any platform where bogus OpenMotif or LessTif versions might
+ # be found in the wild.  The rule needs a different name from the executable
+ # so that the rule continues to fire if the executable exists.
