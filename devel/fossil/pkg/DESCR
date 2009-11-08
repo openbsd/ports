@@ -7,3 +7,11 @@ extremely simple to setup and operate.
 In addition to distributed version control, it supports distributed bug
 tracking and wiki, with a built-in web interface, in a single easy-to-use
 integrated package.
+
+This package can be built with a static FLAVOR, which makes it easier
+to use in a chrooted apache environment.  ${LOCALBASE}/bin/fossil must
+be copied to /var/www/bin.  Note that it requires /var/tmp in the
+chroot dir:
+
+# mkdir /var/www/var
+# mkdir -m 1777 /var/www/var/tmp
