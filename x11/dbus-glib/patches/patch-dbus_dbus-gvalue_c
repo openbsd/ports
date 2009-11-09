@@ -1,0 +1,19 @@
+$OpenBSD: patch-dbus_dbus-gvalue_c,v 1.1 2009/11/09 10:00:20 phessler Exp $
+
+fixes compile on gcc2.95 arches
+
+--- dbus/dbus-gvalue.c.orig	Sun Nov  8 23:51:25 2009
++++ dbus/dbus-gvalue.c	Sun Nov  8 23:52:07 2009
+@@ -803,10 +803,11 @@ demarshal_strv (DBusGValueMarshalCtx    *context,
+ 
+   while ((current_type = dbus_message_iter_get_arg_type (&subiter)) != DBUS_TYPE_INVALID)
+     {
+-      g_assert (current_type == DBUS_TYPE_STRING);
+       const char *str;
+       char *copy;
+       
++      g_assert (current_type == DBUS_TYPE_STRING);
++
+       dbus_message_iter_get_basic (&subiter, &str);
+       copy = g_strdup (str);
+       g_array_append_val (arr, copy);
