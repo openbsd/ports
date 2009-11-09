@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/31 12:06:56 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/09 17:09:22 bernd Exp $
 
 COMMENT =	extensible architecture for authentication
 
 DISTNAME =	merb-auth-${VERSION}
+PKGNAME =	ruby-${DISTNAME}p0
 
 MASTER_SITES =	${MASTER_SITE_RUBYFORGE:=merb-auth/}
 

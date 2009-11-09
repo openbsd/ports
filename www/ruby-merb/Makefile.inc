@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.5 2009/10/12 15:34:12 pirofti Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2009/11/09 17:09:22 bernd Exp $
 
 VERSION ?=	1.0.12
 PKGNAME ?=	ruby-${DISTNAME}
 CATEGORIES ?=	www
 
 HOMEPAGE ?=	http://www.merbivore.com/
-
-MAINTAINER ?=	Bernd Ahlers <bernd@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM ?= Yes

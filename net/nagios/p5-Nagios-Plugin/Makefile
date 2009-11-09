@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/21 08:14:15 bernd Exp $
+# $OpenBSD: Makefile,v 1.4 2009/11/09 17:09:22 bernd Exp $
 
 COMMENT=		helper routines for writing Nagios plugins
 
 DISTNAME=		Nagios-Plugin-0.33
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		net
 MODULES=		cpan
-
-MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
 # same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

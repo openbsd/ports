@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2009/11/09 17:09:22 bernd Exp $
 
 COMMENT=	perl implementation of RIPE whois
 
 MODULES=	cpan
 DISTNAME=	Net-Whois-RIPE-1.23
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	net
-
-MAINTAINER=	Bernd Ahlers <bernd@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

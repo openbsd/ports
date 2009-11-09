@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2009/10/13 19:40:47 pirofti Exp $
+# $OpenBSD: Makefile,v 1.8 2009/11/09 17:09:22 bernd Exp $
 
 COMMENT =	execute commands in parallel on multiple remote machines
 
 DISTNAME =	capistrano-2.5.9
-PKGNAME =	ruby-${DISTNAME}
+PKGNAME =	ruby-${DISTNAME}p0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.capify.org/
-
-MAINTAINER =	Bernd Ahlers <bernd@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =		Yes

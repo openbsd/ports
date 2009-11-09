@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/01 20:15:04 millert Exp $
+# $OpenBSD: Makefile,v 1.4 2009/11/09 17:09:22 bernd Exp $
 
 COMMENT=		Website META Language
 
 DISTNAME=		wml-2.0.11
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.thewml.org/
-
-MAINTAINER=		Bernd Ahlers <bernd@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

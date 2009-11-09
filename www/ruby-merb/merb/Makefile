@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/20 05:21:14 bernd Exp $
+# $OpenBSD: Makefile,v 1.6 2009/11/09 17:09:22 bernd Exp $
 
 COMMENT =	fast, lightweight MVC framework for Ruby
 
 DISTNAME =	merb-${VERSION}
+PKGNAME =	ruby-${DISTNAME}p0
 
 # The datamapper dependency in merb seems broken.
 GEM_SKIPDEPENDS = 	dm-core do_sqlite3 dm-timestamps dm-types \
