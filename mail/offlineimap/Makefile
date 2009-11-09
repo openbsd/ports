@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/26 11:50:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2009/11/09 17:12:17 bernd Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
-V=		6.0.3
+V=		6.2.0
 DISTNAME=	offlineimap_${V}
 CATEGORIES=	mail
-PKGNAME=	${DISTNAME:S/_/-/}p0
+PKGNAME=	${DISTNAME:S/_/-/}
 
 HOMEPAGE=	http://software.complete.org/offlineimap/
 
