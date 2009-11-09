@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2009/05/08 08:05:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2009/11/09 08:04:05 ajacoutot Exp $
 
 COMMENT=	digital camera library
 CATEGORIES=	graphics devel
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-VERSION=	2.4.5
+VERSION=	2.4.7
 DISTNAME=	libgphoto2-${VERSION}
 PKGNAME=	libgphoto-${VERSION}
 SHARED_LIBS+=	gphoto2		3.1 # 6.0
@@ -22,6 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 WANTLIB=		c m
+
+MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
