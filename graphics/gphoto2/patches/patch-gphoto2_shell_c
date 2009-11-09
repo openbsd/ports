@@ -1,7 +1,7 @@
-$OpenBSD: patch-gphoto2_shell_c,v 1.4 2008/12/08 14:21:07 ajacoutot Exp $
---- gphoto2/shell.c.orig	Sun Jun 22 14:18:12 2008
-+++ gphoto2/shell.c	Tue Nov 11 16:22:32 2008
-@@ -398,7 +398,7 @@ shell_completion_function (const char *text, int start
+$OpenBSD: patch-gphoto2_shell_c,v 1.5 2009/11/09 08:05:16 ajacoutot Exp $
+--- gphoto2/shell.c.orig	Wed Jul 29 18:35:38 2009
++++ gphoto2/shell.c	Sun Nov  8 19:31:58 2009
+@@ -407,7 +407,7 @@ shell_completion_function (const char *text, int start
  
  	if (!start) {
  		/* Complete command */
@@ -10,7 +10,7 @@ $OpenBSD: patch-gphoto2_shell_c,v 1.4 2008/12/08 14:21:07 ajacoutot Exp $
  	} else {
  		current = strdup (rl_copy_text (0, end));
  
-@@ -410,7 +410,7 @@ shell_completion_function (const char *text, int start
+@@ -419,7 +419,7 @@ shell_completion_function (const char *text, int start
  		free (current);
  
  		/* Complete remote path */

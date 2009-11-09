@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.4 2009/02/01 11:04:43 ajacoutot Exp $
---- configure.orig	Thu Jan 22 00:04:43 2009
-+++ configure	Tue Jan 27 09:20:20 2009
-@@ -23767,13 +23767,13 @@ echo "${ECHO_T}$ac_cv_header_pthread_h" >&6; }
+$OpenBSD: patch-configure,v 1.5 2009/11/09 08:05:16 ajacoutot Exp $
+--- configure.orig	Fri Aug 21 08:34:50 2009
++++ configure	Sun Nov  8 19:32:33 2009
+@@ -15563,13 +15563,13 @@ $as_echo "$ac_cv_header_pthread_h" >&6; }
  fi
- if test $ac_cv_header_pthread_h = yes; then
+ if test "x$ac_cv_header_pthread_h" = x""yes; then
  
--                { echo "$as_me:$LINENO: checking for pthread_exit in -lpthread" >&5
--echo $ECHO_N "checking for pthread_exit in -lpthread... $ECHO_C" >&6; }
-+                { echo "$as_me:$LINENO: checking for pthread_exit in -pthread" >&5
-+echo $ECHO_N "checking for pthread_exit in -pthread... $ECHO_C" >&6; }
+-                { $as_echo "$as_me:$LINENO: checking for pthread_exit in -lpthread" >&5
+-$as_echo_n "checking for pthread_exit in -lpthread... " >&6; }
++                { $as_echo "$as_me:$LINENO: checking for pthread_exit in -pthread" >&5
++$as_echo_n "checking for pthread_exit in -pthread... " >&6; }
  if test "${ac_cv_lib_pthread_pthread_exit+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.4 2009/02/01 11:04:43 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -23835,8 +23835,8 @@ cat >>confdefs.h <<\_ACEOF
+@@ -15635,8 +15635,8 @@ cat >>confdefs.h <<\_ACEOF
  #define HAVE_PTHREAD 1
  _ACEOF
  
@@ -28,18 +28,4 @@ $OpenBSD: patch-configure,v 1.4 2009/02/01 11:04:43 ajacoutot Exp $
 +                    PTHREAD_LIBS="-pthread"
  else
  
-                     { echo "$as_me:$LINENO: checking for pthread_create in -lc_r" >&5
-@@ -27281,10 +27281,10 @@ MSGFMT!$MSGFMT$ac_delim
- GMSGFMT!$GMSGFMT$ac_delim
- XGETTEXT!$XGETTEXT$ac_delim
- MSGMERGE!$MSGMERGE$ac_delim
--LIBICONV!$LIBICONV$ac_delim
-+LIBICONV!$LTLIBICONV$ac_delim
- LTLIBICONV!$LTLIBICONV$ac_delim
--INTLLIBS!$INTLLIBS$ac_delim
--LIBINTL!$LIBINTL$ac_delim
-+INTLLIBS!$LTLIBINTL$ac_delim
-+LIBINTL!$LTLIBINTL$ac_delim
- LTLIBINTL!$LTLIBINTL$ac_delim
- POSUB!$POSUB$ac_delim
- LIBGPHOTO2_CFLAGS!$LIBGPHOTO2_CFLAGS$ac_delim
+                     { $as_echo "$as_me:$LINENO: checking for pthread_create in -lc_r" >&5

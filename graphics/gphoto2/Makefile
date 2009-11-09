@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2009/05/08 08:06:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/11/09 08:05:16 ajacoutot Exp $
 
 COMMENT=	digital camera command-line interface
 CATEGORIES=	graphics
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-VERSION=	2.4.5
+VERSION=	2.4.7
 DISTNAME=	gphoto2-${VERSION}
 PKGNAME=	gphoto-${VERSION}
 
@@ -23,6 +23,8 @@ WANTLIB=		c exif m ncurses readline ltdl pthread usb
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
+
+MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-aalib --without-cdk
