@@ -1,4 +1,7 @@
-$OpenBSD: patch-rubynative_src_extconf_rb,v 1.2 2009/01/30 21:15:05 ajacoutot Exp $
+$OpenBSD: patch-rubynative_src_extconf_rb,v 1.3 2009/11/09 17:45:24 bernd Exp $
+
+Use -lpthread to make it work.
+
 --- rubynative/src/extconf.rb.orig	Thu Apr 12 03:52:50 2007
 +++ rubynative/src/extconf.rb	Fri Jan 30 21:57:25 2009
 @@ -3,12 +3,9 @@ require "mkmf"
@@ -12,7 +15,7 @@ $OpenBSD: patch-rubynative_src_extconf_rb,v 1.2 2009/01/30 21:15:05 ajacoutot Ex
 -$LDFLAGS = "#{$LDFLAGS} -L. -L.. -L../.. #{estldflags}"
 -$libs = "#{$libs} #{estlibs}"
 +$CFLAGS = "#{$CFLAGS} -fomit-frame-pointer -fforce-addr"
-+$LDFLAGS = "#{$LDFLAGS} -pthread"
++$LDFLAGS = "#{$LDFLAGS} -lpthread"
 +$libs = "#{$libs}"
  
  if have_header('estraier.h') and have_library('estraier')
