@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/10/30 16:18:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2009/11/09 10:37:19 stephan Exp $
 
 SUBDIR += FCKeditor
 SUBDIR += admin-menu
@@ -24,6 +24,7 @@ SUBDIR += imageapi
 SUBDIR += imagecache
 SUBDIR += imagecache_profiles
 SUBDIR += imagefield
+SUBDIR += ldap_integration
 SUBDIR += locale-fr
 SUBDIR += locale-it
 SUBDIR += locale-ja
