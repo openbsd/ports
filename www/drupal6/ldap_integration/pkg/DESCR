@@ -1,0 +1,5 @@
+This LDAP integration module allows users to authenticate against a
+configurable Lightweight Directory Access Protocol directory. This
+is useful for organizations which have an existing organizational
+directory with usernames and passwords, and want Drupal to be able
+to authenticate against it.

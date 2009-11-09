@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/09 10:33:21 stephan Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}ldap_integration/
+${DRUPAL_MODS}ldap_integration/.cvsignore
+${DRUPAL_MODS}ldap_integration/ChangeLog
+${DRUPAL_MODS}ldap_integration/LICENSE.txt
+${DRUPAL_MODS}ldap_integration/README.txt
+${DRUPAL_MODS}ldap_integration/includes/
+${DRUPAL_MODS}ldap_integration/includes/LDAPInterface.inc
+${DRUPAL_MODS}ldap_integration/ldapauth.admin.inc
+${DRUPAL_MODS}ldap_integration/ldapauth.admin.js
+${DRUPAL_MODS}ldap_integration/ldapauth.info
+${DRUPAL_MODS}ldap_integration/ldapauth.install
+${DRUPAL_MODS}ldap_integration/ldapauth.module
+${DRUPAL_MODS}ldap_integration/ldapauth.theme.inc
+${DRUPAL_MODS}ldap_integration/ldapdata.admin.inc
+${DRUPAL_MODS}ldap_integration/ldapdata.admin.js
+${DRUPAL_MODS}ldap_integration/ldapdata.info
+${DRUPAL_MODS}ldap_integration/ldapdata.install
+${DRUPAL_MODS}ldap_integration/ldapdata.module
+${DRUPAL_MODS}ldap_integration/ldapdata.theme.inc
+${DRUPAL_MODS}ldap_integration/ldapgroups.admin.inc
+${DRUPAL_MODS}ldap_integration/ldapgroups.inc
+${DRUPAL_MODS}ldap_integration/ldapgroups.info
+${DRUPAL_MODS}ldap_integration/ldapgroups.install
+${DRUPAL_MODS}ldap_integration/ldapgroups.module
+${DRUPAL_MODS}ldap_integration/translations/
+${DRUPAL_MODS}ldap_integration/translations/de.po
