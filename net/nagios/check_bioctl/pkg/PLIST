@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/09 21:28:19 merdely Exp $
+libexec/nagios/check_bioctl
+share/doc/check_bioctl/
+share/doc/check_bioctl/README

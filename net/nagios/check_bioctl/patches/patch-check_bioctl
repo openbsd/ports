@@ -1,0 +1,12 @@
+$OpenBSD: patch-check_bioctl,v 1.1.1.1 2009/11/09 21:28:19 merdely Exp $
+--- check_bioctl.orig	Mon Nov  9 15:44:02 2009
++++ check_bioctl	Mon Nov  9 15:44:15 2009
+@@ -28,7 +28,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS S
+ EOL
+ 
+ use POSIX;
+-use lib "/usr/local/libexec/nagios";
++use lib "${PREFIX}/libexec/nagios";
+ use utils qw($TIMEOUT %ERRORS &support);
+ 
+ use Getopt::Long;

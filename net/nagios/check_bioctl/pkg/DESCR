@@ -1,0 +1,2 @@
+The check_bioctl plugin for Nagios monitors RAID arrays on OpenBSD using
+bioctl.
