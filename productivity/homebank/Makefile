@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/12 13:32:01 pea Exp $
+# $OpenBSD: Makefile,v 1.7 2009/11/10 20:36:21 pea Exp $
 
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-4.0.4
+DISTNAME =	homebank-4.1
 CATEGORIES =	productivity x11
 
 HOMEPAGE =	http://homebank.free.fr
@@ -30,8 +30,7 @@ WANTLIB = 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 LIB_DEPENDS =	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		ofx.>=3::devel/libofx 
 
-RUN_DEPENDS =	:librsvg-*:x11/gnome/librsvg \
-		:desktop-file-utils-*:devel/desktop-file-utils \
+RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils \
 		:shared-mime-info-*:misc/shared-mime-info
 
 USE_X11 =	Yes
