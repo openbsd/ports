@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_if_media_c,v 1.1.1.1 2008/09/18 23:02:31 sthen Exp $
---- src/if_media.c.orig	Mon Sep 27 14:08:59 2004
-+++ src/if_media.c	Wed Sep 17 09:17:25 2008
+$OpenBSD: patch-src_if_media_c,v 1.2 2009/11/10 23:07:46 sthen Exp $
+--- src/if_media.c.orig	Mon Sep 27 15:08:59 2004
++++ src/if_media.c	Sat Nov  7 11:22:56 2009
 @@ -95,8 +95,16 @@ int get_if_speed (char *ifstring)
       *
       */
@@ -18,3 +18,13 @@ $OpenBSD: patch-src_if_media_c,v 1.1.1.1 2008/09/18 23:02:31 sthen Exp $
  
  #ifdef MEDIADEBUG
      printf("      all: %6d\n", ifmr.ifm_current);
+@@ -202,7 +210,8 @@ int get_if_speed (char *ifstring)
+ #endif
+ #if WIRELESS && \
+ 	(defined(__FreeBSD__) && (__FreeBSD_version >= 500111)) || \
+-	(defined(__NetBSD__) && (__NetBSD_Version_ > 106020000))
++	(defined(__NetBSD__) && (__NetBSD_Version_ > 106020000)) || \
++	defined(__OpenBSD__)
+                 case IFM_IEEE80211_OFDM6:
+                     speed = 6 * 1000;
+                     break;
