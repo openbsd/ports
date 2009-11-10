@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.603 2009/11/05 13:25:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.604 2009/11/10 14:36:15 pea Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -178,6 +178,7 @@
      SUBDIR += micq
      SUBDIR += mirror
      SUBDIR += mldonkey
+     SUBDIR += mon
      SUBDIR += mrtd
      SUBDIR += mrtg
      SUBDIR += mtr
