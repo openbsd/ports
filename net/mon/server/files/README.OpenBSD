@@ -1,0 +1,31 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+
+mon is a tool for monitoring the availability of services and sending alerts 
+on prescribed events.
+
+This is a small howto to get mon running in a basic setup.
+
+ 1. Edit ${SYSCONFDIR}/mon/mon.cf to fit your needs.
+ 
+ 2. You may need additional perl modules in order to use some monitors.
+    Check your monitor file with perl -c.
+    Example: perl -c ${TRUEPREFIX}/lib/mon/mon.d/dns.monitor
+
+ 3. Launch mon in debug mode:
+    su -l _mon -c "${TRUEPREFIX}/bin/mon -c /etc/mon/mon.cf -d -P /var/run/mon.pid"
+
+ 4. When everything is ok, launch mon as a daemon:
+    su -l _mon -c "${TRUEPREFIX}/bin/mon -c /etc/mon/mon.cf -f -P /var/run/mon.pid"
+
+ 5. Add the following to your /etc/rc.local:
+    if [ -x ${TRUEPREFIX}/bin/mon ] ; then
+	su -l _mon -c "${TRUEPREFIX}/bin/mon -c /etc/mon/mon.cf -f -P /var/run/mon.pid"
+    fi
+
+
+ Random hints:
+
+ * To use fping.monitor you must install fping.
+ 
+ * If you need a graphical interface, please install mon-client which contains 
+   a simple cgi.

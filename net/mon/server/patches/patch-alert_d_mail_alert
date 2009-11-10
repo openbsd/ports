@@ -1,0 +1,12 @@
+$OpenBSD: patch-alert_d_mail_alert,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+--- alert.d/mail.alert.orig	Mon Oct 12 16:03:19 2009
++++ alert.d/mail.alert	Mon Oct 12 16:03:30 2009
+@@ -46,7 +46,7 @@ $ALERT = $opt_u ? "UPALERT" : "ALERT";
+ $t = localtime($opt_t);
+ ($wday,$mon,$day,$tm) = split (/\s+/, $t);
+ 
+-open (MAIL, "| /usr/lib/sendmail -oi -t $mailfrom") ||
++open (MAIL, "| /usr/sbin/sendmail -oi -t $mailfrom") ||
+     die "could not open pipe to mail: $!\n";
+ print MAIL <<EOF;
+ To: $mailaddrs

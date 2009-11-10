@@ -1,0 +1,15 @@
+mon is a tool for monitoring the availability of services, and sending alerts
+on prescribed events. Services are defined as anything tested by a "monitor"
+program, which can be something as simple as pinging a system, or as complex
+as analyzing the results of an application-level transaction. Alerts are
+actions such as sending emails, making submissions to ticketing systems, or
+triggering resource fail-over in a high-availability cluster.
+
+A design goal of mon is to maintain simplicity and provide the right
+abstractions for monitoring so that the system can be scalable, easy to use,
+and trivial to extend for the widest variety of applications. The learning
+curve is very shallow for initial installation, configuration, and
+customization. Monitors and alerts are simple to write using any language, and
+simple to incorporate into a site configuration. Reporting and control
+functionality is easily customized with the aid of a TCP-based protocol
+interface.

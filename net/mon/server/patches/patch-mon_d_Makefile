@@ -1,0 +1,30 @@
+$OpenBSD: patch-mon_d_Makefile,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+--- mon.d/Makefile.orig	Wed Jun  9 07:18:05 2004
++++ mon.d/Makefile	Wed Dec 10 16:20:41 2008
+@@ -3,14 +3,15 @@
+ #
+ # compiles on Linux, Solaris 2.5, Solaris 2.6, and AIX Version 4.2
+ #
+-CC = gcc
+-CFLAGS = -O2 -Wall -g
+-LDFLAGS =
+-LDLIBS =
++CC ?= gcc
++CFLAGS ?= -O2 -Wall -g
++LDFLAGS ?=
++LDLIBS ?=
++PREFIX ?= ${PREFIX}
+ # uncomment next line for Solaris
+ # LDLIBS = -lnsl -lsocket
+ 
+-MONPATH=/usr/lib/mon
++MONPATH=$(PREFIX)/lib/mon
+ DIALIN_MONITOR_REAL=$(MONPATH)/mon.d/dialin.monitor
+ 
+ PROGS = rpc.monitor dialin.monitor.wrap
+@@ -31,4 +32,4 @@ clean:
+ install:
+ 	install -d $(MONPATH)/mon.d
+ 	install rpc.monitor $(MONPATH)/mon.d/
+-	install -g uucp -m 02555 dialin.monitor.wrap $(MONPATH)/mon.d/
++	install dialin.monitor.wrap $(MONPATH)/mon.d/

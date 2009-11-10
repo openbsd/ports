@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+bin/moncmd
+bin/monshow
+lib/mon/
+lib/mon/mon.cgi
+${P5SITE}/Mon/
+${P5SITE}/Mon/Client.pm
+${P5SITE}/Mon/Config.pm
+${P5SITE}/Mon/Protocol.pm
+${P5SITE}/Mon/SNMP.pm
+@man man/man1/moncmd.1
+@man man/man1/monshow.1
+@man man/man3p/Mon::Client.3p
+@man man/man3p/Mon::Config.3p
+@man man/man3p/Mon::Protocol.3p
+@man man/man3p/Mon::SNMP.3p

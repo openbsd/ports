@@ -1,0 +1,4 @@
+This is the Perl5 module for interfacing with the Mon system monitoring
+package. It is intended to be used in conjuction with the mon 1.2.x server.
+Currently only the client interface is implemented, but more things like
+special logging routines and persistent monitors are being considered.

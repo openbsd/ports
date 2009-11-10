@@ -1,0 +1,53 @@
+$OpenBSD: patch-etc_very-simple_cf,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+--- etc/very-simple.cf.orig	Wed Jun  9 07:18:06 2004
++++ etc/very-simple.cf	Wed Oct 14 13:26:22 2009
+@@ -3,32 +3,42 @@
+ #
+ # $Id: patch-etc_very-simple_cf,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+ #
+-alertdir   = /usr/lib/mon/alert.d
+-mondir     = /usr/lib/mon/mon.d
++alertdir   = ${PREFIX}/lib/mon/alert.d
++mondir     = ${PREFIX}/lib/mon/mon.d
++cfbasedir   = ${SYSCONFDIR}/mon/
++statedir    = /var/mon/state.d
++logdir      = /var/mon/log.d
+ maxprocs    = 20
+ histlength = 100
+ randstart = 60s
++dtlogging = yes
+ 
+ #
+ # define groups of hosts to monitor
+ #
+ hostgroup servers localhost
+ 
+-hostgroup mail mailhost
+-
+ watch servers
+     service ping
+         interval 5m
+-        monitor fping.monitor
++        monitor ping.monitor
+         period wd {Mon-Fri} hr {7am-10pm}
+             alert mail.alert root@localhost
+             alertevery 1h
+         period wd {Sat-Sun}
+             alert mail.alert root@localhost
+-    service telnet
++    service ssh
+         interval 10m
+-        monitor telnet.monitor
++        monitor tcp.monitor -p 22
+         period wd {Mon-Fri} hr {7am-10pm}
+             alertevery 1h
+             alertafter 2 30m
+             alert mail.alert root@localhost
++    service smtp
++        interval 10m
++        monitor smtp.monitor
++        period wd {Mon-Fri} hr {7am-10pm}
++            alertevery 1h
++            alertafter 2 30m
++            alert mail.alert root@localhost
++	    upalert mail.alert root@localhost

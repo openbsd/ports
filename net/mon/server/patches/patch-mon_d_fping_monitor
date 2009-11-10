@@ -1,0 +1,21 @@
+$OpenBSD: patch-mon_d_fping_monitor,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+--- mon.d/fping.monitor.orig	Mon Oct 12 15:55:27 2009
++++ mon.d/fping.monitor	Mon Oct 12 15:56:44 2009
+@@ -50,7 +50,7 @@ usage if ($opt{"h"});
+ 
+ my $TIMEOUT = $opt{"t"} || 2000;
+ my $RETRIES = $opt{"r"} || 3;
+-my $CMD = "fping -e -r $RETRIES -t $TIMEOUT";
++my $CMD = "${LOCALBASE}/sbin/fping -e -r $RETRIES -t $TIMEOUT";
+ my $START_TIME = time;
+ my $END_TIME;
+ my %details;
+@@ -221,7 +221,7 @@ if ($opt{"T"} && @unreachable)
+ {
+     foreach my $host (@unreachable)
+     {
+-    	system ("traceroute -w 3 $host 2>&1");
++    	system ("/usr/sbin/traceroute -w 3 $host 2>&1");
+     }
+ 
+     print "\n";

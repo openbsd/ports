@@ -1,0 +1,96 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+@newgroup _mon:643
+@newuser _mon:643:_mon:daemon:Mon Server:/var/empty:/bin/sh
+bin/mon
+lib/mon/
+lib/mon/alert.d/
+lib/mon/alert.d/file.alert
+lib/mon/alert.d/irc.alert
+lib/mon/alert.d/mail.alert
+lib/mon/alert.d/netpage.alert
+lib/mon/alert.d/qpage.alert
+lib/mon/alert.d/snpp.alert
+lib/mon/alert.d/test.alert
+lib/mon/alert.d/trap.alert
+lib/mon/mon.d/
+lib/mon/mon.d/asyncreboot.monitor
+lib/mon/mon.d/cpqhealth.monitor
+lib/mon/mon.d/dialin.monitor
+@bin lib/mon/mon.d/dialin.monitor.wrap
+lib/mon/mon.d/dns-query.monitor
+lib/mon/mon.d/dns.monitor
+lib/mon/mon.d/file_change.monitor
+lib/mon/mon.d/foundry-chassis.monitor
+lib/mon/mon.d/fping.monitor
+lib/mon/mon.d/freespace.monitor
+lib/mon/mon.d/ftp.monitor
+lib/mon/mon.d/hpnp.monitor
+lib/mon/mon.d/http.monitor
+lib/mon/mon.d/http_tppnp.monitor
+lib/mon/mon.d/imap.monitor
+lib/mon/mon.d/ldap.monitor
+lib/mon/mon.d/local-syslog.monitor
+lib/mon/mon.d/lpd.monitor
+lib/mon/mon.d/mon.monitor
+lib/mon/mon.d/msql-mysql.monitor
+lib/mon/mon.d/na_quota.monitor
+lib/mon/mon.d/netappfree.monitor
+lib/mon/mon.d/nntp.monitor
+lib/mon/mon.d/ntpdate.monitor
+lib/mon/mon.d/phttp.monitor
+lib/mon/mon.d/ping.monitor
+lib/mon/mon.d/pop3.monitor
+lib/mon/mon.d/process.monitor
+lib/mon/mon.d/radius.monitor
+lib/mon/mon.d/rd.monitor
+lib/mon/mon.d/reboot.monitor
+@bin lib/mon/mon.d/rpc.monitor
+lib/mon/mon.d/seq.monitor
+lib/mon/mon.d/silkworm.monitor
+lib/mon/mon.d/smtp.monitor
+lib/mon/mon.d/smtp3.monitor
+lib/mon/mon.d/snmpdiskspace.monitor
+lib/mon/mon.d/snmpvar.monitor
+lib/mon/mon.d/tcp.monitor
+lib/mon/mon.d/telnet.monitor
+lib/mon/mon.d/trace.monitor
+lib/mon/mon.d/traceroute.monitor
+lib/mon/mon.d/up_rtt.monitor
+lib/mon/mon.d/xedia-ipsec-tunnel.monitor
+@man man/man8/mon.8
+share/doc/mon/
+share/doc/mon/README.OpenBSD
+share/doc/mon/README.alerts
+share/doc/mon/README.cgi-bin
+share/doc/mon/README.hints
+share/doc/mon/README.mon.cgi
+share/doc/mon/README.monitors
+share/doc/mon/README.msql-mysql.monitor
+share/doc/mon/README.paging
+share/doc/mon/README.protocol
+share/doc/mon/README.rpc.monitor
+share/doc/mon/README.snmpdiskspace.monitor
+share/doc/mon/README.snmpvar.monitor
+share/doc/mon/README.software
+share/doc/mon/README.syslog.monitor
+share/doc/mon/README.traps
+share/doc/mon/README.variables
+share/examples/mon/
+@owner _mon
+@group _mon
+@sample ${SYSCONFDIR}/mon/
+share/examples/mon/auth.cf
+@sample ${SYSCONFDIR}/mon/auth.cf
+share/examples/mon/example.cf
+share/examples/mon/mon.cgi.cf
+share/examples/mon/na_quota.cf
+share/examples/mon/netappfree.cf
+share/examples/mon/snmpdiskspace.cf
+share/examples/mon/snmpopt.cf
+share/examples/mon/snmpvar.cf
+share/examples/mon/snmpvar.def
+share/examples/mon/syslog-monitor.conf
+share/examples/mon/very-simple.cf
+@sample ${SYSCONFDIR}/mon/mon.cf
+@sample /var/mon/state.d/
+@sample /var/mon/log.d/
