@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.435 2009/11/08 12:18:42 landry Exp $
+# $OpenBSD: Makefile,v 1.436 2009/11/10 20:28:32 landry Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -368,6 +368,7 @@
      SUBDIR += ruby-thin
      SUBDIR += ruby-thin_http
      SUBDIR += ruby-typo
+     SUBDIR += sabredav
      SUBDIR += sarg
      SUBDIR += seamonkey
      SUBDIR += snownews
