@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/10/22 13:18:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/11/10 08:09:37 ajacoutot Exp $
 
 COMMENT=	advanced general purpose calculator
 
 GNOME_PROJECT=	genius
-GNOME_VERSION=	1.0.7
+GNOME_VERSION=	1.0.8
 
 HOMEPAGE=	http://www.jirka.org/genius.html
 
