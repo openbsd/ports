@@ -1,0 +1,11 @@
+SabreDAV allows you to easily add WebDAV support to a PHP application.
+SabreDAV is meant to cover the entire standard, and attempts to allow
+integration using an easy to understand API.
+Feature list:
+* Fully WebDAV compliant
+* Supports Windows XP, Windows Vista, Mac OS/X, DavFSv2, Cadaver, Netdrive.
+* Supporting class 1, 2 and 3 webdav servers
+* Locking support
+* Custom property support
+* Supports: RFC2518 and revisions from RFC4918
+* Has built-in support for (basic/digest) authentication (RFC2617)
