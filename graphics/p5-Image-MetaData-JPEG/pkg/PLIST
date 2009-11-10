@@ -1,23 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/27 13:53:35 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/11/10 16:54:50 giovanni Exp $
 ${P5SITE}/Image/
 ${P5SITE}/Image/MetaData/
 ${P5SITE}/Image/MetaData/JPEG/
 ${P5SITE}/Image/MetaData/JPEG.pm
 ${P5SITE}/Image/MetaData/JPEG.pod
 ${P5SITE}/Image/MetaData/JPEG/Backtrace.pm
-${P5SITE}/Image/MetaData/JPEG/JPEG_app13.pl
-${P5SITE}/Image/MetaData/JPEG/JPEG_app1_exif.pl
-${P5SITE}/Image/MetaData/JPEG/JPEG_comments.pl
-${P5SITE}/Image/MetaData/JPEG/JPEG_various.pl
 ${P5SITE}/Image/MetaData/JPEG/MakerNotes.pod
 ${P5SITE}/Image/MetaData/JPEG/Record.pm
 ${P5SITE}/Image/MetaData/JPEG/Segment.pm
-${P5SITE}/Image/MetaData/JPEG/Segment_dumpers.pl
-${P5SITE}/Image/MetaData/JPEG/Segment_parsers.pl
 ${P5SITE}/Image/MetaData/JPEG/Structures.pod
-${P5SITE}/Image/MetaData/JPEG/Tables.pm
-${P5SITE}/Image/MetaData/JPEG/Tables_makernotes.pl
 ${P5SITE}/Image/MetaData/JPEG/TagLists.pod
+${P5SITE}/Image/MetaData/JPEG/access/
+${P5SITE}/Image/MetaData/JPEG/access/app13.pl
+${P5SITE}/Image/MetaData/JPEG/access/app1_exif.pl
+${P5SITE}/Image/MetaData/JPEG/access/comments.pl
+${P5SITE}/Image/MetaData/JPEG/access/various.pl
+${P5SITE}/Image/MetaData/JPEG/data/
+${P5SITE}/Image/MetaData/JPEG/data/Makernotes.pl
+${P5SITE}/Image/MetaData/JPEG/data/Tables.pm
+${P5SITE}/Image/MetaData/JPEG/dumpers/
+${P5SITE}/Image/MetaData/JPEG/dumpers/app1.pl
+${P5SITE}/Image/MetaData/JPEG/dumpers/app13.pl
+${P5SITE}/Image/MetaData/JPEG/dumpers/app1_exif.pl
+${P5SITE}/Image/MetaData/JPEG/dumpers/dumpers.pl
+${P5SITE}/Image/MetaData/JPEG/parsers/
+${P5SITE}/Image/MetaData/JPEG/parsers/app0.pl
+${P5SITE}/Image/MetaData/JPEG/parsers/app1.pl
+${P5SITE}/Image/MetaData/JPEG/parsers/app12.pl
+${P5SITE}/Image/MetaData/JPEG/parsers/app13.pl
+${P5SITE}/Image/MetaData/JPEG/parsers/app14.pl
+${P5SITE}/Image/MetaData/JPEG/parsers/app1_exif.pl
+${P5SITE}/Image/MetaData/JPEG/parsers/app1_xmp.pl
+${P5SITE}/Image/MetaData/JPEG/parsers/app2.pl
+${P5SITE}/Image/MetaData/JPEG/parsers/app3.pl
+${P5SITE}/Image/MetaData/JPEG/parsers/image.pl
+${P5SITE}/Image/MetaData/JPEG/parsers/parsers.pl
 @man man/man3p/Image::MetaData::JPEG.3p
 @man man/man3p/Image::MetaData::JPEG::MakerNotes.3p
 @man man/man3p/Image::MetaData::JPEG::Structures.3p
