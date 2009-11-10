@@ -1,0 +1,25 @@
+$OpenBSD: patch-stickynotes_stickynotes_ui,v 1.1 2009/11/10 17:56:24 jasper Exp $
+
+Fix crash of stickynotes. Patch from Open Solaris'
+gnome-applets-07-stickynotes-crash.diff
+
+--- stickynotes/stickynotes.ui.orig	Mon Nov  9 18:31:32 2009
++++ stickynotes/stickynotes.ui	Mon Nov  9 18:31:48 2009
+@@ -474,7 +474,7 @@
+               </packing>
+             </child>
+             <child>
+-              <object class="GtkVBox" id="vbox1">
++              <object class="GtkVBox" id="vbox3">
+                 <property name="visible">True</property>
+                 <property name="orientation">vertical</property>
+                 <child>
+@@ -494,7 +494,7 @@
+                   </packing>
+                 </child>
+                 <child>
+-                  <object class="GtkLabel" id="label1">
++                  <object class="GtkLabel" id="label2">
+                     <property name="visible">True</property>
+                     <property name="xalign">0</property>
+                     <property name="label" translatable="yes">This cannot be undone.</property>
