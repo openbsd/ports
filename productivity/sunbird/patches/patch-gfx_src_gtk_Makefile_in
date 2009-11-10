@@ -1,0 +1,14 @@
+$OpenBSD: patch-gfx_src_gtk_Makefile_in,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+--- gfx/src/gtk/Makefile.in.orig	Sun Feb  4 20:53:15 2007
++++ gfx/src/gtk/Makefile.in	Sun Feb  4 20:57:26 2007
+@@ -207,6 +207,10 @@ ifdef MOZ_ENABLE_PANGO
+ EXTRA_DSO_LDOPTS += $(MOZ_PANGO_LIBS)
+ endif
+ 
++ifdef MOZ_ENABLE_COREXFONTS
++EXTRA_DSO_LDOPTS += -lpangox-1.0
++endif
++
+ EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(MOZ_GTK_LDFLAGS) $(MOZ_XFT_LIBS) $(MOZ_GTK2_LIBS)
+ CXXFLAGS	+= $(MOZ_GTK_CFLAGS) $(MOZ_GTK2_CFLAGS)
+ CFLAGS		+= $(MOZ_GTK_CFLAGS) $(MOZ_GTK2_CFLAGS)

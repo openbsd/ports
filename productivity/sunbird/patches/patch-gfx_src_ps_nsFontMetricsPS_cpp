@@ -1,0 +1,12 @@
+$OpenBSD: patch-gfx_src_ps_nsFontMetricsPS_cpp,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+--- gfx/src/ps/nsFontMetricsPS.cpp.orig	Thu Nov 30 04:17:21 2006
++++ gfx/src/ps/nsFontMetricsPS.cpp	Thu Apr 19 14:31:47 2007
+@@ -995,7 +995,7 @@ nsFontPSXft::FindFont(PRUnichar aChar, const nsFont& a
+ 
+         fontps *fps = new fontps;
+         fps->entry = xftEntry;
+-        fps->charset = fc_charset;
++        fps->charset = FcCharSetCopy(fc_charset);
+         fps->fontps = nsnull;
+         fpi.fontps->AppendElement(fps);
+     }

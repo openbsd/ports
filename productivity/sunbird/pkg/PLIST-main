@@ -1,0 +1,439 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+bin/sunbird
+bin/sunbird-config
+@comment mozilla-thunderbird/
+@comment mozilla-thunderbird/extensions/
+share/applications/sunbird.desktop
+sunbird/
+sunbird/LICENSE
+sunbird/chrome/
+sunbird/chrome/calendar-en-US.jar
+sunbird/chrome/calendar-en-US.manifest
+sunbird/chrome/calendar.jar
+sunbird/chrome/calendar.manifest
+sunbird/chrome/chromelist.txt
+sunbird/chrome/classic.jar
+sunbird/chrome/classic.manifest
+sunbird/chrome/comm.jar
+sunbird/chrome/comm.manifest
+sunbird/chrome/en-US.jar
+sunbird/chrome/en-US.manifest
+sunbird/chrome/icons/
+sunbird/chrome/icons/default/
+sunbird/chrome/icons/default/calendar-alarm-dialog.xpm
+sunbird/chrome/icons/default/default.xpm
+sunbird/chrome/pippki.jar
+sunbird/chrome/pippki.manifest
+sunbird/chrome/toolkit.jar
+sunbird/chrome/toolkit.manifest
+sunbird/components/
+sunbird/components/FeedProcessor.js
+sunbird/components/accessibility-atk.xpt
+sunbird/components/accessibility.xpt
+sunbird/components/alerts.xpt
+sunbird/components/appshell.xpt
+sunbird/components/appstartup.xpt
+sunbird/components/autocomplete.xpt
+sunbird/components/bookmarks.xpt
+sunbird/components/calCompositeCalendar.js
+sunbird/components/calDavCalendarModule.js
+sunbird/components/calICSCalendarModule.js
+sunbird/components/calImportExportModule.js
+sunbird/components/calItemModule.js
+sunbird/components/calMemoryCalendarModule.js
+sunbird/components/calStorageCalendarModule.js
+sunbird/components/calWcapCalendarModule.js
+sunbird/components/calbase.xpt
+sunbird/components/calbaseinternal.xpt
+sunbird/components/caldav.xpt
+sunbird/components/calendarService.js
+sunbird/components/caps.xpt
+sunbird/components/chardet.xpt
+sunbird/components/chrome.xpt
+sunbird/components/commandhandler.xpt
+sunbird/components/commandlines.xpt
+sunbird/components/composer.xpt
+sunbird/components/content_base.xpt
+sunbird/components/content_html.xpt
+sunbird/components/content_htmldoc.xpt
+sunbird/components/content_xmldoc.xpt
+sunbird/components/content_xslt.xpt
+sunbird/components/content_xtf.xpt
+sunbird/components/docshell.xpt
+sunbird/components/dom.xpt
+sunbird/components/dom_base.xpt
+sunbird/components/dom_canvas.xpt
+sunbird/components/dom_core.xpt
+sunbird/components/dom_css.xpt
+sunbird/components/dom_events.xpt
+sunbird/components/dom_html.xpt
+sunbird/components/dom_loadsave.xpt
+sunbird/components/dom_range.xpt
+sunbird/components/dom_sidebar.xpt
+sunbird/components/dom_storage.xpt
+sunbird/components/dom_stylesheets.xpt
+sunbird/components/dom_svg.xpt
+sunbird/components/dom_traversal.xpt
+sunbird/components/dom_views.xpt
+sunbird/components/dom_xbl.xpt
+sunbird/components/dom_xpath.xpt
+sunbird/components/dom_xul.xpt
+sunbird/components/downloads.xpt
+sunbird/components/editor.xpt
+sunbird/components/embed_base.xpt
+sunbird/components/extensions.xpt
+sunbird/components/exthandler.xpt
+sunbird/components/fastfind.xpt
+sunbird/components/feeds.xpt
+sunbird/components/filepicker.xpt
+sunbird/components/find.xpt
+sunbird/components/gfx.xpt
+sunbird/components/gksvgrenderer.xpt
+sunbird/components/history.xpt
+sunbird/components/htmlparser.xpt
+sunbird/components/imglib2.xpt
+sunbird/components/inspector.xpt
+sunbird/components/intl.xpt
+sunbird/components/jar.xpt
+sunbird/components/jsconsole-clhandler.js
+sunbird/components/jsconsole.xpt
+sunbird/components/jsdservice.xpt
+sunbird/components/layout_base.xpt
+sunbird/components/layout_printing.xpt
+sunbird/components/layout_xul.xpt
+sunbird/components/layout_xul_tree.xpt
+@lib sunbird/components/libaccessibility.so.${LIBaccessibility_VERSION}
+@lib sunbird/components/libappcomps.so.${LIBappcomps_VERSION}
+@lib sunbird/components/libcalbasecomps.so.${LIBcalbasecomps_VERSION}
+@lib sunbird/components/libcaps.so.${LIBcaps_VERSION}
+@lib sunbird/components/libchrome.so.${LIBchrome_VERSION}
+@lib sunbird/components/libcommandlines.so.${LIBcommandlines_VERSION}
+@lib sunbird/components/libdocshell.so.${LIBdocshell_VERSION}
+@lib sunbird/components/libeditor.so.${LIBeditor_VERSION}
+@lib sunbird/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
+@lib sunbird/components/libfileview.so.${LIBfileview_VERSION}
+@lib sunbird/components/libgfx_gtk.so.${LIBgfx_gtk_VERSION}
+@lib sunbird/components/libgfxps.so.${LIBgfxps_VERSION}
+@lib sunbird/components/libgklayout.so.${LIBgklayout_VERSION}
+@lib sunbird/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
+@lib sunbird/components/libi18n.so.${LIBi18n_VERSION}
+@lib sunbird/components/libimglib2.so.${LIBimglib2_VERSION}
+@lib sunbird/components/libjar50.so.${LIBjar50_VERSION}
+@lib sunbird/components/libjsd.so.${LIBjsd_VERSION}
+@lib sunbird/components/libmork.so.${LIBmork_VERSION}
+@lib sunbird/components/libmozfind.so.${LIBmozfind_VERSION}
+@lib sunbird/components/libnecko.so.${LIBnecko_VERSION}
+@lib sunbird/components/libnecko2.so.${LIBnecko2_VERSION}
+@lib sunbird/components/libnsappshell.so.${LIBnsappshell_VERSION}
+@lib sunbird/components/libpipboot.so.${LIBpipboot_VERSION}
+@lib sunbird/components/libpipnss.so.${LIBpipnss_VERSION}
+@lib sunbird/components/libpippki.so.${LIBpippki_VERSION}
+@lib sunbird/components/libpref.so.${LIBpref_VERSION}
+@lib sunbird/components/librdf.so.${LIBrdf_VERSION}
+@lib sunbird/components/libremoteservice.so.${LIBremoteservice_VERSION}
+@lib sunbird/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
+@lib sunbird/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
+@lib sunbird/components/libtransformiix.so.${LIBtransformiix_VERSION}
+@lib sunbird/components/libtxmgr.so.${LIBtxmgr_VERSION}
+@lib sunbird/components/libuconv.so.${LIBuconv_VERSION}
+@lib sunbird/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
+@lib sunbird/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
+@lib sunbird/components/libxmlextras.so.${LIBxmlextras_VERSION}
+@lib sunbird/components/libxpcom_compat_c.so.${LIBxpcom_compat_c_VERSION}
+@lib sunbird/components/libxpconnect.so.${LIBxpconnect_VERSION}
+@lib sunbird/components/libxpinstall.so.${LIBxpinstall_VERSION}
+sunbird/components/locale.xpt
+sunbird/components/lwbrk.xpt
+sunbird/components/mimetype.xpt
+sunbird/components/mozbrwsr.xpt
+sunbird/components/mozfind.xpt
+sunbird/components/mozgnome.xpt
+sunbird/components/necko.xpt
+sunbird/components/necko_about.xpt
+sunbird/components/necko_cache.xpt
+sunbird/components/necko_cookie.xpt
+sunbird/components/necko_data.xpt
+sunbird/components/necko_dns.xpt
+sunbird/components/necko_file.xpt
+sunbird/components/necko_ftp.xpt
+sunbird/components/necko_http.xpt
+sunbird/components/necko_res.xpt
+sunbird/components/necko_socket.xpt
+sunbird/components/necko_strconv.xpt
+sunbird/components/necko_viewsource.xpt
+sunbird/components/nsCloseAllWindows.js
+sunbird/components/nsDefaultCLH.js
+sunbird/components/nsExtensionManager.js
+sunbird/components/nsFilePicker.js
+sunbird/components/nsHelperAppDlg.js
+sunbird/components/nsProgressDialog.js
+sunbird/components/nsProxyAutoConfig.js
+sunbird/components/nsURLFormatter.js
+sunbird/components/nsUpdateService.js
+sunbird/components/passwordmgr.xpt
+sunbird/components/pipboot.xpt
+sunbird/components/pipnss.xpt
+sunbird/components/pippki.xpt
+sunbird/components/pref.xpt
+sunbird/components/prefetch.xpt
+sunbird/components/profile.xpt
+sunbird/components/progressDlg.xpt
+sunbird/components/proxyObjInst.xpt
+sunbird/components/rdf.xpt
+sunbird/components/satchel.xpt
+sunbird/components/saxparser.xpt
+sunbird/components/shistory.xpt
+sunbird/components/storage.xpt
+sunbird/components/toolkitprofile.xpt
+sunbird/components/toolkitremote.xpt
+sunbird/components/txmgr.xpt
+sunbird/components/txtsvc.xpt
+sunbird/components/uconv.xpt
+sunbird/components/unicharutil.xpt
+sunbird/components/update.xpt
+sunbird/components/uriloader.xpt
+sunbird/components/urlformatter.xpt
+sunbird/components/wcap.xpt
+sunbird/components/webBrowser_core.xpt
+sunbird/components/webbrowserpersist.xpt
+sunbird/components/webshell_idls.xpt
+sunbird/components/widget.xpt
+sunbird/components/windowds.xpt
+sunbird/components/windowwatcher.xpt
+sunbird/components/xpautocomplete.xpt
+sunbird/components/xpcom_base.xpt
+sunbird/components/xpcom_components.xpt
+sunbird/components/xpcom_ds.xpt
+sunbird/components/xpcom_io.xpt
+sunbird/components/xpcom_obsolete.xpt
+sunbird/components/xpcom_threads.xpt
+sunbird/components/xpcom_xpti.xpt
+sunbird/components/xpconnect.xpt
+sunbird/components/xpinstall.xpt
+sunbird/components/xulapp.xpt
+sunbird/components/xuldoc.xpt
+sunbird/components/xultmpl.xpt
+sunbird/defaults/
+sunbird/defaults/pref/
+sunbird/defaults/pref/channel-prefs.js
+sunbird/defaults/pref/sunbird-l10n.js
+sunbird/defaults/pref/sunbird.js
+sunbird/defaults/profile/
+sunbird/defaults/profile/prefs.js
+sunbird/extensions/
+sunbird/extensions/calendar-timezones@mozilla.org/
+sunbird/extensions/calendar-timezones@mozilla.org/chrome/
+sunbird/extensions/calendar-timezones@mozilla.org/chrome.manifest
+sunbird/extensions/calendar-timezones@mozilla.org/chrome/calendar-timezones-en-US.jar
+sunbird/extensions/calendar-timezones@mozilla.org/chrome/chromelist.txt
+sunbird/extensions/calendar-timezones@mozilla.org/defaults/
+sunbird/extensions/calendar-timezones@mozilla.org/defaults/preferences/
+sunbird/extensions/calendar-timezones@mozilla.org/defaults/preferences/preferences.js
+sunbird/extensions/calendar-timezones@mozilla.org/install.rdf
+sunbird/extensions/calendar-timezones@mozilla.org/timezones.sqlite
+sunbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+sunbird/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+sunbird/extensions/${GUID}/
+sunbird/extensions/${GUID}/install.rdf
+sunbird/greprefs/
+sunbird/greprefs/all.js
+sunbird/greprefs/security-prefs.js
+sunbird/greprefs/xpinstall.js
+sunbird/icons/
+sunbird/icons/mozicon128.png
+sunbird/icons/mozicon16.xpm
+sunbird/icons/mozicon50.xpm
+sunbird/js/
+sunbird/js/calAlarm.js
+sunbird/js/calAlarmMonitor.js
+sunbird/js/calAlarmService.js
+sunbird/js/calAttachment.js
+sunbird/js/calAttendee.js
+sunbird/js/calAuthUtils.js
+sunbird/js/calCachedCalendar.js
+sunbird/js/calCalendarManager.js
+sunbird/js/calCalendarSearchService.js
+sunbird/js/calDateTimeFormatter.js
+sunbird/js/calDavCalendar.js
+sunbird/js/calEvent.js
+sunbird/js/calFreeBusyService.js
+sunbird/js/calHtmlExport.js
+sunbird/js/calICSCalendar.js
+sunbird/js/calIcsImportExport.js
+sunbird/js/calIcsParser.js
+sunbird/js/calIcsSerializer.js
+sunbird/js/calItemBase.js
+sunbird/js/calItipItem.js
+sunbird/js/calItipProcessor.js
+sunbird/js/calListFormatter.js
+sunbird/js/calMemoryCalendar.js
+sunbird/js/calMonthGridPrinter.js
+sunbird/js/calOutlookCSVImportExport.js
+sunbird/js/calProtocolHandler.js
+sunbird/js/calProviderBase.js
+sunbird/js/calProviderUtils.js
+sunbird/js/calRecurrenceInfo.js
+sunbird/js/calRelation.js
+sunbird/js/calStorageCalendar.js
+sunbird/js/calTimezoneService.js
+sunbird/js/calTodo.js
+sunbird/js/calTransactionManager.js
+sunbird/js/calUtils.js
+sunbird/js/calWcapCalendar.js
+sunbird/js/calWcapCalendarItems.js
+sunbird/js/calWcapErrors.js
+sunbird/js/calWcapRequest.js
+sunbird/js/calWcapSession.js
+sunbird/js/calWcapUtils.js
+sunbird/js/calWeekInfoService.js
+sunbird/js/calWeekPrinter.js
+@lib sunbird/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
+@lib sunbird/libgkgfx.so.${LIBgkgfx_VERSION}
+@lib sunbird/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
+@lib sunbird/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
+@lib sunbird/libmozjs.so.${LIBmozjs_VERSION}
+@lib sunbird/libxpcom.so.${LIBxpcom_VERSION}
+@lib sunbird/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
+@lib sunbird/libxpcom_core.so.${LIBxpcom_core_VERSION}
+@lib sunbird/libxpistub.so.${LIBxpistub_VERSION}
+@bin sunbird/mozilla-xremote-client
+@bin sunbird/regxpcom
+sunbird/res/
+sunbird/res/arrow.gif
+sunbird/res/arrowd.gif
+sunbird/res/bloatcycle.html
+sunbird/res/broken-image.gif
+sunbird/res/charsetData.properties
+sunbird/res/charsetalias.properties
+sunbird/res/cmessage.txt
+sunbird/res/dtd/
+sunbird/res/dtd/xhtml11.dtd
+sunbird/res/entityTables/
+sunbird/res/entityTables/html40Latin1.properties
+sunbird/res/entityTables/html40Special.properties
+sunbird/res/entityTables/html40Symbols.properties
+sunbird/res/entityTables/htmlEntityVersions.properties
+sunbird/res/entityTables/transliterate.properties
+sunbird/res/fonts/
+sunbird/res/fonts/fontEncoding.properties
+sunbird/res/fonts/pangoFontEncoding.properties
+sunbird/res/forms.css
+sunbird/res/hiddenWindow.html
+sunbird/res/html/
+sunbird/res/html.css
+sunbird/res/html/gopher-audio.gif
+sunbird/res/html/gopher-binary.gif
+sunbird/res/html/gopher-find.gif
+sunbird/res/html/gopher-image.gif
+sunbird/res/html/gopher-menu.gif
+sunbird/res/html/gopher-movie.gif
+sunbird/res/html/gopher-sound.gif
+sunbird/res/html/gopher-telnet.gif
+sunbird/res/html/gopher-text.gif
+sunbird/res/html/gopher-unknown.gif
+sunbird/res/langGroups.properties
+sunbird/res/language.properties
+sunbird/res/loading-image.gif
+sunbird/res/quirk.css
+sunbird/res/sample.unixpsfonts.properties
+sunbird/res/samples/
+sunbird/res/samples/Anieyes.gif
+sunbird/res/samples/aform.css
+sunbird/res/samples/beeptest.html
+sunbird/res/samples/bform.css
+sunbird/res/samples/bg.jpg
+sunbird/res/samples/cform.css
+sunbird/res/samples/checkboxTest.xul
+sunbird/res/samples/demoform.css
+sunbird/res/samples/find.html
+sunbird/res/samples/gear1.gif
+sunbird/res/samples/image_props.html
+sunbird/res/samples/mozform.css
+sunbird/res/samples/printsetup.html
+sunbird/res/samples/raptor.jpg
+sunbird/res/samples/rock_gra.gif
+sunbird/res/samples/scrollbarTest1.xul
+sunbird/res/samples/scrollbarTest2.xul
+sunbird/res/samples/sliderTest1.xul
+sunbird/res/samples/soundtest.html
+sunbird/res/samples/test.wav
+sunbird/res/samples/test0.html
+sunbird/res/samples/test1.html
+sunbird/res/samples/test10.html
+sunbird/res/samples/test11.html
+sunbird/res/samples/test12.html
+sunbird/res/samples/test13.html
+sunbird/res/samples/test14.html
+sunbird/res/samples/test15.html
+sunbird/res/samples/test16.html
+sunbird/res/samples/test2.html
+sunbird/res/samples/test3.html
+sunbird/res/samples/test4.html
+sunbird/res/samples/test5.html
+sunbird/res/samples/test6.html
+sunbird/res/samples/test7.html
+sunbird/res/samples/test8-1.html
+sunbird/res/samples/test8.html
+sunbird/res/samples/test8dom.html
+sunbird/res/samples/test8sca.html
+sunbird/res/samples/test8siz.html
+sunbird/res/samples/test8tab.html
+sunbird/res/samples/test9.html
+sunbird/res/samples/test9a.html
+sunbird/res/samples/test9b.html
+sunbird/res/samples/test_ed.html
+sunbird/res/samples/test_form.html
+sunbird/res/samples/test_gfx.html
+sunbird/res/samples/test_lbox.html
+sunbird/res/samples/test_pr.html
+sunbird/res/samples/test_weight.html
+sunbird/res/samples/toolbarTest1.xul
+sunbird/res/samples/treeTest1.css
+sunbird/res/samples/treeTest1.xul
+sunbird/res/samples/xulTest.css
+sunbird/res/svg.css
+sunbird/res/throbber/
+sunbird/res/throbber/anim.gif
+sunbird/res/throbber/anims00.gif
+sunbird/res/throbber/anims01.gif
+sunbird/res/throbber/anims02.gif
+sunbird/res/throbber/anims03.gif
+sunbird/res/throbber/anims04.gif
+sunbird/res/throbber/anims05.gif
+sunbird/res/throbber/anims06.gif
+sunbird/res/throbber/anims07.gif
+sunbird/res/throbber/anims08.gif
+sunbird/res/throbber/anims09.gif
+sunbird/res/throbber/anims10.gif
+sunbird/res/throbber/anims11.gif
+sunbird/res/throbber/anims12.gif
+sunbird/res/throbber/anims13.gif
+sunbird/res/throbber/anims14.gif
+sunbird/res/throbber/anims15.gif
+sunbird/res/throbber/anims16.gif
+sunbird/res/throbber/anims17.gif
+sunbird/res/throbber/anims18.gif
+sunbird/res/throbber/anims19.gif
+sunbird/res/throbber/anims20.gif
+sunbird/res/throbber/anims21.gif
+sunbird/res/throbber/anims22.gif
+sunbird/res/throbber/anims23.gif
+sunbird/res/throbber/anims24.gif
+sunbird/res/throbber/anims25.gif
+sunbird/res/throbber/anims26.gif
+sunbird/res/throbber/anims27.gif
+sunbird/res/throbber/anims28.gif
+sunbird/res/throbber/anims29.gif
+sunbird/res/ua.css
+sunbird/res/unixcharset.properties
+sunbird/res/viewer.properties
+sunbird/res/viewsource.css
+sunbird/run-mozilla.sh
+@bin sunbird/sunbird-bin
+@exec %D/bin/update-desktop-database
+@unexec %D/bin/update-desktop-database
+@exec TEMP=`mktemp -d` && cd %D/sunbird && env HOME=$TEMP LD_LIBRARY_PATH=%D/sunbird ./regxpcom && rm -fr $TEMP
+@unexec rm -f %D/sunbird/components/compreg.dat
+@unexec rm -f %D/sunbird/components/xpti.dat
+@unexec rm -f %D/sunbird/chrome/chrome.rdf
+@unexec rm -rf %D/chrome/overlayinfo

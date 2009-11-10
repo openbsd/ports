@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Mozilla Sunbird Calendar
+GenericName=Calendar Client
+Exec=sunbird
+Terminal=false
+Type=Application
+Icon=!!PREFIX!!/sunbird/icons/mozicon128.png
+Categories=Application;Network;Office;
+StartupWMClass=Sunbird-bin
+StartupNotify=false

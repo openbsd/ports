@@ -1,0 +1,10 @@
+$OpenBSD: patch-extensions_spellcheck_myspell_src_Makefile_in,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+--- extensions/spellcheck/myspell/src/Makefile.in.orig	Mon Mar 12 19:27:15 2007
++++ extensions/spellcheck/myspell/src/Makefile.in	Mon Mar 12 19:43:59 2007
+@@ -81,4 +81,6 @@ EXTRA_DSO_LDOPTS = \
+ 		$(MOZ_UNICHARUTIL_LIBS) \
+ 		$(NULL)
+ 
++DEFINES += -DLOCALBASE=\"$(prefix)\"
++
+ include $(topsrcdir)/config/rules.mk

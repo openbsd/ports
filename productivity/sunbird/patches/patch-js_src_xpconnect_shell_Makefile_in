@@ -1,0 +1,12 @@
+$OpenBSD: patch-js_src_xpconnect_shell_Makefile_in,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+--- js/src/xpconnect/shell/Makefile.in.orig	Tue Apr  5 15:35:51 2005
++++ js/src/xpconnect/shell/Makefile.in	Wed Jul  2 13:36:12 2008
+@@ -56,6 +56,8 @@ REQUIRES	= xpconnect \
+ CPPSRCS		= xpcshell.cpp
+ 
+ LIBS		= \
++		-Wl,-rpath-link,_LOCALBASE_/lib/ \
++		-Wl,-rpath-link,_X11BASE_/lib/ \
+ 		$(MOZ_JS_LIBS) \
+ 		$(XPCOM_LIBS) \
+ 		$(NSPR_LIBS) \

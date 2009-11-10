@@ -1,0 +1,29 @@
+$OpenBSD: patch-extensions_spellcheck_myspell_src_mozMySpell_cpp,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+--- extensions/spellcheck/myspell/src/mozMySpell.cpp.orig	Fri Jun 30 01:16:17 2006
++++ extensions/spellcheck/myspell/src/mozMySpell.cpp	Mon Mar 12 19:16:59 2007
+@@ -64,6 +64,9 @@
+ #include "nsISimpleEnumerator.h"
+ #include "nsIDirectoryEnumerator.h"
+ #include "nsIFile.h"
++#include "nsID.h"
++#include "nsEmbedString.h"
++#include "nsILocalFile.h"
+ #include "nsDirectoryServiceUtils.h"
+ #include "nsDirectoryServiceDefs.h"
+ #include "mozISpellI18NManager.h"
+@@ -321,6 +324,15 @@ mozMySpell::LoadDictionaryList()
+   }
+ 
+   LoadDictionariesFromDir(dictDir);
++
++  // provide common LOCALBASE/share/mozilla-dicts for all mozilla apps
++  nsCOMPtr<nsILocalFile> file;
++  rv = NS_NewNativeLocalFile(nsEmbedCString(LOCALBASE"/share/mozilla-dicts"), PR_TRUE,
++                             getter_AddRefs(file));
++  if (NS_SUCCEEDED(rv)) {
++    file->QueryInterface(NS_GET_IID(nsIFile), (void**)&dictDir);
++    LoadDictionariesFromDir(dictDir);
++  }
+ 
+   nsCOMPtr<nsISimpleEnumerator> dictDirs;
+   rv = dirSvc->Get(DICTIONARY_SEARCH_DIRECTORY_LIST,

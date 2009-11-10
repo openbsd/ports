@@ -1,0 +1,12 @@
+$OpenBSD: patch-js_src_jsnum_h,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+--- js/src/jsnum.h.orig	Thu Nov  1 21:52:24 2007
++++ js/src/jsnum.h	Wed Feb 27 12:39:54 2008
+@@ -61,7 +61,7 @@ JS_BEGIN_EXTERN_C
+  */
+ 
+ #if defined(__arm) || defined(__arm32__) || defined(__arm26__) || defined(__arm__)
+-#ifndef __QNXNTO__
++#if !defined(__QNXNTO__) && !defined(__OpenBSD__)
+ #define CPU_IS_ARM
+ #endif
+ #endif

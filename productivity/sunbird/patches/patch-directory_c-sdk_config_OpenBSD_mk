@@ -1,0 +1,12 @@
+$OpenBSD: patch-directory_c-sdk_config_OpenBSD_mk,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+--- directory/c-sdk/config/OpenBSD.mk.orig	Tue Jul 24 19:49:17 2007
++++ directory/c-sdk/config/OpenBSD.mk	Tue Jul 24 19:49:39 2007
+@@ -64,7 +64,7 @@ endif
+ 
+ ARCH                   = openbsd
+ 
+-DLL_SUFFIX             = so.1.0
++DLL_SUFFIX             = so.${SO_VERSION}
+ 
+ DSO_CFLAGS             = -fPIC
+ DSO_LDOPTS             = -shared

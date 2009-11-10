@@ -1,0 +1,30 @@
+$OpenBSD: patch-mail_app_mozilla_in,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+--- mail/app/mozilla.in.orig	Thu Oct 23 00:04:53 2008
++++ mail/app/mozilla.in	Wed Dec 17 21:33:30 2008
+@@ -92,7 +92,13 @@ moz_pis_startstop_scripts()
+ #uncomment for debugging
+ #set -x
+ 
++LIMIT=`ulimit -n`
++if [ $LIMIT -lt 128 -a "${LIMIT}" != "unlimited" ]; then  
++	ulimit -Sn 128
++fi
++
+ moz_libdir=%MOZAPPDIR%
++MOZ_PLUGIN_PATH=${MOZ_PLUGIN_PATH:=_LOCALBASE_/lib/mozilla-plugins}
+ MRE_HOME=%MREDIR%
+ 
+ # Use run-mozilla.sh in the current dir if it exists
+@@ -172,7 +178,11 @@ do
+   esac
+ done
+ 
+-export MRE_HOME
++if [ `_X11BASE_/bin/fc-list | wc -l` -eq 0 ]; then
++	export GDK_USE_XFT=0
++fi
++
++export MOZ_PLUGIN_PATH MRE_HOME
+ 
+ ## Start addon scripts
+ moz_pis_startstop_scripts "start"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-mailnews_mime_src_mimemsg_cpp,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+--- mailnews/mime/src/mimemsg.cpp.orig	Thu Jun 10 18:58:10 2004
++++ mailnews/mime/src/mimemsg.cpp	Wed Apr 25 18:02:45 2007
+@@ -522,7 +522,7 @@ MimeMessage_close_headers (MimeObject *obj)
+ 	{
+ 		PRUint32 flags = 0;
+ 		char dummy = 0;
+-		if (sscanf(xmoz, " %lx %c", &flags, &dummy) == 1 &&
++		if (sscanf(xmoz, " %x %c", &flags, &dummy) == 1 &&
+ 			flags & MSG_FLAG_PARTIAL)
+ 		{
+ 			obj->options->html_closure = obj;

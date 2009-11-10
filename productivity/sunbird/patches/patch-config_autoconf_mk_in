@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_autoconf_mk_in,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+--- config/autoconf.mk.in.orig	Thu Sep 14 21:07:03 2006
++++ config/autoconf.mk.in	Sat Apr 21 00:50:24 2007
+@@ -63,7 +63,7 @@ datadir		= @datadir@
+ mandir		= @mandir@
+ idldir		= @datadir@/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
+ 
+-mozappdir	= $(libdir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
++mozappdir	= $(prefix)/sunbird
+ mredir		= $(libdir)/mre/mre-$(MOZ_APP_VERSION)
+ mrelibdir	= $(mredir)/lib
+ 

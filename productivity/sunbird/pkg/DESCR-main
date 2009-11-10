@@ -1,0 +1,4 @@
+Mozilla Sunbird is a full blown enterprise ready calendar and task
+management application, using Mozilla XUL framework. It supports local
+and remote calendar, using CalDAV or WCAP protocols, and subscription
+to iCal/.ics invitations.
