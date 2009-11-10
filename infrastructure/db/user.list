@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.128 2009/10/27 23:45:58 sthen Exp $
+$OpenBSD: user.list,v 1.129 2009/11/10 14:37:48 pea Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -151,3 +151,4 @@ id  user		group		port options
 640 _astmanproxy	_astmanproxy	telephony/astmanproxy
 641 _ziproxy		_ziproxy	net/ziproxy
 642 _pure-ftpd		_pure-ftpd	net/pure-ftpd
+643 _mon		_mon		net/mon
