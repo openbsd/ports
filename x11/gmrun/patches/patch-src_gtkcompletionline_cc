@@ -1,7 +1,19 @@
-$OpenBSD: patch-src_gtkcompletionline_cc,v 1.1.1.1 2007/07/29 18:47:29 kili Exp $
---- src/gtkcompletionline.cc.orig	Sun Jun 22 01:14:34 2003
-+++ src/gtkcompletionline.cc	Sun Jul 29 18:29:24 2007
-@@ -348,7 +348,7 @@ generate_path()
+$OpenBSD: patch-src_gtkcompletionline_cc,v 1.2 2009/11/10 22:42:17 kili Exp $
+--- src/gtkcompletionline.cc.orig	Sun Nov 16 11:55:07 2003
++++ src/gtkcompletionline.cc	Tue Nov 10 23:33:28 2009
+@@ -76,9 +76,9 @@ static gboolean
+ on_key_press(GtkCompletionLine *cl, GdkEventKey *event, gpointer data);
+ 
+ /* get_type */
+-guint gtk_completion_line_get_type(void)
++GtkType gtk_completion_line_get_type(void)
+ {
+-  static guint type = 0;
++  static GtkType type = 0;
+   if (type == 0)
+   {
+     GtkTypeInfo type_info =
+@@ -350,7 +350,7 @@ generate_path()
  }
  
  static int

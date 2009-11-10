@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/11 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/11/10 22:42:17 kili Exp $
 
 COMMENT=		X11 program launcher
 
-DISTNAME=		gmrun-0.9
-PKGNAME=		${DISTNAME}p3
+DISTNAME=		gmrun-0.9.2
 
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.bazon.net/mishoo/gmrun.epl
+HOMEPAGE=		http://gmrun.sourceforge.net/
 
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
@@ -27,10 +26,12 @@ MODULES=		devel/gettext
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gmrun/}
 
-LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+			popt::devel/popt
 
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

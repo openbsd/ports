@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/29 18:47:29 kili Exp $
-bin/gmrun
+@comment $OpenBSD: PLIST,v 1.2 2009/11/10 22:42:17 kili Exp $
+@bin bin/gmrun
 share/gmrun/
 share/gmrun/gmrunrc

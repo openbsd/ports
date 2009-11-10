@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_gtkcompletionline_h,v 1.1 2009/11/10 22:42:17 kili Exp $
+--- src/gtkcompletionline.h.orig	Sun Nov 16 11:43:32 2003
++++ src/gtkcompletionline.h	Tue Nov 10 23:30:50 2009
+@@ -14,6 +14,7 @@
+ #define __GTKCOMPLETIONLINE_H__
+ 
+ #include <gtk/gtkentry.h>
++#include <gtk/gtktypeutils.h>
+ 
+ #include <string>
+ 
+@@ -76,7 +77,7 @@ extern "C++" {
+     void (* cancel)(GtkCompletionLine *cl);
+   };
+ 
+-  guint gtk_completion_line_get_type(void);
++  GtkType gtk_completion_line_get_type(void);
+   GtkWidget *gtk_completion_line_new();
+ 
+   void gtk_completion_line_last_history_item(GtkCompletionLine*);
