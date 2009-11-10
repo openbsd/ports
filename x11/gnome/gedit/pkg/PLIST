@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/10/11 18:13:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2009/11/10 08:27:45 ajacoutot Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-2.20/
@@ -478,7 +478,6 @@ share/gtk-doc/html/gedit/GeditDocument.html
 share/gtk-doc/html/gedit/GeditEncodingsOptionMenu.html
 share/gtk-doc/html/gedit/GeditFileChooserDialog.html
 share/gtk-doc/html/gedit/GeditMessage.html
-share/gtk-doc/html/gedit/GeditMessageArea.html
 share/gtk-doc/html/gedit/GeditMessageBus.html
 share/gtk-doc/html/gedit/GeditNotebook.html
 share/gtk-doc/html/gedit/GeditPanel.html
