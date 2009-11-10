@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/01/14 10:38:57 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/11/10 15:18:29 pyr Exp $
 bin/snmpkey
 ${P5SITE}/Net/
 ${P5SITE}/Net/SNMP/
@@ -13,9 +13,13 @@ ${P5SITE}/Net/SNMP/Security/Community.pm
 ${P5SITE}/Net/SNMP/Security/USM.pm
 ${P5SITE}/Net/SNMP/Transport/
 ${P5SITE}/Net/SNMP/Transport.pm
-${P5SITE}/Net/SNMP/Transport/TCP.pm
-${P5SITE}/Net/SNMP/Transport/TCP6.pm
-${P5SITE}/Net/SNMP/Transport/UDP.pm
-${P5SITE}/Net/SNMP/Transport/UDP6.pm
+${P5SITE}/Net/SNMP/Transport/IPv4/
+${P5SITE}/Net/SNMP/Transport/IPv4.pm
+${P5SITE}/Net/SNMP/Transport/IPv4/TCP.pm
+${P5SITE}/Net/SNMP/Transport/IPv4/UDP.pm
+${P5SITE}/Net/SNMP/Transport/IPv6/
+${P5SITE}/Net/SNMP/Transport/IPv6.pm
+${P5SITE}/Net/SNMP/Transport/IPv6/TCP.pm
+${P5SITE}/Net/SNMP/Transport/IPv6/UDP.pm
 @man man/man1/snmpkey.1
 @man man/man3p/Net::SNMP.3p

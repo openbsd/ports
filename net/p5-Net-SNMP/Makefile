@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2009/11/10 15:18:29 pyr Exp $
 
 COMMENT=	Perl modules to access SNMP
 
 MODULES=	cpan
-DISTNAME=	Net-SNMP-5.2.0
+DISTNAME=	Net-SNMP-v6.0.0
+PKGNAME=	p5-Net-SNMP-6.0.0
 CATEGORIES=	net devel
 
 MAINTAINER=	Joshua Stein <jcs@openbsd.org>
