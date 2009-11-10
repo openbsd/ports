@@ -1,12 +1,12 @@
-$OpenBSD: patch-docs_examples_Makefile_in,v 1.4 2009/01/21 21:17:27 naddy Exp $
---- docs/examples/Makefile.in.orig	Tue Jan 13 13:05:11 2009
-+++ docs/examples/Makefile.in	Wed Jan 21 16:57:02 2009
-@@ -196,7 +196,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $
+$OpenBSD: patch-docs_examples_Makefile_in,v 1.5 2009/11/10 19:13:49 naddy Exp $
+--- docs/examples/Makefile.in.orig	Wed Nov  4 13:26:11 2009
++++ docs/examples/Makefile.in	Tue Nov 10 00:47:51 2009
+@@ -205,7 +205,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $
  	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 -	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 +	$(AM_LDFLAGS) -L../../lib/.libs $(LDFLAGS) -o $@
- SOURCES = 10-at-a-time.c anyauthput.c certinfo.c cookie_interface.c \
- 	debug.c fileupload.c fopen.c ftpget.c ftpgetresp.c ftpupload.c \
- 	getinfo.c getinmemory.c http-post.c httpcustomheader.c \
+ SOURCES = 10-at-a-time.c anyauthput.c certinfo.c chkspeed.c \
+ 	cookie_interface.c debug.c fileupload.c fopen.c ftpget.c \
+ 	ftpgetinfo.c ftpgetresp.c ftpupload.c getinfo.c getinmemory.c \
