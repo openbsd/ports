@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/11/11 16:46:43 pea Exp $
+@pkgpath sysutils/p5-Mon
 bin/moncmd
 bin/monshow
 lib/mon/
