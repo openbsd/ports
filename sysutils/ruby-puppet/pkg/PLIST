@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/09/21 08:01:20 msf Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/11/11 00:07:13 robert Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 bin/filebucket
@@ -47,9 +47,16 @@ lib/ruby/site_ruby/${MODRUBY_REV}/puppet/external/nagios/
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/external/nagios.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/external/nagios/base.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/external/nagios/parser.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/external/pson/
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/external/pson/common.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/external/pson/pure/
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/external/pson/pure.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/external/pson/pure/generator.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/external/pson/pure/parser.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/external/pson/version.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/base.rb
-lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/json.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/pson.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/rack.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/rails.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/rubygems.rb
@@ -532,7 +539,6 @@ lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/filetype.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/graph.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/inifile.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/instance_loader.rb
-lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/json.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/ldap/
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/ldap.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/ldap/connection.rb
@@ -551,6 +557,7 @@ lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/package.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/pidlock.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/posix.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/provider_features.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/pson.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/queue/
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/queue.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/queue/stomp.rb
