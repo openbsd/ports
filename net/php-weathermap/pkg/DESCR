@@ -1,0 +1,7 @@
+Weathermap is a network visualisation tool, to take data you already
+have and show you an overview of your network in map form.  Extensive
+customisation features and an optional map editor are provided.
+
+Support is built in for RRD, MRTG (RRD and old log-format), and
+tab-delimited text files. Other sources are via plugins or external
+scripts. Weathermap can also be integrated with Cacti.
