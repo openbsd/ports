@@ -1,6 +1,6 @@
 Yet another network load monitor. Slurm started as a port of a Linux
 PPP link monitor called pppstatus by Gabriel Montenegro. It was then
-transformed into a generic netowrk load monitor that supports *BSD,
+transformed into a generic network load monitor that supports *BSD,
 Linux, HP-UX, and Solaris.
 
 Slurm shows `realtime' traffic statistics, has three graph modes,
