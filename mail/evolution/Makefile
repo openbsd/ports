@@ -1,17 +1,21 @@
-# $OpenBSD: Makefile,v 1.88 2009/10/19 20:31:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.89 2009/11/11 14:23:05 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
-# NOTE: when major version changes, increment EVO_VERSION accordingly 
-# in mail/evolution-plugin-rss/Makefile (and bump).
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.28.1
 
+# Only get the first x.y which is needed in the PLIST.
+# NOTE: when major version changes, increment EVO_VERSION accordingly 
+# in mail/evolution-plugin-rss/Makefile (and bump).
+R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+SUBST_VARS=		R
+
 # -plugins depends on the exact version of -main, so whenever -main is
 # bumped, -plugins needs a bump too
-PKGNAME-main=		${DISTNAME}
-PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+PKGNAME-main=		${DISTNAME}p0
+PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p0
 
 CATEGORIES=		mail
 
@@ -76,7 +80,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			::x11/gnome/icon-theme
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			pst::converters/libpst \
-			camel-1.2,camel-provider-1.2,ebackend-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2,egroupwise-1.2,gdata-1.2,gdata-google-1.2:evolution-data-server->=2.24.3:databases/evolution-data-server \
+			camel-1.2,camel-provider-1.2,ebackend-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2,egroupwise-1.2,gdata-1.2,gdata-google-1.2,exchange-storage-1.2.>=3::databases/evolution-data-server \
 			ldap.>=7::databases/openldap \
 			notify.>=2::devel/libnotify \
 			soup-2.4::devel/libsoup \
@@ -116,11 +120,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}/components:${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib"
 
-# Only get the first x.y which is needed in the PLIST.
-R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-SUBST_VARS=		R
-
-# XXX ltasneededhack in bsd.gnome.mk from FreeBSD ports
+# ltasneededhack in bsd.gnome.mk from FreeBSD ports
 # (+patch-plugins_exchange-operations_Makefile_in)
 LIBTOOL=	${WRKDIR}/bin/libtool
 post-patch:
@@ -129,12 +129,17 @@ post-patch:
 		${LOCALBASE}/bin/libtool > ${WRKDIR}/bin/libtool
 	chmod +x ${WRKDIR}/bin/libtool
 
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c \
 		${WRKSRC}/plugins/sa-junk-plugin/em-junk-filter.c
 
 post-install:
 	find ${PREFIX}/share/evolution/${R}/default -perm 444 -exec chmod 644 {} \;
+	# XXX there is a circular linking dependency with some plugins
+	# https://bugzilla.gnome.org/show_bug.cgi?id=599336
+	mv ${PREFIX}/bin/evolution \
+		${PREFIX}/libexec/evolution/${R}/evolution
+	${SUBST_CMD} -c ${FILESDIR}/evolution.sh ${WRKBUILD}/evolution.sh
+	${INSTALL_SCRIPT} ${WRKBUILD}/evolution.sh ${PREFIX}/bin/evolution
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/10/19 20:31:23 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/11/11 14:23:06 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
-@bin bin/evolution
+bin/evolution
 include/evolution-${R}/
 include/evolution-${R}/addressbook/
 include/evolution-${R}/addressbook/gui/
@@ -485,6 +485,7 @@ lib/pkgconfig/evolution-shell.pc
 libexec/evolution/
 libexec/evolution/${R}/
 libexec/evolution/${R}/csv2vcard
+@bin libexec/evolution/${R}/evolution
 libexec/evolution/${R}/evolution-addressbook-clean
 @bin libexec/evolution/${R}/evolution-addressbook-export
 @bin libexec/evolution/${R}/evolution-alarm-notify
