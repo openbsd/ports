@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:39:33 espie Exp $
-${P5SITE}/Mon/
-${P5SITE}/Mon/Client.pm
-${P5SITE}/Mon/Protocol.pm
-${P5SITE}/Mon/SNMP.pm
-@man man/man3p/Mon::Client.3p
-@man man/man3p/Mon::Protocol.3p
-@man man/man3p/Mon::SNMP.3p

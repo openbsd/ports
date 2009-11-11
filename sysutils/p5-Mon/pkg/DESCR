@@ -1,4 +1,0 @@
-This perl module is used to interact with "mon" clients. 
-It supports a protocol-independent API for retrieving the status
-of the mon server, and performing certain operations, such as
-disabling hosts and service checks. 
