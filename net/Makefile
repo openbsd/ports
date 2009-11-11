@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.604 2009/11/10 14:36:15 pea Exp $
+# $OpenBSD: Makefile,v 1.605 2009/11/11 21:13:49 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -342,6 +342,7 @@
      SUBDIR += pen
      SUBDIR += pfflowd
      SUBDIR += pfstat
+     SUBDIR += php-weathermap
      SUBDIR += pidgin
      SUBDIR += pidgin,gtkspell
      SUBDIR += pidgin-facebookchat
