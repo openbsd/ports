@@ -1,12 +1,29 @@
-$OpenBSD: patch-configure,v 1.4 2008/10/10 14:27:38 jasper Exp $
---- configure.orig	Tue Sep  2 23:49:41 2008
-+++ configure	Wed Oct  8 00:31:12 2008
-@@ -5922,7 +5922,7 @@ if test "x$debug" = "xyes"
- then
- 	CXXFLAGS="$CXXFLAGS -O0 -DDEBUG -ggdb3 -W -Wall -ansi"
+--- configure.orig	Sun Sep  6 17:46:43 2009
++++ configure	Wed Oct 28 23:04:03 2009
+@@ -6006,8 +6006,8 @@ then
+ 	CXXFLAGS="-O0 -DDEBUG -ggdb3 -W -Wall -ansi $CXXFLAGS"
  else
+ 	# Don't use ansi for CFLAGS since it fails to compile.
+-	CFLAGS="-O2 -W -Wall $CFLAGS"
 -	CXXFLAGS="-O2 -W -Wall -ansi $CXXFLAGS"
-+	CXXFLAGS="-W -Wall -ansi $CXXFLAGS"
++	CFLAGS="-W -Wall $CFLAGS"
++	CXXFLAGS="-W -Wall $CXXFLAGS"
  fi
  
  if test "x$profile" = "xyes"
+@@ -6021,15 +6021,6 @@ then
+ #   Strict compilation for C files is disabled until somebody wants to clean them.
+ #	CFLAGS="$CFLAGS -Werror -Wno-unused -Wno-sign-compare"
+ 	CXXFLAGS="$CXXFLAGS -Werror -Wno-unused -Wno-sign-compare"
+-fi
+-
+-# Make tests default in svn version
+-svn_in_version=`expr match "$1.6.5" '.*svn'`
+-test_build=yes
+-if test $svn_in_version = 0
+-then
+-	#disabling building tests for release version
+-	test_build=no
+ fi
+ 
+ # Check whether --enable-tests was given.

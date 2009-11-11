@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_preferences_cpp,v 1.1 2009/11/11 16:01:34 jasper Exp $
+--- src/preferences.cpp.orig	Fri Jun 12 15:30:32 2009
++++ src/preferences.cpp	Fri Jun 12 15:30:52 2009
+@@ -31,6 +31,8 @@
+ 
+ #include <sys/stat.h> // for setting the permissions of the preferences file
+ 
++#include <unistd.h>
++
+ namespace {
+ 
+ bool colour_cursors = false;

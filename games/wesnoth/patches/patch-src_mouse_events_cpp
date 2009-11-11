@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mouse_events_cpp,v 1.1 2009/11/11 16:01:34 jasper Exp $
+--- src/mouse_events.cpp.orig	Sun Jun 21 11:47:04 2009
++++ src/mouse_events.cpp	Tue Jul  7 21:47:10 2009
+@@ -663,7 +663,7 @@ bool mouse_handler::attack_enemy_(unit_map::iterator a
+ 		current_team().set_action_bonus_count(1 + current_team().action_bonus_count());
+ 
+ 		try {
+-			attack(gui(),map_,teams_,attacker_loc,defender_loc,att.attack_num,def.attack_num,units_,status_);
++			attack(*gui_,map_,teams_,attacker_loc,defender_loc,att.attack_num,def.attack_num,units_,status_);
+ 		} catch(end_level_exception&) {
+ 			//if the level ends due to a unit being killed, still see if
+ 			//either the attacker or defender should advance

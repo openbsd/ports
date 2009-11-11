@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_network_cpp,v 1.1 2009/11/11 16:01:34 jasper Exp $
+--- src/network.cpp.orig	Tue Jul  7 21:50:07 2009
++++ src/network.cpp	Tue Jul  7 21:50:37 2009
+@@ -871,9 +871,9 @@ struct bandwidth_stats {
+ 	int in_packets;
+ 	int in_bytes;
+ 	int day;
+-	const static size_t type_width = 16;
+-	const static size_t packet_width = 7;
+-	const static size_t bytes_width = 10;
++	static const size_t type_width = 16;
++	static const size_t packet_width = 7;
++	static const size_t bytes_width = 10;
+ 	bandwidth_stats& operator+=(const bandwidth_stats& a)
+ 	{
+ 		out_packets += a.out_packets;

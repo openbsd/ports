@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_widgets_menu_hpp,v 1.1 2009/11/11 16:01:34 jasper Exp $
+--- src/widgets/menu.hpp.orig	Sun Jul  5 13:04:03 2009
++++ src/widgets/menu.hpp	Sun Jul  5 13:04:28 2009
+@@ -183,6 +183,9 @@ class menu : public scrollarea (public)
+ 	void set_max_height(const int new_max_height);
+ 	void set_max_width(const int new_max_width);
+ 
++	#ifdef nitems
++	#undef nitems
++	#endif
+ 	size_t nitems() const { return items_.size(); }
+ 
+ 	int process();

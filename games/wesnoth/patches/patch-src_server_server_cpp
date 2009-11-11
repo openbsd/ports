@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_server_server_cpp,v 1.6 2009/03/18 11:42:16 jasper Exp $
---- src/server/server.cpp.orig	Sun Mar 15 17:36:20 2009
-+++ src/server/server.cpp	Sun Mar 15 17:36:33 2009
-@@ -35,6 +35,8 @@
- #include "proxy.hpp"
+--- src/server/server.cpp.orig	Fri May  8 15:48:22 2009
++++ src/server/server.cpp	Fri Jun 12 14:54:37 2009
+@@ -39,6 +39,8 @@
  #include "simple_wml.hpp"
+ #include "ban.hpp"
  
 +#include <unistd.h>
 +
- #include <boost/scoped_ptr.hpp>
- #include <algorithm>
- #include <cassert>
+ #include "user_handler.hpp"
+ #include "sample_user_handler.hpp"
+ 

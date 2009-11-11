@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_server_jwsmtp_mailer_h,v 1.1 2009/11/11 16:01:34 jasper Exp $
+--- src/server/jwsmtp/mailer.h.orig	Tue Jul  7 22:06:30 2009
++++ src/server/jwsmtp/mailer.h	Tue Jul  7 22:06:45 2009
+@@ -144,7 +144,7 @@ class mailer (public)
+ 
+    // Constants
+    // in unix we have to have a named object.
+-   const static enum {TO, Cc, Bcc, SMTP_PORT = 25, DNS_PORT = 53} consts;   
++   static const enum {TO, Cc, Bcc, SMTP_PORT = 25, DNS_PORT = 53} consts;   
+ 
+    // what type of authentication are we using.
+    // (if using authentication that is).

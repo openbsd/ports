@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2009/11/11 16:01:33 jasper Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.4.7
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	wesnoth-1.6.5
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.wesnoth.org/
@@ -19,16 +18,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 c freetype m pthread pthread-stubs stdc++ xcb z
+WANTLIB += X11 Xau Xdmcp Xrender c cairo expat fontconfig freetype
+WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 m pixman-1 png
+WANTLIB += pthread pthread-stubs stdc++ xcb z
 
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	boost_iostreams-mt::devel/boost \
+		boost_regex-mt::devel/boost \
 		SDL::devel/sdl \
 		SDL_image::devel/sdl-image \
 		SDL_net::devel/sdl-net \
 		SDL_mixer::devel/sdl-mixer \
-		fribidi::devel/fribidi
+		SDL_ttf::devel/sdl-ttf \
+		fribidi::devel/fribidi \
+		pango-1.0,pangoft2-1.0,pangocairo-1.0::devel/pango
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
@@ -42,7 +46,7 @@ CONFIGURE_ARGS+=--enable-server \
 		--enable-editor \
 		--with-fifodir=/var/run \
 		--enable-desktop-entry \
-		--with-desktop-dir=${PREFIX}/share/applications \
+		--with-desktopdir=${PREFIX}/share/applications \
 		--with-icondir=${PREFIX}/share/pixmaps
 
 MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
@@ -54,7 +58,7 @@ FLAVORS=	lite tinygui
 FLAVOR?=
 
 .if ${FLAVOR:L:Mlite}
-CONFIGURE_ARGS+=--enable-lite
+CONFIGURE_ARGS+=--enable-lowmem
 .endif
 
 .if ${FLAVOR:L:Mtinygui}

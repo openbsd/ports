@@ -1,6 +1,4 @@
-@comment $OpenBSD: PFRAG.no-lite,v 1.7 2008/04/25 13:51:37 deanna Exp $
-share/wesnoth/data/campaigns/Northern_Rebirth/music/
-share/wesnoth/data/campaigns/Northern_Rebirth/music/nr-sad.ogg
+@comment $OpenBSD: PFRAG.no-lite,v 1.8 2009/11/11 16:01:34 jasper Exp $
 share/wesnoth/data/core/music/
 share/wesnoth/data/core/music/battle.ogg
 share/wesnoth/data/core/music/breaking_the_chains.ogg
@@ -9,18 +7,25 @@ share/wesnoth/data/core/music/defeat2.ogg
 share/wesnoth/data/core/music/elf-land.ogg
 share/wesnoth/data/core/music/elvish-theme.ogg
 share/wesnoth/data/core/music/frantic.ogg
+share/wesnoth/data/core/music/heroes_rite.ogg
 share/wesnoth/data/core/music/knalgan_theme.ogg
 share/wesnoth/data/core/music/knolls.ogg
 share/wesnoth/data/core/music/legends_of_the_north.ogg
+share/wesnoth/data/core/music/love_theme.ogg
 share/wesnoth/data/core/music/loyalists.ogg
 share/wesnoth/data/core/music/main_menu.ogg
-share/wesnoth/data/core/music/main_menu_new.ogg
 share/wesnoth/data/core/music/northerners.ogg
 share/wesnoth/data/core/music/nunc_dimittis.ogg
 share/wesnoth/data/core/music/revelation.ogg
+share/wesnoth/data/core/music/sad.ogg
+share/wesnoth/data/core/music/siege_of_laurelmor.ogg
 share/wesnoth/data/core/music/silence.ogg
+share/wesnoth/data/core/music/suspense.ogg
 share/wesnoth/data/core/music/the_city_falls.ogg
+share/wesnoth/data/core/music/the_dangerous_symphony.ogg
+share/wesnoth/data/core/music/the_deep_path.ogg
 share/wesnoth/data/core/music/the_king_is_dead.ogg
+share/wesnoth/data/core/music/transience.ogg
 share/wesnoth/data/core/music/traveling_minstrels.ogg
 share/wesnoth/data/core/music/underground.ogg
 share/wesnoth/data/core/music/vengeful.ogg
@@ -29,6 +34,10 @@ share/wesnoth/data/core/music/victory2.ogg
 share/wesnoth/data/core/music/wanderer.ogg
 share/wesnoth/data/core/sounds/
 share/wesnoth/data/core/sounds/ambient/
+share/wesnoth/data/core/sounds/ambient/birds1.ogg
+share/wesnoth/data/core/sounds/ambient/birds2.ogg
+share/wesnoth/data/core/sounds/ambient/birds3.ogg
+share/wesnoth/data/core/sounds/ambient/campfire.ogg
 share/wesnoth/data/core/sounds/ambient/morning.ogg
 share/wesnoth/data/core/sounds/ambient/night.ogg
 share/wesnoth/data/core/sounds/ambient/ship.ogg
@@ -47,6 +56,7 @@ share/wesnoth/data/core/sounds/bow-puny-fire.ogg
 share/wesnoth/data/core/sounds/bow-puny-miss.ogg
 share/wesnoth/data/core/sounds/bow-puny.ogg
 share/wesnoth/data/core/sounds/bow.ogg
+share/wesnoth/data/core/sounds/cave-in.ogg
 share/wesnoth/data/core/sounds/claws.ogg
 share/wesnoth/data/core/sounds/club.ogg
 share/wesnoth/data/core/sounds/crossbow-fire-miss.ogg
