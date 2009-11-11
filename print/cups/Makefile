@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2009/10/25 16:04:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2009/11/11 11:00:32 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
@@ -78,8 +78,11 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-default-shared \
 			--disable-pdftops
 
-# XXX we need to use GnuTLS instead of OpenSSL because of conflicting
-# symbols with Mozilla NSS which can lead to crashes
+# XXX we need to use GnuTLS instead of OpenSSL because of a conflicting
+# symbol (both OpenSSL and NSS share a SHA1_Update() symbol). This can
+# lead applications to crash.
+# e.g. evolution is linked with nss and cups, if cups was linked with
+# ssl, then we'll get a segfault when SHA1_Final is called by OpenSSL
 CONFIGURE_ARGS+=	--enable-gnutls=yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
