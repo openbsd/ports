@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2009/10/17 08:30:18 bernd Exp $
+# $OpenBSD: Makefile,v 1.250 2009/11/12 12:34:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -28,6 +28,7 @@
      SUBDIR += comix
      SUBDIR += compface
      SUBDIR += cqcam
+     SUBDIR += ctl
      SUBDIR += dcmtk
      SUBDIR += dcraw
      SUBDIR += dia
@@ -134,6 +135,8 @@
      SUBDIR += netpbm
      SUBDIR += ocrad
      SUBDIR += openexr
+     SUBDIR += openexr-ctl
+     SUBDIR += openexr-viewers
      SUBDIR += openjpeg
      SUBDIR += p5-Cairo
      SUBDIR += p5-Captcha-reCAPTCHA
