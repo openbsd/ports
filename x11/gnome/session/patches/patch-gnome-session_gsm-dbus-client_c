@@ -1,0 +1,22 @@
+$OpenBSD: patch-gnome-session_gsm-dbus-client_c,v 1.1 2009/11/12 00:22:55 jasper Exp $
+
+dbus_message_get_path() can return NULL
+
+--- gnome-session/gsm-dbus-client.c.orig	Thu Nov 12 01:17:12 2009
++++ gnome-session/gsm-dbus-client.c	Thu Nov 12 01:17:51 2009
+@@ -213,10 +213,11 @@ client_dbus_filter_function (DBusConnection *connectio
+ 
+         path = dbus_message_get_path (message);
+ 
+-        g_debug ("GsmDBusClient: obj_path=%s interface=%s method=%s",
+-                 dbus_message_get_path (message),
+-                 dbus_message_get_interface (message),
+-                 dbus_message_get_member (message));
++	if (path != NULL)
++	        g_debug ("GsmDBusClient: obj_path=%s interface=%s method=%s",
++	                 dbus_message_get_path (message),
++	                 dbus_message_get_interface (message),
++	                 dbus_message_get_member (message));
+ 
+         if (dbus_message_is_method_call (message, SM_DBUS_CLIENT_PRIVATE_INTERFACE, "EndSessionResponse")) {
+                 g_assert (gsm_client_peek_id (GSM_CLIENT (client)) != NULL);
