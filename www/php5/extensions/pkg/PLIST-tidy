@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-tidy,v 1.1 2009/11/12 21:47:10 jasper Exp $
+conf/php5.sample/tidy.ini
+lib/php/modules/tidy.so
