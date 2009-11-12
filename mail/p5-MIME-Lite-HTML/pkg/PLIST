@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 20:28:32 landry Exp $
+${P5SITE}/MIME/Lite/
+${P5SITE}/MIME/Lite/HTML.pm
+@man man/man3p/MIME::Lite::HTML.3p
