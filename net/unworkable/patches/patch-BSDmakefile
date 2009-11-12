@@ -1,12 +1,12 @@
-$OpenBSD: patch-BSDmakefile,v 1.1 2009/03/05 18:20:16 naddy Exp $
---- BSDmakefile.orig	Thu Mar  5 01:23:23 2009
-+++ BSDmakefile	Thu Mar  5 01:23:56 2009
-@@ -39,7 +39,7 @@ MAN= unworkable.1
+$OpenBSD: patch-BSDmakefile,v 1.2 2009/11/12 20:22:31 benoit Exp $
+--- BSDmakefile.orig	Mon Aug 31 07:48:38 2009
++++ BSDmakefile	Thu Nov 12 16:43:20 2009
+@@ -42,7 +42,7 @@
  all: ${PROG} unworkable.cat1
  
- ${PROG}: ${OBJS}
--	${CC} -o ${.TARGET} ${LDFLAGS} -levent -lcrypto ${OBJS}
-+	${CC} -o ${.TARGET} ${OBJS} ${LDFLAGS} -levent -lcrypto
+ ${PROG}: libunworkable.a main.o
+-	${CC} -o ${.TARGET} ${LDFLAGS} -levent -lcrypto main.o -lunworkable
++	${CC} -o ${.TARGET} main.o ${LDFLAGS} -levent -lcrypto -lunworkable
  
- unworkable.cat1: ${MAN}
- 	nroff -Tascii -mandoc $(MAN) > unworkable.cat1
+ libunworkable.a: ${OBJS}
+ 	ar rcs libunworkable.a ${OBJS}
