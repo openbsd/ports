@@ -1,0 +1,2 @@
+If you need spell-checking feature, install the py-gnome-extras package.
+Installation is not enforced as it pulls lots of other dependencies.
