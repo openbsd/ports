@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/10/19 16:35:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/11/12 00:14:53 jasper Exp $
 @conflict control-center2-<=2.22
 %%SHARED%%
 include/gnome-settings-daemon-2.0/
@@ -95,8 +95,6 @@ share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/bs/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ca/LC_MESSAGES/gnome-settings-daemon.mo
-share/locale/ca@valencia/
-share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/cs/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/cy/LC_MESSAGES/gnome-settings-daemon.mo

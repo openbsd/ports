@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2009/10/19 16:35:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2009/11/12 00:14:53 jasper Exp $
 
 COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	2.28.1
+PKGNAME=	${DISTNAME}p0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -43,6 +44,8 @@ CONFIGURE_ARGS=	${CONFIUGRE_SHARED} \
 		--disable-alsa \
 		--disable-esd \
 		--disable-pulse
+
+FAKE_FLAGS+=	desktopdir=${PREFIX}/share/gnome-settings-daemon/autostart
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gnome-settings-daemon/gnome-settings-module.c
