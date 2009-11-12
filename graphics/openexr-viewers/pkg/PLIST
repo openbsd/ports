@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 12:33:26 jasper Exp $
+@bin bin/exrdisplay
+include/OpenEXR/
+include/OpenEXR/OpenEXR_ViewersConfig.h
+share/doc/OpenEXR_Viewers-1.0.1/
+share/doc/OpenEXR_Viewers-1.0.1/OpenEXRViewers.odt
+share/doc/OpenEXR_Viewers-1.0.1/OpenEXRViewers.pdf
