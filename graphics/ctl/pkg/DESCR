@@ -1,0 +1,11 @@
+The Color Transformation Language, or "CTL," is a portable and
+platform-independent scripting language and interpreter, is intended to
+be used as a building block for color management systems as well as for
+sharing transforms in a common format.
+
+CTL addresses an industry need to precisely and unambiguously describe
+and share color transforms that are routinely used in motion picture
+mastering. For example, transformations between various color spaces and
+film density encodings can be defined in a CTL program that can be
+delivered along with image data, thus ensuring the image is properly
+rendered for display or other processing steps.

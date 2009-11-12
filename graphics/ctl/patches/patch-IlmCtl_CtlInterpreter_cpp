@@ -1,0 +1,11 @@
+$OpenBSD: patch-IlmCtl_CtlInterpreter_cpp,v 1.1.1.1 2009/11/12 12:31:44 jasper Exp $
+--- IlmCtl/CtlInterpreter.cpp.orig	Sun Oct 18 16:20:30 2009
++++ IlmCtl/CtlInterpreter.cpp	Sun Oct 18 16:20:55 2009
+@@ -64,6 +64,7 @@
+ #include <fstream>
+ #include <algorithm>
+ #include <cassert>
++#include <unistd.h>
+ 
+ #ifdef WIN32
+     #include <io.h>
