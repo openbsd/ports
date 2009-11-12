@@ -1,0 +1,6 @@
+Change the content type of your posts while editing them.
+This module is extremely simple and *only* changes the node
+type in the database column. That is all. It does not convert
+any CCK fields or change other things about the node.
+
+Only use it when you know *exactly* what you're doing!

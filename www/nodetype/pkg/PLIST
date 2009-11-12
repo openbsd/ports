@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 09:39:55 stephan Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}nodetype/
+${DRUPAL_MODS}nodetype/LICENSE.txt
+${DRUPAL_MODS}nodetype/nodetype.info
+${DRUPAL_MODS}nodetype/nodetype.module
