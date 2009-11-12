@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 21:22:22 landry Exp $
+${P5SITE}/Crypt/
+${P5SITE}/Crypt/CipherSaber.pm
+@man man/man3p/Crypt::CipherSaber.3p

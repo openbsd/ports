@@ -1,0 +1,5 @@
+The Crypt::CipherSaber module implements CipherSaber encryption,
+described at http://ciphersaber.gurus.com/. It is simple, fairly
+speedy, and relatively secure algorithm based on RC4.
+Encryption and decryption are done based on a secret key, which must
+be shared with all intended recipients of a message.
