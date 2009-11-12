@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.436 2009/11/10 20:28:32 landry Exp $
+# $OpenBSD: Makefile,v 1.437 2009/11/12 14:14:52 jcs Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -112,6 +112,7 @@
      SUBDIR += myreview
      SUBDIR += nag
      SUBDIR += nginx
+     SUBDIR += nginx,passenger
      SUBDIR += nostromo
      SUBDIR += ntlmaps
      SUBDIR += opera
