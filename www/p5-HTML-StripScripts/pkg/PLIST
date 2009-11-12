@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 20:12:18 landry Exp $
+${P5SITE}/HTML/
+${P5SITE}/HTML/StripScripts.pm
+@man man/man3p/HTML::StripScripts.3p

@@ -1,0 +1,6 @@
+This module strips scripting constructs out of HTML, leaving as much
+non-scripting markup in place as possible. This allows web applications
+to display HTML originating from an untrusted source without
+introducing XSS (cross site scripting) vulnerabilities.
+You will probably use HTML::StripScripts::Parser rather than using this
+module directly.
