@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2009/10/09 13:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2009/11/12 22:18:05 jasper Exp $
 
 COMMENT=	extensible window manager
 
-VERSION=	1.5.2
+VERSION=	1.5.3
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
 
