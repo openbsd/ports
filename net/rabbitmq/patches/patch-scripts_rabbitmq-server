@@ -1,0 +1,21 @@
+$OpenBSD: patch-scripts_rabbitmq-server,v 1.1.1.1 2009/11/12 13:10:33 msf Exp $
+--- scripts/rabbitmq-server.orig	Wed Jun 17 02:09:00 2009
++++ scripts/rabbitmq-server	Wed Aug 26 11:12:37 2009
+@@ -38,7 +38,7 @@ SERVER_ERL_ARGS="+K true +A30 \
+ -kernel inet_default_connect_options [{nodelay,true}]"
+ CLUSTER_CONFIG_FILE=/etc/rabbitmq/rabbitmq_cluster.config
+ LOG_BASE=/var/log/rabbitmq
+-MNESIA_BASE=/var/lib/rabbitmq/mnesia
++MNESIA_BASE=/var/rabbitmq/mnesia
+ SERVER_START_ARGS=
+ 
+ [ -f /etc/rabbitmq/rabbitmq.conf ] && . /etc/rabbitmq/rabbitmq.conf
+@@ -81,7 +81,7 @@ RABBITMQ_START_RABBIT=
+ set -f
+ 
+ exec erl \
+-    -pa "`dirname $0`/../ebin" \
++    -pa "${LOCALBASE}/lib/rabbitmq/ebin" \
+     ${RABBITMQ_START_RABBIT} \
+     -sname ${RABBITMQ_NODENAME} \
+     -boot start_sasl \

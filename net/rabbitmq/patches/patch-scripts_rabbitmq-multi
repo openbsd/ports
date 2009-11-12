@@ -1,0 +1,21 @@
+$OpenBSD: patch-scripts_rabbitmq-multi,v 1.1.1.1 2009/11/12 13:10:33 msf Exp $
+--- scripts/rabbitmq-multi.orig	Wed Aug 26 11:56:32 2009
++++ scripts/rabbitmq-multi	Wed Aug 26 11:58:37 2009
+@@ -33,7 +33,7 @@ NODENAME=rabbit
+ NODE_IP_ADDRESS=0.0.0.0
+ NODE_PORT=5672
+ SCRIPT_HOME=$(dirname $0)
+-PIDS_FILE=/var/lib/rabbitmq/pids
++PIDS_FILE=/var/run/rabbitmq/
+ MULTI_ERL_ARGS=
+ MULTI_START_ARGS=
+ 
+@@ -60,7 +60,7 @@ export \
+ set -f
+ 
+ exec erl \
+-    -pa "`dirname $0`/../ebin" \
++    -pa "${LOCALBASE}/lib/rabbitmq/ebin" \
+     -noinput \
+     -hidden \
+     ${RABBITMQ_MULTI_ERL_ARGS} \

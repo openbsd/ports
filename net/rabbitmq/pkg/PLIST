@@ -1,0 +1,75 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 13:10:33 msf Exp $
+@newgroup _rabbitmq:646
+@newuser _rabbitmq:646:_rabbitmq:daemon:RabbitMQ account:/var/rabbitmq:/bin/sh
+lib/rabbitmq/
+lib/rabbitmq/ebin/
+lib/rabbitmq/ebin/gen_server2.beam
+lib/rabbitmq/ebin/priority_queue.beam
+lib/rabbitmq/ebin/rabbit.app
+lib/rabbitmq/ebin/rabbit.beam
+lib/rabbitmq/ebin/rabbit.rel
+lib/rabbitmq/ebin/rabbit_access_control.beam
+lib/rabbitmq/ebin/rabbit_alarm.beam
+lib/rabbitmq/ebin/rabbit_amqqueue.beam
+lib/rabbitmq/ebin/rabbit_amqqueue_process.beam
+lib/rabbitmq/ebin/rabbit_amqqueue_sup.beam
+lib/rabbitmq/ebin/rabbit_app.in
+lib/rabbitmq/ebin/rabbit_basic.beam
+lib/rabbitmq/ebin/rabbit_binary_generator.beam
+lib/rabbitmq/ebin/rabbit_binary_parser.beam
+lib/rabbitmq/ebin/rabbit_channel.beam
+lib/rabbitmq/ebin/rabbit_control.beam
+lib/rabbitmq/ebin/rabbit_error_logger.beam
+lib/rabbitmq/ebin/rabbit_error_logger_file_h.beam
+lib/rabbitmq/ebin/rabbit_exchange.beam
+lib/rabbitmq/ebin/rabbit_framing.beam
+lib/rabbitmq/ebin/rabbit_framing_channel.beam
+lib/rabbitmq/ebin/rabbit_guid.beam
+lib/rabbitmq/ebin/rabbit_heartbeat.beam
+lib/rabbitmq/ebin/rabbit_limiter.beam
+lib/rabbitmq/ebin/rabbit_load.beam
+lib/rabbitmq/ebin/rabbit_log.beam
+lib/rabbitmq/ebin/rabbit_memsup_linux.beam
+lib/rabbitmq/ebin/rabbit_misc.beam
+lib/rabbitmq/ebin/rabbit_mnesia.beam
+lib/rabbitmq/ebin/rabbit_multi.beam
+lib/rabbitmq/ebin/rabbit_networking.beam
+lib/rabbitmq/ebin/rabbit_node_monitor.beam
+lib/rabbitmq/ebin/rabbit_persister.beam
+lib/rabbitmq/ebin/rabbit_reader.beam
+lib/rabbitmq/ebin/rabbit_router.beam
+lib/rabbitmq/ebin/rabbit_sasl_report_file_h.beam
+lib/rabbitmq/ebin/rabbit_sup.beam
+lib/rabbitmq/ebin/rabbit_tests.beam
+lib/rabbitmq/ebin/rabbit_tracer.beam
+lib/rabbitmq/ebin/rabbit_writer.beam
+lib/rabbitmq/ebin/tcp_acceptor.beam
+lib/rabbitmq/ebin/tcp_acceptor_sup.beam
+lib/rabbitmq/ebin/tcp_client_sup.beam
+lib/rabbitmq/ebin/tcp_listener.beam
+lib/rabbitmq/ebin/tcp_listener_sup.beam
+lib/rabbitmq/include/
+lib/rabbitmq/include/rabbit.hrl
+lib/rabbitmq/include/rabbit_framing.hrl
+lib/rabbitmq/include/rabbit_framing_spec.hrl
+@man man/man1/rabbitmq-multi.1
+@man man/man1/rabbitmq-server.1
+@man man/man1/rabbitmqctl.1
+@man man/man5/rabbitmq.conf.5
+sbin/rabbitmq-multi
+sbin/rabbitmq-server
+sbin/rabbitmqctl
+share/doc/rabbitmq/
+share/doc/rabbitmq/INSTALL
+share/doc/rabbitmq/LICENSE
+share/doc/rabbitmq/LICENSE-MPL-RabbitMQ
+share/examples/rabbitmq/
+@sample ${SYSCONFDIR}/rabbitmq/
+share/examples/rabbitmq/rabbitmq.conf
+@sample ${SYSCONFDIR}/rabbitmq/rabbitmq.conf
+@mode 700
+@owner _rabbitmq
+@group _rabbitmq
+@sample /var/log/rabbitmq/
+@sample /var/rabbitmq/
+@sample /var/rabbitmq/mnesia/

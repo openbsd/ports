@@ -1,0 +1,14 @@
+To start RabbitMQ at boot and shut it down when the system goes down,
+add the following lines to /etc/rc.local and /etc/rc.shutdown, respectively:
+
+/etc/rc.local:
+
+if [ -x ${TRUEPREFIX}/sbin/rabbitmq-server ]; then
+	echo -n ' rabbitmq'
+	install -d -o _rabbitmq /var/run/rabbitmq
+	su -l _rabbitmq -c "${TRUEPREFIX}/sbin/rabbitmq-server -detached"
+fi
+
+/etc/rc.shutdown:
+
+	su -l _rabbitmq -c "${TRUEPREFIX}/sbin/rabbitmqctl stop"

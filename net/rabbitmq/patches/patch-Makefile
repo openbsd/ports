@@ -1,0 +1,47 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/11/12 13:10:33 msf Exp $
+
+- OpenBSD has Erlang > R12B-3. So we can just set USE_SPECS=true instead
+  of dealing with this shell stuff which is causing problems.
+
+- Don't install .gz manpages.
+
+--- Makefile.orig	Wed Jun 17 02:09:00 2009
++++ Makefile	Mon Sep 21 22:33:36 2009
+@@ -11,15 +11,18 @@ BEAM_TARGETS=$(EBIN_DIR)/rabbit_framing.beam $(patsubs
+ TARGETS=$(EBIN_DIR)/rabbit.app $(BEAM_TARGETS)
+ WEB_URL=http://stage.rabbitmq.com/
+ MANPAGES=$(patsubst %.pod, %.gz, $(wildcard docs/*.[0-9].pod))
++TARGET_DIR=$(PREFIX)/lib/rabbitmq
++SBIN_DIR=$(PREFIX)/sbin
++MAN_DIR=$(PREFIX)/man
+ 
+-PYTHON=python
++PYTHON?=python
+ 
+ ifndef USE_SPECS
+ # our type specs rely on features / bug fixes in dialyzer that are
+ # only available in R12B-3 upwards
+ #
+ # NB: the test assumes that version number will only contain single digits
+-USE_SPECS=$(shell if [ $$(erl -noshell -eval 'io:format(erlang:system_info(version)), halt().') \> "5.6.2" ]; then echo "true"; else echo "false"; fi)
++USE_SPECS=true
+ endif
+ 
+ #other args: +native +"{hipe,[o3,verbose]}" -Ddebug=true +debug_info +no_strict_record_tests
+@@ -154,7 +157,7 @@ distclean: clean
+ 		-c "RabbitMQ AMQP Server" \
+ 		-d "" \
+ 		-r "" \
+-		$< | gzip --best > $@
++		$< > `dirname $@`/`basename $@ .gz`
+ 
+ docs_all: $(MANPAGES)
+ 
+@@ -174,6 +177,6 @@ install: all docs_all
+ 	for section in 1 5; do \
+ 		mkdir -p $(MAN_DIR)/man$$section; \
+ 		for manpage in docs/*.$$section.pod; do \
+-			cp docs/`basename $$manpage .pod`.gz $(MAN_DIR)/man$$section; \
++			cp docs/`basename $$manpage .pod` $(MAN_DIR)/man$$section; \
+ 		done; \
+ 	done

@@ -1,0 +1,36 @@
+$OpenBSD: patch-scripts_rabbitmqctl,v 1.1.1.1 2009/11/12 13:10:33 msf Exp $
+--- scripts/rabbitmqctl.orig	Wed Jun 17 02:09:00 2009
++++ scripts/rabbitmqctl	Wed Nov 11 16:03:48 2009
+@@ -30,15 +30,21 @@
+ ##   Contributor(s): ______________________________________.
+ ##
+ 
+-[ -f /etc/rabbitmq/rabbitmq.conf ] && . /etc/rabbitmq/rabbitmq.conf
+ 
+-[ "x" = "x$RABBITMQ_CTL_ERL_ARGS" ] && RABBITMQ_CTL_ERL_ARGS=${CTL_ERL_ARGS}
+-
+-exec erl \
+-    -pa "`dirname $0`/../ebin" \
+-    -noinput \
+-    -hidden \
+-    ${RABBITMQ_CTL_ERL_ARGS} \
+-    -sname rabbitmqctl$$ \
+-    -s rabbit_control \
+-    -extra "$@"
++if [ `id -u` = 0 ]; then
++  [ -f /etc/rabbitmq/rabbitmq.conf ] && . /etc/rabbitmq/rabbitmq.conf
++  
++  [ "x" = "x$RABBITMQ_CTL_ERL_ARGS" ] && RABBITMQ_CTL_ERL_ARGS=${CTL_ERL_ARGS}
++  
++  su _rabbitmq -c "erl \\
++      -pa ${LOCALBASE}/lib/rabbitmq/ebin \\
++      -noinput \\
++      -hidden \\
++      ${RABBITMQ_CTL_ERL_ARGS} \\
++      -sname rabbitmqctl$$ \\
++      -s rabbit_control \\
++      -extra $@"
++else
++      echo -e "\nOnly root should run `basename $0`\n"
++      exit 1
++fi
