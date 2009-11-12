@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/11/12 12:32:23 jasper Exp $
+@lib lib/libIlmImfCtl.so.${LIBIlmImfCtl_VERSION}

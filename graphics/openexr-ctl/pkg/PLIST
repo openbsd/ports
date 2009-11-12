@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 12:32:23 jasper Exp $
+%%SHARED%%
+@bin bin/exr_ctl_exr
+@bin bin/exrdpx
+include/OpenEXR/
+include/OpenEXR/ImfCtlApplyTransforms.h
+lib/CTL/
+lib/CTL/change_saturation.ctl
+lib/CTL/transform_DPX_EXR.ctl
+lib/CTL/transform_EXR_DPX.ctl
+lib/CTL/transform_RRT.ctl
+lib/CTL/transform_display_video.ctl
+lib/CTL/utilities.ctl
+lib/libIlmImfCtl.a
+lib/libIlmImfCtl.la
+lib/pkgconfig/
+lib/pkgconfig/OpenEXR_CTL.pc
