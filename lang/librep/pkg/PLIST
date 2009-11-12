@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/10/09 13:04:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/11/12 22:17:53 jasper Exp $
 %%SHARED%%
 @bin bin/rep
-bin/rep-config
 @bin bin/rep-remote
 bin/rep-xgettext
 @bin bin/repdoc
