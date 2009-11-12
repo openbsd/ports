@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.4 2009/10/20 22:34:26 ajacoutot Exp $
---- installer/linux/server.cfg.orig	Fri Oct  9 17:26:46 2009
-+++ installer/linux/server.cfg	Tue Oct 20 23:41:36 2009
+$OpenBSD: patch-installer_linux_server_cfg,v 1.5 2009/11/12 16:44:59 ajacoutot Exp $
+--- installer/linux/server.cfg.orig	Fri Oct 16 15:56:00 2009
++++ installer/linux/server.cfg	Thu Nov 12 17:41:17 2009
 @@ -36,16 +36,16 @@ local_admin_users	= root
  system_email_address	= postmaster@localhost
  
@@ -31,8 +31,12 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.4 2009/10/20 22:34:26 ajacoutot E
  
  ##############################################################
  # LOG SETTINGS
-@@ -92,7 +92,7 @@ mysql_database		= zarafa
- attachment_storage	= database
+@@ -89,10 +89,10 @@ mysql_password		= root
+ mysql_database		= zarafa
+ 
+ # Where to place attachments. Value can be 'database' or 'files'
+-attachment_storage	= database
++attachment_storage	= files
  
  # When attachment_storage is 'files', use this path to store the files
 -attachment_path		= /var/lib/zarafa
