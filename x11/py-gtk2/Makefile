@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2009/10/11 14:15:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2009/11/12 13:31:57 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,8 +6,7 @@ COMMENT=	GTK+2 Python bindings
 
 GNOME_PROJECT=	pygtk
 GNOME_VERSION=	2.16.0
-
-PKGNAME=	py-gtk2-${VERSION}
+PKGNAME=	py-gtk2-${VERSION}p0
 
 CATEGORIES=	x11
 
@@ -34,7 +33,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	glade-2.0::devel/libglade2
 RUN_DEPENDS=	:py-cairo->=1.2:graphics/py-cairo \
 		:py-gobject-*:devel/py-gobject \
-		:py-Numeric-*:math/py-Numeric \
 		::math/py-numpy
 
 USE_GMAKE=	No
