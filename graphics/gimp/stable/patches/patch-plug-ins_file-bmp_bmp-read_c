@@ -1,0 +1,36 @@
+$OpenBSD: patch-plug-ins_file-bmp_bmp-read_c,v 1.1 2009/11/12 16:35:56 jasper Exp $
+
+Security fix to prevent integer overflows.
+Secunia Research, advisory SA37232 and CVE CVE-2009-1570.
+
+--- plug-ins/file-bmp/bmp-read.c.orig	Thu Nov 12 16:19:13 2009
++++ plug-ins/file-bmp/bmp-read.c	Thu Nov 12 16:20:37 2009
+@@ -424,7 +424,8 @@ ReadBMP (const gchar  *name,
+       return -1;
+     }
+ 
+-  if (Bitmap_Head.biWidth < 0)
++ if (Bitmap_Head.biWidth < 0 ||
++   ABS (Bitmap_Head.biHeight) < 0)
+     {
+       g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED,
+                    _("'%s' is not a valid BMP file"),
+@@ -447,6 +448,18 @@ ReadBMP (const gchar  *name,
+                    gimp_filename_to_utf8 (filename));
+       return -1;
+     }
++
++ /* protect against integer overflows caused by malicious BMPs */
++
++ if (((guint64) Bitmap_Head.biWidth) * Bitmap_Head.biBitCnt > G_MAXINT32 ||
++     ((guint64) Bitmap_Head.biWidth) * ABS (Bitmap_Head.biHeight) > G_MAXINT32 ||
++      ((guint64) Bitmap_Head.biWidth) * ABS (Bitmap_Head.biHeight) * 4 > G_MAXINT32)
++   {
++      g_set_error (error, G_FILE_ERROR, G_FILE_ERROR_FAILED,
++     		 _("'%s' is not a valid BMP file"),
++		 gimp_filename_to_utf8 (filename));
++     return -1;
++   }
+ 
+   /* Windows and OS/2 declare filler so that rows are a multiple of
+    * word length (32 bits == 4 bytes)
