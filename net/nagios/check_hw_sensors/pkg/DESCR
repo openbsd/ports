@@ -1,0 +1,4 @@
+Works like sensorsd(8) but reports to Nagios.
+
+Allows you to monitor the hardware sensors that OpenBSD supports.
+Things like fan speed, temperature and many more.

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 21:49:26 merdely Exp $
+libexec/nagios/check_hw_sensors
