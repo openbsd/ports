@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2009/10/20 22:34:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2009/11/12 13:20:44 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -272,6 +272,7 @@ share/locale/it/LC_MESSAGES/zarafa.mo
 share/locale/nl/LC_MESSAGES/zarafa.mo
 share/locale/pt/LC_MESSAGES/zarafa.mo
 share/locale/sv/LC_MESSAGES/zarafa.mo
+@mode 0750
 @owner _zarafa
 @group _zarafa
 @sample /var/db/zarafa/
