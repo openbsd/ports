@@ -1,0 +1,3 @@
+MIME::EncWords is aimed to be another implimentation of MIME::Words so
+that it will achive more exact conformance with RFC 2047 (former RFC
+1522) specifications. Additionally, it contains some improvements.
