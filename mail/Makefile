@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2009/11/07 12:54:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.239 2009/11/12 20:30:33 landry Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -148,7 +148,10 @@
      SUBDIR += p5-GetLive
      SUBDIR += p5-Log-Procmail
      SUBDIR += p5-MIME-Base32
+     SUBDIR += p5-MIME-Charset
+     SUBDIR += p5-MIME-EncWords
      SUBDIR += p5-MIME-Lite
+     SUBDIR += p5-MIME-Lite-HTML
      SUBDIR += p5-MIME-Types
      SUBDIR += p5-MIME-tools
      SUBDIR += p5-Mail-Alias
