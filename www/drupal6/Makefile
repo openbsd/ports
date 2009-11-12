@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/11/09 10:37:19 stephan Exp $
+# $OpenBSD: Makefile,v 1.21 2009/11/12 09:44:16 stephan Exp $
 
 SUBDIR += FCKeditor
 SUBDIR += admin-menu
@@ -31,6 +31,7 @@ SUBDIR += locale-ja
 SUBDIR += masquerade
 SUBDIR += meta-tags
 SUBDIR += nodeaccess_userreference
+SUBDIR += nodetype
 SUBDIR += panels
 SUBDIR += pathauto
 SUBDIR += phpmailer
