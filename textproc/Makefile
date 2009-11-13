@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2009/11/04 13:23:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.285 2009/11/13 12:17:55 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -229,6 +229,7 @@
      SUBDIR += py-feedparser
      SUBDIR += py-jaxml
      SUBDIR += py-lxml
+     SUBDIR += py-nltk
      SUBDIR += py-pygments
      SUBDIR += py-rtf
      SUBDIR += py-sphinx
