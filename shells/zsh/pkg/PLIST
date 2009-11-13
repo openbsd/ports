@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2009/06/03 14:35:48 pea Exp $
+@comment $OpenBSD: PLIST,v 1.28 2009/11/13 12:26:40 pea Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
@@ -530,6 +530,8 @@ share/zsh/${V}/functions/_tilde_files
 share/zsh/${V}/functions/_time_zone
 share/zsh/${V}/functions/_tin
 share/zsh/${V}/functions/_tla
+share/zsh/${V}/functions/_tmux
+@comment share/zsh/${V}/functions/_tmux.orig
 share/zsh/${V}/functions/_todo.sh
 share/zsh/${V}/functions/_toilet
 share/zsh/${V}/functions/_toolchain-source
