@@ -1,0 +1,25 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2009/11/13 12:17:08 jasper Exp $
+
+- don't install bundled yaml and random java files.
+
+--- setup.py.orig	Mon Nov  9 11:12:18 2009
++++ setup.py	Thu Nov 12 23:42:28 2009
+@@ -32,7 +32,7 @@ setup(
+     
+     #############################################
+     ## Package Data
+-    package_data = {'nltk': ['nltk.jar', 'test/*.doctest']},
++    package_data = {'nltk': [ 'test/*.doctest']},
+     
+     #############################################
+     ## Package List
+@@ -57,8 +57,7 @@ setup(
+                 'nltk.tag',
+                 'nltk.tokenize',
+                 'nltk.toolbox',
+-                'nltk.etree',
+-                'yaml'
++                'nltk.etree'
+                 ],
+     )
+ 

@@ -1,0 +1,14 @@
+NLTK, the Natural Language Toolkit, is a suite of open source Python
+modules, data sets and tutorials supporting research and development in
+Natural Language Processing.
+
+A substantial amount of documentation about how to use NLTK, including a
+textbook and API documention, is available from the NLTK website:
+http://www.nltk.org/
+
+By default not all the packages that can be used with NLTK have been
+installed. It is recommended to manually install these. This can be
+accomplished by issueing the following commands from the Python interpreter:
+
+>>> import nltk
+>>> nltk.download()
