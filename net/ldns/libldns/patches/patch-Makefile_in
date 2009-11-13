@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2009/07/15 22:13:45 jakob Exp $
---- Makefile.in.orig	Fri Jul  3 08:43:18 2009
-+++ Makefile.in	Mon Jul 13 03:12:45 2009
+$OpenBSD: patch-Makefile_in,v 1.5 2009/11/13 03:46:47 jakob Exp $
+--- Makefile.in.orig	Tue Aug 18 17:04:43 2009
++++ Makefile.in	Thu Nov 12 15:25:11 2009
 @@ -13,7 +13,7 @@ datarootdir	= @datarootdir@
  datadir		= @datadir@
  libdir		= @libdir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2009/07/15 22:13:45 jakob Exp $
  glibtool	= @libtool@
  libtool		= ./libtool
  ifdef glibtool
-@@ -166,7 +166,6 @@ uninstall-h:
+@@ -168,7 +168,6 @@ uninstall-h:
  install-lib:	lib
  		$(INSTALL) -m 755 -d $(DESTDIR)$(libdir)
  		$(LIBTOOL) --mode=install cp libldns.la $(DESTDIR)$(libdir)
