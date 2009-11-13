@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.130 2009/11/11 07:47:36 msf Exp $
+$OpenBSD: user.list,v 1.131 2009/11/13 10:59:05 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -152,4 +152,6 @@ id  user		group		port options
 641 _ziproxy		_ziproxy	net/ziproxy
 642 _pure-ftpd		_pure-ftpd	net/pure-ftpd
 643 _mon		_mon		net/mon
+644 _munin		_munin		net/munin
+645 _munin-plugin	_munin-plugin	net/munin
 646 _rabbitmq		_rabbitmq	net/rabbitmq
