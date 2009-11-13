@@ -1,13 +1,22 @@
-$OpenBSD: patch-check_sip,v 1.1.1.1 2009/11/05 10:56:21 sthen Exp $
---- check_sip.orig	Thu Nov 29 15:20:00 2007
-+++ check_sip	Thu Nov 29 15:21:08 2007
+$OpenBSD: patch-check_sip,v 1.2 2009/11/13 15:30:51 sthen Exp $
+--- check_sip.orig	Fri Nov 13 15:21:23 2009
++++ check_sip	Fri Nov 13 15:22:11 2009
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
 +#!/usr/bin/perl
  
  ##
  # check_sip - (c) 2005-2006 O'Shaughnessy Evans <shaug+nagios at aloha.net>
-@@ -146,7 +146,10 @@ if ($Proxy) {
+@@ -33,7 +33,7 @@ BEGIN {
+   $ME = 'check_sip';
+ 
+   # command to get connection state; 1st %s is for extra args, second is SIP URI
+-  @Sipsak_Cmd = qw(sipsak --nagios-code -v);
++  @Sipsak_Cmd = qw(${LOCALBASE}/bin/sipsak --nagios-code -v);
+   $User = '';
+   $Password = '';
+   $Port = 5060;
+@@ -151,7 +151,10 @@ if ($Proxy) {
      push @Sipsak_Cmd, '--outbound-proxy', $Proxy;
  }
  
