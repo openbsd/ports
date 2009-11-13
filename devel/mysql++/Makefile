@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/03/31 11:37:20 wilfried Exp $
+# $OpenBSD: Makefile,v 1.27 2009/11/13 20:41:43 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT-docs =		C++ API for MySQL documentation
 
 VERSION =		3.0.9
 DISTNAME =		mysql++-${VERSION}
-PKGNAME-main =		${DISTNAME}
+PKGNAME-main =		${DISTNAME}p0
 PKGNAME-docs =		mysql++-docs-${VERSION}
 SHARED_LIBS += mysqlpp	4.0	# 3
 CATEGORIES =		devel
@@ -35,10 +35,15 @@ USE_GMAKE =		Yes
 AUTOCONF_VERSION =	2.59
 CONFIGURE_STYLE =	autoconf
 
+# compile against real libmysqlpp version
+MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS}" \
+		DLLIMP_SUFFIX=so.${LIBmysqlpp_VERSION} \
+		__mysqlpp___targetsuf2=.so.${LIBmysqlpp_VERSION} \
+		__mysqlpp___targetsuf3=.so.${LIBmysqlpp_VERSION} \
+		__mysqlpp___so_symlinks_cmd='' \
+		__mysqlpp___so_symlinks_inst_cmd=''
+
 post-install:
-	@mv ${PREFIX}/lib/libmysqlpp.so.${VERSION} ${PREFIX}/lib/libmysqlpp.so.${LIBmysqlpp_VERSION}
-	@rm -f ${PREFIX}/lib/libmysqlpp.so.3
-	@rm -f ${PREFIX}/lib/libmysqlpp.so
 .for dir in refman userman
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql++/${dir}/
 	${INSTALL_DATA} ${WRKSRC}/doc/html/${dir}/* ${PREFIX}/share/doc/mysql++/${dir}/
