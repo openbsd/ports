@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.2 2009/10/16 09:36:56 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.3 2009/11/13 14:52:33 ajacoutot Exp $
 --- src/ck-sysdeps-openbsd.c.orig	Sun May 31 04:10:36 2009
 +++ src/ck-sysdeps-openbsd.c	Sun May 31 19:24:53 2009
 @@ -0,0 +1,412 @@
@@ -197,7 +197,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.2 2009/10/16 09:36:56 ajacoutot Exp
 +
 +        if (p.p_tdev == NODEV) {
 +		/* XXXJDM nasty hack */
-+                memcpy (P->tty_text, "/dev/ttyE4", sizeof P->tty_text);
++                memcpy (P->tty_text, "/dev/ttyC4", sizeof P->tty_text);
 +        }
 +
 +        if (P->pid != pid) {
@@ -353,7 +353,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.2 2009/10/16 09:36:56 ajacoutot Exp
 +        /* The device number is always one less than the VT number. */
 +        num--;
 +
-+        device = g_strdup_printf ("/dev/ttyE%u", num);
++        device = g_strdup_printf ("/dev/ttyC%u", num);
 +
 +        return device;
 +}
@@ -372,7 +372,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.2 2009/10/16 09:36:56 ajacoutot Exp
 +                return FALSE;
 +        }
 +
-+        if (sscanf (device, "/dev/ttyE%u", &n) == 1) {
++        if (sscanf (device, "/dev/ttyC%u", &n) == 1) {
 +                /* The VT number is always one more than the device number. */
 +                n++;
 +                ret = TRUE;
@@ -404,7 +404,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.2 2009/10/16 09:36:56 ajacoutot Exp
 +                goto out;
 +        }
 +
-+        g_debug ("Active VT is: %d (ttyE%d)", active, active - 1);
++        g_debug ("Active VT is: %d (ttyC%d)", active, active - 1);
 +        ret = TRUE;
 +
 + out:

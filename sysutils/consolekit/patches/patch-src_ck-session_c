@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_ck-session_c,v 1.2 2009/10/16 09:36:56 ajacoutot Exp $
+$OpenBSD: patch-src_ck-session_c,v 1.3 2009/11/13 14:52:33 ajacoutot Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=18330
 
---- src/ck-session.c.orig	Sun May 31 19:37:12 2009
-+++ src/ck-session.c	Sun May 31 19:37:38 2009
+--- src/ck-session.c.orig	Thu Jul 31 02:36:10 2008
++++ src/ck-session.c	Fri Nov 13 12:40:48 2009
 @@ -1100,6 +1100,8 @@ ck_session_finalize (GObject *object)
  
          session_remove_activity_watch (session);

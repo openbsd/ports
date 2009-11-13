@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_openbsd_ck-system-stop,v 1.1 2009/11/13 14:52:33 ajacoutot Exp $
+--- tools/openbsd/ck-system-stop.orig	Fri Nov 13 12:14:17 2009
++++ tools/openbsd/ck-system-stop	Fri Nov 13 12:14:44 2009
+@@ -8,7 +8,7 @@ unsupported() {
+ 
+ #Try for common tools
+ if [ -x "/sbin/shutdown" ] ; then
+-	/sbin/shutdown -p now
++	/sbin/shutdown -hp now
+ 	exit $?
+ elif [ -x "/usr/sbin/shutdown" ] ; then
+ 	/usr/sbin/shutdown -p now

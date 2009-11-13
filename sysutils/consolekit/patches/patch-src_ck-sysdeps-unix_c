@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
+$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.2 2009/11/13 14:52:33 ajacoutot Exp $
 --- src/ck-sysdeps-unix.c.orig	Sun May 31 19:27:59 2009
 +++ src/ck-sysdeps-unix.c	Sun May 31 19:40:26 2009
 @@ -35,6 +35,11 @@
@@ -38,7 +38,7 @@ $OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.1.1.1 2009/06/07 02:55:19 robert Exp $
 +#endif
 +
 +#if defined(__OpenBSD__)
-+	fd = open_a_console ("/dev/ttyC0");
++	fd = open_a_console ("/dev/ttyC4");
 +	if (fd >= 0) {
 +		goto done;
 +	}

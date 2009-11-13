@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_ConsoleKit_conf,v 1.1 2009/11/13 14:52:33 ajacoutot Exp $
+--- data/ConsoleKit.conf.orig	Fri Nov 13 15:16:35 2009
++++ data/ConsoleKit.conf	Fri Nov 13 15:17:05 2009
+@@ -90,6 +90,8 @@
+     <allow send_interface="org.freedesktop.ConsoleKit.Session"
+            send_member="GetIdleHint"/>
+     <allow send_interface="org.freedesktop.ConsoleKit.Session"
++           send_member="SetIdleHint"/>
++    <allow send_interface="org.freedesktop.ConsoleKit.Session"
+            send_member="GetIdleSinceHint"/>
+   </policy>
+ 

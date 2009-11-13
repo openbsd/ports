@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.2 2009/10/16 09:36:56 ajacoutot Exp $
---- configure.ac.orig	Sat May 30 23:09:15 2009
-+++ configure.ac	Sat May 30 23:10:16 2009
+$OpenBSD: patch-configure_ac,v 1.3 2009/11/13 14:52:33 ajacoutot Exp $
+--- configure.ac.orig	Thu Jul 31 02:35:53 2008
++++ configure.ac	Fri Nov 13 12:40:53 2009
 @@ -176,6 +176,14 @@ dnl --------------------------------------------------
  CK_BACKEND=""
  KVM_LIBS=""
@@ -32,7 +32,3 @@ $OpenBSD: patch-configure_ac,v 1.2 2009/10/16 09:36:56 ajacoutot Exp $
  tools/solaris/Makefile
  data/Makefile
  doc/Makefile
-@@ -441,4 +451,4 @@ if test x${have_polkit} = xno -a x${msg_rbac_shutdown}
-    echo "         a huge SECURITY HOLE. I repeat: YOU NEED TO EDIT THE FILE"
-    echo "         ConsoleKit.conf to match your distro/site to avoid NASTY SECURITY HOLES."
-    echo ""

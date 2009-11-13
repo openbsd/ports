@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/07 07:49:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/11/13 14:52:33 ajacoutot Exp $
 %%SHARED%%
 @bin bin/ck-history
 @bin bin/ck-launch-session
@@ -8,20 +8,20 @@ include/ConsoleKit/ck-connector/
 include/ConsoleKit/ck-connector/ck-connector.h
 lib/ConsoleKit/
 lib/ConsoleKit/run-session.d/
+lib/ConsoleKit/scripts/
+lib/ConsoleKit/scripts/ck-system-restart
+lib/ConsoleKit/scripts/ck-system-stop
 lib/libck-connector.a
 lib/libck-connector.la
 lib/pkgconfig/
 lib/pkgconfig/ck-connector.pc
 @bin libexec/ck-collect-session-info
-@bin libexec/ck-get-x11-display-device
-@bin libexec/ck-get-x11-server-pid
+libexec/ck-get-x11-display-device
+libexec/ck-get-x11-server-pid
 @bin sbin/ck-log-system-restart
 @bin sbin/ck-log-system-start
 @bin sbin/ck-log-system-stop
 @bin sbin/console-kit-daemon
-share/PolicyKit/
-share/PolicyKit/policy/
-share/PolicyKit/policy/org.freedesktop.consolekit.policy
 share/dbus-1/
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Manager.xml

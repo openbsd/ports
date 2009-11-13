@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_ck-manager_c,v 1.1 2009/11/13 14:52:33 ajacoutot Exp $
+
+Allow shutdown on systems not using policykit.
+https://bugzilla.gnome.org/show_bug.cgi?id=549150
+
+--- src/ck-manager.c.orig	Wed Jul 30 23:53:07 2008
++++ src/ck-manager.c	Fri Nov 13 12:41:12 2009
+@@ -1349,7 +1349,6 @@ ck_manager_restart (CkManager             *manager,
+         }
+ #else
+         g_warning ("Compiled without PolicyKit or RBAC support!");
+-        goto out;
+ #endif
+ 
+         g_debug ("ConsoleKit preforming Restart: %s", action);
+@@ -1409,7 +1408,6 @@ ck_manager_stop (CkManager             *manager,
+         }
+ #else
+         g_warning ("Compiled without PolicyKit or RBAC support!");
+-        goto out;
+ #endif
+ 
+         g_debug ("Stopping system");
