@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/03 16:37:21 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/11/13 01:08:15 jolan Exp $
 tcpdf/
 tcpdf/2dbarcodes.php
 tcpdf/CHANGELOG.TXT
@@ -90,9 +90,9 @@ tcpdf/examples/example_051.php
 tcpdf/examples/example_052.php
 tcpdf/examples/example_053.php
 tcpdf/examples/example_054.php
+tcpdf/examples/example_055.php
 tcpdf/examples/index.php
 tcpdf/fonts/
-tcpdf/fonts/.noencode
 tcpdf/fonts/README.TXT
 tcpdf/fonts/ZarBold.ctg.z
 tcpdf/fonts/ZarBold.z
@@ -101,15 +101,15 @@ tcpdf/fonts/almohanad.php
 tcpdf/fonts/almohanad.z
 tcpdf/fonts/arialunicid0.php
 tcpdf/fonts/courier.php
-tcpdf/fonts/dejavu-fonts-ttf-2.29/
-tcpdf/fonts/dejavu-fonts-ttf-2.29/AUTHORS
-tcpdf/fonts/dejavu-fonts-ttf-2.29/BUGS
-tcpdf/fonts/dejavu-fonts-ttf-2.29/LICENSE
-tcpdf/fonts/dejavu-fonts-ttf-2.29/NEWS
-tcpdf/fonts/dejavu-fonts-ttf-2.29/README
-tcpdf/fonts/dejavu-fonts-ttf-2.29/langcover.txt
-tcpdf/fonts/dejavu-fonts-ttf-2.29/status.txt
-tcpdf/fonts/dejavu-fonts-ttf-2.29/unicover.txt
+tcpdf/fonts/dejavu-fonts-ttf-2.30/
+tcpdf/fonts/dejavu-fonts-ttf-2.30/AUTHORS
+tcpdf/fonts/dejavu-fonts-ttf-2.30/BUGS
+tcpdf/fonts/dejavu-fonts-ttf-2.30/LICENSE
+tcpdf/fonts/dejavu-fonts-ttf-2.30/NEWS
+tcpdf/fonts/dejavu-fonts-ttf-2.30/README
+tcpdf/fonts/dejavu-fonts-ttf-2.30/langcover.txt
+tcpdf/fonts/dejavu-fonts-ttf-2.30/status.txt
+tcpdf/fonts/dejavu-fonts-ttf-2.30/unicover.txt
 tcpdf/fonts/dejavusans.ctg.z
 tcpdf/fonts/dejavusans.php
 tcpdf/fonts/dejavusans.z
