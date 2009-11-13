@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2009/10/13 23:20:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/11/13 15:48:05 ajacoutot Exp $
 @bin bin/gnome-session
 @bin bin/gnome-session-properties
 @bin bin/gnome-session-save
@@ -32,8 +32,6 @@ share/icons/hicolor/16x16/apps/session-properties.png
 share/icons/hicolor/22x22/apps/session-properties.png
 share/icons/hicolor/24x24/apps/session-properties.png
 share/icons/hicolor/32x32/apps/session-properties.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/session-properties.png
 share/icons/hicolor/scalable/apps/session-properties.svg
 share/locale/af/LC_MESSAGES/gnome-session-2.0.mo
@@ -69,8 +67,6 @@ share/locale/eu/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/fa/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-session-2.0.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-session-2.0.mo
@@ -156,7 +152,6 @@ share/locale/zh_CN/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-session-2.0.mo
-share/pixmaps/
 share/pixmaps/splash/
 share/pixmaps/splash/gnome-splash.png
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

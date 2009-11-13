@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.90 2009/11/12 00:22:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2009/11/13 15:48:05 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.28.0
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 CATEGORIES=		x11
 
@@ -49,10 +49,6 @@ CONFIGURE_ENV+=		GCONFTOOL=${LOCALBASE}/bin/gconftool-2
 
 MAKE_FLAGS=		XSLTPROC="${LOCALBASE}/bin/xsltproc -nonet" \
 			sysconfdir=${PREFIX}/share/examples/gnome-session
-
-# gnome-session 2.26.2
-post-extract:
-	cp ${FILESDIR}/gsm-*.{c,h} ${WRKSRC}/gnome-session/
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnome-session

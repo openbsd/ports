@@ -1,0 +1,90 @@
+$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.1 2009/11/13 15:48:05 ajacoutot Exp $
+--- gnome-session/gsm-manager.c.orig	Fri Nov 13 16:04:57 2009
++++ gnome-session/gsm-manager.c	Fri Nov 13 16:08:25 2009
+@@ -38,7 +38,9 @@
+ #include <dbus/dbus-glib.h>
+ #include <dbus/dbus-glib-lowlevel.h>
+ 
++#ifndef __OpenBSD__
+ #include <devkit-power-gobject/devicekit-power.h>
++#endif
+ 
+ #include <gtk/gtk.h> /* for logout dialog */
+ #include <gconf/gconf-client.h>
+@@ -134,8 +136,10 @@ struct GsmManagerPrivate
+         DBusGProxy             *bus_proxy;
+         DBusGConnection        *connection;
+ 
++#ifndef __OpenBSD__
+         /* Interface with other parts of the system */
+         DkpClient              *dkp_client;
++#endif
+ };
+ 
+ enum {
+@@ -971,6 +975,7 @@ manager_perhaps_lock (GsmManager *manager)
+ static void
+ manager_attempt_hibernate (GsmManager *manager)
+ {
++#ifndef __OpenBSD__
+         gboolean  can_hibernate;
+         GError   *error;
+         gboolean  ret;
+@@ -992,11 +997,13 @@ manager_attempt_hibernate (GsmManager *manager)
+                         g_error_free (error);
+                 }
+         }
++#endif
+ }
+ 
+ static void
+ manager_attempt_suspend (GsmManager *manager)
+ {
++#ifndef __OpenBSD__
+         gboolean  can_suspend;
+         GError   *error;
+         gboolean  ret;
+@@ -1018,6 +1025,7 @@ manager_attempt_suspend (GsmManager *manager)
+                         g_error_free (error);
+                 }
+         }
++#endif
+ }
+ 
+ static void
+@@ -2190,10 +2198,12 @@ gsm_manager_dispose (GObject *object)
+                 manager->priv->gconf_client = NULL;
+         }
+ 
++#ifndef __OpenBSD__
+         if (manager->priv->dkp_client != NULL) {
+                 g_object_unref (manager->priv->dkp_client);
+                 manager->priv->dkp_client = NULL;
+         }
++#endif
+ 
+         G_OBJECT_CLASS (gsm_manager_parent_class)->dispose (object);
+ }
+@@ -2423,7 +2433,9 @@ gsm_manager_init (GsmManager *manager)
+                           G_CALLBACK (on_presence_status_changed),
+                           manager);
+ 
++#ifndef __OpenBSD__
+         manager->priv->dkp_client = dkp_client_new ();
++#endif
+ 
+         /* GConf setup */
+         gconf_client_add_dir (manager->priv->gconf_client,
+@@ -2947,10 +2959,12 @@ gsm_manager_can_shutdown (GsmManager *manager,
+         gboolean can_suspend;
+         gboolean can_hibernate;
+ 
++#ifndef __OpenBSD__
+         g_object_get (manager->priv->dkp_client,
+                       "can-suspend", &can_suspend,
+                       "can-hibernate", &can_hibernate,
+                       NULL);
++#endif
+ 
+         g_debug ("GsmManager: CanShutdown called");
+ 

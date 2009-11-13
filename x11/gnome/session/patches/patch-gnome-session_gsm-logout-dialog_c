@@ -1,0 +1,74 @@
+$OpenBSD: patch-gnome-session_gsm-logout-dialog_c,v 1.1 2009/11/13 15:48:05 ajacoutot Exp $
+--- gnome-session/gsm-logout-dialog.c.orig	Fri Nov 13 15:57:02 2009
++++ gnome-session/gsm-logout-dialog.c	Fri Nov 13 16:02:48 2009
+@@ -27,7 +27,9 @@
+ #include <glib/gi18n.h>
+ #include <gtk/gtk.h>
+ 
++#ifndef __OpenBSD__
+ #include <devkit-power-gobject/devicekit-power.h>
++#endif
+ 
+ #include "gsm-logout-dialog.h"
+ #include "gsm-consolekit.h"
+@@ -50,7 +52,9 @@ struct _GsmLogoutDialogPrivate
+ {
+         GsmDialogLogoutType  type;
+ 
++#ifndef __OpenBSD__
+         DkpClient           *dkp_client;
++#endif
+         GsmConsolekit       *consolekit;
+ 
+         int                  timeout;
+@@ -142,7 +146,9 @@ gsm_logout_dialog_init (GsmLogoutDialog *logout_dialog
+         gtk_window_set_keep_above (GTK_WINDOW (logout_dialog), TRUE);
+         gtk_window_stick (GTK_WINDOW (logout_dialog));
+ 
++#ifndef __OpenBSD__
+         logout_dialog->priv->dkp_client = dkp_client_new ();
++#endif
+ 
+         logout_dialog->priv->consolekit = gsm_get_consolekit ();
+ 
+@@ -166,10 +172,12 @@ gsm_logout_dialog_destroy (GsmLogoutDialog *logout_dia
+                 logout_dialog->priv->timeout_id = 0;
+         }
+ 
++#ifndef __OpenBSD__
+         if (logout_dialog->priv->dkp_client) {
+                 g_object_unref (logout_dialog->priv->dkp_client);
+                 logout_dialog->priv->dkp_client = NULL;
+         }
++#endif
+ 
+         if (logout_dialog->priv->consolekit) {
+                 g_object_unref (logout_dialog->priv->consolekit);
+@@ -183,9 +191,13 @@ static gboolean
+ gsm_logout_supports_system_suspend (GsmLogoutDialog *logout_dialog)
+ {
+         gboolean ret;
++#ifndef __OpenBSD__
+         g_object_get (logout_dialog->priv->dkp_client,
+                       "can-suspend", &ret,
+                       NULL);
++#else
++	ret = 0;
++#endif
+         return ret;
+ }
+ 
+@@ -193,9 +205,13 @@ static gboolean
+ gsm_logout_supports_system_hibernate (GsmLogoutDialog *logout_dialog)
+ {
+         gboolean ret;
++#ifndef __OpenBSD__
+         g_object_get (logout_dialog->priv->dkp_client,
+                       "can-hibernate", &ret,
+                       NULL);
++#else
++	ret = 0;
++#endif
+         return ret;
+ }
+ 
