@@ -1,13 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/31 01:39:09 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/11/13 14:25:42 kevlo Exp $
 %%SHARED%%
-@bin bin/hanjac
 include/hangul-1.0/
 include/hangul-1.0/hangul.h
-lib/libhangul/
 lib/libhangul.a
 lib/libhangul.la
-lib/libhangul/hanja/
-lib/libhangul/hanja/hanja.bin
 lib/pkgconfig/
 lib/pkgconfig/libhangul.pc
 share/libhangul/
