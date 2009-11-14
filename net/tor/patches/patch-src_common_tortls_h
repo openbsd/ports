@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_common_tortls_h,v 1.1 2009/11/14 10:09:09 benoit Exp $
+--- src/common/tortls.h.orig	Wed Nov 11 11:15:02 2009
++++ src/common/tortls.h	Wed Nov 11 11:15:37 2009
+@@ -65,6 +65,7 @@
+ int tor_tls_write(tor_tls_t *tls, const char *cp, size_t n);
+ int tor_tls_handshake(tor_tls_t *tls);
+ int tor_tls_renegotiate(tor_tls_t *tls);
++void tor_tls_block_renegotiation(tor_tls_t *tls);
+ int tor_tls_shutdown(tor_tls_t *tls);
+ int tor_tls_get_pending_bytes(tor_tls_t *tls);
+ size_t tor_tls_get_forced_write_size(tor_tls_t *tls);
