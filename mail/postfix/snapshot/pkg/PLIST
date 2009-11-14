@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.52 2009/04/19 14:14:22 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.53 2009/11/14 07:05:44 jakob Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -14,6 +14,7 @@ libexec/postfix/
 @bin libexec/postfix/bounce
 @bin libexec/postfix/cleanup
 @bin libexec/postfix/discard
+@bin libexec/postfix/dnsblog
 @bin libexec/postfix/error
 @bin libexec/postfix/flush
 @bin libexec/postfix/lmtp
@@ -30,6 +31,7 @@ libexec/postfix/postfix-files
 libexec/postfix/postfix-script
 libexec/postfix/postfix-wrapper
 libexec/postfix/postmulti-script
+@bin libexec/postfix/postscreen
 @bin libexec/postfix/proxymap
 @bin libexec/postfix/qmgr
 @bin libexec/postfix/qmqpd
@@ -84,6 +86,7 @@ libexec/postfix/postmulti-script
 @man man/man8/cleanup.8
 @man man/man8/defer.8
 @man man/man8/discard.8
+@man man/man8/dnsblog.8
 @man man/man8/error.8
 @man man/man8/flush.8
 @man man/man8/lmtp.8
@@ -92,6 +95,7 @@ libexec/postfix/postmulti-script
 @man man/man8/oqmgr.8
 @man man/man8/pickup.8
 @man man/man8/pipe.8
+@man man/man8/postscreen.8
 @man man/man8/proxymap.8
 @man man/man8/qmgr.8
 @man man/man8/qmqpd.8
@@ -181,6 +185,7 @@ share/doc/postfix/html/cidr_table.5.html
 share/doc/postfix/html/cleanup.8.html
 share/doc/postfix/html/defer.8.html
 share/doc/postfix/html/discard.8.html
+share/doc/postfix/html/dnsblog.8.html
 share/doc/postfix/html/error.8.html
 share/doc/postfix/html/flush.8.html
 share/doc/postfix/html/generic.5.html
@@ -215,6 +220,7 @@ share/doc/postfix/html/postlog.1.html
 share/doc/postfix/html/postmap.1.html
 share/doc/postfix/html/postmulti.1.html
 share/doc/postfix/html/postqueue.1.html
+share/doc/postfix/html/postscreen.8.html
 share/doc/postfix/html/postsuper.1.html
 share/doc/postfix/html/proxymap.8.html
 share/doc/postfix/html/qmgr.8.html

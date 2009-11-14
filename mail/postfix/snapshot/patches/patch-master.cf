@@ -1,5 +1,5 @@
---- conf/master.cf.orig	Wed Jan 30 12:57:57 2008
-+++ conf/master.cf	Sun Feb 17 05:17:51 2008
+--- conf/master.cf.orig	Wed Oct 21 08:52:32 2009
++++ conf/master.cf	Thu Nov 12 18:59:40 2009
 @@ -8,8 +8,8 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
@@ -67,21 +67,20 @@
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
-@@ -68,7 +68,7 @@ scache    unix  -       -       n       -       1     
- # The Cyrus deliver program has changed incompatibly, multiple times.
- #
- #old-cyrus unix  -       n       n       -       -       pipe
--#  flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
-+#  flags=R user=_cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
- #
- # ====================================================================
- #
-@@ -76,7 +76,7 @@ scache    unix  -       -       n       -       1     
+@@ -80,14 +80,14 @@ scache    unix  -       -       n       -       1     
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe
 -#  user=cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
 +#  user=_cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
+ #
+ # ====================================================================
+ #
+ # Old example of delivery via Cyrus.
+ #
+ #old-cyrus unix  -       n       n       -       -       pipe
+-#  flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
++#  flags=R user=_cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
  #
  # ====================================================================
  #
