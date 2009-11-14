@@ -1,11 +1,11 @@
-$OpenBSD: patch-get_iplayer,v 1.23 2009/11/09 19:47:42 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.24 2009/11/14 18:42:35 sthen Exp $
 
 - default to using id3tag not id3v2
 - follow hier(7) not Linux FHS for options file location
 
---- get_iplayer.orig	Sun Nov  8 14:49:11 2009
-+++ get_iplayer	Mon Nov  9 19:47:00 2009
-@@ -311,17 +311,14 @@ if ( defined $ENV{GETIPLAYERUSERPREFS} && $ENV{GETIPLA
+--- get_iplayer.orig	Tue Nov 10 22:50:09 2009
++++ get_iplayer	Sat Nov 14 18:39:07 2009
+@@ -312,17 +312,14 @@ if ( defined $ENV{GETIPLAYERUSERPREFS} && $ENV{GETIPLA
  # Options on unix-like systems
  } elsif ( defined $ENV{HOME} ) {
  	$profile_dir = $opt_pre->{profiledir} || $ENV{HOME}.'/.get_iplayer';
@@ -25,7 +25,7 @@ $OpenBSD: patch-get_iplayer,v 1.23 2009/11/09 19:47:42 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -442,6 +439,7 @@ if ( ! keys %plugin_files ) {
+@@ -443,6 +440,7 @@ if ( ! keys %plugin_files ) {
  	$opt->{pluginsupdate} = 1;
  }
  # Update this script if required
@@ -33,7 +33,7 @@ $OpenBSD: patch-get_iplayer,v 1.23 2009/11/09 19:47:42 sthen Exp $
  update_script() if $opt->{update} || $opt->{pluginsupdate};
  
  
-@@ -638,7 +636,7 @@ sub find_matches {
+@@ -639,7 +637,7 @@ sub find_matches {
  	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-get_iplayer,v 1.23 2009/11/09 19:47:42 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -3638,7 +3636,7 @@ sub tag_file {
+@@ -3640,7 +3638,7 @@ sub tag_file {
  		my ( $id3_name, $id3_episode, $id3_desc, $id3_channel ) = ( $prog->{name}, $prog->{episode}, $prog->{desc}, $prog->{channel} );
  		s|"|\\"|g for ($id3_name, $id3_episode, $id3_desc, $id3_channel);
  		# Only tag if the required tool exists
@@ -51,7 +51,7 @@ $OpenBSD: patch-get_iplayer,v 1.23 2009/11/09 19:47:42 sthen Exp $
  			main::logger "INFO: id3 tagging $prog->{ext} file\n";
  			my @cmd = (
  				$bin->{id3v2}, 
-@@ -5352,7 +5350,7 @@ sub optional_list_entry_format {
+@@ -5357,7 +5355,7 @@ sub optional_list_entry_format {
  # Returns the modes to try for this prog type
  sub modelist {
  	my $prog = shift;
