@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/14 11:40:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/11/14 11:27:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
-DISTNAME=	pinot-0.94
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	pinot-0.95
 
 CATEGORIES=	x11 misc
 
