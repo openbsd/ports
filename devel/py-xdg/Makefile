@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/07/12 20:28:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2009/11/14 14:16:23 ajacoutot Exp $
 
 COMMENT=	python library to access freedesktop.org standards
 
-MODPY_EGG_VERSION= 0.16
+MODPY_EGG_VERSION= 0.18
 DISTNAME=	pyxdg-${MODPY_EGG_VERSION}
-PKGNAME=	py-xdg-${MODPY_EGG_VERSION}p2
+PKGNAME=	py-xdg-${MODPY_EGG_VERSION}
 
 CATEGORIES=	devel
 
