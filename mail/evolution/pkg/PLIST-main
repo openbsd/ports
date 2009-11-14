@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/11/11 14:23:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2009/11/14 16:33:16 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 bin/evolution
+@bin bin/evolution.bin
 include/evolution-${R}/
 include/evolution-${R}/addressbook/
 include/evolution-${R}/addressbook/gui/
@@ -428,8 +429,8 @@ lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.a
 lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.la
 lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.a
 lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-exchange-operations.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-exchange-operations.la
+lib/evolution/${R}/plugins/liborg-gnome-exchange-operations.a
+lib/evolution/${R}/plugins/liborg-gnome-exchange-operations.la
 lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.a
 lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.la
 lib/evolution/${R}/plugins/liborg-gnome-gw-account-setup.a
@@ -461,10 +462,10 @@ lib/evolution/${R}/plugins/org-gnome-evolution-caldav.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-google.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-startup-wizard.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-webdav.eplug
-@comment lib/evolution/${R}/plugins/org-gnome-exchange-ab-subscription.xml
-@comment lib/evolution/${R}/plugins/org-gnome-exchange-cal-subscription.xml
-@comment lib/evolution/${R}/plugins/org-gnome-exchange-operations.eplug
-@comment lib/evolution/${R}/plugins/org-gnome-exchange-tasks-subscription.xml
+lib/evolution/${R}/plugins/org-gnome-exchange-ab-subscription.xml
+lib/evolution/${R}/plugins/org-gnome-exchange-cal-subscription.xml
+lib/evolution/${R}/plugins/org-gnome-exchange-operations.eplug
+lib/evolution/${R}/plugins/org-gnome-exchange-tasks-subscription.xml
 lib/evolution/${R}/plugins/org-gnome-folder-permissions.xml
 lib/evolution/${R}/plugins/org-gnome-folder-subscription.xml
 lib/evolution/${R}/plugins/org-gnome-groupwise-features.eplug
@@ -485,7 +486,6 @@ lib/pkgconfig/evolution-shell.pc
 libexec/evolution/
 libexec/evolution/${R}/
 libexec/evolution/${R}/csv2vcard
-@bin libexec/evolution/${R}/evolution
 libexec/evolution/${R}/evolution-addressbook-clean
 @bin libexec/evolution/${R}/evolution-addressbook-export
 @bin libexec/evolution/${R}/evolution-alarm-notify
@@ -591,7 +591,7 @@ share/evolution/${R}/errors/e-system.error
 share/evolution/${R}/errors/filter.error
 share/evolution/${R}/errors/mail-composer.error
 share/evolution/${R}/errors/mail.error
-@comment share/evolution/${R}/errors/org-gnome-exchange-operations.error
+share/evolution/${R}/errors/org-gnome-exchange-operations.error
 share/evolution/${R}/errors/org-gnome-itip-formatter.error
 share/evolution/${R}/errors/org-gnome-mail-retract.error
 share/evolution/${R}/errors/org-gnome-process-meeting.error

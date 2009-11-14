@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2009/11/11 14:23:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2009/11/14 16:33:16 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -8,14 +8,16 @@ GNOME_VERSION=		2.28.1
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
-# in mail/evolution-plugin-rss/Makefile (and bump).
+# and bump:
+# mail/evolution-plugin-rss/Makefile
+# evolution-exchange
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		R
 
 # -plugins depends on the exact version of -main, so whenever -main is
 # bumped, -plugins needs a bump too
-PKGNAME-main=		${DISTNAME}p0
-PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p0
+PKGNAME-main=		${DISTNAME}p1
+PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p1
 
 CATEGORIES=		mail
 
@@ -132,13 +134,15 @@ post-patch:
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c \
 		${WRKSRC}/plugins/sa-junk-plugin/em-junk-filter.c
+	# XXX see patch-plugins_exchange-operations_Makefile_in
+	ln -sf ../../addressbook/gui/component/.libs/libevolution-addressbook.so \
+		 ${WRKBUILD}/plugins/exchange-operations/libevolution-addressbook.so
 
 post-install:
 	find ${PREFIX}/share/evolution/${R}/default -perm 444 -exec chmod 644 {} \;
 	# XXX there is a circular linking dependency with some plugins
 	# https://bugzilla.gnome.org/show_bug.cgi?id=599336
-	mv ${PREFIX}/bin/evolution \
-		${PREFIX}/libexec/evolution/${R}/evolution
+	mv ${PREFIX}/bin/evolution ${PREFIX}/bin/evolution.bin
 	${SUBST_CMD} -c ${FILESDIR}/evolution.sh ${WRKBUILD}/evolution.sh
 	${INSTALL_SCRIPT} ${WRKBUILD}/evolution.sh ${PREFIX}/bin/evolution
 
