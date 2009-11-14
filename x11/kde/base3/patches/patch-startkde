@@ -1,7 +1,7 @@
-$OpenBSD: patch-startkde,v 1.22 2008/08/26 16:52:29 espie Exp $
+$OpenBSD: patch-startkde,v 1.23 2009/11/14 16:41:57 ajacoutot Exp $
 --- startkde.orig	Tue Aug 19 21:56:42 2008
-+++ startkde	Thu Aug 21 20:20:12 2008
-@@ -3,6 +3,11 @@
++++ startkde	Sat Nov 14 16:55:43 2009
+@@ -3,6 +3,16 @@
  #  DEFAULT KDE STARTUP SCRIPT ( KDE-3.5.10 )
  #
  
@@ -9,6 +9,11 @@ $OpenBSD: patch-startkde,v 1.22 2008/08/26 16:52:29 espie Exp $
 +X)
 +	exec /usr/X11R6/bin/startx $0;;
 +esac
++
++if [ -z "${XDG_MENU_PREFIX}" ] ; then
++	XDG_MENU_PREFIX="kde3-"
++	export XDG_MENU_PREFIX
++fi
 +
  # When the X server dies we get a HUP signal from xinit. We must ignore it
  # because we still need to do some cleanup.
