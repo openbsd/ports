@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2009/10/12 09:14:18 sthen Exp $
---- Makefile.in.orig	Fri Oct  9 23:51:34 2009
-+++ Makefile.in	Sun Oct 11 15:39:58 2009
-@@ -235,7 +235,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-Makefile_in,v 1.7 2009/11/14 18:37:53 sthen Exp $
+--- Makefile.in.orig	Fri Nov 13 06:15:36 2009
++++ Makefile.in	Sat Nov 14 18:30:08 2009
+@@ -280,7 +280,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
