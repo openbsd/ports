@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2009/11/12 20:30:33 landry Exp $
+# $OpenBSD: Makefile,v 1.240 2009/11/14 16:35:16 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -52,6 +52,7 @@
      SUBDIR += enigmail
      SUBDIR += enigmail-seamonkey
      SUBDIR += evolution
+     SUBDIR += evolution-exchange
      SUBDIR += evolution-plugin-rss
      SUBDIR += evolution-plugin-webcal
      SUBDIR += exim
