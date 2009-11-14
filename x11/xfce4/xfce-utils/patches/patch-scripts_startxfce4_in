@@ -1,0 +1,17 @@
+$OpenBSD: patch-scripts_startxfce4_in,v 1.1 2009/11/14 16:43:27 landry Exp $
+set XDG_MENU_PREFIX to xfce- so that applications looking
+for the xfce xdg-compliant menu have another chance to find it.
+--- scripts/startxfce4.in.orig	Sat Nov 14 14:24:41 2009
++++ scripts/startxfce4.in	Sat Nov 14 14:25:10 2009
+@@ -34,6 +34,11 @@ else
+ fi
+ export XDG_DATA_DIRS
+ 
++if test "x$XDG_MENU_PREFIX" = "x"
++then
++  export XDG_MENU_PREFIX="xfce-"
++fi
++
+ if test "x$DISPLAY" = "x"
+ then
+   echo "$0: Starting X server"
