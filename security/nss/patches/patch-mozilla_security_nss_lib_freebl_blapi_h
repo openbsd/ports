@@ -1,0 +1,18 @@
+$OpenBSD: patch-mozilla_security_nss_lib_freebl_blapi_h,v 1.1 2009/11/14 16:31:06 ajacoutot Exp $
+
+From firefox in pkgsrc:
+SHA1_Update conflicts with openssl which may be dynamically loaded
+at runtime via libcups or libgssapi so causing a crash due to using
+the wrong binding.  So rename here to avoid conflict.
+
+--- mozilla/security/nss/lib/freebl/blapi.h.orig	Wed Nov 11 14:08:21 2009
++++ mozilla/security/nss/lib/freebl/blapi.h	Wed Nov 11 14:08:42 2009
+@@ -925,6 +925,8 @@ extern void SHA1_DestroyContext(SHA1Context *cx, PRBoo
+ */
+ extern void SHA1_Begin(SHA1Context *cx);
+ 
++#define SHA1_Update NSS_SHA1_Update
++
+ /*
+ ** Update the SHA-1 hash function with more data.
+ **	"cx" the context

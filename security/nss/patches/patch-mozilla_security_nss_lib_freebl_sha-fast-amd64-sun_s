@@ -1,0 +1,49 @@
+$OpenBSD: patch-mozilla_security_nss_lib_freebl_sha-fast-amd64-sun_s,v 1.1 2009/11/14 16:31:06 ajacoutot Exp $
+
+From firefox in pkgsrc:
+SHA1_Update conflicts with openssl which may be dynamically loaded
+at runtime via libcups or libgssapi so causing a crash due to using
+the wrong binding.  So rename here to avoid conflict.
+
+--- mozilla/security/nss/lib/freebl/sha-fast-amd64-sun.s.orig	Wed Nov 11 14:34:57 2009
++++ mozilla/security/nss/lib/freebl/sha-fast-amd64-sun.s	Wed Nov 11 14:35:19 2009
+@@ -1712,9 +1712,9 @@ shaCompress:
+ .LFE7:
+ 	.size	shaCompress, .-shaCompress
+ 	.align 16
+-.globl SHA1_Update
+-	.type	SHA1_Update, @function
+-SHA1_Update:
++.globl NSS_SHA1_Update
++	.type	NSS_SHA1_Update, @function
++NSS_SHA1_Update:
+ .LFB5:
+ 	pushq	%rbp
+ .LCFI5:
+@@ -1800,7 +1800,7 @@ SHA1_Update:
+ 	call	shaCompress
+ 	jmp	.L245
+ .LFE5:
+-	.size	SHA1_Update, .-SHA1_Update
++	.size	NSS_SHA1_Update, .-NSS_SHA1_Update
+ 	.section	.rodata
+ 	.align 32
+ 	.type	bulk_pad.0, @object
+@@ -1902,7 +1902,7 @@ SHA1_End:
+ 	subl	%r8d, %edx
+ 	andl	$63, %edx
+ 	incl	%edx
+-	call	SHA1_Update@PLT
++	call	NSS_SHA1_Update@PLT
+ 	movq	%rbx, %rdi
+ 	movq	%r12, %rsi
+ 	shrq	$32, %rdi
+@@ -2018,7 +2018,7 @@ SHA1_HashBuf:
+ 	movl	%r12d, %edx
+ 	movq	%r13, %rsi
+ 	movq	%rbx, %rdi
+-	call	SHA1_Update@PLT
++	call	NSS_SHA1_Update@PLT
+ 	leaq	-292(%rbp), %rdx
+ 	movq	%r14, %rsi
+ 	movq	%rbx, %rdi
