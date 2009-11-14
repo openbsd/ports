@@ -1,0 +1,16 @@
+$OpenBSD: patch-gnome-session_main_c,v 1.1 2009/11/14 16:39:05 ajacoutot Exp $
+--- gnome-session/main.c.orig	Wed Jul  1 14:45:30 2009
++++ gnome-session/main.c	Sat Nov 14 13:40:08 2009
+@@ -490,6 +490,12 @@ main (int argc, char **argv)
+          */
+         gsm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
+ 
++        /* Set default menu to gnome-applications.menu if XDG_MENU_PREFIX
++         * is not set.
++         */
++        if (!g_getenv ("XDG_MENU_PREFIX")) {
++                gsm_util_setenv ("XDG_MENU_PREFIX", "gnome-");
++
+         client_store = gsm_store_new ();
+ 
+ 
