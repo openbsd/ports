@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.10 2009/09/28 16:56:26 ajacoutot Exp $
+$OpenBSD: patch-src_GtkamlImplicitsStore_c,v 1.11 2009/11/14 11:41:04 ajacoutot Exp $
 
 Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
 
---- src/GtkamlImplicitsStore.c.orig	Mon Sep 28 18:50:11 2009
-+++ src/GtkamlImplicitsStore.c	Mon Sep 28 18:52:35 2009
-@@ -130,7 +130,7 @@ enum  {
+--- src/GtkamlImplicitsStore.c.orig	Tue Oct 27 09:07:16 2009
++++ src/GtkamlImplicitsStore.c	Sat Nov 14 12:37:38 2009
+@@ -133,7 +133,7 @@ enum  {
  	GTKAML_KEY_FILE_WRAPPER_DUMMY_PROPERTY
  };
  gboolean gtkaml_key_file_wrapper_has_key (GtkamlKeyFileWrapper* self, const char* group, const char* key);
@@ -13,7 +13,7 @@ Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
  GtkamlKeyFileWrapper* gtkaml_key_file_wrapper_new (void);
  GtkamlKeyFileWrapper* gtkaml_key_file_wrapper_construct (GType object_type);
  static GObject * gtkaml_key_file_wrapper_constructor (GType type, guint n_construct_properties, GObjectConstructParam * construct_properties);
-@@ -238,7 +238,7 @@ gboolean gtkaml_key_file_wrapper_has_key (GtkamlKeyFil
+@@ -241,7 +241,7 @@ gboolean gtkaml_key_file_wrapper_has_key (GtkamlKeyFil
  }
  
  
@@ -22,7 +22,7 @@ Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
  	char** result;
  	GError * _inner_error_;
  	g_return_val_if_fail (self != NULL, NULL);
-@@ -451,14 +451,14 @@ GeeList* gtkaml_implicits_store_get_adds (GtkamlImplic
+@@ -452,14 +452,14 @@ ValaList* gtkaml_implicits_store_get_adds (GtkamlImpli
  			if (gtkaml_key_file_wrapper_has_key (kfw, class_name, "adds")) {
  				char** _tmp1_;
  				gint kf_adds_size;
@@ -40,7 +40,7 @@ Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
  					add_collection = kf_adds;
  					add_collection_length1 = kf_adds_length1;
  					for (add_it = 0; add_it < kf_adds_length1; add_it = add_it + 1) {
-@@ -504,14 +504,14 @@ GeeList* gtkaml_implicits_store_get_method_parameters 
+@@ -505,14 +505,14 @@ ValaList* gtkaml_implicits_store_get_method_parameters
  			if (gtkaml_key_file_wrapper_has_key (kfw, class_name, method_name)) {
  				char** _tmp3_;
  				gint kf_parameters_size;
