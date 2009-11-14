@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.34 2009/11/14 11:28:54 landry Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=	grip-3.2.0
-PKGNAME=	${DISTNAME}p13
+PKGNAME=	${DISTNAME}p14
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.nostatic.org/grip/
@@ -48,5 +48,11 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_LIBTOOL=	Yes
 USE_X11=	Yes
+
+post-configure:
+.for lang in de es fr pt_BR
+	${LOCALBASE}/bin/iconv -f ISO-8859-1 -t UTF-8 ${WRKSRC}/po/${lang}.po > ${WRKSRC}/po/${lang}.po-fixed
+	mv ${WRKSRC}/po/${lang}.po{-fixed,}
+.endfor
 
 .include <bsd.port.mk>
