@@ -1,0 +1,18 @@
+$OpenBSD: patch-kded_kbuildsycoca_cpp,v 1.1 2009/11/14 16:41:03 ajacoutot Exp $
+
+Respect XDG_MENU_PREFIX variable.
+
+--- kded/kbuildsycoca.cpp.orig	Sat Nov 14 16:51:45 2009
++++ kded/kbuildsycoca.cpp	Sat Nov 14 16:47:22 2009
+@@ -379,7 +379,10 @@ bool KBuildSycoca::build()
+      connect(g_vfolder, SIGNAL(newService(const QString &, KService **)),
+              this, SLOT(slotCreateEntry(const QString &, KService **)));
+              
+-     VFolderMenu::SubMenu *kdeMenu = g_vfolder->parseMenu("applications.menu", true);
++     QCString xdgMenuPrefix = getenv("XDG_MENU_PREFIX");
++     if (xdgMenuPrefix.isEmpty())
++        xdgMenuPrefix = "kde3-";
++     VFolderMenu::SubMenu *kdeMenu = g_vfolder->parseMenu(xdgMenuPrefix + "applications.menu", true);
+ 
+      KServiceGroup *entry = g_bsgf->addNew("/", kdeMenu->directoryFile, 0, false);
+      entry->setLayoutInfo(kdeMenu->layoutList);

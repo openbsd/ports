@@ -1,3 +1,0 @@
-To use the KDE3 layout as default for the applications menu, as root:
- ln -sf ${SYSCONFDIR}/xdg/menus/kde3-applications.menu \
-	${SYSCONFDIR}/xdg/menus/applications.menu

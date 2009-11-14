@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2008/08/26 16:52:29 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2009/11/14 16:41:03 ajacoutot Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -5695,4 +5695,3 @@ share/servicetypes/renamedlgplugin.desktop
 share/servicetypes/scriptinterface.desktop
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
-@exec ln -s ${SYSCONFDIR}/xdg/menus/kde3-applications.menu ${SYSCONFDIR}/xdg/menus/applications.menu 2> /dev/null || true

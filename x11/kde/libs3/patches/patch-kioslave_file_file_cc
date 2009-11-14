@@ -1,7 +1,7 @@
-$OpenBSD: patch-kioslave_file_file_cc,v 1.4 2009/10/27 14:38:15 jasper Exp $
+$OpenBSD: patch-kioslave_file_file_cc,v 1.5 2009/11/14 16:41:03 ajacoutot Exp $
 --- kioslave/file/file.cc.orig	Fri Mar 17 11:19:07 2006
-+++ kioslave/file/file.cc	Sat Mar 31 15:09:22 2007
-@@ -1445,6 +1447,9 @@ void FileProtocol::mount( bool _ro, const char *_fstyp
++++ kioslave/file/file.cc	Sat Nov 14 16:51:13 2009
+@@ -1445,6 +1445,9 @@ void FileProtocol::mount( bool _ro, const char *_fstyp
                                  dev.data()
                                  point.data()
                                  tmp );
@@ -11,7 +11,7 @@ $OpenBSD: patch-kioslave_file_file_cc,v 1.4 2009/10/27 14:38:15 jasper Exp $
  #else
                buffer.sprintf( "%s %s -t %s %s %s 2>%s", mountProg.latin1(), readonly.data(),
                                fstype.data(), dev.data(), point.data(), tmp );
-@@ -1604,7 +1609,11 @@ void FileProtocol::unmount( const QString& _point )
+@@ -1604,7 +1607,11 @@ void FileProtocol::unmount( const QString& _point )
          error( KIO::ERR_COULD_NOT_UNMOUNT, i18n("Could not find program \"umount\""));
          return;
      }
