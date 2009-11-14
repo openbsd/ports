@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.16 2009/09/28 16:55:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2009/11/14 11:39:57 ajacoutot Exp $
 %%SHARED%%
 bin/vala-gen-introspect
 @bin bin/valac
 @bin bin/vapicheck
 @bin bin/vapigen
 include/vala-1.0/
-include/vala-1.0/gee.h
 include/vala-1.0/vala.h
 include/vala-1.0/valaccode.h
 include/vala-1.0/valacodegen.h
+include/vala-1.0/valagee.h
 lib/libvala.a
 lib/libvala.la
 lib/pkgconfig/
