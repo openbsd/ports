@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_i18n_openfire_i18n_en_properties,v 1.1 2009/11/14 19:35:01 ian Exp $
+--- src/i18n/openfire_i18n_en.properties.orig	Sat Jun 20 11:45:19 2009
++++ src/i18n/openfire_i18n_en.properties	Sat Jun 20 11:50:58 2009
+@@ -739,7 +739,7 @@ muc.form.conf.instruction=The room "{0}" has been crea
+         click the "OK" button. Or, modify the settings by completing the following form:
+ muc.form.conf.owner_roomname=Room Name
+ muc.form.conf.owner_roomdesc=Description
+-muc.form.conf.owner_changesubject=Allow Occupants to Change Subject
++muc.form.conf.owner_changesubject=Allow Occupants to Change Topic
+ muc.form.conf.owner_maxusers=Maximum Room Occupants
+ muc.form.conf.none=None
+ muc.form.conf.owner_presencebroadcast=Roles for Which Presence is Broadcast
+@@ -2820,7 +2820,7 @@ mediaproxy.form.disabled.desc = This server will not a
+ mediaproxy.form.idletimeout = Session Idle Timeout (in seconds)
+ mediaproxy.form.idletimeout.tip = This value is usually bigger than 15 seconds.
+ mediaproxy.form.lifetime = Session Life Time (in seconds)
+-mediaproxy.form.lifetime.tip = Life Time is the maximum time that a Session can lives. After this time it is destroyed, even if it stills active.
++mediaproxy.form.lifetime.tip = Life Time is the maximum time that a Session can live. After this time it is destroyed, even if it is still active.
+ mediaproxy.form.minport = Port Range Min
+ mediaproxy.form.maxport = Port Range Max
+ mediaproxy.form.echoport = Echo Test Port
