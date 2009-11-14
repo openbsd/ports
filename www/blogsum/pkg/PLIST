@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/29 04:45:18 jdixon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/11/14 05:28:28 jdixon Exp $
 @owner root
 @group daemon
 blogsum/
@@ -21,6 +21,7 @@ blogsum/examples/
 @group bin
 blogsum/examples/create_sqlite.sql
 blogsum/examples/httpd-blogsum.conf
+@comment blogsum/examples/httpd2-blogsum.conf
 blogsum/examples/wp2blogsum.pl
 blogsum/index.cgi
 blogsum/startup.pl
