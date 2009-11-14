@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/11/14 11:06:42 sthen Exp $
 
 COMMENT=		web frontend to symon
 DISTNAME=		syweb-0.55
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		www sysutils
+
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 HOMEPAGE=		http://www.xs4all.nl/~wpd/symon
 

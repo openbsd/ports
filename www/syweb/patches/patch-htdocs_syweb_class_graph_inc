@@ -1,12 +1,12 @@
-$OpenBSD: patch-htdocs_syweb_class_graph_inc,v 1.1.1.1 2007/10/05 13:32:32 winiger Exp $
---- htdocs/syweb/class_graph.inc.orig	Fri Oct  5 10:22:24 2007
-+++ htdocs/syweb/class_graph.inc	Fri Oct  5 10:23:47 2007
+$OpenBSD: patch-htdocs_syweb_class_graph_inc,v 1.2 2009/11/14 11:06:42 sthen Exp $
+--- htdocs/syweb/class_graph.inc.orig	Wed Dec 20 20:59:23 2006
++++ htdocs/syweb/class_graph.inc	Fri Nov 13 22:03:21 2009
 @@ -109,7 +109,7 @@ class Graph {
      }
  
      function _parse_filename($filename, $index='') {
 -	if (preg_match("/^(.*\/)?((cpu|if|io|mem|pf|pfq|proc|debug|mbuf|sensor|df)([0-9]{0,2}))(_([a-z\.]+))?([0-9]{0,4}[a-z]{0,1}[0-9]{0,1}[a-z]{0,1}).rrd$/",
-+	if (preg_match("/^(.*\/)?((cpu|if|io|mem|pf|pfq|proc|debug|mbuf|sensor|df)([0-9]{0,2}))(_{0,1}([a-z0-9\.-]+))?([0-9]{0,4}[a-z]{0,1}[0-9]{0,1}[a-z]{0,1}).rrd$/",
++	if (preg_match("/^(.*\/)?((cpu|if|io|mem|pf|pfq|proc|debug|mbuf|sensor|df)([0-9]{0,2}))(_{0,1}([A-Za-z0-9\.-]+))?([0-9]{0,4}[A-Za-z]{0,1}[0-9]{0,1}[A-Za-z]{0,1}).rrd$/",
  		       $filename, $match)) {
  	    $this->vars->def('rrdtype'. $index, $match[2]);
  	    $this->vars->def('rrdwhat'. $index, $match[6]);
