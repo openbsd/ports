@@ -1,0 +1,12 @@
+$OpenBSD: patch-simple-editor_GMenuSimpleEditor_menutreemodel_py,v 1.1 2009/11/15 15:20:50 ajacoutot Exp $
+--- simple-editor/GMenuSimpleEditor/menutreemodel.py.orig	Sun Nov 15 16:08:56 2009
++++ simple-editor/GMenuSimpleEditor/menutreemodel.py	Sun Nov 15 16:10:04 2009
+@@ -104,7 +104,7 @@ class MenuTreeModel (gtk.TreeStore):
+         self.icon_theme = gtk.icon_theme_get_default ()
+ 
+         if (len (menu_files) < 1):
+-            menu_files = ["applications.menu", "settings.menu"]
++            menu_files = [os.environ.get('XDG_MENU_PREFIX', '') + "applications.menu", "settings.menu"]
+ 
+         for menu_file in menu_files:
+             tree = gmenu.lookup_tree (menu_file, gmenu.FLAGS_INCLUDE_EXCLUDED)
