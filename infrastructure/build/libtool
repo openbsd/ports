@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.114 2009/10/18 08:32:19 steven Exp $
+# $OpenBSD: libtool,v 1.115 2009/11/15 21:51:59 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -598,6 +598,8 @@ sub find
 	# sort dir search order by priority
 	# XXX not fully correct yet
 	my @sdirs = sort { $dirs->{$b} <=> $dirs->{$a} } keys %$dirs;
+	# search in cwd as well
+	unshift @sdirs, '.';
 	Trace::debug {"searching .la for $l\n"};
 	Trace::debug {"search path= ", join(':', @sdirs), "\n"};
 	foreach my $d (@sdirs) {
