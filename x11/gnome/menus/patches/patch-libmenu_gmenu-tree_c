@@ -1,0 +1,66 @@
+$OpenBSD: patch-libmenu_gmenu-tree_c,v 1.1 2009/11/15 14:10:02 ajacoutot Exp $
+
+Set default menu to gnome-applications.menu if XDG_MENU_PREFIX is not set.
+
+--- libmenu/gmenu-tree.c.orig	Thu Oct  1 13:08:33 2009
++++ libmenu/gmenu-tree.c	Sun Nov 15 12:55:42 2009
+@@ -23,6 +23,7 @@
+ 
+ #include <string.h>
+ #include <errno.h>
++#include <stdlib.h>
+ 
+ #include "menu-layout.h"
+ #include "menu-monitor.h"
+@@ -540,16 +541,13 @@ gmenu_tree_canonicalize_path (GMenuTree *tree)
+     {
+       gmenu_tree_remove_menu_file_monitors (tree);
+ 
+-      if (strcmp (tree->basename, "applications.menu") == 0 &&
+-          g_getenv ("XDG_MENU_PREFIX"))
+-        {
+-          char *prefixed_basename;
+-          prefixed_basename = g_strdup_printf ("%s%s",
+-                                               g_getenv ("XDG_MENU_PREFIX"),
+-                                               tree->basename);
+-          canonicalize_basename (tree, prefixed_basename);
+-          g_free (prefixed_basename);
+-        }
++      setenv ("XDG_MENU_PREFIX", "gnome-", 0);
++      char *prefixed_basename;
++      prefixed_basename = g_strdup_printf ("%s%s",
++                                           g_getenv ("XDG_MENU_PREFIX"),
++                                           tree->basename);
++      canonicalize_basename (tree, prefixed_basename);
++      g_free (prefixed_basename);
+ 
+       if (!tree->canonical)
+         canonicalize_basename (tree, tree->basename);
+@@ -1949,18 +1947,15 @@ load_parent_merge_file (GMenuTree      *tree,
+   found = FALSE;
+   menu_file = g_strconcat (menu_name, ".menu", NULL);
+ 
+-  if (strcmp (menu_file, "applications.menu") == 0 &&
+-      g_getenv ("XDG_MENU_PREFIX"))
+-    {
+-      char *prefixed_basename;
+-      prefixed_basename = g_strdup_printf ("%s%s",
+-                                           g_getenv ("XDG_MENU_PREFIX"),
+-                                           menu_file);
+-      found = load_parent_merge_file_from_basename (tree, loaded_menu_files,
+-                                                    layout, prefixed_basename,
+-                                                    canonical_basedir);
+-      g_free (prefixed_basename);
+-    }
++  setenv ("XDG_MENU_PREFIX", "gnome-", 0);
++  char *prefixed_basename;
++  prefixed_basename = g_strdup_printf ("%s%s",
++                                       g_getenv ("XDG_MENU_PREFIX"),
++                                       menu_file);
++  found = load_parent_merge_file_from_basename (tree, loaded_menu_files,
++                                                layout, prefixed_basename,
++                                                canonical_basedir);
++  g_free (prefixed_basename);
+ 
+   if (!found)
+     {
