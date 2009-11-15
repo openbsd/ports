@@ -1,0 +1,29 @@
+$OpenBSD: patch-gnome-panel_menu_c,v 1.3 2009/11/15 17:36:38 ajacoutot Exp $
+--- gnome-panel/menu.c.orig	Tue Sep  8 02:08:42 2009
++++ gnome-panel/menu.c	Sun Nov 15 16:26:27 2009
+@@ -25,6 +25,7 @@
+ #include "menu.h"
+ 
+ #include <string.h>
++#include <stdlib.h>
+ 
+ #include <glib/gi18n.h>
+ #include <gio/gio.h>
+@@ -1781,8 +1782,16 @@ GtkWidget *
+ create_main_menu (PanelWidget *panel)
+ {
+ 	GtkWidget *main_menu;
++	gchar      *xdgMenuPrefix, *applicationsMenu;
+ 
+-	main_menu = create_applications_menu ("applications.menu", NULL, TRUE);
++	/* Respect XDG_MENU_PREFIX */
++	setenv ("XDG_MENU_PREFIX", "gnome-", 0);
++
++	xdgMenuPrefix = getenv ("XDG_MENU_PREFIX");
++	applicationsMenu = g_strconcat (xdgMenuPrefix, "applications.menu", NULL);
++
++	main_menu = create_applications_menu (applicationsMenu, NULL, TRUE);
++	g_free (applicationsMenu);
+ 
+ 	g_object_set_data (G_OBJECT (main_menu), "menu_panel", panel);
+ 	/* FIXME need to update the panel on parent_set */

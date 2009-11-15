@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnome-panel_panel-menu-button_c,v 1.1 2009/11/15 17:36:38 ajacoutot Exp $
+--- gnome-panel/panel-menu-button.c.orig	Sun Nov 15 18:33:13 2009
++++ gnome-panel/panel-menu-button.c	Sun Nov 15 18:34:53 2009
+@@ -74,7 +74,7 @@ typedef struct {
+ } MenuPathRootItem;
+ 
+ static MenuPathRootItem root_items [] = {
+-	{ APPLICATIONS_MENU, "applications", "applications.menu" },
++	{ APPLICATIONS_MENU, "applications", "gnome-applications.menu" },
+ 	{ SETTINGS_MENU,     "settings",     "settings.menu"     }
+ };
+ 

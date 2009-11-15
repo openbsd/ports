@@ -1,0 +1,33 @@
+$OpenBSD: patch-gnome-panel_panel-menu-bar_c,v 1.1 2009/11/15 17:36:38 ajacoutot Exp $
+--- gnome-panel/panel-menu-bar.c.orig	Tue Sep  8 02:08:42 2009
++++ gnome-panel/panel-menu-bar.c	Sun Nov 15 16:26:56 2009
+@@ -29,6 +29,7 @@
+ #include "panel-menu-bar.h"
+ 
+ #include <string.h>
++#include <stdlib.h>
+ #include <glib/gi18n.h>
+ 
+ #include <libpanel-util/panel-error.h>
+@@ -135,12 +136,20 @@ static void
+ panel_menu_bar_init (PanelMenuBar *menubar)
+ {
+ 	GtkWidget *image;
++	gchar     *xdgMenuPrefix, *applicationsMenu;
+ 
+ 	menubar->priv = PANEL_MENU_BAR_GET_PRIVATE (menubar);
+ 
+ 	menubar->priv->info = NULL;
+ 
+-	menubar->priv->applications_menu = create_applications_menu ("applications.menu", NULL, TRUE);
++	/* Respect XDG_MENU_PREFIX */
++	setenv ("XDG_MENU_PREFIX", "gnome-", 0);
++
++	xdgMenuPrefix = getenv ("XDG_MENU_PREFIX");
++	applicationsMenu = g_strconcat (xdgMenuPrefix, "applications.menu", NULL);
++
++	menubar->priv->applications_menu = create_applications_menu (applicationsMenu, NULL, TRUE);
++	g_free (applicationsMenu);
+ 
+ 	menubar->priv->applications_item = panel_image_menu_item_new ();
+ 	gtk_menu_item_set_label (GTK_MENU_ITEM (menubar->priv->applications_item),
