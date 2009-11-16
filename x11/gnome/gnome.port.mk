@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.24 2009/10/21 16:08:31 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.25 2009/11/16 08:39:28 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -43,7 +43,7 @@ USE_GMAKE?=		Yes
 
 # Disable "silent rules" and "shave" aka clean build output (CC $FILE)
 .if defined(CONFIGURE_STYLE)
-. if ${CONFIGURE_STYLE:L} == "gnu" || ${CONFIGURE_STYLE:L} == "autoconf"
+. if ${CONFIGURE_STYLE:L:Mgnu} || ${CONFIGURE_STYLE:L:Mautoconf}
   CONFIGURE_ARGS+=	--disable-silent-rules
   CONFIGURE_ARGS+=	--disable-shave
 . endif
