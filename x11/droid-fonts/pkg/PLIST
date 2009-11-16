@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/16 07:54:36 pyr Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/Droid/
+lib/X11/fonts/Droid/DroidSans-Bold.ttf
+lib/X11/fonts/Droid/DroidSans.ttf
+lib/X11/fonts/Droid/DroidSansFallback.ttf
+lib/X11/fonts/Droid/DroidSansMono.ttf
+lib/X11/fonts/Droid/DroidSerif-Bold.ttf
+lib/X11/fonts/Droid/DroidSerif-BoldItalic.ttf
+lib/X11/fonts/Droid/DroidSerif-Italic.ttf
+lib/X11/fonts/Droid/DroidSerif-Regular.ttf
