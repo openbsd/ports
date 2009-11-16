@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.400 2009/10/18 22:27:07 edd Exp $
+# $OpenBSD: Makefile,v 1.401 2009/11/16 07:55:36 pyr Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += Xaw3d
@@ -41,6 +41,7 @@
      SUBDIR += dmenu
      SUBDIR += driconf
      SUBDIR += driftnet
+     SUBDIR += droid-fonts
      SUBDIR += dwm
      SUBDIR += dzen2
      SUBDIR += e16keyedit
