@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2009/11/12 12:34:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.251 2009/11/16 11:54:57 sthen Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -104,6 +104,7 @@
      SUBDIR += kipi-plugins
      SUBDIR += l2p
      SUBDIR += lcms
+     SUBDIR += lensfun
      SUBDIR += libart
      SUBDIR += libcaca
      SUBDIR += libdivxdecore
