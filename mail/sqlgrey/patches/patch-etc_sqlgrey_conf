@@ -1,0 +1,14 @@
+$OpenBSD: patch-etc_sqlgrey_conf,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp $
+--- etc/sqlgrey.conf.orig	Tue Jun  3 09:35:19 2008
++++ etc/sqlgrey.conf	Tue Jun  3 09:35:32 2008
+@@ -59,8 +59,8 @@
+ # log_ident =
+ 
+ ## username and groupname the daemon runs as
+-# user = sqlgrey
+-# group = sqlgrey
++user = _sqlgrey
++group = _sqlgrey
+ 
+ ## Socket
+ # On which socket do SQLgrey wait for queries

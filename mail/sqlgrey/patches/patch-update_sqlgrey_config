@@ -1,0 +1,63 @@
+$OpenBSD: patch-update_sqlgrey_config,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp $
+--- update_sqlgrey_config.orig	Wed Mar  2 01:49:41 2005
++++ update_sqlgrey_config	Thu Jun  5 19:03:17 2008
+@@ -1,10 +1,10 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # We need md5sum, diff and wget
+-MD5SUM=`which md5sum 2>/dev/null`
++MD5SUM=`which md5 2>/dev/null`
+ if [ $? -ne 0 ]
+ then
+-    echo "md5sum not found in PATH, can't continue"
++    echo "md5 not found in PATH, can't continue"
+     exit -1
+ fi
+ DIFF=`which diff 2>/dev/null`
+@@ -33,11 +33,6 @@ if [ -z "$whitelists_host" ]
+ then
+     whitelists_host="sqlgrey.bouton.name"
+ fi
+-pidfile=`grep "^[[:space:]]*pidfile" $CONF | cut -d= -f2 | awk '{print $1}'`
+-if [ -z "$pidfile" ]
+-then
+-    pidfile="/var/run/sqlgrey.pid"
+-fi
+ 
+ # Go into a temp directory
+ MYTMP=`mktemp -d ${TMPDIR:-/tmp}/sqlgrey.XXXXXX`
+@@ -48,7 +43,6 @@ MYTMP=`mktemp -d ${TMPDIR:-/tmp}/sqlgrey.XXXXXX`
+ 
+ # Setup a clean exit
+ clean_exit() {
+-    cd ~sqlgrey
+     [ -n "$MYTMP" -a -d "$MYTMP" ] && rm -rf $MYTMP
+     exit $1
+ }
+@@ -59,7 +53,7 @@ $WGET -q http://$whitelists_host/MD5SUMS
+ 
+ # Check installed files
+ cd $MYDIR
+-TOUPDATE=`md5sum -c $MYTMP/MD5SUMS 2>/dev/null | grep FAILED | cut -d: -f1`
++TOUPDATE=`md5 -c $MYTMP/MD5SUMS 2>/dev/null | grep FAILED | cut -d: -f1 | awk '{print $2;}'`
+ 
+ if [ -z "$TOUPDATE" ]
+ then
+@@ -85,7 +79,7 @@ do
+     fi
+ done
+ 
+-md5sum -c MD5SUMS >/dev/null 2>/dev/null
++md5 -c MD5SUMS >/dev/null 2>/dev/null
+ if [ $? -ne 0 ]
+ then
+     # Can only happen if remote site is borked or file got corrupt in transit
+@@ -99,6 +93,6 @@ rm MD5SUMS
+ mv * $MYDIR
+ 
+ # Reload whitelists
+-kill -USR1 `cat $pidfile`
++pkill -USR1 sqlgrey
+ 
+ clean_exit 0

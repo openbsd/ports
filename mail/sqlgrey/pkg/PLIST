@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/16 10:43:55 giovanni Exp $
+@newgroup _sqlgrey:647
+@newuser _sqlgrey:647:_sqlgrey:daemon:SQLgrey Account:/nonexistent:/sbin/nologin
+bin/sqlgrey-logstats
+@man man/man1/sqlgrey-logstats.1
+@man man/man1/sqlgrey.1
+sbin/sqlgrey
+sbin/update_sqlgrey_config
+share/doc/sqlgrey/
+share/doc/sqlgrey/HOWTO
+share/examples/sqlgrey/
+@sample ${SYSCONFDIR}/sqlgrey/
+share/examples/sqlgrey/README
+@sample ${SYSCONFDIR}/sqlgrey/README
+share/examples/sqlgrey/clients_fqdn_whitelist
+@sample ${SYSCONFDIR}/sqlgrey/clients_fqdn_whitelist
+share/examples/sqlgrey/clients_ip_whitelist
+@sample ${SYSCONFDIR}/sqlgrey/clients_ip_whitelist
+share/examples/sqlgrey/discrimination.regexp
+@sample ${SYSCONFDIR}/sqlgrey/discrimination.regexp
+share/examples/sqlgrey/dyn_fqdn.regexp
+@sample ${SYSCONFDIR}/sqlgrey/dyn_fqdn.regexp
+share/examples/sqlgrey/smtp_server.regexp
+@sample ${SYSCONFDIR}/sqlgrey/smtp_server.regexp
+share/examples/sqlgrey/sqlgrey.conf
+@sample ${SYSCONFDIR}/sqlgrey/sqlgrey.conf

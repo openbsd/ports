@@ -1,0 +1,7 @@
+SQLgrey is a Postfix greylisting policy service with 
+auto-white-listing with SQL database as storage backend.
+It has many features including ipv6 support, activity
+reports, fine log controls.
+
+SQLgrey uses the Sqlite database by default, but it can also use
+MySQL or Postgresql.
