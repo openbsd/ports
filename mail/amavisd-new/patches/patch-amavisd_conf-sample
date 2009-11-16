@@ -1,6 +1,6 @@
-$OpenBSD: patch-amavisd_conf-sample,v 1.3 2008/09/23 21:39:21 kili Exp $
---- amavisd.conf-sample.orig	Wed Apr 23 20:49:52 2008
-+++ amavisd.conf-sample	Thu May  8 20:19:02 2008
+$OpenBSD: patch-amavisd_conf-sample,v 1.4 2009/11/16 10:37:31 giovanni Exp $
+--- amavisd.conf-sample.orig	Thu Jun 25 14:38:38 2009
++++ amavisd.conf-sample	Thu Nov 12 17:13:28 2009
 @@ -74,8 +74,8 @@ $mydomain = 'example.com';      # (no useful default)
  
  # Set the user and group to which the daemon will change if started as root
@@ -21,3 +21,25 @@ $OpenBSD: patch-amavisd_conf-sample,v 1.3 2008/09/23 21:39:21 kili Exp $
  $enable_global_cache = 1;    # enable use of libdb-based cache if $enable_db=1
  
  $enable_dkim_verification = 1;  # enable DKIM signatures verification
+@@ -1711,7 +1711,7 @@ $dspam  = 'dspam';
+   ['uue',  \&do_ascii],
+   ['hqx',  \&do_ascii],
+   ['ync',  \&do_ascii],
+-  ['F',    \&do_uncompress, ['unfreeze','freeze -d','melt','fcat'] ],
++# ['F',    \&do_uncompress, ['unfreeze','freeze -d','melt','fcat'] ],
+   ['Z',    \&do_uncompress, ['uncompress','gzip -d','zcat'] ],
+   ['gz',   \&do_uncompress,  'gzip -d'],
+   ['gz',   \&do_gunzip],
+@@ -1724,8 +1724,10 @@ $dspam  = 'dspam';
+ # ['a',    \&do_ar,          'ar'],  # unpacking .a seems an overkill
+   ['zip',  \&do_unzip],
+   ['7z',   \&do_7zip,       ['7zr','7za','7z'] ],
+-  ['rar',  \&do_unrar,      ['rar','unrar'] ],
+-  ['arj',  \&do_unarj,      ['arj','unarj'] ],
++# ['rar',  \&do_unrar,      ['rar','unrar'] ],
++  ['rar',  \&do_7zip,       '7z'],
++# ['arj',  \&do_unarj,      ['arj','unarj'] ],
++  ['arj',  \&do_7zip,       '7z'],
+   ['arc',  \&do_arc,        ['nomarch','arc'] ],
+   ['zoo',  \&do_zoo,        ['zoo','unzoo'] ],
+   ['lha',  \&do_lha,         'lha'],

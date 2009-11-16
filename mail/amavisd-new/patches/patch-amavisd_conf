@@ -1,6 +1,6 @@
-$OpenBSD: patch-amavisd_conf,v 1.4 2008/09/23 21:39:21 kili Exp $
---- amavisd.conf.orig	Wed Apr 23 20:49:58 2008
-+++ amavisd.conf	Thu May  8 20:19:02 2008
+$OpenBSD: patch-amavisd_conf,v 1.5 2009/11/16 10:37:31 giovanni Exp $
+--- amavisd.conf.orig	Thu Jun 25 14:38:47 2009
++++ amavisd.conf	Thu Nov 12 17:08:56 2009
 @@ -15,12 +15,12 @@ use strict;
  # $bypass_decode_parts = 1;         # controls running of decoders&dearchivers
  
@@ -26,3 +26,25 @@ $OpenBSD: patch-amavisd_conf,v 1.4 2008/09/23 21:39:21 kili Exp $
  $enable_global_cache = 1;    # enable use of libdb-based cache if $enable_db=1
  $nanny_details_level = 2;    # nanny verbosity: 1: traditional, 2: detailed
  $enable_dkim_verification = 1;  # enable DKIM signatures verification
+@@ -321,7 +321,7 @@ $banned_filename_re = new_RE(
+   ['uue',  \&do_ascii],
+   ['hqx',  \&do_ascii],
+   ['ync',  \&do_ascii],
+-  ['F',    \&do_uncompress, ['unfreeze','freeze -d','melt','fcat'] ],
++# ['F',    \&do_uncompress, ['unfreeze','freeze -d','melt','fcat'] ],
+   ['Z',    \&do_uncompress, ['uncompress','gzip -d','zcat'] ],
+   ['gz',   \&do_uncompress,  'gzip -d'],
+   ['gz',   \&do_gunzip],
+@@ -334,8 +334,10 @@ $banned_filename_re = new_RE(
+ # ['a',    \&do_ar,          'ar'],  # unpacking .a seems an overkill
+   ['zip',  \&do_unzip],
+   ['7z',   \&do_7zip,       ['7zr','7za','7z'] ],
+-  ['rar',  \&do_unrar,      ['rar','unrar'] ],
+-  ['arj',  \&do_unarj,      ['arj','unarj'] ],
++# ['rar',  \&do_unrar,      ['rar','unrar'] ],
++  ['rar',  \&do_7zip,       '7z'],
++# ['arj',  \&do_unarj,      ['arj','unarj'] ],
++  ['arj',  \&do_7zip,       '7z'],
+   ['arc',  \&do_arc,        ['nomarch','arc'] ],
+   ['zoo',  \&do_zoo,        ['zoo','unzoo'] ],
+   ['lha',  \&do_lha,         'lha'],
