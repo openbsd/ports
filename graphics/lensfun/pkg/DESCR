@@ -1,0 +1,4 @@
+lensfun is a library and database of photographic lenses to adjust
+images for lens characteristics, e.g. distortion, transversal (also
+known as lateral) chromatic aberrations, vignetting and colour
+contribution of the lens.

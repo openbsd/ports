@@ -1,0 +1,28 @@
+$OpenBSD: patch-build_mak_compiler_gcc_mak,v 1.1.1.1 2009/11/16 11:54:40 sthen Exp $
+--- build/mak/compiler/gcc.mak.orig	Sun May 11 16:50:15 2008
++++ build/mak/compiler/gcc.mak	Mon Nov  9 17:32:52 2009
+@@ -3,13 +3,13 @@
+ .SUFFIXES: .c .cpp .o .a .pc .pc.in
+ 
+ GCC.CC ?= gcc -c
+-GCC.CFLAGS = -pipe -Wall \
++GCC.CFLAGS = -Wall \
+     $(GCC.CFLAGS.$(MODE)) $(GCC.CFLAGS.DEF) $(GCC.CFLAGS.INC) $(CFLAGS)
+ GCC.CFLAGS.DEF =
+ GCC.CFLAGS.INC = $(if $(DIR.INCLUDE.CXX),-I$(subst ;, -I,$(DIR.INCLUDE.CXX)))
+ GCC.CFLAGS.SHARED ?= -fPIC
+ 
+-GCC.CFLAGS.release = -s -O3 -fomit-frame-pointer -funroll-loops
++GCC.CFLAGS.release =
+ GCC.CFLAGS.debug = -D__DEBUG__ -g
+ 
+ GCC.CXX ?= g++ -c
+@@ -73,7 +73,7 @@ endef
+ LINK.GCC.AR = $(GCC.AR) $(GCC.ARFLAGS) $@ $^
+ LINK.GCC.EXEC = $(GCC.LD) -o $@ $(GCC.LDFLAGS) $(LDFLAGS) $1 $^ $(GCC.LDFLAGS.LIBS) $(LDFLAGS.LIBS) $2
+ define LINK.GCC.SO
+-	$(GCC.LD) -o $@.$(SHARED.$3) -Wl,"-soname=$(notdir $@).$(basename $(basename $(SHARED.$3)))" $(GCC.LDFLAGS.SHARED) $(GCC.LDFLAGS) $(LDFLAGS) $1 $^ $(GCC.LDFLAGS.LIBS) $(LDFLAGS.LIBS) $2
++	$(GCC.LD) -o $@.$(SHARED.$3) -Wl,"-soname=$(notdir $@).$(SHARED.$3)" $(GCC.LDFLAGS.SHARED) $(GCC.LDFLAGS) $(LDFLAGS) $1 $^ $(GCC.LDFLAGS.LIBS) $(LDFLAGS.LIBS) $2
+ 	ln -fs $(notdir $@.$(SHARED.$3)) $@.$(basename $(basename $(SHARED.$3)))
+ 	ln -fs $(notdir $@.$(basename $(basename $(SHARED.$3)))) $@
+ endef

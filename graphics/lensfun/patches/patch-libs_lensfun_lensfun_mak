@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_lensfun_lensfun_mak,v 1.1.1.1 2009/11/16 11:54:40 sthen Exp $
+--- libs/lensfun/lensfun.mak.orig	Mon Nov  9 16:41:35 2009
++++ libs/lensfun/lensfun.mak	Mon Nov  9 16:41:46 2009
+@@ -3,7 +3,7 @@ DESCRIPTION.lensfun = Photographic lens database libra
+ DIR.INCLUDE.CXX += ;include/lensfun
+ TARGETS.lensfun = lensfun$L
+ SRC.lensfun$L := $(wildcard libs/lensfun/*.cpp)
+-SHARED.lensfun$L = $(if $(SHAREDLIBS),$(CONF_VERSION))
++SHARED.lensfun$L = $(LIBlensfun_VERSION)
+ SYSLIBS.lensfun = GLIB_20
+ INSTALL.TARGETS += lensfun
+ INSTALL.HEADERS.lensfun$L = include/lensfun/lensfun.h

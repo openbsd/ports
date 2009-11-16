@@ -1,0 +1,18 @@
+$OpenBSD: patch-build_mak_host_posix_mak,v 1.1.1.1 2009/11/16 11:54:40 sthen Exp $
+--- build/mak/host/posix.mak.orig	Mon Nov  9 15:41:17 2009
++++ build/mak/host/posix.mak	Mon Nov  9 15:43:26 2009
+@@ -5,12 +5,12 @@ SHELL := /bin/sh
+ # $1 - file, $2 - target dir, $3 - mode
+ define SINGLE.INSTALL
+ 	if [ ! -d $2 ]; then install -m 0755 -d $2; fi
+-	if [ -L $1 ]; then cp -d $1 $2$(notdir $1); else install -m $3 $1 $2$(notdir $1); fi
++	if [ -L $1 ]; then cp -RP $1 $2$(notdir $1); else install -m $3 $1 $2$(notdir $1); fi
+ endef
+ 
+ # $1 - directory, $2 - target dir, $3 - mode for files
+ define SINGLE.INSTALLDIR
+ 	if [ ! -d $2 ]; then install -m 0755 -d $2; fi
+-	cp -drP $1* $2
++	cp -RP $1* $2
+ 	find $2 -type f -print0 | xargs -0 chmod $3
+ endef

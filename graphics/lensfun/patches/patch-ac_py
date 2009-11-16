@@ -1,0 +1,12 @@
+$OpenBSD: patch-ac_py,v 1.1.1.1 2009/11/16 11:54:40 sthen Exp $
+--- ac.py.orig	Mon Nov  9 15:31:59 2009
++++ ac.py	Mon Nov  9 15:32:31 2009
+@@ -37,7 +37,7 @@ PROJ = "Unknown"
+ # Version number (major.minor.release)
+ VERSION = "0.0.0"
+ 
+-PREFIX = "/usr/local"
++PREFIX = "${TRUEPREFIX}"
+ BINDIR = None
+ DATADIR = None
+ SYSCONFDIR = None
