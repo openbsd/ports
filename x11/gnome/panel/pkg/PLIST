@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2009/10/11 21:26:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2009/11/16 11:50:34 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
@@ -302,8 +302,6 @@ share/gtk-doc/html/panel-applet/server-files.html
 share/gtk-doc/html/panel-applet/session-saving.html
 share/gtk-doc/html/panel-applet/style.css
 share/gtk-doc/html/panel-applet/up.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gnome-panel-clock.png
 share/icons/hicolor/16x16/apps/gnome-panel-drawer.png
 share/icons/hicolor/16x16/apps/gnome-panel-fish.png
@@ -315,8 +313,6 @@ share/icons/hicolor/16x16/apps/gnome-panel-window-list.png
 share/icons/hicolor/16x16/apps/gnome-panel-window-menu.png
 share/icons/hicolor/16x16/apps/gnome-panel-workspace-switcher.png
 share/icons/hicolor/16x16/apps/gnome-panel.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gnome-panel-clock.png
 share/icons/hicolor/22x22/apps/gnome-panel-drawer.png
 share/icons/hicolor/22x22/apps/gnome-panel-fish.png
@@ -328,8 +324,6 @@ share/icons/hicolor/22x22/apps/gnome-panel-window-list.png
 share/icons/hicolor/22x22/apps/gnome-panel-window-menu.png
 share/icons/hicolor/22x22/apps/gnome-panel-workspace-switcher.png
 share/icons/hicolor/22x22/apps/gnome-panel.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gnome-panel-clock.png
 share/icons/hicolor/24x24/apps/gnome-panel-drawer.png
 share/icons/hicolor/24x24/apps/gnome-panel-fish.png
@@ -341,8 +335,6 @@ share/icons/hicolor/24x24/apps/gnome-panel-window-list.png
 share/icons/hicolor/24x24/apps/gnome-panel-window-menu.png
 share/icons/hicolor/24x24/apps/gnome-panel-workspace-switcher.png
 share/icons/hicolor/24x24/apps/gnome-panel.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gnome-panel-clock.png
 share/icons/hicolor/32x32/apps/gnome-panel-drawer.png
 share/icons/hicolor/32x32/apps/gnome-panel-fish.png
@@ -354,11 +346,7 @@ share/icons/hicolor/32x32/apps/gnome-panel-window-list.png
 share/icons/hicolor/32x32/apps/gnome-panel-window-menu.png
 share/icons/hicolor/32x32/apps/gnome-panel-workspace-switcher.png
 share/icons/hicolor/32x32/apps/gnome-panel.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gnome-panel.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gnome-panel-clock.svg
 share/icons/hicolor/scalable/apps/gnome-panel-drawer.svg
 share/icons/hicolor/scalable/apps/gnome-panel-fish.svg
