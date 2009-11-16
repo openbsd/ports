@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.752 2009/11/04 13:36:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.753 2009/11/16 14:16:16 stephan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -481,6 +481,7 @@
      SUBDIR += p5-Moose
      SUBDIR += p5-MooseX-Clone
      SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
+     SUBDIR += p5-MooseX-Log-Log4perl
      SUBDIR += p5-MooseX-MethodAttributes
      SUBDIR += p5-MooseX-Params-Validate
      SUBDIR += p5-MooseX-Role-Parameterized
