@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.131 2009/11/13 10:59:05 sthen Exp $
+$OpenBSD: user.list,v 1.132 2009/11/16 10:40:35 giovanni Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -155,3 +155,4 @@ id  user		group		port options
 644 _munin		_munin		net/munin
 645 _munin-plugin	_munin-plugin	net/munin
 646 _rabbitmq		_rabbitmq	net/rabbitmq
+647 _sqlgrey		_sqlgrey	net/sqlgrey
