@@ -1,9 +1,0 @@
-The gnome-keyring SSH agent is disabled by default. If needed, there are
-two ways to enable it.
-
-System-wide:
-  sudo gconftool-2 --direct --config-source=`gconftool-2 --get-default-source` \
-  	--type bool --set /apps/gnome-keyring/daemon-components/ssh true
-
-Per user:
-  gconftool-2 --set --type bool /apps/gnome-keyring/daemon-components/ssh true
