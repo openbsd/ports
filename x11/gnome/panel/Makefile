@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2009/11/16 11:50:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2009/11/16 15:21:25 ajacoutot Exp $
 
 COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	2.28.0
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 
 SHARED_LIBS=	panel-applet-2       3.0      # .2.28
 
@@ -14,7 +14,7 @@ CATEGORIES=	x11
 # previous behaviour, bypassing gnome-session. Only if GDM is running,
 # shutdown/restart is allowed.
 MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
-PATCHFILES=	gnome-panel-2.28.0.logout.patch:0
+PATCHFILES=	gnome-panel-2.28.0-1.logout.patch:0
 PATCH_DIST_STRIP= -p1
 
 # GPLv2/LGPLv2/GFDLv1.1
