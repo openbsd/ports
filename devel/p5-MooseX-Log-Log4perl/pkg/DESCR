@@ -1,0 +1,3 @@
+A logging role building a very lightweight wrapper to Log::Log4perl for
+use with your Moose classes. For compatibility the logger attribute can
+be accessed to use a common interface for application logging.
