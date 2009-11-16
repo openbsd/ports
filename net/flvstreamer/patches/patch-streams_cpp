@@ -1,0 +1,22 @@
+$OpenBSD: patch-streams_cpp,v 1.1 2009/11/16 12:05:21 sthen Exp $
+--- streams.cpp.orig	Sat Nov 14 11:55:14 2009
++++ streams.cpp	Sat Nov 14 19:27:17 2009
+@@ -22,6 +22,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#include <pthread.h>
+ 
+ #include <signal.h> // to catch Ctrl-C
+ #include <getopt.h>
+@@ -40,6 +41,10 @@
+ int debuglevel = 1;
+ 
+ using namespace RTMP_LIB;
++
++#ifndef MSG_NOSIGNAL
++#define MSG_NOSIGNAL		0
++#endif
+ 
+ #define FLVSTREAMER_STREAMS_VERSION	"v1.4"
+ 
