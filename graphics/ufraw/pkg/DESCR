@@ -1,11 +1,10 @@
-Raw photo loader plugin for The GIMP by Udi Fuchs,
+UFRaw is a utility to read and manipulate raw images from digital
+cameras. It can be used by itself or as a GIMP plug-in.
 
-UFRaw is a utility to read and manipulate raw images from digital cameras.
-It can be used by itself or as a GIMP plug-in.
-It reads raw images using Dave Coffin's raw conversion utility DCRaw.
-And it supports basic color management using Little CMS, allowing
-the user to apply color profiles.
- 
-Ufraw was originally based on the GIMP plug-in by Dave Coffin
-http://www.cybercom.net/~dcoffin/
-and on Pawel T. Jochym's (jochym at ifj edu pl) plug-in.
+It reads raw images using an internal copy of Dave Coffin's raw
+conversion utility DCRaw and supports basic color management using
+Little CMS, allowing the user to apply color profiles.
+
+The optional lensfun flavor allows use of the lensfun library to
+correct for distortion, transversal chromatic aberrations, vignetting
+and colour contribution of the lens.
