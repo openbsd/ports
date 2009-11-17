@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2009/11/17 19:30:01 naddy Exp $
 
 COMMENT=	gtk+ clone of the lines ball logic game
 
 DISTNAME=	gtkballs-3.1.5
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}dist/ \
 		${MASTER_SITE_SUNSITE:=games/strategy/}

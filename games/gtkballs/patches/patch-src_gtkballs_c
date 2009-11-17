@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gtkballs_c,v 1.1 2009/11/17 19:30:01 naddy Exp $
+--- src/gtkballs.c.orig	Mon Nov 16 23:00:14 2009
++++ src/gtkballs.c	Mon Nov 16 23:00:22 2009
+@@ -123,7 +123,7 @@ int main(int argc, char **argv) {
+ #ifdef ENABLE_NLS
+   	bindtextdomain (PACKAGE, LOCALEDIR);
+   	textdomain (PACKAGE);
+-        bind_textdomain_codeset(PACKAGE, "UTF8");
++        bind_textdomain_codeset(PACKAGE, "UTF-8");
+ #endif /* ENABLE_NLS */
+ 
+         /* drop privileges after spawning child with extra privs */

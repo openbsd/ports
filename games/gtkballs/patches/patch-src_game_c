@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_game_c,v 1.1 2006/02/05 02:08:53 pvalchev Exp $
---- src/game.c.orig	Sat Feb  4 17:14:39 2006
-+++ src/game.c	Sat Feb  4 17:14:46 2006
-@@ -495,8 +495,8 @@ gint game_destroy_lines(gboolean count_s
+$OpenBSD: patch-src_game_c,v 1.2 2009/11/17 19:30:01 naddy Exp $
+--- src/game.c.orig	Wed Oct  6 13:06:46 2004
++++ src/game.c	Mon Nov 16 22:57:02 2009
+@@ -495,8 +495,8 @@ gint game_destroy_lines(gboolean count_score) {
                          lock_actions(1);
                          draw_board();
  	                for(animtime = 0, i = 0; i < animcadres;) {
