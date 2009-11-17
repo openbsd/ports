@@ -1,6 +1,6 @@
-$OpenBSD: patch-node_node_d_openbsd_if__in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+$OpenBSD: patch-node_node_d_openbsd_if__in,v 1.2 2009/11/17 11:47:06 sthen Exp $
 --- node/node.d.openbsd/if_.in.orig	Thu Feb 21 13:24:36 2008
-+++ node/node.d.openbsd/if_.in	Mon Nov 16 16:26:42 2009
++++ node/node.d.openbsd/if_.in	Tue Nov 17 11:41:17 2009
 @@ -33,7 +33,7 @@ fi
  
  if [ "$1" = "suggest" ]; then
@@ -10,16 +10,26 @@ $OpenBSD: patch-node_node_d_openbsd_if__in,v 1.1.1.1 2009/11/17 11:11:21 sthen E
  		exit 0
  	else
  		exit 1
-@@ -47,7 +47,7 @@ if [ "$1" = "config" ]; then
+@@ -47,13 +47,15 @@ if [ "$1" = "config" ]; then
  	echo 'graph_args --base 1000'
  	echo 'graph_vlabel bits per ${graph_period} in (-) / out (+)'
  	echo 'graph_category network'
 -	echo "graph_info This graph shows the traffic of the $INTERFACE network interface. Please note that the traffic is shown in bits per second, not bytes. IMPORTANT: Since the data source for this plugin use 32bit counters, this plugin is really unreliable and unsuitable for most 100Mb (or faster) interfaces, where bursts are expected to exceed 50Mbps. This means that this plugin is usuitable for most production environments."
 +	echo "graph_info This graph shows the traffic of the $INTERFACE network interface. Please note that the traffic is shown in bits per second, not bytes."
  	echo 'rbytes.label received'
-         echo 'rbytes.type COUNTER'
+-        echo 'rbytes.type COUNTER'
++        echo 'rbytes.type DERIVE'
++        echo 'rbytes.min 0'
          echo 'rbytes.graph no'
-@@ -63,11 +63,11 @@ fi
+         echo 'rbytes.cdef rbytes,8,*'
+         echo 'obytes.label bps'
+-	echo 'obytes.type COUNTER'
++        echo 'obytes.type DERIVE'
++        echo 'obytes.min 0'
+ 	echo 'obytes.negative rbytes'
+ 	echo 'obytes.cdef obytes,8,*'
+ 	echo "obytes.info Traffic sent (+) and received (-) on the $INTERFACE network interface."
+@@ -63,11 +65,11 @@ fi
  if [ "$INTERFACE" = "aggregated" ]; then
  	/usr/bin/netstat -i -b -n | grep -v '^lo' | awk '
  BEGIN { rsum = 0; osum = 0; }
@@ -35,7 +45,7 @@ $OpenBSD: patch-node_node_d_openbsd_if__in,v 1.1.1.1 2009/11/17 11:11:21 sthen E
  	}
  }
  END {
-@@ -77,13 +77,13 @@ END {
+@@ -77,13 +79,13 @@ END {
    
  else
  	/usr/bin/netstat -i -b -n -I $INTERFACE | awk '
