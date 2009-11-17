@@ -1,4 +1,7 @@
-# $OpenBSD: openbsd-packages,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+# $OpenBSD: openbsd-packages,v 1.2 2009/11/17 11:16:12 sthen Exp $
+#
+# Defaults to make Munin plugins work by default with various packages 
+# can be added here (setting uid, etc).
 
 [postfix_mailqueue]
 user _postfix
