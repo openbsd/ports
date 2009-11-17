@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2008/01/04 17:48:34 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2009/11/17 22:27:37 jasper Exp $
 # $FreeBSD: ports/devel/ffcall/Makefile,v 1.2 2001/08/31 14:20:18 sobomax Exp $
 # Original From:                jagapen@home.com
 
-.if ${MACHINE_ARCH:Mm68k}
-BROKEN=		mmap configure test causes system hang
-.endif
+# mmap configure test causes system hang
+NOT_FOR_ARCHS=	m68k
 
 COMMENT=	foreign function call libraries
 
