@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2009/11/12 16:35:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2009/11/17 19:15:05 jasper Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -12,7 +12,7 @@ SHARED_LIBS=	gimp-2.0	267.0	\
 		gimpthumb-2.0	267.0	\
 		gimpui-2.0	267.0	\
 		gimpwidgets-2.0	267.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	graphics
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>

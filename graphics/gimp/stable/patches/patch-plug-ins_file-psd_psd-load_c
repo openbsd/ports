@@ -1,0 +1,74 @@
+$OpenBSD: patch-plug-ins_file-psd_psd-load_c,v 1.1 2009/11/17 19:15:05 jasper Exp $
+
+Security fix for CVE-2009-3909
+Gimp PSD Image Parsing Integer Overflow Vulnerability
+
+From upstream git:
+- 9cc8d78ff33b7a36852b74e64b427489cad44d0e
+- 0e440cb6d4d6ee029667363d244aff61b154c33c
+
+--- plug-ins/file-psd/psd-load.c.orig	Tue Nov 17 19:15:20 2009
++++ plug-ins/file-psd/psd-load.c	Tue Nov 17 19:15:48 2009
+@@ -542,10 +542,10 @@ read_layer_block (PSDimage  *img_a,
+                   psd_set_error (feof (f), errno, error);
+                   return NULL;
+                 }
+-              lyr_a[lidx]->top = GUINT32_FROM_BE (lyr_a[lidx]->top);
+-              lyr_a[lidx]->left = GUINT32_FROM_BE (lyr_a[lidx]->left);
+-              lyr_a[lidx]->bottom = GUINT32_FROM_BE (lyr_a[lidx]->bottom);
+-              lyr_a[lidx]->right = GUINT32_FROM_BE (lyr_a[lidx]->right);
++              lyr_a[lidx]->top = GINT32_FROM_BE (lyr_a[lidx]->top);
++              lyr_a[lidx]->left = GINT32_FROM_BE (lyr_a[lidx]->left);
++              lyr_a[lidx]->bottom = GINT32_FROM_BE (lyr_a[lidx]->bottom);
++              lyr_a[lidx]->right = GINT32_FROM_BE (lyr_a[lidx]->right);
+               lyr_a[lidx]->num_channels = GUINT16_FROM_BE (lyr_a[lidx]->num_channels);
+ 
+               if (lyr_a[lidx]->num_channels > MAX_CHANNELS)
+@@ -691,13 +691,13 @@ read_layer_block (PSDimage  *img_a,
+                         return NULL;
+                       }
+                     lyr_a[lidx]->layer_mask.top =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask.top);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask.top);
+                     lyr_a[lidx]->layer_mask.left =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask.left);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask.left);
+                     lyr_a[lidx]->layer_mask.bottom =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask.bottom);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask.bottom);
+                     lyr_a[lidx]->layer_mask.right =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask.right);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask.right);
+                     lyr_a[lidx]->layer_mask.mask_flags.relative_pos =
+                       lyr_a[lidx]->layer_mask.flags & 1 ? TRUE : FALSE;
+                     lyr_a[lidx]->layer_mask.mask_flags.disabled =
+@@ -723,21 +723,21 @@ read_layer_block (PSDimage  *img_a,
+                         return NULL;
+                       }
+                     lyr_a[lidx]->layer_mask_extra.top =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask_extra.top);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask_extra.top);
+                     lyr_a[lidx]->layer_mask_extra.left =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask_extra.left);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask_extra.left);
+                     lyr_a[lidx]->layer_mask_extra.bottom =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask_extra.bottom);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask_extra.bottom);
+                     lyr_a[lidx]->layer_mask_extra.right =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask_extra.right);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask_extra.right);
+                     lyr_a[lidx]->layer_mask.top =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask.top);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask.top);
+                     lyr_a[lidx]->layer_mask.left =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask.left);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask.left);
+                     lyr_a[lidx]->layer_mask.bottom =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask.bottom);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask.bottom);
+                     lyr_a[lidx]->layer_mask.right =
+-                      GUINT32_FROM_BE (lyr_a[lidx]->layer_mask.right);
++                      GINT32_FROM_BE (lyr_a[lidx]->layer_mask.right);
+                     lyr_a[lidx]->layer_mask.mask_flags.relative_pos =
+                       lyr_a[lidx]->layer_mask.flags & 1 ? TRUE : FALSE;
+                     lyr_a[lidx]->layer_mask.mask_flags.disabled =
