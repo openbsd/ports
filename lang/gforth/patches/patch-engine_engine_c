@@ -1,0 +1,14 @@
+$OpenBSD: patch-engine_engine_c,v 1.1 2009/11/17 01:04:43 kurt Exp $
+--- engine/engine.c.orig	Fri Nov 13 17:29:14 2009
++++ engine/engine.c	Fri Nov 13 17:29:33 2009
+@@ -304,8 +304,8 @@ Label *engine(Xt *ip0, Cell *sp0, Cell *rp0, Float *fp
+     Cell code_offset = offset_image? CODE_OFFSET : 0;
+     Cell xt_offset = offset_image? XT_OFFSET : 0;
+ 
+-    symbols = (Label *)(malloc(MAX_SYMBOLS*sizeof(Cell)+CODE_OFFSET)+code_offset);
+-    xts = (Label *)(malloc(MAX_SYMBOLS*sizeof(Cell)+XT_OFFSET)+xt_offset);
++    symbols = (Label *)(calloc(1, MAX_SYMBOLS*sizeof(Cell)+CODE_OFFSET)+code_offset);
++    xts = (Label *)(calloc(1, MAX_SYMBOLS*sizeof(Cell)+XT_OFFSET)+xt_offset);
+     for (i=0; i<DOESJUMP+1; i++)
+       xts[i] = symbols[i] = (Label)routines[i];
+     for (; routines[i]!=0; i++) {
