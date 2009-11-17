@@ -1,0 +1,9 @@
+$OpenBSD: patch-node_node_d_ntp_offset_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d/ntp_offset.in.orig	Wed Nov 11 22:37:39 2009
++++ node/node.d/ntp_offset.in	Wed Nov 11 22:38:52 2009
+@@ -1,4 +1,4 @@
+-#!@@GOODSH@@ -w
++#!@@GOODSH@@
+ # -*- sh -*-
+ #
+ # Plugin to monitor NTP time offset.

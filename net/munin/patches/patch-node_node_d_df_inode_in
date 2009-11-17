@@ -1,0 +1,12 @@
+$OpenBSD: patch-node_node_d_df_inode_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d/df_inode.in.orig	Wed Nov 11 22:36:32 2009
++++ node/node.d/df_inode.in	Wed Nov 11 22:37:25 2009
+@@ -28,7 +28,7 @@ fs() {
+ }
+ 
+ print_values() {
+-	df -P -l -i | sed 1d | grep -v "//" | while read i; do
++	df -l -i | sed 1d | grep -v "//" | while read i; do
+ 		if [ "`fs $i`" = "reiserfs" ] ; then continue ; fi
+ 		name=`echo $i | sed 's/[\/.]/_/g'| awk '{ print $1 ".value " }'`
+ 		printf "$name "

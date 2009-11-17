@@ -1,0 +1,12 @@
+$OpenBSD: patch-node_node_d_postfix_mailstats_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d/postfix_mailstats.in.orig	Mon Nov 16 17:20:15 2009
++++ node/node.d/postfix_mailstats.in	Mon Nov 16 17:20:22 2009
+@@ -25,7 +25,7 @@ my $pos   = undef;
+ my $delivered = 0;
+ my $rejects = {};
+ my $LOGDIR  = $ENV{'logdir'}  || '/var/log';
+-my $LOGFILE = $ENV{'logfile'} || 'mail.log';
++my $LOGFILE = $ENV{'logfile'} || 'maillog';
+ 
+ 
+ if ( $ARGV[0] and $ARGV[0] eq "autoconf" )

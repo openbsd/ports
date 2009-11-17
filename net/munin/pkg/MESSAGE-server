@@ -1,0 +1,5 @@
+After configuring at least one munin-node instance and adapting
+${SYSCONFDIR}/munin/munin.conf as desired, you may run the periodic
+tasks from cron with the following line:
+
+*/5     *       *       *       *       sudo -u _munin /usr/local/bin/munin-cron

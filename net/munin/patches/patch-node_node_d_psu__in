@@ -1,0 +1,12 @@
+$OpenBSD: patch-node_node_d_psu__in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d/psu_.in.orig	Mon Nov 16 20:03:16 2009
++++ node/node.d/psu_.in	Mon Nov 16 20:03:26 2009
+@@ -36,7 +36,7 @@
+ #
+ # Magic markers (optional):
+ #%# family=manual
+-#%# capabilities=autoconf suggest
++#%# capabilities=autoconf
+ 
+ 
+ 

@@ -1,0 +1,11 @@
+Install p5-Net-SNMP to use the optional SNMP-based monitors.
+
+To have munin-node start at boot time, you have to create symlinks
+in ${SYSCONFDIR}/munin/plugins as described in the manual (manually
+or with munin-node-configure), adapt ${SYSCONFDIR}/munin/munin-node.conf
+as necessary, and insert the following into /etc/rc.local.
+
+if [ -x ${PREFIX}/sbin/munin-node ]; then
+        install -d -o _munin /var/run/munin
+        echo -n ' munin-node';   ${PREFIX}/sbin/munin-node
+fi

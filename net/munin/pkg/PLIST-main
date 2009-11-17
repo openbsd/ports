@@ -1,0 +1,135 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/11/17 11:11:20 sthen Exp $
+@newgroup _munin:644
+@newgroup _munin-plugin:645
+@newuser _munin:644:_munin:daemon:munin user:/nonexistent:/sbin/nologin
+@newuser _munin-plugin:645:_munin-plugin::munin-plugin user:/nonexistent:/sbin/nologin
+@mode 775
+@owner _munin-plugin
+@group _munin
+@sample /var/db/munin-pluginstate/
+@sample /var/log/munin/
+@sample /var/run/munin/
+@mode
+@owner
+@group
+bin/munindoc
+libdata/perl5/site_perl/Munin/
+libdata/perl5/site_perl/Munin/Plugin/
+libdata/perl5/site_perl/Munin/Plugin.pm
+libexec/munin/plugins/
+@comment libexec/munin/plugins/acpi
+libexec/munin/plugins/apache_accesses
+libexec/munin/plugins/apache_processes
+libexec/munin/plugins/apache_volume
+libexec/munin/plugins/apc_envunit_
+libexec/munin/plugins/apc_nis
+libexec/munin/plugins/bgpd
+libexec/munin/plugins/bind9
+libexec/munin/plugins/bind9_rndc
+libexec/munin/plugins/courier_mta_mailqueue
+libexec/munin/plugins/courier_mta_mailstats
+libexec/munin/plugins/courier_mta_mailvolume
+libexec/munin/plugins/cpu
+libexec/munin/plugins/cupsys_pages
+libexec/munin/plugins/df
+libexec/munin/plugins/df_inode
+libexec/munin/plugins/dhcpd3
+libexec/munin/plugins/exim_mailqueue
+libexec/munin/plugins/exim_mailqueue_alt
+libexec/munin/plugins/exim_mailstats
+libexec/munin/plugins/foldingathome
+libexec/munin/plugins/foldingathome_rank
+libexec/munin/plugins/foldingathome_wu
+@comment libexec/munin/plugins/hddtemp
+@comment libexec/munin/plugins/hddtemp2
+libexec/munin/plugins/hddtemp_smartctl
+libexec/munin/plugins/hddtempd
+libexec/munin/plugins/if_
+libexec/munin/plugins/if_errcoll_
+libexec/munin/plugins/if_pps_
+@comment libexec/munin/plugins/ipac-ng
+libexec/munin/plugins/ircu
+libexec/munin/plugins/load
+libexec/munin/plugins/loggrep
+libexec/munin/plugins/mailman
+@comment libexec/munin/plugins/mbmon_
+libexec/munin/plugins/mhttping
+libexec/munin/plugins/multips
+libexec/munin/plugins/munin_graph
+libexec/munin/plugins/munin_update
+libexec/munin/plugins/mysql_bytes
+libexec/munin/plugins/mysql_isam_space_
+libexec/munin/plugins/mysql_queries
+libexec/munin/plugins/mysql_slowqueries
+libexec/munin/plugins/mysql_threads
+libexec/munin/plugins/named
+libexec/munin/plugins/netstat
+libexec/munin/plugins/ntp_
+libexec/munin/plugins/ntp_offset
+libexec/munin/plugins/ntp_states
+libexec/munin/plugins/nut_misc
+libexec/munin/plugins/nut_volts
+libexec/munin/plugins/open_files
+libexec/munin/plugins/ping_
+libexec/munin/plugins/plugin.sh
+libexec/munin/plugins/plugins.history
+libexec/munin/plugins/pm3users_
+libexec/munin/plugins/pop_stats
+libexec/munin/plugins/postfix_mailqueue
+libexec/munin/plugins/postfix_mailstats
+libexec/munin/plugins/postfix_mailvolume
+libexec/munin/plugins/processes
+libexec/munin/plugins/ps_
+libexec/munin/plugins/psu_
+libexec/munin/plugins/samba
+libexec/munin/plugins/sendmail_mailqueue
+libexec/munin/plugins/sendmail_mailstats
+libexec/munin/plugins/sendmail_mailtraffic
+libexec/munin/plugins/sensors_
+libexec/munin/plugins/smart_
+libexec/munin/plugins/snmp__df
+libexec/munin/plugins/snmp__fc_if_
+libexec/munin/plugins/snmp__fc_if_err_
+libexec/munin/plugins/snmp__if_
+libexec/munin/plugins/snmp__if_err_
+libexec/munin/plugins/snmp__load
+libexec/munin/plugins/snmp__processes
+libexec/munin/plugins/snmp__sensors_fsc_bx_fan
+libexec/munin/plugins/snmp__sensors_fsc_bx_temp
+libexec/munin/plugins/snmp__sensors_fsc_fan
+libexec/munin/plugins/snmp__sensors_fsc_temp
+libexec/munin/plugins/snmp__sensors_mbm_fan
+libexec/munin/plugins/snmp__sensors_mbm_temp
+libexec/munin/plugins/snmp__sensors_mbm_volt
+libexec/munin/plugins/snmp__users
+libexec/munin/plugins/spamstats
+libexec/munin/plugins/squid_cache
+libexec/munin/plugins/squid_icp
+libexec/munin/plugins/squid_requests
+libexec/munin/plugins/squid_traffic
+libexec/munin/plugins/surfboard
+libexec/munin/plugins/swap
+libexec/munin/plugins/sybase_space
+libexec/munin/plugins/vmstat
+@man man/man5/munin-node.conf.5
+@man man/man8/munin-node-configure-snmp.8
+@man man/man8/munin-node-configure.8
+@man man/man8/munin-node.8
+@man man/man8/munin-run.8
+@man man/man8/munin-update.8
+sbin/munin-node
+sbin/munin-node-configure
+sbin/munin-node-configure-snmp
+sbin/munin-run
+@sample ${SYSCONFDIR}/munin/
+share/examples/munin/munin-node.conf
+@sample ${SYSCONFDIR}/munin/munin-node.conf
+share/examples/munin/plugin-conf.d/
+@sample ${SYSCONFDIR}/munin/plugin-conf.d/
+share/examples/munin/plugin-conf.d/openbsd-packages
+@sample ${SYSCONFDIR}/munin/plugin-conf.d/openbsd-packages
+share/examples/munin/plugins/
+@sample ${SYSCONFDIR}/munin/plugins/
+@extraunexec rm -rf ${SYSCONFDIR}/munin/plugins/
+@extraunexec rm -rf ${SYSCONFDIR}/munin/plugin-conf.d/
+@extraunexec rm -rf /var/log/munin

@@ -1,0 +1,21 @@
+$OpenBSD: patch-node_node_d_openbsd_df_inode_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d.openbsd/df_inode.in.orig	Sat Jan 26 21:52:41 2008
++++ node/node.d.openbsd/df_inode.in	Mon Nov 16 18:32:14 2009
+@@ -19,7 +19,7 @@ MAXLABEL=20
+ 
+ print_values() {
+ 	mfs=0
+-	/bin/df -P -i -t noprocfs,devfs,fdescfs,linprocfs,nfs | tail +2 | grep -v "//" | while read i; do
++	/bin/df -i -t noprocfs,devfs,fdescfs,linprocfs,nfs | tail +2 | grep -v "//" | while read i; do
+ 		case $i in
+ 		mfs:*) name=mfs$mfs; mfs=`expr $mfs + 1`;;
+ 		*) name=`echo $i | awk '{ gsub("[^a-zA-Z0-9_]", "_", $1); print $1 }'` ;;
+@@ -46,7 +46,7 @@ if [ "$1" = "config" ]; then
+ 	echo 'graph_category disk'
+ 	echo 'graph_scale no'
+ 	echo 'graph_info This graph shows the inode usage for the partitions of types that use inodes.'
+-	/bin/df -P -i -t noprocfs,devfs,fdescfs,linprocfs,nfs | tail +2 | grep -v "//" | awk "
++	/bin/df -i -t noprocfs,devfs,fdescfs,linprocfs,nfs | tail +2 | grep -v "//" | awk "
+ 		BEGIN {
+ 			mfs = 0
+ 		}

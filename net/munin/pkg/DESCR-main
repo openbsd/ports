@@ -1,0 +1,15 @@
+Munin the monitoring tool surveys all your computers and
+remembers what it saw. It presents all the information in graphs
+through a web interface. Its emphasis is on plug and play
+capabilities. After completing an installation a high number
+of monitoring plugins will be playing with no more effort.
+
+Using Munin you can easily monitor the performance of your
+computers, networks, SANs, applications, weather measurements
+and whatever comes to mind. It makes it easy to determine
+"what's different today" when a performance problem crops up. It
+makes it easy to see how you're doing capacity-wise on any
+resources.
+
+This package, munin-node, contains the files to install on
+machines that you would like to monitor.

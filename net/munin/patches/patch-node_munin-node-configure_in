@@ -1,0 +1,24 @@
+$OpenBSD: patch-node_munin-node-configure_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/munin-node-configure.in.orig	Mon Jan 14 18:31:09 2008
++++ node/munin-node-configure.in	Mon Nov 16 18:26:11 2009
+@@ -25,6 +25,10 @@ use strict;
+ use Getopt::Long;
+ # use Data::Dumper;
+ 
++# plugins run in taint mode because the uid is changed, so the path
++# must not contain writable directories.
++$ENV{PATH}='/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}/sbin';
++
+ my $version    = "@@VERSION@@";
+ my $config     = "@@CONFDIR@@/munin-node.conf";
+ my $servicedir = "@@CONFDIR@@/plugins";
+@@ -605,7 +609,8 @@ sub get_plugins {
+ 		  join (' ', @{$ps->{$plug}->{'suggest'}}),"\n"
+ 		    if $debug;
+ 
+-		push(@errors,"ERROR: empty suggest from $plug");
++		push(@errors,"ERROR: empty suggest from $plug")
++		    if ! @{$ps->{$plug}->{'suggest'}};
+ 	    }
+ 	}
+ 	print "\n" if $debug;

@@ -1,0 +1,31 @@
+$OpenBSD: patch-node_node_d_openbsd_netstat_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d.openbsd/netstat.in.orig	Thu Nov  2 14:15:57 2006
++++ node/node.d.openbsd/netstat.in	Tue Nov 17 00:22:14 2009
+@@ -45,7 +45,7 @@
+ 
+ 
+ if [ "$1" = "autoconf" ]; then
+-	if ( /bin/netstat -s 2>/dev/null >/dev/null ); then
++	if ( /usr/bin/netstat -s 2>/dev/null >/dev/null ); then
+ 		echo yes
+ 		exit 0
+ 	else
+@@ -83,11 +83,6 @@ if [ "$1" = "config" ]; then
+ 	echo 'failed.min 0'
+ 	echo 'failed.max 50000'
+ 	echo 'failed.info The number of failed TCP connection attempts per second.'
+-	echo 'resets.label resets'
+-	echo 'resets.type DERIVE'
+-	echo 'resets.min 0'
+-	echo 'resets.max 50000'
+-	echo 'resets.info The number of TCP connection resets.'
+ 	echo 'established.label established'
+ 	echo 'established.type DERIVE'
+ 	echo 'established.min 0'
+@@ -96,5 +91,5 @@ if [ "$1" = "config" ]; then
+ 	exit 0
+ fi
+ 
+-/bin/netstat -s | awk '/connection requests/ { print "active.value " $1 } /connection accepts/ { print "passive.value " $1 } /bad connection/ { print "failed.value " $1 } /reset/ { print "resets.value " $1 } /connections established/ { print "established.value " $1 }'
++/usr/bin/netstat -s | awk '/connection requests/ { print "active.value " $1 } /connection accepts/ { print "passive.value " $1 } /bad connection/ { print "failed.value " $1 } /connections established/ { print "established.value " $1 }'
+ 

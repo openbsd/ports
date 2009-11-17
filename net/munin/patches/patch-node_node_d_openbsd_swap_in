@@ -1,0 +1,29 @@
+$OpenBSD: patch-node_node_d_openbsd_swap_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d.openbsd/swap.in.orig	Tue Mar 29 21:32:59 2005
++++ node/node.d.openbsd/swap.in	Mon Nov 16 16:26:30 2009
+@@ -48,8 +48,8 @@
+ 
+ 
+ if [ "$1" = "autoconf" ]; then
+-    if [ -x /sbin/sysctl ]; then
+-        /sbin/sysctl vm.stats.vm.v_swappgsin > /dev/null
++    if [ -x /usr/bin/vmstat ]; then
++        /usr/bin/vmstat > /dev/null
+     	if [ $? = "0" ]; then
+ 	    	echo yes
+     		exit 0
+@@ -83,8 +83,10 @@ if [ "$1" = "config" ]; then
+ 	exit 0
+ fi
+ 
++/usr/bin/vmstat | /usr/bin/awk 'END { print "swap_in.value " $8 "\nswap_out.value " $9 }' 
++
+ #awk '/swap/ { print "swap_in.value " $2 "\nswap_out.value " $3 }' < /proc/stat 
+-echo -n 'swap_in.value '
+-/sbin/sysctl -n vm.stats.vm.v_swappgsin
+-echo -n 'swap_out.value '
+-/sbin/sysctl -n vm.stats.vm.v_swappgsout
++#echo -n 'swap_in.value '
++#/sbin/sysctl -n vm.stats.vm.v_swappgsin
++#echo -n 'swap_out.value '
++#/sbin/sysctl -n vm.stats.vm.v_swappgsout

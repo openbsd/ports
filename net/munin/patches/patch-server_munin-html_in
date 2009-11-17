@@ -1,0 +1,12 @@
+$OpenBSD: patch-server_munin-html_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- server/munin-html.in.orig	Wed Nov 11 22:56:07 2009
++++ server/munin-html.in	Wed Nov 11 22:56:15 2009
+@@ -89,7 +89,7 @@ if ($> == 0 and !$force_root)
+ {
+     print "You are running this program as root, which is neither smart nor necessary.
+ If you really want to run it as root, use the --force-root option. Else, run
+-it as the user \"munin\". Aborting.\n\n";
++it as the user \"@@USER@@\". Aborting.\n\n";
+     exit (1);
+ }
+ 

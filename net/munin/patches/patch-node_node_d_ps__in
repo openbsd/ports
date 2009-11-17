@@ -1,0 +1,12 @@
+$OpenBSD: patch-node_node_d_ps__in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d/ps_.in.orig	Sun Jan 20 18:42:28 2008
++++ node/node.d/ps_.in	Mon Nov 16 18:15:11 2009
+@@ -19,7 +19,7 @@
+ #
+ # Magic markers (optional):
+ #%# family=auto
+-#%# capabilities=autoconf suggest
++#%# capabilities=autoconf
+ 
+ . $MUNIN_LIBDIR/plugins/plugin.sh
+ 

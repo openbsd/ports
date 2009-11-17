@@ -1,0 +1,12 @@
+$OpenBSD: patch-node_node_d_postfix_mailvolume_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d/postfix_mailvolume.in.orig	Mon Nov 16 16:33:32 2009
++++ node/node.d/postfix_mailvolume.in	Mon Nov 16 16:34:02 2009
+@@ -53,7 +53,7 @@ use Munin::Plugin;
+ my $pos   = undef;
+ my $volume = 0;
+ my $LOGDIR  = $ENV{'logdir'}  || '/var/log';
+-my $LOGFILE = $ENV{'logfile'} || 'syslog';
++my $LOGFILE = $ENV{'logfile'} || 'maillog';
+ 
+ sub parseLogfile {
+     my ($fname, $start) = @_;

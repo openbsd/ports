@@ -1,0 +1,12 @@
+$OpenBSD: patch-node_node_d_sendmail_mailqueue_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d/sendmail_mailqueue.in.orig	Mon Nov 16 17:23:39 2009
++++ node/node.d/sendmail_mailqueue.in	Mon Nov 16 17:23:58 2009
+@@ -33,7 +33,7 @@
+ #%# family=auto
+ #%# capabilities=autoconf
+ 
+-MSP_QUEUE=/var/spool/mqueue-client
++MSP_QUEUE=/var/spool/clientmqueue
+ MTA_QUEUE=/var/spool/mqueue
+ if [ "$mspqueue"  ]; then MSP_QUEUE=$mspqueue ; fi
+ if [ "$mtaqueue"  ]; then MTA_QUEUE=$mspqueue ; fi

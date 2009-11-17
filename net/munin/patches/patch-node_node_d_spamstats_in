@@ -1,0 +1,12 @@
+$OpenBSD: patch-node_node_d_spamstats_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d/spamstats.in.orig	Mon Nov 16 17:25:38 2009
++++ node/node.d/spamstats.in	Mon Nov 16 17:25:55 2009
+@@ -30,7 +30,7 @@ $ham = 0;
+ $spam = 0;
+ 
+ $logfile = $ENV{logdir} || "/var/log/";
+-$logfile .= $ENV{logfile} || "syslog";
++$logfile .= $ENV{logfile} || "maillog";
+ 
+ if (-f "$logfile.0")
+ {

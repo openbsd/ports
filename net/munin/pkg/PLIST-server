@@ -1,0 +1,61 @@
+@comment $OpenBSD: PLIST-server,v 1.1.1.1 2009/11/17 11:11:20 sthen Exp $
+@owner _munin
+@sample /var/db/munin/
+@sample /var/www/htdocs/munin/
+@owner
+bin/munin-cron
+libdata/perl5/site_perl/Munin.pm
+libexec/munin/
+libexec/munin/VeraMono.ttf
+libexec/munin/munin-graph
+libexec/munin/munin-html
+libexec/munin/munin-limits
+libexec/munin/munin-update
+@man man/man5/munin.conf.5
+@man man/man8/munin-cron.8
+@man man/man8/munin-graph.8
+@man man/man8/munin-html.8
+@man man/man8/munin-limits.8
+share/doc/munin/
+share/doc/munin/COPYING
+share/doc/munin/README-apache-cgi
+share/doc/munin/README.api
+share/doc/munin/README.plugins
+share/doc/munin/munin-doc.html
+share/doc/munin/munin-doc.pdf
+share/doc/munin/munin-doc.txt
+share/doc/munin/munin-faq.html
+share/doc/munin/munin-faq.pdf
+share/doc/munin/munin-faq.txt
+share/examples/munin/
+share/examples/munin/munin.conf
+@sample ${SYSCONFDIR}/munin/munin.conf
+share/examples/munin/templates/
+@sample ${SYSCONFDIR}/munin/templates/
+share/examples/munin/templates/definitions.html
+@sample ${SYSCONFDIR}/munin/templates/definitions.html
+share/examples/munin/templates/logo.png
+@sample ${SYSCONFDIR}/munin/templates/logo.png
+share/examples/munin/templates/munin-comparison-day.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-comparison-day.tmpl
+share/examples/munin/templates/munin-comparison-month.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-comparison-month.tmpl
+share/examples/munin/templates/munin-comparison-week.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-comparison-week.tmpl
+share/examples/munin/templates/munin-comparison-year.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-comparison-year.tmpl
+share/examples/munin/templates/munin-domainview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-domainview.tmpl
+share/examples/munin/templates/munin-nodeview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-nodeview.tmpl
+share/examples/munin/templates/munin-overview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-overview.tmpl
+share/examples/munin/templates/munin-serviceview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-serviceview.tmpl
+share/examples/munin/templates/style.css
+@sample ${SYSCONFDIR}/munin/templates/style.css
+share/examples/munin/www/
+share/examples/munin/www/munin-cgi-graph
+@sample /var/www/cgi-bin/munin-cgi-graph
+@extraunexec rm -rf /var/www/htdocs/munin
+@extraunexec rm -rf /var/db/munin

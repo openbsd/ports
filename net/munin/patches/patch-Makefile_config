@@ -1,0 +1,90 @@
+$OpenBSD: patch-Makefile_config,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- Makefile.config.orig	Sun Jan 20 19:32:46 2008
++++ Makefile.config	Mon Nov 16 18:38:07 2009
+@@ -7,10 +7,10 @@
+ #
+ # the base of the Munin installation.
+ # 
+-PREFIX     = $(DESTDIR)/opt/munin
++#PREFIX     = $(DESTDIR)/opt/munin
+ 
+ # Where Munin keeps its configurations (server.conf, client.conf, ++)
+-CONFDIR    = $(DESTDIR)/etc/opt/munin
++#CONFDIR    = $(DESTDIR)/etc/opt/munin
+ 
+ # Server only - where to put munin-cron
+ BINDIR     = $(PREFIX)/bin
+@@ -18,6 +18,9 @@ BINDIR     = $(PREFIX)/bin
+ # Client only - where to put munin-node, munin-node-configure, and munin-run
+ SBINDIR    = $(PREFIX)/sbin
+ 
++# Where to put templates and other shared files
++SHAREDIR   = $(PREFIX)/share/munin
++
+ # Where to put text and html documentation
+ DOCDIR     = $(PREFIX)/doc
+ 
+@@ -25,18 +28,18 @@ DOCDIR     = $(PREFIX)/doc
+ MANDIR     = $(PREFIX)/man
+ 
+ # Where to put internal binaries and plugin repository
+-LIBDIR     = $(PREFIX)/lib
++LIBDIR     = $(PREFIX)/libexec/munin
+ 
+ # Server only - Output directory
+-HTMLDIR    = $(PREFIX)/var/www
+-CGIDIR     = $(HTMLDIR)/cgi
++HTMLDIR    = $(DESTDIR)/var/www/htdocs/munin
++CGIDIR     = $(DESTDIR)/var/www/cgi-bin
+ 
+ # Client only - Where to put RRD files and other intenal data
+-DBDIR      = $(DESTDIR)/var/opt/munin
++DBDIR      = $(DESTDIR)/var/db/munin
+ 
+ # Client only - Where plugins should put their states. Must be writable by
+ # group "munin", and should be preserved between reboots
+-PLUGSTATE  = $(DBDIR)/plugin-state
++PLUGSTATE  = $(DESTDIR)/var/db/munin-pluginstate
+ 
+ # Where Munin should place its logs.
+ LOGDIR     = $(DESTDIR)/var/log/munin
+@@ -49,7 +52,7 @@ STATEDIR   = $(DESTDIR)/var/run/munin
+ PERL       = $(shell which perl)
+ 
+ # The python interpreter to use (used by some plugins)
+-PYTHON     = /usr/bin/env python
++#PYTHON     = /usr/bin/env python
+ 
+ # A modern (posix) shell.  We're not looking for arrays, but $() and
+ # other modern stuff is expected.  On a posix-system the expression
+@@ -72,7 +75,7 @@ OSTYPE     = $(shell uname | tr '[A-Z]' '[a-z]')
+ 
+ # How to figure out the hostname. (Only used in default configuration
+ # files)
+-HOSTNAME   = $(shell hostname)
++HOSTNAME   = localhost
+ 
+ # What is the safest way to create a tempfile.
+ # Default is to figure it out by testing various methods.
+@@ -83,16 +86,16 @@ MKTEMP     = $(shell ./test-mktemp)
+ VERSION    = $(shell cat RELEASE)
+ 
+ # User to run munin as
+-USER       = munin
+-GROUP      = munin
++USER       = _munin
++GROUP      = _munin
+ 
+ # Default user to run the plugins as
+-PLUGINUSER = nobody
++PLUGINUSER = _munin-plugin
+ 
+ # Which command to use to check if the USER and GROUP to run Munin as, exists.
+ GETENT = $(shell which getent || which true 2>/dev/null)
+-CHECKUSER  = $(shell $(GETENT) passwd $(USER) >/dev/null 2>/dev/null || (echo "echo User $(USER) nonexistant. Create the user and retry; exit 2"))
+-CHECKGROUP = $(shell $(GETENT) group $(GROUP) >/dev/null 2>/dev/null || (echo "echo Group $(GROUP) nonexistant. Create the group and retry; exit 2"))
++CHECKUSER = 
++CHECKGROUP = 
+ 
+ # For OSX, comment out the previous two lines and comment in these 
+ #CHECKUSER  = $(shell nicl . -read /users/$(USER) >/dev/null 2>/dev/null || (echo "echo User $(USER) nonexistant. Create the user and retry; exit 2")) 

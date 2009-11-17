@@ -1,0 +1,14 @@
+$OpenBSD: patch-node_node_d_named_in,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- node/node.d/named.in.orig	Mon Nov 16 17:14:15 2009
++++ node/node.d/named.in	Mon Nov 16 17:15:32 2009
+@@ -61,8 +61,8 @@
+ if [ -n "$logfile" ]; then
+     SYSLOGFILE=$logfile
+ else
+-    if [ -f /var/adm/messages ]; then
+-        SYSLOGFILE=/var/adm/messages
++    if [ -f /var/log/daemon ]; then
++        SYSLOGFILE=/var/log/daemon
+     else
+         SYSLOGFILE=/var/log/daemon.log
+     fi

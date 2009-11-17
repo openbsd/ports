@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+--- Makefile.orig	Sat May 24 23:27:56 2008
++++ Makefile	Wed Nov 11 22:01:54 2009
+@@ -25,10 +25,10 @@ install-main: build
+ 	mkdir -p $(LOGDIR)
+ 	mkdir -p $(STATEDIR)
+ 	mkdir -p $(HTMLDIR)
+-	mkdir -p $(DBDIR)
++	#mkdir -p $(DBDIR)
+ 	mkdir -p $(CGIDIR)
+ 
+-	$(CHOWN) $(USER) $(LOGDIR) $(STATEDIR) $(RUNDIR) $(HTMLDIR) $(DBDIR)
++	#$(CHOWN) $(USER) $(LOGDIR) $(STATEDIR) $(RUNDIR) $(HTMLDIR) $(DBDIR)
+ 
+ 	for p in build/server/*.tmpl; do    		              \
+ 		$(INSTALL) -m 0644 "$$p" $(CONFDIR)/templates/ ; \
+@@ -72,7 +72,7 @@ install-node-non-snmp: build
+ 	mkdir -p $(STATEDIR)
+ 	mkdir -p $(PLUGSTATE)
+ 
+-	$(CHOWN) $(PLUGINUSER):$(GROUP) $(PLUGSTATE)
++	#$(CHOWN) $(PLUGINUSER):$(GROUP) $(PLUGSTATE)
+ 	$(CHMOD) 775 $(PLUGSTATE)
+ 	$(CHMOD) 755 $(CONFDIR)/plugin-conf.d
+ 
