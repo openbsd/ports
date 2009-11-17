@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/15 11:57:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/11/17 23:57:31 ajacoutot Exp $
 @conflict nautilus-sendto-pidgin-*
 @pkgpath x11/gnome/nautilus-sendto,-main
 @bin bin/nautilus-sendto
+include/nautilus-sendto/
+include/nautilus-sendto/nautilus-sendto-plugin.h
 lib/nautilus/
 lib/nautilus-sendto/
 lib/nautilus-sendto/plugins/
+@comment lib/nautilus-sendto/plugins/libnstevolution.a
+@comment lib/nautilus-sendto/plugins/libnstevolution.la
+lib/nautilus-sendto/plugins/libnstevolution.so
 @comment lib/nautilus-sendto/plugins/libnstgajim.a
 @comment lib/nautilus-sendto/plugins/libnstgajim.la
 lib/nautilus-sendto/plugins/libnstgajim.so
@@ -18,11 +23,21 @@ lib/nautilus/extensions-2.0/
 @comment lib/nautilus/extensions-2.0/libnautilus-sendto.a
 @comment lib/nautilus/extensions-2.0/libnautilus-sendto.la
 lib/nautilus/extensions-2.0/libnautilus-sendto.so
-lib/pidgin/
-@comment lib/pidgin/nautilus.a
-@comment lib/pidgin/nautilus.la
-lib/pidgin/nautilus.so
+lib/pkgconfig/nautilus-sendto.pc
 @man man/man1/nautilus-sendto.1
+share/gtk-doc/html/nautilus-sendto/
+share/gtk-doc/html/nautilus-sendto/api-index-full.html
+share/gtk-doc/html/nautilus-sendto/ch01.html
+share/gtk-doc/html/nautilus-sendto/home.png
+share/gtk-doc/html/nautilus-sendto/index.html
+share/gtk-doc/html/nautilus-sendto/index.sgml
+share/gtk-doc/html/nautilus-sendto/left.png
+share/gtk-doc/html/nautilus-sendto/nautilus-sendto-nautilus-sendto-plugin.html
+share/gtk-doc/html/nautilus-sendto/nautilus-sendto.devhelp
+share/gtk-doc/html/nautilus-sendto/nautilus-sendto.devhelp2
+share/gtk-doc/html/nautilus-sendto/right.png
+share/gtk-doc/html/nautilus-sendto/style.css
+share/gtk-doc/html/nautilus-sendto/up.png
 share/locale/ar/LC_MESSAGES/nautilus-sendto.mo
 share/locale/as/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ast/LC_MESSAGES/nautilus-sendto.mo
