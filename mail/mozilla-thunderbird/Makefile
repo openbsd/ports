@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2009/08/21 16:40:42 martynas Exp $
+# $OpenBSD: Makefile,v 1.86 2009/11/17 23:08:12 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,8 +7,8 @@ COMMENT=	redesign of Mozilla's mail component
 
 VER=		2.0.0.23
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}
-SO_VERSION=	13.0
+PKGNAME=	mozilla-thunderbird-${VER}p0
+SO_VERSION=	14.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
 # bumped and/or SO_VERSION changes, remember to update enigmail's
