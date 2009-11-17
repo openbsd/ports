@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/17 04:27:27 kevlo Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/OAuth/
+${P5SITE}/Net/OAuth.pm
+${P5SITE}/Net/OAuth/AccessTokenRequest.pm
+${P5SITE}/Net/OAuth/AccessTokenResponse.pm
+${P5SITE}/Net/OAuth/ConsumerRequest.pm
+${P5SITE}/Net/OAuth/Message.pm
+${P5SITE}/Net/OAuth/ProtectedResourceRequest.pm
+${P5SITE}/Net/OAuth/Request.pm
+${P5SITE}/Net/OAuth/RequestTokenRequest.pm
+${P5SITE}/Net/OAuth/RequestTokenResponse.pm
+${P5SITE}/Net/OAuth/Response.pm
+${P5SITE}/Net/OAuth/SignatureMethod/
+${P5SITE}/Net/OAuth/SignatureMethod/HMAC_SHA1.pm
+${P5SITE}/Net/OAuth/SignatureMethod/PLAINTEXT.pm
+${P5SITE}/Net/OAuth/SignatureMethod/RSA_SHA1.pm
+${P5SITE}/Net/OAuth/UserAuthRequest.pm
+${P5SITE}/Net/OAuth/UserAuthResponse.pm
+${P5SITE}/Net/OAuth/V1_0A/
+${P5SITE}/Net/OAuth/V1_0A/AccessTokenRequest.pm
+${P5SITE}/Net/OAuth/V1_0A/RequestTokenRequest.pm
+${P5SITE}/Net/OAuth/V1_0A/RequestTokenResponse.pm
+${P5SITE}/Net/OAuth/V1_0A/UserAuthResponse.pm
+@man man/man3p/Net::OAuth.3p
+@man man/man3p/Net::OAuth::AccessTokenRequest.3p
+@man man/man3p/Net::OAuth::AccessTokenResponse.3p
+@man man/man3p/Net::OAuth::ConsumerRequest.3p
+@man man/man3p/Net::OAuth::Message.3p
+@man man/man3p/Net::OAuth::ProtectedResourceRequest.3p
+@man man/man3p/Net::OAuth::Request.3p
+@man man/man3p/Net::OAuth::RequestTokenRequest.3p
+@man man/man3p/Net::OAuth::RequestTokenResponse.3p
+@man man/man3p/Net::OAuth::Response.3p
+@man man/man3p/Net::OAuth::SignatureMethod::HMAC_SHA1.3p
+@man man/man3p/Net::OAuth::SignatureMethod::PLAINTEXT.3p
+@man man/man3p/Net::OAuth::SignatureMethod::RSA_SHA1.3p
+@man man/man3p/Net::OAuth::UserAuthRequest.3p
+@man man/man3p/Net::OAuth::UserAuthResponse.3p
+@man man/man3p/Net::OAuth::V1_0A::AccessTokenRequest.3p
+@man man/man3p/Net::OAuth::V1_0A::RequestTokenRequest.3p
+@man man/man3p/Net::OAuth::V1_0A::RequestTokenResponse.3p
+@man man/man3p/Net::OAuth::V1_0A::UserAuthResponse.3p
