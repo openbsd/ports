@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/17 11:11:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/17 11:20:47 sthen Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 MULTI_PACKAGES=		-main -server
 
