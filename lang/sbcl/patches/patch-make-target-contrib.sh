@@ -1,7 +1,12 @@
-$OpenBSD: patch-make-target-contrib.sh,v 1.1.1.1 2008/04/14 12:29:40 deanna Exp $
---- make-target-contrib.sh.orig	Mon Oct  8 04:02:52 2007
-+++ make-target-contrib.sh	Thu Apr 10 14:13:34 2008
-@@ -42,6 +42,7 @@ export SBCL SBCL_BUILDING_CONTRIB
+$OpenBSD: patch-make-target-contrib.sh,v 1.2 2009/11/17 10:45:00 pirofti Exp $
+
+Only run the contrib tests if $RUN_CONTRIB_TESTS is not empty.  This
+allows the contribs to be build when USE_SYSTRACE=Yes, and the tests
+to be run later in do-regress.
+
+--- make-target-contrib.sh.orig	Mon Feb 16 13:36:13 2009
++++ make-target-contrib.sh	Tue Jul  7 17:57:02 2009
+@@ -43,6 +43,7 @@ export SBCL SBCL_BUILDING_CONTRIB
  # as SB-RT and SB-GROVEL, but FIXME: there's probably a better
  # solution.  -- CSR, 2003-05-30
  
@@ -9,7 +14,7 @@ $OpenBSD: patch-make-target-contrib.sh,v 1.1.1.1 2008/04/14 12:29:40 deanna Exp 
  find contrib/ \( -name '*.fasl' -o \
                   -name '*.FASL' -o \
                   -name 'foo.c' -o \
-@@ -55,13 +56,17 @@ find contrib/ \( -name '*.fasl' -o \
+@@ -56,13 +57,17 @@ find contrib/ \( -name '*.fasl' -o \
    -print | xargs rm -f
  
  find output -name 'building-contrib.*' -print | xargs rm -f

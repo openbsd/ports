@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_compiler_ir1util_lisp,v 1.1 2009/11/17 10:45:00 pirofti Exp $
+
+Clisp 2.43 chokes on this declaration.
+
+--- src/compiler/ir1util.lisp.orig	Wed Jun 17 13:03:36 2009
++++ src/compiler/ir1util.lisp	Mon Jun 29 08:22:24 2009
+@@ -429,7 +429,7 @@
+     (lvar-dynamic-extent it)))
+ 
+ (defun flushable-combination-p (call)
+-  (declare (combination call))
++  (declare (type combination call))
+   (let ((kind (combination-kind call))
+         (info (combination-fun-info call)))
+     (when (and (eq kind :known) (fun-info-p info))

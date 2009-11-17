@@ -1,0 +1,75 @@
+$OpenBSD: patch-src_runtime_save_c,v 1.1 2009/11/17 10:45:00 pirofti Exp $
+
+Fall back to saved_runtime_path if os_get_runtime_executable_path(0)
+returns NULL.
+
+Search for the current build_id when loading the runtime from disk to
+save an executable core.  This provided some protection against
+accidentally embedding a core in the wrong runtime, which may be more
+likely when using saved_runtime_path.
+
+--- src/runtime/save.c.orig	Sat Jan 17 02:43:57 2009
++++ src/runtime/save.c	Mon Jun 29 07:53:42 2009
+@@ -376,6 +376,25 @@ save_to_filehandle(FILE *file, char *filename, lispobj
+     exit(0);
+ }
+ 
++/* Check if the build_id for the current runtime is present in a
++ * buffer. */
++int
++check_runtime_build_id(void *buf, size_t size)
++{
++    size_t idlen;
++    char *pos;
++
++    idlen = strlen(build_id) - 1;
++    while ((pos = memchr(buf, build_id[0], size)) != NULL) {
++        size -= (pos + 1) - (char *)buf;
++        buf = (pos + 1);
++        if (idlen <= size && memcmp(buf, build_id + 1, idlen) == 0)
++            return 1;
++    }
++
++    return 0;
++}
++
+ /* Slurp the executable portion of the runtime into a malloced buffer
+  * and return it.  Places the size in bytes of the runtime into
+  * 'size_out'.  Returns NULL if the runtime cannot be loaded from
+@@ -407,6 +426,12 @@ load_runtime(char *runtime_path, size_t *size_out)
+         goto lose;
+     }
+ 
++    if (!check_runtime_build_id(buf, size)) {
++        fprintf(stderr, "Failed to locate current build_id in runtime: %s\n",
++            runtime_path);
++        goto lose;
++    }
++
+     fclose(input);
+     *size_out = size;
+     return buf;
+@@ -453,15 +478,19 @@ prepare_to_save(char *filename, boolean prepend_runtim
+     char *runtime_path;
+ 
+     if (prepend_runtime) {
+-        runtime_path = os_get_runtime_executable_path();
++        runtime_path = os_get_runtime_executable_path(0);
+ 
+-        if (runtime_path == NULL) {
++        if (runtime_path == NULL && saved_runtime_path == NULL) {
+             fprintf(stderr, "Unable to get default runtime path.\n");
+             return NULL;
+         }
+ 
+-        *runtime_bytes = load_runtime(runtime_path, runtime_size);
+-        free(runtime_path);
++        if (runtime_path == NULL)
++            *runtime_bytes = load_runtime(saved_runtime_path, runtime_size);
++        else {
++            *runtime_bytes = load_runtime(runtime_path, runtime_size);
++            free(runtime_path);
++        }
+ 
+         if (*runtime_bytes == NULL)
+             return 0;

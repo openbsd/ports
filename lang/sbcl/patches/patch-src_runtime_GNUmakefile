@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_runtime_GNUmakefile,v 1.1.1.1 2008/04/14 12:29:40 deanna Exp $
+$OpenBSD: patch-src_runtime_GNUmakefile,v 1.2 2009/11/17 10:45:00 pirofti Exp $
 --- src/runtime/GNUmakefile.orig	Wed Feb 20 09:55:26 2008
 +++ src/runtime/GNUmakefile	Thu Apr 10 14:13:34 2008
 @@ -23,7 +23,7 @@ NM = nm -gp
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_runtime_GNUmakefile,v 1.1.1.1 2008/04/14 12:29:40 deanna Exp
  GREP = grep
  
 -CFLAGS = -g -Wall -Wsign-compare -O3
-+CFLAGS += -Wsign-compare
++CFLAGS += -Wall -Wsign-compare
  ASFLAGS = $(CFLAGS)
  CPPFLAGS = -I.
  

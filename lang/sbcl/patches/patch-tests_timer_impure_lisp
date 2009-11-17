@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests_timer_impure_lisp,v 1.1 2009/11/17 10:45:00 pirofti Exp $
+
+The timer scheduler seems to only run one timer per SIGALRM and
+OpenBSD only delivers ~50 SIGALRMs per second, so it takes ~5 secs to
+trigger 200 timers.
+
+--- tests/timer.impure.lisp.orig	Mon Apr  6 01:54:27 2009
++++ tests/timer.impure.lisp	Thu Jun  4 07:31:02 2009
+@@ -159,7 +159,7 @@
+   (let ((time (1+ (get-universal-time))))
+     (loop repeat 200 do
+           (schedule-timer (make-timer (lambda ())) time :absolute-p t))
+-    (sleep 2)
++    (sleep 6)
+     (assert (zerop (length (sb-impl::%pqueue-contents sb-impl::*schedule*))))))
+ 
+ (with-test (:name (:with-timeout :timeout))

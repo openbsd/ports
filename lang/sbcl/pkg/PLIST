@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/14 12:29:40 deanna Exp $
-bin/sbcl
+@comment $OpenBSD: PLIST,v 1.2 2009/11/17 10:45:00 pirofti Exp $
+%%i386%%
+@bin bin/sbcl
 @info info/asdf.info
 @info info/sbcl.info
 lib/sbcl/
@@ -83,7 +84,14 @@ lib/sbcl/sb-grovel/foreign-glue.lisp
 lib/sbcl/sb-grovel/sb-grovel.asd
 lib/sbcl/sb-grovel/sb-grovel.fasl
 lib/sbcl/sb-introspect/
+lib/sbcl/sb-introspect/introspect.fasl
+lib/sbcl/sb-introspect/introspect.lisp
+lib/sbcl/sb-introspect/sb-introspect.asd
 lib/sbcl/sb-introspect/sb-introspect.fasl
+lib/sbcl/sb-introspect/test-driver.lisp
+lib/sbcl/sb-introspect/test.lisp
+lib/sbcl/sb-introspect/xref-test-data.lisp
+lib/sbcl/sb-introspect/xref-test.lisp
 lib/sbcl/sb-md5/
 lib/sbcl/sb-md5/md5-tests.lisp
 lib/sbcl/sb-md5/md5.fasl
@@ -104,6 +112,8 @@ lib/sbcl/sb-posix/macros.lisp
 lib/sbcl/sb-posix/posix-tests.lisp
 lib/sbcl/sb-posix/sb-posix.asd
 lib/sbcl/sb-posix/sb-posix.fasl
+lib/sbcl/sb-queue/
+lib/sbcl/sb-queue/sb-queue.fasl
 lib/sbcl/sb-rotate-byte/
 lib/sbcl/sb-rotate-byte/compiler.fasl
 lib/sbcl/sb-rotate-byte/compiler.lisp
@@ -115,7 +125,6 @@ lib/sbcl/sb-rotate-byte/rotate-byte.fasl
 lib/sbcl/sb-rotate-byte/rotate-byte.lisp
 lib/sbcl/sb-rotate-byte/sb-rotate-byte.asd
 lib/sbcl/sb-rotate-byte/sb-rotate-byte.fasl
-lib/sbcl/sb-rotate-byte/x86-vm.fasl
 lib/sbcl/sb-rotate-byte/x86-vm.lisp
 lib/sbcl/sb-rt/
 lib/sbcl/sb-rt/rt.fasl
@@ -162,7 +171,6 @@ share/doc/sbcl/BUGS
 share/doc/sbcl/COPYING
 share/doc/sbcl/CREDITS
 share/doc/sbcl/NEWS
-share/doc/sbcl/SUPPORT
 share/doc/sbcl/asdf.pdf
 share/doc/sbcl/html/
 share/doc/sbcl/html/asdf/
@@ -192,8 +200,7 @@ share/doc/sbcl/html/asdf/missing-bits-in-implementation.html
 share/doc/sbcl/html/sbcl/
 share/doc/sbcl/html/sbcl/ANSI-Conformance.html
 share/doc/sbcl/html/sbcl/Accessing-Foreign-Values.html
-share/doc/sbcl/html/sbcl/Additional-Distributed-Documentation.html
-share/doc/sbcl/html/sbcl/Automatic-Recompilation-of-Stale-Fasls.html
+share/doc/sbcl/html/sbcl/Additional-Documentation-Files.html
 share/doc/sbcl/html/sbcl/Beyond-the-ANSI-Standard.html
 share/doc/sbcl/html/sbcl/Binary-stream-methods.html
 share/doc/sbcl/html/sbcl/Bivalent-Streams.html
@@ -214,6 +221,7 @@ share/doc/sbcl/html/sbcl/Class-sb_002dgray_003afundamental_002dcharacter_002dstr
 share/doc/sbcl/html/sbcl/Class-sb_002dgray_003afundamental_002dinput_002dstream.html
 share/doc/sbcl/html/sbcl/Class-sb_002dgray_003afundamental_002doutput_002dstream.html
 share/doc/sbcl/html/sbcl/Class-sb_002dgray_003afundamental_002dstream.html
+share/doc/sbcl/html/sbcl/Class-sb_002dposix_003aflock.html
 share/doc/sbcl/html/sbcl/Class-sb_002dposix_003apasswd.html
 share/doc/sbcl/html/sbcl/Class-sb_002dposix_003astat.html
 share/doc/sbcl/html/sbcl/Class-sb_002dposix_003atermios.html
@@ -222,6 +230,7 @@ share/doc/sbcl/html/sbcl/Coercing-Foreign-Values.html
 share/doc/sbcl/html/sbcl/Colophon.html
 share/doc/sbcl/html/sbcl/Command-Line-Options.html
 share/doc/sbcl/html/sbcl/Command_002dline-arguments.html
+share/doc/sbcl/html/sbcl/Commercial-Support.html
 share/doc/sbcl/html/sbcl/Common-Lisp-Books.html
 share/doc/sbcl/html/sbcl/Compiler-Errors.html
 share/doc/sbcl/html/sbcl/Compiler-Policy.html
@@ -235,6 +244,7 @@ share/doc/sbcl/html/sbcl/Condition-sb_002dext_003apackage_002dlocked_002derror.h
 share/doc/sbcl/html/sbcl/Condition-sb_002dext_003asymbol_002dpackage_002dlocked_002derror.html
 share/doc/sbcl/html/sbcl/Condition-sb_002dthread_003ainterrupt_002dthread_002derror.html
 share/doc/sbcl/html/sbcl/Condition-sb_002dthread_003ajoin_002dthread_002derror.html
+share/doc/sbcl/html/sbcl/Condition-sb_002dthread_003athread_002derror.html
 share/doc/sbcl/html/sbcl/Contributed-Modules.html
 share/doc/sbcl/html/sbcl/Controlling-Verbosity.html
 share/doc/sbcl/html/sbcl/Customization-Hooks-for-Users.html
@@ -265,6 +275,7 @@ share/doc/sbcl/html/sbcl/Exiting-Commands.html
 share/doc/sbcl/html/sbcl/Extensible-Streams.html
 share/doc/sbcl/html/sbcl/Extensions.html
 share/doc/sbcl/html/sbcl/External-Foreign-Variables.html
+share/doc/sbcl/html/sbcl/FASL-Format.html
 share/doc/sbcl/html/sbcl/File_002ddescriptors.html
 share/doc/sbcl/html/sbcl/Filenames.html
 share/doc/sbcl/html/sbcl/Foreign-Data-Structure-Examples.html
@@ -275,12 +286,14 @@ share/doc/sbcl/html/sbcl/Foreign-Type-Specifiers.html
 share/doc/sbcl/html/sbcl/Foreign-Types-and-Lisp-Types.html
 share/doc/sbcl/html/sbcl/Foreign-Types.html
 share/doc/sbcl/html/sbcl/Foreign-Variables.html
+share/doc/sbcl/html/sbcl/Foreign-threads.html
 share/doc/sbcl/html/sbcl/Function-Index.html
 share/doc/sbcl/html/sbcl/Function-Names.html
 share/doc/sbcl/html/sbcl/Function-Parameters.html
 share/doc/sbcl/html/sbcl/Function-Return-Values.html
 share/doc/sbcl/html/sbcl/Function-Tracing.html
 share/doc/sbcl/html/sbcl/Function-common_002dlisp_003aed.html
+share/doc/sbcl/html/sbcl/Function-common_002dlisp_003amake_002dhash_002dtable.html
 share/doc/sbcl/html/sbcl/Function-common_002dlisp_003arequire.html
 share/doc/sbcl/html/sbcl/Function-sb_002dalien_003aload_002dshared_002dobject.html
 share/doc/sbcl/html/sbcl/Function-sb_002dbsd_002dsockets_003aget_002dhost_002dby_002daddress.html
@@ -305,8 +318,11 @@ share/doc/sbcl/html/sbcl/Function-sb_002dcover_003arestore_002dcoverage_002dfrom
 share/doc/sbcl/html/sbcl/Function-sb_002dcover_003asave_002dcoverage.html
 share/doc/sbcl/html/sbcl/Function-sb_002dcover_003asave_002dcoverage_002din_002dfile.html
 share/doc/sbcl/html/sbcl/Function-sb_002dext_003aadd_002dimplementation_002dpackage.html
+share/doc/sbcl/html/sbcl/Function-sb_002dext_003aarray_002dstorage_002dvector.html
 share/doc/sbcl/html/sbcl/Function-sb_002dext_003acancel_002dfinalization.html
 share/doc/sbcl/html/sbcl/Function-sb_002dext_003afinalize.html
+share/doc/sbcl/html/sbcl/Function-sb_002dext_003ahash_002dtable_002dsynchronized_002dp.html
+share/doc/sbcl/html/sbcl/Function-sb_002dext_003ahash_002dtable_002dweakness.html
 share/doc/sbcl/html/sbcl/Function-sb_002dext_003alist_002dall_002dtimers.html
 share/doc/sbcl/html/sbcl/Function-sb_002dext_003alock_002dpackage.html
 share/doc/sbcl/html/sbcl/Function-sb_002dext_003amake_002dtimer.html
@@ -344,11 +360,21 @@ share/doc/sbcl/html/sbcl/Function-sb_002dmd5_003amd5sum_002dfile.html
 share/doc/sbcl/html/sbcl/Function-sb_002dmd5_003amd5sum_002dsequence.html
 share/doc/sbcl/html/sbcl/Function-sb_002dmd5_003amd5sum_002dstream.html
 share/doc/sbcl/html/sbcl/Function-sb_002dmd5_003amd5sum_002dstring.html
+share/doc/sbcl/html/sbcl/Function-sb_002dposix_003afile_002ddescriptor.html
+share/doc/sbcl/html/sbcl/Function-sb_002dposix_003afilename.html
 share/doc/sbcl/html/sbcl/Function-sb_002dposix_003agetcwd.html
 share/doc/sbcl/html/sbcl/Function-sb_002dposix_003areadlink.html
 share/doc/sbcl/html/sbcl/Function-sb_002dposix_003asyslog.html
 share/doc/sbcl/html/sbcl/Function-sb_002dprofile_003areport.html
 share/doc/sbcl/html/sbcl/Function-sb_002dprofile_003areset.html
+share/doc/sbcl/html/sbcl/Function-sb_002dqueue_003adequeue.html
+share/doc/sbcl/html/sbcl/Function-sb_002dqueue_003aenqueue.html
+share/doc/sbcl/html/sbcl/Function-sb_002dqueue_003alist_002dqueue_002dcontents.html
+share/doc/sbcl/html/sbcl/Function-sb_002dqueue_003amake_002dqueue.html
+share/doc/sbcl/html/sbcl/Function-sb_002dqueue_003aqueue_002dcount.html
+share/doc/sbcl/html/sbcl/Function-sb_002dqueue_003aqueue_002dempty_002dp.html
+share/doc/sbcl/html/sbcl/Function-sb_002dqueue_003aqueue_002dname.html
+share/doc/sbcl/html/sbcl/Function-sb_002dqueue_003aqueuep.html
 share/doc/sbcl/html/sbcl/Function-sb_002drotate_002dbyte_003arotate_002dbyte.html
 share/doc/sbcl/html/sbcl/Function-sb_002dsprof_003aprofile_002dcall_002dcounts.html
 share/doc/sbcl/html/sbcl/Function-sb_002dsprof_003areport.html
@@ -361,9 +387,7 @@ share/doc/sbcl/html/sbcl/Function-sb_002dthread_003acondition_002dnotify.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003acondition_002dwait.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003aget_002dmutex.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003ainterrupt_002dthread.html
-share/doc/sbcl/html/sbcl/Function-sb_002dthread_003ainterrupt_002dthread_002derror_002dthread.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003ajoin_002dthread.html
-share/doc/sbcl/html/sbcl/Function-sb_002dthread_003ajoin_002dthread_002derror_002dthread.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003alist_002dall_002dthreads.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003amake_002dmutex.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003amake_002dsemaphore.html
@@ -375,8 +399,11 @@ share/doc/sbcl/html/sbcl/Function-sb_002dthread_003arelease_002dmutex.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003asemaphore_002dcount.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003asemaphore_002dname.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003asignal_002dsemaphore.html
+share/doc/sbcl/html/sbcl/Function-sb_002dthread_003asymbol_002dvalue_002din_002dthread.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003aterminate_002dthread.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003athread_002dalive_002dp.html
+share/doc/sbcl/html/sbcl/Function-sb_002dthread_003athread_002derror_002dthread.html
+share/doc/sbcl/html/sbcl/Function-sb_002dthread_003athread_002dname.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003athread_002dyield.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003await_002don_002dsemaphore.html
 share/doc/sbcl/html/sbcl/Function-sb_002dthread_003awaitqueue_002dname.html
@@ -423,10 +450,13 @@ share/doc/sbcl/html/sbcl/Generic_002dFunction-sb_002dgray_003astream_002dwrite_0
 share/doc/sbcl/html/sbcl/Generic_002dFunction-sb_002dgray_003astream_002dwrite_002dsequence.html
 share/doc/sbcl/html/sbcl/Generic_002dFunction-sb_002dgray_003astream_002dwrite_002dstring.html
 share/doc/sbcl/html/sbcl/Getting-Existing-Programs-to-Run.html
+share/doc/sbcl/html/sbcl/Getting-Support-and-Reporting-Bugs.html
+share/doc/sbcl/html/sbcl/Global-and-Always_002dBound-variables.html
 share/doc/sbcl/html/sbcl/Gray-Streams-classes.html
 share/doc/sbcl/html/sbcl/Gray-Streams-examples.html
 share/doc/sbcl/html/sbcl/Gray-Streams.html
 share/doc/sbcl/html/sbcl/Handling-of-Types.html
+share/doc/sbcl/html/sbcl/Hash-Table-Extensions.html
 share/doc/sbcl/html/sbcl/History-and-Implementation-of-SBCL.html
 share/doc/sbcl/html/sbcl/How-Arguments-are-Printed.html
 share/doc/sbcl/html/sbcl/How-the-Source-is-Found.html
@@ -434,10 +464,8 @@ share/doc/sbcl/html/sbcl/INET-Domain-Sockets.html
 share/doc/sbcl/html/sbcl/Idiosyncrasies.html
 share/doc/sbcl/html/sbcl/Implementation-Limitations.html
 share/doc/sbcl/html/sbcl/Implementation-Packages.html
-share/doc/sbcl/html/sbcl/Implementation-_0028Linux-x86_0029.html
+share/doc/sbcl/html/sbcl/Implementation-_0028Linux-x86_002fx86_002d64_0029.html
 share/doc/sbcl/html/sbcl/Information-Commands.html
-share/doc/sbcl/html/sbcl/Initialization-Examples.html
-share/doc/sbcl/html/sbcl/Initialization-File-Semantics.html
 share/doc/sbcl/html/sbcl/Initialization-Files.html
 share/doc/sbcl/html/sbcl/Initialization-and-Exit-Hooks.html
 share/doc/sbcl/html/sbcl/Input-stream-methods.html
@@ -456,6 +484,9 @@ share/doc/sbcl/html/sbcl/Local-_0028Unix_0029-Domain-Sockets.html
 share/doc/sbcl/html/sbcl/Macro-common_002dlisp_003astep.html
 share/doc/sbcl/html/sbcl/Macro-common_002dlisp_003atrace.html
 share/doc/sbcl/html/sbcl/Macro-common_002dlisp_003auntrace.html
+share/doc/sbcl/html/sbcl/Macro-sb_002dext_003adefglobal.html
+share/doc/sbcl/html/sbcl/Macro-sb_002dext_003adefine_002dhash_002dtable_002dtest.html
+share/doc/sbcl/html/sbcl/Macro-sb_002dext_003awith_002dlocked_002dhash_002dtable.html
 share/doc/sbcl/html/sbcl/Macro-sb_002dext_003awith_002dunlocked_002dpackages.html
 share/doc/sbcl/html/sbcl/Macro-sb_002dext_003awithout_002dpackage_002dlocks.html
 share/doc/sbcl/html/sbcl/Macro-sb_002dprofile_003aprofile.html
@@ -465,7 +496,10 @@ share/doc/sbcl/html/sbcl/Macro-sb_002dsprof_003awith_002dsampling.html
 share/doc/sbcl/html/sbcl/Macro-sb_002dthread_003awith_002dmutex.html
 share/doc/sbcl/html/sbcl/Macro-sb_002dthread_003awith_002drecursive_002dlock.html
 share/doc/sbcl/html/sbcl/Metaobject-Protocol.html
+share/doc/sbcl/html/sbcl/Method-sb_002dbsd_002dsockets_003asocket_002dmake_002dstream-_0028_0028socket-socket_0029-_0026key-input-output-_0028element_002dtype-_0027character_0029-_0028buffering-full_0029-_0028external_002dformat-default_0029-timeout_0029.html
 share/doc/sbcl/html/sbcl/Methods-common-to-all-streams.html
+share/doc/sbcl/html/sbcl/Miscellaneous-Efficiency-Issues.html
+share/doc/sbcl/html/sbcl/Miscellaneous-Extensions.html
 share/doc/sbcl/html/sbcl/Modular-arithmetic.html
 share/doc/sbcl/html/sbcl/More-Common-Lisp-Information.html
 share/doc/sbcl/html/sbcl/More-SBCL-Information.html
@@ -492,6 +526,7 @@ share/doc/sbcl/html/sbcl/Profiling.html
 share/doc/sbcl/html/sbcl/Querying-the-process-environment.html
 share/doc/sbcl/html/sbcl/Quit.html
 share/doc/sbcl/html/sbcl/Read-Errors.html
+share/doc/sbcl/html/sbcl/Reporting-Bugs.html
 share/doc/sbcl/html/sbcl/Resolution-of-Name-Conflicts.html
 share/doc/sbcl/html/sbcl/Running-external-programs.html
 share/doc/sbcl/html/sbcl/Running-from-Emacs.html
@@ -504,6 +539,7 @@ share/doc/sbcl/html/sbcl/Sessions_002fDebugging.html
 share/doc/sbcl/html/sbcl/Shebang-Scripts.html
 share/doc/sbcl/html/sbcl/Simple-Streams.html
 share/doc/sbcl/html/sbcl/Single-Stepping.html
+share/doc/sbcl/html/sbcl/Slot-access.html
 share/doc/sbcl/html/sbcl/Socket-Options.html
 share/doc/sbcl/html/sbcl/Sockets-Overview.html
 share/doc/sbcl/html/sbcl/Source-Location-Availability.html
@@ -519,13 +555,13 @@ share/doc/sbcl/html/sbcl/Statistical-Profiler.html
 share/doc/sbcl/html/sbcl/Step_002dBy_002dStep-Example-of-the-Foreign-Function-Interface.html
 share/doc/sbcl/html/sbcl/Stopping-SBCL.html
 share/doc/sbcl/html/sbcl/Structure-sb_002dext_003atimer.html
+share/doc/sbcl/html/sbcl/Structure-sb_002dqueue_003aqueue.html
 share/doc/sbcl/html/sbcl/Structure-sb_002dthread_003amutex.html
 share/doc/sbcl/html/sbcl/Structure-sb_002dthread_003asemaphore.html
 share/doc/sbcl/html/sbcl/Structure-sb_002dthread_003athread.html
 share/doc/sbcl/html/sbcl/Structure-sb_002dthread_003awaitqueue.html
 share/doc/sbcl/html/sbcl/Style-Warnings.html
 share/doc/sbcl/html/sbcl/Support-For-Unix.html
-share/doc/sbcl/html/sbcl/System-Initialization-File.html
 share/doc/sbcl/html/sbcl/The-Original-and-Actual-Source.html
 share/doc/sbcl/html/sbcl/The-Parts-of-a-Compiler-Diagnostic.html
 share/doc/sbcl/html/sbcl/The-Processing-Path.html
@@ -539,12 +575,13 @@ share/doc/sbcl/html/sbcl/Tools-To-Help-Developers.html
 share/doc/sbcl/html/sbcl/Toplevel-Options.html
 share/doc/sbcl/html/sbcl/Type-Errors-at-Compile-Time.html
 share/doc/sbcl/html/sbcl/Type-Index.html
-share/doc/sbcl/html/sbcl/Type-conversion-functions.html
+share/doc/sbcl/html/sbcl/Type-sb_002dposix_003afile_002ddescriptor.html
+share/doc/sbcl/html/sbcl/Type-sb_002dposix_003afile_002ddescriptor_002ddesignator.html
+share/doc/sbcl/html/sbcl/Type-sb_002dposix_003afilename.html
+share/doc/sbcl/html/sbcl/Type-sb_002dposix_003afilename_002ddesignator.html
 share/doc/sbcl/html/sbcl/Types.html
 share/doc/sbcl/html/sbcl/Understanding-Compiler-Diagnostics.html
-share/doc/sbcl/html/sbcl/Unix_002dstyle-Command-Line-Protocol.html
 share/doc/sbcl/html/sbcl/Unknown-Locations-and-Interrupts.html
-share/doc/sbcl/html/sbcl/User-Initialization-File.html
 share/doc/sbcl/html/sbcl/Variable-Access.html
 share/doc/sbcl/html/sbcl/Variable-Index.html
 share/doc/sbcl/html/sbcl/Variable-Value-Availability.html
@@ -561,10 +598,13 @@ share/doc/sbcl/html/sbcl/Variable-sb_002dext_003a_002aexit_002dhooks_002a.html
 share/doc/sbcl/html/sbcl/Variable-sb_002dext_003a_002ainit_002dhooks_002a.html
 share/doc/sbcl/html/sbcl/Variable-sb_002dext_003a_002ainvoke_002ddebugger_002dhook_002a.html
 share/doc/sbcl/html/sbcl/Variable-sb_002dext_003a_002amodule_002dprovider_002dfunctions_002a.html
+share/doc/sbcl/html/sbcl/Variable-sb_002dext_003a_002amuffled_002dwarnings_002a.html
 share/doc/sbcl/html/sbcl/Variable-sb_002dext_003a_002asave_002dhooks_002a.html
+share/doc/sbcl/html/sbcl/Variable-sb_002dext_003a_002astack_002dallocate_002ddynamic_002dextent_002a.html
 share/doc/sbcl/html/sbcl/Variable-sb_002dsprof_003a_002amax_002dsamples_002a.html
 share/doc/sbcl/html/sbcl/Variable-sb_002dsprof_003a_002asample_002dinterval_002a.html
 share/doc/sbcl/html/sbcl/Variable-sb_002dthread_003a_002acurrent_002dthread_002a.html
+share/doc/sbcl/html/sbcl/Volunteer-Support.html
 share/doc/sbcl/html/sbcl/Waitqueue_002fcondition-variables.html
 share/doc/sbcl/html/sbcl/define_002dalien_002droutine-Example.html
 share/doc/sbcl/html/sbcl/index.html
@@ -573,5 +613,6 @@ share/doc/sbcl/html/sbcl/sb_002dcover.html
 share/doc/sbcl/html/sbcl/sb_002dgrovel.html
 share/doc/sbcl/html/sbcl/sb_002dmd5.html
 share/doc/sbcl/html/sbcl/sb_002dposix.html
+share/doc/sbcl/html/sbcl/sb_002dqueue.html
 share/doc/sbcl/html/sbcl/sb_002drotate_002dbyte.html
 share/doc/sbcl/sbcl.pdf

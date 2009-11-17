@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_runtime_bsd-os_c,v 1.1 2009/11/17 10:45:00 pirofti Exp $
+
+Add a flag to os_get_runtime_executable_path() indicating if an
+externally usable path is required, which means we can't use
+/proc/curproc/file even if procfs happens to be mounted.
+
+--- src/runtime/bsd-os.c.orig	Wed May 13 11:13:48 2009
++++ src/runtime/bsd-os.c	Mon Jun 29 07:53:42 2009
+@@ -465,16 +465,12 @@ os_get_runtime_executable_path()
+ }
+ #elif defined(LISP_FEATURE_NETBSD) || defined(LISP_FEATURE_OPENBSD)
+ char *
+-os_get_runtime_executable_path()
++os_get_runtime_executable_path(int external)
+ {
+     struct stat sb;
+-    char *path = strdup("/proc/curproc/file");
+-    if (path && ((stat(path, &sb)) == 0))
+-        return path;
+-    else {
+-        fprintf(stderr, "Couldn't stat /proc/curproc/file; is /proc mounted?\n");
+-        return NULL;
+-    }
++    if (!external && stat("/proc/curproc/file", &sb) == 0)
++        return copied_string("/proc/curproc/file");
++    return NULL;
+ }
+ #else /* Not DARWIN or FREEBSD or NETBSD or OPENBSD */
+ char *

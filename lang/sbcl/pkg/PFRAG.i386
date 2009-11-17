@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.i386,v 1.1 2009/11/17 10:45:00 pirofti Exp $
+lib/sbcl/sb-rotate-byte/x86-vm.fasl

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_runtime_Config.x86-openbsd,v 1.1.1.1 2008/04/14 12:29:40 deanna Exp $
---- src/runtime/Config.x86-openbsd.orig	Wed Jan  9 11:12:23 2008
-+++ src/runtime/Config.x86-openbsd	Thu Apr 10 14:13:34 2008
-@@ -25,4 +25,4 @@ OS_LIBS += -lutil
+$OpenBSD: patch-src_runtime_Config.x86-openbsd,v 1.2 2009/11/17 10:45:00 pirofti Exp $
+--- src/runtime/Config.x86-openbsd.orig	Sun Feb  3 10:34:58 2008
++++ src/runtime/Config.x86-openbsd	Thu Feb  5 08:41:33 2009
+@@ -24,5 +24,3 @@ OS_LIBS += -lutil
+ 
  LINKFLAGS += -export-dynamic
  LDFLAGS += -export-dynamic
- 
+-
 -CFLAGS =  -g -Wall -O2
-+CFLAGS +=  -g -Wall -O2 -DSBCL_HOME='"${PREFIX}/lib/sbcl/"'
