@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/17 04:43:46 kevlo Exp $
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/MultiInitArg/
+${P5SITE}/MooseX/MultiInitArg.pm
+${P5SITE}/MooseX/MultiInitArg/Attribute.pm
+${P5SITE}/MooseX/MultiInitArg/Trait.pm
+@man man/man3p/MooseX::MultiInitArg.3p
+@man man/man3p/MooseX::MultiInitArg::Attribute.3p
+@man man/man3p/MooseX::MultiInitArg::Trait.3p
