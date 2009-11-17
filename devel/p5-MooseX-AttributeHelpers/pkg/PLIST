@@ -1,0 +1,71 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/17 04:45:04 kevlo Exp $
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/AttributeHelpers/
+${P5SITE}/MooseX/AttributeHelpers.pm
+${P5SITE}/MooseX/AttributeHelpers/Bool.pm
+${P5SITE}/MooseX/AttributeHelpers/Collection/
+${P5SITE}/MooseX/AttributeHelpers/Collection/Array.pm
+${P5SITE}/MooseX/AttributeHelpers/Collection/Bag.pm
+${P5SITE}/MooseX/AttributeHelpers/Collection/Hash.pm
+${P5SITE}/MooseX/AttributeHelpers/Collection/ImmutableHash.pm
+${P5SITE}/MooseX/AttributeHelpers/Collection/List.pm
+${P5SITE}/MooseX/AttributeHelpers/Counter.pm
+${P5SITE}/MooseX/AttributeHelpers/Meta/
+${P5SITE}/MooseX/AttributeHelpers/Meta/Method/
+${P5SITE}/MooseX/AttributeHelpers/Meta/Method/Curried.pm
+${P5SITE}/MooseX/AttributeHelpers/Meta/Method/Provided.pm
+${P5SITE}/MooseX/AttributeHelpers/MethodProvider/
+${P5SITE}/MooseX/AttributeHelpers/MethodProvider/Array.pm
+${P5SITE}/MooseX/AttributeHelpers/MethodProvider/Bag.pm
+${P5SITE}/MooseX/AttributeHelpers/MethodProvider/Bool.pm
+${P5SITE}/MooseX/AttributeHelpers/MethodProvider/Counter.pm
+${P5SITE}/MooseX/AttributeHelpers/MethodProvider/Hash.pm
+${P5SITE}/MooseX/AttributeHelpers/MethodProvider/ImmutableHash.pm
+${P5SITE}/MooseX/AttributeHelpers/MethodProvider/List.pm
+${P5SITE}/MooseX/AttributeHelpers/MethodProvider/String.pm
+${P5SITE}/MooseX/AttributeHelpers/Number.pm
+${P5SITE}/MooseX/AttributeHelpers/String.pm
+${P5SITE}/MooseX/AttributeHelpers/Trait/
+${P5SITE}/MooseX/AttributeHelpers/Trait/Base.pm
+${P5SITE}/MooseX/AttributeHelpers/Trait/Bool.pm
+${P5SITE}/MooseX/AttributeHelpers/Trait/Collection/
+${P5SITE}/MooseX/AttributeHelpers/Trait/Collection.pm
+${P5SITE}/MooseX/AttributeHelpers/Trait/Collection/Array.pm
+${P5SITE}/MooseX/AttributeHelpers/Trait/Collection/Bag.pm
+${P5SITE}/MooseX/AttributeHelpers/Trait/Collection/Hash.pm
+${P5SITE}/MooseX/AttributeHelpers/Trait/Collection/ImmutableHash.pm
+${P5SITE}/MooseX/AttributeHelpers/Trait/Collection/List.pm
+${P5SITE}/MooseX/AttributeHelpers/Trait/Counter.pm
+${P5SITE}/MooseX/AttributeHelpers/Trait/Number.pm
+${P5SITE}/MooseX/AttributeHelpers/Trait/String.pm
+@man man/man3p/MooseX::AttributeHelpers.3p
+@man man/man3p/MooseX::AttributeHelpers::Bool.3p
+@man man/man3p/MooseX::AttributeHelpers::Collection::Array.3p
+@man man/man3p/MooseX::AttributeHelpers::Collection::Bag.3p
+@man man/man3p/MooseX::AttributeHelpers::Collection::Hash.3p
+@man man/man3p/MooseX::AttributeHelpers::Collection::ImmutableHash.3p
+@man man/man3p/MooseX::AttributeHelpers::Collection::List.3p
+@man man/man3p/MooseX::AttributeHelpers::Counter.3p
+@man man/man3p/MooseX::AttributeHelpers::Meta::Method::Curried.3p
+@man man/man3p/MooseX::AttributeHelpers::Meta::Method::Provided.3p
+@man man/man3p/MooseX::AttributeHelpers::MethodProvider::Array.3p
+@man man/man3p/MooseX::AttributeHelpers::MethodProvider::Bag.3p
+@man man/man3p/MooseX::AttributeHelpers::MethodProvider::Bool.3p
+@man man/man3p/MooseX::AttributeHelpers::MethodProvider::Counter.3p
+@man man/man3p/MooseX::AttributeHelpers::MethodProvider::Hash.3p
+@man man/man3p/MooseX::AttributeHelpers::MethodProvider::ImmutableHash.3p
+@man man/man3p/MooseX::AttributeHelpers::MethodProvider::List.3p
+@man man/man3p/MooseX::AttributeHelpers::MethodProvider::String.3p
+@man man/man3p/MooseX::AttributeHelpers::Number.3p
+@man man/man3p/MooseX::AttributeHelpers::String.3p
+@man man/man3p/MooseX::AttributeHelpers::Trait::Base.3p
+@man man/man3p/MooseX::AttributeHelpers::Trait::Bool.3p
+@man man/man3p/MooseX::AttributeHelpers::Trait::Collection.3p
+@man man/man3p/MooseX::AttributeHelpers::Trait::Collection::Array.3p
+@man man/man3p/MooseX::AttributeHelpers::Trait::Collection::Bag.3p
+@man man/man3p/MooseX::AttributeHelpers::Trait::Collection::Hash.3p
+@man man/man3p/MooseX::AttributeHelpers::Trait::Collection::ImmutableHash.3p
+@man man/man3p/MooseX::AttributeHelpers::Trait::Collection::List.3p
+@man man/man3p/MooseX::AttributeHelpers::Trait::Counter.3p
+@man man/man3p/MooseX::AttributeHelpers::Trait::Number.3p
+@man man/man3p/MooseX::AttributeHelpers::Trait::String.3p
