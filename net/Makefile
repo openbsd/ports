@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.607 2009/11/17 04:28:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.608 2009/11/17 11:23:26 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -184,6 +184,7 @@
      SUBDIR += mtr
      SUBDIR += mtr,no_x11
      SUBDIR += mudix
+     SUBDIR += munin
      SUBDIR += mutella
      SUBDIR += nagios
      SUBDIR += nam
