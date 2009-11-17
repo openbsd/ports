@@ -1,0 +1,12 @@
+$OpenBSD: patch-libltdl_ltdl_c,v 1.4 2009/11/17 10:15:35 espie Exp $
+--- libltdl/ltdl.c.orig	Mon Nov 16 19:39:41 2009
++++ libltdl/ltdl.c	Mon Nov 16 19:39:54 2009
+@@ -3225,7 +3225,7 @@ try_dlopen (phandle, filename)
+ 	    }
+ #endif
+ 	}
+-      if (!file)
++      else
+ 	{
+ 	  file = fopen (filename, LT_READTEXT_MODE);
+ 	}
