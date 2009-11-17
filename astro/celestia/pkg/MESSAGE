@@ -1,3 +1,0 @@
-If you experience any issue with hardware rendering (drm+dri), you can
-fall back to software rendering by running celestia the following way:
-  env LIBGL_ALWAYS_SOFTWARE=1 celestia

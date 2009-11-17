@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_celestia_winstarbrowser_cpp,v 1.1 2009/11/17 23:12:16 ajacoutot Exp $
+--- src/celestia/winstarbrowser.cpp.orig	Tue Nov 17 15:26:31 2009
++++ src/celestia/winstarbrowser.cpp	Tue Nov 17 15:26:41 2009
+@@ -78,7 +78,7 @@ bool InitStarBrowserColumns(HWND listView)
+     columns[3].fmt = LVCFMT_RIGHT;
+     columns[4].pszText = _("Type");
+ 
+-    bind_textdomain_codeset("celestia", "UTF8");
++    bind_textdomain_codeset("celestia", "UTF-8");
+ 
+     for (i = 0; i < nColumns; i++)
+     {

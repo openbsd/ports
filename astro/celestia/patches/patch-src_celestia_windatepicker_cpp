@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_celestia_windatepicker_cpp,v 1.1 2009/11/17 23:12:16 ajacoutot Exp $
+--- src/celestia/windatepicker.cpp.orig	Tue Nov 17 15:25:29 2009
++++ src/celestia/windatepicker.cpp	Tue Nov 17 15:25:38 2009
+@@ -162,7 +162,7 @@ DatePicker::redraw(HDC hdc)
+     sprintf(dayBuf, "%02d", date.day);
+     sprintf(monthBuf, "%s", _(Months[date.month - 1]));
+     sprintf(yearBuf, "%5d", date.year);
+-    bind_textdomain_codeset("celestia", "UTF8");
++    bind_textdomain_codeset("celestia", "UTF-8");
+ 
+     char* fieldText[NumFields];
+     fieldText[DayField] = dayBuf;
