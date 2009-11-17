@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2009/09/10 21:45:38 martynas Exp $
+# $OpenBSD: Makefile,v 1.41 2009/11/17 23:07:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -7,9 +7,9 @@ COMMENT=	integrated mozilla application suite
 
 VER=		1.1.18
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}
+PKGNAME=	seamonkey-${VER}p0
 
-SO_VERSION=	10.0
+SO_VERSION=	11.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility addrbook appcomps auth autoconfig bayesflt \
