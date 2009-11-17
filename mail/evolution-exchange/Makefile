@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/14 16:34:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/17 23:23:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -52,7 +52,6 @@ USE_X11=	Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-MODGCONF2_LIBDEP= Yes
 MODGCONF2_SCHEMAS_DIR= evolution-exchange
 
 CONFIGURE_STYLE= gnu
