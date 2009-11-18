@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/10/20 22:34:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/11/18 13:56:31 ajacoutot Exp $
 zarafa-webaccess/
 @owner www
 @sample zarafa-webaccess/tmp/
@@ -126,6 +126,7 @@ zarafa-webaccess/client/layout/img/calendar_arrowdown.gif
 zarafa-webaccess/client/layout/img/calendar_arrowup.gif
 zarafa-webaccess/client/layout/img/copy.gif
 zarafa-webaccess/client/layout/img/daytitle_back.gif
+zarafa-webaccess/client/layout/img/default_contact_image.gif
 zarafa-webaccess/client/layout/img/delete.gif
 zarafa-webaccess/client/layout/img/dropdownarrow.gif
 zarafa-webaccess/client/layout/img/favicon.ico
@@ -157,6 +158,7 @@ zarafa-webaccess/client/layout/img/hour_header_4.png
 zarafa-webaccess/client/layout/img/hour_header_6.png
 zarafa-webaccess/client/layout/img/hour_header_8.png
 zarafa-webaccess/client/layout/img/icon_addsignature.gif
+zarafa-webaccess/client/layout/img/icon_appointment_recurring.gif
 zarafa-webaccess/client/layout/img/icon_asign_task.gif
 zarafa-webaccess/client/layout/img/icon_attachments.gif
 zarafa-webaccess/client/layout/img/icon_calendar.gif
@@ -187,6 +189,8 @@ zarafa-webaccess/client/layout/img/icon_flag_complete.gif
 zarafa-webaccess/client/layout/img/icon_flag_complete_over.gif
 zarafa-webaccess/client/layout/img/icon_flag_green.gif
 zarafa-webaccess/client/layout/img/icon_flag_green_over.gif
+zarafa-webaccess/client/layout/img/icon_flag_none.gif
+zarafa-webaccess/client/layout/img/icon_flag_none_over.gif
 zarafa-webaccess/client/layout/img/icon_flag_orange.gif
 zarafa-webaccess/client/layout/img/icon_flag_orange_over.gif
 zarafa-webaccess/client/layout/img/icon_flag_over.gif
@@ -220,6 +224,7 @@ zarafa-webaccess/client/layout/img/icon_meetingrequest_cancel.gif
 zarafa-webaccess/client/layout/img/icon_meetingrequest_decline.gif
 zarafa-webaccess/client/layout/img/icon_meetingrequest_optionalattendee.gif
 zarafa-webaccess/client/layout/img/icon_meetingrequest_organizer.gif
+zarafa-webaccess/client/layout/img/icon_meetingrequest_outofdate.gif
 zarafa-webaccess/client/layout/img/icon_meetingrequest_requiredattendee.gif
 zarafa-webaccess/client/layout/img/icon_meetingrequest_resource.gif
 zarafa-webaccess/client/layout/img/icon_meetingrequest_tentative.gif
