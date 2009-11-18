@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 18:59:42 jasper Exp $
+@group daemon
+lib/
+lib/php/
+pear/doc/
+pear/doc/Validate/
+pear/doc/Validate/LICENSE
+pear/doc/Validate/docs/
+pear/doc/Validate/docs/Example_Locale.php
+pear/doc/Validate/docs/sample_multiple.php
+pear/lib/.registry/validate.reg
+pear/lib/Validate.php
+pear/tests/Validate/
+pear/tests/Validate/tests/
+pear/tests/Validate/tests/email.phpt
+pear/tests/Validate/tests/multicard.phpt
+pear/tests/Validate/tests/multiple.phpt
+pear/tests/Validate/tests/number.phpt
+pear/tests/Validate/tests/testdate.phpt
+pear/tests/Validate/tests/uri.phpt

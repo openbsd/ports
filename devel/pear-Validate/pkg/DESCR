@@ -1,0 +1,8 @@
+Package to validate various datas. It includes :
+- numbers (min/max, decimal or not)
+- email (syntax, domain check, rfc822)
+- string (predifined type alpha upper and/or lowercase, numeric,...)
+- date (min, max, rfc822 compliant)
+- uri (RFC2396)
+- possibility valid multiple data with a single method call (::multiple)
+
