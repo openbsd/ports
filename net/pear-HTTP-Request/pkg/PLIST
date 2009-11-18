@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/03/22 22:48:04 robert Exp $
-pear/doc/
+@comment $OpenBSD: PLIST,v 1.4 2009/11/18 19:16:08 jasper Exp $
 @group daemon
 pear/doc/HTTP_Request/
 pear/doc/HTTP_Request/docs/
