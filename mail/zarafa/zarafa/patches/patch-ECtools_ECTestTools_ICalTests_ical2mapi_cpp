@@ -1,9 +1,12 @@
-$OpenBSD: patch-ECtools_ECTestTools_ICalTests_ical2mapi_cpp,v 1.2 2009/10/20 22:34:26 ajacoutot Exp $
---- ECtools/ECTestTools/ICalTests/ical2mapi.cpp.orig	Fri Oct  9 22:34:37 2009
-+++ ECtools/ECTestTools/ICalTests/ical2mapi.cpp	Tue Oct 20 23:41:36 2009
-@@ -180,7 +180,7 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-ECtools_ECTestTools_ICalTests_ical2mapi_cpp,v 1.3 2009/11/18 13:55:39 ajacoutot Exp $
+--- ECtools/ECTestTools/ICalTests/ical2mapi.cpp.orig	Thu Nov 12 23:55:01 2009
++++ ECtools/ECTestTools/ICalTests/ical2mapi.cpp	Wed Nov 18 13:16:42 2009
+@@ -178,9 +178,9 @@ int main(int argc, char *argv[]) {
+ 	if (readfile(argv[4], &icalstring))
+ 		goto exit;
  
- 	CreateICalToMapi(lpInbox, lpAdrBook, &lpICalToMapi);
+-	CreateICalToMapi(lpInbox, lpAdrBook, &lpICalToMapi);
++	CreateICalToMapi(lpInbox, lpAdrBook, true, &lpICalToMapi);
  
 -	hr = lpICalToMapi->ParseICal(icalstring, "UTF-8", "UTC", 0); // assume ical file is in utf-8
 +	hr = lpICalToMapi->ParseICal(icalstring, "UTF-8", "UTC", NULL, 0); // assume ical file is in utf-8
