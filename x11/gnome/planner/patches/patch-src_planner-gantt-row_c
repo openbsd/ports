@@ -1,0 +1,69 @@
+$OpenBSD: patch-src_planner-gantt-row_c,v 1.1 2009/11/18 14:08:31 ajacoutot Exp $
+
+Fix crash when using zoom-to-fit (bug #550559)
+
+--- src/planner-gantt-row.c.orig	Tue Jul 22 15:41:47 2008
++++ src/planner-gantt-row.c	Wed Nov 18 13:35:49 2009
+@@ -37,6 +37,7 @@
+ #include "planner-gantt-chart.h"
+ #include "planner-canvas-line.h"
+ #include "eel-canvas-rect.h"
++#include "dummy-canvas-item.h"
+ #include "planner-scale-utils.h"
+ #include "planner-task-tree.h"
+ #include "planner-task-popup.h"
+@@ -287,6 +288,8 @@ static gdouble            drag_item_wx_min;
+ static gdouble            drag_item_wx_max;
+ static gdouble            drag_item_wy_min;
+ static gdouble            drag_item_wy_max;
++static GnomeCanvasItem   *scroll_region_extender;
++static gdouble            scroll_region_max_x;
+ static gdouble            drag_wx1, drag_wy1;
+ static GnomeCanvasPoints *drag_points = NULL;
+ static GnomeCanvasItem   *target_item;
+@@ -2363,6 +2366,10 @@ gantt_row_drag_item_to_pointer (PlannerGanttRow *row, 
+ 		gnome_canvas_item_set (drag_item,
+ 				       "x2", wx2,
+ 				       NULL);
++		scroll_region_max_x = MAX(wx2, scroll_region_max_x);
++		gnome_canvas_item_set (scroll_region_extender,
++				       "x2", scroll_region_max_x,
++				       NULL);
+ 		break;
+ 
+ 	case STATE_DRAG_COMPLETE:
+@@ -2634,6 +2641,15 @@ gantt_row_event (GnomeCanvasItem *item, GdkEvent *even
+ 									   "width_pixels", 1,
+ 									   NULL);
+ 					gnome_canvas_item_hide (drag_item);
++					scroll_region_extender = gnome_canvas_item_new (gnome_canvas_root (item->canvas),
++									   gnome_canvas_dummy_get_type(),
++									   "x1", wx2,
++									   "y1", wy1,
++									   "x2", wx2,
++									   "y2", wy2,
++									   NULL);
++					gnome_canvas_item_hide (scroll_region_extender);
++					scroll_region_max_x = wx2;
+ 
+ 					/* set limits */
+ 					drag_item_wx_min = wx1;
+@@ -2834,6 +2850,9 @@ gantt_row_event (GnomeCanvasItem *item, GdkEvent *even
+ 		else {
+ 			gnome_canvas_item_raise_to_top (drag_item);
+ 			gnome_canvas_item_show (drag_item);
++			if(priv->state & STATE_DRAG_DURATION) {
++				gnome_canvas_item_show (scroll_region_extender);
++			}
+ 
+ 			gantt_row_drag_item_to_pointer (row, FALSE);
+ 		}
+@@ -2894,6 +2913,8 @@ gantt_row_event (GnomeCanvasItem *item, GdkEvent *even
+ 			*/
+ 			gtk_object_destroy (GTK_OBJECT (drag_item));
+ 			drag_item = NULL;
++			gtk_object_destroy (GTK_OBJECT (scroll_region_extender));
++			scroll_region_extender = NULL;
+ 
+ 			planner_gantt_chart_status_updated (chart, NULL);
+ 		}

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2009/11/18 14:08:31 ajacoutot Exp $
+
+Fix crash when using zoom-to-fit (bug #550559)
+
+--- src/Makefile.am.orig	Mon Jul 28 16:08:33 2008
++++ src/Makefile.am	Wed Nov 18 13:35:49 2009
+@@ -32,6 +32,8 @@ libplannerapp_la_SOURCES = 			\
+ 	$(built_sources)		\
+ 	eel-canvas-rect.c		\
+ 	eel-canvas-rect.h		\
++	dummy-canvas-item.c		\
++	dummy-canvas-item.h		\
+ 	planner-application.c		\
+ 	planner-application.h		\
+ 	planner-assignment-model.c	\

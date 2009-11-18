@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2009/11/18 14:08:31 ajacoutot Exp $
+
+Fix crash when using zoom-to-fit (bug #550559)
+
+--- src/Makefile.in.orig	Wed Apr 15 20:51:03 2009
++++ src/Makefile.in	Wed Nov 18 14:27:38 2009
+@@ -85,6 +85,7 @@ am__objects_4 = planner-usage-view.lo planner-usage-ch
+ 	planner-usage-model.lo planner-usage-row.lo \
+ 	planner-usage-tree.lo
+ am_libplannerapp_la_OBJECTS = $(am__objects_1) eel-canvas-rect.lo \
++	dummy-canvas-item.lo \
+ 	planner-application.lo planner-assignment-model.lo \
+ 	planner-conf-gconf.lo planner-calendar.lo \
+ 	planner-calendar-dialog.lo planner-calendar-selector.lo \
+@@ -397,6 +398,8 @@ libplannerapp_la_SOURCES = \
+ 	$(built_sources)		\
+ 	eel-canvas-rect.c		\
+ 	eel-canvas-rect.h		\
++	dummy-canvas-item.c		\
++	dummy-canvas-item.h		\
+ 	planner-application.c		\
+ 	planner-application.h		\
+ 	planner-assignment-model.c	\
+@@ -685,6 +688,7 @@ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eel-canvas-rect.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dummy-canvas-item.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libeds_plugin_la-planner-eds-plugin.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libpython_plugin_la-planner-python-plugin.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libsql_plugin_la-planner-sql-plugin.Plo@am__quote@
