@@ -1,42 +1,51 @@
-$OpenBSD: patch-src_libical_icaltz-util_c,v 1.1 2009/09/05 12:59:26 ajacoutot Exp $
-
-Comment some non portable code ; from pkgsrc libical.
-
---- src/libical/icaltz-util.c.orig	Tue Nov 25 09:26:51 2008
-+++ src/libical/icaltz-util.c	Sat Sep  5 06:55:16 2009
-@@ -25,6 +25,7 @@
- #endif
- #include <string.h>
+$OpenBSD: patch-src_libical_icaltz-util_c,v 1.2 2009/11/18 13:54:52 ajacoutot Exp $
+--- src/libical/icaltz-util.c.orig	Sat Oct 10 18:09:08 2009
++++ src/libical/icaltz-util.c	Sat Oct 10 18:24:28 2009
+@@ -27,6 +27,14 @@
  
-+#if 0 /* XXX see below */
  #if defined(sun) && defined(__SVR4)
  #include <sys/byteorder.h>
++#elif defined(__OpenBSD__)
++#include <sys/types.h>
++#define __BYTE_ORDER	_BYTE_ORDER
++#define __LITTLE_ENDIAN	_LITTLE_ENDIAN
++#define __BIG_ENDIAN	_BIG_ENDIAN
++#define bswap_16	swap16
++#define bswap_32	swap32
++#define bswap_64	swap64
  #else
-@@ -43,6 +44,7 @@
- #  include <endian.h>
- # endif 
- #endif
-+#endif
- 
- #ifdef WIN32
- #if !defined(HAVE_BYTESWAP_H) && !defined(HAVE_SYS_ENDIAN_H) && !defined(HAVE_ENDIAN_H)
-@@ -128,6 +130,7 @@ typedef struct
- static int
- decode (const void *ptr)
- {
-+#if 0 /* XXX nonportable, possibly alignment problems */
- #if defined(sun) && defined(__SVR4)
+ # ifdef HAVE_BYTESWAP_H
+ #  include <byteswap.h>
+@@ -132,6 +140,8 @@ decode (const void *ptr)
      if (sizeof (int) == 4)
  #ifdef _BIG_ENDIAN
-@@ -142,9 +145,10 @@ decode (const void *ptr)
-         return bswap_32 (*(const int *) ptr);
+         return *(const int *) ptr;
++#elif __OpenBSD__
++	return swap32 (*(const uint32_t *) ptr);
+ #else
+         return BSWAP_32 (*(const int *) ptr);
  #endif
- 	else
-+#endif
- 	{
- 		const unsigned char *p = ptr;
--		int result = *p & (1 << (CHAR_BIT - 1)) ? ~0 : 0;
-+		unsigned int result = *p & (1 << (CHAR_BIT - 1)) ? ~0 : 0;
+@@ -426,7 +436,10 @@ icaltzutil_fetch_timezone (const char *location)
+ 		else
+ 			zp_idx = zidx;
+ 		/* DTSTART localtime uses TZOFFSETFROM UTC offset */
+-		trans = transitions [stdidx] + types [zp_idx].gmtoff;
++		if (num_trans)
++			trans = transitions [stdidx] + types [zidx].gmtoff;
++		else
++			trans = types [zidx].gmtoff;
+ 		icaltime = icaltime_from_timet (trans, 0);
+ 		dtstart = icaltime;
+ 		dtstart.year = 1970;
+@@ -465,7 +478,10 @@ icaltzutil_fetch_timezone (const char *location)
+ 		icalcomponent_add_property (dst_comp, icalprop);
  
- 		result = (result << 8) | *p++;
- 		result = (result << 8) | *p++;
+ 		/* DTSTART localtime uses TZOFFSETFROM UTC offset */
+-		trans = transitions [dstidx] + types [zp_idx].gmtoff;
++		if (num_trans)
++			trans = transitions [dstidx] + types [zidx].gmtoff;
++		else
++			trans = types [zidx].gmtoff;
+ 		icaltime = icaltime_from_timet (trans, 0);
+ 		dtstart = icaltime;
+ 		dtstart.year = 1970;
