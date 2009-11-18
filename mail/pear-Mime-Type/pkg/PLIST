@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 19:07:45 jasper Exp $
+@group daemon
+lib/
+lib/php/
+pear/lib/.registry/mime_type.reg
+pear/lib/MIME/
+pear/lib/MIME/Type/
+pear/lib/MIME/Type.php
+pear/lib/MIME/Type/Extension.php
+pear/lib/MIME/Type/Parameter.php
+pear/lib/docs/
+pear/lib/docs/examples/
+pear/lib/docs/examples/example.php
+pear/tests/MIME_Type/
+pear/tests/MIME_Type/tests/
+pear/tests/MIME_Type/tests/AllTests.php
+pear/tests/MIME_Type/tests/MIME_Type_ExtensionTest.php
+pear/tests/MIME_Type/tests/TypeTest.php
+pear/tests/MIME_Type/tests/files/
+pear/tests/MIME_Type/tests/files/example.bmp
+pear/tests/MIME_Type/tests/files/example.gif
+pear/tests/MIME_Type/tests/files/example.jpg
+pear/tests/MIME_Type/tests/files/example.png
+pear/tests/MIME_Type/tests/files/example.txt
+pear/tests/MIME_Type/tests/files/example.txt.bz2
+pear/tests/MIME_Type/tests/files/example.txt.gz

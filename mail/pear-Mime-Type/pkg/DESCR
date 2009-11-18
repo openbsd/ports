@@ -1,0 +1,9 @@
+Provide functionality for dealing with MIME types.
+* Parse MIME type.
+* Supports full RFC2045 specification.
+* Many utility functions for working with and determining info
+  about types.
+* Most functions can be called statically.
+* Autodetect a files mime-type, either with fileinfo extension,
+  mime_magic extension, the file command or an in-built mapping
+  list.
