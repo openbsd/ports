@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 11:13:21 jasper Exp $
+@group daemon
+pear/lib/.registry/net_url_mapper.reg
+pear/lib/Net/URL/
+pear/lib/Net/URL/Mapper/
+pear/lib/Net/URL/Mapper.php
+pear/lib/Net/URL/Mapper/Exception.php
+pear/lib/Net/URL/Mapper/Part/
+pear/lib/Net/URL/Mapper/Part.php
+pear/lib/Net/URL/Mapper/Part/Dynamic.php
+pear/lib/Net/URL/Mapper/Part/Fixed.php
+pear/lib/Net/URL/Mapper/Part/Wildcard.php
+pear/lib/Net/URL/Mapper/Path.php
+pear/tests/Net_URL_Mapper/
+pear/tests/Net_URL_Mapper/tests/
+pear/tests/Net_URL_Mapper/tests/ExceptionTest.php
+pear/tests/Net_URL_Mapper/tests/GenerationTest.php
+pear/tests/Net_URL_Mapper/tests/RecognitionTest.php
+@group
