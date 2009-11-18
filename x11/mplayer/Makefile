@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.159 2009/10/13 20:52:55 edd Exp $
+# $OpenBSD: Makefile,v 1.160 2009/11/18 21:20:15 jakemsr Exp $
 
 # May not be hard to add more.
-ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm
+ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm mips64
 
 SUBST_VARS += 		PREFIX
 
@@ -70,7 +70,6 @@ BUILD_DEPENDS=	::net/livemedia \
 		:libxslt-*:textproc/libxslt \
 		::textproc/docbook \
 		::textproc/docbook-xsl \
-		::audio/tremor \
 		::devel/yasm \
 		::audio/ladspa
 
