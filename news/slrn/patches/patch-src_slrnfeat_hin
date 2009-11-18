@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_slrnfeat_hin,v 1.1 2009/11/18 10:59:53 sthen Exp $
+--- src/slrnfeat.hin.orig	Mon Oct 12 23:44:48 2009
++++ src/slrnfeat.hin	Mon Oct 12 23:44:54 2009
+@@ -179,7 +179,7 @@
+ #   define SLRN_SIGNATURE_FILE		".signature"
+   /* Changing these here has no effect when using ./configure */
+ #   ifndef SLRN_SENDMAIL_COMMAND
+-#    define SLRN_SENDMAIL_COMMAND	"/usr/lib/sendmail -oi -t -oem -odb"
++#    define SLRN_SENDMAIL_COMMAND	"/usr/sbin/sendmail -oi -t -oem -odb"
+ #   endif
+ #  endif			       /* unix */
+ # endif				       /* os2 */
