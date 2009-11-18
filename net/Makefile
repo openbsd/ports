@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.609 2009/11/18 11:14:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.610 2009/11/18 19:15:55 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -339,8 +339,10 @@
      SUBDIR += pear-Net-SMTP
      SUBDIR += pear-Net-Socket
      SUBDIR += pear-Net-URL
+     SUBDIR += pear-Net-URL2
      SUBDIR += pear-Net-URL-Mapper
      SUBDIR += pear-Services-Weather
+     SUBDIR += pear-Services-oEmbed
      SUBDIR += pebrot
      SUBDIR += pen
      SUBDIR += pfflowd
