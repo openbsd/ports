@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2009/11/08 16:19:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/11/18 00:49:09 sthen Exp $
 
 COMMENT =	open source web browser engine
 
 V = 1.1.15.2
 DISTNAME =	webkit-${V}
 # XXX do not remove v0. pX comes before vX.
-PKGNAME =	webkit-${V}p1v0
+PKGNAME =	webkit-${V}p2v0
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/

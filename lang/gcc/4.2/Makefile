@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2009/11/12 10:13:19 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2009/11/18 00:49:09 sthen Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -73,7 +73,7 @@ LANGS = c
 .if ${FLAVOR:L:Mc++}
 LANGS := ${LANGS},c++
 MULTI_PACKAGES += -c++ -estdc
-REGRESS_DEPENDS += 	:libstdc++->=4.2,<4.3:${BUILD_PKGPATH},-estdc
+REGRESS_DEPENDS += 	:libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${BUILD_PKGPATH},-estdc
 .endif
 .if ${FLAVOR:L:Mfortran}
 LANGS := ${LANGS},fortran
@@ -189,7 +189,7 @@ RUN_DEPENDS-main =
 RUN_DEPENDS-estdc =
 RUN_DEPENDS-java =
 
-RUN_DEPENDS-c++ =	${RUN_DEPENDS} :libstdc++->=4.2,<4.3:${PKGPATH},-estdc
+RUN_DEPENDS-c++ =	${RUN_DEPENDS} :libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${PKGPATH},-estdc
 WANTLIB-estdc =		c m
 WANTLIB-java =		c m pthread z
 

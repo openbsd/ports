@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.5 2009/10/15 18:02:33 steven Exp $
+# $OpenBSD: gcc4.port.mk,v 1.6 2009/11/18 00:49:09 sthen Exp $
 
 MODGCC4_ARCHES?=
 MODGCC4_LANGS?=
@@ -25,7 +25,7 @@ MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/eg${_MODGCC4CC} ${WRKDIR}/bin/${_MOD
 .        endif
 .        if !empty(_MODGCC4CXX:L:M${_j})
 BUILD_DEPENDS+=	::lang/gcc/4.2,-c++
-LIB_DEPENDS+=	estdc++.>=7:libstdc++->=4.2,<4.3:lang/gcc/4.2,-estdc
+LIB_DEPENDS+=	estdc++.>=7:libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:lang/gcc/4.2,-estdc
 MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC4CXX} ${WRKDIR}/bin/g++;
 MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC4CXX} ${WRKDIR}/bin/${_MODGCC4CXX};
 .        endif
