@@ -1,0 +1,13 @@
+THIS TOOL IS FOR USER CONVENIENCE ONLY.  IT IS NOT WRITTEN BY DELL AND ALL
+RESPONSIBILITY LAYS WITH THE USER.  IF YOU BRICK YOUR BOX YOU OWN IT. DO NOT
+BLAME ANYONE BUT YOURSELF.  WHEN IN DOUBT DON'T USE IT.  REALLY DON'T USE IT.
+
+If you want to load this kernel module, do the following:
+
+   /sbin/modload ${INSTDIR}/biosmod.o
+
+either at securelevel=-1 and/or in /etc/rc.securelevel.
+
+For instructions on using the flashit utility, read the following:
+
+   ${PREFIX}/share/doc/dellflash/README
