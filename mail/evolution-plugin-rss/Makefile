@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2009/11/07 08:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2009/11/18 14:42:24 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,9 +6,14 @@ COMMENT=		RSS-reader plugin for GNOME
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.1.4
-PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}p1
+PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}p2
 
 CATEGORIES=		mail
+
+# Upstream patch so that RSS feeds are updated again.
+MASTER_SITES0=		http://gnome.eu.org/patches/
+PATCHFILES=		evolution-rss-${GNOME_VERSION}-recv-feeds.patch:0
+PATCH_DIST_STRIP=	-p1
 
 EVO_VERSION=		2.28
 SUBST_VARS=		EVO_VERSION
