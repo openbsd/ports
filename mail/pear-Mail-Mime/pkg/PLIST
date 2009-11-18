@@ -1,12 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/03/22 22:48:03 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/11/18 18:06:53 jasper Exp $
 @group daemon
 lib/
 lib/php/
 pear/data/Mail_Mime/
 pear/data/Mail_Mime/xmail.dtd
 pear/data/Mail_Mime/xmail.xsl
+pear/doc/
+pear/doc/Mail_Mime/
+pear/doc/Mail_Mime/scripts/
+pear/doc/Mail_Mime/scripts/phail.php
 pear/lib/.registry/mail_mime.reg
 pear/lib/Mail/
 pear/lib/Mail/mime.php
-pear/lib/Mail/mimeDecode.php
 pear/lib/Mail/mimePart.php
+pear/tests/Mail_Mime/
+pear/tests/Mail_Mime/tests/
+pear/tests/Mail_Mime/tests/class-filename.phpt
+pear/tests/Mail_Mime/tests/encoding_case.phpt
+pear/tests/Mail_Mime/tests/sleep_wakeup_EOL-bug3488-part1.phpt
+pear/tests/Mail_Mime/tests/sleep_wakeup_EOL-bug3488-part2.phpt
+pear/tests/Mail_Mime/tests/tabs_quoted_printable.phpt
+pear/tests/Mail_Mime/tests/test_Bug_10298_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_10596_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_10816_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_30_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_30_2.phpt
+pear/tests/Mail_Mime/tests/test_Bug_30_3.phpt
+pear/tests/Mail_Mime/tests/test_Bug_30_4.phpt
+pear/tests/Mail_Mime/tests/test_Bug_3513_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_3513_2.phpt
+pear/tests/Mail_Mime/tests/test_Bug_3513_3.phpt
+pear/tests/Mail_Mime/tests/test_Bug_7561_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_8223_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_8386_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_8541_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_9558_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_9722_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_9725_1.phpt
+pear/tests/Mail_Mime/tests/test_Bug_9976_1.phpt
