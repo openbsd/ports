@@ -1,26 +1,29 @@
-# $OpenBSD: Makefile,v 1.28 2008/12/13 22:52:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2009/11/18 13:07:22 stephan Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY =	Yes
 
-COMMENT=	module to interface with the GD graphics library
+COMMENT =	module to interface with the GD graphics library
 
-DISTNAME=	GD-2.41
-CATEGORIES=	graphics
+DISTNAME =	GD-2.44
+CATEGORIES =	graphics
 
 # Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB=	fontconfig freetype jpeg m png z
+WANTLIB =	fontconfig freetype jpeg m png z
 
-LIB_DEPENDS=	gd.>=20.28::graphics/gd
+LIB_DEPENDS =	gd.>=20.28::graphics/gd
 
-MODULES=	converters/libiconv
+MODULES =	converters/libiconv
 
-USE_X11=	Yes
+USE_X11 =	Yes
 
-MODULES+=	cpan
+MODULES +=	cpan
+
+# test10 fails during make test due to a bug, see
+# http://rt.cpan.org/Public/Bug/Display.html?id=49053
 
 .include <bsd.port.mk>
