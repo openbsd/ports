@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2009/11/11 16:42:27 pea Exp $
+# $OpenBSD: Makefile,v 1.186 2009/11/18 01:13:41 todd Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -27,6 +27,7 @@
      SUBDIR += d-feet
      SUBDIR += dcfldd
      SUBDIR += ddrescue
+     SUBDIR += dellflash
      SUBDIR += diskrescue
      SUBDIR += dmassage
      SUBDIR += dmidecode
