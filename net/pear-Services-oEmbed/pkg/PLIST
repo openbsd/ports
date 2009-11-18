@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 19:13:04 jasper Exp $
+@group daemon
+pear/lib/.registry/services_oembed.reg
+pear/lib/Services/
+pear/lib/Services/oEmbed/
+pear/lib/Services/oEmbed.php
+pear/lib/Services/oEmbed/Exception/
+pear/lib/Services/oEmbed/Exception.php
+pear/lib/Services/oEmbed/Exception/NoSupport.php
+pear/lib/Services/oEmbed/Object/
+pear/lib/Services/oEmbed/Object.php
+pear/lib/Services/oEmbed/Object/Common.php
+pear/lib/Services/oEmbed/Object/Exception.php
+pear/lib/Services/oEmbed/Object/Link.php
+pear/lib/Services/oEmbed/Object/Photo.php
+pear/lib/Services/oEmbed/Object/Rich.php
+pear/lib/Services/oEmbed/Object/Video.php
+pear/tests/Services_oEmbed/
+pear/tests/Services_oEmbed/tests/
+pear/tests/Services_oEmbed/tests/AllTests.php
+pear/tests/Services_oEmbed/tests/Services/
+pear/tests/Services_oEmbed/tests/Services/oEmbedTest.php

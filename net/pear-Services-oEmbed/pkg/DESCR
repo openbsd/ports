@@ -1,0 +1,4 @@
+oEmbed (http://www.oembed.com) is an open specification for discovering
+more information about URI's. oEmbed services return structure meta-data
+about a URI (e.g. type of object, title, author information, thumbnail
+details, etc.).
