@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 19:07:09 jasper Exp $
+@group daemon
+pear/lib/.registry/mail_mimedecode.reg
+pear/lib/Mail/mimeDecode.php
+pear/tests/Mail_mimeDecode/
+pear/tests/Mail_mimeDecode/tests/
+pear/tests/Mail_mimeDecode/tests/parse_header_value.phpt
+pear/tests/Mail_mimeDecode/tests/semicolon_content_type_bug1724.phpt
