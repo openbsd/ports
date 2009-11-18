@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 19:19:47 jasper Exp $
+@group daemon
+pear/
+pear/lib/
+pear/lib/markdown.php
