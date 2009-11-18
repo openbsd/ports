@@ -1,0 +1,2 @@
+Provides parsing of URLs into their constituent parts (scheme, host,
+path etc.), URL generation, and resolving of relative URLs.

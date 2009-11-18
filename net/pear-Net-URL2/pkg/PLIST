@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 19:12:38 jasper Exp $
+@group daemon
+lib/
+lib/php/
+pear/doc/
+pear/doc/Net_URL2/
+pear/doc/Net_URL2/docs/
+pear/doc/Net_URL2/docs/6470.php
+pear/doc/Net_URL2/docs/example.php
+pear/lib/.registry/net_url2.reg
+pear/lib/Net/
+pear/lib/Net/URL2.php
