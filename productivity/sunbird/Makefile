@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/18 08:44:51 landry Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,8 +7,8 @@ COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 VER =			0.9
 DISTNAME =		lightning-sunbird-${VER}-source
-PKGNAME-main =		sunbird-${VER}
-PKGNAME-lightning =	lightning-${VER}
+PKGNAME-main =		sunbird-${VER}p0
+PKGNAME-lightning =	lightning-${VER}p0
 
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	productivity mail
@@ -16,7 +16,7 @@ CATEGORIES =	productivity mail
 MULTI_PACKAGES =	-main -lightning
 
 # need to be in synch with mail/mozilla-thunderbird for lighting to work
-SO_VERSION =	13.0
+SO_VERSION =	14.0
 
 .for _lib in accessibility appcomps auth autoconfig calbasecomps caps chrome commandlines \
 	composer cookie docshell editor embedcomponents fileview gfx_gtk gfxps \
