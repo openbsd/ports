@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/09/01 19:10:22 eric Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/11/19 17:13:52 eric Exp $
 bin/axiomatic
 lib/python${MODPY_VERSION}/site-packages/Axiom-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/axiom/
@@ -98,6 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/account1to2.axiom.t
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/catalog1to2.axiom.tbz2
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/loginMethod1to2.axiom.tbz2
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/parentHook1to2.axiom.tbz2
+lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/parentHook2to3.axiom.tbz2
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/processor1to2.axiom.tbz2
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/stub_account1to2.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/stub_account1to2.pyc
@@ -107,6 +108,8 @@ lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/stub_loginMethod1to
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/stub_loginMethod1to2.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/stub_parentHook1to2.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/stub_parentHook1to2.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/stub_parentHook2to3.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/stub_parentHook2to3.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/stub_processor1to2.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/stub_processor1to2.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/stub_subStoreStartupService1to2.py
@@ -124,6 +127,8 @@ lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/test_loginMethod1to
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/test_loginMethod1to2.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/test_parentHook1to2.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/test_parentHook1to2.pyc
+lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/test_parentHook2to3.py
+lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/test_parentHook2to3.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/test_processor1to2.py
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/test_processor1to2.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/test/historic/test_subStoreStartupService1to2.py
