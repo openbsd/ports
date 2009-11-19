@@ -1,5 +1,5 @@
---- jhead.c.orig	Mon Mar  2 08:34:10 2009
-+++ jhead.c	Wed Sep 30 16:49:45 2009
+--- jhead.c.orig	Fri Nov  6 10:15:21 2009
++++ jhead.c	Wed Nov 18 11:42:49 2009
 @@ -155,7 +155,8 @@ static int FileEditComment(char * TempFileName, char *
          }
          if (strlen(Editor) > PATH_MAX) ErrFatal("env too long");
@@ -31,7 +31,7 @@
      return TRUE;
  }
  
-@@ -601,7 +605,8 @@ static void DoFileRenaming(const char * FileName)
+@@ -609,7 +613,8 @@ static void DoFileRenaming(const char * FileName)
                          memcpy(pat, pattern+ppos, 4);
                          pat[a-ppos] = 'd'; // Replace 'i' with 'd' for '%d'
                          pat[a-ppos+1] = '\0';
@@ -41,7 +41,7 @@
                          nl = strlen(num);
                          l = strlen(pattern+a+1);
                          if (ppos+nl+l+1 >= PATH_MAX) ErrFatal("str overflow");
-@@ -617,7 +622,7 @@ static void DoFileRenaming(const char * FileName)
+@@ -625,7 +630,7 @@ static void DoFileRenaming(const char * FileName)
          strftime(NewName, PATH_MAX, pattern, &tm);
      }else{
          // My favourite scheme.
@@ -50,7 +50,7 @@
               tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
      }
  
-@@ -646,7 +651,7 @@ static void DoFileRenaming(const char * FileName)
+@@ -654,7 +659,7 @@ static void DoFileRenaming(const char * FileName)
              NameExtra[0] = 0;
          }
  
@@ -59,7 +59,7 @@
  
          if (!strcmp(FileName, NewName)) break; // Skip if its already this name.
  
-@@ -661,7 +666,8 @@ static void DoFileRenaming(const char * FileName)
+@@ -669,7 +674,8 @@ static void DoFileRenaming(const char * FileName)
                  printf("%s --> %s\n",FileName, NewName);
  #ifdef _WIN32
                  if (RenameAssociatedFiles){
@@ -69,7 +69,7 @@
                      RenameAssociated(FileName, NewName);
                  }
  #endif
-@@ -694,7 +700,8 @@ static int DoAutoRotate(const char * FileName)
+@@ -702,7 +708,8 @@ static int DoAutoRotate(const char * FileName)
                  ErrFatal("Orientation screwup");
              }
  
@@ -79,7 +79,7 @@
              ApplyCommand = RotateCommand;
              DoCommand(FileName, FALSE);
              ApplyCommand = NULL;
-@@ -713,7 +720,8 @@ static int DoAutoRotate(const char * FileName)
+@@ -721,7 +728,8 @@ static int DoAutoRotate(const char * FileName)
                  strcpy(ThumbTempName_out, FileName);
                  strcat(ThumbTempName_out, ".tho");
                  SaveThumbnail(ThumbTempName_in);
@@ -89,7 +89,7 @@
                      Argument, ThumbTempName_out, ThumbTempName_in);
  
                  if (system(RotateCommand) == 0){
-@@ -741,7 +749,8 @@ static int RegenerateThumbnail(const char * FileName)
+@@ -749,7 +757,8 @@ static int RegenerateThumbnail(const char * FileName)
          return FALSE;
      }
  
@@ -99,7 +99,7 @@
          RegenThumbnail, RegenThumbnail, FileName);
  
      if (system(ThumbnailGenCommand) == 0){
-@@ -1081,7 +1090,7 @@ void ProcessFile(const char * FileName)
+@@ -1089,7 +1098,7 @@ void ProcessFile(const char * FileName)
  
              // Print to temp buffer first to avoid putting null termination in destination.
              // snprintf() would do the trick, hbut not available everywhere (like FreeBSD 4.4)
