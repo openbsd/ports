@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.38 2009/11/17 16:29:42 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.39 2009/11/19 21:38:48 bernd Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -61,7 +61,6 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-gc
 @bin libexec/git/git-get-tar-commit-id
 @bin libexec/git/git-grep
-libexec/git/git-gui--askpass
 @bin libexec/git/git-hash-object
 @bin libexec/git/git-help
 @bin libexec/git/git-http-fetch
