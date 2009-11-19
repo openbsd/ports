@@ -1,5 +1,5 @@
 --- jhead.c.orig	Fri Nov  6 10:15:21 2009
-+++ jhead.c	Wed Nov 18 11:42:49 2009
++++ jhead.c	Wed Nov 18 20:39:50 2009
 @@ -155,7 +155,8 @@ static int FileEditComment(char * TempFileName, char *
          }
          if (strlen(Editor) > PATH_MAX) ErrFatal("env too long");
@@ -46,7 +46,7 @@
      }else{
          // My favourite scheme.
 -        sprintf(NewName, "%02d%02d-%02d%02d%02d",
-+        snprintf(NewName, sizeof NewBaseName, "%02d%02d-%02d%02d%02d",
++        snprintf(NewName, sizeof(NewName), "%02d%02d-%02d%02d%02d",
               tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
      }
  
