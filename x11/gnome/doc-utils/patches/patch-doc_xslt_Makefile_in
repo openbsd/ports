@@ -1,11 +1,11 @@
-$OpenBSD: patch-doc_xslt_Makefile_in,v 1.2 2009/10/10 13:49:57 ajacoutot Exp $
+$OpenBSD: patch-doc_xslt_Makefile_in,v 1.3 2009/11/19 17:28:36 ajacoutot Exp $
 
 See:
 http://bugzilla.gnome.org/show_bug.cgi?id=565456
 
---- doc/xslt/Makefile.in.orig	Mon Sep 21 16:42:15 2009
-+++ doc/xslt/Makefile.in	Sat Oct 10 15:44:16 2009
-@@ -965,7 +965,7 @@ gnome-doc-xslt-check-includes:
+--- doc/xslt/Makefile.in.orig	Thu Nov 19 18:04:32 2009
++++ doc/xslt/Makefile.in	Thu Nov 19 18:23:50 2009
+@@ -967,7 +967,7 @@ gnome-doc-xslt-check-includes:
  	xmls=`echo $(xsldoc_base) | sort`; \
  	exs=""; \
  	for xml in $$xmls; do \

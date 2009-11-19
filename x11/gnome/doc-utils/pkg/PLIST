@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/10/11 15:32:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/11/19 17:28:36 ajacoutot Exp $
 bin/gnome-doc-prepare
 bin/gnome-doc-tool
 bin/xml2po
@@ -7,21 +7,29 @@ lib/pkgconfig/xml2po.pc
 lib/python${MODPY_VERSION}/site-packages/xml2po/
 lib/python${MODPY_VERSION}/site-packages/xml2po/__init__.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/__init__.pyo
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/__init__.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/__init__.pyo
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/basic.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/basic.pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/basic.pyo
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/docbook.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/docbook.pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/docbook.pyo
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/gs.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/gs.pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/gs.pyo
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/mallard.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/mallard.pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/mallard.pyo
 @comment lib/python${MODPY_VERSION}/site-packages/xml2po/modes/ubuntu.py
 @comment lib/python${MODPY_VERSION}/site-packages/xml2po/modes/ubuntu.pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/ubuntu.pyo
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/xhtml.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/xhtml.pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/xhtml.pyo
 @man man/man1/xml2po.1
 share/aclocal/gnome-doc-utils.m4
 share/gnome/
