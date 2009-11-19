@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2009/10/19 12:19:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2009/11/19 15:15:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		2.28.1
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		databases
 
@@ -23,7 +24,6 @@ SHARED_LIBS +=	ecal-1.2             9.1      # .9.1
 SHARED_LIBS +=	edata-cal-1.2        6.2      # .6.2
 SHARED_LIBS +=	edataserverui-1.2    9.1      # .9.1
 
-
 HOMEPAGE=		http://www.gnome.org/projects/evolution/
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -39,11 +39,11 @@ WANTLIB += ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += asn1 atk-1.0 c cairo com_err crypto dbus-1 dbus-glib-1
 WANTLIB += expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gpg-error
-WANTLIB += gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4
-WANTLIB += plds4 png pthread pthread-stubs sasl2 sqlite3 ssl tasn1
-WANTLIB += xcb xml2 z
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
+WANTLIB += png proxy pthread pthread-stubs sasl2 soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 ssl tasn1 xcb xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -55,7 +55,6 @@ BUILD_DEPENDS=		:autoconf-${AUTOCONF_VERSION}:devel/autoconf/${AUTOCONF_VERSION}
 LIB_DEPENDS= 		db:db->=4,<5:databases/db/v4 \
 			ldap,lber::databases/openldap \
 			glade-2.0::devel/libglade2 \
-			soup-2.4::devel/libsoup \
 			gpg-error::security/libgpg-error \
 			gnutls::security/gnutls \
 			nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss \
