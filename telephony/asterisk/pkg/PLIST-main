@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2009/11/04 21:49:42 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2009/11/19 16:17:05 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict app_conference-<=20070710
 @newgroup _asterisk:545
@@ -248,14 +248,13 @@ share/asterisk/agi-bin/agi-test.agi
 share/asterisk/agi-bin/jukebox.agi
 share/asterisk/firmware/
 share/asterisk/firmware/iax/
-share/asterisk/firmware/iax/iaxy.bin
 share/asterisk/images/
 share/asterisk/images/asterisk-intro.jpg
 share/asterisk/keys/
 share/asterisk/keys/freeworlddialup.pub
 share/asterisk/keys/iaxtel.pub
 share/asterisk/moh/
-share/asterisk/moh/.asterisk-moh-freeplay-wav
+share/asterisk/moh/.asterisk-moh-opsound-wav
 share/asterisk/moh/CHANGES-asterisk-moh-opsound-wav
 share/asterisk/moh/CREDITS-asterisk-moh-opsound-wav
 share/asterisk/moh/LICENSE-asterisk-moh-opsound-wav
@@ -664,6 +663,7 @@ share/asterisk/sounds/vm-opts-full.gsm
 share/asterisk/sounds/vm-opts.gsm
 share/asterisk/sounds/vm-passchanged.gsm
 share/asterisk/sounds/vm-password.gsm
+share/asterisk/sounds/vm-pls-try-again.gsm
 share/asterisk/sounds/vm-press.gsm
 share/asterisk/sounds/vm-prev.gsm
 share/asterisk/sounds/vm-reachoper.gsm
@@ -723,6 +723,7 @@ share/doc/asterisk/COPYING
 share/doc/asterisk/CREDITS
 share/doc/asterisk/ChangeLog
 share/doc/asterisk/IAX2-security.pdf
+share/doc/asterisk/IAX2-security.txt
 share/doc/asterisk/LICENSE
 share/doc/asterisk/PEERING
 share/doc/asterisk/README
@@ -771,7 +772,7 @@ share/doc/asterisk/misdn.txt
 share/doc/asterisk/model.txt
 share/doc/asterisk/modules.txt
 share/doc/asterisk/mp3.txt
-share/doc/asterisk/musiconhold-fpm.txt
+share/doc/asterisk/musiconhold-opsound.txt
 share/doc/asterisk/mysql.txt
 share/doc/asterisk/osp.txt
 share/doc/asterisk/privacy.txt

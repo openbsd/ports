@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.62 2009/11/04 21:51:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2009/11/19 16:17:04 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			1.4.26.3
+VER=			1.4.27
 # you can set PATCHVER=p0, p1 etc to bump everything,
 # this takes care of the subpackage/flavor maze
 PATCHVER=		
-CORESOUNDS=		1.4.15
+CORESOUNDS=		1.4.16
 DISTNAME=		asterisk-${VER:S/rc/-rc/}
 FULLPKGNAME-main=	asterisk-${VER}${PATCHVER}
 
@@ -19,8 +19,7 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # Mostly GPL v2 (only). "Specific permission is also granted to link
 # Asterisk with OpenSSL and OpenH323 and distribute the resulting binary
-# files." iaxy.bin (firmware) is freely redistributable, see LICENSE.
-# core-sounds-en-gsm: GPLv2/CC-BY-SA, http://bugs.digium.com/view.php?id=10144
+# files." core-sounds-*: GPLv2/CC-BY-SA.
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -45,8 +44,14 @@ AUTOMAKE_VERSION=	1.9
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
+LDFLAGS+=		-L${X11BASE}/lib -L${LOCALBASE}/lib
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
+			CFLAGS="${CFLAGS}" \
+			LDFLAGS="${LDFLAGS}"
+MAKE_ENV=		ASTCFLAGS="${CFLAGS}" \
+			ASTLDFLAGS="${LDFLAGS}" \
+			DEBUG=""
 
 CONFIGURE_ARGS+=	--with-asterisk-user=_asterisk \
 			--with-asterisk-group=_asterisk \
@@ -202,10 +207,6 @@ CONFIGURE_ARGS+=	--with-pwlib=no \
 FULLPKGNAME$i ?=	asterisk$i-${VER}${PATCHVER}
 RUN_DEPENDS$i +=	:asterisk-${VER}${PATCHVER}:telephony/asterisk
 .endfor
-
-MAKE_ENV=		ASTCFLAGS="${CFLAGS}" \
-			ASTLDFLAGS="${LDFLAGS}" \
-			DEBUG=""
 
 NO_REGRESS=		Yes
 
