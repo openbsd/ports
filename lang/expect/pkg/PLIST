@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2009/03/11 20:11:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2009/11/19 22:36:56 kili Exp $
 bin/autoexpect
 bin/autopasswd
 bin/cryptdir
@@ -29,7 +29,7 @@ lib/libexpect543.a
 @man man/man1/dislocate.1
 @man man/man1/expect.1
 @man man/man1/kibitz.1
-@man man/man1/mkpasswd.1
+@comment man/man1/mkpasswd.1
 @man man/man1/passmass.1
 @man man/man1/unbuffer.1
 @man man/man3/libexpect.3

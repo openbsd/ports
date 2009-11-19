@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2009/08/10 17:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.51 2009/11/19 22:36:56 kili Exp $
 
 COMMENT=	sophisticated scripter based on Tcl/Tk
 
 DISTNAME=	expect-5.43.0
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 SHARED_LIBS=	expect543 1.2
 CATEGORIES=	lang
 MASTER_SITES=	http://expect.nist.gov/old/
