@@ -1,7 +1,7 @@
-$OpenBSD: patch-bytes_h,v 1.2 2009/04/29 00:51:23 sthen Exp $
---- bytes.h.orig	Tue Apr 28 19:07:58 2009
-+++ bytes.h	Tue Apr 28 19:08:01 2009
-@@ -76,7 +76,7 @@ typedef unsigned long long int uint64_t;
+$OpenBSD: patch-bytes_h,v 1.3 2009/11/19 01:06:07 sthen Exp $
+--- bytes.h.orig	Sat Nov  7 06:33:38 2009
++++ bytes.h	Thu Nov 19 00:57:53 2009
+@@ -80,7 +80,7 @@ typedef unsigned long long int uint64_t;
  
  // ok, we assume to have the same float word order and byte order if float word order is not defined
  #ifndef __FLOAT_WORD_ORDER
