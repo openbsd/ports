@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/25 13:52:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/11/19 17:16:34 eric Exp $
 
 COMMENT=	web application construction kit
 
-VERSION=	0.9.32
+VERSION=	0.9.33
 DISTNAME=	Nevow-${VERSION}
-PKGNAME=	py-nevow-${VERSION}p0
+PKGNAME=	py-nevow-${VERSION}
 CATEGORIES=	www
 
 HOMEPAGE=	http://divmod.org/trac/wiki/DivmodNevow
@@ -21,17 +21,23 @@ MASTER_SITES=	http://ekyo.nerim.net/distfiles/
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	:py-twisted-web-*:devel/py-twisted/web
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS=	:py-twisted-web-*:devel/py-twisted/web	\
 		:py-epsilon-*:devel/py-epsilon
+BUILD_DEPENDS=	${RUN_DEPENDS}	\
+		:py-twisted-lore-*:devel/py-twisted/lore
+
 
 MODPY_EGG_VERSION=	${VERSION}
+MODPY_DISTUTILS_INSTALLARGS=	--install-data=/usr/local/share/doc
+
+pre-configure:
+	cd ${WRKSRC}/doc/howto && lore -p *.xhtml */*.xhtml
+	mv ${WRKSRC}/doc/howto ${WRKSRC}/py-nevow
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/man/nevow-xmlgettext.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-nevow
 	cp -r ${WRKSRC}/examples/* ${PREFIX}/share/examples/py-nevow
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-nevow
-	cp -r ${WRKSRC}/doc/txt/* ${PREFIX}/share/doc/py-nevow
 
 TRIALDIR=	${WRKDIR}/trial
 do-regress: install

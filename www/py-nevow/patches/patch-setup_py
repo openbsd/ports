@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2009/11/19 17:16:34 eric Exp $
+--- setup.py.orig	Fri Mar 13 18:59:06 2009
++++ setup.py	Fri Oct 16 09:00:39 2009
+@@ -9,7 +9,7 @@ except ImportError:
+ 
+ import os
+ docs=[]
+-for (dirpath, dirnames, filenames) in os.walk("doc"):
++for (dirpath, dirnames, filenames) in os.walk("py-nevow"):
+     if ".svn" in dirnames:
+         del dirnames[dirnames.index(".svn")]
+     thesedocs = []
