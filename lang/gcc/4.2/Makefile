@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2009/11/20 17:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2009/11/20 21:08:19 naddy Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -10,12 +10,12 @@ BOOTSTRAP_GEN = 2
 ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tgz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}v0
-PKGNAME-c++ =   g++-${FULL_PKGVERSION}p0v0
+PKGNAME-c++ =   g++-${FULL_PKGVERSION}p1v0
 PKGNAME-estdc = libstdc++-${FULL_PKGVERSION}v0
-PKGNAME-f95 =   g95-${FULL_PKGVERSION}v0
+PKGNAME-f95 =   g95-${FULL_PKGVERSION}p0v0
 PKGNAME-java =  gcj-${FULL_PKGVERSION}v0
-PKGNAME-objc =  gobjc-${FULL_PKGVERSION}v0
-PKGNAME-ada =   gnat-${FULL_PKGVERSION}v0
+PKGNAME-objc =  gobjc-${FULL_PKGVERSION}p0v0
+PKGNAME-ada =   gnat-${FULL_PKGVERSION}p0v0
 SHARED_LIBS =	estdc++		11.0 \
 		gfortran	2.0 \
 		-org-w3c-dom	1.0 \
@@ -182,7 +182,7 @@ PKG_ARGS += -DI386=1
 PKG_ARGS += -DI386=0
 .endif
 
-RUN_DEPENDS =		:gcc-${FULL_PKGVERSION}:${PKGPATH}
+RUN_DEPENDS =		:gcc-${FULL_PKGVERSION}v0:${PKGPATH}
 WANTLIB =		c
 
 RUN_DEPENDS-main =
