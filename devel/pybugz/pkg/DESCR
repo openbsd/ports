@@ -1,0 +1,3 @@
+PyBugz is a python and command line interface to Bugzilla, allowing
+the user to quickly search, extract attachments and close bugs all
+from the comfort of the command line.

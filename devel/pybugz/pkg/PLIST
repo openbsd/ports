@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/20 11:51:49 djm Exp $
+bin/bugz
+lib/python${MODPY_VERSION}/site-packages/bugz/
+lib/python${MODPY_VERSION}/site-packages/bugz/__init__.py
+lib/python${MODPY_VERSION}/site-packages/bugz/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/bugz/bugzilla.py
+lib/python${MODPY_VERSION}/site-packages/bugz/bugzilla.pyc
+lib/python${MODPY_VERSION}/site-packages/bugz/cli.py
+lib/python${MODPY_VERSION}/site-packages/bugz/cli.pyc
+lib/python${MODPY_VERSION}/site-packages/bugz/config.py
+lib/python${MODPY_VERSION}/site-packages/bugz/config.pyc
+lib/python${MODPY_VERSION}/site-packages/pybugz-0.8.0-py${MODPY_VERSION}.egg-info
+share/doc/py-bugz/
+share/doc/py-bugz/README
