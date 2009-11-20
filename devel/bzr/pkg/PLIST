@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/09/19 22:08:52 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/11/20 21:15:25 fgsch Exp $
 bin/bzr
 lib/python${MODPY_VERSION}/site-packages/bzr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/bzrlib/
@@ -162,6 +162,8 @@ lib/python${MODPY_VERSION}/site-packages/bzrlib/conflicts.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/conflicts.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/counted_lock.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/counted_lock.pyc
+lib/python${MODPY_VERSION}/site-packages/bzrlib/crash.py
+lib/python${MODPY_VERSION}/site-packages/bzrlib/crash.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/debug.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/debug.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/decorators.py
@@ -193,6 +195,8 @@ lib/python${MODPY_VERSION}/site-packages/bzrlib/doc_generate/autodoc_man.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/doc_generate/autodoc_man.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/doc_generate/autodoc_rstx.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/doc_generate/autodoc_rstx.pyc
+lib/python${MODPY_VERSION}/site-packages/bzrlib/doc_generate/sphinx_conf.py
+lib/python${MODPY_VERSION}/site-packages/bzrlib/doc_generate/sphinx_conf.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/email_message.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/email_message.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/errors.py
@@ -652,6 +656,8 @@ lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/commands/test_update.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/commands/test_update.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/fake_command.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/fake_command.pyc
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/features.py
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/features.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/file_utils.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/file_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/ftp_server/
@@ -766,6 +772,8 @@ lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_lock/test_lock.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_lock/test_lock.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_lock/test_temporary_write_lock.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_lock/test_temporary_write_lock.pyc
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_pack_repository.py
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_pack_repository.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_repository/
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_repository/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_repository/__init__.pyc
@@ -882,6 +890,8 @@ lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_tree/test_tree.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_tree/test_tree.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_tree/test_walkdirs.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_tree/test_walkdirs.pyc
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_versionedfile.py
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_versionedfile.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_workingtree/
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_workingtree/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/per_workingtree/__init__.pyc
@@ -968,6 +978,9 @@ lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/ssl_certs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/ssl_certs/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/ssl_certs/create_ssls.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/ssl_certs/create_ssls.pyc
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/ssl_certs/server.crt
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/ssl_certs/server_with_pass.key
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/ssl_certs/server_without_pass.key
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/stub_sftp.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/stub_sftp.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test__annotator.py
@@ -1034,6 +1047,8 @@ lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_conflicts.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_conflicts.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_counted_lock.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_counted_lock.pyc
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_crash.py
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_crash.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_debug.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_debug.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_decorators.py
@@ -1110,6 +1125,8 @@ lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_lazy_import.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_lazy_import.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_lazy_regex.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_lazy_regex.pyc
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_lock.py
+lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_lock.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_lockable_files.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_lockable_files.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_lockdir.py
@@ -1150,8 +1167,6 @@ lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_osutils_encodings.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_osutils_encodings.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_pack.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_pack.pyc
-lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_pack_repository.py
-lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_pack_repository.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_patch.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_patch.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_patches.py
@@ -1294,8 +1309,6 @@ lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_version.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_version.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_version_info.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_version_info.pyc
-lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_versionedfile.py
-lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_versionedfile.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_weave.py
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_weave.pyc
 lib/python${MODPY_VERSION}/site-packages/bzrlib/tests/test_whitebox.py
