@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/03 11:30:02 espie Exp $
-bin/lzop
+@comment $OpenBSD: PLIST,v 1.3 2009/11/20 13:35:25 ajacoutot Exp $
+@bin bin/lzop
 @man man/man1/lzop.1
