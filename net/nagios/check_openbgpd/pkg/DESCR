@@ -1,0 +1,3 @@
+Nagios plugin to check for the status of peers connected to an
+OpenBGPd router. Allows you to specify valid peers and acceptable
+status based on the connection status/number of paths received.
