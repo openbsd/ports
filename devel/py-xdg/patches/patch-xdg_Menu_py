@@ -1,0 +1,12 @@
+$OpenBSD: patch-xdg_Menu_py,v 1.5 2009/11/20 08:45:21 ajacoutot Exp $
+--- xdg/Menu.py.orig	Fri Nov 20 09:42:48 2009
++++ xdg/Menu.py	Fri Nov 20 09:43:04 2009
+@@ -503,7 +503,7 @@ def parse(filename=None):
+         filename = __getFileName(candidate)
+         
+     if not filename:
+-        raise ParsingError('File not found', "/etc/xdg/menus/%s" % candidate)
++        raise ParsingError('File not found', "${SYSCONFDIR}/xdg/menus/%s" % candidate)
+ 
+     # check if it is a .menu file
+     if not os.path.splitext(filename)[1] == ".menu":
