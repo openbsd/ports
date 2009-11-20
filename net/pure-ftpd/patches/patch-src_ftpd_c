@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ftpd_c,v 1.1 2009/11/20 00:57:23 sthen Exp $
+--- src/ftpd.c.orig	Thu Nov 19 17:58:22 2009
++++ src/ftpd.c	Thu Nov 19 17:58:46 2009
+@@ -5495,7 +5495,7 @@ static void standalone_server(void)
+         freeaddrinfo(res);
+         set_cloexec_flag(listenfd);     
+     }
+-    if (listenfd6 != -1 && v6ready != 0) {
++    if (listenfd6 == -1 && v6ready != 0) {
+         hints.ai_family = AF_INET6;
+         if (getaddrinfo(standalone_ip, standalone_port, &hints, &res6) == 0) {
+             if ((listenfd6 = socket(AF_INET6,
