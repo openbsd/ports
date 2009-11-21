@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/03/22 16:42:12 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/11/21 13:41:15 fgsch Exp $
 bin/buildbot
 lib/python${MODPY_VERSION}/site-packages/buildbot/
 lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -139,6 +139,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/about.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/about.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/auth.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/auth.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/base.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/base.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/baseweb.py
@@ -147,6 +149,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/build.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/build.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/builder.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/builder.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/buildstatus.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/buildstatus.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/changes.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/changes.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/web/classic.css
@@ -220,6 +224,12 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/freshcvs.6
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/freshcvs.7
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/freshcvs.8
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/freshcvs.9
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/launchpad.1
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/launchpad.2
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/launchpad.3
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/launchpad.4
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/launchpad.5
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/launchpad.6
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/svn-commit.1
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/svn-commit.2
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/mail/syncmail.1
@@ -241,6 +251,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_buildreq.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_buildreq.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_buildstep.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_buildstep.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_changemaster.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_changemaster.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_changes.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_changes.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_config.py
@@ -261,6 +273,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_mailparse.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_mailparse.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_mergerequests.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_mergerequests.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_ordering.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_ordering.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_p4poller.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_p4poller.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/test_package_rpm.py
@@ -317,10 +331,10 @@ share/doc/py-buildbot/contrib/
 share/doc/py-buildbot/contrib/CSS/
 share/doc/py-buildbot/contrib/CSS/sample1.css
 share/doc/py-buildbot/contrib/CSS/sample2.css
-share/doc/py-buildbot/contrib/OS-X/
-share/doc/py-buildbot/contrib/OS-X/README
-share/doc/py-buildbot/contrib/OS-X/net.sourceforge.buildbot.master.plist
-share/doc/py-buildbot/contrib/OS-X/net.sourceforge.buildbot.slave.plist
+@comment share/doc/py-buildbot/contrib/OS-X/
+@comment share/doc/py-buildbot/contrib/OS-X/README
+@comment share/doc/py-buildbot/contrib/OS-X/net.sourceforge.buildbot.master.plist
+@comment share/doc/py-buildbot/contrib/OS-X/net.sourceforge.buildbot.slave.plist
 share/doc/py-buildbot/contrib/README.txt
 share/doc/py-buildbot/contrib/arch_buildbot.py
 share/doc/py-buildbot/contrib/bb_applet.py
@@ -329,17 +343,18 @@ share/doc/py-buildbot/contrib/darcs_buildbot.py
 share/doc/py-buildbot/contrib/fakechange.py
 share/doc/py-buildbot/contrib/generate_changelog.py
 share/doc/py-buildbot/contrib/git_buildbot.py
+share/doc/py-buildbot/contrib/github_buildbot.py
 share/doc/py-buildbot/contrib/hg_buildbot.py
 share/doc/py-buildbot/contrib/run_maxq.py
 share/doc/py-buildbot/contrib/svn_buildbot.py
 share/doc/py-buildbot/contrib/svn_watcher.py
 share/doc/py-buildbot/contrib/svnpoller.py
 share/doc/py-buildbot/contrib/viewcvspoll.py
-share/doc/py-buildbot/contrib/windows/
-share/doc/py-buildbot/contrib/windows/buildbot.bat
-share/doc/py-buildbot/contrib/windows/buildbot2.bat
-share/doc/py-buildbot/contrib/windows/buildbot_service.py
-share/doc/py-buildbot/contrib/windows/setup.py
+@comment share/doc/py-buildbot/contrib/windows/
+@comment share/doc/py-buildbot/contrib/windows/buildbot.bat
+@comment share/doc/py-buildbot/contrib/windows/buildbot2.bat
+@comment share/doc/py-buildbot/contrib/windows/buildbot_service.py
+@comment share/doc/py-buildbot/contrib/windows/setup.py
 share/doc/py-buildbot/hexnut32.png
 share/doc/py-buildbot/hexnut48.png
 share/doc/py-buildbot/hexnut64.png

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/22 16:42:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2009/11/21 13:41:15 fgsch Exp $
 
 COMMENT =	system to automate the compile/test cycle
 
-MODPY_EGG_VERSION =	0.7.10p1
+MODPY_EGG_VERSION =	0.7.11p3
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME:S/p1/.1/}
+PKGNAME =	py-${DISTNAME:S/p3/.3/}
 
 CATEGORIES =   	devel
 
@@ -30,6 +30,9 @@ RUN_DEPENDS =	::devel/py-twisted/core \
 		::devel/py-twisted/web \
 		::devel/py-twisted/words
 REGRESS_DEPENDS =	${RUN_DEPENDS}
+
+post-configure:
+	@cd ${WRKSRC}/docs && makeinfo --no-split --html buildbot
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-buildbot/images
