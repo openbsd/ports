@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/04/24 21:13:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/11/21 02:50:23 sthen Exp $
 @option no-default-conflict
 @conflict tk->=8.5,<8.6
 %%SHARED%%
@@ -421,6 +421,7 @@ lib/tk8.5/man/mann/
 @man lib/tk8.5/man/mann/ttk_sizegrip.n
 @man lib/tk8.5/man/mann/ttk_style.n
 @man lib/tk8.5/man/mann/ttk_treeview.n
+@man lib/tk8.5/man/mann/ttk_vsapi.n
 @man lib/tk8.5/man/mann/ttk_widget.n
 @man lib/tk8.5/man/mann/winfo.n
 @man lib/tk8.5/man/mann/wm.n
@@ -481,6 +482,7 @@ lib/tk8.5/ttk/sizegrip.tcl
 lib/tk8.5/ttk/treeview.tcl
 lib/tk8.5/ttk/ttk.tcl
 lib/tk8.5/ttk/utils.tcl
+lib/tk8.5/ttk/vistaTheme.tcl
 lib/tk8.5/ttk/winTheme.tcl
 lib/tk8.5/ttk/xpTheme.tcl
 lib/tk8.5/unsupported.tcl

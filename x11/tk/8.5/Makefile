@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/09/06 10:46:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/11/21 02:50:23 sthen Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-V =			8.5.7
-DISTNAME =		tk${V}
-PKGNAME =		tk-${V}p0
-SHARED_LIBS =		tk85 0.4
+DISTNAME =		tk8.5.8
+PKGNAME =		tk-8.5.8
+SHARED_LIBS =		tk85 0.5
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -57,9 +56,9 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
-LIB_DEPENDS =		tcl85:tcl->=$V,<8.5.8-${FLAVOR}:lang/tcl/8.5
+LIB_DEPENDS =		tcl85:tcl->=8.5.8,<8.5.9-${FLAVOR}:lang/tcl/8.5
 .else
-LIB_DEPENDS =		tcl85:tcl->=$V,<8.5.8:lang/tcl/8.5
+LIB_DEPENDS =		tcl85:tcl->=8.5.8,<8.5.9:lang/tcl/8.5
 .endif
 
 WRKSRC =		${WRKDIST}/unix

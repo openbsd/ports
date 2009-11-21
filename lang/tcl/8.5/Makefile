@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/04/24 21:13:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2009/11/21 02:50:23 sthen Exp $
 
 COMMENT =		Tool Command Language
 
-V =			8.5.7
-DISTNAME =		tcl${V}
-PKGNAME =		tcl-${V}
-SHARED_LIBS =		tcl85 0.4
+DISTNAME =		tcl8.5.8
+PKGNAME =		tcl-8.5.8
+SHARED_LIBS =		tcl85 0.5
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -43,9 +42,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-rpath
 
 CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtcl85_VERSION}"
-
-# Needs a full network connection to run?
-#REGRESS_IS_INTERACTIVE=Yes
 
 FLAVORS =		threaded
 FLAVOR ?=
