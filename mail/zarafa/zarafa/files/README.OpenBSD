@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.9 2009/10/07 17:05:08 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.10 2009/11/21 12:09:29 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -47,19 +47,9 @@ if [ -x ${TRUEPREFIX}/bin/zarafa-server ]; then
 		sleep 1
 		i=`expr ${i} + 1`
 	done
-	echo -n ' zarafa-server' ; ${TRUEPREFIX}/bin/zarafa-server
-fi
-if [ -x ${TRUEPREFIX}/bin/zarafa-spooler ]; then
-	echo -n ' zarafa-spooler' ; ${TRUEPREFIX}/bin/zarafa-spooler
-fi
-if [ -x ${TRUEPREFIX}/bin/zarafa-monitor ]; then
-	echo -n ' zarafa-monitor' ; ${TRUEPREFIX}/bin/zarafa-monitor
-fi
-if [ -x ${TRUEPREFIX}/bin/zarafa-gateway ]; then
-	echo -n ' zarafa-gateway' ; ${TRUEPREFIX}/bin/zarafa-gateway
-fi
-if [ -x ${TRUEPREFIX}/bin/zarafa-ical ]; then
-	echo -n ' zarafa-ical' ; ${TRUEPREFIX}/bin/zarafa-ical
+	for i in zarafa-server zarafa-spooler zarafa-monitor zarafa-gateway zarafa-ical; do
+		echo -n " ${i}"; ${TRUEPREFIX}/bin/${i}
+	done
 fi
 
 
