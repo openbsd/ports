@@ -1,0 +1,58 @@
+$OpenBSD: patch-pango_pangofc-private_h,v 1.1 2009/11/21 13:29:29 ajacoutot Exp $
+
+Bug 341481 - pangocairo kerning problem with nonidentity scaling
+Merged from upstream git d9abcaf566e9cd7f702c98958f99f90fd53b4c0b
+
+--- pango/pangofc-private.h.orig	Thu May 21 15:10:01 2009
++++ pango/pangofc-private.h	Sat Nov 21 13:18:23 2009
+@@ -93,6 +93,50 @@ void            pango_fc_font_get_raw_extents    (Pang
+ PangoFontMetrics *pango_fc_font_create_metrics_for_context (PangoFcFont   *font,
+ 							    PangoContext  *context);
+ 
++
++
++/* To be made public at some point */
++
++#include <math.h>
++
++static G_GNUC_UNUSED void
++pango_matrix_get_font_scale_factors (const PangoMatrix *matrix,
++				     double *xscale, double *yscale)
++{
++/*
++ * Based on cairo-matrix.c:_cairo_matrix_compute_scale_factors()
++ *
++ * Copyright 2005, Keith Packard
++ */
++  double major = 0, minor = 0;
++
++  if (matrix) {
++    double det = matrix->xx * matrix->yy - matrix->yx * matrix->xy;
++
++    if (det)
++      {
++	double x = matrix->xx;
++	double y = matrix->yx;
++
++	major = sqrt (x*x + y*y);
++
++	/*
++	 * ignore mirroring
++	 */
++	if (det < 0)
++	  det = - det;
++
++	if (major)
++	  minor = det / major;
++      }
++  }
++
++  if (xscale)
++    *xscale = major;
++  if (yscale)
++    *yscale = minor;
++}
++
+ G_END_DECLS
+ 
+ #endif /* __PANGOFC_PRIVATE_H__ */

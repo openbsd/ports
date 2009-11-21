@@ -1,0 +1,113 @@
+$OpenBSD: patch-pango_pango-ot-buffer_c,v 1.1 2009/11/21 13:29:29 ajacoutot Exp $
+
+Bug 341481 - pangocairo kerning problem with nonidentity scaling
+Merged from upstream git d9abcaf566e9cd7f702c98958f99f90fd53b4c0b
+
+--- pango/pango-ot-buffer.c.orig	Wed Jul 15 19:26:35 2009
++++ pango/pango-ot-buffer.c	Sat Nov 21 14:13:16 2009
+@@ -224,6 +224,9 @@ swap_range (PangoGlyphString *glyphs, int start, int e
+ static void
+ apply_gpos_ltr (PangoGlyphString *glyphs,
+ 		HB_Position      positions,
++		gboolean             scale,
++		double               xscale,
++		double               yscale,
+ 		gboolean         is_hinted)
+ {
+   int i;
+@@ -241,6 +244,8 @@ apply_gpos_ltr (PangoGlyphString *glyphs,
+ 
+       if (is_hinted)
+ 	adjustment = PANGO_UNITS_ROUND (adjustment);
++      if (G_UNLIKELY (scale))
++	adjustment *= xscale;
+ 
+       if (positions[i].new_advance)
+ 	glyphs->glyphs[i].geometry.width  = adjustment;
+@@ -258,14 +263,25 @@ apply_gpos_ltr (PangoGlyphString *glyphs,
+       for (j = back; j < i; j++)
+ 	glyphs->glyphs[i].geometry.x_offset -= glyphs->glyphs[j].geometry.width;
+ 
+-      glyphs->glyphs[i].geometry.x_offset += PANGO_UNITS_26_6(x_pos);
+-      glyphs->glyphs[i].geometry.y_offset -= PANGO_UNITS_26_6(y_pos);
++      if (G_UNLIKELY (scale))
++        {
++	  glyphs->glyphs[i].geometry.x_offset += xscale * PANGO_UNITS_26_6(x_pos);
++	  glyphs->glyphs[i].geometry.y_offset -= yscale * PANGO_UNITS_26_6(y_pos);
++	}
++      else
++        {
++	  glyphs->glyphs[i].geometry.x_offset += PANGO_UNITS_26_6(x_pos);
++	  glyphs->glyphs[i].geometry.y_offset -= PANGO_UNITS_26_6(y_pos);
++	}
+     }
+ }
+ 
+ static void
+ apply_gpos_rtl (PangoGlyphString *glyphs,
+ 		HB_Position      positions,
++		gboolean             scale,
++		double               xscale,
++		double               yscale,
+ 		gboolean         is_hinted)
+ {
+   int i;
+@@ -285,6 +301,8 @@ apply_gpos_rtl (PangoGlyphString *glyphs,
+ 
+       if (is_hinted)
+ 	adjustment = PANGO_UNITS_ROUND (adjustment);
++      if (G_UNLIKELY (scale))
++	adjustment *= xscale;
+ 
+       if (positions[i_rev].new_advance)
+ 	glyphs->glyphs[i].geometry.width  = adjustment;
+@@ -304,8 +322,16 @@ apply_gpos_rtl (PangoGlyphString *glyphs,
+       for (j = i; j < back; j++)
+ 	glyphs->glyphs[i].geometry.x_offset += glyphs->glyphs[j].geometry.width;
+ 
+-      glyphs->glyphs[i].geometry.x_offset += PANGO_UNITS_26_6(x_pos);
+-      glyphs->glyphs[i].geometry.y_offset -= PANGO_UNITS_26_6(y_pos);
++      if (G_UNLIKELY (scale))
++        {
++	  glyphs->glyphs[i].geometry.x_offset += xscale * PANGO_UNITS_26_6(x_pos);
++	  glyphs->glyphs[i].geometry.y_offset -= yscale * PANGO_UNITS_26_6(y_pos);
++	}
++      else
++        {
++	  glyphs->glyphs[i].geometry.x_offset += PANGO_UNITS_26_6(x_pos);
++	  glyphs->glyphs[i].geometry.y_offset -= PANGO_UNITS_26_6(y_pos);
++	}
+     }
+ }
+ 
+@@ -392,10 +418,28 @@ pango_ot_buffer_output (const PangoOTBuffer *buffer,
+ 
+   if (buffer->applied_gpos)
+     {
++      gboolean scale = FALSE;
++      double xscale = 1, yscale = 1;
++      PangoFcFontKey *key = _pango_fc_font_get_font_key (buffer->font);
++
++      /* This is a kludge, and dupped in pango_fc_font_kern_glyphs().
++       * Should move the scale factor to PangoFcFont layer. */
++      if (key) {
++	const PangoMatrix *matrix = pango_fc_font_key_get_matrix (key);
++	PangoMatrix identity = PANGO_MATRIX_INIT;
++	if (G_UNLIKELY (matrix && 0 != memcmp (&identity, matrix, 4 * sizeof (double))))
++	  {
++	    scale = TRUE;
++	    pango_matrix_get_font_scale_factors (matrix, &xscale, &yscale);
++	    if (xscale) xscale = 1 / xscale;
++	    if (yscale) yscale = 1 / yscale;
++	  }
++      }
++
+       if (buffer->rtl)
+-	apply_gpos_rtl (glyphs, buffer->buffer->positions, buffer->font->is_hinted);
++	apply_gpos_rtl (glyphs, buffer->buffer->positions, scale, xscale, yscale, buffer->font->is_hinted);
+       else
+-	apply_gpos_ltr (glyphs, buffer->buffer->positions, buffer->font->is_hinted);
++	apply_gpos_ltr (glyphs, buffer->buffer->positions, scale, xscale, yscale, buffer->font->is_hinted);
+     }
+   else
+     {
