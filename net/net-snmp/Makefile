@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2009/08/17 14:58:45 giovanni Exp $
+# $OpenBSD: Makefile,v 1.41 2009/11/22 15:36:33 jasper Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
@@ -47,6 +47,11 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 	--with-sys-location="somewhere" \
 	--with-logfile="/var/log/snmpd" \
 	--with-persistent-directory="/var/net-snmp"
+
+# gcc 3.3.5 internal compiler error
+.if ${MACHINE_ARCH} == "mips64"
+CFLAGS+=  -O0
+.endif
 
 REGRESS_TARGET=	test
 
