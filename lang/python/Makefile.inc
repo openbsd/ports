@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.61 2009/09/22 21:31:00 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.62 2009/11/22 22:53:19 jasper Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -83,6 +83,7 @@ PKG_ARGS+=	-Dmm=1
 .  if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
       ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64" || \
       ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "m68k" || \
+      ${MACHINE_ARCH} == "mips64" || \
       ( ${MACHINE_ARCH} == "powerpc" && ${VERSION} != "2.6" )
 PKG_ARGS+=	-Dctypes=1
 .  else

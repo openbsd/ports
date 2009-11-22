@@ -1,0 +1,12 @@
+$OpenBSD: patch-Modules__ctypes_libffi_configure,v 1.1 2009/11/22 22:53:19 jasper Exp $
+--- Modules/_ctypes/libffi/configure.orig	Sun Nov 22 17:36:15 2009
++++ Modules/_ctypes/libffi/configure	Sun Nov 22 17:36:44 2009
+@@ -3471,7 +3471,7 @@ fi
+ TARGETDIR="unknown"
+ case "$host" in
+ x86_64-*-openbsd*) TARGET=X86_64; TARGETDIR=x86;;
+-mips*-*-openbsd*) TARGET=MIPS; TARGETDIR=mips;;
++mips*-*-openbsd*) TARGET=MIPS_LINUX; TARGETDIR=mips;;
+ sparc-*-openbsd*) TARGET=SPARC; TARGETDIR=sparc;;
+ sparc64-*-openbsd*) TARGET=SPARC; TARGETDIR=sparc;;
+ alpha*-*-openbsd*) TARGET=ALPHA; TARGETDIR=alpha;;
