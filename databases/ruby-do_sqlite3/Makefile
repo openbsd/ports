@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/13 21:16:46 pirofti Exp $
+# $OpenBSD: Makefile,v 1.4 2009/11/22 07:35:32 msf Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	DataObjects driver for SQLite3
 
-DISTNAME =	do_sqlite3-0.10.0
-PKGNAME =	ruby-${DISTNAME}
+VERSION =	0.10.0
+DISTNAME =	do_sqlite3-${VERSION}
+PKGNAME =	ruby-${DISTNAME}p0
 CATEGORIES =	databases
 
 # MIT
@@ -21,7 +22,7 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		::databases/ruby-data_objects
+RUN_DEPENDS =		:ruby-data_objects->=${VERSION}:databases/ruby-data_objects
 
 WANTLIB =		c m
 LIB_DEPENDS =		${MODRUBY_LIB_DEPENDS} \
