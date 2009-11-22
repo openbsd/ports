@@ -1,0 +1,4 @@
+This module is a ruby implementation of a Stomp client.  Stomp is the
+Streaming Text Orientated Messaging Protocol. It's a simple and easy to
+implement protocol for working with Message Orientated Middleware from
+any language.
