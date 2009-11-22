@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/09 12:49:58 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2009/11/22 00:03:58 msf Exp $
 
 COMMENT =		lightweight ORM library for Ruby
 
-DISTNAME =		sequel-3.3.0
+DISTNAME =		sequel-3.6.0
 PKGNAME =		ruby-${DISTNAME}
 CATEGORIES =		databases
 
