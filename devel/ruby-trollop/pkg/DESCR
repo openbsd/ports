@@ -1,0 +1,4 @@
+Trollop is YAFCLAP --- yet another fine commandline argument processing
+library for Ruby. Trollop is designed to provide the maximal amount of
+GNU-style argument processing in the minimum number of lines of code
+(for you, the programmer).
