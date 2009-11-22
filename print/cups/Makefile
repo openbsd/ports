@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2009/11/22 16:47:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2009/11/22 18:10:12 jasper Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.3.11
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p3
+PKGNAME=		cups-${VERSION}p4
 
 CATEGORIES=		print sysutils
 

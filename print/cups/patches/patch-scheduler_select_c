@@ -1,0 +1,43 @@
+$OpenBSD: patch-scheduler_select_c,v 1.1 2009/11/22 18:10:12 jasper Exp $
+
+SECURITY FIX for CVE-2009-3553.
+CUPS "cupsdDoSelect()" Denial of Service Vulnerability.
+
+--- scheduler/select.c.orig	Sun Nov 22 18:47:44 2009
++++ scheduler/select.c	Sun Nov 22 18:49:58 2009
+@@ -483,7 +483,7 @@ cupsdDoSelect(long timeout)		/* I - Timeout in seconds
+       (*(fdptr->read_cb))(fdptr->data);
+     }
+ 
+-    if (fdptr->write_cb && event->filter == EVFILT_WRITE)
++    if (fdptr->use > 1 && fdptr->write_cb && event->filter == EVFILT_WRITE)
+     {
+       cupsdLogMessage(CUPSD_LOG_DEBUG2, "cupsdDoSelect: Write on fd %d...",
+ 	              fdptr->fd);
+@@ -543,7 +543,7 @@ cupsdDoSelect(long timeout)		/* I - Timeout in seconds
+ 	  (*(fdptr->read_cb))(fdptr->data);
+ 	}
+ 
+-	if (fdptr->write_cb && (event->events & (EPOLLOUT | EPOLLERR | EPOLLHUP)))
++	if (fdptr->use > 1 && fdptr->write_cb && (event->events & (EPOLLOUT | EPOLLERR | EPOLLHUP)))
+ 	{
+ 	  cupsdLogMessage(CUPSD_LOG_DEBUG2, "cupsdDoSelect: Write on fd %d...",
+ 	        	  fdptr->fd);
+@@ -655,7 +655,7 @@ cupsdDoSelect(long timeout)		/* I - Timeout in seconds
+         (*(fdptr->read_cb))(fdptr->data);
+       }
+ 
+-      if (fdptr->write_cb && (pfd->revents & (POLLOUT | POLLERR | POLLHUP)))
++      if (fdptr->use > 1 && fdptr->write_cb && (pfd->revents & (POLLOUT | POLLERR | POLLHUP)))
+       {
+         cupsdLogMessage(CUPSD_LOG_DEBUG2, "cupsdDoSelect: Write on fd %d...",
+ 	                fdptr->fd);
+@@ -725,7 +725,7 @@ cupsdDoSelect(long timeout)		/* I - Timeout in seconds
+         (*(fdptr->read_cb))(fdptr->data);
+       }
+ 
+-      if (fdptr->write_cb && FD_ISSET(fdptr->fd, &cupsd_current_output))
++       if (fdptr->use > 1 && fdptr->write_cb && FD_ISSET(fdptr->fd, &cupsd_current_output))
+       {
+         cupsdLogMessage(CUPSD_LOG_DEBUG2, "cupsdDoSelect: Write on fd %d...",
+ 	                fdptr->fd);
