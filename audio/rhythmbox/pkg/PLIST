@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2009/09/18 12:11:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/11/22 11:18:34 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 lib/librhythmbox-core.la
@@ -46,6 +46,35 @@ lib/rhythmbox/plugins/audioscrobbler/audioscrobbler-ui.xml
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.rb-plugin
 lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.la
 lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.so
+lib/rhythmbox/plugins/context/
+lib/rhythmbox/plugins/context/AlbumTab.py
+lib/rhythmbox/plugins/context/AlbumTab.pyc
+lib/rhythmbox/plugins/context/AlbumTab.pyo
+lib/rhythmbox/plugins/context/ArtistTab.py
+lib/rhythmbox/plugins/context/ArtistTab.pyc
+lib/rhythmbox/plugins/context/ArtistTab.pyo
+lib/rhythmbox/plugins/context/ContextView.py
+lib/rhythmbox/plugins/context/ContextView.pyc
+lib/rhythmbox/plugins/context/ContextView.pyo
+lib/rhythmbox/plugins/context/LastFM.py
+lib/rhythmbox/plugins/context/LastFM.pyc
+lib/rhythmbox/plugins/context/LastFM.pyo
+lib/rhythmbox/plugins/context/LyricsTab.py
+lib/rhythmbox/plugins/context/LyricsTab.pyc
+lib/rhythmbox/plugins/context/LyricsTab.pyo
+lib/rhythmbox/plugins/context/__init__.py
+lib/rhythmbox/plugins/context/__init__.pyc
+lib/rhythmbox/plugins/context/__init__.pyo
+lib/rhythmbox/plugins/context/context.rb-plugin
+lib/rhythmbox/plugins/context/img/
+lib/rhythmbox/plugins/context/img/lastfm.png
+lib/rhythmbox/plugins/context/img/spinner.gif
+lib/rhythmbox/plugins/context/tmpl/
+lib/rhythmbox/plugins/context/tmpl/album-tmpl.html
+lib/rhythmbox/plugins/context/tmpl/artist-tmpl.html
+lib/rhythmbox/plugins/context/tmpl/loading.html
+lib/rhythmbox/plugins/context/tmpl/lyrics-tmpl.html
+lib/rhythmbox/plugins/context/tmpl/main.css
 lib/rhythmbox/plugins/daap/
 lib/rhythmbox/plugins/daap/daap-prefs.ui
 lib/rhythmbox/plugins/daap/daap-ui.xml
@@ -154,6 +183,9 @@ lib/rhythmbox/plugins/rb/Coroutine.pyo
 lib/rhythmbox/plugins/rb/Loader.py
 lib/rhythmbox/plugins/rb/Loader.pyc
 lib/rhythmbox/plugins/rb/Loader.pyo
+lib/rhythmbox/plugins/rb/URLCache.py
+lib/rhythmbox/plugins/rb/URLCache.pyc
+lib/rhythmbox/plugins/rb/URLCache.pyo
 lib/rhythmbox/plugins/rb/__init__.py
 lib/rhythmbox/plugins/rb/__init__.pyc
 lib/rhythmbox/plugins/rb/__init__.pyo
@@ -475,6 +507,7 @@ share/locale/az/LC_MESSAGES/rhythmbox.mo
 share/locale/be/LC_MESSAGES/rhythmbox.mo
 share/locale/be@latin/LC_MESSAGES/rhythmbox.mo
 share/locale/bg/LC_MESSAGES/rhythmbox.mo
+share/locale/bn_IN/LC_MESSAGES/rhythmbox.mo
 share/locale/br/LC_MESSAGES/rhythmbox.mo
 share/locale/ca/LC_MESSAGES/rhythmbox.mo
 share/locale/cs/LC_MESSAGES/rhythmbox.mo
@@ -511,6 +544,7 @@ share/locale/mn/LC_MESSAGES/rhythmbox.mo
 share/locale/mr/LC_MESSAGES/rhythmbox.mo
 share/locale/ms/LC_MESSAGES/rhythmbox.mo
 share/locale/nb/LC_MESSAGES/rhythmbox.mo
+share/locale/nds/LC_MESSAGES/rhythmbox.mo
 share/locale/ne/LC_MESSAGES/rhythmbox.mo
 share/locale/nl/LC_MESSAGES/rhythmbox.mo
 share/locale/oc/LC_MESSAGES/rhythmbox.mo
@@ -524,6 +558,7 @@ share/locale/ro/LC_MESSAGES/rhythmbox.mo
 share/locale/ru/LC_MESSAGES/rhythmbox.mo
 share/locale/rw/LC_MESSAGES/rhythmbox.mo
 share/locale/sk/LC_MESSAGES/rhythmbox.mo
+share/locale/sl/LC_MESSAGES/rhythmbox.mo
 share/locale/sr/LC_MESSAGES/rhythmbox.mo
 share/locale/sr@latin/LC_MESSAGES/rhythmbox.mo
 share/locale/sv/LC_MESSAGES/rhythmbox.mo

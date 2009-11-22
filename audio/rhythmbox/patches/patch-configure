@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.7 2009/08/23 19:30:21 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.8 2009/11/22 11:18:34 ajacoutot Exp $
 
 XXX remove when the corresponding ports get updated.
 
---- configure.orig	Sun Aug 23 12:39:01 2009
-+++ configure	Sun Aug 23 13:44:04 2009
-@@ -18058,7 +18058,7 @@ _ACEOF
+--- configure.orig	Sun Nov 22 09:32:26 2009
++++ configure	Sun Nov 22 11:32:42 2009
+@@ -13902,7 +13902,7 @@ _ACEOF
  
  
  DBUS_MIN_REQS=0.35
@@ -13,7 +13,7 @@ XXX remove when the corresponding ports get updated.
  GTK_REQS=2.12.0
  GLIB_REQS=2.16.0
  GNOME_MEDIA_PROFILES_REQS=2.8
-@@ -18068,7 +18068,7 @@ MUSICBRAINZ_REQS=2.1.0
+@@ -13912,7 +13912,7 @@ MUSICBRAINZ_REQS=2.1.0
  MUSICBRAINZ3_REQS=3.0.2
  NCB_MIN_REQS=2.21.6
  BRASERO_MIN_REQS=0.9.1
