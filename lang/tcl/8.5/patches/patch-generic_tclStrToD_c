@@ -1,0 +1,21 @@
+$OpenBSD: patch-generic_tclStrToD_c,v 1.1 2009/11/22 22:58:30 jasper Exp $
+--- generic/tclStrToD.c.orig	Sun Nov 22 13:37:00 2009
++++ generic/tclStrToD.c	Sun Nov 22 13:39:08 2009
+@@ -73,7 +73,7 @@ typedef unsigned int fpu_control_t __attribute__ ((__m
+  * MIPS floating-point units need special settings in control registers
+  * to use gradual underflow as we expect.
+  */
+-#if defined(__mips)
++#if defined(__mips) && !defined(__OpenBSD__)
+ #include <sys/fpu.h>
+ #endif
+ /*
+@@ -2166,7 +2166,7 @@ TclInitDoubleConversion(void)
+     } bitwhack;
+ #endif
+ 
+-#if defined(__mips)
++#if defined(__mips) && !defined(__OpenBSD__)
+     union fpc_csr mipsCR;
+ 
+     mipsCR.fc_word = get_fpc_csr();
