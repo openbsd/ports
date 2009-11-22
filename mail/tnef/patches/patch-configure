@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.1 2006/10/10 04:33:09 kevlo Exp $
---- configure.orig	Tue Oct 10 12:13:29 2006
-+++ configure	Tue Oct 10 12:15:10 2006
-@@ -4406,7 +4406,7 @@ if test "${ac_cv_lib_intl_gettext+set}" 
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+$OpenBSD: patch-configure,v 1.2 2009/11/22 10:35:44 ajacoutot Exp $
+--- configure.orig	Sat Nov 21 18:58:25 2009
++++ configure	Sat Nov 21 18:58:52 2009
+@@ -4571,7 +4571,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then :
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -4482,7 +4482,7 @@ if test $ac_cv_lib_intl_gettext = yes; t
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -4606,7 +4606,7 @@ if test "x$ac_cv_lib_intl_gettext" = x""yes; then :
  #define HAVE_LIBINTL 1
  _ACEOF
  
