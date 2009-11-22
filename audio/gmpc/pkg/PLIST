@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/09/21 18:33:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/11/22 21:53:51 landry Exp $
 @bin bin/gmpc
 @bin bin/gmpc-remote
 bin/gmpc-remote-stream
@@ -6,6 +6,7 @@ include/gmpc/
 include/gmpc/config1.h
 include/gmpc/gmpc-connection.h
 include/gmpc/gmpc-easy-command.h
+include/gmpc/gmpc-favorites.h
 include/gmpc/gmpc-meta-text-view.h
 include/gmpc/gmpc-meta-watcher.h
 include/gmpc/gmpc-metaimage.h
@@ -16,10 +17,13 @@ include/gmpc/gmpc-mpddata-treeview.h
 include/gmpc/gmpc-paned-size-group.h
 include/gmpc/gmpc-plugin.h
 include/gmpc/gmpc-profiles.h
+include/gmpc/gmpc-rating.h
+include/gmpc/gmpc-song-links.h
 include/gmpc/gmpc-version.h
 include/gmpc/gmpc_easy_download.h
 include/gmpc/metadata.h
 include/gmpc/misc.h
+include/gmpc/mpdinteraction.h
 include/gmpc/playlist3-messages.h
 include/gmpc/plugin.h
 lib/pkgconfig/
@@ -29,6 +33,7 @@ lib/pkgconfig/gmpc.pc
 share/applications/gmpc.desktop
 share/gmpc/
 share/gmpc/aboutdialog.ui
+share/gmpc/gmpc-add-url.ui
 share/gmpc/gmpc-gtk-win32.rc
 share/gmpc/icons/
 share/gmpc/icons/gmpc-loading-cover.png
@@ -42,6 +47,11 @@ share/gmpc/icons/hicolor/128x128/categories/mpd.png
 share/gmpc/icons/hicolor/128x128/status/
 share/gmpc/icons/hicolor/128x128/status/fetching-artist.png
 share/gmpc/icons/hicolor/128x128/status/frame-artist.png
+share/gmpc/icons/hicolor/128x128/status/media-album.png
+share/gmpc/icons/hicolor/128x128/status/media-format.png
+share/gmpc/icons/hicolor/128x128/status/media-genre.png
+share/gmpc/icons/hicolor/128x128/status/media-num-tracks.png
+share/gmpc/icons/hicolor/128x128/status/media-track-length.png
 share/gmpc/icons/hicolor/128x128/status/no-artist.png
 share/gmpc/icons/hicolor/128x128/status/stylized-cover.png
 share/gmpc/icons/hicolor/128x128/status/stylized-fetching-cover.png
@@ -66,6 +76,12 @@ share/gmpc/icons/hicolor/16x16/status/gmpc-tray-disconnected.png
 share/gmpc/icons/hicolor/16x16/status/gmpc-tray-pause.png
 share/gmpc/icons/hicolor/16x16/status/gmpc-tray-play.png
 share/gmpc/icons/hicolor/16x16/status/gmpc-tray.png
+share/gmpc/icons/hicolor/16x16/status/media-album.png
+share/gmpc/icons/hicolor/16x16/status/media-format.png
+share/gmpc/icons/hicolor/16x16/status/media-genre.png
+share/gmpc/icons/hicolor/16x16/status/media-num-tracks.png
+share/gmpc/icons/hicolor/16x16/status/media-track-length.png
+share/gmpc/icons/hicolor/16x16/status/rating.png
 share/gmpc/icons/hicolor/16x16/status/stock_repeat.png
 share/gmpc/icons/hicolor/16x16/status/stock_shuffle.png
 share/gmpc/icons/hicolor/22x22/
@@ -84,6 +100,12 @@ share/gmpc/icons/hicolor/22x22/status/gmpc-tray-disconnected.png
 share/gmpc/icons/hicolor/22x22/status/gmpc-tray-pause.png
 share/gmpc/icons/hicolor/22x22/status/gmpc-tray-play.png
 share/gmpc/icons/hicolor/22x22/status/gmpc-tray.png
+share/gmpc/icons/hicolor/22x22/status/media-album.png
+share/gmpc/icons/hicolor/22x22/status/media-format.png
+share/gmpc/icons/hicolor/22x22/status/media-genre.png
+share/gmpc/icons/hicolor/22x22/status/media-num-tracks.png
+share/gmpc/icons/hicolor/22x22/status/media-track-length.png
+share/gmpc/icons/hicolor/22x22/status/rating.png
 share/gmpc/icons/hicolor/32x32/
 share/gmpc/icons/hicolor/32x32/actions/
 share/gmpc/icons/hicolor/32x32/actions/add-url.png
@@ -102,6 +124,12 @@ share/gmpc/icons/hicolor/32x32/status/audio-volume-medium.png
 share/gmpc/icons/hicolor/32x32/status/audio-volume-muted.png
 share/gmpc/icons/hicolor/32x32/status/emblem-favorite.png
 share/gmpc/icons/hicolor/32x32/status/gmpc-tray.png
+share/gmpc/icons/hicolor/32x32/status/media-album.png
+share/gmpc/icons/hicolor/32x32/status/media-format.png
+share/gmpc/icons/hicolor/32x32/status/media-genre.png
+share/gmpc/icons/hicolor/32x32/status/media-num-tracks.png
+share/gmpc/icons/hicolor/32x32/status/media-track-length.png
+share/gmpc/icons/hicolor/32x32/status/rating.png
 share/gmpc/icons/hicolor/48x48/
 share/gmpc/icons/hicolor/48x48/actions/
 share/gmpc/icons/hicolor/48x48/actions/media-playlist.png
@@ -113,6 +141,11 @@ share/gmpc/icons/hicolor/48x48/status/
 share/gmpc/icons/hicolor/48x48/status/fetching-artist.png
 share/gmpc/icons/hicolor/48x48/status/frame-artist.png
 share/gmpc/icons/hicolor/48x48/status/gmpc-tray.png
+share/gmpc/icons/hicolor/48x48/status/media-album.png
+share/gmpc/icons/hicolor/48x48/status/media-format.png
+share/gmpc/icons/hicolor/48x48/status/media-genre.png
+share/gmpc/icons/hicolor/48x48/status/media-num-tracks.png
+share/gmpc/icons/hicolor/48x48/status/media-track-length.png
 share/gmpc/icons/hicolor/48x48/status/no-artist.png
 share/gmpc/icons/hicolor/48x48/status/stylized-cover.png
 share/gmpc/icons/hicolor/64x64/
@@ -121,6 +154,11 @@ share/gmpc/icons/hicolor/64x64/apps/gmpc.png
 share/gmpc/icons/hicolor/64x64/status/
 share/gmpc/icons/hicolor/64x64/status/fetching-artist.png
 share/gmpc/icons/hicolor/64x64/status/frame-artist.png
+share/gmpc/icons/hicolor/64x64/status/media-album.png
+share/gmpc/icons/hicolor/64x64/status/media-format.png
+share/gmpc/icons/hicolor/64x64/status/media-genre.png
+share/gmpc/icons/hicolor/64x64/status/media-num-tracks.png
+share/gmpc/icons/hicolor/64x64/status/media-track-length.png
 share/gmpc/icons/hicolor/64x64/status/no-artist.png
 share/gmpc/icons/hicolor/64x64/status/stylized-cover.png
 share/gmpc/icons/hicolor/64x64/status/stylized-fetching-cover.png
@@ -131,6 +169,11 @@ share/gmpc/icons/hicolor/72x72/apps/gmpc.png
 share/gmpc/icons/hicolor/72x72/status/
 share/gmpc/icons/hicolor/72x72/status/fetching-artist.png
 share/gmpc/icons/hicolor/72x72/status/frame-artist.png
+share/gmpc/icons/hicolor/72x72/status/media-album.png
+share/gmpc/icons/hicolor/72x72/status/media-format.png
+share/gmpc/icons/hicolor/72x72/status/media-genre.png
+share/gmpc/icons/hicolor/72x72/status/media-num-tracks.png
+share/gmpc/icons/hicolor/72x72/status/media-track-length.png
 share/gmpc/icons/hicolor/72x72/status/no-artist.png
 share/gmpc/icons/hicolor/72x72/status/stylized-cover.png
 share/gmpc/icons/hicolor/72x72/status/stylized-fetching-cover.png
@@ -141,6 +184,11 @@ share/gmpc/icons/hicolor/96x96/apps/gmpc.png
 share/gmpc/icons/hicolor/96x96/status/
 share/gmpc/icons/hicolor/96x96/status/fetching-artist.png
 share/gmpc/icons/hicolor/96x96/status/frame-artist.png
+share/gmpc/icons/hicolor/96x96/status/media-album.png
+share/gmpc/icons/hicolor/96x96/status/media-format.png
+share/gmpc/icons/hicolor/96x96/status/media-genre.png
+share/gmpc/icons/hicolor/96x96/status/media-num-tracks.png
+share/gmpc/icons/hicolor/96x96/status/media-track-length.png
 share/gmpc/icons/hicolor/96x96/status/no-artist.png
 share/gmpc/icons/hicolor/96x96/status/stylized-fetching-cover.png
 share/gmpc/icons/hicolor/96x96/status/stylized-no-cover.png

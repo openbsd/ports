@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2009/09/21 18:39:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2009/11/22 21:53:51 landry Exp $
 
 COMMENT=		GNOME music player client
 
-VERSION=		0.19.0
+VERSION=		0.19.1
 DISTNAME=		gmpc-${VERSION}
-PKGNAME=		${DISTNAME}p0
 CATEGORIES=		audio
 
 MAINTAINER=		Landry Breuil <gaston@gcu.info>
@@ -45,7 +44,7 @@ CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 CONFIGURE_ARGS+=	--enable-configdir \
 			--enable-system-libsexy
 
-LIB_DEPENDS=		mpd:libmpd->=${VERSION}:audio/libmpd \
+LIB_DEPENDS=		mpd:libmpd->=0.19.0:audio/libmpd \
 			sexy::x11/libsexy \
 			glade-2.0::devel/libglade2 \
 			soup-2.4::devel/libsoup,-main
