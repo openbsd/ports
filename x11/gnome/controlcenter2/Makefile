@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2009/10/20 10:06:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2009/11/22 17:23:20 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.28.1
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=	gnome-window-settings 3.0      # .1.0
 
@@ -49,7 +50,6 @@ BUILD_DEPENDS=		::x11/gnome/settings-daemon \
 			:shared-mime-info->=0.21:misc/shared-mime-info
 RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			::x11/gnome/settings-daemon \
-			::audio/sound-theme-freedesktop \
 			::x11/gnome/terminal
 
 USE_X11=		Yes
@@ -58,7 +58,6 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	control-center2
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-hal \
 		--disable-update-mimedb \
 		--enable-aboutme
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
