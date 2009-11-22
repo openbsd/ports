@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.756 2009/11/20 11:52:40 djm Exp $
+# $OpenBSD: Makefile,v 1.757 2009/11/22 06:49:14 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -781,6 +781,7 @@
      SUBDIR += ruby-actionpack
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-assistance
+     SUBDIR += ruby-clio
      SUBDIR += ruby-color-tools
      SUBDIR += ruby-columnize
      SUBDIR += ruby-cucumber
@@ -790,6 +791,7 @@
      SUBDIR += ruby-diff-lcs
      SUBDIR += ruby-echoe
      SUBDIR += ruby-extlib
+     SUBDIR += ruby-facets
      SUBDIR += ruby-fastthread
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gem_plugin
@@ -820,6 +822,7 @@
      SUBDIR += ruby-systemtimer
      SUBDIR += ruby-term-ansicolor
      SUBDIR += ruby-transaction-simple
+     SUBDIR += ruby-trollop
      SUBDIR += ruby-tzinfo
      SUBDIR += ruby-uuidtools
      SUBDIR += ruby-zentest
