@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2009/10/12 23:45:21 naddy Exp $
---- configure.orig	Thu Oct  8 23:29:52 2009
-+++ configure	Mon Oct 12 19:05:00 2009
+$OpenBSD: patch-configure,v 1.2 2009/11/22 20:21:27 naddy Exp $
+--- configure.orig	Thu Nov 19 20:31:46 2009
++++ configure	Sun Nov 22 02:05:23 2009
 @@ -12651,10 +12651,10 @@ fi
  # opt-in for IEEE754 floating point action
  # We want to make sure not to apply hacks relying on IEEE754 storage format on platforms where we did not make sure that this actually is valid.
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.1 2009/10/12 23:45:21 naddy Exp $
    ;;
  esac
  if test "x$ieee" = xyes; then
-@@ -14481,8 +14481,8 @@ esac
+@@ -14504,8 +14504,8 @@ esac
  for i in $more_sources
  do
    # Echo make sure every file is only once in the list.

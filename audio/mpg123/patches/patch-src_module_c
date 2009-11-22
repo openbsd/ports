@@ -1,0 +1,44 @@
+$OpenBSD: patch-src_module_c,v 1.1 2009/11/22 20:21:27 naddy Exp $
+
+Do not depend on the current directory being in the default module
+search path.
+
+--- src/module.c.orig	Sun Nov 22 13:08:15 2009
++++ src/module.c	Sun Nov 22 13:12:37 2009
+@@ -102,22 +102,19 @@ open_module( const char* type, const char* name )
+ 	size_t module_symbol_len = 0;
+ 	char *workdir = NULL;
+ 	char *moddir  = NULL;
+-	workdir = get_the_cwd();
+ 	moddir  = get_module_dir();
+-	if(workdir == NULL || moddir == NULL)
++	if(moddir == NULL)
+ 	{
+-		error("Failure getting workdir or moddir!");
+-		if(workdir != NULL) free(workdir);
+-		if(moddir  != NULL) free(moddir);
++		error("Failure getting moddir!");
+ 		return NULL;
+ 	}
+ 
+ 	/* Initialize libltdl */
+ 	if (lt_dlinit()) error( "Failed to initialise libltdl" );
+ 
+-	if(chdir(moddir) != 0)
++	if(lt_dlsetsearchpath(moddir) != 0)
+ 	{
+-		error2("Failed to enter module directory %s: %s", moddir, strerror(errno));
++		error2("Failed to set module directory %s: %s", moddir, lt_dlerror());
+ 		goto om_bad;
+ 	}
+ 	/* Work out the path of the module to open */
+@@ -173,9 +170,7 @@ om_latebad:
+ om_bad:
+ 	module = NULL;
+ om_end:
+-	chdir(workdir);
+ 	free(moddir);
+-	free(workdir);
+ 	return module;
+ }
+ 
