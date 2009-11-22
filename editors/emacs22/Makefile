@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2009/11/22 15:07:13 jasper Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -85,7 +85,7 @@ WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb z
 RUN_DEPENDS-el=		:emacs-${VERSION}:${PKGPATH}
 PKG_ARCH-el=		*
 
-.if ${MACHINE_ARCH} == "amd64"
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "mips64"
 post-extract:
 	touch ${WRKSRC}/leim/quail/tsang-b5.el
 
