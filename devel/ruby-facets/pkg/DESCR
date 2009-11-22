@@ -1,0 +1,21 @@
+Ruby Facets is a collection of general purpose, pure-Ruby extensions
+and additions for the Ruby programming language. Facets is divided into
+two libraries, one for the extensions and the other for the additions.
+called Facets/CORE and Facets/MORE, respectively.
+
+Facets/CORE is a large collection of methods which extend the core
+capabilities of Ruby's built-in classes and modules. This collection of
+extension methods are unique by virtue of their atomicity. The methods
+are stored individually so that each can be required independently.
+This gives developers fine-grain control over which extra methods to bring
+into his or her code. The collection currently contains over 400 methods
+spanning 28 classes and modules. It is an atomic library in that the
+methods are packaged individually so that each can be required
+independently. This gives the programmer greater control to
+include only the extra methods he or she actually needs.
+
+Facets/MORE are a collection of classes, modules and light frameworks
+whcih cons itutes an ever growing and improving source of reusable
+components. Some very nice additions are provided, from an amazing SI
+Units system to an elegant Annotations system. And of course there are
+all the more typical goodies like Tuple, Functor and Multiton.
