@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_amqp_utils_rb,v 1.1.1.1 2009/11/22 06:52:36 msf Exp $
+--- lib/amqp_utils.rb.orig	Wed Nov  4 14:39:02 2009
++++ lib/amqp_utils.rb	Wed Nov  4 14:39:09 2009
+@@ -10,7 +10,7 @@ require 'rubygems'
+ gem 'trollop'
+ require 'trollop'
+ 
+-gem 'tmm1-amqp'
++gem 'amqp'
+ require 'mq'
+ 
+ gem 'facets'
