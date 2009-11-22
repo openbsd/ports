@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2009/11/11 11:00:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2009/11/22 16:38:55 ajacoutot Exp $
 
 COMMENT=		Common Unix Printing System
 
 VERSION=		1.3.11
 DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p2
+PKGNAME=		cups-${VERSION}p3
 
 CATEGORIES=		print sysutils
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += asn1 c crypto gssapi jpeg krb5 m pthread z
+WANTLIB += asn1 c crypto gssapi jpeg krb5 m pthread ssl z
 
 MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 			http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -38,7 +38,6 @@ RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
 LIB_DEPENDS=		png.>=3::graphics/png \
 			tiff.>=35::graphics/tiff \
 			dbus-1.>=7::x11/dbus \
-			gnutls.>=14::security/gnutls
 # only build the -main subpackage to prevent cyclic dependency
 LIB_DEPENDS+=		dns_sd::net/avahi,no_gtk,no_mono,no_qt3,no_qt4
 
@@ -76,14 +75,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-ldap \
 			--disable-slp \
 			--disable-default-shared \
-			--disable-pdftops
-
-# XXX we need to use GnuTLS instead of OpenSSL because of a conflicting
-# symbol (both OpenSSL and NSS share a SHA1_Update() symbol). This can
-# lead applications to crash.
-# e.g. evolution is linked with nss and cups, if cups was linked with
-# ssl, then we'll get a segfault when SHA1_Final is called by OpenSSL
-CONFIGURE_ARGS+=	--enable-gnutls=yes
+			--disable-pdftops \
+			--disable-gnutls
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				-I${LOCALBASE}/include/libpng \
@@ -92,7 +85,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			LIBcups_VERSION=${LIBcups_VERSION} \
 			LIBcupsimage_VERSION=${LIBcupsimage_VERSION} \
-			LIBGNUTLSCONFIG="pkg-config gnutls" \
 			ac_cv_path_CUPS_GHOSTSCRIPT="${LOCALBASE}/bin/gs"
 
 CFLAGS+=		-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
@@ -117,8 +109,6 @@ CONFIGURE_ARGS+=	--disable-ldap
 
 post-extract:
 	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
-	# XXX check on update whether this is still necessary
-	${INSTALL} -m 555 ${FILESDIR}/libgnutls-config ${WRKDIR}/bin
 
 post-configure:
 	cd ${WRKBUILD} && perl -pi -e 's|\$${DESTDIR}||g' init/cups.sh \
