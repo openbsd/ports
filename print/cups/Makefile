@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2009/11/22 16:38:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2009/11/22 16:47:35 jasper Exp $
 
 COMMENT=		Common Unix Printing System
 
@@ -96,6 +96,11 @@ REGRESS_FLAGS=		LOCALBASE=${LOCALBASE}
 
 REGRESS_DEPENDS=	::print/htmldoc
 REGRESS_IS_INTERACTIVE=	Yes
+
+# gcc 3.3.5 internal compiler error
+.if ${MACHINE_ARCH} == "mips64"
+CFLAGS+=	-O0
+.endif
 
 FLAVORS=	ldap
 FLAVOR?=
