@@ -1,10 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/17 18:37:20 ajacoutot Exp $
-libexec/cups/
-libexec/cups/filter/
+@comment $OpenBSD: PLIST,v 1.2 2009/11/22 16:40:03 ajacoutot Exp $
 @bin libexec/cups/filter/pstoqpdl
 @bin libexec/cups/filter/rastertoqpdl
-share/cups/
-share/cups/model/
 share/cups/model/dell/
 share/cups/model/dell/1100.ppd
 share/cups/model/dell/1100fr.ppd

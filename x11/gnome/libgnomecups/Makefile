@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/07/12 20:32:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/11/22 16:40:04 ajacoutot Exp $
 
 COMMENT=		GNOME library for CUPS interaction
 
 GNOME_PROJECT=		libgnomecups
 GNOME_VERSION=		0.2.3
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 SHARED_LIBS=		gnomecups-1.0	1.0 # .1.0
 
 CATEGORIES=		devel
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += asn1 crypto gcrypt gnutls gpg-error gssapi krb5 m pcre
-WANTLIB += tasn1 z
+WANTLIB += asn1 crypto gssapi krb5 m pcre ssl z
 
 MODULES=		devel/gettext \
 			x11/gnome

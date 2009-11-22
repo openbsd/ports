@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/05/23 17:09:31 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2009/11/22 16:40:04 ajacoutot Exp $
 
 COMMENT=	GNUstep gui library
 
 DISTNAME=	gnustep-gui-0.16.0
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	devel
 
 # needs to follow gnustep-back backend versioning
@@ -12,13 +12,12 @@ SHARED_LIBS=	gnustep-gui 0.16	# .0.16.0
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB += asn1 c crypto gcrypt gnutls gpg-error gssapi krb5 m
-WANTLIB += objc pthread stdc++ tiff z
+WANTLIB += asn1 c crypto gssapi krb5 m objc pthread ssl stdc++
+WANTLIB += tiff z
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
-MODULES=	x11/gnustep \
-		devel/gettext
+MODULES=	x11/gnustep
 
 LIB_DEPENDS=	aspell.>=16::textproc/aspell/core \
 		audiofile::devel/libaudiofile \

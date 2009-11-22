@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/11 19:54:01 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2009/11/22 16:40:04 ajacoutot Exp $
 
 COMMENT=	Xfce4 printing helper
 
 XFCE_PROJECT=	xfprint
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_PROJECT}/${XFCE_BRANCH}/
 SHARED_LIBS=	xfprint	0.1
@@ -27,12 +27,13 @@ LIB_DEPENDS=	xfcegui4.>=4::x11/xfce4/libxfcegui4 \
 		xfconf-0::x11/xfce4/xfconf \
 		cups.>=3::print/cups
 
-WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
-		dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
-		pthread startup-notification-1 xfce4util z gcrypt gnutls \
-		gpg-error tasn1 asn1 crypto gssapi krb5 pthread-stubs xcb
+WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo
+WANTLIB += crypto dbus-1 dbus-glib-1 execinfo expat fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += glitz gmodule-2.0 gobject-2.0 gssapi gtk-x11-2.0 krb5
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs ssl startup-notification-1
+WANTLIB += xcb xcb-atom xcb-aux xcb-event xfce4util z
 
 .include <bsd.port.mk>

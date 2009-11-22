@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/22 12:02:11 mbalmer Exp $
-bin/xpp
+@comment $OpenBSD: PLIST,v 1.2 2009/11/22 16:40:04 ajacoutot Exp $
+@bin bin/xpp
