@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2009/11/22 17:22:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.3.4
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 CATEGORIES=	print
 
 # These are actually internal modules, not generic shared libs
@@ -21,15 +21,15 @@ PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext asn1 c crypto expat fontconfig
-WANTLIB += freetype gcrypt gnutls gpg-error gssapi krb5 m pthread
-WANTLIB += pthread-stubs stdc++ tasn1 util xcb z
+WANTLIB += freetype gssapi krb5 m pthread pthread-stubs ssl stdc++
+WANTLIB += util xcb z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
 
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	x11/qt3 \
-		devel/gettext \
+		converters/libiconv \
 		lang/python
 MODQT_MT=	Yes
 
