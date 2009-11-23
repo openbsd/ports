@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/05 12:53:44 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/23 10:14:10 kevlo Exp $
 
 COMMENT=	module for controlling superclass method dispatch
 
-DISTNAME=	SUPER-1.16
+DISTNAME=	SUPER-1.17
 
 CATEGORIES=	devel
 
@@ -17,5 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MODULES=	cpan
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Sub-Identify
+
+CONFIGURE_STYLE=modbuild
 
 .include <bsd.port.mk>
