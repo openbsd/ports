@@ -1,0 +1,18 @@
+$OpenBSD: patch-libpurple_protocols_yahoo_Makefile_in,v 1.1 2009/11/23 05:44:07 steven Exp $
+--- libpurple/protocols/yahoo/Makefile.in.orig	Sun Nov 22 22:46:04 2009
++++ libpurple/protocols/yahoo/Makefile.in	Sun Nov 22 22:46:58 2009
+@@ -60,12 +60,12 @@ LTLIBRARIES = $(noinst_LTLIBRARIES) $(pkg_LTLIBRARIES)
+ am__libyahoo_la_SOURCES_DIST = libyahoo.c
+ @STATIC_YAHOO_FALSE@am_libyahoo_la_OBJECTS = libyahoo.lo
+ libyahoo_la_OBJECTS = $(am_libyahoo_la_OBJECTS)
+-@STATIC_YAHOO_FALSE@am_libyahoo_la_rpath = -rpath $(pkgdir)
++@STATIC_YAHOO_FALSE@am_libyahoo_la_rpath = -rpath $(pkgdir) -Wl,-rpath,$(pkgdir)
+ @STATIC_YAHOO_FALSE@libyahoojp_la_DEPENDENCIES = libymsg.la
+ am__libyahoojp_la_SOURCES_DIST = libyahoojp.c
+ @STATIC_YAHOO_FALSE@am_libyahoojp_la_OBJECTS = libyahoojp.lo
+ libyahoojp_la_OBJECTS = $(am_libyahoojp_la_OBJECTS)
+-@STATIC_YAHOO_FALSE@am_libyahoojp_la_rpath = -rpath $(pkgdir)
++@STATIC_YAHOO_FALSE@am_libyahoojp_la_rpath = -rpath $(pkgdir) -Wl,-rpath,$(pkgdir)
+ am__DEPENDENCIES_1 =
+ @STATIC_YAHOO_FALSE@libymsg_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am__libymsg_la_SOURCES_DIST = libymsg.c libymsg.h util.c yahoochat.h \
