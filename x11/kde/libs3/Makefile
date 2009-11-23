@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2009/11/14 16:41:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2009/11/23 08:20:45 ajacoutot Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -8,7 +8,7 @@ DISTNAME =		kdelibs-${VERSION}
 MASTER_SITES0 =  	ftp://ftp.kde.org/pub/kde/security_patches/
 
 PKGNAME-main =		${DISTNAME}p4
-PKGNAME-cups =		kdecups-${VERSION}p3
+PKGNAME-cups =		kdecups-${VERSION}p4
 MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
 SHARED_LIBS +=	kdefx                7.0      # .6.0
@@ -97,7 +97,7 @@ LIB_DEPENDS-cups = \
 	cups::print/cups
 
 WANTLIB-cups =	${WANTLIB} \
-		gcrypt gnutls gpg-error tasn1
+		ssl
 
 
 SEPARATE_BUILD =	flavored
