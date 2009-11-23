@@ -1,6 +1,6 @@
-$OpenBSD: patch-vmpsd_1,v 1.1.1.1 2007/09/07 16:18:28 ajacoutot Exp $
---- vmpsd.1.orig	Fri Sep  7 17:52:49 2007
-+++ vmpsd.1	Fri Sep  7 17:53:13 2007
+$OpenBSD: patch-vmpsd_1,v 1.2 2009/11/23 08:25:11 benoit Exp $
+--- vmpsd.1.orig	Sun Feb  1 23:28:48 2009
++++ vmpsd.1	Sat Nov 21 17:12:03 2009
 @@ -75,9 +75,6 @@ will listen on. Defaults to 1589.
  .SH "FILES"
  vmps.db
@@ -10,4 +10,4 @@ $OpenBSD: patch-vmpsd_1,v 1.1.1.1 2007/09/07 16:18:28 ajacoutot Exp $
 -
  .SH AUTHORS
  .PP
- Program: Dori Seliskar <dori_seliskar@select-tech.si>
+ Program: Dori Seliskar dori_seliskar gmail

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/07 16:18:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/23 08:25:06 benoit Exp $
 
 COMMENT=	free implementation of Cisco VMPS
 
-V=		1.3
+V=		1.4.01
 DISTNAME=	vmpsd-${V}
 PKGNAME=	openvmps-${V}
 CATEGORIES=	net
@@ -11,7 +11,7 @@ HOMEPAGE=	http://vmps.sourceforge.net/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
