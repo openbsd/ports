@@ -1,0 +1,4 @@
+Varnish has a default configuration built in, however see vcl(7)
+or the following link for more information:
+
+        http://varnish.projects.linpro.no/wiki/VCLExamples

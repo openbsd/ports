@@ -1,0 +1,11 @@
+$OpenBSD: patch-man_vcl_7so,v 1.1.1.1 2009/11/23 00:28:10 fgsch Exp $
+--- man/vcl.7so.orig	Mon Nov 23 00:15:35 2009
++++ man/vcl.7so	Mon Nov 23 00:15:38 2009
+@@ -96,7 +96,6 @@ if (req.http.host ~ "^(www\.)?example.com$") {
+ To avoid overloading backend servers,
+ .Fa .max_connections
+ can be set to limit the maximum number of concurrent backend connections.
+-.Ed
+ .Pp
+ The timeout parameters can be overridden in the backend declaration.
+ The timeout parameters are

@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_varnishd_mgt_param_c,v 1.1.1.1 2009/11/23 00:28:10 fgsch Exp $
+--- bin/varnishd/mgt_param.c.orig	Sat Apr 11 11:29:37 2009
++++ bin/varnishd/mgt_param.c	Sat Apr 11 11:29:48 2009
+@@ -231,7 +231,7 @@ tweak_user(struct cli *cli, const struct parspec *par,
+ 	(void)par;
+ 	if (arg != NULL) {
+ 		if (!strcmp(arg, MAGIC_INIT_STRING)) {
+-			pw = getpwnam("nobody");
++			pw = getpwnam("_varnish");
+ 			if (pw == NULL) {
+ 				master.uid = getuid();
+ 				return;

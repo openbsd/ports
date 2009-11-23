@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/23 00:28:10 fgsch Exp $
+@newgroup _varnish:625
+@newuser _varnish:625:_varnish:daemon:Varnish account:/var/varnish:/bin/sh
+%%SHARED%%
+@bin bin/varnishadm
+@bin bin/varnishhist
+@bin bin/varnishlog
+@bin bin/varnishncsa
+@bin bin/varnishreplay
+@bin bin/varnishstat
+@bin bin/varnishtest
+@bin bin/varnishtop
+include/varnish/
+include/varnish/shmlog.h
+include/varnish/shmlog_tags.h
+include/varnish/stat_field.h
+include/varnish/stats.h
+include/varnish/varnishapi.h
+lib/libvarnish.a
+@comment lib/libvarnish.la
+lib/libvarnishapi.a
+@comment lib/libvarnishapi.la
+lib/libvarnishcompat.a
+@comment lib/libvarnishcompat.la
+lib/libvcl.a
+@comment lib/libvcl.la
+lib/pkgconfig/
+lib/pkgconfig/varnishapi.pc
+@man man/man1/varnishadm.1
+@man man/man1/varnishd.1
+@man man/man1/varnishhist.1
+@man man/man1/varnishlog.1
+@man man/man1/varnishncsa.1
+@man man/man1/varnishreplay.1
+@man man/man1/varnishstat.1
+@man man/man1/varnishtest.1
+@man man/man1/varnishtop.1
+@man man/man7/vcl.7
+@bin sbin/varnishd
+share/doc/varnish/
+share/doc/varnish/getting-started.html
+share/examples/varnish/
+@sample ${SYSCONFDIR}/varnish/
+share/examples/varnish/default.vcl
+@sample ${SYSCONFDIR}/varnish/default.vcl
+@exec-add mkdir -p /var/varnish
+@extraunexec rm -fr /var/varnish
