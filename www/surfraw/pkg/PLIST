@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/05/21 14:37:01 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.13 2009/11/23 13:50:47 benoit Exp $
 @conflict p5-WWW-Wikipedia-*
 bin/opensearch-discover
 bin/opensearch-genquery
@@ -7,6 +7,7 @@ bin/surfraw
 bin/surfraw-update-path
 lib/surfraw/
 lib/surfraw/W
+lib/surfraw/acronym
 lib/surfraw/alioth
 lib/surfraw/altavista
 lib/surfraw/amazon
@@ -19,6 +20,7 @@ lib/surfraw/bbcnews
 lib/surfraw/cddb
 lib/surfraw/cia
 lib/surfraw/cite
+lib/surfraw/cliki
 lib/surfraw/cnn
 lib/surfraw/codesearch
 lib/surfraw/comlaw
@@ -30,8 +32,10 @@ lib/surfraw/debcontents
 lib/surfraw/deblists
 lib/surfraw/deblogs
 lib/surfraw/debpackages
+lib/surfraw/debpkghome
 lib/surfraw/debpts
 lib/surfraw/debsec
+lib/surfraw/debvcsbrowse
 lib/surfraw/debwiki
 lib/surfraw/deja
 lib/surfraw/discogs
@@ -41,11 +45,14 @@ lib/surfraw/etym
 lib/surfraw/excite
 lib/surfraw/fast
 lib/surfraw/filesearching
+lib/surfraw/finkpkg
 lib/surfraw/foldoc
 lib/surfraw/freebsd
 lib/surfraw/freedb
 lib/surfraw/freshmeat
 lib/surfraw/fsfdir
+lib/surfraw/gcache
+lib/surfraw/genbugs
 lib/surfraw/genpkg
 lib/surfraw/genportage
 lib/surfraw/google
@@ -54,9 +61,13 @@ lib/surfraw/happypenguin
 lib/surfraw/imdb
 lib/surfraw/ixquick
 lib/surfraw/javasun
+lib/surfraw/l1sp
 lib/surfraw/lastfm
 lib/surfraw/leodict
 lib/surfraw/lsm
+lib/surfraw/macports
+lib/surfraw/mathworld
+lib/surfraw/mininova
 lib/surfraw/musicbrainz
 lib/surfraw/netbsd
 lib/surfraw/ntrs
@@ -69,6 +80,7 @@ lib/surfraw/pubmed
 lib/surfraw/rae
 lib/surfraw/rfc
 lib/surfraw/rhyme
+lib/surfraw/rpmsearch
 lib/surfraw/scholar
 lib/surfraw/scicom
 lib/surfraw/scpan
@@ -91,8 +103,10 @@ lib/surfraw/wetandwild
 lib/surfraw/wikipedia
 lib/surfraw/woffle
 lib/surfraw/yahoo
+lib/surfraw/youtube
 lib/surfraw/yubnub
 @man man/man1/W.1
+@man man/man1/acronym.1
 @man man/man1/alioth.1
 @man man/man1/altavista.1
 @man man/man1/amazon.1
@@ -105,6 +119,7 @@ lib/surfraw/yubnub
 @man man/man1/cddb.1
 @man man/man1/cia.1
 @man man/man1/cite.1
+@man man/man1/cliki.1
 @man man/man1/cnn.1
 @man man/man1/codesearch.1
 @man man/man1/comlaw.1
@@ -116,8 +131,10 @@ lib/surfraw/yubnub
 @man man/man1/deblists.1
 @man man/man1/deblogs.1
 @man man/man1/debpackages.1
+@man man/man1/debpkghome.1
 @man man/man1/debpts.1
 @man man/man1/debsec.1
+@man man/man1/debvcsbrowse.1
 @man man/man1/debwiki.1
 @man man/man1/deja.1
 @man man/man1/discogs.1
@@ -129,11 +146,14 @@ man/man1/elvi.1sr
 @man man/man1/excite.1
 @man man/man1/fast.1
 @man man/man1/filesearching.1
+@man man/man1/finkpkg.1
 @man man/man1/foldoc.1
 @man man/man1/freebsd.1
 @man man/man1/freedb.1
 @man man/man1/freshmeat.1
 @man man/man1/fsfdir.1
+@man man/man1/gcache.1
+@man man/man1/genbugs.1
 @man man/man1/genpkg.1
 @man man/man1/genportage.1
 @man man/man1/google.1
@@ -142,9 +162,13 @@ man/man1/elvi.1sr
 @man man/man1/imdb.1
 @man man/man1/ixquick.1
 @man man/man1/javasun.1
+@man man/man1/l1sp.1
 @man man/man1/lastfm.1
 @man man/man1/leodict.1
 @man man/man1/lsm.1
+@man man/man1/macports.1
+@man man/man1/mathworld.1
+@man man/man1/mininova.1
 @man man/man1/musicbrainz.1
 @man man/man1/netbsd.1
 @man man/man1/ntrs.1
@@ -159,6 +183,7 @@ man/man1/opensearch.1sr.gz
 @man man/man1/rae.1
 @man man/man1/rfc.1
 @man man/man1/rhyme.1
+@man man/man1/rpmsearch.1
 @man man/man1/scholar.1
 @man man/man1/scicom.1
 @man man/man1/scpan.1
@@ -184,12 +209,16 @@ man/man1/opensearch.1sr.gz
 @man man/man1/wikipedia.1
 @man man/man1/woffle.1
 @man man/man1/yahoo.1
+@man man/man1/youtube.1
 @man man/man1/yubnub.1
 share/doc/surfraw/
 share/doc/surfraw/HACKING
 share/doc/surfraw/README
 share/examples/surfraw/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/surfraw/
 share/examples/surfraw/surfraw.bookmarks
-@sample ${SYSCONFDIR}/surfraw.bookmarks
+@sample ${SYSCONFDIR}/xdg/surfraw/bookmarks
 share/examples/surfraw/surfraw.conf
-@sample ${SYSCONFDIR}/surfraw.conf
+@sample ${SYSCONFDIR}/xdg/surfraw/conf
+
