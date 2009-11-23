@@ -1,6 +1,12 @@
-$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.1 2009/11/13 15:48:05 ajacoutot Exp $
---- gnome-session/gsm-manager.c.orig	Fri Nov 13 16:04:57 2009
-+++ gnome-session/gsm-manager.c	Fri Nov 13 16:08:25 2009
+$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.2 2009/11/23 10:19:08 ajacoutot Exp $
+
+OpenBSD does not have DeviceKit.
+
+GNOME Bugzilla #598211
+Do not keep zombie clients.
+
+--- gnome-session/gsm-manager.c.orig	Fri Sep 18 18:36:04 2009
++++ gnome-session/gsm-manager.c	Mon Nov 23 11:03:06 2009
 @@ -38,7 +38,9 @@
  #include <dbus/dbus-glib.h>
  #include <dbus/dbus-glib-lowlevel.h>
@@ -52,7 +58,21 @@ $OpenBSD: patch-gnome-session_gsm-manager_c,v 1.1 2009/11/13 15:48:05 ajacoutot 
  }
  
  static void
-@@ -2190,10 +2198,12 @@ gsm_manager_dispose (GObject *object)
+@@ -1988,9 +1996,11 @@ on_store_client_added (GsmStore   *store,
+                           "end-session-response",
+                           G_CALLBACK (on_client_end_session_response),
+                           manager);
+-
++         g_signal_connect (client,
++                          "disconnected",
++                          G_CALLBACK (on_client_disconnected),
++                          manager);
+         g_signal_emit (manager, signals [CLIENT_ADDED], 0, id);
+-        /* FIXME: disconnect signal handler */
+ }
+ 
+ static void
+@@ -2190,10 +2200,12 @@ gsm_manager_dispose (GObject *object)
                  manager->priv->gconf_client = NULL;
          }
  
@@ -65,7 +85,7 @@ $OpenBSD: patch-gnome-session_gsm-manager_c,v 1.1 2009/11/13 15:48:05 ajacoutot 
  
          G_OBJECT_CLASS (gsm_manager_parent_class)->dispose (object);
  }
-@@ -2423,7 +2433,9 @@ gsm_manager_init (GsmManager *manager)
+@@ -2423,7 +2435,9 @@ gsm_manager_init (GsmManager *manager)
                            G_CALLBACK (on_presence_status_changed),
                            manager);
  
@@ -75,7 +95,7 @@ $OpenBSD: patch-gnome-session_gsm-manager_c,v 1.1 2009/11/13 15:48:05 ajacoutot 
  
          /* GConf setup */
          gconf_client_add_dir (manager->priv->gconf_client,
-@@ -2947,10 +2959,12 @@ gsm_manager_can_shutdown (GsmManager *manager,
+@@ -2947,10 +2961,12 @@ gsm_manager_can_shutdown (GsmManager *manager,
          gboolean can_suspend;
          gboolean can_hibernate;
  

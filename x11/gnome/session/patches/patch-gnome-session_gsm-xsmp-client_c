@@ -1,0 +1,24 @@
+$OpenBSD: patch-gnome-session_gsm-xsmp-client_c,v 1.1 2009/11/23 10:19:08 ajacoutot Exp $
+
+GNOME Bugzilla #598211
+Fix SIGSEGV in SmsDie(): throw an error in xsmp_stop() when
+client->priv->conn is NULL.
+
+--- gnome-session/gsm-xsmp-client.c.orig	Wed Jul 29 02:36:08 2009
++++ gnome-session/gsm-xsmp-client.c	Mon Nov 23 11:04:42 2009
+@@ -713,6 +713,15 @@ xsmp_stop (GsmClient *client,
+ 
+         g_debug ("GsmXSMPClient: xsmp_stop ('%s')", xsmp->priv->description);
+ 
++        /*FIXME: What do we do if the client can't be stoped ?
++         * (probably a cleaner solution exists...) */
++        if (xsmp->priv->conn == NULL) {
++                g_set_error (error,
++                             GSM_CLIENT_ERROR,
++                             GSM_CLIENT_ERROR_NOT_REGISTERED,
++                             "Client is not registered");
++                return FALSE;
++        }
+         SmsDie (xsmp->priv->conn);
+ 
+         return TRUE;
