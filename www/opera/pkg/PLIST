@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2009/11/03 05:50:21 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.32 2009/11/23 10:58:34 sturm Exp $
 bin/opera
 lib/opera/
 lib/opera/plugins/
@@ -80,7 +80,6 @@ share/opera/locale/bg/bg.lng
 share/opera/locale/cs/
 share/opera/locale/cs/cs.lng
 share/opera/locale/da/
-share/opera/locale/da/bookmarks.adr
 share/opera/locale/da/da.lng
 share/opera/locale/de/
 share/opera/locale/de/bookmarks.adr
@@ -213,7 +212,6 @@ share/opera/scripts/substance.js
 share/opera/skin/
 share/opera/skin/standard_skin.zip
 share/opera/styles/
-share/opera/styles/Inconsolata.otf
 share/opera/styles/about.css
 share/opera/styles/cache.css
 share/opera/styles/certinfo.css
@@ -239,7 +237,6 @@ share/opera/styles/images/flag.png
 share/opera/styles/images/folder.png
 share/opera/styles/images/header-expanded.png
 share/opera/styles/images/header.png
-share/opera/styles/images/info-header.png
 share/opera/styles/images/opera.png
 share/opera/styles/images/page-bot.png
 share/opera/styles/images/red_center.png
@@ -288,10 +285,17 @@ share/opera/ui/standard_keyboard_compat.ini
 share/opera/ui/standard_menu.ini
 share/opera/ui/standard_mouse.ini
 share/opera/ui/standard_toolbar.ini
-share/opera/ui/standard_trusted_repositories.ini
 share/opera/ui/unix_keyboard.ini
 @sysctl kern.emul.linux=1
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+share/opera/unite/
+share/opera/unite/fileSharing.ua
+share/opera/unite/fridge.ua
+share/opera/unite/home.ua
+share/opera/unite/mediaPlayer.ua
+share/opera/unite/messenger.ua
+share/opera/unite/photoSharing.ua
+share/opera/unite/webserver.ua
