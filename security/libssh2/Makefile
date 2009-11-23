@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/10/02 12:55:00 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2009/11/23 14:46:15 benoit Exp $
 
 COMMENT =		library implementing the SSH2 protocol
 
-DISTNAME =		libssh2-1.2.1
+DISTNAME =		libssh2-1.2.2
 CATEGORIES =		security
-SHARED_LIBS +=		ssh2	4.0	# .1.1
+SHARED_LIBS +=		ssh2	4.1	# .1.1
 
 HOMEPAGE =              http://www.libssh2.org/
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		crypto ssl z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libssh2/}
+MASTER_SITES =		http://www.libssh2.org/download/
 
 CONFIGURE_STYLE =	gnu
 USE_LIBTOOL =		Yes

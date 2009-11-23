@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/02 12:55:03 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/11/23 14:46:18 benoit Exp $
 %%SHARED%%
 include/libssh2.h
 include/libssh2_publickey.h
@@ -42,6 +42,7 @@ lib/pkgconfig/libssh2.pc
 @man man/man3/libssh2_knownhost_add.3
 @man man/man3/libssh2_knownhost_check.3
 @man man/man3/libssh2_knownhost_del.3
+@man man/man3/libssh2_knownhost_free.3
 @man man/man3/libssh2_knownhost_get.3
 @man man/man3/libssh2_knownhost_init.3
 @man man/man3/libssh2_knownhost_readfile.3
