@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2009/11/23 16:46:24 benoit Exp $
+--- configure.orig	Mon Sep 21 11:48:29 2009
++++ configure	Mon Sep 21 11:48:54 2009
+@@ -19845,7 +19845,7 @@
+ ac_res=$ac_cv_search_clock_gettime
+ if test "$ac_res" != no; then
+   test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+-  conky_LIBS="$conky_LIBS -lrt"
++  conky_LIBS="$conky_LIBS "
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_CLOCK_GETTIME 1

@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/01 20:14:09 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/11/23 16:46:27 benoit Exp $
 @bin bin/conky
+lib/conky/
 @man man/man1/conky.1
 share/doc/conky/
 share/doc/conky/README
 share/doc/conky/config_settings.html
 share/doc/conky/docs.html
+share/doc/conky/lua.html
 share/doc/conky/variables.html
 share/examples/conky/
 @sample ${SYSCONFDIR}/conky/
