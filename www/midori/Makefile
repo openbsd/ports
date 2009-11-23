@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2009/10/19 19:54:15 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2009/11/23 21:27:44 landry Exp $
 
 COMMENT =	lightweight web browser
 
-XFCE_VERSION =	0.2.0
+XFCE_VERSION =	0.2.1
 XFCE_GOODIE =	midori
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
@@ -20,11 +20,10 @@ USE_X11 =	Yes
 DESKTOP_FILES =	Yes
 NO_REGRESS =	Yes
 
-LIB_DEPENDS =	webkit-1.0:webkit->=1.1.5v0:www/webkit \
-		idn::devel/libidn \
+LIB_DEPENDS =	webkit-1.0:webkit->=1.1.15v0:www/webkit \
 		sqlite3::databases/sqlite3 \
 		unique-1.0::devel/libunique \
-		soup-2.4:libsoup->=2.24.3p0:devel/libsoup
+		soup-2.4:libsoup->=2.28.0:devel/libsoup
 
 # pick sqlite
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
