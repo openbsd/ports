@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/11/11 00:18:09 djm Exp $
+# $OpenBSD: Makefile,v 1.12 2009/11/23 00:45:27 fgsch Exp $
 
 COMMENT=	simplified packaging system for Python modules
 
@@ -10,7 +10,7 @@ PKG_ARCH=		*
 
 MAINTAINER=	Damien Miller <djm@openbsd.org>
 
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/s/setuptools/
+MASTER_SITES=	${MASTER_SITE_PYPI:=s/setuptools/}
 HOMEPAGE=	http://peak.telecommunity.com/DevCenter/setuptools
 
 # Zope Public License or Python Software Foundation license

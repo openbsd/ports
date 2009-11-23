@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/24 18:14:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2009/11/23 00:45:27 fgsch Exp $
 
 COMMENT=		Python-based presentation tool
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://cheeseshop.python.org/packages/source/b/bruce/
+MASTER_SITES=		${MASTER_SITE_PYPI:=b/bruce/}
 
 MODULES=		lang/python
 RUN_DEPENDS=		::devel/pygame
