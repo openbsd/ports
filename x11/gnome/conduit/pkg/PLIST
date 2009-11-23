@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/07/12 19:56:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/11/23 12:10:00 ajacoutot Exp $
 bin/conduit
 bin/conduit-client
 bin/conduit.real
@@ -278,13 +278,13 @@ lib/conduit/modules/ZotoModule.py/ZotoModule.pyo
 lib/conduit/modules/__init__.py
 lib/conduit/modules/__init__.pyc
 lib/conduit/modules/__init__.pyo
-lib/conduit/modules/iPodModule/
-lib/conduit/modules/iPodModule/__init__.py
-lib/conduit/modules/iPodModule/__init__.pyc
-lib/conduit/modules/iPodModule/__init__.pyo
-lib/conduit/modules/iPodModule/iPodModule.py
-lib/conduit/modules/iPodModule/iPodModule.pyc
-lib/conduit/modules/iPodModule/iPodModule.pyo
+@comment lib/conduit/modules/iPodModule/
+@comment lib/conduit/modules/iPodModule/__init__.py
+@comment lib/conduit/modules/iPodModule/__init__.pyc
+@comment lib/conduit/modules/iPodModule/__init__.pyo
+@comment lib/conduit/modules/iPodModule/iPodModule.py
+@comment lib/conduit/modules/iPodModule/iPodModule.pyc
+@comment lib/conduit/modules/iPodModule/iPodModule.pyo
 lib/pkgconfig/conduit.pc
 lib/python${MODPY_VERSION}/site-packages/conduit/
 lib/python${MODPY_VERSION}/site-packages/conduit/Conduit.py
