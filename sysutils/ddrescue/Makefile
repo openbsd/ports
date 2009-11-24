@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/02 10:01:40 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/24 17:07:14 jasper Exp $
 
 COMMENT =		data recovery tool
 
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c m stdc++
 
 MASTER_SITES =		${MASTER_SITE_GNU:=ddrescue/}
+
+BUILD_DEPENDS = 	::devel/help2man
 
 CONFIGURE_STYLE =	gnu
 ALL_TARGET =		all doc
