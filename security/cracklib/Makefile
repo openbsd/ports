@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/26 07:48:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/24 14:43:13 benoit Exp $
 
 COMMENT =		sensible unix password cracker
 
-DISTNAME =		cracklib-2.8.13
-SHARED_LIBS =		crack	0.0	# .10.0
+DISTNAME =		cracklib-2.8.15
+SHARED_LIBS =		crack	0.1	# .10.1
 CATEGORIES =		security
 
 HOMEPAGE =		http://sourceforge.net/projects/cracklib/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
-# GPLv2
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
