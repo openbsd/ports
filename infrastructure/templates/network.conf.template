@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.138 2009/11/24 09:28:14 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.139 2009/11/24 16:50:43 ajacoutot Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -132,9 +132,7 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.belnet.be/mirror/ftp.gnome.org/ \
 	ftp://ftp.unina.it/pub/linux/GNOME/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/ \
-	ftp://ftp.no.gnome.org/pub/GNOME/ \
 	http://fr2.rpmfind.net/linux/gnome.org/ \
-	http://planetmirror.com/pub/gnome/ \
 	http://mirror.aarnet.edu.au/pub/GNOME/ \
 	ftp://ftp.nara.wide.ad.jp/pub/X11/GNOME/ \
 	ftp://ftp.gnome.org/pub/GNOME/
