@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2009/10/21 09:33:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/11/24 17:15:57 ajacoutot Exp $
 
 COMMENT=	GNOME Devtool Libraries (GDL)
 
 GNOME_PROJECT=	gdl
-GNOME_VERSION=	2.28.1
+GNOME_VERSION=	2.28.2
+
 SHARED_LIBS +=  gdl-1                1.0      # .3.0
 
 # LGPLv2.1+
