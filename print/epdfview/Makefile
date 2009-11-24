@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/10 06:34:08 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2009/11/24 17:13:59 ajacoutot Exp $
 
 COMMENT=	lightweight PDF document viewer
 
 DISTNAME=	epdfview-0.1.7
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print
 HOMEPAGE=	http://trac.emma-soft.com/epdfview/
 
@@ -40,7 +40,7 @@ FLAVORS=	cups
 FLAVOR?=
 
 .if ${FLAVOR:L:Mcups}
-WANTLIB+=	crypto asn1 gcrypt gnutls gpg-error gssapi krb5
+WANTLIB += asn1 crypto gssapi krb5 ssl
 LIB_DEPENDS+=	cups.>=3:cups->=1.2:print/cups
 CONFIGURE_ARGS+=--with-cups
 .else
