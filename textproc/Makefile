@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.285 2009/11/13 12:17:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.286 2009/11/24 20:21:08 landry Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -72,6 +72,7 @@
      SUBDIR += odt2txt
      SUBDIR += oniguruma
      SUBDIR += openjade
+     SUBDIR += opensp
      SUBDIR += ots
      SUBDIR += p5-Blatte
      SUBDIR += p5-CGI-FastTemplate
