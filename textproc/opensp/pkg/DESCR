@@ -1,0 +1,8 @@
+A free, object-oriented toolkit for SGML parsing and entity management.
+Features summary:
+* Includes nsgmls
+* Provides access to all information about SGML document
+* Supports almost all optional SGML features
+* Sophisticated entity manager
+* Supports multi-byte character sets
+* Object-oriented
