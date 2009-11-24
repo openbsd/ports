@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_backends_h,v 1.1 2009/11/24 21:43:14 naddy Exp $
+--- lib/backends.h.orig	Tue Nov 24 22:00:01 2009
++++ lib/backends.h	Tue Nov 24 22:00:01 2009
+@@ -109,6 +109,7 @@ typedef struct vorbis_info_residue0{
+   /* first stage (lossless partitioning) */
+   int    grouping;         /* group n vectors per partition */
+   int    partitions;       /* possible codebooks for a partition */
++  int    partvals;         /* partitions ^ groupbook dim */
+   int    groupbook;        /* huffbook for partitioning */
+   int    secondstages[64]; /* expanded out to pointers in lookup */
+   int    booklist[512];    /* list of second stage books */

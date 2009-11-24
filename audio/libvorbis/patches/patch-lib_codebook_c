@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_codebook_c,v 1.3 2009/11/24 21:43:14 naddy Exp $
+--- lib/codebook.c.orig	Thu Jul  9 11:12:08 2009
++++ lib/codebook.c	Tue Nov 24 22:00:01 2009
+@@ -198,6 +198,7 @@ int vorbis_staticbook_unpack(oggpack_buffer *opb,stati
+       for(i=0;i<s->entries;){
+         long num=oggpack_read(opb,_ilog(s->entries-i));
+         if(num==-1)goto _eofout;
++        if(length>32)goto _errout;
+         for(j=0;j<num && i<s->entries;j++,i++)
+           s->lengthlist[i]=length;
+         length++;
