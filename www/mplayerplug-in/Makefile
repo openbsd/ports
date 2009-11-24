@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:34:56 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2009/11/24 09:01:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -30,7 +30,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mplayerplug-in/}
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS} \
-			:xulrunner-devel-*:devel/xulrunner/1.8,-devel
+			:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 RUN_DEPENDS=		::x11/mplayer
 

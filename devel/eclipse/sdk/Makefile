@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.52 2009/11/24 09:01:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -14,7 +14,7 @@ PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
 PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}p11
 PKGNAME-swt=		swt-${ECLIPSE_VER}p1
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}p2
-PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p2
+PKGNAME-browser=	swt-browser-${ECLIPSE_VER}p3
 SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-awt-gtk-3236	4.0 \
 			swt-gtk-3236		4.0 \
@@ -57,7 +57,7 @@ VMEM_WARNING=		Yes
 MODULES=		java devel/gettext
 MODJAVA_VER=		1.5+
 
-BUILD_DEPENDS=		::devel/xulrunner/1.8,-devel \
+BUILD_DEPENDS=		:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel \
 			:apache-ant->=1.6.1:devel/apache-ant
 
 USE_GMAKE=		Yes
@@ -88,7 +88,7 @@ LIB_DEPENDS-gnome=	gnomeui-2::x11/gnome/libgnomeui
 WANTLIB-gnome=		gnome-2 gnomevfs-2
 
 RUN_DEPENDS-browser=	:swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
-LIB_DEPENDS-browser=	xulrunner/gtkembedmoz,xulrunner/xpcom::devel/xulrunner/1.8
+LIB_DEPENDS-browser=	xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8,<1.9:devel/xulrunner/1.8
 WANTLIB-browser=	c nspr4 plc4 plds4
 
 MOZILLA_HOME=		${LOCALBASE}/xulrunner

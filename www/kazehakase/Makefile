@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/10/11 20:33:00 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2009/11/24 09:01:47 ajacoutot Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -11,7 +11,7 @@ SHARED_ONLY=	Yes
 VERSION=	0.5.6
 DISTNAME=	kazehakase-${VERSION}
 PKGNAME-main=	kazehakase-common-${VERSION}p3
-PKGNAME-gecko=	${DISTNAME}p5
+PKGNAME-gecko=	${DISTNAME}p6
 PKGNAME-webkit=	kazehakase-webkit-${VERSION}p4
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/33533/}
 
@@ -45,7 +45,7 @@ USE_LIBTOOL =		Yes
 
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples
 
-BUILD_DEPENDS =		:xulrunner-devel->=1.8:devel/xulrunner/1.8,-devel
+BUILD_DEPENDS =		:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			::devel/desktop-file-utils
@@ -61,7 +61,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 
 LIB_DEPENDS-gecko =	${LIB_DEPENDS-main} \
 			lib/kazehakase/kazehakase::www/kazehakase,-main \
-			xulrunner/xpcom:xulrunner->=1.8:devel/xulrunner/1.8
+			xulrunner/xpcom:xulrunner->=1.8,<1.9:devel/xulrunner/1.8
 
 LIB_DEPENDS-webkit =	${LIB_DEPENDS} \
 			webkit-1.0::www/webkit

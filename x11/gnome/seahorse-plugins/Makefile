@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/10/27 12:03:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/11/24 09:01:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	plugins and utilities for seahorse
 
 GNOME_PROJECT=	seahorse-plugins
 GNOME_VERSION=	2.28.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	security
 
@@ -30,7 +30,7 @@ WANTLIB += gtk-x11-2.0 m notify nspr4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread
 WANTLIB += pthread-stubs ssl util xcb xml2 z
 
-BUILD_DEPENDS=	::devel/xulrunner/1.8,-devel \
+BUILD_DEPENDS=	:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel \
 		::www/epiphany \
 		::x11/gnome/gedit
 
@@ -38,7 +38,7 @@ LIB_DEPENDS=	cryptui::x11/gnome/seahorse \
 		gtksourceview-2.0.>=2::x11/gtksourceview \
 		nautilus-extension.>=2::x11/gnome/nautilus\
 		panel-applet-2.>=1::x11/gnome/panel \
-		xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8.1:devel/xulrunner/1.8
+		xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8,<1.9:devel/xulrunner/1.8
 
 RUN_DEPENDS=	:shared-mime-info->=0.21:misc/shared-mime-info \
 		::x11/gnome/gedit \
