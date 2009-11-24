@@ -1,10 +1,13 @@
-$OpenBSD: patch-libofx_pc_in,v 1.1.1.1 2007/03/19 10:50:16 ajacoutot Exp $
---- libofx.pc.in.orig	Thu Mar 15 16:17:13 2007
-+++ libofx.pc.in	Thu Mar 15 16:17:43 2007
-@@ -10,5 +10,5 @@ Description: libofx is a library for pro
+$OpenBSD: patch-libofx_pc_in,v 1.2 2009/11/24 20:32:35 landry Exp $
+--- libofx.pc.in.orig	Sat Oct 27 09:40:29 2007
++++ libofx.pc.in	Wed Mar 25 22:24:26 2009
+@@ -10,7 +10,5 @@ Description: libofx is a library for processing Open F
  Version: @VERSION@
  Requires:
  Conflicts:
--Libs: -L${libdir} @OPENSPLIBS@ -lofx
+-#Libs: -L${libdir} @OPENSPLIBS@ -lofx
+-#Cflags: -I${includedir} -I@OPENSPINCLUDES@ 
+-Libs: -L${libdir} -lofx
+-Cflags: -I${includedir}
 +Libs: -L${libdir} -lofx @OPENSPLIBS@
- Cflags: -I${includedir} -I@OPENSPINCLUDES@ 
++Cflags: -I${includedir} -I@OPENSPINCLUDES@ 

@@ -1,18 +1,12 @@
---- configure.orig	Tue Jan  9 05:29:27 2007
-+++ configure	Wed Feb 28 22:39:40 2007
-@@ -20639,12 +20639,12 @@ fi
+$OpenBSD: patch-configure,v 1.2 2009/11/24 20:32:35 landry Exp $
+--- configure.orig	Wed Mar 25 22:00:04 2009
++++ configure	Wed Mar 25 22:00:25 2009
+@@ -21111,7 +21111,7 @@ fi
  done
  
  
 -OPENSPLIBS="-L$OPENSPLIBPATH -losp"
-+OPENSPLIBS="-L$OPENSPLIBPATH -lsp"
++OPENSPLIBS="-L$OPENSPLIBPATH -losp -pthread"
  ac_save_LIBS="$LIBS"
  LIBS="$OPENSPLIBS $LIBS"
  
--{ echo "$as_me:$LINENO: checking for libosp" >&5
--echo $ECHO_N "checking for libosp... $ECHO_C" >&6; }
-+{ echo "$as_me:$LINENO: checking for libsp" >&5
-+echo $ECHO_N "checking for libsp... $ECHO_C" >&6; }
- ##dnl This is code from the opensp documentation, I modified it a little
- ##dnl It is really just a link test rather than a run test, it does nothing
- ac_ext=cpp
