@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.41 2009/11/24 22:30:45 kili Exp $
 
 COMMENT=	CAD drawing program for X11
 
 VERSION=	3.2.5b
 DISTNAME=	xfig.${VERSION}.full
-PKGNAME=	xfig-${VERSION}p0
+PKGNAME=	xfig-${VERSION}p1
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://www.xfig.org/
@@ -40,5 +40,9 @@ WRKDIST=	${WRKDIR}/xfig.${VERSION}
 NO_REGRESS=	Yes
 
 USE_X11=	Yes
+
+post-extract:
+	chmod -R a+rX ${WRKSRC}/Libraries
+	find ${WRKSRC}/Libraries -type f -exec chmod -x \{\} \;
 
 .include <bsd.port.mk>
