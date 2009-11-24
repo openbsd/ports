@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2009/11/24 20:23:15 landry Exp $
+@lib lib/libogrove.so.${LIBogrove_VERSION}
+@lib lib/libospgrove.so.${LIBospgrove_VERSION}
+@lib lib/libostyle.so.${LIBostyle_VERSION}

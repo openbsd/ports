@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:44:03 espie Exp $
-bin/onsgmls
-bin/openjade
-bin/osgmlnorm
-bin/ospam
-bin/ospent
-bin/osx
+@comment $OpenBSD: PLIST,v 1.5 2009/11/24 20:23:15 landry Exp $
+%%SHARED%%
+@bin bin/openjade
+lib/libogrove.a
+lib/libogrove.la
+lib/libospgrove.a
+lib/libospgrove.la
+lib/libostyle.a
+lib/libostyle.la
 share/doc/openjade/
 share/doc/openjade/autoconf.htm
 share/doc/openjade/contributors.htm
