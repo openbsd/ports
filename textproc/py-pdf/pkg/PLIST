@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/25 22:00:26 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/pyPdf/
+lib/python${MODPY_VERSION}/site-packages/pyPdf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pyPdf/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pyPdf/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyPdf/filters.py
+lib/python${MODPY_VERSION}/site-packages/pyPdf/filters.pyc
+lib/python${MODPY_VERSION}/site-packages/pyPdf/generic.py
+lib/python${MODPY_VERSION}/site-packages/pyPdf/generic.pyc
+lib/python${MODPY_VERSION}/site-packages/pyPdf/pdf.py
+lib/python${MODPY_VERSION}/site-packages/pyPdf/pdf.pyc
+lib/python${MODPY_VERSION}/site-packages/pyPdf/utils.py
+lib/python${MODPY_VERSION}/site-packages/pyPdf/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/pyPdf/xmp.py
+lib/python${MODPY_VERSION}/site-packages/pyPdf/xmp.pyc
