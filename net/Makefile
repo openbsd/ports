@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.612 2009/11/22 07:17:58 msf Exp $
+# $OpenBSD: Makefile,v 1.613 2009/11/25 02:36:02 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -292,6 +292,7 @@
      SUBDIR += p5-Net-Telnet
      SUBDIR += p5-Net-Telnet-Cisco
      SUBDIR += p5-Net-Traceroute
+     SUBDIR += p5-Net-Twitter
      SUBDIR += p5-Net-UPnP
      SUBDIR += p5-Net-Wake
      SUBDIR += p5-Net-Whois
