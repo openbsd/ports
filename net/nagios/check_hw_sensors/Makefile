@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/12 21:49:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/25 10:51:55 sthen Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Nagios plugin to monitor sysctl hw.sensors
-DISTNAME=		check_hw_sensors-1.40
+DISTNAME=		check_hw_sensors-1.42
 CATEGORIES=		sysutils net
 
 MAINTAINER=		Andrew Fresh <andrew@afresh1.com>
