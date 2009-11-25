@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/23 00:28:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/25 11:36:55 bernd Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
 DISTNAME =		varnish-2.0.5
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		www
 
 SHARED_LIBS =		varnish		0.0 \
@@ -10,7 +11,7 @@ SHARED_LIBS =		varnish		0.0 \
 			varnishcompat	0.0 \
 			vcl		0.0
 
-HOMEPAGE =		http://varnish.projects.linpro.org/
+HOMEPAGE =		http://varnish.projects.linpro.no/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
