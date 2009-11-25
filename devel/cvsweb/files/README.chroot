@@ -1,4 +1,4 @@
-# $OpenBSD: README.chroot,v 1.7 2009/10/29 08:19:07 giovanni Exp $
+# $OpenBSD: README.chroot,v 1.8 2009/11/25 19:54:19 naddy Exp $
 # Author: Jolan Luff <jolan@openbsd.org>
 
 In order to make CVSweb operate in a chroot environment, it is
@@ -8,7 +8,7 @@ that CVSweb employs into /var/www.
 First, create the basic directory structure:
 
 $ cd /var/www
-# mkdir {tmp,usr}
+# mkdir tmp usr
 # chown www:www tmp	(needs to be writeable for the www user)
 
 $ cd /var/www/usr
@@ -16,6 +16,15 @@ $ cd /var/www/usr
 
 $ cd /var/www/usr/libdata/perl5
 # mkdir -p {File,IPC,Time,warnings,`machine`-openbsd/5.10.1}
+
+The "annotate" function requires this empty file:
+
+NOTE: You can create an actual null device instead, but that will
+not work if the filesystem is mounted with the nodev option, and
+it is not required for cvsweb.
+
+$ cd /var/www/dev
+# touch null
 
 Now, the required binaries:
 
@@ -47,6 +56,7 @@ $ cd /var/www/usr/libdata/perl5
 
 $ cd /var/www/usr/libdata/perl5/`machine`-openbsd/5.10.1
 # cp -p /usr/libdata/perl5/`machine`-openbsd/5.10.1/{Config,Cwd}.pm .
+# cp -p /usr/libdata/perl5/`machine`-openbsd/5.10.1/Config_{git,heavy}.pl .
 
 Editing cvsweb and cvsweb.conf
 ------------------------------
