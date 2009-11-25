@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2009/11/17 09:55:29 stephan Exp $
+# $OpenBSD: Makefile,v 1.23 2009/11/25 11:15:17 espie Exp $
 
 SUBDIR += FCKeditor
 SUBDIR += admin-menu
@@ -11,6 +11,7 @@ SUBDIR += bueditor
 SUBDIR += captcha
 SUBDIR += cck
 SUBDIR += compact_forms
+SUBDIR += contemplate
 SUBDIR += content_access
 SUBDIR += core
 SUBDIR += ctools
