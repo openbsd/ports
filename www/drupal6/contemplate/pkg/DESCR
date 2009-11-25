@@ -1,0 +1,3 @@
+Allows modification of teaser and body for cck-heavy content.
+In its simplest form, you choose which fields you want in the summary/body.
+You can customize it further as a full template with embedded php code.

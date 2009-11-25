@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/25 11:13:45 espie Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}contemplate/
+${DRUPAL_MODS}contemplate/.cache/
+${DRUPAL_MODS}contemplate/.cache/.dataModel
+${DRUPAL_MODS}contemplate/LICENSE.txt
+${DRUPAL_MODS}contemplate/README.txt
+${DRUPAL_MODS}contemplate/contemplate.css
+${DRUPAL_MODS}contemplate/contemplate.info
+${DRUPAL_MODS}contemplate/contemplate.install
+${DRUPAL_MODS}contemplate/contemplate.js
+${DRUPAL_MODS}contemplate/contemplate.module
+${DRUPAL_MODS}contemplate/divresizer.js
+${DRUPAL_MODS}contemplate/po/
+${DRUPAL_MODS}contemplate/po/ja.po
+${DRUPAL_MODS}contemplate/po/ru.po
+${DRUPAL_MODS}contemplate/translations/
+${DRUPAL_MODS}contemplate/translations/ja.po
+${DRUPAL_MODS}contemplate/translations/ru.po
+${DRUPAL_MODS}contemplate/translations/uk.po
