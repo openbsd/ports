@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/25 02:35:10 kevlo Exp $
+${P5SITE}/Net/Identica.pm
+${P5SITE}/Net/Twitter/
+${P5SITE}/Net/Twitter.pm
+${P5SITE}/Net/Twitter.pod
+${P5SITE}/Net/Twitter/API.pm
+${P5SITE}/Net/Twitter/Core.pm
+${P5SITE}/Net/Twitter/Error.pm
+${P5SITE}/Net/Twitter/OAuth.pm
+${P5SITE}/Net/Twitter/Role/
+${P5SITE}/Net/Twitter/Role/API/
+${P5SITE}/Net/Twitter/Role/API/Lists.pm
+${P5SITE}/Net/Twitter/Role/API/REST.pm
+${P5SITE}/Net/Twitter/Role/API/Search.pm
+${P5SITE}/Net/Twitter/Role/API/TwitterVision.pm
+${P5SITE}/Net/Twitter/Role/InflateObjects.pm
+${P5SITE}/Net/Twitter/Role/Legacy.pm
+${P5SITE}/Net/Twitter/Role/OAuth.pm
+${P5SITE}/Net/Twitter/Role/WrapError.pm
+${P5SITE}/Net/Twitter/Search.pm
+@man man/man3p/Net::Identica.3p
+@man man/man3p/Net::Twitter.3p
+@man man/man3p/Net::Twitter::API.3p
+@man man/man3p/Net::Twitter::Core.3p
+@man man/man3p/Net::Twitter::Error.3p
+@man man/man3p/Net::Twitter::OAuth.3p
+@man man/man3p/Net::Twitter::Role::API::Lists.3p
+@man man/man3p/Net::Twitter::Role::API::REST.3p
+@man man/man3p/Net::Twitter::Role::API::Search.3p
+@man man/man3p/Net::Twitter::Role::API::TwitterVision.3p
+@man man/man3p/Net::Twitter::Role::InflateObjects.3p
+@man man/man3p/Net::Twitter::Role::Legacy.3p
+@man man/man3p/Net::Twitter::Role::OAuth.3p
+@man man/man3p/Net::Twitter::Role::WrapError.3p
+@man man/man3p/Net::Twitter::Search.3p

@@ -1,0 +1,4 @@
+Net::Twitter module provides a perl interface to the Twitter APIs.
+Net::Twitter is Moose based. Moose provides some advantages, including
+the ability for the maintainer of this module to respond quickly to
+Twitter API changes.
