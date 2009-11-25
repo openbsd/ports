@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/07/23 15:16:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/25 18:32:06 ajacoutot Exp $
 
 COMMENT=	web search application
 
-V=		1.0.14
+V=		1.0.17
 DISTNAME=	xapian-omega-${V}
 
 CATEGORIES=	www textproc

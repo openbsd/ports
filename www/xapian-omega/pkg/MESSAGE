@@ -1,8 +1,8 @@
 To index your entire DocumentRoot, run the following command as root:
     ${PREFIX}/bin/omindex --db /var/omega/data/default --url / /var/www/htdocs/
 
-If your are running a chroot'ed apache you need to put all libraries
-required by /var/www/cgi-bin/omega available in the chroot.
+If you're running a chroot'ed apache you need to put all libraries
+required by /var/www/cgi-bin/omega in the chroot.
 
 Then fire up your browser and go to the following url to do a search:
     http://<hostname>/cgi-bin/omega
