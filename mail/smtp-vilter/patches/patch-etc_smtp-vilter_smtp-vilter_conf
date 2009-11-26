@@ -1,0 +1,26 @@
+$OpenBSD: patch-etc_smtp-vilter_smtp-vilter_conf,v 1.1 2009/11/26 14:02:58 jasper Exp $
+--- etc/smtp-vilter/smtp-vilter.conf.orig	Sun Jan 21 13:09:38 2007
++++ etc/smtp-vilter/smtp-vilter.conf	Fri Oct 23 16:28:10 2009
+@@ -126,6 +126,22 @@ unwanted-strategy=mark
+ 
+ error-strategy=tempfail
+ 
++# Enable extended options for internally-generated headers passed to backends
++#
++# At present only one option is available:
++#
++# 0:	use plain headers as per previous versions
++#
++# 1:	include a tag of the form "(Authenticated sender: user@domain)" in the
++#	Received header, if the MTA indicates that the sender successfully
++#	signed in with SASL
++#
++# The latter setting emulates Postfix's smtpd_sasl_authenticated_header option,
++# which is useful if the spam-filter needs rules that depend on whether a user
++# is authenticated (e.g. you permit relaying by trusted remote senders)
++
++header-options=0
++
+ # Define the socket over which smtp-vilter communicates with sendmail
+ 
+ port=unix:/var/run/smtp-vilter.sock

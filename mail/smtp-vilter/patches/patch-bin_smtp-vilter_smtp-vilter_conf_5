@@ -1,0 +1,31 @@
+$OpenBSD: patch-bin_smtp-vilter_smtp-vilter_conf_5,v 1.1 2009/11/26 14:02:58 jasper Exp $
+--- bin/smtp-vilter/smtp-vilter.conf.5.orig	Sun Jan 21 13:09:38 2007
++++ bin/smtp-vilter/smtp-vilter.conf.5	Fri Oct 23 16:09:16 2009
+@@ -103,6 +103,27 @@ Define the path from where backend are loaded.
+ Define the filename path to the configuration file for backend <backend>.
+ Note that this command must be preceeded by the backend command.
+ .El
++.Bl -ohang
++.It Em header-options=<header-options>
++Control various features of the artifical header used to forward
++messages to a spam detection backend.
++Note that this header is entirely internal and is NOT visible to the MTA or
++the end recipient.
++.Pp
++At present there is only one option, which is to indicate the sender's SASL
++authentication status as reported by the MTA:
++.El
++.Bl -ohang -offset indent
++.It Pa header-options=0
++ignore SASL authentication status (default)
++.It Pa header-options=1
++if the sender successfully signed in then insert a tag of the form
++"(Authenticated sender: user@domain)" in the received header.
++.El
++.Pp
++The latter behaviour emulates Postfix's "smtpd_sasl_authenticated_header"
++option, and enables a (suitably configured) spam detection backend to apply 
++different rules for trusted senders.
+ .Sh STRATEGIES
+ .Bl -ohang
+ .It Em virus-strategy=<strategy>

@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_smtp-vilter_h,v 1.1 2009/11/26 14:02:58 jasper Exp $
+--- include/smtp-vilter.h.orig	Sun Jan 21 13:09:38 2007
++++ include/smtp-vilter.h	Fri Oct 23 16:32:18 2009
+@@ -98,9 +98,11 @@ enum reactions {
+ };
+ 
+ extern int verbose;
++extern unsigned long header_options;
+ 
+ __BEGIN_DECLS
+ extern SOCK *fdsock(int);
++extern void display_buffer(FILE *, void *, ssize_t);
+ extern ssize_t to_recv(int, void *, size_t, int, struct timeval *);
+ extern ssize_t to_send(int, const char *, size_t, int, struct timeval *);
+ extern int to_readc(SOCK *, char *, struct timeval *);

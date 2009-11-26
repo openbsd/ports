@@ -1,7 +1,76 @@
-$OpenBSD: patch-bin_smtp-vilter_engine_c,v 1.4 2008/07/02 13:34:46 mbalmer Exp $
---- bin/smtp-vilter/engine.c.orig	Sun Jan 21 14:09:38 2007
-+++ bin/smtp-vilter/engine.c	Wed Jul  2 15:31:43 2008
-@@ -1764,6 +1764,8 @@ e_main(uid_t uid, gid_t gid, int pipe_m2e[2])
+$OpenBSD: patch-bin_smtp-vilter_engine_c,v 1.5 2009/11/26 14:02:58 jasper Exp $
+--- bin/smtp-vilter/engine.c.orig	Sun Jan 21 13:09:38 2007
++++ bin/smtp-vilter/engine.c	Fri Oct 23 09:41:28 2009
+@@ -501,18 +501,62 @@ smtp_vilter_envfrom(SMFICTX *ctx, char **argv)
+ 		}
+ 	}
+ 
++	/* report authentication symbol values */
++	if (verbose >= 2)
++		warnx("SASL authentication parameters: {auth_type}=%s, "
++		    "{auth_authen}=%s, {auth_ssf}=%s, {auth_author}=%s",
++		    smfi_getsymval(ctx, "{auth_type}"),
++		    smfi_getsymval(ctx, "{auth_authen}"),
++		    smfi_getsymval(ctx, "{auth_ssf}"),
++		    smfi_getsymval(ctx, "{auth_author}"));
++
+ 	/* Write an artifical Received: from: Header to the message */
+ 	if (gethostname(hostname, sizeof(hostname))) {
+ 		syslog(LOG_ERR, "can't get local hostname");
+ 		strlcpy(hostname, "localhost", sizeof(hostname));
+ 	}
+-	if (conn->clientaddr == NULL)
+-		fprintf(msg->fp, "Received: from %s by %s\r\n", conn->hostname,
+-		    hostname);
+-	else
+-		fprintf(msg->fp, "Received: from %s (%s) by %s\r\n",
+-		    conn->heloname, conn->clientaddr, hostname);
++	if (verbose >= 2)
++		warnx("header_options = 0x%lx", header_options);
++	if (header_options == 0x0L) {
++		/* plain 'Received:' header (legacy behaviour) */
++		if (conn->clientaddr == NULL)
++			fprintf(msg->fp, "Received: from %s by %s\r\n",
++			    conn->hostname, hostname);
++		else
++			fprintf(msg->fp, "Received: from %s (%s) by %s\r\n",
++			    conn->heloname, conn->clientaddr, hostname);
++	}
+ 
++	if (header_options & 0x1L) {
++		/* include SASL auth info in 'Received:' header */
++		if (verbose >= 2)
++			warnx("including SASL auth info in header");
++		if (smfi_getsymval(ctx, "{auth_authen}") != NULL) {
++			/* SASL authenticated sender */
++			if (conn->clientaddr == NULL)
++				fprintf(msg->fp, "Received: from %s "
++				    "(Authenticated sender: %s) by %s\r\n",
++				    conn->hostname,
++				    smfi_getsymval(ctx, "{auth_authen}"),
++				    hostname);
++			else
++				fprintf(msg->fp, "Received: from %s (%s) "
++				    "(Authenticated sender: %s) by %s\r\n",
++				    conn->heloname,
++				    conn->clientaddr,
++				    smfi_getsymval(ctx, "{auth_authen}"),
++				    hostname);
++		} else {
++			/* non authenticated sender */
++			if (conn->clientaddr == NULL)
++				fprintf(msg->fp, "Received: from %s by %s\r\n",
++				    conn->hostname, hostname);
++			else
++				fprintf(msg->fp, "Received: from %s (%s) by %s\r\n",
++				    conn->heloname, conn->clientaddr, hostname);
++		}
++	}
++		
+ 	return SMFIS_CONTINUE;
+ }
+ 
+@@ -1764,6 +1808,8 @@ e_main(uid_t uid, gid_t gid, int pipe_m2e[2])
  	syslog(LOG_INFO, "dropped privileges, running as %d:%d", uid, gid);
  
  	/* Initialize sendmail milter */

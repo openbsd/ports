@@ -1,0 +1,76 @@
+$OpenBSD: patch-bin_smtp-vilter_socket_c,v 1.1 2009/11/26 14:02:58 jasper Exp $
+--- bin/smtp-vilter/socket.c.orig	Sun Jan 21 13:09:38 2007
++++ bin/smtp-vilter/socket.c	Fri Oct 23 15:35:24 2009
+@@ -20,24 +20,49 @@
+ #include <sys/socket.h>
+ #include <sys/time.h>
+ 
++#include <err.h>
+ #include <errno.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
++#include <ctype.h>
++#include <stdio.h>
+ 
+ #include "smtp-vilter.h"
+ 
++void
++display_buffer(FILE *stream, void *buf, ssize_t len)
++{
++	ssize_t	i;
++
++	for (i = 0; i < len; i++)
++		if (isprint(((char *)buf)[i]))
++			fputc(((char *)buf)[i], stream);
++		else
++			fprintf(stream, "[%02x]", ((char *)buf)[i]);
++
++	fprintf(stream, "\n");
++}
++
+ ssize_t
+ to_recv(int s, void *buf, size_t len, int flags, struct timeval *timeout)
+ {
+ 	int	n;
++	ssize_t	count;
+ 	fd_set	rset;
+ 
++	if (verbose >= 2)
++		warnx("receiving from backend");
++
+ 	FD_ZERO(&rset);
+ 	FD_SET(s, &rset);
+ 
+-	if ((n = select(s + 1, &rset, NULL, NULL, timeout)) > 0)
+-		return recv(s, buf, len, flags);
++	if ((n = select(s + 1, &rset, NULL, NULL, timeout)) > 0) {
++		count = recv(s, buf, len, flags);
++		if (verbose >= 2)
++			display_buffer(stderr, buf, count);
++		return count;
++	}
+ 
+ 	return n;
+ }
+@@ -50,6 +75,9 @@ to_send(int s, const char *buf, size_t len, int flags,
+ 	ssize_t	retval;
+ 	fd_set	wset;
+ 
++	if (verbose >= 2)
++		warnx("sending to backend");
++
+ 	n = sent = 0;	
+ 
+ 	FD_ZERO(&wset);
+@@ -60,6 +88,10 @@ to_send(int s, const char *buf, size_t len, int flags,
+ 		if ((retval = send(s, buf + sent, len - sent, flags)) != -1)
+ 			sent += retval;
+ 	}
++
++	if (verbose >= 2)
++		display_buffer(stderr, (void *)buf, sent);
++
+ 	return sent;
+ }
+ 

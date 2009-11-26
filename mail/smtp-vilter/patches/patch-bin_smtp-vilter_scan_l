@@ -1,0 +1,11 @@
+$OpenBSD: patch-bin_smtp-vilter_scan_l,v 1.1 2009/11/26 14:02:58 jasper Exp $
+--- bin/smtp-vilter/scan.l.orig	Sun Jan 21 13:09:38 2007
++++ bin/smtp-vilter/scan.l	Fri Oct 23 09:41:00 2009
+@@ -52,6 +52,7 @@ logfile			{ return LOGFILE; }
+ config-file		{ return CFGFILE; }
+ statfile		{ return STATFILE; }
+ interval		{ return INTERVAL; }
++header-options		{ return HEADER_OPTIONS; }
+ spam-header		{ return SPAMHDR; }
+ 
+ ldaphost		{ return LDAPHOST; }

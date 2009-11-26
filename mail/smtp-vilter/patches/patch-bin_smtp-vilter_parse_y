@@ -1,0 +1,57 @@
+$OpenBSD: patch-bin_smtp-vilter_parse_y,v 1.1 2009/11/26 14:02:58 jasper Exp $
+--- bin/smtp-vilter/parse.y.orig	Sun Jan 21 13:09:38 2007
++++ bin/smtp-vilter/parse.y	Fri Oct 23 16:37:45 2009
+@@ -20,6 +20,7 @@
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/resource.h>
++#include <sys/limits.h>
+ 
+ #include <ctype.h>
+ #include <err.h>
+@@ -92,6 +93,7 @@ extern char	*bindpasswd;
+ extern int	 ldap_use_tls;
+ extern char	*statfile;
+ extern unsigned int stat_interval;
++extern unsigned long header_options;
+ 
+ extern void decode_backend(char *);
+ extern int pftable_exists(const char *);
+@@ -113,7 +115,7 @@ static int 	 viltererrcnt;
+ %token	VIRUS_STRATEGY RECIPIENT_NOTIFICATION SPAM_STRATEGY
+ %token	SPAM_SUBJECT_PREFIX UNWANTED_STRATEGY ERROR_STRATEGY
+ %token	PORT LOGFILE OPTION NOTIFY_ONLY LOGALL STATFILE
+-%token	DISCARD MARK NOTIFY_RECIPIENT INTERVAL SPAMHDR
++%token	DISCARD MARK NOTIFY_RECIPIENT INTERVAL HEADER_OPTIONS SPAMHDR
+ %token	RJECT TEMPFAIL IGNORE
+ %token	GRPRD SETGRP CFGFILE TMPDIR MAXFILES MAXPROCS MARKALL
+ %token	LOGVIRUS LOGSPAM LOGUNWANTED LDAP_USE_TLS
+@@ -159,6 +161,7 @@ statement	: /* empty */
+ 		| statement logfile '\n'
+ 		| statement statfile '\n'
+ 		| statement interval '\n'
++		| statement header_options '\n'
+ 		| statement option '\n'
+ 		| statement ldaphost '\n'
+ 		| statement ldapport '\n'
+@@ -338,6 +341,20 @@ interval	: INTERVAL '=' TEXT			{
+ 				if (errstr)
+ 					errx(1, "interval is %s: %s", errstr,
+ 					    $3);
++			}
++			free($3);
++		}
++		;
++
++header_options	: HEADER_OPTIONS '=' NUMBER		{
++			const char *errstr;
++
++			if (header_options == 0) {
++				header_options = (unsigned long)strtonum($3, 0LL,
++				    (long long)LONG_MAX, &errstr);
++				if (errstr)
++					errx(1, "header-options is %s: %s",
++					    errstr, $3);
+ 			}
+ 			free($3);
+ 		}
