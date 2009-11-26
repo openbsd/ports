@@ -1,0 +1,15 @@
+$OpenBSD: patch-openvpn_8,v 1.1 2009/11/26 22:55:27 fkr Exp $
+--- openvpn.8.orig	Sat Nov 21 00:02:43 2009
++++ openvpn.8	Fri Nov 20 23:45:31 2009
+@@ -1313,6 +1313,11 @@ on both client and server for maximum effect.
+ Currently defaults to 100.
+ .\"*********************************************************
+ .TP
++.B --rdomain n
++(OpenBSD only) Set the routing domain.
++Defaults to 0.
++.\"*********************************************************
++.TP
+ .B --shaper n
+ Limit bandwidth of outgoing tunnel data to
+ .B n

@@ -1,0 +1,11 @@
+$OpenBSD: patch-socket_h,v 1.1 2009/11/26 22:55:27 fkr Exp $
+--- socket.h.orig	Thu Oct  1 18:02:18 2009
++++ socket.h	Thu Oct 29 18:44:33 2009
+@@ -311,6 +311,7 @@ link_socket_init_phase1 (struct link_socket *sock,
+ 			 int mtu_discover_type,
+ 			 int rcvbuf,
+ 			 int sndbuf,
++			 int rdomain,
+ 			 unsigned int sockflags);
+ 
+ void link_socket_init_phase2 (struct link_socket *sock,

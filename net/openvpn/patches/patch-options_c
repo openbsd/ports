@@ -1,0 +1,31 @@
+$OpenBSD: patch-options_c,v 1.1 2009/11/26 22:55:27 fkr Exp $
+--- options.c.orig	Fri Nov 20 13:09:14 2009
++++ options.c	Fri Nov 20 23:38:08 2009
+@@ -250,6 +250,7 @@ static const char usage_message[] =
+   "--sndbuf size   : Set the TCP/UDP send buffer size.\n"
+   "--rcvbuf size   : Set the TCP/UDP receive buffer size.\n"
+   "--txqueuelen n  : Set the tun/tap TX queue length to n (Linux only).\n"
++  "--rdomain n     : Set the routing domain (default=0, OpenBSD only)\n"
+   "--mlock         : Disable Paging -- ensures key material and tunnel\n"
+   "                  data will never be written to disk.\n"
+   "--up cmd        : Shell cmd to execute after successful tun device open.\n"
+@@ -1253,6 +1254,7 @@ show_settings (const struct options *o)
+ #endif
+   SHOW_INT (rcvbuf);
+   SHOW_INT (sndbuf);
++  SHOW_INT (rdomain);
+   SHOW_INT (sockflags);
+ 
+   SHOW_BOOL (fast_io);
+@@ -3989,6 +3991,11 @@ add_option (struct options *options,
+     {
+       VERIFY_PERMISSION (OPT_P_SOCKBUF);
+       options->sndbuf = positive_atoi (p[1]);
++    }
++  else if (streq (p[0], "rdomain") && p[1])
++    {
++      VERIFY_PERMISSION (OPT_P_SOCKFLAGS);
++      options->rdomain = positive_atoi (p[1]);
+     }
+   else if (streq (p[0], "socket-flags"))
+     {

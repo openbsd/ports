@@ -1,0 +1,11 @@
+$OpenBSD: patch-init_c,v 1.1 2009/11/26 22:55:27 fkr Exp $
+--- init.c.orig	Thu Oct  1 18:02:18 2009
++++ init.c	Thu Oct 29 18:44:33 2009
+@@ -2216,6 +2216,7 @@ do_init_socket_1 (struct context *c, const int mode)
+ 			   c->options.mtu_discover_type,
+ 			   c->options.rcvbuf,
+ 			   c->options.sndbuf,
++			   c->options.rdomain,
+ 			   sockflags);
+ }
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/10/22 05:27:07 fkr Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/11/26 22:55:28 fkr Exp $
 @newgroup _openvpn:577
 @newuser _openvpn:577:_openvpn:daemon:OpenVPN Daemon:/nonexistent:/sbin/nologin
 @man man/man8/openvpn.8
@@ -79,6 +79,7 @@ share/examples/openvpn/sample-scripts/
 share/examples/openvpn/sample-scripts/auth-pam.pl
 share/examples/openvpn/sample-scripts/bridge-start
 share/examples/openvpn/sample-scripts/bridge-stop
+share/examples/openvpn/sample-scripts/bs
 share/examples/openvpn/sample-scripts/openvpn.init
 share/examples/openvpn/sample-scripts/ucn.pl
 share/examples/openvpn/sample-scripts/verify-cn

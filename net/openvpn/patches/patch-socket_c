@@ -1,0 +1,43 @@
+$OpenBSD: patch-socket_c,v 1.1 2009/11/26 22:55:27 fkr Exp $
+--- socket.c.orig	Thu Oct  1 18:02:18 2009
++++ socket.c	Thu Oct 29 21:27:46 2009
+@@ -503,6 +503,20 @@ socket_set_tcp_nodelay (int sd, int state)
+ #endif
+ }
+ 
++static void
++socket_set_rdomain (int sd, int rdomain)
++{
++#ifdef TARGET_OPENBSD
++  if (rdomain > 0)
++  {
++    if (setsockopt (sd, IPPROTO_IP, SO_RDOMAIN, &rdomain, sizeof(rdomain)) == -1)
++      msg (M_SOCKERR, "Socket flags: SO_RDOMAIN=%d failed, cannot bind on specified routing domain", rdomain);
++    else
++      dmsg (D_SOCKET_DEBUG, "Socket flags: SO_RDOMAIN=%d succeeded", rdomain);
++  }
++#endif
++}
++
+ static bool
+ socket_set_flags (int sd, unsigned int sockflags)
+ {
+@@ -1181,6 +1195,7 @@ link_socket_init_phase1 (struct link_socket *sock,
+ 			 int mtu_discover_type,
+ 			 int rcvbuf,
+ 			 int sndbuf,
++			 int rdomain,
+ 			 unsigned int sockflags)
+ {
+   ASSERT (sock);
+@@ -1291,6 +1306,10 @@ link_socket_init_phase1 (struct link_socket *sock,
+   else if (mode != LS_MODE_TCP_ACCEPT_FROM)
+     {
+       create_socket (sock);
++
++      /* set the routing domain for the socket */
++      socket_set_rdomain (sock->sd, rdomain);
++
+       resolve_bind_local (sock);
+       resolve_remote (sock, 1, NULL, NULL);
+     }
