@@ -2,7 +2,7 @@
 
 COMMENT =	super simple job queue over AMQP
 
-DISTNAME =	minion-0.1.9
+DISTNAME =	minion-0.1.10
 PKGNAME =	ruby-${DISTNAME}
 CATEGORIES =	net
 
