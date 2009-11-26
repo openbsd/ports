@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/22 11:46:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/11/26 09:14:17 sthen Exp $
+bin/cvs2bzr
+bin/cvs2git
 bin/cvs2svn
 lib/python${MODPY_VERSION}/site-packages/cvs2svn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/
@@ -10,6 +12,8 @@ lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/artifact.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/artifact.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/artifact_manager.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/artifact_manager.pyc
+lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/bzr_run_options.py
+lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/bzr_run_options.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/changeset.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/changeset.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/changeset_database.py
@@ -56,12 +60,16 @@ lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/git_output_option.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/git_output_option.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/git_revision_recorder.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/git_revision_recorder.pyc
+lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/git_run_options.py
+lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/git_run_options.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/key_generator.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/key_generator.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/log.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/log.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/main.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/main.pyc
+lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/man_writer.py
+lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/man_writer.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/metadata.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/metadata.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/metadata_database.py
@@ -114,6 +122,8 @@ lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/svn_repository_delegate.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/svn_repository_delegate.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/svn_revision_range.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/svn_revision_range.pyc
+lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/svn_run_options.py
+lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/svn_run_options.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/symbol.py
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/symbol.pyc
 lib/python${MODPY_VERSION}/site-packages/cvs2svn_lib/symbol_database.py
@@ -151,6 +161,7 @@ share/doc/cvs2svn/HACKING
 share/doc/cvs2svn/README
 share/doc/cvs2svn/design-notes.txt
 share/doc/cvs2svn/www/
+share/doc/cvs2svn/www/cvs2bzr.html
 share/doc/cvs2svn/www/cvs2git.html
 share/doc/cvs2svn/www/cvs2svn.html
 share/doc/cvs2svn/www/faq.html
@@ -159,3 +170,8 @@ share/doc/cvs2svn/www/index.html
 share/doc/cvs2svn/www/issue_tracker.html
 share/doc/cvs2svn/www/project_license.html
 share/doc/cvs2svn/www/project_tools.html
+share/examples/cvs2svn/
+share/examples/cvs2svn/cvs2bzr-example.options
+share/examples/cvs2svn/cvs2git-example.options
+share/examples/cvs2svn/cvs2hg-example.options
+share/examples/cvs2svn/cvs2svn-example.options
