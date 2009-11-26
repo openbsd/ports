@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_ui_liferea_shell_c,v 1.1 2009/11/26 12:48:10 landry Exp $
+--- src/ui/liferea_shell.c.orig	Mon Nov 16 21:07:40 2009
++++ src/ui/liferea_shell.c	Mon Nov 16 21:09:26 2009
+@@ -681,7 +681,7 @@ on_about_activate (GtkMenuItem *menuitem, gpointer use
+ static void
+ on_topics_activate (GtkMenuItem *menuitem, gpointer user_data)
+ {
+-	gchar *filename = g_strdup_printf ("file://" PACKAGE_DATA_DIR "/" PACKAGE "/doc/html/%s", _("topics_en.html"));
++	gchar *filename = g_strdup_printf ("file://" PACKAGE_DATA_DIR "/doc/" PACKAGE "/html/%s", _("topics_en.html"));
+ 	browser_tabs_add_new (filename, _("Help Topics"), TRUE);
+ 	g_free (filename);
+ }
+@@ -689,7 +689,7 @@ on_topics_activate (GtkMenuItem *menuitem, gpointer us
+ static void
+ on_quick_reference_activate (GtkMenuItem *menuitem, gpointer user_data)
+ {
+-	gchar *filename = g_strdup_printf ("file://" PACKAGE_DATA_DIR "/" PACKAGE "/doc/html/%s", _("reference_en.html"));
++	gchar *filename = g_strdup_printf ("file://" PACKAGE_DATA_DIR "/doc/" PACKAGE "/html/%s", _("reference_en.html"));
+ 	browser_tabs_add_new (filename, _("Quick Reference"), TRUE);
+ 	g_free (filename);
+ }
+@@ -697,7 +697,7 @@ on_quick_reference_activate (GtkMenuItem *menuitem, gp
+ static void
+ on_faq_activate (GtkMenuItem *menuitem, gpointer user_data)
+ {
+-	gchar *filename = g_strdup_printf ("file://" PACKAGE_DATA_DIR "/" PACKAGE "/doc/html/%s", _("faq_en.html"));
++	gchar *filename = g_strdup_printf ("file://" PACKAGE_DATA_DIR "/doc/" PACKAGE "/html/%s", _("faq_en.html"));
+ 	browser_tabs_add_new (filename, _("FAQ"), TRUE);
+ 	g_free (filename);
+ }

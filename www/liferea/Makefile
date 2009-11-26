@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2009/11/24 09:01:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2009/11/26 12:48:10 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
-DISTNAME=		liferea-1.4.19
-PKGNAME=		${DISTNAME}p7
+DISTNAME=		liferea-1.6.0
 CATEGORIES=		www x11
 
 HOMEPAGE=		http://liferea.sourceforge.net/
@@ -19,38 +18,33 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
-		dbus-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
-		gtk-x11-2.0 m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 plc4 plds4 png pthread pthread-stubs xcb xml2 z \
-		gio-2.0 tasn1
+		Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c \
+		cairo dbus-1 dbus-glib-1 expat fontconfig freetype \
+		gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
+		glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
+		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
+		png pthread pthread-stubs stdc++ xcb xml2 z gcrypt gpg-error \
+		tasn1 sqlite3 icudata icui18n icuuc
+
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=liferea/}
 
 MODULES=		devel/gettext \
 			textproc/intltool \
 			devel/gconf2
-
-BUILD_DEPENDS=		:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel
-LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8,<1.9:devel/xulrunner/1.8,-main \
-			notify.>=2::devel/libnotify \
+LIB_DEPENDS=		gnutls.>=12::security/gnutls \
 			lua.>=5::lang/lua \
+			notify.>=2::devel/libnotify \
 			xslt.>=3.3::textproc/libxslt \
-			dbus-glib-1::x11/dbus-glib \
-			gnutls.>=12::security/gnutls \
-			gcrypt.>=12::security/libgcrypt \
-			gpg-error.>=1::security/libgpg-error \
-			sqlite3::databases/sqlite3 \
-			glade-2.0.::devel/libglade2
+			glade-2.0.::devel/libglade2 \
+			soup-2.4::devel/libsoup,-main \
+			enchant.>=6::textproc/enchant \
+			webkit-1.0::www/webkit
+
 RUN_DEPENDS=		::devel/desktop-file-utils \
 			::x11/hicolor-icon-theme
 
 FAKE_FLAGS=		htmldocdir="${PREFIX}/share/doc/liferea/html"
-CFLAGS+=		-I${LOCALBASE}/xulrunner/include/webbrwsr/ \
-			-I${LOCALBASE}/xulrunner/include/dom/ \
-			-I${LOCALBASE}/xulrunner/include/pref/ \
-			-I${LOCALBASE}/xulrunner/include/necko/
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
@@ -60,16 +54,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--docdir=${PREFIX}/share/doc/liferea \
 			--enable-dbus \
-			--disable-gecko \
-			--disable-gtkhtml2 \
-			--disable-webkit \
-			--enable-xulrunner \
-			--enable-gnutls \
-			--with-gnutls-libs=${LOCALBASE}/lib \
 			--enable-libnotify \
 			--enable-lua
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			MOZILLA_LIB_ROOT="${LOCALBASE}/xulrunner"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
