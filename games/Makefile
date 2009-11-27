@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2009/10/25 11:14:10 landry Exp $
+# $OpenBSD: Makefile,v 1.203 2009/11/27 17:41:25 landry Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -66,6 +66,7 @@
      SUBDIR += ggz
      SUBDIR += glsfcave
      SUBDIR += glutton
+     SUBDIR += gnome-mastermind
      SUBDIR += gnuchess
      SUBDIR += gnugo
      SUBDIR += gnushogi
