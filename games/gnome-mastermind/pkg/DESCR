@@ -1,0 +1,3 @@
+GNOME Mastermind is a free implementation of the well-known Mastermind
+Game. The goal is to break a hidden color code following the hints that
+the game gives us.
