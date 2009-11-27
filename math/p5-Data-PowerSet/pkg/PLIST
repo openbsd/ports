@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/27 18:15:54 jasper Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/PowerSet.pm
+@man man/man3p/Data::PowerSet.3p
