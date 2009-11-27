@@ -1,10 +1,10 @@
-$OpenBSD: patch-security_nss_lib_softoken_config_mk,v 1.1 2009/06/21 18:42:15 martynas Exp $
---- security/nss/lib/softoken/config.mk.orig	Wed Jun 17 07:22:11 2009
-+++ security/nss/lib/softoken/config.mk	Sun Jun 21 21:33:37 2009
-@@ -60,9 +60,10 @@ RESNAME = $(LIBRARY_NAME).rc
- ifdef NS_USE_GCC
+$OpenBSD: patch-security_nss_lib_softoken_config_mk,v 1.2 2009/11/27 21:18:52 naddy Exp $
+--- security/nss/lib/softoken/config.mk.orig	Wed Nov 25 21:52:34 2009
++++ security/nss/lib/softoken/config.mk	Wed Nov 25 21:53:44 2009
+@@ -56,9 +56,10 @@ ifdef NS_USE_GCC
  EXTRA_SHARED_LIBS += \
  	-L$(DIST)/lib \
+ 	-L$(NSSUTIL_LIB_DIR) \
 +	-L$(NSPR_LIB_DIR) \
 +	-L$(LOCALBASE)/lib \
  	-lnssutil3 \
@@ -13,10 +13,10 @@ $OpenBSD: patch-security_nss_lib_softoken_config_mk,v 1.1 2009/06/21 18:42:15 ma
  	-lplc4 \
  	-lplds4 \
  	-lnspr4 \
-@@ -85,9 +86,10 @@ else
- # $(EXTRA_SHARED_LIBS) come before $(OS_LIBS), except on AIX.
+@@ -82,9 +83,10 @@ else
  EXTRA_SHARED_LIBS += \
  	-L$(DIST)/lib \
+ 	-L$(NSSUTIL_LIB_DIR) \
 +	-L$(NSPR_LIB_DIR) \
 +	-L$(LOCALBASE)/lib \
  	-lnssutil3 \

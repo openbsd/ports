@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.3 2009/06/23 17:55:57 martynas Exp $
---- configure.in.orig	Wed Jun 17 07:21:41 2009
-+++ configure.in	Tue Jun 23 13:33:05 2009
+$OpenBSD: patch-configure_in,v 1.4 2009/11/27 21:18:52 naddy Exp $
+--- configure.in.orig	Mon Nov  2 22:42:44 2009
++++ configure.in	Fri Nov 27 03:01:08 2009
 @@ -1000,7 +1000,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT
  
  MOZ_JS_LIBS='-L$(LIBXUL_DIST)/bin -lmozjs'
@@ -19,3 +19,16 @@ $OpenBSD: patch-configure_in,v 1.3 2009/06/23 17:55:57 martynas Exp $
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
+@@ -4009,9 +4009,9 @@ AC_CACHE_CHECK(for __thread keyword for TLS variables,
+                             [return tlsIsMainThread;],
+                             ac_cv_thread_keyword=yes,
+                             ac_cv_thread_keyword=no)])
+-if test "$ac_cv_thread_keyword" = yes; then
+-  AC_DEFINE(HAVE_THREAD_TLS_KEYWORD)
+-fi
++dnl if test "$ac_cv_thread_keyword" = yes; then
++dnl   AC_DEFINE(HAVE_THREAD_TLS_KEYWORD)
++dnl fi
+ 
+ dnl End of C++ language/feature checks
+ AC_LANG_C

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/06/21 20:46:38 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/11/27 21:18:52 naddy Exp $
 bin/firefox35
 firefox35/
 firefox35/LICENSE
@@ -339,6 +339,7 @@ firefox35/modules/WindowDraggingUtils.jsm
 firefox35/modules/XPCOMUtils.jsm
 firefox35/modules/debug.js
 firefox35/modules/distribution.js
+firefox35/modules/openLocationLastURL.jsm
 firefox35/modules/utils.js
 @bin firefox35/mozilla-xremote-client
 firefox35/platform.ini

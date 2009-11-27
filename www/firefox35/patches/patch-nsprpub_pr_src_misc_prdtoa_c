@@ -1,6 +1,6 @@
-$OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas Exp $
---- nsprpub/pr/src/misc/prdtoa.c.orig	Wed Jun 17 07:22:05 2009
-+++ nsprpub/pr/src/misc/prdtoa.c	Sun Jun 21 17:53:38 2009
+$OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.2 2009/11/27 21:18:52 naddy Exp $
+--- nsprpub/pr/src/misc/prdtoa.c.orig	Wed Nov 25 21:46:23 2009
++++ nsprpub/pr/src/misc/prdtoa.c	Wed Nov 25 21:47:05 2009
 @@ -47,42 +47,14 @@
  
  #include "primpl.h"
@@ -44,7 +44,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas 
  /****************************************************************
   *
   * The author of this software is David M. Gay.
-@@ -102,3300 +74,82 @@ void _PR_CleanupDtoa(void)
+@@ -102,3310 +74,82 @@ void _PR_CleanupDtoa(void)
   *
   ***************************************************************/
  
@@ -131,7 +131,12 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas 
 - * #define MALLOC your_malloc, where your_malloc(n) acts like malloc(n)
 - *	if memory is available and otherwise does something you deem
 - *	appropriate.  If MALLOC is undefined, malloc will be invoked
-- *	directly -- and assumed always to succeed.
+- *	directly -- and assumed always to succeed.  Similarly, if you
+- *	want something other than the system's free() to be called to
+- *	recycle memory acquired from MALLOC, #define FREE to be the
+- *	name of the alternate routine.  (FREE or free is only called in
+- *	pathological cases, e.g., in a dtoa call after a dtoa return in
+- *	mode 3 with thousands of digits requested.)
 - * #define Omit_Private_Memory to omit logic (added Jan. 1998) for making
 - *	memory allocations from a private pool of memory when possible.
 - *	When used, the private pool is PRIVATE_MEM bytes long:  2304 bytes,
@@ -531,7 +536,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas 
 -#define FREE_DTOA_LOCK(n)	/*nothing*/
 -#endif
 -
--#define Kmax 15
+-#define Kmax 7
 -
 - struct
 -Bigint {
@@ -561,9 +566,10 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas 
 -#endif
 -
 -	ACQUIRE_DTOA_LOCK(0);
--	if (rv = freelist[k]) {
+-	/* The k > Kmax case does not need ACQUIRE_DTOA_LOCK(0), */
+-	/* but this case seems very unlikely. */
+-	if (k <= Kmax && (rv = freelist[k]))
 -		freelist[k] = rv->next;
--		}
 -	else {
 -		x = 1 << k;
 -#ifdef Omit_Private_Memory
@@ -571,7 +577,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas 
 -#else
 -		len = (sizeof(Bigint) + (x-1)*sizeof(ULong) + sizeof(double) - 1)
 -			/sizeof(double);
--		if (pmem_next - private_mem + len <= PRIVATE_mem) {
+-		if (k <= Kmax && pmem_next - private_mem + len <= PRIVATE_mem) {
 -			rv = (Bigint*)pmem_next;
 -			pmem_next += len;
 -			}
@@ -595,10 +601,18 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas 
 -#endif
 -{
 -	if (v) {
--		ACQUIRE_DTOA_LOCK(0);
--		v->next = freelist[v->k];
--		freelist[v->k] = v;
--		FREE_DTOA_LOCK(0);
+-		if (v->k > Kmax)
+-#ifdef FREE
+-			FREE((void*)v);
+-#else
+-			free((void*)v);
+-#endif
+-		else {
+-			ACQUIRE_DTOA_LOCK(0);
+-			v->next = freelist[v->k];
+-			freelist[v->k] = v;
+-			FREE_DTOA_LOCK(0);
+-			}
 -		}
 -	}
 -
@@ -1328,10 +1342,6 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas 
 -		    b->wds = (x[1] = z) ? 2 : 1;
 -		}
 -	else {
--#ifdef DEBUG
--		if (!z)
--			Bug("Zero passed to d2b");
--#endif
 -		k = lo0bits(&z);
 -		x[0] = z;
 -#ifndef Sudden_Underflow
@@ -3381,7 +3391,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas 
  
  PR_IMPLEMENT(PRStatus)
  PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
-@@ -3411,7 +165,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
+@@ -3421,7 +165,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
          PR_SetError(PR_INVALID_ARGUMENT_ERROR, 0);
          return rv;
      }
@@ -3390,7 +3400,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas 
      if (!result) {
          PR_SetError(PR_OUT_OF_MEMORY_ERROR, 0);
          return rv;
-@@ -3426,7 +180,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
+@@ -3436,7 +180,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
          }
          rv = PR_SUCCESS;
      }
@@ -3399,7 +3409,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas 
      return rv;  
  }
  
-@@ -3448,9 +202,9 @@ PR_cnvtf(char *buf, int bufsz, int prcsn, double dfval
+@@ -3458,9 +202,9 @@ PR_cnvtf(char *buf, int bufsz, int prcsn, double dfval
      char *num, *nump;
      char *bufp = buf;
      char *endnum;
@@ -3411,7 +3421,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.1 2009/06/21 15:04:16 martynas 
      /* If anything fails, we store an empty string in 'buf' */
      num = (char*)PR_MALLOC(bufsz);
      if (num == NULL) {
-@@ -3458,7 +212,7 @@ PR_cnvtf(char *buf, int bufsz, int prcsn, double dfval
+@@ -3468,7 +212,7 @@ PR_cnvtf(char *buf, int bufsz, int prcsn, double dfval
          return;
      }
      /* XXX Why use mode 1? */
