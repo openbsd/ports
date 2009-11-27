@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2009/08/04 15:45:26 jakob Exp $
---- Makefile.in.orig	Wed Jul 15 15:08:52 2009
-+++ Makefile.in	Tue Aug  4 18:01:39 2009
-@@ -391,7 +391,7 @@ endif
+$OpenBSD: patch-Makefile_in,v 1.8 2009/11/27 18:34:25 jakob Exp $
+--- Makefile.in.orig	Thu Sep 10 16:16:19 2009
++++ Makefile.in	Mon Nov 16 20:47:20 2009
+@@ -396,7 +396,7 @@ endif
  	if test ! -e $(DESTDIR)$(configfile); then $(INSTALL) -d `dirname $(DESTDIR)$(configfile)`; $(INSTALL) -c -m 644 doc/example.conf $(DESTDIR)$(configfile); fi
  	$(LIBTOOL) --mode=install cp $(srcdir)/libunbound/unbound.h $(DESTDIR)$(includedir)/unbound.h
  	$(LIBTOOL) --mode=install cp libunbound.la $(DESTDIR)$(libdir)
