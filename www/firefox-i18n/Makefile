@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2009/09/10 21:29:23 martynas Exp $
+# $OpenBSD: Makefile,v 1.43 2009/11/27 21:16:53 naddy Exp $
 
 PKG_ARCH=	*
 
-V=		3.0.14
+V=		3.0.15
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${V}
 
@@ -20,10 +20,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${V}/linux-i686/xpi/
 
-LANGUAGES=	af ar be bg ca cs da de el en-GB es-AR es-ES eu fi \
-		fr ga-IE gu-IN he hu it ja ka ko ku lt mn nb-NO nl \
-		nn-NO pl pt-BR ru sk sl sv-SE tr zh-CN zh-TW
-#		broken/inexistent: fy-NL mk pa-IN pt-PT ro
+LANGUAGES=	af ar be bg bn-IN ca cs cy da de el en-GB eo es-AR \
+		es-ES et eu fi fr fy ga-IE gl gu-IN he hi-IN hu id \
+		is it ja ka kn ko ku lt lv nk mn mr nb-NO nl nn-NO \
+		oc pa-IN pl pt-PT pt-BR ro ru si sk sl sq sr sv-SE \
+		te th tr uk zh-CN zh-TW
 
 BUILD_DEPENDS=	:unzip-*:archivers/unzip
 RUN_DEPENDS=	:mozilla-firefox-${V}:www/mozilla-firefox
