@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_logsurfer_c,v 1.1 2006/02/15 06:34:04 sturm Exp $
---- src/logsurfer.c.orig	Mon Feb 13 21:07:38 2006
-+++ src/logsurfer.c	Mon Feb 13 21:07:58 2006
-@@ -384,7 +384,7 @@ main(argc, argv)
+$OpenBSD: patch-src_logsurfer_c,v 1.2 2009/11/27 21:30:38 jakob Exp $
+--- src/logsurfer.c.orig	Thu Dec 23 23:22:28 2004
++++ src/logsurfer.c	Fri Nov 27 22:18:53 2009
+@@ -387,7 +387,7 @@ main(argc, argv)
  	 */
  	logline_buffer_size=4096;
  	logline_buffer_pos=0;
