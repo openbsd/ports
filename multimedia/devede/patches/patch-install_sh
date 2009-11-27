@@ -1,0 +1,12 @@
+$OpenBSD: patch-install_sh,v 1.1 2009/11/27 18:14:48 ajacoutot Exp $
+--- install.sh.orig	Fri Nov 27 18:45:19 2009
++++ install.sh	Fri Nov 27 18:45:39 2009
+@@ -54,7 +54,7 @@ install_others()	# arg1=bindir, arg2=datadir, arg3=pkg
+ 	install -m 755 -d "${DESTDIR}${4}/backgrounds"
+ 	install -m 644 "${scriptdir}/interface"/* "${DESTDIR}${4}/"
+ 	install -m 644 "${scriptdir}/devedesans.ttf" "${DESTDIR}${4}/"
+-	install -m 644 "${scriptdir}/pixmaps"/* "${DESTDIR}${4}/"
++	install -m 644 "${scriptdir}/pixmaps"/*.* "${DESTDIR}${4}/"
+         install -m 644 "${scriptdir}/pixmaps/backgrounds"/* "${DESTDIR}${4}/backgrounds/"
+ 	install -m 644 "${scriptdir}/devede.svg" "${DESTDIR}${4}/"
+ 

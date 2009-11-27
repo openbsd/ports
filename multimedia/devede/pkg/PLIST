@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/05/15 08:11:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/11/27 18:14:48 ajacoutot Exp $
 bin/devede
 lib/python${MODPY_VERSION}/site-packages/devede/
 lib/python${MODPY_VERSION}/site-packages/devede/devede_bincue.py
@@ -25,6 +25,10 @@ share/devede/aboutdialog1.ui
 share/devede/add_subtitle.ui
 share/devede/add_subtitle2.ui
 share/devede/background.png
+share/devede/backgrounds/
+share/devede/backgrounds/biglens.png
+share/devede/backgrounds/default_bg.png
+share/devede/backgrounds/dvdfilm.png
 share/devede/barras.png
 share/devede/base_ntsc.mpg
 share/devede/base_ntsc_wide.mpg
@@ -40,7 +44,7 @@ share/devede/icon_dvd.png
 share/devede/icon_svcd.png
 share/devede/icon_vcd.png
 share/devede/languages.lst
-share/devede/silence.mp3
+share/devede/silence.ogg
 share/devede/waborted_dialog.ui
 share/devede/wcancel_dialog.ui
 share/devede/wcancel_job_dialog.ui
@@ -108,6 +112,7 @@ share/doc/devede/html/select.html
 share/doc/devede/html/subs.jpg
 share/doc/devede/html/title.html
 share/doc/devede/html/title_prop.jpg
+share/doc/devede/html/ubuntu_9_10.png
 share/doc/devede/html/versions.html
 share/locale/ca/LC_MESSAGES/devede.mo
 share/locale/cs/LC_MESSAGES/devede.mo
@@ -134,7 +139,10 @@ share/locale/pt_PT/LC_MESSAGES/devede.mo
 share/locale/ru/LC_MESSAGES/devede.mo
 share/locale/sk/LC_MESSAGES/devede.mo
 share/locale/sv/LC_MESSAGES/devede.mo
+share/locale/zh_CN/LC_MESSAGES/devede.mo
 share/locale/zh_TW/LC_MESSAGES/devede.mo
+share/pixmaps/
+@comment share/pixmaps/backgrounds/
 share/pixmaps/devede.svg
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
