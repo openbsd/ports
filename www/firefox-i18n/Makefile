@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2009/11/27 21:16:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2009/11/27 22:09:03 naddy Exp $
 
 PKG_ARCH=	*
 
@@ -21,8 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${V}/linux-i686/xpi/
 
 LANGUAGES=	af ar be bg bn-IN ca cs cy da de el en-GB eo es-AR \
-		es-ES et eu fi fr fy ga-IE gl gu-IN he hi-IN hu id \
-		is it ja ka kn ko ku lt lv nk mn mr nb-NO nl nn-NO \
+		es-ES et eu fi fr fy-NL ga-IE gl gu-IN he hi-IN hu id \
+		is it ja ka kn ko ku lt lv mk mn mr nb-NO nl nn-NO \
 		oc pa-IN pl pt-PT pt-BR ro ru si sk sl sq sr sv-SE \
 		te th tr uk zh-CN zh-TW
 
