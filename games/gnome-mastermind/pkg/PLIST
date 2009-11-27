@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/27 17:40:27 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/11/27 18:08:39 ajacoutot Exp $
 @bin bin/gnome-mastermind
 share/applications/gnome-mastermind.desktop
 share/gnome-mastermind/
@@ -61,23 +61,13 @@ share/gnome/help/gnome-mastermind/it/figures/row4.png
 share/gnome/help/gnome-mastermind/it/figures/row5.png
 share/gnome/help/gnome-mastermind/it/gnome-mastermind.xml
 share/gnome/help/gnome-mastermind/it/legal.xml
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gnome-mastermind.png
 share/icons/hicolor/16x16/apps/gnome-mastermind.svg
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gnome-mastermind.png
 share/icons/hicolor/22x22/apps/gnome-mastermind.svg
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gnome-mastermind.png
 share/icons/hicolor/32x32/apps/gnome-mastermind.svg
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gnome-mastermind.svg
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gnome-mastermind.svg
 share/locale/ar/LC_MESSAGES/gnome-mastermind.mo
 share/locale/de/LC_MESSAGES/gnome-mastermind.mo
@@ -95,7 +85,6 @@ share/omf/gnome-mastermind/gnome-mastermind-C.omf
 share/omf/gnome-mastermind/gnome-mastermind-fr.omf
 share/omf/gnome-mastermind/gnome-mastermind-id.omf
 share/omf/gnome-mastermind/gnome-mastermind-it.omf
-share/pixmaps/
 share/pixmaps/gnome-mastermind.svg
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

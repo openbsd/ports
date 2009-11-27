@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/27 17:40:27 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/27 18:08:39 ajacoutot Exp $
 
-COMMENT =	Mastermind reflexion game
+COMMENT =	Mastermind clone reflexion game
 
 GNOME_PROJECT =	gnome-mastermind
 GNOME_VERSION =	0.3.1
+PKGNAME =	${DISTNAME}p0
+
 CATEGORIES =	games
 
 HOMEPAGE =	http://www.autistici.org/gnome-mastermind/
@@ -17,15 +19,16 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	http://download.gna.org/gnome-mastermind/
 
 MODULES =	devel/gettext \
-		x11/gnome \
-		devel/gconf2
+		x11/gnome
 
 DESKTOP_FILES =	Yes
-LIB_DEPENDS =	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
+LIB_DEPENDS =	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2 \
+		gconf-2.>=6::devel/gconf2
 RUN_DEPENDS +=	::x11/gnome/librsvg
 
 MODGNOME_HELP_FILES =	Yes
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
