@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/10 06:31:41 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2009/11/27 17:38:03 landry Exp $
 
 COMMENT=	32-card trick-taking game
 
-DISTNAME=	belooted-0.1.3
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	belooted-0.1.4.1
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.gnomefiles.org/app.php/Belooted
@@ -28,7 +27,8 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 LIB_DEPENDS=	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
-RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
+		::x11/gnome/librsvg
 
 USE_X11=	Yes
 
