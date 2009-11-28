@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.11 2008/12/28 18:41:20 ajacoutot Exp $
---- configure.orig	Sun Dec 28 08:59:19 2008
-+++ configure	Sun Dec 28 17:25:11 2008
-@@ -9376,7 +9376,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
+$OpenBSD: patch-configure,v 1.12 2009/11/28 10:49:49 ajacoutot Exp $
+--- configure.orig	Tue Sep  8 06:54:40 2009
++++ configure	Sat Nov 28 11:15:05 2009
+@@ -9387,7 +9387,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.11 2008/12/28 18:41:20 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -9443,7 +9443,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
+@@ -9454,7 +9454,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.11 2008/12/28 18:41:20 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -9512,7 +9512,7 @@ fi
+@@ -9523,7 +9523,7 @@ fi
  	  fi
  
            if test "$gt_cv_func_dgettext_libintl" = "yes"; then
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.11 2008/12/28 18:41:20 ajacoutot Exp $
            fi
  
  	  if test "$gt_cv_func_dgettext_libc" = "yes" \
-@@ -16472,13 +16472,13 @@ echo "${ECHO_T}adding \"$osx_crud\" to GL_LIBS" >&6; }
+@@ -16460,13 +16460,13 @@ echo "${ECHO_T}adding \"$osx_crud\" to GL_LIBS" >&6; }
      # link -lpthread after the Mesa libs (be they named -lGL or -lMesaGL.)
      #
      if test "$ac_have_mesa_gl" = yes; then
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.11 2008/12/28 18:41:20 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -16534,7 +16534,7 @@ fi
+@@ -16522,7 +16522,7 @@ fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
  if test $ac_cv_lib_pthread_pthread_create = yes; then

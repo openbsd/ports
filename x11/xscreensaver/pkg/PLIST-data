@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-data,v 1.2 2008/12/28 18:41:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST-data,v 1.3 2009/11/28 10:49:49 ajacoutot Exp $
 @conflict xscreensaver-<5.07p3
 @conflict xscreensaver-<5.07p3-no_gle
 libexec/xscreensaver/
@@ -88,8 +88,6 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/halo
 @bin libexec/xscreensaver/helix
 @bin libexec/xscreensaver/hopalong
-@bin libexec/xscreensaver/hyperball
-@bin libexec/xscreensaver/hypercube
 @bin libexec/xscreensaver/hypertorus
 @bin libexec/xscreensaver/hypnowheel
 @bin libexec/xscreensaver/ifs
@@ -99,7 +97,6 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/intermomentary
 @bin libexec/xscreensaver/jigglypuff
 @bin libexec/xscreensaver/jigsaw
-@bin libexec/xscreensaver/juggle
 @bin libexec/xscreensaver/juggler3d
 @bin libexec/xscreensaver/julia
 @bin libexec/xscreensaver/kaleidescope
@@ -154,6 +151,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/rorschach
 @bin libexec/xscreensaver/rotzoomer
 @bin libexec/xscreensaver/rubik
+@bin libexec/xscreensaver/rubikblocks
 @bin libexec/xscreensaver/sballs
 @bin libexec/xscreensaver/shadebobs
 @bin libexec/xscreensaver/sierpinski
@@ -174,6 +172,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/strange
 @bin libexec/xscreensaver/substrate
 @bin libexec/xscreensaver/superquadrics
+@bin libexec/xscreensaver/surfaces
 @bin libexec/xscreensaver/swirl
 @bin libexec/xscreensaver/tangram
 @bin libexec/xscreensaver/thornbird
@@ -252,6 +251,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/epicycle.6
 @man man/man6/eruption.6
 @man man/man6/euler2d.6
+@man man/man6/extrusion.6
 @man man/man6/fadeplot.6
 @man man/man6/fiberlamp.6
 @man man/man6/fireworkx.6
@@ -286,8 +286,6 @@ libexec/xscreensaver/webcollage
 @man man/man6/halo.6
 @man man/man6/helix.6
 @man man/man6/hopalong.6
-@man man/man6/hyperball.6
-@man man/man6/hypercube.6
 @man man/man6/hypertorus.6
 @man man/man6/hypnowheel.6
 @man man/man6/ifs.6
@@ -297,7 +295,6 @@ libexec/xscreensaver/webcollage
 @man man/man6/intermomentary.6
 @man man/man6/jigglypuff.6
 @man man/man6/jigsaw.6
-@man man/man6/juggle.6
 @man man/man6/juggler3d.6
 @man man/man6/julia.6
 @man man/man6/kaleidescope.6
@@ -350,6 +347,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/rorschach.6
 @man man/man6/rotzoomer.6
 @man man/man6/rubik.6
+@man man/man6/rubikblocks.6
 @man man/man6/sballs.6
 @man man/man6/shadebobs.6
 @man man/man6/sierpinski.6
@@ -370,6 +368,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/strange.6
 @man man/man6/substrate.6
 @man man/man6/superquadrics.6
+@man man/man6/surfaces.6
 @man man/man6/swirl.6
 @man man/man6/tangram.6
 @man man/man6/thornbird.6
@@ -454,6 +453,7 @@ share/applications/screensavers/engine.desktop
 share/applications/screensavers/epicycle.desktop
 share/applications/screensavers/eruption.desktop
 share/applications/screensavers/euler2d.desktop
+share/applications/screensavers/extrusion.desktop
 share/applications/screensavers/fadeplot.desktop
 share/applications/screensavers/fiberlamp.desktop
 share/applications/screensavers/fireworkx.desktop
@@ -524,6 +524,7 @@ share/applications/screensavers/memscroller.desktop
 share/applications/screensavers/menger.desktop
 share/applications/screensavers/metaballs.desktop
 share/applications/screensavers/mirrorblob.desktop
+share/applications/screensavers/mismunch.desktop
 share/applications/screensavers/moebius.desktop
 share/applications/screensavers/moebiusgears.desktop
 share/applications/screensavers/moire.desktop
@@ -562,6 +563,7 @@ share/applications/screensavers/rorschach.desktop
 share/applications/screensavers/rotor.desktop
 share/applications/screensavers/rotzoomer.desktop
 share/applications/screensavers/rubik.desktop
+share/applications/screensavers/rubikblocks.desktop
 share/applications/screensavers/sballs.desktop
 share/applications/screensavers/shadebobs.desktop
 share/applications/screensavers/sierpinski.desktop
@@ -584,6 +586,7 @@ share/applications/screensavers/stonerview.desktop
 share/applications/screensavers/strange.desktop
 share/applications/screensavers/substrate.desktop
 share/applications/screensavers/superquadrics.desktop
+share/applications/screensavers/surfaces.desktop
 share/applications/screensavers/swirl.desktop
 share/applications/screensavers/t3d.desktop
 share/applications/screensavers/tangram.desktop
@@ -668,6 +671,7 @@ share/xscreensaver/config/engine.xml
 share/xscreensaver/config/epicycle.xml
 share/xscreensaver/config/eruption.xml
 share/xscreensaver/config/euler2d.xml
+share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
 share/xscreensaver/config/fiberlamp.xml
 share/xscreensaver/config/fireworkx.xml
@@ -702,8 +706,6 @@ share/xscreensaver/config/halftone.xml
 share/xscreensaver/config/halo.xml
 share/xscreensaver/config/helix.xml
 share/xscreensaver/config/hopalong.xml
-share/xscreensaver/config/hyperball.xml
-share/xscreensaver/config/hypercube.xml
 share/xscreensaver/config/hypertorus.xml
 share/xscreensaver/config/hypnowheel.xml
 share/xscreensaver/config/ifs.xml
@@ -713,7 +715,6 @@ share/xscreensaver/config/interference.xml
 share/xscreensaver/config/intermomentary.xml
 share/xscreensaver/config/jigglypuff.xml
 share/xscreensaver/config/jigsaw.xml
-share/xscreensaver/config/juggle.xml
 share/xscreensaver/config/juggler3d.xml
 share/xscreensaver/config/julia.xml
 share/xscreensaver/config/kaleidescope.xml
@@ -767,6 +768,7 @@ share/xscreensaver/config/rocks.xml
 share/xscreensaver/config/rorschach.xml
 share/xscreensaver/config/rotzoomer.xml
 share/xscreensaver/config/rubik.xml
+share/xscreensaver/config/rubikblocks.xml
 share/xscreensaver/config/sballs.xml
 share/xscreensaver/config/shadebobs.xml
 share/xscreensaver/config/sierpinski.xml
@@ -787,6 +789,7 @@ share/xscreensaver/config/stonerview.xml
 share/xscreensaver/config/strange.xml
 share/xscreensaver/config/substrate.xml
 share/xscreensaver/config/superquadrics.xml
+share/xscreensaver/config/surfaces.xml
 share/xscreensaver/config/swirl.xml
 share/xscreensaver/config/tangram.xml
 share/xscreensaver/config/thornbird.xml
