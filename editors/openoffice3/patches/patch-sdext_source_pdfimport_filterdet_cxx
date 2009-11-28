@@ -1,0 +1,50 @@
+$OpenBSD: patch-sdext_source_pdfimport_filterdet_cxx,v 1.1 2009/11/28 18:33:57 kili Exp $
+--- sdext/source/pdfimport/filterdet.cxx.orig.port	Thu Aug 14 18:56:31 2008
++++ sdext/source/pdfimport/filterdet.cxx	Sun Nov 22 13:31:15 2009
+@@ -713,46 +713,6 @@ uno::Reference< io::XStream > getAdditionalStream( con
+                         OSL_ENSURE( pObject, "object not found\n" );
+                         if( pObject )
+                         {
+-                            if( pPDFFile->isEncrypted() )
+-                            {
+-                                bool bAuthenticated = false;
+-                                if( io_rPwd.getLength() )
+-                                {
+-                                    rtl::OString aIsoPwd = rtl::OUStringToOString( io_rPwd, 
+-                                                                                   RTL_TEXTENCODING_ISO_8859_1 );
+-                                    bAuthenticated = pPDFFile->setupDecryptionData( aIsoPwd.getStr() );
+-                                }
+-                                if( ! bAuthenticated )
+-                                {
+-                                    const beans::PropertyValue* pAttribs = rFilterData.getConstArray();
+-                                    sal_Int32 nAttribs = rFilterData.getLength();
+-                                    uno::Reference< task::XInteractionHandler > xIntHdl;
+-                                    for( sal_Int32 i = 0; i < nAttribs; i++ )
+-                                    {
+-                                        if( pAttribs[i].Name.equalsAscii( "InteractionHandler" ) )
+-                                            pAttribs[i].Value >>= xIntHdl;
+-                                    }
+-                                    if( ! bMayUseUI || ! xIntHdl.is() )
+-                                    {
+-                                        rOutMimetype = pMimeType->getFilteredName();
+-                                        xEmbed.clear();
+-                                        break;
+-                                    }
+-    
+-                                    bool bEntered = false;
+-                                    do
+-                                    {
+-                                        bEntered = getPassword( xIntHdl, io_rPwd, ! bEntered );
+-                                        rtl::OString aIsoPwd = rtl::OUStringToOString( io_rPwd, 
+-                                                                                       RTL_TEXTENCODING_ISO_8859_1 );
+-                                        bAuthenticated = pPDFFile->setupDecryptionData( aIsoPwd.getStr() );
+-                                    } while( bEntered && ! bAuthenticated );
+-                                }
+-
+-                                OSL_TRACE( "password: %s\n", bAuthenticated ? "matches" : "does not match" );
+-                                if( ! bAuthenticated )
+-                                    continue;
+-                            }
+                             rOutMimetype = pMimeType->getFilteredName();
+                             FileEmitContext aContext( rInPDFFileURL, 
+                                                       xContext, 
