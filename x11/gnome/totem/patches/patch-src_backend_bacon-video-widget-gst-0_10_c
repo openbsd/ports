@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_backend_bacon-video-widget-gst-0_10_c,v 1.1.1.1 2008/05/13 11:00:28 ajacoutot Exp $
---- src/backend/bacon-video-widget-gst-0.10.c.orig	Mon Apr 21 20:02:56 2008
-+++ src/backend/bacon-video-widget-gst-0.10.c	Mon May 12 12:26:37 2008
-@@ -5024,7 +5024,7 @@ bacon_video_widget_new (int width, int height,
+$OpenBSD: patch-src_backend_bacon-video-widget-gst-0_10_c,v 1.2 2009/11/29 09:24:25 ajacoutot Exp $
+--- src/backend/bacon-video-widget-gst-0.10.c.orig	Wed Nov 25 16:09:59 2009
++++ src/backend/bacon-video-widget-gst-0.10.c	Wed Nov 25 16:10:20 2009
+@@ -6392,7 +6392,7 @@ bacon_video_widget_new (int width, int height,
                          bvw);
  
    bvw->priv->speakersetup = BVW_AUDIO_SOUND_STEREO;
 -  bvw->priv->media_device = g_strdup ("/dev/dvd");
 +  bvw->priv->media_device = g_strdup ("/dev/rcd0c");
-   bvw->priv->init_width = 240;
-   bvw->priv->init_height = 180;
    bvw->priv->visq = VISUAL_SMALL;
+   bvw->priv->show_vfx = FALSE;
+   bvw->priv->vis_element_name = g_strdup ("goom");

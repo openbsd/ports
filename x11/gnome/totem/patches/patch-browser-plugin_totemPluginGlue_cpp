@@ -1,0 +1,16 @@
+$OpenBSD: patch-browser-plugin_totemPluginGlue_cpp,v 1.1 2009/11/29 09:24:25 ajacoutot Exp $
+--- browser-plugin/totemPluginGlue.cpp.orig	Wed Nov 25 17:52:25 2009
++++ browser-plugin/totemPluginGlue.cpp	Wed Nov 25 17:52:41 2009
+@@ -427,10 +427,10 @@ NP_Initialize (NPNetscapeFuncs *aMozillaVTable,
+ 	if (err != NPERR_NO_ERROR || toolkit != NPNVGtk2)
+ 		return NPERR_INCOMPATIBLE_VERSION_ERROR;
+ #endif
+-	/* we want to open libdbus-glib-1.so.2 in such a way
++	/* we want to open libdbus-glib-1.so in such a way
+ 	 * in such a way that it becomes permanentely resident */
+ 	void *handle;
+-	handle = dlopen ("libdbus-glib-1.so.2", RTLD_NOW | RTLD_NODELETE);
++	handle = dlopen ("libdbus-glib-1.so", RTLD_NOW | RTLD_NODELETE);
+ 	if (!handle) {
+ 		fprintf (stderr, "%s\n", dlerror()); 
+ 		return NPERR_MODULE_LOAD_FAILED_ERROR;

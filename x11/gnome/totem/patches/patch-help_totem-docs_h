@@ -1,0 +1,17 @@
+$OpenBSD: patch-help_totem-docs_h,v 1.1 2009/11/29 09:24:25 ajacoutot Exp $
+
+XXX In function `about_action_callback':
+error: syntax error before string constant
+
+--- help/totem-docs.h.orig	Wed Nov 25 18:27:25 2009
++++ help/totem-docs.h	Wed Nov 25 18:27:33 2009
+@@ -1,7 +1,9 @@
+ const gchar* documentation_credits[] = {
++#if 0
+ 	"Baptiste Mille-Mathias <baptiste.millemathias@gmail.org>",
+ 	"Chee Bin HOH <cbhoh@gnome.org>",
+ 	"Philip Withnall <philip@tecnocode.co.uk>",
++#endif
+ 	NULL
+ };
+ 
