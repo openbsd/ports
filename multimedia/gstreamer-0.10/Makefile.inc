@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.6 2009/09/28 19:52:14 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2009/11/29 09:16:17 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
-HOMEPAGE ?=	http://www.gstreamer.net/
+HOMEPAGE ?=	http://gstreamer.freedesktop.org/
 
 # LGPL
 PERMIT_PACKAGE_CDROM ?=		Yes
@@ -23,20 +23,25 @@ USE_LIBTOOL ?=		Yes
 # avoid compiling plugins as static libraries
 LIBTOOL_FLAGS ?=	--tag=disable-static
 
-MODULES +=		lang/python
-
 BUILD_DEPENDS +=	:bison-*:devel/bison
 
-AUTOCONF_VERSION ?=	2.61
+AUTOCONF_VERSION ?=	2.62
 CONFIGURE_STYLE ?=	autoconf
 
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--localstatedir=/var/db \
-			--with-cachedir=/var/db/gstreamer-${VERSION} \
+			--with-default-audiosink=libsndiosink \
+			--with-default-audiosrc=libsndiosrc \
+			--with-default-videosink=xvimagesink \
+			--with-default-videosrc=v4l2src \
+			--with-default-visualizer=goom \
+			--disable-introspection \
+			--disable-shave \
 			--disable-valgrind \
 			--disable-static
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			MODPY_VERSION=${MODPY_VERSION}
+				-I${LOCALBASE}/include/libpng \
+				-I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib \
+				-L${X11BASE}/lib"
