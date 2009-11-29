@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2009/11/22 11:18:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2009/11/29 09:25:27 ajacoutot Exp $
 
 COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.6
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -20,37 +21,34 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender asn1 atk-1.0 bonobo-2 bonobo-activation c cairo
-WANTLIB += com_err crypto dbus-1 dbus-glib-1 expat fontconfig
+WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0
+WANTLIB += c cairo crypto dbus-1 dbus-glib-1 expat fontconfig
 WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-keyring
+WANTLIB += glade-2.0 glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-keyring
 WANTLIB += gnutls gobject-2.0 gpg-error gssapi gstbase-0.10 gstcontroller-0.10
-WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gthread-2.0
-WANTLIB += gtk-x11-2.0 krb5 m neon nspr4 nss3 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png proxy pthread
-WANTLIB += pthread-stubs smime3 softokn3 soup-2.4 sqlite3 ssl
-WANTLIB += ssl3 tasn1 util xcb xml2 z
+WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
+WANTLIB += gthread-2.0 gtk-x11-2.0 krb5 m neon pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
+WANTLIB += soup-2.4 sqlite3 ssl tasn1 util xcb xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
 			lang/python \
 			devel/gconf2
 
-BUILD_DEPENDS=		:gstreamer-gnome->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-gnome \
+BUILD_DEPENDS=		:gstreamer-gnome->=0.10.25:multimedia/gstreamer-0.10/plugins-base,-gnome \
 			::multimedia/gstreamer-0.10/py-gstreamer
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			musicbrainz3::audio/libmusicbrainz \
 			notify::devel/libnotify \
 			gnome-media-profiles::x11/gnome/media \
-			totem-plparser::x11/gnome/totem-pl-parser \
-			camel-1.2.>=10,edataserver-1.2::databases/evolution-data-server \
-			gstcdda-0.10,gsttag-0.10::multimedia/gstreamer-0.10/plugins-base,-cdda \
+			totem-plparser:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
+			gstcdda-0.10:gstreamer-cdda->=0.10.25:multimedia/gstreamer-0.10/plugins-base,-cdda \
 			soup-gnome-2.4.>=1::devel/libsoup,-gnome \
 			avahi-client,avahi-common,avahi-glib::net/avahi \
 			ffi::devel/libffi
-RUN_DEPENDS=		:gstreamer-plugins-base->=0.10.19:multimedia/gstreamer-0.10/plugins-base,-gnome \
+RUN_DEPENDS=		:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base,-gnome \
 			::x11/gnome/icon-theme \
 			::multimedia/gstreamer-0.10/py-gstreamer
 REGRESS_DEPENDS=	::devel/check
