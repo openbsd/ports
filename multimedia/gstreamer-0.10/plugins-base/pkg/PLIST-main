@@ -1,10 +1,16 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/09/28 18:26:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/11/29 09:17:17 ajacoutot Exp $
+@conflict gstreamer-plugins-bad-<0.10.17
 @conflict gstreamer-ogg-*
 @conflict gstreamer-theora-*
 @conflict gstreamer-vorbis-*
 @conflict gstreamer-pango-*
 bin/gst-visualise-${VERSION}
+include/gstreamer-${VERSION}/gst/app/
+include/gstreamer-${VERSION}/gst/app/gstappbuffer.h
+include/gstreamer-${VERSION}/gst/app/gstappsink.h
+include/gstreamer-${VERSION}/gst/app/gstappsrc.h
 include/gstreamer-${VERSION}/gst/audio/
+include/gstreamer-${VERSION}/gst/audio/audio-enumtypes.h
 include/gstreamer-${VERSION}/gst/audio/audio.h
 include/gstreamer-${VERSION}/gst/audio/gstaudioclock.h
 include/gstreamer-${VERSION}/gst/audio/gstaudiofilter.h
@@ -14,7 +20,6 @@ include/gstreamer-${VERSION}/gst/audio/gstbaseaudiosink.h
 include/gstreamer-${VERSION}/gst/audio/gstbaseaudiosrc.h
 include/gstreamer-${VERSION}/gst/audio/gstringbuffer.h
 include/gstreamer-${VERSION}/gst/audio/mixerutils.h
-include/gstreamer-${VERSION}/gst/audio/multichannel-enumtypes.h
 include/gstreamer-${VERSION}/gst/audio/multichannel.h
 include/gstreamer-${VERSION}/gst/fft/
 include/gstreamer-${VERSION}/gst/fft/gstfft.h
@@ -33,6 +38,7 @@ include/gstreamer-${VERSION}/gst/interfaces/mixeroptions.h
 include/gstreamer-${VERSION}/gst/interfaces/mixertrack.h
 include/gstreamer-${VERSION}/gst/interfaces/navigation.h
 include/gstreamer-${VERSION}/gst/interfaces/propertyprobe.h
+include/gstreamer-${VERSION}/gst/interfaces/streamvolume.h
 include/gstreamer-${VERSION}/gst/interfaces/tuner.h
 include/gstreamer-${VERSION}/gst/interfaces/tunerchannel.h
 include/gstreamer-${VERSION}/gst/interfaces/tunernorm.h
@@ -76,55 +82,62 @@ include/gstreamer-${VERSION}/gst/tag/tag.h
 include/gstreamer-${VERSION}/gst/video/
 include/gstreamer-${VERSION}/gst/video/gstvideofilter.h
 include/gstreamer-${VERSION}/gst/video/gstvideosink.h
+include/gstreamer-${VERSION}/gst/video/video-enumtypes.h
 include/gstreamer-${VERSION}/gst/video/video.h
-lib/gstreamer-${VERSION}/libgstadder.la
+@comment lib/gstreamer-${VERSION}/libgstadder.la
 lib/gstreamer-${VERSION}/libgstadder.so
-lib/gstreamer-${VERSION}/libgstaudioconvert.la
+@comment lib/gstreamer-${VERSION}/libgstapp.la
+lib/gstreamer-${VERSION}/libgstapp.so
+@comment lib/gstreamer-${VERSION}/libgstaudioconvert.la
 lib/gstreamer-${VERSION}/libgstaudioconvert.so
-lib/gstreamer-${VERSION}/libgstaudiorate.la
+@comment lib/gstreamer-${VERSION}/libgstaudiorate.la
 lib/gstreamer-${VERSION}/libgstaudiorate.so
-lib/gstreamer-${VERSION}/libgstaudioresample.la
+@comment lib/gstreamer-${VERSION}/libgstaudioresample.la
 lib/gstreamer-${VERSION}/libgstaudioresample.so
-lib/gstreamer-${VERSION}/libgstaudiotestsrc.la
+@comment lib/gstreamer-${VERSION}/libgstaudiotestsrc.la
 lib/gstreamer-${VERSION}/libgstaudiotestsrc.so
-lib/gstreamer-${VERSION}/libgstdecodebin.la
+@comment lib/gstreamer-${VERSION}/libgstdecodebin.la
 lib/gstreamer-${VERSION}/libgstdecodebin.so
-lib/gstreamer-${VERSION}/libgstdecodebin2.la
+@comment lib/gstreamer-${VERSION}/libgstdecodebin2.la
 lib/gstreamer-${VERSION}/libgstdecodebin2.so
-lib/gstreamer-${VERSION}/libgstffmpegcolorspace.la
+@comment lib/gstreamer-${VERSION}/libgstffmpegcolorspace.la
 lib/gstreamer-${VERSION}/libgstffmpegcolorspace.so
-lib/gstreamer-${VERSION}/libgstgdp.la
+@comment lib/gstreamer-${VERSION}/libgstgdp.la
 lib/gstreamer-${VERSION}/libgstgdp.so
-lib/gstreamer-${VERSION}/libgstogg.la
+@comment lib/gstreamer-${VERSION}/libgstgio.la
+lib/gstreamer-${VERSION}/libgstgio.so
+@comment lib/gstreamer-${VERSION}/libgstogg.la
 lib/gstreamer-${VERSION}/libgstogg.so
-lib/gstreamer-${VERSION}/libgstpango.la
+@comment lib/gstreamer-${VERSION}/libgstpango.la
 lib/gstreamer-${VERSION}/libgstpango.so
-lib/gstreamer-${VERSION}/libgstplaybin.la
+@comment lib/gstreamer-${VERSION}/libgstplaybin.la
 lib/gstreamer-${VERSION}/libgstplaybin.so
-lib/gstreamer-${VERSION}/libgstqueue2.la
+@comment lib/gstreamer-${VERSION}/libgstqueue2.la
 lib/gstreamer-${VERSION}/libgstqueue2.so
-lib/gstreamer-${VERSION}/libgstsubparse.la
+@comment lib/gstreamer-${VERSION}/libgstsubparse.la
 lib/gstreamer-${VERSION}/libgstsubparse.so
-lib/gstreamer-${VERSION}/libgsttcp.la
+@comment lib/gstreamer-${VERSION}/libgsttcp.la
 lib/gstreamer-${VERSION}/libgsttcp.so
-lib/gstreamer-${VERSION}/libgsttheora.la
+@comment lib/gstreamer-${VERSION}/libgsttheora.la
 lib/gstreamer-${VERSION}/libgsttheora.so
-lib/gstreamer-${VERSION}/libgsttypefindfunctions.la
+@comment lib/gstreamer-${VERSION}/libgsttypefindfunctions.la
 lib/gstreamer-${VERSION}/libgsttypefindfunctions.so
-lib/gstreamer-${VERSION}/libgstvideorate.la
+@comment lib/gstreamer-${VERSION}/libgstvideorate.la
 lib/gstreamer-${VERSION}/libgstvideorate.so
-lib/gstreamer-${VERSION}/libgstvideoscale.la
+@comment lib/gstreamer-${VERSION}/libgstvideoscale.la
 lib/gstreamer-${VERSION}/libgstvideoscale.so
-lib/gstreamer-${VERSION}/libgstvideotestsrc.la
+@comment lib/gstreamer-${VERSION}/libgstvideotestsrc.la
 lib/gstreamer-${VERSION}/libgstvideotestsrc.so
-lib/gstreamer-${VERSION}/libgstvolume.la
+@comment lib/gstreamer-${VERSION}/libgstvolume.la
 lib/gstreamer-${VERSION}/libgstvolume.so
-lib/gstreamer-${VERSION}/libgstvorbis.la
+@comment lib/gstreamer-${VERSION}/libgstvorbis.la
 lib/gstreamer-${VERSION}/libgstvorbis.so
-lib/gstreamer-${VERSION}/libgstximagesink.la
+@comment lib/gstreamer-${VERSION}/libgstximagesink.la
 lib/gstreamer-${VERSION}/libgstximagesink.so
-lib/gstreamer-${VERSION}/libgstxvimagesink.la
+@comment lib/gstreamer-${VERSION}/libgstxvimagesink.la
 lib/gstreamer-${VERSION}/libgstxvimagesink.so
+lib/libgstapp-${VERSION}.la
+@lib lib/libgstapp-${VERSION}.so.${LIBgstapp-0.10_VERSION}
 lib/libgstaudio-${VERSION}.la
 @lib lib/libgstaudio-${VERSION}.so.${LIBgstaudio-0.10_VERSION}
 lib/libgstfft-${VERSION}.la
@@ -147,6 +160,7 @@ lib/libgsttag-${VERSION}.la
 @lib lib/libgsttag-${VERSION}.so.${LIBgsttag-0.10_VERSION}
 lib/libgstvideo-${VERSION}.la
 @lib lib/libgstvideo-${VERSION}.so.${LIBgstvideo-0.10_VERSION}
+lib/pkgconfig/gstreamer-app-${VERSION}.pc
 lib/pkgconfig/gstreamer-audio-${VERSION}.pc
 lib/pkgconfig/gstreamer-cdda-${VERSION}.pc
 lib/pkgconfig/gstreamer-fft-${VERSION}.pc
@@ -163,6 +177,186 @@ lib/pkgconfig/gstreamer-tag-${VERSION}.pc
 lib/pkgconfig/gstreamer-video-${VERSION}.pc
 @man man/man1/gst-visualise-${VERSION}.1
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/api-index.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/compiling.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/compiling.sgml
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-${VERSION}.devhelp
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-${VERSION}.devhelp2
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-appsink.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-appsrc.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstaudio.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstaudioclock.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstaudiofilter.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstaudiomixerutils.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstaudiosink.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstaudiosrc.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstbaseaudiosink.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstbaseaudiosrc.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstbasertpaudiopayload.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstbasertpdepayload.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstbasertppayload.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstcddabasesrc.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstcolorbalance.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstcolorbalancechannel.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstfft.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstfftf32.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstfftf64.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstffts16.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstffts32.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstfloatcast.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstmixer.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstmixeroptions.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstmixertrack.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstmultichannel.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstnavigation.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstnetbuffer.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstpbutils.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstpbutilsdescriptions.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstpbutilsinstallplugins.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstpbutilsmissingplugins.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstpropertyprobe.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstriff.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstringbuffer.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtcpbuffer.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtpbuffer.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtppayloads.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspbase64.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspconnection.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspdefs.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspmessage.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtsprange.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtsptransport.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspurl.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstsdpmessage.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gststreamvolume.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttag.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttagdemux.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttagid3.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttagvorbis.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttuner.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttunerchannel.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttunernorm.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstvideo.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstvideofilter.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstvideoorientation.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstvideosink.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstxoverlay.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-app.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-audio.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-base-utils.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-cdda.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-ffft.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-floatcast.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-interfaces.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-libs-hierarchy.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-netbuffer.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-plugins-base.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-riff.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-rtp.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-rtsp.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-sdp.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-tag.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gstreamer-video.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/home.png
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/index.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/index.sgml
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/left.png
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/right.png
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/style.css
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/up.png
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/GstPlayBaseBin.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/ch01.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/ch02.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/ch03.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-${VERSION}.devhelp
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-${VERSION}.devhelp2
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-adder.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-alsamixer.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-alsasink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-alsasrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-appsink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-appsrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-audioconvert.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-audioresample.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-audiotestsrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-cdparanoiasrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-clockoverlay.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-decodebin.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-decodebin2.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-ffmpegcolorspace.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-gdpdepay.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-gdppay.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-giosink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-giosrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-giostreamsink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-giostreamsrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-gnomevfssink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-gnomevfssrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-multifdsink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-oggdemux.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-oggmux.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-playbin.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-playbin2.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-adder.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-alsa.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-app.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-audioconvert.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-audiorate.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-audioresample.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-audiotestsrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-cdparanoia.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-decodebin.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-decodebin2.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-ffmpegcolorspace.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-gdp.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-gio.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-gnomevfs.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-libvisual.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-ogg.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-pango.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-playback.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-subparse.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-tcp.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-theora.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-typefindfunctions.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-uridecodebin.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-video4linux.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-videorate.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-videoscale.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-videotestsrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-volume.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-vorbis.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-ximagesink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-xvimagesink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-tcpclientsink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-tcpclientsrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-tcpserversink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-tcpserversrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-textoverlay.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-textrender.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-theoradec.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-theoraenc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-theoraparse.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-timeoverlay.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-uridecodebin.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-videorate.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-videoscale.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-videotestsrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-volume.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-vorbisdec.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-vorbisenc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-vorbisparse.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-vorbistag.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-ximagesink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-xvimagesink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/home.png
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/index.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/index.sgml
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/left.png
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/right.png
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/style.css
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/up.png
 share/locale/af/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
@@ -172,18 +366,26 @@ share/locale/da/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/de/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/es/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/eu/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/fr/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/id/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/ja/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/lv/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/or/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/pl/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/pt_BR/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/ru/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/sk/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
+share/locale/tr/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-base-${VERSION}.mo

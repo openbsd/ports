@@ -1,0 +1,24 @@
+$OpenBSD: patch-ext_cdparanoia_gstcdparanoiasrc_c,v 1.1 2009/11/29 09:17:17 ajacoutot Exp $
+
+Our cdparanoia version does not have cache control.
+
+--- ext/cdparanoia/gstcdparanoiasrc.c.orig	Mon Nov 23 16:55:42 2009
++++ ext/cdparanoia/gstcdparanoiasrc.c	Mon Nov 23 16:56:05 2009
+@@ -264,17 +264,6 @@ gst_cd_paranoia_src_open (GstCddaBaseSrc * cddabasesrc
+     GST_INFO_OBJECT (src, "search overlap set to %u", src->search_overlap);
+   }
+ 
+-  cache_size = src->cache_size;
+-  if (cache_size == -1) {
+-    /* if paranoia mode is low (the default), assume we're doing playback */
+-    if (src->paranoia_mode <= PARANOIA_MODE_FRAGMENT)
+-      cache_size = 150;
+-    else
+-      cache_size = paranoia_cachemodel_size (src->p, -1);
+-  }
+-  paranoia_cachemodel_size (src->p, cache_size);
+-  GST_INFO_OBJECT (src, "set cachemodel size to %u", cache_size);
+-
+   src->next_sector = -1;
+ 
+   return TRUE;

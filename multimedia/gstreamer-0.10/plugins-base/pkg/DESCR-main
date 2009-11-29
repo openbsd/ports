@@ -1,38 +1,6 @@
-This package contains "base" plugins for gstreamer-${VERSION}.
-The gstreamer people split plugins into:
-- base plugins (plugins-base)
-- plugins with good code and a good licence (plugins-good)
-- plugins with licence issues (plugins-ugly)
-- plugins with relatively bad code (plugins-bad)
-
-* adder             add multiple streams together
-* audioconvert      convert audio to different formats       
-* audiorate         drop/duplicate/adjust audio frames    
-* audioresample     resample audio         
-* audiotestsrc      create audio test signals
-* decodebin         autoplug and decode to raw media               
-* ffmpegcolorspace  colorspace conversion (from FFMpeg 0.4.9-pre1)
-* gdp               payload/depayload Gstreamer Data Protocol packets
-* playbin           player bin (Autoplug and play media from an uri)
-* ogg               ogg stream manipulation (info about ogg: http://xiph.org/)
-* pango             pango-based text rendering and overlay
-* subparse          text subtitle parsing (SSA, .sub)
-* tcp               network data transfer over tcp: sources, sinks, muxer
-* theora            theora plugin library: encoder, decoder, parser
-* typefindfunctions default typefind functions               
-* videorate         drop/duplicate/adjust video frames    
-* videoscale        resize video           
-* videotestsrc      create a test video stream
-* volume            plugin for controlling audio volume            
-* vorbis            vorbis plugin library (encoder, decoder, parser)
-* ximagesink        X11 video output element based on standard Xlib calls
-* xvimagesink       X11 video output element using Xv extension
-
-The following plugins are in specific packages because of dependencies:
-* cdparanoia
-* gnomevfs
-
-The following plugins are not built:
-* alsa (linux specific)
-* libvisual (lib not ported yet)
-* video4linux (not ported/linux specific)
+This package contains "base" elements for gstreamer-${VERSION}.
+GStreamer plugins are splitted into:
+- an essential exemplary set of elements (plugins-base)
+- a set of good-quality plug-ins under LGPL (plugins-good)
+- a set of good-quality plug-ins that might pose distribution problems (plugins-ugly)
+- a set of plug-ins that need more quality (plugins-bad)
