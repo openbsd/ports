@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/14 15:46:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2009/11/29 09:18:11 ajacoutot Exp $
 
-COMMENT =		multimedia framework - farsight plugin
+COMMENT =		farsight element for GStreamer
 
 V =			0.12.11
 DISTNAME =		gst-plugins-farsight-$V
-PKGNAME =		gstreamer-plugins-farsight-$V
+PKGNAME =		gstreamer-plugins-farsight-$Vp0
 
 HOMEPAGE =		http://farsight.freedesktop.org/
 MASTER_SITES =		${HOMEPAGE}/releases/gst-plugins-farsight/
@@ -23,7 +23,5 @@ LIB_DEPENDS =		gsm::audio/gsm \
 AUTOCONF_VERSION =	2.62
 
 MODULES +=	devel/gettext
-
-MODPY_RUNDEP =		No
 
 .include <bsd.port.mk>
