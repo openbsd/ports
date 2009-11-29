@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2009/08/21 16:41:46 martynas Exp $
+# $OpenBSD: Makefile,v 1.30 2009/11/29 18:52:24 naddy Exp $
 
 PKG_ARCH=	*
 
@@ -20,10 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${V}/linux-i686/xpi/
 
-LANGUAGES=	be bg ca cs da de el en-GB es-AR es-ES eu fi fr \
-		ga-IE hu it ja ko lt nb-NO nl nn-NO pl pt-BR pt-PT \
-		ru sk sl sv-SE tr zh-CN zh-TW
-#		broken: mk pa-IN
+LANGUAGES=	af be bg ca cs da de el en-GB es-AR es-ES eu fi fr \
+		ga-IE he hu it ja ko lt mk nb-NO nl nn-NO pa-IN pl \
+		pt-BR pt-PT ru sk sl sv-SE tr uk zh-CN zh-TW
 
 BUILD_DEPENDS=	:unzip-*:archivers/unzip
 RUN_DEPENDS=	:mozilla-thunderbird-${V}:mail/mozilla-thunderbird
