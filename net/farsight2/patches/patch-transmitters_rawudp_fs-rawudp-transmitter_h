@@ -1,0 +1,12 @@
+$OpenBSD: patch-transmitters_rawudp_fs-rawudp-transmitter_h,v 1.1.1.1 2009/11/29 18:56:43 jasper Exp $
+--- transmitters/rawudp/fs-rawudp-transmitter.h.orig	Sun Nov 29 19:05:21 2009
++++ transmitters/rawudp/fs-rawudp-transmitter.h	Sun Nov 29 19:06:41 2009
+@@ -34,6 +34,8 @@
+ #ifdef G_OS_WIN32
+ # include <ws2tcpip.h>
+ #else /*G_OS_WIN32*/
++# include <sys/types.h>
++# include <sys/socket.h>
+ # include <arpa/inet.h>
+ #endif /*G_OS_WIN32*/
+ 

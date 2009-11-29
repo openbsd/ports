@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/11/29 18:56:43 jasper Exp $
+--- configure.orig	Sun Nov 29 17:46:00 2009
++++ configure	Sun Nov 29 17:46:19 2009
+@@ -15749,7 +15749,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+ $as_echo "$flag_ok" >&6; }
+ 
+ 
+-        if test "x$ERROR_CFLAGS" == "x"
++        if test "x$ERROR_CFLAGS" = "x"
+     then
+ 
+   { $as_echo "$as_me:$LINENO: checking to see if compiler understands -errwarn=%all" >&5

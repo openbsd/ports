@@ -1,0 +1,20 @@
+$OpenBSD: patch-gst-libs_gst_farsight_fs-interfaces_c,v 1.1.1.1 2009/11/29 18:56:43 jasper Exp $
+--- gst-libs/gst/farsight/fs-interfaces.c.orig	Wed Oct 14 16:54:17 2009
++++ gst-libs/gst/farsight/fs-interfaces.c	Wed Oct 14 16:54:44 2009
+@@ -35,13 +35,15 @@ GST_DEBUG_CATEGORY_EXTERN (fs_base_conference_debug);
+ 
+ #ifdef G_OS_UNIX
+ 
++#include <sys/types.h>
++#include <netinet/in.h>
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include <errno.h>
+ #include <sys/ioctl.h>
+-#include <sys/types.h>
+ #ifdef HAVE_GETIFADDRS
+  #include <sys/socket.h>
+  #include <ifaddrs.h>
