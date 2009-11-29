@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/10/28 20:28:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2009/11/29 09:28:28 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,7 +6,7 @@ COMMENT=	powerful desktop search tool and indexer
 # as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.95
-PKGNAME=	tracker-search-${VERSION}p2
+PKGNAME=	tracker-search-${VERSION}p3
 
 SHARED_LIBS +=	stemmer              0.1      # .695.0
 SHARED_LIBS +=	tracker-common       0.1      # .695.0
@@ -18,19 +18,17 @@ SHARED_LIBS +=	tracker-gtk          0.1      # .695.0
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 avahi-client avahi-common
+WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
 WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 bz2
-WANTLIB += c cairo camel-1.2 com_err crypto curl dbus-1 dbus-glib-1
-WANTLIB += edataserver-1.2 execinfo expat fontconfig freetype
-WANTLIB += gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
-WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls
-WANTLIB += gobject-2.0 gpg-error gssapi gstbase-0.10 gstreamer-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 idn jpeg krb5 m nspr4 nss3
-WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png popt pthread pthread-stubs smime3 softokn3
-WANTLIB += soup-2.4 ssl ssl3 startup-notification-1 tasn1 tiff
-WANTLIB += util xcb xcb-atom xcb-aux xcb-event xml2 xslt z lcms
+WANTLIB += c cairo crypto curl dbus-1 dbus-glib-1 execinfo expat
+WANTLIB += fontconfig freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmime-2.4 gmodule-2.0
+WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2
+WANTLIB += gobject-2.0 gstbase-0.10 gstreamer-0.10 gthread-2.0
+WANTLIB += gtk-x11-2.0 idn jpeg lcms m ogg pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
+WANTLIB += ssl startup-notification-1 tiff util xcb xcb-atom xcb-aux
+WANTLIB += xcb-event xml2 xslt z
 
 HOMEPAGE=	http://tracker-project.org/
 
@@ -51,11 +49,11 @@ LIB_DEPENDS=	vorbis::audio/libvorbis \
 		notify::devel/libnotify \
 		exif::graphics/libexif \
 		gmime-2.0:gmime->=2.2,<2.4:mail/gmime \
-		gsttag-0.10::multimedia/gstreamer-0.10/plugins-base \
+		gsttag-0.10:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
 		poppler-glib,poppler::print/poppler \
 		raptor::textproc/raptor \
 		gnome-desktop-2::x11/gnome/desktop \
-		totem-plparser.>=1::x11/gnome/totem-pl-parser
+		totem-plparser.>=2:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser
 BUILD_DEPENDS=	::devel/xdg-utils
 RUN_DEPENDS=	::devel/glib2,-fam \
 		::devel/xdg-utils \
