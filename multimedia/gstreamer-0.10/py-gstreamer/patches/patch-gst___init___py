@@ -1,19 +1,21 @@
-$OpenBSD: patch-gst___init___py,v 1.1.1.1 2008/01/22 08:53:41 ajacoutot Exp $
---- gst/__init__.py.orig	Thu Jun 14 21:14:12 2007
-+++ gst/__init__.py	Mon Jan 21 11:06:21 2008
-@@ -122,13 +122,13 @@ class Fraction(Value):
- import sys
- dlsave = sys.getdlopenflags()
+$OpenBSD: patch-gst___init___py,v 1.2 2009/11/29 09:18:42 ajacoutot Exp $
+--- gst/__init__.py.orig	Tue Nov 24 10:57:32 2009
++++ gst/__init__.py	Tue Nov 24 10:58:07 2009
+@@ -156,7 +156,7 @@ class Fraction(Value):
+ 
  try:
+     dlsave = sys.getdlopenflags()
 -    from DLFCN import RTLD_GLOBAL, RTLD_LAZY
 +    from dl import RTLD_GLOBAL, RTLD_LAZY
- except ImportError:
+ except AttributeError:
+     # windows doesn't have sys.getdlopenflags()
      RTLD_GLOBAL = -1
+@@ -166,7 +166,7 @@ except ImportError:
      RTLD_LAZY = -1
      import os
      osname = os.uname()[0]
 -    if osname == 'Linux' or osname == 'SunOS' or osname == 'FreeBSD':
 +    if osname == 'Linux' or osname == 'SunOS' or osname == 'FreeBSD' or osname == 'OpenBSD':
-         RTLD_GLOBAL = 0x100
-         RTLD_LAZY = 0x1
-     elif osname == 'Darwin':
+         machinename = os.uname()[4]
+         if machinename == 'mips' or machinename == 'mips64':
+             RTLD_GLOBAL = 0x4

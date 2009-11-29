@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2009/11/29 09:18:42 ajacoutot Exp $
+--- configure.orig	Tue Nov 24 11:04:30 2009
++++ configure	Tue Nov 24 11:04:54 2009
+@@ -15061,7 +15061,7 @@ fi
+ { $as_echo "$as_me:$LINENO: checking for libraries required to embed python" >&5
+ $as_echo_n "checking for libraries required to embed python... " >&6; }
+ py_exec_prefix=`$PYTHON -c "import sys; print sys.exec_prefix"`
+-PYTHON_LIBS="-L${py_prefix}/lib -lpython${PYTHON_VERSION}"
++PYTHON_LIBS="-L${py_prefix}/lib -lpython${PYTHON_VERSION} -pthread -lm -lutil"
+ PYTHON_LIB_LOC="${py_prefix}/lib"
+ 
+ 

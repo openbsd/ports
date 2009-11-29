@@ -1,12 +1,11 @@
-$OpenBSD: patch-testsuite_test_interface_py,v 1.1.1.1 2008/01/22 08:53:41 ajacoutot Exp $
---- testsuite/test_interface.py.orig	Mon Jan 21 12:13:23 2008
-+++ testsuite/test_interface.py	Mon Jan 21 12:13:31 2008
-@@ -46,7 +46,7 @@ class FunctionCall(TestCase):
- class MixerTest(TestCase):
-     def setUp(self):
-         TestCase.setUp(self)
--        self.mixer = gst.element_factory_make('alsasrc', '')
-+        self.mixer = gst.element_factory_make('osssrc', '')
-         assert self.mixer
+$OpenBSD: patch-testsuite_test_interface_py,v 1.2 2009/11/29 09:18:42 ajacoutot Exp $
+--- testsuite/test_interface.py.orig	Tue Nov 24 11:12:11 2009
++++ testsuite/test_interface.py	Tue Nov 24 11:12:19 2009
+@@ -59,7 +59,6 @@ class MixerTest(TestCase):
+             self.mixer = amix.create()
+         else:
+             self.mixer = None
+-        assert self.mixer
  
      def tearDown(self):
+         del self.mixer
