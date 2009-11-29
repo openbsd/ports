@@ -1,0 +1,28 @@
+$OpenBSD: patch-gtk_gtktoolbutton_c,v 1.1 2009/11/29 11:54:31 ajacoutot Exp $
+
+Functions like gtk_tool_button_new (NULL, NULL) gives critical warnings:
+CRITICAL **: atk_object_set_name: assertion `name != NULL' failed
+See:
+    https://bugzilla.gnome.org/show_bug.cgi?id=599446
+
+--- gtk/gtktoolbutton.c.orig	Fri Oct 16 16:38:56 2009
++++ gtk/gtktoolbutton.c	Sun Nov 29 12:06:38 2009
+@@ -916,11 +916,14 @@ gtk_tool_button_set_label (GtkToolButton *button,
+   button->priv->label_text = g_strdup (label);
+   button->priv->contents_invalid = TRUE;     
+ 
+-  elided_label = _gtk_toolbar_elide_underscores (label);
+-  accessible = gtk_widget_get_accessible (GTK_WIDGET (button->priv->button));
+-  atk_object_set_name (accessible, elided_label);
++  if (label)
++    {
++      elided_label = _gtk_toolbar_elide_underscores (label);
++      accessible = gtk_widget_get_accessible (GTK_WIDGET (button->priv->button));
++      atk_object_set_name (accessible, elided_label);
++      g_free (elided_label);
++    }
+ 
+-  g_free (elided_label);
+   g_free (old_label);
+  
+   g_object_notify (G_OBJECT (button), "label");
