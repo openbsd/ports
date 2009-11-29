@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-mplex,v 1.1 2008/10/01 08:02:59 ajacoutot Exp $
-lib/gstreamer-${VERSION}/libgstmplex.la
-lib/gstreamer-${VERSION}/libgstmplex.so

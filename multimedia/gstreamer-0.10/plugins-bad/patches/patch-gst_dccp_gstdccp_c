@@ -1,0 +1,15 @@
+$OpenBSD: patch-gst_dccp_gstdccp_c,v 1.1 2009/11/29 09:16:51 ajacoutot Exp $
+--- gst/dccp/gstdccp.c.orig	Tue Nov 24 13:27:46 2009
++++ gst/dccp/gstdccp.c	Tue Nov 24 13:27:54 2009
+@@ -27,6 +27,11 @@
+ #include <sys/filio.h>
+ #endif
+ 
++// iovec
++#ifdef __OpenBSD__
++#include <sys/uio.h>
++#endif
++
+ /* Prototypes and definitions for private functions and not exported via gstdccp.h */
+ GstFlowReturn gst_dccp_socket_write (GstElement * element, int socket,
+     const void *buf, size_t count, int packet_size);

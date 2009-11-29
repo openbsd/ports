@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_mpeg2enc_gstmpeg2encoptions_cc,v 1.1 2009/11/29 09:16:51 ajacoutot Exp $
+--- ext/mpeg2enc/gstmpeg2encoptions.cc.orig	Tue Nov 24 13:40:16 2009
++++ ext/mpeg2enc/gstmpeg2encoptions.cc	Tue Nov 24 13:42:14 2009
+@@ -288,8 +288,10 @@ GstMpeg2EncOptions::GstMpeg2EncOptions ():
+ MPEG2EncOptions ()
+ {
+   /* autodetect number of CPUs */
+-#ifndef WIN32
++#if ! defined WIN32 && ! defined __OpenBSD__
+   num_cpus = sysconf (_SC_NPROCESSORS_ONLN);
++#elif defined __OpenBSD__
++  num_cpus = 1;
+ #else
+   SYSTEM_INFO si;
+   GetSystemInfo(&si);

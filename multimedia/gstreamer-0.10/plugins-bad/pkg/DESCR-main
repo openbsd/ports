@@ -1,39 +1,6 @@
-This package contains "bad" plugins for gstreamer-${VERSION}.
-The gstreamer people split plugins into:
-- base plugins (plugins-base)
-- plugins with good code and a good licence (plugins-good)
-- plugins with licence issues (plugins-ugly)
-- plugins with relatively bad code (plugins-bad)
-
-* cdxaparse      parse a .dat file (VCD) into raw mpeg1
-* filter         IIR, lpwsinc and bpwsinc audio filter elements
-* freeze         makes a stream from buffers of data
-* gsm            GSM encoder/decoder
-* h264parse      parse raw h264 streams
-* mms            access mms:// and mmsh:// streams
-* modplug        various .mod audio decoding
-* nsfdec         decode .nsf files
-* replaygain     ReplayGain analysis
-* rfbsrc         connect to vnc
-* speed          set speed/pitch on audio/raw streams (resampler)
-* tta            TTA lossless audio format handling
-* videocrop      crops video into a user-defined region
-* y4menc         yuv4mpeg video encoder
-
-The following plugins are in specific packages because of dependencies:
-
-* mplex
-* neon
-* real
-
-The following plugins are not built:
-
-* alsaspdif (no alsa on OpenBSD)
-* dfbvideosink (no directFB on OpenBSD)
-* dtsdec (no dts library)
-* glimagesink (no accelerated GL support)
-* mpeg2enc (depends on internals of mjpegtools)
-* musicbrainz (not ported yet)
-* soundtouch (no libsoundtouch)
-* spcdec (no library)
-* swfdec (library is out-of-date)
+This package contains "bad" elements for gstreamer-${VERSION}.
+GStreamer plugins are splitted into:
+- an essential exemplary set of elements (plugins-base)
+- a set of good-quality plug-ins under LGPL (plugins-good)
+- a set of good-quality plug-ins that might pose distribution problems (plugins-ugly)
+- a set of plug-ins that need more quality (plugins-bad)

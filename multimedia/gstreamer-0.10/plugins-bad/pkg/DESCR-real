@@ -1,3 +1,1 @@
-This is a "bad" plugin for gstreamer-${VERSION}. It might be buggy or
-unfinished.
-* real     Realmedia decoder
+This package contains the "real" element for gstreamer-${VERSION} (bad).

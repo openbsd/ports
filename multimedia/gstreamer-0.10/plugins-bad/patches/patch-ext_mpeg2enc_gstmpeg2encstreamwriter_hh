@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_mpeg2enc_gstmpeg2encstreamwriter_hh,v 1.1 2009/11/29 09:16:51 ajacoutot Exp $
+--- ext/mpeg2enc/gstmpeg2encstreamwriter.hh.orig	Thu Nov 26 09:06:01 2009
++++ ext/mpeg2enc/gstmpeg2encstreamwriter.hh	Thu Nov 26 09:10:08 2009
+@@ -37,7 +37,7 @@ class GstMpeg2EncStreamWriter : public ElemStrmWriter 
+   /* output functions */
+   void WriteOutBufferUpto (const guint8 * buffer,
+       const guint32 flush_upto);
+-  guint64 BitCount ();
++  uint64_t BitCount ();
+ 
+   private:
+   GstPad *pad;

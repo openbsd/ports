@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_apexsink_gstapexraop_c,v 1.1 2009/11/29 09:16:51 ajacoutot Exp $
+--- ext/apexsink/gstapexraop.c.orig	Tue Nov 24 13:33:09 2009
++++ ext/apexsink/gstapexraop.c	Tue Nov 24 13:35:35 2009
+@@ -30,6 +30,11 @@
+ 
+ #include <string.h>
+ 
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#include <sys/socket.h>
++#endif
++
+ #include "gstapexraop.h"
+ 
+ /* private constants */

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/10/14 13:52:21 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/11/29 09:16:51 ajacoutot Exp $
+@conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
 @conflict gstreamer-faad-*
@@ -12,116 +13,182 @@
 @conflict gstreamer-tremor-*
 @conflict gstreamer-x264-*
 @conflict gstreamer-xvid-*
-include/gstreamer-${VERSION}/gst/app/
-include/gstreamer-${VERSION}/gst/app/gstappbuffer.h
-include/gstreamer-${VERSION}/gst/app/gstappsink.h
-include/gstreamer-${VERSION}/gst/app/gstappsrc.h
-lib/gstreamer-${VERSION}/libgstapp.la
-lib/gstreamer-${VERSION}/libgstapp.so
-lib/gstreamer-${VERSION}/libgstbayer.la
+@bin bin/gst-camera
+@bin bin/gst-camera-perf
+include/gstreamer-${VERSION}/gst/interfaces/photography-enumtypes.h
+include/gstreamer-${VERSION}/gst/interfaces/photography.h
+include/gstreamer-${VERSION}/gst/signalprocessor/
+include/gstreamer-${VERSION}/gst/signalprocessor/gstsignalprocessor.h
+include/gstreamer-${VERSION}/gst/video/gstbasevideocodec.h
+include/gstreamer-${VERSION}/gst/video/gstbasevideodecoder.h
+include/gstreamer-${VERSION}/gst/video/gstbasevideoencoder.h
+include/gstreamer-${VERSION}/gst/video/gstbasevideoparse.h
+include/gstreamer-${VERSION}/gst/video/gstbasevideoutils.h
+@comment lib/gstreamer-${VERSION}/libgstaacparse.la
+lib/gstreamer-${VERSION}/libgstaacparse.so
+@comment lib/gstreamer-${VERSION}/libgstadpcmdec.la
+lib/gstreamer-${VERSION}/libgstadpcmdec.so
+@comment lib/gstreamer-${VERSION}/libgstaiff.la
+lib/gstreamer-${VERSION}/libgstaiff.so
+@comment lib/gstreamer-${VERSION}/libgstamrparse.la
+lib/gstreamer-${VERSION}/libgstamrparse.so
+@comment lib/gstreamer-${VERSION}/libgstapexsink.la
+lib/gstreamer-${VERSION}/libgstapexsink.so
+@comment lib/gstreamer-${VERSION}/libgstasfmux.la
+lib/gstreamer-${VERSION}/libgstasfmux.so
+@comment lib/gstreamer-${VERSION}/libgstautoconvert.la
+lib/gstreamer-${VERSION}/libgstautoconvert.so
+@comment lib/gstreamer-${VERSION}/libgstbayer.la
 lib/gstreamer-${VERSION}/libgstbayer.so
-lib/gstreamer-${VERSION}/libgstbz2.la
+@comment lib/gstreamer-${VERSION}/libgstbz2.la
 lib/gstreamer-${VERSION}/libgstbz2.so
-lib/gstreamer-${VERSION}/libgstcdxaparse.la
+@comment lib/gstreamer-${VERSION}/libgstcamerabin.la
+lib/gstreamer-${VERSION}/libgstcamerabin.so
+@comment lib/gstreamer-${VERSION}/libgstcdaudio.la
+lib/gstreamer-${VERSION}/libgstcdaudio.so
+@comment lib/gstreamer-${VERSION}/libgstcdxaparse.la
 lib/gstreamer-${VERSION}/libgstcdxaparse.so
-lib/gstreamer-${VERSION}/libgstdeinterlace.la
-lib/gstreamer-${VERSION}/libgstdeinterlace.so
-lib/gstreamer-${VERSION}/libgstdvdspu.la
-lib/gstreamer-${VERSION}/libgstdvdspu.so
-lib/gstreamer-${VERSION}/libgstfaac.la
+@comment lib/gstreamer-${VERSION}/libgstdccp.la
+lib/gstreamer-${VERSION}/libgstdccp.so
+@comment lib/gstreamer-${VERSION}/libgstdebugutilsbad.la
+lib/gstreamer-${VERSION}/libgstdebugutilsbad.so
+@comment lib/gstreamer-${VERSION}/libgstdtmf.la
+lib/gstreamer-${VERSION}/libgstdtmf.so
+@comment lib/gstreamer-${VERSION}/libgstfaac.la
 lib/gstreamer-${VERSION}/libgstfaac.so
-lib/gstreamer-${VERSION}/libgstfaad.la
+@comment lib/gstreamer-${VERSION}/libgstfaad.la
 lib/gstreamer-${VERSION}/libgstfaad.so
-lib/gstreamer-${VERSION}/libgstfestival.la
+@comment lib/gstreamer-${VERSION}/libgstfestival.la
 lib/gstreamer-${VERSION}/libgstfestival.so
-lib/gstreamer-${VERSION}/libgstfilter.la
-lib/gstreamer-${VERSION}/libgstfilter.so
-lib/gstreamer-${VERSION}/libgstflvdemux.la
-lib/gstreamer-${VERSION}/libgstflvdemux.so
-lib/gstreamer-${VERSION}/libgstfreeze.la
+@comment lib/gstreamer-${VERSION}/libgstfreeze.la
 lib/gstreamer-${VERSION}/libgstfreeze.so
-lib/gstreamer-${VERSION}/libgstgsm.la
+@comment lib/gstreamer-${VERSION}/libgstfrei0r.la
+lib/gstreamer-${VERSION}/libgstfrei0r.so
+@comment lib/gstreamer-${VERSION}/libgstgsm.la
 lib/gstreamer-${VERSION}/libgstgsm.so
-lib/gstreamer-${VERSION}/libgsth264parse.la
+@comment lib/gstreamer-${VERSION}/libgsth264parse.la
 lib/gstreamer-${VERSION}/libgsth264parse.so
-lib/gstreamer-${VERSION}/libgstinterleave.la
-lib/gstreamer-${VERSION}/libgstinterleave.so
-lib/gstreamer-${VERSION}/libgstivorbis.la
+@comment lib/gstreamer-${VERSION}/libgsthdvparse.la
+lib/gstreamer-${VERSION}/libgsthdvparse.so
+@comment lib/gstreamer-${VERSION}/libgstid3tag.la
+lib/gstreamer-${VERSION}/libgstid3tag.so
+@comment lib/gstreamer-${VERSION}/libgstivorbis.la
 lib/gstreamer-${VERSION}/libgstivorbis.so
-lib/gstreamer-${VERSION}/libgstladspa.la
+@comment lib/gstreamer-${VERSION}/libgstladspa.la
 lib/gstreamer-${VERSION}/libgstladspa.so
-lib/gstreamer-${VERSION}/libgstmetadata.la
+@comment lib/gstreamer-${VERSION}/libgstlegacyresample.la
+lib/gstreamer-${VERSION}/libgstlegacyresample.so
+@comment lib/gstreamer-${VERSION}/libgstliveadder.la
+lib/gstreamer-${VERSION}/libgstliveadder.so
+@comment lib/gstreamer-${VERSION}/libgstmetadata.la
 lib/gstreamer-${VERSION}/libgstmetadata.so
-lib/gstreamer-${VERSION}/libgstmms.la
+@comment lib/gstreamer-${VERSION}/libgstmms.la
 lib/gstreamer-${VERSION}/libgstmms.so
-lib/gstreamer-${VERSION}/libgstmodplug.la
-lib/gstreamer-${VERSION}/libgstmodplug.so
-lib/gstreamer-${VERSION}/libgstmpeg4videoparse.la
+@comment lib/gstreamer-${VERSION}/libgstmpeg4videoparse.la
 lib/gstreamer-${VERSION}/libgstmpeg4videoparse.so
-lib/gstreamer-${VERSION}/libgstmpegtsparse.la
-lib/gstreamer-${VERSION}/libgstmpegtsparse.so
-lib/gstreamer-${VERSION}/libgstmpegvideoparse.la
+@comment lib/gstreamer-${VERSION}/libgstmpegdemux.la
+lib/gstreamer-${VERSION}/libgstmpegdemux.so
+@comment lib/gstreamer-${VERSION}/libgstmpegpsmux.la
+lib/gstreamer-${VERSION}/libgstmpegpsmux.so
+@comment lib/gstreamer-${VERSION}/libgstmpegtsmux.la
+lib/gstreamer-${VERSION}/libgstmpegtsmux.so
+@comment lib/gstreamer-${VERSION}/libgstmpegvideoparse.la
 lib/gstreamer-${VERSION}/libgstmpegvideoparse.so
-lib/gstreamer-${VERSION}/libgstmusepack.la
+@comment lib/gstreamer-${VERSION}/libgstmusepack.la
 lib/gstreamer-${VERSION}/libgstmusepack.so
-lib/gstreamer-${VERSION}/libgstmve.la
+@comment lib/gstreamer-${VERSION}/libgstmve.la
 lib/gstreamer-${VERSION}/libgstmve.so
-lib/gstreamer-${VERSION}/libgstnsf.la
+@comment lib/gstreamer-${VERSION}/libgstmxf.la
+lib/gstreamer-${VERSION}/libgstmxf.so
+@comment lib/gstreamer-${VERSION}/libgstnsf.la
 lib/gstreamer-${VERSION}/libgstnsf.so
-lib/gstreamer-${VERSION}/libgstnuvdemux.la
+@comment lib/gstreamer-${VERSION}/libgstnuvdemux.la
 lib/gstreamer-${VERSION}/libgstnuvdemux.so
-lib/gstreamer-${VERSION}/libgstrawparse.la
+@comment lib/gstreamer-${VERSION}/libgstpcapparse.la
+lib/gstreamer-${VERSION}/libgstpcapparse.so
+@comment lib/gstreamer-${VERSION}/libgstpnm.la
+lib/gstreamer-${VERSION}/libgstpnm.so
+@comment lib/gstreamer-${VERSION}/libgstqtmux.la
+lib/gstreamer-${VERSION}/libgstqtmux.so
+@comment lib/gstreamer-${VERSION}/libgstrawparse.la
 lib/gstreamer-${VERSION}/libgstrawparse.so
-lib/gstreamer-${VERSION}/libgstreplaygain.la
-lib/gstreamer-${VERSION}/libgstreplaygain.so
-lib/gstreamer-${VERSION}/libgstrfbsrc.la
+@comment lib/gstreamer-${VERSION}/libgstrfbsrc.la
 lib/gstreamer-${VERSION}/libgstrfbsrc.so
-lib/gstreamer-${VERSION}/libgstrtpmanager.la
-lib/gstreamer-${VERSION}/libgstrtpmanager.so
-lib/gstreamer-${VERSION}/libgstsdl.la
+@comment lib/gstreamer-${VERSION}/libgstrsvg.la
+lib/gstreamer-${VERSION}/libgstrsvg.so
+@comment lib/gstreamer-${VERSION}/libgstrtpmux.la
+lib/gstreamer-${VERSION}/libgstrtpmux.so
+@comment lib/gstreamer-${VERSION}/libgstscaletempoplugin.la
+lib/gstreamer-${VERSION}/libgstscaletempoplugin.so
+@comment lib/gstreamer-${VERSION}/libgstschro.la
+lib/gstreamer-${VERSION}/libgstschro.so
+@comment lib/gstreamer-${VERSION}/libgstsdl.la
 lib/gstreamer-${VERSION}/libgstsdl.so
-lib/gstreamer-${VERSION}/libgstsdpelem.la
+@comment lib/gstreamer-${VERSION}/libgstsdpelem.la
 lib/gstreamer-${VERSION}/libgstsdpelem.so
-lib/gstreamer-${VERSION}/libgstselector.la
+@comment lib/gstreamer-${VERSION}/libgstselector.la
 lib/gstreamer-${VERSION}/libgstselector.so
-lib/gstreamer-${VERSION}/libgstsndfile.la
+@comment lib/gstreamer-${VERSION}/libgstshapewipe.la
+lib/gstreamer-${VERSION}/libgstshapewipe.so
+@comment lib/gstreamer-${VERSION}/libgstsiren.la
+lib/gstreamer-${VERSION}/libgstsiren.so
+@comment lib/gstreamer-${VERSION}/libgstsndfile.la
 lib/gstreamer-${VERSION}/libgstsndfile.so
-lib/gstreamer-${VERSION}/libgstspeed.la
+@comment lib/gstreamer-${VERSION}/libgstsoundtouch.la
+lib/gstreamer-${VERSION}/libgstsoundtouch.so
+@comment lib/gstreamer-${VERSION}/libgstspeed.la
 lib/gstreamer-${VERSION}/libgstspeed.so
-lib/gstreamer-${VERSION}/libgstspeexresample.la
-lib/gstreamer-${VERSION}/libgstspeexresample.so
-lib/gstreamer-${VERSION}/libgststereo.la
+@comment lib/gstreamer-${VERSION}/libgststereo.la
 lib/gstreamer-${VERSION}/libgststereo.so
-lib/gstreamer-${VERSION}/libgstsubenc.la
+@comment lib/gstreamer-${VERSION}/libgstsubenc.la
 lib/gstreamer-${VERSION}/libgstsubenc.so
-lib/gstreamer-${VERSION}/libgsttta.la
+@comment lib/gstreamer-${VERSION}/libgsttta.la
 lib/gstreamer-${VERSION}/libgsttta.so
-lib/gstreamer-${VERSION}/libgstvideosignal.la
+@comment lib/gstreamer-${VERSION}/libgstvalve.la
+lib/gstreamer-${VERSION}/libgstvalve.so
+@comment lib/gstreamer-${VERSION}/libgstvideomeasure.la
+lib/gstreamer-${VERSION}/libgstvideomeasure.so
+@comment lib/gstreamer-${VERSION}/libgstvideosignal.la
 lib/gstreamer-${VERSION}/libgstvideosignal.so
-lib/gstreamer-${VERSION}/libgstvmnc.la
+@comment lib/gstreamer-${VERSION}/libgstvmnc.la
 lib/gstreamer-${VERSION}/libgstvmnc.so
-lib/gstreamer-${VERSION}/libgstx264.la
-lib/gstreamer-${VERSION}/libgstx264.so
-lib/gstreamer-${VERSION}/libgstxvid.la
+@comment lib/gstreamer-${VERSION}/libgstxvid.la
 lib/gstreamer-${VERSION}/libgstxvid.so
-lib/gstreamer-${VERSION}/libgsty4menc.la
-lib/gstreamer-${VERSION}/libgsty4menc.so
-lib/libgstapp-${VERSION}.la
-@lib lib/libgstapp-${VERSION}.so.${LIBgstapp-0.10_VERSION}
+@comment lib/gstreamer-${VERSION}/libresindvd.la
+lib/gstreamer-${VERSION}/libresindvd.so
+lib/libgstbasevideo-${VERSION}.la
+@lib lib/libgstbasevideo-${VERSION}.so.${LIBgstbasevideo-0.10_VERSION}
+lib/libgstphotography-${VERSION}.la
+@lib lib/libgstphotography-${VERSION}.so.${LIBgstphotography-0.10_VERSION}
+lib/libgstsignalprocessor-${VERSION}.la
+@lib lib/libgstsignalprocessor-${VERSION}.so.${LIBgstsignalprocessor-0.10_VERSION}
+share/gstreamer-${VERSION}/
+share/gstreamer-${VERSION}/camera-apps/
+share/gstreamer-${VERSION}/camera-apps/gst-camera.glade
 share/locale/af/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/ca/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/da/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/de/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/es/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/eu/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/fr/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/id/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/ja/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/ky/
 share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/lt/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/lv/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/mt/
+share/locale/mt/LC_MESSAGES/
+share/locale/mt/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/or/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
@@ -132,6 +199,7 @@ share/locale/sk/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
+share/locale/tr/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo

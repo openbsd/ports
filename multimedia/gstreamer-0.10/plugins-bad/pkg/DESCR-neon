@@ -1,3 +1,1 @@
-This is a "bad" plugin for gstreamer-${VERSION}. It might be buggy or
-unfinished.
-* neon     lib neon http client src  
+This package contains the "neon" element for gstreamer-${VERSION} (bad).

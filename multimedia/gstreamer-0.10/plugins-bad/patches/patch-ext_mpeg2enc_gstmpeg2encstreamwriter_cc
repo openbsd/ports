@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_mpeg2enc_gstmpeg2encstreamwriter_cc,v 1.1 2009/11/29 09:16:51 ajacoutot Exp $
+--- ext/mpeg2enc/gstmpeg2encstreamwriter.cc.orig	Thu Nov 26 09:05:54 2009
++++ ext/mpeg2enc/gstmpeg2encstreamwriter.cc	Thu Nov 26 09:07:23 2009
+@@ -75,7 +75,7 @@ GstMpeg2EncStreamWriter::WriteOutBufferUpto (const gui
+   GST_MPEG2ENC_MUTEX_UNLOCK (enc);
+ }
+ 
+-guint64
++uint64_t
+ GstMpeg2EncStreamWriter::BitCount ()
+ {
+   return flushed * 8ll;

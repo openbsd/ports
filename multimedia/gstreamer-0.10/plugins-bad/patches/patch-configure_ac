@@ -1,18 +1,25 @@
-$OpenBSD: patch-configure_ac,v 1.4 2009/05/10 20:16:29 sthen Exp $
---- configure.ac.orig	Wed Apr 23 19:30:21 2008
-+++ configure.ac	Fri Apr 10 20:40:32 2009
-@@ -979,8 +979,8 @@ AG_GST_CHECK_FEATURE(THEORADEC, [ogg theora codec], th
- dnl *** x264 (MPEG-4 part 10/h.264/AVC encoder) ***
- translit(dnm, m, l) AM_CONDITIONAL(USE_X264, true)
- AG_GST_CHECK_FEATURE(X264, [x264 plug-in], x264, [
--  AG_GST_CHECK_LIBHEADER(X264, x264, x264_nal_encode, -lm, x264.h,
--      X264_LIBS="$LDFLAGS -lx264 -lm"
-+  AG_GST_CHECK_LIBHEADER(X264, x264, x264_nal_encode, -lm -pthread, x264.h,
-+      X264_LIBS="$LDFLAGS -lx264 -lm -pthread"
-       X264_CFLAGS="$CFLAGS"
-       AC_SUBST(X264_LIBS)
-       AC_SUBST(X264_CFLAGS))
-@@ -992,7 +992,7 @@ AG_GST_CHECK_FEATURE(XVID, [xvid plugins], xvid, [
+$OpenBSD: patch-configure_ac,v 1.5 2009/11/29 09:16:51 ajacoutot Exp $
+--- configure.ac.orig	Mon Nov 16 21:34:17 2009
++++ configure.ac	Tue Nov 24 13:04:36 2009
+@@ -1108,7 +1108,7 @@ PKG_CHECK_EXISTS(mjpegtools >= 1.6.1.93 mjpegtools < 1
+       OLD_CFLAGS="$CFLAGS"
+       OLD_LIBS="$LIBS"
+       CFLAGS="$MJPEG_CFLAGS"
+-      LIBS="$LIBS $MJPEG_LIBS -lmjpegutils -lm -lpthread"
++      LIBS="$LIBS $MJPEG_LIBS -lmjpegutils -lm -pthread"
+       AC_CHECK_FUNC(mjpeg_loglev_t, [
+         mjpegtools_api=10903
+         ], [
+@@ -1145,7 +1145,7 @@ AG_GST_CHECK_FEATURE(MPEG2ENC, [mpeg2enc], mpeg2enc, [
+       dnl check headers
+       mpeg2enc_headers_ok=no
+       AC_CHECK_HEADER([mpeg2encoder.hh], [
+-        MPEG2ENC_LIBS="$MPEG2ENC_LIBS -lmpeg2encpp -lm -lpthread"
++        MPEG2ENC_LIBS="$MPEG2ENC_LIBS -lmpeg2encpp -lm -pthread"
+         OLD_LIBS="$LIBS"
+         LIBS="$LIBS $MPEG2ENC_LIBS"
+         AC_MSG_CHECKING([for valid mpeg2enc objects])
+@@ -1500,7 +1500,7 @@ AG_GST_CHECK_FEATURE(XVID, [xvid plugins], xvid, [
    HAVE_XVID=no
    AC_CHECK_HEADER(xvid.h, [
      OLD_LIBS="$LIBS"
@@ -21,7 +28,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2009/05/10 20:16:29 sthen Exp $
      AC_CHECK_LIB(xvidcore, xvid_encore, [
        AC_CHECK_LIB(xvidcore, xvid_decore, [
          AC_CHECK_LIB(xvidcore, xvid_global, [
-@@ -1002,7 +1002,7 @@ AG_GST_CHECK_FEATURE(XVID, [xvid plugins], xvid, [
+@@ -1510,7 +1510,7 @@ AG_GST_CHECK_FEATURE(XVID, [xvid plugins], xvid, [
                #error "Incompatible XviD API version"
                #endif
            ],[ AC_MSG_RESULT(yes)
