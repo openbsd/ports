@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2009/10/20 06:58:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2009/11/29 09:19:45 ajacoutot Exp $
 
 COMMENT=	PhotoBooth inspired application
 
 GNOME_PROJECT=	cheese
 GNOME_VERSION=	2.28.1
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	multimedia
 
@@ -33,7 +34,7 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	camel-1.2.>=11,ebook-1.2,edataserver-1.2,smime3,softokn3::databases/evolution-data-server \
 		rsvg-2.>=20::x11/gnome/librsvg \
-		gstinterfaces-0.10,gstreamer-0.10::multimedia/gstreamer-0.10/plugins-base \
+		gstinterfaces-0.10,gstreamer-0.10:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
 		gnome-desktop-2.>=7::x11/gnome/desktop
 RUN_DEPENDS=	::multimedia/gstreamer-0.10/plugins-base \
 		::multimedia/gstreamer-0.10/plugins-good
