@@ -1,0 +1,17 @@
+$OpenBSD: patch-sys_v4l2_v4l2_calls_h,v 1.1 2009/11/29 09:17:38 ajacoutot Exp $
+--- sys/v4l2/v4l2_calls.h.orig	Mon Nov 23 19:50:56 2009
++++ sys/v4l2/v4l2_calls.h	Mon Nov 23 19:54:57 2009
+@@ -29,9 +29,13 @@
+ #ifdef HAVE_LIBV4L2
+ #  include <libv4l2.h>
+ #else
++#if defined __OpenBSD__
++#  include <sys/videoio.h>
++#else
+ #  include <sys/ioctl.h>
+ #  include <linux/videodev.h>
+ #  include <linux/videodev2.h>
++#endif
+ #  define v4l2_fd_open(fd, flags) (fd)
+ #  define v4l2_close    close
+ #  define v4l2_dup      dup

@@ -1,0 +1,14 @@
+$OpenBSD: patch-sys_v4l2_gstv4l2bufferpool_c,v 1.1 2009/11/29 09:17:38 ajacoutot Exp $
+--- sys/v4l2/gstv4l2bufferpool.c.orig	Mon Nov 23 19:54:48 2009
++++ sys/v4l2/gstv4l2bufferpool.c	Mon Nov 23 19:58:04 2009
+@@ -26,6 +26,10 @@
+ #  include <config.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#endif
++
+ #include <sys/mman.h>
+ #include <string.h>
+ #include <unistd.h>

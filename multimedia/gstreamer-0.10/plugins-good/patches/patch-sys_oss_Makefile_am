@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_oss_Makefile_am,v 1.1 2008/11/03 23:24:09 jakemsr Exp $
---- sys/oss/Makefile.am.orig	Fri Sep 26 02:07:41 2008
-+++ sys/oss/Makefile.am	Fri Sep 26 02:08:01 2008
+$OpenBSD: patch-sys_oss_Makefile_am,v 1.2 2009/11/29 09:17:38 ajacoutot Exp $
+--- sys/oss/Makefile.am.orig	Fri Feb  6 12:34:12 2009
++++ sys/oss/Makefile.am	Mon Nov 23 18:28:12 2009
 @@ -13,7 +13,8 @@ libgstossaudio_la_LIBADD = \
  	$(GST_PLUGINS_BASE_LIBS) \
          -lgstinterfaces-$(GST_MAJORMINOR) \
@@ -9,5 +9,5 @@ $OpenBSD: patch-sys_oss_Makefile_am,v 1.1 2008/11/03 23:24:09 jakemsr Exp $
 +	$(GST_LIBS) \
 +	-lossaudio
  libgstossaudio_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS) 
+ libgstossaudio_la_LIBTOOLFLAGS = --tag=disable-static
  
- noinst_HEADERS = common.h            \

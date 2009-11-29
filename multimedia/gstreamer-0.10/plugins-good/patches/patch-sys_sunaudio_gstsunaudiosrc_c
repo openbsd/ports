@@ -1,7 +1,7 @@
-$OpenBSD: patch-sys_sunaudio_gstsunaudiosrc_c,v 1.4 2008/06/21 21:03:56 deanna Exp $
---- sys/sunaudio/gstsunaudiosrc.c.orig	Wed Apr  2 18:37:29 2008
-+++ sys/sunaudio/gstsunaudiosrc.c	Wed Jun 11 16:51:49 2008
-@@ -46,8 +46,6 @@
+$OpenBSD: patch-sys_sunaudio_gstsunaudiosrc_c,v 1.5 2009/11/29 09:17:38 ajacoutot Exp $
+--- sys/sunaudio/gstsunaudiosrc.c.orig	Sat May 16 00:34:32 2009
++++ sys/sunaudio/gstsunaudiosrc.c	Mon Nov 23 18:28:12 2009
+@@ -42,8 +42,6 @@
  #include <fcntl.h>
  #include <string.h>
  #include <unistd.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudiosrc_c,v 1.4 2008/06/21 21:03:56 deanna E
  
  #include "gstsunaudiosrc.h"
  
-@@ -270,12 +268,14 @@ gst_sunaudiosrc_open (GstAudioSrc * asrc)
+@@ -266,12 +264,14 @@ gst_sunaudiosrc_open (GstAudioSrc * asrc)
        sunaudiosrc->info.monitor_gain);
    GST_DEBUG_OBJECT (sunaudiosrc, "output_muted %d",
        sunaudiosrc->info.output_muted);
@@ -25,7 +25,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudiosrc_c,v 1.4 2008/06/21 21:03:56 deanna E
  
    if (!sunaudiosrc->mixer) {
      const char *audiodev;
-@@ -363,7 +363,7 @@ gst_sunaudiosrc_prepare (GstAudioSrc * asrc, GstRingBu
+@@ -358,7 +358,7 @@ gst_sunaudiosrc_prepare (GstAudioSrc * asrc, GstRingBu
    }
  
  
@@ -34,7 +34,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudiosrc_c,v 1.4 2008/06/21 21:03:56 deanna E
  
    return TRUE;
  }
-@@ -417,7 +417,7 @@ gst_sunaudiosrc_reset (GstAudioSrc * asrc)
+@@ -412,7 +412,7 @@ gst_sunaudiosrc_reset (GstAudioSrc * asrc)
    }
  
    /* Flush the audio */

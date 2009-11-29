@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.7 2009/03/27 15:12:19 ajacoutot Exp $
---- configure.ac.orig	Wed Apr 23 03:55:55 2008
-+++ configure.ac	Fri Mar 27 13:55:13 2009
-@@ -488,6 +488,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
+$OpenBSD: patch-configure_ac,v 1.8 2009/11/29 09:17:38 ajacoutot Exp $
+--- configure.ac.orig	Mon Nov 23 18:19:53 2009
++++ configure.ac	Mon Nov 23 18:22:26 2009
+@@ -456,6 +456,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
  #include <sys/videodev2.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.7 2009/03/27 15:12:19 ajacoutot Exp $
  #else /* Linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
-@@ -529,6 +531,8 @@ return 0;
+@@ -497,6 +499,8 @@ return 0;
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
  #include <sys/videodev2.h>
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.7 2009/03/27 15:12:19 ajacoutot Exp $
  #else /* Linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
-@@ -676,6 +680,21 @@ AG_GST_CHECK_FEATURE(ESD, [ESounD sound daemon], esdsi
+@@ -681,6 +685,21 @@ AG_GST_CHECK_FEATURE(ESD, [ESounD sound daemon], esdsi
    fi
  ])
  
@@ -40,17 +40,8 @@ $OpenBSD: patch-configure_ac,v 1.7 2009/03/27 15:12:19 ajacoutot Exp $
 +
  dnl *** FLAC ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_FLAC, true)
- AC_TRY_COMPILE([#include <FLAC/export.h>], [
-@@ -699,7 +718,7 @@ AG_GST_CHECK_FEATURE(FLAC, [FLAC lossless audio], flac
- ])
- else
  AG_GST_CHECK_FEATURE(FLAC, [FLAC lossless audio], flac, [
--  AG_GST_CHECK_LIBHEADER(FLAC, FLAC, FLAC__stream_encoder_new, -lm, FLAC/all.h, FLAC_LIBS="-lFLAC -lm")
-+  AG_GST_CHECK_LIBHEADER(FLAC, FLAC, FLAC__stream_encoder_new, -logg -lm, FLAC/all.h, FLAC_LIBS="-lFLAC -logg -lm")
-   dnl API change in FLAC 1.1.3, so require that...
-   if test x$HAVE_FLAC = xyes; then
-     AC_CHECK_DECL(FLAC__STREAM_ENCODER_TELL_STATUS_ERROR,
-@@ -773,7 +792,7 @@ AG_GST_CHECK_FEATURE(LIBDV, [libdv DV demuxer/decoder]
+@@ -749,7 +768,7 @@ AG_GST_CHECK_FEATURE(LIBDV, [libdv DV demuxer/decoder]
  dnl *** libpng ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_LIBPNG, true)
  AG_GST_CHECK_FEATURE(LIBPNG, [Portable Network Graphics library], png, [
@@ -58,17 +49,17 @@ $OpenBSD: patch-configure_ac,v 1.7 2009/03/27 15:12:19 ajacoutot Exp $
 +  AG_GST_PKG_CHECK_MODULES(LIBPNG, libpng)
  ])
  
- dnl *** dv1394 ***
-@@ -947,6 +966,7 @@ AM_CONDITIONAL(USE_ANNODEX, false)
- AM_CONDITIONAL(USE_CAIRO, false)
- AM_CONDITIONAL(USE_CDIO, false)
+ dnl *** pulseaudio ***
+@@ -962,6 +981,7 @@ AM_CONDITIONAL(USE_CAIRO, false)
+ AM_CONDITIONAL(USE_DIRECTSOUND, false)
+ AM_CONDITIONAL(USE_DV1394, false)
  AM_CONDITIONAL(USE_ESD, false)
 +AM_CONDITIONAL(USE_LIBSNDIO, false)
  AM_CONDITIONAL(USE_FLAC, false)
  AM_CONDITIONAL(USE_GCONF, false)
- AM_CONDITIONAL(USE_GDK_PIXBUF, false)
-@@ -1066,6 +1086,7 @@ ext/cairo/Makefile
- ext/cdio/Makefile
+ AM_CONDITIONAL(USE_GCONFTOOL, false)
+@@ -1098,6 +1118,7 @@ ext/annodex/Makefile
+ ext/cairo/Makefile
  ext/dv/Makefile
  ext/esd/Makefile
 +ext/libsndio/Makefile

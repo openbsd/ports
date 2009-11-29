@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_Makefile_am,v 1.1 2008/11/03 23:24:09 jakemsr Exp $
---- ext/Makefile.am.orig	Fri Sep 26 02:05:28 2008
-+++ ext/Makefile.am	Fri Sep 26 02:07:07 2008
-@@ -82,6 +82,12 @@ else
+$OpenBSD: patch-ext_Makefile_am,v 1.2 2009/11/29 09:17:38 ajacoutot Exp $
+--- ext/Makefile.am.orig	Mon Nov 23 18:22:40 2009
++++ ext/Makefile.am	Mon Nov 23 18:23:16 2009
+@@ -76,6 +76,12 @@ else
  LIBPNG_DIR =
  endif
  
@@ -20,13 +20,13 @@ $OpenBSD: patch-ext_Makefile_am,v 1.1 2008/11/03 23:24:09 jakemsr Exp $
  	$(LIBPNG_DIR) \
 +	$(LIBSNDIO_DIR) \
  	$(MIKMOD_DIR) \
+ 	$(PULSE_DIR) \
  	$(SHOUT2_DIR) \
- 	$(SOUP_DIR) \
 @@ -162,6 +169,7 @@ DIST_SUBDIRS = \
  	ladspa \
  	libcaca \
  	libpng \
 +	libsndio \
+ 	pulse \
  	raw1394 \
  	shout2 \
- 	soup \

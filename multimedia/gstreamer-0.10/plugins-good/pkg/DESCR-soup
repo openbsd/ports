@@ -1,2 +1,1 @@
-good plugin for gstreamer-${VERSION}.
-* souphttpsrc     soup http client plugin
+This package contains the "souphttpsrc" element for gstreamer-${VERSION} (good).

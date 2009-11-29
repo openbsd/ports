@@ -1,2 +1,1 @@
-good plugin for gstreamer-${VERSION}.
-* cacasink     colored ASCII art video sink
+This package contains the "cacasink" element for gstreamer-${VERSION} (good).

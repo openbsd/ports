@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-esd,v 1.2 2009/09/28 18:27:13 ajacoutot Exp $
-lib/gstreamer-${VERSION}/libgstesd.la
-lib/gstreamer-${VERSION}/libgstesd.so
