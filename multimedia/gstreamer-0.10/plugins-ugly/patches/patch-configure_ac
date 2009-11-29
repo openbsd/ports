@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure_ac,v 1.1 2009/11/29 09:17:54 ajacoutot Exp $
+--- configure.ac.orig	Tue Nov 24 10:21:47 2009
++++ configure.ac	Tue Nov 24 10:23:01 2009
+@@ -357,7 +357,7 @@ AG_GST_CHECK_FEATURE(TWOLAME, [twolame], twolame, [
+ dnl *** x264 (MPEG-4 part 10/h.264/AVC encoder) ***
+ translit(dnm, m, l) AM_CONDITIONAL(USE_X264, true)
+ AG_GST_CHECK_FEATURE(X264, [x264 plug-in], x264, [
+-  AG_GST_CHECK_LIBHEADER(X264, x264, x264_encoder_encode, -lm, x264.h,
++  AG_GST_CHECK_LIBHEADER(X264, x264, x264_encoder_encode, -pthread -lm, x264.h,
+       AC_MSG_CHECKING([for uptodate x264 API version])
+       dnl _stdint not yet generated, so no compiling
+       AC_TRY_CPP([
+@@ -367,8 +367,8 @@ AG_GST_CHECK_FEATURE(X264, [x264 plug-in], x264, [
+         #endif
+       ], [
+         AC_MSG_RESULT(yes)
+-        X264_LIBS="$LDFLAGS -lx264 -lm"
+-        X264_CFLAGS="$CFLAGS"
++        X264_LIBS="$LDFLAGS -lx264 -pthread -lm"
++        X264_CFLAGS="$CFLAGS -pthread"
+         AC_SUBST(X264_LIBS)
+         AC_SUBST(X264_CFLAGS)
+       ], [

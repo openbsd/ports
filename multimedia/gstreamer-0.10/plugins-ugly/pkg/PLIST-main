@@ -1,49 +1,69 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/09/28 18:28:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/11/29 09:17:54 ajacoutot Exp $
+@conflict gstreamer-bad-<0.10.17
 @conflict gstreamer-a52-*
 @conflict gstreamer-mad-*
 @conflict gstreamer-mpeg2-*
 @conflict gstreamer-dvdread-*
-lib/gstreamer-${VERSION}/libgsta52dec.la
+@comment lib/gstreamer-${VERSION}/libgsta52dec.la
 lib/gstreamer-${VERSION}/libgsta52dec.so
-lib/gstreamer-${VERSION}/libgstasf.la
+@comment lib/gstreamer-${VERSION}/libgstasf.la
 lib/gstreamer-${VERSION}/libgstasf.so
-lib/gstreamer-${VERSION}/libgstdvdlpcmdec.la
+@comment lib/gstreamer-${VERSION}/libgstdvdlpcmdec.la
 lib/gstreamer-${VERSION}/libgstdvdlpcmdec.so
-lib/gstreamer-${VERSION}/libgstdvdread.la
+@comment lib/gstreamer-${VERSION}/libgstdvdread.la
 lib/gstreamer-${VERSION}/libgstdvdread.so
-lib/gstreamer-${VERSION}/libgstdvdsub.la
+@comment lib/gstreamer-${VERSION}/libgstdvdsub.la
 lib/gstreamer-${VERSION}/libgstdvdsub.so
-lib/gstreamer-${VERSION}/libgstiec958.la
+@comment lib/gstreamer-${VERSION}/libgstiec958.la
 lib/gstreamer-${VERSION}/libgstiec958.so
-lib/gstreamer-${VERSION}/libgstmad.la
+@comment lib/gstreamer-${VERSION}/libgstmad.la
 lib/gstreamer-${VERSION}/libgstmad.so
-lib/gstreamer-${VERSION}/libgstmpeg2dec.la
+@comment lib/gstreamer-${VERSION}/libgstmpeg2dec.la
 lib/gstreamer-${VERSION}/libgstmpeg2dec.so
-lib/gstreamer-${VERSION}/libgstmpegaudioparse.la
+@comment lib/gstreamer-${VERSION}/libgstmpegaudioparse.la
 lib/gstreamer-${VERSION}/libgstmpegaudioparse.so
-lib/gstreamer-${VERSION}/libgstmpegstream.la
+@comment lib/gstreamer-${VERSION}/libgstmpegstream.la
 lib/gstreamer-${VERSION}/libgstmpegstream.so
-lib/gstreamer-${VERSION}/libgstrmdemux.la
+@comment lib/gstreamer-${VERSION}/libgstrmdemux.la
 lib/gstreamer-${VERSION}/libgstrmdemux.so
+@comment lib/gstreamer-${VERSION}/libgstx264.la
+lib/gstreamer-${VERSION}/libgstx264.so
+share/gstreamer-${VERSION}/
+share/gstreamer-${VERSION}/presets/
+share/gstreamer-${VERSION}/presets/GstX264Enc.prs
 share/locale/af/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/ca/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/da/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/de/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/es/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/eu/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/fi/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/fr/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/id/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/it/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/ja/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/lt/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/lv/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/ms/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/mt/
+share/locale/mt/LC_MESSAGES/
+share/locale/mt/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/or/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/pl/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/pt_BR/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/ru/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/sk/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
+share/locale/tr/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
