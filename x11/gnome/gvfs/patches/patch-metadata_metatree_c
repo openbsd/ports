@@ -1,7 +1,7 @@
-$OpenBSD: patch-metadata_metatree_c,v 1.1 2009/10/11 13:32:27 ajacoutot Exp $
---- metadata/metatree.c.orig	Tue Sep  8 10:02:00 2009
-+++ metadata/metatree.c	Sun Oct 11 12:21:27 2009
-@@ -303,7 +303,7 @@ is_on_nfs (char *filename)
+$OpenBSD: patch-metadata_metatree_c,v 1.2 2009/11/30 12:35:29 ajacoutot Exp $
+--- metadata/metatree.c.orig	Fri Nov 27 15:14:35 2009
++++ metadata/metatree.c	Mon Nov 30 12:57:51 2009
+@@ -304,7 +304,7 @@ is_on_nfs (char *filename)
  			  sizeof (statfs_buffer), 0);
  # endif
    if (statfs_result == 0)
