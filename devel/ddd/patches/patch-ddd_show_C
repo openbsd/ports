@@ -1,7 +1,7 @@
-$OpenBSD: patch-ddd_show_C,v 1.4 2003/10/26 17:30:40 sturm Exp $
---- ddd/show.C.orig	2003-05-25 01:27:12.000000000 +1000
-+++ ddd/show.C	2003-10-10 12:31:23.000000000 +1000
-@@ -60,6 +60,7 @@ char show_rcsid[] = 
+$OpenBSD: patch-ddd_show_C,v 1.5 2009/11/30 23:45:35 edd Exp $
+--- ddd/show.C.orig	Wed Feb 11 17:25:07 2009
++++ ddd/show.C	Mon Sep 28 09:40:49 2009
+@@ -56,6 +56,7 @@ char show_rcsid[] = 
  #include <fstream>
  #include <string.h>
  #include <errno.h>

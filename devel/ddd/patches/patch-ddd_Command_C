@@ -1,0 +1,15 @@
+$OpenBSD: patch-ddd_Command_C,v 1.1 2009/11/30 23:45:35 edd Exp $
+
+fixes things on amd64; from pkgsrc.
+
+--- ddd/Command.C.orig	Wed Feb 11 17:25:07 2009
++++ ddd/Command.C	Mon Nov 30 22:39:56 2009
+@@ -188,6 +188,8 @@ void translate_command(string& command)
+     case GDB:
+     case MAKE:
+ 	break;
++    default:
++        break;
+     }
+ 
+     // When recording, realize certain commands as auto commands.

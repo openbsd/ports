@@ -1,12 +1,12 @@
-$OpenBSD: patch-themes_Makefile_in,v 1.2 2003/10/26 17:30:40 sturm Exp $
---- themes/Makefile.in.orig	2003-06-03 21:37:09.000000000 +1000
-+++ themes/Makefile.in	2003-10-10 12:47:33.000000000 +1000
-@@ -199,7 +199,7 @@ ddd = @ddd@
- install_sh = @install_sh@
+$OpenBSD: patch-themes_Makefile_in,v 1.3 2009/11/30 23:45:35 edd Exp $
+--- themes/Makefile.in.orig	Wed Feb 11 17:25:55 2009
++++ themes/Makefile.in	Mon Sep 28 09:40:50 2009
+@@ -270,7 +270,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  
  # Shared data installation
 -dddrootdir = $(pkgdatadir)-@VERSION@
 +dddrootdir = $(pkgdatadir)
  
- 
  # -----------------------------------------------------------------------------
+ # DDD themes.

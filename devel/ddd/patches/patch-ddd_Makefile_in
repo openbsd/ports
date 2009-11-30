@@ -1,7 +1,7 @@
-$OpenBSD: patch-ddd_Makefile_in,v 1.5 2005/06/28 19:31:57 aanriot Exp $
---- ddd/Makefile.in.orig	Sat Jun 11 21:14:20 2005
-+++ ddd/Makefile.in	Sat Jun 11 21:15:42 2005
-@@ -484,8 +484,8 @@ SUFFIXES = .C .c .Y .L .txt .xbm .xbmxx 
+$OpenBSD: patch-ddd_Makefile_in,v 1.6 2009/11/30 23:45:35 edd Exp $
+--- ddd/Makefile.in.orig	Wed Feb 11 17:25:55 2009
++++ ddd/Makefile.in	Mon Sep 28 09:40:49 2009
+@@ -499,8 +499,8 @@ SUFFIXES = .C .c .Y .L .txt .xbm .xbmxx .xpm .xpmxx \
  
  
  # Shared data installation
@@ -12,7 +12,7 @@ $OpenBSD: patch-ddd_Makefile_in,v 1.5 2005/06/28 19:31:57 aanriot Exp $
  
  # -----------------------------------------------------------------------------
  # DDD Sources.
-@@ -2595,18 +2595,8 @@ configinfo.C: USERINFO.txt $(srcdir)/con
+@@ -2718,18 +2718,8 @@ configinfo.C: USERINFO.txt $(srcdir)/config-info
  	$(SHELL) $(srcdir)/config-info $(srcdir)/USERINFO.txt USERINFO.txt > $@~ && \
  	$(MV) $@~ $@
  

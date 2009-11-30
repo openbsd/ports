@@ -1,7 +1,7 @@
-$OpenBSD: patch-ddd_comm-manag_C,v 1.5 2003/10/26 17:30:40 sturm Exp $
---- ddd/comm-manag.C.orig	2003-05-25 01:27:06.000000000 +1000
-+++ ddd/comm-manag.C	2003-10-10 12:55:05.000000000 +1000
-@@ -86,6 +86,7 @@ char comm_manager_rcsid[] =
+$OpenBSD: patch-ddd_comm-manag_C,v 1.6 2009/11/30 23:45:35 edd Exp $
+--- ddd/comm-manag.C.orig	Wed Feb 11 17:25:07 2009
++++ ddd/comm-manag.C	Mon Sep 28 09:40:49 2009
+@@ -82,6 +82,7 @@ char comm_manager_rcsid[] =
  
  #include <ctype.h>
  #include <fstream>
