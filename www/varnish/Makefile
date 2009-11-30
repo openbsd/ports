@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/11/25 11:36:55 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2009/11/30 09:29:30 fgsch Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -28,6 +28,8 @@ USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-stack-protector \
 			--localstatedir=/var
+
+REGRESS_TARGET =	check
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/varnish
