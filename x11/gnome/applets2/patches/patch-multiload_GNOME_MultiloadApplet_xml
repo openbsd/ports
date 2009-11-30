@@ -1,0 +1,17 @@
+$OpenBSD: patch-multiload_GNOME_MultiloadApplet_xml,v 1.1 2009/11/30 07:31:34 ajacoutot Exp $
+
+XXX
+gnome-system-monitor is not available on OpenBSD currently.
+
+--- multiload/GNOME_MultiloadApplet.xml.orig	Sun Apr 19 04:12:10 2009
++++ multiload/GNOME_MultiloadApplet.xml	Mon Nov 30 08:17:31 2009
+@@ -1,9 +1,6 @@
+ <Root>
+   <popups>
+     <popup name="button3">\n"
+-    	<menuitem name="Procman Item" verb="MultiLoadRunProcman" _label="_Open System Monitor"
+-    		pixtype="stock" pixname="gtk-execute"/>
+-    <separator/>
+     	<menuitem name="Properties Item" verb="MultiLoadProperties" _label="_Preferences"
+     		pixtype="stock" pixname="gtk-properties"/>
+     	<menuitem name="Help" verb="MultiLoadHelp" _label="_Help"
