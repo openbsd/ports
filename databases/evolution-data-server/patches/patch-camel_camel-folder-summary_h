@@ -1,0 +1,16 @@
+$OpenBSD: patch-camel_camel-folder-summary_h,v 1.1 2009/11/30 13:27:25 ajacoutot Exp $
+
+Bug 361145 - Evolution hangs when formatting message - fixes part of it.
+Upstream git 184befc100ba2c553ad8ea5c87eba91daf500bf4
+
+--- camel/camel-folder-summary.h.orig	Sun Oct 18 01:08:43 2009
++++ camel/camel-folder-summary.h	Mon Nov 30 13:43:55 2009
+@@ -475,6 +475,8 @@ void camel_folder_summary_set_need_preview (CamelFolde
+ void camel_folder_summary_add_preview (CamelFolderSummary *s, CamelMessageInfo *info);
+ gboolean camel_folder_summary_get_need_preview (CamelFolderSummary *summary);
+ 
++CamelMessageContentInfo * camel_folder_summary_guess_content_info (CamelMessageInfo *mi, CamelContentType *ctype);
++
+ /* debugging functions */
+ void camel_content_info_dump (CamelMessageContentInfo *ci, gint depth);
+ 

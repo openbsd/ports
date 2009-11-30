@@ -1,0 +1,70 @@
+$OpenBSD: patch-camel_camel-folder-summary_c,v 1.1 2009/11/30 13:27:25 ajacoutot Exp $
+
+Bug 361145 - Evolution hangs when formatting message - fixes part of it.
+Upstream git 184befc100ba2c553ad8ea5c87eba91daf500bf4
+
+--- camel/camel-folder-summary.c.orig	Sun Oct 18 01:08:43 2009
++++ camel/camel-folder-summary.c	Mon Nov 30 13:43:53 2009
+@@ -4985,7 +4985,7 @@ camel_message_info_dump (CamelMessageInfo *mi)
+ 	printf("From: %s\n", camel_message_info_from(mi));
+ 	printf("UID: %s\n", camel_message_info_uid(mi));
+ 	printf("Flags: %04x\n", camel_message_info_flags(mi));
+-	/*camel_content_info_dump(mi->content, 0);*/
++	camel_content_info_dump(((CamelMessageInfoBase *) mi)->content, 0);
+ }
+ 
+ static void
+@@ -5054,3 +5054,53 @@ camel_folder_summary_get_need_preview (CamelFolderSumm
+ 	return _PRIVATE(summary)->need_preview;
+ }
+ 
++static gboolean
++compare_strings (const gchar *str1, const gchar *str2)
++{
++	if (str1 && str2 && !g_ascii_strcasecmp (str1, str2))
++		return TRUE;
++	else if (!str1 && !str2)
++		return TRUE;
++	else
++		return FALSE;
++}
++
++static gboolean
++match_content_type (CamelContentType *info_ctype, CamelContentType *ctype)
++{
++	const gchar *name1, *name2;
++
++	if (!compare_strings (info_ctype->type, ctype->type))
++		return FALSE;
++	if (!compare_strings (info_ctype->subtype, ctype->subtype))
++		return FALSE;
++
++	name1 = camel_content_type_param (info_ctype, "name");
++	name2 = camel_content_type_param (ctype, "name");
++	if (!compare_strings (name1, name2))
++		return FALSE;
++
++	return TRUE;
++}
++
++CamelMessageContentInfo *
++camel_folder_summary_guess_content_info (CamelMessageInfo *mi, CamelContentType *ctype)
++{
++	CamelMessageInfoBase *bmi = (CamelMessageInfoBase *) mi;
++	CamelMessageContentInfo *ci = bmi->content;
++	
++	while (ci) {
++		CamelMessageContentInfo *child = ci;
++		
++		do {
++			if (match_content_type (child->type, ctype))
++				return child;
++		
++			child = child->next;
++		} while (child != NULL);
++
++		ci = ci->childs;
++	}
++
++	return NULL;
++}
