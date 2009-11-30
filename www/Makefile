@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.439 2009/11/18 19:21:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.440 2009/11/30 13:28:59 stephan Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -185,6 +185,7 @@
      SUBDIR += p5-Catalyst-View-Mason
      SUBDIR += p5-Config-ApacheFormat
      SUBDIR += p5-Data-URIEncode
+     SUBDIR += p5-Drupal-Admin
      SUBDIR += p5-FCGI-ProcManager
      SUBDIR += p5-Feed-Find
      SUBDIR += p5-HTML-Base
