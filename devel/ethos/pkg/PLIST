@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/11 13:37:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/11/30 22:28:06 landry Exp $
 %%SHARED%%
 include/ethos-1.0/
 include/ethos-1.0/ethos/
@@ -26,7 +26,6 @@ lib/libethos-ui-1.0.a
 lib/libethos-ui-1.0.la
 lib/pkgconfig/ethos-1.0.pc
 lib/pkgconfig/ethos-ui-1.0.pc
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/_ethos.a
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/_ethos.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/_ethosui.a
@@ -67,8 +66,7 @@ share/gtk-doc/html/ethos/left.png
 share/gtk-doc/html/ethos/right.png
 share/gtk-doc/html/ethos/style.css
 share/gtk-doc/html/ethos/up.png
-share/pygtk/
-share/pygtk/2.0/
-share/pygtk/2.0/defs/
+share/locale/de/LC_MESSAGES/ethos.mo
+share/locale/fr/LC_MESSAGES/ethos.mo
 share/pygtk/2.0/defs/ethos.defs
 share/pygtk/2.0/defs/ethosui.defs

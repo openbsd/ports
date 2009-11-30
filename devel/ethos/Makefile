@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/10/19 12:11:12 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2009/11/30 22:28:06 landry Exp $
 
 COMMENT =	plugin framework library
 
-VERSION =	0.2.0
+VERSION =	0.2.2
 DISTNAME =	ethos-${VERSION}
-PKGNAME =	${DISTNAME}p2
 
-SHARED_LIBS=	ethos-1.0 0.0 \
+SHARED_LIBS=	ethos-1.0 1.0 \
 		ethos-ui-1.0 0.0
 
 CATEGORIES =	devel
@@ -23,6 +22,9 @@ PERMIT_DISTFILES_FTP =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-shave \
 			--disable-glibtest
+
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
@@ -42,9 +44,5 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z
-
-post-extract:
-	cp files/ethos-c-plugin-loader.h ${WRKSRC}/plugin-loaders/c/
-	cp files/ethos-python-plugin-loader.h ${WRKSRC}/plugin-loaders/python/
 
 .include <bsd.port.mk>

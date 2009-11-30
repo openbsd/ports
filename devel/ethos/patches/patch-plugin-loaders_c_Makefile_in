@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugin-loaders_c_Makefile_in,v 1.1 2009/10/11 13:37:47 landry Exp $
---- plugin-loaders/c/Makefile.in.orig	Wed Jun 17 21:39:09 2009
-+++ plugin-loaders/c/Makefile.in	Sun Oct 11 15:21:51 2009
-@@ -70,7 +70,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
+$OpenBSD: patch-plugin-loaders_c_Makefile_in,v 1.2 2009/11/30 22:28:06 landry Exp $
+--- plugin-loaders/c/Makefile.in.orig	Thu Nov 19 23:20:24 2009
++++ plugin-loaders/c/Makefile.in	Sun Nov 29 21:34:04 2009
+@@ -88,7 +88,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
  	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
