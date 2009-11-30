@@ -1,0 +1,8 @@
+This is a minimal screen scraping interface to the Drupal admin pages.
+Its primary purpose (at the moment) is to provide a means to automate
+drupal core upgrades.
+
+Most of the methods in this class depend on English strings from the
+pages' value fields, because WWW::Mechanize doesn't use id fields as
+selectors. Thus, this module will most likely not work for sites with
+a backend set to any non-English language.
