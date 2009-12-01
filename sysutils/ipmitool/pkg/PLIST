@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/06 17:28:44 wilfried Exp $
-bin/ipmitool
+@comment $OpenBSD: PLIST,v 1.2 2009/12/01 20:26:18 wilfried Exp $
+@bin bin/ipmitool
 @man man/man1/ipmitool.1
 @man man/man8/ipmievd.8
-sbin/ipmievd
+@bin sbin/ipmievd
 share/doc/ipmitool/
 share/doc/ipmitool/AUTHORS
 share/doc/ipmitool/COPYING
