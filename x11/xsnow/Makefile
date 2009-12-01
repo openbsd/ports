@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2008/02/02 09:18:54 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2009/12/01 08:53:52 jasper Exp $
 
 COMMENT=		snowy and Santa-y desktop
 
 DISTNAME=		xsnow-1.42
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.euronet.nl/~rja/Xsnow/
+HOMEPAGE=		http://dropmix.xs4all.nl/rick/Xsnow/
 
 MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
