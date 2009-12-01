@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2009/08/30 18:06:07 fkr Exp $
+@comment $OpenBSD: PLIST,v 1.17 2009/12/01 13:38:23 bernd Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -98,6 +98,7 @@ lib/apache2/mod_proxy_balancer.so
 lib/apache2/mod_proxy_connect.so
 lib/apache2/mod_proxy_ftp.so
 lib/apache2/mod_proxy_http.so
+lib/apache2/mod_proxy_scgi.so
 lib/apache2/mod_rewrite.so
 lib/apache2/mod_setenvif.so
 lib/apache2/mod_speling.so
@@ -251,6 +252,7 @@ share/doc/apache2/howto/auth.html
 share/doc/apache2/howto/auth.html.en
 share/doc/apache2/howto/auth.html.ja.utf8
 share/doc/apache2/howto/auth.html.ko.euc-kr
+share/doc/apache2/howto/auth.html.tr.utf8
 share/doc/apache2/howto/cgi.html
 share/doc/apache2/howto/cgi.html.en
 share/doc/apache2/howto/cgi.html.ja.utf8
@@ -603,6 +605,8 @@ share/doc/apache2/mod/mod_proxy_ftp.html
 share/doc/apache2/mod/mod_proxy_ftp.html.en
 share/doc/apache2/mod/mod_proxy_http.html
 share/doc/apache2/mod/mod_proxy_http.html.en
+share/doc/apache2/mod/mod_proxy_scgi.html
+share/doc/apache2/mod/mod_proxy_scgi.html.en
 share/doc/apache2/mod/mod_rewrite.html
 share/doc/apache2/mod/mod_rewrite.html.en
 share/doc/apache2/mod/mod_setenvif.html
