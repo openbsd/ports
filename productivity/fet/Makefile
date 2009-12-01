@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2009/12/01 13:12:41 jasper Exp $
 
 COMMENT=		automatically create timetables
 
-DISTNAME=		fet-5.9.4
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		fet-5.11.0
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.lalescu.ro/liviu/fet/
@@ -42,7 +41,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/algorithm-explanation/* \
 		${PREFIX}/share/doc/fet 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fet
-	cd ${WRKSRC}/sample_inputs/ && umask 022 && pax -rw . \
+	cd ${WRKSRC}/examples/ && umask 022 && pax -rw . \
 		${PREFIX}/share/examples/fet
+	${INSTALL_MAN} ${WRKSRC}/doc/fet.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
