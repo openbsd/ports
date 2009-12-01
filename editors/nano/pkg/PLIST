@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2008/08/25 17:55:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.21 2009/12/01 19:39:31 naddy Exp $
 @pkgpath editors/nano,slang
 @bin bin/nano
 bin/rnano
@@ -12,6 +12,14 @@ bin/rnano
 @man man/man1/nano.1
 @man man/man1/rnano.1
 @man man/man5/nanorc.5
+share/doc/nano/
+share/doc/nano/fr/
+share/doc/nano/fr/nano.1.html
+share/doc/nano/fr/nanorc.5.html
+share/doc/nano/fr/rnano.1.html
+share/doc/nano/nano.1.html
+share/doc/nano/nanorc.5.html
+share/doc/nano/rnano.1.html
 share/examples/nano/
 share/examples/nano/nanorc.sample
 share/locale/bg/LC_MESSAGES/nano.mo
@@ -50,17 +58,28 @@ share/locale/zh_CN/LC_MESSAGES/nano.mo
 share/locale/zh_TW/LC_MESSAGES/nano.mo
 share/nano/
 share/nano/asm.nanorc
+share/nano/awk.nanorc
 share/nano/c.nanorc
+share/nano/css.nanorc
+share/nano/debian.nanorc
+share/nano/fortran.nanorc
+share/nano/gentoo.nanorc
 share/nano/groff.nanorc
 share/nano/html.nanorc
 share/nano/java.nanorc
+share/nano/makefile.nanorc
 share/nano/man.nanorc
 share/nano/mutt.nanorc
 share/nano/nanorc.nanorc
+share/nano/objc.nanorc
+share/nano/ocaml.nanorc
 share/nano/patch.nanorc
 share/nano/perl.nanorc
+share/nano/php.nanorc
 share/nano/pov.nanorc
 share/nano/python.nanorc
 share/nano/ruby.nanorc
 share/nano/sh.nanorc
+share/nano/tcl.nanorc
 share/nano/tex.nanorc
+share/nano/xml.nanorc

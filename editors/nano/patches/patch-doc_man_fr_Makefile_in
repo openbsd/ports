@@ -1,18 +1,12 @@
-$OpenBSD: patch-doc_man_fr_Makefile_in,v 1.4 2008/08/25 17:55:27 naddy Exp $
---- doc/man/fr/Makefile.in.orig	Sun Aug 24 08:09:03 2008
-+++ doc/man/fr/Makefile.in	Mon Aug 25 19:43:52 2008
-@@ -440,11 +440,11 @@ uninstall-man: uninstall-man1 uninstall-man5
- 
- 
- nano.1.html: nano.1
--	groff -t -mandoc -Thtml < $< > $@
-+	groff -t -mandoc -Thtml < $? > $@
- nanorc.5.html: nanorc.5
--	groff -t -mandoc -Thtml < $< > $@
-+	groff -t -mandoc -Thtml < $? > $@
- rnano.1.html: rnano.1
--	groff -t -mandoc -Thtml < $< > $@
-+	groff -t -mandoc -Thtml < $? > $@
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
+$OpenBSD: patch-doc_man_fr_Makefile_in,v 1.5 2009/12/01 19:39:31 naddy Exp $
+--- doc/man/fr/Makefile.in.orig	Tue Dec  1 18:39:04 2009
++++ doc/man/fr/Makefile.in	Tue Dec  1 18:39:34 2009
+@@ -193,7 +193,7 @@ target_vendor = @target_vendor@
+ @GROFF_HTML_TRUE@@USE_NANORC_TRUE@BUILT_SOURCES = nano.1.html nanorc.5.html rnano.1.html
+ nano_man_mans = nano.1 nanorc.5 rnano.1
+ @GROFF_HTML_TRUE@htmlman_DATA = nano.1.html nanorc.5.html rnano.1.html
+-@GROFF_HTML_TRUE@htmlmandir = $(datadir)/nano/man-html/fr
++@GROFF_HTML_TRUE@htmlmandir = $(htmldir)/fr
+ @GROFF_HTML_TRUE@nano_built_sources = nano.1.html nanorc.5.html rnano.1.html
+ @GROFF_HTML_FALSE@EXTRA_DIST = $(nano_man_mans)
+ @GROFF_HTML_TRUE@EXTRA_DIST = $(nano_man_mans) $(nano_built_sources)

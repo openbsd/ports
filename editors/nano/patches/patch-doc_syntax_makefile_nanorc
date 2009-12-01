@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_syntax_makefile_nanorc,v 1.1 2009/12/01 19:39:31 naddy Exp $
+--- doc/syntax/makefile.nanorc.orig	Sat Nov 28 05:08:34 2009
++++ doc/syntax/makefile.nanorc	Tue Dec  1 18:48:27 2009
+@@ -2,7 +2,7 @@
+ 
+ syntax "makefile" "Makefile[^/]*$"
+ color red "[:=]"
+-color magenta "\<(if|ifeq|else|endif)\>"
+-color blue "\$+[{(][a-Z0-9_-]+[})]"
++color magenta "[[:<:]](if|ifeq|else|endif)[[:>:]]"
++color blue "\$+[{(][a-zA-Z0-9_-]+[})]"
+ color brightblue "^[^ 	]+:"
+ color green "#.*$"

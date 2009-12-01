@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_syntax_ruby_nanorc,v 1.1 2006/12/14 21:26:53 naddy Exp $
---- doc/syntax/ruby.nanorc.orig	Fri Jul  7 15:54:38 2006
-+++ doc/syntax/ruby.nanorc	Thu Dec  7 17:32:53 2006
-@@ -2,13 +2,13 @@
- ##
+$OpenBSD: patch-doc_syntax_ruby_nanorc,v 1.2 2009/12/01 19:39:31 naddy Exp $
+--- doc/syntax/ruby.nanorc.orig	Fri Aug 14 05:16:32 2009
++++ doc/syntax/ruby.nanorc	Tue Dec  1 18:48:13 2009
+@@ -3,13 +3,13 @@
  syntax "ruby" "\.rb$"
+ header "^#!.*/ruby[-0-9._]*"
  ## Asciibetical list of reserved words
 -color yellow "\<(BEGIN|END|alias|and|begin|break|case|class|def|defined\?|do|else|elsif|end|ensure|false|for|if|in|module|next|nil|not|or|redo|rescue|retry|return|self|super|then|true|undef|unless|until|when|while|yield)\>"
 +color yellow "[[:<:]](BEGIN|END|alias|and|begin|break|case|class|def|defined\?|do|else|elsif|end|ensure|false|for|if|in|module|next|nil|not|or|redo|rescue|retry|return|self|super|then|true|undef|unless|until|when|while|yield)[[:>:]]"

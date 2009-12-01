@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.57 2008/10/13 14:59:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2009/12/01 19:39:31 naddy Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
-DISTNAME=	nano-2.0.9
+DISTNAME=	nano-2.2.0
 CATEGORIES=	editors
 HOMEPAGE=	http://www.nano-editor.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 MASTER_SITES=	http://www.nano-editor.org/dist/v2.0/ \
-		http://www.ewtoo.org/~astyanax/nano/dist/v2.0/
+		${MASTER_SITE_GNU:=nano/}
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes 
@@ -24,8 +24,7 @@ SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
-CONFIGURE_ARGS=	--enable-all
-CONFIGURE_ARGS+=--disable-utf8	# no wide character curses
+CONFIGURE_ARGS=--disable-utf8	# no wide character curses
 
 post-install:
 	perl -i -pe 's:SYSCONFDIR:${SYSCONFDIR}:g;' \
@@ -36,5 +35,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nano
 	${INSTALL_DATA} ${WRKBUILD}/doc/nanorc.sample \
 		${PREFIX}/share/examples/nano
+
+# Maintainer hint:
+# Use  sed -e 's/\\</[[:<:]]/g' -e 's/\\>/[[:>:]]/g'  to regen the
+# doc/syntax/*.nanorc patches.
 
 .include <bsd.port.mk>
