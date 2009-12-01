@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2009/12/01 20:57:50 pea Exp $
 
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.2.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	productivity
 
-HOMEPAGE=	http://clay.ll.pl/osmo/
+HOMEPAGE=	http://clayo.org/osmo/
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
 
