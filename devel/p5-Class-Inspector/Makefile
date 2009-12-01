@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/10/11 13:14:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2009/12/01 17:46:25 jim Exp $
 
 COMMENT=		get information about a class and its structure
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 
 MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 
-# Artistic
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
