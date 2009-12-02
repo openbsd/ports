@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_pipes_c,v 1.1 2006/04/15 21:23:49 sturm Exp $
---- src/pipes.c.orig	Wed Apr 12 16:16:42 2006
-+++ src/pipes.c	Wed Apr 12 16:17:03 2006
-@@ -194,7 +194,7 @@ perr:	      progerr(line,excode,pwait==4
+$OpenBSD: patch-src_pipes_c,v 1.2 2009/12/02 22:14:38 ajacoutot Exp $
+--- src/pipes.c.orig	Tue Sep 11 06:58:44 2001
++++ src/pipes.c	Wed Dec  2 23:13:21 2009
+@@ -194,7 +194,7 @@ perr:	      progerr(line,excode,pwait==4);  /* I'm goi
       makeblock(&temp,Stdfilled);
       tmemmove(temp.p,Stdout,Stdfilled);
       readdyn(&temp,&Stdfilled,Stdfilled+backlen+1);

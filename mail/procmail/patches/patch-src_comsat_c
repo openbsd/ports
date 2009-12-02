@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_comsat_c,v 1.1 2005/02/11 19:11:39 sturm Exp $
+$OpenBSD: patch-src_comsat_c,v 1.2 2009/12/02 22:14:38 ajacoutot Exp $
 
 A patch from Philip Guenther (procmail maintainer) fixing a
 crash when procmail is invoked without arguments and then
 receive a ^C.
 
 --- src/comsat.c.orig	Tue Sep 11 06:55:46 2001
-+++ src/comsat.c	Thu Feb 10 00:31:59 2005
-@@ -120,7 +120,7 @@ void sendcomsat(folder)const char*folder
++++ src/comsat.c	Wed Dec  2 23:13:21 2009
+@@ -120,7 +120,7 @@ void sendcomsat(folder)const char*folder;
  { int s;const char*p;
    if(!csvalid||!buf)		  /* is comat on and set to a valid address? */
       return;
