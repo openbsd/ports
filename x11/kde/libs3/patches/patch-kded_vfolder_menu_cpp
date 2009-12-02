@@ -1,0 +1,16 @@
+$OpenBSD: patch-kded_vfolder_menu_cpp,v 1.1 2009/12/02 15:39:39 ajacoutot Exp $
+
+The merged menu directory is always called applications-merged
+(and not kde3-applications-merged).
+
+--- kded/vfolder_menu.cpp.orig	Wed Dec  2 15:02:19 2009
++++ kded/vfolder_menu.cpp	Wed Dec  2 15:03:25 2009
+@@ -846,7 +846,7 @@ VFolderMenu::loadMenu(const QString &fileName)
+       return;
+ 
+    pushDocInfo(fileName);
+-   m_defaultMergeDirs << m_docInfo.baseName+"-merged/";
++   m_defaultMergeDirs << "applications-merged/";
+    m_doc = loadDoc();
+    popDocInfo();
+ 
