@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2009/11/30 09:56:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/12/02 22:59:28 sthen Exp $
 #
 
 COMMENT=	curses-based real time state and rule display for pf
 
 DISTNAME=	pftop-0.7
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.eee.metu.edu.tr/~canacar/pftop/

@@ -1,6 +1,6 @@
-$OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
---- pftop.c.orig	Wed Nov  7 06:36:46 2007
-+++ pftop.c	Wed Dec  2 21:14:56 2009
+$OpenBSD: patch-pftop_c,v 1.13 2009/12/02 22:59:29 sthen Exp $
+--- pftop.c.orig	Wed Nov  7 07:36:46 2007
++++ pftop.c	Thu Dec  3 00:12:22 2009
 @@ -127,6 +127,13 @@
  #define PT_NOROUTE(x) (0)
  #endif
@@ -330,7 +330,19 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
  
  #endif
  #ifdef HAVE_PFSYNC_STATE
-@@ -1475,8 +1648,12 @@ print_rule(struct pf_rule *pr)
+@@ -1458,8 +1631,9 @@ tb_print_flags(u_int8_t f)
+ void
+ print_rule(struct pf_rule *pr)
+ {
+-	static const char *actiontypes[] = { "Pass", "Block", "Scrub", "Nat",
+-	    "no Nat", "Binat", "no Binat", "Rdr", "no Rdr" };
++	static const char *actiontypes[] = { "Pass", "Block", "Scrub",
++	    "no Scrub", "Nat", "no Nat", "Binat", "no Binat", "Rdr",
++	    "no Rdr", "SynProxy Block", "Defer", "Match" };
+ 	int numact = sizeof(actiontypes) / sizeof(char *);
+ 
+ #ifdef HAVE_PF_ROUTE
+@@ -1475,8 +1649,12 @@ print_rule(struct pf_rule *pr)
  	print_fld_str(FLD_LABEL, pr->label);
  #endif
  #ifdef HAVE_RULE_STATES
@@ -343,7 +355,7 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
  
  #ifdef HAVE_INOUT_COUNT_RULES
  	print_fld_size(FLD_PKTS, pr->packets[0] + pr->packets[1]);
-@@ -1486,7 +1663,13 @@ print_rule(struct pf_rule *pr)
+@@ -1486,7 +1664,13 @@ print_rule(struct pf_rule *pr)
  	print_fld_size(FLD_BYTES, pr->bytes);
  #endif
  	print_fld_uint(FLD_RULE, pr->nr);
@@ -358,7 +370,7 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
  	if (pr->quick)
  		print_fld_str(FLD_QUICK, "Quick");
  
-@@ -1729,12 +1912,19 @@ pfctl_insert_altq_node(struct pf_altq_node **root,
+@@ -1729,12 +1913,19 @@ pfctl_insert_altq_node(struct pf_altq_node **root,
  			prev->next = node;
  		}
  	}
@@ -384,7 +396,7 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
  	}
  }
  
-@@ -1747,6 +1937,7 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1747,6 +1938,7 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  	u_int32_t		 nr;
  	struct queue_stats	 qstats;
  	u_int32_t		 nr_queues;
@@ -392,7 +404,7 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
  
  	*inserts = 0;
  	memset(&pa, 0, sizeof(pa));
-@@ -1757,13 +1948,15 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1757,13 +1949,15 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  			  strerror(errno));
  		return (-1);
  	}
@@ -409,7 +421,7 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
  		}
  		if (pa.altq.qid > 0) {
  			pq.nr = nr;
-@@ -1773,7 +1966,8 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1773,7 +1967,8 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  			if (ioctl(pf_dev, DIOCGETQSTATS, &pq)) {
  				msgprintf("Error Reading Queue (DIOCGETQSTATS): %s",
  					  strerror(errno));
@@ -419,7 +431,7 @@ $OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
  			}
  			qstats.valid = 1;
  			gettimeofday(&qstats.timestamp, NULL);
-@@ -1794,7 +1988,10 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1794,7 +1989,10 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  		else
  			--num_queues;
  	}
