@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2009/11/20 15:09:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2009/12/02 16:19:31 wcmaier Exp $
 
 COMMENT =		fast, lightweight source control management
 
-MODPY_EGG_VERSION =	1.4
+MODPY_EGG_VERSION =	1.4.1
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =     	devel
 HOMEPAGE =		http://www.selenic.com/mercurial/
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://www.selenic.com/mercurial/release/
 
-MODULES =		lang/python
+MODULES =		lang/python \
+			devel/gettext
 
 REGRESS_DEPENDS =	::archivers/unzip
 
