@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_resindvd_resindvdbin_c,v 1.1 2009/12/02 22:20:11 landry Exp $
+--- ext/resindvd/resindvdbin.c.orig	Wed Dec  2 20:53:26 2009
++++ ext/resindvd/resindvdbin.c	Wed Dec  2 20:53:46 2009
+@@ -44,7 +44,7 @@ GST_DEBUG_CATEGORY_EXTERN (resindvd_debug);
+ #define DVDBIN_PREROLL_LOCK(d) g_mutex_lock((d)->preroll_lock)
+ #define DVDBIN_PREROLL_UNLOCK(d) g_mutex_unlock((d)->preroll_lock)
+ 
+-#define DEFAULT_DEVICE "/dev/dvd"
++#define DEFAULT_DEVICE "/dev/rcd0c"
+ enum
+ {
+   /* FILL ME */

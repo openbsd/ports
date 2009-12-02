@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_resindvd_resindvdsrc_c,v 1.1 2009/12/02 22:20:11 landry Exp $
+--- ext/resindvd/resindvdsrc.c.orig	Wed Dec  2 20:53:10 2009
++++ ext/resindvd/resindvdsrc.c	Wed Dec  2 20:53:22 2009
+@@ -33,7 +33,7 @@
+ GST_DEBUG_CATEGORY_STATIC (rsndvdsrc_debug);
+ #define GST_CAT_DEFAULT rsndvdsrc_debug
+ 
+-#define DEFAULT_DEVICE "/dev/dvd"
++#define DEFAULT_DEVICE "/dev/rcd0c"
+ #define DEFAULT_FASTSTART TRUE
+ 
+ #define GST_FLOW_WOULD_BLOCK GST_FLOW_CUSTOM_SUCCESS
