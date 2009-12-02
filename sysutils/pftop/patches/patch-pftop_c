@@ -1,7 +1,7 @@
-$OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
---- pftop.c.orig	Tue Nov  6 22:36:46 2007
-+++ pftop.c	Fri Dec 19 20:28:06 2008
-@@ -127,6 +131,13 @@
+$OpenBSD: patch-pftop_c,v 1.12 2009/12/02 21:16:10 sthen Exp $
+--- pftop.c.orig	Wed Nov  7 06:36:46 2007
++++ pftop.c	Wed Dec  2 21:14:56 2009
+@@ -127,6 +127,13 @@
  #define PT_NOROUTE(x) (0)
  #endif
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  /* view management */
  int select_states(void);
  int read_states(void);
-@@ -445,11 +456,11 @@ sort_pkt_callback(const void *s1, const void *s2)
+@@ -445,11 +452,11 @@ sort_pkt_callback(const void *s1, const void *s2)
  int
  sort_age_callback(const void *s1, const void *s2)
  {
@@ -31,7 +31,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  		return -sortdir;
  	return 0;
  }
-@@ -457,11 +468,11 @@ sort_age_callback(const void *s1, const void *s2)
+@@ -457,11 +464,11 @@ sort_age_callback(const void *s1, const void *s2)
  int
  sort_exp_callback(const void *s1, const void *s2)
  {
@@ -47,7 +47,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  		return -sortdir;
  	return 0;
  }
-@@ -535,6 +546,8 @@ compare_addr(int af, const struct pf_addr *a, const st
+@@ -535,6 +542,8 @@ compare_addr(int af, const struct pf_addr *a, const st
  	return 0;
  }
  
@@ -56,7 +56,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  #ifdef __GNUC__
  __inline__
  #endif
-@@ -542,6 +555,113 @@ int
+@@ -542,6 +551,113 @@ int
  sort_addr_callback(const pf_state_t *s1,
  		   const pf_state_t *s2, int dir)
  {
@@ -170,7 +170,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  	const pf_state_host_t *a, *b;
  	int af, ret;
  
-@@ -573,20 +693,6 @@ sort_addr_callback(const pf_state_t *s1,
+@@ -573,20 +689,6 @@ sort_addr_callback(const pf_state_t *s1,
  	return -sortdir;
  }
  
@@ -191,7 +191,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  #ifdef __GNUC__
  __inline__
  #endif
-@@ -625,7 +731,22 @@ sort_port_callback(const pf_state_t *s1,
+@@ -625,7 +727,22 @@ sort_port_callback(const pf_state_t *s1,
  		return sortdir;
  	return -sortdir;
  }
@@ -214,7 +214,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  int
  sort_sp_callback(const void *p1, const void *p2)
  {
-@@ -865,7 +986,48 @@ tb_print_addr(struct pf_addr * addr, struct pf_addr * 
+@@ -865,7 +982,48 @@ tb_print_addr(struct pf_addr * addr, struct pf_addr * 
  			tbprintf("/%u", unmask(mask, af));
  	}
  }
@@ -263,7 +263,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  void
  print_fld_host(field_def *fld, pf_state_host_t * h, int af)
  {
-@@ -889,6 +1051,7 @@ print_fld_host(field_def *fld, pf_state_host_t * h, in
+@@ -889,6 +1047,7 @@ print_fld_host(field_def *fld, pf_state_host_t * h, in
  
  	print_fld_tb(fld);
  }
@@ -271,7 +271,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  
  void
  print_fld_state(field_def *fld, unsigned int proto,
-@@ -960,7 +1123,20 @@ print_state(pf_state_t * s, struct sc_ent * ent)
+@@ -960,7 +1119,20 @@ print_state(pf_state_t * s, struct sc_ent * ent)
  	else
  		print_fld_uint(FLD_PROTO, s->proto);
  
@@ -292,7 +292,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  		print_fld_host(FLD_SRC, &s->lan, s->af);
  		print_fld_host(FLD_DEST, &s->ext, s->af);
  	} else {
-@@ -972,6 +1148,7 @@ print_state(pf_state_t * s, struct sc_ent * ent)
+@@ -972,6 +1144,7 @@ print_state(pf_state_t * s, struct sc_ent * ent)
  	    (s->lan.port != s->gwy.port)) {
  		print_fld_host(FLD_GW, &s->gwy, s->af);
  	}
@@ -300,7 +300,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  
  	if (s->direction == PF_OUT)
  		print_fld_str(FLD_DIR, "Out");
-@@ -979,8 +1156,8 @@ print_state(pf_state_t * s, struct sc_ent * ent)
+@@ -979,8 +1152,8 @@ print_state(pf_state_t * s, struct sc_ent * ent)
  		print_fld_str(FLD_DIR, "In");
  
  	print_fld_state(FLD_STATE, s->proto, src->state, dst->state);
@@ -311,7 +311,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  #ifdef HAVE_INOUT_COUNT
  	{
  		u_int64_t sz = COUNTER(s->bytes[0]) + COUNTER(s->bytes[1]);
-@@ -988,14 +1165,14 @@ print_state(pf_state_t * s, struct sc_ent * ent)
+@@ -988,14 +1161,14 @@ print_state(pf_state_t * s, struct sc_ent * ent)
  		print_fld_size(FLD_PKTS, COUNTER(s->packets[0]) +
  			       COUNTER(s->packets[1]));
  		print_fld_size(FLD_BYTES, sz);
@@ -330,7 +330,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  
  #endif
  #ifdef HAVE_PFSYNC_STATE
-@@ -1475,8 +1652,12 @@ print_rule(struct pf_rule *pr)
+@@ -1475,8 +1648,12 @@ print_rule(struct pf_rule *pr)
  	print_fld_str(FLD_LABEL, pr->label);
  #endif
  #ifdef HAVE_RULE_STATES
@@ -343,7 +343,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  
  #ifdef HAVE_INOUT_COUNT_RULES
  	print_fld_size(FLD_PKTS, pr->packets[0] + pr->packets[1]);
-@@ -1486,7 +1667,13 @@ print_rule(struct pf_rule *pr)
+@@ -1486,7 +1663,13 @@ print_rule(struct pf_rule *pr)
  	print_fld_size(FLD_BYTES, pr->bytes);
  #endif
  	print_fld_uint(FLD_RULE, pr->nr);
@@ -358,7 +358,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  	if (pr->quick)
  		print_fld_str(FLD_QUICK, "Quick");
  
-@@ -1729,12 +1916,19 @@ pfctl_insert_altq_node(struct pf_altq_node **root,
+@@ -1729,12 +1912,19 @@ pfctl_insert_altq_node(struct pf_altq_node **root,
  			prev->next = node;
  		}
  	}
@@ -384,7 +384,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  	}
  }
  
-@@ -1747,6 +1941,7 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1747,6 +1937,7 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  	u_int32_t		 nr;
  	struct queue_stats	 qstats;
  	u_int32_t		 nr_queues;
@@ -392,7 +392,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  
  	*inserts = 0;
  	memset(&pa, 0, sizeof(pa));
-@@ -1757,13 +1952,15 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1757,13 +1948,15 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  			  strerror(errno));
  		return (-1);
  	}
@@ -409,7 +409,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  		}
  		if (pa.altq.qid > 0) {
  			pq.nr = nr;
-@@ -1773,7 +1970,8 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1773,7 +1966,8 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  			if (ioctl(pf_dev, DIOCGETQSTATS, &pq)) {
  				msgprintf("Error Reading Queue (DIOCGETQSTATS): %s",
  					  strerror(errno));
@@ -419,7 +419,7 @@ $OpenBSD: patch-pftop_c,v 1.11 2008/12/20 04:36:11 canacar Exp $
  			}
  			qstats.valid = 1;
  			gettimeofday(&qstats.timestamp, NULL);
-@@ -1794,7 +1992,10 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1794,7 +1988,10 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  		else
  			--num_queues;
  	}
