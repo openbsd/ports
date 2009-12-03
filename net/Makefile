@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.614 2009/11/29 18:59:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.615 2009/12/03 14:37:38 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -479,6 +479,7 @@
      SUBDIR += tightvnc
      SUBDIR += tintin++
      SUBDIR += tinyfugue
+     SUBDIR += tircd
      SUBDIR += tircproxy
      SUBDIR += tkirc
      SUBDIR += tn5250
