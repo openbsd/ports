@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.39 2009/11/19 21:38:48 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.40 2009/12/03 11:39:51 bernd Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -384,6 +384,7 @@ share/doc/git/RelNotes-1.6.4.txt
 share/doc/git/RelNotes-1.6.5.1.txt
 share/doc/git/RelNotes-1.6.5.2.txt
 share/doc/git/RelNotes-1.6.5.3.txt
+share/doc/git/RelNotes-1.6.5.4.txt
 share/doc/git/RelNotes-1.6.5.txt
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
