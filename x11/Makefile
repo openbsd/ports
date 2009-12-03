@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.401 2009/11/16 07:55:36 pyr Exp $
+# $OpenBSD: Makefile,v 1.402 2009/12/03 12:47:35 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += Xaw3d
@@ -89,6 +89,7 @@
      SUBDIR += gtk-chtheme
      SUBDIR += gtk-engines2
      SUBDIR += gtk-vnc
+     SUBDIR += gtk2-aurora-engine
      SUBDIR += gtk2-clearlooks-engine
      SUBDIR += gtk2-murrine-engine
      SUBDIR += gtk2-nodoka-engine
