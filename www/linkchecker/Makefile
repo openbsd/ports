@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.27 2009/03/25 13:39:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2009/12/03 18:57:45 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	checks HTML documents for broken links
 
-DISTNAME=	linkchecker-4.5
-PKGNAME=	${DISTNAME}p1
+MODPY_EGG_VERSION=5.1
+DISTNAME=	LinkChecker-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME:L}
+
 CATEGORIES=    	www
 
 HOMEPAGE=	http://linkchecker.sourceforge.net/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -25,8 +27,5 @@ MODPY_DISTUTILS_INSTALLARGS=	--no-compile
 BUILD_DEPENDS=	:py-dns-*:net/py-dns
 
 NO_REGRESS=	Yes
-
-pre-build:
-	@perl -pi -e "s,!!SITEPKG!!,${MODPY_SITEPKG},g" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

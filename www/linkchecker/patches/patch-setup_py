@@ -1,44 +1,46 @@
---- setup.py.orig	Sun Jul 30 16:44:11 2006
-+++ setup.py	Sun Jul 30 16:47:49 2006
-@@ -95,7 +95,9 @@ class MyInstall (install, object):
-                 val = getattr(self, attr)[cutoff:]
+--- setup.py.orig	Mon Aug  3 17:53:01 2009
++++ setup.py	Wed Dec  2 01:28:07 2009
+@@ -121,6 +121,7 @@ class MyInstallLib (install_lib, object):
              else:
-                 val = getattr(self, attr)
-+            val = "!!SITEPKG!!"		
+                 val = getattr(cmd_obj, attr)
              if attr == 'install_data':
-+                val = sys.prefix	    
++		val = sys.prefix
                  cdir = os.path.join(val, "share", "linkchecker")
                  data.append('config_dir = %r' % cnormpath(cdir))
-             data.append("%s = %r" % (attr, cnormpath(val)))
-@@ -475,9 +477,15 @@ myname = "Bastian Kleineidam"
+             elif attr == 'install_lib':
+@@ -371,10 +372,16 @@ myname = "Bastian Kleineidam"
  myemail = "calvin@users.sourceforge.net"
  
  data_files = [
-+         ('share/locale/de/LC_MESSAGES',
-+             ['build/share/locale/de/LC_MESSAGES/linkchecker.mo']),
-+         ('share/locale/fr/LC_MESSAGES',
-+             ['build/share/locale/fr/LC_MESSAGES/linkchecker.mo']),
-+         ('share/locale/es/LC_MESSAGES',
-+             ['build/share/locale/es/LC_MESSAGES/linkchecker.mo']),
-          ('share/linkchecker',
-              ['config/linkcheckerrc', 'config/logging.conf', ]),
--         ('share/linkchecker/examples',
-+         ('share/examples/linkchecker',
-              ['cgi-bin/lconline/leer.html.en',
-               'cgi-bin/lconline/leer.html.de',
-               'cgi-bin/lconline/index.html',
-@@ -489,10 +497,10 @@ data_files = [
-       ]
++    ('share/locale/de/LC_MESSAGES',
++        ['build/share/locale/de/LC_MESSAGES/LinkChecker.mo']),
++    ('share/locale/fr/LC_MESSAGES',
++        ['build/share/locale/fr/LC_MESSAGES/LinkChecker.mo']),
++    ('share/locale/es/LC_MESSAGES',
++        ['build/share/locale/es/LC_MESSAGES/LinkChecker.mo']),
+     ('share/linkchecker',
+         ['config/linkcheckerrc', 'config/logging.conf',
+-        'doc/html/lccollection.qhc', 'doc/html/lcdoc.qch']),
+-    ('share/linkchecker/examples',
++        'doc/html/lccollection.qhcp', 'doc/html/lcdoc.qhp']),
++    ('share/examples/linkchecker',
+         ['cgi-bin/lconline/leer.html.en',
+          'cgi-bin/lconline/leer.html.de',
+          'cgi-bin/lconline/index.html',
+@@ -388,11 +395,11 @@ data_files = [
+ ]
  
  if os.name == 'posix':
--    data_files.append(('share/man/man1', ['doc/en/linkchecker.1']))
--    data_files.append(('share/man/de/man1', ['doc/de/linkchecker.1']))
--    data_files.append(('share/man/fr/man1', ['doc/fr/linkchecker.1']))
+-    data_files.append(('share/man/man1', ['doc/en/linkchecker.1', 'doc/en/linkchecker-gui.1']))
+-    data_files.append(('share/man/man5', ['doc/en/linkcheckerrc.5']))
+-    data_files.append(('share/man/de/man1', ['doc/de/linkchecker.1', 'doc/de/linkchecker-gui.1']))
+-    data_files.append(('share/man/de/man5', ['doc/de/linkcheckerrc.5']))
 -    data_files.append(('share/linkchecker/examples',
-+    data_files.append(('man/man1', ['doc/en/linkchecker.1']))
-+#    data_files.append(('share/man/de/man1', ['doc/de/linkchecker.1']))
-+#    data_files.append(('share/man/fr/man1', ['doc/fr/linkchecker.1']))
++    data_files.append(('man/man1', ['doc/en/linkchecker.1', 'doc/en/linkchecker-gui.1']))
++    data_files.append(('man/man5', ['doc/en/linkcheckerrc.5']))
++#    data_files.append(('share/man/de/man1', ['doc/de/linkchecker.1', 'doc/de/linkchecker-gui.1']))
++#    data_files.append(('share/man/de/man5', ['doc/de/linkcheckerrc.5']))
 +    data_files.append(('share/examples/linkchecker',
-               ['config/linkchecker-completion', 'config/linkcheck-cron.sh']))
- elif win_compiling:
-     data_files.append(('share/linkchecker/doc',
+               ['config/linkchecker-completion',
+                'doc/examples/check_blacklist.sh',
+                'doc/examples/check_for_x_errors.sh',
