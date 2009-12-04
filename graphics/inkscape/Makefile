@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2009/12/04 20:12:35 kili Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.46
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 CATEGORIES=	graphics
 
 MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.inkscape.org/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=inkscape/}
 
-# GPL
+# GPLv2/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -37,7 +37,7 @@ LIB_DEPENDS=	gc.>=3::devel/boehm-gc \
 		lcms::graphics/lcms \
 		png::graphics/png \
 		xslt::textproc/libxslt \
-		poppler,poppler-glib::print/poppler \
+		poppler.>=7.0,poppler-glib::print/poppler \
 		atkmm-1.6,gdkmm-2.4,gtkmm-2.4::x11/gtk2mm \
 		pangomm-1.4::devel/pangomm \
 		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \

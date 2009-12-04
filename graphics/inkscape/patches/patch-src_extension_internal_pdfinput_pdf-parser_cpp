@@ -1,6 +1,66 @@
-$OpenBSD: patch-src_extension_internal_pdfinput_pdf-parser_cpp,v 1.1 2008/11/03 19:40:38 kili Exp $
---- src/extension/internal/pdfinput/pdf-parser.cpp.orig	Sun Nov  2 21:27:57 2008
-+++ src/extension/internal/pdfinput/pdf-parser.cpp	Sun Nov  2 21:30:50 2008
+$OpenBSD: patch-src_extension_internal_pdfinput_pdf-parser_cpp,v 1.2 2009/12/04 20:12:35 kili Exp $
+--- src/extension/internal/pdfinput/pdf-parser.cpp.orig	Tue Mar 11 05:20:21 2008
++++ src/extension/internal/pdfinput/pdf-parser.cpp	Mon Nov 30 21:32:15 2009
+@@ -810,7 +810,7 @@ void PdfParser::opSetExtGState(Object args[], int numA
+ 	  blendingColorSpace = NULL;
+ 	  isolated = knockout = gFalse;
+ 	  if (!obj4.dictLookup("CS", &obj5)->isNull()) {
+-	    blendingColorSpace = GfxColorSpace::parse(&obj5);
++	    blendingColorSpace = GfxColorSpace::parse(&obj5, NULL);
+ 	  }
+ 	  obj5.free();
+ 	  if (obj4.dictLookup("I", &obj5)->isBool()) {
+@@ -1010,9 +1010,9 @@ void PdfParser::opSetFillColorSpace(Object args[], int
+   state->setFillPattern(NULL);
+   res->lookupColorSpace(args[0].getName(), &obj);
+   if (obj.isNull()) {
+-    colorSpace = GfxColorSpace::parse(&args[0]);
++    colorSpace = GfxColorSpace::parse(&args[0], NULL);
+   } else {
+-    colorSpace = GfxColorSpace::parse(&obj);
++    colorSpace = GfxColorSpace::parse(&obj, NULL);
+   }
+   obj.free();
+   if (colorSpace) {
+@@ -1033,9 +1033,9 @@ void PdfParser::opSetStrokeColorSpace(Object args[], i
+   state->setStrokePattern(NULL);
+   res->lookupColorSpace(args[0].getName(), &obj);
+   if (obj.isNull()) {
+-    colorSpace = GfxColorSpace::parse(&args[0]);
++    colorSpace = GfxColorSpace::parse(&args[0], NULL);
+   } else {
+-    colorSpace = GfxColorSpace::parse(&obj);
++    colorSpace = GfxColorSpace::parse(&obj, NULL);
+   }
+   obj.free();
+   if (colorSpace) {
+@@ -1102,7 +1102,7 @@ void PdfParser::opSetFillColorN(Object args[], int num
+       builder->updateStyle(state);
+     }
+     if (args[numArgs-1].isName() &&
+-	(pattern = res->lookupPattern(args[numArgs-1].getName()))) {
++	(pattern = res->lookupPattern(args[numArgs-1].getName(), NULL))) {
+       state->setFillPattern(pattern);
+       builder->updateStyle(state);
+     }
+@@ -1146,7 +1146,7 @@ void PdfParser::opSetStrokeColorN(Object args[], int n
+       builder->updateStyle(state);
+     }
+     if (args[numArgs-1].isName() &&
+-	(pattern = res->lookupPattern(args[numArgs-1].getName()))) {
++	(pattern = res->lookupPattern(args[numArgs-1].getName(), NULL))) {
+       state->setStrokePattern(pattern);
+       builder->updateStyle(state);
+     }
+@@ -1544,7 +1544,7 @@ void PdfParser::opShFill(Object args[], int numArgs) {
+   double *matrix = NULL;
+   GBool savedState = gFalse;
+ 
+-  if (!(shading = res->lookupShading(args[0].getName()))) {
++  if (!(shading = res->lookupShading(args[0].getName(), NULL))) {
+     return;
+   }
+ 
 @@ -2196,7 +2196,7 @@ void PdfParser::doShowText(GooString *s) {
    int wMode;
    double riseX, riseY;
@@ -28,3 +88,30 @@ $OpenBSD: patch-src_extension_internal_pdfinput_pdf-parser_cpp,v 1.1 2008/11/03 
  			    &dx, &dy, &originX, &originY);
        
        if (wMode) {
+@@ -2487,7 +2487,7 @@ void PdfParser::doImage(Object *ref, Stream *str, GBoo
+       }
+     }
+     if (!obj1.isNull()) {
+-      colorSpace = GfxColorSpace::parse(&obj1);
++      colorSpace = GfxColorSpace::parse(&obj1, NULL);
+     } else if (csMode == streamCSDeviceGray) {
+       colorSpace = new GfxDeviceGrayColorSpace();
+     } else if (csMode == streamCSDeviceRGB) {
+@@ -2572,7 +2572,7 @@ void PdfParser::doImage(Object *ref, Stream *str, GBoo
+ 	  obj2.free();
+ 	}
+       }
+-      maskColorSpace = GfxColorSpace::parse(&obj1);
++      maskColorSpace = GfxColorSpace::parse(&obj1, NULL);
+       obj1.free();
+       if (!maskColorSpace || maskColorSpace->getMode() != csDeviceGray) {
+ 	goto err1;
+@@ -2747,7 +2747,7 @@ void PdfParser::doForm(Object *str) {
+     if (obj1.dictLookup("S", &obj2)->isName("Transparency")) {
+       transpGroup = gTrue;
+       if (!obj1.dictLookup("CS", &obj3)->isNull()) {
+-	blendingColorSpace = GfxColorSpace::parse(&obj3);
++	blendingColorSpace = GfxColorSpace::parse(&obj3, NULL);
+       }
+       obj3.free();
+       if (obj1.dictLookup("I", &obj3)->isBool()) {
