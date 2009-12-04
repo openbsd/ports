@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/06/20 13:40:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/12/04 12:12:32 sthen Exp $
 @conflict trac-adminplugin-*
-@pkgpath www/trac-adminplugin
 @conflict trac-ldapplugin-<0.60
+@pkgpath www/trac-adminplugin
 bin/trac-admin
 bin/tracd
 lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -91,6 +91,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/htdocs/css/trac.css
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/css/wiki.css
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/desc.png
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/dots.gif
+lib/python${MODPY_VERSION}/site-packages/trac/htdocs/download.png
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/draft.png
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/edit_toolbar.png
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/editedticket.png
@@ -216,6 +217,8 @@ lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/better_twill.py
 lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/better_twill.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/compat.py
 lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/svntestenv.py
+lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/svntestenv.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/testcases.py
 lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/testcases.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/tests/functional/testenv.py
@@ -344,6 +347,8 @@ lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/svn_authz.py
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/svn_authz.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/svn_fs.py
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/svn_fs.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/svn_prop.py
+lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/svn_prop.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/templates/
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/templates/browser.html
 lib/python${MODPY_VERSION}/site-packages/trac/versioncontrol/templates/changeset.html
