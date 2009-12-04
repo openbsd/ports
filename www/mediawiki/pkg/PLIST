@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/03/31 08:31:35 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.13 2009/12/04 11:06:29 stephan Exp $
 @pkgpath www/mediawiki
 mediawiki/
 mediawiki/AdminSettings.sample
@@ -64,12 +64,14 @@ mediawiki/includes/Article.php
 mediawiki/includes/AuthPlugin.php
 mediawiki/includes/AutoLoader.php
 mediawiki/includes/Autopromote.php
+mediawiki/includes/BacklinkCache.php
 mediawiki/includes/BagOStuff.php
 mediawiki/includes/Block.php
 mediawiki/includes/CacheDependency.php
 mediawiki/includes/Category.php
 mediawiki/includes/CategoryPage.php
 mediawiki/includes/Categoryfinder.php
+mediawiki/includes/ChangeTags.php
 mediawiki/includes/ChangesFeed.php
 mediawiki/includes/ChangesList.php
 mediawiki/includes/Credits.php
@@ -94,6 +96,7 @@ mediawiki/includes/FeedUtils.php
 mediawiki/includes/FileDeleteForm.php
 mediawiki/includes/FileRevertForm.php
 mediawiki/includes/FileStore.php
+mediawiki/includes/ForkController.php
 mediawiki/includes/FormOptions.php
 mediawiki/includes/GlobalFunctions.php
 mediawiki/includes/HTMLCacheUpdate.php
@@ -139,6 +142,7 @@ mediawiki/includes/PrefixSearch.php
 mediawiki/includes/Profiler.php
 mediawiki/includes/ProfilerSimple.php
 mediawiki/includes/ProfilerSimpleText.php
+mediawiki/includes/ProfilerSimpleTrace.php
 mediawiki/includes/ProfilerSimpleUDP.php
 mediawiki/includes/ProfilerStub.php
 mediawiki/includes/ProtectionForm.php
@@ -150,6 +154,7 @@ mediawiki/includes/RefreshLinksJob.php
 mediawiki/includes/Revision.php
 mediawiki/includes/Sanitizer.php
 mediawiki/includes/SearchEngine.php
+mediawiki/includes/SearchIBM_DB2.php
 mediawiki/includes/SearchMySQL.php
 mediawiki/includes/SearchMySQL4.php
 mediawiki/includes/SearchOracle.php
@@ -168,10 +173,6 @@ mediawiki/includes/StringUtils.php
 mediawiki/includes/StubObject.php
 mediawiki/includes/Title.php
 mediawiki/includes/TitleArray.php
-mediawiki/includes/UploadBase.php
-mediawiki/includes/UploadFromStash.php
-mediawiki/includes/UploadFromUpload.php
-mediawiki/includes/UploadFromUrl.php
 mediawiki/includes/User.php
 mediawiki/includes/UserArray.php
 mediawiki/includes/UserMailer.php
@@ -202,12 +203,14 @@ mediawiki/includes/api/ApiFormatDbg.php
 mediawiki/includes/api/ApiFormatJson.php
 mediawiki/includes/api/ApiFormatJson_json.php
 mediawiki/includes/api/ApiFormatPhp.php
+mediawiki/includes/api/ApiFormatRaw.php
 mediawiki/includes/api/ApiFormatTxt.php
 mediawiki/includes/api/ApiFormatWddx.php
 mediawiki/includes/api/ApiFormatXml.php
 mediawiki/includes/api/ApiFormatYaml.php
 mediawiki/includes/api/ApiFormatYaml_spyc.php
 mediawiki/includes/api/ApiHelp.php
+mediawiki/includes/api/ApiImport.php
 mediawiki/includes/api/ApiLogin.php
 mediawiki/includes/api/ApiLogout.php
 mediawiki/includes/api/ApiMain.php
@@ -243,6 +246,7 @@ mediawiki/includes/api/ApiQueryInfo.php
 mediawiki/includes/api/ApiQueryLangLinks.php
 mediawiki/includes/api/ApiQueryLinks.php
 mediawiki/includes/api/ApiQueryLogEvents.php
+mediawiki/includes/api/ApiQueryProtectedTitles.php
 mediawiki/includes/api/ApiQueryRandom.php
 mediawiki/includes/api/ApiQueryRecentChanges.php
 mediawiki/includes/api/ApiQueryRevisions.php
@@ -264,6 +268,7 @@ mediawiki/includes/cbt/CBTProcessor.php
 mediawiki/includes/cbt/README
 mediawiki/includes/db/
 mediawiki/includes/db/Database.php
+mediawiki/includes/db/DatabaseIbm_db2.php
 mediawiki/includes/db/DatabaseMssql.php
 mediawiki/includes/db/DatabaseOracle.php
 mediawiki/includes/db/DatabasePostgres.php
@@ -304,6 +309,7 @@ mediawiki/includes/media/Bitmap_ClientOnly.php
 mediawiki/includes/media/DjVu.php
 mediawiki/includes/media/Generic.php
 mediawiki/includes/media/SVG.php
+mediawiki/includes/media/Tiff.php
 mediawiki/includes/memcached-client.php
 mediawiki/includes/mime.info
 mediawiki/includes/mime.types
@@ -337,6 +343,7 @@ mediawiki/includes/parser/Parser_LinkHooks.php
 mediawiki/includes/parser/Preprocessor.php
 mediawiki/includes/parser/Preprocessor_DOM.php
 mediawiki/includes/parser/Preprocessor_Hash.php
+mediawiki/includes/parser/Tidy.php
 mediawiki/includes/proxy_check.php
 mediawiki/includes/specials/
 mediawiki/includes/specials/SpecialAllmessages.php
@@ -399,6 +406,7 @@ mediawiki/includes/specials/SpecialSearch.php
 mediawiki/includes/specials/SpecialShortpages.php
 mediawiki/includes/specials/SpecialSpecialpages.php
 mediawiki/includes/specials/SpecialStatistics.php
+mediawiki/includes/specials/SpecialTags.php
 mediawiki/includes/specials/SpecialUncategorizedcategories.php
 mediawiki/includes/specials/SpecialUncategorizedimages.php
 mediawiki/includes/specials/SpecialUncategorizedpages.php
@@ -429,6 +437,7 @@ mediawiki/includes/templates/Userlogin.php
 mediawiki/includes/tidy.conf
 mediawiki/includes/zhtable/
 mediawiki/includes/zhtable/Makefile
+mediawiki/includes/zhtable/Makefile.py
 mediawiki/includes/zhtable/README
 mediawiki/includes/zhtable/printutf8.c
 mediawiki/includes/zhtable/simp2trad.manual
@@ -473,6 +482,8 @@ mediawiki/languages/classes/LanguageEt.php
 mediawiki/languages/classes/LanguageFi.php
 mediawiki/languages/classes/LanguageFr.php
 mediawiki/languages/classes/LanguageGa.php
+mediawiki/languages/classes/LanguageGan.php
+mediawiki/languages/classes/LanguageGv.php
 mediawiki/languages/classes/LanguageHe.php
 mediawiki/languages/classes/LanguageHr.php
 mediawiki/languages/classes/LanguageHsb.php
@@ -569,6 +580,8 @@ mediawiki/languages/messages/MessagesCv.php
 mediawiki/languages/messages/MessagesCy.php
 mediawiki/languages/messages/MessagesDa.php
 mediawiki/languages/messages/MessagesDe.php
+mediawiki/languages/messages/MessagesDe_at.php
+mediawiki/languages/messages/MessagesDe_ch.php
 mediawiki/languages/messages/MessagesDe_formal.php
 mediawiki/languages/messages/MessagesDiq.php
 mediawiki/languages/messages/MessagesDk.php
@@ -600,6 +613,8 @@ mediawiki/languages/messages/MessagesFy.php
 mediawiki/languages/messages/MessagesGa.php
 mediawiki/languages/messages/MessagesGag.php
 mediawiki/languages/messages/MessagesGan.php
+mediawiki/languages/messages/MessagesGan_hans.php
+mediawiki/languages/messages/MessagesGan_hant.php
 mediawiki/languages/messages/MessagesGd.php
 mediawiki/languages/messages/MessagesGl.php
 mediawiki/languages/messages/MessagesGlk.php
@@ -681,6 +696,7 @@ mediawiki/languages/messages/MessagesLo.php
 mediawiki/languages/messages/MessagesLoz.php
 mediawiki/languages/messages/MessagesLt.php
 mediawiki/languages/messages/MessagesLv.php
+mediawiki/languages/messages/MessagesLzh.php
 mediawiki/languages/messages/MessagesLzz.php
 mediawiki/languages/messages/MessagesMai.php
 mediawiki/languages/messages/MessagesMap_bms.php
@@ -806,14 +822,17 @@ mediawiki/languages/messages/MessagesTy.php
 mediawiki/languages/messages/MessagesTyv.php
 mediawiki/languages/messages/MessagesUdm.php
 mediawiki/languages/messages/MessagesUg.php
+mediawiki/languages/messages/MessagesUg_latn.php
 mediawiki/languages/messages/MessagesUk.php
 mediawiki/languages/messages/MessagesUr.php
 mediawiki/languages/messages/MessagesUz.php
 mediawiki/languages/messages/MessagesVe.php
 mediawiki/languages/messages/MessagesVec.php
+mediawiki/languages/messages/MessagesVep.php
 mediawiki/languages/messages/MessagesVi.php
 mediawiki/languages/messages/MessagesVls.php
 mediawiki/languages/messages/MessagesVo.php
+mediawiki/languages/messages/MessagesVro.php
 mediawiki/languages/messages/MessagesWa.php
 mediawiki/languages/messages/MessagesWar.php
 mediawiki/languages/messages/MessagesWo.php
@@ -863,6 +882,7 @@ mediawiki/maintenance/archives/patch-cache.sql
 mediawiki/maintenance/archives/patch-category.sql
 mediawiki/maintenance/archives/patch-categorylinks.sql
 mediawiki/maintenance/archives/patch-categorylinksindex.sql
+mediawiki/maintenance/archives/patch-change_tag.sql
 mediawiki/maintenance/archives/patch-drop-user_newtalk.sql
 mediawiki/maintenance/archives/patch-drop_img_type.sql
 mediawiki/maintenance/archives/patch-email-authentication.sql
@@ -871,6 +891,7 @@ mediawiki/maintenance/archives/patch-externallinks.sql
 mediawiki/maintenance/archives/patch-fa_deleted.sql
 mediawiki/maintenance/archives/patch-filearchive.sql
 mediawiki/maintenance/archives/patch-filearhive-user-index.sql
+mediawiki/maintenance/archives/patch-fix-il_from.sql
 mediawiki/maintenance/archives/patch-hitcounter.sql
 mediawiki/maintenance/archives/patch-image-user-index.sql
 mediawiki/maintenance/archives/patch-image_name_primary.sql
@@ -919,6 +940,7 @@ mediawiki/maintenance/archives/patch-page_restrictions.sql
 mediawiki/maintenance/archives/patch-page_restrictions_sortkey.sql
 mediawiki/maintenance/archives/patch-pagelinks.sql
 mediawiki/maintenance/archives/patch-parsercache.sql
+mediawiki/maintenance/archives/patch-pl-tl-il-unique.sql
 mediawiki/maintenance/archives/patch-profiling-memory.sql
 mediawiki/maintenance/archives/patch-profiling.sql
 mediawiki/maintenance/archives/patch-protected_titles.sql
@@ -1028,9 +1050,16 @@ mediawiki/maintenance/fixSlaveDesync.php
 mediawiki/maintenance/fixTimestamps.php
 mediawiki/maintenance/fixUserRegistration.php
 mediawiki/maintenance/fuzz-tester.php
+mediawiki/maintenance/gearman/
+mediawiki/maintenance/gearman/gearman.inc
+mediawiki/maintenance/gearman/gearmanRefreshLinks.php
+mediawiki/maintenance/gearman/gearmanWorker.php
 mediawiki/maintenance/generateSitemap.php
 mediawiki/maintenance/getLagTimes.php
 mediawiki/maintenance/getSlaveServer.php
+mediawiki/maintenance/ibm_db2/
+mediawiki/maintenance/ibm_db2/README
+mediawiki/maintenance/ibm_db2/tables.sql
 mediawiki/maintenance/importDump.php
 mediawiki/maintenance/importImages.inc.php
 mediawiki/maintenance/importImages.php
@@ -1058,6 +1087,7 @@ mediawiki/maintenance/language/function-list.php
 mediawiki/maintenance/language/lang2po.php
 mediawiki/maintenance/language/langmemusage.php
 mediawiki/maintenance/language/languages.inc
+mediawiki/maintenance/language/makeMessageDB.php
 mediawiki/maintenance/language/messageTypes.inc
 mediawiki/maintenance/language/messages.inc
 mediawiki/maintenance/language/rebuildLanguage.php
@@ -1095,6 +1125,7 @@ mediawiki/maintenance/populateParentId.php
 mediawiki/maintenance/postgres/
 mediawiki/maintenance/postgres/archives/
 mediawiki/maintenance/postgres/archives/patch-category.sql
+mediawiki/maintenance/postgres/archives/patch-change_tag.sql
 mediawiki/maintenance/postgres/archives/patch-ipb_address_unique.sql
 mediawiki/maintenance/postgres/archives/patch-mediawiki_version.sql
 mediawiki/maintenance/postgres/archives/patch-mwuser.sql
@@ -1144,7 +1175,9 @@ mediawiki/maintenance/showJobs.php
 mediawiki/maintenance/showStats.php
 mediawiki/maintenance/sql.php
 mediawiki/maintenance/sqlite/
-mediawiki/maintenance/sqlite/tables.sql
+mediawiki/maintenance/sqlite/README
+mediawiki/maintenance/sqlite/archives/
+mediawiki/maintenance/sqlite/archives/initial-indexes.sql
 mediawiki/maintenance/stats.php
 mediawiki/maintenance/storage/
 mediawiki/maintenance/storage/blob_tracking.sql
@@ -1242,6 +1275,7 @@ mediawiki/skins/common/ajax.js
 mediawiki/skins/common/ajaxwatch.js
 mediawiki/skins/common/allmessages.js
 mediawiki/skins/common/block.js
+mediawiki/skins/common/changepassword.js
 mediawiki/skins/common/cologneblue.css
 mediawiki/skins/common/commonPrint.css
 mediawiki/skins/common/common_rtl.css
@@ -1308,6 +1342,7 @@ mediawiki/skins/common/images/fa/button_headline.png
 mediawiki/skins/common/images/fa/button_italic.png
 mediawiki/skins/common/images/fa/button_link.png
 mediawiki/skins/common/images/fa/button_nowiki.png
+mediawiki/skins/common/images/feed-icon.png
 mediawiki/skins/common/images/fileicon.xcf
 mediawiki/skins/common/images/gnu-fdl.png
 mediawiki/skins/common/images/gnu-fdl.xcf
@@ -1346,6 +1381,8 @@ mediawiki/skins/common/images/link_icon.gif
 mediawiki/skins/common/images/magnify-clip.png
 mediawiki/skins/common/images/mediawiki-small.xcf
 mediawiki/skins/common/images/mediawiki.png
+mediawiki/skins/common/images/nextredirectltr.png
+mediawiki/skins/common/images/nextredirectrtl.png
 mediawiki/skins/common/images/poweredby_mediawiki_88x31.png
 mediawiki/skins/common/images/public-domain.png
 mediawiki/skins/common/images/redirectltr.png
@@ -1392,6 +1429,7 @@ mediawiki/skins/modern/print.css
 mediawiki/skins/modern/rtl.css
 mediawiki/skins/modern/video.png
 mediawiki/skins/monobook/
+mediawiki/skins/monobook/FF2Fixes.css
 mediawiki/skins/monobook/IE50Fixes.css
 mediawiki/skins/monobook/IE55Fixes.css
 mediawiki/skins/monobook/IE60Fixes.css
@@ -1400,10 +1438,12 @@ mediawiki/skins/monobook/IEMacFixes.css
 mediawiki/skins/monobook/KHTMLFixes.css
 mediawiki/skins/monobook/Opera6Fixes.css
 mediawiki/skins/monobook/Opera7Fixes.css
+mediawiki/skins/monobook/Opera9Fixes.css
 mediawiki/skins/monobook/audio.png
 mediawiki/skins/monobook/bullet.gif
 mediawiki/skins/monobook/discussionitem_icon.gif
 mediawiki/skins/monobook/document.png
+mediawiki/skins/monobook/external-rtl.png
 mediawiki/skins/monobook/external.png
 mediawiki/skins/monobook/file_icon.gif
 mediawiki/skins/monobook/headbg.jpg
@@ -1476,4 +1516,5 @@ mediawiki/tests/test-prefetch-stub.xml
 mediawiki/thumb.php
 mediawiki/thumb.php5
 mediawiki/trackback.php
+mediawiki/trackback.php5
 mediawiki/wiki.phtml
