@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2009/12/04 12:58:12 pea Exp $
 
 COMMENT=	high-performance dynamic web authoring system
 
 MODULES=	cpan
-DISTNAME=	HTML-Mason-1.35
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	HTML-Mason-1.42
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.masonhq.com/
@@ -23,6 +22,11 @@ RUN_DEPENDS=	:p5-Params-Validate->=0.74:devel/p5-Params-Validate \
 		:p5-Exception-Class->=1.19:devel/p5-Exception-Class \
 		:p5-Class-Container->=0.10:devel/p5-Class-Container \
 		:p5-Cache-Cache->=1.02:devel/p5-Cache-Cache
+
+MAKE_ENV=       TEST_POD=Yes
+
+REGRESS_DEPENDS=::devel/p5-Test-Memory-Cycle \
+		::devel/p5-PadWalker
 
 CONFIGURE_STYLE=	modbuild
 CONFIGURE_ARGS+=	--no-prompts
