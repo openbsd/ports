@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/12/04 08:10:35 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
 DISTNAME=	pcmanfm-0.3.5.10
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://pcmanfm.sourceforge.net/
@@ -25,11 +25,12 @@ WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread z pthread-stubs xcb
 
 LIB_DEPENDS=	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2 \
-		fam::sysutils/fam \
+		fam.>=1::sysutils/gamin \
 		startup-notification-1.>=1::devel/startup-notification
 RUN_DEPENDS=	:gnome-icon-theme-*:x11/gnome/icon-theme \
 		:desktop-file-utils-*:devel/desktop-file-utils \
-		:shared-mime-info->=0.21:misc/shared-mime-info
+		:shared-mime-info->=0.21:misc/shared-mime-info \
+		:gamin-*:sysutils/gamin,-server
 
 MODULES=	devel/gettext
 USE_LIBTOOL=	Yes

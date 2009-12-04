@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/02/11 20:02:27 ajacoutot Exp $
-bin/pcmanfm
+@comment $OpenBSD: PLIST,v 1.4 2009/12/04 08:10:35 ajacoutot Exp $
+@bin bin/pcmanfm
 share/applications/pcmanfm.desktop
 share/locale/ca/LC_MESSAGES/pcmanfm.mo
 share/locale/de/LC_MESSAGES/pcmanfm.mo
@@ -30,7 +30,6 @@ share/pcmanfm/icons/
 share/pcmanfm/icons/file.png
 share/pcmanfm/icons/folder.png
 share/pcmanfm/mount.rules
-share/pixmaps/
 share/pixmaps/pcmanfm.png
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec %D/bin/update-mime-database %D/share/mime
