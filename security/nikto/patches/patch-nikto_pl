@@ -1,0 +1,12 @@
+$OpenBSD: patch-nikto_pl,v 1.1 2009/12/04 16:25:20 benoit Exp $
+--- nikto.pl.orig	Fri Dec  4 16:58:13 2009
++++ nikto.pl	Fri Dec  4 16:58:27 2009
+@@ -289,7 +289,7 @@
+    }
+    unless (defined $NIKTOCONFIG{DOCUMENTDIR})
+    {
+-      $NIKTOCONFIG{DOCUMENTDIR}="$NIKTOCONFIG{EXECDIR}/docs";
++      $NIKTOCONFIG{DOCUMENTDIR}="$NIKTOCONFIG{DOCDIR}";
+    }
+    return;
+ }

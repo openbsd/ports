@@ -1,0 +1,12 @@
+penBSD$
+--- docs/nikto.1.orig	Sun Oct 18 00:26:52 2009
++++ docs/nikto.1	Thu Nov 26 11:00:36 2009
+@@ -54,7 +54,7 @@
+ .ne (2v + 1u)
+ .ie n \{\
+ .\" if n (TTY output), use uppercase
+-.toupper \\$*
++\$*
+ .\}
+ .el \{\
+ .nr an-break-flag 0

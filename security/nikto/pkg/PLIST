@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/09/23 21:21:01 rui Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/12/04 16:25:22 benoit Exp $
 bin/nikto
 @man man/man1/nikto.1
 share/doc/nikto/
@@ -14,14 +14,23 @@ share/nikto/plugins/
 share/nikto/plugins/LW2.pm
 @comment no checksum
 share/nikto/plugins/db_404_strings
+share/nikto/plugins/db_embedded
 @comment no checksum
 share/nikto/plugins/db_favicon
+@comment no checksum
+share/nikto/plugins/db_headers
+@comment no checksum
+share/nikto/plugins/db_httpoptions
+@comment no checksum
+share/nikto/plugins/db_multiple_index
 @comment no checksum
 share/nikto/plugins/db_outdated
 @comment no checksum
 share/nikto/plugins/db_realms
 @comment no checksum
 share/nikto/plugins/db_server_msgs
+@comment no checksum
+share/nikto/plugins/db_subdomains
 @comment no checksum
 share/nikto/plugins/db_tests
 @comment no checksum
@@ -30,9 +39,14 @@ share/nikto/plugins/db_variables
 share/nikto/plugins/nikto_apache_expect_xss.plugin
 @comment no checksum
 share/nikto/plugins/nikto_apacheusers.plugin
+@comment no checksum
 share/nikto/plugins/nikto_cgi.plugin
 @comment no checksum
 share/nikto/plugins/nikto_core.plugin
+@comment no checksum
+share/nikto/plugins/nikto_dictionary_attack.plugin
+@comment no checksum
+share/nikto/plugins/nikto_embedded.plugin
 @comment no checksum
 share/nikto/plugins/nikto_favicon.plugin
 @comment no checksum
@@ -42,25 +56,33 @@ share/nikto/plugins/nikto_httpoptions.plugin
 @comment no checksum
 share/nikto/plugins/nikto_msgs.plugin
 @comment no checksum
+share/nikto/plugins/nikto_multiple_index.plugin
+@comment no checksum
 share/nikto/plugins/nikto_mutate.plugin
 @comment no checksum
 share/nikto/plugins/nikto_outdated.plugin
 @comment no checksum
 share/nikto/plugins/nikto_passfiles.plugin
 @comment no checksum
-share/nikto/plugins/nikto_plugin_order.txt
-@comment no checksum
 share/nikto/plugins/nikto_put_del_test.plugin
 @comment no checksum
-share/nikto/plugins/nikto_reports.plugin
+share/nikto/plugins/nikto_report_csv.plugin
+@comment no checksum
+share/nikto/plugins/nikto_report_html.plugin
+@comment no checksum
+share/nikto/plugins/nikto_report_text.plugin
+@comment no checksum
+share/nikto/plugins/nikto_report_xml.plugin
 @comment no checksum
 share/nikto/plugins/nikto_robots.plugin
 @comment no checksum
 share/nikto/plugins/nikto_single.plugin
 @comment no checksum
-share/nikto/plugins/nikto_user_enum_apache.plugin
+share/nikto/plugins/nikto_subdomain.plugin
 @comment no checksum
-share/nikto/plugins/nikto_user_enum_cgiwrap.plugin
+share/nikto/plugins/nikto_tests.plugin
+@comment no checksum
+share/nikto/plugins/nikto_user_enum_apache.plugin
 share/nikto/templates/
 share/nikto/templates/htm_close.tmpl
 @comment no checksum
