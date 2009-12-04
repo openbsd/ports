@@ -6,5 +6,5 @@ want to use an alias such as ls=${PREFIX}/bin/colorls.
 
 Note that you need a color-capable terminal to enable colorls.  This
 means you should set your TERM to "wsvt25" on the wscons(4) console
-and to "xterm-xfree86" when using normal xterm, not "vt220" and
-"xterm", respectively, which are not color-capable in termcap(5).
+and to "sun-color" when using the Sun console, not "vt220" and
+"sun", respectively, which are not color-capable in termcap(5).
