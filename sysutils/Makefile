@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2009/11/18 01:13:41 todd Exp $
+# $OpenBSD: Makefile,v 1.187 2009/12/04 08:07:58 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -44,6 +44,7 @@
      SUBDIR += flyback
      SUBDIR += freedt
      SUBDIR += freeipmi
+     SUBDIR += gamin
      SUBDIR += ggrep
      SUBDIR += gkrellm
      SUBDIR += glastree
