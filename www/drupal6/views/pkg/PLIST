@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/11/06 19:01:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/04 11:13:45 espie Exp $
+@incompatibility drupal6-cck-<2.6
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
-@incompatibility drupal6-cck-<2.6
 ${DRUPAL_MODS}views/
 ${DRUPAL_MODS}views/CHANGELOG.txt
 ${DRUPAL_MODS}views/LICENSE.txt
