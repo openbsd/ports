@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/10 19:56:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/12/04 09:16:38 ajacoutot Exp $
+@conflict libgamin-*
 %%SHARED%%
 include/fam.h
 lib/libfam.a
