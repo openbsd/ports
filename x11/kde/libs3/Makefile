@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2009/12/04 08:09:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2009/12/04 16:05:57 pea Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -62,7 +62,7 @@ MODULES =	x11/kde devel/gettext
 
 LIB_DEPENDS =	art_lgpl_2::graphics/libart \
 		idn::devel/libidn \
-		fam.>=1::sysutils/gamin \
+		fam.>=1::sysutils/gamin 
 WANTLIB =	asn1 crypto gssapi util jpeg krb5 m X11 \
 		ICE Xrender c SM pthread stdc++ Xext z png \
 		Xau Xdmcp pthread-stubs xcb
