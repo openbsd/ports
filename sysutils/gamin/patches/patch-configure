@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+--- configure.orig	Fri Jun 19 15:49:19 2009
++++ configure	Fri Jun 19 15:49:41 2009
+@@ -22944,13 +22944,13 @@ echo "${ECHO_T}$ac_cv_header_pthread_h" >&6; }
+ 
+ fi
+ if test $ac_cv_header_pthread_h = yes; then
+-  { echo "$as_me:$LINENO: checking for pthread_mutexattr_settype in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_mutexattr_settype in -lpthread... $ECHO_C" >&6; }
++  { echo "$as_me:$LINENO: checking for pthread_mutexattr_settype in -pthread" >&5
++echo $ECHO_N "checking for pthread_mutexattr_settype in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_mutexattr_settype+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -23007,7 +23007,7 @@ fi
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_mutexattr_settype" >&6; }
+ if test $ac_cv_lib_pthread_pthread_mutexattr_settype = yes; then
+ 
+-	   THREAD_LIBS="-lpthread"
++	   THREAD_LIBS="-pthread"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBPTHREAD

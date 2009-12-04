@@ -1,0 +1,4 @@
+Gamin will provide realtime kqueue(2) notifications up to the open file
+descriptors limit before falling back to polling. To prevent that, when
+dealing with large directories, increase the kern.maxfiles sysctl(8) and
+adapt users login(1) class accordingly.

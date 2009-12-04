@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+@lib lib/libfam.so.${LIBfam_VERSION}
+@lib lib/libgamin-1.so.${LIBgamin-1_VERSION}

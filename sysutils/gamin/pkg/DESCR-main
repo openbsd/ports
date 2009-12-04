@@ -1,0 +1,9 @@
+Gamin is a file and directory monitoring system defined to be a subset
+of the FAM (File Alteration Monitor) system.
+The main goals of the project are:
+  * minimize the security model of FAM
+  * simplify the code base
+  * provide an API and ABI compatible replacement for FAM
+  * try to fix some other issues like resource consumption
+
+This package provides the gamin API and libs.

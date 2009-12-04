@@ -1,0 +1,24 @@
+$OpenBSD: patch-doc_config_html,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+--- doc/config.html.orig	Sat Nov 28 16:18:29 2009
++++ doc/config.html	Sat Nov 28 16:18:54 2009
+@@ -12,7 +12,7 @@ sometimes using the kernel notification APIs doesn't w
+ (for example when trying to unmount device). By default gamin revert to using
+ polling for all paths matching <code>/mnt/*</code> or <code>/media/*</code>
+ on Linux. This may be overriden or extended by the one of the three config files
+-<code>/etc/gamin/gaminrc</code>, <code>$HOME/.gaminrc</code>, <code>/etc/gamin/mandatory_gaminrc</code> (note that prior to 0.1.4 only <code>$HOME/.gaminrc</code> was used and fsset was not implemented).
++<code>${SYSCONFDIR}/gamin/gaminrc</code>, <code>$HOME/.gaminrc</code>, <code>${SYSCONFDIR}/gamin/mandatory_gaminrc</code> (note that prior to 0.1.4 only <code>$HOME/.gaminrc</code> was used and fsset was not implemented).
+ Here is an example of such a configuration file:</p><pre># configuration for gamin
+ # Can be used to override the default behaviour.
+ # notify filepath(s) : indicate to use kernel notification
+@@ -34,9 +34,9 @@ fsset nfs poll 10                 # use polling on nfs
+     paths</li>
+   <li>poll: to express that polling should be used for matching paths</li>
+   <li>fsset: to control what notification method is used on a filesystem type</li>
+-</ul><p>The three config files are loaded in this order:</p><ul><li><code>/etc/gamin/gaminrc</code></li>
++</ul><p>The three config files are loaded in this order:</p><ul><li><code>${SYSCONFDIR}/gamin/gaminrc</code></li>
+ 	<li><code>~/.gaminrc</code></li>
+-	<li><code>/etc/gamin/mandatory_gaminrc</code></li>
++	<li><code>${SYSCONFDIR}/gamin/mandatory_gaminrc</code></li>
+ </ul><p>The mandatory config file allows the system administrator to override any potentially dangerous preferences set by the user.</p><p>When checking a path to guess whether polling or kernel notification
+ should be used, gamin checks first the user provided rules in their
+ declaration order within the configuration file and then check the predefined

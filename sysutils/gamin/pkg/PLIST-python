@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-python,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/_gamin.a
+lib/python${MODPY_VERSION}/site-packages/_gamin.la
+lib/python${MODPY_VERSION}/site-packages/_gamin.so
+lib/python${MODPY_VERSION}/site-packages/gamin.py
+lib/python${MODPY_VERSION}/site-packages/gamin.pyc
+lib/python${MODPY_VERSION}/site-packages/gamin.pyo

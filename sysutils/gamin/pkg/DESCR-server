@@ -1,0 +1,4 @@
+Gamin is a file and directory monitoring system defined to be a subset
+of the FAM (File Alteration Monitor) system.
+
+This package provides the gamin server: gam_server.

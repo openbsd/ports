@@ -1,0 +1,72 @@
+$OpenBSD: patch-server_gam_channel_c,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+
+Adapt socket credentials code to OpenBSD.
+
+From FreeBSD:
+Restore the stale socket cleanup code from gamin 0.1.5 to ensure that even
+if gamin crashes or is killed with SIGKILL, a leftover socket does not
+prevent gam_server from starting.
+
+--- server/gam_channel.c.orig	Wed Jul  4 15:36:49 2007
++++ server/gam_channel.c	Sat Nov 28 15:45:05 2009
+@@ -3,6 +3,10 @@
+ #include <unistd.h>
+ #include <errno.h>
+ #include <glib.h>
++#if defined(__OpenBSD__)
++#include <string.h>
++#include <sys/types.h>
++#endif
+ #include <sys/socket.h>
+ #include <sys/stat.h>
+ #include <sys/un.h>
+@@ -171,6 +175,21 @@ gam_client_conn_check_cred(GIOChannel * source, int fd
+ 	c_pid = cmsg.cred.cmcred_pid;
+ 	c_uid = cmsg.cred.cmcred_euid;
+ 	c_gid = cmsg.cred.cmcred_groups[0];
++#elif defined(__OpenBSD__)
++        uid_t euid;
++        gid_t egid;
++        if (getpeereid (fd, &euid, &egid) == 0)
++            {
++                c_pid = getpid();
++                c_uid = euid;
++                c_gid = egid;
++            }
++        else
++            {
++                GAM_DEBUG(DEBUG_INFO,
++                    "Failed to getpeereid() credentials: %d\n", fd);
++                goto failed;
++            }
+ #else /* !SO_PEERCRED && !HAVE_CMSGCRED */
+         GAM_DEBUG(DEBUG_INFO,
+                   "Socket credentials not supported on this OS\n");
+@@ -620,6 +639,7 @@ gam_listen_unix_socket(const char *path)
+ {
+     int fd;
+     struct sockaddr_un addr;
++    struct stat st;
+ 
+     fd = socket(PF_UNIX, SOCK_STREAM, 0);
+     if (fd < 0) {
+@@ -640,8 +660,18 @@ gam_listen_unix_socket(const char *path)
+      * some extra protection checks. Also make sure the socket is created
+      * with restricted mode
+      */
+-    if (!gam_check_secure_path(path)) {
++    if (!gam_check_secure_dir()) {
++        close(fd);
+ 	return (-1);
++    }
++
++    if (stat(path, &st) == 0) {
++        /* bind() will fail if the socket already exists */
++        if (unlink(path) < 0) {
++            GAM_DEBUG(DEBUG_INFO, "Failed to remove %s\n", path);
++            close(fd);
++            return (-1);
++        }
+     }
+     strncpy(&addr.sun_path[0], path, (sizeof(addr) - 4) - 1);
+     umask(0077);

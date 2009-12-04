@@ -1,0 +1,12 @@
+$OpenBSD: patch-server_gam_excludes_c,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+--- server/gam_excludes.c.orig	Sun Nov 29 17:43:23 2009
++++ server/gam_excludes.c	Sun Nov 29 17:43:49 2009
+@@ -20,7 +20,7 @@ struct _gam_exclude {
+ static int initialized = 0;
+ static GList *excludes = NULL;
+ static char *static_excludes[] = {
+-#ifdef HAVE_LINUX
++#if defined HAVE_LINUX || defined __OpenBSD__
+     "/media/*",
+     "/mnt/*",
+     "/dev/*",

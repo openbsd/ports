@@ -1,0 +1,168 @@
+$OpenBSD: patch-server_gam_kqueue_c,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+
+From FreeBSD:
+Make sure that excluded paths do not get opened (but rather they will be
+polled).
+
+OpenBSD doesn't have sysctlbyname, use sysctl(3) instead.
+
+Fix "enumeration value... not handled in switch" warnings.
+
+OpenBSD does not have maxfilesperproc, which means max_open_files will
+default to "0" and kqueue will never be used.
+
+--- server/gam_kqueue.c.orig	Wed Jul  4 15:50:41 2007
++++ server/gam_kqueue.c	Sun Nov 29 17:05:35 2009
+@@ -31,7 +32,8 @@
+  *           - kqueue needs to be moved out the UFS code.
+  *
+  * Copyright (C) 2005 Joe Marcus Clarke <marcus@FreeBSD.org>
+- * Copyright (C) 2005 Jean-Yves Lefort <jylefort@FreeBSD.org>
++ * Copyright (C) 2005, 2006 Jean-Yves Lefort <jylefort@FreeBSD.org>
++ * Copyright (C) 2006 Alex Dupre <ale@FreeBSD.org>
+  *
+  * This library is free software; you can redistribute it and/or
+  * modify it under the terms of the GNU Lesser General Public
+@@ -58,10 +60,12 @@
+ #include <sys/stat.h>
+ #include <sys/event.h>
+ #include <sys/time.h>
++#include <sys/mount.h>
+ #include <errno.h>
+ #include "gam_error.h"
+ #include "gam_kqueue.h"
+ #include "gam_event.h"
++#include "gam_excludes.h"
+ #include "gam_server.h"
+ #include "gam_poll_basic.h"
+ 
+@@ -323,20 +327,6 @@ gam_kqueue_isdir (const char *pathname, MonitorFlags f
+     }
+ }
+ 
+-static gboolean
+-gam_kqueue_get_uint_sysctl (const char *name, unsigned int *value)
+-{
+-  unsigned int value_len = sizeof(*value);
+-
+-  if (sysctlbyname(name, value, &value_len, (void *)NULL, 0) < 0)
+-    {
+-      gam_error(DEBUG_INFO, "unable to retrieve %s: %s\n", name, g_strerror(errno));
+-      return FALSE;
+-    }
+-  else
+-    return TRUE;
+-}
+-
+ /*** HashTable ***************************************************************/
+ 
+ static HashTable *
+@@ -509,33 +499,49 @@ static gboolean
+ gam_kqueue_monitor_enable_kqueue (Monitor *mon)
+ {
+   struct kevent ev[1];
++  struct statfs sb;
+ 
+   if (open_files == max_open_files)
+     {
+       GAM_DEBUG(DEBUG_INFO, "cannot open %s (max_open_files limit reached), falling back to poll\n", mon->pathname);
+       return FALSE;
+     }
+-  
+-  mon->fd = open(mon->pathname, O_RDONLY | O_NOFOLLOW);
++ 
++  if (gam_exclude_check(mon->pathname))
++    {
++      GAM_DEBUG(DEBUG_INFO, "not using kqueue for %s since it is excluded, falling back to poll\n", mon->pathname);
++      return FALSE;
++    }
++
++  mon->fd = open(mon->pathname, O_RDONLY | O_NONBLOCK | O_NOFOLLOW);
+   if (mon->fd < 0)
+     {
+       GAM_DEBUG(DEBUG_INFO, "cannot open %s (%s), falling back to poll\n", mon->pathname, g_strerror(errno));
+       return FALSE;
+     }
+ 
++  if (fstatfs(mon->fd, &sb) == 0 && (sb.f_flags & MNT_LOCAL) == 0)
++    {
++      GAM_DEBUG(DEBUG_INFO, "%s resides on a remote file system, falling back to poll\n", mon->pathname);
++      goto poll;
++    }
++
+   EV_SET(ev, mon->fd, EVFILT_VNODE, EV_ADD | EV_ENABLE | EV_CLEAR, VN_NOTE_ALL, 0, mon);
+   if (kevent(kq, ev, G_N_ELEMENTS(ev), NULL, 0, NULL) < 0)
+     {
+       GAM_DEBUG(DEBUG_INFO, "cannot enable kqueue notification for %s (%s), falling back to poll\n", mon->pathname, g_strerror(errno));
+ 
+-      close(mon->fd);
+-      mon->fd = -1;
+-
+-      return FALSE;
++      goto poll;
+     }
+ 
+   open_files++;
+   return TRUE;
++
++ poll:
++  close(mon->fd);
++  mon->fd = -1;
++
++  return FALSE;
+ }
+ 
+ static void
+@@ -840,6 +846,9 @@ gam_kqueue_sub_monitor_emit_event (SubMonitor *smon,
+     case GAMIN_EVENT_MOVED:
+       gam_kqueue_sub_monitor_set_missing(smon);
+       break;
++
++    default:
++      break;
+     }
+ 
+   gam_server_emit_event(mon->pathname, isdir, event, smon->subs, 1);
+@@ -981,6 +990,9 @@ gam_kqueue_file_monitor_emit_event (FileMonitor *fmon,
+ 	
+       gam_kqueue_hash_table_remove(fmon->smon->fmons, fmon);
+       break;
++
++    default:
++      break;
+     }
+ }
+ 
+@@ -1133,10 +1145,15 @@ gam_kqueue_init (void)
+       return FALSE;
+     }
+ 
+-  if (! gam_kqueue_get_uint_sysctl("kern.maxfiles", &maxfiles))
++  int mib[2];
++  size_t len = sizeof(maxfiles);
++  mib[0] = CTL_KERN;
++  mib[1] = KERN_MAXFILES;
++
++  if (sysctl(mib, 2, &maxfiles, &len, NULL, 0) < 0) {
++	gam_error(DEBUG_INFO, "unable to retrieve maxfiles: %s\n", g_strerror(errno));
+     return FALSE;
+-  if (! gam_kqueue_get_uint_sysctl("kern.maxfilesperproc", &maxfilesperproc))
+-    return FALSE;
++}
+ 
+   /*
+    * We make sure to:
+@@ -1145,9 +1162,13 @@ gam_kqueue_init (void)
+    */
+ 
+   maxfiles *= CFG_GLOBAL_FILE_RESERVE_RATIO;
++#if defined(KERN_MAXFILESPERPROC)
+   maxfilesperproc = maxfilesperproc > CFG_SELF_FILE_RESERVE
+     ? maxfilesperproc - CFG_SELF_FILE_RESERVE
+     : 0;
++#else
++  maxfilesperproc = maxfiles;
++#endif
+ 
+   max_open_files = MIN(maxfiles, maxfilesperproc);
+ 

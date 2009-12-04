@@ -1,0 +1,46 @@
+$OpenBSD: patch-server_gam_server_c,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+
+From FreeBSD:
+Make sure that excluded paths do not get opened (but rather they will be
+polled).
+
+--- server/gam_server.c.orig	Wed Jul  4 15:36:49 2007
++++ server/gam_server.c	Fri Jun 19 16:16:53 2009
+@@ -32,7 +32,7 @@
+ #include "gam_server.h"
+ #include "gam_channel.h"
+ #include "gam_subscription.h"
+-#include "gam_poll_generic.h"
++#include "gam_poll_basic.h"
+ #ifdef ENABLE_INOTIFY
+ #include "gam_inotify.h"
+ #endif
+@@ -200,7 +200,8 @@ gam_add_subscription(GamSubscription * sub)
+ 			return gam_poll_add_subscription (sub);
+ 		else
+ #endif
+-			return gam_kernel_add_subscription (sub);
++			/*return gam_kernel_add_subscription (sub);*/
++			return gam_poll_add_subscription (sub);
+ 	} else {
+ 		gam_fs_mon_type type;
+ 		type = gam_fs_get_mon_type (path);
+@@ -243,7 +244,8 @@ gam_remove_subscription(GamSubscription * sub)
+ 			return gam_poll_remove_subscription (sub);
+ 		else
+ #endif
+-			return gam_kernel_remove_subscription(sub);
++			/*return gam_kernel_remove_subscription(sub);*/
++			return gam_poll_remove_subscription (sub);
+ 	} else {
+ 		gam_fs_mon_type type;
+ 		type = gam_fs_get_mon_type (path);
+@@ -438,7 +440,7 @@ gam_server_get_kernel_handler (void)
+ GamPollHandler
+ gam_server_get_poll_handler (void)
+ {
+-	return __gam_kernel_handler;
++	return __gam_poll_handler;
+ }
+ 
+ gboolean
