@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/11/29 09:28:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/12/04 08:11:07 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -6,7 +6,7 @@ COMMENT=	powerful desktop search tool and indexer
 # as tracker-search.
 GNOME_PROJECT=	tracker
 GNOME_VERSION=	0.6.95
-PKGNAME=	tracker-search-${VERSION}p3
+PKGNAME=	tracker-search-${VERSION}p4
 
 SHARED_LIBS +=	stemmer              0.1      # .695.0
 SHARED_LIBS +=	tracker-common       0.1      # .695.0
@@ -55,7 +55,7 @@ LIB_DEPENDS=	vorbis::audio/libvorbis \
 		gnome-desktop-2::x11/gnome/desktop \
 		totem-plparser.>=2:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser
 BUILD_DEPENDS=	::devel/xdg-utils
-RUN_DEPENDS=	::devel/glib2,-fam \
+RUN_DEPENDS=	:gamin-*:sysutils/gamin,-server \
 		::devel/xdg-utils \
 		::textproc/odt2txt
 
