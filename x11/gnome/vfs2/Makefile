@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2009/10/10 12:39:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2009/12/04 08:08:50 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT-smb=		samba module for gnome-vfs2
 
 GNOME_PROJECT=		gnome-vfs
 GNOME_VERSION=		2.24.2
-PKGNAME-main=		gnome-vfs2-${VERSION}p0
+PKGNAME-main=		gnome-vfs2-${VERSION}p1
 PKGNAME-smb=		gnome-vfs2-smb-${VERSION}
 
 MULTI_PACKAGES=		-main -smb
@@ -35,11 +35,11 @@ LIB_DEPENDS=		ORBit-2.>=2::devel/ORBit2 \
 LIB_DEPENDS+=		avahi-client,avahi-common,avahi-glib::net/avahi,no_gtk,no_mono,no_qt3,no_qt4
 RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 
-WANTLIB-main=		${WANTLIB} c asn1 gssapi krb5 pthread rpcsvc stdc++
+WANTLIB-main=		${WANTLIB} c asn1 gssapi krb5 pthread
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			cdda_interface,cdda_paranoia::audio/cdparanoia \
 			bz2.>=10::archivers/bzip2 \
-			fam::sysutils/fam
+			fam.>=1::sysutils/gamin
 
 LIB_DEPENDS-smb=	${LIB_DEPENDS} \
 			smbclient::net/samba \
