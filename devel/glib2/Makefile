@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.70 2009/12/01 16:13:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2009/12/04 08:08:31 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
-COMMENT-fam=		fam(3) gio module
 
 VERSION=		2.22.3
 DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
-PKGNAME-fam=		glib2-fam-${VERSION}
 
 CATEGORIES=		devel
 
@@ -31,23 +29,19 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=		.tar.bz2
 
-MULTI_PACKAGES=		-main -docs -fam
+MULTI_PACKAGES=		-main -docs
 
 MODULES=		devel/gettext
 
-WANTLIB-main=		c
+WANTLIB-main=		c m
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			pcre:pcre->=7.2:devel/pcre
+			pcre:pcre->=7.2:devel/pcre \
+			fam.>=1::sysutils/gamin,no_server,no_python
 
 PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
-
-LIB_DEPENDS-fam=	${LIB_DEPENDS-main} \
-			gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0::${BASE_PKGPATH},-main \
-			fam::sysutils/fam
-WANTLIB-fam=		m rpcsvc stdc++
 
 # disable optimization on powerpc because it can lead to a
 # segfault under some circumstances

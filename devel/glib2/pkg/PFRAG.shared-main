@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2008/04/09 13:10:18 jasper Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.3 2009/12/04 08:08:31 ajacoutot Exp $
+lib/gio/modules/libgiofam.so
 @lib lib/libgio-2.0.so.${LIBgio-2.0_VERSION}
 @lib lib/libglib-2.0.so.${LIBglib-2.0_VERSION}
 @lib lib/libgmodule-2.0.so.${LIBgmodule-2.0_VERSION}

@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2009/10/04 18:17:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2009/12/04 08:08:31 ajacoutot Exp $
+@conflict glib2-fam-*
 @pkgpath devel/glib2
+@pkgpath devel/glib2,-fam
 %%SHARED%%
 @bin bin/glib-genmarshal
 bin/glib-gettextize
@@ -168,6 +170,8 @@ include/glib-2.0/gobject/gvaluetypes.h
 @comment lib/charset.alias
 lib/gio/
 lib/gio/modules/
+@comment lib/gio/modules/libgiofam.a
+@comment lib/gio/modules/libgiofam.la
 lib/glib-2.0/
 lib/glib-2.0/include/
 lib/glib-2.0/include/glibconfig.h
