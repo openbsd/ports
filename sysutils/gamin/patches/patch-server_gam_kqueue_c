@@ -1,4 +1,4 @@
-$OpenBSD: patch-server_gam_kqueue_c,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+$OpenBSD: patch-server_gam_kqueue_c,v 1.2 2009/12/05 17:03:40 ajacoutot Exp $
 
 From FreeBSD:
 Make sure that excluded paths do not get opened (but rather they will be
@@ -12,8 +12,8 @@ OpenBSD does not have maxfilesperproc, which means max_open_files will
 default to "0" and kqueue will never be used.
 
 --- server/gam_kqueue.c.orig	Wed Jul  4 15:50:41 2007
-+++ server/gam_kqueue.c	Sun Nov 29 17:05:35 2009
-@@ -31,7 +32,8 @@
++++ server/gam_kqueue.c	Sat Dec  5 17:40:55 2009
+@@ -31,7 +31,8 @@
   *           - kqueue needs to be moved out the UFS code.
   *
   * Copyright (C) 2005 Joe Marcus Clarke <marcus@FreeBSD.org>
@@ -23,7 +23,7 @@ default to "0" and kqueue will never be used.
   *
   * This library is free software; you can redistribute it and/or
   * modify it under the terms of the GNU Lesser General Public
-@@ -58,10 +60,12 @@
+@@ -58,10 +59,12 @@
  #include <sys/stat.h>
  #include <sys/event.h>
  #include <sys/time.h>
@@ -36,7 +36,7 @@ default to "0" and kqueue will never be used.
  #include "gam_server.h"
  #include "gam_poll_basic.h"
  
-@@ -323,20 +327,6 @@ gam_kqueue_isdir (const char *pathname, MonitorFlags f
+@@ -323,20 +326,6 @@ gam_kqueue_isdir (const char *pathname, MonitorFlags f
      }
  }
  
@@ -57,7 +57,7 @@ default to "0" and kqueue will never be used.
  /*** HashTable ***************************************************************/
  
  static HashTable *
-@@ -509,33 +499,49 @@ static gboolean
+@@ -509,33 +498,49 @@ static gboolean
  gam_kqueue_monitor_enable_kqueue (Monitor *mon)
  {
    struct kevent ev[1];
@@ -66,16 +66,16 @@ default to "0" and kqueue will never be used.
    if (open_files == max_open_files)
      {
        GAM_DEBUG(DEBUG_INFO, "cannot open %s (max_open_files limit reached), falling back to poll\n", mon->pathname);
-       return FALSE;
-     }
--  
--  mon->fd = open(mon->pathname, O_RDONLY | O_NOFOLLOW);
++      goto poll;
++    }
 + 
 +  if (gam_exclude_check(mon->pathname))
 +    {
 +      GAM_DEBUG(DEBUG_INFO, "not using kqueue for %s since it is excluded, falling back to poll\n", mon->pathname);
-+      return FALSE;
-+    }
+       return FALSE;
+     }
+-  
+-  mon->fd = open(mon->pathname, O_RDONLY | O_NOFOLLOW);
 +
 +  mon->fd = open(mon->pathname, O_RDONLY | O_NONBLOCK | O_NOFOLLOW);
    if (mon->fd < 0)
@@ -113,7 +113,7 @@ default to "0" and kqueue will never be used.
  }
  
  static void
-@@ -840,6 +846,9 @@ gam_kqueue_sub_monitor_emit_event (SubMonitor *smon,
+@@ -840,6 +845,9 @@ gam_kqueue_sub_monitor_emit_event (SubMonitor *smon,
      case GAMIN_EVENT_MOVED:
        gam_kqueue_sub_monitor_set_missing(smon);
        break;
@@ -123,7 +123,7 @@ default to "0" and kqueue will never be used.
      }
  
    gam_server_emit_event(mon->pathname, isdir, event, smon->subs, 1);
-@@ -981,6 +990,9 @@ gam_kqueue_file_monitor_emit_event (FileMonitor *fmon,
+@@ -981,6 +989,9 @@ gam_kqueue_file_monitor_emit_event (FileMonitor *fmon,
  	
        gam_kqueue_hash_table_remove(fmon->smon->fmons, fmon);
        break;
@@ -133,7 +133,7 @@ default to "0" and kqueue will never be used.
      }
  }
  
-@@ -1133,10 +1145,15 @@ gam_kqueue_init (void)
+@@ -1133,10 +1144,15 @@ gam_kqueue_init (void)
        return FALSE;
      }
  
@@ -152,7 +152,7 @@ default to "0" and kqueue will never be used.
  
    /*
     * We make sure to:
-@@ -1145,9 +1162,13 @@ gam_kqueue_init (void)
+@@ -1145,9 +1161,13 @@ gam_kqueue_init (void)
     */
  
    maxfiles *= CFG_GLOBAL_FILE_RESERVE_RATIO;

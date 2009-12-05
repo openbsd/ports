@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/12/05 17:03:40 ajacoutot Exp $
 
 COMMENT-main=	file and directory monitoring system
 COMMENT-server=	gamin file monitoring server
@@ -8,7 +8,7 @@ GNOME_PROJECT=	gamin
 GNOME_VERSION=	0.1.10
 
 PKGNAME-main=	libgamin-${GNOME_VERSION}
-PKGNAME-server=	${DISTNAME}
+PKGNAME-server=	${DISTNAME}p0
 PKGNAME-python=	py-gamin-${GNOME_VERSION}
 
 SHARED_LIBS +=  gamin-1              0.0      # .1.10
@@ -72,7 +72,8 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--without-threads
 
 .ifdef DEBUG
-CONFIGURE_ARGS+= --enable-debug
+CONFIGURE_ARGS+= --enable-debug \
+		--enable-debug-api
 .else
 CONFIGURE_ARGS+= --disable-debug
 .endif
