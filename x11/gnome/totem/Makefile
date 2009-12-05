@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2009/11/29 09:24:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2009/12/05 22:43:37 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.28.4
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	multimedia
 
@@ -47,7 +48,8 @@ RUN_DEPENDS+=	::x11/gnome/settings-daemon \
 		:iso-codes-*:devel/iso-codes \
 		::x11/gromit \
 		::devel/py-gdata \
-		::net/galago-daemon
+		::net/galago-daemon \
+		::devel/py-xdg
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS} \
 		gstaudio-0.10,gstinterfaces-0.10,gstpbutils-0.10,gstvideo-0.10,gsttag-0.10:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
 		totem-plparser:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
