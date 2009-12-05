@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/12/05 17:03:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/05 22:55:36 ajacoutot Exp $
 
 COMMENT-main=	file and directory monitoring system
 COMMENT-server=	gamin file monitoring server
@@ -8,7 +8,7 @@ GNOME_PROJECT=	gamin
 GNOME_VERSION=	0.1.10
 
 PKGNAME-main=	libgamin-${GNOME_VERSION}
-PKGNAME-server=	${DISTNAME}p0
+PKGNAME-server=	${DISTNAME}p1
 PKGNAME-python=	py-gamin-${GNOME_VERSION}
 
 SHARED_LIBS +=  gamin-1              0.0      # .1.10
