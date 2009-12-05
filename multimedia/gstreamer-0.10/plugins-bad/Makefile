@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/12/02 22:20:11 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2009/12/05 23:21:01 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (bad)
@@ -8,7 +8,7 @@ COMMENT-mjpeg =		gstmplex and gstmpeg2enc elements for GStreamer (bad)
 V =			0.10.17
 DISTNAME =		gst-plugins-bad-$V
 
-PKGNAME-main =		gstreamer-plugins-bad-${V}p0
+PKGNAME-main =		gstreamer-plugins-bad-${V}p1
 PKGNAME-neon =		gstreamer-neon-$V
 PKGNAME-real =		gstreamer-real-$V
 PKGNAME-mjpeg =		gstreamer-mjpeg-$V
@@ -48,6 +48,7 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			mpcdec.>=3::audio/libmpcdec \
 			faac.>=1::audio/faac \
 			faad.>=2::audio/faad \
+			dca::audio/libdca \
 			exif.>=12::graphics/libexif \
 			xvidcore.>=4::multimedia/xvidcore \
 			SDL.>=8::devel/sdl \
@@ -92,7 +93,6 @@ CONFIGURE_ARGS =	--disable-acm \
 			--disable-directdraw \
 			--disable-directsound \
 			--disable-divx \
-			--disable-dts \
 			--disable-dvb \
 			--disable-fbdev \
 			--disable-jack \
