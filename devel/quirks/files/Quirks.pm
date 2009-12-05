@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.3 2009/12/05 11:19:08 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.4 2009/12/05 11:28:48 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -56,11 +56,11 @@ sub tweak_list
 
 my $perllib = $Config{archlib};
 my $base_exceptions = {
-	'p5-version' => "/usr/libdata/perl5/version.pm"
+	'p5-version' => "/usr/libdata/perl5/version.pm",
+	'tmux' => "/usr/bin/tmux",
 };
 
 my $stem_extensions = {
-	foo => 'bar'
 };
 
 # ->is_base_system($handle, $state):
