@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.2 2009/12/05 10:12:58 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.3 2009/12/05 11:19:08 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -26,14 +26,14 @@ package OpenBSD::Quirks;
 sub new
 {
 	my ($class, $version) = @_;
-	if ($version == 0) {
-		return OpenBSD::Quirks0->new;
+	if ($version == 1) {
+		return OpenBSD::Quirks1->new;
 	} else {
 		return undef;
 	}
 }
 
-package OpenBSD::Quirks0;
+package OpenBSD::Quirks1;
 use Config;
 sub new
 {
@@ -59,6 +59,10 @@ my $base_exceptions = {
 	'p5-version' => "/usr/libdata/perl5/version.pm"
 };
 
+my $stem_extensions = {
+	foo => 'bar'
+};
+
 # ->is_base_system($handle, $state):
 #	checks whether an existing handle is now part of the base system
 #	and thus no longer needed.
@@ -67,7 +71,6 @@ sub is_base_system
 {
 	my ($self, $handle, $state) = @_;
 	my $stem = OpenBSD::PackageName::splitstem($handle->pkgname);
-	$state->say("Checking $stem");
 	my $test = $base_exceptions->{$stem};
 	if (defined $test && -e $test) {
 		$state->say("Removing ", $handle->pkgname, 
@@ -78,12 +81,21 @@ sub is_base_system
 	}
 }
 
-# ->search_object($handle, $state):
-#	returns a search object for a given handle, in case (for instance)
+# ->tweak_search(\@s, $handle, $state):
+#	tweaks the normal search for a given handle, in case (for instance)
 #	of a stem name change.
 
-sub search_object
+sub tweak_search
 {
-	return undef;
+	my ($self, $l, $handle, $state) = @_;
+
+	if (@$l != 1 || !$l->[0]->can("add_stem")) {
+		return;
+	}
+	my $stem = OpenBSD::PackageName::splitstem($handle->pkgname);
+	if (defined $stem_extensions->{$stem}) {
+		$l->[0]->add_stem($stem_extensions->{$stem});
+	}
 }
+
 1;
