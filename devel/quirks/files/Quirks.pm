@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.4 2009/12/05 11:28:48 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.5 2009/12/05 12:28:26 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -61,6 +61,7 @@ my $base_exceptions = {
 };
 
 my $stem_extensions = {
+	'thunar-vcs-plugin' => 'thunar-vcs',
 };
 
 # ->is_base_system($handle, $state):
