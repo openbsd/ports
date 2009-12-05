@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/05/15 16:36:50 jim Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/05 14:45:08 jim Exp $
 bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
@@ -17,8 +17,12 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/__init__.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/botobackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/botobackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cloudfilesbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cloudfilesbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/giobackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/giobackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/hsibackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/hsibackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/imapbackend.py
@@ -29,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/rsyncbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/rsyncbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/sshbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/sshbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/tahoebackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/tahoebackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/webdavbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/webdavbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/collections.py
@@ -85,6 +91,14 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/util.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/util.pyc
 @man man/man1/duplicity.1
 @man man/man1/rdiffdir.1
+share/locale/bg/LC_MESSAGES/duplicity.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/duplicity.mo
+share/locale/eo/LC_MESSAGES/duplicity.mo
+share/locale/es/LC_MESSAGES/duplicity.mo
 share/locale/io/
 share/locale/io/LC_MESSAGES/
 share/locale/io/LC_MESSAGES/duplicity.mo
+share/locale/pt/LC_MESSAGES/duplicity.mo
+share/locale/zh_CN/LC_MESSAGES/duplicity.mo
