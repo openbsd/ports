@@ -1,4 +1,4 @@
-$OpenBSD: patch-server_gam_kqueue_c,v 1.4 2009/12/06 13:38:54 ajacoutot Exp $
+$OpenBSD: patch-server_gam_kqueue_c,v 1.5 2009/12/06 17:48:37 ajacoutot Exp $
 
 From FreeBSD:
 Make sure that excluded paths do not get opened (but rather they will be
@@ -13,7 +13,7 @@ default to "0" and kqueue will never be used. Instead, use get+setrlimit
 to get a correct value.
 
 --- server/gam_kqueue.c.orig	Wed Jul  4 15:50:41 2007
-+++ server/gam_kqueue.c	Sat Dec  5 23:10:14 2009
++++ server/gam_kqueue.c	Sun Dec  6 18:40:54 2009
 @@ -31,7 +31,8 @@
   *           - kqueue needs to be moved out the UFS code.
   *
@@ -156,16 +156,12 @@ to get a correct value.
    /*
     * We make sure to:
     *	- never paralyze the system (CFG_GLOBAL_FILE_RESERVE_RATIO)
-@@ -1145,9 +1163,28 @@ gam_kqueue_init (void)
+@@ -1145,6 +1163,23 @@ gam_kqueue_init (void)
     */
  
    maxfiles *= CFG_GLOBAL_FILE_RESERVE_RATIO;
-+#if defined(KERN_MAXFILESPERPROC)
-   maxfilesperproc = maxfilesperproc > CFG_SELF_FILE_RESERVE
-     ? maxfilesperproc - CFG_SELF_FILE_RESERVE
-     : 0;
-+#else
-+  maxfilesperproc = 0; /* XXX 128 */
++  maxfilesperproc = 128;
++
 +  struct rlimit rlp;
 +  if (getrlimit(RLIMIT_NOFILE, &rlp) == 0)
 +    {
@@ -177,11 +173,10 @@ to get a correct value.
 +        }
 +      else
 +        {
-+// XXX kqueue hangs
-+//          maxfilesperproc = rlp.rlim_max;
++          maxfilesperproc = rlp.rlim_max;
 +        }
 +    }
-+#endif
- 
-   max_open_files = MIN(maxfiles, maxfilesperproc);
- 
++
+   maxfilesperproc = maxfilesperproc > CFG_SELF_FILE_RESERVE
+     ? maxfilesperproc - CFG_SELF_FILE_RESERVE
+     : 0;
