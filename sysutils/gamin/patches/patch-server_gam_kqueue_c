@@ -1,4 +1,4 @@
-$OpenBSD: patch-server_gam_kqueue_c,v 1.3 2009/12/05 22:55:36 ajacoutot Exp $
+$OpenBSD: patch-server_gam_kqueue_c,v 1.4 2009/12/06 13:38:54 ajacoutot Exp $
 
 From FreeBSD:
 Make sure that excluded paths do not get opened (but rather they will be
@@ -165,7 +165,7 @@ to get a correct value.
      ? maxfilesperproc - CFG_SELF_FILE_RESERVE
      : 0;
 +#else
-+  maxfilesperproc = 128;
++  maxfilesperproc = 0; /* XXX 128 */
 +  struct rlimit rlp;
 +  if (getrlimit(RLIMIT_NOFILE, &rlp) == 0)
 +    {
