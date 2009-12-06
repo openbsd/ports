@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Nov 16 23:14:46 2009
-+++ Makefile	Tue Nov 17 14:30:55 2009
+--- Makefile.orig	Sun Dec  6 04:51:25 2009
++++ Makefile	Sun Dec  6 10:39:37 2009
 @@ -218,7 +218,7 @@ uname_V := $(shell sh -c 'uname -v 2>/dev/null || echo
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
@@ -57,7 +57,7 @@
  
  export TCL_PATH TCLTK_PATH
  
-@@ -803,13 +797,12 @@ ifeq ($(uname_S),FreeBSD)
+@@ -806,13 +800,12 @@ ifeq ($(uname_S),FreeBSD)
  	endif
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -74,7 +74,7 @@
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -1083,7 +1076,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
+@@ -1082,7 +1075,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
  	PROGRAMS += git-imap-send$X
  endif
  ifndef NO_OPENSSL
