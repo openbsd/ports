@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/08 22:48:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/06 22:07:39 naddy Exp $
 @shell bin/zoid
 ${P5SITE}/Bundle/
 ${P5SITE}/Bundle/Zoidberg.pm
@@ -21,7 +21,6 @@ ${P5SITE}/Zoidberg/Utils/Error.pm
 ${P5SITE}/Zoidberg/Utils/FileSystem.pm
 ${P5SITE}/Zoidberg/Utils/GetOpt.pm
 ${P5SITE}/Zoidberg/Utils/Output.pm
-${P5SITE}/auto/
 ${P5SITE}/auto/Zoidberg/
 ${P5SITE}/auto/Zoidberg/Fish/
 ${P5SITE}/auto/Zoidberg/Fish/Commands/
