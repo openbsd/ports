@@ -1,0 +1,35 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2009/12/06 19:29:16 jasper Exp $
+
+Install AfterStep.desktop regardless of whether GNOME is found.
+
+--- Makefile.in.orig	Sun Dec  6 20:16:59 2009
++++ Makefile.in	Sun Dec  6 20:16:46 2009
+@@ -112,25 +112,9 @@ install.desktop: AfterStep.desktop.final mkdir.share
+ 	fi; fi; fi
+ 
+ install.wmprops:
+-	@if [ -d $(SHAREDIR)/gnome/wm-properties ] ; then \
+-	if [ -w $(SHAREDIR)/gnome/wm-properties ] ; then \
+-	echo $(CP) AfterStep.desktop $(SHAREDIR)/gnome/wm-properties/; \
+-	$(CP) AfterStep.desktop $(SHAREDIR)/gnome/wm-properties/; \
+-	else \
+-	echo "$(SHAREDIR)/gnome/wm-properties exists but is not writable."; \
+-	echo "If you want AfterStep to appear in your Gnome menu, please install as root."; \
+-	fi \
+-	fi
+-	@if [ -d $(GNOME_SHAREDIR)/wm-properties ] ; then \
+-	if [ -w $(GNOME_SHAREDIR)/wm-properties ] ; then \
+-	 echo $(CP) AfterStep.desktop $(GNOME_SHAREDESTDIR)/wm-properties/; \
+-	 $(MKDIR) -p $(GNOME_SHAREDESTDIR)/wm-properties; \
+-	 $(CP) AfterStep.desktop $(GNOME_SHAREDESTDIR)/wm-properties/; \
+-	else \
+-	echo "$(GNOME_SHAREDIR)/wm-properties exists but is not writable."; \
+-	echo "If you want AfterStep to appear in your Gnome menu, please install as root."; \
+-	fi \
+-	fi
++	echo $(CP) AfterStep.desktop $(GNOME_SHAREDESTDIR)/wm-properties/; \
++	$(MKDIR) -p $(GNOME_SHAREDESTDIR)/wm-properties; \
++	$(CP) AfterStep.desktop $(GNOME_SHAREDESTDIR)/wm-properties/;
+ 
+ install.share:
+ 	@(cd afterstep; ${MAKE} install || exit 1)

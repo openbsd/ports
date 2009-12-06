@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2009/12/06 15:09:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2009/12/06 19:29:16 jasper Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
@@ -24,6 +24,7 @@ WANTLIB += png pthread pthread-stubs tiff xcb z
 
 MODULES=	devel/gettext
 
+BUILD_DEPENDS=	::devel/libexecinfo
 RUN_DEPENDS=	::shells/bash \
 		:asclock-*:x11/asclock,classic,english \
 		::x11/aterm
