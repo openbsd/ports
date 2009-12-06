@@ -1,0 +1,15 @@
+$OpenBSD: patch-libAfterBase_safemalloc_h,v 1.1 2009/12/06 15:09:22 jasper Exp $
+
+malloc() is in stdlib.h, so stop warning.
+
+--- libAfterBase/safemalloc.h.orig	Thu Dec  3 22:32:23 2009
++++ libAfterBase/safemalloc.h	Thu Dec  3 22:32:41 2009
+@@ -1,7 +1,7 @@
+ #ifndef SAFEMALLOC_H_HEADER_INCLUDED
+ #define SAFEMALLOC_H_HEADER_INCLUDED
+ 
+-#ifdef HAVE_MALLOC_H
++#if defined(HAVE_MALLOC_H) && !defined(__OpenBSD__)
+ #include <malloc.h>
+ #else
+ #ifdef HAVE_STDLIB_H

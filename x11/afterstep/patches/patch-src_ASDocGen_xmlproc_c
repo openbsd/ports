@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_ASDocGen_xmlproc_c,v 1.1 2009/12/06 15:09:22 jasper Exp $
+
+Fix build on sparc64.
+
+--- src/ASDocGen/xmlproc.c.orig	Thu Dec  3 22:33:41 2009
++++ src/ASDocGen/xmlproc.c	Thu Dec  3 22:34:15 2009
+@@ -504,9 +504,10 @@ add_glossary_item( xml_elem_t* doc, ASXMLInterpreterSt
+ 	 	char *target = NULL, *target2 ;
+ 		char *term = NULL, *term2 ;
+ 		char *ptr = &(state->dest_file[strlen(state->dest_file)-4]);
++		size_t curr_url_anchor_len = state->curr_url_anchor ? strlen(state->curr_url_anchor) : 0;
+ 		if( state->doc_type == DocType_PHP && *ptr == '.')
+ 			*ptr = '\0' ;
+-		target = safemalloc( strlen( state->dest_file)+5+1+strlen(state->curr_url_anchor)+1);
++		target = safemalloc( strlen( state->dest_file)+5+1+curr_url_anchor_len+1);
+ 		sprintf( target, "%s#%s", state->dest_file, state->curr_url_anchor );
+ 		if( state->doc_type == DocType_PHP && *ptr == '\0' )
+ 			*ptr = '.' ;

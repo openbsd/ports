@@ -1,0 +1,27 @@
+$OpenBSD: patch-afterstep_Makefile_in,v 1.1 2009/12/06 15:09:22 jasper Exp $
+
+Don't create share/afterstep_old.
+
+--- afterstep/Makefile.in.orig	Mon Jan  7 23:14:35 2008
++++ afterstep/Makefile.in	Thu Dec  3 22:31:29 2009
+@@ -30,19 +30,7 @@ remove_old:
+ 		fi
+ 
+ install.data_reinstall:		remove_old
+-	@$(RMF) no_data_reinstall ; \
+-	if [ -d $(AFTER_SHAREDIR) ] ; then \
+-	   echo $(MV) $(AFTER_SHAREDIR) $(AFTER_SHAREDIR)_old; \
+-	   $(MV) $(AFTER_SHAREDIR) $(AFTER_SHAREDIR)_old; \
+-	   if [ -d $(AFTER_SHAREDIR)_old/desktop -a -d $(AFTER_SHAREDIR)_old/desktop/tiles  ] ; then \
+-		no_data_reinstall=$(NO_DATA_REINSTALL); \
+-	   fi; \
+-	   if [ -n "$$no_data_reinstall" ]; then \
+-		touch no_data_reinstall; \
+-	   fi; \
+-	 else \
+-	   echo "no previous installation detected"; \
+-	 fi
++	@$(RMF) no_data_reinstall
+ 
+ share_dirs: 
+ 	 $(MKDIR) -p $(AFTER_SHAREDIR)

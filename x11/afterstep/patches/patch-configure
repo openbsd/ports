@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure,v 1.1 2009/12/06 15:09:22 jasper Exp $
+--- configure.orig	Mon May  4 22:56:26 2009
++++ configure	Thu Dec  3 17:09:42 2009
+@@ -1810,7 +1810,7 @@ fi;
+ # Check whether --enable-reuse-font or --disable-reuse-font was given.
+ if test "${enable_reuse_font+set}" = set; then
+   enableval="$enable_reuse_font"
+-  if test x$enableval == "xyes"; then
++  if test x$enableval = "xyes"; then
+ cat >>confdefs.h <<\_ACEOF
+ #define MODULE_REUSE_LOADED_FONT 1
+ _ACEOF
+@@ -8131,7 +8131,7 @@ fi
+ 
+ 
+ if test "x$enable_staticlibs" = "xyes"; then
+-   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a"
++   AFTERBASE_LIB="../../libAfterBase/libAfterBase.a ${LOCALBASE}/lib/libexecinfo.a"
+    AFTERIMAGE_LIB="../../libAfterImage/libAfterImage.a"
+    AFTERSTEP_LIB="../../libAfterStep/libAfterStep.a"
+    AFTERCONF_LIB="../../libAfterConf/libAfterConf.a"
+@@ -8152,7 +8152,7 @@ else
+    		LIBINSTALL="install.cyg"
+ 		LIBUNINSTALL="uninstall.cyg"
+ 	else
+-   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so"
++   		AFTERBASE_LIB="../../libAfterBase/libAfterBase.so ${LOCALBASE}/lib/libexecinfo.a"
+    		AFTERIMAGE_LIB="../../libAfterImage/libAfterImage.so"
+    		AFTERSTEP_LIB="../../libAfterStep/libAfterStep.so"
+    		AFTERCONF_LIB="../../libAfterConf/libAfterConf.so"
+@@ -8164,7 +8164,7 @@ else
+ 	fi
+ fi
+ 
+-AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a"
++AFTERBASE_STATIC_LIB="../../libAfterBase/libAfterBase.a ${LOCALBASE}/lib/libexecinfo.a"
+ AFTERIMAGE_STATIC_LIB="../../libAfterImage/libAfterImage.a"
+ AFTERSTEP_STATIC_LIB="../../libAfterStep/libAfterStep.a"
+ AFTERCONF_STATIC_LIB="../../libAfterConf/libAfterConf.a"

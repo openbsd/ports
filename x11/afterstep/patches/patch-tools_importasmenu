@@ -1,0 +1,9 @@
+$OpenBSD: patch-tools_importasmenu,v 1.1 2009/12/06 15:09:22 jasper Exp $
+--- tools/importasmenu.orig	Fri Dec  4 11:40:00 2009
++++ tools/importasmenu	Fri Dec  4 11:40:10 2009
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ 
+ if [[ "X$1" = "X" || "X$2" = "X" ]]; then
+     echo "Usage: importasmenu <foreignmenudir> <targetasmenudir>";

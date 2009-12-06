@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_afterstepdoc_in,v 1.1 2009/12/06 15:09:22 jasper Exp $
+
+Set a more sensible order.
+
+--- doc/afterstepdoc.in.orig	Fri Dec  4 11:57:33 2009
++++ doc/afterstepdoc.in	Fri Dec  4 11:58:12 2009
+@@ -9,7 +9,7 @@
+ # First try standard path, then local, then other possible paths
+ #
+ 
+-for app in opera konqueror firefox mozilla netscape; do 
++for app in firefox konqueror opera; do 
+ 	full_path=`which $app`
+ 	if [ "x$full_path" != "x" ] ; then
+      		$app @datadir@/afterstep/doc/html/index.html & exit

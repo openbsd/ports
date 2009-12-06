@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_WinCommand_WinCommand_c,v 1.1 2009/12/06 15:09:22 jasper Exp $
+
+Declare at the right place and remove trailing whitespace.
+
+--- src/WinCommand/WinCommand.c.orig	Thu Dec  3 22:36:28 2009
++++ src/WinCommand/WinCommand.c	Thu Dec  3 22:36:58 2009
+@@ -307,12 +307,13 @@ main( int argc, char **argv )
+ 	ASBiDirElem *curr;
+ 	char *command;
+ 	action_t *a;
+-	ASWinCommandState WinCommandState ; 
++	ASWinCommandState WinCommandState ;
++	ASBiDirList *operations;
+ 
+ 	InitMyApp (CLASS_WINCOMMAND, argc, argv, NULL, NULL, OPTION_SINGLE|OPTION_RESTART );
+ 	ConnectX( ASDefaultScr, 0 );
+ 
+-	ASBiDirList *operations = create_asbidirlist( NULL );
++	operations = create_asbidirlist( NULL );
+ 	
+ 	/* Initialize State */
+ 	memset( &WinCommandState, 0x00, sizeof(WinCommandState));
