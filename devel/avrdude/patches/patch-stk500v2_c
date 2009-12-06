@@ -1,0 +1,45 @@
+$OpenBSD: patch-stk500v2_c,v 1.3 2009/12/06 02:05:51 ckuethe Exp $
+--- stk500v2.c.orig	Fri Jul 10 15:39:37 2009
++++ stk500v2.c	Sat Dec  5 16:10:58 2009
+@@ -312,6 +312,7 @@ static void stk500v2_jtagmkII_setup(PROGRAMMER * pgm)
+ static void stk500v2_teardown(PROGRAMMER * pgm)
+ {
+   free(pgm->cookie);
++  pgm->cookie = NULL;
+ }
+ 
+ static void stk500v2_jtagmkII_teardown(PROGRAMMER * pgm)
+@@ -323,6 +324,7 @@ static void stk500v2_jtagmkII_teardown(PROGRAMMER * pg
+   jtagmkII_teardown(pgm);
+ 
+   free(mycookie);
++  pgm->cookie = NULL;
+ }
+ 
+ 
+@@ -1124,12 +1126,14 @@ static int stk500hv_initialize(PROGRAMMER * pgm, AVRPA
+   if ((PDATA(pgm)->flash_pagecache = malloc(PDATA(pgm)->flash_pagesize)) == NULL) {
+     fprintf(stderr, "%s: stk500pp_initialize(): Out of memory\n",
+ 	    progname);
++    PDATA(pgm)->eeprom_pagecache = NULL;
+     return -1;
+   }
+   if ((PDATA(pgm)->eeprom_pagecache = malloc(PDATA(pgm)->eeprom_pagesize)) == NULL) {
+     fprintf(stderr, "%s: stk500pp_initialize(): Out of memory\n",
+ 	    progname);
+     free(PDATA(pgm)->flash_pagecache);
++    PDATA(pgm)->flash_pagecache = NULL;
+     return -1;
+   }
+   PDATA(pgm)->flash_pageaddr = PDATA(pgm)->eeprom_pageaddr = (unsigned long)-1L;
+@@ -3586,8 +3590,8 @@ void stk500v2_dragon_isp_initpgm(PROGRAMMER * pgm)
+   pgm->paged_load     = stk500v2_paged_load;
+   pgm->print_parms    = stk500v2_print_parms;
+   pgm->set_sck_period = stk500v2_set_sck_period_mk2;
+-  pgm->setup          = jtagmkII_setup;
+-  pgm->teardown       = jtagmkII_teardown;
++  pgm->setup          = stk500v2_jtagmkII_setup;
++  pgm->teardown       = stk500v2_jtagmkII_teardown;
+   pgm->page_size      = 256;
+ }
+ 
