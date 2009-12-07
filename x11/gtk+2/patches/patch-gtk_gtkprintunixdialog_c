@@ -1,0 +1,33 @@
+$OpenBSD: patch-gtk_gtkprintunixdialog_c,v 1.1 2009/12/07 18:26:16 jasper Exp $
+
+Fix build with gcc 2.
+
+--- gtk/gtkprintunixdialog.c.orig	Mon Dec  7 00:57:57 2009
++++ gtk/gtkprintunixdialog.c	Mon Dec  7 01:00:03 2009
+@@ -2587,12 +2587,15 @@ draw_page_cb (GtkWidget          *widget,
+   GtkNumberUpLayout number_up_layout;
+   gint start_x, end_x, start_y, end_y;
+   gint dx, dy;
++  gint font_size;
+   gboolean horizontal;
+   GtkPageSetup *page_setup;
+   gdouble paper_width, paper_height;
+   gdouble pos_x, pos_y;
+   gint pages_per_sheet;
+   gboolean ltr = TRUE;
++  PangoContext *pango_c = NULL;
++  PangoFontDescription *pango_f = NULL;
+ 
+   orientation = gtk_page_setup_get_orientation (priv->page_setup);
+   landscape =
+@@ -2863,9 +2866,7 @@ draw_page_cb (GtkWidget          *widget,
+       font = pango_font_description_new ();
+       pango_font_description_set_family (font, "sans");
+ 
+-      PangoContext *pango_c = NULL;
+-      PangoFontDescription *pango_f = NULL;
+-      gint font_size = 12 * PANGO_SCALE;
++      font_size = 12 * PANGO_SCALE;
+ 
+       pango_c = gtk_widget_get_pango_context (widget);
+       if (pango_c != NULL)
