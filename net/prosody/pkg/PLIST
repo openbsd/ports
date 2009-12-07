@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/06 18:40:57 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/07 01:16:09 jolan Exp $
 @newgroup _prosody:638
 @newuser _prosody:638:_prosody:daemon:prosody user:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -7,7 +7,6 @@ lib/prosody/core/
 lib/prosody/core/actions.lua
 lib/prosody/core/componentmanager.lua
 lib/prosody/core/configmanager.lua
-lib/prosody/core/discomanager.lua
 lib/prosody/core/eventmanager.lua
 lib/prosody/core/hostmanager.lua
 lib/prosody/core/loggingmanager.lua
@@ -27,6 +26,7 @@ lib/prosody/modules/mod_actions_http.lua
 lib/prosody/modules/mod_announce.lua
 lib/prosody/modules/mod_bosh.lua
 lib/prosody/modules/mod_component.lua
+lib/prosody/modules/mod_compression.lua
 lib/prosody/modules/mod_console.lua
 lib/prosody/modules/mod_debug.lua
 lib/prosody/modules/mod_dialback.lua
@@ -34,9 +34,9 @@ lib/prosody/modules/mod_disco.lua
 lib/prosody/modules/mod_groups.lua
 lib/prosody/modules/mod_httpserver.lua
 lib/prosody/modules/mod_iq.lua
+lib/prosody/modules/mod_lastactivity.lua
 lib/prosody/modules/mod_legacyauth.lua
 lib/prosody/modules/mod_message.lua
-lib/prosody/modules/mod_muc.lua
 lib/prosody/modules/mod_offline.lua
 lib/prosody/modules/mod_pep.lua
 lib/prosody/modules/mod_ping.lua
@@ -56,6 +56,9 @@ lib/prosody/modules/mod_version.lua
 lib/prosody/modules/mod_watchregistrations.lua
 lib/prosody/modules/mod_welcome.lua
 lib/prosody/modules/mod_xmlrpc.lua
+lib/prosody/modules/muc/
+lib/prosody/modules/muc/mod_muc.lua
+lib/prosody/modules/muc/muc.lib.lua
 lib/prosody/net/
 lib/prosody/net/adns.lua
 lib/prosody/net/connlisteners.lua
@@ -71,22 +74,21 @@ lib/prosody/net/xmppserver_listener.lua
 lib/prosody/prosody.version
 lib/prosody/util/
 lib/prosody/util/array.lua
+lib/prosody/util/broadcast.lua
 lib/prosody/util/dataforms.lua
 lib/prosody/util/datamanager.lua
 lib/prosody/util/datetime.lua
 lib/prosody/util/dependencies.lua
-lib/prosody/util/discohelper.lua
 lib/prosody/util/events.lua
+lib/prosody/util/helpers.lua
 lib/prosody/util/hmac.lua
 lib/prosody/util/import.lua
 lib/prosody/util/iterators.lua
 lib/prosody/util/jid.lua
 lib/prosody/util/logger.lua
-lib/prosody/util/muc.lua
 lib/prosody/util/multitable.lua
 lib/prosody/util/pluginloader.lua
 lib/prosody/util/prosodyctl.lua
-lib/prosody/util/pubsub.lua
 lib/prosody/util/sasl.lua
 lib/prosody/util/serialization.lua
 lib/prosody/util/set.lua
