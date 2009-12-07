@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/03/22 22:48:03 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/12/07 11:07:02 jasper Exp $
 @group daemon
 lib/
 lib/php/
@@ -7,10 +7,15 @@ pear/lib/Mail/
 pear/lib/Mail.php
 pear/lib/Mail/RFC822.php
 pear/lib/Mail/mail.php
+pear/lib/Mail/mock.php
 pear/lib/Mail/null.php
 pear/lib/Mail/sendmail.php
 pear/lib/Mail/smtp.php
+pear/lib/Mail/smtpmx.php
 pear/tests/Mail/
 pear/tests/Mail/tests/
+pear/tests/Mail/tests/9137.phpt
+pear/tests/Mail/tests/9137_2.phpt
 pear/tests/Mail/tests/rfc822.phpt
 pear/tests/Mail/tests/smtp_error.phpt
+pear/tests/Mail/tests/validateQuotedString.php
