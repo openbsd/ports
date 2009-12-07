@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.5 2009/10/17 19:34:34 steven Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.6 2009/12/07 06:27:59 steven Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @bin bin/purple-client-example
@@ -105,6 +105,8 @@ lib/purple-2/libirc.la
 lib/purple-2/libirc.so
 lib/purple-2/libmsn.la
 lib/purple-2/libmsn.so
+lib/purple-2/libmxit.la
+lib/purple-2/libmxit.so
 lib/purple-2/libmyspace.la
 lib/purple-2/libmyspace.so
 lib/purple-2/libnovell.la

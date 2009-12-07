@@ -1,7 +1,7 @@
-$OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.5 2009/03/05 06:23:05 steven Exp $
---- libpurple/protocols/silc/silc.c.orig	Tue Feb  3 14:27:09 2009
-+++ libpurple/protocols/silc/silc.c	Mon Mar  2 02:10:13 2009
-@@ -671,31 +671,12 @@ silcpurple_close(PurpleConnection *gc)
+$OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.6 2009/12/07 06:27:59 steven Exp $
+--- libpurple/protocols/silc/silc.c.orig	Sun Nov 29 22:13:53 2009
++++ libpurple/protocols/silc/silc.c	Sun Dec  6 13:05:09 2009
+@@ -672,31 +672,12 @@ silcpurple_close(PurpleConnection *gc)
  	SilcPurpleTask task;
  #endif /* __SILC_TOOLKIT_VERSION */
  	GHashTable *ui_info;
@@ -34,7 +34,7 @@ $OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.5 2009/03/05 06:23:05 steven
  	if (sg->conn)
  		silc_client_close_connection(sg->client, sg->conn);
  
-@@ -1841,9 +1822,6 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
+@@ -1842,9 +1823,6 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
  {
  	PurpleConnection *gc;
  	SilcPurple sg;
@@ -44,7 +44,7 @@ $OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.5 2009/03/05 06:23:05 steven
  								   
  	gc = purple_conversation_get_gc(conv);
  
-@@ -1855,23 +1833,8 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
+@@ -1856,23 +1834,8 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
  	if (sg == NULL)
  		return PURPLE_CMD_RET_FAILED;
  

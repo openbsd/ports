@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.18 2009/09/08 06:35:24 steven Exp $
---- configure.ac.orig	Sat Sep  5 17:12:04 2009
-+++ configure.ac	Mon Sep  7 11:08:19 2009
+$OpenBSD: patch-configure_ac,v 1.19 2009/12/07 06:27:59 steven Exp $
+--- configure.ac.orig	Sun Nov 29 22:13:44 2009
++++ configure.ac	Sun Dec  6 13:05:08 2009
 @@ -956,7 +956,7 @@ else
  	if test "$ac_silc_libs" != "no"; then
  		SILC_LIBS="-L$ac_silc_libs"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.18 2009/09/08 06:35:24 steven Exp $
  	AC_CHECK_LIB(silcclient, silc_client_init, [silcclient=yes], , $SILC_LIBS)
  
  	if test "x$silcincludes" = "xyes" -a "x$silcclient" = "xyes"; then
-@@ -1661,6 +1661,11 @@ AM_CONDITIONAL(INSTALL_SSL_CERTIFICATES, test "x$SSL_C
+@@ -1664,6 +1664,11 @@ AM_CONDITIONAL(INSTALL_SSL_CERTIFICATES, test "x$SSL_C
  
  dnl These two are inverses of each other <-- stolen from evolution!
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-configure_ac,v 1.18 2009/09/08 06:35:24 steven Exp $
  AC_ARG_ENABLE(gnutls,
  	[  --enable-gnutls=[yes,no]  attempt to use GnuTLS for SSL support [default=yes]],
  	[enable_gnutls="$enableval"],
-@@ -1671,10 +1676,98 @@ AC_ARG_ENABLE(nss,
+@@ -1674,10 +1679,98 @@ AC_ARG_ENABLE(nss,
  	[enable_nss="$enableval"],
  	[enable_nss="yes"])
  
@@ -123,7 +123,7 @@ $OpenBSD: patch-configure_ac,v 1.18 2009/09/08 06:35:24 steven Exp $
  dnl #
  if test "x$enable_gnutls" != "xno"; then
  	enable_gnutls="no"
-@@ -2055,17 +2148,32 @@ fi
+@@ -2075,17 +2168,32 @@ fi
  
  AM_CONDITIONAL(USE_NSS, test "x$enable_nss" = "xyes")
  

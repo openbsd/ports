@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2009/11/23 05:44:07 steven Exp $
+# $OpenBSD: Makefile,v 1.56 2009/12/07 06:27:59 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,11 +6,11 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.6.3
+VERSION=	2.6.4
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
-FULLPKGNAME-libpurple= libpurple-${VERSION}p0
+FULLPKGNAME-libpurple= libpurple-${VERSION}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
@@ -75,7 +75,8 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.61
+# Should be 2.64
+AUTOCONF_VERSION= 2.62
 CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-cap \
 		 --disable-doxygen \
