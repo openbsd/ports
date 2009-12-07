@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/11/23 05:44:49 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2009/12/07 06:28:32 steven Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Facebook plugin for Pidgin
 
-V =		1.63
+V =		1.64
 DISTNAME =	pidgin-facebookchat-source-${V}
 PKGNAME =	pidgin-facebookchat-${V}
 CATEGORIES =	net
