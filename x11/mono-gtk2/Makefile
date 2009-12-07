@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/09/06 07:27:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/12/07 12:51:06 ajacoutot Exp $
 
 COMMENT=	.NET language binding for the GTK+2 toolkit
 
@@ -7,7 +7,7 @@ MINOR=		9
 VERSION=	2.${MAJOR}.${MINOR}
 
 DISTNAME=	gtk-sharp-${VERSION}
-PKGNAME=	mono-gtk2-${VERSION}
+PKGNAME=	mono-gtk2-${VERSION}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://mono-project.com/GtkSharp

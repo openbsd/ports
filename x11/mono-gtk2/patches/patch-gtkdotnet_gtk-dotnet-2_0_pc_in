@@ -1,9 +1,16 @@
-$OpenBSD: patch-gtkdotnet_gtk-dotnet-2_0_pc_in,v 1.1.1.1 2008/10/16 16:02:07 robert Exp $
---- gtkdotnet/gtk-dotnet-2.0.pc.in.orig	Mon Apr  7 10:36:18 2008
-+++ gtkdotnet/gtk-dotnet-2.0.pc.in	Mon Apr  7 10:36:26 2008
+$OpenBSD: patch-gtkdotnet_gtk-dotnet-2_0_pc_in,v 1.2 2009/12/07 12:51:07 ajacoutot Exp $
+--- gtkdotnet/gtk-dotnet-2.0.pc.in.orig	Wed Jan  7 17:54:14 2009
++++ gtkdotnet/gtk-dotnet-2.0.pc.in	Mon Dec  7 13:41:02 2009
 @@ -1,4 +1,4 @@
 -prefix=${pcfiledir}/../..
 +prefix=@prefix@
  exec_prefix=${prefix}
  libdir=${exec_prefix}/lib
  
+@@ -6,5 +6,5 @@ libdir=${exec_prefix}/lib
+ Name: Gtk.DotNet
+ Description: .NET Extensions for Gtk
+ Version: @VERSION@
+-Requires:gtk-sharp-2.0
++Requires: gtk-sharp-2.0
+ Libs: -r:${libdir}/mono/@PACKAGE_VERSION@/gtk-dotnet.dll
