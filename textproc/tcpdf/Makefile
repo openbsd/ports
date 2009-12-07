@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/27 12:14:10 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/07 01:04:06 jolan Exp $
 
 COMMENT=	PHP class for generating PDF documents
-DISTNAME=	tcpdf_4_8_016
-PKGNAME=	tcpdf-4.8.016
+DISTNAME=	tcpdf_4_8_017
+PKGNAME=	tcpdf-4.8.017
 EXTRACT_SUFX=	.zip
 CATEGORIES=	textproc www/php5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcpdf/}
