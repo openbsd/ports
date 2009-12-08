@@ -1,6 +1,19 @@
 # Blogsum README.OpenBSD
-# To finish installing Blogsum, the following steps must be completed.
 
+
+#########################
+### UPGRADING BLOGSUM ###
+#########################
+
+1) Add any new settings from Blogsum/Config.pm.dist into your
+   local Blogsum/Config.pm.
+
+2)  Stop and start your Apache service.
+
+
+##########################
+### INSTALLING BLOGSUM ###
+##########################
 
 1)  Enable the mod_perl module:
 
