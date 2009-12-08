@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2009/12/04 08:10:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2009/12/08 19:00:21 landry Exp $
 
 COMMENT=	Xfce4 file manager
 
 XFCE_VERSION=	1.0.1
 XFCE_PROJECT=	Thunar
 # :L is here for a reason
-PKGNAME=	${DISTNAME:L}p2
+PKGNAME=	${DISTNAME:L}p3
 
 SHARED_LIBS=	thunarx-1	5.1 \
 		thunar-vfs-1	5.1
@@ -20,8 +20,6 @@ MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 NO_REGRESS=	Yes
 
-AUTOCONF_VERSION= 2.61
-CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--disable-gnome-thumbnailers \
 		--enable-startup-notification \
 		--enable-exif \
