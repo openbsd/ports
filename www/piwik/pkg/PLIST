@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/10/22 08:18:54 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/12/09 13:59:18 giovanni Exp $
 @group daemon
 piwik/
 piwik/LICENSE
@@ -54,6 +54,7 @@ piwik/core/DataTable/Filter/ColumnCallbackAddColumnPercentage.php
 piwik/core/DataTable/Filter/ColumnCallbackAddMetadata.php
 piwik/core/DataTable/Filter/ColumnCallbackDeleteRow.php
 piwik/core/DataTable/Filter/ColumnCallbackReplace.php
+piwik/core/DataTable/Filter/ColumnDelete.php
 piwik/core/DataTable/Filter/ExcludeLowPopulation.php
 piwik/core/DataTable/Filter/Limit.php
 piwik/core/DataTable/Filter/MetadataCallbackAddMetadata.php
@@ -161,15 +162,16 @@ piwik/core/Updates/0.2.12.php
 piwik/core/Updates/0.2.13.php
 piwik/core/Updates/0.2.24.php
 piwik/core/Updates/0.2.27.php
+piwik/core/Updates/0.2.32.php
 piwik/core/Updates/0.2.33.php
 piwik/core/Updates/0.2.34.php
 piwik/core/Updates/0.2.35.php
 piwik/core/Updates/0.2.37.php
 piwik/core/Updates/0.4.1.php
 piwik/core/Updates/0.4.2.php
-piwik/core/Updates/0.4.3.php
 piwik/core/Updates/0.4.4.php
 piwik/core/Updates/0.4.php
+piwik/core/Updates/0.5.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View.php
@@ -561,6 +563,7 @@ piwik/libs/Zend/Feed/Reader/Feed/Atom.php
 piwik/libs/Zend/Feed/Reader/Feed/Rss.php
 piwik/libs/Zend/Feed/Reader/FeedAbstract.php
 piwik/libs/Zend/Feed/Reader/FeedInterface.php
+piwik/libs/Zend/Feed/Reader/FeedSet.php
 piwik/libs/Zend/Feed/Rss.php
 piwik/libs/Zend/Http/
 piwik/libs/Zend/Http/Client/
@@ -577,7 +580,17 @@ piwik/libs/Zend/Http/Cookie.php
 piwik/libs/Zend/Http/CookieJar.php
 piwik/libs/Zend/Http/Exception.php
 piwik/libs/Zend/Http/Response.php
+piwik/libs/Zend/Loader/
 piwik/libs/Zend/Loader.php
+piwik/libs/Zend/Loader/Autoloader/
+piwik/libs/Zend/Loader/Autoloader.php
+piwik/libs/Zend/Loader/Autoloader/Interface.php
+piwik/libs/Zend/Loader/Autoloader/Resource.php
+piwik/libs/Zend/Loader/Exception.php
+piwik/libs/Zend/Loader/PluginLoader/
+piwik/libs/Zend/Loader/PluginLoader.php
+piwik/libs/Zend/Loader/PluginLoader/Exception.php
+piwik/libs/Zend/Loader/PluginLoader/Interface.php
 piwik/libs/Zend/Log/
 piwik/libs/Zend/Log.php
 piwik/libs/Zend/Log/Exception.php
@@ -735,28 +748,38 @@ piwik/libs/javascript/json2.js
 piwik/libs/javascript/sprintf.js
 piwik/libs/jquery/
 piwik/libs/jquery/fdd2div-modified.js
-piwik/libs/jquery/jquery-calendar.css
-piwik/libs/jquery/jquery-calendar.js
+piwik/libs/jquery/jquery-ui.js
+piwik/libs/jquery/jquery.bgiframe.js
 piwik/libs/jquery/jquery.blockUI.js
-piwik/libs/jquery/jquery.dimensions.js
 piwik/libs/jquery/jquery.history.js
 piwik/libs/jquery/jquery.js
 piwik/libs/jquery/jquery.scrollTo-min.js
 piwik/libs/jquery/jquery.scrollTo.js
-piwik/libs/jquery/macFFBgHack.png
 piwik/libs/jquery/original lib/
-piwik/libs/jquery/original lib/jquery-calendar.js
+piwik/libs/jquery/original lib/jquery-ui.js
 piwik/libs/jquery/original lib/jquery.blockUI.js
-piwik/libs/jquery/original lib/jquery.dimensions.js
 piwik/libs/jquery/original lib/jquery.history.js
 piwik/libs/jquery/original lib/jquery.js
 piwik/libs/jquery/original lib/jquery.scrollTo.js
-piwik/libs/jquery/original lib/ui.mouse.js
 piwik/libs/jquery/stop.png
 piwik/libs/jquery/superfish_modified.js
-piwik/libs/jquery/thickbox-loading.gif
-piwik/libs/jquery/thickbox.css
-piwik/libs/jquery/thickbox.js
+piwik/libs/jquery/themes/
+piwik/libs/jquery/themes/base/
+piwik/libs/jquery/themes/base/images/
+piwik/libs/jquery/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png
+piwik/libs/jquery/themes/base/images/ui-bg_flat_75_ffffff_40x100.png
+piwik/libs/jquery/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png
+piwik/libs/jquery/themes/base/images/ui-bg_glass_65_ffffff_1x400.png
+piwik/libs/jquery/themes/base/images/ui-bg_glass_75_dadada_1x400.png
+piwik/libs/jquery/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png
+piwik/libs/jquery/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png
+piwik/libs/jquery/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+piwik/libs/jquery/themes/base/images/ui-icons_222222_256x240.png
+piwik/libs/jquery/themes/base/images/ui-icons_2e83ff_256x240.png
+piwik/libs/jquery/themes/base/images/ui-icons_454545_256x240.png
+piwik/libs/jquery/themes/base/images/ui-icons_888888_256x240.png
+piwik/libs/jquery/themes/base/images/ui-icons_cd0a0a_256x240.png
+piwik/libs/jquery/themes/base/jquery-ui.css
 piwik/libs/jquery/tooltip/
 piwik/libs/jquery/tooltip/___jquery.tooltip.js
 piwik/libs/jquery/tooltip/bg.gif
@@ -773,8 +796,6 @@ piwik/libs/jquery/tooltip/shadow.png
 piwik/libs/jquery/tooltip/shadow2.png
 piwik/libs/jquery/truncate/
 piwik/libs/jquery/truncate/jquery.truncate.js
-piwik/libs/jquery/ui.mouse.js
-piwik/libs/jquery/ui.sortable_modif.js
 piwik/libs/json/
 piwik/libs/json/json.js
 piwik/libs/open-flash-chart/
@@ -884,10 +905,13 @@ piwik/plugins/API/API.php
 piwik/plugins/API/Controller.php
 piwik/plugins/API/templates/
 piwik/plugins/API/templates/listAllAPI.tpl
+piwik/plugins/API/templates/styles.css
 piwik/plugins/Actions/
 piwik/plugins/Actions/API.php
 piwik/plugins/Actions/Actions.php
 piwik/plugins/Actions/Controller.php
+piwik/plugins/Actions/tests/
+piwik/plugins/Actions/tests/Actions.test.php
 piwik/plugins/CoreAdminHome/
 piwik/plugins/CoreAdminHome/Controller.php
 piwik/plugins/CoreAdminHome/CoreAdminHome.php
@@ -904,6 +928,7 @@ piwik/plugins/CoreHome/CoreHome.php
 piwik/plugins/CoreHome/templates/
 piwik/plugins/CoreHome/templates/broadcast.js
 piwik/plugins/CoreHome/templates/calendar.js
+piwik/plugins/CoreHome/templates/cloud.css
 piwik/plugins/CoreHome/templates/cloud.tpl
 piwik/plugins/CoreHome/templates/datatable.css
 piwik/plugins/CoreHome/templates/datatable.js
@@ -1010,6 +1035,7 @@ piwik/plugins/Feedback/
 piwik/plugins/Feedback/Controller.php
 piwik/plugins/Feedback/Feedback.php
 piwik/plugins/Feedback/templates/
+piwik/plugins/Feedback/templates/feedback.js
 piwik/plugins/Feedback/templates/index.tpl
 piwik/plugins/Feedback/templates/sent.tpl
 piwik/plugins/Goals/
@@ -1036,6 +1062,7 @@ piwik/plugins/Installation/Installation.php
 piwik/plugins/Installation/View.php
 piwik/plugins/Installation/templates/
 piwik/plugins/Installation/templates/allSteps.tpl
+piwik/plugins/Installation/templates/databaseCheck.tpl
 piwik/plugins/Installation/templates/databaseSetup.tpl
 piwik/plugins/Installation/templates/displayJavascriptCode.tpl
 piwik/plugins/Installation/templates/finished.tpl
@@ -1060,6 +1087,16 @@ piwik/plugins/Live/Live.php
 piwik/plugins/Live/Visitor.php
 piwik/plugins/Live/templates/
 piwik/plugins/Live/templates/images/
+piwik/plugins/Live/templates/images/file0.png
+piwik/plugins/Live/templates/images/file1.png
+piwik/plugins/Live/templates/images/file2.png
+piwik/plugins/Live/templates/images/file3.png
+piwik/plugins/Live/templates/images/file4.png
+piwik/plugins/Live/templates/images/file5.png
+piwik/plugins/Live/templates/images/file6.png
+piwik/plugins/Live/templates/images/file7.png
+piwik/plugins/Live/templates/images/file8.png
+piwik/plugins/Live/templates/images/file9.png
 piwik/plugins/Live/templates/images/pause.gif
 piwik/plugins/Live/templates/images/pause_disabled.gif
 piwik/plugins/Live/templates/images/play.gif
@@ -1069,7 +1106,7 @@ piwik/plugins/Live/templates/index.tpl
 piwik/plugins/Live/templates/lastVisits.tpl
 piwik/plugins/Live/templates/scripts/
 piwik/plugins/Live/templates/scripts/spy.js
-piwik/plugins/Live/templates/structure.tpl
+piwik/plugins/Live/templates/totalVisits.tpl
 piwik/plugins/Login/
 piwik/plugins/Login/Auth.php
 piwik/plugins/Login/Controller.php
