@@ -1,5 +1,6 @@
+$OpenBSD: patch-config_cf_Motif_tmpl,v 1.1 2009/12/09 23:21:46 jasper Exp $
 --- config/cf/Motif.tmpl.orig	Sat Jan  5 16:20:50 2002
-+++ config/cf/Motif.tmpl	Sat Jun 30 11:57:54 2007
++++ config/cf/Motif.tmpl	Thu Dec 10 00:20:05 2009
 @@ -179,7 +179,7 @@ XCOMM $TOG: Motif.tmpl /main/6 1999/05/19 17:00:05 mgr
  # define YaccFlags /**/
  #endif

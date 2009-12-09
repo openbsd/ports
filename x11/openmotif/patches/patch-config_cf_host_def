@@ -1,5 +1,6 @@
+$OpenBSD: patch-config_cf_host_def,v 1.1 2009/12/09 23:21:46 jasper Exp $
 --- config/cf/host.def.orig	Mon Jan  7 19:10:03 2002
-+++ config/cf/host.def	Sat Jun 30 11:57:54 2007
++++ config/cf/host.def	Thu Dec 10 00:20:05 2009
 @@ -1,13 +1,128 @@
  #define TopLevelProject         Motif
 -#define ProjectRoot             /usr/X11R6

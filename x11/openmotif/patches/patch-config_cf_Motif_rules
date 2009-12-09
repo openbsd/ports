@@ -1,5 +1,6 @@
---- config/cf/Motif.rules.orig	Sat Jun 30 10:10:29 2007
-+++ config/cf/Motif.rules	Sat Jun 30 10:17:42 2007
+$OpenBSD: patch-config_cf_Motif_rules,v 1.1 2009/12/09 23:21:46 jasper Exp $
+--- config/cf/Motif.rules.orig	Sat Jan  5 16:20:49 2002
++++ config/cf/Motif.rules	Thu Dec 10 00:20:05 2009
 @@ -50,10 +50,10 @@ XCOMM $TOG: Motif.rules /main/8 1999/03/22 15:12:48 mg
  # define MotifIsTopLevelProject	NO
  #endif
