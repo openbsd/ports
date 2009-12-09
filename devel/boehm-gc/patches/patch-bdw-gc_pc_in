@@ -1,0 +1,10 @@
+$OpenBSD: patch-bdw-gc_pc_in,v 1.1 2009/12/09 20:36:49 sthen Exp $
+--- bdw-gc.pc.in.orig	Mon Dec  7 10:57:34 2009
++++ bdw-gc.pc.in	Mon Dec  7 10:57:46 2009
+@@ -6,5 +6,5 @@ includedir=@includedir@
+ Name: Boehm-Demers-Weiser Conservative Garbage Collector
+ Description: A garbage collector for C and C++
+ Version: @PACKAGE_VERSION@
+-Libs: -L${libdir} -lgc
++Libs: -L${libdir} -lgc -pthread
+ Cflags: -I${includedir}
