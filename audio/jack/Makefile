@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/13 23:06:14 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.10 2009/12/09 10:15:08 jakemsr Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ COMMENT =		low latency sound server
 
 V =			0.116.1
 DISTNAME =		jack-audio-connection-kit-${V}
-PKGNAME =		jack-${V}p2
+PKGNAME =		jack-${V}p3
 
 SHARED_LIBS +=		jack		0.0	# 0.28
 SHARED_LIBS +=		jackserver	0.0	# 0.28
@@ -65,5 +65,9 @@ post-patch:
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} automake --add-missing --foreign
 	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jack
+	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/jack
 
 .include <bsd.port.mk>

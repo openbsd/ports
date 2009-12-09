@@ -1,0 +1,55 @@
+$OpenBSD: patch-drivers_sun_sun_driver_c,v 1.4 2009/12/09 10:15:08 jakemsr Exp $
+--- drivers/sun/sun_driver.c.orig	Wed Jul  2 23:47:34 2008
++++ drivers/sun/sun_driver.c	Wed Dec  9 00:40:08 2009
+@@ -468,14 +468,6 @@ copy_and_convert_in (jack_sample_t *dst, void *src, 
+ 			}
+ 			break;
+ 		case 24:
+-			scale = 1.0f / 0x7fffff;
+-			for (dstidx = 0; dstidx < nframes; dstidx++)
+-			{
+-				dst[dstidx] = (jack_sample_t)
+-					s32src[srcidx] * scale;
+-				srcidx += chcount;
+-			}
+-			break;
+ 		case 32:
+ 			scale = 1.0f / 0x7fffffff;
+ 			for (dstidx = 0; dstidx < nframes; dstidx++)
+@@ -522,16 +514,6 @@ copy_and_convert_out (void *dst, jack_sample_t *src, 
+ 			}
+ 			break;
+ 		case 24:
+-			scale = 0x7fffff;
+-			for (srcidx = 0; srcidx < nframes; srcidx++)
+-			{
+-				s32dst[dstidx] = (signed int)
+-					(src[srcidx] >= 0.0f) ?
+-					(src[srcidx] * scale + 0.5f) :
+-					(src[srcidx] * scale - 0.5f);
+-				dstidx += chcount;
+-			}
+-			break;
+ 		case 32:
+ 			scale = 0x7fffffff;
+ 			for (srcidx = 0; srcidx < nframes; srcidx++)
+@@ -771,7 +753,18 @@ sun_driver_set_parameters (sun_driver_t *driver)
+ 
+ 	driver->indevbuf = NULL;
+ 	driver->outdevbuf = NULL;
+-	driver->sample_bytes = driver->bits / 8;
++	switch (driver->bits) {
++	case 16:
++		driver->sample_bytes = 2;
++		break;
++	case 24:
++	case 32:
++		driver->sample_bytes = 4;
++		break;
++	default:
++		jack_error("sun_driver: invalid sample bits");
++		return -1;
++	}
+ 
+ 	if ((strcmp(indev, outdev) == 0) &&
+ 	    ((driver->capture_channels > 0) && (driver->playback_channels > 0)))

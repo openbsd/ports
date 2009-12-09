@@ -1,0 +1,60 @@
+In this package of jackd, the 'dummy', 'sun' and 'sndio' drivers are
+supported. The 'dummy' driver is mostly useful for testing jackd itself.
+The 'sun' driver uses the audio(4) subsystem.  The 'sndio' driver uses
+sndio(7).  To start jackd with default driver parameters, use the
+command 'jackd -d <driver>'.
+
+By default, jackd runs in full-duplex mode with a relatively low
+latency.  This may not be exactly what you want, and it may not be
+possible with all hardware.  Therefore, some configuration options may
+be necessary to effectively use jackd.  The 'sun' and 'sndio' drivers
+use mostly the same configuration options, which can be viewed with the
+command 'jackd -d <driver> -h'.  Below are some tips and caveats to
+consider when using jackd on OpenBSD.
+
+   Some audio devices do not support full-duplex operation.  If jackd
+   errors out on startup with a message about opening a full-duplex
+   device, this is likely the problem.  If the device only supports
+   playback, then the driver needs to be configured to use 0 input
+   channels.  For example 'jackd -d <driver> -i 0' starts jackd in
+   half-duplex play-only mode.
+
+   By default jackd uses 2 periods (blocks) of 1024 frames each.  This
+   means there will be at most 2048 frames in the playback buffer.  Some
+   slower or loaded machines may not be able to keep the playback buffer
+   from underrunning with these conditions.  Jackd is designed to use 2
+   periods, so if underruns are observed, it is best to first increase
+   the period size with the driver's -p option.  The period size should
+   be a power of two.  The number of periods can be increased with the
+   -n option.  For example, 'jackd -d <driver> -p 2048 -n 3'.
+
+   The 'sun' driver uses 48000 and the sndio driver uses 44100 Hz
+   sampling rates by default.  Some devices may not support the default
+   sampe rate.  Or it may be that most of the audio that will pass
+   through jackd is based on a different sample rate.  Avoiding sample
+   rate conversion will use less CPU cycles and perserve audio quality.
+   The -r option can be used to change the sampling rate as in 'jackd -d
+   sun -r 44100'.
+
+   The realtime option -R is commonly used on other operating systems.
+   However, this option is inconsequential on OpenBSD.
+
+   The 'sun' driver reports xruns on stdout.  The 'sndio' driver does
+   not.  The 'sndio' driver is more likely to continue to be developed.
+   Unless you need xrun reporting, the 'sndio' driver is recommended.
+
+   It is possible to run jackd on top of aucat(1) with the 'sndio'
+   driver.  However, there are some caveats.  First, the aucat server
+   must be running at a higher than default scheduling priority.
+   aucat(1) has an example for doing this with renice(8).  Secondly, it
+   is a very good idea to make sure the sample rates used for jackd and
+   aucat are the same.  Third, period sizes in aucat and jackd must be
+   the same.  Finally, jackd must be configured to use at least 4
+   periods.  The following command sequence starts aucat and jackd such
+   that they can work together.
+
+     $ aucat -l -b 512 -z 256 -r 48000
+     $ sudo renice -10 `pgrep -x aucat`
+     $ jackd -d sndio -p 256 -n 4 -r 48000
+
+   There is no MIDI driver for OpenBSD in jackd.

@@ -244,8 +244,6 @@ sndio_driver_set_parameters (sndio_driver_t *driver)
 	unsigned int nperiods;
 	int mode = 0;
 
-	driver->sample_bytes = driver->bits / 8;
-
 	if (driver->capture_channels > 0)
 		mode |= SIO_REC;
 
@@ -258,6 +256,12 @@ sndio_driver_set_parameters (sndio_driver_t *driver)
 		jack_error("sndio_driver: failed to open device "
 			"%s: %s@%i", (driver->dev == NULL) ?
 			"default" : driver->dev, __FILE__, __LINE__);
+		return -1;
+	}
+
+	if (driver->bits != 16 && driver->bits != 24 && driver->bits != 32)
+	{
+		jack_error("sndio_driver: invalid sample bits");
 		return -1;
 	}
 
@@ -295,8 +299,9 @@ sndio_driver_set_parameters (sndio_driver_t *driver)
 	}
 
 	period_size = par.round;
-	nperiods = par.bufsz / par.round;
-	driver->buffer_fill = par.bufsz;
+	nperiods = par.appbufsz / par.round;
+	driver->buffer_fill = par.appbufsz;
+	driver->sample_bytes = par.bps;
 
 	if (period_size != 0 && !driver->ignorehwbuf &&
 		(period_size != driver->period_size || 
@@ -403,16 +408,17 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 		driver->poll_next = 0;
 	}
 
+	snfds = sio_nfds(driver->hdl);
+
 	while (need_capture || need_playback)
 	{
-		events = revents = 0;
+		events = 0;
 		if (need_capture != 0)
 			events |= POLLIN;
 
 		if (need_playback != 0)
 			events |= POLLOUT;
 
-		snfds = sio_nfds(driver->hdl);
 		if (snfds != sio_pollfd(driver->hdl, &pfd, events)) {
 			jack_error("sndio_driver: sio_pollfd failed: %s@%i",
 				__FILE__, __LINE__);
@@ -455,10 +461,12 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 			if (driver->realpos > driver->cappos)
 				used = driver->realpos - driver->cappos;
 			cap_avail = used;
+
+			if (cap_avail >= driver->period_size)
+				need_capture = 0;
+
 			if (cap_avail > driver->buffer_fill)
-			{
-				jack_error("sndio_driver: capture overrun");
-			}
+				jack_error("sndio_driver: capture xrun");
 		}
 
 		if (driver->playback_channels > 0)
@@ -467,31 +475,12 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 			if (driver->playpos > driver->realpos)
 				used = driver->playpos - driver->realpos;
 			play_avail = driver->buffer_fill - used;
-			if (play_avail > driver->buffer_fill)
-			{
-				jack_error("sndio_driver: playback underrun");
-			}
-		}
 
-		if (driver->capture_channels > 0 &&
-		    driver->playback_channels > 0)
-		{
-			if ((driver->realpos > 0 &&
-				(play_avail != driver->period_size ||
-				  cap_avail != driver->period_size) &&
-				!(!play_avail && !cap_avail && !need_playback &&
-				  need_capture)) ||
-			    (driver->realpos == 0 &&
-				!play_avail && !cap_avail && need_playback &&
-				!need_capture))
-			{
-				jack_error("sndio_driver: out of sync: "
-					"rp=%lld pa=%lld ca=%lld np=%d nc=%d",
-					driver->realpos, play_avail, cap_avail,
-					need_playback, need_capture);
-				*status = -5;
-				return 0;
-			}
+			if (play_avail >= driver->period_size)
+				need_playback = 0;
+
+			if (play_avail > driver->buffer_fill)
+				jack_error("sndio_driver: playback xrun");
 		}
 	}
 
@@ -579,14 +568,6 @@ copy_and_convert_in (jack_sample_t *dst, void *src,
 			}
 			break;
 		case 24:
-			scale = 1.0f / 0x7fffff;
-			for (dstidx = 0; dstidx < nframes; dstidx++)
-			{
-				dst[dstidx] = (jack_sample_t)
-					s32src[srcidx] * scale;
-				srcidx += chcount;
-			}
-			break;
 		case 32:
 			scale = 1.0f / 0x7fffffff;
 			for (dstidx = 0; dstidx < nframes; dstidx++)
@@ -633,16 +614,6 @@ copy_and_convert_out (void *dst, jack_sample_t *src,
 			}
 			break;
 		case 24:
-			scale = 0x7fffff;
-			for (srcidx = 0; srcidx < nframes; srcidx++)
-			{
-				s32dst[dstidx] = (signed int)
-					(src[srcidx] >= 0.0f) ?
-					(src[srcidx] * scale + 0.5f) :
-					(src[srcidx] * scale - 0.5f);
-				dstidx += chcount;
-			}
-			break;
 		case 32:
 			scale = 0x7fffffff;
 			for (srcidx = 0; srcidx < nframes; srcidx++)
