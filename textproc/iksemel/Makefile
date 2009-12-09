@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/01 07:19:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/12/09 21:51:58 ajacoutot Exp $
 
 COMMENT=		XML parser designed for Jabber applications
 DISTNAME=		iksemel-1.3
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 SHARED_LIBS=		iksemel		0.1	# .4.0
 
@@ -28,7 +28,10 @@ LIB_DEPENDS=		gnutls.>=12::security/gnutls
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-libgnutls-prefix=${LOCALBASE} \
 			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+
+# XXX check on update whether this is still necessary
+post-extract:
+	${INSTALL} -m 555 ${FILESDIR}/libgnutls-config ${WRKDIR}/bin
 
 .include <bsd.port.mk>
