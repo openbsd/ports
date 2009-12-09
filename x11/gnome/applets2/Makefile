@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2009/12/07 11:39:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2009/12/09 10:48:25 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -64,7 +64,7 @@ MULTI_PACKAGES=		-main
 CONFIGURE_ARGS+=	--disable-battstat
 .else
 MULTI_PACKAGES+=	-battstat
-RUN_DEPENDS-battstat=	${BUILD_PKGPATH},-main
+RUN_DEPENDS-battstat=	::${BUILD_PKGPATH},-main
 .endif
 
 MODGCONF2_SCHEMAS_DIR=	gnome-applets2
