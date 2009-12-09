@@ -1,6 +1,6 @@
-$OpenBSD: patch-ld_emulparams_avr1_sh,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
+$OpenBSD: patch-ld_emulparams_avr1_sh,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
 --- ld/emulparams/avr1.sh.orig	Wed May 24 00:36:11 2006
-+++ ld/emulparams/avr1.sh	Sat Sep 27 20:20:28 2008
++++ ld/emulparams/avr1.sh	Sun Dec  6 21:48:54 2009
 @@ -7,5 +7,6 @@ EMBEDDED=yes
  TEMPLATE_NAME=elf32
  

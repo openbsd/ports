@@ -1,6 +1,6 @@
-$OpenBSD: patch-opcodes_avr-dis_c,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
---- opcodes/avr-dis.c.orig	Mon Aug  6 12:58:38 2007
-+++ opcodes/avr-dis.c	Sat Sep 27 20:20:28 2008
+$OpenBSD: patch-opcodes_avr-dis_c,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
+--- opcodes/avr-dis.c.orig	Thu Jul  5 02:49:00 2007
++++ opcodes/avr-dis.c	Sun Dec  6 21:48:54 2009
 @@ -50,7 +50,7 @@ static const char * comment_start = "0x";
  
  static int

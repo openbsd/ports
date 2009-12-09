@@ -1,6 +1,6 @@
-$OpenBSD: patch-ld_scripttempl_avr_sc,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
---- ld/scripttempl/avr.sc.orig	Wed May 24 00:36:12 2006
-+++ ld/scripttempl/avr.sc	Sat Sep 27 20:20:28 2008
+$OpenBSD: patch-ld_scripttempl_avr_sc,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
+--- ld/scripttempl/avr.sc.orig	Thu Oct  9 05:18:31 2008
++++ ld/scripttempl/avr.sc	Sun Dec  6 21:48:54 2009
 @@ -4,9 +4,12 @@ OUTPUT_ARCH(${ARCH})
  
  MEMORY

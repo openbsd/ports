@@ -1,7 +1,7 @@
-$OpenBSD: patch-bfd_bfd-in2_h,v 1.2 2009/12/09 16:55:51 ckuethe Exp $
---- bfd/bfd-in2.h.orig	Wed Aug 20 16:28:57 2008
-+++ bfd/bfd-in2.h	Sun Dec  6 21:48:53 2009
-@@ -1979,6 +1979,13 @@ enum bfd_architecture
+$OpenBSD: patch-bfd_doc_archures_texi,v 1.1 2009/12/09 16:55:51 ckuethe Exp $
+--- bfd/doc/archures.texi.orig	Wed Sep 10 00:50:16 2008
++++ bfd/doc/archures.texi	Sun Dec  6 21:48:53 2009
+@@ -322,6 +322,13 @@ enum bfd_architecture
  #define bfd_mach_avr5          5
  #define bfd_mach_avr51         51
  #define bfd_mach_avr6          6

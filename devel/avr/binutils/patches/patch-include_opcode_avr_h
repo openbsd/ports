@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_opcode_avr_h,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
---- include/opcode/avr.h.orig	Fri Apr  7 08:18:08 2006
-+++ include/opcode/avr.h	Sat Sep 27 20:20:28 2008
-@@ -30,21 +30,31 @@
+$OpenBSD: patch-include_opcode_avr_h,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
+--- include/opcode/avr.h.orig	Fri Aug  8 22:35:13 2008
++++ include/opcode/avr.h	Sun Dec  6 21:48:53 2009
+@@ -30,6 +30,8 @@
  #define AVR_ISA_BRK   0x0400 /* device has BREAK (on-chip debug) */
  #define AVR_ISA_EIND  0x0800 /* device has >128K program memory (none yet) */
  #define AVR_ISA_MOVW  0x1000 /* device has MOVW */
@@ -9,31 +9,17 @@ $OpenBSD: patch-include_opcode_avr_h,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
 +#define AVR_ISA_DES   0x4000 /* device has DES */
  
  #define AVR_ISA_TINY1 (AVR_ISA_1200 | AVR_ISA_LPM)
- #define AVR_ISA_PWMx  (AVR_ISA_M8   | AVR_ISA_BRK)
  #define AVR_ISA_2xxx  (AVR_ISA_TINY1 | AVR_ISA_SRAM)
-+#define AVR_ISA_RF401 (AVR_ISA_2xxx | AVR_ISA_MOVW | AVR_ISA_LPMX)
- #define AVR_ISA_TINY2 (AVR_ISA_2xxx | AVR_ISA_MOVW | AVR_ISA_LPMX | \
-                        AVR_ISA_SPM  | AVR_ISA_BRK)
-+#define AVR_ISA_TINY3 (AVR_ISA_TINY2 | AVR_ISA_MEGA)
- #define AVR_ISA_M8    (AVR_ISA_2xxx | AVR_ISA_MUL | AVR_ISA_MOVW | \
-                        AVR_ISA_LPMX | AVR_ISA_SPM)
- #define AVR_ISA_M603  (AVR_ISA_2xxx | AVR_ISA_MEGA)
- #define AVR_ISA_M103  (AVR_ISA_M603 | AVR_ISA_ELPM)
-+#define AVR_ISA_USB162 (AVR_ISA_M603 | AVR_ISA_MOVW | \
-+			AVR_ISA_LPMX | AVR_ISA_SPM)
-+#define AVR_ISA_AVR3 (AVR_ISA_M603 | AVR_ISA_MOVW | \
-+                       AVR_ISA_LPMX | AVR_ISA_SPM  | AVR_ISA_ELPM)
- #define AVR_ISA_M161  (AVR_ISA_M603 | AVR_ISA_MUL | AVR_ISA_MOVW | \
-                        AVR_ISA_LPMX | AVR_ISA_SPM)
+@@ -48,6 +50,8 @@
  #define AVR_ISA_94K   (AVR_ISA_M603 | AVR_ISA_MUL | AVR_ISA_MOVW | AVR_ISA_LPMX)
  #define AVR_ISA_M323  (AVR_ISA_M161 | AVR_ISA_BRK)
  #define AVR_ISA_M128  (AVR_ISA_M323 | AVR_ISA_ELPM | AVR_ISA_ELPMX)
 +#define AVR_ISA_M256  (AVR_ISA_M128 | AVR_ISA_EIND)
 +#define AVR_ISA_XMEGA (AVR_ISA_M256 | AVR_ISA_SPMX | AVR_ISA_DES)
  
- #define AVR_ISA_ALL   0xFFFF
- 
-@@ -90,6 +100,7 @@
+ #define AVR_ISA_AVR1   AVR_ISA_TINY1
+ #define AVR_ISA_AVR2   AVR_ISA_2xxx
+@@ -108,6 +112,7 @@
     L - signed pc relative offset from -2048 to 2047
     h - absolute code address (call, jmp)
     S - immediate value from 0 to 7 (S = s << 4)
@@ -41,7 +27,7 @@ $OpenBSD: patch-include_opcode_avr_h,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
     ? - use this opcode entry if no parameters, else use next opcode entry
  
     Order is important - some binary opcodes have more than one name,
-@@ -150,7 +161,8 @@ AVR_INSN (reti, "",    "1001010100011000", 1, AVR_ISA_
+@@ -168,7 +173,8 @@ AVR_INSN (reti, "",    "1001010100011000", 1, AVR_ISA_
  AVR_INSN (sleep,"",    "1001010110001000", 1, AVR_ISA_1200, 0x9588)
  AVR_INSN (break,"",    "1001010110011000", 1, AVR_ISA_BRK,  0x9598)
  AVR_INSN (wdr,  "",    "1001010110101000", 1, AVR_ISA_1200, 0x95a8)
@@ -51,7 +37,7 @@ $OpenBSD: patch-include_opcode_avr_h,v 1.1 2008/10/01 04:46:20 ckuethe Exp $
  
  AVR_INSN (adc,  "r,r", "000111rdddddrrrr", 1, AVR_ISA_1200, 0x1c00)
  AVR_INSN (add,  "r,r", "000011rdddddrrrr", 1, AVR_ISA_1200, 0x0c00)
-@@ -263,4 +275,7 @@ AVR_INSN (st,   "e,r", "100!001rrrrree-+", 1, AVR_ISA_
+@@ -281,4 +287,7 @@ AVR_INSN (st,   "e,r", "100!001rrrrree-+", 1, AVR_ISA_
        (>128K program memory, PC = EIND:Z).  */
  AVR_INSN (eicall, "",  "1001010100011001", 1, AVR_ISA_EIND, 0x9519)
  AVR_INSN (eijmp, "",   "1001010000011001", 1, AVR_ISA_EIND, 0x9419)

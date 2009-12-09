@@ -1,0 +1,86 @@
+$OpenBSD: patch-bfd_elf32-avr_c,v 1.1 2009/12/09 16:55:51 ckuethe Exp $
+--- bfd/elf32-avr.c.orig	Tue Dec 23 05:54:49 2008
++++ bfd/elf32-avr.c	Sun Dec  6 21:48:53 2009
+@@ -854,10 +854,11 @@ avr_final_link_relocate (reloc_howto_type *           
+ 	{
+           /* Relative distance is too large.  */
+ 
+-	  /* Always apply WRAPAROUND for avr2 and avr4.  */
++	  /* Always apply WRAPAROUND for avr2, avr25, and avr4.  */
+ 	  switch (bfd_get_mach (input_bfd))
+ 	    {
+ 	    case bfd_mach_avr2:
++	    case bfd_mach_avr25:
+ 	    case bfd_mach_avr4:
+ 	      break;
+ 
+@@ -1327,6 +1328,34 @@ bfd_elf_avr_final_write_processing (bfd *abfd,
+     case bfd_mach_avr6:
+       val = E_AVR_MACH_AVR6;
+       break;
++
++    case bfd_mach_avrxmega1:
++      val = E_AVR_MACH_XMEGA1;
++      break;
++
++    case bfd_mach_avrxmega2:
++      val = E_AVR_MACH_XMEGA2;
++      break;
++
++    case bfd_mach_avrxmega3:
++      val = E_AVR_MACH_XMEGA3;
++      break;
++
++    case bfd_mach_avrxmega4:
++      val = E_AVR_MACH_XMEGA4;
++      break;
++
++    case bfd_mach_avrxmega5:
++      val = E_AVR_MACH_XMEGA5;
++      break;
++
++    case bfd_mach_avrxmega6:
++      val = E_AVR_MACH_XMEGA6;
++      break;
++
++    case bfd_mach_avrxmega7:
++      val = E_AVR_MACH_XMEGA7;
++      break;
+     }
+ 
+   elf_elfheader (abfd)->e_machine = EM_AVR;
+@@ -1388,6 +1417,34 @@ elf32_avr_object_p (bfd *abfd)
+ 
+ 	case E_AVR_MACH_AVR6:
+ 	  e_set = bfd_mach_avr6;
++	  break;
++
++	case E_AVR_MACH_XMEGA1:
++	  e_set = bfd_mach_avrxmega1;
++	  break;
++
++	case E_AVR_MACH_XMEGA2:
++	  e_set = bfd_mach_avrxmega2;
++	  break;
++
++	case E_AVR_MACH_XMEGA3:
++	  e_set = bfd_mach_avrxmega3;
++	  break;
++
++	case E_AVR_MACH_XMEGA4:
++	  e_set = bfd_mach_avrxmega4;
++	  break;
++
++	case E_AVR_MACH_XMEGA5:
++	  e_set = bfd_mach_avrxmega5;
++	  break;
++
++	case E_AVR_MACH_XMEGA6:
++	  e_set = bfd_mach_avrxmega6;
++	  break;
++
++	case E_AVR_MACH_XMEGA7:
++	  e_set = bfd_mach_avrxmega7;
+ 	  break;
+ 	}
+     }
