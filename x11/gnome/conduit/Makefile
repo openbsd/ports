@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2009/11/23 12:10:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2009/12/09 11:57:37 ajacoutot Exp $
 
 # XXX the following modules are commented in PLIST
 # N800Module ===> needs HAL which we don't provide
 # iPodModule ===> needs HAL which we don't provide
+#     (RUN_DEPENDS += audio/libgpod,-python)
 
 COMMENT=		synchronization application for GNOME
 
 GNOME_PROJECT=		conduit
 GNOME_VERSION=		0.3.16
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 HOMEPAGE=		http://www.conduit-project.org/
 
@@ -22,8 +23,7 @@ MODULES=		lang/python \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::audio/libgpod,-python \
-			::devel/gettext \
+RUN_DEPENDS=		::devel/gettext \
 			::devel/xdg-utils \
 			::graphics/py-goocanvas \
 			::textproc/py-vobject \
