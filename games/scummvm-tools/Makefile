@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/07 13:01:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2009/12/09 21:55:01 jsg Exp $
 # XXX hardcoded endian list
 
 COMMENT=	collection of various tools for scummvm
-DISTNAME=	scummvm-tools-0.13.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	scummvm-tools-1.0.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -40,14 +39,14 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm-tools
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/scummvm-tools	
 	${INSTALL_PROGRAM} \
-		${WRKBUILD}/compress_{kyra,queen,saga,scumm_san,scumm_bun} \
-		${WRKBUILD}/compress_{scumm_sou,agos,sword1,sword2,touche} \
-		${WRKBUILD}/compress_tucker \
+		${WRKBUILD}/compress_{agos,gob,kyra,queen,saga} \
+		${WRKBUILD}/compress_{scumm_bun,scumm_san,scumm_sou} \
+		${WRKBUILD}/compress_{sword1,sword2,tinsel,touche,tucker} \
 		${WRKBUILD}/de{cine,kyra,scumm,sword2,gob} \
 		${WRKBUILD}/encode_dxa \
-		${WRKBUILD}/extract_{agos,cine,kyra,loom_tg16,mm_apple,mm_c64} \
-		${WRKBUILD}/extract_{mm_nes,parallaction,scumm_mac,t7g_mac} \
-		${WRKBUILD}/extract_{zak_c64,gob_stk} \
+		${WRKBUILD}/extract_{agos,cine,cruise_pc,kyra,loom_tg16} \
+		${WRKBUILD}/extract_{mm_apple,mm_c64,mm_nes,parallaction} \
+		${WRKBUILD}/extract_{scumm_mac,t7g_mac,zak_c64,gob_stk} \
 		${PREFIX}/bin
 
 .include <bsd.port.mk>

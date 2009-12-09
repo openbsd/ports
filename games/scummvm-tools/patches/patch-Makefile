@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.7 2009/05/21 12:52:57 jsg Exp $
---- Makefile.orig	Thu Feb 19 10:16:35 2009
-+++ Makefile	Fri Mar  6 22:55:56 2009
+$OpenBSD: patch-Makefile,v 1.8 2009/12/09 21:55:01 jsg Exp $
+--- Makefile.orig	Sat Nov  7 00:56:59 2009
++++ Makefile	Sat Nov 14 12:05:40 2009
 @@ -9,7 +9,7 @@ srcdir      ?= .
  
  DEFINES     := -DUNIX
@@ -30,7 +30,7 @@ $OpenBSD: patch-Makefile,v 1.7 2009/05/21 12:52:57 jsg Exp $
  
  #######################################################################
  
-@@ -86,8 +84,8 @@ TARGETS := \
+@@ -89,8 +87,8 @@ TARGETS := \
  	extract_scumm_mac$(EXEEXT) \
  	extract_t7g_mac$(EXEEXT) \
  	extract_zak_c64$(EXEEXT) \
@@ -41,12 +41,15 @@ $OpenBSD: patch-Makefile,v 1.7 2009/05/21 12:52:57 jsg Exp $
  
  UTILS := \
  	utils/adpcm.o \
-@@ -114,37 +112,37 @@ bundle: $(TARGETS)
+@@ -117,43 +115,43 @@ bundle: $(TARGETS)
  	mv $(bundle_name)/Contents/Resources/tools_gui $(bundle_name)/Contents/MacOS/
  
  compress_agos$(EXEEXT): compress_agos.o compress.o util.o
 -	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
 +	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
+ compress_gob$(EXEEXT): compress_gob.o util.o
+ 	$(CXX) $(LDFLAGS) -o $@ $+
  
  compress_kyra$(EXEEXT): compress_kyra.o kyra_pak.o compress.o util.o
 -	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
@@ -80,6 +83,10 @@ $OpenBSD: patch-Makefile,v 1.7 2009/05/21 12:52:57 jsg Exp $
 -	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
 +	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
  
+ compress_tinsel$(EXEEXT): compress_tinsel.o compress.o util.o
+-	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
++	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
+ 
  compress_touche$(EXEEXT): compress_touche.o compress.o util.o
 -	$(CXX) $(LDFLAGS) -o $@ $+ -lvorbis -logg -lvorbisenc -lFLAC
 +	$(CXX) $(LDFLAGS) -o $@ $+ `pkg-config --libs vorbis vorbisenc flac`
@@ -90,7 +97,7 @@ $OpenBSD: patch-Makefile,v 1.7 2009/05/21 12:52:57 jsg Exp $
  
  decine$(EXEEXT): decine.o
  	$(CXX) $(LDFLAGS) -o $@ $+
-@@ -162,7 +160,7 @@ degob$(EXEEXT): degob.o degob_script.o degob_script_v1
+@@ -171,7 +169,7 @@ degob$(EXEEXT): degob.o degob_script.o degob_script_v1
  	$(CXX) $(LDFLAGS) -o $@ $+
  
  encode_dxa$(EXEEXT): encode_dxa.o compress.o util.o
