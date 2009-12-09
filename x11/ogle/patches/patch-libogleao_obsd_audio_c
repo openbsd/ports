@@ -1,0 +1,261 @@
+$OpenBSD: patch-libogleao_obsd_audio_c,v 1.3 2009/12/09 10:19:33 jakemsr Exp $
+--- libogleao/obsd_audio.c.orig	Sat Feb 22 07:06:51 2003
++++ libogleao/obsd_audio.c	Wed Oct 28 11:48:59 2009
+@@ -18,45 +18,54 @@
+ 
+ #ifdef LIBOGLEAO_OBSD
+ 
++#include <errno.h>
++#include <poll.h>
++#include <sndio.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <sys/ioctl.h>
++#include <string.h>
+ #include <unistd.h>
+-#include <inttypes.h>
+ 
+-#include <fcntl.h>
+-#include <sys/audioio.h>
+-
+-#include <sys/types.h>
+-#include <sys/conf.h>
+-
+-#include <string.h>
+-
+ #include "ogle_ao.h"
+ #include "ogle_ao_private.h"
+ 
+ typedef struct obsd_instance_s {
+   ogle_ao_instance_t ao;
+-  int fd;
++  struct sio_hdl *hdl;
+   int sample_rate;
+   int samples_written;
++  int samples_played;
+   int sample_frame_size;
+   int initialized;
++  int started;
+ } obsd_instance_t;
+ 
++static
++void obsd_onmove(void *addr, int delta)
++{
++  obsd_instance_t *instance = (obsd_instance_t *)addr;
++  instance->samples_played += delta;
++}
+ 
+ static
+ int obsd_init(ogle_ao_instance_t *_instance,
+ 		 ogle_ao_audio_info_t *audio_info)
+ {
+-  int single_sample_size;
+-  audio_info_t info;
+   obsd_instance_t *instance = (obsd_instance_t *)_instance;
+-  
+-  AUDIO_INITINFO(&info);
+-  info.play.sample_rate = audio_info->sample_rate;
+-  info.play.precision   = audio_info->sample_resolution;
++  struct sio_par par, askpar;
++  int single_sample_size;
++  int reinit;
+ 
++  reinit = 0;
++  if (instance->started == 1) {
++    reinit = 1;
++    if (!sio_stop(instance->hdl)) {
++      fprintf(stderr, "sio_stop failed\n");
++      return -1;
++    }
++    instance->started = 0;
++  }
++
+   if(audio_info->chtypes != OGLE_AO_CHTYPE_UNSPECIFIED) {
+     // do this only if we have requested specific channels in chtypes
+     // otherwise trust the nr channels
+@@ -69,40 +78,57 @@ int obsd_init(ogle_ao_instance_t *_instance,
+   }
+   audio_info->chlist = NULL;
+ 
+-  info.play.channels = audio_info->channels;
+-  info.lowat = 5;
+-  switch(audio_info->encoding) {
+-  case OGLE_AO_ENCODING_LINEAR:
+-  default:
+-    info.play.encoding = AUDIO_ENCODING_LINEAR;
+-    break;
++  sio_initpar(&par);
++
++  par.bits = audio_info->sample_resolution;
++  par.sig = 1;
++  par.le = 1;
++  par.pchan = audio_info->channels;
++  par.rate = audio_info->sample_rate;
++  par.appbufsz = par.rate / 4;
++
++  askpar = par;
++
++  if (!sio_setpar(instance->hdl, &par)) {
++    fprintf(stderr, "sio_setpar failed\n");
++    return -1;
+   }
+-  
+-  /* set the audio format */
+-  if(ioctl(instance->fd, AUDIO_SETINFO, &info) == -1) {
+-    perror("setinfo");
++  if (!sio_getpar(instance->hdl, &par)) {
++    fprintf(stderr, "sio_getpar failed\n");
+     return -1;
+   }
+-  
+-  /* Check that we actually got the requested nuber of channles,
+-   * the frequency and precision that we asked for?  */
++  if (par.pchan != askpar.pchan ||
++      par.bits != askpar.bits ||
++      (par.rate * 100 > askpar.rate * 105 || par.rate * 100 < askpar.rate * 95)) {
++    fprintf(stderr, "could not configure audio device as desired\n");
++    return -1;
++  }
+ 
+   if(audio_info->chtypes != OGLE_AO_CHTYPE_UNSPECIFIED) {
+-    audio_info->chlist = malloc(info.play.channels * sizeof(ogle_ao_chtype_t));
++    audio_info->chlist = malloc(par.pchan * sizeof(ogle_ao_chtype_t));
+     
+     audio_info->chlist[0] = OGLE_AO_CHTYPE_LEFT;
+     audio_info->chlist[1] = OGLE_AO_CHTYPE_RIGHT;
+   }
+   
+-  /* Stored as 8bit, 16bit, or 32bit */
+-  single_sample_size = (info.play.precision + 7) / 8;
+-  if(single_sample_size > 2) {
+-    single_sample_size = 4;
++  single_sample_size = par.bps;
++  instance->sample_frame_size = single_sample_size * par.pchan;
++  instance->sample_rate = par.rate;
++
++  if (!reinit)
++    sio_onmove(instance->hdl, obsd_onmove, instance);
++  instance->samples_played = 0;
++  instance->samples_written = 0;
++
++  if (!sio_start(instance->hdl)) {
++    fprintf(stderr, "sio_start failed\n");
++    return -1;
+   }
+-  instance->sample_frame_size = single_sample_size*info.play.channels;
++  instance->started = 1;
++
++  audio_info->sample_frame_size = instance->sample_frame_size;
+   instance->initialized = 1;
+   
+-  audio_info->sample_frame_size = instance->sample_frame_size;
+   return 0;
+ }
+ 
+@@ -112,9 +138,9 @@ int obsd_play(ogle_ao_instance_t *_instance, void *sam
+   obsd_instance_t *instance = (obsd_instance_t *)_instance;
+   int written;
+   
+-  written = write(instance->fd, samples, nbyte);
+-  if(written == -1) {
+-    perror("audio write");
++  written = sio_write(instance->hdl, samples, nbyte);
++  if(written != nbyte) {
++    fprintf(stderr, "sio_write failed\n");
+     return -1;
+   }
+   
+@@ -126,15 +152,20 @@ static
+ int obsd_odelay(ogle_ao_instance_t *_instance, uint32_t *samples_return)
+ {
+   obsd_instance_t *instance = (obsd_instance_t *)_instance;
+-  audio_info_t info;
++  struct pollfd pfd;
++  int revents, n;
+   int odelay;
+ 
+-  if (ioctl(instance->fd, AUDIO_GETINFO, &info) == -1) {
+-    perror("AUDIO_GETINFO");
+-    return -1;
+-  }
++  // update counters
++  n = sio_pollfd(instance->hdl, &pfd, POLLOUT);
++  while(poll(&pfd, n, 0) < 0 && errno == EINTR)
++    ;
++  revents = sio_revents(instance->hdl, &pfd);
+ 
+-  odelay = info.play.seek / instance->sample_frame_size;
++  odelay = instance->samples_written - instance->samples_played;
++
++  if (odelay < 0)
++    odelay = 0;
+   *samples_return = odelay;
+ 
+   return 0;
+@@ -145,31 +176,18 @@ void obsd_close(ogle_ao_instance_t *_instance)
+ {
+   obsd_instance_t *instance = (obsd_instance_t *)_instance;
+   
+-  close(instance->fd);
++  sio_close(instance->hdl);
+ }
+ 
+ static
+-int obsd_flush(ogle_ao_instance_t *_instance)
++int obsd_drain(ogle_ao_instance_t *_instance)
+ {
+-  obsd_instance_t *instance = (obsd_instance_t *)_instance;
+-
+-  fprintf(stderr, "AUDIO_FLUSH called\n");
+-  ioctl(instance->fd, AUDIO_FLUSH, NULL);
+-  
+-  instance->samples_written = 0;
+-  
+-  ioctl(instance->fd, AUDIO_DRAIN, 0);
+-  
+   return 0;
+ }
+ 
+ static
+-int obsd_drain(ogle_ao_instance_t *_instance)
++int obsd_flush(ogle_ao_instance_t *_instance)
+ {
+-  obsd_instance_t *instance = (obsd_instance_t *)_instance;
+-  
+-  ioctl(instance->fd, AUDIO_DRAIN, 0);
+-  
+   return 0;
+ }
+ 
+@@ -184,22 +202,28 @@ ogle_ao_instance_t *obsd_open(char *dev)
+     
+     instance->ao.init   = obsd_init;
+     instance->ao.play   = obsd_play;
+-    instance->ao.close  = obsd_close;
+     instance->ao.odelay = obsd_odelay;
+     instance->ao.flush  = obsd_flush;
+     instance->ao.drain  = obsd_drain;
++    instance->ao.close  = obsd_close;
+     
+     instance->initialized = 0;
+     instance->sample_rate = 0;
+     instance->samples_written = 0;
++    instance->samples_played = 0;
+     instance->sample_frame_size = 0;
++
++    if(strncmp(dev, "ao_obsd_default", 15) == 0)
++      instance->hdl = sio_open(NULL, SIO_PLAY, 0);
++    else
++      instance->hdl = sio_open(dev, SIO_PLAY, 0);
+     
+-    instance->fd = open(dev, O_WRONLY);
+-    if(instance->fd < 0) {
++    if(instance->hdl == NULL) {
+       fprintf(stderr, "Can not open %s\n", dev);
+       free(instance);
+       return NULL;
+     }
++    instance->started = 0;
+     
+     return (ogle_ao_instance_t *)instance;
+ }

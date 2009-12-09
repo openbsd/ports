@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2005/04/27 10:29:54 espie Exp $
---- configure.orig	Tue Nov  4 12:34:13 2003
-+++ configure	Wed Apr 27 12:22:32 2005
+$OpenBSD: patch-configure,v 1.8 2009/12/09 10:19:33 jakemsr Exp $
+--- configure.orig	Tue Nov  4 03:34:13 2003
++++ configure	Sun Feb  8 23:20:43 2009
 @@ -11184,7 +11184,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_jpeg_main" >&5
  echo "${ECHO_T}$ac_cv_lib_jpeg_main" >&6
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.7 2005/04/27 10:29:54 espie Exp $
      DVDREAD_CPPFLAGS=-I$dvd_path/include
  
  else
-@@ -12346,7 +12346,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib
+@@ -12346,7 +12346,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib_a52_a52_free"
  echo "${ECHO_T}$ac_cv_lib_a52_a52_free" >&6
  if test $ac_cv_lib_a52_a52_free = yes; then
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.7 2005/04/27 10:29:54 espie Exp $
      A52_CPPFLAGS=-I$a52_path/include
  
  else
-@@ -12710,7 +12710,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib
+@@ -12710,7 +12710,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib_mad_mad_frame
  echo "${ECHO_T}$ac_cv_lib_mad_mad_frame_decode" >&6
  if test $ac_cv_lib_mad_mad_frame_decode = yes; then
  
@@ -37,3 +37,12 @@ $OpenBSD: patch-configure,v 1.7 2005/04/27 10:29:54 espie Exp $
      MAD_CPPFLAGS=-I$mad_path/include
  
  else
+@@ -13022,7 +13022,7 @@ _ACEOF
+ 
+ 	BUILD_AUDIO_OBSD=1
+ 	DEFAULT_AUDIO_DRIVER="obsd"
+-	DEFAULT_AUDIO_DEVICE="/dev/audio"
++	DEFAULT_AUDIO_DEVICE="ao_obsd_default"
+     ;;
+     esac
+ fi

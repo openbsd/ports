@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.8 2003/11/13 18:46:47 espie Exp $
---- mpeg2_video/video_output_x11.c.orig	2003-11-04 13:02:10.000000000 +0100
-+++ mpeg2_video/video_output_x11.c	2003-11-06 07:34:50.000000000 +0100
-@@ -1377,6 +1377,12 @@ void check_x_events(yuv_image_t *current
+$OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.9 2009/12/09 10:19:33 jakemsr Exp $
+--- mpeg2_video/video_output_x11.c.orig	Tue Nov  4 04:02:10 2003
++++ mpeg2_video/video_output_x11.c	Sun Feb  8 12:15:47 2009
+@@ -1377,6 +1377,12 @@ void check_x_events(yuv_image_t *current_image)
  	    break;
  	  }
  	}
@@ -14,7 +14,7 @@ $OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.8 2003/11/13 18:46:47 espie E
        }
        break;
      case KeyRelease:
-@@ -2067,6 +2073,8 @@ static void draw_win_x11(window_info *dw
+@@ -2067,6 +2073,8 @@ static void draw_win_x11(window_info *dwin)
  	      window.video_area.height);
      XSync(mydisplay, False);
    }
@@ -23,7 +23,7 @@ $OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.8 2003/11/13 18:46:47 espie E
  }
  
  
-@@ -2154,6 +2162,8 @@ static void draw_win_xv(window_info *dwi
+@@ -2154,6 +2162,8 @@ static void draw_win_xv(window_info *dwin)
         It waits for an XShmCompletionEvent */
      XIfEvent(mydisplay, &ev, predicate, NULL);
    }

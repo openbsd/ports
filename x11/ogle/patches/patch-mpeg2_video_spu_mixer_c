@@ -1,6 +1,6 @@
-$OpenBSD: patch-mpeg2_video_spu_mixer_c,v 1.4 2003/11/13 18:46:47 espie Exp $
---- mpeg2_video/spu_mixer.c.orig	2003-10-20 22:28:27.000000000 +0200
-+++ mpeg2_video/spu_mixer.c	2003-11-06 07:34:50.000000000 +0100
+$OpenBSD: patch-mpeg2_video_spu_mixer_c,v 1.5 2009/12/09 10:19:33 jakemsr Exp $
+--- mpeg2_video/spu_mixer.c.orig	Mon Oct 20 13:28:27 2003
++++ mpeg2_video/spu_mixer.c	Sun Feb  8 12:15:47 2009
 @@ -45,6 +45,8 @@
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-mpeg2_video_spu_mixer_c,v 1.4 2003/11/13 18:46:47 espie Exp $
  
  #ifdef DEBUG
  #define GETBYTES(a,b) getbytes(a,b)
-@@ -966,6 +968,7 @@ static void decode_display_data(spu_hand
+@@ -966,6 +968,7 @@ static void decode_display_data(spu_handle_t *spu_info
    y = 0;
  
    DPRINTF(5, "vlc decoding\n");
@@ -18,7 +18,7 @@ $OpenBSD: patch-mpeg2_video_spu_mixer_c,v 1.4 2003/11/13 18:46:47 espie Exp $
    while((fieldoffset[1] < spu_info->DCSQT_offset) && (y < spu_info->height)) {
      unsigned int vlc;
      unsigned int length;
-@@ -1031,7 +1034,7 @@ static void decode_display_data(spu_hand
+@@ -1031,7 +1034,7 @@ static void decode_display_data(spu_handle_t *spu_info
  #define MIN(x,y) (((x) < (y)) ? (x) : (y))
  #endif
      {
