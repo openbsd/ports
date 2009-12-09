@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.80 2009/10/31 12:51:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.81 2009/12/09 02:05:31 kevlo Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-4.0.3
+DISTNAME=	lftp-4.0.4
 CATEGORIES=	net
 
 HOMEPAGE=	http://lftp.yar.ru/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB += c crypto curses expat m readline ssl stdc++ util
+WANTLIB=	c crypto curses expat m readline ssl stdc++ util
 
 MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
 		http://ftp.yars.free.net/pub/source/lftp/old/
