@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST-foomatic,v 1.4 2009/12/10 11:04:35 ajacoutot Exp $
-@conflict gutenprint-<5.2.4p0
-@bin bin/ijsgutenprint.${MAJOR_V}
-@man man/man1/ijsgutenprint.1
+@comment $OpenBSD: PLIST-foomatic,v 1.5 2009/12/10 14:12:01 ajacoutot Exp $
 share/foomatic/
 share/foomatic/db/
 share/foomatic/db/source/

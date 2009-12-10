@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2009/12/10 11:04:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/12/10 14:12:01 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
 
 V=			5.2.4
 DISTNAME=		gutenprint-${V}
-PKGNAME-main=		${DISTNAME}p0
-PKGNAME-foomatic=	foomatic-db-${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
+PKGNAME-foomatic=	foomatic-db-${DISTNAME}p1
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -33,16 +33,18 @@ MULTI_PACKAGES=		-main -foomatic
 
 MODULES=	devel/gettext
 
-WANTLIB += c m
-WANTLIB-main +=	${WANTLIB} ncurses readline
-WANTLIB-foomatic += ${WANTLIB}
+WANTLIB-main +=	c m ncurses readline
 
 BUILD_DEPENDS=		:foomatic-db-engine->=4.0.3:print/foomatic-db-engine
 
-LIB_DEPENDS-foomatic=	${MODGETTEXT_LIB_DEPENDS} \
-			gutenprint.>=1::${BUILD_PKGPATH},-main \
+LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			ijs::print/ijs
-RUN_DEPENDS-foomatic=	::print/foomatic-db
+
+WANTLIB-foomatic += # empty
+LIB_DEPENDS-foomatic=	# empty
+RUN_DEPENDS-foomatic=	::print/foomatic-db \
+			::${BUILD_PKGPATH},-main
+PKG_ARCH-foomatic=	*
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

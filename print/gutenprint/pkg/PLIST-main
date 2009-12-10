@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/12/10 11:04:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/12/10 14:12:01 ajacoutot Exp $
+@conflict foomatic-db-gutenprint-<5.2.4p1
 %%SHARED%%
 @bin bin/escputil
+@bin bin/ijsgutenprint.${MAJOR_V}
 @bin bin/testpattern
 include/gutenprint/
 include/gutenprint/array.h
@@ -35,6 +37,7 @@ lib/libgutenprint.la
 lib/pkgconfig/
 lib/pkgconfig/gutenprint.pc
 @man man/man1/escputil.1
+@man man/man1/ijsgutenprint.1
 share/doc/gutenprint/
 share/doc/gutenprint/AUTHORS
 share/doc/gutenprint/COPYING
@@ -287,76 +290,41 @@ share/gutenprint/samples/colorsweep.png
 share/gutenprint/samples/extended.sample
 share/gutenprint/samples/profile.jpg
 share/gutenprint/samples/testpattern.sample
-share/locale/
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/gutenprint.mo
 share/locale/cs/gutenprint_cs.po
-share/locale/da/
-share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/gutenprint.mo
 share/locale/da/gutenprint_da.po
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gutenprint.mo
 share/locale/de/gutenprint_de.po
-share/locale/el/
-share/locale/el/LC_MESSAGES/
 share/locale/el/LC_MESSAGES/gutenprint.mo
 share/locale/el/gutenprint_el.po
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gutenprint.mo
 share/locale/en_GB/gutenprint_en_GB.po
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gutenprint.mo
 share/locale/es/gutenprint_es.po
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gutenprint.mo
 share/locale/fr/gutenprint_fr.po
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/gutenprint.mo
 share/locale/hu/gutenprint_hu.po
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/gutenprint.mo
 share/locale/it/gutenprint_it.po
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/gutenprint.mo
 share/locale/ja/gutenprint_ja.po
-share/locale/nb/
-share/locale/nb/LC_MESSAGES/
 share/locale/nb/LC_MESSAGES/gutenprint.mo
 share/locale/nb/gutenprint_nb.po
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gutenprint.mo
 share/locale/nl/gutenprint_nl.po
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/gutenprint.mo
 share/locale/pl/gutenprint_pl.po
-share/locale/pt/
-share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/gutenprint.mo
 share/locale/pt/gutenprint_pt.po
-share/locale/ru/
-share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/gutenprint.mo
 share/locale/ru/gutenprint_ru.po
-share/locale/sk/
-share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/gutenprint.mo
 share/locale/sk/gutenprint_sk.po
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/gutenprint.mo
 share/locale/sv/gutenprint_sv.po
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/gutenprint.mo
 share/locale/zh_TW/gutenprint_zh_TW.po
