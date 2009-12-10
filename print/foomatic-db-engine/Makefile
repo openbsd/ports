@@ -1,42 +1,41 @@
-# $OpenBSD: Makefile,v 1.5 2008/12/20 21:15:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/10 10:57:59 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD generator
 
-V=			20070919
-DISTNAME=		foomatic-db-engine-3.0-${V}
-PKGNAME=		foomatic-db-engine-3.0.${V}p0
+DISTNAME=		foomatic-db-engine-4.0.3
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# tarballs are only available for a 24 hour period
-#MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/
-MASTER_SITES=		http://jakemsr.trancell.org/distfiles/ \
-			http://openbsd.dead-parrot.de/distfiles/ \
-			http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/ \
+			http://www.openprinting.org/download/foomatic/ \
+			http://www.linuxprinting.org/download/foomatic/oldstuff/ \
+			http://www.openprinting.org/download/foomatic/oldstuff/
+
+MODULES=		converters/libiconv
 
 LIB_DEPENDS=		xml2.>=8::textproc/libxml
-BUILD_DEPENDS=		::print/foomatic-filters
 RUN_DEPENDS=		::print/foomatic-filters \
-			::print/foomatic-db
-WANTLIB=		c iconv m z
+			:curl-*|wget-*:net/curl
+WANTLIB=		c m z
 
 USE_GMAKE=		Yes
+NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--without-ppr \
-			--disable-gscheck
+CONFIGURE_ARGS=		--disable-gscheck
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBDIR="${LOCALBASE}/share/foomatic" \
+			FOOMATIC_RIP="${LOCALBASE}/bin/foomatic-rip" \
 			GS="${LOCALBASE}/bin/gs" \
 			A2PS="${LOCALBASE}/bin/a2ps" \
 			GS="${LOCALBASE}/bin/gs" \
@@ -72,12 +71,21 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2"
 			CUPS_REJECT="${LOCALBASE}/sbin/reject" \
 			CUPS_LPMOVE="${LOCALBASE}/sbin/lpmove" \
 			CUPS_LPOPTIONS="${LOCALBASE}/bin/lpoptions" \
-			CUPS_LPINFO="${LOCALBASE}/sbin/lpinfo"
-
-NO_REGRESS=		Yes
+			CUPS_LPINFO="${LOCALBASE}/sbin/lpinfo" \
+			CUPS_PCONF="${SYSCONFDIR}/cups/printers.conf" \
+			PRINTCAP="/etc/printcap"
 
 pre-configure:
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
-		${WRKSRC}/foomatic-combo-xml.c
+	${SUBST_CMD} ${WRKSRC}/foomatic-combo-xml.c \
+		${WRKSRC}/Makefile.in
+	perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g;' \
+		-e 's,!!LOCALBASE!!,${LOCALBASE},g' \
+		${WRKSRC}/configure
+
+# make CUPS generate Foomatic PPDs on demand 
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/libexec/cups/driver
+	ln -sf ${TRUEPREFIX}/bin/foomatic-ppdfile \
+		${WRKINST}/${LOCALBASE}/libexec/cups/driver/foomatic
 
 .include <bsd.port.mk>

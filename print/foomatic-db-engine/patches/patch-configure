@@ -1,7 +1,32 @@
-$OpenBSD: patch-configure,v 1.2 2007/09/26 08:25:34 ajacoutot Exp $
---- configure.orig	Wed Sep 19 21:49:51 2007
-+++ configure	Tue Sep 25 12:29:50 2007
-@@ -3860,13 +3860,13 @@ else
+$OpenBSD: patch-configure,v 1.3 2009/12/10 10:57:59 ajacoutot Exp $
+--- configure.orig	Wed Aug 19 20:09:16 2009
++++ configure	Mon Dec  7 18:30:23 2009
+@@ -3921,15 +3921,15 @@ done
+ 
+ 
+ 
+-SPOOLSEARCHPATH=/var/spool:/usr/spool/:/usr/local/spool:/usr/local/var/spool:/var/local/spool:/var/local
+-LOGSEARCHPATH=/var/log:/usr/log:/usr/local/log:/usr/local/var/log:/var/local/log:/var/local
+-SYSCONFSEARCHPATH=/etc:/usr/etc:/usr/local/etc:/var/etc
+-SBINSEARCHPATH=/usr/sbin:/sbin:/usr/local/sbin:/etc/sbin
+-BINSEARCHPATH=/usr/bin:/bin:/usr/local/bin
+-DATASEARCHPATH=/usr/share:/usr/local/share:/usr/lib:/usr/local/lib:/opt
+-LIBSEARCHPATH=/usr/lib:/lib:/usr/local/lib:/usr/local/libexec:/opt
+-PTALPIPESSEARCHPATH=/var/run:/var:/var/ptal:/usr/var/run:/usr/var:/usr/var/ptal:/usr/local/var/run:/usr/local/var:/usr/local/var/ptal:/dev:/dev/ptal
+-MTINKPIPESSEARCHPATH=/var:/var/run:/usr/var/:/usr/var/run:/usr/local/var:/usr/local/var/run:/dev
++SPOOLSEARCHPATH=/var/spool
++LOGSEARCHPATH=/var/log
++SYSCONFSEARCHPATH=!!SYSCONFDIR!!
++SBINSEARCHPATH=/usr/sbin:/sbin:!!LOCALBASE!!/sbin:/etc/sbin
++BINSEARCHPATH=/usr/bin:/bin:!!LOCALBASE!!/bin
++DATASEARCHPATH=/usr/share:!!LOCALBASE!!/share:/usr/lib:!!LOCALBASE!!/lib
++LIBSEARCHPATH=/usr/lib:/lib:!!LOCALBASE!!/lib:!!LOCALBASE!!/libexec:
++PTALPIPESSEARCHPATH=/var/run
++MTINKPIPESSEARCHPATH=/var/run
+ 
+ # There is a bug in some versions of autoconf that causes
+ # bad expansion of paths in the AC_PATH_* macros.  This is very annoying
+@@ -4394,13 +4394,13 @@ else
    PREFIX=$prefix
  fi
  echo -n Checking whether Perl will find libraries installed under $PREFIX...
@@ -17,7 +42,16 @@ $OpenBSD: patch-configure,v 1.2 2007/09/26 08:25:34 ajacoutot Exp $
      PERLPREFIX=/usr/local
      echo " yes"
      echo Installing the Perl libraries with prefix /usr/local.
-@@ -5313,7 +5313,7 @@ fi
+@@ -4417,7 +4417,7 @@ fi
+ PERL_INSTALLDIRS=site
+ 
+ 
+-for ac_prog in bash sh
++for ac_prog in sh
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -5873,7 +5873,7 @@ fi
  done
  test -n "$CUPS_LPINFO" || CUPS_LPINFO="/usr/sbin/lpinfo"
  
@@ -26,7 +60,7 @@ $OpenBSD: patch-configure,v 1.2 2007/09/26 08:25:34 ajacoutot Exp $
  for ac_dir in pdq
  do
  # Extract the first word of "$ac_dir", so it can be a program name with args.
-@@ -5446,8 +5446,9 @@ fi
+@@ -6008,8 +6008,9 @@ fi
    test -n "$PDQ_PRINT" && break
  done
  test -n "$PDQ_PRINT" || PDQ_PRINT="/usr/bin/pdq"
@@ -37,7 +71,7 @@ $OpenBSD: patch-configure,v 1.2 2007/09/26 08:25:34 ajacoutot Exp $
  for ac_prog in ppr/bin/pprd
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
-@@ -5756,7 +5757,7 @@ fi
+@@ -6322,7 +6323,7 @@ fi
    test -n "$PPR_PPOP" && break
  done
  test -n "$PPR_PPOP" || PPR_PPOP="/usr/bin/ppop"

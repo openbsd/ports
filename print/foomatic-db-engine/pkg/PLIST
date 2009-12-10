@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/09/26 08:25:34 ajacoutot Exp $
-bin/foomatic-combo-xml
+@comment $OpenBSD: PLIST,v 1.3 2009/12/10 10:57:59 ajacoutot Exp $
+@bin bin/foomatic-combo-xml
 bin/foomatic-compiledb
 bin/foomatic-configure
 bin/foomatic-datafile
-bin/foomatic-perl-data
+@bin bin/foomatic-perl-data
 bin/foomatic-ppd-options
+bin/foomatic-ppd-to-xml
 bin/foomatic-ppdfile
 bin/foomatic-printjob
 bin/foomatic-searchprinter
@@ -13,6 +14,8 @@ libdata/perl5/site_perl/Foomatic/DB.pm
 libdata/perl5/site_perl/Foomatic/Defaults.pm
 libdata/perl5/site_perl/Foomatic/PPD.pm
 libdata/perl5/site_perl/Foomatic/UIElem.pm
+libexec/cups/driver/
+libexec/cups/driver/foomatic
 @man man/man1/foomatic-combo-xml.1
 @man man/man1/foomatic-compiledb.1
 @man man/man1/foomatic-configure.1

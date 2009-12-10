@@ -1,5 +1,11 @@
-If you use CUPS and want it to generate Foomatic PPDs on demand, create
-a symlink from foomatic-ppdfile(1) to the CUPS PPD generator directory:
+PPD files can be generated using foomatic-ppdfile(1) as in the following
+example for an Epson Stylus C64:
 
-# ln -sf ${PREFIX}/bin/foomatic-ppdfile \
-	${LOCALBASE}/libexec/cups/driver/foomatic
+$ foomatic-ppdfile -P C64
+Epson Stylus C64 Id='Epson-Stylus_C64' Driver='gutenprint' CompatibleDrivers='gimp-print gutenprint gutenprint-ijs-simplified.5.2 gutenprint-ijs.5.2 '
+$ foomatic-ppdfile -p 'Epson-Stylus_C64' -d 'gutenprint-ijs.5.2' > C64.ppd
+
+C64.ppd can then be used with CUPS or with lpd(8) and foomatic-rip(1) as
+the input filter.
+Drivers availability depends on what db you have installed on your system
+(i.e. foomatic-db, foomatic-db-gutenprint, foomatic-db-hpijs...).

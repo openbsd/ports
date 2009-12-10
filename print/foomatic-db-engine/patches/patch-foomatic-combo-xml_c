@@ -1,12 +1,12 @@
-$OpenBSD: patch-foomatic-combo-xml_c,v 1.1 2007/09/26 08:25:34 ajacoutot Exp $
---- foomatic-combo-xml.c.orig	Tue Sep 25 12:38:18 2007
-+++ foomatic-combo-xml.c	Tue Sep 25 12:38:49 2007
-@@ -1930,7 +1930,7 @@ main(int  argc,     /* I - Number of command-line argu
+$OpenBSD: patch-foomatic-combo-xml_c,v 1.2 2009/12/10 10:57:59 ajacoutot Exp $
+--- foomatic-combo-xml.c.orig	Wed Aug 19 20:09:13 2009
++++ foomatic-combo-xml.c	Mon Dec  7 14:30:53 2009
+@@ -2087,7 +2087,7 @@ main(int  argc,     /* I - Number of command-line argu
    /* Set libdir to the default if empty */
  
    if (libdir == NULL)
 -    libdir = "/usr/share/foomatic";
-+    libdir = "!!LOCALBASE!!/share/foomatic";
++    libdir = "${LOCALBASE}/share/foomatic";
  
    /* Load translation table for old printer IDs */
    sprintf(oldidfilename, "%s/db/oldprinterids",
