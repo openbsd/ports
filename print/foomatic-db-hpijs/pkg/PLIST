@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/18 16:15:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/10 10:58:45 ajacoutot Exp $
+share/foomatic/db/source/driver/hpijs-rss.xml
 share/foomatic/db/source/driver/hpijs.xml
 share/foomatic/db/source/opt/hpijs-Duplex.xml
 share/foomatic/db/source/opt/hpijs-InputSlot.xml
@@ -6,3 +7,8 @@ share/foomatic/db/source/opt/hpijs-Model.xml
 share/foomatic/db/source/opt/hpijs-PageSize.xml
 share/foomatic/db/source/opt/hpijs-PrintoutMode.xml
 share/foomatic/db/source/opt/hpijs-Quality.xml
+share/foomatic/db/source/opt/hpijs-rss-Duplex.xml
+share/foomatic/db/source/opt/hpijs-rss-InputSlot.xml
+share/foomatic/db/source/opt/hpijs-rss-Model.xml
+share/foomatic/db/source/opt/hpijs-rss-PageSize.xml
+share/foomatic/db/source/opt/hpijs-rss-Resolution.xml
