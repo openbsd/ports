@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/08/27 11:11:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/12/10 11:04:35 ajacoutot Exp $
 %%SHARED%%
 @bin bin/escputil
-@bin bin/ijsgutenprint.${MAJOR_V}
 @bin bin/testpattern
 include/gutenprint/
 include/gutenprint/array.h
@@ -28,22 +27,14 @@ include/gutenprint/vars.h
 include/gutenprint/weave.h
 include/gutenprint/xml.h
 include/gutenprintui2/
-include/gutenprintui2/curve.h
-include/gutenprintui2/gammacurve.h
-include/gutenprintui2/gutenprintui.h
-include/gutenprintui2/typebuiltins.h
 lib/gutenprint/
 lib/gutenprint/${MAJOR_V}/
 lib/gutenprint/${MAJOR_V}/modules/
 lib/libgutenprint.a
 lib/libgutenprint.la
-lib/libgutenprintui2.a
-lib/libgutenprintui2.la
 lib/pkgconfig/
 lib/pkgconfig/gutenprint.pc
-lib/pkgconfig/gutenprintui2.pc
 @man man/man1/escputil.1
-@man man/man1/ijsgutenprint.1
 share/doc/gutenprint/
 share/doc/gutenprint/AUTHORS
 share/doc/gutenprint/COPYING

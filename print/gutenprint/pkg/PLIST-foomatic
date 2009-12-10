@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST-foomatic,v 1.3 2009/03/23 17:17:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-foomatic,v 1.4 2009/12/10 11:04:35 ajacoutot Exp $
+@conflict gutenprint-<5.2.4p0
+@bin bin/ijsgutenprint.${MAJOR_V}
+@man man/man1/ijsgutenprint.1
 share/foomatic/
 share/foomatic/db/
 share/foomatic/db/source/
@@ -93,6 +96,21 @@ share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablegray3value.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablegrayscale.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablegraytrans.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablegrayvalue.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray1scale.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray1trans.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray1value.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray2scale.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray2trans.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray2value.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray3scale.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray3trans.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray3value.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray4scale.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray4trans.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray4value.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray5scale.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray5trans.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablehgray5value.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enableinklimit.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablelightcyanscale.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablelightcyantrans.xml
@@ -111,6 +129,7 @@ share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enableorangedensity.x
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablepaperthickness.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enableplatengap.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enableprintmethod.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablequalityenhancement.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablereddensity.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enablevacuumintensity.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_enableyellowbalance.xml
@@ -135,6 +154,21 @@ share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_gray3value-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_grayscale-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_graytrans-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_grayvalue-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray1scale-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray1trans-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray1value-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray2scale-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray2trans-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray2value-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray3scale-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray3trans-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray3value-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray4scale-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray4trans-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray4value-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray5scale-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray5trans-1.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_hgray5value-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_imagetype.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-2.xml
@@ -169,6 +203,7 @@ share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_platengap-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_printingdirection.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_printmethod-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_quality.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_qualityenhancement-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_reddensity-1.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_resolution.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_usegloss.xml

@@ -3,3 +3,6 @@ quality drivers for Canon, Epson, Lexmark and PCL printers.
 This package contains gutenprint driver information for creating PPD
 files with the foomatic-db-engine package. The PPD files can be used
 with foomatic-rip and/or CUPS print filters.
+
+The 'gutenprint' CUPS driver is not provided on OpenBSD but instead the
+gutenprint-ijs.${MAJOR_V} which is spooler independent (uses foomatic).
