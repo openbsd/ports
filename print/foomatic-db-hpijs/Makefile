@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/10 10:58:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/12/10 13:49:57 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Foomatic PPD data for hpijs
 
 DISTNAME=		foomatic-db-hpijs-1.4-1
-PKGNAME=		foomatic-db-hpijs-1.4
+PKGNAME=		foomatic-db-hpijs-1.4p0
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
@@ -22,7 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 #MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/
 MASTER_SITES=		http://www.bsdfrog.org/OpenBSD/distfiles/
 
-RUN_DEPENDS=		::print/foomatic-db
+RUN_DEPENDS=		::print/foomatic-db \
+			:hpijs-*:print/hplip,-hpijs
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
