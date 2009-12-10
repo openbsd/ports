@@ -1,0 +1,17 @@
+$OpenBSD: patch-foomaticrip_c,v 1.1 2009/12/10 10:57:21 ajacoutot Exp $
+--- foomaticrip.c.orig	Wed Aug 19 20:08:41 2009
++++ foomaticrip.c	Thu Dec 10 11:21:04 2009
+@@ -151,11 +151,11 @@ char echopath[PATH_MAX] = "echo";
+ 
+ /* CUPS raster drivers are searched here */
+ char cupsfilterpath[PATH_MAX] = "/usr/local/lib/cups/filter:"
+-                                "/usr/local/libexec/cups/filter:"
++                                "${LOCALBASE}/libexec/cups/filter:"
+                                 "/opt/cups/filter:"
+                                 "/usr/lib/cups/filter";
+ 
+-char modern_shell[64] = "/bin/bash";
++char modern_shell[64] = "/bin/sh";
+ 
+ void config_set_option(const char *key, const char *value)
+ {

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/03 13:02:55 giovanni Exp $
+# $OpenBSD: Makefile,v 1.10 2009/12/10 10:57:21 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
-DISTNAME=		foomatic-filters-3.0.2
-PKGNAME=		${DISTNAME}p4
+DISTNAME=		foomatic-filters-4.0.3
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
@@ -16,14 +15,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/oldstuff/
+WANTLIB += c m pthread
 
-RUN_DEPENDS=		::print/ghostscript/gnu \
-			::print/a2ps
+MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/ \
+			http://www.openprinting.org/download/foomatic/ \
+			http://www.linuxprinting.org/download/foomatic/oldstuff/ \
+			http://www.openprinting.org/download/foomatic/oldstuff/
+
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		::print/a2ps
+
+LIB_DEPENDS=		gs.>=11::print/ghostscript/gnu
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CUPS="${LOCALBASE}/libexec/cups" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+			CUPS="${LOCALBASE}/libexec/cups" \
 			CUPS_FILTERS="${LOCALBASE}/libexec/cups/filter" \
+			CUPS_BACKENDS=${LOCALBASE}/libexec/cups/backend \
+			PRINTCAP="/etc/printcap" \
 			TEXTTOPS="${LOCALBASE}/libexec/cups/filter/texttops" \
 			PPR="${LOCALBASE}/lib/ppr" \
 			PPR_INTERFACES="${LOCALBASE}/lib/ppr/interfaces" \
@@ -34,8 +44,10 @@ CONFIGURE_ENV=		CUPS="${LOCALBASE}/libexec/cups" \
 
 FAKE_FLAGS=		ETCDIR="${PREFIX}/share/examples/foomatic"
 
-PKG_ARCH=		*
-
-NO_REGRESS=		Yes
+pre-configure:
+	perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g;' \
+		-e 's,!!LOCALBASE!!,${LOCALBASE},g' \
+		${WRKSRC}/configure
+	${SUBST_CMD} ${WRKSRC}/foomaticrip.c
 
 .include <bsd.port.mk>

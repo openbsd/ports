@@ -1,15 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/11/19 05:30:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/12/10 10:57:21 ajacoutot Exp $
 @conflict hpijs-<1.5p1
 @conflict cups-<=1.2.7p13
-bin/foomatic-gswrapper
-bin/foomatic-rip
+@bin bin/foomatic-rip
 @comment lib/ppr/
 @comment lib/ppr/interfaces/
 @comment lib/ppr/interfaces/foomatic-rip
 @comment lib/ppr/lib/
 @comment lib/ppr/lib/foomatic-rip
+libexec/cups/
+libexec/cups/backend/
+libexec/cups/backend/beh
+libexec/cups/filter/
 libexec/cups/filter/foomatic-rip
-@man man/man1/foomatic-gswrapper.1
 @man man/man1/foomatic-rip.1
 share/examples/foomatic/
 @sample ${SYSCONFDIR}/foomatic/

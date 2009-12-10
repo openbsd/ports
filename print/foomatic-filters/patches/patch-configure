@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure,v 1.1 2009/12/10 10:57:21 ajacoutot Exp $
+--- configure.orig	Wed Aug 19 20:08:45 2009
++++ configure	Mon Dec  7 18:03:22 2009
+@@ -6804,8 +6804,8 @@ done
+ 
+ 
+ 
+-ETCSEARCHPATH=${prefix}/etc:/usr/etc:/usr/local/etc
+-LIBSEARCHPATH=${prefix}/lib:${prefix}/lib64:/usr/lib:/usr/lib64:/usr/local/lib:${prefix}/libexec:/usr/libexec:/usr/local/libexec
++ETCSEARCHPATH=!!SYSCONFDIR!!
++LIBSEARCHPATH=!!LOCALBASE!!/lib:/usr/lib:!!LOCALBASE!!/libexec:/usr/libexec
+ 
+ uname=`uname`
+ uversion=`uname -r | sed -e '1,$s/[^0-9]//g'`
+@@ -7346,7 +7346,7 @@ if test "${ac_cv_lib_gs_gsapi_new_instance+set}" = set
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgs  $LIBS"
++LIBS="-lgs -pthread $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -7406,7 +7406,7 @@ if test $ac_cv_lib_gs_gsapi_new_instance = yes; then
+ #define HAVE_LIBGS 1
+ _ACEOF
+ 
+-  LIBS="-lgs $LIBS"
++  LIBS="-lgs -pthread $LIBS"
+ 
+ fi
+ 
