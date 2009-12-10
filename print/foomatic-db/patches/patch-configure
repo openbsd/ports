@@ -1,0 +1,42 @@
+$OpenBSD: patch-configure,v 1.1 2009/12/10 10:58:25 ajacoutot Exp $
+--- configure.orig	Mon Dec  7 09:22:31 2009
++++ configure	Tue Dec  8 11:51:40 2009
+@@ -1791,9 +1791,9 @@ echo "${ECHO_T}no" >&6; }
+ fi
+ 
+ 
+-SBINSEARCHPATH=/usr/sbin:/sbin:/usr/local/sbin:/etc/sbin
+-BINSEARCHPATH=/usr/bin:/bin:/usr/local/bin
+-DATASEARCHPATH=/usr/share:/usr/local/share:/usr/lib:/usr/local/lib:/opt
++SBINSEARCHPATH=/usr/sbin:/sbin:!!LOCALBASE!!/sbin
++BINSEARCHPATH=/usr/bin:/bin:!!LOCALBASE!!/bin
++DATASEARCHPATH=/usr/share:!!LOCALBASE!!/share:/usr/lib:!!LOCALBASE!!/lib
+ BSB=$BINSEARCHPATH:$SBINSEARCHPATH
+ for ac_dir in cups/model
+ do
+@@ -1962,7 +1962,7 @@ DRIVERXMLS="";
+ while test -n "$drivers"; do
+ 	if echo $drivers |grep "," >/dev/null; then
+ 		THIS="`echo $drivers |sed -e 's/,.*//'`"
+-		drivers="`echo $drivers |sed -e \"s/$THIS,//\"`"
++		drivers="`echo $drivers |sed -e "s/$THIS,//"`"
+ 	else
+ 		THIS=$drivers
+ 		drivers=""
+@@ -1970,14 +1970,14 @@ while test -n "$drivers"; do
+ 	case "$THIS" in
+ 	ALL)
+ 		# ALL = PRINTERS + FILES...
+-		DRIVERXMLS=`cd db/source/driver/; ls -1 *.xml`
++		DRIVERXMLS=`cd db/source/driver/; for i in *.xml ; do echo -n "$i " ; done`
+ 		;;
+ 	NOOBSOLETES)
+ 		OBSOLETEXMLS=`cd db/source/driver/; grep -li '< *obsolete.*/ *>' *.xml`
+ 		while test -n "$OBSOLETEXMLS"; do
+ 		    if echo $OBSOLETEXMLS |grep " " >/dev/null; then
+ 		        REMOVE="`echo $OBSOLETEXMLS |sed -e 's/ .*//'`"
+-		        OBSOLETEXMLS="`echo $OBSOLETEXMLS |sed -e \"s/$REMOVE //\"`"
++		        OBSOLETEXMLS="`echo $OBSOLETEXMLS |sed -e "s/$REMOVE //"`"
+ 		    else
+ 		        REMOVE=$OBSOLETEXMLS
+ 		        OBSOLETEXMLS=""
