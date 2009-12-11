@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/25 13:39:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/11 03:59:52 wcmaier Exp $
 
 COMMENT=		simple scripting language for web browsing
 
@@ -29,7 +29,8 @@ REGRESS_DEPENDS=	::www/py-quixote \
     			::devel/py-nose \
 			::www/tidy
 
-MAKE_ENV+=		NOSE_WHERE=${WRKSRC}/twill
+# test-basic test requires user input for getpassword
+REGRESS_IS_INTERACTIVE = Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/twill
@@ -37,5 +38,9 @@ post-install:
 		find . -type f -maxdepth 1 -name "*.txt" \
 		\! \( -name "ANNOUNCE*" -o -name "ChangeLog" \) \
 		-exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/twill/{} \;
+	rm -fr ${WRKSRC}/twill.egg-info
+
+do-regress:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests -v tests
 
 .include <bsd.port.mk>
