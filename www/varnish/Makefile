@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/11/30 09:29:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/12 17:38:19 fgsch Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -26,8 +26,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=varnish/}
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--enable-stack-protector \
-			--localstatedir=/var
+CONFIGURE_ARGS =	--localstatedir=/var
 
 REGRESS_TARGET =	check
 

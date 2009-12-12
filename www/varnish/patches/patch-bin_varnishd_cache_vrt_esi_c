@@ -1,0 +1,14 @@
+Fixes #585: ESI produces wrong backend requests.
+
+$OpenBSD: patch-bin_varnishd_cache_vrt_esi_c,v 1.1 2009/12/12 17:38:19 fgsch Exp $
+--- bin/varnishd/cache_vrt_esi.c.orig	Sat Dec 12 16:20:24 2009
++++ bin/varnishd/cache_vrt_esi.c	Sat Dec 12 16:20:39 2009
+@@ -384,7 +384,7 @@ esi_handle_include(struct esi_work *ew)
+ 			memcpy(c, val.b, Tlen(val));
+ 			val.b = c;
+ 			val.e = val.b + s;
+-			*val.e = '\0';
++			val.e[-1] = '\0';
+ 		}
+ 
+ 		if (Tlen(val) > 7 && !memcmp(val.b, "http://", 7)) {
