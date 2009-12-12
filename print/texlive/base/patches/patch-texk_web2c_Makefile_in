@@ -1,101 +1,39 @@
-$OpenBSD: patch-texk_web2c_Makefile_in,v 1.2 2008/10/21 20:57:57 steven Exp $
---- texk/web2c/Makefile.in.orig	Sun Aug 24 22:24:41 2008
-+++ texk/web2c/Makefile.in	Sun Aug 24 22:30:17 2008
-@@ -817,28 +817,28 @@ install-exec:: install-programs
+$OpenBSD: patch-texk_web2c_Makefile_in,v 1.3 2009/12/12 17:48:34 edd Exp $
+--- texk/web2c/Makefile.in.orig	Sun Jul  5 19:11:04 2009
++++ texk/web2c/Makefile.in	Sun Jul  5 19:16:53 2009
+@@ -953,7 +953,7 @@ WARNING_CXXFLAGS = @WARNING_CXXFLAGS@
+ WEB2CVERSION = @WEB2CVERSION@
+ XMKMF = @XMKMF@
+ XPDF_DEPEND = @XPDF_DEPEND@
+-XPDF_INCLUDES = @XPDF_INCLUDES@
++XPDF_INCLUDES = @XPDF_INCLUDES@ @XPDF_INCLUDES@/..
+ XPDF_LIBS = @XPDF_LIBS@
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+@@ -6850,7 +6850,7 @@ xetex-synctex-xe.obj: synctex-xe.c
+ @am__fastdepCXX_FALSE@	$(LTCXXCOMPILE) -c -o $@ $<
  
- # Installation directories.
- $(bindir)::
--	$(SHELL) $(top_srcdir)/../mkinstalldirs $(bindir)
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(bindir)
- $(texpooldir)::
--	$(SHELL) $(top_srcdir)/../mkinstalldirs $(texpooldir)
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(texpooldir)
- $(mfpooldir)::
--	$(SHELL) $(top_srcdir)/../mkinstalldirs $(mfpooldir)
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(mfpooldir)
- $(mppooldir)::
--	$(SHELL) $(top_srcdir)/../mkinstalldirs $(mppooldir)
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(mppooldir)
- $(fmtdir)::
--	$(SHELL) $(top_srcdir)/../mkinstalldirs $(fmtdir)
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(fmtdir)
- $(basedir)::
--	$(SHELL) $(top_srcdir)/../mkinstalldirs $(basedir)
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(basedir)
- $(memdir)::
--	$(SHELL) $(top_srcdir)/../mkinstalldirs $(memdir)
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(memdir)
- $(web2cdir)::
--	$(SHELL) $(top_srcdir)/../mkinstalldirs $(web2cdir)
-+	$(SHELL) $(top_srcdir)/../mkinstalldirs $(DESTDIR)/$(web2cdir)
+ libluatex_a-pdftoepdf.o: luatexdir/image/pdftoepdf.cc
+-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libluatex_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libluatex_a-pdftoepdf.o -MD -MP -MF $(DEPDIR)/libluatex_a-pdftoepdf.Tpo -c -o libluatex_a-pdftoepdf.o `test -f 'luatexdir/image/pdftoepdf.cc' || echo '$(srcdir)/'`luatexdir/image/pdftoepdf.cc
++@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(FONTCONFIG_INCLUDES) $(INCLUDES) $(libluatex_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libluatex_a-pdftoepdf.o -MD -MP -MF $(DEPDIR)/libluatex_a-pdftoepdf.Tpo -c -o libluatex_a-pdftoepdf.o `test -f 'luatexdir/image/pdftoepdf.cc' || echo '$(srcdir)/'`luatexdir/image/pdftoepdf.cc
+ @am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/libluatex_a-pdftoepdf.Tpo $(DEPDIR)/libluatex_a-pdftoepdf.Po
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='luatexdir/image/pdftoepdf.cc' object='libluatex_a-pdftoepdf.o' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@@ -6864,7 +6864,7 @@ libluatex_a-pdftoepdf.obj: luatexdir/image/pdftoepdf.c
+ @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libluatex_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libluatex_a-pdftoepdf.obj `if test -f 'luatexdir/image/pdftoepdf.cc'; then $(CYGPATH_W) 'luatexdir/image/pdftoepdf.cc'; else $(CYGPATH_W) '$(srcdir)/luatexdir/image/pdftoepdf.cc'; fi`
  
- # Installing the binaries.  Each of the *dir/*.mk files (except etex)
- # add to this target via a dependency-only rule, to install their
- # respective engines.
- install-programs: $(programs) $(basic_engines) $(bindir)
- 	for p in $(programs) $(basic_engines); do \
--	  $(INSTALL_LIBTOOL_PROG) $$p $(bindir); done
-+	  $(INSTALL_LIBTOOL_PROG) $$p $(DESTDIR)/$(bindir); done
+ libpdftex_a-pdftoepdf.o: pdftexdir/pdftoepdf.cc
+-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpdftex_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpdftex_a-pdftoepdf.o -MD -MP -MF $(DEPDIR)/libpdftex_a-pdftoepdf.Tpo -c -o libpdftex_a-pdftoepdf.o `test -f 'pdftexdir/pdftoepdf.cc' || echo '$(srcdir)/'`pdftexdir/pdftoepdf.cc
++@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(FONTCONFIG_INCLUDES) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpdftex_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpdftex_a-pdftoepdf.o -MD -MP -MF $(DEPDIR)/libpdftex_a-pdftoepdf.Tpo -c -o libpdftex_a-pdftoepdf.o `test -f 'pdftexdir/pdftoepdf.cc' || echo '$(srcdir)/'`pdftexdir/pdftoepdf.cc
+ @am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/libpdftex_a-pdftoepdf.Tpo $(DEPDIR)/libpdftex_a-pdftoepdf.Po
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='pdftexdir/pdftoepdf.cc' object='libpdftex_a-pdftoepdf.o' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@@ -7088,7 +7088,7 @@ pdftex-dummy.obj: dummy.cxx
+ @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(pdftex_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o pdftex-dummy.obj `if test -f 'dummy.cxx'; then $(CYGPATH_W) 'dummy.cxx'; else $(CYGPATH_W) '$(srcdir)/dummy.cxx'; fi`
  
- # We do not attempt to install any of the per-format symlinks, leaving
- # that to a separate run of texlinks.
-@@ -849,38 +849,46 @@ install-programs: $(programs) $(basic_engines) $(bindi
- install-fmts: install-tex-fmts
- install-tex-fmts: fmts $(fmtdir)
- 	fmts="$(all_fmts)"; \
--	  for f in $$fmts; do $(INSTALL_DATA) $$f $(fmtdir)/$$f; done
--	cd $(fmtdir) && (rm -f plain.fmt; $(LN) tex.fmt plain.fmt)
-+	  for f in $$fmts; do $(INSTALL_DATA) $$f \
-+	  $(DESTDIR)/$(fmtdir)/$$f; done
-+	cd $(DESTDIR)/$(fmtdir) && (rm -f plain.fmt; $(LN) tex.fmt plain.fmt)
- 	fmts="$(fmts)"; \
- 	  for f in $$fmts; do base=`basename $$f .fmt`; \
--	    (cd $(bindir) && (rm -f $$base; $(LN) tex $$base)); done
-+	    (cd $(DESTDIR)/$(bindir) && (rm -f $$base; $(LN) tex $$base)); done
- 
- install-bases: install-mf-bases
- install-mf-bases: bases $(basedir)
- 	bases="$(all_bases)"; \
--	  for f in $$bases; do $(INSTALL_DATA) $$f $(basedir)/$$f; done
--	cd $(basedir) && (rm -f plain.base; $(LN) mf.base plain.base)
-+	  for f in $$bases; do $(INSTALL_DATA) $$f \
-+	  $(DESTDIR)/$(basedir)/$$f; done
-+	cd $(DESTDIR)/$(basedir) && (rm -f plain.base; $(LN) mf.base plain.base)
- 	bases="$(bases)"; \
- 	  for f in $$bases; do base=`basename $$f .base`;\
--	    (cd $(bindir) && (rm -f $$base; $(LN) mf $$base)); done
-+	    (cd $(DESTDIR)/$(bindir) && (rm -f $$base; $(LN) mf $$base)); done
- 
- install-mems: install-mpost-mems
- install-mpost-mems: mems $(memdir)
- 	mems="$(all_mems)"; \
--	  for f in $$mems; do $(INSTALL_DATA) $$f $(memdir)/$$f; done
--	cd $(memdir) && (rm -f plain.mem; $(LN) mpost.mem plain.mem)
-+	  for f in $$mems; do $(INSTALL_DATA) $$f \
-+	  $(DESTDIR)/$(memdir)/$$f; done
-+	cd $(DESTDIR)/$(memdir) && (rm -f plain.mem; $(LN) mpost.mem plain.mem)
- 	mems="$(mems)"; \
- 	  for f in $$mems; do base=`basename $$f .mem`; \
--            (cd $(bindir) && (rm -f $$base; $(LN) mpost $$base)); done
-+            (cd $(DESTDIR)/$(bindir) && \
-+	    (rm -f $$base; $(LN) mpost $$base)); done
- 
- # Auxiliary files.
- install-data:: $(web2cdir)
- 	cd doc && $(MAKE) $(install_makeargs) install-data
- 	cd man && $(MAKE) $(install_makeargs) install-data
--	$(INSTALL_DATA) $(srcdir)/tiedir/tie.1 $(man1dir)/tie.$(manext)
--	$(INSTALL_DATA) $(srcdir)/ctiedir/ctie.1 $(man1dir)/ctie.$(manext)
--	$(INSTALL_DATA) $(srcdir)/synctexdir/man1/synctex.1 $(man1dir)/synctex.$(manext)
--	$(INSTALL_DATA) $(srcdir)/synctexdir/man5/synctex.5 $(man5dir)/synctex.5
-+	$(INSTALL_DATA) $(srcdir)/tiedir/tie.1 \
-+	  $(DESTDIR)/$(man1dir)/tie.$(manext)
-+	$(INSTALL_DATA) $(srcdir)/ctiedir/ctie.1 \
-+	  $(DESTDIR)/$(man1dir)/ctie.$(manext)
-+	$(INSTALL_DATA) $(srcdir)/synctexdir/man1/synctex.1 \
-+	  $(DESTDIR)/$(man1dir)/synctex.$(manext)
-+	$(INSTALL_DATA) $(srcdir)/synctexdir/man5/synctex.5 \
-+	  $(DESTDIR)/$(man5dir)/synctex.5
- 
- # Dummy target.
- uninstall uninstall-exec uninstall-data:
+ pdftosrc-pdftosrc.o: pdftexdir/pdftosrc.cc
+-@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(pdftosrc_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT pdftosrc-pdftosrc.o -MD -MP -MF $(DEPDIR)/pdftosrc-pdftosrc.Tpo -c -o pdftosrc-pdftosrc.o `test -f 'pdftexdir/pdftosrc.cc' || echo '$(srcdir)/'`pdftexdir/pdftosrc.cc
++@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(FONTCONFIG_INCLUDES) $(DEFAULT_INCLUDES) $(INCLUDES) $(pdftosrc_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT pdftosrc-pdftosrc.o -MD -MP -MF $(DEPDIR)/pdftosrc-pdftosrc.Tpo -c -o pdftosrc-pdftosrc.o `test -f 'pdftexdir/pdftosrc.cc' || echo '$(srcdir)/'`pdftexdir/pdftosrc.cc
+ @am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/pdftosrc-pdftosrc.Tpo $(DEPDIR)/pdftosrc-pdftosrc.Po
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='pdftexdir/pdftosrc.cc' object='pdftosrc-pdftosrc.o' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@

@@ -1,0 +1,21 @@
+$OpenBSD: patch-utils_xindy_rte_ordrules_Makefile_in,v 1.1 2009/12/12 17:48:34 edd Exp $
+--- utils/xindy/rte/ordrules/Makefile.in.orig	Fri Jul  3 20:26:15 2009
++++ utils/xindy/rte/ordrules/Makefile.in	Sat Jul  4 18:46:06 2009
+@@ -343,11 +343,15 @@ uninstall-am:
+ ordrulei.c: $(srcdir)/ordrulei.lsp
+ 	$(CLISP) -q -norc -c $(srcdir)/ordrulei.lsp -o ordrulei.fas
+ 
++# OpenBSD
++# Do not add $(LOCALBASE)/include to global CPPFLAGS or
++# the vanilla ICU will be picked up. TL uses a modified 
++# version of ICU.
+ ordrulei.o: ordrulei.c
+-	$(CC) $(CFLAGS) $(CPPFLAGS) -I$(INCLUDES) -c ordrulei.c
++	$(CC) $(CFLAGS) $(CPPFLAGS) -I$(INCLUDES) -I${PREFIX}/include -c ordrulei.c
+ 
+ ordrules.o: ordrules.c ordrules.h rxsub.h debug.h mkind.h
+-	$(CC) $(CFLAGS) $(CPPFLAGS) -I$(INCLUDES) -funsigned-char -I. -c ordrules.c
++	$(CC) $(CFLAGS) $(CPPFLAGS) -I$(INCLUDES) -funsigned-char -I. -I${PREFIX}/include -c ordrules.c
+ 
+ rxsub.o: rxsub.c rxsub.h mkind.h
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -I. -c rxsub.c

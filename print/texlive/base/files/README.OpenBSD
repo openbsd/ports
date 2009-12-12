@@ -1,26 +1,31 @@
-TeX Live for OpenBSD - Notes
-$OpenBSD: README.OpenBSD,v 1.5 2009/05/25 17:19:12 sthen Exp $
+TeX Live for OpenBSD (PuffTeX) - Notes
+$OpenBSD: README.OpenBSD,v 1.6 2009/12/12 17:48:34 edd Exp $
 ----------------------------
 
 There are a number of texmf trees in the OpenBSD packages:
 
 texmf-minimal:
   A teTeX like tree, suitable for casual TeX users
-  who do not need many extra macros or ConTeXt (approx 190MB).
+  who do not need many extra macros or ConTeXt (approx 237MB).
 
 texmf-full:
-  Extra macros and ConTeXt support (approx 161MB).
+  Extra macros and ConTeXt support (approx 191MB).
 
 texmf-doc:
-  Documentation for all of TeX Live (approx 594MB).
+  Documentation for all of TeX Live (approx 612MB).
 
 All sizes are compressed package sizes.
 
 The texmf package contents do not overlap.
 
-Please backup your TeX configuration files (texmf.cnf, fmtutil.cnf, etc.)
-before adding/deleting texlive related packages. It is necessary for the
-package tools to manipulate these files.
+Individual users may override or add to the tex class and style files
+supplied by TeX Live by installing them into ~/.texmf and running
+mktexlsr(1) (as themselves). After this you can test the installation by
+searching for the files using kpsewhich(1).
+
+Be warned that the package tools manipulate TeX configuration files
+(texmf.cnf, fmtutil.cnf, etc.) when adding/deleting texlive related
+packages.
 
 Some requirements of TeX Live were not included as dependencies to make the
 package less bloated for people who don't need those features.
@@ -29,7 +34,7 @@ As far as I know:
 * You should install ruby and ImageMagick if you wish to use ConTeXt.
 * For texdoctk you will need p5-Tk
 
-If you know more, please mail me: <vext01@gmail.com>
+If you know more, please mail me: <edd@openbsd.org>
 
 Have fun TeXing.
 

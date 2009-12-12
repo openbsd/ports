@@ -1,0 +1,71 @@
+$OpenBSD: patch-texmf_web2c_texmf_cnf,v 1.1 2009/12/12 17:48:34 edd Exp $
+--- texmf/web2c/texmf.cnf.orig	Sun Nov 22 12:44:20 2009
++++ texmf/web2c/texmf.cnf	Sun Nov 22 12:50:47 2009
+@@ -6,6 +6,8 @@
+ % entire copy of the full texmf.cnf! -- in ../../texmf.cnf.  That is, if
+ % this file is installed in /some/path/to/texlive/2009/texmf/web2c/texmf.cnf,
+ % add your custom settings to /some/path/to/texlive/2009/texmf.cnf.
++%
++% Modified for OpenBSD ports.
+ % 
+ % What follows is a super-summary of what this .cnf file can
+ % contain. Please read the Kpathsea manual for more information.
+@@ -51,17 +53,19 @@
+ % find where to look dynamically.  See the manual and the definition
+ % below of TEXMFCNF.
+ 
++OBSD_TMF = ${LOCALBASE}/share
++
+ % The tree containing the runtime files closely related to the specific
+ % program version used:
+-TEXMFMAIN = $SELFAUTOPARENT/texmf
++TEXMFMAIN = $OBSD_TMF/texmf
+ 
+ % The main distribution tree:
+-TEXMFDIST = $SELFAUTOPARENT/texmf-dist
++TEXMFDIST = $OBSD_TMF/texmf-dist
+ 
+ % A place for local additions to a "standard" texmf tree.
+ % This tree is not used for local configuration maintained by
+ % texconfig, it uses TEXMFCONFIG below.
+-TEXMFLOCAL = $SELFAUTOPARENT/../texmf-local
++TEXMFLOCAL = $OBSD_TMF/../texmf-local
+ 
+ % TEXMFSYSVAR, where texconfig-sys stores variable runtime data.
+ % With teTeX-3.0 or later, this must be set.
+@@ -69,7 +73,7 @@ TEXMFLOCAL = $SELFAUTOPARENT/../texmf-local
+ %   TEXMFSYSVAR = $TEXMFMAIN
+ % For using a separate tree:
+ %   TEXMFSYSVAR = $SELFAUTOPARENT/texmf-var
+-TEXMFSYSVAR = $SELFAUTOPARENT/texmf-var
++TEXMFSYSVAR = $OBSD_TMF/texmf-var
+ 
+ % TEXMFSYSCONFIG, where texconfig-sys stores configuration data.
+ % With teTeX-3.0 or later, this must be set.
+@@ -77,7 +81,7 @@ TEXMFSYSVAR = $SELFAUTOPARENT/texmf-var
+ %   TEXMFSYSCONFIG = $TEXMFMAIN
+ % For using a separate tree:
+ %   TEXMFSYSCONFIG = $SELFAUTOPARENT/texmf-config
+-TEXMFSYSCONFIG = $SELFAUTOPARENT/texmf-config
++TEXMFSYSCONFIG = $OBSD_TMF/texmf-config
+ 
+ % User texmf trees are allowed as follows.
+ % This used to be HOMETEXMF.
+@@ -117,7 +121,7 @@ TEXMFCONFIG = ~/.texlive2009/texmf-config
+ % versions should take precedence over those (although it is generally a
+ % source of confusion to have different versions of a package installed,
+ % whatever the trees, so try to avoid it).
+-TEXMF = {$TEXMFCONFIG,$TEXMFVAR,$TEXMFHOME,!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFMAIN,!!$TEXMFLOCAL,!!$TEXMFDIST}
++TEXMF = {$TEXMFCONFIG,$TEXMFVAR,!!$TEXMFHOME,!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFMAIN,!!$TEXMFLOCAL,!!$TEXMFDIST}
+ 
+ % The system trees.  These are the trees that are shared by all the users.
+ % If a tree appears in this list, the mktex* scripts will use
+@@ -137,7 +141,7 @@ VARTEXFONTS = $TEXMFVAR/fonts
+ % ls-R is present, it will be used, and the disk will not be searched.
+ % This is arguably a bug in kpathsea.
+ %
+-TEXMFDBS = {!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFMAIN,!!$TEXMFLOCAL,!!$TEXMFDIST}
++TEXMFDBS = {!!$TEXMFHOME,!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFMAIN,!!$TEXMFLOCAL,!!$TEXMFDIST}
+ 
+ % On some systems, there will be a system tree which contains all the font
+ % files that may be created as well as the formats.  For example
