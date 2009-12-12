@@ -1,7 +1,7 @@
-# $OpenBSD: rc.mimedefang,v 1.4 2008/10/29 14:36:12 okan Exp $
+# $OpenBSD: rc.mimedefang,v 1.5 2009/12/12 15:38:07 ajacoutot Exp $
 
-mimedefang=${LOCALBASE}/bin/mimedefang
-multiplexor=${LOCALBASE}/bin/mimedefang-multiplexor
+mimedefang=${TRUEPREFIX}/bin/mimedefang
+multiplexor=${TRUEPREFIX}/bin/mimedefang-multiplexor
 
 if [ -x $mimedefang -a -x $multiplexor ]; then
 	MAX_SLAVES=16
