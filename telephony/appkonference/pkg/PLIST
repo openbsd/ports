@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/13 12:24:49 sthen Exp $
+@conflict app_conference-*
+@pkgpath telephony/app_conference
+lib/asterisk/modules/app_konference.so
+share/doc/app_konference/
+share/doc/app_konference/README
