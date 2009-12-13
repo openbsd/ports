@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/01/16 07:54:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/13 13:18:40 ajacoutot Exp $
 
 COMMENT-main=	improved artwiz fonts
 COMMENT-de=	improved artwiz fonts (german pack)
@@ -7,7 +7,7 @@ COMMENT-se=	improved artwiz fonts (swedish pack)
 V=		1.3
 NAME=		artwiz-aleczapka
 DISTNAME=	${NAME}-en-${V}
-PKGNAME-main=	${NAME}-${V}p3
+PKGNAME-main=	${NAME}-${V}p4
 PKGNAME-de=	${NAME}-de-${V}p0
 PKGNAME-se=	${NAME}-se-${V}p0
 CATEGORIES=	x11
@@ -44,6 +44,7 @@ RUN_DEPENDS-se=	:artwiz-aleczapka->=${V}:x11/artwiz-aleczapka
 do-install:
 	${X11BASE}/bin/mkfontdir ${WRKSRC}
 	egrep '\.pcf' ${WRKSRC}/fonts.dir | \
+		grep '\-artwiz-' | \
 		sed 's/\.pcf//g' > ${WRKSRC}/fonts.alias
 	${INSTALL_DATA_DIR} ${INST_DIR}
 	${INSTALL_DATA} ${WRKDIR}/${NAME}-en-${V}/*.pcf ${INST_DIR}
