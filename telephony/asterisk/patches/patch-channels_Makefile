@@ -1,8 +1,8 @@
-$OpenBSD: patch-channels_Makefile,v 1.7 2007/12/19 21:07:27 sthen Exp $
---- channels/Makefile.orig	Mon Dec 17 07:21:08 2007
-+++ channels/Makefile	Tue Dec 18 22:20:15 2007
-@@ -21,8 +21,8 @@ C_MODS:=$(filter-out $(MENUSELECT_CHANNELS),$(ALL_C_MO
- CC_MODS:=$(filter-out $(MENUSELECT_CHANNELS),$(ALL_CC_MODS))
+$OpenBSD: patch-channels_Makefile,v 1.8 2009/12/13 12:11:29 sthen Exp $
+--- channels/Makefile.orig	Mon Dec  1 13:40:51 2008
++++ channels/Makefile	Mon Dec  1 13:41:05 2008
+@@ -16,8 +16,8 @@ MENUSELECT_CATEGORY=CHANNELS
+ MENUSELECT_DESCRIPTION=Channel Drivers
  
  ifeq ($(OSARCH),OpenBSD)
 -  PTLIB=-lpt_OpenBSD_x86_r

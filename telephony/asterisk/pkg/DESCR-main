@@ -7,3 +7,6 @@ Interactive Voice Response, and Call Queuing.
 Asterisk supports Voice over IP in many protocols, and can
 interoperate with almost all standards-based telephony equipment
 using relatively inexpensive hardware.
+
+Flavors:
+	h323 - compile in H.323 support.

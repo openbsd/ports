@@ -1,5 +1,3 @@
-@comment $OpenBSD: PFRAG.h323-main,v 1.1 2007/11/27 10:41:04 sthen Exp $
-lib/asterisk/modules/chan_h323.so
-share/doc/asterisk/h323.txt
+@comment $OpenBSD: PFRAG.h323-main,v 1.2 2009/12/13 12:11:29 sthen Exp $
 share/examples/asterisk/default/h323.conf
 @sample ${SYSCONFDIR}/asterisk/h323.conf

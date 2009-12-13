@@ -1,11 +1,18 @@
-@comment $OpenBSD: PLIST-jabber,v 1.1 2007/09/05 22:42:52 sthen Exp $
+@comment $OpenBSD: PLIST-jabber,v 1.2 2009/12/13 12:11:29 sthen Exp $
 include/asterisk/jabber.h
 include/asterisk/jingle.h
 lib/asterisk/modules/chan_gtalk.so
+lib/asterisk/modules/chan_jingle.so
 lib/asterisk/modules/res_jabber.so
 share/doc/asterisk/jabber.txt
 share/doc/asterisk/jingle.txt
 share/examples/asterisk/default/gtalk.conf
 @sample ${SYSCONFDIR}/asterisk/gtalk.conf
 share/examples/asterisk/default/jabber.conf
+@mode 640
+@group _asterisk
 @sample ${SYSCONFDIR}/asterisk/jabber.conf
+@mode
+@group
+share/examples/asterisk/default/jingle.conf
+@sample ${SYSCONFDIR}/asterisk/jingle.conf

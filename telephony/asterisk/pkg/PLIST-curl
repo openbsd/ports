@@ -1,2 +1,3 @@
-@comment $OpenBSD: PLIST-curl,v 1.1 2007/09/05 22:42:52 sthen Exp $
+@comment $OpenBSD: PLIST-curl,v 1.2 2009/12/13 12:11:29 sthen Exp $
 lib/asterisk/modules/func_curl.so
+lib/asterisk/modules/res_config_curl.so

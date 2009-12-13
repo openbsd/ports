@@ -1,4 +1,4 @@
-; $OpenBSD: musiconhold.conf.sample,v 1.2 2007/09/05 22:42:52 sthen Exp $
+; $OpenBSD: musiconhold.conf.sample,v 1.3 2009/12/13 12:11:29 sthen Exp $
 ; Music on Hold -- Sample Configuration
 
 ; There are various ways to handle musiconhold. The lightweight method
@@ -12,7 +12,7 @@
 
 [default]
 mode=files
-directory=/usr/local/share/asterisk/moh
+directory=${LOCALBASE}/share/asterisk/moh
 random=yes
 
 ; The method used in earlier versions is to have one external process

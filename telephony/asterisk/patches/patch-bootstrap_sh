@@ -1,14 +1,60 @@
-$OpenBSD: patch-bootstrap_sh,v 1.1 2009/11/04 21:51:49 sthen Exp $
---- bootstrap.sh.orig	Thu Oct 30 20:58:24 2008
-+++ bootstrap.sh	Wed Nov  4 21:25:03 2009
-@@ -19,8 +19,8 @@ if [ $? = 0 ] ; then	# FreeBSD case
- else	# linux case
- 	MY_AC_VER=
- 	MY_AM_VER=
+$OpenBSD: patch-bootstrap_sh,v 1.2 2009/12/13 12:11:29 sthen Exp $
+--- bootstrap.sh.orig	Sun Oct 11 17:11:30 2009
++++ bootstrap.sh	Sun Oct 11 17:10:37 2009
+@@ -9,29 +9,34 @@ check_for_app() {
+ 	fi
+ }
+ 
+-# On FreeBSD and OpenBSD, multiple autoconf/automake versions have different names.
+-# On linux, envitonment variables tell which one to use.
++MY_AC_VER=
++MY_AM_VER=
+ 
+-uname -s | grep -q BSD
+-if [ $? = 0 ] ; then	# BSD case
+-	case `uname -sr` in
+-		'FreeBSD 4'*)	# FreeBSD 4.x has a different naming
+-			MY_AC_VER=259
+-			MY_AM_VER=19
+-			;;
+-		*)
+-			MY_AC_VER=-2.61
+-			MY_AM_VER=-1.9
+-			;;
+-	esac
+-else	# linux case
+-	MY_AC_VER=
+-	MY_AM_VER=
 -	AUTOCONF_VERSION=2.60
 -	AUTOMAKE_VERSION=1.9
-+	[ -z "$AUTOCONF_VERSION" ] && AUTOCONF_VERSION=2.60
-+	[ -z "$AUTOMAKE_VERSION" ] && AUTOMAKE_VERSION=1.9
- 	export AUTOCONF_VERSION
- 	export AUTOMAKE_VERSION
- fi
+-	export AUTOCONF_VERSION
+-	export AUTOMAKE_VERSION
+-fi
++# On FreeBSD, multiple autoconf/automake versions have different names.
++# On Linux and OpenBSD, environment variables tell which one to use.
++
++case `uname -sr` in
++	'FreeBSD 4'*)	# FreeBSD 4.x has a different naming
++		MY_AC_VER=259
++		MY_AM_VER=19
++		;;
++	OpenBSD*)
++		[ -z "$AUTOCONF_VERSION" ] && AUTOCONF_VERSION=2.61
++		[ -z "$AUTOMAKE_VERSION" ] && AUTOMAKE_VERSION=1.9
++		export AUTOCONF_VERSION
++		export AUTOMAKE_VERSION
++		;;
++	*BSD*)
++		MY_AC_VER=-2.61
++		MY_AM_VER=-1.9
++		;;
++	*)
++		AUTOCONF_VERSION=2.60
++		AUTOMAKE_VERSION=1.9
++		export AUTOCONF_VERSION
++		export AUTOMAKE_VERSION
++		;;
++esac
+ 
+ check_for_app autoconf${MY_AC_VER}
+ check_for_app autoheader${MY_AC_VER}

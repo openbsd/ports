@@ -1,7 +1,7 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.8 2008/06/14 16:00:10 sthen Exp $
---- contrib/scripts/safe_asterisk.orig	Fri May 30 17:44:39 2008
-+++ contrib/scripts/safe_asterisk	Thu Jun 12 19:49:36 2008
-@@ -2,19 +2,20 @@
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.9 2009/12/13 12:11:29 sthen Exp $
+--- contrib/scripts/safe_asterisk.orig	Tue Dec 16 19:55:38 2008
++++ contrib/scripts/safe_asterisk	Fri Apr 24 15:01:35 2009
+@@ -2,9 +2,9 @@
  # vim:textwidth=80:tabstop=4:shiftwidth=4:smartindent:autoindent
  
  CLIARGS="$*"				# Grab any args passed to safe_asterisk
@@ -12,8 +12,9 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.8 2008/06/14 16:00:10 sthen Ex
 +CONSOLE=no					# Whether or not you want a console
 +NOTIFY=root					# Who to notify about crashes
  #EXEC=/path/to/somescript	# Run this command if Asterisk crashes
- MACHINE=`hostname`			# To specify which machine has crashed when getting the mail
- DUMPDROP=/tmp
+ #LOGFILE=/path/to/logfile	# Where to place the normal logfile (disabled if blank)
+ #SYSLOG=local0				# Which syslog facility to use (disabled if blank)
+@@ -13,10 +13,11 @@ DUMPDROP=/tmp
  SLEEPSECS=4
  ASTSBINDIR=__ASTERISK_SBIN_DIR__
  ASTPIDFILE=__ASTERISK_VARRUN_DIR__/asterisk.pid
@@ -27,7 +28,16 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.8 2008/06/14 16:00:10 sthen Ex
  
  # run asterisk with this priority
  PRIORITY=0
-@@ -74,6 +75,12 @@ else
+@@ -32,7 +33,7 @@ PRIORITY=0
+ # set to the system's maximum files open devided by two, if not set here.
+ # MAXFILES=32768
+ 
+-function message() {
++message() {
+ 	echo "$1" >&2
+ 	if [ "$SYSLOG" != "" ]; then
+ 	    logger -p "${SYSLOG}.warn" -t safe_asterisk[$$] "$1"
+@@ -91,6 +92,12 @@ else
  	# set the process's filemax to whatever set above
  	ulimit -n $MAXFILES
  
@@ -39,8 +49,8 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.8 2008/06/14 16:00:10 sthen Ex
 +	fi
  fi
  
- #
-@@ -170,7 +177,7 @@ run_asterisk()
+ if test "x$UMASK" != "x"; then
+@@ -192,7 +199,7 @@ run_asterisk()
  		sleep $SLEEPSECS
  		if [ $KILLALLMPG123 ]
  		then
