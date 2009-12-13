@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2009/12/13 12:11:29 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2009/12/13 12:23:57 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
+@conflict app_conference-20070809
 @conflict app_conference-20070710
 @conflict app_conference-20060201
 @conflict app_conference-20051110
