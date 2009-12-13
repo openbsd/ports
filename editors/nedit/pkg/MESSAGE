@@ -1,0 +1,8 @@
+Additional patterns for NEdit have been installed into:
+${PREFIX}/share/nedit/patterns/
+
+To load them into NEdit type:
+nedit -import PATTERN_FILE.pats
+
+The patterns can then be saved permanently into nedit's own resource
+file by using Save Defaults from the Preferences menu.

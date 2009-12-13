@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.45 2009/11/08 16:24:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2009/12/13 22:39:38 jasper Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
 DISTNAME=		nedit-5.5
-PKGNAME=		${DISTNAME}p6
-DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX}
+PKGNAME=		${DISTNAME}p7
+DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
+			diff-2.1.pats.gz:1
 PATCHFILES=		wrapmark.diff:0
 CATEGORIES=		editors x11
 
@@ -13,9 +14,11 @@ MASTER_SITES=		http://www.nedit.org/ftp/v5_5/ \
 			${MASTER_SITE_SOURCEFORGE:=nedit/}
 
 MASTER_SITES0=		http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES1=		http://www.phil.uu.nl/~lievisse/distfiles/
 
 HOMEPAGE=		http://www.nedit.org/
 
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -50,5 +53,7 @@ do-install:
 		${PREFIX}/lib/X11/app-defaults/NEdit
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nedit
 	${INSTALL_DATA} ${WRKSRC}/doc/nedit.doc ${PREFIX}/share/doc/nedit
+	${INSTALL_DATA_DIR} ${PREFIX}/share/nedit/patterns
+	${INSTALL_DATA} ${WRKDIR}/diff-2.1.pats ${PREFIX}/share/nedit/patterns/diff.pats
 
 .include <bsd.port.mk>

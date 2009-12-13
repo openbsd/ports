@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/06/28 12:32:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/12/13 22:39:38 jasper Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},wrapmark
-bin/ncl
-bin/nedit
+@bin bin/ncl
+@bin bin/nedit
 lib/X11/app-defaults/NEdit
 @man man/man1/ncl.1
 @man man/man1/nedit.1
 share/doc/nedit/
 share/doc/nedit/nedit.doc
+share/nedit/
+share/nedit/patterns/
+share/nedit/patterns/diff.pats
