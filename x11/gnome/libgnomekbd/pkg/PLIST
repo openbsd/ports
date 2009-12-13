@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/10/11 12:21:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/12/13 15:17:50 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gkbd-indicator-plugins-capplet
 include/libgnomekbd/
@@ -29,14 +29,15 @@ share/locale/bg/LC_MESSAGES/libgnomekbd.mo
 share/locale/bn/LC_MESSAGES/libgnomekbd.mo
 share/locale/bn_IN/LC_MESSAGES/libgnomekbd.mo
 share/locale/ca/LC_MESSAGES/libgnomekbd.mo
-share/locale/ca@valencia/
-share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/libgnomekbd.mo
 share/locale/cs/LC_MESSAGES/libgnomekbd.mo
 share/locale/da/LC_MESSAGES/libgnomekbd.mo
 share/locale/de/LC_MESSAGES/libgnomekbd.mo
 share/locale/dz/LC_MESSAGES/libgnomekbd.mo
 share/locale/el/LC_MESSAGES/libgnomekbd.mo
+share/locale/en@shaw/
+share/locale/en@shaw/LC_MESSAGES/
+share/locale/en@shaw/LC_MESSAGES/libgnomekbd.mo
 share/locale/en_GB/LC_MESSAGES/libgnomekbd.mo
 share/locale/es/LC_MESSAGES/libgnomekbd.mo
 share/locale/et/LC_MESSAGES/libgnomekbd.mo
