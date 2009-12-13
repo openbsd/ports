@@ -1,0 +1,41 @@
+$OpenBSD: patch-plparse_totem-pl-parser_c,v 1.1 2009/12/13 13:46:53 ajacoutot Exp $
+
+XXX
+For now as we don't have memmem, revert 5e76577f299436cac38260012db37fb1fe475484:
+Fixed parsing of http://www.davidco.com/podcast.php
+https://bugzilla.gnome.org/show_bug.cgi?id=585407
+
+--- plparse/totem-pl-parser.c.orig	Fri Dec  4 16:10:52 2009
++++ plparse/totem-pl-parser.c	Sun Dec 13 14:42:05 2009
+@@ -1660,21 +1660,17 @@ totem_pl_parser_cleanup_xml (char *contents)
+ 
+ 	needle = contents;
+ 	while ((needle = strstr (needle, "<!--")) != NULL) {
+-		char *end;
+-
+-		/* Find end of comments */
+-		end = strstr (needle, "-->");
+-		/* Broken file? */
+-		if (end == NULL)
+-			return;
+-		if (memmem (needle, end - needle,
+-			    "]]>", strlen ("]]>")) != NULL) {
+-			/* Advance 3 and skip */
+-			needle += 3;
+-			continue;
++		while (strncmp (needle, "-->", 3) != 0) {
++			*needle = ' ';
++			needle++;
++			if (*needle == '\0')
++				break;
+ 		}
+-		/* Empty the comment */
+-		memset (needle, ' ', end + 3 - needle);
++		if (strncmp (needle, "-->", 3) == 0) {
++			guint i;
++			for (i = 0; i < 3; i++)
++				*(needle + i) = ' ';
++		}
+ 	}
+ }
+ 
