@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/12/13 12:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2009/12/13 12:52:32 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	conferencing application for asterisk
 
-V=		1.1
+V=		1.2
 DISTNAME=	appkonference-$V
 
 CATEGORIES=	telephony
@@ -35,6 +35,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/app_konference
 	${INSTALL_DATA} ${WRKSRC}/app_konference.so \
 		${PREFIX}/lib/asterisk/modules
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/app_konference
+	cd ${WRKSRC}; ${INSTALL_DATA} CHANGES CLI.txt Dialplan.txt README \
+		${PREFIX}/share/doc/app_konference
 
 .include <bsd.port.mk>
