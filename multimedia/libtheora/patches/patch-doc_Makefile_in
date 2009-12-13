@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.3 2008/07/25 14:20:18 brad Exp $
---- doc/Makefile.in.orig	Wed Apr 16 16:26:14 2008
-+++ doc/Makefile.in	Tue Jul 15 16:54:48 2008
-@@ -187,7 +187,7 @@ build_vendor = @build_vendor@
- builddir = @builddir@
- datadir = @datadir@
- datarootdir = @datarootdir@
+$OpenBSD: patch-doc_Makefile_in,v 1.4 2009/12/13 22:01:32 sthen Exp $
+--- doc/Makefile.in.orig	Wed Aug 12 11:58:08 2009
++++ doc/Makefile.in	Wed Aug 12 21:44:27 2009
+@@ -161,7 +161,7 @@ sys_symbol_underscore = @sys_symbol_underscore@
+ 
+ SUBDIRS = spec
+ 
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
- dvidir = @dvidir@
- exec_prefix = @exec_prefix@
- host = @host@
+ 
+ static_docs = vp3-format.txt color.html \
+ 	draft-ietf-avt-rtp-theora-00.xml \

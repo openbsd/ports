@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_spec_Makefile_in,v 1.1 2008/07/25 14:20:50 brad Exp $
---- doc/spec/Makefile.in.orig	Tue Jul 15 17:48:31 2008
-+++ doc/spec/Makefile.in	Tue Jul 15 17:48:40 2008
-@@ -197,7 +197,7 @@ build_vendor = @build_vendor@
- builddir = @builddir@
- datadir = @datadir@
- datarootdir = @datarootdir@
+$OpenBSD: patch-doc_spec_Makefile_in,v 1.2 2009/12/13 22:01:32 sthen Exp $
+--- doc/spec/Makefile.in.orig	Wed Aug 12 11:58:08 2009
++++ doc/spec/Makefile.in	Wed Aug 12 21:47:07 2009
+@@ -162,7 +162,7 @@ ltdl_LIBOBJS = @ltdl_LIBOBJS@
+ ltdl_LTLIBOBJS = @ltdl_LTLIBOBJS@
+ sys_symbol_underscore = @sys_symbol_underscore@
+ 
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
- dvidir = @dvidir@
- exec_prefix = @exec_prefix@
- host = @host@
+ 
+ built_docs = Theora.pdf
+ 

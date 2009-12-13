@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure_ac,v 1.1 2009/12/13 22:01:32 sthen Exp $
+--- configure.ac.orig	Sat Aug 22 13:54:35 2009
++++ configure.ac	Thu Aug 27 23:43:00 2009
+@@ -168,8 +168,8 @@ else
+         case $host in 
+         *)
+                 DEBUG="-g -Wall -Wno-parentheses -DDEBUG -D__NO_MATH_INLINES"
+-                CFLAGS="-Wall -Wno-parentheses -O3 -fforce-addr -fomit-frame-pointer -finline-functions -funroll-loops"
+-                PROFILE="-Wall -Wno-parentheses -pg -g -O3 -fno-inline-functions -DDEBUG";;
++                CFLAGS="-Wall -Wno-parentheses -fforce-addr -fomit-frame-pointer -finline-functions -funroll-loops"
++                PROFILE="-Wall -Wno-parentheses -pg -g -fno-inline-functions -DDEBUG";;
+         esac
+ fi
+ CFLAGS="$CFLAGS $cflags_save"
+@@ -426,7 +426,8 @@ dnl Check for library functions
+ dnl --------------------------------------------------
+ 
+ dnl OpenBSD needs -lcompat for ftime() used by dump_video.c
+-AC_SEARCH_LIBS([ftime], [compat])
++AC_CHECK_LIB([compat], [ftime], [COMPAT_LIBS='-lcompat'])
++AC_SUBST(COMPAT_LIBS)
+ 
+ dnl substitute the included getopt if the system doesn't support long options
+ AC_CHECK_FUNC(getopt_long,

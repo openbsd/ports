@@ -1,17 +1,20 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.3 2008/07/25 14:20:18 brad Exp $
---- examples/Makefile.in.orig	Wed Apr 16 16:26:15 2008
-+++ examples/Makefile.in	Tue Jul 15 17:08:10 2008
-@@ -251,11 +251,11 @@ LDADD = ../lib/libtheora.la $(OGG_LIBS)
- LDADDENC = ../lib/libtheoraenc.la ../lib/libtheoradec.la $(OGG_LIBS)
+$OpenBSD: patch-examples_Makefile_in,v 1.4 2009/12/13 22:01:32 sthen Exp $
+--- examples/Makefile.in.orig	Sat Aug 22 14:17:18 2009
++++ examples/Makefile.in	Thu Aug 27 23:29:13 2009
+@@ -75,6 +75,7 @@ BUILDABLE_EXAMPLES = @BUILDABLE_EXAMPLES@
+ CAIRO_CFLAGS = @CAIRO_CFLAGS@
+ CAIRO_LIBS = @CAIRO_LIBS@
+ CC = @CC@
++COMPAT_LIBS = @COMPAT_LIBS@
+ CPP = @CPP@
+ CXX = @CXX@
+ CXXCPP = @CXXCPP@
+@@ -173,7 +174,7 @@ LDADDENC = ../lib/libtheoraenc.la ../lib/libtheoradec.
+ 
  dump_video_SOURCES = dump_video.c
  EXTRA_dump_video_SOURCES = getopt.c getopt1.c getopt.h
--dump_video_LDADD = $(GETOPT_OBJS) $(LDADD)
-+dump_video_LDADD = $(GETOPT_OBJS) $(LDADD) -lcompat
- dump_video_DEPENDENCIES = $(GETOPT_OBJS)
- player_example_SOURCES = player_example.c
- player_example_CFLAGS = $(SDL_CFLAGS) $(OGG_CFLAGS) $(VORBIS_CFLAGS)
--player_example_LDADD = $(LDADD) $(SDL_LIBS) $(VORBIS_LIBS)
-+player_example_LDADD = $(LDADD) $(SDL_LIBS) $(VORBIS_LIBS) -lossaudio
- encoder_example_SOURCES = encoder_example.c
- EXTRA_encoder_example_SOURCES = getopt.c getopt1.c getopt.h
- encoder_example_CFLAGS = $(OGG_CFLAGS) $(VORBIS_CFLAGS)
+-dump_video_LDADD = $(GETOPT_OBJS) $(LDADDDEC)
++dump_video_LDADD = $(GETOPT_OBJS) $(LDADDDEC) $(COMPAT_LIBS)
+ 
+ dump_psnr_SOURCES = dump_psnr.c
+ EXTRA_dump_psnr_SOURCES = getopt.c getopt1.c getopt.h
