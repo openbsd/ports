@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/10/13 11:13:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2009/12/13 12:01:27 sthen Exp $
 
      SUBDIR += app_conference
      SUBDIR += asterisk
@@ -7,7 +7,6 @@
      SUBDIR += asterisk-openbsd-moh
      SUBDIR += asterisk-sounds
      SUBDIR += astmanproxy
-     SUBDIR += chan_unistim
      SUBDIR += fobbit
      SUBDIR += gsutil
      SUBDIR += iaxmodem
