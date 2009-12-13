@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2008/09/13 07:23:37 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2009/12/13 23:47:51 sthen Exp $
 
 COMMENT=	provides rudimentary access to remote SNMP agents
 
 MODULES=	cpan
-DISTNAME=	SNMP_Session-1.12
-PKGNAME=	p5-${DISTNAME}
+DISTNAME=	SNMP_Session-1.13
 CATEGORIES=	net
 
-HOMEPAGE=	http://www.switch.ch/misc/leinen/snmp/perl/
-MASTER_SITES=	${HOMEPAGE}dist/ \
-		${HOMEPAGE}dist/old/
+HOMEPAGE=	http://code.google.com/p/snmp-session/
+MASTER_SITES=	http://snmp-session.googlecode.com/files/
 
 # Artistic License 2.0
 PERMIT_PACKAGE_CDROM=   Yes
