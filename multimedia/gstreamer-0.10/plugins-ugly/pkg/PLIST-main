@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/11/29 09:17:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2009/12/14 11:36:26 espie Exp $
 @conflict gstreamer-bad-<0.10.17
 @conflict gstreamer-a52-*
 @conflict gstreamer-mad-*
 @conflict gstreamer-mpeg2-*
 @conflict gstreamer-dvdread-*
+@pkgpath ${BASE_PKGPATH},-mad
+@pkgpath ${BASE_PKGPATH},-a52
+@pkgpath ${BASE_PKGPATH},-mpeg2
+@pkgpath ${BASE_PKGPATH},-dvdread
 @comment lib/gstreamer-${VERSION}/libgsta52dec.la
 lib/gstreamer-${VERSION}/libgsta52dec.so
 @comment lib/gstreamer-${VERSION}/libgstasf.la

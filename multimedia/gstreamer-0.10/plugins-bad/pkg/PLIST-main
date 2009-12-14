@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/12/05 23:21:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2009/12/14 11:36:26 espie Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -13,6 +13,18 @@
 @conflict gstreamer-tremor-*
 @conflict gstreamer-x264-*
 @conflict gstreamer-xvid-*
+@pkgpath ${BASE_PKGPATH},-bz2
+@pkgpath ${BASE_PKGPATH},-faac
+@pkgpath ${BASE_PKGPATH},-faad
+@pkgpath ${BASE_PKGPATH},-gsm
+@pkgpath ${BASE_PKGPATH},-ladspa
+@pkgpath ${BASE_PKGPATH},-meta
+@pkgpath ${BASE_PKGPATH},-musepack
+@pkgpath ${BASE_PKGPATH},-sndfile
+@pkgpath ${BASE_PKGPATH},-swf
+@pkgpath ${BASE_PKGPATH},-tremor
+@pkgpath ${BASE_PKGPATH},-xvid
+@pkgpath ${BASE_PKGPATH},-x264
 @bin bin/gst-camera
 @bin bin/gst-camera-perf
 include/gstreamer-${VERSION}/gst/interfaces/photography-enumtypes.h

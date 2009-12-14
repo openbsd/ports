@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2009/11/29 09:17:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2009/12/14 11:36:26 espie Exp $
 @conflict gstreamer-plugins-bad-<0.10.7
 @conflict gstreamer-jpeg-*
 @conflict gstreamer-png-*
@@ -9,6 +9,15 @@
 @conflict gstreamer-speex-*
 @conflict gstreamer-taglib-*
 @conflict gstreamer-wavpack-*
+@pkgpath ${BASE_PKGPATH},-jpeg
+@pkgpath ${BASE_PKGPATH},-png
+@pkgpath ${BASE_PKGPATH},-cairo
+@pkgpath ${BASE_PKGPATH},-gconf
+@pkgpath ${BASE_PKGPATH},-flac
+@pkgpath ${BASE_PKGPATH},-shout
+@pkgpath ${BASE_PKGPATH},-speex
+@pkgpath ${BASE_PKGPATH},-taglib
+@pkgpath ${BASE_PKGPATH},-wavpack
 @comment lib/gstreamer-${VERSION}/libgstalaw.la
 lib/gstreamer-${VERSION}/libgstalaw.so
 @comment lib/gstreamer-${VERSION}/libgstalpha.la

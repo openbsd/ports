@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2009/11/29 09:17:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2009/12/14 11:36:26 espie Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (good)
@@ -10,7 +10,7 @@ COMMENT-soup =		libsoup element for GStreamer (good)
 V =			0.10.17
 DISTNAME =		gst-plugins-good-$V
 
-PKGNAME-main =		gstreamer-plugins-good-$Vv0
+PKGNAME-main =		gstreamer-plugins-good-$Vp0v0
 PKGNAME-aalib =		gstreamer-aalib-$V
 PKGNAME-dv =		gstreamer-dv-$V
 PKGNAME-gdk =		gstreamer-gdk-pixbuf-$V
