@@ -1,14 +1,14 @@
-$OpenBSD: patch-demos_lib_Exm_wml_Makefile_in,v 1.1 2007/07/18 21:41:05 mbalmer Exp $
---- demos/lib/Exm/wml/Makefile.in.orig	Sat Jun 30 12:54:11 2007
-+++ demos/lib/Exm/wml/Makefile.in	Sat Jun 30 12:54:34 2007
+$OpenBSD: patch-demos_lib_Exm_wml_Makefile_in,v 1.2 2009/12/14 18:03:36 jasper Exp $
+--- demos/lib/Exm/wml/Makefile.in.orig	Thu Dec 10 00:14:26 2009
++++ demos/lib/Exm/wml/Makefile.in	Thu Dec 10 00:16:01 2009
 @@ -14,6 +14,7 @@
  
  @SET_MAKE@
  
 +RM=rm
- srcdir = @srcdir@
- top_srcdir = @top_srcdir@
  VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
 @@ -521,16 +522,16 @@ $(WMDTABLE): wmldbcreate $(TARGETS)
  UilLexPars.c UilLexPars.h: $(UILY)
  

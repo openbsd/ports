@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.37 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2009/12/14 18:03:36 jasper Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
 
-VERSION=		2.3.0
+VERSION=		2.3.2
 DISTNAME=		openmotif-${VERSION}
-PKGNAME-main=		openmotif-${VERSION}p3
-PKGNAME-demos=		openmotif-demos-${VERSION}p4
+PKGNAME-main=		openmotif-${VERSION}
+PKGNAME-demos=		openmotif-demos-${VERSION}
 
-SHARED_LIBS=		Mrm	4.0	\
-			Uil	4.0	\
-			Xm	4.0
+SHARED_LIBS=		Mrm	4.1	\
+			Uil	4.1	\
+			Xm	5.0
 
 CATEGORIES=		x11
-#MASTER_SITES=		http://ftp.ics.com/openmotif/2.3/${VERSION}/
-MASTER_SITES=		ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/openmotif/
+#MASTER_SITES=		ftp://ftp.ics.com/openmotif/2.3/${VERSION}/
+MASTER_SITES=		http://www.phil.uu.nl/~lievisse/distfiles/ \
+			ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/openmotif/
 DIST_SUBDIR=		openmotif
 
 HOMEPAGE=		http://www.opengroup.org/openmotif/
@@ -36,6 +37,18 @@ USE_LIBTOOL=		Yes
 MAKE_FLAGS=		SOMRMREV=${LIBMrm_VERSION}	\
 			SOUILREV=${LIBUil_VERSION}	\
 			SOXMREV=${LIBXm_VERSION}
+FAKE_FLAGS+=		bindir=${PREFIX}/bin/
+
+MODULES=		converters/libiconv
+
+LIB_DEPENDS-demos=	Xm.>=4.0,Mrm.>=4.0::x11/openmotif \
+			${MODLIBICONV_LIB_DEPENDS}
+WANTLIB=		ICE SM X11 Xext Xp Xt c Xau Xdmcp Xft Xrender \
+			expat fontconfig freetype z pthread-stubs xcb
+WANTLIB-demos=		${WANTLIB} m
+
+# XXX  Large, complicated, only partially automated test suite available
+NO_REGRESS=	Yes
 
 pre-configure:
 # fix sections
@@ -49,10 +62,10 @@ pre-configure:
 	    if [ -f $$i ] ; then rm $$i; fi; \
 	    ln -s ${X11BASE}/$$i $$i; \
 	done
-# respect PREFIX
-	@cd ${WRKSRC}/config/cf && \
-	    perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" host.def Motif.tmpl \
-	    config.cf
+
+	${SUBST_CMD} ${WRKSRC}/config/cf/host.def \
+		${WRKSRC}/config/cf/Motif.tmpl \
+		${WRKSRC}/lib/Xm/Makefile.in
 
 DOCS=BUGREPORT COPYRIGHT.MOTIF LICENSE README RELEASE RELNOTES TODO
 DOCDIR=${PREFIX}/share/doc/openmotif
@@ -66,16 +79,5 @@ post-install:
 	    ${PREFIX}/lib/X11/config/Motif.rules
 	@${INSTALL_DATA} ${WRKSRC}/config/cf/Motif.tmpl \
 	    ${PREFIX}/lib/X11/config/Motif.tmpl
-
-MODULES=		converters/libiconv
-
-LIB_DEPENDS-demos=	Xm.>=4.0,Mrm.>=4.0::x11/openmotif \
-			${MODLIBICONV_LIB_DEPENDS}
-WANTLIB=		ICE SM X11 Xext Xp Xt c Xau Xdmcp Xft Xmu Xrender \
-			expat fontconfig freetype z pthread-stubs xcb
-WANTLIB-demos=		${WANTLIB} m
-
-# XXX  Large, complicated, only partially automated test suite available
-NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

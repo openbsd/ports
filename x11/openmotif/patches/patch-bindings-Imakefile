@@ -1,3 +1,4 @@
+$OpenBSD: patch-bindings-Imakefile,v 1.4 2009/12/14 18:03:36 jasper Exp $
 --- bindings/Imakefile.orig	Sat Jun 30 09:56:21 2007
 +++ bindings/Imakefile	Sat Jun 30 09:56:48 2007
 @@ -41,6 +41,7 @@ INSTALLFLAGS = $(INSTINCFLAGS)

@@ -1,3 +1,4 @@
+$OpenBSD: patch-Imakefile,v 1.4 2009/12/14 18:03:36 jasper Exp $
 --- Imakefile.orig	Sat Jun 30 09:54:52 2007
 +++ Imakefile	Sat Jun 30 09:55:15 2007
 @@ -90,7 +90,7 @@ XCOMM 

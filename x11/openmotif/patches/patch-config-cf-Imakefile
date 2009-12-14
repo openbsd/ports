@@ -1,3 +1,4 @@
+$OpenBSD: patch-config-cf-Imakefile,v 1.4 2009/12/14 18:03:36 jasper Exp $
 --- config/cf/Imakefile.orig	Sat Jun 30 10:07:23 2007
 +++ config/cf/Imakefile	Sat Jun 30 10:09:58 2007
 @@ -121,16 +121,16 @@ x386.cf \

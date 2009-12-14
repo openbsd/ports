@@ -1,13 +1,13 @@
-$OpenBSD: patch-config_cf_host_def,v 1.1 2009/12/09 23:21:46 jasper Exp $
+$OpenBSD: patch-config_cf_host_def,v 1.2 2009/12/14 18:03:36 jasper Exp $
 --- config/cf/host.def.orig	Mon Jan  7 19:10:03 2002
 +++ config/cf/host.def	Thu Dec 10 00:20:05 2009
 @@ -1,13 +1,128 @@
  #define TopLevelProject         Motif
 -#define ProjectRoot             /usr/X11R6
-+#define ProjectRoot             /usr/local
++#define ProjectRoot             ${PREFIX}
  #define X11ProjectRoot          /usr/X11R6
 -#define VirtualBindingsPath     /usr/X11R6/lib/X11/bindings
-+#define VirtualBindingsPath     /usr/local/lib/X11/bindings
++#define VirtualBindingsPath     ${PREFIX}/lib/X11/bindings
  #define ImportX11               YES
 -#define USE_BYACC               YES
  #define NoMessageCatalog        YES
@@ -131,6 +131,6 @@ $OpenBSD: patch-config_cf_host_def,v 1.1 2009/12/09 23:21:46 jasper Exp $
 +#define ManSourcePath $(MANPATH)/man
 +
 +#undef ConfigDir
-+#define ConfigDir /usr/local/lib/X11/config
++#define ConfigDir ${PREFIX}/lib/X11/config
 +
 +#endif /* AfterVendorCF */

@@ -1,16 +1,16 @@
-$OpenBSD: patch-tools_wml_Makefile_in,v 1.1 2007/07/18 21:41:06 mbalmer Exp $
---- tools/wml/Makefile.in.orig	Sat Jun 30 12:10:22 2007
-+++ tools/wml/Makefile.in	Sat Jun 30 12:11:09 2007
+$OpenBSD: patch-tools_wml_Makefile_in,v 1.2 2009/12/14 18:03:36 jasper Exp $
+--- tools/wml/Makefile.in.orig	Thu Dec 10 00:29:27 2009
++++ tools/wml/Makefile.in	Thu Dec 10 00:29:54 2009
 @@ -15,7 +15,7 @@
  @SET_MAKE@
  
  
 -
 +RM=rm
- srcdir = @srcdir@
- top_srcdir = @top_srcdir@
  VPATH = @srcdir@
-@@ -631,11 +631,11 @@ UilLexPars.c: Uil.c
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -614,11 +614,11 @@ UilLexPars.c: Uil.c
  	$(LN_S) Uil.c UilLexPars.c
  
  $(WMLTARGETS): wmluiltok wml UilLexPars.c $(TABLE)

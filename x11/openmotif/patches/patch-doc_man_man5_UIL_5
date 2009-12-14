@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_man_man5_UIL_5,v 1.1 2009/12/09 23:21:46 jasper Exp $
+$OpenBSD: patch-doc_man_man5_UIL_5,v 1.2 2009/12/14 18:03:36 jasper Exp $
 --- doc/man/man5/UIL.5.orig	Fri Jan  4 22:56:47 2002
-+++ doc/man/man5/UIL.5	Thu Dec 10 00:20:05 2009
++++ doc/man/man5/UIL.5	Thu Dec 10 00:30:10 2009
 @@ -46,7 +46,7 @@
  .ds f3\"
  .ds f4\"

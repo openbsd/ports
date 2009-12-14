@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2007/07/18 21:41:06 mbalmer Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/12/14 18:03:36 jasper Exp $
 @conflict lesstif-*
 @pkgpath x11/openmotif
-bin/mwm
-bin/uil
-bin/xmbind
+@bin bin/mwm
+@bin bin/uil
+@bin bin/xmbind
 include/Mrm/
 include/Mrm/MrmAppl.h
 include/Mrm/MrmDecls.h
@@ -151,13 +151,9 @@ include/Xm/Paned.h
 include/Xm/PanedP.h
 include/Xm/PanedW.h
 include/Xm/PanedWP.h
-include/Xm/Panner.h
-include/Xm/PannerP.h
 include/Xm/Picture.h
 include/Xm/PictureP.h
 include/Xm/PointInT.h
-include/Xm/Porthole.h
-include/Xm/PortholeP.h
 include/Xm/Primitive.h
 include/Xm/PrimitiveP.h
 include/Xm/Print.h
@@ -197,15 +193,11 @@ include/Xm/SlideCP.h
 include/Xm/SpecRenderT.h
 include/Xm/SpinB.h
 include/Xm/SpinBP.h
-include/Xm/Stretch.h
-include/Xm/StretchP.h
 include/Xm/TabBox.h
 include/Xm/TabBoxP.h
 include/Xm/TabList.h
 include/Xm/TabStack.h
 include/Xm/TabStackP.h
-include/Xm/TableLayout.h
-include/Xm/TableLayoutP.h
 include/Xm/TakesDefT.h
 include/Xm/TearOffBP.h
 include/Xm/TearOffP.h
@@ -224,8 +216,6 @@ include/Xm/ToggleBGP.h
 include/Xm/ToggleBP.h
 include/Xm/ToolTipCT.h
 include/Xm/ToolTipT.h
-include/Xm/Toolbar.h
-include/Xm/ToolbarP.h
 include/Xm/TraitP.h
 include/Xm/Transfer.h
 include/Xm/TransferP.h
@@ -256,7 +246,6 @@ include/Xm/Xmos_r.h
 include/Xm/Xmpoll.h
 include/Xm/XpmP.h
 include/Xm/xmlist.h
-include/Xm/xsettings.h
 include/uil/
 include/uil/Uil.h
 include/uil/UilDBDef.h

@@ -1,38 +1,40 @@
-@comment $OpenBSD: PLIST-demos,v 1.5 2007/08/03 17:42:45 bernd Exp $
+@comment $OpenBSD: PLIST-demos,v 1.6 2009/12/14 18:03:36 jasper Exp $
 @conflict devtodo-*
 @conflict tree-*
-bin/DNDDemo
-bin/airport
-bin/autopopups
-bin/bboxdemo
-bin/colordemo
-bin/column
-bin/combo
-bin/draw
-bin/earth
-bin/ext18list
-bin/filemanager
-bin/fileview
-bin/fontsel
-bin/getsubres
-bin/helloint
-bin/hellomotif
-bin/i18ninput
-bin/iconbuttondemo
-bin/outline
-bin/paned
-bin/panner
-bin/periodic
-bin/piano
-bin/sampler2_0
-bin/setDate
-bin/simpledrop
-bin/tabstack
-bin/todo
-bin/tooltips
-bin/tree
-bin/wsm
-bin/xmanimate
+@bin bin/DNDDemo
+@bin bin/airport
+@bin bin/autopopups
+@bin bin/bboxdemo
+@bin bin/colordemo
+@bin bin/column
+@bin bin/combo
+@bin bin/draw
+@bin bin/earth
+@bin bin/exm_in_c
+@bin bin/ext18list
+@bin bin/filemanager
+@bin bin/fileview
+@bin bin/fontsel
+@bin bin/getsubres
+@bin bin/helloint
+@bin bin/hellomotif
+@bin bin/i18ninput
+@bin bin/iconbuttondemo
+@bin bin/outline
+@bin bin/paned
+@bin bin/panner
+@bin bin/periodic
+@bin bin/piano
+@bin bin/sampler2_0
+@bin bin/setDate
+@bin bin/simpleDemo
+@bin bin/simpledrop
+@bin bin/tabstack
+@bin bin/todo
+@bin bin/tooltips
+@bin bin/tree
+@bin bin/wsm
+@bin bin/xmanimate
 man/manm/
 man/manm/exm_in_c.man
 man/manm/simpleDemo.man
@@ -49,11 +51,8 @@ share/Xm/Column/Column.ad
 share/Xm/Column/Imakefile
 share/Xm/Column/column.c
 share/Xm/Exm/
-share/Xm/Exm/app_in_c/
-share/Xm/Exm/app_in_c/exm_in_c
 share/Xm/Exm/simple_app/
 share/Xm/Exm/simple_app/README
-share/Xm/Exm/simple_app/simpleDemo
 share/Xm/Ext18list/
 share/Xm/Ext18list/Imakefile
 share/Xm/Ext18list/callbacks-c.c
@@ -132,6 +131,14 @@ share/Xm/combo2/
 share/Xm/combo2/Combo.ad
 share/Xm/combo2/Imakefile
 share/Xm/combo2/combo.c
+share/Xm/drag_and_drop/
+share/Xm/drag_and_drop/DNDDemo.c
+share/Xm/drag_and_drop/DNDDemo.man
+share/Xm/drag_and_drop/DNDDraw.c
+share/Xm/drag_and_drop/Imakefile
+share/Xm/drag_and_drop/README
+share/Xm/drag_and_drop/simpledrop.c
+share/Xm/drag_and_drop/simpledrop.man
 share/Xm/draw/
 share/Xm/draw/Imakefile
 share/Xm/draw/README

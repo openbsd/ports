@@ -1,7 +1,7 @@
-$OpenBSD: patch-demos_programs_animate_Makefile_in,v 1.1 2007/07/18 21:41:05 mbalmer Exp $
---- demos/programs/animate/Makefile.in.orig	Sat Jun 30 13:25:27 2007
-+++ demos/programs/animate/Makefile.in	Sat Jun 30 13:25:57 2007
-@@ -542,16 +542,16 @@ uninstall-am: uninstall-binPROGRAMS uninstall-dataDATA
+$OpenBSD: patch-demos_programs_animate_Makefile_in,v 1.2 2009/12/14 18:03:36 jasper Exp $
+--- demos/programs/animate/Makefile.in.orig	Fri Mar 20 14:52:27 2009
++++ demos/programs/animate/Makefile.in	Thu Dec 10 00:30:10 2009
+@@ -543,16 +543,16 @@ uninstall-am: uninstall-binPROGRAMS uninstall-dataDATA
  all: dog.uid plane.uid superman.uid xmanimate.uid
  
  dog.uid: dog.uil
