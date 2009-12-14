@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/04/23 05:33:19 jason Exp $
---- configure.orig	Sun Apr 20 23:05:35 2003
-+++ configure	Sun Apr 20 23:04:27 2003
+$OpenBSD: patch-configure,v 1.2 2009/12/14 00:33:08 jakemsr Exp $
+--- configure.orig	Tue Feb 18 08:18:20 2003
++++ configure	Wed Dec  9 20:13:56 2009
 @@ -1120,6 +1120,9 @@ if test "$shared" = true; then
  		SHFLAGS="-fPIC"
  		OTHERLIBS="-lsocket -ldl"
@@ -11,3 +11,33 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/04/23 05:33:19 jason Exp $
  	*)
  	;;
     esac
+@@ -1492,7 +1495,7 @@ if test "${with_audio+set}" = set; then
+ fi
+ 
+ 
+-if test "x$AUDIODEFS" = x; then
++#if test "x$AUDIODEFS" = x; then
+     case "$AUDIODRIVER" in
+ 	linux|oss)
+ 	    AUDIODRIVER=oss
+@@ -1502,6 +1505,11 @@ if test "x$AUDIODEFS" = x; then
+ 	    AUDIODRIVER=oss
+ 	    AUDIODEFS=-DCST_AUDIO_FREEBSD
+ 	    ;;
++	sndio)
++	    AUDIODRIVER=sndio
++	    AUDIODEFS=-DCST_AUDIO_SNDIO
++	    AUDIOLIBS=-lsndio
++	    ;;
+ 	qnx)
+ 	    AUDIODRIVER=alsa
+ 	    AUDIODEFS=-DCST_AUDIO_QNX
+@@ -1510,7 +1518,7 @@ if test "x$AUDIODEFS" = x; then
+ 	    AUDIODEFS=-DCST_AUDIO_NONE
+ 	    ;;
+     esac
+-fi
++#fi
+ 
+ 
+ 

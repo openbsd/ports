@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_audio_native_audio_h,v 1.1 2009/12/14 00:33:08 jakemsr Exp $
+--- src/audio/native_audio.h.orig	Wed Dec  9 19:46:49 2009
++++ src/audio/native_audio.h	Wed Dec  9 19:48:27 2009
+@@ -63,6 +63,17 @@
+ 
+ #endif
+ 
++#ifdef CST_AUDIO_SNDIO
++
++#define AUDIO_OPEN_NATIVE audio_open_sndio
++#define AUDIO_CLOSE_NATIVE audio_close_sndio
++#define AUDIO_SET_SAMPLE_RATE_NATIVE audio_set_sample_rate_sndio
++#define AUDIO_WRITE_NATIVE audio_write_sndio
++#define AUDIO_DRAIN_NATIVE audio_drain_sndio
++#define AUDIO_FLUSH_NATIVE audio_flush_sndio
++
++#endif
++
+ #ifdef CST_AUDIO_LINUX
+ 
+ #define AUDIO_OPEN_NATIVE audio_open_oss

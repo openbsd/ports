@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_find_sts_main_c,v 1.1 2004/12/13 11:59:48 espie Exp $
---- tools/find_sts_main.c.orig	Mon Dec 13 12:55:55 2004
-+++ tools/find_sts_main.c	Mon Dec 13 12:58:01 2004
-@@ -75,6 +75,11 @@ cst_sts *find_sts(cst_wave *sig, cst_tra
+$OpenBSD: patch-tools_find_sts_main_c,v 1.2 2009/12/14 00:33:08 jakemsr Exp $
+--- tools/find_sts_main.c.orig	Thu Dec 26 09:18:30 2002
++++ tools/find_sts_main.c	Wed Dec  9 19:23:23 2009
+@@ -75,6 +75,11 @@ cst_sts *find_sts(cst_wave *sig, cst_track *lpc)
      double *resd;
      int size,start,end;
      short *sigplus;
@@ -13,7 +13,7 @@ $OpenBSD: patch-tools_find_sts_main_c,v 1.1 2004/12/13 11:59:48 espie Exp $
  
      sts = cst_alloc(cst_sts,lpc->num_frames);
      start = 0;
-@@ -93,14 +98,16 @@ cst_sts *find_sts(cst_wave *sig, cst_tra
+@@ -93,14 +98,16 @@ cst_sts *find_sts(cst_wave *sig, cst_track *lpc)
  			lpc->frames[i],lpc->num_channels,
  			resd,
  			size);

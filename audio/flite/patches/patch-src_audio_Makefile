@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_audio_Makefile,v 1.1 2009/12/14 00:33:08 jakemsr Exp $
+--- src/audio/Makefile.orig	Wed Dec  9 19:24:16 2009
++++ src/audio/Makefile	Wed Dec  9 19:24:35 2009
+@@ -45,7 +45,7 @@ BASESRCS = auclient.c auserver.c audio.c 
+ SRCS = $(BASESRCS) $(AUDIODRIVER:%=au_%.c)
+ OBJS = $(SRCS:.c=.o)
+ FILES = Makefile $(H) $(BASESRCS) au_alsa.c au_command.c au_none.c \
+-	au_oss.c au_sun.c au_wince.c
++	au_oss.c au_sun.c au_wince.c au_sndio.c
+ LIBNAME = flite
+ 
+ LOCAL_INCLUDES = -I. $(AUDIODEFS)
