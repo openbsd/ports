@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2009/12/13 12:23:57 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2009/12/14 04:49:24 fgsch Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict app_conference-20070809
@@ -10,7 +10,6 @@
 @pkgpath telephony/chan_unistim
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
-%%h323%%
 include/asterisk/
 include/asterisk.h
 include/asterisk/_private.h
@@ -1507,6 +1506,7 @@ share/examples/asterisk/default/usbradio.conf
 share/examples/asterisk/default/users.conf
 share/examples/asterisk/default/voicemail.conf
 @comment share/examples/asterisk/default/vpb.conf
+%%h323%%
 share/examples/asterisk/openbsd/
 share/examples/asterisk/openbsd/extensions.ael.sample
 @mode 640
@@ -1572,4 +1572,3 @@ share/examples/asterisk/voicemail/default/1234/en/busy.gsm
 share/examples/asterisk/voicemail/default/1234/en/unavail.gsm
 @owner _asterisk
 @sample /var/spool/asterisk/voicemail/default/1234/en/unavail.gsm
-@extraunexec rm -rf /var/run/asterisk
