@@ -1,0 +1,21 @@
+$OpenBSD: patch-akode_plugins_Makefile_am,v 1.1 2009/12/14 00:02:17 jakemsr Exp $
+--- akode/plugins/Makefile.am.orig	Wed Dec  9 21:37:22 2009
++++ akode/plugins/Makefile.am	Wed Dec  9 21:38:15 2009
+@@ -28,6 +28,10 @@ if include_sun_sink
+ AKODE_SUN_SINK=sun_sink
+ endif
+ 
++if include_sndio_sink
++AKODE_SNDIO_SINK=sndio_sink
++endif
++
+ if include_jack_sink
+ AKODE_JACK_SINK=jack_sink
+ endif
+@@ -39,5 +43,5 @@ endif
+ SUBDIRS= $(AKODE_MPC_DECODER) $(AKODE_XIPH_DECODER) \
+          $(AKODE_MPEG_DECODER) $(AKODE_FFMPEG_DECODER) \
+          $(AKODE_ALSA_SINK) $(AKODE_OSS_SINK) $(AKODE_SUN_SINK) \
+-         $(AKODE_JACK_SINK) $(AKODE_POLYP_SINK) \
++         $(AKODE_SNDIO_SINK) $(AKODE_JACK_SINK) $(AKODE_POLYP_SINK) \
+          $(AKODE_SRC_RESAMPLER)

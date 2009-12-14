@@ -1,0 +1,12 @@
+$OpenBSD: patch-akode_lib_auto_sink_cpp,v 1.1 2009/12/14 00:02:17 jakemsr Exp $
+--- akode/lib/auto_sink.cpp.orig	Wed Dec  9 22:27:49 2009
++++ akode/lib/auto_sink.cpp	Wed Dec  9 22:29:23 2009
+@@ -66,6 +66,8 @@ bool AutoSink::open()
+     // Try Polypaudio
+     if (getenv("POLYP_SERVER"))
+         if (m_data->tryOpen("polyp")) return true;
++    // Try sndio
++    if (m_data->tryOpen("sndio")) return true;
+     // Try Jack
+     if (m_data->tryOpen("jack")) return true;
+     // Try ALSA

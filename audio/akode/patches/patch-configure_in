@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.2 2007/05/08 15:16:37 naddy Exp $
---- configure.in.orig	Fri Apr  6 15:23:11 2007
-+++ configure.in	Sat May  5 17:10:46 2007
+$OpenBSD: patch-configure_in,v 1.3 2009/12/14 00:02:17 jakemsr Exp $
+--- configure.in.orig	Fri Apr  6 06:23:11 2007
++++ configure.in	Wed Dec  9 22:06:10 2009
 @@ -120,7 +120,7 @@ AC_DEFUN([AC_CHECK_LIBFLAC],
  
      ])
@@ -55,7 +55,23 @@ $OpenBSD: patch-configure_in,v 1.2 2007/05/08 15:16:37 naddy Exp $
      VORBISFILE_LIBS="-lvorbisfile"
  
      # for akode/plugins/xiph_decoder/
-@@ -257,8 +257,8 @@ kde_save_akode_libs="$LIBS"
+@@ -228,6 +228,15 @@ AC_DEFUN([KDE_CHECK_SUN],
+   AC_CHECK_HEADERS([sys/audioio.h], [have_sun=yes])
+ ])
+ 
++AC_DEFUN([KDE_CHECK_SNDIO],
++[
++  have_sndio=no
++
++  AC_CHECK_HEADERS([sndio.h], [have_sndio=yes])
++  AC_CHECK_LIB(sndio, sio_open, [LIBSNDIO="-lsndio"])
++  AC_SUBST(LIBSNDIO)
++])
++
+ AC_DEFUN([KDE_CHECK_ALSA],
+ [
+   PKG_CHECK_MODULES([ALSA], [alsa >= 0.9], [have_alsa=yes], [have_alsa=no])
+@@ -257,8 +266,8 @@ kde_save_akode_libs="$LIBS"
  LIBS="$all_libraries $USER_LDFLAGS"
  CFLAGS="$CFLAGS $all_includes $USER_INCLUDES"
  AC_TRY_COMPILE([
@@ -66,7 +82,7 @@ $OpenBSD: patch-configure_in,v 1.2 2007/05/08 15:16:37 naddy Exp $
                  #include <ogg/ogg.h>
                  ],[
                  ],[
-@@ -267,7 +267,7 @@ AC_TRY_COMPILE([
+@@ -267,7 +276,7 @@ AC_TRY_COMPILE([
  AC_MSG_RESULT($have_libspeex)
  if test x$have_libspeex = xyes; then
     KDE_CHECK_LIB(speex,speex_decoder_ctl,,
@@ -75,7 +91,7 @@ $OpenBSD: patch-configure_in,v 1.2 2007/05/08 15:16:37 naddy Exp $
  fi
  CFLAGS="$kde_save_akode_cflags"
  LIBS="$kde_save_akode_libs"
-@@ -278,10 +278,10 @@ kde_save_akode_libs="$LIBS"
+@@ -278,10 +287,10 @@ kde_save_akode_libs="$LIBS"
  LIBS="$all_libraries $USER_LDFLAGS"
  CFLAGS="$CFLAGS $all_includes $USER_INCLUDES"
  AC_TRY_COMPILE([
@@ -90,7 +106,7 @@ $OpenBSD: patch-configure_in,v 1.2 2007/05/08 15:16:37 naddy Exp $
                  #include <ogg/ogg.h>
                  ],[
                  ],[
-@@ -290,12 +290,12 @@ AC_TRY_COMPILE([
+@@ -290,12 +299,12 @@ AC_TRY_COMPILE([
  AC_MSG_RESULT($have_libspeex11)
  if test x$have_libspeex11 = xyes; then
     KDE_CHECK_LIB(speex,speex_decode_int,,
@@ -105,3 +121,39 @@ $OpenBSD: patch-configure_in,v 1.2 2007/05/08 15:16:37 naddy Exp $
  fi
  CFLAGS="$kde_save_akode_cflags"
  LIBS="$kde_save_akode_libs"
+@@ -548,6 +557,19 @@ if test "x$with_sun" != xno; then
+   fi
+ fi
+ 
++AC_ARG_WITH(sndio,
++  [AS_HELP_STRING(--with-sndio,
++    [enable support for sndio output @<:@default=check@:>@])],
++  [], with_sndio=check)
++
++if test "x$with_sndio" != xno; then
++  KDE_CHECK_SNDIO
++
++  if test "x$with_sndio" != xcheck && test "x$have_sndio" != xyes; then
++    AC_MSG_FAILURE([--with-sndio was given, but test for sndio failed])
++  fi
++fi
++
+ AC_ARG_WITH(alsa,
+   [AS_HELP_STRING(--with-alsa,
+     [enable support for ALSA output @<:@default=check@:>@])],
+@@ -586,6 +608,7 @@ AM_CONDITIONAL(include_src_resampler, test x$have_libs
+ AM_CONDITIONAL(include_alsa_sink, test x$have_alsa = xyes)
+ AM_CONDITIONAL(include_oss_sink, test x$have_oss = xyes)
+ AM_CONDITIONAL(include_sun_sink, test x$have_sun = xyes)
++AM_CONDITIONAL(include_sndio_sink, test x$have_sndio = xyes)
+ AM_CONDITIONAL(include_jack_sink, test x$have_jack = xyes)
+ AM_CONDITIONAL(include_polyp_sink, test x$have_polyp = xyes)
+ AM_CONDITIONAL(include_ffmpeg_decoder, test x$have_ffmpeg = xyes)
+@@ -623,6 +646,7 @@ AC_CONFIG_FILES([ akode/plugins/oss_sink/Makefile ])
+ AC_CONFIG_FILES([ akode/plugins/polyp_sink/Makefile ])
+ AC_CONFIG_FILES([ akode/plugins/src_resampler/Makefile ])
+ AC_CONFIG_FILES([ akode/plugins/sun_sink/Makefile ])
++AC_CONFIG_FILES([ akode/plugins/sndio_sink/Makefile ])
+ AC_CONFIG_FILES([ akode/plugins/xiph_decoder/Makefile ])
+ AC_CONFIG_FILES([ akode/akode-config ])
+ AC_OUTPUT

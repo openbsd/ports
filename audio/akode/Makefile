@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2009/07/19 22:49:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2009/12/14 00:02:17 jakemsr Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 SHARED_LIBS +=	akode                2.1      # .2.0
 
 CATEGORIES=	audio multimedia x11/kde
@@ -29,14 +29,18 @@ LIB_DEPENDS=	FLAC.>=8::audio/flac \
 		jack::audio/jack
 
 WANTLIB=	a52 bz2 c faac faad samplerate m mp3lame ogg pthread \
-		oil-0.3 schroedinger-1.0 stdc++ theora x264 z
+		oil-0.3 schroedinger-1.0 sndio stdc++ theora x264 z
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE=	autoconf
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
+
+CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.60
+AUTOMAKE_VERSION=	1.9
 CONFIGURE=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
 CONFIGURE_ENV=		PTHREAD_LIBS=-pthread
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include \
@@ -44,5 +48,15 @@ CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include \
 			--with-jack \
 			--without-polyaudio \
 			--without-oss
+
+post-extract:
+	mkdir -p ${WRKSRC}/akode/plugins/sndio_sink
+	cp ${FILESDIR}/{Makefile.am,sndio_sink.*}  ${WRKSRC}/akode/plugins/sndio_sink
+
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i
 
 .include <bsd.port.mk>
