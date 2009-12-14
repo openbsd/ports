@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.38 2009/12/14 18:03:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2009/12/14 21:51:52 jasper Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
 
 VERSION=		2.3.2
 DISTNAME=		openmotif-${VERSION}
-PKGNAME-main=		openmotif-${VERSION}
-PKGNAME-demos=		openmotif-demos-${VERSION}
+PKGNAME-main=		openmotif-${VERSION}p0
+PKGNAME-demos=		openmotif-demos-${VERSION}p0
 
 SHARED_LIBS=		Mrm	4.1	\
 			Uil	4.1	\
@@ -30,7 +30,11 @@ MULTI_PACKAGES= 	-demos -main
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-themes \
-			--enable-xft
+			--enable-xft \
+			--enable-jpg \
+			--enable-png
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+			LDFLAGS="-L${LOCALBASE}/lib -lm"
 
 USE_LIBTOOL=		Yes
 
@@ -41,11 +45,14 @@ FAKE_FLAGS+=		bindir=${PREFIX}/bin/
 
 MODULES=		converters/libiconv
 
+LIB_DEPENDS=		jpeg::graphics/jpeg \
+			png::graphics/png
 LIB_DEPENDS-demos=	Xm.>=4.0,Mrm.>=4.0::x11/openmotif \
-			${MODLIBICONV_LIB_DEPENDS}
+			${MODLIBICONV_LIB_DEPENDS} \
+			${LIB_DEPENDS}
 WANTLIB=		ICE SM X11 Xext Xp Xt c Xau Xdmcp Xft Xrender \
-			expat fontconfig freetype z pthread-stubs xcb
-WANTLIB-demos=		${WANTLIB} m
+			expat fontconfig freetype m z pthread-stubs xcb
+WANTLIB-demos=		${WANTLIB}
 
 # XXX  Large, complicated, only partially automated test suite available
 NO_REGRESS=	Yes
