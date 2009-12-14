@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.7 2009/12/05 19:56:58 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.8 2009/12/14 13:50:53 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -84,12 +84,44 @@ my $base_exceptions = {
 	'xcompmgr' => "/usr/X11R6/bin/xcompmgr",
 # 4.6 stuff
 	'tmux' => "/usr/bin/tmux",
+# 4.7 stuff
+	'p5-Parse-CPAN-Meta' => "$p5/Parse/CPAN/Meta.pm",
 };
 
 my $stem_extensions = {
 # 4.6snap
 	'thunar-vcs-plugin' => 'thunar-vcs',
 	'fam' => 'libgamin',
+	'gstreamer-bz2' => 'gstreamer-plugins-bad',
+	'gstreamer-faac' => 'gstreamer-plugins-bad',
+	'gstreamer-faad' => 'gstreamer-plugins-bad',
+	'gstreamer-gsm' => 'gstreamer-plugins-bad',
+	'gstreamer-ladspa' => 'gstreamer-plugins-bad',
+	'gstreamer-meta' => 'gstreamer-plugins-bad',
+	'gstreamer-musepack' => 'gstreamer-plugins-bad',
+	'gstreamer-sdl' => 'gstreamer-plugins-bad',
+	'gstreamer-sndfile' => 'gstreamer-plugins-bad',
+	'gstreamer-swf' => 'gstreamer-plugins-bad',
+	'gstreamer-tremor' => 'gstreamer-plugins-bad',
+	'gstreamer-x264' => 'gstreamer-plugins-bad',
+	'gstreamer-xvid' => 'gstreamer-plugins-bad',
+	'gstreamer-ogg' => 'gstreamer-plugins-base',
+	'gstreamer-theora' => 'gstreamer-plugins-base',
+	'gstreamer-vorbis' => 'gstreamer-plugins-base',
+	'gstreamer-pango' => 'gstreamer-plugins-base',
+	'gstreamer-jpeg' => 'gstreamer-plugins-good',
+	'gstreamer-png' => 'gstreamer-plugins-good',
+	'gstreamer-cairo' => 'gstreamer-plugins-good',
+	'gstreamer-confelements' => 'gstreamer-plugins-good',
+	'gstreamer-flac' => 'gstreamer-plugins-good',
+	'gstreamer-shout' => 'gstreamer-plugins-good',
+	'gstreamer-speex' => 'gstreamer-plugins-good',
+	'gstreamer-taglib' => 'gstreamer-plugins-good',
+	'gstreamer-wavpack' => 'gstreamer-plugins-good',
+	'gstreamer-a52' => 'gstreamer-plugins-ugly',
+	'gstreamer-mad' => 'gstreamer-plugins-ugly',
+	'gstreamer-mpeg2' => 'gstreamer-plugins-ugly',
+	'gstreamer-dvdread' => 'gstreamer-plugins-ugly',
 };
 
 # ->is_base_system($handle, $state):
