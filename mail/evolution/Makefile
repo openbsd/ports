@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.91 2009/11/17 23:31:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2009/12/14 16:19:12 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		2.28.1
+GNOME_VERSION=		2.28.2
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -16,8 +16,8 @@ SUBST_VARS=		R
 
 # -plugins depends on the exact version of -main, so whenever -main is
 # bumped, -plugins needs a bump too
-PKGNAME-main=		${DISTNAME}p1
-PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}p1
+PKGNAME-main=		${DISTNAME}
+PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
 CATEGORIES=		mail
 
