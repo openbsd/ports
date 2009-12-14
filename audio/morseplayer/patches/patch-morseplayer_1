@@ -1,0 +1,13 @@
+$OpenBSD: patch-morseplayer_1,v 1.1 2009/12/14 00:47:07 jakemsr Exp $
+--- morseplayer.1.orig	Thu Dec 10 12:07:44 2009
++++ morseplayer.1	Thu Dec 10 12:08:15 2009
+@@ -94,8 +94,7 @@ as the character rate; default is 18.
+ .It Fl d Ar device
+ use
+ .Ar device
+-for audio output instead of the default:
+-.Pa /dev/audio
++for audio output instead of the default
+ .It Fl f Ar freq
+ use
+ .Ar freq

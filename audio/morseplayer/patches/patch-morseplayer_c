@@ -1,0 +1,202 @@
+--- morseplayer.c.old	Fri Dec 11 00:18:56 2009
++++ morseplayer.c	Fri Dec 11 00:26:36 2009
+@@ -32,9 +32,6 @@
+  *  April 1990 (http://www.arrl.org/files/infoserv/tech/code-std.txt)
+  */
+ 
+-#include <sys/types.h>
+-#include <sys/ioctl.h>
+-#include <sys/audioio.h>
+ #include <sys/queue.h>
+ #include <sys/poll.h>
+ #include <string.h>
+@@ -42,6 +39,7 @@
+ #include <err.h>
+ #include <unistd.h>
+ #include <math.h>
++#include <sndio.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <sysexits.h>
+@@ -72,6 +70,7 @@ struct play_head {
+ };
+ 
+ struct s_params {
++	struct sio_hdl *hdl;	/* sndio handle */
+ 	u_int sp_rate;		/* sample rate */
+ 	double sp_hz;		/* audio frequency */
+ 	u_int sp_ditlen;	/* dit length */
+@@ -81,7 +80,6 @@ struct s_params {
+ 	u_int sp_blocksize;	/* audio block size */
+ 	u_int sp_channels;	/* number of channels */
+ 	u_int sp_precision;	/* sample precision (bits) */
+-	int sp_fd;		/* audio file descriptor */
+ 	int sp_seenspace;	/* seen a space character? */
+ };
+ 
+@@ -353,16 +351,16 @@ feed_audio(struct s_params *pars)
+ 		struct play_list *e;
+ 
+ 		if (SIMPLEQ_EMPTY(&playhead.l)) {
+-			r = write(pars->sp_fd, quietBlock.buf, res);
+-			if (r == -1)
++			r = sio_write(pars->hdl, quietBlock.buf, res);
++			if (r == 0)
+ 				err(1, "write");
+ 			break;
+ 		}
+ 
+ 		e = SIMPLEQ_FIRST(&playhead.l);
+ 		if (e->pl_res > res) {
+-			r = write(pars->sp_fd, e->pl_ptr, res);
+-			if (r == -1)
++			r = sio_write(pars->hdl, e->pl_ptr, res);
++			if (r == 0)
+ 				err(1, "write");
+ 			e->pl_ptr += res;
+ 			e->pl_res -= res;
+@@ -370,8 +368,8 @@ feed_audio(struct s_params *pars)
+ 			break;
+ 		}
+ 
+-		r = write(pars->sp_fd, e->pl_ptr, e->pl_res);
+-		if (r == -1)
++		r = sio_write(pars->hdl, e->pl_ptr, e->pl_res);
++		if (r == 0)
+ 			err(1, "write");
+ 		playhead.nsamps -= e->pl_res;
+ 		res -= e->pl_res;
+@@ -386,22 +384,18 @@ int
+ main_loop(struct s_params *pars)
+ {
+ 	struct pollfd fds[2];
+-	ssize_t r;
++	nfds_t nfds;
+ 	int iseof = 0;
+ 
+-	/*
+-	 * first, play one block of silence... /dev/audio
+-	 * isn't poll-able until it's been kicked.
+-	 */
+-	r = write(pars->sp_fd, quietBlock.buf, quietBlock.len);
+-	if (r == -1)
+-		err(1, "write");
+-	
+-	fds[0].fd = pars->sp_fd;
+-	fds[0].events = POLLOUT;
++	nfds = sio_nfds(pars->hdl);
++	if (nfds != 1)
++		errx(1, "too many sndio file handles");
+ 	fds[1].events = POLLIN;
+ 
+ 	for (;;) {
++		nfds = sio_pollfd(pars->hdl, &fds[0], POLLOUT);
++		if (nfds == 0)
++			fds[0].fd = -1;
+ 		if (playhead.nsamps < pars->sp_sampthresh && !iseof)
+ 			fds[1].fd = fileno(stdin);
+ 		else
+@@ -416,12 +410,10 @@ main_loop(struct s_params *pars)
+ 				iseof = 1;
+ 		}
+ 
+-		if (fds[0].revents & POLLOUT) {
++		if (sio_revents(pars->hdl, &fds[0]) & POLLOUT) {
+ 			/* feed the audio device */
+ 			feed_audio(pars);
+ 			if (iseof && SIMPLEQ_EMPTY(&playhead.l)) {
+-				if (ioctl(fds[0].fd, AUDIO_DRAIN, NULL) == -1)
+-					err(1, "audio_drain");
+ 				break;
+ 			}
+ 		}
+@@ -726,8 +718,8 @@ int
+ main(int argc, char *argv[])
+ {
+ 	struct s_params pars;
+-	int f, c;
+-	audio_info_t ai;
++	int c;
++	struct sio_par par;
+ 	float cwpm = -1.0, owpm = -1.0, pitch = -1.0;
+ 	char *afname = NULL;
+ 
+@@ -765,7 +757,7 @@ main(int argc, char *argv[])
+ 			break;
+ 		case '?':
+ 		default:
+-			fprintf(stderr, "%s [-d /dev/audio] [-c cwpm] "
++			fprintf(stderr, "%s [-d <sndio device>] [-c cwpm] "
+ 			    "[-w owpm] [-f freq] [-D]\n", argv[0]);
+ 			return (1);
+ 		}
+@@ -798,49 +790,36 @@ main(int argc, char *argv[])
+ 	overallwpm = owpm;
+ 	charwpm = cwpm;
+ 
+-	if (afname == NULL)
+-		afname = "/dev/audio";
++	pars.hdl = sio_open(afname, SIO_PLAY, 0);
++	if (pars.hdl == NULL)
++		errx(1, "Could not open sndio device");
+ 
+-	f = open(afname, O_WRONLY, 0);
+-	if (f == -1)
+-		err(1, "open %s", afname);
++	sio_initpar(&par);
++	par.rate = 22050;
++	par.sig = 0;
++	par.bits = 8;
++	par.pchan = 1;
++	if (!sio_setpar(pars.hdl, &par))
++		errx(1, "sio_setpar failed");
++	if (!sio_getpar(pars.hdl, &par))
++		errx(1, "sio_getpar failed");
+ 
+-	AUDIO_INITINFO(&ai);
+-	/* ai.play.sample_rate = 22050; */
+-	ai.play.encoding = AUDIO_ENCODING_SLINEAR;
+-	ai.play.precision = 8;
+-	ai.play.channels = 1;
+-	if (ioctl(f, AUDIO_SETINFO, &ai) == -1) {
+-#if BYTE_ORDER == LITTLE_ENDIAN
+-		ai.play.encoding = AUDIO_ENCODING_SLINEAR_LE;
+-#elif BYTE_ORDER == BIG_ENDIAN
+-		ai.play.encoding = AUDIO_ENCODING_SLINEAR_BE;
+-#else
+-# error "oh please, get the pdp outta here."
+-#endif
+-		ai.play.precision = 16;
+-		ai.play.channels = 2;
+-		if (ioctl(f, AUDIO_SETINFO, &ai) == -1) {
+-			err(1, "setinfo");
+-		}
+-	}
+-
+-	if (ioctl(f, AUDIO_GETINFO, &ai) == -1)
+-		err(1, "getinfo");
+-	pars.sp_rate = ai.play.sample_rate;
++	pars.sp_rate = par.rate;
+ 	pars.sp_hz = pitch;
+-	pars.sp_sampthresh = ai.blocksize * ai.hiwat;
+-	pars.sp_blocksize = ai.blocksize;
++	pars.sp_sampthresh = par.appbufsz * par.bps;
++	pars.sp_blocksize = par.round * par.bps;
+ 	pars.sp_seenspace = 0;
+-	pars.sp_fd = f;
+-	pars.sp_channels = ai.play.channels;
+-	pars.sp_precision = ai.play.precision;
++	pars.sp_channels = par.pchan;
++	pars.sp_precision = par.bits;
+ 
+ 	if (diagmode > 0) {
+ 		check_chars();
+ 		test_times(&pars);
+ 		return (0);
+ 	}
++
++	if (!sio_start(pars.hdl))
++		errx(1, "could not start sndio");
+ 
+ 	playlist_init();
+ 	init_sounds();
