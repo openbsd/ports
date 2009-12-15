@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2009/10/11 10:39:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/12/15 09:52:47 jasper Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
-VERSION=	1.2.12
+VERSION=	1.2.14
 DISTNAME=	xmlsec1-${VERSION}
-PKGNAME-main=	xmlsec-${VERSION}p0
+PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
 CATEGORIES=	security
 SHARED_LIBS=	xmlsec1-gnutls	4.0 \
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c crypto gcrypt gpg-error m tasn1 xml2 z
 
-MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
+MASTER_SITES=	${HOMEPAGE}/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
 		ftp://ftp.xmlsoft.org/xmlsec/releases/ \
 		ftp://ftp.rpmfind.net/pub/XML/xmlsec/releases/
@@ -35,7 +35,8 @@ LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		xslt.>=3::textproc/libxslt \
+LIB_DEPENDS=		ltdl::devel/libtool,-ltdl \
+			xslt.>=3::textproc/libxslt \
 			gnutls.>=13::security/gnutls
 
 USE_LIBTOOL=		Yes
@@ -44,6 +45,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-nss \
 			--without-nspr
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 REGRESS_DEPENDS=	::security/xmlsec
 REGRESS_FLAGS=		ABS_BUILDDIR="${WRKSRC}"
