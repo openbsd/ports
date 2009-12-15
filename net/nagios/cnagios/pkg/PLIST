@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/05 23:00:22 sthen Exp $
-bin/cnagios
+@comment $OpenBSD: PLIST,v 1.2 2009/12/15 21:59:05 okan Exp $
+@bin bin/cnagios
 share/doc/cnagios/
 @sample ${SYSCONFDIR}/cnagios/
 share/doc/cnagios/README
