@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2009/12/15 21:05:27 benoit Exp $
 
 COMMENT =	small, fast & usable window manager
 
-DISTNAME =	openbox-3.4.7.2
-PKGNAME =	${DISTNAME}p4
-SHARED_LIBS +=	obparser	8.0 # .21.2
-SHARED_LIBS +=	obrender	8.0 # .21.2
+DISTNAME =	openbox-3.4.8
+SHARED_LIBS +=	obparser	9.0 # .21.4
+SHARED_LIBS +=	obrender	9.0 # .21.4
 CATEGORIES =	x11
 
 HOMEPAGE =	http://icculus.org/openbox/
@@ -21,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =	ICE SM X11 Xext Xft Xinerama Xrandr Xrender c \
 		fontconfig freetype m z glib-2.0 gmodule-2.0 \
 		gobject-2.0 Xau Xcursor Xdmcp Xfixes expat pcre \
-		pthread-stubs xcb
+		pthread-stubs xcb execinfo xcb-atom xcb-aux xcb-event
 
 MASTER_SITES =	http://offload1.icculus.org/openbox/releases/
 
