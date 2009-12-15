@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2009/12/14 09:43:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2009/12/15 10:08:00 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -12,7 +12,7 @@ COMMENT=		GNOME shell and file manager
 # x11/gnome/totem
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		2.28.3
+GNOME_VERSION=		2.28.4
 
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 CATEGORIES=		x11
