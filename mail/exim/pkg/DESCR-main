@@ -1,0 +1,16 @@
+Exim is a mail transfer agent (MTA) for hosts that are running Unix or Unix-
+like operating systems. It was designed on the assumption that it would be run
+on hosts that are permanently connected to the Internet. However, it can
+be used on intermittently connected hosts with suitable configuration
+adjustments.
+
+This port can be built with any or all of the following flavors:
+
+* mysql		- support mysql queries for lookups
+* postgresql	- support postgresql queries for lookups
+* sqlite3	- support for sqlite queries for lookups
+* ldap		- support ldap (OpenLDAP) queries for lookups
+* sasl		- support for SASL
+
+It is possible to use the deprecated "demime" condition in the DATA ACL. If
+possible, use the MIME ACL instead of the "demime" condition.

@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.23 2009/07/22 10:48:31 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2009/12/15 11:32:18 sthen Exp $
+@pkgpath mail/exim
+@pkgpath mail/exim,no_exiscan
+@pkgpath mail/exim,no_exiscan,no_x11
+@pkgpath mail/exim,no_x11
+@pkgpath mail/exim,iconv
+@pkgpath mail/exim,iconv,no_exiscan
+@pkgpath mail/exim,iconv,no_exiscan,no_x11
+@pkgpath mail/exim,iconv,no_x11
 @newgroup _exim:521
 @newuser _exim:521:_exim:daemon:Exim Account:/var/spool/exim:/sbin/nologin
 bin/exicyclog
@@ -27,8 +35,6 @@ share/examples/exim/
 @sample ${SYSCONFDIR}/exim/
 share/examples/exim/configure
 @sample ${SYSCONFDIR}/exim/configure
-share/examples/exim/convert4r4
-!%%no_x11%%
 @owner _exim
 @group _exim
 @sample /var/spool/exim/

@@ -1,7 +1,0 @@
-If you intend replacing sendmail with exim, then don't
-forget to modify /etc/mailer.conf accordingly; see
-mailwrapper(8).
-
-A perl script may help converting from exim-3.xx config
-files and has been installed in
-      ${PREFIX}/share/examples/exim/convert4r4

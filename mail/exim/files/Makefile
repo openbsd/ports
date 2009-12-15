@@ -1,4 +1,4 @@
-# $Cambridge: exim/exim-src/src/EDITME,v 1.16 2005/10/12 15:45:38 ph10 Exp $
+# $Cambridge: exim/exim-src/src/EDITME,v 1.23 2009/11/20 12:18:19 nm4 Exp $
 
 ##################################################
 #          The Exim mail transport agent         #
@@ -100,7 +100,7 @@
 # /usr/local/sbin. The installation script will try to create this directory,
 # and any superior directories, if they do not exist.
 
-# BIN_DIRECTORY=/usr/exim/bin
+#BIN_DIRECTORY=/usr/exim/bin
 
 
 #------------------------------------------------------------------------------
@@ -116,7 +116,7 @@
 # don't exist. It will also install a default runtime configuration if this
 # file does not exist.
 
-# CONFIGURE_FILE=/usr/exim/configure
+#CONFIGURE_FILE=/usr/exim/configure
 
 # It is possible to specify a colon-separated list of files for CONFIGURE_FILE.
 # In this case, Exim will use the first of them that exists when it is run.
@@ -260,9 +260,9 @@ SUPPORT_MBX=yes
 
 LOOKUP_DBM=yes
 LOOKUP_LSEARCH=yes
+LOOKUP_DNSDB=yes
 
 LOOKUP_CDB=yes
-LOOKUP_DNSDB=yes
 LOOKUP_DSEARCH=yes
 # LOOKUP_IBASE=yes
 # LOOKUP_LDAP=yes
@@ -301,6 +301,19 @@ LOOKUP_PASSWD=yes
 
 
 #------------------------------------------------------------------------------
+# The PCRE library is required for exim.  There is no longer an embedded
+# version of the PCRE library included with the source code, instead you
+# must use a system library or build your own copy of PCRE.
+# In either case you must specify the library link info here.  If the
+# PCRE header files are not in the standard search path you must also
+# modify the INCLUDE path (above)
+# The default setting of PCRE_LIBS should work on the vast majority of
+# systems
+
+PCRE_LIBS=-lpcre
+
+
+#------------------------------------------------------------------------------
 # Additional libraries and include directories may be required for some
 # lookup styles (e.g. LDAP, MYSQL or PGSQL). LOOKUP_LIBS is included only on
 # the command for linking Exim itself, not on any auxiliary programs. You
@@ -330,14 +343,14 @@ LOOKUP_PASSWD=yes
 # and the MIME ACL. Please read the documentation to learn more about these
 # features.
 
-# WITH_CONTENT_SCAN=yes
+WITH_CONTENT_SCAN=yes
 
 # If you want to use the deprecated "demime" condition in the DATA ACL,
 # uncomment the line below. Doing so will also explicitly turn on the
 # WITH_CONTENT_SCAN option. If possible, use the MIME ACL instead of
 # the "demime" condition.
 
-# WITH_OLD_DEMIME=yes
+WITH_OLD_DEMIME=yes
 
 #------------------------------------------------------------------------------
 # Compiling Exim with experimental features. These are documented in
@@ -475,6 +488,7 @@ ALT_CONFIG_ROOT_ONLY=yes
 
 AUTH_CRAM_MD5=yes
 # AUTH_CYRUS_SASL=yes
+AUTH_DOVECOT=yes
 AUTH_PLAINTEXT=yes
 AUTH_SPA=yes
 
@@ -513,7 +527,7 @@ HEADERS_CHARSET="ISO-8859-1"
 # the Sieve filter support. For those OS where iconv() is known to be installed
 # as standard, the file in OS/Makefile-xxxx contains
 #
-# HAVE_ICONV=yes
+HAVE_ICONV=yes
 #
 # If you are not using one of those systems, but have installed iconv(), you
 # need to uncomment that line above. In some cases, you may find that iconv()
@@ -535,7 +549,7 @@ HEADERS_CHARSET="ISO-8859-1"
 # configuration of an authenticator for use with SMTP AUTH.) At least one
 # operating system has an extended function called crypt16(), which uses up to
 # 16 characters of a password (the normal crypt() uses only the first 8). Exim
-# supports the use of crypt16() as well as crypt().
+# supports the use of crypt16() as well as crypt() but note the warning below.
 
 # You can always indicate a crypt16-encrypted password by preceding it with
 # "{crypt16}". If you want the default handling (without any preceding
@@ -547,10 +561,23 @@ HEADERS_CHARSET="ISO-8859-1"
 # an encrypted password with "{crypt}". For more details, see the description
 # of the "crypteq" condition in the manual chapter on string expansions.
 
-# Since most operating systems do not include a crypt16() function (yet?), Exim
-# has one of its own, which it uses unless HAVE_CRYPT16 is defined. Normally,
-# that will be set in an OS-specific Makefile for the OS that have such a
-# function, so you should not need to bother with it.
+# Some operating systems do not include a crypt16() function, so Exim has one
+# of its own, which it uses unless HAVE_CRYPT16 is defined. Normally, that will
+# be set in an OS-specific Makefile for the OS that have such a function, so
+# you should not need to bother with it.
+
+# *** WARNING *** WARNING *** WARNING *** WARNING *** WARNING ***
+# It turns out that the above is not entirely accurate. As well as crypt16()
+# there is a function called bigcrypt() that some operating systems have. This
+# may or may not use the same algorithm, and both of them may be different to
+# Exim's built-in crypt16() that is used unless HAVE_CRYPT16 is defined.
+#
+# However, since there is now a move away from the traditional crypt()
+# functions towards using SHA1 and other algorithms, tidying up this area of
+# Exim is seen as very low priority. In practice, if you need to, you can
+# define DEFAULT_CRYPT to the name of any function that has the same interface
+# as the traditional crypt() function.
+# *** WARNING *** WARNING *** WARNING *** WARNING *** WARNING ***
 
 
 #------------------------------------------------------------------------------
@@ -845,7 +872,7 @@ SYSTEM_ALIASES_FILE=/etc/mail/aliases
 
 # USE_READLINE=yes
 
-# You may need to add -ldl to EXTRA_LIBS when you set USE_READLINE=yes.
+# You may need to add -ldl to EXTRALIBS when you set USE_READLINE=yes.
 # Note that this option adds to the size of the Exim binary, because the
 # dynamic loading library is not otherwise included.
 
@@ -872,8 +899,10 @@ SYSTEM_ALIASES_FILE=/etc/mail/aliases
 
 # CHOWN_COMMAND=/usr/bin/chown
 # CHGRP_COMMAND=/usr/bin/chgrp
+# CHMOD_COMMAND=/usr/bin/chmod
 # MV_COMMAND=/bin/mv
 # RM_COMMAND=/bin/rm
+# TOUCH_COMMAND=/usr/bin/touch
 # PERL_COMMAND=/usr/bin/perl
 
 
@@ -1102,5 +1131,21 @@ PID_FILE_PATH=/var/run/exim.pid
 # messages become "invisible" to the normal management tools.
 
 # SUPPORT_MOVE_FROZEN_MESSAGES=yes
+
+
+#------------------------------------------------------------------------------
+# Disabling the use of fsync(): DO NOT UNCOMMENT THE FOLLOWING LINE unless you
+# really, really, really know what you are doing. And even then, think again.
+# You should never uncomment this when compiling a binary for distribution.
+# Use it only when compiling Exim for your own use.
+#
+# Uncommenting this line enables the use of a runtime option called
+# disable_fsync, which can be used to stop Exim using fsync() to ensure that
+# files are written to disc before proceeding. When this is disabled, crashes
+# and hardware problems such as power outages can cause data to be lost. This
+# feature should only be used in very exceptional circumstances. YOU HAVE BEEN
+# WARNED.
+
+# ENABLE_DISABLE_FSYNC=yes
 
 # End of EDITME for Exim 4.
