@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.8 2009/12/14 13:50:53 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.9 2009/12/15 11:40:48 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -61,6 +61,7 @@ my $base_exceptions = {
 	'pkgconfig' => "/usr/bin/pkg-config",
 	'expat' => "/usr/lib/libexpat.a",
 	'cwm' => "/usr/X11R6/bin/cwm",
+	'mergemaster' => "/usr/sbin/sysmerge", 
 # 4.5 stuff
 	'p5-version' => "$p5/version.pm",
 	'p5-Archive-Tar' => "$p5/Archive/Tar.pm",
@@ -89,6 +90,11 @@ my $base_exceptions = {
 };
 
 my $stem_extensions = {
+# 4.4
+	'teTeX_base-fmt' => 'texlive_base',
+	'teTeX_base' => 'texlive_base',
+	'teTeX_texmf' => ['texlive_texmf-full', 'texlive_texmf-minimal'],
+	'teTeX_texmf-doc' => 'texlive_docs',
 # 4.6snap
 	'thunar-vcs-plugin' => 'thunar-vcs',
 	'fam' => 'libgamin',
@@ -159,8 +165,15 @@ sub tweak_search
 		return;
 	}
 	my $stem = OpenBSD::PackageName::splitstem($handle->pkgname);
-	if (defined $stem_extensions->{$stem}) {
-		$l->[0]->add_stem($stem_extensions->{$stem});
+	my $extra = $stem_extensions->{$stem};
+	if (defined $extra) {
+		if (ref $extra) {
+			for my $e (@$extra) {
+				$l->[0]->add_stem($e);
+			}
+		} else {
+			$l->[0]->add_stem($extra);
+		}
 	}
 }
 
