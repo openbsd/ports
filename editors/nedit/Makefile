@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2009/12/15 08:17:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2009/12/15 15:33:25 jasper Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
@@ -6,10 +6,7 @@ COMMENT=		X11/Motif GUI text editor
 DISTNAME=		nedit-5.5
 PKGNAME=		${DISTNAME}p8
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
-			diff.pats.gz:1 \
-			mipsasm.pats.gz:1 \
-			postgresql.pats.gz:1 \
-			ruby.pats.gz:1
+			nedit_patterns.tgz:1
 PATCHFILES=		wrapmark.diff:0
 CATEGORIES=		editors x11
 
@@ -18,6 +15,8 @@ MASTER_SITES=		http://www.nedit.org/ftp/v5_5/ \
 
 MASTER_SITES0=		http://www.bsdfrog.org/OpenBSD/distfiles/
 MASTER_SITES1=		http://www.phil.uu.nl/~lievisse/distfiles/
+
+DIST_SUBDIR=		nedit
 
 HOMEPAGE=		http://www.nedit.org/
 
@@ -42,7 +41,7 @@ NO_REGRESS=		Yes
 
 FLAVOR?=
 
-CFLAGS+=	-DBUILD_UNTESTED_NEDIT
+CFLAGS+=		-DBUILD_UNTESTED_NEDIT
 
 # gcc 3.3.5 internal compiler error
 .if ${MACHINE_ARCH} == "mips64"
@@ -50,8 +49,6 @@ EXTRA_CFLAGS=	-O0
 .endif
 
 MAKE_FLAGS+=	EXTRA_CFLAGS=${EXTRA_CFLAGS}
-
-PATTERNS=	diff mipsasm postgresql ruby
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/source/nedit ${PREFIX}/bin
@@ -63,8 +60,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nedit
 	${INSTALL_DATA} ${WRKSRC}/doc/nedit.doc ${PREFIX}/share/doc/nedit
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nedit/patterns
-.for p in ${PATTERNS}
-	${INSTALL_DATA} ${WRKDIR}/$p.pats ${PREFIX}/share/nedit/patterns/
-.endfor
+	${INSTALL_DATA} ${WRKDIR}/nedit_patterns/*.pats \
+		${PREFIX}/share/nedit/patterns/
 
 .include <bsd.port.mk>
