@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2009/11/18 19:10:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.243 2009/12/15 12:53:25 sthen Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -57,15 +57,9 @@
      SUBDIR += evolution-plugin-webcal
      SUBDIR += exim
      SUBDIR += exim,ldap
-     SUBDIR += exim,ldap,no_x11
      SUBDIR += exim,mysql
-     SUBDIR += exim,mysql,no_x11
-     SUBDIR += exim,mysql,postgresql,ldap,no_x11
-     SUBDIR += exim,no_exiscan
-     SUBDIR += exim,no_exiscan,no_x11
-     SUBDIR += exim,no_x11
+     SUBDIR += exim,mysql,postgresql,ldap
      SUBDIR += exim,postgresql
-     SUBDIR += exim,postgresql,no_x11
      SUBDIR += exmh2
      SUBDIR += extsmail
      SUBDIR += faces
