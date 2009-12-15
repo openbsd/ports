@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.46 2009/12/13 22:39:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2009/12/15 08:17:16 jasper Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
 DISTNAME=		nedit-5.5
-PKGNAME=		${DISTNAME}p7
+PKGNAME=		${DISTNAME}p8
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
-			diff-2.1.pats.gz:1
+			diff.pats.gz:1 \
+			mipsasm.pats.gz:1 \
+			postgresql.pats.gz:1 \
+			ruby.pats.gz:1
 PATCHFILES=		wrapmark.diff:0
 CATEGORIES=		editors x11
 
@@ -18,14 +21,18 @@ MASTER_SITES1=		http://www.phil.uu.nl/~lievisse/distfiles/
 
 HOMEPAGE=		http://www.nedit.org/
 
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	Xau Xdmcp Xft Xmu Xrender expat fontconfig freetype \
-		ICE SM X11 Xext Xp Xpm Xt c m iconv pthread-stubs xcb z
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xmu Xp Xpm Xrender Xt
+WANTLIB += c expat fontconfig freetype m z
+
+MODULES=		converters/libiconv
 
 USE_X11=		Yes
 USE_MOTIF=		Any
@@ -44,6 +51,8 @@ EXTRA_CFLAGS=	-O0
 
 MAKE_FLAGS+=	EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
+PATTERNS=	diff mipsasm postgresql ruby
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/source/nedit ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/source/nc ${PREFIX}/bin/ncl
@@ -54,6 +63,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nedit
 	${INSTALL_DATA} ${WRKSRC}/doc/nedit.doc ${PREFIX}/share/doc/nedit
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nedit/patterns
-	${INSTALL_DATA} ${WRKDIR}/diff-2.1.pats ${PREFIX}/share/nedit/patterns/diff.pats
+.for p in ${PATTERNS}
+	${INSTALL_DATA} ${WRKDIR}/$p.pats ${PREFIX}/share/nedit/patterns/
+.endfor
 
 .include <bsd.port.mk>

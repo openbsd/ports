@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/12/13 22:39:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/12/15 08:17:16 jasper Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},wrapmark
 @bin bin/ncl
@@ -11,3 +11,6 @@ share/doc/nedit/nedit.doc
 share/nedit/
 share/nedit/patterns/
 share/nedit/patterns/diff.pats
+share/nedit/patterns/mipsasm.pats
+share/nedit/patterns/postgresql.pats
+share/nedit/patterns/ruby.pats
