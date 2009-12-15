@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-docs,v 1.4 2009/12/12 17:48:34 edd Exp $
+@comment $OpenBSD: PLIST-docs,v 1.5 2009/12/15 18:01:57 espie Exp $
 @conflict teTeX_texmf-doc-*
 @conflict texlive_base-<2009
 @conflict texlive_texmf-minimal-<2009
 @pkgpath print/texlive/texmf-docs
+@pkgpath print/teTeX_texmf,-doc
 share/texmf-dist/doc/latex/relenc/reldemo.dvi
 share/texmf-dist/doc/latex/rcsinfo/README
 share/texmf-dist/doc/latex/thuthesis/example/figures/thu-lib-logo.pdf

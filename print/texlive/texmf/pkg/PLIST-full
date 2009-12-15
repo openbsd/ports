@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-full,v 1.6 2009/12/12 17:48:35 edd Exp $
+@comment $OpenBSD: PLIST-full,v 1.7 2009/12/15 18:01:57 espie Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_texmf-docs-<2009
 @conflict texlive_texmf-minimal-<2009
 @pkgpath print/texlive/texmf-full
+@pkgpath print/teTeX/texmf
 share/texmf-dist/fonts/source/public/semaphor/metafont/smfpsl10.mf
 share/texmf-dist/tex/latex/minitoc/russian2o.mld
 share/texmf-dist/fonts/tfm/public/musixtex/xslhu13.tfm

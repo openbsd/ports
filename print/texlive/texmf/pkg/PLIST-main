@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/12/12 17:48:35 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/12/15 18:01:57 espie Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2009
 @conflict texlive_texmf-docs-<2009
 @conflict texlive_texmf-full-<2009
 @pkgpath print/texlive/texmf-minimal
+@pkgpath print/teTeX/texmf
 share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-el-polyton.tex
 share/texmf-dist/tex/generic/enctex/kam-il2.tex
 share/texmf-dist/fonts/tfm/adobe/palatino/pplbo7t.tfm
