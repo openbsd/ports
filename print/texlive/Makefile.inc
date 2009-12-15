@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2009/12/12 17:48:34 edd Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2009/12/15 16:21:18 edd Exp $
 
 CATEGORIES ?=	print
 HOMEPAGE ?=	http://tug.org/texlive/
@@ -11,8 +11,8 @@ PERMIT_DISTFILES_CDROM ?=	Yes
 PERMIT_DISTFILES_FTP ?=		Yes
 
 EXTRACT_SUFX ?=		.tar.xz
-EXTRACT_CASES ?=	*.tar.xz) xzcat ${FULLDISTDIR}/$$archive | tar xf -;;
-BUILD_DEPENDS ?=	::archivers/xz
+EXTRACT_CASES +=	*.tar.xz) xzcat ${FULLDISTDIR}/$$archive | tar xf -;;
+BUILD_DEPENDS +=	::archivers/xz
 
 V ?=		2009
 DIST_V ?=	${V}1107
