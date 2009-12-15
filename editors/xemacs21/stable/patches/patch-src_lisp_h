@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_lisp_h,v 1.1 2009/12/15 10:05:55 jasper Exp $
+
+Security fix for CVE-2009-2688, xemacs: multiple integer overflow flaws.
+
+Patch from gentoo.
+
+--- src/lisp.h.orig	Tue Dec 15 10:57:22 2009
++++ src/lisp.h	Tue Dec 15 10:57:44 2009
+@@ -265,6 +265,11 @@ void assert_failed (const char *, int, const char *);
+ /*#define REGISTER register*/
+ /*#endif*/
+ 
++#if SIZEOF_LONG == 8
++#define UINT_64_BIT unsigned long
++#elif SIZEOF_LONG_LONG == 8
++#define UINT_64_BIT unsigned long long
++#endif
+ 
+ /* EMACS_INT is the underlying integral type into which a Lisp_Object must fit.
+    In particular, it must be large enough to contain a pointer.
