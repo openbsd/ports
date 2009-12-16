@@ -1,7 +1,7 @@
-$OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp $
---- Completion/Unix/Command/_tmux.orig	Fri Nov 13 10:56:08 2009
-+++ Completion/Unix/Command/_tmux	Fri Nov 13 10:57:05 2009
-@@ -0,0 +1,1461 @@
+$OpenBSD: patch-Completion_Unix_Command__tmux,v 1.2 2009/12/16 15:03:28 pea Exp $
+--- Completion/Unix/Command/_tmux.orig	Thu Dec 10 17:25:18 2009
++++ Completion/Unix/Command/_tmux	Thu Dec 10 17:27:19 2009
+@@ -0,0 +1,1491 @@
 +#compdef tmux
 +
 +# tmux <http://tmux.sf.net> completion for zsh <http://zsh.sf.net>.
@@ -61,6 +61,7 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +    new         new-session
 +    refresh     refresh-client
 +    rename      rename-session
++    showmsgs    show-messages
 +    source      source-file
 +    start       start-server
 +    suspendc    suspend-client
@@ -68,6 +69,7 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +
 +    # windows and panes
 +    breakp      break-pane
++    capturep    capture-pane
 +    displayp    display-panes
 +    downp       down-pane
 +    findw       find-window
@@ -109,7 +111,8 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +    showw       show-window-options
 +
 +    # environment
-+    #no aliases so far in this category
++    setenv      set-environment
++    showenv     show-environment
 +
 +    # status line
 +    confirm     confirm-before
@@ -189,6 +192,16 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +    args=(
 +        '-d[Do not make the new window become the active one]'
 +        '-t[Choose a target pane]:panes:__tmux-panes'
++    )
++    _arguments ${args}
++}
++
++function _tmux-capture-pane() {
++    [[ -n ${tmux_describe} ]] && print "Capture the contents of a pane to a buffer" && return
++    local -a args
++    args=(
++        '-b[Choose target buffer]:target buffer:__tmux-buffers'
++        '-t[Choose source pane]:source pane:__tmux-panes'
 +    )
 +    _arguments ${args}
 +}
@@ -338,6 +351,7 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +    [[ -n ${tmux_describe} ]] && print "Display a message in the status line" && return
 +    local -a args
 +    args=(
++        '-p[Print message to stdout]'
 +        '-t[Choose a target client]:clients:__tmux-clients'
 +        '*:: :->msg'
 +    )
@@ -838,27 +852,19 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +
 +function _tmux-set-option() {
 +    [[ -n ${tmux_describe} ]] && print "Set a session option" && return
++    local mode
 +    local -a args
 +    args=(
 +        '-a[Append to string options]'
 +        '-g[Set a global session option]'
 +        '-u[Unset a non-global option]'
++        '-w[Change window (not session) options]'
 +        '-t[Choose a target session]:target session:__tmux-sessions'
 +        '*:: :->name_or_value'
 +    )
++    __tmux-got-option-already -w && mode=window || mode=session
 +    _arguments -C ${args}
-+
-+    case ${state} in
-+        name_or_value)
-+            if (( CURRENT == 1 )); then
-+                __tmux-options
-+            elif (( CURRENT == 2 )); then
-+                __tmux-option-guard 'session' ${words[1]}
-+            else
-+                __tmux-nothing-else
-+            fi
-+            ;;
-+    esac
++    __tmux-options-complete ${mode} ${state}
 +}
 +
 +function _tmux-set-window-option() {
@@ -872,18 +878,7 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +        '*:: :->name_or_value'
 +    )
 +    _arguments -C ${args}
-+
-+    case ${state} in
-+        name_or_value)
-+            if (( CURRENT == 1 )); then
-+                __tmux-window-options
-+            elif (( CURRENT == 2 )); then
-+                __tmux-option-guard 'window' ${words[1]}
-+            else
-+                __tmux-nothing-else
-+            fi
-+            ;;
-+    esac
++    __tmux-options-complete window ${state}
 +}
 +
 +function _tmux-show-buffer() {
@@ -924,6 +919,12 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +        '-g[Show global environment]'
 +        '-t[Choose a target session]:target session:__tmux-sessions'
 +    )
++    _arguments ${args}
++}
++
++function _tmux-show-messages() {
++    [[ -n ${tmux_describe} ]] && print "Show client"\'"s message log" && return
++    args=('-t[Choose target client]:client:__tmux-clients')
 +    _arguments ${args}
 +}
 +
@@ -1006,8 +1007,8 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +    [[ -n ${tmux_describe} ]] && print "Switch the client to another session" && return
 +    local -a args
 +    args=(
-+        '-c[Choose a target client]:client:__tmux-key-clients'
-+        '-t[Choose a target window]:window:__tmux-key-windows'
++        '-c[Choose a target client]:client:__tmux-clients'
++        '-t[Choose a target window]:window:__tmux-windows'
 +    )
 +    _arguments ${args}
 +}
@@ -1128,6 +1129,11 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +    done
 +}
 +
++function __tmux-got-option-already() {
++    [[ -n ${(M)words:#$1} ]] && return 0
++    return 1
++}
++
 +function __tmux-key-tables() {
 +    local expl
 +    local -a tables
@@ -1182,6 +1188,7 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +            'message-attr:__tmux-attributes'
 +            'message-bg:__tmux-colours'
 +            'message-fg:__tmux-colours'
++            'message-limit:'${int_guard}
 +            'mouse-select-pane:DESC:on off'
 +            'prefix:MSG:comma-seperated key list'
 +            'repeat-time:'${int_guard}
@@ -1237,7 +1244,9 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +            'window-status-current-attr:__tmux-attributes'
 +            'window-status-current-bg:__tmux-colours'
 +            'window-status-current-fg:__tmux-colours'
++            'window-status-current-format:MSG:status format string'
 +            'window-status-fg:__tmux-colours'
++            'window-status-format:MSG:status format string'
 +            'xterm-keys:DESC:on off'
 +        )
 +    fi
@@ -1284,6 +1293,7 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +        'message-attr:Set status line message attributes'
 +        'message-bg:Set status line message background colour'
 +        'message-fg:Set status line message foreground colour'
++        'message-limit:Set size of message log per client'
 +        'mouse-select-pane:Make mouse clicks select window panes'
 +        'prefix:Comma seperated line of keys accepted as prefix key'
 +        'repeat-time:Time for multiple commands without prefix-key presses'
@@ -1315,6 +1325,24 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +        'visual-content:Display status line messages upon content changes'
 +    )
 +    _describe -t tmux-options 'tmux option' tmux_options
++}
++
++function __tmux-options-complete() {
++    local mode="$1" state="$2"
++
++    case ${state} in
++        name_or_value)
++            if (( CURRENT == 1 )) && [[ ${mode} == 'session' ]]; then
++                __tmux-options
++            elif (( CURRENT == 1 )) && [[ ${mode} == 'window' ]]; then
++                __tmux-window-options
++            elif (( CURRENT == 2 )); then
++                __tmux-option-guard ${mode} ${words[1]}
++            else
++                __tmux-nothing-else
++            fi
++            ;;
++    esac
 +}
 +
 +function __tmux-panes() {
@@ -1380,7 +1408,9 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.1 2009/11/13 12:26:40 pea Exp 
 +        'window-status-current-attr:Set status line attributes for active window'
 +        'window-status-current-bg:Set status line background for active window'
 +        'window-status-current-fg:Set status line foreground for active window'
++        'window-status-current-format:Set status line format for active window'
 +        'window-status-fg:Set status line foreground for a window'
++        'window-status-format:Set status line format for all but the active window'
 +        'xterm-keys:Generate xterm-style function key sequences'
 +    )
 +    _describe -t tmux-window-options 'tmux window option' tmux_window_options

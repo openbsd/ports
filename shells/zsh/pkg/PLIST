@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2009/11/13 12:26:40 pea Exp $
+@comment $OpenBSD: PLIST,v 1.29 2009/12/16 15:03:28 pea Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
@@ -393,6 +393,8 @@ share/zsh/${V}/functions/_perl
 share/zsh/${V}/functions/_perl_basepods
 share/zsh/${V}/functions/_perl_modules
 share/zsh/${V}/functions/_perldoc
+share/zsh/${V}/functions/_pfctl
+@comment share/zsh/${V}/functions/_pfctl.orig
 share/zsh/${V}/functions/_pfexec
 share/zsh/${V}/functions/_php
 share/zsh/${V}/functions/_physical_volumes
