@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:09 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2009/12/16 17:59:43 jasper Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
-V=			0.13.13
+V=			0.14.3
 DISTNAME=		gamgi-all-${V}
-PKGNAME=		${DISTNAME:S/-all//}p0
+PKGNAME=		${DISTNAME:S/-all//}
 CATEGORIES=		education x11
 
 HOMEPAGE=		http://www.gamgi.org/
@@ -19,15 +19,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.gamgi.org/gamgi/src/
 
-WANTLIB += GL GLU X11 Xext Xi Xmu atk-1.0 c cairo expat freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pthread-stubs xcb
-
 USE_GMAKE=		Yes
 USE_X11=		Yes
 
+WANTLIB += GL GLU X11 Xext Xi Xmu atk-1.0 c cairo expat freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+
 LIB_DEPENDS=		gdkglext-x11-1.0,gtkglext-x11-1.0::x11/gtkglext
-RUN_DEPENDS=		::graphics/netpbm
+RUN_DEPENDS=		::graphics/netpbm \
+			::x11/dejavu-fonts
 
 WRKDIST=		${WRKDIR}/gamgi${V}/
 WRKSRC= 		${WRKDIST}/src/
@@ -40,7 +41,7 @@ DOC_DIR=		${PREFIX}/share/doc/gamgi/
 DATA_DIR=		${PREFIX}/share/gamgi/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/make_local
+	${SUBST_CMD} ${WRKSRC}/make_local ${WRKSRC}/io/gamgi_io.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gamgi ${PREFIX}/bin

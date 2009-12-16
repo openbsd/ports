@@ -1,25 +1,21 @@
-$OpenBSD: patch-src-make_rules,v 1.2 2009/06/03 22:46:06 jasper Exp $
---- src/make_rules.orig	Wed Jun  3 16:27:53 2009
-+++ src/make_rules	Wed Jun  3 16:28:31 2009
-@@ -14,12 +14,12 @@ SHELL=/bin/sh
+$OpenBSD: patch-src-make_rules,v 1.3 2009/12/16 17:59:43 jasper Exp $
+--- src/make_rules.orig	Wed Nov  4 22:34:50 2009
++++ src/make_rules	Wed Dec 16 17:30:50 2009
+@@ -14,9 +14,9 @@ SHELL=/bin/sh
  
  #================================ compiler =================================
  
--COMPILE = gcc -g -O0 -Wall -ansi
-+COMPILE = $(CC) -g -Wall -ansi
- #COMPILE = gcc -g -Wall -ansi -O3 -pedantic -Werror -MMD
--LINK = gcc
-+LINK = $(CC)
- #LINK = g++
+-CC = gcc
++CC ?= gcc
  
--CFLAGS = -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
-+CFLAGS += -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
- 	-DGDK_PIXBUF_DISABLE_DEPRECATED # -DGTK_DISABLE_DEPRECATED
- 
- #================================ executable ===============================
-@@ -31,7 +31,7 @@ EXE = gamgi
- LIBS = -lgtkglext-x11-1.0 -lGLU -lGL -lgtk-x11-2.0 -lgdk-x11-2.0 \
- 	-latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpango-1.0 \
+-CFLAGS = -g -O3 -Wall -ansi
++CFLAGS ?= -g -O3 -Wall -ansi
+ override CFLAGS += -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED
+ LDFLAGS =
+@@ -33,7 +33,7 @@ EXE = gamgi
+ LIBS = -lgtkglext-x11-1.0 -lgdkglext-x11-1.0 -lGLU -lGL -lgtk-x11-2.0 \
+ 	-lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpango-1.0 \
  	-lcairo -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lXext -lX11 \
 -	-lXi -lXmu -lfreetype -lexpat -lm -ldl
 +	-lXi -lXmu -lfreetype -lexpat -lm
