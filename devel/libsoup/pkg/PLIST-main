@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/10/20 08:11:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2009/12/16 16:25:49 ajacoutot Exp $
 @pkgpath devel/libsoup
 @pkgpath devel/libsoup,ssl
 %%SHARED%%
@@ -9,6 +9,7 @@ include/libsoup-${API_VERSION}/libsoup/soup-auth-domain-basic.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-domain-digest.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth-domain.h
 include/libsoup-${API_VERSION}/libsoup/soup-auth.h
+include/libsoup-${API_VERSION}/libsoup/soup-content-decoder.h
 include/libsoup-${API_VERSION}/libsoup/soup-content-sniffer.h
 include/libsoup-${API_VERSION}/libsoup/soup-cookie-jar-text.h
 include/libsoup-${API_VERSION}/libsoup/soup-cookie-jar.h
