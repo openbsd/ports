@@ -96,19 +96,19 @@ release_native (void *handle)
 }
 
 void
-pause_native (void *handle)
+pause_nativedevice (void *handle)
 {
 	sio_stop(handle);
 }
 
 void
-resume_native (void *handle)
+resume_nativedevice (void *handle)
 {
 	sio_start(handle);
 }
 
 ALsizei
-capture_native (void *handle, void *capture_buffer, int bufsiz)
+capture_nativedevice (void *handle, void *capture_buffer, int bufsiz)
 {
 	return sio_read(handle, capture_buffer, bufsiz);
 }
