@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/10/13 09:57:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/12/16 11:47:11 ajacoutot Exp $
 @bin bin/epiphany
 include/epiphany/
 include/epiphany/${M}/
@@ -327,6 +327,8 @@ share/locale/hr/LC_MESSAGES/epiphany.mo
 share/locale/hu/LC_MESSAGES/epiphany.mo
 share/locale/hy/LC_MESSAGES/epiphany.mo
 share/locale/id/LC_MESSAGES/epiphany.mo
+share/locale/ig/
+share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/epiphany.mo
 share/locale/is/LC_MESSAGES/epiphany.mo
 share/locale/it/LC_MESSAGES/epiphany.mo
@@ -377,6 +379,8 @@ share/locale/uz/LC_MESSAGES/epiphany.mo
 share/locale/uz@cyrillic/LC_MESSAGES/epiphany.mo
 share/locale/vi/LC_MESSAGES/epiphany.mo
 share/locale/wa/LC_MESSAGES/epiphany.mo
+share/locale/yo/
+share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany.mo
