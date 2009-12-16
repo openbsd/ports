@@ -1,7 +1,7 @@
-$OpenBSD: patch-misc_netplan_1,v 1.1 2005/08/10 07:53:44 mbalmer Exp $
+$OpenBSD: patch-misc_netplan_1,v 1.2 2009/12/16 14:20:48 kili Exp $
 --- misc/netplan.1.orig	Thu Jun  1 13:38:06 2000
-+++ misc/netplan.1	Mon Aug  8 19:18:23 2005
-@@ -11,9 +11,8 @@ netplan \- IP server for plan(1) appoint
++++ misc/netplan.1	Wed Dec 16 15:10:36 2009
+@@ -11,9 +11,8 @@ netplan \- IP server for plan(1) appointment lists
  .B netplan
  is an IP server that serves calendar data to
  .BR plan (1)
