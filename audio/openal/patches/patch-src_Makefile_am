@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2009/12/16 20:00:41 naddy Exp $
+--- src/Makefile.am.orig	Thu Jan 19 21:58:50 2006
++++ src/Makefile.am	Thu Oct 15 14:47:15 2009
+@@ -119,6 +119,11 @@ libopenal_la_SOURCES +=			\
+ 	backends/alc_backend_solaris.c
+ endif
+ 
++if USEBACKENDNATIVESNDIO
++libopenal_la_SOURCES +=			\
++	backends/alc_backend_sndio.c
++endif
++
+ if USEBACKENDWAVEOUT
+ libopenal_la_SOURCES +=			\
+ 	backends/alc_backend_wave.c

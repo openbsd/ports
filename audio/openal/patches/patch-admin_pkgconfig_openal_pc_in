@@ -1,6 +1,6 @@
-$OpenBSD: patch-admin_pkgconfig_openal_pc_in,v 1.2 2009/10/10 22:51:48 sthen Exp $
---- admin/pkgconfig/openal.pc.in.orig	Sat Feb 11 04:36:55 2006
-+++ admin/pkgconfig/openal.pc.in	Fri Oct  9 20:29:07 2009
+$OpenBSD: patch-admin_pkgconfig_openal_pc_in,v 1.3 2009/12/16 20:00:41 naddy Exp $
+--- admin/pkgconfig/openal.pc.in.orig	Sat Feb 11 10:36:55 2006
++++ admin/pkgconfig/openal.pc.in	Thu Oct 15 15:12:25 2009
 @@ -5,8 +5,8 @@ includedir=@includedir@
  
  Name: OpenAL
@@ -9,6 +9,6 @@ $OpenBSD: patch-admin_pkgconfig_openal_pc_in,v 1.2 2009/10/10 22:51:48 sthen Exp
 +Requires:
  Version: @PACKAGE_VERSION@
 -Libs: -L${libdir} -lopenal
-+Libs: -L${libdir} -lopenal -lossaudio
++Libs: -L${libdir} -lopenal -lsndio
  Cflags: -I${includedir}
  

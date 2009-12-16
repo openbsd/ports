@@ -1,0 +1,76 @@
+$OpenBSD: patch-configure_ac,v 1.1 2009/12/16 20:00:41 naddy Exp $
+--- configure.ac.orig	Sat Feb 11 10:36:55 2006
++++ configure.ac	Thu Oct 15 15:00:10 2009
+@@ -365,7 +365,7 @@ esac
+ 
+ dnl Special objs for architectures
+ case "$target" in
+-    *i386* | *i486* | *i586* | *i686* | *x86_64*)
++    *i386* | *i486* | *i586* | *i686* )
+     openal_x86_support_yn=yes
+ 
+     AC_MSG_CHECKING([for MMX support])
+@@ -637,7 +637,7 @@ OPENAL_ENABLE([aRts backend], [openal_backend_arts_sup
+ 
+ # check for native BSD/OSS backend #############################################
+ 
+-# ToDo: Hmmm, OpenBSD/FreeBSD are using OSS, too, just like Linux. Perhaps some
++# ToDo: Hmmm, FreeBSD is using OSS, too, just like Linux. Perhaps some
+ # re-use is possible?
+ 
+ AC_ARG_ENABLE([bsd],
+@@ -648,6 +648,10 @@ if test "x$enable_bsd" = xno; then
+   openal_backend_bsd_support=disabled
+ else
+   case "$target" in
++    *openbsd*) openal_backend_bsd_support=none
++               if test "x$enable_bsd" = xyes; then
++                 AC_MSG_WARN([--enabled-bsd ignored in favor of sndio.])
++               fi ;;
+     *bsd*) openal_backend_bsd_support=static ;;
+     *) openal_backend_bsd_support=none
+        if test "x$enable_bsd" = xyes; then
+@@ -941,6 +945,43 @@ fi
+ 
+ OPENAL_ENABLE([native Solaris backend], [openal_backend_solaris_support],
+               [USE_BACKEND_NATIVE_SOLARIS], [USEBACKENDNATIVESOLARIS])
++
++# check for native sndio backend ###############################################
++
++AC_ARG_ENABLE([sndio],
++[AS_HELP_STRING([--enable-sndio],
++                [enable native sndio backend @<:@default=auto@:>@])])
++
++if test "x$enable_sndio" = xno; then
++  openal_backend_sndio_support=disabled
++else
++  AC_CHECK_HEADER([sndio.h],
++    [openal_libs_sndio="-lsndio"
++     openal_saved_LIBS=$LIBS
++     LIBS="$openal_libs_sndio $LIBS"
++     AC_CACHE_CHECK([for sio_open], [openal_cv_func_sio_open],
++       [AC_LINK_IFELSE([AC_LANG_CALL([], [sio_open])],
++         [openal_cv_func_sio_open=yes],
++         [openal_cv_func_sio_open=no])])
++     if test "x$openal_cv_func_sio_open" = xyes; then
++       openal_backend_sndio_support=static
++       LIBS="$openal_libs_sndio $LIBS"
++     else
++       openal_backend_sndio_support=none
++       LIBS=$openal_saved_LIBS
++       if test "x$enable_sndio" = xyes; then
++         AC_MSG_WARN([--enable-sndio ignored because the sndio library could not be found.])
++       fi
++     fi],
++    [openal_backend_sndio_support=none
++     if test "x$enable_sndio" = xyes; then
++       AC_MSG_WARN([--enable-sndio ignored because the sndio header could not be found.])
++     fi],
++    [AC_INCLUDES_DEFAULT([])])
++fi
++
++OPENAL_ENABLE([native sndio backend], [openal_backend_sndio_support],
++              [USE_BACKEND_NATIVE_SNDIO], [USEBACKENDNATIVESNDIO])
+ 
+ # check for WAVE backend #######################################################
+ 
