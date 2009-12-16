@@ -1,36 +1,39 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/11 05:04:37 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2009/12/16 14:59:10 benoit Exp $
 
-COMMENT=	lua binding of libevent
-SHARED_ONLY=	Yes
+COMMENT =	lua binding of libevent
+SHARED_ONLY =	Yes
 
-DISTNAME=	luaevent-0.1.1
-PKGNAME=	${DISTNAME}p1
-CATEGORIES=	devel
+DISTNAME =	luaevent-0.2.0
+CATEGORIES =	devel
 
-MASTER_SITES=	http://luaforge.net/frs/download.php/2479/
-HOMEPAGE=	http://opensvn.csie.org/LuaEvent/
-EXTRACT_SUFX=	.tar.bz2
+HOMEPAGE =	http://luaforge.net/projects/luaevent/
 
-# LGPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+# LGPLv2.1
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MODULES=	lang/lua
-NO_REGRESS=	Yes
-WANTLIB=	event
+WANTLIB =	event
 
-CFLAGS+=	-I${LOCALBASE}/include -I../include
-LINK=		${CC} ${CFLAGS} -fPIC -shared -L${LOCALBASE}/lib -o
+MASTER_SITES =	http://luaforge.net/frs/download.php/2629/
+
+MODULES =	lang/lua
+
+RUN_DEPENDS +=	::net/luasocket
+
+CFLAGS +=	-I${LOCALBASE}/include -I../include
+LINK =		${CC} ${CFLAGS} -fPIC -shared -L${LOCALBASE}/lib -o
+
+NO_REGRESS =	Yes
 
 do-build:
-	cd ${WRKDIST}/src && ${LINK} core.so luaevent.c -levent
+	cd ${WRKDIST}/src && ${LINK} core.so luaevent.c event_buffer.c event_callback.c -levent
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/lua/5.1
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1/luaevent
-	${INSTALL_DATA} ${WRKSRC}/luaevent.lua ${PREFIX}/share/lua/5.1
+	${INSTALL_DATA} ${WRKSRC}/lua/luaevent.lua ${PREFIX}/share/lua/5.1
 	${INSTALL_DATA} ${WRKSRC}/src/*.so ${PREFIX}/lib/lua/5.1/luaevent
-
+                                        
 .include <bsd.port.mk>
