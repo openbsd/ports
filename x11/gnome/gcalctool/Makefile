@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2009/10/19 09:35:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2009/12/16 07:29:04 ajacoutot Exp $
 
 COMMENT=		GTK2 desktop calculator
 
 GNOME_PROJECT=		gcalctool
-GNOME_VERSION=		5.28.1
+GNOME_VERSION=		5.28.2
 
 CATEGORIES=		math
 
