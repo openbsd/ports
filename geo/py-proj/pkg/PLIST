@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/16 22:18:37 benoit Exp $
+lib/python${MODPY_VERSION}/site-packages/pyproj/
+lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pyproj/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pyproj/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyproj/_geod.so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_proj.so
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/GL27
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/README
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/epsg
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/esri
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/esri.extra
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/nad.lst
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/nad27
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/nad83
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/ntv2_out.dist
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/other.extra
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/pj_out27.dist
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/pj_out83.dist
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/proj_def.dat
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/td_out.dist
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/test27
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/test83
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/testntv2
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/testvarious
+lib/python${MODPY_VERSION}/site-packages/pyproj/data/world
