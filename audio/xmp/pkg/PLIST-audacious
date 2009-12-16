@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-audacious,v 1.1 2009/12/16 07:49:29 jakemsr Exp $
+lib/audacious/Input/xmp-audacious.so

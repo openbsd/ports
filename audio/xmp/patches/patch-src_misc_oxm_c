@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_misc_oxm_c,v 1.1 2009/12/16 07:49:29 jakemsr Exp $
+--- src/misc/oxm.c.orig	Tue Dec 15 23:21:14 2009
++++ src/misc/oxm.c	Tue Dec 15 23:21:36 2009
+@@ -150,7 +150,7 @@ static char *oggdec(FILE *f, int len, int res, int *ne
+ 
+ 		snprintf(b, 10, "-b%d", res);
+ 		execlp("oggdec", "oggdec", "-Q", b, "-e0", "-R", "-s1",
+-							"-o-", "-", NULL);
++							"-o-", "-", (char *)NULL);
+ 
+ 		do {			/* drain input data */
+ 			l = read(STDIN_FILENO, buf, 1024);

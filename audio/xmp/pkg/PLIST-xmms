@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-xmms,v 1.1 2003/05/18 07:40:55 naddy Exp $
-lib/xmms/Input/xmp-plugin.so
+@comment $OpenBSD: PLIST-xmms,v 1.2 2009/12/16 07:49:29 jakemsr Exp $
+lib/xmms/Input/xmp-xmms.so

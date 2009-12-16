@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_include_config_h_in,v 1.1 2009/12/16 07:49:29 jakemsr Exp $
+--- src/include/config.h.in.orig	Wed Sep 30 03:47:36 2009
++++ src/include/config.h.in	Sat Dec 12 04:20:00 2009
+@@ -21,6 +21,9 @@
+ /* Define to enable OpenBSD audio support */
+ #undef DRIVER_OPENBSD
+ 
++/* Define to enable OpenBSD sndio support */
++#undef DRIVER_SNDIO
++
+ /* Define to enable BSD audio support */
+ #undef DRIVER_BSD
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_main_drivers_c,v 1.1 2009/12/16 07:49:29 jakemsr Exp $
+--- src/main/drivers.c.orig	Sun Aug  2 05:15:24 2009
++++ src/main/drivers.c	Sat Dec 12 04:41:46 2009
+@@ -54,6 +54,9 @@ void init_drivers()
+ #ifdef DRIVER_OPENBSD
+     xmp_drv_register(&drv_openbsd);
+ #endif
++#ifdef DRIVER_SNDIO
++    xmp_drv_register(&drv_openbsd);
++#endif
+ #ifdef DRIVER_SGI
+     xmp_drv_register(&drv_sgi);
+ #endif

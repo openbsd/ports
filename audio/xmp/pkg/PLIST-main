@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/20 19:15:09 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/12/16 07:49:29 jakemsr Exp $
 @pkgpath audio/xmp,no_xmms
 @pkgpath audio/xmp
-bin/xmp
-bin/xxmp
+@bin bin/xmp
+lib/audacious/
+lib/audacious/Input/
+lib/bmp/
+lib/bmp/Input/
 lib/xmms/
 lib/xmms/Input/
 @man man/man1/xmp.1
-@man man/man1/xxmp.1
 share/examples/xmp/
-share/examples/xmp/xmp-modules.conf
+share/examples/xmp/modules.conf
 share/examples/xmp/xmp.conf
