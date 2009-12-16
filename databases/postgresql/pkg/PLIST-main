@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2009/07/21 19:43:45 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2009/12/16 14:34:58 pea Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -531,6 +531,7 @@ share/postgresql/timezone/Asia/Makassar
 share/postgresql/timezone/Asia/Manila
 share/postgresql/timezone/Asia/Muscat
 share/postgresql/timezone/Asia/Nicosia
+share/postgresql/timezone/Asia/Novokuznetsk
 share/postgresql/timezone/Asia/Novosibirsk
 share/postgresql/timezone/Asia/Omsk
 share/postgresql/timezone/Asia/Oral
