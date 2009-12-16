@@ -3,4 +3,4 @@ link from ${PREFIX-php}/conf/php5.sample/${MODULE_NAME}.ini to
 ${PREFIX-php}/conf/php5/${MODULE_NAME}.ini.
 
 ln -fs ${PREFIX-php}/conf/php5.sample/${MODULE_NAME}.ini \
-	${PREFIX-php}/conf/php5/${MODULE_NAME}.ini
+    ${PREFIX-php}/conf/php5/${MODULE_NAME}.ini

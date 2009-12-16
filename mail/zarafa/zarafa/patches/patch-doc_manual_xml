@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
---- doc/manual.xml.orig	Fri Oct  9 17:26:36 2009
-+++ doc/manual.xml	Tue Oct 20 23:41:36 2009
+$OpenBSD: patch-doc_manual_xml,v 1.6 2009/12/16 18:39:11 ajacoutot Exp $
+--- doc/manual.xml.orig	Tue Dec 15 16:07:43 2009
++++ doc/manual.xml	Wed Dec 16 18:33:53 2009
 @@ -783,9 +783,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
@@ -12,7 +12,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-dagent.pid</replaceable>
-@@ -1109,11 +1107,6 @@
+@@ -1135,11 +1133,6 @@
  		  <replaceable>/path/to/server.cfg</replaceable>
  		</para>
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -2707,9 +2700,7 @@
+@@ -2733,9 +2726,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -35,7 +35,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-server.pid</replaceable>
-@@ -5108,13 +5099,8 @@
+@@ -5134,13 +5125,8 @@
  		</para>
  
  		<para>The spooler process will keep running and watching the
@@ -51,7 +51,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -5286,9 +5272,7 @@
+@@ -5312,9 +5298,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -62,7 +62,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-spooler.pid</replaceable>
-@@ -5653,13 +5637,8 @@
+@@ -5679,13 +5663,8 @@
  
  		<para><command>zarafa-gateway</command></para>
  
@@ -78,7 +78,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -5871,9 +5850,7 @@
+@@ -5897,9 +5876,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -89,7 +89,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-gateway.pid</replaceable>
-@@ -6219,14 +6196,8 @@
+@@ -6245,14 +6222,8 @@
  
  		<para>The monitor checks user mailbox sizes. The monitor sends
  		a quota email when the warning quota limit is reached. When
@@ -105,7 +105,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -6369,9 +6340,7 @@
+@@ -6395,9 +6366,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -116,7 +116,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  			  </para>
  			  <para>Default value: /var/run/zarafa-monitor.pid
  			  </para>
-@@ -7623,13 +7592,8 @@
+@@ -7649,13 +7618,8 @@
  
  		<para><command>zarafa-ical</command></para>
  
@@ -132,7 +132,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -7804,9 +7768,7 @@
+@@ -7830,9 +7794,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -143,7 +143,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-ical.pid</replaceable>
-@@ -8110,13 +8072,8 @@
+@@ -8136,13 +8098,8 @@
  
  		<para><command>zarafa-licensed</command></para>
  
@@ -159,7 +159,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.5 2009/10/20 22:34:26 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -8260,9 +8217,7 @@
+@@ -8286,9 +8243,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>

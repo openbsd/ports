@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_userscripts_groups_common_sh,v 1.2 2009/10/20 22:34:26 ajacoutot Exp $
---- installer/userscripts/groups_common.sh.orig	Fri Oct  9 17:26:45 2009
-+++ installer/userscripts/groups_common.sh	Tue Oct 20 23:41:37 2009
+$OpenBSD: patch-installer_userscripts_groups_common_sh,v 1.3 2009/12/16 18:39:11 ajacoutot Exp $
+--- installer/userscripts/groups_common.sh.orig	Tue Dec 15 16:07:54 2009
++++ installer/userscripts/groups_common.sh	Wed Dec 16 18:33:53 2009
 @@ -1,7 +1,7 @@
  # shell include script
  
@@ -14,5 +14,5 @@ $OpenBSD: patch-installer_userscripts_groups_common_sh,v 1.2 2009/10/20 22:34:26
      exit 1
  fi
  
--find ${ZARAFA_GROUP_SCRIPTS} -maxdepth 1 -type f -perm -u=x -not -name \*~ -not -name \#\* -exec {} \;
+-find ${ZARAFA_GROUP_SCRIPTS} -maxdepth 1 -type f -perm -u=x -not -name \*~ -not -name \#\* -not -name \*.rpm\* -not -name \*.bak -not -name \*.old -exec {} \;
 +find ${ZARAFA_GROUP_SCRIPTS} -maxdepth 1 -type f -perm -u=x -and ! -name \*~ -and ! -name \#\* -exec {} \;
