@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/11/18 13:56:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/12/16 18:41:25 ajacoutot Exp $
 zarafa-webaccess/
 @owner www
 @sample zarafa-webaccess/tmp/
@@ -252,6 +252,7 @@ zarafa-webaccess/client/layout/img/icon_previous_period.gif
 zarafa-webaccess/client/layout/img/icon_priority_high.gif
 zarafa-webaccess/client/layout/img/icon_priority_low.gif
 zarafa-webaccess/client/layout/img/icon_private.gif
+zarafa-webaccess/client/layout/img/icon_read_receipt_button.gif
 zarafa-webaccess/client/layout/img/icon_recurrence.gif
 zarafa-webaccess/client/layout/img/icon_recurring.gif
 zarafa-webaccess/client/layout/img/icon_recurring_changed.gif
@@ -317,6 +318,7 @@ zarafa-webaccess/client/layout/img/report_ndr.gif
 zarafa-webaccess/client/layout/img/resize_horizontal.gif
 zarafa-webaccess/client/layout/img/resize_vertical.gif
 zarafa-webaccess/client/layout/img/search_indicator.gif
+zarafa-webaccess/client/layout/img/selected_day_back.gif
 zarafa-webaccess/client/layout/img/seperator.gif
 zarafa-webaccess/client/layout/img/sort_asc.gif
 zarafa-webaccess/client/layout/img/sort_desc.gif
@@ -501,6 +503,7 @@ zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_anchor.html
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_button.html
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_checkbox.html
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_colorselector.html
+zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_div.html
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_docprops/
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_docprops.html
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_docprops/fck_document_preview.html
@@ -521,6 +524,9 @@ zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_listprop.html
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_paste.html
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_radiobutton.html
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_replace.html
+zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_scayt/
+zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_scayt.html
+zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_scayt/scayt_dialog.css
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_select/
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_select.html
 zarafa-webaccess/client/widgets/fckeditor/editor/dialog/fck_select/fck_select.js
@@ -672,6 +678,7 @@ zarafa-webaccess/client/widgets/fckeditor/editor/filemanager/connectors/lasso/up
 zarafa-webaccess/client/widgets/fckeditor/editor/filemanager/connectors/perl/
 zarafa-webaccess/client/widgets/fckeditor/editor/filemanager/connectors/perl/basexml.pl
 zarafa-webaccess/client/widgets/fckeditor/editor/filemanager/connectors/perl/commands.pl
+zarafa-webaccess/client/widgets/fckeditor/editor/filemanager/connectors/perl/config.pl
 zarafa-webaccess/client/widgets/fckeditor/editor/filemanager/connectors/perl/connector.cgi
 zarafa-webaccess/client/widgets/fckeditor/editor/filemanager/connectors/perl/io.pl
 zarafa-webaccess/client/widgets/fckeditor/editor/filemanager/connectors/perl/upload.cgi
@@ -762,6 +769,7 @@ zarafa-webaccess/client/widgets/fckeditor/editor/lang/he.js
 zarafa-webaccess/client/widgets/fckeditor/editor/lang/hi.js
 zarafa-webaccess/client/widgets/fckeditor/editor/lang/hr.js
 zarafa-webaccess/client/widgets/fckeditor/editor/lang/hu.js
+zarafa-webaccess/client/widgets/fckeditor/editor/lang/is.js
 zarafa-webaccess/client/widgets/fckeditor/editor/lang/it.js
 zarafa-webaccess/client/widgets/fckeditor/editor/lang/ja.js
 zarafa-webaccess/client/widgets/fckeditor/editor/lang/km.js
@@ -868,6 +876,10 @@ zarafa-webaccess/client/widgets/fckeditor/editor/skins/silver/images/toolbar.end
 zarafa-webaccess/client/widgets/fckeditor/editor/skins/silver/images/toolbar.expand.gif
 zarafa-webaccess/client/widgets/fckeditor/editor/skins/silver/images/toolbar.separator.gif
 zarafa-webaccess/client/widgets/fckeditor/editor/skins/silver/images/toolbar.start.gif
+zarafa-webaccess/client/widgets/fckeditor/editor/wsc/
+zarafa-webaccess/client/widgets/fckeditor/editor/wsc/ciframe.html
+zarafa-webaccess/client/widgets/fckeditor/editor/wsc/tmpFrameset.html
+zarafa-webaccess/client/widgets/fckeditor/editor/wsc/w.html
 zarafa-webaccess/client/widgets/fckeditor/fck_editorarea.css
 zarafa-webaccess/client/widgets/fckeditor/fckconfig.js
 zarafa-webaccess/client/widgets/fckeditor/fckeditor.js
@@ -1009,4 +1021,5 @@ zarafa-webaccess/server/modules/class.usergroupmodule.php
 zarafa-webaccess/server/upload_attachment.php
 zarafa-webaccess/server/util.php
 zarafa-webaccess/static.php
+zarafa-webaccess/zarafa-webaccess.conf
 zarafa-webaccess/zarafa.php
