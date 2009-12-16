@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2009/10/15 12:51:13 edd Exp $
+# $OpenBSD: Makefile,v 1.68 2009/12/16 14:00:23 kili Exp $
 
 COMMENT-main=	PDF viewer for X11
 COMMENT-utils=	PDF conversion tools
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+= --enable-multithreaded \
 		 --without-libpaper-library
 
 CONFIGURE_ENV=  CPPFLAGS='-I${X11BASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE}/include -DLOCALBASE="\"${LOCALBASE}\""' \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lz"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm -lz"
 
 LIB_DEPENDS-utils=
 LIB_DEPENDS-main=	t1.>=3::devel/t1lib ${LIB_DEPENDS}
