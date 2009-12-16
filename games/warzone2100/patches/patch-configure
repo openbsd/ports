@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2007/07/22 14:57:52 simon Exp $
+$OpenBSD: patch-configure,v 1.2 2009/12/16 21:13:24 naddy Exp $
 --- configure.orig	Sat Jun 23 11:20:09 2007
 +++ configure	Sat Jul 21 21:20:43 2007
 @@ -6485,7 +6485,7 @@ if test "${ac_cv_lib_GLU_main+set}" = set; then
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2007/07/22 14:57:52 simon Exp $
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lopenal  $LIBS"
-+LIBS="-lopenal -lossaudio $LIBS"
++LIBS="-lopenal -lsndio $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
