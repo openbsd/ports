@@ -1,11 +1,14 @@
-$OpenBSD: patch-config_mk,v 1.1.1.1 2009/11/08 12:17:18 landry Exp $
+$OpenBSD: patch-config_mk,v 1.2 2009/12/17 21:06:20 landry Exp $
+use TRUEPREFIX instead of patching Makefile to remove DESTDIR
 --- config.mk.orig	Fri Oct 30 13:41:02 2009
-+++ config.mk	Sun Nov  8 13:00:22 2009
-@@ -5,19 +5,19 @@ VERSION = 0.3
++++ config.mk	Thu Dec 17 21:43:56 2009
+@@ -4,20 +4,20 @@ VERSION = 0.3
+ # Customize below to fit your system
  
  # paths
- PREFIX = /usr/local
+-PREFIX = /usr/local
 -MANPREFIX = ${PREFIX}/share/man
++PREFIX = ${TRUEPREFIX}
 +MANPREFIX = ${PREFIX}/man
  
 -GTKINC=$(shell pkg-config --cflags gtk+-2.0 webkit-1.0)
