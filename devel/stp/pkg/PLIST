@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/17 09:43:28 kevlo Exp $
+@bin bin/stp
+include/stp/
+include/stp/c_interface.h
+include/stp/fdstream.h
+lib/libstp.a
+share/doc/stp/
+share/doc/stp/EXE-STP-TISSEC-Journal-2007.pdf
+share/doc/stp/EXE-STP.pdf
+share/doc/stp/vijayganesh-stp-paper.pdf
