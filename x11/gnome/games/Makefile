@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2009/10/20 09:18:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2009/12/17 09:10:02 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
-GNOME_VERSION=		2.28.1
+GNOME_VERSION=		2.28.2
 
 CATEGORIES=		games
 
@@ -56,7 +56,8 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--without-ggz-server \
 			--with-gcrypt \
 			--with-scores-group="games" \
-			--enable-introspection="no"
+			--enable-introspection="no" \
+			--disable-tests
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

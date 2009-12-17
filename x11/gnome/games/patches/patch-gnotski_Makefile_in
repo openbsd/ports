@@ -1,11 +1,11 @@
-$OpenBSD: patch-gnotski_Makefile_in,v 1.4 2009/10/13 00:00:42 jasper Exp $
+$OpenBSD: patch-gnotski_Makefile_in,v 1.5 2009/12/17 09:10:02 ajacoutot Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- gnotski/Makefile.in.orig	Tue Oct 13 00:42:53 2009
-+++ gnotski/Makefile.in	Tue Oct 13 00:43:17 2009
-@@ -426,7 +426,7 @@ psdir = @psdir@
+--- gnotski/Makefile.in.orig	Thu Dec 17 01:13:43 2009
++++ gnotski/Makefile.in	Thu Dec 17 09:23:56 2009
+@@ -425,7 +425,7 @@ psdir = @psdir@
  pyexecdir = @pyexecdir@
  pythondir = @pythondir@
  sbindir = @sbindir@
@@ -14,7 +14,7 @@ into /var/games/ later.
  scores_group = @scores_group@
  scores_user = @scores_user@
  setgid = @setgid@
-@@ -1061,16 +1061,11 @@ install-scorefiles-local:
+@@ -1060,16 +1060,11 @@ install-scorefiles-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-for i in ${SCOREFILES} ; do \
  	  touch             $(DESTDIR)$(scoredir)/gnotski.$$i.scores; \

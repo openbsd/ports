@@ -1,11 +1,11 @@
-$OpenBSD: patch-gnibbles_Makefile_in,v 1.4 2009/10/13 00:00:41 jasper Exp $
+$OpenBSD: patch-gnibbles_Makefile_in,v 1.5 2009/12/17 09:10:02 ajacoutot Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- gnibbles/Makefile.in.orig	Tue Oct 13 00:39:34 2009
-+++ gnibbles/Makefile.in	Tue Oct 13 00:39:55 2009
-@@ -471,7 +471,7 @@ psdir = @psdir@
+--- gnibbles/Makefile.in.orig	Thu Dec 17 01:13:41 2009
++++ gnibbles/Makefile.in	Thu Dec 17 09:23:56 2009
+@@ -470,7 +470,7 @@ psdir = @psdir@
  pyexecdir = @pyexecdir@
  pythondir = @pythondir@
  sbindir = @sbindir@
@@ -14,7 +14,7 @@ into /var/games/ later.
  scores_group = @scores_group@
  scores_user = @scores_user@
  setgid = @setgid@
-@@ -1461,14 +1461,9 @@ install-data-local: $(ggzclient_dsc_in_files:.dsc.in=.
+@@ -1460,14 +1460,9 @@ install-data-local: $(ggzclient_dsc_in_files:.dsc.in=.
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-for i in ${SCOREFILES} ; do \
  	   touch $(DESTDIR)$(scoredir)/gnibbles.$$i.scores; \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/10/13 00:00:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/12/17 09:10:02 ajacoutot Exp $
 @bin bin/blackjack
 bin/glchess
 @mode g+s
@@ -1029,6 +1029,13 @@ share/gnome/help/glchess/cs/figures/new_game.png
 share/gnome/help/glchess/cs/figures/preferences_game.png
 share/gnome/help/glchess/cs/figures/preferences_view.png
 share/gnome/help/glchess/cs/glchess.xml
+share/gnome/help/glchess/da/
+share/gnome/help/glchess/da/figures/
+share/gnome/help/glchess/da/figures/game.png
+share/gnome/help/glchess/da/figures/new_game.png
+share/gnome/help/glchess/da/figures/preferences_game.png
+share/gnome/help/glchess/da/figures/preferences_view.png
+share/gnome/help/glchess/da/glchess.xml
 share/gnome/help/glchess/de/
 share/gnome/help/glchess/de/figures/
 share/gnome/help/glchess/de/figures/game.png
@@ -2580,6 +2587,7 @@ share/omf/glchess/
 share/omf/glchess/glchess-C.omf
 share/omf/glchess/glchess-ca.omf
 share/omf/glchess/glchess-cs.omf
+share/omf/glchess/glchess-da.omf
 share/omf/glchess/glchess-de.omf
 share/omf/glchess/glchess-el.omf
 share/omf/glchess/glchess-en_GB.omf
