@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/16 17:01:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/17 17:11:42 ajacoutot Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	rubber stamps collection for Tux Paint
 
-DISTNAME=	tuxpaint-stamps-2008.06.30
-PKGNAME=	tuxpaint-stamps-20080630
+DISTNAME=	tuxpaint-stamps-2009.06.28
+PKGNAME=	tuxpaint-stamps-20090628
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
