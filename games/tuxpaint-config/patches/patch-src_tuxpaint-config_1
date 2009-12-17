@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tuxpaint-config_1,v 1.3 2008/10/16 17:00:53 ajacoutot Exp $
---- src/tuxpaint-config.1.orig	Tue Jun 19 22:33:33 2007
-+++ src/tuxpaint-config.1	Wed Jul  4 12:02:30 2007
-@@ -85,7 +85,7 @@ to determine langauge to use, if \fIsetlocale(3)\fP re
+$OpenBSD: patch-src_tuxpaint-config_1,v 1.4 2009/12/17 17:11:00 ajacoutot Exp $
+--- src/tuxpaint-config.1.orig	Tue Jul 15 08:04:10 2008
++++ src/tuxpaint-config.1	Thu Dec 17 16:40:44 2009
+@@ -48,7 +48,7 @@ to determine langauge to use, if \fIsetlocale(3)\fP re
  
  .SH FILES
  .TP 8
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_tuxpaint-config_1,v 1.3 2008/10/16 17:00:53 ajacoutot Exp $
  System-wide configuration file.
  .RS
  .PP
-@@ -119,5 +119,5 @@ Martin Fuhrer.
+@@ -82,5 +82,5 @@ Martin Fuhrer.
  .SH "SEE ALSO"
  .BR tuxpaint (1)
  .PP
