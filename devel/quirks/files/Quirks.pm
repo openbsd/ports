@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.9 2009/12/15 11:40:48 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.10 2009/12/17 19:45:57 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -87,6 +87,7 @@ my $base_exceptions = {
 	'tmux' => "/usr/bin/tmux",
 # 4.7 stuff
 	'p5-Parse-CPAN-Meta' => "$p5/Parse/CPAN/Meta.pm",
+	'p5-parent' => "$p5/parent.pm",
 };
 
 my $stem_extensions = {
