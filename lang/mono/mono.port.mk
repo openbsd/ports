@@ -1,4 +1,4 @@
-# $OpenBSD: mono.port.mk,v 1.5 2008/10/24 15:07:13 jasper Exp $
+# $OpenBSD: mono.port.mk,v 1.6 2009/12/17 13:59:42 ajacoutot Exp $
 
 CATEGORIES+=		lang/mono
 
@@ -11,4 +11,4 @@ DLLMAP_FILES?=
 
 post-configure:
 	@for i in ${DLLMAP_FILES}; do \
-		perl -pi -e "s,.so.[0-9],.so,g" ${WRKSRC}/$$i; done
+		perl -pi -e 's,\.so\.[0-9],\.so,g' ${WRKSRC}/$$i; done
