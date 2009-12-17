@@ -1,21 +1,15 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2008/10/16 17:03:08 ajacoutot Exp $
---- Makefile.in.orig	Tue Oct  7 22:29:51 2008
-+++ Makefile.in	Thu Oct 16 14:55:02 2008
-@@ -843,7 +843,7 @@ info: info-recursive
- 
- info-am:
- 
--install-data-am: install-ApplicationsDATA install-MenuDATA \
-+install-data-am: install-ApplicationsDATA \
- 	install-data-local install-iconDATA
- 
- install-dvi: install-dvi-recursive
-@@ -913,7 +913,7 @@ install-data-local:
- 	@$(NORMAL_INSTALL)
+$OpenBSD: patch-Makefile_in,v 1.7 2009/12/17 23:28:05 ajacoutot Exp $
+--- Makefile.in.orig	Fri Oct 16 23:54:03 2009
++++ Makefile.in	Thu Dec 17 19:32:06 2009
+@@ -885,9 +885,9 @@ install-data-local:
  	if test -d $(srcdir)/$(PACKAGE_DATA_DIR); then \
  	  $(mkinstalldirs) $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR); \
--	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar cf -  --exclude "Makefile.in" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude .svn * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; tar xf -) ; cd .. ; \
-+	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; gtar cf -  --exclude "Makefile.in" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude .svn * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; gtar xf -) ; cd .. ; \
+ 	  ( cd $(srcdir)/$(PACKAGE_DATA_DIR) ; \
+-	    tar cf -  -h --exclude "Makefile*" --exclude "*.in" --exclude "*~" --exclude ".*" --mode 644 * \
++	    gtar cf -  -h --exclude "Makefile*" --exclude "*.in" --exclude "*~" --exclude ".*" --mode 644 * \
+ 	    | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; \
+-	        tar xf - ; find -type d -exec chmod 755 '{}' \;) ; cd .. ; ) ; \
++	        gtar xf - ; find -type d -exec chmod 755 '{}' \;) ; cd .. ; ) ; \
  	fi
- 
- dist-hook:
+ 	@if test ! -d $(PACKAGE_DATA_DIR)/voices; then \
+ 	  echo -e $(missing_voice_error); \
