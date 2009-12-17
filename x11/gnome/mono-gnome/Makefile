@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2009/09/06 07:27:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/12/17 14:00:34 ajacoutot Exp $
 
 COMMENT=	.NET language bindings for assorted GNOME libraries
 
 GNOME_PROJECT=	gnome-sharp
 GNOME_VERSION=	2.24.1
-PKGNAME=	mono-gnome-${VERSION}
+PKGNAME=	mono-gnome-${VERSION}p0
 
 CATEGORIES=	x11
 
