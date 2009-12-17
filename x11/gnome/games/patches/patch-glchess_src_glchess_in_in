@@ -1,8 +1,8 @@
-$OpenBSD: patch-glchess_src_glchess_in_in,v 1.2 2009/10/13 00:00:41 jasper Exp $
+$OpenBSD: patch-glchess_src_glchess_in_in,v 1.3 2009/12/17 17:20:14 ajacoutot Exp $
 --- glchess/src/glchess.in.in.orig	Tue May 19 02:13:04 2009
-+++ glchess/src/glchess.in.in	Tue Oct 13 00:46:35 2009
-@@ -1,5 +1,5 @@
- #! /usr/bin/env python
++++ glchess/src/glchess.in.in	Thu Dec 17 18:01:47 2009
+@@ -1,5 +1,4 @@
+-#! /usr/bin/env python
 -# -*- coding: utf-8 -*-
 +#!${MODPY_BIN}
  
