@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.127 2009/11/27 21:15:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.128 2009/12/17 22:08:13 naddy Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's browser component
 
-VER=		3.0.15
+VER=		3.0.16
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firefox-${VER}
 SO_VERSION=	20.0
@@ -38,7 +38,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${VER}/source/
+#MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${VER}/source/
+MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${VER}-real/source/
 DISTFILES=	firefox-${VER}-source.tar.bz2
 
 MODULES=	devel/gettext lang/python
