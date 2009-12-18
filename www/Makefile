@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.440 2009/11/30 13:28:59 stephan Exp $
+# $OpenBSD: Makefile,v 1.441 2009/12/18 22:28:53 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -18,6 +18,7 @@
      SUBDIR += cgicc
      SUBDIR += cgiparse
      SUBDIR += cherokee
+     SUBDIR += chromium
      SUBDIR += clearsilver
      SUBDIR += clearsilver,python
      SUBDIR += cms-ms
