@@ -1,0 +1,7 @@
+fsstress is a small tool to beat up a filsystem performing lots of 
+vfs operations in parallel. it is good for torturing nfs, or ensuring
+changes to a filesystem or vfs layers don't break things any more than
+they are already broken
+
+Lifted from dragonfly, originally written by sgi. flensed of unnecessary
+goo by Bob Beck
