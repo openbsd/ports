@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/03/14 10:40:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/12/18 09:45:42 ajacoutot Exp $
 bin/gtkdoc-check
 bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
 bin/gtkdoc-mkdb
 bin/gtkdoc-mkhtml
 bin/gtkdoc-mkman
+bin/gtkdoc-mkpdf
 bin/gtkdoc-mktmpl
 bin/gtkdoc-rebase
 bin/gtkdoc-scan
@@ -17,6 +18,16 @@ share/gnome/help/gtk-doc-manual/
 share/gnome/help/gtk-doc-manual/C/
 share/gnome/help/gtk-doc-manual/C/fdl-appendix.xml
 share/gnome/help/gtk-doc-manual/C/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/de/
+share/gnome/help/gtk-doc-manual/de/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/el/
+share/gnome/help/gtk-doc-manual/el/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/en_GB/
+share/gnome/help/gtk-doc-manual/en_GB/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/es/
+share/gnome/help/gtk-doc-manual/es/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/sv/
+share/gnome/help/gtk-doc-manual/sv/gtk-doc-manual.xml
 share/gtk-doc/data/
 share/gtk-doc/data/devhelp.xsl
 share/gtk-doc/data/devhelp2.xsl
@@ -34,5 +45,10 @@ share/gtk-doc/data/up.png
 share/gtk-doc/data/version-greater-or-equal.xsl
 share/omf/gtk-doc-manual/
 share/omf/gtk-doc-manual/gtk-doc-manual-C.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-de.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-el.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-en_GB.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-es.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-sv.omf
 share/sgml/gtk-doc/
 share/sgml/gtk-doc/gtk-doc.cat
