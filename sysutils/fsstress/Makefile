@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2009/12/18 08:06:59 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/18 15:06:40 beck Exp $
 
-COMMENT=		File System/VFS layer stress tester
+COMMENT=		file System/VFS layer stress tester
 
 DISTNAME=		fsstress-1.0
 PKGNAME=		${DISTNAME}p0
@@ -9,7 +9,7 @@ CATEGORIES=		sysutils
 
 MAINTAINER=		Bob Beck <beck@openbsd.org>
 
-# BSD
+# GPLv2 (only)
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
