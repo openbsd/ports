@@ -1,0 +1,5 @@
+#!/bin/sh
+# $OpenBSD: chrome,v 1.1.1.1 2009/12/18 22:25:56 pvalchev Exp $
+
+PROGDIR=TRUEPREFIX/chrome
+exec "${PROGDIR}/chrome" "$@"

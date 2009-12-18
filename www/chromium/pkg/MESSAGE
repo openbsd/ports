@@ -1,0 +1,7 @@
+You may need to crank shared memory limits for chromium to work
+properly under load:
+
+# sysctl kern.shminfo.shmall=32768
+
+And opening lots of tabs may necessitate higher fd limits,
+crank that via ulimit/limits.
