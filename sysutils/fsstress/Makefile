@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/12/18 02:33:07 beck Exp $
+# $OpenBSD: Makefile,v 1.2 2009/12/18 08:06:59 landry Exp $
 
 COMMENT=		File System/VFS layer stress tester
 
 DISTNAME=		fsstress-1.0
+PKGNAME=		${DISTNAME}p0
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		sysutils
 
@@ -16,11 +17,12 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://bofh.ucs.ualberta.ca/beck/fsstress/
 
-NO_REGRESS=     Yes
-WANTLIB=        c
+NO_REGRESS=	Yes
+WANTLIB=	c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fsstress ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fsstress
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/fsstress
 	${INSTALL_DATA} ${WRKSRC}/dotest.sample ${PREFIX}/share/doc/fsstress
 

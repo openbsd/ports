@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/18 02:33:07 beck Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/18 08:06:59 landry Exp $
 @bin bin/fsstress
-share/doc/fsstress
+share/doc/fsstress/
+share/doc/fsstress/README
+share/doc/fsstress/dotest.sample
