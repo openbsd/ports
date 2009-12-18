@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2009/12/18 09:45:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/12/18 16:30:59 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
-GNOME_VERSION=	1.12
+GNOME_VERSION=	1.13
 GNOME_PROJECT=	gtk-doc
 
 CATEGORIES=    	textproc devel
@@ -34,7 +34,7 @@ RUN_DEPENDS=		::textproc/openjade \
 			::textproc/libxslt \
 			::editors/vim,no_x11
 
-NO_REGRESS=		Yes
+REGRESS_DEPENDS=	::shells/bash
 
 post-extract:
 	cp ${LOCALBASE}/share/xml/docbook/catalog.xml \
@@ -44,5 +44,10 @@ post-extract:
 		--noout ${WRKDIR}/catalog.xml ${WRKDIR}/catalog.xml
 	ln -s ${LOCALBASE}/bin/scrollkeeper-config \
 		${WRKDIR}/bin/scrollkeeper-config.sk
+
+pre-configure:
+	perl -pi -e "s,/bin/bash,${LOCALBASE}/bin/bash," \
+		${WRKSRC}/tests/fail.sh \
+		${WRKSRC}/tests/tools.sh.in
 
 .include <bsd.port.mk>
