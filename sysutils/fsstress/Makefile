@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/18 15:06:40 beck Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/18 15:09:10 beck Exp $
 
-COMMENT=		file System/VFS layer stress tester
+COMMENT=		file system/VFS layer stress tester
 
 DISTNAME=		fsstress-1.0
 PKGNAME=		${DISTNAME}p0
