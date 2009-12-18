@@ -1,0 +1,18 @@
+$OpenBSD: patch-Mail_sendmail_php,v 1.1 2009/12/18 02:00:42 william Exp $
+
+SECURITY FIX
+
+Resolves CVE-2009-4111
+
+
+--- Mail/sendmail.php.orig	Wed Dec  9 21:43:40 2009
++++ Mail/sendmail.php	Wed Dec  9 21:43:42 2009
+@@ -117,7 +117,7 @@ class Mail_sendmail extends Mail {
+         if (is_a($recipients, 'PEAR_Error')) {
+             return $recipients;
+         }
+-        $recipients = escapeShellCmd(implode(' ', $recipients));
++        $recipients = implode(' ', array_map('escapeshellarg', $recipients));
+ 
+         $headerElements = $this->prepareHeaders($headers);
+         if (is_a($headerElements, 'PEAR_Error')) {
