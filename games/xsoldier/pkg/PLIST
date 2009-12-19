@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.10 2007/01/24 09:51:09 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/12/19 16:03:54 benoit Exp $
 @mode 2755
 @group games
-bin/xsoldier
+@bin bin/xsoldier
 @mode
 @group
 @man man/man6/xsoldier.6
