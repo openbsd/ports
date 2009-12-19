@@ -1,6 +1,17 @@
-$OpenBSD: patch-configure,v 1.7 2009/04/22 21:23:43 martynas Exp $
---- configure.orig	Mon Apr 13 12:09:25 2009
-+++ configure	Thu Apr 16 23:11:23 2009
+$OpenBSD: patch-configure,v 1.8 2009/12/19 23:08:48 sthen Exp $
+--- configure.orig	Thu Jun 25 12:45:57 2009
++++ configure	Fri Dec 18 22:16:44 2009
+@@ -743,8 +743,8 @@ SHELL=${CONFIG_SHELL-/bin/sh}
+ # Identity of this package.
+ PACKAGE_NAME='sqlite'
+ PACKAGE_TARNAME='sqlite'
+-PACKAGE_VERSION='3.6.16'
+-PACKAGE_STRING='sqlite 3.6.16'
++PACKAGE_VERSION='3.6.16.1'
++PACKAGE_STRING='sqlite 3.6.16.1'
+ PACKAGE_BUGREPORT=''
+ 
+ # Factoring default headers for most tests.
 @@ -12259,7 +12259,7 @@ USE_AMALGAMATION=1
  # if not, then we fall back to plain tclsh.
  # TODO: try other versions before falling back?
