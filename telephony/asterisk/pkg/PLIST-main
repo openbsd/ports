@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2009/12/14 04:49:24 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2009/12/19 00:09:37 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict app_conference-20070809
@@ -1505,8 +1505,8 @@ share/examples/asterisk/default/unistim.conf
 share/examples/asterisk/default/usbradio.conf
 share/examples/asterisk/default/users.conf
 share/examples/asterisk/default/voicemail.conf
-@comment share/examples/asterisk/default/vpb.conf
 %%h323%%
+@comment share/examples/asterisk/default/vpb.conf
 share/examples/asterisk/openbsd/
 share/examples/asterisk/openbsd/extensions.ael.sample
 @mode 640
