@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2009/12/19 00:23:33 sthen Exp $
+--- Makefile.orig	Fri Dec 18 17:41:26 2009
++++ Makefile	Fri Dec 18 17:41:43 2009
+@@ -48,7 +48,7 @@ TCLSH = tclsh
+ 
+ #### Include a configuration file that can override any one of these settings.
+ #
+--include config.mak
++#-include config.mak
+ 
+ # You should not need to change anything below this line
+ ###############################################################################

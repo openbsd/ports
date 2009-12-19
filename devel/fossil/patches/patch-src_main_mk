@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_mk,v 1.1.1.1 2009/09/23 19:06:46 sthen Exp $
---- src/main.mk.orig	Mon Sep 14 06:57:57 2009
-+++ src/main.mk	Mon Sep 14 06:58:36 2009
-@@ -729,7 +729,7 @@ zip.o:	zip_.c zip.h  $(SRCDIR)/config.h
+$OpenBSD: patch-src_main_mk,v 1.2 2009/12/19 00:23:33 sthen Exp $
+--- src/main.mk.orig	Fri Dec 18 10:03:31 2009
++++ src/main.mk	Fri Dec 18 17:40:07 2009
+@@ -749,7 +749,7 @@ zip.o:	zip_.c zip.h  $(SRCDIR)/config.h
  
  zip.h:	headers
  sqlite3.o:	$(SRCDIR)/sqlite3.c
