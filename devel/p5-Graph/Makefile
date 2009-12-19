@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/02/03 22:43:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2009/12/19 08:47:00 espie Exp $
 
 COMMENT=	graph data structures in perl
 
 MODULES=	cpan
 DISTNAME=	Graph-0.91
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>

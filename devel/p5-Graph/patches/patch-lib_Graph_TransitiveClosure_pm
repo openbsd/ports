@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Graph_TransitiveClosure_pm,v 1.1 2009/12/19 08:47:00 espie Exp $
+--- lib/Graph/TransitiveClosure.pm.orig	Sat Dec 19 09:45:07 2009
++++ lib/Graph/TransitiveClosure.pm	Sat Dec 19 09:45:17 2009
+@@ -63,6 +63,8 @@ sub is_transitive {
+ __END__
+ =pod
+ 
++=head1 NAME
++
+ Graph::TransitiveClosure - create and query transitive closure of graph
+ 
+ =head1 SYNOPSIS
