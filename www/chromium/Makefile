@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/12/18 23:26:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/19 16:56:07 espie Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -52,7 +52,7 @@ LIB_DEPENDS =	execinfo::devel/libexecinfo \
 		nspr4,plc4,plds4::devel/nspr \
 		pangocairo-1.0,pango-1.0,pangoft2-1.0::devel/pango
 
-# Set BUIDTYPE to Debug (or omit it) for a debug build
+# Set BUILDTYPE to Debug (or omit it) for a debug build
 BUILDTYPE=	Release
 MAKE_ENV =	BUILDTYPE=${BUILDTYPE} V=1 \
 		CXX=${LOCALBASE}/bin/eg++ \
@@ -73,12 +73,12 @@ ALL_TARGET =	chrome
 BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 
 pre-configure:
-	@ln -s ${LOCALBASE}/bin/python${PYTHON_VER} ${WRKDIR}/bin/python
+	@ln -sf ${LOCALBASE}/bin/python${PYTHON_VER} ${WRKDIR}/bin/python
 
 # gyp_chromium generates all the Makefiles from gyp
 do-configure:
 	@cd ${WRKSRC} && \
-	python build/gyp_chromium -fmake --ignore-environment \
+	env -i ${CONFIGURE_ENV} python build/gyp_chromium -fmake --ignore-environment \
 	-Ibuild/common.gypi -Ibuild/features_override.gypi "--depth=${WRKSRC}" \
 	-DOS=openbsd -Duse_system_libxml=1 -Duse_system_libjpeg=1 \
 	-Duse_system_libevent=1 build/all.gyp
