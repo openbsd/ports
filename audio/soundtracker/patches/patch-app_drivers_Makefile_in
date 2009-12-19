@@ -1,36 +1,42 @@
-$OpenBSD: patch-app_drivers_Makefile_in,v 1.3 2008/08/21 14:11:14 jasper Exp $
---- app/drivers/Makefile.in.orig	Mon May 20 18:51:18 2002
-+++ app/drivers/Makefile.in	Thu Aug 21 15:54:10 2008
-@@ -99,9 +99,8 @@ sedpath = @sedpath@
+$OpenBSD: patch-app_drivers_Makefile_in,v 1.4 2009/12/19 22:59:27 jakemsr Exp $
+--- app/drivers/Makefile.in.orig	Sat Feb 25 05:37:16 2006
++++ app/drivers/Makefile.in	Fri Dec 18 19:16:40 2009
+@@ -190,7 +190,7 @@ target_vendor = @target_vendor@
  
  noinst_LIBRARIES = libdrivers.a
  
--libdrivers_a_SOURCES =  	alsa-output.c 	alsa-input.c 	alsa2-output.c 	alsa2-input.c 	dsound-output.c 	dummy-drivers.c 	esd-output.c 	file-output.c 	irix-output.c 	oss-output.c 	oss-input.c
-+libdrivers_a_SOURCES =  	alsa-output.c 	alsa-input.c 	alsa2-output.c 	alsa2-input.c 	dsound-output.c 	dummy-drivers.c 	esd-output.c 	file-output.c 	irix-output.c 	oss-output.c 	oss-input.c	sun-output.c	sun-input.c
+-libdrivers_a_SOURCES = dummy-drivers.c file-output.c $(am__append_1) $(am__append_2) $(am__append_3) $(am__append_4) $(am__append_5) $(am__append_6) $(am__append_7) $(am__append_8)
++libdrivers_a_SOURCES = dummy-drivers.c file-output.c $(am__append_1) $(am__append_2) $(am__append_3) $(am__append_4) $(am__append_5) $(am__append_6) $(am__append_7) $(am__append_8) sndio-output.c sndio-input.c
  
--
- INCLUDES = -I..
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../../config.h
-@@ -116,7 +115,7 @@ LIBS = @LIBS@
- libdrivers_a_LIBADD = 
- libdrivers_a_OBJECTS =  alsa-output.o alsa-input.o alsa2-output.o \
- alsa2-input.o dsound-output.o dummy-drivers.o esd-output.o \
--file-output.o irix-output.o oss-output.o oss-input.o
-+file-output.o irix-output.o oss-output.o oss-input.o sun-output.o sun-input.o
- AR = ar
- CFLAGS = @CFLAGS@
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-@@ -242,6 +241,12 @@ oss-input.o: oss-input.c ../../config.h ../i18n.h ../d
- 	../driver.h ../preferences.h ../mixer.h ../errors.h \
- 	../gui-subs.h
- oss-output.o: oss-output.c ../../config.h ../i18n.h ../driver-out.h \
-+	../driver.h ../preferences.h ../mixer.h ../errors.h \
-+	../gui-subs.h
-+sun-input.o: sun-input.c ../../config.h ../i18n.h ../driver-in.h \
-+	../driver.h ../preferences.h ../mixer.h ../errors.h \
-+	../gui-subs.h
-+sun-output.o: sun-output.c ../../config.h ../i18n.h ../driver-out.h \
- 	../driver.h ../preferences.h ../mixer.h ../errors.h \
- 	../gui-subs.h
+ INCLUDES = -I.. ${ST_S_JACK_INCLUDES}
  
+@@ -223,7 +223,8 @@ am__libdrivers_a_SOURCES_DIST = dummy-drivers.c file-o
+ am_libdrivers_a_OBJECTS = dummy-drivers.$(OBJEXT) file-output.$(OBJEXT) \
+ 	$(am__objects_1) $(am__objects_2) $(am__objects_3) \
+ 	$(am__objects_4) $(am__objects_5) $(am__objects_6) \
+-	$(am__objects_7) $(am__objects_8)
++	$(am__objects_7) $(am__objects_8) \
++	sndio-output.$(OBJEXT) sndio-input.$(OBJEXT)
+ libdrivers_a_OBJECTS = $(am_libdrivers_a_OBJECTS)
+ 
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+@@ -239,7 +240,9 @@ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@	./$(DEPDIR)/irix-output.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/jack-output.Po ./$(DEPDIR)/oss-input.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/oss-output.Po ./$(DEPDIR)/sdl-output.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/sun-input.Po ./$(DEPDIR)/sun-output.Po
++@AMDEP_TRUE@	./$(DEPDIR)/sun-input.Po ./$(DEPDIR)/sun-output.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/sndio-output.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/sndio-input.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+@@ -287,6 +290,8 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sdl-output.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sun-input.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sun-output.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sndio-output.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sndio-input.Po@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \

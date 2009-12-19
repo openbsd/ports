@@ -1,29 +1,34 @@
-$OpenBSD: patch-app_Makefile_in,v 1.3 2008/08/21 14:11:14 jasper Exp $
---- app/Makefile.in.orig	Mon May 20 18:51:13 2002
-+++ app/Makefile.in	Thu Aug 21 15:54:10 2008
-@@ -436,7 +436,7 @@ check-am: all-am
- check: check-recursive
- installcheck-am:
- installcheck: installcheck-recursive
--install-exec-am: install-binPROGRAMS install-exec-local
-+install-exec-am: install-binPROGRAMS
- install-exec: install-exec-recursive
+$OpenBSD: patch-app_Makefile_in,v 1.4 2009/12/19 22:59:27 jakemsr Exp $
+--- app/Makefile.in.orig	Sat Feb 25 05:37:15 2006
++++ app/Makefile.in	Fri Dec 18 17:40:10 2009
+@@ -665,7 +665,7 @@ info-am:
  
  install-data-am:
-@@ -499,23 +499,12 @@ dvi-recursive mostlyclean-recursive distclean-recursiv
- maintainer-clean-recursive tags tags-recursive mostlyclean-tags \
- distclean-tags clean-tags maintainer-clean-tags distdir info-am info \
- dvi-am dvi check check-am installcheck-am installcheck \
--install-exec-local install-exec-am install-exec install-data-am \
-+install-exec-am install-exec install-data-am \
- install-data install-am install uninstall-am uninstall all-redirect \
- all-am all installdirs-am installdirs mostlyclean-generic \
- distclean-generic clean-generic maintainer-clean-generic clean \
- mostlyclean distclean maintainer-clean
  
--
+-install-exec-am: install-binPROGRAMS install-exec-local
++install-exec-am: install-binPROGRAMS
+ 
+ install-info: install-info-recursive
+ 
+@@ -713,29 +713,6 @@ uninstall-info: uninstall-info-recursive
+ 	uninstall-info-recursive uninstall-recursive
+ 
+ 
 -install-exec-local:
--	chown root.root $(bindir)/soundtracker
+-	case `uname` in \
+-	  OpenBSD) \
+-	    chown root.wheel $(bindir)/soundtracker; \
+-	    ;; \
+-	  NetBSD) \
+-	    chown root.wheel $(bindir)/soundtracker; \
+-	    ;; \
+-	  Darwin) \
+-	    chown root:admin $(bindir)/soundtracker; \
+-	    ;; \
+-	  *) \
+-	    chown root:root $(bindir)/soundtracker; \
+-	    ;; \
+-	esac
 -	chmod +s $(bindir)/soundtracker
 -	@echo ""
 -	@echo "***"
@@ -32,6 +37,6 @@ $OpenBSD: patch-app_Makefile_in,v 1.3 2008/08/21 14:11:14 jasper Exp $
 -	@echo "*** if this is a multi-user machine. See file INSTALL."
 -	@echo "***"
 -	@echo ""
- 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

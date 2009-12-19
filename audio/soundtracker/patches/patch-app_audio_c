@@ -1,0 +1,77 @@
+$OpenBSD: patch-app_audio_c,v 1.1 2009/12/19 22:59:27 jakemsr Exp $
+--- app/audio.c.orig	Sat Feb 25 04:30:54 2006
++++ app/audio.c	Fri Dec 18 20:07:19 2009
+@@ -52,6 +52,11 @@
+ #include "gui-settings.h"
+ #include "tracer.h"
+ 
++#ifdef DRIVER_SNDIO
++#include <sndio.h>
++void * sndio_driver_get_hdl(void *);
++#endif
++
+ st_mixer *mixer = NULL;
+ st_out_driver *playback_driver = NULL;
+ st_out_driver *editing_driver = NULL;
+@@ -454,6 +459,10 @@ audio_thread (void)
+     static char *msgbuf = NULL;
+     static int msgbuflen = 0;
+ 
++#ifdef DRIVER_SNDIO
++    struct sio_hdl *hdl;
++#endif
++
+     audio_raise_priority();
+ 
+   loop:
+@@ -461,10 +470,27 @@ audio_thread (void)
+ 
+     for(pl = inputs, npl = 1; pl; pl = pl->next, npl++) {
+ 	pi = pl->data;
++
++#ifdef DRIVER_SNDIO
++	if (pi->fd == -1) {
++	    hdl = sndio_driver_get_hdl(pi->data);
++	    if (!hdl || !(pi->condition & GDK_INPUT_WRITE)) {
++	        inputs = g_list_remove(inputs, pi);
++	        goto loop;
++	    }
++	    if (sio_nfds(hdl) != 1) {
++		printf("too many sndio file handles\n");
++	    } else {
++		sio_pollfd(hdl, &pfd[npl], POLLOUT);
++	    }
++	    continue;
++	}
++#else
+ 	if(pi->fd == -1) {
+ 	    inputs = g_list_remove(inputs, pi);
+ 	    goto loop;
+ 	}
++#endif
+ 	pfd[npl].events = pfd[npl].revents = 0;
+ 	pfd[npl].fd = pi->fd;
+ 	if(pi->condition & GDK_INPUT_READ)
+@@ -564,8 +590,22 @@ audio_thread (void)
+ 
+     for(pl = inputs, i = 1; i < npl; pl = pl->next, i++) {
+ 	pi = pl->data;
++
++#ifdef DRIVER_SNDIO
++	if(pi->fd == -1) {
++	    hdl = sndio_driver_get_hdl(pi->data);
++	    if (hdl && (pi->condition & GDK_INPUT_WRITE)) {
++		pfd[i].revents = sio_revents(hdl, &pfd[i]);
++	    } else {
++		continue;
++	    }
++	    pfd[i].events = POLLOUT;
++	}
++#else
+ 	if(pi->fd == -1)
+ 	    continue;
++#endif
++
+ 	if(pfd[i].revents & pfd[i].events) {
+ 	    int x = 0;
+ 	    if(pfd[i].revents & POLLIN)

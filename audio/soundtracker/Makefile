@@ -1,67 +1,50 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/10 06:29:52 kili Exp $
-# Uses pthreads
+# $OpenBSD: Makefile,v 1.19 2009/12/19 22:59:27 jakemsr Exp $
 
-COMMENT=		Music tracking tool for X11
+COMMENT=		music tracking tool for X11
 
-VERSION=		0.6.6
-DISTNAME=		soundtracker-${VERSION}
-PKGNAME=		${DISTNAME}p4
+DISTNAME=		soundtracker-0.6.8
 CATEGORIES=		audio
 HOMEPAGE=		http://www.soundtracker.org/
 
 MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xi c glib gmodule m pthread pthread-stubs xcb
+WANTLIB=		X11 Xext Xi c glib gmodule gthread jpeg m png \
+			pthread pthread-stubs sndio tiff xcb z
 
-V=v0.6
-MASTER_SITES=		http://www.soundtracker.org/dl/$V/ \
-			http://mirror.csoft.org/soundtracker/
+MASTER_SITES=		http://www.soundtracker.org/dl/v0.6/
 
 LIB_DEPENDS=		gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
-			audiofile::devel/libaudiofile
+			gdk_pixbuf.>=2::graphics/gdk-pixbuf \
+			sndfile::audio/libsndfile
 
 MODULES=		devel/gettext
 
-FLAVORS=		esd
-FLAVOR?=
-
 USE_X11=		Yes
-AUTOCONF_VERSION=	2.52
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		--with-audiofile-prefix=${LOCALBASE} \
-			--disable-alsa \
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--disable-alsa \
 			--disable-sgi \
 			--disable-oss \
+			--disable-esd \
+			--disable-sun \
+			--disable-sdl \
+			--disable-jack \
 			--disable-gnome \
 			--disable-splash
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
-.if ${FLAVOR:L:Mesd}
-LIB_DEPENDS+=		esd.>=2::audio/esound
-WANTLIB += sndio
-.else
-CONFIGURE_ARGS+=	--disable-esd
-.endif
-
-.if ${MACHINE_ARCH} != "i386"
-CONFIGURE_ARGS+=	--disable-assembler
-.endif
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -DDRIVER_SNDIO" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			LIBS="-lsndio"
 
 DOCS=			FAQ NEWS README \
-			doc/xi.txt doc/xm.txt
-
-post-configure:
-	cd ${WRKSRC}/po && cp -f Makefile.in Makefile
+			doc/xi.txt doc/xm.txt doc/xp.txt
 
 post-extract:
-	@ln -s ${FILESDIR}/sun-input.c ${WRKSRC}/app/drivers
-	@ln -s ${FILESDIR}/sun-output.c ${WRKSRC}/app/drivers
+	@ln -s ${FILESDIR}/sndio-input.c ${WRKSRC}/app/drivers
+	@ln -s ${FILESDIR}/sndio-output.c ${WRKSRC}/app/drivers
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/soundtracker

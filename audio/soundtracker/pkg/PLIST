@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/06/19 17:50:47 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/12/19 22:59:27 jakemsr Exp $
+@pkgpath audio/soundtracker,esd
 @pkgpath audio/soundtracker,gnome
 @pkgpath audio/soundtracker,gnome,esd
 @bin bin/soundtracker
@@ -8,15 +9,36 @@ share/doc/soundtracker/NEWS
 share/doc/soundtracker/README
 share/doc/soundtracker/xi.txt
 share/doc/soundtracker/xm.txt
+share/doc/soundtracker/xp.txt
+share/locale/da/LC_MESSAGES/soundtracker.mo
 share/locale/de/LC_MESSAGES/soundtracker.mo
+share/locale/en@boldquot/LC_MESSAGES/soundtracker.mo
+share/locale/en@quot/LC_MESSAGES/soundtracker.mo
 share/locale/es/LC_MESSAGES/soundtracker.mo
 share/locale/fr/LC_MESSAGES/soundtracker.mo
 share/locale/gl/LC_MESSAGES/soundtracker.mo
+share/locale/hr/LC_MESSAGES/soundtracker.mo
 share/locale/it/LC_MESSAGES/soundtracker.mo
 share/locale/ja/LC_MESSAGES/soundtracker.mo
+share/locale/no/LC_MESSAGES/soundtracker.mo
 share/locale/pl/LC_MESSAGES/soundtracker.mo
 share/locale/ru/LC_MESSAGES/soundtracker.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/soundtracker.mo
+share/locale/sk/LC_MESSAGES/soundtracker.mo
 share/locale/sl/LC_MESSAGES/soundtracker.mo
 share/locale/sv/LC_MESSAGES/soundtracker.mo
+share/locale/tr/LC_MESSAGES/soundtracker.mo
+share/locale/vi/LC_MESSAGES/soundtracker.mo
 share/soundtracker/
+share/soundtracker/downarrow.xpm
+share/soundtracker/flat.xpm
+share/soundtracker/lock.xpm
+share/soundtracker/muted.png
+share/soundtracker/play.xpm
+share/soundtracker/play_cur.xpm
+share/soundtracker/rightarrow.xpm
+share/soundtracker/sharp.xpm
 share/soundtracker/soundtracker_splash.png
+share/soundtracker/stop.xpm
