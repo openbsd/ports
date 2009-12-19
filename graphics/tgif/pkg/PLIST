@@ -1,17 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/02/13 10:12:08 simon Exp $
-bin/tgif
+@comment $OpenBSD: PLIST,v 1.7 2009/12/19 22:35:34 benoit Exp $
+@bin bin/tgif
 lib/X11/tgif/
 @comment lib/X11/tgif/Copyright
 @comment lib/X11/tgif/LICENSE.QPL
+lib/X11/tgif/eq4-2x-jpg.sym
 lib/X11/tgif/eq4-2x.sym
 lib/X11/tgif/eq4-epstool.sym
 lib/X11/tgif/eq4-lyx-ps2epsi.sym
 lib/X11/tgif/eq4-ps2epsi.sym
 lib/X11/tgif/eq4.sym
+lib/X11/tgif/eq4jpg.sym
+lib/X11/tgif/eq4png.sym
+lib/X11/tgif/eq4xpm-land.sym
 lib/X11/tgif/eq4xpm.sym
+lib/X11/tgif/hicolor/
+lib/X11/tgif/hicolor/128x128/
+lib/X11/tgif/hicolor/128x128/apps/
+lib/X11/tgif/hicolor/128x128/apps/tgificon.png
+lib/X11/tgif/hicolor/22x22/
+lib/X11/tgif/hicolor/22x22/apps/
+lib/X11/tgif/hicolor/22x22/apps/tgificon.png
+lib/X11/tgif/hicolor/32x32/
+lib/X11/tgif/hicolor/32x32/apps/
+lib/X11/tgif/hicolor/32x32/apps/tgificon.png
+lib/X11/tgif/hicolor/48x48/
+lib/X11/tgif/hicolor/48x48/apps/
+lib/X11/tgif/hicolor/48x48/apps/tgificon.png
+lib/X11/tgif/hicolor/64x64/
+lib/X11/tgif/hicolor/64x64/apps/
+lib/X11/tgif/hicolor/64x64/apps/tgificon.png
 lib/X11/tgif/keys.obj
 lib/X11/tgif/tangram.sym
 lib/X11/tgif/tgif.Xdefaults
+lib/X11/tgif/tgif.gif
 lib/X11/tgif/tgificon.eps
 lib/X11/tgif/tgificon.obj
 lib/X11/tgif/tgificon.xbm
