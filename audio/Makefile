@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2009/10/15 22:20:01 phessler Exp $
+# $OpenBSD: Makefile,v 1.236 2009/12/19 23:01:57 jakemsr Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -167,7 +167,6 @@
      SUBDIR += sound-theme-freedesktop
      SUBDIR += soundtouch
      SUBDIR += soundtracker
-     SUBDIR += soundtracker,esd
      SUBDIR += sox
      SUBDIR += speex
      SUBDIR += squeezecenter
