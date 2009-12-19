@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2009/11/14 11:39:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/12/19 15:45:44 ajacoutot Exp $
 %%SHARED%%
 bin/vala-gen-introspect
 @bin bin/valac
@@ -41,10 +41,13 @@ share/vala/
 share/vala/vapi/
 share/vala/vapi/alsa.vapi
 share/vala/vapi/atk.vapi
+share/vala/vapi/avahi-gobject.deps
+share/vala/vapi/avahi-gobject.vapi
 share/vala/vapi/bzlib.vapi
 share/vala/vapi/cairo-xcb.deps
 share/vala/vapi/cairo-xcb.vapi
 share/vala/vapi/cairo.vapi
+share/vala/vapi/ccss-1.vapi
 share/vala/vapi/clutter-1.0.deps
 share/vala/vapi/clutter-1.0.vapi
 share/vala/vapi/clutter-json-1.0.vapi
@@ -66,7 +69,6 @@ share/vala/vapi/gdk-x11-2.0.vapi
 share/vala/vapi/gio-2.0.vapi
 share/vala/vapi/gio-unix-2.0.deps
 share/vala/vapi/gio-unix-2.0.vapi
-share/vala/vapi/gl-1.0.vapi
 share/vala/vapi/glib-2.0.vapi
 share/vala/vapi/gmodule-2.0.vapi
 share/vala/vapi/gnet-2.0.deps
@@ -127,6 +129,8 @@ share/vala/vapi/hildon-1.vapi
 share/vala/vapi/hildon-fm-2.deps
 share/vala/vapi/hildon-fm-2.vapi
 share/vala/vapi/json-glib-1.0.vapi
+share/vala/vapi/libarchive.deps
+share/vala/vapi/libarchive.vapi
 share/vala/vapi/libbonoboui-2.0.vapi
 share/vala/vapi/libdaemon.vapi
 share/vala/vapi/libepc-1.0.vapi
@@ -144,7 +148,9 @@ share/vala/vapi/libgnomeui-2.0.deps
 share/vala/vapi/libgnomeui-2.0.vapi
 share/vala/vapi/libgsf-1.deps
 share/vala/vapi/libgsf-1.vapi
+share/vala/vapi/libmagic.vapi
 share/vala/vapi/libnl-1.vapi
+share/vala/vapi/libnl-2.0.vapi
 share/vala/vapi/libnotify.deps
 share/vala/vapi/libnotify.vapi
 share/vala/vapi/liboobs-1.vapi
@@ -179,6 +185,7 @@ share/vala/vapi/poppler-glib.vapi
 share/vala/vapi/posix.vapi
 share/vala/vapi/raptor.vapi
 share/vala/vapi/rasqal.vapi
+share/vala/vapi/readline.vapi
 share/vala/vapi/rest.deps
 share/vala/vapi/rest.vapi
 share/vala/vapi/sdl-gfx.vapi
@@ -191,6 +198,8 @@ share/vala/vapi/sqlite3.vapi
 share/vala/vapi/taglib_c.vapi
 share/vala/vapi/tiff.vapi
 share/vala/vapi/tracker-indexer-module-1.0.vapi
+share/vala/vapi/twitter-glib-1.0.deps
+share/vala/vapi/twitter-glib-1.0.vapi
 share/vala/vapi/unique-1.0.deps
 share/vala/vapi/unique-1.0.vapi
 share/vala/vapi/v4l2.vapi
