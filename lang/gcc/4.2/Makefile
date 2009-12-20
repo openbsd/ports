@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2009/12/20 10:15:36 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2009/12/20 10:40:05 landry Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -7,6 +7,7 @@ V = 4.2.4
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 BOOTSTRAP_GEN = 3
+# XXX this needs libc.so.53.0 to build on i386
 ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tgz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}v0
