@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.41 2009/12/20 21:35:32 kili Exp $
 
 COMMENT=	english-russian keyboard switcher for X11
 
 DISTNAME=	xruskb-1.15.3
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	russian x11
 MASTER_SITES=	ftp://ftp.yars.free.net/unix/X11/
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE SM X11 Xext Xmu Xt c pthread-stubs xcb
+WANTLIB=		ICE SM X11 Xext Xmu Xt c
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
@@ -24,6 +24,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Mmotif} || ${FLAVOR:L:Mlesstif}
 USE_MOTIF=	any
 CONFIGURE_ARGS=	--with-motif --without-Xaw
+MAKE_FLAGS=	TOOLKIT_LIBS="${MOTIFLIB} -lm"
+WANTLIB+=	m
 .else
 CONFIGURE_ARGS=	--without-motif --with-Xaw
 WANTLIB+=	Xaw
