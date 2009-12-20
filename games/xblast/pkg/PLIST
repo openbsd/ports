@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/12/20 22:03:05 ajacoutot Exp $
-bin/xblast
-bin/xbsndsrv
+@comment $OpenBSD: PLIST,v 1.8 2009/12/20 00:14:40 jakemsr Exp $
+@bin bin/xblast
+@bin bin/xbsndsrv
 share/locale/de/LC_MESSAGES/xblast.mo
 share/locale/fr/LC_MESSAGES/xblast.mo
 share/xblast/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2009/12/20 00:14:40 jakemsr Exp $
 
 COMMENT=	graphical multi-player real-time strategy game for X11
 
 DISTNAME=	xblast-2.10.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 DIST_SUBDIR=	xblast
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		images-2005-01-06${EXTRACT_SUFX} \
@@ -15,13 +15,13 @@ CATEGORIES=	games
 
 HOMEPAGE=	http://xblast.sourceforge.net/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE X11 c m ossaudio pthread-stubs xcb
+WANTLIB=	ICE X11 c m pthread-stubs sndio xcb
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xblast/}
 
@@ -31,7 +31,7 @@ MODULES=	devel/gettext
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
-CONFIGURE_ENV=	LDFLAGS="-lossaudio \
+CONFIGURE_ENV=	LDFLAGS="-lsndio \
 		-L${LOCALBASE}/lib -liconv -lintl"
 CONFIGURE_ARGS=	--enable-sound \
 		--with-otherdatadir=${PREFIX}/share/xblast \
