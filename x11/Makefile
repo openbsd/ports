@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.402 2009/12/03 12:47:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.403 2009/12/20 00:37:06 jakemsr Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += Xaw3d
@@ -197,8 +197,6 @@
      SUBDIR += qt4
      SUBDIR += quadkonsole
      SUBDIR += qvwm
-     SUBDIR += qvwm,esound
-     SUBDIR += qvwm,esound,imlib
      SUBDIR += qvwm,imlib
      SUBDIR += qwt
      SUBDIR += ratmen
