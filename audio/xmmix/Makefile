@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2009/12/20 21:03:48 kili Exp $
 
 COMMENT=	Motif-based audio mixer
 VERSION=	1.2.2
 DISTNAME=	xmmix-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio
 HOMEPAGE=	http://www.ibiblio.org/tkan/xmmix/
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM Xau Xdmcp X11 Xext Xt c ossaudio pthread-stubs xcb
+WANTLIB=	ICE SM Xau Xdmcp X11 Xext Xt c m ossaudio
 
 MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmmix/${VERSION}/src/
 

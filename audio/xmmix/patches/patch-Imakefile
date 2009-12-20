@@ -5,7 +5,7 @@
   * #include "Motif.rules"
   */
 -LOCAL_LIBRARIES= XmClientLibs
-+LOCAL_LIBRARIES= ${MOTIFLIB} ${XTOOLLIB} ${XLIB} -lossaudio
++LOCAL_LIBRARIES= ${MOTIFLIB} -lm ${XTOOLLIB} ${XLIB} -lossaudio
  
 +CCOPTIONS= -DHLPPREFIX=\"$(PREFIX)\"
  
