@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/07 15:37:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2009/12/20 00:35:23 jakemsr Exp $
 
 COMMENT=	Windows 95/98/NT like window manager
 
 DISTNAME=	qvwm-1.1.8
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=     x11
-MASTER_SITES=	ftp://ftp.qvwm.org/pub/qvwm/
+MASTER_SITES=	${HOMEPAGE}archive/qvwm/
 
-HOMEPAGE=	http://www.qvwm.org/
+HOMEPAGE=	http://www.csg.is.titech.ac.jp/~kourai/qvwm/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
-WANTLIB=		ICE SM X11 Xext Xss c m stdc++
+WANTLIB=		ICE SM X11 Xext Xss c m sndio stdc++
 
-FLAVORS=	esound imlib
+FLAVORS=	imlib
 FLAVOR?=
 
 USE_X11=	Yes
@@ -24,17 +24,8 @@ USE_X11=	Yes
 SEPARATE_BUILD=	flavored
 CONFIGURE_STYLE= gnu
 
-# the build-scheme will get confused otherwise
-post-patch:
-	rm ${WRKDIST}/src/yaccsrc.{cc,h}
-
-.if ${FLAVOR:L:Mesound}
-LIB_DEPENDS+=	esd.>=2::audio/esound
-CONFIGURE_ARGS+= --with-esd-prefix=${LOCALBASE}
-WANTLIB+=	audiofile sndio
-.else
 CONFIGURE_ARGS+= --without-esd
-.endif
+CONFIGURE_ENV=	CPPFLAGS="-DUSE_SNDIO" LIBS="-lsndio"
 
 .if ${FLAVOR:L:Mimlib}
 LIB_DEPENDS+=	Imlib.>=19::graphics/imlib
@@ -44,5 +35,9 @@ WANTLIB+=	tiff ungif z jpeg m png
 CONFIGURE_ARGS+= --without-imlib
 WANTLIB+=	Xpm
 .endif
+
+# the build-scheme will get confused otherwise
+post-patch:
+	rm ${WRKDIST}/src/yaccsrc.{cc,h}
 
 .include <bsd.port.mk>

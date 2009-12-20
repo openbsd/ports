@@ -1,7 +1,62 @@
-$OpenBSD: patch-src_audio_cc,v 1.1 2004/01/15 18:25:36 espie Exp $
---- src/audio.cc.orig	2004-01-15 19:20:05.000000000 +0100
-+++ src/audio.cc	2004-01-15 19:20:15.000000000 +0100
-@@ -232,7 +232,7 @@ int Audio::setFormat(int bits, int encod
+$OpenBSD: patch-src_audio_cc,v 1.2 2009/12/20 00:35:23 jakemsr Exp $
+--- src/audio.cc.orig	Wed May 31 00:17:59 2000
++++ src/audio.cc	Thu Dec 17 01:55:40 2009
+@@ -32,6 +32,8 @@
+ // sound playback type definition
+ #if defined(USE_ESD)
+ #define ESD
++#elif defined(USE_SNDIO)
++#define SNDIO
+ #else
+ 
+ #if defined(__linux__) && defined(USE_ALSA)
+@@ -51,6 +53,8 @@
+ // include header file
+ #ifdef ESD
+ #include <esd.h>
++#elif defined(SNDIO)
++#include <sndio.h>
+ #else
+ 
+ #ifdef __linux__
+@@ -165,6 +169,11 @@ int Audio::openDevice()
+   return 1;
+ #elif defined(ESD)
+   return 1;
++#elif defined(SNDIO)
++  if ((hdl = sio_open(NULL, SIO_PLAY, 0)) == NULL)
++    return -1;
++  started = 0;
++  return 1;
+ #else
+   m_audiofd = open(m_audiodev, O_WRONLY);
+   if (m_audiofd < 0)
+@@ -184,6 +193,8 @@ int Audio::closeDevice()
+   if (!(m_audiofd < 0))
+     if (esd_close(m_audiofd) < 0)
+       return -1;
++#elif defined(SNDIO)
++  sio_close(hdl);
+ #else
+   if (close(m_audiofd) < 0)
+     return -1;
+@@ -222,6 +233,15 @@ int Audio::setFormat(int bits, int encoding)
+     return -1;
+ #endif
+ 
++#ifdef SNDIO
++  if (encoding != EN_LINEAR && encoding != EN_NONE)
++    return -1;
++  sio_initpar(&par);
++  par.bits = bits;
++  par.sig = bits == 8 ? 0 : 1;
++  par.le = SIO_LE_NATIVE;
++#endif
++
+ #ifdef OSS
+   if (encoding != EN_LINEAR && encoding != EN_NONE)
+     return -1;
+@@ -232,7 +252,7 @@ int Audio::setFormat(int bits, int encoding)
  #endif
  
  #ifdef SUN
@@ -10,21 +65,53 @@ $OpenBSD: patch-src_audio_cc,v 1.1 2004/01/15 18:25:36 espie Exp $
  
    AUDIO_INITINFO(&ainfo);
  
-@@ -271,7 +271,7 @@ int Audio::setChannels(int channels)
+@@ -270,8 +290,12 @@ int Audio::setChannels(int channels)
+     return -1;
  #endif
  
++#ifdef SNDIO
++  par.pchan = channels;
++#endif
++
  #ifdef SUN
 -  struct audio_info_t ainfo;
 +  audio_info_t ainfo;
  
    AUDIO_INITINFO(&ainfo);
    ainfo.play.channels = channels;
-@@ -300,7 +300,7 @@ int Audio::setSamplingRate(int rate)
+@@ -299,8 +323,12 @@ int Audio::setSamplingRate(int rate)
+     return -1;
  #endif
  
++#ifdef SNDIO
++  par.rate = rate;
++#endif
++
  #ifdef SUN
 -  struct audio_info_t ainfo;
 +  audio_info_t ainfo;
  
    AUDIO_INITINFO(&ainfo);
    ainfo.play.sample_rate = rate;
+@@ -336,9 +364,21 @@ int Audio::output(char* buf, int size)
+   }
+ #endif
+ 
++#ifdef SNDIO
++  if (!started) {
++    if (!sio_setpar(hdl, &par) || !sio_start(hdl)) {
++      printf("could not start sndio\n");
++      return -1;
++    }
++    started = 1;
++  }
++#endif
++
+   while (size > 0) {
+ #ifdef ALSA
+ 	ret = snd_pcm_write(m_audiopcm, buf, size);
++#elif defined(SNDIO)
++    ret = sio_write(hdl, buf, size);
+ #else
+     ret = write(m_audiofd, buf, size);
+ #endif

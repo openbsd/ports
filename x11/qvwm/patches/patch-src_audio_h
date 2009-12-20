@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_audio_h,v 1.1 2009/12/20 00:35:23 jakemsr Exp $
+--- src/audio.h.orig	Wed Jan  5 22:47:55 2000
++++ src/audio.h	Thu Dec 17 01:54:37 2009
+@@ -33,6 +33,10 @@
+ #include <esd.h>
+ #endif
+ 
++#ifdef USE_SNDIO
++#include <sndio.h>
++#endif
++
+ #ifndef SEEK_CUR
+ #define SEEK_CUR 1
+ #endif
+@@ -55,6 +59,11 @@ class Audio { (private)
+ #ifdef USE_ESD
+   esd_format_t m_audioformat;
+   int m_audiorate;
++#endif
++#ifdef USE_SNDIO
++  struct sio_hdl *hdl;
++  struct sio_par par;
++  int started;
+ #endif
+ 
+ protected:

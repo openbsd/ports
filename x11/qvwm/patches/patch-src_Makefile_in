@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2000/07/03 00:39:09 espie Exp $
---- src/Makefile.in.orig	Mon Jul  3 02:22:01 2000
-+++ src/Makefile.in	Mon Jul  3 02:22:11 2000
-@@ -86,7 +86,7 @@ qvwm_SOURCES = button.cc button.h callba
+$OpenBSD: patch-src_Makefile_in,v 1.2 2009/12/20 00:35:23 jakemsr Exp $
+--- src/Makefile.in.orig	Wed May 31 00:39:47 2000
++++ src/Makefile.in	Wed Dec 16 20:53:13 2009
+@@ -86,7 +86,7 @@ qvwm_SOURCES = button.cc button.h callback.h colormap.
  
  
  # VPATH is not enough for lexsrc.ll and yaccsrc.yy
