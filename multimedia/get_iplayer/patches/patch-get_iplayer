@@ -1,10 +1,10 @@
-$OpenBSD: patch-get_iplayer,v 1.25 2009/11/21 23:15:03 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.26 2009/12/20 22:18:43 sthen Exp $
 
 - default to using id3tag not id3v2
 - follow hier(7) not Linux FHS for options file location
 
---- get_iplayer.orig	Wed Nov 18 11:45:52 2009
-+++ get_iplayer	Sat Nov 21 23:08:24 2009
+--- get_iplayer.orig	Sun Dec 20 09:45:53 2009
++++ get_iplayer	Sun Dec 20 22:13:20 2009
 @@ -312,17 +312,14 @@ if ( defined $ENV{GETIPLAYERUSERPREFS} && $ENV{GETIPLA
  # Options on unix-like systems
  } elsif ( defined $ENV{HOME} ) {
@@ -42,7 +42,7 @@ $OpenBSD: patch-get_iplayer,v 1.25 2009/11/21 23:15:03 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -3640,7 +3638,7 @@ sub tag_file {
+@@ -3721,7 +3719,7 @@ sub tag_file {
  		my ( $id3_name, $id3_episode, $id3_desc, $id3_channel ) = ( $prog->{name}, $prog->{episode}, $prog->{desc}, $prog->{channel} );
  		s|"|\\"|g for ($id3_name, $id3_episode, $id3_desc, $id3_channel);
  		# Only tag if the required tool exists
@@ -51,7 +51,7 @@ $OpenBSD: patch-get_iplayer,v 1.25 2009/11/21 23:15:03 sthen Exp $
  			main::logger "INFO: id3 tagging $prog->{ext} file\n";
  			my @cmd = (
  				$bin->{id3v2}, 
-@@ -5360,7 +5358,7 @@ sub optional_list_entry_format {
+@@ -5419,7 +5417,7 @@ sub optional_list_entry_format {
  # Returns the modes to try for this prog type
  sub modelist {
  	my $prog = shift;
