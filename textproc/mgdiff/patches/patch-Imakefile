@@ -1,4 +1,4 @@
-$OpenBSD: patch-Imakefile,v 1.1 2001/03/13 16:10:50 brad Exp $
+$OpenBSD: patch-Imakefile,v 1.2 2009/12/20 21:49:48 kili Exp $
 --- Imakefile.orig	Wed May 18 22:01:00 1994
 +++ Imakefile	Tue Mar 13 10:54:29 2001
 @@ -4,11 +4,13 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-Imakefile,v 1.1 2001/03/13 16:10:50 brad Exp $
  XCOMM Imakefile,v 2.0 1994/05/19 02:01:00 dan Exp
  
 -XMLIB = -lXm
-+XMLIB = ${MOTIFLIB}
++XMLIB = ${MOTIFLIB} -lm
 +
  XCOMM
 -XCOMM for Dell SVR4
