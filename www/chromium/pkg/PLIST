@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/18 22:25:56 pvalchev Exp $
-@bin bin/chrome
+@comment $OpenBSD: PLIST,v 1.2 2009/12/20 17:27:34 ajacoutot Exp $
+bin/chrome
 chrome/
 @bin chrome/chrome
 chrome/chrome.pak

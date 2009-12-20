@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/19 16:56:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/20 17:27:34 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		Chromium browser
 
 DISTNAME=		chromium-4.0.251.0
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 
 CATEGORIES =		www
 
@@ -19,14 +19,17 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
+WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs xcb xml2
+WANTLIB += z
+
 MASTER_SITES=	${MASTER_SITE_BACKUP} \
 		http://sightly.net/peter/openbsd/chromium/
 EXTRACT_SUFX=	.tar.bz2
-
-WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender c cairo expat fontconfig \
-		freetype glitz intl m pixman-1 pthread pthread-stubs \
-		xcb z
 
 MODULES =	gcc4 devel/gettext
 MODGCC4_ARCHES = *
@@ -38,19 +41,9 @@ BUILD_DEPENDS =	:python->=${PYTHON_VER}:lang/python/${PYTHON_VER} \
 		::devel/bison \
 		::shells/bash
 LIB_DEPENDS =	execinfo::devel/libexecinfo \
-		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		nss3,nssutil3,ssl3,smime3,softokn3::security/nss \
-		atk-1.0::devel/atk \
-		ORBit-2.>=3::devel/ORBit2 \
-		dbus-1.>=6::x11/dbus \
 		gconf-2::devel/gconf2 \
-		glib-2.0,gmodule-2.0,gthread-2.0,gio-2.0,gobject-2.0::devel/glib2 \
-		png::graphics/png \
-		jpeg::graphics/jpeg \
-		estdc++::lang/gcc/4.2,-estdc \
-		xml2::textproc/libxml \
-		nspr4,plc4,plds4::devel/nspr \
-		pangocairo-1.0,pango-1.0,pangoft2-1.0::devel/pango
+		estdc++::lang/gcc/4.2,-estdc
 
 # Set BUILDTYPE to Debug (or omit it) for a debug build
 BUILDTYPE=	Release
