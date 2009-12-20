@@ -1,0 +1,5 @@
+Net::SFTP::Foreign is a Perl client for the SFTP protocol version 3 as
+defined in the SSH File Transfer Protocol IETF draft.
+It uses any compatible ssh command installed on the system (for
+instance, OpenSSH ssh) to establish the secure connection to the remote
+server.
