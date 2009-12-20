@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/08 12:55:58 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2009/12/20 17:01:59 benoit Exp $
 
 COMMENT =		GeoIP Python API
 
 MODPY_EGG_VERSION =	1.2.4
 DISTNAME =		GeoIP-Python-${MODPY_EGG_VERSION}
-PKGNAME =		py-GeoIP-${MODPY_EGG_VERSION}
+PKGNAME =		py-GeoIP-${MODPY_EGG_VERSION}p0
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.maxmind.com/app/python
 
-MAINTAINER =		Benoit Lecocq <blq@arcane-labs.net>
+MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
