@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/09/15 17:37:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/20 21:12:56 kili Exp $
 
 COMMENT=	sudoku puzzle solver with cli, gui, and web ui
 
 DISTNAME=	sudoku-solver-1.0.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=    	games www x11
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c Xt crypto iconv pthread z
+WANTLIB=		Xt c crypto iconv m pthread z
 
 MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
@@ -26,6 +26,8 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	neo_cgi,neo_cs::www/clearsilver \
 		fcgi::www/fcgi
+
+MAKE_ENV=	LDADD=-lm
 
 NO_REGRESS=	Yes
 
