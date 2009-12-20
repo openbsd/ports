@@ -1,7 +1,7 @@
-$OpenBSD: patch-browser_components_nsBrowserGlue_js,v 1.1.1.1 2009/06/21 01:31:24 martynas Exp $
---- browser/components/nsBrowserGlue.js.orig	Wed Jun 17 07:21:40 2009
-+++ browser/components/nsBrowserGlue.js	Sat Jun 20 22:10:18 2009
-@@ -253,10 +253,6 @@ BrowserGlue.prototype = {
+$OpenBSD: patch-browser_components_nsBrowserGlue_js,v 1.2 2009/12/20 20:11:37 naddy Exp $
+--- browser/components/nsBrowserGlue.js.orig	Wed Dec  2 05:28:32 2009
++++ browser/components/nsBrowserGlue.js	Sun Dec 20 16:39:22 2009
+@@ -267,10 +267,6 @@ BrowserGlue.prototype = {
    // Browser startup complete. All initial windows have opened.
    _onBrowserStartup: function()
    {
@@ -12,7 +12,7 @@ $OpenBSD: patch-browser_components_nsBrowserGlue_js,v 1.1.1.1 2009/06/21 01:31:2
      // If new add-ons were installed during startup open the add-ons manager.
      if (this._prefs.prefHasUserValue(PREF_EM_NEW_ADDONS_LIST)) {
        var args = Cc["@mozilla.org/supports-array;1"].
-@@ -402,79 +398,6 @@ BrowserGlue.prototype = {
+@@ -416,79 +412,6 @@ BrowserGlue.prototype = {
        }
        break;
      }
