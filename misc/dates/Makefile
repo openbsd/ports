@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/10/12 18:07:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2009/12/21 22:15:32 ajacoutot Exp $
 
 COMMENT=		lightweight calendar
 
 DISTNAME=		dates-0.4.8
+PKGNAME=		${DISTNAME}p0
+
 CATEGORIES=		misc x11
 
 HOMEPAGE=		http://pimlico-project.org/dates.html

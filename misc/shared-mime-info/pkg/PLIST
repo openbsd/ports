@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/10/09 17:37:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2009/12/21 22:15:32 ajacoutot Exp $
 share/mime/
 share/mime/packages/
 share/mime/packages/freedesktop.org.xml
-@unexec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @bin bin/update-mime-database
 lib/pkgconfig/
 lib/pkgconfig/shared-mime-info.pc

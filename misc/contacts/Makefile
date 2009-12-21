@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/11/10 16:44:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2009/12/21 22:15:32 ajacoutot Exp $
 
 COMMENT=		lightweight addressbook
 
 GNOME_PROJECT=		contacts
 GNOME_VERSION=		0.11
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		misc
 

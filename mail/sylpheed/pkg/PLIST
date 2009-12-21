@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2008/10/28 17:03:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.31 2009/12/21 22:20:12 ajacoutot Exp $
 @bin bin/sylpheed
 share/applications/sylpheed.desktop
 share/locale/be/LC_MESSAGES/sylpheed.mo
@@ -113,4 +113,4 @@ share/sylpheed/manual/ja/sylpheed-9.html
 share/sylpheed/manual/ja/sylpheed.html
 share/sylpheed/manual/ja/sylpheed.sgml
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2009/10/23 17:12:36 landry Exp $
+# $OpenBSD: Makefile,v 1.30 2009/12/21 22:20:12 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.7.3
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=			${DISTNAME}
+PKGNAME-main=			${DISTNAME}p0
 FULLPKGNAME-docs=		claws-mail-docs-${V}
 FULLPKGNAME-bogofilter=		claws-mail-bogofilter-${V}
 FULLPKGNAME-spamassassin=	claws-mail-spamassassin-${V}

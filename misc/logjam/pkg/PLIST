@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/28 15:20:50 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/21 22:15:32 ajacoutot Exp $
 @bin bin/logjam
 @man man/man1/logjam.1
 share/applications/logjam.desktop
@@ -22,4 +22,4 @@ share/pixmaps/
 share/pixmaps/logjam_goat.png
 share/pixmaps/logjam_pencil.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

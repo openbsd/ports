@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2009/12/21 22:15:32 ajacoutot Exp $
 
 COMMENT =	gtk livejournal client
 
 DISTNAME =	logjam-4.5.3
-PKGNAME =	${DISTNAME}p2
+PKGNAME =	${DISTNAME}p3
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://logjam.danga.com/

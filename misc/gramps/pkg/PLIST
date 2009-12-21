@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/09/16 18:29:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/12/21 22:15:32 ajacoutot Exp $
 bin/gramps
 man/fr/
 man/fr/man1/
@@ -2484,8 +2484,8 @@ share/mime-info/gramps.mime
 share/mime/packages/gramps.xml
 share/pixmaps/gramps.png
 @exec %D/bin/update-mime-database %D/share/mime
-@unexec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
