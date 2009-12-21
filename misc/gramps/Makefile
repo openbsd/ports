@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2009/12/21 22:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/12/21 22:35:03 ajacoutot Exp $
 
 COMMENT=	genealogical research and analysis management program system
 
-DISTNAME=	gramps-3.1.2
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	gramps-3.1.3
 
 CATEGORIES=	misc x11
 
