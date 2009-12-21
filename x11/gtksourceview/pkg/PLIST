@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/10/02 14:04:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2009/12/21 15:04:51 ajacoutot Exp $
 %%SHARED%%
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
@@ -31,9 +31,9 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyle.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyleScheme.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyleSchemeManager.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceView.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}-Searching-in-a-GtkSourceBuffer.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}.devhelp
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}.devhelp2
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-20-Searching-in-a-GtkSourceBuffer.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/home.png
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/index.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/index.sgml
