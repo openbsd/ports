@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/10/15 20:46:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2009/12/21 21:25:28 ajacoutot Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -13,7 +13,7 @@ V=		1.5.3
 DISTNAME=	uim-$V
 MASTER_SITES=	http://uim.googlecode.com/files/
 HOMEPAGE=	http://code.google.com/p/uim/
-PKGNAME-main=	uim-$Vp1
+PKGNAME-main=	uim-$Vp2
 PKGNAME-gtk=	uim-gtk-$Vp2
 PKGNAME-qt=	uim-qt-$Vp1
 PKGNAME-kde=	uim-kde-$Vp1

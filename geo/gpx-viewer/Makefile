@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/25 17:54:18 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/21 21:21:59 ajacoutot Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.1.2
 DISTNAME =	gpx-viewer-${VERSION}
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES =	geo x11
 

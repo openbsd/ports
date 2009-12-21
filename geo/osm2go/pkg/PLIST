@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/04 18:19:41 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/21 21:21:59 ajacoutot Exp $
 @bin bin/osm2go
 share/applications/osm2go.desktop
 share/icons/
@@ -526,6 +526,6 @@ share/osm2go/potlatch.style
 share/osm2go/presets.xml
 share/osm2go/relation_colours.txt
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

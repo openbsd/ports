@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/18 20:39:34 ian Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/21 21:21:59 ajacoutot Exp $
 
 COMMENT=		OpenStreetMap map editor
 
 SVN_REV=		2313
 DISTNAME=		josm-1.5.${SVN_REV}
+PKGNAME=		${DISTNAME}p0
+
 PKG_ARCH=		*
 
 CATEGORIES=		geo
