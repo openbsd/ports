@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/12/21 21:03:56 ajacoutot Exp $
 bin/sunbird
 bin/sunbird-config
 @comment mozilla-thunderbird/
@@ -431,7 +431,7 @@ sunbird/res/viewsource.css
 sunbird/run-mozilla.sh
 @bin sunbird/sunbird-bin
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec TEMP=`mktemp -d` && cd %D/sunbird && env HOME=$TEMP LD_LIBRARY_PATH=%D/sunbird ./regxpcom && rm -fr $TEMP
 @unexec rm -f %D/sunbird/components/compreg.dat
 @unexec rm -f %D/sunbird/components/xpti.dat

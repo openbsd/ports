@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/08/25 14:48:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/21 21:03:56 ajacoutot Exp $
 @bin bin/osmo
 @man man/man1/osmo.1
 share/applications/osmo.desktop
@@ -22,4 +22,4 @@ share/pixmaps/
 share/pixmaps/osmo.png
 share/pixmaps/osmo.svg
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

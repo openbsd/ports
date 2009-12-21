@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2009/12/21 21:03:56 ajacoutot Exp $
 
 COMMENT=	personal accounting application
 
 DISTNAME=	grisbi-0.5.9
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
+
 CATEGORIES=	productivity x11
 
 EXTRACT_SUFX=	.tar.bz2

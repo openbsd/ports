@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/11/19 13:56:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/12/21 21:03:56 ajacoutot Exp $
 
 COMMENT =	diary and journal application
 
 MODPY_EGG_VERSION =	0.8.9
 DISTNAME =	rednotebook-${MODPY_EGG_VERSION}
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 CATEGORIES =	productivity
 

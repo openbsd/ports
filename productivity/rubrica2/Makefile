@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/12/21 21:03:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	addressbook manager
 
 DISTNAME=	rubrica2-2.0.6
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	productivity x11
 
 EXTRACT_SUFX=	.tar.bz2

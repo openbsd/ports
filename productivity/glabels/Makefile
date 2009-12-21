@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/21 21:03:56 ajacoutot Exp $
 
 COMMENT =	labels and businesss card designer
 
 GNOME_PROJECT =	glabels
 GNOME_VERSION =	2.2.5
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
+
 CATEGORIES =	productivity
 
 SHARED_LIBS =	glabels 0.0 #.6.1

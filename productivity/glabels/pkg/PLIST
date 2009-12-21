@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/19 11:59:05 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/21 21:03:56 ajacoutot Exp $
 %%SHARED%%
 @bin bin/glabels
 @bin bin/glabels-batch
@@ -121,6 +121,6 @@ share/pixmaps/glabels/ex-round-size.png
 share/pixmaps/glabels/glabels-about-logo.png
 share/pixmaps/glabels/glabels-splash.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
-@unexec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/04/05 16:43:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2009/12/21 21:03:56 ajacoutot Exp $
 
 COMMENT=		GTD organizer for GNOME
 
 GNOME_PROJECT=		gtg
 GNOME_VERSION=		0.1.1
+PKGNAME=		${DISTNAME}p0
+
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://gtg.fritalk.com/

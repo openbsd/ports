@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/10/14 21:36:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2009/12/21 21:03:56 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,6 +6,7 @@ COMMENT =	personal and small-business financial-accounting software
 
 GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.2.9
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=	gnc-backend-file-utils	0.0	# .0.0
 SHARED_LIBS +=	gnc-business-ledger	0.0	# .0.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/11/10 20:36:21 pea Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/21 21:03:56 ajacoutot Exp $
 @bin bin/homebank
 share/application-registry/
 share/application-registry/homebank.applications
@@ -320,8 +320,8 @@ share/mime-info/homebank.keys
 share/mime-info/homebank.mime
 share/mime/packages/homebank.xml
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
-@unexec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor

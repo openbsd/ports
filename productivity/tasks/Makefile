@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/13 11:01:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/21 21:03:56 ajacoutot Exp $
 
 COMMENT=		lightweight tasklist
 
 DISTNAME=		tasks-0.16
+PKGNAME=		${DISTNAME}p0
+
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://pimlico-project.org/tasks.html

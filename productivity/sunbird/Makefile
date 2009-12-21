@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/11/18 08:56:40 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/21 21:03:56 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 VER =			0.9
 DISTNAME =		lightning-sunbird-${VER}-source
-PKGNAME-main =		sunbird-${VER}p1
+PKGNAME-main =		sunbird-${VER}p2
 PKGNAME-lightning =	lightning-${VER}p1
 
 EXTRACT_SUFX =	.tar.bz2
