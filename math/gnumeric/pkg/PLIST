@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2009/06/07 06:00:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/12/21 22:07:57 ajacoutot Exp $
 %%SHARED%%
 bin/gnumeric
 @bin bin/gnumeric-${VERSION}
@@ -871,4 +871,4 @@ ${SCHEMAS_INSTDIR}/gnumeric-general.schemas
 ${SCHEMAS_INSTDIR}/gnumeric-plugins.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
