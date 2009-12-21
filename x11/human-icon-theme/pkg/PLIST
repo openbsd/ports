@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/03 22:28:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/21 20:46:01 ajacoutot Exp $
 share/icons/
 share/icons/Human/
 share/icons/Human/12x12/
@@ -1530,4 +1530,4 @@ share/locale/sv/
 share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/human-icon-theme.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Human 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Human 2> /dev/null || true
+@unexec-delete rm -f %D/share/icons/Human/icon-theme.cache

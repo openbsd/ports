@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2009/08/27 19:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2009/12/21 20:46:01 ajacoutot Exp $
 
 COMMENT = 		X11 toolkit, accessibility aids
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeaccessibility-${VERSION}
-PKGNAME =		${DISTNAME}p3
+PKGNAME =		${DISTNAME}p4
 MODKDE_VERSION ?=	3.5.8
 SHARED_LIBS +=	KTTSD_Lib            1.0      # .0.1
 SHARED_LIBS +=	kttsd                2.0      # .1.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/04/17 10:25:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/12/21 20:46:03 ajacoutot Exp $
 bin/xpad
 @man man/man1/xpad.1
 share/applications/xpad.desktop
@@ -38,6 +38,6 @@ share/locale/zh_TW/LC_MESSAGES/xpad.mo
 share/pixmaps/
 share/pixmaps/xpad.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

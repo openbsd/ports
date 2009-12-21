@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/16 00:04:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/12/21 20:46:02 ajacoutot Exp $
 bin/krusader
 ${KDE}/kio_iso.la
 ${KDE}/kio_iso.so
@@ -264,5 +264,9 @@ share/locale/zh_CN/LC_MESSAGES/krusader.mo
 share/services/iso.protocol
 share/services/krarc.protocol
 share/services/virt.protocol
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/crystalsvg 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/crystalsvg 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/locolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/locolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/04/05 10:51:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/12/21 20:46:02 ajacoutot Exp $
 bin/okle
 @bin bin/okle_gui
 share/applnk/
@@ -36,4 +36,4 @@ share/locale/hu/LC_MESSAGES/okle-0.3.mo
 share/locale/it/LC_MESSAGES/okle-0.3.mo
 share/locale/sv/LC_MESSAGES/okle-0.3.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/08/28 08:52:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2009/12/21 20:46:02 ajacoutot Exp $
 @bin bin/amor
 @bin bin/kodo
 @bin bin/kteatime
@@ -662,4 +662,4 @@ share/services/kcmweather.desktop
 share/services/kcmweatherservice.desktop
 share/services/kweatherservice.desktop
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

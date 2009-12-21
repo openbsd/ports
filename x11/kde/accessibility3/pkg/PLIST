@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/01/29 17:37:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2009/12/21 20:46:01 ajacoutot Exp $
 @bin bin/kmag
 @bin bin/kmousetool
 @bin bin/kmouth
@@ -2975,4 +2975,4 @@ share/servicetypes/kttsd_audioplugin.desktop
 share/servicetypes/kttsd_filterplugin.desktop
 share/servicetypes/kttsd_synthplugin.desktop
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

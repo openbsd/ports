@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/09/23 16:50:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2009/12/21 20:46:01 ajacoutot Exp $
 
 COMMENT=	GTK+2 based xmessage(1) clone
 
 DISTNAME=	gxmessage-2.12.3
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	x11
 
 HOMEPAGE=	http://homepages.ihug.co.nz/~trmusson/programs.html\#gxmessage

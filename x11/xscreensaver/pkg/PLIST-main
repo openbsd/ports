@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/08/20 07:03:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/12/21 20:46:03 ajacoutot Exp $
 @pkgpath x11/xscreensaver,no_gle
 @pkgpath x11/xscreensaver
 @mode 4755
@@ -56,4 +56,4 @@ share/xscreensaver/glade/screensaver-power.png
 share/xscreensaver/glade/screensaver-snap.png
 share/xscreensaver/glade/xscreensaver-demo.glade2
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

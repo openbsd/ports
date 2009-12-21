@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sane,v 1.4 2008/08/26 16:52:29 espie Exp $
+@comment $OpenBSD: PLIST-sane,v 1.5 2009/12/21 20:46:01 ajacoutot Exp $
 @bin bin/kooka
 lib/libkscan.la
 @lib lib/libkscan.so.${LIBkscan_VERSION}
@@ -26,4 +26,4 @@ share/icons/crystalsvg/16x16/actions/palette_halftone.png
 share/icons/crystalsvg/16x16/actions/palette_lineart.png
 share/services/scanservice.desktop
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

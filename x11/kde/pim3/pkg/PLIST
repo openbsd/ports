@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2008/08/27 12:25:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.32 2009/12/21 20:46:02 ajacoutot Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -2359,4 +2359,4 @@ share/servicetypes/korganizerpart.desktop
 share/servicetypes/korgprintplugin.desktop
 share/servicetypes/kpilotconduit.desktop
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

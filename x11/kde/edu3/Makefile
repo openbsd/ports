@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2009/08/27 19:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2009/12/21 20:46:01 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, edutainment
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeedu-${VERSION}
-PKGNAME =		${DISTNAME}p2
+PKGNAME =		${DISTNAME}p3
 MODKDE_VERSION ?=	3.5.8
 FLAVORS =	debug
 SHARED_LIBS +=	kdeeducore           4.0      # .3.0

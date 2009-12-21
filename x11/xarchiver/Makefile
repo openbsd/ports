@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/01 07:44:16 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2009/12/21 20:46:03 ajacoutot Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
-PKGNAME =	${DISTNAME}p2
+PKGNAME =	${DISTNAME}p3
 DISTNAME =	xarchiver-0.5.2
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>

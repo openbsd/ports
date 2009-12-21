@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/08 20:57:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2009/12/21 20:46:03 ajacoutot Exp $
 
 COMMENT=		Tango icon theme
 
 DISTNAME=		tango-icon-theme-0.8.90
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tango.freedesktop.org/

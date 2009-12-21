@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/27 19:17:11 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/21 20:46:03 ajacoutot Exp $
 @bin bin/winwrangler
 share/icons/
 share/icons/hicolor/
@@ -19,4 +19,4 @@ share/winwrangler/
 share/winwrangler/art/
 share/winwrangler/art/winwrangler.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

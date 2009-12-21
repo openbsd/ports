@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/12/07 18:28:50 okan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/12/21 20:46:03 ajacoutot Exp $
 @bin bin/tellico
 share/applications/kde/tellico.desktop
 share/apps/kconf_update/tellico-1-3-update.pl
@@ -236,8 +236,8 @@ share/locale/uk/LC_MESSAGES/tellico.mo
 share/mime/packages/tellico.xml
 share/mimelnk/application/x-tellico.desktop
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
-@unexec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

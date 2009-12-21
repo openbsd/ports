@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2008/08/27 15:21:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.39 2009/12/21 20:46:02 ajacoutot Exp $
 @conflict sirc-*
 bin/dsirc
 @bin bin/feedbrowser
@@ -1917,4 +1917,4 @@ share/sounds/Kopete_Sent.ogg
 share/sounds/Kopete_User_is_Online.ogg
 share/sounds/ktalkd.wav
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2008/11/20 13:40:48 okan Exp $
+@comment $OpenBSD: PLIST,v 1.28 2009/12/21 20:46:02 ajacoutot Exp $
 @bin bin/karbon
 @bin bin/kchart
 @bin bin/kexi
@@ -5513,4 +5513,4 @@ share/templates/Presentation.desktop
 share/templates/SpreadSheet.desktop
 share/templates/TextDocument.desktop
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

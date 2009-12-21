@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/21 20:46:02 ajacoutot Exp $
 
 COMMENT=		tray configuration utility
 DISTNAME=		matchbox-panel-manager-0.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 MASTER_SITES=		${MASTER_SITES_MATCHBOX:=matchbox-panel-manager/0.1/}
 

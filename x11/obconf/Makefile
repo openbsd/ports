@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2009/12/21 20:46:02 ajacoutot Exp $
 
 COMMENT=	configuration utility for openbox
 
 DISTNAME=	obconf-2.0.3
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/index.php/Obconf

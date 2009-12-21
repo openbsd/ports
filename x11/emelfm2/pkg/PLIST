@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/08/17 12:14:52 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/21 20:46:01 ajacoutot Exp $
 %%SHARED%%
 @bin bin/emelfm2
 lib/emelfm2/
@@ -85,4 +85,4 @@ share/pixmaps/emelfm2/trash_48.png
 share/pixmaps/emelfm2/user_commands_48.png
 share/pixmaps/emelfm2/view_48.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

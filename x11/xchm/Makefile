@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/05/19 22:03:13 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2009/12/21 20:46:03 ajacoutot Exp $
 
 COMMENT=	display chm files
 
 DISTNAME=	xchm-1.16
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	devel textproc x11
 
 HOMEPAGE=	http://xchm.sourceforge.net/

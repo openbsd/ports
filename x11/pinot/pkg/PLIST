@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/11/14 11:27:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/12/21 20:46:02 ajacoutot Exp $
 @bin bin/pinot
 @bin bin/pinot-dbus-daemon
 @bin bin/pinot-index
@@ -91,6 +91,6 @@ share/pinot/pinot-enum-index.sh
 share/pinot/stopwords/
 share/pinot/xapian-powered.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

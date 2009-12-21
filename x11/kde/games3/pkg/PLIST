@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2008/08/26 16:52:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.24 2009/12/21 20:46:01 ajacoutot Exp $
 @bin bin/atlantik
 @bin bin/kasteroids
 @bin bin/katomic
@@ -2658,4 +2658,4 @@ share/mimelnk/application/x-kourse.desktop
 share/mimelnk/application/x-tuberling.desktop
 share/services/atlantik.protocol
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

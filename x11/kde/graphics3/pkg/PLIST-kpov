@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-kpov,v 1.9 2008/08/26 16:52:29 espie Exp $
+@comment $OpenBSD: PLIST-kpov,v 1.10 2009/12/21 20:46:01 ajacoutot Exp $
 @conflict kdegraphics-<=3.3.2
 @bin bin/kpovmodeler
 ${KDE}/libkpovmodelerpart.la
@@ -385,4 +385,4 @@ share/apps/kpovmodeler/kpovmodelerui.rc
 share/apps/kpovmodeler/povraydocmap.xml
 share/apps/kpovmodeler/questionmark.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

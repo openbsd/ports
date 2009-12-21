@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/10/12 19:06:30 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/12/21 20:46:02 ajacoutot Exp $
 @pkgpath x11/kde/sdk3
 bin/adddebug
 bin/build-progress.sh
@@ -1011,4 +1011,4 @@ share/servicetypes/kbabelfilter.desktop
 share/servicetypes/komparenavigationpart.desktop
 share/servicetypes/kompareviewpart.desktop
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

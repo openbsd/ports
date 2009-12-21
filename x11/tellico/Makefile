@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/10/10 10:38:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2009/12/21 20:46:03 ajacoutot Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
 DISTNAME=	tellico-1.3.6
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	x11 databases
 
 HOMEPAGE=	http://www.periapsis.org/tellico/

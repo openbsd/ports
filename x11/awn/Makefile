@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/11 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2009/12/21 20:46:00 ajacoutot Exp $
 
 COMMENT=		avant window navigator
 
 V=			0.3.2
 DISTNAME=		avant-window-navigator-$V
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
+
 SHARED_LIBS +=	awn                  0.0      # .0.1
+
 CATEGORIES=		x11
 
 HOMEPAGE=		https://launchpad.net/awn

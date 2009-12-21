@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2009/06/29 15:05:02 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2009/12/21 20:46:01 ajacoutot Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -4781,7 +4781,7 @@ share/wallpapers/sunshine-after-the-rain.jpg.desktop
 share/wallpapers/triplegears.jpg
 share/wallpapers/triplegears.jpg.desktop
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/genkdmconf --in %D/share/config/kdm || true
 @extra share/apps/kdm/faces/.default.face.icon
 @extra share/apps/kdm/faces/root.face.icon

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/03 22:27:01 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/12/21 20:46:01 ajacoutot Exp $
 
 COMMENT=		Industrial icon theme from OpenSUSE
 
 DISTNAME=		industrial-icon-theme-11.0.5
+PKGNAME=		${DISTNAME}p0
+
 CATEGORIES=		x11
 
 MASTER_SITES=		http://forgeftp.novell.com/opensuse-art/openSUSE11/icons/

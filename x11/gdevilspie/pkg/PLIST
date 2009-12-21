@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/31 09:03:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/21 20:46:01 ajacoutot Exp $
 bin/gdevilspie
 lib/python${MODPY_VERSION}/site-packages/gDevilspie/
 lib/python${MODPY_VERSION}/site-packages/gDevilspie/__init__.py
@@ -18,4 +18,4 @@ share/gdevilspie/gdevilspie.glade
 share/gdevilspie/gdevilspie.png
 share/pixmaps/gdevilspie.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

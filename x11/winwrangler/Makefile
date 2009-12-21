@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/29 19:37:17 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/21 20:46:03 ajacoutot Exp $
 
 COMMENT =	desktop daemon to perform advanced window manipulations
 
 V =		0.2.4
 DISTNAME =	winwrangler-$V
+PKGNAME =	${DISTNAME}p0
+
 CATEGORIES =	x11
 
 HOMEPAGE =	https://launchpad.net/winwrangler
