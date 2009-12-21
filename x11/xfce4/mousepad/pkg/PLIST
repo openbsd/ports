@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/08 17:36:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/21 16:07:44 landry Exp $
 @bin bin/mousepad
 share/applications/mousepad.desktop
 share/locale/am/
@@ -84,4 +84,4 @@ share/locale/zh_TW/LC_MESSAGES/mousepad.mo
 share/pixmaps/
 share/pixmaps/mousepad.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2009/08/11 19:58:23 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2009/12/21 16:07:44 landry Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
 XFCE_GOODIE=	orage
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 HOMEPAGE=	http://www.xfce.org/projects/orage
 # GPLv2

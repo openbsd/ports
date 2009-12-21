@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/07/08 12:50:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/12/21 16:07:44 landry Exp $
 @conflict xfce4-fsguard-plugin-*
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
@@ -49,4 +49,4 @@ share/xfce4/
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/fsguard.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

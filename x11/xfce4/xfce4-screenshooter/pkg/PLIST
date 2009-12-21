@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/06/23 20:41:17 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/12/21 16:07:45 landry Exp $
 @bin bin/xfce4-screenshooter
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
@@ -106,6 +106,6 @@ share/xfce4/doc/tr/xfce4-screenshooter.html
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/screenshooter.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

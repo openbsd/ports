@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/11 08:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/12/21 16:07:44 landry Exp $
 
 COMMENT=	Xfce4 mailboxes monitor panel plugin
 
 XFCE_VERSION=	1.1.0
 XFCE_PLUGIN=	mailwatch
-PKGNAME=	${DISTNAME:S/-plugin//}p1
+PKGNAME=	${DISTNAME:S/-plugin//}p2
 
 HOMEPAGE=	http://spuriousinterrupt.org/projects/mailwatch
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2009/08/11 08:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2009/12/21 16:07:44 landry Exp $
 
 COMMENT=	Xfce4 application finder
 
 XFCE_PROJECT=	xfce4-appfinder
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2009/11/14 16:43:27 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2009/12/21 16:07:44 landry Exp $
 
 COMMENT=	Xfce4 essential utilities and scripts
 
 XFCE_PROJECT=	xfce-utils
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

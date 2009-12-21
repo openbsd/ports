@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/11 08:38:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/21 16:07:45 landry Exp $
 
 COMMENT=	Xfce4 alternative notification daemon
 
 XFCE_VERSION=	0.1.0
 XFCE_GOODIE=	xfce4-notifyd
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfce4-notifyd/
 

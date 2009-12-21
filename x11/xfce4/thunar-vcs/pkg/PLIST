@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/05 12:39:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/21 16:07:44 landry Exp $
 @conflict thunar-vcs-plugin-*
 %%SHARED%%
 lib/thunarx-1/
@@ -45,4 +45,4 @@ share/locale/ur_PK/LC_MESSAGES/
 share/locale/ur_PK/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/thunar-vcs-plugin.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

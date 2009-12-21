@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/04/28 19:50:27 landry Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/12/21 16:07:45 landry Exp $
 @conflict xfce4-toys-*
 %%SHARED%%
 @bin bin/xfce4-session
@@ -182,6 +182,6 @@ share/xfce4/tips/
 share/xfce4/tips/tips
 share/xfce4/tips/tips.dat
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/04 19:26:21 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/21 16:07:45 landry Exp $
 
 COMMENT=	Xfce4 Music Player Daemon client
 
 XFCE_VERSION=	0.2.0
 XFCE_GOODIE=	xfmpc
+PKGNAME=	${DISTNAME}p0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

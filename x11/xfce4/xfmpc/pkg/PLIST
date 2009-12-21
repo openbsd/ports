@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/09/04 19:26:21 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/12/21 16:07:45 landry Exp $
 @bin bin/xfmpc
 @man man/man1/xfmpc.1
 share/applications/xfmpc.desktop
@@ -39,4 +39,4 @@ share/locale/ur_PK/LC_MESSAGES/
 share/locale/ur_PK/LC_MESSAGES/xfmpc.mo
 share/locale/zh_CN/LC_MESSAGES/xfmpc.mo
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

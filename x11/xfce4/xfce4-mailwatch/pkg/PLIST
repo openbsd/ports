@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/09/16 09:43:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/21 16:07:44 landry Exp $
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
 @bin libexec/xfce4/panel-plugins/xfce4-mailwatch-plugin
@@ -70,4 +70,4 @@ share/xfce4/doc/C/xfce4-mailwatch-plugin.html
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/mailwatch.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/11 19:58:23 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2009/12/21 16:07:44 landry Exp $
 
 COMMENT=	Xfce4 simple text editor
 
 XFCE_VERSION=	0.2.16
 XFCE_GOODIE=	mousepad
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 HOMEPAGE=	http://www.xfce.org/projects/mousepad
 # GPLv2
