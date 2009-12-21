@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/21 17:41:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/21 21:16:33 ajacoutot Exp $
 bin/mysql-query-browser
 @bin bin/mysql-query-browser-bin
 share/applications/MySQLQueryBrowser.desktop
@@ -164,4 +164,4 @@ share/mysql-gui/query-browser/trans_rolledback.png
 share/mysql-gui/query-browser/trans_started.png
 share/mysql-gui/query-browser/workarea.glade
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

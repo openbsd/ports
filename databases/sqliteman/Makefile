@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2009/12/21 21:16:33 ajacoutot Exp $
 
 COMMENT =	gui for sqlite
 CATEGORIES =	databases x11
 
 DISTNAME =	sqliteman-1.2.0
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
+
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sqliteman/}
 HOMEPAGE =	http://sourceforge.net/projects/sqliteman/
 
-#GPL
+# GPL
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes

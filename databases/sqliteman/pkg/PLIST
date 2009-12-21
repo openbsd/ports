@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/27 00:07:00 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/21 21:16:33 ajacoutot Exp $
 @bin bin/sqliteman
 share/applications/sqliteman.desktop
 share/icons/
@@ -131,4 +131,4 @@ share/sqliteman/sqliteman_it.qm
 share/sqliteman/sqliteman_pl.qm
 share/sqliteman/sqliteman_ru.qm
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/01/26 18:17:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/12/21 21:16:33 ajacoutot Exp $
 @bin bin/gq
 share/applications/gq.desktop
 share/pixmaps/
@@ -11,4 +11,4 @@ share/pixmaps/gq/new.xpm
 share/pixmaps/gq/textarea.xpm
 share/pixmaps/gq/warning.xpm
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
