@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2009/12/19 00:09:37 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2009/12/21 00:19:02 fgsch Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict app_conference-20070809
@@ -1530,7 +1530,7 @@ share/examples/asterisk/openbsd/sip.conf.sample
 @mode
 @group
 share/examples/asterisk/openbsd/voicemail.conf.sample
-@mode 640
+@mode 660
 @owner root
 @group _asterisk
 @sample ${SYSCONFDIR}/asterisk/voicemail.conf

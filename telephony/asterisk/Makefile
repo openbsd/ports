@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2009/12/19 00:09:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2009/12/21 00:19:02 fgsch Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -6,7 +6,7 @@ COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 VER=			1.6.0.20
 # you can set PATCHVER=p0, p1 etc to bump everything,
 # this takes care of the subpackage/flavor maze
-#PATCHVER=		p1
+PATCHVER=		p0
 CORESOUNDS=		1.4.16
 DISTNAME=		asterisk-${VER:S/rc/-rc/}
 FULLPKGNAME-main=	asterisk-${VER}${PATCHVER}
