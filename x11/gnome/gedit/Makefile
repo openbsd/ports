@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2009/12/20 10:34:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2009/12/21 18:03:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,6 +12,8 @@ COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		2.28.3
+PKGNAME=		${DISTNAME}p0
+
 CATEGORIES=		editors
 
 HOMEPAGE=		http://projects.gnome.org/gedit/

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2009/10/10 17:51:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2009/12/21 18:03:19 ajacoutot Exp $
 
 COMMENT=	user interface components for bonobo
 
 GNOME_PROJECT=	libbonoboui
 GNOME_VERSION=	2.24.2
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=	bonoboui-2	3.0        # .0.0
 

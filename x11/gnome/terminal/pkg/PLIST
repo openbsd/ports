@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2009/12/15 09:24:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2009/12/21 18:03:19 ajacoutot Exp $
 @bin bin/gnome-terminal
 share/applications/gnome-terminal.desktop
 share/gnome-terminal/
@@ -235,4 +235,4 @@ ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/gnome-terminal.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

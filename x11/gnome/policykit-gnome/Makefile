@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/15 23:51:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/21 18:03:19 ajacoutot Exp $
 
 BROKEN=		WIP does not work yet
 
@@ -7,7 +7,7 @@ COMMENT=	PolicyKit integration for GNOME
 GNOME_PROJECT=	PolicyKit-gnome
 GNOME_VERSION=	0.9.2
 
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 
 CATEGORIES=	security sysutils
 

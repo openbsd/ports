@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2009/10/12 11:38:11 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2009/12/21 18:03:17 ajacoutot Exp $
 @conflict libgweather-<2.24.1
 @pkgpath x11/gnome/applets2
 @pkgpath x11/gnome/applets2,no_battstat
@@ -1857,4 +1857,4 @@ share/xmodmap/xmodmap.us101A_x86
 share/xmodmap/xmodmap.us_intl
 share/xmodmap/xmodmap.yu
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

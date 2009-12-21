@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2009/10/14 16:57:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/12/21 18:03:18 ajacoutot Exp $
 lib/pkgconfig/gnome-icon-theme.pc
 share/icons/gnome/
 share/icons/gnome/16x16/
@@ -6474,5 +6474,4 @@ share/icons/gnome/scalable/stock/
 share/icons/gnome/scalable/stock/generic/
 share/icons/gnome/scalable/stock/generic/stock_person.svg
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
 @unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache

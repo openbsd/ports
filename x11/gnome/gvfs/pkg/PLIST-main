@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/10/14 09:01:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2009/12/21 18:03:18 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -178,4 +178,4 @@ share/locale/zh_CN/LC_MESSAGES/gvfs.mo
 share/locale/zh_HK/LC_MESSAGES/gvfs.mo
 share/locale/zh_TW/LC_MESSAGES/gvfs.mo
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

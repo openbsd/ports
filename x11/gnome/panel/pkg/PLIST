@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2009/11/16 11:50:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2009/12/21 18:03:19 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
@@ -537,6 +537,6 @@ ${SCHEMAS_INSTDIR}/workspace-switcher.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --load %D/share/schemas/gnome-panel/panel-default-setup.entries > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

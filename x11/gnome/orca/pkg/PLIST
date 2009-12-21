@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/10/21 12:28:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/12/21 18:03:19 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -504,6 +504,6 @@ share/orca/ui/orca-preferences-warning.ui
 share/orca/ui/orca-quit.ui
 share/orca/ui/orca-setup.ui
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/09/28 20:40:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/12/21 18:03:18 ajacoutot Exp $
 %%SHARED%%
 bin/f-spot
 bin/f-spot-sqlite-upgrade
@@ -294,6 +294,6 @@ share/omf/f-spot/f-spot-pt_BR.omf
 share/omf/f-spot/f-spot-ru.omf
 share/omf/f-spot/f-spot-sv.omf
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

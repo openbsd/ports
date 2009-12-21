@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2009/12/17 12:30:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2009/12/21 18:03:18 ajacoutot Exp $
 %%SHARED%%
 bin/gnome-about
 include/gnome-desktop-2.0/
@@ -400,4 +400,4 @@ share/pixmaps/kterm.xpm
 share/pixmaps/monitor.png
 share/pixmaps/vnterm.xpm
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2009/10/12 00:31:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2009/12/21 18:03:19 ajacoutot Exp $
 
 COMMENT=	lightweight window manager
 
 GNOME_PROJECT=	metacity
 GNOME_VERSION=	2.28.0
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=  metacity-private     1.0      # .0.0
 

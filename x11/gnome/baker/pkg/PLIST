@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/10/15 15:37:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/12/21 18:03:17 ajacoutot Exp $
 @bin bin/gnomebaker
 share/applications/gnomebaker.desktop
 share/gnome/help/gnomebaker/
@@ -181,6 +181,6 @@ share/omf/gnomebaker/gnomebaker-C.omf
 @unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/DeviceNode
 @unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/GnomeBaker/Devices/Device01/MountPoint
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

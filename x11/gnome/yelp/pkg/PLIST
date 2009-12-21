@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2009/11/20 08:23:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2009/12/21 18:03:20 ajacoutot Exp $
 bin/gnome-help
 @bin bin/yelp
 share/applications/
@@ -177,6 +177,6 @@ share/yelp/xslt/toc2html.xsl
 share/yelp/xslt/yelp-common.xsl
 share/yelp/yelp.js
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

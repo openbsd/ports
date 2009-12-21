@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/10/15 15:18:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/12/21 18:03:19 ajacoutot Exp $
 
 BROKEN=		dereferencing pointer (babl/gegl)
 
@@ -11,7 +11,7 @@ GNOME_PROJECT=	gnome-scan
 GNOME_VERSION=	0.6.2
 CATEGORIES=	graphics
 
-PKGNAME-main=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}p1
 
 SHARED_LIBS=	gnomescan	0.0 # .0.0

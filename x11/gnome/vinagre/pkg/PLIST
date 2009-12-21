@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/10/15 09:43:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/12/21 18:03:20 ajacoutot Exp $
 @bin bin/vinagre
 include/vinagre-1.0/
 include/vinagre-1.0/vinagre/
@@ -308,8 +308,8 @@ share/vinagre/GNOME_VinagreApplet.xml
 share/vinagre/vinagre-ui.xml
 share/vinagre/vinagre.ui
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @exec %D/bin/update-mime-database %D/share/mime
-@unexec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

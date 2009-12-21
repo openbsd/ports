@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/10/14 11:25:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/12/21 18:03:20 ajacoutot Exp $
 @bin bin/vino-passwd
 @bin bin/vino-preferences
 @bin libexec/vino-server
@@ -100,4 +100,4 @@ share/vino/vino-preferences.ui
 share/vino/vino-prompt.ui
 share/vino/webservices
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

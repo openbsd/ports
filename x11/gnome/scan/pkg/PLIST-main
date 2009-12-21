@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/10/03 10:15:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2009/12/21 18:03:19 ajacoutot Exp $
 @bin bin/flegita
 include/gnome-scan-1.0/
 include/gnome-scan-1.0/gnome-scan-acquisition-dialog.h
@@ -82,6 +82,6 @@ share/locale/pt_BR/LC_MESSAGES/gnome-scan.mo
 share/locale/ru/LC_MESSAGES/gnome-scan.mo
 share/locale/sv/LC_MESSAGES/gnome-scan.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

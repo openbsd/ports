@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2009/10/14 08:20:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2009/12/21 18:03:18 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
@@ -284,10 +284,10 @@ share/pixmaps/nohost.png
 share/xsessions/
 @comment share/xsessions/gnome.desktop
 share/xsessions/ssh.desktop
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @mode 0755
 @sample /var/log/gdm/
 @mode 1770
 @group _x11
 @sample /var/gdm/
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/12/17 08:18:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2009/12/21 18:03:18 ajacoutot Exp $
 @bin bin/eog
 include/eog-2.20/
 include/eog-2.20/eog/
@@ -412,6 +412,6 @@ ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/eog.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

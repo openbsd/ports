@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/10/11 21:23:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/12/21 18:03:17 ajacoutot Exp $
 bin/alacarte
 lib/python${MODPY_VERSION}/site-packages/Alacarte/
 lib/python${MODPY_VERSION}/site-packages/Alacarte/MainWindow.py
@@ -113,6 +113,6 @@ share/locale/zh_CN/LC_MESSAGES/alacarte.mo
 share/locale/zh_HK/LC_MESSAGES/alacarte.mo
 share/locale/zh_TW/LC_MESSAGES/alacarte.mo
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

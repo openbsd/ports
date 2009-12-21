@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2009/11/29 09:19:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2009/12/21 18:03:17 ajacoutot Exp $
 
 COMMENT=	PhotoBooth inspired application
 
 GNOME_PROJECT=	cheese
 GNOME_VERSION=	2.28.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	multimedia
 

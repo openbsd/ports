@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2009/10/21 15:45:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2009/12/21 18:03:20 ajacoutot Exp $
 %%SHARED%%
 @bin bin/baobab
 @bin bin/gnome-dictionary
@@ -760,6 +760,6 @@ ${SCHEMAS_INSTDIR}/gnome-search-tool.schemas
 ${SCHEMAS_INSTDIR}/gnome-system-log.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

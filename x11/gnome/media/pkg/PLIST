@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/11/29 09:20:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/12/21 18:03:19 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-audio-profiles-properties
 @bin bin/gnome-sound-recorder
@@ -390,6 +390,6 @@ share/sounds/gnome/default/alerts/drip.ogg
 share/sounds/gnome/default/alerts/glass.ogg
 share/sounds/gnome/default/alerts/sonar.ogg
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

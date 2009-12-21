@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/10/12 00:31:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2009/12/21 18:03:19 ajacoutot Exp $
 %%SHARED%%
 @bin bin/metacity
 @bin bin/metacity-message
@@ -258,4 +258,4 @@ share/themes/Simple/metacity-1/maximized.png
 share/themes/Simple/metacity-1/metacity-theme-1.xml
 share/themes/Simple/metacity-1/minimize.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2009/12/05 22:43:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2009/12/21 18:03:20 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.28.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	multimedia
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/11/23 12:10:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/12/21 18:03:18 ajacoutot Exp $
 bin/conduit
 bin/conduit-client
 bin/conduit.real
@@ -658,6 +658,6 @@ share/omf/conduit/conduit-el.omf
 share/omf/conduit/conduit-es.omf
 share/omf/conduit/conduit-fr.omf
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

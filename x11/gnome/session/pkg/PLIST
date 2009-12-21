@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2009/11/13 15:48:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2009/12/21 18:03:19 ajacoutot Exp $
 @bin bin/gnome-session
 @bin bin/gnome-session-properties
 @bin bin/gnome-session-save
@@ -161,4 +161,4 @@ ${SCHEMAS_INSTDIR}/gnome-session.schemas
 share/xsessions/
 share/xsessions/gnome.desktop
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

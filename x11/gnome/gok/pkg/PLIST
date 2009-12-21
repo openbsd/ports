@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/10/15 16:17:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/12/21 18:03:18 ajacoutot Exp $
 @bin bin/create-branching-keyboard
 @bin bin/gok
 lib/bonobo/
@@ -1049,4 +1049,4 @@ share/sounds/freedesktop/stereo/goksound2.wav
 @exec %D/bin/update-desktop-database
 @unexec %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
