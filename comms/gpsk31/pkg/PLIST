@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/15 19:12:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/12/21 18:11:02 ajacoutot Exp $
 bin/gpsk31
 @man man/man1/gpsk31.1
 share/applications/
@@ -10,4 +10,4 @@ share/gpsk31/psk31.cod
 share/pixmaps/
 share/pixmaps/gpsk31.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

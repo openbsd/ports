@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:30:31 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2009/12/21 18:11:02 ajacoutot Exp $
 
 COMMENT=	X DX cluster watcher
 
 VERSION=	2.4
 DISTNAME=	xdx-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
+
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/xdx.html

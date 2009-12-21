@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/07/20 10:35:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/12/21 18:05:49 ajacoutot Exp $
 @bin bin/celestia
 share/applications/celestia.desktop
 share/celestia/
@@ -567,4 +567,4 @@ share/locale/zh_CN/LC_MESSAGES/celestia_constellations.mo
 share/pixmaps/
 share/pixmaps/celestia.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/29 11:28:36 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/21 18:11:02 ajacoutot Exp $
 @bin bin/xdx
 @man man/man1/xdx.1
 share/applications/Xdx.desktop
@@ -30,4 +30,4 @@ share/xdx/sounds/attention.wav
 share/xdx/wwv.gnuplot
 @comment share/xdx/wwv.gnuplot~
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

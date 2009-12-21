@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/04 17:50:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/21 18:06:39 ajacoutot Exp $
 bin/gerbv
 @man man/man1/gerbv.1
 share/applications/
@@ -9,4 +9,4 @@ share/gerbv/scheme/init.scm
 share/pixmaps/
 share/pixmaps/gerbv.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

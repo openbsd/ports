@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:30:31 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2009/12/21 18:11:02 ajacoutot Exp $
 
 COMMENT=	X radio logging program
 
 DISTNAME=	xlog-1.5
-PKGNAME=	$(DISTNAME)p6
+PKGNAME=	$(DISTNAME)p7
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/xlog.html

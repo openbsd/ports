@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/10 06:30:30 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2009/12/21 18:11:02 ajacoutot Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
 DISTNAME=	gnokii-0.6.14
-PKGNAME=	${DISTNAME}p10
+PKGNAME=	${DISTNAME}p11
 CATEGORIES=	comms x11
 SHARED_LIBS +=	gnokii               2.7      # .3.0
 
