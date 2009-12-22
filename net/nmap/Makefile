@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2009/10/22 10:00:57 giovanni Exp $
+# $OpenBSD: Makefile,v 1.84 2009/12/22 00:31:23 sthen Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -6,7 +6,7 @@ COMMENT-zenmap=	graphical frontend for nmap
 MODPY_EGG_VERSION=	5.00
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
-PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
+PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}p0
 
 CATEGORIES=	net security
 MASTER_SITES=	http://download.insecure.org/nmap/dist/

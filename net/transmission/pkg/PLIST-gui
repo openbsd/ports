@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.18 2009/07/22 15:52:07 naddy Exp $
+@comment $OpenBSD: PLIST-gui,v 1.19 2009/12/22 00:31:23 sthen Exp $
 @bin bin/transmission
 @man man/man1/transmission.1
 share/applications/transmission.desktop
@@ -141,4 +141,4 @@ share/pixmaps/transmission.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

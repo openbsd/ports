@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/21 07:14:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/22 00:31:23 sthen Exp $
 @bin bin/twitux
 share/applications/twitux.desktop
 share/gnome/help/twitux/
@@ -36,4 +36,4 @@ share/twitux/spell_dlg.xml
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

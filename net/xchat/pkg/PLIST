@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2009/06/07 06:03:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2009/12/22 00:31:23 sthen Exp $
 %%SHARED%%
 @bin bin/xchat
 lib/xchat/
@@ -43,4 +43,4 @@ ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/apps_xchat_url_handler.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/04/27 11:57:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2009/12/22 00:31:22 sthen Exp $
 @bin bin/gtk-gnutella
 @man man/man1/gtk-gnutella.1
 share/applications/gtk-gnutella.desktop
@@ -70,4 +70,4 @@ share/pixmaps/
 share/pixmaps/gtk-gnutella.png
 share/pixmaps/gtk-gnutella.svg
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

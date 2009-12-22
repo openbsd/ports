@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2009/12/22 00:31:22 sthen Exp $
 
 COMMENT-main =	another eMule p2p client
 COMMENT-web =	webserver interface to amuled
@@ -10,7 +10,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
 MULTI_PACKAGES =-main -web -daemon
-PKGNAME-main =	amule-$Vp4
+PKGNAME-main =	amule-$Vp5
 PKGNAME-daemon =amuled-$V
 PKGNAME-web =	amuleweb-$V
 

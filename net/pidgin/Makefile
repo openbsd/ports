@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2009/12/07 06:27:59 steven Exp $
+# $OpenBSD: Makefile,v 1.57 2009/12/22 00:31:23 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-libpurple= multi-protocol instant messaging library
 
 VERSION=	2.6.4
 DISTNAME=	pidgin-${VERSION}
-PKGNAME-main=	pidgin-${VERSION}
+PKGNAME-main=	pidgin-${VERSION}p0
 PKGNAME-finch=	finch-${VERSION}
 FULLPKGNAME-libpurple= libpurple-${VERSION}
 CATEGORIES=	net

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/14 00:09:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/22 00:31:22 sthen Exp $
 
 COMMENT=	fast and easy porn downloader
 
 DISTNAME=	gnaughty-1.2.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net graphics
 
 HOMEPAGE= http://gnaughty.sourceforge.net/

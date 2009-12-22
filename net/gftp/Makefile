@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2009/10/27 12:00:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2009/12/22 00:31:22 sthen Exp $
 
 COMMENT=	multithreaded gtk2 file transfer client
 
 DISTNAME=	gftp-2.0.19
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 
 HOMEPAGE=	http://gftp.seul.org/

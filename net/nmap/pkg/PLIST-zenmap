@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zenmap,v 1.8 2009/10/22 10:00:57 giovanni Exp $
+@comment $OpenBSD: PLIST-zenmap,v 1.9 2009/12/22 00:31:23 sthen Exp $
 bin/nmapfe
 bin/xnmap
 bin/zenmap
@@ -285,4 +285,4 @@ share/zenmap/pixmaps/win_75.png
 share/zenmap/pixmaps/zenmap.png
 share/zenmap/su-to-zenmap.sh
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

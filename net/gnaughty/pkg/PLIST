@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/13 16:57:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/22 00:31:22 sthen Exp $
 @bin bin/gnaughty
 share/applications/gnaughty.desktop
 share/gnaughty/
@@ -11,4 +11,4 @@ ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/gnaughty.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

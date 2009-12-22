@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/08/25 15:15:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/22 00:31:22 sthen Exp $
 @bin bin/bt2dc_gui2
 @bin bin/bt2dc_gui2_prelaunch
 @bin bin/cmd2dc_gui2
@@ -48,4 +48,4 @@ share/pixmaps/dc_gui2/
 share/pixmaps/dc_gui2.xpm
 share/pixmaps/dc_gui2/icon_kill.xpm
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

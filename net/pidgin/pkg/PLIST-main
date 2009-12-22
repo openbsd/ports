@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/12/07 06:27:59 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/12/22 00:31:23 sthen Exp $
 @conflict gaim-*
 @pkgpath net/pidgin
 @bin bin/pidgin
@@ -786,6 +786,6 @@ share/pixmaps/pidgin/tray/48/tray-new-im.png
 share/pixmaps/pidgin/tray/48/tray-offline.png
 share/pixmaps/pidgin/tray/48/tray-online.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

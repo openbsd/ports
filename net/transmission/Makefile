@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2009/12/04 08:11:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2009/12/22 00:31:23 sthen Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gui=	lightweight BitTorrent client with graphical interface
@@ -6,7 +6,7 @@ COMMENT-gui=	lightweight BitTorrent client with graphical interface
 VER=		1.76
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}p1
-PKGNAME-gui=	transmission-gui-${VER}p2
+PKGNAME-gui=	transmission-gui-${VER}p3
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 
