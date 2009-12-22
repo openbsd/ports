@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/15 20:28:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/12/22 15:31:27 ajacoutot Exp $
 bin/poedit
 @man man/man1/poedit.1
 share/applications/
@@ -208,4 +208,4 @@ share/poedit/icons/poedit-status-nothing.png
 share/poedit/icons/poedit-update.png
 share/poedit/icons/view-fullscreen.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

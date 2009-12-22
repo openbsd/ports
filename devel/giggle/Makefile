@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/22 15:31:27 ajacoutot Exp $
 
 COMMENT=	gtk-based git repository viewer
 CATEGORIES=	devel x11
 DISTNAME=	giggle-0.4
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 SHARED_LIBS+=	giggle	0.0	# .0.0
 
 HOMEPAGE=	http://developer.imendio.com/projects/giggle

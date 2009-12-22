@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/06 17:23:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/12/22 15:31:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 
 BASENAME=	codeblocks-8.02
 DISTNAME=	${BASENAME}-src
-PKGNAME=	${BASENAME}
+PKGNAME=	${BASENAME}p0
 
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/${BASENAME}

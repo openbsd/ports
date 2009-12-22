@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/15 13:14:43 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2009/12/22 15:31:27 ajacoutot Exp $
 
 COMMENT=	SPE -- Stani's Python Editor
 
 V=		0.8.4
 DISTNAME=	spe-$V.h-wx2.6.1.0
-PKGNAME=	spe-$Vhp0
+PKGNAME=	spe-$Vhp1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://pythonide.stani.be/
