@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/10/09 13:05:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/12/22 11:06:20 ajacoutot Exp $
 %%SHARED%%
 lib/pkgconfig/
 lib/pkgconfig/rep-gtk.pc
-libexec/rep/${GNU_ARCH}/gui/
-libexec/rep/${GNU_ARCH}/gui/gtk-2/
-libexec/rep/${GNU_ARCH}/gui/gtk-2/gtk.a
-libexec/rep/${GNU_ARCH}/gui/gtk-2/gtk.la
-libexec/rep/${GNU_ARCH}/gui/gtk-2/types.a
-libexec/rep/${GNU_ARCH}/gui/gtk-2/types.la
+lib/rep/${GNU_ARCH}/gui/
+lib/rep/${GNU_ARCH}/gui/gtk-2/
+lib/rep/${GNU_ARCH}/gui/gtk-2/gtk.a
+lib/rep/${GNU_ARCH}/gui/gtk-2/gtk.la
+lib/rep/${GNU_ARCH}/gui/gtk-2/types.a
+lib/rep/${GNU_ARCH}/gui/gtk-2/types.la
