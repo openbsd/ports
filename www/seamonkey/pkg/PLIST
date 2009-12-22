@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/09/10 21:45:38 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/12/22 13:02:12 sthen Exp $
 @pkgpath www/seamonkey,-main
 bin/seamonkey
 @man man/man1/seamonkey.1
@@ -631,4 +631,4 @@ share/applications/seamonkey.desktop
 @unexec rm -f %D/seamonkey/components/compreg.dat
 @unexec rm -f %D/seamonkey/components/xpti.dat
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

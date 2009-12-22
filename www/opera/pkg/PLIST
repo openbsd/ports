@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2009/11/23 10:58:34 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.33 2009/12/22 13:02:12 sthen Exp $
 bin/opera
 lib/opera/
 lib/opera/plugins/
@@ -288,9 +288,9 @@ share/opera/ui/standard_toolbar.ini
 share/opera/ui/unix_keyboard.ini
 @sysctl kern.emul.linux=1
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 share/opera/unite/
 share/opera/unite/fileSharing.ua
 share/opera/unite/fridge.ua

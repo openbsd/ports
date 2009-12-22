@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/12/16 11:47:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2009/12/22 13:02:11 sthen Exp $
 @bin bin/epiphany
 include/epiphany/
 include/epiphany/${M}/
@@ -410,10 +410,10 @@ ${SCHEMAS_INSTDIR}/epiphany-lockdown.schemas
 ${SCHEMAS_INSTDIR}/epiphany.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastLargePrint 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastLargePrint 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastLargePrint 2> /dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LowContrastLargePrint 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LowContrastLargePrint 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LowContrastLargePrint 2> /dev/null || true

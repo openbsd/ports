@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/10/30 22:38:11 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/12/22 13:02:12 sthen Exp $
 @conflict kazehakase-<=0.5.4
 @bin bin/kazehakase
 lib/kazehakase/
@@ -83,4 +83,4 @@ share/kazehakase/search-result.js
 share/pixmaps/
 share/pixmaps/kazehakase-icon.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

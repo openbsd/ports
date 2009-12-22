@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2009/12/22 13:02:11 sthen Exp $
 
 COMMENT=	HTML editor for experienced web designers
 
 DISTNAME=	bluefish-1.0.7
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	www
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
