@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2009/12/22 15:46:59 ajacoutot Exp $
 
 COMMENT=		multimedia player
 
 DISTNAME=		xine-ui-0.99.5
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://xinehq.de/

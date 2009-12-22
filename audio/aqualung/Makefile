@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2009/12/22 15:43:14 ajacoutot Exp $
 
 COMMENT=	advanced music player
 
 DISTNAME=	aqualung-0.9beta10
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 
 HOMEPAGE=	http://aqualung.factorial.hu/

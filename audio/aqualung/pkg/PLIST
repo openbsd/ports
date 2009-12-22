@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/02/09 22:13:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/12/22 15:43:14 ajacoutot Exp $
 @bin bin/aqualung
 @man man/man1/aqualung.1
 @owner root
@@ -170,4 +170,4 @@ share/locale/ru/LC_MESSAGES/aqualung.mo
 share/locale/sv/LC_MESSAGES/aqualung.mo
 share/locale/uk/LC_MESSAGES/aqualung.mo
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2009/12/22 15:43:14 ajacoutot Exp $
 
 COMMENT-main=	gtk+2 media player based on XMMS
 COMMENT-mp3=	MP3 input plugin for bmp
 COMMENT-vorbis=	Ogg Vorbis input plugin for bmp
 V=		0.9.7
 DISTNAME=	bmp-$V
-PKGNAME-main=	bmp-$Vp15
+PKGNAME-main=	bmp-$Vp16
 PKGNAME-mp3=	bmp-mp3-$Vp14
 PKGNAME-vorbis=	bmp-vorbis-$Vp14
 SHARED_LIBS +=	beep                 2.0      # .2.0

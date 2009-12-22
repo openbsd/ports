@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/10/28 18:40:13 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/12/22 15:43:14 ajacoutot Exp $
 @bin bin/audacity
 @man man/man1/audacity.1
 share/applications/audacity.desktop
@@ -119,6 +119,6 @@ share/mime/packages/audacity.xml
 share/pixmaps/
 share/pixmaps/audacity.xpm
 @exec %D/bin/update-mime-database %D/share/mime
-@unexec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

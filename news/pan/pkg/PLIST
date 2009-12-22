@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/02/01 20:30:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/12/22 15:47:56 ajacoutot Exp $
 bin/pan
 share/applications/pan.desktop
 share/locale/am/
@@ -68,4 +68,4 @@ share/locale/zh_TW/LC_MESSAGES/pan.mo
 share/pixmaps/
 share/pixmaps/pan.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

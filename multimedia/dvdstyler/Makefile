@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2009/12/22 15:46:59 ajacoutot Exp $
 
 COMMENT=		DVD authoring application
 
 DISTNAME=		DVDStyler-1.7.0
-PKGNAME=		${DISTNAME:L}p3
+PKGNAME=		${DISTNAME:L}p4
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.dvdstyler.de/

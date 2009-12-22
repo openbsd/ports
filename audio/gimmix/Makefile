@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/22 15:43:15 ajacoutot Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
 DISTNAME=		gimmix-0.4.1
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://gimmix.berlios.de/

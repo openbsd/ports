@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/24 17:08:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/22 15:43:15 ajacoutot Exp $
 bin/mpdBrowser
 lib/python${MODPY_VERSION}/site-packages/mpdBrowser/
 lib/python${MODPY_VERSION}/site-packages/mpdBrowser-0.9.0-py${MODPY_VERSION}.egg-info
@@ -38,4 +38,4 @@ share/pixmaps/mpdBrowser.png
 share/pixmaps/mpdBrowser_case.png
 share/pixmaps/mpdBrowser_empty.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

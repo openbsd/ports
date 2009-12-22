@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/09/15 21:49:01 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/12/22 15:43:14 ajacoutot Exp $
 @bin bin/audacious2
 @bin bin/audtool2
 include/audacious/
@@ -361,6 +361,6 @@ share/locale/uk/LC_MESSAGES/audacious.mo
 share/locale/zh_CN/LC_MESSAGES/audacious.mo
 share/locale/zh_TW/LC_MESSAGES/audacious.mo
 share/pixmaps/
-@exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
 share/pixmaps/audacious2.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

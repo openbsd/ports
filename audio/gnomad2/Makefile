@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2009/12/22 15:43:15 ajacoutot Exp $
 
 COMMENT=		GTK+ tool for managing Creative and Dell audio players
 
 DISTNAME=		gnomad2-2.9.0
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/04/14 18:43:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/12/22 15:46:59 ajacoutot Exp $
 bin/gtk-recordMyDesktop
 lib/python${MODPY_VERSION}/site-packages/recordMyDesktop/
 lib/python${MODPY_VERSION}/site-packages/recordMyDesktop/__init__.py
@@ -53,4 +53,4 @@ share/locale/tr/LC_MESSAGES/gtk-recordMyDesktop.mo
 share/pixmaps/
 share/pixmaps/gtk-recordmydesktop.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

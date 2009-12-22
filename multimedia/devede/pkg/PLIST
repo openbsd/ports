@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/11/27 18:14:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/12/22 15:46:59 ajacoutot Exp $
 bin/devede
 lib/python${MODPY_VERSION}/site-packages/devede/
 lib/python${MODPY_VERSION}/site-packages/devede/devede_bincue.py
@@ -145,4 +145,4 @@ share/pixmaps/
 @comment share/pixmaps/backgrounds/
 share/pixmaps/devede.svg
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

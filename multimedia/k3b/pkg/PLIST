@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/07/09 02:13:01 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/12/22 15:46:59 ajacoutot Exp $
 @bin bin/k3b
 bin/k3bsetup
 include/k3b_export.h
@@ -435,6 +435,6 @@ share/sounds/k3b_error1.wav
 share/sounds/k3b_success1.wav
 share/sounds/k3b_wait_media1.wav
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

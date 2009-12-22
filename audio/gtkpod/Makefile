@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2009/12/22 15:43:15 ajacoutot Exp $
 
 COMMENT=	GTK+2 program to synchronize an Apple iPod
 DISTNAME=	gtkpod-0.99.14
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 

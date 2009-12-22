@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/10 22:08:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/22 15:43:15 ajacoutot Exp $
 
 COMMENT=		click & play MPD client
 
 DISTNAME=		mpdBrowser-0.9.15
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		audio
 
 # GPLv3

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/14 12:51:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/22 15:43:15 ajacoutot Exp $
 
 COMMENT =	graphical mp3/ogg file splitter
 
 DISTNAME =	mp3splt-gtk-0.5.4
-PKGNAME =	${DISTNAME}p3
+PKGNAME =	${DISTNAME}p4
 
 CATEGORIES =	audio
 

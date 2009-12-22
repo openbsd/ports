@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/21 15:07:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/22 15:43:15 ajacoutot Exp $
 bin/gimmix
 share/applications/
 share/applications/gimmix.desktop
@@ -11,4 +11,4 @@ share/pixmaps/gimmix.png
 share/pixmaps/gimmix_logo_small.png
 share/pixmaps/gimmix_playlist.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

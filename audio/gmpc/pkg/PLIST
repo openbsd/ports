@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/11/22 21:53:51 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/12/22 15:43:15 ajacoutot Exp $
 @bin bin/gmpc
 @bin bin/gmpc-remote
 bin/gmpc-remote-stream
@@ -320,6 +320,6 @@ share/locale/tr/LC_MESSAGES/gmpc.mo
 share/locale/zh_CN/LC_MESSAGES/gmpc.mo
 share/locale/zh_TW/LC_MESSAGES/gmpc.mo
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

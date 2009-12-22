@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.47 2009/12/22 15:43:15 ajacoutot Exp $
 
 COMMENT=		front-end to various audio players
 
 DISTNAME=		gqmpeg-0.91.1
-PKGNAME=		${DISTNAME}p4
+PKGNAME=		${DISTNAME}p5
 CATEGORIES=		audio
 
 HOMEPAGE=		http://gqmpeg.sourceforge.net/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/10 22:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2009/12/22 15:43:15 ajacoutot Exp $
 
 COMMENT=		frontend to mpd written in Python
 
 DISTNAME=		pympd-0.08
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://pympd.sourceforge.net/
