@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/11/08 08:35:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2009/12/22 16:51:00 ajacoutot Exp $
 @bin bin/leafpad
 share/applications/leafpad.desktop
 share/doc/leafpad/
@@ -66,6 +66,6 @@ share/pixmaps/
 share/pixmaps/leafpad.png
 share/pixmaps/leafpad.xpm
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
