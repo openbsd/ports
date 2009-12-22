@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/07 14:14:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/12/22 16:06:40 ajacoutot Exp $
 
 COMMENT=	disc cover designer
 
 DISTNAME=	discwrapper-1.2.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://discwrapper.sourceforge.net/

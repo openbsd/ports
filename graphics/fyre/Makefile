@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2009/09/10 22:17:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2009/12/22 16:06:40 ajacoutot Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://fyre.navi.cx/

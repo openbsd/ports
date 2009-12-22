@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2009/06/01 21:17:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2009/12/22 16:06:40 ajacoutot Exp $
 %%SHARED%%
 @bin bin/dia
 lib/dia/
@@ -1833,7 +1833,7 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 share/mime-info/dia.keys
 share/mime-info/dia.mime
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 %%gnome%%

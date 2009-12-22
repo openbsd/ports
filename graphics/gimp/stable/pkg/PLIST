@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2009/12/06 18:44:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2009/12/22 16:06:40 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 %%SHARED%%
 bin/gimp
@@ -2124,6 +2124,6 @@ share/locale/zh_TW/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-tips.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

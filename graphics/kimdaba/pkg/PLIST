@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/12/16 00:04:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/12/22 16:06:41 ajacoutot Exp $
 bin/kphotoalbum
 share/applications/kde/kphotoalbum-import.desktop
 share/applications/kde/kphotoalbum.desktop
@@ -377,4 +377,4 @@ share/locale/vi/LC_MESSAGES/kphotoalbum.mo
 share/locale/zh_CN/LC_MESSAGES/kphotoalbum.mo
 share/mimelnk/application/x-vnd.kde.kphotoalbum-import.desktop
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

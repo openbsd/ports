@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2009/12/16 17:20:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2009/12/22 16:06:40 ajacoutot Exp $
 @pkgpath graphics/evince
 @bin bin/evince
 @bin bin/evince-previewer
@@ -404,6 +404,6 @@ ${SCHEMAS_INSTDIR}/evince-thumbnailer.schemas
 ${SCHEMAS_INSTDIR}/evince.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

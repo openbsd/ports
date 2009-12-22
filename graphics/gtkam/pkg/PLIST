@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/11/08 17:37:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/12/22 16:06:41 ajacoutot Exp $
 @bin bin/gtkam
 @man man/man1/gtkam.1
 share/applications/gtkam.desktop
@@ -53,4 +53,4 @@ share/pixmaps/
 share/pixmaps/gtkam-camera.png
 share/pixmaps/gtkam.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

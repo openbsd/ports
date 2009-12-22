@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/09/24 16:30:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/12/22 16:06:41 ajacoutot Exp $
 @bin bin/xsane
 @man man/man1/xsane.1
 share/applications/xsane.desktop
@@ -190,4 +190,4 @@ share/xsane/xsane-startimage.pnm
 share/xsane/xsane-style.rc
 %%gimp%%
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/11/03 13:27:43 stephan Exp $
+# $OpenBSD: Makefile,v 1.7 2009/12/22 16:06:40 ajacoutot Exp $
 
 COMMENT =	simple and fast image viewer for X
 
 DISTNAME =	gpicview-0.2.1
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 CATEGORIES =	graphics x11
 
