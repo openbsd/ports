@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2009/11/12 22:17:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2009/12/22 11:05:47 ajacoutot Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
 SHARED_ONLY=	Yes
 
-VERSION=	0.90.3
+VERSION=	0.90.4
 DISTNAME=	librep-${VERSION}
 SHARED_LIBS +=  rep                  13.0     # .13.0
 
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 
-REP_LT= 		${PREFIX}/libexec/rep/${GNU_ARCH}/libtool
+REP_LT= 		${PREFIX}/lib/rep/${GNU_ARCH}/libtool
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/rep-xgettext.jl

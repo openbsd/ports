@@ -1,18 +1,20 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2006/01/03 22:19:26 alek Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2009/12/22 11:05:47 ajacoutot Exp $
 @lib lib/librep.so.${LIBrep_VERSION}
-libexec/rep/${VERSION}/${GNU_ARCH}/gdbm.so
-libexec/rep/${VERSION}/${GNU_ARCH}/gettext.so
-libexec/rep/${VERSION}/${GNU_ARCH}/readline.so
-libexec/rep/${VERSION}/${GNU_ARCH}/rep/data/tables.so
-libexec/rep/${VERSION}/${GNU_ARCH}/rep/i18n/gettext.so
-libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/db/gdbm.so
-libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/db/sdbm.so
-libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/readline.so
-libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/sockets.so
-libexec/rep/${VERSION}/${GNU_ARCH}/rep/io/timers.so
-libexec/rep/${VERSION}/${GNU_ARCH}/rep/lang/record-profile.so
-libexec/rep/${VERSION}/${GNU_ARCH}/rep/util/md5.so
-libexec/rep/${VERSION}/${GNU_ARCH}/rep/vm/safe-interpreter.so
-libexec/rep/${VERSION}/${GNU_ARCH}/sdbm.so
-libexec/rep/${VERSION}/${GNU_ARCH}/tables.so
-libexec/rep/${VERSION}/${GNU_ARCH}/timers.so
+lib/rep/${VERSION}/${GNU_ARCH}/gdbm.so
+lib/rep/${VERSION}/${GNU_ARCH}/gettext.so
+lib/rep/${VERSION}/${GNU_ARCH}/readline.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/data/tables.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/ffi.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/i18n/gettext.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/io/db/gdbm.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/io/db/sdbm.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/io/readline.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/io/sockets.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/io/timers.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/lang/record-profile.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/util/md5.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/util/utf8.so
+lib/rep/${VERSION}/${GNU_ARCH}/rep/vm/safe-interpreter.so
+lib/rep/${VERSION}/${GNU_ARCH}/sdbm.so
+lib/rep/${VERSION}/${GNU_ARCH}/tables.so
+lib/rep/${VERSION}/${GNU_ARCH}/timers.so

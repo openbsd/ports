@@ -1,0 +1,25 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1 2009/12/22 11:05:47 ajacoutot Exp $
+--- man/Makefile.in.orig	Fri Dec 18 18:31:45 2009
++++ man/Makefile.in	Sat Dec 19 11:05:18 2009
+@@ -50,18 +50,17 @@ install : librep.info installdirs
+ 	done
+ 	-install-info --info-dir=$(DESTDIR)$(infodir) librep.info
+ 	for f in rep*.1; do \
+-		gzip $$f -c > $$f.gz; \
+-		$(INSTALL_DATA) $$f.gz $(DESTDIR)$(prefix)/share/man/man1/; \
++		$(INSTALL_DATA) $$f $(DESTDIR)$(prefix)/man/man1/; \
+ 	done
+ 
+ installdirs : mkinstalldirs
+ 	$(SHELL) $< $(DESTDIR)$(infodir)
+-	$(SHELL) $< $(DESTDIR)$(prefix)/share/man/man1/
++	$(SHELL) $< $(DESTDIR)$(prefix)/man/man1/
+ 
+ uninstall :
+ 	rm -f $(DESTDIR)$(infodir)/librep.info*
+ 	-install-info --remove --info-dir=$(DESTDIR)$(infodir) librep.info
+-	rm -f $(DESTDIR)$(prefix)/share/man/man1/rep*
++	rm -f $(DESTDIR)$(prefix)/man/man1/rep*
+ 
+ clean :
+ 	rm -f *~ librep.info* librep.?? librep.??? rep*.1.gz
