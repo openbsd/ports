@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/03/29 16:35:13 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/12/22 15:08:35 ajacoutot Exp $
 bin/kile
 share/applications/kde/kile.desktop
 share/apps/katepart/syntax/bibtex-kile.xml
@@ -1585,4 +1585,4 @@ share/locale/uk/LC_MESSAGES/kile.mo
 share/locale/zh_CN/LC_MESSAGES/kile.mo
 share/mimelnk/text/x-kilepr.desktop
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

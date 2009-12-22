@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.72 2009/10/10 09:51:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2009/12/22 15:08:35 ajacoutot Exp $
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	2.6.8
 MAJORVER=	${VERSION:C/..$//}
 DISTNAME=	abiword-${VERSION}
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	editors
 
 HOMEPAGE=	http://www.abisource.com/

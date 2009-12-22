@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2009/10/10 09:51:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/12/22 15:08:35 ajacoutot Exp $
 @bin bin/abiword
 include/abiword-${MAJORVER}/
 include/abiword-${MAJORVER}/abiwidget.h
@@ -253,4 +253,4 @@ share/icons/abiword_48.png
 share/mime-info/
 share/mime-info/abiword.keys
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

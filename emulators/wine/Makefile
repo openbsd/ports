@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2009/08/10 06:31:09 kili Exp $
+# $OpenBSD: Makefile,v 1.39 2009/12/22 15:11:48 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	i386 amd64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 COMMENT =		wine enables you to run windows binaries
 
 DISTNAME =		wine-1.1.21
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 
 SHARED_LIBS =		wine 0.0
 
