@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2009/10/28 14:21:38 giovanni Exp $
+# $OpenBSD: Makefile,v 1.29 2009/12/22 11:21:33 giovanni Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
 
 V=			2.2.0
 DISTNAME=		maildrop-$V
-PKGNAME-main=		maildrop-$V
+PKGNAME-main=		maildrop-$Vp0
 FULLPKGNAME-utils=	courier-utils-$V
 CATEGORIES=		mail
 
@@ -28,7 +28,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include"
+			CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include" \
+			ac_cv_header_fam_h=no ac_cv_lib_fam_FAMOpen=no
 MAKE_ENV=		INCLUDES="-I${LOCALBASE}/include"
 
 SUBST_VARS=             MAILDROPCONF
