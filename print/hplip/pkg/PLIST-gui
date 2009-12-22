@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.1 2009/07/13 08:14:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gui,v 1.2 2009/12/22 15:54:32 ajacoutot Exp $
 @conflict hplip-<3.9.6b
 bin/hp-check
 bin/hp-print
@@ -401,4 +401,4 @@ share/hplip/ui4/ui_utils.py
 share/hplip/ui4/wifisetupdialog.py
 share/hplip/ui4/wifisetupdialog_base.py
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

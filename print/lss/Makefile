@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:34:09 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/22 15:54:32 ajacoutot Exp $
 
 COMMENT=		LaTeX symbols selector
 
 DISTNAME=		lss-0.1.6
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		print x11
 
 HOMEPAGE=		http://clay.ll.pl/lss/

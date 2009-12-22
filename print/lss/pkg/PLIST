@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/13 17:45:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/22 15:54:32 ajacoutot Exp $
 bin/lss
 share/applications/lss.desktop
 share/locale/pl/LC_MESSAGES/lss.mo
@@ -6,4 +6,4 @@ share/pixmaps/
 share/pixmaps/lss.png
 share/pixmaps/lss.svg
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
