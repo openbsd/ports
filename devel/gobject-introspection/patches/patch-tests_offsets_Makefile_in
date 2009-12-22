@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_offsets_Makefile_in,v 1.1 2009/12/22 15:19:52 ajacoutot Exp $
+--- tests/offsets/Makefile.in.orig	Thu Dec 17 10:49:06 2009
++++ tests/offsets/Makefile.in	Thu Dec 17 10:49:17 2009
+@@ -310,7 +310,7 @@ _gir_packages = $(foreach pkg,$($(_gir_name)_PACKAGES)
+ _gir_includes = $(foreach include,$($(_gir_name)_INCLUDES),--include=$(include))
+ 
+ # Reuse the LIBTOOL variable from by automake if it's set
+-_gir_libtool = $(if $(LIBTOOL),--libtool="$(LIBTOOL)")
++_gir_libtool = $(if $(LIBTOOL),--libtool="${LIBTOOL}")
+ BUILT_SOURCES = gitestoffsets.c
+ CLEANFILES = offsets-1.0.gir offsets-1.0.typelib gitestoffsets.c \
+ 	offsets.compiled offsets.introspected

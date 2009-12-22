@@ -1,10 +1,10 @@
-$OpenBSD: patch-girepository_giroffsets_c,v 1.1 2009/11/12 21:48:18 jasper Exp $
+$OpenBSD: patch-girepository_giroffsets_c,v 1.2 2009/12/22 15:19:52 ajacoutot Exp $
 
 Prevent redefinition of ALIGN in giroffsets.c with /usr/include/machine/param.h
 
---- girepository/giroffsets.c.orig	Thu Nov 12 21:33:35 2009
-+++ girepository/giroffsets.c	Thu Nov 12 21:34:37 2009
-@@ -309,7 +309,7 @@ get_field_size_alignment (GIrNodeField *field,
+--- girepository/giroffsets.c.orig	Mon Nov 23 18:27:56 2009
++++ girepository/giroffsets.c	Thu Dec 17 10:14:17 2009
+@@ -316,7 +316,7 @@ get_field_size_alignment (GIrNodeField *field,
    return success;
  }
  
@@ -13,7 +13,7 @@ Prevent redefinition of ALIGN in giroffsets.c with /usr/include/machine/param.h
  
  static gboolean
  compute_struct_field_offsets (GIrNode     *node,
-@@ -343,7 +343,7 @@ compute_struct_field_offsets (GIrNode     *node,
+@@ -350,7 +350,7 @@ compute_struct_field_offsets (GIrNode     *node,
  					    module, modules,
  					    &member_size, &member_alignment))
  		{
@@ -22,7 +22,7 @@ Prevent redefinition of ALIGN in giroffsets.c with /usr/include/machine/param.h
  		  alignment = MAX (alignment, member_alignment);
  		  field->offset = size;
  		  size += member_size;
-@@ -357,14 +357,14 @@ compute_struct_field_offsets (GIrNode     *node,
+@@ -364,14 +364,14 @@ compute_struct_field_offsets (GIrNode     *node,
  	}
        else if (member->type == G_IR_NODE_CALLBACK)
  	{
@@ -39,7 +39,7 @@ Prevent redefinition of ALIGN in giroffsets.c with /usr/include/machine/param.h
  
    if (!have_error)
      {
-@@ -422,7 +422,7 @@ compute_union_field_offsets (GIrNode     *node,
+@@ -429,7 +429,7 @@ compute_union_field_offsets (GIrNode     *node,
      }
  
    /* Unions are tail-padded out to a multiple of their alignment */

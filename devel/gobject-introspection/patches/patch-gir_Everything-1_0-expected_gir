@@ -1,0 +1,12 @@
+$OpenBSD: patch-gir_Everything-1_0-expected_gir,v 1.1 2009/12/22 15:19:52 ajacoutot Exp $
+--- gir/Everything-1.0-expected.gir.orig	Thu Dec 17 11:30:40 2009
++++ gir/Everything-1.0-expected.gir	Thu Dec 17 11:30:59 2009
+@@ -11,7 +11,7 @@ and/or use gtk-doc annotations.  -->
+   <package name="gobject-2.0"/>
+   <namespace name="Everything"
+              version="1.0"
+-             shared-library="libgirepository-everything-1.0.so.1"
++             shared-library="libgirepository-everything-1.0.so.${LIBgirepository-everything-1.0_VERSION}"
+              c:prefix="Everything">
+     <record name="TestBoxed"
+             c:type="TestBoxed"
