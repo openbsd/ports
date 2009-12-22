@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/30 22:28:06 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/22 11:01:24 jasper Exp $
 
 COMMENT =	plugin framework library
 
 VERSION =	0.2.2
 DISTNAME =	ethos-${VERSION}
+PKGNAME =	${DISTNAME}p0
 
 SHARED_LIBS=	ethos-1.0 1.0 \
 		ethos-ui-1.0 0.0
@@ -30,7 +31,8 @@ USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
 
 MODULES =	lang/python \
-		devel/gettext
+		devel/gettext \
+		textproc/intltool
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
