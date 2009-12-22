@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/11/11 16:01:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2009/12/22 16:28:01 ajacoutot Exp $
 !%%lite%%
 @bin bin/campaignd
 @bin bin/wesnoth
@@ -9611,4 +9611,4 @@ share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth-units.mo
 share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth-utbs.mo
 share/wesnoth/translations/zh_TW/LC_MESSAGES/wesnoth.mo
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

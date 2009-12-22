@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/09/02 08:52:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2009/12/22 16:28:00 ajacoutot Exp $
 
 # crashes the X server in some configurations on macppc
 NOT_FOR_ARCHS=	powerpc
@@ -6,6 +6,7 @@ NOT_FOR_ARCHS=	powerpc
 COMMENT=	graphical multiplayer 3D tank war game
 
 DISTNAME=	bzflag-2.0.12
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 

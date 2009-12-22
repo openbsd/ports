@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/03/13 17:15:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/12/22 16:27:59 ajacoutot Exp $
 @bin bin/afternoonstalker
 @man man/man6/afternoonstalker.6
 share/afternoonstalker/
@@ -19,4 +19,4 @@ share/sounds/afternoonstalker/robot-hit.wav
 share/sounds/afternoonstalker/shooting-blanks.wav
 share/sounds/afternoonstalker/spider-killed.wav
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

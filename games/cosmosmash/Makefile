@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/13 17:15:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2009/12/22 16:28:00 ajacoutot Exp $
 
 COMMENT=	astrosmash clone for X
 
 DISTNAME=	cosmosmash-1.4.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games
 
 HOMEPAGE=	http://sarrazip.com/dev/cosmosmash.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/10/16 16:28:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/22 16:28:00 ajacoutot Exp $
 bin/cosmosmash
 @man man/man6/cosmosmash.6
 share/applications/
@@ -14,4 +14,4 @@ share/sounds/cosmosmash/rock-hit-0.wav
 share/sounds/cosmosmash/rock-hit-1.wav
 share/sounds/cosmosmash/saucer-shooting.wav
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 14:57:52 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/22 16:28:01 ajacoutot Exp $
 bin/warzone2100
 share/applications/
 share/applications/warzone2100.desktop
@@ -10,4 +10,4 @@ share/warzone2100/
 share/warzone2100/mp.wz
 share/warzone2100/warzone.wz
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

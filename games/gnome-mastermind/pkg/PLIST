@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/11/27 18:08:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/12/22 16:28:00 ajacoutot Exp $
 @bin bin/gnome-mastermind
 share/applications/gnome-mastermind.desktop
 share/gnome-mastermind/
@@ -87,6 +87,6 @@ share/omf/gnome-mastermind/gnome-mastermind-id.omf
 share/omf/gnome-mastermind/gnome-mastermind-it.omf
 share/pixmaps/gnome-mastermind.svg
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

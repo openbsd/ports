@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2009/12/22 16:28:01 ajacoutot Exp $
 
 COMMENT=		free software clone of Worms(R) game concept
 
 DISTNAME=		wormux-0.8.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		games
 
 HOMEPAGE=		http://wormux.org

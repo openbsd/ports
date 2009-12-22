@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2008/10/26 23:19:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2009/12/22 16:28:00 ajacoutot Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
 V=		1.01
 DISTNAME=	enigma-${V}-64bit
-PKGNAME=	enigma-${V}
+PKGNAME=	enigma-${V}p0
 
 CATEGORIES=	games x11
 

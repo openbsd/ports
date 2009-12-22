@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/12/17 17:10:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/12/22 16:28:01 ajacoutot Exp $
 %%SHARED%%
 bin/tp-magic-config
 @bin bin/tuxpaint
@@ -1220,4 +1220,4 @@ share/tuxpaint/starters/worldmap_canada.png
 share/tuxpaint/starters/worldmap_europe.png
 share/tuxpaint/starters/worldmap_japan.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

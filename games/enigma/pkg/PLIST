@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/10/26 23:19:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/12/22 16:28:00 ajacoutot Exp $
 @bin bin/enigma
 @man man/man6/enigma.6
 share/applications/enigma.desktop
@@ -2492,6 +2492,6 @@ share/locale/sv/LC_MESSAGES/enigma.mo
 share/pixmaps/
 share/pixmaps/enigma.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

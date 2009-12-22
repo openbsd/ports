@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/17 17:10:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/12/22 16:28:01 ajacoutot Exp $
 
 COMMENT=	drawing program for children
 
 DISTNAME=	tuxpaint-0.9.21
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/

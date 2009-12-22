@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/13 17:15:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2009/12/22 16:28:00 ajacoutot Exp $
 
 COMMENT=	burgertime clone for X
 
 DISTNAME=	burgerspace-1.8.3
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	games
 
 HOMEPAGE=	http://sarrazip.com/dev/burgerspace.html

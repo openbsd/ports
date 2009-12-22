@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/06/07 05:31:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2009/12/22 16:28:00 ajacoutot Exp $
 @bin bin/gtetrinet
 @man man/man6/gtetrinet.6
 share/applications/gtetrinet.desktop
@@ -83,4 +83,4 @@ ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/gtetrinet.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

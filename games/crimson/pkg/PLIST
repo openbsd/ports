@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2007/12/15 20:37:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2009/12/22 16:28:00 ajacoutot Exp $
 bin/bi2cf
 bin/cfed
 bin/comet
@@ -59,4 +59,4 @@ share/crimson/title.bmp
 share/pixmaps/
 share/pixmaps/crimson.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/29 22:41:33 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/12/22 16:28:00 ajacoutot Exp $
 @bin bin/kbilliards
 share/applnk/
 share/applnk/Games/
@@ -67,4 +67,4 @@ share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kbilliards.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

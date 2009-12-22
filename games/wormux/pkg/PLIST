@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/07/21 19:16:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2009/12/22 16:28:01 ajacoutot Exp $
 @bin bin/wormux
 @bin bin/wormux-index-server
 @bin bin/wormux-server
@@ -1446,4 +1446,4 @@ share/wormux/wormux_32x32.png
 share/wormux/wormux_32x32.xpm
 share/wormux/wormux_default_config.xml
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

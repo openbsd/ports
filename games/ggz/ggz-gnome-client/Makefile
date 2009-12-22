@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/22 16:28:00 ajacoutot Exp $
 
 COMMENT=	GGZ Gaming Zone - GNOME client
 
 DISTNAME=	ggz-gnome-client-$V
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0

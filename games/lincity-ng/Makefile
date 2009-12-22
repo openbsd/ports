@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/22 16:28:00 ajacoutot Exp $
 
 COMMENT=	city simulation game
 
 DISTNAME=	lincity-ng-2.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games x11
 

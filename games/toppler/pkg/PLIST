@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/10/27 15:24:30 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2009/12/22 16:28:01 ajacoutot Exp $
 @mode g+s
 @group games
 bin/toppler
@@ -40,4 +40,4 @@ share/toppler/pasi2.ttm
 share/toppler/toppler.dat
 share/toppler/toppler.ogg
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

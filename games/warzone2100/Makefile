@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/16 21:13:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2009/12/22 16:28:01 ajacoutot Exp $
 
 COMMENT=	3d realtime strategy on a future earth
 
 DISTNAME=	warzone2100-2.0.7
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 

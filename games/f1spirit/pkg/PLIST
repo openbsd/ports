@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/19 18:30:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/22 16:28:00 ajacoutot Exp $
 bin/f1spirit
 share/applications/f1spirit.desktop
 share/f1spirit/
@@ -281,4 +281,4 @@ share/f1spirit/tracks/stock.f1t
 share/pixmaps/
 share/pixmaps/f1spirit.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

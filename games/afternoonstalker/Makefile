@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/13 17:15:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2009/12/22 16:27:59 ajacoutot Exp $
 
 COMMENT=	Night Stalker clone for X
 
 DISTNAME=	afternoonstalker-1.1.2
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	games
 
 HOMEPAGE=	http://sarrazip.com/dev/afternoonstalker.html

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/11/08 11:06:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2009/12/22 16:28:01 ajacoutot Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
 GNOME_PROJECT=	pioneers
 GNOME_VERSION=	0.12.3
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	games
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/11/27 17:38:03 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2009/12/22 16:28:00 ajacoutot Exp $
 
 COMMENT=	32-card trick-taking game
 
 DISTNAME=	belooted-0.1.4.1
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.gnomefiles.org/app.php/Belooted

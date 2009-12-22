@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:31:41 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/22 16:28:00 ajacoutot Exp $
 
 COMMENT=	build molecules out of single atoms
 
 DISTNAME=	atomix-2.14.0
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 

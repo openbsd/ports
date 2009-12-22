@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2009/08/03 11:48:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2009/12/22 16:28:01 ajacoutot Exp $
 @bin bin/tmw
 @man man/man6/tmw.6
 share/applications/tmw.desktop
@@ -98,4 +98,4 @@ share/tmw/data/icons/
 share/tmw/data/icons/tmw.png
 share/tmw/data/icons/tmw.xpm
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

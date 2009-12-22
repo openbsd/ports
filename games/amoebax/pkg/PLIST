@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/08 13:35:40 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/22 16:27:59 ajacoutot Exp $
 bin/amoebax
 @man man/man6/amoebax.6
 share/amoebax/
@@ -92,4 +92,4 @@ share/doc/amoebax/manual.pdf
 share/pixmaps/
 share/pixmaps/amoebax.svg
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
