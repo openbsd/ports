@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/19 17:03:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/22 12:51:52 sthen Exp $
 bin/d-feet
 lib/python${MODPY_VERSION}/site-packages/d_feet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/dfeet/
@@ -59,6 +59,6 @@ share/icons/hicolor/16x16/apps/dfeet-signal.png
 share/icons/hicolor/16x16/apps/dfeet-write-property.png
 share/icons/hicolor/48x48/apps/dfeet-icon.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

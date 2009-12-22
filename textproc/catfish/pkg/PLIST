@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/04 02:03:39 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/22 12:51:52 sthen Exp $
 bin/catfish
 share/applications/catfish.desktop
 share/catfish/
@@ -26,6 +26,6 @@ share/locale/ru/LC_MESSAGES/catfish.mo
 share/locale/sv/LC_MESSAGES/catfish.mo
 share/locale/zh_CN/LC_MESSAGES/catfish.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

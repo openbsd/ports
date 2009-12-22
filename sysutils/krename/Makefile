@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/04 08:10:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2009/12/22 12:51:52 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful KDE batch file renamer
 
 DISTNAME=	krename-3.0.14
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	sysutils x11 x11/kde
 
 EXTRACT_SUFX=	.tar.bz2

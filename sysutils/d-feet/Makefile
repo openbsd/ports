@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/28 18:12:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/22 12:51:52 sthen Exp $
 
 COMMENT=		dbus debugger
 
 MODPY_EGG_VERSION=	0.1.8
 DISTNAME=		d-feet-${MODPY_EGG_VERSION}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		sysutils x11
 
 HOMEPAGE=		https://hosted.fedoraproject.org/d-feet/
