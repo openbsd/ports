@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/05/28 17:23:05 rui Exp $
-bin/ipv6calc
-bin/ipv6loganon
-bin/ipv6logconv
-bin/ipv6logstats
+@comment $OpenBSD: PLIST,v 1.6 2009/12/22 10:27:42 giovanni Exp $
+@bin bin/ipv6calc
+@bin bin/ipv6loganon
+@bin bin/ipv6logconv
+@bin bin/ipv6logstats
 @man man/man8/ipv6calc.8
 @man man/man8/ipv6loganon.8
 @man man/man8/ipv6logconv.8
