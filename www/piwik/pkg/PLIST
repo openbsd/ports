@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/12/15 13:55:05 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.15 2009/12/22 10:41:45 giovanni Exp $
 @group daemon
 piwik/
 piwik/LICENSE
@@ -171,8 +171,7 @@ piwik/core/Updates/0.4.1.php
 piwik/core/Updates/0.4.2.php
 piwik/core/Updates/0.4.4.php
 piwik/core/Updates/0.4.php
-piwik/core/Updates/0.5.2.php
-piwik/core/Updates/0.5.3.php
+piwik/core/Updates/0.5.4.php
 piwik/core/Updates/0.5.php
 piwik/core/Url.php
 piwik/core/Version.php
@@ -1363,8 +1362,10 @@ piwik/plugins/SecurityInfo/PhpSecInfo/Test/Core/gid.php
 piwik/plugins/SecurityInfo/PhpSecInfo/Test/Core/magic_quotes_gpc.php
 piwik/plugins/SecurityInfo/PhpSecInfo/Test/Core/memory_limit.php
 piwik/plugins/SecurityInfo/PhpSecInfo/Test/Core/open_basedir.php
+piwik/plugins/SecurityInfo/PhpSecInfo/Test/Core/post_max_size.php
 piwik/plugins/SecurityInfo/PhpSecInfo/Test/Core/register_globals.php
 piwik/plugins/SecurityInfo/PhpSecInfo/Test/Core/uid.php
+piwik/plugins/SecurityInfo/PhpSecInfo/Test/Core/upload_max_filesize.php
 piwik/plugins/SecurityInfo/PhpSecInfo/Test/Core/upload_tmp_dir.php
 piwik/plugins/SecurityInfo/PhpSecInfo/Test/Curl/
 piwik/plugins/SecurityInfo/PhpSecInfo/Test/Curl/file_support.php
