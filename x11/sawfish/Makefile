@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2009/11/12 22:18:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2009/12/22 22:24:10 jasper Exp $
 
 COMMENT=	extensible window manager
 
-VERSION=	1.5.3
+VERSION=	1.6.0
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
 
@@ -18,9 +18,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	:rep-gtk->=0.90.0:x11/rep-gtk
+BUILD_DEPENDS=	:rep-gtk->=0.90.1:x11/rep-gtk
 RUN_DEPENDS=	::devel/desktop-file-utils \
-		:rep-gtk->=0.90.0:x11/rep-gtk
+		:rep-gtk->=0.90.1:x11/rep-gtk
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo

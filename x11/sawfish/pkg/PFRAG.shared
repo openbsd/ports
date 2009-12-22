@@ -1,10 +1,9 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2005/05/23 20:29:45 marius Exp $
-libexec/rep/${GNU_ARCH}/sawfish/client.so
-libexec/sawfish/${VERSION}/${GNU_ARCH}/gradient.so
-libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/flippers.so
-libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/gradient.so
-libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/play-sample.so
-libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/selection.so
-libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/x.so
-libexec/sawfish/${VERSION}/${GNU_ARCH}/selection.so
-libexec/sawfish/${VERSION}/${GNU_ARCH}/x.so
+@comment $OpenBSD: PFRAG.shared,v 1.7 2009/12/22 22:24:10 jasper Exp $
+lib/rep/${GNU_ARCH}/sawfish/client.so
+lib/sawfish/${VERSION}/${GNU_ARCH}/gradient.so
+lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/flippers.so
+lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/gradient.so
+lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/selection.so
+lib/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/x.so
+lib/sawfish/${VERSION}/${GNU_ARCH}/selection.so
+lib/sawfish/${VERSION}/${GNU_ARCH}/x.so
