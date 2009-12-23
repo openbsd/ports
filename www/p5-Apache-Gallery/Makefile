@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2009/05/03 15:58:10 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2009/12/23 18:58:54 landry Exp $
 
 
 COMMENT=		mod_perl Apache gallery handler
 
 MODULES=		cpan
 DISTNAME=		Apache-Gallery-1.0RC3
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.apachegallery.dk/

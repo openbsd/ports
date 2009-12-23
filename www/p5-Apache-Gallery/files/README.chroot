@@ -1,4 +1,4 @@
-# $OpenBSD: README.chroot,v 1.3 2009/05/03 15:58:10 landry Exp $
+# $OpenBSD: README.chroot,v 1.4 2009/12/23 18:58:54 landry Exp $
 
 In order to make A::G operate in a chrooted environment, it is
 necessary to copy all of the relevant libraries and perl modules
@@ -33,7 +33,7 @@ $ cd /var/www${LOCALBASE}/lib
 # cp -pR ${LOCALBASE}/lib/imlib2/filters/*.so imlib2/filters
 
 $ cd /var/www/usr/X11R6/lib
-# cp -p /usr/X11R6/lib/lib{Xext,freetype,X11,Xau,Xdmcp}.so.* .
+# cp -p /usr/X11R6/lib/lib{Xext,freetype,X11,Xau,Xdmcp,xcb,pthread-stubs}.so.* .
 
 Next, the Perl base:
 
