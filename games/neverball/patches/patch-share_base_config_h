@@ -1,0 +1,17 @@
+$OpenBSD: patch-share_base_config_h,v 1.1 2009/12/23 22:41:36 benoit Exp $
+--- share/base_config.h.orig	Mon Dec 21 12:03:19 2009
++++ share/base_config.h	Mon Dec 21 12:04:13 2009
+@@ -30,11 +30,11 @@
+ #endif
+ 
+ #ifndef CONFIG_DATA
+-#define CONFIG_DATA   "./data"        /* Game data directory */
++#define CONFIG_DATA   "${PREFIX}/share/neverball/data"        /* Game data directory */
+ #endif
+ 
+ #ifndef CONFIG_LOCALE
+-#define CONFIG_LOCALE "./locale"      /* Game localisation */
++#define CONFIG_LOCALE "${PREFIX}/share/locale"      /* Game localisation */
+ #endif
+ 
+ /* User config directory */

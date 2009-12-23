@@ -1,0 +1,11 @@
+$OpenBSD: patch-scripts_version_sh,v 1.1 2009/12/23 22:41:36 benoit Exp $
+--- scripts/version.sh.orig	Sun Sep 20 12:06:00 2009
++++ scripts/version.sh	Mon Dec 21 13:59:18 2009
+@@ -9,6 +9,6 @@
+     test "$svn_rev" != "exported" && echo "r$svn_rev"
+ }
+ 
+-version="$(svn_version || date -u +"%Y-%m-%d")"
++version=${V}
+ test -n "$version" && echo "$version" || echo "unknown"
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/11/14 22:09:46 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2009/12/23 22:41:39 benoit Exp $
 @bin bin/neverball
 @bin bin/neverputt
 share/doc/neverball/
@@ -13,3 +13,5 @@ share/locale/fi/LC_MESSAGES/neverball.mo
 share/locale/fr/LC_MESSAGES/neverball.mo
 share/locale/lv/LC_MESSAGES/neverball.mo
 share/locale/nn/LC_MESSAGES/neverball.mo
+share/locale/pt_BR/LC_MESSAGES/neverball.mo
+share/locale/zh_CN/LC_MESSAGES/neverball.mo
