@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.22 2009/12/15 21:05:33 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.23 2009/12/23 11:14:02 benoit Exp $
 %%SHARED%%
 @bin bin/gdm-control
 @bin bin/gnome-panel-control
+@bin bin/obprop
 @bin bin/openbox
 bin/openbox-gnome-session
 bin/openbox-kde-session
@@ -32,6 +33,7 @@ lib/pkgconfig/obrender-3.0.pc
 @man man/man1/openbox-kde-session.1
 @man man/man1/openbox-session.1
 @man man/man1/openbox.1
+share/applications/openbox.desktop
 share/examples/openbox/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/openbox/
@@ -162,3 +164,5 @@ share/xsessions/
 share/xsessions/openbox-gnome.desktop
 share/xsessions/openbox-kde.desktop
 share/xsessions/openbox.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

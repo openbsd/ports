@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2009/12/15 21:05:27 benoit Exp $
+# $OpenBSD: Makefile,v 1.50 2009/12/23 11:14:01 benoit Exp $
 
 COMMENT =	small, fast & usable window manager
 
-DISTNAME =	openbox-3.4.8
-SHARED_LIBS +=	obparser	9.0 # .21.4
-SHARED_LIBS +=	obrender	9.0 # .21.4
+DISTNAME =	openbox-3.4.9
+SHARED_LIBS +=	obparser	9.1 # .21.5
+SHARED_LIBS +=	obrender	9.1 # .21.5
 CATEGORIES =	x11
 
 HOMEPAGE =	http://icculus.org/openbox/
@@ -27,7 +27,8 @@ MASTER_SITES =	http://offload1.icculus.org/openbox/releases/
 MODULES =	devel/gettext \
 		lang/python
 
-RUN_DEPENDS =	::devel/py-xdg
+RUN_DEPENDS =	::devel/py-xdg \
+		::devel/desktop-file-utils
 LIB_DEPENDS +=	pango-1.0,pangoxft-1.0,pangoft2-1.0::devel/pango \
 		xml2.>=6::textproc/libxml \
 		startup-notification-1.>=1::devel/startup-notification
