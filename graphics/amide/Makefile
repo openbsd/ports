@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2009/12/23 12:01:07 benoit Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
-DISTNAME =	amide-0.9.1
-PKGNAME =	${DISTNAME}p1
+DISTNAME =	amide-0.9.2
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://amide.sourceforge.net/
@@ -25,7 +24,9 @@ WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread ssl stdc++ util xml2 z
 WANTLIB += avahi-client avahi-common avahi-glib
 WANTLIB += pthread-stubs xcb
-
+WANTLIB += a52 faac faad mp3lame ogg oil-0.3 schroedinger-1.0
+WANTLIB += theora vorbis vorbisenc x264
+                
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amide/}
 
 EXTRACT_SUFX =	.tgz
@@ -40,7 +41,8 @@ RUN_DEPENDS =	::devel/desktop-file-utils \
 LIB_DEPENDS =   gsl.>=7,gslcblas:gsl->=1.6:devel/gsl \
 		gnomecanvas-2.>=1400::x11/gnome/libgnomecanvas \
 		gnomevfs-2.>=2400::x11/gnome/vfs2 \
-		mdc.>=2::graphics/xmedcon
+		mdc.>=2::graphics/xmedcon \
+		avcodec.>=13.1,avformat.>=12,avutil.>=6,swscale.>=1:ffmpeg->=20080620p12:graphics/ffmpeg
 
 USE_X11 =	Yes
 USE_LIBTOOL =	Yes
@@ -55,7 +57,8 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-scrollkeeper \
 			--disable-xmedcontest \
 			--disable-libfame \
-			--disable-libdcmdata
+			--disable-libdcmdata \
+			--enable-ffmpeg
 
 NO_REGRESS =	Yes
 

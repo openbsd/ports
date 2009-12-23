@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ui_common_c,v 1.1 2009/12/23 12:01:10 benoit Exp $
+--- src/ui_common.c.orig	Fri Dec 18 11:52:11 2009
++++ src/ui_common.c	Fri Dec 18 11:52:24 2009
+@@ -46,7 +46,7 @@
+ #include <medcon.h>
+ #endif
+ #ifdef AMIDE_FFMPEG_SUPPORT
+-#include <ffmpeg/libavcodec/avcodec.h>
++#include <libavcodec/avcodec.h>
+ #endif
+ #ifdef AMIDE_LIBFAME_SUPPORT
+ #include <fame_version.h>
