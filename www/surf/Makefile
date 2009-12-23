@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/12/17 21:06:20 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/23 11:42:09 pirofti Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
 DISTNAME =	surf-0.3
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
 
@@ -17,6 +17,7 @@ MASTER_SITES =		http://dl.suckless.org/surf/
 MODULES =	devel/gettext
 
 LIB_DEPENDS =	webkit-1.0::www/webkit
+RUN_DEPENDS =	::x11/dmenu
 
 WANTLIB =	c X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender expat fontconfig \
