@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_platform_CXWindowsEventQueueBuffer_cpp,v 1.1 2009/09/03 18:05:36 pvalchev Exp $
---- lib/platform/CXWindowsEventQueueBuffer.cpp.orig	Sat Apr 23 20:02:16 2005
-+++ lib/platform/CXWindowsEventQueueBuffer.cpp	Wed Sep  2 14:18:24 2009
+$OpenBSD: patch-lib_platform_CXWindowsEventQueueBuffer_cpp,v 1.2 2009/12/23 09:08:44 sturm Exp $
+--- lib/platform/CXWindowsEventQueueBuffer.cpp.orig	Sun Apr 24 05:02:16 2005
++++ lib/platform/CXWindowsEventQueueBuffer.cpp	Mon Dec 21 22:26:21 2009
 @@ -84,6 +84,8 @@ CXWindowsEventQueueBuffer::waitForEvent(double dtimeou
  	pfds[0].events = POLLIN;
  	int timeout    = (dtimeout < 0.0) ? -1 :
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_platform_CXWindowsEventQueueBuffer_cpp,v 1.1 2009/09/03 18:0
  #else
  	struct timeval timeout;
  	struct timeval* timeoutPtr;
-@@ -102,19 +104,31 @@ CXWindowsEventQueueBuffer::waitForEvent(double dtimeou
+@@ -102,19 +104,43 @@ CXWindowsEventQueueBuffer::waitForEvent(double dtimeou
  	FD_ZERO(&rfds);
  	FD_SET(ConnectionNumber(m_display), &rfds);
  #endif
@@ -30,25 +30,37 @@ $OpenBSD: patch-lib_platform_CXWindowsEventQueueBuffer_cpp,v 1.1 2009/09/03 18:0
 -	// wait for message from X server or for timeout.  also check
 -	// if the thread has been cancelled.  poll() should return -1
 -	// with EINTR when the thread is cancelled.
-+	while( remaining > 0 && QLength(m_display)==0 && retval==0){
++	if (timeout == -1) {
  #if HAVE_POLL
 -	poll(pfds, 1, timeout);
-+	retval = poll(pfds, 1, TIMEOUT_DELAY); //16ms = 60hz, but we make it > to play nicely with the cpu
++		poll(pfds, 1, timeout);
  #else
 -	select(ConnectionNumber(m_display) + 1,
-+	retval = select(ConnectionNumber(m_display) + 1,
++		select(ConnectionNumber(m_display) + 1,
++				SELECT_TYPE_ARG234 &rfds,
++				SELECT_TYPE_ARG234 NULL,
++				SELECT_TYPE_ARG234 NULL,
++				SELECT_TYPE_ARG5   timeoutPtr);
++#endif
++	} else {
++		while( remaining > 0 && QLength(m_display)==0 && retval==0){
++#if HAVE_POLL
++			retval = poll(pfds, 1, TIMEOUT_DELAY); //16ms = 60hz, but we make it > to play nicely with the cpu
++#else
++			retval = select(ConnectionNumber(m_display) + 1,
  						SELECT_TYPE_ARG234 &rfds,
  						SELECT_TYPE_ARG234 NULL,
  						SELECT_TYPE_ARG234 NULL,
 -						SELECT_TYPE_ARG5   timeoutPtr);
 +						SELECT_TYPE_ARG5   TIMEOUT_DELAY);
  #endif
-+	    remaining-=TIMEOUT_DELAY;
++			remaining-=TIMEOUT_DELAY;
++		}
 +	}
  
  	{
  		// we're no longer waiting for events
-@@ -179,7 +193,7 @@ bool
+@@ -179,7 +205,7 @@ bool
  CXWindowsEventQueueBuffer::isEmpty() const
  {
  	CLock lock(&m_mutex);

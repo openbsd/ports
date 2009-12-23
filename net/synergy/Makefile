@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/09/03 18:05:35 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2009/12/23 09:08:44 sturm Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
 DISTNAME=		synergy-1.3.1
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		net
 
 HOMEPAGE=		http://synergy2.sourceforge.net/
