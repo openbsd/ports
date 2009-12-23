@@ -1,7 +1,7 @@
-$OpenBSD: patch-sample_urlview,v 1.1.1.1 2000/08/13 00:06:21 naddy Exp $
---- sample.urlview.orig	Fri Aug 11 15:48:27 2000
-+++ sample.urlview	Fri Aug 11 15:53:46 2000
-@@ -22,7 +22,7 @@ REGEXP (((http|https|ftp|gopher)|mailto)
+$OpenBSD: patch-sample_urlview,v 1.2 2009/12/23 22:04:18 jasper Exp $
+--- sample.urlview.orig	Tue Jul  4 12:14:30 2000
++++ sample.urlview	Wed Dec 23 22:06:56 2009
+@@ -22,7 +22,7 @@ REGEXP (((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|
  # Command to invoke for selected URL.  Use lynx, netscape, or url_handler.sh
  # shell script.
  

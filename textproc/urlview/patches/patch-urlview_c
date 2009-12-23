@@ -1,4 +1,4 @@
-$OpenBSD: patch-urlview_c,v 1.2 2006/01/29 14:46:14 sturm Exp $
+$OpenBSD: patch-urlview_c,v 1.3 2009/12/23 22:04:18 jasper Exp $
 --- urlview.c.orig	Tue Jul  4 12:14:30 2000
 +++ urlview.c	Sun Jan 29 15:41:28 2006
 @@ -46,9 +46,11 @@
@@ -10,7 +10,7 @@ $OpenBSD: patch-urlview_c,v 1.2 2006/01/29 14:46:14 sturm Exp $
  #define DEFAULT_REGEXP "(((https?|ftp|gopher)://|(mailto|file|news):)[^' \t<>\"]+|(www|web|w3)\\.[-a-z0-9.]+)[^' \t.,;<>\"\\):]"
  #define DEFAULT_COMMAND "url_handler.sh %s"
 -#define SYSTEM_INITFILE "/etc/urlview.conf"
-+#define SYSTEM_INITFILE "%%SYSCONFDIR%%/urlview.conf"
++#define SYSTEM_INITFILE "${SYSCONFDIR}/urlview.conf"
  
  #define OFFSET 2
  #define PAGELEN (LINES - 1 - OFFSET)
