@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2009/07/24 14:37:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2009/12/23 12:11:29 benoit Exp $
 
 COMMENT =	create, alter and inspect Matroska files
 
-DISTNAME =	mkvtoolnix-2.9.5
-PKGNAME =	${DISTNAME}p0
+DISTNAME =	mkvtoolnix-3.0.0
 CATEGORIES =	multimedia x11
 
 HOMEPAGE =	http://www.bunkus.org/videotools/mkvtoolnix/
@@ -23,6 +22,7 @@ MASTER_SITES =	${HOMEPAGE}/sources/
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	converters/libiconv
+		
 LIB_DEPENDS =	FLAC.>=7::audio/flac \
 		bz2.>=10::archivers/bzip2 \
 		lzo2::archivers/lzo2 \
@@ -37,6 +37,7 @@ USE_GMAKE =	Yes
 USE_X11 =	Yes
 
 CONFIGURE_STYLE = gnu
+
 CONFIGURE_ARGS = --enable-lzo \
 		--enable-bz2 \
 		--disable-qt \
@@ -44,7 +45,7 @@ CONFIGURE_ARGS = --enable-lzo \
 		--with-boost-regex=boost_regex-mt
 CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib \
-		-lm -lstdc++ -pthread" \
+		-lm -lstdc++ -pthread -liconv" \
 		ac_cv_has_nl_langinfo=no
 
 FLAVORS =	no_x11
