@@ -1,3 +1,15 @@
-Source-highlight is a simple program that, given a source C/C++,
-Prolog, Perl, PHP3, Python, Ruby or Java file, produces an html source
-with syntax highlighting. 
+GNU Source-highlight, given a source file, produces a document with
+syntax highlighting. The colors and the styles can be specified (bold,
+italics, underline) by means of a configuration file, and some other
+options can be specified at the command line.
+
+The program already recognizes many programming languages (e.g., C++,
+Java, Perl, etc.) and file formats (e.g., log files, ChangeLog, etc.),
+and some output formats (e.g., HTML, ANSI color escape sequences, LaTeX,
+etc.). Since version 2.0, it allows you to specify your own input source
+language via a simple syntax described later in this manual (Language
+Definitions). Since version 2.1, it allows you to specify your own
+output format language via a simple syntax described later in this
+manual (Output Language Definitions). Since version 2.2, it is able to
+generate cross references (e.g., to variable names, field names, etc.)
+by relying on the program ctags.

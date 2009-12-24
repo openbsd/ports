@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2009/12/24 09:28:43 jasper Exp $
+@lib lib/libsource-highlight.so.${LIBsource-highlight_VERSION}
