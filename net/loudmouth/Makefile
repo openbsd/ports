@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/01/19 10:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2009/12/24 10:46:17 jasper Exp $
 
 COMMENT=		lightweight Jabber client library
 
-DISTNAME=       	loudmouth-1.4.3
+V=			1.4.3
+DISTNAME=       	loudmouth-$V
 PKGNAME=		${DISTNAME}p2
 SHARED_LIBS +=	loudmouth-1          3.0      # .1.0
 CATEGORIES=		net devel
@@ -19,7 +20,7 @@ WANTLIB=		crypto pcre ssl
 
 MODULES=		devel/gettext
 
-MASTER_SITES=   	http://ftp.imendio.com/pub/imendio/loudmouth/src/
+MASTER_SITES=   	${MASTER_SITE_GNOME:=sources/loudmouth/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=   	.tar.bz2
 
 LIB_DEPENDS=		glib-2.0::devel/glib2 \
