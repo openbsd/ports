@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1 2007/10/26 20:28:51 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.2 2009/12/24 21:43:32 jakemsr Exp $
 --- Makefile.orig	Sun Sep 17 15:18:20 1995
 +++ Makefile	Fri Oct 26 22:12:40 2007
 @@ -25,10 +25,10 @@ DACIO_ARCH = dacio-linux.c
@@ -11,7 +11,7 @@ $OpenBSD: patch-Makefile,v 1.1 2007/10/26 20:28:51 ajacoutot Exp $
 +CFLAGS_HIOPT_ = $(CFLAGS) $(CFLAGS_HIOPT)
  LDFLAGS	= $(LDFLAGS_OS) $(LDFLAGS_EXT)
 -LIBS	= $(LIBS_EXT) $(LIBS_OS)
-+LIBS	= $(LIBS_EXT) $(LIBS_OS) -lossaudio
++LIBS	= $(LIBS_EXT) $(LIBS_OS) -lsndio
  
  PROG	= nspmod
  all:	$(PROG)
