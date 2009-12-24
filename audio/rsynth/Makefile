@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.25 2009/12/24 21:45:29 jakemsr Exp $
 
 COMMENT=	speech synthesizer
 DISTNAME=	rsynth-2.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
@@ -9,7 +10,7 @@ PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
-WANTLIB=		c m ossaudio
+WANTLIB=		c m sndio
 
 FAKE_FLAGS=		PREFIX=${WRKINST}${PREFIX}
 

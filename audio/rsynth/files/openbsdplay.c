@@ -10,18 +10,15 @@
 #include <useconfig.h>
 #include <stdio.h>
 #include <math.h>
-#include <errno.h>
 #include <ctype.h>
 
-#include <fcntl.h>
 #include <sys/file.h>
 #include <sys/stat.h>
 #include <sys/param.h>
 #include <sys/signal.h>
 
-#include <sys/ioctl.h>
+#include <sndio.h>
 
-#include <soundcard.h>
 #include "proto.h"
 #include "getargs.h"
 #include "hplay.h"
@@ -31,9 +28,8 @@ long samp_rate = SAMP_RATE;
 
 /* Audio Parameters */
 
-static int dev_fd = -1;
- /* file descriptor for audio device */
-char *dev_file = "/dev/audio";
+static struct sio_hdl *hdl;
+static struct sio_par par;
 
 static int linear_fd = -1;
 
@@ -44,10 +40,10 @@ char *prog = "hplay";
 static int
 audio_open(void)
 {
- dev_fd = open(dev_file, O_WRONLY | O_NDELAY);
- if (dev_fd < 0)
+ hdl = sio_open(NULL, SIO_PLAY, 0);
+ if (hdl == NULL)
   {
-   perror(dev_file);
+   fprintf(stderr, "sio_open failed\n");
    return 0;
   }
  return 1;
@@ -69,16 +65,38 @@ audio_init(int argc, char *argv[])
  if (help_only)
   return argc;
 
- if (use_audio)
-  audio_open();
-
  if (rate_set)
   samp_rate = rate_set;
 
- if (dev_fd > 0)
+ if (!use_audio)
+  return argc;
+
+ audio_open();
+
+ sio_initpar(&par);
+ par.bits = 16;
+ par.sig = 1;
+ par.rate = samp_rate;
+ par.pchan = 1;
+
+ if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par))
   {
-   ioctl(dev_fd, SNDCTL_DSP_SPEED, &samp_rate);
-   printf("Actual sound rate: %ld\n", samp_rate);
+   fprintf(stderr, "error setting sndio parameters\n");
+   hdl = NULL;
+  }
+ else
+  {
+   if (par.bits != 16 || par.sig != 1 || par.pchan != 1 || par.rate != samp_rate)
+   {
+    fprintf(stderr, "returned incorrect sndio parameters\n");
+    hdl = NULL;
+   }
+  }
+
+ if (hdl && !sio_start(hdl))
+  {
+   fprintf(stderr, "error starting sndio\n");
+   hdl = NULL;
   }
 
  return argc;
@@ -87,14 +105,12 @@ audio_init(int argc, char *argv[])
 void
 audio_term()
 {
- int dummy;
 
  /* Close audio system  */
- if (dev_fd >= 0)
+ if (hdl)
   {
-   ioctl(dev_fd, SNDCTL_DSP_SYNC, &dummy);
-   close(dev_fd);
-   dev_fd = -1;
+   sio_close(hdl);
+   hdl = NULL;
   }
 
  /* Finish linear file */
@@ -111,30 +127,19 @@ audio_play(int n, short *data)
 {
  if (n > 0)
   {
-   unsigned char *converted = (unsigned char *) malloc(n);
-   int i;
-
-   if (converted == NULL)
-    {
-     fprintf(stderr, "Could not allocate memory for conversion\n");
-     exit(3);
-    }
-
-   for (i = 0; i < n; i++)
-    converted[i] = (data[i] - 32768) / 256;
+   unsigned size = n * sizeof(short);
 
    if (linear_fd >= 0)
     {
-     if (write(linear_fd, converted, n) != n)
+     if (write(linear_fd, data, size) != size)
       perror("write");
     }
 
-   if (dev_fd >= 0)
+   if (hdl)
     {
-     if (write(dev_fd, converted, n) != n)
-      perror("write");
+     if (sio_write(hdl, data, size) != size)
+      fprintf(stderr, "sio_write: short write");
     }
 
-   free(converted);
   }
 }

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/12/31 09:44:45 espie Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2009/12/24 21:45:29 jakemsr Exp $
 --- Makefile.in.orig	Tue Nov  8 14:30:52 1994
 +++ Makefile.in	Mon Dec 31 10:31:55 2001
 @@ -5,8 +5,9 @@ SRCDIR       = @srcdir@
@@ -8,7 +8,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2001/12/31 09:44:45 espie Exp $
 -LIB_DIR      = $(PREFIX)/lib/dict
 -LDLIBS       = @LIBS@
 +LIB_DIR      = $(PREFIX)/share/dict
-+LDLIBS       = @LIBS@ -lossaudio
++LDLIBS       = @LIBS@ -lsndio
 +LDFLAGS      = @LDFLAGS@
  XLIBS        = @XLIBS@
  CFLAGS       = @CFLAGS@
