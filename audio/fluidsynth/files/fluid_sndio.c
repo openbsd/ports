@@ -123,13 +123,8 @@ new_fluid_sndio_audio_driver(fluid_settings_t* settings, fluid_synth_t* synth)
 
   if (fluid_settings_str_equal(settings, "audio.sample-format", "16bits")) {
     dev->par.bits = 16;
-#ifdef WORDS_BIGENDIAN
-    dev->par.le = 0;
-#else
-    dev->par.le = 1;
-#endif
+    dev->par.le = SIO_LE_NATIVE;
     dev->read = fluid_synth_write_s16;
-
   } else {
     FLUID_LOG(FLUID_ERR, "Unknown sample format");
     goto error_recovery;
@@ -231,12 +226,7 @@ new_fluid_sndio_audio_driver2(fluid_settings_t* settings, fluid_audio_func_t fun
   dev->par.round = period_size;
 
   dev->par.bits = 16;
-#ifdef WORDS_BIGENDIAN
-  dev->par.le = 0;
-#else
-  dev->par.le = 1;
-#endif
-
+  dev->par.le = SIO_LE_NATIVE;
   dev->par.pchan = 2;
   dev->par.rate = sample_rate;
 
