@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/29 19:34:12 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/24 21:59:19 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -8,7 +8,7 @@ COMMENT-utils=	mapserver utilities
 COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 
-V =		5.4.2
+V =		5.6.0
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
@@ -31,7 +31,6 @@ MASTER_SITES=	http://download.osgeo.org/mapserver/
 BUILD_DEPENDS=	:php5-core-*:www/php5/core
 
 LIB_DEPENDS=	proj::devel/proj \
-		agg,aggfontfreetype::graphics/agg \
 		gdal::geo/gdal \
 		geos_c::geo/geos \
 		geotiff::devel/geotiff \
@@ -40,7 +39,7 @@ LIB_DEPENDS=	proj::devel/proj \
 RUN_DEPENDS-php=	:php5-core-*:www/php5/core
 
 WANTLIB=	crypto curl expat freetype gif iconv idn jasper jpeg \
-		m png pq ssl tiff xml2 z
+		com_err readline termcap m png pq ssl tiff xml2 z
 
 WANTLIB-main=	${WANTLIB} c stdc++
 WANTLIB-utils=	${WANTLIB} c stdc++
@@ -48,7 +47,7 @@ WANTLIB-utils=	${WANTLIB} c stdc++
 USE_GMAKE=	yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-proj=${LOCALBASE} \
-		--with-agg=${LOCALBASE} \
+		--with-png=${LOCALBASE} \
 		--without-pdf \
 		--with-tiff=${LOCALBASE} \
 		--with-freetype=${X11BASE}/bin \
@@ -67,6 +66,8 @@ CONFIGURE_ARGS=	--with-proj=${LOCALBASE} \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAKE_ENV=	CFLAGS+=-fPIC
 
 UTILS=	shp2img shp2pdf legend shptree shptreevis shptreetst scalebar \
 	sortshp tile4ms msencrypt mapserver-config

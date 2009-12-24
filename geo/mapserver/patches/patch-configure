@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2009/12/24 21:59:19 landry Exp $
+--- configure.orig	Fri Nov 27 22:16:01 2009
++++ configure	Wed Dec 23 17:37:23 2009
+@@ -9784,7 +9784,7 @@ fi
+ 
+ RGBA_PNG_ENABLED=$RGBA_PNG_ENABLED
+ 
+-PNG_INC=$PNG_INC
++PNG_INC=-I$PNG_DIR/include/libpng
+ 
+ PNG_LIB=$PNG_LIB
+ 

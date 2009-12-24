@@ -1,0 +1,12 @@
+$OpenBSD: patch-mapscript_php3_Makefile_in,v 1.1 2009/12/24 21:59:19 landry Exp $
+--- mapscript/php3/Makefile.in.orig	Wed Dec 23 21:22:37 2009
++++ mapscript/php3/Makefile.in	Wed Dec 23 21:22:45 2009
+@@ -85,7 +85,7 @@ PHPPROJ_OBJS = php_mapscript_util.o php_proj.o $(PHP_R
+ 
+ 
+ php_mapscript.so: $(PHPMS_OBJS) ../../libmapserver.a
+-	$(LD) -o $@ $(PHPMS_OBJS) $(MS_LIBS)
++	$(LD) -fPIC -o $@ $(PHPMS_OBJS) $(MS_LIBS)
+ 
+ php_proj.so:  $(PHPPROJ_OBJS)
+ 	$(LD) -o $@ $(PHPPROJ_OBJS) $(MS_LIBS)
