@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.10 2009/12/17 19:45:57 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.11 2009/12/25 22:43:50 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -129,6 +129,7 @@ my $stem_extensions = {
 	'gstreamer-mad' => 'gstreamer-plugins-ugly',
 	'gstreamer-mpeg2' => 'gstreamer-plugins-ugly',
 	'gstreamer-dvdread' => 'gstreamer-plugins-ugly',
+	'lzma' => 'xz',
 };
 
 # ->is_base_system($handle, $state):
