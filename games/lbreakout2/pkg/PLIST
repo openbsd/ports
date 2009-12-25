@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/12/05 12:53:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2009/12/25 11:05:25 benoit Exp $
 @mode g+s
 @group games
-bin/lbreakout2
+@bin bin/lbreakout2
 @mode
 @group
-bin/lbreakout2server
+@bin bin/lbreakout2server
+share/applications/lbreakout2.desktop
 share/doc/lbreakout2/
 share/doc/lbreakout2/b0.jpg
 share/doc/lbreakout2/b1.jpg
@@ -40,6 +41,8 @@ share/doc/lbreakout2/x6.jpg
 share/doc/lbreakout2/x7.jpg
 share/doc/lbreakout2/x8.jpg
 share/doc/lbreakout2/x9.jpg
+share/icons/
+share/icons/lbreakout48.gif
 share/lbreakout2/
 share/lbreakout2/gfx/
 share/lbreakout2/gfx/AbsoluteB/
@@ -169,6 +172,7 @@ share/lbreakout2/lbreakout2.hscr
 @mode
 @group
 share/lbreakout2/levels/
+share/lbreakout2/levels/1010011010
 share/lbreakout2/levels/Abc
 share/lbreakout2/levels/Afl
 share/lbreakout2/levels/Alex
@@ -180,21 +184,28 @@ share/lbreakout2/levels/BeOS-4ever
 share/lbreakout2/levels/Bertrand
 share/lbreakout2/levels/BigBang
 share/lbreakout2/levels/Biolab428
+share/lbreakout2/levels/Blues
 share/lbreakout2/levels/Bombs
 share/lbreakout2/levels/CalendarFun
 share/lbreakout2/levels/Celine
 share/lbreakout2/levels/Chaos
+share/lbreakout2/levels/Choices
+share/lbreakout2/levels/Circle
 share/lbreakout2/levels/Classique
 share/lbreakout2/levels/Color
 share/lbreakout2/levels/Composers
 share/lbreakout2/levels/Crossing
+share/lbreakout2/levels/D2K
+share/lbreakout2/levels/Daves
 share/lbreakout2/levels/Demons
 share/lbreakout2/levels/Family
+share/lbreakout2/levels/Fantaisie
 share/lbreakout2/levels/FatalDoomsday
 share/lbreakout2/levels/FatalDoomsday2
 share/lbreakout2/levels/Flower
 share/lbreakout2/levels/Fly
 share/lbreakout2/levels/Freek
+share/lbreakout2/levels/FunCity
 share/lbreakout2/levels/Gatinha
 share/lbreakout2/levels/GreenWall
 share/lbreakout2/levels/GreenWall2
@@ -211,6 +222,7 @@ share/lbreakout2/levels/Invisible
 share/lbreakout2/levels/IoriYagami
 share/lbreakout2/levels/Iris
 share/lbreakout2/levels/IrrenhausAh
+share/lbreakout2/levels/Izusiowe
 share/lbreakout2/levels/JediAdventure
 share/lbreakout2/levels/Kazan-1
 share/lbreakout2/levels/Kevin
@@ -228,22 +240,31 @@ share/lbreakout2/levels/NES
 share/lbreakout2/levels/N_Arenas
 share/lbreakout2/levels/N_Snapshots
 share/lbreakout2/levels/Nations
+share/lbreakout2/levels/Negundoid
+share/lbreakout2/levels/NewOERG1
 share/lbreakout2/levels/ObiWan
 share/lbreakout2/levels/OpenSource
+share/lbreakout2/levels/OurWorld
 share/lbreakout2/levels/P.I.T.A.
 share/lbreakout2/levels/Pabelo
 share/lbreakout2/levels/Patience
 share/lbreakout2/levels/Pawset
 share/lbreakout2/levels/Ph33r
+share/lbreakout2/levels/PlayAgain
+share/lbreakout2/levels/Popcorn
 share/lbreakout2/levels/R-World
 share/lbreakout2/levels/RichQuick
 share/lbreakout2/levels/Runes
+share/lbreakout2/levels/Sadistic
 share/lbreakout2/levels/Shimitar
 share/lbreakout2/levels/Silly
 share/lbreakout2/levels/SkillShot
+share/lbreakout2/levels/Smilies
 share/lbreakout2/levels/SnyMaxx
 share/lbreakout2/levels/StarWars
+share/lbreakout2/levels/Symmetry
 share/lbreakout2/levels/Symmetry-MKII
+share/lbreakout2/levels/T.C.S.
 share/lbreakout2/levels/TheEnd
 share/lbreakout2/levels/TheGauntlet
 share/lbreakout2/levels/TimeWaster
@@ -254,6 +275,7 @@ share/lbreakout2/levels/Vader
 share/lbreakout2/levels/WTF
 share/lbreakout2/levels/Weirdness
 share/lbreakout2/levels/Wolvie
+share/lbreakout2/levels/WonderWalls
 share/lbreakout2/levels/X
 share/lbreakout2/levels/Yexter
 share/lbreakout2/levels/Yoda
@@ -299,3 +321,6 @@ share/lbreakout2/sounds/weak_ball.wav
 share/lbreakout2/sounds/wontgiveup.wav
 share/locale/de/LC_MESSAGES/lbreakout2.mo
 share/locale/fr/LC_MESSAGES/lbreakout2.mo
+share/locale/tr/LC_MESSAGES/lbreakout2.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
