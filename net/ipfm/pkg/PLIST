@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/09 13:23:33 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/26 08:28:11 benoit Exp $
 @man man/man5/ipfm.conf.5
 @man man/man8/ipfm.8
-sbin/ipfm
+@bin sbin/ipfm
 share/doc/ipfm/
 share/doc/ipfm/HISTORY
 share/doc/ipfm/LICENSE

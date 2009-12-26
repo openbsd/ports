@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.10 2007/09/15 22:36:54 merdely Exp $
+# $OpenBSD: Makefile,v 1.11 2009/12/26 08:28:08 benoit Exp $
 
-COMMENT=	IP bandwidth analysis tool
+COMMENT =	IP bandwidth analysis tool
 
-DISTNAME=	ipfm-0.11.4
-CATEGORIES=     net
+DISTNAME =	ipfm-0.11.5
+CATEGORIES =	net
 
-HOMEPAGE=	http://robert.cheramy.net/ipfm/
+HOMEPAGE =	http://robert.cheramy.net/ipfm/
 
-# GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c pcap
+# GPLv2+
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	${HOMEPAGE}archive/
-EXTRACT_SUFX=	.tgz
+WANTLIB =		c pcap
 
-CONFIGURE_STYLE=gnu
+MASTER_SITES =		${HOMEPAGE}archive/
+EXTRACT_SUFX =		.tgz
 
-NO_REGRESS=	Yes
+CONFIGURE_STYLE =	gnu
+
+NO_REGRESS =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/source/ipfm ${PREFIX}/sbin
