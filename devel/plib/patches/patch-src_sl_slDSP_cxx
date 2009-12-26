@@ -1,0 +1,151 @@
+$OpenBSD: patch-src_sl_slDSP_cxx,v 1.1 2009/12/26 13:21:21 jakemsr Exp $
+--- src/sl/slDSP.cxx.orig	Mon Mar 10 19:06:24 2008
++++ src/sl/slDSP.cxx	Wed Dec 16 13:17:24 2009
+@@ -413,7 +413,7 @@ void slDSP::stop ()
+ /* NetBSD/OpenBSD 2.3 this should be very close to SUN Audio    */
+ /* ------------------------------------------------------------ */
+ 
+-#elif (defined(UL_BSD) && !defined(__FreeBSD__)) || defined(UL_SOLARIS)
++#elif (defined(UL_BSD) && !defined(SL_USING_SNDIO) && !defined(__FreeBSD__)) || defined(UL_SOLARIS)
+ void slDSP::open ( const char *device, int _rate, int _stereo, int _bps )
+ {
+ 
+@@ -1083,3 +1083,138 @@ float slDSP::secondsUsed ()
+ #endif
+ 
+ 
++#ifdef SL_USING_SNDIO
++
++#include <poll.h>
++
++static long long realpos, playpos;
++
++void
++movecb(void *v, int delta)
++{
++	realpos += delta;
++}
++
++void
++slDSP::open(const char *device, int _rate, int _stereo, int _bps )
++{
++	error = SL_FALSE;
++
++	if (!strncmp(device, "default", FILENAME_MAX))
++		hdl = sio_open(NULL, SIO_PLAY, 0);
++	else
++		hdl = sio_open(device, SIO_PLAY, 0);
++	if (hdl == NULL) {
++		error = SL_TRUE;
++		fprintf(stderr, "slDSP: open\n");
++		return;
++	}
++
++	sio_initpar(&par);
++	par.pchan = _stereo ? 2 : 1;
++	par.bits = _bps;
++	par.rate = _rate;
++	par.appbufsz = 4096;
++
++	realpos = playpos = 0;
++	sio_onmove(hdl, movecb, NULL);
++
++	if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par) ||
++	    !sio_start(hdl)) {
++		fprintf(stderr, "slDSP: sndio params\n");
++		error = SL_TRUE;
++		return;
++	}
++
++	bps = par.bits;
++	rate = par.rate;
++	stereo = par.pchan == 2 ? SL_TRUE : SL_FALSE;
++}
++
++void
++slDSP::close()
++{
++	if (hdl != NULL)
++		sio_close(hdl);
++	hdl = NULL;
++}
++
++int
++slDSP::getDriverBufferSize()
++{
++	if (error)
++		return 0;
++
++	return par.round * par.bps * par.pchan;
++}
++
++void
++slDSP::getBufferInfo()
++{
++	struct pollfd pfd;
++	nfds_t nfd;
++
++	if (error)
++		return;
++
++	/* updates counters */
++	nfd = sio_pollfd(hdl, &pfd, POLLOUT);
++	poll(&pfd, nfd, 0);
++	sio_revents(hdl, &pfd);
++}
++
++void
++slDSP::write(void *buffer, size_t length)
++{
++	int ret, todo, pos;
++
++	if (error || (int)length <= 0)
++		return;
++
++	pos = 0;
++	todo = length;
++	while (todo > 0) {
++		ret = sio_write(hdl, (char *)buffer + pos, todo);
++		pos += ret;
++		todo -= ret;
++	}
++	playpos += length / par.bps / par.pchan;
++}
++
++float
++slDSP::secondsRemaining()
++{
++	if (error)
++		return 0.0f;
++
++	getBufferInfo();
++
++	/* wtf? tuxkart won't play sounds if less ??? */
++	return 0.1f;
++	return((float)(par.appbufsz - (playpos - realpos)) / par.rate);
++}
++
++float
++slDSP::secondsUsed()
++{
++	if (error)
++		return 0.0f ;
++
++	getBufferInfo();
++
++	if (realpos > playpos)
++		return 0.0f;
++
++	return((float)(playpos - realpos) / par.rate);
++}
++
++void
++slDSP::sync()
++{ 
++}
++
++void slDSP::stop()
++{ 
++}
++
++#endif
