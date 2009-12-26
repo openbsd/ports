@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/09/07 07:54:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2009/12/26 11:02:32 benoit Exp $
 @mode 2555
 @group games
 @bin bin/rocksndiamonds
@@ -10,6 +10,7 @@ share/rocksndiamonds/
 share/rocksndiamonds/graphics/
 share/rocksndiamonds/graphics/gfx_classic/
 share/rocksndiamonds/graphics/gfx_classic/RocksBusy.pcx
+share/rocksndiamonds/graphics/gfx_classic/RocksCE.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksDC.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksDC2.pcx
 share/rocksndiamonds/graphics/gfx_classic/RocksDoor.pcx
