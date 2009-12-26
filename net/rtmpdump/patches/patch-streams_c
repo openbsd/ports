@@ -1,0 +1,22 @@
+$OpenBSD: patch-streams_c,v 1.1 2009/12/26 08:49:10 benoit Exp $
+--- streams.c~	Mon Dec 21 13:39:51 2009
++++ streams.c	Fri Dec 25 17:04:28 2009
+@@ -22,6 +22,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
++#include <pthread.h>
+ 
+ #include <signal.h>
+ #include <getopt.h>
+@@ -44,6 +45,10 @@
+ #define RD_INCOMPLETE		2
+ 
+ #define PACKET_SIZE 1024*1024
++
++#ifndef MSG_NOSIGNAL
++#define MSG_NOSIGNAL           0
++#endif
+ 
+ #ifdef WIN32
+ #define InitSockets()	{\

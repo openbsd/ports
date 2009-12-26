@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2009/11/19 01:06:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2009/12/26 08:49:08 benoit Exp $
 
 COMMENT =		dump RTMP media streams
 
-DISTNAME =		rtmpdump-1.9
-EXTRACT_SUFX =		.tgz
+DISTNAME =		rtmpdump-2.0
 PKGNAME =		${DISTNAME:S/-v/-/}
-
 CATEGORIES =		net
+
+HOMEPAGE =		http://rtmpdump.mplayerhq.hu/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	No
@@ -14,12 +14,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =No
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m stdc++ crypto
+WANTLIB =		c crypto
 
-HOMEPAGE =		http://rtmpdump.mplayerhq.hu/
-MASTER_SITES =		${HOMEPAGE}
+MASTER_SITES =		${HOMEPAGE}/download/
 
-MAKE_FLAGS +=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET =		linux
 
 NO_REGRESS =		Yes
