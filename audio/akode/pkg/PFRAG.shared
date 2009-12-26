@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2009/12/14 00:02:17 jakemsr Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2009/12/26 02:01:11 jakemsr Exp $
 @lib lib/libakode.so.${LIBakode_VERSION}
 lib/libakode_ffmpeg_decoder.so
 lib/libakode_jack_sink.so
@@ -6,5 +6,4 @@ lib/libakode_mpc_decoder.so
 lib/libakode_mpeg_decoder.so
 lib/libakode_sndio_sink.so
 lib/libakode_src_resampler.so
-lib/libakode_sun_sink.so
 lib/libakode_xiph_decoder.so

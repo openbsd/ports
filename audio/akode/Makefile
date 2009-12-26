@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2009/12/14 00:02:17 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.18 2009/12/26 02:01:11 jakemsr Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-PKGNAME=	${DISTNAME}p10
+PKGNAME=	${DISTNAME}p11
 SHARED_LIBS +=	akode                2.1      # .2.0
 
 CATEGORIES=	audio multimedia x11/kde
 
-HOMEPAGE=	http://www.kde-apps.org/content/show.php?content=30375
+HOMEPAGE=	http://www.carewolf.com/akode/
 
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 EXTRACT_SUFX=	.tar.bz2
@@ -47,7 +47,8 @@ CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib \
 			--with-jack \
 			--without-polyaudio \
-			--without-oss
+			--without-oss \
+			--without-sun
 
 post-extract:
 	mkdir -p ${WRKSRC}/akode/plugins/sndio_sink

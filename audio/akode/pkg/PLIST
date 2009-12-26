@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/12/14 00:02:17 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/12/26 02:01:11 jakemsr Exp $
 %%SHARED%%
 bin/akode-config
 @bin bin/akodeplay
@@ -42,7 +42,5 @@ lib/libakode.la
 @comment lib/libakode_sndio_sink.la
 @comment lib/libakode_src_resampler.a
 @comment lib/libakode_src_resampler.la
-@comment lib/libakode_sun_sink.a
-@comment lib/libakode_sun_sink.la
 @comment lib/libakode_xiph_decoder.a
 @comment lib/libakode_xiph_decoder.la
