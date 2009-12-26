@@ -67,6 +67,7 @@ static void movecb(void *addr, int delta)
 static int init(int rate, int channels, int format, int flags)
 {
 	int bpf;
+	int ac3 = 0;
 
 	hdl = sio_open(NULL, SIO_PLAY, 0);
 	if (hdl == NULL) {
@@ -104,6 +105,32 @@ static int init(int rate, int channels, int format, int flags)
 		par.sig = 1;
 		par.le = 0;
 		break;
+	case AF_FORMAT_U32_LE:
+		par.bits = 32;
+		par.sig = 0;
+		par.le = 1;
+		break;
+	case AF_FORMAT_U32_BE:
+		par.bits = 32;
+		par.sig = 0;
+		par.le = 0;
+		break;
+	case AF_FORMAT_S32_LE:
+		par.bits = 32;
+		par.sig = 1;
+		par.le = 1;
+		break;
+	case AF_FORMAT_S32_BE:
+		par.bits = 32;
+		par.sig = 1;
+		par.le = 0;
+		break;
+	case AF_FORMAT_AC3:
+		par.bits = 16;
+		par.sig = 1;
+		par.le = SIO_LE_NATIVE;
+		ac3 = 1;
+		break;
 	default:
 		mp_msg(MSGT_AO, MSGL_ERR, "ao2: unsupported format\n");
 		return 0;
@@ -126,6 +153,10 @@ static int init(int rate, int channels, int format, int flags)
 		format = par.sig ? 
 		    (par.le ? AF_FORMAT_S16_LE : AF_FORMAT_S16_BE) :
 		    (par.le ? AF_FORMAT_U16_LE : AF_FORMAT_U16_BE);
+	} else if (par.bits == 32 && par.bps == 4) {
+		format = par.sig ? 
+		    (par.le ? AF_FORMAT_S32_LE : AF_FORMAT_S32_BE) :
+		    (par.le ? AF_FORMAT_U32_LE : AF_FORMAT_U32_BE);
 	} else {
 		mp_msg(MSGT_AO, MSGL_ERR, "ao2: couldn't set format\n");
 		return 0;
@@ -134,7 +165,7 @@ static int init(int rate, int channels, int format, int flags)
 	bpf = par.bps * par.pchan;
 	ao_data.samplerate = par.rate;
 	ao_data.channels = par.pchan;
-	ao_data.format = format;
+	ao_data.format = ac3 ? AF_FORMAT_AC3 : format;
 	ao_data.bps = bpf * par.rate;
 	ao_data.buffersize = par.appbufsz * bpf;
 	ao_data.outburst = par.round * bpf;
