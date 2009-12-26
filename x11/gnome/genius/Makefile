@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/21 18:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2009/12/26 16:25:45 ajacoutot Exp $
+
+BROKEN=		console is never spawned - pthreads(3) bug?
 
 COMMENT=	advanced general purpose calculator
 
 GNOME_PROJECT=	genius
-GNOME_VERSION=	1.0.8
-PKGNAME=	${DISTNAME}p0
+GNOME_VERSION=	1.0.9
 
 HOMEPAGE=	http://www.jirka.org/genius.html
 
