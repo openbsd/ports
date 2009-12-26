@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/10 02:08:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2009/12/26 20:42:28 naddy Exp $
 @bin bin/wavpack
 @bin bin/wvgain
 @bin bin/wvunpack
@@ -9,3 +9,6 @@ lib/libwavpack.la
 %%SHARED%%
 lib/pkgconfig/
 lib/pkgconfig/wavpack.pc
+@man man/man1/wavpack.1
+@man man/man1/wvgain.1
+@man man/man1/wvunpack.1
