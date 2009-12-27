@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/01/26 19:47:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/12/27 18:42:05 landry Exp $
 bin/waf
 lib/python${MODPY_VERSION}/site-packages/wafadmin/
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Build.py
@@ -47,9 +47,6 @@ lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/ar.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/bison.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/bison.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/bison.pyo
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/boost.py
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/boost.pyc
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/boost.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/cc.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/cc.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/cc.pyo
@@ -86,9 +83,6 @@ lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/dmd.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/flex.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/flex.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/flex.pyo
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/g++.py
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/g++.pyc
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/g++.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/gas.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/gas.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/gas.pyo
@@ -110,15 +104,21 @@ lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/gnu_dirs.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/gob2.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/gob2.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/gob2.pyo
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/gxx.py
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/gxx.pyc
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/gxx.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/icc.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/icc.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/icc.pyo
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/icpc.py
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/icpc.pyc
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/icpc.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/intltool.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/intltool.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/intltool.pyo
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/java.py
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/java.pyc
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/java.pyo
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/javaw.py
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/javaw.pyc
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/javaw.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/kde4.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/kde4.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/kde4.pyo
@@ -155,12 +155,12 @@ lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/python.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/qt4.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/qt4.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/qt4.pyo
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/sunc++.py
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/sunc++.pyc
-lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/sunc++.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/suncc.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/suncc.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/suncc.pyo
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/suncxx.py
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/suncxx.pyc
+lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/suncxx.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/tex.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/tex.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/Tools/tex.pyo
@@ -176,6 +176,12 @@ lib/python${MODPY_VERSION}/site-packages/wafadmin/Utils.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/__init__.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/wafadmin/ansiterm.py
+lib/python${MODPY_VERSION}/site-packages/wafadmin/ansiterm.pyc
+lib/python${MODPY_VERSION}/site-packages/wafadmin/ansiterm.pyo
 lib/python${MODPY_VERSION}/site-packages/wafadmin/pproc.py
 lib/python${MODPY_VERSION}/site-packages/wafadmin/pproc.pyc
 lib/python${MODPY_VERSION}/site-packages/wafadmin/pproc.pyo
+lib/python${MODPY_VERSION}/site-packages/wafadmin/py3kfixes.py
+lib/python${MODPY_VERSION}/site-packages/wafadmin/py3kfixes.pyc
+lib/python${MODPY_VERSION}/site-packages/wafadmin/py3kfixes.pyo

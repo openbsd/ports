@@ -1,13 +1,13 @@
-$OpenBSD: patch-wscript,v 1.2 2009/01/26 19:47:12 landry Exp $
---- wscript.orig	Mon Dec 22 00:31:57 2008
-+++ wscript	Sun Jan 18 22:32:35 2009
+$OpenBSD: patch-wscript,v 1.3 2009/12/27 18:42:05 landry Exp $
+--- wscript.orig	Sat Nov 14 23:09:11 2009
++++ wscript	Sun Dec 27 19:03:36 2009
 @@ -1,4 +1,4 @@
 -#! /usr/bin/env python
 +#!${MODPY_BIN}
  # encoding: utf-8
  # Thomas Nagy, 2005, 2006, 2007, 2008
  
-@@ -318,7 +318,7 @@ def build(bld):
+@@ -313,7 +313,7 @@ def build(bld):
  		if val != True and val != "y": sys.exit(1)
  		create_waf()
  
