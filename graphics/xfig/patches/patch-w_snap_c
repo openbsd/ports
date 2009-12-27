@@ -1,7 +1,7 @@
-$OpenBSD: patch-w_snap_c,v 1.2 2009/06/09 13:19:44 jasper Exp $
---- w_snap.c.pat.orig	Tue Jun  9 15:11:25 2009
-+++ w_snap.c	Tue Jun  9 15:11:36 2009
-@@ -33,7 +33,7 @@
+$OpenBSD: patch-w_snap_c,v 1.3 2009/12/27 22:07:36 jasper Exp $
+--- w_snap.c.pat.orig	Mon Mar 30 17:52:10 2009
++++ w_snap.c	Sun Dec 27 23:07:04 2009
+@@ -32,7 +32,7 @@
  #include "u_search.h"
  #include "f_util.h"
  #include <math.h>
