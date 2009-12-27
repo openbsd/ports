@@ -1,12 +1,12 @@
-$OpenBSD: patch-GTG___init___py,v 1.2 2009/04/05 16:43:45 jasper Exp $
---- GTG/__init__.py.orig	Fri Apr  3 22:00:16 2009
-+++ GTG/__init__.py	Sat Apr  4 03:38:30 2009
-@@ -32,7 +32,7 @@ URL             = "http://gtg.fritalk.com"
- EMAIL           = "gtg@lists.launchpad.net"
- VERSION         = '0.1.1'
- LOCAL_ROOTDIR   = os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) 
--DIST_ROOTDIR    = "/usr/share/gtg"
-+DIST_ROOTDIR    = "${PREFIX}/share/gtg"
+$OpenBSD: patch-GTG___init___py,v 1.3 2009/12/27 21:52:37 jasper Exp $
+--- GTG/__init__.py.orig	Sun Dec 27 22:45:14 2009
++++ GTG/__init__.py	Sun Dec 27 22:46:09 2009
+@@ -39,7 +39,7 @@ except ImportError:
  
- # CREDITS
- AUTHORS     = ["Main developers:", \
+ LOCAL_ROOTDIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+ DIST_ROOTDIR_LOCAL = "/usr/local/share/gtg"
+-DIST_ROOTDIR = "/usr/share/gtg"
++DIST_ROOTDIR = "${PREFIX}/share/gtg"
+ 
+ #Translation setup (from pyroom)
+ GETTEXT_DOMAIN = 'gtg'
