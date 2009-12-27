@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2009/08/26 13:40:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2009/12/27 22:15:40 jasper Exp $
 
 COMMENT=	tools to convert Xfig's .fig files
 
 VERSION=	3.2.5a
 DISTNAME=	transfig.${VERSION}
-PKGNAME=	${DISTNAME:S/./-/}
+PKGNAME=	${DISTNAME:S/./-/}p0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mcj/}
 HOMEPAGE=	http://xfig.org/

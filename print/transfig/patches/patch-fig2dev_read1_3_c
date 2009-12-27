@@ -1,0 +1,57 @@
+$OpenBSD: patch-fig2dev_read1_3_c,v 1.1 2009/12/27 22:15:40 jasper Exp $
+
+Security fix for SA37577, related to CVE-2009-4227.
+transfig ".fig" File Parsing Buffer Overflow
+
+Patch from RedHat: https://bugzilla.redhat.com/show_bug.cgi?id=543905
+
+--- fig2dev/read1_3.c.pat.orig	Wed Apr  9 01:18:52 2003
++++ fig2dev/read1_3.c	Sun Dec 27 23:11:03 2009
+@@ -441,7 +441,7 @@ FILE	*fp;
+ {
+ 	F_text	*t;
+ 	int	n;
+-	char	buf[128];
++	char	buf[512];
+ 
+ 	Text_malloc(t);
+ 	t->type = T_LEFT_JUSTIFIED;
+@@ -451,21 +451,33 @@ FILE	*fp;
+ 	t->pen = 0;
+ 	t->angle = 0.0;
+ 	t->next = NULL;
+-	n = fscanf(fp," %d %lf %d %lf %lf %d %d %[^\n]", &t->font, 
++	if (!fgets(buf, sizeof(buf), fp)) {
++		put_msg("Incomplete text data");
++		free((char *) t);
++		return (NULL);
++	}
++
++	/* Note using strlen(buf) here will waste a few bytes, as the
++	   various text attributes are counted into this length too. */
++	t->cstring = (char *) calloc((unsigned)(strlen(buf)+1), sizeof(char));
++	if (t->cstring == NULL)
++		return (NULL);
++	n = sscanf(buf," %d %lf %d %lf %lf %d %d %[^\n]", &t->font, 
+ 		&t->size, &t->flags, &t->height, &t->length, 
+-		&t->base_x, &t->base_y, buf);
++		&t->base_x, &t->base_y, t->cstring);
+ 	if (n != 8) {
+ 	    put_msg("incomplete text data");
++	    free(t->cstring);
+ 	    free((char*)t);
+ 	    return(NULL);
+ 	    }
+-	t->cstring = (char *) calloc((unsigned)(strlen(buf)+1), sizeof(char));
+-	if (t->cstring == NULL) {
++
++	if (!strlen(t->cstring)) {
++	    free(t->cstring);
+ 	    put_msg(Err_mem);
+ 	    free((char*) t);
+ 	    return(NULL);
+ 	    }
+-	(void)strcpy(t->cstring, buf);
+ 	if (t->size == 0) t->size = 18;
+ 	return(t);
+ 	}
