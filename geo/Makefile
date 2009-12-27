@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/12/16 22:21:12 benoit Exp $
+# $OpenBSD: Makefile,v 1.26 2009/12/27 17:47:06 landry Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += emerillon
@@ -13,6 +13,7 @@
      SUBDIR += josm
      SUBDIR += libchamplain
      SUBDIR += mapserver
+     SUBDIR += merkaartor
      SUBDIR += openbsd-developers
      SUBDIR += osm-gps-map
      SUBDIR += osm2go
