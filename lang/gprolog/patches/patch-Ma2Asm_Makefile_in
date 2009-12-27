@@ -1,0 +1,20 @@
+$OpenBSD: patch-Ma2Asm_Makefile_in,v 1.1 2009/12/27 19:30:21 jasper Exp $
+--- Ma2Asm/Makefile.in.orig	Thu Jan  4 10:21:48 2007
++++ Ma2Asm/Makefile.in	Fri Jun 13 22:36:35 2008
+@@ -53,14 +53,14 @@ CHKMA_OBJS=chkma@OBJ_SUFFIX@ chkma_ma@OBJ_SUFFIX@ ../E
+ 
+ chkma@OBJ_SUFFIX@: chkma.c
+ 	if [ "$$FC" = "Y" ]; then FCFLAGS='-DFAST'; fi; \
+-	$(GPLC) --c-compiler "$(CC)" -C "$(CFLAGS) $$FCFLAGS" -c chkma.c
++	export PL_PATH=$(PWD)/../ ; ../TopComp/$(GPLC) --c-compiler "$(CC)" -C "$(CFLAGS) $$FCFLAGS" -c chkma.c
+ 
+ chkma_ma@ASM_SUFFIX@: chkma_ma.ma ma2asm@EXE_SUFFIX@
+ 	if [ "$$FC" != "Y" ]; then MAFLAGS='--ignore-fast'; fi; \
+ 	./ma2asm --comment $$MAFLAGS chkma_ma.ma
+ 
+ chkma_ma@OBJ_SUFFIX@: chkma_ma@ASM_SUFFIX@
+-	$(GPLC) -c chkma_ma@ASM_SUFFIX@
++	export PL_PATH=$(PWD)/../ ;../TopComp/$(GPLC) -c chkma_ma@ASM_SUFFIX@
+ 
+ chkma@EXE_SUFFIX@: $(CHKMA_OBJS)
+ 	$(CC) $(CFLAGS) @CC_EXE_NAME_OPT@chkma@EXE_SUFFIX@ $(CHKMA_OBJS)

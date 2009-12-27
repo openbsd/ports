@@ -1,0 +1,11 @@
+$OpenBSD: patch-Pl2Wam_check_boot,v 1.1 2009/12/27 19:30:21 jasper Exp $
+--- Pl2Wam/check_boot.orig	Fri Jun 13 19:14:04 2008
++++ Pl2Wam/check_boot	Fri Jun 13 19:13:43 2008
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ do_diff() {
+-    diff --ignore-space-change -I '^%' -I '^file_name(' $1 $2 || \
++    gdiff --ignore-space-change -I '^%' -I '^file_name(' $1 $2 || \
+ 	( echo "difference encountered: $1 <> $2"; exit 1 )
+ }
+ 
