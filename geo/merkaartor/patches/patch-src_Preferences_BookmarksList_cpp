@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Preferences_BookmarksList_cpp,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+Confuses g++3
+--- src/Preferences/BookmarksList.cpp.orig	Wed Dec 23 23:09:09 2009
++++ src/Preferences/BookmarksList.cpp	Wed Dec 23 23:09:28 2009
+@@ -17,7 +17,8 @@
+ 
+ Bookmark::Bookmark()
+ {
+-	Bookmark(QApplication::translate("MerkaartorPreferences","New Bookmark"), CoordBox());
++	QString q = QApplication::translate("MerkaartorPreferences","New Bookmark");
++	Bookmark(q, CoordBox());
+ }
+ 
+ Bookmark::Bookmark(QString aName, CoordBox aCoord, bool Deleted)

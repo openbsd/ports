@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Maps_DownloadOSM_cpp,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+Make sure to pick OUR zlib.h to avoid Z_VERSION_ERROR
+See http://trac.openstreetmap.org/ticket/2576
+--- src/Maps/DownloadOSM.cpp.orig	Mon Jul 20 13:12:39 2009
++++ src/Maps/DownloadOSM.cpp	Thu Dec 24 22:51:23 2009
+@@ -28,7 +28,7 @@
+ #include <QStatusBar>
+ #include <QInputDialog>
+ 
+-#include "zlib/zlib.h"
++#include <zlib.h>
+ 
+ // #define DEBUG_EVERY_CALL
+ // #define DEBUG_MAPCALL_ONLY

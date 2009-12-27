@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Maps_Coord_cpp,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+Confuses g++3
+--- src/Maps/Coord.cpp.orig	Wed Dec 23 22:41:41 2009
++++ src/Maps/Coord.cpp	Wed Dec 23 22:42:42 2009
+@@ -21,7 +21,7 @@ double angle(Coord p1)
+ 
+ void rotate(Coord & p1,double angle)
+ {
+-	Coord p1p(int(sin(angle)*p1.lon()+cos(angle)*p1.lat()),int(cos(angle)*p1.lon()-sin(angle)*p1.lat()));
++	Coord p1p = Coord(int(sin(angle) * p1.lon() + cos(angle) * p1.lat()),int(cos(angle) * p1.lon() - sin(angle) * p1.lat()));
+ 	p1=p1p;
+ }
+ 

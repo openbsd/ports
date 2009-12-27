@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+%%SHARED%%
+@bin bin/merkaartor
+lib/merkaartor/
+lib/merkaartor/plugins/
+lib/merkaartor/plugins/background/
+lib/merkaartor/plugins/styles/
+share/applications/merkaartor.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/merkaartor.png
+share/merkaartor/
+share/merkaartor/BookmarksList.xml
+share/merkaartor/Projections.xml
+share/merkaartor/TmsServersList.xml
+share/merkaartor/WmsServersList.xml
+share/merkaartor/translations/
+share/merkaartor/translations/merkaartor_ar.qm
+share/merkaartor/translations/merkaartor_cs.qm
+share/merkaartor/translations/merkaartor_de.qm
+share/merkaartor/translations/merkaartor_es.qm
+share/merkaartor/translations/merkaartor_fr.qm
+share/merkaartor/translations/merkaartor_it.qm
+share/merkaartor/translations/merkaartor_ja.qm
+share/merkaartor/translations/merkaartor_nl.qm
+share/merkaartor/translations/merkaartor_pl.qm
+share/merkaartor/translations/merkaartor_ru.qm
+share/merkaartor/translations/merkaartor_sv.qm
+share/merkaartor/world_background.osb
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

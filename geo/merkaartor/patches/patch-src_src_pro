@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_src_pro,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+Properly set translations/plugins paths
+--- src/src.pro.orig	Mon Aug  3 11:09:49 2009
++++ src/src.pro	Sat Dec 26 12:44:30 2009
+@@ -134,7 +134,7 @@ include(NameFinder/NameFinder.pri)
+     isEmpty( LIBDIR ) {
+ 		LIBDIR = $${PREFIX}/lib${LIB_SUFFIX}
+ 	}
+-	DEFINES += PLUGINS_DIR=$${LIBDIR}/merkaartor/plugins
++	DEFINES += PLUGINS_DIR=${TRUEPREFIX}/lib/merkaartor/plugins
+     target.path = $${PREFIX}/bin
+     SHARE_DIR = $${PREFIX}/share/merkaartor
+ 
+@@ -153,7 +153,7 @@ win32 {
+     }
+ }
+ 
+-DEFINES += SHARE_DIR=$${SHARE_DIR}
++DEFINES += SHARE_DIR=${TRUEPREFIX}/share/merkaartor
+ INSTALLS += target
+ 
+ win32-msvc* {
+@@ -164,7 +164,7 @@ win32-msvc* {
+ count(TRANSDIR_MERKAARTOR, 1) {
+ 	translations.path =  $${TRANSDIR_MERKAARTOR}
+ 	translations.files = $${BINTRANSLATIONS}
+-	DEFINES += TRANSDIR_MERKAARTOR=$$translations.path
++	DEFINES += TRANSDIR_MERKAARTOR=${TRUEPREFIX}/share/merkaartor/translations
+ 	INSTALLS += translations
+ }
+ 

@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_Render_NativeRenderDialog_cpp,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+Confuses g++3
+--- src/Render/NativeRenderDialog.cpp.orig	Wed Dec 23 23:13:14 2009
++++ src/Render/NativeRenderDialog.cpp	Wed Dec 23 23:16:01 2009
+@@ -108,13 +108,14 @@ void NativeRenderDialog::render()
+ 	MapView* vw = new MapView(NULL);
+ 	vw->setDocument(mw->document());
+ 
+-	CoordBox VP(Coord(
++	Coord a = Coord(
+ 		angToInt(sbMinLat->value()),
+ 		angToInt(sbMinLon->value())
+-		), Coord(
++		);
++	Coord b = Coord(
+ 		angToInt(sbMaxLat->value()),
+-		angToInt(sbMaxLon->value())
+-	));
++		angToInt(sbMaxLon->value()));
++	CoordBox VP(a,b);
+ 
+ 	Projection aProj;
+ 	QRect theR(0, 0, w, h);
+@@ -162,13 +163,14 @@ void NativeRenderDialog::render()
+ 
+ void NativeRenderDialog::calcRatio()
+ {
+-	CoordBox theB(Coord(
++	Coord a = Coord(
+ 		angToInt(sbMinLat->value()),
+ 		angToInt(sbMinLon->value())
+-		), Coord(
++		);
++	Coord b = Coord(
+ 		angToInt(sbMaxLat->value()),
+-		angToInt(sbMaxLon->value())
+-	));
++		angToInt(sbMaxLon->value()));
++	CoordBox theB(a,b);
+ 	Projection theProj;
+ 	//int w = sbPreviewWidth->value();
+ 	//int h = sbPreviewHeight->value();

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Preferences_WmsServersList_cpp,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+Confuses g++3
+--- src/Preferences/WmsServersList.cpp.orig	Wed Dec 23 23:06:22 2009
++++ src/Preferences/WmsServersList.cpp	Wed Dec 23 23:07:09 2009
+@@ -17,7 +17,8 @@
+ 
+ WmsServer::WmsServer()
+ {
+-	WmsServer(QApplication::translate("MerkaartorPreferences","New Server"), "", "", "", "", "", "");
++	QString q = QApplication::translate("MerkaartorPreferences","New Server");
++	WmsServer(q, "", "", "", "", "", "");
+ }
+ 
+ WmsServer::WmsServer(const WmsServer& other)

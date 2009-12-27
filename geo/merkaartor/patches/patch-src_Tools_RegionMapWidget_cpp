@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Tools_RegionMapWidget_cpp,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+Confuses g++3
+--- src/Tools/RegionMapWidget.cpp.orig	Wed Dec 23 23:18:09 2009
++++ src/Tools/RegionMapWidget.cpp	Wed Dec 23 23:18:43 2009
+@@ -114,7 +114,7 @@ void RegionMapWidget::mouseReleaseEvent(QMouseEvent* e
+ 		CoordBox v = CoordBox(Coord(R.y(), R.x()), Coord(R.y()+R.height(), R.x()+R.width()));
+ 		QPointF P = ev->pos();
+ 
+-        Coord Pt(int(((height()-P.y()) / height() * v.latDiff()) + v.bottomLeft().lat()), int((P.x() / width() * v.lonDiff()) + v.bottomLeft().lon()));
++        Coord Pt = Coord(int(((height()-P.y()) / height() * v.latDiff()) + v.bottomLeft().lat()), int((P.x() / width() * v.lonDiff()) + v.bottomLeft().lon()));
+ 		int x = int(((qint64)Pt.lon()) / REGION_WIDTH);
+ 		x = (x < 0) ? x-1 :x;
+ 		int y = int(((qint64)Pt.lat()) / REGION_WIDTH);

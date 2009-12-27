@@ -1,0 +1,10 @@
+$OpenBSD: patch-translations_makefile,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+--- translations/makefile.orig	Sat Dec 26 12:35:09 2009
++++ translations/makefile	Sat Dec 26 12:35:14 2009
+@@ -1,5 +1,5 @@
+ LUPDATE = lupdate
+-LRELEASE = lrelease
++LRELEASE = lrelease4
+ 
+ TEMPLATES = ../Templates/*.mat
+ TEMPLATES_PO = templates_*.po
