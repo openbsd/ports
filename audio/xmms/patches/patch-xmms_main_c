@@ -1,6 +1,6 @@
-$OpenBSD: patch-xmms_main_c,v 1.9 2008/12/26 06:34:45 jakemsr Exp $
---- xmms/main.c.orig	Sun Jul 16 06:40:04 2006
-+++ xmms/main.c	Tue Dec 23 23:47:01 2008
+$OpenBSD: patch-xmms_main_c,v 1.10 2009/12/27 00:32:56 phessler Exp $
+--- xmms/main.c.orig	Sun Jul 16 07:40:04 2006
++++ xmms/main.c	Sat Dec 26 17:30:28 2009
 @@ -501,7 +501,9 @@ static void read_config(void)
  		cfg.gentitle_format = g_strdup("%p - %t");
  	if (cfg.outputplugin == NULL)
@@ -12,7 +12,67 @@ $OpenBSD: patch-xmms_main_c,v 1.9 2008/12/26 06:34:45 jakemsr Exp $
  		cfg.outputplugin = g_strdup_printf("%s/%s/libOSS.so", PLUGIN_DIR, plugin_dir_list[0]);
  #elif defined(sun)
  		cfg.outputplugin = g_strdup_printf("%s/%s/libSolaris.so", PLUGIN_DIR, plugin_dir_list[0]);
-@@ -4192,11 +4194,12 @@ int main(int argc, char **argv)
+@@ -1652,16 +1654,25 @@ static void mainwin_jump_to_file_edit_real(GtkWidget *
+ 	char *words[20];
+ 	int nw = 0, i;
+ 	char* ptr;
+-	
++
++	gint row_to_select;
++	gint prev_focus;
++	gint *tmp;
++	char song[256];
++	int match;
++	char *title, *filename;
++	int row, queue_pos, *data_buf;
++	char *tmp_buf;
++
+ 	PL_LOCK();
+ 	playlist = get_playlist();
+ 	key = g_strdup(gtk_entry_get_text(GTK_ENTRY(widget)));
+ 	clist = GTK_CLIST(userdata);
+ 
+ 	/* Figure out what is currently selected */
+-	gint row_to_select = -1;
+-	gint prev_focus = -1;
+-	gint *tmp = gtk_clist_get_row_data(clist, clist->focus_row);
++	row_to_select = -1;
++	prev_focus = -1;
++	tmp = gtk_clist_get_row_data(clist, clist->focus_row);
+ 	if (tmp != NULL)
+ 		prev_focus = *tmp;
+ 
+@@ -1690,10 +1701,10 @@ static void mainwin_jump_to_file_edit_real(GtkWidget *
+ 	
+ 	gtk_clist_clear(clist);
+ 
++
+ 	while (playlist)
+ 	{
+-		int match = 0;
+-		char *title, *filename;
++		match = 0;
+ 
+ 		title = ((PlaylistEntry *) playlist->data)->title;
+ 		filename = ((PlaylistEntry *) playlist->data)->filename;
+@@ -1733,7 +1744,6 @@ static void mainwin_jump_to_file_edit_real(GtkWidget *
+ 			match = 0;
+ 		else
+ 		{
+-			char song[256];
+ 
+ 			/* Cook up a lowercased string that contains
+ 			 * the filename and the (possible) title
+@@ -1752,8 +1762,6 @@ static void mainwin_jump_to_file_edit_real(GtkWidget *
+ 
+ 		if (match)
+ 		{
+-			int row, queue_pos, *data_buf;
+-			char *tmp_buf;
+ 			queue_pos = playlist_get_queue_position((PlaylistEntry *) playlist->data);
+ 			if (queue_pos != -1) {
+ 				tmp_buf = g_strdup_printf("%i", queue_pos+1);
+@@ -4192,11 +4200,12 @@ int main(int argc, char **argv)
  
  	signal(SIGPIPE, SIG_IGN); /* for controlsocket.c */
  	signal(SIGSEGV, segfault_handler);
