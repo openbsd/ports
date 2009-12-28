@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/25 20:23:45 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2009/12/28 12:53:17 bluhm Exp $
 
 COMMENT =		module signature file manipulation
 
-DISTNAME =		Module-Signature-0.55
-PKGNAME =		p5-${DISTNAME}p2
+DISTNAME =		Module-Signature-0.61
 
 CATEGORIES =		security
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# MIT
+# CC0 creative commons
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
