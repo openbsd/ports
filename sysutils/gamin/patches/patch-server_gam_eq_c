@@ -1,4 +1,7 @@
-$OpenBSD: patch-server_gam_eq_c,v 1.1 2009/12/28 17:23:23 phessler Exp $
+$OpenBSD: patch-server_gam_eq_c,v 1.2 2009/12/28 17:35:19 phessler Exp $
+
+gcc2.95 fixes
+
 --- server/gam_eq.c.orig	Mon Dec 28 09:36:07 2009
 +++ server/gam_eq.c	Mon Dec 28 09:36:37 2009
 @@ -131,8 +131,9 @@ gam_eq_flush (gam_eq_t *eq, GamConnDataPtr conn)
