@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/12/28 17:41:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2009/12/28 18:10:22 ajacoutot Exp $
 
 COMMENT=	farsi bornaray fonts
 
@@ -10,10 +10,10 @@ CATEGORIES=	x11
 HOMEPAGE=	http://www.bornaray.com/en_fonts.asp
 
 # No license
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM= No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE_CDROM=	No license
+PERMIT_PACKAGE_FTP=	No license
+PERMIT_DISTFILES_CDROM= No license
+PERMIT_DISTFILES_FTP=	No license
 
 MASTER_SITES=	http://www.bornaray.com/download/fonts/
 
