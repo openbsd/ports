@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/28 12:07:37 landry Exp $
+@bin bin/gigolo
+@man man/man1/gigolo.1
+share/applications/gigolo.desktop
+share/doc/gigolo/
+share/doc/gigolo/AUTHORS
+share/doc/gigolo/COPYING
+share/doc/gigolo/ChangeLog
+share/doc/gigolo/NEWS
+share/doc/gigolo/README
+share/doc/gigolo/TODO
+share/locale/bg/LC_MESSAGES/gigolo.mo
+share/locale/ca/LC_MESSAGES/gigolo.mo
+share/locale/cs/LC_MESSAGES/gigolo.mo
+share/locale/da/LC_MESSAGES/gigolo.mo
+share/locale/de/LC_MESSAGES/gigolo.mo
+share/locale/el/LC_MESSAGES/gigolo.mo
+share/locale/es/LC_MESSAGES/gigolo.mo
+share/locale/fr/LC_MESSAGES/gigolo.mo
+share/locale/gl/LC_MESSAGES/gigolo.mo
+share/locale/id/LC_MESSAGES/gigolo.mo
+share/locale/it/LC_MESSAGES/gigolo.mo
+share/locale/ja/LC_MESSAGES/gigolo.mo
+share/locale/pt_BR/LC_MESSAGES/gigolo.mo
+share/locale/sv/LC_MESSAGES/gigolo.mo
+share/locale/tr/LC_MESSAGES/gigolo.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

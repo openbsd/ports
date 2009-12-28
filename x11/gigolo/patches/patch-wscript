@@ -1,0 +1,12 @@
+$OpenBSD: patch-wscript,v 1.1.1.1 2009/12/28 12:07:37 landry Exp $
+--- wscript.orig	Sat Apr 18 16:31:35 2009
++++ wscript	Sun Dec 27 19:31:34 2009
+@@ -136,7 +136,7 @@ def build(bld):
+ 	bld.new_task_gen(
+ 		features		= 'intltool_in',
+ 		source			= 'gigolo.desktop.in',
+-		flags			= '-d',
++		flags			= [ '-d', '-q', '-u', '-c' ],
+ 		install_path	= '${DATADIR}/applications'
+ 	)
+ 

@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_settings_c,v 1.1.1.1 2009/12/28 12:07:37 landry Exp $
+No HAL
+--- src/settings.c.orig	Sun Dec 27 19:45:45 2009
++++ src/settings.c	Sun Dec 27 19:46:56 2009
+@@ -70,7 +70,7 @@ static void gigolo_settings_finalize			(GObject* objec
+ 
+ /* default values */
+ #define DEFAULT_AUTOCONNECT_INTERVAL	60
+-#define DEFAULT_VM_IMPL					"hal"
++#define DEFAULT_VM_IMPL					"unix"
+ 
+ enum
+ {
+@@ -670,7 +670,7 @@ void gigolo_settings_set_vm_impl(GigoloSettings *setti
+ 	priv = GIGOLO_SETTINGS_GET_PRIVATE(settings);
+ 
+ 	if (impl == NULL)
+-		impl = "hal";
++		impl = "unix";
+ 
+ 	g_free(priv->vm_impl);
+ 	priv->vm_impl = g_strdup(impl);
