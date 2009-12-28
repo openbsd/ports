@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.403 2009/12/20 00:37:06 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.404 2009/12/28 12:08:25 landry Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += Xaw3d
@@ -76,6 +76,7 @@
      SUBDIR += gdesklets
      SUBDIR += gdevilspie
      SUBDIR += gentoo
+     SUBDIR += gigolo
      SUBDIR += gmrun
      SUBDIR += gnome
      SUBDIR += gnome-mplayer
