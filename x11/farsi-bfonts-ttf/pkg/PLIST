@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/28 17:41:43 ajacoutot Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/farsi-bfonts/
+lib/X11/fonts/farsi-bfonts/BArabics.ttf
+lib/X11/fonts/farsi-bfonts/BArshia.ttf
+lib/X11/fonts/farsi-bfonts/BCompsBd.ttf
+lib/X11/fonts/farsi-bfonts/BCompset.ttf
+lib/X11/fonts/farsi-bfonts/BDavat.ttf
+lib/X11/fonts/farsi-bfonts/BElham.ttf
+lib/X11/fonts/farsi-bfonts/BEsfhnBd.ttf
+lib/X11/fonts/farsi-bfonts/BFantezy.ttf
+lib/X11/fonts/farsi-bfonts/BFarnaz.ttf
+lib/X11/fonts/farsi-bfonts/BFerdosi.ttf
+lib/X11/fonts/farsi-bfonts/BHoma.ttf
+lib/X11/fonts/farsi-bfonts/BJadidBd.ttf
+lib/X11/fonts/farsi-bfonts/BKamran.ttf
+lib/X11/fonts/farsi-bfonts/BKamranO.ttf
+lib/X11/fonts/farsi-bfonts/BKamrnBd.ttf
+lib/X11/fonts/farsi-bfonts/BKoodakO.ttf
+lib/X11/fonts/farsi-bfonts/BKoodkBd.ttf
+lib/X11/fonts/farsi-bfonts/BMajidSh.ttf
+lib/X11/fonts/farsi-bfonts/BNasimBd.ttf
+lib/X11/fonts/farsi-bfonts/BRoya.ttf
+lib/X11/fonts/farsi-bfonts/BRoyaBd.ttf
+lib/X11/fonts/farsi-bfonts/BSinaBd.ttf
+lib/X11/fonts/farsi-bfonts/BTabssom.ttf
+lib/X11/fonts/farsi-bfonts/BTawfigO.ttf
+lib/X11/fonts/farsi-bfonts/BTitrBd.ttf
+lib/X11/fonts/farsi-bfonts/BTrafcBd.ttf
+lib/X11/fonts/farsi-bfonts/BTraffic.ttf
+lib/X11/fonts/farsi-bfonts/BYagut.ttf
+lib/X11/fonts/farsi-bfonts/BYagutBd.ttf
+lib/X11/fonts/farsi-bfonts/BYekan.ttf
+lib/X11/fonts/farsi-bfonts/BZar.ttf
+lib/X11/fonts/farsi-bfonts/BZarBd.ttf
