@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/12/28 12:07:37 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2009/12/28 12:21:05 landry Exp $
 
 COMMENT =	GVfs mountpoint manager
 
 XFCE_VERSION =	0.3.2
 XFCE_GOODIE =	gigolo
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	x11
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
@@ -19,6 +20,7 @@ CONFIGURE_STYLE =	gnu
 NO_REGRESS =	Yes
 DESKTOP_FILES =	Yes
 
+RUN_DEPENDS +=	::x11/gnome/gvfs
 LIB_DEPENDS =	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
