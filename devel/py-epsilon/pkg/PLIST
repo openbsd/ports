@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/11/19 17:11:30 eric Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/28 09:30:09 eric Exp $
 bin/benchmark
 lib/python${MODPY_VERSION}/site-packages/Epsilon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/epsilon/
@@ -91,8 +91,6 @@ lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_benchmark.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_benchmark.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_caseless.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_caseless.pyc
-lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_cooperator.py
-lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_cooperator.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_descriptor.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_descriptor.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_expose.py
@@ -103,6 +101,8 @@ lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_juice.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_juice.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_modes.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_modes.pyc
+lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_process.py
+lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_process.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_react.py
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_react.pyc
 lib/python${MODPY_VERSION}/site-packages/epsilon/test/test_release.py
