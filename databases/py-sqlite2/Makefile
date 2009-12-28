@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2009/04/09 01:05:25 martynas Exp $
+# $OpenBSD: Makefile,v 1.14 2009/12/28 09:24:34 eric Exp $
 
 COMMENT =	SQLite3 adapter for Python
 
-MODPY_EGG_VERSION =	2.5.5
+MODPY_EGG_VERSION =	2.5.6
 
 DISTNAME =	pysqlite-${MODPY_EGG_VERSION}
 PKGNAME =	py-sqlite2-${MODPY_EGG_VERSION}
@@ -10,9 +10,9 @@ CATEGORIES =	databases devel
 
 MAINTAINER =	Eric Faurot <eric@openbsd.org>
 
-HOMEPAGE =	http://pysqlite.org/
+HOMEPAGE =	http://code.google.com/p/pysqlite/
 
-MASTER_SITES =	http://oss.itsystementwicklung.de/download/pysqlite/${MODPY_EGG_VERSION:R}/${MODPY_EGG_VERSION}/
+MASTER_SITES =	http://pysqlite.googlecode.com/files/
 
 # BSD-like
 PERMIT_PACKAGE_FTP =	Yes
@@ -39,9 +39,7 @@ post-install:
 		${PREFIX}/share/doc/py-sqlite2/
 
 do-regress: fake
-	@cd ${WRKSRC}/pysqlite2/test && \
-		${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${MODPY_BIN} ./regression.py && \
+	@cd ${WRKDIR} && \
 		${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} -c 'from pysqlite2 import test; test.test()'
 
