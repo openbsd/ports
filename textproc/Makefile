@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.287 2009/11/25 22:01:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.288 2009/12/28 09:33:41 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -145,6 +145,7 @@
      SUBDIR += p5-Text-Aligner
      SUBDIR += p5-Text-Aspell
      SUBDIR += p5-Text-Autoformat
+     SUBDIR += p5-Text-CSV
      SUBDIR += p5-Text-CSV_XS
      SUBDIR += p5-Text-Diff
      SUBDIR += p5-Text-Diff-HTML
