@@ -1,16 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:49:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2009/12/28 09:09:55 stephan Exp $
 ${P5SITE}/URI/
 ${P5SITE}/URI.pm
 ${P5SITE}/URI/Escape.pm
 ${P5SITE}/URI/Heuristic.pm
+${P5SITE}/URI/IRI.pm
 ${P5SITE}/URI/QueryParam.pm
 ${P5SITE}/URI/Split.pm
 ${P5SITE}/URI/URL.pm
 ${P5SITE}/URI/WithBase.pm
 ${P5SITE}/URI/_foreign.pm
 ${P5SITE}/URI/_generic.pm
+${P5SITE}/URI/_idna.pm
 ${P5SITE}/URI/_ldap.pm
 ${P5SITE}/URI/_login.pm
+${P5SITE}/URI/_punycode.pm
 ${P5SITE}/URI/_query.pm
 ${P5SITE}/URI/_segment.pm
 ${P5SITE}/URI/_server.pm
@@ -58,6 +61,7 @@ ${P5SITE}/URI/urn/oid.pm
 @man man/man3p/URI::Split.3p
 @man man/man3p/URI::URL.3p
 @man man/man3p/URI::WithBase.3p
+@man man/man3p/URI::_punycode.3p
 @man man/man3p/URI::data.3p
 @man man/man3p/URI::file.3p
 @man man/man3p/URI::ldap.3p
