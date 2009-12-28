@@ -1,4 +1,4 @@
-$OpenBSD: patch-server_gam_kqueue_c,v 1.5 2009/12/06 17:48:37 ajacoutot Exp $
+$OpenBSD: patch-server_gam_kqueue_c,v 1.6 2009/12/28 17:23:23 phessler Exp $
 
 From FreeBSD:
 Make sure that excluded paths do not get opened (but rather they will be
@@ -12,8 +12,8 @@ OpenBSD does not have maxfilesperproc, which means max_open_files will
 default to "0" and kqueue will never be used. Instead, use get+setrlimit
 to get a correct value.
 
---- server/gam_kqueue.c.orig	Wed Jul  4 15:50:41 2007
-+++ server/gam_kqueue.c	Sun Dec  6 18:40:54 2009
+--- server/gam_kqueue.c.orig	Wed Jul  4 07:50:41 2007
++++ server/gam_kqueue.c	Mon Dec 28 09:40:41 2009
 @@ -31,7 +31,8 @@
   *           - kqueue needs to be moved out the UFS code.
   *
@@ -135,13 +135,22 @@ to get a correct value.
      }
  }
  
-@@ -1133,11 +1145,17 @@ gam_kqueue_init (void)
+@@ -1125,6 +1137,9 @@ gam_kqueue_init (void)
+   GIOChannel *channel;
+   unsigned int maxfiles;
+   unsigned int maxfilesperproc;
++  int mib[2];
++  size_t len;
++  struct rlimit rlp;
+ 
+   kq = kqueue();
+   if (kq < 0)
+@@ -1133,11 +1148,16 @@ gam_kqueue_init (void)
        return FALSE;
      }
  
 -  if (! gam_kqueue_get_uint_sysctl("kern.maxfiles", &maxfiles))
-+  int mib[2];
-+  size_t len = sizeof(maxfiles);
++  len = sizeof(maxfiles);
 +  mib[0] = CTL_KERN;
 +  mib[1] = KERN_MAXFILES;
 +
@@ -156,13 +165,12 @@ to get a correct value.
    /*
     * We make sure to:
     *	- never paralyze the system (CFG_GLOBAL_FILE_RESERVE_RATIO)
-@@ -1145,6 +1163,23 @@ gam_kqueue_init (void)
+@@ -1145,6 +1165,22 @@ gam_kqueue_init (void)
     */
  
    maxfiles *= CFG_GLOBAL_FILE_RESERVE_RATIO;
 +  maxfilesperproc = 128;
 +
-+  struct rlimit rlp;
 +  if (getrlimit(RLIMIT_NOFILE, &rlp) == 0)
 +    {
 +      rlp.rlim_cur = rlp.rlim_max;

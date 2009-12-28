@@ -1,0 +1,14 @@
+$OpenBSD: patch-server_gam_eq_c,v 1.1 2009/12/28 17:23:23 phessler Exp $
+--- server/gam_eq.c.orig	Mon Dec 28 09:36:07 2009
++++ server/gam_eq.c	Mon Dec 28 09:36:37 2009
+@@ -131,8 +131,9 @@ gam_eq_flush (gam_eq_t *eq, GamConnDataPtr conn)
+ #endif
+ 	while (!g_queue_is_empty (eq->event_queue))
+ 	{
++		gam_eq_event_t *event;
+ 		done_work = TRUE;
+-		gam_eq_event_t *event = g_queue_pop_head (eq->event_queue);
++		event = g_queue_pop_head (eq->event_queue);
+ 		g_assert (event);
+ 		gam_eq_flush_callback (eq, event, conn);
+ 	}
