@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/12/29 22:49:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2009/12/29 23:25:58 jasper Exp $
 @bin bin/rubrica2
 include/libral-1.0/
 include/libral-1.0/libral/
@@ -7,7 +7,6 @@ include/libral-1.0/libral/address.h
 include/libral-1.0/libral/card.h
 include/libral-1.0/libral/company.h
 include/libral-1.0/libral/contact.h
-include/libral-1.0/libral/csv_engine.h
 include/libral-1.0/libral/date.h
 include/libral-1.0/libral/error.h
 include/libral-1.0/libral/filter.h
@@ -28,24 +27,59 @@ include/libral-1.0/libral/types.h
 include/libral-1.0/libral/utils.h
 include/libral-1.0/libral/work.h
 lib/libral/
+lib/libral.a
 lib/libral.la
 @lib lib/libral.so.${LIBral_VERSION}
 lib/libral/plugins/
+@comment lib/libral/plugins/libcsv.a
+@comment lib/libral/plugins/libcsv.la
+lib/libral/plugins/libcsv.so
+@comment lib/libral/plugins/libcsvgmail.a
 @comment lib/libral/plugins/libcsvgmail.la
 lib/libral/plugins/libcsvgmail.so
-@comment lib/libral/plugins/libcsvthunderbird.la
-lib/libral/plugins/libcsvthunderbird.so
+@comment lib/libral/plugins/librubrica.a
 @comment lib/libral/plugins/librubrica.la
 lib/libral/plugins/librubrica.so
+@comment lib/libral/plugins/libvcard.a
 @comment lib/libral/plugins/libvcard.la
 lib/libral/plugins/libvcard.so
 lib/pkgconfig/libral.pc
 share/applications/rubrica2.desktop
 share/gtk-doc/html/libRAL/
+share/gtk-doc/html/libRAL/RAbook.html
+share/gtk-doc/html/libRAL/RAddress.html
+share/gtk-doc/html/libRAL/RCard.html
+share/gtk-doc/html/libRAL/RCompanyCard.html
+share/gtk-doc/html/libRAL/RContact.html
+share/gtk-doc/html/libRAL/RDate.html
+share/gtk-doc/html/libRAL/RFilter.html
+share/gtk-doc/html/libRAL/RGroup.html
+share/gtk-doc/html/libRAL/RGroupBox.html
+share/gtk-doc/html/libRAL/RNetAddress.html
+share/gtk-doc/html/libRAL/RNotes.html
+share/gtk-doc/html/libRAL/RPersonalCard.html
+share/gtk-doc/html/libRAL/RPlugin.html
+share/gtk-doc/html/libRAL/RRef.html
+share/gtk-doc/html/libRAL/RTelephone.html
+share/gtk-doc/html/libRAL/RTimeout.html
+share/gtk-doc/html/libRAL/RWork.html
 share/gtk-doc/html/libRAL/ch01.html
 share/gtk-doc/html/libRAL/home.png
 share/gtk-doc/html/libRAL/index.html
+share/gtk-doc/html/libRAL/index.sgml
 share/gtk-doc/html/libRAL/left.png
+share/gtk-doc/html/libRAL/libRAL-RCsv.html
+share/gtk-doc/html/libRAL/libRAL-RPluginManager.html
+share/gtk-doc/html/libRAL/libRAL-RRubrica.html
+share/gtk-doc/html/libRAL/libRAL-RVCard.html
+share/gtk-doc/html/libRAL/libRAL-error.html
+share/gtk-doc/html/libRAL/libRAL-io.html
+share/gtk-doc/html/libRAL/libRAL-load.html
+share/gtk-doc/html/libRAL/libRAL-lookup.html
+share/gtk-doc/html/libRAL/libRAL-rlib.html
+share/gtk-doc/html/libRAL/libRAL-save.html
+share/gtk-doc/html/libRAL/libRAL-types.html
+share/gtk-doc/html/libRAL/libRAL-utils.html
 share/gtk-doc/html/libRAL/libRAL.devhelp
 share/gtk-doc/html/libRAL/libRAL.devhelp2
 share/gtk-doc/html/libRAL/right.png
@@ -54,7 +88,6 @@ share/gtk-doc/html/libRAL/up.png
 share/locale/de/LC_MESSAGES/rubrica2.mo
 share/locale/fr/LC_MESSAGES/rubrica2.mo
 share/locale/it/LC_MESSAGES/rubrica2.mo
-share/locale/ru/LC_MESSAGES/rubrica2.mo
 share/locale/uk/LC_MESSAGES/rubrica2.mo
 share/mime-info/
 share/mime-info/rubrica2.keys
