@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_rubrica_Makefile_in,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
---- plugins/rubrica/Makefile.in.orig	Mon Jun 29 17:35:59 2009
-+++ plugins/rubrica/Makefile.in	Wed Oct  7 11:06:11 2009
-@@ -283,7 +283,7 @@ librubrica_la_SOURCES = \
+$OpenBSD: patch-plugins_rubrica_Makefile_in,v 1.2 2009/12/29 22:49:12 jasper Exp $
+--- plugins/rubrica/Makefile.in.orig	Sun Feb 10 12:18:05 2008
++++ plugins/rubrica/Makefile.in	Tue Dec 29 23:34:01 2009
+@@ -291,7 +291,7 @@ librubrica_la_SOURCES = \
  	load.c		load.h		\
  	save.c		save.h
  
