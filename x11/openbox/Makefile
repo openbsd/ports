@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2009/12/23 11:14:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.51 2009/12/29 23:32:02 benoit Exp $
 
 COMMENT =	small, fast & usable window manager
 
 DISTNAME =	openbox-3.4.9
+PKGNAME =	${DISTNAME}p0
 SHARED_LIBS +=	obparser	9.1 # .21.5
 SHARED_LIBS +=	obrender	9.1 # .21.5
 CATEGORIES =	x11
@@ -54,4 +55,10 @@ pre-configure:
 	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \
 		${WRKSRC}/tools/xdg-autostart/xdg-autostart
 
+#
+# Rename obprop to obxprop to resolve a conflict with misc/openbabel
+#
+post-install:
+	mv ${PREFIX}/bin/obprop ${PREFIX}/bin/obxprop
+	
 .include <bsd.port.mk>
