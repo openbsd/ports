@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/21 21:03:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/12/29 23:02:20 jasper Exp $
 %%SHARED%%
 @bin bin/glabels
 @bin bin/glabels-batch
@@ -61,11 +61,33 @@ share/gnome/help/glabels/C/figures/merge-ex2-1.png
 share/gnome/help/glabels/C/figures/merge-ex2-2.png
 share/gnome/help/glabels/C/figures/merge-ex2-3.png
 share/gnome/help/glabels/C/figures/merge-ex2-4.png
+share/gnome/help/glabels/C/figures/merge-ex3-1.png
+share/gnome/help/glabels/C/figures/merge-ex3-2.png
 share/gnome/help/glabels/C/figures/object-editor-sidebar.png
 share/gnome/help/glabels/C/figures/print-copies.png
 share/gnome/help/glabels/C/figures/print-merge.png
 share/gnome/help/glabels/C/glabels.xml
 share/gnome/help/glabels/C/legal.xml
+share/gnome/help/glabels/de/
+share/gnome/help/glabels/de/figures/
+share/gnome/help/glabels/de/figures/glabels-template-cd.png
+share/gnome/help/glabels/de/figures/glabels-template-label.png
+share/gnome/help/glabels/de/figures/glabels-template-layout.png
+share/gnome/help/glabels/de/figures/main-window-empty.png
+share/gnome/help/glabels/de/figures/merge-ex1-1.png
+share/gnome/help/glabels/de/figures/merge-ex1-2.png
+share/gnome/help/glabels/de/figures/merge-ex1-3.png
+share/gnome/help/glabels/de/figures/merge-ex1-4.png
+share/gnome/help/glabels/de/figures/merge-ex2-1.png
+share/gnome/help/glabels/de/figures/merge-ex2-2.png
+share/gnome/help/glabels/de/figures/merge-ex2-3.png
+share/gnome/help/glabels/de/figures/merge-ex2-4.png
+share/gnome/help/glabels/de/figures/merge-ex3-1.png
+share/gnome/help/glabels/de/figures/merge-ex3-2.png
+share/gnome/help/glabels/de/figures/object-editor-sidebar.png
+share/gnome/help/glabels/de/figures/print-copies.png
+share/gnome/help/glabels/de/figures/print-merge.png
+share/gnome/help/glabels/de/glabels.xml
 share/gtk-doc/html/libglabels/
 share/gtk-doc/html/libglabels/ch01.html
 share/gtk-doc/html/libglabels/ch02.html
@@ -89,6 +111,7 @@ share/gtk-doc/html/libglabels/libglabels.devhelp2
 share/gtk-doc/html/libglabels/right.png
 share/gtk-doc/html/libglabels/style.css
 share/gtk-doc/html/libglabels/up.png
+share/locale/ca/LC_MESSAGES/glabels.mo
 share/locale/cs/LC_MESSAGES/glabels.mo
 share/locale/de/LC_MESSAGES/glabels.mo
 share/locale/eo/LC_MESSAGES/glabels.mo
@@ -100,15 +123,16 @@ share/locale/ko/LC_MESSAGES/glabels.mo
 share/locale/pl/LC_MESSAGES/glabels.mo
 share/locale/pt_BR/LC_MESSAGES/glabels.mo
 share/locale/ru/LC_MESSAGES/glabels.mo
-share/locale/zh_TW.Big5/
-share/locale/zh_TW.Big5/LC_MESSAGES/
-share/locale/zh_TW.Big5/LC_MESSAGES/glabels.mo
+share/locale/sv/LC_MESSAGES/glabels.mo
+share/locale/zh_CN/LC_MESSAGES/glabels.mo
+share/locale/zh_TW/LC_MESSAGES/glabels.mo
 share/mime-info/
 share/mime-info/glabels.keys
 share/mime-info/glabels.mime
 share/mime/packages/glabels.xml
 share/omf/glabels/
 share/omf/glabels/glabels-C.omf
+share/omf/glabels/glabels-de.omf
 share/pixmaps/
 share/pixmaps/glabels/
 share/pixmaps/glabels-application-x-glabels.png
