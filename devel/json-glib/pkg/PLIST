@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/10 11:05:55 steven Exp $
+@comment $OpenBSD: PLIST,v 1.3 2009/12/30 12:55:48 jasper Exp $
 %%SHARED%%
 include/json-glib-1.0/
 include/json-glib-1.0/json-glib/
@@ -31,12 +31,15 @@ share/gtk-doc/html/json-glib/ix02.html
 share/gtk-doc/html/json-glib/ix03.html
 share/gtk-doc/html/json-glib/ix04.html
 share/gtk-doc/html/json-glib/ix05.html
+share/gtk-doc/html/json-glib/ix06.html
 share/gtk-doc/html/json-glib/json-advanced.html
 share/gtk-doc/html/json-glib/json-base.html
-share/gtk-doc/html/json-glib/json-glib-GObject-integration.html
+share/gtk-doc/html/json-glib/json-glib-Boxed-Types-Serialization.html
+share/gtk-doc/html/json-glib/json-glib-GObject-Serialization.html
 share/gtk-doc/html/json-glib/json-glib-JSON-Array.html
 share/gtk-doc/html/json-glib/json-glib-JSON-Node.html
 share/gtk-doc/html/json-glib/json-glib-JSON-Object.html
+share/gtk-doc/html/json-glib/json-glib-Serializable-Interface.html
 share/gtk-doc/html/json-glib/json-glib-Versioning-information.html
 share/gtk-doc/html/json-glib/json-glib.devhelp
 share/gtk-doc/html/json-glib/json-glib.devhelp2
