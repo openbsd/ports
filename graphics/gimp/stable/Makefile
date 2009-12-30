@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.55 2009/12/22 16:06:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2009/12/30 09:06:12 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME=	gimp-2.6.7
-SHARED_LIBS=	gimp-2.0	267.0	\
-		gimpbase-2.0	267.0	\
-		gimpcolor-2.0	267.0	\
-		gimpconfig-2.0	267.0	\
-		gimpmath-2.0	267.0	\
-		gimpmodule-2.0	267.0	\
-		gimpthumb-2.0	267.0	\
-		gimpui-2.0	267.0	\
-		gimpwidgets-2.0	267.0
-PKGNAME=	${DISTNAME}p3
+DISTNAME=	gimp-2.6.8
+SHARED_LIBS=	gimp-2.0	268.0	\
+		gimpbase-2.0	268.0	\
+		gimpcolor-2.0	268.0	\
+		gimpconfig-2.0	268.0	\
+		gimpmath-2.0	268.0	\
+		gimpmodule-2.0	268.0	\
+		gimpthumb-2.0	268.0	\
+		gimpui-2.0	268.0	\
+		gimpwidgets-2.0	268.0
 
 CATEGORIES=	graphics
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
@@ -64,10 +63,10 @@ MODULES=	devel/gettext \
 USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-AUTOCONF_VERSION= 2.61
+AUTOCONF_VERSION= 2.62
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--without-gtkhtml2 --without-gvfs \
+CONFIGURE_ARGS+=--without-gvfs \
 		--without-gnomevfs --with-libcurl \
 		--without-webkit --enable-gimp-remote
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
