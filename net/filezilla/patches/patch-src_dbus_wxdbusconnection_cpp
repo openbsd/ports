@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_dbus_wxdbusconnection_cpp,v 1.1 2009/12/30 13:49:09 jasper Exp $
+
+"'pthread_t' is used as a type, but is not defined as a type."
+
+--- src/dbus/wxdbusconnection.cpp.orig	Wed Dec 30 14:18:50 2009
++++ src/dbus/wxdbusconnection.cpp	Wed Dec 30 14:19:30 2009
+@@ -24,6 +24,7 @@ DEALINGS IN THE SOFTWARE.
+ 
+ #include "wxdbusconnection.h"
+ #include "config.h"
++#include <pthread.h>
+ #include <poll.h>
+ #include <list>
+ 
