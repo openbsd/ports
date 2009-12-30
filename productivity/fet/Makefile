@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/01 13:12:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/30 09:16:22 jasper Exp $
 
 COMMENT=		automatically create timetables
 
-DISTNAME=		fet-5.11.0
+DISTNAME=		fet-5.12.0
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.lalescu.ro/liviu/fet/
@@ -38,7 +38,7 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fet ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fet
-	${INSTALL_DATA} ${WRKSRC}/doc/algorithm-explanation/* \
+	${INSTALL_DATA} ${WRKSRC}/doc/algorithm/* \
 		${PREFIX}/share/doc/fet 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fet
 	cd ${WRKSRC}/examples/ && umask 022 && pax -rw . \
