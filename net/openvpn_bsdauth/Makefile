@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.2 2007/11/21 14:27:28 fkr Exp $
+# $OpenBSD: Makefile,v 1.3 2009/12/30 01:11:05 fgsch Exp $
 
-COMMENT=	BSD Auth helper program for OpenVPN
+COMMENT =	BSD Auth helper program for OpenVPN
 
-DISTNAME=	openvpn_bsdauth-4
-PKGNAME=	${DISTNAME}p0
-CATEGORIES=	net
-HOMEPAGE=	http://www.wormhole.hu/~ice/openvpn_bsdauth/
+DISTNAME =	openvpn_bsdauth-5
+CATEGORIES =	net
+HOMEPAGE =	http://www.wormhole.hu/~ice/openvpn_bsdauth/
 
-MAINTAINER=	Felix Kronlage <fkr@openbsd.org>
+MAINTAINER =	Felix Kronlage <fkr@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB=	c
+WANTLIB =	c
 
-MASTER_SITES=	${HOMEPAGE}
-RUN_DEPENDS=	::net/openvpn
-BUILD_DEPENDS=	${RUN_DEPENDS}
+MASTER_SITES =	${HOMEPAGE}
 
-FAKE_FLAGS=	PREFIX=${TRUEPREFIX}
+BUILD_DEPENDS =	::net/openvpn
+RUN_DEPENDS =	${BUILD_DEPENDS}
+
+FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
 
 pre-configure:
 	@perl -pi -e 's#!!PREFIX!!#${PREFIX}#g' ${WRKSRC}/openvpn_bsdauth.8
