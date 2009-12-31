@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/11/19 17:16:34 eric Exp $
+@comment $OpenBSD: PLIST,v 1.5 2009/12/31 12:34:45 eric Exp $
 bin/nevow-xmlgettext
 bin/nit
 lib/python${MODPY_VERSION}/site-packages/Nevow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -59,9 +59,16 @@ lib/python${MODPY_VERSION}/site-packages/nevow/compy.py
 lib/python${MODPY_VERSION}/site-packages/nevow/compy.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/context.py
 lib/python${MODPY_VERSION}/site-packages/nevow/context.pyc
+lib/python${MODPY_VERSION}/site-packages/nevow/css/
+lib/python${MODPY_VERSION}/site-packages/nevow/css/Nevow/
+lib/python${MODPY_VERSION}/site-packages/nevow/css/Nevow/TagLibrary/
+lib/python${MODPY_VERSION}/site-packages/nevow/css/Nevow/TagLibrary/TabbedPane.css
+lib/python${MODPY_VERSION}/site-packages/nevow/css/Nevow/TagLibrary/__init__.css
+lib/python${MODPY_VERSION}/site-packages/nevow/css/Nevow/__init__.css
 lib/python${MODPY_VERSION}/site-packages/nevow/dirlist.py
 lib/python${MODPY_VERSION}/site-packages/nevow/dirlist.pyc
-lib/python${MODPY_VERSION}/site-packages/nevow/empty.js
+lib/python${MODPY_VERSION}/site-packages/nevow/empty-module.css
+lib/python${MODPY_VERSION}/site-packages/nevow/empty-module.js
 lib/python${MODPY_VERSION}/site-packages/nevow/entities.py
 lib/python${MODPY_VERSION}/site-packages/nevow/entities.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/errors.py
@@ -194,7 +201,6 @@ lib/python${MODPY_VERSION}/site-packages/nevow/taglibrary/progressBar.css
 lib/python${MODPY_VERSION}/site-packages/nevow/taglibrary/progressBar.js
 lib/python${MODPY_VERSION}/site-packages/nevow/taglibrary/progressbar.py
 lib/python${MODPY_VERSION}/site-packages/nevow/taglibrary/progressbar.pyc
-lib/python${MODPY_VERSION}/site-packages/nevow/taglibrary/tabbedPane.css
 lib/python${MODPY_VERSION}/site-packages/nevow/taglibrary/tabbedPane.py
 lib/python${MODPY_VERSION}/site-packages/nevow/taglibrary/tabbedPane.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/tags.py
@@ -207,6 +213,8 @@ lib/python${MODPY_VERSION}/site-packages/nevow/test/acceptance/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/acceptance/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/acceptance/reconnect.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/acceptance/reconnect.pyc
+lib/python${MODPY_VERSION}/site-packages/nevow/test/acceptance/tabbedpane.py
+lib/python${MODPY_VERSION}/site-packages/nevow/test/acceptance/tabbedpane.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/livetest_athena.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/livetest_athena.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/livetest_runtime.py
@@ -257,15 +265,6 @@ lib/python${MODPY_VERSION}/site-packages/nevow/test/test_newflat.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_newflat.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_nit.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_nit.pyc
-lib/python${MODPY_VERSION}/site-packages/nevow/test/test_package/
-lib/python${MODPY_VERSION}/site-packages/nevow/test/test_package/.test/
-lib/python${MODPY_VERSION}/site-packages/nevow/test/test_package/.test/Foo.js
-lib/python${MODPY_VERSION}/site-packages/nevow/test/test_package/Foo/
-lib/python${MODPY_VERSION}/site-packages/nevow/test/test_package/Foo/.foo.js
-lib/python${MODPY_VERSION}/site-packages/nevow/test/test_package/Foo/Bar.js
-lib/python${MODPY_VERSION}/site-packages/nevow/test/test_package/Foo/Baz/
-lib/python${MODPY_VERSION}/site-packages/nevow/test/test_package/Foo/Baz/Quux.js
-lib/python${MODPY_VERSION}/site-packages/nevow/test/test_package/Foo/__init__.js
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_passobj.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_passobj.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_query.py
@@ -276,6 +275,8 @@ lib/python${MODPY_VERSION}/site-packages/nevow/test/test_stan.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_stan.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_static.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_static.pyc
+lib/python${MODPY_VERSION}/site-packages/nevow/test/test_tabbedpane.py
+lib/python${MODPY_VERSION}/site-packages/nevow/test/test_tabbedpane.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_tags.py
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_tags.pyc
 lib/python${MODPY_VERSION}/site-packages/nevow/test/test_testutil.py
@@ -401,11 +402,6 @@ share/examples/py-nevow/cal/cal.py
 share/examples/py-nevow/canvas/
 share/examples/py-nevow/canvas/__init__.py
 share/examples/py-nevow/canvas/canvas.py
-share/examples/py-nevow/chatola/
-share/examples/py-nevow/chatola/Chatola.html
-share/examples/py-nevow/chatola/__init__.py
-share/examples/py-nevow/chatola/chatola.py
-share/examples/py-nevow/chatola/chatola.tac
 share/examples/py-nevow/children/
 share/examples/py-nevow/children/__init__.py
 share/examples/py-nevow/children/children.py

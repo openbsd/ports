@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/19 17:16:34 eric Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/31 12:34:45 eric Exp $
 
 COMMENT=	web application construction kit
 
-VERSION=	0.9.33
+VERSION=	0.10.0
 DISTNAME=	Nevow-${VERSION}
 PKGNAME=	py-nevow-${VERSION}
 CATEGORIES=	www
