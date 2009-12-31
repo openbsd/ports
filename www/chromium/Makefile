@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/20 17:27:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2009/12/31 12:06:35 espie Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		Chromium browser
 
 DISTNAME=		chromium-4.0.251.0
-PKGNAME =		${DISTNAME}p1
+PKGNAME =		${DISTNAME}p2
 
 CATEGORIES =		www
 
@@ -42,8 +42,7 @@ BUILD_DEPENDS =	:python->=${PYTHON_VER}:lang/python/${PYTHON_VER} \
 		::shells/bash
 LIB_DEPENDS =	execinfo::devel/libexecinfo \
 		nss3,nssutil3,ssl3,smime3,softokn3::security/nss \
-		gconf-2::devel/gconf2 \
-		estdc++::lang/gcc/4.2,-estdc
+		gconf-2::devel/gconf2
 
 # Set BUILDTYPE to Debug (or omit it) for a debug build
 BUILDTYPE=	Release
