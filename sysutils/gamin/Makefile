@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/06 17:48:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/31 14:07:19 kili Exp $
 
 COMMENT-main=	file and directory monitoring system
 COMMENT-server=	gamin file monitoring server
@@ -89,7 +89,7 @@ post-install:
 .endif
 
 do-regress:
-	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} tests)
 
 .include <bsd.port.mk>
