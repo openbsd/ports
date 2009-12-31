@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2009/12/08 21:18:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2009/12/31 13:07:30 landry Exp $
 
 SHARED_ONLY=			Yes
 
@@ -9,9 +9,9 @@ COMMENT-cups=			gtk+2 CUPS print backend
 VERSION=			2.18.5
 DISTNAME=			gtk+-${VERSION}
 
-PKGNAME-main=			gtk+2-${VERSION}
+PKGNAME-main=			gtk+2-${VERSION}p0
 PKGNAME-docs=			gtk+2-docs-${VERSION}
-PKGNAME-cups=			gtk+2-cups-${VERSION}
+PKGNAME-cups=			gtk+2-cups-${VERSION}p0
 
 CATEGORIES=			x11 devel
 
@@ -42,7 +42,8 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 MODULES=		devel/gettext
 
 BUILD_DEPENDS=		::print/cups
-RUN_DEPENDS=		::x11/hicolor-icon-theme
+RUN_DEPENDS=		::x11/hicolor-icon-theme \
+			::misc/shared-mime-info
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			glib-2.0.>=1800.0,gmodule-2.0.>=1800.0,gobject-2.0.>=1800.0,gio-2.0::devel/glib2 \
