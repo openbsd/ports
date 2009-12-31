@@ -1,22 +1,11 @@
-$OpenBSD: patch-get_iplayer,v 1.27 2009/12/21 21:52:27 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.28 2009/12/31 14:53:33 sthen Exp $
 
 - default to using id3tag not id3v2
 - follow hier(7) not Linux FHS for options file location
 
---- get_iplayer.orig	Mon Dec 21 09:11:31 2009
-+++ get_iplayer	Mon Dec 21 21:46:33 2009
-@@ -312,17 +312,14 @@ if ( defined $ENV{GETIPLAYERUSERPREFS} && $ENV{GETIPLA
- # Options on unix-like systems
- } elsif ( defined $ENV{HOME} ) {
- 	$profile_dir = $opt_pre->{profiledir} || $ENV{HOME}.'/.get_iplayer';
--	$optfile_system = '/var/lib/get_iplayer/options';
--	if ( -f '/etc/get_iplayer/options' ) {
--		logger "WARNING: System-wide options in /etc/get_iplayer/options are now ignored, please use /var/lib/get_iplayer/options instead\n";
--	}
-+	$optfile_system = '${SYSCONFDIR}/get_iplayer/options';
- }
- # Make profile dir if it doesnt exist
- mkpath $profile_dir if ! -d $profile_dir;
+--- get_iplayer.orig	Thu Dec 31 13:19:15 2009
++++ get_iplayer	Thu Dec 31 14:33:56 2009
+@@ -316,7 +316,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -25,7 +14,7 @@ $OpenBSD: patch-get_iplayer,v 1.27 2009/12/21 21:52:27 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -443,6 +440,7 @@ if ( ! keys %plugin_files ) {
+@@ -437,6 +437,7 @@ if ( ! keys %plugin_files ) {
  	$opt->{pluginsupdate} = 1;
  }
  # Update this script if required
@@ -33,7 +22,7 @@ $OpenBSD: patch-get_iplayer,v 1.27 2009/12/21 21:52:27 sthen Exp $
  update_script() if $opt->{update} || $opt->{pluginsupdate};
  
  
-@@ -639,7 +637,7 @@ sub find_matches {
+@@ -638,7 +639,7 @@ sub find_matches {
  	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
@@ -42,7 +31,7 @@ $OpenBSD: patch-get_iplayer,v 1.27 2009/12/21 21:52:27 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -3721,7 +3719,7 @@ sub tag_file {
+@@ -3751,7 +3752,7 @@ sub tag_file {
  		my ( $id3_name, $id3_episode, $id3_desc, $id3_channel ) = ( $prog->{name}, $prog->{episode}, $prog->{desc}, $prog->{channel} );
  		s|"|\\"|g for ($id3_name, $id3_episode, $id3_desc, $id3_channel);
  		# Only tag if the required tool exists
@@ -51,12 +40,3 @@ $OpenBSD: patch-get_iplayer,v 1.27 2009/12/21 21:52:27 sthen Exp $
  			main::logger "INFO: id3 tagging $prog->{ext} file\n";
  			my @cmd = (
  				$bin->{id3v2}, 
-@@ -5415,7 +5413,7 @@ sub optional_list_entry_format {
- # Returns the modes to try for this prog type
- sub modelist {
- 	my $prog = shift;
--	my $mlist = $opt->{tvmode} || $opt->{modes};
-+	my $mlist = $opt->{tvmode} || $opt->{vmode} || $opt->{modes};
- 	
- 	# Defaults
- 	if ( ! $mlist ) {
