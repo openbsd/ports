@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/19 17:13:52 eric Exp $
+# $OpenBSD: Makefile,v 1.6 2009/12/31 12:31:44 eric Exp $
 
 COMMENT=	sqlite-based object persistence system for python
 
-VERSION=	0.5.31
+VERSION=	0.6.0
 DISTNAME=	Axiom-${VERSION}
 PKGNAME=	py-axiom-${VERSION}
 CATEGORIES=	databases
