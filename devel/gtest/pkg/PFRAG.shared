@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/12/31 11:21:13 landry Exp $
+@lib lib/libgtest.so.${LIBgtest_VERSION}
+@lib lib/libgtest_main.so.${LIBgtest_main_VERSION}
