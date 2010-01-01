@@ -1,0 +1,12 @@
+$OpenBSD: patch-dtwidget_Dt_Makefile_in,v 1.1 2010/01/01 12:25:17 kili Exp $
+--- dtwidget/Dt/Makefile.in.orig	Fri Feb  4 20:20:14 2000
++++ dtwidget/Dt/Makefile.in	Tue Dec 22 22:41:44 2009
+@@ -97,7 +97,7 @@ noinst_LIBRARIES = @AXY_L@
+ noinst_PROGRAMS = demo
+ 
+ MOTIF_CFLAGS = @MOTIF_CFLAGS@
+-MOTIF_LIBS = @MOTIF_LIBS@
++MOTIF_LIBS = @MOTIF_LIBS@ -lm
+ 
+ INCLUDES = -I$(srcdir)/.. $(MOTIF_CFLAGS) @X_CFLAGS@ 
+ 

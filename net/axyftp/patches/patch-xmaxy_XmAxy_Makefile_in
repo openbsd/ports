@@ -1,0 +1,12 @@
+$OpenBSD: patch-xmaxy_XmAxy_Makefile_in,v 1.1 2010/01/01 12:25:17 kili Exp $
+--- xmaxy/XmAxy/Makefile.in.orig	Fri Feb  4 20:20:21 2000
++++ xmaxy/XmAxy/Makefile.in	Tue Dec 22 22:42:25 2009
+@@ -97,7 +97,7 @@ noinst_PROGRAMS = @DEMO_PROG@
+ EXTRA_PROGRAMS = demo
+ 
+ MOTIF_CFLAGS = @MOTIF_CFLAGS@
+-MOTIF_LIBS = @MOTIF_LIBS@
++MOTIF_LIBS = @MOTIF_LIBS@ -lm
+ XPM_CFLAGS = @XPM_CFLAGS@
+ XPM_LIBS = @XPM_LIBS@
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2010/01/01 12:25:17 kili Exp $
+--- src/Makefile.in.orig	Fri Feb  4 20:20:22 2000
++++ src/Makefile.in	Tue Dec 22 22:40:00 2009
+@@ -97,7 +97,7 @@ INCLUDES = -D$(AXYFTP_GUI) -DAXYFTP_HELP_DIR=\"$(AXYFT
+ 
+ DT_LIBS = @DT_LIBS@
+ XMAXY_LIBS = @XMAXY_LIBS@
+-MOTIF_LIBS = @MOTIF_LIBS@
++MOTIF_LIBS = @MOTIF_LIBS@ -lm
+ 
+ axyftp_LDADD = @AXYFTP_LIBS@ $(MALLOC)
+ 

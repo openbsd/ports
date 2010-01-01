@@ -1,6 +1,6 @@
---- configure.orig	Tue Jun  5 11:37:19 2001
-+++ configure	Tue Jun  5 11:38:11 2001
-@@ -3688,7 +3688,7 @@
+--- configure.orig	Fri Feb  4 20:19:51 2000
++++ configure	Tue Dec 22 22:28:46 2009
+@@ -3688,7 +3688,7 @@ fi
    AXYFTP_INCLUDES="\$(XMAXY_CFLAGS) \$(DT_CFLAGS) \$(MOTIF_CFLAGS) \
                     $X_CFLAGS \$(XPM_CFLAGS)"
    AXYFTP_LIBS="\$(XMAXY_LIBS) \$(DT_LIBS) \$(MOTIF_LIBS) \

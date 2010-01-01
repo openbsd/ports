@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:17:38 espie Exp $
-bin/axyftp
+@comment $OpenBSD: PLIST,v 1.4 2010/01/01 12:25:17 kili Exp $
+@bin bin/axyftp
 @man man/man1/axyftp.1
 share/axyftp/
 share/axyftp/help/
