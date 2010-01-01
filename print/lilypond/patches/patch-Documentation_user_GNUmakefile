@@ -1,0 +1,12 @@
+$OpenBSD: patch-Documentation_user_GNUmakefile,v 1.1 2010/01/01 11:00:49 kili Exp $
+--- Documentation/user/GNUmakefile.orig	Tue Dec 15 19:58:57 2009
++++ Documentation/user/GNUmakefile	Sat Dec 26 21:11:29 2009
+@@ -143,7 +143,7 @@ $(outdir)/lilypond.texi: $(outdir)/ly-grammar.txt
+ 
+ $(outdir)/ly-grammar.txt: $(top-src-dir)/lily/parser.yy
+ 	cd $(outdir) && $(BISON) -v $<
+-	$(auxscript-dir)/yyout2grammar.py $(outdir)/parser.output $@
++	$(PYTHON) $(auxscript-dir)/yyout2grammar.py $(outdir)/parser.output $@
+ 
+ # There used to be a dependency on a dummy target, to force a rebuild
+ # of lilypond-internals every time.  however, this triggers

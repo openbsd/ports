@@ -1,15 +1,28 @@
-$OpenBSD: patch-lily_include_smobs_hh,v 1.1 2009/10/11 18:56:21 kili Exp $
+$OpenBSD: patch-lily_include_smobs_hh,v 1.2 2010/01/01 11:00:49 kili Exp $
 
 Make g++ 3.3.5 happy.
 
---- lily/include/smobs.hh.orig	Wed Feb 11 17:17:58 2009
-+++ lily/include/smobs.hh	Wed Feb 11 17:18:35 2009
-@@ -103,7 +103,7 @@
+--- lily/include/smobs.hh.orig	Tue Dec 15 19:58:57 2009
++++ lily/include/smobs.hh	Sun Dec 27 15:11:05 2009
+@@ -93,6 +93,12 @@
+   SCM smobbed_copy () const;			\
+   DECLARE_BASE_SMOBS (CL)
+ 
++#if __GNUC__ < 3 || __GNUC__ == 3 && __GNUC_MINOR__ < 4
++# define ATTR_PURE
++#else
++# define ATTR_PURE __attribute__((pure))
++#endif
++
+ #define DECLARE_BASE_SMOBS(CL)					\
+   friend class Non_existent_class;				\
+   private:							\
+@@ -103,7 +109,7 @@
    static int print_smob (SCM s, SCM p, scm_print_state*);	\
    public:							\
    static SCM equal_p (SCM a, SCM b);				\
 -  static CL *unsmob (SCM s) __attribute__((pure))		\
-+  static CL *unsmob (SCM s)					\
++  static CL *unsmob (SCM s) ATTR_PURE				\
    {								\
      if (SCM_NIMP (s) && SCM_CELL_TYPE (s) == smob_tag_)		\
        return (CL *) SCM_CELL_WORD_1 (s);			\

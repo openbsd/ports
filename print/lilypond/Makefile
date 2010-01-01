@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2009/10/26 19:15:15 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2010/01/01 11:00:49 kili Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -8,7 +8,7 @@ SHARED_ONLY=		Yes
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
 
-VERSION=		2.12.2
+VERSION=		2.12.3
 DISTNAME=		lilypond-${VERSION}
 DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
@@ -41,9 +41,9 @@ AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	gnu
 CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			FLEXLEXER_PATH=/usr/include/g++ \
 			BASH=/bin/sh \
-			GREP=/usr/bin/grep
+			GREP=/usr/bin/grep \
+			LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--disable-{debugging,optimising,pipe} \
 			--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
 USE_GMAKE=		Yes
@@ -87,7 +87,7 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lilypond/${VERSION}
-	umask 022 && cp -R ${WRKDIR}/docs/* \
+	umask 022 && cp -R ${WRKDIR}/docs/share/doc/lilypond/html/* \
 		${PREFIX}/share/doc/lilypond/${VERSION}
 
 .include <bsd.port.mk>
