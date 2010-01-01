@@ -1,0 +1,8 @@
+The PHP Data Objects (PDO) extension defines a lightweight,
+consistent interface for accessing databases in PHP.
+Each database driver that implements the PDO interface can
+expose database-specific features as regular extension functions.
+
+pdo_dblib is a driver that implements the PHP Data Objects (PDO)
+interface to enable access from PHP to Microsoft SQL Server and
+Sybase databases through the FreeTDS libary.

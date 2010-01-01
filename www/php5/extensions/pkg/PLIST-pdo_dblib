@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-pdo_dblib,v 1.1 2010/01/01 19:48:23 robert Exp $
+conf/php5.sample/pdo_dblib.ini
+lib/php/modules/pdo_dblib.so

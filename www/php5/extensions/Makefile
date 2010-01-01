@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.54 2009/12/22 10:39:28 robert Exp $
+# $OpenBSD: Makefile,v 1.55 2010/01/01 19:48:23 robert Exp $
 
-FULLPKGNAME-main=	php5-extensions-${V}
+FULLPKGNAME-main=	php5-extensions-${V}p0
 COMMENT-main=		informational package about PHP5 extensions
 
 MULTI_PACKAGES=	-main
@@ -211,7 +211,7 @@ WANTLIB-ncurses=	${WANTLIB} ncurses panel
 # odbc
 PSEUDO_FLAVORS+=	no_odbc
 .if ${FLAVOR:L:Mno_odbc}
-CONFIGURE_ARGS+=	--without-odbc
+CONFIGURE_ARGS+=	--without-iodbc
 .else
 MULTI_PACKAGES+=	-odbc
 COMMENT-odbc=		odbc database access extensions for php5
@@ -289,7 +289,7 @@ LIB_DEPENDS-shmop=
 # soap
 PSEUDO_FLAVORS+=	no_soap
 .if ${FLAVOR:L:Mno_soap}
-CONFIGURE_ARGS+=	--without-soap
+CONFIGURE_ARGS+=	--disable-soap
 .else
 MULTI_PACKAGES+=	-soap
 COMMENT-soap=		SOAP functions for php5
@@ -329,6 +329,28 @@ MULTI_PACKAGES+=	-sybase_ct
 COMMENT-sybase_ct=	sybase database access extensions for php5
 CONFIGURE_ARGS+=        --with-sybase-ct=shared,${LOCALBASE}
 LIB_DEPENDS-sybase_ct=	ct::databases/freetds
+.endif
+
+# pdo-dblib
+PSEUDO_FLAVORS+=	no_pdo_dblib
+.if ${FLAVOR:L:Mno_pdo_dblib}
+CONFIGURE_ARGS+=	--without-pdo-dblib
+.else
+MULTI_PACKAGES+=	-pdo_dblib
+COMMENT-pdo_dblib=	PDO DB-LIB support for php5
+CONFIGURE_ARGS+=        --with-pdo-dblib=shared,${LOCALBASE}
+LIB_DEPENDS-pdo_dblib=	sybdb.>=6::databases/freetds
+.endif
+
+# mssql
+PSEUDO_FLAVORS+=	no_mssql
+.if ${FLAVOR:L:Mno_mssql}
+CONFIGURE_ARGS+=	--without-mssql
+.else
+MULTI_PACKAGES+=	-mssql
+COMMENT-mssql=		microsoft sql access extensions for php5
+CONFIGURE_ARGS+=        --with-mssql=shared,${LOCALBASE}
+LIB_DEPENDS-mssql=	sybdb.>=6::databases/freetds
 .endif
 
 # tidy

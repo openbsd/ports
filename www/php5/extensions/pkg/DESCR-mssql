@@ -1,0 +1,3 @@
+This PHP5 modules contains functions to access the Microsoft SQL
+server database. It makes use of the FreeTDS implementation to
+perform the actual communications.
