@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.37 2009/11/20 01:15:34 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.38 2010/01/01 19:54:33 ajacoutot Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -156,6 +156,7 @@ share/mysql-test/extra/rpl_tests/rpl_multi_update3.test
 share/mysql-test/extra/rpl_tests/rpl_ndb_2multi_basic.test
 share/mysql-test/extra/rpl_tests/rpl_ndb_2multi_eng.test
 share/mysql-test/extra/rpl_tests/rpl_ndb_apply_status.test
+share/mysql-test/extra/rpl_tests/rpl_not_null.test
 share/mysql-test/extra/rpl_tests/rpl_partition.test
 share/mysql-test/extra/rpl_tests/rpl_relayrotate.test
 share/mysql-test/extra/rpl_tests/rpl_reset_slave.test
@@ -472,6 +473,7 @@ share/mysql-test/r/bool.result
 share/mysql-test/r/bootstrap.result
 share/mysql-test/r/bug46080.result
 share/mysql-test/r/bug46760.result
+share/mysql-test/r/bug47671.result
 share/mysql-test/r/bulk_replace.result
 share/mysql-test/r/cache_innodb.result
 share/mysql-test/r/case.result
@@ -1047,6 +1049,9 @@ share/mysql-test/std_data/bug37631.MYD
 share/mysql-test/std_data/bug37631.MYI
 share/mysql-test/std_data/bug37631.frm
 share/mysql-test/std_data/bug40482-bin.000001
+share/mysql-test/std_data/bug47012.ARM
+share/mysql-test/std_data/bug47012.ARZ
+share/mysql-test/std_data/bug47012.frm
 share/mysql-test/std_data/cacert.pem
 share/mysql-test/std_data/charset_utf8.txt
 share/mysql-test/std_data/client-cert.pem
@@ -1742,6 +1747,8 @@ share/mysql-test/suite/innodb/r/innodb_bug40360.result
 share/mysql-test/suite/innodb/r/innodb_bug41904.result
 share/mysql-test/suite/innodb/r/innodb_bug44032.result
 share/mysql-test/suite/innodb/r/innodb_bug44571.result
+share/mysql-test/suite/innodb/r/innodb_bug46676.result
+share/mysql-test/suite/innodb/r/innodb_bug47167.result
 share/mysql-test/suite/innodb/r/innodb_file_format.result
 share/mysql-test/suite/innodb/r/innodb_information_schema.result
 share/mysql-test/suite/innodb/t/
@@ -1761,6 +1768,8 @@ share/mysql-test/suite/innodb/t/innodb_bug40360.test
 share/mysql-test/suite/innodb/t/innodb_bug41904.test
 share/mysql-test/suite/innodb/t/innodb_bug44032.test
 share/mysql-test/suite/innodb/t/innodb_bug44571.test
+share/mysql-test/suite/innodb/t/innodb_bug46676.test
+share/mysql-test/suite/innodb/t/innodb_bug47167.test
 share/mysql-test/suite/innodb/t/innodb_file_format.test
 share/mysql-test/suite/innodb/t/innodb_information_schema.test
 share/mysql-test/suite/jp/
@@ -2551,6 +2560,7 @@ share/mysql-test/suite/rpl/r/rpl_loaddata_m.result
 share/mysql-test/suite/rpl/r/rpl_loaddata_map.result
 share/mysql-test/suite/rpl/r/rpl_loaddata_s.result
 share/mysql-test/suite/rpl/r/rpl_loaddata_simple.result
+share/mysql-test/suite/rpl/r/rpl_loaddata_symlink.result
 share/mysql-test/suite/rpl/r/rpl_loaddatalocal.result
 share/mysql-test/suite/rpl/r/rpl_loadfile.result
 share/mysql-test/suite/rpl/r/rpl_locale.result
@@ -2569,6 +2579,9 @@ share/mysql-test/suite/rpl/r/rpl_multi_update3.result
 share/mysql-test/suite/rpl/r/rpl_multi_update4.result
 share/mysql-test/suite/rpl/r/rpl_mysql_upgrade.result
 share/mysql-test/suite/rpl/r/rpl_name_const.result
+share/mysql-test/suite/rpl/r/rpl_nondeterministic_functions.result
+share/mysql-test/suite/rpl/r/rpl_not_null_innodb.result
+share/mysql-test/suite/rpl/r/rpl_not_null_myisam.result
 share/mysql-test/suite/rpl/r/rpl_optimize.result
 share/mysql-test/suite/rpl/r/rpl_packet.result
 share/mysql-test/suite/rpl/r/rpl_plugin_load.result
@@ -2636,6 +2649,7 @@ share/mysql-test/suite/rpl/r/rpl_row_trig001.result
 share/mysql-test/suite/rpl/r/rpl_row_trig002.result
 share/mysql-test/suite/rpl/r/rpl_row_trig003.result
 share/mysql-test/suite/rpl/r/rpl_row_trig004.result
+share/mysql-test/suite/rpl/r/rpl_row_trunc_temp.result
 share/mysql-test/suite/rpl/r/rpl_row_unsafe_funcs.result
 share/mysql-test/suite/rpl/r/rpl_row_until.result
 share/mysql-test/suite/rpl/r/rpl_row_view01.result
@@ -2832,6 +2846,11 @@ share/mysql-test/suite/rpl/t/rpl_loaddata_map.test
 share/mysql-test/suite/rpl/t/rpl_loaddata_s-slave.opt
 share/mysql-test/suite/rpl/t/rpl_loaddata_s.test
 share/mysql-test/suite/rpl/t/rpl_loaddata_simple.test
+share/mysql-test/suite/rpl/t/rpl_loaddata_symlink-master.opt
+share/mysql-test/suite/rpl/t/rpl_loaddata_symlink-master.sh
+share/mysql-test/suite/rpl/t/rpl_loaddata_symlink-slave.opt
+share/mysql-test/suite/rpl/t/rpl_loaddata_symlink-slave.sh
+share/mysql-test/suite/rpl/t/rpl_loaddata_symlink.test
 share/mysql-test/suite/rpl/t/rpl_loaddatalocal.test
 share/mysql-test/suite/rpl/t/rpl_loadfile.test
 share/mysql-test/suite/rpl/t/rpl_locale.test
@@ -2855,6 +2874,9 @@ share/mysql-test/suite/rpl/t/rpl_multi_update4-slave.opt
 share/mysql-test/suite/rpl/t/rpl_multi_update4.test
 share/mysql-test/suite/rpl/t/rpl_mysql_upgrade.test
 share/mysql-test/suite/rpl/t/rpl_name_const.test
+share/mysql-test/suite/rpl/t/rpl_nondeterministic_functions.test
+share/mysql-test/suite/rpl/t/rpl_not_null_innodb.test
+share/mysql-test/suite/rpl/t/rpl_not_null_myisam.test
 share/mysql-test/suite/rpl/t/rpl_optimize.test
 share/mysql-test/suite/rpl/t/rpl_packet-master.opt
 share/mysql-test/suite/rpl/t/rpl_packet-slave.opt
@@ -2939,6 +2961,7 @@ share/mysql-test/suite/rpl/t/rpl_row_trig001.test
 share/mysql-test/suite/rpl/t/rpl_row_trig002.test
 share/mysql-test/suite/rpl/t/rpl_row_trig003.test
 share/mysql-test/suite/rpl/t/rpl_row_trig004.test
+share/mysql-test/suite/rpl/t/rpl_row_trunc_temp.test
 share/mysql-test/suite/rpl/t/rpl_row_unsafe_funcs.test
 share/mysql-test/suite/rpl/t/rpl_row_until.test
 share/mysql-test/suite/rpl/t/rpl_row_view01.test
@@ -3185,6 +3208,8 @@ share/mysql-test/t/bug46080-master.opt
 share/mysql-test/t/bug46080.test
 share/mysql-test/t/bug46760-master.opt
 share/mysql-test/t/bug46760.test
+share/mysql-test/t/bug47671-master.opt
+share/mysql-test/t/bug47671.test
 share/mysql-test/t/bulk_replace.test
 share/mysql-test/t/cache_innodb-master.opt
 share/mysql-test/t/cache_innodb.test
