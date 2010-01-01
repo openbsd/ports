@@ -1,0 +1,21 @@
+$OpenBSD: patch-ext_mri_bcrypt_c,v 1.1 2010/01/01 20:35:34 jcs Exp $
+--- ext/mri/bcrypt.c.orig	Wed Dec 31 17:00:00 1969
++++ ext/mri/bcrypt.c	Thu Dec 31 16:30:45 2009
+@@ -150,7 +150,7 @@ encode_salt(char *salt, uint8_t *csalt, uint16_t clen,
+  */
+ 
+ char   *
+-bcrypt_gensalt(char *output, uint8_t log_rounds, uint8_t *rseed)
++_bcrypt_gensalt(char *output, uint8_t log_rounds, uint8_t *rseed)
+ {
+ 	if (log_rounds < 4)
+ 		log_rounds = 4;
+@@ -164,7 +164,7 @@ bcrypt_gensalt(char *output, uint8_t log_rounds, uint8
+    i.e. $2$04$iwouldntknowwhattosayetKdJ6iFtacBqJdKe6aW7ou */
+ 
+ char   *
+-bcrypt(char *output, const char *key, const char *salt)
++_bcrypt(char *output, const char *key, const char *salt)
+ {
+ 	blf_ctx state;
+ 	uint32_t rounds, i, k;
