@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/07/31 13:51:50 robert Exp $
-bin/mc
+@comment $OpenBSD: PLIST,v 1.7 2010/01/01 19:21:05 robert Exp $
+@bin bin/mc
 bin/mcedit
-bin/mcmfmt
+@bin bin/mcmfmt
 bin/mcview
-@comment lib/mc/
+libexec/mc/
+libexec/mc/mc-wrapper.csh
+libexec/mc/mc-wrapper.sh
+libexec/mc/mc.csh
+libexec/mc/mc.sh
 man/es/
 man/es/man1/
 @man man/es/man1/mc.1
@@ -25,23 +29,55 @@ man/ru/man1/
 man/sr/
 man/sr/man1/
 @man man/sr/man1/mc.1
+man/sr/man8/
+share/examples/mc/
+@sample ${SYSCONFDIR}/mc/
+share/examples/mc/Syntax
+@sample ${SYSCONFDIR}/mc/Syntax
+share/examples/mc/cedit.menu
+@sample ${SYSCONFDIR}/mc/cedit.menu
+share/examples/mc/edit.indent.rc
+@sample ${SYSCONFDIR}/mc/edit.indent.rc
+share/examples/mc/edit.spell.rc
+@sample ${SYSCONFDIR}/mc/edit.spell.rc
+share/examples/mc/extfs/
+@sample ${SYSCONFDIR}/mc/extfs/
+share/examples/mc/extfs/extfs.ini
+@sample ${SYSCONFDIR}/mc/extfs/extfs.ini
+share/examples/mc/extfs/sfs.ini
+@sample ${SYSCONFDIR}/mc/extfs/sfs.ini
+share/examples/mc/filehighlight.ini
+@sample ${SYSCONFDIR}/mc/filehighlight.ini
+share/examples/mc/mc.charsets
+@sample ${SYSCONFDIR}/mc/mc.charsets
+share/examples/mc/mc.ext
+@sample ${SYSCONFDIR}/mc/mc.ext
+share/examples/mc/mc.keymap
+@sample ${SYSCONFDIR}/mc/mc.keymap
+share/examples/mc/mc.keymap.default
+@sample ${SYSCONFDIR}/mc/mc.keymap.default
+share/examples/mc/mc.keymap.emacs
+@sample ${SYSCONFDIR}/mc/mc.keymap.emacs
+share/examples/mc/mc.lib
+@sample ${SYSCONFDIR}/mc/mc.lib
+share/examples/mc/mc.menu
+@sample ${SYSCONFDIR}/mc/mc.menu
+share/examples/mc/mc.menu.sr
+@sample ${SYSCONFDIR}/mc/mc.menu.sr
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/mc.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
+share/locale/be-tarask/
+share/locale/be-tarask/LC_MESSAGES/
+share/locale/be-tarask/LC_MESSAGES/mc.mo
 share/locale/be/LC_MESSAGES/mc.mo
 share/locale/bg/LC_MESSAGES/mc.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/mc.mo
 share/locale/cs/LC_MESSAGES/mc.mo
 share/locale/da/LC_MESSAGES/mc.mo
 share/locale/de/LC_MESSAGES/mc.mo
 share/locale/el/LC_MESSAGES/mc.mo
 share/locale/es/LC_MESSAGES/mc.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/mc.mo
 share/locale/fi/LC_MESSAGES/mc.mo
 share/locale/fr/LC_MESSAGES/mc.mo
@@ -56,8 +92,8 @@ share/locale/lv/LC_MESSAGES/mc.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/mc.mo
+share/locale/nb/LC_MESSAGES/mc.mo
 share/locale/nl/LC_MESSAGES/mc.mo
-share/locale/no/LC_MESSAGES/mc.mo
 share/locale/pl/LC_MESSAGES/mc.mo
 share/locale/pt/LC_MESSAGES/mc.mo
 share/locale/pt_BR/LC_MESSAGES/mc.mo
@@ -65,8 +101,6 @@ share/locale/ro/LC_MESSAGES/mc.mo
 share/locale/ru/LC_MESSAGES/mc.mo
 share/locale/sk/LC_MESSAGES/mc.mo
 share/locale/sl/LC_MESSAGES/mc.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/mc.mo
 share/locale/sv/LC_MESSAGES/mc.mo
 share/locale/ta/
@@ -74,20 +108,13 @@ share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/mc.mo
 share/locale/tr/LC_MESSAGES/mc.mo
 share/locale/uk/LC_MESSAGES/mc.mo
+share/locale/vi/LC_MESSAGES/mc.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_CN/LC_MESSAGES/mc.mo
 share/locale/zh_TW/LC_MESSAGES/mc.mo
 share/mc/
-@comment share/mc/bin/
-@comment share/mc/bin/mc-wrapper.csh
-@comment share/mc/bin/mc-wrapper.sh
-@comment share/mc/bin/mc.csh
-@comment share/mc/bin/mc.sh
-share/mc/cedit.menu
-share/mc/edit.indent.rc
-share/mc/edit.spell.rc
 share/mc/extfs/
 share/mc/extfs/README
 share/mc/extfs/a
@@ -98,7 +125,6 @@ share/mc/extfs/deb
 share/mc/extfs/deba
 share/mc/extfs/debd
 share/mc/extfs/dpkg
-share/mc/extfs/extfs.ini
 share/mc/extfs/hp48
 share/mc/extfs/iso9660
 share/mc/extfs/lslR
@@ -106,17 +132,21 @@ share/mc/extfs/mailfs
 share/mc/extfs/patchfs
 share/mc/extfs/rpm
 share/mc/extfs/rpms
-share/mc/extfs/sfs.ini
+share/mc/extfs/s3
 share/mc/extfs/trpm
+share/mc/extfs/u7z
+share/mc/extfs/uace
+share/mc/extfs/ualz
 share/mc/extfs/uar
+share/mc/extfs/uarc
 share/mc/extfs/uarj
+share/mc/extfs/uc1541
+share/mc/extfs/ucab
 share/mc/extfs/uha
 share/mc/extfs/ulha
 share/mc/extfs/urar
 share/mc/extfs/uzip
 share/mc/extfs/uzoo
-share/mc/mc.charsets
-share/mc/mc.ext
 share/mc/mc.hint
 share/mc/mc.hint.cs
 share/mc/mc.hint.es
@@ -135,23 +165,41 @@ share/mc/mc.hlp.it
 share/mc/mc.hlp.pl
 share/mc/mc.hlp.ru
 share/mc/mc.hlp.sr
-share/mc/mc.lib
-share/mc/mc.menu
-share/mc/mc.menu.sr
+share/mc/skins/
+share/mc/skins/darkfar.ini
+share/mc/skins/default.ini
+share/mc/skins/double-lines.ini
+share/mc/skins/featured.ini
+share/mc/skins/gotar.ini
 share/mc/syntax/
-share/mc/syntax/Syntax
+share/mc/syntax/PKGBUILD.syntax
 share/mc/syntax/ada95.syntax
 share/mc/syntax/aspx.syntax
 share/mc/syntax/assembler.syntax
+share/mc/syntax/awk.syntax
 share/mc/syntax/c.syntax
+share/mc/syntax/cabal.syntax
 share/mc/syntax/changelog.syntax
 share/mc/syntax/cs.syntax
+share/mc/syntax/css.syntax
+share/mc/syntax/cxx.syntax
+share/mc/syntax/d.syntax
+share/mc/syntax/debian-changelog.syntax
+share/mc/syntax/debian-control.syntax
+share/mc/syntax/debian-description.syntax
+share/mc/syntax/debian-sources-list.syntax
 share/mc/syntax/diff.syntax
 share/mc/syntax/dos.syntax
+share/mc/syntax/ebuild.syntax
 share/mc/syntax/eiffel.syntax
+share/mc/syntax/erlang.syntax
+share/mc/syntax/f90.syntax
+share/mc/syntax/filehighlight.syntax
 share/mc/syntax/fortran.syntax
+share/mc/syntax/haskell.syntax
 share/mc/syntax/html.syntax
 share/mc/syntax/idl.syntax
+share/mc/syntax/j.syntax
 share/mc/syntax/java.syntax
 share/mc/syntax/js.syntax
 share/mc/syntax/latex.syntax
@@ -162,6 +210,8 @@ share/mc/syntax/m4.syntax
 share/mc/syntax/mail.syntax
 share/mc/syntax/makefile.syntax
 share/mc/syntax/ml.syntax
+share/mc/syntax/named.syntax
+share/mc/syntax/nemerle.syntax
 share/mc/syntax/nroff.syntax
 share/mc/syntax/octave.syntax
 share/mc/syntax/pascal.syntax
@@ -169,6 +219,8 @@ share/mc/syntax/perl.syntax
 share/mc/syntax/php.syntax
 share/mc/syntax/po.syntax
 share/mc/syntax/povray.syntax
+share/mc/syntax/procmail.syntax
+share/mc/syntax/properties.syntax
 share/mc/syntax/python.syntax
 share/mc/syntax/ruby.syntax
 share/mc/syntax/sh.syntax
@@ -176,9 +228,15 @@ share/mc/syntax/slang.syntax
 share/mc/syntax/smalltalk.syntax
 share/mc/syntax/spec.syntax
 share/mc/syntax/sql.syntax
+share/mc/syntax/strace.syntax
 share/mc/syntax/swig.syntax
 share/mc/syntax/syntax.syntax
 share/mc/syntax/tcl.syntax
 share/mc/syntax/texinfo.syntax
+share/mc/syntax/tt.syntax
 share/mc/syntax/unknown.syntax
+share/mc/syntax/verilog.syntax
+share/mc/syntax/vhdl.syntax
 share/mc/syntax/xml.syntax
+share/mc/syntax/yum-repo.syntax
+share/mc/syntax/yxx.syntax
