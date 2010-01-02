@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2010/01/02 20:44:19 jakemsr Exp $
+--- src/Makefile.in.orig	Mon Dec 28 00:38:06 2009
++++ src/Makefile.in	Mon Dec 28 00:38:31 2009
+@@ -228,7 +228,7 @@ speexenc_LDADD = $(top_builddir)/libspeex/libspeex.la 
+ 
+ speexdec_SOURCES = speexdec.c wav_io.c
+ speexdec_LDADD = $(top_builddir)/libspeex/libspeex.la \
+-	$(OGG_LIBS)  @FFT_LIBS@
++	$(OGG_LIBS)  @FFT_LIBS@ -lsndio
+ 
+ all: all-am
+ 

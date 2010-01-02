@@ -1,0 +1,68 @@
+$OpenBSD: patch-src_speexdec_c,v 1.4 2010/01/02 20:44:19 jakemsr Exp $
+--- src/speexdec.c.orig	Fri May 30 00:34:16 2008
++++ src/speexdec.c	Sat Jan  2 12:40:42 2010
+@@ -68,6 +68,9 @@
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+ 
++#elif defined USE_SNDIO
++#include <sndio.h>
++
+ #elif defined HAVE_SYS_AUDIOIO_H
+ #include <sys/types.h>
+ #include <fcntl.h>
+@@ -92,6 +95,10 @@
+                            ((buf[base+1]<<8)&0xff00)| \
+   	           	    (buf[base]&0xff))
+ 
++#ifdef USE_SNDIO
++struct sio_hdl *hdl;
++#endif
++
+ static void print_comments(char *comments, int length)
+ {
+    char *c=comments;
+@@ -187,6 +194,32 @@ FILE *out_file_open(char *outFile, int rate, int *chan
+          exit(1);
+       }
+       fout = fdopen(audio_fd, "w");
++#elif defined USE_SNDIO
++      struct sio_par par;
++      
++      hdl = sio_open(NULL, SIO_PLAY, 0);
++      if (!hdl)
++      {
++         fprintf(stderr, "Cannot open sndio device\n");
++         exit(1);
++      }
++
++      sio_initpar(&par);
++      par.sig = 1;
++      par.bits = 16;
++      par.rate = rate;
++      par.pchan = *channels;
++
++      if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par) ||
++        par.sig != 1 || par.bits != 16 || par.rate != rate) {
++          fprintf(stderr, "could not set sndio parameters\n");
++          exit(1);
++      }
++      *channels = par.pchan;
++      if (!sio_start(hdl)) {
++          fprintf(stderr, "could not start sndio\n");
++          exit(1);
++      }
+ #elif defined HAVE_SYS_AUDIOIO_H
+       audio_info_t info;
+       int audio_fd;
+@@ -746,6 +779,10 @@ int main(int argc, char **argv)
+ #if defined WIN32 || defined _WIN32
+                         if (strlen(outFile)==0)
+                            WIN_Play_Samples (out+frame_offset*channels, sizeof(short) * new_frame_size*channels);
++                        else
++#elif defined USE_SNDIO
++                        if (strlen(outFile)==0)
++                           sio_write (hdl, out+frame_offset*channels, sizeof(short) * new_frame_size*channels);
+                         else
+ #endif
+                            fwrite(out+frame_offset*channels, sizeof(short), new_frame_size*channels, fout);

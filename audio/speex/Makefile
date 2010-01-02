@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2008/08/31 19:40:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2010/01/02 20:44:19 jakemsr Exp $
 
 COMMENT=	patent-free speech codec
 
 DISTNAME=	speex-1.2rc1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 HOMEPAGE=	http://www.speex.org/
 SHARED_LIBS +=	speex                8.0      # .6.0
@@ -19,12 +20,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://downloads.xiph.org/releases/speex/
 
 LIB_DEPENDS=	ogg.>=5::audio/libogg
-WANTLIB=	c m
+WANTLIB=	c m sndio
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-ogg=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS="-DUSE_SNDIO"
 
 MAKE_FLAGS=	docdir=${TRUEPREFIX}/share/doc/speex \
 		mandir=${TRUEPREFIX}/man
