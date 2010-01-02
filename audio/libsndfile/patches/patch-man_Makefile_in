@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1 2010/01/02 17:53:27 naddy Exp $
+--- man/Makefile.in.orig	Tue Dec 29 21:14:33 2009
++++ man/Makefile.in	Tue Dec 29 21:14:44 2009
+@@ -505,7 +505,7 @@ uninstall-man: uninstall-man1
+ 
+ # Same manpage for both programs.
+ sndfile-metadata-set.1 : sndfile-metadata-get.1
+-	$(LN_S) $< $@
++	$(LN_S) $? $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

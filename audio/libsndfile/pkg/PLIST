@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/04/26 17:18:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/01/02 17:53:27 naddy Exp $
 %%SHARED%%
 @bin bin/sndfile-cmp
+@bin bin/sndfile-concat
 @bin bin/sndfile-convert
+@bin bin/sndfile-deinterleave
 @bin bin/sndfile-info
-@bin bin/sndfile-jackplay
+@bin bin/sndfile-interleave
 @bin bin/sndfile-metadata-get
 @bin bin/sndfile-metadata-set
 @bin bin/sndfile-play
@@ -14,8 +16,12 @@ lib/libsndfile.a
 lib/libsndfile.la
 lib/pkgconfig/
 lib/pkgconfig/sndfile.pc
+@man man/man1/sndfile-cmp.1
+@man man/man1/sndfile-concat.1
 @man man/man1/sndfile-convert.1
 @man man/man1/sndfile-info.1
+@man man/man1/sndfile-metadata-get.1
+@man man/man1/sndfile-metadata-set.1
 @man man/man1/sndfile-play.1
 share/doc/libsndfile/
 share/doc/libsndfile/FAQ.html
