@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/11/09 17:09:22 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2010/01/02 00:28:56 msf Exp $
 
 COMMENT =	using and creating application 'slices'
 
 DISTNAME =	merb-slices-${VERSION}
-PKGNAME =	ruby-${DISTNAME}p0
 
-RUN_DEPENDS =	::www/ruby-merb/core
+RUN_DEPENDS =	:ruby-merb-core->=${VERSION}:www/ruby-merb/core
 
 .include <bsd.port.mk>

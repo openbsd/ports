@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/12 16:15:07 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/01/02 00:28:56 msf Exp $
 @conflict ruby-merb_helpers-<=0.9.7
 lib/ruby/gems/${MODRUBY_REV}/cache/${DISTNAME}.gem
 lib/ruby/gems/${MODRUBY_REV}/doc/${DISTNAME}/
@@ -458,6 +458,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_selec
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/label.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/multiple.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/prompt.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/selected.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/with_options.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_select_specs/with_options_with_blank.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/bound_text_area_specs/
@@ -576,6 +577,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/relative_da
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/select_specs/
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/select_specs/basic.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/select_specs/blank.html.erb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/select_specs/label.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/select_specs/multiple.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/select_specs/selected.html.erb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/fixture/app/views/submit_specs/
@@ -617,6 +619,7 @@ lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb_helpers_date_time_spec.r
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb_helpers_form_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb_helpers_tag_helper_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb_helpers_text_spec.rb
+lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/merb_test.log
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/numeric_extlib_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/ordinalize_spec.rb
 lib/ruby/gems/${MODRUBY_REV}/gems/${DISTNAME}/spec/spec_helper.rb

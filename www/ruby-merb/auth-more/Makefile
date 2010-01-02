@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/11/09 17:09:22 bernd Exp $
+# $OpenBSD: Makefile,v 1.3 2010/01/02 00:28:55 msf Exp $
 
 COMMENT =	useful extensions for merb-auth-core
 
 DISTNAME =	merb-auth-more-${VERSION}
-PKGNAME =	ruby-${DISTNAME}p0
 
-MASTER_SITES =	${MASTER_SITE_RUBYFORGE:=merb-auth/}
-
-RUN_DEPENDS =	::www/ruby-merb/auth-core
+RUN_DEPENDS =	:ruby-merb-auth-core->=${VERSION}:www/ruby-merb/auth-core
 
 .include <bsd.port.mk>
