@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 00:46:09 espie Exp $
-bin/gnugo
+@comment $OpenBSD: PLIST,v 1.9 2010/01/03 23:50:31 fgsch Exp $
+@bin bin/gnugo
 @info info/gnugo.info
 @man man/man6/gnugo.6
 share/gnugo/
