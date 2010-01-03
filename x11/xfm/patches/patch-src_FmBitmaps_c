@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_FmBitmaps_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
 --- src/FmBitmaps.c.orig	Wed Oct 29 07:02:05 1997
 +++ src/FmBitmaps.c	Sun Jan  3 01:03:08 2010
 @@ -489,7 +489,7 @@
@@ -5,7 +6,7 @@
   while(wtmp=XtParent(top)) top=wtmp;
  
 - XtVaGetValues(top,XtNcolormap,&old,0);
-+ XtVaGetValues(top,XtNcolormap,&old,NULL);
++ XtVaGetValues(top,XtNcolormap,&old,(void *)NULL);
   
   if (0==(new=XCopyColormapAndFree(di,old))) {
     XtAppWarning(app,"switchColormap failed: cannot allocate new colormap");
@@ -14,7 +15,7 @@
  
   has_private_cm=True;
 - XtVaSetValues(top,XtNcolormap,new,0);
-+ XtVaSetValues(top,XtNcolormap,new,NULL);
++ XtVaSetValues(top,XtNcolormap,new,(void *)NULL);
   XtSetWMColormapWindows(top,&top,1);
  
   XtAppWarning(app,"switching to private colormap...");
@@ -23,7 +24,7 @@
  if (rval==XpmColorFailed && switchColormap(top)) {
      /* get the new colormap */
 -    XtVaGetValues(top,XtNcolormap,&atts->colormap,0);
-+    XtVaGetValues(top,XtNcolormap,&atts->colormap,NULL);
++    XtVaGetValues(top,XtNcolormap,&atts->colormap,(void *)NULL);
      /* and repeat */
      rval=(from_file? XpmReadFileToPixmap(dpy,win,(String)data,pm,msk,atts) :
  		     XpmCreatePixmapFromData(dpy,win,data,pm,msk,atts));

@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_FmFw_c,v 1.3 2010/01/03 22:53:32 jasper Exp $
 --- src/FmFw.c.orig	Thu Aug 23 08:45:26 2001
 +++ src/FmFw.c	Sun Jan  3 01:03:08 2010
 @@ -754,9 +754,9 @@
@@ -17,7 +18,7 @@
   XtAddCallback(fw->icon_box,XtNcallback,fileListCb,(XtPointer)fw);
  
 - XtVaGetValues(fw->icon_box,XtNnHoriz,&nhoriz,0);
-+ XtVaGetValues(fw->icon_box,XtNnHoriz,&nhoriz,NULL);
++ XtVaGetValues(fw->icon_box,XtNnHoriz,&nhoriz,(void *)NULL);
   XtVaSetValues(fw->viewport, XtNallowHoriz, nhoriz!=0 , NULL);
  }
  
@@ -26,11 +27,11 @@
  #ifdef VIEWPORT_HACK
    XawFormDoLayout(fw->icon_box,False);
 -  XtVaGetValues(fw->icon_box,XtNchildren,&children,XtNnumChildren,&num_children,0);
-+  XtVaGetValues(fw->icon_box,XtNchildren,&children,XtNnumChildren,&num_children,NULL);
++  XtVaGetValues(fw->icon_box,XtNchildren,&children,XtNnumChildren,&num_children,(void *)NULL);
    XtManageChildren(children,num_children);
    if (!force_bars)
 -    XtVaSetValues(fw->viewport,XtNforceBars,False,0);
-+    XtVaSetValues(fw->viewport,XtNforceBars,False,NULL);
++    XtVaSetValues(fw->viewport,XtNforceBars,False,(void *)NULL);
  #endif
  }
  
@@ -39,7 +40,7 @@
    if (fw->icon_box) {
      if (keep_position)
 -      XtVaGetValues(fw->icon_box,XtNx,&x,XtNy,&y,0);
-+      XtVaGetValues(fw->icon_box,XtNx,&x,XtNy,&y,NULL);
++      XtVaGetValues(fw->icon_box,XtNx,&x,XtNy,&y,(void *)NULL);
      XtUnrealizeWidget(fw->icon_box);
      XtDestroyWidget(fw->icon_box);
    }

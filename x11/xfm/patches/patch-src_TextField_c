@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_TextField_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
 --- src/TextField.c.orig	Tue Apr  4 11:05:36 2000
 +++ src/TextField.c	Sun Jan  3 01:03:08 2010
 @@ -3437,9 +3437,9 @@
@@ -5,10 +6,10 @@
  		strncpy(TF.buffer,TF.backup,TF.maxlen);
  		TF.buffer[TF.maxlen-1]=0;
 -		XtVaSetValues(w,XtNstring,TF.buffer,0);
-+		XtVaSetValues(w,XtNstring,TF.buffer,NULL);
++		XtVaSetValues(w,XtNstring,TF.buffer,(void *)NULL);
  	} else {
 -		XtVaSetValues(w,XtNstring,TF.backup,0);
-+		XtVaSetValues(w,XtNstring,TF.backup,NULL);
++		XtVaSetValues(w,XtNstring,TF.backup,(void *)NULL);
  	}
  
  	TF.modified_by_user = False;

@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_FmHistory_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
 --- src/FmHistory.c.orig	Mon Aug 18 05:35:01 1997
 +++ src/FmHistory.c	Sun Jan  3 01:03:08 2010
 @@ -69,7 +69,7 @@
@@ -5,7 +6,7 @@
  	simpleMenuWidgetClass,
  	parent,
 -	0);
-+	NULL);
++	(void *)NULL);
  
   /* does the menu have a label? */
   XtSetArg(args[0],XtNlabel,&str);
@@ -14,7 +15,7 @@
  	XtNameToWidget(menu,"menuLabel"),
  	XtNfont,resources.bold_font,
 -	0);
-+	NULL);
++	(void *)NULL);
  
   nargs=0;
   XtSetArg(args[nargs],XtNlineWidth,0); nargs++;
@@ -23,7 +24,7 @@
  				menu,
  				XtNfont,resources.menu_font,
 -				0),
-+				NULL),
++				(void *)NULL),
  			XtNcallback,
  			HistoryCB,
  			(XtPointer)hl);
@@ -32,7 +33,7 @@
   XtVaSetValues(menu,
  	XtNinsertPosition,InsertAfterLine,
 -	0);
-+	NULL);
++	(void *)NULL);
  
   hl->menu=menu;
  
@@ -41,7 +42,7 @@
  	XtNchildren,&chlds,
  	XtNnumChildren,&num_children,
 -	0);
-+	NULL);
++	(void *)NULL);
  
  
   XtSetArg(arg,XtNlabel,&str);
@@ -50,7 +51,7 @@
  		history_menu,
  		XtNfont,resources.menu_font,
 -		0),
-+		NULL),
++		(void *)NULL),
  	XtNcallback,
  	HistoryCB,
  	(XtPointer)hl);
@@ -59,7 +60,7 @@
  	XtNchildren,&chlds,
  	XtNnumChildren,&num_children,
 -	0);
-+	NULL);
++	(void *)NULL);
  
   XtSetArg(arg,XtNlabel,&str);
  
@@ -68,7 +69,7 @@
  		chlds[i],
  		XtNlineWidth,0,
 -		0);
-+		NULL);
++		(void *)NULL);
  	XtDestroyWidget(found);
  	return;
   }
@@ -77,7 +78,7 @@
  	XtNchildren,&chlds,
  	XtNnumChildren,&num_children,
 -	0);
-+	NULL);
++	(void *)NULL);
  
   i=0;
   while (!XtIsSubclass(chlds[i],smeLineObjectClass)) i++;
@@ -86,7 +87,7 @@
   Cardinal pos;
  
 - XtVaGetValues(cw,XtNchildren,&chlds,0);
-+ XtVaGetValues(cw,XtNchildren,&chlds,NULL);
++ XtVaGetValues(cw,XtNchildren,&chlds,(void *)NULL);
  
   pos=0;
   while(!XtIsSubclass(chlds[pos],smeLineObjectClass)) pos++;
@@ -95,7 +96,7 @@
  #endif
  
 -  XtVaGetValues(w, XtNlabel, &str, 0);
-+  XtVaGetValues(w, XtNlabel, &str, NULL);
++  XtVaGetValues(w, XtNlabel, &str, (void *)NULL);
    strcpy(path,str);
  
    fnexpand(path);
@@ -104,7 +105,7 @@
  	XtNchildren,&chlds,
  	XtNnumChildren,&num_children,
 -	0);
-+	NULL);
++	(void *)NULL);
  
  destroy=(WidgetList)XtMalloc(sizeof(Widget) *num_children);
  n_dest=0;
@@ -113,7 +114,7 @@
    }
  
 -  if (fixed<1) XtVaSetValues(chlds[line_i],XtNlineWidth,0,0);
-+  if (fixed<1) XtVaSetValues(chlds[line_i],XtNlineWidth,0,NULL);
++  if (fixed<1) XtVaSetValues(chlds[line_i],XtNlineWidth,0,(void *)NULL);
    chlds=0; /* for safety */
    for (i=0; i<n_dest; i++) XtDestroyWidget(destroy[i]);
    XtFree((char*)destroy); destroy=0;

@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_FmChmod_c,v 1.2 2010/01/03 22:53:32 jasper Exp $
 --- src/FmChmod.c.orig	Thu Aug 23 08:45:26 2001
 +++ src/FmChmod.c	Sun Jan  3 01:03:08 2010
 @@ -160,7 +160,7 @@
@@ -5,7 +6,7 @@
    }
    chmode.items[0][2].value=j;
 -  XtVaSetValues(chmode.items[0][2].w, XtNbitmap, picts, 0);
-+  XtVaSetValues(chmode.items[0][2].w, XtNbitmap, picts, NULL);
++  XtVaSetValues(chmode.items[0][2].w, XtNbitmap, picts, (void *)NULL);
  
    j=(chmode.items[1][2].value & S_IXGRP ? 1:0);
    j+=(chmode.items[1][2].value & S_ISGID ? 2:0);
@@ -14,7 +15,7 @@
    }
    chmode.items[1][2].value=j;
 -  XtVaSetValues(chmode.items[1][2].w, XtNbitmap, picts, 0);
-+  XtVaSetValues(chmode.items[1][2].w, XtNbitmap, picts, NULL);
++  XtVaSetValues(chmode.items[1][2].w, XtNbitmap, picts, (void *)NULL);
  
    j=(chmode.items[2][2].value & S_IXOTH ? 1:0);
    j+=(chmode.items[2][2].value & S_ISVTX ? 2:0);
@@ -23,7 +24,7 @@
    }
    chmode.items[2][2].value=j;
 -  XtVaSetValues(chmode.items[2][2].w, XtNbitmap, picts, 0);
-+  XtVaSetValues(chmode.items[2][2].w, XtNbitmap, picts, NULL);
++  XtVaSetValues(chmode.items[2][2].w, XtNbitmap, picts, (void *)NULL);
  #else
    for (i=0; i<3; i++) {
      for (j=0; j<3; j++) {
@@ -32,7 +33,7 @@
  	      case 2: picts=bm[STICKY_BM]; break; case 3: picts=bm[StICKY_BM]; break;
    }
 -  XtVaSetValues(chmode.items[i][j].w, XtNbitmap, picts, 0);
-+  XtVaSetValues(chmode.items[i][j].w, XtNbitmap, picts, NULL);
++  XtVaSetValues(chmode.items[i][j].w, XtNbitmap, picts, (void *)NULL);
    }
  #endif
  }

@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_FmMain_c,v 1.3 2010/01/03 22:53:32 jasper Exp $
 --- src/FmMain.c.orig	Thu Aug 23 08:45:26 2001
 +++ src/FmMain.c	Sun Jan  3 01:03:08 2010
 @@ -353,7 +353,7 @@
@@ -14,7 +15,7 @@
  	XtVaSetValues(aw.shell,
  		XtNmappedWhenManaged,False,
 -		0);
-+		NULL);
++		(void *)NULL);
    }
    /* still realize and set the WM properties. the WM needs
     * a window around and kwm is even able to restart an app
