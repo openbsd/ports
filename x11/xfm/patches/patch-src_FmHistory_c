@@ -1,0 +1,119 @@
+--- src/FmHistory.c.orig	Mon Aug 18 05:35:01 1997
++++ src/FmHistory.c	Sun Jan  3 01:03:08 2010
+@@ -69,7 +69,7 @@
+ 	name?name:"fm_history",
+ 	simpleMenuWidgetClass,
+ 	parent,
+-	0);
++	NULL);
+ 
+  /* does the menu have a label? */
+  XtSetArg(args[0],XtNlabel,&str);
+@@ -80,7 +80,7 @@
+  if (str) XtVaSetValues(
+ 	XtNameToWidget(menu,"menuLabel"),
+ 	XtNfont,resources.bold_font,
+-	0);
++	NULL);
+ 
+  nargs=0;
+  XtSetArg(args[nargs],XtNlineWidth,0); nargs++;
+@@ -99,7 +99,7 @@
+ 				smeBSBObjectClass,
+ 				menu,
+ 				XtNfont,resources.menu_font,
+-				0),
++				NULL),
+ 			XtNcallback,
+ 			HistoryCB,
+ 			(XtPointer)hl);
+@@ -125,7 +125,7 @@
+  /* from now on insert entries immediately after the line */
+  XtVaSetValues(menu,
+ 	XtNinsertPosition,InsertAfterLine,
+-	0);
++	NULL);
+ 
+  hl->menu=menu;
+ 
+@@ -154,7 +154,7 @@
+ 	history_menu,
+ 	XtNchildren,&chlds,
+ 	XtNnumChildren,&num_children,
+-	0);
++	NULL);
+ 
+ 
+  XtSetArg(arg,XtNlabel,&str);
+@@ -193,7 +193,7 @@
+ 		smeBSBObjectClass,
+ 		history_menu,
+ 		XtNfont,resources.menu_font,
+-		0),
++		NULL),
+ 	XtNcallback,
+ 	HistoryCB,
+ 	(XtPointer)hl);
+@@ -214,7 +214,7 @@
+ 	history_menu,
+ 	XtNchildren,&chlds,
+ 	XtNnumChildren,&num_children,
+-	0);
++	NULL);
+ 
+  XtSetArg(arg,XtNlabel,&str);
+ 
+@@ -236,7 +236,7 @@
+ 	if (i-haslabel==1) XtVaSetValues(
+ 		chlds[i],
+ 		XtNlineWidth,0,
+-		0);
++		NULL);
+ 	XtDestroyWidget(found);
+ 	return;
+  }
+@@ -269,7 +269,7 @@
+ 	history_menu,
+ 	XtNchildren,&chlds,
+ 	XtNnumChildren,&num_children,
+-	0);
++	NULL);
+ 
+  i=0;
+  while (!XtIsSubclass(chlds[i],smeLineObjectClass)) i++;
+@@ -318,7 +318,7 @@
+  Widget   cw=XtParent(w), *chlds;
+  Cardinal pos;
+ 
+- XtVaGetValues(cw,XtNchildren,&chlds,0);
++ XtVaGetValues(cw,XtNchildren,&chlds,NULL);
+ 
+  pos=0;
+  while(!XtIsSubclass(chlds[pos],smeLineObjectClass)) pos++;
+@@ -345,7 +345,7 @@
+   Boolean	keep_position=True;
+ #endif
+ 
+-  XtVaGetValues(w, XtNlabel, &str, 0);
++  XtVaGetValues(w, XtNlabel, &str, NULL);
+   strcpy(path,str);
+ 
+   fnexpand(path);
+@@ -447,7 +447,7 @@
+ 	hl->menu,
+ 	XtNchildren,&chlds,
+ 	XtNnumChildren,&num_children,
+-	0);
++	NULL);
+ 
+ destroy=(WidgetList)XtMalloc(sizeof(Widget) *num_children);
+ n_dest=0;
+@@ -478,7 +478,7 @@
+ 	}
+   }
+ 
+-  if (fixed<1) XtVaSetValues(chlds[line_i],XtNlineWidth,0,0);
++  if (fixed<1) XtVaSetValues(chlds[line_i],XtNlineWidth,0,NULL);
+   chlds=0; /* for safety */
+   for (i=0; i<n_dest; i++) XtDestroyWidget(destroy[i]);
+   XtFree((char*)destroy); destroy=0;

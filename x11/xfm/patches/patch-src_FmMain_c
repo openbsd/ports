@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_FmMain_c,v 1.1 2002/12/30 09:15:26 pvalchev Exp $
---- src/FmMain.c.orig	Mon Dec 30 00:55:17 2002
-+++ src/FmMain.c	Mon Dec 30 00:55:29 2002
-@@ -353,7 +353,7 @@ int shell_test(UserInfo *ui)
+--- src/FmMain.c.orig	Thu Aug 23 08:45:26 2001
++++ src/FmMain.c	Sun Jan  3 01:03:08 2010
+@@ -353,7 +353,7 @@
        perror("(child) Can't close pipe");
        exit(1);
      }
@@ -10,3 +9,12 @@ $OpenBSD: patch-src_FmMain_c,v 1.1 2002/12/30 09:15:26 pvalchev Exp $
      perror("Exec failed");
      exit(1);
    } else {        /* parent; read and check the child's output */
+@@ -655,7 +655,7 @@
+ 	/* create a dummy window to store the WM_COMMAND property */
+ 	XtVaSetValues(aw.shell,
+ 		XtNmappedWhenManaged,False,
+-		0);
++		NULL);
+   }
+   /* still realize and set the WM properties. the WM needs
+    * a window around and kwm is even able to restart an app

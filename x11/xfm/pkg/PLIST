@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:34 espie Exp $
-bin/xfm
+@comment $OpenBSD: PLIST,v 1.7 2010/01/03 21:49:06 jasper Exp $
+@bin bin/xfm
 bin/xfm.install
-bin/xfmtype
+@bin bin/xfmtype
 lib/X11/app-defaults/Xfm
 lib/X11/xfm/
 lib/X11/xfm/bitmaps/

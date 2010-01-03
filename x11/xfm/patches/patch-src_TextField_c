@@ -1,0 +1,14 @@
+--- src/TextField.c.orig	Tue Apr  4 11:05:36 2000
++++ src/TextField.c	Sun Jan  3 01:03:08 2010
+@@ -3437,9 +3437,9 @@
+ 		/* need to copy it first */
+ 		strncpy(TF.buffer,TF.backup,TF.maxlen);
+ 		TF.buffer[TF.maxlen-1]=0;
+-		XtVaSetValues(w,XtNstring,TF.buffer,0);
++		XtVaSetValues(w,XtNstring,TF.buffer,NULL);
+ 	} else {
+-		XtVaSetValues(w,XtNstring,TF.backup,0);
++		XtVaSetValues(w,XtNstring,TF.backup,NULL);
+ 	}
+ 
+ 	TF.modified_by_user = False;

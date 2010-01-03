@@ -1,0 +1,93 @@
+--- src/FmLog.c.orig	Thu Aug 23 08:45:26 2001
++++ src/FmLog.c	Sun Jan  3 01:03:08 2010
+@@ -42,7 +42,7 @@
+ 	fprintf(orig_stderr,"\nread error %i in 'get_pipe_input()'\n",errno);
+ 
+  if (nbytes>0) {
+-   XtVaSetValues(ldp->text,XtNeditType,XawtextEdit,0);
++   XtVaSetValues(ldp->text,XtNeditType,XawtextEdit,NULL);
+    block.format=FMT8BIT;
+    block.length=nbytes;
+    block.ptr=buf;
+@@ -56,9 +56,9 @@
+    XtVaSetValues(ldp->text,
+ 		XtNeditType,XawtextRead,
+ 		XtNinsertPosition,pos,
+-		0);
++		NULL);
+ 
+-   XtVaGetValues(ldp->auto_flag,XtNstate,&auto_popup,0);
++   XtVaGetValues(ldp->auto_flag,XtNstate,&auto_popup,NULL);
+    if (auto_popup)
+      popupByCursor(ldp->shell,XtGrabNone);
+  }
+@@ -69,8 +69,8 @@
+ {
+ Boolean flag;
+ Pixel   bg=(Pixel)cld,fg;
+-XtVaGetValues(w,XtNstate,&flag,XtNforeground,&fg,0);
+-XtVaSetValues(w,XtNbackground,(flag?bg:fg),0);
++XtVaGetValues(w,XtNstate,&flag,XtNforeground,&fg,NULL);
++XtVaSetValues(w,XtNbackground,(flag?bg:fg),NULL);
+ }
+ 
+ static void hide_log_cb(Widget w, XtPointer cld, XtPointer cad)
+@@ -84,11 +84,11 @@
+  Widget text=(Widget)cld;
+  XawTextBlock           block;
+ 
+- XtVaSetValues(text,XtNeditType,XawtextEdit,0);
++ XtVaSetValues(text,XtNeditType,XawtextEdit,NULL);
+  block.firstPos=0; block.length=0; block.ptr=0;
+  block.format=FMT8BIT;
+  XawTextReplace(text,0,pos,&block);
+- XtVaSetValues(text,XtNeditType,XawtextRead,0);
++ XtVaSetValues(text,XtNeditType,XawtextRead,NULL);
+  pos=0;
+ }
+ 
+@@ -149,7 +149,7 @@
+ 	  "form", formWidgetClass, ldp->shell, 
+ 	  NULL);
+ 
+-  XtVaGetValues(form,XtNdefaultDistance,&vdist,0);
++  XtVaGetValues(form,XtNdefaultDistance,&vdist,NULL);
+ 
+ 
+   button_args[FONT].value=(XtArgVal)font;
+@@ -184,7 +184,7 @@
+ 	  button_args,N_BUTTON_ARGS);
+   XtAddCallback(cmd,XtNcallback,clear_log_cb,(XtPointer)ldp->text);
+ 
+-  XtVaGetValues(cmd,XtNheight,&h1, XtNborderWidth,&bw, 0);
++  XtVaGetValues(cmd,XtNheight,&h1, XtNborderWidth,&bw, NULL);
+ 
+   button_args[FROM_HORIZ].value=(XtArgVal)cmd;
+   cmd =XtVaCreateManagedWidget("Auto Popup", labelWidgetClass, form,
+@@ -197,7 +197,7 @@
+ 	  XtNbottom,XtChainTop,
+ 	  XtNfont,font,
+ 	  XtNheight,h1+2*bw,
+-	  0);
++	  NULL);
+ 
+   button_args[FROM_HORIZ].value=(XtArgVal)cmd;
+   ldp->auto_flag =XtCreateManagedWidget(
+@@ -208,7 +208,7 @@
+   XtVaGetValues(ldp->auto_flag,
+ 	XtNforeground,&fg,XtNbackground,&bg,XtNstate,&flag,
+ 	XtNheight,&h2,
+-	0);
++	NULL);
+ 
+   vdist+=(h1-h2)/2;
+ 
+@@ -216,7 +216,7 @@
+ 	XtNvertDistance,vdist,
+ 	XtNforeground,bg,
+ 	XtNbackground,(flag?fg:bg),
+-	0);
++	NULL);
+ 
+   XtAddCallback(ldp->auto_flag,XtNcallback,update_tick_cb,(XtPointer)fg);
+ 	

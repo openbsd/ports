@@ -1,0 +1,25 @@
+--- src/FmSelection.c.orig	Wed Sep 24 14:32:50 1997
++++ src/FmSelection.c	Sun Jan  3 01:03:08 2010
+@@ -45,7 +45,7 @@
+  XtVaSetValues(fw->status,
+ 	XtNbackground,saved_bg,
+ 	XtNforeground,saved_fg,
+-	0);
++	NULL);
+ }
+ 
+ static Boolean ConvertSelection( 
+@@ -168,11 +168,11 @@
+      XtVaGetValues(fw->status,
+ 	XtNbackground,&saved_bg,
+ 	XtNforeground,&saved_fg,
+-	0);
++	NULL);
+      XtVaSetValues(fw->status,
+ 	XtNbackground,resources.highlight_pixel,
+ 	XtNforeground,saved_bg,
+-	0);
++	NULL);
+      selection_owner=fw;
+    } else {
+      unhighlight(fw);

@@ -1,0 +1,29 @@
+--- src/FmBitmaps.c.orig	Wed Oct 29 07:02:05 1997
++++ src/FmBitmaps.c	Sun Jan  3 01:03:08 2010
+@@ -489,7 +489,7 @@
+  top=wid;
+  while(wtmp=XtParent(top)) top=wtmp;
+ 
+- XtVaGetValues(top,XtNcolormap,&old,0);
++ XtVaGetValues(top,XtNcolormap,&old,NULL);
+  
+  if (0==(new=XCopyColormapAndFree(di,old))) {
+    XtAppWarning(app,"switchColormap failed: cannot allocate new colormap");
+@@ -497,7 +497,7 @@
+  }
+ 
+  has_private_cm=True;
+- XtVaSetValues(top,XtNcolormap,new,0);
++ XtVaSetValues(top,XtNcolormap,new,NULL);
+  XtSetWMColormapWindows(top,&top,1);
+ 
+  XtAppWarning(app,"switching to private colormap...");
+@@ -515,7 +515,7 @@
+ 
+ if (rval==XpmColorFailed && switchColormap(top)) {
+     /* get the new colormap */
+-    XtVaGetValues(top,XtNcolormap,&atts->colormap,0);
++    XtVaGetValues(top,XtNcolormap,&atts->colormap,NULL);
+     /* and repeat */
+     rval=(from_file? XpmReadFileToPixmap(dpy,win,(String)data,pm,msk,atts) :
+ 		     XpmCreatePixmapFromData(dpy,win,data,pm,msk,atts));
