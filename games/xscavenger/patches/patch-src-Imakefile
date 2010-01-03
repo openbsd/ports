@@ -1,5 +1,5 @@
---- src/Imakefile.orig	Mon Jan 10 06:15:30 2000
-+++ src/Imakefile	Mon Jul 16 14:58:25 2001
+--- src/Imakefile.orig	Sun Jan  9 21:15:30 2000
++++ src/Imakefile	Sun Jan  3 01:35:51 2010
 @@ -1,7 +1,7 @@
  # set this to the path where data files should be stored.  LIBDIR
  # is automatically defined by imake, usually to /usr/X11R6/lib/X11, so
@@ -14,7 +14,7 @@
  	../data/victory.raw
  
 -LOCAL_LIBRARIES = $(XLIB)
-+LOCAL_LIBRARIES = $(XLIB) -lossaudio
++LOCAL_LIBRARIES = $(XLIB) -lsndio
  EXTRA_DEFINES = -DLIBNAME=\"$(LIBNAME)\"
  
  ComplexProgramTarget(scavenger)

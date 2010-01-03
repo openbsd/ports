@@ -1,25 +1,92 @@
-$OpenBSD: patch-src-sound_c,v 1.3 2002/03/21 02:18:21 jcs Exp $
---- src/sound.c.orig	Wed Mar 20 20:06:22 2002
-+++ src/sound.c	Wed Mar 20 20:07:17 2002
-@@ -5,7 +5,7 @@
+$OpenBSD: patch-src-sound_c,v 1.4 2010/01/03 21:51:29 jakemsr Exp $
+--- src/sound.c.orig	Sun Dec  1 22:03:54 2002
++++ src/sound.c	Sun Jan  3 01:53:43 2010
+@@ -4,8 +4,7 @@
+ #include <stdlib.h>
  #include <unistd.h>
  #include <fcntl.h>
- #include <sys/ioctl.h>
+-#include <sys/ioctl.h>
 -#include <linux/soundcard.h>
-+#include <soundcard.h>
++#include <sndio.h>
  #include <sys/time.h>
  #include <signal.h>
  #include <string.h>
-@@ -14,7 +14,7 @@
+@@ -14,8 +13,6 @@
  #include "scav.h"
  #include "sound.h"
  
 -#define SOUNDDEV "/dev/dsp"
-+#define SOUNDDEV "/dev/audio"
- 
+-
  char dirlist[512];
  
-@@ -207,7 +207,7 @@
+ #define NUMSOUNDS	(sizeof(soundnames)/sizeof(char*))
+@@ -42,7 +39,8 @@ sample samples[NUMSOUNDS];
+ 
+ int soundworking=0;
+ int fragment;
+-int dsp;
++struct sio_hdl *hdl;
++struct sio_par par;
+ int soundwrite,soundread;
+ int *soundbuffer;
+ int soundbufferlen;
+@@ -52,7 +50,6 @@ int soundbufferlen;
+ void soundinit(void)
+ {
+ int fd[2];
+-char devname[256];
+ int value;
+ 
+ 	sprintf(dirlist,"%s/%s,%s",localname,localdirname,libname);
+@@ -67,17 +64,29 @@ int value;
+ 	}
+ 	close(soundwrite);
+ 	memset(samples,0,sizeof(samples));
+-	strcpy(devname,SOUNDDEV);
+-	dsp=open(devname,O_WRONLY);
+-	if(dsp<0) goto failed;
+-	fragment=0x20009;
+-	ioctl(dsp,SNDCTL_DSP_SETFRAGMENT,&fragment);
+-	value=10000;
+-	ioctl(dsp,SNDCTL_DSP_SPEED,&value);
+-	value=0;
+-	ioctl(dsp,SNDCTL_DSP_STEREO,&value);
+-	ioctl(dsp,SNDCTL_DSP_GETBLKSIZE,&fragment);
+-	if(!fragment) {close(dsp);goto failed;}
++	hdl=sio_open(NULL,SIO_PLAY,0);
++	if(hdl==NULL) goto failed;
++	sio_initpar(&par);
++	par.bits=8;
++	par.sig=0;
++	par.rate=10000;
++        par.pchan=1;
++	par.le=SIO_LE_NATIVE;
++	par.appbufsz=par.rate/20;
++	if(!sio_setpar(hdl,&par) || !sio_getpar(hdl,&par)) {
++	  sio_close(hdl);
++	  goto failed;
++	}
++	if(par.bits!=8 || par.sig!=0 || par.rate!=10000 || par.pchan!=1) {
++	  sio_close(hdl);
++	  goto failed;
++	}
++	if(!sio_start(hdl)) {
++	  sio_close(hdl);
++	  goto failed;
++	}
++	fragment=par.round*par.bps*par.pchan;
++	if(!fragment) {sio_close(hdl);goto failed;}
+ 	soundbufferlen=fragment*sizeof(int);
+ 	soundbuffer=malloc(soundbufferlen);
+ 	if(!soundbuffer) goto failed;
+@@ -207,13 +216,13 @@ int which;
+ 		ip=soundbuffer;
+ 		p=(char *) soundbuffer;
+ 		while(j--) *p++ = clip[4096+*ip++];
+-		write(dsp,(char *)soundbuffer,fragment);
++		sio_write(hdl,(char *)soundbuffer,fragment);
+ 	}
+ }
  
  void playsound(int n)
  {
