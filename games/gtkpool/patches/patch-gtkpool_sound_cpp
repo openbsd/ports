@@ -1,19 +1,19 @@
-$OpenBSD: patch-gtkpool_sound_cpp,v 1.4 2007/10/29 06:47:20 jakemsr Exp $
+$OpenBSD: patch-gtkpool_sound_cpp,v 1.5 2010/01/03 08:58:07 jakemsr Exp $
 --- gtkpool/sound.cpp.orig	Sun Jul 28 14:57:41 2002
-+++ gtkpool/sound.cpp	Sun Oct 28 19:09:11 2007
-@@ -20,13 +20,17 @@
- #include <sys/stat.h>
++++ gtkpool/sound.cpp	Sat Jan  2 23:14:43 2010
+@@ -16,17 +16,12 @@
+  ***************************************************************************/
+ 
+ #include <gtk/gtk.h>
+-#include <sys/types.h>
+-#include <sys/stat.h>
  #include <fcntl.h>
  #include <unistd.h>
 -#include <sys/soundcard.h>
- #include <sys/ioctl.h>
-+#ifdef __OpenBSD__
-+#include <soundcard.h>
-+#else
-+#include <sys/soundcard.h>
-+#endif
- #include <stdio.h>
- #include <errno.h>
+-#include <sys/ioctl.h>
+-#include <stdio.h>
+-#include <errno.h>
++#include <sndio.h>
  #include "sound.h"
  
 -SoundError::SoundError(char *desc, int c, int r = 0, int g = 0){
@@ -21,12 +21,112 @@ $OpenBSD: patch-gtkpool_sound_cpp,v 1.4 2007/10/29 06:47:20 jakemsr Exp $
  	description = strdup(desc);
  	code = c;
  	requested = r;
-@@ -80,7 +84,7 @@ int load_sound(char *file, char *buffer, int *count)
+@@ -36,7 +31,7 @@ SoundError::~SoundError(){
+ 	free(description);
+ }
  
- void open_sound_device(char *name)
+-int audio_fd;
++struct sio_hdl *hdl;
+ bool sound_enabled;
+ 
+ 	// must add error checking!
+@@ -49,25 +44,22 @@ bool sound_enabled;
+ 
+ void play_sound(char *sound, int count)
+ {
+-	//int fragment = 0x20008;
+ 	if(!sound_enabled)
+ 	{
+ 		g_message("Sound not available.");
+ 		return;
+ 	}
+-	if(audio_fd < 0)
++	if(hdl == NULL)
+ 	{
+ 		g_message("Sound device not open.");
+ 		return;
+ 	}
+ 	
+-	if(write(audio_fd, sound, count) < 0)
++	if(sio_write(hdl, sound, count) == 0)
+ 	{
+ 		g_message("Write to sound device failed.");
+ 		return;
+ 	}
+-	
+-	ioctl(audio_fd, SNDCTL_DSP_POST, 0);
+ }
+ 
+ int load_sound(char *file, char *buffer, int *count)
+@@ -78,37 +70,53 @@ int load_sound(char *file, char *buffer, int *count)
+ 	return *count;
+ }
+ 
+-void open_sound_device(char *name)
++void open_sound_device()
  {
 -	if ((audio_fd = open("/dev/dsp", O_WRONLY, 0)) == -1) {
-+	if ((audio_fd = open("/dev/audio", O_WRONLY, 0)) == -1) {
++	if ((hdl = sio_open(NULL, SIO_PLAY, 0)) == NULL) {
  		g_message("Could Not open Audio Device");
  	}
+ }
+ 
+ void close_sound_device()
+ {
+-	 close (audio_fd);
++	if (hdl != NULL)
++		sio_close(hdl);
++	hdl = NULL;
+ }
+ 
+ void configure_sound_device()
+ {
+-	int fragment = 0x00020008;
+-	int format = AFMT_U8;
+-	int channels = 2;
+-	int speed = 44100;
+-	
+-	if (ioctl(audio_fd, SNDCTL_DSP_SETFMT, &format) == -1) {
+-		perror("SNDCTL_DSP_SETFMT");
++	struct sio_par par;
++
++	sound_enabled = false;
++
++	sio_initpar(&par);
++	par.bits = 8;
++	par.sig = 0;
++	par.pchan = 2;
++	par.rate = 44100;
++
++	/* OSS is using this, which is 2 buffers of 256 bytes each */
++	/* int fragment = 0x00020008; */
++	/* par.round = 256 / SIO_BPS(par.bits) / par.pchan; */
++	/* par.appbufsz = par.round * 2; */
++	par.appbufsz = par.rate / 20;	/* 50 ms */
++
++	if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par)) {
++		g_message("setting or getting audio params failed");
++		return;
+ 	}
+-	if (ioctl(audio_fd, SNDCTL_DSP_CHANNELS, &channels) == -1) {
+-		perror("SNDCTL_DSP_CHANNELS");
++
++	if (par.bits != 8 || par.sig != 0 || par.pchan != 2 ||
++	    par.rate != 44100) {
++		g_message("could not set audio params as desired");
++		return;
+ 	}
+-	if (ioctl(audio_fd, SNDCTL_DSP_SPEED, &speed) == -1) {
+-		perror("SNDCTL_DSP_SPEED");
++
++	if (!sio_start(hdl)) {
++		g_message("could not start audio");
++		return;
+ 	}
+-	if( ioctl(audio_fd, SNDCTL_DSP_SETFRAGMENT, &fragment) == -1 ) {
+-		perror("SNDCTL_DSP_SETFRAGMENT");
+-	}
+-	
++
+ 	sound_enabled = true;
  }

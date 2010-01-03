@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2010/01/03 08:58:07 jakemsr Exp $
 
 COMMENT=	simple gtk+ pool simulation game
 
 DISTNAME=	gtkpool-0.5.0
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}	
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	devel/gettext
 
-WANTLIB=	X11 Xau Xdmcp Xext Xi c glib gmodule m ossaudio pthread-stubs \
+WANTLIB=	X11 Xau Xdmcp Xext Xi c glib gmodule m pthread-stubs sndio \
 		stdc++ xcb
 
 USE_LIBTOOL=	Yes
@@ -28,7 +28,7 @@ USE_X11=	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	LIBS="-lossaudio"
+CONFIGURE_ENV=	LIBS="-lsndio"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/admin
 
 .include <bsd.port.mk>

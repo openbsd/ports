@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:09 espie Exp $
-bin/gtkpool
+@comment $OpenBSD: PLIST,v 1.5 2010/01/03 08:58:07 jakemsr Exp $
+@bin bin/gtkpool
 share/gtkpool/
 share/gtkpool/ball_10_lg.xpm
 share/gtkpool/ball_10_sm.xpm
