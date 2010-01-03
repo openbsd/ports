@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/07/13 09:40:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/01/03 22:56:42 jasper Exp $
 
 COMMENT=	chemistry file translation program
 
-V=		2.2.2
+V=		2.2.3
 DISTNAME=	openbabel-${V}
 CATEGORIES=	misc
 
@@ -28,7 +28,7 @@ MODULES=	converters/libiconv
 
 BUILD_DEPENDS=	::devel/boost
 LIB_DEPENDS=	xml2.>=9::textproc/libxml
-REGRESS_DEPENDS=::misc/openbabel
+REGRESS_DEPENDS=::${BUILD_PKGPATH}
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
