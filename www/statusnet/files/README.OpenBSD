@@ -1,0 +1,49 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2010/01/03 17:29:36 jasper Exp $
+
+This document will briefly describe the steps needed before one can
+complete the Status.net installation. After taking these steps you
+should be able to browse to http://localhost/statusnet/install.php
+and complete the installation.
+
+Please refer to http://gitorious.org/statusnet/mainline/blobs/master/README
+for a complete overview of how to setup Status.net with advanced features.
+
+== MySQL==
+MySQL users running with chroot'ed httpd might like to take the
+following steps to place the mysql socket inside the chroot:
+
+Create a directory for the mysql socket.
+
+        mkdir -p /var/www/var/run/mysql
+
+Adjust your my.cnf to put the mysql socket into the chroot,
+
+        [client]
+        socket = /var/www/var/run/mysql/mysql.sock
+
+        [mysqld]
+        socket = /var/www/var/run/mysql/mysql.sock
+
+and set DBSocket in the Status.net configuration appropriately.
+
+Now connect to MySQL and create a user and database for Status.net:
+
+    	  mysqladmin -u "username" --password="password" create statusnet
+
+          mysql> GRANT ALL on statusnet.*
+	  TO 'lacuser'@'localhost'
+	  IDENTIFIED BY 'lacpassword';
+
+== PostgreSQL ==
+
+Assuming you have an administrative account named `postgres',
+you can create the 'statusnet' user and database like this:
+
+	createuser -U postgres --pwprompt --no-superuser \
+		--createdb --no-createrole lacuser
+
+Now you can create the database for Status.net with:
+
+	pgsql -U statusnet
+	psql> create database statusnet
+	psql> \q
