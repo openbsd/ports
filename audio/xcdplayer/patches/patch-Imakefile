@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.1 2003/08/24 22:15:56 naddy Exp $
---- Imakefile.orig	1993-01-12 19:59:29.000000000 +0100
-+++ Imakefile	2003-08-24 22:38:23.000000000 +0200
+$OpenBSD: patch-Imakefile,v 1.2 2010/01/04 22:09:33 jasper Exp $
+--- Imakefile.orig	Tue Jan 12 19:59:29 1993
++++ Imakefile	Mon Jan  4 23:00:16 2010
 @@ -15,6 +15,11 @@
  
  LOCAL_LIBRARIES = XawClientLibs
@@ -13,3 +13,20 @@ $OpenBSD: patch-Imakefile,v 1.1 2003/08/24 22:15:56 naddy Exp $
  #ifdef SunArchitecture
             SRCS = main.c top_setup.c logo_setup.c button_setup.c cdrom_callb.c\
                    cdrom_sun.c internals.c shuffle.c program.c leds.c debug.c 
+@@ -22,6 +27,8 @@ LINTLIBS = -lXaw -lXt -lX11
+            OBJS = main.o top_setup.o logo_setup.o button_setup.o cdrom_callb.o\
+                   cdrom_sun.o internals.o shuffle.o program.o leds.o debug.o
+ #endif
++
++#ifndef OpenBSDArchitecture
+ #ifdef SGIArchitecture
+ LOCAL_LIBRARIES = XawClientLibs -lcdaudio -lds -laudio -lm
+            SRCS = main.c top_setup.c logo_setup.c button_setup.c cdrom_callb.c\
+@@ -30,6 +37,7 @@ LOCAL_LIBRARIES = XawClientLibs -lcdaudio -lds -laudio
+            OBJS = main.o top_setup.o logo_setup.o button_setup.o cdrom_callb.o\
+                   cdrom_sgi.o internals.o shuffle.o program.o leds.o debug.o
+ #endif
++#endif /* !OpenBSD/sgi */
+ 
+        PROGRAMS = xcdplayer
+ 
