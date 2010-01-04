@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2010/01/03 22:39:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.124 2010/01/04 14:13:51 jasper Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -41,12 +41,6 @@ MULTI_PACKAGES=		-main
 
 WANTLIB-main=		${WANTLIB} c
 RUN_DEPENDS-main=
-
-# XXX: python* don't build on mips64 for now, so don't try to build
-# the python part of libxml untill python is fixed.
-.if ${MACHINE_ARCH} == "mips64"
-FLAVOR=no_python
-.endif
 
 .if !${FLAVOR:L:Mno_python}
 MULTI_PACKAGES+=	-python
