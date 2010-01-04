@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/01/04 08:15:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/01/04 08:22:59 ajacoutot Exp $
 
 COMMENT=		open source micro messaging platform
 
 DISTNAME=		statusnet-0.8.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
-CATEGORIES=		net www
+CATEGORIES=		www net
 
 HOMEPAGE=		http://status.net/
 
