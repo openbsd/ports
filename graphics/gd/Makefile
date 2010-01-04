@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.51 2007/09/15 20:09:40 simon Exp $
+# $OpenBSD: Makefile,v 1.52 2010/01/04 15:05:49 jasper Exp $
 
 COMMENT=	library for dynamic creation of images
 
 DISTNAME=	gd-2.0.35
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	gd	20.35
 CATEGORIES=	graphics
-MASTER_SITES=	${HOMEPAGE}releases/
+MASTER_SITES=	${HOMEPAGE}/releases/
 
 HOMEPAGE=	http://www.libgd.org/
 
