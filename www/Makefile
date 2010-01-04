@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.444 2010/01/04 10:56:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.445 2010/01/04 19:11:02 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -387,6 +387,7 @@
      SUBDIR += squid,snmp
      SUBDIR += squidguard
      SUBDIR += squidguard,ldap
+     SUBDIR += statusnet
      SUBDIR += surf
      SUBDIR += surfraw
      SUBDIR += swfdec-plugin
