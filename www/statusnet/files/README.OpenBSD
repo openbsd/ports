@@ -1,14 +1,15 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2010/01/03 17:29:36 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2010/01/04 08:15:49 ajacoutot Exp $
 
 This document will briefly describe the steps needed before one can
 complete the Status.net installation. After taking these steps you
-should be able to browse to http://localhost/statusnet/install.php
+should be able to browse to http://<hostname>/statusnet/install.php
 and complete the installation.
 
 Please refer to http://gitorious.org/statusnet/mainline/blobs/master/README
 for a complete overview of how to setup Status.net with advanced features.
 
 == MySQL==
+
 MySQL users running with chroot'ed httpd might like to take the
 following steps to place the mysql socket inside the chroot:
 

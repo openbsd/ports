@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/03 17:29:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/01/04 08:15:49 ajacoutot Exp $
 
 COMMENT=		open source micro messaging platform
 
 DISTNAME=		statusnet-0.8.2
+PKGNAME=		${DISTNAME}p0
+
 CATEGORIES=		net www
 
 HOMEPAGE=		http://status.net/
@@ -56,9 +58,8 @@ ERRORS+=		"Fatal: Invalid flavor: ${FLAVOR}"
 .endif
 
 do-install:
-	${INSTALL_DATA_DIR} ${INSTDIR}
-	cp -Rp ${WRKSRC}/* ${INSTDIR}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
+	cp -Rp ${WRKSRC} ${INSTDIR}
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${INSTDIR}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
