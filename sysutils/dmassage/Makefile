@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 21:14:01 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/01/04 06:35:31 kili Exp $
 
 COMMENT=		dmesg parser
 DISTNAME=		dmassage-0.6
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.sentia.org/projects/dmassage/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

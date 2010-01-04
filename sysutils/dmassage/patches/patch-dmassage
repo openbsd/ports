@@ -1,7 +1,23 @@
-$OpenBSD: patch-dmassage,v 1.1.1.1 2006/01/11 18:43:02 jolan Exp $
---- dmassage.orig	Sun Jan 27 06:35:53 2002
-+++ dmassage	Wed Jan 11 12:38:02 2006
-@@ -191,7 +191,6 @@ sub printdev
+$OpenBSD: patch-dmassage,v 1.2 2010/01/04 06:35:31 kili Exp $
+--- dmassage.orig	Sun Jan 27 13:35:53 2002
++++ dmassage	Sat Jan  2 20:24:27 2010
+@@ -97,14 +97,11 @@ sub parse_dmesg
+ {
+     open(DMESG, $DMESG) || die "cannot read dmesg: $!\n";
+ 
+-    # "mainbus0 at root" should be always there.
+-    $dmesgdev{"root"}{"mainbus0"}++;
+-
+     while (<DMESG>) {
+ 	chomp;
+ 	s/\s+/ /g;
+ 	s/^ //;
+-	if (m/^([a-z]{2,}[0-9]+) at ([a-z]{2,}[0-9]+)/) {
++	if (m/^([a-z]{2,}[0-9]+) at ([a-z]{2,}[0-9]+|root)/) {
+ 	    $dmesgdev{$2}{$1}++;
+ 	}
+     }
+@@ -191,7 +188,6 @@ sub printdev
  sub usage
  {
      die <<USAGE
