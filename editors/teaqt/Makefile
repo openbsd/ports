@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/10/09 13:04:25 giovanni Exp $
+# $OpenBSD: Makefile,v 1.8 2010/01/04 11:10:34 giovanni Exp $
 
 COMMENT =	powerful and simple qt4 editor
 
-V =		26.0.0
+V =		26.2.0
 DISTNAME =	tea-${V}
 PKGNAME =	teaqt-${V}
 CATEGORIES =	editors x11
