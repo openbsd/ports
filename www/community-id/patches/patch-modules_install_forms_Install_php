@@ -1,0 +1,32 @@
+$OpenBSD: patch-modules_install_forms_Install_php,v 1.1.1.1 2010/01/04 08:58:14 ajacoutot Exp $
+--- modules/install/forms/Install.php.orig	Thu Oct  1 19:56:39 2009
++++ modules/install/forms/Install.php	Fri Jan  1 16:15:06 2010
+@@ -21,7 +21,7 @@ class Install_Form_Install extends Zend_Form
+                  ->setDescription('usually localhost')
+                  ->setRequired(true)
+                  ->setDecoratorOptions(array('dontMarkRequired' => true))
+-                 ->setValue('localhost');
++                 ->setValue('127.0.0.1');
+ 
+         $dbname = new Monkeys_Form_Element_Text('dbname');
+         translate('Database name');
+@@ -34,7 +34,8 @@ class Install_Form_Install extends Zend_Form
+         translate('Database username');
+         $dbusername->setLabel('Database username')
+                    ->setRequired(true)
+-                   ->setDecoratorOptions(array('dontMarkRequired' => true));
++                   ->setDecoratorOptions(array('dontMarkRequired' => true))
++                   ->setValue('cid');
+ 
+         $dbpassword = new Monkeys_Form_Element_Password('dbpassword');
+         translate('Database password');
+@@ -53,7 +54,8 @@ class Install_Form_Install extends Zend_Form
+         $adminUsername = new Monkeys_Form_Element_Text('adminUsername');
+         $adminUsername->setLabel('Username')
+                       ->setRequired(true)
+-                      ->setDecoratorOptions(array('dontMarkRequired' => true));
++                      ->setDecoratorOptions(array('dontMarkRequired' => true))
++                      ->setValue('cidadmin');
+ 
+         $password1 = new Monkeys_Form_Element_Password('password1');
+         translate('Enter password');

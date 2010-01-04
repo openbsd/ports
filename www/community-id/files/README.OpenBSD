@@ -1,0 +1,91 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2010/01/04 08:58:14 ajacoutot Exp $
+
+Post-install/update memo for Community-ID
+=========================================
+
+The complete installation instructions are available at
+    ${BASE_URL}/wiki/communityid/How_to_install_Community-ID_under_Linux
+
+Commutity-ID is installed under
+    ${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+   # ln -s ../communityid/webdir ${PREFIX}/htdocs/openid
+(make sure you use a relative symlink since Apache is chrooted)
+
+
+Installation
+------------
+
+* Creating a dedicated user and database for Community-ID.
+
+    $ mysql -u root -p mysql
+    mysql> CREATE DATABASE `communityid`;
+    mysql> USE `communityid`;
+    mysql> GRANT ALL PRIVILEGES ON `communityid` . *
+        -> TO 'cid'@'localhost' IDENTIFIED BY 'cidpasswd';
+    mysql> QUIT
+
+* Configuring the Apache web server (editing /var/www/conf/httpd.conf).
+  The rewrite module is needed for proper operation. To load it,
+  uncomment the corresponding line:
+    LoadModule rewrite_module	/usr/lib/apache/modules/mod_rewrite.so
+
+  The rewriting rules are read from an .htaccess file located under
+  ${INSTDIR}/webdir (i.e. ${PREFIX}/htdocs/openid). For Apache to be
+  able to process such file, the AllowOverride rule must be set to All.
+    <Directory /var/www/htdocs/openid>
+    	AllowOverride All
+    </Directory>
+
+* Configuring your ${PREFIX}/conf/php.ini for Community-ID.
+  - short_open_tag = On
+
+* Setting up entropy.
+  Community-ID needs a high-quality pseudo-random number generator. The
+  partition that hosts the ServerRoot (e.g. /var/www) needs to allow
+  character devices, i.e. _not_ be mounted "nodev", so configure
+  /etc/fstab accordingly. You can remount your /var/www partition
+  without having to restart:
+    $ sudo mount -u -o dev /var/www
+
+  You also need to create the arandom(4) device:
+    $ sudo mknod -m 644 /var/www/dev/arandom c $(ls -l /dev/arandom | awk '{ print $5,$6 }' | sed 's|,||')
+
+  Another solution would be to just run httpd unchrooted but it is
+  obviously not recommended.
+
+  Note: setting up entropy this way is not required per se but _highly_
+  encouraged on production systems. If you want to use an insecure
+  pseudo-random generator, just define Auth_OpenID_RAND_SOURCE as 'null'
+  at line 23 of ${INSTDIR}/libs/Auth/OpenID/CryptUtil.php.
+
+* Configuring the maintenance job (clean the history logs).
+  Every openid authentication gets logged into the "history" table, so
+  it can get pretty large with time. The script clear_logs.php erases
+  the entries older than the number of days set in the config.php
+  setting "keep_history_days".
+  Add the following line to root's crontab:
+
+    0 0 * * *	${LOCALBASE}/bin/php ${INSTDIR}/scripts/clear_logs.php
+
+* Finishing the installation.
+  Point your web browser to:
+    http://<hostname>/openid/
+
+
+Restricting configuration file access
+-------------------------------------
+
+* IMPORTANT!
+  After having successfully installed and configured Community-ID, you
+  must remove write access to the config.php file (you may want to edit
+  it manually in case the defaults are not good enough for your setup).
+    $ sudo chmod 0440 ${INSTDIR}/config.php
+
+
+Update
+------
+
+  After upgrading Community-ID to a new version, always check:
+    ${BASE_URL}/wiki/communityid/Upgrade_instructions_for_Community-ID

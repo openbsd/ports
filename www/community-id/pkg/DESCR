@@ -1,0 +1,6 @@
+Community-ID is an OpenID implementation in PHP which is OpenID 2.0
+compliant. Users can keep track of their trusted sites and manage them.
+For Community-ID administrators statistics are available to track
+registration of new users, authorized users per day or the number of
+trusted sites. Administrators can set the site in maintenance mode or
+send emails to all registered users.

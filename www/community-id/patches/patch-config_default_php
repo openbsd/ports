@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_default_php,v 1.1.1.1 2010/01/04 08:58:14 ajacoutot Exp $
+--- config.default.php.orig	Fri Jan  1 15:21:01 2010
++++ config.default.php	Fri Jan  1 15:21:15 2010
+@@ -79,8 +79,8 @@ $config['email']['supportemail']            = '';
+ # this email will receive any error notification
+ $config['email']['adminemail']              = '';
+ 
+-$config['email']['transport']               = 'sendmail';
+-$config['email']['host']                    = '';
++$config['email']['transport']               = 'smtp';
++$config['email']['host']                    = '127.0.0.1';
+ $config['email']['auth']                    = '';
+ $config['email']['username']                = '';
+ $config['email']['password']                = '';
