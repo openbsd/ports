@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.616 2009/12/19 23:06:26 landry Exp $
+# $OpenBSD: Makefile,v 1.617 2010/01/04 10:56:34 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -80,8 +80,8 @@
      SUBDIR += etherape
      SUBDIR += ettercap
      SUBDIR += ettercap,no_x11
-     SUBDIR += ezstream
      SUBDIR += ez-ipupdate
+     SUBDIR += ezstream
      SUBDIR += farsight2
      SUBDIR += filezilla
      SUBDIR += firewalk
@@ -99,7 +99,6 @@
      SUBDIR += galago-daemon
      SUBDIR += gftp
      SUBDIR += gmudix
-     SUBIDR += gnaughty
      SUBDIR += gnet
      SUBDIR += gnugk
      SUBDIR += gopher
@@ -134,9 +133,9 @@
      SUBDIR += ipsvd
      SUBDIR += ipv6calc
      SUBDIR += irc
+     SUBDIR += ircII
      SUBDIR += ircd-hybrid
      SUBDIR += ircd-ratbox
-     SUBDIR += ircII
      SUBDIR += irssi
      SUBDIR += irssi,socks
      SUBDIR += irssi-icb
@@ -260,8 +259,8 @@
      SUBDIR += p5-Net-FTP-Recursive
      SUBDIR += p5-Net-FTPSSL
      SUBDIR += p5-Net-FTPServer
-     SUBDIR += p5-Net-Google
      SUBDIR += p5-Net-GPSD
+     SUBDIR += p5-Net-Google
      SUBDIR += p5-Net-ICQ2000
      SUBDIR += p5-Net-ICal
      SUBDIR += p5-Net-IP
@@ -271,10 +270,10 @@
      SUBDIR += p5-Net-MySQL
      SUBDIR += p5-Net-Netmask
      SUBDIR += p5-Net-OAuth
+     SUBDIR += p5-Net-PH
      SUBDIR += p5-Net-ParseWhois
      SUBDIR += p5-Net-Patricia
      SUBDIR += p5-Net-Pcap
-     SUBDIR += p5-Net-PH
      SUBDIR += p5-Net-Ping-External
      SUBDIR += p5-Net-Radius
      SUBDIR += p5-Net-RawIP
@@ -342,8 +341,8 @@
      SUBDIR += pear-Net-SMTP
      SUBDIR += pear-Net-Socket
      SUBDIR += pear-Net-URL
-     SUBDIR += pear-Net-URL2
      SUBDIR += pear-Net-URL-Mapper
+     SUBDIR += pear-Net-URL2
      SUBDIR += pear-Services-Weather
      SUBDIR += pear-Services-oEmbed
      SUBDIR += pebrot
@@ -363,8 +362,8 @@
      SUBDIR += pop3gwd
      SUBDIR += poptop
      SUBDIR += pork
-     SUBDIR += pptp
      SUBDIR += powerdns
+     SUBDIR += pptp
      SUBDIR += prosody
      SUBDIR += proxy-suite
      SUBDIR += psi
@@ -430,10 +429,10 @@
      SUBDIR += ruby-stomp
      SUBDIR += ruby-xmpp4r
      SUBDIR += samba
+     SUBDIR += samba,ads
      SUBDIR += samba,cups
      SUBDIR += samba,cups,ads
      SUBDIR += samba,cups,ldap
-     SUBDIR += samba,ads
      SUBDIR += samba,ldap
      SUBDIR += scapy
      SUBDIR += scli
@@ -494,8 +493,8 @@
      SUBDIR += twitux
      SUBDIR += ucspi-unix
      SUBDIR += udptunnel
-     SUBDIR += unison
      SUBDIR += unbound
+     SUBDIR += unison
      SUBDIR += unworkable
      SUBDIR += uucp
      SUBDIR += valknut

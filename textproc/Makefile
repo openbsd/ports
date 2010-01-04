@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.288 2009/12/28 09:33:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.289 2010/01/04 10:56:34 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -95,7 +95,6 @@
      SUBDIR += p5-Lingua-EN-Inflect
      SUBDIR += p5-Lingua-EN-Inflect-Number
      SUBDIR += p5-Lingua-EN-Summarize
-     SUBIDR += p5-Lingua-EN-Syllable
      SUBDIR += p5-Lingua-PT-Stemmer
      SUBDIR += p5-Lingua-Stem
      SUBDIR += p5-Lingua-Stem-Fr
@@ -127,9 +126,9 @@
      SUBDIR += p5-String-Approx
      SUBDIR += p5-String-Koremutake
      SUBDIR += p5-String-Random
+     SUBDIR += p5-String-RewritePrefix
      SUBDIR += p5-String-ShellQuote
      SUBDIR += p5-String-Similarity
-     SUBDIR += p5-String-RewritePrefix
      SUBDIR += p5-Syntax-Highlight-HTML
      SUBDIR += p5-Syntax-Highlight-Mason
      SUBDIR += p5-Syntax-Highlight-Perl
@@ -267,10 +266,10 @@
      SUBDIR += rxp
      SUBDIR += sablotron
      SUBDIR += sgmlformat
-     SUBDIR += sphinx
      SUBDIR += sim
      SUBDIR += source-highlight
      SUBDIR += sp
+     SUBDIR += sphinx
      SUBDIR += spiff
      SUBDIR += swish-e
      SUBDIR += tcpdf

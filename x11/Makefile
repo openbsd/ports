@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.405 2009/12/28 17:43:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.406 2010/01/04 10:56:34 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR += Xaw3d
@@ -187,7 +187,6 @@
      SUBDIR += py-Xlib
      SUBDIR += py-gtk2
      SUBDIR += py-gtksourceview
-     SUBIDR += py-kiwi
      SUBDIR += py-osd
      SUBDIR += py-qt3
      SUBDIR += py-qt4
@@ -225,9 +224,9 @@
      SUBDIR += spranq-ecofont-ttf
      SUBDIR += stalonetray
      SUBDIR += swisswatch
+     SUBDIR += tangerine-icon-theme
      SUBDIR += tango-icon-theme
      SUBDIR += tango-icon-theme-extras
-     SUBDIR += tangerine-icon-theme
      SUBDIR += tellico
      SUBDIR += terminus-font
      SUBDIR += thewidgetfactory

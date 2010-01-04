@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2009/12/28 08:59:14 giovanni Exp $
+# $OpenBSD: Makefile,v 1.191 2010/01/04 10:56:34 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -84,8 +84,8 @@
      SUBDIR += openpoppassd
      SUBDIR += p5-Capture-Tiny
      SUBDIR += p5-File-Which
-     SUBDIR += p5-Filesys-DiskSpace
      SUBDIR += p5-Filesys-Df
+     SUBDIR += p5-Filesys-DiskSpace
      SUBDIR += p5-Filesys-Virtual
      SUBDIR += p5-Filesys-Virtual-Plain
      SUBDIR += p5-Proc-ProcessTable
@@ -108,8 +108,8 @@
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rancid
-     SUBDIR += resmon
      SUBDIR += rdiff-backup
+     SUBDIR += resmon
      SUBDIR += rpl
      SUBDIR += rtty
      SUBDIR += ruby-capistrano
