@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.69 2009/09/13 20:59:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2010/01/04 19:14:52 jasper Exp $
 
 COMMENT=	GNU PostScript interpreter
 
 VERSION=	8.63
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p9
+PKGNAME=	${DISTNAME}p10
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	11.0
 

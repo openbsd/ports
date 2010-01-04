@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lib_mak,v 1.2 2007/11/19 20:06:56 kili Exp $
---- src/lib.mak.orig	Tue Jul 17 11:55:56 2007
-+++ src/lib.mak	Mon Sep  3 15:27:31 2007
+$OpenBSD: patch-src_lib_mak,v 1.3 2010/01/04 19:14:52 jasper Exp $
+--- src/lib.mak.orig	Thu Jul 24 01:29:39 2008
++++ src/lib.mak	Mon Jan  4 17:00:48 2010
 @@ -25,12 +25,12 @@ GLO_=$(O_)$(GLOBJ)
  GLI_=$(GLGENDIR) $(II)$(GLSRCDIR)
  GLF_=
@@ -16,3 +16,12 @@ $OpenBSD: patch-src_lib_mak,v 1.2 2007/11/19 20:06:56 kili Exp $
  GLLDFJB2CC=$(CC_) $(I_)$(LDF_JB2I_) $(II)$(GLI_)$(_I) $(JB2CF_) $(GLF_)
  GLLWFJPXCC=$(CC_) $(I_)$(LWF_JPXI_) $(II)$(GLI_)$(_I) $(JPXCF_) $(GLF_)
  GLCCSHARED=$(CC_SHARED) $(GLCCFLAGS)
+@@ -246,7 +246,7 @@ $(GLOBJ)gsargs.$(OBJ) : $(GLSRC)gsargs.c\
+ $(GLOBJ)gsmisc.$(OBJ) : $(GLSRC)gsmisc.c $(GXERR)\
+  $(vmsmath_h)\
+  $(ctype__h) $(malloc__h) $(math__h) $(memory__h) $(string__h)\
+- $(gpcheck_h) $(gserror_h) $(gxfarith_h) $(gxfixed_h) $(stdint__h)
++ $(gpcheck_h) $(gserror_h) $(gxfarith_h) $(gxfixed_h) $(stdint__h) $(stdio__h)
+ 	$(GLCC) $(GLO_)gsmisc.$(OBJ) $(C_) $(GLSRC)gsmisc.c
+ 
+ $(GLOBJ)gslibctx.$(OBJ) : $(GLSRC)gslibctx.c  $(GXERR)\
