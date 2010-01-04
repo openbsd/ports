@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/11/16 12:05:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/01/04 11:14:47 sthen Exp $
 
 COMMENT =		dump RTMP media streams
 
-DISTNAME =		flvstreamer-1.9
+DISTNAME =		flvstreamer-2.1a
+WRKDIST =		${WRKDIR}/flvstreamer
 
 CATEGORIES =		net
 
@@ -12,12 +13,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m stdc++
+WANTLIB =		c
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=flvstreamer/source/}
 
 USE_GMAKE =		Yes
-MAKE_FLAGS +=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" OPT="${CFLAGS}"
+MAKE_FLAGS +=		CC="${CC}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+			OPT="${CFLAGS}"
 
 ALL_TARGET =		linux
 NO_REGRESS =		Yes
