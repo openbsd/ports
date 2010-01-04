@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.252 2009/11/16 12:40:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.253 2010/01/04 10:43:30 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -50,8 +50,8 @@
      SUBDIR += ffmpegthumbnailer
      SUBDIR += flash
      SUBDIR += fnlib
-     SUBDIR += freeimage
      SUBDIR += freeglut
+     SUBDIR += freeimage
      SUBDIR += fswebcam
      SUBDIR += ftgl
      SUBDIR += fxtv
@@ -181,8 +181,8 @@
      SUBDIR += py-graphics
      SUBDIR += py-matplotlib
      SUBDIR += py-opengl
-     SUBDIR += py-pyx
      SUBDIR += py-pigment
+     SUBDIR += py-pyx
      SUBDIR += pycha
      SUBDIR += qiv
      SUBDIR += quesoglc

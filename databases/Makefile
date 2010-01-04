@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.169 2009/11/01 22:58:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.170 2010/01/04 10:43:30 jasper Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
-     SUBDIR += architect
      SUBDIR += apache-couchdb
+     SUBDIR += architect
      SUBDIR += db
      SUBDIR += dbh
      SUBDIR += directoryassistant
@@ -115,8 +115,8 @@
      SUBDIR += pgtcl
      SUBDIR += pgworksheet
      SUBDIR += postgresql
-     SUBDIR += postgresql-odbc
      SUBDIR += postgresql-jdbc
+     SUBDIR += postgresql-odbc
      SUBDIR += postgresql_autodoc
      SUBDIR += py-axiom
      SUBDIR += py-cdb
@@ -141,10 +141,10 @@
      SUBDIR += qt3-sqlite3-plugin
      SUBDIR += ruby-activerecord
      SUBDIR += ruby-bdb
-     SUBDIR += ruby-couchrest
      SUBDIR += ruby-couch_potato
-     SUBDIR += ruby-datamapper
+     SUBDIR += ruby-couchrest
      SUBDIR += ruby-data_objects
+     SUBDIR += ruby-datamapper
      SUBDIR += ruby-do_sqlite3
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2009/11/27 17:41:25 landry Exp $
+# $OpenBSD: Makefile,v 1.204 2010/01/04 10:43:30 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -109,8 +109,8 @@
      SUBDIR += oilwar
      SUBDIR += omega
      SUBDIR += openarena
-     SUBDIR += openttd
      SUBDIR += opensonic
+     SUBDIR += openttd
      SUBDIR += pathological
      SUBDIR += pingus
      SUBDIR += pioneers
@@ -148,10 +148,10 @@
      SUBDIR += sudoku-solver
      SUBDIR += taxipilot
      SUBDIR += teeworlds
-     SUBDIR += toppler
-     SUBDIR += tornado
      SUBDIR += tetrinetx
      SUBDIR += tmw
+     SUBDIR += toppler
+     SUBDIR += tornado
      SUBDIR += tutris
      SUBDIR += tuxkart
      SUBDIR += tuxpaint
@@ -200,8 +200,8 @@
      SUBDIR += xminehunter
      SUBDIR += xminesweep
      SUBDIR += xmj
-     SUBDIR += xmris
      SUBDIR += xmoto
+     SUBDIR += xmris
      SUBDIR += xneko
      SUBDIR += xonix
      SUBDIR += xpat2

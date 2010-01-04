@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/12/27 17:47:06 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2010/01/04 10:43:30 jasper Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
 
      SUBDIR += emerillon
@@ -6,8 +6,8 @@
      SUBDIR += geoclue
      SUBDIR += geos
      SUBDIR += globe
-     SUBDIR += gpstk
      SUBDIR += gpsbabel
+     SUBDIR += gpstk
      SUBDIR += gpx-viewer
      SUBDIR += jeoip
      SUBDIR += josm
@@ -33,9 +33,9 @@
      SUBDIR += p5-Geography-Countries
      SUBDIR += postgis
      SUBDIR += py-proj
-     SUBDIR += ruby-findmyiphone
      SUBDIR += qgis
      SUBDIR += qlandkarte
+     SUBDIR += ruby-findmyiphone
      SUBDIR += tilecache
 
 .include <bsd.port.subdir.mk>

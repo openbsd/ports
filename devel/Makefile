@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.761 2009/12/31 15:49:40 landry Exp $
+# $OpenBSD: Makefile,v 1.762 2010/01/04 10:43:30 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -109,8 +109,8 @@
      SUBDIR += glpk
      SUBDIR += gmake
      SUBDIR += gmp
-     SUBDIR += goffice
      SUBDIR += gobject-introspection
+     SUBDIR += goffice
      SUBDIR += goopy
      SUBDIR += gperf
      SUBDIR += gputils
@@ -364,7 +364,6 @@
      SUBDIR += p5-DateTime-Set
      SUBDIR += p5-DateTime-TimeZone
      SUBDIR += p5-Declare-Constraints-Simple
-     SUBDIR += p5-Devel-ebug
      SUBDIR += p5-Devel-Caller
      SUBDIR += p5-Devel-Cover
      SUBDIR += p5-Devel-Cycle
@@ -378,6 +377,7 @@
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Devel-Symdump
      SUBDIR += p5-Devel-Trace
+     SUBDIR += p5-Devel-ebug
      SUBDIR += p5-Devel-ptkdb
      SUBDIR += p5-Directory-Scratch
      SUBDIR += p5-Env-PS1
@@ -748,13 +748,12 @@
      SUBDIR += py-radix
      SUBDIR += py-rcsparse
      SUBDIR += py-ruledispatch
-     SUBDIR += py-setuptools
      SUBDIR += py-serial
+     SUBDIR += py-setuptools
      SUBDIR += py-silc
      SUBDIR += py-simplejson
      SUBDIR += py-sip
      SUBDIR += py-symboltype
-     SUBDIR += py-zopetesting
      SUBDIR += py-tpg
      SUBDIR += py-turbocheetah
      SUBDIR += py-turbojson
@@ -767,6 +766,7 @@
      SUBDIR += py-wsgiutils
      SUBDIR += py-xdg
      SUBDIR += py-zopeinterface
+     SUBDIR += py-zopetesting
      SUBDIR += pybugz
      SUBDIR += pygame
      SUBDIR += pylint
@@ -816,8 +816,8 @@
      SUBDIR += ruby-rcov
      SUBDIR += ruby-rparsec
      SUBDIR += ruby-rspec
-     SUBDIR += ruby-ruby_parser
      SUBDIR += ruby-ruby2ruby
+     SUBDIR += ruby-ruby_parser
      SUBDIR += ruby-rubyforge
      SUBDIR += ruby-rubyinline
      SUBDIR += ruby-sexp
@@ -857,8 +857,8 @@
      SUBDIR += swig
      SUBDIR += t1lib
      SUBDIR += tclcl
-     SUBDIR += teensyloader
      SUBDIR += tcllib
+     SUBDIR += teensyloader
      SUBDIR += tig
      SUBDIR += tkcvs
      SUBDIR += tkdiff
