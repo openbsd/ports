@@ -1,6 +1,6 @@
-$OpenBSD: patch-init_c,v 1.2 2007/12/07 10:25:46 ajacoutot Exp $
---- init.c.orig	Fri Nov 22 02:28:46 1996
-+++ init.c	Fri Dec  7 09:53:24 2007
+$OpenBSD: patch-init_c,v 1.3 2010/01/04 11:21:21 sthen Exp $
+--- init.c.orig	Fri Nov 22 01:28:46 1996
++++ init.c	Sun Jan  3 11:07:53 2010
 @@ -438,7 +438,7 @@ static void HandleDisplayErrors(displayName)
  		WarningMessage("Your X Window system display variable is not set.");
  	else
@@ -10,3 +10,46 @@ $OpenBSD: patch-init_c,v 1.2 2007/12/07 10:25:46 ajacoutot Exp $
  		WarningMessage(string);
  	}
  }
+@@ -474,7 +474,7 @@ static void PrintUsage()
+ 		"              [-speed <1-9>] [-scores] [-keys] [-sound] [-setup]",
+ 		" [-nosfx]",
+ 		"              [-grab] [-maxvol <1-100>] [-startlevel <1-MAX>]",
+-		" [-usedefcmap]",
++		" [-no-usedefcmap]",
+ 		"              [-nickname <name>] [-noicon]");
+ 
+ 	/* Exit now */
+@@ -551,7 +551,7 @@ static void PrintHelp()
+         "    -setup                  - Print setup information.\n",
+         "    -nosfx                  - Do not use some special effects.\n",
+         "    -grab                   - Turn ON pointer grab.\n",
+-        "    -usedefcmap             - Use the default colourmap.\n",
++        "    -no-usedefcmap          - Don't use the default colourmap.\n",
+ 		"    -nickname <name>        - Use nickname instead of real name.\n",
+         "    -noicon                 - Do not create a custom icon.\n",
+         "    -display <display>      - Set the display for the game.\n");
+@@ -599,7 +599,7 @@ static void InitialiseSettings()
+ 	syncOn = False;
+ 	debug = False;
+ 	grabPointer = False;
+-	useDefaultColourmap = False;
++	useDefaultColourmap = True;
+ 
+ 	/* This will force the use of the users real name */
+ 	SetNickName("");
+@@ -744,12 +744,12 @@ static void ParseCommandLine(argv, argc)
+ 					SetNickName(argv[i]);
+ 			} else PrintUsage();
+ 
+-		} else if (!compareArgument(argv[i], "-usedefcmap", 10))
++		} else if (!compareArgument(argv[i], "-no-usedefcmap", 10))
+ 		{
+ 			/* Try to use the default colourmap */
+-			useDefaultColourmap = True;
++			useDefaultColourmap = False;
+ 
+-			DEBUG("Using default colourmap please.")
++			DEBUG("Not using default colourmap.")
+ 
+ 		} else if (!compareArgument(argv[i], "-speed", 5))
+ 		{

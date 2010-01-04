@@ -2,4 +2,5 @@ XBoing is a blockout type game where you have a paddle which you use
 to bounce a ball around the game area blowing up blocks with the ball. 
 You win by obtaining points for each block destroyed and each level
 completed. The person with the highest score wins.
-Note that XBoing can only be started on 8-bit color mode display.
+
+Sounds are disabled by default and can be enabled with the '-sound' switch.

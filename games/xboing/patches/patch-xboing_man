@@ -1,0 +1,30 @@
+$OpenBSD: patch-xboing_man,v 1.1 2010/01/04 11:21:21 sthen Exp $
+--- xboing.man.orig	Sun Jan  3 11:09:12 2010
++++ xboing.man	Sun Jan  3 11:10:26 2010
+@@ -45,7 +45,7 @@
+ xboing \- An X Window System based blockout clone. V2.4
+ .SH SYNOPSIS
+ .B xboing 
+-[-version] [-usage] [-help] [-sync] [-display <displayName>] [-speed <1-10>] [-scores] [-keys] [-sound] [-setup] [-nosfx] [-grab] [-maxvol <1-100>] [-startlevel <1-MAXLEVELS>] [-usedefcmap] [-nickname <name>] [-noicon]
++[-version] [-usage] [-help] [-sync] [-display <displayName>] [-speed <1-10>] [-scores] [-keys] [-sound] [-setup] [-nosfx] [-grab] [-maxvol <1-100>] [-startlevel <1-MAXLEVELS>] [-no-usedefcmap] [-nickname <name>] [-noicon]
+ .IP
+ -speed <n>         - The game speed, 1 - 9. 9=Fast
+ .br
+@@ -73,7 +73,7 @@ xboing \- An X Window System based blockout clone. V2.
+ .br
+ -grab              - Turn pointer grabbing on
+ .br
+--usedefcmap        - Use the default colourmap
++-no-usedefcmap     - Don't use the default colourmap
+ .br
+ -nickname <name>   - Use nickname instead of real one
+ .br
+@@ -178,7 +178,7 @@ The nosfx option will turn OFF special effects. The sp
+ 
+ The grab option will tell xboing to grab the mouse pointer when the game is visible. Pointer grabbing has the effect of stopping you move the pointer outside the game window. This is useful as it constrains the mouse and you don't get colourmap flashes. The default is Off.
+ 
+-The usedefcmap option will make xboing try to use the default colourmap. This will be fine if the default colourmap is reasonabily empty (ie: 200 free colour cells!). If you have a complex picture on your background then this option will not work and xboing will be unable to allocate enough colours.
++Unless the no-usedefcmap option is used, xboing will try to use the default colourmap. This will be fine if the default colourmap is reasonabily empty (ie: 200 free colour cells!). If you have a complex picture on your background in 8-bit colour, then this option will be needed otherwise xboing will be unable to allocate enough colours.
+ 
+ The nickname option allows you to specify a nick name for you instead of using your real name found in the password file. This can be useful for hiding your identity. Please note that I store the user id in the highscore file and use that for checking and sorting. You will still appear only once in the global highscore table.
+ 

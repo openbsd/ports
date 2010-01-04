@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.5 2007/12/07 10:25:46 ajacoutot Exp $
---- Imakefile.orig	Fri Nov 22 02:28:46 1996
-+++ Imakefile	Fri Dec  7 09:53:24 2007
+$OpenBSD: patch-Imakefile,v 1.6 2010/01/04 11:21:21 sthen Exp $
+--- Imakefile.orig	Thu Nov 21 17:28:46 1996
++++ Imakefile	Sat Jan  2 23:47:56 2010
 @@ -24,23 +24,23 @@ XCOMM ================================================
  XCOMM This is the directory where the highscore, level & sound data will be 
  XCOMM placed. Default will be the current directory.
@@ -29,7 +29,7 @@ $OpenBSD: patch-Imakefile,v 1.5 2007/12/07 10:25:46 ajacoutot Exp $
      AUDIO_INCLUDE 		=
 -    AUDIO_LIB 			=
 -	CDEBUGFLAGS         = -g
-+    AUDIO_LIB 			= -lossaudio
++    AUDIO_LIB 			= -lsndio
  
  XCOMM Uncomment this if you want to use ANY of the AUDIO sound systems
  #define COMPILE_IN_AUDIO    
