@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2010/01/04 08:15:49 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.3 2010/01/04 19:10:19 jasper Exp $
 
 This document will briefly describe the steps needed before one can
 complete the Status.net installation. After taking these steps you
@@ -8,7 +8,16 @@ and complete the installation.
 Please refer to http://gitorious.org/statusnet/mainline/blobs/master/README
 for a complete overview of how to setup Status.net with advanced features.
 
+== Apache ==
+
+You should point the Status.net installation directory to the
+DocumentRoot of your web-server:
+    # ln -s ../statusnet /var/www/htdocs/statusnet
+(make sure you use a relative symlink since Apache is chrooted)
+
 == MySQL==
+
+Please add the php5-mysql package to enable MySQL support in PHP.
 
 MySQL users running with chroot'ed httpd might like to take the
 following steps to place the mysql socket inside the chroot:
@@ -36,6 +45,8 @@ Now connect to MySQL and create a user and database for Status.net:
 	  IDENTIFIED BY 'lacpassword';
 
 == PostgreSQL ==
+
+Please add the php5-pqsql package to enable PostgreSQL support in PHP.
 
 Assuming you have an administrative account named `postgres',
 you can create the 'statusnet' user and database like this:

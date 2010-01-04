@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/03 17:29:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/01/04 19:10:19 jasper Exp $
+@pkgpath www/statusnet,mysql
+@pkgpath www/statusnet,pgsql
 @owner www
 statusnet/
 statusnet/COPYING

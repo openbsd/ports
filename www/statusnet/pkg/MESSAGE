@@ -1,9 +1,4 @@
-Status.net has been installed into
-    ${INSTDIR}
-
-You should point this to the DocumentRoot of your web-server:
-    # ln -s ../statusnet /var/www/htdocs/statusnet
-(make sure you use a relative symlink since Apache is chrooted)
+Status.net has been installed into ${INSTDIR}
 
 See ${PREFIX}/README.OpenBSD for information about configuring and running
 Status.net on OpenBSD.
