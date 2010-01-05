@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.47 2009/08/10 06:34:29 kili Exp $
+# $OpenBSD: Makefile,v 1.48 2010/01/05 12:40:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	single process stack of system monitors for GTK+2 (server)
 COMMENT-client=	single process stack of system monitors for GTK+2
 
-V=		2.3.2
+V=		2.3.4
 DISTNAME=	gkrellm-${V}
-PKGNAME-main=	gkrellm-server-${V}p3
-PKGNAME-client=	gkrellm-${V}p4
+PKGNAME-main=	gkrellm-server-${V}
+PKGNAME-client=	gkrellm-${V}
 CATEGORIES=	sysutils sysutils/gkrellm
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -38,14 +38,16 @@ WRKBUILD=	${WRKDIST}/server
 .endif
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2
+LIB_DEPENDS=		glib-2.0,gmodule-2.0,gthread-2.0::devel/glib2
 LIB_DEPENDS-client=	${LIB_DEPENDS} \
 			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
-WANTLIB-client += ${WANTLIB} ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB-client += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto
+WANTLIB-client += ${WANTLIB}
+WANTLIB-client += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB-client += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto
 WANTLIB-client += expat fontconfig freetype glitz m pango-1.0 pangocairo-1.0
 WANTLIB-client += pangoft2-1.0 pixman-1 png pthread-stubs ssl xcb z
+WANTLIB-client += gio-2.0 gobject-2.0
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes

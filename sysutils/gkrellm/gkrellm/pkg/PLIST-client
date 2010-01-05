@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-client,v 1.7 2008/11/09 13:38:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST-client,v 1.8 2010/01/05 12:40:36 ajacoutot Exp $
 @mode 2755
 @group kmem
-bin/gkrellm
+@bin bin/gkrellm
 @mode
 @group
 include/gkrellm2/

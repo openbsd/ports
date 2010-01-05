@@ -1,7 +1,7 @@
-$OpenBSD: patch-server_gkrellmd_h,v 1.7 2008/11/09 13:38:29 ajacoutot Exp $
---- server/gkrellmd.h.orig	Sun Nov  9 13:25:01 2008
-+++ server/gkrellmd.h	Sun Nov  9 13:25:43 2008
-@@ -114,12 +114,12 @@ GKRELLMD_VERSION_REV >= (rev)))
+$OpenBSD: patch-server_gkrellmd_h,v 1.8 2010/01/05 12:40:36 ajacoutot Exp $
+--- server/gkrellmd.h.orig	Tue Jan  5 00:15:20 2010
++++ server/gkrellmd.h	Tue Jan  5 13:27:20 2010
+@@ -126,12 +126,12 @@ GKRELLMD_VERSION_REV >= (rev)))
  
  #define GKRELLMD_PLUGINS_DIR		".gkrellm2/plugins-gkrellmd"
  #if !defined(WIN32)
