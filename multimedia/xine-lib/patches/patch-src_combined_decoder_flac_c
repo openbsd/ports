@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_combined_decoder_flac_c,v 1.1 2010/01/05 11:50:18 sthen Exp $
+--- src/combined/decoder_flac.c.orig	Fri Dec  4 18:57:51 2009
++++ src/combined/decoder_flac.c	Fri Dec  4 18:58:15 2009
+@@ -426,7 +426,7 @@ static uint32_t audio_types[] = {
+ 
+ static const decoder_info_t dec_info_audio = {
+   audio_types,         /* supported types */
+-  5                    /* priority        */
++  8                    /* priority        */
+ };
+ 
+ const plugin_info_t xine_plugin_info[] EXPORTED = {

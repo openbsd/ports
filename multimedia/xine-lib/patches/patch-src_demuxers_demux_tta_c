@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_demuxers_demux_tta_c,v 1.1 2010/01/05 11:50:18 sthen Exp $
+--- src/demuxers/demux_tta.c.orig	Sun Dec  6 15:56:50 2009
++++ src/demuxers/demux_tta.c	Sun Dec  6 15:57:21 2009
+@@ -303,7 +303,8 @@ static const char *get_extensions (demux_class_t *this
+ }
+ 
+ static const char *get_mimetypes (demux_class_t *this_gen) {
+-  return NULL;
++  return "audio/x-tta: tta: True Audio;"
++    "audio/tta: tta: True Audio;";
+ }
+ 
+ static void class_dispose (demux_class_t *this_gen) {
