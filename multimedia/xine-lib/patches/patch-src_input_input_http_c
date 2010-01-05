@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_input_input_http_c,v 1.7 2009/02/16 01:24:24 sthen Exp $
---- src/input/input_http.c.orig	Tue Feb 10 12:32:23 2009
-+++ src/input/input_http.c	Wed Feb 11 00:55:26 2009
-@@ -409,7 +409,7 @@ static off_t http_plugin_read_int (http_input_plugin_t
-   
+$OpenBSD: patch-src_input_input_http_c,v 1.8 2010/01/05 11:48:51 sthen Exp $
+--- src/input/input_http.c.orig	Mon Nov 30 15:55:44 2009
++++ src/input/input_http.c	Wed Dec  2 20:36:12 2009
+@@ -411,7 +411,7 @@ static off_t http_plugin_read_int (http_input_plugin_t
+ 
  error:
-   if (!_x_action_pending(this->stream)) 
+   if (!_x_action_pending(this->stream))
 -    _x_message (this->stream, XINE_MSG_READ_ERROR, this->host, NULL);
 +    _x_message (this->stream, XINE_MSG_READ_ERROR, this->host, (char *)NULL);
    xine_log (this->stream->xine, XINE_LOG_MSG, _("input_http: read error %d\n"), errno);
    return read_bytes;
  }
-@@ -681,7 +681,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -683,7 +683,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
        if (http_plugin_basicauth (this_class->proxyuser,
  			         this_class->proxypassword,
  				 this->proxyauth, BUFSIZE)) {
@@ -19,17 +19,17 @@ $OpenBSD: patch-src_input_input_http_c,v 1.7 2009/02/16 01:24:24 sthen Exp $
  	return 0;
        }
      }
-@@ -690,7 +690,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
-   
+@@ -693,7 +693,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
    if (!_x_parse_url(this->mrl, &this->proto, &this->host, &this->port,
-                     &this->user, &this->password, &this->uri)) {
+                     &this->user, &this->password, &this->uri,
+                     &this->user_agent)) {
 -    _x_message(this->stream, XINE_MSG_GENERAL_WARNING, "malformed url", NULL);
 +    _x_message(this->stream, XINE_MSG_GENERAL_WARNING, "malformed url", (char *)NULL);
      return 0;
    }
    use_proxy = use_proxy && _x_use_proxy(this_class, this->host);
-@@ -700,7 +700,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
-   
+@@ -703,7 +703,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+ 
    if (this->user && strlen(this->user)) {
      if (http_plugin_basicauth (this->user, this->password, this->auth, BUFSIZE)) {
 -      _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "basic auth error", NULL);
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_input_input_http_c,v 1.7 2009/02/16 01:24:24 sthen Exp $
        return -1;
      }
    }
-@@ -754,7 +754,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -757,7 +757,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
      } while ((res == XIO_TIMEOUT) && (progress <= 100000));
  
      if (res != XIO_READY) {
@@ -46,8 +46,8 @@ $OpenBSD: patch-src_input_input_http_c,v 1.7 2009/02/16 01:24:24 sthen Exp $
        return -3;
      }
    }
-@@ -794,7 +794,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
- 		     "\015\012",
+@@ -799,7 +799,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+ 		     this->user_agent ? " " : "",
  		     VERSION);
    if (_x_io_tcp_write (this->stream, this->fh, this->buf, buflen) != buflen) {
 -    _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "couldn't send request", NULL);
@@ -55,16 +55,16 @@ $OpenBSD: patch-src_input_input_http_c,v 1.7 2009/02/16 01:24:24 sthen Exp $
      xprintf(this_class->xine, XINE_VERBOSITY_DEBUG, "input_http: couldn't send request\n");
      return -4;
    }
-@@ -838,7 +838,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -843,7 +843,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
  	    (sscanf(this->buf, "ICY %d %50[^\015\012]", /* icecast 1 ? */
  		    &httpcode, httpstatus) != 2)
  	   ) {
 -	    _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "invalid http answer", NULL);
 +	    _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "invalid http answer", (char *)NULL);
- 	    xine_log (this->stream->xine, XINE_LOG_MSG, 
+ 	    xine_log (this->stream->xine, XINE_LOG_MSG,
  		      _("input_http: invalid http answer\n"));
  	    return -6;
-@@ -849,20 +849,20 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -854,20 +854,20 @@ static int http_plugin_open (input_plugin_t *this_gen 
  		    _("input_http: 3xx redirection: >%d %s<\n"),
  		    httpcode, httpstatus);
  	} else if (httpcode == 404) {
@@ -85,10 +85,10 @@ $OpenBSD: patch-src_input_input_http_c,v 1.7 2009/02/16 01:24:24 sthen Exp $
  	  _x_message(this->stream, XINE_MSG_CONNECTION_REFUSED, "http status not 2xx: ",
 -	               httpstatus, NULL);
 +	               httpstatus, (char *)NULL);
-       	  xine_log (this->stream->xine, XINE_LOG_MSG,
+ 	  xine_log (this->stream->xine, XINE_LOG_MSG,
  		    _("input_http: http status not 2xx: >%d %s<\n"),
  		    httpcode, httpstatus);
-@@ -959,7 +959,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
+@@ -964,7 +964,7 @@ static int http_plugin_open (input_plugin_t *this_gen 
      } else
        len ++;
      if ( len >= BUFSIZE ) {

@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_xine-engine_io_helper_c,v 1.1 2007/06/13 10:58:29 jakemsr Exp $
---- src/xine-engine/io_helper.c.orig	Sun Apr 15 10:42:17 2007
-+++ src/xine-engine/io_helper.c	Sun May 20 22:40:14 2007
+$OpenBSD: patch-src_xine-engine_io_helper_c,v 1.2 2010/01/05 11:48:51 sthen Exp $
+--- src/xine-engine/io_helper.c.orig	Mon Nov 30 15:55:52 2009
++++ src/xine-engine/io_helper.c	Wed Dec  2 20:37:52 2009
 @@ -56,19 +56,19 @@ static int _x_io_tcp_connect_ipv4(xine_stream_t *strea
-   
+ 
    h = gethostbyname(host);
    if (h == NULL) {
 -    _x_message(stream, XINE_MSG_UNKNOWN_HOST, "unable to resolve", host, NULL);
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_xine-engine_io_helper_c,v 1.1 2007/06/13 10:58:29 jakemsr Ex
      return -1;
    }
  
-   s = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);  
+   s = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
    if (s == -1) {
 -    _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "failed to create socket", strerror(errno), NULL);
 +    _x_message(stream, XINE_MSG_CONNECTION_REFUSED, "failed to create socket", strerror(errno), (char *)NULL);
@@ -45,16 +45,16 @@ $OpenBSD: patch-src_xine-engine_io_helper_c,v 1.1 2007/06/13 10:58:29 jakemsr Ex
 @@ -136,7 +136,7 @@ int _x_io_tcp_connect(xine_stream_t *stream, const cha
  
    if (error) {
-     _x_message(stream, XINE_MSG_UNKNOWN_HOST, 
+     _x_message(stream, XINE_MSG_UNKNOWN_HOST,
 -		 "unable to resolve", host, NULL);
 +		 "unable to resolve", host, (char *)NULL);
      return -1;
    }
  
 @@ -147,7 +147,7 @@ int _x_io_tcp_connect(xine_stream_t *stream, const cha
-       s = socket(tmpaddr->ai_family, SOCK_STREAM, IPPROTO_TCP);  
+       s = socket(tmpaddr->ai_family, SOCK_STREAM, IPPROTO_TCP);
        if (s == -1) {
- 	  _x_message(stream, XINE_MSG_CONNECTION_REFUSED, 
+ 	  _x_message(stream, XINE_MSG_CONNECTION_REFUSED,
 -		       "failed to create socket", strerror(errno), NULL);
 +		       "failed to create socket", strerror(errno), (char *)NULL);
  	  tmpaddr = tmpaddr->ai_next;
@@ -84,12 +84,12 @@ $OpenBSD: patch-src_xine-engine_io_helper_c,v 1.1 2007/06/13 10:58:29 jakemsr Ex
  
 -  _x_message(stream, XINE_MSG_CONNECTION_REFUSED, strerror(error), NULL);
 +  _x_message(stream, XINE_MSG_CONNECTION_REFUSED, strerror(error), (char *)NULL);
-   
+ 
    return -1;
  #endif
 @@ -311,11 +311,11 @@ int _x_io_tcp_connect_finish(xine_stream_t *stream, in
      int err;
-     
+ 
      if ((getsockopt(fd, SOL_SOCKET, SO_ERROR, (void *)&err, &len)) == -1) {
 -      _x_message(stream, XINE_MSG_CONNECTION_REFUSED, _("failed to get status of socket"), strerror(errno), NULL);
 +      _x_message(stream, XINE_MSG_CONNECTION_REFUSED, _("failed to get status of socket"), strerror(errno), (char *)NULL);

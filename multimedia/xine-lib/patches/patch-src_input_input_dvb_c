@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_input_dvb_c,v 1.8 2008/08/20 01:54:01 brad Exp $
---- src/input/input_dvb.c.orig	Thu Aug  7 13:52:41 2008
-+++ src/input/input_dvb.c	Thu Aug 14 18:48:39 2008
+$OpenBSD: patch-src_input_input_dvb_c,v 1.9 2010/01/05 11:48:51 sthen Exp $
+--- src/input/input_dvb.c.orig	Mon Nov 30 15:55:45 2009
++++ src/input/input_dvb.c	Wed Dec  2 20:34:56 2009
 @@ -903,7 +903,7 @@ static channel_t *load_channels(xine_t *xine, xine_str
    if (!f) {
      xprintf(xine, XINE_VERBOSITY_LOG, _("input_dvb: failed to open dvb channel file '%s': %s\n"), filename, strerror (errno));
@@ -14,8 +14,8 @@ $OpenBSD: patch-src_input_input_dvb_c,v 1.8 2008/08/20 01:54:01 brad Exp $
  
    /* no data for several seconds - tell the user a possible reason */
    if(this->read_failcount==5){
--    _x_message(this->stream,1,"DVB Signal Lost.  Please check connections.", NULL); 
-+    _x_message(this->stream,1,"DVB Signal Lost.  Please check connections.", (char *)NULL); 
+-    _x_message(this->stream,1,"DVB Signal Lost.  Please check connections.", NULL);
++    _x_message(this->stream,1,"DVB Signal Lost.  Please check connections.", (char *)NULL);
    }
  #ifdef DVB_NO_BUFFERING
    if(this->newchannel){

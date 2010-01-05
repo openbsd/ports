@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_xine-engine_video_decoder_c,v 1.5 2008/01/15 00:36:46 jakemsr Exp $
---- src/xine-engine/video_decoder.c.orig	Tue Jan  1 10:36:02 2008
-+++ src/xine-engine/video_decoder.c	Wed Jan  9 01:50:22 2008
+$OpenBSD: patch-src_xine-engine_video_decoder_c,v 1.6 2010/01/05 11:48:51 sthen Exp $
+--- src/xine-engine/video_decoder.c.orig	Mon Nov 30 15:55:51 2009
++++ src/xine-engine/video_decoder.c	Wed Dec  2 19:15:36 2009
 @@ -41,6 +41,9 @@
  
  #define SPU_SLEEP_INTERVAL (90000/2)
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_xine-engine_video_decoder_c,v 1.5 2008/01/15 00:36:46 jakems
  
 @@ -486,7 +489,9 @@ int _x_video_decoder_init (xine_stream_t *stream) {
    } else {
-      
+ 
      pthread_attr_t       pth_attrs;
 +#if !defined(__OpenBSD__)
      struct sched_param   pth_params;
@@ -23,7 +23,7 @@ $OpenBSD: patch-src_xine-engine_video_decoder_c,v 1.5 2008/01/15 00:36:46 jakems
       * with 2k of data. With 500 buffers and a typical video data rate
 @@ -515,10 +520,12 @@ int _x_video_decoder_init (xine_stream_t *stream) {
      stream->spu_track_map_entries = 0;
-   
+ 
      pthread_attr_init(&pth_attrs);
 +#if !defined(__OpenBSD__)
      pthread_attr_getschedparam(&pth_attrs, &pth_params);

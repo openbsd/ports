@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_xine-engine_audio_out_c,v 1.9 2009/04/04 00:28:56 sthen Exp $
---- src/xine-engine/audio_out.c.orig	Sun Mar 15 16:52:55 2009
-+++ src/xine-engine/audio_out.c	Fri Apr  3 14:42:43 2009
+$OpenBSD: patch-src_xine-engine_audio_out_c,v 1.10 2010/01/05 11:48:51 sthen Exp $
+--- src/xine-engine/audio_out.c.orig	Mon Nov 30 20:33:30 2009
++++ src/xine-engine/audio_out.c	Wed Dec  2 19:15:36 2009
 @@ -1089,7 +1089,7 @@ static void *ao_loop (void *this_gen) {
                                  in_buf->format.rate,
                                  in_buf->format.mode) == 0 ) {
@@ -38,7 +38,7 @@ $OpenBSD: patch-src_xine-engine_audio_out_c,v 1.9 2009/04/04 00:28:56 sthen Exp 
          }
          pthread_mutex_unlock( &this->driver_lock );
 @@ -1514,7 +1514,7 @@ static int ao_open(xine_audio_port_t *this_gen, xine_s
-       
+ 
        if( !ret ) {
          stream->emergency_brake = 1;
 -        _x_message (stream, XINE_MSG_AUDIO_OUT_UNAVAILABLE, NULL);
@@ -47,8 +47,8 @@ $OpenBSD: patch-src_xine-engine_audio_out_c,v 1.9 2009/04/04 00:28:56 sthen Exp 
        }
      } else {
 @@ -2279,7 +2279,9 @@ xine_audio_port_t *_x_ao_new_port (xine_t *xine, ao_dr
-     this->audio_loop_running = 1;  
-     
+     this->audio_loop_running = 1;
+ 
      pthread_attr_init(&pth_attrs);
 +#if !defined(__OpenBSD__)
      pthread_attr_setscope(&pth_attrs, PTHREAD_SCOPE_SYSTEM);

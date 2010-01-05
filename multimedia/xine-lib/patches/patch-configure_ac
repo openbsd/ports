@@ -1,18 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.4 2009/04/04 00:28:56 sthen Exp $
---- configure.ac.orig	Thu Apr  2 14:44:45 2009
-+++ configure.ac	Fri Apr  3 14:42:42 2009
-@@ -212,6 +212,10 @@ AC_PROG_GMSGFMT_PLURAL
- 
- AC_CHECK_FUNCS([nl_langinfo])
- 
-+LIBICONV=$LTLIBICONV
-+LIBINTL=$LTLIBINTL
-+INTLLIBS=$LTLIBINTL
-+
- dnl ---------------------------------------------
- dnl Checks for typedefs, structures, and compiler characteristics.
- dnl ---------------------------------------------
-@@ -553,9 +557,9 @@ t q
+$OpenBSD: patch-configure_ac,v 1.5 2010/01/05 11:48:51 sthen Exp $
+--- configure.ac.orig	Mon Nov 30 20:52:45 2009
++++ configure.ac	Fri Dec  4 18:57:27 2009
+@@ -564,9 +564,9 @@ t q
  b
  :q
  q"
@@ -24,7 +13,20 @@ $OpenBSD: patch-configure_ac,v 1.4 2009/04/04 00:28:56 sthen Exp $
  AC_DEFINE_UNQUOTED([LIBXV_SO],  "${x_lib_location:-libXv.so}",  [The soname of libXv, needed for dlopen()])
  
  
-@@ -1275,7 +1279,7 @@ if test "x$enable_a52dec" = "xno"; then
+@@ -1262,10 +1262,10 @@ dnl check for libFLAC
+ dnl ---------------------------------------------
+ 
+ AC_ARG_WITH([libflac],
+-  AS_HELP_STRING([--with-libflac], [build libFLAC-based decoder and demuxer]))
++  AS_HELP_STRING([--without-libflac], [don't build libFLAC-based decoder and demuxer]))
+ 
+ have_libflac="no"
+-if test "x$with_libflac" = "xyes"; then
++if test "x$with_libflac" != "xno"; then
+   AM_PATH_LIBFLAC([have_libflac="yes"])
+ fi
+ 
+@@ -1286,7 +1286,7 @@ if test "x$enable_a52dec" = "xno"; then
    AC_MSG_RESULT([a52dec support disabled])
  elif test "x$external_a52dec" = "xyes"; then
    have_a52="yes"
@@ -33,7 +35,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2009/04/04 00:28:56 sthen Exp $
  [
    #ifdef HAVE_SYS_TYPES_H
    # include <sys/types.h>
-@@ -1366,9 +1370,10 @@ if test "x$with_mng" = "xyes"; then
+@@ -1379,9 +1379,10 @@ if test "x$with_mng" = "xyes"; then
    AC_CHECK_LIB(mng, mng_initialize,
  	[ AC_CHECK_HEADER(libmng.h,
  		[ have_libmng=yes
@@ -46,42 +48,3 @@ $OpenBSD: patch-configure_ac,v 1.4 2009/04/04 00:28:56 sthen Exp $
    AC_SUBST(MNG_LIBS)
  else
    have_libmng=no
-@@ -1564,6 +1569,28 @@ AM_CONDITIONAL([HAVE_JACK], [test "x$have_jack" = "xye
- 
- 
- dnl ---------------------------------------------
-+dnl sndio support
-+dnl ---------------------------------------------
-+
-+AC_ARG_WITH([sndio],
-+	AS_HELP_STRING([--without-sndio], [Build without sndio support]))
-+
-+if test "x$with_sndio" != "xno"; then
-+   AC_CHECK_LIB(sndio, sio_open, [SNDIO_LIBS=-lsndio; have_sndio=yes],
-+     [have_sndio=no])
-+
-+   if test "x$with_sndio" = "xyes" && test "x$have_sndio" = "xno"; then
-+      AC_MSG_ERROR([sndio support requested, but sndio not found])
-+   fi
-+fi
-+
-+AM_CONDITIONAL([HAVE_SNDIO], [test "x$have_sndio" = "xyes"])
-+
-+AC_SUBST([SNDIO_CFLAGS])
-+AC_SUBST([SNDIO_LIBS])
-+
-+
-+dnl ---------------------------------------------
- dnl gnome-vfs support
- dnl ---------------------------------------------
- 
-@@ -3170,6 +3197,9 @@ if test "x$have_pulseaudio" = "xyes"; then
- fi
- if test "x$have_jack" = "xyes"; then
-   echo "   - Jack"
-+fi
-+if test "x$have_sndio" = "xyes"; then
-+  echo "   - sndio"
- fi
- echo "---"
- 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/08/07 22:11:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/01/05 11:48:51 sthen Exp $
 @conflict xine-lib-arts-*
 @conflict xine-lib-esd-*
 @conflict xine-lib-jack-*
@@ -80,13 +80,13 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mad.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mpc.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mpeg2.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_nsf.so
-lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_real.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_rgb.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_speex.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spu.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spucc.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spucmml.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spudvb.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_spuhdmv.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_sputext.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_theora.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_vorbis.so

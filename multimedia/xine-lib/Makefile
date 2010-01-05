@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.58 2009/08/11 21:30:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2010/01/05 11:48:51 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
-V=		1.1.16.3
+V=		1.1.17
 DISTNAME=	xine-lib-${V}
-PKGNAME=	${DISTNAME}p5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	xine	25.0
+SHARED_LIBS=	xine	26.0
 
 HOMEPAGE=	http://www.xine-project.org/
 
@@ -26,7 +25,7 @@ WANTLIB=	X11 Xau Xdmcp Xext Xinerama Xrandr Xrender Xv XvMCW c \
 		dvdread expat fontconfig freetype jpeg lcms m pthread-stubs \
 		pthread sndio usbhid xcb-shape xcb-shm xcb-xv xcb z
 
-XINEAPI_REV=	1.26
+XINEAPI_REV=	1.27
 SUBST_VARS+=	XINEAPI_REV
 
 MODULES=	devel/gettext
@@ -59,7 +58,8 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.61
+# Should be 2.64
+AUTOCONF_VERSION= 2.62
 CONFIGURE_ARGS+=--disable-aalib \
 		--disable-dxr3 \
 		--disable-fb \
@@ -68,10 +68,12 @@ CONFIGURE_ARGS+=--disable-aalib \
 		--disable-opengl \
 		--disable-optimizations \
 		--disable-oss \
+		--disable-real-codecs \
 		--disable-samba \
 		--disable-v4l \
 		--disable-vcd \
 		--disable-vidix \
+		--disable-w32dll \
 		--with-external-a52dec=yes \
 		--with-external-dvdnav=yes \
 		--with-external-libdts=yes \
@@ -80,7 +82,6 @@ CONFIGURE_ARGS+=--disable-aalib \
 		--with-external-libmpcdec=yes \
 		--with-fontconfig \
 		--with-freetype \
-		--with-libflac \
 		--with-wavpack \
 		--without-alsa \
 		--without-caca \
@@ -100,11 +101,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_member_audio_info_t_output_muted=yes
 
 NO_REGRESS=	Yes
-
-post-extract:
-	@cp ${FILESDIR}/audio_sndio_out.c ${WRKSRC}/src/audio_out
-.if ${MACHINE_ARCH} == "i386"
-	@cp ${FILESDIR}/i386_set_ldt.c ${WRKSRC}/src/libw32dll/wine
-.endif
 
 .include <bsd.port.mk>
