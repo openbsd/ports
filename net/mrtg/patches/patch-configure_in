@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.3 2005/10/24 05:12:31 fgsch Exp $
---- configure.in.orig	Tue Jan 13 07:28:11 2004
-+++ configure.in	Sun Feb 27 10:05:00 2005
+$OpenBSD: patch-configure_in,v 1.4 2010/01/05 16:36:33 okan Exp $
+--- configure.in.orig	Wed May  2 16:31:06 2007
++++ configure.in	Mon Jan  4 12:14:57 2010
 @@ -113,6 +113,11 @@ AC_CHECK_LIB(gd,gdImagePng,[
     GLIBS="-lgd -lpng -lz"
          ],:,[-lgd -lpng -lz ${MATHLIBS}])
@@ -24,3 +24,22 @@ $OpenBSD: patch-configure_in,v 1.3 2005/10/24 05:12:31 fgsch Exp $
  
  if test x$GDFORM_EXT = xpng; then
    CPPFLAGS="$CPPFLAGS -DGFORM_GD=gdImagePng"
+@@ -201,18 +206,6 @@ AC_CONFIG_HEADERS(config.h)
+ AC_OUTPUT(Makefile)
+ 
+ 
+-echo $ECHO_N "ordering CD from http://tobi.oetiker.ch/wish $ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+-AC_MSG_RESULT([ just kidding ;-)])
+-sleep 2
+ echo
+ echo "----------------------------------------------------------------"
+ echo "Config is DONE!"

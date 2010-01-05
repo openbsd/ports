@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2009/06/02 21:47:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.62 2010/01/05 16:36:33 okan Exp $
 
 COMMENT=	multi-router traffic grapher
 
 DISTNAME=	mrtg-2.16.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://oss.oetiker.ch/mrtg/
@@ -20,7 +21,8 @@ MASTER_SITES=	${HOMEPAGE}pub/ \
 
 RUN_DEPENDS=	::net/p5-IO-Socket-INET6 \
 		::net/p5-Net-SNMP \
-		::net/p5-SNMP_Session
+		::net/p5-SNMP_Session \
+		:p5-RRD-*:net/rrdtool,-perl
 LIB_DEPENDS=	gd.>=18::graphics/gd
 
 USE_X11=	Yes
