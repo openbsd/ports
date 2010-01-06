@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ical-code_c,v 1.1 2010/01/06 16:45:13 stsp Exp $
+--- src/ical-code.c.orig	Wed Jan  6 15:13:02 2010
++++ src/ical-code.c	Wed Jan  6 15:13:45 2010
+@@ -51,8 +51,8 @@
+ #include <gtk/gtk.h>
+ #include <glib/gprintf.h>
+ #include <glib/gstdio.h>
+-#include <ical.h>
+-#include <icalss.h>
++#include "../libical/src/libical/ical.h"
++#include "../libical/src/libicalss/icalss.h"
+ 
+ #include "orage-i18n.h"
+ #include "functions.h"
