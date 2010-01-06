@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/22 12:51:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/01/06 18:29:19 landry Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld/diffutil.py
@@ -28,6 +28,12 @@ lib/python${MODPY_VERSION}/site-packages/meld/melddoc.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/misc.py
 lib/python${MODPY_VERSION}/site-packages/meld/misc.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/misc.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/msgarea.py
+lib/python${MODPY_VERSION}/site-packages/meld/msgarea.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/msgarea.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/notebooklabel.py
+lib/python${MODPY_VERSION}/site-packages/meld/notebooklabel.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/notebooklabel.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/paths.py
 lib/python${MODPY_VERSION}/site-packages/meld/paths.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/paths.pyo
@@ -80,6 +86,9 @@ lib/python${MODPY_VERSION}/site-packages/meld/vc/monotone.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/vc/rcs.py
 lib/python${MODPY_VERSION}/site-packages/meld/vc/rcs.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vc/rcs.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/vc/svk.py
+lib/python${MODPY_VERSION}/site-packages/meld/vc/svk.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/vc/svk.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/vc/svn.py
 lib/python${MODPY_VERSION}/site-packages/meld/vc/svn.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vc/svn.pyo
@@ -89,11 +98,8 @@ lib/python${MODPY_VERSION}/site-packages/meld/vc/tla.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/vcview.py
 lib/python${MODPY_VERSION}/site-packages/meld/vcview.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/vcview.pyo
-share/application-registry/meld.applications
 share/applications/meld.desktop
 share/doc/meld/
-share/gnome/
-share/gnome/help/
 share/gnome/help/meld/
 share/gnome/help/meld/C/
 share/gnome/help/meld/C/figures/
@@ -122,6 +128,7 @@ share/locale/en_GB/LC_MESSAGES/meld.mo
 share/locale/es/LC_MESSAGES/meld.mo
 share/locale/fi/LC_MESSAGES/meld.mo
 share/locale/fr/LC_MESSAGES/meld.mo
+share/locale/gl/LC_MESSAGES/meld.mo
 share/locale/hu/LC_MESSAGES/meld.mo
 share/locale/it/LC_MESSAGES/meld.mo
 share/locale/ja/LC_MESSAGES/meld.mo
@@ -157,21 +164,18 @@ share/meld/glade2/pixmaps/button_apply1.xpm
 share/meld/glade2/pixmaps/button_copy0.xpm
 share/meld/glade2/pixmaps/button_copy1.xpm
 share/meld/glade2/pixmaps/button_delete.xpm
-share/meld/glade2/pixmaps/close.xpm
-share/meld/glade2/pixmaps/cvs-icon-small.png
-share/meld/glade2/pixmaps/cvs-icon.png
 share/meld/glade2/pixmaps/filter-ignored-24.png
 share/meld/glade2/pixmaps/filter-modified-24.png
 share/meld/glade2/pixmaps/filter-nonvc-24.png
 share/meld/glade2/pixmaps/filter-normal-24.png
 share/meld/glade2/pixmaps/icon.png
-share/meld/glade2/pixmaps/svn-icon-small.png
-share/meld/glade2/pixmaps/svn-icon.png
 share/meld/glade2/pixmaps/tree-file-changed.png
+share/meld/glade2/pixmaps/tree-file-missing.png
 share/meld/glade2/pixmaps/tree-file-new.png
 share/meld/glade2/pixmaps/tree-file-newer.png
 share/meld/glade2/pixmaps/tree-file-normal.png
 share/meld/glade2/pixmaps/tree-folder-changed.png
+share/meld/glade2/pixmaps/tree-folder-missing.png
 share/meld/glade2/pixmaps/tree-folder-new.png
 share/meld/glade2/pixmaps/tree-folder-normal.png
 share/meld/glade2/pixmaps/vc-add-24.png
@@ -179,10 +183,10 @@ share/meld/glade2/pixmaps/vc-checkout-24.png
 share/meld/glade2/pixmaps/vc-commit-24.png
 share/meld/glade2/pixmaps/vc-icon.png
 share/meld/glade2/pixmaps/vc-remove-24.png
+share/meld/glade2/pixmaps/vc-resolve-24.png
 share/meld/glade2/pixmaps/vc-update-24.png
 share/meld/glade2/vcview-ui.xml
 share/meld/glade2/vcview.glade
-share/omf/
 share/omf/meld/
 share/omf/meld/meld-C.omf
 share/omf/meld/meld-es.omf
