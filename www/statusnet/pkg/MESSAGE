@@ -1,4 +1,4 @@
 Status.net has been installed into ${INSTDIR}
 
-See ${PREFIX}/README.OpenBSD for information about configuring and running
-Status.net on OpenBSD.
+See ${PREFIX}/statusnet/README.OpenBSD for information about configuring
+and running Status.net on OpenBSD.

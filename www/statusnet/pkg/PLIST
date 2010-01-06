@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/01/04 19:10:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/01/06 21:54:04 jasper Exp $
 @pkgpath www/statusnet,mysql
 @pkgpath www/statusnet,pgsql
 @owner www
 statusnet/
+@comment statusnet/.gitignore
 statusnet/COPYING
 statusnet/EVENTS.txt
 statusnet/README
+statusnet/README.OpenBSD
 statusnet/actions/
 statusnet/actions/accesstoken.php
 statusnet/actions/all.php
