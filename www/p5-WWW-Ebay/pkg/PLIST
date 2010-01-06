@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/06 09:44:21 jasper Exp $
+${P5SITE}/WWW/Ebay/
+${P5SITE}/WWW/Ebay.pm
+${P5SITE}/WWW/Ebay/Customer.pm
+${P5SITE}/WWW/Ebay/Listing.pm
+${P5SITE}/WWW/Ebay/Search.pm
+${P5SITE}/WWW/Ebay/Session.pm
+${P5SITE}/WWW/Ebay/Status.pm
+${P5SITE}/WWW/Search/Ebay/ByBidderID.pm
+${P5SITE}/WWW/Search/Ebay/Completed/
+${P5SITE}/WWW/Search/Ebay/Completed.pm
+${P5SITE}/WWW/Search/Ebay/Completed/Category.pm
+${P5SITE}/WWW/bug.pl
+@man man/man3p/WWW::Ebay.3p
+@man man/man3p/WWW::Ebay::Customer.3p
+@man man/man3p/WWW::Ebay::Listing.3p
+@man man/man3p/WWW::Ebay::Search.3p
+@man man/man3p/WWW::Ebay::Session.3p
+@man man/man3p/WWW::Ebay::Status.3p
+@man man/man3p/WWW::Search::Ebay::ByBidderID.3p
+@man man/man3p/WWW::Search::Ebay::Completed.3p
+@man man/man3p/WWW::Search::Ebay::Completed::Category.3p
