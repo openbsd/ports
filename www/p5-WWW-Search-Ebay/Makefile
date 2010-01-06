@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/04 20:33:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/01/06 09:27:38 jasper Exp $
 
 COMMENT=		backend for searching www.ebay.com
 
-DISTNAME=		WWW-Search-Ebay-3.008
+DISTNAME=		WWW-Search-Ebay-3.015
 CATEGORIES=		www
 
 # perl
