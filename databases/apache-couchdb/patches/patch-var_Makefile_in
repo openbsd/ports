@@ -1,11 +1,12 @@
-$OpenBSD: patch-var_Makefile_in,v 1.2 2009/11/02 18:51:27 bernd Exp $
---- var/Makefile.in.orig	Thu Oct  8 06:18:18 2009
-+++ var/Makefile.in	Tue Oct 13 22:01:29 2009
-@@ -314,7 +314,6 @@ info-am:
+$OpenBSD: patch-var_Makefile_in,v 1.3 2010/01/06 18:45:46 jasper Exp $
+--- var/Makefile.in.orig	Wed Jan  6 10:13:10 2010
++++ var/Makefile.in	Wed Jan  6 10:13:21 2010
+@@ -326,7 +326,7 @@ info-am:
  
  install-data-am:
  	@$(NORMAL_INSTALL)
 -	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
- 
++
  install-dvi: install-dvi-am
  
+ install-dvi-am:
