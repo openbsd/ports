@@ -1,7 +1,7 @@
-$OpenBSD: patch-xbreaky_snd_c,v 1.1 2003/06/20 02:17:25 kevlo Exp $
---- xbreaky.snd.c.orig	Thu May 11 08:13:45 2000
-+++ xbreaky.snd.c	Fri Jun 20 09:59:50 2003
-@@ -20,20 +20,18 @@
+$OpenBSD: patch-xbreaky_snd_c,v 1.2 2010/01/07 09:38:20 jakemsr Exp $
+--- xbreaky.snd.c.orig	Thu May 11 01:13:45 2000
++++ xbreaky.snd.c	Sun Jan  3 01:15:56 2010
+@@ -20,24 +20,23 @@
   */
  
  #include <stdio.h>
@@ -14,26 +14,90 @@ $OpenBSD: patch-xbreaky_snd_c,v 1.1 2003/06/20 02:17:25 kevlo Exp $
  #include <strings.h>
  #include <signal.h>
 -#include <sys/soundcard.h>
-+#include <soundcard.h>
- #include <sys/ioctl.h>
+-#include <sys/ioctl.h>
++#include <sndio.h>
  
  #define DEFAULT_DSP_SPEED 8000
 -#define AUDIO "/dev/dsp"
 -#define RAWFILESDIR PREFIX"/share/games/xbreaky"
-+#define AUDIO "/dev/sound"
-+#define RAWFILESDIR PREFIX"/share/xbreaky"
  
++#define RAWFILESDIR PREFIX"/share/xbreaky"
++
  int timelimit = 0, dsp_speed = DEFAULT_DSP_SPEED, dsp_stereo = 0;
  int samplesize = 8;
-@@ -53,7 +51,6 @@ int main (int argc, char *argv[])
+-int audio, abuf_size;
++int abuf_size;
++struct sio_hdl *hdl;
++struct sio_par par;
+ char *audiobuf, c;
+ char *names[]={ RAWFILESDIR"/catch.raw",
+                 RAWFILESDIR"/fire.raw"  };
+@@ -48,43 +47,42 @@ void quit ();
+ 
+ int main (int argc, char *argv[])
+ { 
+-  int tmp;
+   int i;
    char k;
  
    signal(SIGTERM, quit);   
 -  fcntl(STDIN_FILENO,F_SETFL,O_NONBLOCK);
-   audio = open (AUDIO, O_WRONLY, 0);
-   if (audio == -1)
+-  audio = open (AUDIO, O_WRONLY, 0);
+-  if (audio == -1)
++  hdl = sio_open (NULL, SIO_PLAY, 0);
++  if (hdl == NULL)
    {
-@@ -101,7 +98,7 @@ int main (int argc, char *argv[])
+-   perror (AUDIO);
++   fprintf(stderr, "sio_open failed\n");
+    exit (-1);
+   }
+ 
+-  tmp = samplesize;
+-  ioctl(audio, SNDCTL_DSP_SAMPLESIZE, &samplesize);
+-  if (tmp != samplesize)
+-  {
+-   fprintf(stderr, "xbreaky.snd: Unable to set the sample size\n");
++  sio_initpar(&par);
++  par.bits = samplesize;
++  par.sig = samplesize == 8 ? 0 : 1;
++  par.pchan = dsp_stereo ? 2 : 1;
++  par.rate = dsp_speed;
++  par.le = SIO_LE_NATIVE;
++
++  if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par)) {
++   fprintf(stderr, "xbreaky.snd: Unable to set audio parameters.\n");
+    exit(-1);
+   }
+ 
+-  if (ioctl (audio, SNDCTL_DSP_STEREO, &dsp_stereo)==-1)
+-  {
+-   fprintf (stderr, "xbreaky.snd: Unable to set mono/stereo\n");
+-   perror (AUDIO);
+-   exit (-1);
++  if (par.bits != samplesize || par.sig != (samplesize == 8 ? 0 : 1) ||
++      par.pchan != (dsp_stereo ? 2 : 1) || par.rate != dsp_speed) {
++   fprintf(stderr, "xbreaky.snd: Unable to set audio parameters as desired.\n");
++   exit(-1);
+   }
+ 
+-  if (ioctl (audio, SNDCTL_DSP_SPEED, &dsp_speed) == -1)
+-  {
+-   fprintf (stderr, "xbreaky.snd: Unable to set audio speed\n");
+-   perror (AUDIO);
+-   exit (-1);
++  if (!sio_start(hdl)) {
++   fprintf(stderr, "xbreaky.snd: Unable to start audio.\n");
++   exit(-1);
+   }
++
++  abuf_size = par.round * par.bps * par.pchan;
+   
+-  ioctl (audio, SNDCTL_DSP_GETBLKSIZE, &abuf_size);
+-  
+   if ((audiobuf = malloc (abuf_size)) == NULL)
+   {
+    fprintf (stderr, "Unable to allocate input/output buffer\n");
+@@ -101,11 +99,11 @@ int main (int argc, char *argv[])
     }
     if(i!=-1)  
     { 
@@ -42,3 +106,20 @@ $OpenBSD: patch-xbreaky_snd_c,v 1.1 2003/06/20 02:17:25 kevlo Exp $
     }
    }    
  
+-  close (audio);
++  sio_close (hdl);
+   return 0;
+ }
+ 
+@@ -134,9 +132,9 @@ void play (char *name)
+    if (c > abuf_size) c = abuf_size;
+    if ((l = read (fd, audiobuf, c)) > 0)
+    {
+-    if (write (audio, audiobuf, l) != l)
++    if (sio_write (hdl, audiobuf, l) != l)
+     {
+-     perror (AUDIO);
++     fprintf(stderr, "sio_write failed\n");
+      exit (-1);
+     }
+     count -= l;

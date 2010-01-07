@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.4 2003/06/20 02:17:25 kevlo Exp $
---- Makefile.orig	Thu Sep 12 09:08:57 2002
-+++ Makefile	Fri Jun 20 09:59:50 2003
+$OpenBSD: patch-Makefile,v 1.5 2010/01/07 09:38:20 jakemsr Exp $
+--- Makefile.orig	Thu Sep 12 02:08:57 2002
++++ Makefile	Sun Jan  3 01:14:53 2010
 @@ -1,36 +1,32 @@
  # Makefile for Xbreaky from {davebrul@hotmail.com}   
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-Makefile,v 1.4 2003/06/20 02:17:25 kevlo Exp $
  
  xbreaky.snd:
 -	$(GC) $(CFLAGS) -lm -o xbreaky.snd xbreaky.snd.c
-+	$(CC) $(CFLAGS) -lm -lossaudio -o xbreaky.snd xbreaky.snd.c
++	$(CC) $(CFLAGS) -lm -lsndio -o xbreaky.snd xbreaky.snd.c
  
  install:
 -	for d in $(prefix)/bin $(prefix)/share/pixmaps $(prefix)/man/man6 \
