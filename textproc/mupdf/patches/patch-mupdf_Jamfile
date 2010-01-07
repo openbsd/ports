@@ -1,6 +1,6 @@
-$OpenBSD: patch-mupdf_Jamfile,v 1.2 2009/09/20 10:22:03 sthen Exp $
---- mupdf/Jamfile.orig	Sun Sep 20 01:27:21 2009
-+++ mupdf/Jamfile	Sun Sep 20 01:34:05 2009
+$OpenBSD: patch-mupdf_Jamfile,v 1.3 2010/01/07 01:20:09 sthen Exp $
+--- mupdf/Jamfile.orig	Wed Dec  9 17:02:24 2009
++++ mupdf/Jamfile	Thu Jan  7 01:05:25 2010
 @@ -4,7 +4,7 @@
  
  SubDir TOP mupdf ;
@@ -10,59 +10,57 @@ $OpenBSD: patch-mupdf_Jamfile,v 1.2 2009/09/20 10:22:03 sthen Exp $
  
  Main cmapdump : cmapdump.c ;
  LinkLibraries cmapdump : libfitz ;
-@@ -166,27 +166,27 @@ Library libcmaps : cmap_korean.c ;
+@@ -118,27 +118,27 @@ Library libcmaps :
  
  SubDir TOP fonts ;
  
 -GenFile font_misc.c : fontdump
 +GenFile font_misc.s : fontres
-     Dingbats.cff
-     StandardSymL.cff
-     URWChanceryL-MediItal.cff
-     ;
+ 	Dingbats.cff
+ 	StandardSymL.cff
+ 	URWChanceryL-MediItal.cff
+ 	;
  
 -GenFile font_mono.c : fontdump
 +GenFile font_mono.s : fontres
-     NimbusMonL-Regu.cff
-     NimbusMonL-ReguObli.cff
-     NimbusMonL-Bold.cff
-     NimbusMonL-BoldObli.cff
-     ;
+ 	NimbusMonL-Regu.cff
+ 	NimbusMonL-ReguObli.cff
+ 	NimbusMonL-Bold.cff
+ 	NimbusMonL-BoldObli.cff
+ 	;
  
 -GenFile font_serif.c : fontdump
 +GenFile font_serif.s : fontres
-     NimbusRomNo9L-Regu.cff
-     NimbusRomNo9L-ReguItal.cff
-     NimbusRomNo9L-Medi.cff
-     NimbusRomNo9L-MediItal.cff
-     ;
+ 	NimbusRomNo9L-Regu.cff
+ 	NimbusRomNo9L-ReguItal.cff
+ 	NimbusRomNo9L-Medi.cff
+ 	NimbusRomNo9L-MediItal.cff
+ 	;
  
 -GenFile font_sans.c : fontdump
 +GenFile font_sans.s : fontres
-     NimbusSanL-Bold.cff
-     NimbusSanL-BoldItal.cff
-     NimbusSanL-Regu.cff
-@@ -194,17 +194,17 @@ GenFile font_sans.c : fontdump
-     ;
+ 	NimbusSanL-Bold.cff
+ 	NimbusSanL-BoldItal.cff
+ 	NimbusSanL-Regu.cff
+@@ -146,15 +146,15 @@ GenFile font_sans.c : fontdump
+ 	;
  
  Library libfonts :
--    font_misc.c
--    font_mono.c
--    font_serif.c
--    font_sans.c
-+    font_misc.s
-+    font_mono.s
-+    font_serif.s
-+    font_sans.s
-     ;
+-	font_misc.c
+-	font_mono.c
+-	font_serif.c
+-	font_sans.c
++	font_misc.s
++	font_mono.s
++	font_serif.s
++	font_sans.s
+ 	;
  
  if ! ( NOCJK in $(DEFINES) )
  {
-     SubDir TOP fonts droid ;
--    GenFile font_cjk.c : fontdump DroidSansFallback.ttf ;
--    Library libfonts : font_cjk.c ;
-+    GenFile font_cjk.s : fontres DroidSansFallback.ttf ;
-+    Library libfonts : font_cjk.s ;
+ 	SubDir TOP fonts droid ;
+-	GenFile font_cjk.c : fontdump DroidSansFallback.ttf ;
+-	Library libfonts : font_cjk.c ;
++	GenFile font_cjk.s : fontres DroidSansFallback.ttf ;
++	Library libfonts : font_cjk.s ;
  }
- 
- 
