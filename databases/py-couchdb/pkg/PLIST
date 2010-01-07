@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/11/03 00:37:41 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/01/07 01:25:13 fgsch Exp $
 bin/couchdb-dump
 bin/couchdb-load
 bin/couchdb-replicate
@@ -24,6 +24,21 @@ lib/python${MODPY_VERSION}/site-packages/couchdb/multipart.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/multipart.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/schema.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/schema.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/client.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/client.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/couch_tests.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/couch_tests.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/design.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/design.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/multipart.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/multipart.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/schema.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/schema.pyc
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/view.py
+lib/python${MODPY_VERSION}/site-packages/couchdb/tests/view.pyc
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/couchdb/tools/__init__.pyc
