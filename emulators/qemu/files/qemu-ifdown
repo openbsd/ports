@@ -11,4 +11,4 @@ if test `id -u` -ne 0; then
 	SUDO=sudo
 fi
 
-$SUDO brconfig $brif del $1 > /dev/null 2>&1
+$SUDO ifconfig $brif del $1 > /dev/null 2>&1

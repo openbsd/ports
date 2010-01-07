@@ -24,8 +24,8 @@ $SUDO ifconfig $BRIDGE create > /dev/null 2>&1 && {
   # duplicate rules get loaded each time qemu starts
   # The following two block carp packets from wasting cpu cycles inside the
   # qemu sessions, remove if testing carp inside qemu
-  $SUDO brconfig $BRIDGE rule block in on $ETHER dst 33:33:0:0:0:12
-  $SUDO brconfig $BRIDGE rule block in on $ETHER dst 01:00:5e:00:00:12
+  $SUDO ifconfig $BRIDGE rule block in on $ETHER dst 33:33:0:0:0:12
+  $SUDO ifconfig $BRIDGE rule block in on $ETHER dst 01:00:5e:00:00:12
 }
 # Since we can specify ETHER and BRIDGE above, its possible that
 # this tun interface or this physical interface was setup as part of
@@ -35,9 +35,9 @@ $SUDO ifconfig $BRIDGE create > /dev/null 2>&1 && {
 # caught this
 ifconfig bridge | sed -n '/^bridge[0-9]*/{s/:.*$//;p;}' | while read brif
 do
-	$SUDO brconfig $brif del $ETHER > /dev/null 2>&1
-	$SUDO brconfig $brif del $1 > /dev/null 2>&1
+	$SUDO ifconfig $brif del $ETHER > /dev/null 2>&1
+	$SUDO ifconfig $brif del $1 > /dev/null 2>&1
 done
-$SUDO brconfig $BRIDGE add $ETHER up
-$SUDO brconfig $BRIDGE add $1 up || true
+$SUDO ifconfig $BRIDGE add $ETHER up
+$SUDO ifconfig $BRIDGE add $1 up || true
 echo "}"

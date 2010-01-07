@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2009/10/27 13:07:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2010/01/07 14:15:17 giovanni Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
@@ -6,10 +6,10 @@ ONLY_FOR_ARCHS=		amd64 i386 powerpc
 COMMENT=		multi system emulator
 
 DISTNAME=		qemu-0.9.1
-PKGNAME=		${DISTNAME}p11
+PKGNAME=		${DISTNAME}p12
 CATEGORIES=		emulators
 
-HOMEPAGE=		http://bellard.org/qemu/
+HOMEPAGE=		http://www.nongnu.org/qemu/
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${MASTER_SITE_OPENBSD}
 
 BUILD_DEPENDS=		::textproc/texi2html
 USE_GMAKE=		Yes
