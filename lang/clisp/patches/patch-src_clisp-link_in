@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_clisp-link_in,v 1.1 2010/01/07 10:55:28 edd Exp $
+--- src/clisp-link.in.orig	Wed Jun 17 19:30:31 2009
++++ src/clisp-link.in	Sat Jan  2 19:08:19 2010
+@@ -336,6 +336,7 @@ case "$1" in
+       link_some "$sourcedir" "$destinationdir" ${LISPRUN} lispinit.mem modules.h modules.o makevars ${FILES};
+     else
+       cp "$sourcedir"/modules.h "$destinationdir"/modules.h
++      chmod +w "$destinationdir"/modules.h
+       FILES=`link_some "$sourcedir" "$destinationdir" ${FILES}`
+       # Prepare the module directories and read their variables
+       PRELOAD=''

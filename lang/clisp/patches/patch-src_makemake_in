@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_makemake_in,v 1.9 2007/11/25 22:16:21 jasper Exp $
---- src/makemake.in.orig	Sun Nov 25 21:15:04 2007
-+++ src/makemake.in	Sun Nov 25 21:15:40 2007
-@@ -1872,7 +1872,7 @@ echol "# This can also be used for pre-test and post-r
+$OpenBSD: patch-src_makemake_in,v 1.10 2010/01/07 10:55:28 edd Exp $
+--- src/makemake.in.orig	Tue Jul 28 19:58:03 2009
++++ src/makemake.in	Wed Dec 30 22:12:19 2009
+@@ -1916,7 +1916,7 @@ echol "# This can also be used for pre-test and post-r
  echol "#   make distrib VERSION_SUFFIX=pre"
  echol "VERSION_SUFFIX="
  echol "# The distribution's top directory"
@@ -10,3 +10,12 @@ $OpenBSD: patch-src_makemake_in,v 1.9 2007/11/25 22:16:21 jasper Exp $
  echol
  echol '# Directories used by "make install":'
  echol "prefix = ${PREFIX}"
+@@ -3002,7 +3002,7 @@ fi
+ CLISP_="${HERE_}lisp${LEXE} -M ${HERE_}lispinit.mem ${localeflags}${someflags}"
+ 
+ if [ $CROSS = false ] ; then
+-  CHECK_DEPS="check-recompile check-fresh-line check-script check-exec-image check-tests"
++  CHECK_DEPS="check-recompile check-fresh-line check-script check-tests"
+ 
+   echol "# check the sources:"
+   echol "# 1. subr.d, fsubr.d, subrkw.d and all the LISPFUNs must add up"

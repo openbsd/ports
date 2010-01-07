@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_configure,v 1.4 2007/11/25 22:16:21 jasper Exp $
---- src/configure.orig	Sun Nov 25 21:14:31 2007
-+++ src/configure	Sun Nov 25 21:14:54 2007
-@@ -21713,43 +21713,6 @@ echo "${ECHO_T}no" >&6; }
+$OpenBSD: patch-src_configure,v 1.5 2010/01/07 10:55:28 edd Exp $
+--- src/configure.orig	Tue Jul 28 23:10:12 2009
++++ src/configure	Mon Dec 28 21:08:14 2009
+@@ -22606,43 +22606,6 @@ $as_echo "no" >&6; }
  fi
  
  
 -# Extract the first word of "dvipdf", so it can be a program name with args.
 -set dummy dvipdf; ac_word=$2
--{ echo "$as_me:$LINENO: checking for $ac_word" >&5
--echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
+-{ $as_echo "$as_me:$LINENO: checking for $ac_word" >&5
+-$as_echo_n "checking for $ac_word... " >&6; }
 -if test "${ac_cv_prog_DVIPDF+set}" = set; then
--  echo $ECHO_N "(cached) $ECHO_C" >&6
+-  $as_echo_n "(cached) " >&6
 -else
 -  if test -n "$DVIPDF"; then
 -  ac_cv_prog_DVIPDF="$DVIPDF" # Let the user override the test.
@@ -23,7 +23,7 @@ $OpenBSD: patch-src_configure,v 1.4 2007/11/25 22:16:21 jasper Exp $
 -  for ac_exec_ext in '' $ac_executable_extensions; do
 -  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
 -    ac_cv_prog_DVIPDF="dvipdf"
--    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    $as_echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
 -done
@@ -34,11 +34,11 @@ $OpenBSD: patch-src_configure,v 1.4 2007/11/25 22:16:21 jasper Exp $
 -fi
 -DVIPDF=$ac_cv_prog_DVIPDF
 -if test -n "$DVIPDF"; then
--  { echo "$as_me:$LINENO: result: $DVIPDF" >&5
--echo "${ECHO_T}$DVIPDF" >&6; }
+-  { $as_echo "$as_me:$LINENO: result: $DVIPDF" >&5
+-$as_echo "$DVIPDF" >&6; }
 -else
--  { echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6; }
+-  { $as_echo "$as_me:$LINENO: result: no" >&5
+-$as_echo "no" >&6; }
 -fi
 -
 -
