@@ -1,15 +1,17 @@
-$OpenBSD: patch-configure,v 1.3 2007/12/19 09:01:25 fgsch Exp $
---- configure.orig	Wed May 23 20:57:45 2007
-+++ configure	Sun Dec 16 02:26:41 2007
-@@ -6,7 +6,7 @@ my $prefix      = "/usr/local";
+$OpenBSD: patch-configure,v 1.4 2010/01/07 09:49:21 jakemsr Exp $
+--- configure.orig	Wed May 23 11:57:45 2007
++++ configure	Sat Dec 26 03:23:34 2009
+@@ -6,8 +6,8 @@ my $prefix      = "/usr/local";
  my $package     = "eboard";
  my $version     = "1.0.4";
  my $cxx         = "g++";
 -my @cxxflags    = ("-O6");
+-my @ldflags     = ("-lpthread");
 +my @cxxflags    = ();
- my @ldflags     = ("-lpthread");
++my @ldflags     = ("-pthread");
  my @libs        = ();
  my $configh     = "config.h";
+ my $configmake  = "config.make";
 @@ -236,7 +236,7 @@ sub append_flags {
      my $x = shift @_;
      my @y;
@@ -37,7 +39,18 @@ $OpenBSD: patch-configure,v 1.3 2007/12/19 09:01:25 fgsch Exp $
  	} else {
  	    $program = "#include <$z>\nint main() { return 0; }\n";
          }
-@@ -536,7 +538,7 @@ if ($t2 != 0) {
+@@ -512,6 +514,10 @@ if (!header_check("stdio.h","stdlib.h","string.h","uni
+ #optional headers
+ header_check("strings.h","sys/soundcard.h","sys/audioio.h","linux/joystick.h");
+ 
++if (header_check("sndio.h")) {
++    append_libs("sndio");
++}
++
+ $t1=macro_check("netinet/in.h","IPPROTO_TCP","HAVE_IPPROTO_TCP_ON_IN_H");
+ $t2=macro_check("netinet/in.h","TCP_NODELAY","HAVE_TCP_NODELAY_ON_IN_H");
+ $t3=macro_check("netinet/in.h","SOL_TCP","HAVE_SOL_TCP_ON_IN_H");
+@@ -536,7 +542,7 @@ if ($t2 != 0) {
  	print "netinet/tcp.h not required, SOL_TCP present.\n";
      }
  } else {

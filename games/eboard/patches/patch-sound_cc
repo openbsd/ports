@@ -1,7 +1,7 @@
-$OpenBSD: patch-sound_cc,v 1.6 2007/12/03 18:54:58 fgsch Exp $
---- sound.cc.orig	Wed May 23 19:57:45 2007
-+++ sound.cc	Mon Dec  3 11:58:00 2007
-@@ -46,6 +46,7 @@
+$OpenBSD: patch-sound_cc,v 1.7 2010/01/07 09:49:21 jakemsr Exp $
+--- sound.cc.orig	Wed May 23 11:57:45 2007
++++ sound.cc	Sat Dec 26 04:11:49 2009
+@@ -46,14 +46,25 @@
  #include "eboard.h"
  
  #define SOME_DRIVER 1
@@ -9,8 +9,16 @@ $OpenBSD: patch-sound_cc,v 1.6 2007/12/03 18:54:58 fgsch Exp $
  
  #ifdef HAVE_SYS_SOUNDCARD_H
  
-@@ -54,6 +55,9 @@
+ #define OSS_DRIVER 1
+ #include <sys/soundcard.h>
  
++#elif defined HAVE_SNDIO_H
++
++#define SNDIO_DRIVER 1
++#include <sndio.h>
++#undef SOUND_DEV
++#define SOUND_DEV "default"
++
  #elif defined HAVE_SYS_AUDIOIO_H
  
 +#undef SOUND_DEV
@@ -19,7 +27,7 @@ $OpenBSD: patch-sound_cc,v 1.6 2007/12/03 18:54:58 fgsch Exp $
  #define OPENBSD_DRIVER 1
  #include <sys/audioio.h>
  
-@@ -74,7 +78,7 @@ SoundEvent::SoundEvent() {
+@@ -74,7 +85,7 @@ SoundEvent::SoundEvent() {
    Pitch=800;
    Duration=250;
    Count=1;
@@ -28,7 +36,7 @@ $OpenBSD: patch-sound_cc,v 1.6 2007/12/03 18:54:58 fgsch Exp $
    ExtraData[0]=0;
    enabled = true;
  }
-@@ -157,7 +161,7 @@ ostream & operator<<(ostream &s,  SoundEvent e) {
+@@ -157,7 +168,7 @@ ostream & operator<<(ostream &s,  SoundEvent e) {
      s << e.Device << ',' << e.Count << ',' << (e.enabled?1:0);
      break;
    case EXT_WAVE:
@@ -37,3 +45,92 @@ $OpenBSD: patch-sound_cc,v 1.6 2007/12/03 18:54:58 fgsch Exp $
      s << "1," << e.Device << ',' << e.ExtraData;
      s << ',' << (e.enabled?1:0);
      break;
+@@ -200,8 +211,12 @@ void SoundEvent::play() {
+ 
+     switch(type) {
+     case EXT_WAVE:
++#ifdef SNDIO_DRIVER
++      execlp("aucat","aucat","-i",ExtraData,(char *)NULL);
++#else
+       execlp("play","play","-d",Device,ExtraData,0);
+       execlp("sox",ExtraData,"-t","ossdsp",Device,0);
++#endif
+       break;
+     case EXT_PROGRAM:
+       execlp("/bin/sh","/bin/sh","-c",ExtraData,0);
+@@ -231,6 +246,11 @@ void SoundEvent::sine_beep(char *device,int pitch,int 
+   int channels=1;
+ #endif
+ 
++#ifdef SNDIO_DRIVER
++  struct sio_hdl *hdl;
++  struct sio_par par;
++#endif
++
+ #ifdef OPENBSD_DRIVER
+   audio_info_t ai;
+ #endif // OPENBSD
+@@ -257,9 +277,15 @@ void SoundEvent::sine_beep(char *device,int pitch,int 
+   for(i=1;i<Count;i++)
+     memcpy(wave+i*(bl+interval),wave,bl);
+ 
++#ifdef SNDIO_DRIVER
++  hdl=sio_open(NULL,SIO_PLAY,0);
++  if (hdl==NULL)
++#else
+   fd=open(device,O_WRONLY);
+   if (fd<0)
++#endif
+     goto leave2;
++
+ #endif // SOME
+ 
+ #ifdef OSS_DRIVER
+@@ -273,6 +299,20 @@ void SoundEvent::sine_beep(char *device,int pitch,int 
+     goto leave1;
+ #endif // OSS
+ 
++#ifdef SNDIO_DRIVER
++  sio_initpar(&par);
++  par.bits=8;
++  par.sig=0;
++  par.pchan=1;
++  par.rate=rate;
++  if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par))
++    goto leave1;
++  if (par.bits != 8 || par.sig != 0 || par.pchan != 1 || par.rate != rate)
++    goto leave1;
++  if (!sio_start(hdl))
++    goto leave1;
++#endif
++
+ #ifdef OPENBSD_DRIVER
+   AUDIO_INITINFO(&ai);
+   ai.mode             = AUMODE_PLAY;
+@@ -285,8 +325,13 @@ void SoundEvent::sine_beep(char *device,int pitch,int 
+ #endif // OPENBSD
+ 
+ #ifdef SOME_DRIVER
+-  for(i=0;i<ts;)
++  for(i=0;i<ts;) {
++#ifdef SNDIO_DRIVER
++    i+=sio_write(hdl,&wave[i],ts-i);
++#else
+     i+=::write(fd,&wave[i],ts-i);
++#endif
++  }
+ #endif // SOME
+ 
+ #ifdef OSS_DRIVER
+@@ -299,7 +344,11 @@ void SoundEvent::sine_beep(char *device,int pitch,int 
+ 
+ #ifdef SOME_DRIVER
+  leave1:
++#ifdef SNDIO_DRIVER
++  sio_close(hdl);
++#else
+   close(fd);
++#endif // SNDIO
+  leave2:
+   free(wave);
+ #endif // SOME

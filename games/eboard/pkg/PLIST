@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/12/03 18:54:58 fgsch Exp $
-bin/eboard
+@comment $OpenBSD: PLIST,v 1.9 2010/01/07 09:49:21 jakemsr Exp $
+@bin bin/eboard
 bin/eboard-addtheme
 bin/eboard-config
 @man man/man1/eboard-addtheme.1
