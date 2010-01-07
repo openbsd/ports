@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2009/12/15 18:01:57 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/01/07 10:57:17 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME = 		texlive-${DIST_V}-source
-PKGNAME =		texlive_base-${V}p0
+PKGNAME =		texlive_base-${V}p1
 SHARED_LIBS =		kpathsea	2.0
 
 WANTLIB =		m X11 ICE freetype Xt c Xext fontconfig Xpm SM Xmu z \
@@ -22,9 +22,8 @@ LIB_DEPENDS =		t1.>=4::devel/t1lib \
 			png.>=3::graphics/png \
 			gd::graphics/gd \
 			ttf::print/freetype \
-			poppler::print/poppler
-
-
+			poppler::print/poppler \
+			avcall,callback::devel/ffcall
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu

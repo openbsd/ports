@@ -1,0 +1,15 @@
+$OpenBSD: patch-utils_xindy_rte_Makefile_in,v 1.1 2010/01/07 10:57:17 edd Exp $
+
+A fix for the newer versions of clisp where clisp-link invocation no longer
+uses add-module-set.
+
+--- utils/xindy/rte/Makefile.in.orig	Wed Aug  5 12:36:50 2009
++++ utils/xindy/rte/Makefile.in	Sat Jan  2 14:49:00 2010
+@@ -548,7 +548,6 @@ $(binariesdir)/$(XINDY_RUN):
+ 	test -f ordrules/link.sh || for i in $(ORDRULES_FILES); do cp -p $(top_srcdir)/rte/ordrules/$$i ordrules/$$i; done
+ 	$(MAKE) -C ordrules ordrulei.c
+ 	env CLISP_LINKKIT='$(CLISP_LIB)/linkkit' MAKE="$(MAKE)" \
+-	sh '$(CLISP_LIB)/clisp-link' add-module-set ordrules '$(CLISP_LIB)/full' xindy-build-dir || \
+ 	sh '$(CLISP_LIB)/clisp-link' add '$(CLISP_LIB)/full' xindy-build-dir ordrules
+ 	$(INSTALL_STRIP_PROGRAM) xindy-build-dir/$(LISP_RUN) $(binariesdir)/$(XINDY_RUN)
+ 
