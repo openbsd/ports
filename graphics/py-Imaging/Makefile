@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2009/07/18 12:37:21 djm Exp $
+# $OpenBSD: Makefile,v 1.38 2010/01/07 13:36:01 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ VERSION=		1.1.6
 DISTNAME=		Imaging-${VERSION}
 PKGNAME-main=		py-${DISTNAME}p0
 FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}p0
-FULLPKGNAME-bin=	py-Imaging-bin-${VERSION}p0
+FULLPKGNAME-bin=	py-Imaging-bin-${VERSION}p1
 
 CATEGORIES=		graphics
 
@@ -30,7 +30,7 @@ MODULES=		lang/python
 
 RUN_DEPENDS=		${MODPY_TKINTER_DEPENDS}
 RUN_DEPENDS-bin=	${RUN_DEPENDS} \
-			:py-Imaging:graphics/py-Imaging
+			:py-Imaging-*:graphics/py-Imaging
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS-main=	jpeg.>=62::graphics/jpeg \
 			tk84:tk->=8.4,<8.5:x11/tk/8.4
