@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2010/01/07 21:54:29 jasper Exp $
 
 COMMENT-main=		Quake/Quake-world client
 COMMENT-server=		Quake world server
 CATEGORIES=		games
 
-FULLPKGNAME-server=	quakeworld-server-20000101p3
-PKGNAME-main=		quake-20000101p6
+FULLPKGNAME-server=	quakeworld-server-20000101p4
+PKGNAME-main=		quake-20000101p7
 DISTNAME=		quake-v6-bsd-kame
 PATCHFILES=		quake6-00-v6-20000202b.diff.gz:0
 PATCH_DIST_STRIP=	-p1
@@ -25,16 +25,15 @@ WANTLIB=		c m
 USE_GMAKE=		Yes
 
 MULTI_PACKAGES=		-main -server
-FLAVORS=		sdl ggi x11
+FLAVORS=		sdl ggi x11 gl
 FLAVOR?=		sdl
 
 CONFIGURE_ENV=LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
 CONFIGURE_ENV+=CPPFLAGS='-I${LOCALBASE}/include -I${X11BASE}/include'
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--enable-release
-CONFIGURE_ARGS+=	--bindir=/bin
-CONFIGURE_ARGS+=	--with-opengl=no --with-opengl-includes=no
-
+CONFIGURE_ARGS+=	--bindir=/bin \
+			--with-opengl=no --with-opengl-includes=no
 
 .if ${FLAVOR:L} == sdl
 WANTLIB+=		pthread
@@ -52,8 +51,11 @@ CFLAGS+=		-pthread
 CONFIGURE_ARGS+=	--without-sdl --without-ggi
 MAKE_FLAGS=	
 WANTLIB-main=		X11 Xext c m pthread-stubs xcb
+.elif ${FLAVOR:L} == gl
+CONFIGURE_ARGS+=	--with-opengl=yes --with-opengl-includes=${X11BASE}/include
+WANTLIB+=		GL X11 Xext pthread
 .else
-BROKEN=			choose either sdl, ggi or x11
+BROKEN=			choose either sdl, ggi, gl or x11
 .endif
 
 WRKDIST=	${WRKDIR}/quakeforge

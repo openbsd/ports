@@ -6,3 +6,4 @@ Note that you must have quake datafiles from elsewhere.
 Flavors:
 	sdl	uses sdl library, allows full screen.
 	ggi	uses ggi library, somewhat theoretical interest.
+	gl	uses gl library, OpenGL accelerated.
