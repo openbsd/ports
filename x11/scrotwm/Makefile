@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2009/10/22 22:34:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/01/07 01:57:28 marco Exp $
 
 COMMENT=		small tiling window manager
 
 SHARED_LIBS=		swmhack 0.0
 
-DISTNAME=		scrotwm-0.9.18
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		scrotwm-0.9.21
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
 
@@ -39,7 +38,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/initscreen.sh ${PREFIX}/share/examples/scrotwm
 	${INSTALL_SCRIPT} ${WRKSRC}/screenshot.sh ${PREFIX}/share/examples/scrotwm
 	${INSTALL_DATA} ${WRKSRC}/scrotwm.conf ${PREFIX}/share/examples/scrotwm
-.for i in es it
+.for i in es it ru
 	${INSTALL_DATA_DIR} ${PREFIX}/man/$i/cat1
 	mv ${PREFIX}/man/cat1/scrotwm_$i.0 ${PREFIX}/man/$i/cat1/scrotwm.0
 .endfor

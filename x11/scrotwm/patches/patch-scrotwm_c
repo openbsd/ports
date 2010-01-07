@@ -1,4 +1,4 @@
-$OpenBSD: patch-scrotwm_c,v 1.8 2009/10/13 12:24:42 sthen Exp $
+$OpenBSD: patch-scrotwm_c,v 1.9 2010/01/07 01:57:28 marco Exp $
 --- scrotwm.c.orig	Wed Sep 23 06:04:09 2009
 +++ scrotwm.c	Fri Sep 25 17:28:03 2009
 @@ -150,7 +150,7 @@ u_int32_t		swm_debug = 0
