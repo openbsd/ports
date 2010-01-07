@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.18 2009/12/08 18:55:29 ajacoutot Exp $
---- configure.orig	Tue Dec  1 05:47:37 2009
-+++ configure	Tue Dec  1 16:28:56 2009
+$OpenBSD: patch-configure,v 1.19 2010/01/07 08:02:35 ajacoutot Exp $
+--- configure.orig	Thu Jan  7 01:48:41 2010
++++ configure	Thu Jan  7 08:54:09 2010
 @@ -2834,9 +2834,9 @@ _ACEOF
  
  # libtool versioning
  LT_RELEASE=2.22
 -LT_CURRENT=2200
--LT_REVISION=3
+-LT_REVISION=4
 -LT_AGE=2200
 +LT_CURRENT=!!LIBglib-2.0_VERSION_R!!
 +LT_REVISION=!!LIBglib-2.0_VERSION_E!!
