@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/12 10:26:58 simon Exp $
+# $OpenBSD: Makefile,v 1.8 2010/01/08 11:40:43 stephan Exp $
 
 COMMENT= 	Email::MIME constructor for starting anew
 
 MODULES=	cpan
 
 DISTNAME=	Email-MIME-Creator-1.456
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	mail
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
@@ -18,8 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	::mail/p5-Email-MIME \
 		:p5-Email-MIME-Encodings->=1.313:mail/p5-Email-MIME-Encodings \
 		:p5-Email-MIME-Modifier->=1.441:mail/p5-Email-MIME-Modifier \
-		::mail/p5-Email-Simple \
-		::mail/p5-Email-Simple-Creator
+		:p5-Email-Simple->=2.100:mail/p5-Email-Simple
+
+REGRESS_DEPENDS= ::mail/p5-Email-MIME
 
 MAKE_ENV=	TEST_POD=Yes
 
