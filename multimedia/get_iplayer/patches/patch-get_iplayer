@@ -1,11 +1,11 @@
-$OpenBSD: patch-get_iplayer,v 1.29 2010/01/04 11:15:35 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.30 2010/01/08 14:30:30 sthen Exp $
 
 - default to using id3tag not id3v2
 - follow hier(7) not Linux FHS for options file location
 
---- get_iplayer.orig	Sat Jan  2 22:52:09 2010
-+++ get_iplayer	Mon Jan  4 11:09:34 2010
-@@ -316,7 +316,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+--- get_iplayer.orig	Thu Jan  7 15:39:17 2010
++++ get_iplayer	Fri Jan  8 14:25:11 2010
+@@ -319,7 +319,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -14,7 +14,7 @@ $OpenBSD: patch-get_iplayer,v 1.29 2010/01/04 11:15:35 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -437,6 +437,7 @@ if ( ! keys %plugin_files ) {
+@@ -440,6 +440,7 @@ if ( ! keys %plugin_files ) {
  	$opt->{pluginsupdate} = 1;
  }
  # Update this script if required
@@ -22,7 +22,7 @@ $OpenBSD: patch-get_iplayer,v 1.29 2010/01/04 11:15:35 sthen Exp $
  update_script() if $opt->{update} || $opt->{pluginsupdate};
  
  
-@@ -662,7 +663,7 @@ sub find_matches {
+@@ -665,7 +666,7 @@ sub find_matches {
  	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-get_iplayer,v 1.29 2010/01/04 11:15:35 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -3775,7 +3776,7 @@ sub tag_file {
+@@ -3909,7 +3910,7 @@ sub tag_file {
  		my ( $id3_name, $id3_episode, $id3_desc, $id3_channel ) = ( $prog->{name}, $prog->{episode}, $prog->{desc}, $prog->{channel} );
  		s|"|\\"|g for ($id3_name, $id3_episode, $id3_desc, $id3_channel);
  		# Only tag if the required tool exists
