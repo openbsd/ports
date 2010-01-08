@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/08/25 17:15:34 jasper Exp $
-${P5SITE}/Email/
+@comment $OpenBSD: PLIST,v 1.4 2010/01/08 10:38:30 stephan Exp $
+@conflict p5-Email-Simple-Creator-*
+@pkgpath mail/p5-Email-Simple-Creator
 ${P5SITE}/Email/Simple/
 ${P5SITE}/Email/Simple.pm
+${P5SITE}/Email/Simple/Creator.pm
 ${P5SITE}/Email/Simple/Header.pm
 @man man/man3p/Email::Simple.3p
+@man man/man3p/Email::Simple::Creator.3p
 @man man/man3p/Email::Simple::Header.3p
