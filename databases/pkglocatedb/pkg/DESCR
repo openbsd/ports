@@ -1,0 +1,3 @@
+Database of files from all packages in the ports tree, including names
+of the packages containing them. This is in a format suitable for use with
+locate(1) (either with -d, or in a colon-separated list in LOCATE_PATH).
