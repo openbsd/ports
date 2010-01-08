@@ -1,6 +1,15 @@
-$OpenBSD: patch-swatch,v 1.6 2009/01/10 21:47:38 rui Exp $
---- swatch.orig	Tue Jul  1 19:18:31 2008
-+++ swatch	Wed Jan  7 20:00:12 2009
+$OpenBSD: patch-swatch,v 1.7 2010/01/08 13:59:17 landry Exp $
+--- swatch.orig	Tue Jul  1 20:18:31 2008
++++ swatch	Fri Jan  8 14:58:01 2010
+@@ -80,7 +80,7 @@ my $Config_File     = '';
+ my $Now = 0;  # The current time in Unix seconds. Gets set when set_restart_time is called
+ my $thCounter = 0;
+ my $tail_cmd_name = ''; # We'll try to find it in the PATH later
+-my $tail_cmd_args = '-n 0 -F'; 
++my $tail_cmd_args = '-n 0 -f'; 
+ $awk_field_syntax = 0;
+ 
+ my $AUTHOR = "E. Todd Atkins <Todd.Atkins\@StanfordAlumni.ORG>";
 @@ -151,7 +151,7 @@ sub parse_command_line {
  sub dprint {
      my $msg_lev = shift;
