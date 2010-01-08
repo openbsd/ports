@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/10/23 01:03:28 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/01/08 15:30:53 kevlo Exp $
 wordpress/
 wordpress/index.php
 wordpress/license.txt
@@ -16,31 +16,43 @@ wordpress/wp-admin/comment.php
 wordpress/wp-admin/css/
 wordpress/wp-admin/css/colors-classic-rtl.css
 wordpress/wp-admin/css/colors-classic.css
+wordpress/wp-admin/css/colors-classic.dev.css
 wordpress/wp-admin/css/colors-fresh-rtl.css
 wordpress/wp-admin/css/colors-fresh.css
+wordpress/wp-admin/css/colors-fresh.dev.css
 wordpress/wp-admin/css/dashboard-rtl.css
 wordpress/wp-admin/css/dashboard.css
+wordpress/wp-admin/css/dashboard.dev.css
 wordpress/wp-admin/css/farbtastic-rtl.css
 wordpress/wp-admin/css/farbtastic.css
 wordpress/wp-admin/css/global-rtl.css
 wordpress/wp-admin/css/global.css
+wordpress/wp-admin/css/global.dev.css
 wordpress/wp-admin/css/ie-rtl.css
 wordpress/wp-admin/css/ie.css
 wordpress/wp-admin/css/install-rtl.css
 wordpress/wp-admin/css/install.css
+wordpress/wp-admin/css/install.dev.css
 wordpress/wp-admin/css/login-rtl.css
 wordpress/wp-admin/css/login.css
+wordpress/wp-admin/css/login.dev.css
 wordpress/wp-admin/css/media-rtl.css
 wordpress/wp-admin/css/media.css
+wordpress/wp-admin/css/media.dev.css
 wordpress/wp-admin/css/plugin-install-rtl.css
 wordpress/wp-admin/css/plugin-install.css
+wordpress/wp-admin/css/plugin-install.dev.css
 wordpress/wp-admin/css/press-this-rtl.css
 wordpress/wp-admin/css/press-this.css
+wordpress/wp-admin/css/press-this.dev.css
 wordpress/wp-admin/css/theme-editor-rtl.css
 wordpress/wp-admin/css/theme-editor.css
+wordpress/wp-admin/css/theme-editor.dev.css
 wordpress/wp-admin/css/theme-install.css
+wordpress/wp-admin/css/theme-install.dev.css
 wordpress/wp-admin/css/widgets-rtl.css
 wordpress/wp-admin/css/widgets.css
+wordpress/wp-admin/css/widgets.dev.css
 wordpress/wp-admin/custom-header.php
 wordpress/wp-admin/edit-attachment-rows.php
 wordpress/wp-admin/edit-category-form.php
@@ -88,6 +100,7 @@ wordpress/wp-admin/images/generic.png
 wordpress/wp-admin/images/gray-grad.png
 wordpress/wp-admin/images/icons32-vs.png
 wordpress/wp-admin/images/icons32.png
+wordpress/wp-admin/images/imgedit-icons.png
 wordpress/wp-admin/images/list-vs.png
 wordpress/wp-admin/images/list.png
 wordpress/wp-admin/images/loading-publish.gif
@@ -165,10 +178,12 @@ wordpress/wp-admin/includes/continents-cities.php
 wordpress/wp-admin/includes/dashboard.php
 wordpress/wp-admin/includes/export.php
 wordpress/wp-admin/includes/file.php
+wordpress/wp-admin/includes/image-edit.php
 wordpress/wp-admin/includes/image.php
 wordpress/wp-admin/includes/import.php
 wordpress/wp-admin/includes/manifest.php
 wordpress/wp-admin/includes/media.php
+wordpress/wp-admin/includes/meta-boxes.php
 wordpress/wp-admin/includes/misc.php
 wordpress/wp-admin/includes/plugin-install.php
 wordpress/wp-admin/includes/plugin.php
@@ -207,6 +222,8 @@ wordpress/wp-admin/js/editor.js
 wordpress/wp-admin/js/farbtastic.js
 wordpress/wp-admin/js/gallery.dev.js
 wordpress/wp-admin/js/gallery.js
+wordpress/wp-admin/js/image-edit.dev.js
+wordpress/wp-admin/js/image-edit.js
 wordpress/wp-admin/js/inline-edit-post.dev.js
 wordpress/wp-admin/js/inline-edit-post.js
 wordpress/wp-admin/js/inline-edit-tax.dev.js
@@ -217,8 +234,6 @@ wordpress/wp-admin/js/media-upload.dev.js
 wordpress/wp-admin/js/media-upload.js
 wordpress/wp-admin/js/media.dev.js
 wordpress/wp-admin/js/media.js
-wordpress/wp-admin/js/page.dev.js
-wordpress/wp-admin/js/page.js
 wordpress/wp-admin/js/password-strength-meter.dev.js
 wordpress/wp-admin/js/password-strength-meter.js
 wordpress/wp-admin/js/plugin-install.dev.js
@@ -228,8 +243,8 @@ wordpress/wp-admin/js/post.js
 wordpress/wp-admin/js/postbox.dev.js
 wordpress/wp-admin/js/postbox.js
 wordpress/wp-admin/js/revisions-js.php
-wordpress/wp-admin/js/slug.dev.js
-wordpress/wp-admin/js/slug.js
+wordpress/wp-admin/js/set-post-thumbnail.dev.js
+wordpress/wp-admin/js/set-post-thumbnail.js
 wordpress/wp-admin/js/tags.dev.js
 wordpress/wp-admin/js/tags.js
 wordpress/wp-admin/js/theme-preview.dev.js
@@ -253,6 +268,8 @@ wordpress/wp-admin/link-parse-opml.php
 wordpress/wp-admin/link.php
 wordpress/wp-admin/load-scripts.php
 wordpress/wp-admin/load-styles.php
+wordpress/wp-admin/maint/
+wordpress/wp-admin/maint/repair.php
 wordpress/wp-admin/media-new.php
 wordpress/wp-admin/media-upload.php
 wordpress/wp-admin/media.php
@@ -280,6 +297,7 @@ wordpress/wp-admin/press-this.php
 wordpress/wp-admin/profile.php
 wordpress/wp-admin/revision.php
 wordpress/wp-admin/rtl.css
+wordpress/wp-admin/rtl.dev.css
 wordpress/wp-admin/setup-config.php
 wordpress/wp-admin/sidebar.php
 wordpress/wp-admin/theme-editor.php
@@ -297,6 +315,7 @@ wordpress/wp-admin/user-new.php
 wordpress/wp-admin/users.php
 wordpress/wp-admin/widgets.php
 wordpress/wp-admin/wp-admin.css
+wordpress/wp-admin/wp-admin.dev.css
 wordpress/wp-app.php
 wordpress/wp-atom.php
 wordpress/wp-blog-header.php
@@ -379,6 +398,8 @@ wordpress/wp-includes/category-template.php
 wordpress/wp-includes/category.php
 wordpress/wp-includes/class-IXR.php
 wordpress/wp-includes/class-feed.php
+wordpress/wp-includes/class-json.php
+wordpress/wp-includes/class-oembed.php
 wordpress/wp-includes/class-phpass.php
 wordpress/wp-includes/class-phpmailer.php
 wordpress/wp-includes/class-pop3.php
@@ -393,6 +414,7 @@ wordpress/wp-includes/comment-template.php
 wordpress/wp-includes/comment.php
 wordpress/wp-includes/compat.php
 wordpress/wp-includes/cron.php
+wordpress/wp-includes/default-embeds.php
 wordpress/wp-includes/default-filters.php
 wordpress/wp-includes/default-widgets.php
 wordpress/wp-includes/deprecated.php
@@ -408,7 +430,6 @@ wordpress/wp-includes/functions.php
 wordpress/wp-includes/functions.wp-scripts.php
 wordpress/wp-includes/functions.wp-styles.php
 wordpress/wp-includes/general-template.php
-wordpress/wp-includes/gettext.php
 wordpress/wp-includes/http.php
 wordpress/wp-includes/images/
 wordpress/wp-includes/images/blank.gif
@@ -510,6 +531,12 @@ wordpress/wp-includes/js/crop/marqueeHoriz.gif
 wordpress/wp-includes/js/crop/marqueeVert.gif
 wordpress/wp-includes/js/hoverIntent.dev.js
 wordpress/wp-includes/js/hoverIntent.js
+wordpress/wp-includes/js/imgareaselect/
+wordpress/wp-includes/js/imgareaselect/border-anim-h.gif
+wordpress/wp-includes/js/imgareaselect/border-anim-v.gif
+wordpress/wp-includes/js/imgareaselect/imgareaselect.css
+wordpress/wp-includes/js/imgareaselect/jquery.imgareaselect.dev.js
+wordpress/wp-includes/js/imgareaselect/jquery.imgareaselect.js
 wordpress/wp-includes/js/jcrop/
 wordpress/wp-includes/js/jcrop/Jcrop.gif
 wordpress/wp-includes/js/jcrop/jquery.Jcrop.css
@@ -537,6 +564,8 @@ wordpress/wp-includes/js/jquery/ui.resizable.js
 wordpress/wp-includes/js/jquery/ui.selectable.js
 wordpress/wp-includes/js/jquery/ui.sortable.js
 wordpress/wp-includes/js/jquery/ui.tabs.js
+wordpress/wp-includes/js/json2.dev.js
+wordpress/wp-includes/js/json2.js
 wordpress/wp-includes/js/prototype.js
 wordpress/wp-includes/js/quicktags.dev.js
 wordpress/wp-includes/js/quicktags.js
@@ -653,6 +682,7 @@ wordpress/wp-includes/js/tinymce/plugins/wordpress/editor_plugin.dev.js
 wordpress/wp-includes/js/tinymce/plugins/wordpress/editor_plugin.js
 wordpress/wp-includes/js/tinymce/plugins/wordpress/img/
 wordpress/wp-includes/js/tinymce/plugins/wordpress/img/audio.gif
+wordpress/wp-includes/js/tinymce/plugins/wordpress/img/embedded.png
 wordpress/wp-includes/js/tinymce/plugins/wordpress/img/help.gif
 wordpress/wp-includes/js/tinymce/plugins/wordpress/img/image.gif
 wordpress/wp-includes/js/tinymce/plugins/wordpress/img/media.gif
@@ -663,7 +693,6 @@ wordpress/wp-includes/js/tinymce/plugins/wordpress/img/page_bug.gif
 wordpress/wp-includes/js/tinymce/plugins/wordpress/img/toolbars.gif
 wordpress/wp-includes/js/tinymce/plugins/wordpress/img/trans.gif
 wordpress/wp-includes/js/tinymce/plugins/wordpress/img/video.gif
-wordpress/wp-includes/js/tinymce/plugins/wordpress/js/
 wordpress/wp-includes/js/tinymce/plugins/wpeditimage/
 wordpress/wp-includes/js/tinymce/plugins/wpeditimage/css/
 wordpress/wp-includes/js/tinymce/plugins/wpeditimage/css/editimage-rtl.css
@@ -763,6 +792,7 @@ wordpress/wp-includes/l10n.php
 wordpress/wp-includes/link-template.php
 wordpress/wp-includes/locale.php
 wordpress/wp-includes/media.php
+wordpress/wp-includes/meta.php
 wordpress/wp-includes/pluggable.php
 wordpress/wp-includes/plugin.php
 wordpress/wp-includes/pomo/
@@ -772,6 +802,7 @@ wordpress/wp-includes/pomo/po.php
 wordpress/wp-includes/pomo/streams.php
 wordpress/wp-includes/pomo/translations.php
 wordpress/wp-includes/post-template.php
+wordpress/wp-includes/post-thumbnail-template.php
 wordpress/wp-includes/post.php
 wordpress/wp-includes/query.php
 wordpress/wp-includes/registration-functions.php
@@ -781,7 +812,6 @@ wordpress/wp-includes/rss-functions.php
 wordpress/wp-includes/rss.php
 wordpress/wp-includes/script-loader.php
 wordpress/wp-includes/shortcodes.php
-wordpress/wp-includes/streams.php
 wordpress/wp-includes/taxonomy.php
 wordpress/wp-includes/template-loader.php
 wordpress/wp-includes/theme.php
