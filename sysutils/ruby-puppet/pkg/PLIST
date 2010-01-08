@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/11/11 00:07:13 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/01/08 15:39:33 msf Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 bin/filebucket
@@ -60,7 +60,9 @@ lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/pson.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/rack.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/rails.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/rubygems.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/selinux.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/stomp.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/feature/zlib.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/file_collection/
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/file_collection.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/file_collection/lookup.rb
@@ -596,6 +598,7 @@ lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/warnings.rb
 @man man/man8/puppetd.8.gz
 @man man/man8/puppetdoc.8.gz
 @man man/man8/puppetmasterd.8.gz
+@man man/man8/puppetqd.8.gz
 @man man/man8/puppetrun.8.gz
 @man man/man8/ralsh.8.gz
 sbin/puppetca
