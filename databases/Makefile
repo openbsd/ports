@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2010/01/04 10:43:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.171 2010/01/08 14:04:55 sthen Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += apache-couchdb
@@ -114,6 +114,7 @@
      SUBDIR += pgloader
      SUBDIR += pgtcl
      SUBDIR += pgworksheet
+     SUBDIR += pkglocatedb
      SUBDIR += postgresql
      SUBDIR += postgresql-jdbc
      SUBDIR += postgresql-odbc
