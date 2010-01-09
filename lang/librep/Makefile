@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2009/12/22 11:05:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/01/09 19:38:18 ajacoutot Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
 SHARED_ONLY=	Yes
 
-VERSION=	0.90.4
+VERSION=	0.90.5
 DISTNAME=	librep-${VERSION}
 SHARED_LIBS +=  rep                  13.0     # .13.0
 

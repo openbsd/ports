@@ -1,14 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/22 11:05:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/01/09 19:38:18 ajacoutot Exp $
 %%SHARED%%
 @bin bin/rep
 @bin bin/rep-remote
 bin/rep-xgettext
 @bin bin/repdoc
-include/rep.h
-include/rep_gh.h
-include/rep_lisp.h
-include/rep_regexp.h
-include/rep_subrs.h
+include/rep/
+include/rep/rep.h
+include/rep/rep_config.h
+include/rep/rep_gh.h
+include/rep/rep_lisp.h
+include/rep/rep_regexp.h
+include/rep/rep_subrs.h
 @info info/librep.info
 lib/librep.a
 lib/librep.la
@@ -65,7 +67,6 @@ lib/rep/${VERSION}/${GNU_ARCH}/timers.la
 lib/rep/${GNU_ARCH}/
 lib/rep/${GNU_ARCH}/install-aliases
 lib/rep/${GNU_ARCH}/libtool
-lib/rep/${GNU_ARCH}/rep_config.h
 lib/rep/${GNU_ARCH}/rules.mk
 @man man/man1/rep-remote.1
 @man man/man1/rep-xgettext.1
