@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.762 2010/01/04 10:43:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.763 2010/01/09 01:14:42 fgsch Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -713,6 +713,7 @@
      SUBDIR += py-bytecodeassembler
      SUBDIR += py-cheetah
      SUBDIR += py-configobj
+     SUBDIR += py-coverage
      SUBDIR += py-ctypes
      SUBDIR += py-dateutil
      SUBDIR += py-decorator
