@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/10/01 14:12:00 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/01/09 00:57:21 fgsch Exp $
 bin/pyro-es
 bin/pyro-esd
 bin/pyro-genguid
@@ -14,6 +14,9 @@ lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/
 lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/Clients.py
 lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/Clients.pyc
 lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/Clients.pyo
+lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/Event.py
+lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/Event.pyc
+lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/Event.pyo
 lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/Server.py
 lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/Server.pyc
 lib/python${MODPY_VERSION}/site-packages/Pyro/EventService/Server.pyo
@@ -104,7 +107,6 @@ share/doc/py-pyro/pyromanual_print.css
 share/examples/py-pyro/
 share/examples/py-pyro/AllInOne/
 share/examples/py-pyro/AllInOne/Readme.txt
-share/examples/py-pyro/AllInOne/allinone_ownloop.py
 share/examples/py-pyro/AllInOne/allinone_threads.py
 share/examples/py-pyro/Bank2/
 share/examples/py-pyro/Bank2/BankServer.py
@@ -210,6 +212,9 @@ share/examples/py-pyro/denyhosts/
 share/examples/py-pyro/denyhosts/Readme.txt
 share/examples/py-pyro/denyhosts/client.py
 share/examples/py-pyro/denyhosts/server.py
+share/examples/py-pyro/disconnect/
+share/examples/py-pyro/disconnect/Readme.txt
+share/examples/py-pyro/disconnect/disconnect.py
 share/examples/py-pyro/distributed-computing/
 share/examples/py-pyro/distributed-computing/Readme.txt
 share/examples/py-pyro/distributed-computing/cell/
@@ -242,6 +247,7 @@ share/examples/py-pyro/factory/server.py
 share/examples/py-pyro/filetransfer/
 share/examples/py-pyro/filetransfer/Readme.txt
 share/examples/py-pyro/filetransfer/client.py
+share/examples/py-pyro/filetransfer/db.txt
 share/examples/py-pyro/filetransfer/server.py
 share/examples/py-pyro/hugetransfer/
 share/examples/py-pyro/hugetransfer/Readme.txt
@@ -287,6 +293,9 @@ share/examples/py-pyro/oneway/
 share/examples/py-pyro/oneway/Readme.txt
 share/examples/py-pyro/oneway/client.py
 share/examples/py-pyro/oneway/server.py
+share/examples/py-pyro/pickle/
+share/examples/py-pyro/pickle/Readme.txt
+share/examples/py-pyro/pickle/pickletest.py
 share/examples/py-pyro/proxysharing/
 share/examples/py-pyro/proxysharing/Readme.txt
 share/examples/py-pyro/proxysharing/client.py
@@ -316,13 +325,18 @@ share/examples/py-pyro/simple/
 share/examples/py-pyro/simple/Readme.txt
 share/examples/py-pyro/simple/client.py
 share/examples/py-pyro/simple/server.py
+share/examples/py-pyro/simple/tst$py.class
 share/examples/py-pyro/simple/tst.py
 share/examples/py-pyro/ssl/
 share/examples/py-pyro/ssl/Readme.txt
 share/examples/py-pyro/ssl/certs/
 share/examples/py-pyro/ssl/certs/ca.pem
+share/examples/py-pyro/ssl/certs/client.key
 share/examples/py-pyro/ssl/certs/client.pem
+share/examples/py-pyro/ssl/certs/client_nokey.pem
+share/examples/py-pyro/ssl/certs/server.key
 share/examples/py-pyro/ssl/certs/server.pem
+share/examples/py-pyro/ssl/certs/server_nokey.pem
 share/examples/py-pyro/ssl/client.py
 share/examples/py-pyro/ssl/server.py
 share/examples/py-pyro/stockquotes/
