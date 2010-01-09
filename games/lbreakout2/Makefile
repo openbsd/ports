@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2009/12/30 16:36:22 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2010/01/09 10:03:05 benoit Exp $
 
 COMMENT =	breakout game with many levels, powerups, good graphics
 
-DISTNAME =	lbreakout2-2.6
-PKGNAME =	${DISTNAME}p0
+DISTNAME =	lbreakout2-2.6.1
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://lgames.sourceforge.net/index.php?action=show_project&project=LBreakout2
@@ -28,12 +27,12 @@ RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
 
 USE_X11 =	Yes
 USE_GMAKE =	Yes
-		
-AUTOCONF_VERSION =	2.61
-CONFIGURE_STYLE =	autoconf
-CONFIGURE_ARGS+ =	--with-docdir=${PREFIX}/share/doc
+
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--localstatedir=/var/games \
+			--with-docdir=${PREFIX}/share/doc
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBS="-liconv -lintl"
+			LIBS="-lintl -liconv"
 
 .include <bsd.port.mk>
