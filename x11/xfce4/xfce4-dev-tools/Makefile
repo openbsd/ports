@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/20 20:58:14 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/01/09 11:43:56 landry Exp $
 
 COMMENT =	Xfce4 developer tools and macros
 
 XFCE_PROJECT =	xfce4-dev-tools
-XFCE_VERSION =	4.7.0
+XFCE_VERSION =	4.7.2
 HOMEPAGE =	http://foo-projects.org/~benny/projects/xfce4-dev-tools/
 
 # GPLv2
