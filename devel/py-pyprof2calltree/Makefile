@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/22 17:37:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2010/01/09 01:45:06 fgsch Exp $
 
 COMMENT =	help visualize profiling data collected with the cProfile
 
-MODPY_EGG_VERSION = 1.0.3
+MODPY_EGG_VERSION = 1.1.0
 DISTNAME =	pyprof2calltree-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}p0
+PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	devel
 
@@ -20,7 +20,7 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=p/pyprof2calltree/}
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS =	Yes 
+MODPY_SETUPTOOLS = Yes 
 
 NO_REGRESS =	Yes
 
