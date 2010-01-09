@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2009/10/21 09:59:54 ajacoutot Exp $
---- configure.orig	Fri Oct 16 20:39:15 2009
-+++ configure	Wed Oct 21 11:32:04 2009
+$OpenBSD: patch-configure,v 1.6 2010/01/09 14:03:25 ajacoutot Exp $
+--- configure.orig	Wed Jan  6 04:28:18 2010
++++ configure	Sat Jan  9 14:10:30 2010
 @@ -21647,12 +21647,7 @@ else
    want_release=no
  fi
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.5 2009/10/21 09:59:54 ajacoutot Exp $
  
  else
  
-@@ -22778,7 +22773,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -22897,7 +22892,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
    ICAL_CFLAGS=-I$ICAL_PREFIX
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure,v 1.5 2009/10/21 09:59:54 ajacoutot Exp $
  else
    WITH_ICAL=no
  fi
-@@ -23647,13 +23642,13 @@ LIBS=$libs_keep
+@@ -23766,13 +23761,13 @@ LIBS=$libs_keep
  libs_keep=$LIBS
  # check lib, but do not set in link list
  
@@ -49,7 +49,7 @@ $OpenBSD: patch-configure,v 1.5 2009/10/21 09:59:54 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -23713,7 +23708,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
+@@ -23832,7 +23827,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  

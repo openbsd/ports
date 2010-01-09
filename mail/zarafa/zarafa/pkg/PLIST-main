@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2009/12/16 18:39:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2010/01/09 14:03:25 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -164,7 +164,6 @@ share/doc/zarafa/db-convert-attachments-to-files
 share/doc/zarafa/eula.txt
 share/doc/zarafa/performance-tuning.txt
 share/doc/zarafa/ssl-certificates.sh
-share/doc/zarafa/zarafa.logrotate
 share/examples/zarafa/
 @sample ${SYSCONFDIR}/zarafa/
 @mode 750
@@ -249,8 +248,6 @@ share/examples/zarafa/userscripts/deleteuser
 @sample ${SYSCONFDIR}/zarafa/userscripts/deleteuser
 share/examples/zarafa/userscripts/deleteuser.d/
 @sample ${SYSCONFDIR}/zarafa/userscripts/deleteuser.d/
-share/examples/zarafa/userscripts/deleteuser.d/99deletestore
-@sample ${SYSCONFDIR}/zarafa/userscripts/deleteuser.d/99deletestore
 share/examples/zarafa/userscripts/groups_common.sh
 @sample ${SYSCONFDIR}/zarafa/userscripts/groups_common.sh
 share/examples/zarafa/userscripts/users_common.sh
