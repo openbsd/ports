@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/11/20 21:15:25 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2010/01/09 00:21:30 fgsch Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	distributed version control system by Canonical
 
-MODPY_EGG_VERSION = 2.0.1
+MODPY_EGG_VERSION = 2.0.3
 DISTNAME =	bzr-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
 
