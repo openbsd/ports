@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.68 2009/12/15 11:32:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2010/01/09 11:47:32 sthen Exp $
 
 CATEGORIES=		mail
 COMMENT-main=		flexible mail transfer agent
 COMMENT-eximon=		X11 monitor tool for Exim MTA
 VERSION=		4.71
 DISTNAME=		exim-${VERSION}
-PKGNAME-main=		exim-${VERSION}
+PKGNAME-main=		exim-${VERSION}p0
 FULLPKGNAME-eximon=	exim-eximon-${VERSION}
 MASTER_SITES=		ftp://ftp.exim.org/pub/exim/exim4/ \
 			http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/ \
@@ -65,7 +65,7 @@ LIB_DEPENDS+=		sqlite3.>=8::databases/sqlite3
 EXIM_MAKECAT+=		"LOOKUP_LDAP=yes\n"
 EXIM_MAKECAT+=		"LDAP_LIB_TYPE=OPENLDAP2\n"
 EXIM_LOOKUP_LIBS+=	-L${LOCALBASE}/lib -lldap -llber
-LIB_DEPENDS+=		ldap.>=2,lber:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+=		ldap.>=9,lber:openldap-client->=2.3:databases/openldap
 .endif
 
 .if ${FLAVOR:L:Msasl}
