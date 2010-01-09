@@ -1,0 +1,4 @@
+xstatbar is a simple system monitor that shows various stats in an X
+window that's immovable and not part of your tab-order. It was built to
+go with tiling window managers like scrotwm and xmonad where you can
+configure a small region of the screen as "off-limits" for windows.
