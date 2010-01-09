@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/16 18:41:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/01/09 14:03:39 ajacoutot Exp $
 zarafa-webaccess/
 @owner www
 @sample zarafa-webaccess/tmp/
@@ -309,6 +309,7 @@ zarafa-webaccess/client/layout/img/print.gif
 zarafa-webaccess/client/layout/img/quota_green.gif
 zarafa-webaccess/client/layout/img/quota_orange.gif
 zarafa-webaccess/client/layout/img/quota_red.gif
+zarafa-webaccess/client/layout/img/refresh_calendar.png
 zarafa-webaccess/client/layout/img/refresh_white.gif
 zarafa-webaccess/client/layout/img/reply.gif
 zarafa-webaccess/client/layout/img/replyall.gif
@@ -319,6 +320,7 @@ zarafa-webaccess/client/layout/img/resize_horizontal.gif
 zarafa-webaccess/client/layout/img/resize_vertical.gif
 zarafa-webaccess/client/layout/img/search_indicator.gif
 zarafa-webaccess/client/layout/img/selected_day_back.gif
+zarafa-webaccess/client/layout/img/send_receive.png
 zarafa-webaccess/client/layout/img/seperator.gif
 zarafa-webaccess/client/layout/img/sort_asc.gif
 zarafa-webaccess/client/layout/img/sort_desc.gif
@@ -950,6 +952,10 @@ zarafa-webaccess/server/language/en_US.UTF-8/
 zarafa-webaccess/server/language/en_US.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/en_US.UTF-8/LC_MESSAGES/zarafa.po
 zarafa-webaccess/server/language/en_US.UTF-8/language.txt
+zarafa-webaccess/server/language/es_CA.UTF-8/
+zarafa-webaccess/server/language/es_CA.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/es_CA.UTF-8/LC_MESSAGES/zarafa.po
+zarafa-webaccess/server/language/es_CA.UTF-8/language.txt
 zarafa-webaccess/server/language/es_ES.UTF-8/
 zarafa-webaccess/server/language/es_ES.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/es_ES.UTF-8/LC_MESSAGES/zarafa.po
@@ -970,6 +976,14 @@ zarafa-webaccess/server/language/nl_NL.UTF-8/
 zarafa-webaccess/server/language/nl_NL.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/nl_NL.UTF-8/LC_MESSAGES/zarafa.po
 zarafa-webaccess/server/language/nl_NL.UTF-8/language.txt
+zarafa-webaccess/server/language/no_NO.UTF-8/
+zarafa-webaccess/server/language/no_NO.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/no_NO.UTF-8/LC_MESSAGES/zarafa.po
+zarafa-webaccess/server/language/no_NO.UTF-8/language.txt
+zarafa-webaccess/server/language/pt_BR.UTF-8/
+zarafa-webaccess/server/language/pt_BR.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/pt_BR.UTF-8/LC_MESSAGES/zarafa.po
+zarafa-webaccess/server/language/pt_BR.UTF-8/language.txt
 zarafa-webaccess/server/language/pt_PT.UTF-8/
 zarafa-webaccess/server/language/pt_PT.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/pt_PT.UTF-8/LC_MESSAGES/zarafa.po
