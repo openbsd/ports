@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2010/01/04 10:56:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.192 2010/01/09 13:55:57 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -161,6 +161,7 @@
      SUBDIR += wmwlmon
      SUBDIR += xbatt
      SUBDIR += xps
+     SUBDIR += xstatbar
      SUBDIR += xuvmstat
      SUBDIR += zap
 
