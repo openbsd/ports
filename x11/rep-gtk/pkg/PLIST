@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/12/22 11:06:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/01/09 19:38:54 ajacoutot Exp $
 %%SHARED%%
+include/rep-gtk/
+include/rep-gtk/rep-gtk.h
 lib/pkgconfig/
 lib/pkgconfig/rep-gtk.pc
 lib/rep/${GNU_ARCH}/gui/
