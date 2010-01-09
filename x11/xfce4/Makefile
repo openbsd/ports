@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2009/09/29 20:07:00 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2010/01/09 15:21:59 landry Exp $
 
      SUBDIR+= exo
      SUBDIR+= gtk-xfce-engine
@@ -8,6 +8,7 @@
      SUBDIR+= mousepad
      SUBDIR+= notification-daemon-xfce
      SUBDIR+= orage
+     SUBDIR+= parole
      SUBDIR+= ristretto
      SUBDIR+= terminal
      SUBDIR+= thunar
