@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/01/09 15:21:25 landry Exp $
+lib/parole-0/stream-properties.so
+lib/parole-0/tray-icon.so
+lib/parole-0/window-title.so

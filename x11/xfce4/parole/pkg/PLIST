@@ -1,0 +1,70 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/09 15:21:25 landry Exp $
+%%SHARED%%
+@bin bin/parole
+include/parole/
+include/parole/parole-debug.h
+include/parole/parole-file.h
+include/parole/parole-filters.h
+include/parole/parole-pl-parser.h
+include/parole/parole-provider-player.h
+include/parole/parole-provider-plugin.h
+include/parole/parole-stream.h
+include/parole/parole.h
+lib/parole-0/
+lib/parole-0/stream-properties.a
+lib/parole-0/stream-properties.la
+lib/parole-0/tray-icon.a
+lib/parole-0/tray-icon.la
+lib/parole-0/window-title.a
+lib/parole-0/window-title.la
+share/applications/parole.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/parole.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/parole.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/parole.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/parole.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/parole.svg
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/parole.mo
+share/locale/ca/LC_MESSAGES/parole.mo
+share/locale/cs/LC_MESSAGES/parole.mo
+share/locale/da/LC_MESSAGES/parole.mo
+share/locale/de/LC_MESSAGES/parole.mo
+share/locale/es/LC_MESSAGES/parole.mo
+share/locale/eu/LC_MESSAGES/parole.mo
+share/locale/fr/LC_MESSAGES/parole.mo
+share/locale/gl/LC_MESSAGES/parole.mo
+share/locale/id/LC_MESSAGES/parole.mo
+share/locale/ja/LC_MESSAGES/parole.mo
+share/locale/lv/LC_MESSAGES/parole.mo
+share/locale/nl/LC_MESSAGES/parole.mo
+share/locale/pt/LC_MESSAGES/parole.mo
+share/locale/ru/LC_MESSAGES/parole.mo
+share/locale/sk/LC_MESSAGES/parole.mo
+share/locale/sv/LC_MESSAGES/parole.mo
+share/locale/tr/LC_MESSAGES/parole.mo
+share/locale/uk/LC_MESSAGES/parole.mo
+share/locale/zh_CN/LC_MESSAGES/parole.mo
+share/parole/
+share/parole/parole-plugins-0/
+share/parole/parole-plugins-0/stream-properties.desktop
+share/parole/parole-plugins-0/system-tray.desktop
+share/parole/parole-plugins-0/window-title.desktop
+share/parole/pixmaps/
+share/parole/pixmaps/parole.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
