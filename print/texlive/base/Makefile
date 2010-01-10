@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2010/01/07 10:57:17 edd Exp $
+# $OpenBSD: Makefile,v 1.30 2010/01/10 13:06:36 kili Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME = 		texlive-${DIST_V}-source
-PKGNAME =		texlive_base-${V}p1
+PKGNAME =		texlive_base-${V}p2
 SHARED_LIBS =		kpathsea	2.0
 
 WANTLIB =		m X11 ICE freetype Xt c Xext fontconfig Xpm SM Xmu z \
@@ -22,8 +22,7 @@ LIB_DEPENDS =		t1.>=4::devel/t1lib \
 			png.>=3::graphics/png \
 			gd::graphics/gd \
 			ttf::print/freetype \
-			poppler::print/poppler \
-			avcall,callback::devel/ffcall
+			poppler::print/poppler
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
@@ -48,7 +47,8 @@ CFLAGS +=	-fPIC
 # clisp limits which arches we can use xindy on
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS += 	:clisp-*:lang/clisp
-LIB_DEPENDS +=		sigsegv::devel/libsigsegv # xindy is based upon clisp
+LIB_DEPENDS +=		sigsegv::devel/libsigsegv \
+			avcall,callback::devel/ffcall
 CONFIGURE_ARGS +=	--enable-xindy
 PKG_ARGS +=		-Dxindy=1
 WANTLIB +=		readline
