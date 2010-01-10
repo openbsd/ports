@@ -1,0 +1,13 @@
+$OpenBSD: patch-WebCore_platform_text_AtomicString_cpp,v 1.1 2010/01/10 20:06:17 landry Exp $
+Fixes SIGBUS at runtime : https://bugs.webkit.org/show_bug.cgi?id=19775
+--- WebCore/platform/text/AtomicString.cpp.orig	Thu Jan  7 18:44:45 2010
++++ WebCore/platform/text/AtomicString.cpp	Thu Jan  7 18:44:58 2010
+@@ -105,7 +105,7 @@ static inline bool equal(StringImpl* string, const UCh
+ 
+     // FIXME: perhaps we should have a more abstract macro that indicates when
+     // going 4 bytes at a time is unsafe
+-#if CPU(ARM) || CPU(SH4)
++#if CPU(ARM) || CPU(SH4) || CPU(SPARC64)
+     const UChar* stringCharacters = string->characters();
+     for (unsigned i = 0; i != length; ++i) {
+         if (*stringCharacters++ != *characters++)

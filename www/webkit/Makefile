@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2009/11/29 10:08:26 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2010/01/10 20:06:17 landry Exp $
 
 COMMENT =	open source web browser engine
 
-V = 1.1.15.4
+V = 1.1.18
 DISTNAME =	webkit-${V}
 # XXX do not remove v0. pX comes before vX.
 PKGNAME =	webkit-${V}v0
@@ -13,7 +13,7 @@ MASTER_SITES =	${HOMEPAGE}
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
-SHARED_LIBS =	webkit-1.0	1.0
+SHARED_LIBS =	webkit-1.0	2.0 #.16.0
 
 # LGPLv2 / BSD
 PERMIT_PACKAGE_CDROM =	Yes

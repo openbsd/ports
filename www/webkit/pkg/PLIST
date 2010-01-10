@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/11/29 10:08:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/01/10 20:06:17 landry Exp $
 %%SHARED%%
 @bin bin/jsc
 include/webkit-1.0/
@@ -92,18 +92,24 @@ share/webkit-1.0/images/urlIcon.png
 share/webkit-1.0/resources/
 share/webkit-1.0/resources/error.html
 share/webkit-1.0/webinspector/
+share/webkit-1.0/webinspector/AbstractTimelinePanel.js
+share/webkit-1.0/webinspector/AuditLauncherView.js
+share/webkit-1.0/webinspector/AuditResultView.js
+share/webkit-1.0/webinspector/AuditsPanel.js
 share/webkit-1.0/webinspector/BottomUpProfileDataGridTree.js
 share/webkit-1.0/webinspector/Breakpoint.js
 share/webkit-1.0/webinspector/BreakpointsSidebarPane.js
+share/webkit-1.0/webinspector/CSSSourceSyntaxHighlighter.js
 share/webkit-1.0/webinspector/CallStackSidebarPane.js
 share/webkit-1.0/webinspector/Callback.js
 share/webkit-1.0/webinspector/ChangesView.js
 share/webkit-1.0/webinspector/Color.js
+share/webkit-1.0/webinspector/ConsolePanel.js
 share/webkit-1.0/webinspector/ConsoleView.js
+share/webkit-1.0/webinspector/ContextMenu.js
 share/webkit-1.0/webinspector/CookieItemsView.js
 share/webkit-1.0/webinspector/DOMAgent.js
 share/webkit-1.0/webinspector/DOMStorage.js
-share/webkit-1.0/webinspector/DOMStorageDataGrid.js
 share/webkit-1.0/webinspector/DOMStorageItemsView.js
 share/webkit-1.0/webinspector/DataGrid.js
 share/webkit-1.0/webinspector/Database.js
@@ -112,6 +118,7 @@ share/webkit-1.0/webinspector/DatabaseTableView.js
 share/webkit-1.0/webinspector/Drawer.js
 share/webkit-1.0/webinspector/ElementsPanel.js
 share/webkit-1.0/webinspector/ElementsTreeOutline.js
+share/webkit-1.0/webinspector/EventListenersSidebarPane.js
 share/webkit-1.0/webinspector/FontView.js
 share/webkit-1.0/webinspector/ImageView.js
 share/webkit-1.0/webinspector/Images/
@@ -120,6 +127,7 @@ share/webkit-1.0/webinspector/Images/checker.png
 share/webkit-1.0/webinspector/Images/clearConsoleButtonGlyph.png
 share/webkit-1.0/webinspector/Images/closeButtons.png
 share/webkit-1.0/webinspector/Images/consoleButtonGlyph.png
+share/webkit-1.0/webinspector/Images/consoleIcon.png
 share/webkit-1.0/webinspector/Images/cookie.png
 share/webkit-1.0/webinspector/Images/database.png
 share/webkit-1.0/webinspector/Images/databaseTable.png
@@ -143,6 +151,7 @@ share/webkit-1.0/webinspector/Images/enableOutlineButtonGlyph.png
 share/webkit-1.0/webinspector/Images/enableSolidButtonGlyph.png
 share/webkit-1.0/webinspector/Images/errorIcon.png
 share/webkit-1.0/webinspector/Images/errorMediumIcon.png
+share/webkit-1.0/webinspector/Images/errorRedDot.png
 share/webkit-1.0/webinspector/Images/excludeButtonGlyph.png
 share/webkit-1.0/webinspector/Images/focusButtonGlyph.png
 share/webkit-1.0/webinspector/Images/forward.png
@@ -153,6 +162,7 @@ share/webkit-1.0/webinspector/Images/glossyHeaderSelectedPressed.png
 share/webkit-1.0/webinspector/Images/goArrow.png
 share/webkit-1.0/webinspector/Images/graphLabelCalloutLeft.png
 share/webkit-1.0/webinspector/Images/graphLabelCalloutRight.png
+share/webkit-1.0/webinspector/Images/grayConnectorPoint.png
 share/webkit-1.0/webinspector/Images/largerResourcesButtonGlyph.png
 share/webkit-1.0/webinspector/Images/localStorage.png
 share/webkit-1.0/webinspector/Images/nodeSearchButtonGlyph.png
@@ -204,6 +214,16 @@ share/webkit-1.0/webinspector/Images/statusbarMenuButtonSelected.png
 share/webkit-1.0/webinspector/Images/statusbarResizerHorizontal.png
 share/webkit-1.0/webinspector/Images/statusbarResizerVertical.png
 share/webkit-1.0/webinspector/Images/storageIcon.png
+share/webkit-1.0/webinspector/Images/successGreenDot.png
+share/webkit-1.0/webinspector/Images/timelineBarBlue.png
+share/webkit-1.0/webinspector/Images/timelineBarGray.png
+share/webkit-1.0/webinspector/Images/timelineBarGreen.png
+share/webkit-1.0/webinspector/Images/timelineBarOrange.png
+share/webkit-1.0/webinspector/Images/timelineBarPurple.png
+share/webkit-1.0/webinspector/Images/timelineBarRed.png
+share/webkit-1.0/webinspector/Images/timelineBarYellow.png
+share/webkit-1.0/webinspector/Images/timelineCheckmarks.png
+share/webkit-1.0/webinspector/Images/timelineDots.png
 share/webkit-1.0/webinspector/Images/timelineHollowPillBlue.png
 share/webkit-1.0/webinspector/Images/timelineHollowPillGray.png
 share/webkit-1.0/webinspector/Images/timelineHollowPillGreen.png
@@ -211,6 +231,7 @@ share/webkit-1.0/webinspector/Images/timelineHollowPillOrange.png
 share/webkit-1.0/webinspector/Images/timelineHollowPillPurple.png
 share/webkit-1.0/webinspector/Images/timelineHollowPillRed.png
 share/webkit-1.0/webinspector/Images/timelineHollowPillYellow.png
+share/webkit-1.0/webinspector/Images/timelineIcon.png
 share/webkit-1.0/webinspector/Images/timelinePillBlue.png
 share/webkit-1.0/webinspector/Images/timelinePillGray.png
 share/webkit-1.0/webinspector/Images/timelinePillGreen.png
@@ -218,10 +239,6 @@ share/webkit-1.0/webinspector/Images/timelinePillOrange.png
 share/webkit-1.0/webinspector/Images/timelinePillPurple.png
 share/webkit-1.0/webinspector/Images/timelinePillRed.png
 share/webkit-1.0/webinspector/Images/timelinePillYellow.png
-share/webkit-1.0/webinspector/Images/tipBalloon.png
-share/webkit-1.0/webinspector/Images/tipBalloonBottom.png
-share/webkit-1.0/webinspector/Images/tipIcon.png
-share/webkit-1.0/webinspector/Images/tipIconPressed.png
 share/webkit-1.0/webinspector/Images/toolbarItemSelected.png
 share/webkit-1.0/webinspector/Images/treeDownTriangleBlack.png
 share/webkit-1.0/webinspector/Images/treeDownTriangleWhite.png
@@ -235,9 +252,14 @@ share/webkit-1.0/webinspector/Images/userInputPreviousIcon.png
 share/webkit-1.0/webinspector/Images/userInputResultIcon.png
 share/webkit-1.0/webinspector/Images/warningIcon.png
 share/webkit-1.0/webinspector/Images/warningMediumIcon.png
+share/webkit-1.0/webinspector/Images/warningOrangeDot.png
 share/webkit-1.0/webinspector/Images/warningsErrors.png
+share/webkit-1.0/webinspector/Images/whiteConnectorPoint.png
 share/webkit-1.0/webinspector/InjectedScript.js
 share/webkit-1.0/webinspector/InjectedScriptAccess.js
+share/webkit-1.0/webinspector/InspectorBackendStub.js
+share/webkit-1.0/webinspector/InspectorFrontendHostStub.js
+share/webkit-1.0/webinspector/JavaScriptSourceSyntaxHighlighter.js
 share/webkit-1.0/webinspector/KeyboardShortcut.js
 share/webkit-1.0/webinspector/MetricsSidebarPane.js
 share/webkit-1.0/webinspector/Object.js
@@ -260,22 +282,31 @@ share/webkit-1.0/webinspector/ScopeChainSidebarPane.js
 share/webkit-1.0/webinspector/Script.js
 share/webkit-1.0/webinspector/ScriptView.js
 share/webkit-1.0/webinspector/ScriptsPanel.js
+share/webkit-1.0/webinspector/Section.js
+share/webkit-1.0/webinspector/Settings.js
 share/webkit-1.0/webinspector/SidebarPane.js
 share/webkit-1.0/webinspector/SidebarTreeElement.js
 share/webkit-1.0/webinspector/SourceFrame.js
+share/webkit-1.0/webinspector/SourceSyntaxHighlighter.js
 share/webkit-1.0/webinspector/SourceView.js
 share/webkit-1.0/webinspector/StatusBarButton.js
 share/webkit-1.0/webinspector/StoragePanel.js
 share/webkit-1.0/webinspector/StylesSidebarPane.js
 share/webkit-1.0/webinspector/SummaryBar.js
+share/webkit-1.0/webinspector/TestController.js
 share/webkit-1.0/webinspector/TextPrompt.js
 share/webkit-1.0/webinspector/TimelineAgent.js
+share/webkit-1.0/webinspector/TimelineGrid.js
+share/webkit-1.0/webinspector/TimelineOverviewPane.js
+share/webkit-1.0/webinspector/TimelinePanel.js
 share/webkit-1.0/webinspector/TopDownProfileDataGridTree.js
 share/webkit-1.0/webinspector/View.js
 share/webkit-1.0/webinspector/WatchExpressionsSidebarPane.js
+share/webkit-1.0/webinspector/audits.css
 share/webkit-1.0/webinspector/inspector.css
 share/webkit-1.0/webinspector/inspector.html
 share/webkit-1.0/webinspector/inspector.js
+share/webkit-1.0/webinspector/inspectorSyntaxHighlight.css
 share/webkit-1.0/webinspector/localizedStrings.js
 share/webkit-1.0/webinspector/treeoutline.js
 share/webkit-1.0/webinspector/utilities.js
