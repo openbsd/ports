@@ -1,0 +1,17 @@
+$OpenBSD: patch-utils_xindy_user-commands_xindy_in,v 1.1 2010/01/10 16:43:36 edd Exp $
+
+Fix path for xindy modules dir on OpenBSD
+
+--- utils/xindy/user-commands/xindy.in.orig	Sun Jan 10 14:37:33 2010
++++ utils/xindy/user-commands/xindy.in	Sun Jan 10 14:37:57 2010
+@@ -334,8 +334,8 @@ BEGIN {
+ 	$modules_dir = "$lib_dir/modules";
+     } elsif ( -d "$lib_dir/../../texmf/xindy" ) { # texlive multiplatform style
+ 	$modules_dir = "$lib_dir/../../texmf/xindy";
+-    } elsif ( -d "$lib_dir/../texmf/xindy" ) { # texlive non-multiplatform style
+-	$modules_dir = "$lib_dir/../texmf/xindy";
++    } elsif ( -d "$lib_dir/../share/texmf/xindy" ) { # texlive non-multiplatform style
++	$modules_dir = "$lib_dir/../share/texmf/xindy";
+     } elsif ( -d "/usr/share/xindy" ) { # FSH style
+ 	$modules_dir = "/usr/share/xindy";
+     } else {
