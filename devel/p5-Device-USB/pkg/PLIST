@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/10 21:41:55 jasper Exp $
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Device/
+${P5ARCH}/Device/USB/
+${P5ARCH}/Device/USB.pm
+${P5ARCH}/Device/USB/Bus.pm
+${P5ARCH}/Device/USB/DevConfig.pm
+${P5ARCH}/Device/USB/DevEndpoint.pm
+${P5ARCH}/Device/USB/DevInterface.pm
+${P5ARCH}/Device/USB/Device.pm
+${P5ARCH}/Device/USB/FAQ.pod
+${P5ARCH}/Device/dump_usb.pl
+${P5ARCH}/auto/
+${P5ARCH}/auto/Device/
+${P5ARCH}/auto/Device/USB/
+${P5ARCH}/auto/Device/USB/USB.bs
+@man man/man3p/Device::USB.3p
+@man man/man3p/Device::USB::Bus.3p
+@man man/man3p/Device::USB::DevConfig.3p
+@man man/man3p/Device::USB::DevEndpoint.3p
+@man man/man3p/Device::USB::DevInterface.3p
+@man man/man3p/Device::USB::Device.3p
+@man man/man3p/Device::USB::FAQ.3p
+@man man/man3p/Device::dump_usb.3p
