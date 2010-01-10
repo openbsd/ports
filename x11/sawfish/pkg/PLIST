@@ -1,8 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/12/22 22:24:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/01/10 21:07:39 jasper Exp $
 %%SHARED%%
 @bin bin/sawfish
 bin/sawfish-client
 bin/sawfish-config
+include/sawfish/
+include/sawfish/build.h
+include/sawfish/keys.h
+include/sawfish/libclient.h
+include/sawfish/sawfish.h
+include/sawfish/sawfish_config.h
+include/sawfish/sawfish_subrs.h
+include/sawfish/server.h
 @info info/sawfish.info
 lib/pkgconfig/sawfish.pc
 lib/rep/${GNU_ARCH}/sawfish/

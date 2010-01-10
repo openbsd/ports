@@ -1,13 +1,12 @@
-$OpenBSD: patch-configure,v 1.1 2009/12/22 22:24:10 jasper Exp $
---- configure.orig	Tue Dec 22 17:48:13 2009
-+++ configure	Tue Dec 22 23:10:57 2009
-@@ -12676,7 +12676,8 @@ fi
+$OpenBSD: patch-configure,v 1.2 2010/01/10 21:07:39 jasper Exp $
+--- configure.orig	Sun Jan 10 21:46:03 2010
++++ configure	Sun Jan 10 21:47:04 2010
+@@ -12652,7 +12652,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LINGUAS" >&5
  $as_echo "$LINGUAS" >&6; }
  
--KDEDIR="`kde4-config --path data | sed -e 's/.*://g'`"
-+
+-KDEDIR="`kde4-config --install data`"
 +KDEDIR='${prefix}/share/apps'
  
  if test "x$KDEDIR" = x; then
- 	KDEDIR="/usr/share/apps/"
+ 	KDEDIR="/usr/share/kde4/apps/"
