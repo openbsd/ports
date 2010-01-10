@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/29 23:58:24 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/01/10 12:37:02 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -18,6 +18,12 @@ lib/python${MODPY_VERSION}/site-packages/webob/compat.py
 lib/python${MODPY_VERSION}/site-packages/webob/compat.pyc
 lib/python${MODPY_VERSION}/site-packages/webob/datastruct.py
 lib/python${MODPY_VERSION}/site-packages/webob/datastruct.pyc
+lib/python${MODPY_VERSION}/site-packages/webob/datetime_utils.py
+lib/python${MODPY_VERSION}/site-packages/webob/datetime_utils.pyc
+lib/python${MODPY_VERSION}/site-packages/webob/dec.py
+lib/python${MODPY_VERSION}/site-packages/webob/dec.pyc
+lib/python${MODPY_VERSION}/site-packages/webob/descriptors.py
+lib/python${MODPY_VERSION}/site-packages/webob/descriptors.pyc
 lib/python${MODPY_VERSION}/site-packages/webob/etag.py
 lib/python${MODPY_VERSION}/site-packages/webob/etag.pyc
 lib/python${MODPY_VERSION}/site-packages/webob/exc.py
@@ -26,6 +32,10 @@ lib/python${MODPY_VERSION}/site-packages/webob/headerdict.py
 lib/python${MODPY_VERSION}/site-packages/webob/headerdict.pyc
 lib/python${MODPY_VERSION}/site-packages/webob/multidict.py
 lib/python${MODPY_VERSION}/site-packages/webob/multidict.pyc
+lib/python${MODPY_VERSION}/site-packages/webob/request.py
+lib/python${MODPY_VERSION}/site-packages/webob/request.pyc
+lib/python${MODPY_VERSION}/site-packages/webob/response.py
+lib/python${MODPY_VERSION}/site-packages/webob/response.pyc
 lib/python${MODPY_VERSION}/site-packages/webob/statusreasons.py
 lib/python${MODPY_VERSION}/site-packages/webob/statusreasons.pyc
 lib/python${MODPY_VERSION}/site-packages/webob/updatedict.py
