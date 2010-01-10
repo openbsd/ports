@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/01/10 16:43:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/01/10 18:09:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	HP Unix imaging and printing
-COMMENT-hpijs=	HP Inkjet driver for ghostscript
+COMMENT-hpijs=	HP Inkjet ghostscript driver (spooler independent)
 COMMENT-hpcups=	HP native CUPS driver
 COMMENT-libs=	HPLIP backend libraries
 COMMENT-gui=	HPLIP graphical tools
@@ -11,9 +11,9 @@ COMMENT-gui=	HPLIP graphical tools
 V=		3.9.8
 DISTNAME=	hplip-${V}
 
-PKGNAME-main=	${DISTNAME}
-PKGNAME-hpijs=	hpijs-${V}p0
-PKGNAME-hpcups=	hpcups-${V}p0
+PKGNAME-main=	${DISTNAME}p0
+PKGNAME-hpijs=	hpijs-${V}p1
+PKGNAME-hpcups=	hpcups-${V}p1
 PKGNAME-libs=	hplip-libs-${V}p0
 PKGNAME-gui=	hplip-gui-${V}p0
 
@@ -51,7 +51,7 @@ RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		::x11/dbus-python \
 		::devel/py-notify \
 		::graphics/py-Imaging \
-		:hpijs-*|hpcups-*:print/hplip,-hpcups
+		::print/hplip,-hpcups
 
 WANTLIB-hpijs += ${WANTLIB}
 WANTLIB-hpijs += c jpeg netsnmp stdc++ usb
@@ -59,9 +59,8 @@ LIB_DEPENDS-hpijs= hpip,hpmud::print/hplip,-libs \
 		dbus-1.>=7::x11/dbus
 
 WANTLIB-hpcups += ${WANTLIB}
-WANTLIB-hpcups += c jpeg netsnmp stdc++ usb
+WANTLIB-hpcups += c dbus-1 jpeg netsnmp stdc++ usb
 LIB_DEPENDS-hpcups= hpip,hpmud::print/hplip,-libs \
-		dbus-1.>=7::x11/dbus \
 		cups.>=3,cupsimage::print/cups
 
 LIB_DEPENDS-libs= netsnmp.>=7::net/net-snmp \
