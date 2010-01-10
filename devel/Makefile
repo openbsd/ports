@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.763 2010/01/09 01:14:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.764 2010/01/10 21:43:49 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -379,6 +379,7 @@
      SUBDIR += p5-Devel-Trace
      SUBDIR += p5-Devel-ebug
      SUBDIR += p5-Devel-ptkdb
+     SUBDIR += p5-Device-USB
      SUBDIR += p5-Directory-Scratch
      SUBDIR += p5-Env-PS1
      SUBDIR += p5-Error
