@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_spandsp_src_Makefile_in,v 1.1.1.1 2008/04/21 03:49:22 todd Exp $
+$OpenBSD: patch-lib_spandsp_src_Makefile_in,v 1.2 2010/01/10 23:47:07 espie Exp $
 --- lib/spandsp/src/Makefile.in.orig	Thu Feb  7 20:59:43 2008
 +++ lib/spandsp/src/Makefile.in	Thu Mar 27 21:32:34 2008
 @@ -485,7 +485,7 @@ clean-libLTLIBRARIES:
@@ -15,7 +15,7 @@ $OpenBSD: patch-lib_spandsp_src_Makefile_in,v 1.1.1.1 2008/04/21 03:49:22 todd E
  
  make_modem_filter$(EXEEXT): make_modem_filter.c filter_tools.c filter_tools.h config.h
 -	$(CC_FOR_BUILD) -I. -o $@ make_modem_filter.c filter_tools.c -lm
-+	$(CC_FOR_BUILD) $(CFLAGS) -I. -o $@ make_modem_filter.c filter_tools.c -lm
++	$(CC_FOR_BUILD) -I. $(CFLAGS) -o $@ make_modem_filter.c filter_tools.c -lm
  
  $(DSP): msvc/msvcproj.head msvc/msvcproj.foot Makefile.am
  	echo "creating $(DSP)"
