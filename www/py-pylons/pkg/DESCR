@@ -1,0 +1,7 @@
+The Pylons web framework is aimed at making webapps and large
+programmatic website development in Python easy. Several key points:
+
+* A framework to make writing web applications in Python easy
+* Utilizes a minimalist, component-based philosophy that makes it
+  easy to expand on
+* Harness existing knowledge about Python
