@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.449 2010/01/10 13:18:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.450 2010/01/10 13:59:14 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR += ajaxterm
@@ -334,6 +334,7 @@
      SUBDIR += py-flup
      SUBDIR += py-formencode
      SUBDIR += py-genshi
+     SUBDIR += py-htmltmpl
      SUBDIR += py-httplib2
      SUBDIR += py-jinja2
      SUBDIR += py-jonpy
