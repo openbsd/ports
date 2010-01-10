@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/12/08 11:28:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2010/01/10 15:23:43 espie Exp $
 
 COMMENT =	fast light toolkit
 
 V =		6950
 DISTNAME =	fltk-2.0.x-r${V}
-PKGNAME =	fltk2-2.0.${V}
+PKGNAME =	fltk2-2.0.${V}v0
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.fltk.org/
