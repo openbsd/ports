@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.85 2009/12/21 22:20:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2010/01/10 10:21:05 ajacoutot Exp $
 
 COMMENT=	mail/news client in gtk+
 
-MAJOR=		2.5
-VERSION=	${MAJOR}.0
+MAJOR=		2.7
+VERSION=	${MAJOR}.1
 DISTNAME=	sylpheed-${VERSION}
-PKGNAME=	${DISTNAME}p4
+
+SHARED_LIBS +=  sylph-0              0.0      # .0.1
+SHARED_LIBS +=  sylpheed-plugin-0    0.0      # .0.1
+
 CATEGORIES=	mail news x11
 HOMEPAGE=	http://sylpheed.sraoss.jp/en
 
@@ -27,7 +30,6 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs ssl stdc++ xcb z
 
 RUN_DEPENDS=	::devel/desktop-file-utils
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${MAJOR}/
-MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
@@ -36,7 +38,9 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-ssl \
 			--enable-ipv6 \
 			--enable-gtkspell \
-			--disable-imlib
+			--disable-jpilot \
+			--disable-ldap \
+			--disable-oniguruma
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
@@ -58,8 +62,5 @@ WANTLIB+=		gpg-error
 .else
 CONFIGURE_ARGS+=	--disable-gpgme
 .endif
-
-post-configure:
-	echo "#define USE_ENCHANT 1" >> ${WRKBUILD}/config.h
 
 .include <bsd.port.mk>
