@@ -1,0 +1,6 @@
+Beaker is a web session and general caching library that includes
+WSGI middleware for use in web applications.
+
+As a general caching library, Beaker can handle storing for various
+times any Python object that can be pickled with optional back-ends
+on a fine-grained basis.
