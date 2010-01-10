@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:24 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/01/10 13:45:04 espie Exp $
 COMMENT=	URI objects for Rose
 
 MODULES=	cpan
-DISTNAME=	Rose-URI-0.021
+DISTNAME=	Rose-URI-0.50
 CATEGORIES=	www
 
 RUN_DEPENDS=	::www/p5-URI \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Rose_DB_Registry_Entry_pm,v 1.1.1.1 2006/12/10 21:35:34 espie Exp $
---- lib/Rose/DB/Registry/Entry.pm.orig	Sun Dec 10 20:48:30 2006
-+++ lib/Rose/DB/Registry/Entry.pm	Sun Dec 10 20:48:45 2006
+$OpenBSD: patch-lib_Rose_DB_Registry_Entry_pm,v 1.2 2010/01/10 13:45:03 espie Exp $
+--- lib/Rose/DB/Registry/Entry.pm.orig	Mon Sep 14 17:01:58 2009
++++ lib/Rose/DB/Registry/Entry.pm	Sun Jan 10 14:14:31 2010
 @@ -2,7 +2,7 @@ package Rose::DB::Registry::Entry;
  
  use strict;
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_Rose_DB_Registry_Entry_pm,v 1.1.1.1 2006/12/10 21:35:34 espi
  
  use Rose::Object;
  our @ISA = qw(Rose::Object);
-@@ -70,7 +70,7 @@ sub dump
+@@ -186,7 +186,7 @@ sub dump
    {
      my $value = $self->$attr();
      next  unless(defined $value);
@@ -18,8 +18,8 @@ $OpenBSD: patch-lib_Rose_DB_Registry_Entry_pm,v 1.1.1.1 2006/12/10 21:35:34 espi
 +    $dump{$attr} = Clone::clone($value);
    }
  
-   # These booleans have default, but we only want the ones 
-@@ -79,13 +79,13 @@ sub dump
+ 
+@@ -196,13 +196,13 @@ sub dump
    {
      my $value = $self->{$attr};
      next  unless(defined $value);

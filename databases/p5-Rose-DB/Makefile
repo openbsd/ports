@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/04/05 18:11:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/01/10 13:45:03 espie Exp $
 
 COMMENT=	DBI wrapper and abstraction layer
 
 MODULES=	cpan
 
-DISTNAME=	Rose-DB-0.743
+DISTNAME=	Rose-DB-0.755
 CATEGORIES=	databases
 
 # Same as Perl
@@ -24,4 +24,5 @@ RUN_DEPENDS=	::math/p5-Bit-Vector \
 		::devel/p5-Clone \
 		::devel/p5-YAML-Syck
 
+REGRESS_FLAGS +=	AUTOMATED_TESTING=1
 .include <bsd.port.mk>

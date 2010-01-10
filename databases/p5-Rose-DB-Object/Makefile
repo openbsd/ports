@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/04/05 18:11:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/01/10 13:45:04 espie Exp $
 
 COMMENT=	object-oriented database mapper
 
 MODULES=	cpan
 
-DISTNAME=	Rose-DB-Object-0.769
+DISTNAME=	Rose-DB-Object-0.784
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases
 
@@ -22,4 +22,5 @@ RUN_DEPENDS=	:p5-Rose-DB->=0.737:databases/p5-Rose-DB \
 REGRESS_DEPENDS=::textproc/p5-Lingua-EN-Inflect \
 		::devel/p5-Test-Pod
 
+REGRESS_FLAGS += AUTOMATED_TESTING=1
 .include <bsd.port.mk>

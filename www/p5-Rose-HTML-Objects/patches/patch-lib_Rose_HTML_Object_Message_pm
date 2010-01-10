@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Rose_HTML_Object_Message_pm,v 1.1.1.1 2007/04/16 20:46:42 espie Exp $
---- lib/Rose/HTML/Object/Message.pm.orig	Mon Apr 16 22:40:38 2007
-+++ lib/Rose/HTML/Object/Message.pm	Mon Apr 16 22:41:03 2007
+$OpenBSD: patch-lib_Rose_HTML_Object_Message_pm,v 1.2 2010/01/10 13:45:04 espie Exp $
+--- lib/Rose/HTML/Object/Message.pm.orig	Mon Nov  9 20:47:51 2009
++++ lib/Rose/HTML/Object/Message.pm	Sun Jan 10 14:20:58 2010
 @@ -3,7 +3,7 @@ package Rose::HTML::Object::Message;
  use strict;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_Rose_HTML_Object_Message_pm,v 1.1.1.1 2007/04/16 20:46:42 es
  use Scalar::Util();
  
  use Rose::HTML::Object::Messages qw(CUSTOM_MESSAGE);
-@@ -47,7 +47,7 @@ sub parent
+@@ -89,7 +89,7 @@ sub parent
  sub clone
  {
    my($self) = shift;

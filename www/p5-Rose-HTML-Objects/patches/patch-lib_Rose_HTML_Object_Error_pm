@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Rose_HTML_Object_Error_pm,v 1.1.1.1 2007/04/16 20:46:42 espie Exp $
---- lib/Rose/HTML/Object/Error.pm.orig	Mon Apr 16 22:40:38 2007
-+++ lib/Rose/HTML/Object/Error.pm	Mon Apr 16 22:40:49 2007
+$OpenBSD: patch-lib_Rose_HTML_Object_Error_pm,v 1.2 2010/01/10 13:45:04 espie Exp $
+--- lib/Rose/HTML/Object/Error.pm.orig	Mon Nov  9 20:47:51 2009
++++ lib/Rose/HTML/Object/Error.pm	Sun Jan 10 14:20:58 2010
 @@ -3,7 +3,7 @@ package Rose::HTML::Object::Error;
  use strict;
  
@@ -9,8 +9,8 @@ $OpenBSD: patch-lib_Rose_HTML_Object_Error_pm,v 1.1.1.1 2007/04/16 20:46:42 espi
 +use Clone();
  use Scalar::Util();
  
- use Rose::Object;
-@@ -61,7 +61,7 @@ sub locale { shift->parent->locale }
+ use base 'Rose::Object';
+@@ -150,7 +150,7 @@ sub locale
  sub clone
  {
    my($self) = shift;

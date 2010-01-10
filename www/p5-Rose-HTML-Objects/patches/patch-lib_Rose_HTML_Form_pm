@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Rose_HTML_Form_pm,v 1.1.1.1 2007/04/16 20:46:42 espie Exp $
---- lib/Rose/HTML/Form.pm.orig	Mon Apr 16 22:36:23 2007
-+++ lib/Rose/HTML/Form.pm	Mon Apr 16 22:36:40 2007
+$OpenBSD: patch-lib_Rose_HTML_Form_pm,v 1.2 2010/01/10 13:45:04 espie Exp $
+--- lib/Rose/HTML/Form.pm.orig	Mon Nov  9 20:47:51 2009
++++ lib/Rose/HTML/Form.pm	Sun Jan 10 14:20:58 2010
 @@ -4,7 +4,7 @@ use strict;
  
  use Carp;
@@ -8,9 +8,9 @@ $OpenBSD: patch-lib_Rose_HTML_Form_pm,v 1.1.1.1 2007/04/16 20:46:42 espie Exp $
 -use Clone::PP;
 +use Clone;
  use Rose::URI;
- use Scalar::Util qw(refaddr);
+ use Scalar::Util();
  use URI::Escape qw(uri_escape);
-@@ -318,7 +318,7 @@ sub params
+@@ -402,7 +402,7 @@ sub params
      }
      elsif(@_ % 2 == 0)
      {
@@ -19,7 +19,7 @@ $OpenBSD: patch-lib_Rose_HTML_Form_pm,v 1.1.1.1 2007/04/16 20:46:42 espie Exp $
      }
      else
      {
-@@ -343,7 +343,7 @@ sub params
+@@ -430,7 +430,7 @@ sub params
    my $want = wantarray;
    return  unless(defined $want);
  
