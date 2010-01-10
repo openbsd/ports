@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/01/05 07:19:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2010/01/10 17:53:23 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,9 +6,9 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.6.4
+VERSION=	2.6.5
 DISTNAME=	pidgin-${VERSION}
-PKGNAME-main=	pidgin-${VERSION}p0
+PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
 FULLPKGNAME-libpurple= libpurple-${VERSION}p0
 CATEGORIES=	net
@@ -75,8 +75,7 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-# Should be 2.64
-AUTOCONF_VERSION= 2.62
+AUTOCONF_VERSION= 2.61
 CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-cap \
 		 --disable-doxygen \
