@@ -1,0 +1,4 @@
+Mako is a template library written in Python. It provides a familiar,
+non-XML syntax which compiles into Python modules for maximum
+performance. Mako's syntax and API borrows from the best ideas of
+many others, including Django templates, Cheetah, Myghty, and Genshi.
