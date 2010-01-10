@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/22 17:40:59 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/01/10 12:35:29 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/Routes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Routes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Routes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -10,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/routes/__init__.py
 lib/python${MODPY_VERSION}/site-packages/routes/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/routes/base.py
 lib/python${MODPY_VERSION}/site-packages/routes/base.pyc
+lib/python${MODPY_VERSION}/site-packages/routes/lru.py
+lib/python${MODPY_VERSION}/site-packages/routes/lru.pyc
 lib/python${MODPY_VERSION}/site-packages/routes/mapper.py
 lib/python${MODPY_VERSION}/site-packages/routes/mapper.pyc
 lib/python${MODPY_VERSION}/site-packages/routes/middleware.py
@@ -21,7 +23,37 @@ lib/python${MODPY_VERSION}/site-packages/routes/threadinglocal.pyc
 lib/python${MODPY_VERSION}/site-packages/routes/util.py
 lib/python${MODPY_VERSION}/site-packages/routes/util.pyc
 share/doc/py-routes/
-share/doc/py-routes/index.txt
-share/doc/py-routes/integration.txt
-share/doc/py-routes/manual.txt
-share/doc/py-routes/recipes.txt
+share/doc/py-routes/_images/
+share/doc/py-routes/_images/routes-logo.png
+share/doc/py-routes/_sources/
+share/doc/py-routes/_sources/changes.txt
+share/doc/py-routes/_sources/contents.txt
+share/doc/py-routes/_sources/glossary.txt
+share/doc/py-routes/_sources/manual.txt
+share/doc/py-routes/_sources/modules.txt
+share/doc/py-routes/_sources/porting.txt
+share/doc/py-routes/_sources/todo.txt
+share/doc/py-routes/_static/
+share/doc/py-routes/_static/basic.css
+share/doc/py-routes/_static/default.css
+share/doc/py-routes/_static/doctools.js
+share/doc/py-routes/_static/file.png
+share/doc/py-routes/_static/jquery.js
+share/doc/py-routes/_static/minus.png
+share/doc/py-routes/_static/opensearch.xml
+share/doc/py-routes/_static/plus.png
+share/doc/py-routes/_static/pygments.css
+share/doc/py-routes/_static/searchtools.js
+share/doc/py-routes/changes.html
+share/doc/py-routes/contents.html
+share/doc/py-routes/genindex.html
+share/doc/py-routes/glossary.html
+share/doc/py-routes/index.html
+share/doc/py-routes/manual.html
+share/doc/py-routes/modindex.html
+share/doc/py-routes/modules.html
+share/doc/py-routes/objects.inv
+share/doc/py-routes/porting.html
+share/doc/py-routes/search.html
+share/doc/py-routes/searchindex.js
+share/doc/py-routes/todo.html

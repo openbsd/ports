@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/30 00:06:26 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/01/10 12:35:28 fgsch Exp $
 
 COMMENT =	re-implementation of the rails routes system
 
-MODPY_EGG_VERSION = 1.10.3
+MODPY_EGG_VERSION = 1.11
 DISTNAME =	Routes-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME:L}p0
+PKGNAME =	py-${DISTNAME:L}
 
 CATEGORIES =	www devel
 
@@ -22,15 +22,14 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-REGRESS_DEPENDS = ::devel/py-nose \
+REGRESS_DEPENDS = ::devel/py-coverage \
+		  ::devel/py-nose \
 		  ::www/py-paste \
 		  ::www/py-webtest
 
-DOCS =		index.txt integration.txt manual.txt recipes.txt
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-routes
-	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${DOCS} \
+	cd ${WRKSRC}/docs/_build/html && pax -rw * \
 	  ${PREFIX}/share/doc/py-routes
 
 do-regress:
