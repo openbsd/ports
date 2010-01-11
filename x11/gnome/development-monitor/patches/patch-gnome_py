@@ -1,0 +1,9 @@
+$OpenBSD: patch-gnome_py,v 1.1.1.1 2010/01/11 15:01:34 ajacoutot Exp $
+--- gnome.py.orig	Sun Jan 10 15:26:21 2010
++++ gnome.py	Sun Jan 10 15:26:36 2010
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!${MODPY_BIN}
+ 
+ # SVN Commits Mailing List Parser
+ # For generating weekly commit digests

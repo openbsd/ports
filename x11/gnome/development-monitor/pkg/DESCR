@@ -1,0 +1,14 @@
+GNOME Development Monitor is a simple graphical tool to follow the the
+development activity of projects hosted on the GNOME infrastructure.
+
+By analysis of commit records (for the last N days) it is able to
+generate and display the following informations:
+
+* Planet GNOME.
+* Aggregate statistics, like GNOME Commit digest
+  (http://blogs.gnome.org/commitdigest/).
+* For each project:
+    * Changes to NEWS.
+    * Changes to ChangeLog.
+    * Easy viewing of the commit log.
+    * New patches in bugzilla.
