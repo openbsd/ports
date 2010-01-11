@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/11 22:36:26 jasper Exp $
+${P5SITE}/MooseX/._Async.pm
+${P5SITE}/MooseX/Async/
+${P5SITE}/MooseX/Async.pm
+${P5SITE}/MooseX/Async/Meta/
+${P5SITE}/MooseX/Async/Meta/Class.pm
+${P5SITE}/MooseX/Async/Meta/Method/
+${P5SITE}/MooseX/Async/Meta/Method/State.pm
+${P5SITE}/MooseX/Async/Meta/Role.pm
+${P5SITE}/MooseX/Async/Meta/Trait.pm
+@man man/man3p/MooseX::Async.3p
+@man man/man3p/MooseX::Async::Meta::Class.3p
+@man man/man3p/MooseX::Async::Meta::Method::State.3p
