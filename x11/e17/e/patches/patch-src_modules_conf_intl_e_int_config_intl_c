@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_modules_conf_intl_e_int_config_intl_c,v 1.1 2010/01/11 14:59:25 jasper Exp $
+--- src/modules/conf_intl/e_int_config_intl.c.orig	Mon Jul 27 15:42:30 2009
++++ src/modules/conf_intl/e_int_config_intl.c	Mon Jul 27 15:52:05 2009
+@@ -604,7 +604,11 @@ _fill_data(E_Config_Dialog_Data *cfdata)
+    e_lang_list = e_intl_language_list();
+    
+    /* Get list of all locales and start making map */
++#ifdef __OpenBSD__
++   output = popen("ls /usr/share/locale", "r");
++#else
+    output = popen("locale -a", "r");
++#endif
+    if ( output ) 
+      {
+ 	char line[32];

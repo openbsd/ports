@@ -1,0 +1,108 @@
+$OpenBSD: patch-src_modules_temperature_tempget_c,v 1.1 2010/01/11 14:59:25 jasper Exp $
+--- src/modules/temperature/tempget.c.orig	Thu Feb 26 04:13:48 2009
++++ src/modules/temperature/tempget.c	Sun Jul 26 23:19:49 2009
+@@ -3,21 +3,35 @@
+  */
+ #include "e.h"
+ #include "e_mod_main.h"
+-
+ #ifdef __FreeBSD__
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <sys/sensors.h>
++#endif
++
+ static int sensor_type = SENSOR_TYPE_NONE;
+ static char *sensor_name = NULL;
+ static int poll_interval = 32;
+ static int cur_poll_interval = 32;
+ 
+ static char *sensor_path = NULL;
+-#ifdef __FreeBSD__
+-static int mib[5];
++
++#if defined (__FreeBSD__) || defined (__OpenBSD__)
++int mib[5];
+ #endif
++
++#ifdef __OpenBSD__
++int dev, numt;
++struct sensordev snsrdev;
++size_t sdlen = sizeof(snsrdev);
++struct sensor snsr;
++size_t slen = sizeof(snsr);
++#endif
+ static Ecore_Poller *poller = NULL;
+ static int ptemp = 0;
+ 
+@@ -77,6 +91,7 @@ init(void)
+    int len;
+ #endif
+ 
++
+    if ((!sensor_type) || ((!sensor_name) || (sensor_name[0] == 0)))
+      {
+ 	if (sensor_name) free(sensor_name);
+@@ -86,6 +101,18 @@ init(void)
+ 	/* TODO: FreeBSD can also have more temperature sensors! */
+ 	sensor_type = SENSOR_TYPE_FREEBSD;
+ 	sensor_name = strdup("tz0");
++#elif __OpenBSD__
++	sensor_type = SENSOR_TYPE_OPENBSD;
++	sensor_name = strdup("cpu0");
++
++	mib[0] = CTL_HW;
++	mib[1] = HW_SENSORS;	
++
++	for (dev = 0; dev < MAXSENSORDEVICES && (strcmp(snsrdev.xname, "cpu0") != 0); dev++) {
++		mib[2] = dev;
++		if (sysctl(mib, 3, &snsrdev, &sdlen, NULL, 0) == -1)
++			continue;
++	}
+ #else
+ 	therms = ecore_file_ls("/proc/acpi/thermal_zone");
+ 	if (therms)
+@@ -201,6 +228,21 @@ init(void)
+ 	     sysctlnametomib(sensor_path, mib, &len);
+ #endif
+ 	     break;
++	   case SENSOR_TYPE_OPENBSD:
++#ifdef __OpenBSD__
++ 		for (numt = 0; numt < snsrdev.maxnumt[SENSOR_TEMP]; numt++) {
++     			mib[4] = numt;
++     			slen = sizeof(snsr);
++
++			if (sysctl(mib, 5, &snsr, &slen, NULL, 0) == -1)
++				continue;
++
++			if (slen > 0 && (snsr.flags & SENSOR_FINVALID) == 0) {
++				break;
++			}
++		}
++#endif
++	     break;
+ 	   case SENSOR_TYPE_OMNIBOOK:
+ 	     sensor_path = strdup("/proc/omnibook/temperature");
+ 	     break;
+@@ -290,6 +332,16 @@ check(void)
+ 	  goto error;
+ #endif
+ 	break;
++      case SENSOR_TYPE_OPENBSD:
++#ifdef __OpenBSD__
++      if (sysctl(mib, 5, &snsr, &slen, NULL, 0) != -1) {
++	temp = (snsr.value - 273150000) / 1000000.0;
++	ret = 1;
++      }
++      else
++	goto error;
++#endif
++       break;
+       case SENSOR_TYPE_OMNIBOOK:
+ 	f = fopen(sensor_path, "r");
+ 	if (f)

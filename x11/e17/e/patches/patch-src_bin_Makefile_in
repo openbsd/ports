@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bin_Makefile_in,v 1.1 2010/01/11 14:59:25 jasper Exp $
+--- src/bin/Makefile.in.orig	Tue Jul 21 20:23:54 2009
++++ src/bin/Makefile.in	Tue Jul 21 20:24:18 2009
+@@ -825,7 +825,7 @@ enlightenment_init_LDADD = @E_INIT_LIBS@
+ # HACK! why install-data-hook? install-exec-hook is run after bin_PROGRAMS
+ # and before internal_bin_PROGRAMS are installed. install-data-hook is
+ # run after both
+-setuid_root_mode = a=rx,u+xs
++setuid_root_mode = a=rx,u+x
+ installed_headersdir = $(prefix)/include/enlightenment
+ installed_headers_DATA = $(ENLIGHTENMENTHEADERS)
+ all: all-am

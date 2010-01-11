@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_modules_cpufreq_Makefile_in,v 1.1 2010/01/11 14:59:25 jasper Exp $
+--- src/modules/cpufreq/Makefile.in.orig	Tue Jul 21 20:43:00 2009
++++ src/modules/cpufreq/Makefile.in	Tue Jul 21 20:43:41 2009
+@@ -380,7 +380,7 @@ module_la_LIBADD = @e_libs@ @dlopen_libs@
+ module_la_LDFLAGS = -module -avoid-version
+ module_la_DEPENDENCIES = $(top_builddir)/config.h
+ freqsetdir = $(pkgdir)
+-setuid_root_mode = a=rx,u+xs
++setuid_root_mode = a=rx,u+x
+ setuid_root_user = root
+ freqset_SOURCES = freqset.c
+ all: all-am

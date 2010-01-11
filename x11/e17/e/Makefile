@@ -1,35 +1,48 @@
-# $OpenBSD: Makefile,v 1.14 2009/08/11 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/01/11 14:59:25 jasper Exp $
 
-COMMENT=	the enlightened window manager
-DISTNAME=	e-20071211
-PKGNAME=        ${DISTNAME}p6
+COMMENT =		the enlightened window manager
+DISTNAME =		enlightenment-0.16.999.061
+PKGNAME =		${DISTNAME}v0
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MODULES=		devel/gettext
+MODULES =		devel/gettext
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xinerama Xp Xrandr Xrender Xss c crypto curl ecore
-WANTLIB += ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas
-WANTLIB += ecore_ipc ecore_job ecore_txt ecore_x eet embryo evas
-WANTLIB += expat fontconfig freetype idn jpeg m pthread sndio
-WANTLIB += ssl usbhid z pthread-stubs xcb
+WANTLIB += Xinerama Xp Xrandr Xrender Xss Xtst c crypto dbus-1
+WANTLIB += ecore ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas
+WANTLIB += ecore_input ecore_ipc ecore_job ecore_txt ecore_x eet
+WANTLIB += eina embryo evas expat fontconfig freetype jpeg m pthread
+WANTLIB += pthread-stubs ssl xcb z
 
-LIB_DEPENDS=		SDL::devel/sdl \
-			edje::x11/e17/edje \
-			efreet,efreet_mime::x11/e17/efreet
+LIB_DEPENDS =		edje::x11/e17/edje \
+			efreet,efreet_mime::x11/e17/efreet \
+			edbus,ehal::x11/e17/e_dbus
 
-CONFIGURE_STYLE=	automake autoconf
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			E_CFLAGS="-I${LOCALBASE}/include/efreet" \
-			E_LIBS="-lssl -lcrypto -leet -levas -lecore -lecore_ipc -lecore_imf -lecore_imf_evas -ledje -lefreet -lefreet_mime"
+RUN_DEPENDS =		::devel/desktop-file-utils
 
+# Broken configure shit HAVE_ECORE_TXT=TRUE not defined correctly 
+# does not appear in AM_CONDITIONAL . Usually this means the macro
+# was only invoked conditionally.
+# This prevent us from disabeling the broken/useless modules in configure
+#CONFIGURE_ARGS +=	 --disable-battery --disable-temperature \
+#		--disable-cpufreq --disable-mixer --disable-conf-theme \
+#		--disable-conf-icon-theme
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lcrypto -lpthread -liconv -lintl"
 
+USE_LIBTOOL =		Yes
+
+# Stupid crap in /src/modules/illume/dicts chokes in regular make.
+# Some issue with the "(US)" bit
+USE_GMAKE =		Yes
+
+FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}
+SUBST_VARS +=		FULLARCH
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/enlightenment

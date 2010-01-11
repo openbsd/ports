@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_modules_wizard_page_200_c,v 1.1 2010/01/11 14:59:25 jasper Exp $
+--- src/modules/wizard/page_200.c.orig	Sun Jul 26 00:10:37 2009
++++ src/modules/wizard/page_200.c	Sun Jul 26 00:11:55 2009
+@@ -46,7 +46,7 @@ wizard_page_apply(E_Wizard_Page *pg)
+    // setup fileman favorites
+    snprintf(buf, sizeof(buf),
+ 	    "gzip -d -c < %s/data/other/efm_favorites.tar.gz | "
+-	    "(cd %s/.e/e/ ; tar -xkf -)",
++	    "(cd %s/.e/e/ ; /bin/pax -rk)",
+ 	    e_prefix_data_get(), e_user_homedir_get());
+    system(buf);
+    // FIXME: efm favorites linked to desktop should be an option in another

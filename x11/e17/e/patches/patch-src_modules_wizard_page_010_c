@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_modules_wizard_page_010_c,v 1.1 2010/01/11 14:59:25 jasper Exp $
+--- src/modules/wizard/page_010.c.orig	Fri Jul 31 15:49:44 2009
++++ src/modules/wizard/page_010.c	Fri Jul 31 15:50:51 2009
+@@ -72,8 +72,12 @@ EAPI int
+ wizard_page_init(E_Wizard_Page *pg)
+ {
+    FILE		*output;
+-   
++
++#ifdef __OpenBSD__
++   output = popen("ls /usr/share/locale", "r");   
++#else
+    output = popen("locale -a", "r");
++#endif
+    if (output) 
+      {
+ 	char line[32];
