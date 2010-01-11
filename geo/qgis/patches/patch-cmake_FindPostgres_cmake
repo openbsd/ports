@@ -1,6 +1,6 @@
-$OpenBSD: patch-cmake_FindPostgres_cmake,v 1.1.1.1 2009/06/01 23:14:58 landry Exp $
---- cmake/FindPostgres.cmake.orig	Sun May 31 10:58:46 2009
-+++ cmake/FindPostgres.cmake	Sun May 31 11:00:05 2009
+$OpenBSD: patch-cmake_FindPostgres_cmake,v 1.2 2010/01/11 20:13:31 landry Exp $
+--- cmake/FindPostgres.cmake.orig	Sun Sep 13 12:49:37 2009
++++ cmake/FindPostgres.cmake	Mon Jan 11 16:43:26 2010
 @@ -50,11 +50,7 @@ ELSE(WIN32)
        EXEC_PROGRAM(${POSTGRES_CONFIG}
          ARGS --libdir

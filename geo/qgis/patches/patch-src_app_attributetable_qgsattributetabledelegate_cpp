@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_app_attributetable_qgsattributetabledelegate_cpp,v 1.1 2009/09/06 11:19:17 landry Exp $
+$OpenBSD: patch-src_app_attributetable_qgsattributetabledelegate_cpp,v 1.2 2010/01/11 20:13:31 landry Exp $
 Unroll some c++ too violent for g++3.3.
---- src/app/attributetable/qgsattributetabledelegate.cpp.orig	Thu Sep  3 22:19:43 2009
-+++ src/app/attributetable/qgsattributetabledelegate.cpp	Thu Sep  3 22:20:43 2009
-@@ -103,7 +103,9 @@ void QgsAttributeTableDelegate::paint( QPainter * pain
+--- src/app/attributetable/qgsattributetabledelegate.cpp.orig	Sun Dec 20 19:13:22 2009
++++ src/app/attributetable/qgsattributetabledelegate.cpp	Mon Jan 11 16:39:31 2010
+@@ -111,7 +111,9 @@ void QgsAttributeTableDelegate::paint( QPainter * pain
    if ( option.state & QStyle::State_HasFocus )
    {
      QRect r = option.rect.adjusted( 1, 1, -1, -1 );

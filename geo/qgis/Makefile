@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2009/12/21 21:21:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/01/11 20:13:31 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis_1.3.0
-PKGNAME =	${DISTNAME:L:S/_/-/}p0
+DISTNAME =	qgis_1.4.0
+PKGNAME =	${DISTNAME:L:S/_/-/}
 
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	1.0 \
-		qgis_gui	1.0 \
-		qgis_analysis	0.0 \
-		qgispython	0.0 # .1.3
+SHARED_LIBS =	qgis_core	2.0 \
+		qgis_gui	1.1 \
+		qgis_analysis	1.0 \
+		qgispython	0.1 # .1.3
 
 HOMEPAGE =	http://www.qgis.org/
 
@@ -49,6 +49,7 @@ WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig \
 		freetype glib-2.0 gthread-2.0 m png pthread gobject-2.0 util \
 		stdc++ z
 
+CONFIGURE_ENV+=	VERBOSE=1
 pre-configure:
 		${SUBST_CMD} ${WRKSRC}/cmake/Find{GDAL,GEOS,Postgres}.cmake
 

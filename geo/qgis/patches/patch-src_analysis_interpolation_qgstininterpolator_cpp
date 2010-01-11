@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_analysis_interpolation_qgstininterpolator_cpp,v 1.1 2009/10/29 19:59:38 landry Exp $
---- src/analysis/interpolation/qgstininterpolator.cpp.orig	Tue Oct 27 20:46:45 2009
-+++ src/analysis/interpolation/qgstininterpolator.cpp	Tue Oct 27 20:47:08 2009
-@@ -161,7 +161,7 @@ int QgsTINInterpolator::insertData( QgsFeature* f, boo
+$OpenBSD: patch-src_analysis_interpolation_qgstininterpolator_cpp,v 1.2 2010/01/11 20:13:31 landry Exp $
+--- src/analysis/interpolation/qgstininterpolator.cpp.orig	Sun Nov 22 15:41:00 2009
++++ src/analysis/interpolation/qgstininterpolator.cpp	Mon Jan 11 16:39:31 2010
+@@ -195,7 +195,7 @@ int QgsTINInterpolator::insertData( QgsFeature* f, boo
        return 3;
      }
      attributeValue = att_it.value().toDouble( &attributeConversionOk );

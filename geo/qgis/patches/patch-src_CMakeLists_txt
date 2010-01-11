@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2010/01/11 20:13:31 landry Exp $
+--- src/CMakeLists.txt.orig	Mon Jan 11 17:09:38 2010
++++ src/CMakeLists.txt	Mon Jan 11 17:09:45 2010
+@@ -1,5 +1,5 @@
+ 
+-SUBDIRS(core analysis ui gui app providers plugins helpviewer)
++SUBDIRS(core analysis ui gui app providers plugins)
+ 
+ IF (HAVE_PYTHON AND WITH_BINDINGS)
+   SUBDIRS(python)
