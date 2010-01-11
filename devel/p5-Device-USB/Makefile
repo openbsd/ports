@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/10 21:41:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/01/11 08:24:35 jasper Exp $
 
 COMMENT=		perl wrapper around libusb
 
-DISTNAME=		Device-USB-0.28
+DISTNAME=		Device-USB-0.31
 CATEGORIES=		devel
 SHARED_ONLY=		Yes
 
