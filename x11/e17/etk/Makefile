@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/08/11 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/01/11 15:04:32 jasper Exp $
 
-COMMENT=	toolkit based on the EFL
-DISTNAME=	etk-20071211
-PKGNAME=        ${DISTNAME}p3
+BROKEN =		needs an update
+
+COMMENT=		toolkit based on the EFL
+DISTNAME=		etk-20071211
+PKGNAME =		${DISTNAME}p4
 
 SHARED_LIBS +=  etk                 0.0          # .1.0
 
@@ -14,17 +16,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext
 
-WANTLIB += SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xinerama Xp Xrandr Xrender Xss c crypto curl eet evas
-WANTLIB += expat fontconfig freetype idn jpeg m pthread sndio
-WANTLIB += ssl usbhid z pthread-stubs xcb
 
-LIB_DEPENDS=		ecore,ecore_evas,ecore_file,ecore_job,ecore_txt,ecore_x,ecore_imf,ecore_imf_evas::x11/e17/ecore \
-			embryo::x11/e17/embryo \
-			edje::x11/e17/edje
+
+LIB_DEPENDS=		edje::x11/e17/edje
 
 RUN_DEPENDS=		::devel/desktop-file-utils
 
+USE_LIBTOOL =		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	automake autoconf
