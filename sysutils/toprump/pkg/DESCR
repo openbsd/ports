@@ -1,0 +1,4 @@
+toprump is a modified version of the top command included with OpenBSD.
+Added features include an ASCII CPU utilisation graph; the ability to
+highlight (make bold) a users' processes; and an inverse username
+filter. Plus other modifications.
