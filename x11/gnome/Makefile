@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2009/10/22 16:44:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2010/01/11 15:02:11 ajacoutot Exp $
 
      SUBDIR += alacarte
      SUBDIR += applets2
@@ -16,6 +16,7 @@
      SUBDIR += deskbar-applet
      SUBDIR += desktop
      SUBDIR += devel-docs
+     SUBDIR += development-monitor
      SUBDIR += devhelp
      SUBDIR += doc-utils
      SUBDIR += eel
