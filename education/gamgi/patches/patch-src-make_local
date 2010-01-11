@@ -1,13 +1,21 @@
-$OpenBSD: patch-src-make_local,v 1.3 2009/06/03 22:46:06 jasper Exp $
---- src/make_local.orig	Wed May 13 08:03:56 2009
-+++ src/make_local	Wed Jun  3 16:28:51 2009
-@@ -97,3 +97,24 @@ PATH_GTKGL_L =-L/usr/lib
+$OpenBSD: patch-src-make_local,v 1.4 2010/01/11 12:05:39 jasper Exp $
+--- src/make_local.orig	Mon Jan 11 11:09:14 2010
++++ src/make_local	Mon Jan 11 11:10:19 2010
+@@ -68,28 +68,25 @@ PATH_GTKGL_L =-L/usr/lib
+ 
+ #================================= OpenBSD =====================================
  #
- #======================== Linux Yellow Dog ppc =================================
- #
-+
-+#===================== OpenBSD ================================
-+#
+-# PATH_EXPAT_H = -I/usr/X11R6/include
+-# PATH_FREETYPE_H = -I/usr/X11R6/include/freetype2
+-# PATH_X_H = -I/usr/X11R6/include
+-# PATH_GLIB_H = I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include
+-# PATH_CAIRO_H = -I/usr/local/include/cairo
+-# PATH_PANGO_H = -I/usr/local/include/pango-2.0
+-# PATH_ATK_H = -I/usr/local/include/atk-2.0
+-# PATH_GTK_H =  -I/usr/local/include/gtk-2.0 -I/usr/local/lib/gtk-2.0/include
+-# PATH_MESA_H = -I/usr/X11R6/include/GL
+-# PATH_GTKGL_H = -I/usr/local/include/gtkglext-1.0 \
+-	-I/usr/local/lib/gtkglext-1.0/include
 +PATH_EXPAT_H = -I${X11BASE}/include
 +PATH_FREETYPE_H = -I${X11BASE}/include/freetype2
 +PATH_X_H = -I${X11BASE}/include
@@ -17,8 +25,19 @@ $OpenBSD: patch-src-make_local,v 1.3 2009/06/03 22:46:06 jasper Exp $
 +PATH_ATK_H = -I${LOCALBASE}/include/atk-1.0
 +PATH_GTK_H = -I${LOCALBASE}/include/gtk-2.0 -I${LOCALBASE}/lib/gtk-2.0/include
 +PATH_MESA_H = -I${X11BASE}/include/GL
-+PATH_GTKGL_H = -I${LOCALBASE}/include/gtkglext-1.0 -I${LOCALBASE}/lib/gtkglext-1.0/include
-+
++PATH_GTKGL_H = -I${LOCALBASE}/include/gtkglext-1.0 \
++	-I${LOCALBASE}/lib/gtkglext-1.0/include
+ 
+-# PATH_EXPAT_L = -L/usr/X11R6/lib
+-# PATH_FREETYPE_L = -L/usr/X11R6/lib
+-# PATH_X_L = -L/usr/X11R6/lib
+-# PATH_GLIB_L = -L/usr/local/lib
+-# PATH_CAIRO_L = -L/usr/local/lib
+-# PATH_PANGO_L = -L/usr/local/lib
+-# PATH_ATK_L = -L/usr/local/lib
+-# PATH_GTK_L = -L/usr/local/lib
+-# PATH_MESA_L = -L/usr/X11R6/lib
+-# PATH_GTKGL_L = -L/usr/local/lib
 +PATH_X_L = -L${X11BASE}/lib
 +PATH_GLIB_L = -L${LOCALBASE}/lib
 +PATH_GTK_L = -L${LOCALBASE}/lib
@@ -26,3 +45,6 @@ $OpenBSD: patch-src-make_local,v 1.3 2009/06/03 22:46:06 jasper Exp $
 +PATH_GTKGL_L = -L${LOCALBASE}/lib
 +PATH_EXPAT_L = -L${X11BASE}/lib
 +PATH_FREETYPE_L = -L${X11BASE}/lib
+ 
+ #======================== Mac OS X 1.03 / MacPort  =============================
+ #

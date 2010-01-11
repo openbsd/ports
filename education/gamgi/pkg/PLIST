@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/16 17:59:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/01/11 12:05:39 jasper Exp $
 @bin bin/gamgi
 share/doc/gamgi/
 share/doc/gamgi/LICENSE
@@ -195,11 +195,11 @@ share/doc/gamgi/interfaces/bond/
 share/doc/gamgi/interfaces/bond/config_length.html
 share/doc/gamgi/interfaces/bond/config_view.html
 share/doc/gamgi/interfaces/bond/create_length.html
-share/doc/gamgi/interfaces/bond/create_mode.html
-share/doc/gamgi/interfaces/bond/create_type.html
+share/doc/gamgi/interfaces/bond/create_method.html
+share/doc/gamgi/interfaces/bond/create_property.html
 share/doc/gamgi/interfaces/bond/create_view.html
 share/doc/gamgi/interfaces/bond/link_object.html
-share/doc/gamgi/interfaces/bond/modify_type.html
+share/doc/gamgi/interfaces/bond/modify_property.html
 share/doc/gamgi/interfaces/bond/modify_view.html
 share/doc/gamgi/interfaces/bond/remove_object.html
 share/doc/gamgi/interfaces/bond/select.html
@@ -207,8 +207,8 @@ share/doc/gamgi/interfaces/cell/
 share/doc/gamgi/interfaces/cell/create_origin.html
 share/doc/gamgi/interfaces/cell/create_position.html
 share/doc/gamgi/interfaces/cell/create_symmetry.html
-share/doc/gamgi/interfaces/cell/create_type.html
 share/doc/gamgi/interfaces/cell/create_view.html
+share/doc/gamgi/interfaces/cell/create_volume.html
 share/doc/gamgi/interfaces/cell/groups.html
 share/doc/gamgi/interfaces/cell/lattices.html
 share/doc/gamgi/interfaces/cell/link_object.html
@@ -219,8 +219,8 @@ share/doc/gamgi/interfaces/cell/measure_reciprocal.html
 share/doc/gamgi/interfaces/cell/modify_origin.html
 share/doc/gamgi/interfaces/cell/modify_position.html
 share/doc/gamgi/interfaces/cell/modify_symmetry.html
-share/doc/gamgi/interfaces/cell/modify_type.html
 share/doc/gamgi/interfaces/cell/modify_view.html
+share/doc/gamgi/interfaces/cell/modify_volume.html
 share/doc/gamgi/interfaces/cell/rcp.html
 share/doc/gamgi/interfaces/cell/remove_object.html
 share/doc/gamgi/interfaces/cell/rotation.html
@@ -336,11 +336,11 @@ share/doc/gamgi/interfaces/light/config_color.html
 share/doc/gamgi/interfaces/light/config_materials.html
 share/doc/gamgi/interfaces/light/create_attenuation.html
 share/doc/gamgi/interfaces/light/create_color.html
-share/doc/gamgi/interfaces/light/create_type.html
+share/doc/gamgi/interfaces/light/create_geometry.html
 share/doc/gamgi/interfaces/light/link_object.html
 share/doc/gamgi/interfaces/light/modify_attenuation.html
 share/doc/gamgi/interfaces/light/modify_color.html
-share/doc/gamgi/interfaces/light/modify_type.html
+share/doc/gamgi/interfaces/light/modify_geometry.html
 share/doc/gamgi/interfaces/light/remove_object.html
 share/doc/gamgi/interfaces/light/select.html
 share/doc/gamgi/interfaces/molecule/
@@ -752,6 +752,7 @@ share/gamgi/molecule/proteines/
 share/gamgi/molecule/proteines/Protein.xml
 share/gamgi/molecule/silicates/
 share/gamgi/molecule/silicates/README
+share/gamgi/molecule/silicates/q10.xml
 share/gamgi/molecule/silicates/q21.xml
 share/gamgi/molecule/silicates/q21q12.xml
 share/gamgi/molecule/silicates/q22q13q11.xml

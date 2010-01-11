@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/16 17:59:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/01/11 12:05:39 jasper Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
-V=			0.14.3
+V=			0.14.4
 DISTNAME=		gamgi-all-${V}
 PKGNAME=		${DISTNAME:S/-all//}
 CATEGORIES=		education x11
@@ -33,7 +33,7 @@ RUN_DEPENDS=		::graphics/netpbm \
 WRKDIST=		${WRKDIR}/gamgi${V}/
 WRKSRC= 		${WRKDIST}/src/
 MAKE_FILE=		${WRKSRC}/makefile
-ALL_TARGET=		# empty
+ALL_TARGET=		# This comment intentionally left senseless.
 
 NO_REGRESS=		Yes
 
