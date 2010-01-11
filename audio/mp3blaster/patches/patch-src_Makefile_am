@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2010/01/11 07:51:26 jakemsr Exp $
+--- src/Makefile.am.orig	Sat Dec 26 21:10:26 2009
++++ src/Makefile.am	Sat Dec 26 21:11:27 2009
+@@ -30,12 +30,12 @@ mp3blaster_SOURCES	= fileman.cc \
+ 			  @MP3B_MODULES@
+ splay_SOURCES = splay.cc splay.h splay_common.cc
+ splay_DEPENDENCIES = ../mpegsound/libmpegsound.a
+-splay_LDADD = @LIBMPEGSOUND@ @LIBESD@ @LIBSDL@
++splay_LDADD = @LIBMPEGSOUND@ @LIBESD@ @LIBSDL@ @LIBSNDIO@
+ mp3tag_SOURCES = id3parse.cc mp3tag.cc id3parse.h
+ mp3tag_DEPENDENCIES = ../mpegsound/libmpegsound.a ../nmixer/libnmixer.a
+ mp3tag_LDADD = @LIBMPEGSOUND@ @LIBESD@ @LIBSDL@
+ mp3blaster_DEPENDENCIES = ../mpegsound/libmpegsound.a ../nmixer/libnmixer.a
+ INCLUDES		= -I$(top_srcdir)/mpegsound -I/usr/include/ncurses -I$(top_srcdir)/nmixer -I$(includedir)
+-mp3blaster_LDADD	= @LIBMPEGSOUND@ @LIBNMIXER@ @NAS_LIBS@ @SID_LIBS@ @OGG_LIBS@ @LIRC_LIBS@ @NCURSES_LIBS@ @LIBESD@ @LIBSDL@
++mp3blaster_LDADD	= @LIBMPEGSOUND@ @LIBNMIXER@ @NAS_LIBS@ @SID_LIBS@ @OGG_LIBS@ @LIRC_LIBS@ @NCURSES_LIBS@ @LIBESD@ @LIBSDL@ @LIBSNDIO@
+ EXTRA_DIST = FILES
+ AM_CXXFLAGS	= @NAS_CFLAGS@ -DMP3BLASTER_DOCDIR=\"${pkgdatadir}\"

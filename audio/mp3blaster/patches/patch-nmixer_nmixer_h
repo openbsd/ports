@@ -1,0 +1,54 @@
+$OpenBSD: patch-nmixer_nmixer_h,v 1.1 2010/01/11 07:51:26 jakemsr Exp $
+--- nmixer/nmixer.h.orig	Sat Jan 24 07:25:12 2009
++++ nmixer/nmixer.h	Tue Dec 29 03:32:48 2009
+@@ -24,7 +24,15 @@
+ #include <audio/audiolib.h>
+ #endif
+ 
++#ifdef WANT_SNDIO
++#include <pthread.h>
++#endif
++
++#ifdef WANT_SNDIO
++#define MIXER_DEVICE "aucat:0"
++#else
+ #define MIXER_DEVICE "/dev/mixer"
++#endif
+ #define MYMIN(x, y) ((x) < (y) ? (x) : (y))
+ #define MYVERSION "<<NMixer "VERSION">>"
+ 
+@@ -119,6 +127,34 @@ class NASMixer : public baseMixer (private)
+ 	AuDeviceAttributes *ada;
+ 	int num_ada;
+ };
++#endif
++
++#ifdef WANT_SNDIO
++
++struct sdata {
++	struct mio_hdl *hdl;
++	char *dev;
++	int run_rt;
++	int cvol[16];
++};
++
++class SndioMixer : public baseMixer
++{
++public:
++	SndioMixer(const char *mixerDevice = NULL, baseMixer *next = 0);
++	~SndioMixer();
++	bool CanRecord(int device) { (void)device; return false; }
++	bool GetRecord(int device) { (void)device; return false; }
++	bool SetRecord(int device, bool set) { (void)device; (void)set; return false; }
++protected:
++	bool Set(int device, struct volume *vol);
++	bool Get(int device, struct volume *vol);
++	const char *Label(int device);
++private:
++	struct sdata s;
++	pthread_t rt;
++};
++
+ #endif
+ 
+ class NMixer

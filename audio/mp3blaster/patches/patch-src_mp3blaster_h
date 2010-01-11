@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_mp3blaster_h,v 1.1 2010/01/11 07:51:27 jakemsr Exp $
+--- src/mp3blaster.h.orig	Sat Dec 26 23:31:31 2009
++++ src/mp3blaster.h	Sat Dec 26 23:32:17 2009
+@@ -60,7 +60,8 @@ enum audiodevice_t {
+ 	AUDIODEV_OSS,         // OSS audio driver
+ 	AUDIODEV_ESD,         // ESD audio driver
+ 	AUDIODEV_SDL,         // SDL audio driver
+-	AUDIODEV_NAS          // NAS audio driver
++	AUDIODEV_NAS,         // NAS audio driver
++	AUDIODEV_SNDIO        // sndio audio driver
+ 	};
+ 
+ struct keybind_t {

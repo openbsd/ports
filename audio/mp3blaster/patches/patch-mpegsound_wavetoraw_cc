@@ -1,0 +1,40 @@
+$OpenBSD: patch-mpegsound_wavetoraw_cc,v 1.1 2010/01/11 07:51:26 jakemsr Exp $
+--- mpegsound/wavetoraw.cc.orig	Sat Jan 24 07:25:12 2009
++++ mpegsound/wavetoraw.cc	Tue Dec 29 01:38:19 2009
+@@ -27,7 +27,7 @@ extern "C" {
+ 
+ #ifdef WORDS_BIGENDIAN
+ typedef union {
+-    long arg;
++    int arg;
+     char byte_represent[4];
+ } endian_hack_1;
+ 
+@@ -111,11 +111,27 @@ bool Wavetoraw::run(void)
+ {
+   int c;
+ 
++	if (!initialized)
++		initialize();
++
+ 	c=loader->getblock(buffer,buffersize);
+ 	if (c==0)
+ 	{
+ 		return seterrorcode(SOUND_ERROR_FILEREADFAIL);
+ 	}
++
++#ifdef WORDS_BIGENDIAN
++	if (samplesize == 16) {
++		char t;
++		int pos;
++
++		for (pos = 0; pos < buffersize - 1; pos += 2) {
++			t = buffer[pos + 0];
++			buffer[pos + 0] = buffer[pos + 1];
++			buffer[pos + 1] = t;
++		}
++	}
++#endif
+ 
+ 	currentpoint+=c;
+ 	if (player->putblock(buffer,buffersize) == false)

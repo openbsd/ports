@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_main_cc,v 1.3 2010/01/11 07:51:27 jakemsr Exp $
+--- src/main.cc.orig	Sat Jan 24 07:25:10 2009
++++ src/main.cc	Sun Dec 27 21:00:58 2009
+@@ -2390,6 +2390,7 @@ start_song(short was_playing)
+ 	switch(globalopts.audio_driver)
+ 	{
+ 	case AUDIODEV_SDL: audiodriver = Fileplayer::AUDIODRV_SDL; break;
++	case AUDIODEV_SNDIO: audiodriver = Fileplayer::AUDIODRV_SNDIO; break;
+ 	case AUDIODEV_OSS: audiodriver = Fileplayer::AUDIODRV_OSS; break;
+ 	case AUDIODEV_ESD: audiodriver = Fileplayer::AUDIODRV_ESD; break;
+ 	case AUDIODEV_NAS: audiodriver = Fileplayer::AUDIODRV_NAS; break;
+@@ -4623,7 +4624,7 @@ init_globalopts()
+ 	globalopts.playlist_dir = get_homedir(NULL);
+ 	globalopts.recode_table = NULL;
+ #ifdef PTHREADEDMPEG
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ 	globalopts.threads = 100;
+ #else
+ 	/* FreeBSD playback using threads is much less efficient for some reason */
+@@ -4636,7 +4637,9 @@ init_globalopts()
+ 	globalopts.selectitems_caseinsensitive = 1; //only works for regexp search
+ 	globalopts.scan_mp3s = 0; //scan mp3's to calculate correct total time.
+ 	globalopts.wraplist = true;
+-#if WANT_SDL
++#if WANT_SNDIO
++	globalopts.audio_driver = AUDIODEV_SNDIO;
++#elif WANT_SDL
+ 	globalopts.audio_driver = AUDIODEV_SDL; //recommended for hick-free playback
+ #elif WANT_OSS
+ 	globalopts.audio_driver = AUDIODEV_OSS;
+@@ -5379,6 +5382,14 @@ set_audio_driver(const char *driverName)
+ 	if (!strcasecmp(driverName, "nas"))
+ 	{
+ 		globalopts.audio_driver = AUDIODEV_NAS;
++		return 1;
++	}
++#endif
++
++#ifdef WANT_SNDIO
++	if (!strcasecmp(driverName, "sndio"))
++	{
++		globalopts.audio_driver = AUDIODEV_SNDIO;
+ 		return 1;
+ 	}
+ #endif

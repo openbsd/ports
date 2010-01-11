@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_splay_cc,v 1.1 2010/01/11 07:51:27 jakemsr Exp $
+--- src/splay.cc.orig	Sun Dec 27 14:24:43 2009
++++ src/splay.cc	Sun Dec 27 16:35:01 2009
+@@ -82,7 +82,7 @@ static void play(char *filename)
+     Mpegfileplayer *player;
+ 		bool didopen = false;
+ 
+-    player=new Mpegfileplayer(Fileplayer::AUDIODRV_OSS);
++    player=new Mpegfileplayer(Fileplayer::AUDIODRV_SNDIO);
+ 		if (!strcmp(splay_devicename, "-"))
+ 			didopen = player->openfile(filename, "/dev/stdout", WAV);
+ 		else
+@@ -109,7 +109,7 @@ static void play(char *filename)
+   {
+     Wavefileplayer *player;
+   
+-    player=new Wavefileplayer(Fileplayer::AUDIODRV_OSS);
++    player=new Wavefileplayer(Fileplayer::AUDIODRV_SNDIO);
+     if(!player->openfile(filename,splay_devicename))
+     {
+       error(player->geterrorcode());
+@@ -151,7 +151,7 @@ int main(int argc,char *argv[])
+ 			}
+       case 'M':
+ 	{
+-	  Mpegfileplayer player(Fileplayer::AUDIODRV_OSS);
++	  Mpegfileplayer player(Fileplayer::AUDIODRV_SNDIO);
+ 
+ 	  player.openfile(NULL,splay_devicename);
+ 	  playing(&player);
+@@ -159,7 +159,7 @@ int main(int argc,char *argv[])
+ 	}
+       case 'W':
+ 	{
+-	  Wavefileplayer player(Fileplayer::AUDIODRV_OSS);
++	  Wavefileplayer player(Fileplayer::AUDIODRV_SNDIO);
+ 
+ 	  player.openfile(NULL,splay_devicename);
+ 	  playing(&player);

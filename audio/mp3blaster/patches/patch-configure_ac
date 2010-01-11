@@ -1,0 +1,69 @@
+$OpenBSD: patch-configure_ac,v 1.1 2010/01/11 07:51:26 jakemsr Exp $
+--- configure.ac.orig	Sat Dec 26 21:01:24 2009
++++ configure.ac	Sat Dec 26 21:14:11 2009
+@@ -5,7 +5,7 @@ AC_CONFIG_SRCDIR([src/mp3blaster.h])
+ AM_INIT_AUTOMAKE
+ 
+ #Custom C++ flags - later options override earlier ones
+-if [ -z "$CXXFLAGS" ] ; then
++if test -z "$CXXFLAGS" ; then
+ 	CXXFLAGS="-O2 -Wall -W -fno-strength-reduce"
+ fi
+ 
+@@ -128,6 +128,11 @@ AC_ARG_WITH(oss,
+ 	[  --with-oss              Support OSS for audio playback [default=yes]],
+ 	[ if test "$withval" = "yes" ; then WANT_OSS=1; REQ_OSS=1 ; else WANT_OSS=0 ; fi ])
+ 
++WANT_SNDIO=1
++AC_ARG_WITH(sndio,
++	[  --with-sndio            Support sndio for audio playback [default=yes]],
++	[ if test "$withval" = "yes" ; then WANT_SNDIO=1; REQ_SNDIO=1 ; else WANT_SNDIO=0 ; fi ])
++
+ #Features 
+ AC_ARG_ENABLE(static,
+   [  --enable-static         Build static binaries instead [default=no]],
+@@ -187,9 +192,9 @@ AC_LANG(C++)
+ 
+ HAVE_OGG="no"
+ if test "$WANT_OGG" = "1" ; then
+-  AC_CHECK_LIB(vorbisfile,main,HAVE_OGG="yes",HAVE_OGG="no",-lvorbis)
++  AC_CHECK_LIB(vorbisfile,main,HAVE_OGG="yes",HAVE_OGG="no",-lvorbis -logg)
+   if test "$HAVE_OGG" = "yes" ; then
+-    OGG_LIBS="-lvorbisfile -lvorbis"
++    OGG_LIBS="-lvorbisfile -lvorbis -logg"
+ 		AC_SUBST(OGG_LIBS)
+     AC_DEFINE(INCLUDE_OGG,1,[OGG playback support])
+ 	elif test "$REQ_OGG" = "1" ; then
+@@ -305,6 +310,24 @@ if test "$WANT_ESD" = "1" ; then
+ 	fi
+ fi
+ 
++#Use sndio ?
++HAVE_SNDIO="no"
++if test "$WANT_SNDIO" = "1" ; then
++	AC_CHECK_LIB(sndio,sio_open, [ HAVE_SNDIO="yes" ], [ HAVE_SNDIO="no" ])
++	AC_CHECK_HEADER(sndio.h, [], [ HAVE_SNDIO="no" ])
++
++	if test "$HAVE_SNDIO" = "yes"
++	then
++		AC_DEFINE(WANT_SNDIO,1,[sndio audio output support])
++		LIBSNDIO="-lsndio"
++		AC_SUBST(LIBSNDIO)
++		#We have an alternative to OSS!
++		HAVE_SOUNDOUTPUT=1
++	elif test "$REQ_SNDIO" = "1" ; then
++		AC_MSG_ERROR([you requested sndio support, but sndio library or includes cannot be found in your library path])
++	fi
++fi
++
+ dnl Use SDL ?
+ HAVE_SDL="no"
+ 
+@@ -496,6 +519,7 @@ if test "$HAVE_OGG" = "yes" ; then AUDIO_FORMATS="$AUD
+ if test "$HAVE_SID" = "yes" ; then AUDIO_FORMATS="$AUDIO_FORMATS sid" ; fi
+ AUDIO_DRIVERS=""
+ if test "$HAVE_OSS" = "yes" ; then AUDIO_DRIVERS="${AUDIO_DRIVERS}oss " ; fi
++if test "$HAVE_SNDIO" = "yes" ; then AUDIO_DRIVERS="${AUDIO_DRIVERS}sndio " ; fi
+ if test "$HAVE_SDL" = "yes" ; then AUDIO_DRIVERS="${AUDIO_DRIVERS}sdl " ; fi
+ if test "$HAVE_ESD" = "yes" ; then AUDIO_DRIVERS="${AUDIO_DRIVERS}esd " ; fi
+ if test "$HAVE_NAS" = "yes" ; then AUDIO_DRIVERS="${AUDIO_DRIVERS}nas " ; fi

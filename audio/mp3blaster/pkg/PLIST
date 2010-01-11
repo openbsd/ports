@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/06 14:37:27 espie Exp $
-bin/mp3blaster
-bin/mp3tag
-bin/nmixer
-bin/splay
+@comment $OpenBSD: PLIST,v 1.5 2010/01/11 07:51:27 jakemsr Exp $
+@bin bin/mp3blaster
+@bin bin/mp3tag
+@bin bin/nmixer
+@bin bin/splay
 @man man/man1/mp3blaster.1
 @man man/man1/nmixer.1
 @man man/man1/splay.1

@@ -1,12 +1,48 @@
-$OpenBSD: patch-mpegsound_oggplayer_cc,v 1.1 2003/12/01 19:18:19 naddy Exp $
---- mpegsound/oggplayer.cc.orig	2003-12-01 20:00:37.000000000 +0100
-+++ mpegsound/oggplayer.cc	2003-12-01 20:00:54.000000000 +0100
-@@ -23,7 +23,7 @@ Oggplayer::Oggplayer()
- /* Martijn suggests that big endiannes is already taken care of in the rawplayer
-  * class.
-  */
--#if 0 && defined(WORDS_BIGENDIAN)
-+#if defined(WORDS_BIGENDIAN)
- 	bigendian = 1;
- #endif
- 	//TODO: On what hardware is data unsigned, and how do I know?
+$OpenBSD: patch-mpegsound_oggplayer_cc,v 1.2 2010/01/11 07:51:26 jakemsr Exp $
+
+ov_read() can return less than asked for.  get the full 4096 bytes
+before continuing to save cycles and avoid confusion elsewhere.
+
+--- mpegsound/oggplayer.cc.orig	Tue Dec 22 05:08:01 2009
++++ mpegsound/oggplayer.cc	Thu Dec 24 14:20:44 2009
+@@ -18,7 +18,11 @@ Oggplayer::Oggplayer(audiodriver_t driver)
+ {
+ 	of = NULL;
+ 	wordsize = 2; //2 bytes
++#ifdef WORDS_BIGENDIAN
++	bigendian = 1;
++#else
+ 	bigendian = 0;
++#endif
+ 	signeddata = 1;
+ 	mono = 0;
+ 	downfreq = 0;
+@@ -156,15 +160,23 @@ bool Oggplayer::playing()
+ bool Oggplayer::run(int sec)
+ {
+ 	int bitstream;
+-	long bytes_read = ov_read(of, soundbuf, 4096, bigendian, wordsize, signeddata,
+-		&bitstream);
+ 
+-	if (sec); //prevent warning
++	long bytes_read, ret;
+ 
+-	if (bytes_read < 0)
+-		return seterrorcode(SOUND_ERROR_BAD);
++	bytes_read = 0;
++	while (bytes_read < 4096) {
++		ret = ov_read(of, soundbuf + bytes_read, 4096 - bytes_read,
++		    bigendian, wordsize, signeddata, &bitstream);
++		if (ret < 0)
++			return seterrorcode(SOUND_ERROR_BAD);
++		if (!ret)
++			break;
++		bytes_read += ret;
++	}
+ 	if (!bytes_read)
+ 		return seterrorcode(SOUND_ERROR_FINISH);
++
++	if (sec); //prevent warning
+ 	
+ 	vorbis_info *vi = ov_info(of, bitstream);
+ 

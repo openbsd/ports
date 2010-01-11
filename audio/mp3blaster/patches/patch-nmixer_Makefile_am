@@ -1,0 +1,15 @@
+$OpenBSD: patch-nmixer_Makefile_am,v 1.1 2010/01/11 07:51:26 jakemsr Exp $
+--- nmixer/Makefile.am.orig	Sun Dec 27 01:40:59 2009
++++ nmixer/Makefile.am	Sun Dec 27 01:42:16 2009
+@@ -1,9 +1,9 @@
+ bin_PROGRAMS	= nmixer
+ nmixer_SOURCES	= main.cc
+ nmixer_DEPENDENCIES = libnmixer.a
+-LDADD           = @NCURSES_LIBS@ @NAS_LIBS@ @LIBNMIXER@
++LDADD           = @NCURSES_LIBS@ @NAS_LIBS@ @LIBSNDIO@ @LIBNMIXER@
+ INCLUDES		= -I/usr/include/ncurses -I$(srcdir) -I$(includedir)
+ noinst_LIBRARIES = libnmixer.a
+-libnmixer_a_SOURCES = nmixer.cc mixers.cc ossmixer.cc nasmixer.cc nmixer.h \
++libnmixer_a_SOURCES = nmixer.cc mixers.cc ossmixer.cc nasmixer.cc sndiomixer.cc nmixer.h \
+                       getopt.c getopt1.c getopt_local.h nullmixer.cc
+ AM_CXXFLAGS = @NAS_CFLAGS@

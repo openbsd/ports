@@ -1,0 +1,49 @@
+$OpenBSD: patch-mpegsound_mpegsound_h,v 1.1 2010/01/11 07:51:26 jakemsr Exp $
+--- mpegsound/mpegsound.h.orig	Sat Jan 24 07:25:11 2009
++++ mpegsound/mpegsound.h	Sun Dec 27 16:39:14 2009
+@@ -433,6 +433,36 @@ class Rawplayer : public Soundplayer (private)
+ 
+ #endif /* WANT_OSS */
+ 
++#ifdef WANT_SNDIO
++
++// Class for playing raw data using sndio(7) audio
++class Sndioplayer : public Soundplayer
++{
++public:
++  Sndioplayer();
++  ~Sndioplayer();
++
++  void abort(void);
++  bool setsoundtype(int stereo, int samplesize, int speed);
++  void set8bitmode();
++  bool resetsoundtype(void);
++  void releasedevice(void);
++  bool attachdevice(void);
++
++  bool putblock(void *buffer, int size);
++  int  putblock_nt(void *buffer, int size);
++  int  getblocksize(void);
++  int  fix_samplesize(void *buffer, int size);
++
++private:
++  int  rawblocksize;
++  struct sio_hdl *hdl;
++  int  rawstereo, rawsamplesize, rawspeed, want8bit;
++  short forcetomono, forceto8;
++};
++
++#endif /* WANT_SNDIO */
++
+ #ifdef WANT_ESD
+ // Class for playing raw data via Enlightened Sound Daemon
+ class EsdPlayer : public Soundplayer
+@@ -957,7 +987,7 @@ class Fileplayer
+ {
+ public:
+ 	enum audiodriver_t {
+-		AUDIODRV_OSS, AUDIODRV_ESD, AUDIODRV_SDL, AUDIODRV_NAS
++		AUDIODRV_OSS, AUDIODRV_ESD, AUDIODRV_SDL, AUDIODRV_NAS, AUDIODRV_SNDIO
+ 	};
+ 
+   virtual ~Fileplayer(); //anyone may destruct a FilePlayer object directly
