@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_lib_eet_lib_c,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
---- src/lib/eet_lib.c.orig	Mon Nov 12 11:14:04 2007
-+++ src/lib/eet_lib.c	Mon Nov 12 11:15:11 2007
-@@ -497,6 +497,10 @@ eet_open(const char *file, Eet_File_Mode mode)
- 	else
- 	  return NULL;
+$OpenBSD: patch-src_lib_eet_lib_c,v 1.2 2010/01/11 15:49:25 jasper Exp $
+--- src/lib/eet_lib.c.orig	Sun Apr 19 16:12:47 2009
++++ src/lib/eet_lib.c	Mon Jan 11 16:23:44 2010
+@@ -1349,6 +1349,10 @@ eet_open(const char *file, Eet_File_Mode mode)
+      on_error:
+ 	if (fp == NULL && mode == EET_FILE_MODE_READ) return NULL;
       }
 +   else if (file_stat.st_size == 0)
 +     {
 +     return NULL;
 +     }
- 
-    /* We found one */
-    if (ef && (file_stat.st_mtime != ef->mtime))
+    else
+      {
+ 	int fd;
