@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2010/01/11 15:02:35 jasper Exp $
+
+Don't check for OpenSSL with pkg-config(1).
+
+--- configure.orig	Wed Jul 22 11:53:01 2009
++++ configure	Wed Jul 22 11:53:01 2009
+@@ -13031,7 +13031,7 @@ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_OPENSSL 1
+ _ACEOF
+ 
+-       requirement_eet="openssl ${requirement_eet}"
++       requirement_eet="${requirement_eet}"
+ 
+ fi
+ fi
