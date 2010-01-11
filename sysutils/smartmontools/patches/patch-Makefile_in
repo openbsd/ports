@@ -1,16 +1,18 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2008/04/08 19:48:16 okan Exp $
---- Makefile.in.orig	Mon Mar 10 11:44:13 2008
-+++ Makefile.in	Tue Mar 18 09:06:45 2008
-@@ -169,7 +169,7 @@ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
- docsDATA_INSTALL = $(INSTALL_DATA)
- initdDATA_INSTALL = $(INSTALL_DATA)
- sysconfDATA_INSTALL = $(INSTALL_DATA)
--DATA = $(docs_DATA) $(initd_DATA) $(sysconf_DATA)
-+DATA = $(docs_DATA)
+$OpenBSD: patch-Makefile_in,v 1.5 2010/01/11 15:15:28 giovanni Exp $
+--- Makefile.in.orig	Wed Dec  9 22:01:59 2009
++++ Makefile.in	Thu Jan  7 11:53:39 2010
+@@ -196,8 +196,8 @@ man5dir = $(mandir)/man5
+ man8dir = $(mandir)/man8
+ NROFF = nroff
+ MANS = $(man_MANS)
+-DATA = $(attributelog_DATA) $(docs_DATA) $(drivedb_DATA) $(initd_DATA) \
+-	$(savestates_DATA) $(sysconf_DATA)
++DATA = $(attributelog_DATA) $(docs_DATA) $(drivedb_DATA) \
++	$(savestates_DATA)
  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
    distclean-recursive maintainer-clean-recursive
- ETAGS = etags
-@@ -340,15 +340,7 @@ EXTRA_smartctl_SOURCES = os_linux.cpp os_linux.h os_fr
+ AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \
+@@ -413,15 +413,7 @@ EXTRA_smartctl_SOURCES = os_linux.cpp os_linux.h os_fr
  @OS_SOLARIS_FALSE@                  smartd.8
  
  docsdir = $(docdir)
@@ -26,36 +28,30 @@ $OpenBSD: patch-Makefile_in,v 1.4 2008/04/08 19:48:16 okan Exp $
 +docs_DATA = smartd.conf
  
  sysconf_DATA = smartd.conf$(smartd_suffix)
- EXTRA_DIST = smartmontools.spec                    \
-@@ -772,13 +764,6 @@ install-docsDATA: $(docs_DATA)
- 	done
+ EXTRA_DIST = smartd.initd.in                       \
+@@ -952,16 +944,6 @@ uninstall-savestatesDATA:
+ 	cd "$(DESTDIR)$(savestatesdir)" && rm -f $$files
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
 -	test -z "$(sysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
--	@list='$(sysconf_DATA)'; for p in $$list; do \
+-	@list='$(sysconf_DATA)'; test -n "$(sysconfdir)" || list=; \
+-	for p in $$list; do \
 -	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  f=$(am__strip_dir) \
--	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
--	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sysconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
 -	done
  
  uninstall-sysconfDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -1066,7 +1051,7 @@ check: check-recursive
- all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) config.h
- installdirs: installdirs-recursive
- installdirs-am:
--	for dir in "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(docsdir)" "$(DESTDIR)$(initddir)" "$(DESTDIR)$(sysconfdir)"; do \
-+	for dir in "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(docsdir)"; do \
- 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
- 	done
- install: install-recursive
-@@ -1115,7 +1100,7 @@ info: info-recursive
- 
+@@ -1352,7 +1334,7 @@ info: info-recursive
  info-am:
  
--install-data-am: install-docsDATA install-initdDATA install-man
-+install-data-am: install-docsDATA install-man
+ install-data-am: install-attributelogDATA install-docsDATA \
+-	install-drivedbDATA install-initdDATA install-man \
++	install-drivedbDATA install-man \
+ 	install-savestatesDATA
  
  install-dvi: install-dvi-recursive
- 
