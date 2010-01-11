@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1 2010/01/11 15:04:49 jasper Exp $
+--- configure.orig	Mon Jun 15 06:39:54 2009
++++ configure	Fri Jul 24 18:14:21 2009
+@@ -1962,8 +1962,8 @@ cat <<_ASUNAME
+ 
+ hostname = `(hostname || uname -n) 2>/dev/null | sed 1q`
+ uname -m = `(uname -m) 2>/dev/null || echo unknown`
+-uname -r = `(uname -r) 2>/dev/null || echo unknown`
+-uname -s = `(uname -s) 2>/dev/null || echo unknown`
++##uname -r = `(uname -r) 2>/dev/null || echo unknown`
++##uname -s = `(uname -s) 2>/dev/null || echo unknown`
+ uname -v = `(uname -v) 2>/dev/null || echo unknown`
+ 
+ /usr/bin/uname -p = `(/usr/bin/uname -p) 2>/dev/null || echo unknown`
+@@ -17478,7 +17478,7 @@ case "$host_os" in
+       ;;
+    *)
+       release_info="-release $release"
+-      MODULE_ARCH="$host_os-$host_cpu-$release"
++      MODULE_ARCH="$host_cpu-$release"
+       ;;
+ esac
+ 

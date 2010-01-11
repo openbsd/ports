@@ -1,18 +1,21 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2007/12/06 19:47:08 bernd Exp $
-lib/evas/modules/engines/buffer/module.so
-lib/evas/modules/engines/software_generic/module.so
-lib/evas/modules/engines/software_x11/module.so
-lib/evas/modules/engines/xrender_x11/module.so
-lib/evas/modules/loaders/edb/module.so
-lib/evas/modules/loaders/eet/module.so
-lib/evas/modules/loaders/gif/module.so
-lib/evas/modules/loaders/jpeg/module.so
-lib/evas/modules/loaders/png/module.so
-lib/evas/modules/loaders/tiff/module.so
-lib/evas/modules/loaders/xpm/module.so
-lib/evas/modules/savers/edb/module.so
-lib/evas/modules/savers/eet/module.so
-lib/evas/modules/savers/jpeg/module.so
-lib/evas/modules/savers/png/module.so
-lib/evas/modules/savers/tiff/module.so
+@comment $OpenBSD: PFRAG.shared,v 1.3 2010/01/11 15:04:49 jasper Exp $
+lib/evas/modules/engines/buffer/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/engines/gl_x11/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/engines/software_16/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/engines/software_16_x11/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/engines/software_generic/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/engines/software_x11/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/engines/xrender_x11/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/loaders/eet/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/loaders/gif/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/loaders/jpeg/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/loaders/pmaps/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/loaders/png/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/loaders/tiff/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/loaders/xpm/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/savers/eet/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/savers/jpeg/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/savers/png/${FULLARCH}-ver-svn-02/module.so
+lib/evas/modules/savers/tiff/${FULLARCH}-ver-svn-02/module.so
+@lib lib/libevas-ver-svn-02.so.${LIBevas-ver-svn-02_VERSION}
 @lib lib/libevas.so.${LIBevas_VERSION}
