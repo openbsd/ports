@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/16 18:27:50 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/01/11 15:03:17 jasper Exp $
 %%SHARED%%
-bin/embryo_cc
+@bin bin/embryo_cc
 include/Embryo.h
 lib/libembryo.a
 lib/libembryo.la
