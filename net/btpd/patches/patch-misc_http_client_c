@@ -1,0 +1,25 @@
+$OpenBSD: patch-misc_http_client_c,v 1.1 2010/01/11 22:53:35 nicm Exp $
+--- misc/http_client.c.orig	Mon Jan 12 14:43:18 2009
++++ misc/http_client.c	Tue Dec 22 23:19:29 2009
+@@ -230,6 +230,12 @@ again:
+             else
+                 goto error;
+         }
++
++        /* req->rbuf.buf may be reallocated inside iobuf_write()
++         * so we should calculate the offset before that happens
++         */
++        size_t consumed = end - (char *)req->rbuf.buf + dlen;
++
+         if (!iobuf_write(&req->rbuf, "", 1))
+             goto error;
+         req->rbuf.off--;
+@@ -237,7 +243,7 @@ again:
+             goto error;
+         if (req->cancel)
+             goto cancel;
+-        iobuf_consumed(&req->rbuf, end - (char *)req->rbuf.buf + dlen);
++        iobuf_consumed(&req->rbuf, consumed);
+         goto again;
+     case PS_CHUNK_SIZE:
+         assert(req->chunked);

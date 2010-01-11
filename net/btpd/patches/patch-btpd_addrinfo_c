@@ -1,0 +1,12 @@
+$OpenBSD: patch-btpd_addrinfo_c,v 1.1 2010/01/11 22:53:35 nicm Exp $
+--- btpd/addrinfo.c.orig	Wed Dec 23 18:45:51 2009
++++ btpd/addrinfo.c	Wed Dec 23 18:45:54 2009
+@@ -52,7 +52,7 @@ addrinfo_td_cb(void *arg)
+     struct ai_ctx *ctx = arg;
+     if (!ctx->cancel)
+         ctx->cb(ctx->arg, ctx->error, ctx->res);
+-    else if (ctx->error != 0)
++    else if (ctx->res != NULL)
+         freeaddrinfo(ctx->res);
+     free(ctx);
+ }
