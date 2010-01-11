@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2010/01/11 04:25:26 jakemsr Exp $
+--- configure.orig	Sat Dec 19 01:48:17 2009
++++ configure	Sat Dec 19 01:48:17 2009
+@@ -3682,7 +3682,7 @@ done
+ 			libmikmod_driver_hp=yes
+ 		fi
+ 	;;
+-	NetBSD|OpenBSD)
++	NetBSD)
+ 		for ac_hdr in sys/audioio.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`

@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_mikmod_h_in,v 1.1 2004/09/14 22:42:30 brad Exp $
---- include/mikmod.h.in.orig	Wed Sep  1 15:31:40 2004
-+++ include/mikmod.h.in	Wed Sep  1 15:32:10 2004
+$OpenBSD: patch-include_mikmod_h_in,v 1.2 2010/01/11 04:25:26 jakemsr Exp $
+--- include/mikmod.h.in.orig	Thu Jan 17 14:39:38 2002
++++ include/mikmod.h.in	Fri Dec 18 23:53:46 2009
 @@ -85,7 +85,7 @@ typedef char CHAR;
  
  @DOES_NOT_HAVE_SIGNED@
@@ -10,3 +10,11 @@ $OpenBSD: patch-include_mikmod_h_in,v 1.1 2004/09/14 22:42:30 brad Exp $
  /* 64 bit architectures */
  
  typedef signed char     SBYTE;      /* 1 byte, signed */
+@@ -669,6 +669,7 @@ MIKMODAPI extern struct MDRIVER drv_hp;     /* HP-UX a
+ MIKMODAPI extern struct MDRIVER drv_oss;    /* OpenSound System (Linux,FreeBSD...) */
+ MIKMODAPI extern struct MDRIVER drv_sgi;    /* SGI audio library */
+ MIKMODAPI extern struct MDRIVER drv_sun;    /* Sun/NetBSD/OpenBSD audio device */
++MIKMODAPI extern struct MDRIVER drv_sndio;  /* sndio, baby! */
+ 
+ MIKMODAPI extern struct MDRIVER drv_dart;   /* OS/2 Direct Audio RealTime */
+ MIKMODAPI extern struct MDRIVER drv_os2;    /* OS/2 MMPM/2 */

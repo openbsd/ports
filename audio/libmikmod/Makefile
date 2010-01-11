@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/06 21:24:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/01/11 04:25:26 jakemsr Exp $
 
 COMMENT=	mikmod sound library
 
 VERSION=	3.1.10
 DISTNAME=	libmikmod-${VERSION}
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 SHARED_LIBS +=	mikmod               2.4      # .2.4
 CATEGORIES=    	audio devel
 
@@ -20,22 +20,18 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/files/libmikmod/ \
 		${MASTER_SITE_SUNSITE:=apps/sound/libs/}
 
+WANTLIB=	sndio
+
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 USE_LIBTOOL=	Yes
+CONFIGURE_ENV=	CFLAGS="-DDRV_SNDIO" LIBRARY_LIB="-lsndio"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --disable-dl \
-		 --enable-oss
+		 --disable-oss \
+		 --disable-esd
 
-FLAVORS=	esd
-FLAVOR?=
-
-.if ${FLAVOR:L:Mesd}
-CONFIGURE_ARGS+= --enable-esd
-LIB_DEPENDS+=	esd.>=2::audio/esound
-WANTLIB+=	audiofile m sndio
-.else
-CONFIGURE_ARGS+= --disable-esd
-.endif
+post-extract:
+	cp ${FILESDIR}/drv_sndio.c ${WRKSRC}/drivers
 
 .include <bsd.port.mk>

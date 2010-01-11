@@ -1,0 +1,29 @@
+$OpenBSD: patch-libmikmod_Makefile_in,v 1.3 2010/01/11 04:25:26 jakemsr Exp $
+--- libmikmod/Makefile.in.orig	Wed Jan 23 14:15:14 2002
++++ libmikmod/Makefile.in	Sat Dec 19 00:06:55 2009
+@@ -30,13 +30,13 @@ MKINSTALLDIRS=${top_srcdir}/mkinstalldirs
+ 
+ DEFS=@DEFS@
+ CFLAGS=@CFLAGS@ -Dunix
+-COMPILE=$(LIBTOOL) --silent --mode=compile $(CC) $(DEFS) $(CFLAGS) -I$(top_srcdir)/include -I$(top_builddir) -I$(top_builddir)/include -DMIKMOD_H=$(top_srcdir)/include/mikmod.h
++COMPILE=$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(CFLAGS) -I$(top_srcdir)/include -I$(top_builddir) -I$(top_builddir)/include -DMIKMOD_H=$(top_srcdir)/include/mikmod.h
+ 
+ LIB = libmikmod.la
+ OBJ = $(LIBOBJS) $(DLOBJS) \
+       drv_AF.lo drv_aix.lo drv_alsa.lo drv_esd.lo drv_hp.lo drv_nos.lo \
+       drv_oss.lo drv_pipe.lo drv_raw.lo drv_sam9407.lo drv_sgi.lo \
+-      drv_stdout.lo drv_sun.lo drv_ultra.lo drv_wav.lo \
++      drv_stdout.lo drv_sun.lo drv_sndio.lo drv_ultra.lo drv_wav.lo \
+       load_669.lo load_amf.lo load_dsm.lo load_far.lo load_gdm.lo load_it.lo  \
+       load_imf.lo load_m15.lo load_med.lo load_mod.lo load_mtm.lo load_okt.lo \
+       load_s3m.lo load_stm.lo load_stx.lo load_ult.lo load_uni.lo load_xm.lo \
+@@ -117,6 +117,9 @@ drv_stdout.lo:	$(top_srcdir)/drivers/drv_stdout.c \
+ drv_sun.lo:	$(top_srcdir)/drivers/drv_sun.c \
+ 			$(top_builddir)/include/mikmod.h $(top_srcdir)/include/mikmod_internals.h
+ 	$(COMPILE) -c $(top_srcdir)/drivers/drv_sun.c
++drv_sndio.lo:	$(top_srcdir)/drivers/drv_sndio.c \
++			$(top_builddir)/include/mikmod.h $(top_srcdir)/include/mikmod_internals.h
++	$(COMPILE) -c $(top_srcdir)/drivers/drv_sndio.c
+ drv_ultra.lo:	$(top_srcdir)/drivers/drv_ultra.c \
+ 			$(top_builddir)/include/mikmod.h $(top_srcdir)/include/mikmod_internals.h
+ 	$(COMPILE) -c $(top_srcdir)/drivers/drv_ultra.c
