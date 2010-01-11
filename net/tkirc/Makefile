@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.11 2009/03/13 22:48:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/01/11 06:38:49 kevlo Exp $
 
 COMMENT=	ircII internet relay chat client
 
 DISTNAME=	tkirc2.46
-PKGNAME=	tkirc-2.46p0
+PKGNAME=	tkirc-2.46p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://netsplit.de/tkirc2/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	ftp://ftp.netsplit.de/pub/tcltk/
+MASTER_SITES=	http://netsplit.de/tkirc2/
 
 MODULES=	x11/tk
 RUN_DEPENDS=	:ircII-*:net/ircII \
