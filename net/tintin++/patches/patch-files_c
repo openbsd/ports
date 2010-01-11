@@ -1,0 +1,11 @@
+$OpenBSD: patch-files_c,v 1.1 2010/01/11 07:19:17 ajacoutot Exp $
+--- files.c.orig	Mon Jan 11 03:22:56 2010
++++ files.c	Mon Jan 11 03:23:09 2010
+@@ -13,6 +13,7 @@
+ #include <strings.h>
+ #endif
+ #endif
++#include <stdlib.h>
+ #include "tintin.h"
+ 
+ struct listnode *common_aliases, *common_actions, *common_subs,

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:46 espie Exp $
-bin/tt++
+@comment $OpenBSD: PLIST,v 1.5 2010/01/11 07:19:17 ajacoutot Exp $
+@bin bin/tt++
 lib/tintin/
 lib/tintin/.tt_help.txt.Z

@@ -1,6 +1,6 @@
-$OpenBSD: patch-parse_c,v 1.1 2007/10/26 22:10:06 ajacoutot Exp $
+$OpenBSD: patch-parse_c,v 1.2 2010/01/11 07:19:17 ajacoutot Exp $
 --- parse.c.orig	Sun Aug 28 16:12:10 1994
-+++ parse.c	Sat Oct 27 00:05:07 2007
++++ parse.c	Mon Jan 11 08:15:04 2010
 @@ -670,10 +670,10 @@ void prompt(ses)
    if(ses && !PSEUDO_PROMPT)
      write_line_mud("", ses);

@@ -1,6 +1,6 @@
-$OpenBSD: patch-misc_c,v 1.1 2007/10/26 22:10:06 ajacoutot Exp $
+$OpenBSD: patch-misc_c,v 1.2 2010/01/11 07:19:17 ajacoutot Exp $
 --- misc.c.orig	Sun Aug 28 16:12:08 1994
-+++ misc.c	Sat Oct 27 00:05:07 2007
++++ misc.c	Mon Jan 11 08:15:04 2010
 @@ -106,7 +106,7 @@ void bell_command(ses)
    char temp[2];
    temp[0]=7;

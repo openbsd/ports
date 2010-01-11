@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/15 22:36:59 merdely Exp $ 
+# $OpenBSD: Makefile,v 1.15 2010/01/11 07:19:17 ajacoutot Exp $ 
 
 COMMENT=	client program to help playing muds
 
 DISTNAME=       tintin++v1.5pl6
-PKGNAME=	tintin-1.5.6
+PKGNAME=	tintin-1.5.6p0
 CATEGORIES=     net games
 
-MASTER_SITES=   ftp://ftp.walrus.com/pub/avatar/clients/
+MASTER_SITES=	http://ftp.kiae.su/pub/unix/games/
 EXTRACT_SUFX=   .tar.Z
 
+# Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c 
+
+WANTLIB += c
 
 CONFIGURE_STYLE=	gnu old
 
