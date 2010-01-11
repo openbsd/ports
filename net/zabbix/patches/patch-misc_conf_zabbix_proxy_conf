@@ -1,53 +1,61 @@
-$OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.2 2009/07/12 19:51:51 ajacoutot Exp $
---- misc/conf/zabbix_proxy.conf.orig	Fri Apr  3 16:44:06 2009
-+++ misc/conf/zabbix_proxy.conf	Thu Jul  2 10:00:27 2009
-@@ -123,28 +123,28 @@ Timeout=5
- #UnavailableDelay=60
+$OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.3 2010/01/11 18:30:01 jasper Exp $
+--- misc/conf/zabbix_proxy.conf.orig	Wed Dec 23 23:56:09 2009
++++ misc/conf/zabbix_proxy.conf	Wed Dec 23 23:57:56 2009
+@@ -55,8 +55,6 @@ Server=127.0.0.1
+ # Default:
+ # LogFile=
  
- # Name of PID file
--PidFile=/var/tmp/zabbix_proxy.pid
+-LogFile=/tmp/zabbix_proxy.log
+-
+ ### Option: LogFileSize
+ #	Maximum size of log file in MB.
+ #	0 - disable automatic log rotation.
+@@ -83,6 +81,7 @@ LogFile=/tmp/zabbix_proxy.log
+ # Mandatory: no
+ # Default:
+ # PidFile=/tmp/zabbix_proxy.pid
 +PidFile=/var/run/zabbix/zabbix_proxy.pid
  
- # Name of log file
- # If not set, syslog is used
--LogFile=/tmp/zabbix_proxy.log
-+#LogFile=/tmp/zabbix_proxy.log
- 
- # Maximum size of log file in MB. Set to 0 to disable automatic log rotation.
- #LogFileSize=1
- 
- # Location for custom alert scripts
--AlertScriptsPath=/home/zabbix/bin/
-+AlertScriptsPath=${SYSCONFDIR}/zabbix/scripts/
- 
- # Location of external scripts
--#ExternalScripts=/etc/zabbix/externalscripts
-+ExternalScripts=${SYSCONFDIR}/zabbix/externalscripts
- 
- # Location of 'fping. Default is /usr/sbin/fping
- # Make sure that fping binary has root permissions and SUID flag set
--#FpingLocation=/usr/sbin/fping
-+FpingLocation=${LOCALBASE}/sbin/fping
- 
- # Location of fping6. Default is /usr/sbin/fping6
- # Make sure that fping binary has root permissions and SUID flag set
--#Fping6Location=/usr/sbin/fping6
-+Fping6Location=${LOCALBASE}/sbin/fping6
- 
- # Temporary directory. Default is /tmp
- #TmpDir=/tmp
-@@ -163,7 +163,7 @@ DBName=proxy
- 
- # Database user
+ ### Option: DBHost
+ #	Database host name.
+@@ -108,7 +107,7 @@ DBName=zabbix
+ # Default:
+ # DBUser=
  
 -DBUser=root
 +DBUser=zabbix
  
- # Database password
- # Comment this line if no password used
-@@ -172,4 +172,4 @@ DBUser=root
- 
- # Connect to MySQL using Unix socket?
- 
--#DBSocket=/tmp/mysql.sock
+ ### Option: DBPassword
+ #	Database password. Ignored for SQLite.
+@@ -124,6 +123,7 @@ DBUser=root
+ # Mandatory: no
+ # Default:
+ # DBSocket=/tmp/mysql.sock
 +DBSocket=/var/www/var/run/mysql/mysql.sock
+ 
+ # Option: DBPort
+ #	Database port when not using local socket. Ignored for SQLite.
+@@ -357,6 +357,7 @@ DBUser=root
+ # Mandatory: no
+ # Default:
+ # ExternalScripts=/etc/zabbix/externalscripts
++ExternalScripts=${SYSCONFDIR}/zabbix/externalscripts
+ 
+ ### Option: FpingLocation
+ #	Location of fping.
+@@ -365,6 +366,7 @@ DBUser=root
+ # Mandatory: no
+ # Default:
+ # FpingLocation=/usr/sbin/fping
++FpingLocation=${LOCALBASE}/sbin/fping
+ 
+ ### Option: Fping6Location
+ #	Location of fping6.
+@@ -373,6 +375,7 @@ DBUser=root
+ # Mandatory: no
+ # Default:
+ # Fping6Location=/usr/sbin/fping6
++FpingLocation=${LOCALBASE}/sbin/fping6
+ 
+ ### Option: SSHKeyLocation
+ #	Location of public keys for SSH checks

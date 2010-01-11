@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.4 2009/07/12 19:51:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.5 2010/01/11 18:30:01 jasper Exp $
 @bin sbin/zabbix_proxy
 @bin sbin/zabbix_server
 @sample ${SYSCONFDIR}/zabbix/
@@ -9,8 +9,6 @@ share/examples/zabbix/zabbix_proxy.conf
 @sample ${SYSCONFDIR}/zabbix/zabbix_proxy.conf
 share/examples/zabbix/zabbix_server.conf
 @sample ${SYSCONFDIR}/zabbix/zabbix_server.conf
-share/examples/zabbix/zabbix_trapper.conf
-@sample ${SYSCONFDIR}/zabbix/zabbix_trapper.conf
 @mode
 @group
 share/zabbix/

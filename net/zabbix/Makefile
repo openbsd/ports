@@ -1,36 +1,28 @@
-# $OpenBSD: Makefile,v 1.13 2009/10/02 14:09:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/01/11 18:30:01 jasper Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-web =		network and application monitoring - web frontend
-COMMENT-doc =		network and application monitoring - non-free documentation
 
-VERSION =		1.6.5
+VERSION =		1.8
 MAJOR =			${VERSION:R}
 DISTNAME =		zabbix-${VERSION}
-FULLPKGNAME-main =	zabbix-agent-${VERSION}p0
-PKGNAME-server =	zabbix-server-${VERSION}p0
-FULLPKGNAME-doc =	zabbix-doc-${VERSION}
+FULLPKGNAME-main =	zabbix-agent-${VERSION}
+PKGNAME-server =	zabbix-server-${VERSION}
 PKGNAME-web =		zabbix-web-${VERSION}
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.zabbix.com/
 
 # GPLv2
-# Manual: - free for translation, if original content stays the same
-#	  - printed copies for personal use allowed
-#	  - all other uses need to be agreed upon with Zabbix Company
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =includes non-free documentation
-PERMIT_DISTFILES_FTP =	includes non-free documentation
-
-PERMIT_PACKAGE_CDROM-doc = non-free documentation
-PERMIT_PACKAGE_FTP-doc =   non-free documentation
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 
-MULTI_PACKAGES =	-main -doc
+MULTI_PACKAGES =	-main
 PSEUDO_FLAVORS =	no_server
 FLAVORS =		mysql pgsql
 
@@ -38,9 +30,6 @@ SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJOR
 
 WANTLIB =		c kvm m
 LIB_DEPENDS =		lber,ldap::databases/openldap
-
-LIB_DEPENDS-doc =
-WANTLIB-doc =
 
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			curl::net/curl \
@@ -102,8 +91,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zabbix
 	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/zabbix/README.OpenBSD
-	${INSTALL_DATA} "${WRKBUILD}/docs/ZABBIX Manual v1.6 rev 17.pdf" \
-		${PREFIX}/share/doc/zabbix/ZABBIX_Manual_v1.6_rev17.pdf
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/modules.sample
 	${SUBST_CMD} -c ${FILESDIR}/zabbix.conf \

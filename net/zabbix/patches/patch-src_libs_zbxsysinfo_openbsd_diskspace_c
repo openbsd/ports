@@ -1,32 +1,12 @@
-$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_diskspace_c,v 1.1 2009/04/23 15:38:11 jasper Exp $
---- src/libs/zbxsysinfo/openbsd/diskspace.c.orig	Wed Apr 22 23:17:52 2009
-+++ src/libs/zbxsysinfo/openbsd/diskspace.c	Wed Apr 22 23:17:56 2009
-@@ -42,22 +42,22 @@ int	get_fs_size_stat(const char *fs, zbx_uint64_t *tot
- 
+$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_diskspace_c,v 1.2 2010/01/11 18:30:01 jasper Exp $
+--- src/libs/zbxsysinfo/openbsd/diskspace.c.orig	Thu Dec 24 00:01:41 2009
++++ src/libs/zbxsysinfo/openbsd/diskspace.c	Thu Dec 24 00:03:36 2009
+@@ -25,7 +25,7 @@ static int	get_fs_size_stat(const char *fs, zbx_uint64
+ {
  #ifdef HAVE_SYS_STATVFS_H
- 	if (total)
--		*total = (zbx_uint64_t)s.f_blocks * s.f_frsize;
-+		*total = (zbx_uint64_t)s.f_blocks * (s.f_frsize / 1024.0);
- 	if (free)
--		*free = (zbx_uint64_t)s.f_bfree * s.f_frsize;
-+		*free = (zbx_uint64_t)s.f_bfree * (s.f_frsize / 1024.0);
- 	if (used)
--		*used = (zbx_uint64_t)(s.f_blocks - s.f_bfree) * s.f_frsize;
-+		*used = (zbx_uint64_t)(s.f_blocks - s.f_bfree) * (s.f_frsize / 1024.0);
- 	if (pfree)
- 		*pfree = (double)(100.0 * s.f_bfree) / s.f_blocks;
- 	if (pused)
- 		*pused = (double)(100.0 * (s.f_blocks - s.f_bfree)) / s.f_blocks;
+ #	define STATFS	statvfs
+-#	define BSIZE	f_frsize
++#	define BSIZE	f_frsize / 1024.0
  #else
- 	if (total)
--		*total = (zbx_uint64_t)s.f_blocks * s.f_bsize;
-+		*total = (zbx_uint64_t)s.f_blocks * (s.f_bsize / 1024.0);
- 	if (free)
--		*free = (zbx_uint64_t)s.f_bfree * s.f_bsize;
-+		*free = (zbx_uint64_t)s.f_bfree * (s.f_bsize / 1024.0);
- 	if (used)
--		*used = (zbx_uint64_t)(s.f_blocks - s.f_bfree) * s.f_bsize;
-+		*used = (zbx_uint64_t)(s.f_blocks - s.f_bfree) * (s.f_bsize / 1024.0);
- 	if (pfree)
- 		*pfree = (double)(100.0 * s.f_bfree) / s.f_blocks;
- 	if (pused)
+ #	define STATFS	statfs
+ #	define BSIZE	f_bsize
