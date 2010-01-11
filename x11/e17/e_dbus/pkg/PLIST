@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/11 15:05:49 jasper Exp $
+%%SHARED%%
+@bin bin/e-notify-send
+@bin bin/e_dbus_hal
+@bin bin/e_dbus_notification_daemon
+@bin bin/e_dbus_notify
+@bin bin/e_dbus_test
+@bin bin/e_dbus_test_client
+include/E_DBus.h
+include/E_Hal.h
+include/E_Notification_Daemon.h
+include/E_Notify.h
+lib/libedbus.a
+lib/libedbus.la
+lib/libehal.a
+lib/libehal.la
+lib/libenotify.a
+lib/libenotify.la
+lib/pkgconfig/
+lib/pkgconfig/edbus.pc
+lib/pkgconfig/ehal.pc
+lib/pkgconfig/enotify.pc

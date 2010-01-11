@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/01/11 15:05:49 jasper Exp $
+@lib lib/libedbus-ver-svn-02.so.${LIBedbus-ver-svn-02_VERSION}
+@lib lib/libedbus.so.${LIBedbus_VERSION}
+@lib lib/libehal-ver-svn-02.so.${LIBehal-ver-svn-02_VERSION}
+@lib lib/libehal.so.${LIBehal_VERSION}
+@lib lib/libenotify-ver-svn-02.so.${LIBenotify-ver-svn-02_VERSION}
+@lib lib/libenotify.so.${LIBenotify_VERSION}

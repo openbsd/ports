@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_lib_dbus_e_dbus_c,v 1.1.1.1 2010/01/11 15:05:49 jasper Exp $
+
+dbus_message_get_path() could return NULL.
+
+--- src/lib/dbus/e_dbus.c.orig	Thu Nov 12 11:08:19 2009
++++ src/lib/dbus/e_dbus.c	Thu Nov 12 11:10:19 2009
+@@ -371,11 +371,18 @@ static DBusHandlerResult
+ e_dbus_filter(DBusConnection *conn, DBusMessage *message, void *user_data)
+ {
+   E_DBus_Connection *cd = user_data;
++  const char *path;
++
+   DEBUG(3, "-----------------\nMessage!\n\n");
+ 
+   DEBUG(3, "type: %s\n", dbus_message_type_to_string(dbus_message_get_type(message)));
++
++  path = dbus_message_get_path (message);
++  if (path == NULL)
++    path = "";
++
+   DEBUG(3, "path: %s\n", dbus_message_get_path(message));
+-  DEBUG(3, "interface: %s\n", dbus_message_get_interface(message));
++  DEBUG(3, "interface: %s\n", path);
+   DEBUG(3, "member: %s\n", dbus_message_get_member(message));
+   DEBUG(3, "sender: %s\n", dbus_message_get_sender(message));
+ 
