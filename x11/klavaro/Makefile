@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/21 20:46:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/01/11 15:11:38 jasper Exp $
 
 COMMENT =	touch typing tutor program
 
-DISTNAME =	klavaro-1.3.6
-PKGNAME =	${DISTNAME}p0
+DISTNAME =	klavaro-1.4.1
 
 CATEGORIES =	x11
 
@@ -33,8 +32,6 @@ MODULES =       devel/gettext
 
 LIB_DEPENDS = 	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		gtkdatabox::x11/gtkdatabox \
-		xml2.>=9::textproc/libxml \
-		sexy::x11/libsexy \
 		curl.::net/curl
 
 USE_X11 =	Yes
