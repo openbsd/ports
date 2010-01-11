@@ -1,3 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2007/12/16 18:30:18 laurent Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2010/01/11 15:02:56 jasper Exp $
+@lib lib/libefreet-ver-svn-02.so.${LIBefreet-ver-svn-02_VERSION}
 @lib lib/libefreet.so.${LIBefreet_VERSION}
+@lib lib/libefreet_mime-ver-svn-02.so.${LIBefreet_mime-ver-svn-02_VERSION}
 @lib lib/libefreet_mime.so.${LIBefreet_mime_VERSION}
+@lib lib/libefreet_trash-ver-svn-02.so.${LIBefreet_trash-ver-svn-02_VERSION}
+@lib lib/libefreet_trash.so.${LIBefreet_trash_VERSION}

@@ -1,25 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/12/16 19:45:04 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/01/11 15:02:56 jasper Exp $
 %%SHARED%%
-bin/efreet_alloc
-bin/efreet_cache_test
-bin/efreet_menu_alloc
-bin/efreet_spec_test
-bin/efreet_test
+@bin bin/efreet_alloc
+@bin bin/efreet_cache_test
+@bin bin/efreet_menu_alloc
+@bin bin/efreet_spec_test
+@bin bin/efreet_test
 include/efreet/
 include/efreet/Efreet.h
 include/efreet/Efreet_Mime.h
+include/efreet/Efreet_Trash.h
 include/efreet/efreet_base.h
 include/efreet/efreet_desktop.h
 include/efreet/efreet_icon.h
 include/efreet/efreet_ini.h
 include/efreet/efreet_menu.h
+include/efreet/efreet_uri.h
 include/efreet/efreet_utils.h
 lib/libefreet.a
 lib/libefreet.la
 lib/libefreet_mime.a
 lib/libefreet_mime.la
+lib/libefreet_trash.a
+lib/libefreet_trash.la
 lib/pkgconfig/
 lib/pkgconfig/efreet-mime.pc
+lib/pkgconfig/efreet-trash.pc
 lib/pkgconfig/efreet.pc
 share/efreet/
 share/efreet/test/
@@ -32,5 +37,6 @@ share/efreet/test/sub/test.desktop
 share/efreet/test/test.desktop
 share/efreet/test/test.ini
 share/efreet/test/test.menu
+share/efreet/test/test_garbage
 share/efreet/test/test_menu_slash_bad.menu
 share/efreet/test/test_type.desktop
