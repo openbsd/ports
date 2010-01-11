@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2010/01/11 15:00:15 jasper Exp $
+
+Stupid way to remove openssl from the ecore-file and ecore-con pc files.
+
+--- configure.orig	Wed Jul 22 13:04:36 2009
++++ configure	Wed Jul 22 13:04:36 2009
+@@ -27232,7 +27232,7 @@ fi
+       # depends on ecore_con anyway.
+    else
+       if test "x${have_openssl}" = "xyes" ; then
+-         requirements_ecore_con="openssl ${requirements_ecore_con}"
++         requirements_ecore_con="${requirements_ecore_con}"
+          # no need to add it to req_ecore_ipc, since they
+          # depends on ecore_con anyway.
+       fi

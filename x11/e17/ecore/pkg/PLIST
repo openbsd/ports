@@ -1,14 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/16 18:26:09 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/01/11 15:00:15 jasper Exp $
 %%SHARED%%
-bin/ecore_config
+@bin bin/ecore_config
 include/Ecore.h
 include/Ecore_Con.h
 include/Ecore_Config.h
 include/Ecore_Data.h
 include/Ecore_Evas.h
 include/Ecore_File.h
+include/Ecore_Getopt.h
 include/Ecore_IMF.h
 include/Ecore_IMF_Evas.h
+include/Ecore_Input.h
 include/Ecore_Ipc.h
 include/Ecore_Job.h
 include/Ecore_Str.h
@@ -30,6 +32,8 @@ lib/libecore_imf.a
 lib/libecore_imf.la
 lib/libecore_imf_evas.a
 lib/libecore_imf_evas.la
+lib/libecore_input.a
+lib/libecore_input.la
 lib/libecore_ipc.a
 lib/libecore_ipc.la
 lib/libecore_job.a
@@ -45,6 +49,7 @@ lib/pkgconfig/ecore-evas.pc
 lib/pkgconfig/ecore-file.pc
 lib/pkgconfig/ecore-imf-evas.pc
 lib/pkgconfig/ecore-imf.pc
+lib/pkgconfig/ecore-input.pc
 lib/pkgconfig/ecore-ipc.pc
 lib/pkgconfig/ecore-job.pc
 lib/pkgconfig/ecore-txt.pc
