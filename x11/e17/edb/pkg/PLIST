@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/30 16:04:39 dlg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/01/11 15:01:29 jasper Exp $
 %%SHARED%%
-bin/edb_ed
-bin/edb_vt_ed
+@bin bin/edb_ed
+@bin bin/edb_vt_ed
 include/Edb.h
 lib/libedb.a
 lib/libedb.la
