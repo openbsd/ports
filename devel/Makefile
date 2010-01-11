@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.764 2010/01/10 21:43:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.765 2010/01/11 22:40:10 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -482,6 +482,7 @@
      SUBDIR += p5-Module-ScanDeps
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Moose
+     SUBDIR += p5-MooseX-Async
      SUBDIR += p5-MooseX-AttributeHelpers
      SUBDIR += p5-MooseX-Clone
      SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
