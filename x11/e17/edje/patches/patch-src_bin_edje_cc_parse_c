@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_bin_edje_cc_parse_c,v 1.1 2010/01/11 15:02:07 jasper Exp $
+--- src/bin/edje_cc_parse.c.orig	Thu Jul 23 11:34:05 2009
++++ src/bin/edje_cc_parse.c	Thu Jul 23 11:34:08 2009
+@@ -696,7 +696,7 @@ compile(void)
+ 	 * Redirecting the output is required for MacOS 10.3, and works fine
+ 	 * on other systems.
+ 	 */
+-	snprintf(buf, sizeof(buf), "cat %s | cpp -I%s %s > %s",
++	snprintf(buf, sizeof(buf), "cat %s | cpp -I%s -x c++ %s > %s",
+ 		 file_in, inc, def, tmpn);
+ 	ret = system(buf);
+ 	if (ret < 0)
