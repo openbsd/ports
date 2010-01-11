@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/01/11 15:06:39 jasper Exp $
+lib/eina/mp/eina_chained_mempool.so
+lib/eina/mp/eina_fixed_bitmap.so
+lib/eina/mp/pass_through.so
+@lib lib/libeina-ver-svn-02.so.${LIBeina-ver-svn-02_VERSION}
+@lib lib/libeina.so.${LIBeina_VERSION}
