@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/08 13:15:38 stephan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/01/11 10:45:53 stephan Exp $
 
 COMMENT =	MediaWiki extension for http based authentication
 
 V =		0.1
 DISTNAME =	mediawiki-httpauth-${V}
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	www
 
 MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
@@ -28,7 +29,8 @@ RUN_DEPENDS =	:mediawiki->=1.13.2:www/mediawiki
 
 do-install:
 	${INSTALL_DATA_DIR} ${EXTENSIONSDIR}
-	@mv ${WRKDIR}/oremj-mediawiki-http-auth-4be6b72/HttpAuthPlugin.php \
+	${INSTALL_DATA} \
+		${WRKDIR}/oremj-mediawiki-http-auth-4be6b72/HttpAuthPlugin.php \
 		${EXTENSIONSDIR}
 
 .include <bsd.port.mk>
