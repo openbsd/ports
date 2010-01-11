@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2009/11/03 14:32:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/01/11 08:49:27 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2
@@ -60,8 +61,9 @@ SEPARATE_BUILD=	concurrent
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= autoconf automake
 AUTOCONF_VERSION= 2.61
+AUTOMAKE_VERSION= 1.9
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 CONFIGURE_ARGS+=--enable-a52 \
 		--enable-a52-default-decoder \
@@ -81,7 +83,7 @@ CONFIGURE_ARGS+=--enable-a52 \
 		--enable-ogg \
 		--enable-sdl \
 		--enable-statbuffer \
-		--enable-sunau \
+		--enable-sndio \
 		--enable-theora \
 		--enable-vorbis \
 		--enable-xvid \
@@ -122,5 +124,17 @@ CONFIGURE_ARGS+=--enable-altivec
 .else
 CONFIGURE_ARGS+=--disable-altivec
 .endif
+
+post-extract:
+	cp ${FILESDIR}/import_sndio.c ${WRKSRC}/import/
+
+AUTO_ENV=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
+
+post-patch:
+	cd ${WRKSRC}; ${AUTO_ENV} aclocal
+
+pre-configure:
+	cd ${WRKSRC}; ${AUTO_ENV} automake --foreign
 
 .include <bsd.port.mk>

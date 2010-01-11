@@ -1,0 +1,12 @@
+$OpenBSD: gcc-filter_yuvdenoise_Makefile_am,v 1.1 2010/01/11 08:49:27 jakemsr Exp $
+--- filter/yuvdenoise/Makefile.am.orig	Sat Feb 21 06:34:02 2009
++++ filter/yuvdenoise/Makefile.am	Fri Dec 25 02:57:18 2009
+@@ -5,6 +5,8 @@ AM_CPPFLAGS = \
+ 	-I$(top_srcdir) \
+ 	-I$(top_srcdir)/src
+ 
++CFLAGS = -O0 -Wall
++
+ pkgdir = $(MOD_PATH)
+ 
+ pkg_LTLIBRARIES = \

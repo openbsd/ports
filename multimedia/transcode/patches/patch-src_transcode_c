@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_transcode_c,v 1.1 2010/01/11 08:49:27 jakemsr Exp $
+
+audio input name isn't necessarily a file
+
+--- src/transcode.c.orig	Wed Jan  6 01:12:40 2010
++++ src/transcode.c	Wed Jan  6 01:13:06 2010
+@@ -1213,9 +1213,11 @@ static void setup_input_sources(vob_t *vob)
+         /* we always have at least one source */
+         tc_next_audio_in_file(vob);
+     }
++#if 0
+     if (!validate_source_path(vob->audio_in_file)) {
+         tc_error("invalid input audio file: %s", vob->audio_in_file);
+     }
++#endif
+ }
+ 
+ static void teardown_input_sources(vob_t *vob)

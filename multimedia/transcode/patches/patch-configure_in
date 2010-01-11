@@ -1,7 +1,20 @@
-$OpenBSD: patch-configure_in,v 1.2 2009/11/03 14:32:33 sthen Exp $
---- configure.in.orig	Sat Oct 31 12:39:02 2009
-+++ configure.in	Sun Nov  1 20:42:17 2009
-@@ -888,7 +888,8 @@ TC_PKG_HAVE(lame, LAME)
+$OpenBSD: patch-configure_in,v 1.3 2010/01/11 08:49:27 jakemsr Exp $
+--- configure.in.orig	Sat Oct 31 09:39:02 2009
++++ configure.in	Thu Dec 24 22:25:36 2009
+@@ -791,6 +791,12 @@ TC_CHECK_SUNAU(AC_DEFINE([HAVE_SUNAU], 1, [Have Sun st
+ AM_CONDITIONAL(HAVE_SUNAU, test x"$have_sunau" = x"yes")
+ 
+ dnl
++dnl sndio
++dnl
++TC_CHECK_SNDIO(AC_DEFINE([HAVE_SNDIO], 1, [Have sndio(7) audio]))
++AM_CONDITIONAL(HAVE_SNDIO, test x"$have_sndio" = x"yes")
++
++dnl
+ dnl OSS
+ dnl
+ TC_CHECK_OSS(AC_DEFINE([HAVE_OSS], 1, [Have OSS audio]))
+@@ -888,7 +894,8 @@ TC_PKG_HAVE(lame, LAME)
  dnl
  dnl xvid
  dnl
@@ -11,7 +24,7 @@ $OpenBSD: patch-configure_in,v 1.2 2009/11/03 14:32:33 sthen Exp $
   [http://www.xvid.org/])
  if test x"$have_xvid" = x"yes" ; then
    AC_MSG_CHECKING([xvid version >= 1.0])
-@@ -907,7 +908,7 @@ int main() {
+@@ -907,7 +914,7 @@ int main() {
        [cannot compile and run a test program])],,
      [AC_MSG_RESULT([cross compiling; assumed OK...])])
    if test x"$xvid_version_ok" = x"yes"; then
@@ -20,3 +33,11 @@ $OpenBSD: patch-configure_in,v 1.2 2009/11/03 14:32:33 sthen Exp $
    else
      have_xvid="no"
      TC_PKG_ERROR(xvid, xvid.h, yes, xvid, [http://www.xvid.org/],
+@@ -1487,6 +1494,7 @@ ALSA                           $have_alsa
+ OSS                            $have_oss
+ bktr                           $have_bktr
+ sunau                          $have_sunau
++sndio                          $have_sndio
+ 
+ optional module support
+ ----------------------------------------

@@ -1,0 +1,11 @@
+$OpenBSD: patch-avilib_Makefile_am,v 1.1 2010/01/11 08:49:27 jakemsr Exp $
+--- avilib/Makefile.am.orig	Thu Dec 24 22:44:38 2009
++++ avilib/Makefile.am	Thu Dec 24 22:45:00 2009
+@@ -2,6 +2,7 @@
+ 
+ AM_CPPFLAGS = \
+ 	$(PTHREAD_CFLAGS) \
++	-I$(top_srcdir) \
+ 	$(XIO_CFLAGS)
+ 
+ noinst_LTLIBRARIES = libavi.la libwav.la

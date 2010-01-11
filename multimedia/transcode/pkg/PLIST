@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/08/18 22:24:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/01/11 08:49:27 jakemsr Exp $
 %%i386%%
 %%lzo%%
 %%mjpegtools%%
@@ -197,8 +197,8 @@ lib/transcode/import_ogg.so
 lib/transcode/import_pvn.so
 @comment lib/transcode/import_raw.la
 lib/transcode/import_raw.so
-@comment lib/transcode/import_sunau.la
-lib/transcode/import_sunau.so
+@comment lib/transcode/import_sndio.la
+lib/transcode/import_sndio.so
 @comment lib/transcode/import_vag.la
 lib/transcode/import_vag.so
 @comment lib/transcode/import_vnc.la
