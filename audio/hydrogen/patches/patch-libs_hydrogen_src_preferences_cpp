@@ -1,0 +1,64 @@
+$OpenBSD: patch-libs_hydrogen_src_preferences_cpp,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
+--- libs/hydrogen/src/preferences.cpp.orig	Wed Aug 26 05:12:27 2009
++++ libs/hydrogen/src/preferences.cpp	Sat Jan  2 03:22:38 2010
+@@ -143,7 +143,7 @@ Preferences::Preferences()
+ 	m_patternCategories.push_back( QString("not_categorized") );
+ 
+ 	//___ audio engine properties ___
+-	m_sAudioDriver = QString("Auto");
++	m_sAudioDriver = QString("SndioAudio");
+ 	m_bUseMetronome = false;
+ 	m_fMetronomeVolume = 0.5;
+ 	m_nMaxNotes = 256;
+@@ -153,8 +153,11 @@ Preferences::Preferences()
+ 	//___ oss driver properties ___
+ 	m_sOSSDevice = QString("/dev/dsp");
+ 
++	//___ SndioAudio driver properties ___
++	m_sSndioDevice = QString("");
++
+ 	//___ MIDI Driver properties
+-	m_sMidiDriver = QString("ALSA");
++	m_sMidiDriver = QString("SndioMidi");
+ 	m_sMidiPortName = QString("None");
+ 	m_nMidiChannelFilter = -1;
+ 	m_bMidiNoteOffIgnore = false;
+@@ -423,6 +426,15 @@ void Preferences::loadPreferences( bool bGlobal )
+ 					m_sOSSDevice = LocalFileMng::readXmlString( ossDriverNode, "ossDevice", m_sOSSDevice );
+ 				}
+ 
++				//// SNDIO AUDIO DRIVER ////
++				TiXmlNode* sndioAudioDriverNode;
++				if ( !( sndioAudioDriverNode = audioEngineNode->FirstChild( "sndio_driver" ) ) ) {
++					WARNINGLOG( "sndio_driver node not found" );
++					recreate = true;
++				} else {
++					m_sSndioDevice = LocalFileMng::readXmlString( sndioAudioDriverNode, "sndioDevice", m_sSndioDevice );
++				}
++
+ 				//// JACK DRIVER ////
+ 				TiXmlNode* jackDriverNode;
+ 				if ( !( jackDriverNode = audioEngineNode->FirstChild( "jack_driver" ) ) ) {
+@@ -469,7 +481,7 @@ void Preferences::loadPreferences( bool bGlobal )
+ 					WARNINGLOG( "midi_driver node not found" );
+ 					recreate = true;
+ 				} else {
+-					m_sMidiDriver = LocalFileMng::readXmlString( midiDriverNode, "driverName", "ALSA" );
++					m_sMidiDriver = LocalFileMng::readXmlString( midiDriverNode, "driverName", "SndioMidi" );
+ 					m_sMidiPortName = LocalFileMng::readXmlString( midiDriverNode, "port_name", "None" );
+ 					m_nMidiChannelFilter = LocalFileMng::readXmlInt( midiDriverNode, "channel_filter", -1 );
+ 					m_bMidiNoteOffIgnore = LocalFileMng::readXmlBool( midiDriverNode, "ignore_note_off", true );
+@@ -750,6 +762,13 @@ void Preferences::savePreferences()
+ 			LocalFileMng::writeXmlString( &ossDriverNode, "ossDevice", m_sOSSDevice );
+ 		}
+ 		audioEngineNode.InsertEndChild( ossDriverNode );
++
++		//// SNDIO DRIVER ////
++		TiXmlElement sndioAudioDriverNode( "sndio_driver" );
++		{
++			LocalFileMng::writeXmlString( &sndioAudioDriverNode, "sndioDevice", m_sSndioDevice );
++		}
++		audioEngineNode.InsertEndChild( sndioAudioDriverNode );
+ 
+ 		//// JACK DRIVER ////
+ 		TiXmlElement jackDriverNode( "jack_driver" );

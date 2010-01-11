@@ -1,0 +1,12 @@
+$OpenBSD: patch-gui_src_SongEditor_SongEditor_cpp,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
+--- gui/src/SongEditor/SongEditor.cpp.orig	Fri Dec 11 23:01:59 2009
++++ gui/src/SongEditor/SongEditor.cpp	Fri Dec 11 23:02:38 2009
+@@ -20,6 +20,8 @@
+  *
+  */
+ 
++#include <unistd.h>
++
+ #include <assert.h>
+ #include <algorithm>
+ #include <memory>

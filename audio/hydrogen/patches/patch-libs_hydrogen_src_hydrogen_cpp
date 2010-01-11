@@ -1,0 +1,54 @@
+$OpenBSD: patch-libs_hydrogen_src_hydrogen_cpp,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
+--- libs/hydrogen/src/hydrogen.cpp.orig	Wed Jul 22 20:36:28 2009
++++ libs/hydrogen/src/hydrogen.cpp	Fri Jan  1 16:35:38 2010
+@@ -67,6 +67,8 @@
+ #include <hydrogen/playlist.h>
+ 
+ #include "IO/OssDriver.h"
++#include "IO/SndioAudioDriver.h"
++#include "IO/SndioMidiDriver.h"
+ #include "IO/FakeDriver.h"
+ #include "IO/AlsaAudioDriver.h"
+ #include "IO/PortAudioDriver.h"
+@@ -1492,6 +1494,12 @@ AudioOutput* createDriver( const QString& sDriver )
+ 			delete pDriver;
+ 			pDriver = NULL;
+ 		}
++	} else if ( sDriver == "SndioAudio" ) {
++		pDriver = new SndioAudioDriver( audioEngine_process );
++		if ( pDriver->get_class_name() == "NullDriver" ) {
++			delete pDriver;
++			pDriver = NULL;
++		}
+ 	} else if ( sDriver == "Jack" ) {
+ 		pDriver = new JackOutput( audioEngine_process );
+ 		if ( pDriver->get_class_name() == "NullDriver" ) {
+@@ -1579,6 +1587,7 @@ void audioEngine_startAudioDrivers()
+ 	QString sAudioDriver = preferencesMng->m_sAudioDriver;
+ //	sAudioDriver = "Auto";
+ 	if ( sAudioDriver == "Auto" ) {
++	    if ( ( m_pAudioDriver = createDriver( "SndioAudio" ) ) == NULL ) {
+ 		if ( ( m_pAudioDriver = createDriver( "Jack" ) ) == NULL ) {
+ 			if ( ( m_pAudioDriver = createDriver( "Alsa" ) ) == NULL ) {
+ 				if ( ( m_pAudioDriver = createDriver( "CoreAudio" ) ) == NULL ) {
+@@ -1596,6 +1605,7 @@ void audioEngine_startAudioDrivers()
+ 				}
+ 			}
+ 		}
++	    }
+ 	} else {
+ 		m_pAudioDriver = createDriver( sAudioDriver );
+ 		if ( m_pAudioDriver == NULL ) {
+@@ -1613,6 +1623,12 @@ void audioEngine_startAudioDrivers()
+ #ifdef ALSA_SUPPORT
+ 		// Create MIDI driver
+ 		m_pMidiDriver = new AlsaMidiDriver();
++		m_pMidiDriver->open();
++		m_pMidiDriver->setActive( true );
++#endif
++	} else if ( preferencesMng->m_sMidiDriver == "SndioMidi" ) {
++#ifdef SNDIO_SUPPORT
++		m_pMidiDriver = new SndioMidiDriver();
+ 		m_pMidiDriver->open();
+ 		m_pMidiDriver->setActive( true );
+ #endif

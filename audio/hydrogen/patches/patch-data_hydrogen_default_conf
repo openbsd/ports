@@ -1,19 +1,32 @@
-$OpenBSD: patch-data_hydrogen_default_conf,v 1.1 2008/03/24 03:09:42 jakemsr Exp $
---- data/hydrogen.default.conf.orig	Fri Feb 29 19:07:57 2008
-+++ data/hydrogen.default.conf	Fri Feb 29 19:08:41 2008
-@@ -17,12 +17,12 @@
- 		<samplerate>44100</samplerate>
+$OpenBSD: patch-data_hydrogen_default_conf,v 1.2 2010/01/11 05:11:32 jakemsr Exp $
+--- data/hydrogen.default.conf.orig	Wed Aug 26 05:12:27 2009
++++ data/hydrogen.default.conf	Sat Jan  2 03:20:03 2010
+@@ -27,7 +27,7 @@
+ 	<lastNews>-</lastNews>
  
- 		<oss_driver>
--			<ossDevice>/dev/dsp</ossDevice>
-+			<ossDevice>/dev/audio</ossDevice>
+ 	<audio_engine>
+-		<audio_driver>Auto</audio_driver>
++		<audio_driver>SndioAudio</audio_driver>
+ 		<use_metronome>false</use_metronome>
+ 		<metronome_volume>0.5</metronome_volume>
+ 		<maxNotes>256</maxNotes>
+@@ -38,6 +38,10 @@
+ 			<ossDevice>/dev/dsp</ossDevice>
  		</oss_driver>
  
++		<sndio_driver>
++			<sndioDevice></sndioDevice>
++		</sndio_driver>
++
  		<jack_driver>
--			<jack_port_name_1>alsa_pcm:playback_1</jack_port_name_1>
--			<jack_port_name_2>alsa_pcm:playback_2</jack_port_name_2>
-+			<jack_port_name_1>system:playback_1</jack_port_name_1>
-+			<jack_port_name_2>system:playback_2</jack_port_name_2>
- 			<jack_transport_mode>USE_JACK_TRANSPORT</jack_transport_mode>
- 			<jack_connect_defaults>true</jack_connect_defaults>
- 			<jack_track_outs>false</jack_track_outs>
+ 			<jack_port_name_1>alsa_pcm:playback_1</jack_port_name_1>
+ 			<jack_port_name_2>alsa_pcm:playback_2</jack_port_name_2>
+@@ -52,7 +56,7 @@
+ 		</alsa_audio_driver>
+ 
+ 		<midi_driver>
+-			<driverName>ALSA</driverName>
++			<driverName>SndioMidi</driverName>
+ 			<port_name>None</port_name>
+ 			<channel_filter>-1</channel_filter>
+ 			<ignore_note_off>false</ignore_note_off>

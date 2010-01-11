@@ -1,0 +1,13 @@
+$OpenBSD: patch-libs_hydrogen_include_hydrogen_Preferences_h,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
+--- libs/hydrogen/include/hydrogen/Preferences.h.orig	Fri Jan  1 02:59:34 2010
++++ libs/hydrogen/include/hydrogen/Preferences.h	Fri Jan  1 02:59:59 2010
+@@ -188,6 +188,9 @@ class Preferences : public Object (public)
+ 	//___ oss driver properties ___
+ 	QString m_sOSSDevice;		///< Device used for output
+ 
++	//___ sndio driver properties ___
++	QString m_sSndioDevice;		///< Device used for output
++
+ 	//___ MIDI Driver properties
+ 	QString m_sMidiDriver;
+ 	QString m_sMidiPortName;

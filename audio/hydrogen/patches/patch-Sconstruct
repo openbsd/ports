@@ -1,0 +1,104 @@
+$OpenBSD: patch-Sconstruct,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
+--- Sconstruct.orig	Mon Sep  7 14:31:13 2009
++++ Sconstruct	Sat Jan  2 02:22:51 2010
+@@ -47,20 +47,21 @@ def get_platform_flags( opts ):
+ 
+ 	env = Environment( options = opts )
+ 
+-	if sys.platform == "linux2" or sys.platform == "darwin":
++	if sys.platform == "linux2" or sys.platform == "darwin" or sys.platform == "openbsd4":
+ 		if str(env['debug']) == "1":
+ 			cppflags += ['-Wall',  '-g2', '-ggdb', '-O0'] 
+ 			for flag in env["optflags"].split(" "):
+ 				cppflags.append(flag)
+ 			
+ 		else:
+-			cppflags += ['-O3', '-fomit-frame-pointer', '-funroll-loops']
++			cppflags += ['-fomit-frame-pointer', '-funroll-loops']
+ 			#cppflags += " %s" % get_optimized_flags( target_cpu )
+ 			for flag in env["optflags"].split(" "):
+ 				cppflags.append(flag)
+ 
+ 
+ 		if str(env['oss']) == "1": cppflags.append('-DOSS_SUPPORT')
++		if str(env['sndio']) == "1": cppflags.append('-DSNDIO_SUPPORT')
+ 		if str(env['alsa']) == "1": cppflags.append('-DALSA_SUPPORT')
+ 		if str(env['jack']) == "1": cppflags.append('-DJACK_SUPPORT')
+ 		if str(env['lash']) == "1": cppflags.append('-DLASH_SUPPORT')
+@@ -87,6 +88,12 @@ def get_platform_flags( opts ):
+ 	if sys.platform == 'linux2':
+ 		ldflags.append('-lasound')
+ 
++	elif sys.platform == 'openbsd4':
++		for flag in env["localinc"].split(" "):
++			includes.append(flag)
++		for flag in env["locallib"].split(" "):
++			ldflags.append(flag)
++
+ 	elif sys.platform == "win32":
+ 		includes.append( '3rdparty\libsndfile-1_0_17' )
+ 		includes.append( 'build\pthreads\include' )
+@@ -158,8 +165,9 @@ def download_3rdparty_libs():
+ def get_svn_revision():
+ 	
+ 	if sys.platform != "win32":
+-		p = subprocess.Popen("svnversion -n", shell=True, stdout=subprocess.PIPE)
+-		return p.stdout.read()
++		return "openbsd ports build"
++		#p = subprocess.Popen("svnversion -n", shell=True, stdout=subprocess.PIPE)
++		#return p.stdout.read()
+ 	else:
+ 		return "win32 build"
+ 
+@@ -260,6 +268,7 @@ def get_hydrogen_gui( lib_hydrogen , opts ):
+ 	if str(env['flac']) == "1": env.Append( LIBS = ["FLAC","FLAC++"] )
+ 	if str(env['jack']) == "1": env.Append( LIBS = ["jack"])
+ 	if str(env['alsa']) == "1": env.Append( LIBS = ["asound"])
++	if str(env['sndio']) == "1": env.Append( LIBS = ["sndio"])
+ 	if str(env['libarchive']) == "1": env.Append( LIBS = ["archive"])
+ 	else: env.Append( LIBS = ["tar"])
+ 	if str(env['portaudio']) == "1": env.Append( LIBS = [ "portaudio" ] )
+@@ -326,6 +335,8 @@ opts.Add('libarchive', 'Set to 1 to enable libarchive 
+ opts.Add('prefix','Default: /usr/local',"/usr/local")
+ opts.Add('DESTDIR','Default: none',"")
+ opts.Add('optflags','Default: none',"")
++opts.Add('localinc','Default: none',"")
++opts.Add('locallib','Default: none',"")
+ 
+ #platform dependent settings
+ if sys.platform == "darwin":
+@@ -334,6 +345,8 @@ if sys.platform == "darwin":
+ if sys.platform != "win32":
+ 	opts.Add('oss', 'Set to 1 to enable oss',1)
+ 
++	opts.Add('sndio', 'Set to 1 to enable sndio',1)
++
+ 	opts.Add('portmidi', 'Set to 1 to enable portmidi',0)
+ 	
+ 	opts.Add('portaudio', 'Set to 1 to enable portaudio',0)
+@@ -348,7 +361,7 @@ if sys.platform != "win32":
+ 	
+ 	opts.Add('flac', 'Set to 1 to enable flac',1)
+ else:
+-	#alsa, lash,oss and jack are not available on windows
++	#alsa, lash,oss, jack and sndio are not available on windows
+ 	opts.Add('portmidi', 'Set to 1 to enable portmidi',1)
+ 	
+ 	opts.Add('portaudio', 'Set to 1 to enable portaudio',1)
+@@ -459,7 +472,7 @@ print ""
+ print "================================================================="
+ print " Hydrogen build script"
+ print ""
+-print " Revision: %s" % get_svn_revision()
++# print " Revision: %s" % get_svn_revision()
+ print " Platform: %s" % platform
+ 
+ if str(env['debug']) == "1" :
+@@ -475,6 +488,7 @@ print "Feature Overview:\n"
+ 
+ print "      lash: " + printStatus( env["lash"] )
+ print "      oss: " + printStatus( env["oss"] )
++print "      sndio: " + printStatus( env["sndio"] )
+ print "      alsa: " + printStatus( env["alsa"] )
+ print "      jack: " + printStatus( env["jack"] )
+ print "libarchive: " + printStatus( env["libarchive"] ) 

@@ -1,0 +1,100 @@
+$OpenBSD: patch-gui_src_PreferencesDialog_cpp,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
+--- gui/src/PreferencesDialog.cpp.orig	Wed Jul 22 20:10:25 2009
++++ gui/src/PreferencesDialog.cpp	Sat Jan  2 03:24:33 2010
+@@ -63,6 +63,7 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
+ 	driverComboBox->addItem( "ALSA" );
+ 	driverComboBox->addItem( "OSS" );
+ 	driverComboBox->addItem( "PortAudio" );
++	driverComboBox->addItem( "SndioAudio" );
+ #ifdef Q_OS_MACX
+ 	driverComboBox->addItem( "CoreAudio" );
+ #endif
+@@ -84,9 +85,12 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
+ 	else if ( sAudioDriver == "PortAudio" ) {
+ 		driverComboBox->setCurrentIndex(4);
+ 	}
+-	else if ( sAudioDriver == "CoreAudio" ) {
++	else if ( sAudioDriver == "SndioAudio" ) {
+ 		driverComboBox->setCurrentIndex(5);
+ 	}
++	else if ( sAudioDriver == "CoreAudio" ) {
++		driverComboBox->setCurrentIndex(6);
++	}
+ 	else {
+ 		ERRORLOG( "Unknown audio driver from preferences [" + sAudioDriver + "]" );
+ 	}
+@@ -95,6 +99,7 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
+ 	m_pMidiDriverComboBox->clear();
+ 	m_pMidiDriverComboBox->addItem( "ALSA" );
+ 	m_pMidiDriverComboBox->addItem( "PortMidi" );
++	m_pMidiDriverComboBox->addItem( "SndioMidi" );
+ 	m_pMidiDriverComboBox->addItem( "CoreMidi" );
+ 
+ 	if ( pPref->m_sMidiDriver == "ALSA" ) {
+@@ -103,9 +108,12 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
+ 	else if ( pPref->m_sMidiDriver == "PortMidi" ) {
+ 		m_pMidiDriverComboBox->setCurrentIndex(1);
+ 	}
+-	else if ( pPref->m_sMidiDriver == "CoreMidi" ) {
++	else if ( pPref->m_sMidiDriver == "SndioMidi" ) {
+ 		m_pMidiDriverComboBox->setCurrentIndex(2);
+ 	}
++	else if ( pPref->m_sMidiDriver == "CoreMidi" ) {
++		m_pMidiDriverComboBox->setCurrentIndex(3);
++	}
+ 	else {
+ 		ERRORLOG( "Unknown midi input from preferences [" + pPref->m_sMidiDriver + "]" );
+ 	}
+@@ -297,6 +305,10 @@ void PreferencesDialog::on_okBtn_clicked()
+ 	else if (driverComboBox->currentText() == "PortAudio" ) {
+ 		pPref->m_sAudioDriver = "PortAudio";
+ 	}
++	else if (driverComboBox->currentText() == "SndioAudio" ) {
++		pPref->m_sAudioDriver = "SndioAudio";
++		pPref->m_sSndioDevice = m_pAudioDeviceTxt->text();
++	}
+ 	else if (driverComboBox->currentText() == "CoreAudio" ) {
+ 		pPref->m_sAudioDriver = "CoreAudio";
+ 	}
+@@ -346,6 +358,9 @@ void PreferencesDialog::on_okBtn_clicked()
+ 	else if ( m_pMidiDriverComboBox->currentText() == "PortMidi" ) {
+ 		pPref->m_sMidiDriver = "PortMidi";
+ 	}
++	else if ( m_pMidiDriverComboBox->currentText() == "SndioMidi" ) {
++		pPref->m_sMidiDriver = "SndioMidi";
++	}
+ 	else if ( m_pMidiDriverComboBox->currentText() == "CoreMidi" ) {
+ 		pPref->m_sMidiDriver = "CoreMidi";
+ 	}
+@@ -439,6 +454,11 @@ void PreferencesDialog::updateDriverInfo()
+ 	bPortAudio_support = true;
+ 	#endif
+ 
++	bool bSndio_support = false;
++	#ifdef SNDIO_SUPPORT
++	bSndio_support = true;
++	#endif
++
+ 	bool bCoreAudio_support = false;
+ 	#ifdef COREAUDIO_SUPPORT
+ 	bCoreAudio_support = true;
+@@ -488,6 +508,19 @@ void PreferencesDialog::updateDriverInfo()
+ 		}
+ 		m_pAudioDeviceTxt->setEnabled(true);
+ 		m_pAudioDeviceTxt->setText( pPref->m_sAlsaAudioDevice );
++		bufferSizeSpinBox->setEnabled(true);
++		sampleRateComboBox->setEnabled(true);
++		trackOutputComboBox->setEnabled( false );
++		trackOutsCheckBox->setEnabled( false );
++		connectDefaultsCheckBox->setEnabled(false);
++	}
++	else if ( driverComboBox->currentText() == "SndioAudio" ) {
++		info += trUtf8("<b>sndio</b><br>audio driver");
++		if ( !bSndio_support ) {
++			info += trUtf8("<br><b><font color=\"red\">Not compiled</font></b>");
++		}
++		m_pAudioDeviceTxt->setEnabled(true);
++		m_pAudioDeviceTxt->setText( pPref->m_sSndioDevice );
+ 		bufferSizeSpinBox->setEnabled(true);
+ 		sampleRateComboBox->setEnabled(true);
+ 		trackOutputComboBox->setEnabled( false );

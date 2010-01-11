@@ -1,0 +1,19 @@
+$OpenBSD: patch-features_pri,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
+--- features.pri.orig	Fri Jan  1 03:05:13 2010
++++ features.pri	Fri Jan  1 03:05:45 2010
+@@ -33,6 +33,7 @@ linux-g++ {
+ 	H2DEFINES += LADSPA_SUPPORT
+ 	H2DEFINES += LRDF_SUPPORT
+ 	H2DEFINES += OSS_SUPPORT
++	H2DEFINES += SNDIO_SUPPORT
+ }
+ 
+ linux-g++-64 {
+@@ -43,6 +44,7 @@ linux-g++-64 {
+ 	H2DEFINES += LADSPA_SUPPORT
+ 	H2DEFINES += LRDF_SUPPORT
+ 	H2DEFINES += OSS_SUPPORT
++	H2DEFINES += SNDIO_SUPPORT
+ }
+ 
+ win32 {

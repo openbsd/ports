@@ -1,0 +1,12 @@
+$OpenBSD: patch-qt4_py,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
+--- qt4.py.orig	Fri Jan  1 02:03:00 2010
++++ qt4.py	Fri Jan  1 02:04:29 2010
+@@ -444,7 +444,7 @@ def enable_modules(self, modules, debug=False, crossco
+ 		try : self.AppendUnique(CPPDEFINES=moduleDefines[module])
+ 		except: pass
+ 	debugSuffix = ''
+-	if sys.platform == "linux2" and not crosscompiling :
++	if sys.platform == "linux2" or sys.platform == "openbsd4" and not crosscompiling :
+ 		if debug : debugSuffix = '_debug'
+ 		for module in modules :
+ 			if module not in pclessModules : continue
