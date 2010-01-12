@@ -1,0 +1,2 @@
+Test::TempDir provides temporary directory creation with testing in
+mind.
