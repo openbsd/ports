@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_MainPter_cxx,v 1.1 2010/01/12 21:45:20 jasper Exp $
+
+MainPter now stores the current page's number when the 
+document is reloaded and moves to the same page once
+the document is displayed. -r342
+
+--- src/MainPter.cxx.orig	Tue Jan 12 22:12:27 2010
++++ src/MainPter.cxx	Tue Jan 12 22:14:49 2010
+@@ -54,6 +54,7 @@ MainPter::MainPter (IDocument *document)
+     m_PagePter = NULL;
+     m_FindPter = NULL;
+     m_PasswordTries = 3;
++    m_ReloadPage = 1;
+ #if defined (DEBUG)
+     G_LOCK (fileLoaded);
+     fileLoaded = FALSE;
+@@ -534,6 +535,7 @@ MainPter::reloadActivated ()
+     g_assert ( m_Document->isLoaded () && 
+             "Tried to reload a yet to load document.");
+     // Reload
++    m_ReloadPage = m_Document->getCurrentPageNum();
+     setOpenState (m_Document->getFileName (), TRUE);
+     m_Document->reload ();
+ }
+@@ -928,6 +930,7 @@ void
+ MainPter::notifyReload ()
+ {
+     setInitialState ();
++    m_Document->goToPage(m_ReloadPage);
+ #if defined (DEBUG)
+     G_LOCK (fileLoaded);
+     fileLoaded = TRUE;

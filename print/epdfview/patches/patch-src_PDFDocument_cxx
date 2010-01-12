@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_PDFDocument_cxx,v 1.1 2010/01/12 21:45:20 jasper Exp $
+
+Fixes error handling, bogus encrypted files, r339.
+
+--- src/PDFDocument.cxx.orig	Sat Feb 28 16:00:35 2009
++++ src/PDFDocument.cxx	Tue Dec 29 23:00:29 2009
+@@ -246,23 +246,25 @@ PDFDocument::loadFile (const gchar *filename, const gc
+     // Check if the document couldn't be opened successfully and why.
+     if ( NULL == newDocument )
+     {
+-        // Poppler's glib wrapper passes the Poppler error code unless the
+-        // error is that the file is encrypted. We want to set our own
+-        // error code in this case.
+         DocumentError errorCode = DocumentErrorNone;
+-        if ( POPPLER_ERROR == loadError->domain )
++        switch ( loadError->code )
+         {
+-            errorCode = DocumentErrorEncrypted;
+-        }
+-        else
+-        {
+-            // OK, the glib's wrapper don't pass the error code directly
+-            // from Poppler. Instead returns G_FILE_ERROR_FAILED and a
+-            // non translated string.
+-            // Maybe I'm wrong (very probable) but that's a wrong way.
+-            // So I'm reading the error code from the error string...
+-            sscanf (loadError->message, "Failed to load document (error %d)",
+-                    (gint *)&errorCode);
++            case POPPLER_ERROR_OPEN_FILE:
++            case POPPLER_ERROR_INVALID:
++                errorCode = DocumentErrorOpenFile;
++                break;
++
++            case POPPLER_ERROR_BAD_CATALOG:
++                errorCode = DocumentErrorBadCatalog;
++                break;
++
++            case POPPLER_ERROR_DAMAGED:
++                errorCode = DocumentErrorDamaged;
++                break;
++
++            case POPPLER_ERROR_ENCRYPTED:
++                errorCode = DocumentErrorEncrypted;
++                break;
+         }
+         g_error_free (loadError);
+         // Get our error message.

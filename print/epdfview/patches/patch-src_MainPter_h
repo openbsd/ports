@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_MainPter_h,v 1.1 2010/01/12 21:45:20 jasper Exp $
+
+MainPter now stores the current page's number when the 
+document is reloaded and moves to the same page once
+the document is displayed. -r342
+
+--- src/MainPter.h.orig	Tue Jan 12 22:12:36 2010
++++ src/MainPter.h	Tue Jan 12 22:14:04 2010
+@@ -102,6 +102,8 @@ namespace ePDFView
+             PagePter *m_PagePter;
+             /// The number of times the password has been tried for a document.
+             gint m_PasswordTries;
++            /// The page to move once the document is reloaded.
++            gint m_ReloadPage;
+             /// The main view.
+             IMainView *m_View;
+ 

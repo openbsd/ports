@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_IDocument_cxx,v 1.1 2010/01/12 21:45:20 jasper Exp $
+
+Better error message for failed opens, r338.
+
+--- src/IDocument.cxx.orig	Wed Dec 30 00:38:35 2009
++++ src/IDocument.cxx	Wed Dec 30 00:39:05 2009
+@@ -82,7 +82,7 @@ IDocument::getErrorMessage (DocumentError errorCode)
+             errorMessage = g_strdup (_("No error."));
+             break;
+         case DocumentErrorOpenFile:
+-            errorMessage = g_strdup (_("File not found."));
++            errorMessage = g_strdup (_("Could not open file."));
+             break;
+         case DocumentErrorBadCatalog:
+             errorMessage = g_strdup (_("Couldn't read the page catalog."));
