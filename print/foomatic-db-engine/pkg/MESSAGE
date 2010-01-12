@@ -8,4 +8,4 @@ $ foomatic-ppdfile -p 'Epson-Stylus_C64' -d 'gutenprint-ijs.5.2' > C64.ppd
 C64.ppd can then be used with CUPS or with lpd(8) and foomatic-rip(1) as
 the input filter.
 Drivers availability depends on what db you have installed on your system
-(i.e. foomatic-db, foomatic-db-gutenprint, foomatic-db-hpijs...).
+(i.e. foomatic-db, foomatic-db-gutenprint...).
