@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/01/11 15:04:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/01/12 08:40:37 ajacoutot Exp $
 
 COMMENT =		canvas API for X
 DISTNAME =		evas-0.9.9.061
-PKGNAME =		${DISTNAME}v0
+PKGNAME =		${DISTNAME}v0p0
 
 SHARED_LIBS +=	evas                 0.0 \
 		evas-ver-svn-02	     0.0
@@ -18,7 +18,7 @@ USE_X11 =		Yes
 USE_LIBTOOL =		Yes
 
 WANTLIB += GL GLU X11 Xau Xdmcp Xext Xrender crypto eina expat
-WANTLIB += fontconfig freetype jpeg m pixman-1 pthread pthread-stubs
+WANTLIB += fontconfig freetype jpeg m pixman-1 pthread-stubs
 WANTLIB += ssl xcb xcb-image xcb-render xcb-shm z
 
 LIB_DEPENDS =		png::graphics/png \
@@ -31,6 +31,9 @@ LIB_DEPENDS =		png::graphics/png \
 CONFIGURE_ARGS +=	--disable-fribidi \
 			--disable-image-loader-svg \
 			--disable-image-loader-edb \
+			--disable-cpu-sse \
+			--disable-cpu-sse2 \
+			--disable-cpu-altivec \
 			--enable-image-loader-jpeg \
 			--enable-image-loader-png \
 			--enable-image-loader-gif \

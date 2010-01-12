@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2010/01/11 15:49:25 jasper Exp $
---- configure.orig	Mon Jan 11 16:27:05 2010
-+++ configure	Mon Jan 11 16:27:31 2010
+$OpenBSD: patch-configure,v 1.3 2010/01/12 08:40:38 ajacoutot Exp $
+--- configure.orig	Mon Jun 15 06:39:54 2009
++++ configure	Mon Jan 11 22:10:55 2010
 @@ -1962,8 +1962,8 @@ cat <<_ASUNAME
  
  hostname = `(hostname || uname -n) 2>/dev/null | sed 1q`
@@ -21,3 +21,64 @@ $OpenBSD: patch-configure,v 1.2 2010/01/11 15:49:25 jasper Exp $
        ;;
  esac
  
+@@ -24236,7 +24236,7 @@ if test "x${have_dep}" = "xyes" ; then
+       x_libs="${x_libs:--L${x_libraries:-$x_dir/lib}} -lX11 -lXext"
+    fi
+    evas_engine_gl_x11_cflags="-I/usr/include ${x_cflags}"
+-   evas_engine_gl_x11_libs="${x_libs} -lGL -lGLU -lpthread"
++   evas_engine_gl_x11_libs="${x_libs} -lGL -lGLU -pthread"
+ fi
+ 
+ 
+@@ -28161,7 +28161,7 @@ _ACEOF
+ fi
+ 
+ if test "x$have_evas_engine_gl_x11" = "xyes" ; then
+-   evas_engine_gl_common_libs="-lGL -lGLU -lpthread"
++   evas_engine_gl_common_libs="-lGL -lGLU -pthread"
+ fi
+ 
+ if test "x$have_evas_engine_gl_glew" = "xyes" ; then
+@@ -30560,13 +30560,13 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+ #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
+ _ACEOF
+ 
+-        { echo "$as_me:$LINENO: checking for pthread_attr_setaffinity_np in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_attr_setaffinity_np in -lpthread... $ECHO_C" >&6; }
++        { echo "$as_me:$LINENO: checking for pthread_attr_setaffinity_np in -pthread" >&5
++echo $ECHO_N "checking for pthread_attr_setaffinity_np in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_attr_setaffinity_np+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -30623,13 +30623,13 @@ fi
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_attr_setaffinity_np" >&6; }
+ if test $ac_cv_lib_pthread_pthread_attr_setaffinity_np = yes; then
+ 
+-            { echo "$as_me:$LINENO: checking for pthread_barrier_wait in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_barrier_wait in -lpthread... $ECHO_C" >&6; }
++            { echo "$as_me:$LINENO: checking for pthread_barrier_wait in -pthread" >&5
++echo $ECHO_N "checking for pthread_barrier_wait in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_barrier_wait+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -30861,7 +30861,7 @@ if test "x$need_pthreads" = "xyes"; then
+   { echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6; }
+   pthread_cflags=""
+-  pthread_libs="-lpthread"
++  pthread_libs="-pthread"
+ else
+   { echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6; }
