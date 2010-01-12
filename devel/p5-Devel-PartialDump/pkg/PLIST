@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 09:41:53 jasper Exp $
+${P5SITE}/Devel/
+${P5SITE}/Devel/PartialDump.pm
+@man man/man3p/Devel::PartialDump.3p
