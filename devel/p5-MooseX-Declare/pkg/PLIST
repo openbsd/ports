@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 09:44:05 jasper Exp $
+${P5SITE}/MooseX/Declare/
+${P5SITE}/MooseX/Declare.pm
+${P5SITE}/MooseX/Declare/Context/
+${P5SITE}/MooseX/Declare/Context.pm
+${P5SITE}/MooseX/Declare/Context/Namespaced.pm
+${P5SITE}/MooseX/Declare/Context/Parameterized.pm
+${P5SITE}/MooseX/Declare/Context/WithOptions.pm
+${P5SITE}/MooseX/Declare/StackItem.pm
+${P5SITE}/MooseX/Declare/Syntax/
+${P5SITE}/MooseX/Declare/Syntax/EmptyBlockIfMissing.pm
+${P5SITE}/MooseX/Declare/Syntax/Extending.pm
+${P5SITE}/MooseX/Declare/Syntax/InnerSyntaxHandling.pm
+${P5SITE}/MooseX/Declare/Syntax/Keyword/
+${P5SITE}/MooseX/Declare/Syntax/Keyword/Class.pm
+${P5SITE}/MooseX/Declare/Syntax/Keyword/Clean.pm
+${P5SITE}/MooseX/Declare/Syntax/Keyword/Method.pm
+${P5SITE}/MooseX/Declare/Syntax/Keyword/MethodModifier.pm
+${P5SITE}/MooseX/Declare/Syntax/Keyword/Namespace.pm
+${P5SITE}/MooseX/Declare/Syntax/Keyword/Role.pm
+${P5SITE}/MooseX/Declare/Syntax/Keyword/With.pm
+${P5SITE}/MooseX/Declare/Syntax/KeywordHandling.pm
+${P5SITE}/MooseX/Declare/Syntax/MethodDeclaration/
+${P5SITE}/MooseX/Declare/Syntax/MethodDeclaration.pm
+${P5SITE}/MooseX/Declare/Syntax/MethodDeclaration/Parameterized.pm
+${P5SITE}/MooseX/Declare/Syntax/MooseSetup.pm
+${P5SITE}/MooseX/Declare/Syntax/NamespaceHandling.pm
+${P5SITE}/MooseX/Declare/Syntax/OptionHandling.pm
+${P5SITE}/MooseX/Declare/Syntax/RoleApplication.pm
+${P5SITE}/MooseX/Declare/Util.pm
+@man man/man3p/MooseX::Declare.3p
+@man man/man3p/MooseX::Declare::Context.3p
+@man man/man3p/MooseX::Declare::Context::Namespaced.3p
+@man man/man3p/MooseX::Declare::Context::Parameterized.3p
+@man man/man3p/MooseX::Declare::Syntax::EmptyBlockIfMissing.3p
+@man man/man3p/MooseX::Declare::Syntax::Extending.3p
+@man man/man3p/MooseX::Declare::Syntax::InnerSyntaxHandling.3p
+@man man/man3p/MooseX::Declare::Syntax::Keyword::Class.3p
+@man man/man3p/MooseX::Declare::Syntax::Keyword::Clean.3p
+@man man/man3p/MooseX::Declare::Syntax::Keyword::Method.3p
+@man man/man3p/MooseX::Declare::Syntax::Keyword::MethodModifier.3p
+@man man/man3p/MooseX::Declare::Syntax::Keyword::Namespace.3p
+@man man/man3p/MooseX::Declare::Syntax::Keyword::Role.3p
+@man man/man3p/MooseX::Declare::Syntax::Keyword::With.3p
+@man man/man3p/MooseX::Declare::Syntax::KeywordHandling.3p
+@man man/man3p/MooseX::Declare::Syntax::MethodDeclaration.3p
+@man man/man3p/MooseX::Declare::Syntax::MooseSetup.3p
+@man man/man3p/MooseX::Declare::Syntax::NamespaceHandling.3p
+@man man/man3p/MooseX::Declare::Syntax::OptionHandling.3p
+@man man/man3p/MooseX::Declare::Syntax::RoleApplication.3p
+@man man/man3p/MooseX::Declare::Util.3p
