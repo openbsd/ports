@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.769 2010/01/12 09:48:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.770 2010/01/12 19:27:08 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -473,6 +473,9 @@
      SUBDIR += p5-LockFile-Simple
      SUBDIR += p5-Log-Agent
      SUBDIR += p5-Log-Dispatch
+     SUBDIR += p5-Log-Dispatch-Binlog
+     SUBDIR += p5-Log-Dispatch-Config
+     SUBDIR += p5-Log-Dispatch-Config-TestLog
      SUBDIR += p5-Log-Dispatch-FileRotate
      SUBDIR += p5-Log-Log4perl
      SUBDIR += p5-Log-Trace
@@ -492,6 +495,7 @@
      SUBDIR += p5-MooseX-Declare
      SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
      SUBDIR += p5-MooseX-LazyRequire
+     SUBDIR += p5-MooseX-LogDispatch
      SUBDIR += p5-MooseX-Log-Log4perl
      SUBDIR += p5-MooseX-Meta-TypeConstraint-ForceCoercion
      SUBDIR += p5-MooseX-MethodAttributes
@@ -503,6 +507,7 @@
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
      SUBDIR += p5-MooseX-Traits
      SUBDIR += p5-MooseX-Types
+     SUBDIR += p5-MooseX-Types-Path-Class
      SUBDIR += p5-MooseX-Types-Structured
      SUBDIR += p5-Mouse
      SUBDIR += p5-Net-Server
@@ -519,6 +524,7 @@
      SUBDIR += p5-POE-Component-IKC
      SUBDIR += p5-POE-Component-Pluggable
      SUBDIR += p5-POE-Component-PubSub
+     SUBDIR += p5-POE-Component-Supervisor
      SUBDIR += p5-POE-Loop-Event
      SUBDIR += p5-POE-Loop-Tk
      SUBDIR += p5-POE-Test-Loops
@@ -637,6 +643,7 @@
      SUBDIR += p5-Test-Spelling
      SUBDIR += p5-Test-Strict
      SUBDIR += p5-Test-Taint
+     SUBDIR += p5-Test-TempDir
      SUBDIR += p5-Test-Tester
      SUBDIR += p5-Test-URI
      SUBDIR += p5-Test-Unit
