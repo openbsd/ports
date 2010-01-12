@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 19:19:48 jasper Exp $
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/LogDispatch/
+${P5SITE}/MooseX/LogDispatch.pm
+${P5SITE}/MooseX/LogDispatch/ConfigMaker.pm
+${P5SITE}/MooseX/LogDispatch/Interface.pm
+${P5SITE}/MooseX/LogDispatch/Levels.pm
+${P5SITE}/MooseX/LogDispatch/Logger.pm
+@man man/man3p/MooseX::LogDispatch.3p
+@man man/man3p/MooseX::LogDispatch::Levels.3p
