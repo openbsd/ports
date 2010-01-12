@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.74 2010/01/12 11:19:06 jakemsr Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.13
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p12
+PKGNAME=	${DISTNAME:L}p13
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -50,11 +50,9 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-arts \
 		 --disable-esd \
 		 --disable-oss \
-		 --disable-ltdl \
 		 --disable-pulseaudio \
 		 --enable-nasm \
-		 --enable-pthread-sem \
-		 --enable-sunaudio
+		 --enable-pthread-sem
 
 .if ${FLAVOR:L:Maa}
 LIB_DEPENDS+=	aa::graphics/aalib

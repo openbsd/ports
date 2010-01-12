@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.20 2009/01/24 10:56:11 jakemsr Exp $
+$OpenBSD: patch-configure,v 1.21 2010/01/12 11:19:06 jakemsr Exp $
 --- configure.orig	Sun Dec 30 21:09:39 2007
-+++ configure	Mon Sep 22 20:13:46 2008
++++ configure	Tue Jan 12 02:48:55 2010
 @@ -25411,6 +25411,20 @@ _ACEOF
      fi
  }
@@ -40,16 +40,12 @@ $OpenBSD: patch-configure,v 1.20 2009/01/24 10:56:11 jakemsr Exp $
          CheckPulseAudio
          CheckNAS
          CheckX11
-@@ -33612,10 +33624,10 @@ _ACEOF
-             ;;
-             netbsd|openbsd)
-                 cat >>confdefs.h <<\_ACEOF
--#define SDL_AUDIO_DRIVER_BSD 1
-+#define SDL_AUDIO_DRIVER_SUNAUDIO 1
- _ACEOF
- 
--                SOURCES="$SOURCES $srcdir/src/audio/bsd/*.c"
-+                SOURCES="$SOURCES $srcdir/src/audio/sun/*.c"
+@@ -33610,7 +33622,7 @@ _ACEOF
+                 SOURCES="$SOURCES $srcdir/src/audio/sun/*.c"
                  have_audio=yes
              ;;
-             aix)
+-            netbsd|openbsd)
++            netbsd)
+                 cat >>confdefs.h <<\_ACEOF
+ #define SDL_AUDIO_DRIVER_BSD 1
+ _ACEOF
