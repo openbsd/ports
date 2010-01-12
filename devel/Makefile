@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.767 2010/01/12 07:55:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.768 2010/01/12 09:14:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -492,7 +492,7 @@
      SUBDIR += p5-MooseX-MethodAttributes
      SUBDIR += p5-MooseX-MultiInitArg
      SUBDIR += p5-MooseX-Params-Validate
-     SUBDIR += p5-MooseX-POE
+     #SUBDIR += p5-MooseX-POE
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
      SUBDIR += p5-MooseX-Types
