@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/18 19:07:05 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2010/01/12 19:08:23 ajacoutot Exp $
 
 COMMENT=		RDF Parser Toolkit for Redland
 DISTNAME=		raptor-1.4.18
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		textproc
 
-SHARED_LIBS=		raptor	2.0 
+SHARED_LIBS=		raptor	2.0 # .2.0
 
 HOMEPAGE=		http://librdf.org/
 
@@ -16,7 +17,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto iconv idn intl m ssl z
+WANTLIB=		c crypto idn m ssl z
+
+MODULES=		devel/gettext
+
+USE_LIBTOOL=		Yes
 
 LIB_DEPENDS=		curl.>=12::net/curl \
 			xml2.>=7::textproc/libxml \
