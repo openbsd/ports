@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/01/12 20:11:14 avsm Exp $
 
 COMMENT=	report network interface statistics
 
-DISTNAME=	tcpstat-1.4
+DISTNAME=	tcpstat-1.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.frenchfries.net/paul/tcpstat/
 
 HOMEPAGE=	http://www.frenchfries.net/paul/tcpstat/
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+MAINTAINER=	Mark Lumsden <mark@cyodesigns.com>
 
 # BSD license
 PERMIT_PACKAGE_CDROM=	Yes
