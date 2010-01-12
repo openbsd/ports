@@ -1,0 +1,5 @@
+The two classes provide in this distribution provide Storable based
+binary logging for Log::Dispatch.
+
+This is useful for testing your log output, or for delegating log output
+to a listener on a socket without losing high level information.

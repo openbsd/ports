@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 19:17:38 jasper Exp $
+${P5SITE}/Log/Dispatch/Binlog/
+${P5SITE}/Log/Dispatch/Binlog.pm
+${P5SITE}/Log/Dispatch/Binlog/Base.pm
+${P5SITE}/Log/Dispatch/Binlog/File.pm
+${P5SITE}/Log/Dispatch/Binlog/Handle.pm
+@man man/man3p/Log::Dispatch::Binlog.3p
+@man man/man3p/Log::Dispatch::Binlog::File.3p
+@man man/man3p/Log::Dispatch::Binlog::Handle.3p
