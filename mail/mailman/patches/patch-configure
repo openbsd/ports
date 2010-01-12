@@ -1,11 +1,12 @@
-$OpenBSD: patch-configure,v 1.8 2009/05/02 09:56:44 djm Exp $
---- configure.orig	Tue Feb 24 08:23:35 2009
-+++ configure	Sat Apr 25 12:02:36 2009
-@@ -3178,60 +3178,7 @@ fi
+$OpenBSD: patch-configure,v 1.9 2010/01/12 19:06:06 okan Exp $
+--- configure.orig	Mon Feb 23 16:23:35 2009
++++ configure	Mon Jan  4 12:01:38 2010
+@@ -3178,61 +3178,8 @@ fi
  USERNAME=$with_username
  { echo "$as_me:$LINENO: result: $USERNAME" >&5
  echo "${ECHO_T}$USERNAME" >&6; }
--
++MAILMAN_USER=$with_username
+ 
 -# User `mailman' must exist
 -
 -{ echo "$as_me:$LINENO: checking for user name \"$USERNAME\"" >&5
@@ -59,7 +60,70 @@ $OpenBSD: patch-configure,v 1.8 2009/05/02 09:56:44 djm Exp $
 -{ echo "$as_me:$LINENO: result: okay" >&5
 -echo "${ECHO_T}okay" >&6; }
 -
-+MAILMAN_USER=$with_username
- 
+-
  # Check for some other gid to use than `mailman'
  { echo "$as_me:$LINENO: checking for --with-groupname" >&5
+ echo $ECHO_N "checking for --with-groupname... $ECHO_C" >&6; }
+@@ -3250,61 +3197,7 @@ fi
+ GROUPNAME=$with_groupname
+ { echo "$as_me:$LINENO: result: $GROUPNAME" >&5
+ echo "${ECHO_T}$GROUPNAME" >&6; }
+-
+-
+-# Target group must exist
+-
+-{ echo "$as_me:$LINENO: checking for group name \"$GROUPNAME\"" >&5
+-echo $ECHO_N "checking for group name \"$GROUPNAME\"... $ECHO_C" >&6; }
+-
+-# MAILMAN_GROUP == variable name
+-# $GROUPNAME == user id to check for
+-
+-
+-if test -z "$MAILMAN_GROUP"
+-then
+-    cat > conftest.py <<EOF
+-import grp
+-gid = ''
+-for group in "$GROUPNAME".split():
+-    try:
+-        try:
+-            gname = grp.getgrgid(int(group))[0]
+-            break
+-        except ValueError:
+-            gname = grp.getgrnam(group)[0]
+-            break
+-    except KeyError:
+-        gname = ''
+-fp = open("conftest.out", "w")
+-fp.write("%s\n" % gname)
+-fp.close()
+-EOF
+-    $PYTHON conftest.py
+-    MAILMAN_GROUP=`cat conftest.out`
+-fi
+-
+-rm -f conftest.out conftest.py
+-if test -z "$MAILMAN_GROUP"
+-then
+-  if test "$with_permcheck" = "yes"
+-  then
+-    { { echo "$as_me:$LINENO: error:
+-***** No \"$GROUPNAME\" group found!
+-***** Your system must have a \"$GROUPNAME\" group defined
+-***** (usually in your /etc/group file).  Please see the INSTALL
+-***** file for details." >&5
+-echo "$as_me: error:
+-***** No \"$GROUPNAME\" group found!
+-***** Your system must have a \"$GROUPNAME\" group defined
+-***** (usually in your /etc/group file).  Please see the INSTALL
+-***** file for details." >&2;}
+-   { (exit 1); exit 1; }; }
+-  fi
+-fi
+-{ echo "$as_me:$LINENO: result: okay" >&5
+-echo "${ECHO_T}okay" >&6; }
+-
++MAILMAN_GROUP=$with_groupname
+ 
+ { echo "$as_me:$LINENO: checking permissions on $prefixcheck" >&5
+ echo $ECHO_N "checking permissions on $prefixcheck... $ECHO_C" >&6; }
