@@ -1,4 +1,4 @@
-$OpenBSD: patch-create_data_data_sql,v 1.1 2009/04/23 15:38:11 jasper Exp $
+$OpenBSD: patch-create_data_data_sql,v 1.2 2010/01/12 09:04:32 ajacoutot Exp $
 --- create/data/data.sql.orig	Wed Apr 22 23:02:19 2009
 +++ create/data/data.sql	Wed Apr 22 23:03:03 2009
 @@ -27,8 +27,8 @@ INSERT INTO config VALUES (1,365,365,600,'1-5,00:00-24
@@ -17,7 +17,7 @@ $OpenBSD: patch-create_data_data_sql,v 1.1 2009/04/23 15:38:11 jasper Exp $
  INSERT INTO media_type VALUES (1,0,'Email','mail.company.com','company.com','zabbix@company.com','','','','');
  INSERT INTO media_type VALUES (2,3,'Jabber','','','','','','jabber@company.com','zabbix');
 -INSERT INTO media_type VALUES (3,2,'SMS','','','','','/dev/ttyS0','','');
-+INSERT INTO media_type VALUES (3,2,'SMS','','','','','/dev/ttyU0','','');
++INSERT INTO media_type VALUES (3,2,'SMS','','','','','/dev/tty00','','');
  
  --
  -- Dumping data for table hosts
