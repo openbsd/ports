@@ -1,0 +1,2 @@
+This module will load Log::Dispatch::Config and set things up
+for a test run.
