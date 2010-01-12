@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_modules_temperature_e_mod_main_h,v 1.1 2010/01/11 14:59:25 jasper Exp $
+$OpenBSD: patch-src_modules_temperature_e_mod_main_h,v 1.2 2010/01/12 08:42:13 ajacoutot Exp $
 --- src/modules/temperature/e_mod_main.h.orig	Sun Jul 26 17:04:16 2009
 +++ src/modules/temperature/e_mod_main.h	Sun Jul 26 19:00:37 2009
 @@ -17,6 +17,7 @@ typedef enum _Sensor_Type
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_modules_temperature_e_mod_main_h,v 1.1 2010/01/11 14:59:25 j
  //   Ecore_Poller    *temperature_check_poller;
     unsigned char have_temp;
 -#ifdef __FreeBSD__
-+#if defined (__FreeBSD__) || defined (__NetBSD__)
++#if defined (__FreeBSD__) || defined (__OpenBSD__)
     int mib[5];
  #endif
  };

@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure,v 1.1 2010/01/11 14:59:25 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2010/01/12 08:42:13 ajacoutot Exp $
+
+Make sure we don't link against static libintl.a
+
 --- configure.orig	Mon Jun 15 07:13:54 2009
-+++ configure	Wed Aug  5 10:50:41 2009
++++ configure	Mon Jan 11 20:58:30 2010
 @@ -13168,7 +13168,7 @@ fi
  
  
@@ -10,17 +13,18 @@ $OpenBSD: patch-configure,v 1.1 2010/01/11 14:59:25 jasper Exp $
  
  
  cat >>confdefs.h <<_ACEOF
-@@ -26342,10 +26342,10 @@ MSGFMT!$MSGFMT$ac_delim
- GMSGFMT!$GMSGFMT$ac_delim
- XGETTEXT!$XGETTEXT$ac_delim
- MSGMERGE!$MSGMERGE$ac_delim
--LIBICONV!$LIBICONV$ac_delim
-+LIBICONV!$LTLIBICONV$ac_delim
- LTLIBICONV!$LTLIBICONV$ac_delim
--INTLLIBS!$INTLLIBS$ac_delim
--LIBINTL!$LIBINTL$ac_delim
-+INTLLIBS!$LTLIBINTL$ac_delim
-+LIBINTL!$LTLIBINTL$ac_delim
- LTLIBINTL!$LTLIBINTL$ac_delim
- POSUB!$POSUB$ac_delim
- dlopen_libs!$dlopen_libs$ac_delim
+@@ -15762,12 +15762,12 @@ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
++extern int libintl_nl_domain_bindings;
+ int
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
++return (int) gettext ("") + _nl_msg_cat_cntr + libintl_nl_domain_bindings
+   ;
+   return 0;
+ }

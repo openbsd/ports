@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2010/01/11 14:59:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/01/12 08:42:13 ajacoutot Exp $
 
 COMMENT =		the enlightened window manager
 DISTNAME =		enlightenment-0.16.999.061
-PKGNAME =		${DISTNAME}v0
+PKGNAME =		${DISTNAME}v0p0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -33,7 +33,7 @@ RUN_DEPENDS =		::devel/desktop-file-utils
 #		--disable-cpufreq --disable-mixer --disable-conf-theme \
 #		--disable-conf-icon-theme
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lcrypto -lpthread -liconv -lintl"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lcrypto -pthread -liconv -lintl"
 
 USE_LIBTOOL =		Yes
 
