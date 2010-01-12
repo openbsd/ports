@@ -1,15 +1,64 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/04/02 21:40:49 pvalchev Exp $
-bin/gfind
-bin/glocate
+@comment $OpenBSD: PLIST,v 1.6 2010/01/12 08:46:49 sthen Exp $
+@bin bin/gfind
+@bin bin/glocate
+@bin bin/goldfind
 bin/gupdatedb
-bin/gxargs
+@bin bin/gxargs
+@info info/find-maint.info
 @info info/find.info
-libexec/gbigram
-libexec/gcode
-libexec/gfrcode
+@comment lib/charset.alias
+@bin libexec/gbigram
+@bin libexec/gcode
+@bin libexec/gfrcode
 @man man/man1/gfind.1
 @man man/man1/glocate.1
 @man man/man1/gupdatedb.1
 @man man/man1/gxargs.1
 @man man/man5/glocatedb.5
-var/
+share/locale/be/LC_MESSAGES/findutils.mo
+share/locale/bg/LC_MESSAGES/findutils.mo
+share/locale/ca/LC_MESSAGES/findutils.mo
+share/locale/cs/LC_MESSAGES/findutils.mo
+share/locale/da/LC_MESSAGES/findutils.mo
+share/locale/de/LC_MESSAGES/findutils.mo
+share/locale/el/LC_MESSAGES/findutils.mo
+share/locale/eo/LC_MESSAGES/findutils.mo
+share/locale/es/LC_MESSAGES/findutils.mo
+share/locale/et/LC_MESSAGES/findutils.mo
+share/locale/fi/LC_MESSAGES/findutils.mo
+share/locale/fr/LC_MESSAGES/findutils.mo
+share/locale/ga/LC_MESSAGES/findutils.mo
+share/locale/gl/LC_MESSAGES/findutils.mo
+share/locale/hr/LC_MESSAGES/findutils.mo
+share/locale/hu/LC_MESSAGES/findutils.mo
+share/locale/id/LC_MESSAGES/findutils.mo
+share/locale/it/LC_MESSAGES/findutils.mo
+share/locale/ja/LC_MESSAGES/findutils.mo
+share/locale/ko/LC_MESSAGES/findutils.mo
+share/locale/lg/
+share/locale/lg/LC_MESSAGES/
+share/locale/lg/LC_MESSAGES/findutils.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/findutils.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/findutils.mo
+share/locale/nl/LC_MESSAGES/findutils.mo
+share/locale/pl/LC_MESSAGES/findutils.mo
+share/locale/pt/LC_MESSAGES/findutils.mo
+share/locale/pt_BR/LC_MESSAGES/findutils.mo
+share/locale/ro/LC_MESSAGES/findutils.mo
+share/locale/ru/LC_MESSAGES/findutils.mo
+share/locale/rw/
+share/locale/rw/LC_MESSAGES/
+share/locale/rw/LC_MESSAGES/findutils.mo
+share/locale/sk/LC_MESSAGES/findutils.mo
+share/locale/sl/LC_MESSAGES/findutils.mo
+share/locale/sr/LC_MESSAGES/findutils.mo
+share/locale/sv/LC_MESSAGES/findutils.mo
+share/locale/tr/LC_MESSAGES/findutils.mo
+share/locale/uk/LC_MESSAGES/findutils.mo
+share/locale/vi/LC_MESSAGES/findutils.mo
+share/locale/zh_CN/LC_MESSAGES/findutils.mo
+share/locale/zh_TW/LC_MESSAGES/findutils.mo
