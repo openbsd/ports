@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.766 2010/01/11 23:11:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.767 2010/01/12 07:55:54 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -251,6 +251,7 @@
      SUBDIR += p5-B-Deobfuscate
      SUBDIR += p5-B-Graph
      SUBDIR += p5-B-Hooks-EndOfScope
+     SUBDIR += p5-B-Hooks-OP-Check
      SUBDIR += p5-B-Keywords
      SUBDIR += p5-BFD
      SUBDIR += p5-BSD-Resource
@@ -367,6 +368,7 @@
      SUBDIR += p5-Devel-Caller
      SUBDIR += p5-Devel-Cover
      SUBDIR += p5-Devel-Cycle
+     SUBDIR += p5-Devel-Declare
      SUBDIR += p5-Devel-FastProf
      SUBDIR += p5-Devel-GlobalDestruction
      SUBDIR += p5-Devel-Leak
@@ -490,6 +492,7 @@
      SUBDIR += p5-MooseX-MethodAttributes
      SUBDIR += p5-MooseX-MultiInitArg
      SUBDIR += p5-MooseX-Params-Validate
+     SUBDIR += p5-MooseX-POE
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
      SUBDIR += p5-MooseX-Types
