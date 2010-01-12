@@ -1,0 +1,4 @@
+A structured type constraint is a standard container Moose type
+constraint, such as an ArrayRef or HashRef, which has been enhanced to
+allow you to explicitly name all the allowed type constraints inside the
+structure.

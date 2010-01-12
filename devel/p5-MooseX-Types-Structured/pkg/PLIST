@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 09:42:20 jasper Exp $
+${P5SITE}/MooseX/Meta/
+${P5SITE}/MooseX/Meta/TypeCoercion/
+${P5SITE}/MooseX/Meta/TypeCoercion/Structured.pm
+${P5SITE}/MooseX/Meta/TypeConstraint/
+${P5SITE}/MooseX/Meta/TypeConstraint/Structured.pm
+${P5SITE}/MooseX/Types/Structured/
+${P5SITE}/MooseX/Types/Structured.pm
+${P5SITE}/MooseX/Types/Structured/OverflowHandler.pm
+@man man/man3p/MooseX::Meta::TypeCoercion::Structured.3p
+@man man/man3p/MooseX::Meta::TypeConstraint::Structured.3p
+@man man/man3p/MooseX::Types::Structured.3p
