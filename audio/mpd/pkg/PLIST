@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/15 08:40:49 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/01/12 18:58:26 wcmaier Exp $
 @newgroup _mpd:560
 @newuser _mpd:560:560:daemon:Music Player Daemon:/var/empty:/sbin/nologin
 @man man/man1/mpd.1
 @man man/man5/mpd.conf.5
 @bin sbin/mpd
 share/doc/mpd/
-share/doc/mpd/COMMANDS
+share/doc/mpd/AUTHORS
+share/doc/mpd/COPYING
+share/doc/mpd/NEWS
 share/doc/mpd/README
 share/doc/mpd/UPGRADING
 share/examples/mpd/

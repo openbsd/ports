@@ -1,78 +1,94 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.5 2008/07/15 08:40:49 bernd Exp $
---- doc/mpdconf.example.orig	Mon Jun 16 04:48:07 2008
-+++ doc/mpdconf.example	Wed Jul  9 12:26:44 2008
-@@ -2,11 +2,11 @@
- # See the mpd.conf man page for a more detailed description of each parameter.
- 
- ######################## REQUIRED PATHS ########################
--music_directory                 "~/music"
--playlist_directory              "~/.mpd/playlists"
--db_file                         "~/.mpd/mpd.db"
--log_file                        "~/.mpd/mpd.log"
--error_file                      "~/.mpd/mpd.error"
-+music_directory                 "/please-configure-your-music_directory"
-+playlist_directory              "/var/spool/mpd/playlists"
-+db_file                         "/var/spool/mpd/mpd.db"
-+log_file                        "/var/log/mpd/mpd.log"
-+error_file                      "/var/log/mpd/mpd.error"
- ################################################################
- 
- 
-@@ -15,13 +15,13 @@ error_file                      "~/.mpd/mpd.error"
- # If you wish to use mpd --kill to stop MPD, then you must
- # specify a file here in which to store MPD's process ID.
+$OpenBSD: patch-doc_mpdconf_example,v 1.6 2010/01/12 18:58:26 wcmaier Exp $
+--- doc/mpdconf.example.orig	Wed Nov 18 20:47:54 2009
++++ doc/mpdconf.example	Thu Dec 17 16:13:38 2009
+@@ -10,14 +10,14 @@
+ # be disabled and audio files will only be accepted over ipc socket (using
+ # file:// protocol) or streaming files over an accepted protocol.
  #
--#pid_file                        "~/.mpd/mpd.pid"
+-#music_directory		"~/music"
++music_directory                 "/please-configure-your-music_directory"
+ #
+ # This setting sets the MPD internal playlist directory. The purpose of this
+ # directory is storage for playlists created by MPD. The server will use 
+ # playlist files not created by the server but only if they are in the MPD
+ # format. This setting defaults to playlist saving being disabled.
+ #
+-#playlist_directory		"~/.mpd/playlists"
++playlist_directory              "/var/spool/mpd/playlists"
+ #
+ # This setting sets the location of the MPD database. This file is used to
+ # load the database at server start up and store the database while the 
+@@ -25,7 +25,7 @@
+ # MPD to accept files over ipc socket (using file:// protocol) or streaming
+ # files over an accepted protocol.
+ #
+-#db_file			"~/.mpd/database"
++db_file                         "/var/spool/mpd/mpd.db"
+ # 
+ # These settings are the locations for the daemon log files for the daemon.
+ # These logs are great for troubleshooting, depending on your log_level
+@@ -34,20 +34,20 @@
+ # The special value "syslog" makes MPD use the local syslog daemon. This
+ # setting defaults to logging to syslog, otherwise logging is disabled.
+ #
+-#log_file			"~/.mpd/log"
++log_file                        "/var/log/mpd/mpd.log"
+ #
+ # This setting sets the location of the file which stores the process ID
+ # for use of mpd --kill and some init scripts. This setting is disabled by
+ # default and the pid file will not be stored.
+ #
+-#pid_file			"~/.mpd/pid"
 +pid_file                        "/var/spool/mpd/mpd.pid"
  #
- # If specified, MPD will save its current state (playlist,
- # current song, playing/paused, etc.) at exit.  This will be
- # used to restore the session the next time it is run.
+ # This setting sets the location of the file which contains information about
+ # most variables to get MPD back into the same general shape it was in before
+ # it was brought down. This setting is disabled by default and the server 
+ # state will be reset on server start up.
  #
--#state_file                      "~/.mpd/mpdstate"
+-#state_file			"~/.mpd/state"
 +state_file                      "/var/spool/mpd/mpdstate"
  #
- ################################################################
+ ###############################################################################
  
-@@ -33,11 +33,11 @@ error_file                      "~/.mpd/mpd.error"
- # started by.  If left unspecified, MPD will not drop root
- # privileges at all (not recommended).
+@@ -59,7 +59,7 @@
+ # initialization. This setting is disabled by default and MPD is run as the
+ # current user.
  #
--#user                            "nobody"
+-#user				"nobody"
 +user                            "_mpd"
  #
- # The address and port to listen on.
+ # This setting sets the address for the daemon to listen on. Careful attention
+ # should be paid if this is assigned to anything other then the default, any.
+@@ -71,6 +71,8 @@
+ # And for Unix Socket
+ #bind_to_address		"~/.mpd/socket"
  #
--#bind_to_address                 "any"
 +bind_to_address                 "localhost"
- #port                            "6600"
++#
+ # This setting is the TCP port that is desired for the daemon to get assigned
+ # to.
  #
- # Controls the amount of information that is logged.  Can be
-@@ -108,6 +108,12 @@ error_file                      "~/.mpd/mpd.error"
- #        format                  "44100:16:2" # optional
+@@ -257,6 +259,13 @@ input {
+ #	name		"My Null Output"
  #}
  #
-+
++## Default libao output:
++#
 +audio_output {
 +	type			"ao"
 +	name			"Libao Audio Device"
 +}
-+
- # An example of a shout output (for streaming to Icecast):
++#
+ # This setting will change all decoded audio to be converted to the specified
+ # format before being passed to the audio outputs. By default, this setting is
+ # disabled.
+@@ -290,7 +299,7 @@ input {
+ # all controls, even if the mixer is not supported by the device and will not
+ # affect any other sound producing applications.
  #
- #audio_output {
-@@ -157,12 +163,12 @@ error_file                      "~/.mpd/mpd.error"
+-#mixer_type			"software"
++mixer_type			"software"
  #
- #mixer_type                      "oss"
- #mixer_device                    "/dev/mixer"
--#mixer_control                   "PCM"
-+#mixer_control                   "vol"
- #
- # If you want MPD to adjust the volume of audio sent to the
- # audio outputs, you can tell it to use the software mixer:
- #
--#mixer_type                      "software"
-+mixer_type                      "software"
- #
- ################################################################
- 
+ # This example will not allow MPD to touch the mixer at all and will disable
+ # all volume controls.

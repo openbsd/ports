@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2010/01/12 18:51:07 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.20 2010/01/12 18:58:26 wcmaier Exp $
 
 COMMENT =		Music Player Daemon
-DISTNAME =		mpd-0.13.2
-PKGNAME =		${DISTNAME}p4
+DISTNAME =		mpd-0.15.7
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		Tobias Ulmer <tobiasu@tmux.org>
@@ -13,21 +12,23 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m pthread ogg z
+WANTLIB =		c m pthread ogg z intl stdc++ sndio
 
 MASTER_SITES =		${HOMEPAGE}uploads/files/
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 
 MODULES =		converters/libiconv
 
 LIB_DEPENDS =		audiofile::devel/libaudiofile \
 			ao::audio/libao \
 			samplerate::audio/libsamplerate \
-			faad.>=2::audio/faad \
 			FLAC::audio/flac \
 			id3tag::audio/libid3tag \
 			mad::audio/libmad \
 			mikmod::audio/libmikmod \
-			mpcdec::audio/libmpcdec
+			curl::net/curl \
+			glib-2.0,gthread-2.0::devel/glib2 \
+			mp3lame::audio/lame
 
 FLAVORS =		tremor
 FLAVOR ?=
@@ -37,11 +38,19 @@ CONFIGURE_ARGS +=	--enable-ao \
 			--disable-alsa \
 			--disable-oss \
 			--disable-pulse \
-			--disable-sun \
 			--disable-jack \
-			--enable-mod \
+			--enable-mikmod \
+			--enable-curl \
+			--disable-wavpack \
 			--bindir=${PREFIX}/sbin \
-			--with-zeroconf=no
+			--with-zeroconf=no \
+			--disable-cue \
+			--disable-sqlite \
+			--disable-mms \
+			--disable-modplug \
+			--disable-sidplay \
+			--disable-ffmpeg \
+			--disable-mpc
 # OggFLAC and tremor tests, initgroups(3)
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -D_BSD_SOURCE"
