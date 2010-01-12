@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 09:40:54 jasper Exp $
+${P5SITE}/MooseX/LazyRequire/
+${P5SITE}/MooseX/LazyRequire.pm
+${P5SITE}/MooseX/LazyRequire/Meta/
+${P5SITE}/MooseX/LazyRequire/Meta/Attribute/
+${P5SITE}/MooseX/LazyRequire/Meta/Attribute/Trait/
+${P5SITE}/MooseX/LazyRequire/Meta/Attribute/Trait/LazyRequire.pm
+@man man/man3p/MooseX::LazyRequire.3p
+@man man/man3p/MooseX::LazyRequire::Meta::Attribute::Trait::LazyRequire.3p

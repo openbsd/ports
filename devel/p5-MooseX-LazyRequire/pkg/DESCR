@@ -1,0 +1,1 @@
+This module adds a lazy_required option to Moose attribute declarations.
