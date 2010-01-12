@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 07:53:20 jasper Exp $
+${P5SITE}/MooseX/POE/
+${P5SITE}/MooseX/POE.pm
+${P5SITE}/MooseX/POE/Aliased.pm
+${P5SITE}/MooseX/POE/Meta/
+${P5SITE}/MooseX/POE/Meta/Role.pm
+${P5SITE}/MooseX/POE/Meta/Trait/
+${P5SITE}/MooseX/POE/Meta/Trait/Class.pm
+${P5SITE}/MooseX/POE/Meta/Trait/Constructor.pm
+${P5SITE}/MooseX/POE/Meta/Trait/Instance.pm
+${P5SITE}/MooseX/POE/Meta/Trait/Object.pm
+${P5SITE}/MooseX/POE/Meta/Trait/SweetArgs.pm
+${P5SITE}/MooseX/POE/Role.pm
+${P5SITE}/MooseX/POE/SweetArgs.pm
+@man man/man3p/MooseX::POE.3p
+@man man/man3p/MooseX::POE::Aliased.3p
+@man man/man3p/MooseX::POE::Meta::Trait::Class.3p
+@man man/man3p/MooseX::POE::Meta::Trait::Constructor.3p
+@man man/man3p/MooseX::POE::Meta::Trait::Instance.3p
+@man man/man3p/MooseX::POE::Meta::Trait::Object.3p
+@man man/man3p/MooseX::POE::Meta::Trait::SweetArgs.3p
+@man man/man3p/MooseX::POE::Role.3p
+@man man/man3p/MooseX::POE::SweetArgs.3p
