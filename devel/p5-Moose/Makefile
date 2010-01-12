@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/28 02:08:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2010/01/12 09:10:56 jasper Exp $
 
 COMMENT=	complete modern object system for perl 5
 
 MODULES=	cpan
-DISTNAME=	Moose-0.92
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Moose-0.93
 CATEGORIES=	devel
 
 # perl
@@ -13,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CPAN_AUTHOR=	DROLSKY
+CPAN_AUTHOR=	FLORA
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:p5-Class-MOP->=0.94:devel/p5-Class-MOP \
