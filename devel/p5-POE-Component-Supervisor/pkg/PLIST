@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 19:26:42 jasper Exp $
+${P5SITE}/POE/Component/Supervisor/
+${P5SITE}/POE/Component/Supervisor.pm
+${P5SITE}/POE/Component/Supervisor/Handle/
+${P5SITE}/POE/Component/Supervisor/Handle.pm
+${P5SITE}/POE/Component/Supervisor/Handle/Interface.pm
+${P5SITE}/POE/Component/Supervisor/Handle/Proc.pm
+${P5SITE}/POE/Component/Supervisor/Handle/Session.pm
+${P5SITE}/POE/Component/Supervisor/Interface.pm
+${P5SITE}/POE/Component/Supervisor/LogDispatch.pm
+${P5SITE}/POE/Component/Supervisor/Supervised/
+${P5SITE}/POE/Component/Supervisor/Supervised.pm
+${P5SITE}/POE/Component/Supervisor/Supervised/Interface.pm
+${P5SITE}/POE/Component/Supervisor/Supervised/Proc.pm
+${P5SITE}/POE/Component/Supervisor/Supervised/Session.pm
+@man man/man3p/POE::Component::Supervisor.3p
+@man man/man3p/POE::Component::Supervisor::Handle.3p
+@man man/man3p/POE::Component::Supervisor::Handle::Proc.3p
+@man man/man3p/POE::Component::Supervisor::Handle::Session.3p
+@man man/man3p/POE::Component::Supervisor::Interface.3p
+@man man/man3p/POE::Component::Supervisor::LogDispatch.3p
+@man man/man3p/POE::Component::Supervisor::Supervised.3p
+@man man/man3p/POE::Component::Supervisor::Supervised::Proc.3p
+@man man/man3p/POE::Component::Supervisor::Supervised::Session.3p

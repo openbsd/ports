@@ -1,0 +1,5 @@
+This is a port of the Erlang process supervisor
+(http://www.erlang.org/doc/design_principles/sup_princ.html).
+
+This will monitor instances of children, restarting them as necessary
+should they exit.
