@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/01/11 15:02:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/01/12 08:41:41 ajacoutot Exp $
 
 COMMENT =		implementations of freedesktop.org specifications
 DISTNAME =		efreet-0.5.0.061
-PKGNAME =		${DISTNAME}v0
+PKGNAME =		${DISTNAME}v0p0
 
 SO_VERSION =            0.1
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -21,8 +21,6 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB +=	c crypto eina m ssl
 
 LIB_DEPENDS =	ecore,ecore_con,ecore_file::x11/e17/ecore
-
-RUN_DEPENDS =	::devel/desktop-file-utils
 
 USE_LIBTOOL =	Yes
 
