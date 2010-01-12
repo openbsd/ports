@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 07:52:15 jasper Exp $
+${P5ARCH}/
+${P5ARCH}/B/
+${P5ARCH}/B/Hooks/
+${P5ARCH}/B/Hooks/OP/
+${P5ARCH}/B/Hooks/OP/Check/
+${P5ARCH}/B/Hooks/OP/Check.pm
+${P5ARCH}/B/Hooks/OP/Check/Install/
+${P5ARCH}/B/Hooks/OP/Check/Install/Files.pm
+${P5ARCH}/B/Hooks/OP/Check/Install/hook_op_check.h
+${P5ARCH}/auto/
+${P5ARCH}/auto/B/
+${P5ARCH}/auto/B/Hooks/
+${P5ARCH}/auto/B/Hooks/OP/
+${P5ARCH}/auto/B/Hooks/OP/Check/
+${P5ARCH}/auto/B/Hooks/OP/Check/Check.bs
+${P5ARCH}/auto/B/Hooks/OP/Check/Check.so
+@man man/man3p/B::Hooks::OP::Check.3p
