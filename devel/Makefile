@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.768 2010/01/12 09:14:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.769 2010/01/12 09:48:46 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -324,6 +324,7 @@
      SUBDIR += p5-Config-IniFiles
      SUBDIR += p5-Config-Options
      SUBDIR += p5-Config-Tiny
+     SUBDIR += p5-Context-Preserve
      SUBDIR += p5-Curses
      SUBDIR += p5-Curses-UI
      SUBDIR += p5-Curses-Widgets
@@ -373,6 +374,7 @@
      SUBDIR += p5-Devel-GlobalDestruction
      SUBDIR += p5-Devel-Leak
      SUBDIR += p5-Devel-NYTProf
+     SUBDIR += p5-Devel-PartialDump
      SUBDIR += p5-Devel-SawAmpersand
      SUBDIR += p5-Devel-Size
      SUBDIR += p5-Devel-SmallProf
@@ -487,15 +489,21 @@
      SUBDIR += p5-MooseX-Async
      SUBDIR += p5-MooseX-AttributeHelpers
      SUBDIR += p5-MooseX-Clone
+     SUBDIR += p5-MooseX-Declare
      SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
+     SUBDIR += p5-MooseX-LazyRequire
      SUBDIR += p5-MooseX-Log-Log4perl
+     SUBDIR += p5-MooseX-Meta-TypeConstraint-ForceCoercion
      SUBDIR += p5-MooseX-MethodAttributes
+     SUBDIR += p5-MooseX-Method-Signatures
      SUBDIR += p5-MooseX-MultiInitArg
      SUBDIR += p5-MooseX-Params-Validate
-     #SUBDIR += p5-MooseX-POE
+     SUBDIR += p5-MooseX-POE
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
+     SUBDIR += p5-MooseX-Traits
      SUBDIR += p5-MooseX-Types
+     SUBDIR += p5-MooseX-Types-Structured
      SUBDIR += p5-Mouse
      SUBDIR += p5-Net-Server
      SUBDIR += p5-Number-Compare
@@ -526,6 +534,7 @@
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Paranoid
      SUBDIR += p5-Parse-CPAN-Meta
+     SUBDIR += p5-Parse-Method-Signatures
      SUBDIR += p5-Parse-PlainConfig
      SUBDIR += p5-Parse-RecDescent
      SUBDIR += p5-Path-Class
