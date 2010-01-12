@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 09:43:26 jasper Exp $
+${P5SITE}/Parse/
+${P5SITE}/Parse/Method/
+${P5SITE}/Parse/Method/Signatures/
+${P5SITE}/Parse/Method/Signatures.pm
+${P5SITE}/Parse/Method/Signatures/Param/
+${P5SITE}/Parse/Method/Signatures/Param.pm
+${P5SITE}/Parse/Method/Signatures/Param/Bindable.pm
+${P5SITE}/Parse/Method/Signatures/Param/Named.pm
+${P5SITE}/Parse/Method/Signatures/Param/Placeholder.pm
+${P5SITE}/Parse/Method/Signatures/Param/Positional.pm
+${P5SITE}/Parse/Method/Signatures/Param/Unpacked/
+${P5SITE}/Parse/Method/Signatures/Param/Unpacked.pm
+${P5SITE}/Parse/Method/Signatures/Param/Unpacked/Array.pm
+${P5SITE}/Parse/Method/Signatures/Param/Unpacked/Hash.pm
+${P5SITE}/Parse/Method/Signatures/ParamCollection.pm
+${P5SITE}/Parse/Method/Signatures/Sig.pm
+${P5SITE}/Parse/Method/Signatures/TypeConstraint.pm
+${P5SITE}/Parse/Method/Signatures/Types.pm
+@man man/man3p/Parse::Method::Signatures.3p
+@man man/man3p/Parse::Method::Signatures::Param.3p
+@man man/man3p/Parse::Method::Signatures::Sig.3p
+@man man/man3p/Parse::Method::Signatures::TypeConstraint.3p

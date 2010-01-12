@@ -1,0 +1,2 @@
+Inspired by Perl6::Signature but streamlined to just support the subset
+deemed useful for TryCatch and MooseX::Method::Signatures.
