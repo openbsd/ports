@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 09:43:05 jasper Exp $
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/Traits/
+${P5SITE}/MooseX/Traits.pm
+${P5SITE}/MooseX/Traits/Util.pm
+@man man/man3p/MooseX::Traits.3p
