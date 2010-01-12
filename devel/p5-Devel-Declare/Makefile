@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/12 07:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/01/12 08:58:08 jasper Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		adding keywords to perl, in perl
 
