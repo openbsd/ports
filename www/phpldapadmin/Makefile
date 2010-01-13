@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2009/10/01 12:28:34 ajacoutot Exp $ 
+# $OpenBSD: Makefile,v 1.21 2010/01/13 14:36:52 jasper Exp $ 
 
 COMMENT=	web-based LDAP browser to manage LDAP servers
 
-VERSION=	1.1.0.7
+VERSION=	1.2.0.4
 DISTNAME=	phpldapadmin-${VERSION}
-PKGNAME=	${DISTNAME}p5
 CATEGORIES=	www
 HOMEPAGE=	http://phpldapadmin.sourceforge.net/	
 
@@ -15,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=phpldapadmin/}
+EXTRACT_SUFX=	.tgz
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
