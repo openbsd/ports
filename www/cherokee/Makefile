@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/07/27 17:06:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/01/13 08:47:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,8 +8,8 @@ COMMENT-ldap =	LDAP module for Cherokee web server
 COMMENT-mysql =	MySQL module for Cherokee web server
 COMMENT-streaming = Streaming module for Cherokee web server
 
-VERSION =	0.99.20
 DIR =		0.99
+VERSION =	${DIR}.39
 DISTNAME =	cherokee-${VERSION}
 
 PKGNAME-main =	${DISTNAME}
@@ -49,7 +49,8 @@ BUILD_DEPENDS =	::textproc/py-docutils \
 
 LIB_DEPENDS-main =	pcre::devel/pcre
 WANTLIB-main =		c crypto pthread ssl
-RUN_DEPENDS-main =	::www/spawn-fcgi
+RUN_DEPENDS-main =	::www/spawn-fcgi \
+			::net/rrdtool
 
 LIB_DEPENDS-geoip =	GeoIP.>=6::net/GeoIP
 WANTLIB-geoip =		crypto
@@ -67,9 +68,6 @@ LIB_DEPENDS-streaming =	avutil.>=6,avcodec.>=13,avformat.>=12::graphics/ffmpeg \
 			bz2::archivers/bzip2
 WANTLIB-streaming =	crypto m
 RUN_DEPENDS-streaming = ::${BASE_PKGPATH}
-
-FLAVORS =	debug
-FLAVOR ?=
 
 USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
@@ -89,6 +87,8 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--localstatedir=/var \
 			--enable-tls=openssl \
 			--with-wwwroot=/var/cherokee \
+			--with-wwwuser=_cherokee \
+			--with-wwwgroup=_cherokee \
 			--disable-nls \
 			--disable-pam \
 			--with-geoip \
@@ -96,7 +96,7 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--with-mysql \
 			--with-ffmpeg 
 
-.if ${FLAVOR:L:Mdebug}
+.ifdef DEBUG
 CFLAGS +=		-O0 -g3
 CONFIGURE_ARGS +=	--enable-trace
 .endif
@@ -109,5 +109,9 @@ pre-configure:
 .for i in ${SUBST_PY}
 	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},s' ${WRKSRC}/${i}
 .endfor
+
+post-install:
+	cd ${PREFIX}/share/cherokee/admin && find . -name "*.py" | \
+		xargs ${MODPY_BIN} ${MODPY_LIBDIR}/py_compile.py
 
 .include <bsd.port.mk>

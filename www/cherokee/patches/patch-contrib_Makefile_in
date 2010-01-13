@@ -1,15 +1,15 @@
-$OpenBSD: patch-contrib_Makefile_in,v 1.4 2009/07/27 17:06:16 sthen Exp $
+$OpenBSD: patch-contrib_Makefile_in,v 1.5 2010/01/13 08:47:57 ajacoutot Exp $
 
 remove gratuitous GNUism, allows building with /usr/bin/make
 
---- contrib/Makefile.in.orig	Tue Jun  9 12:23:53 2009
-+++ contrib/Makefile.in	Tue Jun  9 22:35:47 2009
-@@ -389,7 +389,7 @@ uninstall-am:
+--- contrib/Makefile.in.orig	Tue Jan 12 10:28:34 2010
++++ contrib/Makefile.in	Tue Jan 12 10:28:59 2010
+@@ -421,7 +421,7 @@ uninstall-am:
  
  
  cherokee: cherokee.pre
--	sed -e "s|%sysconfdir%|${sysconfdir}|g; s|%datadir%|${datadir}|g; s|%docdir%|${docdir}|g; s|%prefix%|${prefix}|g; s|%localstatedir%|${localstatedir}|g; s|%libdir%|${libdir}|g; s|%wwwroot%|${WWW_ROOT}|g; s|%version%|${PACKAGE_VERSION}|g; s|%phpcgi%|${PHPCGI}|g" $< > $@
-+	sed -e "s|%sysconfdir%|${sysconfdir}|g; s|%datadir%|${datadir}|g; s|%docdir%|${docdir}|g; s|%prefix%|${prefix}|g; s|%localstatedir%|${localstatedir}|g; s|%libdir%|${libdir}|g; s|%wwwroot%|${WWW_ROOT}|g; s|%version%|${PACKAGE_VERSION}|g; s|%phpcgi%|${PHPCGI}|g" cherokee.pre > $@
+-	sed -e "s|%sysconfdir%|${sysconfdir}|g; s|%sbindir%|${sbindir}|g; s|%docdir%|${docdir}|g; s|%prefix%|${prefix}|g; s|%localstatedir%|${localstatedir}|g; s|%libdir%|${libdir}|g; s|%wwwroot%|${WWW_ROOT}|g; s|%version%|${PACKAGE_VERSION}|g; s|%phpcgi%|${PHPCGI}|g; s|%datadir%|${datadir}|g; s|%localedir%|${localedir}|g" $< > $@
++	sed -e "s|%sysconfdir%|${sysconfdir}|g; s|%sbindir%|${sbindir}|g; s|%docdir%|${docdir}|g; s|%prefix%|${prefix}|g; s|%localstatedir%|${localstatedir}|g; s|%libdir%|${libdir}|g; s|%wwwroot%|${WWW_ROOT}|g; s|%version%|${PACKAGE_VERSION}|g; s|%phpcgi%|${PHPCGI}|g; s|%datadir%|${datadir}|g; s|%localedir%|${localedir}|g" cherokee.pre > $@
  
  all-local: cherokee
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-admin_configured_py_pre,v 1.1 2010/01/13 08:47:57 ajacoutot Exp $
+--- admin/configured.py.pre.orig	Tue Jan 12 10:52:14 2010
++++ admin/configured.py.pre	Tue Jan 12 10:52:25 2010
+@@ -21,5 +21,5 @@ CHEROKEE_DATADIR    = join (DATADIR, "cherokee")
+ CHEROKEE_DEPSDIR    = join (DATADIR, "cherokee/deps")
+ CHEROKEE_CONFDIR    = join (SYSCONFDIR, "cherokee")
+ CHEROKEE_VAR_RUN    = join (LOCALSTATE, "run")
+-CHEROKEE_RRD_DIR    = join (LOCALSTATE, "lib/cherokee/graphs")
+-CHEROKEE_GRAPHS_DIR = join (LOCALSTATE, "lib/cherokee/graphs/images")
++CHEROKEE_RRD_DIR    = join (LOCALSTATE, "db/cherokee/graphs")
++CHEROKEE_GRAPHS_DIR = join (LOCALSTATE, "db/cherokee/graphs/images")

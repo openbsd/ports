@@ -1,12 +1,12 @@
 To complete the installation, you need to configure cherokee.  As root:
- # cherokee-admin -b [IP]
-(where IP is a trusted IP used to configure your web server)
+    # cherokee-admin [-b bind-to-IP] [-p port]
+(without parameters it will bind to 127.0.0.1 on port 9090).
 
 If you want to run cherokee on boot, add these lines to /etc/rc.local:
 
 if [ X"${cherokee_flags}" != X"NO" ]; then
 	echo -n ' cherokee'
-	${PREFIX}/sbin/cherokee-guardian ${cherokee_flags} 1> /dev/null
+	${PREFIX}/sbin/cherokee ${cherokee_flags} 1> /dev/null
 fi
 
 for admin management:
@@ -16,7 +16,7 @@ if [ X"${cherokee-admin_flags}" != X"NO" ]; then
 	${PREFIX}/sbin/cherokee-admin ${cherokee-admin_flags} 1> /dev/null &
 fi
 
-and in /etc/rc.conf.local :
+and in /etc/rc.conf.local:
 
 cherokee_flags="-d"	# use -d to run in daemon mode
 cherokee-admin_flags=NO	# use -b if you want listen on ALL interfaces

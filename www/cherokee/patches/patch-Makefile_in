@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2010/01/13 08:47:57 ajacoutot Exp $
+--- Makefile.in.orig	Tue Dec 29 12:40:39 2009
++++ Makefile.in	Tue Jan 12 11:04:06 2010
+@@ -1048,10 +1048,6 @@ uninstall-local-config:
+ 	fi
+ 
+ install-data-local: $(CONFS) install-data-local-config
+-	@$(mkinstalldirs) $(DESTDIR)$(localstatedir)
+-	@$(mkinstalldirs) $(DESTDIR)$(localstatedir)/run
+-	@$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log
+-	@$(mkinstalldirs) $(DESTDIR)$(localstatedir)/lib/cherokee/graphs/images
+ 	@$(mkinstalldirs) $(DESTDIR)$(cherokeeconfdir)
+ 	@$(mkinstalldirs) $(DESTDIR)$(cherokeeadmindir)
+ 	@if test -f $(DESTDIR)$(cherokeeconfdir)/cherokee.conf ; then \
+@@ -1069,7 +1065,6 @@ install-data-local: $(CONFS) install-data-local-config
+ 	@if test -d $(DESTDIR)$(sysconfdir)/pam.d && test ! -d $(DESTDIR)$(sysconfdir)/pam.d/cherokee ; then \
+ 		$(INSTALL_DATA) $(top_srcdir)/pam.d_cherokee $(DESTDIR)$(sysconfdir)/pam.d/cherokee; \
+ 	fi
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)
+ 
+ uninstall-local: uninstall-local-config
+ 	@if test -f $(DESTDIR)$(cherokeeconfdir)/cherokee.conf ; then \
