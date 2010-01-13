@@ -1,0 +1,27 @@
+$OpenBSD: patch-bin_mrtg,v 1.1 2010/01/13 12:33:24 sthen Exp $
+--- bin/mrtg.orig	Wed Jan 13 00:17:19 2010
++++ bin/mrtg	Wed Jan 13 00:17:49 2010
+@@ -212,7 +212,7 @@ sub main {
+ 
+     my $cfgfile = shift @ARGV;
+ 
+-    if ( !defined $cfgfile and -r "/etc/mrtg.cfg" ) { $cfgfile = "/etc/mrtg.cfg"; }
++    if ( !defined $cfgfile and -r "%%SYSCONFDIR%%/mrtg.cfg" ) { $cfgfile = "%%SYSCONFDIR%%/mrtg.cfg"; }
+ 
+     printusage() unless defined $cfgfile;
+ 
+@@ -910,6 +910,14 @@ sub writegraphics {
+     # set values to -1 to tell rateup about unknown values
+     $inlast = -1 unless defined $inlast;
+     $outlast = -1 unless defined $outlast;
++
++    # untaint
++    if ($inlast =~ /^([-0-9.]+)$/) {
++        $inlast = $1;
++    }
++    if ($outlast =~ /^([-0-9.]+)$/) {
++        $outlast = $1;
++    }
+     
+     if ($$rcfg{'options'}{'dorelpercent'}{$router}) {
+         @exec = ("${FindBin::Bin}${MRTG_lib::SL}rateup", 

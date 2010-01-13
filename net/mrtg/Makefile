@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2010/01/05 16:36:33 okan Exp $
+# $OpenBSD: Makefile,v 1.63 2010/01/13 12:33:24 sthen Exp $
 
 COMMENT=	multi-router traffic grapher
 
 DISTNAME=	mrtg-2.16.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://oss.oetiker.ch/mrtg/
@@ -37,6 +37,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes
+
+# SUBST_CMD mangles the file
+pre-configure:
+	@perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' ${WRKSRC}/bin/mrtg
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mrtg
