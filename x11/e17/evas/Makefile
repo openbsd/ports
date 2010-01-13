@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/01/12 08:40:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/01/13 23:44:09 sthen Exp $
 
 COMMENT =		canvas API for X
 DISTNAME =		evas-0.9.9.061
-PKGNAME =		${DISTNAME}v0p0
+PKGNAME =		${DISTNAME}v0p1
 
 SHARED_LIBS +=	evas                 0.0 \
 		evas-ver-svn-02	     0.0
@@ -45,7 +45,7 @@ CONFIGURE_ARGS +=	--disable-fribidi \
 			--enable-gl-x11 \
 			--enable-software-xcb \
 			--enable-xrender-xcb \
-			--enable-gl-glew \
+			--disable-gl-glew \
 			--enable-software-16-x11
 CONFIGURE_ENV +=        CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
