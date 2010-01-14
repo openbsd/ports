@@ -114,6 +114,7 @@
 	native-mknod: filename match "/var/tmp" then permit
 	native-mknod: filename match "${TMPDIR}" then permit
 	native-mknod: filename match "${WRKDIR}" then permit
+	native-mincore: permit
 	native-mlock: permit
 	native-mlockall: permit
 	native-mmap: permit
