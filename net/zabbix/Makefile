@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/01/12 09:04:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/01/15 09:08:02 jasper Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -7,8 +7,8 @@ COMMENT-web =		network and application monitoring - web frontend
 VERSION =		1.8
 MAJOR =			${VERSION:R}
 DISTNAME =		zabbix-${VERSION}
-FULLPKGNAME-main =	zabbix-agent-${VERSION}
-PKGNAME-server =	zabbix-server-${VERSION}p0
+FULLPKGNAME-main =	zabbix-agent-${VERSION}p0
+PKGNAME-server =	zabbix-server-${VERSION}p1
 PKGNAME-web =		zabbix-web-${VERSION}
 CATEGORIES =		net
 
@@ -21,6 +21,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
+
+MODULES=		converters/libiconv
 
 MULTI_PACKAGES =	-main
 PSEUDO_FLAVORS =	no_server
