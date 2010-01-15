@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2010/01/09 11:47:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2010/01/15 07:59:45 jasper Exp $
 
 CATEGORIES=		mail
 COMMENT-main=		flexible mail transfer agent
@@ -6,7 +6,7 @@ COMMENT-eximon=		X11 monitor tool for Exim MTA
 VERSION=		4.71
 DISTNAME=		exim-${VERSION}
 PKGNAME-main=		exim-${VERSION}p0
-FULLPKGNAME-eximon=	exim-eximon-${VERSION}
+FULLPKGNAME-eximon=	exim-eximon-${VERSION}p0
 MASTER_SITES=		ftp://ftp.exim.org/pub/exim/exim4/ \
 			http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/ \
 			ftp://mirror.switch.ch/mirror/exim/exim/exim4/
