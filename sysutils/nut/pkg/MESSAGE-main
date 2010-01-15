@@ -8,5 +8,3 @@ if [ -x ${PREFIX}/bin/upsdrvctl ]; then
     ${PREFIX}/sbin/upsd > /dev/null 2>&1
     ${PREFIX}/sbin/upsmon > /dev/null 2>&1
 fi
-
-You may also be interested in the "-i" flag to upsd, see upsd(8).
