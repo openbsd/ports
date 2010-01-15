@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/01/11 15:02:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/01/15 08:38:01 jasper Exp $
 
 COMMENT =		complex graphical design & layout library
 DISTNAME =		edje-0.9.92.061
-PKGNAME =		${DISTNAME}v0
+PKGNAME =		${DISTNAME}p0v0
 
 SHARED_LIBS +=		edje                 0.1 \
 			edje-ver-svn-02      0.1
@@ -20,11 +20,14 @@ WANTLIB += ssl xcb z
 
 USE_X11 =		Yes
 
-MODULES =		converters/libiconv
+MODULES =		converters/libiconv \
+			lang/python
 
 USE_LIBTOOL =		Yes
 
 LIB_DEPENDS =		ecore,ecore_imf_evas,ecore_imf,ecore_con,ecore_evas,ecore_file,ecore_input,ecore_job,ecore_txt,ecore_x::x11/e17/ecore \
 			embryo::x11/e17/embryo
+
+CONFIGURE_ARGS +=	--disable-doc
 
 .include <bsd.port.mk>
