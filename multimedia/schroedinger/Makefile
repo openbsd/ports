@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/07/18 08:53:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/01/15 09:07:27 sthen Exp $
 
 COMMENT=	high-speed Dirac codec
 
 DISTNAME=	schroedinger-1.0.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia
 MASTER_SITES=	${HOMEPAGE}download/schroedinger/
 

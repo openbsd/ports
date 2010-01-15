@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/07/18 10:56:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/01/15 09:07:27 sthen Exp $
 
 COMMENT=	ISO MPEG-4 compliant video codec
 
 DISTNAME=	xvidcore-1.2.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xvid.org/downloads/
 
