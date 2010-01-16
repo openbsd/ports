@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/01/11 12:28:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/01/16 22:01:29 matthieu Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
 V=			0.14.4
 DISTNAME=		gamgi-all-${V}
-PKGNAME=		${DISTNAME:S/-all//}
+PKGNAME=		${DISTNAME:S/-all//}p0
 CATEGORIES=		education x11
 
 HOMEPAGE=		http://www.gamgi.org/
@@ -27,8 +27,7 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 
 LIB_DEPENDS=		gdkglext-x11-1.0,gtkglext-x11-1.0::x11/gtkglext
-RUN_DEPENDS=		::graphics/netpbm \
-			::x11/dejavu-fonts
+RUN_DEPENDS=		::graphics/netpbm
 
 WRKDIST=		${WRKDIR}/gamgi${V}/
 WRKSRC= 		${WRKDIST}/src/

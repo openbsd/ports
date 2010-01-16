@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_io_gamgi_io_h,v 1.1 2009/12/16 17:59:43 jasper Exp $
+$OpenBSD: patch-src_io_gamgi_io_h,v 1.2 2010/01/16 22:01:29 matthieu Exp $
 --- src/io/gamgi_io.h.orig	Wed Dec 16 17:51:05 2009
 +++ src/io/gamgi_io.h	Wed Dec 16 17:51:07 2009
 @@ -230,7 +230,7 @@ GAMGI_IO_DEJAVU_MONO_ITALIC, GAMGI_IO_DEJAVU_MONO_BOLD
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_io_gamgi_io_h,v 1.1 2009/12/16 17:59:43 jasper Exp $
   **********************************************/
  
 -#define GAMGI_IO_PATH_TRUETYPE "/usr/share/fonts/truetype/ttf-dejavu/"
-+#define GAMGI_IO_PATH_TRUETYPE "${LOCALBASE}/lib/X11/fonts/dejavu"
++#define GAMGI_IO_PATH_TRUETYPE "${X11BASE}/lib/X11/fonts/TTF/"
  
  #define GAMGI_IO_FILENAME_DEJAVU_SANS "DejaVuSans.ttf"
  #define GAMGI_IO_FILENAME_DEJAVU_SANS_BOLD "DejaVuSans-Bold.ttf"
