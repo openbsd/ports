@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/10/14 18:44:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/01/17 19:45:47 ajacoutot Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.3.0
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}p1
+PKGNAME=		py-${DISTNAME}p2
 CATEGORIES=		math devel
 
 HOMEPAGE=		http://numpy.scipy.org/
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		blas m g2c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=numpy/}
@@ -28,6 +29,11 @@ REGRESS_DEPENDS=	::devel/py-nose
 
 LIB_DEPENDS=            lapack::math/lapack
 
+# XXX Segmentation fault on powerpc when building py-scipy:
+# remove '-funroll-loops'
+.if ${MACHINE_ARCH} == "powerpc"
+PATCH_LIST=	patch-* powerpc-patch-numpy_distutils_fcompiler_gnu_py
+.endif
 
 pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg

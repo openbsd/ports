@@ -1,0 +1,13 @@
+$OpenBSD: powerpc-patch-numpy_distutils_fcompiler_gnu_py,v 1.1 2010/01/17 19:45:47 ajacoutot Exp $
+--- numpy/distutils/fcompiler/gnu.py.orig	Fri Jan 15 11:07:00 2010
++++ numpy/distutils/fcompiler/gnu.py	Fri Jan 15 11:07:50 2010
+@@ -191,7 +191,8 @@ class GnuFCompiler(FCompiler):
+             opt = ['-O2']
+         else:
+             opt = ['-O3']
+-        opt.append('-funroll-loops')
++# Segmentation fault on powerpc when building py-scipy
++#        opt.append('-funroll-loops')
+         return opt
+ 
+     def get_flags_arch(self):
