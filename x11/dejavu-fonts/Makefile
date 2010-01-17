@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/01 08:40:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/01/17 11:39:04 ajacoutot Exp $
+
+COMES_WITH =		4.7
 
 COMMENT =		TrueType fonts based on the Bitstream Vera fonts
 
