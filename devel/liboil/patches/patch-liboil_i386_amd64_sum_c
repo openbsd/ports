@@ -1,0 +1,13 @@
+$OpenBSD: patch-liboil_i386_amd64_sum_c,v 1.1 2010/01/17 21:29:30 sthen Exp $
+--- liboil/i386_amd64/sum.c.orig	Wed Dec 30 22:15:04 2009
++++ liboil/i386_amd64/sum.c	Wed Dec 30 22:16:16 2009
+@@ -30,7 +30,8 @@ sum_s16_mmx (int16_t *d, int16_t *s, int n)
+         "  movq %%mm0, 0(%2)\n"
+         "  emms\n"
+         : "+r" (s), "+r" (n)
+-        : "r" (a));
++        : "r" (a)
++        : "memory");
+ 
+     sum += a[0];
+     sum += a[1];
