@@ -1,0 +1,14 @@
+$OpenBSD: patch-vfs_utilvfs_c,v 1.1 2010/01/17 18:42:08 jasper Exp $
+
+warning: implicit declaration of function `sscanf'
+
+--- vfs/utilvfs.c.orig	Sun Jan 17 18:45:06 2010
++++ vfs/utilvfs.c	Sun Jan 17 18:45:21 2010
+@@ -32,6 +32,7 @@
+ #include <pwd.h>
+ #include <grp.h>
+ #include <stdlib.h>
++#include <stdio.h>
+ 
+ #include "../src/global.h"
+ 
