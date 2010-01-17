@@ -1,0 +1,57 @@
+$OpenBSD: patch-kicker_applets_naughty_NaughtyProcessMonitor_cpp,v 1.1 2010/01/17 08:58:38 espie Exp $
+--- kicker/applets/naughty/NaughtyProcessMonitor.cpp.orig	Sun Jan 17 09:36:38 2010
++++ kicker/applets/naughty/NaughtyProcessMonitor.cpp	Sun Jan 17 09:53:33 2010
+@@ -372,7 +372,7 @@ NaughtyProcessMonitor::pidList() const
+   int mib[3] ;
+   int nprocs = 0, nentries ;
+   size_t size ;
+-  struct kinfo_proc *kp ;
++  struct kinfo_proc2 *kp ;
+   int i ;
+   QValueList<ulong> l;
+ 
+@@ -386,13 +386,13 @@ NaughtyProcessMonitor::pidList() const
+   
+   // magic size evaluation ripped from ps
+ 
+-  size = (5 * nprocs * sizeof(struct kinfo_proc)) / 4 ;
+-  kp = (struct kinfo_proc *)calloc (size, sizeof (char)) ;
++  size = (5 * nprocs * sizeof(struct kinfo_proc2)) / 4 ;
++  kp = (struct kinfo_proc2 *)calloc (size, sizeof (char)) ;
+   
+   // fetch process info
+ 
+   mib[0] = CTL_KERN ;
+-  mib[1] = KERN_PROC ;
++  mib[1] = KERN_PROC2 ;
+   mib[2] = KERN_PROC_ALL ;
+   
+   if (-1 == sysctl (mib, 3, kp, &size, NULL, 0)) {
+@@ -400,7 +400,7 @@ NaughtyProcessMonitor::pidList() const
+       return l ;
+   }
+   
+-  nentries = size / sizeof (struct kinfo_proc) ;
++  nentries = size / sizeof (struct kinfo_proc2) ;
+   
+   // time statistics and euid data are fetched only for processes in
+   // the pidList, so, instead of doing one sysctl per process for
+@@ -409,12 +409,12 @@ NaughtyProcessMonitor::pidList() const
+   d->cacheLoadMap_.clear () ;
+   d->uidMap_.clear () ;
+   for (i = 0; i < nentries; i++) {
+-      l << (unsigned long) kp[i].kp_proc.p_pid ;
+-      d->cacheLoadMap_.insert (kp[i].kp_proc.p_pid,
+-			       (kp[i].kp_proc.p_uticks + 
+-				kp[i].kp_proc.p_sticks)) ;
+-      d->uidMap_.insert (kp[i].kp_proc.p_pid,
+-			 kp[i].kp_eproc.e_ucred.cr_uid) ;
++      l << (unsigned long) kp[i].p_pid ;
++      d->cacheLoadMap_.insert (kp[i].p_pid,
++			       (kp[i].p_uticks + 
++				kp[i].p_sticks)) ;
++      d->uidMap_.insert (kp[i].p_pid,
++			 kp[i].p_uid) ;
+   }
+ 
+   free (kp) ;
