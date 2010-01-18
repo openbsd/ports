@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/06/02 22:27:49 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/01/18 13:16:49 stephan Exp $
 
 COMMENT=		Perl Interface to Amazon.{co.uk,com} Web Services
 
 MODULES=		cpan
-DISTNAME=		Net-Amazon-0.50
+DISTNAME=		Net-Amazon-0.59
 CATEGORIES=		net
 
 MAINTAINER=		Sam Smith <s@msmith.net>
