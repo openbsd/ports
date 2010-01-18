@@ -1,0 +1,12 @@
+$OpenBSD: patch-sysdeps_bsd_netload_c,v 1.1 2010/01/18 09:27:00 sthen Exp $
+--- sysdeps/bsd/netload.c.orig	Mon Jan 18 08:24:30 2010
++++ sysdeps/bsd/netload.c	Mon Jan 18 08:26:34 2010
+@@ -220,7 +220,7 @@ glibtop_get_netload_p (glibtop *server, glibtop_netloa
+ 		sin = (struct sockaddr_in *)sa;
+ #if !defined(__bsdi__)
+ 		/* Commenting out to "fix" #13345. */
+-		buf->subnet = htonl (ifaddr.in.ia_subnet);
++		buf->subnet = htonl (ifaddr.in.ia_net);
+ #endif
+ 		buf->address = sin->sin_addr.s_addr;
+ 		buf->mtu = ifnet.if_mtu;
