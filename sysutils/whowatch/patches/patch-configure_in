@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2010/01/18 12:07:45 sthen Exp $
+--- configure.in.orig	Mon Jan 18 09:18:53 2010
++++ configure.in	Mon Jan 18 09:18:57 2010
+@@ -102,7 +102,7 @@ AC_TRY_COMPILE([#include <sys/types.h>
+ #include <sys/param.h>
+ #include <sys/sysctl.h>],
+ [
+-int mib[]={CTL_KERN,KERN_PROC,KERN_PROC_PID,1};
++int mib[]={CTL_KERN,KERN_PROC2,KERN_PROC_PID,1};
+ int len;
+ sysctl(mib, 4, 0, &len, 0, 0);
+ ],

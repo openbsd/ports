@@ -1,32 +1,140 @@
-$OpenBSD: patch-procinfo_c,v 1.1 2007/03/15 18:15:12 naddy Exp $
---- procinfo.c.orig	Sat Mar 10 01:18:23 2007
-+++ procinfo.c	Sat Mar 10 01:20:12 2007
-@@ -65,7 +65,7 @@ void get_info(int pid, struct procinfo *
- int fill_kinfo(struct kinfo_proc *info, int pid)
+$OpenBSD: patch-procinfo_c,v 1.2 2010/01/18 12:07:45 sthen Exp $
+--- procinfo.c.orig	Tue Jun  6 19:36:47 2000
++++ procinfo.c	Mon Jan 18 11:51:29 2010
+@@ -62,18 +62,18 @@ void get_info(int pid, struct procinfo *p)
+ 	p->exec_file[EXEC_FILE] = '\0';
+ }
+ #else
+-int fill_kinfo(struct kinfo_proc *info, int pid)
++int fill_kinfo(struct kinfo_proc2 *info, int pid)
  {
- 	int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid };
+-	int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid };
 -	int len = sizeof *info;
+-	if(sysctl(mib, 4, info, &len, 0, 0) == -1) 
++	int mib[] = { CTL_KERN, KERN_PROC2, KERN_PROC_PID, pid, sizeof (struct kinfo_proc2), 1 };
 +	size_t len = sizeof *info;
- 	if(sysctl(mib, 4, info, &len, 0, 0) == -1) 
++	if(sysctl(mib, 6, info, &len, 0, 0) == -1) 
  		return -1;
  	return len?0:-1;
-@@ -124,7 +124,8 @@ int get_term(char *tty)
+ }
+ 		
+ void get_info(int pid, struct procinfo *p)
+ {
+-	struct kinfo_proc info;	
++	struct kinfo_proc2 info;	
+ 	p->ppid = -1;
+ 	p->cterm = -1;
+ 	p->euid = -1;
+@@ -83,12 +83,12 @@ void get_info(int pid, struct procinfo *p)
+ 	
+ 	if(fill_kinfo(&info, pid) == -1) return;
+ 	
+-    	p->ppid = info.kp_eproc.e_ppid;
+-    	p->tpgid = info.kp_eproc.e_tpgid;
+-    	p->euid = info.kp_eproc.e_pcred.p_svuid;
+-    	p->stat = info.kp_proc.p_stat;
+-    	strncpy(p->exec_file, info.kp_proc.p_comm, EXEC_FILE);
+-    	p->cterm = info.kp_eproc.e_tdev;
++    	p->ppid = info.p_ppid;
++    	p->tpgid = info.p_tpgid;
++    	p->euid = info.p_uid;
++    	p->stat = info.p_stat;
++    	strncpy(p->exec_file, info.p_comm, EXEC_FILE);
++    	p->cterm = info.p_tdev;
+ 	p->exec_file[EXEC_FILE] = '\0';
+ }
+ #endif
+@@ -123,9 +123,10 @@ int get_term(char *tty)
+  */
  int get_login_pid(char *tty)
  {
- 	int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_TTY, 0};
+-	int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_TTY, 0};
 -	int len, t, el, i, pid, cndt = -1, l;
+-	struct kinfo_proc *info;
++	int mib[6] = {CTL_KERN, KERN_PROC2, KERN_PROC_TTY, 0, sizeof(struct kinfo_proc2), 0};
 +	int t, el, i, pid, cndt = -1, l;
 +	size_t len;
- 	struct kinfo_proc *info;
++	struct kinfo_proc2 *info;
  	struct procinfo p;
  	
-@@ -169,7 +170,8 @@ int get_login_pid(char *tty)
- int get_all_info(struct kinfo_proc **info)
+ 	/* this is for ftp logins */
+@@ -134,26 +135,27 @@ int get_login_pid(char *tty)
+ 		
+ 	if((t = get_term(tty)) == -1) return -1;
+ 	mib[3] = t;
+-	if(sysctl(mib, 4, 0, &len, 0, 0) == -1)
++	if(sysctl(mib, 6, NULL, &len, NULL, 0) == -1)
+ 		return -1;
+ 	info = calloc(1, len);
+ 	if(!info) return -1;
+-	el = len/sizeof(struct kinfo_proc);
+-	if(sysctl(mib, 4, info, &len, 0, 0) == -1)
++	el = len/sizeof(struct kinfo_proc2);
++	mib[5] = el;
++	if(sysctl(mib, 6, info, &len, NULL, 0) == -1)
+ 		return -1;
+ 	for(i = 0; i < el; i++) {
+-		if(!(pid = info[i].kp_proc.p_pid)) continue;
++		if(!(pid = info[i].p_pid)) continue;
+ 		get_info(get_ppid(pid), &p);
+ 		if(p.cterm == -1 || p.cterm != t) {
+ 			cndt = pid;
+-			l = strlen(info[i].kp_proc.p_comm);
++			l = strlen(info[i].p_comm);
+ 			/*
+ 			 * This is our best match: parent of the process
+ 			 * doesn't have controlling terminal and process'
+ 			 * name ends with "sh"
+ 			 *
+ 			 */
+-			if(l > 1 && !strncmp("sh",info[i].kp_proc.p_comm+l-2,2)) {
++			if(l > 1 && !strncmp("sh",info[i].p_comm+l-2,2)) {
+ 				free(info);
+ 				return pid;
+ 			}
+@@ -166,17 +168,18 @@ int get_login_pid(char *tty)
+ /*
+  * Get information about all system processes
+  */
+-int get_all_info(struct kinfo_proc **info)
++int get_all_info(struct kinfo_proc2 **info)
  {
- 	int mib[3] = { CTL_KERN, KERN_PROC, KERN_PROC_ALL };
+-	int mib[3] = { CTL_KERN, KERN_PROC, KERN_PROC_ALL };
 -	int len, el;
++	int mib[6] = { CTL_KERN, KERN_PROC2, KERN_PROC_ALL, 0, sizeof(struct kinfo_proc2), 0 };
 +	int el;
 +	size_t len;
  
- 	if(sysctl(mib, 3, 0, &len, 0, 0) == -1)
+-	if(sysctl(mib, 3, 0, &len, 0, 0) == -1)
++	if(sysctl(mib, 6, NULL, &len, 0, 0) == -1)
  		return 0;
+ 	*info = calloc(1, len);
+ 	if(!*info) return 0;
+-	el = len/sizeof(struct kinfo_proc);
+-	if(sysctl(mib, 3, *info, &len, 0, 0) == -1)
++	mib[5] = el = len/sizeof(struct kinfo_proc2);
++	if(sysctl(mib, 6, *info, &len, 0, 0) == -1)
+ 		return 0;
+ 	return el;
+ }
+@@ -233,17 +236,17 @@ int kvm_init()
+ char *get_cmdline(int pid)
+ {
+ 	static char buf[512];
+-	struct kinfo_proc info;
++	struct kinfo_proc2 info;
+ 	
+ 	char **p, *s = buf;
+ 	bzero(buf, sizeof buf);
+ 	if(fill_kinfo(&info, pid) == -1)
+ 		return "-";
+-	memcpy(buf, info.kp_proc.p_comm, sizeof buf - 1);
++	memcpy(buf, info.p_comm, sizeof buf - 1);
+ 	if(!full_cmd) return buf;
+ #ifdef HAVE_LIBKVM
+ 	if(!can_use_kvm) return buf;
+-	p = kvm_getargv(kd, &info, 0);
++	p = kvm_getargv2(kd, &info, 0);
+ 	if(!p) 	return buf;
+ 	for(; *p; p++) {
+ 		*s++ = ' ';	
