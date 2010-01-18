@@ -1,0 +1,152 @@
+$OpenBSD: patch-src_libstatgrab_process_stats_c,v 1.1 2010/01/18 22:03:46 okan Exp $
+--- src/libstatgrab/process_stats.c.orig	Mon Oct  9 10:47:58 2006
++++ src/libstatgrab/process_stats.c	Mon Jan 18 11:19:50 2010
+@@ -105,9 +105,9 @@ sg_process_stats *sg_get_process_stats(int *entries){
+ 	int num, i;
+ #endif
+ #ifdef ALLBSD
+-	int mib[4];
++	int mib[6];
+ 	size_t size;
+-	struct kinfo_proc *kp_stats;
++	struct kinfo_proc2 *kp_stats;
+ 	int procs, i;
+ 	char *proctitle;
+ #if (defined(FREEBSD) && !defined(FREEBSD5)) || defined(DFBSD)
+@@ -347,29 +347,33 @@ sg_process_stats *sg_get_process_stats(int *entries){
+ 
+ #ifdef ALLBSD
+ 	mib[0] = CTL_KERN;
+-	mib[1] = KERN_PROC;
++	mib[1] = KERN_PROC2;
+ 	mib[2] = KERN_PROC_ALL;
++	mib[3] = 0;
++	mib[4] = sizeof(struct kinfo_proc2);
++	mib[5] = 0;
+ 
+-	if(sysctl(mib, 3, NULL, &size, NULL, 0) < 0) {
++	if(sysctl(mib, 6, NULL, &size, NULL, 0) < 0) {
+ 		sg_set_error_with_errno(SG_ERROR_SYSCTL,
+-		                        "CTL_KERN.KERN_PROC.KERN_PROC_ALL");
++		                        "CTL_KERN.KERN_PROC2.KERN_PROC_ALL");
+ 		return NULL;
+ 	}
+ 
+-	procs = size / sizeof(struct kinfo_proc);
+-
++	size = 5 * size / 4;
+ 	kp_stats = sg_malloc(size);
+ 	if(kp_stats == NULL) {
+ 		return NULL;
+ 	}
+ 	memset(kp_stats, 0, size);
+ 
+-	if(sysctl(mib, 3, kp_stats, &size, NULL, 0) < 0) {
++	mib[5] = (int)(size / sizeof(struct kinfo_proc2));
++	if(sysctl(mib, 6, kp_stats, &size, NULL, 0) < 0) {
+ 		sg_set_error_with_errno(SG_ERROR_SYSCTL,
+-		                        "CTL_KERN.KERN_PROC.KERN_PROC_ALL");
++		                        "CTL_KERN.KERN_PROC2.KERN_PROC_ALL");
+ 		free(kp_stats);
+ 		return NULL;
+ 	}
++	procs = (int)(size / sizeof(struct kinfo_proc2));
+ 
+ #if (defined(FREEBSD) && !defined(FREEBSD5)) || defined(DFBSD)
+ 	kvmd = sg_get_kvm2();
+@@ -381,7 +385,7 @@ sg_process_stats *sg_get_process_stats(int *entries){
+ #ifdef FREEBSD5
+ 		if (kp_stats[i].ki_stat == 0) {
+ #else
+-		if (kp_stats[i].kp_proc.p_stat == 0) {
++		if (kp_stats[i].p_stat == 0) {
+ #endif
+ 			/* FreeBSD 5 deliberately overallocates the array that
+ 			 * the sysctl returns, so we'll get a few junk
+@@ -401,7 +405,7 @@ sg_process_stats *sg_get_process_stats(int *entries){
+ #elif defined(DFBSD)
+ 		name = kp_stats[i].kp_thread.td_comm;
+ #else
+-		name = kp_stats[i].kp_proc.p_comm;
++		name = kp_stats[i].p_comm;
+ #endif
+ 		if (sg_update_string(&proc_state_ptr->process_name, name) < 0) {
+ 			return NULL;
+@@ -414,7 +418,7 @@ sg_process_stats *sg_get_process_stats(int *entries){
+ 		mib[3] = kp_stats[i].ki_pid;
+ #else
+ 		mib[1] = KERN_PROC_ARGS;
+-		mib[2] = kp_stats[i].kp_proc.p_pid;
++		mib[2] = kp_stats[i].p_pid;
+ 		mib[3] = KERN_PROC_ARGV;
+ #endif
+ 
+@@ -524,9 +528,9 @@ sg_process_stats *sg_get_process_stats(int *entries){
+ 		proc_state_ptr->parent = kp_stats[i].ki_ppid;
+ 		proc_state_ptr->pgid = kp_stats[i].ki_pgid;
+ #else
+-		proc_state_ptr->pid = kp_stats[i].kp_proc.p_pid;
+-		proc_state_ptr->parent = kp_stats[i].kp_eproc.e_ppid;
+-		proc_state_ptr->pgid = kp_stats[i].kp_eproc.e_pgid;
++		proc_state_ptr->pid = kp_stats[i].p_pid;
++		proc_state_ptr->parent = kp_stats[i].p_ppid;
++		proc_state_ptr->pgid = kp_stats[i].p__pgid;
+ #endif
+ 
+ #ifdef FREEBSD5
+@@ -540,10 +544,10 @@ sg_process_stats *sg_get_process_stats(int *entries){
+ 		proc_state_ptr->gid = kp_stats[i].kp_eproc.e_ucred.cr_rgid;
+ 		proc_state_ptr->egid = kp_stats[i].kp_eproc.e_ucred.cr_svgid;
+ #else
+-		proc_state_ptr->uid = kp_stats[i].kp_eproc.e_pcred.p_ruid;
+-		proc_state_ptr->euid = kp_stats[i].kp_eproc.e_pcred.p_svuid;
+-		proc_state_ptr->gid = kp_stats[i].kp_eproc.e_pcred.p_rgid;
+-		proc_state_ptr->egid = kp_stats[i].kp_eproc.e_pcred.p_svgid;
++		proc_state_ptr->uid = kp_stats[i].p_ruid;
++		proc_state_ptr->euid = kp_stats[i].p_svuid;
++		proc_state_ptr->gid = kp_stats[i].p_rgid;
++		proc_state_ptr->egid = kp_stats[i].p_svgid;
+ #endif
+ 
+ #ifdef FREEBSD5
+@@ -558,13 +562,13 @@ sg_process_stats *sg_get_process_stats(int *entries){
+ 		proc_state_ptr->nice = kp_stats[i].ki_nice;
+ #else
+ 		proc_state_ptr->proc_size =
+-			kp_stats[i].kp_eproc.e_vm.vm_map.size;
++			kp_stats[i].p_vm_map_size;
+ 		/* This is in pages */
+ 		proc_state_ptr->proc_resident =
+-			kp_stats[i].kp_eproc.e_vm.vm_rssize * getpagesize();
++			kp_stats[i].p_vm_rssize * getpagesize();
+ #if defined(NETBSD) || defined(OPENBSD)
+ 		proc_state_ptr->time_spent =
+-			kp_stats[i].kp_proc.p_rtime.tv_sec;
++			kp_stats[i].p_rtime_sec;
+ #elif defined(DFBSD)
+ 		proc_state_ptr->time_spent = 
+ 			( kp_stats[i].kp_thread.td_uticks +
+@@ -573,11 +577,11 @@ sg_process_stats *sg_get_process_stats(int *entries){
+ #else
+ 		/* This is in microseconds */
+ 		proc_state_ptr->time_spent =
+-			kp_stats[i].kp_proc.p_runtime / 1000000;
++			kp_stats[i].p_runtime / 1000000;
+ #endif
+ 		proc_state_ptr->cpu_percent =
+-			((double)kp_stats[i].kp_proc.p_pctcpu / FSCALE) * 100.0;
+-		proc_state_ptr->nice = kp_stats[i].kp_proc.p_nice;
++			((double)kp_stats[i].p_pctcpu / FSCALE) * 100.0;
++		proc_state_ptr->nice = kp_stats[i].p_nice;
+ #endif
+ 
+ #ifdef NETBSD2
+@@ -653,7 +657,7 @@ sg_process_stats *sg_get_process_stats(int *entries){
+ #ifdef FREEBSD5
+ 		switch (kp_stats[i].ki_stat) {
+ #else
+-		switch (kp_stats[i].kp_proc.p_stat) {
++		switch (kp_stats[i].p_stat) {
+ #endif
+ 		case SIDL:
+ 		case SRUN:

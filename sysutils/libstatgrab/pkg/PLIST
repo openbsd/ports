@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/17 23:45:43 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/01/18 22:03:46 okan Exp $
 %%SHARED%%
-bin/saidar
-bin/statgrab
+@bin bin/saidar
+@bin bin/statgrab
 bin/statgrab-make-mrtg-config
 bin/statgrab-make-mrtg-index
 include/statgrab.h
