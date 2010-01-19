@@ -1,0 +1,12 @@
+$OpenBSD: patch-machdep_nbsd-44_c,v 1.1 2010/01/19 15:25:21 okan Exp $
+--- machdep/nbsd-44.c.orig	Mon Jan 18 16:52:28 2010
++++ machdep/nbsd-44.c	Mon Jan 18 16:53:28 2010
+@@ -211,7 +211,7 @@ static	int	pidmapsiz = sizeof(pidmap) / sizeof(pidmap[
+ #endif
+ #endif	/* __FreeBSD__ */
+ 
+-#if defined(__NetBSD_Version__) && defined(KERN_PROC2)
++#if defined(KERN_PROC2)
+ #define	_SYSCTL_ARG	KERN_PROC2
+ #define	_SYSCTL_NMIB	6
+ #define	_SYSCTL_PROC	kinfo_proc2

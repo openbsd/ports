@@ -1,8 +1,8 @@
-$OpenBSD: patch-machdep_bsd-44_c,v 1.1 2002/09/08 12:46:03 jakob Exp $
+$OpenBSD: patch-machdep_bsd-44_c,v 1.2 2010/01/19 15:25:21 okan Exp $
 
---- machdep/bsd-44.c.orig	Fri Apr  5 11:17:21 2002
-+++ machdep/bsd-44.c	Wed Apr 24 21:31:28 2002
-@@ -38,11 +38,54 @@ static char rcsid[] = "$Id: bsd-44.c,v 1
+--- machdep/bsd-44.c.orig	Thu Apr  4 23:17:21 2002
++++ machdep/bsd-44.c	Mon Jan 18 16:49:30 2010
+@@ -38,12 +38,55 @@ static char rcsid[] = "$Id: bsd-44.c,v 1.17 2002/03/21
  #endif
  #endif
  
@@ -25,7 +25,7 @@ $OpenBSD: patch-machdep_bsd-44_c,v 1.1 2002/09/08 12:46:03 jakob Exp $
  #include <string.h>
 -#include <signal.h>
 +#include <unistd.h>
-+
+ 
 +#ifndef	P_WEXIT		/* backward compatibility */
 +#define	P_WEXIT	SWEXIT
 +#endif
@@ -56,9 +56,10 @@ $OpenBSD: patch-machdep_bsd-44_c,v 1.1 2002/09/08 12:46:03 jakob Exp $
 +#define	PROC_UID(kprocp)	kprocp->kp_eproc.e_ucred.cr_uid
 +#endif
 +
- 
++
  /*
   * Define SigNames, NSig, and TtyDevDir here; they are used by other
+  * routines and must be global.  Everyone seems to have their own
 @@ -150,33 +193,6 @@ MdepAction(pid)
  NULL_REGEX_FUNCS
  
