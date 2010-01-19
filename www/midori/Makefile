@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2009/12/22 13:02:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/01/19 14:25:08 landry Exp $
 
 COMMENT =	lightweight web browser
 
 XFCE_VERSION =	0.2.2
 XFCE_GOODIE =	midori
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 CATEGORIES =	www
