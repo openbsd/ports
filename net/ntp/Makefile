@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2009/05/23 16:32:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2010/01/20 20:43:59 naddy Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -8,7 +8,7 @@ COMMENT=	Network Time Protocol reference implementation
 
 VERSION=	4.2.4p7
 DISTNAME=	ntp-${VERSION}
-PKGNAME=	ntp-${VERSION:S/p/pl/}
+PKGNAME=	ntp-${VERSION:S/p/pl/}p0
 CATEGORIES=	net
 MASTER_SITES=	ftp://archive.ntp.org/ntp4/ntp-4.2/ \
 		http://archive.ntp.org/ntp4/ntp-4.2/
