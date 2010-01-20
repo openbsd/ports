@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2009/01/01 21:03:27 djm Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2010/01/20 08:15:21 espie Exp $
 @option no-default-conflict
 @conflict python->=2.5,<2.6
 @conflict python-bz2->=2.5,<2.6
 @conflict python-expat->=2.5,<2.6
 @conflict python-sqlite->=2.5,<2.6
 @pkgpath lang/python/2.5
+@pkgpath lang/python/2.5,-bz2
+@pkgpath lang/python/2.5,-sqlite
+@pkgpath lang/python/2.5,-expat
 bin/pydoc2.5
 @comment bin/python-config
 @bin bin/python2.5

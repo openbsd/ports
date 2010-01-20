@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2009/11/22 22:53:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/01/20 08:15:21 espie Exp $
 
 VERSION=		2.5
 PATCHLEVEL=		.4
-PKG_PATCHLEVEL=		p2
+PKG_PATCHLEVEL=		p3
 SHARED_LIBS=		python2.5 1.0
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
