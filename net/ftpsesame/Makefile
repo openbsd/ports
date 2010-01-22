@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2009/11/30 09:55:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/01/22 14:42:11 sthen Exp $
 
 COMMENT=	automagic packet filter configurator for FTP
 
 DISTNAME=	ftpsesame-0.95
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.sentia.org/projects/ftpsesame/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

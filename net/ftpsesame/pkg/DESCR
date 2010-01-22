@@ -5,10 +5,9 @@ into a pf anchor when an FTP data connection is about to commence.
 You might want to try ftpsesame instead of ftp-proxy(8) from the OpenBSD
 base system for the following reasons: 
 - it runs on "transparent" (no IP address) bridges 
-- you need packetfilter performance on all data connections 
-- you have to handle lots of simultaneous sessions 
 - you do not want to redirect any traffic to the firewall itself: for IP
   accounting or other reasons 
+- you want to pass traffic to multiple FTP servers behind a firewall
 
 In general, ftpsesame is a good choice to run on a firewall in front of
 multiple FTP servers, where no NAT is involved. ftp-proxy(8) is usually

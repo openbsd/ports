@@ -1,7 +1,23 @@
-$OpenBSD: patch-filter_c,v 1.1 2009/11/30 09:55:57 sthen Exp $
+$OpenBSD: patch-filter_c,v 1.2 2010/01/22 14:42:11 sthen Exp $
 --- filter.c.orig	Tue Oct  5 13:12:22 2004
-+++ filter.c	Sun Nov 29 22:49:34 2009
-@@ -65,7 +65,7 @@ filter_init(char *qname, char *tagname)
++++ filter.c	Mon Jan 18 13:57:49 2010
+@@ -34,7 +34,6 @@
+ 
+ #include "filter.h"
+ 
+-static struct pfioc_pooladdr	pfp;
+ static struct pfioc_rule	pfr;
+ static struct pfioc_trans	pft;
+ static struct pfioc_trans_e	pfte;
+@@ -57,7 +56,6 @@ filter_init(char *qname, char *tagname)
+ 	 * Initialize the structs for filter_allow.
+ 	 */
+ 
+-	memset(&pfp, 0, sizeof pfp);
+ 	memset(&pfr, 0, sizeof pfr);
+ 	memset(&pft, 0, sizeof pft);
+ 	memset(&pfte, 0, sizeof pfte);
+@@ -65,16 +63,18 @@ filter_init(char *qname, char *tagname)
  	pft.size = 1;
  	pft.esize = sizeof pfte;
  	pft.array = &pfte;
@@ -9,4 +25,45 @@ $OpenBSD: patch-filter_c,v 1.1 2009/11/30 09:55:57 sthen Exp $
 +	pfte.type = PF_TRANS_RULESET;
  
  	/*
- 	 * pass [quick] log inet proto tcp \
+-	 * pass [quick] log inet proto tcp \
++	 * [pass quick|match] log inet proto tcp \
+ 	 *     from $src/32 to $dst/32 port = $d_port flags S/SAFR keep state
+ 	 *     [tag tagname] [queue qname]
+ 	 */
+-	pfr.rule.action = PF_PASS;
+-	if (tagname == NULL)
++	if (tagname == NULL) {
++		pfr.rule.action = PF_PASS;
+ 		pfr.rule.quick = 1;
++	} else
++		pfr.rule.action = PF_MATCH;
+ 	pfr.rule.log = 1;
+ 	pfr.rule.af = AF_INET;		
+ 	pfr.rule.proto = IPPROTO_TCP;
+@@ -82,6 +82,8 @@ filter_init(char *qname, char *tagname)
+ 	memset(&pfr.rule.src.addr.v.a.mask.v4, 255, 4);
+ 	pfr.rule.dst.addr.type = PF_ADDR_ADDRMASK;
+ 	memset(&pfr.rule.dst.addr.v.a.mask.v4, 255, 4);
++	pfr.rule.nat.addr.type = PF_ADDR_NONE;
++	pfr.rule.rdr.addr.type = PF_ADDR_NONE;
+ 	pfr.rule.dst.port_op = PF_OP_EQ;
+ 	pfr.rule.keep_state = 1;
+ 	pfr.rule.flags = TH_SYN;
+@@ -102,17 +104,12 @@ filter_allow(u_int32_t id, struct in_addr *src, struct
+ 
+ 	snprintf(an, PF_ANCHOR_NAME_SIZE, "%s/%d.%d", FTPSESAME_ANCHOR,
+ 	    getpid(), id);
+-	strlcpy(pfp.anchor, an, PF_ANCHOR_NAME_SIZE);
+ 	strlcpy(pfr.anchor, an, PF_ANCHOR_NAME_SIZE);
+ 	strlcpy(pfte.anchor, an, PF_ANCHOR_NAME_SIZE);
+ 	
+ 	if (ioctl(dev, DIOCXBEGIN, &pft) == -1)
+ 		return (0);
+ 	pfr.ticket = pfte.ticket;
+-
+-	if (ioctl(dev, DIOCBEGINADDRS, &pfp) == -1)
+-		return (0);
+-	pfr.pool_ticket = pfp.ticket;
+ 
+ 	if (src != NULL && dst != NULL && d_port != 0) {
+ 		memcpy(&pfr.rule.src.addr.v.a.addr.v4, src, 4);

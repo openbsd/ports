@@ -1,0 +1,34 @@
+$OpenBSD: patch-ftpsesame_8,v 1.1 2010/01/22 14:42:11 sthen Exp $
+--- ftpsesame.8.orig	Mon Jan 18 12:36:49 2010
++++ ftpsesame.8	Mon Jan 18 12:36:50 2010
+@@ -91,14 +91,22 @@ The process will stay in the foreground, logging to st
+ Listen on
+ .Ar interface .
+ .It Fl t Ar tag
+-Create rules with tag
+-.Ar tag .
+-Also, option
+-.Ar quick
+-is not used.
+-This way the anchor always returns to the main ruleset, with the
+-tag set on approved FTP data connections.
+-The tag can then be used in pass rules below the anchor.
++The filter rules will add tag
++.Ar tag
++to data connections, and will use match rules instead of pass ones.
++This way alternative rules that use the
++.Ar tagged
++keyword can be implemented following the
++.Nm
++anchor.
++These rules can use special
++.Xr pf 4
++features like route-to, reply-to, label, rtable, overload, etc. that
++.Nm
++does not implement itself.
++There must be a matching pass rule after the
++.Nm
++anchor or the data connections will be blocked.
+ .It Fl q Ar queue
+ Create rules with queue
+ .Ar queue
