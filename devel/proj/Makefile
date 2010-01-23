@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/07 10:46:22 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2010/01/23 10:29:45 landry Exp $
 
 COMMENT=	cartographic projection utilities
 
 DISTNAME=	proj-4.6.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	devel geo
 SHARED_LIBS=	proj 5.5
 
@@ -14,7 +15,7 @@ DISTFILES=${DISTNAME}${EXTRACT_SUFX} ${DATUMGRID}
 
 HOMEPAGE=	http://trac.osgeo.org/proj/
 
-MAINTAINER=	Jason Wright <jason@openbsd.org>
+MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

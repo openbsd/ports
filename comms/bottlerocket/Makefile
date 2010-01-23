@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 01:37:09 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/01/23 10:29:45 landry Exp $
 
 COMMENT=	X.10 firecracker interface
 
 DISTNAME=	bottlerocket-0.04c
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	comms
 
 HOMEPAGE=	http://mlug.missouri.edu/~tymm/
 MASTER_SITES=	${HOMEPAGE}
-
-MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 CONFIGURE_STYLE=gnu
 

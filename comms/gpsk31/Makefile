@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2009/12/21 18:11:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/01/23 10:29:45 landry Exp $
 
 COMMENT=	gtk PSK31 send and receive
 
 DISTNAME=	gpsk31-0.3
-PKGNAME=	$(DISTNAME)p6
+PKGNAME=	$(DISTNAME)p7
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/gpsk31.html
-
-MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

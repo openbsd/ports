@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2009/03/07 10:55:15 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2010/01/23 10:29:45 landry Exp $
 
 COMMENT=	GIS TIFF interchange library
 
 DISTNAME=	libgeotiff-1.2.5
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel geo
 SHARED_LIBS=	geotiff 1.2
 
 HOMEPAGE=	http://trac.osgeo.org/geotiff/
 
-MAINTAINER=	Jason Wright <jason@openbsd.org>
+MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

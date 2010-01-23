@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 20:04:20 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/01/23 10:29:45 landry Exp $
 
 COMMENT=	fast-light window manager
 
 DISTNAME=	flwm-1.00
-PKGNAME=	flwm-1.0.0
+PKGNAME=	flwm-1.0.0p0
 CATEGORIES=	x11
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://flwm.sourceforge.net/
-
-MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 EXTRACT_SUFX=	.tgz
 CONFIGURE_STYLE=gnu dest

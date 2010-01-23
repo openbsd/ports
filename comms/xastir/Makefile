@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/10 06:30:31 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2010/01/23 10:29:45 landry Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
 DISTNAME=	xastir-1.8.2
-PKGNAME=	${DISTNAME}p7
+PKGNAME=	${DISTNAME}p8
 CATEGORIES=    	comms hamradio geo
 
 HOMEPAGE=	http://www.xastir.org/
-
-MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

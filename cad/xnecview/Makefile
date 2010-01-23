@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/10 06:30:30 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2010/01/23 10:29:45 landry Exp $
 
 COMMENT=	NEC2 antenna simulator visualizer
 
 VERSION=	1.35
 DISTNAME=	xnecview-${VERSION}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 EXTRACT_SUFX=	.tgz
 
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/xnecview/
@@ -12,8 +12,6 @@ MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/xnecview/
 CATEGORIES=    	cad hamradio
 
 HOMEPAGE=	http://www.cs.utwente.nl/~ptdeboer/ham/xnecview/
-
-MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

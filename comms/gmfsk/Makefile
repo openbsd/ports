@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2009/08/10 06:30:30 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2010/01/23 10:29:45 landry Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
 GNOME_PROJECT=	gmfsk
 GNOME_VERSION=	0.6
-PKGNAME=	${DISTNAME}p13
+PKGNAME=	${DISTNAME}p14
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/
 MASTER_SITES=	${HOMEPAGE}	\
 		http://he.fi/pub/ham/unix/linux/hfmodems/
 EXTRACT_SUFX=	.tar.gz
-
-MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 # GPLv2 - FDL
 PERMIT_PACKAGE_CDROM=	Yes

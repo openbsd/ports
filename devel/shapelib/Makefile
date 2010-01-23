@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:14 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/01/23 10:29:45 landry Exp $
 
 COMMENT=	shapefile manipulation library
 
 DISTNAME=	shapelib-1.2.10
+PKGNAME=	${DISTNAME}p0
 SHARED_LIBS=	shp 1.2
 CATEGORIES=    	devel
 
 HOMEPAGE=	http://shapelib.maptools.org/
-
-MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
