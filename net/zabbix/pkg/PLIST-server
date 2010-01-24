@@ -1,13 +1,19 @@
-@comment $OpenBSD: PLIST-server,v 1.5 2010/01/11 18:30:01 jasper Exp $
+@comment $OpenBSD: PLIST-server,v 1.6 2010/01/24 14:09:01 okan Exp $
 @bin sbin/zabbix_proxy
 @bin sbin/zabbix_server
-@sample ${SYSCONFDIR}/zabbix/
+@man man/man8/zabbix_proxy.8
+@man man/man8/zabbix_server.8
 share/examples/zabbix/
+@sample ${SYSCONFDIR}/zabbix/
+share/examples/zabbix/zabbix_proxy.conf
 @mode 640
 @group _zabbix
-share/examples/zabbix/zabbix_proxy.conf
 @sample ${SYSCONFDIR}/zabbix/zabbix_proxy.conf
+@mode
+@group
 share/examples/zabbix/zabbix_server.conf
+@mode 640
+@group _zabbix
 @sample ${SYSCONFDIR}/zabbix/zabbix_server.conf
 @mode
 @group
@@ -40,13 +46,21 @@ share/zabbix/data/images_oracle.sql
 share/zabbix/data/images_pgsql.sql
 share/zabbix/data/images_sqlite3.sql
 share/zabbix/dbpatches/
-share/zabbix/dbpatches/${MAJOR}/
-share/zabbix/dbpatches/${MAJOR}/mysql/
-share/zabbix/dbpatches/${MAJOR}/mysql/patch.sql
-share/zabbix/dbpatches/${MAJOR}/oracle/
-share/zabbix/dbpatches/${MAJOR}/oracle/patch.sql
-share/zabbix/dbpatches/${MAJOR}/postgresql/
-share/zabbix/dbpatches/${MAJOR}/postgresql/patch.sql
+share/zabbix/dbpatches/1.6/
+share/zabbix/dbpatches/1.6/mysql/
+share/zabbix/dbpatches/1.6/mysql/patch.sql
+share/zabbix/dbpatches/1.6/oracle/
+share/zabbix/dbpatches/1.6/oracle/patch.sql
+share/zabbix/dbpatches/1.6/postgresql/
+share/zabbix/dbpatches/1.6/postgresql/patch.sql
+share/zabbix/dbpatches/1.8/
+share/zabbix/dbpatches/1.8/mysql/
+share/zabbix/dbpatches/1.8/mysql/patch.sql
+share/zabbix/dbpatches/1.8/mysql/upgrade
+share/zabbix/dbpatches/1.8/oracle/
+share/zabbix/dbpatches/1.8/oracle/patch.sql
+share/zabbix/dbpatches/1.8/postgresql/
+share/zabbix/dbpatches/1.8/postgresql/patch.sql
 share/zabbix/schema/
 share/zabbix/schema/mysql.sql
 share/zabbix/schema/oracle.sql

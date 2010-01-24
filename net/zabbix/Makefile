@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2010/01/15 09:08:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/01/24 14:09:00 okan Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-web =		network and application monitoring - web frontend
 
 VERSION =		1.8
-MAJOR =			${VERSION:R}
 DISTNAME =		zabbix-${VERSION}
-FULLPKGNAME-main =	zabbix-agent-${VERSION}p0
-PKGNAME-server =	zabbix-server-${VERSION}p1
-PKGNAME-web =		zabbix-web-${VERSION}
+FULLPKGNAME-main =	zabbix-agent-${VERSION}p1
+PKGNAME-server =	zabbix-server-${VERSION}p2
+PKGNAME-web =		zabbix-web-${VERSION}p1
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.zabbix.com/
@@ -28,7 +27,7 @@ MULTI_PACKAGES =	-main
 PSEUDO_FLAVORS =	no_server
 FLAVORS =		mysql pgsql
 
-SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJOR
+SUBST_VARS +=		PREFIX-web ZABBIX_WEB
 
 WANTLIB =		c kvm m
 LIB_DEPENDS =		lber,ldap::databases/openldap

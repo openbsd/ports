@@ -1,0 +1,173 @@
+$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.1 2010/01/24 14:09:00 okan Exp $
+--- src/libs/zbxsysinfo/openbsd/proc.c.orig	Mon Dec  7 14:43:56 2009
++++ src/libs/zbxsysinfo/openbsd/proc.c	Mon Jan 18 17:10:47 2010
+@@ -43,9 +43,11 @@ static int	proc_argv(pid_t pid, char ***argv, size_t *
+ 	mib[1] = KERN_PROC_ARGS;
+ 	mib[2] = (int)pid;
+ 	mib[3] = KERN_PROC_ARGV;
++	mib[4] = sizeof(struct kinfo_proc2);
++	mib[5] = 0;
+ retry:
+ 	sz = *argv_alloc;
+-	if (0 != sysctl(mib, 4, *argv, &sz, NULL, 0)) {
++	if (0 != sysctl(mib, 6, *argv, &sz, NULL, 0)) {
+ 		if (errno == ENOMEM) {
+ 			*argv_alloc *= 2;
+ 			*argv = zbx_realloc(*argv, *argv_alloc);
+@@ -57,7 +59,8 @@ retry:
+ 	mib[3] = KERN_PROC_NARGV;
+ 
+ 	sz = sizeof(int);
+-	if (0 != sysctl(mib, 4, argc, &sz, NULL, 0))
++	mib[5] = (int)(sz / sizeof(struct kinfo_proc2));
++	if (0 != sysctl(mib, 6, argc, &sz, NULL, 0))
+ 		return FAIL;
+ 
+ 	return SUCCEED;
+@@ -98,7 +101,7 @@ int     PROC_MEMORY(const char *cmd, const char *param
+ 
+ 	size_t	sz;
+ 
+-	struct kinfo_proc	*proc = NULL;
++	struct kinfo_proc2	*proc = NULL;
+ 	struct passwd		*usrinfo;
+ 
+ 	char	**argv = NULL, *args = NULL;
+@@ -150,7 +153,7 @@ int     PROC_MEMORY(const char *cmd, const char *param
+ 	pagesize = getpagesize();
+ 
+ 	mib[0] = CTL_KERN;
+-	mib[1] = KERN_PROC;
++	mib[1] = KERN_PROC2;
+ 	if (NULL != usrinfo) {
+ 		mib[2] = KERN_PROC_UID;
+ 		mib[3] = usrinfo->pw_uid;
+@@ -158,28 +161,31 @@ int     PROC_MEMORY(const char *cmd, const char *param
+ 		mib[2] = KERN_PROC_ALL;
+ 		mib[3] = 0;
+ 	}
++	mib[4] = sizeof(struct kinfo_proc2);
++	mib[5] = 0;
+ 
+ 	sz = 0;
+-	if (0 != sysctl(mib, 4, NULL, &sz, NULL, 0))
++	if (0 != sysctl(mib, 6, NULL, &sz, NULL, 0))
+ 		return SYSINFO_RET_FAIL;
+ 
+-	proc = (struct kinfo_proc *)zbx_malloc(proc, sz);
+-	if (0 != sysctl(mib, 4, proc, &sz, NULL, 0)) {
++	proc = (struct kinfo_proc2 *)zbx_malloc(proc, sz);
++	mib[5] = (int)(sz / sizeof(struct kinfo_proc2));
++	if (0 != sysctl(mib, 6, proc, &sz, NULL, 0)) {
+ 		zbx_free(proc);
+ 		return SYSINFO_RET_FAIL;
+ 	}
+ 
+-	count = sz / sizeof(struct kinfo_proc);
++	count = sz / sizeof(struct kinfo_proc2);
+ 
+ 	for (i = 0; i < count; i++) {
+ 		proc_ok = 0;
+ 		comm_ok = 0;
+ 
+-		if (*procname == '\0' || 0 == strcmp(procname, proc[i].kp_proc.p_comm))
++		if (*procname == '\0' || 0 == strcmp(procname, proc[i].p_comm))
+ 			proc_ok = 1;
+ 
+ 		if (*proccomm != '\0') {
+-			if (SUCCEED == proc_argv(proc[i].kp_proc.p_pid, &argv, &argv_alloc, &argc)) {
++			if (SUCCEED == proc_argv(proc[i].p_pid, &argv, &argv_alloc, &argc)) {
+ 				collect_args(argv, argc, &args, &args_alloc);
+ 				if (NULL != zbx_regexp_match(args, proccomm, NULL))
+ 					comm_ok = 1;
+@@ -188,9 +194,9 @@ int     PROC_MEMORY(const char *cmd, const char *param
+ 			comm_ok = 1;
+ 
+ 		if (proc_ok && comm_ok) {
+-			value = proc[i].kp_eproc.e_vm.vm_tsize
+-				+ proc[i].kp_eproc.e_vm.vm_dsize
+-				+ proc[i].kp_eproc.e_vm.vm_ssize;
++			value = proc[i].p_vm_tsize
++				+ proc[i].p_vm_dsize
++				+ proc[i].p_vm_ssize;
+ 			value *= pagesize;
+ 
+ 			if (0 == proccount++)
+@@ -231,7 +237,7 @@ int	PROC_NUM(const char *cmd, const char *param, unsig
+ 
+ 	size_t	sz;
+ 
+-	struct kinfo_proc	*proc = NULL;
++	struct kinfo_proc2	*proc = NULL;
+ 	struct passwd		*usrinfo;
+ 
+ 	char	**argv = NULL, *args = NULL;
+@@ -281,7 +287,7 @@ int	PROC_NUM(const char *cmd, const char *param, unsig
+ 		*proccomm = '\0';
+ 
+ 	mib[0] = CTL_KERN;
+-	mib[1] = KERN_PROC;
++	mib[1] = KERN_PROC2;
+ 	if (NULL != usrinfo) {
+ 		mib[2] = KERN_PROC_UID;
+ 		mib[3] = usrinfo->pw_uid;
+@@ -289,39 +295,42 @@ int	PROC_NUM(const char *cmd, const char *param, unsig
+ 		mib[2] = KERN_PROC_ALL;
+ 		mib[3] = 0;
+ 	}
++	mib[4] = sizeof(struct kinfo_proc2);
++	mib[5] = 0;
+ 
+ 	sz = 0;
+-	if (0 != sysctl(mib, 4, NULL, &sz, NULL, 0))
++	if (0 != sysctl(mib, 6, NULL, &sz, NULL, 0))
+ 		return SYSINFO_RET_FAIL;
+ 
+-	proc = (struct kinfo_proc *)zbx_malloc(proc, sz);
+-	if (0 != sysctl(mib, 4, proc, &sz, NULL, 0)) {
++	proc = (struct kinfo_proc2 *)zbx_malloc(proc, sz);
++	mib[5] = (int)(sz / sizeof(struct kinfo_proc2));
++	if (0 != sysctl(mib, 6, proc, &sz, NULL, 0)) {
+ 		zbx_free(proc);
+ 		return SYSINFO_RET_FAIL;
+ 	}
+ 
+-	count = sz / sizeof(struct kinfo_proc);
++	count = sz / sizeof(struct kinfo_proc2);
+ 
+ 	for (i = 0; i < count; i++) {
+ 		proc_ok = 0;
+ 		stat_ok = 0;
+ 		comm_ok = 0;
+ 
+-		if (*procname == '\0' || 0 == strcmp(procname, proc[i].kp_proc.p_comm))
++		if (*procname == '\0' || 0 == strcmp(procname, proc[i].p_comm))
+ 			proc_ok = 1;
+ 
+ 		if (zbx_proc_stat != ZBX_PROC_STAT_ALL) {
+ 			switch (zbx_proc_stat) {
+ 			case ZBX_PROC_STAT_RUN:
+-				if (proc[i].kp_proc.p_stat == SRUN || proc[i].kp_proc.p_stat == SONPROC)
++				if (proc[i].p_stat == SRUN || proc[i].p_stat == SONPROC)
+ 					stat_ok = 1;
+ 				break;
+ 			case ZBX_PROC_STAT_SLEEP:
+-				if (proc[i].kp_proc.p_stat == SSLEEP)
++				if (proc[i].p_stat == SSLEEP)
+ 					stat_ok = 1;
+ 				break;
+ 			case ZBX_PROC_STAT_ZOMB:
+-				if (proc[i].kp_proc.p_stat == SZOMB || proc[i].kp_proc.p_stat == SDEAD)
++				if (proc[i].p_stat == SZOMB || proc[i].p_stat == SDEAD)
+ 					stat_ok = 1;
+ 				break;
+ 			}
+@@ -329,7 +338,7 @@ int	PROC_NUM(const char *cmd, const char *param, unsig
+ 			stat_ok = 1;
+ 
+ 		if (*proccomm != '\0') {
+-			if (SUCCEED == proc_argv(proc[i].kp_proc.p_pid, &argv, &argv_alloc, &argc)) {
++			if (SUCCEED == proc_argv(proc[i].p_pid, &argv, &argv_alloc, &argc)) {
+ 				collect_args(argv, argc, &args, &args_alloc);
+ 				if (zbx_regexp_match(args, proccomm, NULL) != NULL)
+ 					comm_ok = 1;

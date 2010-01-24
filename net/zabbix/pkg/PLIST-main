@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/01/11 18:30:01 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/01/24 14:09:01 okan Exp $
 @pkgpath net/zabbix,-main,mysql
 @pkgpath net/zabbix,-main,pgsql
 @pkgpath net/zabbix,-doc,mysql
@@ -17,11 +17,15 @@ share/doc/zabbix/
 share/doc/zabbix/README.OpenBSD
 share/examples/zabbix/
 @sample ${SYSCONFDIR}/zabbix/
+share/examples/zabbix/zabbix_agent.conf
 @mode 640
 @group _zabbix
-share/examples/zabbix/zabbix_agent.conf
 @sample ${SYSCONFDIR}/zabbix/zabbix_agent.conf
+@mode
+@group
 share/examples/zabbix/zabbix_agentd.conf
+@mode 640
+@group _zabbix
 @sample ${SYSCONFDIR}/zabbix/zabbix_agentd.conf
 @comment share/examples/zabbix/zabbix_agentd.win.conf
 @mode
