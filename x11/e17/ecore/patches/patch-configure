@@ -1,9 +1,30 @@
-$OpenBSD: patch-configure,v 1.1 2010/01/11 15:00:15 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2010/01/24 11:58:32 jasper Exp $
 
-Stupid way to remove openssl from the ecore-file and ecore-con pc files.
+- Stupid way to remove openssl from the ecore-file and ecore-con pc files.
+- Force disable Cocoa checks, which will later cause the build to fail
+  if gnustep-gui has been installed.
 
---- configure.orig	Wed Jul 22 13:04:36 2009
-+++ configure	Wed Jul 22 13:04:36 2009
+--- configure.orig	Mon Jun 15 06:43:31 2009
++++ configure	Fri Jan 22 16:47:05 2010
+@@ -23755,7 +23755,7 @@ ac_compile='$OBJC -c $OBJCFLAGS $CPPFLAGS conftest.$ac
+ ac_link='$OBJC -o conftest$ac_exeext $OBJCFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_objc_compiler_gnu
+ 
+-
++if false; then Disable Cocoa checks
+ if test "${ac_cv_header_Cocoa_Cocoa_h+set}" = set; then
+   { echo "$as_me:$LINENO: checking for Cocoa/Cocoa.h" >&5
+ echo $ECHO_N "checking for Cocoa/Cocoa.h... $ECHO_C" >&6; }
+@@ -23904,8 +23904,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ fi
+ 
++fi # Disable Cocoa checks
+ 
+-
+ ### Checks for types
+ { echo "$as_me:$LINENO: checking for int" >&5
+ echo $ECHO_N "checking for int... $ECHO_C" >&6; }
 @@ -27232,7 +27232,7 @@ fi
        # depends on ecore_con anyway.
     else
