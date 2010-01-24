@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2009/12/21 18:03:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2010/01/24 11:18:27 espie Exp $
 
 COMMENT=		GNOME help browser
 
@@ -43,6 +43,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--with-gecko=xulrunner \
 			--with-search=basic
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/xulrunner/include/" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_lib_lzmadec_lzmadec_open=no
 
 .include <bsd.port.mk>
