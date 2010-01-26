@@ -5,3 +5,6 @@ properly under load:
 
 And opening lots of tabs may necessitate higher fd limits,
 crank that via ulimit/limits.
+
+This package currently requires a CPU supporting SSE2.
+You can check this with: dmesg | grep 'cpu.*SSE2'
