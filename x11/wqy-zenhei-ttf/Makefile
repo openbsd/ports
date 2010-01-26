@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/24 01:53:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/01/26 21:10:01 kili Exp $
 
 COMMENT=	Wen Quan Yi Zen Hei outline font
 
 V=		0.6.26-0
 DISTNAME=	wqy-zenhei-$V
-PKGNAME=	wqy-zenhei-ttf-$V
+PKGNAME=	wqy-zenhei-ttf-${V:S/-/./}
 
 CATEGORIES=	x11 chinese
 
