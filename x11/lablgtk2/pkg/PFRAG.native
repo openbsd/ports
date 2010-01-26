@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.2 2009/06/16 06:13:19 sturm Exp $
+@comment $OpenBSD: PFRAG.native,v 1.3 2010/01/26 13:00:28 landry Exp $
 lib/ocaml/lablgtk2/gAction.cmx
 lib/ocaml/lablgtk2/gAssistant.cmx
 lib/ocaml/lablgtk2/gBin.cmx
@@ -60,10 +60,13 @@ lib/ocaml/lablgtk2/gtkTree.cmx
 lib/ocaml/lablgtk2/gtkWindow.cmx
 lib/ocaml/lablgtk2/lablglade.a
 lib/ocaml/lablgtk2/lablglade.cmxa
+lib/ocaml/lablgtk2/lablglade.cmxs
 lib/ocaml/lablgtk2/lablgtk.a
 lib/ocaml/lablgtk2/lablgtk.cmxa
+lib/ocaml/lablgtk2/lablgtk.cmxs
 lib/ocaml/lablgtk2/lablrsvg.a
 lib/ocaml/lablgtk2/lablrsvg.cmxa
+lib/ocaml/lablgtk2/lablrsvg.cmxs
 lib/ocaml/lablgtk2/pango.cmx
 lib/ocaml/lablgtk2/pangoEnums.cmx
 lib/ocaml/lablgtk2/rsvg.cmx
