@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/15 11:13:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/01/26 12:58:37 landry Exp $
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
@@ -6,8 +6,8 @@ COMMENT-python=		python interface to libpst
 DISTNAME=		libpst-0.6.43
 SHARED_LIBS +=  pst                  1.0      # .4.1
 
-PKGNAME-main=		${DISTNAME}
-PKGNAME-python=		py-${DISTNAME}
+PKGNAME-main=		${DISTNAME}p0
+PKGNAME-python=		py-${DISTNAME}p0
 
 CATEGORIES=		converters mail
 
@@ -52,6 +52,11 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${MODPY_INCDIR}" \
 			PYTHON_BIN="python${MODPY_VERSION}"
 
 CFLAGS+=		-pthread
+
+# XXX eats all memory
+.if ${MACHINE_ARCH} == "sparc64"
+CFLAGS+=        -O0
+.endif
 
 FAKE_FLAGS+=		htmldir="${PREFIX}/share/doc/libpst/" \
 			htmldeveldir="${PREFIX}/share/doc/libpst/devel/"
