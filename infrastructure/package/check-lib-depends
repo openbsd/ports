@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.16 2008/04/22 21:36:06 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.17 2010/01/26 21:22:57 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -28,6 +28,7 @@ use OpenBSD::PackageLocator;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
 use OpenBSD::SharedLibs;
+use OpenBSD::LibSpec;
 use File::Temp;
 use Getopt::Std;
 
@@ -510,6 +511,18 @@ sub handle_dependency
 	return $plist->pkgname;
 }
 
+sub lookup_library
+{
+	my ($dir, $spec) = @_;
+	my $libspec = OpenBSD::LibSpec->from_string($spec);
+	my $r = OpenBSD::SharedLibs::lookup_libspec($dir, $libspec);
+	if (!defined $r) {
+		return ();
+	} else {
+		return map {$_->origin} @$r;
+	}
+}
+
 sub report_lib_issue
 {
 	my ($plist, $lib, $binary) = @_;
@@ -519,7 +532,7 @@ sub report_lib_issue
 	my $want = $lib;
 	$want =~ s/\.\d+$//;
 	for my $dir (qw(/usr /usr/X11R6)) {
-		my @r = OpenBSD::SharedLibs::lookup_libspec($dir, $libspec);
+		my @r = lookup_library($dir, $libspec);
 		if (grep { $_ eq 'system' } @r) {
 			return Issue::system_lib->new($lib, $binary);
 		}
@@ -530,7 +543,7 @@ sub report_lib_issue
 		handle_dependency($p, $pkgpath);
 	}
 
-	my @r = OpenBSD::SharedLibs::lookup_libspec('/usr/local', $libspec);
+	my @r = lookup_library('/usr/local', $libspec);
 	if (@r > 0) {
 		for my $p (@r) {
 			if (defined $dependencies->{$plist->pkgname}->{$p}) {
@@ -552,7 +565,7 @@ sub report_lib_issue
 		$done->{$dep} = 1;
 		push(@todo, %{$dependencies->{$dep}});
 	}
-	@r = OpenBSD::SharedLibs::lookup_libspec('/usr/local', $libspec);
+	@r = lookup_library('/usr/local', $libspec);
 	for my $p (@r) {
 		if (defined $done->{$p}) {
 			return Issue::indirect_dependency->new($lib, $binary, $p);
