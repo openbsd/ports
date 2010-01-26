@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/01/12 08:41:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/01/26 20:57:57 jasper Exp $
 
 COMMENT =		library to write an arbitary set of chunks of data to a file
 DISTNAME =		eet-1.2.1
-PKGNAME =		${DISTNAME}v0p0
+PKGNAME =		${DISTNAME}p0v0
 
 SHARED_LIBS +=  eet                  1.0      # .3.1
 
