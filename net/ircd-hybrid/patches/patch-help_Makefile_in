@@ -1,6 +1,6 @@
-$OpenBSD: patch-help_Makefile_in,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
+$OpenBSD: patch-help_Makefile_in,v 1.2 2010/01/26 13:02:06 landry Exp $
 --- help/Makefile.in.orig	Wed Feb 28 05:17:47 2007
-+++ help/Makefile.in	Tue Jan 27 20:47:38 2009
++++ help/Makefile.in	Tue Jan 26 11:23:17 2010
 @@ -8,8 +8,8 @@ RM		= @RM@
  prefix		= @prefix@
  exec_prefix	= @execprefix@
@@ -29,3 +29,12 @@ $OpenBSD: patch-help_Makefile_in,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
  	@for help in opers/*; do \
  	if [ -f $$help ]; then \
  		${INSTALL_DATA} $$help $(ohelpdir); \
+@@ -42,7 +36,7 @@ install: 
+ 	done
+ 	@for link in $(SYMLINKS); do \
+ 		rm -f $(uhelpdir)/$$link; \
+-		ln -s $(ohelpdir)/$$link $(uhelpdir); \
++		ln -s ../opers/$$link $(uhelpdir); \
+ 	done
+ 
+ distclean:
