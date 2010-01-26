@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-i18n-lt,v 1.4 2009/05/08 15:43:51 robert Exp $
+@comment $OpenBSD: PLIST-i18n-lt,v 1.5 2010/01/26 01:33:52 espie Exp $
+@pkgpath editors/openoffice,-i18n-lt
 !%%no_java%%
 openoffice.org/basis3.1/help/lt/
 openoffice.org/basis3.1/help/lt/default.css

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-java,v 1.5 2009/07/01 13:05:54 naddy Exp $
+@comment $OpenBSD: PLIST-java,v 1.6 2010/01/26 01:33:52 espie Exp $
+@pkgpath editors/openoffice,-java
 %%SHARED%%
 openoffice.org/basis3.1/share/Scripts/java/
 openoffice.org/basis3.1/share/Scripts/java/HelloWorld/

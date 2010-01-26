@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2009/12/22 15:08:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/01/26 01:33:52 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,10 +9,10 @@ COMMENT-java=	optional integration of OpenOffice java features
 VERSION=	3.1.1
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOO310_m19
-PKGNAME=	openoffice-${VERSION}p0
-PKGNAME-main=	openoffice-${VERSION}p4
-PKGNAME-kde=	openoffice-kde-${VERSION}
-PKGNAME-java=	openoffice-java-${VERSION}p0
+PKGNAME=	openoffice-${VERSION}p1
+PKGNAME-main=	openoffice-${VERSION}p5
+PKGNAME-kde=	openoffice-kde-${VERSION}p0
+PKGNAME-java=	openoffice-java-${VERSION}p1
 CATEGORIES=	editors productivity
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -68,7 +68,7 @@ LANGS=			bg ca de es fa fi fr hu it ja ko \
 
 .for l in ${LANGS:L}
 MULTI_PACKAGES+=	-i18n-$l
-PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}
+PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}p0
 COMMENT-i18n-$l=	$l language pack for OpenOffice.Org
 RUN_DEPENDS-i18n-$l=	::editors/openoffice3
 WANTLIB-i18n-$l=
