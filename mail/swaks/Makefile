@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/07/26 23:22:29 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2010/01/26 20:59:23 kili Exp $
 
 COMMENT=	swiss army knife SMTP transaction tester
 
 DISTNAME=	swaks.20061116.0
-PKGNAME=	${DISTNAME:C/\./-/g}
+PKGNAME=	${DISTNAME:C/\./-/}
 CATEGORIES=	mail
 EXTRACT_SUFX=
 EXTRACT_ONLY=
