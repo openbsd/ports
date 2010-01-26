@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.13 2010/01/26 10:22:26 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.14 2010/01/26 10:51:22 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -98,6 +98,7 @@ my $stem_extensions = {
 	'teTeX_texmf' => ['texlive_texmf-full', 'texlive_texmf-minimal'],
 	'teTeX_texmf-doc' => 'texlive_docs',
 	'control-center2' => 'gnome-control-center',
+	'gnome2-user-docs' => 'gnome-user-docs',
 # 4.6snap
 	'thunar-vcs-plugin' => 'thunar-vcs',
 	'fam' => 'libgamin',
