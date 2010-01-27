@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/18 00:49:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/01/27 21:43:28 naddy Exp $
 
 # XXX WORK IN PROGRESS.
 
@@ -13,7 +13,7 @@ COMMENT =	gcc4 front-end for LLVM
 GCC_V =		4.2.1
 LLVM_V =	2.6
 DISTNAME =	llvm-gcc-4.2-${LLVM_V}.source
-PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}p0
+PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}p1
 
 SHARED_LIBS =	ssp	0.0 \
 		objc	2.0 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2009/10/15 10:46:02 phessler Exp $
+# $OpenBSD: Makefile,v 1.41 2010/01/27 21:43:28 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
@@ -8,13 +8,13 @@ FULL_PKGVERSION=3.3.6
 BOOTSTRAP_GEN = 7
 ADASTRAP = adastrap-i386-3.3.6-${BOOTSTRAP_GEN}.tgz
 
-PKGNAME-main=	gcc-${FULL_PKGVERSION}p14
-PKGNAME-c++ =	g++-${FULL_PKGVERSION}p13
+PKGNAME-main=	gcc-${FULL_PKGVERSION}p15
+PKGNAME-c++ =	g++-${FULL_PKGVERSION}p14
 PKGNAME-estdc=	libstdc++-${FULL_PKGVERSION}p4
-PKGNAME-g77=	g77-${FULL_PKGVERSION}p11
-PKGNAME-java=	gcj-${FULL_PKGVERSION}p10
-PKGNAME-objc=	gobjc-${FULL_PKGVERSION}p12
-PKGNAME-ada=	gnat-${FULL_PKGVERSION}p10
+PKGNAME-g77=	g77-${FULL_PKGVERSION}p12
+PKGNAME-java=	gcj-${FULL_PKGVERSION}p11
+PKGNAME-objc=	gobjc-${FULL_PKGVERSION}p13
+PKGNAME-ada=	gnat-${FULL_PKGVERSION}p11
 SHARED_LIBS=	estdc++		6.0 \
 		g2c		1.0 \
 		-org-w3c-dom	1.0 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/01 11:51:38 bernd Exp $
+# $OpenBSD: Makefile,v 1.10 2010/01/27 21:43:27 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	access a MySQL database from Ruby
 
 VERSION=	2.8.1
 DISTNAME=	mysql-ruby-${VERSION}
-PKGNAME=	ruby-mysql-${VERSION}
+PKGNAME=	ruby-mysql-${VERSION}p0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://tmtm.org/mysql/ruby/
