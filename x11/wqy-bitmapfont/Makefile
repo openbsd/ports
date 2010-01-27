@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/24 13:33:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/01/27 14:43:15 naddy Exp $
 
 COMMENT=	Wen Quan Yi bitmap song CJK fonts
 
 V=		0.9.9-0
 DISTNAME=	wqy-bitmapfont-pcf-$V
-PKGNAME=	wqy-bitmapfont-$Vp0
+PKGNAME=	wqy-bitmapfont-${V:S/-/./}
 
 CATEGORIES=	x11 chinese
 
