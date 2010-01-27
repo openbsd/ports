@@ -1,0 +1,142 @@
+$OpenBSD: patch-src_ptlib_unix_socket_cxx,v 1.1 2010/01/27 08:24:43 ajacoutot Exp $
+
+Merged from upstream ptlib: fix SIGBUS on strict alignment arches
+
+--- src/ptlib/unix/socket.cxx.orig	Fri Oct 19 08:22:32 2007
++++ src/ptlib/unix/socket.cxx	Tue Jan 26 12:34:48 2010
+@@ -378,6 +378,10 @@
+ #include <netinet/if_ether.h>
+ #endif
+ 
++#if defined(P_OPENBSD)
++#include <ifaddrs.h>
++#endif
++
+ #define ROUNDUP(a) \
+         ((a) > 0 ? (1 + (((a) - 1) | (sizeof(long) - 1))) : sizeof(long))
+ 
+@@ -773,6 +777,12 @@ BOOL PIPSocket::IsLocalHost(const PString & hostname)
+   PBYTEArray buffer;
+   struct ifconf ifConf;
+ 
++#if defined(P_OPENBSD)
++  struct ifaddrs *ifap, *ifa;
++
++  PAssert(getifaddrs(&ifap) == 0, "getifaddrs failed");
++  for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
++#else
+ #ifdef SIOCGIFNUM
+   int ifNum;
+   PAssert(::ioctl(sock.GetHandle(), SIOCGIFNUM, &ifNum) >= 0, "could not do ioctl for ifNum");
+@@ -788,8 +798,14 @@ BOOL PIPSocket::IsLocalHost(const PString & hostname)
+     ifreq * ifName = ifConf.ifc_req;
+ 
+     while (ifName < ifEndList) {
++#endif
+       struct ifreq ifReq;
++#if !defined(P_OPENBSD)
+       memcpy(&ifReq, ifName, sizeof(ifreq));
++#else
++      memset(&ifReq, 0, sizeof(ifReq));
++      strncpy(ifReq.ifr_name, ifa->ifa_name, sizeof(ifReq.ifr_name) - 1);
++#endif
+       
+       if (ioctl(sock.GetHandle(), SIOCGIFFLAGS, &ifReq) >= 0) {
+         int flags = ifReq.ifr_flags;
+@@ -801,15 +817,17 @@ BOOL PIPSocket::IsLocalHost(const PString & hostname)
+         }
+       }
+       
+-#if defined(P_FREEBSD) || defined(P_OPENBSD) || defined(P_NETBSD) || defined(P_MACOSX) || defined(P_VXWORKS) || defined(P_RTEMS) || defined(P_QNX)
++#if defined(P_FREEBSD) || defined(P_NETBSD) || defined(P_MACOSX) || defined(P_VXWORKS) || defined(P_RTEMS) || defined(P_QNX)
+       // move the ifName pointer along to the next ifreq entry
+       ifName = (struct ifreq *)((char *)ifName + _SIZEOF_ADDR_IFREQ(*ifName));
+-#else
++#elif !defined(P_OPENBSD)
+       ifName++;
+ #endif
+     }
++#if !defined(P_OPENBSD)
+   }
+-  
++#endif
++ 
+   return FALSE;
+ }
+ 
+@@ -1862,6 +1880,13 @@ BOOL PIPSocket::GetInterfaceTable(InterfaceTable & lis
+   struct ifconf ifConf;
+   
+ 
++#if defined(P_OPENBSD) 
++  struct ifaddrs *ifap, *ifa;
++
++  PAssert(getifaddrs(&ifap) == 0, "getifaddrs failed");
++
++  for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
++#else
+   // HERE
+ #if defined(SIOCGIFNUM)
+   int ifNum;
+@@ -1877,9 +1902,14 @@ BOOL PIPSocket::GetInterfaceTable(InterfaceTable & lis
+     void * ifEndList = (char *)ifConf.ifc_req + ifConf.ifc_len;
+     ifreq * ifName = ifConf.ifc_req;
+     while (ifName < ifEndList) {
+-
++#endif
+       struct ifreq ifReq;
++#if !defined(P_OPENBSD)
+       memcpy(&ifReq, ifName, sizeof(ifreq));
++#else
++      memset(&ifReq, 0, sizeof(ifReq));
++      strncpy(ifReq.ifr_name, ifa->ifa_name, sizeof(ifReq.ifr_name) - 1);
++#endif
+ 
+       if (ioctl(sock.GetHandle(), SIOCGIFFLAGS, &ifReq) >= 0) {
+         int flags = ifReq.ifr_flags;
+@@ -1895,13 +1925,25 @@ BOOL PIPSocket::GetInterfaceTable(InterfaceTable & lis
+           }
+ #endif
+ 
++#if !defined(P_OPENBSD)
+           memcpy(&ifReq, ifName, sizeof(ifreq));
++#else
++          memset(&ifReq, 0, sizeof(ifReq));
++          strncpy(ifReq.ifr_name, ifa->ifa_name, sizeof(ifReq.ifr_name) - 1);
++#endif
++
+           if (ioctl(sock.GetHandle(), SIOCGIFADDR, &ifReq) >= 0) {
+ 
+             sockaddr_in * sin = (sockaddr_in *)&ifReq.ifr_addr;
+             PIPSocket::Address addr = sin->sin_addr;
+ 
++#if !defined(P_OPENBSD)
+             memcpy(&ifReq, ifName, sizeof(ifreq));
++#else
++            memset(&ifReq, 0, sizeof(ifReq));
++            strncpy(ifReq.ifr_name, ifa->ifa_name, sizeof(ifReq.ifr_name) - 1);
++#endif
++
+             if (ioctl(sock.GetHandle(), SIOCGIFNETMASK, &ifReq) >= 0) {
+               PIPSocket::Address mask = 
+ #ifndef __BEOS__
+@@ -1939,15 +1981,17 @@ BOOL PIPSocket::GetInterfaceTable(InterfaceTable & lis
+         }
+       }
+ 
+-#if defined(P_FREEBSD) || defined(P_OPENBSD) || defined(P_NETBSD) || defined(P_MACOSX) || defined(P_VXWORKS) || defined(P_RTEMS) || defined(P_QNX)
++#if defined(P_FREEBSD) || defined(P_NETBSD) || defined(P_MACOSX) || defined(P_VXWORKS) || defined(P_RTEMS) || defined(P_QNX)
+       // move the ifName pointer along to the next ifreq entry
+       ifName = (struct ifreq *)((char *)ifName + _SIZEOF_ADDR_IFREQ(*ifName));
+-#else
++#elif !defined(P_OPENBSD)
+       ifName++;
+ #endif
+ 
+     }
++#if !defined(P_OPENBSD)
+   }
++#endif
+   return TRUE;
+ }
+ 
