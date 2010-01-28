@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.617 2010/01/04 10:56:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.618 2010/01/28 15:32:32 kili Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -190,7 +190,6 @@
      SUBDIR += nam
      SUBDIR += nbtscan
      SUBDIR += ncftp
-     SUBDIR += ndiff
      SUBDIR += nemesis
      SUBDIR += neon
      SUBDIR += nepenthes
