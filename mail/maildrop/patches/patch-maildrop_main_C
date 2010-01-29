@@ -1,0 +1,16 @@
+$OpenBSD: patch-maildrop_main_C,v 1.1 2010/01/29 12:03:09 jasper Exp $
+
+Security fix for CVE-2010-0301, "maildrop Privilege Escalation
+Security Issue". patch from upstream cvs -r1.59 of main.C.
+
+--- maildrop/main.C.orig	Fri Jan 29 12:04:39 2010
++++ maildrop/main.C	Fri Jan 29 12:05:04 2010
+@@ -471,6 +471,8 @@ const	char *numuidgid=0;
+ 					nouser();
+ #if	RESET_GID
+ 				setgroupid(my_pw->pw_gid);
++#else
++				setgroupid(getegid());
+ #endif
+ 				setuid(my_pw->pw_uid);
+ 				if (getuid() != my_pw->pw_uid)
