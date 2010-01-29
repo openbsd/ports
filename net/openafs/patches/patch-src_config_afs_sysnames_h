@@ -1,7 +1,7 @@
 diff -u src/config/afs_sysnames.h.orig src/config/afs_sysnames.h
---- src/config/afs_sysnames.h.orig	Mon Jan 14 23:14:02 2008
-+++ src/config/afs_sysnames.h	Wed Jul  2 14:53:47 2008
-@@ -241,6 +241,11 @@
+--- src/config/afs_sysnames.h.orig	Mon Jan 14 22:14:02 2008
++++ src/config/afs_sysnames.h	Fri Jan 29 08:49:38 2010
+@@ -241,6 +241,12 @@
  #define SYS_NAME_ID_i386_obsd39		2608
  #define SYS_NAME_ID_i386_obsd40         2609
  #define SYS_NAME_ID_i386_obsd41         2610
@@ -10,6 +10,7 @@ diff -u src/config/afs_sysnames.h.orig src/config/afs_sysnames.h
 +#define SYS_NAME_ID_i386_obsd44         2613
 +#define SYS_NAME_ID_i386_obsd45         2614
 +#define SYS_NAME_ID_i386_obsd46         2615
++#define SYS_NAME_ID_i386_obsd47         2616
  
  #define SYS_NAME_ID_amd64_linux2        2700
  #define SYS_NAME_ID_amd64_linux22       2701
