@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/09/25 21:13:48 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2010/01/30 19:08:30 jolan Exp $
 
 PKG_ARCH=	*
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/dicts/${V}/
+MASTER_SITES=	http://openbsddistfiles.org/martynas/mozilla/dicts/${V}/
 
 LANGUAGES=	af ar be bg ca cs cy-GB da de-AT de-CH de-DE el-EN \
 		el en-AU en-CA en-GB en-ZA eo es-AR es-ES et eu fr \

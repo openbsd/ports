@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2009/12/22 13:02:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2010/01/30 19:08:30 jolan Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_ONLY=	Yes
@@ -8,7 +8,7 @@ DISTNAME=	minimo-1.8.1.19
 PKGNAME=	${DISTNAME}p3v0
 
 CATEGORIES=	www
-MASTER_SITES=	http://mirrors.protection.cx/~martynas/mozilla/minimo/
+MASTER_SITES=	http://openbsddistfiles.org/martynas/mozilla/minimo/
  
 HOMEPAGE=	http://www-archive.mozilla.org/projects/minimo/
 

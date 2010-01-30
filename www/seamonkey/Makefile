@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2009/12/22 13:02:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2010/01/30 19:08:30 jolan Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -41,7 +41,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
-MASTER_SITES0=	http://www.openbsddistfiles.org/~martynas/mozilla/seamonkey/langpacks/
+MASTER_SITES0=	http://openbsddistfiles.org/martynas/mozilla/seamonkey/langpacks/
 
 LANGUAGES=	be-BY 1.1.9 \
 		ca-AD 1.1.15 \

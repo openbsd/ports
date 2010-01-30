@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2010/01/30 19:08:30 jolan Exp $
 
 #
 # For legacy reasons (smooth updates), directory is xulrunner.
@@ -29,7 +29,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES+=		http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/${VERSION}/source/ \
-			http://mirrors.protection.cx/~martynas/mozilla/xulrunner/
+			http://openbsddistfiles.org/martynas/mozilla/xulrunner/
 DISTFILES+=		xulrunner-${VERSION}-source.tar.bz2
 
 MODULES+=		devel/gettext

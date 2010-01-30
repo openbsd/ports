@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2004/07/11 06:21:51 jolan Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2010/01/30 19:08:30 jolan Exp $
 
-MASTER_SITES?=	http://mirrors.protection.cx/~jolan/
+MASTER_SITES?=	http://openbsddistfiles.org/jolan/
 DIST_SUBDIR?=	festival
 CATEGORIES?=	audio
 

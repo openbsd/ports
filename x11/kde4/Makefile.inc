@@ -17,7 +17,7 @@ CONFIGURE_STYLE?=	cmake
 
 EXTRACT_SUFX?=		.tar.bz2
 MASTER_SITES?=	${MASTER_SITE_KDE:=stable/${VERSION}/src/} \
-		http://mirrors.protection.cx/~martynas/kde/${VERSION}/
+		http://openbsddistfiles.org/martynas/kde/${VERSION}/
 
 PORTHOME?=		${WRKDIR}
 
