@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2010/01/24 22:25:27 msf Exp $
+# $OpenBSD: Makefile,v 1.14 2010/01/31 14:27:30 msf Exp $
 
 COMMENT=	centralised configuration management for networks
 
-VERSION=	0.25.3
+VERSION=	0.25.4
 DISTNAME=	puppet-${VERSION}
 CATEGORIES=	sysutils net
 
