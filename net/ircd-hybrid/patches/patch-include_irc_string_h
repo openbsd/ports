@@ -1,0 +1,21 @@
+$OpenBSD: patch-include_irc_string_h,v 1.1 2010/02/01 09:23:33 jasper Exp $
+
+Security fix for CVE-2009-4016, "IRCD-hybrid 'LINKS' Command
+Integer Underflow Vulnerability.
+Patch from upstream svn, revision 1044.
+
+--- include/irc_string.h.orig	Mon Feb  1 09:18:40 2010
++++ include/irc_string.h	Mon Feb  1 09:18:55 2010
+@@ -99,12 +99,6 @@ extern char *basename(char *);
+ #endif
+ 
+ /*
+- * clean_string - cleanup control and high ascii characters
+- * -Dianora
+- */
+-extern char *clean_string(char *, const unsigned char *, size_t);
+-
+-/*
+  * strip_tabs - convert tabs to spaces
+  * - jdc
+  */

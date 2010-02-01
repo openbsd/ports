@@ -1,0 +1,22 @@
+$OpenBSD: patch-contrib_spy_links_notice_c,v 1.1 2010/02/01 09:23:33 jasper Exp $
+
+Security fix for CVE-2009-4016, "IRCD-hybrid 'LINKS' Command
+Integer Underflow Vulnerability.
+Patch from upstream svn, revision 1044.
+
+--- contrib/spy_links_notice.c.orig	Mon Feb  1 09:17:39 2010
++++ contrib/spy_links_notice.c	Mon Feb  1 09:18:16 2010
+@@ -61,10 +61,9 @@ show_links(va_list args)
+ 
+   if (IsClient(source_p))
+     sendto_realops_flags(UMODE_SPY, L_ALL,
+-                         "LINKS '%s' requested by %s (%s@%s) [%s]",
+-                         parv[1] ? parv[1] : "", source_p->name,
+-			 source_p->username, source_p->host,
+-			 source_p->servptr->name);
++                         "links requested by %s (%s@%s) [%s]",
++                         source_p->name, source_p->username,
++			 source_p->host, source_p->servptr->name);
+ 
+   return pass_callback(prev_hook, source_p, parc, parv);
+ }
