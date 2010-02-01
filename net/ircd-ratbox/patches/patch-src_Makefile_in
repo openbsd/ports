@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
---- src/Makefile.in.orig	Wed Dec 10 05:12:15 2008
-+++ src/Makefile.in	Wed Feb  4 18:41:08 2009
-@@ -123,7 +123,7 @@ F77 = @F77@
- FFLAGS = @FFLAGS@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2010/02/01 10:32:07 jasper Exp $
+--- src/Makefile.in.orig	Fri Jan 22 18:26:08 2010
++++ src/Makefile.in	Mon Feb  1 10:39:19 2010
+@@ -136,7 +136,7 @@ EXEEXT = @EXEEXT@
+ FGREP = @FGREP@
  GREP = @GREP@
  HELP_DIR = @HELP_DIR@
 -INCLTDL = @INCLTDL@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
  INSTALL = @INSTALL@
  INSTALL_DATA = @INSTALL_DATA@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
-@@ -135,7 +135,7 @@ LEX = @LEX@
+@@ -149,7 +149,7 @@ LEX = @LEX@
  LEXLIB = @LEXLIB@
  LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
  LIBEXEC_DIR = @LIBEXEC_DIR@

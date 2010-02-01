@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_example_efnet_conf,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
---- doc/example.efnet.conf.orig	Tue Dec 16 04:08:43 2008
-+++ doc/example.efnet.conf	Sun Feb  8 23:55:43 2009
-@@ -101,21 +101,21 @@ serverinfo {
+$OpenBSD: patch-doc_example_efnet_conf,v 1.2 2010/02/01 10:32:07 jasper Exp $
+--- doc/example.efnet.conf.orig	Mon Feb  1 10:37:46 2010
++++ doc/example.efnet.conf	Mon Feb  1 10:39:06 2010
+@@ -101,13 +101,13 @@ serverinfo {
  	default_max_clients = 10000;
  
  	/* ssl_private_key: our ssl private key */
@@ -16,10 +16,11 @@ $OpenBSD: patch-doc_example_efnet_conf,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
 -        ssl_dh_params = "etc/dh.pem";
 +        ssl_dh_params = "${CONFDIR}/dh.pem";
  
- 	/* ssld_count: number of ssld processes you want to start, if you have a really busy 
- 	 * server, using N-1 where N is the number of cpu/cpu cores you have might be useful
-  	 */
-         ssld_count = 1;
+ 	/* ssld_count: number of ssld processes you want to start, if you
+ 	 * have a really busy server, using N-1 where N is the number of
+@@ -117,8 +117,8 @@ serverinfo {
+ 	 */
+ 	ssld_count = 1;
  
 -	/* bandb: path to the ban database - default is PREFIX/etc/ban.db */
 -	bandb = "etc/ban.db";
@@ -28,7 +29,7 @@ $OpenBSD: patch-doc_example_efnet_conf,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
  };
  
  /* admin {}: contains admin information about the server. (OLD A:) */
-@@ -142,16 +142,16 @@ log {
+@@ -145,16 +145,16 @@ log {
  	 * - operspylog: operspy usage
  	 * - ioerrorlog: IO errors
  	 */
@@ -55,7 +56,7 @@ $OpenBSD: patch-doc_example_efnet_conf,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
  };
  
  /* class {}: contain information about classes for users (OLD Y:) */
-@@ -355,7 +355,7 @@ operator "god" {
+@@ -358,7 +358,7 @@ operator "god" {
  	 * A password should not be defined when this is used, see 
  	 * doc/challenge.txt for more information.
  	 */
@@ -64,7 +65,7 @@ $OpenBSD: patch-doc_example_efnet_conf,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
  
  	/* umodes: the specific umodes this oper gets when they oper.
  	 * If this is specified an oper will not be given oper_umodes
-@@ -1029,8 +1029,8 @@ modules {
+@@ -1041,8 +1041,8 @@ modules {
  	/* module path: paths to search for modules specified below and 
  	 * in /modload.
  	 */

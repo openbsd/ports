@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
---- configure.ac.orig	Wed Dec 10 15:26:42 2008
-+++ configure.ac	Sat Feb  7 13:30:15 2009
+$OpenBSD: patch-configure_ac,v 1.2 2010/02/01 10:32:07 jasper Exp $
+--- configure.ac.orig	Fri Jan 22 18:26:08 2010
++++ configure.ac	Mon Feb  1 10:39:19 2010
 @@ -5,8 +5,8 @@ dnl TODO: clean up all the OpenSSL and shared module c
  dnl the most major changes have already been made and it looks like
  dnl said functions need to be just about as complex as they already are.
@@ -10,9 +10,9 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
 +AC_PREREQ(2.62)
 +AUTOMAKE_OPTIONS = 1.9
  dnl Sneaky way to get an Id tag into the configure script
- AC_COPYRIGHT([$Id: patch-configure_ac,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $])
+ AC_COPYRIGHT([$Id: patch-configure_ac,v 1.2 2010/02/01 10:32:07 jasper Exp $])
  AC_INIT([ircd-ratbox],[devel])
-@@ -83,7 +83,7 @@ AC_PROG_LIBTOOL
+@@ -109,7 +109,7 @@ done
  
  LIBTOOL="$LIBTOOL --silent"
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
  
  case "$host_os" in
  *cygwin*)
-@@ -357,6 +357,24 @@ AC_HELP_STRING([--with-logdir=DIR],
+@@ -383,6 +383,24 @@ AC_HELP_STRING([--with-logdir=DIR],
  		 AC_MSG_RESULT(no)
  	         AC_DEFINE_DIR(LOG_DIR, logdir, [Prefix where to write logfiles.])
  	  	 AC_SUBST_DIR([logdir])]

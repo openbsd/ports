@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/10/19 21:01:16 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2010/02/01 10:32:07 jasper Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	advanced, stable and fast irc server
 
-DISTNAME =	ircd-ratbox-3.0.4
-PKGNAME =	${DISTNAME}p1
+DISTNAME =	ircd-ratbox-3.0.6
 CATEGORIES =	net
 EXTRACT_SUFX =	.tar.bz2
 
