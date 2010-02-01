@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/10 18:11:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/02/01 20:28:17 naddy Exp $
+@conflict lam-*
 %%SHARED%%
 bin/mpiCC
 bin/mpiCC-vt
