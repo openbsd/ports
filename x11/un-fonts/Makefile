@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/28 20:27:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:15 espie Exp $
 
+     SUBDIR =
      SUBDIR += core
      SUBDIR += extra
 

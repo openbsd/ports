@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2007/10/04 17:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/02/01 17:00:12 espie Exp $
 
+     SUBDIR =
      SUBDIR += chipmunk
      SUBDIR += gerbv
      SUBDIR += gnucap

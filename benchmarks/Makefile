@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2009/04/09 00:20:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/02/01 17:00:12 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/02/16 13:32:59 andreas Exp $
 #
 
+     SUBDIR =
      SUBDIR += blogbench
      SUBDIR += bonnie
      SUBDIR += bonnie++

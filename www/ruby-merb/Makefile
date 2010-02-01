@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/01/31 12:40:06 bernd Exp $
+# $OpenBSD: Makefile,v 1.5 2010/02/01 17:00:14 espie Exp $
 
 # It's intended that this list isn't sorted alphabetically.
 # Please keep it that way. Thanks.
 
+    SUBDIR =
     SUBDIR += core
 
     SUBDIR += action-args

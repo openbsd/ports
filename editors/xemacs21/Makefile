@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.44 2007/09/18 18:56:03 aanriot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/02/01 17:00:13 espie Exp $
 
+    SUBDIR =
     SUBDIR += stable
     SUBDIR += stable,mule
 

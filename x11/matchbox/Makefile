@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2008/11/11 22:49:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/02/01 17:00:14 espie Exp $
 
+     SUBDIR =
      SUBDIR += libfakekey
      SUBDIR += libmatchbox
      SUBDIR += matchbox-common

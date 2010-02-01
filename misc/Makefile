@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.127 2010/01/04 10:56:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.128 2010/02/01 17:00:13 espie Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
+     SUBDIR =
      SUBDIR += WordGenerator
      SUBDIR += amanda
      SUBDIR += astrolog

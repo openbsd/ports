@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2010/01/04 10:43:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2010/02/01 17:00:13 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
-
+ 
+     SUBDIR =
      SUBDIR += emerillon
      SUBDIR += gdal
      SUBDIR += geoclue

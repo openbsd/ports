@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.194 2010/01/12 19:15:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.195 2010/02/01 17:00:14 espie Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
+     SUBDIR =
      SUBDIR += LPRng
      SUBDIR += acx-firmware
      SUBDIR += anacron

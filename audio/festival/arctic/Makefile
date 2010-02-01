@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/08/06 03:33:36 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:12 espie Exp $
 
+     SUBDIR =
      SUBDIR += festvox_cmu_us_awb_arctic_hts
      SUBDIR += festvox_cmu_us_bdl_arctic_hts
      SUBDIR += festvox_cmu_us_jmk_arctic_hts

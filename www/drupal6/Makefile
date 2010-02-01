@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2009/11/25 11:15:17 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/02/01 17:00:14 espie Exp $
 
+SUBDIR =
 SUBDIR += FCKeditor
 SUBDIR += admin-menu
 SUBDIR += advanced_help

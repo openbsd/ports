@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.41 2005/05/16 16:17:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.42 2010/02/01 17:00:14 espie Exp $
 
+SUBDIR =
 SUBDIR += core
 SUBDIR += core,no_x11
 SUBDIR += libnasl

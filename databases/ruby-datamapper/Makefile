@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/30 02:40:55 bernd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:12 espie Exp $
 
+    SUBDIR =
     SUBDIR += core
     SUBDIR += aggregates
     SUBDIR += migrations

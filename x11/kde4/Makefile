@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2008/02/09 15:40:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/02/01 17:00:14 espie Exp $
 
+     SUBDIR =
      SUBDIR += accessibility
      SUBDIR += admin
      SUBDIR += artwork

@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2006/10/21 11:44:10 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2010/02/01 17:00:14 espie Exp $
 
+SUBDIR =
 SUBDIR += core
 SUBDIR += extensions
 SUBDIR += extensions,no_x11

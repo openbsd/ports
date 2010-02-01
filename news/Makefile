@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2009/10/13 21:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2010/02/01 17:00:14 espie Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
+     SUBDIR =
      SUBDIR += aub
      SUBDIR += hellanzb
      SUBDIR += leafnode

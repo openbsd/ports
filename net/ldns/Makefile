@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2008/02/03 19:09:49 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 2010/02/01 17:00:13 espie Exp $
 
-SUBDIR+= libldns
-SUBDIR+= drill
-SUBDIR+= utils
+SUBDIR =
+SUBDIR += libldns
+SUBDIR += drill
+SUBDIR += utils
 
 .include <bsd.port.subdir.mk>

@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2008/11/14 11:08:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/02/01 17:00:14 espie Exp $
 
+     SUBDIR =
      SUBDIR += addresses
      SUBDIR += back
      SUBDIR += base

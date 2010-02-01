@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2007/04/09 00:21:51 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/02/01 17:00:14 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/01/03 00:40:55 max Exp $
 #
 
+    SUBDIR =
     SUBDIR += bash
     SUBDIR += es
     SUBDIR += perlsh

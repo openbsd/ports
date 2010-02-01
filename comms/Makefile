@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.47 2009/02/08 22:35:15 ian Exp $
+# $OpenBSD: Makefile,v 1.48 2010/02/01 17:00:12 espie Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
+     SUBDIR =
      SUBDIR += birda
      SUBDIR += bottlerocket
      SUBDIR += c3270

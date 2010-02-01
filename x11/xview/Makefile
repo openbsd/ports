@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2000/04/02 18:56:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/02/01 17:00:15 espie Exp $
 
-SUBDIR+= config
-SUBDIR+= lib
-SUBDIR+= clients
+SUBDIR =
+SUBDIR += config
+SUBDIR += lib
+SUBDIR += clients
 
 
 .include <bsd.port.subdir.mk>

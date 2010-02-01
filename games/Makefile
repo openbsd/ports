@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.204 2010/01/04 10:43:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.205 2010/02/01 17:00:13 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
+     SUBDIR =
      SUBDIR += abuse
      SUBDIR += adom
      SUBDIR += afternoonstalker

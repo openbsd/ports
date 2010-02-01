@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2008/08/21 21:03:43 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2010/02/01 17:00:13 espie Exp $
 
+SUBDIR =
 SUBDIR += 2.13
 SUBDIR += 2.52
 SUBDIR += 2.54

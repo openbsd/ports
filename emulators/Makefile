@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.49 2009/03/17 19:59:33 landry Exp $
+# $OpenBSD: Makefile,v 1.50 2010/02/01 17:00:13 espie Exp $
 
+    SUBDIR =
     SUBDIR += BasiliskII
     SUBDIR += bochs
     SUBDIR += bochs,debug

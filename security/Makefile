@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.227 2009/12/17 14:15:31 benoit Exp $
+# $OpenBSD: Makefile,v 1.228 2010/02/01 17:00:14 espie Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
+     SUBDIR =
      SUBDIR += ADMfzap
      SUBDIR += ADMsmb
      SUBDIR += ADMsnmp

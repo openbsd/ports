@@ -1,5 +1,6 @@
-#	$OpenBSD: Makefile,v 1.81 2010/01/12 10:58:01 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.82 2010/02/01 17:00:14 espie Exp $
 
+    SUBDIR =
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
     SUBDIR += acrofonts

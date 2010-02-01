@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/05 22:31:44 phessler Exp $ 
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:13 espie Exp $ 
 
+     SUBDIR =
      SUBDIR += shareware
      SUBDIR += doom1
      SUBDIR += doom2

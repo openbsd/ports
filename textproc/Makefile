@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.290 2010/01/31 12:09:13 espie Exp $
+# $OpenBSD: Makefile,v 1.291 2010/02/01 17:00:14 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
+     SUBDIR =
      SUBDIR += TclXML
      SUBDIR += agrep
      SUBDIR += antiword

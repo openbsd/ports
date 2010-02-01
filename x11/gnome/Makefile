@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.106 2010/01/11 15:02:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2010/02/01 17:00:14 espie Exp $
 
+     SUBDIR =
      SUBDIR += alacarte
      SUBDIR += applets2
      SUBDIR += at-spi

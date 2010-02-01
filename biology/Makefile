@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2008/09/24 13:37:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/02/01 17:00:12 espie Exp $
 #
 
+     SUBDIR =
      SUBDIR += AcePerl
      SUBDIR += AcePerl,opt
      SUBDIR += bioperl

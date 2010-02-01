@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2009/11/10 20:49:06 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2010/02/01 17:00:14 espie Exp $
 
+     SUBDIR =
      SUBDIR += bruce
      SUBDIR += calcurse
      SUBDIR += devtodo

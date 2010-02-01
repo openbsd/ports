@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/06/26 18:04:24 aanriot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:14 espie Exp $
 
+SUBDIR =
 SUBDIR += libprelude
 SUBDIR += libpreludedb
 SUBDIR += lml

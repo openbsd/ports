@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/14 12:47:48 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/02/01 17:00:13 espie Exp $
 
+     SUBDIR =
      SUBDIR += core
      SUBDIR += conch
      SUBDIR += lore

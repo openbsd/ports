@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1 2005/05/28 00:00:59 mjc Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:14 espie Exp $
 
+     SUBDIR =
      SUBDIR += conntrack
      SUBDIR += demux
      SUBDIR += tcpfilter

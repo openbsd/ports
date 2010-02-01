@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2008/06/18 20:10:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2010/02/01 17:00:13 espie Exp $
 
+     SUBDIR =
      SUBDIR += libc5
 
 .include <bsd.port.subdir.mk>

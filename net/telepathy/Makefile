@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2009/06/16 17:31:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/02/01 17:00:14 espie Exp $
 
+    SUBDIR =
     SUBDIR += libtelepathy
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-feed

@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2008/07/26 14:12:00 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/02/01 17:00:14 espie Exp $
 
+    SUBDIR =
     SUBDIR += IMCE
     SUBDIR += admin-menu
     SUBDIR += advanced_user

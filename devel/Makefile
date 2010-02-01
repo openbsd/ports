@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.770 2010/01/12 19:27:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.771 2010/02/01 17:00:12 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
+     SUBDIR =
      SUBDIR += ElectricFence
      SUBDIR += ORBit2
      SUBDIR += acpica

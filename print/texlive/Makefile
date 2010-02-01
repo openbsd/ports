@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/21 20:57:57 steven Exp $
+# $OpenBSD: Makefile,v 1.4 2010/02/01 17:00:14 espie Exp $
 
+SUBDIR =
 SUBDIR += base
 SUBDIR += texmf
 

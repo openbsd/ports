@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2003/04/20 19:50:11 grange Exp $
+# $OpenBSD: Makefile,v 1.11 2010/02/01 17:00:14 espie Exp $
 
+     SUBDIR =
      SUBDIR += cyrproxy
      SUBDIR += d1489
      SUBDIR += pscyr

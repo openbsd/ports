@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1 2009/02/16 10:13:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:13 espie Exp $
 
+    SUBDIR =
     SUBDIR += libical
     SUBDIR += libvmime
     SUBDIR += webaccess

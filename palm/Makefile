@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2006/10/19 16:26:03 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.14 2010/02/01 17:00:14 espie Exp $
 
+     SUBDIR =
      SUBDIR += bibelot
      SUBDIR += coldsync
      SUBDIR += isilo

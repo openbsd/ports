@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/15 15:41:55 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:13 espie Exp $
 
+    SUBDIR =
     SUBDIR += core
     SUBDIR += plugins-ugly
     SUBDIR += plugins-good

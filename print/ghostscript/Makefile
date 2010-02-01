@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2008/11/12 19:27:28 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2010/02/01 17:00:14 espie Exp $
 
+    SUBDIR =
     SUBDIR += gnu
     SUBDIR += gnu,a4
     SUBDIR += gnu,gtk

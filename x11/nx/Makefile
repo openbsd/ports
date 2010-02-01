@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1 2008/06/13 17:10:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:14 espie Exp $
 
+     SUBDIR =
      SUBDIR += nxcomp
      SUBDIR += nxssh
      SUBDIR += opennx

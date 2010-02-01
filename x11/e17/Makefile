@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/01/11 15:07:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/02/01 17:00:14 espie Exp $
 
 # edb, epeg and etk are disabled as they need an update.
 
+     SUBDIR =
      SUBDIR += e
      SUBDIR += ecore
 #     SUBDIR += edb

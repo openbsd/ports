@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2003/11/21 05:11:04 jolan Exp $
+# $OpenBSD: Makefile,v 1.18 2010/02/01 17:00:14 espie Exp $
 
-     SUBDIR+= core
-     SUBDIR+= dicts
+     SUBDIR =
+     SUBDIR += core
+     SUBDIR += dicts
 
 .include <bsd.port.subdir.mk>

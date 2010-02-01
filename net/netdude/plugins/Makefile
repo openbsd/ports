@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/05/27 23:51:07 mjc Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:14 espie Exp $
 
+     SUBDIR =
      SUBDIR += traffic-analyzer
 
 .include <bsd.port.subdir.mk>

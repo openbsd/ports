@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.245 2010/01/08 10:48:00 stephan Exp $
+# $OpenBSD: Makefile,v 1.246 2010/02/01 17:00:13 espie Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
-
+ 
+     SUBDIR =
      SUBDIR += abook
      SUBDIR += adcomplain
      SUBDIR += akpop3d

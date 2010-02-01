@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/06 10:57:38 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:13 espie Exp $
 
+    SUBDIR =
     SUBDIR += adt
     SUBDIR += logger
     SUBDIR += socket

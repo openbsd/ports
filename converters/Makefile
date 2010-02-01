@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.47 2009/05/11 09:36:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2010/02/01 17:00:12 espie Exp $
 #
 
+    SUBDIR =
     SUBDIR += base64
     SUBDIR += btoa
     SUBDIR += html2text

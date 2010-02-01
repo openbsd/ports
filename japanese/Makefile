@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2006/11/14 14:20:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2010/02/01 17:00:13 espie Exp $
 
+     SUBDIR =
      SUBDIR += Wnn
      SUBDIR += canna
      SUBDIR += funetfonts

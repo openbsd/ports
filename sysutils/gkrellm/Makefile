@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2003/11/03 20:35:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.27 2010/02/01 17:00:14 espie Exp $
 
+     SUBDIR =
      SUBDIR += gkrellm
      SUBDIR += plugins
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.91 2009/09/06 10:35:33 jolan Exp $
+# $OpenBSD: Makefile,v 1.92 2010/02/01 17:00:13 espie Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
+     SUBDIR =
      SUBDIR += Gofer
      SUBDIR += STk
      SUBDIR += antlr2

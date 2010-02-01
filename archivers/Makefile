@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.45 2009/09/10 15:29:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2010/02/01 17:00:12 espie Exp $
 
+     SUBDIR =
      SUBDIR += arc
      SUBDIR += bzip
      SUBDIR += bzip2

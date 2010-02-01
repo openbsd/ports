@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/07/04 21:15:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:13 espie Exp $
 
+    SUBDIR =
     SUBDIR += base
     SUBDIR += gtk
 
