@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2010/01/24 11:18:27 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2010/02/01 13:12:27 jasper Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.28.1
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,6 +38,7 @@ LIB_DEPENDS=		startup-notification-1::devel/startup-notification \
 
 USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	yelp
+DESKTOP_FILES=		Yes
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--with-gecko=xulrunner \
