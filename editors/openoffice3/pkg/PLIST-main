@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/01/26 01:33:52 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2010/02/02 12:32:42 ajacoutot Exp $
 @pkgpath editors/openoffice
 @pkgpath editors/openoffice,-main
 %%SHARED%%
@@ -5911,5 +5911,5 @@ share/icons/hicolor/48x48/apps/ooo-writer.png
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/openoffice.org3/program/unopkg add --shared %D/openoffice.org3/share/extension/install/dict-en.oxt > /dev/null 2>&1
-@unexec %D/openoffice.org3/program/unopkg remove --shared org.openoffice.en.hunspell.dictionaries > /dev/null 2>&1
+@exec %D/openoffice.org3/program/unopkg add --shared %D/openoffice.org3/share/extension/install/dict-en.oxt > /dev/null 2>&1 || true
+@unexec %D/openoffice.org3/program/unopkg remove --shared org.openoffice.en.hunspell.dictionaries > /dev/null 2>&1 || true
