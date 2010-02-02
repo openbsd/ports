@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2010/02/02 19:48:15 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2010/02/02 20:23:30 sthen Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
@@ -7,6 +7,7 @@ VERSION =		4.71
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}p0
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}p1
+FULLPKGPATH-eximon =	${PKGPATH},-eximon
 MASTER_SITES =		ftp://ftp.exim.org/pub/exim/exim4/ \
 			http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/ \
 			ftp://mirror.switch.ch/mirror/exim/exim/exim4/
@@ -27,14 +28,14 @@ FLAVOR ?=
 MULTI_PACKAGES =	-main
 
 MODULES =		converters/libiconv
-LIB_DEPENDS =		pcre::devel/pcre
+LIB_DEPENDS-main =	${LIB_DEPENDS} pcre::devel/pcre
 WANTLIB =		c m
 WANTLIB-main =		${WANTLIB} crypto perl ssl util wrap
-WANTLIB-eximon =	${WANTLIB} X11 Xaw Xext Xmu Xt
-RUN_DEPENDS-eximon =	::${BASE_PKGPATH},-main
-LIB_DEPENDS-main =	${LIB_DEPENDS}
+WANTLIB-eximon =		${WANTLIB} X11 Xaw Xext Xmu Xt
+RUN_DEPENDS-eximon =	::${PKGPATH},-main
+LIB_DEPENDS-eximon =	pcre::devel/pcre
 
-NO_REGRESS =	Yes
+NO_REGRESS =		Yes
 
 .if !${FLAVOR:L:Mno_eximon}
 USE_X11 =		Yes
@@ -59,20 +60,20 @@ LIB_DEPENDS-main +=	pq.>=2:postgresql-client-*:databases/postgresql
 .if ${FLAVOR:L:Msqlite3}
 EXIM_MAKECAT +=		"LOOKUP_SQLITE=yes\n"
 EXIM_LOOKUP_LIBS +=	-L${LOCALBASE}/lib/ -lsqlite3
-LIB_DEPENDS-main +=		sqlite3.>=8::databases/sqlite3
+LIB_DEPENDS-main +=	sqlite3.>=8::databases/sqlite3
 .endif
 
 .if ${FLAVOR:L:Mldap}
 EXIM_MAKECAT +=		"LOOKUP_LDAP=yes\n"
 EXIM_MAKECAT +=		"LDAP_LIB_TYPE=OPENLDAP2\n"
 EXIM_LOOKUP_LIBS +=	-L${LOCALBASE}/lib -lldap -llber
-LIB_DEPENDS-main +=		ldap.>=9,lber:openldap-client->=2.3:databases/openldap
+LIB_DEPENDS-main +=	ldap.>=9,lber:openldap-client->=2.3:databases/openldap
 .endif
 
 .if ${FLAVOR:L:Msasl}
 EXIM_MAKECAT +=		"AUTH_CYRUS_SASL=yes\n"
 EXIM_EXTRA_LIBS +=	-L${LOCALBASE}/lib -lsasl2
-LIB_DEPENDS-main +=		sasl2::security/cyrus-sasl2
+LIB_DEPENDS-main +=	sasl2::security/cyrus-sasl2
 .endif
 
 EXIM_EXTRA_LIBS +=	-lwrap -L${LOCALBASE}/lib -liconv
