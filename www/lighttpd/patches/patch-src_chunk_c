@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_chunk_c,v 1.1 2010/02/02 08:10:29 sthen Exp $
+--- src/chunk.c.orig	Mon Feb  1 19:20:13 2010
++++ src/chunk.c	Mon Feb  1 19:20:25 2010
+@@ -197,8 +197,6 @@ int chunkqueue_append_buffer(chunkqueue *cq, buffer *m
+ int chunkqueue_append_buffer_weak(chunkqueue *cq, buffer *mem) {
+ 	chunk *c;
+ 
+-	if (mem->used == 0) return 0;
+-
+ 	c = chunkqueue_get_unused_chunk(cq);
+ 	c->type = MEM_CHUNK;
+ 	c->offset = 0;

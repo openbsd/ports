@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_base_h,v 1.1 2010/02/02 08:10:29 sthen Exp $
+--- src/base.h.orig	Mon Feb  1 19:19:50 2010
++++ src/base.h	Mon Feb  1 19:20:01 2010
+@@ -431,7 +431,6 @@ typedef struct {
+ 
+ #ifdef USE_OPENSSL
+ 	SSL *ssl;
+-	buffer *ssl_error_want_reuse_buffer;
+ # ifndef OPENSSL_NO_TLSEXT
+ 	buffer *tlsext_server_name;
+ # endif
