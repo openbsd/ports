@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/09 11:18:59 bernd Exp $
+# $OpenBSD: Makefile,v 1.9 2010/02/03 12:59:24 jasper Exp $
+
+ONLY_FOR_ARCHS = i386
 
 SHARED_ONLY =	Yes
 
