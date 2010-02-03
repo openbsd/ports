@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/26 15:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/02/03 01:05:41 pvalchev Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		Chromium browser
 
 DISTNAME=		chromium-4.0.251.0
-PKGNAME =		${DISTNAME}p3
+PKGNAME =		${DISTNAME}p4
 
 CATEGORIES =		www
 
@@ -36,6 +36,7 @@ MODGCC4_ARCHES = *
 MODGCC4_LANGS =	c c++
 
 PYTHON_VER=	2.6
+RUN_DEPENDS =	::sysutils/gamin
 BUILD_DEPENDS =	:python->=${PYTHON_VER}:lang/python/${PYTHON_VER} \
 		::devel/gperf \
 		::devel/bison \
