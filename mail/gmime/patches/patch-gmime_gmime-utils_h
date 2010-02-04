@@ -1,0 +1,16 @@
+$OpenBSD: patch-gmime_gmime-utils_h,v 1.1 2010/02/04 09:54:23 jasper Exp $
+
+Fix to prevent possible buffer overflows.
+From upstream git: 3fb8f5295c053d71d426db1e4ee1d47bc869f0a8
+
+--- gmime/gmime-utils.h.orig	Thu Feb  4 10:33:49 2010
++++ gmime/gmime-utils.h	Thu Feb  4 10:34:04 2010
+@@ -106,7 +106,7 @@ struct _GMimeReferences {
+  * Returns the number of output bytes needed to uuencode an input
+  * buffer of size @x.
+  **/
+-#define GMIME_UUENCODE_LEN(x)      ((size_t) (((((x) + 2) / 45) * 62) + 62))
++#define GMIME_UUENCODE_LEN(x)      ((size_t) (((((x) + 2) / 45) * 62) + 64))
+ 
+ 
+ /**

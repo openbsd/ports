@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/08/13 16:56:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/02/04 09:54:23 jasper Exp $
 
 COMMENT=		MIME messages creation and parsing library (v2.2)
 
 DISTNAME=		gmime-2.2.24
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=	gmime-2.0            2.0      # .4.22
 
