@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/12 16:49:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/02/04 09:48:44 ajacoutot Exp $
 
 COMMENT=	MIME messages creation and parsing library (v2.4)
 
-V=		2.4.12
+V=		2.4.15
 DISTNAME=	gmime-${V}
 
 EXTRACT_SUFX=	.tar.bz2
