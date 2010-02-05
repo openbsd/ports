@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/10 06:30:31 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2010/02/05 11:49:10 ajacoutot Exp $
 
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
 DISTNAME =	wv-1.2.4
-PKGNAME =	${DISTNAME}p1
+PKGNAME =	${DISTNAME}p2
 
 SHARED_LIBS =	wv-1.2		1.0 \
 		wv		1.0
@@ -17,14 +17,16 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	ICE SM X11 Xau Xdmcp bz2 c expat freetype gio-2.0 \
-		gmodule-2.0 iconv intl jpeg m pcre png pthread-stubs xcb xml2 z
+WANTLIB += ICE SM X11 Xau Xdmcp bz2 c expat freetype gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 jpeg m pcre png pthread-stubs
+WANTLIB += xcb xml2 z
+
+MODULES =	devel/gettext
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wvware/}
 
 RUN_DEPENDS =	::graphics/ImageMagick
-LIB_DEPENDS =	glib-2.0,gobject-2.0::devel/glib \
-		gsf-1::devel/libgsf \
+LIB_DEPENDS =	gsf-1::devel/libgsf \
 		wmf.>=6,wmflite.>=6::graphics/libwmf
 
 MAKE_FILE =	GNUmakefile
