@@ -13,10 +13,6 @@ Flavors:
     Bootstrap the jdk using a previously built and installed
     devel/jdk/1.6 package.
 
-  jdk17_bootstrap
-    Bootstrap the jdk using a previously built and installed
-    devel/jdk/1.7 package.
-
   no_web
     The Mozilla plugin and Java Web Start (javaws) are not built.
 
