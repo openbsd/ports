@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: gen-package-pages,v 1.19 2009/10/26 20:17:15 pvalchev Exp $
+# $OpenBSD: gen-package-pages,v 1.20 2010/02/05 13:06:04 jasper Exp $
 
 # Copyright (c) 2004 Michael Coulter
 #
@@ -44,7 +44,7 @@ our $osrev = "4.6";
 our $debug = 0;
 our $html;
 
-my @arches = qw(alpha amd64 arm hppa i386 mips64 powerpc sh sparc sparc64 vax);
+my @arches = qw(alpha amd64 arm hppa i386 mips64 mips64el powerpc sh sparc sparc64 vax);
 my $pkgpath = "/home/ftp/pub/OpenBSD/$osrev/packages";
 my $htmlbase = "html";
 
