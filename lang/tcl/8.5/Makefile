@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/11/21 02:50:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/02/06 10:27:21 pirofti Exp $
 
 COMMENT =		Tool Command Language
 
@@ -42,6 +42,10 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-rpath
 
 CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtcl85_VERSION}"
+
+.if ${MACHINE_ARCH} == "sh"
+CFLAGS +=		-O0
+.endif
 
 FLAVORS =		threaded
 FLAVOR ?=
