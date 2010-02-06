@@ -1,7 +1,81 @@
-$OpenBSD: patch-Makefile_unix,v 1.1 2007/10/26 21:49:00 jasper Exp $
+$OpenBSD: patch-Makefile_unix,v 1.2 2010/02/06 11:26:29 ajacoutot Exp $
+
+Remove Apple copyrighted files (from Fedora).
+
 --- Makefile.unix.orig	Tue Mar 11 23:52:59 1997
-+++ Makefile.unix	Fri Oct 26 23:44:40 2007
-@@ -222,27 +222,27 @@ install.bin: $(BIN)
++++ Makefile.unix	Sat Feb  6 11:15:59 2010
+@@ -25,31 +25,29 @@ PAPER=a4
+ 
+ OS = UNIX
+ 
+-BINDIR = /usr/local/bin
++BINDIR = ${PREFIX}/bin
+ SCRIPTDIR = $(BINDIR)
+-INCLUDEDIR = /usr/local/share/psutils
+-PERL = /usr/local/bin/perl
++INCLUDEDIR = ${PREFIX}/share/psutils
++PERL = /usr/bin/perl
+ 
+ BINMODE = 0755
+ MANMODE = 0644
+ CHMOD = chmod
+-INSTALL = install -c -m $(BINMODE)
+-INSTALLMAN = install -c -m $(MANMODE)
+ MANEXT = 1
+-MANDIR = /usr/local/share/man/man$(MANEXT)
++MANDIR = ${PREFIX}/man/man$(MANEXT)
+ 
+-CC = gcc
+-CFLAGS = -DPAPER=\"$(PAPER)\" -DUNIX -O -Wall
++CC ?= gcc
++CFLAGS += -DPAPER=\"$(PAPER)\" -DUNIX -O -Wall
+ 
+ BIN = psbook psselect pstops epsffit psnup \
+ 	psresize
+ SHELLSCRIPTS = getafm showchar
+-PERLSCRIPTS = fixfmps fixmacps fixpsditps fixpspps \
++PERLSCRIPTS = fixfmps fixpsditps fixpspps \
+ 	fixtpps fixwfwps fixwpps fixscribeps fixwwps \
+ 	fixdlsrps extractres includeres psmerge
+ MANPAGES = psbook.$(MANEXT) psselect.$(MANEXT) pstops.$(MANEXT) epsffit.$(MANEXT) psnup.$(MANEXT) \
+ 	psresize.$(MANEXT) psmerge.$(MANEXT) fixscribeps.$(MANEXT) getafm.$(MANEXT) \
+-	fixdlsrps.$(MANEXT) fixfmps.$(MANEXT) fixmacps.$(MANEXT) fixpsditps.$(MANEXT) \
++	fixdlsrps.$(MANEXT) fixfmps.$(MANEXT) fixpsditps.$(MANEXT) \
+ 	fixpspps.$(MANEXT) fixtpps.$(MANEXT) fixwfwps.$(MANEXT) fixwpps.$(MANEXT) \
+ 	fixwwps.$(MANEXT) extractres.$(MANEXT) includeres.$(MANEXT)
+ INCLUDES = md68_0.ps md71_0.ps
+@@ -106,9 +104,9 @@ fixfmps: fixfmps.pl
+ 	$(PERL) maketext OS=$(OS) PERL=$(PERL) $? > $@
+ 	$(CHMOD) $(BINMODE) $@
+ 
+-fixmacps: fixmacps.pl
+-	$(PERL) maketext OS=$(OS) PERL=$(PERL) INCLUDE=$(INCLUDEDIR) $? > $@
+-	$(CHMOD) $(BINMODE) $@
++#fixmacps: fixmacps.pl
++#	$(PERL) maketext OS=$(OS) PERL=$(PERL) INCLUDE=$(INCLUDEDIR) $? > $@
++#	$(CHMOD) $(BINMODE) $@
+ 
+ fixpsditps: fixpsditps.pl
+ 	$(PERL) maketext OS=$(OS) PERL=$(PERL) $? > $@
+@@ -174,8 +172,8 @@ psmerge.$(MANEXT): psmerge.man
+ fixfmps.$(MANEXT): fixfmps.man
+ 	$(PERL) maketext "MAN=$(MANPAGES)" $? > $@
+ 
+-fixmacps.$(MANEXT): fixmacps.man
+-	$(PERL) maketext "MAN=$(MANPAGES)" INCLUDE=$(INCLUDEDIR) $? > $@
++#fixmacps.$(MANEXT): fixmacps.man
++#	$(PERL) maketext "MAN=$(MANPAGES)" INCLUDE=$(INCLUDEDIR) $? > $@
+ 
+ fixpsditps.$(MANEXT): fixpsditps.man
+ 	$(PERL) maketext "MAN=$(MANPAGES)" $? > $@
+@@ -216,33 +214,33 @@ clean:
+ veryclean realclean: clean
+ 	rm -f $(BIN) $(PERLSCRIPTS) $(MANPAGES)
+ 
+-install: install.bin install.script install.man install.include
++install: install.bin install.script install.man
+ 
+ install.bin: $(BIN)
  	-mkdir $(BINDIR)
  	@for i in $(BIN); do \
  		echo Installing $$i; \

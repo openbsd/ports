@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/05/19 13:46:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/02/06 11:26:29 ajacoutot Exp $
 @bin bin/epsffit
 bin/extractres
 bin/fixdlsrps
 bin/fixfmps
-bin/fixmacps
 bin/fixpsditps
 bin/fixpspps
 bin/fixscribeps
@@ -24,7 +23,6 @@ bin/showchar
 @man man/man1/extractres.1
 @man man/man1/fixdlsrps.1
 @man man/man1/fixfmps.1
-@man man/man1/fixmacps.1
 @man man/man1/fixpsditps.1
 @man man/man1/fixpspps.1
 @man man/man1/fixscribeps.1
@@ -40,6 +38,3 @@ bin/showchar
 @man man/man1/psresize.1
 @man man/man1/psselect.1
 @man man/man1/pstops.1
-share/psutils/
-share/psutils/md68_0.ps
-share/psutils/md71_0.ps
