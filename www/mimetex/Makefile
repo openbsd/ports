@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2008/05/16 16:32:14 mbalmer Exp $
+# $OpenBSD: Makefile,v 1.3 2010/02/06 22:15:21 jasper Exp $
 
 COMMENT=		parse LaTeX math expressions into gif images
 
 DISTNAME=		mimetex-1.65
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.forkosh.com/mimetex.html
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=		http://meta-planets.net/~openbsd/
 
 NO_REGRESS=     	Yes
-PKG_ARCH=       	*
 
 PREFIX=			/var/www
 INSTDIR=		${PREFIX}/cgi-bin
