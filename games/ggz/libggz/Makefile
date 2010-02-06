@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/08 22:34:12 phessler Exp $
+# $OpenBSD: Makefile,v 1.6 2010/02/06 11:14:10 landry Exp $
 
 COMMENT=		GGZ Gaming Zone - base library
 
@@ -18,7 +18,7 @@ WANTLIB=		crypto gpg-error ssl pthread
 LIB_DEPENDS=		gcrypt::security/libgcrypt
 
 # compiler takes insane amounts of time to compile
-.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "sparc"
+.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "hppa"
 EXTRA_CFLAGS=	-O1
 .endif
 
