@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.66 2010/02/06 14:55:24 pirofti Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
@@ -64,6 +64,10 @@ CONFIGURE_ARGS=		--without-gnome \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			CFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+.if ${MACHINE_ARCH} == "sh"
+CFLAGS +=		-O0
+.endif
 
 DOCS=			README NEWS FAQ
 
