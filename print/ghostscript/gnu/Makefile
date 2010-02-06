@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2010/01/04 19:14:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2010/02/06 19:56:40 kili Exp $
 
 COMMENT=	GNU PostScript interpreter
 
 VERSION=	8.63
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p10
+PKGNAME=	${DISTNAME}p11
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	11.0
 
@@ -95,7 +95,7 @@ CONFIGURE_ENV=		AWK=/usr/bin/awk			\
 
 # Hack to let ALL_TARGET etc. depend on the value of NO_SHARED_LIBS,
 # which is available only after the inclusion of bsd.port.mk.
-ALL_TARGET_NON_SHARED-No = 	so
+ALL_TARGET_NON_SHARED-No = 	so all
 ALL_TARGET_NON_SHARED-Yes = 	all
 INSTALL_TARGET_NON_SHARED-No =	install install-so
 INSTALL_TARGET_NON_SHARED-Yes =	install
