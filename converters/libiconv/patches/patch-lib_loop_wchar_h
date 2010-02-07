@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_loop_wchar_h,v 1.4 2010/02/07 15:25:03 naddy Exp $
+--- lib/loop_wchar.h.orig	Sat Feb  6 15:02:22 2010
++++ lib/loop_wchar.h	Sat Feb  6 15:02:28 2010
+@@ -321,7 +321,8 @@ static size_t wchar_to_loop_convert (iconv_t icd,
+   size_t result = 0;
+   while (*inbytesleft > 0) {
+     size_t incount;
+-    for (incount = 1; incount <= *inbytesleft; incount++) {
++    for (incount = 1; ; ) {
++      /* Here incount <= *inbytesleft. */
+       char buf[BUF_SIZE];
+       const char* inptr = *inbuf;
+       size_t inleft = incount;
+@@ -402,6 +403,12 @@ static size_t wchar_to_loop_convert (iconv_t icd,
+           result += res;
+           break;
+         }
++      }
++      incount++;
++      if (incount > *inbytesleft) {
++        /* Incomplete input. */
++        errno = EINVAL;
++        return -1;
+       }
+     }
+   }
