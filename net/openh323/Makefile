@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/04/16 14:43:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/02/07 09:04:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,8 @@ PKGNAME=	openh323-${V:S/_/./g}p5
 CATEGORIES=	net devel
 
 EXTRACT_SUFX=	-src-tar.gz
+EXTRACT_CASES += *-src-tar.gz) \
+	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 
 SHARED_LIBS=	h323	2.0    # 1.19
 
@@ -50,9 +52,6 @@ MAKE_ENV+=	STDCCFLAGS="-I${WRKSRC}/include \
 		CC=${CC} CPLUS=${CXX} BUILDSELF="1"
 MAKE_FLAGS=	LIB_MAJOR_VERSION=${LIBh323_VERSION:R} \
 		LIB_MINOR_VERSION=${LIBh323_VERSION:E}
-
-do-extract:
-	@tar xzf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/audio/GSM0610/Makefile.in \
