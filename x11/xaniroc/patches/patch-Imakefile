@@ -1,0 +1,16 @@
+$OpenBSD: patch-Imakefile,v 1.1 2010/02/07 15:17:12 landry Exp $
+
+--- Imakefile.orig	Sun Feb  7 03:14:40 2010
++++ Imakefile	Sun Feb  7 03:14:47 2010
+@@ -9,11 +9,6 @@ LOCAL_LIBRARIES = XawClientLibs
+ SYS_LIBRARIES = -lm
+ DEPLIBS = XawClientDepLibs
+ 
+-#ifdef HPArchitecture
+-DEFINES = -D_HPUX_SOURCE -DSOME_DEFINES
+-CC = cc -Aa
+-#endif
+-
+ #CC=gcc -ansi   /* change this line so that CC is defined as an */
+                 /* ANSI C compiler */
+ #DEFINES = -DSOME_DEFINES
