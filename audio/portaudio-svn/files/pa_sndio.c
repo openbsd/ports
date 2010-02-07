@@ -61,12 +61,11 @@ typedef struct PaSndioHostApiRepresentation
 	PaUtilStreamInterface callback;
 	PaUtilStreamInterface blocking;
 	/*
-	 * libsndio has no device discovery mechanism, so expose only
+	 * sndio has no device discovery mechanism, so expose only
 	 * the default device, the user will have a chance to change it
 	 * using the environment variable
 	 */
 	PaDeviceInfo *infos[1], default_info;
-	struct sio_cap *caps[1], default_cap;
 } PaSndioHostApiRepresentation;
 
 /*
@@ -81,7 +80,7 @@ sndioOnMove(void *addr, int delta)
 }
 
 /*
- * convert PA encoding to libsndio encoding, retrun true on success
+ * convert PA encoding to sndio encoding, return true on success
  */
 static int
 sndioSetFmt(struct sio_par *sio, PaSampleFormat fmt)
@@ -118,7 +117,7 @@ sndioSetFmt(struct sio_par *sio, PaSampleFormat fmt)
 }
 
 /*
- * convert libsndio encoding to PA encoding, retrun true on success
+ * convert sndio encoding to PA encoding, return true on success
  */
 static int
 sndioGetFmt(struct sio_par *sio, PaSampleFormat *fmt)
@@ -139,7 +138,7 @@ sndioGetFmt(struct sio_par *sio, PaSampleFormat *fmt)
 	case 24:
 		if (!sio->sig)
 			return 0;
-		*fmt = paInt24;
+		*fmt = (sio->bps == 3) ? paInt24 : paInt32;
 		break;
 	case 16:
 		if (!sio->sig)
@@ -371,8 +370,7 @@ OpenStream(struct PaUtilHostApiRepresentation *hostApi,
 			return paInsufficientMemory;
 		}
 	}	
-	s->base.streamInfo.inputLatency = (mode & SIO_REC) ?
-	    (double)(par.bufsz + PaUtil_GetBufferProcessorInputLatency(&s->bufproc)) / (double)par.rate : 0;
+	s->base.streamInfo.inputLatency = 0;
 	s->base.streamInfo.outputLatency = (mode & SIO_PLAY) ?
 	    (double)(par.bufsz + PaUtil_GetBufferProcessorOutputLatency(&s->bufproc)) / (double)par.rate : 0;
 	s->base.streamInfo.sampleRate = par.rate;
@@ -490,8 +488,10 @@ BlockingGetStreamWriteAvailable(PaStream *stream)
 static PaError
 BlockingWaitEmpty( PaStream *stream )
 {
+	PaSndioStream *s = (PaSndioStream *)stream;
+
 	/*
-	 * drain playback buffers; libsndio always does it in background
+	 * drain playback buffers; sndio always does it in background
 	 * and there is no way to wait for completion
 	 */
 	DPR("BlockingWaitEmpty: s=%d, a=%d\n", s->stopped, s->active);
@@ -601,7 +601,7 @@ IsStreamStopped(PaStream *stream)
 {
 	PaSndioStream *s = (PaSndioStream *)stream;
 
-	DPR("IsStreamStopped: s=%d, a=%d\n", s->stopped, s->active);
+	//DPR("IsStreamStopped: s=%d, a=%d\n", s->stopped, s->active);
 
 	return s->stopped;
 }
@@ -611,7 +611,7 @@ IsStreamActive(PaStream *stream)
 {
 	PaSndioStream *s = (PaSndioStream *)stream;
 
-	DPR("IsStreamActive: s=%d, a=%d\n", s->stopped, s->active);
+	//DPR("IsStreamActive: s=%d, a=%d\n", s->stopped, s->active);
 
 	return s->active;
 }
@@ -630,61 +630,6 @@ IsFormatSupported(struct PaUtilHostApiRepresentation *hostApi,
     const PaStreamParameters *outputPar,
     double sampleRate)
 {
-	PaSndioHostApiRepresentation *sndioHostApi = (PaSndioHostApiRepresentation *)hostApi;
-	struct sio_cap *cap = sndioHostApi->caps[0];
-	struct sio_conf *cf = &cap->confs[0];
-	unsigned i;
-	
-
-	if (inputPar && inputPar->channelCount > 0) {
-		if (inputPar->device != 0) {
-			DPR("IsFormatSupported: %d: bad input device\n", inputPar->device);
-			return paInvalidDevice;
-		}
-		if (inputPar->hostApiSpecificStreamInfo) {
-			DPR("IsFormatSupported: input specific info\n");
-			return paIncompatibleHostApiSpecificStreamInfo;
-		}
-		for (i = 0; ; i++) {
-			if (i == 8 * sizeof(unsigned)) {
-				DPR("IsFormatSupported: input channel not found\n");
-				return paInvalidChannelCount;
-			}
-			if ((cf->rchan & (1 << i)) &&
-			    (cap->rchan[i] == inputPar->channelCount))
-				break;
-		}
-	}
-	if (outputPar && outputPar->channelCount > 0) {
-		if (outputPar->device != 0) {
-			DPR("IsFormatSupported: %d: bad output device\n", outputPar->device);
-			return paInvalidDevice;
-		}
-		if (outputPar->hostApiSpecificStreamInfo) {
-			DPR("IsFormatSupported: output specific info\n");
-			return paIncompatibleHostApiSpecificStreamInfo;
-		}
-		for (i = 0; ; i++) {
-			if (i == 8 * sizeof(unsigned)) {
-				DPR("IsFormatSupported: output channel not found\n");
-				return paInvalidChannelCount;
-			}
-			if ((cf->pchan & (1 << i)) &&
-			    (cap->pchan[i] == outputPar->channelCount))
-				break;
-		}
-	}
-
-	for (i = 0; ; i++) {
-		if (i == 8 * sizeof(unsigned)) {
-			DPR("IsFormatSupported: rate not found\n");
-			return paInvalidSampleRate;
-		}
-		if ((cf->rate & (1 << i)) &&
-		    (double)cap->rate[i] > sampleRate * 0.995 &&
-		    (double)cap->rate[i] < sampleRate * 1.005)
-			break;
-	}
 	return paFormatIsSupported;
 }
 
@@ -700,9 +645,6 @@ PaSndio_Initialize(PaUtilHostApiRepresentation **hostApi, PaHostApiIndex hostApi
 	PaSndioHostApiRepresentation *sndioHostApi;
 	PaDeviceInfo *info;
 	struct sio_hdl *hdl;
-	struct sio_cap *cap;
-	struct sio_conf *cf;
-	unsigned i, maxpchan, maxrchan, maxrate;
 	
 	DPR("PaSndio_Initialize: initializing...\n");
 
@@ -713,47 +655,23 @@ PaSndio_Initialize(PaUtilHostApiRepresentation **hostApi, PaHostApiIndex hostApi
 	if (sndioHostApi == NULL)
 		return paNoError;
 
-	if (!(hdl = sio_open(NULL, SIO_PLAY | SIO_REC, 0)) &&
-	    !(hdl = sio_open(NULL, SIO_REC, 0)) &&
-	    !(hdl = sio_open(NULL, SIO_PLAY, 0))) {
-		PaUtil_FreeMemory(sndioHostApi);
-		return paNoError;
-	}
-	cap = &sndioHostApi->default_cap;
-	if (!sio_getcap(hdl, cap)) {
-		PaUtil_FreeMemory(sndioHostApi);
-		return paNoError;
-	}
-	cf = &cap->confs[0];
-	maxpchan = maxrchan = maxrate = 0;
-	for (i = 0; i < 8 * sizeof(unsigned); i++) {
-		if ((cf->rchan & (1 << i)) && (maxrchan < cap->rchan[i]))
-			maxrchan = cap->rchan[i];
-		if ((cf->pchan & (1 << i)) && (maxpchan < cap->pchan[i]))
-			maxpchan = cap->pchan[i];
-		if ((cf->rate & (1 << i)) && (maxrate < cap->rate[i]))
-			maxrate  = cap->rate[i];
-	}
-	sio_close(hdl);
-	sndioHostApi->caps[0] = cap;
-	
 	info = &sndioHostApi->default_info;
 	info->structVersion = 2;
 	info->name = "default";
 	info->hostApi = hostApiIndex;
-	info->maxInputChannels = maxrchan;
-	info->maxOutputChannels = maxpchan;
+	info->maxInputChannels = 65536;
+	info->maxOutputChannels = 65536;
 	info->defaultLowInputLatency = 0.01;
 	info->defaultLowOutputLatency = 0.01;
 	info->defaultHighInputLatency = 0.5;
 	info->defaultHighOutputLatency = 0.5;
-	info->defaultSampleRate = maxrate;
+	info->defaultSampleRate = 192000;
 	sndioHostApi->infos[0] = info;
 	
 	*hostApi = &sndioHostApi->base;
 	(*hostApi)->info.structVersion = 1;
 	(*hostApi)->info.type = paSndio;
-	(*hostApi)->info.name = "libsndio";
+	(*hostApi)->info.name = "sndio";
 	(*hostApi)->info.deviceCount = 1;
 	(*hostApi)->info.defaultInputDevice = 0;
 	(*hostApi)->info.defaultOutputDevice = 0;
