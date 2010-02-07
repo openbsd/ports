@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.1 2004/01/25 23:04:34 naddy Exp $
---- Imakefile.orig	2004-01-25 23:28:50.000000000 +0100
-+++ Imakefile	2004-01-25 23:29:54.000000000 +0100
+$OpenBSD: patch-Imakefile,v 1.2 2010/02/07 15:18:10 landry Exp $
+--- Imakefile.orig	Sun Dec 12 18:27:27 1999
++++ Imakefile	Sun Feb  7 03:16:36 2010
 @@ -1,5 +1,5 @@
 -/**/# Imakefile for xkeycaps;
 -/**/# Copyright (c) 1991, 1992, 1993, 1994, 1995, 1999 Jamie Zawinski.
@@ -9,7 +9,35 @@ $OpenBSD: patch-Imakefile,v 1.1 2004/01/25 23:04:34 naddy Exp $
  
  /*
   *  To specify a different default keyboard (for when the vendor display
-@@ -353,8 +353,8 @@ LOCAL_LIBRARIES = $(XAWLIB) $(XTOOLLIB) 
+@@ -37,27 +37,6 @@
+     SYSDEP_OBJS = $(CURRENT_DIR)/sunOS.o
+ #endif
+ 
+-#ifdef HPArchitecture
+-    SYSDEP_OBJS = $(CURRENT_DIR)/hpux.o
+-
+-   /* This nonsense seems to be necessary to get the passwd struct on all HP
+-    * systems.  HP can't seem to make up their mind what preprocessor directive
+-    * they want to use to tell their header files that they are being compiled
+-    * on an HP.  Don't ask me to explain why these aren't the default...
+-    * On some systems, -Ae defines all of these, but I don't believe that is
+-    * (has been?) the case on all systems.
+-    *
+-    * Also, apparently "HPkeysyms.h" comes with HP's R5, but not MIT's R6, so
+-    * we need to add the HP R5 directory to the end of the include path as 
+-    * well.
+-    */
+-     HP_LOSSAGE = -D_HPUX_SOURCE -DHPUX -Dhpux -D__hpux -Dunix $(HP_LOSSAGE_2)\
+-		  -I/usr/contrib/X11R6/include -I/usr/include/X11R5
+-# if !HasGcc2
+-     HP_LOSSAGE_2 = -Aa -Ae 
+-# endif
+-#endif
+-
+ #ifdef SGIArchitecture
+ # ifndef HasGcc
+    /* This will cause the keyboard template data to go into a read-only
+@@ -353,8 +332,8 @@ LOCAL_LIBRARIES = $(XAWLIB) $(XTOOLLIB) $(XTRAP_LIBS) 
              TAR = tar
         COMPRESS = compress
     COMPRESS_EXT = Z
