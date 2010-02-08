@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/10/09 15:10:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/02/08 17:42:51 jasper Exp $
 
 COMMENT=	clone of backtrace facility found in the GNU libc
 
@@ -22,10 +22,10 @@ EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	m
 
-# Hack that allows this lib to build on mips64, although
+# Hack that allows this lib to build on mips64(el), although
 # it essentially turns this lib into an empty shell...
 # ...too many ports require it to mark it NOT_FOR_ARCHS
-.if ${MACHINE_ARCH} == "mips64"
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 EXTRA_CFLAGS=   -D__BUILTIN_HACK
 # See bsd.lib.mk:162
 PKG_ARGS+=	-Dno_mips64=0
