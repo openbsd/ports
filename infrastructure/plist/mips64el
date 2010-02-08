@@ -1,0 +1,42 @@
+# $OpenBSD: mips64el,v 1.1 2010/02/08 12:57:02 jasper Exp $
+# This is the master list of subdirs used to choose mips64el packages.
+# Use with ${PORTSDIR}/infrastructure/package/check-plist
+# to create actual SUBDIRLIST to pass to ports main Makefile.
+databases/pkglocatedb
+net/cvsync
+net/curl
+net/irssi
+net/irssi-icb
+net/rsync
+net/wget
+#editors/emacs21,no_x11
+#editors/emacs22,no_x11
+editors/nano
+editors/nedit
+editors/vim,no_x11
+graphics/feh
+graphics/xv
+misc/screen
+archivers/bzip2
+archivers/unzip
+archivers/zip
+x11/aterm
+x11/wmi
+x11/xautolock
+www/elinks
+www/links+
+www/links+,no_x11
+games/xbomber
+shells/zsh
+shells/bash
+shells/tcsh
+sysutils/colorls
+sysutils/e2fsprogs
+sysutils/ncdu
+archivers/gtar
+audio/mpc
+audio/ncmpc
+mail/fetchmail
+mail/procmail
+lang/lua
+productivity/calcurse
