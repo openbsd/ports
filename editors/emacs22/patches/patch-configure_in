@@ -1,10 +1,11 @@
-$OpenBSD: patch-configure_in,v 1.1 2009/02/18 12:16:15 jasper Exp $
+$OpenBSD: patch-configure_in,v 1.2 2010/02/09 20:43:57 matthieu Exp $
 
-Correctly recognize OpenBSD/hppa to fix build on this platform.
+Correctly recognize OpenBSD/hppa and OpenBSD/mips64el to fix build on 
+these platforms.
 
---- configure.in.orig	Sat Mar  1 20:28:11 2008
-+++ configure.in	Wed Feb 18 13:07:34 2009
-@@ -298,7 +298,7 @@ dnl see the `changequote' comment above.
+--- configure.in.orig	Tue Aug 12 20:35:40 2008
++++ configure.in	Fri Feb  5 10:01:41 2010
+@@ -298,11 +298,12 @@
      case "${canonical}" in
        alpha*-*-openbsd*)	machine=alpha ;;
        arm-*-openbsd*)          machine=arm ;;
@@ -13,3 +14,8 @@ Correctly recognize OpenBSD/hppa to fix build on this platform.
        i386-*-openbsd*)         machine=intel386 ;;
        m68k-*-openbsd*)         machine=hp9000s300 ;;
        m88k-*-openbsd*)         machine=aviion ;;
+       mips64-*-openbsd*)       machine=mips64 ;;
++      mips64el-*-openbsd*)     machine=mips64el ;;
+       powerpc-*-openbsd*)      machine=macppc ;;
+       sh-*-openbsd*)           machine=sh3el ;;
+       sparc*-*-openbsd*)       machine=sparc ;;
