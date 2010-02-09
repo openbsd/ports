@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/22 17:31:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/02/09 12:23:59 jasper Exp $
 
 COMMENT=		tunnel IPv4 data through DNS
 
@@ -22,7 +22,7 @@ REGRESS_DEPENDS=	::devel/check
 REGRESS_TARGET=		test
 
 # gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH} == "mips64"
+.if ${MACHINE_ARCH:Mmips64*}
 CFLAGS+=        -O0
 .endif
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2009/12/14 00:33:08 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.12 2010/02/09 12:23:59 jasper Exp $
 
 COMMENT=	text to speech utility
 
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "mips64"
+.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH:Mmips64*}
 BROKEN=		gcc hang compiling cmu_us_kal_diphone.c
 .endif
 

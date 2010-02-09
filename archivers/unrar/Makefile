@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2009/12/19 22:34:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2010/02/09 12:23:59 jasper Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
@@ -25,7 +25,7 @@ MAKE_FILE=	makefile.unix
 MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 # gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "mips64"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH:Mmips64*}
 EXTRA_CFLAGS=	-O0
 .endif
 

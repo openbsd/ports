@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2009/12/15 15:33:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2010/02/09 12:23:59 jasper Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
@@ -44,7 +44,7 @@ FLAVOR?=
 CFLAGS+=		-DBUILD_UNTESTED_NEDIT
 
 # gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH} == "mips64"
+.if ${MACHINE_ARCH:Mmips64*}
 EXTRA_CFLAGS=	-O0
 .endif
 

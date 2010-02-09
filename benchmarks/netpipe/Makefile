@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2007/11/07 20:57:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/02/09 12:23:59 jasper Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
 COMMENT=	self-scaling network benchmark
@@ -23,7 +23,7 @@ ALL_TARGET=	NPtcp
 NO_REGRESS=	Yes
 
 # gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH} == "mips64"
+.if ${MACHINE_ARCH:Mmips64*}
 EXTRA_CFLAGS=	-O0
 .endif
 

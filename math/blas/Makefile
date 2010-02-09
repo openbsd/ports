@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/11/22 16:19:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/02/09 12:23:59 jasper Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
@@ -34,7 +34,7 @@ FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 MANSRC=		${WRKDIR}/${DISTNAME}/man/manl
 
 # See bsd.lib.mk:162
-.if ${MACHINE_ARCH} == "mips64"
+.if ${MACHINE_ARCH:Mmips64*}
 PKG_ARGS+=	-Dno_mips64=0
 .else
 PKG_ARGS+=	-Dno_mips64=1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/05/31 16:12:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/02/09 12:23:59 jasper Exp $
 
 COMMENT=	record and analyze your meals for nutrient composition
 
@@ -23,7 +23,7 @@ ALL_TARGET=     nut
 USE_GMAKE=	Yes
 
 # gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH} == "mips64"
+.if ${MACHINE_ARCH:Mmips64*}
 EXTRA_CFLAGS=	-O0
 .endif
 

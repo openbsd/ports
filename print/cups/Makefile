@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2009/12/22 15:54:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2010/02/09 12:23:59 jasper Exp $
 
 COMMENT=		Common Unix Printing System
 
@@ -98,7 +98,7 @@ REGRESS_DEPENDS=	::print/htmldoc
 REGRESS_IS_INTERACTIVE=	Yes
 
 # gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH} == "mips64"
+.if ${MACHINE_ARCH:Mmips64*}
 CFLAGS+=	-O0
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/10 06:30:30 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2010/02/09 12:23:59 jasper Exp $
 
 COMMENT=	chinese input utility for X
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--os=OpenBSD --no-menu
 NO_REGRESS=	Yes
 
 # gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH} == "mips64"
+.if ${MACHINE_ARCH:Mmips64*}
 EXTRA_CFLAGS=	-O0
 .endif
 
