@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_sgDiv_c_in,v 1.1 2010/02/09 13:44:28 sthen Exp $
+
+squidGuard 1.4 patch 20091019; when constructing a redirect URL which
+includes the requested URL, truncate it to make sure it's smaller than
+squid's MAX_URL.
+
+--- src/sgDiv.c.in.orig	Mon Jul 14 17:02:43 2008
++++ src/sgDiv.c.in	Wed Feb  3 12:26:15 2010
+@@ -745,7 +745,7 @@ char *sgParseRedirect(redirect, req, acl, aclpass)
+       p++;
+       break;
+     case 'u': /* Requested URL */
+-      strcat(buf, req->orig);
++      strncat(buf, req->orig, 2048);
+       p++;
+       break;
+     default:

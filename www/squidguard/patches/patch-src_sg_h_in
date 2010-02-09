@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_sg_h_in,v 1.1 2010/02/09 13:44:28 sthen Exp $
+
+squidGuard 1.4 patch 20091019; increase MAX_BUF above squid's MAX_URL value.
+
+--- src/sg.h.in.orig	Fri Nov 16 16:58:32 2007
++++ src/sg.h.in	Wed Feb  3 12:26:15 2010
+@@ -73,7 +73,7 @@ int tolower();
+ #define REQUEST_TYPE_REDIRECT   2
+ #define REQUEST_TYPE_PASS       3
+ 
+-#define MAX_BUF 4096
++#define MAX_BUF 12288
+ 
+ #define DEFAULT_LOGFILE "squidGuard.log"
+ #define WARNING_LOGFILE "squidGuard.log"
