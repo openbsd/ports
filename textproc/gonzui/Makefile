@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/01/27 21:43:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2010/02/09 12:18:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 # This architecture lacks fast mutexes...
-NOT_FOR_ARCHS=		mips64
+NOT_FOR_ARCHS=		mips64 mips64el
 
 COMMENT=		source code search engine
 DISTNAME=		gonzui-1.2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2009/12/09 20:36:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2010/02/09 12:18:45 jasper Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
@@ -23,7 +23,7 @@ HOMEPAGE=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 # currently works only on most ELF archs
-NOT_FOR_ARCHS=	m68k m88k vax mips64
+NOT_FOR_ARCHS=	m68k m88k vax mips64 mips64el
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
