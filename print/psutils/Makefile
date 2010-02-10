@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2010/02/06 11:26:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/02/10 16:32:22 naddy Exp $
 
 COMMENT=	utilities for manipulating PostScript documents
 
 MINV=		17
 DISTNAME=	psutils-p${MINV}
-PKGNAME=	psutils-1.${MINV}
+PKGNAME=	psutils-1.${MINV}p0
 
 CATEGORIES=	print
 
