@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.18 2009/08/25 09:23:03 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.19 2010/02/12 11:53:09 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -1106,6 +1106,7 @@ my $vars = {
     BROKEN => 'AnyVar',
     BUILD_DEPENDS => 'BuildDependsVar',
     CATEGORIES=> 'CategoriesVar',
+    COMES_WITH => 'DefinedVar',
     COMMENT => 'AnyVar',
     CONFIGURE_ARGS => 'ConfigureArgsVar',
     CONFIGURE_STYLE => 'ConfigureVar',
@@ -1116,6 +1117,7 @@ my $vars = {
     FLAVORS => 'FlavorsVar',
     FULLPKGNAME => 'AnyVar',
     HOMEPAGE => 'AnyVar',
+    IGNORE => 'DefinedVar',
     IS_INTERACTIVE => 'AnyVar',
     LIB_DEPENDS => 'LibDependsVar',
     MAINTAINER=> 'EmailVar',
@@ -1166,6 +1168,7 @@ for my $inserter (@inserters) {
 }
 
 my $lastkey;
+my $unknown = {};
 while (<STDIN>) {
 	chomp;
 	# kill noise
@@ -1192,13 +1195,20 @@ while (<STDIN>) {
 		}
 		$lastkey = $key;
 	}
-	my $v = $vars->{$var}->new($var, $value);
-	for my $inserter (@inserters) {
-		$v->add($inserter);
-	}
+	if (!defined $vars->{$var}) {
+		$unknown->{$var} //= $key;
+	} else {
+		my $v = $vars->{$var}->new($var, $value);
+		for my $inserter (@inserters) {
+			$v->add($inserter);
+		}
+    	}
 }
 for my $inserter (@inserters) {
 	$inserter->finish_port;
 	$inserter->db->commit;
 }
 
+while (my ($k, $v) = each %$unknown) {
+	print STDERR "Unknown variable $k in $v\n";
+}
