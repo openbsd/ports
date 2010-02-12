@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.92 2009/07/26 12:14:05 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.93 2010/02/12 12:00:19 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -142,11 +142,6 @@ ${_dangerous_recursive_targets}:
 	@exit 1
 .endif
 
-.for __target in ${_recursive_describe_targets}
-${__target}:
-	@DESCRIBE_TARGET=Yes; export DESCRIBE_TARGET; ${_subdir_fragment}
-.endfor
-
 .for __target in ${_recursive_depends_targets}
 
 ${__target}: 
@@ -169,7 +164,7 @@ clean:
 .endif
 
 readmes:
-	@DESCRIBE_TARGET=Yes; export DESCRIBE_TARGET; ${_subdir_fragment}
+	@${_subdir_fragment}
 	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
 	trap 'rm -r $$tmpdir' 0 1 2 3 13 15; \
 	cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir \
@@ -179,7 +174,7 @@ ${READMES_TOP}/${PKGPATH}/README.html:
 	@mkdir -p ${@D}
 	@>${TMPDIR}/subdirs
 .for d in ${_FULLSUBDIR}
-	@subdir=$d; DESCRIBE_TARGET=yes; export DESCRIBE_TARGET; \
+	@subdir=$d; \
 	${_flavor_fragment}; \
 	if name=`eval $$toset ${MAKE} _print-packagename`; then \
 		comment=`eval $$toset ${MAKE} show=_COMMENT|sed -e 's,^",,' -e 's,"$$,,' |${HTMLIFY}`; \
@@ -195,5 +190,5 @@ ${READMES_TOP}/${PKGPATH}/README.html:
 		${README} > $@
 	@rm ${TMPDIR}/subdirs
 
-.PHONY: ${_recursive_targets} ${_recursive_describe_targets} \
+.PHONY: ${_recursive_targets} \
 	${_recursive_depends_targets} clean readmes

@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.974 2010/02/05 13:06:03 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.975 2010/02/12 12:00:19 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -32,6 +32,12 @@ ERRORS += "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 ERRORS += "Fatal: Variable $v is obsolete, use PACKAGE_REPOSITORY instead."
 .  endif
 .endfor
+.for t in do-fetch
+.  if target(do-fetch)
+ERRORS += "Fatal: you're not allowed to override $t"
+.  endif
+.endfor
+
 
 # The definitive source of documentation to this file's user-visible parts
 # is bsd.port.mk(5).
@@ -81,24 +87,33 @@ BULK_TARGETS ?=
 BULK_DO ?=
 CHECK_LIB_DEPENDS ?= No
 FORCE_UPDATE ?= No
+DPB ?= All Fetch
+
 # All variables relevant to the port's description
-_ALL_VARIABLES ?= HOMEPAGE DISTNAME BUILD_DEPENDS \
+_ALL_VARIABLES = BUILD_DEPENDS IGNORE IS_INTERACTIVE \
+	SUBPACKAGE MULTI_PACKAGES
+# and stuff needing to be MULTI_PACKAGE'd
+_ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS PKG_ARCH
+
+.if ${DPB:L:Mfetch}
+_ALL_VARIABLES += DISTFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
+	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
+	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9
+.endif
+.if ${DPB:L:Mall}
+_ALL_VARIABLES += HOMEPAGE DISTNAME \
+	ONLY_FOR_ARCHS NOT_FOR_ARCHS BROKEN COMES_WITH \
 	REGRESS_DEPENDS USE_GMAKE MODULES FLAVORS \
-	NO_BUILD NO_REGRESS SHARED_ONLY ONLY_FOR_ARCHS NOT_FOR_ARCHS IS_INTERACTIVE \
-	BROKEN MULTI_PACKAGES PSEUDO_FLAVORS \
-	REGRESS_IS_INTERACTIVE DISTFILES DIST_SUBDIR \
+	NO_BUILD NO_REGRESS SHARED_ONLY PSEUDO_FLAVORS \
+	REGRESS_IS_INTERACTIVE \
 	PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP \
 	CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
-	SHARED_LIBS USE_MOTIF MASTER_SITES \
-	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
-	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
-	MAINTAINER SUPDISTFILES SUBPACKAGE \
-	AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
+	SHARED_LIBS USE_MOTIF \
+	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
 # and stuff needing to be MULTI_PACKAGE'd
-_ALL_VARIABLES_INDEXED ?= COMMENT FULLPKGNAME PKGNAME PKG_ARCH \
-	PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM RUN_DEPENDS LIB_DEPENDS \
-	WANTLIB CATEGORIES DESCR
-
+_ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
+	PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM WANTLIB CATEGORIES DESCR
+.endif
 # special purpose user settings
 PATCH_CHECK_ONLY ?= No
 REFETCH ?= false
@@ -1145,49 +1160,62 @@ IS_INTERACTIVE = Yes
 #
 # Don't build a port if it comes with the base system.
 ################################################################
-
-.if !defined(NO_IGNORE) && !defined(DESCRIBE_TARGET)
-.  if defined(REGRESS_IS_INTERACTIVE) && defined(BATCH)
-_IGNORE_REGRESS = "has interactive tests"
-.  elif !defined(REGRESS_IS_INTERACTIVE) && defined(INTERACTIVE)
-_IGNORE_REGRESS = "does not have interactive tests"
-.  endif
-.  if defined(IS_INTERACTIVE) && defined(BATCH)
-IGNORE = "is an interactive port"
-.  elif !defined(IS_INTERACTIVE) && defined(INTERACTIVE)
-IGNORE = "is not an interactive port"
-.  elif ${USE_X11:L} == "yes" && !exists(${X11BASE})
-IGNORE = "uses X11, but ${X11BASE} not found"
-.  elif defined(ONLY_FOR_ARCHS)
-.    for __ARCH in ${MACHINE_ARCH} ${ARCH}
-.      if !empty(ONLY_FOR_ARCHS:M${__ARCH})
+IGNORE ?=
+_IGNORE_REGRESS ?=
+.if defined(REGRESS_IS_INTERACTIVE) && defined(BATCH)
+_IGNORE_REGRESS += "has interactive tests"
+.elif !defined(REGRESS_IS_INTERACTIVE) && defined(INTERACTIVE)
+_IGNORE_REGRESS += "does not have interactive tests"
+.endif
+.if defined(IS_INTERACTIVE) && defined(BATCH)
+IGNORE += "is an interactive port"
+.elif !defined(IS_INTERACTIVE) && defined(INTERACTIVE)
+IGNORE += "is not an interactive port"
+.endif
+.if ${USE_X11:L} == "yes" && !exists(${X11BASE})
+IGNORE += "uses X11, but ${X11BASE} not found"
+.endif
+.if defined(ONLY_FOR_ARCHS)
+_ARCH_OK = 0
+.  for __ARCH in ${MACHINE_ARCH} ${ARCH}
+.    if !empty(ONLY_FOR_ARCHS:M${__ARCH})
 _ARCH_OK = 1
-.      endif
-.    endfor
-.    if !defined(_ARCH_OK)
-.      if ${MACHINE_ARCH} == "${ARCH}"
-IGNORE = "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH}"
-.      else
-IGNORE = "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH} \(${ARCH}\)"
-.      endif
 .    endif
-.  elif defined(NOT_FOR_ARCHS)
-.    for __ARCH in ${MACHINE_ARCH} ${ARCH}
-.      if !empty(NOT_FOR_ARCHS:M${__ARCH})
-IGNORE = "is not for ${NOT_FOR_ARCHS}"
-.      endif
-.    endfor
-.  elif ${SHARED_ONLY:L} == "yes" && ${NO_SHARED_LIBS:L} == "yes"
-IGNORE = "requires shared libraries"
+.  endfor
+.  if ${_ARCH_OK} == 0
+.    if ${MACHINE_ARCH} == "${ARCH}"
+IGNORE += "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH}"
+.    else
+IGNORE += "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH} \(${ARCH}\)"
+.    endif
 .  endif
-.endif		# NO_IGNORE
+.endif
+.if defined(NOT_FOR_ARCHS)
+_ARCH_OK = 1
+.  for __ARCH in ${MACHINE_ARCH} ${ARCH}
+.    if !empty(NOT_FOR_ARCHS:M${__ARCH})
+_ARCH_OK = 0
+.    endif
+.  endfor
+.  if ${_ARCH_OK} == 0
+IGNORE += "is not for ${NOT_FOR_ARCHS}"
+.  endif
+.endif
+.if ${SHARED_ONLY:L} == "yes" && ${NO_SHARED_LIBS:L} == "yes"
+IGNORE += "requires shared libraries"
+.endif
 
-.if !defined(NO_IGNORE)
-.  if defined(BROKEN)
-IGNORE = "is marked as broken: ${BROKEN:Q}"
-.  elif defined(COMES_WITH)
-IGNORE = "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
-.  endif
+.if defined(BROKEN)
+IGNORE += "is marked as broken: ${BROKEN:Q}"
+.endif
+.if defined(COMES_WITH)
+IGNORE += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
+.endif
+
+IGNORE_IS_FATAL ?= "No"
+.if !empty(IGNORE) && ${IGNORE_IS_FATAL:L} == "yes"
+ERRORS += "Fatal: can't build"
+ERRORS += ${IGNORE}
 .endif
 
 .if !defined(DEPENDS_TARGET)
@@ -1607,8 +1635,12 @@ addsum: fetch-all
 
 
 _internal-depends: _internal-lib-depends _internal-build-depends \
+	_internal-buildlib-depends \
 	_internal-run-depends _internal-buildwantlib-depends \
 	_internal-runwantlib-depends _internal-regress-depends
+
+_internal-prepare: _internal-build-depends _internal-buildlib-depends \
+	_internal-buildwantlib-depends
 
 # and the rules for the actual dependencies
 
@@ -1738,30 +1770,28 @@ _internal-fetch-all:
 .if target(pre-fetch)
 	@cd ${.CURDIR} && exec ${MAKE} pre-fetch __FETCH_ALL=Yes
 .endif
-.if target(do-fetch)
-ERRORS += "Fatal: you're not allowed to override do-fetch"
-.else
 # What FETCH-ALL normally does:
 .  if !empty(MAKESUMFILES)
 	@cd ${.CURDIR} && exec ${MAKE} ${MAKESUMFILES:S@^@${DISTDIR}/@}
 .    endif
 # End of FETCH
-.endif
 .if target(post-fetch)
 	@cd ${.CURDIR} && exec ${MAKE} post-fetch __FETCH_ALL=Yes
 .endif
 
-.if defined(IGNORE) && !defined(NO_IGNORE)
+.if !empty(IGNORE) && !defined(NO_IGNORE)
 _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-deinstall _internal-extract _internal-fake _internal-fetch \
 	_internal-install _internal-install-all _internal-manpages-check \
 	_internal-package _internal-patch _internal-plist _internal-regress \
 	_internal-subpackage _internal-subupdate _internal-uninstall \
 	_internal-update _internal-update-or-install \
-	_internal-update-or-install-all _internal-update-plist describe dump-vars \
+	_internal-update-or-install-all _internal-update-plist \
 	port-lib-depends-check update-patches:
 .  if !defined(IGNORE_SILENT)
-	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
+.    for i in ${IGNORE}
+	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} $i."
+.    endfor
 .  endif
 
 .else
@@ -1898,7 +1928,7 @@ _internal-update-or-install: ${_FUPDATE_COOKIE${SUBPACKAGE}
 _internal-update-or-install-all: ${_FUPDATE_COOKIES}
 
 
-.  if defined(_IGNORE_REGRESS)
+.  if !empty(_IGNORE_REGRESS)
 _internal-regress:
 .    if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${_IGNORE_REGRESS}."
@@ -1913,17 +1943,17 @@ _internal-regress: ${_BUILD_COOKIE} ${_DEPREGRESS_COOKIES} ${_REGRESS_COOKIE}
 # Note: add @comment PACKAGE(arch=${MACHINE_ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
 # when port is installed or package created.
 #
-.if ${SHARED_ONLY:L} == "yes"
+.  if ${SHARED_ONLY:L} == "yes"
 _do_libs_too =
-.else
+.  else
 _do_libs_too = NO_SHARED_LIBS=Yes
-.endif
+.  endif
 
 _extra_info =
-.for _s in ${MULTI_PACKAGES}
+.  for _s in ${MULTI_PACKAGES}
 _extra_info += PLIST${_s}='${PLIST${_s}}'
 _extra_info += DEPPATHS${_s}="`${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} ${MAKE} run-dir-depends ${_do_libs_too}|${_sort_dependencies}`"
-.endfor
+.  endfor
 
 _internal-plist _internal-update-plist: _internal-fake
 	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
@@ -1959,7 +1989,7 @@ update-patches:
 # if locking exists.
 
 .for _t in extract patch distpatch configure build all install fake \
-	subupdate fetch fetch-all checksum regress \
+	subupdate fetch fetch-all checksum regress prepare \
 	depends lib-depends build-depends run-depends regress-depends \
 	clean manpages-check plist update-plist \
 	update update-or-install update-or-install-all package install-all
@@ -2018,8 +2048,7 @@ ${_WRKDIR_COOKIE}:
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} \
-		_internal-checksum _internal-build-depends \
-		_internal-buildlib-depends _internal-buildwantlib-depends
+		_internal-checksum _internal-prepare
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
 	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-extract
@@ -2558,7 +2587,6 @@ _fetch-onefile:
 	@echo '\t $${EXEC} $${FETCH} "$$@"'
 .endfor
 
-
 # This target generates an index entry suitable for aggregation into
 # a large index.  Format is:
 #
@@ -3075,7 +3103,7 @@ dump-vars:
 .  endfor
 .endif
 
-_all_phony = ${_recursive_depends_targets} ${_recursive_describe_targets} \
+_all_phony = ${_recursive_depends_targets} \
 	${_recursive_targets} ${_dangerous_recursive_targets} \
 	_build-dir-depends _fetch-makefile _fetch-onefile \
 	_internal-all _internal-build _internal-build-depends \
@@ -3084,7 +3112,7 @@ _all_phony = ${_recursive_depends_targets} ${_recursive_describe_targets} \
 	_internal-distpatch _internal-extract _internal-fake _internal-fetch \
 	_internal-fetch-all \
 	_internal-install-all _internal-lib-depends _internal-manpages-check \
-	_internal-package _internal-package-only _internal-plist \
+	_internal-package _internal-package-only _internal-plist _internal-prepare \
 	_internal-regress _internal-regress-depends _internal-run-depends \
 	_internal-runwantlib-depends _internal-subpackage _internal-subupdate \
 	_internal-update _internal-update _internal-update-plist \
@@ -3099,7 +3127,7 @@ _all_phony = ${_recursive_depends_targets} ${_recursive_describe_targets} \
 	peek-ftp port-lib-depends-check post-build post-configure \
 	post-distpatch post-extract post-fetch post-install post-package \
 	post-patch post-regress pre-build pre-configure pre-extract pre-fake \
-	pre-fetch pre-install pre-package pre-patch pre-regress \
+	pre-fetch pre-install pre-package pre-patch pre-regress prepare \
 	print-build-depends print-run-depends readme readmes rebuild \
 	regress-depends repackage run-depends run-depends-list show-required-by \
 	subpackage uninstall mirror-maker-fetch \
