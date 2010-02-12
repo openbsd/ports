@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_delay_cpp,v 1.1 2010/02/12 20:46:17 jakemsr Exp $
+--- src/delay.cpp.orig	Wed Aug  7 14:37:02 2002
++++ src/delay.cpp	Fri Feb  5 06:26:56 2010
+@@ -283,15 +283,16 @@ initialise_delay() {
+ 	= lDelayTypeIndex * DELAY_LENGTH_COUNT + lDelayLengthIndex;
+       
+       char acLabel[100];
++      int maxDelay = int(afMaximumDelays[lDelayLengthIndex] * 1000);
+       sprintf(acLabel,
+-	      "%s_%gs",
++	      "%s_%d",
+ 	      apcDelayTypeLabels[lDelayTypeIndex],
+-	      afMaximumDelays[lDelayLengthIndex]);
++	      maxDelay);
+       char acName[100];
+-      sprintf(acName, 
+-	      "%s Delay Line (Maximum Delay %gs)",
++      sprintf(acName,
++	      "%s Delay Line (Maximum Delay %d ms)",
+ 	      apcDelayTypeNames[lDelayTypeIndex],
+-	      afMaximumDelays[lDelayLengthIndex]);
++	      maxDelay);
+       
+       psDescriptor = new CMT_Descriptor
+ 	(1053 + lPluginIndex,
