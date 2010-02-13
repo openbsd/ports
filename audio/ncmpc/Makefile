@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/09/10 22:17:52 jasper Exp $
-
-# mips64 architecture does not support trampoline code yet
-NOT_FOR_ARCHS=		mips64
+# $OpenBSD: Makefile,v 1.11 2010/02/13 13:17:03 jasper Exp $
 
 COMMENT=		curses based frontend for mpd
 
