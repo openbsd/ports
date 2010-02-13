@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/02/08 17:04:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/02/13 09:17:33 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
-GNOME_VERSION=	2.28.2
+GNOME_VERSION=	2.28.3
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -50,10 +50,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-bsdauth=yes \
 		--with-xscreensaverdir="${LOCALBASE}/share/xscreensaver/config" \
 		--with-xscreensaverhackdir="${LOCALBASE}/libexec/xscreensaver" \
-		--with-gdm-config="${SYSCONFDIR}/X11/gdm/custom.conf" \
 		--with-mit-ext \
 		--with-xf86gamma-ext \
-		--with-libgl \
 		--with-kbd-layout-indicator \
 		--with-libnotify
 
