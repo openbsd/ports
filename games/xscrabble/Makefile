@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2010/02/13 12:20:23 landry Exp $
 
 COMMENT=	X11 version of the popular board game
 
 V=		2.12
 DISTNAME=	xscrabble-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -70,7 +70,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/xscrab ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/xscrabble ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKBUILD}/XScrabble ${PREFIX}/lib/X11/app-defaults
-	@ln -sf ${PREFIX}/lib/X11/app-defaults/XScrabble \
+	ln -sf ${TRUEPREFIX}/lib/X11/app-defaults/XScrabble \
 		${PREFIX}/lib/X11/app-defaults/XScrabble_${FLAVOR}
 	${INSTALL_DATA} ${WRKDIR}/xscrabble_${FLAVOR}/lib/${DICT}.gz \
 		${WRKDIR}/xscrabble_${FLAVOR}/lib/duplicate \
