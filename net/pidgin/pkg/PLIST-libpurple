@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.6 2009/12/07 06:27:59 steven Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.7 2010/02/14 20:01:00 naddy Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
+@pkgpath net/pidgin,-libpurple,gtkspell
 @bin bin/purple-client-example
 bin/purple-remote
 bin/purple-send
