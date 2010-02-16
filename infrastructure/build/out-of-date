@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.17 2010/01/02 12:54:22 espie Exp $
+# $OpenBSD: out-of-date,v 1.18 2010/02/16 20:50:32 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -56,6 +56,9 @@ sub collect_installed
 		my $sig = $plist->signature;
 		if (ref($sig)) { $sig = $sig->string; }
 		$pkg->{$subdir}->{signature} = $sig;
+		if (defined $plist->{'always-update'}) {
+			$pkg->{$subdir}->{signature} = 'always-update';
+		}
 	}
 	return $pkg;
 }
