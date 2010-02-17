@@ -1,0 +1,22 @@
+$OpenBSD: patch-texmf-dist_tex_jadetex_base_pdfjadetex_ini,v 1.1 2010/02/17 10:19:08 jsg Exp $
+--- texmf-dist/tex/jadetex/base/pdfjadetex.ini.orig	Mon Jun 15 02:13:54 2009
++++ texmf-dist/tex/jadetex/base/pdfjadetex.ini	Wed Feb 17 10:57:06 2010
+@@ -1,4 +1,14 @@
+-% public domain
+-\input pdftexconfig.tex
+-\input jadetex.ini
+-
++% revision 16978 from svn to fix broken jadetex in texlive 2009 release
++%
++% public domain.
++% 
++% do what we do for pdflatex, but don't dump now.
++\let\primitivedump=\dump
++\let\dump=\relax
++\input pdflatex.ini
++\let\dump=\primitivedump
++%
++% then read jadetex.  pdf output must be set first, since it needs hyperref.
++\input jadetex.ltx
++%
++\dump

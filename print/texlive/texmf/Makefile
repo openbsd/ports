@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/15 18:01:57 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/02/17 10:19:08 jsg Exp $
 
 COMMENT-main =		texlive texmf for laTeX/PdfTeX 
 COMMENT-full =		texlive texmf for XeTeX/ConTeXt and extra macros
@@ -7,7 +7,7 @@ COMMENT-docs =		texlive documentation
 DISTNAME =		texlive-${DIST_V}-texmf
 
 PKGNAME-main = 		texlive_texmf-minimal-${V}p0
-PKGNAME-full = 		texlive_texmf-full-${V}p0
+PKGNAME-full = 		texlive_texmf-full-${V}p1
 PKGNAME-docs =	 	texlive_texmf-docs-${V}p0
 
 NO_BUILD =		Yes
