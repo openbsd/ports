@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.8 2004/10/27 16:47:05 pvalchev Exp $
---- configure.orig	Wed Mar 29 17:51:49 2000
-+++ configure	Wed Oct 27 15:19:38 2004
+$OpenBSD: patch-configure,v 1.9 2010/02/23 19:55:15 phessler Exp $
+--- configure.orig	Thu Mar 30 02:51:49 2000
++++ configure	Sat Feb 13 11:30:23 2010
 @@ -528,7 +528,7 @@ fi
  
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-configure,v 1.8 2004/10/27 16:47:05 pvalchev Exp $
 +#define __amd64__ 1
 +EOF
 +;;
-+mips64-*) cat >> confdefs.h <<\EOF
++mips64-*|mips64el-*) cat >> confdefs.h <<\EOF
 +#define __mips64__ 1
  EOF
  ;;
