@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2009/06/08 21:46:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2010/02/23 20:09:12 jasper Exp $
 
 COMMENT =		generates lists of words given certain information
 
 DISTNAME =		WordGenerator-1.9
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 CATEGORIES =		misc education
+
+HOMEPAGE =		http://billposer.org/Software/WordGenerator.html
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
@@ -14,7 +16,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://www.arcane-labs.net/download/OpenBSD/
+MASTER_SITES =		http://www.arcane-labs.net/download/OpenBSD/ \
+			http://billposer.org/Software/Downloads/
 
 MODULES =		x11/tk
 
