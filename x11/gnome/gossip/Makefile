@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2009/12/21 18:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/02/23 20:08:04 jasper Exp $
 
 COMMENT=		Jabber client for the GNOME desktop
 
 GNOME_PROJECT=		gossip
 GNOME_VERSION=		0.31
-PKGNAME=		${DISTNAME}p16
+PKGNAME=		${DISTNAME}p17
 
 CATEGORIES=		net
 
-HOMEPAGE=		http://developer.imendio.com/projects/gossip/
+HOMEPAGE=		http://live.gnome.org/Gossip/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,18 +16,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
-		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xrender Xss art_lgpl_2 asn1 atk-1.0 bonobo-2 \
-		bonobo-activation bonoboui-2 c cairo com_err crypto \
-		dbus-1 dbus-glib-1 expat fontconfig freetype pthread-stubs xcb \
-		gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 \
-		glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
-		gnomeui-2 gnomevfs-2 gnutls gobject-2.0 gpg-error gssapi \
-		gthread-2.0 gtk-x11-2.0 krb5 m nspr4 nss3 pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4 png \
-		popt pthread smime3 softokn3 ssl ssl3 tasn1 util xml2 \
-		z gio-2.0 soup-2.4 sqlite3 avahi-client avahi-common avahi-glib
+WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
+WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xss art_lgpl_2 asn1 atk-1.0 avahi-client avahi-common
+WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 c
+WANTLIB += cairo com_err crypto dbus-1 dbus-glib-1 expat fontconfig
+WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
+WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls
+WANTLIB += gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
+WANTLIB += krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 plc4 plds4 png popt pthread pthread-stubs
+WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 tasn1 util
+WANTLIB += xcb xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
