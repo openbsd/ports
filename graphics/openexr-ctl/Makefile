@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/12 12:32:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/02/23 20:15:01 jasper Exp $
 
 COMMENT =		OpenEXR bindings for CTL
 DISTNAME =		openexr_ctl-1.0.1
@@ -27,5 +27,7 @@ SEPARATE_BUILD =	concurrent
 
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
+# Running the configure test makes mips64 rather unhappy.
+CONFIGURE_ARGS +=	--disable-openexrtest
 
 .include <bsd.port.mk>
