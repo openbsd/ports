@@ -1,0 +1,75 @@
+$OpenBSD: patch-vacall_vacall_h_in,v 1.1 2010/02/23 20:11:15 jasper Exp $
+
+On OpenBSD the mips64(el) architectures define both __mips__ and __mips64__,
+which leads to confusion and redeclarations here.
+
+--- vacall/vacall.h.in.orig	Thu Feb 11 23:25:13 2010
++++ vacall/vacall.h.in	Thu Feb 11 23:30:34 2010
+@@ -395,7 +395,7 @@ typedef struct
+   float          farg[4];
+   double         darg[2];
+ #endif
+-#if defined(__mips__) && !defined(__mipsn32__)
++#if defined(__mips__) && !defined(__mipsn32__) && !defined(__mips64__)
+   int            anum;
+   float          farg[2];
+   double         darg[2];
+@@ -545,11 +545,11 @@ typedef __va_alist* va_alist;
+ #define __va_start_struct1(LIST,TYPE_SIZE,TYPE_ALIGN,TYPE_SPLITTABLE)  \
+   0
+ #endif
+-#if defined(__mips__) && !defined(__mipsn32__) || (defined(__sparc__) && !defined(__sparc64__)) || defined(__m88k__)
++#if defined(__mips__) && !defined(__mipsn32__) && !defined(__mips64__) || (defined(__sparc__) && !defined(__sparc64__)) || defined(__m88k__)
+ #define __va_reg_struct_return(LIST,TYPE_SIZE,TYPE_SPLITTABLE)  \
+   ((TYPE_SIZE) == 1 || (TYPE_SIZE) == 2 || (TYPE_SIZE) == 4)
+ /* Test __VA_SMALL_STRUCT_RETURN instead of __VA_REGISTER_STRUCT_RETURN. */
+-#if defined(__mips__) && !defined(__mipsn32__)
++#if defined(__mips__) && !defined(__mipsn32__) && !defined(__mips64__)
+ #define __va_start_struct1(LIST,TYPE_SIZE,TYPE_ALIGN,TYPE_SPLITTABLE)  \
+   ((LIST)->anum++,							\
+    0									\
+@@ -651,7 +651,7 @@ typedef __va_alist* va_alist;
+ /* Padding of non-struct arguments. */
+ #define __va_argsize(TYPE_SIZE)  \
+   (((TYPE_SIZE) + sizeof(__vaword)-1) & -(long)sizeof(__vaword))
+-#if defined(__i386__) || defined(__m68k__) || defined(__mips__) && !defined(__mipsn32__) || (defined(__sparc__) && !defined(__sparc64__)) || defined(__alpha__) || defined(__arm__) || (defined(__rs6000__) && (defined(_AIX) || (defined(__MACH__) && defined(__APPLE__)))) || defined(__m88k__) || defined(__convex__) || defined(__ia64__) || defined(__x86_64__)
++#if defined(__i386__) || defined(__m68k__) || defined(__mips__) && !defined(__mips64__) && !defined(__mipsn32__) || (defined(__sparc__) && !defined(__sparc64__)) || defined(__alpha__) || defined(__arm__) || (defined(__rs6000__) && (defined(_AIX) || (defined(__MACH__) && defined(__APPLE__)))) || defined(__m88k__) || defined(__convex__) || defined(__ia64__) || defined(__x86_64__)
+ /* args grow up */
+ /* small structures < 1 word are adjusted depending on compiler */
+ #define __va_arg_leftadjusted(LIST,TYPE_SIZE,TYPE_ALIGN)  \
+@@ -747,7 +747,7 @@ typedef __va_alist* va_alist;
+ #define __va_arg_adjusted(LIST,TYPE_SIZE,TYPE_ALIGN)  \
+   __va_arg_rightadjusted(LIST,TYPE_SIZE,TYPE_ALIGN)
+ #endif
+-#if defined(__mips__) && !defined(__mipsn32__)
++#if defined(__mips__) && !defined(__mipsn32__) && !defined(__mips64__)
+ /* big endian -> small args < 1 word are adjusted to the right */
+ #define __va_arg_adjusted(LIST,TYPE_SIZE,TYPE_ALIGN)  \
+   ((LIST)->anum++, __va_arg_rightadjusted(LIST,TYPE_SIZE,TYPE_ALIGN))
+@@ -828,7 +828,7 @@ typedef __va_alist* va_alist;
+ #if defined(__i386__) || defined(__m68k__) || defined(__mipsn32__) || defined(__mips64__) || defined(__sparc__) || defined(__sparc64__) || defined(__alpha__) || defined(__arm__) || defined(__rs6000__) || defined(__convex__) || defined(__ia64__) || defined(__x86_64__) || defined(__s390__)
+ #define __va_align_double(LIST)
+ #endif
+-#if defined(__mips__) && !defined(__mipsn32__) || defined(__m88k__)
++#if defined(__mips__) && !defined(__mipsn32__) && !defined(__mips64__) || defined(__m88k__)
+ /* __VA_alignof(double) > sizeof(__vaword) */
+ #define __va_align_double(LIST)  \
+   (LIST)->aptr = ((LIST)->aptr + sizeof(double)-1) & -(long)sizeof(double),
+@@ -893,7 +893,7 @@ typedef __va_alist* va_alist;
+   ))
+ #endif
+ #endif
+-#if defined(__mips__) && !defined(__mipsn32__)
++#if defined(__mips__) && !defined(__mipsn32__) && !defined(__mips64__)
+ /* The first 0,1,2 registers are stored elsewhere if they are floating-point
+  * parameters.
+  */
+@@ -1092,7 +1092,7 @@ typedef __va_alist* va_alist;
+    __va_arg_adjusted(LIST,TYPE_SIZE,TYPE_ALIGN)				\
+   )
+ #endif
+-#if defined(__mips__) && !defined(__mipsn32__)
++#if defined(__mips__) && !defined(__mipsn32__) && !defined(__mips64__)
+ /* small structures < 1 word are adjusted depending on compiler */
+ #define __va_arg_struct(LIST,TYPE_SIZE,TYPE_ALIGN)  \
+   (__va_align_struct(LIST,TYPE_SIZE,TYPE_ALIGN)				\

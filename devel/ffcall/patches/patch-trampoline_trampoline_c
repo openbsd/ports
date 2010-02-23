@@ -1,0 +1,16 @@
+$OpenBSD: patch-trampoline_trampoline_c,v 1.1 2010/02/23 20:11:15 jasper Exp $
+--- trampoline/trampoline.c.orig	Thu Feb 11 23:38:13 2010
++++ trampoline/trampoline.c	Thu Feb 11 23:40:59 2010
+@@ -192,8 +192,12 @@ extern RETGETPAGESIZETYPE getpagesize ();
+ #ifdef linux
+ #include <asm/cachectl.h>
+ #else
++#ifdef __OpenBSD__
++#include <mips64/sysarch.h>
++#else
+ #ifdef HAVE_SYS_CACHECTL_H
+ #include <sys/cachectl.h>
++#endif
+ #endif
+ #endif
+ #endif
