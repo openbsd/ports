@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.162 2009/12/26 19:23:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.163 2010/02/23 19:59:13 phessler Exp $
 
 # May not be hard to add more.
-ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm mips64
+ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm mips64 mips64el
 
 SUBST_VARS += 		PREFIX
 
