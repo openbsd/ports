@@ -1,7 +1,15 @@
-$OpenBSD: patch-bing_c,v 1.2 2007/05/12 21:36:28 rui Exp $
---- bing.c.orig	Fri Jan 19 18:28:53 2001
-+++ bing.c	Sat May 12 14:52:52 2007
-@@ -755,7 +755,7 @@ int pr_pack(buf, cc, from)
+$OpenBSD: patch-bing_c,v 1.3 2010/02/23 21:35:37 sthen Exp $
+--- bing.c.orig	Fri Jan 19 13:28:53 2001
++++ bing.c	Thu Feb 18 12:35:25 2010
+@@ -162,6 +162,7 @@ static char rcsid[] = "$Id: bing.c,v 1.16.2.1 2001/01/
+ 
+ #include <netinet/in_systm.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <netinet/ip.h>
+ #include <netinet/ip_icmp.h>
+ #ifndef linux
+@@ -755,7 +756,7 @@ int pr_pack(buf, cc, from)
  	static int old_rrlen;
  	static char old_rr[MAX_IPOPTLEN];
  	struct ip *ip;
@@ -10,7 +18,7 @@ $OpenBSD: patch-bing_c,v 1.2 2007/05/12 21:36:28 rui Exp $
  	double triptime;
  	int hlen, dupflag;
  
-@@ -798,9 +798,12 @@ int pr_pack(buf, cc, from)
+@@ -798,9 +799,12 @@ int pr_pack(buf, cc, from)
  	cc -= hlen;
  	icp = (struct icmp *)(buf + hlen);
  	if (icp->icmp_type == ICMP_ECHOREPLY) {
@@ -24,7 +32,7 @@ $OpenBSD: patch-bing_c,v 1.2 2007/05/12 21:36:28 rui Exp $
  		tvsub(&tv, tp);
  		triptime = tv_usval(&tv);
  
-@@ -1231,17 +1234,30 @@ int main(argc, argv)
+@@ -1231,17 +1235,30 @@ int main(argc, argv)
  	struct hoststats *hs1, *hs2;
  	int ntrans, nloops, bits;
  	int i;
@@ -57,7 +65,7 @@ $OpenBSD: patch-bing_c,v 1.2 2007/05/12 21:36:28 rui Exp $
  	preload = 0;
  	datap = &outpack[8 + sizeof(struct timeval)];
  	while ((ch = getopt(argc, argv, "I:LRc:dDe:fh:i:l:nPp:rS:s:t:vVwz")) != EOF)
-@@ -1398,15 +1414,6 @@ int main(argc, argv)
+@@ -1398,15 +1415,6 @@ int main(argc, argv)
  
  	ident = getpid() & 0xFFFF;
  

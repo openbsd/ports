@@ -1,2 +1,4 @@
-Bing is a point-to-point bandwidth measurement tool (hence the 'b'), based
-on ping.
+Bing is a point-to-point bandwidth measurement tool (hence the 'b'),
+based on ping. Bing determines the real (raw, as opposed to available
+or average) throughput on a link by measuring ICMP echo requests
+roundtrip times for different packet sizes for each end of the link.
