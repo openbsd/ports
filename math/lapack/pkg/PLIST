@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/09/05 15:33:35 steven Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/02/23 20:12:04 jasper Exp $
 %%SHARED%%
+%%no_mips64%%
 lib/liblapack.a
 lib/liblapack_p.a
-lib/liblapack_pic.a
 @man man/man3f/cbdsqr.3f
 @man man/man3f/cgbbrd.3f
 @man man/man3f/cgbcon.3f

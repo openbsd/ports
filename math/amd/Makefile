@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/05 20:40:46 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2010/02/23 20:12:43 jasper Exp $
 
 COMMENT=	order a sparse matrix prior to Cholesky factorization
 
 VERSION=	2.2.0
 DISTNAME=	AMD-${VERSION}
-PKGNAME=	amd-${VERSION}p0
+PKGNAME=	amd-${VERSION}p1
 SHARED_LIBS=	amd	0.0 \
 		amdf77	0.0
 
@@ -35,6 +35,13 @@ CFLAGS+=	-I${WRKDIST}/Include -I${WRKDIR}/UFconfig
 
 CSRC=	aat 1 2 dump postorder post_tree defaults order control info \
 	valid preprocess
+
+# See bsd.lib.mk:162
+.if ${MACHINE_ARCH:Mmips64*}
+PKG_ARGS+=	-Dno_mips64=0
+.else
+PKG_ARGS+=	-Dno_mips64=1
+.endif
 
 pre-configure:
 	@echo "#define DINT 1"  > ${WRKSRC}/di.c

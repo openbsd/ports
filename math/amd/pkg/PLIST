@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/21 16:58:00 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/02/23 20:12:43 jasper Exp $
 %%SHARED%%
+%%no_mips64%%
 include/amd/
 include/amd/amd.h
 lib/libamd.a
 lib/libamd_p.a
-lib/libamd_pic.a
 lib/libamdf77.a
 lib/libamdf77_p.a
-lib/libamdf77_pic.a

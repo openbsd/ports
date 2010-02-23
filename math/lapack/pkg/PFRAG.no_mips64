@@ -1,0 +1,2 @@
+@comment $OpenBSD
+lib/liblapack_pic.a
