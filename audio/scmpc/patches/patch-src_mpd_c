@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mpd_c,v 1.1 2010/02/23 20:34:01 jasper Exp $
+
+Increase delta to reduce false positives.
+
+--- src/mpd.c.orig	Mon Feb  1 14:13:14 2010
++++ src/mpd.c	Mon Feb  1 14:13:36 2010
+@@ -373,7 +373,7 @@ static void new_song_check(mpd_connection *mpd_conn)
+ 		double realtime = difftime(time(NULL), song_info.start_time);
+ 		double reported_time = (double)song->current_pos;
+ 
+-		if (fabs(realtime - reported_time) > 2.0) {
++		if (fabs(realtime - reported_time) > 10.0) {
+ 			scmpc_log(INFO, "Not submitting song, seeking detected.");
+ 			scmpc_log(DEBUG, "realtime = %f, reported_time = %f", realtime,
+ 					reported_time);
