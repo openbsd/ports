@@ -1,6 +1,6 @@
-$OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.2 2009/11/27 21:18:52 naddy Exp $
---- nsprpub/pr/src/misc/prdtoa.c.orig	Wed Nov 25 21:46:23 2009
-+++ nsprpub/pr/src/misc/prdtoa.c	Wed Nov 25 21:47:05 2009
+$OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.3 2010/02/24 16:59:49 sthen Exp $
+--- nsprpub/pr/src/misc/prdtoa.c.orig	Wed Feb 17 19:32:51 2010
++++ nsprpub/pr/src/misc/prdtoa.c	Wed Feb 17 19:33:09 2010
 @@ -47,42 +47,14 @@
  
  #include "primpl.h"
@@ -44,7 +44,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.2 2009/11/27 21:18:52 naddy Exp
  /****************************************************************
   *
   * The author of this software is David M. Gay.
-@@ -102,3310 +74,82 @@ void _PR_CleanupDtoa(void)
+@@ -102,3312 +74,82 @@ void _PR_CleanupDtoa(void)
   *
   ***************************************************************/
  
@@ -1708,6 +1708,8 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.2 2009/11/27 21:18:52 naddy Exp
 -			}
 -		}
 - dig_done:
+-	if (nd > 64 * 1024)
+-		goto ret0;
 -	e = 0;
 -	if (c == 'e' || c == 'E') {
 -		if (!nd && !nz && !nz0) {
@@ -3391,7 +3393,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.2 2009/11/27 21:18:52 naddy Exp
  
  PR_IMPLEMENT(PRStatus)
  PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
-@@ -3421,7 +165,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
+@@ -3423,7 +165,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
          PR_SetError(PR_INVALID_ARGUMENT_ERROR, 0);
          return rv;
      }
@@ -3400,7 +3402,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.2 2009/11/27 21:18:52 naddy Exp
      if (!result) {
          PR_SetError(PR_OUT_OF_MEMORY_ERROR, 0);
          return rv;
-@@ -3436,7 +180,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
+@@ -3438,7 +180,7 @@ PR_dtoa(PRFloat64 d, PRIntn mode, PRIntn ndigits,
          }
          rv = PR_SUCCESS;
      }
@@ -3409,7 +3411,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.2 2009/11/27 21:18:52 naddy Exp
      return rv;  
  }
  
-@@ -3458,9 +202,9 @@ PR_cnvtf(char *buf, int bufsz, int prcsn, double dfval
+@@ -3460,9 +202,9 @@ PR_cnvtf(char *buf, int bufsz, int prcsn, double dfval
      char *num, *nump;
      char *bufp = buf;
      char *endnum;
@@ -3421,7 +3423,7 @@ $OpenBSD: patch-nsprpub_pr_src_misc_prdtoa_c,v 1.2 2009/11/27 21:18:52 naddy Exp
      /* If anything fails, we store an empty string in 'buf' */
      num = (char*)PR_MALLOC(bufsz);
      if (num == NULL) {
-@@ -3468,7 +212,7 @@ PR_cnvtf(char *buf, int bufsz, int prcsn, double dfval
+@@ -3470,7 +212,7 @@ PR_cnvtf(char *buf, int bufsz, int prcsn, double dfval
          return;
      }
      /* XXX Why use mode 1? */
