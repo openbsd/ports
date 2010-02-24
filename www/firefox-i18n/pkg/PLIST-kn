@@ -1,4 +1,4 @@
-@comment $
+@comment $OpenBSD: PLIST-kn,v 1.2 2010/02/24 18:17:23 naddy Exp $
 mozilla-firefox/extensions/langpack-kn@firefox.mozilla.org/
 mozilla-firefox/extensions/langpack-kn@firefox.mozilla.org/chrome/
 mozilla-firefox/extensions/langpack-kn@firefox.mozilla.org/chrome.manifest

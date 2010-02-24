@@ -1,4 +1,4 @@
-@comment $
+@comment $OpenBSD: PLIST-ro,v 1.4 2010/02/24 18:17:23 naddy Exp $
 mozilla-firefox/extensions/langpack-ro@firefox.mozilla.org/
 mozilla-firefox/extensions/langpack-ro@firefox.mozilla.org/chrome/
 mozilla-firefox/extensions/langpack-ro@firefox.mozilla.org/chrome.manifest

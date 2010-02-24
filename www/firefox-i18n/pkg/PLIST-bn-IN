@@ -1,4 +1,4 @@
-@comment $
+@comment $OpenBSD: PLIST-bn-IN,v 1.2 2010/02/24 18:17:23 naddy Exp $
 mozilla-firefox/extensions/langpack-bn-IN@firefox.mozilla.org/
 mozilla-firefox/extensions/langpack-bn-IN@firefox.mozilla.org/chrome/
 mozilla-firefox/extensions/langpack-bn-IN@firefox.mozilla.org/chrome.manifest
