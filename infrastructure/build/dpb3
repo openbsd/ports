@@ -1,0 +1,272 @@
+#! /usr/bin/perl
+
+# ex:ts=8 sw=4:
+# $OpenBSD: dpb3,v 1.1 2010/02/24 11:33:31 espie Exp $
+#
+# Copyright (c) 2010 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+my $ports1;
+BEGIN {
+	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
+}
+$0 = 'dpb';
+use FindBin;
+use lib "$FindBin::Bin";
+use lib "$ports1/infrastructure/build";
+use DPB::PkgPath;
+use DPB::Core;
+use DPB::Vars;
+use DPB::PortInfo;
+use DPB::Engine;
+use DPB::PortBuilder;
+use DPB::Reporter;
+use OpenBSD::Getopt;
+use OpenBSD::Error;
+use DPB::Heuristics;
+use DPB::Locks;
+use DPB::Logger;
+use DPB::Job;
+
+use OpenBSD::Paths;
+my $make = $ENV{MAKE} || OpenBSD::Paths->make;
+
+our ($opt_t, $opt_e, $opt_T, $opt_c, $opt_h, $opt_A, $opt_j, $opt_a, 
+    $opt_r,
+    $opt_L, $opt_m, $opt_f, $opt_x);
+my @subdirlist;
+
+sub parse_build_line
+{
+	return split(/\s+/, shift);
+}
+
+sub parse_build_file
+{
+	my ($fname, @consumers) = @_;
+	open my $fh, '<', $fname or die "Couldn't open build file $fname\n";
+	my $_;
+	while (<$fh>) {
+		chomp;
+		my ($pkgpath, $host, $time, $sz, @rest) = parse_build_line($_);
+		$sz =~ s/!$//;
+		my $o = DPB::PkgPath->new_hidden($pkgpath);
+		for my $c (@consumers) {
+			$c->add_build_info($o, $host, $time, $sz);
+		}
+	}
+}
+
+my $parsed = 0;
+my $heuristics = DPB::Heuristics->new($opt_r);
+set_usage("dpb3 [-acertx] [-A arch] [-j N] [-P plist] [-h hosts] [-L lockdir] [-b log] ",
+	"[-T timeout] [-m threshold] [path ...]");
+try {
+getopts('acerh:txA:f:j:m:P:b:L:T:', {
+	    P => sub {
+		my $file = shift;
+		open my $fh, '<', $file or die "Can't open $file\n";
+		my $_;
+		while (<$fh>) {
+			chomp;
+			next if m/^\#/;
+			unshift @ARGV, $_;
+		}
+	    },
+	    b => sub {
+	    	parse_build_file(shift, $heuristics, "DPB::Job::Port");
+		$parsed = 1;
+	    },
+
+	}
+	);
+} catchall {
+	Usage($_);
+};
+
+if ($parsed) {
+	$heuristics->finished_parsing;
+}
+if ($opt_m) {
+	$heuristics->set_threshold($opt_m);
+}
+
+my $dpb = $opt_f ? "fetch" : "normal";
+
+if (@ARGV == 0 && !$opt_a) {
+	Usage("Need at least one pkgpath to work with");
+}
+for my $arg (@ARGV) {
+	my ($path, $weight) = ($arg, 5000);
+	if ($arg =~ m/^(.*)\=(\d+)$/) {
+		($path, $weight) = ($1, $2);
+	}
+	my $pkgpath = DPB::PkgPath->new($path);
+	$heuristics->set_weight($pkgpath, $weight);
+	$pkgpath->add_to_subdirlist(\@subdirlist);
+}
+
+my ($ports, $repo, $localarch, $distdir) = DPB::Vars->get($make, "PORTSDIR", 
+    "PACKAGE_REPOSITORY", "MACHINE_ARCH", "DISTDIR");
+
+my $arch = $opt_A // $localarch;
+$opt_A //= '';
+my $logdir = $ENV{LOGDIR} || "$ports/log/$opt_A";
+my $lockdir = $opt_L // "$ports/locks/$opt_A";
+
+my $logger = DPB::Logger->new($logdir, $opt_c);
+$heuristics->set_logger($logger);
+
+if (defined $opt_j && $localarch ne $arch) {
+	Usage("Can't use -j if -A arch is not local architecture");
+}
+
+if (defined $opt_j && $opt_j !~ m/^\d+$/) {
+	Usage("-j takes a numerical argument");
+}
+
+my $fullrepo = $opt_t ? "$repo/$arch/test" : "$repo/$arch/all";
+if ($opt_t) {
+	$logdir = "$logdir/test";
+}
+if ($opt_h) {
+	DPB::Core->parse_hosts_file($opt_h, $arch);
+} else {
+	$opt_j //= 1;
+}
+
+$opt_j //= 0;
+for (1 .. $opt_j) {
+	DPB::Core::Factory->new('localhost');
+}
+
+my $builder = ($opt_t ? "DPB::PortBuilder::Test" : "DPB::PortBuilder")->new(
+    $opt_c, $fullrepo, $logger, $ports, $make, $heuristics);
+
+my $locker = DPB::Locks->new($lockdir);
+my $engine = DPB::Engine->new($builder, $heuristics, $logger, $locker);
+my $reporter = DPB::Reporter->new($opt_x, "DPB::Core", "DPB::Vars", $engine);
+while (!DPB::Core->avail) {
+	DPB::Core->reap;
+	sleep 1;
+}
+my $core = DPB::Core->get;
+my $loglist = DPB::Util->make_hot($logger->open("vars"));
+#my $dump = DPB::Util->make_hot($logger->open('dump'));
+
+my $keep_going = 1;
+$opt_T //= 10;
+my $last_time = time() - $opt_T;
+
+sub handle_non_waiting_jobs
+{
+	my $need_clock = shift;
+	my $reaped = DPB::Core->reap;
+	$keep_going = !-e "$logdir/stop";
+	if (DPB::Core->avail) {
+		$engine->check_buildable;
+	}
+	while ($keep_going && DPB::Core->avail && $engine->can_build) {
+		$engine->start_new_job;
+	}
+	if ($need_clock) {
+		my $current = time();
+		if ($current >= $last_time + $opt_T || $reaped) {
+			$reporter->report;
+			$last_time = $current;
+		}
+	} else {
+		$reporter->report;
+	}
+}
+
+sub finish
+{
+	my $h = shift;
+	for my $v (values %$h) {
+		$engine->new_path($v);
+	}
+	handle_non_waiting_jobs(1);
+}
+
+sub grab_subdirs
+{
+	my $list = shift;
+	DPB::Vars->grab_list($core, $ports, $make, $list, $loglist, $dpb,
+	    sub {
+		finish(shift);
+	});
+}
+
+sub complete_subdirs
+{
+	# more passes if necessary
+	while ($keep_going) {
+		my @subdirlist = ();
+		for my $v (DPB::PkgPath->seen) {
+			next if defined $v->{info};
+			if (defined $v->{tried}) {
+				$engine->add_fatal($v);
+			}
+			$v->add_to_subdirlist(\@subdirlist);
+			$v->{tried} = 1;
+		}
+		last if @subdirlist == 0;
+
+		grab_subdirs(\@subdirlist);
+	}
+}
+
+if (@subdirlist > 0) {
+	grab_subdirs(\@subdirlist);
+}
+
+complete_subdirs();
+
+if ($opt_a) {
+	grab_subdirs(undef);
+}
+
+
+complete_subdirs();
+# give back "our" core to the pool.
+
+if (!$opt_e) {
+	$core->mark_ready;
+}
+# and let's wait for all jobs now.
+close($loglist);
+
+$engine->finished_scanning;
+#$engine->dump($dump);
+$engine->check_buildable;
+#$engine->dump($dump);
+
+DPB::Core->start_clock($opt_T);
+while (1) {
+	handle_non_waiting_jobs(0);
+	if (!DPB::Core->running && (!$keep_going || !$engine->can_build)) {
+		last;
+	}
+	if (DPB::Core->running) {
+		DPB::Core->reap_wait;
+	}
+}
+
+$reporter->reset;
+DPB::Core->cleanup;
+print $engine->report;
+$engine->dump_category('tobuild');

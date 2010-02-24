@@ -1,0 +1,253 @@
+.\"	$OpenBSD: dpb3.1,v 1.1 2010/02/24 11:33:31 espie Exp $
+.\"
+.Dd $Mdocdate: February 24 2010 $
+.Dt DPB3 1
+.Os
+.Sh NAME
+.Nm dpb3
+.Nd distributed ports builder
+.Sh SYNOPSIS
+.Nm dpb3
+.Bk -words
+.Op Fl acertx
+.Op Fl A Ar arch
+.Op Fl b Ar logfile
+.Op Fl h Ar hosts
+.Op Fl j Ar n
+.Op Fl L Ar lockdir
+.Op Fl P Ar subdirlist
+.Op Fl T timeout
+.Op Ar pkgpath ...
+.Ek
+.Sh DESCRIPTION
+The
+.Nm
+command is used to build ports on a cluster of machines.
+Its name is an acronym for
+.Sq distributed ports builder .
+.Nm
+walks ports to figure out dependencies, and starts building ports
+as soon as it can.
+It can take
+.Ar pkgpath ...
+to build as parameters.
+Options are as follows:
+.Bl -tag -width pkgpathlonger
+.It Fl A Ar arch
+Build packages for given architecture, selecting relevant hosts from the
+cluster.
+.It Fl a
+Walk the whole tree and builds all packages.
+.It Fl b Ar logfile
+Prime the heuristics module with a previous build log, so that packages that
+take a long time to build will happen earlier.
+.It Fl c
+Clean ports tree and log before each build.
+.It Fl e
+The listing job is extra and won't be given back to the pool when it's
+finished.
+.It Fl h Ar hosts
+hosts to use for building.
+One host per line, plus properties, such as:
+.Bd -literal
+espie@aeryn jobs=4 arch=i386
+.Ed
+.It Fl j Ar n
+Number of concurrent local jobs to run.
+.It Fl L Ar lockdir
+Choose a locks directory
+.Po
+default is
+.Pa locks/${ARCH}
+.Pc .
+.It Fl P Ar subdirlist
+Read list of pkgpaths from file
+.It Fl r
+Random build order.
+Disregard any kind of smart heuristics.
+Useful to try to find missing build dependencies.
+.It Fl t
+Test mode.  Only pretend to build packages. Used to check that the engine works.
+.It Fl T Ar timeout
+Timeout (in seconds) while waiting for jobs to finish, so that the display
+is updated even if jobs didn't finish.
+Defaults to 10 seconds.
+.It Fl x
+No tty report, only report really important things, like hosts going down
+and coming back up, build errors, or builds not progressing.
+.El
+.Pp
+.Nm
+figures out in which order to build things on the fly, and constantly
+displays information relative to what's currently building.
+There's a list currently running, one line per task, with the task name,
+local pid, the build host name, and advancement based on the log file size.
+This is followed by a two-line display:
+.Bl -tag -width BB=
+.It P=
+number of built packages, that could be installable, but are not needed
+by anything yet to build.
+.It I=
+number of packages that can be installed, and can be needed for other builds.
+.It B=
+number of built packages, not yet known to be installable.
+.It Q=
+number of packages in the queue, e.g., stuff that can be built now, assuming
+we have a free slot.
+.It T=
+number of packages to_build, where dependencies are not yet resolved.
+.It !=
+number of ignored packages.
+.It E=
+list of packages in error, that cannot currently be built.
+.El
+.Pp
+Note that those numbers refer to pkgpaths known to
+.Nm .
+In general, those numbers will be slightly higher than the actual number
+of packages being built, since several paths may lead to the same package.
+.Pp
+P will stay at zero until the listing job is finished, since
+.Nm
+needs full backwards dependencies to compute it.
+.Pp
+.Nm
+uses some heuristics to try to maximise Q as soon as possible.
+There's also a provision for a feedback-directed build, where timings from
+a previous build can be used to try to build long-running jobs first.
+.Sh LOCKS AND ERRORS
+When building a package,
+.Nm
+produces a lockfile in the lock directory, whose name is deduced from
+the basic pkgpath with slashes replaced by dots, and a possible second lock
+with the fullpkgpath.
+This lockfile is filled with such info as the build start time or the host.
+.Pp
+At the end of a succesful build, these lockfiles are removed.
+The fullpkgpath will stay around in case of errors.
+.Pp
+At the end of each job,
+.Nm
+rechecks the lock directory for existing lockfiles.
+If some locks have vanished,
+it will put the corresponding paths back in the queue and attempt
+another build.
+.Pp
+This eases manual repairs: if a package does not build, the user can look
+at the log, go to the port directory, fix the problem, and then remove the lock.
+.Nm
+will pick up the ball and keep building without interruption.
+.Pp
+One can also run several
+.Nm
+in parallel.
+This is not optimal, since each
+.Nm
+ignores the others, and only uses the lock info to avoid the other's
+current work, but it can be handy: in an emergency, one can start a second
+.Nm
+to obtain a specific package right now, in parallel with the original
+.Nm .
+.Sh SHUTTING DOWN GRACEFULLY
+.Nm
+periodically checks for a file named
+.Pa ${PORTSDIR}/log/${ARCH}/stop .
+If this file exists, then it won't start new jobs, and shutdown when
+the current jobs are finished.
+.Sh FILES
+Apart from producing packages,
+.Nm
+will create a number of log files under
+.Pa ${PORTSDIR}/log/{$ARCH} :
+.Bl -tag -width engine.log
+.It build.log
+Actual build log.
+Each line summarizes build of a single pkgpath, as:
+.Sq pkgpath host time logsize (detailed timing)[!]
+where time is the actual build time in seconds, host is the machine name
+where this occurred, logsize is the corresponding log file size,
+and a ! is appended in case the build didn't succeed.
+.Pp
+The detailed timing info gives a run-down of the build, with clean, fetch,
+prepare, patch (actually extract+patch), configure, build, fake, package, clean  
+detailed timing info.
+Note that the actual build time starts at
+.Sq extract
+and finishes at 
+.Sq package .
+.It engine.log
+Build engine log.
+Each line corresponds to a state change for a pkgpath and starts with the pid
+of
+.Nm ,
+plus a timestamp of the log entry.
+.Bl -tag -width BB:
+.It ^
+pkgpath temporarily put aside, because a job is running in the same directory.
+.It B
+pkgpath built.
+.It I
+pkgpath can be installed.
+.It J
+job to build pkgpath started.
+Also records the host used for the build.
+.It L
+job did not start, existing lock detected.
+.It N
+job did not finish.
+The host may have gone down.
+.It P
+built package is no longer required for anything.
+.It Q
+pkgpath queued as buildable whenever a slot is free.
+.It T
+pkgpath to build.
+.It V
+pkgpath put back in the buildable queue, after job that was running in
+the same directory returned.
+.El
+.It packages/pkgname.log
+one file or symlink per pkgname.
+.It paths/some/path.log
+one file or symlink per pkgpath.
+.It stats.log
+Simple log of the B=... line summaries.
+Mostly useful for making plots and tweaking performance.
+.It vars.log
+Logs the directories that were walked in the ports tree for dependency
+information.
+.El
+.Sh AUTHOR
+Marc Espie
+.Sh HISTORY
+The original
+.Nm dpb
+command was written by Nikolai Sturm.
+This version is a complete rewrite from scratch using all the stuff
+we learnt over the years to make it better.
+.Pp
+There are still a number of changes to make.
+.Pp
+Being able to update packages on an existing machine would be nice as well.
+Better build feedback for next builds would be nice: we need a way to
+calibrate build logs that contain info for several machines (so that we
+can gauge whether a machine is fast or slow).
+It might make sense to have some kind of machine affinity for big packages
+in a cluster, so that we avoid reinstalling big things on each machine if
+we can get away with installing stuff on a single machine.
+We should probably keep the pkgnames around with the pkgpath in the build-log,
+so that we give more credibility to build times that correspond to the
+exact same pkgnames.
+.Pp
+We should integrate mirroring functionalities.
+This mostly involves having
+.Sq special
+jobs with no cpu requirements that can run locally,
+and to have a step prior to
+.Sq tobuild ,
+where fetch would occur.
+The same logic that was used for pkgpaths should be used to handle distfiles,
+and we should probably add some kind of lock based on the ftp site being
+used to grab distfiles.
+(This is low priority, as most build machines currently being used already
+have the distfiles).
