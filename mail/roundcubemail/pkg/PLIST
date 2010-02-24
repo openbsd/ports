@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/11/02 17:20:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/02/24 13:40:37 sthen Exp $
 roundcubemail/
-roundcubemail/.htaccess
+roundcubemail/.htaccess.dist
+@sample roundcubemail/.htaccess
 roundcubemail/CHANGELOG
 roundcubemail/INSTALL
 roundcubemail/LICENSE
