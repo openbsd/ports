@@ -1,0 +1,17 @@
+$OpenBSD: patch-Modules__ctypes_libffi_src_mips_ffitarget_h,v 1.1 2010/02/25 11:02:39 phessler Exp $
+
+Allow _ctypes to build on mips64*
+
+--- Modules/_ctypes/libffi/src/mips/ffitarget.h.orig	Thu Mar  9 02:35:32 2006
++++ Modules/_ctypes/libffi/src/mips/ffitarget.h	Tue Feb 23 21:32:09 2010
+@@ -158,8 +158,8 @@ typedef enum ffi_abi {
+ #define FFI_CLOSURES 1
+ #define FFI_TRAMPOLINE_SIZE 20
+ #else
+-/* N32/N64 not implemented yet. */
+-#define FFI_CLOSURES 0
++#define FFI_CLOSURES 1
++#define FFI_TRAMPOLINE_SIZE 52
+ #endif /* FFI_MIPS_O32 */
+ #define FFI_NATIVE_RAW_API 0
+ 

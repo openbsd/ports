@@ -1,0 +1,20 @@
+$OpenBSD: patch-Modules__ctypes_libffi_src_mips_ffi_c,v 1.1 2010/02/25 11:02:39 phessler Exp $
+
+Allow building this on OpenBSD, where we don't provide the ICACHE related
+defines in cachectl.h, but in sysarch.h
+
+--- Modules/_ctypes/libffi/src/mips/ffi.c.orig	Sat Feb 20 16:32:04 2010
++++ Modules/_ctypes/libffi/src/mips/ffi.c	Sat Feb 20 16:33:13 2010
+@@ -27,7 +27,11 @@
+ #include <ffi_common.h>
+ 
+ #include <stdlib.h>
+-#include <sys/cachectl.h>
++#if defined(__OpenBSD__)
++#  include <mips64/sysarch.h>
++#else
++#  include <sys/cachectl.h>
++#endif
+ 
+ #if _MIPS_SIM == _ABIN32
+ #define FIX_ARGP \

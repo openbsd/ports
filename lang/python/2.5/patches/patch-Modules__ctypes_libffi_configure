@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules__ctypes_libffi_configure,v 1.1 2009/11/22 22:53:19 jasper Exp $
---- Modules/_ctypes/libffi/configure.orig	Sun Nov 22 17:36:15 2009
-+++ Modules/_ctypes/libffi/configure	Sun Nov 22 17:36:44 2009
+$OpenBSD: patch-Modules__ctypes_libffi_configure,v 1.2 2010/02/25 11:02:39 phessler Exp $
+--- Modules/_ctypes/libffi/configure.orig	Wed Sep  5 01:47:16 2007
++++ Modules/_ctypes/libffi/configure	Sat Feb 20 17:54:36 2010
 @@ -3471,7 +3471,7 @@ fi
  TARGETDIR="unknown"
  case "$host" in

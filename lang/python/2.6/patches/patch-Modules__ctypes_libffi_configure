@@ -1,0 +1,12 @@
+$OpenBSD: patch-Modules__ctypes_libffi_configure,v 1.1 2010/02/25 11:02:39 phessler Exp $
+--- Modules/_ctypes/libffi/configure.orig	Tue Feb 23 20:11:01 2010
++++ Modules/_ctypes/libffi/configure	Tue Feb 23 20:12:15 2010
+@@ -20428,7 +20428,7 @@ case "$host" in
+   mips-sgi-irix5.* | mips-sgi-irix6.*)
+ 	TARGET=MIPS_IRIX; TARGETDIR=mips
+ 	;;
+-  mips*-*-linux*)
++  mips*-*-linux* | mips*-*-openbsd*)
+ 	TARGET=MIPS_LINUX; TARGETDIR=mips
+ 	;;
+ 

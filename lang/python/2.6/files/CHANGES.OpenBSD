@@ -1,4 +1,4 @@
-$OpenBSD: CHANGES.OpenBSD,v 1.1 2008/10/18 12:03:56 djm Exp $
+$OpenBSD: CHANGES.OpenBSD,v 1.2 2010/02/25 11:02:39 phessler Exp $
 
 As required by item 3 of the PSF license, here is a brief summary
 of changes made to this version of Python for the OpenBSD package.
@@ -13,6 +13,9 @@ of changes made to this version of Python for the OpenBSD package.
 3.  OpenBSD threads are used for threading support.
 
 4.  Regression tests have been taught about OpenBSD.
+
+5.  Support for MIPS64 and MIPS64EL systems has been enabled for the
+    _ctypes Module.
 
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python.

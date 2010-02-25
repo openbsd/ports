@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.63 2010/02/09 12:23:59 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.64 2010/02/25 11:02:39 phessler Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -71,7 +71,7 @@ FULLPKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 FULLPKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH:Mmips64*}
 PKG_ARGS+=	-Dmm=0
 .else
 PKG_ARGS+=	-Dmm=1
