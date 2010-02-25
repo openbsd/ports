@@ -1,16 +1,18 @@
 #!/bin/sh
 #
-# $OpenBSD: if_pps_,v 1.1.1.1 2009/11/17 11:11:21 sthen Exp $
+# $OpenBSD: if_pps_,v 1.2 2010/02/25 17:07:17 sthen Exp $
 #
-# Wildcard-plugin to monitor network interfaces. To monitor an
-# interface, link if_<interface> to this file. E.g.
+# (c) 2009-2010 Michael Knudsen <mk@openbsd.org>
 #
-#  ln -s ${PREFIX}/libexec/munin/plugins/if_pps_ \
-#     ${SYSCONFDIR}/munin/plugins/if_bge0
+# Wildcard-plugin to monitor packet rates. To monitor an
+# interface, link if_pps_<interface> to this file. E.g.
+#
+#  ln -s /usr/local/libexec/munin/plugins/if_pps_ \
+#     /etc/munin/plugins/if_pps_bge0
 #
 # ...will monitor bge0.
 #
-# Any device found in /usr/bin/netstat can be monitored.
+# Any device found using netstat -i can be monitored.
 #
 # Magic markers (optional - used by munin-config and some installation
 # scripts):
@@ -48,14 +50,14 @@ if [ "$1" = "config" ]; then
 	echo 'graph_category network'
 	echo "graph_info This graph shows the traffic of the $INTERFACE network interface."
 	echo 'rpkt.label received'
-        echo 'rpkt.type DERIVE'
-        echo 'rpkt.min 0'
-        echo 'rpkt.graph no'
-        echo 'opkt.label pps'
-        echo 'opkt.type DERIVE'
-        echo 'opkt.min 0'
-        echo 'opkt.negative rpkt'
-        echo "opkt.info Packets sent (+) and received (-)."
+	echo 'rpkt.type DERIVE'
+	echo 'rpkt.min 0'
+	echo 'rpkt.graph no'
+	echo 'opkt.label pps'
+	echo 'opkt.type DERIVE'
+	echo 'opkt.min 0'
+	echo 'opkt.negative rpkt'
+	echo "opkt.info Packets sent (+) and received (-)."
 	exit 0
 fi;
 

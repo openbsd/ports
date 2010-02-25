@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $OpenBSD: pf_changes,v 1.1 2010/02/25 17:07:17 sthen Exp $
+#
+# Script to monitor OpenBSD pf statistics
+#
+# (c) 2010 Michael Knudsen <mk@openbsd.org>
+#
+# Parameters:
+#
+# 	config   (required)
+# 	autoconf (optional - used by munin-config)
+# 	suggest  (optional - used by munin-config)
+#
+
+if [ "$1" = "autoconf" ]; then
+	if [ "$(uname -s)" = "OpenBSD" ]; then
+		echo yes
+		exit 0
+	else
+		echo no
+		exit 1
+	fi
+fi
+
+if [ "$1" = "suggest" ]; then
+	exit 0
+fi
+
+if [ "$1" = "config" ]; then
+
+	echo 'graph_title pf state table changes'
+	echo 'graph_args --base 1000'
+	echo 'graph_category pf'
+	echo 'graph_vlabel State table changes'
+	echo 'ins.label Insertions' 
+	echo 'ins.info State table entry insertions'
+	echo 'ins.type DERIVE'
+	echo 'ins.min 0'
+	echo 'rem.label Removals'
+	echo 'rem.info State table entry removals'
+	echo 'rem.type DERIVE'
+	echo 'ins.min 0'
+fi
+
+pfctl -si | awk '
+$1 == "inserts" { print "ins.value " $2; }
+$1 == "removals" { print "rem.value " $2; }
+';

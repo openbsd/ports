@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/01/21 20:59:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/02/25 17:07:17 sthen Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
 V =		1.2.6
 DISTNAME =	munin_$V
-PKGNAME-main =	munin-node-$Vp1
+PKGNAME-main =	munin-node-$Vp2
 PKGNAME-server =munin-server-$V
 CATEGORIES =	net
 
@@ -19,9 +19,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
-MULTI_PACKAGES=		-main -server
+MULTI_PACKAGES =	-main -server
 
 RUN_DEPENDS-main =	::devel/p5-Net-Server
 RUN_DEPENDS-server +=	:p5-RRD-*:net/rrdtool,-perl \
@@ -51,25 +51,24 @@ FAKE_FLAGS +=		HTMLDIR=${WRKINST}/${PREFIX}/share/examples/munin/www \
 			DOCDIR=${WRKINST}/${PREFIX}/share/doc/munin \
 			CONFDIR=${WRKINST}/${PREFIX}/share/examples/munin
 
+MUNIN_PLUGINS =		bgpd if_pps_ intr pf_changes pf_searches pf_states \
+			sensors_ vmstat
+
 post-extract:
 	cp -Rp ${WRKSRC}/node/node.d.freebsd ${WRKSRC}/node/node.d.openbsd
+.for i in ${MUNIN_PLUGINS}
 	${SUBST_CMD} -c \
-	    ${FILESDIR}/if_pps_ ${WRKSRC}/node/node.d.openbsd/if_pps_.in \
-	    ${FILESDIR}/bgpd ${WRKSRC}/node/node.d.openbsd/bgpd.in \
-	    ${FILESDIR}/sensors_ ${WRKSRC}/node/node.d.openbsd/sensors_.in \
-	    ${FILESDIR}/vmstat ${WRKSRC}/node/node.d.openbsd/vmstat.in
+	    ${FILESDIR}/$i ${WRKSRC}/node/node.d.openbsd/$i.in
+.endfor
 	chmod -R +x ${WRKSRC}/node/node.d.openbsd
 	rm ${WRKSRC}/node/node.d.openbsd/memory.in # not yet ported
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/node/node.d.openbsd/if_.in \
-	    ${WRKSRC}/node/node.d.openbsd/if_errcoll_.in \
-	    ${WRKSRC}/node/node.d.openbsd/if_pps_.in \
-	    ${WRKSRC}/node/node.d/ps_.in \
-	    ${WRKSRC}/node/munin-node.in \
-	    ${WRKSRC}/node/munin-node-configure.in
-	perl -pi -e 's,/etc/munin/node.d/,${SYSCONFDIR}/munin/plugins/,g;' \
-	    -e 's,/usr/share/munin/node/plugins-auto,${TRUEPREFIX}/libexec/munin/plugins/,g;' \
+	cd ${WRKSRC}/node; ${SUBST_CMD} munin-node.in munin-node-configure.in
+	perl -pi -e 's,/etc/munin/plugins,${SYSCONFDIR}/munin/plugins,g;' \
+	    -e 's,/etc/munin/node.d,${SYSCONFDIR}/munin/plugins,g;' \
+	    -e 's,/usr/local/libexec/munin/plugins,${TRUEPREFIX}/libexec/munin/plugins,g;' \
+	    -e 's,/usr/share/munin/node/plugins-auto,${TRUEPREFIX}/libexec/munin/plugins,g;' \
 	    ${WRKSRC}/node/node.d/* ${WRKSRC}/node/node.d.openbsd/*
 
 post-install:
