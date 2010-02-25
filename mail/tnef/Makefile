@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2009/11/22 10:35:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/02/25 14:42:52 sthen Exp $
 
 COMMENT=	decode MS-TNEF MIME attachments
 
-DISTNAME=	tnef-1.4.6
+DISTNAME=	tnef-1.4.7
 CATEGORIES=	mail
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tnef/}
@@ -21,7 +21,7 @@ WANTLIB=	c
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		 LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=	devel/gettext
 
