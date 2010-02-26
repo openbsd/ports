@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.977 2010/02/26 19:05:23 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.978 2010/02/26 19:20:24 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1165,6 +1165,7 @@ IS_INTERACTIVE = Yes
 # Don't build a port if it comes with the base system.
 ################################################################
 IGNORE ?=
+TRY_BROKEN ?= No
 _IGNORE_REGRESS ?=
 .if defined(REGRESS_IS_INTERACTIVE) && defined(BATCH)
 _IGNORE_REGRESS += "has interactive tests"
@@ -1209,7 +1210,7 @@ IGNORE += "is not for ${NOT_FOR_ARCHS}"
 IGNORE += "requires shared libraries"
 .endif
 
-.if defined(BROKEN)
+.if defined(BROKEN) && ${TRY_BROKEN:L} != "yes"
 IGNORE += "is marked as broken: ${BROKEN:Q}"
 .endif
 .if defined(COMES_WITH)
