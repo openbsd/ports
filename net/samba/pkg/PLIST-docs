@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST-docs,v 1.13 2009/05/14 17:05:46 giovanni Exp $
+@comment $OpenBSD: PLIST-docs,v 1.14 2010/02/26 18:13:25 espie Exp $
 @conflict samba-<=3.0.31p0
+@pkgpath net/samba,-docs,ads
+@pkgpath net/samba,-docs,cups
+@pkgpath net/samba,-docs,cups,ads
+@pkgpath net/samba,-docs,cups,ldap
+@pkgpath net/samba,-docs,ldap
 share/doc/samba/
 share/doc/samba/NT4-Locking.reg
 share/doc/samba/NT4_PlainPassword.reg
