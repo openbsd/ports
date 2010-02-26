@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2009/12/21 20:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2010/02/26 18:10:51 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -190,7 +190,8 @@ CONFIGURE_ARGS+=--disable-mozilla
 .if !${FLAVOR:L:Mno_jack}
 MULTI_PACKAGES+=-jack
 COMMENT-jack=	jackd audio output module for vlc
-FULLPKGNAME-jack=vlc-jack-${V}p0
+FULLPKGNAME-jack=vlc-jack-${V}p1
+FULLPKGPATH-jack=x11/vlc,-jack
 CONFIGURE_ARGS+=--enable-jack
 LIB_DEPENDS-jack=jack::audio/jack
 # any FLAVOR of vlc will do
