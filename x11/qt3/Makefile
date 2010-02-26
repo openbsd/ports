@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2008/07/27 21:44:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2010/02/26 18:04:07 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
@@ -13,7 +13,8 @@ PKGNAME-mysql=		qt3-mysql-${VERSION}p1
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}p1
 PKGNAME-examples=	qt3-examples-${VERSION}
 PKGNAME-main=		qt3-mt-${VERSION}p2
-FULLPKGNAME-html=	qt3-html-${VERSION}
+FULLPKGNAME-html=	qt3-html-${VERSION}p0
+FULLPKGPATH-html=	x11/qt3,-html
 PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}p1
 
 # the qt-mt library version number is used in a directory name.
