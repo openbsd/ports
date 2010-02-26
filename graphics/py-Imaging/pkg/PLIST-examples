@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST-examples,v 1.5 2008/02/14 08:52:51 winiger Exp $
+@comment $OpenBSD: PLIST-examples,v 1.6 2010/02/26 19:18:28 espie Exp $
+@pkgpath graphics/py-Imaging,-examples,python2.4
+@pkgpath graphics/py-Imaging,-examples,python2.5
+@pkgpath graphics/py-Imaging,-examples,python2.6
 share/examples/py-Imaging/
 share/examples/py-Imaging/README
 share/examples/py-Imaging/enhancer.py

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/01/07 13:36:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2010/02/26 19:18:28 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,8 +9,9 @@ COMMENT-bin=		binaries for the Python Imaging Library
 VERSION=		1.1.6
 DISTNAME=		Imaging-${VERSION}
 PKGNAME-main=		py-${DISTNAME}p0
-FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}p0
-FULLPKGNAME-bin=	py-Imaging-bin-${VERSION}p1
+FULLPKGNAME-examples=	py-Imaging-examples-${VERSION}p1
+FULLPKGPATH-examples=	graphics/py-Imaging,-examples
+PKGNAME-bin=		py-Imaging-bin-${VERSION}p2
 
 CATEGORIES=		graphics
 
