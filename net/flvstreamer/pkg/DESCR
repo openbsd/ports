@@ -1,3 +1,6 @@
 A small dumper for media content streamed over the RTMP protocol.
 Supplying an rtmp url will result in a dumped flv file, which can be
 played/transcoded using ffmpeg/mplayer, etc.
+
+flvstreamer is forked from rtmpdump (which is still tracked closely)
+but the rtmpe support has been removed.

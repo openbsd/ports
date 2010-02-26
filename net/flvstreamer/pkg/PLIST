@@ -1,2 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/24 23:57:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/02/26 18:46:52 sthen Exp $
 @bin bin/flvstreamer
+@bin bin/rtmpsrv_flv
+@bin bin/rtmpsuck_flv
+@bin bin/streams_flv
+share/doc/flvstreamer/
+share/doc/flvstreamer/COPYING
+share/doc/flvstreamer/ChangeLog
+share/doc/flvstreamer/ChangeLog.rtmpdump
+share/doc/flvstreamer/README
