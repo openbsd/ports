@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/06/03 00:48:51 pyr Exp $
+# $OpenBSD: Makefile,v 1.3 2010/02/26 14:45:02 sthen Exp $
 
 COMMENT =	Apache PostgreSQL authentication module
 
 DISTNAME =	mod_auth_pgsql-0.9.12
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.giuseppetanzilli.it/mod_auth_pgsql

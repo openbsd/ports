@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/06/03 00:48:51 pyr Exp $
+# $OpenBSD: Makefile,v 1.20 2010/02/26 14:45:03 sthen Exp $
 
 COMMENT=	Microsoft FrontPage Server extensions for Apache
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	i386
 
 VERSION=	1.6.2
 DISTNAME=	mod_frontpage_mirfak-${VERSION}
-PKGNAME=	mod_frontpage-${VERSION}p3
+PKGNAME=	mod_frontpage-${VERSION}p4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mirfak/}
 

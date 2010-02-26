@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/06/03 00:48:51 pyr Exp $
+# $OpenBSD: Makefile,v 1.10 2010/02/26 14:45:03 sthen Exp $
 
 COMMENT=	Apache module that provides randomized services
 
 DISTNAME=	mod_random-1.4
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	www
 
 HOMEPAGE=	http://tangent.org/
