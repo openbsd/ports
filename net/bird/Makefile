@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/20 22:28:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/02/26 18:51:12 espie Exp $
 
 COMMENT-main=	bird internet routing daemon
 COMMENT-doc=	bird internet routing daemon (documentation)
@@ -34,6 +34,8 @@ SUBST_VARS+=	SIX
 
 .if ${FLAVOR:L:Mv6}
 FULLPKGNAME-main= bird-v6-$V${PORTVER}
+# XXX avoid warnings
+FULLPKGPATH-main= net/bird,-main,v6
 SIX=		6
 .else
 PKGNAME-main=	bird-$V${PORTVER}
