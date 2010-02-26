@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.976 2010/02/13 21:11:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.977 2010/02/26 19:05:23 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -478,7 +478,11 @@ FULLPKGNAME- = ${FULLPKGNAME}
 _READMES += ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME}.html
 .else
 .  for _s in ${MULTI_PACKAGES}
-.    if !defined(FULLPKGNAME${_s})
+.    if defined(FULLPKGNAME${_s})
+.      if !defined(FULLPKGPATH${_s}) && "${FLAVORS}" != " ${PSEUDO_FLAVORS}"
+ERRORS += "Warning: FULLPKGNAME${_s} defined but no FULLPKGPATH${_s}"
+.      endif
+.    else
 .      if defined(PKGNAME${_s})
 FULLPKGNAME${_s} = ${PKGNAME${_s}}${FLAVOR_EXT}
 .      else
