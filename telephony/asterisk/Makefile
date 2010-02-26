@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2010/02/26 12:44:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2010/02/26 18:42:12 espie Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -9,7 +9,7 @@ VER=			1.6.0.25
 #PATCHVER=		p0
 CORESOUNDS=		1.4.17
 DISTNAME=		asterisk-${VER:S/rc/-rc/}
-FULLPKGNAME-main=	asterisk-${VER}${PATCHVER}
+PKGNAME-main=		asterisk-${VER}${PATCHVER}
 
 CATEGORIES=		telephony
 
@@ -185,7 +185,6 @@ LIB_DEPENDS-jabber=	iksemel::textproc/iksemel
 LIB_DEPENDS-main+=	h323::net/openh323 \
 			pt::devel/pwlib
 WANTLIB-main+=		SDL avutil expat lber ldap ldap_r sasl2
-FULLPKGNAME-main=	asterisk-${VER}${PATCHVER}-h323
 .else
 CONFIGURE_ARGS+=	--with-pwlib=no \
 			--with-h323=no
