@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2010/01/17 13:18:36 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2010/02/26 12:44:14 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict chan_unistim-*
@@ -1063,6 +1063,7 @@ share/doc/asterisk/LICENSE
 share/doc/asterisk/Makefile
 share/doc/asterisk/PEERING
 share/doc/asterisk/README
+share/doc/asterisk/README-SERIOUSLY.bestpractices.txt
 share/doc/asterisk/README.txt
 share/doc/asterisk/UPGRADE-1.2.txt
 share/doc/asterisk/UPGRADE-1.4.txt

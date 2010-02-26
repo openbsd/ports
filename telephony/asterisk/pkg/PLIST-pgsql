@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.1 2007/09/05 22:42:52 sthen Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.2 2010/02/26 12:44:14 sthen Exp $
+@pkgpath telephony/asterisk,-pgsql,h323
 lib/asterisk/modules/cdr_pgsql.so
 lib/asterisk/modules/res_config_pgsql.so
 share/examples/asterisk/default/cdr_pgsql.conf
