@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2009/07/20 19:44:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2010/02/26 19:10:38 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,6 +13,7 @@ PKGNAME-main=		py-${DISTNAME}p8
 FULLPKGNAME-examples=	py-psycopg-examples-${VERSION}p1
 FULLPKGPATH-examples=	databases/py-psycopg,-examples
 FULLPKGNAME-zope=	py-psycopg-zope-${VERSION}p4
+FULLPKGPATH-zope=	databases/py-psycopg,-zope,python2.4
 CATEGORIES=		databases
 
 HOMEPAGE=		http://initd.org/projects/psycopg1
