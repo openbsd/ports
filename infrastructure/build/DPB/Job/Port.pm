@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: Port.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -19,6 +19,8 @@ use warnings;
 
 use DPB::Job;
 package DPB::Task::Port;
+use Time::HiRes qw(time);
+
 our @ISA = qw(DPB::Task::Fork);
 sub new
 {
@@ -26,14 +28,42 @@ sub new
 	bless {phase => $phase}, $class;
 }
 
+sub name
+{
+	my $self = shift;
+	return $self->{phase};
+}
+
 sub fork
 {
 	my ($self, $core) = @_;
 
 	my $job = $core->job;
-	$job->clock;
+	$self->{started} = time();
+	DPB::Clock->register($self);
 	$job->{current} = $self->{phase};
 	return $self->SUPER::fork($core);
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->{ended} = time();
+	DPB::Clock->unregister($self);
+	$core->job->finished_task($self);
+	return 1;
+}
+
+sub elapsed
+{
+	my $self = shift;
+	return $self->{ended} - $self->{started};
+}
+
+sub stopped_clock
+{
+	my ($self, $gap) = @_;
+	$self->{started} += $gap;
 }
 
 sub run
@@ -67,22 +97,53 @@ sub run
 	exit(1);
 }
 
+sub notime { 0 }
+
+package DPB::Task::Port::NoTime;
+our @ISA = qw(DPB::Task::Port);
+
+package DPB::Task::Port::Prepare;
+our @ISA = qw(DPB::Task::Port::NoTime);
+sub notime { 1 }
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
+
+	# if there's a watch file, then we remove the current size,
+	# so that we DON'T take prepare into account.
+	my $job = $core->job;
+	if (defined $job->{watched}) {
+		my $sz = (stat $job->{watched})[7];
+		if (defined $sz) {
+			$job->{offset} = $sz;
+		}
+	}
+	return 1;
+}
+
+package DPB::Port::TaskFactory;
+my $repo = {
+	default => 'DPB::Task::Port',
+	clean => 'DPB::Task::Port::NoTime',
+	fetch => 'DPB::Task::Port::NoTime',
+	prepare => 'DPB::Task::Port::Prepare',
+};
+
+sub create
+{
+	my ($class, $k) = @_;
+	my $fw = $repo->{$k};
+	$fw //= $repo->{default};
+	$fw->new($k);
+}
+
 package DPB::Job::Port;
 our @ISA = qw(DPB::Job::Normal);
 
 use Time::HiRes qw(time);
 my @list = qw(prepare fetch patch configure build fake package clean);
-
-my $alive = {};
-sub stopped_clock
-{
-	my ($class, $gap) = @_;
-	for my $t (values %$alive) {
-		if (defined $t->{started}) {
-			$t->{started} += $gap;
-		}
-	}
-}
 
 sub new
 {
@@ -91,14 +152,12 @@ sub new
 	if ($builder->{clean}) {
 		unshift @todo, "clean";
 	}
-	my $o = bless {tasks => [map {DPB::Task::Port->new($_)} @todo],
+	bless {
+	    tasks => [map {DPB::Port::TaskFactory->create($_)} @todo],
 	    log => $log, v => $v,
 	    special => $special,  current => '',
 	    builder => $builder, endcode => $endcode},
 		$class;
-	
-	$alive->{$o} = $o;
-	return $o;
 }
 
 sub pkgpath
@@ -110,34 +169,28 @@ sub pkgpath
 sub name
 {
 	my $self = shift;
-	return $self->{v}->fullpkgpath."($self->{current})";
+	return $self->{v}->fullpkgpath."(".$self->{task}->name.")";
 }
 
-sub clock
+sub finished_task
 {
-	my $self = shift;
-	if (defined $self->{started}) {
-		push(@{$self->{times}}, [$self->{current}, time() - $self->{started}]);
-	}
-	$self->{started} = time();
+	my ($self, $task) = @_;
+	push(@{$self->{done}}, $task);
 }
 
 sub finalize
 {
 	my $self = shift;
-	$self->clock;
 	$self->SUPER::finalize(@_);
-	delete $alive->{$self};
 }
 
 sub totaltime
 {
 	my $self = shift;
 	my $t = 0;
-	for my $plus (@{$self->{times}}) {
-		next if $plus->[0] eq 'fetch' or $plus->[0] eq 'prepare' 
-		    or $plus->[0] eq 'clean';
-		$t += $plus->[1];
+	for my $plus (@{$self->{done}}) {
+		next if $plus->notime;
+		$t += $plus->elapsed;
     	}
 	return sprintf("%.2f", $t);
 }
@@ -145,7 +198,7 @@ sub totaltime
 sub timings
 {
 	my $self = shift;
-	return join('/', map {sprintf("%s=%.2f", @$_)} @{$self->{times}});
+	return join('/', map {sprintf("%s=%.2f", $_->name, $_->elapsed)} @{$self->{done}});
 }
 
 my $logsize = {};
@@ -175,6 +228,9 @@ sub watch
 	if (!defined $self->{sz} || $self->{sz} != $sz) {
 		$self->{sz} = $sz;
 		$self->{time} = time();
+		if (defined $self->{offset}) {
+			$self->{sz} -= $self->{offset};
+		}
 	}
 }
 

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -21,6 +21,29 @@ use Term::Cap;
 use OpenBSD::Error;
 use DPB::Util;
 use Time::HiRes qw(time);
+
+package DPB::Clock;
+
+my $items = {};
+sub register
+{
+	my ($class, $o) = @_;
+	$items->{$o} = $o;
+}
+
+sub unregister
+{
+	my ($class, $o) = @_;
+	delete $items->{$o};
+}
+
+sub stopped
+{
+	my ($class, $gap) = @_;
+	for my $o (values %$items) {
+		$o->stopped_clock($gap);
+	}
+}
 
 package DPB::Reporter;
 
@@ -85,6 +108,7 @@ sub set_sigtstp
 	};
 }
 
+
 sub set_sig_handlers
 {
 	my $self = shift;
@@ -99,7 +123,7 @@ sub set_sig_handlers
 		$self->set_cursor;
 		$self->find_window_size;
 		$self->{write} = 'go_write_home';
-		DPB::Job::Port->stopped_clock(time() - $stopped_clock);
+		DPB::Clock->stopped(time() - $stopped_clock);
 	};
 	OpenBSD::Handler->register(sub {
 		$self->reset_cursor; });
@@ -158,8 +182,10 @@ sub write_clear
 	my ($self, $msg) = @_;
 	$self->term_send("cl");
 	$self->{oldlines} = [$self->cut_lines($msg)];
+	my $n = 2;
 	for my $line (@{$self->{oldlines}}) {
-		print $line, "\n";
+		last if $n++ > $self->{height};
+		$self->print_clamped($line);
 	}
 }
 
@@ -168,9 +194,9 @@ sub cut_lines
 	my ($self, $msg) = @_;
 	my @lines = ();
 	for my $line (split("\n", $msg)) {
-		while (length $line >= $self->{width}) {
-			push(@lines, substr($line, 0, $self->{width}-1));
-			$line = substr($line, $self->{width}-1);
+		while (length $line > $self->{width}) {
+			push(@lines, substr($line, 0, $self->{width}));
+			$line = substr($line, $self->{width});
 		}
 		push(@lines, $line);
 	}
@@ -180,16 +206,22 @@ sub cut_lines
 sub print_clamped
 {
 	my ($self, $line) = @_;
-	print substr($line, 0, $self->{width}-1)."\n";
+	if (length $line >= $self->{width}) {
+		print substr($line, 0, $self->{width});
+	} else {
+		print $line, "\n";
+	}
 }
 
-sub write_home
+sub display_lines
 {
-	my ($self, $msg) = @_;
-	my @new = $self->cut_lines($msg);
-	$self->term_send("ho");
+	my ($self, @new) = @_;
+
+	my $n = 2;
+
 	while (my $newline = shift @new) {
 		my $oldline = shift @{$self->{oldlines}};
+		return if $n++ > $self->{height};
 		# line didn't change: try to go down
 		if (defined $oldline && $oldline eq $newline) {
 			if ($self->term_send("do")) {
@@ -206,8 +238,17 @@ sub write_home
 	while (my $line = shift(@{$self->{oldlines}})) {
 		$line = " "x (length $line);
 		$self->print_clamped($line);
+		return if $n++ > $self->{height};
 	}
-	$self->{oldlines} = [$self->cut_lines($msg)];
+}
+
+sub write_home
+{
+	my ($self, $msg) = @_;
+	my @new = $self->cut_lines($msg);
+	$self->term_send("ho");
+	$self->display_lines(@new);
+	$self->{oldlines} = \@new;
 }
 
 sub go_write_home
@@ -225,7 +266,7 @@ sub no_write
 sub report
 {
 	my $self = shift;
-	my $msg = DPB::Util->time2string(time)."\n";
+	my $msg = DPB::Util->time2string(time)." [$$]\n";
 	for my $prod (@{$self->{producers}}) {
 		$msg.= $prod->report;
 	}

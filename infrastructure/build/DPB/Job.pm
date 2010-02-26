@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: Job.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -41,6 +41,17 @@ sub run
 {
 	my ($self, $core) = @_;
 	&{$self->code($core)}($core->{shell});
+}
+
+sub process
+{
+	my ($self, $core) = @_;
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	return 1;
 }
 
 package DPB::Task::Pipe;

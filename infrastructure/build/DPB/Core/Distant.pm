@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: Distant.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -81,7 +81,7 @@ sub new
 	my ($class, $host) = @_;
 	$TMPDIR //= $ENV{PKG_TMPDIR} || '/var/tmp';
 	my $timeout = 60;
-	my $socket = "$TMPDIR/ssh-$host";
+	my $socket = "$TMPDIR/ssh-$host-$$";
 	my $o = $class->SUPER::new(sub {
 		    close STDOUT;
 		    close STDERR;
@@ -141,7 +141,7 @@ sub alive_hosts
 	for my $shell (values %$master) {
 		my $host = $shell->host;
 		if ($shell->is_alive) {
-			push(@l, $host);
+			push(@l, $host." [$shell->{pid}]");
 		} else {
 			push(@l, $host.'-');
 		}

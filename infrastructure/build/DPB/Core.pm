@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: Core.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -162,7 +162,7 @@ sub job
 sub task
 {
 	my $self = shift;
-	return $self->{task};
+	return $self->job->{task};
 }
 
 sub terminate
@@ -177,20 +177,20 @@ sub terminate
 
 sub run_task
 {
-	my ($core, $task) = @_;
-	$core->{task} = $task;
-	my $pid = $task->fork($core);
+	my $core = shift;
+	my $pid = $core->task->fork($core);
 	if (!defined $pid) {
 		die "Oops: task couldn't start\n";
 	} elsif ($pid == 0) {
 		for my $sig (keys %SIG) {
 			$SIG{$sig} = 'DEFAULT';
 		}
-		if (!$task->run($core)) {
+		if (!$core->task->run($core)) {
 			exit(1);
 		}
 		exit(0);
 	} else {
+		$core->task->process($core);
 		$core->register($pid);
 	}
 }
@@ -198,9 +198,20 @@ sub run_task
 sub continue
 {
 	my $core = shift;
+	if ($core->task->finalize($core)) {
+		return $core->start_task;
+	} else {
+		return $core->job->finalize($core);
+	}
+}
+
+sub start_task
+{
+	my $core = shift;
 	my $task = $core->job->next_task($core);
+	$core->job->{task} = $task;
 	if (defined $task) {
-		return $core->run_task($task);
+		return $core->run_task;
 	} else {
 		$core->job->finalize($core);
 	}
@@ -220,7 +231,7 @@ sub start_job
 	$core->{job} = $job;
 	$core->{started} = time;
 	$core->{status} = 0;
-	$core->continue;
+	$core->start_task;
 }
 
 sub start_clock

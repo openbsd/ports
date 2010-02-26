@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -57,6 +57,9 @@ sub report
 	my $pkgpath = $v->fullpkgpath;
 	my $sz = (stat $self->{logger}->log_pkgpath($v))[7];
 	my $log = $self->{global};
+	if (defined $job->{offset}) {
+		$sz -= $job->{offset};
+	}
 	print $log "$pkgpath $host ", $job->totaltime, " ", $sz, " ", 
 	    $job->timings;
 	if ($self->check($v)) {

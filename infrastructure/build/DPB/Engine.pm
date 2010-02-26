@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: Engine.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -160,7 +160,7 @@ sub important
 		my $i = 0;
 		my @msg;
 		for my $v (@{$self->{errors}}) {
-			next if $i++ < $self->{lasterrors};
+			next if $i++ >= $self->{lasterrors};
 			push(@msg, $v->fullpkgpath);
 		}
 		$self->{lasterrors} = @{$self->{errors}};
@@ -319,7 +319,7 @@ sub end_job
 			$self->{locker}->unlock($v);
 			$self->log('N', $v);
 		} else {
-			push(@{$self->{errors}}, $v);
+			unshift(@{$self->{errors}}, $v);
 			$v->{host} = $core->host;
 			$self->{locker}->simple_unlock($v);
 			$self->log('E', $v);
