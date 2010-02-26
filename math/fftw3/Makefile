@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/02/26 18:47:04 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/02/26 18:50:32 espie Exp $
 
 COMMENT-main=	C routines for computing the Discrete Fourier Transform
 COMMENT-common=	common files for the fftw3 packages
@@ -8,7 +8,7 @@ DISTNAME=	fftw-${V}
 PKGNAME=	fftw3-${V}
 FULLPKGNAME-main=	fftw3-${V}
 # XXX set it to its default value so that bsd.port.mk won't whine
-FULLPKGPATH-main=	math/fftw3,-main,${FLAVOR_EXT}
+FULLPKGPATH-main=	math/fftw3,-main${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-common=	fftw3-common-${V}
 SHARED_LIBS=	fftw3	5.0 \
 		fftw3f	5.0
