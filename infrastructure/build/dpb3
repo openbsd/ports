@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: dpb3,v 1.2 2010/02/26 12:11:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -113,6 +113,9 @@ for my $arg (@ARGV) {
 	my ($path, $weight) = ($arg, 5000);
 	if ($arg =~ m/^(.*)\=(\d+)$/) {
 		($path, $weight) = ($1, $2);
+	}
+	if ($arg =~ m/^\./) {
+		Usage("Invalid pkgpath: $arg");
 	}
 	my $pkgpath = DPB::PkgPath->new($path);
 	$heuristics->set_weight($pkgpath, $weight);
