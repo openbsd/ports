@@ -1,7 +1,14 @@
-$OpenBSD: patch-get_iplayer,v 1.31 2010/01/12 12:46:15 sthen Exp $
---- get_iplayer.orig	Fri Jan  8 15:15:27 2010
-+++ get_iplayer	Sat Jan  9 21:43:05 2010
-@@ -320,7 +320,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+$OpenBSD: patch-get_iplayer,v 1.32 2010/02/26 18:48:06 sthen Exp $
+
+- use id3tag not id3v2
+- switch default to rtmpdump
+- increase max retries for flash modes, increasing the chance of
+getting full downloads if you're not using SWFVerification
+(see FILESDIR/options.sample for an example of how to use this).
+
+--- get_iplayer.orig	Thu Feb 25 23:55:19 2010
++++ get_iplayer	Fri Feb 26 10:21:45 2010
+@@ -330,7 +330,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -10,7 +17,7 @@ $OpenBSD: patch-get_iplayer,v 1.31 2010/01/12 12:46:15 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -441,6 +441,7 @@ if ( ! keys %plugin_files ) {
+@@ -452,6 +452,7 @@ if ( ! keys %plugin_files ) {
  	$opt->{pluginsupdate} = 1;
  }
  # Update this script if required
@@ -18,7 +25,7 @@ $OpenBSD: patch-get_iplayer,v 1.31 2010/01/12 12:46:15 sthen Exp $
  update_script() if $opt->{update} || $opt->{pluginsupdate};
  
  
-@@ -666,7 +667,7 @@ sub find_matches {
+@@ -658,12 +659,12 @@ sub init_search {
  	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
@@ -27,7 +34,13 @@ $OpenBSD: patch-get_iplayer,v 1.31 2010/01/12 12:46:15 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -3917,7 +3918,7 @@ sub tag_file {
+ 
+-	$bin->{flvstreamer}	= $opt->{flvstreamer} || $opt->{rtmpdump} || 'flvstreamer';
++	$bin->{flvstreamer}	= $opt->{flvstreamer} || $opt->{rtmpdump} || 'rtmpdump';
+ 	delete $binopts->{flvstreamer};
+ 	push @{ $binopts->{flvstreamer} }, ( '--timeout', 10 );
+ 	push @{ $binopts->{flvstreamer}	}, '--quiet' if $opt->{quiet};
+@@ -4224,7 +4225,7 @@ sub tag_file {
  		my ( $id3_name, $id3_episode, $id3_desc, $id3_channel ) = ( $prog->{name}, $prog->{episode}, $prog->{desc}, $prog->{channel} );
  		s|"|\\"|g for ($id3_name, $id3_episode, $id3_desc, $id3_channel);
  		# Only tag if the required tool exists

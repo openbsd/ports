@@ -1,12 +1,17 @@
-This tool allows you to search, index and download/stream:
+This tool allows you to search, index and record/stream:
 
-    * BBC iPlayer TV - H.264 / Quicktime / mov and Flash / AVI
-    * BBC iPlayer Radio (Local and National) - 128+ kbps MP3 / AAC and 
-       Realaudio
-    * BBC Podcasts - 128 kb/s MP3 / AAC
+    * BBC iPlayer TV - up to 3200 kbps HD 720p H.264 / Quicktime / MP4
+    * BBC Live TV - 500 kbps H.264 / MP4
+    * BBC iPlayer Radio - up to 192 kbps MP3 / AAC and Realaudio
+    * BBC Live Radio - up to 192 kbps MP3 / AAC, WMA and Realaudio
+    * BBC Podcasts - up to 192 kbps MP3 / AAC
     * BBC iPlayer TV subtitles - SubRip / srt
-    * ITV player Catch-up or classic TV - WMV / ASF
+
+Some content is only available to users connecting from UK addresses.
 
 get_iplayer has PVR-like capabilities (like Sky+ / TiVo / Series-Link);
-You can save lists of programme searches which are automatically
-downloaded when they become available.
+you can save lists of programme searches which are automatically
+recorded when they become available so that you can watch them when
+you choose and on devices that cannot run Adobe Flash Player - even
+if you don't have adequate broadband speeds or if your broadband
+streams too slowly at peak hours when you want to watch a programme.
