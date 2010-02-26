@@ -1,7 +1,7 @@
-$OpenBSD: patch-bytes_h,v 1.4 2009/12/26 08:49:10 benoit Exp $
---- bytes.h~	Mon Dec 21 13:39:51 2009
-+++ bytes.h	Fri Dec 25 17:37:24 2009
-@@ -55,7 +55,7 @@
+$OpenBSD: patch-bytes_h,v 1.5 2010/02/26 18:46:26 sthen Exp $
+--- bytes.h.orig	Thu Dec 31 05:33:57 2009
++++ bytes.h	Tue Jan 12 12:55:19 2010
+@@ -78,7 +78,7 @@ typedef unsigned char uint8_t;
  
  // ok, we assume to have the same float word order and byte order if float word order is not defined
  #ifndef __FLOAT_WORD_ORDER

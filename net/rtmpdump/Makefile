@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/26 08:49:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2010/02/26 18:46:26 sthen Exp $
 
 COMMENT =		dump RTMP media streams
 
-DISTNAME =		rtmpdump-2.0
-PKGNAME =		${DISTNAME:S/-v/-/}
+DISTNAME =		rtmpdump-2.1d
+
 CATEGORIES =		net
 
 HOMEPAGE =		http://rtmpdump.mplayerhq.hu/
@@ -14,16 +14,19 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =No
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c crypto
+WANTLIB =		c crypto pthread z
 
 MASTER_SITES =		${HOMEPAGE}/download/
 
-MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}"
 ALL_TARGET =		linux
 
 NO_REGRESS =		Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/rtmpdump ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rtmpdump
+	cd ${WRKBUILD}; \
+	  ${INSTALL_PROGRAM} rtmpdump rtmpsrv rtmpsuck streams ${PREFIX}/bin; \
+	  ${INSTALL_DATA} README COPYING ChangeLog ${PREFIX}/share/doc/rtmpdump
 
 .include <bsd.port.mk>

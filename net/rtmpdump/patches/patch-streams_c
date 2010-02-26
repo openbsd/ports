@@ -1,6 +1,6 @@
-$OpenBSD: patch-streams_c,v 1.1 2009/12/26 08:49:10 benoit Exp $
---- streams.c~	Mon Dec 21 13:39:51 2009
-+++ streams.c	Fri Dec 25 17:04:28 2009
+$OpenBSD: patch-streams_c,v 1.2 2010/02/26 18:46:26 sthen Exp $
+--- streams.c.orig	Sun Jan 10 03:28:13 2010
++++ streams.c	Tue Jan 12 12:55:19 2010
 @@ -22,6 +22,7 @@
  #include <stdlib.h>
  #include <string.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-streams_c,v 1.1 2009/12/26 08:49:10 benoit Exp $
  
  #include <signal.h>
  #include <getopt.h>
-@@ -44,6 +45,10 @@
+@@ -38,6 +39,10 @@
  #define RD_INCOMPLETE		2
  
  #define PACKET_SIZE 1024*1024
