@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-examples,v 1.4 2008/01/14 11:11:33 winiger Exp $
+@comment $OpenBSD: PLIST-examples,v 1.5 2010/02/26 19:10:57 espie Exp $
+@pkgpath databases/py-ldap,-examples,python2.4
+@pkgpath databases/py-ldap,-examples,python2.5
 share/examples/py-ldap/
 share/examples/py-ldap/Demo/
 share/examples/py-ldap/Demo/Lib/
