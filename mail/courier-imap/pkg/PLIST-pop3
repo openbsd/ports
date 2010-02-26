@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST-pop3,v 1.6 2009/10/28 14:20:19 giovanni Exp $
+@comment $OpenBSD: PLIST-pop3,v 1.7 2010/02/26 18:55:21 espie Exp $
+@pkgpath courier/imap,-pop3,no_trashquota
+@pkgpath courier/imap,-pop3,no_trashquota,imap_bugs
+@pkgpath courier/imap,-pop3,imap_bugs
 @newgroup _courier:571
 @newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
 @bin bin/pop3d
