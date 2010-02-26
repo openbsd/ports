@@ -1,2 +1,6 @@
-@comment $OpenBSD: PLIST-server,v 1.3 2009/02/14 10:39:39 jasper Exp $
+@comment $OpenBSD: PLIST-server,v 1.4 2010/02/26 18:08:51 espie Exp $
+@pkgpath games/quake,-server,sdl
+@pkgpath games/quake,-server,ggi
+@pkgpath games/quake,-server,x11
+@pkgpath games/quake,-server,gl
 @bin bin/qw-server
