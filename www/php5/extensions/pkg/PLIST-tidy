@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-tidy,v 1.1 2009/11/12 21:47:10 jasper Exp $
+@comment $OpenBSD: PLIST-tidy,v 1.2 2010/02/26 18:31:57 espie Exp $
+@pkgpath www/php5/extensions,-tidy,no_x11
 conf/php5.sample/tidy.ini
 lib/php/modules/tidy.so

@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-pspell,v 1.1 2008/03/30 11:59:56 robert Exp $
+@comment $OpenBSD: PLIST-pspell,v 1.2 2010/02/26 18:31:57 espie Exp $
+@pkgpath www/php5/extensions,-pspell,no_x11
 conf/php5.sample/pspell.ini
 lib/php/modules/pspell.so
