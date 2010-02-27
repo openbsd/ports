@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
+# $OpenBSD: Core.pm,v 1.3 2010/02/27 09:53:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -242,24 +242,31 @@ sub start_clock
 
 package DPB::Job::Init;
 our @ISA = qw(DPB::Job::Normal);
+use DPB::Signature;
+
 # no tasks for now
 sub next_task
 {
-	return undef;
+	my $self = shift;
+	return pop(@{$self->{tasks}});
 }
 
 sub new
 {
 	my $class = shift;
-	bless {name => "init"}, $class;
+	my $o = bless {name => "init"}, $class;
+	DPB::Signature->add_tasks($o);
+	return $o;
 }
 
 # if everything is okay, we mark our jobs as ready
 sub finalize
 {
 	my ($self, $core) = @_;
-	for my $i (@{$core->{list}}) {
-		$i->mark_ready;
+	if ($self->{signature}->matches($core)) {
+		for my $i (@{$core->{list}}) {
+			$i->mark_ready;
+		}
 	}
 }
 

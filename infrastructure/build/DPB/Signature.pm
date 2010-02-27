@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: Signature.pm,v 1.2 2010/02/27 09:53:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -56,41 +56,53 @@ sub compare
 	return compare1($s1, $s2) || compare1($s2, $s1);
 }
 
-package DPB::Signature;
-
-my $byhost = {};
-
-sub signature
+package DPB::Signature::Task;
+our @ISA = qw(DPB::Task::Pipe);
+sub new
 {
-	my ($class, $job) = @_;
-	$byhost->{$job->host} //= $class->compute_signature($job);
+	my ($class, $o, $base) = @_;
+
+	my $repo = $o->{$base} = DPB::Signature::Dir->new;
+	bless {repo => $repo, dir => "$base/lib"}, $class;
 }
 
-sub compute_signature
+sub run
+{
+	my ($self, $core) = @_;
+	if (defined $core->{shell}) {
+		$core->{shell}->run("ls $self->{dir}");
+	} else {
+		exec {"/bin/ls"} ("ls", $self->{dir});
+	}
+}
+
+sub process
+{
+	my ($self, $core) = @_;
+	my $fh = $core->fh;
+	my $repo = $self->{repo};
+	while (<$fh>) {
+		my $lib = OpenBSD::Library->from_string("$self->{dir}/$_");
+		next unless $lib->is_valid;
+		$repo->best($lib);
+	}
+}
+
+package DPB::Signature;
+sub new
+{
+	my $class = shift;
+	bless {}, $class;
+}
+
+sub add_tasks
 {
 	my ($class, $job) = @_;
-	my $o = bless {host => $job->host}, $class;
+	$job->{signature} = $class->new;
 	for my $base (OpenBSD::Paths->library_dirs) {
-		my $repo = $o->{$base} = DPB::Signature::Dir->new;
-		my $dir = "$base/lib";
-		$job->start_pipe(sub {
-			my $shell = shift;
-			if (defined $shell) {
-				$shell->run("ls $dir");
-			} else {
-				exec{"/bin/ls"} ("ls", $dir);
-			}
-			exit(1);
-		}, "ls");
-		my $fh = $job->fh;
-		while (<$fh>) {
-			my $lib = OpenBSD::Library->from_string("$dir/$_");
-			next unless $lib->is_valid;
-			$repo->best($lib);
-		}
-		$job->terminate;
-    	}
-	return $o;
+		push(@{$job->{tasks}}, 
+		    DPB::Signature::Task->new($job->{signature}, $base));
+	}
 }
 
 sub compare
@@ -99,11 +111,23 @@ sub compare
 	for my $dir (OpenBSD::Paths->library_dirs) {
 		my $r = $s1->{$dir}->compare($s2->{$dir});
 		if ($r) {
-			print STDERR "Error between $s1->{host} and $s2->{host}: $r\n";
+			DPB::Reporter->myprint("Error between $s1->{host} and $s2->{host}: $r\n");
 			return 1;
 		}
 	}
 	return 0;
 }
 
+my $ref;
+sub matches
+{
+	my ($self, $core) = @_;
+	$self->{host} = $core->host;
+	if (!defined $ref) {
+		$ref = $self;
+		return 1;
+	} else {
+		return $self->compare($ref) == 0;
+	}
+}
 1;
