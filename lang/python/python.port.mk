@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.30 2009/08/08 21:58:10 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.31 2010/02/27 17:52:18 espie Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -52,6 +52,16 @@ MODPY_INCDIR=		${LOCALBASE}/include/python${MODPY_VERSION}
 MODPY_LIBDIR=		${LOCALBASE}/lib/python${MODPY_VERSION}
 MODPY_SITEPKG=		${MODPY_LIBDIR}/site-packages
 
+MODPY_POST_BUILD_BAD_EGGS = @:
+MODPY_PRE_INSTALL_BAD_EGGS = @:
+.if defined(MODPY_BADEGGS)
+.  for egg in ${MODPY_BADEGGS}
+MODPY_POST_BUILD_BAD_EGGS += ;ln -sf ${WRKINST}/${egg}.egg-info ${WRKBUILD}/${egg}.egg-info
+MODPY_PRE_INSTALL_BAD_EGGS += ;mkdir -p ${WRKINST}/${egg}.egg-info
+.  endfor
+.endif
+
+
 # usually setup.py but Setup.py can be found too
 MODPY_SETUP?=		setup.py
 
@@ -80,11 +90,13 @@ SUBST_VARS:=	MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION ${SUBST_VARS}
 .  if !target(do-build)
 do-build:
 	${_MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS}
+	${MODPY_POST_BUILD_BAD_EGGS}
 .  endif
 
 # extra documentation or scripts should be installed via post-install
 .  if !target(do-install)
 do-install:
+	${MODPY_PRE_INSTALL_BAD_EGGS}
 	${_MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
 		${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
 .  endif
