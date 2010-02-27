@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
+# $OpenBSD: Port.pm,v 1.3 2010/02/27 08:30:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -102,7 +102,7 @@ sub notime { 0 }
 package DPB::Task::Port::NoTime;
 our @ISA = qw(DPB::Task::Port);
 
-package DPB::Task::Port::Prepare;
+package DPB::Task::Port::Fetch;
 our @ISA = qw(DPB::Task::Port::NoTime);
 sub notime { 1 }
 
@@ -127,8 +127,8 @@ package DPB::Port::TaskFactory;
 my $repo = {
 	default => 'DPB::Task::Port',
 	clean => 'DPB::Task::Port::NoTime',
-	fetch => 'DPB::Task::Port::NoTime',
-	prepare => 'DPB::Task::Port::Prepare',
+	prepare => 'DPB::Task::Port::NoTime',
+	fetch => 'DPB::Task::Port::Fetch',
 };
 
 sub create
