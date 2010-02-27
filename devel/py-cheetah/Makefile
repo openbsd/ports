@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/11 21:08:53 bernd Exp $
+# $OpenBSD: Makefile,v 1.14 2010/02/27 17:53:06 espie Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
@@ -21,6 +21,7 @@ MODULES=		lang/python
 REGRESS_DEPENDS=	::devel/py-cheetah
 MODPY_SETUPTOOLS=	Yes
 MAKE_ENV+=		CHEETAH_USE_SETUPTOOLS=1
+MODPY_BADEGGS=		Cheetah
 
 SUBST_VARS=		VERSION
 

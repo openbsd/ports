@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/10/11 20:59:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/02/27 17:53:06 espie Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64 powerpc
 
@@ -26,6 +26,7 @@ MODULES=		lang/python
 
 NO_REGRESS=		Yes
 
+MODPY_BADEGGS=		py
 MODPY_DISTUTILS_INSTALL=	install --prefix=${LOCALBASE} \
 					--root=${DESTDIR}
 

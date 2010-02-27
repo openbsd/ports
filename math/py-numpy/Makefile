@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/01/17 19:45:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/02/27 17:53:06 espie Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
@@ -35,9 +35,11 @@ LIB_DEPENDS=            lapack::math/lapack
 PATCH_LIST=	patch-* powerpc-patch-numpy_distutils_fcompiler_gnu_py
 .endif
 
+MODPY_BADEGGS = numpy
+
 pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
-	rm ${WRKSRC}/numpy/core/include/numpy/mingw_amd64_fenv.h
+	-rm ${WRKSRC}/numpy/core/include/numpy/mingw_amd64_fenv.h
 
 do-regress: fake
 	${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
