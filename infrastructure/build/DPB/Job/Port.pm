@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.3 2010/02/27 08:30:44 espie Exp $
+# $OpenBSD: Port.pm,v 1.4 2010/02/27 09:28:47 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -225,12 +225,12 @@ sub watch
 {
 	my $self = shift;
 	my $sz = (stat $self->{watched})[7];
+	if (defined $self->{offset} && defined $sz) {
+		$sz -= $self->{offset};
+	}
 	if (!defined $self->{sz} || $self->{sz} != $sz) {
 		$self->{sz} = $sz;
 		$self->{time} = time();
-		if (defined $self->{offset}) {
-			$self->{sz} -= $self->{offset};
-		}
 	}
 }
 
