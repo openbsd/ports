@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.3 2010/02/27 09:53:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -133,12 +133,13 @@ sub set_sig_handlers
 }
 
 my $extra = '';
+my $isatty;
 my $interrupted;
 sub new
 {
 	my $class = shift;
 	my $notty = shift;
-	my $isatty = !$notty && -t STDOUT;
+	$isatty = !$notty && -t STDOUT;
 	my $self = bless {msg => '', tty => $isatty,
 	    producers => \@_, continued => 0}, $class;
 	if ($isatty) {
@@ -295,8 +296,12 @@ sub report
 sub myprint
 {
 	my $self = shift;
-	for my $string (@_) {
-		$extra .= $string;
+	if ($isatty) {
+		for my $string (@_) {
+			$extra .= $string;
+		}
+	} else {
+		print @_;
 	}
 }
 
