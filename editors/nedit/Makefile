@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.49 2010/02/09 12:23:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2010/02/27 15:03:39 jasper Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
 DISTNAME=		nedit-5.5
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
+P_V=			0.1
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
-			nedit_patterns.tgz:1
+			nedit_patterns-${P_V}.tgz:1
 PATCHFILES=		wrapmark.diff:0
 CATEGORIES=		editors x11
 
@@ -60,7 +61,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nedit
 	${INSTALL_DATA} ${WRKSRC}/doc/nedit.doc ${PREFIX}/share/doc/nedit
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nedit/patterns
-	${INSTALL_DATA} ${WRKDIR}/nedit_patterns/*.pats \
+	${INSTALL_DATA} ${WRKDIR}/nedit_patterns-${P_V}/*.pats \
 		${PREFIX}/share/nedit/patterns/
 
 .include <bsd.port.mk>
