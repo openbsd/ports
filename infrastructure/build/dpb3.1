@@ -1,6 +1,6 @@
-.\"	$OpenBSD: dpb3.1,v 1.1 2010/02/24 11:33:31 espie Exp $
+.\"	$OpenBSD: dpb3.1,v 1.2 2010/02/27 08:30:01 espie Exp $
 .\"
-.Dd $Mdocdate: February 24 2010 $
+.Dd $Mdocdate: February 27 2010 $
 .Dt DPB3 1
 .Os
 .Sh NAME
@@ -37,7 +37,7 @@ Options are as follows:
 Build packages for given architecture, selecting relevant hosts from the
 cluster.
 .It Fl a
-Walk the whole tree and builds all packages.
+Walk the whole tree and builds all packages (default if no pkgpath is given).
 .It Fl b Ar logfile
 Prime the heuristics module with a previous build log, so that packages that
 take a long time to build will happen earlier.
@@ -53,7 +53,7 @@ One host per line, plus properties, such as:
 espie@aeryn jobs=4 arch=i386
 .Ed
 .It Fl j Ar n
-Number of concurrent local jobs to run.
+Number of concurrent local jobs to run (defaults to hw.ncpu if no host file).
 .It Fl L Ar lockdir
 Choose a locks directory
 .Po
