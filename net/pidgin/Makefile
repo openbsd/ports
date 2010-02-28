@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/02/14 20:01:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2010/02/28 22:51:56 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,11 +6,11 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.6.5
+VERSION=	2.6.6
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
-FULLPKGNAME-libpurple= libpurple-${VERSION}p1
+FULLPKGNAME-libpurple= libpurple-${VERSION}
 FULLPKGPATH-libpurple= ${PKGPATH},-libpurple
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
@@ -33,7 +33,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 m pcre pthread xml2 z
+		gthread-2.0 m pcre pthread util xml2 z
 
 WANTLIB-main=	X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xss atk-1.0 cairo \
@@ -60,6 +60,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			purple:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
 RUN_DEPENDS-finch=	# empty
 LIB_DEPENDS-finch=	${LIB_DEPENDS} \
+			${MODPY_LIB_DEPENDS} \
 			purple:libpurple-${VERSION}:${BUILD_PKGPATH},-libpurple
 RUN_DEPENDS-libpurple=	${MODGCONF2_RUN_DEPENDS}
 LIB_DEPENDS-libpurple=	${LIB_DEPENDS} \
