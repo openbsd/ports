@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/02/26 18:31:57 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2010/02/28 23:56:20 espie Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}p1
 FULLPKGPATH-main=	www/php5/extensions,-main
@@ -94,6 +94,7 @@ CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 . if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--without-xpm-dir --without-freetype-dir
 FULLPKGNAME-gd=		php5-gd-${V}-no_x11
+FULLPKGPATH-gd=		www/php5/extensions,-gd,no_x11
 . else
 USE_X11=		yes
 FULLPKGNAME-gd=		php5-gd-${V}
