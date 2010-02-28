@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/21 06:39:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/02/28 08:50:42 espie Exp $
 
 COMMENT=	Visual Basic .NET support for Mono
 DISTNAME=	mono-basic-2.4.2
@@ -28,7 +28,7 @@ CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--prefix="${TRUEPREFIX}"
 
 pre-build:
-	echo ""; \
+	@echo ""; \
 	echo "*** WARNING: you may have to increase your limits to build this ports".; \
 	echo "*** See the man page for your shell and look for the 'limit' or"; \
 	echo "*** 'ulimit' command. You may also want to see the login.conf(5)"; \
