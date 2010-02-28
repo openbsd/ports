@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2009/12/21 16:07:44 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2010/02/28 19:31:54 matthieu Exp $
 
-ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc
+ONLY_FOR_ARCHS=	amd64 arm i386 loongson powerpc sparc
 
 COMMENT=	Xfce4 battery monitor panel plugin
 

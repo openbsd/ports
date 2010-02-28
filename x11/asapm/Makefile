@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2008/08/21 07:30:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/02/28 19:31:54 matthieu Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
-ONLY_FOR_ARCHS= amd64 arm i386 macppc sparc sparc64
+ONLY_FOR_ARCHS= amd64 arm i386 macppc loongson sparc sparc64
 
 COMMENT=	Advanced Power Management monitor utility for X
 
