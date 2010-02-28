@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.3 2010/02/27 09:53:44 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.4 2010/02/28 11:49:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -92,7 +92,7 @@ sub reset
 {
 	my $self = shift;
 	$self->reset_cursor;
-	$self->term_send("cl");
+	print $self->{clear};
 }
 
 my $stopped_clock;
@@ -155,7 +155,10 @@ sub new
 		    $termios->getospeed });
 		$self->find_window_size;
 		$self->set_sig_handlers;
-		if ($self->{terminal}->Tputs("ho", 1)) {
+		$self->{home} = $self->{terminal}->Tputs("ho", 1);
+		$self->{clear} = $self->{terminal}->Tputs("cl", 1);
+		$self->{down} = $self->{terminal}->Tputs("do", 1);
+		if ($self->{home}) {
 			$self->{write} = "go_write_home";
 		} else {
 			$self->{write} = "write_clear";
@@ -181,13 +184,14 @@ sub new
 sub write_clear
 {
 	my ($self, $msg) = @_;
-	$self->term_send("cl");
+	my $r = $self->{clear};
 	$self->{oldlines} = [$self->cut_lines($msg)];
 	my $n = 2;
 	for my $line (@{$self->{oldlines}}) {
 		last if $n++ > $self->{height};
-		$self->print_clamped($line);
+		$r .= $self->clamped($line);
 	}
+	print $r;
 }
 
 sub cut_lines
@@ -204,28 +208,30 @@ sub cut_lines
 	return @lines;
 }
 
-sub print_clamped
+sub clamped
 {
 	my ($self, $line) = @_;
 	if (length $line >= $self->{width}) {
-		print substr($line, 0, $self->{width});
+		return substr($line, 0, $self->{width});
 	} else {
-		print $line, "\n";
+		return $line."\n";
 	}
 }
 
-sub display_lines
+sub lines
 {
 	my ($self, @new) = @_;
 
 	my $n = 2;
+	my $r = '';
 
 	while (my $newline = shift @new) {
 		my $oldline = shift @{$self->{oldlines}};
-		return if $n++ > $self->{height};
+		return $r if $n++ > $self->{height};
 		# line didn't change: try to go down
 		if (defined $oldline && $oldline eq $newline) {
-			if ($self->term_send("do")) {
+			if ($self->{down}) {
+				$r .= $self->{down};
 				next;
 			}
 		}
@@ -233,22 +239,22 @@ sub display_lines
 		if (defined $oldline && (length $oldline) > (length $newline)) {
 			$newline .= " "x ((length $oldline) - (length $newline));
 		}
-		$self->print_clamped($newline);
+		$r .= $self->clamped($newline);
 	}
 	# extra lines must disappear
 	while (my $line = shift(@{$self->{oldlines}})) {
 		$line = " "x (length $line);
-		$self->print_clamped($line);
+		$r .= $self->clamped($line);
 		return if $n++ > $self->{height};
 	}
+	return $r;
 }
 
 sub write_home
 {
 	my ($self, $msg) = @_;
 	my @new = $self->cut_lines($msg);
-	$self->term_send("ho");
-	$self->display_lines(@new);
+	print $self->{home}.$self->lines(@new);
 	$self->{oldlines} = \@new;
 }
 
