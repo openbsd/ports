@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.2 2010/03/01 18:11:11 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -29,12 +29,14 @@ my (%weight, %needed_by);
 
 sub new
 {
-	my ($class, $opt_r) = @_;
-	if ($opt_r) {
-		bless {}, "DPB::Heuristics::random";
-	} else {
-		bless {}, $class;
-	}
+	my ($class) = @_;
+	bless {}, $class;
+}
+
+sub random
+{
+	my $self = shift;
+	bless $self, "DPB::Heuristics::random";
 }
 
 sub set_logger
@@ -376,7 +378,7 @@ my %any;
 sub compare
 {
 	my ($self, $a, $b) = @_;
-	return ($any{$a} //= random()) <=> ($any{$b} //= random());
+	return ($any{$a} //= rand) <=> ($any{$b} //= rand);
 }
 
 sub new_queue
