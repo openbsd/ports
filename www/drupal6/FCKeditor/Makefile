@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/10/10 10:42:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/03/01 12:02:20 espie Exp $
 
 COMMENT =	FCKeditor for drupal
 
@@ -12,5 +12,6 @@ MASTER_SITES0 =	${MASTER_SITE_SOURCEFORGE:=fckeditor/}
 
 post-extract:
 	cd ${WRKDIST} && tar zxf ${FULLDISTDIR}/FCKeditor_2.6.3.tar.gz
+	chmod -R u+wX ${WRKDIST}/fckeditor
 
 .include <bsd.port.mk>
