@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
+# $OpenBSD: Distant.pm,v 1.3 2010/03/01 17:59:49 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -72,6 +72,36 @@ sub make
 	return OpenBSD::Paths->make;
 }
 
+package DPB::Task::SshMaster;
+our @ISA = qw(DPB::Task::Fork);
+sub run
+{
+	my $self = shift;
+	my $socket = $self->{socket};
+	my $timeout = $self->{timeout};
+	my $host = $self->{host};
+	close STDOUT;
+	close STDERR;
+	open STDOUT, '>/dev/null';
+	open STDERR, '>&STDOUT';
+	exec {OpenBSD::Paths->ssh} 
+	    (DPB::Ssh->ssh($socket, $timeout), 
+		'-N', '-M', $host);
+	exit(1);
+}
+
+# we never error out
+sub finalize
+{
+	return 1;
+}
+
+sub new
+{
+	my ($class, $socket, $timeout, $host) = @_;
+	bless {socket => $socket, timeout => $timeout, host => $host}, $class;
+}
+
 package DPB::Job::SshMaster;
 our @ISA = qw(DPB::Job::Infinite);
 
@@ -82,16 +112,8 @@ sub new
 	$TMPDIR //= $ENV{PKG_TMPDIR} || '/var/tmp';
 	my $timeout = 60;
 	my $socket = "$TMPDIR/ssh-$host-$$";
-	my $o = $class->SUPER::new(sub {
-		    close STDOUT;
-		    close STDERR;
-		    open STDOUT, '>/dev/null';
-		    open STDERR, '>&STDOUT';
-		    exec {OpenBSD::Paths->ssh} 
-			(DPB::Ssh->ssh($socket, $timeout), 
-			    '-N', '-M', $host);
-		    exit(1);
-		}, "ssh master for $host");
+	my $o = $class->SUPER::new(DPB::Task::SshMaster->new($socket, 
+	    $timeout, $host), "ssh master for $host");
 	$o->{host} = $host;
 	$o->{timeout} = $timeout;
 	$o->{socket} = $socket;

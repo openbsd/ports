@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.3 2010/02/27 09:53:09 espie Exp $
+# $OpenBSD: Core.pm,v 1.4 2010/03/01 17:59:49 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -171,7 +171,6 @@ sub terminate
 	$self->task->end  if $self->task;
 	if ($self->SUPER::terminate) {
 		$self->job->finalize($self);
-		$self->mark_ready;
 	}
 }
 
@@ -213,7 +212,7 @@ sub start_task
 	if (defined $task) {
 		return $core->run_task;
 	} else {
-		$core->job->finalize($core);
+		return $core->job->finalize($core);
 	}
 }
 
@@ -243,13 +242,6 @@ sub start_clock
 package DPB::Job::Init;
 our @ISA = qw(DPB::Job::Normal);
 use DPB::Signature;
-
-# no tasks for now
-sub next_task
-{
-	my $self = shift;
-	return pop(@{$self->{tasks}});
-}
 
 sub new
 {
@@ -459,12 +451,6 @@ sub start_pipe
 	$self->start_job(DPB::Job::Pipe->new($code, $name));
 }
 
-sub start
-{
-	my ($self, $code, $endcode, $name) = @_;
-	$self->start_job(DPB::Job::Normal->new($code, $endcode, $name));
-}
-
 package DPB::Core::Special;
 our @ISA = qw(DPB::Core::WithJobs);
 sub repository
@@ -484,19 +470,6 @@ sub host
 	return $host;
 }
  
-package DPB::Job::Clock;
-our @ISA = qw(DPB::Job::Infinite);
-
-sub new
-{
-	my ($class, $timeout) = @_;
-	$timeout //= 10;
-	return $class->SUPER::new(sub { 
-		sleep($timeout);
-		exit(0);
-	    }, 'clock');
-}
-
 package DPB::Core::Clock;
 our @ISA = qw(DPB::Core::Special);
 
@@ -504,7 +477,11 @@ sub start
 {	
 	my ($class, $timeout) = @_;
 	my $core = $class->new('localhost');
-	$core->start_job(DPB::Job::Clock->new($timeout));
+	$timeout //= 10;
+	$core->start_job(DPB::Job::Infinite->new(DPB::Task::Fork->new(sub { 
+		sleep($timeout);
+		exit(0);
+		}), 'clock'));
 }
 
 1;

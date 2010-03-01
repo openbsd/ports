@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
+# $OpenBSD: Engine.pm,v 1.3 2010/03/01 17:59:49 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -156,11 +156,12 @@ sub important
 {
 	my $self = shift;
 	$self->{lasterrors} //= 0;
-	if (@{$self->{errors}} > $self->{lasterrors}) {
-		my $i = 0;
+	my $i = @{$self->{errors}} - $self->{lasterrors};
+	if ($i > 0) {
 		my @msg;
+		my $j = 0;
 		for my $v (@{$self->{errors}}) {
-			next if $i++ >= $self->{lasterrors};
+			last if $j++ > $i;
 			push(@msg, $v->fullpkgpath);
 		}
 		$self->{lasterrors} = @{$self->{errors}};

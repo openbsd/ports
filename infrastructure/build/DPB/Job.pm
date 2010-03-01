@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
+# $OpenBSD: Job.pm,v 1.3 2010/03/01 17:59:49 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -51,7 +51,7 @@ sub process
 sub finalize
 {
 	my ($self, $core) = @_;
-	return 1;
+	return $core->{status} == 0;
 }
 
 package DPB::Task::Pipe;
@@ -81,11 +81,7 @@ package DPB::Job;
 sub next_task
 {
 	my ($self, $core) = @_;
-	if ($core->{status} == 0) {
-		return shift @{$self->{tasks}};
-	} else {
-		return undef;
-	}
+	return shift @{$self->{tasks}};
 }
 
 sub name
@@ -148,9 +144,9 @@ sub next_task
 
 sub new
 {
-	my ($class, $code, $name) = @_;
+	my ($class, $task, $name) = @_;
 	my $o = $class->SUPER::new($name);
-	$o->{task} = DPB::Task::Fork->new($code);
+	$o->{task} = $task;
 	return $o;
 }
 
