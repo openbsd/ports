@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.4 2010/02/28 11:49:45 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.5 2010/03/01 18:01:11 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -92,7 +92,7 @@ sub reset
 {
 	my $self = shift;
 	$self->reset_cursor;
-	print $self->{clear};
+	print $self->{clear} if defined $self->{clear};
 }
 
 my $stopped_clock;
