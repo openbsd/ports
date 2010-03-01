@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/14 19:09:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2010/03/01 13:41:31 espie Exp $
 
 COMMENT=	AFP file and print services for AppleTalk/IP networks
 
 DISTNAME=	netatalk-2.0.3
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	net
 HOMEPAGE=	http://netatalk.sourceforge.net/
 
@@ -31,6 +31,7 @@ CONFIGURE_ARGS+=	--with-uams-path=${PREFIX}/lib/netatalk/uams
 CONFIGURE_ARGS+=	--disable-overwrite
 CONFIGURE_ARGS+=	--disable-cups
 
+CONFIGURE_ENV+=		netatalk_cv_install_pam=no
 
 post-patch:
 	@cp /usr/include/netatalk/*.h ${WRKSRC}/sys/netatalk

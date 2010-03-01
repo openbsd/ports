@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2010/03/01 13:41:31 espie Exp $
+--- configure.orig	Mon Mar  1 14:34:29 2010
++++ configure	Mon Mar  1 14:35:13 2010
+@@ -16705,6 +16705,9 @@ fi
+ 	fi
+ 
+ 	netatalk_cv_install_pam=yes
++	if test x"$pam_found" = "xno"; then
++		netatalk_cv_install_pam=no
++	fi
+ 	if test x"$pam_found" = "xyes" -a "x$PAMDIR" = "xNONE"; then
+ 		{ echo "$as_me:$LINENO: WARNING: PAM support can be compiled, but the install location for the netatalk.pamd file could not be determined. Either install this file by hand or specify the install path." >&5
+ echo "$as_me: WARNING: PAM support can be compiled, but the install location for the netatalk.pamd file could not be determined. Either install this file by hand or specify the install path." >&2;}

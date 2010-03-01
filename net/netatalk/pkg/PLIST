@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/11/17 22:05:02 aanriot Exp $
-bin/achfile
+@comment $OpenBSD: PLIST,v 1.7 2010/03/01 13:41:31 espie Exp $
+@bin bin/achfile
 bin/acleandir.rc
-bin/adv1tov2
-bin/aecho
-bin/afile
+@bin bin/adv1tov2
+@bin bin/aecho
+@bin bin/afile
 bin/afpd-mtab.pl
 @mode 4755
-bin/afppasswd
+@bin bin/afppasswd
 @mode
 bin/apple_cp
 bin/apple_mv
@@ -15,29 +15,29 @@ bin/asip-status.pl
 bin/binheader
 bin/cleanappledouble.pl
 bin/cnid2_create
-bin/cnid_index
+@bin bin/cnid_index
 bin/cnid_maint
-bin/getzones
+@bin bin/getzones
 bin/hqx2bin
 bin/lp2pap.sh
 bin/macbinary
 bin/macusers
-bin/megatron
+@bin bin/megatron
 bin/nadheader
-bin/nbplkup
-bin/nbprgstr
-bin/nbpunrgstr
+@bin bin/nbplkup
+@bin bin/nbprgstr
+@bin bin/nbpunrgstr
 bin/netatalk-config
 bin/nu
-bin/pap
-bin/papstatus
-bin/psorder
-bin/showppd
+@bin bin/pap
+@bin bin/papstatus
+@bin bin/psorder
+@bin bin/showppd
 bin/single2bin
-bin/timeout
+@bin bin/timeout
 bin/unbin
 bin/unhex
-bin/uniconv
+@bin bin/uniconv
 bin/unsingle
 include/atalk/
 include/atalk/adouble.h
@@ -102,8 +102,8 @@ libexec/ofmpap
 libexec/ofpap
 libexec/ofwmpap
 libexec/ofwpap
-libexec/psa
-libexec/psf
+@bin libexec/psa
+@bin libexec/psf
 libexec/tfmpap
 libexec/tfmpaprev
 libexec/tfpap
@@ -156,11 +156,11 @@ libexec/tfwpaprev
 @man man/man8/papstatus.8
 @man man/man8/psf.8
 @man man/man8/timelord.8
-sbin/afpd
-sbin/atalkd
-sbin/cnid_dbd
-sbin/cnid_metad
-sbin/papd
+@bin sbin/afpd
+@bin sbin/atalkd
+@bin sbin/cnid_dbd
+@bin sbin/cnid_metad
+@bin sbin/papd
 share/aclocal/
 share/aclocal/netatalk.m4
 share/doc/netatalk/
