@@ -1,0 +1,12 @@
+$OpenBSD: patch-ipmiconsole_src_libipmiconsole_Makefile_am,v 1.1 2010/03/01 13:18:30 espie Exp $
+--- ipmiconsole/src/libipmiconsole/Makefile.am.orig	Mon Mar  1 14:13:06 2010
++++ ipmiconsole/src/libipmiconsole/Makefile.am	Mon Mar  1 14:13:12 2010
+@@ -49,7 +49,7 @@ libipmiconsole_la_LIBADD = ../../../common/src/libllnl
+ install-data-hook: $(INSTALL_LOGDIR)
+ 
+ install-logdir:
+-	$(INSTALL) -m 755 -d $(DESTDIR)var/log/ipmiconsole
++	$(INSTALL) -m 755 -d $(DESTDIR)/var/log/ipmiconsole
+ 
+ EXTRA_DIST = ipmiconsole.map
+ 
