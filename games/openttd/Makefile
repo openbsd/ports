@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2008/06/19 20:40:04 mk Exp $
+# $OpenBSD: Makefile,v 1.10 2010/03/01 14:13:04 espie Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 DISTNAME=	openttd-0.6.1-source
@@ -44,6 +44,8 @@ WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
 DOCSDIR=		${PREFIX}/share/doc/openttd
 EXAMPLESDIR=		${PREFIX}/share/examples/openttd
 GAMEDIR=		${PREFIX}/share/openttd
+
+FAKE_FLAGS=BUNDLE_DIR=${WRKINST}/bundle BUNDLES_DIR=${WRKINST}/bundle
 
 post-install:
 	${INSTALL_DATA_DIR} ${GAMEDIR}/media
