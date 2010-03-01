@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/11/06 02:18:39 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2010/03/01 14:33:56 espie Exp $
 
 COMMENT=	portable multitasking and networking framework for perl
 
@@ -27,4 +27,7 @@ RUN_DEPENDS=	::devel/p5-Curses \
 
 MAKE_ENV=	TEST_POD=Yes
 
+post-build:
+	# XXX prevent gen-tests from running again during fake
+	touch ${WRKDIST}/lib/POE.pm
 .include <bsd.port.mk>
