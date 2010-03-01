@@ -1,15 +1,19 @@
-$OpenBSD: patch-src_IO_dpi_c,v 1.8 2008/10/19 08:42:55 ajacoutot Exp $
---- src/IO/dpi.c.orig	Sat Oct 18 11:09:20 2008
-+++ src/IO/dpi.c	Sat Oct 18 11:10:10 2008
-@@ -302,9 +302,9 @@ static int Dpi_start_dpid(void)
+$OpenBSD: patch-src_IO_dpi_c,v 1.9 2010/03/01 14:53:34 benoit Exp $
+--- src/IO/dpi.c.orig	Thu Feb  4 23:09:33 2010
++++ src/IO/dpi.c	Tue Feb 23 10:41:48 2010
+@@ -363,12 +363,12 @@
        /* This is the child process.  Execute the command. */
        char *path1 = dStrconcat(dGethomedir(), "/.dillo/dpid", NULL);
        Dpi_close_fd(st_pipe[0]);
--      if (execl(path1, "dpid", NULL) == -1) {
+-      if (execl(path1, "dpid", (char*)NULL) == -1) {
 +      if (execl(path1, "dpid", (void *)NULL) == -1) {
           dFree(path1);
--         if (execlp("dpid", "dpid", NULL) == -1) {
-+         if (execlp("dpid", "dpid", (void *)NULL) == -1) {
-             MSG("Dpi_start_dpid (child): %s\n", dStrerror(errno));
-             do
-                n = write(st_pipe[1], "ERROR", 5);
+          path1 = dStrconcat(DILLO_BINDIR, "dpid", NULL);
+-         if (execl(path1, "dpid", (char*)NULL) == -1) {
++         if (execl(path1, "dpid", (void *)NULL) == -1) {
+             dFree(path1);
+-            if (execlp("dpid", "dpid", (char*)NULL) == -1) {
++            if (execlp("dpid", "dpid", (void *)NULL) == -1) {
+                MSG("Dpi_start_dpid (child): %s\n", dStrerror(errno));
+                if (Dpi_blocking_write(st_pipe[1], "ERROR", 5) == -1) {
+                   MSG("Dpi_start_dpid (child): can't write to pipe.\n");

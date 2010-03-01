@@ -1,18 +1,22 @@
---- src/Makefile.in.orig	Wed Jul  1 19:56:49 2009
-+++ src/Makefile.in	Tue Sep 22 17:57:07 2009
-@@ -463,12 +463,12 @@
- uninstall-info-am:
+$OpenBSD: patch-src_Makefile_in,v 1.2 2010/03/01 14:53:34 benoit Exp $
+--- src/Makefile.in.orig	Thu Feb 11 11:20:01 2010
++++ src/Makefile.in	Tue Feb 23 10:39:12 2010
+@@ -527,15 +527,15 @@
+ @am__fastdepCXX_FALSE@	$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
+-	test -z "$(sysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
 +	test -z "$(PREFIX)/share/examples/dillo" || $(mkdir_p) "$(PREFIX)/share/examples/dillo"
- 	@list='$(sysconf_DATA)'; for p in $$list; do \
+ 	@list='$(sysconf_DATA)'; test -n "$(sysconfdir)" || list=; \
+ 	for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
--	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
--	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
-+	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(PREFIX)/share/examples/dillo/$$f'"; \
-+	  $(sysconfDATA_INSTALL) "$$d$$p" "$(PREFIX)/share/examples/dillo/$$f"; \
+ 	  echo "$$d$$p"; \
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sysconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
++	  echo " $(INSTALL_DATA) $$files '$(PREFIX)/share/examples/dillo/'"; \
++	  $(INSTALL_DATA) $$files "$(PREFIX)/share/examples/dillo/" || exit $$?; \
  	done
  
  uninstall-sysconfDATA:

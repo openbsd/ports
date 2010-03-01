@@ -1,17 +1,21 @@
---- Makefile.in.orig	Wed Jul  1 19:56:55 2009
-+++ Makefile.in	Tue Sep 22 15:57:01 2009
-@@ -252,12 +252,12 @@
- uninstall-info-am:
+$OpenBSD: patch-Makefile_in,v 1.6 2010/03/01 14:53:34 benoit Exp $
+--- Makefile.in.orig	Thu Feb 11 11:20:01 2010
++++ Makefile.in	Tue Feb 23 10:28:08 2010
+@@ -302,7 +302,7 @@
+ 	-rm -f config.h stamp-h1
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
+-	test -z "$(sysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
 +	$(mkdir_p) $(PREFIX)/share/examples/dillo/
- 	@list='$(sysconf_DATA)'; for p in $$list; do \
+ 	@list='$(sysconf_DATA)'; test -n "$(sysconfdir)" || list=; \
+ 	for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
- 	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
--	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
-+	  $(sysconfDATA_INSTALL) "$$d$$p" "$(PREFIX)/share/examples/dillo/$$f"; \
+@@ -310,7 +310,7 @@
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sysconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
++	  $(INSTALL_DATA) $$files "$(PREFIX)/share/examples/dillo/"; \
  	done
  
  uninstall-sysconfDATA:

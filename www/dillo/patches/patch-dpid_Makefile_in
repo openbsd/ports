@@ -1,11 +1,12 @@
---- dpid/Makefile.in.orig	Tue Sep 22 17:44:57 2009
-+++ dpid/Makefile.in	Tue Sep 22 17:45:30 2009
-@@ -415,7 +415,7 @@
+$OpenBSD: patch-dpid_Makefile_in,v 1.5 2010/03/01 14:53:34 benoit Exp $
+--- dpid/Makefile.in.orig	Thu Feb 11 11:20:00 2010
++++ dpid/Makefile.in	Tue Feb 23 10:30:20 2010
+@@ -440,7 +440,7 @@
  check: check-am
- all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(DATA)
+ all-am: Makefile $(PROGRAMS) $(DATA)
  installdirs:
--	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(sysconfdir)"; do \
-+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" "$(PREFIX)/share/examples/dillo"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(sysconfdir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(PREFIX)/share/examples/dillo"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
