@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:34:35 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/03/01 18:14:37 espie Exp $
 
 COMMENT=	book about Python for experienced programmers
 
 VERSION=	5.4
-PKGNAME=	diveintopython-${VERSION}
+PKGNAME=	diveintopython-${VERSION}p0
 DISTNAME=	diveintopython-html-${VERSION}
 DISTNAMEPRINT=	diveintopython-pdf-${VERSION}
 CATEGORIES=	books 
@@ -29,8 +29,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
-
-SUBST_VARS=	PORTSDIR
 
 DOC=		${PREFIX}/share/doc/diveintopython
 WRKSRC=		${WRKDIR}/diveintopython-${VERSION}
