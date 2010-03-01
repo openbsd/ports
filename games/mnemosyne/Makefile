@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/12/22 16:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/03/01 12:06:02 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,6 +26,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mnemosyne-proj/}
 MODULES=	lang/python
 
 MODPY_SETUPTOOLS=yes
+MODPY_BADEGGS=	Mnemosyne
 
 RUN_DEPENDS=	::x11/py-qt3 \
 		::devel/pygame \

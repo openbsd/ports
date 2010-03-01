@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/05/08 10:28:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/03/01 12:06:02 espie Exp $
 
 COMMENT=		add support for i18n, documentation and icons to distutils
 
@@ -21,6 +21,7 @@ MASTER_SITES=		https://launchpad.net/ubuntu/hardy/+source/python-distutils-extra
 MODULES=		lang/python
 MODPY_EGG_VERSION=	0.90
 MODPY_SETUPTOOLS=	Yes
+MODPY_BADEGGS= 		python_distutils_extra
 
 WRKSRC= 		${WRKDIR}/debian/
 

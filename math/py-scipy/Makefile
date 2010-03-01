@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/29 10:10:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/03/01 12:06:02 espie Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
@@ -23,6 +23,7 @@ HOMEPAGE=		http://numeric.scipy.org/
 MODULES=		lang/python
 MODPY_SETUPTOOLS=       Yes
 MODPY_SETUP=            setupegg.py
+MODPY_BADEGGS=		scipy
 
 BUILD_DEPENDS=		::math/py-numpy \
 			::devel/swig

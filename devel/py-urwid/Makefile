@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/15 13:03:42 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/03/01 12:06:02 espie Exp $
 PKG_ARCH=	*
 
 COMMENT=	console user interface library for python
@@ -19,5 +19,6 @@ NO_REGRESS=	Yes
 
 MODULES=	lang/python
 MODPY_SETUPTOOLS=Yes
+MODPY_BADEGGS=	urwid
 
 .include <bsd.port.mk>
