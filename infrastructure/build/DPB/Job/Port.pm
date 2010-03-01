@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.4 2010/02/27 09:28:47 espie Exp $
+# $OpenBSD: Port.pm,v 1.5 2010/03/01 17:57:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -20,6 +20,7 @@ use warnings;
 use DPB::Job;
 package DPB::Task::Port;
 use Time::HiRes qw(time);
+use OpenBSD::Paths;
 
 our @ISA = qw(DPB::Task::Fork);
 sub new
@@ -75,6 +76,7 @@ sub run
 	my $fullpkgpath = $job->{v}->fullpkgpath;
 	my $log = $job->{log};
 	my $make = $job->{builder}->{make};
+	my $sudo = OpenBSD::Paths->sudo;
 	my $shell = $core->{shell};
 	close STDOUT;
 	close STDERR;
@@ -86,13 +88,21 @@ sub run
 		push(@args, "WRKOBJDIR=/tmp/ports");
 	}
 	if (defined $shell) {
+		unshift(@args, $shell->make);
+		if ($self->{sudo}) {
+			unshift(@args, $sudo);
+		}
 		$shell->run("cd $ports && SUBDIR=".
-		    $fullpkgpath." ".join(' ',$shell->make, @args));
+		    $fullpkgpath." ".join(' ', @args));
 	} else {
 		chdir($ports) or 
 		    die "Wrong ports tree $ports";
 		$ENV{SUBDIR} = $fullpkgpath;
-		exec {$make} ("make", @args);
+		if ($self->{sudo}) {
+			exec {$sudo}("sudo", $make, @args);
+		} else {
+			exec {$make} ("make", @args);
+		}
 	}
 	exit(1);
 }
@@ -101,10 +111,10 @@ sub notime { 0 }
 
 package DPB::Task::Port::NoTime;
 our @ISA = qw(DPB::Task::Port);
+sub notime { 1 }
 
 package DPB::Task::Port::Fetch;
 our @ISA = qw(DPB::Task::Port::NoTime);
-sub notime { 1 }
 
 sub finalize
 {
@@ -123,10 +133,30 @@ sub finalize
 	return 1;
 }
 
+package DPB::Task::Port::Clean;
+our @ISA = qw(DPB::Task::Port::NoTime);
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	# didn't clean right, and no sudo yet:
+	# run ourselves again (but log the problem)
+	if ($core->{status} != 0 && !$self->{sudo}) {
+		$self->{sudo} = 1;
+		my $job = $core->job;
+		unshift(@{$job->{tasks}}, $self);
+		my $fh = $job->{builder}->{logger}->open("clean");
+		print $fh $job->{v}->fullpkgpath, "\n";
+		$core->{status} = 0;
+		return 1;
+	}
+	$self->SUPER::finalize($core);
+}
+
 package DPB::Port::TaskFactory;
 my $repo = {
 	default => 'DPB::Task::Port',
-	clean => 'DPB::Task::Port::NoTime',
+	clean => 'DPB::Task::Port::Clean',
 	prepare => 'DPB::Task::Port::NoTime',
 	fetch => 'DPB::Task::Port::Fetch',
 };
