@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.4 2010/03/01 18:11:11 espie Exp $
+# $OpenBSD: dpb3,v 1.5 2010/03/02 18:20:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -45,7 +45,7 @@ use OpenBSD::Paths;
 my $make = $ENV{MAKE} || OpenBSD::Paths->make;
 
 our ($opt_t, $opt_e, $opt_T, $opt_c, $opt_h, $opt_A, $opt_j, $opt_a, 
-    $opt_r,
+    $opt_r, $opt_s,
     $opt_L, $opt_m, $opt_f, $opt_x);
 my @subdirlist;
 
@@ -72,10 +72,10 @@ sub parse_build_file
 
 my $parsed = 0;
 my $heuristics = DPB::Heuristics->new;
-set_usage("dpb3 [-acertx] [-A arch] [-j N] [-P plist] [-h hosts] [-L lockdir] [-b log] ",
+set_usage("dpb3 [-acerstx] [-A arch] [-j N] [-P plist] [-h hosts] [-L lockdir] [-b log] ",
 	"[-T timeout] [-m threshold] [path ...]");
 try {
-getopts('acerh:txA:f:j:m:P:b:L:T:', {
+getopts('acersh:txA:f:j:m:P:b:L:T:', {
 	    P => sub {
 		my $file = shift;
 		open my $fh, '<', $file or die "Can't open $file\n";
@@ -125,8 +125,8 @@ for my $arg (@ARGV) {
 	$pkgpath->add_to_subdirlist(\@subdirlist);
 }
 
-my ($ports, $repo, $localarch, $distdir) = DPB::Vars->get($make, "PORTSDIR", 
-    "PACKAGE_REPOSITORY", "MACHINE_ARCH", "DISTDIR");
+my ($ports, $repo, $localarch, $distdir) = DPB::Vars->get($make, 
+    "PORTSDIR", "PACKAGE_REPOSITORY", "MACHINE_ARCH", "DISTDIR");
 
 my $arch = $opt_A // $localarch;
 $opt_A //= '';
@@ -161,7 +161,7 @@ for (1 .. $opt_j) {
 }
 
 my $builder = ($opt_t ? "DPB::PortBuilder::Test" : "DPB::PortBuilder")->new(
-    $opt_c, $fullrepo, $logger, $ports, $make, $heuristics);
+    $opt_c, $opt_s, $fullrepo, $logger, $ports, $make, $heuristics);
 
 my $locker = DPB::Locks->new($lockdir);
 my $engine = DPB::Engine->new($builder, $heuristics, $logger, $locker);
