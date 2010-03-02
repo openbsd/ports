@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/03 18:54:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/03/02 08:17:16 sthen Exp $
 @bin bin/pmacct
 @bin sbin/nfacctd
 @bin sbin/pmacctd
 @bin sbin/sfacctd
 %%mysql%%
 %%postgresql%%
+@bin sbin/uacctd
 share/doc/pmacct/
 share/doc/pmacct/CONFIG-KEYS
 share/doc/pmacct/EXAMPLES
@@ -12,6 +13,7 @@ share/doc/pmacct/INTERNALS
 share/doc/pmacct/PLUGINS
 share/doc/pmacct/README.64bit
 share/doc/pmacct/README.IPv6
+share/doc/pmacct/README.agent_id2
 share/doc/pmacct/README.sqlite3
 share/doc/pmacct/SIGNALS
 share/doc/pmacct/TRIGGER_VARS
@@ -20,6 +22,9 @@ share/examples/pmacct/agent_to_peer.map
 share/examples/pmacct/allow-list.example
 share/examples/pmacct/gnuplot-example.sh
 share/examples/pmacct/gnuplot.script.example
+share/examples/pmacct/is_symmetric.map.example
+share/examples/pmacct/lpref.map.example
+share/examples/pmacct/med.map.example
 share/examples/pmacct/mrtg-example.sh
 share/examples/pmacct/mrtg.conf.example
 share/examples/pmacct/networks.lst.example

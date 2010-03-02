@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/30 21:33:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/03/02 08:17:16 sthen Exp $
 
 COMMENT=	IP accounting software
 
-DISTNAME=	pmacct-0.12.0rc3
+DISTNAME=	pmacct-0.12.0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/

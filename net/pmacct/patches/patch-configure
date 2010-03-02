@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2009/10/03 18:54:44 sthen Exp $
---- configure.orig	Wed Sep  9 13:37:35 2009
-+++ configure	Wed Sep 23 15:41:11 2009
-@@ -1079,7 +1079,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2010/03/02 08:17:16 sthen Exp $
+--- configure.orig	Tue Feb 16 12:06:04 2010
++++ configure	Tue Feb 16 14:48:52 2010
+@@ -1081,7 +1081,7 @@ fi
  
  
  if test "x$ac_cv_prog_gcc" = xyes ; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2009/10/03 18:54:44 sthen Exp $
    case "$host_os" in
      IRIX*)
        CFLAGS="-mabi=n32 -fno-builtins ${CFLAGS}"
-@@ -3427,7 +3427,7 @@ EOF
+@@ -3429,7 +3429,7 @@ EOF
  	  
  
  
