@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2010/01/15 11:25:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2010/03/03 20:39:15 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPSs via SNMP
 
 DISTNAME=		nut-2.4.1
-PKGNAME-main=		${DISTNAME}p1
+PKGNAME-main=		${DISTNAME}p2
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}p0
 PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}p0
 CATEGORIES=		sysutils
@@ -68,6 +68,9 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 NO_REGRESS=		Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/conf/upssched.conf.sample.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nut/
