@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/01/06 21:54:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/03/03 14:17:33 jasper Exp $
 @pkgpath www/statusnet,mysql
 @pkgpath www/statusnet,pgsql
 @owner www
@@ -695,7 +695,6 @@ statusnet/plugins/PiwikAnalyticsPlugin.php
 statusnet/plugins/Realtime/
 statusnet/plugins/Realtime/RealtimePlugin.php
 statusnet/plugins/Realtime/icon_external.gif
-statusnet/plugins/Realtime/jquery.getUrlParam.js
 statusnet/plugins/Realtime/json2.js
 statusnet/plugins/Realtime/realtimeupdate.js
 statusnet/plugins/TemplatePlugin.php
@@ -712,6 +711,7 @@ statusnet/scripts/SearchMonkey-yQP.0.txt
 statusnet/scripts/allsites.php
 statusnet/scripts/cleardb.sh
 statusnet/scripts/commandline.inc
+statusnet/scripts/console.php
 statusnet/scripts/createsim.php
 statusnet/scripts/decache.php
 statusnet/scripts/delete_status_network.sh
@@ -757,6 +757,7 @@ statusnet/scripts/twitterstatusfetcher.php
 statusnet/scripts/uncache_users.php
 statusnet/scripts/update_pot.sh
 statusnet/scripts/update_translations.php
+statusnet/scripts/updateavatarurl.php
 statusnet/scripts/xmppconfirmhandler.php
 statusnet/scripts/xmppdaemon.php
 statusnet/sphinx.conf.sample
@@ -921,4 +922,3 @@ statusnet/theme/pigeonthoughts/logo.png
 statusnet/theme/readme.txt
 statusnet/tpl/
 statusnet/tpl/index.php
-@owner
