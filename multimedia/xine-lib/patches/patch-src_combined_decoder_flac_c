@@ -1,7 +1,69 @@
-$OpenBSD: patch-src_combined_decoder_flac_c,v 1.1 2010/01/05 11:50:18 sthen Exp $
---- src/combined/decoder_flac.c.orig	Fri Dec  4 18:57:51 2009
-+++ src/combined/decoder_flac.c	Fri Dec  4 18:58:15 2009
-@@ -426,7 +426,7 @@ static uint32_t audio_types[] = {
+$OpenBSD: patch-src_combined_decoder_flac_c,v 1.2 2010/03/03 08:29:18 sthen Exp $
+--- src/combined/decoder_flac.c.orig	Mon Nov 30 15:55:46 2009
++++ src/combined/decoder_flac.c	Sat Jan 16 23:12:37 2010
+@@ -122,7 +122,7 @@ flac_write_callback (const FLAC__StreamDecoder *decode
+     flac_decoder_t *this = (flac_decoder_t *)client_data;
+     audio_buffer_t *audio_buffer = NULL;
+     int samples_left = frame->header.blocksize;
+-    int bytes_per_sample = (frame->header.bits_per_sample == 8)?1:2;
++    int bytes_per_sample = (frame->header.bits_per_sample <= 8) ? 1 : 2;
+     int buf_samples;
+     int8_t *data8;
+     int16_t *data16;
+@@ -139,21 +139,31 @@ flac_write_callback (const FLAC__StreamDecoder *decode
+       else
+         buf_samples = samples_left;
+ 
+-
+-      if( frame->header.bits_per_sample == 8 ) {
++      switch (frame->header.bits_per_sample) {
++      case 8:
+         data8 = (int8_t *)audio_buffer->mem;
+ 
+         for( j=0; j < buf_samples; j++ )
+           for( i=0; i < frame->header.channels; i++ )
+             *data8++ = buffer[i][j];
++        break;
+ 
+-      } else {
+-
++      case 16:
+         data16 = (int16_t *)audio_buffer->mem;
+ 
+         for( j=0; j < buf_samples; j++ )
+           for( i=0; i < frame->header.channels; i++ )
+             *data16++ = buffer[i][j];
++        break;
++
++      case 24:
++        data16 = (int16_t *)audio_buffer->mem;
++
++        for( j=0; j < buf_samples; j++ )
++          for( i=0; i < frame->header.channels; i++ )
++            *data16++ = buffer[i][j] >> 8;
++        break;
++
+       }
+ 
+       audio_buffer->num_frames = buf_samples;
+@@ -261,14 +271,13 @@ flac_decode_data (audio_decoder_t *this_gen, buf_eleme
+ 
+         if (!this->output_open)
+         {
++            const int bits = this->bits_per_sample;
+             this->output_open = (this->stream->audio_out->open) (
+                                             this->stream->audio_out,
+                                             this->stream,
+-                                            this->bits_per_sample,
++                                            bits > 16 ? 16 : bits,
+                                             this->sample_rate,
+                                             mode);
+-
+-
+         }
+         this->buf_pos = 0;
+     } else if (this->output_open)
+@@ -426,7 +435,7 @@ static uint32_t audio_types[] = {
  
  static const decoder_info_t dec_info_audio = {
    audio_types,         /* supported types */
