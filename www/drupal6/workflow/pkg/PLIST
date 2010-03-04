@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/15 12:56:30 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/03/04 11:09:54 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}workflow/
@@ -22,6 +22,8 @@ ${DRUPAL_MODS}workflow/workflow.info
 ${DRUPAL_MODS}workflow/workflow.install
 ${DRUPAL_MODS}workflow/workflow.module
 ${DRUPAL_MODS}workflow/workflow.pages.inc
+${DRUPAL_MODS}workflow/workflow.rules.inc
+${DRUPAL_MODS}workflow/workflow.rules_forms.inc
 ${DRUPAL_MODS}workflow/workflow_access.info
 ${DRUPAL_MODS}workflow/workflow_access.install
 ${DRUPAL_MODS}workflow/workflow_access.module
