@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.5 2010/03/02 18:20:45 espie Exp $
+# $OpenBSD: dpb3,v 1.6 2010/03/04 13:56:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -49,6 +49,21 @@ our ($opt_t, $opt_e, $opt_T, $opt_c, $opt_h, $opt_A, $opt_j, $opt_a,
     $opt_L, $opt_m, $opt_f, $opt_x);
 my @subdirlist;
 
+sub parse_size_file
+{
+	my ($fname, @consumers) = @_;
+	open my $fh, '<', $fname or die "Couldn't open build file $fname\n";
+	my $_;
+	while (<$fh>) {
+		chomp;
+		my ($pkgpath, $sz) = split(/\s+/, $_);
+		my $o = DPB::PkgPath->new_hidden($pkgpath);
+		for my $c (@consumers) {
+			$c->add_size_info($o, $sz);
+		}
+	}
+}
+
 sub parse_build_line
 {
 	return split(/\s+/, shift);
@@ -72,10 +87,10 @@ sub parse_build_file
 
 my $parsed = 0;
 my $heuristics = DPB::Heuristics->new;
-set_usage("dpb3 [-acerstx] [-A arch] [-j N] [-P plist] [-h hosts] [-L lockdir] [-b log] ",
-	"[-T timeout] [-m threshold] [path ...]");
+set_usage("dpb3 [-acersx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir] [-b log] ",
+	"[-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
 try {
-getopts('acersh:txA:f:j:m:P:b:L:T:', {
+getopts('acersh:xA:f:j:m:P:b:L:S:t:T:', {
 	    P => sub {
 		my $file = shift;
 		open my $fh, '<', $file or die "Can't open $file\n";
@@ -90,7 +105,9 @@ getopts('acersh:txA:f:j:m:P:b:L:T:', {
 	    	parse_build_file(shift, $heuristics, "DPB::Job::Port");
 		$parsed = 1;
 	    },
-
+	    S => sub {
+	    	parse_size_file(shift, $heuristics);
+	    }
 	}
 	);
 } catchall {
@@ -130,8 +147,8 @@ my ($ports, $repo, $localarch, $distdir) = DPB::Vars->get($make,
 
 my $arch = $opt_A // $localarch;
 $opt_A //= '';
-my $logdir = $ENV{LOGDIR} || "$ports/log/$opt_A";
-my $lockdir = $opt_L // "$ports/locks/$opt_A";
+my $logdir = $opt_L // $ENV{LOGDIR} // "$ports/logs/$opt_A";
+my $lockdir = "$logdir/locks";
 
 my $logger = DPB::Logger->new($logdir, $opt_c);
 $heuristics->set_logger($logger);
@@ -144,12 +161,9 @@ if (defined $opt_j && $opt_j !~ m/^\d+$/) {
 	Usage("-j takes a numerical argument");
 }
 
-my $fullrepo = $opt_t ? "$repo/$arch/test" : "$repo/$arch/all";
-if ($opt_t) {
-	$logdir = "$logdir/test";
-}
+my $fullrepo = "$repo/$arch/all";
 if ($opt_h) {
-	DPB::Core->parse_hosts_file($opt_h, $arch);
+	DPB::Core->parse_hosts_file($opt_h, $arch, $opt_t, $logger);
 } else {
 	$opt_j //= `sysctl -n hw.ncpu`;
 	chomp($opt_j);
@@ -160,7 +174,7 @@ for (1 .. $opt_j) {
 	DPB::Core::Factory->new('localhost');
 }
 
-my $builder = ($opt_t ? "DPB::PortBuilder::Test" : "DPB::PortBuilder")->new(
+my $builder = DPB::PortBuilder->new(
     $opt_c, $opt_s, $fullrepo, $logger, $ports, $make, $heuristics);
 
 my $locker = DPB::Locks->new($lockdir);

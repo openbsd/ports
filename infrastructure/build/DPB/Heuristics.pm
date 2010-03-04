@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.2 2010/03/01 18:11:11 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.3 2010/03/04 13:56:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,7 +25,7 @@ package DPB::Heuristics;
 # for now, we don't create a separate object, we assume everything here is 
 # "global"
 
-my (%weight, %needed_by);
+my (%weight, %wrkdir, %needed_by);
 
 sub new
 {
@@ -68,12 +68,18 @@ sub set_threshold
 	$threshold = $t;
 }
 
+sub add_size_info
+{
+	my ($self, $path, $sz) = @_;
+	$wrkdir{$path} = $sz;
+}
+
 sub special_parameters
 {
 	my ($self, $core, $v) = @_;
 	my $t = $core->{memory} // $threshold;
 	# we build in memory if we know this port and it's light enough
-	if (!defined $t || !defined $weight{$v} || $weight{$v} > $t) {
+	if (!defined $t || !defined $wrkdir{$v} || $wrkdir{$v} > $t) {
 		return 0;
 	} else {
 		return 1;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.3 2010/03/01 17:59:49 espie Exp $
+# $OpenBSD: Distant.pm,v 1.4 2010/03/04 13:56:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -34,8 +34,8 @@ sub ssh
 
 sub new
 {
-	my ($class, $host) = @_;
-	bless {master => DPB::Ssh::Master->find($host)}, $class;
+	my ($class, $host, $timeout) = @_;
+	bless {master => DPB::Ssh::Master->find($host, $timeout)}, $class;
 }
 
 sub is_alive
@@ -145,10 +145,10 @@ sub is_alive
 
 sub create
 {
-	my ($class, $host) = @_;
+	my ($class, $host, $timeout) = @_;
 
 	my $core = $class->SUPER::new($host);
-	$core->start_job(DPB::Job::SshMaster->new($host));
+	$core->start_job(DPB::Job::SshMaster->new($host, $timeout));
 }
 
 sub find
@@ -209,7 +209,7 @@ sub new_noreg
 {
 	my ($class, $host, $prop) = @_;
 	my $o = $class->SUPER::new_noreg($host, $prop);
-	$o->{shell} = DPB::Ssh->new($host);
+	$o->{shell} = DPB::Ssh->new($host, $prop->{timeout});
 	return $o;
 }
 

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.2 2010/02/26 12:14:57 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.3 2010/03/04 13:56:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -28,8 +28,8 @@ use DPB::Job::Port;
 sub new
 {
 	my $class = shift;
-	my ($opt_c, $fullrepo, $logger, $ports, $make, $h) = @_;
-	my $self = bless {clean => $opt_c, 
+	my ($opt_c, $opt_s, $fullrepo, $logger, $ports, $make, $h) = @_;
+	my $self = bless {clean => $opt_c,  size => $opt_s,
 	    fullrepo => $fullrepo, 
 	    logger => $logger, ports => $ports, make => $make,
 	    heuristics => $h}, $class;
@@ -100,29 +100,6 @@ sub build
 	print $lock "start=$start (", DPB::Util->time2string($start), ")\n";
 	$job->set_watch($self->{logger}, $v);
 	return $core;
-}
-
-package DPB::DummyCore;
-sub host
-{
-	return "dummy";
-}
-
-my $dummy = bless {}, "DPB::DummyCore";
-
-package DPB::PortBuilder::Test;
-our @ISA = qw(DPB::PortBuilder);
-
-sub build
-{
-	my ($self, $v, $core, $lock, $code) = @_;
-	my $name = $v->fullpkgname;
-#	my $log = $self->{logger}->make_logs(make_logs($v), $self->{clean});
-#	open my $out, ">>", $log or die "Can't write to $log";
-	open my $fh, ">", "$self->{fullrepo}/$name.tgz";
-	close $fh;
-	&$code;
-	return $dummy;
 }
 
 1;

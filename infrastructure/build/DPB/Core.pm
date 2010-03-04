@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.4 2010/03/01 17:59:49 espie Exp $
+# $OpenBSD: Core.pm,v 1.5 2010/03/04 13:56:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -245,8 +245,8 @@ use DPB::Signature;
 
 sub new
 {
-	my $class = shift;
-	my $o = bless {name => "init"}, $class;
+	my ($class, $logger) = @_;
+	my $o = bless {name => "init", logger => $logger}, $class;
 	DPB::Signature->add_tasks($o);
 	return $o;
 }
@@ -255,7 +255,7 @@ sub new
 sub finalize
 {
 	my ($self, $core) = @_;
-	if ($self->{signature}->matches($core)) {
+	if ($self->{signature}->matches($core, $self->{logger})) {
 		for my $i (@{$core->{list}}) {
 			$i->mark_ready;
 		}
@@ -284,8 +284,9 @@ sub new
 
 sub init_cores
 {
+	my ($self, $logger) = @_;
 	for my $core (values %$init) {
-		$core->start_job(DPB::Job::Init->new);
+		$core->start_job(DPB::Job::Init->new($logger));
 	}
 	$inited = 1;
 }
@@ -411,7 +412,7 @@ sub has_sf
 
 sub parse_hosts_file
 {
-	my ($class, $filename, $arch) = @_;
+	my ($class, $filename, $arch, $timeout, $logger) = @_;
 	open my $fh, '<', $filename or die "Can't read host files $filename\n";
 	my $_;
 	my $sf;
@@ -438,11 +439,14 @@ sub parse_hosts_file
 		if (defined $prop->{sf} && $prop->{sf} != $sf) {
 			$has_sf = 1;
 		}
+		if (defined $timeout) {
+			$prop->{timeout} //= $timeout;
+		}
 		for my $j (1 .. $prop->{jobs}) {
 			DPB::Core::Factory->new($host, $prop);
 	    	}
 	}
-	DPB::Core::Factory->init_cores;
+	DPB::Core::Factory->init_cores($logger);
 }
 
 sub start_pipe
