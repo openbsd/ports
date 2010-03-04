@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.5 2010/03/01 18:01:11 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.6 2010/03/04 20:48:12 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -158,6 +158,7 @@ sub new
 		$self->{home} = $self->{terminal}->Tputs("ho", 1);
 		$self->{clear} = $self->{terminal}->Tputs("cl", 1);
 		$self->{down} = $self->{terminal}->Tputs("do", 1);
+		$self->{glitch} = $self->{terminal}->Tputs("xn", 1);
 		if ($self->{home}) {
 			$self->{write} = "go_write_home";
 		} else {
@@ -224,6 +225,7 @@ sub lines
 
 	my $n = 2;
 	my $r = '';
+	my $glitching = 0;
 
 	while (my $newline = shift @new) {
 		my $oldline = shift @{$self->{oldlines}};
@@ -232,6 +234,10 @@ sub lines
 		if (defined $oldline && $oldline eq $newline) {
 			if ($self->{down}) {
 				$r .= $self->{down};
+				if ($glitching && $self->{glitch}) {
+					$r .= $self->{down};
+				}
+				$glitching = 0;
 				next;
 			}
 		}
@@ -240,6 +246,9 @@ sub lines
 			$newline .= " "x ((length $oldline) - (length $newline));
 		}
 		$r .= $self->clamped($newline);
+		if (length($newline) == $self->{width}) {
+			$glitching = 1;
+		}
 	}
 	# extra lines must disappear
 	while (my $line = shift(@{$self->{oldlines}})) {
