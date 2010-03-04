@@ -1,0 +1,2 @@
+#!/bin/sh
+`javaPathHelper -c jbrickshooter` -jar ${TRUEPREFIX}/share/jbrickshooter/jbrickshooter.jar
