@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.3 2010/02/27 10:05:42 espie Exp $
+# $OpenBSD: Signature.pm,v 1.4 2010/03/04 13:51:48 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -37,15 +37,15 @@ sub new
 
 sub compare1
 {
-	my ($s1, $s2) = @_;
+	my ($s1, $s2, $h1, $h2) = @_;
 	my $r = '';
 	while (my ($stem, $lib) = each %$s1) {
 		if (!defined $s2->{$stem}) {
-			$r .= "Can't find ".$lib->to_string."\n";
+			$r .= "Can't find ".$lib->to_string." on $h2\n";
 		} elsif ($s2->{$stem}->to_string ne $lib->to_string) {
 			$r .= "versions don't match: ".
-			    $s2->{$stem}->to_string." vs ". $lib->to_string.
-			    "\n";
+			    $s2->{$stem}->to_string." on $h2 vs ". 
+			    $lib->to_string.  " on $h1\n";
 		}
 	}
 	return $r;
@@ -53,8 +53,8 @@ sub compare1
 
 sub compare
 {
-	my ($s1, $s2) = @_;
-	return compare1($s1, $s2) . compare1($s2, $s1);
+	my ($s1, $s2, $h1, $h2) = @_;
+	return compare1($s1, $s2, $h1, $h2) . compare1($s2, $s1, $h2, $h1);
 }
 
 package DPB::Signature::Task;
@@ -111,7 +111,8 @@ sub compare
 	my ($s1, $s2) = @_;
 	my $r = '';
 	for my $dir (OpenBSD::Paths->library_dirs) {
-		$r .= $s1->{$dir}->compare($s2->{$dir});
+		$r .= $s1->{$dir}->compare($s2->{$dir}, 
+		    $s1->{host}, $s2->{host});
 	}
 	if ($r) {
 		DPB::Reporter->myprint("Error between $s1->{host} and $s2->{host}: $r");
@@ -122,13 +123,21 @@ sub compare
 my $ref;
 sub matches
 {
-	my ($self, $core) = @_;
+	my ($self, $core, $logger) = @_;
 	$self->{host} = $core->host;
 	if (!defined $ref) {
 		$ref = $self;
 		return 1;
 	} else {
-		return $self->compare($ref) eq '';
+		my $r = $self->compare($ref);
+		if ($r ne '') {
+			my $log = $logger->open('signature');
+			print $log "$r\n";
+			return 0;
+			clsoe $log;
+		} else {
+			return 1;
+		}
 	}
 }
 1;
