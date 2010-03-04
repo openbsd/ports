@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.6 2010/03/04 13:56:09 espie Exp $
+# $OpenBSD: dpb3,v 1.7 2010/03/04 14:23:01 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -56,7 +56,10 @@ sub parse_size_file
 	my $_;
 	while (<$fh>) {
 		chomp;
-		my ($pkgpath, $sz) = split(/\s+/, $_);
+		my ($pkgpath, $sz, $sz2) = split(/\s+/, $_);
+		if (defined $sz2) {
+			$sz += $sz2;
+		}
 		my $o = DPB::PkgPath->new_hidden($pkgpath);
 		for my $c (@consumers) {
 			$c->add_size_info($o, $sz);

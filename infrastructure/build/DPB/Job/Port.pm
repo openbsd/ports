@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.7 2010/03/02 18:20:45 espie Exp $
+# $OpenBSD: Port.pm,v 1.8 2010/03/04 14:23:01 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -143,8 +143,27 @@ sub finalize
 		if ($line =~ m/^\s*(\d+)\s+/) {
 			my $sz = $1;
 			my $job = $core->job;
+			$core->job->{wrkdir} = $sz;
+		}
+	}
+	close($fh);
+	return 1;
+}
+package DPB::Task::Port::ShowFakeSize;
+our @ISA = qw(DPB::Task::Port::ShowSize);
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	my $fh = $self->{fh};
+	if ($core->{status} == 0) {
+		my $line = <$fh>;
+		$line = <$fh>;
+		if ($line =~ m/^\s*(\d+)\s+/) {
+			my $sz = $1;
+			my $job = $core->job;
 			my $f2 = $job->{builder}->{logger}->open("size");
-			print $f2 $job->{v}->fullpkgpath, " $sz\n";
+			print $f2 $job->{v}->fullpkgpath, " $job->{wrkdir} $sz\n";
 		}
 	}
 	close($fh);
@@ -198,6 +217,7 @@ my $repo = {
 	prepare => 'DPB::Task::Port::NoTime',
 	fetch => 'DPB::Task::Port::Fetch',
 	'show-size' => 'DPB::Task::Port::ShowSize',
+	'show-fake-size' => 'DPB::Task::Port::ShowFakeSize',
 };
 
 sub create
@@ -212,17 +232,21 @@ package DPB::Job::Port;
 our @ISA = qw(DPB::Job::Normal);
 
 use Time::HiRes qw(time);
-my @list = qw(prepare fetch patch configure build fake package);
 
 sub new
 {
 	my ($class, $log, $v, $builder, $special, $endcode) = @_;
-	my @todo = @list;
+	my @todo;
 	if ($builder->{clean}) {
-		unshift @todo, "clean";
+		push @todo, "clean";
 	}
+	push(@todo, qw(prepare fetch patch configure build));
 	if ($builder->{size}) {
 		push @todo, 'show-size';
+	}
+	push(@todo, qw(fake package));
+	if ($builder->{size}) {
+		push @todo, 'show-fake-size';
 	}
 	push @todo, 'clean';
 	bless {
