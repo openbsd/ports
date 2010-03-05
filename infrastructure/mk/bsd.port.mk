@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.978 2010/02/26 19:20:24 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.979 2010/03/05 07:49:29 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -3076,6 +3076,12 @@ show:
 .for _s in ${show}
 	@echo ${${_s}:Q}
 .endfor
+
+show-size:
+	@-du -ks ${WRKDIR}
+
+show-fake-size:
+	@-du -ks ${WRKINST}
 
 verbose-show:
 .for _s in ${verbose-show}
