@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.4 2010/03/04 13:56:09 espie Exp $
+# $OpenBSD: Distant.pm,v 1.5 2010/03/05 09:05:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -24,8 +24,8 @@ package DPB::Ssh;
 sub ssh
 {
 	my ($class, $socket, $timeout) = @_;
-	return ('ssh', '-o', "connectTimeout=3", 
-	    '-o', "serverAliveInterval=3", 
+	return ('ssh', '-o', "connectTimeout=$timeout", 
+	    '-o', "serverAliveInterval=$timeout", 
 	    '-S', $socket);
 }
 
