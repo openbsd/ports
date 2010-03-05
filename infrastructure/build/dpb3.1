@@ -1,6 +1,6 @@
-.\"	$OpenBSD: dpb3.1,v 1.2 2010/02/27 08:30:01 espie Exp $
+.\"	$OpenBSD: dpb3.1,v 1.3 2010/03/05 09:05:30 espie Exp $
 .\"
-.Dd $Mdocdate: February 27 2010 $
+.Dd $Mdocdate: March 5 2010 $
 .Dt DPB3 1
 .Os
 .Sh NAME
@@ -9,14 +9,15 @@
 .Sh SYNOPSIS
 .Nm dpb3
 .Bk -words
-.Op Fl acertx
+.Op Fl acersx
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
 .Op Fl h Ar hosts
 .Op Fl j Ar n
-.Op Fl L Ar lockdir
+.Op Fl L Ar logdir
 .Op Fl P Ar subdirlist
-.Op Fl T timeout
+.Op Fl t Ar ctimeout
+.Op Fl T Ar dtimeout
 .Op Ar pkgpath ...
 .Ek
 .Sh DESCRIPTION
@@ -54,11 +55,13 @@ espie@aeryn jobs=4 arch=i386
 .Ed
 .It Fl j Ar n
 Number of concurrent local jobs to run (defaults to hw.ncpu if no host file).
-.It Fl L Ar lockdir
-Choose a locks directory
+.It Fl L Ar logdir
+Choose a log directory.
 .Po
-default is
-.Pa locks/${ARCH}
+Defaults to 
+.Pa ${LOGDIR} , 
+or 
+.Pa ${PORTSDIR}/logs/${ARCH}
 .Pc .
 .It Fl P Ar subdirlist
 Read list of pkgpaths from file
@@ -66,11 +69,17 @@ Read list of pkgpaths from file
 Random build order.
 Disregard any kind of smart heuristics.
 Useful to try to find missing build dependencies.
-.It Fl t
-Test mode.  Only pretend to build packages. Used to check that the engine works.
-.It Fl T Ar timeout
-Timeout (in seconds) while waiting for jobs to finish, so that the display
-is updated even if jobs didn't finish.
+.It Fl s
+Compute workdir sizes before cleaning up, and stash them in log file
+.Pa ${LOGDIR}/size.log .
+.It Fl S
+Read a size log file and use it for choosing to put WRKDIR in memory.
+.It Fl t Ar ctimeout
+Connection timeout for ssh.
+Defaults to 60 seconds.
+.It Fl T Ar dtimeout
+Display timeout (in seconds) while waiting for jobs to finish, so that the 
+display is updated even if jobs didn't finish.
 Defaults to 10 seconds.
 .It Fl x
 No tty report, only report really important things, like hosts going down
@@ -124,7 +133,7 @@ with the fullpkgpath.
 This lockfile is filled with such info as the build start time or the host.
 .Pp
 At the end of a succesful build, these lockfiles are removed.
-The fullpkgpath will stay around in case of errors.
+The fullpkgpath lock will stay around in case of errors.
 .Pp
 At the end of each job,
 .Nm
@@ -151,16 +160,17 @@ to obtain a specific package right now, in parallel with the original
 .Sh SHUTTING DOWN GRACEFULLY
 .Nm
 periodically checks for a file named
-.Pa ${PORTSDIR}/log/${ARCH}/stop .
+.Pa stop
+in its log directory
 If this file exists, then it won't start new jobs, and shutdown when
 the current jobs are finished.
 .Sh FILES
 Apart from producing packages,
 .Nm
 will create a number of log files under
-.Pa ${PORTSDIR}/log/{$ARCH} :
+.Pa ${PORTSDIR}/logs/{$ARCH} :
 .Bl -tag -width engine.log
-.It build.log
+.It Pa build.log
 Actual build log.
 Each line summarizes build of a single pkgpath, as:
 .Sq pkgpath host time logsize (detailed timing)[!]
@@ -175,7 +185,11 @@ Note that the actual build time starts at
 .Sq extract
 and finishes at 
 .Sq package .
-.It engine.log
+.It Pa clean.log
+Paths that do not clean correctly, and required sudo to clean the directory.
+.It size.log
+Size of work directory at the end of each build
+.It Pa engine.log
 Build engine log.
 Each line corresponds to a state change for a pkgpath and starts with the pid
 of
@@ -206,17 +220,29 @@ pkgpath to build.
 pkgpath put back in the buildable queue, after job that was running in
 the same directory returned.
 .El
-.It packages/pkgname.log
+.It Pa locks/
+Directory where locks are created.
+The slash in a pkgpath is replaced with a dot like so:
+.Pa locks/devel.make
+to flatten the structure.
+.It Pa packages/pkgname.log
 one file or symlink per pkgname.
-.It paths/some/path.log
+.It Pa paths/some/path.log
 one file or symlink per pkgpath.
-.It stats.log
+.It Pa signature.log
+Discrepancies between hosts that prevent them from starting up.
+.It Pa stats.log
 Simple log of the B=... line summaries.
 Mostly useful for making plots and tweaking performance.
-.It vars.log
+.It Pa vars.log
 Logs the directories that were walked in the ports tree for dependency
 information.
 .El
+.Sh BUGS AND LIMITATIONS
+.Nm
+performs best with lots of paths to build.
+When just used to build a few ports, there's a high risk of starvation
+as there are bottlenecks in parts of the tree.
 .Sh AUTHOR
 Marc Espie
 .Sh HISTORY
