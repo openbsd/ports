@@ -1,29 +1,29 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2009/10/11 19:45:46 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2010/03/05 09:01:45 giovanni Exp $
 @conflict samba-docs-<=3.0.31p1
 @pkgpath ${BASE_PKGPATH}
-bin/eventlogadm
+@bin bin/eventlogadm
 bin/findsmb
 bin/mksmbpasswd
-bin/net
-bin/nmblookup
-bin/ntlm_auth
-bin/pdbedit
-bin/profiles
-bin/rpcclient
-bin/smbcacls
-bin/smbclient
-bin/smbcontrol
-bin/smbcquotas
-bin/smbget
-bin/smbpasswd
-bin/smbspool
-bin/smbstatus
+@bin bin/net
+@bin bin/nmblookup
+@bin bin/ntlm_auth
+@bin bin/pdbedit
+@bin bin/profiles
+@bin bin/rpcclient
+@bin bin/smbcacls
+@bin bin/smbclient
+@bin bin/smbcontrol
+@bin bin/smbcquotas
+@bin bin/smbget
+@bin bin/smbpasswd
+@bin bin/smbspool
+@bin bin/smbstatus
 bin/smbtar
-bin/smbtree
-bin/tdbbackup
-bin/tdbdump
-bin/tdbtool
-bin/testparm
+@bin bin/smbtree
+@bin bin/tdbbackup
+@bin bin/tdbdump
+@bin bin/tdbtool
+@bin bin/testparm
 include/libmsrpc.h
 include/libsmbclient.h
 lib/samba/
@@ -44,9 +44,9 @@ lib/samba/rpc/
 lib/samba/tr.msg
 lib/samba/upcase.dat
 lib/samba/valid.dat
-libexec/nmbd
-libexec/smbd
-libexec/swat
+@bin libexec/nmbd
+@bin libexec/smbd
+@bin libexec/swat
 @man man/man1/findsmb.1
 @man man/man1/log2pcap.1
 @man man/man1/nmblookup.1

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.109 2010/02/26 18:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.110 2010/03/05 09:01:45 giovanni Exp $
 
 COMMENT-main=	SMB and CIFS client and server for UNIX
 COMMENT-docs=	additional documentation and examples for Samba
 
 DISTNAME=		samba-3.0.37
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}p1
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}p0
 FULLPKGPATH-docs=	net/samba,-docs
 SHARED_LIBS=		smbclient	1.0 \
@@ -51,9 +51,6 @@ CONFIGURE_ARGS= --disable-fam \
 		--with-privatedir="${CONFDIR}" \
 		--with-libsmbclient \
 		--with-swatdir="${PREFIX}/share/swat" \
-		--with-ssl \
-		--with-sslinc="/usr/include/ssl" \
-		--with-ssllib="/usr/lib" \
 		--with-syslog \
 		--with-utmp
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -108,12 +105,26 @@ SAMBA_DOCS=${WRKSRC}/../README \
 
 SAMPLE_CONFIG=	${PREFIX}/share/examples/samba/smb.conf.default
 
+SAMBA_MANPAGES= ${WRKSRC}/../docs/manpages
+
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/../docs/manpages/swat.8
 
+# Samba's man pages kill OpenBSD's groff/nroff/man implementation.
+# This workaround will be needed until the new usr.bin/mandoc is
+# finished and enabled.
 post-extract:
 	@cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
 	@chmod a+x ${WRKDIR}/bin/krb5-config
+	@for file in ${SAMBA_MANPAGES}/*; do \
+         if [ -f $$file ]; then \
+	  cp $$file $$file.crap; \
+	  sed -e 's:\\FC::g' -e 's:\\F\[\]::g' -e 's:\.\\\":\ \\\":g' \
+	   -e 's:SH-xref:Sx:g' -e 's:\\m\[\]::g' -e 's:toupper:tu:g' \
+	   -e 's:\.\.\\\":\\\":g' -e 's:^.tu :\\":g' -e's:\\m\[blue\]::g' \
+	   -e's:\\m\[\]::g' $$file.crap  > $$file; \
+	 fi; \
+	done
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/pdf
