@@ -1,6 +1,20 @@
-$OpenBSD: patch-configure_ac,v 1.5 2009/11/29 09:16:51 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2010/03/05 08:53:11 espie Exp $
 --- configure.ac.orig	Mon Nov 16 21:34:17 2009
-+++ configure.ac	Tue Nov 24 13:04:36 2009
++++ configure.ac	Fri Mar  5 09:15:14 2010
+@@ -861,10 +861,10 @@ AG_GST_CHECK_FEATURE(METADATA, [METADATA muxer and dem
+   PKG_CHECK_MODULES(IPTC, libiptcdata >= 1.0.2, HAVE_IPTC="yes", [
+     HAVE_IPTC="no"
+   ])
+-  PKG_CHECK_MODULES(XMP, exempi-2.0, HAVE_XMP="yes", [
++dnl  PKG_CHECK_MODULES(XMP, exempi-2.0, HAVE_XMP="yes", [
+     HAVE_XMP="no"
+-  ])
+-  PKG_CHECK_MODULES(XMP_1_99_5, exempi-2.0 >= 1.99.5, XMP_CFLAGS="-DXMP_1_99_5 $XMP_CFLAGS", AC_MSG_RESULT(no))
++dnl  ])
++dnl  PKG_CHECK_MODULES(XMP_1_99_5, exempi-2.0 >= 1.99.5, XMP_CFLAGS="-DXMP_1_99_5 $XMP_CFLAGS", AC_MSG_RESULT(no))
+   if test x$HAVE_EXIF = xyes; then
+     METADATA_CFLAGS="-DHAVE_EXIF $EXIF_CFLAGS $METADATA_CFLAGS"
+     METADATA_LIBS="$EXIF_LIBS $METADATA_LIBS -lm"
 @@ -1108,7 +1108,7 @@ PKG_CHECK_EXISTS(mjpegtools >= 1.6.1.93 mjpegtools < 1
        OLD_CFLAGS="$CFLAGS"
        OLD_LIBS="$LIBS"
