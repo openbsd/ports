@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/12/27 18:17:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/03/20 16:54:40 ajacoutot Exp $
 timetrex/
 timetrex/INSTALL.txt
 timetrex/LICENSE
@@ -472,6 +472,7 @@ timetrex/classes/modules/install/InstallSchema_1012T.class.php
 timetrex/classes/modules/install/InstallSchema_1013A.class.php
 timetrex/classes/modules/install/InstallSchema_1013T.class.php
 timetrex/classes/modules/install/InstallSchema_1014A.class.php
+timetrex/classes/modules/install/InstallSchema_1014T.class.php
 timetrex/classes/modules/install/InstallSchema_1015A.class.php
 timetrex/classes/modules/install/InstallSchema_1016A.class.php
 timetrex/classes/modules/install/InstallSchema_1017A.class.php
@@ -493,6 +494,7 @@ timetrex/classes/modules/install/InstallSchema_1032A.class.php
 timetrex/classes/modules/install/InstallSchema_1033A.class.php
 timetrex/classes/modules/install/InstallSchema_1034A.class.php
 timetrex/classes/modules/install/InstallSchema_1035A.class.php
+timetrex/classes/modules/install/InstallSchema_1036A.class.php
 timetrex/classes/modules/install/InstallSchema_Base.class.php
 timetrex/classes/modules/install/sql/
 timetrex/classes/modules/install/sql/mysql/
@@ -525,6 +527,7 @@ timetrex/classes/modules/install/sql/mysql/1012T.sql
 timetrex/classes/modules/install/sql/mysql/1013A.sql
 timetrex/classes/modules/install/sql/mysql/1013T.sql
 timetrex/classes/modules/install/sql/mysql/1014A.sql
+timetrex/classes/modules/install/sql/mysql/1014T.sql
 timetrex/classes/modules/install/sql/mysql/1015A.sql
 timetrex/classes/modules/install/sql/mysql/1016A.sql
 timetrex/classes/modules/install/sql/mysql/1017A.sql
@@ -546,6 +549,7 @@ timetrex/classes/modules/install/sql/mysql/1032A.sql
 timetrex/classes/modules/install/sql/mysql/1033A.sql
 timetrex/classes/modules/install/sql/mysql/1034A.sql
 timetrex/classes/modules/install/sql/mysql/1035A.sql
+timetrex/classes/modules/install/sql/mysql/1036A.sql
 timetrex/classes/modules/install/sql/postgresql/
 timetrex/classes/modules/install/sql/postgresql/1000A.sql
 timetrex/classes/modules/install/sql/postgresql/1000T.sql
@@ -576,6 +580,7 @@ timetrex/classes/modules/install/sql/postgresql/1012T.sql
 timetrex/classes/modules/install/sql/postgresql/1013A.sql
 timetrex/classes/modules/install/sql/postgresql/1013T.sql
 timetrex/classes/modules/install/sql/postgresql/1014A.sql
+timetrex/classes/modules/install/sql/postgresql/1014T.sql
 timetrex/classes/modules/install/sql/postgresql/1015A.sql
 timetrex/classes/modules/install/sql/postgresql/1016A.sql
 timetrex/classes/modules/install/sql/postgresql/1017A.sql
@@ -597,6 +602,7 @@ timetrex/classes/modules/install/sql/postgresql/1032A.sql
 timetrex/classes/modules/install/sql/postgresql/1033A.sql
 timetrex/classes/modules/install/sql/postgresql/1034A.sql
 timetrex/classes/modules/install/sql/postgresql/1035A.sql
+timetrex/classes/modules/install/sql/postgresql/1036A.sql
 timetrex/classes/modules/message/
 timetrex/classes/modules/message/MessageFactory.class.php
 timetrex/classes/modules/message/MessageListFactory.class.php
@@ -696,6 +702,7 @@ timetrex/classes/modules/schedule/RecurringScheduleUserListFactory.class.php
 timetrex/classes/modules/schedule/ScheduleFactory.class.php
 timetrex/classes/modules/schedule/ScheduleListFactory.class.php
 timetrex/classes/modules/soap/
+timetrex/classes/modules/soap/SoapClientTimeout.class.php
 timetrex/classes/modules/soap/TimeTrexSoapClient.class.php
 timetrex/classes/modules/soap/TimeTrexSoapServer.class.php
 timetrex/classes/modules/soap/TimeTrexSoapServerUnAuthenticated.class.php
@@ -1348,6 +1355,8 @@ timetrex/classes/pear/Numbers/Words/lang.pl.php
 timetrex/classes/pear/Numbers/Words/lang.pt_BR.php
 timetrex/classes/pear/Numbers/Words/lang.ru.php
 timetrex/classes/pear/Numbers/Words/lang.sv.php
+timetrex/classes/pear/PEAR.php
+timetrex/classes/pear/PEAR5.php
 timetrex/classes/pear/Payment/
 timetrex/classes/pear/Payment/Process/
 timetrex/classes/pear/Payment/Process.php
@@ -2031,6 +2040,7 @@ timetrex/favicon.ico
 timetrex/includes/
 timetrex/includes/CLI.inc.php
 timetrex/includes/Cache.inc.php
+timetrex/includes/ClassMap.inc.php
 timetrex/includes/Database.inc.php
 timetrex/includes/Interface.inc.php
 timetrex/includes/global.inc.php
@@ -2353,6 +2363,10 @@ timetrex/interface/locale/pt_PT/
 timetrex/interface/locale/pt_PT/LC_MESSAGES/
 timetrex/interface/locale/pt_PT/LC_MESSAGES/messages.mo
 timetrex/interface/locale/pt_PT/LC_MESSAGES/messages.po
+timetrex/interface/locale/zh_CN/
+timetrex/interface/locale/zh_CN/LC_MESSAGES/
+timetrex/interface/locale/zh_CN/LC_MESSAGES/messages.mo
+timetrex/interface/locale/zh_CN/LC_MESSAGES/messages.po
 timetrex/interface/menu/
 timetrex/interface/menu.js.php
 timetrex/interface/menu/milonic_menu_code.js
@@ -2773,6 +2787,7 @@ timetrex/tools/
 timetrex/tools/convert_mysql_to_postgresql.php
 timetrex/tools/export/
 timetrex/tools/export/export_pay_stubs.php
+timetrex/tools/generate_class_list.php
 timetrex/tools/generate_payroll_deduction_test_csv.php
 timetrex/tools/i18n/
 timetrex/tools/i18n/README.i18n
