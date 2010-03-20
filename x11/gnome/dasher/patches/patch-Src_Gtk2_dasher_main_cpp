@@ -1,6 +1,6 @@
-$OpenBSD: patch-Src_Gtk2_dasher_main_cpp,v 1.3 2009/03/18 19:38:47 jasper Exp $
---- Src/Gtk2/dasher_main.cpp.orig	Mon Mar 16 18:02:55 2009
-+++ Src/Gtk2/dasher_main.cpp	Wed Mar 18 20:29:36 2009
+$OpenBSD: patch-Src_Gtk2_dasher_main_cpp,v 1.4 2010/03/20 17:01:20 ajacoutot Exp $
+--- Src/Gtk2/dasher_main.cpp.orig	Thu Mar 11 20:06:20 2010
++++ Src/Gtk2/dasher_main.cpp	Sun Mar 14 08:32:30 2010
 @@ -4,6 +4,8 @@
  
  #include <cstring>
@@ -9,4 +9,4 @@ $OpenBSD: patch-Src_Gtk2_dasher_main_cpp,v 1.3 2009/03/18 19:38:47 jasper Exp $
 +
  #include <gdk/gdk.h>
  #include <gdk/gdkx.h>
- #include <glade/glade.h>
+ #include <glib/gi18n.h>

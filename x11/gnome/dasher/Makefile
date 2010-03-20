@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2009/12/21 18:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/03/20 17:01:20 ajacoutot Exp $
 
 COMMENT=		graphical predictive text input system
 
 GNOME_PROJECT=		dasher
-GNOME_VERSION=		4.10.1
-PKGNAME=		${DISTNAME}p6
+GNOME_VERSION=		4.11
 
 CATEGORIES=		x11
 
@@ -20,10 +19,10 @@ MODULES=		devel/gettext \
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender Xtst art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
+WANTLIB += Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
 WANTLIB += bonoboui-2 c cairo crypto dbus-1 dbus-glib-1 expat
 WANTLIB += fontconfig freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
+WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
 WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread ssl stdc++

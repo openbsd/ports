@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/12/21 18:03:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/03/20 17:01:20 ajacoutot Exp $
 @bin bin/dasher
 @man man/man1/dasher.1
 share/applications/dasher.desktop
 share/dasher/
+share/dasher/Makefile.am
 share/dasher/alphabet.AfaanOromo.xml
 share/dasher/alphabet.Armenian.xml
 share/dasher/alphabet.Assamese.xml
@@ -129,6 +130,7 @@ share/dasher/alphabet.sanskrit.xml
 share/dasher/alphabet.serbian.xml
 share/dasher/alphabet.somali.xml
 share/dasher/alphabet.spanish.xml
+share/dasher/alphabet.spyDict.xml
 share/dasher/alphabet.swahili.xml
 share/dasher/alphabet.swedish.xml
 share/dasher/alphabet.thaana.xml
@@ -152,25 +154,27 @@ share/dasher/colour.vowels2.xml
 share/dasher/colour.xml
 share/dasher/controllabels.dtd
 share/dasher/controllabels.xml
-share/dasher/dasher.compose.glade
-share/dasher/dasher.direct.glade
-share/dasher/dasher.fullscreen.glade
-share/dasher/dasher.gameWIP.glade
-share/dasher/dasher.preferences.glade
-share/dasher/dasher.traditional.glade
-share/dasher/dashermaemo.glade
-share/dasher/dashermaemo.preferences.glade
-share/dasher/dashermaemofullscreen.glade
+share/dasher/dasher.compose.ui
+share/dasher/dasher.direct.ui
+share/dasher/dasher.fullscreen.ui
+share/dasher/dasher.gameWIP.ui
+share/dasher/dasher.preferences.ui
+share/dasher/dasher.traditional.ui
+share/dasher/dashermaemo.preferences.ui
+share/dasher/dashermaemo.ui
+share/dasher/dashermaemofullscreen.ui
 share/dasher/training_albanian_SQ.txt
-share/dasher/training_basque_EU.txt
+share/dasher/training_basque_ES.txt
 share/dasher/training_bengali_BD.txt
-share/dasher/training_bengali_bn.txt
 share/dasher/training_canna_JP.txt
+share/dasher/training_czechC_CS.txt
 share/dasher/training_czech_CS.txt
 share/dasher/training_danish_DK.txt
 share/dasher/training_dutch_NL.txt
+share/dasher/training_englishLC_GB.txt
 share/dasher/training_english_GB.txt
 share/dasher/training_finnish_FI.txt
+share/dasher/training_frenchC_FR.txt
 share/dasher/training_french_FR.txt
 share/dasher/training_german_DE.txt
 share/dasher/training_greek_GR.txt
@@ -178,13 +182,17 @@ share/dasher/training_hebrew_IL.txt
 share/dasher/training_hiragana60_JP.txt
 share/dasher/training_hiragana83_JP.txt
 share/dasher/training_hungarian_HU.txt
+share/dasher/training_italianC_IT.txt
 share/dasher/training_italian_IT.txt
 share/dasher/training_mongolian_MN.txt
 share/dasher/training_persian_IR.txt
 share/dasher/training_polish_PL.txt
+share/dasher/training_portugueseC_BR.txt
 share/dasher/training_portuguese_BR.txt
 share/dasher/training_russian_RU.txt
+share/dasher/training_spanishC_ES.txt
 share/dasher/training_spanish_ES.txt
+share/dasher/training_spyDict.txt
 share/dasher/training_swahili_KE.txt
 share/dasher/training_swedish_SE.txt
 share/dasher/training_turkish_TR.txt
@@ -208,6 +216,24 @@ share/gnome/help/dasher/C/figures/prefs2.png
 share/gnome/help/dasher/C/figures/prefs3.png
 share/gnome/help/dasher/C/figures/prefs4.png
 share/gnome/help/dasher/C/figures/prefs5.png
+share/gnome/help/dasher/ca/
+share/gnome/help/dasher/ca/dasher.xml
+share/gnome/help/dasher/ca/figures/
+share/gnome/help/dasher/ca/figures/a-z.gif
+share/gnome/help/dasher/ca/figures/aa-az.gif
+share/gnome/help/dasher/ca/figures/ala-alz.gif
+share/gnome/help/dasher/ca/figures/exampleHad2.png
+share/gnome/help/dasher/ca/figures/exampleHad2a.png
+share/gnome/help/dasher/ca/figures/exampleHad3a.png
+share/gnome/help/dasher/ca/figures/exampleHad4.png
+share/gnome/help/dasher/ca/figures/figure2.png
+share/gnome/help/dasher/ca/figures/main.png
+share/gnome/help/dasher/ca/figures/object.gif
+share/gnome/help/dasher/ca/figures/prefs1.png
+share/gnome/help/dasher/ca/figures/prefs2.png
+share/gnome/help/dasher/ca/figures/prefs3.png
+share/gnome/help/dasher/ca/figures/prefs4.png
+share/gnome/help/dasher/ca/figures/prefs5.png
 share/gnome/help/dasher/de/
 share/gnome/help/dasher/de/dasher.xml
 share/gnome/help/dasher/de/figures/
@@ -379,6 +405,7 @@ share/icons/hicolor/scalable/apps/dasher.svg
 share/locale/af/LC_MESSAGES/dasher.mo
 share/locale/ar/LC_MESSAGES/dasher.mo
 share/locale/as/LC_MESSAGES/dasher.mo
+share/locale/ast/LC_MESSAGES/dasher.mo
 share/locale/az/LC_MESSAGES/dasher.mo
 share/locale/be/LC_MESSAGES/dasher.mo
 share/locale/be@latin/LC_MESSAGES/dasher.mo
@@ -387,12 +414,14 @@ share/locale/bn/LC_MESSAGES/dasher.mo
 share/locale/bn_IN/LC_MESSAGES/dasher.mo
 share/locale/bs/LC_MESSAGES/dasher.mo
 share/locale/ca/LC_MESSAGES/dasher.mo
+share/locale/ca@valencia/LC_MESSAGES/dasher.mo
 share/locale/cs/LC_MESSAGES/dasher.mo
 share/locale/cy/LC_MESSAGES/dasher.mo
 share/locale/da/LC_MESSAGES/dasher.mo
 share/locale/de/LC_MESSAGES/dasher.mo
 share/locale/dz/LC_MESSAGES/dasher.mo
 share/locale/el/LC_MESSAGES/dasher.mo
+share/locale/en@shaw/LC_MESSAGES/dasher.mo
 share/locale/en_CA/LC_MESSAGES/dasher.mo
 share/locale/en_GB/LC_MESSAGES/dasher.mo
 share/locale/es/LC_MESSAGES/dasher.mo
@@ -418,6 +447,7 @@ share/locale/ku/LC_MESSAGES/dasher.mo
 share/locale/ky/LC_MESSAGES/dasher.mo
 share/locale/lt/LC_MESSAGES/dasher.mo
 share/locale/lv/LC_MESSAGES/dasher.mo
+share/locale/mai/LC_MESSAGES/dasher.mo
 share/locale/mg/LC_MESSAGES/dasher.mo
 share/locale/mk/LC_MESSAGES/dasher.mo
 share/locale/ml/LC_MESSAGES/dasher.mo
@@ -432,8 +462,6 @@ share/locale/oc/LC_MESSAGES/dasher.mo
 share/locale/or/LC_MESSAGES/dasher.mo
 share/locale/pa/LC_MESSAGES/dasher.mo
 share/locale/pl/LC_MESSAGES/dasher.mo
-share/locale/ps/
-share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/dasher.mo
 share/locale/pt/LC_MESSAGES/dasher.mo
 share/locale/pt_BR/LC_MESSAGES/dasher.mo
@@ -456,8 +484,6 @@ share/locale/tk/LC_MESSAGES/dasher.mo
 share/locale/tr/LC_MESSAGES/dasher.mo
 share/locale/ug/LC_MESSAGES/dasher.mo
 share/locale/uk/LC_MESSAGES/dasher.mo
-share/locale/uz@cyrillic/
-share/locale/uz@cyrillic/LC_MESSAGES/
 share/locale/uz@cyrillic/LC_MESSAGES/dasher.mo
 share/locale/vi/LC_MESSAGES/dasher.mo
 share/locale/zh_CN/LC_MESSAGES/dasher.mo
@@ -465,6 +491,7 @@ share/locale/zh_HK/LC_MESSAGES/dasher.mo
 share/locale/zh_TW/LC_MESSAGES/dasher.mo
 share/omf/dasher/
 share/omf/dasher/dasher-C.omf
+share/omf/dasher/dasher-ca.omf
 share/omf/dasher/dasher-de.omf
 share/omf/dasher/dasher-el.omf
 share/omf/dasher/dasher-en_GB.omf
