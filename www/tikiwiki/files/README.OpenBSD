@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2007/09/27 10:08:24 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2010/03/20 17:01:28 jasper Exp $
 
 The default superuser account is: admin (password: admin).
 
@@ -21,6 +21,9 @@ The default superuser account is: admin (password: admin).
     allow_url_fopen = On
   - you should also set the default character encoding to utf-8
     default_charset = "utf-8"
+
+* In order to use the Maps feature, please install the Mapserver PHP extension
+  (php5-mapscript).
 
 * Tikiwiki is a big piece of software, you should refer to the official
   documentation before using it. (http://doc.tikiwiki.org/)

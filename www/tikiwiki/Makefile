@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2008/10/19 07:48:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/03/20 17:01:28 jasper Exp $
 
 COMMENT=	all-in-one wiki/groupware/CMS solution
 
-V=		2.2
+V=		4.2
 DISTNAME=	tikiwiki-${V}
 CATEGORIES=	www
 
 HOMEPAGE=	http://tikiwiki.org/
 
-# LGPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
