@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_SNMP_Session_pm,v 1.1 2010/02/26 23:00:56 sthen Exp $
---- lib/SNMP_Session.pm.orig	Fri Jan  8 23:23:52 2010
-+++ lib/SNMP_Session.pm	Fri Jan  8 23:24:48 2010
+$OpenBSD: patch-lib_SNMP_Session_pm,v 1.2 2010/03/20 23:05:17 sthen Exp $
+--- lib/SNMP_Session.pm.orig	Fri Nov 21 05:25:17 2008
++++ lib/SNMP_Session.pm	Tue Mar 16 16:14:22 2010
 @@ -146,7 +146,7 @@ BEGIN {
  
      if (eval {local $SIG{__DIE__};require Socket6;} &&
         eval {local $SIG{__DIE__};require IO::Socket::INET6; IO::Socket::INET6->VERSION("1.26");}) {
 -	import Socket6;
-+	Socket6->import(qw(pack_sockaddr_in6 inet_pton));
++	Socket6->import(qw(pack_sockaddr_in6 inet_pton getaddrinfo));
  	$ipv6_addr_len = length(pack_sockaddr_in6(161, inet_pton(AF_INET6(), "::1")));
  	$SNMP_Session::ipv6available = 1;
      }
@@ -15,7 +15,7 @@ $OpenBSD: patch-lib_SNMP_Session_pm,v 1.1 2010/02/26 23:00:56 sthen Exp $
      if($SNMP_Session::ipv6available) {
  	import IO::Socket::INET6;
 -	import Socket6;
-+	Socket6->import(qw(pack_sockaddr_in6 inet_pton));
++	Socket6->import(qw(pack_sockaddr_in6 inet_pton getaddrinfo));
      }
  }
  
