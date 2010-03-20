@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.8 2009/10/01 19:38:40 matthieu Exp $
+# $OpenBSD: check-common-dirs,v 1.9 2010/03/20 18:04:28 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -47,7 +47,7 @@ use File::Basename;
 sub check_common_dirs
 {
 	my ($item, $t) = @_;
-	my $d = File::Spec->canonpath($item->fullname());
+	my $d = File::Spec->canonpath($item->fullname);
 	main::register_dir(dirname($d), $t->{need_dirs});
 }
 
@@ -55,27 +55,15 @@ package OpenBSD::PackingElement::DirlikeObject;
 sub check_common_dirs
 {
 	my ($item, $t) = @_;
-	my $d = File::Spec->canonpath($item->fullname());
+	my $d = File::Spec->canonpath($item->fullname);
 	$t->{dirs}->{$d} = 1;
 }
 
-package OpenBSD::PackingElement::PkgDep;
-sub check_common_dirs
-{
-	my ($item, $t) = @_;
-	$t->{deps}->{$item->{name}} = 1;
-}
-
-package OpenBSD::PackingElement::Depend;
+package OpenBSD::PackingElement::Dependency;
 sub check_common_dirs
 {
 	my ($item, $t) = @_;
 	$t->{deps}->{$item->{def}} = 1;
-}
-
-package OpenBSD::PackingElement::Wantlib;
-sub check_common_dirs
-{
 }
 
 package main;
@@ -83,7 +71,7 @@ package main;
 sub analyze 
 {
 	my ($plist, $db) = @_;
-	my $pkgname = $plist->pkgname();
+	my $pkgname = $plist->pkgname;
 	$db->{$pkgname} = {
 		pkgname => $pkgname,
 		missing_deps => {},
@@ -181,8 +169,8 @@ for my $pkgname (@ARGV) {
 	print STDERR "$pkgname\n";
 	my $true_package = OpenBSD::PackageLocator->find($pkgname);
 	next unless $true_package;
-	my $dir = $true_package->info();
-	$true_package->close();
+	my $dir = $true_package->info;
+	$true_package->close;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
 	rmtree($dir);
 	analyze($plist, $db);
