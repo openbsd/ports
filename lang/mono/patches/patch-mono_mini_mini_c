@@ -1,0 +1,13 @@
+$OpenBSD: patch-mono_mini_mini_c,v 1.1 2010/03/20 17:16:44 robert Exp $
+--- mono/mini/mini.c.orig	Sat Mar 20 18:05:26 2010
++++ mono/mini/mini.c	Sat Mar 20 14:50:27 2010
+@@ -4781,6 +4781,9 @@ SIG_HANDLER_SIGNATURE (mono_sigsegv_signal_handler)
+ #endif
+ 	MonoJitInfo *ji;
+ 	MonoJitTlsData *jit_tls = TlsGetValue (mono_jit_tls_id);
++#if !(defined(MONO_ARCH_USE_SIGACTION) || defined(PLATFORM_WIN32))
++	siginfo_t *info;
++#endif
+ 
+ 	GET_CONTEXT;
+ 

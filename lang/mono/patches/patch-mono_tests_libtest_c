@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_tests_libtest_c,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
---- mono/tests/libtest.c.orig	Tue Sep  1 14:21:36 2009
-+++ mono/tests/libtest.c	Tue Sep  1 14:22:24 2009
-@@ -3000,7 +3000,7 @@ mono_test_marshal_ccw_itest (MonoComObject *pUnk)
+$OpenBSD: patch-mono_tests_libtest_c,v 1.2 2010/03/20 17:16:44 robert Exp $
+--- mono/tests/libtest.c.orig	Wed Feb  3 22:26:25 2010
++++ mono/tests/libtest.c	Fri Mar 19 23:29:31 2010
+@@ -3190,7 +3190,7 @@ mono_test_marshal_ccw_itest (MonoComObject *pUnk)
   * mono_method_get_unmanaged_thunk tests
   */
  

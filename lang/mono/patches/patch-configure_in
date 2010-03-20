@@ -1,0 +1,47 @@
+$OpenBSD: patch-configure_in,v 1.1 2010/03/20 17:16:44 robert Exp $
+--- configure.in.orig	Fri Mar 19 23:30:15 2010
++++ configure.in	Fri Mar 19 23:28:41 2010
+@@ -147,8 +147,11 @@ case "$host" in
+ 		;;
+ 	*-*-*openbsd*)
+ 		platform_win32=no
+-		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE -DGC_FREEBSD_THREADS -DPLATFORM_BSD"
+-		libmono_cflags="-D_THREAD_SAFE"
+++		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE -DGC_FREEBSD_THREADS -DPLATFORM_BSD -D_GNU_SOURCE -D_REENTRANT -DUSE_MMAP"
++		if test "x$disable_munmap" != "xyes"; then
++		CPPFLAGS="$CPPFLAGS -DUSE_MUNMAP"
++		fi
++		libmono_cflags="-D_THREAD_SAFE -D_REENTRANT"
+ 		LDFLAGS="$LDFLAGS -pthread"
+ 		libmono_ldflags="-pthread"
+ 		need_link_unlink=yes
+@@ -1228,6 +1231,9 @@ if test x$platform_win32 = xno; then
+ 		*-*-*freebsd*)
+ 			AC_CHECK_LIB(pthread, main, LIBS="$LIBS -pthread")
+ 		;;
++		*-*-*openbsd*)
++			AC_CHECK_LIB(pthread, main, LIBS="$LIBS -pthread")
++		;;
+ 		*)
+ 			AC_CHECK_LIB(pthread, main, LIBS="$LIBS -lpthread")
+ 		;;
+@@ -1743,7 +1749,7 @@ AC_MSG_RESULT($try_dev_random)
+ 
+ case "{$target}" in
+     *-openbsd*)
+-    NAME_DEV_RANDOM="/dev/srandom"
++    NAME_DEV_RANDOM="/dev/arandom"
+     ;;
+ 
+ dnl Win32 does not have /dev/random, they have their own method...
+@@ -1932,8 +1938,8 @@ JIT_SUPPORTED=no
+ INTERP_SUPPORTED=no
+ LIBC="libc.so.6"
+ INTL="libc.so.6"
+-SQLITE="libsqlite.so.0"
+-SQLITE3="libsqlite3.so.0"
++SQLITE="libsqlite.so"
++SQLITE3="libsqlite3.so"
+ X11="libX11.so"
+ 
+ sizeof_register="SIZEOF_VOID_P"

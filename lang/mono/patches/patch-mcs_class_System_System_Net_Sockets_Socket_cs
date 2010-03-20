@@ -1,7 +1,7 @@
-$OpenBSD: patch-mcs_class_System_System_Net_Sockets_Socket_cs,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
---- mcs/class/System/System.Net.Sockets/Socket.cs.orig	Thu Jul  2 22:22:52 2009
-+++ mcs/class/System/System.Net.Sockets/Socket.cs	Tue Sep  1 14:25:03 2009
-@@ -1278,7 +1278,7 @@ namespace System.Net.Sockets 
+$OpenBSD: patch-mcs_class_System_System_Net_Sockets_Socket_cs,v 1.2 2010/03/20 17:16:44 robert Exp $
+--- mcs/class/System/System.Net.Sockets/Socket.cs.orig	Wed Oct 21 14:27:35 2009
++++ mcs/class/System/System.Net.Sockets/Socket.cs	Fri Mar 19 23:29:31 2010
+@@ -1272,7 +1272,7 @@ namespace System.Net.Sockets 
  			}
  
  			int error = 0;
@@ -10,7 +10,7 @@ $OpenBSD: patch-mcs_class_System_System_Net_Sockets_Socket_cs,v 1.1 2009/09/06 0
  				SocketAddress serial = end_point.Serialize ();
  				Connect_internal (socket, serial, out error);
  				if (error == 0) {
-@@ -1290,15 +1290,16 @@ namespace System.Net.Sockets 
+@@ -1284,15 +1284,16 @@ namespace System.Net.Sockets 
  					connected = false;
  					req.Complete (new SocketException (error), true);
  				}

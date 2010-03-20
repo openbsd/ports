@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2010/01/19 15:07:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/03/20 17:16:44 robert Exp $
 
 # sync with net/avahi,-mono
 ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
 
 COMMENT=	cross platform, open source .NET developement framework
 
-DISTNAME=	mono-2.5
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	mono-2.6.3
+PKGNAME=	${DISTNAME}
 
 CATEGORIES=	lang devel
 
@@ -27,8 +27,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=	c glib-2.0 gmodule-2.0 gthread-2.0 \
 		m pcre pthread z
 
-#MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/mono/
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/moon/1.99.1/
+MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/mono/
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext \
@@ -46,7 +45,8 @@ BUILD_DEPENDS=	:bison-*:devel/bison \
 RUN_DEPENDS=	::x11/libgdiplus
 LIB_DEPENDS=	gc::devel/boehm-gc
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.62
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LC_ALL=C
@@ -60,6 +60,12 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
                 --with-libgdiplus=installed \
 		--enable-quiet-build=no \
                 --disable-shared-handles
+
+.if ${MACHINE_ARCH} == "amd64"
+CONFIGURE_ENV+=	CFLAGS="-DSIZEOF_VOID_P=8"
+.else
+CONFIGURE_ENV+=	CFLAGS="-DSIZEOF_VOID_P=4"
+.endif
 
 REGRESS_TARGET=check
 

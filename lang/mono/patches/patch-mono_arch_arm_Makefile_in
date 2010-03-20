@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_arch_arm_Makefile_in,v 1.1 2009/09/22 11:19:37 ajacoutot Exp $
---- mono/arch/arm/Makefile.in.orig	Tue Sep 22 12:34:12 2009
-+++ mono/arch/arm/Makefile.in	Tue Sep 22 12:34:25 2009
-@@ -525,15 +525,15 @@ uninstall-am:
+$OpenBSD: patch-mono_arch_arm_Makefile_in,v 1.2 2010/03/20 17:16:44 robert Exp $
+--- mono/arch/arm/Makefile.in.orig	Thu Mar 11 01:57:12 2010
++++ mono/arch/arm/Makefile.in	Fri Mar 19 23:29:31 2010
+@@ -535,15 +535,15 @@ uninstall-am:
  
  
  arm_dpimacros.h: dpiops.sh mov_macros.th dpi_macros.th cmp_macros.th

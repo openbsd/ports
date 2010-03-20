@@ -1,6 +1,12 @@
-$OpenBSD: patch-mono_arch_arm_dpiops_sh,v 1.1 2009/09/22 11:19:37 ajacoutot Exp $
---- mono/arch/arm/dpiops.sh.orig	Tue Sep 22 08:26:16 2009
-+++ mono/arch/arm/dpiops.sh	Tue Sep 22 08:26:31 2009
+$OpenBSD: patch-mono_arch_arm_dpiops_sh,v 1.2 2010/03/20 17:16:44 robert Exp $
+--- mono/arch/arm/dpiops.sh.orig	Fri Sep 25 16:58:13 2009
++++ mono/arch/arm/dpiops.sh	Sat Mar 20 11:03:12 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ OPCODES="AND EOR SUB RSB ADD ADC SBC RSC ORR BIC"
+ CMP_OPCODES="TST TEQ CMP CMN"
 @@ -6,7 +6,7 @@ MOV_OPCODES="MOV MVN"
  
  # $1: opcode list

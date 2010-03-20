@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_mini_mini-arm_h,v 1.1 2009/09/22 17:55:23 ajacoutot Exp $
---- mono/mini/mini-arm.h.orig	Tue Sep 22 11:43:58 2009
-+++ mono/mini/mini-arm.h	Tue Sep 22 11:34:25 2009
-@@ -137,7 +137,9 @@ typedef struct MonoCompileArch {
+$OpenBSD: patch-mono_mini_mini-arm_h,v 1.2 2010/03/20 17:16:44 robert Exp $
+--- mono/mini/mini-arm.h.orig	Tue Nov 24 23:15:33 2009
++++ mono/mini/mini-arm.h	Fri Mar 19 23:29:31 2010
+@@ -142,7 +142,9 @@ typedef struct MonoCompileArch {
  #define ARM_FIRST_ARG_REG 0
  #define ARM_LAST_ARG_REG 3
  

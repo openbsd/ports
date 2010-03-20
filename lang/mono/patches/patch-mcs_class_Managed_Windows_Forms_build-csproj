@@ -1,6 +1,12 @@
-$OpenBSD: patch-mcs_class_Managed_Windows_Forms_build-csproj,v 1.2 2009/09/06 07:25:27 ajacoutot Exp $
---- mcs/class/Managed.Windows.Forms/build-csproj.orig	Tue Oct  7 22:36:46 2008
-+++ mcs/class/Managed.Windows.Forms/build-csproj	Tue Oct  7 22:39:08 2008
+$OpenBSD: patch-mcs_class_Managed_Windows_Forms_build-csproj,v 1.3 2010/03/20 17:16:44 robert Exp $
+--- mcs/class/Managed.Windows.Forms/build-csproj.orig	Fri Sep 25 16:59:05 2009
++++ mcs/class/Managed.Windows.Forms/build-csproj	Sat Mar 20 11:03:12 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # I got tired of editing the SWF.csproj
+ # This script will generate it from our System.Windows.Forms.dll.sources
 @@ -177,7 +177,7 @@ SWFresourcelist()
  {
  cat $Resource | while read SRC; do
