@@ -1,0 +1,15 @@
+$OpenBSD: patch-utility_c,v 1.1 2010/03/20 16:53:53 jasper Exp $
+
+Port to GTK+2. From Gentoo.
+
+--- utility.c.orig	Fri Jan 29 15:43:48 2010
++++ utility.c	Fri Jan 29 15:44:00 2010
+@@ -422,7 +422,7 @@ unsigned char *sixwords(unsigned char *message, char *
+ 			words[extract(message, 33, 11)],
+ 			words[extract(message, 44, 11)],
+ 			words[extract(message, 55, 11)],
+-			(newline == 1) ? "\n" : NULL);
++			(newline == 1) ? "\n" : "");
+ 
+ 	return response;
+ 

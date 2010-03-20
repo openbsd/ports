@@ -1,6 +1,6 @@
-$OpenBSD: patch-crypto_c,v 1.1 2005/09/08 05:05:16 pvalchev Exp $
---- crypto.c.orig	Wed Sep  7 18:22:23 2005
-+++ crypto.c	Wed Sep  7 18:22:58 2005
+$OpenBSD: patch-crypto_c,v 1.2 2010/03/20 16:53:53 jasper Exp $
+--- crypto.c.orig	Tue Jun 26 10:22:52 2001
++++ crypto.c	Fri Jan 29 15:42:06 2010
 @@ -60,7 +60,7 @@
   * bits.
   */
@@ -10,7 +10,7 @@ $OpenBSD: patch-crypto_c,v 1.1 2005/09/08 05:05:16 pvalchev Exp $
  {
  
  #ifndef HAVE_MD4
-@@ -92,7 +92,7 @@ void md4lite(char *message, unsigned int
+@@ -92,7 +92,7 @@ void md4lite(char *message, unsigned int len)
   * bits.
   */
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-crypto_c,v 1.1 2005/09/08 05:05:16 pvalchev Exp $
  {
  
  #ifndef HAVE_MD5
-@@ -124,7 +124,7 @@ void md5lite(char *message, unsigned int
+@@ -124,7 +124,7 @@ void md5lite(char *message, unsigned int len)
   * into 64 bits.
   */
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-crypto_c,v 1.1 2005/09/08 05:05:16 pvalchev Exp $
  {
  
  #ifndef HAVE_RMD160
-@@ -175,7 +175,7 @@ void rmd160lite(char *message, unsigned 
+@@ -175,7 +175,7 @@ void rmd160lite(char *message, unsigned int len)
   * into 64 bits.
   */
  

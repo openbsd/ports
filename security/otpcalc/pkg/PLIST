@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/04 20:07:37 aanriot Exp $
-bin/otpCalc
+@comment $OpenBSD: PLIST,v 1.2 2010/03/20 16:53:53 jasper Exp $
+@bin bin/otpCalc
 @man man/man1/otpCalc.1
