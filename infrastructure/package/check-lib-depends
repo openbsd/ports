@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.17 2010/01/26 21:22:57 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.18 2010/03/20 17:05:44 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -681,7 +681,8 @@ if ($opt_F) {
 	my $source = FakeFileSource->new($opt_F);
 	File::Find::find({
 		wanted => sub {
-		    return unless -f $_;
+		    return if -l $_;
+		    return unless -f _;
 		    my $name = $_;
 		    $name =~ s/^\Q$opt_F\E//;
 		    # XXX hack FileBase object;
