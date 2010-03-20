@@ -1,0 +1,15 @@
+$OpenBSD: patch-misc_h,v 1.1 2010/03/20 16:55:33 jasper Exp $
+
+- change arg type for gmtime() and localtime() from long to time_t
+
+--- misc.h.orig	Sat Dec 18 17:07:01 1999
++++ misc.h	Wed Feb  3 22:33:16 2010
+@@ -90,7 +90,7 @@ char *CanonicaliseName(char *name);
+ 
+ char *MakeHash(const char *args);
+ 
+-char *RFC822Date(long t,int utc);
++char *RFC822Date(time_t t,int utc);
+ long DateToTimeT(const char *date);
+ 
+ char *URLDecode(const char *str, int isform);

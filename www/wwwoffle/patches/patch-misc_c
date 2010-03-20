@@ -1,22 +1,9 @@
-$OpenBSD: patch-misc,v 1.1.1.1 2000/09/05 11:37:29 espie Exp $
+$OpenBSD: patch-misc_c,v 1.1 2010/03/20 16:55:33 jasper Exp $
 
 - change arg type for gmtime() and localtime() from long to time_t
 
-
---- misc.h.orig	Sat Dec 18 17:07:01 1999
-+++ misc.h	Mon Jul 31 19:55:40 2000
-@@ -90,7 +90,7 @@ char *CanonicaliseName(char *name);
- 
- char *MakeHash(const char *args);
- 
--char *RFC822Date(long t,int utc);
-+char *RFC822Date(time_t t,int utc);
- long DateToTimeT(const char *date);
- 
- char *URLDecode(const char *str, int isform);
-
 --- misc.c.orig	Mon Mar 20 20:18:29 2000
-+++ misc.c	Mon Jul 31 19:29:39 2000
++++ misc.c	Wed Feb  3 22:33:16 2010
 @@ -681,7 +681,7 @@ char *MakeHash(const char *args)
    int utc Set to true to get Universal Time, else localtime.
    ++++++++++++++++++++++++++++++++++++++*/

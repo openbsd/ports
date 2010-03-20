@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/02/05 16:54:56 alek Exp $
-bin/wwwoffle
+@comment $OpenBSD: PLIST,v 1.6 2010/03/20 16:55:33 jasper Exp $
+@bin bin/wwwoffle
 bin/wwwoffle-ls
 bin/wwwoffle-mv
 bin/wwwoffle-read
 bin/wwwoffle-rm
-bin/wwwoffle-tools
+@bin bin/wwwoffle-tools
 bin/wwwoffle-write
 @man man/man1/wwwoffle.1
 @man man/man5/wwwoffle.conf.5
 @man man/man8/wwwoffled.8
-sbin/wwwoffled
+@bin sbin/wwwoffled
 share/doc/wwwoffle/
 share/doc/wwwoffle/CHANGES.CONF
 share/doc/wwwoffle/CONVERT
@@ -540,5 +540,4 @@ share/wwwoffle/prevtime1/
 share/wwwoffle/wwwoffle.conf
 @owner daemon
 @sample /var/spool/wwwoffle/wwwoffle.conf
-@owner
 @extraunexec rm -rf /var/spool/wwwoffle
