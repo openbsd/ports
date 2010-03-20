@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/09/04 23:38:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/03/20 17:06:45 ajacoutot Exp $
 share/doc/xsl/
 share/doc/xsl/docbook/
 share/doc/xsl/docbook/ChangeLog
@@ -1461,4 +1461,4 @@ share/xsl/docbook/xhtml/verbatim.xsl
 share/xsl/docbook/xhtml/xref.xsl
 share/libxml2/docbook-xsl.spec
 @exec %D/share/libxml2/rebuild
-@unexec %D/share/libxml2/rebuild
+@unexec-delete %D/share/libxml2/rebuild
