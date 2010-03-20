@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.8 2010/03/20 18:29:19 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.9 2010/03/20 18:30:04 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -222,7 +222,7 @@ sub new
 	$singleton->{clear} = $singleton->{terminal}->Tputs("cl", 1);
 	$singleton->{down} = $singleton->{terminal}->Tputs("do", 1);
 	$singleton->{glitch} = $singleton->{terminal}->Tputs("xn", 1);
-	$singleton->{cleareol} = $singleton->{terminal}-Tputs("", 1);
+	$singleton->{cleareol} = $singleton->{terminal}->Tputs("", 1);
 	if ($singleton->{home}) {
 		$singleton->{write} = "go_write_home";
 	} else {
