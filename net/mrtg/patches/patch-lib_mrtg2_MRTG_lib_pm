@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_mrtg2_MRTG_lib_pm,v 1.1 2010/03/20 23:01:11 sthen Exp $
+--- lib/mrtg2/MRTG_lib.pm.orig	Wed Jan 20 10:56:30 2010
++++ lib/mrtg2/MRTG_lib.pm	Fri Jan 29 10:20:22 2010
+@@ -1186,8 +1186,10 @@ sub demonize_me ($) {
+            if (defined $pidfile && open(READPID, "<$pidfile")){
+                if (not eof READPID) {
+                    chomp(my $input = <READPID>);    # read process id in pidfile
+-                   if ($input && kill 0 => $input) {# oops - the pid actually exists
+-                        die "ERROR: I Quit! Another copy of mrtg seems to be running. Check $pidfile\n";
++                   if ($input && $input =~ /^([0-9]+)$/) {
++                       if (kill 0 => $1) {# oops - the pid actually exists
++                           die "ERROR: I Quit! Another copy of mrtg seems to be running. Check $pidfile\n";
++                       }
+                    }
+                }
+                close READPID;

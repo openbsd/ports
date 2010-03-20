@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_mrtg,v 1.1 2010/01/13 12:33:24 sthen Exp $
---- bin/mrtg.orig	Wed Jan 13 00:17:19 2010
-+++ bin/mrtg	Wed Jan 13 00:17:49 2010
-@@ -212,7 +212,7 @@ sub main {
+$OpenBSD: patch-bin_mrtg,v 1.2 2010/03/20 23:01:11 sthen Exp $
+--- bin/mrtg.orig	Wed Jan 20 10:56:29 2010
++++ bin/mrtg	Tue Mar 16 15:26:34 2010
+@@ -214,7 +214,7 @@ sub main {
  
      my $cfgfile = shift @ARGV;
  
@@ -10,7 +10,17 @@ $OpenBSD: patch-bin_mrtg,v 1.1 2010/01/13 12:33:24 sthen Exp $
  
      printusage() unless defined $cfgfile;
  
-@@ -910,6 +910,14 @@ sub writegraphics {
+@@ -615,6 +615,9 @@ sub getcurrent {
+ 		$uptime = $target->[ $u ]{ _UPTIME_ };
+ 		$name = $target->[ $u ]{ _NAME_ };
+ 		$time = $target->[ $u ]{ _TIME_ };
++		if ($time =~ /^([-0-9.]+)$/) {
++			$time = $1;
++		}
+ 	}
+ 
+ 	# Set the time to the current time if it was not set above
+@@ -950,6 +953,14 @@ sub writegraphics {
      # set values to -1 to tell rateup about unknown values
      $inlast = -1 unless defined $inlast;
      $outlast = -1 unless defined $outlast;

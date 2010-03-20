@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.63 2010/01/13 12:33:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2010/03/20 23:01:11 sthen Exp $
 
 COMMENT=	multi-router traffic grapher
 
-DISTNAME=	mrtg-2.16.2
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	mrtg-2.16.3
 CATEGORIES=	net
 
 HOMEPAGE=	http://oss.oetiker.ch/mrtg/
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,6 +29,7 @@ LIB_DEPENDS=	gd.>=18::graphics/gd
 USE_X11=	Yes
 
 CONFIGURE_STYLE= autoconf
+# XXX should be 2.63
 AUTOCONF_VERSION= 2.61
 CONFIGURE_ARGS+=--with-gd-inc="${LOCALBASE}/include" \
 		--with-gd-lib="${LOCALBASE}/lib" \
@@ -46,12 +48,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mrtg
 	${INSTALL_DATA_DIR} ${PREFIX}/libdata/perl5/site_perl/Pod
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mrtg
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mrtg
 	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/share/mrtg
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${PREFIX}/bin
-	cd ${WRKSRC}/doc; ${INSTALL_DATA} *.pod *.txt *.png \
-	    ${PREFIX}/share/doc/mrtg
 	cd ${WRKSRC}/bin; ${INSTALL_SCRIPT} cfgmaker indexmaker mrtg \
 	    ${PREFIX}/bin
 	cd ${WRKSRC}/lib/mrtg2; ${INSTALL_DATA} MRTG_lib.pm Net_SNMP_util.pm \
