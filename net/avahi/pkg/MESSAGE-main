@@ -8,6 +8,8 @@ To start avahi automatically, add the following to /etc/rc.local:
 if [ -x ${PREFIX}/sbin/avahi-daemon ]; then
 	echo -n ' avahi-daemon'; ${PREFIX}/sbin/avahi-daemon -D
 fi
+
+Optionally to start the unicast DNS server configuration daemon, add
 if [ -x ${PREFIX}/sbin/avahi-dnsconfd ]; then
 	echo -n ' avahi-dnsconfd'; ${PREFIX}/sbin/avahi-dnsconfd -D
 fi
