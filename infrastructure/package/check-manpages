@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: check-manpages,v 1.5 2005/09/13 20:48:41 espie Exp $
+# $OpenBSD: check-manpages,v 1.6 2010/03/20 17:06:16 espie Exp $
 #
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
@@ -37,27 +37,27 @@ for my $pkgname (@ARGV) {
 	print STDERR "$pkgname\n";
 	my $true_package = OpenBSD::PackageLocator->find($pkgname);
 	next unless $true_package;
-	my $dir = $true_package->info();
+	my $dir = $true_package->info;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
 	for my $item (@{$plist->{items}}) {
-		next unless $item->IsFile();
-		my $n = $item->fullname();
+		next unless $item->IsFile;
+		my $n = $item->fullname;
 		if ($n =~ m,/man/(?:man.*?|cat.*?)/,) {
 			my $file;
 			do {
-				$file = $true_package->next();
+				$file = $true_package->next;
 			} while ($file->{name} ne $item->{name});
 			$file->{name} = $n;
 			$n =~ m,^(.*/man)/(?:man.*?|cat.?)/,;
 			$mandirs{"$extract_dir$1"} = 1;
-			$file->{cwd} = $item->cwd();
+			$file->{cwd} = $item->cwd;
 			$file->{destdir} = $extract_dir;
-			eval { $file->create(); };
+			eval { $file->create; };
 		}
 	}
-	$true_package->close();
-	$true_package->wipe_info();
-	$plist->forget();
+	$true_package->close;
+	$true_package->wipe_info;
+	$plist->forget;
 }
 
 print STDERR "Running makewhatis in ", join(' ', keys(%mandirs)), "\n";
