@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2010/03/03 20:39:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2010/03/20 17:11:40 ajacoutot Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPSs via SNMP
 
 DISTNAME=		nut-2.4.1
-PKGNAME-main=		${DISTNAME}p2
+PKGNAME-main=		${DISTNAME}p3
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}p0
 PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}p0
 CATEGORIES=		sysutils
@@ -20,9 +20,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB-main=		c crypto expat iconv intl m ssl z \
-			asn1 gssapi krb5
-WANTLIB-snmp=		c crypto
+
+WANTLIB += c crypto
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += expat m ssl z asn1 gssapi krb5
+
+MODULES=		devel/gettext
 
 WEB_ROOT=		/var/www
 NUT_USER=		_ups
@@ -46,13 +49,18 @@ MULTI_PACKAGES=		-main -cgi
 MULTI_PACKAGES+=	-snmp
 .endif
 
-LIB_DEPENDS-main=	usb::devel/libusb \
+LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
+			usb::devel/libusb \
 			neon::net/neon
 
 PREFIX-cgi=		${WEB_ROOT}
 WANTLIB-cgi=
 
 LIB_DEPENDS-snmp=	netsnmp::net/net-snmp
+RUN_DEPENDS-snmp=	# empty
+
+LIB_DEPENDS-cgi=	# empty
+RUN_DEPENDS-cgi=	# empty
 
 .if ${MULTI_PACKAGES:M-cgi}
 BUILD_DEPENDS+=		:gd->=1.8.3:graphics/gd

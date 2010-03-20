@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/04/03 15:40:12 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2010/03/20 17:11:40 ajacoutot Exp $
 @conflict upsd-*
 @pkgpath sysutils/nut
 @pkgpath sysutils/nut,no_cgi
 @pkgpath sysutils/nut,snmp
 @pkgpath sysutils/nut,no_cgi,snmp
-@newuser ${NUT_USER}:${NUT_ID}:::UPS User:/var/empty:/sbin/nologin
+@newgroup ${NUT_USER}:${NUT_ID}
+@newuser ${NUT_USER}:${NUT_ID}:${NUT_ID}::UPS User:/var/empty:/sbin/nologin
 %%SHARED%%
 @bin bin/apcsmart
 @bin bin/bcmxcp

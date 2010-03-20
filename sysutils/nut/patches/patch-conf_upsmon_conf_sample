@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_upsmon_conf_sample,v 1.1 2010/03/20 17:11:40 ajacoutot Exp $
+--- conf/upsmon.conf.sample.orig	Fri Mar 12 10:32:24 2010
++++ conf/upsmon.conf.sample	Fri Mar 12 10:33:02 2010
+@@ -109,7 +109,7 @@ MINSUPPLIES 1
+ #
+ # This should work just about everywhere ... if it doesn't, well, change it.
+ 
+-SHUTDOWNCMD "/sbin/shutdown -h +0"
++SHUTDOWNCMD "/sbin/shutdown -hp +0"
+ 
+ # --------------------------------------------------------------------------
+ # NOTIFYCMD <command>

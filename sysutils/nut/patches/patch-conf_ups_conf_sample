@@ -1,0 +1,35 @@
+$OpenBSD: patch-conf_ups_conf_sample,v 1.1 2010/03/20 17:11:40 ajacoutot Exp $
+--- conf/ups.conf.sample.orig	Fri Mar 12 10:19:28 2010
++++ conf/ups.conf.sample	Fri Mar 12 10:18:48 2010
+@@ -47,7 +47,7 @@
+ #          apcsmart, bestups, and sec are some examples.
+ #
+ #    port: REQUIRED.  The serial port where your UPS is connected.  
+-#          /dev/ttyS0 is usually the first port on Linux boxes, for example.
++#          /dev/tty00 is usually the first port on OpenBSD boxes, for example.
+ #
+ # sdorder: optional.  When you have multiple UPSes on your system, you
+ #          usually need to turn them off in a certain order.  upsdrvctl
+@@ -83,11 +83,11 @@
+ # --------
+ #
+ # A simple example for a UPS called "powerpal" that uses the megatec
+-# driver on /dev/ttyS0 is:
++# driver on /dev/tty00 is:
+ #
+ # [powerpal]
+ #	driver = megatec
+-#	port = /dev/ttyS0
++#	port = /dev/tty00
+ #	desc = "Web server"
+ #
+ # If your UPS driver requires additional settings, you can specify them
+@@ -96,7 +96,7 @@
+ # 
+ # [myups]
+ # 	driver = mydriver
+-#	port = /dev/ttyS1
++#	port = /dev/tty01
+ #	cable = 1234
+ #	desc = "Something descriptive"
+ #
