@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/30 09:16:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/03/20 16:43:29 jasper Exp $
 
 COMMENT=		automatically create timetables
 
-DISTNAME=		fet-5.12.0
+DISTNAME=		fet-5.12.3
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.lalescu.ro/liviu/fet/
