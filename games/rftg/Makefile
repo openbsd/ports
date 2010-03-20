@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/30 08:28:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/03/20 18:04:58 espie Exp $
 
 COMMENT = race for the galaxy card game, automated player
 CATEGORIES = games
 HOMEPAGE = http://keldon.net/rftg/
-DISTNAME = rftg-0.5.4
+DISTNAME = rftg-0.6.1
 EXTRACT_SUFX = .tar.bz2
 MASTER_SITES = http://warpcore.org/rftg/
 
