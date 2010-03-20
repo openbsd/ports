@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/08/23 17:20:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/03/20 16:54:23 jasper Exp $
 @group daemon
 cms/
 cms/admin/
@@ -189,6 +189,7 @@ cms/admin/lang/index.html
 cms/admin/lang/is_IS.nls.php
 cms/admin/lang/it_IT.nls.php
 cms/admin/lang/ja_JP.nls.php
+cms/admin/lang/kz_KZ.nls.php
 cms/admin/lang/lt_LT.nls.php
 cms/admin/lang/nb_NO.nls.php
 cms/admin/lang/nl_NL.nls.php
@@ -1403,6 +1404,7 @@ cms/modules/FileManager/lang/ext/nl_NL.php
 cms/modules/FileManager/lang/ext/pl_PL.php
 cms/modules/FileManager/lang/ext/pt_BR.php
 cms/modules/FileManager/lang/ext/pt_PT.php
+cms/modules/FileManager/lang/ext/ro_RO.php
 cms/modules/FileManager/lang/ext/ru_RU.php
 cms/modules/FileManager/lang/ext/sk_SK.php
 cms/modules/FileManager/lang/ext/sl_SI.php
@@ -1463,6 +1465,7 @@ cms/modules/MenuManager/lang/ext/de_DE.php
 cms/modules/MenuManager/lang/ext/el_GR.php
 cms/modules/MenuManager/lang/ext/es_ES.php
 cms/modules/MenuManager/lang/ext/et_EE.php
+cms/modules/MenuManager/lang/ext/fa_FA.php
 cms/modules/MenuManager/lang/ext/fi_FI.php
 cms/modules/MenuManager/lang/ext/fr_FR.php
 cms/modules/MenuManager/lang/ext/hu_HU.php
@@ -1638,6 +1641,7 @@ cms/modules/Printing/
 cms/modules/Printing/Printing.module.php
 cms/modules/Printing/action.default.php
 cms/modules/Printing/action.defaultadmin.php
+cms/modules/Printing/action.output.php
 cms/modules/Printing/action.savesettings.php
 cms/modules/Printing/action.savetemplate.php
 cms/modules/Printing/css/
@@ -1661,6 +1665,7 @@ cms/modules/Printing/lang/ext/nb_NO.php
 cms/modules/Printing/lang/ext/nl_NL.php
 cms/modules/Printing/lang/ext/pl_PL.php
 cms/modules/Printing/lang/ext/pt_PT.php
+cms/modules/Printing/lang/ext/ro_RO.php
 cms/modules/Printing/lang/ext/ru_RU.php
 cms/modules/Printing/lang/ext/sk_SK.php
 cms/modules/Printing/lang/ext/sl_SI.php
@@ -1799,6 +1804,7 @@ cms/modules/ThemeManager/lang/ext/pl_PL.php
 cms/modules/ThemeManager/lang/ext/pt_BR.php
 cms/modules/ThemeManager/lang/ext/pt_PT.php
 cms/modules/ThemeManager/lang/ext/rm_CH.php
+cms/modules/ThemeManager/lang/ext/ro_RO.php
 cms/modules/ThemeManager/lang/ext/ru_RU.php
 cms/modules/ThemeManager/lang/ext/sk_SK.php
 cms/modules/ThemeManager/lang/ext/sl_SI.php
@@ -1819,6 +1825,7 @@ cms/modules/TinyMCE/action.saveplugins.php
 cms/modules/TinyMCE/action.savesettings.php
 cms/modules/TinyMCE/action.savestyles.php
 cms/modules/TinyMCE/action.savetoolbar.php
+cms/modules/TinyMCE/event.Core.ContentPostRender.php
 cms/modules/TinyMCE/filepicker.css
 cms/modules/TinyMCE/filepicker.php
 cms/modules/TinyMCE/function.admin_advanced.php
@@ -1841,6 +1848,7 @@ cms/modules/TinyMCE/lang/ext/cs_CZ.php
 cms/modules/TinyMCE/lang/ext/da_DK.php
 cms/modules/TinyMCE/lang/ext/de_DE.php
 cms/modules/TinyMCE/lang/ext/es_ES.php
+cms/modules/TinyMCE/lang/ext/et_EE.php
 cms/modules/TinyMCE/lang/ext/fa_FA.php
 cms/modules/TinyMCE/lang/ext/fi_FI.php
 cms/modules/TinyMCE/lang/ext/fr_FR.php
@@ -1853,6 +1861,7 @@ cms/modules/TinyMCE/lang/ext/nb_NO.php
 cms/modules/TinyMCE/lang/ext/nl_NL.php
 cms/modules/TinyMCE/lang/ext/pl_PL.php
 cms/modules/TinyMCE/lang/ext/pt_PT.php
+cms/modules/TinyMCE/lang/ext/ro_RO.php
 cms/modules/TinyMCE/lang/ext/ru_RU.php
 cms/modules/TinyMCE/lang/ext/sk_SK.php
 cms/modules/TinyMCE/lang/ext/sl_SI.php
@@ -2505,6 +2514,9 @@ cms/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/template/template.htm
 cms/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/visualchars/
 cms/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js
 cms/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/visualchars/index.html
+cms/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/wordcount/
+cms/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/wordcount/editor_plugin.js
+cms/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/wordcount/index.html
 cms/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/
 cms/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/abbr.htm
 cms/modules/TinyMCE/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/acronym.htm
