@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/26 18:52:50 steven Exp $
+# $OpenBSD: Makefile,v 1.13 2010/03/20 16:47:44 ajacoutot Exp $
 
 COMMENT=	syslogd replacement
 
 V=		2.1.4
 DISTNAME=	syslog-ng-$V
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
@@ -19,7 +20,9 @@ PERMIT_DISTFILES_FTP =		Yes
 MASTER_SITES =	http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/$V/source/
 DISTFILES=	syslog-ng_$V.tar.gz
 
-WANTLIB =	c iconv intl wrap
+MODULES =	devel/gettext
+
+WANTLIB =	c wrap
 
 LIB_DEPENDS = 	glib-2.0::devel/glib2 \
 		evtlog::sysutils/eventlog
