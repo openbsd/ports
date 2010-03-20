@@ -1,6 +1,6 @@
-$OpenBSD: patch-docs_sample_gftp_gftprc,v 1.2 2008/12/01 16:09:01 ajacoutot Exp $
+$OpenBSD: patch-docs_sample_gftp_gftprc,v 1.3 2010/03/20 17:07:35 ajacoutot Exp $
 --- docs/sample.gftp/gftprc.orig	Thu Jan 24 14:56:55 2008
-+++ docs/sample.gftp/gftprc	Mon Dec  1 17:03:43 2008
++++ docs/sample.gftp/gftprc	Sun Feb  7 09:59:26 2010
 @@ -83,7 +83,7 @@ trans_blksize=20480
  default_protocol=FTP
  
@@ -10,3 +10,12 @@ $OpenBSD: patch-docs_sample_gftp_gftprc,v 1.2 2008/12/01 16:09:01 ajacoutot Exp 
  
  # This defines what will happen when you double click a file in the file
  # listboxes. 0=View file 1=Edit file 2=Transfer file
+@@ -245,7 +245,7 @@ resolve_symlinks=1
+ ascii_transfers=0
+ 
+ # SSL entropy file
+-entropy_source=/dev/urandom
++entropy_source=/dev/arandom
+ 
+ # The maximum number of bytes to seed the SSL engine with
+ entropy_len=1024
