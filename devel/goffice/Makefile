@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/10/13 16:44:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/03/20 16:53:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.6.6
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 
 SHARED_LIBS +=	goffice-0.6          1.0      # .6.5
 CATEGORIES=	devel
@@ -36,7 +36,7 @@ LIB_DEPENDS=		glade-2.0.>=0.6::devel/libglade2 \
 			gsf-gnome-1.>=114:libgsf-gnome-*:devel/libgsf,-gnome \
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-gtk-doc=no
