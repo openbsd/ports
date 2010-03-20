@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.979 2010/03/05 07:49:29 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.980 2010/03/20 19:11:51 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1210,8 +1210,16 @@ IGNORE += "is not for ${NOT_FOR_ARCHS}"
 IGNORE += "requires shared libraries"
 .endif
 
-.if defined(BROKEN) && ${TRY_BROKEN:L} != "yes"
+.if ${TRY_BROKEN:L} != "yes"
+.  if defined(BROKEN-${ARCH})
+IGNORE += "is marked as broken for ${ARCH}: ${BROKEN-${ARCH}:Q}"
+.  endif
+.  if ${MACHINE_ARCH} != ${ARCH} && defined(BROKEN-${MACHINE_ARCH})
+IGNORE += "is marked as broken for ${MACHINE_ARCH}: ${BROKEN-${MACHINE_ARCH}:Q}"
+.  endif
+.  if defined(BROKEN) 
 IGNORE += "is marked as broken: ${BROKEN:Q}"
+.  endif
 .endif
 .if defined(COMES_WITH)
 IGNORE += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COMES_WITH}"
