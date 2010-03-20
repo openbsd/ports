@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/01 06:46:35 jolan Exp $
-bin/osd_clock
+@comment $OpenBSD: PLIST,v 1.2 2010/03/20 16:44:21 jasper Exp $
+@bin bin/osd_clock
 @man man/man1/osd_clock.1

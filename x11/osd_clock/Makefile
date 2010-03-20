@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:04:23 merdely Exp $
+# $OpenBSD: Makefile,v 1.6 2010/03/20 16:44:21 jasper Exp $
 
 COMMENT=	xosd based clock
 DISTNAME=	osd_clock-0.5
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
-MASTER_SITES=	http://leftorium.net/software/osd_clock/ \
-		http://leftorium.net/software/osd_clock/old/
+MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
 
-HOMEPAGE=	http://leftorium.net/software.phtml
-
-# GPL
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
