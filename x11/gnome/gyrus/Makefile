@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/21 18:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/03/20 16:45:57 ajacoutot Exp $
 
 COMMENT=	Cyrus imapd administration GUI
 
 GNOME_PROJECT=	gyrus
-GNOME_VERSION=	0.3.8
-PKGNAME=	${DISTNAME}p2
+GNOME_VERSION=	0.3.9
 
 CATEGORIES=	mail
 
