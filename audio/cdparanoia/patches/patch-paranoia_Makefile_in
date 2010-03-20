@@ -1,7 +1,7 @@
-$OpenBSD: patch-paranoia_Makefile_in,v 1.6 2007/10/27 15:01:53 espie Exp $
+$OpenBSD: patch-paranoia_Makefile_in,v 1.7 2010/03/20 16:56:26 jasper Exp $
 --- paranoia/Makefile.in.orig	Tue Dec 14 05:28:04 1999
-+++ paranoia/Makefile.in	Sat Oct 27 17:00:19 2007
-@@ -22,20 +22,17 @@ OFILES = paranoia.o p_block.o overlap.o gap.o isort.o
++++ paranoia/Makefile.in	Fri Feb  5 14:38:52 2010
+@@ -22,31 +22,28 @@ OFILES = paranoia.o p_block.o overlap.o gap.o isort.o
  #TFILES = isort.t gap.t p_block.t paranoia.t
  
  LIBS = ../interface/libcdda_interface.a -lm
@@ -28,7 +28,9 @@ $OpenBSD: patch-paranoia_Makefile_in,v 1.6 2007/10/27 15:01:53 espie Exp $
  #test:	$(TFILES)
  #
  
-@@ -43,10 +40,8 @@ libcdda_paranoia.a: 	$(OFILES)	
++lib: libcdda_paranoia.a
++
+ libcdda_paranoia.a: 	$(OFILES)	
  	$(AR) -r libcdda_paranoia.a $(OFILES)
  	$(RANLIB) libcdda_paranoia.a
  
