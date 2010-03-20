@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2009/06/03 22:54:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/03/20 16:45:10 jasper Exp $
 
 COMMENT=		ANSI C command line parser
 
-DISTNAME=		argtable2-11
-PKGNAME=		argtable-2.11
-SHARED_LIBS +=	argtable2            1.1      # .1.6
+DISTNAME=		argtable2-12
+PKGNAME=		argtable-2.12
+SHARED_LIBS +=	argtable2            1.2      # .1.7
 CATEGORIES=		devel
 
 HOMEPAGE=		http://argtable.sourceforge.net/
