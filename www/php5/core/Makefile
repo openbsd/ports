@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.55 2010/02/26 14:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2010/03/20 17:00:21 ajacoutot Exp $
+
+# doesn't set USE_LIBTOOL but use the bundled one because it needs some
+# specific options we don't have.
 
 COMMENT-main=	server-side HTML-embedded scripting language
 COMMENT-fastcgi=stand-alone FastCGI version of PHP
