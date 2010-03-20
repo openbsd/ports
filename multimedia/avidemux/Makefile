@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.22 2009/12/22 15:46:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/03/20 16:56:57 ajacoutot Exp $
 
 COMMENT=	free video editor
 
 V=		2.4.4
 DISTNAME=	avidemux_${V}
-PKGNAME=	avidemux-${V}p1
+PKGNAME=	avidemux-${V}p2
 
 CATEGORIES=	multimedia
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=avidemux/}
 
 HOMEPAGE=	http://fixounet.free.fr/avidemux/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	yes
