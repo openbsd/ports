@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.3 2010/03/01 17:59:49 espie Exp $
+# $OpenBSD: Engine.pm,v 1.4 2010/03/20 18:29:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -75,11 +75,11 @@ sub errors_string
 	my $self = shift;
 	my @l = ();
 	for my $e (@{$self->{errors}}) {
+		my $s = $e->fullpkgpath;
 		if (defined $e->{host}) {
-			push(@l, $e->fullpkgpath."($e->{host})");
-		} else {
-			push(@l, $e->fullpkgpath);
+			$s .= "(".$e->{host}->name.")";
 		}
+		push(@l, $s);
 	}
 	return join(' ', @l);
 }
@@ -156,16 +156,9 @@ sub important
 {
 	my $self = shift;
 	$self->{lasterrors} //= 0;
-	my $i = @{$self->{errors}} - $self->{lasterrors};
-	if ($i > 0) {
-		my @msg;
-		my $j = 0;
-		for my $v (@{$self->{errors}}) {
-			last if $j++ > $i;
-			push(@msg, $v->fullpkgpath);
-		}
+	if (@{$self->{errors}} != $self->{lasterrors}) {
 		$self->{lasterrors} = @{$self->{errors}};
-		return "Error in ".join(' ', @msg)."\n";
+		return "Error in ".join(' ', map {$_->fullpkgpath} @{$self->{errors}})."\n";
 	}
 }
 
@@ -292,6 +285,7 @@ sub was_built
 {
 	my ($self, $v) = @_;
 	if ($self->{builder}->check($v)) {
+#		$self->{heuristics}->done($v);
 		$self->{built}{$v}= $v;
 		$self->log('B', $v);
 		delete $self->{tobuild}{$v};
@@ -305,6 +299,7 @@ sub new_path
 	my ($self, $v) = @_;
 	$self->{all}{$v} = $v;
 	if (!$self->was_built($v)) {
+#		$self->{heuristics}->todo($v);
 		$self->{tobuild}{$v} = $v;
 		$self->log('T', $v);
 	}
@@ -315,6 +310,7 @@ sub end_job
 	my ($self, $core, $v) = @_;
 	my $e = $core->mark_ready;
 	if (!$self->was_built($v)) {
+		$core->failure;
 		if (!$e || $core->{status} == 65280) {
 			$self->{buildable}->add($v);
 			$self->{locker}->unlock($v);
@@ -327,8 +323,17 @@ sub end_job
 		}
 	} else {
 		$self->{locker}->unlock($v);
+		$self->{heuristics}->finish_special($v);
+		$core->success;
 	}
 	$self->job_done($v);
+}
+
+sub requeue
+{
+	my ($self, $v) = @_;
+	$self->{buildable}->add($v);
+	$self->{heuristics}->finish_special($v);
 }
 
 sub add_fatal
@@ -355,8 +360,8 @@ sub job_done
 sub new_job
 {
 	my ($self, $core, $v, $lock) = @_;
-	my $special = $self->{heuristics}->special_parameters($core, $v);
-	$self->log('J', $v, " ".$core->host." ".$special);
+	my $special = $self->{heuristics}->special_parameters($core->host, $v);
+	$self->log('J', $v, " ".$core->hostname." ".$special);
 	$self->{builder}->build($v, $core, $special,
 	    $lock, sub {$self->end_job($core, $v)});
 }

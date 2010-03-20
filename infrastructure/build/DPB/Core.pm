@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.5 2010/03/04 13:56:09 espie Exp $
+# $OpenBSD: Core.pm,v 1.6 2010/03/20 18:29:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -16,6 +16,34 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 use strict;
 use warnings;
+
+# we have unique objects for hosts, so we can put properties in there.
+package DPB::Host;
+
+my $hosts = {};
+
+sub new
+{
+	my ($class, $name, $prop) = @_;
+	$hosts->{$name} //= bless {host => $name, prop => $prop}, $class;
+}
+
+sub name
+{
+	my $self = shift;
+	return $self->{host};
+}
+
+sub fullname
+{
+	my $self = shift;
+	my $name = $self->name;
+	if (defined $self->{prop}->{jobs}) {
+		$name .= "/$self->{prop}->{jobs}";
+	}
+	return $name;
+}
+
 
 # here, a "core" is an entity responsible for scheduling cpu, such as
 # running a job, which is a collection of tasks.
@@ -59,14 +87,44 @@ sub is_alive
 
 sub new
 {
-	my ($class, $host) = @_;
-	bless {host => $host}, $class;
+	my ($class, $host, $prop) = @_;
+	bless {host => DPB::Host->new($host, $prop)}, $class;
 }
 
 sub host
 {
 	my $self = shift;
 	return $self->{host};
+}
+
+sub prop
+{
+	my $self = shift;
+	return $self->host->{prop};
+}
+
+sub sf
+{
+	my $self = shift;
+	return $self->prop->{sf};
+}
+
+sub memory
+{
+	my $self = shift;
+	return $self->prop->{memory};
+}
+
+sub hostname
+{
+	my $self = shift;
+	return $self->host->name;
+}
+
+sub fullhostname
+{
+	my $self = shift;
+	return $self->host->fullname;
 }
 
 sub register
@@ -233,10 +291,52 @@ sub start_job
 	$core->start_task;
 }
 
+sub success
+{
+	my $self = shift;
+	$self->host->{consecutive_failures} = 0;
+}
+
+sub failure
+{
+	my $self = shift;
+	$self->host->{consecutive_failures}++;
+}
+
 sub start_clock
 {
 	my ($class, $tm) = @_;
 	DPB::Core::Clock->start($tm);
+}
+
+package DPB::Task::Ncpu;
+our @ISA = qw(DPB::Task::Pipe);
+sub run
+{
+	my ($self, $core) = @_;
+	my $shell = $core->{shell};
+	my $sysctl = OpenBSD::Paths->sysctl;
+	if (defined  $shell) {
+		$shell->run("$sysctl -n hw.ncpu");
+	} else {
+		exec{$sysctl} ($sysctl, '-n', 'hw.ncpu');
+	}
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	my $fh = $self->{fh};
+	if ($core->{status} == 0) {
+		my $line = <$fh>;
+		chomp $line;
+		if ($line =~ m/^\d+$/) {
+			$core->prop->{jobs} = $line;
+		}
+	}
+	close($fh);
+	$core->prop->{jobs} //= 1;
+	return 1;
 }
 
 package DPB::Job::Init;
@@ -256,10 +356,13 @@ sub finalize
 {
 	my ($self, $core) = @_;
 	if ($self->{signature}->matches($core, $self->{logger})) {
-		for my $i (@{$core->{list}}) {
-			$i->mark_ready;
+		for my $i (1 .. $core->prop->{jobs}) {
+			ref($core)->new($core->hostname, $core->prop)->mark_ready;
 		}
-	}
+		return 1;
+	} else {
+		return 0;
+    	}
 }
 
 # this is a weird one !
@@ -270,23 +373,35 @@ my $init = {};
 sub new
 {
 	my ($class, $host, $prop) = @_;
-	my $cloner;
-	if ($host eq "localhost" or $host eq DPB::Core::Local->host) {
-		$cloner = $init->{localhost} //= DPB::Core::Local->new_noreg($host, $prop);
+	if ($host eq "localhost" or $host eq DPB::Core::Local->hostname) {
+		return $init->{localhost} //= DPB::Core::Local->new_noreg($host, $prop);
 	} else {
 		require DPB::Core::Distant;
-		$cloner = $init->{$host} //= DPB::Core::Distant->new_noreg($host, $prop);
+		return $init->{$host} //= DPB::Core::Distant->new_noreg($host, $prop);
 	}
-	my $o = ref($cloner)->new($host, $prop);
-	push(@{$cloner->{list}}, $o);
-	return $o;
 }
 
 sub init_cores
 {
-	my ($self, $logger) = @_;
+	my ($self, $logger, $startup) = @_;
 	for my $core (values %$init) {
-		$core->start_job(DPB::Job::Init->new($logger));
+		my $job = DPB::Job::Init->new($logger);
+		if (!defined $core->prop->{jobs}) {
+			$job->add_tasks(DPB::Task::Ncpu->new);
+		}
+		if (defined $startup) {
+			$job->add_tasks(DPB::Task::Fork->new(
+				sub {
+					my $shell = shift;
+					if (defined $shell) {
+						$shell->run($startup);
+					} else {
+						exec{$startup}($startup);
+					}
+				}
+			));
+		}
+		$core->start_job($job);
 	}
 	$inited = 1;
 }
@@ -314,7 +429,7 @@ sub repository
 sub one_core
 {
 	my ($core, $time) = @_;
-	return $core->job->name." [$core->{pid}] on ".$core->host.
+	return $core->job->name." [$core->{pid}] on ".$core->hostname.
 	    $core->job->watched($time);
 }
 
@@ -367,7 +482,7 @@ sub running
 sub get
 {
 	if (@available > 1) {
-		@available = sort {$b->{sf} <=> $a->{sf}} @available;
+		@available = sort {$b->sf <=> $a->sf} @available;
 	}
 	return shift @available;
 }
@@ -379,7 +494,7 @@ sub all_sf
 	my $l = [];
 	for my $j (@all_cores) {
 		next unless $j->is_alive;
-		push(@$l, $j->{sf});
+		push(@$l, $j->sf);
 	}
 	return [sort {$a <=> $b} @$l];
 }
@@ -387,12 +502,8 @@ sub all_sf
 sub new
 {
 	my ($class, $host, $prop) = @_;
-	my $o = $class->SUPER::new($host);
-	$o->{sf} //= $prop->{sf};
-	$o->{sf} //= 1;
-	if (defined $prop->{memory}) {
-		$o->{memory} = $prop->{memory};
-	}
+	$prop->{sf} //= 1;
+	my $o = $class->SUPER::new($host, $prop);
 	push(@all_cores, $o);
 	return $o;
 }
@@ -400,7 +511,7 @@ sub new
 sub new_noreg
 {
 	my ($class, $host, $prop) = @_;
-	$class->SUPER::new($host);
+	$class->SUPER::new($host, $prop);
 }
 
 my $has_sf = 0;
@@ -412,15 +523,20 @@ sub has_sf
 
 sub parse_hosts_file
 {
-	my ($class, $filename, $arch, $timeout, $logger) = @_;
+	my ($class, $filename, $arch, $timeout, $logger, $heuristics) = @_;
 	open my $fh, '<', $filename or die "Can't read host files $filename\n";
 	my $_;
 	my $sf;
 	my $cores = {};
+	my $startup_script;
 	while (<$fh>) {
 		chomp;
 		s/\s*\#.*$//;
 		next if m/^$/;
+		if (m/^STARTUP=\s*(.*)\s*$/) {
+			$startup_script = $1;
+			next;
+		}
 		my $prop = {};
 		my ($host, @properties) = split(/\s+/, $_);
 		for my $_ (@properties) {
@@ -431,7 +547,6 @@ sub parse_hosts_file
 		if (defined $prop->{arch} && $prop->{arch} != $arch) {
 			next;
 		}
-		$prop->{jobs} //= 1;
 		if (defined $prop->{mem}) {
 			$prop->{memory} = $prop->{mem};
 		}
@@ -442,11 +557,9 @@ sub parse_hosts_file
 		if (defined $timeout) {
 			$prop->{timeout} //= $timeout;
 		}
-		for my $j (1 .. $prop->{jobs}) {
-			DPB::Core::Factory->new($host, $prop);
-	    	}
+		$heuristics->calibrate(DPB::Core::Factory->new($host, $prop));
 	}
-	DPB::Core::Factory->init_cores($logger);
+	DPB::Core::Factory->init_cores($logger, $startup_script);
 }
 
 sub start_pipe
@@ -466,7 +579,7 @@ package DPB::Core::Local;
 our @ISA = qw(DPB::Core);
 
 my $host;
-sub host
+sub hostname
 {
 	if (!defined $host) {
 		chomp($host = `hostname`);

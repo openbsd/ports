@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.3 2010/03/04 13:56:09 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.4 2010/03/20 18:29:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -53,8 +53,9 @@ sub check
 
 sub report
 {
-	my ($self, $v, $job, $host) = @_;
+	my ($self, $v, $job, $core) = @_;
 	my $pkgpath = $v->fullpkgpath;
+	my $host = $core->fullhostname;
 	my $sz = (stat $self->{logger}->log_pkgpath($v))[7];
 	my $log = $self->{global};
 	if (defined $job->{offset}) {
@@ -91,11 +92,11 @@ sub build
 	my $log = $self->{logger}->make_logs($v);
 	my $job;
 	$job = DPB::Job::Port->new($log, $v, $self, $special,
-	    sub {$self->end_lock($lock, $core); $self->report($v, $job, $core->host); &$final_sub;});
+	    sub {$self->end_lock($lock, $core); $self->report($v, $job, $core); &$final_sub;});
 	$core->start_job($job, $v);
 #	(sub {
 #	}, 	$v, " (".$self->{heuristics}->measure($v).")");
-	print $lock "host=", $core->host, "\n";
+	print $lock "host=", $core->hostname, "\n";
 	print $lock "pid=$core->{pid}\n";
 	print $lock "start=$start (", DPB::Util->time2string($start), ")\n";
 	$job->set_watch($self->{logger}, $v);

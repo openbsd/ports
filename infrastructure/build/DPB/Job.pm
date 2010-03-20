@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.3 2010/03/01 17:59:49 espie Exp $
+# $OpenBSD: Job.pm,v 1.4 2010/03/20 18:29:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -98,6 +98,12 @@ sub watched
 {
 	my $self = shift;
 	return $self->{status};
+}
+
+sub add_tasks
+{
+	my ($self, @tasks) = @_;
+	push(@{$self->{tasks}}, @tasks);
 }
 
 sub really_watch

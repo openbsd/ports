@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.7 2010/03/04 14:23:01 espie Exp $
+# $OpenBSD: dpb3,v 1.8 2010/03/20 18:29:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -80,7 +80,7 @@ sub parse_build_file
 	while (<$fh>) {
 		chomp;
 		my ($pkgpath, $host, $time, $sz, @rest) = parse_build_line($_);
-		$sz =~ s/!$//;
+		next if $sz =~ m/!$/;
 		my $o = DPB::PkgPath->new_hidden($pkgpath);
 		for my $c (@consumers) {
 			$c->add_build_info($o, $host, $time, $sz);
@@ -88,7 +88,7 @@ sub parse_build_file
 	}
 }
 
-my $parsed = 0;
+my @build_files = ();
 my $heuristics = DPB::Heuristics->new;
 set_usage("dpb3 [-acersx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir] [-b log] ",
 	"[-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
@@ -105,8 +105,7 @@ getopts('acersh:xA:f:j:m:P:b:L:S:t:T:', {
 		}
 	    },
 	    b => sub {
-	    	parse_build_file(shift, $heuristics, "DPB::Job::Port");
-		$parsed = 1;
+	    	push(@build_files, shift);
 	    },
 	    S => sub {
 	    	parse_size_file(shift, $heuristics);
@@ -119,9 +118,6 @@ getopts('acersh:xA:f:j:m:P:b:L:S:t:T:', {
 
 if ($opt_r) {
 	$heuristics->random;
-}
-if ($parsed) {
-	$heuristics->finished_parsing;
 }
 if ($opt_m) {
 	$heuristics->set_threshold($opt_m);
@@ -149,8 +145,7 @@ my ($ports, $repo, $localarch, $distdir) = DPB::Vars->get($make,
     "PORTSDIR", "PACKAGE_REPOSITORY", "MACHINE_ARCH", "DISTDIR");
 
 my $arch = $opt_A // $localarch;
-$opt_A //= '';
-my $logdir = $opt_L // $ENV{LOGDIR} // "$ports/logs/$opt_A";
+my $logdir = $opt_L // $ENV{LOGDIR} // "$ports/logs/$arch";
 my $lockdir = "$logdir/locks";
 
 my $logger = DPB::Logger->new($logdir, $opt_c);
@@ -166,7 +161,7 @@ if (defined $opt_j && $opt_j !~ m/^\d+$/) {
 
 my $fullrepo = "$repo/$arch/all";
 if ($opt_h) {
-	DPB::Core->parse_hosts_file($opt_h, $arch, $opt_t, $logger);
+	DPB::Core->parse_hosts_file($opt_h, $arch, $opt_t, $logger, $heuristics);
 } else {
 	$opt_j //= `sysctl -n hw.ncpu`;
 	chomp($opt_j);
@@ -177,12 +172,20 @@ for (1 .. $opt_j) {
 	DPB::Core::Factory->new('localhost');
 }
 
+if (@build_files > 0) {
+	for my $file (@build_files) {
+	    parse_build_file($file, $heuristics, "DPB::Job::Port");
+	}
+	$heuristics->finished_parsing;
+}
+
 my $builder = DPB::PortBuilder->new(
     $opt_c, $opt_s, $fullrepo, $logger, $ports, $make, $heuristics);
 
 my $locker = DPB::Locks->new($lockdir);
 my $engine = DPB::Engine->new($builder, $heuristics, $logger, $locker);
-my $reporter = DPB::Reporter->new($opt_x, "DPB::Core", "DPB::Vars", $engine);
+my $reporter = DPB::Reporter->new($opt_x, $heuristics, "DPB::Core", 
+    "DPB::Vars", $engine);
 while (!DPB::Core->avail) {
 	DPB::Core->reap;
 	sleep 1;
@@ -283,7 +286,10 @@ DPB::Core->start_clock($opt_T);
 while (1) {
 	handle_non_waiting_jobs(0);
 	if (!DPB::Core->running && (!$keep_going || !$engine->can_build)) {
-		last;
+		$engine->check_buildable;
+		if (!$engine->can_build) {
+			last;
+		}
 	}
 	if (DPB::Core->running) {
 		DPB::Core->reap_wait;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.7 2010/03/05 07:50:15 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.8 2010/03/20 18:29:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -46,34 +46,12 @@ sub stopped
 }
 
 package DPB::Reporter;
+my $singleton;
 
-my $width;
-my $wsz_format = 'SSSS';
-our %sizeof;
-
-sub find_window_size
-{
-	my $self = shift;
-	# try to get exact window width
-	my $r;
-	$r = pack($wsz_format, 0, 0, 0, 0);
-	$sizeof{'struct winsize'} = 8;
-	require 'sys/ttycom.ph';
-	$width = 80;
-	if (ioctl(STDOUT, &TIOCGWINSZ, $r)) {
-		my ($rows, $cols, $xpix, $ypix) = 
-		    unpack($wsz_format, $r);
-		$self->{width} = $cols;
-		$self->{height} = $rows;
-	}
-}
+sub ttyclass() 	{ "DPB::Reporter::Tty" }
 
 sub term_send
 {
-	my ($self, $seq) = @_;
-	if (defined $self->{terminal}) {
-		$self->{terminal}->Tputs($seq, 1, \*STDOUT);
-	}
 }
 
 sub reset_cursor
@@ -108,22 +86,112 @@ sub set_sigtstp
 	};
 }
 
-
 sub set_sig_handlers
 {
 	my $self = shift;
-	$SIG{'WINCH'} = sub {
-		$self->find_window_size;
-		$self->{write} = 'go_write_home';
-	};
 	$self->set_sigtstp;
 	$SIG{'CONT'} = sub {
 		$self->set_sigtstp;
 		$self->{continued} = 1;
-		$self->set_cursor;
-		$self->find_window_size;
-		$self->{write} = 'go_write_home';
 		DPB::Clock->stopped(time() - $stopped_clock);
+		$self->handle_window;
+	};
+}
+
+sub handle_window
+{
+}
+
+sub filter_can
+{
+	my ($self, $r, $method) = @_;
+	my @kept = ();
+	for my $prod (@$r) {
+		push @kept, $prod if $prod->can($method);
+	}
+	return \@kept;
+}
+
+sub new
+{
+	my $class = shift;
+	my $notty = shift;
+	my $isatty = !$notty && -t STDOUT;
+	if ($isatty) {
+		$class->ttyclass->new(@_);
+	} else {
+		$singleton //= bless {msg => '', tty => $isatty,
+		    producers => $class->filter_can(\@_, 'important'), 
+		    continued => 0}, $class;
+	}
+}
+
+sub report
+{
+	my $self = shift;
+	for my $prod (@{$self->{producers}}) {
+		my $important = $prod->important;
+		if ($important) {
+			print $important;
+		}
+	}
+}
+
+sub myprint
+{
+	my $self = shift;
+	if (!ref $self) {
+		$singleton->myprint(@_);
+	} else {
+		print @_;
+	}
+}
+
+package DPB::Reporter::Tty;
+our @ISA = qw(DPB::Reporter);
+
+my $extra = '';
+my $width;
+my $wsz_format = 'SSSS';
+our %sizeof;
+
+sub find_window_size
+{
+	my $self = shift;
+	# try to get exact window width
+	my $r;
+	$r = pack($wsz_format, 0, 0, 0, 0);
+	$sizeof{'struct winsize'} = 8;
+	require 'sys/ttycom.ph';
+	$width = 80;
+	if (ioctl(STDOUT, &TIOCGWINSZ, $r)) {
+		my ($rows, $cols, $xpix, $ypix) = 
+		    unpack($wsz_format, $r);
+		$self->{width} = $cols;
+		$self->{height} = $rows;
+	}
+}
+
+sub term_send
+{
+	my ($self, $seq) = @_;
+	$self->{terminal}->Tputs($seq, 1, \*STDOUT);
+}
+
+sub handle_window
+{
+	my $self = shift;
+	$self->set_cursor;
+	$self->find_window_size;
+	$self->{write} = 'go_write_home';
+}
+
+sub set_sig_handlers
+{
+	my $self = shift;
+	$self->SUPER::set_sig_handlers;
+	$SIG{'WINCH'} = sub {
+		$self->handle_window;
 	};
 	OpenBSD::Handler->register(sub {
 		$self->reset_cursor; });
@@ -132,54 +200,37 @@ sub set_sig_handlers
 	};
 }
 
-my $extra = '';
-my $isatty;
-my $interrupted;
 sub new
 {
 	my $class = shift;
-	my $notty = shift;
-	$isatty = !$notty && -t STDOUT;
-	my $self = bless {msg => '', tty => $isatty,
-	    producers => \@_, continued => 0}, $class;
-	if ($isatty) {
-		my $oldfh = select(STDOUT);
-		$| = 1;
-		# XXX go back to totally non-buffered raw shit
-		binmode(STDOUT, ':pop');
-		select($oldfh);
-		use POSIX;
-		my $termios = POSIX::Termios->new;
-		$termios->getattr(0);
-		$self->{terminal} = Term::Cap->Tgetent({ OSPEED => 
-		    $termios->getospeed });
-		$self->find_window_size;
-		$self->set_sig_handlers;
-		$self->{home} = $self->{terminal}->Tputs("ho", 1);
-		$self->{clear} = $self->{terminal}->Tputs("cl", 1);
-		$self->{down} = $self->{terminal}->Tputs("do", 1);
-		$self->{glitch} = $self->{terminal}->Tputs("xn", 1);
-		if ($self->{home}) {
-			$self->{write} = "go_write_home";
-		} else {
-			$self->{write} = "write_clear";
-		}
-		# no cursor, to avoid flickering
-		$self->set_cursor;
+	$singleton //= bless {msg => '', 
+	    producers => $class->filter_can(\@_, 'report'), 
+	    continued => 0}, $class;
+	my $oldfh = select(STDOUT);
+	$| = 1;
+	# XXX go back to totally non-buffered raw shit
+	binmode(STDOUT, ':pop');
+	select($oldfh);
+	use POSIX;
+	my $termios = POSIX::Termios->new;
+	$termios->getattr(0);
+	$singleton->{terminal} = Term::Cap->Tgetent({ OSPEED => 
+	    $termios->getospeed });
+	$singleton->find_window_size;
+	$singleton->set_sig_handlers;
+	$singleton->{home} = $singleton->{terminal}->Tputs("ho", 1);
+	$singleton->{clear} = $singleton->{terminal}->Tputs("cl", 1);
+	$singleton->{down} = $singleton->{terminal}->Tputs("do", 1);
+	$singleton->{glitch} = $singleton->{terminal}->Tputs("xn", 1);
+	$singleton->{cleareol} = $singleton->{terminal}-Tputs("", 1);
+	if ($singleton->{home}) {
+		$singleton->{write} = "go_write_home";
 	} else {
-		$self->{write} = "no_write";
+		$singleton->{write} = "write_clear";
 	}
-
-	$SIG{INFO} = sub { 
-	#	use Carp;
-	#	Carp::cluck();
-	#	print $self->{msg}; 
-	#	if ($self->{write} eq 'write_home') {
-	#		$self->{write} = 'go_write_home';
-	#	}
-		$interrupted++;
-	};
-	return $self;
+	# no cursor, to avoid flickering
+	$singleton->set_cursor;
+	return $singleton;
 }
 
 sub write_clear
@@ -267,29 +318,12 @@ sub go_write_home
 	$self->{write} = 'write_home';
 }
 
-sub no_write
-{
-}
-
 sub report
 {
 	my $self = shift;
-	my $msg = DPB::Util->time2string(time)." [$$]\n";
+	my $msg = ""; 
 	for my $prod (@{$self->{producers}}) {
 		$msg.= $prod->report;
-	}
-	if ($interrupted) {
-		$interrupted = 0;
-		$self->reset_cursor;
-		$DB::single = 1;
-	}
-	if (!$self->{tty}) {
-		for my $prod (@{$self->{producers}}) {
-			my $important = $prod->important;
-			if ($important) {
-				print $important;
-			}
-		}
 	}
 	$msg .= $extra;
 	if ($msg ne $self->{msg} || $self->{continued}) {
@@ -303,12 +337,8 @@ sub report
 sub myprint
 {
 	my $self = shift;
-	if ($isatty) {
-		for my $string (@_) {
-			$extra .= $string;
-		}
-	} else {
-		print @_;
+	for my $string (@_) {
+		$extra .= $string;
 	}
 }
 

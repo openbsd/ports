@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.4 2010/03/04 13:51:48 espie Exp $
+# $OpenBSD: Signature.pm,v 1.5 2010/03/20 18:29:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -101,7 +101,7 @@ sub add_tasks
 	my ($class, $job) = @_;
 	$job->{signature} = $class->new;
 	for my $base (OpenBSD::Paths->library_dirs) {
-		push(@{$job->{tasks}}, 
+		$job->add_tasks(
 		    DPB::Signature::Task->new($job->{signature}, $base));
 	}
 }
@@ -124,7 +124,7 @@ my $ref;
 sub matches
 {
 	my ($self, $core, $logger) = @_;
-	$self->{host} = $core->host;
+	$self->{host} = $core->hostname;
 	if (!defined $ref) {
 		$ref = $self;
 		return 1;

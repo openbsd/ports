@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.3 2010/03/04 13:56:09 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.4 2010/03/20 18:29:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,7 +25,7 @@ package DPB::Heuristics;
 # for now, we don't create a separate object, we assume everything here is 
 # "global"
 
-my (%weight, %wrkdir, %needed_by);
+my (%weight, %bad_weight, %wrkdir, %needed_by);
 
 sub new
 {
@@ -45,12 +45,18 @@ sub set_logger
 	$self->{logger} = $logger;
 }
 
-# we set the "unknown" weight as max weight if we parsed a file.
+# we set the "unknown" weight as median if we parsed a file.
 my $default = 1;
+my $has_build_info;
 
 sub finished_parsing
 {
 	my $self = shift;
+	if ($has_build_info == 1) {
+		while (my ($k, $v) = each %bad_weight) {
+			$self->set_weight($k, $v);
+		}
+	}
 	my @l = sort values %weight;
 	$default = $l[@l/2];
 }
@@ -71,26 +77,44 @@ sub set_threshold
 sub add_size_info
 {
 	my ($self, $path, $sz) = @_;
-	$wrkdir{$path} = $sz;
+	$wrkdir{$path->pkgpath_and_flavors} = $sz;
 }
+
+my $used_memory = {};
+my $used_per_host = {};
 
 sub special_parameters
 {
-	my ($self, $core, $v) = @_;
-	my $t = $core->{memory} // $threshold;
+	my ($self, $host, $v) = @_;
+	my $t = $host->{prop}->{memory} // $threshold;
+	my $p = $v->pkgpath_and_flavors;
 	# we build in memory if we know this port and it's light enough
-	if (!defined $t || !defined $wrkdir{$v} || $wrkdir{$v} > $t) {
-		return 0;
-	} else {
-		return 1;
+	if (defined $t && defined $wrkdir{$p}) {
+		my $hostname = $host->name;
+		$used_per_host->{$hostname} //= 0;
+		if ($used_per_host->{$hostname} + $wrkdir{$p} <= $t) {
+			$used_per_host->{$hostname} += $wrkdir{$p};
+			$used_memory->{$p} = $hostname;
+			return 1;
+		}
 	}
+	return 0;
 }
 
+sub finish_special
+{
+	my ($self, $v) = @_;
+	my $p = $v->pkgpath_and_flavors;
+	if (defined $used_memory->{$p}) {
+		my $hostname = $used_memory->{$p};
+		$used_per_host->{$hostname} -= $wrkdir{$p};
+	}
+}
 
 sub set_weight
 {
 	my ($self, $v, $w) = @_;
-	$weight{$v} = $w + 0;
+	$weight{$v} //= $w + 0;
 }
 
 my $cache;
@@ -139,13 +163,31 @@ sub compare
 	return $a->fullpkgpath cmp $b->fullpkgpath;
 }
 
-my $has_build_info;
+my $sf_per_host = {};
+my $max_sf;
+
+sub calibrate
+{
+	my ($self, $core) = @_;
+	$sf_per_host->{$core->fullhostname} = $core->sf;
+	$max_sf //= $core->sf;
+	if ($core->sf > $max_sf) {
+		$max_sf = $core->sf;
+	}
+}
 
 sub add_build_info
 {
 	my ($self, $pkgpath, $host, $time, $sz) = @_;
-	$self->set_weight($pkgpath, $time);
-	$has_build_info = 1;
+	if (defined $sf_per_host->{$host}) {
+		$time *= $sf_per_host->{$host};
+		$time /= $max_sf;
+		$self->set_weight($pkgpath, $time);
+		$has_build_info = 2;
+	} else {
+		$bad_weight{$pkgpath} //= $time;
+		$has_build_info //= 1;
+	}
 }
 
 sub compare_weights
@@ -162,6 +204,45 @@ sub new_queue
 	} else {
 		return DPB::Heuristics::Queue->new($self);
 	}
+}
+
+# this specific stuff keeps track of the time we need to do stuff
+my $todo = {};
+my $total = 0;
+
+sub todo
+{
+	my ($self, $path) = @_;
+	my $p = $path->pkgpath_and_flavors;
+	if (!defined $todo->{$p}) {
+		$todo->{$p} = 1;
+		$total += $self->intrinsic_weight($p);
+	}
+}
+
+sub done
+{
+	my ($self, $path) = @_;
+	my $p = $path->pkgpath_and_flavors;
+	if (defined $todo->{$p}) {
+		delete $todo->{$p};
+		$total -= $self->intrinsic_weight($p);
+	}
+}
+
+sub report
+{
+	my $time = time;
+	return DPB::Util->time2string($time)." [$$]\n";
+	# okay, I need to sit down and do the actual computation, sigh.
+	my $all = DPB::Core->all_sf;
+	my $sum_sf = 0;
+	for my $sf (@$all) {
+		$sum_sf += $sf;
+	}
+
+	return scalar(keys %$todo)." ".$total*$max_sf." $sum_sf\n".DPB::Util->time2string($time)." -> ". 
+		DPB::Util->time2string($time+$total*$max_sf*$max_sf/$sum_sf)." [$$]\n";
 }
 
 package DPB::Heuristics::SimpleSorter;
@@ -316,11 +397,11 @@ sub sorted
 {
 	my ($self, $core) = @_;
 	my $all = DPB::Core->all_sf;
-	if ($core->{sf} > $all->[-1] - 1) {
+	if ($core->sf > $all->[-1] - 1) {
 		return $self->SUPER::sorted($core);
 	} else {
-		my $want = $self->bin_part($core->{sf}, DPB::Core->all_sf);
-		return DPB::Heuristics::Sorter->new($want);
+		return DPB::Heuristics::Sorter->new($self->bin_part($core->sf, 
+		    $all));
 	}
 }
 
