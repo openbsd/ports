@@ -1,10 +1,10 @@
-$OpenBSD: patch-dbus_dbus-gvalue_c,v 1.1 2009/11/09 10:00:20 phessler Exp $
+$OpenBSD: patch-dbus_dbus-gvalue_c,v 1.2 2010/03/20 16:55:56 ajacoutot Exp $
 
 fixes compile on gcc2.95 arches
 
---- dbus/dbus-gvalue.c.orig	Sun Nov  8 23:51:25 2009
-+++ dbus/dbus-gvalue.c	Sun Nov  8 23:52:07 2009
-@@ -803,10 +803,11 @@ demarshal_strv (DBusGValueMarshalCtx    *context,
+--- dbus/dbus-gvalue.c.orig	Wed Jan 27 19:46:40 2010
++++ dbus/dbus-gvalue.c	Sun Jan 31 09:24:25 2010
+@@ -802,10 +802,11 @@ demarshal_strv (DBusGValueMarshalCtx    *context,
  
    while ((current_type = dbus_message_iter_get_arg_type (&subiter)) != DBUS_TYPE_INVALID)
      {
