@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/01/10 21:07:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/03/20 16:58:11 jasper Exp $
 %%SHARED%%
 @bin bin/sawfish
 bin/sawfish-client
@@ -207,6 +207,8 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/commands/grow-pack.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/commands/grow-pack.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/commands/help.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/commands/help.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/commands/jump-or-exec.jl
+share/sawfish/${VERSION}/lisp/sawfish/wm/commands/jump-or-exec.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/commands/launcher.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/commands/launcher.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/commands/move-cursor.jl

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.41 2010/01/27 21:43:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2010/03/20 16:58:11 jasper Exp $
 
 COMMENT=	extensible window manager
 
-VERSION=	1.6.1
+VERSION=	1.6.2
 DISTNAME=	sawfish-${VERSION}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sawmill/}
+MASTER_SITES=	http://download.tuxfamily.org/sawfish/sawfish/
 EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=       http://sawfish.wikia.com/
+HOMEPAGE=	http://sawfish.wikia.com/
 
 # GPLv2
 # Sounds: Artistic License 2.0
