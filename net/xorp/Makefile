@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2009/01/15 10:14:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/03/20 23:09:28 sthen Exp $
 
 COMMENT-main=	eXtensible Open Router Platform
 
@@ -8,7 +8,7 @@ PKGNAME-main=	${DISTNAME}
 CATEGORIES=	net
 HOMEPAGE=	http://www.xorp.org/
 
-# BSD
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
