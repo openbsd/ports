@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/19 00:23:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/03/20 23:26:11 sthen Exp $
 
 COMMENT =		simple distributed software configuration management 
 
-VERSION =		20091218002951
+VERSION =		20100318142033
 DISTNAME =		fossil-src-${VERSION}
 PKGNAME =		fossil-${VERSION}
 CATEGORIES =		devel www
@@ -26,7 +26,7 @@ FLAVOR?=
 MAKE_FLAGS =		LDFLAGS="-static"
 .endif
 
-WANTLIB =		c z
+WANTLIB =		c crypto ssl z
 
 MODULES =		lang/tcl
 RUN_DEPENDS =		:gnupg-*:security/gnupg
