@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 20:59:38 merdely Exp $
+# $OpenBSD: Makefile,v 1.20 2010/03/20 16:49:22 jasper Exp $
 
 COMMENT=	text search engine by CNIDR
 
 #BROKEN=		C++ syntax errors, index.cxx:533: ANSI C++ forbids declaration PhraseLength with no type
 
 DISTNAME=	Isearch-1.14
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	textproc databases
 
 # License: BSD
@@ -24,9 +24,6 @@ FAKE_FLAGS=		INSTALL=${WRKINST}${PREFIX}/bin
 NO_REGRESS=	Yes
 
 post-install:
-	strip ${PREFIX}/bin/Isearch
-	strip ${PREFIX}/bin/Iindex
-	strip ${PREFIX}/bin/Iutil
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/Isearch
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${PREFIX}/share/doc/Isearch
 
