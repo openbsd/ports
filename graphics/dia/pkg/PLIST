@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2009/12/22 16:06:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2010/03/20 16:53:22 ajacoutot Exp $
 %%SHARED%%
 @bin bin/dia
 lib/dia/
@@ -1772,6 +1772,7 @@ share/locale/be/LC_MESSAGES/dia.mo
 share/locale/bg/LC_MESSAGES/dia.mo
 share/locale/bs/LC_MESSAGES/dia.mo
 share/locale/ca/LC_MESSAGES/dia.mo
+share/locale/ca@valencia/LC_MESSAGES/dia.mo
 share/locale/cs/LC_MESSAGES/dia.mo
 share/locale/da/LC_MESSAGES/dia.mo
 share/locale/de/LC_MESSAGES/dia.mo
@@ -1806,6 +1807,7 @@ share/locale/ne/LC_MESSAGES/dia.mo
 share/locale/nl/LC_MESSAGES/dia.mo
 share/locale/nn/LC_MESSAGES/dia.mo
 share/locale/oc/LC_MESSAGES/dia.mo
+share/locale/or/LC_MESSAGES/dia.mo
 share/locale/pa/LC_MESSAGES/dia.mo
 share/locale/pl/LC_MESSAGES/dia.mo
 share/locale/pt/LC_MESSAGES/dia.mo
@@ -1817,8 +1819,11 @@ share/locale/sk/LC_MESSAGES/dia.mo
 share/locale/sl/LC_MESSAGES/dia.mo
 share/locale/sq/LC_MESSAGES/dia.mo
 share/locale/sr/LC_MESSAGES/dia.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/dia.mo
 share/locale/sv/LC_MESSAGES/dia.mo
+share/locale/ta/LC_MESSAGES/dia.mo
 share/locale/th/LC_MESSAGES/dia.mo
 share/locale/tr/LC_MESSAGES/dia.mo
 share/locale/uk/LC_MESSAGES/dia.mo
@@ -1830,6 +1835,7 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 @comment share/man/fr/
 @comment share/man/fr/man1/
 @comment @man share/man/fr/man1/dia.1
+share/mime-info/
 share/mime-info/dia.keys
 share/mime-info/dia.mime
 @exec %D/bin/update-desktop-database

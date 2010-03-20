@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2009/12/22 16:06:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2010/03/20 16:53:22 ajacoutot Exp $
 
 COMMENT=	technical diagrams drawing tool
 
 GNOME_PROJECT=	dia
-GNOME_VERSION=	0.97
-PKGNAME=	${DISTNAME}p2
+GNOME_VERSION=	0.97.1
 
 CATEGORIES=	graphics
 

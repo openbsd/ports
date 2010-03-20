@@ -1,6 +1,6 @@
-$OpenBSD: patch-app_commands_c,v 1.5 2009/06/01 21:17:39 ajacoutot Exp $
---- app/commands.c.orig	Sun Mar  8 13:38:35 2009
-+++ app/commands.c	Tue Apr 14 22:57:59 2009
+$OpenBSD: patch-app_commands_c,v 1.6 2010/03/20 16:53:22 ajacoutot Exp $
+--- app/commands.c.orig	Sat Nov  7 18:13:53 2009
++++ app/commands.c	Sun Jan 24 20:14:59 2010
 @@ -641,7 +641,7 @@ help_manual_callback (GtkAction *action)
    const char *dentry;
    GError *error = NULL;
@@ -10,21 +10,3 @@ $OpenBSD: patch-app_commands_c,v 1.5 2009/06/01 21:17:39 ajacoutot Exp $
    if (!helpdir) {
      message_warning(_("Could not find help directory"));
      return;
-@@ -690,7 +690,7 @@ help_manual_callback (GtkAction *action)
-   ShellExecuteA (0, "open", helpindex, NULL, helpdir, SW_SHOWNORMAL);
- #else
-   command = getenv("BROWSER");
--  command = g_strdup_printf("%s 'file://%s' &", command ? command : "gnome-open", helpindex);
-+  command = g_strdup_printf("%s 'file://%s' &", command ? command : "xdg-open", helpindex);
-   system(command);
-   g_free(command);
- #endif
-@@ -708,7 +708,7 @@ activate_url (GtkAboutDialog *about,
-   ShellExecuteA (0, "open", link, NULL, NULL, SW_SHOWNORMAL);
- #else
-   gchar *command = getenv("BROWSER");
--  command = g_strdup_printf("%s '%s' &", command ? command : "gnome-open", link);
-+  command = g_strdup_printf("%s '%s' &", command ? command : "xdg-open", link);
-   system(command);
-   g_free(command);
- #endif

@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_eu_Makefile_in,v 1.4 2009/06/01 21:17:39 ajacoutot Exp $
---- doc/eu/Makefile.in.orig	Sun May  3 20:12:41 2009
-+++ doc/eu/Makefile.in	Mon May  4 10:23:37 2009
-@@ -865,7 +865,7 @@ clean-local-xml: clean-local-omf
+$OpenBSD: patch-doc_eu_Makefile_in,v 1.5 2010/03/20 16:53:22 ajacoutot Exp $
+--- doc/eu/Makefile.in.orig	Sun Jan 24 19:46:55 2010
++++ doc/eu/Makefile.in	Sun Jan 24 20:14:59 2010
+@@ -871,7 +871,7 @@ clean-local-xml: clean-local-omf
  
  dist-hook: app-dist-hook
  @HAVE_DB2MAN_TRUE@dia.1: dia.dbk
