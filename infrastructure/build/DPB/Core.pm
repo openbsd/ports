@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.6 2010/03/20 18:29:18 espie Exp $
+# $OpenBSD: Core.pm,v 1.7 2010/03/21 19:43:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,7 +25,7 @@ my $hosts = {};
 sub new
 {
 	my ($class, $name, $prop) = @_;
-	$hosts->{$name} //= bless {host => $name, prop => $prop}, $class;
+	$hosts->{$name} //= bless {host => $name, prop => $prop // {} }, $class;
 }
 
 sub name
