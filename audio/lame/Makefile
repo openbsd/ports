@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.39 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.40 2010/03/21 10:31:05 ajacoutot Exp $
 
 COMMENT-main=	lame ain't an MP3 encoder
 COMMENT-mp3x=	gtk frame analyzer
 
-V=		3.98.2
-DISTNAME=	lame-398-2
-PKGNAME-main=	lame-${V}
-PKGNAME-mp3x=	lame-mp3x-${V}p0
+V=		3.98.3
+DISTNAME=	lame-${V}
+PKGNAME-main=	${DISTNAME}
+PKGNAME-mp3x=	lame-mp3x-${V}
 
 SHARED_LIBS=	mp3lame	2.0	# .0.1
 
