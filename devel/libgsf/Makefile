@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.44 2009/10/13 09:13:25 phessler Exp $
+# $OpenBSD: Makefile,v 1.45 2010/03/21 09:59:45 ajacoutot Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
 
 GNOME_PROJECT=		libgsf
-GNOME_VERSION=		1.14.16
+GNOME_VERSION=		1.14.17
 
-PKGNAME-main=		${DISTNAME}p0
-PKGNAME-gnome=		libgsf-gnome-${VERSION}p1
+PKGNAME-main=		${DISTNAME}
+PKGNAME-gnome=		libgsf-gnome-${VERSION}
 
 CATEGORIES=		devel
 
@@ -27,7 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-main -gnome
 
-WANTLIB=		c m z pcre
+WANTLIB += c m z pcre
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -49,6 +49,7 @@ MODGCONF2_SCHEMAS_DIR=	libgsf
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-bz2 \
+			--with-gio \
 			--with-python
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -58,14 +59,9 @@ MAKE_ENV+=		GCONF2_SCHEMAS_DIR="${LOCALBASE}/${SCHEMAS_INSTDIR}"
 RUN_DEPENDS-gnome=	${RUN_DEPENDS} \
 			${MODGCONF2_RUN_DEPENDS}
 LIB_DEPENDS-gnome=	${LIB_DEPENDS} \
-			${MODGCONF2_LIB_DEPENDS} \
 			gsf-1::${BUILD_PKGPATH} \
-			gnomevfs-2.>=1800:gnome-vfs2->=2.18:x11/gnome/vfs2 \
 			bonobo-2,bonobo-activation::x11/gnome/libbonobo
-WANTLIB-gnome=		${WANTLIB} crypto ssl ORBit-2 ORBitCosNaming-2 \
-			avahi-client avahi-common avahi-glib \
-			bonobo-activation gobject-2.0 gthread-2.0 util xml2 \
-			bz2 dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 \
-			gdk_pixbuf-2.0
+WANTLIB-gnome += ${WANTLIB}
+WANTLIB-gnome += ORBit-2 ORBitCosNaming-2 gdk_pixbuf-2.0 gthread-2.0
 
 .include <bsd.port.mk>

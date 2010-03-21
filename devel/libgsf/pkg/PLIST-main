@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2009/10/12 10:19:33 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2010/03/21 09:59:45 ajacoutot Exp $
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
 %%SHARED%%
@@ -115,9 +115,12 @@ share/locale/eu/LC_MESSAGES/libgsf.mo
 share/locale/fr/LC_MESSAGES/libgsf.mo
 share/locale/nb/LC_MESSAGES/libgsf.mo
 share/locale/oc/LC_MESSAGES/libgsf.mo
+share/locale/pa/LC_MESSAGES/libgsf.mo
 share/locale/pt/LC_MESSAGES/libgsf.mo
 share/locale/pt_BR/LC_MESSAGES/libgsf.mo
+share/locale/sl/LC_MESSAGES/libgsf.mo
 share/locale/sv/LC_MESSAGES/libgsf.mo
+share/locale/zh_CN/LC_MESSAGES/libgsf.mo
 share/locale/zh_HK/LC_MESSAGES/libgsf.mo
 share/locale/zh_TW/LC_MESSAGES/libgsf.mo
 share/schemas/
