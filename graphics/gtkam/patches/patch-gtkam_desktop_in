@@ -1,0 +1,13 @@
+$OpenBSD: patch-gtkam_desktop_in,v 1.1 2010/03/21 09:43:33 ajacoutot Exp $
+--- gtkam.desktop.in.orig	Fri Feb 26 10:26:03 2010
++++ gtkam.desktop.in	Fri Feb 26 10:26:09 2010
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+-_Name=Gtkam Digital Camera Browser
+-_Comment=Browse and download images from an attached digital camera
++Name=Gtkam Digital Camera Browser
++Comment=Browse and download images from an attached digital camera
+ Exec=gtkam
+ Icon=gtkam-camera.png
+ Terminal=false
