@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2010/02/25 09:05:04 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2010/03/21 09:05:55 robert Exp $
 @conflict php4-core-*
 @pkgpath www/php5/core
 @pkgpath www/php5/core,hardened
@@ -130,6 +130,8 @@ share/php5/include/ext/iconv/php_iconv.h
 share/php5/include/ext/iconv/php_iconv_supports_errno.h
 share/php5/include/ext/iconv/php_php_iconv_h_path.h
 share/php5/include/ext/iconv/php_php_iconv_impl.h
+share/php5/include/ext/json/
+share/php5/include/ext/json/php_json.h
 share/php5/include/ext/libxml/
 share/php5/include/ext/libxml/php_libxml.h
 share/php5/include/ext/pcre/
