@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2009/12/21 21:03:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/03/21 11:02:02 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	personal and small-business financial-accounting software
 
 GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.2.9
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS +=	gnc-backend-file-utils	0.0	# .0.0
 SHARED_LIBS +=	gnc-business-ledger	0.0	# .0.0
@@ -55,7 +55,7 @@ BUILD_DEPENDS =	::devel/slib \
 RUN_DEPENDS =	::devel/slib \
 		::devel/slib-guile \
 		::productivity/gnucash-docs
-LIB_DEPENDS =	goffice-0.6::devel/goffice \
+LIB_DEPENDS =	goffice-0.8::devel/goffice \
 		guile::lang/guile \
 		gtkhtml-3.14::www/gtkhtml3
 
