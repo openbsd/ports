@@ -1,21 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/01/10 00:30:23 jcs Exp $
-bin/aemenu
-bin/aemenu-gtk
-bin/aemenu-xaw
-bin/aepanel
-bin/aepanel-gtk
-bin/aepanel-xaw
-bin/aesession
-bin/aewm
-bin/switch-desk
+@comment $OpenBSD: PLIST,v 1.5 2010/03/21 09:27:25 jasper Exp $
+@bin bin/aedesk
+@bin bin/aemenu
+@bin bin/aepanel
+@bin bin/aesession
+@bin bin/aewm
 @man man/man1/aeclients.1x
-@man man/man1/aemenu-gtk.1x
-@man man/man1/aemenu-xaw.1x
-@man man/man1/aepanel-gtk.1x
-@man man/man1/aepanel-xaw.1x
-@man man/man1/aesession.1x
+@man man/man1/aedesk.1x.gz
+@man man/man1/aemenu.1x.gz
+@man man/man1/aepanel.1x.gz
+@man man/man1/aesession.1x.gz
 @man man/man1/aewm.1x
-@man man/man1/switch-desk.1x
 share/examples/aewm/
 share/examples/aewm/aewmrc
 share/examples/aewm/clientsrc
