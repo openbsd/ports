@@ -1,0 +1,8 @@
+To add a CUPS printer, use the 'hp-makeuri' command.
+e.g. for a network printer:
+$ hp-makeuri 192.168.10.100
+<...>
+CUPS URI: hp:/net/HP_LaserJet_5100_Series?ip=192.168.10.100
+
+Then in the CUPS interface, add an 'HP Printer (HPLIP)' entry with the
+corresponding URI.

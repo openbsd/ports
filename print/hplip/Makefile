@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/01/10 18:09:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/03/21 11:07:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,21 +8,23 @@ COMMENT-hpcups=	HP native CUPS driver
 COMMENT-libs=	HPLIP backend libraries
 COMMENT-gui=	HPLIP graphical tools
 
-V=		3.9.8
+V=		3.10.2
 DISTNAME=	hplip-${V}
 
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-hpijs=	hpijs-${V}p1
-PKGNAME-hpcups=	hpcups-${V}p1
-PKGNAME-libs=	hplip-libs-${V}p0
-PKGNAME-gui=	hplip-gui-${V}p0
+PKGNAME-main=	${DISTNAME}
+PKGNAME-hpijs=	hpijs-${V}
+PKGNAME-hpcups=	hpcups-${V}
+PKGNAME-libs=	hplip-libs-${V}
+PKGNAME-gui=	hplip-gui-${V}
 
-SHARED_LIBS +=  hpmud		1.0 # .0.6
-SHARED_LIBS +=  hpip		1.0 # .0.1
+SHARED_LIBS +=  hpmud		2.0 # .0.6
+SHARED_LIBS +=  hpip		2.0 # .0.1
 
 CATEGORIES=	print
 
-HOMEPAGE=	http://hplipopensource.com/hplip-web/
+HOMEPAGE=	http://hplipopensource.com/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - MIT (backend) - BSD (hpijs)
 PERMIT_PACKAGE_CDROM=	Yes
@@ -56,11 +58,12 @@ RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 WANTLIB-hpijs += ${WANTLIB}
 WANTLIB-hpijs += c jpeg netsnmp stdc++ usb
 LIB_DEPENDS-hpijs= hpip,hpmud::print/hplip,-libs \
+		jpeg.>=6.3::graphics/jpeg \
 		dbus-1.>=7::x11/dbus
 
 WANTLIB-hpcups += ${WANTLIB}
-WANTLIB-hpcups += c dbus-1 jpeg netsnmp stdc++ usb
-LIB_DEPENDS-hpcups= hpip,hpmud::print/hplip,-libs \
+WANTLIB-hpcups += c jpeg stdc++
+LIB_DEPENDS-hpcups= hpip::print/hplip,-libs \
 		cups.>=3,cupsimage::print/cups
 
 LIB_DEPENDS-libs= netsnmp.>=7::net/net-snmp \
@@ -78,7 +81,8 @@ MODULES=	devel/gettext \
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 FAKE_FLAGS=	hplip_confdir=${PREFIX}/share/examples/hplip/hp \
-		hplip_statedir=${PREFIX}/share/examples/hplip/db
+		hplip_statedir=${PREFIX}/share/examples/hplip/db \
+		mimedir=${PREFIX}/share/examples/hplip/cups
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
@@ -113,7 +117,7 @@ pre-configure:
 	@find ${WRKSRC} -name \*.py | \
 		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g'
 	${SUBST_CMD} ${WRKSRC}/prnt/cups.py \
-		${WRKSRC}/prnt/hpijs/hpcups.cpp \
+		${WRKSRC}/prnt/hpcups/HPCupsFilter.cpp \
 		${WRKSRC}/prnt/hpijs/hpcupsfax.cpp \
 		${WRKSRC}/prnt/hpijs/foomatic-rip-hplip \
 		${WRKSRC}/prnt/hpijs/hpijs.cpp \
@@ -129,6 +133,7 @@ pre-configure:
 		${WRKSRC}/doc/upgrading.html \
 		${WRKSRC}/doc/uninstalling.html \
 		${WRKSRC}/fax/coverpages.py \
+		${WRKSRC}/fax/filters/pstotiff \
 		${WRKSRC}/base/pkit.py \
 		${WRKSRC}/prnt/hpijs/foomatic-rip-hplip \
 		${WRKSRC}/installer/dcheck.py \
@@ -138,5 +143,9 @@ pre-configure:
 		${WRKSRC}/ui4/nodevicesdialog.py \
 		${WRKSRC}/ui/devmgr4.py \
 		${WRKSRC}/ui/nodevicesform.py
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/hplip
 
 .include <bsd.port.mk>

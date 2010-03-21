@@ -1,0 +1,12 @@
+$OpenBSD: patch-prnt_hpcups_ErnieFilter_cpp,v 1.1 2010/03/21 11:07:43 ajacoutot Exp $
+--- prnt/hpcups/ErnieFilter.cpp.orig	Fri Mar 12 14:08:01 2010
++++ prnt/hpcups/ErnieFilter.cpp	Fri Mar 12 14:08:12 2010
+@@ -50,7 +50,7 @@
+ #include "ErnieFilter.h"
+ 
+ 
+-#if defined(__APPLE__) || defined(__linux)
++#if defined(__APPLE__) || defined(__linux) || defined(__OpenBSD__)
+ #include <math.h>
+ #endif
+ 
