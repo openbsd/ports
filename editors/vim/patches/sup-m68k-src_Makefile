@@ -1,7 +1,7 @@
-$OpenBSD: sup-m68k-src_Makefile,v 1.1 2004/07/12 19:32:59 lebel Exp $
---- src/Makefile.orig	Wed Sep 26 08:10:59 2001
-+++ src/Makefile	Thu Oct 25 00:52:08 2001
-@@ -1969,10 +1969,10 @@ objects/digraph.o: digraph.c
+$OpenBSD: sup-m68k-src_Makefile,v 1.2 2010/03/21 10:53:37 jasper Exp $
+--- src/Makefile.orig	Fri Feb  5 14:18:35 2010
++++ src/Makefile	Fri Feb  5 14:18:37 2010
+@@ -2347,10 +2347,10 @@ objects/digraph.o: digraph.c
  	$(CCC) -o $@ digraph.c
  
  objects/edit.o: edit.c
@@ -14,7 +14,7 @@ $OpenBSD: sup-m68k-src_Makefile,v 1.1 2004/07/12 19:32:59 lebel Exp $
  
  objects/ex_cmds.o: ex_cmds.c
  	$(CCC) -o $@ ex_cmds.c
-@@ -2140,7 +2140,7 @@ objects/syntax.o: syntax.c
+@@ -2548,7 +2548,7 @@ objects/syntax.o: syntax.c
  	$(CCC) -o $@ syntax.c
  
  objects/tag.o: tag.c
