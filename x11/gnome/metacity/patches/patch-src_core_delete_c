@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_core_delete_c,v 1.1 2010/03/21 10:33:09 ajacoutot Exp $
+--- src/core/delete.c.orig	Tue Jan 26 09:36:19 2010
++++ src/core/delete.c	Tue Jan 26 09:36:32 2010
+@@ -32,6 +32,7 @@
+ #include "workspace.h"
+ 
+ #include <sys/types.h>
++#include <sys/wait.h>
+ #include <signal.h>
+ #include <unistd.h>
+ #include <errno.h>
