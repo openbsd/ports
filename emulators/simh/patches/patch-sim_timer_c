@@ -1,7 +1,7 @@
-$OpenBSD: patch-sim_timer_c,v 1.2 2008/11/04 22:13:30 sthen Exp $
---- sim_timer.c.orig	Tue May 27 15:36:26 2008
-+++ sim_timer.c	Tue Nov  4 22:06:49 2008
-@@ -295,7 +295,7 @@ return;
+$OpenBSD: patch-sim_timer_c,v 1.3 2010/03/21 09:26:49 jasper Exp $
+--- sim_timer.c.orig	Thu Nov 20 14:03:30 2008
++++ sim_timer.c	Tue Jan 26 13:12:30 2010
+@@ -298,7 +298,7 @@ return;
  
  uint32 sim_os_ms_sleep_init (void)
  {
