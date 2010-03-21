@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/04 20:51:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/03/21 10:44:25 jasper Exp $
 %%SHARED%%
-@bin bin/openstreetmap-gps-map
+@bin bin/mapviewer
+doc/
+doc/osm-gps-map/
+doc/osm-gps-map/README
 include/osmgpsmap/
 include/osmgpsmap/osm-gps-map.h
 lib/libosmgpsmap.a
