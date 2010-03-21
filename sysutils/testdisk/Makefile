@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/07/15 13:45:17 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/03/21 12:13:08 landry Exp $
 
 COMMENT =	data recovery software
 
-VERSION =	6.11
+VERSION =	6.11.3
 DISTNAME =	testdisk-${VERSION}
 CATEGORIES =	sysutils
 
