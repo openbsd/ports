@@ -1,14 +1,14 @@
-$OpenBSD: patch-font_c,v 1.1 2002/02/20 19:31:29 pvalchev Exp $
---- font.c.orig	Sat May 26 07:51:43 2001
-+++ font.c	Wed Feb 20 12:15:26 2002
-@@ -80,8 +80,8 @@ int vfontType;
+$OpenBSD: patch-font_c,v 1.2 2010/03/21 10:41:43 jasper Exp $
+--- font.c.orig	Sun Jan 31 16:12:10 2010
++++ font.c	Sun Jan 31 16:12:27 2010
+@@ -85,8 +85,8 @@ int vfontType;
  
- typedef struct
+ typedef struct FontCharInfoType
  {
 -  char offset;
 -  char width;
 +  int offset;
 +  int width;
- }
- FontCharInfoType;
+ } FontCharInfoType;
+ 
  FontCharInfoType *fntOW[256];

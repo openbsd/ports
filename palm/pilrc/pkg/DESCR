@@ -2,6 +2,3 @@ PilRC is an application that takes a resource script file and generates
 one or more binary resource files that are to be used when developing
 for the Palm Computing Platform.  PilRCUI gives you a preview of your
 resource file.
-
-Package can be built with the no_x11 flavor which does not include
-PilRCUI and does not need X11.

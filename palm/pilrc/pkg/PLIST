@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:22:17 espie Exp $
-bin/pilrc
+@comment $OpenBSD: PLIST,v 1.4 2010/03/21 10:41:43 jasper Exp $
+@pkgpath palm/pilrc,no_x11
+@bin bin/pilrc
 share/doc/pilrc/
 share/doc/pilrc/archive.html
 share/doc/pilrc/contrib.html
@@ -9,4 +10,8 @@ share/doc/pilrc/images/
 share/doc/pilrc/images/download.gif
 share/doc/pilrc/index.html
 share/doc/pilrc/manual.html
-!%%no_x11%%
+share/pilrc/
+share/pilrc/palette-02.pbm
+share/pilrc/palette-04.pgm
+share/pilrc/palette-16.pgm
+share/pilrc/palette-256.ppm
