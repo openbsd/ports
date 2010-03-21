@@ -1,11 +1,6 @@
-@comment $OpenBSD: PLIST-foomatic,v 1.5 2009/12/10 14:12:01 ajacoutot Exp $
-share/foomatic/
-share/foomatic/db/
-share/foomatic/db/source/
-share/foomatic/db/source/driver/
+@comment $OpenBSD: PLIST-foomatic,v 1.6 2010/03/21 10:00:36 ajacoutot Exp $
 share/foomatic/db/source/driver/gutenprint-ijs-simplified.${MAJOR_V}.xml
 share/foomatic/db/source/driver/gutenprint-ijs.${MAJOR_V}.xml
-share/foomatic/db/source/opt/
 share/foomatic/db/source/opt/gutenprint-ijs-simplified.${MAJOR_V}-color.xml
 share/foomatic/db/source/opt/gutenprint-ijs-simplified.${MAJOR_V}-model.xml
 share/foomatic/db/source/opt/gutenprint-ijs-simplified.${MAJOR_V}-pagesize.xml

@@ -1,5 +1,6 @@
 Gutenprint, formerly known as gimp-print, is a project to provide high
 quality drivers for Canon, Epson, Lexmark and PCL printers.
+
 This package contains the driver libraries which are the basis of the
 gutenprint project, and which can be used by other printing programs. It
 may be used with most common UNIX print spooling systems, including

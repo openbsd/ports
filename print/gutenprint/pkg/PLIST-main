@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/12/10 14:12:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2010/03/21 10:00:36 ajacoutot Exp $
 @conflict foomatic-db-gutenprint-<5.2.4p1
 %%SHARED%%
 @bin bin/escputil
@@ -117,6 +117,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inks/x80.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/artisan.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/b500.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cd.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cd_cutter_roll_feed.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cd_roll_feed.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cutter_roll_feed.xml
@@ -175,6 +176,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_0.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_1.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_10.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_100.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_11.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_12.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_13.xml
@@ -271,6 +273,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_95.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_96.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_97.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_98.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_99.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/p1_5.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/picturemate.xml
