@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.7 2010/01/09 14:03:25 ajacoutot Exp $
---- installer/linux/Makefile.in.orig	Wed Jan  6 04:28:29 2010
-+++ installer/linux/Makefile.in	Sat Jan  9 14:17:51 2010
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.8 2010/03/21 11:15:20 ajacoutot Exp $
+--- installer/linux/Makefile.in.orig	Tue Jan 26 17:08:49 2010
++++ installer/linux/Makefile.in	Wed Feb  3 08:53:18 2010
 @@ -57,22 +57,11 @@ SOURCES =
  DIST_SOURCES =
  am__dist_data_DATA_DIST = server.cfg unix.cfg ldap.openldap.cfg \
@@ -24,7 +24,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.7 2010/01/09 14:03:25 ajacoutot 
 -	zarafa-licensed.init.suse zarafa-licensed.init.fc
 +	db-convert-4.2x-to-5.00 ssl-certificates.sh
  dist_dataDATA_INSTALL = $(INSTALL_DATA)
- am__dist_sysconf_DATA_DIST = ipsseg.crt
+ am__dist_sysconf_DATA_DIST = addtrust.crt
  dist_sysconfDATA_INSTALL = $(INSTALL_DATA)
 @@ -220,6 +209,7 @@ datadir = ${docdir}
  datarootdir = @datarootdir@
@@ -48,4 +48,4 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.7 2010/01/09 14:03:25 ajacoutot 
 -	zarafa-dagent.init.cbs4 zarafa-dagent.init.suse zarafa-dagent.init.fc\
  $(am__append_1)
  dist_bin_SCRIPTS = zarafa-autorespond
- @OSS_ONLY_FALSE@dist_sysconf_DATA = ipsseg.crt
+ @OSS_ONLY_FALSE@dist_sysconf_DATA = addtrust.crt

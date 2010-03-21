@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_platform_linux_h,v 1.3 2009/10/20 22:34:26 ajacoutot Exp $
---- common/platform.linux.h.orig	Fri Oct  9 22:34:37 2009
-+++ common/platform.linux.h	Tue Oct 20 23:41:36 2009
-@@ -61,8 +61,15 @@
+$OpenBSD: patch-common_platform_linux_h,v 1.4 2010/03/21 11:15:20 ajacoutot Exp $
+--- common/platform.linux.h.orig	Tue Jan 26 17:34:49 2010
++++ common/platform.linux.h	Wed Feb  3 08:53:18 2010
+@@ -63,8 +63,15 @@
  #include <dlfcn.h>
  #include <stddef.h>
  #include <libgen.h>
