@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/11/17 23:57:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/03/21 09:04:40 ajacoutot Exp $
 @conflict nautilus-sendto-pidgin-*
 @pkgpath x11/gnome/nautilus-sendto,-main
 @bin bin/nautilus-sendto
@@ -38,12 +38,14 @@ share/gtk-doc/html/nautilus-sendto/nautilus-sendto.devhelp2
 share/gtk-doc/html/nautilus-sendto/right.png
 share/gtk-doc/html/nautilus-sendto/style.css
 share/gtk-doc/html/nautilus-sendto/up.png
+share/locale/af/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ar/LC_MESSAGES/nautilus-sendto.mo
 share/locale/as/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ast/LC_MESSAGES/nautilus-sendto.mo
 share/locale/be/LC_MESSAGES/nautilus-sendto.mo
 share/locale/be@latin/LC_MESSAGES/nautilus-sendto.mo
 share/locale/bg/LC_MESSAGES/nautilus-sendto.mo
+share/locale/bn/LC_MESSAGES/nautilus-sendto.mo
 share/locale/bn_IN/LC_MESSAGES/nautilus-sendto.mo
 share/locale/br/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ca/LC_MESSAGES/nautilus-sendto.mo
@@ -52,6 +54,7 @@ share/locale/da/LC_MESSAGES/nautilus-sendto.mo
 share/locale/de/LC_MESSAGES/nautilus-sendto.mo
 share/locale/dz/LC_MESSAGES/nautilus-sendto.mo
 share/locale/el/LC_MESSAGES/nautilus-sendto.mo
+share/locale/en@shaw/LC_MESSAGES/nautilus-sendto.mo
 share/locale/en_CA/LC_MESSAGES/nautilus-sendto.mo
 share/locale/en_GB/LC_MESSAGES/nautilus-sendto.mo
 share/locale/es/LC_MESSAGES/nautilus-sendto.mo
@@ -70,9 +73,12 @@ share/locale/ka/LC_MESSAGES/nautilus-sendto.mo
 share/locale/kn/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ko/LC_MESSAGES/nautilus-sendto.mo
 share/locale/lt/LC_MESSAGES/nautilus-sendto.mo
+share/locale/lv/LC_MESSAGES/nautilus-sendto.mo
 share/locale/mk/LC_MESSAGES/nautilus-sendto.mo
+share/locale/ml/LC_MESSAGES/nautilus-sendto.mo
 share/locale/mr/LC_MESSAGES/nautilus-sendto.mo
 share/locale/nb/LC_MESSAGES/nautilus-sendto.mo
+share/locale/nds/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ne/LC_MESSAGES/nautilus-sendto.mo
 share/locale/nl/LC_MESSAGES/nautilus-sendto.mo
 share/locale/oc/LC_MESSAGES/nautilus-sendto.mo
@@ -87,6 +93,8 @@ share/locale/rw/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sk/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sl/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sq/LC_MESSAGES/nautilus-sendto.mo
+share/locale/sr/LC_MESSAGES/nautilus-sendto.mo
+share/locale/sr@latin/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sv/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ta/LC_MESSAGES/nautilus-sendto.mo
 share/locale/te/LC_MESSAGES/nautilus-sendto.mo
@@ -94,6 +102,7 @@ share/locale/th/LC_MESSAGES/nautilus-sendto.mo
 share/locale/uk/LC_MESSAGES/nautilus-sendto.mo
 share/locale/vi/LC_MESSAGES/nautilus-sendto.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-sendto.mo
+share/locale/zh_HK/LC_MESSAGES/nautilus-sendto.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-sendto.mo
 share/nautilus-sendto/
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
