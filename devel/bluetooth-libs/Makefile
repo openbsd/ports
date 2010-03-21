@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2008/11/22 14:05:37 uwe Exp $
+# $OpenBSD: Makefile,v 1.8 2010/03/21 10:54:46 jasper Exp $
 
 COMMENT=		bluetooth network libraries
 DISTNAME=		bluetooth-libs-20081122
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		bluetooth 2.0 \
 			sdp 2.1
 
@@ -22,6 +23,13 @@ MAKE_ENV=		LIBDIR=${TRUEPREFIX}/lib \
 			LIBsdp_VERSION=${LIBsdp_VERSION}
 FAKE_FLAGS=		DEBUGLIBS=No
 NO_REGRESS=		Yes
+
+# See bsd.lib.mk:162
+.if ${MACHINE_ARCH:Mmips64*}
+PKG_ARGS+=	-Dno_mips64=0
+.else
+PKG_ARGS+=	-Dno_mips64=1
+.endif
 
 pre-build:
 	@perl -pi -e "s,/etc,${SYSCONFDIR},g" \

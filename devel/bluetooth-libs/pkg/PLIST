@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/06/06 21:12:23 uwe Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/03/21 10:54:46 jasper Exp $
 %%SHARED%%
+%%no_mips64%%
 include/bluetooth.h
 include/sdp.h
 lib/libbluetooth.a
 lib/libbluetooth_p.a
-lib/libbluetooth_pic.a
 lib/libsdp.a
 lib/libsdp_p.a
-lib/libsdp_pic.a
 @man man/cat3/SDP_GET128.0
 @man man/cat3/SDP_GET16.0
 @man man/cat3/SDP_GET32.0

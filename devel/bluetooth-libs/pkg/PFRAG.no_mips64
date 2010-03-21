@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.no_mips64,v 1.1 2010/03/21 10:54:46 jasper Exp $
+lib/libbluetooth_pic.a
+lib/libsdp_pic.a
