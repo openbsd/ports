@@ -12,4 +12,4 @@ if [ -x ${PREFIX}/sbin/tabled ]; then
 	${PREFIX}/sbin/tabled
 fi
 
-Make sure to set the permsission of the fifo right.
+Make sure to set the permission of the fifo right.
