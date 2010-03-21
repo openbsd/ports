@@ -1,0 +1,15 @@
+$OpenBSD: patch-uuid_prng_c,v 1.1 2010/03/21 10:46:43 jasper Exp $
+
+/dev/arandom is prefered over /dev/urandom.
+
+--- uuid_prng.c.orig	Sun Feb  7 19:43:16 2010
++++ uuid_prng.c	Sun Feb  7 19:43:33 2010
+@@ -65,7 +65,7 @@ prng_rc_t prng_create(prng_t **prng)
+ 
+     /* try to open the system PRNG device */
+     (*prng)->dev = -1;
+-    if ((fd = open("/dev/urandom", O_RDONLY)) == -1)
++    if ((fd = open("/dev/arandom", O_RDONLY)) == -1)
+         fd = open("/dev/random", O_RDONLY|O_NONBLOCK);
+     if (fd != -1) {
+         (void)fcntl(fd, F_SETFD, FD_CLOEXEC);
