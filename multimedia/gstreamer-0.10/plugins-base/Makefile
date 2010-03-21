@@ -1,31 +1,31 @@
-# $OpenBSD: Makefile,v 1.21 2009/12/14 13:55:32 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/03/21 11:23:40 ajacoutot Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-gnome =		gnome vfs element for GStreamer (base)
 COMMENT-cdda =		cd paranoia element for GStreamer (base)
 
-V =			0.10.25
-DISTNAME =		gst-plugins-base-$V
+V =			0.10.28
+DISTNAME =		gst-plugins-base-${V}
 
-PKGNAME-main =		gstreamer-plugins-base-$Vp0
-PKGNAME-gnome =		gstreamer-gnome-$V
-PKGNAME-cdda =		gstreamer-cdda-$V
+PKGNAME-main =		gstreamer-plugins-base-${V}
+PKGNAME-gnome =		gstreamer-gnome-${V}
+PKGNAME-cdda =		gstreamer-cdda-${V}
 
 MULTI_PACKAGES =	-main -gnome -cdda
 
-SHARED_LIBS +=  gstinterfaces-0.10   1.0      # .18.0
-SHARED_LIBS +=  gsttag-0.10          1.0      # .18.0
-SHARED_LIBS +=  gstaudio-0.10        1.0      # .18.0
-SHARED_LIBS +=  gstcdda-0.10         1.0      # .18.0
-SHARED_LIBS +=  gstfft-0.10          1.0      # .18.0
-SHARED_LIBS +=  gstnetbuffer-0.10    1.0      # .18.0
-SHARED_LIBS +=  gstpbutils-0.10      1.0      # .18.0
-SHARED_LIBS +=  gstriff-0.10         1.0      # .18.0
-SHARED_LIBS +=  gstrtp-0.10          1.0      # .18.0
-SHARED_LIBS +=  gstsdp-0.10          1.0      # .18.0
-SHARED_LIBS +=  gstrtsp-0.10         1.0      # .18.0
-SHARED_LIBS +=  gstvideo-0.10        1.0      # .18.0
-SHARED_LIBS +=  gstapp-0.10          1.0      # .18.0
+SHARED_LIBS +=  gstinterfaces-0.10   2.0      # .19.2
+SHARED_LIBS +=  gsttag-0.10          2.0      # .19.2
+SHARED_LIBS +=  gstaudio-0.10        2.0      # .19.2
+SHARED_LIBS +=  gstcdda-0.10         2.0      # .19.2
+SHARED_LIBS +=  gstfft-0.10          2.0      # .19.2
+SHARED_LIBS +=  gstnetbuffer-0.10    2.0      # .19.2
+SHARED_LIBS +=  gstpbutils-0.10      2.0      # .19.2
+SHARED_LIBS +=  gstriff-0.10         2.0      # .19.2
+SHARED_LIBS +=  gstrtp-0.10          2.0      # .19.2
+SHARED_LIBS +=  gstsdp-0.10          2.0      # .19.2
+SHARED_LIBS +=  gstrtsp-0.10         2.0      # .19.2
+SHARED_LIBS +=  gstvideo-0.10        2.0      # .19.2
+SHARED_LIBS +=  gstapp-0.10          2.0      # .19.2
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-base/}
 MODULES =		devel/gettext
@@ -37,7 +37,7 @@ REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
 RUN_DEPENDS =		::${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
 			z m pcre
-LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:$P/core
+LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:${P}/core
 
 WANTLIB-main =		${WANTLIB} \
 			Xv X11 ICE SM Xext Xau Xdmcp \
@@ -48,7 +48,8 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			oil-0.3::devel/liboil \
 			vorbis.>=7,vorbisenc::audio/libvorbis \
 			pango-1.0.>=1801,pangoft2-1.0,pangocairo-1.0::devel/pango \
-			theoradec,theoraenc::multimedia/libtheora
+			theoradec,theoraenc::multimedia/libtheora \
+			vorbisidec.>=2::audio/tremor
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
 
 WANTLIB-gnome =		${WANTLIB} \
