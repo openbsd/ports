@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/03/21 10:47:01 ajacoutot Exp $
 
 COMMENT=	isometric RPG game
 
-DISTNAME=	freedroidrpg-0.12
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	freedroidrpg-0.13
 CATEGORIES=	games x11
 
 EXTRACT_SUFX=	.tar.bz2
@@ -20,9 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freedroid/}
 
-WANTLIB=	GL SDL X11 c jpeg m ogg png pthread pthread-stubs vorbis xcb z
+WANTLIB=	GL SDL X11 c jpeg m ogg png pthread vorbis z
 
-MODULES=	devel/gettext
 USE_X11=	Yes
 
 LIB_DEPENDS=	SDL_image.>=2::devel/sdl-image \
@@ -39,10 +37,11 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_CFLAGS="-pthread" \
+		PTHREAD_LIBS="-pthread" \
 		am_cv_prog_tar_ustar=plaintar
 CONFIGURE_ARGS=	--with-x \
-		--enable-opengl \
-		--enable-editors
+		--enable-opengl
 
 post-install:
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/freedroidrpg
