@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2009/12/21 22:20:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2010/03/21 10:42:53 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 bin/evolution
@@ -1731,6 +1731,7 @@ share/locale/mn/LC_MESSAGES/evolution-${R}.mo
 share/locale/mr/LC_MESSAGES/evolution-${R}.mo
 share/locale/ms/LC_MESSAGES/evolution-${R}.mo
 share/locale/nb/LC_MESSAGES/evolution-${R}.mo
+share/locale/nds/LC_MESSAGES/evolution-${R}.mo
 share/locale/ne/LC_MESSAGES/evolution-${R}.mo
 share/locale/nl/LC_MESSAGES/evolution-${R}.mo
 share/locale/nn/LC_MESSAGES/evolution-${R}.mo
