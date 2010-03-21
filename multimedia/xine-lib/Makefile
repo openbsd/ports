@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/03/21 01:41:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2010/03/21 21:31:52 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	multimedia decoding library
 
 V=		1.1.18.1
 DISTNAME=	xine-lib-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
@@ -21,10 +22,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 Xau Xdmcp Xext Xinerama Xrandr Xrender Xv XvMCW c \
-		dvdread expat faac fontconfig freetype jpeg lcms m \
-		mp3lame oil-0.3 pthread-stubs pthread schroedinger-1.0 \
-		sndio usbhid x264 xcb-shape xcb-shm xcb-xv xcb z
+WANTLIB=	GL GLU X11 Xau Xdmcp Xext Xinerama Xrandr Xrender Xv \
+		XvMCW c dvdread expat faac fontconfig freetype jpeg \
+		lcms m mp3lame oil-0.3 pthread-stubs pthread \
+		schroedinger-1.0 sndio usbhid x264 xcb-shape xcb-shm \
+		xcb-xv xcb z
 
 XINEAPI_REV=	1.28
 SUBST_VARS+=	XINEAPI_REV
@@ -90,7 +92,7 @@ CONFIGURE_ARGS+=--disable-aalib \
 		--without-imagemagick \
 		--without-jack \
 		--without-pulseaudio
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes

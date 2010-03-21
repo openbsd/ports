@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/03/21 01:41:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/03/21 21:31:52 sthen Exp $
 @conflict xine-lib-arts-*
 @conflict xine-lib-esd-*
 @conflict xine-lib-jack-*
@@ -128,6 +128,7 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtsp.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_stdin_fifo.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_v4l2.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_none.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_opengl.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_raw.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_sdl.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xcbshm.so
