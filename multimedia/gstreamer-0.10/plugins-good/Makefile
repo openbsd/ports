@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2009/12/14 11:36:26 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2010/03/21 11:24:46 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (good)
@@ -7,15 +7,15 @@ COMMENT-gdk =		gdk pixbuf element for GStreamer (good)
 COMMENT-caca =		libcaca element for GStreamer (good)
 COMMENT-soup =		libsoup element for GStreamer (good)
 
-V =			0.10.17
+V =			0.10.21
 DISTNAME =		gst-plugins-good-$V
 
-PKGNAME-main =		gstreamer-plugins-good-$Vp0v0
-PKGNAME-aalib =		gstreamer-aalib-$V
-PKGNAME-dv =		gstreamer-dv-$V
-PKGNAME-gdk =		gstreamer-gdk-pixbuf-$V
-PKGNAME-caca =		gstreamer-libcaca-$V
-PKGNAME-soup =		gstreamer-libsoup-$V
+PKGNAME-main =		gstreamer-plugins-good-${V}v0
+PKGNAME-aalib =		gstreamer-aalib-${V}
+PKGNAME-dv =		gstreamer-dv-${V}
+PKGNAME-gdk =		gstreamer-gdk-pixbuf-${V}
+PKGNAME-caca =		gstreamer-libcaca-${V}
+PKGNAME-soup =		gstreamer-libsoup-${V}
 
 MULTI_PACKAGES =	-main -aalib \
 			-dv -gdk -caca -soup
@@ -47,7 +47,7 @@ WANTLIB-main =		${WANTLIB} \
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \
 			oil-0.3::devel/liboil \
-			gstaudio-0.10,gstinterfaces-0.10,gstnetbuffer-0.10,gstriff-0.10,gstrtp-0.10,gsttag-0.10,gstvideo-0.10,gstfft-0.10,gstrtsp-0.10,gstsdp-0.10,gstpbutils-0.10::$P/plugins-base \
+			gstaudio-0.10,gstinterfaces-0.10,gstnetbuffer-0.10,gstriff-0.10,gstrtp-0.10,gsttag-0.10,gstvideo-0.10,gstfft-0.10,gstrtsp-0.10,gstsdp-0.10,gstpbutils-0.10::${P}/plugins-base \
 			FLAC.>=9::audio/flac \
 			jpeg.>=62::graphics/jpeg \
 			tag.>=7::audio/taglib \
@@ -67,7 +67,7 @@ LIB_DEPENDS-aalib =	${LIB_DEPENDS} \
 WANTLIB-dv =		${WANTLIB}
 LIB_DEPENDS-dv =	${LIB_DEPENDS} \
 			dv::multimedia/libdv \
-			gstaudio-0.10,gstinterfaces-0.10::$P/plugins-base
+			gstaudio-0.10,gstinterfaces-0.10::${P}/plugins-base
 
 WANTLIB-gdk =		${WANTLIB} \
 			gio-2.0

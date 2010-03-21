@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2009/12/14 11:36:26 espie Exp $
-@conflict gstreamer-plugins-bad-<0.10.7
+@comment $OpenBSD: PLIST-main,v 1.19 2010/03/21 11:24:46 ajacoutot Exp $
+@conflict gstreamer-plugins-bad-<0.10.8
 @conflict gstreamer-jpeg-*
 @conflict gstreamer-png-*
 @conflict gstreamer-cairo-*
@@ -100,6 +100,8 @@ lib/gstreamer-${VERSION}/libgstrtp.so
 lib/gstreamer-${VERSION}/libgstrtpmanager.so
 @comment lib/gstreamer-${VERSION}/libgstrtsp.la
 lib/gstreamer-${VERSION}/libgstrtsp.so
+@comment lib/gstreamer-${VERSION}/libgstshapewipe.la
+lib/gstreamer-${VERSION}/libgstshapewipe.so
 @comment lib/gstreamer-${VERSION}/libgstshout2.la
 lib/gstreamer-${VERSION}/libgstshout2.so
 @comment lib/gstreamer-${VERSION}/libgstsmpte.la
@@ -145,6 +147,7 @@ share/locale/ca/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/da/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/de/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
+share/locale/el/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/es/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
 share/locale/eu/LC_MESSAGES/gst-plugins-good-${VERSION}.mo
