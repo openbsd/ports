@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_resindvd_resindvdsrc_c,v 1.1 2009/12/02 22:20:11 landry Exp $
---- ext/resindvd/resindvdsrc.c.orig	Wed Dec  2 20:53:10 2009
-+++ ext/resindvd/resindvdsrc.c	Wed Dec  2 20:53:22 2009
-@@ -33,7 +33,7 @@
+$OpenBSD: patch-ext_resindvd_resindvdsrc_c,v 1.2 2010/03/21 11:26:01 ajacoutot Exp $
+--- ext/resindvd/resindvdsrc.c.orig	Sun Nov 22 20:04:38 2009
++++ ext/resindvd/resindvdsrc.c	Mon Mar  8 13:45:04 2010
+@@ -34,7 +34,7 @@
  GST_DEBUG_CATEGORY_STATIC (rsndvdsrc_debug);
  #define GST_CAT_DEFAULT rsndvdsrc_debug
  

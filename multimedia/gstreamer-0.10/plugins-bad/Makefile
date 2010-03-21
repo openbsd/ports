@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.27 2010/03/05 08:53:11 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2010/03/21 11:26:01 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (bad)
 COMMENT-real =		real element for GStreamer (bad)
 COMMENT-mjpeg =		gstmplex and gstmpeg2enc elements for GStreamer (bad)
 
-V =			0.10.17
-DISTNAME =		gst-plugins-bad-$V
+V =			0.10.18
+DISTNAME =		gst-plugins-bad-${V}
 
-PKGNAME-main =		gstreamer-plugins-bad-${V}p3
-PKGNAME-neon =		gstreamer-neon-$V
-PKGNAME-real =		gstreamer-real-$V
-PKGNAME-mjpeg =		gstreamer-mjpeg-$Vp0
+PKGNAME-main =		gstreamer-plugins-bad-${V}
+PKGNAME-neon =		gstreamer-neon-${V}
+PKGNAME-real =		gstreamer-real-${V}
+PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
@@ -29,7 +29,7 @@ WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
 REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
 .endfor
 
-LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:$P/core
+LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:${P}/core
 RUN_DEPENDS =		::${BUILD_PKGPATH}
 BUILD_DEPENDS +=        ::audio/ladspa
 
@@ -37,13 +37,12 @@ WANTLIB-main =		${WANTLIB} \
 			X11 Xau Xdmcp Xext Xrandr Xrender bz2 pthread-stubs \
 			sndio usbhid xcb gstbase-0.10 gstcontroller-0.10 \
 			Xcomposite Xcursor Xdamage Xfixes Xi Xinerama atk-1.0 \
-			c cairo croco-0.6 crypto expat fontconfig freetype \
+			c cairo croco-0.6 expat fontconfig freetype \
 			gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glitz gsf-1 \
 			gtk-x11-2.0 oil-0.3 pango-1.0 pangocairo-1.0 \
-			pangoft2-1.0 pixman-1 png pthread ssl
+			pangoft2-1.0 pixman-1 png pthread
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
-			gstaudio-0.10,gstinterfaces-0.10,gstvideo-0.10,gstriff-0.10,gstpbutils-0.10,gstrtp-0.10,gstsdp-0.10,gsttag-0.10::$P/plugins-base \
-			vorbisidec.>=2::audio/tremor \
+			gstaudio-0.10,gstinterfaces-0.10,gstvideo-0.10,gstriff-0.10,gstpbutils-0.10,gstrtp-0.10,gstsdp-0.10,gsttag-0.10::${P}/plugins-base \
 			sndfile.>=3::audio/libsndfile \
 			mpcdec.>=3::audio/libmpcdec \
 			faac.>=1::audio/faac \
@@ -56,7 +55,6 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			gsm::audio/gsm \
 			rsvg-2.>=28::x11/gnome/librsvg \
 			schroedinger-1.0::multimedia/schroedinger \
-			glade-2.0.>=1::devel/libglade2 \
 			cdaudio.>=1::audio/libcdaudio \
 			BPM,SoundTouch::audio/soundtouch \
 			dvdnav.>=6,dvdread::multimedia/libdvdnav
@@ -74,7 +72,7 @@ MULTI_PACKAGES +=	-real
 WANTLIB-real =		${WANTLIB} \
 			gstbase-0.10
 LIB_DEPENDS-real =	${LIB_DEPENDS} \
-			gstaudio-0.10,gstinterfaces-0.10::$P/plugins-base
+			gstaudio-0.10,gstinterfaces-0.10::${P}/plugins-base
 .endif
 
 WANTLIB-mjpeg =		${WANTLIB} \

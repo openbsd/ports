@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2009/12/14 11:36:26 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2010/03/21 11:26:01 ajacoutot Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -36,18 +36,16 @@ include/gstreamer-${VERSION}/gst/video/gstbasevideodecoder.h
 include/gstreamer-${VERSION}/gst/video/gstbasevideoencoder.h
 include/gstreamer-${VERSION}/gst/video/gstbasevideoparse.h
 include/gstreamer-${VERSION}/gst/video/gstbasevideoutils.h
-@comment lib/gstreamer-${VERSION}/libgstaacparse.la
-lib/gstreamer-${VERSION}/libgstaacparse.so
 @comment lib/gstreamer-${VERSION}/libgstadpcmdec.la
 lib/gstreamer-${VERSION}/libgstadpcmdec.so
+@comment lib/gstreamer-${VERSION}/libgstadpcmenc.la
+lib/gstreamer-${VERSION}/libgstadpcmenc.so
 @comment lib/gstreamer-${VERSION}/libgstaiff.la
 lib/gstreamer-${VERSION}/libgstaiff.so
-@comment lib/gstreamer-${VERSION}/libgstamrparse.la
-lib/gstreamer-${VERSION}/libgstamrparse.so
-@comment lib/gstreamer-${VERSION}/libgstapexsink.la
-lib/gstreamer-${VERSION}/libgstapexsink.so
 @comment lib/gstreamer-${VERSION}/libgstasfmux.la
 lib/gstreamer-${VERSION}/libgstasfmux.so
+@comment lib/gstreamer-${VERSION}/libgstaudioparsersbad.la
+lib/gstreamer-${VERSION}/libgstaudioparsersbad.so
 @comment lib/gstreamer-${VERSION}/libgstautoconvert.la
 lib/gstreamer-${VERSION}/libgstautoconvert.so
 @comment lib/gstreamer-${VERSION}/libgstbayer.la
@@ -60,6 +58,8 @@ lib/gstreamer-${VERSION}/libgstcamerabin.so
 lib/gstreamer-${VERSION}/libgstcdaudio.so
 @comment lib/gstreamer-${VERSION}/libgstcdxaparse.la
 lib/gstreamer-${VERSION}/libgstcdxaparse.so
+@comment lib/gstreamer-${VERSION}/libgstdataurisrc.la
+lib/gstreamer-${VERSION}/libgstdataurisrc.so
 @comment lib/gstreamer-${VERSION}/libgstdccp.la
 lib/gstreamer-${VERSION}/libgstdccp.so
 @comment lib/gstreamer-${VERSION}/libgstdebugutilsbad.la
@@ -86,8 +86,8 @@ lib/gstreamer-${VERSION}/libgsth264parse.so
 lib/gstreamer-${VERSION}/libgsthdvparse.so
 @comment lib/gstreamer-${VERSION}/libgstid3tag.la
 lib/gstreamer-${VERSION}/libgstid3tag.so
-@comment lib/gstreamer-${VERSION}/libgstivorbis.la
-lib/gstreamer-${VERSION}/libgstivorbis.so
+@comment lib/gstreamer-${VERSION}/libgstjpegformat.la
+lib/gstreamer-${VERSION}/libgstjpegformat.so
 @comment lib/gstreamer-${VERSION}/libgstladspa.la
 lib/gstreamer-${VERSION}/libgstladspa.so
 @comment lib/gstreamer-${VERSION}/libgstlegacyresample.la
@@ -142,8 +142,6 @@ lib/gstreamer-${VERSION}/libgstsdl.so
 lib/gstreamer-${VERSION}/libgstsdpelem.so
 @comment lib/gstreamer-${VERSION}/libgstselector.la
 lib/gstreamer-${VERSION}/libgstselector.so
-@comment lib/gstreamer-${VERSION}/libgstshapewipe.la
-lib/gstreamer-${VERSION}/libgstshapewipe.so
 @comment lib/gstreamer-${VERSION}/libgstsiren.la
 lib/gstreamer-${VERSION}/libgstsiren.so
 @comment lib/gstreamer-${VERSION}/libgstsndfile.la
@@ -176,9 +174,10 @@ lib/libgstphotography-${VERSION}.la
 @lib lib/libgstphotography-${VERSION}.so.${LIBgstphotography-0.10_VERSION}
 lib/libgstsignalprocessor-${VERSION}.la
 @lib lib/libgstsignalprocessor-${VERSION}.so.${LIBgstsignalprocessor-0.10_VERSION}
+lib/pkgconfig/gstreamer-plugins-bad-${VERSION}.pc
 share/gstreamer-${VERSION}/
 share/gstreamer-${VERSION}/camera-apps/
-share/gstreamer-${VERSION}/camera-apps/gst-camera.glade
+share/gstreamer-${VERSION}/camera-apps/gst-camera.ui
 share/locale/af/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
