@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2010/02/28 19:31:54 matthieu Exp $
+# $OpenBSD: Makefile,v 1.86 2010/03/21 11:35:26 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -52,14 +52,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 PSEUDO_FLAVORS=		no_battstat
 FLAVOR?=
 
-# not all powerpc support apm(4), hence the use of ${MACHINE} and macppc
-.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm" \
- && ${MACHINE_ARCH} != "i386" && ${MACHINE} != "macppc" \
- && ${MACHINE} != "loongson" && ${MACHINE_ARCH} != "sparc" \
- && ${MACHINE_ARCH} != "sparc64"
-FLAVOR+=		no_battstat
-.endif
-
 MULTI_PACKAGES=		-main
 .if ${FLAVOR:L:Mno_battstat}
 CONFIGURE_ARGS+=	--disable-battstat
@@ -90,3 +82,9 @@ pre-configure:
 .include <bsd.port.mk>
 
 CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
+
+.for m in ${MACHINE_ARCH} ${MACHINE}
+.if ${APM_ARCHS:L:M$m}
+FLAVOR+=	no_battstat
+.endif
+.endfor

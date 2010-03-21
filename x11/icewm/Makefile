@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/03/21 11:35:26 ajacoutot Exp $
 
 COMMENT=	small and fast window manager
 
@@ -27,13 +27,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	Imlib.>=19::graphics/imlib
 
 USE_X11=	Yes
-
-# not all powerpc support apm(4), hence the use of ${MACHINE} and macppc
-.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" \
- || ${MACHINE} == "macppc" || ${MACHINE_ARCH} == "sparc" \
- || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	patch-* apm-*
-.endif
 
 CONFIGURE_STYLE=gnu		
 CONFIGURE_ARGS=	--with-imlib=${PREFIX}/bin \
@@ -64,3 +57,9 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/doc/icewm-7.html
 
 .include <bsd.port.mk>
+
+.for m in ${MACHINE_ARCH} ${MACHINE}
+.if ${APM_ARCHS:L:M$m}
+PATCH_LIST=	patch-* apm-*
+.endif
+.endfor

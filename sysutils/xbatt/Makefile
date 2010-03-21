@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2010/02/28 19:31:54 matthieu Exp $
+# $OpenBSD: Makefile,v 1.23 2010/03/21 11:35:26 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.4 1997/03/10 12:07:35 asami Exp $
 
-# we use "macppc" and not "powerpc" on purpose here ; i.e. apm(4) needed
-ONLY_FOR_ARCHS= amd64 arm i386 loongson macppc sparc sparc64
+ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	laptop battery status display for X11
 
