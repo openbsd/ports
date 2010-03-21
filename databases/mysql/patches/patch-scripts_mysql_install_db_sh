@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.11 2009/07/27 15:19:15 sthen Exp $
---- scripts/mysql_install_db.sh.orig	Fri Feb 13 19:55:54 2009
-+++ scripts/mysql_install_db.sh	Thu Mar  5 09:49:04 2009
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.12 2010/03/21 01:20:47 sthen Exp $
+--- scripts/mysql_install_db.sh.orig	Mon Mar  1 14:32:43 2010
++++ scripts/mysql_install_db.sh	Sat Mar 20 20:20:35 2010
 @@ -27,7 +27,8 @@ srcdir=""
  args=""
  defaults=""
@@ -29,7 +29,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.11 2009/07/27 15:19:15 sthen Exp
    fi
  done
  
-@@ -437,10 +440,6 @@ fi
+@@ -436,10 +439,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
@@ -40,7 +40,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.11 2009/07/27 15:19:15 sthen Exp
    echo
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo "To do so, start the server, then issue the following commands:"
-@@ -456,17 +455,6 @@ then
+@@ -455,17 +454,6 @@ then
    echo "strongly recommended for production servers."
    echo
    echo "See the manual for more instructions."

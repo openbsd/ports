@@ -1,7 +1,7 @@
-$OpenBSD: patch-sql_mysqld_cc,v 1.19 2010/01/01 19:54:33 ajacoutot Exp $
---- sql/mysqld.cc.orig	Wed Dec 16 12:57:26 2009
-+++ sql/mysqld.cc	Thu Dec 31 17:24:04 2009
-@@ -4368,7 +4368,7 @@ int main(int argc, char **argv)
+$OpenBSD: patch-sql_mysqld_cc,v 1.20 2010/03/21 01:20:47 sthen Exp $
+--- sql/mysqld.cc.orig	Thu Feb  4 06:39:50 2010
++++ sql/mysqld.cc	Fri Feb 19 20:23:28 2010
+@@ -4367,7 +4367,7 @@ int main(int argc, char **argv)
    select_thread_in_use=1;
  
  #ifdef HAVE_LIBWRAP
