@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2010/01/17 21:29:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/03/21 23:05:18 sthen Exp $
 
 COMMENT=	library of optimized inner loops
 
-DISTNAME=	liboil-0.3.16
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS+=	oil-0.3		4.0	# .3.0
+DISTNAME=	liboil-0.3.17
 CATEGORIES=	devel
-
 MASTER_SITES=	${HOMEPAGE}/download/
+
+SHARED_LIBS+=	oil-0.3		4.0
 
 HOMEPAGE=	http://liboil.freedesktop.org/
 
@@ -17,10 +16,10 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		c m
+WANTLIB=	c m
 
-USE_LIBTOOL=		Yes
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-glib
+USE_LIBTOOL=	Yes
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--disable-glib
 
 .include <bsd.port.mk>
