@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2009/12/21 18:03:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2010/03/21 10:36:10 ajacoutot Exp $
 %%SHARED%%
 @bin bin/baobab
 @bin bin/gnome-dictionary
@@ -429,6 +429,17 @@ share/gnome/help/gnome-dictionary/uk/figures/gnome-dictionary-lookup.png
 share/gnome/help/gnome-dictionary/uk/figures/gnome-dictionary-preferences-print.png
 share/gnome/help/gnome-dictionary/uk/figures/gnome-dictionary-preferences-source.png
 share/gnome/help/gnome-dictionary/uk/gnome-dictionary.xml
+share/gnome/help/gnome-dictionary/zh_CN/
+share/gnome/help/gnome-dictionary/zh_CN/figures/
+share/gnome/help/gnome-dictionary/zh_CN/figures/gnome-dictionary-add-source.png
+share/gnome/help/gnome-dictionary/zh_CN/figures/gnome-dictionary-applet-window.png
+share/gnome/help/gnome-dictionary/zh_CN/figures/gnome-dictionary-applet.png
+share/gnome/help/gnome-dictionary/zh_CN/figures/gnome-dictionary-application.png
+share/gnome/help/gnome-dictionary/zh_CN/figures/gnome-dictionary-find.png
+share/gnome/help/gnome-dictionary/zh_CN/figures/gnome-dictionary-lookup.png
+share/gnome/help/gnome-dictionary/zh_CN/figures/gnome-dictionary-preferences-print.png
+share/gnome/help/gnome-dictionary/zh_CN/figures/gnome-dictionary-preferences-source.png
+share/gnome/help/gnome-dictionary/zh_CN/gnome-dictionary.xml
 share/gnome/help/gnome-search-tool/
 share/gnome/help/gnome-search-tool/C/
 share/gnome/help/gnome-search-tool/C/figures/
@@ -495,6 +506,10 @@ share/gnome/help/gnome-search-tool/uk/
 share/gnome/help/gnome-search-tool/uk/figures/
 share/gnome/help/gnome-search-tool/uk/figures/gnome-search-tool_window.png
 share/gnome/help/gnome-search-tool/uk/gnome-search-tool.xml
+share/gnome/help/gnome-search-tool/zh_CN/
+share/gnome/help/gnome-search-tool/zh_CN/figures/
+share/gnome/help/gnome-search-tool/zh_CN/figures/gnome-search-tool_window.png
+share/gnome/help/gnome-search-tool/zh_CN/gnome-search-tool.xml
 share/gnome/help/gnome-system-log/
 share/gnome/help/gnome-system-log/C/
 share/gnome/help/gnome-system-log/C/figures/
@@ -557,6 +572,10 @@ share/gnome/help/gnome-system-log/uk/
 share/gnome/help/gnome-system-log/uk/figures/
 share/gnome/help/gnome-system-log/uk/figures/syslog_window.png
 share/gnome/help/gnome-system-log/uk/gnome-system-log.xml
+share/gnome/help/gnome-system-log/zh_CN/
+share/gnome/help/gnome-system-log/zh_CN/figures/
+share/gnome/help/gnome-system-log/zh_CN/figures/syslog_window.png
+share/gnome/help/gnome-system-log/zh_CN/gnome-system-log.xml
 share/gtk-doc/html/gdict/
 share/gtk-doc/html/gdict/GdictClientContext.html
 share/gtk-doc/html/gdict/GdictDatabaseChooser.html
@@ -648,6 +667,7 @@ share/locale/mn/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/mr/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/nb/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/nds/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ne/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-utils-2.0.mo
@@ -715,6 +735,7 @@ share/omf/gnome-dictionary/gnome-dictionary-oc.omf
 share/omf/gnome-dictionary/gnome-dictionary-ru.omf
 share/omf/gnome-dictionary/gnome-dictionary-sv.omf
 share/omf/gnome-dictionary/gnome-dictionary-uk.omf
+share/omf/gnome-dictionary/gnome-dictionary-zh_CN.omf
 share/omf/gnome-search-tool/
 share/omf/gnome-search-tool/gnome-search-tool-C.omf
 share/omf/gnome-search-tool/gnome-search-tool-ca.omf
@@ -732,6 +753,7 @@ share/omf/gnome-search-tool/gnome-search-tool-oc.omf
 share/omf/gnome-search-tool/gnome-search-tool-ru.omf
 share/omf/gnome-search-tool/gnome-search-tool-sv.omf
 share/omf/gnome-search-tool/gnome-search-tool-uk.omf
+share/omf/gnome-search-tool/gnome-search-tool-zh_CN.omf
 share/omf/gnome-system-log/
 share/omf/gnome-system-log/gnome-system-log-C.omf
 share/omf/gnome-system-log/gnome-system-log-ca.omf
@@ -748,6 +770,7 @@ share/omf/gnome-system-log/gnome-system-log-oc.omf
 share/omf/gnome-system-log/gnome-system-log-ru.omf
 share/omf/gnome-system-log/gnome-system-log-sv.omf
 share/omf/gnome-system-log/gnome-system-log-uk.omf
+share/omf/gnome-system-log/gnome-system-log-zh_CN.omf
 share/pixmaps/
 share/pixmaps/gsearchtool/
 share/pixmaps/gsearchtool/thumbnail_frame.png

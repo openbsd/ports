@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2009/12/21 18:03:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2010/03/21 10:36:10 ajacoutot Exp $
 
 COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
-GNOME_VERSION=		2.28.1
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		2.28.3
 
 SHARED_LIBS +=  gdict-1.0      6.1      # .6.6
 
@@ -47,10 +46,5 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-ipv6=yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-# force regeneration of gnome-search-tool.schemas to prevent warnings:
-# WARNING: node <gettext_domain> not understood below <schema>
-post-extract:
-	rm ${WRKSRC}/gsearchtool/gnome-search-tool.schemas
 
 .include <bsd.port.mk>
