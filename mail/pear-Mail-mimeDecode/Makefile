@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/18 19:07:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/03/21 00:03:06 sthen Exp $
 
 COMMENT=	class to decode mime messages
 
-DISTNAME=	Mail_mimeDecode-1.5.0
+DISTNAME=	Mail_mimeDecode-1.5.1
 PKGNAME=	pear-${DISTNAME:S/_/-/}
 CATEGORIES=	mail
 
 MODULES=	www/pear
+PKG_ARCH=	*
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
