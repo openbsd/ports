@@ -1,28 +1,33 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2008/06/03 16:36:54 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2010/03/21 11:01:30 jasper Exp $
 lib/gnumeric/${VERSION}/plugins/applix/applix.so
-lib/gnumeric/${VERSION}/plugins/corba/corba.so
-lib/gnumeric/${VERSION}/plugins/derivatives/derivatives.so
 lib/gnumeric/${VERSION}/plugins/dif/dif.so
 lib/gnumeric/${VERSION}/plugins/excel/excel.so
+lib/gnumeric/${VERSION}/plugins/excelplugins/plugin.so
+lib/gnumeric/${VERSION}/plugins/excelplugins/xlcall32.so
+lib/gnumeric/${VERSION}/plugins/fn-christian-date/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-complex/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-database/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-date/plugin.so
+lib/gnumeric/${VERSION}/plugins/fn-derivatives/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-eng/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-erlang/erlang.so
 lib/gnumeric/${VERSION}/plugins/fn-financial/plugin.so
+lib/gnumeric/${VERSION}/plugins/fn-hebrew-date/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-info/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-logical/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-lookup/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-math/plugin.so
+lib/gnumeric/${VERSION}/plugins/fn-numtheory/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-r/rstat.so
 lib/gnumeric/${VERSION}/plugins/fn-random/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-stat/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-string/plugin.so
 lib/gnumeric/${VERSION}/plugins/fn-tsa/plugin.so
+lib/gnumeric/${VERSION}/plugins/glpk/glpk.so
 lib/gnumeric/${VERSION}/plugins/html/html.so
 lib/gnumeric/${VERSION}/plugins/lotus/lotus.so
+lib/gnumeric/${VERSION}/plugins/lpsolve/lpsolve.so
 lib/gnumeric/${VERSION}/plugins/mps/mps.so
-lib/gnumeric/${VERSION}/plugins/numtheory/numtheory.so
 lib/gnumeric/${VERSION}/plugins/oleo/oleo.so
 lib/gnumeric/${VERSION}/plugins/openoffice/openoffice.so
 lib/gnumeric/${VERSION}/plugins/perl-loader/perl_loader.so
@@ -33,5 +38,6 @@ lib/gnumeric/${VERSION}/plugins/sc/sc.so
 lib/gnumeric/${VERSION}/plugins/sylk/sylk.so
 lib/gnumeric/${VERSION}/plugins/uihello/plugin.so
 lib/gnumeric/${VERSION}/plugins/xbase/xbase.so
+lib/goffice/0.8.0/plugins/gnumeric/gnumeric.so
 lib/libspreadsheet-${VERSION}.so
 lib/libspreadsheet.so

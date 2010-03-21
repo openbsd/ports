@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_sheet_c,v 1.1 2010/03/21 11:01:30 jasper Exp $
+
+gcc3 doesn't like function names that end with a numeral right after
+alphabetical characters.
+
+--- src/sheet.c.orig	Mon Feb 15 20:17:06 2010
++++ src/sheet.c	Mon Feb 15 20:19:53 2010
+@@ -1055,7 +1055,7 @@ gnm_sheet_visibility_get_type (void)
+ /* ------------------------------------------------------------------------- */
+ 
+ static gboolean
+-powerof2 (int i)
++powerof_2 (int i)
+ {
+ 	return i > 0 && (i & (i - 1)) == 0;
+ }
+@@ -1065,10 +1065,10 @@ gnm_sheet_valid_size (int cols, int rows)
+ {
+ 	return (cols >= GNM_MIN_COLS &&
+ 		cols <= GNM_MAX_COLS &&
+-		powerof2 (cols) &&
++		powerof_2 (cols) &&
+ 		rows >= GNM_MIN_ROWS &&
+ 		rows <= GNM_MAX_ROWS &&
+-		powerof2 (rows)
++		powerof_2 (rows)
+ #if 0
+        	&& 0x80000000u / (unsigned)(cols / 2) >= (unsigned)rows
+ #endif
