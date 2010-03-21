@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2009/11/02 18:12:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2010/03/21 16:37:49 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
-DISTNAME=	bash-4.0
-PKGNAME=	${DISTNAME}.35
+DISTNAME=	bash-4.1
+PKGNAME=	${DISTNAME}.2
 CATEGORIES=	shells
 HOMEPAGE=	http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 
@@ -18,16 +18,16 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
 MASTER_SITES0=	${MASTER_SITE_GNU:=bash/${DISTNAME}-patches/}
 DIST_SUBDIR=	bash
-.for i in 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 \
-          21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
-PATCHFILES+=	bash40-0$i:0
+.for i in 01 02
+PATCHFILES+=	bash41-0$i:0
 .endfor
 
 MODULES=	devel/gettext
 WANTLIB=	c termcap 
 
-BUILD_DEPENDS=	::devel/bison
-YACC=		${LOCALBASE}/bin/bison -y
+# enable if parse.y is patched
+#BUILD_DEPENDS=	::devel/bison
+#YACC=		${LOCALBASE}/bin/bison -y
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-multibyte	# missing wcscoll(3)
