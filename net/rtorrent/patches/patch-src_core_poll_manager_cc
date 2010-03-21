@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_core_poll_manager_cc,v 1.1 2010/03/21 16:34:25 naddy Exp $
+--- src/core/poll_manager.cc.orig	Thu Jan 21 01:04:01 2010
++++ src/core/poll_manager.cc	Thu Jan 21 01:05:04 2010
+@@ -37,6 +37,7 @@
+ #include "config.h"
+ 
+ #include <stdexcept>
++#include <unistd.h>
+ #include <rak/error_number.h>
+ 
+ #include "globals.h"
