@@ -1,5 +1,5 @@
 TeX Live for OpenBSD (PuffTeX) - Notes
-$OpenBSD: README.OpenBSD,v 1.6 2009/12/12 17:48:34 edd Exp $
+$OpenBSD: README.OpenBSD,v 1.7 2010/03/21 13:22:55 edd Exp $
 ----------------------------
 
 There are a number of texmf trees in the OpenBSD packages:
@@ -27,6 +27,10 @@ Be warned that the package tools manipulate TeX configuration files
 (texmf.cnf, fmtutil.cnf, etc.) when adding/deleting texlive related
 packages.
 
+The 'tlmgr' script was disabled in the OpenBSD package. This is because
+updating TeX Live in this way will upset the package tools due to
+differing file checksums.
+
 Some requirements of TeX Live were not included as dependencies to make the
 package less bloated for people who don't need those features.
 
@@ -34,8 +38,6 @@ As far as I know:
 * You should install ruby and ImageMagick if you wish to use ConTeXt.
 * For texdoctk you will need p5-Tk
 
-If you know more, please mail me: <edd@openbsd.org>
+If you know more, please mail the package maintainer: <edd@openbsd.org>
 
 Have fun TeXing.
-
-Edd

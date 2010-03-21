@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/12/15 18:01:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/03/21 13:22:55 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
@@ -231,7 +231,7 @@ bin/texutil
 bin/thumbpdf
 @bin bin/tie
 bin/tl-link-config
-bin/tlmgr
+@comment bin/tlmgr
 bin/tmftools
 bin/tpic2pdftex
 @bin bin/ttf2afm
@@ -658,7 +658,7 @@ texmf/scripts/texdoc/
 texmf/scripts/texdoc/texdoc.tlu
 texmf/scripts/texlive/
 texmf/scripts/texlive/rungs.tlu
-texmf/scripts/texlive/tlmgr.pl
+@comment texmf/scripts/texlive/tlmgr.pl
 texmf/scripts/xindy/
 @comment texmf/texconfig/
 @comment texmf/texconfig/README
