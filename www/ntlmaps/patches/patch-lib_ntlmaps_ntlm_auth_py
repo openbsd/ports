@@ -1,0 +1,66 @@
+$OpenBSD: patch-lib_ntlmaps_ntlm_auth_py,v 1.1 2010/03/21 10:50:14 jasper Exp $
+
+- fix 400 errors when using SVN with NTLMaps
+  NTLMaps 0.9.9.0.1 is unable to handle extended HTTP methods that
+  include content payload like PROPFIND, REPORT etc. This breaks
+  outgoing packets and causes 400 error with SVN.
+
+  SF Patch #1913554
+  svn revision 940
+
+-  Added unicode translation when using BASIC->NTLM, thanks to
+  Nickolay Kondrashov. Closes: Debian #344904
+  svn revision 942
+
+--- lib/ntlmaps/ntlm_auth.py.orig	Wed Feb  3 22:58:21 2010
++++ lib/ntlmaps/ntlm_auth.py	Wed Feb  3 23:03:19 2010
+@@ -64,7 +64,7 @@ class ntlm_auther:
+         # If we are POST/PUT-ing a large chunk of data we don't want
+         # to do this at this time, so we change the data to 'abc' with
+         # lenght = 3.
+-        if connection.client_head_obj.get_http_method() in ('POST', 'PUT'):
++        if connection.client_head_obj.has_param('Content-Length'):
+             tmp_client_head_obj.replace_param_value('Content-Length', '3')
+ 
+         connection.logger.log('*** Fake NTLM header with Msg1:\n=====\n' + tmp_client_head_obj.__repr__())
+@@ -72,7 +72,7 @@ class ntlm_auther:
+         tmp_client_head_obj.send(connection.rserver_socket)
+         connection.logger.log('Done.\n')
+ 
+-        if connection.client_head_obj.get_http_method() in ('POST', 'PUT'):
++        if connection.client_head_obj.has_param('Content-Length'):
+             try:
+                 connection.logger.log("*** Sending fake 'abc' bytes body...")
+                 connection.rserver_socket.send('abc')
+@@ -160,14 +160,14 @@ class ntlm_auther:
+         # If we are POST/PUT-ing a large chunk of data we don't want
+         # to do this at this time, so we change the data to 'abc' with
+         # lenght = 3.
+-        if connection.client_head_obj.get_http_method() in ('POST', 'PUT'):
++        if connection.client_head_obj.has_param('Content-Length'):
+             tmp_client_head_obj.replace_param_value('Content-Length', '3')
+ 
+         connection.logger.log('*** Fake NTLM header with Msg1:\n=====\n' + tmp_client_head_obj.__repr__())
+         connection.logger.log('*** Sending Fake NTLM header (and body) with Msg1...')
+         tmp_client_head_obj.send(connection.rserver_socket)
+ 
+-        if connection.client_head_obj.get_http_method() in ('POST', 'PUT'):
++        if connection.client_head_obj.has_param('Content-Length'):
+             try:
+                 connection.rserver_socket.send('abc')
+             except:
+@@ -313,7 +313,13 @@ class ntlm_auther:
+         user, password = self.get_credentials_from_basic(connection, error_code)
+         if user:
+             connection.logger.log("*** Found Basic credentials in client's header.\n")
+-            environment['USER'] = user
++            
++            if environment['UNICODE']:
++                environment['USER'] = utils.str2unicode(string.upper(user))
++            else:
++                environment['USER'] = string.upper(user)
++
++
+             #environment['PASSWORD'] = password
+             connection.logger.log("*** Basic User/Password: %s/%s.\n" % (user, password))
+ 

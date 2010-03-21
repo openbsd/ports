@@ -1,0 +1,35 @@
+$OpenBSD: patch-lib_ntlmaps_proxy_client_py,v 1.1 2010/03/21 10:50:14 jasper Exp $
+
+- Mask out Proxy-Authorization parameter when using BASIC to NTLM,
+  thanks to Nickolay Kondrashov. Closes: Debian #349965
+  svn revision 942
+
+--- lib/ntlmaps/proxy_client.py.orig	Wed Feb  3 23:02:32 2010
++++ lib/ntlmaps/proxy_client.py	Wed Feb  3 23:04:25 2010
+@@ -307,8 +307,24 @@ class proxy_HTTP_Client:
+     #-----------------------------------------------------------------------
+     def send_client_header(self):
+         ""
+-        self.logger.log('*** Sending client request header to remote server...')
+-        ok = self.client_head_obj.send(self.rserver_socket)
++        ok = 0
++    
++        if self.config['NTLM_AUTH']['NTLM_TO_BASIC'] and self.client_head_obj.has_param('Proxy-Authorization'):
++            # Assuming Proxy-Authorization parameter contains Basic credentials.
++            # Masking it out, because of unsafety and unnecessarity.
++        
++            proxy_authorization_values = self.client_head_obj.get_param_values('Proxy-Authorization')
++            self.client_head_obj.del_param('Proxy-Authorization')
++        
++            self.logger.log('*** Sending client request header without Proxy-Authorization parameter to remote server...')
++            ok = self.client_head_obj.send(self.rserver_socket)
++        
++            for value in proxy_authorization_values:
++                self.client_head_obj.add_param_value('Proxy-Authorization', value)
++        else:
++            self.logger.log('*** Sending client request header to remote server...')
++            ok = self.client_head_obj.send(self.rserver_socket)
++
+         if ok:
+             self.client_header_sent = 1
+             self.logger.log('Done.\n')

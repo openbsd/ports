@@ -1,0 +1,28 @@
+$OpenBSD: patch-lib_ntlmaps_server_py,v 1.1 2010/03/21 10:50:14 jasper Exp $
+
+Log to syslog when startup fails due to missing password in
+configuration file. Closes: Debian #343475
+
+Upstream svn revision 942.
+
+--- lib/ntlmaps/server.py.orig	Wed Feb  3 23:02:27 2010
++++ lib/ntlmaps/server.py	Wed Feb  3 23:06:29 2010
+@@ -17,8 +17,8 @@
+ # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+ #
+ 
+-import socket, thread, sys, signal, getpass
+-import proxy_client, www_client, monitor_upstream, ntlm_procs
++import socket, thread, sys, signal, getpass, syslog, base64
++import proxy_client, monitor_upstream, ntlm_procs
+ 
+ #--------------------------------------------------------------
+ class AuthProxyServer:
+@@ -33,6 +33,7 @@ class AuthProxyServer:
+         self.watchUpstream = 0
+         if not self.config['NTLM_AUTH']['NTLM_TO_BASIC']:
+             if not self.config['NTLM_AUTH']['PASSWORD']:
++            syslog.syslog('ntlmaps: Failed to start - password required in configuration file.')
+                 tries = 3
+                 print '------------------------'
+                 while tries and (not self.config['NTLM_AUTH']['PASSWORD']):
