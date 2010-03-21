@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.13 2009/12/01 16:13:00 ajacoutot Exp $
---- tests/Makefile.in.orig	Tue Dec  1 05:47:34 2009
-+++ tests/Makefile.in	Tue Dec  1 16:27:56 2009
-@@ -731,7 +731,6 @@ test_programs = \
+$OpenBSD: patch-tests_Makefile_in,v 1.14 2010/03/21 09:55:54 ajacoutot Exp $
+--- tests/Makefile.in.orig	Tue Mar 16 03:52:18 2010
++++ tests/Makefile.in	Tue Mar 16 12:41:26 2010
+@@ -732,7 +732,6 @@ test_programs = \
  	tree-test				\
  	type-test				\
  	unicode-caseconv			\

@@ -1,10 +1,10 @@
-$OpenBSD: patch-glib_Makefile_in,v 1.15 2009/12/01 16:13:00 ajacoutot Exp $
+$OpenBSD: patch-glib_Makefile_in,v 1.16 2010/03/21 09:55:54 ajacoutot Exp $
 
 Don't install gtester-report, it'll only pull in python.
 
---- glib/Makefile.in.orig	Tue Dec  1 05:47:32 2009
-+++ glib/Makefile.in	Tue Dec  1 16:27:56 2009
-@@ -693,7 +693,7 @@ INSTALL_PROGS = $(am__append_1) $(am__append_2) $(am__
+--- glib/Makefile.in.orig	Tue Mar 16 03:52:17 2010
++++ glib/Makefile.in	Tue Mar 16 12:41:26 2010
+@@ -694,7 +694,7 @@ INSTALL_PROGS = $(am__append_1) $(am__append_2) $(am__
  @OS_WIN32_TRUE@@OS_WIN32_X64_FALSE@gspawn_win32_helper_console_LDADD = libglib-2.0.la
  @OS_UNIX_TRUE@gtester_SOURCES = gtester.c
  @OS_UNIX_TRUE@gtester_LDADD = libglib-2.0.la 

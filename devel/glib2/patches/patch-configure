@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.19 2010/01/07 08:02:35 ajacoutot Exp $
---- configure.orig	Thu Jan  7 01:48:41 2010
-+++ configure	Thu Jan  7 08:54:09 2010
-@@ -2834,9 +2834,9 @@ _ACEOF
+$OpenBSD: patch-configure,v 1.20 2010/03/21 09:55:54 ajacoutot Exp $
+--- configure.orig	Tue Mar 16 03:52:21 2010
++++ configure	Tue Mar 16 12:41:54 2010
+@@ -3498,9 +3498,9 @@ $as_echo "#define GLIB_BINARY_AGE 2205" >>confdefs.h
  
  # libtool versioning
  LT_RELEASE=2.22
 -LT_CURRENT=2200
--LT_REVISION=4
+-LT_REVISION=5
 -LT_AGE=2200
 +LT_CURRENT=!!LIBglib-2.0_VERSION_R!!
 +LT_REVISION=!!LIBglib-2.0_VERSION_E!!
