@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/02/26 18:46:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/03/21 09:36:19 sthen Exp $
 @bin bin/rtmpdump
+@bin bin/rtmpgw
 @bin bin/rtmpsrv
 @bin bin/rtmpsuck
-@bin bin/streams
+@man man/man1/rtmpdump.1
+@man man/man8/rtmpgw.8
 share/doc/rtmpdump/
 share/doc/rtmpdump/COPYING
 share/doc/rtmpdump/ChangeLog
