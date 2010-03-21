@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/20 22:32:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/03/21 11:09:51 ajacoutot Exp $
 
 COMMENT=	modified libvmime library for Zarafa
 
 DISTNAME=	libvmime-0.7.1
-PKGNAME=	zarafa-${DISTNAME}p3
+PKGNAME=	zarafa-${DISTNAME}p4
+
+# patches are modified in the upstream tarball without notice nor
+# version bump, so we use this to force a new download instead of
+# failing because of checksum mismatch
+DIST_SUBDIR=	zarafa/vmime-patches-20090320
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		zarafa-vmime-patches.tar.gz
