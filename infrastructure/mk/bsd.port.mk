@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.982 2010/03/20 19:14:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.983 2010/03/21 11:34:38 ajacoutot Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -123,6 +123,8 @@ ARCH ?!= uname -m
 OPSYS = OpenBSD
 OPSYS_VER = ${OSREV}
 
+# not all powerpc have apm(4), hence the use of macppc
+APM_ARCHS = amd64 arm i386 loongson macppc sparc sparc64
 LP64_ARCHS = alpha amd64 hppa64 sparc64 mips64 mips64el
 NO_SHARED_ARCHS = m88k vax
 
