@@ -1,0 +1,37 @@
+$OpenBSD: patch-filter_conf,v 1.1 2010/03/21 10:49:26 ajacoutot Exp $
+--- filter.conf.orig	Wed Aug 19 20:08:41 2009
++++ filter.conf	Tue Feb 16 12:57:52 2010
+@@ -8,7 +8,7 @@
+ # "enscript" or "mpage". Command line options will be automatically
+ # set by "foomatic-rip".
+ 
+-# textfilter: a2ps
++textfilter: a2ps
+ 
+ # Set debug to 1 to enable the debug logfile for "foomatic-rip"; it
+ # will appear as /tmp/foomatic-rip.log It will contain status info of
+@@ -29,19 +29,19 @@
+ 
+ # Set echo to the path to an echo program that uses echo -n
+ 
+-# echo: /bin/echo
++echo: /bin/echo
+ 
+ # set gspath to the GhostScript to be used by foomatic
+-# gspath: gs
++gspath: ${LOCALBASE}/bin/gs
+ 
+ # Set the PATH value to be used by foomatic-rip:
+-# execpath: /usr/local/bin:/usr/bin:/bin
++exepath: ${LOCALBASE}/bin:/usr/bin:/bin
+ 
+ # Set the directories in which foomatic-rip should search for CUPS filters:
+-# cupsfilterpath: /usr/local/lib/cups/filter:/usr/local/lib/cups/filter:/usr/local/libexec/cups/filter:/opt/cups/filter:/usr/lib/cups/filter
++cupsfilterpath: ${LOCALBASE}/libexec/cups/filter
+ 
+ # Set the preferred shell to use when executing FoomaticRIPCommandLine and
+ # friends.  Several PPD files use shell constructs that require a more
+ # modern shell like bash, zsh, or ksh.
+ 
+-# preferred_shell: /bin/bash
++preferred_shell: /bin/ksh

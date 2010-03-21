@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/12/10 10:57:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/03/21 10:49:25 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
 DISTNAME=		foomatic-filters-4.0.3
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
@@ -48,6 +49,6 @@ pre-configure:
 	perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g;' \
 		-e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/configure
-	${SUBST_CMD} ${WRKSRC}/foomaticrip.c
+	${SUBST_CMD} ${WRKSRC}/foomaticrip.c ${WRKSRC}/filter.conf
 
 .include <bsd.port.mk>
