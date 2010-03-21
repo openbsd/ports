@@ -1,0 +1,26 @@
+$OpenBSD: patch-stats_c,v 1.1 2010/03/21 11:37:17 ajacoutot Exp $
+
+Fix cpu graph on single cores:
+    sizeof(long) != sizeof(int64_t) on i386
+
+--- stats.c.orig	Thu Jan  7 18:08:14 2010
++++ stats.c	Mon Feb  1 08:29:25 2010
+@@ -456,9 +456,16 @@ sysinfo_update()
+             err(1, "sysinfo update: KERN.CPTIME2.%d failed", cpu);
+       }
+    } else {
++      int i;
++      long cpu_raw_tmp[CPUSTATES];
++      size = sizeof(cpu_raw_tmp);
+       mib_cpus[1] = KERN_CPTIME;
+-      if (sysctl(mib_cpus, 2, sysinfo.cpu_raw[0][cur], &size, NULL, 0) < 0)
+-         err(1, "sysinfo update: KERN.CPTIME2 failed");
++
++      if (sysctl(mib_cpus, 2, cpu_raw_tmp, &size, NULL, 0) < 0)
++         err(1, "sysinfo update: KERN.CPTIME failed");
++
++      for (i = 0; i < CPUSTATES; i++)
++              sysinfo.cpu_raw[0][cur][i] = cpu_raw_tmp[i];
+    }
+ 
+    /* convert ticks to percentages */
