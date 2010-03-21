@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/03/20 17:16:44 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2010/03/21 13:43:10 robert Exp $
 
 # sync with net/avahi,-mono
 ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
 COMMENT=	cross platform, open source .NET developement framework
 
 DISTNAME=	mono-2.6.3
-PKGNAME=	${DISTNAME}
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	lang devel
 

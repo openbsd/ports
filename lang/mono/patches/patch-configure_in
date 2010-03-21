@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1 2010/03/20 17:16:44 robert Exp $
---- configure.in.orig	Fri Mar 19 23:30:15 2010
-+++ configure.in	Fri Mar 19 23:28:41 2010
+$OpenBSD: patch-configure_in,v 1.2 2010/03/21 13:43:10 robert Exp $
+--- configure.in.orig	Thu Feb 25 16:20:57 2010
++++ configure.in	Sun Mar 21 10:58:51 2010
 @@ -147,8 +147,11 @@ case "$host" in
  		;;
  	*-*-*openbsd*)
@@ -15,6 +15,15 @@ $OpenBSD: patch-configure_in,v 1.1 2010/03/20 17:16:44 robert Exp $
  		LDFLAGS="$LDFLAGS -pthread"
  		libmono_ldflags="-pthread"
  		need_link_unlink=yes
+@@ -314,7 +317,7 @@ fi
+ 
+ AM_CONDITIONAL(NO_VERSION_SCRIPT, test x$no_version_script = xyes)
+ 
+-AC_CHECK_HEADERS(sys/filio.h sys/sockio.h netdb.h utime.h sys/utime.h semaphore.h sys/un.h linux/rtc.h sys/syscall.h sys/mkdev.h sys/uio.h)
++AC_CHECK_HEADERS(sys/filio.h sys/sockio.h netdb.h utime.h sys/utime.h semaphore.h sys/un.h linux/rtc.h sys/syscall.h sys/mkdev.h sys/uio.h sys/param.h)
+ AC_CHECK_HEADERS(sys/user.h sys/socket.h sys/ipc.h sys/sem.h sys/utsname.h alloca.h ucontext.h pwd.h sys/select.h netinet/tcp.h netinet/in.h unistd.h sys/types.h)
+ 
+ 
 @@ -1228,6 +1231,9 @@ if test x$platform_win32 = xno; then
  		*-*-*freebsd*)
  			AC_CHECK_LIB(pthread, main, LIBS="$LIBS -pthread")
@@ -25,7 +34,15 @@ $OpenBSD: patch-configure_in,v 1.1 2010/03/20 17:16:44 robert Exp $
  		*)
  			AC_CHECK_LIB(pthread, main, LIBS="$LIBS -lpthread")
  		;;
-@@ -1743,7 +1749,7 @@ AC_MSG_RESULT($try_dev_random)
+@@ -1620,6 +1626,7 @@ if test x$platform_win32 = xno; then
+ 	AC_CHECK_MEMBERS(
+ 		[struct kinfo_proc.kp_proc],,, 
+ 		[#include <sys/types.h>
++		 #include <sys/param.h>
+ 		 #include <sys/sysctl.h>
+ 		 #include <sys/proc.h>
+ 		 ])
+@@ -1743,7 +1750,7 @@ AC_MSG_RESULT($try_dev_random)
  
  case "{$target}" in
      *-openbsd*)
@@ -34,7 +51,7 @@ $OpenBSD: patch-configure_in,v 1.1 2010/03/20 17:16:44 robert Exp $
      ;;
  
  dnl Win32 does not have /dev/random, they have their own method...
-@@ -1932,8 +1938,8 @@ JIT_SUPPORTED=no
+@@ -1932,8 +1939,8 @@ JIT_SUPPORTED=no
  INTERP_SUPPORTED=no
  LIBC="libc.so.6"
  INTL="libc.so.6"
