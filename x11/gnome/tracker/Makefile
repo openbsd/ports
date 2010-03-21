@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2009/12/21 18:03:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/03/21 10:41:37 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
 # there is already audio/tracker, so this port has to live
 # as tracker-search.
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.6.95
-PKGNAME=	tracker-search-${VERSION}p5
+GNOME_VERSION=	0.6.96
+PKGNAME=	tracker-search-${VERSION}
 
 SHARED_LIBS +=	stemmer              0.1      # .695.0
 SHARED_LIBS +=	tracker-common       0.1      # .695.0
@@ -48,7 +48,7 @@ LIB_DEPENDS=	vorbis::audio/libvorbis \
 		gsf-1::devel/libgsf \
 		notify::devel/libnotify \
 		exif::graphics/libexif \
-		gmime-2.0:gmime->=2.2,<2.4:mail/gmime \
+		exempi.>=1::textproc/exempi \
 		gsttag-0.10:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
 		poppler-glib,poppler::print/poppler \
 		raptor::textproc/raptor \
@@ -64,9 +64,8 @@ MODPY_RUNDEP=	No
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-external-qdbm \
-		--enable-video-extractor="gstreamer" \
+		--enable-video-extractor=gstreamer \
 		--disable-unac \
-		--disable-xmp \
 		--disable-hal \
 		--enable-libexif \
 		--enable-libgsf \
@@ -74,9 +73,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-libtiff \
 		--enable-libvorbis \
 		--enable-gdkpixbuf \
-		--enable-deskbar-applet \
-		--with-deskbar_applet_dir=${PREFIX}/libexec/deskbar-applet/modules-2.20-compatible \
-		--with-deskbar-applet-handler-dir="${LOCALBASE}/lib/python${MODPY_VERSION}/site-packages/deskbar/handlers/"
+		--with-deskbar_applet_dir=${PREFIX}/libexec/deskbar-applet/modules-2.20-compatible
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

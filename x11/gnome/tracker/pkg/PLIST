@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/21 18:03:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/03/21 10:41:37 ajacoutot Exp $
 @bin bin/tracker-applet
 @bin bin/tracker-files
 @bin bin/tracker-info
@@ -95,6 +95,9 @@ lib/tracker/extract-modules/libextract-tiff.so
 lib/tracker/extract-modules/libextract-vorbis.a
 lib/tracker/extract-modules/libextract-vorbis.la
 lib/tracker/extract-modules/libextract-vorbis.so
+lib/tracker/extract-modules/libextract-xmp.a
+lib/tracker/extract-modules/libextract-xmp.la
+lib/tracker/extract-modules/libextract-xmp.so
 lib/tracker/filters/
 lib/tracker/filters/application/
 lib/tracker/filters/application/csv_filter
@@ -174,7 +177,6 @@ libexec/deskbar-applet/modules-2.20-compatible/tracker-module.py
 @man man/man1/tracker-stats.1
 @man man/man1/tracker-status.1
 @man man/man1/tracker-tag.1
-@man man/man1/tracker-thumbnailer.1
 @man man/man1/tracker-unique.1
 @man man/man1/trackerd.1
 @man man/man5/tracker.cfg.5

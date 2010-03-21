@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_trackerd_tracker-monitor_c,v 1.1 2009/10/28 20:28:18 jasper Exp $
+$OpenBSD: patch-src_trackerd_tracker-monitor_c,v 1.2 2010/03/21 10:41:37 ajacoutot Exp $
 
 Fix a segfault where there is no monitor running.
 
---- src/trackerd/tracker-monitor.c.orig	Sun Apr 26 12:22:58 2009
-+++ src/trackerd/tracker-monitor.c	Wed Oct 28 21:06:25 2009
-@@ -208,6 +208,7 @@ tracker_monitor_init (TrackerMonitor *object)
+--- src/trackerd/tracker-monitor.c.orig	Thu Feb  4 11:25:44 2010
++++ src/trackerd/tracker-monitor.c	Thu Feb  4 14:09:19 2010
+@@ -216,6 +216,7 @@ tracker_monitor_init (TrackerMonitor *object)
  	GFileMonitor	      *monitor;
  	GList		      *all_modules, *l;
  	const gchar	      *name;
@@ -12,7 +12,7 @@ Fix a segfault where there is no monitor running.
  
  	object->private = TRACKER_MONITOR_GET_PRIVATE (object);
  
-@@ -276,7 +277,17 @@ tracker_monitor_init (TrackerMonitor *object)
+@@ -284,7 +285,17 @@ tracker_monitor_init (TrackerMonitor *object)
  	monitor = g_file_monitor_directory (file,
  					    G_FILE_MONITOR_WATCH_MOUNTS,
  					    NULL,

@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.1 2009/10/12 17:42:55 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2010/03/21 10:41:37 ajacoutot Exp $
 
 deskbar-applet is not really needed for tracker to build but we still
 want the functionnality. We cannot add deskbar-applet as a build
 dependency without creating a loop:
 evince -> nautilus -> tracker -> deskbar-applet -> py-gnome-desktop -> evince
 
---- configure.orig	Mon Oct 12 19:21:21 2009
-+++ configure	Mon Oct 12 19:21:59 2009
-@@ -18832,17 +18832,6 @@ else
+--- configure.orig	Thu Feb  4 11:56:45 2010
++++ configure	Thu Feb  4 14:09:19 2010
+@@ -16007,17 +16007,6 @@ else
    enable_deskbar_applet=auto
  fi
  
@@ -24,4 +24,4 @@ evince -> nautilus -> tracker -> deskbar-applet -> py-gnome-desktop -> evince
 -
  if test "x$enable_deskbar_applet" = "xyes"; then
     if test "x$have_deskbar_applet" = "xno"; then
-       { { $as_echo "$as_me:$LINENO: error: Couldn't find deskbar-applet >= 2.16." >&5
+       as_fn_error "Couldn't find deskbar-applet >= 2.16." "$LINENO" 5
