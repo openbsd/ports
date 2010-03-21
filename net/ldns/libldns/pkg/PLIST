@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/07/15 22:13:45 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/03/21 13:50:27 sthen Exp $
 @conflict ldns-*
 %%SHARED%%
 bin/ldns-config
@@ -446,9 +446,11 @@ lib/libldns.la
 @man man/man3/ldns_update_upcount.3
 @man man/man3/ldns_update_zocount.3
 @man man/man3/ldns_verify.3
+@man man/man3/ldns_verify_notime.3
 @man man/man3/ldns_verify_rrsig.3
 @man man/man3/ldns_verify_rrsig_dsa.3
 @man man/man3/ldns_verify_rrsig_keylist.3
+@man man/man3/ldns_verify_rrsig_keylist_notime.3
 @man man/man3/ldns_verify_rrsig_rsamd5.3
 @man man/man3/ldns_verify_rrsig_rsasha1.3
 @man man/man3/ldns_wire2dname.3
