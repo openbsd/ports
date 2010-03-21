@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.1 2009/02/16 10:13:59 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2010/03/21 11:12:45 ajacoutot Exp $
 
 # there is no point in building/running this on NO_SHARED_LIBS archs
 SHARED_ONLY=	Yes
 
-DIST_SUBDIR=	zarafa
+DIST_SUBDIR?=	zarafa
 
 CATEGORIES+=	mail/zarafa
 
