@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.7 2010/03/21 19:43:38 espie Exp $
+# $OpenBSD: Core.pm,v 1.8 2010/03/21 20:09:42 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -363,6 +363,11 @@ sub finalize
 	} else {
 		return 0;
     	}
+}
+
+sub watched
+{
+	return '';
 }
 
 # this is a weird one !
