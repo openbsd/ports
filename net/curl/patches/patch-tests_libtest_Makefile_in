@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_libtest_Makefile_in,v 1.6 2009/11/10 19:13:49 naddy Exp $
---- tests/libtest/Makefile.in.orig	Wed Nov  4 13:26:12 2009
-+++ tests/libtest/Makefile.in	Tue Nov 10 00:46:28 2009
-@@ -328,7 +328,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $
+$OpenBSD: patch-tests_libtest_Makefile_in,v 1.7 2010/03/21 18:43:37 naddy Exp $
+--- tests/libtest/Makefile.in.orig	Thu Feb  4 22:42:21 2010
++++ tests/libtest/Makefile.in	Wed Feb 10 18:42:59 2010
+@@ -349,7 +349,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $
  	$(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
