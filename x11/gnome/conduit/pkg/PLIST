@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/12/21 18:03:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/03/21 10:45:34 ajacoutot Exp $
 bin/conduit
 bin/conduit-client
 bin/conduit.real
@@ -69,36 +69,14 @@ lib/conduit/modules/Firefox3Module/
 lib/conduit/modules/Firefox3Module/Firefox3Module.py
 lib/conduit/modules/Firefox3Module/Firefox3Module.pyc
 lib/conduit/modules/Firefox3Module/Firefox3Module.pyo
-lib/conduit/modules/FlickrModule/
-lib/conduit/modules/FlickrModule/FlickrModule.py
-lib/conduit/modules/FlickrModule/FlickrModule.pyc
-lib/conduit/modules/FlickrModule/FlickrModule.pyo
-lib/conduit/modules/FlickrModule/flickrapi/
-lib/conduit/modules/FlickrModule/flickrapi/__init__.py
-lib/conduit/modules/FlickrModule/flickrapi/__init__.pyc
-lib/conduit/modules/FlickrModule/flickrapi/__init__.pyo
-lib/conduit/modules/FlickrModule/flickrapi/cache.py
-lib/conduit/modules/FlickrModule/flickrapi/cache.pyc
-lib/conduit/modules/FlickrModule/flickrapi/cache.pyo
-lib/conduit/modules/FlickrModule/flickrapi/exceptions.py
-lib/conduit/modules/FlickrModule/flickrapi/exceptions.pyc
-lib/conduit/modules/FlickrModule/flickrapi/exceptions.pyo
-lib/conduit/modules/FlickrModule/flickrapi/multipart.py
-lib/conduit/modules/FlickrModule/flickrapi/multipart.pyc
-lib/conduit/modules/FlickrModule/flickrapi/multipart.pyo
-lib/conduit/modules/FlickrModule/flickrapi/reportinghttp.py
-lib/conduit/modules/FlickrModule/flickrapi/reportinghttp.pyc
-lib/conduit/modules/FlickrModule/flickrapi/reportinghttp.pyo
-lib/conduit/modules/FlickrModule/flickrapi/tokencache.py
-lib/conduit/modules/FlickrModule/flickrapi/tokencache.pyc
-lib/conduit/modules/FlickrModule/flickrapi/tokencache.pyo
-lib/conduit/modules/FlickrModule/flickrapi/xmlnode.py
-lib/conduit/modules/FlickrModule/flickrapi/xmlnode.pyc
-lib/conduit/modules/FlickrModule/flickrapi/xmlnode.pyo
-lib/conduit/modules/FspotModule/
-lib/conduit/modules/FspotModule/FspotModule.py
-lib/conduit/modules/FspotModule/FspotModule.pyc
-lib/conduit/modules/FspotModule/FspotModule.pyo
+@comment lib/conduit/modules/FlickrModule/
+@comment lib/conduit/modules/FlickrModule/FlickrModule.py
+@comment lib/conduit/modules/FlickrModule/FlickrModule.pyc
+@comment lib/conduit/modules/FlickrModule/FlickrModule.pyo
+@comment lib/conduit/modules/FspotModule/
+@comment lib/conduit/modules/FspotModule/FspotModule.py
+@comment lib/conduit/modules/FspotModule/FspotModule.pyc
+@comment lib/conduit/modules/FspotModule/FspotModule.pyo
 lib/conduit/modules/GConfModule/
 lib/conduit/modules/GConfModule/GConfModule.py
 lib/conduit/modules/GConfModule/GConfModule.pyc
@@ -113,112 +91,6 @@ lib/conduit/modules/GoogleModule/GoogleModule.pyo
 lib/conduit/modules/GoogleModule/__init__.py
 lib/conduit/modules/GoogleModule/__init__.pyc
 lib/conduit/modules/GoogleModule/__init__.pyo
-lib/conduit/modules/GoogleModule/atom/
-lib/conduit/modules/GoogleModule/atom/__init__.py
-lib/conduit/modules/GoogleModule/atom/__init__.pyc
-lib/conduit/modules/GoogleModule/atom/__init__.pyo
-lib/conduit/modules/GoogleModule/atom/mock_service.py
-lib/conduit/modules/GoogleModule/atom/mock_service.pyc
-lib/conduit/modules/GoogleModule/atom/mock_service.pyo
-lib/conduit/modules/GoogleModule/atom/service.py
-lib/conduit/modules/GoogleModule/atom/service.pyc
-lib/conduit/modules/GoogleModule/atom/service.pyo
-lib/conduit/modules/GoogleModule/calendar-config.glade
-lib/conduit/modules/GoogleModule/gdata/
-lib/conduit/modules/GoogleModule/gdata/__init__.py
-lib/conduit/modules/GoogleModule/gdata/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/apps/
-lib/conduit/modules/GoogleModule/gdata/apps/__init__.py
-lib/conduit/modules/GoogleModule/gdata/apps/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/apps/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/apps/service.py
-lib/conduit/modules/GoogleModule/gdata/apps/service.pyc
-lib/conduit/modules/GoogleModule/gdata/apps/service.pyo
-lib/conduit/modules/GoogleModule/gdata/auth.py
-lib/conduit/modules/GoogleModule/gdata/auth.pyc
-lib/conduit/modules/GoogleModule/gdata/auth.pyo
-lib/conduit/modules/GoogleModule/gdata/base/
-lib/conduit/modules/GoogleModule/gdata/base/__init__.py
-lib/conduit/modules/GoogleModule/gdata/base/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/base/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/base/service.py
-lib/conduit/modules/GoogleModule/gdata/base/service.pyc
-lib/conduit/modules/GoogleModule/gdata/base/service.pyo
-lib/conduit/modules/GoogleModule/gdata/blogger/
-lib/conduit/modules/GoogleModule/gdata/blogger/__init__.py
-lib/conduit/modules/GoogleModule/gdata/blogger/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/blogger/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/blogger/service.py
-lib/conduit/modules/GoogleModule/gdata/blogger/service.pyc
-lib/conduit/modules/GoogleModule/gdata/blogger/service.pyo
-lib/conduit/modules/GoogleModule/gdata/calendar/
-lib/conduit/modules/GoogleModule/gdata/calendar/__init__.py
-lib/conduit/modules/GoogleModule/gdata/calendar/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/calendar/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/calendar/service.py
-lib/conduit/modules/GoogleModule/gdata/calendar/service.pyc
-lib/conduit/modules/GoogleModule/gdata/calendar/service.pyo
-lib/conduit/modules/GoogleModule/gdata/codesearch/
-lib/conduit/modules/GoogleModule/gdata/codesearch/__init__.py
-lib/conduit/modules/GoogleModule/gdata/codesearch/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/codesearch/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/codesearch/service.py
-lib/conduit/modules/GoogleModule/gdata/codesearch/service.pyc
-lib/conduit/modules/GoogleModule/gdata/codesearch/service.pyo
-lib/conduit/modules/GoogleModule/gdata/contacts/
-lib/conduit/modules/GoogleModule/gdata/contacts/__init__.py
-lib/conduit/modules/GoogleModule/gdata/contacts/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/contacts/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/contacts/service.py
-lib/conduit/modules/GoogleModule/gdata/contacts/service.pyc
-lib/conduit/modules/GoogleModule/gdata/contacts/service.pyo
-lib/conduit/modules/GoogleModule/gdata/docs/
-lib/conduit/modules/GoogleModule/gdata/docs/__init__.py
-lib/conduit/modules/GoogleModule/gdata/docs/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/docs/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/docs/service.py
-lib/conduit/modules/GoogleModule/gdata/docs/service.pyc
-lib/conduit/modules/GoogleModule/gdata/docs/service.pyo
-lib/conduit/modules/GoogleModule/gdata/exif/
-lib/conduit/modules/GoogleModule/gdata/exif/__init__.py
-lib/conduit/modules/GoogleModule/gdata/exif/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/exif/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/geo/
-lib/conduit/modules/GoogleModule/gdata/geo/__init__.py
-lib/conduit/modules/GoogleModule/gdata/geo/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/geo/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/media/
-lib/conduit/modules/GoogleModule/gdata/media/__init__.py
-lib/conduit/modules/GoogleModule/gdata/media/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/media/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/photos/
-lib/conduit/modules/GoogleModule/gdata/photos/__init__.py
-lib/conduit/modules/GoogleModule/gdata/photos/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/photos/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/photos/service.py
-lib/conduit/modules/GoogleModule/gdata/photos/service.pyc
-lib/conduit/modules/GoogleModule/gdata/photos/service.pyo
-lib/conduit/modules/GoogleModule/gdata/service.py
-lib/conduit/modules/GoogleModule/gdata/service.pyc
-lib/conduit/modules/GoogleModule/gdata/service.pyo
-lib/conduit/modules/GoogleModule/gdata/spreadsheet/
-lib/conduit/modules/GoogleModule/gdata/spreadsheet/__init__.py
-lib/conduit/modules/GoogleModule/gdata/spreadsheet/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/spreadsheet/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/spreadsheet/service.py
-lib/conduit/modules/GoogleModule/gdata/spreadsheet/service.pyc
-lib/conduit/modules/GoogleModule/gdata/spreadsheet/service.pyo
-lib/conduit/modules/GoogleModule/gdata/spreadsheet/text_db.py
-lib/conduit/modules/GoogleModule/gdata/spreadsheet/text_db.pyc
-lib/conduit/modules/GoogleModule/gdata/spreadsheet/text_db.pyo
-lib/conduit/modules/GoogleModule/gdata/youtube/
-lib/conduit/modules/GoogleModule/gdata/youtube/__init__.py
-lib/conduit/modules/GoogleModule/gdata/youtube/__init__.pyc
-lib/conduit/modules/GoogleModule/gdata/youtube/__init__.pyo
-lib/conduit/modules/GoogleModule/gdata/youtube/service.py
-lib/conduit/modules/GoogleModule/gdata/youtube/service.pyc
-lib/conduit/modules/GoogleModule/gdata/youtube/service.pyo
 @comment lib/conduit/modules/N800Module/
 @comment lib/conduit/modules/N800Module/N800Module.py
 @comment lib/conduit/modules/N800Module/N800Module.pyc
@@ -271,10 +143,10 @@ lib/conduit/modules/SmugMugModule/SmugMugModule.pyo
 lib/conduit/modules/TomboyModule.py
 lib/conduit/modules/TomboyModule.pyc
 lib/conduit/modules/TomboyModule.pyo
-lib/conduit/modules/ZotoModule.py/
-lib/conduit/modules/ZotoModule.py/ZotoModule.py
-lib/conduit/modules/ZotoModule.py/ZotoModule.pyc
-lib/conduit/modules/ZotoModule.py/ZotoModule.pyo
+lib/conduit/modules/ZotoModule/
+lib/conduit/modules/ZotoModule/ZotoModule.py
+lib/conduit/modules/ZotoModule/ZotoModule.pyc
+lib/conduit/modules/ZotoModule/ZotoModule.pyo
 lib/conduit/modules/__init__.py
 lib/conduit/modules/__init__.pyc
 lib/conduit/modules/__init__.pyo
@@ -478,9 +350,6 @@ lib/python${MODPY_VERSION}/site-packages/conduit/platform/
 lib/python${MODPY_VERSION}/site-packages/conduit/platform/FileGio.py
 lib/python${MODPY_VERSION}/site-packages/conduit/platform/FileGio.pyc
 lib/python${MODPY_VERSION}/site-packages/conduit/platform/FileGio.pyo
-lib/python${MODPY_VERSION}/site-packages/conduit/platform/FileGnomeVfs.py
-lib/python${MODPY_VERSION}/site-packages/conduit/platform/FileGnomeVfs.pyc
-lib/python${MODPY_VERSION}/site-packages/conduit/platform/FileGnomeVfs.pyo
 lib/python${MODPY_VERSION}/site-packages/conduit/platform/FilePython.py
 lib/python${MODPY_VERSION}/site-packages/conduit/platform/FilePython.pyc
 lib/python${MODPY_VERSION}/site-packages/conduit/platform/FilePython.pyo
@@ -503,6 +372,9 @@ lib/python${MODPY_VERSION}/site-packages/conduit/platform/__init__.py
 lib/python${MODPY_VERSION}/site-packages/conduit/platform/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/conduit/platform/__init__.pyo
 lib/python${MODPY_VERSION}/site-packages/conduit/utils/
+lib/python${MODPY_VERSION}/site-packages/conduit/utils/AutostartManager.py
+lib/python${MODPY_VERSION}/site-packages/conduit/utils/AutostartManager.pyc
+lib/python${MODPY_VERSION}/site-packages/conduit/utils/AutostartManager.pyo
 lib/python${MODPY_VERSION}/site-packages/conduit/utils/CommandLineConverter.py
 lib/python${MODPY_VERSION}/site-packages/conduit/utils/CommandLineConverter.pyc
 lib/python${MODPY_VERSION}/site-packages/conduit/utils/CommandLineConverter.pyo
@@ -529,7 +401,7 @@ share/conduit/
 share/conduit/backpack.png
 share/conduit/boxdotnet.png
 share/conduit/conduit-splash.png
-share/conduit/conduit.glade
+share/conduit/conduit.ui
 share/conduit/evolution-memos.png
 share/conduit/evolution-tasks.png
 share/conduit/facebook.png
@@ -598,6 +470,17 @@ share/gnome/help/conduit/fr/figures/network-pc1.png
 share/gnome/help/conduit/fr/figures/network-pc2.png
 share/gnome/help/conduit/fr/figures/network-sync-pc1.png
 share/gnome/help/conduit/fr/figures/network-sync-pc2.png
+share/gnome/help/conduit/zh_CN/
+share/gnome/help/conduit/zh_CN/conduit.xml
+share/gnome/help/conduit/zh_CN/figures/
+share/gnome/help/conduit/zh_CN/figures/conduit-dp.png
+share/gnome/help/conduit/zh_CN/figures/conduit-folder-configuration.png
+share/gnome/help/conduit/zh_CN/figures/conduit-gui-parts.png
+share/gnome/help/conduit/zh_CN/figures/conduit-login.png
+share/gnome/help/conduit/zh_CN/figures/network-pc1.png
+share/gnome/help/conduit/zh_CN/figures/network-pc2.png
+share/gnome/help/conduit/zh_CN/figures/network-sync-pc1.png
+share/gnome/help/conduit/zh_CN/figures/network-sync-pc2.png
 share/icons/hicolor/16x16/actions/conduit-conflict-ask.png
 share/icons/hicolor/16x16/actions/conduit-conflict-delete.png
 share/icons/hicolor/16x16/actions/conduit-conflict-left.png
@@ -633,6 +516,7 @@ share/locale/de/LC_MESSAGES/conduit.mo
 share/locale/el/LC_MESSAGES/conduit.mo
 share/locale/en_GB/LC_MESSAGES/conduit.mo
 share/locale/es/LC_MESSAGES/conduit.mo
+share/locale/eu/LC_MESSAGES/conduit.mo
 share/locale/fi/LC_MESSAGES/conduit.mo
 share/locale/fr/LC_MESSAGES/conduit.mo
 share/locale/gl/LC_MESSAGES/conduit.mo
@@ -640,6 +524,7 @@ share/locale/he/LC_MESSAGES/conduit.mo
 share/locale/hu/LC_MESSAGES/conduit.mo
 share/locale/it/LC_MESSAGES/conduit.mo
 share/locale/nb/LC_MESSAGES/conduit.mo
+share/locale/nds/LC_MESSAGES/conduit.mo
 share/locale/oc/LC_MESSAGES/conduit.mo
 share/locale/pa/LC_MESSAGES/conduit.mo
 share/locale/pl/LC_MESSAGES/conduit.mo
@@ -649,6 +534,7 @@ share/locale/ru/LC_MESSAGES/conduit.mo
 share/locale/sl/LC_MESSAGES/conduit.mo
 share/locale/sv/LC_MESSAGES/conduit.mo
 share/locale/vi/LC_MESSAGES/conduit.mo
+share/locale/zh_CN/LC_MESSAGES/conduit.mo
 share/locale/zh_HK/LC_MESSAGES/conduit.mo
 share/locale/zh_TW/LC_MESSAGES/conduit.mo
 share/omf/conduit/
@@ -657,6 +543,7 @@ share/omf/conduit/conduit-de.omf
 share/omf/conduit/conduit-el.omf
 share/omf/conduit/conduit-es.omf
 share/omf/conduit/conduit-fr.omf
+share/omf/conduit/conduit-zh_CN.omf
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
