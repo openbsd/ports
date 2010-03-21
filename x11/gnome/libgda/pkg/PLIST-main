@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/10/14 23:30:43 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2010/03/21 09:54:50 ajacoutot Exp $
 @conflict libgda-db4-*
 bin/gda-list-config
 @bin bin/gda-list-config-${GDA_MAJOR}
@@ -85,6 +85,7 @@ include/libgda-${GDA_MAJOR}/libgda/handlers/gda-handler-type.h
 include/libgda-${GDA_MAJOR}/libgda/libgda.h
 include/libgda-${GDA_MAJOR}/libgda/providers-support/
 include/libgda-${GDA_MAJOR}/libgda/providers-support/gda-data-select-priv.h
+include/libgda-${GDA_MAJOR}/libgda/providers-support/gda-meta-column-types.h
 include/libgda-${GDA_MAJOR}/libgda/providers-support/gda-pstmt.h
 include/libgda-${GDA_MAJOR}/libgda/sql-parser/
 include/libgda-${GDA_MAJOR}/libgda/sql-parser/gda-sql-parser-enum-types.h
@@ -112,6 +113,7 @@ include/libgda-${GDA_MAJOR}/libgda/virtual/gda-virtual-provider.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-data-model.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-hub.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/libgda-virtual.h
+lib/girepository-1.0/
 lib/libgda-${GDA_MAJOR}/
 lib/libgda-${GDA_MAJOR}.la
 @lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-4.0_VERSION}
@@ -137,6 +139,7 @@ share/examples/libgda/config
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/config
 share/examples/libgda/sales_test.db
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/sales_test.db
+share/gir-1.0/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/DataModels.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaBatch.html

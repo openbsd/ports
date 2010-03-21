@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2009/10/20 10:41:42 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2010/03/21 09:54:50 ajacoutot Exp $
 
 #
 # XXX:
@@ -16,7 +16,7 @@ COMMENT-pgsql=		PostreSQL backend for libgda
 COMMENT-odbc=		ODBC backend for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		4.0.5
+GNOME_VERSION=		4.0.8
 
 PKGNAME-main=		${DISTNAME}v0
 #PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}v0
