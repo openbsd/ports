@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2010/02/01 20:28:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/03/21 10:45:19 jasper Exp $
 
 COMMENT =		open source MPI-2 implementation
 
-DISTNAME =		openmpi-1.3.3
-PKGNAME =		${DISTNAME}p0
+V=			1.4.1
+DISTNAME =		openmpi-$V
 
-SHARED_LIBS =		mca_common_sm 0.0 \
-			mpi 0.0 \
+SHARED_LIBS =		mca_common_sm 1.0 \
+			mpi 0.1 \
 			mpi_cxx 0.0 \
 			mpi_f77 0.0 \
 			open-pal 0.0 \
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB	+=		c m pthread stdc++ util z
 
-MASTER_SITES =		${HOMEPAGE}/software/ompi/v1.3/downloads/
+MASTER_SITES =		${HOMEPAGE}/software/ompi/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/downloads/
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/openmpi/
 CONFIGURE_STYLE =	gnu

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/10/10 18:11:42 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2010/03/21 10:45:19 jasper Exp $
 @lib lib/libmca_common_sm.so.${LIBmca_common_sm_VERSION}
 @lib lib/libmpi.so.${LIBmpi_VERSION}
 @lib lib/libmpi_cxx.so.${LIBmpi_cxx_VERSION}
@@ -44,6 +44,7 @@ lib/openmpi/mca_odls_default.so
 lib/openmpi/mca_oob_tcp.so
 lib/openmpi/mca_osc_pt2pt.so
 lib/openmpi/mca_osc_rdma.so
+lib/openmpi/mca_paffinity_posix.so
 lib/openmpi/mca_plm_rsh.so
 lib/openmpi/mca_pml_cm.so
 lib/openmpi/mca_pml_csum.so
@@ -51,6 +52,7 @@ lib/openmpi/mca_pml_ob1.so
 lib/openmpi/mca_pml_v.so
 lib/openmpi/mca_pubsub_orte.so
 lib/openmpi/mca_rcache_vma.so
+lib/openmpi/mca_rmaps_load_balance.so
 lib/openmpi/mca_rmaps_rank_file.so
 lib/openmpi/mca_rmaps_round_robin.so
 lib/openmpi/mca_rmaps_seq.so
