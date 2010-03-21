@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2009/11/06 09:01:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/03/21 01:18:51 sthen Exp $
 
 COMMENT=	abstraction of various SASL mechanism responses
 
-V=		1.0.1
+V=		1.0.4
 DISTNAME=	Auth_SASL-${V}
-PKGNAME=	pear-Auth-SASL-${V}p2
+PKGNAME=	pear-Auth-SASL-${V}
 CATEGORIES=	security
 
 MODULES=	www/pear
