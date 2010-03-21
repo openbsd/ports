@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/01/12 15:59:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/03/21 11:15:56 ajacoutot Exp $
 zarafa-webaccess/
 @owner www
 @sample zarafa-webaccess/tmp/
@@ -41,6 +41,7 @@ zarafa-webaccess/client/layout/css/recurrence.css
 zarafa-webaccess/client/layout/css/reminder.css
 zarafa-webaccess/client/layout/css/rule.css
 zarafa-webaccess/client/layout/css/rules.css
+zarafa-webaccess/client/layout/css/sendMRMailConfirmation.css
 zarafa-webaccess/client/layout/css/settings.css
 zarafa-webaccess/client/layout/css/sharedfolder.css
 zarafa-webaccess/client/layout/css/signatures.css
@@ -189,6 +190,12 @@ zarafa-webaccess/client/layout/img/icon_flag_complete.gif
 zarafa-webaccess/client/layout/img/icon_flag_complete_over.gif
 zarafa-webaccess/client/layout/img/icon_flag_green.gif
 zarafa-webaccess/client/layout/img/icon_flag_green_over.gif
+zarafa-webaccess/client/layout/img/icon_flag_icon_blue.gif
+zarafa-webaccess/client/layout/img/icon_flag_icon_green.gif
+zarafa-webaccess/client/layout/img/icon_flag_icon_orange.gif
+zarafa-webaccess/client/layout/img/icon_flag_icon_purple.gif
+zarafa-webaccess/client/layout/img/icon_flag_icon_red.gif
+zarafa-webaccess/client/layout/img/icon_flag_icon_yellow.gif
 zarafa-webaccess/client/layout/img/icon_flag_none.gif
 zarafa-webaccess/client/layout/img/icon_flag_none_over.gif
 zarafa-webaccess/client/layout/img/icon_flag_orange.gif
@@ -305,6 +312,8 @@ zarafa-webaccess/client/layout/img/loader.gif
 zarafa-webaccess/client/layout/img/menuarrow.gif
 zarafa-webaccess/client/layout/img/menuitem_selected.gif
 zarafa-webaccess/client/layout/img/menuitem_seperator.gif
+zarafa-webaccess/client/layout/img/move_down.gif
+zarafa-webaccess/client/layout/img/move_up.gif
 zarafa-webaccess/client/layout/img/print.gif
 zarafa-webaccess/client/layout/img/quota_green.gif
 zarafa-webaccess/client/layout/img/quota_orange.gif
