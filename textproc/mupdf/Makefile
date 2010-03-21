@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2010/01/07 08:39:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/03/21 00:05:33 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-PKGNAME =	mupdf-0.4.920p0
+PKGNAME =	mupdf-0.4.920p1
 DISTNAME =	mupdf-r920
 WRKDIST =	${WRKDIR}/mupdf
 
