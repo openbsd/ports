@@ -1,50 +1,50 @@
-@comment $OpenBSD: PLIST,v 1.15 2007/03/23 20:28:28 ajacoutot Exp $
-bin/autopvf
-bin/basictopvf
+@comment $OpenBSD: PLIST,v 1.16 2010/03/21 11:04:29 ajacoutot Exp $
+@bin bin/autopvf
+@bin bin/basictopvf
 bin/faxq
 bin/faxrunq
 bin/faxspool
-bin/g32pbm
-bin/g3cat
-bin/lintopvf
+@bin bin/g32pbm
+@bin bin/g3cat
+@bin bin/lintopvf
 bin/mgetty-faxrm
-bin/newslock
-bin/pbm2g3
-bin/pvfamp
-bin/pvfcut
-bin/pvfecho
-bin/pvffft
-bin/pvffile
-bin/pvffilter
-bin/pvfmix
-bin/pvfnoise
-bin/pvfreverse
-bin/pvfsine
-bin/pvfspeed
-bin/pvftoau
-bin/pvftobasic
-bin/pvftolin
-bin/pvftormd
-bin/pvftovoc
-bin/pvftowav
-bin/rmdfile
-bin/rmdtopvf
-bin/sff2g3
-bin/vm
-bin/voctopvf
-bin/wavtopvf
+@bin bin/newslock
+@bin bin/pbm2g3
+@bin bin/pvfamp
+@bin bin/pvfcut
+@bin bin/pvfecho
+@bin bin/pvffft
+@bin bin/pvffile
+@bin bin/pvffilter
+@bin bin/pvfmix
+@bin bin/pvfnoise
+@bin bin/pvfreverse
+@bin bin/pvfsine
+@bin bin/pvfspeed
+@bin bin/pvftoau
+@bin bin/pvftobasic
+@bin bin/pvftolin
+@bin bin/pvftormd
+@bin bin/pvftovoc
+@bin bin/pvftowav
+@bin bin/rmdfile
+@bin bin/rmdtopvf
+@bin bin/sff2g3
+@bin bin/vm
+@bin bin/voctopvf
+@bin bin/wavtopvf
 @info info/mgetty.info
 lib/mgetty+sendfax/
 lib/mgetty+sendfax/cour25.pbm
 lib/mgetty+sendfax/cour25n.pbm
 @mode u+s
 @owner uucp
-lib/mgetty+sendfax/faxq-helper
+@bin lib/mgetty+sendfax/faxq-helper
 @mode
 @owner
 lib/mgetty+sendfax/setup
-libexec/mgetty
-libexec/vgetty
+@bin libexec/mgetty
+@bin libexec/vgetty
 @man man/man1/coverpg.1
 @man man/man1/faxq.1
 @man man/man1/faxrunq.1
@@ -65,9 +65,9 @@ libexec/vgetty
 @man man/man8/mgetty.8
 @man man/man8/sendfax.8
 @man man/man8/vgetty.8
-sbin/callback
+@bin sbin/callback
 sbin/faxrunqd
-sbin/sendfax
+@bin sbin/sendfax
 share/doc/mgetty+sendfax/
 share/doc/mgetty+sendfax/faq/
 share/doc/mgetty+sendfax/faq/FAQ.sgml
@@ -115,16 +115,28 @@ share/examples/mgetty+sendfax/samples/new_fax.all/
 share/examples/mgetty+sendfax/samples/new_fax.all/INSTALL
 share/examples/mgetty+sendfax/samples/new_fax.all/README
 share/examples/mgetty+sendfax/samples/new_fax.all/archive.module
+@sample lib/mgetty+sendfax/archive.module
 share/examples/mgetty+sendfax/samples/new_fax.all/delete.module
+@sample lib/mgetty+sendfax/delete.module
 share/examples/mgetty+sendfax/samples/new_fax.all/fax.module
+@sample lib/mgetty+sendfax/fax.module
 share/examples/mgetty+sendfax/samples/new_fax.all/faxlist
 share/examples/mgetty+sendfax/samples/new_fax.all/faxlist.dist
+@sample lib/mgetty+sendfax/faxlist
 share/examples/mgetty+sendfax/samples/new_fax.all/list.module
+@sample lib/mgetty+sendfax/list.module
 share/examples/mgetty+sendfax/samples/new_fax.all/mail.module
+@sample lib/mgetty+sendfax/mail.module
 share/examples/mgetty+sendfax/samples/new_fax.all/new_fax
+@mode 0755
+@sample lib/mgetty+sendfax/new_fax
+@mode
 share/examples/mgetty+sendfax/samples/new_fax.all/notify.module
+@sample lib/mgetty+sendfax/notify.module
 share/examples/mgetty+sendfax/samples/new_fax.all/print.module
+@sample lib/mgetty+sendfax/print.module
 share/examples/mgetty+sendfax/samples/new_fax.all/write.module
+@sample lib/mgetty+sendfax/write.module
 share/examples/mgetty+sendfax/samples/new_fax.hpa
 share/examples/mgetty+sendfax/samples/new_fax.lj
 share/examples/mgetty+sendfax/samples/new_fax.mail
@@ -155,6 +167,10 @@ share/examples/mgetty+sendfax/voice/scripts/events.sh
 share/examples/mgetty+sendfax/voice/scripts/faxback.sh
 share/examples/mgetty+sendfax/voice/scripts/listen.sh
 share/examples/mgetty+sendfax/voice/scripts/message.sh
+share/examples/mgetty+sendfax/voice/scripts/new_voice
+@mode 0755
+@sample lib/mgetty+sendfax/new_voice
+@mode
 share/examples/mgetty+sendfax/voice/scripts/speakdate.pl
 share/examples/mgetty+sendfax/voice/scripts/speakdate.sh
 share/examples/mgetty+sendfax/voice/scripts/vmtest.sh
