@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2010/03/21 10:55:04 ajacoutot Exp $
+--- src/Makefile.in.orig	Fri Feb  5 14:23:05 2010
++++ src/Makefile.in	Fri Feb  5 14:23:17 2010
+@@ -498,7 +498,7 @@ libabiword_2_8_la_CPPFLAGS = \
+ 	$(WP_CPPFLAGS) \
+ 	-DABIWORD_DATADIR="\"$(ABIWORD_DATADIR)\""
+ 
+-libabiword_2_8_la_LDFLAGS = $(DEPS_LIBS) --no-undefined -avoid-version \
++libabiword_2_8_la_LDFLAGS = $(DEPS_LIBS) --no-undefined \
+ 	-export-dynamic $(am__append_6)
+ libabiword_2_8_la_LIBADD = $(opt_libs) plugins/libplugins.la \
+ 	text/fmt/xp/libxp.la text/ptbl/xp/libxp.la \

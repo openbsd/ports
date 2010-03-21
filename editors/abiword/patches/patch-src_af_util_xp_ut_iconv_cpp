@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_af_util_xp_ut_iconv_cpp,v 1.1 2009/10/10 09:51:52 ajacoutot Exp $
---- src/af/util/xp/ut_iconv.cpp.orig	Sun Apr  6 17:32:28 2008
-+++ src/af/util/xp/ut_iconv.cpp	Sat Oct 10 10:44:51 2009
-@@ -239,10 +239,10 @@ const char * ucs2Internal ()
+$OpenBSD: patch-src_af_util_xp_ut_iconv_cpp,v 1.2 2010/03/21 10:55:04 ajacoutot Exp $
+--- src/af/util/xp/ut_iconv.cpp.orig	Thu Jun 25 02:52:27 2009
++++ src/af/util/xp/ut_iconv.cpp	Fri Feb  5 12:13:46 2010
+@@ -241,10 +241,10 @@ const char * ucs2Internal ()
    // we special-case the win32 build, otherwise spelling and other stuff
    // just doesn't work
    return "UCS-2LE";
@@ -9,12 +9,12 @@ $OpenBSD: patch-src_af_util_xp_ut_iconv_cpp,v 1.1 2009/10/10 09:51:52 ajacoutot 
 +#elif defined(_LIBICONV_H) || defined(__OpenBSD__)
    // libiconv seems to prefer UCS-2-INTERNAL to UCS-2BE and UCS-2LE
    return "UCS-2-INTERNAL";
--#elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__QNXNTO__) || defined(__NetBSD__)
+-#elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 +#elif defined(__FreeBSD__) || defined(__QNXNTO__) || defined(__NetBSD__)
    // we special case the BSDs since spelling just doesn't work
    return "UCS2";
  #else
-@@ -262,10 +262,10 @@ const char * ucs4Internal ()
+@@ -264,10 +264,10 @@ const char * ucs4Internal ()
    // we special-case the win32 build, otherwise spelling and other stuff
    // just doesn't work
    return "UCS-4LE";
