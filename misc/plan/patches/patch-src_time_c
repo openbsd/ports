@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_time_c,v 1.1 2005/08/10 07:53:44 mbalmer Exp $
---- src/time.c.orig	Sun Jan  9 10:59:09 2005
-+++ src/time.c	Sun Jun 12 19:37:47 2005
-@@ -252,7 +252,8 @@ void guess_tzone(void)
+$OpenBSD: patch-src_time_c,v 1.2 2010/03/21 10:52:21 jasper Exp $
+--- src/time.c.orig	Tue May 17 21:31:50 2005
++++ src/time.c	Thu Feb  4 19:22:46 2010
+@@ -254,7 +254,8 @@ void guess_tzone(void)
  		tm = localtime(&now);
  		zone = -tm->tm_gmtoff;
  #else

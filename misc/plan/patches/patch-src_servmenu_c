@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_servmenu_c,v 1.1 2005/08/10 07:53:44 mbalmer Exp $
---- src/servmenu.c.orig	Mon Aug  8 18:58:58 2005
-+++ src/servmenu.c	Mon Aug  8 18:59:07 2005
+$OpenBSD: patch-src_servmenu_c,v 1.2 2010/03/21 10:52:21 jasper Exp $
+--- src/servmenu.c.orig	Wed May 18 21:01:40 2005
++++ src/servmenu.c	Thu Feb  4 19:25:21 2010
 @@ -8,7 +8,7 @@
  
  #include <stdio.h>
  #include <time.h>
--#include <malloc.h>
-+#include <stdlib.h>
- #include <Xm/Xm.h>
- #include <Xm/DialogS.h>
- #include <Xm/Form.h>
+-#ifndef MACOSX
++#if !defined(MACOSX) && !defined(__OpenBSD__)
+ #include <malloc.h>
+ #else
+ #include <stdlib.h>

@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/12/22 08:33:34 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/03/21 10:52:21 jasper Exp $
 @newgroup _netplan:549
 @newuser _netplan:549:549:daemon:Plan:/nonexistent:/sbin/nologin
-bin/plan
-bin/pland
+@bin bin/plan
+@bin bin/pland
 @man man/man1/plan.1
 @man man/man5/plan.5
 @man man/man8/netplan.8
-sbin/netplan
-sbin/notifier
+@bin sbin/netplan
+@bin sbin/notifier
 share/doc/plan/
 share/doc/plan/HISTORY
 share/doc/plan/README
@@ -46,6 +46,7 @@ share/plan/plan.lang.english
 share/plan/plan.lang.french
 share/plan/plan.lang.german
 share/plan/plan.lang.italian
+share/plan/plan.lang.polish
 share/plan/plan.lang.spanish
 @mode 770
 @owner _netplan
