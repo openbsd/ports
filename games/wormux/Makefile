@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2009/12/22 16:28:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/03/21 12:19:00 landry Exp $
 
 COMMENT=		free software clone of Worms(R) game concept
 
-DISTNAME=		wormux-0.8.4
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		wormux-0.9.0
 CATEGORIES=		games
 
 HOMEPAGE=		http://wormux.org
@@ -13,8 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		SDL X11 c crypto idn m png pthread pthread-stubs ssl \
-			stdc++ xcb z
+WANTLIB=		SDL X11 c m png pthread stdc++
 
 MASTER_SITES=		http://download.gna.org/wormux/
 EXTRACT_SUFX=		.tar.bz2
@@ -33,6 +31,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			MKDIR_P='mkdir -p'
+CONFIGURE_ARGS+=	--enable-servers
 
 post-extract:
 	rm -Rf ${WRKSRC}/data/locale
