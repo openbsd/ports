@@ -1,0 +1,87 @@
+$OpenBSD: patch-src_cmdgrab_c,v 1.1 2010/03/21 09:13:53 jasper Exp $
+
+Rename struct fields, as they clashed with stdout and stderr definitions in stdio.h.
+
+--- src/cmdgrab.c.orig	Tue Feb 23 12:49:04 2010
++++ src/cmdgrab.c	Tue Feb 23 12:50:33 2010
+@@ -31,7 +31,7 @@
+ typedef struct {
+ 	MainInfo	*min;
+ 	pid_t		child;
+-	GIOChannel	*stdout, *stderr;	/* Channels for stdout and stderr from child. */
++	GIOChannel	*stdout_g, *stderr_g;	/* Channels for stdout and stderr from child. */
+ 	gint		fd_out, fd_err;		/* File descriptors for output & error channels. */
+ 	gint		tag_out, tag_err;	/* GTK+ input tags for those channels. */
+ 	gint		evt_del;		/* Delete event handler. */
+@@ -149,7 +149,7 @@ static gboolean grab_callback(GIOChannel *channel, GIO
+ 			if(gri->txv != NULL)
+ 			{
+ 				txv_show(gri->txv);
+-				if(channel == gri->stdout)
++				if(channel == gri->stdout_g)
+ 					txv_text_append(gri->txv, line, linelen);
+ 				else
+ 					txv_text_append_with_color(gri->txv, line, linelen, &gri->stderr_color);
+@@ -160,25 +160,25 @@ static gboolean grab_callback(GIOChannel *channel, GIO
+ 	}
+ 	if((cond & G_IO_ERR) || (cond & G_IO_HUP))
+ 	{
+-		if(channel == gri->stdout)
++		if(channel == gri->stdout_g)
+ 		{
+ 			g_source_remove(gri->tag_out);
+-			g_io_channel_shutdown(gri->stdout, FALSE, NULL);
+-			g_io_channel_unref(gri->stdout);
+-			gri->stdout = NULL;
++			g_io_channel_shutdown(gri->stdout_g, FALSE, NULL);
++			g_io_channel_unref(gri->stdout_g);
++			gri->stdout_g = NULL;
+ 			close(gri->fd_out);
+ 			gri->fd_out = 0;
+ 		}
+-		else if(channel == gri->stderr)
++		else if(channel == gri->stderr_g)
+ 		{
+ 			g_source_remove(gri->tag_err);
+-			g_io_channel_shutdown(gri->stderr, FALSE, NULL);
+-			g_io_channel_unref(gri->stderr);
+-			gri->stderr = NULL;
++			g_io_channel_shutdown(gri->stderr_g, FALSE, NULL);
++			g_io_channel_unref(gri->stderr_g);
++			gri->stderr_g = NULL;
+ 			close(gri->fd_err);
+ 			gri->fd_err = 0;
+ 		}
+-		if(gri->stdout == NULL && gri->stderr == NULL)
++		if(gri->stdout_g == NULL && gri->stderr_g == NULL)
+ 		{
+ 			if(gri->txv != NULL)			/* Window still open? */
+ 			{
+@@ -210,12 +210,12 @@ static gboolean grab_output(MainInfo *min, const gchar
+ 	gri->stderr_color.red = 0xfefeu;
+ 	gri->stderr_color.green = 0x1e1eu;
+ 	gri->stderr_color.blue = 0x1e1eu;
+-	if((gri->stdout = g_io_channel_unix_new(fd_out)) != NULL)
++	if((gri->stdout_g = g_io_channel_unix_new(fd_out)) != NULL)
+ 	{
+-		/*g_io_channel_set_buffered(gri->stdout, FALSE);*/
+-		g_io_channel_set_buffer_size(gri->stdout, GRAB_CHUNK);
++		/*g_io_channel_set_buffered(gri->stdout_g, FALSE);*/
++		g_io_channel_set_buffer_size(gri->stdout_g, GRAB_CHUNK);
+ 		gri->fd_err = fd_err;
+-		if((gri->stderr = g_io_channel_unix_new(fd_err)) != NULL)
++		if((gri->stderr_g = g_io_channel_unix_new(fd_err)) != NULL)
+ 		{
+ 			if((gri->txv = txv_open(min, NULL)) != NULL)
+ 			{
+@@ -224,8 +224,8 @@ static gboolean grab_output(MainInfo *min, const gchar
+ 				gtk_object_set_data(GTK_OBJECT(gri->txv), "gri", gri);
+ 				gri->evt_del = g_signal_connect(G_OBJECT(gri->txv), "delete_event", G_CALLBACK(evt_grab_deleted), gri);
+ 				txv_connect_keypress(gri->txv, GTK_SIGNAL_FUNC(evt_grab_keypress), gri);
+-				gri->tag_out = g_io_add_watch(gri->stdout, G_IO_IN | G_IO_PRI | G_IO_HUP, grab_callback, gri);
+-				gri->tag_err = g_io_add_watch(gri->stderr, G_IO_IN | G_IO_PRI | G_IO_HUP, grab_callback, gri);
++				gri->tag_out = g_io_add_watch(gri->stdout_g, G_IO_IN | G_IO_PRI | G_IO_HUP, grab_callback, gri);
++				gri->tag_err = g_io_add_watch(gri->stderr_g, G_IO_IN | G_IO_PRI | G_IO_HUP, grab_callback, gri);
+ 
+ 				return TRUE;
+ 			}

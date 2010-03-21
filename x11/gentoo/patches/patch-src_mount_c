@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_mount_c,v 1.1 2002/12/28 23:29:13 pvalchev Exp $
---- src/mount.c.orig	Sat Dec 28 14:51:06 2002
-+++ src/mount.c	Sat Dec 28 14:52:28 2002
-@@ -197,7 +197,7 @@ static gint run_cmd(MainInfo *min, const
+$OpenBSD: patch-src_mount_c,v 1.2 2010/03/21 09:13:53 jasper Exp $
+--- src/mount.c.orig	Wed Jun 24 22:06:11 2009
++++ src/mount.c	Fri Jan 29 19:07:07 2010
+@@ -197,7 +197,7 @@ static gint run_cmd(MainInfo *min, const gchar *cmd, c
  			if(dup(fd_err[STDOUT_FILENO]) == STDERR_FILENO)
  			{
  				if(close(fd_err[STDIN_FILENO]) == 0)
