@@ -1,7 +1,7 @@
-$OpenBSD: patch-cupsconnection_c,v 1.5 2009/09/01 08:12:51 ajacoutot Exp $
---- cupsconnection.c.orig	Thu Jun 18 13:10:22 2009
-+++ cupsconnection.c	Tue Sep  1 10:07:06 2009
-@@ -3247,8 +3247,7 @@ Connection_printTestPage (Connection *self, PyObject *
+$OpenBSD: patch-cupsconnection_c,v 1.6 2010/03/21 09:46:02 ajacoutot Exp $
+--- cupsconnection.c.orig	Thu Jan 14 14:22:03 2010
++++ cupsconnection.c	Tue Feb  9 20:34:48 2010
+@@ -3505,8 +3505,7 @@ Connection_printTestPage (Connection *self, PyObject *
  	  break;
        }
      } else {
