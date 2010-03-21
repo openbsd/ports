@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/11/06 09:01:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/03/21 01:17:33 sthen Exp $
 
 COMMENT=	SMTP support for PHP
 
-DISTNAME=	Net_SMTP-1.2.6
-PKGNAME=	pear-${DISTNAME:S/_/-/}p3
+DISTNAME=	Net_SMTP-1.4.1
+PKGNAME=	pear-${DISTNAME:S/_/-/}
 CATEGORIES=	net
 
 MODULES=	www/pear
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:pear-Net-Socket->=1.0.6:net/pear-Net-Socket
+RUN_DEPENDS=	:pear-Net-Socket->=1.0.7:net/pear-Net-Socket \
+		::security/pear-Auth-SASL
 
 .include <bsd.port.mk>

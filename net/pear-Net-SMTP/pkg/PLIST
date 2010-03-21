@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:04 robert Exp $
-pear/doc/
+@comment $OpenBSD: PLIST,v 1.3 2010/03/21 01:17:33 sthen Exp $
 @group daemon
+pear/doc/
 pear/doc/Net_SMTP/
 pear/doc/Net_SMTP/docs/
-pear/doc/Net_SMTP/docs/examples/
-pear/doc/Net_SMTP/docs/examples/basic.php
 pear/doc/Net_SMTP/docs/guide.txt
+pear/doc/Net_SMTP/examples/
+pear/doc/Net_SMTP/examples/basic.php
 pear/lib/.registry/net_smtp.reg
 pear/lib/Net/SMTP.php
 pear/tests/Net_SMTP/
@@ -13,3 +13,4 @@ pear/tests/Net_SMTP/tests/
 pear/tests/Net_SMTP/tests/auth.phpt
 pear/tests/Net_SMTP/tests/basic.phpt
 pear/tests/Net_SMTP/tests/config.php.dist
+pear/tests/Net_SMTP/tests/quotedata.phpt
