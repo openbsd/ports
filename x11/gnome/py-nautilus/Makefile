@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/10/18 20:45:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/03/21 09:47:50 ajacoutot Exp $
 
 COMMENT=	nautilus Python bindings
 
 GNOME_PROJECT=	nautilus-python
-GNOME_VERSION=	0.5.1
-PKGNAME=	py-nautilus-${GNOME_VERSION}p6
+GNOME_VERSION=	0.6.1
+PKGNAME=	py-nautilus-${GNOME_VERSION}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,14 +12,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo
-WANTLIB += dbus-1 dbus-glib-1 execinfo expat ffi fontconfig freetype
-WANTLIB += gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-desktop-2 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs startup-notification-1
-WANTLIB += util xcb xcb-atom xcb-aux xcb-event xml2 z
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread-stubs util xcb z
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -27,7 +25,6 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		eel-2.>=23::x11/gnome/eel \
 		nautilus-extension.>=2::x11/gnome/nautilus
 RUN_DEPENDS=	::x11/gnome/py-gnome
 
