@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_post_deinterlace_Makefile_in,v 1.8 2010/01/05 11:48:51 sthen Exp $
---- src/post/deinterlace/Makefile.in.orig	Mon Nov 30 20:53:39 2009
-+++ src/post/deinterlace/Makefile.in	Wed Dec  2 19:15:36 2009
-@@ -480,7 +480,7 @@ xinepostdir = $(XINE_PLUGINDIR)/post
+$OpenBSD: patch-src_post_deinterlace_Makefile_in,v 1.9 2010/03/21 01:41:15 sthen Exp $
+--- src/post/deinterlace/Makefile.in.orig	Tue Feb 23 17:50:46 2010
++++ src/post/deinterlace/Makefile.in	Tue Feb 23 19:29:58 2010
+@@ -482,7 +482,7 @@ xinepostdir = $(XINE_PLUGINDIR)/post
  vidixdir = $(XINE_PLUGINDIR)/vidix
  SUBDIRS = plugins
  EXTRA_DIST = 

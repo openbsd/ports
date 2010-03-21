@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_input_input_file_c,v 1.5 2009/02/16 01:24:24 sthen Exp $
---- src/input/input_file.c.orig	Tue Feb 10 12:32:23 2009
-+++ src/input/input_file.c	Wed Feb 11 00:55:26 2009
+$OpenBSD: patch-src_input_input_file_c,v 1.6 2010/03/21 01:41:15 sthen Exp $
+--- src/input/input_file.c.orig	Tue Feb 23 20:55:09 2010
++++ src/input/input_file.c	Sat Mar  6 15:12:08 2010
 @@ -210,7 +210,7 @@ static buf_element_t *file_plugin_read_block (input_pl
  	  xine_log (this->stream->xine, XINE_LOG_MSG,
  		    _("input_file: read error (%s)\n"), strerror(errno));
@@ -31,5 +31,5 @@ $OpenBSD: patch-src_input_input_file_c,v 1.5 2009/02/16 01:24:24 sthen Exp $
 -      _x_message(this->stream, XINE_MSG_FILE_EMPTY, this->mrl, NULL);
 +      _x_message(this->stream, XINE_MSG_FILE_EMPTY, this->mrl, (char *)NULL);
        close (this->fh);
+       this->fh = -1;
        xine_log (this->stream->xine, XINE_LOG_MSG,
- 		_("input_file: File empty: >%s<\n"), this->mrl);

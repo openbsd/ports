@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.60 2010/03/03 08:29:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2010/03/21 01:41:15 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
-V=		1.1.17
+V=		1.1.18.1
 DISTNAME=	xine-lib-${V}
-PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	xine	26.0
+SHARED_LIBS=	xine	27.0
 
 HOMEPAGE=	http://www.xine-project.org/
 
@@ -23,10 +22,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	X11 Xau Xdmcp Xext Xinerama Xrandr Xrender Xv XvMCW c \
-		dvdread expat fontconfig freetype jpeg lcms m pthread-stubs \
-		pthread sndio usbhid xcb-shape xcb-shm xcb-xv xcb z
+		dvdread expat faac fontconfig freetype jpeg lcms m \
+		mp3lame oil-0.3 pthread-stubs pthread schroedinger-1.0 \
+		sndio usbhid x264 xcb-shape xcb-shm xcb-xv xcb z
 
-XINEAPI_REV=	1.27
+XINEAPI_REV=	1.28
 SUBST_VARS+=	XINEAPI_REV
 
 MODULES=	devel/gettext
@@ -39,7 +39,7 @@ LIB_DEPENDS=	FLAC.>=5::audio/flac \
 		mad.>=2::audio/libmad \
 		mng.>=3::graphics/libmng \
 		ogg.>=5::audio/libogg \
-		vorbis.>=4::audio/libvorbis \
+		vorbis.>=4,vorbisenc.>=3::audio/libvorbis \
 		speex.>=3::audio/speex \
 		theora.>=1::multimedia/libtheora \
 		wavpack::audio/wavpack \
@@ -59,28 +59,28 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= autoconf
-# Should be 2.64
+# Should be 2.65
 AUTOCONF_VERSION= 2.62
 CONFIGURE_ARGS+=--disable-aalib \
 		--disable-dxr3 \
 		--disable-fb \
 		--disable-gdkpixbuf \
 		--disable-gnomevfs \
-		--disable-opengl \
+		--disable-libv4l \
 		--disable-optimizations \
 		--disable-oss \
 		--disable-real-codecs \
 		--disable-samba \
-		--disable-v4l \
+		--disable-sunaudio \
 		--disable-vcd \
 		--disable-vidix \
 		--disable-w32dll \
-		--with-external-a52dec=yes \
-		--with-external-dvdnav=yes \
-		--with-external-libdts=yes \
-		--with-external-libfaad=yes \
-		--with-external-libmad=yes \
-		--with-external-libmpcdec=yes \
+		--with-external-a52dec \
+		--with-external-dvdnav \
+		--with-external-libdts \
+		--with-external-libfaad \
+		--with-external-libmad \
+		--with-external-libmpcdec \
 		--with-fontconfig \
 		--with-freetype \
 		--with-wavpack \
@@ -91,15 +91,7 @@ CONFIGURE_ARGS+=--disable-aalib \
 		--without-jack \
 		--without-pulseaudio
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		FFMPEG_CPPFLAGS="$$(pkg-config --cflags libavcodec libpostproc)" \
-		FFMPEG_LIBS="-lavcodec -lpostproc -pthread" \
-		FFMPEG_POSTPROC_LIBS="-lavcodec -lpostproc -pthread" \
-		PTHREAD_LIBS="-pthread" \
-		PTHREAD_CFLAGS="-pthread" \
-		XV_LIBS="-lXv" \
-		EXTRA_X_LIBS="-Wl,-R,${LOCALBASE}/lib -Wl,-R,${X11BASE}/lib" \
-		ac_cv_member_audio_info_t_output_muted=yes
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes
 

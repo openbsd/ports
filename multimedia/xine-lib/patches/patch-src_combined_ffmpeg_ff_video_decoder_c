@@ -1,19 +1,24 @@
-$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.1 2010/01/05 11:50:18 sthen Exp $
---- src/combined/ffmpeg/ff_video_decoder.c.orig	Fri Dec  4 19:13:34 2009
-+++ src/combined/ffmpeg/ff_video_decoder.c	Fri Dec  4 20:39:22 2009
-@@ -1180,6 +1180,7 @@ static void ff_check_pts_tagging(ff_video_decoder_t *t
-     }
-   }
- }
-+#endif /* AVCODEC_HAS_REORDERED_OPAQUE */
+$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.2 2010/03/21 01:41:15 sthen Exp $
+--- src/combined/ffmpeg/ff_video_decoder.c.orig	Fri Mar 12 19:28:57 2010
++++ src/combined/ffmpeg/ff_video_decoder.c	Fri Mar 12 19:30:34 2010
+@@ -309,11 +309,6 @@ static void init_video_codec (ff_video_decoder_t *this
  
- static int ff_vc1_find_header(ff_video_decoder_t *this, buf_element_t *buf)
- {
-@@ -1224,7 +1225,6 @@ static int ff_check_extradata(ff_video_decoder_t *this
-   return 1;
- }
+   lprintf("lavc decoder found\n");
  
--#endif /* AVCODEC_HAS_REORDERED_OPAQUE */
- static void ff_handle_buffer (ff_video_decoder_t *this, buf_element_t *buf) {
-   uint8_t *chunk_buf = this->buf;
-   AVRational avr00 = {0, 1};
+-  /* force (width % 8 == 0), otherwise there will be
+-   * display problems with Xv.
+-   */
+-  this->bih.biWidth = (this->bih.biWidth + 1) & (~1);
+-
+   this->context->width = this->bih.biWidth;
+   this->context->height = this->bih.biHeight;
+   this->context->stream_codec_tag = this->context->codec_tag =
+@@ -1389,7 +1384,7 @@ static void ff_handle_buffer (ff_video_decoder_t *this
+ 	        (this->context->pix_fmt == PIX_FMT_RGB24) ||
+ 	        (this->context->pix_fmt == PIX_FMT_PAL8)) {
+ 	      this->output_format = XINE_IMGFMT_YUY2;
+-	      init_yuv_planes(&this->yuv, this->bih.biWidth, this->bih.biHeight);
++	      init_yuv_planes(&this->yuv, (this->bih.biWidth + 15) & ~15, this->bih.biHeight);
+ 	      this->yuv_init = 1;
+ 	    }
+ 	    this->cs_convert_init = 1;

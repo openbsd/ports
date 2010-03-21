@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_post_deinterlace_plugins_Makefile_in,v 1.8 2010/01/05 11:48:51 sthen Exp $
---- src/post/deinterlace/plugins/Makefile.in.orig	Mon Nov 30 20:53:39 2009
-+++ src/post/deinterlace/plugins/Makefile.in	Wed Dec  2 20:43:00 2009
-@@ -891,7 +891,7 @@ maintainer-clean-generic:
+$OpenBSD: patch-src_post_deinterlace_plugins_Makefile_in,v 1.9 2010/03/21 01:41:15 sthen Exp $
+--- src/post/deinterlace/plugins/Makefile.in.orig	Tue Feb 23 17:50:47 2010
++++ src/post/deinterlace/plugins/Makefile.in	Tue Feb 23 19:29:58 2010
+@@ -893,7 +893,7 @@ maintainer-clean-generic:
  	-rm -f Makefile.in
  
  # Avoid "can't find register" failures with -O0, -O2, -O3 (gcc 4.0)
