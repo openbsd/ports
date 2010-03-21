@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2009/12/21 22:20:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2010/03/21 10:35:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's mail component
 
 VER=		2.0.0.23
 DISTNAME=	mozilla
-PKGNAME=	mozilla-thunderbird-${VER}p1
+PKGNAME=	mozilla-thunderbird-${VER}p2
 SO_VERSION=	14.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
@@ -135,6 +135,7 @@ do-install:
 		${MOB}/mozilla-xremote-client ${MOZ}
 	ln -f ${MOZ}/thunderbird-bin ${MOZ}/mozilla-thunderbird-bin
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
+		-e 's,!!LOCALBASE!!,${LOCALBASE},g'
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
