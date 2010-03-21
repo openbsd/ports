@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.984 2010/03/21 17:00:46 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.985 2010/03/21 17:12:10 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -794,7 +794,7 @@ _PKG_ADD_AUTO += -a
 _TERM_ENV = PKG_TMPDIR=${PKG_TMPDIR}
 .for _v in TERM TERMCAP ftp_proxy http_proxy
 .  if defined(${_v})
-_TERM_ENV += ${_v}='${${_v}}'
+_TERM_ENV += ${_v}=${${_v}:Q}
 .  endif
 .endfor
 
