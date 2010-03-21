@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2009/12/10 10:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/03/21 10:14:50 ajacoutot Exp $
 
 COMMENT=		driver for ZjStream wire protocol compatible printers
 
 VERSION=		20090623
 DISTNAME=		foo2zjs-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		print
 
 HOMEPAGE=		http://foo2hp.rkkda.com/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

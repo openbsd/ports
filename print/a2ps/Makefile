@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.42 2009/04/09 09:25:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2010/03/21 10:14:50 ajacoutot Exp $
 
 COMMENT=	format files for printing on PostScript printers
 
 DISTNAME=	a2ps-4.14
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	print
 SHARED_LIBS=	a2ps	2.0
 MODGNU_SHARED_LIBS=a2ps	''
 
 HOMEPAGE=	http://www.gnu.org/software/a2ps/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3 or later, includes AFM files from Adobe with still unclear
 # terms (see ${WRKSRC}/afm/MustRead.html).
