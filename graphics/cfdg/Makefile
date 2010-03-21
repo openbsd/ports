@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2008/09/10 20:49:03 martynas Exp $
+# $OpenBSD: Makefile,v 1.3 2010/03/21 09:31:48 jasper Exp $
 
 COMMENT =	Context Free Design Grammar
 
-VERSION =	2.1
+VERSION =	2.2.1
 DISTNAME =	ContextFreeSource${VERSION}
-PKGNAME =	cfdg-${VERSION}p0
+PKGNAME =	cfdg-${VERSION}
 
 CATEGORIES =	graphics
 
@@ -32,7 +32,6 @@ MAKE_ENV +=	CPPFLAGS="${CFLAGS} -I$(LOCALBASE)/include/libpng"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/cfdg ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/input
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/input/* ${EXAMPLEDIR}/input

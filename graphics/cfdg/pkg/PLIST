@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/23 08:24:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/03/21 09:31:48 jasper Exp $
 @bin bin/cfdg
 share/examples/cfdg/
 share/examples/cfdg/README.txt
@@ -10,7 +10,6 @@ share/examples/cfdg/input/cilia.cfdg
 share/examples/cfdg/input/ciliasun.cfdg
 share/examples/cfdg/input/demo1.cfdg
 share/examples/cfdg/input/demo2.cfdg
-share/examples/cfdg/input/dong.cfdg
 share/examples/cfdg/input/funky_flower.cfdg
 share/examples/cfdg/input/i_curves.cfdg
 share/examples/cfdg/input/i_pix.cfdg
