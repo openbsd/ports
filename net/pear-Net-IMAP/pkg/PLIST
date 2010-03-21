@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/03/22 22:48:04 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/03/21 01:17:13 sthen Exp $
 @group daemon
-lib/
-lib/php/
 pear/lib/.registry/net_imap.reg
-pear/lib/Net/
 pear/lib/Net/IMAP.php
 pear/lib/Net/IMAPProtocol.php
 pear/tests/Net_IMAP/
 pear/tests/Net_IMAP/docs/
 pear/tests/Net_IMAP/docs/test_IMAP.php
 pear/tests/Net_IMAP/docs/test_IMAPProtocol.php
+pear/tests/Net_IMAP/tests/
+pear/tests/Net_IMAP/tests/settings.php.sample
+pear/tests/Net_IMAP/tests/testAll.php
+pear/tests/Net_IMAP/tests/testIMAP.php
