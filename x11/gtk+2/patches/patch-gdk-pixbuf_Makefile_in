@@ -1,7 +1,7 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.25 2010/01/12 08:53:36 ajacoutot Exp $
---- gdk-pixbuf/Makefile.in.orig	Mon Jan 11 22:11:27 2010
-+++ gdk-pixbuf/Makefile.in	Tue Jan 12 08:58:45 2010
-@@ -1327,7 +1327,7 @@ test_gdk_pixbuf_LDADD = $(LDADDS)
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.26 2010/03/21 09:56:40 ajacoutot Exp $
+--- gdk-pixbuf/Makefile.in.orig	Mon Mar 15 23:37:24 2010
++++ gdk-pixbuf/Makefile.in	Tue Mar 16 08:38:54 2010
+@@ -1329,7 +1329,7 @@ test_gdk_pixbuf_LDADD = $(LDADDS)
  gdk_pixbuf_csource_SOURCES = gdk-pixbuf-csource.c
  gdk_pixbuf_csource_LDADD = $(LDADDS)
  gdk_pixbuf_query_loaders_DEPENDENCIES = $(DEPS)
@@ -10,7 +10,7 @@ $OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.25 2010/01/12 08:53:36 ajacoutot Exp 
  gdk_pixbuf_query_loaders_SOURCES = queryloaders.c
  
  #
-@@ -2334,13 +2334,6 @@ install-data-hook: install-ms-lib install-def-file
+@@ -2336,13 +2336,6 @@ install-data-hook: install-ms-lib install-def-file
  	@if $(RUN_QUERY_LOADER_TEST) ; then \
  	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
  	  $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders > $(DESTDIR)$(sysconfdir)/gtk-2.0/gdk-pixbuf.loaders ; \
@@ -24,7 +24,7 @@ $OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.25 2010/01/12 08:53:36 ajacoutot Exp 
  	fi
  
  uninstall-local: uninstall-ms-lib uninstall-def-file
-@@ -2352,7 +2345,7 @@ uninstall-local: uninstall-ms-lib uninstall-def-file
+@@ -2354,7 +2347,7 @@ uninstall-local: uninstall-ms-lib uninstall-def-file
  @BUILD_DYNAMIC_MODULES_TRUE@	LOADERS=`echo libpixbufloader-*.la` ; \
  @BUILD_DYNAMIC_MODULES_TRUE@	if test "x$$LOADERS" != 'xlibpixbufloader-*.la' ; then \
  @BUILD_DYNAMIC_MODULES_TRUE@          echo "Writing a gdk-pixbuf.loader file to use when running examples before installing gdk-pixbuf."; \

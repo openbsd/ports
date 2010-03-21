@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2009/12/01 09:41:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2010/03/21 09:56:40 ajacoutot Exp $
 @conflict gail-*
 @pkgpath x11/gtk+2
 @bin bin/gdk-pixbuf-csource
@@ -607,6 +607,10 @@ share/locale/mr/LC_MESSAGES/gtk20-properties.mo
 share/locale/mr/LC_MESSAGES/gtk20.mo
 share/locale/ms/LC_MESSAGES/gtk20-properties.mo
 share/locale/ms/LC_MESSAGES/gtk20.mo
+share/locale/my/
+share/locale/my/LC_MESSAGES/
+share/locale/my/LC_MESSAGES/gtk20-properties.mo
+share/locale/my/LC_MESSAGES/gtk20.mo
 share/locale/nb/LC_MESSAGES/gtk20-properties.mo
 share/locale/nb/LC_MESSAGES/gtk20.mo
 share/locale/nds/
