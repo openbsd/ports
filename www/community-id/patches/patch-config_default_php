@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_default_php,v 1.1.1.1 2010/01/04 08:58:14 ajacoutot Exp $
---- config.default.php.orig	Fri Jan  1 15:21:01 2010
-+++ config.default.php	Fri Jan  1 15:21:15 2010
-@@ -79,8 +79,8 @@ $config['email']['supportemail']            = '';
+$OpenBSD: patch-config_default_php,v 1.2 2010/03/21 10:32:31 ajacoutot Exp $
+--- config.default.php.orig	Wed Dec  9 18:03:33 2009
++++ config.default.php	Sun Mar 14 10:32:55 2010
+@@ -126,8 +126,8 @@ $config['email']['supportemail']            = '';
  # this email will receive any error notification
  $config['email']['adminemail']              = '';
  

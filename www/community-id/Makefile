@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/04 08:58:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/03/21 10:32:31 ajacoutot Exp $
 
 COMMENT=	PHP OpenID implementation
 
-V=		1.1.1
+V=		1.2.1
 BASE_URL=	http://source.keyboard-monkeys.org
 
 DISTNAME=	cid-${V}
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${BASE_URL}/attachments/download/74/
+MASTER_SITES=	${BASE_URL}/attachments/download/110/
 
 # php5-gd-*-!no_x11 because we need freetype support
 RUN_DEPENDS=	:php5-gd-*-!no_x11:www/php5/extensions,-gd \
