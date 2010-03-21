@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/21 20:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/03/21 09:45:56 landry Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
-PKGNAME =	${DISTNAME}p3
+PKGNAME =	${DISTNAME}p4
 DISTNAME =	xarchiver-0.5.2
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
@@ -26,7 +26,10 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 LIB_DEPENDS =	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
-RUN_DEPENDS =	::devel/desktop-file-utils
+RUN_DEPENDS =	::archivers/zip \
+		::archivers/unzip \
+		::devel/xdg-utils \
+		::devel/desktop-file-utils
 
 WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
