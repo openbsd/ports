@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/12/10 10:57:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/03/21 14:41:00 ajacoutot Exp $
 @bin bin/foomatic-combo-xml
 bin/foomatic-compiledb
 bin/foomatic-configure
@@ -37,6 +37,7 @@ sbin/foomatic-nonumericalids
 sbin/foomatic-preferred-driver
 sbin/foomatic-printermap-to-gutenprint-xml
 sbin/foomatic-replaceoldprinterids
+share/foomatic/
 share/foomatic/templates/
 share/foomatic/templates/pjl_enum_choice.xml
 share/foomatic/templates/pjl_enum_option.xml

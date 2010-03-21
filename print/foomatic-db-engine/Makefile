@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/01/12 10:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/03/21 14:41:00 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD generator
 
-DISTNAME=		foomatic-db-engine-4.0.3
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		foomatic-db-engine-4.0.4
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
@@ -25,6 +24,7 @@ MODULES=		converters/libiconv
 
 LIB_DEPENDS=		xml2.>=8::textproc/libxml
 RUN_DEPENDS=		::print/foomatic-filters \
+			::databases/p5-DBI \
 			:curl-*|wget-*:net/curl
 WANTLIB=		c m z
 
