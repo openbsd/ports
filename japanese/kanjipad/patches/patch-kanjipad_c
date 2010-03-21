@@ -1,23 +1,12 @@
-$OpenBSD: patch-kanjipad_c,v 1.1.1.1 2005/07/16 12:33:50 espie Exp $
---- kanjipad.c.orig	Sat Jul 16 14:19:07 2005
-+++ kanjipad.c	Sat Jul 16 14:19:51 2005
-@@ -21,6 +21,7 @@
- #include <errno.h>
- #include <stdlib.h>
- #include <stdio.h>
-+#include <string.h>
- #include <unistd.h>
+$OpenBSD: patch-kanjipad_c,v 1.2 2010/03/21 09:10:52 jasper Exp $
+--- kanjipad.c.orig	Mon Feb  1 07:55:13 2010
++++ kanjipad.c	Mon Feb  1 07:55:46 2010
+@@ -510,7 +510,7 @@ init_engine()
+   if (data_file)
+     argv[2] = data_file;
+   else
+-    argv[1] = NULL;
++    argv[1] = (char *)0;
  
- #include "kanjipad.h"
-@@ -393,9 +394,9 @@ init_engine()
-       dup2 (out_fd[1], STDOUT_FILENO);
- 
-       if (data_file)
--	execlp ("kpengine","kpengine","--data-file", data_file, NULL);
-+	execlp ("kpengine","kpengine","--data-file", data_file, (char *)0);
-       else
--	execlp ("kpengine","kpengine", NULL);
-+	execlp ("kpengine","kpengine", (char *)0);
- 
-       g_error ("Couldn't exec kpengine: %s", g_strerror(errno));
- 
+   if (!g_spawn_async_with_pipes (NULL, /* working directory */
+ 				 argv, NULL,	/* argv, envp */

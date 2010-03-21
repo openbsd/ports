@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/16 12:33:50 espie Exp $
-bin/kanjipad
-bin/kpengine
+@comment $OpenBSD: PLIST,v 1.2 2010/03/21 09:10:52 jasper Exp $
+@bin bin/kanjipad
+@bin bin/kpengine
 share/doc/kanjipad/
 share/doc/kanjipad/README
 share/kanjipad/

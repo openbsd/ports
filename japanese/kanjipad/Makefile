@@ -1,29 +1,32 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/10 06:32:05 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2010/03/21 09:10:52 jasper Exp $
 
-COMMENT=japanese handwriting recognition
-CATEGORIES=japanese
-HOMEPAGE=http://www.gtk.org/~otaylor/kanjipad/
+COMMENT=	Japanese handwriting recognition
 
-DISTNAME=kanjipad-1.2.1
-PKGNAME=${DISTNAME}p1
-MASTER_SITES=ftp://ftp.gtk.org/pub/users/otaylor/kanjipad/
+DISTNAME=	kanjipad-2.0.0
+CATEGORIES=	japanese
 
-# GPL
+HOMEPAGE=	http://fishsoup.net/software/kanjipad/
+
+# GPLv2
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
 
-LIB_DEPENDS=gmodule,gtk,gdk::x11/gtk+ \
-	glib::devel/glib
+MASTER_SITES=	${HOMEPAGE}
+
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
+WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
+WANTLIB += pthread-stubs xcb z
+
+LIB_DEPENDS=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
 
 MODULES=	devel/gettext
-WANTLIB=	X11 Xext Xi c m pthread-stubs xcb
-
 USE_X11=	Yes
 
 MAKE_FLAGS=OPTIMIZE='${CFLAGS}' PREFIX=${PREFIX}
-FAKE_FLAGS=PREFIX=${WRKINST}${TRUEPREFIX}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/kanjipad

@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makefile,v 1.1 2010/03/21 09:10:52 jasper Exp $
+
+- Get rid of Gmake-isms.
+- Fix build by undefining GTK_DISABLE_DEPRECATED.
+
+--- Makefile.orig	Sun Aug 25 21:00:54 2002
++++ Makefile	Mon Feb  1 08:06:51 2010
+@@ -1,11 +1,11 @@
+ OPTIMIZE=-g -Wall
+ #OPTIMIZE=-O2 
+ 
+-GTKINC=$(shell pkg-config --cflags gtk+-2.0) -DG_DISABLE_DEPRECATED  -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED
+-GTKLIBS=$(shell pkg-config --libs gtk+-2.0)
+-GLIBLIBS=$(shell pkg-config --libs glib-2.0)
++GTKINC=`pkg-config --cflags gtk+-2.0` -DG_DISABLE_DEPRECATED  -DGDK_DISABLE_DEPRECATED
++GTKLIBS=`pkg-config --libs gtk+-2.0`
++GLIBLIBS=`pkg-config --libs glib-2.0`
+ 
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ DATADIR=$(PREFIX)/share
+ 
+ # location in which binaries are installed
+@@ -75,4 +75,4 @@ distcheck: dist
+ 	cd .. &&				\
+ 	rm -rf $$distdir
+ 
+-.PHONY: dist distcheck
+\ No newline at end of file
++.PHONY: dist distcheck
