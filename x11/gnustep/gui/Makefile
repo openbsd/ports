@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2009/11/22 16:40:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/03/21 09:57:58 ajacoutot Exp $
 
 COMMENT=	GNUstep gui library
 
 DISTNAME=	gnustep-gui-0.16.0
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	devel
 
 # needs to follow gnustep-back backend versioning
@@ -25,14 +25,13 @@ LIB_DEPENDS=	aspell.>=16::textproc/aspell/core \
 		gnustep-base.>=1::x11/gnustep/base \
 		jpeg.>=62::graphics/jpeg \
 		png.>=5::graphics/png \
-		ungif.>=5::graphics/libungif
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::audio/portaudio-svn
+		ungif.>=5::graphics/libungif \
+		portaudio::audio/portaudio-svn
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm -pthread"
-CONFIGURE_ARGS=	--disable-gsnd --with-x
+CONFIGURE_ARGS=	--with-x
 
 pre-configure:
 	@perl -pi -e 's,^GNUSTEP_GUI_MAJOR_VERSION=.*,GNUSTEP_GUI_MAJOR_VERSION=${LIBgnustep-gui_VERSION:R},g;' \

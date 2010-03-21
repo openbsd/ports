@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/05 07:47:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/03/21 09:57:58 ajacoutot Exp $
 @bin bin/gclose
 @bin bin/gcloseall
+@bin bin/gnustep_sndd
 @bin bin/gopen
 @bin bin/make_services
 @bin bin/set_show_service
