@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.9 2010/03/20 18:30:04 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.10 2010/03/21 19:44:02 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -270,6 +270,16 @@ sub clamped
 	}
 }
 
+sub clear_clamped
+{
+	my ($self, $line) = @_;
+	if (!$self->{glitch} && length $line == $self->{width}) {
+		return $line;
+	} else {
+		return $self->{cleareol}.$line."\n";
+	}
+}
+
 sub lines
 {
 	my ($self, @new) = @_;
@@ -289,14 +299,22 @@ sub lines
 		}
 		# adjust newline to correct length
 		if (defined $oldline && (length $oldline) > (length $newline)) {
+			if ($self->{cleareol}) {
+				$r .= $self->clear_clamped($newline);
+				next;
+			}
 			$newline .= " "x ((length $oldline) - (length $newline));
 		}
 		$r .= $self->clamped($newline);
 	}
 	# extra lines must disappear
 	while (my $line = shift(@{$self->{oldlines}})) {
-		$line = " "x (length $line);
-		$r .= $self->clamped($line);
+		if ($self->{cleareol}) {
+			$r .= $self->clear_clamped('');
+		} else {
+			$line = " "x (length $line);
+			$r .= $self->clamped($line);
+		}
 		return if $n++ > $self->{height};
 	}
 	return $r;
