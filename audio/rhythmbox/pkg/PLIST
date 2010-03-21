@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/12/22 15:43:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2010/03/21 10:10:56 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 lib/librhythmbox-core.la
@@ -9,18 +9,12 @@ lib/rhythmbox/plugins/artdisplay/
 lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.py
 lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyc
 lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyo
-lib/rhythmbox/plugins/artdisplay/DiscogsCoverArtSearch.py
-lib/rhythmbox/plugins/artdisplay/DiscogsCoverArtSearch.pyc
-lib/rhythmbox/plugins/artdisplay/DiscogsCoverArtSearch.pyo
 lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.py
 lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyc
 lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyo
 lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.py
 lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyc
 lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyo
-lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearchGIO.py
-lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearchGIO.pyc
-lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearchGIO.pyo
 lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.py
 lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.pyc
 lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.pyo
@@ -83,6 +77,7 @@ lib/rhythmbox/plugins/daap/libdaap.la
 lib/rhythmbox/plugins/daap/libdaap.so
 lib/rhythmbox/plugins/daap/rb-daap-glue.h
 lib/rhythmbox/plugins/generic-player/
+lib/rhythmbox/plugins/generic-player/generic-player-info.ui
 lib/rhythmbox/plugins/generic-player/generic-player-ui.xml
 lib/rhythmbox/plugins/generic-player/generic-player.rb-plugin
 lib/rhythmbox/plugins/generic-player/libgeneric-player.la
@@ -136,6 +131,12 @@ lib/rhythmbox/plugins/lyrics/LyricsConfigureDialog.pyo
 lib/rhythmbox/plugins/lyrics/LyricsParse.py
 lib/rhythmbox/plugins/lyrics/LyricsParse.pyc
 lib/rhythmbox/plugins/lyrics/LyricsParse.pyo
+lib/rhythmbox/plugins/lyrics/LyricsSites.py
+lib/rhythmbox/plugins/lyrics/LyricsSites.pyc
+lib/rhythmbox/plugins/lyrics/LyricsSites.pyo
+lib/rhythmbox/plugins/lyrics/TerraParser.py
+lib/rhythmbox/plugins/lyrics/TerraParser.pyc
+lib/rhythmbox/plugins/lyrics/TerraParser.pyo
 lib/rhythmbox/plugins/lyrics/WinampcnParser.py
 lib/rhythmbox/plugins/lyrics/WinampcnParser.pyc
 lib/rhythmbox/plugins/lyrics/WinampcnParser.pyo
@@ -159,7 +160,6 @@ lib/rhythmbox/plugins/magnatune/__init__.pyc
 lib/rhythmbox/plugins/magnatune/__init__.pyo
 lib/rhythmbox/plugins/magnatune/magnatune-loading.ui
 lib/rhythmbox/plugins/magnatune/magnatune-prefs.ui
-lib/rhythmbox/plugins/magnatune/magnatune-purchase.ui
 lib/rhythmbox/plugins/magnatune/magnatune.rb-plugin
 lib/rhythmbox/plugins/magnatune/magnatune_logo_color_small.png
 lib/rhythmbox/plugins/magnatune/magnatune_logo_color_tiny.png
@@ -192,6 +192,23 @@ lib/rhythmbox/plugins/rb/__init__.pyo
 lib/rhythmbox/plugins/rb/stringmatch.py
 lib/rhythmbox/plugins/rb/stringmatch.pyc
 lib/rhythmbox/plugins/rb/stringmatch.pyo
+lib/rhythmbox/plugins/replaygain/
+lib/rhythmbox/plugins/replaygain/__init__.py
+lib/rhythmbox/plugins/replaygain/__init__.pyc
+lib/rhythmbox/plugins/replaygain/__init__.pyo
+lib/rhythmbox/plugins/replaygain/config.py
+lib/rhythmbox/plugins/replaygain/config.pyc
+lib/rhythmbox/plugins/replaygain/config.pyo
+lib/rhythmbox/plugins/replaygain/player.py
+lib/rhythmbox/plugins/replaygain/player.pyc
+lib/rhythmbox/plugins/replaygain/player.pyo
+lib/rhythmbox/plugins/replaygain/replaygain-prefs.ui
+lib/rhythmbox/plugins/replaygain/replaygain.rb-plugin
+lib/rhythmbox/plugins/sendto/
+lib/rhythmbox/plugins/sendto/__init__.py
+lib/rhythmbox/plugins/sendto/__init__.pyc
+lib/rhythmbox/plugins/sendto/__init__.pyo
+lib/rhythmbox/plugins/sendto/sendto.rb-plugin
 lib/rhythmbox/plugins/status-icon/
 lib/rhythmbox/plugins/status-icon/libstatus-icon.la
 lib/rhythmbox/plugins/status-icon/libstatus-icon.so
@@ -220,6 +237,8 @@ lib/rhythmbox/plugins/visualizer/visualizer-controls.ui
 lib/rhythmbox/plugins/visualizer/visualizer-ui.xml
 lib/rhythmbox/plugins/visualizer/visualizer.rb-plugin
 @bin libexec/rhythmbox-metadata
+@man man/man1/rhythmbox-client.1
+@man man/man1/rhythmbox.1
 share/applications/rhythmbox.desktop
 share/dbus-1/services/org.gnome.Rhythmbox.service
 share/gnome/help/rhythmbox/
@@ -401,6 +420,22 @@ share/gnome/help/rhythmbox/sv/figures/rb-volume-changer.png
 share/gnome/help/rhythmbox/sv/figures/rb-window-small.png
 share/gnome/help/rhythmbox/sv/figures/rb-window.png
 share/gnome/help/rhythmbox/sv/rhythmbox.xml
+share/gnome/help/rhythmbox/uk/
+share/gnome/help/rhythmbox/uk/figures/
+share/gnome/help/rhythmbox/uk/figures/rb-iradio-main.png
+share/gnome/help/rhythmbox/uk/figures/rb-notification-area-menu.png
+share/gnome/help/rhythmbox/uk/figures/rb-notification-window.png
+share/gnome/help/rhythmbox/uk/figures/rb-notification-zone.png
+share/gnome/help/rhythmbox/uk/figures/rb-podcast-main.png
+share/gnome/help/rhythmbox/uk/figures/rb-statusbar.png
+share/gnome/help/rhythmbox/uk/figures/rb-toolbar-prevplaynext.png
+share/gnome/help/rhythmbox/uk/figures/rb-toolbar-repeat.png
+share/gnome/help/rhythmbox/uk/figures/rb-toolbar-shuffle.png
+share/gnome/help/rhythmbox/uk/figures/rb-toolbar.png
+share/gnome/help/rhythmbox/uk/figures/rb-volume-changer.png
+share/gnome/help/rhythmbox/uk/figures/rb-window-small.png
+share/gnome/help/rhythmbox/uk/figures/rb-window.png
+share/gnome/help/rhythmbox/uk/rhythmbox.xml
 share/gnome/help/rhythmbox/zh_CN/
 share/gnome/help/rhythmbox/zh_CN/figures/
 share/gnome/help/rhythmbox/zh_CN/figures/rb-iradio-main.png
@@ -583,6 +618,7 @@ share/omf/rhythmbox/rhythmbox-it.omf
 share/omf/rhythmbox/rhythmbox-oc.omf
 share/omf/rhythmbox/rhythmbox-ru.omf
 share/omf/rhythmbox/rhythmbox-sv.omf
+share/omf/rhythmbox/rhythmbox-uk.omf
 share/omf/rhythmbox/rhythmbox-zh_CN.omf
 share/rhythmbox/
 share/rhythmbox/create-playlist.ui
@@ -661,6 +697,7 @@ share/rhythmbox/icons/hicolor/scalable/places/playlist.svg
 share/rhythmbox/icons/hicolor/scalable/status/
 share/rhythmbox/icons/hicolor/scalable/status/rhythmbox-notplaying.svg
 share/rhythmbox/library-prefs.ui
+share/rhythmbox/media-player-properties.ui
 share/rhythmbox/playback-prefs.ui
 share/rhythmbox/playlist-save.ui
 share/rhythmbox/playlists.xml

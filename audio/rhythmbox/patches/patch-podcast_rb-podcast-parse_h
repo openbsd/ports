@@ -1,7 +1,7 @@
-$OpenBSD: patch-podcast_rb-podcast-parse_h,v 1.2 2009/03/19 13:50:28 ajacoutot Exp $
---- podcast/rb-podcast-parse.h.orig	Thu Mar 12 03:26:18 2009
-+++ podcast/rb-podcast-parse.h	Thu Mar 19 13:09:49 2009
-@@ -31,6 +31,7 @@
+$OpenBSD: patch-podcast_rb-podcast-parse_h,v 1.3 2010/03/21 10:10:56 ajacoutot Exp $
+--- podcast/rb-podcast-parse.h.orig	Sun Feb 28 14:35:23 2010
++++ podcast/rb-podcast-parse.h	Wed Mar  3 11:24:33 2010
+@@ -29,6 +29,7 @@
  #define RB_PODCAST_PARSE_H
  
  #include <glib.h>

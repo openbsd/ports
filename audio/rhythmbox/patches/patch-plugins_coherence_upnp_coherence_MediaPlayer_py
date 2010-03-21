@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_coherence_upnp_coherence_MediaPlayer_py,v 1.1 2010/03/21 10:10:56 ajacoutot Exp $
+
+The 'louie' module from coherence is not under MODPY_LIBDIR.
+
+--- plugins/coherence/upnp_coherence/MediaPlayer.py.orig	Tue Feb  9 10:45:09 2010
++++ plugins/coherence/upnp_coherence/MediaPlayer.py	Tue Feb  9 10:45:18 2010
+@@ -13,7 +13,7 @@ import rhythmdb
+ from coherence.upnp.core.soap_service import errorCode
+ from coherence.upnp.core import DIDLLite
+ 
+-import louie
++import coherence.extern.louie as louie
+ 
+ from coherence.extern.simple_plugin import Plugin
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_coherence_upnp_coherence___init___py,v 1.1 2010/03/21 10:10:56 ajacoutot Exp $
+
+The 'louie' module from coherence is not under MODPY_LIBDIR.
+
+--- plugins/coherence/upnp_coherence/__init__.py.orig	Tue Feb  9 10:44:50 2010
++++ plugins/coherence/upnp_coherence/__init__.py	Tue Feb  9 10:45:02 2010
+@@ -12,7 +12,7 @@ import gobject, gtk
+ 
+ import gconf
+ 
+-import louie
++import coherence.extern.louie as louie
+ 
+ from coherence import log
+ 
