@@ -26,8 +26,8 @@ Rebuild the login.conf.db file if necessary:
 And start the server like this:
 
 	if [ -x ${TRUEPREFIX}/bin/mysqld_safe ] ; then
-		su -c mysql root -c '${TRUEPREFIX}/bin/mysqld_safe >/dev/null 2>&1 &' 
 		echo -n ' mysql'
+		su -c mysql root -c '${TRUEPREFIX}/bin/mysqld_safe >/dev/null 2>&1 &' 
 	fi
 
 mysqld_safe(1) is the recommended way to start a MySQL server,
