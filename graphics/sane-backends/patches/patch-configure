@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.7 2009/05/06 10:23:21 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.8 2010/03/21 09:53:19 ajacoutot Exp $
 --- configure.orig	Tue May  5 10:03:09 2009
 +++ configure	Tue May  5 10:04:50 2009
 @@ -11606,13 +11606,13 @@ as_val=`eval 'as_val=${'$as_ac_Header'}
@@ -46,12 +46,3 @@ $OpenBSD: patch-configure,v 1.7 2009/05/06 10:23:21 ajacoutot Exp $
    fi
    if test $use_locking = yes ; then
      INSTALL_LOCKPATH=install-lockpath
-@@ -34117,7 +34105,7 @@ ALL_BACKENDS="abaton agfafocus apple artec artec_eplus
-         hp5590 hpsj5s hpljm1005 hs2p ibm leo lexmark ma1509 \
-         matsushita microtek microtek2 mustek mustek_pp \
-         mustek_usb mustek_usb2 nec net niash pie pint \
--        pixma plustek plustek_pp qcam ricoh rts8891 s9036 \
-+        plustek plustek_pp qcam ricoh rts8891 s9036 \
-         sceptre sharp sm3600 sm3840 snapscan sp15c st400 \
-         stv680 tamarack teco1 teco2 teco3 test u12 umax
-         umax_pp umax1220u v4l xerox_mfp"

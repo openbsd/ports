@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2009/05/06 10:23:21 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2010/03/21 09:53:19 ajacoutot Exp $
 @lib lib/libsane.so.${LIBsane_VERSION}
 lib/sane/libsane-abaton.so
 lib/sane/libsane-agfafocus.so
@@ -51,6 +51,7 @@ lib/sane/libsane-net.so
 lib/sane/libsane-niash.so
 lib/sane/libsane-pie.so
 lib/sane/libsane-pint.so
+lib/sane/libsane-pixma.so
 lib/sane/libsane-plustek.so
 lib/sane/libsane-plustek_pp.so
 lib/sane/libsane-ricoh.so
