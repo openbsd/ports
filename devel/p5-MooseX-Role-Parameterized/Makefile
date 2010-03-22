@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/30 09:56:39 stephan Exp $
+# $OpenBSD: Makefile,v 1.4 2010/03/22 16:13:00 stephan Exp $
 
 COMMENT = 	roles with composition parameters
 
-DISTNAME =	MooseX-Role-Parameterized-0.14
+DISTNAME =	MooseX-Role-Parameterized-0.18
 CATEGORIES =	devel
 MODULES =	cpan
 
