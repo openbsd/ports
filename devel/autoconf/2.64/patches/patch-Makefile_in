@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/03/22 20:53:54 espie Exp $
+--- Makefile.in.orig	Mon Jul 27 05:28:46 2009
++++ Makefile.in	Mon Mar  8 12:05:19 2010
+@@ -306,6 +306,7 @@ install-pkgdataDATA: $(pkgdata_DATA)
+ 	test -z "$(pkgdatadir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)"
+ 	@list='$(pkgdata_DATA)'; test -n "$(pkgdatadir)" || list=; \
+ 	for p in $$list; do \
++	  p=`basename $$p`; \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  echo "$$d$$p"; \
+ 	done | $(am__base_list) | \

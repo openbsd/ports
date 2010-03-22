@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_autotest_Makefile_in,v 1.1.1.1 2010/03/22 20:53:54 espie Exp $
+--- lib/autotest/Makefile.in.orig	Mon Jul 27 05:28:45 2009
++++ lib/autotest/Makefile.in	Mon Mar  8 12:04:46 2010
+@@ -198,7 +198,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ autotestlibdir = $(pkgdatadir)/autotest
+ dist_autotestlib_DATA = autotest.m4 general.m4
+-nodist_autotestlib_DATA = autotest.m4f
++nodist_autotestlib_DATA = # autotest.m4f
+ CLEANFILES = $(nodist_autotestlib_DATA)
+ TAGS_FILES = $(dist_autotestlib_DATA)
+ ETAGS_ARGS = $(ETAGS_FOR_AUTOCONF)
