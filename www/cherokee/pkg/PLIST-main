@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2010/01/13 08:47:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2010/03/22 01:18:26 sthen Exp $
 @newgroup _cherokee:608
 @newuser _cherokee:608:_cherokee:daemon:Cherokee HTTP Server:/var/empty:/sbin/nologin
 @bin bin/cget
@@ -1049,6 +1049,18 @@ share/doc/cherokee/other_goodies.html
 share/doc/cherokee/other_graphs.html
 share/doc/cherokee/other_signals.html
 share/examples/cherokee/
+share/examples/cherokee/blank
+@sample /var/cherokee/cgi-bin/
+@owner _cherokee
+@sample /var/db/cherokee/
+@sample /var/db/cherokee/graphs/
+@sample /var/db/cherokee/graphs/images/
+@sample /var/log/cherokee/
+@sample /var/log/cherokee/cherokee.access
+@sample /var/log/cherokee/cherokee.error
+@extraunexec rm -rf /var/db/cherokee
+@extraunexec rm -rf /var/log/cherokee
+@owner
 share/examples/cherokee/etc/
 @sample ${SYSCONFDIR}/cherokee/
 share/examples/cherokee/etc/cherokee.conf
@@ -1068,13 +1080,3 @@ share/examples/cherokee/www/images/powered_by_cherokee.png
 @sample /var/cherokee/images/powered_by_cherokee.png
 share/examples/cherokee/www/index.html
 @sample /var/cherokee/index.html
-@sample /var/cherokee/cgi-bin/
-@owner _cherokee
-@sample /var/db/cherokee/
-@sample /var/db/cherokee/graphs/
-@sample /var/db/cherokee/graphs/images/
-@sample /var/log/cherokee/
-@sample /var/log/cherokee/cherokee.access
-@sample /var/log/cherokee/cherokee.error
-@extraunexec rm -rf /var/db/cherokee
-@extraunexec rm -rf /var/log/cherokee

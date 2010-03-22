@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/01/13 08:47:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/03/22 01:18:26 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,7 @@ DIR =		0.99
 VERSION =	${DIR}.39
 DISTNAME =	cherokee-${VERSION}
 
-PKGNAME-main =	${DISTNAME}
+PKGNAME-main =	${DISTNAME}p0
 PKGNAME-ldap =	cherokee-ldap-${VERSION}
 PKGNAME-mysql =	cherokee-mysql-${VERSION}
 PKGNAME-geoip =	cherokee-geoip-${VERSION}
@@ -49,7 +49,8 @@ BUILD_DEPENDS =	::textproc/py-docutils \
 
 LIB_DEPENDS-main =	pcre::devel/pcre
 WANTLIB-main =		c crypto pthread ssl
-RUN_DEPENDS-main =	::www/spawn-fcgi \
+RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			::www/spawn-fcgi \
 			::net/rrdtool
 
 LIB_DEPENDS-geoip =	GeoIP.>=6::net/GeoIP
@@ -113,5 +114,6 @@ pre-configure:
 post-install:
 	cd ${PREFIX}/share/cherokee/admin && find . -name "*.py" | \
 		xargs ${MODPY_BIN} ${MODPY_LIBDIR}/py_compile.py
+	touch ${PREFIX}/share/examples/cherokee/blank
 
 .include <bsd.port.mk>

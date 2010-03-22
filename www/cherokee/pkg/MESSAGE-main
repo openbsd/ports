@@ -13,7 +13,7 @@ for admin management:
 
 if [ X"${cherokee-admin_flags}" != X"NO" ]; then
 	echo -n ' cherokee-admin'
-	${PREFIX}/sbin/cherokee-admin ${cherokee-admin_flags} 1> /dev/null &
+	${PREFIX}/sbin/cherokee-admin ${cherokee_admin_flags} 1> /dev/null &
 fi
 
 and in /etc/rc.conf.local:
