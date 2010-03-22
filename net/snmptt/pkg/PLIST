@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/22 17:35:44 jasper Exp $
+sbin/snmptt
+sbin/snmptthandler
+share/doc/snmptt/
+share/doc/snmptt/faqs.html
+share/doc/snmptt/index.html
+share/doc/snmptt/layout1.css
+share/doc/snmptt/snmptt.html
+share/doc/snmptt/snmpttconvert.html
+share/doc/snmptt/snmpttconvertmib.html
+share/examples/snmptt/
+share/examples/snmptt/sample-trap.generic
+share/examples/snmptt/sample-trap.generic.daemon
+share/examples/snmptt/snmptt.conf.generic
+share/examples/snmptt/snmptt.ini
+@sample ${SYSCONFDIR}/snmptt.ini
+share/snmptt/
+share/snmptt/sample-trap
+share/snmptt/sample-trap-daemon
+share/snmptt/sample-unknown-trap
+share/snmptt/sample-unknown-trap-daemon
+@sample /var/log/snmptt/
+@extraunexec rm -rf /var/log/snmptt/*
+
