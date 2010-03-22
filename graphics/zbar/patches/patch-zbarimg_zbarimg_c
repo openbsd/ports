@@ -1,0 +1,12 @@
+$OpenBSD: patch-zbarimg_zbarimg_c,v 1.1.1.1 2010/03/22 21:57:58 jsg Exp $
+--- zbarimg/zbarimg.c.orig	Sun Mar 14 18:58:25 2010
++++ zbarimg/zbarimg.c	Sun Mar 14 19:20:47 2010
+@@ -47,6 +47,8 @@
+  */
+ #if MagickLibVersion < 0x645
+ # define MagickExportImagePixels MagickGetImagePixels
++#else if MagickLibVersion == 0x645
++#define MagickExportImagePixels MagickGetAuthenticPixels
+ #endif
+ 
+ static const char *note_usage =

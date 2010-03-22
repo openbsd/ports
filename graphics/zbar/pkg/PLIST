@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/22 21:57:58 jsg Exp $
+%%SHARED%%
+@bin bin/zbarimg
+include/zbar/
+include/zbar.h
+include/zbar/Decoder.h
+include/zbar/Exception.h
+include/zbar/Image.h
+include/zbar/ImageScanner.h
+include/zbar/Processor.h
+include/zbar/Scanner.h
+include/zbar/Symbol.h
+include/zbar/Video.h
+include/zbar/Window.h
+include/zbar/zbargtk.h
+lib/libzbar.a
+lib/libzbar.la
+lib/libzbargtk.a
+lib/libzbargtk.la
+lib/pkgconfig/zbar-gtk.pc
+lib/pkgconfig/zbar.pc
+lib/python${MODPY_VERSION}/site-packages/zbar.a
+lib/python${MODPY_VERSION}/site-packages/zbar.la
+lib/python${MODPY_VERSION}/site-packages/zbarpygtk.a
+lib/python${MODPY_VERSION}/site-packages/zbarpygtk.la
+@man man/man1/zbarimg.1
+share/doc/zbar/
+share/doc/zbar/COPYING
+share/doc/zbar/HACKING
+share/doc/zbar/INSTALL
+share/doc/zbar/LICENSE
+share/doc/zbar/NEWS
+share/doc/zbar/README
+share/doc/zbar/TODO
+@comment share/zbar/
