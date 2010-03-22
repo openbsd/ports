@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.620 2010/03/22 17:37:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.621 2010/03/22 17:41:27 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -173,7 +173,6 @@
      SUBDIR += loudmouth
      SUBDIR += luasocket
      SUBDIR += maradns
-     SUBDIR += mbrowse
      SUBDIR += mcabber
      SUBDIR += meanwhile
      SUBDIR += micq
