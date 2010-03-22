@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/22 21:24:02 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/03/22 22:38:25 ajacoutot Exp $
 bin/mdtool
 bin/monodevelop
 lib/monodevelop/
@@ -231,7 +231,6 @@ lib/pkgconfig/monodevelop-core-addins.pc
 lib/pkgconfig/monodevelop.pc
 @man man/man1/mdtool.1
 @man man/man1/monodevelop.1
-share/applications/
 share/applications/monodevelop.desktop
 share/locale/ca/LC_MESSAGES/monodevelop.mo
 share/locale/cs/LC_MESSAGES/monodevelop.mo
@@ -254,8 +253,8 @@ share/locale/sv/LC_MESSAGES/monodevelop.mo
 share/locale/tr/LC_MESSAGES/monodevelop.mo
 share/locale/zh_CN/LC_MESSAGES/monodevelop.mo
 share/locale/zh_TW/LC_MESSAGES/monodevelop.mo
-share/mime/
-share/mime/packages/
 share/mime/packages/monodevelop.xml
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

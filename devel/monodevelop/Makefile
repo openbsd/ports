@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/22 21:24:02 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2010/03/22 22:38:25 ajacoutot Exp $
 
 COMMENT=	IDE for the .NET platform
 DISTNAME=	monodevelop-2.2.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/monodevelop/
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://monodevelop.com/
 
-# GPL v2
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,14 +19,13 @@ USE_GMAKE=	Yes
 
 MODULES=	lang/mono
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::lang/mono \
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
+		:shared-mime-info->=0.21:misc/shared-mime-info \
 		::devel/mono-addins \
 		::shells/bash \
-		::x11/gnome/mono-gnome \
-		::x11/mono-gtk2
+		::x11/gnome/mono-gnome
 
 CONFIGURE_STYLE=gnu
-
 CONFIGURE_ARGS=	--disable-update-mimedb \
 		--enable-aspnet \
 		--enable-aspnetedit
