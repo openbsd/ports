@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.771 2010/02/01 17:00:12 espie Exp $
+# $OpenBSD: Makefile,v 1.772 2010/03/22 21:25:36 robert Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -216,6 +216,7 @@
      SUBDIR += mk
      SUBDIR += mm
      SUBDIR += mono-addins
+     SUBDIR += monodevelop
      SUBDIR += monotone
      SUBDIR += mowgli
      SUBDIR += mpfr
