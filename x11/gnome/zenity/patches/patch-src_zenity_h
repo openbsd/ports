@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_zenity_h,v 1.1 2010/03/22 22:40:36 ajacoutot Exp $
+
+Implement --nocancel
+ETA GNOME 2.30, see:
+    http://bugzilla-attachments.gnome.org/attachment.cgi?id=152711
+
+--- src/zenity.h.orig	Mon Sep 21 16:11:11 2009
++++ src/zenity.h	Mon Feb  8 15:29:32 2010
+@@ -98,6 +98,7 @@ typedef struct {
+   gboolean autoclose;
+   gboolean autokill;
+   gdouble  percentage;
++  gboolean no_cancel;
+ } ZenityProgressData;
+ 
+ typedef struct {

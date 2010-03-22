@@ -1,0 +1,60 @@
+$OpenBSD: patch-src_option_c,v 1.1 2010/03/22 22:40:36 ajacoutot Exp $
+
+Implement --nocancel
+ETA GNOME 2.30, see:
+    http://bugzilla-attachments.gnome.org/attachment.cgi?id=152711
+
+--- src/option.c.orig	Mon Sep 21 16:11:11 2009
++++ src/option.c	Mon Feb  8 15:29:25 2010
+@@ -85,6 +85,7 @@ static int      zenity_progress_percentage;
+ static gboolean zenity_progress_pulsate;
+ static gboolean zenity_progress_auto_close;
+ static gboolean zenity_progress_auto_kill;
++static gboolean zenity_progress_no_cancel;
+ 
+ /* Question Dialog Options */
+ static gboolean zenity_question_active;
+@@ -597,6 +598,16 @@ static GOptionEntry progress_options[] = {
+     N_("Kill parent process if cancel button is pressed"),
+     NULL
+   },
++  {
++   "no-cancel",
++   '\0',
++   0,
++   G_OPTION_ARG_NONE,
++   &zenity_progress_no_cancel,
++   /* xgettext: no-c-format */
++   N_("Hide cancel button"),
++   NULL
++  },
+   { 
+     NULL 
+   }
+@@ -1039,7 +1050,7 @@ zenity_progress_pre_callback (GOptionContext *context,
+   zenity_progress_pulsate = FALSE;
+   zenity_progress_auto_close = FALSE;
+   zenity_progress_auto_kill = FALSE;
+-
++  zenity_progress_no_cancel = FALSE;
+   return TRUE;
+ }
+ 
+@@ -1354,6 +1365,7 @@ zenity_progress_post_callback (GOptionContext *context
+     results->progress_data->autoclose = zenity_progress_auto_close;
+     results->progress_data->autokill = zenity_progress_auto_kill;
+     results->progress_data->percentage = zenity_progress_percentage;
++    results->progress_data->no_cancel = zenity_progress_no_cancel;
+   } else {
+     if (zenity_progress_pulsate)
+       zenity_option_error (zenity_option_get_name (progress_options, &zenity_progress_pulsate),
+@@ -1370,6 +1382,9 @@ zenity_progress_post_callback (GOptionContext *context
+     if (zenity_progress_auto_kill)
+       zenity_option_error (zenity_option_get_name (progress_options, &zenity_progress_auto_kill),
+                            ERROR_SUPPORT);
++    if (zenity_progress_no_cancel)
++      zenity_option_error (zenity_option_get_name (progress_options, &zenity_progress_no_cancel),
++			   ERROR_SUPPORT);
+   }
+     
+   return TRUE;

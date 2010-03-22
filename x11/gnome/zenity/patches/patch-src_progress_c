@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_progress_c,v 1.1 2010/03/22 22:40:36 ajacoutot Exp $
+
+Implement --nocancel
+ETA GNOME 2.30, see:
+    http://bugzilla-attachments.gnome.org/attachment.cgi?id=152711
+
+--- src/progress.c.orig	Mon Sep 21 16:11:11 2009
++++ src/progress.c	Mon Feb  8 15:29:28 2010
+@@ -37,6 +37,8 @@ static ZenityData *zen_data;
+ static GIOChannel *channel;
+ 
+ static gboolean autokill;
++static gboolean no_cancel;
++static gboolean auto_close;
+ 
+ gint zenity_progress_timeout (gpointer data);
+ gint zenity_progress_pulsate_timeout (gpointer data);
+@@ -179,6 +181,7 @@ zenity_progress (ZenityData *data, ZenityProgressData 
+   GtkWidget *dialog;
+   GObject *text;
+   GObject *progress_bar;
++  GObject *cancel_button,*ok_button;
+ 
+   zen_data = data;
+   builder = zenity_util_load_ui_file ("zenity_progress_dialog", NULL);
+@@ -216,6 +219,20 @@ zenity_progress (ZenityData *data, ZenityProgressData 
+                                    progress_data->percentage/100.0);
+ 
+   autokill = progress_data->autokill;
++
++  auto_close = progress_data->autoclose;
++  ok_button = gtk_builder_get_object (builder, "zenity_progress_ok_button");
++
++  no_cancel = progress_data->no_cancel;
++  cancel_button = gtk_builder_get_object (builder, "zenity_progress_cancel_button");
++
++  if (no_cancel) {
++     gtk_widget_hide (GTK_WIDGET(cancel_button));
++     gtk_window_set_deletable (GTK_WINDOW (dialog), FALSE);
++  }
++
++  if (no_cancel && auto_close)
++     gtk_widget_hide(GTK_WIDGET(ok_button));
+ 
+   zenity_util_show_dialog (dialog);
+   zenity_progress_read_info (progress_data);
