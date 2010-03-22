@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2009/12/21 20:46:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/03/22 11:08:50 giovanni Exp $
 
 COMMENT=		gui cd image editor
 
-DISTNAME=		isomaster-1.3.6
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		isomaster-1.3.7
 
 CATEGORIES=		x11
 HOMEPAGE=		http://littlesvr.ca/isomaster/
