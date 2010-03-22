@@ -1,0 +1,21 @@
+$OpenBSD: patch-threadutil_src_ThreadPool_c,v 1.1.1.1 2010/03/22 22:25:50 ajacoutot Exp $
+--- threadutil/src/ThreadPool.c.orig	Tue Feb  9 12:15:59 2010
++++ threadutil/src/ThreadPool.c	Tue Feb  9 12:17:04 2010
+@@ -389,7 +389,7 @@ static void SetSeed()
+ 	gettimeofday(&t, NULL);
+ #if defined(WIN32)
+  	srand( ( unsigned int )t.tv_usec + (unsigned int)ithread_get_current_thread_id().p );
+-#elif defined(__FreeBSD__) || defined(__OSX__) || defined(__APPLE__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__OSX__) || defined(__APPLE__)
+  	srand( ( unsigned int )t.tv_usec + (unsigned int)ithread_get_current_thread_id() );
+ #elif defined(__linux__) || defined(__sun)
+  	srand( ( unsigned int )t.tv_usec + ithread_get_current_thread_id() );
+@@ -1514,7 +1514,7 @@ void ThreadPoolPrintStats(ThreadPoolStats *stats)
+ 		return;
+ 	}
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	printf("ThreadPoolStats at Time: %d\n", StatsTime(NULL));
+ #else /* __FreeBSD__ */
+ 	printf("ThreadPoolStats at Time: %ld\n", StatsTime(NULL));

@@ -1,0 +1,16 @@
+$OpenBSD: patch-upnp_src_api_upnpapi_c,v 1.1.1.1 2010/03/22 22:25:50 ajacoutot Exp $
+--- upnp/src/api/upnpapi.c.orig	Tue Feb  9 12:20:34 2010
++++ upnp/src/api/upnpapi.c	Tue Feb  9 12:20:57 2010
+@@ -44,11 +44,11 @@
+ 
+ #ifndef WIN32
+ 	#include <arpa/inet.h>
++	#include <sys/socket.h>
+ 	#include <net/if.h>
+ 	#include <netinet/in.h>
+ 	#include <sys/ioctl.h>
+ 	#include <sys/param.h>
+-	#include <sys/socket.h>
+ 	#include <sys/types.h>
+ 	#include <sys/utsname.h>
+ 

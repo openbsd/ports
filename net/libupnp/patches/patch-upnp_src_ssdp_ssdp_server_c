@@ -1,0 +1,12 @@
+$OpenBSD: patch-upnp_src_ssdp_ssdp_server_c,v 1.1.1.1 2010/03/22 22:25:50 ajacoutot Exp $
+--- upnp/src/ssdp/ssdp_server.c.orig	Tue Feb  9 12:17:50 2010
++++ upnp/src/ssdp/ssdp_server.c	Tue Feb  9 12:18:15 2010
+@@ -915,7 +915,7 @@ get_ssdp_sockets( MiniServerSockArray * out )
+         return UPNP_E_SOCKET_ERROR;
+     }
+     
+-#if defined(__FreeBSD__) || defined(__OSX__) || defined(__APPLE__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__OSX__) || defined(__APPLE__)
+     ret = setsockopt( ssdpSock, SOL_SOCKET, SO_REUSEPORT,
+         (char *)&onOff, sizeof (onOff) );
+     if ( ret == -1 ) {

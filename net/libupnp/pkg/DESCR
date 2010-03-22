@@ -1,0 +1,10 @@
+The portable SDK for UPnP Devices (libupnp) provides developers with an
+API and open source code for building control points, devices, and
+bridges that are compliant with Version 1.0 of the Universal Plug and
+Play Device Architecture Specification.
+
+UPnP is an architecture that enables discovery, event notification, and
+control of devices on a network, independent of operating system,
+programming language, or physical network connection. UPnP is based on
+common Internet standards and specifications such as TCP/IP, HTTP, and
+XML.

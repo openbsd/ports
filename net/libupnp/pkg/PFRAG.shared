@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/03/22 22:25:50 ajacoutot Exp $
+@lib lib/libixml.so.${LIBixml_VERSION}
+@lib lib/libthreadutil.so.${LIBthreadutil_VERSION}
+@lib lib/libupnp.so.${LIBupnp_VERSION}
