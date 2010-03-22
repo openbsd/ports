@@ -1,0 +1,5 @@
+Anjuta is a versatile Integrated Development Environment (IDE) for C and
+C++ on *NIX. It has been written for GTK/GNOME and features a number of
+advanced programming facilities. These include project management,
+application wizards, an on-board interactive debugger, and a powerful
+source editor with source browsing and syntax highlighting.
