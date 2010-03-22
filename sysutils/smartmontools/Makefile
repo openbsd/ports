@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/01/11 15:15:28 giovanni Exp $
+# $OpenBSD: Makefile,v 1.9 2010/03/22 10:39:57 giovanni Exp $
 
 # conservative setting. macppc found to have some issues.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
 COMMENT=		control and monitor storage systems using SMART
 
-DISTNAME=		smartmontools-5.39
+DISTNAME=		smartmontools-5.39.1
 CATEGORIES=		sysutils
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=smartmontools/}	
