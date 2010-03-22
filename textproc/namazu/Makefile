@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/23 14:14:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/03/22 01:09:16 sthen Exp $
 
 COMMENT=	small to medium scale full-text search engine
 DISTNAME=	namazu-2.0.20
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS+=	nmz 0.0	# .8.1
 
@@ -22,8 +23,8 @@ MASTER_SITES=	${HOMEPAGE}stable/
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	::misc/p5-File-MMagic
-RUN_DEPENDS=	${BUILD_DEPENDS} \
-		::archivers/unzip
+RUN_DEPENDS=	::archivers/unzip \
+		::misc/p5-File-MMagic
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
