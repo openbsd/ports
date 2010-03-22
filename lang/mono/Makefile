@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/03/22 09:48:15 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2010/03/22 09:49:59 robert Exp $
 
 # sync with net/avahi,-mono
 ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
@@ -31,11 +31,7 @@ MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/mono/
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext \
-		lang/mono \
-		gcc4
-
-MODGCC4_ARCHES=	*
-MODGCC4_LANGS=	c
+		lang/mono
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
