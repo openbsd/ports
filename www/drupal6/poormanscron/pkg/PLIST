@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/12/21 09:40:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/03/22 10:28:39 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}poormanscron/
@@ -9,19 +9,3 @@ ${DRUPAL_MODS}poormanscron/poormanscron.install
 ${DRUPAL_MODS}poormanscron/poormanscron.js
 ${DRUPAL_MODS}poormanscron/poormanscron.module
 ${DRUPAL_MODS}poormanscron/poormanscron.test
-${DRUPAL_MODS}poormanscron/translations/
-${DRUPAL_MODS}poormanscron/translations/ca.po
-${DRUPAL_MODS}poormanscron/translations/cs.po
-${DRUPAL_MODS}poormanscron/translations/da.po
-${DRUPAL_MODS}poormanscron/translations/de.po
-${DRUPAL_MODS}poormanscron/translations/es.po
-${DRUPAL_MODS}poormanscron/translations/fr.po
-${DRUPAL_MODS}poormanscron/translations/it.po
-${DRUPAL_MODS}poormanscron/translations/ja.po
-${DRUPAL_MODS}poormanscron/translations/nl.po
-${DRUPAL_MODS}poormanscron/translations/pl.po
-${DRUPAL_MODS}poormanscron/translations/poormanscron.pot
-${DRUPAL_MODS}poormanscron/translations/pt.po
-${DRUPAL_MODS}poormanscron/translations/ru.po
-${DRUPAL_MODS}poormanscron/translations/uk-ua.po
-${DRUPAL_MODS}poormanscron/translations/uk.po

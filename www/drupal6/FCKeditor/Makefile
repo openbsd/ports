@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/03/05 10:07:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/03/22 10:28:38 espie Exp $
 
 COMMENT =	FCKeditor for drupal
 
-DISTNAME = 	fckeditor-6.x-2.0
-PKGNAME =	drupal6-fckeditor-2.0
+DISTNAME = 	fckeditor-6.x-2.1
+PKGNAME =	drupal6-fckeditor-2.1
 DISTFILES =	${DISTNAME}.tar.gz \
 		FCKeditor_2.6.6.tar.gz:0
 EXTRACT_ONLY =	${DISTNAME}.tar.gz

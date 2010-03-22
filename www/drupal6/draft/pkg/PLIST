@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/10 13:42:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/03/22 10:28:39 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}draft/
@@ -12,6 +12,7 @@ ${DRUPAL_MODS}draft/draft.admin.inc
 ${DRUPAL_MODS}draft/draft.css
 ${DRUPAL_MODS}draft/draft.info
 ${DRUPAL_MODS}draft/draft.install
+@comment ${DRUPAL_MODS}draft/draft.install.orig
 ${DRUPAL_MODS}draft/draft.js
 ${DRUPAL_MODS}draft/draft.module
 ${DRUPAL_MODS}draft/draft.page.inc

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/23 23:19:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/03/22 10:28:39 espie Exp $
 
 COMMENT =	development helps
 
-DISTNAME = 	devel-6.x-1.18
-PKGNAME =	drupal6-devel-1.18
+DISTNAME = 	devel-6.x-1.19
+PKGNAME =	drupal6-devel-1.19
 
 .include <bsd.port.mk>

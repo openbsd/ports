@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/10/23 10:10:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/03/22 10:28:39 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}panels/
@@ -161,5 +161,6 @@ ${DRUPAL_MODS}panels/templates/panels-dashboard.tpl.php
 ${DRUPAL_MODS}panels/templates/panels-pane.tpl.php
 ${DRUPAL_MODS}panels/translations/
 ${DRUPAL_MODS}panels/translations/panels.de.po
+${DRUPAL_MODS}panels/translations/panels.fr.po
 ${DRUPAL_MODS}panels/translations/panels.ja.po
 ${DRUPAL_MODS}panels/translations/panels.pot

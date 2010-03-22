@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/26 13:16:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/03/22 10:28:39 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}schema/
@@ -8,9 +8,17 @@ ${DRUPAL_MODS}schema/engines/
 ${DRUPAL_MODS}schema/engines/schema_mysql.inc
 ${DRUPAL_MODS}schema/engines/schema_mysqli.inc
 ${DRUPAL_MODS}schema/engines/schema_pgsql.inc
+${DRUPAL_MODS}schema/schema.drush.inc
 ${DRUPAL_MODS}schema/schema.info
 ${DRUPAL_MODS}schema/schema.install
 ${DRUPAL_MODS}schema/schema.module
 ${DRUPAL_MODS}schema/schema_util.inc
 ${DRUPAL_MODS}schema/tests/
 ${DRUPAL_MODS}schema/tests/schema_regression.test
+${DRUPAL_MODS}schema/translations/
+${DRUPAL_MODS}schema/translations/Kopie von schema.de.po
+${DRUPAL_MODS}schema/translations/de.mo
+${DRUPAL_MODS}schema/translations/de.po
+${DRUPAL_MODS}schema/translations/schema.de.mo
+${DRUPAL_MODS}schema/translations/schema.mo
+${DRUPAL_MODS}schema/translations/schema.pot
