@@ -1,0 +1,27 @@
+$OpenBSD: patch-lib_m4sugar_m4sugar_m4,v 1.1.1.1 2010/03/22 20:53:34 espie Exp $
+--- lib/m4sugar/m4sugar.m4.orig	Tue Aug 26 14:31:22 2008
++++ lib/m4sugar/m4sugar.m4	Mon Mar  8 10:47:42 2010
+@@ -1707,8 +1707,8 @@ m4_define([m4_expand_once],
+ # ----------------------
+ m4_define([m4_provide],
+ [m4_define([m4_provide($1)])])
++m4_provide([AM_SANITY_CHECK])
+ 
+-
+ # m4_provide_if(MACRO-NAME, IF-PROVIDED, IF-NOT-PROVIDED)
+ # -------------------------------------------------------
+ # If MACRO-NAME is provided do IF-PROVIDED, else IF-NOT-PROVIDED.
+@@ -2774,12 +2774,9 @@ m4_pattern_forbid([^dnl$])
+ # $@ recursion is quadratic, and that we need foreach-based
+ # replacement macros.  Use the raw builtin to avoid tripping up
+ # include tracing.
+-m4_ifdef([__m4_version__],
+-[m4_debugmode([+d])
+ m4_copy([_m4_defn], [m4_defn])
+ m4_copy([_m4_popdef], [m4_popdef])
+-m4_copy([_m4_undefine], [m4_undefine])],
+-[m4_builtin([include], [m4sugar/foreach.m4])])
++m4_copy([_m4_undefine], [m4_undefine])
+ 
+ # _m4_divert_diversion should be defined:
+ m4_divert_push([KILL])
