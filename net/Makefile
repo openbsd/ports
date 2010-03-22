@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.621 2010/03/22 17:41:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.622 2010/03/22 22:28:18 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -169,6 +169,7 @@
      SUBDIR += libshout
      SUBDIR += libst
      SUBDIR += libtorrent
+     SUBDIR += libupnp
      SUBDIR += livemedia
      SUBDIR += loudmouth
      SUBDIR += luasocket
@@ -496,6 +497,7 @@
      SUBDIR += unbound
      SUBDIR += unison
      SUBDIR += unworkable
+     SUBDIR += ushare
      SUBDIR += uucp
      SUBDIR += valknut
      SUBDIR += vicq
