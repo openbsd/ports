@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_resolver_c,v 1.1 2010/03/22 20:13:39 naddy Exp $
+--- src/resolver.c.orig	Mon Mar 22 19:27:42 2010
++++ src/resolver.c	Mon Mar 22 19:29:00 2010
+@@ -277,7 +277,9 @@ int open_connection(mpg123_string *host, mpg123_string
+ 	memset(&hints, 0, sizeof(struct addrinfo));
+ 	hints.ai_family   = AF_UNSPEC; /* We accept both IPv4 and IPv6 ... and perhaps IPv8;-) */
+ 	hints.ai_socktype = SOCK_STREAM;
++#ifdef AI_ADDRCONFIG
+ 	hints.ai_flags    = AI_ADDRCONFIG; /* Only ask for addresses that we have configured inerfaces for. */
++#endif
+ 
+ 	addrcount = getaddrinfo(host->p, port->p, &hints, &addrlist);
+ 
