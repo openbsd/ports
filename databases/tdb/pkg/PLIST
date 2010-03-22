@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/28 21:37:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/03/22 09:38:36 sthen Exp $
 %%SHARED%%
-include/tdb.h
+include/tdb/
+include/tdb/tdb.h
 lib/libtdb.a
 lib/libtdb.la
 @man man/man3/tdb.3

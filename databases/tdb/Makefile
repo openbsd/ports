@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2007/07/30 15:36:34 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/03/22 09:38:36 sthen Exp $
 
 COMMENT=	trivial database library
 
 DISTNAME=	tdb-1.0.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	databases
 SHARED_LIBS+=	tdb	1.0
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tdb/}
 CONFIGURE_STYLE=autoconf
+CONFIGURE_ARGS=	--includedir=${TRUEPREFIX}/include/tdb
 AUTOCONF_VERSION=2.13
 USE_LIBTOOL=	Yes
 
