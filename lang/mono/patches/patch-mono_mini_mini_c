@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_mini_mini_c,v 1.2 2010/03/21 17:35:05 robert Exp $
+$OpenBSD: patch-mono_mini_mini_c,v 1.3 2010/03/22 09:48:15 robert Exp $
 --- mono/mini/mini.c.orig	Thu Feb 25 16:20:57 2010
-+++ mono/mini/mini.c	Sun Mar 21 17:59:55 2010
-@@ -4773,18 +4773,22 @@ SIG_HANDLER_SIGNATURE (mono_sigill_signal_handler)
++++ mono/mini/mini.c	Mon Mar 22 10:22:30 2010
+@@ -4773,18 +4773,19 @@ SIG_HANDLER_SIGNATURE (mono_sigill_signal_handler)
  	mono_arch_handle_exception (ctx, exc, FALSE);
  }
  
@@ -17,9 +17,6 @@ $OpenBSD: patch-mono_mini_mini_c,v 1.2 2010/03/21 17:35:05 robert Exp $
 -#endif
  	MonoJitInfo *ji;
  	MonoJitTlsData *jit_tls = TlsGetValue (mono_jit_tls_id);
-+#if !(defined(MONO_ARCH_USE_SIGACTION) || defined(PLATFORM_WIN32))
-+	siginfo_t *info;
-+#endif
  
  	GET_CONTEXT;
  
@@ -28,7 +25,7 @@ $OpenBSD: patch-mono_mini_mini_c,v 1.2 2010/03/21 17:35:05 robert Exp $
  	if (mono_arch_is_single_step_event (info, ctx)) {
  		mono_debugger_agent_single_step_event (ctx);
  		return;
-@@ -4794,7 +4798,7 @@ SIG_HANDLER_SIGNATURE (mono_sigsegv_signal_handler)
+@@ -4794,7 +4795,7 @@ SIG_HANDLER_SIGNATURE (mono_sigsegv_signal_handler)
  	}
  #endif
  
@@ -37,7 +34,7 @@ $OpenBSD: patch-mono_mini_mini_c,v 1.2 2010/03/21 17:35:05 robert Exp $
  	if (mono_aot_is_pagefault (info->si_addr)) {
  		mono_aot_handle_pagefault (info->si_addr);
  		return;
-@@ -4844,7 +4848,7 @@ SIG_HANDLER_SIGNATURE (mono_sigsegv_signal_handler)
+@@ -4844,7 +4845,7 @@ SIG_HANDLER_SIGNATURE (mono_sigsegv_signal_handler)
  		mono_handle_native_sigsegv (SIGSEGV, ctx);
  	}
  			
