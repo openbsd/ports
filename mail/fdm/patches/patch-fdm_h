@@ -1,0 +1,12 @@
+$OpenBSD: patch-fdm_h,v 1.1 2010/03/22 09:38:54 sthen Exp $
+--- fdm.h.orig	Thu Jan 28 12:10:38 2010
++++ fdm.h	Thu Jan 28 12:10:42 2010
+@@ -39,7 +39,7 @@
+ #include <signal.h>
+ #include <stdarg.h>
+ #include <stdint.h>
+-#include <tdb.h>
++#include <tdb/tdb.h>
+ #include <regex.h>
+ 
+ #ifdef PCRE

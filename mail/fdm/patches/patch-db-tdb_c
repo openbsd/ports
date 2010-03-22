@@ -1,0 +1,12 @@
+$OpenBSD: patch-db-tdb_c,v 1.1 2010/03/22 09:38:53 sthen Exp $
+--- db-tdb.c.orig	Thu Jan 28 12:10:27 2010
++++ db-tdb.c	Thu Jan 28 12:10:38 2010
+@@ -22,7 +22,7 @@
+ #include <fcntl.h>
+ #include <signal.h>
+ #include <string.h>
+-#include <tdb.h>
++#include <tdb/tdb.h>
+ 
+ #include "fdm.h"
+ 
