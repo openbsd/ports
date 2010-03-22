@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2010/03/22 13:56:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.109 2010/03/22 17:30:32 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -8,7 +8,6 @@
      SUBDIR += backgrounds
      SUBDIR += baker
      SUBDIR += bug-buddy
-     SUBDIR += build
      SUBDIR += cheese
      SUBDIR += common
      SUBDIR += conduit
