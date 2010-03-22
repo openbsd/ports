@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/21 11:16:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2010/03/22 13:54:21 sturm Exp $
 
 COMMENT=	online HTML editor
 
 V=		0.931
 DISTNAME=	Xinha_$V
-PKGNAME=	xinha-$V
+PKGNAME=	xinha-${V}p0
 CATEGORIES=	editors www
 
 HOMEPAGE=	http://xinha.webfactional.com/
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

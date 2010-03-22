@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 23:29:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/03/22 13:54:21 sturm Exp $
 
 COMMENT=	DSA Signatures and Key Generation
 
 MODULES=	cpan
 DISTNAME=	Crypt-DSA-0.13
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	security
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

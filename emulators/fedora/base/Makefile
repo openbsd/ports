@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2009/07/30 17:35:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2010/03/22 13:54:21 sturm Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core 4
 
-PKGNAME=	fedora_base-4.0p6
+PKGNAME=	fedora_base-4.0p7
 # clean up after make plist:
 #	- perl -pi -e "s,^\@lib ,," pkg/PLIST
 #	- change the 2nd LIBXaw_version to LIBXaw7_version in pkg/PLIST
@@ -58,8 +58,6 @@ SHARED_LIBS=	FS	6.0 \
 		readline 5.0 \
 		xkbfile	1.0 \
 		xkbui	1.0
-
-MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_FEDORA:=4/i386/os/Fedora/RPMS/}
 MASTER_SITES0=	${MASTER_SITE_FEDORA:=updates/4/i386/}
