@@ -1,0 +1,5 @@
+Simple Scan is an easy-to-use application, designed to let users connect
+their scanner and quickly have the image/document in an appropriate
+format.
+Simple Scan is basically a frontend for SANE which means that all
+SANE supported scanners will work and the interface is well tested.

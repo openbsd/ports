@@ -1,0 +1,49 @@
+$OpenBSD: patch-src_simple-scan_c,v 1.1.1.1 2010/03/22 22:33:15 ajacoutot Exp $
+
+No gudev under OpenBSD.
+
+--- src/simple-scan.c.orig	Sat Mar 13 09:34:47 2010
++++ src/simple-scan.c	Sat Mar 13 09:36:03 2010
+@@ -14,7 +14,9 @@
+ #include <glib/gi18n.h>
+ #include <gtk/gtk.h>
+ #include <unistd.h>
++#ifndef __OpenBSD__
+ #include <gudev/gudev.h>
++#endif
+ 
+ #include <sane/sane.h> // For SANE_STATUS_CANCELLED
+ 
+@@ -493,17 +495,21 @@ get_options (int argc, char **argv)
+ }
+ 
+ 
++#ifndef __OpenBSD__
+ static void
+ on_uevent (GUdevClient *client, const gchar *action, GUdevDevice *device)
+ {
+     scanner_redetect (scanner);
+ }
++#endif
+ 
+ int
+ main (int argc, char **argv)
+ {
++#ifndef __OpenBSD__
+     GUdevClient *udev_client;
+     const char *udev_subsystems[] = { "usb", NULL };
++#endif
+     gchar *path;
+ 
+     g_thread_init (NULL);
+@@ -547,8 +553,10 @@ main (int argc, char **argv)
+     g_signal_connect (G_OBJECT (scanner), "scan-failed", G_CALLBACK (scanner_failed_cb), NULL);
+     g_signal_connect (G_OBJECT (scanner), "scanning-changed", G_CALLBACK (scanner_scanning_changed_cb), NULL);
+ 
++#ifndef __OpenBSD__
+     udev_client = g_udev_client_new (udev_subsystems);
+     g_signal_connect (udev_client, "uevent", G_CALLBACK (on_uevent), NULL);
++#endif
+ 
+     if (default_device)
+         ui_set_selected_device (ui, default_device);

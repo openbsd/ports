@@ -1,0 +1,64 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/22 22:33:15 ajacoutot Exp $
+@bin bin/simple-scan
+@man man/man1/simple-scan.1
+share/applications/simple-scan.desktop
+share/gnome/help/simple-scan/
+share/gnome/help/simple-scan/C/
+share/gnome/help/simple-scan/C/adf.page
+share/gnome/help/simple-scan/C/crop.page
+share/gnome/help/simple-scan/C/dpi.page
+share/gnome/help/simple-scan/C/edit.page
+share/gnome/help/simple-scan/C/email.page
+share/gnome/help/simple-scan/C/index.page
+share/gnome/help/simple-scan/C/legal.xml
+share/gnome/help/simple-scan/C/print.page
+share/gnome/help/simple-scan/C/rotate.page
+share/gnome/help/simple-scan/C/save.page
+share/gnome/help/simple-scan/C/scanner.page
+share/gnome/help/simple-scan/C/scanning.page
+share/locale/af/LC_MESSAGES/simple-scan.mo
+share/locale/ar/LC_MESSAGES/simple-scan.mo
+share/locale/ast/LC_MESSAGES/simple-scan.mo
+share/locale/bg/LC_MESSAGES/simple-scan.mo
+share/locale/ca/LC_MESSAGES/simple-scan.mo
+share/locale/cs/LC_MESSAGES/simple-scan.mo
+share/locale/da/LC_MESSAGES/simple-scan.mo
+share/locale/de/LC_MESSAGES/simple-scan.mo
+share/locale/el/LC_MESSAGES/simple-scan.mo
+share/locale/en_GB/LC_MESSAGES/simple-scan.mo
+share/locale/es/LC_MESSAGES/simple-scan.mo
+share/locale/eu/LC_MESSAGES/simple-scan.mo
+share/locale/fi/LC_MESSAGES/simple-scan.mo
+share/locale/fr/LC_MESSAGES/simple-scan.mo
+share/locale/gl/LC_MESSAGES/simple-scan.mo
+share/locale/he/LC_MESSAGES/simple-scan.mo
+share/locale/hr/LC_MESSAGES/simple-scan.mo
+share/locale/hu/LC_MESSAGES/simple-scan.mo
+share/locale/it/LC_MESSAGES/simple-scan.mo
+share/locale/ja/LC_MESSAGES/simple-scan.mo
+share/locale/lt/LC_MESSAGES/simple-scan.mo
+share/locale/ms/LC_MESSAGES/simple-scan.mo
+share/locale/nb/LC_MESSAGES/simple-scan.mo
+share/locale/nl/LC_MESSAGES/simple-scan.mo
+share/locale/pl/LC_MESSAGES/simple-scan.mo
+share/locale/pt/LC_MESSAGES/simple-scan.mo
+share/locale/pt_BR/LC_MESSAGES/simple-scan.mo
+share/locale/ro/LC_MESSAGES/simple-scan.mo
+share/locale/ru/LC_MESSAGES/simple-scan.mo
+share/locale/sk/LC_MESSAGES/simple-scan.mo
+share/locale/sl/LC_MESSAGES/simple-scan.mo
+share/locale/sr/LC_MESSAGES/simple-scan.mo
+share/locale/sv/LC_MESSAGES/simple-scan.mo
+share/locale/te/LC_MESSAGES/simple-scan.mo
+share/locale/tr/LC_MESSAGES/simple-scan.mo
+share/locale/uk/LC_MESSAGES/simple-scan.mo
+share/locale/vi/LC_MESSAGES/simple-scan.mo
+share/locale/zh_CN/LC_MESSAGES/simple-scan.mo
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/simple-scan.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/simple-scan/
+share/simple-scan/simple-scan.ui
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

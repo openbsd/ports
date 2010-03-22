@@ -1,0 +1,75 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/03/22 22:33:15 ajacoutot Exp $
+--- configure.orig	Sat Mar 13 09:34:20 2010
++++ configure	Sat Mar 13 09:34:36 2010
+@@ -5244,7 +5244,6 @@ if test -n "$PKG_CONFIG"; then
+     cairo
+     gdk-pixbuf-2.0
+     cairo-pdf
+-    gudev-1.0
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+     gtk+-2.0
+@@ -5254,7 +5253,6 @@ if test -n "$PKG_CONFIG"; then
+     cairo
+     gdk-pixbuf-2.0
+     cairo-pdf
+-    gudev-1.0
+ ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -5267,7 +5265,6 @@ if test -n "$PKG_CONFIG"; then
+     cairo
+     gdk-pixbuf-2.0
+     cairo-pdf
+-    gudev-1.0
+ " 2>/dev/null`
+ else
+   pkg_failed=yes
+@@ -5289,7 +5286,6 @@ if test -n "$PKG_CONFIG"; then
+     cairo
+     gdk-pixbuf-2.0
+     cairo-pdf
+-    gudev-1.0
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "
+     gtk+-2.0
+@@ -5299,7 +5295,6 @@ if test -n "$PKG_CONFIG"; then
+     cairo
+     gdk-pixbuf-2.0
+     cairo-pdf
+-    gudev-1.0
+ ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -5312,7 +5307,6 @@ if test -n "$PKG_CONFIG"; then
+     cairo
+     gdk-pixbuf-2.0
+     cairo-pdf
+-    gudev-1.0
+ " 2>/dev/null`
+ else
+   pkg_failed=yes
+@@ -5340,7 +5334,6 @@ fi
+     cairo
+     gdk-pixbuf-2.0
+     cairo-pdf
+-    gudev-1.0
+ "`
+         else
+ 	        SIMPLE_SCAN_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "
+@@ -5351,7 +5344,6 @@ fi
+     cairo
+     gdk-pixbuf-2.0
+     cairo-pdf
+-    gudev-1.0
+ "`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+@@ -5365,7 +5357,6 @@ fi
+     cairo
+     gdk-pixbuf-2.0
+     cairo-pdf
+-    gudev-1.0
+ ) were not met:
+ 
+ $SIMPLE_SCAN_PKG_ERRORS
