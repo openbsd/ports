@@ -1,0 +1,12 @@
+USHARE_IFACE (listening interface) and USHARE_DIR (shared directories)
+need to be set in ${SYSCONFDIR}/ushare.conf before starting ushare.
+
+To start ushare at boot time, add the following to /etc/rc.local:
+if [ -x ${PREFIX}/bin/ushare ]; then
+	echo -n ' ushare'; ${PREFIX}/bin/ushare -D
+fi
+
+UPnP multicast discovery on the listening interface needs to be enabled.
+Add this line to the matching hostname.if(5) and restart the network
+(a.b.c.d being the interface IP address).
+!route -qn add -net 239.0.0.0/8 -interface a.b.c.d

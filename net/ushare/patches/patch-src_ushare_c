@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_ushare_c,v 1.1.1.1 2010/03/22 22:26:59 ajacoutot Exp $
+--- src/ushare.c.orig	Sun Dec  9 14:03:36 2007
++++ src/ushare.c	Tue Feb  9 15:32:22 2010
+@@ -28,6 +28,10 @@
+ #include <errno.h>
+ #include <getopt.h>
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ #if (defined(BSD) || defined(__FreeBSD__) || defined(__APPLE__))
+ #include <sys/socket.h>
+ #include <sys/sysctl.h>
+@@ -49,10 +53,6 @@
+ #include <ifaddrs.h>
+ #endif
+ 
+-#if (defined(__unix__) || defined(unix)) && !defined(USG)
+-#include <sys/param.h>
+-#endif
+-
+ #include <upnp/upnp.h>
+ #include <upnp/upnptools.h>
+ 
+@@ -845,6 +845,9 @@ main (int argc, char **argv)
+ 
+   signal (SIGINT, UPnPBreak);
+   signal (SIGHUP, reload_config);
++#ifndef MSG_NOSIGNAL
++  signal (SIGPIPE, SIG_IGN);
++#endif
+ 
+   if (ut->use_telnet)
+   {

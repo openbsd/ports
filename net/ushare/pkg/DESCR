@@ -1,0 +1,11 @@
+uShare is a UPnP (TM) A/V & DLNA Media Server. It implements the server
+component that provides UPnP media devices with information on available
+multimedia files. uShare uses the built-in http server of libupnp to
+stream the files to clients.
+
+GeeXboX uShare is able to provide access to both images, videos, music
+or playlists files (see below for a complete file format support list
+It does not act as an UPnP Media Adaptor and thus, can't transcode
+streams to fit the client requirements.
+
+Note that DLNA support is not enabled on OpenBSD.

@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/03/22 22:26:59 ajacoutot Exp $
+--- configure.orig	Tue Feb  9 12:53:41 2010
++++ configure	Tue Feb  9 12:53:51 2010
+@@ -639,8 +639,8 @@ echolog "Checking for libixml ..."
+ check_lib upnp/ixml.h ixmlRelaxParser -lixml || die "Error, can't find libixml !"
+ 
+ echolog "Checking for libthreadutil ..."
+-check_lib upnp/ThreadPool.h ThreadPoolAdd "-lthreadutil -lpthread" || die "Error, can't find libthreadutil !"
+-add_extralibs -lpthread
++check_lib upnp/ThreadPool.h ThreadPoolAdd "-lthreadutil -pthread" || die "Error, can't find libthreadutil !"
++add_extralibs -pthread
+ 
+ libupnp_min_version="1.4.2"
+ echolog "Checking for libupnp >= $libupnp_min_version ..."
