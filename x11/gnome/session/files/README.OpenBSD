@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.29 2009/10/22 16:47:37 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.30 2010/03/22 17:34:04 jasper Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -58,6 +58,7 @@ related ports under the x11/gnome category)
    * gossip - Jabber client
 
  - Development
+   * anjuta - full blown IDE
    * devhelp - API documentation browser
    * gedit-plugins - plugins for Gedit
    * ghex - HEX editor
