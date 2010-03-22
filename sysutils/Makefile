@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2010/02/01 17:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.196 2010/03/22 17:43:27 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -159,7 +159,6 @@
      SUBDIR += wmapm
      SUBDIR += wmcb
      SUBDIR += wmcube
-     SUBDIR += wmcube-gdk
      SUBDIR += wmmon
      SUBDIR += wmwlmon
      SUBDIR += xbatt
