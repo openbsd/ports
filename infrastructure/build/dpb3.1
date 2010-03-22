@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb3.1,v 1.4 2010/03/22 12:53:58 espie Exp $
+.\"	$OpenBSD: dpb3.1,v 1.5 2010/03/22 20:30:43 schwarze Exp $
 .\"
 .Dd $Mdocdate: March 22 2010 $
 .Dt DPB3 1
@@ -59,9 +59,9 @@ Number of concurrent local jobs to run (defaults to hw.ncpu if no host file).
 .It Fl L Ar logdir
 Choose a log directory.
 .Po
-Defaults to 
-.Pa ${LOGDIR} , 
-or 
+Defaults to
+.Pa ${LOGDIR} ,
+or
 .Pa ${PORTSDIR}/logs/${ARCH}
 .Pc .
 .It Fl P Ar subdirlist
@@ -79,7 +79,7 @@ Read a size log file and use it for choosing to put WRKDIR in memory.
 Connection timeout for ssh.
 Defaults to 60 seconds.
 .It Fl T Ar dtimeout
-Display timeout (in seconds) while waiting for jobs to finish, so that the 
+Display timeout (in seconds) while waiting for jobs to finish, so that the
 display is updated even if jobs didn't finish.
 Defaults to 10 seconds.
 .It Fl x
@@ -180,11 +180,11 @@ where this occurred, logsize is the corresponding log file size,
 and a ! is appended in case the build didn't succeed.
 .Pp
 The detailed timing info gives a run-down of the build, with clean, fetch,
-prepare, patch (actually extract+patch), configure, build, fake, package, clean  
+prepare, patch (actually extract+patch), configure, build, fake, package, clean
 detailed timing info.
 Note that the actual build time starts at
 .Sq extract
-and finishes at 
+and finishes at
 .Sq package .
 .It Pa clean.log
 Paths that do not clean correctly, and required sudo to clean the directory.
