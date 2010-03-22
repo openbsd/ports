@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/09/20 11:57:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/03/22 10:29:33 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}date/
@@ -43,24 +43,24 @@ ${DRUPAL_MODS}date/date_locale/translations/date_locale.de.po
 ${DRUPAL_MODS}date/date_locale/translations/date_locale.es.po
 ${DRUPAL_MODS}date/date_locale/translations/date_locale.pot
 ${DRUPAL_MODS}date/date_locale/translations/date_locale.sv.po
-${DRUPAL_MODS}date/date_php4/
-${DRUPAL_MODS}date/date_php4/date_php4.inc
-${DRUPAL_MODS}date/date_php4/date_php4.info
-${DRUPAL_MODS}date/date_php4/date_php4.install
-${DRUPAL_MODS}date/date_php4/date_php4.module
-${DRUPAL_MODS}date/date_php4/date_php4_calc.inc
-${DRUPAL_MODS}date/date_php4/date_php4_lib.inc
-${DRUPAL_MODS}date/date_php4/date_php4_missing_data.inc
-${DRUPAL_MODS}date/date_php4/date_php4_tz_abbreviations_list.inc
-${DRUPAL_MODS}date/date_php4/date_php4_tz_create.inc
-${DRUPAL_MODS}date/date_php4/date_php4_tz_identifiers.inc
-${DRUPAL_MODS}date/date_php4/date_php4_tz_map.inc
-${DRUPAL_MODS}date/date_php4/translations/
-${DRUPAL_MODS}date/date_php4/translations/date_php4.de.po
-${DRUPAL_MODS}date/date_php4/translations/date_php4.es.po
-${DRUPAL_MODS}date/date_php4/translations/date_php4.fr.po
-${DRUPAL_MODS}date/date_php4/translations/date_php4.pot
-${DRUPAL_MODS}date/date_php4/translations/date_php4.sv.po
+@comment ${DRUPAL_MODS}date/date_php4/
+@comment ${DRUPAL_MODS}date/date_php4/date_php4.inc
+@comment ${DRUPAL_MODS}date/date_php4/date_php4.info
+@comment ${DRUPAL_MODS}date/date_php4/date_php4.install
+@comment ${DRUPAL_MODS}date/date_php4/date_php4.module
+@comment ${DRUPAL_MODS}date/date_php4/date_php4_calc.inc
+@comment ${DRUPAL_MODS}date/date_php4/date_php4_lib.inc
+@comment ${DRUPAL_MODS}date/date_php4/date_php4_missing_data.inc
+@comment ${DRUPAL_MODS}date/date_php4/date_php4_tz_abbreviations_list.inc
+@comment ${DRUPAL_MODS}date/date_php4/date_php4_tz_create.inc
+@comment ${DRUPAL_MODS}date/date_php4/date_php4_tz_identifiers.inc
+@comment ${DRUPAL_MODS}date/date_php4/date_php4_tz_map.inc
+@comment ${DRUPAL_MODS}date/date_php4/translations/
+@comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.de.po
+@comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.es.po
+@comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.fr.po
+@comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.pot
+@comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.sv.po
 ${DRUPAL_MODS}date/date_popup/
 ${DRUPAL_MODS}date/date_popup/date_popup.info
 ${DRUPAL_MODS}date/date_popup/date_popup.install
