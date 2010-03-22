@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.5 2010/03/05 09:05:46 espie Exp $
+# $OpenBSD: Distant.pm,v 1.6 2010/03/22 12:55:07 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -53,9 +53,9 @@ sub timeout
 	shift->{master}->timeout;
 }
 
-sub host
+sub hostname
 {
-	shift->{master}->host;
+	shift->{master}->hostname;
 }
 
 sub run
@@ -63,7 +63,7 @@ sub run
 	my ($self, $cmd) = @_;
 	exec {OpenBSD::Paths->ssh} 
 	    ($self->ssh($self->socket, $self->timeout), 
-	    $self->host, $cmd);
+	    $self->hostname, $cmd);
 }
 
 sub make
@@ -161,7 +161,7 @@ sub alive_hosts
 {
 	my @l = ();
 	for my $shell (values %$master) {
-		my $host = $shell->host;
+		my $host = $shell->hostname;
 		if ($shell->is_alive) {
 			push(@l, $host." [$shell->{pid}]");
 		} else {
@@ -175,7 +175,7 @@ sub changed_hosts
 {
 	my @l = ();
 	for my $shell (values %$master) {
-		my $host = $shell->host;
+		my $host = $shell->hostname;
 		my $was_alive = $shell->{is_alive};
 		if ($shell->is_alive) {
 			$shell->{is_alive} = 1;
@@ -226,7 +226,6 @@ sub mark_ready
 		$self->SUPER::mark_ready;
 	} else {
 		delete $self->{job};
-#		DPB::Reporter->myprint("Found dead core on ".$self->{shell}->host."\n");
 		push(@dead_cores, $self);
 		return undef;
 	}
@@ -234,7 +233,6 @@ sub mark_ready
 
 sub check_dead_hosts
 {
-#	DPB::Reporter->myprint("Checking dead hosts\n");
 	my @redo = @dead_cores;
 	@dead_cores = ();
 	for my $core (@redo) {
