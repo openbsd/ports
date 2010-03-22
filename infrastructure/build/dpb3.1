@@ -1,6 +1,6 @@
-.\"	$OpenBSD: dpb3.1,v 1.3 2010/03/05 09:05:30 espie Exp $
+.\"	$OpenBSD: dpb3.1,v 1.4 2010/03/22 12:53:58 espie Exp $
 .\"
-.Dd $Mdocdate: March 5 2010 $
+.Dd $Mdocdate: March 22 2010 $
 .Dt DPB3 1
 .Os
 .Sh NAME
@@ -16,6 +16,7 @@
 .Op Fl j Ar n
 .Op Fl L Ar logdir
 .Op Fl P Ar subdirlist
+.Op Fl S Ar sizefile
 .Op Fl t Ar ctimeout
 .Op Fl T Ar dtimeout
 .Op Ar pkgpath ...
@@ -72,7 +73,7 @@ Useful to try to find missing build dependencies.
 .It Fl s
 Compute workdir sizes before cleaning up, and stash them in log file
 .Pa ${LOGDIR}/size.log .
-.It Fl S
+.It Fl S Ar sizefile
 Read a size log file and use it for choosing to put WRKDIR in memory.
 .It Fl t Ar ctimeout
 Connection timeout for ssh.
