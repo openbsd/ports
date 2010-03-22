@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.14 2009/10/11 20:52:17 sthen Exp $
---- configure.orig	Sun Oct 11 20:56:53 2009
-+++ configure	Sun Oct 11 22:37:47 2009
-@@ -8275,7 +8275,7 @@ $as_echo "$ac_try_echo") >&5
+$OpenBSD: patch-configure,v 1.15 2010/03/22 01:28:40 sthen Exp $
+--- configure.orig	Thu Feb  4 23:34:35 2010
++++ configure	Mon Mar 22 01:21:42 2010
+@@ -8358,7 +8358,7 @@ $as_echo "$ac_try_echo") >&5
  	 test "$cross_compiling" = yes ||
  	 $as_test_x conftest$ac_exeext
         }; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.14 2009/10/11 20:52:17 sthen Exp $
                  LTLIBINTL="$LTLIBINTL $LTLIBICONV"
                  gt_cv_func_gnugettext2_libintl=yes
  
-@@ -12561,7 +12561,7 @@ cat >>confdefs.h <<\_ACEOF
+@@ -12644,7 +12644,7 @@ cat >>confdefs.h <<\_ACEOF
  _ACEOF
  
    CFLAGS="$CFLAGS -I/usr/include/kerberosV"
