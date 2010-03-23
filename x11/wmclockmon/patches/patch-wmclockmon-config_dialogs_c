@@ -1,0 +1,23 @@
+$OpenBSD: patch-wmclockmon-config_dialogs_c,v 1.1 2010/03/23 22:12:39 jasper Exp $
+
+Switch to gtk+2:
+- Remove call to deprecated function.
+
+--- wmclockmon-config/dialogs.c.orig	Tue Mar 23 23:04:11 2010
++++ wmclockmon-config/dialogs.c	Tue Mar 23 23:04:24 2010
+@@ -38,7 +38,6 @@ void ync_dialog(const char *title, const char *text, v
+                        bouton, TRUE, TRUE, 0);
+     GTK_WIDGET_SET_FLAGS(GTK_WIDGET(bouton), GTK_CAN_DEFAULT);
+     gtk_widget_grab_default(GTK_WIDGET(bouton));
+-    gtk_widget_draw_default(GTK_WIDGET(bouton));
+     gtk_widget_show(bouton);
+ 
+     bouton = gtk_button_new_with_label("No");
+@@ -96,7 +95,6 @@ void ok_dialog(const char *title, const char *text) {
+                        bouton, TRUE, TRUE, 0);
+     GTK_WIDGET_SET_FLAGS(GTK_WIDGET(bouton), GTK_CAN_DEFAULT);
+     gtk_widget_grab_default(GTK_WIDGET(bouton));
+-    gtk_widget_draw_default(GTK_WIDGET(bouton));
+     gtk_widget_show(bouton);
+ 
+     gtk_container_set_border_width(GTK_CONTAINER

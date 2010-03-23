@@ -1,0 +1,15 @@
+$OpenBSD: patch-wmclockmon-config_edit_c,v 1.1 2010/03/23 22:12:39 jasper Exp $
+
+Switch to gtk+2:
+- Remove call to deprecated function.
+
+--- wmclockmon-config/edit.c.orig	Tue Mar 23 23:04:31 2010
++++ wmclockmon-config/edit.c	Tue Mar 23 23:04:39 2010
+@@ -76,7 +76,6 @@ void edit_dialog(const char *title,
+                        bouton, TRUE, TRUE, 0);
+     GTK_WIDGET_SET_FLAGS(GTK_WIDGET(bouton), GTK_CAN_DEFAULT);
+     gtk_widget_grab_default(GTK_WIDGET(bouton));
+-    gtk_widget_draw_default(GTK_WIDGET(bouton));
+     gtk_widget_show(bouton);
+ 
+     bouton = gtk_button_new_with_label("Cancel");

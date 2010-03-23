@@ -1,0 +1,23 @@
+$OpenBSD: patch-wmclockmon-cal_Makefile_in,v 1.1 2010/03/23 22:12:39 jasper Exp $
+
+- Switch to gtk+2.
+
+--- wmclockmon-cal/Makefile.in.orig	Tue Mar 23 23:03:29 2010
++++ wmclockmon-cal/Makefile.in	Tue Mar 23 23:03:53 2010
+@@ -96,14 +96,14 @@ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+-LDFLAGS = @LDFLAGS@ `gtk-config --libs`
++LDFLAGS = @LDFLAGS@ `pkg-config --libs gtk+-2.0`
+ X_CFLAGS = @X_CFLAGS@
+ X_LIBS = @X_LIBS@
+ X_PRE_LIBS = @X_PRE_LIBS@
+ wmclockmon_OBJECTS = main.o mainwindow.o tools.o
+ wmclockmon_DEPENDENCIES = 
+ wmclockmon_LDFLAGS = 
+-CFLAGS = @CFLAGS@ `gtk-config --cflags`
++CFLAGS = @CFLAGS@ `pkg-config --cflags gtk+-2.0`
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@

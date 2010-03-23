@@ -1,0 +1,52 @@
+$OpenBSD: patch-wmclockmon-config_mainwindow_c,v 1.1 2010/03/23 22:12:39 jasper Exp $
+
+Switch to gtk+2:
+- Prevent symbol clash of remove.
+- Remove call to deprecated function.
+
+--- wmclockmon-config/mainwindow.c.orig	Tue Mar 23 22:59:40 2010
++++ wmclockmon-config/mainwindow.c	Tue Mar 23 23:04:55 2010
+@@ -12,7 +12,7 @@
+ 
+ static GtkWidget *edit;
+ static GtkWidget *set;
+-static GtkWidget *remove;
++static GtkWidget *gtk_remove;
+ 
+ static gint list_sel_cb (GtkCList *clist,
+                          gint row,
+@@ -22,7 +22,7 @@ static gint list_sel_cb (GtkCList *clist,
+     selected_row = row;
+     gtk_widget_set_sensitive(edit,   TRUE);
+     gtk_widget_set_sensitive(set,    TRUE);
+-    gtk_widget_set_sensitive(remove, TRUE);
++    gtk_widget_set_sensitive(gtk_remove, TRUE);
+     return TRUE;
+ }
+ 
+@@ -35,7 +35,7 @@ gint list_unsel_cb (GtkCList *clist,
+     selected_row = -1;
+     gtk_widget_set_sensitive(edit,   FALSE);
+     gtk_widget_set_sensitive(set,    FALSE);
+-    gtk_widget_set_sensitive(remove, FALSE);
++    gtk_widget_set_sensitive(gtk_remove, FALSE);
+     return TRUE;
+ }
+ 
+@@ -283,7 +283,7 @@ void create_mainwindow() {
+     gtk_table_attach_defaults(GTK_TABLE(table), bouton, 1, 2, 0, 1);
+     gtk_widget_set_sensitive(bouton, FALSE);
+     gtk_widget_show(bouton);
+-    remove = bouton;
++    gtk_remove = bouton;
+ 
+ 
+     label = gtk_label_new(" Alarms ");
+@@ -312,7 +312,6 @@ void create_mainwindow() {
+     gtk_box_pack_start(GTK_BOX(buttons_hbox), bouton, TRUE, TRUE, 0);
+     GTK_WIDGET_SET_FLAGS(GTK_WIDGET(bouton), GTK_CAN_DEFAULT);
+     gtk_widget_grab_default(GTK_WIDGET(bouton));
+-    gtk_widget_draw_default(GTK_WIDGET(bouton));
+     gtk_widget_show(bouton);
+ 
+     bouton = gtk_button_new_with_label(" Cancel ");

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/07 21:45:00 niallo Exp $
-bin/wmclockmon
-bin/wmclockmon-cal
-bin/wmclockmon-config
+@comment $OpenBSD: PLIST,v 1.2 2010/03/23 22:12:39 jasper Exp $
+@bin bin/wmclockmon
+@bin bin/wmclockmon-cal
+@bin bin/wmclockmon-config
 @man man/man1/wmclockmon-cal.1
 @man man/man1/wmclockmon-config.1
 @man man/man1/wmclockmon.1
