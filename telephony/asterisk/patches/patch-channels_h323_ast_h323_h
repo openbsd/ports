@@ -1,0 +1,28 @@
+$OpenBSD: patch-channels_h323_ast_h323_h,v 1.1 2010/03/23 21:16:53 ajacoutot Exp $
+--- channels/h323/ast_h323.h.orig	Tue Mar 17 21:51:06 2009
++++ channels/h323/ast_h323.h	Thu Jan 28 12:23:00 2010
+@@ -101,7 +101,7 @@ class MyH323Connection : public H323Connection (public
+ 	virtual void OnReceivedLocalCallHold(int linkedId);
+ 	virtual void OnReceivedLocalCallRetrieve(int linkedId);
+ #endif
+-	void MyHoldCall(BOOL localHold);
++	void MyHoldCall(PBoolean localHold);
+ 
+ 	PString sourceAliases;
+ 	PString destAliases;
+@@ -151,6 +151,7 @@ class MyH323_ExternalRTPChannel : public H323_External
+ 
+ 	PIPSocket::Address localIpAddr;
+ 	PIPSocket::Address remoteIpAddr;
++#ifndef __OpenBSD__
+ 	/* Additional functions in order to have chan_h323 compile with H323Plus */
+ #if VERSION(OPENH323_MAJOR, OPENH323_MINOR, OPENH323_BUILD) > VERSION(1,19,4)
+ 	BOOL OnReceivedAltPDU(const H245_ArrayOf_GenericInformation & alternate );
+@@ -158,6 +159,7 @@ class MyH323_ExternalRTPChannel : public H323_External
+ 	void OnSendOpenAckAlt(H245_ArrayOf_GenericInformation & alternate) const;
+ 	BOOL OnReceivedAckAltPDU(const H245_ArrayOf_GenericInformation & alternate);
+ #endif
++#endif // __OpenBSD__
+ 	WORD localPort;
+ 	WORD remotePort;
+ };
