@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/02 14:32:06 pea Exp $
+# $OpenBSD: Makefile,v 1.7 2010/03/23 15:49:38 pea Exp $
 
 COMMENT=	IMAP synchronization tool
 
-DISTNAME=	imapsync-1.286
+DISTNAME=	imapsync-1.310
 CATEGORIES=	mail
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
