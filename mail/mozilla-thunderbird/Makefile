@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2010/03/21 10:35:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2010/03/23 18:16:01 espie Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -135,7 +135,7 @@ do-install:
 		${MOB}/mozilla-xremote-client ${MOZ}
 	ln -f ${MOZ}/thunderbird-bin ${MOZ}/mozilla-thunderbird-bin
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
-		-e 's,!!LOCALBASE!!,${LOCALBASE},g'
+		-e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
