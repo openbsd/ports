@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.15 2010/01/27 10:25:18 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.16 2010/03/23 21:37:54 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -134,6 +134,9 @@ my $stem_extensions = {
 	'gstreamer-dvdread' => 'gstreamer-plugins-ugly',
 	'lzma' => 'xz',
 	'wily' => 'wily_9libs',
+# 4.7
+	'openh323' => 'h323plus',
+	'pwlib' => 'ptlib',
 };
 
 # ->is_base_system($handle, $state):
