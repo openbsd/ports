@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/10/20 11:30:29 bernd Exp $
-lib/ruby/site_ruby/${MODRUBY_REV}/gdk_imlib.rb
-lib/ruby/site_ruby/${MODRUBY_REV}/${MODRUBY_ARCH}/gdk_imlib.so
-share/examples/ruby/ruby-gdk-imlib/
-share/examples/ruby/ruby-gdk-imlib/sample1.rb
-share/examples/ruby/ruby-gdk-imlib/sample2.rb
-share/examples/ruby/ruby-gdk-imlib/sample3.rb
-share/examples/ruby/ruby-gdk-imlib/sample4.rb
-share/examples/ruby/ruby-gdk-imlib/sample5.rb
