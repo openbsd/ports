@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_engine_components_libnotify_libnotify-main_cpp,v 1.1 2010/03/23 21:18:59 ajacoutot Exp $
+--- lib/engine/components/libnotify/libnotify-main.cpp.orig	Tue Sep 22 16:27:35 2009
++++ lib/engine/components/libnotify/libnotify-main.cpp	Sat Nov 21 16:39:33 2009
+@@ -36,7 +36,7 @@
+  */
+ 
+ #include <map>
+-#include <tr1/memory>
++#include <boost/tr1/memory.hpp>
+ 
+ #include <libnotify/notify.h>
+ 

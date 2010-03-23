@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2009/12/21 18:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/03/23 21:18:59 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
-GNOME_VERSION=	2.0.12
-PKGNAME=	${DISTNAME}p21
+GNOME_VERSION=	3.2.6
 
 CATEGORIES=	net multimedia
 
@@ -16,29 +15,33 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 audiofile avahi-client
-WANTLIB += avahi-common avahi-glib bonobo-2 bonobo-activation
-WANTLIB += bonoboui-2 c cairo com_err crypto dbus-1 dbus-glib-1
-WANTLIB += expat fontconfig freetype gailutil gcrypt gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
-WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gnutls gobject-2.0
-WANTLIB += gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4
-WANTLIB += nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png popt pt pthread smime3 sndio softokn3
-WANTLIB += soup-2.4 sqlite3 ssl ssl3 stdc++ tasn1 usbhid util
-WANTLIB += xml2 z pthread-stubs xcb
+WANTLIB += ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xv asn1 atk-1.0 bonobo-2 bonobo-activation c cairo
+WANTLIB += com_err crypto dbus-1 dbus-glib-1 expat fontconfig
+WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 gpg-error
+WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 krb5 lber ldap ldap_r
+WANTLIB += m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 plc4 plds4 png pt pthread pthread-stubs
+WANTLIB += sasl2 smime3 sndio softokn3 soup-2.4 speexdsp sqlite3
+WANTLIB += ssl ssl3 stdc++ tasn1 usbhid xcb xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	gnomeui-2.>=2000::x11/gnome/libgnomeui \
+BUILD_DEPENDS=	::devel/boost
+LIB_DEPENDS=	avahi-client,avahi-common,avahi-glib::net/avahi,no_gtk,no_mono,no_qt3,no_qt4 \
 		opal::net/opal \
 		SDL.>=8::devel/sdl \
 		camel-1.2.>=10,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
-		esd.>=2::audio/esound
+		sigc-2.0.>=1::devel/libsigc++-2 \
+		notify.>=2::devel/libnotify
+
+# include/boost/detail/shared_count.hpp:117
+# error: exception handling disabled
+CFLAGS+=	-fexceptions
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes
@@ -48,14 +51,10 @@ MODGCONF2_SCHEMAS_DIR= ekiga
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-dbus \
 		--enable-avahi \
+		--disable-gnome \
 		--disable-scrollkeeper \
-		--with-pwlib-dir=${LOCALBASE} \
-		--with-opal-dir=${LOCALBASE}
-
-pre-configure:
-	@perl -pi -e 's,G_GNUC_UNUSED,,g' \
-		${WRKSRC}/src/components/{dbus_stub.h,dbus-helper-stub.h}
+		--with-ldap-dir=${LOCALBASE} \
+		--with-libsasl2-dir=${LOCALBASE}
 
 .include <bsd.port.mk>

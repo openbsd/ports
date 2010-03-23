@@ -1,50 +1,23 @@
-$OpenBSD: patch-configure,v 1.2 2008/05/22 19:31:09 ajacoutot Exp $
---- configure.orig	Mon Mar 10 11:31:22 2008
-+++ configure	Tue Apr 29 11:52:48 2008
-@@ -22060,8 +22060,8 @@ EKIGA_CFLAGS="$EKIGA_CFLAGS $EDS_CFLAGS"
- EKIGA_LIBS="$EKIGA_LIBS $EDS_LIBS"
+$OpenBSD: patch-configure,v 1.3 2010/03/23 21:18:59 ajacoutot Exp $
+--- configure.orig	Wed Sep 23 08:55:16 2009
++++ configure	Wed Sep 23 08:56:18 2009
+@@ -15310,8 +15310,8 @@ _ACEOF
+ 
+ 
+ if test ".$ac_cv_c_compiler_gnu" = .yes; then
+-   CFLAGS="$CFLAGS -Wall -Wextra -Winit-self -Wswitch-default -Wswitch-enum -Wstrict-aliasing=2 -Wfloat-equal -Wshadow"
+-   CXXFLAGS="$CXXFLAGS -Wall -Wextra -Winit-self -Wswitch-default -Wswitch-enum -Wstrict-aliasing=2 -Wfloat-equal -Wshadow"
++   CFLAGS="$CFLAGS -Wall -Wswitch-default -Wswitch-enum -Wfloat-equal -Wshadow"
++   CXXFLAGS="$CXXFLAGS -Wall -Wswitch-default -Wswitch-enum -Wfloat-equal -Wshadow"
  fi
  
--PWLIB_REC_VERSION="1.10.10"
--OPAL_REC_VERSION="2.2.11"
-+PWLIB_REC_VERSION=""
-+OPAL_REC_VERSION=""
+ case $host in
+@@ -15361,7 +15361,7 @@ case $target_os in
+     gm_platform="linux"
+     ;;
  
- 
- if test ${enable_gnome} = yes ; then
-@@ -22146,6 +22146,14 @@ echo "${ECHO_T}yes" >&6; }
+-  FreeBSD* | freebsd* | kfreebsd* | NetBSD* | netbsd* )
++  FreeBSD* | freebsd* | kfreebsd* | NetBSD* | netbsd* | OpenBSD* | openbsd* )
      gm_platform="freebsd"
      ;;
  
-+  OpenBSD* | openbsd* )
-+    ARCH_OPAL_CFLAGS="-DPTRACING -DNDEBUG"
-+    ARCH_OPAL_LIBS="-lpt -lopal -pthread"
-+    { echo "$as_me:$LINENO: result: yes" >&5
-+echo "${ECHO_T}yes" >&6; }
-+    gm_platform="openbsd"
-+    ;;
-+
-   darwin* )
-     ARCH_OPAL_CFLAGS="-Os -Wall -DPTRACING -DNDEBUG -DNO_LONG_DOUBLE -DSTATIC_LIBS_USED"
-     ARCH_OPAL_LIBS="-multiply_defined suppress -lh323_Darwin_ppc_r_s -lpt_Darwin_ppc_r_s -lssl -lcrypto -lX11 -framework AudioToolbox -framework CoreAudio -framework CoreServices"
-@@ -22164,8 +22172,8 @@ echo "${ECHO_T}not really" >&6; }
-     ;;
- 
-   *)
--    { { echo "$as_me:$LINENO: error: Only Linux, FreeBSD, Solaris and Mac OS X are supported. Please contact the author to know how you can add more OS types." >&5
--echo "$as_me: error: Only Linux, FreeBSD, Solaris and Mac OS X are supported. Please contact the author to know how you can add more OS types." >&2;}
-+    { { echo "$as_me:$LINENO: error: Only Linux, FreeBSD, OpenBSD, Solaris and Mac OS X are supported. Please contact the author to know how you can add more OS types." >&5
-+echo "$as_me: error: Only Linux, FreeBSD, OpenBSD, Solaris and Mac OS X are supported. Please contact the author to know how you can add more OS types." >&2;}
-    { (exit 1); exit 1; }; }
-     ;;
- esac
-@@ -27076,9 +27084,7 @@ echo ""
- echo "================ Final configuration ==================="
- echo "          Installing into prefix  :  $prefix"
- echo ""
--echo "                 OPAL Version is  :  $OPAL_REC_VERSION"
- echo "               OPAL Directory is  :  $with_opal_dir"
--echo "                PWLIB Version is  :  $PWLIB_REC_VERSION"
- echo "              PWLIB Directory is  :  $with_pwlib_dir"
- echo "                 ptlib-config is  :  $with_pwlib_dir/bin/ptlib-config"
- echo ""

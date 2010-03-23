@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_Makefile_in_in,v 1.1 2010/03/23 21:18:59 ajacoutot Exp $
+--- po/Makefile.in.in.orig	Thu Jan 28 13:32:39 2010
++++ po/Makefile.in.in	Thu Jan 28 13:33:03 2010
+@@ -34,7 +34,7 @@ datadir = @datadir@
+ datarootdir = @datarootdir@
+ libdir = @libdir@
+ DATADIRNAME = @DATADIRNAME@
+-itlocaledir = $(prefix)/$(DATADIRNAME)/locale
++itlocaledir = @datarootdir@/locale
+ subdir = po
+ install_sh = @install_sh@
+ # Automake >= 1.8 provides @mkdir_p@.

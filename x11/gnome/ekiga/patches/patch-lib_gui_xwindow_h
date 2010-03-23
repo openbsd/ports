@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_gui_xwindow_h,v 1.1 2010/03/23 21:18:59 ajacoutot Exp $
+--- lib/gui/xwindow.h.orig	Tue Sep 22 16:27:35 2009
++++ lib/gui/xwindow.h	Sat Nov 21 16:39:33 2009
+@@ -39,7 +39,7 @@
+ #include <stdint.h>
+ #include "config.h"
+ 
+-#include <tr1/memory>
++#include <boost/tr1/memory.hpp>
+ 
+ #include <ptlib.h>
+ #include <ptlib/vconvert.h>
