@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/27 21:52:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/03/23 13:49:59 jasper Exp $
 
 COMMENT=		GTD organizer for GNOME
 
 GNOME_PROJECT=		gtg
-GNOME_VERSION=		0.2
+GNOME_VERSION=		0.2.2
 
 CATEGORIES=		productivity
 
@@ -15,14 +15,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://launchpad.net/gtg/trunk/${VERSION}/+download/
+MASTER_SITES=		http://edge.launchpad.net/gtg/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/${VERSION}/+download/
 EXTRACT_SUFX=		.tar.gz
 
 MODULES=		lang/python \
 			x11/gnome
 
 RUN_DEPENDS=		::devel/py-configobj \
+			::devel/py-simplejson \
 			::devel/py-xdg \
+			::x11/dbus-python \
 			::x11/gnome/py-gnome
 BUILD_DEPENDS=		::x11/py-gtk2
 
