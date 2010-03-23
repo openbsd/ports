@@ -1,0 +1,12 @@
+$OpenBSD: patch-mcs_docs_Makefile,v 1.1 2010/03/23 10:21:32 robert Exp $
+--- mcs/docs/Makefile.orig	Tue Mar 23 09:58:01 2010
++++ mcs/docs/Makefile	Tue Mar 23 10:08:33 2010
+@@ -140,7 +140,7 @@ Novell.tree: Makefile
+ 
+ cs-errors.zip : cs-errors.tree
+ cs-errors.tree: cs-errors.config Makefile
+-	$(MDOC) assemble -o cs-errors -f error $<
++	$(MDOC) assemble -o cs-errors -f error $< || true
+ 
+ ecma334.zip : ecma334.tree
+ ecma334.tree: Makefile
