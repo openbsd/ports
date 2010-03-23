@@ -1,13 +1,19 @@
-# $OpenBSD: Makefile,v 1.7 2009/05/28 10:00:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/03/23 21:13:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Open Phone Abstraction Library
 
-DISTNAME=	opal-2.2.11
-PKGNAME=	${DISTNAME}p4
-SHARED_LIBS=	opal	0.0 # .2.2.11
-CATEGORIES=	net devel
+V=		3.6.6
+DISTNAME=	opal-${V}
+
+SUBST_VARS+=	V
+
+SHARED_LIBS=	opal	1.0 # .2.2.11
+
+EXTRACT_SUFX=	.tar.bz2
+
+CATEGORIES=	net devel telephony
 
 HOMEPAGE=	http://www.opalvoip.org/
 
@@ -19,31 +25,55 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/admin/downloads/latest/sources/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
-WANTLIB=	SDL crypto expat lber ldap ldap_r sasl2 ssl
+WANTLIB += SDL c crypto expat lber ldap ldap_r m ogg sasl2
+WANTLIB += ssl
 
 LIB_DEPENDS=	speex.>=7,speexdsp::audio/speex \
-		pt.>=2::devel/pwlib
+		theora::multimedia/libtheora \
+		gsm::audio/gsm \
+		pt.>=3::devel/ptlib
 
-ALL_TARGET=	optshared
+ALL_TARGET=	opt
 OPAL_FILE=	libopal.so
 
-MAKE_ENV=	CC=${CC} CPLUS=${CXX} BUILDSELF="1"
+MAKE_ENV=	CC=${CC} CPLUS=${CXX} VERBOSE=1
 MAKE_FLAGS=	OPAL_FILE=${OPAL_FILE} \
-		LIB_SONAME=${OPAL_FILE}.${LIBopal_VERSION} \
-		LIBNAME_PAT=${OPAL_FILE}.${LIBopal_VERSION}
+		RELEASE_LIB_FILENAME_SHARED_PAT=${OPAL_FILE}.${LIBopal_VERSION}
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/plugins
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-localspeex
+CONFIGURE_ARGS=	--disable-localspeex \
+		--disable-localgsm \
+		--enable-plugins
 
-pre-configure:
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' \
-		${WRKSRC}/opal_inc.mak.in
+# XXX
+# ekiga:/usr/local/lib/opal-3.6.6/lid/vpb_lid_pwplugin.so:
+# undefined symbol '_Z18vpb_set_event_maskit'
+# <...>
+CONFIGURE_ARGS+= --disable-vpb
+
+# XXX our FFmpeg is too old
+CONFIGURE_ARGS+= --disable-h264
+#BUILD_DEPENDS=	${RUN_DEPENDS}
+#RUN_DEPENDS=	::graphics/ffmpeg # dlopen(3) libavcodec.so
+#LIB_DEPENDS+=	x264::multimedia/x264
+#LDFLAGS+=	-pthread
+
+.ifndef DEBUG
+CONFIGURE_ENV+=	DEBUG_BUILD="no"
+.endif
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/opal
+	${INSTALL_DATA} ${WRKSRC}/opal_inc.mak ${PREFIX}/share/opal
+	${INSTALL_DATA} ${WRKSRC}/version.h ${PREFIX}/share/opal
 
 .include <bsd.port.mk>

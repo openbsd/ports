@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_plugin-config_h_in,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
+--- plugins/plugin-config.h.in.orig	Thu Jun  4 20:53:52 2009
++++ plugins/plugin-config.h.in	Thu Jun  4 20:54:42 2009
+@@ -178,5 +178,6 @@
+ #undef vfork
+ 
+ /* define if posix_memalign is available */
++#ifndef __OpenBSD__
+ #undef HAVE_POSIX_MEMALIGN
+-
++#endif

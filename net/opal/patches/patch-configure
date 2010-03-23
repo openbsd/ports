@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
+--- configure.orig	Sun Jul  5 08:13:12 2009
++++ configure	Tue Jul  7 09:52:53 2009
+@@ -4336,7 +4336,7 @@ fi
+ WFLAGS=
+ if test "x$ac_cv_c_compiler_gnu" = xyes; then
+   if test ${GXX_MAJOR} -lt 4 ; then
+-    WFLAGS="-Wall -Wextra -Wstrict-aliasing=2 -Wfloat-equal -Wno-comment -Wno-unused"
++    WFLAGS="-Wall -Wfloat-equal -Wno-comment -Wno-unused"
+   else
+     WFLAGS="-Wall -Wextra -Winit-self -Wstrict-aliasing=2 -Wfloat-equal -Wno-comment -Wno-missing-field-initializers -Wno-unused"
+ 
+@@ -5081,6 +5081,10 @@ fi
+                solaris*)
+                  opal_release_flags="-O3 -DSOLARIS"
+                  opal_debug_flags="-g -D_DEBUG -DSOLARIS"
++               ;;
++               openbsd*)
++                 opal_release_flags=""
++                 opal_debug_flags="-g3 -ggdb -O0 -D_DEBUG"
+                ;;
+                *)
+                  opal_release_flags="-Os"

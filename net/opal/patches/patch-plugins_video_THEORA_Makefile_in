@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_video_THEORA_Makefile_in,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
+--- plugins/video/THEORA/Makefile.in.orig	Mon Nov  3 18:23:44 2008
++++ plugins/video/THEORA/Makefile.in	Mon Nov  3 18:24:02 2008
+@@ -34,7 +34,7 @@ COMMONDIR=../common
+ PLUGINDIR=../..
+ 
+ CC	 	=@CC@
+-CFLAGS	 	=@CFLAGS@
++CFLAGS	 	=@CFLAGS@ @THEORA_CFLAGS@
+ CXX	 	=@CXX@
+ LDSO	 	=@LDSO@
+ PLUGINEXT	=@PLUGINEXT@

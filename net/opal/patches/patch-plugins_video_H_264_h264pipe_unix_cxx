@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_video_H_264_h264pipe_unix_cxx,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
+--- plugins/video/H.264/h264pipe_unix.cxx.orig	Fri Nov 14 04:05:39 2008
++++ plugins/video/H.264/h264pipe_unix.cxx	Fri Nov 14 04:06:11 2008
+@@ -32,6 +32,7 @@
+ #include "rtpframe.h"
+ #include "h264pipe_unix.h"
+ #include <string.h>
++#include <unistd.h>
+ 
+ #define HAVE_MKFIFO 1
+ #define GPL_PROCESS_FILENAME "h264_video_pwplugin_helper"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_audio_GSM0610_Makefile_in,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
+--- plugins/audio/GSM0610/Makefile.in.orig	Wed Sep 23 00:23:13 2009
++++ plugins/audio/GSM0610/Makefile.in	Wed Sep 23 00:24:07 2009
+@@ -163,7 +163,7 @@ ifeq (solaris,$(findstring solaris,$(target_os)))
+ 
+ 	$(Q_LD)$(CC) $(LDSO) $@ -o $@ $^ $(EXTRALIBS)
+ else 
+-	$(Q_LD)$(CC) $(LDSO) -o $@ $^ $(EXTRALIBS)
++	$(Q_LD)$(CC) $(LDSO) -o $@ $(LDFLAGS) $^ $(EXTRALIBS)
+ 
+ endif
+ 

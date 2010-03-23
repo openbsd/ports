@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_video_H_261-vic_vic_config_h,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
+--- plugins/video/H.261-vic/vic/config.h.orig	Mon Nov  3 18:04:53 2008
++++ plugins/video/H.261-vic/vic/config.h	Mon Nov  3 18:05:07 2008
+@@ -71,6 +71,7 @@ typedef unsigned char BYTE;
+ typedef unsigned long u_long;
+ 
+ #ifndef _WIN32
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #endif
+ 

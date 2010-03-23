@@ -1,0 +1,24 @@
+$OpenBSD: patch-plugins_video_H_263-1998_h263-1998_cxx,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
+
+XXX FFmpeg is too old:
+struct AVCodecContext has no member named error_recognition
+
+--- plugins/video/H.263-1998/h263-1998.cxx.orig	Sun Jul  5 08:12:58 2009
++++ plugins/video/H.263-1998/h263-1998.cxx	Tue Jul  7 11:15:47 2009
+@@ -59,6 +59,7 @@
+ #include "dyna.h"
+ #include "mpi.h"
+ 
++#include <cstdio>
+ #include <stdio.h>
+ 
+ #include "tracer.h"
+@@ -278,7 +279,7 @@ bool H263_Base_EncoderContext::Open(CodecID codecId)
+   _context->flags |= CODEC_FLAG_PASS1;
+ 
+   _context->error_concealment = 3;
+-  _context->error_recognition = 5;
++//  _context->error_recognition = 5;
+ 
+   // debugging flags
+   if (Trace::CanTraceUserPlane(4)) {

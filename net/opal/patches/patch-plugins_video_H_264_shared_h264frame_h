@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_video_H_264_shared_h264frame_h,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
+--- plugins/video/H.264/shared/h264frame.h.orig	Tue Jul  7 11:16:56 2009
++++ plugins/video/H.264/shared/h264frame.h	Tue Jul  7 11:17:41 2009
+@@ -118,6 +118,7 @@ const static struct h264_resolution {
+ #ifndef LICENCE_MPL
+ extern "C"
+ {
++#include <inttypes.h>
+ #ifdef _MSC_VER
+   #include "x264/x264.h"
+ #else
