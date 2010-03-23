@@ -1,0 +1,11 @@
+$OpenBSD: patch-mode_c,v 1.1 2010/03/23 20:38:20 jasper Exp $
+--- mode.c.orig	Tue Mar 23 21:32:07 2010
++++ mode.c	Tue Mar 23 21:32:17 2010
+@@ -20,6 +20,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ /* setup mode.c  by Paul Wilkins  2/8/98 */
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include <gtk/gtk.h>
+ 
+ #include "mode.h"

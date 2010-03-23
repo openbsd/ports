@@ -1,0 +1,11 @@
+$OpenBSD: patch-process_input_c,v 1.1 2010/03/23 20:38:20 jasper Exp $
+--- process_input.c.orig	Tue Mar 23 21:31:46 2010
++++ process_input.c	Tue Mar 23 21:32:01 2010
+@@ -20,6 +20,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ /* process_input.c  by Paul Wilkins 3/21/97 */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <gtk/gtk.h>
+ #include <gdk/gdkkeysyms.h>
+ 

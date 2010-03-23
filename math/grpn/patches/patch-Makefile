@@ -1,18 +1,30 @@
-$OpenBSD: patch-Makefile,v 1.4 2002/12/22 01:30:45 margarida Exp $
---- Makefile.orig	Fri Apr  5 04:56:05 2002
-+++ Makefile	Sun Dec 22 01:06:20 2002
-@@ -20,9 +20,7 @@ GTK_DIR =
+$OpenBSD: patch-Makefile,v 1.5 2010/03/23 20:38:20 jasper Exp $
+
+- Honor cflags
+- Port to gtk+2
+
+--- Makefile.orig	Fri Apr  5 05:56:05 2002
++++ Makefile	Tue Mar 23 21:27:40 2010
+@@ -19,11 +19,9 @@ GTK_DIR =
+ #
  # add -DUSE_GNOME if you want to make grpn GNOME compliant.
  
++# We cheat by defining GTK_VER_1_1...
++CFLAGS +=`pkg-config --cflags gtk+-2.0` -DGTK_VER_1_1
  
 -CFLAGS = -g -O2 -I/usr/X11/include  `$(GTK_DIR)gtk-config --cflags` -DGTK_VER_1_1
 -
 -DFLAGS =  -L/usr/X11/lib 
-+CFLAGS +=`$(GTK_DIR)gtk-config --cflags` -DGTK_VER_1_1
- 
+-
  # end of user configurable section
  
-@@ -41,7 +39,7 @@ LIBS   = `$(GTK_DIR)gtk-config --libs` -
+ 
+@@ -37,11 +35,11 @@ OBJS = test_gtk_ver.o real.o complex.o matrix.o number
+ 
+ 
+ 
+-LIBS   = `$(GTK_DIR)gtk-config --libs` -lX11 -lm 
++LIBS   = `pkg-config --libs gtk+-2.0`
  
  
  grpn:	$(OBJS)

@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/18 02:17:12 obecian Exp $
-bin/grpn
+@comment $OpenBSD: PLIST,v 1.2 2010/03/23 20:38:20 jasper Exp $
+@bin bin/grpn

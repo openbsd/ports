@@ -1,0 +1,26 @@
+$OpenBSD: patch-main_c,v 1.1 2010/03/23 20:38:20 jasper Exp $
+
+Port to gtk+2.
+
+--- main.c.orig	Thu Apr  4 05:46:11 2002
++++ main.c	Tue Mar 23 21:33:01 2010
+@@ -23,6 +23,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <locale.h>
+ #ifdef USE_GNOME
+ #include <gnome.h>
+ #endif
+@@ -156,8 +158,8 @@ main(int argc, char *argv[])
+          exit(0);
+       }
+       new_style = gtk_style_copy(default_style);
+-      new_style->font = new_font;
+-      gtk_widget_set_default_style(new_style);
++      new_style->font_desc = new_font;
++/*      gtk_widget_set_default_style(new_style); */
+    }
+    
+ 

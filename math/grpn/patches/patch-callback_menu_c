@@ -1,0 +1,11 @@
+$OpenBSD: patch-callback_menu_c,v 1.1 2010/03/23 20:38:20 jasper Exp $
+--- callback_menu.c.orig	Tue Mar 23 21:33:44 2010
++++ callback_menu.c	Tue Mar 23 21:33:59 2010
+@@ -20,6 +20,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ /* callback_menu.h  by Paul Wilkins 3/15/97 */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <gtk/gtk.h>
+ 
+ #include "menu.h"
