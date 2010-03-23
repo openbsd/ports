@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2009/12/16 14:34:58 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2010/03/23 10:24:45 pea Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -403,6 +403,7 @@ share/postgresql/timezone/America/Managua
 share/postgresql/timezone/America/Manaus
 share/postgresql/timezone/America/Marigot
 share/postgresql/timezone/America/Martinique
+share/postgresql/timezone/America/Matamoros
 share/postgresql/timezone/America/Mazatlan
 share/postgresql/timezone/America/Mendoza
 share/postgresql/timezone/America/Menominee
@@ -422,6 +423,7 @@ share/postgresql/timezone/America/Noronha
 share/postgresql/timezone/America/North_Dakota/
 share/postgresql/timezone/America/North_Dakota/Center
 share/postgresql/timezone/America/North_Dakota/New_Salem
+share/postgresql/timezone/America/Ojinaga
 share/postgresql/timezone/America/Panama
 share/postgresql/timezone/America/Pangnirtung
 share/postgresql/timezone/America/Paramaribo
@@ -438,6 +440,7 @@ share/postgresql/timezone/America/Regina
 share/postgresql/timezone/America/Resolute
 share/postgresql/timezone/America/Rio_Branco
 share/postgresql/timezone/America/Rosario
+share/postgresql/timezone/America/Santa_Isabel
 share/postgresql/timezone/America/Santarem
 share/postgresql/timezone/America/Santiago
 share/postgresql/timezone/America/Santo_Domingo
