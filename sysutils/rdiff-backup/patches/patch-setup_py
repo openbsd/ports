@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.2 2007/08/31 13:14:39 jsg Exp $
---- setup.py.orig	Sun Nov 12 18:32:01 2006
-+++ setup.py	Fri Aug 31 22:59:39 2007
-@@ -41,6 +41,10 @@ if os.name == 'posix':
- 		if '-lrsync' in LIBS:
- 			libname = []
+$OpenBSD: patch-setup_py,v 1.3 2010/03/23 10:19:48 pea Exp $
+--- setup.py.orig	Mon Mar 16 15:36:21 2009
++++ setup.py	Thu Feb 11 14:29:01 2010
+@@ -58,6 +58,10 @@ if os.name == 'nt':
+ 				'zipfile': None
+ 			})
  
 +LOCALBASE = os.getenv("LOCALBASE", "/usr/local")
 +include_dirs = ["%s/include" % LOCALBASE]
@@ -12,7 +12,7 @@ $OpenBSD: patch-setup_py,v 1.2 2007/08/31 13:14:39 jsg Exp $
  setup(name="rdiff-backup",
  	  version=version_string,
  	  description="Local/remote mirroring+incremental backup",
-@@ -51,12 +55,11 @@ setup(name="rdiff-backup",
+@@ -68,14 +72,13 @@ setup(name="rdiff-backup",
  	  ext_modules = [Extension("rdiff_backup.C", ["cmodule.c"]),
  					 Extension("rdiff_backup._librsync",
  							   ["_librsyncmodule.c"],
@@ -23,11 +23,13 @@ $OpenBSD: patch-setup_py,v 1.2 2007/08/31 13:14:39 jsg Exp $
 +							   libraries=["rsync"],
 +							   include_dirs=include_dirs,
 +							   library_dirs=library_dirs)],
- 	  scripts = ['rdiff-backup'],
--	  data_files = [('share/man/man1', ['rdiff-backup.1']),
+ 	  scripts = ['rdiff-backup', 'rdiff-backup-statistics'],
+-	  data_files = [('share/man/man1', ['rdiff-backup.1',
++	  data_files = [('man/man1', ['rdiff-backup.1',
+ 										'rdiff-backup-statistics.1']),
 -					('share/doc/rdiff-backup-%s' % (version_string,),
--					 ['CHANGELOG', 'COPYING', 'README', 'FAQ.html'])])
-+	  data_files = [('man/man1', ['rdiff-backup.1']),
+-					 ['CHANGELOG', 'COPYING', 'README', 'FAQ.html'])],
 +					('share/doc/rdiff-backup',
-+					 ['CHANGELOG', 'FAQ.html'])])
++					 ['CHANGELOG', 'FAQ.html'])],
+ 					**extra_options)
  
