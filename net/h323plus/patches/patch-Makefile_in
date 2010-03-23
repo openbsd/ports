@@ -1,0 +1,36 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/03/23 21:11:57 ajacoutot Exp $
+--- Makefile.in.orig	Wed Apr  8 16:37:56 2009
++++ Makefile.in	Tue Jun 23 12:32:29 2009
+@@ -337,6 +337,7 @@ update:
+ # standard build command
+ $(subst tagbuild,,$(STANDARD_TARGETS)) ::
+ 	$(MAKE) -C src $@
++	$(MAKE) -C plugins $@
+ 
+ notrace::
+ 	$(MAKE) NOTRACE=1
+@@ -347,23 +348,7 @@ docs: 
+ install:
+ 	mkdir -p $(DESTDIR)$(LIBDIR)
+ 	rm -f $(DESTDIR)$(LIBDIR)/libh323_*_r.so*
+-	$(INSTALL) -m 444 lib/$(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(DESTDIR)$(LIBDIR)
+-	(cd $(DESTDIR)$(LIBDIR) ; \
+-		rm -f  $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ ; \
+-		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ \
+-	)
+-	(cd $(DESTDIR)$(LIBDIR) ; \
+-		rm -f  $(OH323_FILE).@MAJOR_VERSION@ ; \
+-		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE).@MAJOR_VERSION@ \
+-	)
+-	(cd $(DESTDIR)$(LIBDIR) ; \
+-		rm -f  $(OH323_FILE) ; \
+-		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE) \
+-	)
+-	(cd $(DESTDIR)$(LIBDIR); \
+-		rm -f  libopenh323.$(SHAREDLIBEXT) ; \
+-		ln -sf $(OH323_FILE) libopenh323.$(SHAREDLIBEXT) \
+-	)
++	$(INSTALL) -m 444 lib/$(OH323_FILE).${LIBh323_VERSION} $(DESTDIR)$(LIBDIR)
+ 	( for dir in $(DESTDIR)$(LIBDIR) \
+ 		     $(DESTDIR)$(PREFIX)/include/openh323 \
+ 		     $(DESTDIR)$(PREFIX)/include/openh323/codec \

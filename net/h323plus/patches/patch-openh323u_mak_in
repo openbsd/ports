@@ -1,0 +1,45 @@
+$OpenBSD: patch-openh323u_mak_in,v 1.1.1.1 2010/03/23 21:11:57 ajacoutot Exp $
+--- openh323u.mak.in.orig	Sat Jul 19 03:12:28 2008
++++ openh323u.mak.in	Fri Jun 12 12:11:43 2009
+@@ -193,7 +193,11 @@
+ #
+ 
+ PTLIBDIR	= @PTLIBDIR@
++ifdef BUILDSELF
+ OPENH323DIR	= @OPENH323DIR@
++else
++OPENH323DIR	= ${PREFIX}/share/openh323
++endif
+ STDCCFLAGS	+= @STDCCFLAGS@
+ LDFLAGS		+= @LDFLAGS@
+ LDLIBS		+= @LDLIBS@
+@@ -232,11 +236,12 @@ LIBDIRS += $(OPENH323DIR)
+ #OH323_SUPPRESS_H235	= 1
+ 
+ OH323_SRCDIR = $(OPENH323DIR)/src
+-ifdef PREFIX
+-OH323_INCDIR = $(PREFIX)/include/openh323
++ifndef BUILDSELF
++OH323_INCDIR = ${PREFIX}/include/openh323
++OH323_LIBDIR = ${PREFIX}/lib
+ else
+ OH323_INCDIR = $(OPENH323DIR)/include
+-endif # PREFIX
++endif
+ 
+ ifndef OH323_LIBDIR
+ OH323_LIBDIR = $(OPENH323DIR)/lib
+@@ -251,8 +256,12 @@ RCFLAGS	   += -DPTRACING
+ OH323_SUFFIX = $(OBJ_SUFFIX)
+ endif # NOTRACE
+ 
+-OH323_BASE  = h323_$(PLATFORM_TYPE)_$(OH323_SUFFIX)$(LIB_TYPE)
++OH323_BASE  = h323$(LIB_TYPE)
++ifdef BUILDSELF
+ OH323_FILE  = lib$(OH323_BASE).$(LIB_SUFFIX)
++else
++OH323_FILE  = lib$(OH323_BASE).$(LIB_SUFFIX).${LIBh323_VERSION}
++endif
+ 
+ LDFLAGS	    += -L$(OH323_LIBDIR)
+ LDLIBS	    := -l$(OH323_BASE) $(LDLIBS)

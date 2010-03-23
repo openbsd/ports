@@ -1,0 +1,13 @@
+$OpenBSD: patch-plugins_Makefile_in,v 1.1.1.1 2010/03/23 21:11:57 ajacoutot Exp $
+--- plugins/Makefile.in.orig	Tue Nov 13 13:29:44 2007
++++ plugins/Makefile.in	Fri Jun  5 00:18:29 2009
+@@ -4,8 +4,7 @@ SUBDIRS = audio/GSM0610 \
+ 	  audio/LPC_10 \
+ 	  audio/G726 \
+ 	  audio/IMA_ADPCM \
+-	  audio/gsm-amr \
+-	  video/H.261-vic
++	  audio/gsm-amr
+ 
+ HAS_H263=@HAS_H263@
+ ifeq ($(HAS_H263),1)

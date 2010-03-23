@@ -1,0 +1,35 @@
+$OpenBSD: patch-plugins_video_H_263-ffmpeg_h263ffmpeg_cxx,v 1.1.1.1 2010/03/23 21:11:57 ajacoutot Exp $
+--- plugins/video/H.263-ffmpeg/h263ffmpeg.cxx.orig	Tue Nov 25 12:25:41 2008
++++ plugins/video/H.263-ffmpeg/h263ffmpeg.cxx	Fri Jan 29 19:03:14 2010
+@@ -169,7 +169,7 @@ extern "C" {
+ #    define DIR_SEPERATOR "\\"
+ #    define DIR_TOKENISER ";"
+ #  else
+-#    define P_DEFAULT_PLUGIN_DIR "/usr/lib/ptlib:/usr/lib/pwlib"
++#    define P_DEFAULT_PLUGIN_DIR "${TRUEPREFIX}/lib:${TRUEPREFIX}/lib/ptlib:${TRUEPREFIX}/lib/pwlib"
+ #    define DIR_SEPERATOR "/"
+ #    define DIR_TOKENISER ":"
+ #  endif
+@@ -337,7 +337,7 @@ class DynaLink
+       _hDLL = dlopen((const char *)path, RTLD_NOW);
+       if (_hDLL == NULL) {
+         fprintf(stderr, "error loading %s", path);
+-        char * err = dlerror();
++        const char * err = dlerror();
+         if (err != NULL)
+           fprintf(stderr, " - %s", err);
+         fprintf(stderr, "\n");
+@@ -470,11 +470,11 @@ bool FFMPEGLibrary::Load()
+   if (IsLoaded())
+     return true;
+ 
+-  if (!DynaLink::Open("avcodec")
++  if (!DynaLink::Open("libavcodec.so")
+ #if defined(WIN32)
+       && !DynaLink::Open("libavcodec")
+ #else
+-      && !DynaLink::Open("libavcodec.so")
++      && !DynaLink::Open("avcodec")
+ #endif
+     ) {
+     //cerr << "FFLINK\tFailed to load a library, some codecs won't operate correctly;" << endl;

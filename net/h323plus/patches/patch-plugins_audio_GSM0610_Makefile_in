@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_audio_GSM0610_Makefile_in,v 1.1.1.1 2010/03/23 21:11:57 ajacoutot Exp $
+--- plugins/audio/GSM0610/Makefile.in.orig	Tue Jun 23 11:29:40 2009
++++ plugins/audio/GSM0610/Makefile.in	Tue Jun 23 11:30:11 2009
+@@ -117,7 +117,7 @@ EXTRALIBS = 
+ 
+ else
+ 
+-EXTRALIBS = -lgsm
++EXTRALIBS = -L${LOCALBASE}/lib -lgsm
+ 
+ endif
+ 
