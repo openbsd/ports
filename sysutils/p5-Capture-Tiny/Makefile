@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/13 19:46:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/03/23 16:21:28 stephan Exp $
 
 COMMENT=		capture STDOUT and STDERR
 
 CPAN_AUTHOR=		DAGOLDEN
 MODULES=		cpan
 
-DISTNAME=		Capture-Tiny-0.06
+DISTNAME=		Capture-Tiny-0.07
 CATEGORIES=		sysutils
 
 # Apache 2.0
