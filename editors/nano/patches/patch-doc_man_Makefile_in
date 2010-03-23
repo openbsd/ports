@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_man_Makefile_in,v 1.5 2009/12/01 19:39:31 naddy Exp $
---- doc/man/Makefile.in.orig	Tue Dec  1 18:38:11 2009
-+++ doc/man/Makefile.in	Tue Dec  1 18:38:59 2009
-@@ -204,7 +204,7 @@ target_vendor = @target_vendor@
+$OpenBSD: patch-doc_man_Makefile_in,v 1.6 2010/03/23 20:05:47 naddy Exp $
+--- doc/man/Makefile.in.orig	Thu Feb 11 08:04:50 2010
++++ doc/man/Makefile.in	Tue Mar 23 20:57:04 2010
+@@ -248,7 +248,7 @@ top_srcdir = @top_srcdir@
  @GROFF_HTML_TRUE@@USE_NANORC_TRUE@BUILT_SOURCES = nano.1.html nanorc.5.html rnano.1.html
  nano_man_mans = nano.1 nanorc.5 rnano.1
  @GROFF_HTML_TRUE@htmlman_DATA = nano.1.html nanorc.5.html rnano.1.html
