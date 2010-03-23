@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2009/10/03 09:18:37 pea Exp $
+# $OpenBSD: Makefile,v 1.53 2010/03/23 23:16:31 pea Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	access to PostgreSQL databases through the DBI
 
 MODULES=	cpan
-DISTNAME=	DBD-Pg-2.15.1
+DISTNAME=	DBD-Pg-2.16.1
 CATEGORIES=	databases
 
 LIB_DEPENDS=	pq.>=2:postgresql-client-*:databases/postgresql
@@ -17,7 +17,7 @@ REGRESS_DEPENDS=:postgresql-server-*:databases/postgresql,-server \
 REGRESS_FLAGS=	DBI_DSN="dbi:Pg:dbname=template1" DBI_USER="_postgresql" \
 		DBI_PASS=""
 
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org> 
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
