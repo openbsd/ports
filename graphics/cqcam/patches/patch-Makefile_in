@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2001/08/28 00:06:29 jcs Exp $
---- Makefile.in.orig	Wed May 16 20:28:03 2001
-+++ Makefile.in	Wed May 16 20:28:35 2001
-@@ -21,10 +21,6 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2010/03/23 19:42:57 jasper Exp $
+--- Makefile.in.orig	Wed Aug 23 20:21:16 2000
++++ Makefile.in	Tue Mar 23 16:23:55 2010
+@@ -21,10 +21,6 @@ subdirs:
  	done
  
  install: bininstall maninstall
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2001/08/28 00:06:29 jcs Exp $
  
  bininstall: all
  	set -e;\
-@@ -35,7 +31,6 @@
+@@ -35,7 +31,6 @@ bininstall: all
  	done
  
  maninstall: docs/cqcam.1

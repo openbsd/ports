@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2001/05/18 11:25:26 naddy Exp $
---- configure.orig	Thu Aug 17 12:41:42 2000
-+++ configure	Wed May 16 18:26:00 2001
-@@ -1659,7 +1659,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+$OpenBSD: patch-configure,v 1.2 2010/03/23 19:42:57 jasper Exp $
+--- configure.orig	Wed Jul 11 22:58:54 2001
++++ configure	Tue Mar 23 16:25:08 2010
+@@ -1659,7 +1659,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
@@ -19,6 +19,15 @@ $OpenBSD: patch-configure,v 1.1.1.1 2001/05/18 11:25:26 naddy Exp $
  else
    echo "$ac_t""no" 1>&6
  echo "configure: warning: *** xcqcam will be built without the control panel ***" 1>&2 ;
+@@ -1746,7 +1746,7 @@ fi
+ 
+   echo $ac_n "checking GTK+ version""... $ac_c" 1>&6
+ echo "configure:1749: checking GTK+ version" >&5
+-  GTKV=`$gtkbin""gtk-config --version`
++  GTKV=`false`
+   echo "$ac_t""$GTKV" 1>&6
+   case "$GTKV" in
+     1.0.*)
 @@ -1952,8 +1952,8 @@ case "$host_os" in
      OS_LIBCQCAM_OBJS=''
    ;;
