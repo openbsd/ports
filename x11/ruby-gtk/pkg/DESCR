@@ -1,6 +1,0 @@
-Ruby/GTK is a Ruby extension library for using the GTK+ Toolkit GTK+. 
-
-It has the following features :
-- You can handle GTK objects as Ruby objects and do natural GUI programming.
-- Simple signal description by block(anonymous procedure) or singleton method.
-- Work with Ruby threading.
