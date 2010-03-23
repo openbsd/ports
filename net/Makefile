@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.623 2010/03/23 19:38:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.624 2010/03/23 21:21:14 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -105,6 +105,7 @@
      SUBDIR += gopher
      SUBDIR += gotthard
      SUBDIR += gtk-gnutella
+     SUBDIR += h323plus
      SUBDIR += haproxy
      SUBDIR += honeyd
      SUBDIR += hping
@@ -227,7 +228,6 @@
      SUBDIR += opal
      SUBDIR += openafs
      SUBDIR += openfire
-     SUBDIR += openh323
      SUBDIR += openvmps
      SUBDIR += openvpn
      SUBDIR += openvpn_bsdauth
