@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ptlib_unix_tlib_cxx,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- src/ptlib/unix/tlib.cxx.orig	Thu Jun  4 06:03:05 2009
++++ src/ptlib/unix/tlib.cxx	Thu Jun  4 06:03:45 2009
+@@ -70,6 +70,10 @@
+ #include <sys/mman.h>
+ #endif
+ 
++#ifdef P_OPENBSD
++#include <sys/stdint.h>
++#endif
++
+ #if defined(P_LINUX) || defined(P_SUN4) || defined(P_SOLARIS) || defined(P_FREEBSD) || defined(P_OPENBSD) || defined(P_NETBSD) || defined(P_MACOSX) || defined(P_MACOS) || defined (P_AIX) || defined(P_BEOS) || defined(P_IRIX) || defined(P_QNX)
+ #include <sys/utsname.h>
+ #define  HAS_UNAME

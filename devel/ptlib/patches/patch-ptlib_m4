@@ -1,0 +1,13 @@
+$OpenBSD: patch-ptlib_m4,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- ptlib.m4.orig	Mon Nov  3 07:24:34 2008
++++ ptlib.m4	Mon Nov  3 07:26:52 2008
+@@ -375,6 +375,9 @@ AC_DEFUN([PTLIB_FIND_OPENLDAP],
+                             dnl posix4 is required by libldap_r on Solaris
+                             ptlib_openldap_libs="-lposix4"
+                             ;;
++            openbsd*)
++                            ptlib_openldap_libs="-llber -lldap_r -pthread"
++                            ;;
+                             * )
+                             ptlib_openldap_libs="-llber -lldap_r"
+             esac

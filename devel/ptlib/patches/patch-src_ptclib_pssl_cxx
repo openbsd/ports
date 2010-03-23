@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ptclib_pssl_cxx,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- src/ptclib/pssl.cxx.orig	Mon Sep 21 02:25:25 2009
++++ src/ptclib/pssl.cxx	Wed Jan 27 14:12:54 2010
+@@ -658,7 +658,7 @@ PSSLDiffieHellman::~PSSLDiffieHellman()
+     DH_free(dh);
+ }
+ 
+-#if defined(__BEOS__) || (defined(__APPLE__) && P_MACOSX < 900) || defined(__OpenBSD__)
++#if defined(__BEOS__) || (defined(__APPLE__) && P_MACOSX < 900)
+ // 2/21/04 Yuri Kiryanov - fix for compiler choke on BeOS for usage of
+ // SSL function d2i_DHparams_bio below in PSSLDiffieHellman::Load
+ // 5/26/06 Hannes Friederich - Mac OS X seems to need that fix too...

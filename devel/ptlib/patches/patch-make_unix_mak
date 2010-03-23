@@ -1,0 +1,42 @@
+$OpenBSD: patch-make_unix_mak,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- make/unix.mak.orig	Mon Sep 21 02:25:30 2009
++++ make/unix.mak	Tue Sep 22 17:20:24 2009
+@@ -159,7 +159,7 @@ endif # P_SHAREDLIB
+ 
+ 
+ STATIC_LIBS	:= libstdc++.a libg++.a libm.a libc.a
+-SYSLIBDIR	:= $(shell $(PTLIBDIR)/make/ptlib-config --libdir)
++SYSLIBDIR	:= $(shell ${PREFIX}/bin/ptlib-config --libdir)
+ 
+ endif # linux
+ 
+@@ -198,12 +198,18 @@ ifeq ($(MACHTYPE),x86)
+ #STDCCFLAGS	+= -m486
+ endif
+ 
+-LDLIBS		+= -lossaudio
++ifeq ($(MACHTYPE),amd64)
++STDCCFLAGS	+= -DP_64BIT
++endif
+ 
++ifeq ($(MACHTYPE),sparc64)
++STDCCFLAGS	+= -DP_64BIT
++endif
++
+ P_USE_RANLIB		:= 1
+ #STDCCFLAGS      += -DP_USE_PRAGMA		# migrated to configure
++STDCCFLAGS      += -fPIC
+ 
+-
+ endif # OpenBSD
+ 
+ 
+@@ -656,7 +662,7 @@ ifneq ($(OSTYPE),Darwin)
+       STDCCFLAGS	+= -xO3
+     endif
+   else
+-    STDCCFLAGS	+= -Os 
++    STDCCFLAGS	+=
+   endif
+ else
+   STDCCFLAGS	+= -O2

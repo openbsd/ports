@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_vidinput_bsd_vidinput_bsd_h,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- plugins/vidinput_bsd/vidinput_bsd.h.orig	Mon Nov  3 15:46:07 2008
++++ plugins/vidinput_bsd/vidinput_bsd.h	Mon Nov  3 15:50:32 2008
+@@ -6,6 +6,7 @@
+ #pragma interface
+ #endif
+ 
++#include <sys/types.h>
+ #include <sys/mman.h>
+ 
+ #include <ptlib.h>

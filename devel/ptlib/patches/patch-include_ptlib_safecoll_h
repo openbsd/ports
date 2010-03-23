@@ -1,0 +1,88 @@
+$OpenBSD: patch-include_ptlib_safecoll_h,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+
+Make this build on gcc3.
+(reversed commit from upstream SVN)
+
+--- include/ptlib/safecoll.h.orig	Tue May 19 11:49:40 2009
++++ include/ptlib/safecoll.h	Mon Jun 22 15:21:19 2009
+@@ -761,7 +761,7 @@ template <class T, class BaseClass = PSafePtrBase> cla
+       */
+     PSafePtr & operator=(const PSafeCollection & safeCollection)
+       {
+-        BaseClass::Assign(safeCollection);
++        Assign(safeCollection);
+         return *this;
+       }
+ 
+@@ -797,7 +797,7 @@ template <class T, class BaseClass = PSafePtrBase> cla
+      */
+     PSafePtr & operator=(PINDEX idx)
+       {
+-        BaseClass::Assign(idx);
++        Assign(idx);
+         return *this;
+       }
+   //@}
+@@ -806,15 +806,15 @@ template <class T, class BaseClass = PSafePtrBase> cla
+   //@{
+     /**Return the physical pointer to the object.
+       */
+-    operator T*()    const { return  (T *)BaseClass::currentObject; }
++    operator T*()    const { return  (T *)currentObject; }
+ 
+     /**Return the physical pointer to the object.
+       */
+-    T & operator*()  const { return *(T *)PAssertNULL(BaseClass::currentObject); }
++    T & operator*()  const { return *(T *)PAssertNULL(currentObject); }
+ 
+     /**Allow access to the physical object the pointer is pointing to.
+       */
+-    T * operator->() const { return  (T *)PAssertNULL(BaseClass::currentObject); }
++    T * operator->() const { return  (T *)PAssertNULL(currentObject); }
+ 
+     /**Post-increment the pointer.
+        This requires that the pointer has been created with a PSafeCollection
+@@ -822,8 +822,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
+       */
+     T * operator++(int)
+       {
+-        T * previous = (T *)BaseClass::currentObject;
+-        BaseClass::Next();
++        T * previous = (T *)currentObject;
++        Next();
+         return previous;
+       }
+ 
+@@ -833,8 +833,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
+       */
+     T * operator++()
+       {
+-        BaseClass::Next();
+-        return (T *)BaseClass::currentObject;
++        Next();
++        return (T *)currentObject;
+       }
+ 
+     /**Post-decrement the pointer.
+@@ -843,8 +843,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
+       */
+     T * operator--(int)
+       {
+-        T * previous = (T *)BaseClass::currentObject;
+-        BaseClass::Previous();
++        T * previous = (T *)currentObject;
++        Previous();
+         return previous;
+       }
+ 
+@@ -854,8 +854,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
+       */
+     T * operator--()
+       {
+-        BaseClass::Previous();
+-        return (T *)BaseClass::currentObject;
++        Previous();
++        return (T *)currentObject;
+       }
+   //@}
+ 

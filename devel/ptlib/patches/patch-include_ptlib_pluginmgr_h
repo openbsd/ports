@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_ptlib_pluginmgr_h,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- include/ptlib/pluginmgr.h.orig	Fri Jan 29 17:13:13 2010
++++ include/ptlib/pluginmgr.h	Fri Jan 29 17:13:24 2010
+@@ -15,7 +15,7 @@
+ #ifndef PTLIB_PLUGINMGR_H
+ #define PTLIB_PLUGINMGR_H
+ 
+-#define DEFAULT_PLUGINDIR "/usr/lib/pwlib"
++#define DEFAULT_PLUGINDIR "${TRUEPREFIX}/lib/ptlib"
+ 
+ #include <ptlib/plugin.h>
+ 

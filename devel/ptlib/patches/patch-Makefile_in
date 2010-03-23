@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- Makefile.in.orig	Tue Sep 22 17:09:47 2009
++++ Makefile.in	Tue Sep 22 17:10:26 2009
+@@ -92,12 +92,7 @@ install:
+                      $(DESTDIR)$(PREFIX)/share/ptlib/make ; \
+ 		do mkdir -p $$dir ; chmod 755 $$dir ; \
+ 	done )
+-	$(INSTALL) -m 444 $(PT_LIBDIR)/$(LIB_SONAME) $(DESTDIR)$(LIBDIR)
+-	$(INSTALL) -m 444 $(PT_LIBDIR)/lib$(PTLIB_BASE)_s.a $(DESTDIR)$(LIBDIR)
+-	(cd $(DESTDIR)$(LIBDIR) ; \
+-		rm -f  $(PTLIB_FILE) ; \
+-		ln -sf $(LIB_SONAME) $(PTLIB_FILE) \
+-	)
++	$(INSTALL) -m 444 $(PT_LIBDIR)/$(PTLIB_FILE).$(MAJOR_VERSION).$(MINOR_VERSION) $(DESTDIR)$(LIBDIR)
+ ifeq (1, $(HAS_PLUGINS))
+ 	if test -e $(PT_LIBDIR)/device/; then \
+ 	cd $(PT_LIBDIR)/device/; \

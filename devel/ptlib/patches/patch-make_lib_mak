@@ -1,0 +1,32 @@
+$OpenBSD: patch-make_lib_mak,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- make/lib.mak.orig	Mon Sep 21 02:25:30 2009
++++ make/lib.mak	Wed Sep 23 00:14:04 2009
+@@ -29,10 +29,14 @@
+ #
+ 
+ ifeq (,$(findstring $(OSTYPE),Darwin cygwin mingw))
+-  ifeq ($(BUILD_TYPE),.)
+-    LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)
++  ifeq ($(OSTYPE),OpenBSD)
++    LIBNAME_PAT = $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION)
+   else
+-    LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION)-$(BUILD_TYPE)$(BUILD_NUMBER)
++    ifeq ($(BUILD_TYPE),.)
++      LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)
++    else
++      LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION)-$(BUILD_TYPE)$(BUILD_NUMBER)
++    endif
+   endif
+ else
+   ifeq ($(BUILD_TYPE),.)
+@@ -98,7 +102,9 @@ ifeq ($(P_SHAREDLIB),1)
+       LDSOOPTS += -Wl,--kill-at
+     else
+       ifneq ($(OSTYPE),Darwin)
+-        LDSOOPTS += -Wl,-soname,$(LIB_SONAME)
++        ifneq ($(OSTYPE),OpenBSD)
++          LDSOOPTS += -Wl,-soname,$(LIB_SONAME)
++        endif
+       endif
+     endif
+   endif

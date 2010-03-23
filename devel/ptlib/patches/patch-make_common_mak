@@ -1,0 +1,31 @@
+$OpenBSD: patch-make_common_mak,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- make/common.mak.orig	Mon Sep 21 02:25:30 2009
++++ make/common.mak	Thu Jan 28 12:46:41 2010
+@@ -80,12 +80,12 @@ endif
+ SOURCES         := $(strip $(SOURCES))
+ 
+ 
+-ifeq ($(V)$(VERBOSE),)
+-Q_CC = @echo [CC] `echo $< | sed s/$PWD//` ; 
+-Q_DEP= @echo [DEP] `echo $< | sed s/$PWD//` ; 
+-Q_AR = @echo [AR] `echo $@ | sed s/$PWD//` ; 
+-Q_LD = @echo [LD] `echo $@ | sed s/$PWD//` ; 
+-endif
++#ifeq ($(V)$(VERBOSE),)
++#Q_CC = @echo [CC] `echo $< | sed s/$PWD//` ; 
++#Q_DEP= @echo [DEP] `echo $< | sed s/$PWD//` ; 
++#Q_AR = @echo [AR] `echo $@ | sed s/$PWD//` ; 
++#Q_LD = @echo [LD] `echo $@ | sed s/$PWD//` ; 
++#endif
+ 
+ 
+ #
+@@ -163,7 +163,7 @@ TARGET_LIBS	= $(PTLIBDIR)/lib_$(PLATFORM_TYPE)/$(PTLIB
+ 
+ # distinguish betweek building and using pwlib
+ ifeq (,$(wildcard $(PTLIBDIR)/src))
+-TARGET_LIBS     = $(SYSLIBDIR)/$(PTLIB_FILE)
++TARGET_LIBS     = $(SYSLIBDIR)/$(PTLIB_FILE).${LIBpt_VERSION}
+ endif
+ 
+ $(TARGET):	$(OBJS) $(TARGET_LIBS)

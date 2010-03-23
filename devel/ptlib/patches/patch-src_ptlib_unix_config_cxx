@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ptlib_unix_config_cxx,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- src/ptlib/unix/config.cxx.orig	Tue Jul  7 09:36:01 2009
++++ src/ptlib/unix/config.cxx	Tue Jul  7 09:36:20 2009
+@@ -53,7 +53,7 @@
+ #define environ (NULL)
+ #endif
+ 
+-#if defined(__NetBSD__)
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ extern char **environ;
+ #endif
+ 

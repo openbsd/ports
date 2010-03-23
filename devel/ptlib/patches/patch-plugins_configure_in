@@ -1,0 +1,93 @@
+$OpenBSD: patch-plugins_configure_in,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- plugins/configure.in.orig	Mon Sep 15 01:26:48 2008
++++ plugins/configure.in	Mon Nov  3 07:59:23 2008
+@@ -78,7 +78,14 @@ dnl ##################################################
+ AC_ARG_ENABLE(oss, [  --enable-oss            enable OSS audio support],,enable_oss=no)
+ 
+ if test "${enable_oss}z" = "yesz" ; then
+-  AC_CHECK_HEADER(sys/soundcard.h, SNDCARDHDR=1)
++  case "$target_os" in
++  openbsd*)
++    AC_CHECK_HEADER(soundcard.h, SNDCARDHDR=1)
++    ;;
++  *)
++    AC_CHECK_HEADER(sys/soundcard.h, SNDCARDHDR=1)
++    ;;
++  esac
+   AC_MSG_CHECKING(for OSS sound support)
+   if test "${SNDCARDHDR}z" != "z"; then
+     AC_SUBST(HAS_OSS, 1)
+@@ -89,6 +96,23 @@ if test "${enable_oss}z" = "yesz" ; then
+ fi
+ 
+ dnl #########################################################################
++dnl check for sndio sound support
++dnl ########################################################################
++
++AC_ARG_ENABLE(sndio, [  --enable-sndio            enable sndio audio support],,enable_sndio=no)
++
++if test "${enable_sndio}z" = "yesz" ; then
++  AC_CHECK_HEADER(sndio.h, SNDCARDHDR=1)
++  AC_MSG_CHECKING(for sndio sound support)
++  if test "${SNDCARDHDR}z" != "z"; then
++    AC_SUBST(HAS_SNDIO, 1)
++    AC_MSG_RESULT(yes)
++  else
++    AC_MSG_RESULT(no)
++  fi
++fi
++
++dnl #########################################################################
+ dnl check for sunaudio sound support
+ dnl ########################################################################
+ 
+@@ -140,7 +164,7 @@ AC_ARG_ENABLE(v4l2, [  --enable-v4l2            enable
+ if test "${enable_v4l2}z" = "yesz" ; then
+   case "$target_os" in
+     solaris* | sunos* ) V4L2_HEADER="sys/videodev2.h"   ; ;;
+-    netbsd* )           V4L2_HEADER="sys/videoio.h"     ; ;;
++    netbsd* | openbsd*) V4L2_HEADER="sys/videoio.h"     ; ;;
+           * )	        V4L2_HEADER="linux/videodev2.h" ; ;;
+   esac
+ 
+@@ -152,17 +176,18 @@ if test "${enable_v4l2}z" = "yesz" ; then
+                     # method to do this more cleanly ?
+ 		    AC_MSG_CHECKING([for $V4L2_HEADER with sys/types.h])
+ 		    AC_TRY_COMPILE([
+-					#ifdef __linux__
+-					#include <sys/types.h>
+-					#include <linux/types.h>
++					#if defined(__linux__)
++					# include <sys/types.h>
++					# include <linux/types.h>
++                                        #elif defined(__sun)
++                                        # include <sys/types.h>
++                                        # include <sys/time.h>
++                                        #elif defined(__OpenBSD__)
++                                        # include <sys/types.h>
++                                        # include <sys/ioctl.h>
+                                         #else
+-                                        #ifdef __sun
+-                                        #include <sys/types.h>
+-                                        #include <sys/time.h>
+-                                        #else
+-					#error "not supported"
++					#  error "not supported"
+ 					#endif
+-					#endif
+ 					#include "$V4L2_HEADER"
+ 				    ],
+ 				    [
+@@ -178,8 +203,11 @@ if test "${enable_v4l2}z" = "yesz" ; then
+                                     ])
+                   ], 
+ 		[
+-		#ifdef __linux__
++		#if defined(__linux__)
+ 		#include <linux/types.h>
++                #elif defined(__OpenBSD__)
++                #include <sys/types.h>
++                #include <sys/ioctl.h>
+ 		#endif
+ 		])
+   AC_MSG_CHECKING(for V4L2 video support)

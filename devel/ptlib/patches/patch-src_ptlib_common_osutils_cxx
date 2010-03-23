@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ptlib_common_osutils_cxx,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- src/ptlib/common/osutils.cxx.orig	Mon Jun 22 15:27:25 2009
++++ src/ptlib/common/osutils.cxx	Mon Jun 22 15:27:50 2009
+@@ -36,6 +36,8 @@
+ #include <map>
+ #include <fstream>
+ 
++#include <stdint.h>
++
+ #include <ctype.h>
+ #include <ptlib/pfactory.h>
+ #include <ptlib/pprocess.h>

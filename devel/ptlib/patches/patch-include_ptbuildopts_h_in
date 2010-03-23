@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_ptbuildopts_h_in,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- include/ptbuildopts.h.in.orig	Wed Jul  8 14:07:05 2009
++++ include/ptbuildopts.h.in	Wed Jul  8 14:07:33 2009
+@@ -146,7 +146,11 @@
+ #undef P_HAS_STL_STREAMS
+ #undef P_HAS_ATOMIC_INT
+ #undef P_HAS_RECURSIVE_MUTEX
+-#undef P_NEEDS_GNU_CXX_NAMESPACE
++#if defined(__GNUC__) && __GNUC__ >= 4
++#define P_NEEDS_GNU_CXX_NAMESPACE 1
++#else
++#define P_NEEDS_GNU_CXX_NAMESPACE 0
++#endif
+ #undef PMEMORY_CHECK
+ #undef P_HAS_RECVMSG
+ #undef P_HAS_UPAD128_T

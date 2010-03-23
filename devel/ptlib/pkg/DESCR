@@ -1,0 +1,14 @@
+PTLib is a moderately large C++ class library that originated many years
+ago as a method to produce applications that run on both Microsoft
+Windows and Unix X-Windows systems. It also was to have a Macintosh port
+as well, but this never eventuated. In those days it was called the
+PWLib the Portable Windows Library.
+
+Since then, the availability of multi-platform GUI toolkits such as KDE
+and wxWindows, and the development of the OpenH323 and OPAL projects as
+primary user of the library, has emphasised the focus on networking, I/O
+portability, multi-threading and protocol portability. Mostly, the
+library is used to create high performance and highly portable
+network-centric applications. So all the GUI abstractions ahave been
+dropped and it was renamed the Portable Tools Library that you see
+today.

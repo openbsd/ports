@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_vidinput_v4l2_vidinput_v4l2_h,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- plugins/vidinput_v4l2/vidinput_v4l2.h.orig	Mon Nov  3 15:44:04 2008
++++ plugins/vidinput_v4l2/vidinput_v4l2.h	Mon Nov  3 15:45:27 2008
+@@ -31,6 +31,7 @@
+ #define _PVIDEOIOV4L2
+ 
+ 
++#include <sys/types.h>
+ #include <sys/mman.h>
+ #include <sys/time.h>
+ 

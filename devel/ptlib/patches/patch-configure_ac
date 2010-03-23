@@ -1,0 +1,75 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+--- configure.ac.orig	Mon Sep 21 02:25:59 2009
++++ configure.ac	Sat Nov  7 18:30:53 2009
+@@ -245,7 +245,7 @@ case "$target_os" in
+   openbsd* )       OSTYPE=OpenBSD ;
+ 		   OS_TAG="P_OPENBSD" ;
+                    OSRELEASE="`sysctl -n kern.osrevision`" ;
+-		   ENDLDLIBS="-lossaudio" ;
++		   ENDLDLIBS="" ;
+                    need_pragma=yes ;
+ 		   AC_DEFINE(P_PTHREADS, 1, "PThreads found")
+ 		   AC_CHECK_FUNC([swab], [AC_DEFINE([USE_SYSTEM_SWAB], [], [Use system swab()] )] )
+@@ -339,7 +339,10 @@ case "$target_cpu" in
+                    LIB64=1 ;
+ 		   ;;
+ 
+-   sparc|sparc64 ) MACHTYPE=sparc ;
++   sparc )         MACHTYPE=sparc ;
++		   ;;
++
++   sparc64 )       MACHTYPE=sparc ;
+ 		   P_64BIT=1 ;
+                    LIB64=1 ;
+ 		   ;;
+@@ -776,17 +779,17 @@ dnl MSWIN_DEFINE  semaphore,P_HAS_SEMAPHORES
+ dnl Linux, Mac OS X use libpthread and -lpthread
+ dnl FreeBSD uses the -pthread compiler option and uses libc_r
+ 
++if test ${OSTYPE} = OpenBSD -o ${OSTYPE} = FreeBSD ; then
++  HAS_PTHREADS=yes
++  ENDLDLIBS="$ENDLDLIBS -pthread"
++  STDCCFLAGS="$STDCCFLAGS -D_REENTRANT -pthread"
++else
+ AC_CHECK_LIB(pthread, pthread_create, HAS_PTHREADS=yes, HAS_PTHREADS=no)
+ if test ${HAS_PTHREADS} = yes ; then
+   ENDLDLIBS="$ENDLDLIBS -lpthread"
+   STDCCFLAGS="$STDCCFLAGS -D_REENTRANT"
+-else
+-  if test ${OSTYPE} = FreeBSD ; then
+-    HAS_PTHREADS=yes
+-    ENDLDLIBS="$ENDLDLIBS -pthread"
+-    STDCCFLAGS="$STDCCFLAGS -D_REENTRANT -pthread"
+-  fi
+ fi
++fi
+ 
+ 
+ if test ${HAS_PTHREADS} != yes -a ${NEEDS_PTHREADS} = yes; then
+@@ -1198,7 +1201,8 @@ else
+   if test $HAS_IPV6 = no ; then
+     AC_MSG_RESULT(no)
+   else
+-    AC_TRY_COMPILE([#include <sys/socket.h>
++    AC_TRY_COMPILE([#include <sys/types.h>
++                     #include <sys/socket.h>
+                      #include <netdb.h>],
+                      [getnameinfo(0, 0, 0, 0, 0, 0, 0);], HAS_IPV6=yes, HAS_IPV6=no)
+     if test $HAS_IPV6 = no ; then
+@@ -1493,7 +1497,7 @@ dnl ##################################################
+ dnl check for video capture support.
+ dnl videodev.h on linux
+ dnl machine/ioctl_meteor on FreeBSD
+-dnl i386/ioctl_meteor on OpenBSD
++dnl dev/ic/bt8xx (bktr) and sys/videoio (v4l2) on OpenBSD
+ dnl dev/ic/bt8xx on NetBSD
+ 
+ HAS_VIDEO_CAPTURE=
+@@ -1539,6 +1543,7 @@ if test "x${HAS_AUDIO}" = "x1" ; then
+   dnl these are needed to pass through to the plugin configure program
+   AC_ARG_ENABLE(alsa, [  --enable-alsa           enable ALSA audio support],enable_alsa=$enableval)
+   AC_ARG_ENABLE(oss,  [  --enable-oss            enable OSS audio support],enable_oss=$enableval)
++  AC_ARG_ENABLE(sndio,[  --enable-sndio          enable sndio audio support],enable_sndio=$enableval)
+ fi
+ 
+ 
