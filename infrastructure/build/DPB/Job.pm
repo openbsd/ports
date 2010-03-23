@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.4 2010/03/20 18:29:18 espie Exp $
+# $OpenBSD: Job.pm,v 1.5 2010/03/23 09:57:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -52,6 +52,15 @@ sub finalize
 {
 	my ($self, $core) = @_;
 	return $core->{status} == 0;
+}
+
+sub redirect
+{
+	my ($self, $log) = @_;
+	close STDOUT;
+	close STDERR;
+	open STDOUT, '>>', $log or die "Can't write to $log";
+	open STDERR, '>&STDOUT' or die "bad redirect";
 }
 
 package DPB::Task::Pipe;

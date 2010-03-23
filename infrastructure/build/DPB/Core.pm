@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.8 2010/03/21 20:09:42 espie Exp $
+# $OpenBSD: Core.pm,v 1.9 2010/03/23 09:57:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,7 +25,9 @@ my $hosts = {};
 sub new
 {
 	my ($class, $name, $prop) = @_;
-	$hosts->{$name} //= bless {host => $name, prop => $prop // {} }, $class;
+	$prop //= {};
+	$prop->{sf} //= 1;
+	$hosts->{$name} //= bless {host => $name, prop => $prop }, $class;
 }
 
 sub name
@@ -340,13 +342,14 @@ sub finalize
 }
 
 package DPB::Job::Init;
-our @ISA = qw(DPB::Job::Normal);
+our @ISA = qw(DPB::Job);
 use DPB::Signature;
 
 sub new
 {
 	my ($class, $logger) = @_;
-	my $o = bless {name => "init", logger => $logger}, $class;
+	my $o = $class->SUPER::new('init');
+	$o->{logger} = $logger;
 	DPB::Signature->add_tasks($o);
 	return $o;
 }
@@ -363,11 +366,6 @@ sub finalize
 	} else {
 		return 0;
     	}
-}
-
-sub watched
-{
-	return '';
 }
 
 # this is a weird one !
@@ -396,14 +394,16 @@ sub init_cores
 		}
 		if (defined $startup) {
 			$job->add_tasks(DPB::Task::Fork->new(
-				sub {
-					my $shell = shift;
-					if (defined $shell) {
-						$shell->run($startup);
-					} else {
-						exec{$startup}($startup);
-					}
+			    sub {
+				my $shell = shift;
+				DPB::Task->redirect($logger->logfile("init.".
+				    $core->hostname));
+				if (defined $shell) {
+					$shell->run($startup);
+				} else {
+					exec{$startup}($startup);
 				}
+			    }
 			));
 		}
 		$core->start_job($job);

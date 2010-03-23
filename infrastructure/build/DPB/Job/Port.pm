@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.8 2010/03/04 14:23:01 espie Exp $
+# $OpenBSD: Port.pm,v 1.9 2010/03/23 09:57:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -65,15 +65,6 @@ sub stopped_clock
 {
 	my ($self, $gap) = @_;
 	$self->{started} += $gap;
-}
-
-sub redirect
-{
-	my ($self, $log) = @_;
-	close STDOUT;
-	close STDERR;
-	open STDOUT, '>>', $log or die "Can't write to $log";
-	open STDERR, '>&STDOUT' or die "bad redirect";
 }
 
 sub run
