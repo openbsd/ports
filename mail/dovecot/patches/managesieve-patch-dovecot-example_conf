@@ -1,0 +1,248 @@
+$OpenBSD: managesieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
+--- dovecot-example.conf.orig	Wed Nov 18 10:03:59 2009
++++ dovecot-example.conf	Wed Nov 18 10:04:00 2009
+@@ -12,12 +12,11 @@
+ # Default values are shown for each setting, it's not required to uncomment
+ # those. These are exceptions to this though: No sections (e.g. namespace {})
+ # or plugin settings are added by default, they're listed only as examples.
+-# Paths are also just examples with the real defaults being based on configure
+-# options. The paths listed here are for configure --prefix=/usr
+-# --sysconfdir=/etc --localstatedir=/var --with-ssldir=/etc/ssl
+ 
++# *** NOTE *** Some values HAVE been changed for OpenBSD use.
++
+ # Base directory where to store runtime data.
+-#base_dir = /var/run/dovecot/
++base_dir = /var/dovecot/
+ 
+ # Protocols we want to be serving: imap imaps pop3 pop3s managesieve
+ # If you only want to use dovecot-auth, you can set this to "none".
+@@ -43,13 +42,13 @@
+ #     listen = *:12000
+ #     ..
+ #   }
+-#listen = *
++listen = *, [::]
+ 
+ # Disable LOGIN command and all other plaintext authentications unless
+ # SSL/TLS is used (LOGINDISABLED capability). Note that if the remote IP
+ # matches the local IP (ie. you're connecting from the same computer), the
+ # connection is considered secure and plaintext authentication is allowed.
+-#disable_plaintext_auth = yes
++disable_plaintext_auth = yes
+ 
+ # Should all IMAP and POP3 processes be killed when Dovecot master process
+ # shuts down. Setting this to "no" means that Dovecot can be upgraded without
+@@ -96,7 +95,7 @@
+ # dropping root privileges, so keep the key file unreadable by anyone but
+ # root. Included doc/mkcert.sh can be used to easily generate self-signed
+ # certificate, just make sure to update the domains in dovecot-openssl.cnf
+-#ssl_cert_file = /etc/ssl/certs/dovecot.pem
++ssl_cert_file = /etc/ssl/dovecotcert.pem
+ #ssl_key_file = /etc/ssl/private/dovecot.pem
+ 
+ # If key file is password protected, give the password here. Alternatively
+@@ -140,7 +139,7 @@
+ # which login needs to be able to connect to. The sockets are created when
+ # running as root, so you don't have to worry about permissions. Note that
+ # everything in this directory is deleted when Dovecot is started.
+-#login_dir = /var/run/dovecot/login
++login_dir = /var/dovecot/login
+ 
+ # chroot login process to the login_dir. Only reason not to do this is if you
+ # wish to run the whole Dovecot without roots. <doc/wiki/Rootless.txt>
+@@ -150,7 +149,7 @@
+ # and don't use it anywhere else. The user must also belong to a group where
+ # only it has access, it's used to control access for authentication process.
+ # Note that this user is NOT used to access mails. <doc/wiki/UserIds.txt>
+-#login_user = dovecot
++login_user = _dovecot
+ 
+ # Set max. process size in megabytes. If you don't use
+ # login_process_per_connection you might need to grow this.
+@@ -340,8 +339,9 @@
+ #mail_log_max_lines_per_sec = 10
+ 
+ # Don't use mmap() at all. This is required if you store indexes to shared
+-# filesystems (NFS or clustered filesystem).
+-#mmap_disable = no
++# filesystems (NFS or clustered filesystem) or for some operating systems
++# which use a separate cache for mmap, such as OpenBSD.
++mmap_disable = yes
+ 
+ # Rely on O_EXCL to work when creating dotlock files. NFS supports O_EXCL
+ # since version 3, so this should be safe to use nowadays by default.
+@@ -486,7 +486,7 @@
+ # locking methods as well. Some operating systems don't allow using some of
+ # them simultaneously.
+ #mbox_read_locks = fcntl
+-#mbox_write_locks = dotlock fcntl
++mbox_write_locks = fcntl
+ 
+ # Maximum time in seconds to wait for lock (all of them) before aborting.
+ #mbox_lock_timeout = 300
+@@ -541,20 +541,20 @@
+ 
+ protocol imap {
+   # Login executable location.
+-  #login_executable = /usr/libexec/dovecot/imap-login
++  #login_executable = ${PREFIX}/libexec/dovecot/imap-login
+ 
+   # IMAP executable location. Changing this allows you to execute other
+   # binaries before the imap process is executed.
+   #
+   # This would write rawlogs into user's ~/dovecot.rawlog/, if it exists:
+-  #   mail_executable = /usr/libexec/dovecot/rawlog /usr/libexec/dovecot/imap
++  #   mail_executable = ${PREFIX}/libexec/dovecot/rawlog ${PREFIX}/libexec/dovecot/imap
+   # <doc/wiki/Debugging/Rawlog.txt>
+   #
+   # This would attach gdb into the imap process and write backtraces into
+   # /tmp/gdbhelper.* files:
+-  #   mail_executable = /usr/libexec/dovecot/gdbhelper /usr/libexec/dovecot/imap
++  #   mail_executable = ${PREFIX}/libexec/dovecot/gdbhelper ${PREFIX}/libexec/dovecot/imap
+   #
+-  #mail_executable = /usr/libexec/dovecot/imap
++  #mail_executable = ${PREFIX}/libexec/dovecot/imap
+ 
+   # Maximum IMAP command line length in bytes. Some clients generate very long
+   # command lines with huge mailboxes, so you may need to raise this if you get
+@@ -568,7 +568,7 @@ protocol imap {
+   # Support for dynamically loadable plugins. mail_plugins is a space separated
+   # list of plugins to load.
+   #mail_plugins = 
+-  #mail_plugin_dir = /usr/lib/dovecot/imap
++  #mail_plugin_dir = ${PREFIX}/lib/dovecot/imap
+ 
+   # IMAP logout format string:
+   #  %i - total number of bytes read from client
+@@ -609,7 +609,7 @@ protocol imap {
+   #     but not both. Thunderbird separates these two by forcing server to
+   #     accept '/' suffix in mailbox names in subscriptions list.
+   # The list is space-separated.
+-  #imap_client_workarounds = 
++  imap_client_workarounds = delay-newmail netscape-eoh tb-extra-mailbox-sep
+ }
+   
+ ##
+@@ -618,11 +618,11 @@ protocol imap {
+ 
+ protocol pop3 {
+   # Login executable location.
+-  #login_executable = /usr/libexec/dovecot/pop3-login
++  #login_executable = ${PREFIX}/libexec/dovecot/pop3-login
+ 
+   # POP3 executable location. See IMAP's mail_executable above for examples
+   # how this could be changed.
+-  #mail_executable = /usr/libexec/dovecot/pop3
++  #mail_executable = ${PREFIX}/libexec/dovecot/pop3
+ 
+   # Don't try to set mails non-recent or seen with POP3 sessions. This is
+   # mostly intended to reduce disk I/O. With maildir it doesn't move files
+@@ -686,7 +686,7 @@ protocol pop3 {
+   # Support for dynamically loadable plugins. mail_plugins is a space separated
+   # list of plugins to load.
+   #mail_plugins = 
+-  #mail_plugin_dir = /usr/lib/dovecot/pop3
++  #mail_plugin_dir = ${PREFIX}/lib/dovecot/pop3
+ 
+   # Workarounds for various client bugs:
+   #   outlook-no-nuls:
+@@ -696,7 +696,7 @@ protocol pop3 {
+   #     Outlook Express and Netscape Mail breaks if end of headers-line is
+   #     missing. This option simply sends it if it's missing.
+   # The list is space-separated.
+-  #pop3_client_workarounds = 
++  pop3_client_workarounds = outlook-no-nuls oe-ns-eoh
+ }
+ 
+ ##
+@@ -705,11 +705,11 @@ protocol pop3 {
+ 
+ protocol managesieve {
+   # Login executable location.
+-  #login_executable = /usr/libexec/dovecot/managesieve-login
++  #login_executable = ${PREFIX}/libexec/dovecot/managesieve-login
+ 
+   # ManageSieve executable location. See IMAP's mail_executable above for 
+   # examples how this could be changed.
+-  #mail_executable = /usr/libexec/dovecot/managesieve
++  #mail_executable = ${PREFIX}/libexec/dovecot/managesieve
+ 
+   # Maximum ManageSieve command line length in bytes. This setting is 
+   # directly borrowed from IMAP. But, since long command lines are very
+@@ -750,7 +750,7 @@ protocol lda {
+   # Support for dynamically loadable plugins. mail_plugins is a space separated
+   # list of plugins to load.
+   #mail_plugins = 
+-  #mail_plugin_dir = /usr/lib/dovecot/lda
++  #mail_plugin_dir = ${PREFIX}/lib/dovecot/lda
+ 
+   # If user is over quota, return with temporary failure instead of
+   # bouncing the mail.
+@@ -764,7 +764,7 @@ protocol lda {
+   #deliver_log_format = msgid=%m: %$
+ 
+   # Binary to use for sending mails.
+-  #sendmail_path = /usr/lib/sendmail
++  #sendmail_path = /usr/sbin/sendmail
+ 
+   # Subject: header to use for rejection mails. You can use the same variables
+   # as for rejection_reason below.
+@@ -783,7 +783,7 @@ protocol lda {
+ ##
+ 
+ # Executable location
+-#auth_executable = /usr/libexec/dovecot/dovecot-auth
++#auth_executable = ${PREFIX}/libexec/dovecot/dovecot-auth
+ 
+ # Set max. process size in megabytes.
+ #auth_process_size = 256
+@@ -912,7 +912,7 @@ auth default {
+   # database (passwd usually), you can use static userdb.
+   # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
+   # authentication to actually work. <doc/wiki/PasswordDatabase.PAM.txt>
+-  passdb pam {
++  #passdb pam {
+     # [session=yes] [setcred=yes] [failure_show_msg=yes] [max_requests=<n>]
+     # [cache_key=<key>] [<service name>]
+     #
+@@ -945,7 +945,7 @@ auth default {
+     #   args = session=yes %Ls
+     #   args = cache_key=%u dovecot
+     #args = dovecot
+-  }
++  #}
+ 
+   # System users (NSS, /etc/passwd, or similiar)
+   # In many systems nowadays this uses Name Service Switch, which is
+@@ -965,10 +965,10 @@ auth default {
+ 
+   # PAM-like authentication for OpenBSD.
+   # <doc/wiki/PasswordDatabase.BSDAuth.txt>
+-  #passdb bsdauth {
++  passdb bsdauth {
+     # [cache_key=<key>] - See cache_key in PAM for explanation.
+     #args =
+-  #}
++  }
+ 
+   # passwd-like file with specified location
+   # <doc/wiki/AuthDatabase.PasswdFile.txt>
+@@ -1232,7 +1232,7 @@ plugin {
+   # a dictionary so it can be quickly determined which mailboxes contain
+   # expired mails. The actual expunging is done in a nightly cronjob, which
+   # you must set up:
+-  #   dovecot --exec-mail ext /usr/libexec/dovecot/expire-tool
++  #   dovecot --exec-mail ext ${PREFIX}/libexec/dovecot/expire-tool
+   #expire = Trash 7 Spam 30
+   #expire_dict = proxy::expire
+ 
+@@ -1261,6 +1261,8 @@ plugin {
+   # The path to the directory where the personal Sieve scripts are stored. For 
+   # ManageSieve this is where the uploaded scripts are stored.
+   #sieve_dir=~/sieve
++
++  #sieve_extensions=+imapflags
+ }
+ 
+ # Config files can also be included. deliver doesn't support them currently.

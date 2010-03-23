@@ -1,11 +1,17 @@
-@comment $OpenBSD: PLIST-sieve,v 1.4 2010/02/14 20:01:00 naddy Exp $
+@comment $OpenBSD: PLIST-sieve,v 1.5 2010/03/23 21:32:07 pea Exp $
 @pkgpath mail/dovecot,-sieve,ldap
 @pkgpath mail/dovecot,-sieve,ldap,mysql,postgresql,sqlite,bdb
 @pkgpath mail/dovecot,-sieve,mysql
 @pkgpath mail/dovecot,-sieve,postgresql
 @pkgpath mail/dovecot,-sieve,sqlite
-@comment lib/dovecot/lda/lib90_cmusieve_plugin.a
-@comment lib/dovecot/lda/lib90_cmusieve_plugin.la
-lib/dovecot/lda/lib90_cmusieve_plugin.so
-@bin libexec/dovecot/sievec
-@bin libexec/dovecot/sieved
+@bin bin/sieve-test
+@bin bin/sievec
+@bin bin/sieved
+@comment lib/dovecot/lda/lib90_sieve_plugin.a
+@comment lib/dovecot/lda/lib90_sieve_plugin.la
+lib/dovecot/lda/lib90_sieve_plugin.so
+@bin libexec/dovecot/managesieve
+@bin libexec/dovecot/managesieve-login
+@man man/man1/sieve-test.1
+@man man/man1/sievec.1
+@man man/man1/sieved.1

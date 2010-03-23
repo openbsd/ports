@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.21 2009/10/30 11:43:48 sthen Exp $
---- configure.in.orig	Sun Sep 13 22:12:28 2009
-+++ configure.in	Thu Oct 29 23:10:27 2009
-@@ -1812,74 +1812,16 @@ fi
+$OpenBSD: patch-configure_in,v 1.22 2010/03/23 21:32:07 pea Exp $
+--- configure.in.orig	Tue Nov 10 03:33:36 2009
++++ configure.in	Wed Nov 18 10:05:38 2009
+@@ -1759,112 +1759,16 @@ fi
  
  have_gssapi=no
  if test $want_gssapi != no; then
@@ -38,7 +38,10 @@ $OpenBSD: patch-configure_in,v 1.21 2009/10/30 11:43:48 sthen Exp $
 -				AC_DEFINE(HAVE_GSSAPI_H,, GSSAPI headers in gssapi.h)
 -				have_gssapi=yes
 -			])
--			if test $have_gssapi = yes; then
+-			if test $have_gssapi != no; then
+-				if test $want_gssapi = plugin; then
+-					have_gssapi=plugin
+-				fi
 -				AC_DEFINE(HAVE_GSSAPI,, Build with GSSAPI support)
 -				AC_CHECK_HEADERS(gssapi/gssapi_ext.h gssapi_krb5.h gssapi/gssapi_krb5.h)
 -				AC_CHECK_LIB(gss, __gss_userok, [
@@ -52,9 +55,44 @@ $OpenBSD: patch-configure_in,v 1.21 2009/10/30 11:43:48 sthen Exp $
 -				old_LIBS=$LIBS
 -				LIBS="$LIBS $KRB5_LIBS"
 -				AC_CHECK_FUNCS(gsskrb5_register_acceptor_identity krb5_gss_register_acceptor_identity)
+-
+-				# does the kerberos library support SPNEGO?
+-				AC_CACHE_CHECK([whether GSSAPI supports SPNEGO],i_cv_gssapi_spnego,[
+-				  AC_TRY_RUN([
+-				    #ifdef HAVE_GSSAPI_H
+-				    #  include <gssapi.h>
+-				    #else
+-				    #  include <gssapi/gssapi.h>
+-				    #endif
+-				    #include <krb5.h>
+-				    #include <string.h>
+-				    int main(void) {
+-				      OM_uint32 minor_status;
+-				      gss_OID_set mech_set;
+-				      unsigned char spnego_oid[] = { 0x2b, 0x06, 0x01, 0x05, 0x05, 0x02 };
+-				      unsigned int i;
+-    
+-				      gss_indicate_mechs(&minor_status, &mech_set);
+-				      for (i = 0; i < mech_set->count; i++) {
+-					if (mech_set->elements[i].length == 6 &&
+-					    memcmp(mech_set->elements[i].elements,
+-						   spnego_oid, 6) == 0)
+-					      return 0;
+-				      }
+-				      return 1;
+-				    }
+-				  ], [
+-				    i_cv_gssapi_spnego=yes
+-				  ], [
+-				    i_cv_gssapi_spnego=no
+-				  ])
+-				])
+-				if test "$i_cv_gssapi_spnego" = "yes"; then
+-				  AC_DEFINE(HAVE_GSSAPI_SPNEGO,, GSSAPI supports SPNEGO)
+-				fi
 -				LIBS=$old_LIBS
 -
--				if test x$want_gssapi_plugin != xyes; then
+-				if test $want_gssapi != plugin; then
 -				  AUTH_LIBS="$AUTH_LIBS $KRB5_LIBS"
 -				  AUTH_CFLAGS="$AUTH_CFLAGS $KRB5_CFLAGS"
 -				  AC_DEFINE(BUILTIN_GSSAPI,, GSSAPI support is built in)
@@ -62,14 +100,14 @@ $OpenBSD: patch-configure_in,v 1.21 2009/10/30 11:43:48 sthen Exp $
 -				  have_gssapi_plugin=yes
 -				fi
 -			else
--			  if test $want_gssapi = yes; then
+-			  if test $want_gssapi != auto; then
 -			    AC_ERROR([Can't build with GSSAPI support: gssapi.h not found])
 -			  fi
 -			fi
 -			CFLAGS=$old_CFLAGS
 -		fi
 -	else
--	  if test $want_gssapi = yes; then
+-	  if test $want_gssapi != auto; then
 -	    AC_ERROR([Can't build with GSSAPI support: krb5-config not found])
 -	  fi
 -	fi
