@@ -1,0 +1,27 @@
+$OpenBSD: patch-mono_mini_mini-amd64_h,v 1.4 2010/03/23 08:25:26 robert Exp $
+--- mono/mini/mini-amd64.h.orig	Tue Mar 23 08:59:52 2010
++++ mono/mini/mini-amd64.h	Tue Mar 23 09:00:38 2010
+@@ -254,10 +254,6 @@ typedef struct {
+ 
+ #endif
+ 
+-#ifdef __OpenBSD__
+-#undef MONO_ARCH_USE_SIGACTION
+-#endif
+-
+ #endif /* PLATFORM_WIN32 */
+ 
+ #if defined (__NetBSD__)
+@@ -282,7 +278,11 @@ typedef struct {
+ 
+ #define MONO_ARCH_NOMAP32BIT
+ 
+-#elif defined (__FreeBSD__) || defined (__OpenBSD__)
++#elif defined (__OpenBSD__)
++
++#define MONO_ARCH_NOMAP32BIT
++
++#elif defined (__FreeBSD__)
+ 
+ #define REG_RAX 7
+ #define REG_RCX 4

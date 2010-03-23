@@ -1,6 +1,6 @@
-$OpenBSD: patch-mono_utils_mono-sigcontext_h,v 1.1 2010/03/22 16:56:13 robert Exp $
---- mono/utils/mono-sigcontext.h.orig	Mon Mar 22 17:35:25 2010
-+++ mono/utils/mono-sigcontext.h	Mon Mar 22 17:38:49 2010
+$OpenBSD: patch-mono_utils_mono-sigcontext_h,v 1.2 2010/03/23 08:25:26 robert Exp $
+--- mono/utils/mono-sigcontext.h.orig	Fri Sep 25 16:58:11 2009
++++ mono/utils/mono-sigcontext.h	Tue Mar 23 08:56:28 2010
 @@ -54,6 +54,16 @@
  	#define UCONTEXT_REG_ESI(ctx) (((ucontext_t*)(ctx))->uc_mcontext.__gregs [_REG_ESI])
  	#define UCONTEXT_REG_EDI(ctx) (((ucontext_t*)(ctx))->uc_mcontext.__gregs [_REG_EDI])
@@ -18,3 +18,25 @@ $OpenBSD: patch-mono_utils_mono-sigcontext_h,v 1.1 2010/03/22 16:56:13 robert Ex
  #else
  	#define UCONTEXT_REG_EAX(ctx) (((ucontext_t*)(ctx))->uc_mcontext.gregs [REG_EAX])
  	#define UCONTEXT_REG_EBX(ctx) (((ucontext_t*)(ctx))->uc_mcontext.gregs [REG_EBX])
+@@ -70,6 +80,21 @@
+ 
+ #ifdef __FreeBSD__
+ #define UCONTEXT_GREGS(ctx)	&(((ucontext_t*)(ctx))->uc_mcontext)
++#elif defined(__OpenBSD__)
++	/* OpenBSD/amd64 has no gregs array, ucontext_t == sigcontext */
++	#define UCONTEXT_REG_RAX(ctx) ((ctx)->sc_rax)
++	#define UCONTEXT_REG_RBX(ctx) ((ctx)->sc_rbx)
++	#define UCONTEXT_REG_RCX(ctx) ((ctx)->sc_rcx)
++	#define UCONTEXT_REG_RDX(ctx) ((ctx)->sc_rdx)
++	#define UCONTEXT_REG_RBP(ctx) ((ctx)->sc_rbp)
++	#define UCONTEXT_REG_RSP(ctx) ((ctx)->sc_rsp)
++	#define UCONTEXT_REG_RSI(ctx) ((ctx)->sc_rsi)
++	#define UCONTEXT_REG_RDI(ctx) ((ctx)->sc_rdi)
++	#define UCONTEXT_REG_RIP(ctx) ((ctx)->sc_rip)
++	#define UCONTEXT_REG_R12(ctx) ((ctx)->sc_r12)
++	#define UCONTEXT_REG_R13(ctx) ((ctx)->sc_r13)
++	#define UCONTEXT_REG_R14(ctx) ((ctx)->sc_r14)
++	#define UCONTEXT_REG_R15(ctx) ((ctx)->sc_r15)
+ #else
+ #define UCONTEXT_GREGS(ctx)	&(((ucontext_t*)(ctx))->uc_mcontext.gregs)
+ #endif
