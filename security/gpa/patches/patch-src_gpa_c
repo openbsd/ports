@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_gpa_c,v 1.1 2010/03/23 13:32:39 jasper Exp $
+
+Fix implicit declaration of mkdir().
+
+--- src/gpa.c.orig	Tue Mar 23 14:23:22 2010
++++ src/gpa.c	Tue Mar 23 14:23:50 2010
+@@ -22,6 +22,9 @@
+ #include <config.h>
+ #endif
+ 
++#include <sys/types.h>
++#include <sys/stat.h>
++
+ #include <gtk/gtk.h>
+ 
+ #include <stdio.h>
