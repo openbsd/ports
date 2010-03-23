@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.772 2010/03/22 21:25:36 robert Exp $
+# $OpenBSD: Makefile,v 1.773 2010/03/23 21:20:13 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -727,7 +727,7 @@
      SUBDIR += proj
      SUBDIR += pscan
      SUBDIR += pth
-     SUBDIR += pwlib
+     SUBDIR += ptlib
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
      SUBDIR += py-addons
