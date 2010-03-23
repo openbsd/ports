@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:32:53 espie Exp $
-bin/gtimer
-@man man/man1/gtimer.1
-share/doc/gtimer/
-share/doc/gtimer/FAQ.html
-share/doc/gtimer/README

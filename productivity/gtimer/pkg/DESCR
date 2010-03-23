@@ -1,4 +1,0 @@
-GTimer is a Gtk+-based time tracker software. It can time one or more
-tasks simultaneously, add text annotations to tasks, generate reports
-showing how your time was spent each day/week/month in either plain text
-or HTML and generate status reports based on task annotations.
