@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2010/03/23 21:32:07 pea Exp $
+# $OpenBSD: Makefile,v 1.132 2010/03/23 21:55:38 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -106,7 +106,8 @@ LIB_DEPENDS+=		sqlite3::databases/sqlite3
 .if !${FLAVOR:L:Mno_sieve}
 pre-patch:
 	cd ${WRKSRC} && \
-	gunzip -c ${DISTDIR}/${DIST_MANAGESIEVE} | patch -p1 2> /dev/null
+	gunzip -c ${DISTDIR}/${DIST_MANAGESIEVE} | \
+		patch -z.managesieve.orig -p1 2> /dev/null
 
 post-configure:
 	(cd ${WRKSRC}; ${MAKE_PROGRAM} dovecot-config)
