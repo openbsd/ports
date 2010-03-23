@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/01/17 14:14:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/03/23 21:14:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
-DISTNAME=	gnugk-2.2.8
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	gnugk-2.3.1
 CATEGORIES=	net telephony
 
 HOMEPAGE=	http://www.gnugk.org/
@@ -23,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 WANTLIB=	SDL avutil c crypto expat lber ldap ldap_r m \
 		pt pthread sasl2 ssl stdc++
 
-LIB_DEPENDS=	h323.>=2::net/openh323 \
+LIB_DEPENDS=	h323.>=3::net/h323plus \
 		sqlite3.>=12::databases/sqlite3
 
 USE_GMAKE=	Yes
@@ -33,6 +32,8 @@ NO_REGRESS=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-radius \
 		--enable-sqlite \
+		--enable-h46023 \
+		--disable-h46018 \
 		--disable-firebird \
 		--disable-unixodbc
 
@@ -62,6 +63,7 @@ CONFIGURE_ARGS+=--disable-pgsql
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/docs/gnugk.1
+	perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g" ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1/

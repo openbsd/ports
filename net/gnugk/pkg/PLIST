@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/01/17 11:42:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/03/23 21:14:45 ajacoutot Exp $
 @newgroup _gnugk:586
 @newuser _gnugk:586:586:daemon:Gatekeeper Daemon:/var/empty:/sbin/nologin
 @bin bin/addpasswd
@@ -10,9 +10,9 @@ share/doc/gnugk/keepalive.txt
 share/doc/gnugk/known_bugs.txt
 share/doc/gnugk/performance.txt
 share/doc/gnugk/pwlib_bugs.txt
-share/doc/gnugk/radauth.txt
 share/doc/gnugk/trace_levels.txt
 share/examples/gnugk/
+share/examples/gnugk/H46023.ini
 share/examples/gnugk/child.ini
 share/examples/gnugk/clirw.ini
 share/examples/gnugk/complete.ini
@@ -26,11 +26,9 @@ share/examples/gnugk/gnugk.ini
 @group
 share/examples/gnugk/h350.ini
 share/examples/gnugk/ipauth.ini
-share/examples/gnugk/mysql.ini
 share/examples/gnugk/nat.ini
 share/examples/gnugk/neighbor.ini
 share/examples/gnugk/odbc.ini
-share/examples/gnugk/p2pnat.ini
 share/examples/gnugk/proxy.ini
 share/examples/gnugk/qos.ini
 share/examples/gnugk/radacct.ini

@@ -1,29 +1,30 @@
-$OpenBSD: patch-configure,v 1.5 2009/01/17 11:42:03 ajacoutot Exp $
---- configure.orig	Sat Jan 17 11:34:07 2009
-+++ configure	Sat Jan 17 11:35:26 2009
-@@ -4300,9 +4300,15 @@ echo $ECHO_N "checking for PQconnectdb in -lpq... $ECH
+$OpenBSD: patch-configure,v 1.6 2010/03/23 21:14:45 ajacoutot Exp $
+--- configure.orig	Sun Nov  8 22:43:34 2009
++++ configure	Sat Jan 30 14:23:41 2010
+@@ -3541,7 +3541,7 @@ if test "${PWLIBDIR:-unset}" = "unset" ; then
+     echo "Cannot find ptlib-config - please install and try again"
+     exit
+   fi
+-  PWLIBDIR=`$PTLIB_CONFIG --pwlibdir`
++  PWLIBDIR=`$PTLIB_CONFIG --ptlibdir`
+ fi
  
- 		old_LIBS="$LIBS"
- 
-+		if test `uname -s` = OpenBSD ; then
-+			CRYPTO_LIBS="-lcrypto"
-+		else
-+			CRYPTO_LIBS="-lcrypt"
-+		fi
-+
- 		for try in /usr/lib /usr/local/lib /usr/local/pgsql/lib $pgsql_lib_dir; do
- 			if test -d $try; then
--				LIBS="$old_LIBS -L$try -lpq -lcrypt ${PGSQL_LIBS}"
-+				LIBS="$old_LIBS -L$try -lpq ${CRYPTO_LIBS} ${PGSQL_LIBS}"
- 				cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -4336,7 +4342,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
- 	 test ! -s conftest.err
-        } && test -s conftest$ac_exeext &&
-        $as_test_x conftest$ac_exeext; then
--   PGSQL_LIBS="-lpq -lcrypt ${PGSQL_LIBS}"
-+   PGSQL_LIBS="-lpq ${CRYPTO_LIBS} ${PGSQL_LIBS}"
- 					  PGSQL_LDFLAGS="-L$try"
+ echo "PWLib prefix set to $PWLIBDIR"
+@@ -3969,7 +3969,7 @@ else
+ fi
  
  
+-H460SUPPORT=`cat ${OPENH323DIR}/include/openh323buildopts.h | grep 'define H323_H460'`
++H460SUPPORT=`cat !!LOCALBASE!!/include/openh323/openh323buildopts.h | grep 'define H323_H460'`
+ if test "${H460SUPPORT:-unset}" = "unset" ; then
+ 	if test "x${h46018}" != "xno" ; then
+ 		{ $as_echo "$as_me:$LINENO: result: No H.460 support available" >&5
+@@ -4003,7 +4003,7 @@ else
+ fi
+ 
+ 
+-H460SUPPORT=`cat ${OPENH323DIR}/include/openh323buildopts.h | grep 'define H323_H460'`
++H460SUPPORT=`cat !!LOCALBASE!!/include/openh323/openh323buildopts.h | grep 'define H323_H460'`
+ if test "${H460SUPPORT:-unset}" = "unset" ; then
+ 	if test "x${h46023}" != "xno" ; then
+ 		{ $as_echo "$as_me:$LINENO: result: No H.460 support available" >&5

@@ -1,24 +1,21 @@
-$OpenBSD: patch-pwlib_compat_h,v 1.1 2009/01/17 11:42:03 ajacoutot Exp $
---- pwlib_compat.h.orig	Sat Jan 17 11:47:00 2009
-+++ pwlib_compat.h	Sat Jan 17 11:48:13 2009
-@@ -103,10 +103,6 @@
- ///////////////////////////////////////////////
+$OpenBSD: patch-pwlib_compat_h,v 1.2 2010/03/23 21:14:45 ajacoutot Exp $
+--- pwlib_compat.h.orig	Fri Aug 28 16:44:29 2009
++++ pwlib_compat.h	Sat Jan 30 14:07:40 2010
+@@ -144,4 +144,17 @@
+ 	#endif	
+ #endif
  
- // OpenH323 version matching
--#ifdef H323_H460
--	#define hasH460 1    // H460 support
--#endif
--
- #if OPENH323_MAJOR == 1
- 	#if OPENH323_MINOR >= 19
- 		#if OPENH323_MINOR == 19
-@@ -115,6 +111,9 @@
- 			#endif
- 			#if OPENH323_BUILD > 4
- 				#define h323pluslib 1		// Indicate H323plus Library
-+				#ifdef H323_H460
-+					#define hasH460 1    // H460 support
-+				#endif
- 				#define h323v6 1			// Version 6 features
- 			#endif
- 		#else // h323plus v1.20
++#ifdef P_OPENBSD
++	#ifndef hasPConfigArray
++		#define hasPConfigArray 1
++	#endif
++
++	#ifndef h323pluslib
++		#define h323pluslib 1
++		#ifdef H323_H460
++			#define hasH460 1
++		#endif
++	#endif
++#endif
++
+ #endif
