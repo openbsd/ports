@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2009/12/21 21:03:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/03/23 17:24:45 pea Exp $
 
 COMMENT=	handy personal organizer
 
-DISTNAME=	osmo-0.2.2
-PKGNAME=	${DISTNAME}p3
-
+DISTNAME=	osmo-0.2.8
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://clayo.org/osmo/
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +20,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 png pthread z dbus-1 dbus-glib-1 gio-2.0 \
-		pthread-stubs xcb
+		pthread-stubs xcb gthread-2.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
 
@@ -30,9 +28,10 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		xml2.>=9::textproc/libxml \
-		ical::textproc/libical \
+		ical,icalss,icalvcal::textproc/libical \
 		gringotts::security/libgringotts \
-		notify.>=2::devel/libnotify 
+		notify.>=2::devel/libnotify \
+		gtkspell.>=1::textproc/gtkspell
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
@@ -44,6 +43,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		BUILD_CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--without-libsyncml
+CFLAGS+=       -I${LOCALBASE}/include/libical/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/po/Makefile.in

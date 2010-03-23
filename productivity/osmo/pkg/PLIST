@@ -1,13 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/12/21 21:03:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/03/23 17:24:45 pea Exp $
 @bin bin/osmo
 @man man/man1/osmo.1
 share/applications/osmo.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/osmo.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/osmo.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/osmo.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/osmo.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/osmo.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/osmo.svg
+share/locale/ca/LC_MESSAGES/osmo.mo
 share/locale/cs/LC_MESSAGES/osmo.mo
 share/locale/de/LC_MESSAGES/osmo.mo
+share/locale/el/LC_MESSAGES/osmo.mo
 share/locale/es/LC_MESSAGES/osmo.mo
+share/locale/fi/LC_MESSAGES/osmo.mo
 share/locale/fr/LC_MESSAGES/osmo.mo
 share/locale/hu/LC_MESSAGES/osmo.mo
 share/locale/it/LC_MESSAGES/osmo.mo
+share/locale/ja/LC_MESSAGES/osmo.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/osmo.mo
@@ -15,11 +39,16 @@ share/locale/nl/LC_MESSAGES/osmo.mo
 share/locale/pl/LC_MESSAGES/osmo.mo
 share/locale/pt/LC_MESSAGES/osmo.mo
 share/locale/ru/LC_MESSAGES/osmo.mo
-share/locale/zh/
-share/locale/zh/LC_MESSAGES/
-share/locale/zh/LC_MESSAGES/osmo.mo
+share/locale/sv/LC_MESSAGES/osmo.mo
+share/locale/tr/LC_MESSAGES/osmo.mo
+share/locale/uk/LC_MESSAGES/osmo.mo
+share/locale/zh_CN/LC_MESSAGES/osmo.mo
 share/pixmaps/
 share/pixmaps/osmo.png
-share/pixmaps/osmo.svg
+share/sounds/
+share/sounds/osmo/
+share/sounds/osmo/alarm.wav
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
