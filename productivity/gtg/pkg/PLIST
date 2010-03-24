@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/03/23 13:49:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/03/24 12:08:32 jasper Exp $
 bin/gtg
 bin/gtg_new_task
 lib/python${MODPY_VERSION}/site-packages/GTG/
@@ -77,12 +77,6 @@ lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export.py
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export.pyc
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export.ui
-lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/
-lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/template_simple.html
-lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/template_textual.txt
-lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/thumbnail_simple.html
-lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/thumbnail_statusrpt.txt
-lib/python${MODPY_VERSION}/site-packages/GTG/plugins/export/export_templates/thumbnail_textual.txt
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/geolocalized-tasks.gtg-plugin
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/geolocalized_tasks/
 lib/python${MODPY_VERSION}/site-packages/GTG/plugins/geolocalized_tasks/__init__.py
