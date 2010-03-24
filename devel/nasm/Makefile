@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.28 2009/08/18 17:11:15 okan Exp $
+# $OpenBSD: Makefile,v 1.29 2010/03/24 18:42:28 okan Exp $
 
 COMMENT=	general-purpose multi-platform x86 assembler
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-DISTNAME=	nasm-2.07
+VERSION=	2.08.01
+DISTNAME=	nasm-${VERSION}
 CATEGORIES=	devel lang
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nasm/}
 HOMEPAGE=	http://www.nasm.us/
+MASTER_SITES=	${HOMEPAGE}/pub/nasm/releasebuilds/${VERSION}/
 
 MAINTAINER=	Gallon Sylvestre <ccna.syl@gmail.com>
 
