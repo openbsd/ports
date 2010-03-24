@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/03/21 11:07:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/03/24 06:31:13 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ COMMENT-gui=	HPLIP graphical tools
 V=		3.10.2
 DISTNAME=	hplip-${V}
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
@@ -140,6 +140,7 @@ pre-configure:
 		${WRKSRC}/base/magic.py \
 		${WRKSRC}/base/utils.py \
 		${WRKSRC}/scan.py \
+		${WRKSRC}/setup.py \
 		${WRKSRC}/ui4/nodevicesdialog.py \
 		${WRKSRC}/ui/devmgr4.py \
 		${WRKSRC}/ui/nodevicesform.py
