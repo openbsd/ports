@@ -28,7 +28,7 @@ Using openfire in an OpenBSD environment
 
    to:
 
-   __PREFIX__/conf/openfire.xml
+   __PREFIX__/openfire/conf/openfire.xml
 
    Then restart openfire for the changes to take effect.
 
