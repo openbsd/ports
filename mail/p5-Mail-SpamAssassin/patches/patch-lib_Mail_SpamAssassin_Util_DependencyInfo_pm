@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_Mail_SpamAssassin_Util_DependencyInfo_pm,v 1.1 2010/03/24 23:56:04 sthen Exp $
+
+appease makewhatis
+
+--- lib/Mail/SpamAssassin/Util/DependencyInfo.pm.orig	Wed Mar 24 23:37:02 2010
++++ lib/Mail/SpamAssassin/Util/DependencyInfo.pm	Wed Mar 24 23:39:18 2010
+@@ -17,6 +17,13 @@
+ # limitations under the License.
+ # </@LICENSE>
+ 
++=head1 NAME
++
++Mail::SpamAssassin::Util::DependencyInfo - Helper code to debug dependencies and their versions.
++
++=cut
++
++
+ package Mail::SpamAssassin::Util::DependencyInfo;
+ 
+ use strict;

@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Mail_SpamAssassin_Util_RegistrarBoundaries_pm,v 1.1 2010/03/24 23:56:04 sthen Exp $
+
+appease makewhatis
+
+--- lib/Mail/SpamAssassin/Util/RegistrarBoundaries.pm.orig	Wed Mar 24 23:45:59 2010
++++ lib/Mail/SpamAssassin/Util/RegistrarBoundaries.pm	Wed Mar 24 23:45:43 2010
+@@ -18,6 +18,10 @@
+ # limitations under the License.
+ # </@LICENSE>
+ 
++=head1
++Mail::SpamAssassin::Util::RegistrarBoundaries - split domains at registry boundaries
++=cut
++
+ package Mail::SpamAssassin::Util::RegistrarBoundaries;
+ 
+ use strict;

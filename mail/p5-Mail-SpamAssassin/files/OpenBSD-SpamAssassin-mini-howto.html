@@ -6,7 +6,7 @@ You can use spamassassin in many ways. But the lightest for the machine is by
 making use of the spamc/spamd combination.
 
 <p>Add this line to <b><code>/etc/rc.local</b></code>:
-<pre><b># @PREFIX@/bin/spamd -u _spamdaemon -d</b></pre>
+<pre><b># ${PREFIX}/bin/spamd -u _spamdaemon -d</b></pre>
 <br> Use that same line to start spamd now.
 
 <p>The final step: put this at the top of your <b><code>.procmailrc</b></code>.
@@ -33,7 +33,7 @@ The spam filtering is not perfect. But since the feedback is very extensive you
 should be able to do what is necessary to get most spam filtered. 
 
 <p>If you want to add custom settings to spamassassin you can create the 
-file<code><b> @SYSCONFDIR@/mail/spamassassin/local.cf </b></code>. All possible options are 
+file<code><b> ${SYSCONFDIR}/mail/spamassassin/local.cf </b></code>. All possible options are 
 described in:<code><b> man Mail::SpamAssassin::Conf</b></code>
 
 

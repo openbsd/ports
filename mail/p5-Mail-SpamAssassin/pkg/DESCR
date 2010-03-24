@@ -1,37 +1,9 @@
 SpamAssassin is a mail filter to identify spam.
 
-Using its rule base, it uses a wide range of heuristic tests on
-mail headers and body text to identify "spam", also known as
-unsolicited commercial email.
-
-The spam-identification tactics used include: 
-
-header analysis: 
-                spammers use a number of tricks to mask their
-                identities, fool you into thinking they've sent a
-                valid mail, or fool you into thinking you must have
-                subscribed at some stage.  SpamAssassin tries to
-                spot these.
-
-text analysis:
-                again, spam mails often have a characteristic style
-                (to put it politely), and some characteristic
-                disclaimers and CYA text.  SpamAssassin can spot
-                these, too.
-
-blacklists: 
-                SpamAssassin supports many useful existing blacklists,
-                such as mail-abuse.org, ordb.org or others.
-
-Razor:          
-                Vipul's Razor is a collaborative spam-tracking
-                database, which works by taking a signature of spam
-                messages. Since spam typically operates by sending
-                an identical message to hundreds of people, Razor
-                short-circuits this by allowing the first person
-                to receive a spam to add it to the database -- at
-                which point everyone else will automatically block
-                it.
+Using its rule base and optional network sources (DNS-based lists and
+collaborative spam-tracking databases), it carries out a wide range of
+heuristic tests on mail headers and body text to identify "spam", also
+known as unsolicited commercial email.
 
 Once identified, the mail can then be optionally tagged as spam for
 later filtering using the user's own mail user-agent application.

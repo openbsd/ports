@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.26 2008/10/01 19:30:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.27 2010/03/24 23:56:04 sthen Exp $
+@pkgpath mail/p5-Mail-SpamAssassin
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
+bin/sa-awl
+bin/sa-check_spamd
 bin/sa-compile
 bin/sa-learn
 bin/sa-update
@@ -19,6 +22,7 @@ ${P5SITE}/Mail/SpamAssassin/Bayes/CombineChi.pm
 ${P5SITE}/Mail/SpamAssassin/Bayes/CombineNaiveBayes.pm
 ${P5SITE}/Mail/SpamAssassin/BayesStore/
 ${P5SITE}/Mail/SpamAssassin/BayesStore.pm
+${P5SITE}/Mail/SpamAssassin/BayesStore/BDB.pm
 ${P5SITE}/Mail/SpamAssassin/BayesStore/DBM.pm
 ${P5SITE}/Mail/SpamAssassin/BayesStore/MySQL.pm
 ${P5SITE}/Mail/SpamAssassin/BayesStore/PgSQL.pm
@@ -71,7 +75,7 @@ ${P5SITE}/Mail/SpamAssassin/Plugin/Check.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/DCC.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/DKIM.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/DNSEval.pm
-${P5SITE}/Mail/SpamAssassin/Plugin/DomainKeys.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/FreeMail.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/HTMLEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/HTTPSMismatch.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Hashcash.pm
@@ -80,11 +84,13 @@ ${P5SITE}/Mail/SpamAssassin/Plugin/ImageInfo.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/MIMEEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/MIMEHeader.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/OneLineBodyRuleType.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/PhishTag.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Pyzor.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Razor2.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/RelayCountry.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/RelayEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/ReplaceTags.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/Reuse.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Rule2XSBody.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/SPF.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Shortcircuit.pm
@@ -108,6 +114,7 @@ ${P5SITE}/Mail/SpamAssassin/Util.pm
 ${P5SITE}/Mail/SpamAssassin/Util/DependencyInfo.pm
 ${P5SITE}/Mail/SpamAssassin/Util/Progress.pm
 ${P5SITE}/Mail/SpamAssassin/Util/RegistrarBoundaries.pm
+${P5SITE}/Mail/SpamAssassin/Util/ScopedTimer.pm
 ${P5SITE}/Mail/SpamAssassin/Util/TieOneStringHash.pm
 ${P5SITE}/spamassassin-run.pod
 @man man/man1/sa-compile.1
@@ -124,6 +131,7 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::AutoWhitelist.3p
 @man man/man3p/Mail::SpamAssassin::Bayes.3p
 @man man/man3p/Mail::SpamAssassin::BayesStore.3p
+@man man/man3p/Mail::SpamAssassin::BayesStore::BDB.3p
 @man man/man3p/Mail::SpamAssassin::BayesStore::MySQL.3p
 @man man/man3p/Mail::SpamAssassin::BayesStore::PgSQL.3p
 @man man/man3p/Mail::SpamAssassin::BayesStore::SQL.3p
@@ -149,18 +157,20 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Plugin::AccessDB.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::AntiVirus.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::AutoLearnThreshold.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::Bayes.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::BodyRuleBaseExtractor.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Check.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DCC.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DKIM.3p
-@man man/man3p/Mail::SpamAssassin::Plugin::DomainKeys.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Hashcash.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::MIMEHeader.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::PhishTag.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Pyzor.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Razor2.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::RelayCountry.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::ReplaceTags.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::Reuse.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Rule2XSBody.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::SPF.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Shortcircuit.3p
@@ -200,15 +210,25 @@ share/examples/SpamAssassin/v312.pre
 @sample ${CONFDIR}/v312.pre
 share/examples/SpamAssassin/v320.pre
 @sample ${CONFDIR}/v320.pre
+share/examples/SpamAssassin/v330.pre
+@owner _spamdaemon
+@group _spamdaemon
+@sample ${LOCALSTATEDIR}/
+@owner
+@group
+@extraunexec rm -rf ${CONFDIR}/sa-update-keys
 share/spamassassin/
 share/spamassassin/10_default_prefs.cf
 share/spamassassin/20_advance_fee.cf
+share/spamassassin/20_aux_tlds.cf
 share/spamassassin/20_body_tests.cf
 share/spamassassin/20_compensate.cf
 share/spamassassin/20_dnsbl_tests.cf
 share/spamassassin/20_drugs.cf
 share/spamassassin/20_dynrdns.cf
 share/spamassassin/20_fake_helo_tests.cf
+share/spamassassin/20_freemail.cf
+share/spamassassin/20_freemail_domains.cf
 share/spamassassin/20_head_tests.cf
 share/spamassassin/20_html_tests.cf
 share/spamassassin/20_imageinfo.cf
@@ -225,7 +245,6 @@ share/spamassassin/25_antivirus.cf
 share/spamassassin/25_asn.cf
 share/spamassassin/25_dcc.cf
 share/spamassassin/25_dkim.cf
-share/spamassassin/25_domainkeys.cf
 share/spamassassin/25_hashcash.cf
 share/spamassassin/25_pyzor.cf
 share/spamassassin/25_razor2.cf
@@ -240,19 +259,21 @@ share/spamassassin/30_text_nl.cf
 share/spamassassin/30_text_pl.cf
 share/spamassassin/30_text_pt_br.cf
 share/spamassassin/50_scores.cf
+share/spamassassin/60_adsp_override_dkim.cf
 share/spamassassin/60_awl.cf
 share/spamassassin/60_shortcircuit.cf
 share/spamassassin/60_whitelist.cf
-share/spamassassin/60_whitelist_dk.cf
 share/spamassassin/60_whitelist_dkim.cf
 share/spamassassin/60_whitelist_spf.cf
 share/spamassassin/60_whitelist_subject.cf
 share/spamassassin/72_active.cf
-share/spamassassin/72_removed.cf
+share/spamassassin/72_scores.cf
+share/spamassassin/STATISTICS-set0-72_scores.cf.txt
+share/spamassassin/STATISTICS-set1-72_scores.cf.txt
+share/spamassassin/STATISTICS-set2-72_scores.cf.txt
+share/spamassassin/STATISTICS-set3-72_scores.cf.txt
 share/spamassassin/languages
+share/spamassassin/local.cf
+share/spamassassin/regression_tests.cf
 share/spamassassin/sa-update-pubkey.txt
 share/spamassassin/user_prefs.template
-@owner _spamdaemon
-@group _spamdaemon
-@sample ${LOCALSTATEDIR}/
-@extraunexec rm -rf ${CONFDIR}/sa-update-keys

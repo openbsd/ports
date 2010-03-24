@@ -1,10 +1,17 @@
-# $OpenBSD: Makefile,v 1.59 2010/01/01 22:41:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2010/03/24 23:56:04 sthen Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
-DISTNAME=		Mail-SpamAssassin-3.2.5
-PKGNAME=		p5-${DISTNAME}p4
+VER=			3.3.1
+DISTNAME=		Mail-SpamAssassin-${VER}
+PKGNAME=		p5-${DISTNAME:S/-rc/rc/}
+RULESNAME=		Mail-SpamAssassin-rules-${VER}.r923114
 CATEGORIES=		mail perl5
+
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${RULESNAME}.tgz
+EXTRACT_SUFX=		.tar.bz2
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+WRKDIST=		${WRKDIR}/${DISTNAME:C/-rc.*//}
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
@@ -15,14 +22,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c crypto ssl z
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=spamassassin/source/}
 
 COMMON_DEPENDS=		:p5-HTML-Parser->=3.31:www/p5-HTML-Parser \
-			:p5-Digest-SHA1-*:security/p5-Digest-SHA1 \
+			:p5-Mail-DKIM->=0.31:mail/p5-Mail-DKIM \
 			:p5-Net-DNS->=0.34:net/p5-Net-DNS \
-			:p5-Mail-SPF-Query-*:mail/p5-Mail-SPF-Query \
+			:p5-NetAddr-IP-*:net/p5-NetAddr-IP \
 			:p5-IO-Socket-INET6-*:net/p5-IO-Socket-INET6 \
 			:p5-IO-Socket-SSL-*:security/p5-IO-Socket-SSL \
 			:p5-libwww-*:www/p5-libwww
@@ -57,9 +65,7 @@ DOCS=		README UPGRADE LICENSE procmailrc.example \
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin
 	${INSTALL_DATA_DIR} ${SAMPLE_CONFDIR}
-	@sed -e "s|@SYSCONFDIR@|${SYSCONFDIR}|" \
-		-e "s|@PREFIX@|${TRUEPREFIX}|" \
-		${FILESDIR}/${FAQ} > ${WRKSRC}/${FAQ}
+	${SUBST_CMD} -c ${FILESDIR}/${FAQ} ${WRKSRC}/${FAQ}
 	pod2man --section=1 ${WRKSRC}/spamc/spamc.pod > \
 		${PREFIX}/man/man1/spamc.1
 	${INSTALL_DATA} ${WRKSRC}/rules/local.cf ${WRKSRC}/rules/*.pre \
@@ -67,6 +73,8 @@ post-install:
 .for i in ${FAQ} ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/SpamAssassin
 .endfor
+	cd ${PREFIX}/share/spamassassin; tar xzf ${FULLDISTDIR}/${RULESNAME}.tgz
+	chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/spamassassin/*
 
 pre-regress:
 	mkdir -p ${PORTHOME}
