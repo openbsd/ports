@@ -1,6 +1,18 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2008/09/16 21:08:27 jasper Exp $
---- Makefile.in.orig	Tue Sep 16 22:59:28 2008
-+++ Makefile.in	Tue Sep 16 23:02:44 2008
+$OpenBSD: patch-Makefile_in,v 1.3 2010/03/24 17:10:37 jasper Exp $
+
+Don't build gtk1 xsteg.
+
+--- Makefile.in.orig	Tue Aug 31 16:59:42 2004
++++ Makefile.in	Wed Mar 24 17:47:01 2010
+@@ -64,7 +64,7 @@ MAKEINFO = @MAKEINFO@
+ PACKAGE = @PACKAGE@
+ PATH_GTKCONFIG = @PATH_GTKCONFIG@
+ VERSION = @VERSION@
+-XSTEG = @XSTEG@
++XSTEG =
+ 
+ AUTOMAKE_OPTIONS = foreign no-dependencies
+ 
 @@ -83,7 +83,7 @@ GTKLIB = @GTKLIB@
  EVENTINC = @EVENTINC@
  EVENTLIB = @EVENTLIB@
@@ -9,4 +21,15 @@ $OpenBSD: patch-Makefile_in,v 1.2 2008/09/16 21:08:27 jasper Exp $
 +LIBS = $(JPEGLIB) -lcrypto
  
  SUBDIRS = jpeg-6b file
+ 
+@@ -97,8 +97,8 @@ CFLAGS = -O2 -Wall -g
+ 
+ INCLUDES = $(JPEGINC) $(FILEINC) -I$(srcdir)/compat $(EVENTINC) $(GTKINC)
+ 
+-EXTRA_PROGRAMS = xsteg
+-bin_PROGRAMS = stegdetect stegbreak stegcompare stegdeimage @XSTEG@
++EXTRA_PROGRAMS =
++bin_PROGRAMS = stegdetect stegbreak stegcompare stegdeimage
+ 
+ CSRCS = common.c common.h jphide_table.c util.c jphide_table.h
  

@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.1 2010/03/24 17:10:37 jasper Exp $
+
+Don't pickup gtk1.
+
+--- configure.in.orig	Wed Mar 24 17:44:35 2010
++++ configure.in	Wed Mar 24 17:44:54 2010
+@@ -30,7 +30,7 @@ i386-*-*)
+ esac
+ 
+ dnl Checking for gtk
+-AC_PATH_PROG(PATH_GTKCONFIG, gtk-config)
++AC_PATH_PROG(PATH_GTKCONFIG, false)
+ if test ! -z "$PATH_GTKCONFIG" ; then
+ 	dnl Checks for libevent
+ 	havelibevent=no
