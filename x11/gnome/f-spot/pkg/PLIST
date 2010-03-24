@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/03/24 12:18:44 robert Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.13 2010/03/24 21:56:18 ajacoutot Exp $
 bin/f-spot
 bin/f-spot-sqlite-upgrade
 lib/f-spot/
@@ -65,10 +64,10 @@ lib/f-spot/gkeyfile-sharp.dll
 lib/f-spot/gnome-keyring-sharp.dll
 lib/f-spot/gtk-sharp-beans.dll
 lib/f-spot/gtk-sharp-beans.dll.config
-lib/f-spot/libfspot.a
-lib/f-spot/libfspot.la
-lib/f-spot/libfspotjpegtran.a
-lib/f-spot/libfspotjpegtran.la
+@comment lib/f-spot/libfspot.la
+lib/f-spot/libfspot.so
+@comment lib/f-spot/libfspotjpegtran.la
+lib/f-spot/libfspotjpegtran.so
 lib/f-spot/libgphoto2-sharp.dll
 lib/f-spot/libgphoto2-sharp.dll.config
 lib/pkgconfig/f-spot.pc

@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2010/03/24 12:18:44 robert Exp $
+# $OpenBSD: Makefile,v 1.24 2010/03/24 21:56:18 ajacoutot Exp $
 
-BROKEN=			waiting for antoine@
+SHARED_ONLY=		Yes
+
+BROKEN=			waiting for ajacoutot@
 
 COMMENT=		personal photo management application for GNOME
 
 GNOME_VERSION=		0.6.1.5
 GNOME_PROJECT=		f-spot
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		graphics
 
@@ -49,8 +52,12 @@ LIB_DEPENDS+=		exif::graphics/libexif \
 
 MODGCONF2_SCHEMAS_DIR=	f-spot
 
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS=		--tag=disable-static
+
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-scrollkeeper
+			--disable-scrollkeeper \
+			--disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
