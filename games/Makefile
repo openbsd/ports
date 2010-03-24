@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2010/02/16 21:29:22 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.207 2010/03/24 22:36:59 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -73,7 +73,6 @@
      SUBDIR += gnushogi
      SUBDIR += gtetrinet
      SUBDIR += gtkballs
-     SUBDIR += gtkpool
      SUBDIR += hackdata
      SUBDIR += heroes
      SUBDIR += icebreaker
