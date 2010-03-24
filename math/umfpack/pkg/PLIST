@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/21 17:22:47 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/03/24 16:09:34 jasper Exp $
 %%SHARED%%
+%%no_mips64%%
 include/umfpack/
 include/umfpack/UFconfig.h
 include/umfpack/umfpack.h
@@ -37,4 +38,3 @@ include/umfpack/umfpack_triplet_to_col.h
 include/umfpack/umfpack_wsolve.h
 lib/libumfpack.a
 lib/libumfpack_p.a
-lib/libumfpack_pic.a

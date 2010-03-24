@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/03/24 16:09:33 jasper Exp $
 
 COMMENT=	unsymmetric multifrontal sparse LU factorization package
 
 VERSION=	5.1.0
 DISTNAME=	UMFPACK-${VERSION}
-PKGNAME=	umfpack-${VERSION}
+PKGNAME=	umfpack-${VERSION}p0
 SHARED_LIBS=	umfpack	0.0
 
 CATEGORIES=	math
@@ -35,6 +35,13 @@ MAKE_ENV=	SHLIB_MAJOR=${LIBumfpack_VERSION:R} \
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 CFLAGS+=	-I${WRKDIST}/Include -I${WRKDIR}/UFconfig \
 		-I${WRKDIR}/${AMD_DIR}/AMD/Include
+
+# See bsd.lib.mk:162
+.if ${MACHINE_ARCH:Mmips64*}
+PKG_ARGS+=	-Dno_mips64=0
+.else
+PKG_ARGS+=	-Dno_mips64=1
+.endif
 
 SRC1=	analyze apply_order colamd free fsize is_permutation malloc \
 	realloc report_perm singletons
