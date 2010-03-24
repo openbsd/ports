@@ -1,0 +1,60 @@
+$OpenBSD: patch-src_interface_c,v 1.1 2010/03/24 17:23:48 jasper Exp $
+
+Fix gtk2 support. From archlinux:
+http://aur.archlinux.org/packages.php?ID=16517
+http://aur.archlinux.org/packages/xdialog-gtk2/xdialog-gtk2/xdialog-2.3.1-gtk2.patch
+
+--- src/interface.c.orig	Wed Mar 24 18:16:07 2010
++++ src/interface.c	Wed Mar 24 18:20:06 2010
+@@ -183,6 +183,11 @@ static void open_window(void)
+ 	/* Open a new GTK top-level window */
+ 	window = Xdialog.window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+ 
++	/* Set window icon (in GTK2 mode only)  */
++#ifdef USE_GTK2
++		gtk_window_set_icon_name(window, Xdialog.icon_file);
++#endif
++
+ 	/* Apply the custom GTK+ theme, if any. */
+ 	parse_rc_file();
+ 
+@@ -276,9 +281,6 @@ static GtkWidget *set_label(gchar *label_text, gboolea
+ {
+ 	GtkWidget *label;
+ 	GtkWidget *hbox;
+-	GdkBitmap *mask;
+-	GdkColor  transparent;
+-	GdkPixmap *pixmap;
+ 	GtkWidget *icon;
+ 	gchar     text[MAX_LABEL_LENGTH];
+ 	int icon_width = 0;
+@@ -287,6 +289,21 @@ static GtkWidget *set_label(gchar *label_text, gboolea
+ 	gtk_box_pack_start(Xdialog.vbox, hbox, expand, TRUE, ymult/3);
+ 
+ 	if (Xdialog.icon) {
++#ifdef USE_GTK2
++		if (Xdialog.icon_file != NULL) {
++			icon = gtk_image_new_from_icon_name (Xdialog.icon_file, GTK_ICON_SIZE_DIALOG);
++			/*icon = gtk_image_new_from_file (Xdialog.icon_file);*/
++
++			gtk_box_pack_start(GTK_BOX(hbox), icon, FALSE, FALSE, 2);
++			gtk_widget_show(icon);
++			icon_width = 60;
++		}
++
++#else
++	  GdkBitmap *mask;
++	  GdkColor  transparent;
++	  GdkPixmap *pixmap;
++
+ 		pixmap = gdk_pixmap_create_from_xpm(Xdialog.window->window,
+ 						    &mask, &transparent,
+ 						    Xdialog.icon_file);
+@@ -298,6 +315,7 @@ static GtkWidget *set_label(gchar *label_text, gboolea
+ 			gtk_widget_show(icon);
+ 			icon_width = icon->requisition.width + 4;
+ 		}
++#endif
+ 	}
+ 
+ 	trim_string(label_text, text, MAX_LABEL_LENGTH);

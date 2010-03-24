@@ -1,8 +1,8 @@
 $NetBSD: patch-ac,v 1.1 2003/05/13 23:33:02 salo Exp $
 
---- doc/Xdialog.man.orig	Thu Jan 26 21:18:50 2006
-+++ doc/Xdialog.man	Sat Apr 22 20:40:23 2006
-@@ -268,11 +268,11 @@ Note that when chaining dialogs, the cha
+--- doc/Xdialog.man.orig	Sun Aug 13 20:51:30 2006
++++ doc/Xdialog.man	Wed Mar 24 18:15:42 2010
+@@ -268,11 +268,11 @@ Note that when chaining dialogs, the chain is broken a
  .br 
  \fI%%datadir%%/locale/*/LC_MESSAGES/Xdialog.mo\fP 
  .br 
@@ -17,7 +17,7 @@ $NetBSD: patch-ac,v 1.1 2003/05/13 23:33:02 salo Exp $
  .SH "ENVIRONMENT VARIABLES"
  .LP 
  \fIXDIALOG_HIGH_DIALOG_COMPAT\fR
-@@ -306,9 +306,9 @@ See the notes about \fBXDIALOG_HIGH_DIAL
+@@ -306,9 +306,9 @@ See the notes about \fBXDIALOG_HIGH_DIALOG_COMPAT\fR a
  Setting this variable to 1 will prevent the Gdk, GLib and Gtk library from emitting messages via g_log().
  .SH "EXAMPLES"
  .LP 

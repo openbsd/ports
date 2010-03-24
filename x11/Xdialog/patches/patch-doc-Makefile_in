@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Fri Feb 17 16:39:44 2006
-+++ doc/Makefile.in	Sat Apr 22 20:38:02 2006
-@@ -160,7 +160,7 @@ sharedstatedir = @sharedstatedir@
+--- doc/Makefile.in.orig	Fri Aug 18 18:20:19 2006
++++ doc/Makefile.in	Wed Mar 24 18:15:42 2010
+@@ -164,7 +164,7 @@ sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  AUTOMAKE_OPTIONS = foreign no-dependencies
