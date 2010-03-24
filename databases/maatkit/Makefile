@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2009/07/20 13:01:18 giovanni Exp $
+# $OpenBSD: Makefile,v 1.9 2010/03/24 17:28:13 giovanni Exp $
 
 COMMENT =	MySQL maatkit tools
 
-DISTNAME =	maatkit-4047
+DISTNAME =	maatkit-5899
 CATEGORIES =	databases perl5
 
 HOMEPAGE =	http://www.maatkit.org/
