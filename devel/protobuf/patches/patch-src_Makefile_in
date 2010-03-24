@@ -1,0 +1,77 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2010/03/24 19:03:37 landry Exp $
+--- src/Makefile.in.orig	Tue Jan 12 11:12:09 2010
++++ src/Makefile.in	Tue Jan 12 11:19:21 2010
+@@ -139,8 +139,8 @@ protobuf_lazy_descriptor_test_OBJECTS =  \
+ 	$(am_protobuf_lazy_descriptor_test_OBJECTS) \
+ 	$(nodist_protobuf_lazy_descriptor_test_OBJECTS)
+ protobuf_lazy_descriptor_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	libprotobuf.la $(top_builddir)/gtest/lib/libgtest.la \
+-	$(top_builddir)/gtest/lib/libgtest_main.la
++	libprotobuf.la ${LOCALBASE}/lib/libgtest.la \
++	${LOCALBASE}/lib/libgtest_main.la
+ protobuf_lazy_descriptor_test_LINK = $(LIBTOOL) --tag=CXX \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(protobuf_lazy_descriptor_test_CXXFLAGS) $(CXXFLAGS) \
+@@ -207,8 +207,8 @@ nodist_protobuf_test_OBJECTS = $(am__objects_8)
+ protobuf_test_OBJECTS = $(am_protobuf_test_OBJECTS) \
+ 	$(nodist_protobuf_test_OBJECTS)
+ protobuf_test_DEPENDENCIES = $(am__DEPENDENCIES_1) libprotobuf.la \
+-	libprotoc.la $(top_builddir)/gtest/lib/libgtest.la \
+-	$(top_builddir)/gtest/lib/libgtest_main.la
++	libprotoc.la ${LOCALBASE}/lib/libgtest.la \
++	${LOCALBASE}/lib/libgtest_main.la
+ protobuf_test_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(protobuf_test_CXXFLAGS) \
+ 	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+@@ -220,7 +220,7 @@ am_test_plugin_OBJECTS = test_plugin-mock_code_generat
+ 	test_plugin-file.$(OBJEXT) test_plugin-test_plugin.$(OBJEXT)
+ test_plugin_OBJECTS = $(am_test_plugin_OBJECTS)
+ test_plugin_DEPENDENCIES = $(am__DEPENDENCIES_1) libprotobuf.la \
+-	libprotoc.la $(top_builddir)/gtest/lib/libgtest.la
++	libprotoc.la ${LOCALBASE}/lib/libgtest.la
+ am__zcgunzip_SOURCES_DIST = google/protobuf/testing/zcgunzip.cc
+ @HAVE_ZLIB_TRUE@am_zcgunzip_OBJECTS = zcgunzip.$(OBJEXT)
+ zcgunzip_OBJECTS = $(am_zcgunzip_OBJECTS)
+@@ -670,11 +670,10 @@ COMMON_TEST_SOURCES = \
+   google/protobuf/testing/file.h
+ 
+ protobuf_test_LDADD = $(PTHREAD_LIBS) libprotobuf.la libprotoc.la \
+-                      $(top_builddir)/gtest/lib/libgtest.la       \
+-                      $(top_builddir)/gtest/lib/libgtest_main.la
++                      ${LOCALBASE}/lib/libgtest.la       \
++                      ${LOCALBASE}/lib/libgtest_main.la
+ 
+-protobuf_test_CPPFLAGS = -I$(top_srcdir)/gtest/include         \
+-                         -I$(top_builddir)/gtest/include
++protobuf_test_CPPFLAGS = -I${LOCALBASE}/include
+ 
+ # Disable optimization for tests unless the user explicitly asked for it,
+ # since test_util.cc takes forever to compile with optimization (with GCC).
+@@ -716,11 +715,10 @@ nodist_protobuf_test_SOURCES = $(protoc_outputs)
+ 
+ # Run cpp_unittest again with PROTOBUF_TEST_NO_DESCRIPTORS defined.
+ protobuf_lazy_descriptor_test_LDADD = $(PTHREAD_LIBS) libprotobuf.la \
+-                      $(top_builddir)/gtest/lib/libgtest.la       \
+-                      $(top_builddir)/gtest/lib/libgtest_main.la
++                      ${LOCALBASE}/lib/libgtest.la       \
++                      ${LOCALBASE}/lib/libgtest_main.la
+ 
+-protobuf_lazy_descriptor_test_CPPFLAGS = -I$(top_srcdir)/gtest/include    \
+-                                         -I$(top_builddir)/gtest/include  \
++protobuf_lazy_descriptor_test_CPPFLAGS = -I${LOCALBASE}/include  \
+                                          -DPROTOBUF_TEST_NO_DESCRIPTORS
+ 
+ protobuf_lazy_descriptor_test_CXXFLAGS = $(NO_OPT_CXXFLAGS)
+@@ -742,10 +740,9 @@ nodist_protobuf_lite_test_SOURCES = $(protoc_lite_outp
+ 
+ # Test plugin binary.
+ test_plugin_LDADD = $(PTHREAD_LIBS) libprotobuf.la libprotoc.la \
+-                    $(top_builddir)/gtest/lib/libgtest.la
++                    ${LOCALBASE}/lib/libgtest.la
+ 
+-test_plugin_CPPFLAGS = -I$(top_srcdir)/gtest/include         \
+-                       -I$(top_builddir)/gtest/include
++test_plugin_CPPFLAGS = -I${LOCALBASE}/include
+ 
+ test_plugin_SOURCES = \
+   google/protobuf/compiler/mock_code_generator.cc              \

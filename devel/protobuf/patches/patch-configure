@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/03/24 19:03:37 landry Exp $
+--- configure.orig	Tue Jan 12 11:06:14 2010
++++ configure	Tue Jan 12 11:08:22 2010
+@@ -906,7 +906,6 @@ CXX
+ CXXFLAGS
+ CCC
+ CXXCPP'
+-ac_subdirs_all='gtest'
+ 
+ # Initialize some variables set by options.
+ ac_init_help=
+@@ -17294,12 +17293,6 @@ echo "$as_me: WARNING: could not find an STL hash_map"
+    fi
+ 
+ 
+-# HACK:  Make gtest's configure script pick up our copy of CFLAGS and CXXFLAGS,
+-#   since the flags added by ACX_CHECK_SUNCC must be used when compiling gtest
+-#   too.
+-export CFLAGS
+-export CXXFLAGS
+-subdirs="$subdirs gtest"
+ 
+ 
+ ac_config_files="$ac_config_files Makefile src/Makefile protobuf.pc protobuf-lite.pc"
