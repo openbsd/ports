@@ -1,9 +1,15 @@
-$OpenBSD: patch-lib_libfspot_Makefile_in,v 1.4 2009/11/04 18:17:58 ajacoutot Exp $
-
-Correct linking, from debian_libfspot-linkage.dpatch.
-
---- lib/libfspot/Makefile.in.orig	Thu Oct 29 11:20:26 2009
-+++ lib/libfspot/Makefile.in	Wed Nov  4 19:05:36 2009
+$OpenBSD: patch-lib_libfspot_Makefile_in,v 1.5 2010/03/24 12:18:44 robert Exp $
+--- lib/libfspot/Makefile.in.orig	Wed Nov  4 20:35:15 2009
++++ lib/libfspot/Makefile.in	Wed Mar 24 12:21:13 2010
+@@ -87,7 +87,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+-	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
++	--mode=link $(CCLD) -avoid-version $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+ SOURCES = $(libfspot_la_SOURCES)
+ DIST_SOURCES = $(libfspot_la_SOURCES)
 @@ -320,6 +320,8 @@ libfspot_la_SOURCES = \
  	f-utils.h
  
