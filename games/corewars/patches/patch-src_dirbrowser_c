@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_dirbrowser_c,v 1.1 2010/03/24 22:32:17 jasper Exp $
+
+Swith to gtk+2.
+From Debian's corewars_0.9.13+ds-1.diff.
+
+--- src/dirbrowser.c.orig	Wed Mar 24 23:07:32 2010
++++ src/dirbrowser.c	Wed Mar 24 23:07:42 2010
+@@ -232,7 +232,7 @@ GtkWidget *create_dir_browser(gchar *title,gchar *curr
+ 	DirNode *dirnode;
+ 	gboolean leaf;
+ 	
+-	window=gtk_window_new(GTK_WINDOW_DIALOG);
++	window=gtk_window_new(GTK_WINDOW_TOPLEVEL);
+ 	gtk_window_set_title(GTK_WINDOW(window),title);
+ 	gtk_container_border_width(GTK_CONTAINER(window),10);
+ 	

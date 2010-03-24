@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/11/26 10:16:07 jasper Exp $
-bin/corewars
-bin/corewars-cmd
+@comment $OpenBSD: PLIST,v 1.5 2010/03/24 22:32:17 jasper Exp $
+@bin bin/corewars
+@bin bin/corewars-cmd
 @man man/man6/corewars-cmd.6
 @man man/man6/corewars.6
 share/corewars/

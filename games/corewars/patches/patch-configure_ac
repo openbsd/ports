@@ -1,0 +1,52 @@
+$OpenBSD: patch-configure_ac,v 1.1 2010/03/24 22:32:17 jasper Exp $
+
+Swith to gtk+2.
+From Debian's corewars_0.9.13+ds-1.diff.
+
+--- configure.ac.orig	Wed Oct 23 14:49:46 2002
++++ configure.ac	Wed Mar 24 23:16:44 2010
+@@ -36,38 +36,29 @@ AM_PROG_LEX
+ AC_PROG_LN_S
+ 
+ COREWARS=corewars
+-AM_PATH_GLIB(1.2.0,,COREWARS=;AC_MSG_ERROR([
++AM_PATH_GLIB_2_0(2.0.0,,COREWARS=;AC_MSG_ERROR([
+ 
+    ************************************************************************
+-   *** GLIB >= 1.2.0 not installed - cannot build GUI client without it ***
++   *** GLIB >= 2.0.0 not installed - cannot build GUI client without it ***
+    ************************************************************************
+ ]))
+-AM_PATH_GTK(1.2.0,,COREWARS=;AC_MSG_ERROR([
++AM_PATH_GTK_2_0(2.0.0,,COREWARS=;AC_MSG_ERROR([
+ 
+    ************************************************************************
+-   *** GTK+ >= 1.2.0 not installed - cannot build GUI client without it ***
++   *** GTK+ >= 2.0.0 not installed - cannot build GUI client without it ***
+    ************************************************************************
+ ]))
+ 
+ LIBS="$LIBS $GTK_LIBS"
+-GTK_INCLUDE=`gtk-config --cflags`
+ AC_SUBST(INCLUDES)
+-INCLUDES="$INCLUDES $GTK_INCLUDE"
++INCLUDES="$INCLUDES $GTK_CFLAGS"
+ 
+ dnl Checks for header files.
+ AC_HEADER_DIRENT
+ AC_STDC_HEADERS
+ AC_CHECK_HEADERS(limits.h malloc.h string.h unistd.h)
+ 
+-dnl Check for libc >= 2.1
+-COREWARSCMD=
+-AC_CHECK_HEADERS(argp.h,COREWARSCMD=corewars-cmd,AC_MSG_WARN([
+-
+-   ********************************************************************************
+-   *** glibc >= 2.1 not installed - cannot build command line client without it ***
+-   ***                        (but this is ok if you want the GTK+ client only) ***
+-   ********************************************************************************
+-]))
++COREWARSCMD=corewars-cmd
+ 
+ dnl Checks for typedefs, structures, and compiler characteristics.
+ AC_C_CONST

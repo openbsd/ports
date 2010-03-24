@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_main-gui_c,v 1.1 2010/03/24 22:32:17 jasper Exp $
+
+Swith to gtk+2.
+From Debian's corewars_0.9.13+ds-1.diff.
+
+--- src/main-gui.c.orig	Wed Mar 24 23:07:02 2010
++++ src/main-gui.c	Wed Mar 24 23:07:23 2010
+@@ -348,7 +348,7 @@ void get_main_menu( GtkWidget  *window,
+   gtk_item_factory_create_items (item_factory, nmenu_items, menu_items, NULL);
+ 
+   /* Attach the new accelerator group to the window. */
+-  gtk_accel_group_attach (accel_group, GTK_OBJECT (window));
++  gtk_window_add_accel_group(GTK_OBJECT (window), accel_group);
+ 
+   menu_file_start = gtk_item_factory_get_widget (item_factory, "/File/Start");
+   menu_file_pause = gtk_item_factory_get_widget (item_factory, "/File/Pause");
