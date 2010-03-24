@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.773 2010/03/23 21:20:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.774 2010/03/24 16:19:56 naddy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -541,7 +541,6 @@
      SUBDIR += p5-Params-Util
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Paranoid
-     SUBDIR += p5-Parse-CPAN-Meta
      SUBDIR += p5-Parse-Method-Signatures
      SUBDIR += p5-Parse-PlainConfig
      SUBDIR += p5-Parse-RecDescent
@@ -703,7 +702,6 @@
      SUBDIR += p5-libintl
      SUBDIR += p5-namespace-autoclean
      SUBDIR += p5-namespace-clean
-     SUBDIR += p5-parent
      SUBDIR += p5-prefork
      SUBDIR += pango
      SUBDIR += pangomm

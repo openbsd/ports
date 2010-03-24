@@ -1,5 +1,0 @@
-This module allows you to both load one or more modules, while setting
-up inheritance from those modules at the same time.
-By default, every base class needs to live in a file of its own.  If you
-want to have a subclass and its parent class in the same file, you can
-tell parent not to load any modules by using the -norequire switch.

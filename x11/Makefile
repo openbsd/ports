@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.409 2010/03/23 21:30:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.410 2010/03/24 16:19:56 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -37,7 +37,6 @@
      SUBDIR += dbus-glib
      SUBDIR += dbus-python
      SUBDIR += dclock
-     SUBDIR += dejavu-fonts
      SUBDIR += devilspie
      SUBDIR += dmenu
      SUBDIR += driconf
