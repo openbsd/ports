@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.47 2010/01/09 02:48:04 sthen Exp $
+# $OpenBSD: i386,v 1.48 2010/03/24 22:39:56 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -16,7 +16,6 @@ sysutils/cdrtools
 sysutils/dvd+rw-tools
 mail/procmail
 mail/fetchmail
-misc/screen
 net/samba
 shells/zsh
 shells/bash
@@ -90,7 +89,7 @@ security/pidgin-otr
 devel/gmake
 misc/tpwireless
 sysutils/tphdisk
-www/squid
+#www/squid
 www/transproxy
 security/aide
 security/dsniff
@@ -99,10 +98,10 @@ news/slrn
 security/gnupg
 #print/lyx
 net/libdnet
-net/nsd
+#net/nsd
 graphics/ImageMagick
 audio/abcde
-devel/smpeg
+#devel/smpeg
 mail/mozilla-thunderbird
 graphics/gimp/stable
 #emulators/fedora/base
@@ -114,22 +113,23 @@ audio/xmms,-vorbis
 audio/xmms-mad
 graphics/jhead
 graphics/gphoto2
-x11/blackbox
-x11/icewm
+#x11/blackbox
+#x11/icewm
 x11/rdesktop
-textproc/ispell
-textproc/ispell,-french
-textproc/ispell,-spanish
+#textproc/ispell
+#textproc/ispell,-french
+#textproc/ispell,-spanish
 net/unbound
 net/ldns/libldns
 x11/scrotwm
-x11/terminus-font
-x11/liberation-fonts
-math/moo
-net/ipcalc
-net/ladvd
+#x11/terminus-font
+#x11/liberation-fonts
+#math/moo
+#net/ipcalc
+#net/ladvd
 sysutils/pkg_mgr
-math/gnuplot
-archivers/xz
-games/crack-attack
-emulators/qemu
+#math/gnuplot
+#archivers/xz
+#games/crack-attack
+#emulators/qemu
+databases/sqlitebrowser
