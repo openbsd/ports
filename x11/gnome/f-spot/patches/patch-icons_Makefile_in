@@ -1,0 +1,12 @@
+$OpenBSD: patch-icons_Makefile_in,v 1.1 2010/03/24 22:53:55 ajacoutot Exp $
+--- icons/Makefile.in.orig	Wed Nov  4 20:35:13 2009
++++ icons/Makefile.in	Wed Mar 24 23:33:47 2010
+@@ -40,7 +40,7 @@ am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
+ 	$(top_srcdir)/configure.ac
+ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
+ 	$(ACLOCAL_M4)
+-mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
++mkinstalldirs = $(install_sh) -d
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =

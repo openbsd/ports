@@ -1,9 +1,24 @@
-$OpenBSD: patch-icon-theme-installer,v 1.1 2009/10/04 08:08:13 ajacoutot Exp $
---- icon-theme-installer.orig	Sun Oct  4 10:06:50 2009
-+++ icon-theme-installer	Sun Oct  4 10:06:54 2009
+$OpenBSD: patch-icon-theme-installer,v 1.2 2010/03/24 22:53:55 ajacoutot Exp $
+--- icon-theme-installer.orig	Wed Mar 24 23:34:30 2010
++++ icon-theme-installer	Wed Mar 24 23:33:49 2010
 @@ -1,4 +1,4 @@
 -#!/bin/bash
-+#!/bin/sh
++#!${LOCALBASE}/bin/bash
  
  # icon-theme-installer
  # Copyright (C) 2006 Novell, Inc.
+@@ -101,12 +101,12 @@ if test -z "$INSTALL_BASE_DIR"; then
+ 	exit 1
+ fi
+ 
+-if test ! -x $(echo "$MKINSTALLDIRS_EXEC" | cut -f1 -d' '); then
++if ! which $(echo "$MKINSTALLDIRS_EXEC" | cut -f1 -d' '); then
+ 	echo "Cannot find '$MKINSTALLDIRS_EXEC'; You probably want to pass -m \$(mkinstalldirs)"
+ 	exit 1
+ fi
+ 
+-if test ! -x $(echo "$INSTALL_DATA_EXEC" | cut -f1 -d' '); then
++if ! which $(echo "$INSTALL_DATA_EXEC" | cut -f1 -d' '); then
+ 	echo "Cannot find '$INSTALL_DATA_EXEC'; You probably want to pass -x \$(INSTALL_DATA)"
+ 	exit 1
+ fi

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/03/24 21:56:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/03/24 22:53:55 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ COMMENT=		personal photo management application for GNOME
 
 GNOME_VERSION=		0.6.1.5
 GNOME_PROJECT=		f-spot
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		graphics
 
@@ -42,7 +42,8 @@ USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			::shells/bash
 RUN_DEPENDS=		::graphics/libgphoto2 \
 			::x11/gnome/mono-gnome \
 			::x11/gnome/screensaver
@@ -52,7 +53,6 @@ LIB_DEPENDS+=		exif::graphics/libexif \
 
 MODGCONF2_SCHEMAS_DIR=	f-spot
 
-USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
@@ -70,5 +70,8 @@ DLLMAP_FILES=		lib/dbus-sharp-glib/NDesk.DBus.GLib.dll.config \
 			src/FSpot.Utils.dll.config \
 			src/FSpot.Widgets.dll.config.in \
 			src/f-spot.exe.config.in
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/icon-theme-installer
 
 .include <bsd.port.mk>
