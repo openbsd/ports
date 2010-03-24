@@ -1,2 +1,2 @@
-youtube-dl is a small command-line program for downloading videos
-from YouTube.com.
+youtube-dl is a small command-line program for downloading videos from
+YouTube.com. To retrieve RTMP streams, install the rtmpdump package.
