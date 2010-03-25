@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.775 2010/03/24 19:04:46 landry Exp $
+# $OpenBSD: Makefile,v 1.776 2010/03/25 10:28:10 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -231,6 +231,7 @@
      SUBDIR += opencm
      SUBDIR += openmpi
      SUBDIR += openocd
+     SUBDIR += orc
      SUBDIR += p5-Algorithm-Annotate
      SUBDIR += p5-Algorithm-C3
      SUBDIR += p5-Algorithm-CurveFit
