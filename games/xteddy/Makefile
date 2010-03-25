@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.20 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2010/03/25 22:32:43 jasper Exp $
 
 COMMENT=	cuddlesome teddy for the X11 desktop
 
-DISTNAME=	xteddy-2.0.2
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	xteddy-2.2
 CATEGORIES=	games
 
 HOMEPAGE=	http://staffwww.itn.liu.se/~stegu/xteddy/
 MASTER_SITES=	${HOMEPAGE}
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE SM X11 Xext c jpeg m png pthread-stubs tiff ungif \
-			xcb z
+WANTLIB += X11 Xext c
 
-LIB_DEPENDS=	Imlib.>=19::graphics/imlib
+LIB_DEPENDS=	Imlib2::graphics/imlib2
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=  CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
