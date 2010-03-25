@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_Unix_configure_ac,v 1.1 2010/03/25 08:10:56 jasper Exp $
+--- src/Unix/configure.ac.orig	Thu Mar 25 08:53:10 2010
++++ src/Unix/configure.ac	Thu Mar 25 08:54:55 2010
+@@ -194,14 +194,23 @@ if [[ "x$WANT_SDL" = "xno" ]]; then
+ fi
+ 
+ dnl We want pthreads. Try libpthread first, then libc_r (FreeBSD), then PTL.
++dnl For OpenBSD we should use -pthread
+ HAVE_PTHREADS=yes
+-AC_CHECK_LIB(pthread, pthread_create, , [
+-  AC_CHECK_LIB(c_r, pthread_create, , [
+-    AC_CHECK_LIB(PTL, pthread_create, , [
+-      HAVE_PTHREADS=no
++case `uname` in
++  OpenBSD*)
++    LIBS="$LIBS -pthread"
++    ;;
++  *)
++    AC_CHECK_LIB(pthread, pthread_create, , [
++      AC_CHECK_LIB(c_r, pthread_create, , [
++        AC_CHECK_LIB(PTL, pthread_create, , [
++          HAVE_PTHREADS=no
++        ])
++      ])
+     ])
+-  ])
+-])
++    ;;
++esac
++
+ if [[ "x$HAVE_PTHREADS" = "xyes" ]]; then
+   AC_DEFINE(HAVE_PTHREADS, 1, [Define if pthreads are available.])
+ fi

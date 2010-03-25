@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Unix_sys_unix_cpp,v 1.1 2002/05/07 03:05:47 form Exp $
---- src/Unix/sys_unix.cpp.orig	Tue May  7 01:01:24 2002
-+++ src/Unix/sys_unix.cpp	Tue May  7 01:01:47 2002
-@@ -122,7 +122,7 @@ void SysAddFloppyPrefs(void)
- #if defined(__linux__)
- 	PrefsAddString("floppy", "/dev/fd0H1440");
- 	PrefsAddString("floppy", "/dev/fd1H1440");
+$OpenBSD: patch-src_Unix_sys_unix_cpp,v 1.2 2010/03/25 08:10:56 jasper Exp $
+--- src/Unix/sys_unix.cpp.orig	Thu Mar 25 08:56:59 2010
++++ src/Unix/sys_unix.cpp	Thu Mar 25 08:57:30 2010
+@@ -128,7 +128,7 @@ void SysAddFloppyPrefs(void)
+ 		PrefsAddString("floppy", "/dev/fd0");
+ 		PrefsAddString("floppy", "/dev/fd1");
+ 	}
 -#elif defined(__NetBSD__)
 +#elif defined(__NetBSD__) || defined(__OpenBSD__)
  	PrefsAddString("floppy", "/dev/fd0a");
  	PrefsAddString("floppy", "/dev/fd1a");
- #else
+ #elif defined(__APPLE__) && defined(__MACH__)

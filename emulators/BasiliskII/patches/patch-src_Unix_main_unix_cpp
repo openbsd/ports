@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_Unix_main_unix_cpp,v 1.1.1.1 2002/05/06 13:41:32 form Exp $
---- src/Unix/main_unix.cpp.orig	Sun Mar 17 19:22:58 2002
-+++ src/Unix/main_unix.cpp	Sun Mar 17 19:24:20 2002
-@@ -524,6 +524,9 @@ int main(int argc, char **argv)
- 
- 	// POSIX threads available, start 60Hz thread
- 	pthread_attr_init(&tick_thread_attr);
+$OpenBSD: patch-src_Unix_main_unix_cpp,v 1.2 2010/03/25 08:10:56 jasper Exp $
+--- src/Unix/main_unix.cpp.orig	Thu Mar 25 08:55:21 2010
++++ src/Unix/main_unix.cpp	Thu Mar 25 08:56:01 2010
+@@ -981,6 +981,9 @@ static void sigint_handler(...)
+ void Set_pthread_attr(pthread_attr_t *attr, int priority)
+ {
+ 	pthread_attr_init(attr);
 +#ifdef __OpenBSD__
 +#undef _POSIX_THREAD_PRIORITY_SCHEDULING
 +#endif
  #if defined(_POSIX_THREAD_PRIORITY_SCHEDULING)
+ 	// Some of these only work for superuser
  	if (geteuid() == 0) {
- 		pthread_attr_setinheritsched(&tick_thread_attr, PTHREAD_EXPLICIT_SCHED);

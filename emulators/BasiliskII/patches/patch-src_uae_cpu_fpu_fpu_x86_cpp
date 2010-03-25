@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_uae_cpu_fpu_fpu_x86_cpp,v 1.1.1.1 2002/05/06 13:41:32 form Exp $
---- src/uae_cpu/fpu/fpu_x86.cpp.orig	Fri Mar 15 17:20:30 2002
-+++ src/uae_cpu/fpu/fpu_x86.cpp	Fri Mar 15 17:21:28 2002
-@@ -649,7 +649,7 @@ static uae_s16 extended_to_signed_16( fl
- 	} */
+$OpenBSD: patch-src_uae_cpu_fpu_fpu_x86_cpp,v 1.2 2010/03/25 08:10:56 jasper Exp $
+--- src/uae_cpu/fpu/fpu_x86.cpp.orig	Thu Mar 25 08:58:23 2010
++++ src/uae_cpu/fpu/fpu_x86.cpp	Thu Mar 25 08:58:59 2010
+@@ -565,7 +565,7 @@ PRIVATE uae_s16 FFPU extended_to_signed_16 ( fpu_regis
  	
- 	_ASM(	"fldt	%2\n"
+ 	__asm__ __volatile__(
+ 			"fldt	%2\n"
 -			"fistp	%0\n"
 +			"fistpl	%0\n"
  			"fnstsw	%1\n"
  		:	"=m" (tmp), "=m" (sw_temp)
- 		:	"m" (*f)
-@@ -689,7 +689,7 @@ static uae_s8 extended_to_signed_8( floa
- 	} */
+ 		:	"m" (f)
+@@ -605,7 +605,7 @@ PRIVATE uae_s8 FFPU extended_to_signed_8 ( fpu_registe
  	
- 	_ASM(	"fldt	%2\n"
+ 	__asm__ __volatile__(
+ 			"fldt	%2\n"
 -			"fistp	%0\n"
 +			"fistpl	%0\n"
  			"fnstsw	%1\n"
  		:	"=m" (tmp), "=m" (sw_temp)
- 		:	"m" (*f)
+ 		:	"m" (f)
