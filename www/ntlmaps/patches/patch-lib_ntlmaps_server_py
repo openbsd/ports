@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_ntlmaps_server_py,v 1.1 2010/03/21 10:50:14 jasper Exp $
+$OpenBSD: patch-lib_ntlmaps_server_py,v 1.2 2010/03/25 21:25:28 sthen Exp $
 
 Log to syslog when startup fails due to missing password in
 configuration file. Closes: Debian #343475
 
 Upstream svn revision 942.
 
---- lib/ntlmaps/server.py.orig	Wed Feb  3 23:02:27 2010
-+++ lib/ntlmaps/server.py	Wed Feb  3 23:06:29 2010
+--- lib/ntlmaps/server.py.orig	Thu Mar 25 21:22:50 2010
++++ lib/ntlmaps/server.py	Thu Mar 25 21:23:39 2010
 @@ -17,8 +17,8 @@
  # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
  #
@@ -22,7 +22,7 @@ Upstream svn revision 942.
          self.watchUpstream = 0
          if not self.config['NTLM_AUTH']['NTLM_TO_BASIC']:
              if not self.config['NTLM_AUTH']['PASSWORD']:
-+            syslog.syslog('ntlmaps: Failed to start - password required in configuration file.')
++                syslog.syslog('ntlmaps: Failed to start - password required in configuration file.')
                  tries = 3
                  print '------------------------'
                  while tries and (not self.config['NTLM_AUTH']['PASSWORD']):
