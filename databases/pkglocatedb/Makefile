@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/01/08 14:00:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/03/25 00:01:05 sthen Exp $
 
 COMMENT =		database of packages for use with locate(1)
 
+# if PKGNAME changes, infrastructure/package/check-plist should be synced
 DISTNAME =		pkglocatedb-0.0
 DISTFILES =
 
