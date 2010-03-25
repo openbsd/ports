@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/25 09:23:18 laurent Exp $
+# $OpenBSD: Makefile,v 1.1 2010/03/25 09:40:11 jasper Exp $
 
 COMMENT =		vi-like minimalists web browser
 
