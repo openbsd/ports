@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/12/20 00:35:23 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/03/25 20:42:50 jasper Exp $
 @pkgpath x11/qvwm,esound,imlib
 @pkgpath x11/qvwm,esound
+@pkgpath x11/qvwm,imlib
 @bin bin/qvwm
 @man man/man1/qvwm.1x
 share/qvwm/

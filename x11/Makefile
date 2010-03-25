@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.410 2010/03/24 16:19:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.411 2010/03/25 20:42:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -198,7 +198,6 @@
      SUBDIR += qt4
      SUBDIR += quadkonsole
      SUBDIR += qvwm
-     SUBDIR += qvwm,imlib
      SUBDIR += qwt
      SUBDIR += ratmen
      SUBDIR += ratpoison
