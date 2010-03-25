@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/12/21 18:11:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/03/25 10:39:38 giovanni Exp $
 %%SHARED%%
 @bin bin/jpilot
 @bin bin/jpilot-dump
@@ -56,6 +56,7 @@ share/jpilot/CalendarDB-PDat.pdb
 share/jpilot/ContactsDB-PAdd.pdb
 share/jpilot/DatebookDB.pdb
 share/jpilot/ExpenseDB.pdb
+share/jpilot/MananaDB.pdb
 share/jpilot/Memo32DB.pdb
 share/jpilot/MemoDB.pdb
 share/jpilot/MemosDB-PMem.pdb

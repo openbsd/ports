@@ -1,0 +1,11 @@
+$OpenBSD: patch-po_POTFILES_in,v 1.1 2010/03/25 10:39:38 giovanni Exp $
+--- po/POTFILES.in.orig	Wed Mar 24 09:17:59 2010
++++ po/POTFILES.in	Wed Mar 24 09:18:09 2010
+@@ -1,6 +1,7 @@
+ address.c
+ address_gui.c
+ alarms.c
++calendar.c
+ category.c
+ contact.c
+ dat.c

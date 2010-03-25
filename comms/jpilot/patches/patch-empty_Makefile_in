@@ -1,0 +1,12 @@
+$OpenBSD: patch-empty_Makefile_in,v 1.1 2010/03/25 10:39:38 giovanni Exp $
+--- empty/Makefile.in.orig	Wed Mar 24 16:15:00 2010
++++ empty/Makefile.in	Wed Mar 24 16:17:54 2010
+@@ -287,7 +287,7 @@ install-pdbDATA: $(pdb_DATA)
+ 	test -z "$(pdbdir)" || $(mkdir_p) "$(DESTDIR)$(pdbdir)"
+ 	@list='$(pdb_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f="`echo $$p | sed -e 's|^.*/||'`"; \
++	  f="`echo $$p | sed -e 's|^.*/||' -e 's|ñ|n|'`"; \
+ 	  echo " $(pdbDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pdbdir)/$$f'"; \
+ 	  $(pdbDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pdbdir)/$$f"; \
+ 	done

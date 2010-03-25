@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2009/12/21 18:11:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/03/25 10:39:38 giovanni Exp $
 
 COMMENT=	desktop organizer software for the palm pilot
 
-DISTNAME=	jpilot-1.6.2
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	jpilot-1.8.0
 CATEGORIES=	comms palm
 
 MASTER_SITES=	${HOMEPAGE}/
@@ -24,7 +23,7 @@ WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs xcb z
 
-LIB_DEPENDS=	pisock.>=9::comms/pilot-link \
+LIB_DEPENDS=	pisock.>=11::comms/pilot-link \
 		gcrypt.>=14::security/libgcrypt \
 		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
