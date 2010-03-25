@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmtimer_wmtimer_c,v 1.3 2003/12/19 12:22:41 wilfried Exp $
---- wmtimer/wmtimer.c.orig	2003-09-27 03:35:28.000000000 +0200
-+++ wmtimer/wmtimer.c	2003-12-19 13:09:39.000000000 +0100
+$OpenBSD: patch-wmtimer_wmtimer_c,v 1.4 2010/03/25 06:22:41 jasper Exp $
+--- wmtimer/wmtimer.c.orig	Thu Jan 29 03:45:48 2004
++++ wmtimer/wmtimer.c	Wed Mar 24 17:15:25 2010
 @@ -84,7 +84,7 @@ configState configSt;
  int main(int argc, char *argv[])
  {
@@ -10,16 +10,16 @@ $OpenBSD: patch-wmtimer_wmtimer_c,v 1.3 2003/12/19 12:22:41 wilfried Exp $
    struct tm *thisTime;
    int wminet_mask_width = 64;
    int wminet_mask_height = 64;
-@@ -234,7 +234,7 @@ void parseArgs(int argc, char *argv[])
-     action.bell = 1;
-     break;
+@@ -239,7 +239,7 @@ void parseArgs(int argc, char *argv[])
+ 	  action.bell = 1;
+ 	  break;
  	case 'e':
 -	  strcpy(command, argv[argIndex+1]);
 +	  strlcpy(command, argv[argIndex+1], sizeof(command));
  	  action.command = 1;
  	  break;
  	case 't':
-@@ -594,7 +594,7 @@ void callback(GtkWidget * widget, gpoint
+@@ -599,7 +599,7 @@ void callback(GtkWidget * widget, gpointer data)
    else if ((char *) data == "ok")
    {
      if (tmpAction.command)

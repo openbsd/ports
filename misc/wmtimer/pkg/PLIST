@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/11 22:45:21 naddy Exp $
-bin/wmtimer
+@comment $OpenBSD: PLIST,v 1.2 2010/03/25 06:22:41 jasper Exp $
+@bin bin/wmtimer
