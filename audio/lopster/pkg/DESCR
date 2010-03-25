@@ -1,6 +1,0 @@
-Lopster is a full featured Napster Client developed in C using the 
-GTK user interface.  Napster is a protocol for sharing MP3 files 
-between users.  With Napster, the files stay on the client machine, 
-never passing through the server. The server provides the ability to 
-search for particular files and initiate a direct transfer between the 
-clients. In addition, chat forums similar to IRC are available.
