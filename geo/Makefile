@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/02/01 17:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/03/25 10:14:04 kevlo Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
  
      SUBDIR =
@@ -7,6 +7,7 @@
      SUBDIR += geoclue
      SUBDIR += geos
      SUBDIR += globe
+     SUBDIR += gmapcatcher
      SUBDIR += gpsbabel
      SUBDIR += gpstk
      SUBDIR += gpx-viewer
