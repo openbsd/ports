@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.452 2010/03/25 09:53:16 laurent Exp $
+# $OpenBSD: Makefile,v 1.453 2010/03/25 21:57:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -326,6 +326,7 @@
      SUBDIR += polipo
      SUBDIR += pound
      SUBDIR += privoxy
+     SUBDIR += puppet-dashboard
      SUBDIR += py-CherryPy
      SUBDIR += py-beaker
      SUBDIR += py-beautifulsoup
