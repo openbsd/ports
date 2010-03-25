@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 19:26:35 espie Exp $
-bin/xtraceroute
+@comment $OpenBSD: PLIST,v 1.8 2010/03/25 06:30:15 jasper Exp $
+@bin bin/xtraceroute
 @man man/man1/xtraceroute.1
 share/locale/
 share/locale/es/
@@ -18,3 +18,5 @@ share/xtraceroute/
 share/xtraceroute/earth.png
 share/xtraceroute/hosts.cache
 share/xtraceroute/networks.cache
+share/xtraceroute/night.png
+share/xtraceroute/xtraceroute-resolve-location.sh

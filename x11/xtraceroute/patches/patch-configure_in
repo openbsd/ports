@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2010/03/25 06:30:15 jasper Exp $
+--- configure.in.orig	Wed Mar 24 19:12:38 2010
++++ configure.in	Wed Mar 24 19:12:41 2010
+@@ -156,7 +156,7 @@ AC_CHECK_LIB(gtkgl-2.0, gtk_gl_area_new, have_libgtkgl
+ if test "x$have_libgtkglarea2" = "x"; then
+ 	AC_MSG_ERROR([Missing gtkglarea-2.0 library])
+ else	
+-	CFLAGS="$CFLAGS -I/usr/include/gtkgl-2.0/"
++	CFLAGS="$CFLAGS `pkg-config --cflags gtkgl-2.0`"
+ 	LIBS="$LIBS -lgtkgl-2.0"
+ fi
+ dnl AM_PATH_GTKGL([LIBS="$LIBS $GTKGL_LIBS" CFLAGS="$CFLAGS $GTKGL_CFLAGS"],
