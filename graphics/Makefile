@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2010/03/23 14:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.258 2010/03/25 22:08:58 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -50,7 +50,6 @@
      SUBDIR += ffmpeg
      SUBDIR += ffmpegthumbnailer
      SUBDIR += flash
-     SUBDIR += fnlib
      SUBDIR += freeglut
      SUBDIR += freeimage
      SUBDIR += fswebcam
