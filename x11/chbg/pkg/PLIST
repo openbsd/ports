@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:26:28 espie Exp $
-bin/chbg
+@comment $OpenBSD: PLIST,v 1.4 2010/03/25 20:54:42 jasper Exp $
+@bin bin/chbg
 @man man/man1/chbg.1
 share/control-center/
 share/control-center/.data/

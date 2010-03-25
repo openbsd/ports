@@ -1,9 +1,9 @@
-$OpenBSD: gcc-src_Makefile_in,v 1.1 2004/03/13 15:40:01 sturm Exp $
---- src/Makefile.in.orig	2004-03-11 20:20:25.000000000 +0100
-+++ src/Makefile.in	2004-03-11 20:21:49.000000000 +0100
-@@ -154,6 +154,9 @@ uninstall-binPROGRAMS:
- .c.o:
- 	$(COMPILE) -c $<
+$OpenBSD: gcc-src_Makefile_in,v 1.2 2010/03/25 20:54:42 jasper Exp $
+--- src/Makefile.in.orig	Thu Mar  9 22:56:49 2006
++++ src/Makefile.in	Thu Mar 25 21:44:37 2010
+@@ -160,6 +160,9 @@ uninstall-binPROGRAMS:
+ 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+ 	done
  
 +config.o: $(srcdir)/config.c
 +	$(COMPILE) -O0 -c $(srcdir)/config.c
