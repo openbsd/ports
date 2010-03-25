@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/08/06 13:23:35 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/03/25 10:32:53 giovanni Exp $
 @bin bin/pilot-addresses
 @bin bin/pilot-clip
 @bin bin/pilot-csd
@@ -88,8 +88,8 @@ lib/libpisync.la
 lib/pkgconfig/
 lib/pkgconfig/pilot-link.pc
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.0/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.0/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.1/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.1/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/PDA/Pilot.pm
