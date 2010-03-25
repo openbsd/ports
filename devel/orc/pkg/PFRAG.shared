@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/03/25 10:23:26 sthen Exp $
+@lib lib/liborc-0.4.so.${LIBorc-0.4_VERSION}
+@lib lib/liborc-float-0.4.so.${LIBorc-float-0.4_VERSION}
+@lib lib/liborc-pixel-0.4.so.${LIBorc-pixel-0.4_VERSION}
+@lib lib/liborc-test-0.4.so.${LIBorc-test-0.4_VERSION}

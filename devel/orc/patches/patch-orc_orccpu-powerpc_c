@@ -1,0 +1,70 @@
+$OpenBSD: patch-orc_orccpu-powerpc_c,v 1.1.1.1 2010/03/25 10:23:26 sthen Exp $
+--- orc/orccpu-powerpc.c.orig	Tue Jul  7 17:09:26 2009
++++ orc/orccpu-powerpc.c	Mon Mar 22 23:18:55 2010
+@@ -50,6 +50,11 @@
+ #include <sys/sysctl.h>
+ #endif
+ 
++#if defined(__OpenBSD__)
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <machine/cpu.h>
++#endif
+ 
+ /***** powerpc *****/
+ 
+@@ -63,7 +68,7 @@ orc_profile_stamp_tb(void)
+ }
+ #endif
+ 
+-#if !defined(__FreeBSD__) && !defined(__FreeBSD_kernel__) && !defined(__APPLE__) && !defined(__linux__)
++#if !defined(__FreeBSD__) && !defined(__FreeBSD_kernel__) && !defined(__OpenBSD__) && !defined(__APPLE__) && !defined(__linux__)
+ static void
+ test_altivec (void * ignored)
+ {
+@@ -95,6 +100,27 @@ orc_check_altivec_sysctl_bsd (void)
+ }
+ #endif
+ 
++#if defined(__OpenBSD__)
++static unsigned long
++orc_check_altivec_sysctl_openbsd (void)
++{
++  unsigned long cpu_flags = 0;
++  int mib[2], ret, vu;
++  size_t len;
++
++  mib[0] = CTL_MACHDEP;
++  mib[1] = CPU_ALTIVEC;
++
++  len = sizeof(vu);
++  ret = sysctl(mib, 2, &vu, &len, NULL, 0);
++  if (!ret && vu) {
++    cpu_flags |= ORC_TARGET_ALTIVEC_ALTIVEC;
++  }
++
++  return cpu_flags;
++}
++#endif
++
+ #if defined(__linux__)
+ static unsigned long
+ orc_check_altivec_proc_auxv (void)
+@@ -148,7 +174,7 @@ out:
+ }
+ #endif
+ 
+-#if !defined(__FreeBSD__) && !defined(__FreeBSD_kernel__) && !defined(__APPLE__) && !defined(__linux__)
++#if !defined(__FreeBSD__) && !defined(__FreeBSD_kernel__) && !defined(__OpenBSD__) && !defined(__APPLE__) && !defined(__linux__)
+ static void
+ orc_check_altivec_fault (void)
+ {
+@@ -166,6 +192,8 @@ orc_cpu_detect_arch(void)
+ {
+ #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__APPLE__)
+   orc_check_altivec_sysctl_bsd();
++#elif defined(__OpenBSD__)
++  orc_check_altivec_sysctl_openbsd();
+ #elif defined(__linux__)
+   orc_check_altivec_proc_auxv();
+ #else

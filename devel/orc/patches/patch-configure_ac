@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2010/03/25 10:23:26 sthen Exp $
+--- configure.ac.orig	Wed Mar 17 19:16:07 2010
++++ configure.ac	Wed Mar 17 19:16:50 2010
+@@ -113,7 +113,7 @@ AC_DEFINE(ORC_EXPORTS, 1, [Defined for compiling inter
+ ORC_CFLAGS="$ORC_CFLAGS -I\$(top_srcdir)"
+ AC_SUBST(ORC_CFLAGS)
+ 
+-ORC_LIBS="\$(top_builddir)/orc/liborc-$ORC_MAJORMINOR.la $LIBM $LIBRT"
++ORC_LIBS="\$(top_builddir)/orc/liborc-$ORC_MAJORMINOR.la -pthread $LIBM $LIBRT"
+ AC_SUBST(ORC_LIBS)
+ 
+ #CFLAGS=`echo $CFLAGS | sed s/O2/O0/`
