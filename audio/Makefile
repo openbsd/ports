@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2010/02/01 17:00:12 espie Exp $
+# $OpenBSD: Makefile,v 1.239 2010/03/25 22:03:00 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -76,7 +76,6 @@
      SUBDIR += libsndfile
      SUBDIR += libvorbis
      SUBDIR += libworkman
-     SUBDIR += lopster
      SUBDIR += mac
      SUBDIR += madplay
      SUBDIR += midish
