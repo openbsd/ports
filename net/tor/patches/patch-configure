@@ -1,6 +1,7 @@
---- configure.orig	Tue Jul 28 23:44:16 2009
-+++ configure	Mon Aug 10 23:02:40 2009
-@@ -19708,7 +19708,7 @@ LOCALSTATEDIR=`eval echo $localstatedir`
+$OpenBSD: patch-configure,v 1.12 2010/03/25 05:35:38 benoit Exp $
+--- configure.orig	Mon Mar 15 23:12:52 2010
++++ configure	Thu Mar 25 06:19:11 2010
+@@ -19765,7 +19765,7 @@ LOCALSTATEDIR=`eval echo $localstatedir`
  # Set CFLAGS _after_ all the above checks, since our warnings are stricter
  # than autoconf's macros like.
  if test "$GCC" = yes; then
