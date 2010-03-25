@@ -1,0 +1,13 @@
+The Puppet Dashboard has been installed into ${INSTDIR}
+
+To configure your database you must first edit config/database.ymla
+and then run the following command from ${INSTDIR}:
+
+	$ rake install
+
+After that you can start your server by calling:
+
+	$ script/server
+
+This will start a Rails server on port 3000. For more information on
+Puppet Dashboard, please refer to ${INSTDIR}/README.markdown
