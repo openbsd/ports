@@ -1,0 +1,3 @@
+GMapCatcher is an offline maps viewer. It downloads CloudMade, 
+OpenStreetMap or Google Map tiles automatically, display them using 
+a specific GUI. User can view the maps while offline. 

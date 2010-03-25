@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_xmlUtils_py,v 1.1.1.1 2010/03/25 10:13:26 kevlo Exp $
+--- src/xmlUtils.py.orig	Thu Mar 25 10:51:15 2010
++++ src/xmlUtils.py	Thu Mar 25 10:51:38 2010
+@@ -1,3 +1,4 @@
++from __future__ import with_statement
+ from mapUtils import altitude_to_zoom
+ 
+ def kml_to_markers(strFileName, marker):
+@@ -15,7 +16,7 @@ def kml_to_markers(strFileName, marker):
+             fileString = unicode(f.read(), errors='ignore')            
+         dom = parseString(fileString)
+         PlacemarkElements = dom.getElementsByTagName("Placemark")
+-    except Exception as excInst:
++    except Exception, excInst:
+         return excInst
+ 
+     for element in PlacemarkElements:

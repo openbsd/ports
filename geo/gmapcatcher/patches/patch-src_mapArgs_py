@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_mapArgs_py,v 1.1.1.1 2010/03/25 10:13:26 kevlo Exp $
+--- src/mapArgs.py.orig	Thu Mar 25 12:49:21 2010
++++ src/mapArgs.py	Thu Mar 25 12:49:55 2010
+@@ -38,9 +38,9 @@ class MapArgs():
+         print '                very useful to download maps of entire world'
+         print ' '
+         print 'SAMPLE USAGE'
+-        print '  download.py --location="Paris, France"'
+-        print '  download.py --min-zoom=13 --full-range'
+-        print '  download.py --latitude=37.979180 --longitude=23.716647'
++        print '  gmapcatcher-download --location="Paris, France"'
++        print '  gmapcatcher-download --min-zoom=13 --full-range'
++        print '  gmapcatcher-download --latitude=37.979180 --longitude=23.716647'
+ 
+     def __init__(self, arrArgs=()):
+         if len(arrArgs) > 1:
