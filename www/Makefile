@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.451 2010/02/01 17:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.452 2010/03/25 09:53:16 laurent Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -436,6 +436,7 @@
      SUBDIR += xapian-omega
      SUBDIR += xcache
      SUBDIR += xmhtml
+     SUBDIR += xxxterm
      SUBDIR += youtube-dl
      SUBDIR += yui
      SUBDIR += zendframework
