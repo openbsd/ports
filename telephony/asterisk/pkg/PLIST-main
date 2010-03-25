@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2010/02/26 12:44:14 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2010/03/25 12:01:47 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict chan_unistim-*
@@ -970,6 +970,9 @@ share/asterisk/static-http/docs/node277.html
 share/asterisk/static-http/docs/node278.html
 share/asterisk/static-http/docs/node279.html
 share/asterisk/static-http/docs/node28.html
+share/asterisk/static-http/docs/node280.html
+share/asterisk/static-http/docs/node281.html
+share/asterisk/static-http/docs/node282.html
 share/asterisk/static-http/docs/node29.html
 share/asterisk/static-http/docs/node3.html
 share/asterisk/static-http/docs/node30.html
@@ -1330,6 +1333,9 @@ share/doc/asterisk/node277.html
 share/doc/asterisk/node278.html
 share/doc/asterisk/node279.html
 share/doc/asterisk/node28.html
+share/doc/asterisk/node280.html
+share/doc/asterisk/node281.html
+share/doc/asterisk/node282.html
 share/doc/asterisk/node29.html
 share/doc/asterisk/node3.html
 share/doc/asterisk/node30.html

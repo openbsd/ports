@@ -1,6 +1,12 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.9 2009/12/13 12:11:29 sthen Exp $
---- contrib/scripts/safe_asterisk.orig	Tue Dec 16 19:55:38 2008
-+++ contrib/scripts/safe_asterisk	Fri Apr 24 15:01:35 2009
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.10 2010/03/25 12:01:47 sthen Exp $
+
+- more useful defaults
+- create /var/run/asterisk with sane ownership/perms
+- shell portability fix (s/function//)
+- use pkill, it's slightly less unportable than killall
+
+--- contrib/scripts/safe_asterisk.orig	Tue Jan 12 03:24:05 2010
++++ contrib/scripts/safe_asterisk	Thu Mar 25 11:47:50 2010
 @@ -2,9 +2,9 @@
  # vim:textwidth=80:tabstop=4:shiftwidth=4:smartindent:autoindent
  
@@ -35,25 +41,32 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.9 2009/12/13 12:11:29 sthen Ex
 -function message() {
 +message() {
  	echo "$1" >&2
- 	if [ "$SYSLOG" != "" ]; then
+ 	if test "x$SYSLOG" != "x" ; then
  	    logger -p "${SYSLOG}.warn" -t safe_asterisk[$$] "$1"
-@@ -91,6 +92,12 @@ else
- 	# set the process's filemax to whatever set above
- 	ulimit -n $MAXFILES
+@@ -42,6 +43,19 @@ function message() {
+ 	fi
+ }
  
++# Create the directory for the control socket if required. As of 1.6.0.26,
++# Asterisk tries to create this itself at startup but doesn't give suitable
++# ownership. This must be created before the 'check if asterisk is already
++# running' below, since that is enough to get the dir created.
++if test `id -u` == 0 ; then
 +	varrundir=`dirname $ASTPIDFILE`
 +	if [ ! -d $varrundir ]; then
 +		mkdir -p $varrundir
 +		[ -n "$VARRUNOWNER" ] && chown $VARRUNOWNER $varrundir
 +		chmod 770 $varrundir
 +	fi
- fi
- 
- if test "x$UMASK" != "x"; then
-@@ -192,7 +199,7 @@ run_asterisk()
++fi
++
+ # Check if Asterisk is already running.  If it is, then bug out, because
+ # starting safe_asterisk when Asterisk is running is very bad.
+ VERSION=`${ASTSBINDIR}/asterisk -rx 'core show version'`
+@@ -186,7 +200,7 @@ run_asterisk()
+ 		message "Automatically restarting Asterisk."
  		sleep $SLEEPSECS
- 		if [ $KILLALLMPG123 ]
- 		then
+ 		if test "0$KILLALLMPG123" -gt "0" ; then
 -			killall -9 mpg123
 +			pkill -9 mpg123
  		fi

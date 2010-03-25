@@ -1,0 +1,41 @@
+$OpenBSD: patch-main_asterisk_c,v 1.12 2010/03/25 12:01:47 sthen Exp $
+
+from upstream ticket #17076; don't chgrp /var/run/asterisk
+unless it was automatically created
+
+
+--- main/asterisk.c.orig	Thu Feb 25 21:24:06 2010
++++ main/asterisk.c	Thu Mar 25 08:27:17 2010
+@@ -2929,7 +2929,7 @@ int main(int argc, char *argv[])
+ 	FILE *f;
+ 	sigset_t sigs;
+ 	int num;
+-	int isroot = 1;
++	int isroot = 1, rundir_exists = 0;
+ 	char *buf;
+ 	const char *runuser = NULL, *rungroup = NULL;
+ 	char *remotesock = NULL;
+@@ -3118,8 +3118,12 @@ int main(int argc, char *argv[])
+ 
+ 	/* It's common on some platforms to clear /var/run at boot.  Create the
+ 	 * socket file directory before we drop privileges. */
+-	if (mkdir(ast_config_AST_RUN_DIR, 0755) && errno != EEXIST) {
+-		ast_log(LOG_WARNING, "Unable to create socket file directory.  Remote consoles will not be able to connect! (%s)\n", strerror(x));
++	if (mkdir(ast_config_AST_RUN_DIR, 0755)) {
++		if (errno == EEXIST) {
++			rundir_exists = 1;
++		} else {
++			ast_log(LOG_WARNING, "Unable to create socket file directory.  Remote consoles will not be able to connect! (%s)\n", strerror(x));
++		}
+ 	}
+ 
+ #ifndef __CYGWIN__
+@@ -3135,7 +3139,7 @@ int main(int argc, char *argv[])
+ 			ast_log(LOG_WARNING, "No such group '%s'!\n", rungroup);
+ 			exit(1);
+ 		}
+-		if (chown(ast_config_AST_RUN_DIR, -1, gr->gr_gid)) {
++		if (!rundir_exists && chown(ast_config_AST_RUN_DIR, -1, gr->gr_gid)) {
+ 			ast_log(LOG_WARNING, "Unable to chgrp run directory to %d (%s)\n", (int) gr->gr_gid, rungroup);
+ 		}
+ 		if (setgid(gr->gr_gid)) {

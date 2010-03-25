@@ -7,10 +7,3 @@ into /etc/rc.local:
 if [ -x ${PREFIX}/sbin/safe_asterisk ]; then
         echo -n ' asterisk';   ${PREFIX}/sbin/safe_asterisk
 fi
-
-This uses safe_asterisk which monitors for abnormal termination
-and restarts the daemon, and also creates the directory for the
-control socket and pid file (by default, /var/run/asterisk).
-
-If you prefer not to use safe_asterisk, you must create this
-directory yourself since /var/run is cleared at boot.
