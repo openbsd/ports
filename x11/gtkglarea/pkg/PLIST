@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/12/30 00:35:14 naddy Exp $
-include/gtkgl/
-include/gtkgl/gdkgl.h
-include/gtkgl/gtkglarea.h
-lib/libgtkgl.a
-lib/libgtkgl.la
-share/aclocal/gtkgl.m4
-share/doc/gtkglarea/
-share/doc/gtkglarea/HOWTO.txt
-share/doc/gtkglarea/gdkgl.txt
-share/doc/gtkglarea/gtkglarea.txt
+@comment $OpenBSD: PLIST,v 1.8 2010/03/25 06:27:44 jasper Exp $
 %%SHARED%%
+include/gtkgl-2.0/
+include/gtkgl-2.0/gtkgl/
+include/gtkgl-2.0/gtkgl/gdkgl.h
+include/gtkgl-2.0/gtkgl/gtkglarea.h
+lib/libgtkgl-2.0.a
+lib/libgtkgl-2.0.la
+lib/pkgconfig/
+lib/pkgconfig/gtkgl-2.0.pc
+share/doc/gtkglarea2/
+share/doc/gtkglarea2/HOWTO.txt
+share/doc/gtkglarea2/gdkgl.txt
+share/doc/gtkglarea2/gtkglarea.txt
