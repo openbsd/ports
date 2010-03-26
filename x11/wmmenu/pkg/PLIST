@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:32 espie Exp $
-bin/wmmenu
+@comment $OpenBSD: PLIST,v 1.3 2010/03/26 11:28:15 jasper Exp $
+@bin bin/wmmenu
 share/doc/wmmenu/
 share/doc/wmmenu/README
 share/examples/wmmenu/

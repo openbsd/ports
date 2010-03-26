@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 20:04:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/03/26 11:28:15 jasper Exp $
 
 COMMENT=		wm-dockapp; A popup menu of icons that launch programs
 
 DISTNAME=		wmmenu-1.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	x11 x11/windowmaker
 
 HOMEPAGE=		http://www.fcoutant.freesurf.fr/wmmenu.html
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,9 +27,8 @@ FLAVORS=		gdk_pixbuf
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgdk_pixbuf}
-MAKE_FLAGS=		GDKPIXBUF=1
-LIB_DEPENDS+=		gdk_pixbuf_xlib::graphics/gdk-pixbuf
-WANTLIB+=		gdk glib gmodule gtk intl jpeg png tiff z
+MAKE_FLAGS=		GDKPIXBUF2=1
+LIB_DEPENDS+=		gdk_pixbuf_xlib-2.0::x11/gtk+2
 .endif
 
 WRKDIST=		${WRKDIR}/wmmenu
