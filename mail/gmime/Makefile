@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2010/03/21 09:58:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/03/26 15:04:40 ajacoutot Exp $
 
 COMMENT=		MIME messages creation and parsing library (v2.2)
 
-DISTNAME=		gmime-2.2.25
+DISTNAME=		gmime-2.2.26
 
 SHARED_LIBS +=	gmime-2.0            2.0      # .4.22
 
@@ -29,8 +29,7 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--with-libiconv-prefix="${LOCALBASE}" \
-			--disable-mono \
-			--disable-gtkdoc
+			--disable-mono
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
