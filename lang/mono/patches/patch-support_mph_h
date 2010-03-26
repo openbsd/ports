@@ -1,12 +1,29 @@
-$OpenBSD: patch-support_mph_h,v 1.1.1.1 2008/10/15 13:34:10 robert Exp $
---- support/mph.h.orig	Tue Oct  7 17:12:09 2008
-+++ support/mph.h	Tue Oct  7 17:12:13 2008
-@@ -131,7 +131,7 @@ typedef gint64 suseconds_t;
+$OpenBSD: patch-support_mph_h,v 1.2 2010/03/26 10:40:44 robert Exp $
+--- support/mph.h.orig	Fri Sep 25 16:58:14 2009
++++ support/mph.h	Thu Mar 25 16:41:41 2010
+@@ -36,7 +36,7 @@
+ #include <stdint.h>             /* for SIZE_MAX */
+ #endif
  
- #define _mph_return_val_if_cb_(val, ret, cb) G_STMT_START{ \
- 	if (cb (val)) { \
--		errno = EOVERFLOW; \
-+		errno = EINVAL; \
- 		return ret; \
- 	}}G_STMT_END
+-#if __APPLE__ || __BSD__ || __FreeBSD__
++#if __APPLE__ || __BSD__ || __FreeBSD__ || __OpenBSD__
+ #define MPH_ON_BSD
+ #endif
+ 
+@@ -46,9 +46,13 @@
+ #define MPH_INTERNAL
+ #endif
+ 
+-#if defined (PLATFORM_WIN32) && !defined (EOVERFLOW)
+-#define EOVERFLOW 75
+-#endif /* def PLATFORM_WIN32 && ndef EOVERFLOW */
++#if !defined(EOVERFLOW)
++#  if defined(PLATFORM_WIN32)
++#    define EOVERFLOW 75
++#  elif defined(__OpenBSD__)
++#    define EOVERFLOW 87
++#  endif
++#endif /* !defined(EOVERFLOW) */
+ 
+ #if !defined (PLATFORM_WIN32)
  
