@@ -1,0 +1,16 @@
+$OpenBSD: patch-mono_io-layer_handles_c,v 1.1 2010/03/26 17:01:02 robert Exp $
+--- mono/io-layer/handles.c.orig	Fri Mar 26 17:57:36 2010
++++ mono/io-layer/handles.c	Fri Mar 26 17:57:52 2010
+@@ -1114,7 +1114,11 @@ void _wapi_handle_unref (gpointer handle)
+ 			 * now, but pthreads doesn't have a
+ 			 * "unlock_and_destroy" atomic function.
+ 			 */
+-			thr_ret = mono_mutex_destroy (&_WAPI_PRIVATE_HANDLES(idx).signal_mutex);
++			do {
++				thr_ret = mono_mutex_destroy (&_WAPI_PRIVATE_HANDLES(idx).signal_mutex);
++				if (thr_ret == EBUSY)
++					sleep(1);
++			} while (thr_ret > 0);
+ 			g_assert (thr_ret == 0);
+ 				
+ 			thr_ret = pthread_cond_destroy (&_WAPI_PRIVATE_HANDLES(idx).signal_cond);
