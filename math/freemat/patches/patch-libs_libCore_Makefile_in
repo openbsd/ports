@@ -1,0 +1,20 @@
+$OpenBSD: patch-libs_libCore_Makefile_in,v 1.4 2010/03/26 12:00:17 espie Exp $
+--- libs/libCore/Makefile.in.orig	Fri Mar 14 16:48:05 2008
++++ libs/libCore/Makefile.in	Fri Mar 26 12:00:26 2010
+@@ -316,12 +316,14 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/helpwidget.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/helpwidget.moc.Po@am__quote@
+ 
++CXXFLAGS_Analyze.cpp = -O1
++
+ .cpp.o:
+-@am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
++@am__fastdepCXX_TRUE@	$(CXXCOMPILE) $(CXXFLAGS_$<) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+ @am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCXX_FALSE@	$(CXXCOMPILE) -c -o $@ $<
++@am__fastdepCXX_FALSE@	$(CXXCOMPILE) $(CXXFLAGS_$<) -c -o $@ $<
+ 
+ .cpp.obj:
+ @am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
