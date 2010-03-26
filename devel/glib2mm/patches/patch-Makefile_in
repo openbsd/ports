@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2009/09/18 10:23:27 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2010/03/26 13:20:37 ajacoutot Exp $
 
 main.cc: In function `void <unnamed>::show_examples()':
 main.cc:40: error: no matching function for call to `Glib::ustring::format(
    std::ios_base&(&)(std::ios_base&), std::_Setprecision, double)'
 
---- Makefile.in.orig	Wed Sep 16 16:50:14 2009
-+++ Makefile.in	Wed Sep 16 16:50:54 2009
-@@ -283,7 +283,7 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-warnings=fatal
+--- Makefile.in.orig	Fri Mar 26 11:48:05 2010
++++ Makefile.in	Fri Mar 26 14:03:29 2010
+@@ -331,7 +331,7 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-warnings=fatal
  @MAINTAINER_MODE_TRUE@src_subdirs = glib/src gio/src
  @ENABLE_DOCUMENTATION_FALSE@doc_subdirs = 
  @ENABLE_DOCUMENTATION_TRUE@doc_subdirs = docs

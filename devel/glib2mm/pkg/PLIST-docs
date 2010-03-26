@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.11 2009/10/04 18:18:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.12 2010/03/26 13:20:37 ajacoutot Exp $
 share/devhelp/
 share/devhelp/books/
 share/devhelp/books/glibmm-${V}/
@@ -651,7 +651,6 @@ share/doc/glibmm-${V}/reference/html/namespacemembers_func_0x77.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_func_0x78.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_type.html
 share/doc/glibmm-${V}/reference/html/namespaces.html
-share/doc/glibmm-${V}/reference/html/namespacesigc.html
 share/doc/glibmm-${V}/reference/html/pages.html
 share/doc/glibmm-${V}/reference/html/since_2_12.html
 share/doc/glibmm-${V}/reference/html/since_2_14.html
