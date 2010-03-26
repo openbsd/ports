@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/26 13:13:12 ajacoutot Exp $
+bin/lat
+lib/lat/
+lib/lat/gnome-keyring-glue.dll
+lib/lat/gnome-keyring-glue.dll.config
+lib/lat/lat.exe
+lib/lat/plugins/
+lib/lat/plugins/ActiveDirectoryCoreViews.dll
+lib/lat/plugins/JpegAttributeViewer.dll
+lib/lat/plugins/PasswordAttributeViewer.dll
+lib/lat/plugins/PosixCoreViews.dll
+lib/pkgconfig/lat-plugins.pc
+@man man/man1/lat.1
+share/application-registry/
+share/application-registry/lat.applications
+share/applications/lat.desktop
+share/gnome/help/lat/
+share/gnome/help/lat/C/
+share/gnome/help/lat/C/figures/
+share/gnome/help/lat/C/figures/lat_window.png
+share/gnome/help/lat/C/lat.xml
+share/gnome/help/lat/C/legal.xml
+share/locale/fr_FR/
+share/locale/fr_FR/LC_MESSAGES/
+share/locale/fr_FR/LC_MESSAGES/lat.mo
+share/locale/it_IT/
+share/locale/it_IT/LC_MESSAGES/
+share/locale/it_IT/LC_MESSAGES/lat.mo
+share/locale/pt_BR/LC_MESSAGES/lat.mo
+share/omf/lat/
+share/omf/lat/lat-C.omf
+share/pixmaps/
+share/pixmaps/lat.png
