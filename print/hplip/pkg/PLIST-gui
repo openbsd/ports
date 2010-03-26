@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-gui,v 1.3 2010/03/21 11:07:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gui,v 1.4 2010/03/26 08:00:03 ajacoutot Exp $
 @conflict hplip-<3.9.6b
-bin/hp-check
 bin/hp-print
 bin/hp-systray
 bin/hp-toolbox
