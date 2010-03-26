@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/03/21 11:26:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/03/26 08:13:31 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (bad)
@@ -8,7 +8,7 @@ COMMENT-mjpeg =		gstmplex and gstmpeg2enc elements for GStreamer (bad)
 V =			0.10.18
 DISTNAME =		gst-plugins-bad-${V}
 
-PKGNAME-main =		gstreamer-plugins-bad-${V}
+PKGNAME-main =		gstreamer-plugins-bad-${V}p0
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-real =		gstreamer-real-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
@@ -57,7 +57,8 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			schroedinger-1.0::multimedia/schroedinger \
 			cdaudio.>=1::audio/libcdaudio \
 			BPM,SoundTouch::audio/soundtouch \
-			dvdnav.>=6,dvdread::multimedia/libdvdnav
+			dvdnav.>=6,dvdread::multimedia/libdvdnav \
+			jasper.>=2::graphics/jasper
 
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
 
@@ -96,7 +97,6 @@ CONFIGURE_ARGS =	--disable-acm \
 			--disable-jack \
 			--disable-gme \
 			--disable-alsa \
-			--disable-jp2k \
 			--disable-kate \
 			--disable-lv2 \
 			--disable-mimic \

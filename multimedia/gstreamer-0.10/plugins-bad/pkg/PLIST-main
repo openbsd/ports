@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/03/21 11:26:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2010/03/26 08:13:32 ajacoutot Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -86,6 +86,8 @@ lib/gstreamer-${VERSION}/libgsth264parse.so
 lib/gstreamer-${VERSION}/libgsthdvparse.so
 @comment lib/gstreamer-${VERSION}/libgstid3tag.la
 lib/gstreamer-${VERSION}/libgstid3tag.so
+@comment lib/gstreamer-${VERSION}/libgstjp2k.la
+lib/gstreamer-${VERSION}/libgstjp2k.so
 @comment lib/gstreamer-${VERSION}/libgstjpegformat.la
 lib/gstreamer-${VERSION}/libgstjpegformat.so
 @comment lib/gstreamer-${VERSION}/libgstladspa.la
