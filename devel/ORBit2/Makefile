@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2009/03/23 07:29:18 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.33 2010/03/26 15:45:54 ajacoutot Exp $
 
 COMMENT=		high-performance CORBA Object Request Broker
 
 GNOME_PROJECT=		ORBit2
 GNOME_VERSION=		2.14.17
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
+
 SHARED_LIBS +=	ORBit-2              3.0      # .1.0
 SHARED_LIBS +=	ORBitCosNaming-2     3.0      # .1.0
 SHARED_LIBS +=	ORBit-imodule-2      2.1      # .0.0
@@ -28,7 +29,7 @@ LIB_DEPENDS=		IDL-2::devel/libIDL \
 REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.61
+AUTOCONF_VERSION=	2.63
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/src/services/name/.libs \
