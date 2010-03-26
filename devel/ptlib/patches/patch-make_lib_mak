@@ -1,6 +1,6 @@
-$OpenBSD: patch-make_lib_mak,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+$OpenBSD: patch-make_lib_mak,v 1.2 2010/03/26 14:24:42 ajacoutot Exp $
 --- make/lib.mak.orig	Mon Sep 21 02:25:30 2009
-+++ make/lib.mak	Wed Sep 23 00:14:04 2009
++++ make/lib.mak	Fri Mar 26 15:18:29 2010
 @@ -29,10 +29,14 @@
  #
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-make_lib_mak,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
    endif
  else
    ifeq ($(BUILD_TYPE),.)
-@@ -98,7 +102,9 @@ ifeq ($(P_SHAREDLIB),1)
+@@ -98,10 +102,14 @@ ifeq ($(P_SHAREDLIB),1)
        LDSOOPTS += -Wl,--kill-at
      else
        ifneq ($(OSTYPE),Darwin)
@@ -30,3 +30,8 @@ $OpenBSD: patch-make_lib_mak,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
        endif
      endif
    endif
++
++  LDSOOPTS += -fPIC
+ 
+   $(LIBDIR)/$(LIB_FILENAME): $(LIBDIR)/$(LIBNAME_PAT)
+ 	@cd $(LIBDIR) ; rm -f $(LIB_FILENAME) ; ln -sf $(LIBNAME_PAT) $(LIB_FILENAME)
