@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/03/21 10:45:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/03/26 13:58:39 ajacoutot Exp $
 bin/conduit
 bin/conduit-client
 bin/conduit.real
@@ -73,10 +73,10 @@ lib/conduit/modules/Firefox3Module/Firefox3Module.pyo
 @comment lib/conduit/modules/FlickrModule/FlickrModule.py
 @comment lib/conduit/modules/FlickrModule/FlickrModule.pyc
 @comment lib/conduit/modules/FlickrModule/FlickrModule.pyo
-@comment lib/conduit/modules/FspotModule/
-@comment lib/conduit/modules/FspotModule/FspotModule.py
-@comment lib/conduit/modules/FspotModule/FspotModule.pyc
-@comment lib/conduit/modules/FspotModule/FspotModule.pyo
+lib/conduit/modules/FspotModule/
+lib/conduit/modules/FspotModule/FspotModule.py
+lib/conduit/modules/FspotModule/FspotModule.pyc
+lib/conduit/modules/FspotModule/FspotModule.pyo
 lib/conduit/modules/GConfModule/
 lib/conduit/modules/GConfModule/GConfModule.py
 lib/conduit/modules/GConfModule/GConfModule.pyc
