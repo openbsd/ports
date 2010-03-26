@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/03/26 10:40:44 robert Exp $
+# $OpenBSD: Makefile,v 1.27 2010/03/26 10:41:55 robert Exp $
 
 # sync with net/avahi,-mono
 ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
@@ -16,7 +16,7 @@ SHARED_LIBS +=  mono-profiler-aot    1.0      # .0.0
 
 HOMEPAGE=	http://www.mono-project.com/
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # GPLv2, LGPL, MIT X11, MPL
 PERMIT_PACKAGE_FTP=	Yes
