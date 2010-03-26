@@ -1,9 +1,9 @@
-$OpenBSD: patch-example_defaults,v 1.1.1.1 2001/04/01 15:17:53 wilfried Exp $
---- example/defaults.orig	Sat Aug  5 09:40:06 2000
-+++ example/defaults	Thu Mar  8 14:57:13 2001
-@@ -10,6 +10,8 @@
- #  or
- # tile /SOME/PATH/TO/FILE.XPM
+$OpenBSD: patch-example_defaults,v 1.2 2010/03/26 08:51:44 jasper Exp $
+--- example/defaults.orig	Sat May  4 14:50:00 2002
++++ example/defaults	Fri Mar 26 09:51:02 2010
+@@ -20,7 +20,9 @@
+ #
+ # hide_timeout 1
  
 -xpmpath	/usr/local/share/WindowMaker/Icons
 -xpmpath /usr/local/share/pixmaps
@@ -12,3 +12,4 @@ $OpenBSD: patch-example_defaults,v 1.1.1.1 2001/04/01 15:17:53 wilfried Exp $
 +xpmpath %%PREFIX%%/share/WindowMaker/Pixmaps
 +xpmpath %%PREFIX%%/include/pixmaps
  tile	tile2.xpm
+ tile	!echo tile2.xpm
