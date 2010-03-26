@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2010/02/01 17:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.229 2010/03/26 08:47:16 jasper Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -27,7 +27,6 @@
      SUBDIR += corkscrew
      SUBDIR += crack
      SUBDIR += cracklib
-     SUBDIR += crank
      SUBDIR += cryptcat
      SUBDIR += cryptokit
      SUBDIR += ctunnel
