@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/03/26 12:48:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2010/03/26 13:25:30 jasper Exp $
 %%SHARED%%
 bin/gnumeric
 @bin bin/gnumeric-${VERSION}
@@ -295,12 +295,12 @@ lib/gnumeric/${VERSION}/plugins/xbase/plugin.xml
 lib/gnumeric/${VERSION}/plugins/xbase/xbase.a
 lib/gnumeric/${VERSION}/plugins/xbase/xbase.la
 lib/goffice/
-lib/goffice/0.8.1/
-lib/goffice/0.8.1/plugins/
-lib/goffice/0.8.1/plugins/gnumeric/
-lib/goffice/0.8.1/plugins/gnumeric/gnumeric.a
-lib/goffice/0.8.1/plugins/gnumeric/gnumeric.la
-lib/goffice/0.8.1/plugins/gnumeric/plugin.xml
+lib/goffice/${API_VERSION}/
+lib/goffice/${API_VERSION}/plugins/
+lib/goffice/${API_VERSION}/plugins/gnumeric/
+lib/goffice/${API_VERSION}/plugins/gnumeric/gnumeric.a
+lib/goffice/${API_VERSION}/plugins/gnumeric/gnumeric.la
+lib/goffice/${API_VERSION}/plugins/gnumeric/plugin.xml
 lib/libspreadsheet.a
 lib/libspreadsheet.la
 lib/pkgconfig/libspreadsheet-1.10.pc

@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.38 2010/03/21 11:01:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2010/03/26 13:25:30 jasper Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.10.1
+PKGNAME=		${DISTNAME}p0
+
+API_VERSION=		0.8.1 # from devel/goffice
 
 SHARED_LIBS +=	spreadsheet     1.0
 CATEGORIES=    		math
@@ -54,6 +57,6 @@ CONFIGURE_ARGS=		--with-gnome \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-SUBST_VARS=		VERSION
+SUBST_VARS=		VERSION API_VERSION
 
 .include <bsd.port.mk>
