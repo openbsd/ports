@@ -1,0 +1,30 @@
+$OpenBSD: patch-mono_mini_mini-posix_c,v 1.1 2010/03/26 13:13:47 robert Exp $
+--- mono/mini/mini-posix.c.orig	Fri Mar 26 14:03:04 2010
++++ mono/mini/mini-posix.c	Fri Mar 26 13:53:52 2010
+@@ -184,11 +184,22 @@ SIG_HANDLER_SIGNATURE (sigusr1_signal_handler)
+ 	 * is not async safe. That includes the pthread locking functions. If we
+ 	 * know that we interrupted managed code, then locking is safe.
+ 	 */
+-	ji = mono_jit_info_table_find (mono_domain_get (), mono_arch_ip_from_context(ctx));
+-	running_managed = ji != NULL;
++#if defined(__OpenBSD__)
++	/*
++         * Let's say that this is a tripe XXX hack, because on OpenBSD ctx can be 0
++         * in some cases and I suspect this is because something async happens and
++         * threads are going away before we could handle them.
++         */
++	if (ctx) {
++#endif
++		ji = mono_jit_info_table_find (mono_domain_get (), mono_arch_ip_from_context(ctx));
++		running_managed = ji != NULL;
+ 
+-	if (mono_debugger_agent_thread_interrupt (ctx, ji))
+-		return;
++		if (mono_debugger_agent_thread_interrupt (ctx, ji))
++			return;
++#if defined(__OpenBSD__)
++	}
++#endif
+ 	
+ 	exc = mono_thread_request_interruption (running_managed); 
+ 	if (!exc)
