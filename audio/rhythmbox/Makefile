@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.49 2010/03/21 10:10:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2010/03/26 08:10:45 ajacoutot Exp $
+
+# coherence plugin is installed but not activated by default so we don't
+# enforce dependency on multimedia/coherence to lower requirements
 
 COMMENT=		music management application for GNOME
 
