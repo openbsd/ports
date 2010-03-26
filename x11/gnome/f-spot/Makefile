@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2010/03/24 22:53:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/03/26 14:51:14 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
-
-BROKEN=			waiting for ajacoutot@
 
 COMMENT=		personal photo management application for GNOME
 
 GNOME_VERSION=		0.6.1.5
 GNOME_PROJECT=		f-spot
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 CATEGORIES=		graphics
 
@@ -43,10 +41,10 @@ DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			::shells/bash
-RUN_DEPENDS=		::graphics/libgphoto2 \
-			::x11/gnome/mono-gnome \
+			::shells/bash \
 			::x11/gnome/screensaver
+RUN_DEPENDS=		::graphics/libgphoto2 \
+			::x11/gnome/mono-gnome
 LIB_DEPENDS+=		exif::graphics/libexif \
 			lcms::graphics/lcms \
 			mono::lang/mono
