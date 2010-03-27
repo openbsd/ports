@@ -1,6 +1,15 @@
-$OpenBSD: patch-plugins_configure,v 1.1.1.1 2010/03/23 21:11:57 ajacoutot Exp $
+$OpenBSD: patch-plugins_configure,v 1.2 2010/03/27 14:58:50 ajacoutot Exp $
 --- plugins/configure.orig	Mon Oct 22 09:40:39 2007
-+++ plugins/configure	Fri Jun  5 06:39:24 2009
++++ plugins/configure	Sat Mar 27 15:49:58 2010
+@@ -3156,7 +3156,7 @@ case "$target_os" in
+           esac
+ 	  PLUGINEXT=dylib
+         ;;
+-        *)LDSO='-shared -Wl,-soname,$(SONAME)';;
++        *)LDSO='-shared -fPIC -Wl,-soname,$(SONAME)';;
+ esac
+ LDSO=${LDSO}
+ 
 @@ -5886,13 +5886,13 @@ echo "${ECHO_T}no" >&6
    else
      echo "$as_me:$LINENO: result: yes" >&5
