@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_configure,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
+$OpenBSD: patch-plugins_configure,v 1.2 2010/03/27 14:41:16 ajacoutot Exp $
 --- plugins/configure.orig	Tue Sep 22 02:57:56 2009
-+++ plugins/configure	Wed Sep 23 00:24:27 2009
++++ plugins/configure	Sat Mar 27 15:14:45 2010
 @@ -2195,6 +2195,10 @@ fi
                   opal_release_flags="-O3 -DSOLARIS"
                   opal_debug_flags="-g -D_DEBUG -DSOLARIS"
@@ -12,3 +12,12 @@ $OpenBSD: patch-plugins_configure,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
                 *)
                   opal_release_flags="-Os"
                   opal_debug_flags="-g3 -ggdb -O0 -D_DEBUG"
+@@ -6299,7 +6303,7 @@ _ACEOF
+ 
+         *)
+           STDCCFLAGS="$STDCCFLAGS -fPIC"
+-          LDSO='-shared -Wl,-soname,$(SONAME)'
++          LDSO='-shared -fPIC -Wl,-soname,$(SONAME)'
+           PLUGINEXT=so
+ 
+ 

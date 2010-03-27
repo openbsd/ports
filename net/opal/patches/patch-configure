@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
---- configure.orig	Sun Jul  5 08:13:12 2009
-+++ configure	Tue Jul  7 09:52:53 2009
+$OpenBSD: patch-configure,v 1.2 2010/03/27 14:41:15 ajacoutot Exp $
+--- configure.orig	Tue Sep 22 02:58:43 2009
++++ configure	Sat Mar 27 15:14:27 2010
 @@ -4336,7 +4336,7 @@ fi
  WFLAGS=
  if test "x$ac_cv_c_compiler_gnu" = xyes; then
@@ -10,6 +10,15 @@ $OpenBSD: patch-configure,v 1.1 2010/03/23 21:13:37 ajacoutot Exp $
    else
      WFLAGS="-Wall -Wextra -Winit-self -Wstrict-aliasing=2 -Wfloat-equal -Wno-comment -Wno-missing-field-initializers -Wno-unused"
  
+@@ -4971,7 +4971,7 @@ STDCCFLAGS="$STDCCFLAGS -D__MACOSX__"
+ 
+ 
+ 
+-          LDSOOPTS="-shared -Wl,-soname,\$(LIB_FILENAME_SHARED_PAT)"
++          LDSOOPTS="-shared -fPIC -Wl,-soname,\$(LIB_FILENAME_SHARED_PAT)"
+ 
+           HAVE_RANLIB=yes
+         ;;
 @@ -5081,6 +5081,10 @@ fi
                 solaris*)
                   opal_release_flags="-O3 -DSOLARIS"

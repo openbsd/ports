@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/03/23 21:13:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/03/27 14:41:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	Open Phone Abstraction Library
 
 V=		3.6.6
 DISTNAME=	opal-${V}
+PKGNAME=	${DISTNAME}p0
 
 SUBST_VARS+=	V
 
