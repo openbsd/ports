@@ -1,0 +1,11 @@
+$OpenBSD: patch-soap_Makefile_in,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+--- soap/Makefile.in.orig	Thu Nov 12 20:29:29 2009
++++ soap/Makefile.in	Thu Nov 12 20:29:33 2009
+@@ -515,7 +515,6 @@ install-data-am: install-defaultDATA install-modulesDA
+ 
+ install-exec-am: install-execcgiPROGRAMS install-execcgiSCRIPTS
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ 
+ install-info: install-info-am
+ 

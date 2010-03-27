@@ -1,0 +1,12 @@
+$OpenBSD: patch-wwsympa_icons_Makefile_in,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+--- wwsympa/icons/Makefile.in.orig	Sun Nov 15 19:27:58 2009
++++ wwsympa/icons/Makefile.in	Sun Nov 15 19:31:19 2009
+@@ -156,7 +156,7 @@ staticdir = @staticdir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ webtemplatedir = @webtemplatedir@
+-iconsdir = $(staticdir)/icons
++iconsdir = @defaultdir@/icons
+ icons_DATA = back.png \
+ 	     begin.png \
+ 	     binary.png \

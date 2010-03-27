@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+--- Makefile.in.orig	Tue Nov 10 22:32:23 2009
++++ Makefile.in	Tue Nov 10 22:32:29 2009
+@@ -561,7 +561,6 @@ info-am:
+ 
+ install-data-am:
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+ install-exec-am:
+ 

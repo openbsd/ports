@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+--- src/Makefile.in.orig	Thu Nov 12 20:29:09 2009
++++ src/Makefile.in	Thu Nov 12 20:29:21 2009
+@@ -640,7 +640,6 @@ install-data-am:
+ install-exec-am: install-libexecPROGRAMS install-sbinPROGRAMS \
+ 	install-sbinSCRIPTS
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ 
+ install-info: install-info-recursive
+ 

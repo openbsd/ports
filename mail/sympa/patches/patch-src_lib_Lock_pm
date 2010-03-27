@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_lib_Lock_pm,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+Don't spam error_log
+--- src/lib/Lock.pm.orig	Tue Nov 17 22:25:17 2009
++++ src/lib/Lock.pm	Tue Nov 17 22:25:42 2009
+@@ -43,7 +43,7 @@ my $default_timeout = 60 * 20; ## After this period a 
+ ## Creates a new object
+ sub new {
+     my($pkg, $filepath) = @_;
+-    &do_log('debug', 'Lock::new(%s,%s)',$filepath);
++    &do_log('debug', 'Lock::new(%s,%s)',$pkg, $filepath);
+     
+     my $lock_filename = $filepath.'.lock';
+     my $lock = {'lock_filename' => $lock_filename};

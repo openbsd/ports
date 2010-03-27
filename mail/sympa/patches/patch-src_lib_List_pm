@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_lib_List_pm,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+Don't spam error_log
+--- src/lib/List.pm.orig	Tue Sep 22 17:04:18 2009
++++ src/lib/List.pm	Tue Nov 17 22:44:24 2009
+@@ -1446,7 +1446,7 @@ sub db_get_handler {
+ sub new {
+     my($pkg, $name, $robot, $options) = @_;
+     my $list={};
+-    do_log('debug2', 'List::new(%s, %s, %s)', $name, $robot, join('/',keys %$options));
++    do_log('debug2', 'List::new(%s, %s, %s)', $name, $robot, "!".join('/',keys %$options));
+     
+     ## Allow robot in the name
+     if ($name =~ /\@/) {
+@@ -1829,7 +1829,7 @@ sub save_config {
+ ## Loads the administrative data for a list
+ sub load {
+     my ($self, $name, $robot, $options) = @_;
+-    do_log('debug2', 'List::load(%s, %s, %s)', $name, $robot, join('/',keys %$options));
++    do_log('debug2', 'List::load(%s, %s, %s)', $name, $robot, "!".join('/',keys %$options));
+     
+     my $users;
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_bouncequeue_c,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+--- src/bouncequeue.c.orig	Tue Jul 28 14:12:59 2009
++++ src/bouncequeue.c	Wed Nov 11 22:24:44 2009
+@@ -25,6 +25,9 @@
+ #include <sysexits.h>
+ #include <string.h>
+ #include <stdlib.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <unistd.h>
+ 
+ static char     qfile[128];
+ static char     buf[16384];

@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_lib_confdef_pm,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+--- src/lib/confdef.pm.orig	Mon Sep 14 17:36:47 2009
++++ src/lib/confdef.pm	Sat Nov 14 18:27:15 2009
+@@ -402,11 +402,6 @@ our @params = (
+         optional => '1',
+     },
+     {
+-        name    => 'cookie_cas_expire',
+-        default => '6',
+-	file   => 'wwsympa.conf',
+-    },
+-    {
+         name   => 'legacy_character_support_feature',
+         default => 'off',
+         query  => 'If set to "on", enables support of legacy characters',
+@@ -625,7 +620,7 @@ our @params = (
+     },
+     {
+         name    => 'mhonarc',
+-        default => '/usr/bin/mhonarc',
++        default => '${LOCALBASE}/bin/mhonarc',
+         query   => 'Path to MhOnarc mail2html pluggin',
+         file    => 'wwsympa.conf',
+         edit    => '1',
+@@ -634,7 +629,7 @@ our @params = (
+     { 'title' => 'S/MIME pluggin' },
+     {
+         name   => 'openssl',
+-        sample => '/usr/bin/ssl',
++        sample => '/usr/sbin/openssl',
+         query  => 'Path to OpenSSL',
+         file   => 'sympa.conf',
+         edit   => '1',

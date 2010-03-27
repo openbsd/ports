@@ -1,0 +1,164 @@
+$OpenBSD: patch-src_etc_script_sympa_in,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+--- src/etc/script/sympa.in.orig	Tue Aug  4 08:36:44 2009
++++ src/etc/script/sympa.in	Sat Nov 14 18:46:40 2009
+@@ -14,43 +14,11 @@
+ # chkconfig: 345 95 05
+ # description: sympa is a powerfull mailing lists management system.
+ 
+-if [ -f --initdir--/functions ]; then
+-    # Source function library.
+-    . --initdir--/functions
+-    
+-    ## Set a flag 
+-    use_functions=1
+-fi
+-
+-if [ -f /etc/sysconfig/network ]; then
+-    # Get config.
+-    . /etc/sysconfig/network
+-fi
+-
+ # OSTYPE is not defined on Solaris
+ if [ ! "${OSTYPE}" ]; then
+     OSTYPE=`uname -s`
+ fi
+ 
+-# OSTYPE *is* defined on Solaris 10! (bug #3149)
+-case "$OSTYPE" in
+-        *solaris*)
+-        OSTYPE=SunOS
+-        ;;
+-esac
+-
+-if [ -f /etc/SuSE-release ] ; then
+-    OSTYPE='Suse'
+-fi
+-
+-if [ -f /etc/debian_version ] ; then
+-    OSTYPE='Debian'
+-fi
+-
+-if [ -f /etc/slackware-version ] ; then
+-    OSTYPE='Slack'
+-fi
+-
+ # Sympa parameters
+ # Sympa binaries directory
+ sympadir="--sbindir--"
+@@ -59,12 +27,7 @@ sympadir="--sbindir--"
+ sympaconf="--CONFIG--"
+ wwsympaconf="--WWSCONFIG--"
+ 
+-##'echo -n' not supported with SH on Solaris
+-if [ ${OSTYPE} = "SunOS" ]; then
+-  echo_opt=""
+-else
+   echo_opt="-n"
+-fi
+ 
+ # End of parameters
+ 
+@@ -76,16 +39,11 @@ sympa_status() {
+         return 1
+     fi
+  
+-    if [ ${use_functions} ]; then
+-
+-      status $1.pl
+-
+-    else
+        # First try "/u1/home/sympa/*.pid" files
+        if [ -f --piddir--/$1.pid ] ; then
+              pid=`head -1 --piddir--/$1.pid`
+              if [ "$pid" != "" ] ; then
+-                 running=`ps -A | grep "$pid"`
++                 running=`pgrep -f $1.pl`
+                  if [ "$running" != "" ]; then
+                      echo "$1 (pid $pid) is active..."
+                      return 0
+@@ -97,7 +55,6 @@ sympa_status() {
+         fi
+         echo "$1 is stopped."
+         return 3
+-    fi
+ }
+ 
+ # Start a module
+@@ -107,18 +64,7 @@ sympa_module_start() {
+         return 1
+     fi
+ 
+-#	if [ $1 = "sympa" -a $lang != "" ]; then
+-#		startparam="-l $lang"
+-#	else
+-#		startparam=""
+-#	fi
+- 
+-	if [ ${use_functions} ]; then
+-		$sympadir/$1.pl $startparam && success || failure
+-	else
+-		$sympadir/$1.pl $startparam && echo "success" || echo "failure"
+-	fi
+-	echo
++	$sympadir/$1.pl && echo "success" || echo "failure"
+ }
+ 
+ # Test state of module before startup
+@@ -155,40 +101,23 @@ sympa_stop() {
+ 	if [ -f --piddir--/$1.pid ]; then
+ 		echo $echo_opt "Stopping module $1.pl: "
+ 		pid=`head -1 --piddir--/$1.pid`
+-		running=`ps -A | grep "$pid"`
++		running=`pgrep -f $1.pl`
+ 		if [ $1 = 'bulk' ]; then
+-		    if [ ${use_functions} ]; then
+-			kill -TERM $pid && success || failure
+-		    else
+ 			kill -TERM $pid && echo "success" || echo "failure"
+-		    fi		    
+ 		else 
+ 		    if [ "$running" != "" ]; then
+-			if [ ${use_functions} ]; then
+-			    kill -TERM $pid && success || failure
+-			else
+ 			    kill -TERM $pid && echo "success" || echo "failure"
+-			fi		    
+ 
+ 		    else
+ 			echo "died"
+ 		    fi
+ 		fi
+-		echo
+ 	else
+ 	        echo "Module $1.pl not running"
+ 	fi
+ }
+ 
+ 
+-# Check that networking is up.
+-if [ ${OSTYPE} != "Slack" -a ${OSTYPE} != "FreeBSD" -a ${OSTYPE} != "SunOS" -a ${OSTYPE} != "darwin7.0" -a ${OSTYPE} != "Debian" -a ${OSTYPE} != "Suse" ]; then
+-    if [ ${NETWORKING} = "no" ]
+-    then
+-	    exit 0
+-    fi
+-fi
+-
+ # Check config files
+ [ -d $sympadir ] || exit 0
+ [ -f $sympaconf ] || exit 0
+@@ -205,7 +134,6 @@ case "$1" in
+ 		sympa_start bounced
+ 		sympa_start task_manager
+ 		touch --lockdir--/sympa
+-		echo
+ 	else
+ 
+ 		echo "Sympa seems active. No action will be taken."
+@@ -248,7 +176,6 @@ case "$1" in
+ 	$0 stop
+ 	sleep 3
+ 	$0 start
+-	echo
+ 	;;
+   *)
+ 	echo "Usage: $0 {start|stop|status|restart}"

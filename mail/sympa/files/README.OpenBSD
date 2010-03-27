@@ -1,0 +1,96 @@
+SYMPA is now installed, and sample configuration files were created in
+${SYSCONFDIR}/sympa.conf and ${SYSCONFDIR}/wwsympa.conf
+
+Basic configuration
+===================
+
+You should first edit them to suit your needs, at least http_host,
+domain, listmaster, db_type, db_host, db_user, db_passwd, wwsympa_url
+settings in ${SYSCONFDIR}/sympa.conf, and then configure the needed
+database with one of the ${TRUEPREFIX}/share/examples/sympa/create_db.*
+provided schemas.
+You should also install the corresponding p5-DBD-{mysql,SQLite,Pg} module.
+Moreover, p5-ldap package is needed if you plan to use LDAP features
+and p5-SOAP-Lite package is needed if you plan to use sympa_soap_server.
+
+Start sympa using the init.d-style ${TRUEPREFIX}/sbin/sympa script.
+
+WWSympa configuration
+=====================
+
+Then, add the following lines to your httpd.conf :
+
+Alias /wwsicons ${SYMPA_HOME}/static/icons/
+Alias /static-sympa ${SYMPA_HOME}/static/
+ScriptAlias /sympa ${TRUEPREFIX}/libexec/sympa/wwsympa-wrapper.fcgi
+FastCgiServer ${TRUEPREFIX}/libexec/sympa/wwsympa.fcgi -processes 2
+<Location /sympa>
+	SetHandler fastcgi-script
+</Location>
+
+For optimal performance you also need to enable mod_fastcgi.
+
+As WWSympa needs to access ${SYMPA_HOME} and ${SYSCONFDIR}/sympa.conf
+files, you have to run httpd unchrooted with httpd -u, or chroot the
+whole sympa package and its dependencies otherwise.
+
+WWSympa should be available at http://domain.tld/sympa/
+
+Startup/Shutdown configuration
+==============================
+
+You can start sympa upon boot by adding the following lines to
+${SYSCONFDIR}/rc.local after starting your DB server :
+
+if [ -x ${TRUEPREFIX}/sbin/sympa ]; then
+	echo -n ' sympa' ; ${TRUEPREFIX}/sbin/sympa start
+fi
+
+You should also cleanly stop sympa upon shutdown by adding the
+following lines to ${SYSCONFDIR}/rc.shutdown :
+
+if [ -x ${TRUEPREFIX}/sbin/sympa ]; then
+	echo -n 'stopping sympa' ; ${TRUEPREFIX}/sbin/sympa stop
+fi
+
+Mail aliases configuration
+==========================
+
+add systemwide robot aliases to your aliases file :
+
+sympa: "| ${TRUEPREFIX}/libexec/sympa/queue sympa@domain.tld"
+listmaster: "| ${TRUEPREFIX}/libexec/sympa/queue listmaster@domain.tld"
+bounce+*: "| ${TRUEPREFIX}/libexec/sympa/bouncequeue sympa@domain.tld"
+abuse-feedback-report: "| ${TRUEPREFIX}/libexec/sympa/bouncequeue sympa@domain.tld"
+sympa-request: postmaster
+sympa-owner: postmaster
+
+if you're using sendmail, you should declare ${SYMPA_HOME}/sympa_aliases
+as an additional alias file in your sendmail.mc :
+
+define(`ALIAS_FILE', `/etc/mail/aliases,${SYMPA_HOME}/sympa_aliases')dnl
+
+If you're using postfix, edit main.cf and set :
+
+alias_database = hash:${SYSCONFDIR}/mail/aliases, hash:${SYMPA_HOME}/sympa_aliases
+alias_maps = hash:${SYSCONFDIR}/mail/aliases, hash:${SYMPA_HOME}/sympa_aliases
+
+Security considerations
+=======================
+
+Note that the following binaries are installed with particular modes/owner/group :
+- the following are 4755 _sympa:_sympa
+${TRUEPREFIX}/libexec/sympa/bouncequeue
+${TRUEPREFIX}/libexec/sympa/familyqueue
+${TRUEPREFIX}/libexec/sympa/queue
+- the following are 6755 _sympa:_sympa
+${TRUEPREFIX}/libexec/sympa/sympa_soap_server-wrapper.fcgi
+${TRUEPREFIX}/libexec/sympa/wwsympa-wrapper.fcgi
+- the following are 4750 root:_sympa
+${TRUEPREFIX}/sbin/aliaswrapper
+${TRUEPREFIX}/sbin/virtualwrapper
+
+For the various set-uid sympa wrappers to work fine, you have to make
+sure ${SYMPA_HOME} is in a partition mounted without nosuid.
+
+Now refer to http://www.sympa.org/manual/index for more information.

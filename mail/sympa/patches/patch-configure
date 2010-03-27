@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+--- configure.orig	Thu Oct  1 00:59:41 2009
++++ configure	Fri Nov 13 16:52:15 2009
+@@ -2091,20 +2091,20 @@ fi
+ 
+ # custom variables
+ initdir=/etc/rc.d/init.d
+-piddir=$prefix
+ localstatedir=/var
+-lockdir=$localstatedir/lock/subsys
++piddir=$localstatedir/run/sympa
++lockdir=$localstatedir/spool/lock
+ modulesdir=$prefix/bin
+ scriptdir=$prefix/bin
+ defaultdir=$prefix/default
+-mailtemplatedir=$defaultdir/mail_tt2
+-webtemplatedir=$defaultdir/web_tt2
++mailtemplatedir=$prefix/share/sympa/mail_tt2
++webtemplatedir=$prefix/share/sympa/web_tt2
+ execcgidir=$prefix/bin
+-expldir=$prefix/list_data
+-spooldir=$prefix/spool
+-staticdir=$prefix/static_content
+-arcdir=$prefix/arc
+-bouncedir=$prefix/bounce
++spooldir=$localstatedir/spool/sympa
++expldir=$localstatedir/sympa/list_data
++staticdir=$localstatedir/sympa/static
++arcdir=$localstatedir/sympa/archives
++bouncedir=$localstatedir/sympa/bounces
+ confdir=/etc
+ localedir=$prefix/locale
+ 

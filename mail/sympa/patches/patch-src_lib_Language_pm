@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_lib_Language_pm,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+Don't use setlocale(), poor support.
+--- src/lib/Language.pm.orig	Sat Nov 14 16:50:28 2009
++++ src/lib/Language.pm	Sat Nov 14 16:51:51 2009
+@@ -161,28 +161,6 @@ sub SetLang {
+ 	$lang = &Locale2Lang($locale);
+     }
+    
+-    ## Set Locale::Messages context
+-    my $locale_dashless = $locale.'.utf-8';
+-    $locale_dashless =~ s/-//g;
+-    foreach my $type (&POSIX::LC_ALL, &POSIX::LC_TIME) {
+-	my $success;
+-	foreach my $try ($locale.'.utf-8',
+-			 $locale.'.UTF-8',  ## UpperCase required for FreeBSD
+-			 $locale_dashless, ## Required on HPUX
+-			 $locale,
+-			 $lang
+-			 ) {
+-	    if (&setlocale($type, $try)) {
+-		$success = 1;
+-		last;
+-	    }	
+-	}
+-	unless ($success) {
+-	    &do_log('err','Failed to setlocale(%s) ; you either have a problem with the catalogue .mo files or you should extend available locales in  your /etc/locale.gen (or /etc/sysconfig/i18n) file', $locale);
+-	    return undef;
+-	}
+-    }
+-    
+     $ENV{'LANGUAGE'}=$locale;
+     ## Define what catalogs are used
+     &Locale::Messages::textdomain("sympa");
