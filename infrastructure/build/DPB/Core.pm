@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.9 2010/03/23 09:57:45 espie Exp $
+# $OpenBSD: Core.pm,v 1.10 2010/03/27 12:39:49 sthen Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -549,7 +549,7 @@ sub parse_hosts_file
 				$prop->{$1} = $2;
 			}
 		}
-		if (defined $prop->{arch} && $prop->{arch} != $arch) {
+		if (defined $prop->{arch} && $prop->{arch} ne $arch) {
 			next;
 		}
 		if (defined $prop->{mem}) {
