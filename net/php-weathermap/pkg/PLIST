@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/11 21:10:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/03/27 00:00:49 sthen Exp $
 weathermap/
 weathermap/CHANGES
 weathermap/COPYING
@@ -24,6 +24,7 @@ weathermap/configs/simple.conf-dist
 @sample weathermap/configs/simple.conf
 @mode
 @group
+weathermap/convert-to-dsstats.php
 weathermap/docs/
 weathermap/docs/example/
 weathermap/docs/example/Gradient_BK_800.png
@@ -122,6 +123,8 @@ weathermap/images/background1_950x625_197.jpg
 weathermap/images/blue-ball-64.png
 weathermap/images/blueboard1024.png
 weathermap/images/btn_recalc.png
+weathermap/images/button_editgroups.png
+weathermap/images/button_settings.gif
 weathermap/images/bw_gradient_1024.png
 weathermap/images/comment.png
 weathermap/images/cross.png
@@ -165,6 +168,7 @@ weathermap/lib/datasources/README.txt
 weathermap/lib/datasources/WeatherMapDataSource_cactihost.php
 weathermap/lib/datasources/WeatherMapDataSource_cactithold.php
 weathermap/lib/datasources/WeatherMapDataSource_dbsample.php
+weathermap/lib/datasources/WeatherMapDataSource_dsstats.php
 weathermap/lib/datasources/WeatherMapDataSource_external.php
 weathermap/lib/datasources/WeatherMapDataSource_fping.php
 weathermap/lib/datasources/WeatherMapDataSource_mrtg.php
@@ -174,6 +178,7 @@ weathermap/lib/datasources/WeatherMapDataSource_snmp.php
 weathermap/lib/datasources/WeatherMapDataSource_static.php
 weathermap/lib/datasources/WeatherMapDataSource_tabfile.php
 weathermap/lib/datasources/WeatherMapDataSource_time.php
+weathermap/lib/ds-common.php
 weathermap/lib/index.php
 weathermap/lib/poller-common.php
 weathermap/lib/post/
@@ -194,6 +199,7 @@ weathermap/overlib.js
 weathermap/random-bits/
 weathermap/random-bits/README
 weathermap/random-bits/auto-overlib.pl
+weathermap/random-bits/bristle.php
 weathermap/random-bits/cacti-integrate.php
 weathermap/random-bits/cacti-mapper.php
 weathermap/random-bits/map-split.php
@@ -204,6 +210,7 @@ weathermap/random-bits/suite-2.png
 weathermap/setup.php
 weathermap/weathermap
 weathermap/weathermap-cacti-plugin-mgmt.php
+weathermap/weathermap-cacti-plugin.css
 weathermap/weathermap-cacti-plugin.php
 weathermap/weathermap-cacti-rebuild.php
 weathermap/weathermap.conf-dist

@@ -5,3 +5,6 @@ customisation features and an optional map editor are provided.
 Support is built in for RRD, MRTG (RRD and old log-format), and
 tab-delimited text files. Other sources are via plugins or external
 scripts. Weathermap can also be integrated with Cacti.
+
+This package installs to ${INSTDIR}; you might want to symlink
+it from a suitable location, e.g. ln -s ../weathermap /var/www/htdocs
