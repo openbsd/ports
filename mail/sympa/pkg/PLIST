@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
-@newgroup _sympa:647
-@newuser _sympa:647:647:daemon:Sympa Daemon:/var/empty:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.2 2010/03/27 11:49:55 landry Exp $
+@newgroup _sympa:648
+@newuser _sympa:648:648:daemon:Sympa Daemon:/var/empty:/sbin/nologin
 bin/arc2webarc.pl
 bin/crypt_passwd.pl
 bin/init_comment.pl
