@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/03/27 12:06:26 robert Exp $
+# $OpenBSD: Makefile,v 1.32 2010/03/27 12:37:15 robert Exp $
 
 # sync with net/avahi,-mono
 ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
@@ -45,7 +45,7 @@ BUILD_DEPENDS=	:bison-*:devel/bison \
 RUN_DEPENDS=	::x11/libgdiplus
 LIB_DEPENDS=	gc::devel/boehm-gc
 
-AUTOCONF_VERSION=2.62
+AUTOCONF_VERSION=2.63
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -60,12 +60,6 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
                 --with-libgdiplus=installed \
 		--enable-quiet-build=no \
                 --disable-shared-handles
-
-.if ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ENV+=	CFLAGS="-DSIZEOF_VOID_P=8"
-.else
-CONFIGURE_ENV+=	CFLAGS="-DSIZEOF_VOID_P=4"
-.endif
 
 REGRESS_TARGET=check
 
