@@ -1,12 +1,20 @@
-$OpenBSD: patch-mcs_tools_mkbundle_mkbundle_cs,v 1.1 2009/09/06 07:25:27 ajacoutot Exp $
---- mcs/tools/mkbundle/mkbundle.cs.orig	Sun Aug 23 12:08:46 2009
-+++ mcs/tools/mkbundle/mkbundle.cs	Sun Aug 23 12:09:09 2009
-@@ -399,7 +399,7 @@ class MakeBundle {
+$OpenBSD: patch-mcs_tools_mkbundle_mkbundle_cs,v 1.2 2010/03/28 15:25:15 robert Exp $
+--- mcs/tools/mkbundle/mkbundle.cs.orig	Fri Sep 25 16:58:18 2009
++++ mcs/tools/mkbundle/mkbundle.cs	Sun Mar 28 12:41:53 2010
+@@ -399,13 +399,13 @@ class MakeBundle {
  					smonolib = "`pkg-config --variable=libdir mono`/libmono.a ";
  				else
  					smonolib = "-Wl,-Bstatic -lmono -Wl,-Bdynamic ";
 -				cmd = String.Format ("{4} -o {2} -Wall `pkg-config --cflags mono` {0} {3} " +
 +				cmd = String.Format ("{4} -o {2} -pthread -Wall `pkg-config --cflags mono` {0} {3} " +
  						     "`pkg-config --libs-only-L mono` " + smonolib +
- 						     "`pkg-config --libs-only-l mono | sed -e \"s/\\-lmono //\"` {1}",
+-						     "`pkg-config --libs-only-l mono | sed -e \"s/\\-lmono //\"` {1}",
++						     "`pkg-config --libs-only-l mono | sed -e \"s/\\-lmono //\"` -lgc {1}",
  						     temp_c, temp_o, output, zlib, cc);
+ 			} else {
+ 				
+-				cmd = String.Format ("{4} " + debugging + " -o {2} -Wall {0} `pkg-config --cflags --libs mono` {3} {1}",
++				cmd = String.Format ("{4} " + debugging + " -o {2} -Wall {0} `pkg-config --cflags --libs mono` -lgc {3} {1}",
+ 						     temp_c, temp_o, output, zlib, cc);
+ 			}
+                             
