@@ -1,0 +1,5 @@
+Given a list of scalars or reference variables, writes out their
+contents in perl syntax. The references can also be objects. The
+contents of each variable is output using the least number of Perl
+statements as convenient, usually only one. Self-referential structures,
+closures, and objects are output correctly.
