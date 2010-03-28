@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/28 19:33:11 jasper Exp $
+bin/couchdb-view-server.pl
+${P5SITE}/CouchDB/
+${P5SITE}/CouchDB/View/
+${P5SITE}/CouchDB/View.pm
+${P5SITE}/CouchDB/View/Document.pm
+${P5SITE}/CouchDB/View/Server.pm
+@man man/man3p/CouchDB::View.3p
+@man man/man3p/CouchDB::View::Document.3p
+@man man/man3p/CouchDB::View::Server.3p
