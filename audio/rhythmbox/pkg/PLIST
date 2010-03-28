@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/03/21 10:10:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2010/03/28 10:48:50 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 lib/librhythmbox-core.la
@@ -12,6 +12,9 @@ lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyo
 lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.py
 lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyc
 lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyo
+lib/rhythmbox/plugins/artdisplay/LastFMCoverArtSearch.py
+lib/rhythmbox/plugins/artdisplay/LastFMCoverArtSearch.pyc
+lib/rhythmbox/plugins/artdisplay/LastFMCoverArtSearch.pyo
 lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.py
 lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyc
 lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyo
@@ -25,6 +28,7 @@ lib/rhythmbox/plugins/artdisplay/__init__.py
 lib/rhythmbox/plugins/artdisplay/__init__.pyc
 lib/rhythmbox/plugins/artdisplay/__init__.pyo
 lib/rhythmbox/plugins/artdisplay/artdisplay.rb-plugin
+lib/rhythmbox/plugins/artdisplay/lastfm_red_small.png
 lib/rhythmbox/plugins/artdisplay/rhythmbox-missing-artwork.svg
 lib/rhythmbox/plugins/audiocd/
 lib/rhythmbox/plugins/audiocd/album-info.ui
@@ -388,6 +392,22 @@ share/gnome/help/rhythmbox/oc/figures/rb-volume-changer.png
 share/gnome/help/rhythmbox/oc/figures/rb-window-small.png
 share/gnome/help/rhythmbox/oc/figures/rb-window.png
 share/gnome/help/rhythmbox/oc/rhythmbox.xml
+share/gnome/help/rhythmbox/pt/
+share/gnome/help/rhythmbox/pt/figures/
+share/gnome/help/rhythmbox/pt/figures/rb-iradio-main.png
+share/gnome/help/rhythmbox/pt/figures/rb-notification-area-menu.png
+share/gnome/help/rhythmbox/pt/figures/rb-notification-window.png
+share/gnome/help/rhythmbox/pt/figures/rb-notification-zone.png
+share/gnome/help/rhythmbox/pt/figures/rb-podcast-main.png
+share/gnome/help/rhythmbox/pt/figures/rb-statusbar.png
+share/gnome/help/rhythmbox/pt/figures/rb-toolbar-prevplaynext.png
+share/gnome/help/rhythmbox/pt/figures/rb-toolbar-repeat.png
+share/gnome/help/rhythmbox/pt/figures/rb-toolbar-shuffle.png
+share/gnome/help/rhythmbox/pt/figures/rb-toolbar.png
+share/gnome/help/rhythmbox/pt/figures/rb-volume-changer.png
+share/gnome/help/rhythmbox/pt/figures/rb-window-small.png
+share/gnome/help/rhythmbox/pt/figures/rb-window.png
+share/gnome/help/rhythmbox/pt/rhythmbox.xml
 share/gnome/help/rhythmbox/ru/
 share/gnome/help/rhythmbox/ru/figures/
 share/gnome/help/rhythmbox/ru/figures/rb-iradio-main.png
@@ -473,12 +493,15 @@ share/gtk-doc/html/rhythmbox/RBPlayerGstFilter.html
 share/gtk-doc/html/rhythmbox/RBPlayerGstTee.html
 share/gtk-doc/html/rhythmbox/RBPlaylistManager.html
 share/gtk-doc/html/rhythmbox/RBPlaylistSource.html
+share/gtk-doc/html/rhythmbox/RBPlugin.html
 share/gtk-doc/html/rhythmbox/RBPropertyView.html
 share/gtk-doc/html/rhythmbox/RBQueryCreator.html
 share/gtk-doc/html/rhythmbox/RBRandomPlayOrder.html
 share/gtk-doc/html/rhythmbox/RBRating.html
 share/gtk-doc/html/rhythmbox/RBRemovableMediaManager.html
+share/gtk-doc/html/rhythmbox/RBRemovableMediaSource.html
 share/gtk-doc/html/rhythmbox/RBSearchEntry.html
+share/gtk-doc/html/rhythmbox/RBShell.html
 share/gtk-doc/html/rhythmbox/RBShellClipboard.html
 share/gtk-doc/html/rhythmbox/RBShellPlayer.html
 share/gtk-doc/html/rhythmbox/RBShellPreferences.html
@@ -487,12 +510,17 @@ share/gtk-doc/html/rhythmbox/RBSource.html
 share/gtk-doc/html/rhythmbox/RBSourceHeader.html
 share/gtk-doc/html/rhythmbox/RBSourceList.html
 share/gtk-doc/html/rhythmbox/RBSourceListModel.html
+share/gtk-doc/html/rhythmbox/RBSourceSearch.html
+share/gtk-doc/html/rhythmbox/RBSourceSearchBasic.html
+share/gtk-doc/html/rhythmbox/RBStaticPlaylistSource.html
 share/gtk-doc/html/rhythmbox/RBStatusbar.html
+share/gtk-doc/html/rhythmbox/RBStreamingSource.html
 share/gtk-doc/html/rhythmbox/RBStringValueMap.html
 share/gtk-doc/html/rhythmbox/RBURIDialog.html
 share/gtk-doc/html/rhythmbox/RhythmDB.html
 share/gtk-doc/html/rhythmbox/RhythmDBImportJob.html
 share/gtk-doc/html/rhythmbox/RhythmDBPropertyModel.html
+share/gtk-doc/html/rhythmbox/RhythmDBQueryModel.html
 share/gtk-doc/html/rhythmbox/RhythmDBQueryResults.html
 share/gtk-doc/html/rhythmbox/ch01.html
 share/gtk-doc/html/rhythmbox/ch02.html
@@ -505,9 +533,7 @@ share/gtk-doc/html/rhythmbox/home.png
 share/gtk-doc/html/rhythmbox/index.html
 share/gtk-doc/html/rhythmbox/index.sgml
 share/gtk-doc/html/rhythmbox/left.png
-share/gtk-doc/html/rhythmbox/rhythmbox-RBPodcastSource.html
 share/gtk-doc/html/rhythmbox/rhythmbox-RBSourceGroup.html
-share/gtk-doc/html/rhythmbox/rhythmbox-eel-gconf-extensions.html
 share/gtk-doc/html/rhythmbox/rhythmbox-rb-async-queue-watch.html
 share/gtk-doc/html/rhythmbox/rhythmbox-rb-builder-helpers.html
 share/gtk-doc/html/rhythmbox/rhythmbox-rb-debug.html
@@ -515,14 +541,9 @@ share/gtk-doc/html/rhythmbox/rhythmbox-rb-dialog.html
 share/gtk-doc/html/rhythmbox/rhythmbox-rb-file-helpers.html
 share/gtk-doc/html/rhythmbox/rhythmbox-rb-header.html
 share/gtk-doc/html/rhythmbox/rhythmbox-rb-rating-helper.html
-share/gtk-doc/html/rhythmbox/rhythmbox-rb-removable-media-source.html
-share/gtk-doc/html/rhythmbox/rhythmbox-rb-shell.html
-share/gtk-doc/html/rhythmbox/rhythmbox-rb-static-playlist-source.html
-share/gtk-doc/html/rhythmbox/rhythmbox-rb-streaming-source.html
+share/gtk-doc/html/rhythmbox/rhythmbox-rb-text-helpers.html
 share/gtk-doc/html/rhythmbox/rhythmbox-rb-tree-dnd.html
 share/gtk-doc/html/rhythmbox/rhythmbox-rb-util.html
-share/gtk-doc/html/rhythmbox/rhythmbox-rhythmdb-query-model.html
-share/gtk-doc/html/rhythmbox/rhythmbox-rhythmdb-tree.html
 share/gtk-doc/html/rhythmbox/rhythmbox.devhelp
 share/gtk-doc/html/rhythmbox/rhythmbox.devhelp2
 share/gtk-doc/html/rhythmbox/right.png
@@ -531,6 +552,7 @@ share/gtk-doc/html/rhythmbox/up.png
 share/icons/hicolor/16x16/apps/rhythmbox.png
 share/icons/hicolor/22x22/apps/rhythmbox.png
 share/icons/hicolor/24x24/apps/rhythmbox.png
+share/icons/hicolor/24x24/places/music-library.png
 share/icons/hicolor/32x32/apps/rhythmbox.png
 share/icons/hicolor/48x48/apps/rhythmbox.png
 share/icons/hicolor/scalable/apps/rhythmbox.svg
@@ -616,6 +638,7 @@ share/omf/rhythmbox/rhythmbox-es.omf
 share/omf/rhythmbox/rhythmbox-fr.omf
 share/omf/rhythmbox/rhythmbox-it.omf
 share/omf/rhythmbox/rhythmbox-oc.omf
+share/omf/rhythmbox/rhythmbox-pt.omf
 share/omf/rhythmbox/rhythmbox-ru.omf
 share/omf/rhythmbox/rhythmbox-sv.omf
 share/omf/rhythmbox/rhythmbox-uk.omf
@@ -639,6 +662,7 @@ share/rhythmbox/icons/hicolor/16x16/actions/podcast-new.png
 share/rhythmbox/icons/hicolor/16x16/places/
 share/rhythmbox/icons/hicolor/16x16/places/library-internet-radio.png
 share/rhythmbox/icons/hicolor/16x16/places/library-podcast.png
+share/rhythmbox/icons/hicolor/16x16/places/music-library.png
 share/rhythmbox/icons/hicolor/16x16/places/playlist-automatic.png
 share/rhythmbox/icons/hicolor/16x16/places/playlist.png
 share/rhythmbox/icons/hicolor/16x16/status/

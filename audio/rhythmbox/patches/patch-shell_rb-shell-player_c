@@ -1,7 +1,7 @@
-$OpenBSD: patch-shell_rb-shell-player_c,v 1.9 2010/03/21 10:10:56 ajacoutot Exp $
---- shell/rb-shell-player.c.orig	Sun Feb 28 14:35:24 2010
-+++ shell/rb-shell-player.c	Wed Mar  3 11:24:33 2010
-@@ -729,10 +729,8 @@ rb_shell_player_open_playlist_url (RBShellPlayer *play
+$OpenBSD: patch-shell_rb-shell-player_c,v 1.10 2010/03/28 10:48:50 ajacoutot Exp $
+--- shell/rb-shell-player.c.orig	Thu Mar 25 01:10:15 2010
++++ shell/rb-shell-player.c	Sun Mar 28 12:03:06 2010
+@@ -788,10 +788,8 @@ rb_shell_player_open_playlist_url (RBShellPlayer *play
  		rb_player_play (player->priv->mmplayer, play_type, player->priv->track_transition_time, &error);
  
  	if (error) {
@@ -12,7 +12,7 @@ $OpenBSD: patch-shell_rb-shell-player_c,v 1.9 2010/03/21 10:10:56 ajacoutot Exp 
  	}
  }
  
-@@ -804,7 +802,9 @@ rb_shell_player_handle_eos_unlocked (RBShellPlayer *pl
+@@ -863,7 +861,9 @@ rb_shell_player_handle_eos_unlocked (RBShellPlayer *pl
  			/* we're handling an unexpected EOS here, so crossfading isn't
  			 * really possible anyway -> specify FALSE.
  			 */
@@ -22,7 +22,7 @@ $OpenBSD: patch-shell_rb-shell-player_c,v 1.9 2010/03/21 10:10:56 ajacoutot Exp 
  			g_free (location);
  			break;
  		}
-@@ -1493,7 +1493,9 @@ open_location_thread (OpenLocationThreadData *data)
+@@ -1552,7 +1552,9 @@ open_location_thread (OpenLocationThreadData *data)
  	} else {
  		/* if we can't parse it as a playlist, just try playing it */
  		rb_debug ("playlist parser failed, playing %s directly", data->location);
