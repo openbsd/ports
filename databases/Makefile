@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2010/02/01 17:00:12 espie Exp $
+# $OpenBSD: Makefile,v 1.173 2010/03/28 19:33:58 jasper Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -56,6 +56,7 @@
      SUBDIR += p5-Class-DBI-Plugin-Type
      SUBDIR += p5-Class-DBI-SQLite
      SUBDIR += p5-Class-DBI-mysql
+     SUBDIR += p5-CouchDB-View
      SUBDIR += p5-DBD-CSV
      SUBDIR += p5-DBD-Chart
      SUBDIR += p5-DBD-LDAP

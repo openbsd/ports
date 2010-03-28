@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.776 2010/03/25 10:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.777 2010/03/28 19:31:21 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -256,6 +256,7 @@
      SUBDIR += p5-B-Hooks-EndOfScope
      SUBDIR += p5-B-Hooks-OP-Check
      SUBDIR += p5-B-Keywords
+     SUBDIR += p5-B-Utils
      SUBDIR += p5-BFD
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-BSD-stat
@@ -334,6 +335,7 @@
      SUBDIR += p5-Data-Alias
      SUBDIR += p5-Data-Buffer
      SUBDIR += p5-Data-Dump
+     SUBDIR += p5-Data-Dump-Streamer
      SUBDIR += p5-Data-Dumper-Simple
      SUBDIR += p5-Data-Flow
      SUBDIR += p5-Data-FormValidator
