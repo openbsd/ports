@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_names_c,v 1.3 2010/03/28 18:35:01 naddy Exp $
+
+Fix an instance of use-after-free(), from upstream.
+
+--- src/names.c.orig	Sun Mar 28 15:19:50 2010
++++ src/names.c	Sun Mar 28 15:20:38 2010
+@@ -950,6 +950,7 @@ collect_and_sort_names (void)
+ 		{
+ 		  if (p->child)
+ 		    rebase_child_list (p->child, name);
++		  hash_delete (nametab, name);
+ 		  /* FIXME: remove_directory (p->caname); ? */
+ 		  remname (p);
+ 		  free_name (p);

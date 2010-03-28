@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2010/03/24 18:02:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2010/03/28 18:35:00 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
-DISTNAME=	tar-1.22
-PKGNAME=	g${DISTNAME}p1
+DISTNAME=	tar-1.23
+PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	http://www.gnu.org/software/tar/
 
@@ -19,10 +19,12 @@ MASTER_SITES=	${MASTER_SITE_GNU:=tar/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
-RUN_DEPENDS=	::archivers/bzip2 ::archivers/lzop ::archivers/xz
+# only force dependencies for compressors that have a single-letter option
+RUN_DEPENDS=	::archivers/bzip2 ::archivers/xz
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--program-prefix=g
+CONFIGURE_ARGS=	--program-prefix=g \
+		--disable-silent-rules
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${LDSTATIC}" \
 		DEFAULT_ARCHIVE=/dev/rst0 \
@@ -41,5 +43,8 @@ CONFIGURE_ENV+=	SHLIBEXT=""
 LDSTATIC=
 WANTLIB=	c
 .endif
+
+REGRESS_DEPENDS=:autoconf-2.63:devel/autoconf/2.63
+REGRESS_FLAGS=	AUTOCONF_VERSION=2.63
 
 .include <bsd.port.mk>

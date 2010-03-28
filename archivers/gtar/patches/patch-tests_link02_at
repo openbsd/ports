@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_link02_at,v 1.1 2010/03/28 18:35:01 naddy Exp $
+--- tests/link02.at.orig	Thu Mar 25 16:17:52 2010
++++ tests/link02.at	Thu Mar 25 16:18:07 2010
+@@ -34,9 +34,9 @@ AT_KEYWORDS([hardlinks link02])
+ 
+ AT_TAR_CHECK([
+ genfile -l 64 -f file1
+-link file1 file2
+-link file2 file3
+-link file3 file4
++ln file1 file2
++ln file2 file3
++ln file3 file4
+ tar -c -f archive --remove-files file1 file2 file3 file4
+ tar tfv archive | sed -n 's/.*file[[2-4]] link to //p'
+ ],
