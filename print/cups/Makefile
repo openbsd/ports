@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/03/29 07:53:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2010/03/29 13:11:42 sthen Exp $
 
 COMMENT=		Common Unix Printing System
 
@@ -38,7 +38,7 @@ RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
 LIB_DEPENDS=		png.>=3::graphics/png \
 			tiff.>=35::graphics/tiff \
 			dbus-1.>=7::x11/dbus \
-LIB_DEPENDS+=		dns_sd::net/avahi
+			dns_sd::net/avahi
 
 FAKE_FLAGS=		BINMODE=${BINMODE} \
 			SHAREMODE=${SHAREMODE} \
