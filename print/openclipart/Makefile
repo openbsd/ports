@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/03/21 16:43:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2010/03/29 12:23:24 jasper Exp $
 
 COMMENT=	desktop publishing clip-art
 
-V=0.19
-DISTNAME=	openclipart-$V
-PKGNAME=	${DISTNAME}p0
+V=		2.0
+DISTNAME=	openclipart-$V-full
+PKGNAME=	${DISTNAME:S/-full//}
 CATEGORIES=	print graphics
 
 HOMEPAGE=	http://openclipart.org/
@@ -28,7 +28,7 @@ NO_REGRESS=	Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/openclipart/
 	tar -xjf ${FULLDISTDIR}/${DISTFILES} \
-	    -C ${PREFIX}/share -s ',^openclipart-$V,openclipart,'
+	    -C ${PREFIX}/share -s ',^openclipart-$V-full,openclipart,'
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/openclipart/
 	find ${PREFIX}/share/openclipart -type f -print0 | \
 	    xargs -0 chmod a-x
