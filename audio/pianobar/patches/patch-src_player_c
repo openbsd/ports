@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_player_c,v 1.1.1.1 2010/03/29 21:12:20 dcoppa Exp $
+--- src/player.c.orig	Tue Mar 16 20:29:34 2010
++++ src/player.c	Mon Mar 29 15:44:59 2010
+@@ -185,7 +185,7 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, s
+ 					/* +1+4 needs to be replaced by <something>! */
+ 					player->bufferRead += 1+4;
+ 					char err = NeAACDecInit2 (player->aacHandle, player->buffer +
+-							player->bufferRead, 5, &player->samplerate,
++							player->bufferRead, 5, (void *)&player->samplerate,
+ 							&player->channels);
+ 					player->bufferRead += 5;
+ 					if (err != 0) {

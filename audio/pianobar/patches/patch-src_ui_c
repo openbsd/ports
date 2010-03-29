@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ui_c,v 1.1.1.1 2010/03/29 21:12:20 dcoppa Exp $
+--- src/ui.c.orig	Tue Mar 16 20:29:34 2010
++++ src/ui.c	Mon Mar 29 15:42:23 2010
+@@ -420,7 +420,7 @@ void BarUiStartEventCmd (const BarSettings_t *settings
+ 		/* child */
+ 		close (pipeFd[1]);
+ 		dup2 (pipeFd[0], fileno (stdin));
+-		execl (settings->eventCmd, settings->eventCmd, type, NULL);
++		execl (settings->eventCmd, settings->eventCmd, type, (char *)NULL);
+ 		BarUiMsg (MSG_ERR, "Cannot start eventcmd. (%s)\n", strerror (errno));
+ 		close (pipeFd[0]);
+ 		exit (1);
