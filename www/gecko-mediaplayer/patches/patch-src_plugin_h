@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_plugin_h,v 1.1 2010/03/29 12:17:42 dcoppa Exp $
+
+fix building with our xulrunner
+
+--- src/plugin.h.orig	Tue Mar 23 16:52:08 2010
++++ src/plugin.h	Tue Mar 23 16:52:22 2010
+@@ -39,7 +39,7 @@
+ #define __PLUGIN_H__
+ #include <npapi.h>
+ #include <npruntime.h>
+-#include <npfunctions.h>
++#include <npupp.h>
+ #include <X11/Xlib.h>
+ #include <dbus/dbus.h>
+ #include <dbus/dbus-glib-lowlevel.h>

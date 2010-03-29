@@ -1,19 +1,28 @@
-$OpenBSD: patch-src_plugin_cpp,v 1.1 2009/11/01 20:34:20 landry Exp $
+$OpenBSD: patch-src_plugin_cpp,v 1.2 2010/03/29 12:17:42 dcoppa Exp $
 
-fix for includes from upstream svn
+fix from upstream svn:
+if url has "stream" in it, mark the url as streaming
 
---- src/plugin.cpp.orig	Mon Oct 12 06:28:37 2009
-+++ src/plugin.cpp	Mon Oct 12 06:28:54 2009
-@@ -42,9 +42,9 @@
+--- src/plugin.cpp.orig	Wed Feb 24 17:04:17 2010
++++ src/plugin.cpp	Wed Mar 24 12:09:35 2010
+@@ -37,7 +37,6 @@
+ 
+ 
+ #include "plugin.h"
+-//#include "npupp.h"
+ #include "plugin_list.h"
  #include "plugin_setup.h"
  #include "plugin_types.h"
- #include "plugin_dbus.h"
--#include "nsIPrefBranch.h"
--#include "nsIPrefService.h"
--#include "nsIServiceManager.h"
-+#include <nsIPrefBranch.h>
-+#include <nsIPrefService.h>
-+#include <nsIServiceManager.h>
+@@ -921,8 +920,10 @@ int32 CPlugin::Write(NPStream * stream, int32 offset, 
+         return -1;
+     }
  
- nsIPrefBranch *prefBranch = NULL;
- nsIPrefService *prefService = NULL;
+-    if (strstr((char *) buffer, "ICY 200 OK") != NULL || strstr((char *) buffer, "Content-length:") != NULL     // If item is a block of jpeg images, just stream it
+-        || strstr((char *) buffer, "<HTML>") != NULL || item->streaming == TRUE) {
++    if (strstr((char *) buffer, "ICY 200 OK") != NULL
++        || strstr((char *) buffer, "Content-length:") != NULL     // If item is a block of jpeg images, just stream it
++        || strstr((char *) buffer, "<HTML>") != NULL
++        || item->streaming == TRUE) {
+         //   || stream->lastmodified == 0) {    this is not valid for many sites
+ 
+         // printf("BUFFER='%s'\n", buffer);

@@ -1,0 +1,60 @@
+$OpenBSD: patch-src_plugin_setup_cpp,v 1.1 2010/03/29 12:17:42 dcoppa Exp $
+
+fixes from upstream svn:
+move "stream" test to streaming function
+change it from int to boolean
+
+--- src/plugin_setup.cpp.orig	Tue Feb 23 17:12:37 2010
++++ src/plugin_setup.cpp	Tue Mar 23 17:14:09 2010
+@@ -524,38 +524,41 @@ void new_instance(CPlugin * instance, int16_t argc, ch
+ 
+ }
+ 
+-gint streaming(gchar * url)
++gboolean streaming(gchar * url)
+ {
+-    gint ret = 0;
++    gboolean ret = FALSE;
+     char *p;
+ 
+     if (g_ascii_strncasecmp(url, "mms://", 6) == 0)
+-        ret = 1;
++        ret = TRUE;
+ 
+     if (g_ascii_strncasecmp(url, "mmst://", 7) == 0)
+-        ret = 1;
++        ret = TRUE;
+ 
+     if (g_ascii_strncasecmp(url, "mmsu://", 7) == 0)
+-        ret = 1;
++        ret = TRUE;
+ 
+     if (g_ascii_strncasecmp(url, "rtsp://", 7) == 0)
+-        ret = 1;
++        ret = TRUE;
+ 
+     if (g_ascii_strncasecmp(url, "tv://", 5) == 0)
+-        ret = 1;
++        ret = TRUE;
+ 
+     if (g_ascii_strncasecmp(url, "dvd://", 6) == 0)
+-        ret = 1;
++        ret = TRUE;
+ 
+     if (g_strrstr(url, ".m3u") != NULL)
+-        ret = 1;
++        ret = TRUE;
+ 
++    if (g_strrstr(url, "stream") != NULL)
++        ret = TRUE;
++
+     if (g_ascii_strncasecmp(url, "file://", 7) == 0) {
+         p = g_filename_from_uri(url, NULL, NULL);
+         if (p != NULL) {
+             if (g_file_test(p, G_FILE_TEST_EXISTS)) {
+                 g_strlcpy(url, p, 1024);
+-                ret = 1;
++                ret = TRUE;
+             }
+             g_free(p);
+         }

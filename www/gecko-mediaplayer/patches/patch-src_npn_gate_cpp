@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_npn_gate_cpp,v 1.1 2010/03/29 12:17:42 dcoppa Exp $
+
+fix building with our xulrunner
+
+--- src/npn_gate.cpp.orig	Tue Mar 23 16:53:02 2010
++++ src/npn_gate.cpp	Tue Mar 23 16:53:12 2010
+@@ -40,8 +40,7 @@
+ // Implementation of Netscape entry points (NPN_*)
+ //
+ #include <npapi.h>
+-//#include "npupp.h"
+-#include <npfunctions.h>
++#include <npupp.h>
+ 
+ #ifndef HIBYTE
+ #define HIBYTE(x) ((((uint32_t)(x)) & 0xff00) >> 8)

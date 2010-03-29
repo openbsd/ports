@@ -1,15 +1,47 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2009/11/01 18:25:21 landry Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.3 2010/03/29 12:17:42 dcoppa Exp $
 
-fix mozilla plugin directory location
+fix library linking (remove -ldl)
 
---- src/Makefile.in.orig	Thu Sep  3 13:28:27 2009
-+++ src/Makefile.in	Mon Oct 12 05:57:07 2009
-@@ -312,7 +312,7 @@ COMMONCODE = \
- 	npp_gate.cpp \
- 	npupp.h
+--- src/Makefile.in.orig	Tue Mar 23 16:44:56 2010
++++ src/Makefile.in	Tue Mar 23 16:46:04 2010
+@@ -331,35 +331,35 @@ gecko_mediaplayer_so_SOURCES = \
  
--install_libexecdir = $(libdir)/mozilla/plugins
-+install_libexecdir = $(libdir)/mozilla-plugins
- gecko_mediaplayer_so_SOURCES = \
- 	plugin_types_std.cpp \
+ gecko_mediaplayer_so_CFLAGS = -fPIC 
+ gecko_mediaplayer_so_LDFLAGS = -shared -fPIC
+-gecko_mediaplayer_so_LDADD = -ldl libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS)
++gecko_mediaplayer_so_LDADD = libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS)
+ gecko_mediaplayer_qt_so_SOURCES = \
+ 	plugin_types_qt.cpp \
  	$(COMMONCODE)
+ 
+ gecko_mediaplayer_qt_so_CFLAGS = -fPIC 
+ gecko_mediaplayer_qt_so_LDFLAGS = -shared -fPIC
+-gecko_mediaplayer_qt_so_LDADD = -ldl libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS)
++gecko_mediaplayer_qt_so_LDADD = libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS)
+ gecko_mediaplayer_wmp_so_SOURCES = \
+ 	plugin_types_wmp.cpp \
+ 	$(COMMONCODE)
+ 
+ gecko_mediaplayer_wmp_so_CFLAGS = -fPIC 
+ gecko_mediaplayer_wmp_so_LDFLAGS = -shared -fPIC 
+-gecko_mediaplayer_wmp_so_LDADD = -ldl libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS)
++gecko_mediaplayer_wmp_so_LDADD = libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS)
+ gecko_mediaplayer_dvx_so_SOURCES = \
+ 	plugin_types_dvx.cpp \
+ 	$(COMMONCODE)
+ 
+ gecko_mediaplayer_dvx_so_CFLAGS = -fPIC 
+ gecko_mediaplayer_dvx_so_LDFLAGS = -shared -fPIC
+-gecko_mediaplayer_dvx_so_LDADD = -ldl libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS)
++gecko_mediaplayer_dvx_so_LDADD = libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS)
+ gecko_mediaplayer_rm_so_SOURCES = \
+ 	plugin_types_rm.cpp \
+ 	$(COMMONCODE)
+ 
+ gecko_mediaplayer_rm_so_CFLAGS = -fPIC 
+ gecko_mediaplayer_rm_so_LDFLAGS = -shared -fPIC
+-gecko_mediaplayer_rm_so_LDADD = -ldl libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS)
++gecko_mediaplayer_rm_so_LDADD = libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS)
+ all: all-recursive
+ 
+ .SUFFIXES:

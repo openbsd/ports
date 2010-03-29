@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_plugin_setup_h,v 1.1 2010/03/29 12:17:42 dcoppa Exp $
+
+fixes from upstream svn:
+move "stream" test to streaming function
+change it from int to boolean
+
+--- src/plugin_setup.h.orig	Tue Feb 23 17:12:37 2010
++++ src/plugin_setup.h	Tue Mar 23 17:14:09 2010
+@@ -42,6 +42,6 @@
+ 
+ // void new_instance(CPlugin * instance, nsPluginCreateData * parameters);
+ void new_instance(CPlugin * instance, int16_t argc, char *argn[], char *argv[]);
+-gint streaming(gchar * url);
++gboolean streaming(gchar * url);
+ 
+ #endif                          // _PLUGIN_SETUP_H

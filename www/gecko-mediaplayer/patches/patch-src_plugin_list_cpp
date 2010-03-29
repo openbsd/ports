@@ -1,24 +1,33 @@
-$OpenBSD: patch-src_plugin_list_cpp,v 1.1 2009/11/01 20:34:20 landry Exp $
+$OpenBSD: patch-src_plugin_list_cpp,v 1.2 2010/03/29 12:17:42 dcoppa Exp $
 
-fix incorrect usage of memmem() vs. memmem_compat()
+fix from upstream svn:
+give each item in the RAM playlist a unique id
 
---- src/plugin_list.cpp.orig	Mon Oct 12 06:35:56 2009
-+++ src/plugin_list.cpp	Mon Oct 12 06:36:40 2009
-@@ -356,7 +356,7 @@ GList *list_parse_qt2(GList * list, ListItem * item)
-                 return list;
-             } else {
-                 while (p != NULL) {
--                    urlptr = (gchar *) memmem(p,datalen - (p - data), "url ", 4);
-+                    urlptr = (gchar *) memmem_compat(p,datalen - (p - data), "url ", 4);
-                     
- 
-                     if (urlptr == NULL) {
-@@ -385,7 +385,7 @@ GList *list_parse_qt2(GList * list, ListItem * item)
-                             item->id = -1;
-                             list = g_list_append(list, newitem);
-                         }
--                        p = (gchar *) memmem(urlptr,datalen - (urlptr - data),"mmdr",4);
-+                        p = (gchar *) memmem_compat(urlptr,datalen - (urlptr - data),"mmdr",4);
-                     }
- 
-                 }
+--- src/plugin_list.cpp.orig	Tue Feb 23 17:12:37 2010
++++ src/plugin_list.cpp	Tue Mar 23 17:14:09 2010
+@@ -215,6 +215,7 @@ void list_dump(GList * list)
+                 printf("id = %i\n", item->id);
+                 printf("hrefid = %i\n", item->hrefid);
+                 printf("play = %i\n", item->play);
++                printf("played = %i\n", item->played);
+                 printf("path = %s\n", item->path);
+                 printf("controlid = %i\n", item->controlid);
+                 printf("playerready = %i\n", item->playerready);
+@@ -713,7 +714,7 @@ GList *list_parse_ram(GList * list, ListItem * item)
+     if (item->localsize < (16 * 1024)) {
+         if (g_file_get_contents(item->local, &data, &datalen, NULL)) {
+             if (data != NULL) {
+-                output = g_strsplit(data, "\n", 0);
++                output = g_strsplit_set(data, "\n\r", 0);
+                 parser_list = list;
+                 parser_item = item;
+                 i = 0;
+@@ -755,7 +756,7 @@ GList *list_parse_ram(GList * list, ListItem * item)
+                                 newitem->src[3] = g_ascii_tolower(newitem->src[3]);
+                             }
+                             newitem->play = TRUE;
+-                            newitem->id = entry_id;
++                            newitem->id = ++entry_id;
+                             newitem->controlid = parser_item->controlid;
+                             g_strlcpy(newitem->path, parser_item->path, 1024);
+                             parser_list = g_list_append(parser_list, newitem);
