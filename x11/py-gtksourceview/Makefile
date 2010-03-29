@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/02 14:05:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/03/29 09:15:28 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		python bindings for the GtkSourceView library
 
 GNOME_PROJECT=		pygtksourceview
-GNOME_VERSION=		2.8.0
+GNOME_VERSION=		2.10.0
 PKGNAME=		py-gtksourceview-${GNOME_VERSION}
+
 CATEGORIES=		x11
 
 HOMEPAGE=		http://projects.gnome.org/gtksourceview/pygtksourceview.html
@@ -23,11 +24,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/gettext lang/python x11/gnome
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += xcb xml2 z
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread-stubs xcb xml2 z
 
 LIB_DEPENDS=		gtksourceview-2.0::x11/gtksourceview
 BUILD_DEPENDS=		${RUN_DEPENDS} \
