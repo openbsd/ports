@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.625 2010/03/29 07:52:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.626 2010/03/29 17:02:12 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -101,6 +101,7 @@
      SUBDIR += galago-daemon
      SUBDIR += gftp
      SUBDIR += gmudix
+     SUBDIR += gnaughty
      SUBDIR += gnet
      SUBDIR += gnugk
      SUBDIR += gopher
