@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2010/03/28 19:33:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.174 2010/03/29 14:22:08 jasper Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -35,6 +35,7 @@
      SUBDIR += ocaml-postgresql
      SUBDIR += ocaml-sqlite3
      SUBDIR += openldap
+     SUBDIR += p5-AnyEvent-CouchDB
      SUBDIR += p5-AsciiDB-TagFile
      SUBDIR += p5-BerkeleyDB
      SUBDIR += p5-CGI-Application-Plugin-DBH
