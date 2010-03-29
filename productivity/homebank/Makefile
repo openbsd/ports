@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2009/12/21 21:03:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/03/29 11:27:57 pea Exp $
 
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-4.1
-PKGNAME =	${DISTNAME}p0
+DISTNAME =	homebank-4.2.1
 
 CATEGORIES =	productivity x11
 
@@ -26,8 +25,8 @@ MODULES =	devel/gettext \
 WANTLIB = 	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 	 	Xi Xinerama Xrandr Xrender c expat fontconfig freetype \
 	 	glitz png pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0 \
-	 	glib-2.0 gmodule-2.0 gobject-2.0 cairo m z stdc++ \
-		pixman-1  gio-2.0 pthread-stubs xcb
+	 	glib-2.0 gmodule-2.0 gobject-2.0 cairo m z \
+		pixman-1  gio-2.0 pthread-stubs xcb osp pthread
 
 LIB_DEPENDS =	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		ofx.>=3::devel/libofx 
@@ -41,5 +40,8 @@ USE_GMAKE =	Yes
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
+
+post-extract:
+	@cd ${WRKSRC} && chmod +x install-sh
 
 .include <bsd.port.mk>
