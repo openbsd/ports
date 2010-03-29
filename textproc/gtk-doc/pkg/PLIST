@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/18 09:45:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/03/29 08:09:50 ajacoutot Exp $
 bin/gtkdoc-check
 bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
@@ -18,6 +18,8 @@ share/gnome/help/gtk-doc-manual/
 share/gnome/help/gtk-doc-manual/C/
 share/gnome/help/gtk-doc-manual/C/fdl-appendix.xml
 share/gnome/help/gtk-doc-manual/C/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/bn_IN/
+share/gnome/help/gtk-doc-manual/bn_IN/gtk-doc-manual.xml
 share/gnome/help/gtk-doc-manual/de/
 share/gnome/help/gtk-doc-manual/de/gtk-doc-manual.xml
 share/gnome/help/gtk-doc-manual/el/
@@ -26,8 +28,16 @@ share/gnome/help/gtk-doc-manual/en_GB/
 share/gnome/help/gtk-doc-manual/en_GB/gtk-doc-manual.xml
 share/gnome/help/gtk-doc-manual/es/
 share/gnome/help/gtk-doc-manual/es/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/fr/
+share/gnome/help/gtk-doc-manual/fr/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/gu/
+share/gnome/help/gtk-doc-manual/gu/gtk-doc-manual.xml
 share/gnome/help/gtk-doc-manual/sv/
 share/gnome/help/gtk-doc-manual/sv/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/ta/
+share/gnome/help/gtk-doc-manual/ta/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/te/
+share/gnome/help/gtk-doc-manual/te/gtk-doc-manual.xml
 share/gtk-doc/data/
 share/gtk-doc/data/devhelp.xsl
 share/gtk-doc/data/devhelp2.xsl
@@ -45,10 +55,15 @@ share/gtk-doc/data/up.png
 share/gtk-doc/data/version-greater-or-equal.xsl
 share/omf/gtk-doc-manual/
 share/omf/gtk-doc-manual/gtk-doc-manual-C.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-bn_IN.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-de.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-el.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-en_GB.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-es.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-fr.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-gu.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-sv.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-ta.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-te.omf
 share/sgml/gtk-doc/
 share/sgml/gtk-doc/gtk-doc.cat

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2009/12/18 16:30:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/03/29 08:09:50 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
-GNOME_VERSION=	1.13
+GNOME_VERSION=	1.14
 GNOME_PROJECT=	gtk-doc
 
 CATEGORIES=    	textproc devel
