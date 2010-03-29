@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.777 2010/03/28 19:31:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.778 2010/03/29 14:09:33 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -244,6 +244,7 @@
      SUBDIR += p5-Alien-wxWidgets
      SUBDIR += p5-Any-Moose
      SUBDIR += p5-AnyEvent
+     SUBDIR += p5-AnyEvent-HTTP
      SUBDIR += p5-App-CLI
      SUBDIR += p5-App-Info
      SUBDIR += p5-AppConfig
