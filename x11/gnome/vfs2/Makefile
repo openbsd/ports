@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2009/12/08 18:55:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2010/03/29 07:53:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT-smb=		samba module for gnome-vfs2
 
 GNOME_PROJECT=		gnome-vfs
 GNOME_VERSION=		2.24.2
-PKGNAME-main=		gnome-vfs2-${VERSION}p2
+PKGNAME-main=		gnome-vfs2-${VERSION}p3
 PKGNAME-smb=		gnome-vfs2-smb-${VERSION}
 
 MULTI_PACKAGES=		-main -smb
@@ -31,8 +31,7 @@ BUILD_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 LIB_DEPENDS=		ORBit-2.>=2::devel/ORBit2 \
 			xml2.>=9::textproc/libxml \
 			dbus-glib-1.>=3::x11/dbus-glib
-# only build the -main subpackage to prevent cyclic dependency
-LIB_DEPENDS+=		avahi-client,avahi-common,avahi-glib::net/avahi,no_gtk,no_mono,no_qt3,no_qt4
+LIB_DEPENDS+=		avahi-client,avahi-common,avahi-glib::net/avahi
 RUN_DEPENDS=		:gnome-mime-data->=2.0.0:x11/gnome/mime-data
 
 WANTLIB-main=		${WANTLIB} c asn1 gssapi krb5 pthread

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2009/12/21 18:03:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/03/29 07:53:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	VNC Client for the GNOME Desktop
 
 GNOME_VERSION=	2.28.1
 GNOME_PROJECT=	vinagre
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	net
 
@@ -38,7 +38,7 @@ RUN_DEPENDS=	:shared-mime-info->=0.21:misc/shared-mime-info
 LIB_DEPENDS=	panel-applet-2.>=3::x11/gnome/panel \
 		gtk-vnc-1.0.>=1::x11/gtk-vnc \
 		telepathy-glib.>=4::net/telepathy/telepathy-glib \
-		avahi-ui:avahi-gtk-*:net/avahi,-gtk
+		avahi-ui:avahi-gtk-*:net/avahi,-gtk,no_mono,no_qt3,no_qt4
 
 USE_X11=	Yes
 DESKTOP_FILES=	Yes

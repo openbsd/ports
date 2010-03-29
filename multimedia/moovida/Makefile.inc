@@ -36,7 +36,7 @@ RUN_DEPENDS +=	::audio/libgpod,-python \
 		::multimedia/gstreamer-0.10/plugins-ffmpeg \
 		::multimedia/gstreamer-0.10/plugins-good \
 		::multimedia/gstreamer-0.10/plugins-ugly \
-		::net/avahi,-gtk \
+		::net/avahi,-gtk,no_mono,no_qt3,no_qt4 \
 		::textproc/py-cssutils \
 		::www/twill \
 		::x11/dbus-python \
