@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/29 14:21:09 jasper Exp $
+bin/couchdb-push
+${P5SITE}/AnyEvent/CouchDB/
+${P5SITE}/AnyEvent/CouchDB.pm
+${P5SITE}/AnyEvent/CouchDB/Database.pm
+@man man/man1/couchdb-push.1
+@man man/man3p/AnyEvent::CouchDB.3p
+@man man/man3p/AnyEvent::CouchDB::Database.3p
