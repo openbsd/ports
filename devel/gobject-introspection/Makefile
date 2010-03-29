@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/22 15:19:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/03/29 15:17:10 jasper Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		0.6.7
+GNOME_VERSION=		0.6.9
 GNOME_PROJECT=		gobject-introspection
 CATEGORIES=		devel
 
@@ -51,8 +51,6 @@ pre-configure:
 		${WRKSRC}/tests/scanner/Makefile.in \
 		${WRKSRC}/tests/offsets/Makefile.in \
 		${WRKSRC}/tools/g-ir-scanner.in \
-		${WRKSRC}/gir/GIRepository-2.0.gir \
-		${WRKSRC}/gir/Everything-1.0.gir \
 		${WRKSRC}/gir/Everything-1.0-expected.gir
 .for i in  ${SUBST_SO}
 	perl -pi -e 's,\.so\.[0-9],\.so,g' ${WRKSRC}/${i}

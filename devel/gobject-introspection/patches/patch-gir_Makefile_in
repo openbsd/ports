@@ -1,12 +1,12 @@
-$OpenBSD: patch-gir_Makefile_in,v 1.2 2009/12/22 15:19:52 ajacoutot Exp $
---- gir/Makefile.in.orig	Thu Dec 17 10:48:39 2009
-+++ gir/Makefile.in	Thu Dec 17 10:48:47 2009
-@@ -325,7 +325,7 @@ _gir_packages = $(foreach pkg,$($(_gir_name)_PACKAGES)
+$OpenBSD: patch-gir_Makefile_in,v 1.3 2010/03/29 15:17:10 jasper Exp $
+--- gir/Makefile.in.orig	Mon Mar 29 16:44:23 2010
++++ gir/Makefile.in	Mon Mar 29 16:44:46 2010
+@@ -357,7 +357,7 @@ _gir_packages = $(foreach pkg,$($(_gir_name)_PACKAGES)
  _gir_includes = $(foreach include,$($(_gir_name)_INCLUDES),--include=$(include))
  
  # Reuse the LIBTOOL variable from by automake if it's set
 -_gir_libtool = $(if $(LIBTOOL),--libtool="$(LIBTOOL)")
 +_gir_libtool = $(if $(LIBTOOL),--libtool="${LIBTOOL}")
- EXPECTEDGIRS = Everything-$(TYPELIB_VERSION)-expected.gir
- BUILT_GIRSOURCES = 
  
+ # Macros for AM_SILENT_RULES prettiness
+ _gir_verbosity = $(if $(AM_DEFAULT_VERBOSITY),$(AM_DEFAULT_VERBOSITY),1)

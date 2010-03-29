@@ -1,7 +1,7 @@
-$OpenBSD: patch-giscanner_Makefile_in,v 1.2 2009/12/22 15:19:52 ajacoutot Exp $
---- giscanner/Makefile.in.orig	Thu Dec 17 11:14:28 2009
-+++ giscanner/Makefile.in	Thu Dec 17 11:14:50 2009
-@@ -254,7 +254,7 @@ oldincludedir = @oldincludedir@
+$OpenBSD: patch-giscanner_Makefile_in,v 1.3 2010/03/29 15:17:10 jasper Exp $
+--- giscanner/Makefile.in.orig	Thu Mar 18 15:06:11 2010
++++ giscanner/Makefile.in	Mon Mar 29 16:52:28 2010
+@@ -295,7 +295,7 @@ oldincludedir = @oldincludedir@
  pdfdir = @pdfdir@
  
  # Python module
