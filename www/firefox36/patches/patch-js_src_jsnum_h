@@ -1,0 +1,12 @@
+$OpenBSD: patch-js_src_jsnum_h,v 1.1.1.1 2010/03/29 20:44:10 naddy Exp $
+--- js/src/jsnum.h.orig	Wed Jan  6 05:35:17 2010
++++ js/src/jsnum.h	Sun Jan 10 17:47:27 2010
+@@ -65,7 +65,7 @@ JS_BEGIN_EXTERN_C
+  * the high and low words are in big endian order).
+  */
+ #if defined(__arm) || defined(__arm32__) || defined(__arm26__) || defined(__arm__)
+-#if !defined(__VFP_FP__)
++#if !defined(__VFP_FP__) && !defined(__OpenBSD__) /* Armel ABI */
+ #define FPU_IS_ARM_FPA
+ #endif
+ #endif

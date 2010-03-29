@@ -1,0 +1,12 @@
+$OpenBSD: patch-widget_src_gtk2_nsWindow_cpp,v 1.1.1.1 2010/03/29 20:44:14 naddy Exp $
+--- widget/src/gtk2/nsWindow.cpp.orig	Tue Mar 16 10:57:22 2010
++++ widget/src/gtk2/nsWindow.cpp	Sat Mar 27 17:06:21 2010
+@@ -38,6 +38,8 @@
+  *
+  * ***** END LICENSE BLOCK ***** */
+ 
++#include <stdint.h>
++
+ #ifdef MOZ_PLATFORM_MAEMO
+ #define MAEMO_CHANGES
+ #endif
