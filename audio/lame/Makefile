@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2010/03/21 10:31:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/03/29 07:55:55 ajacoutot Exp $
 
-COMMENT-main=	lame ain't an MP3 encoder
-COMMENT-mp3x=	gtk frame analyzer
+COMMENT=	lame ain't an MP3 encoder
 
 V=		3.98.3
 DISTNAME=	lame-${V}
-PKGNAME-main=	${DISTNAME}
-PKGNAME-mp3x=	lame-mp3x-${V}
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS=	mp3lame	2.0	# .0.1
 
@@ -23,32 +21,8 @@ PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m ncurses
-WANTLIB-main=	${WANTLIB}
-WANTLIB-mp3x=	${WANTLIB} X11 Xau Xdmcp Xext Xi glib gmodule pthread-stubs \
-		xcb
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
-
-PSEUDO_FLAVORS=	no_x11
-FLAVOR?=
-
-MULTI_PACKAGES= -main
-
-.if !${FLAVOR:Mno_x11}
-MULTI_PACKAGES+=	-mp3x
-.endif
-
-.if ${MULTI_PACKAGES:M-mp3x}
-MODULES=		devel/gettext
-.endif
-
-LIB_DEPENDS-main=
-RUN_DEPENDS-main=
-
-LIB_DEPENDS-mp3x=	${MODGETTEXT_LIB_DEPENDS} \
-			gtk.>=1.2,gdk.>=1.2::x11/gtk+ \
-			mp3lame::audio/lame
-RUN_DEPENDS-mp3x=	${MODGETTEXT_RUN_DEPENDS}
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -56,13 +30,8 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-mp3rtp \
+		--disable-mp3x \
 		--with-fileio=lame
-
-.if ${MULTI_PACKAGES:M-mp3x}
-USE_X11=		Yes
-CONFIGURE_ARGS+=	--enable-mp3x \
-			--with-gtk-prefix=${LOCALBASE}
-.endif
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	::devel/nasm

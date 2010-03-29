@@ -1,4 +1,0 @@
-mp3x is an graphical frame analyzer for both MP3 and unencoded audio
-files. It displays frame header information, original and decoded
-pcm data, MDCT spectrum, distortion, allowable distortion and other
-psycho-acoustic information.

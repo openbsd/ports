@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/08/20 09:02:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/03/29 07:55:55 ajacoutot Exp $
 @pkgpath audio/lame
 @pkgpath audio/lame,no_x11
 @bin bin/lame

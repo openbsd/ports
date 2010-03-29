@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.5 2010/03/29 07:55:55 ajacoutot Exp $
+@lib lib/libmp3lame.so.${LIBmp3lame_VERSION}

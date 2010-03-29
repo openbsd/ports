@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2008/03/25 17:27:27 fgsch Exp $
-@lib lib/libmp3lame.so.${LIBmp3lame_VERSION}
