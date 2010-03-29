@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1 2010/03/29 12:40:09 ajacoutot Exp $
+--- configure.orig	Mon Mar 29 14:34:47 2010
++++ configure	Mon Mar 29 14:34:55 2010
+@@ -2668,14 +2668,14 @@ fi
+ 
+ if test "x$enable_threads" = "xyes" ; then
+ enable_threads="no"
+-echo $ac_n "checking for pthread_self in -lpthread""... $ac_c" 1>&6
+-echo "configure:2673: checking for pthread_self in -lpthread" >&5
++echo $ac_n "checking for pthread_self in -pthread""... $ac_c" 1>&6
++echo "configure:2673: checking for pthread_self in -pthread" >&5
+ ac_lib_var=`echo pthread'_'pthread_self | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2681 "configure"
+ #include "confdefs.h"
+@@ -2706,7 +2706,7 @@ LIBS="$ac_save_LIBS"
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  enable_threads="yes";THREAD_LIB="-lpthread"
++  enable_threads="yes";THREAD_LIB="-pthread"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
