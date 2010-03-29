@@ -1,27 +1,19 @@
-$OpenBSD: patch-src_gnaughty_c,v 1.1 2009/10/14 00:09:57 jasper Exp $
---- src/gnaughty.c.orig	Tue May 26 19:14:03 2009
-+++ src/gnaughty.c	Wed Oct 14 02:08:41 2009
-@@ -67,8 +67,10 @@ const gchar *porntypes[]={"Sticky Movies", \ 
- 			  "Babes", \
- 			  "Ethnic", \
+$OpenBSD: patch-src_gnaughty_c,v 1.2 2010/03/29 17:15:31 jasper Exp $
+--- src/gnaughty.c.orig	Mon Mar 29 19:02:41 2010
++++ src/gnaughty.c	Mon Mar 29 19:06:02 2010
+@@ -70,6 +70,7 @@ const gchar *porntypes[]={"Sticky Movies", \
  			  "Amateur", \
--			  "Potpourri"
-+			  "Potpourri", \
+ 			  "Potpourri", \
  			  "Gay", \
-+			  "College", \
-+			  "Ellen", \
++			  "Flashers", \
  			  "Trannie"};
  
  const gchar *pageurls[] = {"www.sublimedirectory.com/movies", \
-@@ -83,8 +85,10 @@ const gchar *pageurls[] = {"www.sublimedirectory.com/m
- 			   "www.sublimedirectory.com/babes", \
- 			   "www.sublimedirectory.com/ethnic", \
+@@ -86,6 +87,7 @@ const gchar *pageurls[] = {"www.sublimedirectory.com/m
  			   "www.sublimedirectory.com/amateur", \
--			   "www.sublimedirectory.com/potpourri"
-+			   "www.sublimedirectory.com/potpourri", \
+ 			   "www.sublimedirectory.com/potpourri", \
  			   "www.sublimedirectory.com/gay", \
-+			   "www.sublimedirectory.com/college", \
-+   			   "www.sublimedirectory.com/ellen", \
++			   "www.sublimedirectory.com/flashing", \
  			   "www.sublimedirectory.com/trannie"};
  
- GList *alllinks[NUMPORNTYPES] = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL};
+ GList *alllinks[NUMPORNTYPES] = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL};
