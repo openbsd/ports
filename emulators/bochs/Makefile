@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2009/08/10 06:31:09 kili Exp $
+# $OpenBSD: Makefile,v 1.46 2010/03/29 07:37:12 giovanni Exp $
 
 COMMENT=	x86 machine simulator
 
-DISTNAME=	bochs-2.4.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	bochs-2.4.2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
 
