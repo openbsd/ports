@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_iksemel,v 1.1.1.1 2007/09/04 15:05:27 sthen Exp $
---- doc/iksemel.orig	Thu Aug  5 14:31:16 2004
-+++ doc/iksemel	Tue Sep  4 15:24:12 2007
+$OpenBSD: patch-doc_iksemel,v 1.2 2010/03/29 09:55:52 sthen Exp $
+--- doc/iksemel.orig	Thu Jul 23 13:19:30 2009
++++ doc/iksemel	Fri Jan 29 18:55:06 2010
 @@ -1,5 +1,10 @@
- This is iksemel, produced by makeinfo version 4.6 from iksemel.texi.
+ This is iksemel, produced by makeinfo version 4.13 from ./iksemel.texi.
  
 +INFO-DIR-SECTION Libraries
 +START-INFO-DIR-ENTRY

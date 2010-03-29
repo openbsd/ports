@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/09 21:51:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/03/29 09:55:52 sthen Exp $
 
 COMMENT=		XML parser designed for Jabber applications
-DISTNAME=		iksemel-1.3
-PKGNAME=		${DISTNAME}p2
+DISTNAME=		iksemel-1.4
 
 SHARED_LIBS=		iksemel		0.1	# .4.0
 
