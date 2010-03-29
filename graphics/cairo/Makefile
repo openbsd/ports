@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2010/03/29 13:13:53 eric Exp $
 
 COMMENT=		vector graphics library
 
-DISTNAME=		cairo-1.8.8
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		cairo-1.8.10
+PKGNAME=		${DISTNAME}
 SHARED_LIBS=		cairo   9.2
 CATEGORIES=		graphics
 
@@ -30,7 +30,6 @@ LIB_DEPENDS=		png::graphics/png \
 			glitz.>=2:glitz->=0.5.6:graphics/glitz
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		png_REQUIRES=libpng
 CONFIGURE_ARGS=		--enable-glitz \
 			--enable-pdf \
 			--enable-ps
