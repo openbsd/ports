@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/03/22 22:38:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/03/29 07:44:28 ajacoutot Exp $
 
 COMMENT=	IDE for the .NET platform
 DISTNAME=	monodevelop-2.2.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/monodevelop/
 EXTRACT_SUFX=	.tar.bz2
@@ -23,12 +23,17 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		:shared-mime-info->=0.21:misc/shared-mime-info \
 		::devel/mono-addins \
 		::shells/bash \
-		::x11/gnome/mono-gnome
+		::x11/gnome/mono-gnome \
+		::devel/ectags
+
+# see patches/patch-src_addins_MonoDevelop_Autotools_SolutionDeployer_cs
+RUN_DEPENDS+=	::devel/gmake
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-update-mimedb \
-		--enable-aspnet \
-		--enable-aspnetedit
+		--disable-update-desktopdb \
+		--enable-subversion \
+		--enable-gnomeplatform
 
 DLLMAP_FILES=	src/core/Mono.Texteditor/Mono.TextEditor.PopupWindow/TooltipWindow.cs \
 		src/core/MonoDevelop.Projects/MonoDevelop.Projects.dll.config \
@@ -48,5 +53,6 @@ pre-configure:
 	for i in ${BASH_SCRIPTS}; do \
 		perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/$${i}; \
 	done
+	${SUBST_CMD} ${WRKSRC}/theme-icons/icon-theme-installer
 
 .include <bsd.port.mk>

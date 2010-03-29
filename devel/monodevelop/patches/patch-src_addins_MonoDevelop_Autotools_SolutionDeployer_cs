@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_addins_MonoDevelop_Autotools_SolutionDeployer_cs,v 1.1 2010/03/29 07:44:28 ajacoutot Exp $
+--- src/addins/MonoDevelop.Autotools/SolutionDeployer.cs.orig	Thu Nov  5 19:12:13 2009
++++ src/addins/MonoDevelop.Autotools/SolutionDeployer.cs	Mon Mar 29 08:59:41 2010
+@@ -180,7 +180,7 @@ namespace MonoDevelop.Autotools
+ 				chainedOutput.ChainWriter (monitor.Log);
+ 				chainedOutput.ChainWriter (sw);
+ 
+-				ProcessWrapper process = Runtime.ProcessService.StartProcess ( "make", 
++				ProcessWrapper process = Runtime.ProcessService.StartProcess ( "gmake", 
+ 						"dist", 
+ 						baseDir, 
+ 						chainedOutput, 
+@@ -189,7 +189,7 @@ namespace MonoDevelop.Autotools
+ 				process.WaitForOutput ();
+ 
+ 				if ( process.ExitCode > 0 )
+-					throw new Exception ( GettextCatalog.GetString ("An unspecified error occurred while running '{0}'", "make dist") );
++					throw new Exception ( GettextCatalog.GetString ("An unspecified error occurred while running '{0}'", "gmake dist") );
+ 
+ 				monitor.Step ( 1 );
+ 
