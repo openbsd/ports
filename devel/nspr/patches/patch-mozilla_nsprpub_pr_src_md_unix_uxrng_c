@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_md_unix_uxrng_c,v 1.1 2009/03/23 00:50:52 jakemsr Exp $
---- mozilla/nsprpub/pr/src/md/unix/uxrng.c.orig	Tue Oct  7 14:45:09 2008
-+++ mozilla/nsprpub/pr/src/md/unix/uxrng.c	Sun Mar 22 01:28:01 2009
-@@ -150,7 +150,11 @@ static PRCallOnceType coOpenDevURandom;
+$OpenBSD: patch-mozilla_nsprpub_pr_src_md_unix_uxrng_c,v 1.2 2010/03/30 11:47:33 jasper Exp $
+--- mozilla/nsprpub/pr/src/md/unix/uxrng.c.orig	Sat May  2 01:08:05 2009
++++ mozilla/nsprpub/pr/src/md/unix/uxrng.c	Mon Feb  8 16:00:07 2010
+@@ -132,7 +132,11 @@ static PRCallOnceType coOpenDevURandom;
  
  static PRStatus OpenDevURandom( void )
  {

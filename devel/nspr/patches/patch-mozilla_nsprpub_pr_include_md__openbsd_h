@@ -1,16 +1,18 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_h,v 1.7 2009/02/14 12:01:48 sthen Exp $
---- mozilla/nsprpub/pr/include/md/_openbsd.h.orig	Sat May 26 01:13:08 2007
-+++ mozilla/nsprpub/pr/include/md/_openbsd.h	Sat Feb 14 00:30:54 2009
-@@ -56,6 +56,8 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_h,v 1.8 2010/03/30 11:47:33 jasper Exp $
+--- mozilla/nsprpub/pr/include/md/_openbsd.h.orig	Sat May 26 02:13:08 2007
++++ mozilla/nsprpub/pr/include/md/_openbsd.h	Mon Feb  8 16:00:19 2010
+@@ -56,6 +56,10 @@
  #define _PR_SI_ARCHITECTURE "sparc"
  #elif defined(__arm__)
  #define _PR_SI_ARCHITECTURE "arm"
 +#elif defined(__hppa__)
 +#define _PR_SI_ARCHITECTURE "hppa"
++#elif defined(__mips64__) || defined(__mips64el__)
++#define _PR_SI_ARCHITECTURE "mips64"
  #endif
  
  #define PR_DLL_SUFFIX		".so"
-@@ -65,7 +67,11 @@
+@@ -65,7 +69,11 @@
  #define _MD_DEFAULT_STACK_SIZE	65536L
  #define _MD_MMAP_FLAGS          MAP_PRIVATE
  
@@ -22,3 +24,12 @@ $OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_h,v 1.7 2009/02/14 12:01:
  #define HAVE_DLL
  #define USE_DLFCN
  #define _PR_HAVE_SOCKADDR_LEN
+@@ -101,6 +109,8 @@
+ #define JB_SP_INDEX 6
+ #elif defined(__arm__)
+ #define JB_SP_INDEX 23
++#elif defined(__mips64__) || defined(__mips64el__)
++#define JB_SP_INDEX 29
+ #else
+ #error "Need to define SP index in jmp_buf here"
+ #endif
