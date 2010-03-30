@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/10/09 17:39:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/03/30 15:07:06 ajacoutot Exp $
 @pkgpath x11/gnome/vfs2
 @bin bin/gnomevfs-cat
 @bin bin/gnomevfs-copy
@@ -208,6 +208,7 @@ share/locale/da/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/dz/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/eo/LC_MESSAGES/gnome-vfs-2.0.mo
