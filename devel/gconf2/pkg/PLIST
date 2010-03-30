@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2009/10/24 10:23:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2010/03/30 12:52:30 ajacoutot Exp $
 %%SHARED%%
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.defaults/*
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.mandatory/*
@@ -80,6 +80,9 @@ share/locale/ar/LC_MESSAGES/GConf2.mo
 share/locale/as/
 share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/GConf2.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/GConf2.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/GConf2.mo
@@ -108,6 +111,9 @@ share/locale/dz/
 share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/GConf2.mo
 share/locale/el/LC_MESSAGES/GConf2.mo
+share/locale/en@shaw/
+share/locale/en@shaw/LC_MESSAGES/
+share/locale/en@shaw/LC_MESSAGES/GConf2.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/GConf2.mo

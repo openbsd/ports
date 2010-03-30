@@ -1,7 +1,7 @@
-$OpenBSD: patch-defaults_gconf-defaults_c,v 1.1 2009/10/24 10:23:02 ajacoutot Exp $
---- defaults/gconf-defaults.c.orig	Fri Oct 23 01:59:12 2009
-+++ defaults/gconf-defaults.c	Fri Oct 23 02:00:29 2009
-@@ -810,7 +810,7 @@ do_copy (GConfDefaults          *mechanism,
+$OpenBSD: patch-defaults_gconf-defaults_c,v 1.2 2010/03/30 12:52:30 ajacoutot Exp $
+--- defaults/gconf-defaults.c.orig	Tue Mar 23 00:36:20 2010
++++ defaults/gconf-defaults.c	Tue Mar 30 14:31:47 2010
+@@ -811,7 +811,7 @@ do_copy (GConfDefaults          *mechanism,
  	else {
  		adata->annotation_key = "org.gnome.gconf.defaults.set-system.prefix";
  		adata->default_action = "org.gnome.gconf.defaults.set-system";

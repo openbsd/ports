@@ -1,7 +1,7 @@
-$OpenBSD: patch-gconf_gconfd_c,v 1.1 2009/10/24 10:23:02 ajacoutot Exp $
---- gconf/gconfd.c.orig	Fri Oct 23 01:41:10 2009
-+++ gconf/gconfd.c	Fri Oct 23 01:41:47 2009
-@@ -655,7 +655,7 @@ system_bus_message_handler (DBusConnection *connection
+$OpenBSD: patch-gconf_gconfd_c,v 1.2 2010/03/30 12:52:30 ajacoutot Exp $
+--- gconf/gconfd.c.orig	Tue Mar 23 00:36:20 2010
++++ gconf/gconfd.c	Tue Mar 30 14:31:47 2010
+@@ -637,7 +637,7 @@ system_bus_message_handler (DBusConnection *connection
  
  	  gconf_log (GCL_DEBUG, "System defaults changed.  Notifying.");
  
