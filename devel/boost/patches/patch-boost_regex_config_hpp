@@ -1,12 +1,12 @@
-$OpenBSD: patch-boost_regex_config_hpp,v 1.1 2008/04/03 07:44:40 bernd Exp $
---- boost/regex/config.hpp.orig	Wed Mar 26 19:36:57 2008
-+++ boost/regex/config.hpp	Wed Mar 26 19:37:27 2008
+$OpenBSD: patch-boost_regex_config_hpp,v 1.2 2010/03/30 11:00:15 robert Exp $
+--- boost/regex/config.hpp.orig	Sat Dec 26 15:48:19 2009
++++ boost/regex/config.hpp	Sat Dec 26 15:48:34 2009
 @@ -75,7 +75,7 @@
   * std::use_facet<std::ctype<wchar_t> >.is(std::ctype_base::lower|std::ctype_base::upper, L'a');
   * returns *false*.
   */
 -#ifdef __GLIBCPP__
-+#if defined(__GLIBCPP__) || defined (__OpenBSD__)
++#if defined(__GLIBCPP__) && !defined(__OpenBSD__)
  #  define BOOST_REGEX_BUGGY_CTYPE_FACET
  #endif
  

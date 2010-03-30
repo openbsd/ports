@@ -1,68 +1,56 @@
-$OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.2 2008/04/06 17:57:43 deanna Exp $
---- tools/build/v2/tools/gcc.jam.orig	Tue Jun 12 00:47:49 2007
-+++ tools/build/v2/tools/gcc.jam	Sat Apr  5 16:10:59 2008
-@@ -41,8 +41,10 @@ generators.override gcc.searched-lib-generator : searc
+$OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.3 2010/03/30 11:00:15 robert Exp $
+--- tools/build/v2/tools/gcc.jam.orig	Wed Oct 28 08:47:51 2009
++++ tools/build/v2/tools/gcc.jam	Sat Dec 26 09:57:06 2009
+@@ -269,7 +269,7 @@ class gcc-pch-generator : pch-generator
  
- # Make the "o" suffix used for gcc toolset on all
- # platforms
-+local so_version = [ modules.peek : SO_VERSION ] ;
- type.set-generated-target-suffix OBJ : <toolset>gcc : o ;
- type.set-generated-target-suffix STATIC_LIB : <toolset>gcc : a ;
-+type.set-generated-target-suffix SHARED_LIB : <toolset>gcc : so.$(so_version) ;
+         # return result of base class and pch-file property as usage-requirements
+         return
+-            [ property-set.create <pch-file>$(pch-file) <cflags>-Winvalid-pch ]
++            [ property-set.create <pch-file>$(pch-file) ]
+             $(pch-file)
+           ;
+     }
+@@ -299,7 +299,7 @@ toolset.flags gcc.compile PCH_FILE <pch>on : <pch-file
  
- type.set-generated-target-suffix IMPORT_LIB : <toolset>gcc <target-os>cygwin : dll.a ;
- type.set-generated-target-suffix IMPORT_LIB : <toolset>gcc <target-os>windows : a ;
-@@ -268,7 +270,7 @@ flags gcc.compile PCH_FILE <pch>on : <pch-file> ;
+ # Declare flags and action for compilation.
+ toolset.flags gcc.compile OPTIONS <optimization>off   : -O0 ;
+-toolset.flags gcc.compile OPTIONS <optimization>speed : -O3 ;
++toolset.flags gcc.compile OPTIONS <optimization>speed : -O2 ;
+ toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
  
- # Declare flags and action for compilation
- flags gcc.compile OPTIONS <optimization>off : -O0 ;
--flags gcc.compile OPTIONS <optimization>speed : -O3 ;
-+flags gcc.compile OPTIONS <optimization>speed : -O2 ;
- flags gcc.compile OPTIONS <optimization>space : -Os ;
- 
- flags gcc.compile OPTIONS <inlining>off : -fno-inline ;
-@@ -362,11 +364,13 @@ rule compile.c
+ toolset.flags gcc.compile OPTIONS <inlining>off  : -fno-inline ;
+@@ -473,11 +473,13 @@ rule compile.c ( targets * : sources * : properties * 
  
  actions compile.c++ bind PCH_FILE
  {
-+    echo "$(CONFIG_COMMAND)" $(LANG) -ftemplate-depth-128 $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<:W)" "$(>:W)"
-     "$(CONFIG_COMMAND)" $(LANG) -ftemplate-depth-128 $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<:W)" "$(>:W)"
++    echo "$(CONFIG_COMMAND)" $(LANG) -ftemplate-depth-$(TEMPLATE_DEPTH) $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<:W)" "$(>:W)"
+     "$(CONFIG_COMMAND)" $(LANG) -ftemplate-depth-$(TEMPLATE_DEPTH) $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<:W)" "$(>:W)"
  }
  
  actions compile.c bind PCH_FILE
  {
-+    echo "$(CONFIG_COMMAND)" $(LANG) $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<)" "$(>)" 
-     "$(CONFIG_COMMAND)" $(LANG) $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<)" "$(>)" 
++    echo "$(CONFIG_COMMAND)" $(LANG) $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
+     "$(CONFIG_COMMAND)" $(LANG) $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
  }
  
-@@ -490,12 +494,6 @@ rule init-link-flags ( toolset linker condition )
-     {
-     case gnu :
-         {
--        # Strip the binary when no debugging is needed.
--        # We use --strip-all flag as opposed to -s since icc
--        # (intel's compiler) is generally option-compatible with
--        # and inherits from gcc toolset, but does not support -s
--        flags $(toolset).link OPTIONS $(condition)/<debug-symbols>off : -Wl,--strip-all 
--          : unchecked ;
-         flags $(toolset).link RPATH $(condition) : <dll-path> : unchecked ;
-         flags $(toolset).link RPATH_LINK $(condition) : <xdll-path> : unchecked ;
-         flags $(toolset).link START-GROUP $(condition) : -Wl,--start-group : unchecked ;
-@@ -565,6 +563,7 @@ rule link ( targets * : sources * : properties * )
+@@ -795,6 +797,7 @@ rule link ( targets * : sources * : properties * )
  
  actions link bind LIBRARIES
  {
-+    echo "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" -l$(FINDLIBS-ST) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
-     "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" -l$(FINDLIBS-ST) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
++    echo "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+     "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+ 
+ }
+@@ -855,10 +858,10 @@ rule link.dll ( targets * : sources * : properties * )
+     JAM_SEMAPHORE on $(targets) = <s>gcc-link-semaphore ;
  }
  
-@@ -629,7 +628,8 @@ rule link.dll ( targets * : sources * : properties * )
- # Differ from 'link' above only by -shared.
+-# Differs from 'link' above only by -shared.
++# Differs from 'link' above only by -shared and -fPIC.
  actions link.dll bind LIBRARIES
  {
--    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared $(START-GROUP) "$(>)" "$(LIBRARIES)" -l$(FINDLIBS-ST) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
-+    echo "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared -fPIC $(START-GROUP) "$(>)" "$(LIBRARIES)" -l$(FINDLIBS-ST) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
-+    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared -fPIC $(START-GROUP) "$(>)" "$(LIBRARIES)" -l$(FINDLIBS-ST) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+-    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
++    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared -fPIC $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
  }
  
- # Set up threading support. It's somewhat contrived, so perform it at the end,
+ rule setup-threading ( targets * : sources * : properties * )

@@ -1,12 +1,12 @@
-$OpenBSD: patch-libs_random_random_device_cpp,v 1.1 2008/04/06 17:57:43 deanna Exp $
---- libs/random/random_device.cpp.orig	Sat Apr  5 13:36:41 2008
-+++ libs/random/random_device.cpp	Sat Apr  5 13:38:10 2008
+$OpenBSD: patch-libs_random_random_device_cpp,v 1.2 2010/03/30 11:00:15 robert Exp $
+--- libs/random/random_device.cpp.orig	Tue May 12 18:37:39 2009
++++ libs/random/random_device.cpp	Tue May 12 18:38:44 2009
 @@ -22,7 +22,7 @@ const boost::random_device::result_type boost::random_
  #endif
  
  
--#ifdef __linux__
-+#if defined(__linux__) || defined(__OpenBSD__)
+-#if defined(__linux__) || defined (__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
  
  // the default is the unlimited capacity device, using some secure hash
  // try "/dev/random" for blocking when the entropy pool has drained
@@ -14,8 +14,8 @@ $OpenBSD: patch-libs_random_random_device_cpp,v 1.1 2008/04/06 17:57:43 deanna E
    int fd;
  };
  
--#endif // __linux__
-+#endif // __linux__ || __OpenBSD__
+-#endif // __linux__ || __FreeBSD__
++#endif // __linux__ || __FreeBSD__ || __OpenBSD__ 
  
  
  boost::random_device::random_device(const std::string& token)

@@ -1,11 +1,11 @@
-$OpenBSD: patch-boost_config_stdlib_libstdcpp3_hpp,v 1.4 2009/07/27 00:34:24 kurt Exp $
---- boost/config/stdlib/libstdcpp3.hpp.orig	Thu Dec  1 10:00:33 2005
-+++ boost/config/stdlib/libstdcpp3.hpp	Mon Dec 31 02:29:05 2007
+$OpenBSD: patch-boost_config_stdlib_libstdcpp3_hpp,v 1.5 2010/03/30 11:00:15 robert Exp $
+--- boost/config/stdlib/libstdcpp3.hpp.orig	Tue May 12 18:09:45 2009
++++ boost/config/stdlib/libstdcpp3.hpp	Tue May 12 18:15:20 2009
 @@ -29,6 +29,15 @@
  #  define _REENTRANT
  #endif
  
-+// This is a hack for OpenBSD. Currently OpenBSD's gcc is compiled
++// This is hack for OpenBSD. Currently OpenBSD's gcc is compiled
 +// with thread model = single. Many references on the net indicate
 +// multithreaded c++ applications will have problems with c++
 +// exceptions and the high-speed caching allocator. However in

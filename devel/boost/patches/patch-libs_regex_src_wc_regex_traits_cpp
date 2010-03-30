@@ -1,7 +1,7 @@
-$OpenBSD: patch-libs_regex_src_wc_regex_traits_cpp,v 1.1.1.1 2006/11/05 19:20:43 wilfried Exp $
---- libs/regex/src/wc_regex_traits.cpp.orig	Fri Oct  6 09:19:06 2006
-+++ libs/regex/src/wc_regex_traits.cpp	Fri Oct  6 09:20:06 2006
-@@ -29,7 +29,7 @@
+$OpenBSD: patch-libs_regex_src_wc_regex_traits_cpp,v 1.2 2010/03/30 11:00:15 robert Exp $
+--- libs/regex/src/wc_regex_traits.cpp.orig	Mon Aug  3 14:00:07 2009
++++ libs/regex/src/wc_regex_traits.cpp	Thu Dec 24 14:11:11 2009
+@@ -77,9 +77,12 @@ template BOOST_REGEX_STDLIB_DECL bool __cdecl operator
  #include <boost/regex/v4/primary_transform.hpp>
  #include <boost/regex/v4/regex_traits_defaults.hpp>
  
@@ -9,4 +9,9 @@ $OpenBSD: patch-libs_regex_src_wc_regex_traits_cpp,v 1.1.1.1 2006/11/05 19:20:43
 +#if defined(BOOST_NO_STDC_NAMESPACE) || defined(__OpenBSD__)
  namespace std{
     using ::wcstol;
++   using ::iswspace; using ::iswprint; using ::iswcntrl;
++   using ::iswupper; using ::iswlower; using ::iswalpha;
++   using ::iswdigit; using ::iswpunct; using ::iswxdigit;
  }
+ #endif
+ 
