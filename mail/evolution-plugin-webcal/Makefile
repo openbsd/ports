@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2009/10/13 22:07:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/03/30 17:30:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		webcal(endar) handler for GNOME
 
 GNOME_PROJECT=		evolution-webcal
-GNOME_VERSION=		2.28.0
+GNOME_VERSION=		2.28.1
 PKGNAME=		evolution-plugin-webcal-${GNOME_VERSION}
 
 CATEGORIES=    		mail
