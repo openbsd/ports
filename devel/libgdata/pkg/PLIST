@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/03/21 10:18:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/03/30 08:02:09 ajacoutot Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/atom/
@@ -157,6 +157,7 @@ share/gtk-doc/html/gdata/ix05.html
 share/gtk-doc/html/gdata/ix06.html
 share/gtk-doc/html/gdata/ix07.html
 share/gtk-doc/html/gdata/ix08.html
+share/gtk-doc/html/gdata/ix09.html
 share/gtk-doc/html/gdata/left.png
 share/gtk-doc/html/gdata/pt01.html
 share/gtk-doc/html/gdata/pt02.html
