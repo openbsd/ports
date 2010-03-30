@@ -1,18 +1,16 @@
-$OpenBSD: patch-Tomboy_tomboy_in,v 1.4 2009/09/06 07:29:37 ajacoutot Exp $
+$OpenBSD: patch-Tomboy_tomboy_in,v 1.5 2010/03/30 09:08:02 ajacoutot Exp $
 
 Remove bashism.
 
---- Tomboy/tomboy.in.orig	Thu May  7 02:33:07 2009
-+++ Tomboy/tomboy.in	Tue Sep  1 22:17:08 2009
-@@ -1,6 +1,6 @@
- #!/usr/bin/env bash
- 
--export MONO_DISABLE_SHM=1
+--- Tomboy/tomboy.in.orig	Sat Feb  6 21:59:53 2010
++++ Tomboy/tomboy.in	Tue Mar 30 10:27:03 2010
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
 +#!/bin/sh
  
  if [ "x$PWD" = "x@srcdir@" ] ; then
      echo "*** Running uninstalled @target@ ***"
-@@ -22,15 +22,15 @@ else
+@@ -20,15 +20,15 @@ else
      [ -n "$TOMBOY_PROFILE" ] && TOMBOY_PROFILE="--profile=$TOMBOY_PROFILE"
  
      for arg in $*; do
