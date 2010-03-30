@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/03/21 09:04:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/03/30 07:40:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	applications integration into Nautilus
 
 GNOME_PROJECT=	nautilus-sendto
-GNOME_VERSION=	2.28.3
+GNOME_VERSION=	2.28.4
 
 CATEGORIES=	misc net
 
