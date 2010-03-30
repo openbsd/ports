@@ -1,16 +1,19 @@
-$OpenBSD: patch-xpdf_makefile_mk,v 1.3 2009/11/28 18:33:57 kili Exp $
+$OpenBSD: patch-xpdf_makefile_mk,v 1.4 2010/03/30 11:03:07 robert Exp $
 
---- xpdf/makefile.mk.orig.port	Thu Apr 23 14:31:38 2009
-+++ xpdf/makefile.mk	Wed Nov 25 18:20:43 2009
-@@ -81,7 +81,10 @@ CONFIGURE_ACTION=./configure --without-x --enable-mult
- .ELSE
- #CONFIGURE_ACTION=./configure
- #CONFIGURE_ACTION=./configure --without-x --enable-multithreaded --enable-exceptions CFLAGS="-g -O0" CXXFLAGS="-g -O0"
--CONFIGURE_ACTION=./configure --without-libpaper-library --without-x --enable-multithreaded --enable-exceptions
-+CONFIGURE_ACTION=./configure --without-libpaper-library --without-x --enable-multithreaded --enable-exceptions \
-+	CFLAGS='${ENVCFLAGS} -DLOCALBASE=\"${LOCALBASE}\" -pthread' \
-+	CXXFLAGS='${ENVCFLAGS} -DLOCALBASE=\"${LOCALBASE}\" -pthread' \
-+	LDFLAGS="-pthread"
+--- xpdf/makefile.mk.orig.port	Sun Jan 24 16:12:34 2010
++++ xpdf/makefile.mk	Sun Jan 24 19:24:36 2010
+@@ -81,7 +81,14 @@ LDFLAGS:=$(ARCH_FLAGS)
  .ENDIF
  
- BUILD_ACTION=$(GNUMAKE) -j$(EXTMAXPROCESS)
+ CONFIGURE_ACTION=configure
++.IF "$(OS)"=="OPENBSD"
++CONFIGURE_FLAGS+=--without-libpaper-library --without-x --enable-multithreaded --enable-exceptions \
++       CFLAGS='${ENVCFLAGS} -DLOCALBASE=\"${LOCALBASE}\" -pthread' \
++       CXXFLAGS='${ENVCFLAGS} -DLOCALBASE=\"${LOCALBASE}\" -pthread' \
++       LDFLAGS="-pthread"
++.ELSE
+ CONFIGURE_FLAGS+=--without-x --without-libpaper-library --without-t1-library --enable-multithreaded --enable-exceptions
++.ENDIF
+ 
+ .IF "$(OS)$(CPU)"=="MACOSXP"
+ CXXFLAGS+=-malign-natural

@@ -1,6 +1,6 @@
-$OpenBSD: patch-hunspell_hunspell-1_2_8_patch,v 1.1 2009/05/08 15:43:50 robert Exp $
---- hunspell/hunspell-1.2.8.patch.orig.port	Fri Apr 10 10:52:25 2009
-+++ hunspell/hunspell-1.2.8.patch	Fri Apr 10 10:53:13 2009
+$OpenBSD: patch-hunspell_hunspell-1_2_8_patch,v 1.2 2010/03/30 11:03:07 robert Exp $
+--- hunspell/hunspell-1.2.8.patch.orig.port	Sun Jan 24 16:12:34 2010
++++ hunspell/hunspell-1.2.8.patch	Sun Jan 24 16:44:47 2010
 @@ -56,8 +56,8 @@
   #ifdef HUNSPELL_WARNING_ON
   #define HUNSPELL_WARNING fprintf
@@ -136,28 +136,7 @@ $OpenBSD: patch-hunspell_hunspell-1_2_8_patch,v 1.1 2009/05/08 15:43:50 robert E
  @@ -7,10 +7,20 @@
   
   #include <cstdlib>
-@@ -486,18 +480,16 @@
-  
-  #ifdef HAVE_LIBINTL_H
-  #include <libintl.h>
--@@ -1385,9 +1397,11 @@
-+@@ -1385,7 +1397,9 @@
-  #ifdef HAVE_LOCALE_H
-  	ui_lang = setlocale(LC_ALL, "");
-  	textdomain("hunspell");
- +#ifdef HAVE_LANGINFO_CODESET
-          ui_enc = nl_langinfo(CODESET);
-++#endif
-  #endif
-  #endif
--+#endif
-  
-- #ifdef HAVE_READLINE
-- 	rl_set_key("", rl_escape, rl_get_keymap());
- --- misc/hunspell-1.2.8/src/tools/hunzip.cxx	Tue Jan 15 11:10:04 2008
- +++ misc/build/hunspell-1.2.8/src/tools/hunzip.cxx	Thu Feb 19 17:38:12 2009
- @@ -2,6 +2,8 @@
-@@ -510,7 +502,7 @@
+@@ -520,7 +514,7 @@
   
   #define DESC "hunzip - decompress a hzip file to the standard output\n" \
  --- misc/hunspell-1.2.8/src/tools/hzip.c	Fri Apr  4 15:20:10 2008
@@ -166,7 +145,7 @@ $OpenBSD: patch-hunspell_hunspell-1_2_8_patch,v 1.1 2009/05/08 15:43:50 robert E
  @@ -44,7 +44,7 @@
       if (tree->type != code_NODE) {
           int i = tree->word;
-@@ -572,7 +564,7 @@
+@@ -582,7 +576,7 @@
           bits = 0;
           write_bits(f2, bitbuf, &bits, table[i]);
           if (key) {
@@ -175,7 +154,7 @@ $OpenBSD: patch-hunspell_hunspell-1_2_8_patch,v 1.1 2009/05/08 15:43:50 robert E
                   if (*(++enc) == '\0') enc = key;
                   bitbuf[cl] ^= *enc;
               }
-@@ -587,7 +579,6 @@
+@@ -597,7 +591,6 @@
       bits = 0;
       while((cx[0] = getc(f)) != -1 && (cx[1] = getc(f)) != -1) {
           c[0] = cx[0];
@@ -183,7 +162,7 @@ $OpenBSD: patch-hunspell_hunspell-1_2_8_patch,v 1.1 2009/05/08 15:43:50 robert E
           c[1] = cx[1];
           write_bits(f2, bitbuf, &bits, table[*((unsigned short *) c)]);
       }
-@@ -619,3 +610,11 @@
+@@ -629,3 +622,11 @@
               p++;
           }
           if (i > 0 && buf[i - 1] == '\n') {

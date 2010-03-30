@@ -1,13 +1,12 @@
-$OpenBSD: patch-cppu_util_makefile_mk,v 1.2 2009/01/22 17:44:38 robert Exp $
---- cppu/util/makefile.mk.orig.port	Fri Aug  1 07:20:05 2008
-+++ cppu/util/makefile.mk	Thu Jan 15 14:47:49 2009
-@@ -65,7 +65,9 @@ SHL1STDLIBS = $(SALLIB) $(SALHELPERLIB)
+$OpenBSD: patch-cppu_util_makefile_mk,v 1.3 2010/03/30 11:03:07 robert Exp $
+--- cppu/util/makefile.mk.orig.port	Mon Apr 27 14:24:10 2009
++++ cppu/util/makefile.mk	Mon Jan 25 18:59:09 2010
+@@ -64,7 +64,7 @@ SHL1STDLIBS = $(SALLIB)
+ 
  SHL1DEPN=
  SHL1IMPLIB=i$(TARGET)
- .IF "$(OS)"!="FREEBSD"
-+.IF "$(OS)"!="OPENBSD"
+-.IF "$(OS)"!="FREEBSD"
++.IF "$(OS)"!="FREEBSD" && "$(OS)"!="OPENBSD"
  SHL1DEF=$(MISC)$/$(SHL1TARGET).def
-+.ENDIF
  .ENDIF
  
- SHL1VERSIONMAP=$(TARGET).map

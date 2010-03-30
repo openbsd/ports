@@ -1,0 +1,13 @@
+--- solenv/bin/modules/installer/parameter.pm.orig.port	Wed Sep  9 07:08:29 2009
++++ solenv/bin/modules/installer/parameter.pm	Tue Feb 16 19:37:49 2010
+@@ -315,6 +315,10 @@ sub setglobalvariables
+ 	
+ 	if ( $installer::globals::compiler =~ /unxso[lg]i/ ) { $installer::globals::issolarisx86build = 1; }
+ 
++        if ( $installer::globals::compiler =~ /unxobsd/ ) {
++		$installer::globals::epmoutpath = "openbsd";
++	}
++
+ 	if ($ENV{OS} eq 'LINUX')
+ 	{
+ 		$installer::globals::islinuxbuild = 1;

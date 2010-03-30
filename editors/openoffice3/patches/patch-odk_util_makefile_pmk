@@ -1,9 +1,9 @@
-$OpenBSD: patch-odk_util_makefile_pmk,v 1.3 2009/05/08 15:43:50 robert Exp $
---- odk/util/makefile.pmk.orig.port	Mon Feb  2 18:48:42 2009
-+++ odk/util/makefile.pmk	Thu May  7 23:14:17 2009
+$OpenBSD: patch-odk_util_makefile_pmk,v 1.4 2010/03/30 11:03:07 robert Exp $
+--- odk/util/makefile.pmk.orig.port	Sun Jan 24 16:12:34 2010
++++ odk/util/makefile.pmk	Sun Jan 24 16:44:49 2010
 @@ -74,7 +74,7 @@ CONVERTTAGFLAG = $(MISC)$/$(CONVERTTAGFLAGNAME)
  
- MY_AUTODOC=$(WRAPCMD) $(SOLARBINDIR)$/autodoc
+ MY_AUTODOC=$(AUGMENT_LIBRARY_PATH) $(WRAPCMD) $(SOLARBINDIR)$/autodoc
  
 -.IF "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD"
 +.IF "$(OS)"=="FREEBSD" || "$(OS)"=="NETBSD" || "$(OS)"=="OPENBSD"

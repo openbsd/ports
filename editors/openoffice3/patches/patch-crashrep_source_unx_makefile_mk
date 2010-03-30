@@ -1,11 +1,12 @@
---- crashrep/source/unx/makefile.mk.orig.port	Fri Aug  8 07:36:44 2008
-+++ crashrep/source/unx/makefile.mk	Thu Jan 15 14:47:49 2009
+$OpenBSD: patch-crashrep_source_unx_makefile_mk,v 1.3 2010/03/30 11:03:07 robert Exp $
+--- crashrep/source/unx/makefile.mk.orig.port	Sun Jan 24 16:13:35 2010
++++ crashrep/source/unx/makefile.mk	Sun Jan 24 16:13:46 2010
 @@ -63,7 +63,7 @@ APP1RPATH=BRAND
  .IF "$(OS)" != "MACOSX"
  APP1STDLIBS=$(DYNAMIC) -lXext -lX11
  .ENDIF
--.IF "$(OS)" != "FREEBSD" && "$(OS)" != "MACOSX"
-+.IF "$(OS)" != "FREEBSD" && "$(OS)" != "MACOSX" && "$(OS)" != "MACOSX"
+-.IF "$(OS)" != "FREEBSD" && "$(OS)" != "MACOSX" && "$(OS)"!="NETBSD"
++.IF "$(OS)" != "FREEBSD" && "$(OS)" != "MACOSX" && "$(OS)"!="NETBSD" && "$(OS)"!="OPENBSD"
  APP1STDLIBS+=-ldl -lnsl
  .ENDIF
  .IF "$(OS)" == "SOLARIS"

@@ -1,7 +1,7 @@
-$OpenBSD: patch-jvmfwk_plugins_sunmajor_pluginlib_sunversion_cxx,v 1.2 2009/01/22 17:44:39 robert Exp $
---- jvmfwk/plugins/sunmajor/pluginlib/sunversion.cxx.orig.port	Fri Aug  1 07:26:49 2008
-+++ jvmfwk/plugins/sunmajor/pluginlib/sunversion.cxx	Thu Jan 15 14:47:50 2009
-@@ -203,7 +203,7 @@ bool SunVersion::init(const char *szVersion)
+$OpenBSD: patch-jvmfwk_plugins_sunmajor_pluginlib_sunversion_cxx,v 1.3 2010/03/30 11:03:07 robert Exp $
+--- jvmfwk/plugins/sunmajor/pluginlib/sunversion.cxx.orig.port	Sun Jan 24 16:12:34 2010
++++ jvmfwk/plugins/sunmajor/pluginlib/sunversion.cxx	Sun Jan 24 16:44:48 2010
+@@ -202,7 +202,7 @@ bool SunVersion::init(const char *szVersion)
          m_preRelease = getPreRelease(pCur);
          if (m_preRelease == Rel_NONE)
              return false;
@@ -10,7 +10,7 @@ $OpenBSD: patch-jvmfwk_plugins_sunmajor_pluginlib_sunversion_cxx,v 1.2 2009/01/2
        if (m_preRelease == Rel_FreeBSD)
        {
            pCur++; //elemnate `p'
-@@ -254,7 +254,7 @@ SunVersion::PreRelease SunVersion::getPreRelease(const
+@@ -253,7 +253,7 @@ SunVersion::PreRelease SunVersion::getPreRelease(const
          return Rel_RC2;
      else if (! strcmp(szRelease, "rc3"))
          return Rel_RC3;

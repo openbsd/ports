@@ -1,0 +1,12 @@
+$OpenBSD: patch-stoc_source_corereflection_criface_cxx,v 1.1 2010/03/30 11:03:07 robert Exp $
+--- stoc/source/corereflection/criface.cxx.orig.port	Mon Jan 25 19:12:22 2010
++++ stoc/source/corereflection/criface.cxx	Mon Jan 25 19:12:59 2010
+@@ -35,7 +35,7 @@
+ #ifdef SAL_UNX
+ #include <sal/alloca.h>
+ #endif
+-#if !(defined(MACOSX) || defined(FREEBSD))
++#if !(defined(MACOSX) || defined(FREEBSD) || defined(OPENBSD))
+ #include <malloc.h>
+ #endif
+ #include <rtl/alloc.h>

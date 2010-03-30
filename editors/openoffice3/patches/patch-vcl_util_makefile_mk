@@ -1,11 +1,11 @@
---- vcl/util/makefile.mk.orig.port	Mon Jan  5 15:44:12 2009
-+++ vcl/util/makefile.mk	Thu May  7 23:14:18 2009
-@@ -312,7 +312,7 @@ SHL2STDLIBS+=`pkg-config --libs xrender`
+--- vcl/util/makefile.mk.orig.port	Fri Sep 18 14:54:06 2009
++++ vcl/util/makefile.mk	Mon Jan 25 14:45:49 2010
+@@ -332,7 +332,7 @@ SHL2STDLIBS+=`pkg-config --libs xrender`
  .IF "$(GUIBASE)"=="unx"
  
  SHL2STDLIBS += -lXext -lSM -lICE -lX11
--.IF "$(OS)"!="MACOSX" && "$(OS)"!="FREEBSD"
-+.IF "$(OS)"!="MACOSX" && "$(OS)"!="FREEBSD" && "$(OS)"!="OPENBSD"
+-.IF "$(OS)"!="MACOSX" && "$(OS)"!="FREEBSD" && "$(OS)"!="NETBSD"
++.IF "$(OS)"!="MACOSX" && "$(OS)"!="FREEBSD" && "$(OS)"!="NETBSD" &&"$(OS)"!="OPENBSD"
  # needed by salprnpsp.cxx
  SHL2STDLIBS+= -ldl
  .ENDIF

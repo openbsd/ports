@@ -1,0 +1,15 @@
+--- solenv/bin/modules/installer/packagepool.pm.orig.port	Thu Feb 26 12:06:13 2009
++++ solenv/bin/modules/installer/packagepool.pm	Mon Feb 15 23:25:15 2010
+@@ -840,9 +840,9 @@ sub determine_new_packagename
+ 	my $newentriesnumber = $#{$newcontent} + 1;
+ 	if ( $newentriesnumber > 1 )
+ 	{
+-		my $newpackages = "";
+-		foreach my $onepackage ( @{$newcontent} ) { $newpackages = $newpackages . " " . $onepackage; }
+-		installer::exiter::exit_program("ERROR: More than one new package in directory $dir ($newpackages)", "determine_new_packagename (packagepool)");
++#		my $newpackages = "";
++#		foreach my $onepackage ( @{$newcontent} ) { $newpackages = $newpackages . " " . $onepackage; }
++#		installer::exiter::exit_program("ERROR: More than one new package in directory $dir ($newpackages)", "determine_new_packagename (packagepool)");
+ 	}
+ 	elsif ( $newentriesnumber < 1 )
+ 	{

@@ -1,12 +1,12 @@
-$OpenBSD: patch-filter_source_config_fragments_makefile_mk,v 1.1 2009/05/08 15:43:50 robert Exp $
---- filter/source/config/fragments/makefile.mk.orig.port	Wed May  6 10:16:01 2009
-+++ filter/source/config/fragments/makefile.mk	Wed May  6 10:15:49 2009
-@@ -185,7 +185,7 @@ $(ALL_FLAGS) : $(INCLUDE_FRAGMENTS)
- 
+$OpenBSD: patch-filter_source_config_fragments_makefile_mk,v 1.2 2010/03/30 11:03:07 robert Exp $
+--- filter/source/config/fragments/makefile.mk.orig.port	Sun Jan 24 16:12:33 2010
++++ filter/source/config/fragments/makefile.mk	Sun Jan 24 19:08:21 2010
+@@ -186,7 +186,7 @@ $(ALL_FLAGS) : $(INCLUDE_FRAGMENTS)
  .IF "$(SOLAR_JAVA)"==""
  #cmc, hack to workaround the java build requirement
+ .IF "$(SYSTEM_PYTHON)" == "YES"
 -MERGE:=python ../tools/merge/pyAltFCFGMerge
 +MERGE:=python2.5 ../tools/merge/pyAltFCFGMerge
  .ELSE
- MERGE    := $(JAVAI) -jar $(CLASSDIR)$/FCFGMerge.jar
+ MERGE:=$(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/python ../tools/merge/pyAltFCFGMerge
  .ENDIF

@@ -1,7 +1,7 @@
-$OpenBSD: patch-shell_source_unix_sysshell_recently_used_file_handler_cxx,v 1.1 2009/06/09 08:18:01 robert Exp $
---- shell/source/unix/sysshell/recently_used_file_handler.cxx.orig.port	Tue Jun  9 10:05:19 2009
-+++ shell/source/unix/sysshell/recently_used_file_handler.cxx	Tue Jun  9 10:05:38 2009
-@@ -114,7 +114,7 @@ namespace /* private */ {
+$OpenBSD: patch-shell_source_unix_sysshell_recently_used_file_handler_cxx,v 1.2 2010/03/30 11:03:07 robert Exp $
+--- shell/source/unix/sysshell/recently_used_file_handler.cxx.orig.port	Sun Jan 24 16:12:33 2010
++++ shell/source/unix/sysshell/recently_used_file_handler.cxx	Sun Jan 24 16:44:53 2010
+@@ -113,7 +113,7 @@ namespace /* private */ {
          void set_timestamp(const string_t& character)
          { 
              time_t t;

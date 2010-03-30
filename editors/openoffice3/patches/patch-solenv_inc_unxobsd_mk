@@ -1,5 +1,5 @@
---- solenv/inc/unxobsd.mk.orig.port	Wed Jun  3 13:44:50 2009
-+++ solenv/inc/unxobsd.mk	Wed Jun  3 13:49:00 2009
+--- solenv/inc/unxobsd.mk.orig.port	Thu Feb 11 12:28:02 2010
++++ solenv/inc/unxobsd.mk	Thu Feb 11 13:39:37 2010
 @@ -0,0 +1,248 @@
 +#*************************************************************************
 +#
@@ -11,7 +11,7 @@
 +#
 +# $RCSfile: patch-solenv_inc_unxobsd_mk,v $
 +#
-+# $Revision: 1.6 $
++# $Revision: 1.7 $
 +#
 +# This file is part of OpenOffice.org.
 +#

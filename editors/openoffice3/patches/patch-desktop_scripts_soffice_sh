@@ -1,30 +1,30 @@
---- desktop/scripts/soffice.sh.orig.port	Wed Aug  6 18:44:36 2008
-+++ desktop/scripts/soffice.sh	Thu Jan 29 15:37:19 2009
+--- desktop/scripts/soffice.sh.orig.port	Mon Apr 27 14:24:10 2009
++++ desktop/scripts/soffice.sh	Sun Jan 24 16:37:46 2010
 @@ -43,6 +43,11 @@ export SAL_ENABLE_FILE_LOCKING
  # working on your system.
  # SAL_NOOPENGL=true; export SAL_NOOPENGL
  
 +if [ -z $SAL_USE_VCLPLUGIN ]; then
-+	export SAL_USE_VCLPLUGIN=gtk
++       export SAL_USE_VCLPLUGIN=gtk
 +fi
 +export SAL_ENABLE_NATIVE_XFONTS=0
 +
  # the following test is needed on Linux PPC with IBM j2sdk142
  if [ "`uname -s`" = "Linux" -a "`uname -m`" = "ppc" ] ; then
      JITC_PROCESSOR_TYPE=6
-@@ -72,6 +77,16 @@ do
-        -env:*) BOOTSTRAPVARS=$BOOTSTRAPVARS" ""$arg";;
-   esac
+@@ -97,6 +102,16 @@ for sd_arg in "$@"; do
  done
+ "$sd_prog/../basis-link/program/pagein" -L"$sd_prog/../basis-link/program" \
+     ${sd_pagein_args}
 +
 +# this is a temporary hack until we can live with the default search paths
 +case "`uname -s`" in
 +OpenBSD)
-+	sd_prog1="$sd_prog/../basis-link/program"
-+	sd_prog2="$sd_prog/../basis-link/ure-link/lib"
-+	LD_LIBRARY_PATH=$sd_prog1:$sd_prog2${LD_LIBRARY_PATH+:${LD_LIBRARY_PATH}}
-+	export LD_LIBRARY_PATH
-+	;;
++       sd_prog1="$sd_prog/../basis-link/program"
++       sd_prog2="$sd_prog/../basis-link/ure-link/lib"
++       LD_LIBRARY_PATH=$sd_prog1:$sd_prog2${LD_LIBRARY_PATH+:${LD_LIBRARY_PATH}}
++       export LD_LIBRARY_PATH
++       ;;
 +esac
  
  # extend the ld_library_path for java: javaldx checks the sofficerc for us

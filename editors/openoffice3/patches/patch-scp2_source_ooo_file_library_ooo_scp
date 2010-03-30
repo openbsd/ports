@@ -1,11 +1,11 @@
---- scp2/source/ooo/file_library_ooo.scp.orig.port	Thu Dec 18 21:32:47 2008
-+++ scp2/source/ooo/file_library_ooo.scp	Thu Jan 15 14:47:50 2009
-@@ -37,7 +37,7 @@ File gid_File_Lib_Accessbridge
+--- scp2/source/ooo/file_library_ooo.scp.orig.port	Sun Jan 24 16:12:33 2010
++++ scp2/source/ooo/file_library_ooo.scp	Sun Jan 24 16:44:53 2010
+@@ -36,7 +36,7 @@ File gid_File_Lib_Accessbridge
      Name = "java_uno_accessbridge.dll";
  End
  #endif
 -#if ((defined(WNT)) || (defined(LINUX)) || ((defined(SOLARIS)) && (defined(SPARC)))|| defined(NETBSD) )
 +#if ((defined(WNT)) || (defined(LINUX)) || ((defined(SOLARIS)) && (defined(SPARC)))|| defined(NETBSD) || defined(OPENBSD))
  STD_UNO_LIB_FILE( gid_File_Lib_Adabas, adabas)
- #endif
- 
+ File gid_File_Oo_Office_Dataaccess_Adabas_Xcu
+     TXT_FILE_BODY;

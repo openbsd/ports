@@ -1,7 +1,7 @@
-$OpenBSD: patch-sdext_source_pdfimport_wrapper_wrapper_cxx,v 1.1 2009/11/28 18:33:57 kili Exp $
---- sdext/source/pdfimport/wrapper/wrapper.cxx.orig.port	Tue Jun  9 15:41:21 2009
-+++ sdext/source/pdfimport/wrapper/wrapper.cxx	Sun Nov 22 13:35:52 2009
-@@ -896,8 +896,6 @@ bool xpdf_ImportFromFile( const ::rtl::OUString&      
+$OpenBSD: patch-sdext_source_pdfimport_wrapper_wrapper_cxx,v 1.2 2010/03/30 11:03:07 robert Exp $
+--- sdext/source/pdfimport/wrapper/wrapper.cxx.orig.port	Sun Jan 24 16:12:34 2010
++++ sdext/source/pdfimport/wrapper/wrapper.cxx	Sun Jan 24 16:44:53 2010
+@@ -890,8 +890,6 @@ bool xpdf_ImportFromFile( const ::rtl::OUString&      
      // check for encryption, if necessary get password
      rtl::OUString aPwd( rPwd );
      bool bIsEncrypted = false;

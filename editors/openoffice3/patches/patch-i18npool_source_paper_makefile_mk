@@ -1,0 +1,11 @@
+$OpenBSD: patch-i18npool_source_paper_makefile_mk,v 1.1 2010/03/30 11:03:07 robert Exp $
+--- i18npool/source/paper/makefile.mk.orig.port	Tue May 19 15:45:46 2009
++++ i18npool/source/paper/makefile.mk	Mon Jan 25 17:51:34 2010
+@@ -35,6 +35,7 @@ PRJNAME=i18npool
+ TARGET=i18npaper
+ 
+ ENABLE_EXCEPTIONS=TRUE
++LIBTARGET=NO
+ 
+ # --- Settings -----------------------------------------------------
+ 

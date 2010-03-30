@@ -1,11 +1,11 @@
-$OpenBSD: patch-jvmfwk_sunmajor_pluginlib_sunjre_cxx,v 1.2 2009/01/22 17:44:39 robert Exp $
---- jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx.orig.port	Fri Aug  1 07:26:49 2008
-+++ jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx	Thu Jan 15 14:47:50 2009
-@@ -93,6 +93,7 @@ char const* const* SunInfo::getLibraryPaths(int* size)
+$OpenBSD: patch-jvmfwk_sunmajor_pluginlib_sunjre_cxx,v 1.3 2010/03/30 11:03:07 robert Exp $
+--- jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx.orig.port	Fri Sep 11 01:44:47 2009
++++ jvmfwk/plugins/sunmajor/pluginlib/sunjre.cxx	Fri Feb 12 13:41:06 2010
+@@ -91,6 +91,7 @@ char const* const* SunInfo::getLibraryPaths(int* size)
      static char const * ar[] = {
  
          "/lib/" JFW_PLUGIN_ARCH "/client",
-+	"/lib/" JFW_PLUGIN_ARCH "/server",
++        "/lib/" JFW_PLUGIN_ARCH "/server",
          "/lib/" JFW_PLUGIN_ARCH "/native_threads", 
          "/lib/" JFW_PLUGIN_ARCH
  
