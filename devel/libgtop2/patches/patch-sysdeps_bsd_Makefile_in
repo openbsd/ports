@@ -1,7 +1,7 @@
-$OpenBSD: patch-sysdeps_bsd_Makefile_in,v 1.1 2009/10/16 10:56:04 jasper Exp $
---- sysdeps/bsd/Makefile.in.orig	Fri Oct 16 12:32:38 2009
-+++ sysdeps/bsd/Makefile.in	Fri Oct 16 12:33:27 2009
-@@ -58,7 +58,7 @@ am_libgtop_sysdeps_suid_2_0_la_OBJECTS = open.lo close
+$OpenBSD: patch-sysdeps_bsd_Makefile_in,v 1.2 2010/03/30 16:24:24 ajacoutot Exp $
+--- sysdeps/bsd/Makefile.in.orig	Tue Mar 30 17:10:14 2010
++++ sysdeps/bsd/Makefile.in	Tue Mar 30 18:10:50 2010
+@@ -61,7 +61,7 @@ am_libgtop_sysdeps_suid_2_0_la_OBJECTS = open.lo close
  	msg_limits.lo sem_limits.lo proclist.lo procstate.lo \
  	procuid.lo proctime.lo procmem.lo procsignal.lo prockernel.lo \
  	procsegment.lo procargs.lo procmap.lo netlist.lo netload.lo \
@@ -10,7 +10,7 @@ $OpenBSD: patch-sysdeps_bsd_Makefile_in,v 1.1 2009/10/16 10:56:04 jasper Exp $
  libgtop_sysdeps_suid_2_0_la_OBJECTS =  \
  	$(am_libgtop_sysdeps_suid_2_0_la_OBJECTS)
  libgtop_sysdeps_suid_2_0_la_LINK = $(LIBTOOL) --tag=CC \
-@@ -294,7 +294,8 @@ libgtop_sysdeps_suid_2_0_la_SOURCES = open.c close.c c
+@@ -296,7 +296,8 @@ libgtop_sysdeps_suid_2_0_la_SOURCES = open.c close.c c
  				  sem_limits.c proclist.c procstate.c procuid.c \
  				  proctime.c procmem.c procsignal.c prockernel.c \
  				  procsegment.c procargs.c procmap.c netlist.c \
@@ -20,7 +20,7 @@ $OpenBSD: patch-sysdeps_bsd_Makefile_in,v 1.1 2009/10/16 10:56:04 jasper Exp $
  
  libgtop_sysdeps_suid_2_0_la_LDFLAGS = $(LT_VERSION_INFO)
  libgtopinclude_HEADERS = glibtop_server.h glibtop_machine.h \
-@@ -365,6 +366,7 @@ distclean-compile:
+@@ -368,6 +369,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nosuid.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/open.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ppp.Plo@am__quote@

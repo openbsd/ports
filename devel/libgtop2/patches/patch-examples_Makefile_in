@@ -1,7 +1,7 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.1 2009/10/16 10:56:04 jasper Exp $
---- examples/Makefile.in.orig	Fri Oct 16 03:10:34 2009
-+++ examples/Makefile.in	Fri Oct 16 03:11:53 2009
-@@ -36,8 +36,7 @@ noinst_PROGRAMS = first$(EXEEXT) second$(EXEEXT) pprin
+$OpenBSD: patch-examples_Makefile_in,v 1.2 2010/03/30 16:24:24 ajacoutot Exp $
+--- examples/Makefile.in.orig	Tue Mar 30 17:10:13 2010
++++ examples/Makefile.in	Tue Mar 30 18:10:49 2010
+@@ -38,8 +38,7 @@ noinst_PROGRAMS = first$(EXEEXT) second$(EXEEXT) pprin
  	procargs$(EXEEXT) df$(EXEEXT) netlist$(EXEEXT) \
  	mountlist$(EXEEXT) procmap$(EXEEXT) netload$(EXEEXT) \
  	sysdeps$(EXEEXT) timings$(EXEEXT) openfiles$(EXEEXT) \
@@ -11,7 +11,7 @@ $OpenBSD: patch-examples_Makefile_in,v 1.1 2009/10/16 10:56:04 jasper Exp $
  subdir = examples
  DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in ChangeLog
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -109,7 +108,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
+@@ -113,7 +112,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
  	--mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
  	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)

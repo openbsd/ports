@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2009/11/02 20:19:06 jasper Exp $
---- configure.orig	Mon Sep 21 09:57:13 2009
-+++ configure	Thu Oct 29 00:15:14 2009
-@@ -6763,10 +6763,12 @@ newos6*)
+$OpenBSD: patch-configure,v 1.7 2010/03/30 16:24:24 ajacoutot Exp $
+--- configure.orig	Tue Mar 30 18:14:23 2010
++++ configure	Tue Mar 30 18:17:52 2010
+@@ -6934,10 +6934,12 @@ newos6*)
    ;;
  
  openbsd*)
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure,v 1.6 2009/11/02 20:19:06 jasper Exp $
    fi
    ;;
  
-@@ -12643,6 +12645,11 @@ echo $ECHO_N "checking for libgtop sysdeps directory..
+@@ -12826,6 +12828,11 @@ $as_echo_n "checking for libgtop sysdeps directory... 
  	  libgtop_need_server=yes
  	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2755 $(bindir)/libgtop_server2'
  	  ;;
@@ -29,8 +29,8 @@ $OpenBSD: patch-configure,v 1.6 2009/11/02 20:19:06 jasper Exp $
  	freebsd*|kfreebsd*)
  	  libgtop_sysdeps_dir=freebsd
  	  libgtop_use_machine_h=yes
-@@ -17730,7 +17737,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -18246,7 +18253,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
@@ -38,8 +38,17 @@ $OpenBSD: patch-configure,v 1.6 2009/11/02 20:19:06 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -19020,7 +19027,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -18310,7 +18317,7 @@ if test "x$ac_cv_lib_intl_strftime" = x""yes; then
+ #define HAVE_STRFTIME 1
+ _ACEOF
+ 
+-LIBS="-lintl $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ fi
+ 
+ fi
+@@ -19721,7 +19728,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
@@ -47,8 +56,8 @@ $OpenBSD: patch-configure,v 1.6 2009/11/02 20:19:06 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -19082,7 +19089,7 @@ if test "${ac_cv_lib_intl_ngettext+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -19787,7 +19794,7 @@ if test "${ac_cv_lib_intl_ngettext+set}" = set; then
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
@@ -56,8 +65,8 @@ $OpenBSD: patch-configure,v 1.6 2009/11/02 20:19:06 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -19144,7 +19151,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -19853,7 +19860,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
@@ -65,7 +74,7 @@ $OpenBSD: patch-configure,v 1.6 2009/11/02 20:19:06 jasper Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -19978,11 +19985,6 @@ glib_save_datarootdir="$datarootdir"
+@@ -20721,11 +20728,6 @@ glib_save_datarootdir="$datarootdir"
  test "x$prefix" = xNONE && prefix=$ac_default_prefix
  test "x$exec_prefix" = xNONE && exec_prefix=$prefix
  datarootdir=`eval echo "${datarootdir}"`
@@ -77,7 +86,7 @@ $OpenBSD: patch-configure,v 1.6 2009/11/02 20:19:06 jasper Exp $
  prefix="$glib_save_prefix"
  exec_prefix="$glib_save_exec_prefix"
  datarootdir="$glib_save_datarootdir"
-@@ -22536,9 +22538,9 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -23391,9 +23393,9 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  
