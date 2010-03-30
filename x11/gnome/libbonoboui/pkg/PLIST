@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2009/12/21 18:03:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/03/30 12:27:58 ajacoutot Exp $
 %%SHARED%%
 @bin bin/bonobo-browser
 @bin bin/test-moniker
@@ -110,6 +110,9 @@ share/locale/ar/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/as/
 share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libbonoboui-2.0.mo
@@ -141,6 +144,9 @@ share/locale/dz/
 share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/el/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/en@shaw/
+share/locale/en@shaw/LC_MESSAGES/
+share/locale/en@shaw/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/libbonoboui-2.0.mo
