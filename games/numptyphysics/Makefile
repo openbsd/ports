@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 2009/12/22 16:28:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/03/30 08:01:26 dcoppa Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
 
 DISTNAME =		numptyphysics-0.3.r20090104
-PKGNAME-main =		${DISTNAME}p5
-PKGNAME-npcomplete =	npcomplete-0.0.r20090116p2
+PKGNAME-main =		${DISTNAME}p6
+PKGNAME-npcomplete =	npcomplete-0.0.r20090116p3
 
 MULTI_PACKAGES =	-main -npcomplete
 
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	games
 
-MAINTAINER =	David Coppa <dcoppa@gmail.com>
+MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =	http://numptyphysics.garage.maemo.org/
 

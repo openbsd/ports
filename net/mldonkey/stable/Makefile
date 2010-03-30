@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.28 2009/11/09 16:21:55 giovanni Exp $
+# $OpenBSD: Makefile,v 1.29 2010/03/30 08:03:31 dcoppa Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.0.1
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mldonkey/}
 
-MAINTAINER =	David Coppa <dcoppa@gmail.com>
+MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_FTP =	Yes
