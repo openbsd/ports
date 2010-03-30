@@ -1,28 +1,19 @@
-$OpenBSD: patch-mainwindow_cpp,v 1.2 2008/01/04 16:27:30 jasper Exp $
---- mainwindow.cpp.orig	Tue Sep  4 15:53:33 2007
-+++ mainwindow.cpp	Wed Jan  2 10:33:45 2008
-@@ -3,6 +3,7 @@
- #include <QtGui>
+$OpenBSD: patch-mainwindow_cpp,v 1.3 2010/03/30 19:21:28 jasper Exp $
+--- mainwindow.cpp.orig	Thu Aug  6 19:33:54 2009
++++ mainwindow.cpp	Tue Mar 30 20:52:51 2010
+@@ -4,6 +4,7 @@
  
  #include <iostream>
+ #include <typeinfo>
 +#include <unistd.h>
  
  #include "aboutdialog.h"
  #include "branchpropwindow.h"
-@@ -140,7 +141,7 @@ Main::Main(QWidget* parent, const char* name, Qt::WFla
- 			#if defined(Q_OS_MACX)
- 				s=settings.value (p,"/usr/bin/open").toString();
- 			#else
--				s=settings.value (p,"mozilla");
-+				s=settings.value (p,"mozilla").toString();
- 			#endif
- 		#endif
- 		settings.setValue( p,s);
-@@ -3637,6 +3638,7 @@ void Main::helpDoc()
+@@ -3763,6 +3764,7 @@ void Main::helpDoc()
  	searchList << "doc/tex";	// Easy testing working on vym.tex
  	searchList << "/usr/share/doc/vym";	// Debian
  	searchList << "/usr/share/doc/packages";// Knoppix
-+	searchList << "!!PREFIX!!/share/doc/vym"; // OpenBSD
++	searchList << "${PREFIX}/share/doc/vym"; // OpenBSD
  
  	bool found=false;
  	QFile docfile;

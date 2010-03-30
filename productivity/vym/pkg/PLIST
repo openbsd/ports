@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/04 16:27:30 jasper Exp $
-bin/vym
+@comment $OpenBSD: PLIST,v 1.3 2010/03/30 19:21:28 jasper Exp $
+@bin bin/vym
 share/doc/vym/
 share/doc/vym/vym.pdf
 share/doc/vym/vym_es.pdf
+share/doc/vym/vym_fr.pdf
 share/examples/vym/
 share/examples/vym/lifeforms.vym
 share/examples/vym/math.vym
@@ -84,6 +85,7 @@ share/vym/icons/down.png
 share/vym/icons/editcopy.png
 share/vym/icons/editcut.png
 share/vym/icons/editpaste.png
+share/vym/icons/editsort.png
 share/vym/icons/edittrash.png
 share/vym/icons/exit.png
 share/vym/icons/fileclose.png
@@ -127,6 +129,7 @@ share/vym/icons/vym-128x128.png
 share/vym/icons/vym-16x16.png
 share/vym/icons/vym-editor.png
 share/vym/icons/vym.icns
+share/vym/icons/vym.ico
 share/vym/icons/vym.png
 share/vym/icons/vym.xcf
 share/vym/icons/vym.xpm
