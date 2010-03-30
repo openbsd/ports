@@ -1,0 +1,29 @@
+$OpenBSD: patch-boost_archive_iterators_remove_whitespace_hpp,v 1.1 2010/03/30 11:01:10 robert Exp $
+--- boost/archive/iterators/remove_whitespace.hpp.orig	Sun Dec 20 14:40:29 2009
++++ boost/archive/iterators/remove_whitespace.hpp	Sun Dec 20 19:07:34 2009
+@@ -16,6 +16,7 @@
+ 
+ //  See http://www.boost.org for updates, documentation, and revision history.
+ 
++#include <cwctype>
+ #include <cassert>
+ 
+ #include <boost/config.hpp> // for BOOST_DEDUCED_TYPENAME
+@@ -24,7 +25,6 @@
+ 
+ #include <boost/iterator/iterator_adaptor.hpp>
+ #include <boost/iterator/filter_iterator.hpp>
+-
+ //#include <boost/detail/workaround.hpp>
+ //#if ! BOOST_WORKAROUND(BOOST_MSVC, <=1300)
+ 
+@@ -72,7 +72,8 @@ template<>
+ struct remove_whitespace_predicate<wchar_t>
+ {
+     bool operator()(wchar_t t){
+-        return ! std::iswspace(t);
++        return ! ::iswspace(t);
++        //return ! std::iswspace(t);
+     }
+ };
+ #endif

@@ -1,0 +1,16 @@
+$OpenBSD: patch-libs_regex_src_regex_traits_defaults_cpp,v 1.1 2010/03/30 11:01:10 robert Exp $
+--- libs/regex/src/regex_traits_defaults.cpp.orig	Thu Dec 24 14:06:42 2009
++++ libs/regex/src/regex_traits_defaults.cpp	Thu Dec 24 14:08:17 2009
+@@ -35,6 +35,12 @@ namespace std{
+ }
+ #endif
+ 
++#if defined(__OpenBSD__)
++namespace std{
++   using ::towlower;
++   using ::towupper;
++}
++#endif
+ 
+ namespace boost{ namespace re_detail{
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-boost_asio_detail_socket_ops_hpp,v 1.1 2010/03/30 11:01:10 robert Exp $
+--- boost/asio/detail/socket_ops.hpp.orig	Tue May 12 18:06:50 2009
++++ boost/asio/detail/socket_ops.hpp	Tue May 12 18:07:35 2009
+@@ -24,6 +24,8 @@
+ #include <cstdlib>
+ #include <cstring>
+ #include <cerrno>
++#include <netdb.h>
++#include <unistd.h>
+ #include <boost/detail/workaround.hpp>
+ #include <new>
+ #include <boost/asio/detail/pop_options.hpp>

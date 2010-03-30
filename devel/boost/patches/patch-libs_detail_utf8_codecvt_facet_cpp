@@ -1,0 +1,11 @@
+$OpenBSD: patch-libs_detail_utf8_codecvt_facet_cpp,v 1.1 2010/03/30 11:01:10 robert Exp $
+--- libs/detail/utf8_codecvt_facet.cpp.orig	Sun Dec 20 11:11:19 2009
++++ libs/detail/utf8_codecvt_facet.cpp	Sun Dec 20 11:21:24 2009
+@@ -13,6 +13,7 @@
+ #include <boost/detail/utf8_codecvt_facet.hpp>
+ 
+ #include <cstdlib> // for multi-byte converson routines
++#define WCHAR_MAX	UINT32_MAX
+ #include <cassert>
+ 
+ #include <boost/limits.hpp>

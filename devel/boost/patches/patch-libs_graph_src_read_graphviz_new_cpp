@@ -1,0 +1,13 @@
+$OpenBSD: patch-libs_graph_src_read_graphviz_new_cpp,v 1.1 2010/03/30 11:01:10 robert Exp $
+--- libs/graph/src/read_graphviz_new.cpp.orig	Sat Dec 26 12:00:59 2009
++++ libs/graph/src/read_graphviz_new.cpp	Sat Dec 26 11:30:51 2009
+@@ -75,7 +75,8 @@ namespace read_graphviz_detail {
+       quoted_string, // Only used internally in tokenizer
+       eof,
+       invalid
+-    } type;
++    };
++    token_type type;
+     std::string normalized_value; // May have double-quotes removed and/or some escapes replaced
+     token(token_type type, const std::string& normalized_value)
+       : type(type), normalized_value(normalized_value) {}

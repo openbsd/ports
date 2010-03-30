@@ -1,0 +1,29 @@
+$OpenBSD: patch-Jamroot,v 1.1 2010/03/30 11:01:10 robert Exp $
+--- Jamroot.orig	Fri Nov 13 15:58:03 2009
++++ Jamroot	Sun Dec  6 19:51:22 2009
+@@ -138,6 +138,7 @@ import option ;
+ path-constant BOOST_ROOT : . ;
+ constant BOOST_VERSION : 1.41.0 ;
+ constant BOOST_JAMROOT_MODULE : $(__name__) ;
++constant SO_VERSION : 1.1 ;
+ 
+ local version-tag = [ MATCH "^([^.]+)[.]([^.]+)[.]([^.]+)" : $(BOOST_VERSION) ]
+     ;
+@@ -369,7 +370,7 @@ rule tag ( name : type ? : property-set )
+         else if $(layout) = system
+         {
+             result = [ common.format-name
+-                <base> 
++                <base> <threading>
+                 -$(BUILD_ID)
+                 : $(name) : $(type) : $(property-set) ] ;
+         }
+@@ -390,7 +391,7 @@ rule tag ( name : type ? : property-set )
+           ( ! ( [ $(property-set).get <target-os> ] in windows cygwin darwin aix ) &&
+             ! ( [ $(property-set).get <toolset> ] in pgi ) )
+         {
+-            result = $(result).$(BOOST_VERSION)  ;
++            result = $(result).$(SO_VERSION)  ;
+         }
+             
+         return $(result) ;

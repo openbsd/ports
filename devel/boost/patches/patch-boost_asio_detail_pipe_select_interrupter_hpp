@@ -1,0 +1,11 @@
+$OpenBSD: patch-boost_asio_detail_pipe_select_interrupter_hpp,v 1.1 2010/03/30 11:01:10 robert Exp $
+--- boost/asio/detail/pipe_select_interrupter.hpp.orig	Tue May 12 18:05:45 2009
++++ boost/asio/detail/pipe_select_interrupter.hpp	Tue May 12 18:06:32 2009
+@@ -27,6 +27,7 @@
+ 
+ #include <boost/asio/detail/push_options.hpp>
+ #include <fcntl.h>
++#include <unistd.h>
+ #include <boost/asio/detail/pop_options.hpp>
+ 
+ #include <boost/asio/error.hpp>

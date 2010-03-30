@@ -1,0 +1,14 @@
+$OpenBSD: patch-boost_exception_ptr_hpp,v 1.1 2010/03/30 11:01:10 robert Exp $
+--- boost/exception_ptr.hpp.orig	Sat Dec 26 13:24:45 2009
++++ boost/exception_ptr.hpp	Sat Dec 26 13:25:25 2009
+@@ -90,6 +90,10 @@ boost
+             {
+             }
+ 
++        ~exception_ptr() throw()
++            {
++            }
++
+         operator unspecified_bool_type() const
+             {
+             return _empty() ? 0 : &exception_ptr::bad_alloc_;

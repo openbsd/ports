@@ -1,0 +1,18 @@
+$OpenBSD: patch-boost_smart_ptr_detail_atomic_count_hpp,v 1.1 2010/03/30 11:01:10 robert Exp $
+--- boost/smart_ptr/detail/atomic_count.hpp.orig	Tue May 12 18:25:41 2009
++++ boost/smart_ptr/detail/atomic_count.hpp	Tue May 12 18:34:18 2009
+@@ -101,7 +101,13 @@ typedef long atomic_count;
+ #elif defined( BOOST_SP_HAS_SYNC )
+ #  include <boost/smart_ptr/detail/atomic_count_sync.hpp>
+ 
+-#elif defined(__GLIBCPP__) || defined(__GLIBCXX__)
++#elif defined(__GLIBCPP__) && \
++	(defined(_GLIBCPP_HAVE_GTHR_DEFAULT) || \
++	defined(_GLIBCPP__PTHREADS))
++#  include <boost/smart_ptr/detail/atomic_count_gcc.hpp>
++#elif defined(__GLIBCXX__) && \
++	(defined(_GLIBCXX_HAVE_GTHR_DEFAULT) || \
++	defined(_GLIBCXX__PTHREADS))
+ #  include <boost/smart_ptr/detail/atomic_count_gcc.hpp>
+ 
+ #elif defined(BOOST_HAS_PTHREADS)

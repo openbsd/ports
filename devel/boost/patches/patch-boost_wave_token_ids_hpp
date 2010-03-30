@@ -1,0 +1,12 @@
+$OpenBSD: patch-boost_wave_token_ids_hpp,v 1.3 2010/03/30 11:01:10 robert Exp $
+--- boost/wave/token_ids.hpp.orig	Sun Dec 20 19:48:02 2009
++++ boost/wave/token_ids.hpp	Sun Dec 20 19:49:32 2009
+@@ -27,7 +27,7 @@
+ #if !defined(BOOST_WAVE_TOKEN_IDS_DEFINED)
+ #define BOOST_WAVE_TOKEN_IDS_DEFINED
+ 
+-#if (defined (__FreeBSD__) || defined (__DragonFly__)) && defined (T_DIVIDE) 
++#if (defined (__FreeBSD__) || defined (__DragonFly__) || defined(__OpenBSD__)) && defined (T_DIVIDE) 
+ #undef T_DIVIDE
+ #endif
+ 
