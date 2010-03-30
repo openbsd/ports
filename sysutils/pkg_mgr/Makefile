@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/01 12:24:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/03/30 07:32:27 landry Exp $
 
 COMMENT=	user-friendly package browser and manager
 
 DISTNAME=	pkg_mgr-0.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://gruiik.info/pkg_mgr.html
+HOMEPAGE=	http://rhaalovely.net/pkg_mgr.html
 MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # BSD
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://gruiik.info/stuff/
+MASTER_SITES=	http://rhaalovely.net/stuff/
 
 # for P5SITE
 MODULES=	perl
