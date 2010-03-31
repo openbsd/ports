@@ -1,7 +1,7 @@
-$OpenBSD: patch-toolkit_components_url-classifier_src_nsUrlClassifierDBService_cpp,v 1.1 2008/11/20 23:41:32 martynas Exp $
---- toolkit/components/url-classifier/src/nsUrlClassifierDBService.cpp.orig	Mon Aug 25 23:59:14 2008
-+++ toolkit/components/url-classifier/src/nsUrlClassifierDBService.cpp	Tue Sep 23 20:37:33 2008
-@@ -2023,8 +2023,20 @@ nsUrlClassifierDBServiceWorker::GetShaEntries(PRUint32
+$OpenBSD: patch-toolkit_components_url-classifier_src_nsUrlClassifierDBService_cpp,v 1.2 2010/03/31 15:46:12 naddy Exp $
+--- toolkit/components/url-classifier/src/nsUrlClassifierDBService.cpp.orig	Mon Mar  8 19:47:53 2010
++++ toolkit/components/url-classifier/src/nsUrlClassifierDBService.cpp	Tue Mar 30 21:54:19 2010
+@@ -2029,8 +2029,20 @@ nsUrlClassifierDBServiceWorker::GetShaEntries(PRUint32
            return NS_ERROR_FAILURE;
          }
          const nsCSubstring& str = Substring(chunk, start, 4);
@@ -22,7 +22,7 @@ $OpenBSD: patch-toolkit_components_url-classifier_src_nsUrlClassifierDBService_c
          if (entry->mAddChunkId == 0) {
            NS_WARNING("Received invalid chunk number.");
            return NS_ERROR_FAILURE;
-@@ -2052,8 +2064,20 @@ nsUrlClassifierDBServiceWorker::GetShaEntries(PRUint32
+@@ -2058,8 +2070,20 @@ nsUrlClassifierDBServiceWorker::GetShaEntries(PRUint32
  
          if (chunkType == CHUNK_SUB) {
            const nsCSubstring& str = Substring(chunk, start, 4);
