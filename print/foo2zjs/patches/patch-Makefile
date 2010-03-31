@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.4 2009/12/10 10:59:00 ajacoutot Exp $
---- Makefile.orig	Sun Jun 14 13:52:03 2009
-+++ Makefile	Sun Jul 19 13:16:11 2009
-@@ -15,11 +15,6 @@ SYSNAME := $(shell uname -n)
+$OpenBSD: patch-Makefile,v 1.5 2010/03/31 16:01:45 ajacoutot Exp $
+--- Makefile.orig	Fri Mar 26 17:17:27 2010
++++ Makefile	Wed Mar 31 16:51:15 2010
+@@ -16,11 +16,6 @@ SYSNAME := $(shell uname -n)
  # No version number yet...
  VERSION=0.0
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/12/10 10:59:00 ajacoutot Exp $
  # Pathnames for this package...
  BIN=$(PREFIX)/bin
  SHAREZJS=$(PREFIX)/share/foo2zjs
-@@ -30,12 +25,12 @@ SHARELAVA=$(PREFIX)/share/foo2lava
+@@ -31,12 +26,12 @@ SHARELAVA=$(PREFIX)/share/foo2lava
  SHAREQPDL=$(PREFIX)/share/foo2qpdl
  SHARESLX=$(PREFIX)/share/foo2slx
  SHAREHC=$(PREFIX)/share/foo2hiperc
@@ -28,7 +28,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/12/10 10:59:00 ajacoutot Exp $
  
  # User ID's
  LPuid=-oroot
-@@ -255,7 +250,6 @@ ifeq ($(UNAME),Linux)
+@@ -258,7 +253,6 @@ ifeq ($(UNAME),Linux)
  endif
  
  # Compiler flags
@@ -36,7 +36,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/12/10 10:59:00 ajacoutot Exp $
  #CFLAGS +=	-g
  
  #
-@@ -505,9 +499,8 @@ gipddecode: gipddecode.o $(LIBJBG)
+@@ -508,9 +502,8 @@ gipddecode: gipddecode.o $(LIBJBG)
  #
  # Installation rules
  #
@@ -47,7 +47,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/12/10 10:59:00 ajacoutot Exp $
  	    install-man install-doc
  	#
  	# If you use CUPS, then restart the spooler:
-@@ -564,11 +557,6 @@ install-prog:
+@@ -567,11 +560,6 @@ install-prog:
  	$(INSTALL) -d $(SHAREZJS)/
  	$(INSTALL) -c -m 644 gamma.ps $(SHAREZJS)/
  	$(INSTALL) -c -m 644 gamma-lookup.ps $(SHAREZJS)/
@@ -59,7 +59,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/12/10 10:59:00 ajacoutot Exp $
  
  install-foo:
  	#
-@@ -723,49 +711,21 @@ install-extra:
+@@ -728,49 +716,21 @@ install-extra:
  	done
  
  MODEL=$(DESTDIR)/usr/share/cups/model
@@ -115,7 +115,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/12/10 10:59:00 ajacoutot Exp $
  
  APPL=$(DESTDIR)/usr/share/applications
  OLDAPPL=$(DESTDIR)/usr/share/gnome/apps/System
-@@ -1225,11 +1185,8 @@ install-doc: doc
+@@ -1253,11 +1213,8 @@ install-doc: doc
  	#
  	$(INSTALL) -d -m 755 $(DOCDIR)
  	$(INSTALL) -c -m 644 manual.pdf $(DOCDIR)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/10 10:59:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/03/31 16:01:45 ajacoutot Exp $
 @bin bin/arm2hpdl
 @bin bin/foo2hiperc
 bin/foo2hiperc-wrapper
@@ -62,14 +62,14 @@ share/doc/foo2zjs/README
 share/doc/foo2zjs/getweb
 share/doc/foo2zjs/manual.pdf
 share/doc/foo2zjs/msexpand
-@comment share/foo2hiperc/
-@comment share/foo2hiperc/icm/
-@comment share/foo2hp/
-@comment share/foo2hp/icm/
-@comment share/foo2lava/
-@comment share/foo2lava/icm/
-@comment share/foo2oak/
-@comment share/foo2oak/icm/
+share/foo2hiperc/
+share/foo2hiperc/icm/
+share/foo2hp/
+share/foo2hp/icm/
+share/foo2lava/
+share/foo2lava/icm/
+share/foo2oak/
+share/foo2oak/icm/
 share/foo2qpdl/
 share/foo2qpdl/crd/
 share/foo2qpdl/crd/CLP-300-1200x1200cms2
@@ -81,11 +81,11 @@ share/foo2qpdl/crd/CLP-600-1200x600cms2
 share/foo2qpdl/crd/CLP-600-600x600cms2
 share/foo2qpdl/crd/CLP-600cms
 share/foo2qpdl/crd/black-text.ps
-@comment share/foo2qpdl/icm/
-@comment share/foo2slx/
-@comment share/foo2slx/icm/
-@comment share/foo2xqx/
-@comment share/foo2xqx/firmware/
+share/foo2qpdl/icm/
+share/foo2slx/
+share/foo2slx/icm/
+share/foo2xqx/
+share/foo2xqx/firmware/
 share/foo2zjs/
 share/foo2zjs/crd/
 share/foo2zjs/crd/2300w-1200@150-l250-kx,ucr100,0-per.crd
@@ -97,10 +97,10 @@ share/foo2zjs/crd/kx.crd
 share/foo2zjs/crd/prolog.ps
 share/foo2zjs/crd/screen1200.ps
 share/foo2zjs/crd/screen2400.ps
-@comment share/foo2zjs/firmware/
+share/foo2zjs/firmware/
 share/foo2zjs/gamma-lookup.ps
 share/foo2zjs/gamma.ps
-@comment share/foo2zjs/icm/
+share/foo2zjs/icm/
 share/foomatic/
 share/foomatic/db/
 share/foomatic/db/source/
@@ -125,8 +125,11 @@ share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P1006.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P1007.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P1008.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P1505.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P1505n.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2014.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2014n.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2035.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2035n.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/KONICA_MINOLTA-magicolor_1600W.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/KONICA_MINOLTA-magicolor_1680MF.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/KONICA_MINOLTA-magicolor_1690MF.ppd.gz
@@ -156,8 +159,18 @@ share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-310.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-315.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-600.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-610.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-620.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-2160.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-3160.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-3175.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6110.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6115MFP.ppd.gz
+@unexec-delete rm -f %D/share/foo2hiperc/icm/*
+@unexec-delete rm -f %D/share/foo2hp/icm/*
+@unexec-delete rm -f %D/share/foo2lava/icm/*
+@unexec-delete rm -f %D/share/foo2oak/icm/*
+@unexec-delete rm -f %D/share/foo2qpdl/icm/*
+@unexec-delete rm -f %D/share/foo2slx/icm/*
+@unexec-delete rm -f %D/share/foo2xqx/firmware/*
+@unexec-delete rm -f %D/share/foo2zjs/firmware/*
+@unexec-delete rm -f %D/share/foo2zjs/icm/*

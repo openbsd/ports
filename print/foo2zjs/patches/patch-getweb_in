@@ -1,0 +1,80 @@
+$OpenBSD: patch-getweb_in,v 1.1 2010/03/31 16:01:45 ajacoutot Exp $
+--- getweb.in.orig	Tue Jun 23 20:31:20 2009
++++ getweb.in	Wed Mar 31 17:49:42 2010
+@@ -11,7 +11,7 @@
+ 
+ VERSION='$Id: patch-getweb_in,v 1.1 2010/03/31 16:01:45 ajacoutot Exp $'
+ 
+-WGETOPTS="--passive-ftp -q"
++WGETOPTS="-V"
+ 
+ usage() {
+ cat <<EOF
+@@ -94,11 +94,11 @@ error() {
+ }
+ 
+ SYSTEM=`uname -s`
+-WGET=`type wget 2>/dev/null`
++WGET=`type ftp 2>/dev/null`
+ if [ "$SYSTEM" = Darwin -a "$WGET" = "" ]
+ then
+     WGETOPTS=
+-    wget() {
++    ftp() {
+ 	shift
+ 	curl -o $*
+     }
+@@ -112,7 +112,7 @@ getexe() {
+     exefile="$2"
+     shift; shift
+     
+-    wget $WGETOPTS -O $exefile "$url/$exefile" ||
++    ftp $WGETOPTS -o $exefile "$url/$exefile" ||
+ 	error "Couldn't download $url/$exefile"
+     unzip -oj $exefile "$@"
+     rm $exefile
+@@ -126,7 +126,7 @@ gettgz() {
+     file="$2"
+     what="$3"
+     
+-    wget $WGETOPTS -O $file "$url/$file" ||
++    ftp $WGETOPTS -o $file "$url/$file" ||
+ 	error "Couldn't download $url/$file"
+     gunzip <$file | tar xvf - $what
+     rm $file
+@@ -225,7 +225,7 @@ getone() {
+ 	BASE="$BASE/openmind/technic/swfw/mswprtdl.nsf/logdwl"
+ 	FILE="MC2300DL_v255.zip"
+ 	URL="$BASE?openagent&4CE486C20839C75AC1256D9E001EBD1F/\$File/$FILE"
+-	wget $WGETOPTS "$URL" || error "Couldn't download $URL"
++	ftp $WGETOPTS "$URL" || error "Couldn't download $URL"
+ 	echo "*** Now use a windows box to unzip and install $FILE ***"
+ 	;;
+     cpwl|pageworks)
+@@ -241,7 +241,7 @@ getone() {
+ 	    do
+ 		base=`basename $i .IC_`
+ 		mv $base.IC_ $base.ic_
+-		./msexpand $base.ic_
++		${PREFIX}/share/doc/foo2zjs/msexpand $base.ic_
+ 		rm -f $base.ic_
+ 	    done
+ 	fi
+@@ -349,7 +349,7 @@ getone() {
+ 	    URL="$URL?driver=$driver&printer=$printer"
+ 	    URL="$URL&.submit=Generate+PPD+file"
+ 	    URL="$URL&show=1&.cgifields=shortgui&.cgifields=show"
+-	    wget $WGETOPTS -O PPD/$printer.ppd "$URL" ||
++	    ftp $WGETOPTS -o PPD/$printer.ppd "$URL" ||
+ 		error "Couldn't dowload $URL"
+ 	done
+ 	;;
+@@ -385,7 +385,7 @@ getone() {
+     update)
+ 	url=${URLZJS}
+ 	file=foo2zjs.tar.gz
+-	wget $WGETOPTS -O $file $url/$file ||
++	ftp $WGETOPTS -o $file $url/$file ||
+ 		error "Couldn't download $url/$exefile"
+ 	mv getweb getweb.old
+ 	HERE=`pwd`

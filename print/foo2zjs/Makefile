@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2010/03/21 10:14:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/03/31 16:01:45 ajacoutot Exp $
 
-COMMENT=		driver for ZjStream wire protocol compatible printers
+COMMENT=	driver for ZjStream wire protocol compatible printers
 
-VERSION=		20090623
-DISTNAME=		foo2zjs-${VERSION}
-PKGNAME=		${DISTNAME}p2
-CATEGORIES=		print
+VERSION=	20100329
+DISTNAME=	foo2zjs-${VERSION}
 
-HOMEPAGE=		http://foo2hp.rkkda.com/
+CATEGORIES=	print
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+HOMEPAGE=	http://foo2hp.rkkda.com/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,28 +17,24 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m
+WANTLIB=	c m
 
-MASTER_SITES=		http://bigio.snb.it/openbsd/distfiles/ \
-			http://openbsd.dead-parrot.de/distfiles/ \
-			http://spacehopper.org/mirrors/ \
-			http://meta-planets.net/~openbsd/ \
-			http://www.phxbsd.com/OpenBSD/distfiles/
+MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
 
-USE_GMAKE=		Yes
-WRKDIST=		${WRKDIR}/foo2zjs
+USE_GMAKE=	Yes
+WRKDIST=	${WRKDIR}/foo2zjs
 
-BUILD_DEPENDS=		::print/ghostscript/gnu # ps2pdf
-RUN_DEPENDS=		::print/foomatic-filters
+BUILD_DEPENDS=	::print/ghostscript/gnu # ps2pdf
+RUN_DEPENDS=	::print/foomatic-filters
 
-NO_REGRESS=		Yes
+NO_REGRESS=	Yes
 
 pre-configure:
 	@perl -pi -e 's,/usr/bin,${PREFIX}/bin,g' \
 		${WRKSRC}/*.1in
+	${SUBST_CMD} ${WRKSRC}/getweb.in
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/foo2zjs/{firmware,icm}
 	${INSTALL_SCRIPT} ${WRKSRC}/{getweb,msexpand} \
 		${PREFIX}/share/doc/foo2zjs
 

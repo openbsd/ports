@@ -1,0 +1,6 @@
+Before using foo2zjs you should get extra files from the web, such as
+.ICM profiles (for color correction) and firmware using the command
+    ${PREFIX}/share/doc/foo2zjs/getweb
+    
+Then copy the downloaded file(s) into the corresponding directory under
+    ${PREFIX}/share/foo2*
