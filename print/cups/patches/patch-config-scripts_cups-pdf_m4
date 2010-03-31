@@ -1,13 +1,13 @@
-$OpenBSD: patch-config-scripts_cups-pdf_m4,v 1.1 2009/10/25 16:04:34 jasper Exp $
+$OpenBSD: patch-config-scripts_cups-pdf_m4,v 1.2 2010/03/31 16:20:02 ajacoutot Exp $
 
 Security fix for CVE-2009-3608, CVE-2009-3609.
 CUPS "pdftops" Filter Data Handling Integer Overflow Vulnerabilities
 
 Patch from Ubuntu: poppler-based-pdftops-fixes.dpatch
 
---- config-scripts/cups-pdf.m4.orig	Fri Oct 23 13:00:39 2009
-+++ config-scripts/cups-pdf.m4	Fri Oct 23 13:01:00 2009
-@@ -64,6 +64,12 @@ case "x$with_pdftops" in
+--- config-scripts/cups-pdf.m4.orig	Sat Aug  8 00:30:30 2009
++++ config-scripts/cups-pdf.m4	Thu Dec 10 15:28:50 2009
+@@ -79,6 +79,12 @@ case "x$with_pdftops" in
  	;;
  esac
  

@@ -1,11 +1,6 @@
-$OpenBSD: patch-test_run-stp-tests_sh,v 1.5 2009/04/27 08:25:39 bernd Exp $
-
-Second chunk of this patch:
-Security fix for CVE-2008-5183.
-Patch adapted from Red Hat's solution.
-
---- test/run-stp-tests.sh.orig	Wed Nov 19 20:50:56 2008
-+++ test/run-stp-tests.sh	Sat Apr 18 00:50:57 2009
+$OpenBSD: patch-test_run-stp-tests_sh,v 1.6 2010/03/31 16:20:02 ajacoutot Exp $
+--- test/run-stp-tests.sh.orig	Wed Dec  9 07:10:22 2009
++++ test/run-stp-tests.sh	Wed Mar 31 15:53:43 2010
 @@ -21,7 +21,7 @@ argcount=$#
  # Make the IPP test program...
  #
@@ -15,12 +10,12 @@ Patch adapted from Red Hat's solution.
  
  #
  # Figure out the proper echo options...
-@@ -387,7 +387,7 @@ fi
+@@ -410,7 +410,7 @@ fi
  
  export LD_LIBRARY_PATH
  
--LD_PRELOAD="$root/cups/libcups.so.2:$root/filter/libcupsimage.so.2"
-+LD_PRELOAD="$root/cups/libcups.so.$LIBcups_VERSION:$root/filter/libcupsimage.so.$LIBcupsimage_VERSION"
- export LD_PRELOAD
- 
- if test "x$DYLD_LIBRARY_PATH" = x; then
+-LD_PRELOAD="$root/cups/libcups.so.2:$root/filter/libcupsimage.so.2:$root/cgi-bin/libcupscgi.so.1:$root/scheduler/libcupsmime.so.1:$root/driver/libcupsdriver.so.1:$root/ppdc/libcupsppdc.so.1"
++LD_PRELOAD="$root/cups/libcups.so.${LIBcups_VERSION}:$root/filter/libcupsimage.so.${LIBcupsimage_VERSION}:$root/cgi-bin/libcupscgi.so.${LIBcupscgi_VERSION}:$root/scheduler/libcupsmime.so.${LIBcupsmime_VERSION}:$root/driver/libcupsdriver.so.${LIBcupsdriver_VERSION}:$root/ppdc/libcupsppdc.so.${LIBcupsppdc_VERSION}"
+ if test `uname` = SunOS -a -r /usr/lib/libCrun.so.1; then
+ 	LD_PRELOAD="/usr/lib/libCrun.so.1:$LD_PRELOAD"
+ fi

@@ -1,13 +1,13 @@
-$OpenBSD: patch-filter_pdftops_c,v 1.1 2009/10/25 16:04:34 jasper Exp $
+$OpenBSD: patch-filter_pdftops_c,v 1.2 2010/03/31 16:20:02 ajacoutot Exp $
 
 Security fix for CVE-2009-3608, CVE-2009-3609.
 CUPS "pdftops" Filter Data Handling Integer Overflow Vulnerabilities
 
 Patch from Ubuntu: poppler-based-pdftops-fixes.dpatch
 
---- filter/pdftops.c.orig	Fri Oct 23 13:02:31 2009
-+++ filter/pdftops.c	Fri Oct 23 13:03:37 2009
-@@ -303,7 +303,9 @@ main(int  argc,				/* I - Number of command-line args 
+--- filter/pdftops.c.orig	Fri May 22 21:30:39 2009
++++ filter/pdftops.c	Thu Dec 10 15:28:50 2009
+@@ -302,7 +302,9 @@ main(int  argc,				/* I - Number of command-line args 
      }
      else
  #ifdef HAVE_PDFTOPS
@@ -18,7 +18,7 @@ Patch from Ubuntu: poppler-based-pdftops-fixes.dpatch
  #else
        pdf_argv[pdf_argc++] = (char *)"-dLanguageLevel=3";
  #endif /* HAVE_PDFTOPS */
-@@ -389,7 +391,19 @@ main(int  argc,				/* I - Number of command-line args 
+@@ -388,7 +390,19 @@ main(int  argc,				/* I - Number of command-line args 
        pdf_argv[pdf_argc++] = pdf_width;
        pdf_argv[pdf_argc++] = pdf_height;
  #endif /* HAVE_PDFTOPS */

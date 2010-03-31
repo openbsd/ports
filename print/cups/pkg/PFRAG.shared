@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared,v 1.5 2010/03/31 16:20:02 ajacoutot Exp $
+@lib lib/libcups.so.${LIBcups_VERSION}
+@lib lib/libcupscgi.so.${LIBcupscgi_VERSION}
+@lib lib/libcupsdriver.so.${LIBcupsdriver_VERSION}
+@lib lib/libcupsimage.so.${LIBcupsimage_VERSION}
+@lib lib/libcupsmime.so.${LIBcupsmime_VERSION}
+@lib lib/libcupsppdc.so.${LIBcupsppdc_VERSION}

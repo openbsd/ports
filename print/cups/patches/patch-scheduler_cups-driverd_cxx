@@ -1,0 +1,12 @@
+$OpenBSD: patch-scheduler_cups-driverd_cxx,v 1.1 2010/03/31 16:20:02 ajacoutot Exp $
+--- scheduler/cups-driverd.cxx.orig	Mon Aug 31 23:26:25 2009
++++ scheduler/cups-driverd.cxx	Tue Oct  6 15:11:48 2009
+@@ -509,7 +509,7 @@ cat_ppd(const char *name,		/* I - PPD name */
+     argv[0] = scheme;
+     argv[1] = (char *)"cat";
+     argv[2] = (char *)name;
+-    argv[3] = NULL;
++    argv[3] = (char *)0;
+ 
+     if (cupsdExec(line, argv))
+     {

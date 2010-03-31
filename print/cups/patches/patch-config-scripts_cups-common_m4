@@ -1,0 +1,15 @@
+$OpenBSD: patch-config-scripts_cups-common_m4,v 1.1 2010/03/31 16:20:02 ajacoutot Exp $
+
+STR #3447: dbus notifier no longer builds
+
+--- config-scripts/cups-common.m4.orig	Tue Mar 30 22:40:58 2010
++++ config-scripts/cups-common.m4	Wed Mar 31 15:53:42 2010
+@@ -268,6 +268,8 @@ if test "x$enable_dbus" != xno; then
+ 				dbus_message_iter_init_append,
+ 				AC_DEFINE(HAVE_DBUS_MESSAGE_ITER_INIT_APPEND),,
+ 				`$PKGCONFIG --libs dbus-1`)
++			DBUS_NOTIFIER="dbus"
++			DBUS_NOTIFIERLIBS="`$PKGCONFIG --libs dbus-1`"
+ 		else
+ 			AC_MSG_RESULT(no)
+ 		fi

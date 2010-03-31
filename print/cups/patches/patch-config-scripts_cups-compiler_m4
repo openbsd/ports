@@ -1,0 +1,12 @@
+$OpenBSD: patch-config-scripts_cups-compiler_m4,v 1.1 2010/03/31 16:20:02 ajacoutot Exp $
+--- config-scripts/cups-compiler.m4.orig	Mon Aug 31 16:45:57 2009
++++ config-scripts/cups-compiler.m4	Mon Aug 31 16:46:16 2009
+@@ -123,7 +123,7 @@ if test -n "$GCC"; then
+ 	if test -z "$OPTIM"; then
+ 		if test "x$with_optim" = x; then
+ 			# Default to optimize-for-size and debug
+-       			OPTIM="-Os -g"
++       			OPTIM=""
+ 		else
+ 			OPTIM="$with_optim $OPTIM"
+ 		fi

@@ -1,0 +1,28 @@
+$OpenBSD: patch-config-scripts_cups-dnssd_m4,v 1.1 2010/03/31 16:20:02 ajacoutot Exp $
+
+Avahi support, from Fedora.
+
+--- config-scripts/cups-dnssd.m4.orig	Sat Aug 29 00:54:34 2009
++++ config-scripts/cups-dnssd.m4	Thu Dec 10 15:48:31 2009
+@@ -27,6 +27,21 @@ AC_ARG_WITH(dnssd-includes, [  --with-dnssd-includes  
+ DNSSDLIBS=""
+ DNSSD_BACKEND=""
+ 
++AC_ARG_ENABLE(avahi, [  --enable-avahi          turn on DNS Service Discovery support, default=no],
++	      [if test x$enable_avahi = xyes; then
++		       AC_MSG_CHECKING(for Avahi)
++		       if $PKGCONFIG --exists avahi-client; then
++			       AC_MSG_RESULT(yes)
++			       CFLAGS="$CFLAGS `$PKGCONFIG --cflags avahi-client`"
++			       DNSSDLIBS="`$PKGCONFIG --libs avahi-client`"
++			       DNSSD_BACKEND="dnssd"
++			       AC_DEFINE(HAVE_AVAHI)
++			       enable_dnssd=no
++		       else
++			       AC_MSG_RESULT(no)
++		       fi
++	       fi])
++
+ if test x$enable_dnssd != xno; then
+ 	AC_CHECK_HEADER(dns_sd.h, [
+ 		case "$uname" in

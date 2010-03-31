@@ -1,0 +1,12 @@
+$OpenBSD: patch-config-scripts_cups-threads_m4,v 1.1 2010/03/31 16:20:02 ajacoutot Exp $
+--- config-scripts/cups-threads.m4.orig	Mon Aug 31 16:45:19 2009
++++ config-scripts/cups-threads.m4	Mon Aug 31 16:45:39 2009
+@@ -23,7 +23,7 @@ if test "x$enable_threads" != xno; then
+ 
+ 	if test x$ac_cv_header_pthread_h = xyes; then
+ 		dnl Check various threading options for the platforms we support
+-		for flag in -lpthreads -lpthread -pthread; do
++		for flag in -pthread -lpthreads -lpthread; do
+         		AC_MSG_CHECKING([for pthread_create using $flag])
+ 			SAVELIBS="$LIBS"
+ 			LIBS="$flag $LIBS"

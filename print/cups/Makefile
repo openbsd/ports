@@ -1,20 +1,24 @@
-# $OpenBSD: Makefile,v 1.68 2010/03/29 13:11:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2010/03/31 16:20:02 ajacoutot Exp $
 
-COMMENT=		Common Unix Printing System
+COMMENT=	Common Unix Printing System
 
-VERSION=		1.3.11
-DISTNAME=		cups-${VERSION}-source
-PKGNAME=		cups-${VERSION}p7
+VERSION=	1.4.3
+DISTNAME=	cups-${VERSION}-source
+PKGNAME=	cups-${VERSION}
 
-CATEGORIES=		print sysutils
+CATEGORIES=	print sysutils
 
-SHARED_LIBS+=		cups		4.0
-# XXX ghostscript needs to dlopen() libcupsimage.so.3
-SHARED_LIBS+=		cupsimage	3.0
+# XXX ghostscript needs to dlopen() libcupsimage.so.4
+SHARED_LIBS+=	cupsimage	4.0
+SHARED_LIBS+=	cups		5.0
+SHARED_LIBS+=	cupscgi		0.0
+SHARED_LIBS+=	cupsdriver	0.0
+SHARED_LIBS+=	cupsmime	0.0
+SHARED_LIBS+=	cupsppdc	0.0
 
-HOMEPAGE=		http://www.cups.org/
+HOMEPAGE=	http://www.cups.org/
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,79 +26,85 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += asn1 c crypto gssapi jpeg krb5 m pthread ssl z
+WANTLIB += asn1 c crypto dbus-1 gssapi jpeg krb5 m pthread ssl
+WANTLIB += stdc++ z
 
-MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
-			http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
-			ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
-			ftp://ftp.easysw.com/pub/cups/${VERSION}/ \
-			ftp://ftp2.easysw.com/pub/cups/${VERSION}/ \
-			ftp://ftp3.easysw.com/pub/cups/${VERSION}/
+MASTER_SITES=	http://ftp.easysw.com/pub/cups/${VERSION}/ \
+		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
+		ftp://ftp.easysw.com/pub/cups/${VERSION}/ \
+		ftp://ftp2.easysw.com/pub/cups/${VERSION}/ \
+		ftp://ftp3.easysw.com/pub/cups/${VERSION}/
 
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=	.tar.bz2
 
-RUN_DEPENDS=		:desktop-file-utils-*:devel/desktop-file-utils \
-			::devel/xdg-utils
-LIB_DEPENDS=		png.>=3::graphics/png \
-			tiff.>=35::graphics/tiff \
-			dbus-1.>=7::x11/dbus \
-			dns_sd::net/avahi
+WRKDIST=	${WRKDIR}/${DISTNAME:S/-source//}
 
-FAKE_FLAGS=		BINMODE=${BINMODE} \
-			SHAREMODE=${SHAREMODE} \
-			ICONDIR=${DESTDIR}${PREFIX}/share/icons \
-			MENUDIR=${DESTDIR}${PREFIX}/share/applications \
-			DBUSDIR=${WRKINST}/${TRUEPREFIX}/share/examples/cups/dbus-1/system.d \
-			PDFTOPS="pdftops"
+BUILD_DEPENDS=	::devel/xdg-utils \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		${MODGNU_AUTOCONF_DEPENDS}
 
-MAKE_ENV+=		LIBcups_VERSION=${LIBcups_VERSION} \
-			LIBcupsimage_VERSION=${LIBcupsimage_VERSION}
+RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
+		::devel/xdg-utils
 
-# UTF8 desktop file patch
-DIFF_ARGS=		-a
+LIB_DEPENDS=	png.>=3::graphics/png \
+		tiff.>=35::graphics/tiff \
+		avahi-client,avahi-common::net/avahi
 
-CONFIGURE_STYLE=	gnu dest
-AUTOCONF_VERSION=	2.59
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-cups-user=_cups \
-			--with-cups-group=_cups \
-			--with-system-groups=wheel \
-			--localstatedir=/var \
-			--without-java \
-			--with-perl="/usr/bin/perl" \
-			--with-optim="${CFLAGS}" \
-			--without-php \
-			--without-python \
-			--enable-image \
-			--enable-dbus \
-			--enable-raw-printing \
-			--enable-gssapi \
-			--enable-dnssd \
-			--disable-pap \
-			--disable-ldap \
-			--disable-slp \
-			--disable-default-shared \
-			--disable-pdftops \
-			--disable-gnutls
+LIBS_ENV=	LIBcups_VERSION=${LIBcups_VERSION} \
+		LIBcupscgi_VERSION=${LIBcupscgi_VERSION} \
+		LIBcupsdriver_VERSION=${LIBcupsdriver_VERSION} \
+		LIBcupsimage_VERSION=${LIBcupsimage_VERSION} \
+		LIBcupsmime_VERSION=${LIBcupsmime_VERSION} \
+		LIBcupsppdc_VERSION=${LIBcupsppdc_VERSION} \
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
-				-I${LOCALBASE}/include/libpng \
-				-I${LOCALBASE}/include/avahi-compat-libdns_sd" \
-			DSOFLAGS="-L${LOCALBASE}/lib" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
-			LIBcups_VERSION=${LIBcups_VERSION} \
-			LIBcupsimage_VERSION=${LIBcupsimage_VERSION} \
-			ac_cv_path_CUPS_GHOSTSCRIPT="${LOCALBASE}/bin/gs"
+MAKE_ENV=	${LIBS_ENV}
 
-CFLAGS+=		-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
+FAKE_FLAGS=	BINMODE=${BINMODE} \
+		SHAREMODE=${SHAREMODE} \
+		DBUSDIR=${DESTDIR}${PREFIX}/share/examples/cups/dbus-1/system.d \
+		ICONDIR=${DESTDIR}${PREFIX}/share/icons \
+		MENUDIR=${DESTDIR}${PREFIX}/share/applications
 
-WRKDIST=		${WRKDIR}/${DISTNAME:S/-source//}
-USE_GMAKE=		Yes
+AUTOCONF_VERSION= 2.62
+AUTOMAKE_VERSION= 1.9
 
-REGRESS_FLAGS=		LOCALBASE=${LOCALBASE}
+USE_GMAKE=	Yes
 
-REGRESS_DEPENDS=	::print/htmldoc
-REGRESS_IS_INTERACTIVE=	Yes
+CONFIGURE_STYLE= gnu dest
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-static \
+		--with-cups-user=_cups \
+		--with-cups-group=_cups \
+		--with-system-groups=wheel \
+		--localstatedir=/var \
+		--without-java \
+		--with-perl="/usr/bin/perl" \
+		--with-optim="${CFLAGS}" \
+		--with-smbconfigfile="samba:///${SYSCONFDIR}/samba/smb.conf" \
+		--with-pdftops="${LOCALBASE}/bin/gs" \
+		--without-php \
+		--without-python \
+		--enable-avahi \
+		--enable-image \
+		--enable-tcp-wrappers \
+		--enable-dbus \
+		--enable-texttops \
+		--enable-raw-printing \
+		--enable-gssapi \
+		--enable-openssl \
+		--disable-gnutls \
+		--disable-libusb \
+		--disable-pam \
+		--disable-launchd \
+		--disable-pap \
+		--disable-slp \
+		--disable-default-shared
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/libpng" \
+		LDFLAGS="-L${LOCALBASE}/lib -pthread" \
+		${LIBS_ENV}
 
 # gcc 3.3.5 internal compiler error
 .if ${MACHINE_ARCH:Mmips64*}
@@ -105,27 +115,28 @@ FLAVORS=	ldap
 FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
-CONFIGURE_ARGS+=	--enable-ldap
-LIB_DEPENDS+=		ldap,lber::databases/openldap
+CONFIGURE_ARGS+= --enable-ldap
+LIB_DEPENDS+=	ldap,lber::databases/openldap
 .else
-CONFIGURE_ARGS+=	--disable-ldap
+CONFIGURE_ARGS+=--disable-ldap
 .endif
 
 post-extract:
 	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
 
+pre-configure:
+	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal -I config-scripts
+	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf -I config-scripts
+
 post-configure:
-	cd ${WRKBUILD} && perl -pi -e 's|\$${DESTDIR}||g' init/cups.sh \
-	    config.h cups-config conf/cupsd.conf man/*.man
-	${SUBST_CMD} ${WRKSRC}/Makefile
+	cd ${WRKBUILD} && perl -pi -e 's|\$${DESTDIR}||g' \
+		config.h cups-config man/*.man
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups/init
-	cd ${WRKINST}${SYSCONFDIR}/cups && cp -R * \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups/
+	cd ${WRKINST}${SYSCONFDIR}/cups/ && mv * \
 		${PREFIX}/share/examples/cups
-	rm -r ${WRKINST}${SYSCONFDIR}/cups ${WRKINST}/var/run \
-	    ${WRKINST}/var/cache
-	${INSTALL_DATA} ${WRKBUILD}/init/cups.sh ${PREFIX}/share/cups/init
+	@rmdir ${WRKINST}${SYSCONFDIR}/cups/
 .for file in cups-enable cups-disable
 	cp ${FILESDIR}/${file} ${WRKBUILD}
 	${SUBST_CMD} ${WRKBUILD}/${file}
