@@ -1,0 +1,7 @@
+An implementation of the XDG Base Directory specification.
+
+The XDG Base Directory specification defines where these files should be
+looked for by defining one or more base directories relative to which
+files should be located. This library implements functions to list the
+directories according to the specification and provides a few higher-level
+functions for use with the specification.

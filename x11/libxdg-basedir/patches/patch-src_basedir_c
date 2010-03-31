@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_basedir_c,v 1.1.1.1 2010/03/31 12:31:21 dcoppa Exp $
+--- src/basedir.c.orig	Sat Aug 29 23:47:43 2009
++++ src/basedir.c	Wed Mar 31 11:27:16 2010
+@@ -90,13 +90,12 @@ static void xdgZeroMemory(void* p, size_t n)
+ static const char
+ 	DefaultRelativeDataHome[] = DIR_SEPARATOR_STR ".local" DIR_SEPARATOR_STR "share",
+ 	DefaultRelativeConfigHome[] = DIR_SEPARATOR_STR ".config",
+-	DefaultDataDirectories1[] = DIR_SEPARATOR_STR "usr" DIR_SEPARATOR_STR "local" DIR_SEPARATOR_STR "share",
+-	DefaultDataDirectories2[] = DIR_SEPARATOR_STR "usr" DIR_SEPARATOR_STR "share",
+-	DefaultConfigDirectories[] = DIR_SEPARATOR_STR "etc" DIR_SEPARATOR_STR "xdg",
++	DefaultDataDirectories[] = "${LOCALBASE}" DIR_SEPARATOR_STR "share",
++	DefaultConfigDirectories[] = "${SYSCONFDIR}" DIR_SEPARATOR_STR "xdg",
+ 	DefaultRelativeCacheHome[] = DIR_SEPARATOR_STR ".cache";
+ 
+ static const char
+-	*DefaultDataDirectoriesList[] = { DefaultDataDirectories1, DefaultDataDirectories2, NULL },
++	*DefaultDataDirectoriesList[] = { DefaultDataDirectories, NULL },
+ 	*DefaultConfigDirectoriesList[] = { DefaultConfigDirectories, NULL };
+ 
+ typedef struct _xdgCachedData

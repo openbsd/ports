@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/03/31 12:31:21 dcoppa Exp $
+--- configure.orig	Wed Mar 31 10:51:09 2010
++++ configure	Wed Mar 31 10:51:32 2010
+@@ -12888,7 +12888,7 @@ done
+ 
+ 
+   case $host in
+-                    *-freebsd*) ;;
++                    *-freebsd*|*-openbsd*) ;;
+      *)
+                            	for possible_flags in "-Wl,--no-undefined" "-Wl,-z,defs"; do
+ 
