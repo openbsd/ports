@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.411 2010/03/25 20:42:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.412 2010/03/31 12:34:27 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -133,6 +133,7 @@
      SUBDIR += liberation-fonts
      SUBDIR += libgdiplus
      SUBDIR += libsexy
+     SUBDIR += libxdg-basedir
      SUBDIR += lupe
      SUBDIR += lxrandr
      SUBDIR += matchbox
