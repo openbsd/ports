@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2010/02/06 19:56:40 kili Exp $
+# $OpenBSD: Makefile,v 1.72 2010/03/31 16:22:30 ajacoutot Exp $
 
 COMMENT=	GNU PostScript interpreter
 
 VERSION=	8.63
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p11
+PKGNAME=	${DISTNAME}p12
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	11.0
 
@@ -33,7 +33,7 @@ WANTLIB=	m c pthread z
 MODULES=	converters/libiconv
 
 RUN_DEPENDS=	:ghostscript-fonts-*:print/ghostscript/gnu-fonts
-BUILD_DEPENDS=	::print/cups
+BUILD_DEPENDS=	:cups->=1.4.3:print/cups
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg	\
 		png.>=6::graphics/png		\
 		ijs::print/ijs
