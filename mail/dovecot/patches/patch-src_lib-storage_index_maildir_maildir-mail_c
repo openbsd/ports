@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib-storage_index_maildir_maildir-mail_c,v 1.3 2010/03/31 19:37:31 sthen Exp $
+--- src/lib-storage/index/maildir/maildir-mail.c.orig	Thu Mar 25 22:15:28 2010
++++ src/lib-storage/index/maildir/maildir-mail.c	Thu Mar 25 22:17:18 2010
+@@ -154,7 +154,7 @@ static int maildir_mail_get_save_date(struct mail *_ma
+ 		return -1;
+ 
+ 	*date_r = data->save_date = st.st_ctime;
+-	return data->save_date;
++	return 0;
+ }
+ 
+ static int
