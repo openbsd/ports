@@ -1,4 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/10/23 17:13:41 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/03/31 11:52:31 landry Exp $
+include/notification_plugin/
+include/notification_plugin/gtkhotkey/
+include/notification_plugin/gtkhotkey/eggaccelerators.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-error.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-info.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-key-file-registry.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-listener.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-marshal.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-registry.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-utils.h
+include/notification_plugin/gtkhotkey/gtk-hotkey-x11-listener.h
+include/notification_plugin/gtkhotkey/gtkhotkey.h
+include/notification_plugin/gtkhotkey/tomboykeybinder.h
 lib/claws-mail/plugins/notification_plugin.la
 lib/claws-mail/plugins/notification_plugin.so
 share/locale/ca/LC_MESSAGES/notification_plugin.mo
@@ -10,6 +23,8 @@ share/locale/hu/LC_MESSAGES/notification_plugin.mo
 share/locale/id/LC_MESSAGES/notification_plugin.mo
 share/locale/it/LC_MESSAGES/notification_plugin.mo
 share/locale/ja/LC_MESSAGES/notification_plugin.mo
+share/locale/nl/LC_MESSAGES/notification_plugin.mo
 share/locale/pt_BR/LC_MESSAGES/notification_plugin.mo
 share/locale/ru/LC_MESSAGES/notification_plugin.mo
+share/locale/sk/LC_MESSAGES/notification_plugin.mo
 share/locale/zh_CN/LC_MESSAGES/notification_plugin.mo
