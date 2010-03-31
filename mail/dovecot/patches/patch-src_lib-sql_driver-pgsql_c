@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_lib-sql_driver-pgsql_c,v 1.1 2010/03/31 23:46:21 sthen Exp $
+--- src/lib-sql/driver-pgsql.c.orig	Wed Mar 31 19:01:36 2010
++++ src/lib-sql/driver-pgsql.c	Wed Mar 31 19:03:21 2010
+@@ -249,14 +249,18 @@ driver_pgsql_get_flags(struct sql_db *db ATTR_UNUSED)
+ 
+ static void consume_results(struct pgsql_db *db)
+ {
+-	do {
+-		if (!PQconsumeInput(db->pg))
+-			break;
++	PGresult *pgres;
+ 
++	while (PQconsumeInput(db->pg)) {
+ 		if (PQisBusy(db->pg))
+ 			return;
+-	} while (PQgetResult(db->pg) != NULL);
+ 
++		pgres = PQgetResult(db->pg);
++		if (pgres == NULL)
++			break;
++		PQclear(pgres);
++	}
++
+ 	if (PQstatus(db->pg) == CONNECTION_BAD)
+ 		io_remove_closed(&db->io);
+ 	else
+@@ -280,6 +284,7 @@ static void driver_pgsql_result_free(struct sql_result
+ 
+ 	if (result->pgres != NULL) {
+ 		PQclear(result->pgres);
++		result->pgres = NULL;
+ 
+ 		/* we'll have to read the rest of the results as well */
+ 		i_assert(db->io == NULL);
