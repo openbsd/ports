@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2010/03/21 00:05:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/03/31 13:06:47 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-PKGNAME =	mupdf-0.4.920p1
-DISTNAME =	mupdf-r920
-WRKDIST =	${WRKDIR}/mupdf
+DISTNAME =	mupdf-0.5
 
 CATEGORIES =	textproc x11
 
-HOMEPAGE =	http://ccxvii.net/mupdf/
+HOMEPAGE =	http://mupdf.com/
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -20,7 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	X11 Xext c freetype m pthread z
 
-MASTER_SITES =	http://ccxvii.net/mupdf/download/
+MASTER_SITES =	${HOMEPAGE}download/
 
 BUILD_DEPENDS =	::devel/jam
 
