@@ -1,0 +1,12 @@
+$OpenBSD: patch-pokerth_server_pro,v 1.4 2010/03/31 19:20:09 jasper Exp $
+--- pokerth_server.pro.orig	Wed Mar 31 13:46:16 2010
++++ pokerth_server.pro	Wed Mar 31 13:56:10 2010
+@@ -243,7 +243,7 @@ unix : !mac {
+         LIBS += -lpokerth_lib
+         LIBS += $$BOOST_LIBS
+         LIBS += -lcurl
+-        !isEmpty( BSD ) && isEmpty( kFreeBSD ){
++	!isEmpty( BSD ): isEmpty( kFreeBSD ){
+             LIBS += -lcrypto -liconv
+         }        else {
+             LIBS += -lgnutls-openssl -lgcrypt

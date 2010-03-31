@@ -1,0 +1,12 @@
+$OpenBSD: patch-pokerth_game_pro,v 1.3 2010/03/31 19:20:09 jasper Exp $
+--- pokerth_game.pro.orig	Wed Mar 31 13:46:09 2010
++++ pokerth_game.pro	Wed Mar 31 13:57:46 2010
+@@ -403,7 +403,7 @@ unix:!mac { 
+     LIBS += $$BOOST_LIBS
+     LIBS += -lSDL_mixer \
+         -lcurl
+-    !isEmpty( BSD ) && isEmpty( kFreeBSD ):LIBS += -lcrypto
++    !isEmpty( BSD ):isEmpty( kFreeBSD ):LIBS += -lcrypto
+     else:LIBS += -lgnutls-openssl \
+         -lgcrypt
+     TARGETDEPS += ./lib/libpokerth_lib.a

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/12/22 16:28:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/03/31 19:20:09 jasper Exp $
 
 COMMENT=	Qt4 poker game with online capabilities
 
-V=		0.6.3
+V=		0.7.1
 DISTNAME=	PokerTH-${V}-src
-PKGNAME=	pokerth-${V}p2
+PKGNAME=	pokerth-${V}
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.pokerth.net/
@@ -24,14 +24,14 @@ EXTRACT_SUFX=	.tar.bz2
 WANTLIB=	ICE SDL SM X11 Xext Xi Xinerama \
 		Xrender c crypto fontconfig freetype glib-2.0 \
 		gthread-2.0 m png pthread stdc++ z QtGui ssl \
-		expat gobject-2.0 pthread-stubs xcb
+		expat gobject-2.0
 
 MODULES=	devel/gettext \
 		x11/qt4
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 LIB_DEPENDS=	SDL_mixer::devel/sdl-mixer \
-		boost_filesystem-mt.>=1,boost_thread-mt,boost_program_options-mt,boost_iostreams-mt::devel/boost \
+		boost_filesystem-mt.>=1,boost_thread-mt,boost_program_options-mt,boost_iostreams-mt,boost_regex-mt,boost_system-mt::devel/boost \
 		curl::net/curl
 
 CONFIGURE_ENV=	HOME=${WRKDIR}
