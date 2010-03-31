@@ -1,6 +1,6 @@
-$OpenBSD: patch-browser_app_profile_firefox_js,v 1.2 2009/11/27 21:18:52 naddy Exp $
---- browser/app/profile/firefox.js.orig	Mon Nov  2 22:42:40 2009
-+++ browser/app/profile/firefox.js	Wed Nov 25 22:04:30 2009
+$OpenBSD: patch-browser_app_profile_firefox_js,v 1.3 2010/03/31 15:56:45 naddy Exp $
+--- browser/app/profile/firefox.js.orig	Mon Mar 15 15:53:41 2010
++++ browser/app/profile/firefox.js	Tue Mar 30 23:35:40 2010
 @@ -92,7 +92,7 @@ pref("browser.dictionaries.download.url", "https://%LO
  // App-specific update preferences
  
@@ -10,6 +10,15 @@ $OpenBSD: patch-browser_app_profile_firefox_js,v 1.2 2009/11/27 21:18:52 naddy E
  
  // This preference turns on app.update.mode and allows automatic download and
  // install to take place. We use a separate boolean toggle for this to make
+@@ -546,7 +546,7 @@ pref("plugin.default_plugin_disabled", true);
+ pref("pfs.datasource.url", "https://pfs.mozilla.org/plugins/PluginFinderService.php?mimetype=%PLUGIN_MIMETYPE%&appID=%APP_ID%&appVersion=%APP_VERSION%&clientOS=%CLIENT_OS%&chromeLocale=%CHROME_LOCALE%&appRelease=%APP_RELEASE%");
+ 
+ // by default we show an infobar message when pages require plugins the user has not installed
+-pref("plugins.hide_infobar_for_missing_plugin", false);
++pref("plugins.hide_infobar_for_missing_plugin", true);
+ 
+ #ifdef XP_WIN
+ pref("browser.preferences.instantApply", false);
 @@ -661,10 +661,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
  
  #ifdef MOZ_SAFE_BROWSING
