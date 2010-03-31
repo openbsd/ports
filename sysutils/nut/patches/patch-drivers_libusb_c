@@ -1,0 +1,13 @@
+$OpenBSD: patch-drivers_libusb_c,v 1.1 2010/03/31 22:11:11 sthen Exp $
+--- drivers/libusb.c.orig	Sat Mar 20 23:31:09 2010
++++ drivers/libusb.c	Sat Mar 20 23:31:21 2010
+@@ -376,7 +376,9 @@ static int libusb_strerror(const int ret, const char *
+ 		return 0;
+ 
+ 	case -EOVERFLOW:	/* Value too large for defined data type */
++#ifdef EPROTO
+ 	case -EPROTO:	/* Protocol error */
++#endif
+ 		upsdebugx(2, "%s: %s", desc, usb_strerror());
+ 		return 0;
+ 

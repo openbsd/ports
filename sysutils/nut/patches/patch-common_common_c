@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_common_c,v 1.4 2008/01/30 20:55:59 mbalmer Exp $
---- common/common.c.orig	Sun May 27 16:07:56 2007
-+++ common/common.c	Wed Aug  1 12:59:05 2007
-@@ -301,6 +301,17 @@ const char * confpath(void) 
+$OpenBSD: patch-common_common_c,v 1.5 2010/03/31 22:11:11 sthen Exp $
+--- common/common.c.orig	Thu Feb 11 21:43:12 2010
++++ common/common.c	Sat Mar 20 23:18:12 2010
+@@ -319,6 +319,17 @@ const char * confpath(void) 
  	return path;
  }
  

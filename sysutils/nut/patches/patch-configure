@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.12 2009/04/03 15:40:12 sthen Exp $
---- configure.orig	Tue Feb 17 09:23:51 2009
-+++ configure	Wed Mar 18 21:27:43 2009
-@@ -10506,7 +10506,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-configure,v 1.13 2010/03/31 22:11:11 sthen Exp $
+--- configure.orig	Tue Feb 23 10:04:39 2010
++++ configure	Sat Mar 20 23:18:19 2010
+@@ -10709,7 +10709,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  /* end confdefs.h.  */
- #include <openssl/ssl.h>
+ 
  int
 -main ()
 +test_main ()
  {
- SSL_library_init()
+ 
    ;

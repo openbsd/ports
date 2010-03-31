@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/03/20 17:11:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/03/31 22:11:11 sthen Exp $
 @conflict upsd-*
 @pkgpath sysutils/nut
 @pkgpath sysutils/nut,no_cgi
@@ -13,18 +13,22 @@
 @bin bin/belkin
 @bin bin/belkinunv
 @bin bin/bestfcom
+@bin bin/bestfortress
 @bin bin/bestuferrups
 @bin bin/bestups
 @bin bin/blazer_ser
 @bin bin/blazer_usb
-@bin bin/cyberpower
+@bin bin/clone
+@bin bin/clone-outlet
 @bin bin/dummy-ups
 @bin bin/etapro
 @bin bin/everups
 @bin bin/gamatronic
 @bin bin/genericups
 @bin bin/isbmex
+@bin bin/ivtscd
 @bin bin/liebert
+@bin bin/liebertgxt2
 @bin bin/masterguard
 @bin bin/megatec
 @bin bin/megatec_usb
@@ -64,6 +68,7 @@ lib/libupsclient.a
 lib/libupsclient.la
 lib/pkgconfig/
 @man man/man5/hosts.conf.5
+@man man/man5/nut.conf.5
 @man man/man5/ups.conf.5
 @man man/man5/upsd.conf.5
 @man man/man5/upsd.users.5
@@ -77,17 +82,20 @@ lib/pkgconfig/
 @man man/man8/belkin.8
 @man man/man8/belkinunv.8
 @man man/man8/bestfcom.8
+@man man/man8/bestfortress.8
 @man man/man8/bestuferrups.8
 @man man/man8/bestups.8
 @man man/man8/blazer.8
-@man man/man8/cyberpower.8
+@man man/man8/clone.8
 @man man/man8/dummy-ups.8
 @man man/man8/etapro.8
 @man man/man8/everups.8
 @man man/man8/gamatronic.8
 @man man/man8/genericups.8
 @man man/man8/isbmex.8
+@man man/man8/ivtscd.8
 @man man/man8/liebert.8
+@man man/man8/liebertgxt2.8
 @man man/man8/masterguard.8
 @man man/man8/megatec.8
 @man man/man8/megatec_usb.8
