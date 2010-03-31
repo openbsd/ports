@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/10 10:58:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/03/31 14:44:28 ajacoutot Exp $
 share/foomatic/
 share/foomatic/db/
 share/foomatic/db/oldprinterids
@@ -525,7 +525,7 @@ share/foomatic/db/source/PPD/KONICA_MINOLTA/KOC451TCX.ppd.gz
 share/foomatic/db/source/PPD/KONICA_MINOLTA/KOC451UX.ppd.gz
 share/foomatic/db/source/PPD/KONICA_MINOLTA/KOC550UX.ppd.gz
 share/foomatic/db/source/PPD/Kyocera/
-share/foomatic/db/source/PPD/Kyocera/ReadMe.htm
+@comment share/foomatic/db/source/PPD/Kyocera/ReadMe.htm
 share/foomatic/db/source/PPD/Kyocera/de/
 share/foomatic/db/source/PPD/Kyocera/de/Kyocera_CS-C2525E_de.ppd.gz
 share/foomatic/db/source/PPD/Kyocera/de/Kyocera_CS-C3225E_de.ppd.gz
