@@ -1,7 +1,32 @@
-$OpenBSD: patch-configure,v 1.1 2005/06/04 15:30:58 naddy Exp $
---- configure.orig	Sat Jun  4 17:10:03 2005
-+++ configure	Sat Jun  4 17:11:00 2005
-@@ -21663,7 +21663,7 @@ test -n "$optimize" && CFLAGS="$CFLAGS $
+$OpenBSD: patch-configure,v 1.2 2010/04/01 21:08:20 naddy Exp $
+--- configure.orig	Thu Feb  5 10:34:07 2004
++++ configure	Thu Apr  1 23:02:56 2010
+@@ -19032,6 +19032,7 @@ debug=""
+ optimize=""
+ profile=""
+ 
++if false; then
+ set -- $CFLAGS
+ CFLAGS=""
+ 
+@@ -19166,6 +19167,7 @@ _ACEOF
+ 
+ 	;;
+ esac
++fi
+ 
+ 
+ echo "$as_me:$LINENO: checking for ANSI C header files" >&5
+@@ -21627,7 +21629,7 @@ _ACEOF
+ 	    debug=""
+ 	    if test "$GCC" = yes
+ 	    then
+-		optimize="$optimize -fomit-frame-pointer"
++		: optimize="$optimize -fomit-frame-pointer"
+ 	    fi
+ 	    ;;
+     esac
+@@ -21663,7 +21665,7 @@ test -n "$optimize" && CFLAGS="$CFLAGS $optimize"
  test -n "$profile"  && CFLAGS="$CFLAGS $profile" LDFLAGS="$LDFLAGS $profile"
  
  
