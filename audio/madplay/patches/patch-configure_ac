@@ -1,7 +1,23 @@
-$OpenBSD: patch-configure_ac,v 1.1 2009/03/28 16:26:46 martynas Exp $
---- configure.ac.orig	Mon Feb 23 23:34:53 2004
-+++ configure.ac	Tue Mar 24 12:56:28 2009
-@@ -314,6 +314,13 @@ fi
+$OpenBSD: patch-configure_ac,v 1.2 2010/04/01 22:12:47 naddy Exp $
+--- configure.ac.orig	Mon Feb 23 22:34:53 2004
++++ configure.ac	Thu Apr  1 23:08:53 2010
+@@ -72,6 +72,7 @@ debug=""
+ optimize=""
+ profile=""
+ 
++if false; then
+ set -- $CFLAGS
+ CFLAGS=""
+ 
+@@ -138,6 +139,7 @@ then
+ 	: #? optimize="$optimize -finline-functions"
+     fi
+ fi
++fi
+ 
+ dnl Internationalization support.
+ 
+@@ -314,6 +316,13 @@ fi
  
  if test "$audio" = unknown
  then
@@ -15,3 +31,12 @@ $OpenBSD: patch-configure_ac,v 1.1 2009/03/28 16:26:46 martynas Exp $
      AC_EGREP_CPP(yes, [
  # include <sys/soundcard.h>
  # if defined(OPEN_SOUND_SYSTEM) || defined(UNIX_SOUND_SYSTEM) ||  \
+@@ -480,7 +489,7 @@ AC_HELP_STRING([--disable-debugging],
+ 	    debug=""
+ 	    if test "$GCC" = yes
+ 	    then
+-		optimize="$optimize -fomit-frame-pointer"
++		: optimize="$optimize -fomit-frame-pointer"
+ 	    fi
+ 	    ;;
+     esac

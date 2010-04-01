@@ -1,0 +1,28 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2010/04/01 22:12:47 naddy Exp $
+--- Makefile.in.orig	Thu Apr  1 23:33:04 2010
++++ Makefile.in	Thu Apr  1 23:33:52 2010
+@@ -117,6 +117,7 @@ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@	./$(DEPDIR)/audio_nas.Po ./$(DEPDIR)/audio_null.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/audio_oss.Po ./$(DEPDIR)/audio_qnx.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/audio_raw.Po ./$(DEPDIR)/audio_snd.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/audio_sndio.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/audio_sun.Po ./$(DEPDIR)/audio_wave.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/audio_win32.Po ./$(DEPDIR)/crc.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/filter.Po ./$(DEPDIR)/getopt.Po \
+@@ -302,7 +303,7 @@ default_audio = audio.c audio.h  \
+ 
+ extra_audio = audio_alsa.c audio_carbon.c audio_empeg.c  \
+ 			audio_esd.c audio_jaguar.c audio_nas.c audio_oss.c  \
+-			audio_qnx.c audio_sun.c audio_win32.c
++			audio_qnx.c audio_sndio.c audio_sun.c audio_win32.c
+ 
+ getopt_sources = getopt.c getopt.h getopt1.c
+ madplay_SOURCES = global.h madplay.c $(getopt_sources) gettext.h  \
+@@ -481,6 +482,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_qnx.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_raw.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_snd.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_sndio.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_sun.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_wave.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/audio_win32.Po@am__quote@

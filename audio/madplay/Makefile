@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2009/06/20 14:56:18 martynas Exp $
+# $OpenBSD: Makefile,v 1.15 2010/04/01 22:12:47 naddy Exp $
 
 COMMENT=	command-line MPEG audio decoder and player
 
 DISTNAME=	madplay-0.15.2b
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	audio
 HOMEPAGE=	http://mad.sourceforge.net/
 
@@ -25,8 +25,7 @@ WANTLIB=	c m sndio z
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple
 AUTOCONF_VERSION=2.59
-AUTOMAKE_VERSION=1.8
-CONFIGURE_STYLE= autoconf automake
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--without-esd
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
