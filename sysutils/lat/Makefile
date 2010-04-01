@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/26 13:13:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/01 07:20:17 ajacoutot Exp $
 
 COMMENT=	LDAP Administration Tool
 
 DISTNAME=	lat-1.2.3
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	sysutils
 
@@ -18,11 +19,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ldap-at/}
 
 BUILD_DEPENDS=	::textproc/rarian \
 		::x11/gnome/keyring \
-		::x11/mono-gtk2
+		::x11/gnome/mono-gnome
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils \
 		:yelp-*:x11/gnome/yelp \
 		::x11/gnome/keyring \
-		::x11/mono-gtk2
+		::x11/gnome/mono-gnome
 
 # do not use the devel/gettext MODULE to prevent port-lib-depends-check
 # from complaining about Extra: iconv intl
