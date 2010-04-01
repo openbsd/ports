@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/21 21:21:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/01 07:10:14 ajacoutot Exp $
 
 COMMENT =	gpx file viewer
 
@@ -21,7 +21,8 @@ MASTER_SITES =	http://edge.launchpad.net/gpx-viewer/trunk/${VERSION}/+download/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_path_VALAC=""
 USE_GMAKE =		yes
 
 MODULES =	devel/gettext \
