@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/03/28 15:25:15 robert Exp $
+# $OpenBSD: Makefile,v 1.34 2010/04/01 21:53:51 robert Exp $
 
 # sync with net/avahi,-mono
 ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
 COMMENT=	cross platform, open source .NET developement framework
 
 DISTNAME=	mono-2.6.3
-PKGNAME=	${DISTNAME}p12
+PKGNAME=	${DISTNAME}p13
 
 CATEGORIES=	lang devel
 
@@ -50,16 +50,16 @@ CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LC_ALL=C
-CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
-                --with-gc=boehm \
-                --with-glib=system \
-                --with-tls=pthread \
-                --with-jit=yes \
-                --with-interp=no \
-                --with-sigaltstack=no \
-                --with-libgdiplus=installed \
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--with-gc=boehm \
+		--with-glib=system \
+		--with-tls=pthread \
+		--with-jit=yes \
+		--with-interp=no \
+		--with-sigaltstack=no \
+		--with-libgdiplus=installed \
 		--enable-quiet-build=no \
-                --disable-shared-handles
+		--disable-shared-handles
 
 REGRESS_TARGET=check
 
@@ -81,8 +81,6 @@ BASH_SCRIPTS=	mcs/class/Mono.WebBrowser/build-csproj2k5 \
 		scripts/mono-find-requires.in \
 		scripts/mono-find-provides.in \
 		scripts/mono-test-install \
-		web/mono-build-w32.sh \
-		build-mingw32.sh \
 		mono/arch/arm/dpiops.sh
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples

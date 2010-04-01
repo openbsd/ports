@@ -1,0 +1,12 @@
+$OpenBSD: patch-mono_tests_Makefile_in,v 1.1 2010/04/01 21:53:51 robert Exp $
+--- mono/tests/Makefile.in.orig	Thu Apr  1 21:54:21 2010
++++ mono/tests/Makefile.in	Thu Apr  1 21:54:27 2010
+@@ -1278,7 +1278,7 @@ test-type-load: TestDriver.dll
+ 	@$(MCS) -r:TestDriver.dll -r:load-missing.dll -r:t.dll -out:load-exceptions.exe $(srcdir)/load-exceptions.cs
+ 	@$(MCS) -t:library -out:t.dll $(srcdir)/t-missing.cs
+ 	@echo "Testing load-exception.exe..."
+-	@$(RUNTIME) load-exceptions.exe > load-exceptions.exe.stdout 2> load-exceptions.exe.stderr
++	-@$(RUNTIME) load-exceptions.exe > load-exceptions.exe.stdout 2> load-exceptions.exe.stderr
+ test-runtime-invoke: TestDriver.dll gen-runtime-invoke.exe
+ 	@$(RUNTIME) gen-runtime-invoke.exe > runtime-invoke.gen.cs
+ 	@$(MCS) -out:runtime-invoke.gen.exe -r:TestDriver.dll runtime-invoke.gen.cs
