@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.69 2010/03/31 16:20:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2010/04/01 07:14:43 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
 VERSION=	1.4.3
 DISTNAME=	cups-${VERSION}-source
-PKGNAME=	cups-${VERSION}
+PKGNAME=	cups-${VERSION}p0
 
 CATEGORIES=	print sysutils
 
@@ -116,7 +116,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+= --enable-ldap
-LIB_DEPENDS+=	ldap,lber::databases/openldap
+LIB_DEPENDS+=	ldap::databases/openldap
 .else
 CONFIGURE_ARGS+=--disable-ldap
 .endif
