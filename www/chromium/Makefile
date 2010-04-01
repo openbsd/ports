@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/02/03 12:32:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/04/01 21:14:14 pvalchev Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		Chromium browser
 
-DISTNAME=		chromium-4.0.251.0
-PKGNAME =		${DISTNAME}p5
+DISTNAME=		chromium-5.0.359.0
 
 CATEGORIES =		www
 
@@ -19,8 +18,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
+WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xss
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
@@ -29,7 +28,6 @@ WANTLIB += z
 
 MASTER_SITES=	${MASTER_SITE_BACKUP} \
 		http://sightly.net/peter/openbsd/chromium/
-EXTRACT_SUFX=	.tar.bz2
 
 MODULES =	gcc4 devel/gettext
 MODGCC4_ARCHES = *
@@ -42,6 +40,7 @@ BUILD_DEPENDS =	:python->=${PYTHON_VER}:lang/python/${PYTHON_VER} \
 		::devel/bison \
 		::shells/bash
 LIB_DEPENDS =	execinfo::devel/libexecinfo \
+		bz2::archivers/bzip2 \
 		nss3,nssutil3,ssl3,smime3,softokn3::security/nss \
 		gconf-2::devel/gconf2
 
@@ -74,7 +73,7 @@ do-configure:
 	env -i ${CONFIGURE_ENV} python build/gyp_chromium -fmake --ignore-environment \
 	-Ibuild/common.gypi -Ibuild/features_override.gypi "--depth=${WRKSRC}" \
 	-DOS=openbsd -Duse_system_libxml=1 -Duse_system_libjpeg=1 \
-	-Duse_system_libevent=1 build/all.gyp
+	build/all.gyp
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome

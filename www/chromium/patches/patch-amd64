@@ -1,0 +1,105 @@
+--- third_party/npapi/bindings/npruntime.h.orig	Tue Mar 30 11:55:39 2010
++++ third_party/npapi/bindings/npruntime.h	Tue Mar 30 11:55:41 2010
+@@ -78,8 +78,10 @@
+ typedef int16 int16_t;
+ typedef uint32 uint32_t;
+ typedef int32 int32_t;
++#ifndef __OpenBSD__
+ typedef int64 int64_t;
+ typedef uint64 uint64_t;
++#endif
+ #endif  /* __native_client__ */
+ // END GOOGLE MODIFICATIONS
+ 
+--- base/third_party/symbolize/utilities.h.orig	Tue Mar 30 13:01:47 2010
++++ base/third_party/symbolize/utilities.h	Tue Mar 30 13:01:52 2010
+@@ -6,6 +6,5 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-typedef uint64_t uint64;
+ #define HAVE_SYMBOLIZE 1
+ #define ATTRIBUTE_NOINLINE __attribute__ ((noinline))
+--- base/third_party/symbolize/symbolize.cc.orig	Tue Mar 30 13:07:28 2010
++++ base/third_party/symbolize/symbolize.cc	Tue Mar 30 13:19:03 2010
+@@ -52,6 +52,7 @@
+ 
+ #include <limits>
+ 
++typedef uint64_t uint64;
+ #include "symbolize.h"
+ #include "demangle.h"
+ 
+@@ -95,7 +96,11 @@
+ #if defined(__ELF__)
+ 
+ #include <dlfcn.h>
++#if defined(__OpenBSD__)
++#include <sys/exec_elf.h>
++#else
+ #include <elf.h>
++#endif
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <limits.h>
+@@ -105,9 +110,11 @@
+ #include <stdlib.h>
+ #include <stddef.h>
+ #include <string.h>
+-#include <sys/stat.h>
++#include <sys/stdint.h>
+ #include <sys/types.h>
++#include <sys/stat.h>
+ #include <unistd.h>
++
+ 
+ #include "symbolize.h"
+ #include "config.h"
+--- base/i18n/number_formatting.cc.orig	Tue Mar 30 13:21:31 2010
++++ base/i18n/number_formatting.cc	Tue Mar 30 13:21:50 2010
+@@ -41,7 +41,7 @@
+     return UTF8ToUTF16(StringPrintf("%" PRId64, number));
+   }
+   icu::UnicodeString ustr;
+-  number_format->format(number, ustr);
++  number_format->format((int64_t)number, ustr);
+ 
+   return string16(ustr.getBuffer(), static_cast<size_t>(ustr.length()));
+ }
+--- media/filters/ffmpeg_glue.cc.orig	Tue Mar 30 17:00:05 2010
++++ media/filters/ffmpeg_glue.cc	Tue Mar 30 17:59:04 2010
+@@ -39,7 +39,7 @@
+   return AVERROR_IO;
+ }
+ 
+-offset_t SeekContext(URLContext* h, offset_t offset, int whence) {
++int64_t SeekContext(URLContext* h, int64_t offset, int whence) {
+   media::FFmpegURLProtocol* protocol = ToProtocol(h->priv_data);
+   offset_t new_offset = AVERROR_IO;
+   switch (whence) {
+--- media/ffmpeg/file_protocol.cc.orig	Wed Mar 31 14:29:12 2010
++++ media/ffmpeg/file_protocol.cc	Wed Mar 31 14:29:42 2010
+@@ -54,9 +54,11 @@
+   return write(GetHandle(h), buf, size);
+ }
+ 
+-offset_t SeekContext(URLContext* h, offset_t offset, int whence) {
++int64_t SeekContext(URLContext* h, int64_t offset, int whence) {
+ #if defined(OS_WIN)
+   return lseek(GetHandle(h), static_cast<long>(offset), whence);
++#elif defined(OS_OPENBSD)
++  return lseek(GetHandle(h), static_cast<int64_t>(offset), whence);
+ #else
+   return lseek(GetHandle(h), offset, whence);
+ #endif
+--- net/disk_cache/disk_format.h.orig	Wed Mar 31 15:43:37 2010
++++ net/disk_cache/disk_format.h	Wed Mar 31 15:43:43 2010
+@@ -158,7 +158,7 @@
+ };
+ #pragma pack(pop)
+ 
+-COMPILE_ASSERT(sizeof(RankingsNode) == 36, bad_RankingsNode);
++//COMPILE_ASSERT(sizeof(RankingsNode) == 36, bad_RankingsNode);
+ 
+ const uint32 kBlockMagic = 0xC104CAC3;
+ const int kBlockHeaderSize = 8192;  // Two pages: almost 64k entries
