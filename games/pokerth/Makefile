@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/03/31 19:20:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/04/01 08:36:14 jasper Exp $
 
 COMMENT=	Qt4 poker game with online capabilities
 
 V=		0.7.1
 DISTNAME=	PokerTH-${V}-src
-PKGNAME=	pokerth-${V}
+PKGNAME=	pokerth-${V}p0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.pokerth.net/
