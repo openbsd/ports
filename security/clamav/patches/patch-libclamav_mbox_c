@@ -1,6 +1,6 @@
---- libclamav/mbox.c.orig	Mon Mar 23 12:48:33 2009
-+++ libclamav/mbox.c	Tue Mar 24 00:43:32 2009
-@@ -28,11 +28,6 @@ static	char	const	rcsid[] = "$Id: mbox.c,v 1.381 2007/
+--- libclamav/mbox.c.orig	Mon Feb  8 14:53:43 2010
++++ libclamav/mbox.c	Wed Mar 10 21:28:42 2010
+@@ -24,11 +24,6 @@ static	char	const	rcsid[] = "$Id: mbox.c,v 1.381 2007/
  #include "clamav-config.h"
  #endif
  

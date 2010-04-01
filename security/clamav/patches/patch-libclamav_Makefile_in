@@ -1,8 +1,8 @@
-$OpenBSD: patch-libclamav_Makefile_in,v 1.12 2009/10/30 01:09:34 sthen Exp $
---- libclamav/Makefile.in.orig	Wed Oct 28 15:54:51 2009
-+++ libclamav/Makefile.in	Thu Oct 29 16:33:55 2009
-@@ -470,7 +470,7 @@ EXTRA_DIST = $(am__append_4) regex/engine.c libclamav.
- 	jsparse/generated/operators.h jsparse/generated/keywords.h \
+$OpenBSD: patch-libclamav_Makefile_in,v 1.13 2010/04/01 13:18:54 sthen Exp $
+--- libclamav/Makefile.in.orig	Tue Feb 16 14:44:25 2010
++++ libclamav/Makefile.in	Wed Mar 10 21:30:41 2010
+@@ -527,7 +527,7 @@ EXTRA_DIST = c++/Makefile.nollvm.in $(am__append_4) re
+ 	jsparse/generated/keywords.h \
  	jsparse/future_reserved_words.list jsparse/keywords.list \
  	jsparse/special_keywords.list jsparse/operators.gperf
 -@ENABLE_UNRAR_TRUE@libclamunrar_la_LDFLAGS = @TH_SAFE@ -version-info \
@@ -10,7 +10,7 @@ $OpenBSD: patch-libclamav_Makefile_in,v 1.12 2009/10/30 01:09:34 sthen Exp $
  @ENABLE_UNRAR_TRUE@	@LIBCLAMAV_VERSION@ -no-undefined \
  @ENABLE_UNRAR_TRUE@	$(am__append_2)
  @ENABLE_UNRAR_TRUE@libclamunrar_la_SOURCES = \
-@@ -494,7 +494,7 @@ EXTRA_DIST = $(am__append_4) regex/engine.c libclamav.
+@@ -551,7 +551,7 @@ EXTRA_DIST = c++/Makefile.nollvm.in $(am__append_4) re
  
  @ENABLE_UNRAR_TRUE@libclamunrar_iface_la_LIBADD = libclamunrar.la
  @ENABLE_UNRAR_TRUE@libclamunrar_iface_la_LDFLAGS = -module @TH_SAFE@ \
@@ -19,22 +19,22 @@ $OpenBSD: patch-libclamav_Makefile_in,v 1.12 2009/10/30 01:09:34 sthen Exp $
  @ENABLE_UNRAR_TRUE@	-no-undefined $(am__append_5)
  @ENABLE_UNRAR_TRUE@libclamunrar_iface_la_SOURCES = \
  @ENABLE_UNRAR_TRUE@	../libclamunrar_iface/unrar_iface.c \
-@@ -543,7 +543,7 @@ libclamav_internal_utils_nothreads_la_CFLAGS = -DCL_NO
- libclamav_la_LIBADD = @LIBLTDL@ $(IFACELIBADD) lzma/liblzma.la libclamav_internal_utils.la @LIBCLAMAV_LIBS@ @THREAD_LIBS@
- libclamav_la_DEPENDENCIES = @LTDLDEPS@ $(IFACEDEP) libclamav_internal_utils.la
+@@ -608,7 +608,7 @@ libclamav_nocxx_la_SOURCES = bytecode_nojit.c
+ libclamav_la_LIBADD = @LIBLTDL@ $(IFACELIBADD) $(LLVMLIBADD) libclamav_internal_utils.la @LIBCLAMAV_LIBS@ @THREAD_LIBS@ @LIBM@
+ libclamav_la_DEPENDENCIES = @LTDLDEPS@ $(IFACEDEP) $(LLVMDEP) libclamav_internal_utils.la
  libclamav_la_CFLAGS = -DSEARCH_LIBDIR=\"$(libdir)\"
 -libclamav_la_LDFLAGS = @TH_SAFE@ -version-info @LIBCLAMAV_VERSION@ \
 +libclamav_la_LDFLAGS = @TH_SAFE@ $(LIBclamav_LTVERSION) @LIBCLAMAV_VERSION@ \
  	-no-undefined $(am__append_6)
  include_HEADERS = clamav.h
  libclamav_la_SOURCES = clamav.h matcher-ac.c matcher-ac.h matcher-bm.c \
-@@ -1830,6 +1830,9 @@ version.h: version.h.tmp
+@@ -2267,6 +2267,9 @@ version.h: version.h.tmp
  	fi
  
  version.h.tmp:
 +	touch version.h.tmp
 +
 +NOT-version.h.tmp:
- 	@test -f version.h || touch version.h;\
+ 	$(AM_V_GEN) test -f version.h || touch version.h;\
  	rm -f $@;\
- 	REVISION="$$(LANG=C cd "$(top_srcdir)"; git describe --always 2>/dev/null)";\
+ 	REVISION="$$(LANG=C cd "$(top_srcdir)"; git describe --always 2>/dev/null || echo "exported")";\

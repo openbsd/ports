@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2009/10/30 01:09:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2010/04/01 13:18:54 sthen Exp $
 
 COMMENT=		virus scanner
-DISTNAME=		clamav-0.95.3
+DISTNAME=		clamav-0.96
 CATEGORIES=		security
-SHARED_LIBS=		clamav 12.0 \
+SHARED_LIBS=		clamav 13.0 \
 			clamunrar 2.0 \
 			clamunrar_iface 2.0
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c milter ncurses pthread z
+WANTLIB=		c m milter ncurses pthread z
 
 BUILD_DEPENDS=		::devel/check
 
@@ -41,6 +41,7 @@ CONFIGURE_ARGS+=        --disable-clamav \
 			--disable-clamuko \
 			--enable-bigstack \
 			--enable-milter \
+			--enable-silent-rules=no \
 			--with-user=_clamav \
 			--with-group=_clamav \
                         --disable-cr \
