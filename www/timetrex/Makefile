@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2010/03/20 16:54:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/04/02 07:44:51 ajacoutot Exp $
 
 COMMENT=	web-based payroll and time management suite
 
-V=		3.0.7
+V=		3.0.8
 DISTNAME=	TimeTrex_Standard_Edition_v${V}
 PKGNAME=	timetrex-${V}
 CATEGORIES=	www productivity
