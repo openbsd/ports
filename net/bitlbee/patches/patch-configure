@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.7 2010/04/02 22:02:05 nicm Exp $
+--- configure.orig     Tue Mar 23 23:29:04 2010
++++ configure  Tue Mar 23 23:29:21 2010
+@@ -155,7 +155,7 @@ else
+ fi
+ 
+ echo CFLAGS=$CFLAGS >> Makefile.settings
+-echo CFLAGS+=-I`pwd` -iquote`pwd`/lib -iquote`pwd`/protocols -I. >> Makefile.settings
++echo CFLAGS+=-I`pwd` -I`pwd`/lib -I`pwd`/protocols -I. >> Makefile.settings
+ 
+ echo CFLAGS+=-DHAVE_CONFIG_H >> Makefile.settings
