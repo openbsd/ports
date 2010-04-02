@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/04/02 08:25:33 robert Exp $
+# $OpenBSD: Makefile,v 1.38 2010/04/02 15:53:26 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -12,7 +12,7 @@ WRKDIST=	${WRKDIR}/OOO320_m12
 PKGNAME=	openoffice-${VERSION}
 PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
-PKGNAME-java=	openoffice-java-${VERSION}
+PKGNAME-java=	openoffice-java-${VERSION}p0
 CATEGORIES=	editors productivity
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -127,7 +127,7 @@ LIB_DEPENDS-java=	:db-java->=4,<5:databases/db/v4,-java,java \
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			::editors/openoffice3 \
 			::java/javaPathHelper
-WANTLIB-java=		c estdc++ m pthread xml2
+WANTLIB-java=		c estdc++ m pthread
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
