@@ -1,12 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2007/01/13 22:15:39 deanna Exp $
---- Makefile.in.orig	Sat Nov 25 10:48:34 2006
-+++ Makefile.in	Fri Jan 12 10:27:32 2007
-@@ -92,7 +92,7 @@ EXTRA_DIST = BUGS COPYING TODO INSTALL R
+$OpenBSD: patch-Makefile_in,v 1.2 2010/04/02 08:15:21 jasper Exp $
+--- Makefile.in.orig	Mon Jan 18 01:08:16 2010
++++ Makefile.in	Sat Mar  6 02:11:05 2010
+@@ -188,8 +188,8 @@ EXTRA_DIST = BUGS COPYING TODO INSTALL README PLEA src
  
  TESTS = test/testit
- SUBDIRS = doc src
--pkgdata_DATA = completions/ftp completions/testclient completions/coqtop
-+pkgdata_DATA = completions/ftp completions/coqtop
- subdir = .
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/tools/mkinstalldirs
+ SUBDIRS = doc src filters
+-nobase_pkgdata_DATA = completions/testclient completions/coqtop\
+-		       filters/README filters/RlwrapFilter.pm filters/RlwrapFilter.3pm filters/count_in_prompt filters/pipeto\
++nobase_pkgdata_DATA =  completions/coqtop\
++		       filters/README filters/RlwrapFilter.pm filters/count_in_prompt filters/pipeto\
+                        filters/logger filters/null filters/unbackspace filters/pipeline filters/ftp_filter\
+                        filters/simple_macro filters/template filters/scrub_prompt filters/paint_prompt filters/censor_passwords filters/listing
+ 

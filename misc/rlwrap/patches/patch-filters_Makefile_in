@@ -1,0 +1,21 @@
+$OpenBSD: patch-filters_Makefile_in,v 1.1 2010/04/02 08:15:21 jasper Exp $
+--- filters/Makefile.in.orig	Sun Jan  3 04:54:52 2010
++++ filters/Makefile.in	Sun Jan 10 21:16:26 2010
+@@ -42,7 +42,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ SOURCES =
+ DIST_SOURCES =
+-man3dir = $(mandir)/man3
++man3dir = $(mandir)/man3p
+ am__installdirs = "$(DESTDIR)$(man3dir)"
+ NROFF = nroff
+ MANS = $(man_MANS)
+@@ -193,7 +193,7 @@ install-man3: $(man3_MANS) $(man_MANS)
+ 	  else file=$(srcdir)/$$i; fi; \
+ 	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
+ 	  case "$$ext" in \
+-	    3*) ;; \
++	    3*)ext='3p' ;; \
+ 	    *) ext='3' ;; \
+ 	  esac; \
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \

@@ -1,6 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/13 22:15:39 deanna Exp $
-bin/rlwrap
+@comment $OpenBSD: PLIST,v 1.2 2010/04/02 08:15:21 jasper Exp $
+@bin bin/rlwrap
 @man man/man1/rlwrap.1
+@man man/man3p/RlwrapFilter.3p
 share/rlwrap/
-share/rlwrap/coqtop
-share/rlwrap/ftp
+share/rlwrap/completions/
+share/rlwrap/completions/coqtop
+share/rlwrap/filters/
+share/rlwrap/filters/README
+share/rlwrap/filters/RlwrapFilter.pm
+share/rlwrap/filters/censor_passwords
+share/rlwrap/filters/count_in_prompt
+share/rlwrap/filters/ftp_filter
+share/rlwrap/filters/listing
+share/rlwrap/filters/logger
+share/rlwrap/filters/null
+share/rlwrap/filters/paint_prompt
+share/rlwrap/filters/pipeline
+share/rlwrap/filters/pipeto
+share/rlwrap/filters/scrub_prompt
+share/rlwrap/filters/simple_macro
+share/rlwrap/filters/template
+share/rlwrap/filters/unbackspace
