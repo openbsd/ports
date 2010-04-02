@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.779 2010/04/02 13:41:18 giovanni Exp $
+# $OpenBSD: Makefile,v 1.780 2010/04/02 20:39:44 jsg Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -170,6 +170,7 @@
      SUBDIR += libio
      SUBDIR += libixp
      SUBDIR += libmagic
+     SUBDIR += libmpc
      SUBDIR += libmtp
      SUBDIR += libnotify
      SUBDIR += libofx
