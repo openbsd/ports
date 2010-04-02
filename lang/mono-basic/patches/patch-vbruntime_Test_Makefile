@@ -1,0 +1,30 @@
+$OpenBSD: patch-vbruntime_Test_Makefile,v 1.1 2010/04/02 16:11:13 robert Exp $
+--- vbruntime/Test/Makefile.orig	Fri Sep 25 17:57:12 2009
++++ vbruntime/Test/Makefile	Fri Apr  2 18:10:03 2010
+@@ -40,13 +40,13 @@ WINTEST=-echo Linux environment.
+ endif
+ 
+ bin/nunit-console.exe:
+-	wget -O bin/nunit-console.exe http://anonsvn.mono-project.com/viewvc/trunk/mono-basic/vbruntime/Test/bin/nunit-console.exe?revision=76123
++	ftp -o bin/nunit-console.exe http://anonsvn.mono-project.com/viewvc/trunk/mono-basic/vbruntime/Test/bin/nunit-console.exe?revision=76123
+ bin/nunit.framework.dll:
+-	wget -O bin/nunit.framework.dll http://anonsvn.mono-project.com/viewvc/trunk/mono-basic/vbruntime/Test/bin/nunit.framework.dll?revision=76123
++	ftp -o bin/nunit.framework.dll http://anonsvn.mono-project.com/viewvc/trunk/mono-basic/vbruntime/Test/bin/nunit.framework.dll?revision=76123
+ bin/nunit.core.dll:
+-	wget -O bin/nunit.core.dll http://anonsvn.mono-project.com/viewvc/trunk/mono-basic/vbruntime/Test/bin/nunit.core.dll?revision=76123
++	ftp -o bin/nunit.core.dll http://anonsvn.mono-project.com/viewvc/trunk/mono-basic/vbruntime/Test/bin/nunit.core.dll?revision=76123
+ bin/nunit.util.dll:
+-	wget -O bin/nunit.util.dll http://anonsvn.mono-project.com/viewvc/trunk/mono-basic/vbruntime/Test/bin/nunit.util.dll?revision=76123
++	ftp -o bin/nunit.util.dll http://anonsvn.mono-project.com/viewvc/trunk/mono-basic/vbruntime/Test/bin/nunit.util.dll?revision=76123
+ 
+ init: bin/nunit-console.exe bin/nunit.framework.dll bin/nunit.core.dll bin/nunit.util.dll
+ 	cp bin/nunit-console$(NUNIT_VERSION).exe.config bin/nunit-console.exe.config
+@@ -61,7 +61,7 @@ init: bin/nunit-console.exe bin/nunit.framework.dll bi
+ 	MONO_PATH=$(MONO_VB_PATH) mono ../../tools/extract-source/extract-source.exe -s:2008VB_test_CS.csproj -d:2008VB_test_CS.dll.sources.win -m:w
+ 
+ test-first:
+-	cd ../Microsoft.VisualBasic && make && cp ../../class/lib/vbnc/Microsoft.VisualBasic.dll* ../Test/bin
++	cd ../Microsoft.VisualBasic && gmake && cp ../../class/lib/vbnc/Microsoft.VisualBasic.dll* ../Test/bin
+ 
+ test-cs: test-first 2008VB_test_CS.dll.sources
+ 	$(CSCOMPILER) "-out:bin/2008VB_test_CS.dll" @2008VB_test_CS.dll.rsp @2008VB_test_CS.dll.sources -lib:bin $(CSDEFINES)
