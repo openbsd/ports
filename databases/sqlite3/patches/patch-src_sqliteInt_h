@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_sqliteInt_h,v 1.6 2009/12/19 23:08:48 sthen Exp $
---- src/sqliteInt.h.orig	Fri Jun 26 16:14:55 2009
-+++ src/sqliteInt.h	Fri Dec 18 22:05:53 2009
-@@ -35,11 +35,6 @@
+$OpenBSD: patch-src_sqliteInt_h,v 1.7 2010/04/02 20:07:11 sthen Exp $
+--- src/sqliteInt.h.orig	Mon Mar  8 15:08:55 2010
++++ src/sqliteInt.h	Fri Mar 26 19:44:15 2010
+@@ -61,11 +61,6 @@
  #pragma warn -spa /* Suspicious pointer arithmetic */
  #endif
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_sqliteInt_h,v 1.6 2009/12/19 23:08:48 sthen Exp $
  /*
  ** Include standard header files as necessary
  */
-@@ -439,33 +434,26 @@ typedef INT8_TYPE i8;              /* 1-byte signed in
+@@ -431,33 +426,26 @@ typedef INT8_TYPE i8;              /* 1-byte signed in
  */
  #define SQLITE_MAX_U32  ((((u64)1)<<32)-1)
  
@@ -59,12 +59,3 @@ $OpenBSD: patch-src_sqliteInt_h,v 1.6 2009/12/19 23:08:48 sthen Exp $
  
  /* 
  ** Round up a number to the next larger multiple of 8.  This is used
-@@ -1511,7 +1499,7 @@ struct Expr {
- 
-   int iTable;            /* TK_COLUMN: cursor number of table holding column
-                          ** TK_REGISTER: register number */
--  i16 iColumn;           /* TK_COLUMN: column index.  -1 for rowid */
-+  int iColumn;           /* TK_COLUMN: column index.  -1 for rowid */
-   i16 iAgg;              /* Which entry in pAggInfo->aCol[] or ->aFunc[] */
-   i16 iRightJoinTable;   /* If EP_FromJoin, the right table of the join */
-   u16 flags2;            /* Second set of flags.  EP2_... */

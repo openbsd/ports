@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.48 2009/12/19 23:08:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2010/04/02 20:07:11 sthen Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
 COMMENT-lemon=	LEMON LALR(1) parser generator
-V=		3.6.16
+V=		3.6.23
 DISTNAME=	sqlite-${V}
-PKGNAME-main=	sqlite3-${V}.1
-PKGNAME-tcl=	sqlite3-tcl-${V}.1
-PKGNAME-lemon=	lemon-${V}.1
+PKGNAME-main=	sqlite3-${V}
+PKGNAME-tcl=	sqlite3-tcl-${V}
+PKGNAME-lemon=	lemon-${V}
 CATEGORIES=	databases
-SHARED_LIBS +=	sqlite3              13.3      # .8.6
-SHARED_LIBS +=	tclsqlite3           12.3      # .8.6
+SHARED_LIBS +=	sqlite3              14.0      # .8.6
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -29,6 +28,7 @@ USE_LIBTOOL=	Yes
 
 CFLAGS+=	-DSQLITE_ENABLE_COLUMN_METADATA \
 		-DSQLITE_HAVE_ISNAN
+#		-DSQLITE_ENABLE_FTS3=1
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-threads-override-locks \
@@ -60,6 +60,7 @@ pre-configure:
 
 .else
 CONFIGURE_ARGS+=--disable-tcl
+CONFIGURE_ENV += TCLSH_CMD=none
 NO_REGRESS=	Yes
 .endif
 
