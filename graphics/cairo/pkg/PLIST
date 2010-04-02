@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/11/13 20:22:13 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/04/02 08:21:14 eric Exp $
 %%SHARED%%
 include/cairo/
 include/cairo/cairo-deprecated.h
@@ -9,6 +9,8 @@ include/cairo/cairo-pdf.h
 include/cairo/cairo-ps.h
 include/cairo/cairo-svg.h
 include/cairo/cairo-version.h
+include/cairo/cairo-xcb-xrender.h
+include/cairo/cairo-xcb.h
 include/cairo/cairo-xlib-xrender.h
 include/cairo/cairo-xlib.h
 include/cairo/cairo.h
@@ -21,6 +23,7 @@ lib/pkgconfig/cairo-pdf.pc
 lib/pkgconfig/cairo-png.pc
 lib/pkgconfig/cairo-ps.pc
 lib/pkgconfig/cairo-svg.pc
+lib/pkgconfig/cairo-xcb.pc
 lib/pkgconfig/cairo-xlib-xrender.pc
 lib/pkgconfig/cairo-xlib.pc
 lib/pkgconfig/cairo.pc
