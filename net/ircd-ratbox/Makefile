@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/02/01 10:32:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/02 21:55:38 fgsch Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	advanced, stable and fast irc server
@@ -52,8 +52,8 @@ CONFIGURE_ARGS =	--enable-ipv6 \
 # Hack to make the nick length configurable at build time
 NICKLEN ?=
 .if ${NICKLEN}
-FLAVORS =		nicklen-${NICKLEN}
-FLAVOR =		nicklen-${NICKLEN}
+FLAVORS =		nicklen_${NICKLEN}
+FLAVOR =		nicklen_${NICKLEN}
 CONFIGURE_ARGS +=	--with-nicklen=${NICKLEN}
 .endif
 
