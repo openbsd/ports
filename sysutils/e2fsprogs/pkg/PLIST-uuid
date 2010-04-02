@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-uuid,v 1.3 2009/03/15 19:59:31 landry Exp $
+@comment $OpenBSD: PLIST-uuid,v 1.4 2010/04/02 21:19:07 ajacoutot Exp $
 @bin bin/uuidgen
 include/uuid/
 include/uuid/uuid.h
@@ -8,6 +8,7 @@ lib/uuid/
 lib/uuid/libuuid.a
 %%SHARED%%
 @man man/man1/uuidgen.1
+@comment @man man/man3/uuid.3
 @man man/man3/uuid_clear.3
 @man man/man3/uuid_compare.3
 @man man/man3/uuid_copy.3

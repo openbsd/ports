@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2010/04/02 18:08:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2010/04/02 21:19:07 ajacoutot Exp $
 @bin bin/chattr
 @comment bin/compile_et
 @bin bin/lsattr
@@ -43,7 +43,6 @@ lib/pkgconfig/ss.pc
 @man man/man1/mk_cmds.1
 @man man/man3/com_err.3
 @man man/man3/libblkid.3
-@man man/man3/uuid.3
 @man man/man5/e2fsck.conf.5
 @man man/man5/mke2fs.conf.5
 @man man/man8/badblocks.8
