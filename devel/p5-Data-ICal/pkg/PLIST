@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/02 13:34:39 giovanni Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/ICal/
+${P5SITE}/Data/ICal.pm
+${P5SITE}/Data/ICal/Entry/
+${P5SITE}/Data/ICal/Entry.pm
+${P5SITE}/Data/ICal/Entry/Alarm/
+${P5SITE}/Data/ICal/Entry/Alarm/Audio.pm
+${P5SITE}/Data/ICal/Entry/Alarm/Display.pm
+${P5SITE}/Data/ICal/Entry/Alarm/Email.pm
+${P5SITE}/Data/ICal/Entry/Alarm/Procedure.pm
+${P5SITE}/Data/ICal/Entry/Event.pm
+${P5SITE}/Data/ICal/Entry/FreeBusy.pm
+${P5SITE}/Data/ICal/Entry/Journal.pm
+${P5SITE}/Data/ICal/Entry/TimeZone/
+${P5SITE}/Data/ICal/Entry/TimeZone.pm
+${P5SITE}/Data/ICal/Entry/TimeZone/Daylight.pm
+${P5SITE}/Data/ICal/Entry/TimeZone/Standard.pm
+${P5SITE}/Data/ICal/Entry/Todo.pm
+${P5SITE}/Data/ICal/Property.pm
+@man man/man3p/Data::ICal.3p
+@man man/man3p/Data::ICal::Entry.3p
+@man man/man3p/Data::ICal::Entry::Alarm::Audio.3p
+@man man/man3p/Data::ICal::Entry::Alarm::Display.3p
+@man man/man3p/Data::ICal::Entry::Alarm::Email.3p
+@man man/man3p/Data::ICal::Entry::Alarm::Procedure.3p
+@man man/man3p/Data::ICal::Entry::Event.3p
+@man man/man3p/Data::ICal::Entry::FreeBusy.3p
+@man man/man3p/Data::ICal::Entry::Journal.3p
+@man man/man3p/Data::ICal::Entry::TimeZone.3p
+@man man/man3p/Data::ICal::Entry::TimeZone::Daylight.3p
+@man man/man3p/Data::ICal::Entry::TimeZone::Standard.3p
+@man man/man3p/Data::ICal::Entry::Todo.3p
+@man man/man3p/Data::ICal::Property.3p
