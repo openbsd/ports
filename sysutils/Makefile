@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2010/03/26 13:13:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.198 2010/04/02 11:42:29 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -163,6 +163,7 @@
      SUBDIR += wmmon
      SUBDIR += wmwlmon
      SUBDIR += xbatt
+     SUBDIR += xjobs
      SUBDIR += xps
      SUBDIR += xstatbar
      SUBDIR += xuvmstat
