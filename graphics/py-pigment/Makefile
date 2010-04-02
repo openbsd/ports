@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/13 19:39:09 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/02 16:02:28 sthen Exp $
 
 COMMENT =	python bindings for pigment
 
 CATEGORIES =	graphics
 
 DISTNAME =	pigment-python-0.3.12
-PKGNAME =	py-pigment-0.3.12
+PKGNAME =	py-pigment-0.3.12p0
 MASTER_SITES =	http://elisa.fluendo.com/static/download/pigment/
 
 # LGPLv2.1
@@ -31,8 +31,8 @@ BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 LIB_DEPENDS =	pigment-0.3,pigment-gtk-0.3,pigment-imaging-0.3::graphics/pigment
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z xml2
