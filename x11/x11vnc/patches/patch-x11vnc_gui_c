@@ -1,15 +1,15 @@
-$OpenBSD: patch-x11vnc_gui_c,v 1.4 2009/06/23 21:11:17 sthen Exp $
---- x11vnc/gui.c.orig	Sun Mar 15 22:04:58 2009
-+++ x11vnc/gui.c	Tue Jun 23 21:59:21 2009
-@@ -261,9 +261,8 @@ static void sigusr1 (int sig) {
- 	if (0) sig = 0;
- }
+$OpenBSD: patch-x11vnc_gui_c,v 1.5 2010/04/02 00:42:25 sthen Exp $
+--- x11vnc/gui.c.orig	Mon Dec 21 04:58:10 2009
++++ x11vnc/gui.c	Wed Dec 23 22:02:45 2009
+@@ -263,9 +263,8 @@ static void sigusr1 (int sig) {
+ 
+ /* Most of the following mess is for wish on Solaris: */
  
 -static char *extra_path = ":/usr/local/bin:/usr/bin/X11:/usr/sfw/bin"
--	    ":/usr/X11R6/bin:/usr/openwin/bin:/usr/dt/bin";
--static char *wishes[] = {"wish8.4", "wish", "wish8.3", "wish8.5", "wish8.0", NULL};
+-	    ":/usr/X11R6/bin:/usr/openwin/bin:/usr/dt/bin:/opt/sfw/bin";
+-static char *wishes[] = {"wish8.4", "wish", "wish8.3", "wish8.5", "wish8.6", "wish8.7", "wishx", "wish8.0", NULL};
 +static char *extra_path = ":${PREFIX}/bin:${LOCALBASE}/bin:${X11BASE}/bin";
-+static char *wishes[] = {"wish${MODTK_VERSION}", "wish8.5", "wish8.4", "wish", NULL};
++static char *wishes[] = {"wish${MODTK_VERSION}", NULL};
  
  static void run_gui(char *gui_xdisplay, int connect_to_x11vnc, int start_x11vnc,
      int simple_gui, pid_t parent, char *gui_opts) {
