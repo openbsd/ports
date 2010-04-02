@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.778 2010/03/29 14:09:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.779 2010/04/02 13:41:18 giovanni Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -341,6 +341,7 @@
      SUBDIR += p5-Data-Flow
      SUBDIR += p5-Data-FormValidator
      SUBDIR += p5-Data-Hierarchy
+     SUBDIR += p5-Data-ICal
      SUBDIR += p5-Data-Lazy
      SUBDIR += p5-Data-OptList
      SUBDIR += p5-Data-Random
@@ -659,6 +660,7 @@
      SUBDIR += p5-Test-YAML-Valid
      SUBDIR += p5-Test-use-ok
      SUBDIR += p5-Text-FixEOL
+     SUBDIR += p5-Text-vFile-asData
      SUBDIR += p5-Tie-Array-Sorted
      SUBDIR += p5-Tie-CPHash
      SUBDIR += p5-Tie-Cache
