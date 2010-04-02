@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/03/30 11:03:07 robert Exp $
+# $OpenBSD: Makefile,v 1.37 2010/04/02 08:25:33 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -217,10 +217,10 @@ NCPUFLAG=	-P ${NCPU}
 .endif
 
 .if ${FLAVOR:L:Mnormal_build}
-BUILD_CMD=	cd instsetoo_native && build.pl ${NCPUFLAG} --all --html --dontgraboutput && \
+BUILD_CMD=	cd instsetoo_native && build.pl ${NCPUFLAG} --all && \
 		cd util && dmake ooolanguagepack
 .else
-BUILD_CMD=	cd instsetoo_native && build.pl ${NCPUFLAG} --all --html --dontgraboutput --dlv_switch -link && \
+BUILD_CMD=	cd instsetoo_native && build.pl ${NCPUFLAG} --all --dlv_switch -link && \
 		cd util && dmake ooolanguagepack
 .endif
 
