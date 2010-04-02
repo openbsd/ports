@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/12/21 20:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/04/02 20:53:52 sthen Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
 DISTNAME=	tellico-1.3.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	x11 databases
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB+=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c
 WANTLIB+=	exslt gcrypt gpg-error idn jpeg m pcre pcreposix
-WANTLIB+=	png pthread stdc++ util xml2 xslt z fam rpcsvc
+WANTLIB+=	png pthread stdc++ util xml2 xslt z fam
 WANTLIB+=	expat fontconfig freetype pthread-stubs xcb
 
 MODULES=	x11/kde \
@@ -47,6 +47,7 @@ LIB_DEPENDS=	${MODQT_LIB_DEPENDS} \
 		kcal,ktnef,kmime::x11/kde/pim3 \
 		kcddb::x11/kde/multimedia3 \
 		kdecore.>=6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,knewstuff,kparts,kresources,kutils,kwalletclient,vcard::x11/kde/libs3 \
+		lcms::graphics/lcms \
 		poppler-qt.>=3,poppler::print/poppler,-qt \
 		tag::audio/taglib \
 		yaz::net/yaz
