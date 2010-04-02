@@ -1,5 +1,0 @@
-$OpenBSD: patch-build_os-openbsd_mak,v 1.1.1.1 2007/10/27 04:34:23 deanna Exp $
---- build/os-openbsd.mak.orig	Fri Oct 26 13:52:15 2007
-+++ build/os-openbsd.mak	Fri Oct 26 13:52:24 2007
-@@ -0,0 +1 @@
-+export OS_LDFLAGS = -L/usr/local/lib -lm -lpthread  -lssl -lcrypto -lossaudio

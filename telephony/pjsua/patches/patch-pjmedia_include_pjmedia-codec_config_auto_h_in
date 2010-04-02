@@ -1,0 +1,22 @@
+$OpenBSD: patch-pjmedia_include_pjmedia-codec_config_auto_h_in,v 1.1 2010/04/02 11:48:24 dcoppa Exp $
+
+fix from upstream:
+enable use of system libraries for gsm, speex and portaudio
+
+--- pjmedia/include/pjmedia-codec/config_auto.h.in.orig	Wed Apr 15 16:45:41 2009
++++ pjmedia/include/pjmedia-codec/config_auto.h.in	Wed Mar 31 10:28:45 2010
+@@ -42,12 +42,14 @@
+ #undef PJMEDIA_HAS_GSM_CODEC
+ #endif
+ 
++#undef PJMEDIA_EXTERNAL_GSM_CODEC
+ 
+ /* Speex codec */
+ #ifndef PJMEDIA_HAS_SPEEX_CODEC
+ #undef PJMEDIA_HAS_SPEEX_CODEC
+ #endif
+ 
++#undef PJMEDIA_EXTERNAL_SPEEX_CODEC
+ 
+ /* iLBC codec */
+ #ifndef PJMEDIA_HAS_ILBC_CODEC

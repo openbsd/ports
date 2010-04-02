@@ -1,0 +1,23 @@
+$OpenBSD: patch-pjmedia_build_Makefile,v 1.1 2010/04/02 11:48:24 dcoppa Exp $
+
+fix from upstream:
+enable use of system libraries for gsm, speex and portaudio
+
+--- pjmedia/build/Makefile.orig	Tue Nov 10 06:26:37 2009
++++ pjmedia/build/Makefile	Wed Mar 31 10:28:45 2010
+@@ -1,7 +1,6 @@
+ include ../../build.mak
+ 
+ THIRD_PARTY:=$(PJDIR)/third_party
+-PA_DIR := $(THIRD_PARTY)/build/portaudio/src
+ 
+ SRTP_INC=$(CC_INC)$(THIRD_PARTY)/build/srtp \
+ 	 $(CC_INC)$(THIRD_PARTY)/srtp/crypto/include \
+@@ -41,6 +40,7 @@ export _LDFLAGS := $(subst /,$(HOST_PSEP),$(PJMEDIA_LI
+ 		   $(subst /,$(HOST_PSEP),$(PJNATH_LIB)) \
+ 		   -L$(PJDIR)/third_party/lib \
+ 		   $(APP_THIRD_PARTY_LIBS) \
++		   $(APP_THIRD_PARTY_EXT) \
+ 		   $(CC_LDFLAGS) $(OS_LDFLAGS) $(M_LDFLAGS) $(HOST_LDFLAGS) \
+ 		   $(LDFLAGS) 
+ 

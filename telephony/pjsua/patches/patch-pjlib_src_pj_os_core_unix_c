@@ -1,0 +1,39 @@
+$OpenBSD: patch-pjlib_src_pj_os_core_unix_c,v 1.1 2010/04/02 11:48:24 dcoppa Exp $
+
+fix undefined sched_get_priority_max() and sched_get_priority_min() 
+on OpenBSD
+protect both functions with #ifdef _POSIX_PRIORITY_SCHEDULING and 
+return 0 if __OpenBSD__ macro is declared
+
+--- pjlib/src/pj/os_core_unix.c.orig	Wed Aug  5 12:58:02 2009
++++ pjlib/src/pj/os_core_unix.c	Wed Mar 31 10:28:45 2010
+@@ -308,7 +308,14 @@ PJ_DEF(int) pj_thread_get_prio_min(pj_thread_t *thread
+     if (rc != 0)
+ 	return -1;
+ 
++#if defined _POSIX_PRIORITY_SCHEDULING
+     return sched_get_priority_min(policy);
++#elif defined __OpenBSD__
++    return 0;
++#else
++    pj_assert("pj_thread_get_prio_min() not supported!");
++    return 0;
++#endif
+ }
+ 
+ 
+@@ -325,7 +332,14 @@ PJ_DEF(int) pj_thread_get_prio_max(pj_thread_t *thread
+     if (rc != 0)
+ 	return -1;
+ 
++#if defined _POSIX_PRIORITY_SCHEDULING
+     return sched_get_priority_max(policy);
++#elif defined __OpenBSD__
++    return 0;
++#else
++    pj_assert("pj_thread_get_prio_max() not supported!");
++    return 0;
++#endif
+ }
+ 
+ 

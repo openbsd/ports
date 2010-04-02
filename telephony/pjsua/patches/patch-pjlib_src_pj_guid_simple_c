@@ -1,0 +1,24 @@
+$OpenBSD: patch-pjlib_src_pj_guid_simple_c,v 1.1 2010/04/02 11:48:24 dcoppa Exp $
+
+fix from upstream:
+better GUID generation on OpenBSD
+
+--- pjlib/src/pj/guid_simple.c.orig	Tue Dec 23 18:27:53 2008
++++ pjlib/src/pj/guid_simple.c	Wed Mar 31 10:28:45 2010
+@@ -67,10 +67,12 @@ PJ_DEF(pj_str_t*) pj_generate_unique_string(pj_str_t *
+     pj_assert(PJ_GUID_STRING_LENGTH % 2 == 0);
+ 
+     for (p=str->ptr, end=p+PJ_GUID_STRING_LENGTH; p<end; ) {
+-	/* Assumes rand() only has 16bit randomness */
+-	unsigned short val = pj_rand();
+-	*p++ = guid_chars[(val >> 8)   & 63];
+-	*p++ = guid_chars[(val & 0xFF) & 63];
++	pj_uint32_t rand_val = pj_rand();
++	pj_uint32_t rand_idx = RAND_MAX;
++
++	for ( ; rand_idx>0 && p<end; rand_idx>>=8, rand_val>>=8, p++) {
++	    *p = guid_chars[(rand_val & 0xFF) & 63];
++	}
+     }
+ 
+     str->slen = PJ_GUID_STRING_LENGTH;

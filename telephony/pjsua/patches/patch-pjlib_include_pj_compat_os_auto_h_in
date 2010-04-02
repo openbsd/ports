@@ -1,0 +1,16 @@
+$OpenBSD: patch-pjlib_include_pj_compat_os_auto_h_in,v 1.1 2010/04/02 11:48:24 dcoppa Exp $
+
+fix from upstream:
+fixes in detecting header availability
+
+--- pjlib/include/pj/compat/os_auto.h.in.orig	Mon Oct 26 16:47:52 2009
++++ pjlib/include/pj/compat/os_auto.h.in	Wed Mar 31 10:28:45 2010
+@@ -71,6 +71,8 @@
+ #undef PJ_HAS_SYS_TIME_H
+ #undef PJ_HAS_SYS_TIMEB_H
+ #undef PJ_HAS_SYS_TYPES_H
++#undef PJ_HAS_SYS_FILIO_H
++#undef PJ_HAS_SYS_SOCKIO_H
+ #undef PJ_HAS_TIME_H
+ #undef PJ_HAS_UNISTD_H
+ 

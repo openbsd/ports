@@ -1,0 +1,9 @@
+$OpenBSD: patch-pjsip_include_pjsua_h,v 1.1 2010/04/02 11:48:24 dcoppa Exp $
+
+fix from upstream:
+missing include
+
+--- pjsip/include/pjsua.h.orig	Wed Mar 31 10:28:45 2010
++++ pjsip/include/pjsua.h	Wed Mar 31 10:28:45 2010
+@@ -0,0 +1 @@
++#include <pjsua-lib/pjsua.h>

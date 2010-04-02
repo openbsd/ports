@@ -1,0 +1,21 @@
+$OpenBSD: patch-pjmedia_build_os-auto_mak_in,v 1.1 2010/04/02 11:48:24 dcoppa Exp $
+
+fix from upstream:
+enable use of system libraries for gsm, speex and portaudio
+
+--- pjmedia/build/os-auto.mak.in.orig	Wed Jun  3 14:29:35 2009
++++ pjmedia/build/os-auto.mak.in	Wed Mar 31 10:28:45 2010
+@@ -86,7 +86,13 @@ endif
+ # PortAudio
+ #
+ ifneq ($(findstring pa,$(AC_PJMEDIA_SND)),)
++ifeq (@ac_external_pa@,1)
++# External PA
++export CFLAGS += -DPJMEDIA_AUDIO_DEV_HAS_PORTAUDIO=1
++else
++# Our PA in third_party
+ export CFLAGS += -I$(THIRD_PARTY)/build/portaudio -I$(THIRD_PARTY)/portaudio/include -DPJMEDIA_AUDIO_DEV_HAS_PORTAUDIO=1
++endif
+ endif
+ 
+ #

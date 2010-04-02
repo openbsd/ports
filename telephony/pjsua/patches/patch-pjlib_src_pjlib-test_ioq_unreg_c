@@ -1,0 +1,16 @@
+$OpenBSD: patch-pjlib_src_pjlib-test_ioq_unreg_c,v 1.1 2010/04/02 11:48:24 dcoppa Exp $
+
+fix from upstream:
+fix bug in ioqueue unregistration test which caused assertion error 
+in destroying mutex on OpenBSD
+
+--- pjlib/src/pjlib-test/ioq_unreg.c.orig	Thu Jul  2 10:24:22 2009
++++ pjlib/src/pjlib-test/ioq_unreg.c	Wed Mar 31 10:28:45 2010
+@@ -93,6 +93,7 @@ static void on_read_complete(pj_ioqueue_key_t *key, 
+ 	if (PJ_TIME_VAL_GTE(now, time_to_unregister)) { 
+ 	    sock_data.unregistered = 1;
+ 	    pj_ioqueue_unregister(key);
++	    pj_mutex_unlock(sock_data.mutex);
+ 	    return;
+ 	}
+     }
