@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/06/25 01:09:12 jolan Exp $
+# $OpenBSD: Makefile,v 1.15 2010/04/02 18:08:56 ajacoutot Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
 
 COMMENT-main=		utilities to manipulate ext2 filesystems
@@ -6,8 +6,8 @@ COMMENT-uuid=		unique id generator library
 
 V=			1.41.4
 DISTNAME=		e2fsprogs-${V}
-PKGNAME-main=		${DISTNAME}p0
-PKGNAME-uuid=		e2fs-uuid-${V}p0
+PKGNAME-main=		${DISTNAME}p1
+PKGNAME-uuid=		e2fs-uuid-${V}p1
 CATEGORIES-uuid=	devel
 CATEGORIES=		sysutils
 SHARED_LIBS=		blkid		0.0 \
@@ -26,7 +26,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		c iconv intl
+
+WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=e2fsprogs/}
 
@@ -43,7 +44,8 @@ MAKE_FLAGS=		LIBblkid_VERSION=${LIBblkid_VERSION} \
 			LIBext2fs_com_err_VERSION=${LIBext2fs_com_err_VERSION} \
 			LIBss_VERSION=${LIBss_VERSION} \
 			LIBuuid_VERSION=${LIBuuid_VERSION}
-LIB_DEPENDS-main=	lib/uuid/uuid::${BUILD_PKGPATH},-uuid
+LIB_DEPENDS-main=	lib/uuid/uuid::${BUILD_PKGPATH},-uuid \
+			${MODGETTEXT_LIB_DEPENDS}
 
 INSTALL_TARGET=		install install-libs
 post-install:
