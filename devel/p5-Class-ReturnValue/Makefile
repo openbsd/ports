@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 02:53:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/02 13:15:43 giovanni Exp $
 
 COMMENT=	smart return-value object
 
 MODULES=	cpan
-DISTNAME=	Class-ReturnValue-0.53
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	Class-ReturnValue-0.55
 CATEGORIES=	devel
 
 MAINTAINER=	Michael Coulter <mjc@openbsd.org>
