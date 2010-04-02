@@ -1,6 +1,6 @@
-$OpenBSD: patch-browser_app_profile_firefox_js,v 1.1.1.1 2010/03/29 20:44:09 naddy Exp $
---- browser/app/profile/firefox.js.orig	Wed Jan  6 05:35:10 2010
-+++ browser/app/profile/firefox.js	Sun Jan 10 17:47:23 2010
+$OpenBSD: patch-browser_app_profile_firefox_js,v 1.2 2010/04/02 22:12:47 naddy Exp $
+--- browser/app/profile/firefox.js.orig	Tue Mar 16 10:53:45 2010
++++ browser/app/profile/firefox.js	Tue Mar 30 23:51:47 2010
 @@ -100,7 +100,7 @@ pref("app.update.timer", 600000);
  // firefox-branding.js
  
@@ -10,6 +10,15 @@ $OpenBSD: patch-browser_app_profile_firefox_js,v 1.1.1.1 2010/03/29 20:44:09 nad
  
  // This preference turns on app.update.mode and allows automatic download and
  // install to take place. We use a separate boolean toggle for this to make
+@@ -573,7 +573,7 @@ pref("plugin.default_plugin_disabled", true);
+ pref("pfs.datasource.url", "https://pfs.mozilla.org/plugins/PluginFinderService.php?mimetype=%PLUGIN_MIMETYPE%&appID=%APP_ID%&appVersion=%APP_VERSION%&clientOS=%CLIENT_OS%&chromeLocale=%CHROME_LOCALE%&appRelease=%APP_RELEASE%");
+ 
+ // by default we show an infobar message when pages require plugins the user has not installed, or are outdated
+-pref("plugins.hide_infobar_for_missing_plugin", false);
++pref("plugins.hide_infobar_for_missing_plugin", true);
+ pref("plugins.hide_infobar_for_outdated_plugin", false);
+ 
+ pref("plugins.update.url", "https://www.mozilla.com/%LOCALE%/plugincheck/");
 @@ -692,10 +692,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
  
  #ifdef MOZ_SAFE_BROWSING
