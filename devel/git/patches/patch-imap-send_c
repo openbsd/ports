@@ -1,24 +1,12 @@
-$OpenBSD: patch-imap-send_c,v 1.6 2009/11/17 16:29:42 bernd Exp $
-
-Fix "warning: missing sentinel in function call" on 64bit archs.
-
---- imap-send.c.orig	Mon Nov 16 23:14:46 2009
-+++ imap-send.c	Tue Nov 17 14:30:56 2009
-@@ -502,7 +502,7 @@ static void arc4_init(void)
- 	int i, fd;
- 	unsigned char j, si, dat[128];
+$OpenBSD: patch-imap-send_c,v 1.7 2010/04/02 16:08:09 bernd Exp $
+--- imap-send.c.orig	Sun Mar  7 17:13:40 2010
++++ imap-send.c	Sun Mar  7 19:49:44 2010
+@@ -964,7 +964,7 @@ static struct store *imap_open_store(struct imap_serve
+ 	/* open connection to IMAP server */
  
--	if ((fd = open("/dev/urandom", O_RDONLY)) < 0 && (fd = open("/dev/random", O_RDONLY)) < 0) {
-+	if ((fd = open("/dev/arandom", O_RDONLY)) < 0 && (fd = open("/dev/random", O_RDONLY)) < 0) {
- 		fprintf(stderr, "Fatal: no random number source available.\n");
- 		exit(3);
- 	}
-@@ -1013,7 +1013,7 @@ static struct store *imap_open_store(struct imap_serve
- 				_exit(127);
- 			close(a[0]);
- 			close(a[1]);
--			execl("/bin/sh", "sh", "-c", srvc->tunnel, NULL);
-+			execl("/bin/sh", "sh", "-c", srvc->tunnel, (void *)NULL);
- 			_exit(127);
- 		}
+ 	if (srvc->tunnel) {
+-		const char *argv[] = { srvc->tunnel, NULL };
++		const char *argv[] = { srvc->tunnel, (void *)NULL };
+ 		struct child_process tunnel = {0};
  
+ 		imap_info("Starting tunnel '%s'... ", srvc->tunnel);

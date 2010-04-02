@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Dec  6 04:51:25 2009
-+++ Makefile	Sun Dec  6 10:39:37 2009
-@@ -218,7 +218,7 @@ uname_V := $(shell sh -c 'uname -v 2>/dev/null || echo
+--- Makefile.orig	Thu Apr  1 06:29:23 2010
++++ Makefile	Fri Apr  2 11:36:32 2010
+@@ -234,7 +234,7 @@ endif
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -9,7 +9,7 @@
  LDFLAGS =
  ALL_CFLAGS = $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
-@@ -236,22 +236,16 @@ STRIP ?= strip
+@@ -252,22 +252,16 @@ STRIP ?= strip
  # runtime figures out where they are based on the path to the executable.
  # This can help installing the suite in a relocatable way.
  
@@ -36,7 +36,7 @@
  lib = lib
  # DESTDIR=
  pathsep = :
-@@ -276,16 +270,16 @@ GITWEB_SITE_FOOTER =
+@@ -277,16 +271,16 @@ JSMIN =
  
  export prefix bindir sharedir sysconfdir
  
@@ -57,7 +57,7 @@
  
  export TCL_PATH TCLTK_PATH
  
-@@ -806,13 +800,12 @@ ifeq ($(uname_S),FreeBSD)
+@@ -833,12 +827,13 @@ ifeq ($(uname_S),FreeBSD)
  	endif
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -67,15 +67,15 @@
  	NEEDS_LIBICONV = YesPlease
 -	BASIC_CFLAGS += -I/usr/local/include
 -	BASIC_LDFLAGS += -L/usr/local/lib
--	THREADED_DELTA_SEARCH = YesPlease
 +	BASIC_CFLAGS += -I${X11BASE}/include -I${LOCALBASE}/include
 +	BASIC_LDFLAGS += -L${X11BASE}/lib -L${LOCALBASE}/lib
 +	NO_PTHREADS = YesPlease
++	NO_PYTHON = YesPlease
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -1082,7 +1075,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
- 	PROGRAMS += git-imap-send$X
+@@ -1110,7 +1105,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
+ 	PROGRAMS += git-daemon$X
  endif
  ifndef NO_OPENSSL
 -	OPENSSL_LIBSSL = -lssl
@@ -83,7 +83,7 @@
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -1671,7 +1664,7 @@ all:: $(TEST_PROGRAMS)
+@@ -1753,7 +1748,7 @@ bin-wrappers/%: wrap-for-bin.sh
  
  export NO_SVN_TESTS
  

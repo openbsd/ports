@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.43 2009/12/17 10:15:12 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.44 2010/04/02 16:08:09 bernd Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -50,7 +50,6 @@ libexec/git/git-difftool--helper
 @bin libexec/git/git-fast-export
 @bin libexec/git/git-fast-import
 @bin libexec/git/git-fetch
-@bin libexec/git/git-fetch--tool
 @bin libexec/git/git-fetch-pack
 libexec/git/git-filter-branch
 @bin libexec/git/git-fmt-merge-msg
@@ -63,6 +62,7 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-grep
 @bin libexec/git/git-hash-object
 @bin libexec/git/git-help
+@bin libexec/git/git-http-backend
 @bin libexec/git/git-http-fetch
 @bin libexec/git/git-http-push
 @bin libexec/git/git-imap-send
@@ -94,6 +94,7 @@ libexec/git/git-mergetool--lib
 @bin libexec/git/git-mktree
 @bin libexec/git/git-mv
 @bin libexec/git/git-name-rev
+libexec/git/git-notes
 @bin libexec/git/git-pack-objects
 @bin libexec/git/git-pack-redundant
 @bin libexec/git/git-pack-refs
@@ -112,7 +113,10 @@ libexec/git/git-rebase--interactive
 @bin libexec/git/git-reflog
 libexec/git/git-relink
 @bin libexec/git/git-remote
-@bin libexec/git/git-remote-curl
+@bin libexec/git/git-remote-ftp
+@bin libexec/git/git-remote-ftps
+@bin libexec/git/git-remote-http
+@bin libexec/git/git-remote-https
 libexec/git/git-repack
 @bin libexec/git/git-replace
 @bin libexec/git/git-repo-config
@@ -201,6 +205,7 @@ libexec/git/git-web--browse
 @man man/man1/git-grep.1
 @man man/man1/git-hash-object.1
 @man man/man1/git-help.1
+@man man/man1/git-http-backend.1
 @man man/man1/git-http-fetch.1
 @man man/man1/git-http-push.1
 @man man/man1/git-imap-send.1
@@ -227,6 +232,7 @@ libexec/git/git-web--browse
 @man man/man1/git-mktree.1
 @man man/man1/git-mv.1
 @man man/man1/git-name-rev.1
+@man man/man1/git-notes.1
 @man man/man1/git-pack-objects.1
 @man man/man1/git-pack-redundant.1
 @man man/man1/git-pack-refs.1
@@ -388,7 +394,16 @@ share/doc/git/RelNotes-1.6.5.4.txt
 share/doc/git/RelNotes-1.6.5.5.txt
 share/doc/git/RelNotes-1.6.5.6.txt
 share/doc/git/RelNotes-1.6.5.7.txt
+share/doc/git/RelNotes-1.6.5.8.txt
 share/doc/git/RelNotes-1.6.5.txt
+share/doc/git/RelNotes-1.6.6.1.txt
+share/doc/git/RelNotes-1.6.6.2.txt
+share/doc/git/RelNotes-1.6.6.txt
+share/doc/git/RelNotes-1.7.0.1.txt
+share/doc/git/RelNotes-1.7.0.2.txt
+share/doc/git/RelNotes-1.7.0.3.txt
+share/doc/git/RelNotes-1.7.0.4.txt
+share/doc/git/RelNotes-1.7.0.txt
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
 share/doc/git/cmds-ancillarymanipulators.txt
@@ -400,6 +415,7 @@ share/doc/git/cmds-purehelpers.txt
 share/doc/git/cmds-synchelpers.txt
 share/doc/git/cmds-synchingrepositories.txt
 share/doc/git/config.txt
+share/doc/git/date-formats.txt
 share/doc/git/diff-format.txt
 share/doc/git/diff-generate-patch.txt
 share/doc/git/diff-options.txt
@@ -418,6 +434,8 @@ share/doc/git/git-archimport.html
 share/doc/git/git-archimport.txt
 share/doc/git/git-archive.html
 share/doc/git/git-archive.txt
+share/doc/git/git-bisect-lk2009.html
+share/doc/git/git-bisect-lk2009.txt
 share/doc/git/git-bisect.html
 share/doc/git/git-bisect.txt
 share/doc/git/git-blame.html
@@ -502,6 +520,8 @@ share/doc/git/git-hash-object.html
 share/doc/git/git-hash-object.txt
 share/doc/git/git-help.html
 share/doc/git/git-help.txt
+share/doc/git/git-http-backend.html
+share/doc/git/git-http-backend.txt
 share/doc/git/git-http-fetch.html
 share/doc/git/git-http-fetch.txt
 share/doc/git/git-http-push.html
@@ -554,6 +574,8 @@ share/doc/git/git-mv.html
 share/doc/git/git-mv.txt
 share/doc/git/git-name-rev.html
 share/doc/git/git-name-rev.txt
+share/doc/git/git-notes.html
+share/doc/git/git-notes.txt
 share/doc/git/git-pack-objects.html
 share/doc/git/git-pack-objects.txt
 share/doc/git/git-pack-redundant.html

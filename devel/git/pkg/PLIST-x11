@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-x11,v 1.7 2009/11/19 21:38:48 bernd Exp $
+@comment $OpenBSD: PLIST-x11,v 1.8 2010/04/02 16:08:09 bernd Exp $
 @conflict git-<1.6.5.3p0
 bin/gitk
 libexec/git/git-citool
@@ -42,6 +42,7 @@ share/git-gui/lib/merge.tcl
 share/git-gui/lib/mergetool.tcl
 share/git-gui/lib/msgs/
 share/git-gui/lib/msgs/de.msg
+share/git-gui/lib/msgs/el.msg
 share/git-gui/lib/msgs/fr.msg
 share/git-gui/lib/msgs/hu.msg
 share/git-gui/lib/msgs/it.msg
@@ -60,6 +61,7 @@ share/git-gui/lib/spellcheck.tcl
 share/git-gui/lib/sshkey.tcl
 share/git-gui/lib/status_bar.tcl
 share/git-gui/lib/tclIndex
+share/git-gui/lib/themed.tcl
 share/git-gui/lib/tools.tcl
 share/git-gui/lib/tools_dlg.tcl
 share/git-gui/lib/transport.tcl
@@ -70,6 +72,9 @@ share/gitk/lib/
 share/gitk/lib/msgs/
 share/gitk/lib/msgs/de.msg
 share/gitk/lib/msgs/es.msg
+share/gitk/lib/msgs/fr.msg
+share/gitk/lib/msgs/hu.msg
 share/gitk/lib/msgs/it.msg
+share/gitk/lib/msgs/ja.msg
 share/gitk/lib/msgs/ru.msg
 share/gitk/lib/msgs/sv.msg

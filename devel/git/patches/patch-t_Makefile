@@ -1,0 +1,12 @@
+$OpenBSD: patch-t_Makefile,v 1.1 2010/04/02 16:08:09 bernd Exp $
+--- t/Makefile.orig	Fri Apr  2 13:36:30 2010
++++ t/Makefile	Fri Apr  2 13:36:40 2010
+@@ -6,7 +6,7 @@
+ -include ../config.mak
+ 
+ #GIT_TEST_OPTS=--verbose --debug
+-SHELL_PATH ?= $(SHELL)
++SHELL_PATH = $(REGRESS_SHELL)
+ TAR ?= $(TAR)
+ RM ?= rm -f
+ 
