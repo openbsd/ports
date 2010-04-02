@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/21 14:19:01 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/02 12:02:45 pirofti Exp $
 
 COMMENT=		35 standard PostScript fonts with Adobe name aliases
 
 DISTNAME=		ghostscript-fonts-std-8.11
-PKGNAME=		${DISTNAME:S,-std-,-,}p1
+PKGNAME=		${DISTNAME:S,-std-,-,}p2
 CATEGORIES=		x11 print
 
 HOMEPAGE=		http://www.cs.wisc.edu/~ghost/doc/cvs/Fonts.htm
