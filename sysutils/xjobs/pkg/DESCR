@@ -1,0 +1,6 @@
+xjobs reads job descriptions line by line and executes them in parallel.
+xjobs is most useful on multiprocessor machines when one needs to
+execute several time consuming commands that could possibly be run in
+parallel. It works similar to xargs, but starts several processes
+simultaneously and gives only one line of arguments to each utility
+call.
