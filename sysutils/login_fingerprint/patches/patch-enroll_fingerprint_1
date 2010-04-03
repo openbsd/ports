@@ -1,0 +1,13 @@
+$OpenBSD: patch-enroll_fingerprint_1,v 1.1 2010/04/03 22:45:14 schwarze Exp $
+--- enroll_fingerprint.1.orig	Thu Mar 26 21:51:59 2009
++++ enroll_fingerprint.1	Sun Apr  4 00:20:37 2010
+@@ -46,7 +46,8 @@ Each finger is associated with a number between 1 and 
+ .It Er 8 Em "Right middle" .
+ .It Er 9 Em "Right ring" .
+ .It Er 10 Em "Right small" .
+-.Pp
++.El
++.El
+ .Sh SEE ALSO
+ .Xr login_fingerprint 8 ,
+ .Xr ugen 4
