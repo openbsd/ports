@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_security_nss_lib_softoken_fipstokn_c,v 1.1 2010/04/03 09:43:20 landry Exp $
+--- mozilla/security/nss/lib/softoken/fipstokn.c.orig	Sat Dec  5 02:56:24 2009
++++ mozilla/security/nss/lib/softoken/fipstokn.c	Sat Jan 16 16:28:37 2010
+@@ -73,7 +73,7 @@
+ #ifdef LINUX
+ #include <pthread.h>
+ #include <dlfcn.h>
+-#define LIBAUDIT_NAME "libaudit.so.0"
++#define LIBAUDIT_NAME "libaudit.so"
+ #ifndef AUDIT_CRYPTO_TEST_USER
+ #define AUDIT_CRYPTO_TEST_USER          2400 /* Crypto test results */
+ #define AUDIT_CRYPTO_PARAM_CHANGE_USER  2401 /* Crypto attribute change */

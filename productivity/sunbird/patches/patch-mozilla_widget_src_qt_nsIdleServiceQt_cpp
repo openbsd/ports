@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_widget_src_qt_nsIdleServiceQt_cpp,v 1.1 2010/04/03 09:43:20 landry Exp $
+--- mozilla/widget/src/qt/nsIdleServiceQt.cpp.orig	Sat Dec  5 02:56:52 2009
++++ mozilla/widget/src/qt/nsIdleServiceQt.cpp	Sat Jan 16 16:28:38 2010
+@@ -72,7 +72,7 @@ static void Initialize()
+     sInitialized = PR_TRUE;
+ 
+     // This will leak - See comments in ~nsIdleServiceQt().
+-    PRLibrary* xsslib = PR_LoadLibrary("libXss.so.1");
++    PRLibrary* xsslib = PR_LoadLibrary("libXss.so");
+     if (!xsslib) {
+         return;
+     }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_modules_plugin_base_src_nsPluginsDirUnix_cpp,v 1.1 2010/04/03 09:43:20 landry Exp $
+--- mozilla/modules/plugin/base/src/nsPluginsDirUnix.cpp.orig	Sat Dec  5 02:56:20 2009
++++ mozilla/modules/plugin/base/src/nsPluginsDirUnix.cpp	Sat Jan 16 16:28:35 2010
+@@ -152,7 +152,7 @@ static PRBool LoadExtraSharedLib(const char *name, cha
+ #endif
+ /*
+  this function looks for
+- user_pref("plugin.soname.list", "/usr/X11R6/lib/libXt.so.6:libXext.so");
++ user_pref("plugin.soname.list", "/usr/X11R6/lib/libXt.so:libXext.so");
+  in user's pref.js
+  and loads all libs in specified order
+ */

@@ -1,0 +1,17 @@
+$OpenBSD: patch-mozilla_security_nss_cmd_platlibs_mk,v 1.1 2010/04/03 09:43:20 landry Exp $
+--- mozilla/security/nss/cmd/platlibs.mk.orig	Sat Dec  5 02:56:23 2009
++++ mozilla/security/nss/cmd/platlibs.mk	Sat Jan 16 16:28:36 2010
+@@ -195,10 +195,11 @@ endif
+ # $(EXTRA_SHARED_LIBS) come before $(OS_LIBS), except on AIX.
+ EXTRA_SHARED_LIBS += \
+ 	-L$(DIST)/lib \
+-	$(SQLITE) \
+ 	-L$(NSSUTIL_LIB_DIR) \
+-	-lnssutil3 \
+ 	-L$(NSPR_LIB_DIR) \
++	-L$(LOCALBASE)/lib \
++	$(SQLITE) \
++	-lnssutil3 \
+ 	-lplc4 \
+ 	-lplds4 \
+ 	-lnspr4 \

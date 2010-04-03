@@ -1,4 +1,4 @@
-/*	$OpenBSD: nsSound.cpp,v 1.1.1.1 2009/11/10 20:48:06 landry Exp $	*/
+/*	$OpenBSD: nsSound.cpp,v 1.2 2010/04/03 09:43:20 landry Exp $	*/
 
 /*
  * Copyright (c) 2009 Martynas Venckus <martynas@openbsd.org>
@@ -66,6 +66,7 @@
 #include "nsNetUtil.h"
 #include "nsCOMPtr.h"
 #include "nsAutoPtr.h"
+#include "nsString.h"
 
 #include <prthread.h>
 #include <sndio.h>
@@ -76,26 +77,26 @@
 
 #define WAV_MIN_LENGTH 44
 
-typedef struct sio_hdl * (PR_CALLBACK *SioOpenType)(char *,
-                          unsigned, int);
-typedef void (PR_CALLBACK *SioCloseType)(struct sio_hdl *);
-typedef int (PR_CALLBACK *SioSetparType)(struct sio_hdl *,
-                                         struct sio_par *);
-typedef int (PR_CALLBACK *SioGetparType)(struct sio_hdl *,
-                                         struct sio_par *);
-typedef int (PR_CALLBACK *SioStartType)(struct sio_hdl *);
-typedef size_t (PR_CALLBACK *SioWriteType)(struct sio_hdl *,
-                                           void *, size_t);
-typedef int (PR_CALLBACK *SioEofType)(struct sio_hdl *);
-typedef void (PR_CALLBACK *SioInitparType)(struct sio_par *);
-
 typedef struct {
     struct sio_hdl *sndio_hdl;
     void *audio;
     size_t audio_len;
 } SioThreadData;
 
-static PRLibrary *sndio_lib = nsnull;
+typedef struct _ca_context ca_context;
+
+/* used to find and play common system event sounds */
+typedef int (*ca_context_create_fn) (ca_context **);
+typedef int (*ca_context_destroy_fn) (ca_context *);
+typedef int (*ca_context_play_fn) (ca_context *c, uint32_t id, ...);
+typedef int (*ca_context_change_props_fn) (ca_context *c, ...);
+
+static ca_context_create_fn ca_context_create;
+static ca_context_destroy_fn ca_context_destroy;
+static ca_context_play_fn ca_context_play;
+static ca_context_change_props_fn ca_context_change_props;
+
+static PRLibrary *canberra_lib = nsnull;
 
 NS_IMPL_ISUPPORTS2(nsSound, nsISound, nsIStreamLoaderObserver)
 
@@ -107,30 +108,13 @@ RunSioThread(void *arg)
 
     td = (SioThreadData *)arg;
 
-    /* Close the stream if fail. */
-    SioCloseType SioClose =
-        (SioCloseType) PR_FindSymbol(sndio_lib, "sio_close");
-
     /* Write stream. */
-    SioWriteType SioWrite =
-        (SioWriteType) PR_FindSymbol(sndio_lib, "sio_write");
-    SioEofType SioEof =
-        (SioEofType) PR_FindSymbol(sndio_lib, "sio_eof");
-    if (!SioWrite || !SioEof) {
-        if (SioClose)
-            (*SioClose)(td->sndio_hdl);
-        free(td->audio);
-        free(td);
-        return;
-    }
-
-    if ((*SioWrite)(td->sndio_hdl, (void *)td->audio,
-        td->audio_len) == 0 && (*SioEof)(td->sndio_hdl)) {
+    if (sio_write(td->sndio_hdl, (void *)td->audio,
+        td->audio_len) == 0 && sio_eof(td->sndio_hdl)) {
         NS_WARNING("sio_write: couldn't write the stream");
     }
 
-    if (SioClose)
-        (*SioClose)(td->sndio_hdl);
+    sio_close(td->sndio_hdl);
 
     free(td->audio);
     free(td);
@@ -148,18 +132,45 @@ nsSound::~nsSound()
 NS_IMETHODIMP
 nsSound::Init()
 {
+    /*
+     * This function is designed so that no library is compulsory, and
+     * one library missing doesn't cause the other(s) to not be used.
+     */
     if (mInited)
         return NS_OK;
-    if (sndio_lib)
-        return NS_OK;
-
-    sndio_lib = PR_LoadLibrary("libsndio.so");
-    if (!sndio_lib)
-        return NS_ERROR_FAILURE;
 
     mInited = PR_TRUE;
 
+    if (!canberra_lib) {
+        canberra_lib = PR_LoadLibrary("libcanberra.so");
+        if (canberra_lib) {
+            ca_context_create = (ca_context_create_fn) PR_FindFunctionSymbol(
+                canberra_lib, "ca_context_create");
+            if (!ca_context_create) {
+                PR_UnloadLibrary(canberra_lib);
+                canberra_lib = nsnull;
+            } else {
+                ca_context_destroy = (ca_context_destroy_fn)
+                    PR_FindFunctionSymbol(canberra_lib, "ca_context_destroy");
+                ca_context_play = (ca_context_play_fn) PR_FindFunctionSymbol(
+                    canberra_lib, "ca_context_play");
+                ca_context_change_props = (ca_context_change_props_fn)
+                    PR_FindFunctionSymbol(canberra_lib,
+                    "ca_context_change_props");
+            }
+        }
+    }
+
     return NS_OK;
+}
+
+/* static */ void
+nsSound::Shutdown()
+{
+    if (canberra_lib) {
+        PR_UnloadLibrary(canberra_lib);
+        canberra_lib = nsnull;
+    }
 }
 
 #define GET_WORD(s, i) (s[i+1] << 8) | s[i]
@@ -271,31 +282,14 @@ NS_IMETHODIMP nsSound::OnStreamComplete(nsIStreamLoader *aLoader,
         return NS_OK;
 
     /* Open up connection to sndio. */
-    SioOpenType SioOpen =
-        (SioOpenType) PR_FindSymbol(sndio_lib, "sio_open");
-    if (!SioOpen)
-        return NS_ERROR_FAILURE;
-
-    sndio_hdl = SioOpen(NULL, SIO_PLAY, 0);
+    sndio_hdl = sio_open(NULL, SIO_PLAY, 0);
     if (sndio_hdl == NULL) {
         NS_WARNING("sio_open: couldn't open the stream");
         return NS_ERROR_FAILURE;
     }
 
-    /* Close the stream if fail. */
-    SioCloseType SioClose =
-        (SioCloseType) PR_FindSymbol(sndio_lib, "sio_close");
-
     /* Initialize parameters structure. */
-    SioInitparType SioInitpar =
-        (SioInitparType) PR_FindSymbol(sndio_lib, "sio_initpar");
-    if (!SioInitpar) {
-        if (SioClose)
-            (*SioClose)(sndio_hdl);
-        return NS_ERROR_FAILURE;
-    }
-
-    (*SioInitpar)(&sndio_par);
+    sio_initpar(&sndio_par);
     sndio_par.bits = bits_per_sample;
     sndio_par.le = SIO_LE_NATIVE;
     sndio_par.pchan = channels;
@@ -304,23 +298,10 @@ NS_IMETHODIMP nsSound::OnStreamComplete(nsIStreamLoader *aLoader,
 
     /* Set and get configuration set.
        Put the stream into writing state. */
-    SioSetparType SioSetpar =
-        (SioSetparType) PR_FindSymbol(sndio_lib, "sio_setpar");
-    SioGetparType SioGetpar =
-        (SioGetparType) PR_FindSymbol(sndio_lib, "sio_getpar");
-    SioStartType SioStart =
-        (SioStartType) PR_FindSymbol(sndio_lib, "sio_start");
-    if (!SioSetpar || !SioGetpar || !SioStart) {
-        if (SioClose)
-            (*SioClose)(sndio_hdl);
-        return NS_ERROR_FAILURE;
-    }
-
-    if (!(*SioSetpar)(sndio_hdl, &sndio_par) ||
-        !(*SioGetpar)(sndio_hdl, &sndio_par) || !(*SioStart)(sndio_hdl)) {
+    if (!sio_setpar(sndio_hdl, &sndio_par) ||
+        !sio_getpar(sndio_hdl, &sndio_par) || !sio_start(sndio_hdl)) {
         NS_WARNING("sio_setpar: couldn't set configuration");
-        if (SioClose)
-            (*SioClose)(sndio_hdl);
+        sio_close(sndio_hdl);
         return NS_ERROR_FAILURE;
     }
 
@@ -328,15 +309,13 @@ NS_IMETHODIMP nsSound::OnStreamComplete(nsIStreamLoader *aLoader,
     if (sndio_par.bits != bits_per_sample || sndio_par.pchan != channels ||
         sndio_par.rate != samples_per_sec) {
         NS_WARNING("configuration is not available");
-        if (SioClose)
-            (*SioClose)(sndio_hdl);
+        sio_close(sndio_hdl);
         return NS_ERROR_FAILURE;
     }
 
     if ((td = (SioThreadData *) malloc(sizeof(SioThreadData))) == NULL ||
         (td->audio = malloc(audio_len * sizeof(*audio))) == NULL) {
-        if (SioClose)
-            (*SioClose)(sndio_hdl);
+        sio_close(sndio_hdl);
         return NS_ERROR_FAILURE;
     }
 
@@ -363,31 +342,87 @@ NS_METHOD nsSound::Play(nsIURL *aURL)
     if (!mInited)
         Init();
 
-    if (!sndio_lib)
-	    return NS_ERROR_FAILURE;
-
     nsCOMPtr<nsIStreamLoader> loader;
     rv = NS_NewStreamLoader(getter_AddRefs(loader), aURL, this);
 
     return rv;
 }
 
-NS_IMETHODIMP nsSound::PlaySystemSound(const char *aSoundAlias)
+nsresult nsSound::PlaySystemEventSound(const nsAString &aSoundAlias)
 {
-    if (!aSoundAlias)
-        return NS_ERROR_FAILURE;
+    if (!canberra_lib)
+        return NS_OK;
+  
+    /*
+     * Do we even want alert sounds?
+     * If so, what sound theme are we using?
+     */
+    GtkSettings* settings = gtk_settings_get_default();
+    gchar* sound_theme_name = nsnull;
 
-    if (strcmp(aSoundAlias, "_moz_mailbeep") == 0) {
-        return Beep();
+    if (g_object_class_find_property(G_OBJECT_GET_CLASS(settings),
+        "gtk-sound-theme-name") && g_object_class_find_property(
+        G_OBJECT_GET_CLASS(settings), "gtk-enable-event-sounds")) {
+        gboolean enable_sounds = TRUE;
+        g_object_get(settings, "gtk-enable-event-sounds", &enable_sounds,
+            "gtk-sound-theme-name", &sound_theme_name, NULL);
+
+        if (!enable_sounds) {
+            g_free(sound_theme_name);
+            return NS_OK;
+        }
+     }
+
+    /*
+     * This allows us to avoid race conditions with freeing the
+     * context by handing that responsibility to Glib, and still
+     * use one context at a time.
+     */
+    ca_context* ctx = nsnull;
+    static GStaticPrivate ctx_static_private = G_STATIC_PRIVATE_INIT;
+    ctx = (ca_context*) g_static_private_get(&ctx_static_private);
+    if (!ctx) {
+        ca_context_create(&ctx);
+        if (!ctx) {
+            g_free(sound_theme_name);
+            return NS_ERROR_OUT_OF_MEMORY;
+        }
+
+        g_static_private_set(&ctx_static_private, ctx, (GDestroyNotify)
+            ca_context_destroy);
     }
+
+    if (sound_theme_name) {
+        ca_context_change_props(ctx, "canberra.xdg-theme.name",
+            sound_theme_name, NULL);
+        g_free(sound_theme_name);
+    }
+
+    if (aSoundAlias.Equals(NS_SYSSOUND_ALERT_DIALOG))
+        ca_context_play(ctx, 0, "event.id", "dialog-warning", NULL);
+    else if (aSoundAlias.Equals(NS_SYSSOUND_CONFIRM_DIALOG))
+        ca_context_play(ctx, 0, "event.id", "dialog-question", NULL);
+    else if (aSoundAlias.Equals(NS_SYSSOUND_MAIL_BEEP))
+        ca_context_play(ctx, 0, "event.id", "message-new-email", NULL);
+
+    return NS_OK;
+}
+
+NS_IMETHODIMP nsSound::PlaySystemSound(const nsAString &aSoundAlias)
+{
+    if (!mInited)
+        Init();
+
+    if (NS_IsMozAliasSound(aSoundAlias))
+        return PlaySystemEventSound(aSoundAlias);
 
     nsresult rv;
     nsCOMPtr <nsIURI> fileURI;
 
     /* create a nsILocalFile and then a nsIFileURL from that */
     nsCOMPtr <nsILocalFile> soundFile;
-    rv = NS_NewNativeLocalFile(nsDependentCString(aSoundAlias), PR_TRUE,
-                               getter_AddRefs(soundFile));
+    rv = NS_NewLocalFile(aSoundAlias, PR_TRUE,
+                         getter_AddRefs(soundFile));
     NS_ENSURE_SUCCESS(rv,rv);
 
     rv = NS_NewFileURI(getter_AddRefs(fileURI), soundFile);
@@ -400,3 +435,4 @@ NS_IMETHODIMP nsSound::PlaySystemSound(const char *aSoundAlias)
 
     return rv;
 }
+

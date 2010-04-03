@@ -1,0 +1,11 @@
+$OpenBSD: patch-mozilla_js_src_jsgc_cpp,v 1.1 2010/04/03 09:43:20 landry Exp $
+--- mozilla/js/src/jsgc.cpp.orig	Sat Dec  5 02:57:14 2009
++++ mozilla/js/src/jsgc.cpp	Sat Jan 16 16:28:34 2010
+@@ -118,6 +118,7 @@ extern "C" {
+ #   ifndef JS_GC_USE_MMAP
+ #    define JS_GC_USE_MMAP 1
+ #   endif
++#   include <sys/types.h>
+ #   include <sys/mman.h>
+ 
+ /* On Mac OS X MAP_ANONYMOUS is not defined. */

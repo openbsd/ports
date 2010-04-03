@@ -1,0 +1,28 @@
+$OpenBSD: patch-mozilla_extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.1 2010/04/03 09:43:20 landry Exp $
+--- mozilla/extensions/spellcheck/hunspell/src/mozHunspell.cpp.orig	Sat Dec  5 02:56:01 2009
++++ mozilla/extensions/spellcheck/hunspell/src/mozHunspell.cpp	Sat Jan 16 16:31:41 2010
+@@ -63,6 +63,7 @@
+ #include "nsISimpleEnumerator.h"
+ #include "nsIDirectoryEnumerator.h"
+ #include "nsIFile.h"
++#include "nsILocalFile.h"
+ #include "nsDirectoryServiceUtils.h"
+ #include "nsDirectoryServiceDefs.h"
+ #include "mozISpellI18NManager.h"
+@@ -331,6 +332,16 @@ mozHunspell::LoadDictionaryList()
+       appDir->AppendNative(NS_LITERAL_CSTRING("dictionaries"));
+       LoadDictionariesFromDir(appDir);
+     }
++  }
++
++  // try to load the generic mozilla/dictionaries
++  nsCOMPtr<nsIFile> mozillaDir;
++  nsCOMPtr<nsILocalFile> localFile;
++  rv = NS_NewNativeLocalFile(nsDependentCString(
++    "${LOCALBASE}/share/mozilla-dicts"), PR_TRUE, getter_AddRefs(localFile));
++  if (localFile && NS_SUCCEEDED(rv)) {
++    localFile->QueryInterface(NS_GET_IID(nsIFile), getter_AddRefs(mozillaDir));
++    LoadDictionariesFromDir(mozillaDir);
+   }
+ 
+   nsCOMPtr<nsISimpleEnumerator> dictDirs;

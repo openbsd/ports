@@ -1,0 +1,30 @@
+$OpenBSD: patch-mozilla_toolkit_components_downloads_src_nsDownloadManager_cpp,v 1.1 2010/04/03 09:43:20 landry Exp $
+--- mozilla/toolkit/components/downloads/src/nsDownloadManager.cpp.orig	Sat Dec  5 02:57:14 2009
++++ mozilla/toolkit/components/downloads/src/nsDownloadManager.cpp	Sat Jan 16 16:28:37 2010
+@@ -1385,7 +1385,7 @@ nsDownloadManager::GetUserDownloadsDirectory(nsILocalF
+         NS_ENSURE_SUCCESS(rv, rv);
+         (*aResult)->Exists(&bRes);
+         if (!bRes) {
+-          rv = (*aResult)->Create(nsIFile::DIRECTORY_TYPE, 0755);
++          rv = (*aResult)->Create(nsIFile::DIRECTORY_TYPE, 0700);
+           NS_ENSURE_SUCCESS(rv, rv);
+         }
+         return NS_OK;
+@@ -1403,7 +1403,7 @@ nsDownloadManager::GetUserDownloadsDirectory(nsILocalF
+             NS_ADDREF(*aResult = customDirectory);
+             return NS_OK;
+           }
+-          rv = customDirectory->Create(nsIFile::DIRECTORY_TYPE, 0755);
++          rv = customDirectory->Create(nsIFile::DIRECTORY_TYPE, 0700);
+           NS_ENSURE_SUCCESS(rv, rv);
+           NS_ADDREF(*aResult = customDirectory);
+           return NS_OK;
+@@ -1412,7 +1412,7 @@ nsDownloadManager::GetUserDownloadsDirectory(nsILocalF
+         NS_ENSURE_SUCCESS(rv, rv);
+         (*aResult)->Exists(&bRes);
+         if (!bRes) {
+-          rv = (*aResult)->Create(nsIFile::DIRECTORY_TYPE, 0755);
++          rv = (*aResult)->Create(nsIFile::DIRECTORY_TYPE, 0700);
+           NS_ENSURE_SUCCESS(rv, rv);
+           // Update dir pref
+           prefBranch->SetComplexValue(NS_PREF_DIR,

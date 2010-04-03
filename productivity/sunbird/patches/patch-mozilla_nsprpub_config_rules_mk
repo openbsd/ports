@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_nsprpub_config_rules_mk,v 1.1 2010/04/03 09:43:20 landry Exp $
+--- mozilla/nsprpub/config/rules.mk.orig	Sat Dec  5 02:56:21 2009
++++ mozilla/nsprpub/config/rules.mk	Sat Jan 16 16:28:35 2010
+@@ -219,7 +219,7 @@ ifdef RELEASE_HEADERS
+ 	$(NSINSTALL) -t -m 0644 $(RELEASE_HEADERS) $(DESTDIR)$(includedir)/$(include_subdir)
+ endif
+ ifdef RELEASE_LIBS
+-	$(NSINSTALL) -t -m 0755 $(RELEASE_LIBS) $(DESTDIR)$(libdir)/$(lib_subdir)
++	$(NSINSTALL) -t -m 0444 $(RELEASE_LIBS) $(DESTDIR)$(libdir)/$(lib_subdir)
+ endif
+ 	+$(LOOP_OVER_DIRS)
+ 

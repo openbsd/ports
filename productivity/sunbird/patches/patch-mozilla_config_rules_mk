@@ -1,0 +1,16 @@
+$OpenBSD: patch-mozilla_config_rules_mk,v 1.1 2010/04/03 09:43:20 landry Exp $
+--- mozilla/config/rules.mk.orig	Sat Dec  5 02:55:56 2009
++++ mozilla/config/rules.mk	Sat Jan 16 16:28:33 2010
+@@ -607,6 +607,12 @@ endif
+ endif
+ endif
+ 
++ifeq ($(OS_ARCH),OpenBSD)
++ifdef IS_COMPONENT
++EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic
++endif
++endif
++
+ ifeq ($(OS_ARCH),Linux)
+ ifneq (,$(filter mips mipsel,$(OS_TEST)))
+ ifeq ($(MODULE),layout)

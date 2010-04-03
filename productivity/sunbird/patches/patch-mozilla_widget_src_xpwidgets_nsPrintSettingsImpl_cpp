@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_widget_src_xpwidgets_nsPrintSettingsImpl_cpp,v 1.1 2010/04/03 09:43:20 landry Exp $
+--- mozilla/widget/src/xpwidgets/nsPrintSettingsImpl.cpp.orig	Sat Dec  5 02:56:52 2009
++++ mozilla/widget/src/xpwidgets/nsPrintSettingsImpl.cpp	Sat Jan 16 16:28:38 2010
+@@ -62,7 +62,7 @@ nsPrintSettings::nsPrintSettings() :
+   mIsCancelled(PR_FALSE),
+   mPrintSilent(PR_FALSE),
+   mPrintPreview(PR_FALSE),
+-  mShrinkToFit(PR_TRUE),
++  mShrinkToFit(PR_FALSE),
+   mShowPrintProgress(PR_TRUE),
+   mPrintPageDelay(500),
+   mPaperData(0),
