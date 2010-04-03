@@ -1,32 +1,30 @@
-# $OpenBSD: Makefile,v 1.43 2010/01/30 19:08:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.44 2010/04/03 09:30:14 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	integrated mozilla application suite
 
-VER=		1.1.18
+VER=		2.0.4
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p1
+PKGNAME=	seamonkey-${VER}
+EXTRACT_SUFX=	.tar.bz2
 
-SO_VERSION=	11.0
+# must be in sync with SO_VERSION in mail/mozilla-thunderbird
+# for mail/enigmail and productivity/sunbird,-seamonkey to work fine
+SO_VERSION=	15.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-.for _lib in accessibility addrbook appcomps auth autoconfig bayesflt \
-	caps chrome composer cookie docshell editor embedcomponents \
-	fileview gfx_gtk gfxps gklayout gkplugin htmlpars i18n imglib2 \
-	impComm4xMail impText import jar50 jsd localmail mailnews \
-	mailview mime mimeemitter mork mozfind mozldap msgcompose \
-	msgdb msgimap msgmdn msgnews msgsmime myspell necko necko2 \
-	nsappshell nsprefm oji p3p permissions pipboot pipnss pippki \
-	pref profile rdf remoteservice searchservice spellchecker \
-	sqlite3 sroaming storagecomps system-pref transformiix txmgr \
-	typeaheadfind uconv ucvmath universalchardet vcard wallet \
-	walletviewers webbrwsr websrvcs widget_gtk2 xmlextras \
-	xpcom_compat_c xpconnect xpinstall xremoteservice gfxpsshar \
-	gkgfx gtkembedmoz gtkxtbin jsj ldap50 mozjs msgbaseutil \
-	prldap50 xpcom xpcom_compat xpcom_core xpistub nullplugin \
-	unixprintplugin
+.for _lib in accessibility appcomps auth autoconfig caps chardet chrome commandlines \
+	composer cookie docshell embedcomponents fileview gkgfxthebes gklayout \
+	gkplugin htmlpars i18n imgicon imglib2 import intlapp jar50 jsd mail \
+	mork mozfind mozldap msgsmime necko nsappshell oji permissions pipboot \
+	pipnss pippki places pref rdf remoteservice satchel spellchecker \
+	storagecomps suite system-pref tkautocomplete toolkitcomps txmgr uconv \
+	ucvmath universalchardet unixproxy webbrwsr widget_gtk2 windowds \
+	xpautocomplete xpconnect xpinstall zipwriter gfxpsshar gkgfx gtkxtbin \
+	jsj ldap60 ldif60 mozjs prldap60 sqlite3 ssldap60 thebes xpcom \
+	xpcom_core xul nullplugin unixprintplugin
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
@@ -40,54 +38,54 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/
-MASTER_SITES0=	http://openbsddistfiles.org/martynas/mozilla/seamonkey/langpacks/
+MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/source/
+MASTER_SITES0=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${VER}/langpack/
 
-LANGUAGES=	be-BY 1.1.9 \
-		ca-AD 1.1.15 \
-		cs-CZ 1.1.17 \
-		de-AT 1.1.18 \
-		el-GR 1.1.2 \
-		es-ES 1.1.13 \
-		fr-FR 1.1.16 \
-		he-IL 1.1.2 \
-		hu-HU 1.1.16 \
-		it-IT 1.1.17 \
-		lt-LT 1.1.18 \
-		nl-NL 1.1.17 \
-		pl-PL 1.1.18 \
-		pt-BR 1.1.18 \
-		ru-RU 1.1.18 \
-		ur-PK 1.1.9 \
-		sv-SE 1.1.12
-BINLANGS=	be-BY el-GR fr-FR pl-PL pt-BR
+LANGUAGES=	be \
+		ca \
+		cs \
+		de \
+		es-AR \
+		es-ES \
+		fr \
+		gl \
+		hu \
+		it \
+		ka \
+		lt \
+		nb-NO \
+		nl \
+		pl \
+		pt-PT \
+		ru \
+		sk \
+		sv-SE \
+		tr
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-.for language version in ${LANGUAGES}
-DISTFILES+=	seamonkey-${version}.${language}.langpack.xpi:0
+.for language in ${LANGUAGES}
+DISTFILES+=	seamonkey-${VER}.${language}.langpack.xpi:0
 .endfor
-
-EXTRACT_CASES += *.xpi) \
-	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIR}/`basename $$archive .langpack.xpi | sed "s/seamonkey-.*\.//"`;;
 
 DIST_SUBDIR=	seamonkey-${VER}
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext lang/python
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip \
 		:unzip-*:archivers/unzip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		nspr4.>=21,plc4.>=21,plds4.>=21:nspr->=4.8:devel/nspr \
-		nss3.>=23,smime3.>=23,softokn3.>=23,ssl3.>=23:nss->=3.12.3:security/nss
+		nss3.>=25,smime3.>=25,softokn3.>=25,ssl3.>=25:nss->=3.12.6:security/nss
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-WANTLIB=	c glib-2.0 m pthread stdc++ \
+WANTLIB=	c glib-2.0 m pthread stdc++ sndio \
 		X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 \
+		Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 \
 		cairo expat fontconfig freetype glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pangox-1.0 pixman-1 png pthread-stubs xcb z gio-2.0
+		pangoft2-1.0 pixman-1 png pthread-stubs xcb z gio-2.0
 
 VMEM_WARNING=	Yes
 
@@ -95,20 +93,19 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/mozilla/build/autoconf \
+				${WRKSRC}/mozilla/js/src/build/autoconf \
+				${WRKSRC}/mozilla/nsprpub/build/autoconf \
 				${WRKSRC}/directory/c-sdk/config/autoconf
 
 AUTOCONF_VERSION= 2.13
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
-		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
-		--with-pthreads			\
 		--with-system-nspr		\
 		--with-system-nss		\
-		--enable-xft			\
+		--with-pthreads			\
 		--disable-optimize		\
-		--enable-default-toolkit=gtk2	\
 		--disable-debug			\
 		--disable-tests			\
 		--disable-pedantic		\
@@ -116,18 +113,23 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--disable-updater		\
 		--disable-gnomeui		\
 		--disable-gnomevfs		\
+		--disable-dbus			\
+		--enable-default-toolkit=cairo-gtk2	\
 		--enable-xinerama		\
 		--enable-svg			\
 		--enable-svg-renderer=cairo	\
 		--enable-system-cairo		\
-		--disable-javaxpcom		\
-		--enable-canvas
+		--enable-canvas			\
+		--enable-application=suite
 
+#		--disable-javaxpcom		\
 # from browser/config/mozconfig
 CONFIGURE_ARGS+=--enable-application=suite
 
+ALL_TARGET=	default
+
 MAKE_ENV=	MOZ_CO_PROJECT=suite \
-		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
+		LD_LIBRARY_PATH="${WRKSRC}/mozilla/dist/bin" \
 		BUILD_OFFICIAL=1 \
 		MOZILLA_OFFICIAL=1 \
 		SO_VERSION="${SO_VERSION}"
@@ -136,32 +138,28 @@ CONFIGURE_ENV=	${MAKE_ENV} \
 		MOZ_ENABLE_COREXFONTS=1 \
 		topsrcdir=${WRKSRC}
 
-WRKDIST=	${WRKDIR}/mozilla
+WRKDIST=	${WRKDIR}/comm-1.9.1
 
-MOB=		${WRKSRC}/dist/bin
+MOB=		${WRKSRC}/mozilla/dist/bin
 MOZ=		${PREFIX}/seamonkey
 
-DATADIRS=	chrome components defaults dictionaries greprefs \
-		init.d plugins res searchplugins
+DATADIRS=	chrome components defaults dictionaries extensions \
+		greprefs isp modules plugins res searchplugins
 
 post-extract:
-	@cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/widget/src/gtk2/
-.for i in ${BINLANGS}	# normalize
-	@mv -f ${WRKDIR}/$i/bin/* ${WRKDIR}/$i/
-	@rmdir ${WRKDIR}/$i/bin
-.endfor
-.for language version in ${LANGUAGES}
-	@rm -f ${WRKDIR}/${language}/chrome/*-{mac,win}.jar
-.endfor
+	cp -f ${FILESDIR}/sydney_audio_sndio.c \
+		${WRKSRC}/mozilla/media/libsydneyaudio/src/
+	@cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/mozilla/widget/src/gtk2/
 
 pre-configure:
-	@cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
-		${WRKSRC}/js/src/xpconnect/shell/Makefile.in \
-		${WRKSRC}/rdf/chrome/tools/chromereg/Makefile.in \
-		${WRKSRC}/xpfe/bootstrap/mozilla.in
-	@perl -pi -e 's|_SO_VERSION_|${SO_VERSION}|g' \
-		${WRKSRC}/xpcom/components/nsNativeComponentLoader.cpp
+	cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	cd ${WRKSRC}/mozilla && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	cd ${WRKSRC}/mozilla/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	cd ${WRKSRC}/mozilla/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	${SUBST_CMD} ${WRKSRC}/mozilla/js/src/xpconnect/shell/Makefile.in \
+		${WRKSRC}/mozilla/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
+		${WRKSRC}/mozilla/build/unix/mozilla.in \
+		${WRKSRC}/mozilla/toolkit/xre/nsXREDirProvider.cpp
 
 do-install:
 	cd ${MOB} && \
@@ -170,23 +168,23 @@ do-install:
 		find ${DATADIRS} ! -type d \
 			-exec ${INSTALL_DATA} -m 644 {} ${MOZ}/{} \;
 	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} ${MOZ}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${MOZ}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
+	${INSTALL_DATA} ${MOB}/*.ini ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/seamonkey ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/mozilla-xremote-client ${MOB}/regchrome \
+	${INSTALL_PROGRAM} ${MOB}/mozilla-xremote-client \
 		${MOB}/regxpcom ${MOB}/seamonkey-bin ${MOZ}
-	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
-		< ${FILESDIR}/README.OpenBSD > ${MOZ}/README.OpenBSD
-	${INSTALL_MAN} ${WRKSRC}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
-.for language version in ${LANGUAGES}
-	${INSTALL_DATA} ${WRKDIR}/${language}/chrome/*.jar ${MOZ}/chrome/
-	sh ${FILESDIR}/genchrome ${WRKDIR}/${language}/install.js \
-		${language} >> ${MOZ}/chrome/installed-chrome.txt
+	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+		${MOZ}/README.OpenBSD
+	chown -R ${SHAREOWN}:${SHAREGRP} ${MOZ}
+	${INSTALL_MAN} ${WRKSRC}/mozilla/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
+.for language in ${LANGUAGES}
+	${UNZIP} -oq ${FULLDISTDIR}/seamonkey-${VER}.${language}.langpack.xpi \
+		-d ${MOZ}/extensions/langpack-${language}@seamonkey.mozilla.org
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	@sed -e 's,!!PREFIX!!,${TRUEPREFIX},g' \
-		< ${FILESDIR}/seamonkey.desktop > \
-			${PREFIX}/share/applications/seamonkey.desktop
+	${SUBST_CMD} -c ${FILESDIR}/seamonkey.desktop \
+		${PREFIX}/share/applications/seamonkey.desktop
+	chown ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/share/applications/seamonkey.desktop \
 
 .include <bsd.port.mk>

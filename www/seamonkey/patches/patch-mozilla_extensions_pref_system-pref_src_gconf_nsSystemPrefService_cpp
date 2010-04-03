@@ -1,0 +1,14 @@
+$OpenBSD: patch-mozilla_extensions_pref_system-pref_src_gconf_nsSystemPrefService_cpp,v 1.1 2010/04/03 09:30:14 landry Exp $
+--- mozilla/extensions/pref/system-pref/src/gconf/nsSystemPrefService.cpp.orig	Sat Dec  5 02:56:01 2009
++++ mozilla/extensions/pref/system-pref/src/gconf/nsSystemPrefService.cpp	Sat Jan 16 16:28:33 2010
+@@ -543,8 +543,8 @@ struct PrefNamePair {
+ 
+ const char
+ GConfProxy::sPrefGConfKey[] = "accessibility.unix.gconf2.shared-library";
+-const char GConfProxy::sDefaultLibName1[] = "libgconf-2.so.4";
+-const char GConfProxy::sDefaultLibName2[] = "libgconf-2.so";
++const char GConfProxy::sDefaultLibName1[] = "libgconf-2.so";
++const char GConfProxy::sDefaultLibName2[] = "libgconf-2.so.4";
+ 
+ #define GCONF_FUNCS_POINTER_BEGIN \
+     static GConfFuncListType sGConfFuncList[] = {

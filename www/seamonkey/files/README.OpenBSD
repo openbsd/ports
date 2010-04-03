@@ -1,11 +1,11 @@
-$OpenBSD: README.OpenBSD,v 1.4 2008/07/25 17:41:06 martynas Exp $
+$OpenBSD: README.OpenBSD,v 1.5 2010/04/03 09:30:14 landry Exp $
 
 To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 
 Plugins
 
 Seamonkey looks for plugins in ~/.mozilla/plugins,
-!!PREFIX!!/lib/mozilla-plugins, and !!PREFIX!!/seamonkey/plugins.
+${LOCALBASE}/lib/mozilla-plugins, and ${TRUEPREFIX}/seamonkey/plugins.
 If the environment variable MOZ_PLUGIN_PATH is specified, this
 location will be overridden.
 
@@ -16,7 +16,7 @@ libjavaplugin_oji.so into one of the directories listed above.
 This might be done like the following:
 
 $ cd ~/.mozilla/plugins
-$ ln -s !!PREFIX!!/jdk-1.5.0/jre/plugin/i386/ns7/libjavaplugin_oji.so .
+$ ln -s ${LOCALBASE}/jdk-1.5.0/jre/plugin/i386/ns7/libjavaplugin_oji.so .
 $   
 
 Information on building Java (on some platforms) can be found in

@@ -1,20 +1,22 @@
-$OpenBSD: patch-config_autoconf_mk_in,v 1.2 2007/03/26 20:41:37 martynas Exp $
---- config/autoconf.mk.in.orig	Thu Sep 14 21:07:03 2006
-+++ config/autoconf.mk.in	Mon Dec 11 15:51:39 2006
-@@ -57,13 +57,13 @@ MOZ_PKG_SPECIAL = @MOZ_PKG_SPECIAL@
+$OpenBSD: patch-config_autoconf_mk_in,v 1.3 2010/04/03 09:30:14 landry Exp $
+--- config/autoconf.mk.in.orig	Fri Jan 22 19:20:56 2010
++++ config/autoconf.mk.in	Fri Jan 22 19:23:20 2010
+@@ -62,14 +62,14 @@ MOZ_PKG_SPECIAL = @MOZ_PKG_SPECIAL@
  prefix		= @prefix@
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@
 -includedir	= @includedir@/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
-+includedir	= $(prefix)/seamonkey/include
++includedir	= ${prefix}/seamonkey/include
  libdir		= @libdir@
  datadir		= @datadir@
  mandir		= @mandir@
--idldir		= @datadir@/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
-+idldir		= $(prefix)/seamonkey/idl
+-idldir		= $(datadir)/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
++idldir		= ${prefix}/seamonkey/idl/
  
--mozappdir	= $(libdir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
-+mozappdir	= $(prefix)/seamonkey
- mredir		= $(libdir)/mre/mre-$(MOZ_APP_VERSION)
- mrelibdir	= $(mredir)/lib
+-installdir	= $(libdir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
+-sdkdir		= $(libdir)/$(MOZ_APP_NAME)-devel-$(MOZ_APP_VERSION)
++installdir	= ${prefix}/seamonkey
++sdkdir	= ${prefix}/seamonkey
  
+ MOZDEPTH	= $(DEPTH)/mozilla
+ DIST		= $(MOZDEPTH)/dist

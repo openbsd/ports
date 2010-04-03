@@ -1,0 +1,25 @@
+$OpenBSD: patch-mozilla_security_coreconf_OpenBSD_mk,v 1.1 2010/04/03 09:30:14 landry Exp $
+--- mozilla/security/coreconf/OpenBSD.mk.orig	Wed Mar 17 19:33:56 2010
++++ mozilla/security/coreconf/OpenBSD.mk	Tue Mar 30 22:07:16 2010
+@@ -56,7 +56,7 @@ OS_LIBS			+= -pthread
+ DSO_LDOPTS		+= -pthread
+ endif
+ 
+-DLL_SUFFIX		= so.1.0
++DLL_SUFFIX		= so.${SO_VERSION}
+ 
+ OS_CFLAGS		= $(DSO_CFLAGS) $(OS_REL_CFLAGS) -ansi -Wall -Wno-switch -pipe -DOPENBSD
+ 
+@@ -64,10 +64,10 @@ OS_LIBS			= 
+ 
+ ARCH			= openbsd
+ 
+-DSO_CFLAGS		= -fPIC -DPIC
++DSO_CFLAGS		= -I${LOCALBASE}/include -DRAND_DEV=\"/dev/arandom\" -fPIC -DPIC
+ DSO_LDOPTS		= -shared -fPIC -Wl,-soname,lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX)
+ 
+-MKSHLIB			= $(CC) $(DSO_LDOPTS)
++MKSHLIB			= $(CC) -Wl,-Bsymbolic $(DSO_LDOPTS)
+ 
+ USE_SYSTEM_ZLIB		= 1
+ ZLIB_LIBS		= -lz

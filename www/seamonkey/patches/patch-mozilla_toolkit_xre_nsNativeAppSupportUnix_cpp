@@ -1,0 +1,17 @@
+$OpenBSD: patch-mozilla_toolkit_xre_nsNativeAppSupportUnix_cpp,v 1.1 2010/04/03 09:30:15 landry Exp $
+--- mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp.orig	Sat Dec  5 02:56:51 2009
++++ mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp	Sat Jan 16 16:28:37 2010
+@@ -341,11 +341,11 @@ nsNativeAppSupportUnix::Start(PRBool *aRetVal)
+ 
+ #ifdef MOZ_X11
+ 
+-  PRLibrary *gnomeuiLib = PR_LoadLibrary("libgnomeui-2.so.0");
++  PRLibrary *gnomeuiLib = PR_LoadLibrary("libgnomeui-2.so");
+   if (!gnomeuiLib)
+     return NS_OK;
+ 
+-  PRLibrary *gnomeLib = PR_LoadLibrary("libgnome-2.so.0");
++  PRLibrary *gnomeLib = PR_LoadLibrary("libgnome-2.so");
+   if (!gnomeLib) {
+     PR_UnloadLibrary(gnomeuiLib);
+     return NS_OK;

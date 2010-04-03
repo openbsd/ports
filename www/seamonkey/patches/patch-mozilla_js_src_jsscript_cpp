@@ -1,0 +1,33 @@
+$OpenBSD: patch-mozilla_js_src_jsscript_cpp,v 1.1 2010/04/03 09:30:14 landry Exp $
+--- mozilla/js/src/jsscript.cpp.orig	Mon Mar 29 21:28:47 2010
++++ mozilla/js/src/jsscript.cpp	Mon Mar 29 21:29:01 2010
+@@ -1430,14 +1430,6 @@ js_NewScript(JSContext *cx, uint32 length, uint32 nsrc
+         cursor += vectorSize;
+     }
+ 
+-    if (nupvars != 0) {
+-        JS_SCRIPT_UPVARS(script)->length = nupvars;
+-        JS_SCRIPT_UPVARS(script)->vector = (uint32 *)cursor;
+-        vectorSize = nupvars * sizeof(JS_SCRIPT_UPVARS(script)->vector[0]);
+-        memset(cursor, 0, vectorSize);
+-        cursor += vectorSize;
+-    }
+-
+     if (nregexps != 0) {
+         JS_SCRIPT_REGEXPS(script)->length = nregexps;
+         JS_SCRIPT_REGEXPS(script)->vector = (JSObject **)cursor;
+@@ -1453,6 +1445,14 @@ js_NewScript(JSContext *cx, uint32 length, uint32 nsrc
+ #ifdef DEBUG
+         memset(cursor, 0, vectorSize);
+ #endif
++        cursor += vectorSize;
++    }
++
++    if (nupvars != 0) {
++        JS_SCRIPT_UPVARS(script)->length = nupvars;
++        JS_SCRIPT_UPVARS(script)->vector = (uint32 *)cursor;
++        vectorSize = nupvars * sizeof(JS_SCRIPT_UPVARS(script)->vector[0]);
++        memset(cursor, 0, vectorSize);
+         cursor += vectorSize;
+     }
+ 

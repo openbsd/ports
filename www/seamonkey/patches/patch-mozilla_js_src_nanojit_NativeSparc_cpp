@@ -1,0 +1,11 @@
+$OpenBSD: patch-mozilla_js_src_nanojit_NativeSparc_cpp,v 1.1 2010/04/03 09:30:14 landry Exp $
+--- mozilla/js/src/nanojit/NativeSparc.cpp.orig	Sat Dec  5 02:56:03 2009
++++ mozilla/js/src/nanojit/NativeSparc.cpp	Sat Jan 16 16:28:34 2010
+@@ -37,6 +37,7 @@
+  *
+  * ***** END LICENSE BLOCK ***** */
+ 
++#include <sys/types.h>
+ #include <sys/mman.h>
+ #include <errno.h>
+ #include "nanojit.h"

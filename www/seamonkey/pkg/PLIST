@@ -1,122 +1,86 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/22 13:02:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/04/03 09:30:15 landry Exp $
 @pkgpath www/seamonkey,-main
 bin/seamonkey
 @man man/man1/seamonkey.1
 seamonkey/
-seamonkey/LICENSE
 seamonkey/README.OpenBSD
+seamonkey/application.ini
 seamonkey/chrome/
-seamonkey/chrome/AD.jar
-seamonkey/chrome/AT.jar
-seamonkey/chrome/BR.jar
-seamonkey/chrome/BY.jar
-seamonkey/chrome/CZ.jar
-seamonkey/chrome/FR.jar
-seamonkey/chrome/HU.jar
-seamonkey/chrome/IL.jar
-seamonkey/chrome/IT.jar
-seamonkey/chrome/LT.jar
-seamonkey/chrome/PK.jar
-seamonkey/chrome/PL.jar
-seamonkey/chrome/RU.jar
-seamonkey/chrome/SE.jar
-seamonkey/chrome/US.jar
-seamonkey/chrome/be-BY.jar
-seamonkey/chrome/be-unix.jar
-seamonkey/chrome/ca-AD.jar
-seamonkey/chrome/ca-unix.jar
-seamonkey/chrome/chatzilla.jar
-seamonkey/chrome/chromelist.txt
 seamonkey/chrome/classic.jar
+seamonkey/chrome/classic.manifest
 seamonkey/chrome/comm.jar
-seamonkey/chrome/content-packs.jar
-seamonkey/chrome/cs-CZ.jar
-seamonkey/chrome/cs-unix.jar
-seamonkey/chrome/de-AT.jar
-seamonkey/chrome/de-unix.jar
-seamonkey/chrome/el-GR.jar
-seamonkey/chrome/el-unix.jar
-seamonkey/chrome/embed-sample.jar
+seamonkey/chrome/comm.manifest
 seamonkey/chrome/en-US.jar
-seamonkey/chrome/en-mac.jar
-seamonkey/chrome/en-unix.jar
-seamonkey/chrome/en-win.jar
-seamonkey/chrome/es-ES.jar
-seamonkey/chrome/es-unix.jar
-seamonkey/chrome/fr-FR.jar
-seamonkey/chrome/fr-unix.jar
-seamonkey/chrome/he-IL.jar
-seamonkey/chrome/he-unix.jar
-seamonkey/chrome/help.jar
-seamonkey/chrome/hu-HU.jar
-seamonkey/chrome/hu-unix.jar
+seamonkey/chrome/en-US.manifest
+seamonkey/chrome/gloda.jar
+seamonkey/chrome/gloda.manifest
 seamonkey/chrome/icons/
 seamonkey/chrome/icons/default/
-seamonkey/chrome/icons/default/abcardWindow.xpm
-seamonkey/chrome/icons/default/abcardWindow16.xpm
-seamonkey/chrome/icons/default/addressbookWindow.xpm
-seamonkey/chrome/icons/default/addressbookWindow16.xpm
-seamonkey/chrome/icons/default/bmPropsWindow.xpm
-seamonkey/chrome/icons/default/bmPropsWindow16.xpm
-seamonkey/chrome/icons/default/bookmark-window.xpm
-seamonkey/chrome/icons/default/bookmark-window16.xpm
-seamonkey/chrome/icons/default/chatzilla-window.xpm
-seamonkey/chrome/icons/default/chatzilla-window16.xpm
-seamonkey/chrome/icons/default/default.xpm
-seamonkey/chrome/icons/default/default16.xpm
-seamonkey/chrome/icons/default/downloadManager.xpm
-seamonkey/chrome/icons/default/downloadManager16.xpm
-seamonkey/chrome/icons/default/editorWindow.xpm
-seamonkey/chrome/icons/default/editorWindow16.xpm
-seamonkey/chrome/icons/default/findBookmarkWindow.xpm
-seamonkey/chrome/icons/default/findBookmarkWindow16.xpm
-seamonkey/chrome/icons/default/findHistoryWindow.xpm
-seamonkey/chrome/icons/default/findHistoryWindow16.xpm
-seamonkey/chrome/icons/default/history-window.xpm
-seamonkey/chrome/icons/default/history-window16.xpm
-seamonkey/chrome/icons/default/jsconsoleWindow.xpm
-seamonkey/chrome/icons/default/jsconsoleWindow16.xpm
-seamonkey/chrome/icons/default/main-window.xpm
-seamonkey/chrome/icons/default/main-window16.xpm
-seamonkey/chrome/icons/default/messengerWindow.xpm
-seamonkey/chrome/icons/default/messengerWindow16.xpm
-seamonkey/chrome/icons/default/msgcomposeWindow.xpm
-seamonkey/chrome/icons/default/msgcomposeWindow16.xpm
+seamonkey/chrome/icons/default/JSConsoleWindow.png
+seamonkey/chrome/icons/default/JSConsoleWindow16.png
+seamonkey/chrome/icons/default/JSConsoleWindow48.png
+seamonkey/chrome/icons/default/abcardWindow.png
+seamonkey/chrome/icons/default/abcardWindow16.png
+seamonkey/chrome/icons/default/abcardWindow48.png
+seamonkey/chrome/icons/default/ablistWindow.png
+seamonkey/chrome/icons/default/ablistWindow16.png
+seamonkey/chrome/icons/default/ablistWindow48.png
+seamonkey/chrome/icons/default/addressbookWindow.png
+seamonkey/chrome/icons/default/addressbookWindow16.png
+seamonkey/chrome/icons/default/addressbookWindow48.png
+seamonkey/chrome/icons/default/bmPropsWindow.png
+seamonkey/chrome/icons/default/bmPropsWindow16.png
+seamonkey/chrome/icons/default/bmPropsWindow48.png
+seamonkey/chrome/icons/default/bookmark-window.png
+seamonkey/chrome/icons/default/bookmark-window16.png
+seamonkey/chrome/icons/default/bookmark-window48.png
+seamonkey/chrome/icons/default/default.png
+seamonkey/chrome/icons/default/default16.png
+seamonkey/chrome/icons/default/default48.png
+seamonkey/chrome/icons/default/downloadManager.png
+seamonkey/chrome/icons/default/downloadManager16.png
+seamonkey/chrome/icons/default/downloadManager48.png
+seamonkey/chrome/icons/default/editorWindow.png
+seamonkey/chrome/icons/default/editorWindow16.png
+seamonkey/chrome/icons/default/editorWindow48.png
+seamonkey/chrome/icons/default/findBookmarkWindow.png
+seamonkey/chrome/icons/default/findBookmarkWindow16.png
+seamonkey/chrome/icons/default/findBookmarkWindow48.png
+seamonkey/chrome/icons/default/findHistoryWindow.png
+seamonkey/chrome/icons/default/findHistoryWindow16.png
+seamonkey/chrome/icons/default/findHistoryWindow48.png
+seamonkey/chrome/icons/default/history-window.png
+seamonkey/chrome/icons/default/history-window16.png
+seamonkey/chrome/icons/default/history-window48.png
+seamonkey/chrome/icons/default/main-window.png
+seamonkey/chrome/icons/default/main-window16.png
+seamonkey/chrome/icons/default/main-window48.png
+seamonkey/chrome/icons/default/messengerWindow.png
+seamonkey/chrome/icons/default/messengerWindow16.png
+seamonkey/chrome/icons/default/messengerWindow48.png
+seamonkey/chrome/icons/default/msgcomposeWindow.png
+seamonkey/chrome/icons/default/msgcomposeWindow16.png
+seamonkey/chrome/icons/default/msgcomposeWindow48.png
 seamonkey/chrome/icons/default/seamonkey.png
-seamonkey/chrome/icons/default/venkman-window.xpm
-seamonkey/chrome/icons/default/venkman-window16.xpm
-seamonkey/chrome/icons/default/winInspectorMain.xpm
-seamonkey/chrome/icons/default/winInspectorMain16.xpm
-seamonkey/chrome/inspector.jar
-seamonkey/chrome/inspector.manifest
-seamonkey/chrome/installed-chrome.txt
-seamonkey/chrome/it-IT.jar
-seamonkey/chrome/it-unix.jar
-seamonkey/chrome/lt-LT.jar
-seamonkey/chrome/lt-unix.jar
+seamonkey/chrome/icons/default/venkman-window.png
+seamonkey/chrome/icons/default/venkman-window16.png
+seamonkey/chrome/icons/default/venkman-window48.png
 seamonkey/chrome/messenger.jar
-seamonkey/chrome/modern.jar
-seamonkey/chrome/nl-NL.jar
-seamonkey/chrome/nl-unix.jar
-seamonkey/chrome/pipnss.jar
+seamonkey/chrome/messenger.manifest
+seamonkey/chrome/newsblog.jar
+seamonkey/chrome/newsblog.manifest
 seamonkey/chrome/pippki.jar
-seamonkey/chrome/pl-PL.jar
-seamonkey/chrome/pl-unix.jar
-seamonkey/chrome/pt-BR.jar
-seamonkey/chrome/pt-unix.jar
+seamonkey/chrome/pippki.manifest
 seamonkey/chrome/reporter.jar
 seamonkey/chrome/reporter.manifest
-seamonkey/chrome/ru-RU.jar
-seamonkey/chrome/ru-unix.jar
-seamonkey/chrome/sroaming.jar
-seamonkey/chrome/sv-SE.jar
-seamonkey/chrome/sv-unix.jar
 seamonkey/chrome/toolkit.jar
-seamonkey/chrome/ur-PK.jar
-seamonkey/chrome/ur-unix.jar
-seamonkey/chrome/venkman.jar
+seamonkey/chrome/toolkit.manifest
 seamonkey/components/
-seamonkey/components/accessibility-atk.xpt
+seamonkey/components/FeedConverter.js
+seamonkey/components/FeedProcessor.js
+seamonkey/components/FeedWriter.js
+seamonkey/components/NetworkGeolocationProvider.js
+seamonkey/components/WebContentConverter.js
 seamonkey/components/accessibility.xpt
 seamonkey/components/addrbook.xpt
 seamonkey/components/alerts.xpt
@@ -124,12 +88,11 @@ seamonkey/components/appshell.xpt
 seamonkey/components/appstartup.xpt
 seamonkey/components/autocomplete.xpt
 seamonkey/components/autoconfig.xpt
-seamonkey/components/bookmarks.xpt
 seamonkey/components/caps.xpt
 seamonkey/components/chardet.xpt
-seamonkey/components/chatzilla-service.js
 seamonkey/components/chrome.xpt
 seamonkey/components/commandhandler.xpt
+seamonkey/components/commandlines.xpt
 seamonkey/components/composer.xpt
 seamonkey/components/content_base.xpt
 seamonkey/components/content_html.xpt
@@ -137,6 +100,7 @@ seamonkey/components/content_htmldoc.xpt
 seamonkey/components/content_xmldoc.xpt
 seamonkey/components/content_xslt.xpt
 seamonkey/components/content_xtf.xpt
+seamonkey/components/contentprefs.xpt
 seamonkey/components/cookie.xpt
 seamonkey/components/directory.xpt
 seamonkey/components/docshell.xpt
@@ -146,123 +110,112 @@ seamonkey/components/dom_canvas.xpt
 seamonkey/components/dom_core.xpt
 seamonkey/components/dom_css.xpt
 seamonkey/components/dom_events.xpt
+seamonkey/components/dom_geolocation.xpt
 seamonkey/components/dom_html.xpt
+seamonkey/components/dom_json.xpt
 seamonkey/components/dom_loadsave.xpt
+seamonkey/components/dom_offline.xpt
 seamonkey/components/dom_range.xpt
 seamonkey/components/dom_sidebar.xpt
 seamonkey/components/dom_storage.xpt
 seamonkey/components/dom_stylesheets.xpt
 seamonkey/components/dom_svg.xpt
+seamonkey/components/dom_threads.xpt
 seamonkey/components/dom_traversal.xpt
 seamonkey/components/dom_views.xpt
 seamonkey/components/dom_xbl.xpt
 seamonkey/components/dom_xpath.xpt
 seamonkey/components/dom_xul.xpt
-seamonkey/components/downloadmanager.xpt
+seamonkey/components/downloads.xpt
 seamonkey/components/editor.xpt
 seamonkey/components/embed_base.xpt
 seamonkey/components/extensions.xpt
 seamonkey/components/exthandler.xpt
+seamonkey/components/exthelper.xpt
+seamonkey/components/fastfind.xpt
+seamonkey/components/feeds.xpt
 seamonkey/components/filepicker.xpt
 seamonkey/components/find.xpt
+seamonkey/components/fts3tok.xpt
 seamonkey/components/gfx.xpt
-seamonkey/components/gksvgrenderer.xpt
-seamonkey/components/history.xpt
+seamonkey/components/glautocomp.js
 seamonkey/components/htmlparser.xpt
+seamonkey/components/imgicon.xpt
 seamonkey/components/imglib2.xpt
 seamonkey/components/impComm4xMail.xpt
 seamonkey/components/import.xpt
-seamonkey/components/inspector-cmdline.js
 seamonkey/components/inspector.xpt
 seamonkey/components/intl.xpt
 seamonkey/components/jar.xpt
 seamonkey/components/jsconsole-clhandler.js
-seamonkey/components/jsconsole.xpt
 seamonkey/components/jsdservice.xpt
+seamonkey/components/jsmimeemitter.js
 seamonkey/components/layout_base.xpt
 seamonkey/components/layout_printing.xpt
 seamonkey/components/layout_xul.xpt
 seamonkey/components/layout_xul_tree.xpt
 @lib seamonkey/components/libaccessibility.so.${LIBaccessibility_VERSION}
-@lib seamonkey/components/libaddrbook.so.${LIBaddrbook_VERSION}
 @lib seamonkey/components/libappcomps.so.${LIBappcomps_VERSION}
 @lib seamonkey/components/libauth.so.${LIBauth_VERSION}
 @lib seamonkey/components/libautoconfig.so.${LIBautoconfig_VERSION}
-@lib seamonkey/components/libbayesflt.so.${LIBbayesflt_VERSION}
 @lib seamonkey/components/libcaps.so.${LIBcaps_VERSION}
+@lib seamonkey/components/libchardet.so.${LIBchardet_VERSION}
 @lib seamonkey/components/libchrome.so.${LIBchrome_VERSION}
+@lib seamonkey/components/libcommandlines.so.${LIBcommandlines_VERSION}
 @lib seamonkey/components/libcomposer.so.${LIBcomposer_VERSION}
 @lib seamonkey/components/libcookie.so.${LIBcookie_VERSION}
 @lib seamonkey/components/libdocshell.so.${LIBdocshell_VERSION}
-@lib seamonkey/components/libeditor.so.${LIBeditor_VERSION}
 @lib seamonkey/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
 @lib seamonkey/components/libfileview.so.${LIBfileview_VERSION}
-@lib seamonkey/components/libgfx_gtk.so.${LIBgfx_gtk_VERSION}
-@lib seamonkey/components/libgfxps.so.${LIBgfxps_VERSION}
+@lib seamonkey/components/libgkgfxthebes.so.${LIBgkgfxthebes_VERSION}
 @lib seamonkey/components/libgklayout.so.${LIBgklayout_VERSION}
 @lib seamonkey/components/libgkplugin.so.${LIBgkplugin_VERSION}
 @lib seamonkey/components/libhtmlpars.so.${LIBhtmlpars_VERSION}
 @lib seamonkey/components/libi18n.so.${LIBi18n_VERSION}
+@lib seamonkey/components/libimgicon.so.${LIBimgicon_VERSION}
 @lib seamonkey/components/libimglib2.so.${LIBimglib2_VERSION}
-@lib seamonkey/components/libimpComm4xMail.so.${LIBimpComm4xMail_VERSION}
-@lib seamonkey/components/libimpText.so.${LIBimpText_VERSION}
 @lib seamonkey/components/libimport.so.${LIBimport_VERSION}
+@lib seamonkey/components/libintlapp.so.${LIBintlapp_VERSION}
 @lib seamonkey/components/libjar50.so.${LIBjar50_VERSION}
 @lib seamonkey/components/libjsd.so.${LIBjsd_VERSION}
-@lib seamonkey/components/liblocalmail.so.${LIBlocalmail_VERSION}
-@lib seamonkey/components/libmailnews.so.${LIBmailnews_VERSION}
-@lib seamonkey/components/libmailview.so.${LIBmailview_VERSION}
-@lib seamonkey/components/libmime.so.${LIBmime_VERSION}
-@lib seamonkey/components/libmimeemitter.so.${LIBmimeemitter_VERSION}
+@lib seamonkey/components/libmail.so.${LIBmail_VERSION}
 @lib seamonkey/components/libmork.so.${LIBmork_VERSION}
 @lib seamonkey/components/libmozfind.so.${LIBmozfind_VERSION}
 @lib seamonkey/components/libmozldap.so.${LIBmozldap_VERSION}
-@lib seamonkey/components/libmsgcompose.so.${LIBmsgcompose_VERSION}
-@lib seamonkey/components/libmsgdb.so.${LIBmsgdb_VERSION}
-@lib seamonkey/components/libmsgimap.so.${LIBmsgimap_VERSION}
-@lib seamonkey/components/libmsgmdn.so.${LIBmsgmdn_VERSION}
-@lib seamonkey/components/libmsgnews.so.${LIBmsgnews_VERSION}
 @lib seamonkey/components/libmsgsmime.so.${LIBmsgsmime_VERSION}
-@lib seamonkey/components/libmyspell.so.${LIBmyspell_VERSION}
 @lib seamonkey/components/libnecko.so.${LIBnecko_VERSION}
-@lib seamonkey/components/libnecko2.so.${LIBnecko2_VERSION}
 @lib seamonkey/components/libnsappshell.so.${LIBnsappshell_VERSION}
-@lib seamonkey/components/libnsprefm.so.${LIBnsprefm_VERSION}
 @lib seamonkey/components/liboji.so.${LIBoji_VERSION}
-@lib seamonkey/components/libp3p.so.${LIBp3p_VERSION}
 @lib seamonkey/components/libpermissions.so.${LIBpermissions_VERSION}
 @lib seamonkey/components/libpipboot.so.${LIBpipboot_VERSION}
 @lib seamonkey/components/libpipnss.so.${LIBpipnss_VERSION}
 @lib seamonkey/components/libpippki.so.${LIBpippki_VERSION}
+@lib seamonkey/components/libplaces.so.${LIBplaces_VERSION}
 @lib seamonkey/components/libpref.so.${LIBpref_VERSION}
-@lib seamonkey/components/libprofile.so.${LIBprofile_VERSION}
 @lib seamonkey/components/librdf.so.${LIBrdf_VERSION}
 @lib seamonkey/components/libremoteservice.so.${LIBremoteservice_VERSION}
-@lib seamonkey/components/libsearchservice.so.${LIBsearchservice_VERSION}
+@lib seamonkey/components/libsatchel.so.${LIBsatchel_VERSION}
 @lib seamonkey/components/libspellchecker.so.${LIBspellchecker_VERSION}
-@lib seamonkey/components/libsroaming.so.${LIBsroaming_VERSION}
 @lib seamonkey/components/libstoragecomps.so.${LIBstoragecomps_VERSION}
+@lib seamonkey/components/libsuite.so.${LIBsuite_VERSION}
 @lib seamonkey/components/libsystem-pref.so.${LIBsystem-pref_VERSION}
-@lib seamonkey/components/libtransformiix.so.${LIBtransformiix_VERSION}
+@lib seamonkey/components/libtkautocomplete.so.${LIBtkautocomplete_VERSION}
+@lib seamonkey/components/libtoolkitcomps.so.${LIBtoolkitcomps_VERSION}
 @lib seamonkey/components/libtxmgr.so.${LIBtxmgr_VERSION}
-@lib seamonkey/components/libtypeaheadfind.so.${LIBtypeaheadfind_VERSION}
 @lib seamonkey/components/libuconv.so.${LIBuconv_VERSION}
 @lib seamonkey/components/libucvmath.so.${LIBucvmath_VERSION}
 @lib seamonkey/components/libuniversalchardet.so.${LIBuniversalchardet_VERSION}
-@lib seamonkey/components/libvcard.so.${LIBvcard_VERSION}
-@lib seamonkey/components/libwallet.so.${LIBwallet_VERSION}
-@lib seamonkey/components/libwalletviewers.so.${LIBwalletviewers_VERSION}
+@lib seamonkey/components/libunixproxy.so.${LIBunixproxy_VERSION}
 @lib seamonkey/components/libwebbrwsr.so.${LIBwebbrwsr_VERSION}
-@lib seamonkey/components/libwebsrvcs.so.${LIBwebsrvcs_VERSION}
 @lib seamonkey/components/libwidget_gtk2.so.${LIBwidget_gtk2_VERSION}
-@lib seamonkey/components/libxmlextras.so.${LIBxmlextras_VERSION}
-@lib seamonkey/components/libxpcom_compat_c.so.${LIBxpcom_compat_c_VERSION}
+@lib seamonkey/components/libwindowds.so.${LIBwindowds_VERSION}
+@lib seamonkey/components/libxpautocomplete.so.${LIBxpautocomplete_VERSION}
 @lib seamonkey/components/libxpconnect.so.${LIBxpconnect_VERSION}
 @lib seamonkey/components/libxpinstall.so.${LIBxpinstall_VERSION}
-@lib seamonkey/components/libxremoteservice.so.${LIBxremoteservice_VERSION}
+@lib seamonkey/components/libzipwriter.so.${LIBzipwriter_VERSION}
 seamonkey/components/locale.xpt
+seamonkey/components/loginmgr.xpt
 seamonkey/components/lwbrk.xpt
-seamonkey/components/mailnews.xpt
 seamonkey/components/mailview.xpt
 seamonkey/components/mdn-service.js
 seamonkey/components/mime.xpt
@@ -270,6 +223,7 @@ seamonkey/components/mimetype.xpt
 seamonkey/components/mozbrwsr.xpt
 seamonkey/components/mozfind.xpt
 seamonkey/components/mozldap.xpt
+seamonkey/components/msgAsyncPrompter.js
 seamonkey/components/msgbase.xpt
 seamonkey/components/msgcompose.xpt
 seamonkey/components/msgdb.xpt
@@ -282,7 +236,6 @@ seamonkey/components/necko.xpt
 seamonkey/components/necko_about.xpt
 seamonkey/components/necko_cache.xpt
 seamonkey/components/necko_cookie.xpt
-seamonkey/components/necko_data.xpt
 seamonkey/components/necko_dns.xpt
 seamonkey/components/necko_file.xpt
 seamonkey/components/necko_ftp.xpt
@@ -291,106 +244,124 @@ seamonkey/components/necko_res.xpt
 seamonkey/components/necko_socket.xpt
 seamonkey/components/necko_strconv.xpt
 seamonkey/components/necko_viewsource.xpt
+seamonkey/components/newsblog.js
+seamonkey/components/nsAbAutoCompleteMyDomain.js
+seamonkey/components/nsAbAutoCompleteSearch.js
 seamonkey/components/nsAbLDAPAttributeMap.js
-seamonkey/components/nsCloseAllWindows.js
+seamonkey/components/nsAboutAbout.js
+seamonkey/components/nsAboutCertError.js
+seamonkey/components/nsAboutFeeds.js
+seamonkey/components/nsAboutRights.js
+seamonkey/components/nsAboutSessionRestore.js
+seamonkey/components/nsAddonRepository.js
+seamonkey/components/nsBadCertHandler.js
+seamonkey/components/nsBlocklistService.js
+seamonkey/components/nsBrowserContentHandler.js
 seamonkey/components/nsComposerCmdLineHandler.js
-seamonkey/components/nsDictionary.js
-seamonkey/components/nsDownloadProgressListener.js
+seamonkey/components/nsContentDispatchChooser.js
+seamonkey/components/nsContentPrefService.js
+seamonkey/components/nsDefaultCLH.js
+seamonkey/components/nsExtensionManager.js
 seamonkey/components/nsFilePicker.js
+seamonkey/components/nsHandlerService.js
 seamonkey/components/nsHelperAppDlg.js
-seamonkey/components/nsInterfaceInfoToIDL.js
-seamonkey/components/nsKillAll.js
-seamonkey/components/nsLDAPPrefsService.js
+seamonkey/components/nsLDAPProtocolHandler.js
+seamonkey/components/nsLivemarkService.js
+seamonkey/components/nsLoginInfo.js
+seamonkey/components/nsLoginManager.js
+seamonkey/components/nsLoginManagerPrompter.js
+seamonkey/components/nsMailNewsCommandLineHandler.js
+seamonkey/components/nsMsgTraitService.js
+seamonkey/components/nsPlacesDBFlush.js
 seamonkey/components/nsProgressDialog.js
 seamonkey/components/nsProxyAutoConfig.js
-seamonkey/components/nsResetPref.js
+seamonkey/components/nsSMTPProtocolHandler.js
+seamonkey/components/nsSessionStartup.js
+seamonkey/components/nsSessionStore.js
 seamonkey/components/nsSidebar.js
+seamonkey/components/nsSuiteDownloadManagerUI.js
+seamonkey/components/nsSuiteGlue.js
+seamonkey/components/nsTaggingService.js
+seamonkey/components/nsTryToClose.js
+seamonkey/components/nsTypeAheadFind.js
 seamonkey/components/nsURLFormatter.js
-seamonkey/components/nsUpdateNotifier.js
-seamonkey/components/nsXmlRpcClient.js
+seamonkey/components/nsUpdateService.js
+seamonkey/components/nsWebHandlerApp.js
 seamonkey/components/offlineStartup.js
 seamonkey/components/oji.xpt
-seamonkey/components/p3p.xpt
+seamonkey/components/parentalcontrols.xpt
 seamonkey/components/pipboot.xpt
 seamonkey/components/pipnss.xpt
 seamonkey/components/pippki.xpt
+seamonkey/components/places.xpt
 seamonkey/components/plugin.xpt
+seamonkey/components/pluginGlue.js
 seamonkey/components/pref.xpt
 seamonkey/components/prefetch.xpt
-seamonkey/components/prefmigr.xpt
 seamonkey/components/profile.xpt
-seamonkey/components/progressDlg.xpt
 seamonkey/components/proxyObjInst.xpt
 seamonkey/components/rdf.xpt
-seamonkey/components/related.xpt
+seamonkey/components/satchel.xpt
 seamonkey/components/saxparser.xpt
-seamonkey/components/search.xpt
+seamonkey/components/shellservice.xpt
 seamonkey/components/shistory.xpt
-seamonkey/components/signonviewer.xpt
+seamonkey/components/smile.xpt
+seamonkey/components/smileApplication.js
 seamonkey/components/smime-service.js
 seamonkey/components/spellchecker.xpt
+seamonkey/components/storage-Legacy.js
+seamonkey/components/storage-mozStorage.js
 seamonkey/components/storage.xpt
+seamonkey/components/suitebrowser.xpt
+seamonkey/components/suitecommon.xpt
+seamonkey/components/suitefeeds.xpt
+seamonkey/components/suitemigration.xpt
+seamonkey/components/toolkitprofile.xpt
 seamonkey/components/toolkitremote.xpt
+seamonkey/components/txEXSLTRegExFunctions.js
 seamonkey/components/txmgr.xpt
 seamonkey/components/txtsvc.xpt
-seamonkey/components/typeaheadfind.xpt
 seamonkey/components/uconv.xpt
 seamonkey/components/unicharutil.xpt
+seamonkey/components/update.xpt
 seamonkey/components/uriloader.xpt
 seamonkey/components/urlformatter.xpt
-seamonkey/components/venkman-service.js
-seamonkey/components/wallet.xpt
-seamonkey/components/walleteditor.xpt
-seamonkey/components/walletpreview.xpt
 seamonkey/components/webBrowser_core.xpt
 seamonkey/components/webbrowserpersist.xpt
 seamonkey/components/webshell_idls.xpt
-seamonkey/components/websrvcs.xpt
 seamonkey/components/widget.xpt
 seamonkey/components/windowds.xpt
 seamonkey/components/windowwatcher.xpt
-seamonkey/components/xml-rpc.xpt
 seamonkey/components/xpautocomplete.xpt
 seamonkey/components/xpcom_base.xpt
 seamonkey/components/xpcom_components.xpt
 seamonkey/components/xpcom_ds.xpt
 seamonkey/components/xpcom_io.xpt
-seamonkey/components/xpcom_obsolete.xpt
+seamonkey/components/xpcom_system.xpt
 seamonkey/components/xpcom_threads.xpt
 seamonkey/components/xpcom_xpti.xpt
 seamonkey/components/xpconnect.xpt
 seamonkey/components/xpinstall.xpt
-seamonkey/components/xremoteservice.xpt
-seamonkey/components/xulappinfo.js
-seamonkey/components/xulappinfo.xpt
+seamonkey/components/xulapp.xpt
 seamonkey/components/xuldoc.xpt
 seamonkey/components/xultmpl.xpt
+seamonkey/components/zipwriter.xpt
 seamonkey/defaults/
 seamonkey/defaults/autoconfig/
 seamonkey/defaults/autoconfig/platform.js
 seamonkey/defaults/autoconfig/prefcalls.js
 seamonkey/defaults/messenger/
-seamonkey/defaults/messenger/US/
-seamonkey/defaults/messenger/US/mailViews.dat
 seamonkey/defaults/messenger/mailViews.dat
 seamonkey/defaults/pref/
 seamonkey/defaults/pref/browser-prefs.js
+seamonkey/defaults/pref/channel-prefs.js
 seamonkey/defaults/pref/composer.js
-seamonkey/defaults/pref/inspector.js
 seamonkey/defaults/pref/mailnews.js
 seamonkey/defaults/pref/mdn.js
 seamonkey/defaults/pref/reporter.js
 seamonkey/defaults/pref/smime.js
+seamonkey/defaults/pref/suite-l10n.js
 seamonkey/defaults/profile/
-seamonkey/defaults/profile/US/
-seamonkey/defaults/profile/US/bookmarks.html
-seamonkey/defaults/profile/US/chrome/
-seamonkey/defaults/profile/US/chrome/userChrome-example.css
-seamonkey/defaults/profile/US/chrome/userContent-example.css
-seamonkey/defaults/profile/US/localstore.rdf
-seamonkey/defaults/profile/US/mimeTypes.rdf
-seamonkey/defaults/profile/US/panels.rdf
-seamonkey/defaults/profile/US/search.rdf
 seamonkey/defaults/profile/bookmarks.html
 seamonkey/defaults/profile/chrome/
 seamonkey/defaults/profile/chrome/userChrome-example.css
@@ -399,52 +370,254 @@ seamonkey/defaults/profile/localstore.rdf
 seamonkey/defaults/profile/mimeTypes.rdf
 seamonkey/defaults/profile/panels.rdf
 seamonkey/defaults/profile/search.rdf
-seamonkey/defaults/wallet/
-seamonkey/defaults/wallet/DistinguishedSchema.tbl
-seamonkey/defaults/wallet/FieldSchema.tbl
-seamonkey/defaults/wallet/PositionalSchema.tbl
-seamonkey/defaults/wallet/SchemaConcat.tbl
-seamonkey/defaults/wallet/SchemaStrings.tbl
-seamonkey/defaults/wallet/StateSchema.tbl
-seamonkey/defaults/wallet/VcardSchema.tbl
 seamonkey/dictionaries/
 seamonkey/dictionaries/en-US.aff
 seamonkey/dictionaries/en-US.dic
+seamonkey/extensions/
+seamonkey/extensions/inspector@mozilla.org/
+seamonkey/extensions/inspector@mozilla.org/chrome/
+seamonkey/extensions/inspector@mozilla.org/chrome.manifest
+seamonkey/extensions/inspector@mozilla.org/chrome/inspector.jar
+seamonkey/extensions/inspector@mozilla.org/components/
+seamonkey/extensions/inspector@mozilla.org/components/inspector-cmdline.js
+seamonkey/extensions/inspector@mozilla.org/defaults/
+seamonkey/extensions/inspector@mozilla.org/defaults/preferences/
+seamonkey/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
+seamonkey/extensions/inspector@mozilla.org/install.rdf
+seamonkey/extensions/inspector@mozilla.org/platform/
+seamonkey/extensions/inspector@mozilla.org/platform/Linux/
+seamonkey/extensions/inspector@mozilla.org/platform/Linux/chrome/
+seamonkey/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/
+seamonkey/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/
+seamonkey/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain.xpm
+seamonkey/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain16.xpm
+seamonkey/extensions/inspector@mozilla.org/platform/OS2/
+seamonkey/extensions/inspector@mozilla.org/platform/OS2/chrome/
+seamonkey/extensions/inspector@mozilla.org/platform/OS2/chrome/icons/
+seamonkey/extensions/inspector@mozilla.org/platform/OS2/chrome/icons/default/
+seamonkey/extensions/inspector@mozilla.org/platform/OS2/chrome/icons/default/winInspectorMain.ico
+seamonkey/extensions/inspector@mozilla.org/platform/WINNT/
+seamonkey/extensions/inspector@mozilla.org/platform/WINNT/chrome/
+seamonkey/extensions/inspector@mozilla.org/platform/WINNT/chrome/icons/
+seamonkey/extensions/inspector@mozilla.org/platform/WINNT/chrome/icons/default/
+seamonkey/extensions/inspector@mozilla.org/platform/WINNT/chrome/icons/default/winInspectorMain.ico
+seamonkey/extensions/langpack-be@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-be@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-be@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-be@seamonkey.mozilla.org/chrome/be.jar
+seamonkey/extensions/langpack-be@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-ca@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-ca@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-ca@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-ca@seamonkey.mozilla.org/chrome/ca.jar
+seamonkey/extensions/langpack-ca@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-cs@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-cs@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-cs@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-cs@seamonkey.mozilla.org/chrome/cs.jar
+seamonkey/extensions/langpack-cs@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-de@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-de@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-de@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-de@seamonkey.mozilla.org/chrome/de.jar
+seamonkey/extensions/langpack-de@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-es-AR@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-es-AR@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-es-AR@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-es-AR@seamonkey.mozilla.org/chrome/es-AR.jar
+seamonkey/extensions/langpack-es-AR@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-es-ES@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-es-ES@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-es-ES@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-es-ES@seamonkey.mozilla.org/chrome/es-ES.jar
+seamonkey/extensions/langpack-es-ES@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-fr@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-fr@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-fr@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-fr@seamonkey.mozilla.org/chrome/fr.jar
+seamonkey/extensions/langpack-fr@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-gl@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-gl@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-gl@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-gl@seamonkey.mozilla.org/chrome/gl.jar
+seamonkey/extensions/langpack-gl@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-hu@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-hu@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-hu@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-hu@seamonkey.mozilla.org/chrome/hu.jar
+seamonkey/extensions/langpack-hu@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-it@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-it@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-it@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-it@seamonkey.mozilla.org/chrome/it.jar
+seamonkey/extensions/langpack-it@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-ka@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-ka@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-ka@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-ka@seamonkey.mozilla.org/chrome/ka.jar
+seamonkey/extensions/langpack-ka@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-lt@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-lt@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-lt@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-lt@seamonkey.mozilla.org/chrome/lt.jar
+seamonkey/extensions/langpack-lt@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-nb-NO@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-nb-NO@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-nb-NO@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-nb-NO@seamonkey.mozilla.org/chrome/nb-NO.jar
+seamonkey/extensions/langpack-nb-NO@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-nl@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-nl@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-nl@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-nl@seamonkey.mozilla.org/chrome/nl.jar
+seamonkey/extensions/langpack-nl@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-pl@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-pl@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-pl@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-pl@seamonkey.mozilla.org/chrome/pl.jar
+seamonkey/extensions/langpack-pl@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-pt-PT@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-pt-PT@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-pt-PT@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-pt-PT@seamonkey.mozilla.org/chrome/pt-PT.jar
+seamonkey/extensions/langpack-pt-PT@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-ru@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-ru@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-ru@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-ru@seamonkey.mozilla.org/chrome/ru.jar
+seamonkey/extensions/langpack-ru@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-sk@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-sk@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-sk@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-sk@seamonkey.mozilla.org/chrome/sk.jar
+seamonkey/extensions/langpack-sk@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-sv-SE@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-sv-SE@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-sv-SE@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-sv-SE@seamonkey.mozilla.org/chrome/sv-SE.jar
+seamonkey/extensions/langpack-sv-SE@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/langpack-tr@seamonkey.mozilla.org/
+seamonkey/extensions/langpack-tr@seamonkey.mozilla.org/chrome/
+seamonkey/extensions/langpack-tr@seamonkey.mozilla.org/chrome.manifest
+seamonkey/extensions/langpack-tr@seamonkey.mozilla.org/chrome/tr.jar
+seamonkey/extensions/langpack-tr@seamonkey.mozilla.org/install.rdf
+seamonkey/extensions/modern@themes.mozilla.org/
+seamonkey/extensions/modern@themes.mozilla.org/chrome/
+seamonkey/extensions/modern@themes.mozilla.org/chrome.manifest
+seamonkey/extensions/modern@themes.mozilla.org/chrome/modern.jar
+seamonkey/extensions/modern@themes.mozilla.org/icon.png
+seamonkey/extensions/modern@themes.mozilla.org/install.rdf
+seamonkey/extensions/modern@themes.mozilla.org/preview.png
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome.manifest
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/chatzilla.jar
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window.ico
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window.xpm
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window16.xpm
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/components/
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/components/chatzilla-service.js
+seamonkey/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/install.rdf
+seamonkey/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+seamonkey/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
+seamonkey/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+seamonkey/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
+seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/
+seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome/
+seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome.manifest
+seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome/venkman.jar
+seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/components/
+seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/components/venkman-service.js
+seamonkey/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/install.rdf
 seamonkey/greprefs/
 seamonkey/greprefs/all.js
 seamonkey/greprefs/security-prefs.js
 seamonkey/greprefs/xpinstall.js
-seamonkey/init.d/
-seamonkey/init.d/README
+seamonkey/isp/
+seamonkey/isp/SpamAssassin.sfd
+seamonkey/isp/SpamPal.sfd
+seamonkey/isp/movemail.rdf
+seamonkey/isp/rss.rdf
 @lib seamonkey/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
 @lib seamonkey/libgkgfx.so.${LIBgkgfx_VERSION}
-@lib seamonkey/libgtkembedmoz.so.${LIBgtkembedmoz_VERSION}
 @lib seamonkey/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
 @lib seamonkey/libjsj.so.${LIBjsj_VERSION}
-@lib seamonkey/libldap50.so.${LIBldap50_VERSION}
+@lib seamonkey/libldap60.so.${LIBldap60_VERSION}
+@lib seamonkey/libldif60.so.${LIBldif60_VERSION}
 @lib seamonkey/libmozjs.so.${LIBmozjs_VERSION}
-@lib seamonkey/libmsgbaseutil.so.${LIBmsgbaseutil_VERSION}
-@lib seamonkey/libprldap50.so.${LIBprldap50_VERSION}
+@lib seamonkey/libprldap60.so.${LIBprldap60_VERSION}
 @lib seamonkey/libsqlite3.so.${LIBsqlite3_VERSION}
+@lib seamonkey/libssldap60.so.${LIBssldap60_VERSION}
+@lib seamonkey/libthebes.so.${LIBthebes_VERSION}
 @lib seamonkey/libxpcom.so.${LIBxpcom_VERSION}
-@lib seamonkey/libxpcom_compat.so.${LIBxpcom_compat_VERSION}
 @lib seamonkey/libxpcom_core.so.${LIBxpcom_core_VERSION}
-@lib seamonkey/libxpistub.so.${LIBxpistub_VERSION}
+@lib seamonkey/libxul.so.${LIBxul_VERSION}
+seamonkey/modules/
+seamonkey/modules/DownloadLastDir.jsm
+seamonkey/modules/DownloadUtils.jsm
+seamonkey/modules/ISO8601DateUtils.jsm
+seamonkey/modules/MailUtils.js
+seamonkey/modules/Microformats.js
+seamonkey/modules/PlacesDBUtils.jsm
+seamonkey/modules/PluralForm.jsm
+seamonkey/modules/Sanitizer.jsm
+seamonkey/modules/SpatialNavigation.js
+seamonkey/modules/StringBundle.js
+seamonkey/modules/WindowDraggingUtils.jsm
+seamonkey/modules/XPCOMUtils.jsm
+seamonkey/modules/autoconfigUtils.jsm
+seamonkey/modules/debug.js
+seamonkey/modules/errUtils.js
+seamonkey/modules/folderUtils.jsm
+seamonkey/modules/gloda/
+seamonkey/modules/gloda/collection.js
+seamonkey/modules/gloda/connotent.js
+seamonkey/modules/gloda/databind.js
+seamonkey/modules/gloda/datamodel.js
+seamonkey/modules/gloda/datastore.js
+seamonkey/modules/gloda/dbview.js
+seamonkey/modules/gloda/everybody.js
+seamonkey/modules/gloda/explattr.js
+seamonkey/modules/gloda/facet.js
+seamonkey/modules/gloda/fundattr.js
+seamonkey/modules/gloda/gloda.js
+seamonkey/modules/gloda/index_ab.js
+seamonkey/modules/gloda/index_msg.js
+seamonkey/modules/gloda/indexer.js
+seamonkey/modules/gloda/log4moz.js
+seamonkey/modules/gloda/mimeTypeCategories.js
+seamonkey/modules/gloda/mimemsg.js
+seamonkey/modules/gloda/msg_search.js
+seamonkey/modules/gloda/noun_freetag.js
+seamonkey/modules/gloda/noun_mimetype.js
+seamonkey/modules/gloda/noun_tag.js
+seamonkey/modules/gloda/public.js
+seamonkey/modules/gloda/query.js
+seamonkey/modules/gloda/suffixtree.js
+seamonkey/modules/gloda/utils.js
+seamonkey/modules/iteratorUtils.jsm
+seamonkey/modules/jsTreeSelection.js
+seamonkey/modules/templateUtils.js
+seamonkey/modules/traceHelper.js
+seamonkey/modules/utils.js
+seamonkey/modules/virtualFolderWrapper.js
 @bin seamonkey/mozilla-xremote-client
+seamonkey/platform.ini
 seamonkey/plugins/
 @lib seamonkey/plugins/libnullplugin.so.${LIBnullplugin_VERSION}
 @lib seamonkey/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
-@bin seamonkey/regchrome
 @bin seamonkey/regxpcom
 seamonkey/res/
 seamonkey/res/EditorOverride.css
 seamonkey/res/arrow.gif
 seamonkey/res/arrowd.gif
-seamonkey/res/bloatcycle.html
 seamonkey/res/broken-image.gif
 seamonkey/res/charsetData.properties
 seamonkey/res/charsetalias.properties
-seamonkey/res/cmessage.txt
+seamonkey/res/contenteditable.css
+seamonkey/res/designmode.css
 seamonkey/res/dtd/
 seamonkey/res/dtd/mathml.dtd
 seamonkey/res/dtd/xhtml11.dtd
@@ -456,108 +629,22 @@ seamonkey/res/entityTables/htmlEntityVersions.properties
 seamonkey/res/entityTables/mathml20.properties
 seamonkey/res/entityTables/transliterate.properties
 seamonkey/res/fonts/
-seamonkey/res/fonts/fontEncoding.properties
 seamonkey/res/fonts/mathfont.properties
-seamonkey/res/fonts/mathfontCMEX10.properties
-seamonkey/res/fonts/mathfontCMSY10.properties
-seamonkey/res/fonts/mathfontMTExtra.properties
-seamonkey/res/fonts/mathfontMath1.properties
-seamonkey/res/fonts/mathfontMath2.properties
-seamonkey/res/fonts/mathfontMath4.properties
-seamonkey/res/fonts/mathfontPUA.properties
-seamonkey/res/fonts/mathfontSymbol.properties
-seamonkey/res/fonts/pangoFontEncoding.properties
+seamonkey/res/fonts/mathfontSTIXNonUnicode.properties
+seamonkey/res/fonts/mathfontSTIXSize1.properties
+seamonkey/res/fonts/mathfontStandardSymbolsL.properties
+seamonkey/res/fonts/mathfontUnicode.properties
 seamonkey/res/forms.css
 seamonkey/res/grabber.gif
 seamonkey/res/hiddenWindow.html
 seamonkey/res/html/
 seamonkey/res/html.css
-seamonkey/res/html/gopher-audio.gif
-seamonkey/res/html/gopher-binary.gif
-seamonkey/res/html/gopher-find.gif
-seamonkey/res/html/gopher-image.gif
-seamonkey/res/html/gopher-menu.gif
-seamonkey/res/html/gopher-movie.gif
-seamonkey/res/html/gopher-sound.gif
-seamonkey/res/html/gopher-telnet.gif
-seamonkey/res/html/gopher-text.gif
-seamonkey/res/html/gopher-unknown.gif
+seamonkey/res/html/folder.png
 seamonkey/res/langGroups.properties
 seamonkey/res/language.properties
 seamonkey/res/loading-image.gif
 seamonkey/res/mathml.css
 seamonkey/res/quirk.css
-seamonkey/res/sample.unixpsfonts.properties
-seamonkey/res/samples/
-seamonkey/res/samples/Anieyes.gif
-seamonkey/res/samples/aform.css
-seamonkey/res/samples/beeptest.html
-seamonkey/res/samples/bform.css
-seamonkey/res/samples/bg.jpg
-seamonkey/res/samples/cform.css
-seamonkey/res/samples/checkboxTest.xul
-seamonkey/res/samples/colorpicker.xul
-seamonkey/res/samples/demoform.css
-seamonkey/res/samples/dexopenchrome.xul
-seamonkey/res/samples/dexparamdialog.html
-seamonkey/res/samples/dexparamdialog.xul
-seamonkey/res/samples/find.html
-seamonkey/res/samples/gear1.gif
-seamonkey/res/samples/hidetoolicon.css
-seamonkey/res/samples/hidetoolicon.xul
-seamonkey/res/samples/image_props.html
-seamonkey/res/samples/mozform.css
-seamonkey/res/samples/printsetup.html
-seamonkey/res/samples/raptor.jpg
-seamonkey/res/samples/rock_gra.gif
-seamonkey/res/samples/sampleimages/
-seamonkey/res/samples/sampleimages/bongo.gif
-seamonkey/res/samples/sampleimages/down.gif
-seamonkey/res/samples/sampleimages/left.gif
-seamonkey/res/samples/sampleimages/right.gif
-seamonkey/res/samples/sampleimages/up.gif
-seamonkey/res/samples/scrollbarTest1.xul
-seamonkey/res/samples/scrollbarTest2.xul
-seamonkey/res/samples/sliderTest1.xul
-seamonkey/res/samples/soundtest.html
-seamonkey/res/samples/tab.xul
-seamonkey/res/samples/test.wav
-seamonkey/res/samples/test0.html
-seamonkey/res/samples/test1.html
-seamonkey/res/samples/test10.html
-seamonkey/res/samples/test11.html
-seamonkey/res/samples/test12.html
-seamonkey/res/samples/test13.html
-seamonkey/res/samples/test14.html
-seamonkey/res/samples/test15.html
-seamonkey/res/samples/test16.html
-seamonkey/res/samples/test2.html
-seamonkey/res/samples/test3.html
-seamonkey/res/samples/test4.html
-seamonkey/res/samples/test5.html
-seamonkey/res/samples/test6.html
-seamonkey/res/samples/test7.html
-seamonkey/res/samples/test8-1.html
-seamonkey/res/samples/test8.html
-seamonkey/res/samples/test8dom.html
-seamonkey/res/samples/test8sca.html
-seamonkey/res/samples/test8siz.html
-seamonkey/res/samples/test8tab.html
-seamonkey/res/samples/test9.html
-seamonkey/res/samples/test9a.html
-seamonkey/res/samples/test9b.html
-seamonkey/res/samples/test_ed.html
-seamonkey/res/samples/test_form.html
-seamonkey/res/samples/test_gfx.html
-seamonkey/res/samples/test_lbox.html
-seamonkey/res/samples/test_pr.html
-seamonkey/res/samples/test_weight.html
-seamonkey/res/samples/toolbarTest1.xul
-seamonkey/res/samples/treeTest1.css
-seamonkey/res/samples/treeTest1.xul
-seamonkey/res/samples/widgets.xul
-seamonkey/res/samples/xpmenu.xul
-seamonkey/res/samples/xulTest.css
 seamonkey/res/svg.css
 seamonkey/res/table-add-column-after-active.gif
 seamonkey/res/table-add-column-after-hover.gif
@@ -577,53 +664,19 @@ seamonkey/res/table-remove-column.gif
 seamonkey/res/table-remove-row-active.gif
 seamonkey/res/table-remove-row-hover.gif
 seamonkey/res/table-remove-row.gif
-seamonkey/res/throbber/
-seamonkey/res/throbber/anim.gif
-seamonkey/res/throbber/anims00.gif
-seamonkey/res/throbber/anims01.gif
-seamonkey/res/throbber/anims02.gif
-seamonkey/res/throbber/anims03.gif
-seamonkey/res/throbber/anims04.gif
-seamonkey/res/throbber/anims05.gif
-seamonkey/res/throbber/anims06.gif
-seamonkey/res/throbber/anims07.gif
-seamonkey/res/throbber/anims08.gif
-seamonkey/res/throbber/anims09.gif
-seamonkey/res/throbber/anims10.gif
-seamonkey/res/throbber/anims11.gif
-seamonkey/res/throbber/anims12.gif
-seamonkey/res/throbber/anims13.gif
-seamonkey/res/throbber/anims14.gif
-seamonkey/res/throbber/anims15.gif
-seamonkey/res/throbber/anims16.gif
-seamonkey/res/throbber/anims17.gif
-seamonkey/res/throbber/anims18.gif
-seamonkey/res/throbber/anims19.gif
-seamonkey/res/throbber/anims20.gif
-seamonkey/res/throbber/anims21.gif
-seamonkey/res/throbber/anims22.gif
-seamonkey/res/throbber/anims23.gif
-seamonkey/res/throbber/anims24.gif
-seamonkey/res/throbber/anims25.gif
-seamonkey/res/throbber/anims26.gif
-seamonkey/res/throbber/anims27.gif
-seamonkey/res/throbber/anims28.gif
-seamonkey/res/throbber/anims29.gif
 seamonkey/res/ua.css
 seamonkey/res/unixcharset.properties
-seamonkey/res/viewer.properties
 seamonkey/res/viewsource.css
 seamonkey/run-mozilla.sh
 @bin seamonkey/seamonkey-bin
 seamonkey/searchplugins/
-seamonkey/searchplugins/dmoz.gif
+seamonkey/searchplugins/dmoz.png
 seamonkey/searchplugins/dmoz.src
-seamonkey/searchplugins/google.gif
+seamonkey/searchplugins/google.png
 seamonkey/searchplugins/google.src
-seamonkey/searchplugins/jeeves.gif
+seamonkey/searchplugins/jeeves.png
 seamonkey/searchplugins/jeeves.src
 share/applications/seamonkey.desktop
-@exec TEMP=`mktemp -d` && cd %D/seamonkey && env HOME=$TEMP LD_LIBRARY_PATH=%D/seamonkey ./regchrome && rm -fr $TEMP
 @exec TEMP=`mktemp -d` && cd %D/seamonkey && env HOME=$TEMP LD_LIBRARY_PATH=%D/seamonkey ./regxpcom && rm -fr $TEMP
 @unexec rm -f %D/seamonkey/chrome/chrome.rdf
 @unexec rm -f %D/seamonkey/chrome/overlays.rdf
