@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_security_nss_lib_freebl_blapi_h,v 1.1 2010/04/03 09:26:46 landry Exp $
+--- mozilla/security/nss/lib/freebl/blapi.h.orig	Sat Dec  5 02:56:24 2009
++++ mozilla/security/nss/lib/freebl/blapi.h	Sat Jan 16 16:28:37 2010
+@@ -925,6 +925,8 @@ extern void SHA1_DestroyContext(SHA1Context *cx, PRBoo
+ */
+ extern void SHA1_Begin(SHA1Context *cx);
+ 
++#define SHA1_Update NSS_SHA1_Update
++
+ /*
+ ** Update the SHA-1 hash function with more data.
+ **	"cx" the context

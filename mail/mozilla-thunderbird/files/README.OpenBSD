@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.3 2010/03/21 10:35:03 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.4 2010/04/03 09:26:45 landry Exp $
 
 If you encounter strange problems or Thunderbird doesn't start at
 all, try the -safe-mode switch.
@@ -10,14 +10,14 @@ Links
 To make Thunderbird open links using Firefox, shut down Thunderbird
 and add these lines to ~/.thunderbird/<something>.default/prefs.js:
 
-user_pref("network.protocol-handler.app.ftp", "!!PREFIX!!/bin/firefox");
-user_pref("network.protocol-handler.app.http", "!!PREFIX!!/bin/firefox");
-user_pref("network.protocol-handler.app.https", "!!PREFIX!!/bin/firefox");
+user_pref("network.protocol-handler.app.ftp", "${LOCALBASE}/bin/firefox");
+user_pref("network.protocol-handler.app.http", "${LOCALBASE}/bin/firefox");
+user_pref("network.protocol-handler.app.https", "${LOCALBASE}/bin/firefox");
 
 Plugins
 
 Thunderbird looks for plugins in ~/.mozilla/plugins
-!!PREFIX!!/mozilla-thunderbird/plugins and
-!!LOCALBASE!!/lib/mozilla-plugins.
+${TRUEPREFIX}/mozilla-thunderbird/plugins and
+${LOCALBASE}/lib/mozilla-plugins.
 If the environment variable MOZ_PLUGIN_PATH is specified, this
 location will be overridden.

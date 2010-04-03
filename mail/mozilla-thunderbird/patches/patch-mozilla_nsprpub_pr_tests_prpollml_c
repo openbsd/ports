@@ -1,0 +1,19 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_tests_prpollml_c,v 1.1 2010/04/03 09:26:46 landry Exp $
+--- mozilla/nsprpub/pr/tests/prpollml.c.orig	Sat Dec  5 02:56:21 2009
++++ mozilla/nsprpub/pr/tests/prpollml.c	Sat Jan 16 16:28:36 2010
+@@ -47,14 +47,10 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
+-#ifdef SYMBIAN
+-#define POLL_DESC_COUNT 128
+-#else
+-#define POLL_DESC_COUNT 256  /* This should be greater than the
++#define POLL_DESC_COUNT 120  /* This should be greater than the
+                               * STACK_POLL_DESC_COUNT macro in
+                               * ptio.c to cause syspoll_list to
+                               * be created. */
+-#endif
+ 
+ static PRPollDesc pd[POLL_DESC_COUNT];
+ 

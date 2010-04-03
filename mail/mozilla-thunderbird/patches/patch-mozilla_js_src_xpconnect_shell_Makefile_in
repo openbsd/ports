@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_js_src_xpconnect_shell_Makefile_in,v 1.1 2010/04/03 09:26:46 landry Exp $
+--- mozilla/js/src/xpconnect/shell/Makefile.in.orig	Sat Dec  5 02:56:03 2009
++++ mozilla/js/src/xpconnect/shell/Makefile.in	Sat Jan 16 16:31:41 2010
+@@ -60,6 +60,8 @@ CMMSRCS += xpcshellMacUtils.mm
+ endif
+ 
+ LIBS		= \
++		-Wl,-rpath-link,${LOCALBASE}/lib \
++		-Wl,-rpath-link,${X11BASE}/lib \
+ 		$(DIST)/lib/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) \
+ 		$(LIBXUL_LIBS) \
+ 		$(MOZ_JS_LIBS) \

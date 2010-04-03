@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_gfx_src_psshared_nsCUPSShim_cpp,v 1.1 2010/04/03 09:26:46 landry Exp $
+--- mozilla/gfx/src/psshared/nsCUPSShim.cpp.orig	Sat Dec  5 02:56:01 2009
++++ mozilla/gfx/src/psshared/nsCUPSShim.cpp	Sat Jan 16 16:28:33 2010
+@@ -59,7 +59,7 @@ static const int gSymNameCt = sizeof(gSymName) / sizeo
+ PRBool
+ nsCUPSShim::Init()
+ {
+-    mCupsLib = PR_LoadLibrary("libcups.so.2");
++    mCupsLib = PR_LoadLibrary("libcups.so");
+     if (!mCupsLib)
+         return PR_FALSE;
+ 

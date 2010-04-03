@@ -1,0 +1,27 @@
+$OpenBSD: patch-mozilla_security_nss_lib_softoken_config_mk,v 1.1 2010/04/03 09:26:46 landry Exp $
+--- mozilla/security/nss/lib/softoken/config.mk.orig	Sat Dec  5 02:56:24 2009
++++ mozilla/security/nss/lib/softoken/config.mk	Sat Jan 16 16:28:37 2010
+@@ -56,9 +56,10 @@ ifdef NS_USE_GCC
+ EXTRA_SHARED_LIBS += \
+ 	-L$(DIST)/lib \
+ 	-L$(NSSUTIL_LIB_DIR) \
++	-L$(NSPR_LIB_DIR) \
++	-L$(LOCALBASE)/lib \
+ 	-lnssutil3 \
+ 	-lsqlite3 \
+-	-L$(NSPR_LIB_DIR) \
+ 	-lplc4 \
+ 	-lplds4 \
+ 	-lnspr4 \
+@@ -82,9 +83,10 @@ else
+ EXTRA_SHARED_LIBS += \
+ 	-L$(DIST)/lib \
+ 	-L$(NSSUTIL_LIB_DIR) \
++	-L$(NSPR_LIB_DIR) \
++	-L$(LOCALBASE)/lib \
+ 	-lnssutil3 \
+ 	-lsqlite3 \
+-	-L$(NSPR_LIB_DIR) \
+ 	-lplc4 \
+ 	-lplds4 \
+ 	-lnspr4 \

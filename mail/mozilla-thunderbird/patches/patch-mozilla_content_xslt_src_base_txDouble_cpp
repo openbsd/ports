@@ -1,0 +1,25 @@
+$OpenBSD: patch-mozilla_content_xslt_src_base_txDouble_cpp,v 1.1 2010/04/03 09:26:46 landry Exp $
+--- mozilla/content/xslt/src/base/txDouble.cpp.orig	Sat Dec  5 02:55:58 2009
++++ mozilla/content/xslt/src/base/txDouble.cpp	Sat Jan 16 16:28:33 2010
+@@ -49,14 +49,16 @@
+  * Utility class for doubles
+  */
+ 
++#define STRICT_ALIGN __attribute__ ((aligned (8)))
++
+ //-- Initialize Double related constants
+-const txdpun nanMask =    TX_DOUBLE_NaN;
++const txdpun nanMask STRICT_ALIGN =    TX_DOUBLE_NaN;
+ #ifdef IS_BIG_ENDIAN
+-const txdpun infMask =    {{TX_DOUBLE_HI32_EXPMASK, 0}};
+-const txdpun negInfMask = {{TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT, 0}};
++const txdpun infMask STRICT_ALIGN =    {{TX_DOUBLE_HI32_EXPMASK, 0}};
++const txdpun negInfMask STRICT_ALIGN = {{TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT, 0}};
+ #else
+-const txdpun infMask =    {{0, TX_DOUBLE_HI32_EXPMASK}};
+-const txdpun negInfMask = {{0, TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT}};
++const txdpun infMask STRICT_ALIGN =    {{0, TX_DOUBLE_HI32_EXPMASK}};
++const txdpun negInfMask STRICT_ALIGN = {{0, TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT}};
+ #endif
+ 
+ const double Double::NaN = nanMask.d;

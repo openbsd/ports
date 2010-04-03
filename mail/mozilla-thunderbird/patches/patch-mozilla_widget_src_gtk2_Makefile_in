@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_widget_src_gtk2_Makefile_in,v 1.1 2010/04/03 09:26:46 landry Exp $
+--- mozilla/widget/src/gtk2/Makefile.in.orig	Sat Dec  5 02:56:52 2009
++++ mozilla/widget/src/gtk2/Makefile.in	Sat Jan 16 16:28:49 2010
+@@ -175,6 +175,8 @@ DEFINES         += -DUSE_POSTSCRIPT
+ EXTRA_DSO_LDOPTS += -lgfxpsshar
+ endif
+ 
++# GTK2 widget sndio backend.
++EXTRA_DSO_LDOPTS += -lsndio
+ 
+ DEFINES		+= 
+ INCLUDES	+= \

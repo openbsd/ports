@@ -1,0 +1,13 @@
+$OpenBSD: patch-mozilla_browser_components_certerror_content_aboutCertError_xhtml,v 1.1 2010/04/03 09:26:46 landry Exp $
+--- mozilla/browser/components/certerror/content/aboutCertError.xhtml.orig	Sat Dec  5 02:55:55 2009
++++ mozilla/browser/components/certerror/content/aboutCertError.xhtml	Sat Jan 16 16:28:32 2010
+@@ -128,6 +128,9 @@
+           tech.textContent = getDescription();
+         
+         addDomainErrorLink();
++
++        var button = document.getElementById("exceptionDialogButton");
++        button.click();
+       }
+       
+       /* In the case of SSL error pages about domain mismatch, see if
