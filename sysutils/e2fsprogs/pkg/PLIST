@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/04/02 21:19:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/03 11:53:58 kili Exp $
+@conflict e2fs-uuid-*
+@pkgpath sysutils/e2fsprogs,-main
+@pkgpath sysutils/e2fsprogs,-uuid
 @bin bin/chattr
 @comment bin/compile_et
 @bin bin/lsattr
 bin/mk_cmds
+@bin bin/uuidgen
 include/blkid/
 include/blkid/blkid.h
 include/blkid/blkid_types.h
@@ -23,10 +27,13 @@ include/ext2fs/tdb.h
 include/ss/
 include/ss/ss.h
 include/ss/ss_err.h
+include/uuid/
+include/uuid/uuid.h
 %%SHARED%%
 @info info/libext2fs.info
 @bin lib/e2initrd_helper
 lib/libblkid.a
+lib/libe2fs-uuid.a
 lib/libe2p.a
 lib/libext2fs.a
 lib/libext2fs_com_err.a
@@ -34,6 +41,7 @@ lib/libss.a
 lib/pkgconfig/
 lib/pkgconfig/blkid.pc
 lib/pkgconfig/com_err.pc
+lib/pkgconfig/e2fs-uuid.pc
 lib/pkgconfig/e2p.pc
 lib/pkgconfig/ext2fs.pc
 lib/pkgconfig/ss.pc
@@ -41,8 +49,20 @@ lib/pkgconfig/ss.pc
 @comment man/man1/compile_et.1
 @man man/man1/lsattr.1
 @man man/man1/mk_cmds.1
+@man man/man1/uuidgen.1
 @man man/man3/com_err.3
+@man man/man3/e2fs-uuid.3
 @man man/man3/libblkid.3
+@man man/man3/uuid_clear.3
+@man man/man3/uuid_compare.3
+@man man/man3/uuid_copy.3
+@man man/man3/uuid_generate.3
+@man man/man3/uuid_generate_random.3
+@man man/man3/uuid_generate_time.3
+@man man/man3/uuid_is_null.3
+@man man/man3/uuid_parse.3
+@man man/man3/uuid_time.3
+@man man/man3/uuid_unparse.3
 @man man/man5/e2fsck.conf.5
 @man man/man5/mke2fs.conf.5
 @man man/man8/badblocks.8
@@ -69,6 +89,7 @@ lib/pkgconfig/ss.pc
 @man man/man8/mklost+found.8
 @man man/man8/resize2fs.8
 @man man/man8/tune2fs.8
+@man man/man8/uuidd.8
 @bin sbin/badblocks
 @bin sbin/blkid
 @bin sbin/debugfs
@@ -93,6 +114,7 @@ lib/pkgconfig/ss.pc
 @bin sbin/mklost+found
 @bin sbin/resize2fs
 @bin sbin/tune2fs
+@bin sbin/uuidd
 share/et/
 share/et/et_c.awk
 share/et/et_h.awk

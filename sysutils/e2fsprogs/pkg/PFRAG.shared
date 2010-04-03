@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2009/03/15 19:59:31 landry Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2010/04/03 11:53:58 kili Exp $
 @lib lib/libblkid.so.${LIBblkid_VERSION}
+@lib lib/libe2fs-uuid.so.${LIBe2fs-uuid_VERSION}
 @lib lib/libe2p.so.${LIBe2p_VERSION}
 @lib lib/libext2fs.so.${LIBext2fs_VERSION}
 @lib lib/libext2fs_com_err.so.${LIBext2fs_com_err_VERSION}

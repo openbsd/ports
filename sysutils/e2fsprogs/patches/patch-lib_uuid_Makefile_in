@@ -1,17 +1,30 @@
-$OpenBSD: patch-lib_uuid_Makefile_in,v 1.2 2009/03/15 19:59:31 landry Exp $
+$OpenBSD: patch-lib_uuid_Makefile_in,v 1.3 2010/04/03 11:53:58 kili Exp $
 --- lib/uuid/Makefile.in.orig	Tue Feb 19 05:33:10 2008
-+++ lib/uuid/Makefile.in	Sun Feb 22 10:55:09 2009
-@@ -41,8 +41,8 @@ SRCS=		$(srcdir)/clear.c \
- LIBRARY= libuuid
++++ lib/uuid/Makefile.in	Fri Apr  2 21:35:50 2010
+@@ -38,18 +38,18 @@ SRCS=		$(srcdir)/clear.c \
+ 		$(srcdir)/unparse.c \
+ 		$(srcdir)/uuid_time.c
+ 
+-LIBRARY= libuuid
++LIBRARY= libe2fs-uuid
  LIBDIR= uuid
  
 -ELF_VERSION = 1.2
 -ELF_SO_VERSION = 1
-+ELF_VERSION = $(LIBuuid_VERSION)
-+ELF_SO_VERSION = $(LIBuuid_VERSION)
- ELF_IMAGE = libuuid
+-ELF_IMAGE = libuuid
++ELF_VERSION = $(LIBe2fs-uuid_VERSION)
++ELF_SO_VERSION = $(LIBe2fs-uuid_VERSION)
++ELF_IMAGE = libe2fs-uuid
  ELF_MYDIR = uuid
  ELF_INSTALL_DIR = $(root_libdir)
+ ELF_OTHER_LIBS = 
+ 
+ BSDLIB_VERSION = 1.1
+-BSDLIB_IMAGE = libuuid
++BSDLIB_IMAGE = libe2fs-uuid
+ BSDLIB_MYDIR = uuid
+ BSDLIB_INSTALL_DIR = $(root_libdir)
+ 
 @@ -60,8 +60,7 @@ BSDLIB_INSTALL_DIR = $(root_libdir)
  @MAKEFILE_CHECKER@
  
@@ -106,9 +119,9 @@ $OpenBSD: patch-lib_uuid_Makefile_in,v 1.2 2009/03/15 19:59:31 landry Exp $
 -	@echo "	INSTALL_DATA $(includedir)/uuid/uuid.h"
 -	@$(INSTALL_DATA) $(srcdir)/uuid.h $(DESTDIR)$(includedir)/uuid/uuid.h
 -	@for i in $(SMANPAGES); do \
-+	$(INSTALL_DATA) libuuid.a $(DESTDIR)$(libdir)/libuuid.a
-+	$(RANLIB) $(DESTDIR)$(libdir)/libuuid.a
-+	$(CHMOD) $(LIBMODE) $(DESTDIR)$(libdir)/libuuid.a
++	$(INSTALL_DATA) libe2fs-uuid.a $(DESTDIR)$(libdir)/libe2fs-uuid.a
++	$(RANLIB) $(DESTDIR)$(libdir)/libe2fs-uuid.a
++	$(CHMOD) $(LIBMODE) $(DESTDIR)$(libdir)/libe2fs-uuid.a
 +	$(INSTALL_DATA) $(srcdir)/uuid.h $(DESTDIR)$(includedir)/uuid/uuid.h
 +	for i in $(SMANPAGES); do \
  		$(RM) -f $(DESTDIR)$(man3dir)/$$i.gz; \
@@ -130,3 +143,16 @@ $OpenBSD: patch-lib_uuid_Makefile_in,v 1.2 2009/03/15 19:59:31 landry Exp $
  
  uninstall::
  	$(RM) -f $(DESTDIR)$(libdir)/libuuid.a \
+@@ -175,9 +155,9 @@ distclean:: clean
+ #
+ # Hack to parallel makes recognize dependencies correctly.
+ #
+-../../lib/libuuid.a: libuuid.a
+-../../lib/libuuid.so: image
+-../../lib/libuuid.dylib: image
++../../lib/libe2fs-uuid.a: libe2fs-uuid.a
++../../lib/libe2fs-uuid.so: image
++../../lib/libe2fs-uuid.dylib: image
+ 
+ $(OBJS): subdirs
+ 
