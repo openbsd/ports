@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/03/26 10:00:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2010/04/03 11:22:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -68,7 +68,6 @@ YACC=			bison
 AUTOCONF_VERSION=	2.63
 CONFIGURE_STYLE= 	autoconf gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/evolution-data-server \
 			--enable-gnome-keyring=yes \
 			--enable-nss=yes \
 			--enable-smime=yes \
