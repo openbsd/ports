@@ -1,30 +1,30 @@
-$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.1 2009/08/08 12:57:17 martynas Exp $
---- mozilla/security/nss/lib/ckfw/builtins/certdata.c.orig	Thu Jul 16 18:02:46 2009
-+++ mozilla/security/nss/lib/ckfw/builtins/certdata.c	Thu Jul 16 18:09:58 2009
-@@ -900,6 +900,18 @@ static const CK_ATTRIBUTE_TYPE nss_builtins_types_280 
- static const CK_ATTRIBUTE_TYPE nss_builtins_types_281 [] = {
+$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.2 2010/04/03 09:21:00 landry Exp $
+--- mozilla/security/nss/lib/ckfw/builtins/certdata.c.orig	Tue Feb 16 23:14:34 2010
++++ mozilla/security/nss/lib/ckfw/builtins/certdata.c	Tue Mar 30 23:38:42 2010
+@@ -1020,6 +1020,18 @@ static const CK_ATTRIBUTE_TYPE nss_builtins_types_320 
+ static const CK_ATTRIBUTE_TYPE nss_builtins_types_321 [] = {
   CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
  };
-+static const CK_ATTRIBUTE_TYPE nss_builtins_types_282 [] = {
++static const CK_ATTRIBUTE_TYPE nss_builtins_types_322 [] = {
 + CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERTIFICATE_TYPE,  CKA_SUBJECT,  CKA_ID,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_VALUE
 +};
-+static const CK_ATTRIBUTE_TYPE nss_builtins_types_283 [] = {
++static const CK_ATTRIBUTE_TYPE nss_builtins_types_323 [] = {
 + CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
 +};
-+static const CK_ATTRIBUTE_TYPE nss_builtins_types_284 [] = {
++static const CK_ATTRIBUTE_TYPE nss_builtins_types_324 [] = {
 + CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERTIFICATE_TYPE,  CKA_SUBJECT,  CKA_ID,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_VALUE
 +};
-+static const CK_ATTRIBUTE_TYPE nss_builtins_types_285 [] = {
++static const CK_ATTRIBUTE_TYPE nss_builtins_types_325 [] = {
 + CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
 +};
  #ifdef DEBUG
  static const NSSItem nss_builtins_items_0 [] = {
    { (void *)&cko_data, (PRUint32)sizeof(CK_OBJECT_CLASS) },
-@@ -18953,6 +18965,332 @@ static const NSSItem nss_builtins_items_281 [] = {
+@@ -21537,6 +21549,332 @@ static const NSSItem nss_builtins_items_321 [] = {
    { (void *)&ckt_netscape_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
-+static const NSSItem nss_builtins_items_282 [] = {
++static const NSSItem nss_builtins_items_322 [] = {
 +  { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
 +  { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
 +  { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
@@ -171,7 +171,7 @@ $OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.1 2009/08/
 +"\103"
 +, (PRUint32)1857 }
 +};
-+static const NSSItem nss_builtins_items_283 [] = {
++static const NSSItem nss_builtins_items_323 [] = {
 +  { (void *)&cko_netscape_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
 +  { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
 +  { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
@@ -198,7 +198,7 @@ $OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.1 2009/08/
 +  { (void *)&ckt_netscape_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
 +  { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
 +};
-+static const NSSItem nss_builtins_items_284 [] = {
++static const NSSItem nss_builtins_items_324 [] = {
 +  { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
 +  { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
 +  { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
@@ -323,7 +323,7 @@ $OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.1 2009/08/
 +"\322\156\245\033\231\047\200\347\013\251\250\000"
 +, (PRUint32)1548 }
 +};
-+static const NSSItem nss_builtins_items_285 [] = {
++static const NSSItem nss_builtins_items_325 [] = {
 +  { (void *)&cko_netscape_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
 +  { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
 +  { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
@@ -353,22 +353,22 @@ $OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.1 2009/08/
  
  builtinsInternalObject
  nss_builtins_data[] = {
-@@ -19239,11 +19577,15 @@ nss_builtins_data[] = {
-   { 11, nss_builtins_types_278, nss_builtins_items_278, {NULL} },
-   { 13, nss_builtins_types_279, nss_builtins_items_279, {NULL} },
-   { 11, nss_builtins_types_280, nss_builtins_items_280, {NULL} },
--  { 13, nss_builtins_types_281, nss_builtins_items_281, {NULL} }
-+  { 13, nss_builtins_types_281, nss_builtins_items_281, {NULL} },
-+  { 11, nss_builtins_types_282, nss_builtins_items_282, {NULL} },
-+  { 13, nss_builtins_types_283, nss_builtins_items_283, {NULL} },
-+  { 11, nss_builtins_types_284, nss_builtins_items_284, {NULL} },
-+  { 13, nss_builtins_types_285, nss_builtins_items_285, {NULL} }
+@@ -21863,11 +22201,15 @@ nss_builtins_data[] = {
+   { 11, nss_builtins_types_318, nss_builtins_items_318, {NULL} },
+   { 13, nss_builtins_types_319, nss_builtins_items_319, {NULL} },
+   { 11, nss_builtins_types_320, nss_builtins_items_320, {NULL} },
+-  { 13, nss_builtins_types_321, nss_builtins_items_321, {NULL} }
++  { 13, nss_builtins_types_321, nss_builtins_items_321, {NULL} },
++  { 13, nss_builtins_types_322, nss_builtins_items_322, {NULL} },
++  { 13, nss_builtins_types_323, nss_builtins_items_323, {NULL} },
++  { 13, nss_builtins_types_324, nss_builtins_items_324, {NULL} },
++  { 13, nss_builtins_types_325, nss_builtins_items_325, {NULL} }
  };
  const PRUint32
  #ifdef DEBUG
--  nss_builtins_nObjects = 281+1;
-+  nss_builtins_nObjects = 285+1;
+-  nss_builtins_nObjects = 321+1;
++  nss_builtins_nObjects = 325+1;
  #else
--  nss_builtins_nObjects = 281;
-+  nss_builtins_nObjects = 285;
+-  nss_builtins_nObjects = 321;
++  nss_builtins_nObjects = 325;
  #endif /* DEBUG */

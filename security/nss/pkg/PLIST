@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/08/04 14:00:21 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/03 09:21:00 landry Exp $
 @bin bin/certutil
 @bin bin/cmsutil
 @bin bin/crlutil
@@ -105,6 +105,7 @@ lib/libfreebl3.chk
 @lib lib/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib lib/libnss3.so.${LIBnss3_VERSION}
 @lib lib/libnssckbi.so.${LIBnssckbi_VERSION}
+lib/libnssdbm3.chk
 @lib lib/libnssdbm3.so.${LIBnssdbm3_VERSION}
 @lib lib/libnssutil3.so.${LIBnssutil3_VERSION}
 @lib lib/libsmime3.so.${LIBsmime3_VERSION}

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2009/11/14 16:31:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/04/03 09:21:00 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.12.3.1
+VERSION=		3.12.6
 DISTNAME=		nss-${VERSION}
-PKGNAME=		${DISTNAME}p2
-SO_VERSION=		24.0
+SO_VERSION=		25.0
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -54,25 +53,19 @@ MAIN_TOOLS=		certutil modutil pk12util signtool ssltap crlutil \
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/nss
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
-	@cd ${NSSDIST}/public && ${TAR} -chf - nss/ | \
-		find . -type d \
-			-exec ${INSTALL_DATA_DIR} ${PREFIX}/include/{} \; && \
-		find . ! -type d \
-			-exec ${INSTALL_DATA} {} ${PREFIX}/include/{} \;
-	@cd ${NSSOBJ}/lib && ${TAR} -chf - *.so.${SO_VERSION} | \
-		${TAR} -xf - -C ${PREFIX}/lib
-	@chmod 444 ${PREFIX}/lib/*.so.${SO_VERSION}
+	${INSTALL_DATA} ${NSSDIST}/public/nss/*.{h,api} ${PREFIX}/include/nss/
+	${INSTALL_DATA} ${NSSOBJ}/lib/*.so.${SO_VERSION} ${PREFIX}/lib/
 	${INSTALL_DATA} ${NSSOBJ}/lib/{libcrmf.a,*.chk} ${PREFIX}/lib/
-	@cd ${NSSOBJ}/bin && ${INSTALL_PROGRAM} ${MAIN_TOOLS} ${PREFIX}/bin/
+	cd ${NSSOBJ}/bin && ${INSTALL_PROGRAM} ${MAIN_TOOLS} ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${FILESDIR}/nss-config ${PREFIX}/bin/
 	${INSTALL_DATA} ${FILESDIR}/nss.pc ${PREFIX}/lib/pkgconfig/
 	@perl -pi -e 's|!!PREFIX!!|${TRUEPREFIX}|g; s|!!VERSION!!|${VERSION}|g' \
 		${PREFIX}/bin/nss-config ${PREFIX}/lib/pkgconfig/nss.pc
 
 do-regress:
-	cd ${WRKSRC}/tests && ${SETENV} BUILD_OPT=1 \
+	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} \
 		PATH="${NSSOBJ}/bin:${PATH}" \
-		LD_LIBRARY_PATH="${NSSOBJ}/lib" ./all.sh
+		LD_LIBRARY_PATH="${NSSOBJ}/lib" /bin/sh ./all.sh
 
 .include <bsd.port.mk>
 
