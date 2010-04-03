@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/25 10:23:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/03 00:21:14 sthen Exp $
 
 COMMENT=	library and toolset to operate arrays of data
 
 DISTNAME=	orc-0.4.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 MASTER_SITES=	http://code.entropywave.com/download/orc/
 
@@ -24,7 +25,6 @@ WANTLIB=	c m pthread
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
-# Should be 2.63
-AUTOCONF_VERSION= 2.62
+AUTOCONF_VERSION= 2.63
 
 .include <bsd.port.mk>

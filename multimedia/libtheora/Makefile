@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/12/13 22:01:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/04/03 00:21:14 sthen Exp $
 
 COMMENT=	open video codec
 
 DISTNAME=	libtheora-1.1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/
 EXTRACT_SUFX=	.tar.bz2
@@ -27,8 +28,7 @@ LIB_DEPENDS=	ogg.>=5::audio/libogg
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
-# Should be 2.63
-AUTOCONF_VERSION= 2.61
+AUTOCONF_VERSION= 2.63
 CONFIGURE_ARGS=	--disable-asm --disable-examples --disable-spec
 CONFIGURE_ENV=	ac_cv_prog_HAVE_DOXYGEN=false
 

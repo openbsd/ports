@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2009/12/22 15:46:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/04/03 00:21:14 sthen Exp $
 
 COMMENT=	video player for KDE
 
 VERSION=	0.8.8
 DISTNAME=	kaffeine-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	multimedia x11 x11/kde
 MASTER_SITES=	http://hftom.free.fr/ \
 		${MASTER_SITE_SOURCEFORGE:=kaffeine/}
@@ -44,8 +44,7 @@ MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 SEPARATE_BUILD=	simple
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-# Should be 2.63
-AUTOCONF_VERSION= 2.62
+AUTOCONF_VERSION= 2.63
 CONFIGURE_ARGS+= ${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --disable-libsuffix \
 		 --without-arts \

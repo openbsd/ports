@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2010/03/31 23:46:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.135 2010/04/03 00:21:14 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,8 +11,8 @@ V_SIEVE=	0.1.15
 V_MANAGESIEVE=	0.11.11
 
 PKGNAME=	dovecot-${V_DOVECOT}
-PKGNAME-server=	dovecot-${V_DOVECOT}p1
-FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}v0
+PKGNAME-server=	dovecot-${V_DOVECOT}p2
+FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}p0v0
 FULLPKGPATH-sieve= ${PKGPATH},-sieve
 
 DISTNAME=	dovecot-${V_DOVECOT}
@@ -54,7 +54,7 @@ CFLAGS+=	-I/usr/include/kerberosV -I${LOCALBASE}/include
 
 USE_LIBTOOL=		Yes
 # Should be 2.65
-AUTOCONF_VERSION=	2.62
+AUTOCONF_VERSION=	2.64
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-gssapi \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2010/03/21 09:04:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.164 2010/04/03 00:21:14 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,9 +8,9 @@ COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
 VERSION=	5.1.45
 DISTNAME=	mysql-${VERSION}
-PKGNAME-main=	mysql-client-${VERSION}
-PKGNAME-server=	mysql-server-${VERSION}p0
-PKGNAME-tests= 	mysql-tests-${VERSION}
+PKGNAME-main=	mysql-client-${VERSION}p0
+PKGNAME-server=	mysql-server-${VERSION}p1
+PKGNAME-tests= 	mysql-tests-${VERSION}p0
 CATEGORIES=	databases
 V=		MySQL-5.1
 MASTER_SITES=	${MASTER_SITE_MYSQL:=Downloads/$V/}
@@ -48,8 +48,7 @@ VMEM_WARNING=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
-# Should be 2.63
-AUTOCONF_VERSION= 2.61
+AUTOCONF_VERSION= 2.63
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --localstatedir="${DB_DIR}" \
 		 --with-big-tables \
