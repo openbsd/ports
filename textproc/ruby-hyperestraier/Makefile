@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2010/01/27 21:43:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2010/04/03 00:42:39 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Ruby interface to hyperestraier
 
 DISTNAME=		hyperestraier-1.4.13
-PKGNAME=		ruby-hyperestraier-1.0.0p12
+PKGNAME=		ruby-hyperestraier-1.0.0p13
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://hyperestraier.sourceforge.net/
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 
-WANTLIB=		c m
+WANTLIB=		c m pthread
 MODULES=		lang/ruby
 
 LIB_DEPENDS=		${MODRUBY_LIB_DEPENDS} \

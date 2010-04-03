@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/10/13 09:58:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/04/03 00:42:39 sthen Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		2.28.0
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		www
 
@@ -26,6 +27,7 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 icudata icui18n
 WANTLIB += icuuc jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs soup-2.4 sqlite3 stdc++
 WANTLIB += tasn1 webkit-1.0 xcb xml2 xslt z
+WANTLIB += gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
 
 MODULES=	devel/gettext \
 		lang/python \
