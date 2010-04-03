@@ -1,0 +1,13 @@
+$OpenBSD: patch-btkey_btkey_1,v 1.1 2010/04/03 21:07:40 schwarze Exp $
+--- btkey/btkey.1.orig	Sun Feb 17 16:58:17 2008
++++ btkey/btkey.1	Sat Apr  3 19:23:31 2010
+@@ -120,7 +120,8 @@ Clear key for phone at bt3c0 from file and device
+ .Ex -std
+ .Sh FILES
+ .Bl -tag -compact
+-.Pa /var/db/bthcid.keys
++.It Pa /var/db/bthcid.keys
++Bluetooth Link Key cache.
+ .El
+ .Sh SEE ALSO
+ .Xr btpin 1 ,
