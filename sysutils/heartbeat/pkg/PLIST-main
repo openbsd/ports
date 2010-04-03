@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/04/03 11:54:56 kili Exp $
 @newgroup ${HBGROUP}:${HBGID}
 @newuser ${HBUSER}:${HBUID}:${HBGROUP}:daemon:Heartbeat User:/nonexistent:/sbin/nologin
-bin/cl_respawn
+@bin bin/cl_respawn
 @mode g+s
 @group ${HBGROUP}
-bin/cl_status
+@bin bin/cl_status
 @mode
 @group
 include/clplumbing/
@@ -110,17 +110,17 @@ lib/heartbeat/BasicSanityCheck
 lib/heartbeat/README.hb_report
 lib/heartbeat/ResourceManager
 lib/heartbeat/TestHeartbeatComm
-lib/heartbeat/api_test
-lib/heartbeat/apphbd
-lib/heartbeat/apphbtest
-lib/heartbeat/atest
-lib/heartbeat/attrd
-lib/heartbeat/base64_md5_test
-lib/heartbeat/ccm
-lib/heartbeat/ccm_testclient
-lib/heartbeat/cib
-lib/heartbeat/cibmon
-lib/heartbeat/clmtest
+@bin lib/heartbeat/api_test
+@bin lib/heartbeat/apphbd
+@bin lib/heartbeat/apphbtest
+@bin lib/heartbeat/atest
+@bin lib/heartbeat/attrd
+@bin lib/heartbeat/base64_md5_test
+@bin lib/heartbeat/ccm
+@bin lib/heartbeat/ccm_testclient
+@bin lib/heartbeat/cib
+@bin lib/heartbeat/cibmon
+@bin lib/heartbeat/clmtest
 lib/heartbeat/crm.dtd
 lib/heartbeat/crm_commands.py
 lib/heartbeat/crm_commands.pyc
@@ -131,11 +131,11 @@ lib/heartbeat/crm_primitive.pyo
 lib/heartbeat/crm_utils.py
 lib/heartbeat/crm_utils.pyc
 lib/heartbeat/crm_utils.pyo
-lib/heartbeat/crmd
+@bin lib/heartbeat/crmd
 lib/heartbeat/cts
-lib/heartbeat/findif
+@bin lib/heartbeat/findif
 lib/heartbeat/ha_config
-lib/heartbeat/ha_logd
+@bin lib/heartbeat/ha_logd
 lib/heartbeat/ha_logger
 lib/heartbeat/ha_propagate
 lib/heartbeat/haresources2cib.py
@@ -145,23 +145,23 @@ lib/heartbeat/hb_setsite
 lib/heartbeat/hb_setweight
 lib/heartbeat/hb_standby
 lib/heartbeat/hb_takeover
-lib/heartbeat/heartbeat
-lib/heartbeat/ipctest
-lib/heartbeat/ipctransientclient
-lib/heartbeat/ipctransientserver
-lib/heartbeat/ipfail
-lib/heartbeat/logtest
-lib/heartbeat/lrmadmin
-lib/heartbeat/lrmd
+@bin lib/heartbeat/heartbeat
+@bin lib/heartbeat/ipctest
+@bin lib/heartbeat/ipctransientclient
+@bin lib/heartbeat/ipctransientserver
+@bin lib/heartbeat/ipfail
+@bin lib/heartbeat/logtest
+@bin lib/heartbeat/lrmadmin
+@bin lib/heartbeat/lrmd
 lib/heartbeat/lrmtest
 lib/heartbeat/mach_down
-lib/heartbeat/mgmtd
-lib/heartbeat/mgmtdtest
-lib/heartbeat/mlock
+@bin lib/heartbeat/mgmtd
+@bin lib/heartbeat/mgmtdtest
+@bin lib/heartbeat/mlock
 lib/heartbeat/ocf-returncodes
 lib/heartbeat/ocf-shellfuncs
-lib/heartbeat/pengine
-lib/heartbeat/pingd
+@bin lib/heartbeat/pengine
+@bin lib/heartbeat/pingd
 lib/heartbeat/plugins/
 lib/heartbeat/plugins/AppHBNotification/
 lib/heartbeat/plugins/AppHBNotification/recmgr.la
@@ -218,17 +218,17 @@ lib/heartbeat/plugins/test/test.so
 lib/heartbeat/plugins/tiebreaker/
 lib/heartbeat/plugins/tiebreaker/twonodes.la
 lib/heartbeat/plugins/tiebreaker/twonodes.so
-lib/heartbeat/quorumd
-lib/heartbeat/quorumdtest
-lib/heartbeat/recoverymgrd
+@bin lib/heartbeat/quorumd
+@bin lib/heartbeat/quorumdtest
+@bin lib/heartbeat/recoverymgrd
 lib/heartbeat/req_resource
-lib/heartbeat/send_arp
-lib/heartbeat/stonithd
+@bin lib/heartbeat/send_arp
+@bin lib/heartbeat/stonithd
 lib/heartbeat/stonithdtest/
-lib/heartbeat/stonithdtest/apitest
-lib/heartbeat/tengine
+@bin lib/heartbeat/stonithdtest/apitest
+@bin lib/heartbeat/tengine
 lib/heartbeat/transient-test.sh
-lib/heartbeat/ttest
+@bin lib/heartbeat/ttest
 lib/heartbeat/utillib.sh
 lib/libapphb.la
 @lib lib/libapphb.so.${LIBapphb_VERSION}
@@ -386,28 +386,28 @@ lib/stonith/plugins/stonith2/wti_nps.so
 @man man/man8/ldirectord.8
 @man man/man8/meatclient.8
 @man man/man8/stonith.8
-sbin/attrd_updater
-sbin/ccm_tool
-sbin/cibadmin
-sbin/crm_attribute
-sbin/crm_diff
-sbin/crm_failcount
-sbin/crm_master
-sbin/crm_mon
-sbin/crm_resource
+@bin sbin/attrd_updater
+@bin sbin/ccm_tool
+@bin sbin/cibadmin
+@bin sbin/crm_attribute
+@bin sbin/crm_diff
+@bin sbin/crm_failcount
+@bin sbin/crm_master
+@bin sbin/crm_mon
+@bin sbin/crm_resource
 sbin/crm_sh
-sbin/crm_standby
-sbin/crm_uuid
-sbin/crm_verify
-sbin/crmadmin
-sbin/ha_logger
+@bin sbin/crm_standby
+@bin sbin/crm_uuid
+@bin sbin/crm_verify
+@bin sbin/crmadmin
+@bin sbin/ha_logger
 sbin/hb_report
-sbin/iso8601
+@bin sbin/iso8601
 sbin/ldirectord
-sbin/meatclient
+@bin sbin/meatclient
 sbin/ocf-tester
-sbin/ptest
-sbin/stonith
+@bin sbin/ptest
+@bin sbin/stonith
 share/doc/heartbeat/
 share/doc/heartbeat/AUTHORS
 share/doc/heartbeat/ChangeLog

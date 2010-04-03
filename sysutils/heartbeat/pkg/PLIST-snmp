@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-snmp,v 1.1.1.1 2007/11/21 18:48:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-snmp,v 1.2 2010/04/03 11:54:56 kili Exp $
 lib/heartbeat/SNMPAgentSanityCheck
-lib/heartbeat/hbagent
+@bin lib/heartbeat/hbagent
 lib/stonith/plugins/stonith2/apcmastersnmp.la
 lib/stonith/plugins/stonith2/apcmastersnmp.so
 share/heartbeat/SNMPAgentSanityCheck

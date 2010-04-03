@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2009/10/31 20:27:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2010/04/03 11:54:56 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,9 +9,9 @@ COMMENT-snmp=	snmp agent for heartbeat
 DISTNAME=	obs-2.1.2-15
 VERSION=	2.1.2.15
 PKGNAME=	heartbeat-${VERSION}
-PKGNAME-main=	heartbeat-${VERSION}
-PKGNAME-gui=	heartbeat-gui-${VERSION}
-PKGNAME-snmp=	heartbeat-snmp-${VERSION}
+PKGNAME-main=	heartbeat-${VERSION}p0
+PKGNAME-gui=	heartbeat-gui-${VERSION}p0
+PKGNAME-snmp=	heartbeat-snmp-${VERSION}p0
 
 EXTRACT_SUFX=   .tar.bz2
 CATEGORIES=     sysutils
@@ -46,7 +46,7 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 
 WANTLIB-main=	${WANTLIB} crypto gcrypt gpg-error idn ncurses ssl tasn1
 LIB_DEPENDS-main=${LIB_DEPENDS} \
-		uuid.>=1:e2fs-uuid-*:sysutils/e2fsprogs,-uuid \
+		e2fs-uuid::sysutils/e2fsprogs \
 		gnutls.>=12::security/gnutls \
 		lib/libnet-1.0/net.=0:libnet->=1.0,<1.1:net/libnet/1.0 \
 		bz2.>=10::archivers/bzip2 \
@@ -62,11 +62,12 @@ LIB_DEPENDS-gui=${LIB_DEPENDS} \
 		bz2.>=10::archivers/bzip2 \
 		gnutls.>=12::security/gnutls \
 		ltdl.>=4::devel/libtool,-ltdl \
-		uuid.>=1:e2fs-uuid-*:sysutils/e2fsprogs,-uuid
+		e2fs-uuid::sysutils/e2fsprogs
 RUN_DEPENDS-gui=${MODPY_RUN_DEPENDS} \
 		::x11/py-gtk2
 
-WANTLIB-snmp=	${WANTLIB} bz2 crypto glib-2.0 kvm ltdl perl uuid wrap xml2
+WANTLIB-snmp=	${WANTLIB} bz2 crypto e2fs-uuid gcrypt glib-2.0 gnutls \
+		gpg-error kvm ltdl perl tasn1 wrap xml2
 LIB_DEPENDS-snmp=${LIB_DEPENDS} \
 		ccmclient,clm,hbclient,pils,plumb::${BASE_PKGPATH} \
 		netsnmp.>=7,netsnmpagent,netsnmphelpers,netsnmpmibs::net/net-snmp

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
+$OpenBSD: patch-configure_in,v 1.2 2010/04/03 11:54:56 kili Exp $
 --- configure.in.orig	Thu Oct 25 09:40:41 2007
-+++ configure.in	Mon Nov 12 14:03:47 2007
++++ configure.in	Sat Apr  3 11:39:37 2010
 @@ -224,7 +224,7 @@ includedir=`var "$includedir" "$exec_prefix/include"`
  oldincludedir=`var "$oldincludedir" "$exec_prefix/include"`
  infodir=`var "$infodir" "$prefix/info"`
@@ -19,6 +19,24 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
  		  	  *)		LibDirSuffix=lib64;;
  			esac;;
  		  *32-bit*)	LibDirSuffix=lib;;
+@@ -647,7 +647,7 @@ ossp)
+ no)	# Do not define anything; so use inbuilt (replace) implementation.
+   ;;
+ any)	# Default: try to discover an implementation that we can use.
+-  AC_CHECK_LIB(uuid, uuid_parse)	dnl e2fsprogs
++  AC_CHECK_LIB(e2fs-uuid, uuid_parse)	dnl e2fsprogs
+ dnl  AC_CHECK_LIB(uuid, uuid_create)	dnl ossp
+   ;;
+ *)
+@@ -665,7 +665,7 @@ esac
+ 
+ 
+ AC_MSG_CHECKING(uuid implementation:)
+-if test "$ac_cv_lib_uuid_uuid_parse" = yes; then
++if test "$ac_cv_lib_e2fs_uuid_uuid_parse" = yes; then
+   AC_MSG_RESULT(e2fsprogs)
+ elif test "$ac_cv_func_uuid_parse" = yes; then
+   AC_MSG_RESULT(native)
 @@ -817,7 +817,7 @@ AC_DEFINE(PROCROUTE, "/proc/net/route", path were to f
  
  
@@ -33,7 +51,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2007/11/21 18:48:40 ajacoutot Exp $
  
  }
 -locale_locations="/usr/share/locale /usr/lib/locale /usr/lib/nls/loc"
-+locale_locations="!!LOCALBASE!!/share/locale /usr/lib/locale /usr/lib/nls/loc"
++locale_locations="/usr/local/share/locale /usr/lib/locale /usr/lib/nls/loc"
  LOCALE=`FindADir error "locale" $locale_locations`
  if
    test  "X$LOCALE" = X
