@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/03/21 21:31:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2010/04/03 19:52:41 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	multimedia decoding library
 
 V=		1.1.18.1
 DISTNAME=	xine-lib-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
@@ -62,7 +62,7 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= autoconf
 # Should be 2.65
-AUTOCONF_VERSION= 2.62
+AUTOCONF_VERSION= 2.64
 CONFIGURE_ARGS+=--disable-aalib \
 		--disable-dxr3 \
 		--disable-fb \
