@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/09/07 21:36:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/03 00:32:56 sthen Exp $
 
 COMMENT=		Python bindings for goocanvas
 
 GNOME_PROJECT=		pygoocanvas
 GNOME_VERSION=		0.14.1
-PKGNAME=		py-goocanvas-${VERSION}p2
+PKGNAME=		py-goocanvas-${VERSION}p3
 
 HOMEPAGE=		http://live.gnome.org/GooCanvas
 
@@ -21,7 +21,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
+		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi fontconfig \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs \

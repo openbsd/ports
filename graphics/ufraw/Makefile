@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2009/11/16 12:03:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/04/03 00:32:56 sthen Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
 DISTNAME=	ufraw-0.16
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ufraw/}
@@ -28,6 +28,7 @@ LIB_DEPENDS=	gimp-2.0,gimpbase-2.0,gimpcolor-2.0,gimpconfig-2.0,gimpmath-2.0,gim
 		lcms.>=1.15::graphics/lcms \
 		bz2.>=10::archivers/bzip2 \
 		exiv2::graphics/exiv2 \
+		cfitsio::math/cfitsio \
 		gtkimageview::graphics/gtkimageview
 
 MODULES=	devel/gettext

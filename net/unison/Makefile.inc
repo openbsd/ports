@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2009/10/09 18:01:19 giovanni Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2010/04/03 00:32:56 sthen Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
@@ -30,6 +30,8 @@ USE_X11=	Yes
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender expat fontconfig freetype pixman-1 pthread-stubs
 WANTLIB += atk-1.0 iconv intl cairo glitz png xcb z
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0
 .endif
 
 # CFLAGS _must_ be empty.  This is an OCaml compiler.

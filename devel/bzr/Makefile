@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/01/09 00:21:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/03 00:32:55 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,6 +6,7 @@ COMMENT =	distributed version control system by Canonical
 
 MODPY_EGG_VERSION = 2.0.3
 DISTNAME =	bzr-${MODPY_EGG_VERSION}
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://bazaar-vcs.org/
@@ -15,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
+
+WANTLIB =	z
 
 MASTER_SITES =	http://launchpad.net/bzr/${MODPY_EGG_VERSION:C/..$//}/${MODPY_EGG_VERSION}/+download/
 

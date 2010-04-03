@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2009/12/22 13:02:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2010/04/03 00:32:56 sthen Exp $
 
 COMMENT=	GNOME web browser based on gecko
 
 DISTNAME=	galeon-2.0.7
-PKGNAME=	${DISTNAME}p10
+PKGNAME=	${DISTNAME}p11
 
 CATEGORIES=	www
 
@@ -26,7 +26,7 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4 \
 		png popt pthread smime3 softokn3 ssl ssl3 startup-notification-1 \
 		stdc++ util z avahi-client avahi-common avahi-glib \
-		pthread-stubs xcb
+		pthread-stubs xcb execinfo xcb-atom xcb-aux xcb-event
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galeon/}
 

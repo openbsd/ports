@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2009/11/18 00:49:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/03 00:32:55 sthen Exp $
 
 COMMENT=	x86 with DOS emulator targeted at playing games
 DISTNAME=	dosbox-0.73
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dosbox/}
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=		SDL c m pthread stdc++ z
+WANTLIB=		SDL X11 c m pthread z
 
 LIB_DEPENDS=	SDL_net::devel/sdl-net \
 		SDL_sound::devel/sdl-sound \
