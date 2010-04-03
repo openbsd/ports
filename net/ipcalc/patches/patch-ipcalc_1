@@ -1,0 +1,16 @@
+$OpenBSD: patch-ipcalc_1,v 1.1 2010/04/03 21:54:54 sthen Exp $
+--- ipcalc.1.orig	Sat Apr  3 22:43:17 2010
++++ ipcalc.1	Sat Apr  3 22:43:18 2010
+@@ -67,6 +67,7 @@ Operates only on network finding and splitting in whic
+ detailed information for each network.
+ .It Fl c
+ Includes the cisco wildcard syntax in the output where applicable.
++.El
+ .Sh NETMASKS
+ Netmasks can be specified in one of three ways:
+ .Bl -tag -width Ds
+@@ -77,3 +78,4 @@ set in the address.
+ A traditionnal IPv4 address such as 255.255.255.0
+ .It Cm hex notation address
+ An address in hex notation such as 0xffffff00
++.El
