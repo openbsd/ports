@@ -1,6 +1,6 @@
-$OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
+$OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.3 2010/04/03 19:39:50 naddy Exp $
 --- ctm/ctm_rmail/ctm_rmail.1.orig	Wed May  1 01:01:45 1996
-+++ ctm/ctm_rmail/ctm_rmail.1	Wed Oct 31 23:12:21 2007
++++ ctm/ctm_rmail/ctm_rmail.1	Sat Apr  3 21:36:51 2010
 @@ -6,20 +6,12 @@
  .\" Author: Stephen McKay
  .\"
@@ -89,7 +89,37 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.2 2007/10/31 23:14:46 ajacoutot Ex
  .Nm ctm_rmail :
  .Bl -tag -width indent
  .It Fl l Ar log
-@@ -112,19 +58,18 @@ without the
+@@ -92,8 +38,10 @@ error diagnostics and informational messages (other th
+ are time stamped and written to the file
+ .Em log .
+ .It Fl p Ar piecedir
+-Collect pieces of deltas in this directory.  Each piece corresponds to a
+-single mail message.  Pieces are removed when complete deltas are built.
++Collect pieces of deltas in this directory.
++Each piece corresponds to a
++single mail message.
++Pieces are removed when complete deltas are built.
+ If this flag is not given, no input files will be read, but completed
+ deltas may still be applied with
+ .Xr ctm
+@@ -101,30 +49,32 @@ if the
+ .Fl b
+ flag is given.
+ .It Fl d Ar deltadir
+-Collect completed deltas in this directory.  Deltas are built from one or
++Collect completed deltas in this directory.
++Deltas are built from one or
+ more pieces when all pieces are present.
+ .It Fl b Ar basedir
+-Apply any completed deltas to this source tree.  If this flag is not given,
+-deltas will be stored, but not applied.  The user may then apply the deltas
++Apply any completed deltas to this source tree.
++If this flag is not given,
++deltas will be stored, but not applied.
++The user may then apply the deltas
+ manually, or by using
+ .Nm ctm_rmail
+ without the
  .Fl p
  flag.
  Deltas will not be applied if they do not match the
@@ -113,7 +143,7 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.2 2007/10/31 23:14:46 ajacoutot Ex
  .It Fl f
  Fork and execute in the background while applying deltas with
  .Xr ctm .
-@@ -161,7 +106,11 @@ Pass the
+@@ -161,12 +111,17 @@ Pass the
  flag to the
  .Xr ctm
  command when applying the complete deltas, causing a more informative
@@ -126,16 +156,34 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.2 2007/10/31 23:14:46 ajacoutot Ex
  .El
  .Pp
  The file arguments (or
-@@ -196,7 +145,7 @@ CTM_MAIL END 61065
+ .Em stdin ,
+-if there are none) are scanned for delta pieces.  Multiple delta pieces
++if there are none) are scanned for delta pieces.
++Multiple delta pieces
+ can be read from a single file, so an entire maildrop can be scanned
+ and processed with a single command.
+ .Pp
+@@ -176,7 +131,8 @@ multiple times concurrently (with different input file
+ as might happen when
+ .Xr sendmail
+ .nh
+-is delivering mail asynchronously.  This is because locking is used to
++is delivering mail asynchronously.
++This is because locking is used to
+ keep things orderly.
+ .Sh FILE FORMAT
+ Following are the important parts of an actual (very small) delta piece:
+@@ -196,7 +152,8 @@ CTM_MAIL END 61065
  The subject of the message always begins with
  .Dq ctm-mail
  followed by the name of the delta, which piece this is, and how many total
 -pieces there are.  The data is bracketed by
-+pieces there are.  The data are bracketed by
++pieces there are.
++The data are bracketed by
  .Dq CTM_MAIL BEGIN
  and
  .Dq CTM_MAIL END
-@@ -217,23 +166,12 @@ You can retrieve this delta via ftpmail, or your good 
+@@ -217,19 +174,8 @@ You can retrieve this delta via ftpmail, or your good 
  .Pp
  You are then on your own!
  .Sh EXAMPLES
@@ -156,12 +204,7 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.2 2007/10/31 23:14:46 ajacoutot Ex
  message in your mailbox, assemble them into complete deltas, then apply
  any deltas built or lying around, you could use:
  .Bd -literal -offset indent
--ctm_rmail -p ~/pieces -d ~/deltas -b /usr/ctm-src-cur $MAIL
-+.Ic ctm_rmail -p ~/pieces -d ~/deltas -b /usr/ctm-src-cur $MAIL
- .Ed
- .Pp
- (Note that no messages are deleted by
-@@ -252,9 +190,9 @@ and
+@@ -252,9 +198,9 @@ and
  directories and
  .Pa /ctm/log
  file are writable by user
@@ -173,12 +216,9 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.2 2007/10/31 23:14:46 ajacoutot Ex
  .Bd -literal -offset indent
  receiver-dude: "|ctm_rmail -p /ctm/tmp -d /ctm/deltas -l /ctm/log"
  owner-receiver-dude: real_dude@wherever.you.like
-@@ -265,11 +203,50 @@ or wherever else you like.
- .Pp
- To apply all the deltas collected, and delete those applied, you could use:
+@@ -267,9 +213,49 @@ To apply all the deltas collected, and delete those ap
  .Bd -literal -offset indent
--ctm_rmail -D -d /ctm/deltas -b /ctm/src-cur -l /ctm/apply.log
-+.Ic ctm_rmail -D -d /ctm/deltas -b /ctm/src-cur -l /ctm/apply.log
+ ctm_rmail -D -d /ctm/deltas -b /ctm/src-cur -l /ctm/apply.log
  .Ed
 +.Pp
 +For maximum flexibility, consider this excerpt from a
@@ -222,11 +262,12 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.2 2007/10/31 23:14:46 ajacoutot Ex
  .Sh SECURITY
  If you automatically take your mail and pass it to a file tree patcher, you
 -might think you are handing the keys to your system to the hackers!  Happily,
-+might think you are handing the keys to your system to the crackers!  Happily,
++might think you are handing the keys to your system to the crackers!
++Happily,
  the window for mischief is quite small.
  .Nm ctm_rmail
  is careful to write only to the directories given to it (by not believing any
-@@ -302,20 +279,21 @@ must be in your
+@@ -302,37 +288,33 @@ must be in your
  .Ev PATH .
  .Sh FILES
  .Bl -tag -width indent
@@ -242,6 +283,7 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.2 2007/10/31 23:14:46 ajacoutot Ex
 -File containing name and number of the next delta to be applied to this
 +File containing the name and number of the next delta to be applied to this
  source tree.
++.El
  .\" This next request is for sections 1, 6, 7 & 8 only
  .\"     (command return values (to shell) and fprintf/stderr type diagnostics)
  .Sh DIAGNOSTICS
@@ -253,7 +295,12 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.2 2007/10/31 23:14:46 ajacoutot Ex
  .Nm ctm_rmail
  is expected to be called from a mail transfer program, and thus signals
  failure only when the input mail message should be bounced (preferably into
-@@ -326,13 +304,6 @@ is not considered an error important enough to bounce 
+-your regular maildrop, not back to the sender).  In short, failure to
++your regular maildrop, not back to the sender).
++In short, failure to
+ apply a completed delta with
+ .Xr ctm
+ is not considered an error important enough to bounce the mail, and
  .Nm ctm_rmail
  returns an exit status of 0.
  .Pp
@@ -267,7 +314,22 @@ $OpenBSD: patch-ctm_ctm_rmail_ctm_rmail_1,v 1.2 2007/10/31 23:14:46 ajacoutot Ex
  .Nm ctm_rmail
  will report messages like:
  .Bd -literal -offset indent
-@@ -359,10 +330,15 @@ turn up here too.  Error messages should be self expla
+@@ -348,21 +330,28 @@ will report:
+ ctm_rmail: message contains no delta
+ .Ed
+ .sp \n(Ppu
+-and return an exit status of 1.  You can use this to redirect wayward messages
++and return an exit status of 1.
++You can use this to redirect wayward messages
+ back into your real mailbox if your mail filter goes wonky.
+ .Pp
+ These messages go to
+ .Em stderr
+ or to the log file.  Messages from
+ .Xr ctm
+-turn up here too.  Error messages should be self explanatory.
++turn up here too.
++Error messages should be self explanatory.
  .\" The next request is for sections 2 and 3 error and signal handling only.
  .\" .Sh ERRORS
  .Sh SEE ALSO

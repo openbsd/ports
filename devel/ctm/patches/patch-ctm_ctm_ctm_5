@@ -1,6 +1,6 @@
-$OpenBSD: patch-ctm_ctm_ctm_5,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
---- ctm/ctm/ctm.5.orig	Wed Oct 31 23:06:34 2007
-+++ ctm/ctm/ctm.5	Wed Oct 31 23:06:34 2007
+$OpenBSD: patch-ctm_ctm_ctm_5,v 1.3 2010/04/03 19:39:50 naddy Exp $
+--- ctm/ctm/ctm.5.orig	Sun Mar 26 22:09:48 1995
++++ ctm/ctm/ctm.5	Sat Apr  3 21:32:44 2010
 @@ -1,5 +1,5 @@
  .\"----------------------------------------------------------------------------
 -.\""THE BEER-WARE LICENSE" (Revision 42): 
@@ -8,7 +8,7 @@ $OpenBSD: patch-ctm_ctm_ctm_5,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
  .\"<joerg@freebsd.org> wrote this file.  As long as you retain this notice you
  .\"can do whatever you want with this stuff. If we meet some day, and you think
  .\"this stuff is worth it, you can buy me a beer in return.       Joerg Wunsch
-@@ -18,66 +18,63 @@
+@@ -18,66 +18,65 @@
  .Sh NAME
  .Nm ctm
  .Nd source code mirror system
@@ -19,8 +19,10 @@ $OpenBSD: patch-ctm_ctm_ctm_5,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
 +.Nm
  transfers data in a specific file format, called a CTM delta.
 -
+-CTM deltas consist of control lines and data chunks.  Each control
 +.Pp
- CTM deltas consist of control lines and data chunks.  Each control
++CTM deltas consist of control lines and data chunks.
++Each control
  line starts with the letters
  .Dq CTM ,
 -followed by a CTM statement and control data, and ends with a '\en'
@@ -36,7 +38,8 @@ $OpenBSD: patch-ctm_ctm_ctm_5,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
  chunk.
 -A trailing newline '\en' character follows each data chunk, this
 +A trailing newline
-+character follows each data chunk. This
++character follows each data chunk.
++This
  newline is not part of the chunk and isn't included in the count.
 -
 -The CTM statements are as follows.
@@ -46,11 +49,14 @@ $OpenBSD: patch-ctm_ctm_ctm_5,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
 -
  .It _BEGIN Ar version name number timestamp prefix
 -
- This is the overall begin of a CTM delta file.  The
+-This is the overall begin of a CTM delta file.  The
++This is the overall begin of a CTM delta file.
++The
  .Ar version
- field must match the program version
- .Pq currently 2.0 .
+-field must match the program version
+-.Pq currently 2.0 .
 -.Ar Name
++field must match the program version (currently 2.0).
 +.Ar name
  is the name and
  .Ar number
@@ -98,7 +104,7 @@ $OpenBSD: patch-ctm_ctm_ctm_5,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
  .Ar gid
  .Pq numerical, decimal ,
  mode
-@@ -85,19 +82,16 @@ mode
+@@ -85,19 +84,16 @@ mode
  .Pq numerical, octal ,
  and the MD5 checksum
  .Ar md5 .
@@ -121,7 +127,7 @@ $OpenBSD: patch-ctm_ctm_ctm_5,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
  .Ar gid
  .Pq numerical, decimal ,
  new mode
-@@ -107,31 +101,23 @@ the old MD5 checksum
+@@ -107,31 +103,23 @@ the old MD5 checksum
  .Ar md5before ,
  and the new MD5 checksum
  .Ar md5after .
@@ -154,7 +160,7 @@ $OpenBSD: patch-ctm_ctm_ctm_5,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
  The original file
  .Ar name
  changed its owner to
-@@ -140,34 +126,25 @@ its group to
+@@ -140,34 +128,25 @@ its group to
  .Ar gid ,
  and/or its mode to
  .Ar mode .
@@ -190,7 +196,7 @@ $OpenBSD: patch-ctm_ctm_ctm_5,v 1.2 2007/10/31 23:14:46 ajacoutot Exp $
  CTM_BEGIN 2.0 cvs-cur 485 19950324214652Z .
  CTMFR src/sys/gnu/i386/isa/scd.c,v 5225f13aa3c7e458f9dd0d4bb637b18d
  CTMFR src/sys/gnu/i386/isa/scdreg.h,v e5af42b8a06f2c8030b93a7d71afb223
-@@ -175,35 +152,29 @@ CTMDM src/sys/gnu/i386/isa/Attic 0 552 775
+@@ -175,35 +154,29 @@ CTMDM src/sys/gnu/i386/isa/Attic 0 552 775
  CTMFS .ctm_status 545 552 664 d9ccd2a84a9dbb8db56ba85663adebf0 \\
  e2a10c6f66428981782a0a18a789ee2e 12
  cvs-cur 485
