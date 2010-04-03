@@ -1,0 +1,12 @@
+$OpenBSD: patch-openvpn_bsdauth_8,v 1.1 2010/04/03 21:13:05 schwarze Exp $
+--- openvpn_bsdauth.8.orig	Sat Apr  3 20:58:49 2010
++++ openvpn_bsdauth.8	Sat Apr  3 21:01:27 2010
+@@ -19,7 +19,7 @@
+ .Nd Authenticate users for OpenVPN
+ .Sh SYNOPSYS
+ .Nm
+-.Oo Xo Ar file Oc Xc
++.Op Ar file
+ .Sh DESCRIPTION
+ .Nm
+ is invoked by OpenVPN to authenticate a user by checking a username and a
