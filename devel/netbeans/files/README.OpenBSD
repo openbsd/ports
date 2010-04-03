@@ -1,0 +1,60 @@
+NetBeans 6.8 on OpenBSD
+=======================
+
+1. Help System
+--------------
+
+NetBeans relies on the presence of a firefox binary for access to
+the online help system. Firefox is not set up as a runtime dependency
+as this dependency is optional.
+
+If you have Firefox 3.5 on your system (but don't have Firefox 3.0)
+you may want to set up the following symbolic link:
+
+ln -s /usr/local/bin/firefox35 /usr/local/bin/firefox
+
+You can also customize this setting within the IDE by going to
+Tools> Options> General> Web Browser.
+
+2. BindException
+----------------
+
+You may get a BindException when you launch NetBeans:
+
+java.net.BindException: Can't assign requested address
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:359)
+	at java.net.ServerSocket.bind(ServerSocket.java:319)
+	at java.net.ServerSocket.<init>(ServerSocket.java:185)
+	at org.netbeans.CLIHandler$Server.<init>(CLIHandler.java:966)
+	at org.netbeans.CLIHandler.initialize(CLIHandler.java:518)
+	at org.netbeans.CLIHandler.initialize(CLIHandler.java:343)
+	at org.netbeans.MainImpl.execute(MainImpl.java:197)
+	at org.netbeans.MainImpl.main(MainImpl.java:78)
+	at org.netbeans.Main.main(Main.java:75)
+
+Bug 179113 was filed:
+	https://netbeans.org/bugzilla/show_bug.cgi?id=179113
+
+This issue should be fixed in the upcoming 6.9 release.
+
+3. Font issues in the output window
+-----------------------------------
+
+After hitting the Clean & Build or the Run buttons from
+within the IDE, the output window will show square boxes
+instead of fonts.
+
+Bug 145696 was filed but marked as WONTFIX by NetBeans developers:
+	https://netbeans.org/bugzilla/show_bug.cgi?id=145696
+
+4. Native Libraries
+-------------------
+
+The profiler3 module is not included in the port. Additionally,
+the following modules, although included, contain native code which
+will likely not work:
+- cnd3
+- dlight2
+- ruby2
+

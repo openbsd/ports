@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $OpenBSD: netbeans,v 1.1 2010/04/03 11:42:06 landry Exp $
+#
+# OpenBSD-specific startup script for NetBeans IDE
+
+NETBEANS_HOME=${TRUEPREFIX}/netbeans
+
+#-----------------------------------------------------------------------------
+# Determine configuration settings
+#-----------------------------------------------------------------------------
+
+JAVA_HOME=`javaPathHelper -h netbeans`
+
+if [ -z "${JAVA_HOME}" ]; then
+        exit 1
+fi
+
+# Check if 'netbeans' executable can be found
+if [ ! -x "${NETBEANS_HOME}/bin/netbeans" ]; then
+	echo "Error: NETBEANS_HOME is not defined correctly: ${NETBEANS_HOME}"
+	echo "       Unable to find launcher binary"
+	exit 1
+fi
+
+PATH=${JAVA_HOME}/bin:$PATH exec "${NETBEANS_HOME}/bin/netbeans" --jdkhome ${JAVA_HOME} $@

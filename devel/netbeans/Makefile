@@ -1,51 +1,52 @@
-# $OpenBSD: Makefile,v 1.11 2009/04/26 09:38:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/04/03 11:42:06 landry Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		NetBeans Java IDE
 
-DISTNAME=		netbeans-5_5-ide_sources
-PKGNAME=		netbeans-5.5p5
-CATEGORIES=		devel
+V=			6.8
+DISTNAME=		netbeans-${V}-200912041610-ml
+PKGNAME=		netbeans-${V}
+CATEGORIES=		java devel
 
 HOMEPAGE=		http://www.netbeans.org/
 
-MAINTAINER=		Ian Darwin <ian@openbsd.org>
+MAINTAINER=		Daniel Dickman <didickman@gmail.com>
 
-# CDDL
-PERMIT_PACKAGE_CDROM=	CDDL
+# CDDL and GPLv2 dual-licensed
+#
+# For external components see:
+#   http://www.netbeans.info/downloads/licence/netbeans-3rd-party.txt
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	CDDL
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://us2-mirror.netbeans.info/download/5_5/mlfcs/200612070100/
+MASTER_SITES=		http://download.netbeans.org/netbeans/sync/${V}/zip/
 EXTRACT_SUFX=		.zip
 
-VMEM_WARNING=		Yes
-
 MODULES=		java
-MODJAVA_VER=		1.5+
-
-USE_ZIP=		Yes
-
-BUILD_DEPENDS=		:apache-ant->=1.7.0:devel/apache-ant
+MODJAVA_VER=		1.6+
 
 RUN_DEPENDS=		::java/javaPathHelper
 
-MAKE_ENV=		JAVA_HOME=${JAVA_HOME} \
-			ANT_HOME=${LOCALBASE}/ant
-
+NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
-WRKDIST=		${WRKDIR}/netbeans-src
+WRKDIST=		${WRKDIR}/netbeans
 
-do-build:
-		@cd ${WRKDIST}/nbbuild && exec ${SETENV} ${MAKE_ENV} ant -q \
-		-Dant.build.javac.source="1.5" -Dant.build.javac.target="1.5"
+NB=			${PREFIX}/netbeans
 
 do-install:
-		@rm -f ${WRKDIST}/nbbuild/netbeans/bin/*.{cmd,exe}
-		@tar -czf - -C ${WRKDIST}/nbbuild netbeans | tar xzf - -C ${PREFIX}
-		@sed -e "s+%%NETBEANS_HOME%%+${TRUEPREFIX}/netbeans+g" \
-			${WRKBUILD}/netbeans.in > ${WRKBUILD}/netbeans.tmp
-		${INSTALL_SCRIPT} ${WRKBUILD}/netbeans.tmp ${PREFIX}/bin/netbeans 
+	${INSTALL_DATA_DIR} ${NB}
+	@tar -czf - -C ${WRKDIR}/netbeans . | tar xzf - -C ${NB}
+	@rm -rf ${NB}/profiler3
+	@find ${NB} -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
+		-o -name "*.bat" -o -name "*.orig" | xargs rm
+	${SUBST_CMD} -c ${FILESDIR}/netbeans \
+		${PREFIX}/bin/netbeans
+	@chmod ${BINMODE} ${PREFIX}/bin/netbeans
+	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/netbeans
+	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${NB}
 
 .include <bsd.port.mk>
