@@ -1,0 +1,11 @@
+$OpenBSD: patch-login_ldap_8,v 1.1 2010/04/03 22:08:20 sthen Exp $
+--- login_ldap.8.orig	Sat Apr  3 22:49:55 2010
++++ login_ldap.8	Sat Apr  3 22:49:59 2010
+@@ -280,6 +280,7 @@ For more examples, please see the following files.
+ .Bl -tag -compact -width x-ldap-groupfilter
+ .It Pa /usr/local/share/examples/login_ldap/login_ldap.conf
+ .It Pa /usr/local/share/examples/login_ldap/active-directory.login_ldap.conf
++.El
+ .Sh FILES
+ .Bl -tag -compact -width x-ldap-groupfilter
+ .It Pa /etc/login.conf

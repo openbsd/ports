@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2008/02/14 16:19:49 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/03 22:08:20 sthen Exp $
 
 COMMENT=	provide ldap authentication type
 
 DISTNAME=	login_ldap-3.51
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	sysutils	
 
 HOMEPAGE=	http://sourceforge.net/projects/login-ldap/
