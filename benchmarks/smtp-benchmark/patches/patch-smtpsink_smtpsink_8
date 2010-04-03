@@ -1,0 +1,31 @@
+$OpenBSD: patch-smtpsink_smtpsink_8,v 1.1 2010/04/03 20:07:06 naddy Exp $
+--- smtpsink/smtpsink.8.orig	Sat Apr  3 17:00:34 2010
++++ smtpsink/smtpsink.8	Sat Apr  3 17:00:48 2010
+@@ -35,16 +35,13 @@
+ .Nm smtpsink
+ .Op Fl v
+ .Op Fl p Ar port
+-
+ .Sh DESCRIPTION
+ The
+ .Nm
+ daemon handles incoming SMTP connections but discards any e-mail received.  It is the /dev/null for SMTP.
+-
+ If run as root
+ .Nm
+ will first chroot to /var/emtpy and change its userid to nobody.
+-
+ .Pp
+ The options are as follows:
+ .Bl -tag -width Ds
+@@ -53,10 +50,8 @@ Use only a single receiver and show data exchange on s
+ .It Fl p
+ Specify port to listen on
+ .El
+-
+ .Sh AUTHOR
+ Marc Balmer, <marc@msys.ch>
+-
+ .Sh SEE ALSO
+ .Xr smtpsend 8,
+ .Xr sendmail 8

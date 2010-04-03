@@ -1,0 +1,12 @@
+$OpenBSD: patch-tablec_tablec_8,v 1.1 2010/04/03 20:07:06 naddy Exp $
+--- tablec/tablec.8.orig	Sat Apr  3 22:02:58 2010
++++ tablec/tablec.8	Sat Apr  3 22:03:51 2010
+@@ -48,7 +48,7 @@ is a client for
+ .Xr tabled 8 .
+ .Pp
+ The command line options are as follows:
+-.Bl -tag -ohang -width Fl
++.Bl -tag -width Ds
+ .It Fl s Ar secret
+ Specify the secret used to authenticate requests.
+ .It Fl h Ar host:port

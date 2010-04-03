@@ -1,0 +1,21 @@
+$OpenBSD: patch-cnupmstat_cnupmstat_8,v 1.1 2010/04/03 20:07:06 naddy Exp $
+--- cnupmstat/cnupmstat.8.orig	Sat Apr  3 21:49:54 2010
++++ cnupmstat/cnupmstat.8	Sat Apr  3 21:51:28 2010
+@@ -49,15 +49,14 @@ prints traffic statistics collected by
+ .Xr cnupm 8
+ for specified network interfaces.
+ Traffic statistics is printed in the following format:
+-
++.Pp
+ .Aq beg_date
+ .Aq end_date
+ .Aq src_addr
+ .Aq dst_addr
+ .Aq ip_proto
+ .Aq nbytes
+-
+-
++.Pp
+ The options are follows:
+ .Bl -tag -width Ds
+ .It Fl B

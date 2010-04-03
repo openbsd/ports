@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2007/09/15 22:36:52 merdely Exp $
+# $OpenBSD: Makefile,v 1.12 2010/04/03 20:07:06 naddy Exp $
 
 COMMENT=		IPv4/IPv6 traffic collector
 
 DISTNAME=		cnupm-3.11
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		net
 
 HOMEPAGE=		http://pdp-11.org.ru/~form/cnupm

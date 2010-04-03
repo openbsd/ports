@@ -1,0 +1,33 @@
+$OpenBSD: patch-smtpsend_smtpsend_8,v 1.1 2010/04/03 20:07:06 naddy Exp $
+--- smtpsend/smtpsend.8.orig	Sat Apr  3 16:59:56 2010
++++ smtpsend/smtpsend.8	Sat Apr  3 17:00:16 2010
+@@ -35,16 +35,13 @@
+ .Nm smtpsend
+ .Op Fl v
+ .Op Fl p Ar port
+-
+ .Sh DESCRIPTION
+ .Nm
+ is used to measure the performance of SMTP MTAs.  It generates e-mail messages of a user defined size (or 1024 bytes per default) and delivers them via SMTP to a MTA.
+-
+ .Nm
+ can either generate as many messages as possible over a certain amount of time or deliver a specified number of messages.  In either case
+ .Nm
+ will measure the time elapsed and the number of messages delivered.  After the program run it will output the time elapsed, the number of messages delivered, the average number of messages delivered per minute and per second as well as the average delivery time per message.
+-
+ .Nm
+ forks one or more parallel senders each using one or more
+ sequential connections to a SMTP server to deliver one or more
+@@ -75,12 +72,9 @@ Subject of the generated messages.
+ .It Fl v
+ Increase the level of verbosity.  Use once to display SMTP traffic without DATA phase on stdout, use twice to include DATA phase int he output.
+ .El
+-
+ .Sh BUGS
+ The exit status of a forked sender is not checked. The result will not be reliable if one or more senders aborts due to an error.  This behaviour will eventually be changed.
+-
+ .Sh AUTHORS
+ .An Marc Balmer Aq marc@msys.ch
+-
+ .Sh SEE ALSO
+ .Xr smtpsink 8

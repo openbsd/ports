@@ -1,0 +1,11 @@
+$OpenBSD: patch-motif_xsudoku_1,v 1.1 2010/04/03 20:07:06 naddy Exp $
+--- motif/xsudoku.1.orig	Sat Apr  3 21:57:56 2010
++++ motif/xsudoku.1	Sat Apr  3 21:58:22 2010
+@@ -27,7 +27,6 @@
+ .Nm
+ solves sudoku puzzles for you - so you have more time to hack on
+ .Ox .
+-
+ .Pp
+ The input file is a simple text file containing the numbers of the
+ puzzle to solve and space characters for the empty fields, one row

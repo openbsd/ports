@@ -1,0 +1,12 @@
+$OpenBSD: patch-sudoku-solver_6,v 1.1 2010/04/03 20:07:06 naddy Exp $
+--- sudoku-solver.6.orig	Sat Apr  3 21:54:22 2010
++++ sudoku-solver.6	Sat Apr  3 21:57:22 2010
+@@ -30,7 +30,7 @@ solves sudoku puzzles for you - so you have more time 
+ .Ox .
+ .Pp
+ The command line options are as follows:
+-.Bl -tag -ohang -witdh Fl
++.Bl -tag -width Ds
+ .It Fl v
+ Be verbose, show on the terminal what is going on.
+ .El

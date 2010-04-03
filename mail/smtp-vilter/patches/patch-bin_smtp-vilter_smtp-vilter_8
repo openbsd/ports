@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_smtp-vilter_smtp-vilter_8,v 1.1 2009/11/26 14:02:58 jasper Exp $
---- bin/smtp-vilter/smtp-vilter.8.orig	Sun Nov 12 11:39:17 2006
-+++ bin/smtp-vilter/smtp-vilter.8	Fri Oct 23 16:09:09 2009
+$OpenBSD: patch-bin_smtp-vilter_smtp-vilter_8,v 1.2 2010/04/03 20:07:06 naddy Exp $
+--- bin/smtp-vilter/smtp-vilter.8.orig	Sun Nov 12 12:39:17 2006
++++ bin/smtp-vilter/smtp-vilter.8	Sat Apr  3 21:43:06 2010
 @@ -68,6 +68,9 @@
  .Bk -words
  .Op Fl a Ar spam-subject-prefix
@@ -21,18 +21,23 @@ $OpenBSD: patch-bin_smtp-vilter_smtp-vilter_8,v 1.1 2009/11/26 14:02:58 jasper E
  .It Fl m
  Mark all messages with
  .Dq X-SMTP-Vilter
-@@ -174,6 +180,10 @@ to set a maximum number of open file descriptors.
+@@ -174,6 +180,9 @@ to set a maximum number of open file descriptors.
  .It Fl a Ar spam-subject-prefix
  Specify a prefix that will be put in from of the Subject-line if a
  message is considered spam.
 +.It Fl H Ar header-options
 +Control various features of the internally generated header used to
 +forward messages to a spam detection backend (see "Header Options" below).
-+
  .\" .It Fl D Ar binddn
  .\" Specify the  distinguished name to use when binding to the LDAP server.
  .\" .It Fl h Ar ldaphost
-@@ -200,6 +210,45 @@ them long enough.  Remember you have to set timeouts n
+@@ -194,12 +203,50 @@ socket file is in /var/run):
+ INPUT_MAIL_FILTER(`smtp-vilter', `S=unix:/var/run/smtp-vilter.sock, F=T, T=S:10s;R:120s')
+ define(`confINPUT_MAIL_FILTERS', `smtp-vilter')
+ .Ed
+-
+ Configure your timeouts to sane values.  If you use Spamassassin make
+ them long enough.  Remember you have to set timeouts not only in the
  smtp-vilter and backend config files, but in your sendmail .mc config
  file a s well as shown in the example above which configures a sending
  timeout of 10 seconds and a receiving timeout of 120 seconds.
@@ -78,7 +83,7 @@ $OpenBSD: patch-bin_smtp-vilter_smtp-vilter_8,v 1.1 2009/11/26 14:02:58 jasper E
  .Sh FILES
  .Bl -tag -width "/etc/smtp-vilter/smtp-vilter.conf" -COMPACT
  .It Pa /etc/smtp-vilter/smtp-vilter.conf
-@@ -265,16 +314,7 @@ based scanning.  If both
+@@ -265,15 +312,6 @@ based scanning.  If both
  .Nm
  and the scan engine are chrooted to different directories, they must
  communicate using TCP/IP sockets.
@@ -91,8 +96,6 @@ $OpenBSD: patch-bin_smtp-vilter_smtp-vilter_8,v 1.1 2009/11/26 14:02:58 jasper E
 -Postfix does not automatically set the _ macro, this must be added
 -to main.cf manuall:
 -milter_connect_macros = j {daemon_name} v _
--.\" .Sh BUGS
-+\" .Sh BUGS
+ .\" .Sh BUGS
  .\" .Ss LDAP functionality
  .\" LDAP functionality is only available when
- .\" .Nm

@@ -1,0 +1,12 @@
+$OpenBSD: patch-tabled_8,v 1.1 2010/04/03 20:07:06 naddy Exp $
+--- tabled.8.orig	Sat Apr  3 22:00:36 2010
++++ tabled.8	Sat Apr  3 22:02:21 2010
+@@ -50,7 +50,7 @@ before starting
+ .Nm .
+ .Pp
+ The command line options are as follows:
+-.Bl -tag -ohang -width Fl
++.Bl -tag -width Ds
+ .It Fl C Ar configfile
+ Specify an alternate location of the configfile.
+ .It Fl s Ar fifo
