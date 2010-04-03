@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.38 2009/11/21 13:29:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/04/03 10:37:06 ajacoutot Exp $
 
 COMMENT=		library for layout and rendering of text
 
-V=			1.24.5
+V=			1.28.0
 DISTNAME=		pango-${V}
-PKGNAME=		${DISTNAME}p0
 
-SHARED_LIBS += pango-1.0	   1801.0    # .2400.5
-SHARED_LIBS += pangox-1.0	   1801.0    # .2400.5
-SHARED_LIBS += pangoft2-1.0	   1801.0    # .2400.5
-SHARED_LIBS += pangoxft-1.0	   1801.0    # .2400.5
-SHARED_LIBS += pangocairo-1.0	   1801.0    # .2400.5
+SHARED_LIBS +=  pango-1.0            1802.0   # .2800.0
+SHARED_LIBS +=  pangox-1.0           1802.0   # .2800.0
+SHARED_LIBS +=  pangoft2-1.0         1802.0   # .2800.0
+SHARED_LIBS +=  pangoxft-1.0         1802.0   # .2800.0
+SHARED_LIBS +=  pangocairo-1.0       1802.0   # .2800.0
 
 CATEGORIES=		devel x11
 
@@ -38,7 +37,10 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--disable-gtk-doc \
+			--disable-silent-rules \
+			--disable-introspection
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
 
 FAKE_FLAGS=		aliasdir=${PREFIX}/share/examples/pango \

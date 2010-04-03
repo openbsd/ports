@@ -1,0 +1,19 @@
+$OpenBSD: patch-pango_opentype_hb-private_h,v 1.1 2010/04/03 10:37:06 ajacoutot Exp $
+--- pango/opentype/hb-private.h.orig	Mon Mar 29 23:13:20 2010
++++ pango/opentype/hb-private.h	Wed Mar 31 10:34:58 2010
+@@ -168,6 +168,15 @@ typedef GStaticMutex hb_mutex_t;
+ #define HB_GNUC_CONST
+ #endif
+ 
++// __attribute__((unused)) works with gcc3.3 but not g++3.3
++#if __GNUC__ == 3 && __GNUC_MINOR__ == 3 && defined(__cplusplus)
++#undef HB_GNUC_UNUSED
++#undef HB_GNUC_PURE
++#undef HB_GNUC_CONST
++#define HB_GNUC_UNUSED
++#define HB_GNUC_PURE
++#define HB_GNUC_CONST
++#endif
+ 
+ #if (defined(__WIN32__) && !defined(__WINE__)) || defined(_MSC_VER)
+ #define snprintf _snprintf
