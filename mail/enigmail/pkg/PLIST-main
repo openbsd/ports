@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/09/18 20:33:50 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2010/04/03 09:46:09 landry Exp $
+@conflict enigmail-<1.0
+@pkgpath mail/enigmail
 mozilla-thunderbird/extensions/${GUID}/
 mozilla-thunderbird/extensions/${GUID}/chrome/
 mozilla-thunderbird/extensions/${GUID}/chrome.manifest
-mozilla-thunderbird/extensions/${GUID}/chrome/enigmail-locale.jar
-mozilla-thunderbird/extensions/${GUID}/chrome/enigmail-skin-seamonkey.jar
-mozilla-thunderbird/extensions/${GUID}/chrome/enigmail-skin.jar
 mozilla-thunderbird/extensions/${GUID}/chrome/enigmail.jar
 mozilla-thunderbird/extensions/${GUID}/components/
 mozilla-thunderbird/extensions/${GUID}/components/enigMsgCompFields.js
@@ -19,7 +18,7 @@ mozilla-thunderbird/extensions/${GUID}/defaults/pref/
 mozilla-thunderbird/extensions/${GUID}/defaults/pref/enigmail.js
 mozilla-thunderbird/extensions/${GUID}/defaults/preferences/
 mozilla-thunderbird/extensions/${GUID}/defaults/preferences/enigmail.js
-mozilla-thunderbird/extensions/${GUID}/install.js
 mozilla-thunderbird/extensions/${GUID}/install.rdf
 mozilla-thunderbird/extensions/${GUID}/wrappers/
+mozilla-thunderbird/extensions/${GUID}/wrappers/gpg-agent-wrapper.sh
 mozilla-thunderbird/extensions/${GUID}/wrappers/gpg-wrapper.sh
