@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.2 2009/03/16 10:46:52 landry Exp $
---- configure.orig	Thu Jul 17 13:16:30 2008
-+++ configure	Mon Mar 16 11:25:40 2009
-@@ -8354,7 +8354,7 @@ if test "${ac_cv_lib_ext2fs_ext2fs_open+set}" = set; t
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+$OpenBSD: patch-configure,v 1.3 2010/04/03 11:54:19 kili Exp $
+--- configure.orig	Wed May  6 10:01:29 2009
++++ configure	Sat Apr  3 11:14:32 2010
+@@ -9876,7 +9876,7 @@ if test "${ac_cv_lib_ext2fs_ext2fs_open+set}" = set; t
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lext2fs  $LIBS"
@@ -10,8 +10,8 @@ $OpenBSD: patch-configure,v 1.2 2009/03/16 10:46:52 landry Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -8433,7 +8433,7 @@ if test "${ac_cv_lib_com_err_com_err+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -9959,7 +9959,7 @@ if test "${ac_cv_lib_com_err_com_err+set}" = set; then
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lcom_err  $LIBS"
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.2 2009/03/16 10:46:52 landry Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -8496,7 +8496,7 @@ cat >>confdefs.h <<\_ACEOF
+@@ -10026,7 +10026,7 @@ cat >>confdefs.h <<\_ACEOF
  _ACEOF
  
        if test "${com_err_lib_a}" = ""; then
@@ -28,12 +28,30 @@ $OpenBSD: patch-configure,v 1.2 2009/03/16 10:46:52 landry Exp $
        else
          LIBS="$LIBS ${com_err_lib_a}"
        fi
-@@ -8950,7 +8950,7 @@ fi
+@@ -10522,7 +10522,7 @@ fi
  
  
  
 -for ac_header in sys/uuid.h uuid/uuid.h uuid.h
 +for ac_header in sys/uuid.h uuid/uuid.h
  do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
+@@ -10807,7 +10807,7 @@ return uuid_create ();
+   return 0;
+ }
+ _ACEOF
+-for ac_lib in '' uuid; do
++for ac_lib in '' e2fs-uuid; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
+@@ -11005,7 +11005,7 @@ return uuid_generate ();
+   return 0;
+ }
+ _ACEOF
+-for ac_lib in '' uuid; do
++for ac_lib in '' e2fs-uuid; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
