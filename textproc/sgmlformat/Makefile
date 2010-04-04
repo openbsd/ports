@@ -4,12 +4,13 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.9 1998/02/21 21:59:37 jfieber Exp $
-# $OpenBSD: Makefile,v 1.16 2007/09/15 20:59:42 merdely Exp $
+# $OpenBSD: Makefile,v 1.17 2010/04/04 18:40:19 naddy Exp $
 #
 
 COMMENT=	generate groff/HTML from linuxdoc/docbook SGML documents
 
 DISTNAME=	sgmlformat-1.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	textproc print
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 

@@ -1,0 +1,10 @@
+$OpenBSD: patch-sgmlfmt_sgmlfmt_1,v 1.1 2010/04/04 18:40:19 naddy Exp $
+--- sgmlfmt/sgmlfmt.1.orig	Sun Apr  4 20:37:10 2010
++++ sgmlfmt/sgmlfmt.1	Sun Apr  4 20:38:56 2010
+@@ -1,5 +1,6 @@
+ .Dd January 17, 1997
+ .Dt SGMLFMT 1
++.Os
+ .Sh NAME
+ .Nm sgmlfmt
+ .Nd Formats SGML files tagged according to the linuxdoc DTD.
