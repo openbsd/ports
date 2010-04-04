@@ -1,9 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2009/05/15 05:10:04 sturm Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2010/04/04 15:02:05 naddy Exp $
 
 On sparc64 there are some unexplainable format warnings, maybe a gcc bug.
 
---- Makefile.in.orig	Thu May 14 13:21:54 2009
-+++ Makefile.in	Thu May 14 13:22:04 2009
+Our groff is too old.  We need to pre-format the man pages with mandoc.
+
+--- Makefile.in.orig	Wed Aug  5 07:22:37 2009
++++ Makefile.in	Sun Apr  4 00:00:28 2010
 @@ -788,7 +788,7 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-bsdtar --enable-b
  # Especially for early development, we want to be a little
  # aggressive about diagnosing build problems; this can get
@@ -13,3 +15,23 @@ On sparc64 there are some unexplainable format warnings, maybe a gcc bug.
  
  #
  # What to include in the distribution
+@@ -6707,3 +6707,19 @@ cpio/test/list.h: Makefile
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
++
++.for s in 1 3 5
++.SUFFIXES: .0 .$s
++.$s.0:
++	mandoc $< >$@
++
++install-man: install-cat$s
++install-cat$s:
++	@for file in ${man_MANS:M*.$s:R:=.0}; do \
++	    $(MKDIR_P) "$(DESTDIR)$(mandir)/cat$s" ; \
++	    echo "$(INSTALL_DATA) '$$file' '$(DESTDIR)$(mandir)/cat$s/'"; \
++	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(mandir)/cat$s/"; \
++	done
++.endfor
++
++all-am: ${man_MANS:R:=.0}
