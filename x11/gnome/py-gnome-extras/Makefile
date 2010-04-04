@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2009/11/24 09:01:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/04/04 10:50:21 sthen Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
 GNOME_PROJECT=	gnome-python-extras
 GNOME_VERSION=	2.25.3
-PKGNAME=	py-gnome-extras-${VERSION}p2
+PKGNAME=	py-gnome-extras-${VERSION}p3
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -24,7 +24,7 @@ WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png popt pthread-stubs ssl stdc++
-WANTLIB += util xcb xml2 z
+WANTLIB += util xcb xml2 z sqlite3
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -37,7 +37,8 @@ LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8,<1.9:devel/x
 			enchant::textproc/enchant \
 			gdl-1::x11/gnome/gdl \
 			gtkhtml-2::x11/gnome/libgtkhtml \
-			gda-4.0::x11/gnome/libgda
+			gda-4.0::x11/gnome/libgda \
+			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome
 REGRESS_DEPENDS=	:${PKGNAME}:${BUILD_PKGPATH}
 

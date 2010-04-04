@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2009/11/29 09:23:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/04/04 10:50:21 sthen Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.28.0
-PKGNAME=		py-gnome-desktop-${VERSION}p1
+PKGNAME=		py-gnome-desktop-${VERSION}p2
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -30,7 +30,7 @@ WANTLIB += icalvcal krb5 kvm ltdl m nspr4 nss3 ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread-stubs
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 startup-notification-1
 WANTLIB += tasn1 util vorbis vorbisfile wnck-1 xcb xcb-atom xcb-aux
-WANTLIB += xcb-event xml2 z
+WANTLIB += xcb-event xml2 z pthread
 
 MODULES=		devel/gettext \
 			lang/python \

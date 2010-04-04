@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2010/03/21 11:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2010/04/04 10:50:21 sthen Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -6,7 +6,7 @@ COMMENT-battstat=	GNOME applet for monitoring battery level
 GNOME_PROJECT=		gnome-applets
 GNOME_VERSION=		2.28.0
 
-PKGNAME-main=		gnome-applets2-${VERSION}p6
+PKGNAME-main=		gnome-applets2-${VERSION}p7
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}p1
 
 CATEGORIES=		x11
@@ -70,7 +70,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 WANTLIB-main=		${WANTLIB} \
 			XRes kvm xkbfile gcrypt gnome-desktop-2 gnutls \
 			gpg-error gweather execinfo xcb-atom xcb-aux xcb-event \
-			soup-2.4 startup-notification-1 tasn1 wnck-1
+			soup-2.4 startup-notification-1 tasn1 wnck-1 \
+			gnome-keyring proxy soup-gnome-2.4 sqlite3
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-applets2
 

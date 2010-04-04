@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/21 12:20:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/04 10:50:21 sthen Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		2.28.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://live.gnome.org/EyeOfGnome/Plugins
@@ -22,6 +23,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z
+WANTLIB += gnome-keyring proxy soup-gnome-2.4
 
 MODULES=		devel/gettext \
 			lang/python \

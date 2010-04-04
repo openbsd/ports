@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/21 20:46:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/04 10:50:21 sthen Exp $
 
 COMMENT=		avant window navigator
 
 V=			0.3.2
 DISTNAME=		avant-window-navigator-$V
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 
 SHARED_LIBS +=	awn                  0.0      # .0.1
 
@@ -28,15 +28,15 @@ MODULES=		devel/gettext \
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
-WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 c
+WANTLIB += Xrender atk-1.0 avahi-client avahi-common
+WANTLIB += avahi-glib bonobo-activation bonobo-2 c
 WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
-WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
-WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += glitz gmodule-2.0 gnome-2
+WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png popt pthread ssl startup-notification-1 util xml2
-WANTLIB += z pthread-stubs xcb
+WANTLIB += z pthread-stubs xcb execinfo ffi xcb-atom xcb-aux xcb-event
 
 BUILD_DEPENDS=		::devel/py-xdg \
 			::x11/py-gtk2
