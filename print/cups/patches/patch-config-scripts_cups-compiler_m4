@@ -1,6 +1,6 @@
-$OpenBSD: patch-config-scripts_cups-compiler_m4,v 1.1 2010/03/31 16:20:02 ajacoutot Exp $
---- config-scripts/cups-compiler.m4.orig	Mon Aug 31 16:45:57 2009
-+++ config-scripts/cups-compiler.m4	Mon Aug 31 16:46:16 2009
+$OpenBSD: patch-config-scripts_cups-compiler_m4,v 1.2 2010/04/04 18:42:14 kili Exp $
+--- config-scripts/cups-compiler.m4.orig	Sun May 17 02:13:47 2009
++++ config-scripts/cups-compiler.m4	Sun Apr  4 20:10:14 2010
 @@ -123,7 +123,7 @@ if test -n "$GCC"; then
  	if test -z "$OPTIM"; then
  		if test "x$with_optim" = x; then
@@ -10,3 +10,19 @@ $OpenBSD: patch-config-scripts_cups-compiler_m4,v 1.1 2010/03/31 16:20:02 ajacou
  		else
  			OPTIM="$with_optim $OPTIM"
  		fi
+@@ -152,10 +152,11 @@ if test -n "$GCC"; then
+ 	AC_MSG_CHECKING(if GCC supports -pie)
+ 	OLDCFLAGS="$CFLAGS"
+ 	CFLAGS="$CFLAGS -pie -fPIE"
+-	AC_TRY_COMPILE(,,
+-		PIEFLAGS="-pie -fPIE"
+-		AC_MSG_RESULT(yes),
+-		AC_MSG_RESULT(no))
++	AC_RUN_IFELSE(
++	  AC_LANG_PROGRAM(,[[return 0;]]),
++	  PIEFLAGS="-pie -fPIE"
++	  AC_MSG_RESULT(yes),
++	  AC_MSG_RESULT(no))
+ 	CFLAGS="$OLDCFLAGS"
+ 
+ 	if test "x$with_optim" = x; then
