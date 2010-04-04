@@ -1,0 +1,42 @@
+$OpenBSD: patch-openpoppassd_8,v 1.1 2010/04/04 15:34:01 naddy Exp $
+--- openpoppassd.8.orig	Sun Apr  4 17:25:38 2010
++++ openpoppassd.8	Sun Apr  4 17:24:44 2010
+@@ -32,7 +32,7 @@ The
+ .Nm
+ daemon enables applications to change user passwords via a local TCP/IP socket
+ (127.0.0.1:106). It speaks the following FTP like protocol:
+-
++.Bd -literal
+   S: 200 openpoppassd vX.Y hello, who are you?
+   E: user YOURLOGINNAME
+   S: 200 your password please.
+@@ -44,6 +44,7 @@ daemon enables applications to change user passwords v
+   S: 200 Bye.
+   S: <closes connection>
+   E: <closes connection>
++.Ed
+ .Pp
+ .Nm
+ is usually started at boot time, and can be enabled by
+@@ -71,18 +72,17 @@ If this option is specified,
+ .Nm
+ will run in the foreground and log to
+ .Em stderr .
++.El
+ .Sh FILES
+ .Xr "/etc/services"
+ .Sh SEE ALSO
+ .Xr passwd 1 ,
+ .Xr services 5 ,
+ .Xr ntpd 8
+-
+-.Xr http://www.ostc.de/projects.html#openpoppassd
+-
++.Pp
++http://www.ostc.de/projects.html#openpoppassd
+ .Sh AUTHORS
+ Thomas Birnthaler and Hermann Gottschalk <openpoppassd@ostc.de>
+-
+ .Sh HISTORY
+ The
+ .Nm
