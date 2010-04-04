@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2010/03/26 08:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.230 2010/04/04 16:05:03 jasper Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -60,6 +60,7 @@
      SUBDIR += keychain
      SUBDIR += klaxon
      SUBDIR += l0phtcrack
+     SUBDIR += libassuan
      SUBDIR += libfprint
      SUBDIR += libfwbuilder
      SUBDIR += libgcrypt
