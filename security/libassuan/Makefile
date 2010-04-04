@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/04 16:03:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/04 16:07:52 jasper Exp $
 
 COMMENT=	IPC library used by GnuPG and gpgme
 
 DISTNAME=	libassuan-1.0.0
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	security devel
 
@@ -19,8 +20,6 @@ USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 
-.if ${MACHINE_ARCH} == "amd64"
 CFLAGS+=		-fPIC
-.endif
 
 .include <bsd.port.mk>
