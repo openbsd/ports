@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/03/21 10:45:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/04 15:49:06 jasper Exp $
 
 COMMENT =		open source MPI-2 implementation
 
 V=			1.4.1
 DISTNAME =		openmpi-$V
+PKGNAME =		${DISTNAME}p0
 
 SHARED_LIBS =		mca_common_sm 1.0 \
 			mpi 0.1 \
