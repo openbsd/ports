@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/22 16:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/04 15:35:59 ajacoutot Exp $
 
 COMMENT=	clone of the classic Frog Bog game
 
-DISTNAME=	batrachians-0.1.2
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	batrachians-0.1.3
 CATEGORIES=	games
 
 HOMEPAGE=	http://sarrazip.com/dev/batrachians.html
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +20,7 @@ WANTLIB=	SDL SDL_image SDL_mixer c m pthread stdc++
 USE_X11=	Yes
 
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	flatzebra-0.1.>=1.0::devel/flatzebra
+LIB_DEPENDS=	flatzebra-0.1.>=1.0:flatzebra->=0.1.4:devel/flatzebra
 
 CONFIGURE_STYLE=gnu
 
