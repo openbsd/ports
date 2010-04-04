@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2009/03/13 17:15:44 naddy Exp $
---- src/Makefile.in.orig	Fri Feb 27 03:52:26 2009
-+++ src/Makefile.in	Fri Mar  6 17:46:40 2009
-@@ -723,8 +723,8 @@ uninstall-am: uninstall-binPROGRAMS uninstall-desktope
+$OpenBSD: patch-src_Makefile_in,v 1.6 2010/04/04 15:37:19 ajacoutot Exp $
+--- src/Makefile.in.orig	Wed Mar 31 04:28:08 2010
++++ src/Makefile.in	Thu Apr  1 09:55:35 2010
+@@ -785,8 +785,8 @@ uninstall-am: uninstall-binPROGRAMS uninstall-desktope
  # Only test the --version option if GNU getopt is available:
  @HAVE_GETOPT_LONG_TRUE@check: all
  @HAVE_GETOPT_LONG_TRUE@	test "`./$(PACKAGE) --version`" = "$(PACKAGE) $(VERSION)"
