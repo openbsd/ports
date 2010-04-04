@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/09/04 18:50:57 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/04 10:48:59 sthen Exp $
 
 COMMENT=	Xfce4 places panel plugin
 
 XFCE_VERSION=	1.2.0
 XFCE_PLUGIN=	places
+PKGNAME=	${DISTNAME:S/-plugin//}p0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,6 +22,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png pthread rpcsvc startup-notification-1 \
-		stdc++ xfce4util xfcegui4 z pthread-stubs xcb
+		stdc++ xfce4util xfcegui4 z pthread-stubs xcb execinfo \
+		gamin-1 xcb-atom xcb-aux xcb-event
 
 .include <bsd.port.mk>

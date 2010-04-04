@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2009/12/21 16:07:44 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/04 10:48:59 sthen Exp $
 
 COMMENT=	Xfce4 mailboxes monitor panel plugin
 
 XFCE_VERSION=	1.1.0
 XFCE_PLUGIN=	mailwatch
-PKGNAME=	${DISTNAME:S/-plugin//}p2
+PKGNAME=	${DISTNAME:S/-plugin//}p3
 
 HOMEPAGE=	http://spuriousinterrupt.org/projects/mailwatch
 
@@ -25,6 +25,7 @@ WANTLIB=	ICE SM X11 Xdmcp Xrender Xau Xdamage fontconfig freetype \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 pthread \
 		pangoft2-1.0 pangocairo-1.0 pixman-1 cairo glitz png \
 		gthread-2.0 startup-notification-1 xfce4util xfcegui4 \
-		gcrypt gpg-error gio-2.0 tasn1 pthread-stubs xcb
+		gcrypt gpg-error gio-2.0 tasn1 pthread-stubs xcb \
+		execinfo xcb-atom xcb-aux xcb-event
 
 .include <bsd.port.mk>

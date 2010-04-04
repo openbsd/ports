@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/17 22:02:31 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/04 10:48:59 sthen Exp $
 
 COMMENT =	Xfce4 quicklauncher panel plugin
 
 XFCE_VERSION =	1.9.4
 XFCE_PLUGIN =	quicklauncher
+PKGNAME =	${DISTNAME:S/-plugin//}p0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -18,7 +19,7 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 pthread-stubs xcb \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png xfce4util xfcegui4 z \
-		pcre startup-notification-1
+		pcre startup-notification-1 execinfo xcb-atom xcb-aux xcb-event
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/panel-plugin/callbacks.c
