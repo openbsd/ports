@@ -1,37 +1,25 @@
-$OpenBSD: patch-src_screen_c,v 1.1 2008/07/21 07:53:03 bernd Exp $
---- src/screen.c.orig	Wed Sep 19 19:27:39 2007
-+++ src/screen.c	Sat Jul 12 10:53:09 2008
-@@ -23,6 +23,7 @@
- #include <stdarg.h>
+$OpenBSD: patch-src_screen_c,v 1.2 2010/04/05 19:05:11 landry Exp $
+--- src/screen.c.orig	Sun Jan 17 16:54:56 2010
++++ src/screen.c	Sun Mar 21 08:36:06 2010
+@@ -47,6 +47,7 @@
  #include <string.h>
  #include <time.h>
-+#include <termios.h>
  #include <locale.h>
- #include <glib.h>
- #include <ncurses.h>
-@@ -449,13 +450,22 @@ void
- screen_resize(void)
++#include <termios.h>
+ 
+ #ifndef NCMPC_MINI
+ /** welcome message time [s] */
+@@ -200,6 +201,13 @@ screen_exit(void)
+ void
+ screen_resize(struct mpdclient *c)
  {
-   gint i;
-+  struct winsize ws;
- 
-+  if (ioctl(fileno(stdout), TIOCGWINSZ, &ws) == 0) {
-+	  LINES = ws.ws_row;
-+	  COLS = ws.ws_col;
-+  }
++	struct winsize ws;
 +
-   D("Resize rows %d->%d, cols %d->%d\n",screen->rows,LINES,screen->cols,COLS);
-   if( COLS<SCREEN_MIN_COLS || LINES<SCREEN_MIN_ROWS )
-     {
--      screen_exit();
--      fprintf(stderr, _("Error: Screen to small!\n"));
--      exit(EXIT_FAILURE);
-+      /*
-+       * Do not resize under a certain minimum, because that will fuck up the
-+       * playlist amongst other things
-+       */
-+      LINES = SCREEN_MIN_ROWS;
-+      COLS = SCREEN_MIN_COLS;
-     }
- 
-   resizeterm(LINES, COLS);
++	if (ioctl(fileno(stdout), TIOCGWINSZ, &ws) == 0) {
++		LINES = ws.ws_row;
++		COLS = ws.ws_col;
++	}
++
+ 	if (COLS<SCREEN_MIN_COLS || LINES<SCREEN_MIN_ROWS) {
+ 		screen_exit();
+ 		fprintf(stderr, "%s", _("Error: Screen too small"));
