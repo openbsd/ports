@@ -1,0 +1,12 @@
+$OpenBSD: patch-NAnt_build,v 1.1 2010/04/05 10:02:05 robert Exp $
+--- NAnt.build.orig	Mon Apr  5 11:57:03 2010
++++ NAnt.build	Mon Apr  5 11:57:59 2010
+@@ -830,7 +830,7 @@
+             the wrapper is created
+         -->
+         <echo file="${wrapper}" append="false">#!/bin/sh</echo>
+-        <echo file="${wrapper}" append="true">exec ${path::combine(prefix, 'bin')}/mono ${path::combine(install.copylocation, 'bin')}/NAnt.exe "$@"</echo>
++	<echo file="${wrapper}" append="true">exec ${path::combine(prefix, 'bin')}/mono ${path::combine(install.vprefix, 'bin')}/NAnt.exe "$@"</echo>
+         <exec program="chmod" commandline="a+x ${path::combine(install.bindir, 'nant')}"/>
+     </target>
+     <target name="rpm" depends="init, build">
