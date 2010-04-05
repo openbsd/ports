@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2010/03/29 22:04:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.241 2010/04/05 18:59:42 landry Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -68,6 +68,7 @@
      SUBDIR += libmp3splt
      SUBDIR += libmpcdec
      SUBDIR += libmpd
+     SUBDIR += libmpdclient
      SUBDIR += libmusicbrainz
      SUBDIR += libnjb
      SUBDIR += libogg
