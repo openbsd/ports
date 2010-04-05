@@ -1,12 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/23 12:11:33 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/05 20:27:13 benoit Exp $
 @bin bin/mkvextract
 @bin bin/mkvinfo
 @bin bin/mkvmerge
 @bin bin/mkvpropedit
+man/ja.po/
+man/ja.po/mkvextract.1
+man/ja.po/mkvinfo.1
+man/ja.po/mkvmerge.1
+man/ja.po/mkvpropedit.1
 @man man/man1/mkvextract.1
 @man man/man1/mkvinfo.1
 @man man/man1/mkvmerge.1
 @man man/man1/mkvpropedit.1
+man/zh_CN.po/
+man/zh_CN.po/mkvextract.1
+man/zh_CN.po/mkvinfo.1
+man/zh_CN.po/mkvmerge.1
+man/zh_CN.po/mkvpropedit.1
 share/locale/
 share/locale/de/
 share/locale/de/LC_MESSAGES/
@@ -37,7 +47,6 @@ share/mkvtoolnix/images/textsubtitlestrackoptions.gif
 share/mkvtoolnix/images/trackselection.gif
 share/mkvtoolnix/images/videotrackoptions.gif
 share/mkvtoolnix/mkvmerge-gui.hhc
-share/mkvtoolnix/mkvmerge-gui.hhk
 share/mkvtoolnix/mkvmerge-gui.hhp
 share/mkvtoolnix/mkvmerge-gui.html
 !%%no_x11%%
