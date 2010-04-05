@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/03/29 07:44:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/05 10:44:43 robert Exp $
 
 COMMENT=	IDE for the .NET platform
 DISTNAME=	monodevelop-2.2.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/monodevelop/
 EXTRACT_SUFX=	.tar.bz2
