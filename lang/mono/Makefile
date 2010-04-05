@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/04/01 21:53:51 robert Exp $
+# $OpenBSD: Makefile,v 1.35 2010/04/05 01:02:57 robert Exp $
 
 # sync with net/avahi,-mono
 ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
 COMMENT=	cross platform, open source .NET developement framework
 
 DISTNAME=	mono-2.6.3
-PKGNAME=	${DISTNAME}p13
+PKGNAME=	${DISTNAME}p14
 
 CATEGORIES=	lang devel
 
@@ -58,8 +58,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-interp=no \
 		--with-sigaltstack=no \
 		--with-libgdiplus=installed \
-		--enable-quiet-build=no \
-		--disable-shared-handles
+		--enable-quiet-build=no
 
 REGRESS_TARGET=check
 
