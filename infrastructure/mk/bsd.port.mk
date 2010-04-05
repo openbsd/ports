@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.986 2010/03/22 20:19:12 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.987 2010/04/05 14:02:50 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -103,7 +103,7 @@ _ALL_VARIABLES += DISTFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 .if ${DPB:L:Mall}
 _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	ONLY_FOR_ARCHS NOT_FOR_ARCHS BROKEN COMES_WITH \
-	REGRESS_DEPENDS USE_GMAKE MODULES FLAVORS \
+	REGRESS_DEPENDS USE_GMAKE USE_GROFF MODULES FLAVORS \
 	NO_BUILD NO_REGRESS SHARED_ONLY PSEUDO_FLAVORS \
 	REGRESS_IS_INTERACTIVE \
 	PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP \
@@ -334,7 +334,6 @@ MAKE_PROGRAM = ${GMAKE}
 .else
 MAKE_PROGRAM = ${MAKE}
 .endif
-
 USE_LIBTOOL ?= No
 _lt_libs =
 .if ${USE_LIBTOOL:L} != "no"
@@ -465,6 +464,12 @@ ERRORS += "   (Possible flavors are: ${FLAVORS})."
 .  else
 ERRORS += "Fatal: no flavors for this port."
 .  endif
+.endif
+
+USE_GROFF ?= No
+.if ${USE_GROFF:L} == "yes"
+BUILD_DEPENDS += ::textproc/groff
+_PKG_ARGS += -DUSE_GROFF=1
 .endif
 
 PKG_SUFX ?= .tgz
