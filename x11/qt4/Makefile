@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2009/10/15 14:30:07 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2010/04/05 09:54:35 landry Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -117,6 +117,12 @@ CONFIGURE_ARGS += 	-I${LOCALBASE}/include/postgresql \
 
 CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" \
 			X11BASE=${X11BASE}
+
+# fix to avoid gcc generating a huge uncompilable intermediate assembly
+.if ${MACHINE_ARCH} == "hppa"
+CXXFLAGS =		-finline-limit=60
+CONFIGURE_ENV +=	OPENSOURCE_CXXFLAGS=${CXXFLAGS}
+.endif
 
 BUILD_DEPENDS +=	::print/cups
 BUILD_DEPENDS +=	::x11/dbus
