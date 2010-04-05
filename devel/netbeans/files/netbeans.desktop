@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=NetBeans
+GenericName=NetBeans IDE
+Comment=NetBeans Integrated Development Environment
+Icon=${TRUEPREFIX}/netbeans/nb6.8/netbeans.png
+Exec=${TRUEPREFIX}/bin/netbeans
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;

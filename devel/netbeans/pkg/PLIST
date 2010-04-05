@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/04/03 11:42:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/04/05 17:09:17 landry Exp $
 bin/netbeans
 netbeans/
 netbeans/CREDITS.html
@@ -9402,3 +9402,6 @@ netbeans/websvccommon1/update_tracking/org-netbeans-modules-websvc-saas-services
 netbeans/websvccommon1/update_tracking/org-netbeans-modules-websvc-saas-services-zvents.xml
 netbeans/websvccommon1/update_tracking/org-netbeans-modules-websvc-saas-ui.xml
 @unexec rm -rf %D/netbeans/nb6.8/servicetag
+share/applications/netbeans.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
