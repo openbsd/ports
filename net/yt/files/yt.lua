@@ -1,5 +1,5 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.26 2009/09/18 21:10:03 martynas Exp $
+-- $OpenBSD: yt.lua,v 1.27 2010/04/05 15:13:27 jsg Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -60,24 +60,31 @@ for i = 1, table.getn(urls) do
    body = table.concat(t)
 
    -- Look for the video title.
-   pattern = "<title>(.-)</title>"
+   pattern = "<title>%s*(.-)%s*</title>"
    title = assert(string.match(body, pattern))
 
    -- Fetch high quality if available, just take the first format for now
-   --  5  320x240 H.263/MP3 mono FLV
-   --  6  320x240 H.263/MP3 mono FLV
-   -- 13  176x144 3GP/AMR mono 3GP 
-   -- 17  176x144 3GP/AAC mono 3GP
-   -- 18  480x360 480x270 H.264/AAC stereo MP4
-   -- 22 1280x720 H.264/AAC stereo MP4
-   -- 34 320x240 H.264/AAC stereo FLV
-   -- 35  640x480 640x360 H.264/AAC stereo FLV
+   --  5  320x 240 H.263/MP3 mono FLV
+   --  6  320x 240 H.263/MP3 mono FLV
+   -- 13  176x 144 3GP/AMR mono 3GP 
+   -- 17  176x 144 3GP/AAC mono 3GP
+   -- 18  480x 360 480x270 H.264/AAC stereo MP4
+   -- 22 1280x 720 H.264/AAC stereo MP4
+   -- 34  320x 240 H.264/AAC stereo FLV
+   -- 35  640x 480 640x360 H.264/AAC stereo FLV
+   -- 37 1920x1024 H.264/AAC MP4 AVC
    mpeg4 = false
-   pattern = '"fmt_map": *"([%d]+)'
+   pattern = "fmt_map=([%d]+)"
    if (string.match(body, pattern) ~= nil) then
       format = string.match(body, pattern)
+      -- format 37 isn't in fmt_map so fake it
+--[[
+      if (string.match(body, "IS_HD_AVAILABLE':%s*true") ~= nil) then
+         format = "37"
+      end
+]]--
       nf = tonumber(format)
-      if nf == 18 or nf == 22 then
+      if nf == 18 or nf == 22 or nf == 37 then
          mpeg4 = true
       end
       fmt = "&fmt=" .. format
@@ -89,7 +96,7 @@ for i = 1, table.getn(urls) do
    if opts.o then
       file = opts.o
    else
-      file = string.gsub(title, "[^%w-]", "_")
+      file = string.gsub(title, "[^%w-]+", "_")
       file = string.lower(file)
    end
 
@@ -107,23 +114,23 @@ for i = 1, table.getn(urls) do
    e_mp4 = string.format("%q", mp4)
 
    -- Look for the video ID.
-   pattern = '"video_id": *"([^\"]*)"'
+   pattern = "VIDEO_ID':%s*'([^\']*)'"
    video_id = string.match(body, pattern)
 
    -- Check for error such as "This video is not available in your country."
-   error_pattern = "<div class=\"errorBox\">%s+(.-)</div>"
-   error = string.match(body, error_pattern)
-   if error then
-      io.stderr:write(error .. "\n")
+   error_pattern = "class=\"yt%-alert%-content\">%s+(.-)%s*\n*</div>"
+   err = string.match(body, error_pattern)
+   if err then
+      io.stderr:write(err .. "\n")
       return
    end
 
    if video_id then
       --- Look for the additional video ID.
-      pattern = '"t": *"([^\"]*)"'
+      pattern = "&t=([^\&='\"]*)"
       t = assert(string.match(body, pattern))
       url = string.format("%q", base_url .. "?video_id=" .. video_id
-         .. "&t=" .. t .. fmt)
+         .. "&t=" .. t .. "&eurl=&el=detailpage&ps=default&gl=US&hl=en" .. fmt)
    else
       -- We assume it's Google Video URL.
       pattern = "/googleplayer.swf%?videoUrl(.-)thumbnailUrl"
