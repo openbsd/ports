@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/04/05 01:02:57 robert Exp $
+# $OpenBSD: Makefile,v 1.36 2010/04/05 10:39:35 robert Exp $
 
 # sync with net/avahi,-mono
 ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
@@ -32,6 +32,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext \
 		lang/mono
+
+MODMONO_DEPS=	No
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
