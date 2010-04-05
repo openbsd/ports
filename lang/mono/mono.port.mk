@@ -1,4 +1,6 @@
-# $OpenBSD: mono.port.mk,v 1.7 2010/04/05 01:02:57 robert Exp $
+# $OpenBSD: mono.port.mk,v 1.8 2010/04/05 01:15:00 robert Exp $
+
+ONLY_FOR_ARCHS?=	i386 amd64 powerpc
 
 CATEGORIES+=		lang/mono
 
