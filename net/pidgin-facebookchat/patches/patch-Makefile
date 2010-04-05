@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.4 2009/12/07 06:28:32 steven Exp $
---- Makefile.orig	Fri Dec  4 06:59:38 2009
-+++ Makefile	Sun Dec  6 22:26:59 2009
+$OpenBSD: patch-Makefile,v 1.5 2010/04/05 21:05:34 steven Exp $
+--- Makefile.orig	Tue Feb 23 23:52:25 2010
++++ Makefile	Mon Apr  5 22:49:08 2010
 @@ -9,8 +9,8 @@ LINUX_PPC_COMPILER = powerpc-unknown-linux-gnu-gcc
  FREEBSD60_COMPILER = i686-pc-freebsd6.0-gcc
- MACPORT_COMPILER = i686-apple-darwin9-gcc-4.0.1
+ MACPORT_COMPILER = i686-apple-darwin10-gcc-4.0.1
  
 -LIBPURPLE_CFLAGS = -I/usr/include/libpurple -I/usr/local/include/libpurple -DPURPLE_PLUGINS -DENABLE_NLS -DHAVE_ZLIB
 -GLIB_CFLAGS = -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include -I/usr/local/include -I/usr/include/json-glib-1.0 -ljson-glib-1.0
