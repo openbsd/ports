@@ -1,0 +1,4 @@
+To use twirssi, create a symlink in the irssi scripts directory:
+
+ $ mkdir ~/.irssi/scripts
+ $ ln -sf ${SCRIPT_DATA_DIR}/twirssi.pl ~/.irssi/scripts
