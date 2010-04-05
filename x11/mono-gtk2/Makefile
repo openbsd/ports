@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/03/21 14:52:59 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/05 10:52:50 robert Exp $
 
 COMMENT=	.NET language binding for the GTK+2 toolkit
 
@@ -7,7 +7,7 @@ MINOR=		10
 VERSION=	2.${MAJOR}.${MINOR}
 
 DISTNAME=	gtk-sharp-${VERSION}
-PKGNAME=	mono-gtk2-${VERSION}p1
+PKGNAME=	mono-gtk2-${VERSION}p2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://mono-project.com/GtkSharp
@@ -35,9 +35,6 @@ MODULES=	devel/gettext \
 		lang/mono
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		glade-2.0::devel/libglade2
-
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::lang/mono
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/01 07:20:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/05 10:52:50 robert Exp $
 
 COMMENT=	LDAP Administration Tool
 
 DISTNAME=	lat-1.2.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	sysutils
 

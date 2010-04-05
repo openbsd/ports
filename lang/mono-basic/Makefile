@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/03/29 14:27:43 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/05 10:52:50 robert Exp $
 
 COMMENT=	Visual Basic .NET support for Mono
 DISTNAME=	mono-basic-2.6.2
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/mono-basic/
@@ -19,8 +20,6 @@ PERMIT_PACKAGE_FTP=	Yes
 USE_GMAKE=	Yes
 
 MODULES=	lang/mono
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::lang/mono
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--prefix="${TRUEPREFIX}"

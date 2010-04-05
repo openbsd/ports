@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/09/06 07:26:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/05 10:52:50 robert Exp $
 
 COMMENT=	C\# implementation of dbus
 DISTNAME=	ndesk-dbus-0.6.1a
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	sysutils
 
 MASTER_SITES=	http://www.ndesk.org/archive/ndesk-dbus/
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/mono
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::lang/mono \
-		::x11/dbus
+RUN_DEPENDS=	::x11/dbus
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu

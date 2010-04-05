@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/14 16:48:19 phessler Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/05 10:52:50 robert Exp $
 
 COMMENT =		marathon / alephone map editor
 
 V =			211
 DISTNAME =		weland-r${V}-src
-PKGNAME =		weland-${V}p0
+PKGNAME =		weland-${V}p1
 
 CATEGORIES =		games
 

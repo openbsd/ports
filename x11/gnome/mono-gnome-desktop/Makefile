@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/17 14:00:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/05 10:52:50 robert Exp $
 
 COMMENT=	.NET language bindings for the GNOME desktop
 
 GNOME_PROJECT=	gnome-desktop-sharp
 GNOME_VERSION=	2.24.0
-PKGNAME=	mono-gnome-desktop-${VERSION}p1
+PKGNAME=	mono-gnome-desktop-${VERSION}p2
 
 CATEGORIES=	x11
 
