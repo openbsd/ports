@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.626 2010/03/29 17:02:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.627 2010/04/05 21:17:39 xsa Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -494,6 +494,7 @@
      SUBDIR += transmission
      SUBDIR += trickle
      SUBDIR += ttcp
+     SUBDIR += twirssi
      SUBDIR += twitux
      SUBDIR += ucspi-unix
      SUBDIR += udptunnel
