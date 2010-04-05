@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/05 01:13:44 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/05 06:30:43 ajacoutot Exp $
 
-COMMENT=	A .NET build tool inspired by Ant
+COMMENT=	.NET build tool inspired by Ant
 
 V=		0.86-beta1
 DISTNAME=	nant-${V}-src
-PKGNAME=	${DISTNAME:S/-src//}
+PKGNAME=	${DISTNAME:S/-src//}p0
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nant/}
 
@@ -17,14 +17,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 USE_GMAKE=	Yes
+NO_REGRESS=	Yes
 
 MODULES=	lang/mono
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::lang/mono
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 WRKDIST=	${WRKSRC}
 
-MAKE_FLAGS=	prefix=${DESTDIR}${PREFIX}
+FAKE_FLAGS=	prefix=${WRKINST}${TRUEPREFIX}
 
 post-patch:
 	@find ${WRKSRC}/src ${WRKSRC}/tests -name '*.build' \
