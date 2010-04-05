@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.23 2010/03/05 07:49:29 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.24 2010/04/05 13:59:03 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -35,14 +35,16 @@ _flavor_fragment = \
 		echo 1>&2 ">> Broken dependency: empty directory $$extra_msg"; \
 		exit 1;; \
 	*,*) \
-		IFS=,; first=true; \
-		for i in $$subdir; do \
+		esubdir=$$subdir,; IFS=,; first=true; \
+		for i in $$esubdir; do \
 			if $$first; then \
 				dir=$$i; first=false; \
 			else \
 				case X"$$i" in \
 					X-*) \
 						multi="$$i";; \
+					,) \
+						sawflavor=true;; \
 					*) \
 						sawflavor=true; \
 						flavor="$$flavor$$space$$i"; \
