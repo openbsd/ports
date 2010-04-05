@@ -1,0 +1,328 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/05 14:30:32 espie Exp $
+@bin bin/addftinfo
+bin/afmtodit
+@bin bin/eqn
+@bin bin/grodvi
+@bin bin/groff
+bin/grog
+@bin bin/grohtml
+@bin bin/grolj4
+@bin bin/grops
+@bin bin/grotty
+@bin bin/hpftodit
+@bin bin/indxbib
+@bin bin/lkbib
+@bin bin/lookbib
+bin/neqn
+bin/nroff
+@bin bin/pfbtops
+@bin bin/pic
+@bin bin/psbb
+@bin bin/refer
+@bin bin/soelim
+@bin bin/tbl
+@bin bin/tfmtodit
+@bin bin/troff
+@man man/cat1/addftinfo.0
+@man man/cat1/afmtodit.0
+@man man/cat1/eqn.0
+@man man/cat1/grodvi.0
+@man man/cat1/groff.0
+@man man/cat1/grog.0
+@man man/cat1/grohtml.0
+@man man/cat1/grolj4.0
+@man man/cat1/grops.0
+@man man/cat1/grotty.0
+@man man/cat1/hpftodit.0
+@man man/cat1/indxbib.0
+@man man/cat1/lkbib.0
+@man man/cat1/lookbib.0
+@man man/cat1/neqn.0
+@man man/cat1/nroff.0
+@man man/cat1/pfbtops.0
+@man man/cat1/pic.0
+@man man/cat1/psbb.0
+@man man/cat1/refer.0
+@man man/cat1/soelim.0
+@man man/cat1/tbl.0
+@man man/cat1/tfmtodit.0
+@man man/cat1/troff.0
+@man man/cat5/groff_font.0
+@man man/cat5/groff_out.0
+@man man/cat7/groff_char.0
+@man man/cat7/groff_man.0
+@man man/cat7/groff_me.0
+@man man/cat7/groff_mm.0
+@man man/cat7/groff_mmse.0
+@man man/cat7/groff_ms.0
+@man man/cat7/groff_msafer.0
+@man man/cat7/man.0
+@man man/cat7/me.0
+@man man/cat7/mm.0
+@man man/cat7/ms.0
+share/dict/eign
+share/groff_font/
+share/groff_font/devX100/
+share/groff_font/devX100-12/
+share/groff_font/devX100-12/CB
+share/groff_font/devX100-12/CBI
+share/groff_font/devX100-12/CI
+share/groff_font/devX100-12/CR
+share/groff_font/devX100-12/DESC
+share/groff_font/devX100-12/HB
+share/groff_font/devX100-12/HBI
+share/groff_font/devX100-12/HI
+share/groff_font/devX100-12/HR
+share/groff_font/devX100-12/NB
+share/groff_font/devX100-12/NBI
+share/groff_font/devX100-12/NI
+share/groff_font/devX100-12/NR
+share/groff_font/devX100-12/S
+share/groff_font/devX100-12/TB
+share/groff_font/devX100-12/TBI
+share/groff_font/devX100-12/TI
+share/groff_font/devX100-12/TR
+share/groff_font/devX100/CB
+share/groff_font/devX100/CBI
+share/groff_font/devX100/CI
+share/groff_font/devX100/CR
+share/groff_font/devX100/DESC
+share/groff_font/devX100/HB
+share/groff_font/devX100/HBI
+share/groff_font/devX100/HI
+share/groff_font/devX100/HR
+share/groff_font/devX100/NB
+share/groff_font/devX100/NBI
+share/groff_font/devX100/NI
+share/groff_font/devX100/NR
+share/groff_font/devX100/S
+share/groff_font/devX100/TB
+share/groff_font/devX100/TBI
+share/groff_font/devX100/TI
+share/groff_font/devX100/TR
+share/groff_font/devX75/
+share/groff_font/devX75-12/
+share/groff_font/devX75-12/CB
+share/groff_font/devX75-12/CBI
+share/groff_font/devX75-12/CI
+share/groff_font/devX75-12/CR
+share/groff_font/devX75-12/DESC
+share/groff_font/devX75-12/HB
+share/groff_font/devX75-12/HBI
+share/groff_font/devX75-12/HI
+share/groff_font/devX75-12/HR
+share/groff_font/devX75-12/NB
+share/groff_font/devX75-12/NBI
+share/groff_font/devX75-12/NI
+share/groff_font/devX75-12/NR
+share/groff_font/devX75-12/S
+share/groff_font/devX75-12/TB
+share/groff_font/devX75-12/TBI
+share/groff_font/devX75-12/TI
+share/groff_font/devX75-12/TR
+share/groff_font/devX75/CB
+share/groff_font/devX75/CBI
+share/groff_font/devX75/CI
+share/groff_font/devX75/CR
+share/groff_font/devX75/DESC
+share/groff_font/devX75/HB
+share/groff_font/devX75/HBI
+share/groff_font/devX75/HI
+share/groff_font/devX75/HR
+share/groff_font/devX75/NB
+share/groff_font/devX75/NBI
+share/groff_font/devX75/NI
+share/groff_font/devX75/NR
+share/groff_font/devX75/S
+share/groff_font/devX75/TB
+share/groff_font/devX75/TBI
+share/groff_font/devX75/TI
+share/groff_font/devX75/TR
+share/groff_font/devascii/
+share/groff_font/devascii/B
+share/groff_font/devascii/BI
+share/groff_font/devascii/DESC
+share/groff_font/devascii/I
+share/groff_font/devascii/R
+share/groff_font/devdvi/
+share/groff_font/devdvi/B
+share/groff_font/devdvi/BI
+share/groff_font/devdvi/CW
+share/groff_font/devdvi/DESC
+share/groff_font/devdvi/EX
+share/groff_font/devdvi/H
+share/groff_font/devdvi/HB
+share/groff_font/devdvi/HI
+share/groff_font/devdvi/I
+share/groff_font/devdvi/MI
+share/groff_font/devdvi/R
+share/groff_font/devdvi/S
+share/groff_font/devdvi/SA
+share/groff_font/devdvi/SB
+share/groff_font/devdvi/generate/
+share/groff_font/devdvi/generate/CompileFonts
+share/groff_font/devdvi/generate/Makefile
+share/groff_font/devdvi/generate/msam.map
+share/groff_font/devdvi/generate/msbm.map
+share/groff_font/devdvi/generate/texb.map
+share/groff_font/devdvi/generate/texex.map
+share/groff_font/devdvi/generate/texi.map
+share/groff_font/devdvi/generate/texmi.map
+share/groff_font/devdvi/generate/texr.map
+share/groff_font/devdvi/generate/texsy.map
+share/groff_font/devdvi/generate/textt.map
+share/groff_font/devhtml/
+share/groff_font/devhtml/CB
+share/groff_font/devhtml/CBI
+share/groff_font/devhtml/CI
+share/groff_font/devhtml/CR
+share/groff_font/devhtml/DESC
+share/groff_font/devhtml/HB
+share/groff_font/devhtml/HBI
+share/groff_font/devhtml/HI
+share/groff_font/devhtml/HR
+share/groff_font/devhtml/NB
+share/groff_font/devhtml/NBI
+share/groff_font/devhtml/NI
+share/groff_font/devhtml/NR
+share/groff_font/devhtml/S
+share/groff_font/devhtml/TB
+share/groff_font/devhtml/TBI
+share/groff_font/devhtml/TI
+share/groff_font/devhtml/TR
+share/groff_font/devlatin1/
+share/groff_font/devlatin1/B
+share/groff_font/devlatin1/BI
+share/groff_font/devlatin1/DESC
+share/groff_font/devlatin1/I
+share/groff_font/devlatin1/R
+share/groff_font/devlj4/
+share/groff_font/devlj4/ALBB
+share/groff_font/devlj4/ALBR
+share/groff_font/devlj4/AOB
+share/groff_font/devlj4/AOI
+share/groff_font/devlj4/AOR
+share/groff_font/devlj4/CB
+share/groff_font/devlj4/CBI
+share/groff_font/devlj4/CI
+share/groff_font/devlj4/CLARENDON
+share/groff_font/devlj4/CORONET
+share/groff_font/devlj4/CR
+share/groff_font/devlj4/DESC
+share/groff_font/devlj4/GB
+share/groff_font/devlj4/GBI
+share/groff_font/devlj4/GI
+share/groff_font/devlj4/GR
+share/groff_font/devlj4/LGB
+share/groff_font/devlj4/LGI
+share/groff_font/devlj4/LGR
+share/groff_font/devlj4/MARIGOLD
+share/groff_font/devlj4/OB
+share/groff_font/devlj4/OBI
+share/groff_font/devlj4/OI
+share/groff_font/devlj4/OR
+share/groff_font/devlj4/S
+share/groff_font/devlj4/TB
+share/groff_font/devlj4/TBI
+share/groff_font/devlj4/TI
+share/groff_font/devlj4/TR
+share/groff_font/devlj4/UB
+share/groff_font/devlj4/UBI
+share/groff_font/devlj4/UCB
+share/groff_font/devlj4/UCBI
+share/groff_font/devlj4/UCI
+share/groff_font/devlj4/UCR
+share/groff_font/devlj4/UI
+share/groff_font/devlj4/UR
+share/groff_font/devlj4/generate/
+share/groff_font/devlj4/generate/Makefile
+share/groff_font/devlj4/generate/special.map
+share/groff_font/devlj4/generate/text.map
+share/groff_font/devps/
+share/groff_font/devps/AB
+share/groff_font/devps/ABI
+share/groff_font/devps/AI
+share/groff_font/devps/AR
+share/groff_font/devps/BMB
+share/groff_font/devps/BMBI
+share/groff_font/devps/BMI
+share/groff_font/devps/BMR
+share/groff_font/devps/CB
+share/groff_font/devps/CBI
+share/groff_font/devps/CI
+share/groff_font/devps/CR
+share/groff_font/devps/DESC
+share/groff_font/devps/HB
+share/groff_font/devps/HBI
+share/groff_font/devps/HI
+share/groff_font/devps/HNB
+share/groff_font/devps/HNBI
+share/groff_font/devps/HNI
+share/groff_font/devps/HNR
+share/groff_font/devps/HR
+share/groff_font/devps/NB
+share/groff_font/devps/NBI
+share/groff_font/devps/NI
+share/groff_font/devps/NR
+share/groff_font/devps/PB
+share/groff_font/devps/PBI
+share/groff_font/devps/PI
+share/groff_font/devps/PR
+share/groff_font/devps/S
+share/groff_font/devps/SS
+share/groff_font/devps/TB
+share/groff_font/devps/TBI
+share/groff_font/devps/TI
+share/groff_font/devps/TR
+share/groff_font/devps/ZCMI
+share/groff_font/devps/ZD
+share/groff_font/devps/ZDR
+share/groff_font/devps/download
+share/groff_font/devps/generate/
+share/groff_font/devps/generate/Makefile
+share/groff_font/devps/generate/afmname
+share/groff_font/devps/generate/dingbatsmap
+share/groff_font/devps/generate/dingbatsrmap
+share/groff_font/devps/generate/lgreekmap
+share/groff_font/devps/generate/symbol.sed
+share/groff_font/devps/generate/symbolchars
+share/groff_font/devps/generate/symbolsl.afm
+share/groff_font/devps/generate/textmap
+share/groff_font/devps/prologue
+share/groff_font/devps/symbolsl.pfa
+share/groff_font/devps/text.enc
+share/groff_font/devps/zapfdr.pfa
+share/tmac/
+share/tmac/eqnrc
+share/tmac/hyphen.us
+share/tmac/man.local
+share/tmac/mm/
+share/tmac/mm/0.MT
+share/tmac/mm/4.MT
+share/tmac/mm/5.MT
+share/tmac/mm/locale
+share/tmac/mm/ms.cov
+share/tmac/mm/se_locale
+share/tmac/mm/se_ms.cov
+share/tmac/tmac.X
+share/tmac/tmac.Xps
+share/tmac/tmac.an.old
+share/tmac/tmac.arkup
+share/tmac/tmac.dvi
+share/tmac/tmac.e
+share/tmac/tmac.html
+share/tmac/tmac.latin1
+share/tmac/tmac.lj4
+share/tmac/tmac.m
+share/tmac/tmac.mse
+share/tmac/tmac.pic
+share/tmac/tmac.ps
+share/tmac/tmac.psatk
+share/tmac/tmac.psnew
+share/tmac/tmac.psold
+share/tmac/tmac.pspic
+share/tmac/tmac.s
+share/tmac/tmac.safer
+share/tmac/tmac.tty
+share/tmac/tmac.tty-char
+share/tmac/troffrc
