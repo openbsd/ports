@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2009/11/29 18:52:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2010/04/05 20:05:16 landry Exp $
 
 PKG_ARCH=	*
 
-V=		2.0.0.23
+V=		3.0.4
 NAME=		thunderbird-i18n
 PKGNAME=	${NAME}-${V}
 
@@ -21,8 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${V}/linux-i686/xpi/
 
 LANGUAGES=	af be bg ca cs da de el en-GB es-AR es-ES eu fi fr \
-		ga-IE he hu it ja ko lt mk nb-NO nl nn-NO pa-IN pl \
-		pt-BR pt-PT ru sk sl sv-SE tr uk zh-CN zh-TW
+		ga-IE he hu it ja ko lt nb-NO nl nn-NO pa-IN pl \
+		pt-BR pt-PT ru sk sv-SE tr uk zh-CN zh-TW
 
 BUILD_DEPENDS=	:unzip-*:archivers/unzip
 RUN_DEPENDS=	:mozilla-thunderbird-${V}:mail/mozilla-thunderbird
@@ -54,11 +54,11 @@ do-extract:
 
 do-install:
 .for i in ${LANGUAGES}
-	${INSTALL_DATA_DIR} ${LPACKDIR-$i}/chrome
+	${INSTALL_DATA_DIR} ${LPACKDIR-$i}/chrome ${LPACKDIR-$i}/defaults/pref
 	${INSTALL_DATA} ${WRKSRC}/$i/chrome.manifest ${LPACKDIR-$i}
 	${INSTALL_DATA} ${WRKSRC}/$i/install.rdf ${LPACKDIR-$i}
-	${INSTALL_DATA} ${WRKSRC}/$i/chrome/chromelist.txt ${LPACKDIR-$i}/chrome
 	${INSTALL_DATA} ${WRKSRC}/$i/chrome/$i.jar ${LPACKDIR-$i}/chrome
+	${INSTALL_DATA} ${WRKSRC}/$i/defaults/pref/all-l10n.js ${LPACKDIR-$i}/defaults/pref
 .endfor
 
 .include <bsd.port.mk>
