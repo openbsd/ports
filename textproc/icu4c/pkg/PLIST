@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/07 00:54:43 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/05 21:40:24 landry Exp $
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencfu
@@ -6,6 +6,7 @@
 @bin bin/genctd
 @bin bin/genrb
 bin/icu-config
+@bin bin/icuinfo
 @bin bin/makeconv
 @bin bin/pkgdata
 include/layout/
@@ -54,12 +55,18 @@ include/unicode/errorcode.h
 include/unicode/fieldpos.h
 include/unicode/fmtable.h
 include/unicode/format.h
+include/unicode/fpositer.h
 include/unicode/gregocal.h
+include/unicode/icudataver.h
+include/unicode/icuplug.h
+include/unicode/localpointer.h
+include/unicode/locdspnm.h
 include/unicode/locid.h
 include/unicode/measfmt.h
 include/unicode/measunit.h
 include/unicode/measure.h
 include/unicode/msgfmt.h
+include/unicode/normalizer2.h
 include/unicode/normlzr.h
 include/unicode/numfmt.h
 include/unicode/numsys.h
@@ -69,6 +76,7 @@ include/unicode/platform.h
 include/unicode/plurfmt.h
 include/unicode/plurrule.h
 include/unicode/ppalmos.h
+include/unicode/ptypes.h
 include/unicode/putil.h
 include/unicode/pwin32.h
 include/unicode/rbbi.h
@@ -79,6 +87,7 @@ include/unicode/rep.h
 include/unicode/resbund.h
 include/unicode/schriter.h
 include/unicode/search.h
+include/unicode/selfmt.h
 include/unicode/simpletz.h
 include/unicode/smpdtfmt.h
 include/unicode/sortkey.h
@@ -121,6 +130,7 @@ include/unicode/uenum.h
 include/unicode/uidna.h
 include/unicode/uintrnal.h
 include/unicode/uiter.h
+include/unicode/uldnames.h
 include/unicode/uloc.h
 include/unicode/ulocdata.h
 include/unicode/umachine.h
@@ -133,6 +143,7 @@ include/unicode/unirepl.h
 include/unicode/uniset.h
 include/unicode/unistr.h
 include/unicode/unorm.h
+include/unicode/unorm2.h
 include/unicode/unum.h
 include/unicode/uobject.h
 include/unicode/uobslete.h
@@ -161,6 +172,7 @@ include/unicode/utmscale.h
 include/unicode/utrace.h
 include/unicode/utrans.h
 include/unicode/utypes.h
+include/unicode/uvernum.h
 include/unicode/uversion.h
 include/unicode/vtzone.h
 lib/icu/
@@ -170,13 +182,14 @@ lib/icu/${VERSION}/pkgdata.inc
 lib/icu/Makefile.inc
 lib/icu/current
 lib/icu/pkgdata.inc
-@lib lib/libicudata.so.${LIBicudata_VERSION}
-@lib lib/libicui18n.so.${LIBicui18n_VERSION}
-@lib lib/libicuio.so.${LIBicuio_VERSION}
-@lib lib/libicule.so.${LIBicule_VERSION}
-@lib lib/libiculx.so.${LIBiculx_VERSION}
-@lib lib/libicutu.so.${LIBicutu_VERSION}
-@lib lib/libicuuc.so.${LIBicuuc_VERSION}
+lib/libicudata.a
+lib/libicui18n.a
+lib/libicuio.a
+lib/libicule.a
+lib/libiculx.a
+lib/libicutest.a
+lib/libicutu.a
+lib/libicuuc.a
 @man man/man1/derb.1
 @man man/man1/genbrk.1
 @man man/man1/gencnval.1
@@ -192,6 +205,7 @@ lib/icu/pkgdata.inc
 @man man/man8/icupkg.8
 @bin sbin/genccode
 @bin sbin/gencmn
+@bin sbin/gennorm2
 @bin sbin/gensprep
 @bin sbin/genuca
 @bin sbin/icupkg
@@ -202,3 +216,4 @@ share/icu/${VERSION}/config/mh-bsd-gcc
 @comment share/icu/${VERSION}/install-sh
 share/icu/${VERSION}/license.html
 @comment share/icu/${VERSION}/mkinstalldirs
+%%SHARED%%

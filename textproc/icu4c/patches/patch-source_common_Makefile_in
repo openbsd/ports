@@ -1,12 +1,12 @@
-$OpenBSD: patch-source_common_Makefile_in,v 1.4 2009/01/27 22:11:15 landry Exp $
---- source/common/Makefile.in.orig	Mon Sep 22 21:03:28 2008
-+++ source/common/Makefile.in	Wed Oct 29 11:51:13 2008
-@@ -62,7 +62,7 @@ CPPFLAGS += -I$(top_builddir)/common
- endif
- CPPFLAGS += -I$(srcdir) -I$(top_srcdir)/i18n $(LIBCPPFLAGS)
- DEFS += -DU_COMMON_IMPLEMENTATION
+$OpenBSD: patch-source_common_Makefile_in,v 1.5 2010/04/05 21:40:24 landry Exp $
+--- source/common/Makefile.in.orig	Sat Mar 20 11:18:11 2010
++++ source/common/Makefile.in	Sat Mar 20 11:19:31 2010
+@@ -63,7 +63,7 @@ endif
+ CPPFLAGS += -I$(srcdir) -I$(top_srcdir)/i18n $(LIBCPPFLAGS) $(CPPFLAGSICUUC)
+ # we want DEFS here, because we want icucfg.h
+ DEFS += -DU_COMMON_IMPLEMENTATION @DEFS@ 
 -LDFLAGS += $(LDFLAGSICUUC)
 +LDFLAGS += -fPIC $(LDFLAGSICUUC)
  
- # $(LIBICUDT) is either stub data or the real DLL common data.
- LIBS = $(LIBICUDT) $(DEFAULT_LIBS)
+ # for plugin configuration
+ CPPFLAGS += "-DDEFAULT_ICU_PLUGINS=\"$(libdir)/icu\" "

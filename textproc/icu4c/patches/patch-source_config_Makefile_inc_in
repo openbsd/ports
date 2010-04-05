@@ -1,0 +1,15 @@
+There is no good reason to use different names for static and shared
+libraries
+
+$OpenBSD: patch-source_config_Makefile_inc_in,v 1.1 2010/04/05 21:40:24 landry Exp $
+--- source/config/Makefile.inc.in.orig	Fri Apr  2 17:46:18 2010
++++ source/config/Makefile.inc.in	Fri Apr  2 17:50:16 2010
+@@ -44,7 +44,7 @@ PACKAGE = @PACKAGE@
+ LIBICU = lib$(ICUPREFIX)
+ 
+ # Static library prefix and file extension
+-STATIC_PREFIX = s
++STATIC_PREFIX = 
+ LIBSICU = lib$(STATIC_PREFIX)$(ICUPREFIX)
+ A = a
+ 

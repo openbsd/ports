@@ -1,0 +1,9 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2010/04/05 21:40:24 landry Exp $
+@lib lib/libicudata.so.${LIBicudata_VERSION}
+@lib lib/libicui18n.so.${LIBicui18n_VERSION}
+@lib lib/libicuio.so.${LIBicuio_VERSION}
+@lib lib/libicule.so.${LIBicule_VERSION}
+@lib lib/libiculx.so.${LIBiculx_VERSION}
+@lib lib/libicutest.so.${LIBicutest_VERSION}
+@lib lib/libicutu.so.${LIBicutu_VERSION}
+@lib lib/libicuuc.so.${LIBicuuc_VERSION}

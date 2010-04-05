@@ -1,16 +1,18 @@
-$OpenBSD: patch-source_config_icu-config-bottom,v 1.4 2009/06/07 00:54:43 landry Exp $
---- source/config/icu-config-bottom.orig	Fri May  8 18:12:32 2009
-+++ source/config/icu-config-bottom	Sat May  9 20:17:36 2009
-@@ -3,7 +3,7 @@
- ## Copyright (c) 2002-2008, International Business Machines Corporation and
+$OpenBSD: patch-source_config_icu-config-bottom,v 1.5 2010/04/05 21:40:24 landry Exp $
+--- source/config/icu-config-bottom.orig	Tue Mar 16 06:14:02 2010
++++ source/config/icu-config-bottom	Sun Apr  4 10:11:32 2010
+@@ -3,8 +3,8 @@
+ ## Copyright (c) 2002-2010, International Business Machines Corporation and
  ## others. All Rights Reserved.
  
--ICUUC_FILE=${libdir}/${ICULIBS_COMMON_LIB_NAME}
-+ICUUC_FILE=${libdir}/${ICULIBS_COMMON_LIB_NAME}.*.*
+-ICUUC_FILE="${libdir}/${ICULIBS_COMMON_LIB_NAME}"
+-ICUUC_FILE_A="${libdir}/${ICULIBS_COMMON_LIB_NAME_A}"
++ICUUC_FILE="${ICULIBS_COMMON_LIB_NAME}.*.*"
++ICUUC_FILE_A="${ICULIBS_COMMON_LIB_NAME_A}"
      
  #  echo ENABLE RPATH $ENABLE_RPATH and RPATHLDFLAGS=${RPATH_LDFLAGS}
  if [ "x$PKGDATA_MODE" = "x" ]; then
-@@ -45,7 +45,7 @@ allflags()
+@@ -47,7 +47,7 @@ allflags()
      echo "  --ldflags-layout       Print ICU layout engine link directive. Use in addition to --ldflags"
      echo "  --ldflags-libsonly     Same as --ldflags, but only the -l directives"
      echo "  --ldflags-searchpath   Print only -L (search path) directive"
@@ -19,3 +21,13 @@ $OpenBSD: patch-source_config_icu-config-bottom,v 1.4 2009/06/07 00:54:43 landry
      echo "  --ldflags-icuio        Print ICU icuio link directive. Use in addition to --ldflags "
      echo "  --ldflags-obsolete     Print ICU obsolete link directive. Use in addition to --ldflags. (requires icuapps/obsolete to be built and installed.) "
      echo "  --mandir               Print manpage (man) path"
+@@ -94,7 +94,8 @@ usage()
+ ## Check the sanity of current variables
+ sanity()
+ {
+-    if [ ! -f "${ICUUC_FILE}" -a ! -f "${ICUUC_FILE_A}" ] && [ ${IGNORE_ICUUC_FILE_CHECK} = "no" ] && [ ${SANITY} = "sane" ];
++	libcnt=`find ${libdir} -name ${ICUUC_FILE} -o -name ${ICUUC_FILE_A} | wc -l`
++    if [ ${libcnt} -lt 1 ] && [ ${IGNORE_ICUUC_FILE_CHECK} = "no" ] && [ ${SANITY} = "sane" ];
+     then
+ 	echo "### $ME: Can't find ${ICUUC_FILE} - ICU prefix is wrong."  1>&2
+ 	echo "###      Try the --prefix= option " 1>&2

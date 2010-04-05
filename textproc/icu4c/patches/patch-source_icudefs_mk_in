@@ -1,0 +1,15 @@
+There is no good reason to use different names for static and shared
+libraries
+
+$OpenBSD: patch-source_icudefs_mk_in,v 1.5 2010/04/05 21:40:24 landry Exp $
+--- source/icudefs.mk.in.orig	Fri Apr  2 18:09:15 2010
++++ source/icudefs.mk.in	Fri Apr  2 18:10:15 2010
+@@ -193,7 +193,7 @@ STATIC_PREFIX_WHEN_USED = 
+ endif
+ 
+ # Static library prefix and file extension
+-STATIC_PREFIX = s
++STATIC_PREFIX =
+ LIBSICU = $(LIBPREFIX)$(STATIC_PREFIX)$(ICUPREFIX)
+ A = a
+ SOBJ = $(SO)

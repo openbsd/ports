@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_configure,v 1.6 2009/06/07 00:54:43 landry Exp $
---- source/configure.orig	Sat May  9 20:22:27 2009
-+++ source/configure	Sat May  9 20:21:03 2009
-@@ -5588,13 +5588,13 @@ if test $threads = true; then
+$OpenBSD: patch-source_configure,v 1.7 2010/04/05 21:40:24 landry Exp $
+--- source/configure.orig	Tue Mar 16 06:15:14 2010
++++ source/configure	Sat Mar 20 11:16:31 2010
+@@ -6915,13 +6915,13 @@ if test $threads = true; then
    # moving on to a more generic test
  
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-source_configure,v 1.6 2009/06/07 00:54:43 landry Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -5658,7 +5658,7 @@ if test "x$ac_cv_lib_pthread_pthread_attr_init" = x""y
+@@ -6985,7 +6985,7 @@ if test "x$ac_cv_lib_pthread_pthread_attr_init" = x""y
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-source_configure,v 1.6 2009/06/07 00:54:43 landry Exp $
  
  fi
  
-@@ -5809,13 +5809,13 @@ fi
+@@ -7136,13 +7136,13 @@ fi
      else
        # For HP 11
  
@@ -44,7 +44,7 @@ $OpenBSD: patch-source_configure,v 1.6 2009/06/07 00:54:43 landry Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -5879,7 +5879,7 @@ if test "x$ac_cv_lib_pthread_pthread_mutex_init" = x""
+@@ -7206,7 +7206,7 @@ if test "x$ac_cv_lib_pthread_pthread_mutex_init" = x""
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  
