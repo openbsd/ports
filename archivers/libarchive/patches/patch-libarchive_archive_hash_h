@@ -1,0 +1,30 @@
+$OpenBSD: patch-libarchive_archive_hash_h,v 1.1 2010/04/05 11:36:55 naddy Exp $
+--- libarchive/archive_hash.h.orig	Sun Jan 17 01:21:10 2010
++++ libarchive/archive_hash.h	Mon Apr  5 01:21:47 2010
+@@ -118,7 +118,7 @@ typedef SHA256_CTX archive_sha256_ctx;
+ #elif defined(HAVE_SHA2_H) && defined(HAVE_SHA256INIT)
+ #  include <sha2.h>
+ #  define ARCHIVE_HAS_SHA256
+-typedef SHA256_CTX archive_sha256_ctx;
++typedef SHA2_CTX archive_sha256_ctx;
+ #  define archive_sha256_init(ctx)		SHA256Init(ctx)
+ #  define archive_sha256_final(ctx, buf)	SHA256Final(buf, ctx)
+ #  define archive_sha256_update(ctx, buf, n)	SHA256Update(ctx, buf, n)
+@@ -147,7 +147,7 @@ typedef SHA384_CTX archive_sha384_ctx;
+ #elif defined(HAVE_SHA2_H) && defined(HAVE_SHA384INIT)
+ #  include <sha2.h>
+ #  define ARCHIVE_HAS_SHA384
+-typedef SHA384_CTX archive_sha384_ctx;
++typedef SHA2_CTX archive_sha384_ctx;
+ #  define archive_sha384_init(ctx)		SHA384Init(ctx)
+ #  define archive_sha384_final(ctx, buf)	SHA384Final(buf, ctx)
+ #  define archive_sha384_update(ctx, buf, n)	SHA384Update(ctx, buf, n)
+@@ -176,7 +176,7 @@ typedef SHA512_CTX archive_sha512_ctx;
+ #elif defined(HAVE_SHA2_H) && defined(HAVE_SHA512INIT)
+ #  include <sha2.h>
+ #  define ARCHIVE_HAS_SHA512
+-typedef SHA512_CTX archive_sha512_ctx;
++typedef SHA2_CTX archive_sha512_ctx;
+ #  define archive_sha512_init(ctx)		SHA512Init(ctx)
+ #  define archive_sha512_final(ctx, buf)	SHA512Final(buf, ctx)
+ #  define archive_sha512_update(ctx, buf, n)	SHA512Update(ctx, buf, n)

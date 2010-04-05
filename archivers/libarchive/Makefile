@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/04 15:02:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/05 11:36:55 naddy Exp $
 
 COMMENT=	library for reading and writing streaming archives
 
-DISTNAME=	libarchive-2.7.1
-PKGNAME=	${DISTNAME}p0
-SHARED_LIBS +=  archive              5.0      # .9.1
+DISTNAME=	libarchive-2.8.3
+SHARED_LIBS=	archive		6.0	# .10.3
 CATEGORIES=	archivers
 HOMEPAGE=	http://code.google.com/p/libarchive/
 
@@ -18,16 +17,20 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://libarchive.googlecode.com/files/
 
-WANTLIB=	c crypto z
+WANTLIB=	c expat z
 LIB_DEPENDS=	bz2.>=10::archivers/bzip2 \
 		lzma.>=0::archivers/xz
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-lzmadec	# old LZMA utils
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=--without-lzmadec	# old LZMA utils
+CONFIGURE_ARGS+=--without-xml2		# expat suffices
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build/autoconf
+
+# Regression tests:
+# libarchive/test_entry fails due to lacking locale/widechar support
 
 .include <bsd.port.mk>
