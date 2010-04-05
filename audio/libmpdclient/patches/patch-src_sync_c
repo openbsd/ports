@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_sync_c,v 1.1.1.1 2010/04/05 18:59:01 landry Exp $
+--- src/sync.c.orig	Mon Apr  5 05:22:28 2010
++++ src/sync.c	Mon Apr  5 05:22:52 2010
+@@ -33,6 +33,7 @@
+ #include <assert.h>
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ 

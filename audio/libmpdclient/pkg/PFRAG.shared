@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/04/05 18:59:01 landry Exp $
+@lib lib/libmpdclient.so.${LIBmpdclient_VERSION}

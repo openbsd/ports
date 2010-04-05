@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_socket_c,v 1.1.1.1 2010/04/05 18:59:01 landry Exp $
+--- src/socket.c.orig	Mon Apr  5 05:20:56 2010
++++ src/socket.c	Mon Apr  5 05:21:32 2010
+@@ -34,6 +34,7 @@
+ #include <assert.h>
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ 
