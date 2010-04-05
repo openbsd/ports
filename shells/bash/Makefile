@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2010/03/21 16:37:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2010/04/05 21:17:32 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-4.1
-PKGNAME=	${DISTNAME}.2
+PKGNAME=	${DISTNAME}.5
 CATEGORIES=	shells
 HOMEPAGE=	http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
 MASTER_SITES0=	${MASTER_SITE_GNU:=bash/${DISTNAME}-patches/}
 DIST_SUBDIR=	bash
-.for i in 01 02
+.for i in 01 02 03 04 05
 PATCHFILES+=	bash41-0$i:0
 .endfor
 
