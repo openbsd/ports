@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/04 16:07:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/06 12:20:03 jasper Exp $
 
 COMMENT=	IPC library used by GnuPG and gpgme
 
-DISTNAME=	libassuan-1.0.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	libassuan-1.0.5
 
 CATEGORIES=	security devel
 
-# LGPLv2.1+
+# LGPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
