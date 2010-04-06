@@ -1,0 +1,4 @@
+Parsec is designed from scratch as an industrial-strength parser
+library.  It is simple, safe, well documented (on the package
+homepage), has extensive libraries and good error messages, and is
+also fast.
