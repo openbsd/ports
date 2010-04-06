@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2008/09/18 13:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/06 02:08:45 william Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP interface to memcached
 
-DISTNAME=	memcache-1.5
-PKGNAME=	pecl-${DISTNAME}p1
+DISTNAME=	memcache-3.0.4
+PKGNAME=	pecl-${DISTNAME}
 CATEGORIES=	www
 
 HOMEPAGE=	http://pecl.php.net/package/memcache
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes
