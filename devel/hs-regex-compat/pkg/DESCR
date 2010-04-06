@@ -1,0 +1,2 @@
+Regular expression matching for Haskell.  Uses the POSIX regular
+expression interface in "Text.Regex.Posix".
