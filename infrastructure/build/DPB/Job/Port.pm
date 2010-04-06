@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.10 2010/04/06 09:39:51 espie Exp $
+# $OpenBSD: Port.pm,v 1.11 2010/04/06 10:10:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -120,23 +120,29 @@ sub run
 	for my $kind (qw(BUILD_DEPENDS LIB_DEPENDS)) {
 		if (exists $job->{v}{info}{$kind}) {
 			for my $d (values %{$job->{v}{info}{$kind}}) {
-				$dep->{$d->fullpkgname} = 1;
+				$dep->{$d->fullpkgname.".tgz"} = 1;
 			}
 		}
 	}
 	exit(0) unless %$dep;
 	my $sudo = OpenBSD::Paths->sudo;
-	my $pkg_add = '/usr/sbin/pkg_add';
 	my $shell = $core->{shell};
 	$self->redirect($job->{log});
-	print join(' ', $pkg_add, (sort keys %$dep)), "\n";
+	my @cmd = ('/usr/sbin/pkg_add');
+	if ($job->{builder}->{update}) {
+		push(@cmd, "-rq", "-Dupdate", "-Dupdatedepends");
+	}
+	if ($job->{builder}->{forceupdate}) {
+		push(@cmd,  "-Dinstalled");
+	}
+	print join(' ', @cmd, (sort keys %$dep)), "\n";
 	my $path = $job->{builder}->{fullrepo}.'/';
 	if (defined $shell) {
-		$shell->run(join(' ', "PKG_PATH=$path", $sudo, $pkg_add, 
+		$shell->run(join(' ', "PKG_PATH=$path", $sudo, @cmd, 
 		    (sort keys %$dep)));
 	} else {
 		$ENV{PKG_PATH} = $path;
-		exec{$sudo}($sudo, $pkg_add, sort keys %$dep);
+		exec{$sudo}($sudo, @cmd, sort keys %$dep);
 	}
 	exit(1);
 }

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.9 2010/04/06 09:38:44 espie Exp $
+# $OpenBSD: dpb3,v 1.10 2010/04/06 10:10:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -45,7 +45,7 @@ use OpenBSD::Paths;
 my $make = $ENV{MAKE} || OpenBSD::Paths->make;
 
 our ($opt_t, $opt_e, $opt_T, $opt_c, $opt_h, $opt_A, $opt_j, $opt_a, 
-    $opt_r, $opt_s,
+    $opt_r, $opt_s, $opt_u, $opt_U,
     $opt_L, $opt_m, $opt_f, $opt_x);
 my @subdirlist;
 
@@ -90,10 +90,10 @@ sub parse_build_file
 
 my @build_files = ();
 my $heuristics = DPB::Heuristics->new;
-set_usage("dpb3 [-acersx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir] [-b log] ",
+set_usage("dpb3 [-acersuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir] [-b log] ",
 	"[-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
 try {
-getopts('acersh:xA:f:j:m:P:b:L:S:t:T:', {
+getopts('acersuUh:xA:f:j:m:P:b:L:S:t:T:', {
 	    P => sub {
 		my $file = shift;
 		open my $fh, '<', $file or die "Can't open $file\n";
@@ -180,7 +180,8 @@ if (@build_files > 0) {
 }
 
 my $builder = DPB::PortBuilder->new(
-    $opt_c, $opt_s, $fullrepo, $logger, $ports, $make, $heuristics);
+    $opt_c, $opt_s, $opt_u, $opt_U, $fullrepo, $logger, $ports, $make, 
+    $heuristics);
 
 my $locker = DPB::Locks->new($lockdir);
 my $engine = DPB::Engine->new($builder, $heuristics, $logger, $locker);
