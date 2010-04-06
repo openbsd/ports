@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2010/03/21 11:24:46 ajacoutot Exp $
-@conflict gstreamer-plugins-bad-<0.10.8
+@comment $OpenBSD: PLIST-main,v 1.20 2010/04/06 09:21:21 kili Exp $
+@conflict gstreamer-plugins-bad-<0.10.18
 @conflict gstreamer-jpeg-*
 @conflict gstreamer-png-*
 @conflict gstreamer-cairo-*
