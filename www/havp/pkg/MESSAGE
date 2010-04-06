@@ -1,0 +1,8 @@
+To have havp start at boot time, insert the following
+into /etc/rc.local:
+
+if [ -x /usr/local/sbin/havp ]; then
+	echo -n ' havp'
+	install -d -o _havp /var/run/havp/
+	/usr/local/sbin/havp
+fi
