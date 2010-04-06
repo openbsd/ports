@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1 2009/01/21 20:43:23 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/06 21:46:56 matthieu Exp $
 
 COMMENT =	OpenMoko serial console tool
 
-DISTNAME =	omconsole-0.5
+DISTNAME =	omconsole-1.1
 
 CATEGORIES =	misc
 
