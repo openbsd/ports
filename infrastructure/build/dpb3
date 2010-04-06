@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.8 2010/03/20 18:29:18 espie Exp $
+# $OpenBSD: dpb3,v 1.9 2010/04/06 09:38:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -162,15 +162,15 @@ if (defined $opt_j && $opt_j !~ m/^\d+$/) {
 my $fullrepo = "$repo/$arch/all";
 if ($opt_h) {
 	DPB::Core->parse_hosts_file($opt_h, $arch, $opt_t, $logger, $heuristics);
-} else {
-	$opt_j //= `sysctl -n hw.ncpu`;
-	chomp($opt_j);
+}
+
+my $prop = {};
+if ($opt_j) {
+	$prop->{jobs} = $opt_j;
 }
 
 $opt_j //= 0;
-for (1 .. $opt_j) {
-	DPB::Core::Factory->new('localhost');
-}
+DPB::Core::Factory->new('localhost', {jobs => $opt_j});
 
 if (@build_files > 0) {
 	for my $file (@build_files) {
