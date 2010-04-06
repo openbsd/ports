@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/05 10:44:43 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/06 17:50:35 ajacoutot Exp $
 
 COMMENT=	framework for creating extensible applications
 
@@ -20,6 +20,7 @@ EXTRACT_SUFX=	.tar.bz2
 USE_GMAKE=	Yes
 
 MODULES=	lang/mono
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/mono-gtk2
 
 CONFIGURE_STYLE=gnu
