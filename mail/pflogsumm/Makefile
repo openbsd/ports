@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2008/09/17 06:49:25 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2010/04/06 09:03:34 giovanni Exp $
 
 COMMENT=	Postfix log entry summarizer
 
-DISTNAME=	pflogsumm-1.1.2
+DISTNAME=	pflogsumm-1.1.3
 CATEGORIES=	mail
 
 MASTER_SITES+=	http://jimsun.linxnet.com/downloads/
 
 HOMEPAGE=	http://jimsun.linxnet.com/postfix_contrib.html
 
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=     Giovanni Bechis <giovanni@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
