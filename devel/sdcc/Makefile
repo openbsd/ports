@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 02:53:13 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/06 17:15:40 naddy Exp $
 
 COMMENT=	Small Device C Compiler
 
-DISTNAME=	sdcc-src-2.7.0
+DISTNAME=	sdcc-src-2.8.0
+PKGNAME=	${DISTNAME:S/-src//}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=    	devel
 
@@ -23,8 +24,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		::devel/gputils
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		docdir=${PREFIX}/share/doc/sdcc
-CONFIGURE_ENV=	 	sdcc_cv_CCggdb=no
+CONFIGURE_ARGS+=	docdir=${PREFIX}/share/doc/sdcc
+CONFIGURE_ENV+=		sdcc_cv_CCggdb="no"
 
 USE_GMAKE=		Yes
 
