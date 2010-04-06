@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.17 2006/11/20 12:13:43 espie Exp $
+# $OpenBSD: resolve-lib,v 1.18 2010/04/06 09:39:51 espie Exp $
 #
 # Copyright (c) 2001, 2005 Marc Espie <espie@openbsd.org>
 #
@@ -112,7 +112,7 @@ sub solve_spec
 			    $1 eq "$LOCALBASE/lib/" or
 			    $1 eq "$X11BASE/lib/";
 		}
-		local $_=$';
+		my $_=$';
 		if (!$req->{noshared} && 
 		    m/^lib\Q$libname\E\.so\.(\d+)\.(\d+)$/) {
 			$found_shared = $file;
@@ -172,7 +172,7 @@ if (@ARGV > 0 && $ARGV[0] eq '-noshared') {
 	shift;
 }
 
-local $_;
+my $_;
 my @available;
 while(<STDIN>) {
 	chomp;
