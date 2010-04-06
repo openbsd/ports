@@ -1,0 +1,19 @@
+This Haskell module merely imports and re-exports the common part
+of the new api: "Text.Regex.Base.RegexLike" and "Text.Regex.Base.Context".
+
+To see what result types the instances of RegexContext can produce,
+please read the "Text.Regex.Base.Context" haddock documentation.
+
+This does not provide any of the backends, just the common interface
+they all use.  The modules which provide the backends and their cabal
+packages are:
+
+ * @Text.Regex.Posix@ from regex-posix
+ * @Text.Regex@ from regex-compat (uses regex-posix)
+ * @Text.Regex.Parsec@ from regex-parsec
+ * @Text.Regex.DFA@ from regex-dfa
+ * @Text.Regex.PCRE@ from regex-pcre
+ * @Test.Regex.TRE@ from regex-tre
+
+In fact, just importing one of the backends is adequate, you do not
+also need to import this module.
