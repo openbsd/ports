@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/04 15:37:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/04/06 21:23:13 ajacoutot Exp $
 
 COMMENT=	astrosmash clone for X
 
 DISTNAME=	cosmosmash-1.4.4
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	games
 
 HOMEPAGE=	http://sarrazip.com/dev/cosmosmash.html
-
-MAINTAINER=	Serge Basterot <sb@wo-do.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/04 15:34:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/06 21:23:13 ajacoutot Exp $
 
 COMMENT=	generic game engine library
 
 VERSION=	0.1.4
 DISTNAME=	flatzebra-${VERSION}
+PKGNAME=	${DISTNAME}p0
+
 SHARED_LIBS+=	flatzebra-0.1 1.0	# .2.0
 
 CATEGORIES=	devel games
 
 HOMEPAGE=	http://sarrazip.com/dev/afternoonstalker.html
-
-MAINTAINER=	Serge Basterot <sb@wo-do.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
