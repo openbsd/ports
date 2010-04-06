@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/04/02 15:53:26 robert Exp $
+# $OpenBSD: Makefile,v 1.39 2010/04/06 21:56:31 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,10 +9,10 @@ COMMENT-java=	optional integration of OpenOffice java features
 VERSION=	3.2.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOO320_m12
-PKGNAME=	openoffice-${VERSION}
-PKGNAME-main=	openoffice-${VERSION}
-PKGNAME-kde=	openoffice-kde-${VERSION}
-PKGNAME-java=	openoffice-java-${VERSION}p0
+PKGNAME=	openoffice-${VERSION}p0
+PKGNAME-main=	openoffice-${VERSION}p0
+PKGNAME-kde=	openoffice-kde-${VERSION}p0
+PKGNAME-java=	openoffice-java-${VERSION}p1
 CATEGORIES=	editors productivity
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -83,7 +83,7 @@ BUILD_DEPENDS+=	:zip-*:archivers/zip \
 		:bash-*:shells/bash \
 		:p5-Archive-Zip-*:archivers/p5-Archive-Zip \
 		::print/cups \
-		::devel/boost \
+		:boost->=1.41.0:devel/boost \
 		:xpdf-3.02:textproc/xpdf:patch
 
 MODULES+=	lang/python \
