@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/07 06:15:49 stephan Exp $
+${P5SITE}/Throwable/
+${P5SITE}/Throwable.pm
+${P5SITE}/Throwable/Error.pm
+@man man/man3p/Throwable.3p
+@man man/man3p/Throwable::Error.3p
