@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.781 2010/04/05 01:14:25 robert Exp $
+# $OpenBSD: Makefile,v 1.782 2010/04/07 06:24:14 stephan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -663,6 +663,7 @@
      SUBDIR += p5-Test-use-ok
      SUBDIR += p5-Text-FixEOL
      SUBDIR += p5-Text-vFile-asData
+     SUBDIR += p5-Throwable
      SUBDIR += p5-Tie-Array-Sorted
      SUBDIR += p5-Tie-CPHash
      SUBDIR += p5-Tie-Cache
