@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/30 16:17:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/07 14:04:00 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}bueditor/
 ${DRUPAL_MODS}bueditor/LICENSE.txt
 ${DRUPAL_MODS}bueditor/README.txt
 ${DRUPAL_MODS}bueditor/admin/
-${DRUPAL_MODS}bueditor/admin/admin.css
-${DRUPAL_MODS}bueditor/admin/admin.js
-${DRUPAL_MODS}bueditor/bueditor.admin.inc
+${DRUPAL_MODS}bueditor/admin/bueditor.admin.inc
+${DRUPAL_MODS}bueditor/admin/bueditor.edit.css
+${DRUPAL_MODS}bueditor/admin/bueditor.edit.js
+${DRUPAL_MODS}bueditor/admin/bueditor.eop.js
+${DRUPAL_MODS}bueditor/admin/bueditor.import.js
+${DRUPAL_MODS}bueditor/admin/bueditor.sprite.inc
 ${DRUPAL_MODS}bueditor/bueditor.css
 ${DRUPAL_MODS}bueditor/bueditor.info
 ${DRUPAL_MODS}bueditor/bueditor.install
@@ -16,6 +19,8 @@ ${DRUPAL_MODS}bueditor/bueditor.module
 ${DRUPAL_MODS}bueditor/icons/
 ${DRUPAL_MODS}bueditor/icons/README.txt
 ${DRUPAL_MODS}bueditor/icons/bold.png
+${DRUPAL_MODS}bueditor/icons/code.png
+${DRUPAL_MODS}bueditor/icons/dot.png
 ${DRUPAL_MODS}bueditor/icons/headers.png
 ${DRUPAL_MODS}bueditor/icons/help.png
 ${DRUPAL_MODS}bueditor/icons/image.png
@@ -23,9 +28,31 @@ ${DRUPAL_MODS}bueditor/icons/italic.png
 ${DRUPAL_MODS}bueditor/icons/link.png
 ${DRUPAL_MODS}bueditor/icons/ol.png
 ${DRUPAL_MODS}bueditor/icons/preview.png
+${DRUPAL_MODS}bueditor/icons/quote.png
 ${DRUPAL_MODS}bueditor/icons/separator.png
+${DRUPAL_MODS}bueditor/icons/strike.png
 ${DRUPAL_MODS}bueditor/icons/teaserbr.png
 ${DRUPAL_MODS}bueditor/icons/ul.png
+${DRUPAL_MODS}bueditor/icons/underline.png
+${DRUPAL_MODS}bueditor/icons/x1.png
+${DRUPAL_MODS}bueditor/import/
+${DRUPAL_MODS}bueditor/import/bbcode.bueditor.txt
+${DRUPAL_MODS}bueditor/import/commenter.bueditor.txt
+${DRUPAL_MODS}bueditor/import/default.bueditor.txt
+${DRUPAL_MODS}bueditor/import/lab.bueditor.txt
 ${DRUPAL_MODS}bueditor/library/
 ${DRUPAL_MODS}bueditor/library/README.txt
-${DRUPAL_MODS}bueditor/library/default_buttons_functions.js
+${DRUPAL_MODS}bueditor/library/bue.autocomplete.js
+${DRUPAL_MODS}bueditor/library/bue.ctrl.js
+${DRUPAL_MODS}bueditor/library/bue.find.js
+${DRUPAL_MODS}bueditor/library/bue.history.js
+${DRUPAL_MODS}bueditor/library/bue.imce.js
+${DRUPAL_MODS}bueditor/library/bue.li.js
+${DRUPAL_MODS}bueditor/library/bue.markup.js
+${DRUPAL_MODS}bueditor/library/bue.min.all.js
+${DRUPAL_MODS}bueditor/library/bue.min.default.js
+${DRUPAL_MODS}bueditor/library/bue.misc.js
+${DRUPAL_MODS}bueditor/library/bue.popup.css
+${DRUPAL_MODS}bueditor/library/bue.popup.js
+${DRUPAL_MODS}bueditor/library/bue.preview.js
+${DRUPAL_MODS}bueditor/library/bue.tab.js
