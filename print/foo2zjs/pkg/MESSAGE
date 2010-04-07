@@ -1,6 +1,20 @@
+USB printers must attach as a ugen(4) device which means you need to
+disable ulpt(4) in your kernel - see config(8).
+Your device will be available at /dev/ugenN.EE, where N is the device
+number and EE its endoint.
+e.g. lp=/dev/ugen0.02 for lpd(8) and usb:/dev/ugen0.02 for cupsd(8).
+
+When using cupsd(8), the _cups user will need r/w access to the device.
+
 Before using foo2zjs you should get extra files from the web, such as
 .ICM profiles (for color correction) and firmware using the command
     ${PREFIX}/share/doc/foo2zjs/getweb
-    
+
 Then copy the downloaded file(s) into the corresponding directory under
     ${PREFIX}/share/foo2*
+
+If your printer require a firmware load, run the following command as
+root each time the device is powered up:
+    cat ${PREFIX}/share/foo2zjs/firmware/XXX.dl > /dev/ugenN.EE
+(where XXX is your printer firmware name)
+You can use a hotplugd(8) attach script to make it automatic.
