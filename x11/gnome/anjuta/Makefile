@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/03/27 07:15:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/08 11:33:12 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,7 +42,8 @@ WANTLIB += tasn1 unique-1.0 util webkit-1.0 wnck-1 xcb xcb-atom
 WANTLIB += xcb-aux xcb-event xml2 xslt z
 
 BUILD_DEPENDS=		:autogen->=5.6.5:devel/autogen \
-			::devel/p5-Locale-gettext
+			::devel/p5-Locale-gettext \
+			::x11/gnome/libgda
 RUN_DEPENDS=		::misc/shared-mime-info \
 			::devel/p5-Locale-gettext
 LIB_DEPENDS=		gladeui-1::devel/glade3 \
