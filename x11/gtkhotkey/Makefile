@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/19 10:16:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/08 20:43:11 jasper Exp $
 
 COMMENT =	platform independent hotkey handling for Gtk+ applications
 
 
 DISTNAME =	gtkhotkey-0.2.1
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 SHARED_LIBS =	gtkhotkey 0.0 #1.0
 CATEGORIES =	x11
 
-HOMEPAGE =	http://launchpad.net/gkthotkey
+HOMEPAGE =	http://launchpad.net/gtkhotkey
 
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
