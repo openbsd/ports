@@ -1,0 +1,11 @@
+$OpenBSD: patch-hdhomerun_os_posix_h,v 1.1 2010/04/08 05:46:53 jolan Exp $
+--- hdhomerun_os_posix.h.orig	Sun Jan 31 01:25:33 2010
++++ hdhomerun_os_posix.h	Wed Apr  7 19:41:58 2010
+@@ -50,7 +50,6 @@
+ #include <pthread.h>
+ 
+ typedef int bool_t;
+-typedef void (*sig_t)(int);
+ 
+ #define LIBTYPE
+ #define console_vprintf vprintf
