@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/12/04 11:13:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/08 10:08:12 stephan Exp $
 @incompatibility drupal6-cck-<2.6
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
@@ -10,6 +10,7 @@ ${DRUPAL_MODS}views/css/
 ${DRUPAL_MODS}views/css/views-admin.css
 ${DRUPAL_MODS}views/css/views-list-rtl.css
 ${DRUPAL_MODS}views/css/views-list.css
+${DRUPAL_MODS}views/css/views-rtl.css
 ${DRUPAL_MODS}views/css/views-tabs.css
 ${DRUPAL_MODS}views/css/views.css
 ${DRUPAL_MODS}views/docs/
@@ -158,6 +159,7 @@ ${DRUPAL_MODS}views/modules/aggregator.views.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_handler_argument_aggregator_category_cid.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_handler_argument_aggregator_fid.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_handler_field_aggregator_category.inc
+${DRUPAL_MODS}views/modules/aggregator/views_handler_field_aggregator_item_description.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_handler_field_aggregator_title_link.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_handler_filter_aggregator_category_cid.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_plugin_row_aggregator_rss.inc
@@ -218,6 +220,8 @@ ${DRUPAL_MODS}views/modules/node/views_handler_field_node.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_field_node_link.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_field_node_link_delete.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_field_node_link_edit.inc
+${DRUPAL_MODS}views/modules/node/views_handler_field_node_path.inc
+${DRUPAL_MODS}views/modules/node/views_handler_field_node_revision.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_field_node_revision_link_delete.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_field_node_revision_link_revert.inc
 ${DRUPAL_MODS}views/modules/node/views_handler_field_node_type.inc
@@ -270,12 +274,14 @@ ${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_term_node_tid.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_term_node_tid_depth.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_vocabulary_vid.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_relationship_node_term_data.inc
+${DRUPAL_MODS}views/modules/taxonomy/views_plugin_argument_default_taxonomy_tid.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_plugin_argument_validate_taxonomy_term.inc
 ${DRUPAL_MODS}views/modules/translation/
 ${DRUPAL_MODS}views/modules/translation.views.inc
 ${DRUPAL_MODS}views/modules/translation/views_handler_argument_node_language.inc
 ${DRUPAL_MODS}views/modules/translation/views_handler_argument_node_tnid.inc
 ${DRUPAL_MODS}views/modules/translation/views_handler_field_node_language.inc
+${DRUPAL_MODS}views/modules/translation/views_handler_field_node_link_translate.inc
 ${DRUPAL_MODS}views/modules/translation/views_handler_field_node_translation_link.inc
 ${DRUPAL_MODS}views/modules/translation/views_handler_filter_node_language.inc
 ${DRUPAL_MODS}views/modules/translation/views_handler_filter_node_tnid.inc
@@ -364,8 +370,10 @@ ${DRUPAL_MODS}views/translations/
 ${DRUPAL_MODS}views/translations/de.po
 ${DRUPAL_MODS}views/translations/eo.po
 ${DRUPAL_MODS}views/translations/fr.po
+${DRUPAL_MODS}views/translations/hu.po
 ${DRUPAL_MODS}views/translations/it.po
 ${DRUPAL_MODS}views/translations/pl.po
+${DRUPAL_MODS}views/translations/pt-br.po
 ${DRUPAL_MODS}views/translations/sv.po
 ${DRUPAL_MODS}views/translations/uk-ua.po
 ${DRUPAL_MODS}views/translations/uk.po
