@@ -1,0 +1,15 @@
+$OpenBSD: patch-boost_throw_exception_hpp,v 1.1 2010/04/08 11:33:35 landry Exp $
+Fix for /usr/local/include/boost/throw_exception.hpp:57: warning:
+`inline' is not at  beginning of declaration which makes -Werror
+configure scripts bomb
+--- boost/throw_exception.hpp.orig	Thu Apr  8 11:26:22 2010
++++ boost/throw_exception.hpp	Thu Apr  8 11:26:36 2010
+@@ -54,7 +54,7 @@ void throw_exception( std::exception const & e ); // u
+ 
+ inline void throw_exception_assert_compatibility( std::exception const & ) { }
+ 
+-template<class E> BOOST_ATTRIBUTE_NORETURN inline void throw_exception( E const & e )
++template<class E> inline BOOST_ATTRIBUTE_NORETURN void throw_exception( E const & e )
+ {
+     //All boost exceptions are required to derive from std::exception,
+     //to ensure compatibility with BOOST_NO_EXCEPTIONS.
