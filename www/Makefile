@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.453 2010/03/25 21:57:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.454 2010/04/08 08:08:08 stephan Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -76,6 +76,7 @@
      SUBDIR += man2web
      SUBDIR += mantis
      SUBDIR += mediawiki
+     SUBDIR += mediawiki-CategoryTree
      SUBDIR += mediawiki-httpauth
      SUBDIR += mhonarc
      SUBDIR += midori
