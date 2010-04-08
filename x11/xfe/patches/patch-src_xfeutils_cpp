@@ -1,0 +1,59 @@
+$OpenBSD: patch-src_xfeutils_cpp,v 1.1 2010/04/08 09:50:06 stephan Exp $
+--- src/xfeutils.cpp.orig	Mon Nov  9 11:17:17 2009
++++ src/xfeutils.cpp	Fri Mar 26 08:33:37 2010
+@@ -467,36 +467,36 @@ FXbool isUtf8(const FXchar* string, FXuint length)
+ 	while (n<length)
+     {
+         // UTF-8, 2 bytes, should be: 110vvvvv 10vvvvvv
+-        if (((unsigned FXchar)(string[0]) & 0xE0) == 0xC0)
++        if (((unsigned char)(string[0]) & 0xE0) == 0xC0)
+         {
+-            if (!string[1] || (((unsigned FXchar)(string[1]) & 0xC0) != 0x80))
++            if (!string[1] || (((unsigned char)(string[1]) & 0xC0) != 0x80))
+                 return FALSE;
+             string += 2;
+ 			n += 2;
+         }
+         // UTF-8, 3 bytes, should be: 1110vvvv 10vvvvvv 10vvvvvv
+-        else if (((unsigned FXchar)(string[0]) & 0xF0) == 0xE0)
++        else if (((unsigned char)(string[0]) & 0xF0) == 0xE0)
+         {
+             if (!string[1] || !string[2]
+-                || (((unsigned FXchar)(string[1]) & 0xC0) != 0x80)
+-                || (((unsigned FXchar)(string[2]) & 0xC0) != 0x80))
++                || (((unsigned char)(string[1]) & 0xC0) != 0x80)
++                || (((unsigned char)(string[2]) & 0xC0) != 0x80))
+                 return FALSE;
+             string += 3;
+ 			n += 3;
+        }
+         // UTF-8, 4 bytes, should be: 11110vvv 10vvvvvv 10vvvvvv 10vvvvvv
+-        else if (((unsigned FXchar)(string[0]) & 0xF8) == 0xF0)
++        else if (((unsigned char)(string[0]) & 0xF8) == 0xF0)
+         {
+             if (!string[1] || !string[2] || !string[3]
+-                || (((unsigned FXchar)(string[1]) & 0xC0) != 0x80)
+-                || (((unsigned FXchar)(string[2]) & 0xC0) != 0x80)
+-                || (((unsigned FXchar)(string[3]) & 0xC0) != 0x80))
++                || (((unsigned char)(string[1]) & 0xC0) != 0x80)
++                || (((unsigned char)(string[2]) & 0xC0) != 0x80)
++                || (((unsigned char)(string[3]) & 0xC0) != 0x80))
+                 return FALSE;
+             string += 4;
+ 			n += 4;
+         }
+         // UTF-8, 1 byte, should be: 0vvvvvvv
+-        else if ((unsigned FXchar)(string[0]) >= 0x80)
++        else if ((unsigned char)(string[0]) >= 0x80)
+ 		{
+             return FALSE;
+ 		}
+@@ -512,7 +512,7 @@ FXbool isUtf8(const FXchar* string, FXuint length)
+ 
+ 
+ // Replacement of the stat function
+-inline FXint statrep(const FXchar* filename, struct stat* buf)
++FXint statrep(const FXchar* filename, struct stat* buf)
+ {
+ #if defined(linux)
+ 

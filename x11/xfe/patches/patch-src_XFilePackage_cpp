@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_XFilePackage_cpp,v 1.1 2010/04/08 09:50:06 stephan Exp $
+--- src/XFilePackage.cpp.orig	Fri Mar 26 08:15:17 2010
++++ src/XFilePackage.cpp	Fri Mar 26 08:15:35 2010
+@@ -11,6 +11,7 @@
+ #include <unistd.h>
+ #include <sys/stat.h>
+ #include <sys/wait.h>
++#include <signal.h>
+ 
+ #include "xfedefs.h"
+ #include "icons.h"

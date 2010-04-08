@@ -1,0 +1,14 @@
+$OpenBSD: patch-xvt_xvt_h,v 1.1 2010/04/08 09:50:06 stephan Exp $
+--- xvt/xvt.h.orig	Mon Oct 19 04:36:02 2009
++++ xvt/xvt.h	Fri Mar 26 08:32:16 2010
+@@ -60,7 +60,9 @@ int unlockpt(int);
+ char *ptsname(int);
+ #else /* !SUNOS5 */
+ /*#ifndef LINUX*/
+-#ifndef linux
++#if defined(__OpenBSD__)
++#define LIBC_OPENPTY
++#elif !defined(linux) 
+ int ioctl(int fd, unsigned request, char *arg);
+ #endif /* LINUX */
+ #endif /* !SUNOS5 */

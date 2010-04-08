@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/06/12 16:59:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/04/08 09:50:06 stephan Exp $
 @bin bin/xfe
 @bin bin/xfi
 @bin bin/xfp
@@ -9,10 +9,17 @@
 @man man/man1/xfp.1
 @man man/man1/xfv.1
 @man man/man1/xfw.1
+share/applications/
+share/applications/xfe.desktop
+share/applications/xfi.desktop
+share/applications/xfp.desktop
+share/applications/xfv.desktop
+share/applications/xfw.desktop
 share/locale/ca/LC_MESSAGES/xfe.mo
 share/locale/cs/LC_MESSAGES/xfe.mo
 share/locale/da/LC_MESSAGES/xfe.mo
 share/locale/de/LC_MESSAGES/xfe.mo
+share/locale/el/LC_MESSAGES/xfe.mo
 share/locale/es/LC_MESSAGES/xfe.mo
 share/locale/es_AR/
 share/locale/es_AR/LC_MESSAGES/
@@ -33,10 +40,15 @@ share/locale/tr/LC_MESSAGES/xfe.mo
 share/locale/zh_CN/LC_MESSAGES/xfe.mo
 share/pixmaps/
 share/pixmaps/xfe.png
+share/pixmaps/xfe.xpm
 share/pixmaps/xfi.png
+share/pixmaps/xfi.xpm
 share/pixmaps/xfp.png
+share/pixmaps/xfp.xpm
 share/pixmaps/xfv.png
+share/pixmaps/xfv.xpm
 share/pixmaps/xfw.png
+share/pixmaps/xfw.xpm
 share/xfe/
 share/xfe/icons/
 share/xfe/icons/blue-theme/
@@ -46,6 +58,8 @@ share/xfe/icons/blue-theme/ace_16x16.png
 share/xfe/icons/blue-theme/ace_32x32.png
 share/xfe/icons/blue-theme/archadd.png
 share/xfe/icons/blue-theme/archext.png
+share/xfe/icons/blue-theme/arj_16x16.png
+share/xfe/icons/blue-theme/arj_32x32.png
 share/xfe/icons/blue-theme/attrib.png
 share/xfe/icons/blue-theme/bak_16x16.png
 share/xfe/icons/blue-theme/bak_32x32.png
@@ -125,6 +139,7 @@ share/xfe/icons/blue-theme/filedelete.png
 share/xfe/icons/blue-theme/filedelete_perm.png
 share/xfe/icons/blue-theme/filedialog.png
 share/xfe/icons/blue-theme/fileopen.png
+share/xfe/icons/blue-theme/filerestore.png
 share/xfe/icons/blue-theme/filter.png
 share/xfe/icons/blue-theme/find_again.png
 share/xfe/icons/blue-theme/fliplr.png
@@ -135,6 +150,8 @@ share/xfe/icons/blue-theme/gif_16x16.png
 share/xfe/icons/blue-theme/gif_32x32.png
 share/xfe/icons/blue-theme/gotobig.png
 share/xfe/icons/blue-theme/gotoline.png
+share/xfe/icons/blue-theme/graybutton.png
+share/xfe/icons/blue-theme/greenbutton.png
 share/xfe/icons/blue-theme/gz_16x16.png
 share/xfe/icons/blue-theme/gz_32x32.png
 share/xfe/icons/blue-theme/h_16x16.png
@@ -157,6 +174,7 @@ share/xfe/icons/blue-theme/java_16x16.png
 share/xfe/icons/blue-theme/java_32x32.png
 share/xfe/icons/blue-theme/jpeg_16x16.png
 share/xfe/icons/blue-theme/jpeg_32x32.png
+share/xfe/icons/blue-theme/keybindings.png
 share/xfe/icons/blue-theme/link_big.png
 share/xfe/icons/blue-theme/location.png
 share/xfe/icons/blue-theme/lowercase.png
@@ -180,6 +198,7 @@ share/xfe/icons/blue-theme/minifolderclosed.png
 share/xfe/icons/blue-theme/minifolderlocked.png
 share/xfe/icons/blue-theme/minifolderopen.png
 share/xfe/icons/blue-theme/minifolderup.png
+share/xfe/icons/blue-theme/minikeybindings.png
 share/xfe/icons/blue-theme/minilink.png
 share/xfe/icons/blue-theme/minipipe.png
 share/xfe/icons/blue-theme/minishell.png
@@ -233,6 +252,7 @@ share/xfe/icons/blue-theme/redo.png
 share/xfe/icons/blue-theme/reload.png
 share/xfe/icons/blue-theme/renameit.png
 share/xfe/icons/blue-theme/replace.png
+share/xfe/icons/blue-theme/restore_big.png
 share/xfe/icons/blue-theme/revert.png
 share/xfe/icons/blue-theme/rotateleft.png
 share/xfe/icons/blue-theme/rotateright.png
@@ -341,6 +361,8 @@ share/xfe/icons/brown-theme/ace_16x16.png
 share/xfe/icons/brown-theme/ace_32x32.png
 share/xfe/icons/brown-theme/archadd.png
 share/xfe/icons/brown-theme/archext.png
+share/xfe/icons/brown-theme/arj_16x16.png
+share/xfe/icons/brown-theme/arj_32x32.png
 share/xfe/icons/brown-theme/attrib.png
 share/xfe/icons/brown-theme/bak_16x16.png
 share/xfe/icons/brown-theme/bak_32x32.png
@@ -420,6 +442,7 @@ share/xfe/icons/brown-theme/filedelete.png
 share/xfe/icons/brown-theme/filedelete_perm.png
 share/xfe/icons/brown-theme/filedialog.png
 share/xfe/icons/brown-theme/fileopen.png
+share/xfe/icons/brown-theme/filerestore.png
 share/xfe/icons/brown-theme/filter.png
 share/xfe/icons/brown-theme/find_again.png
 share/xfe/icons/brown-theme/fliplr.png
@@ -430,6 +453,8 @@ share/xfe/icons/brown-theme/gif_16x16.png
 share/xfe/icons/brown-theme/gif_32x32.png
 share/xfe/icons/brown-theme/gotobig.png
 share/xfe/icons/brown-theme/gotoline.png
+share/xfe/icons/brown-theme/graybutton.png
+share/xfe/icons/brown-theme/greenbutton.png
 share/xfe/icons/brown-theme/gz_16x16.png
 share/xfe/icons/brown-theme/gz_32x32.png
 share/xfe/icons/brown-theme/h_16x16.png
@@ -452,6 +477,7 @@ share/xfe/icons/brown-theme/java_16x16.png
 share/xfe/icons/brown-theme/java_32x32.png
 share/xfe/icons/brown-theme/jpeg_16x16.png
 share/xfe/icons/brown-theme/jpeg_32x32.png
+share/xfe/icons/brown-theme/keybindings.png
 share/xfe/icons/brown-theme/link_big.png
 share/xfe/icons/brown-theme/location.png
 share/xfe/icons/brown-theme/lowercase.png
@@ -475,6 +501,7 @@ share/xfe/icons/brown-theme/minifolderclosed.png
 share/xfe/icons/brown-theme/minifolderlocked.png
 share/xfe/icons/brown-theme/minifolderopen.png
 share/xfe/icons/brown-theme/minifolderup.png
+share/xfe/icons/brown-theme/minikeybindings.png
 share/xfe/icons/brown-theme/minilink.png
 share/xfe/icons/brown-theme/minipipe.png
 share/xfe/icons/brown-theme/minishell.png
@@ -528,6 +555,7 @@ share/xfe/icons/brown-theme/redo.png
 share/xfe/icons/brown-theme/reload.png
 share/xfe/icons/brown-theme/renameit.png
 share/xfe/icons/brown-theme/replace.png
+share/xfe/icons/brown-theme/restore_big.png
 share/xfe/icons/brown-theme/revert.png
 share/xfe/icons/brown-theme/rotateleft.png
 share/xfe/icons/brown-theme/rotateright.png
@@ -636,6 +664,8 @@ share/xfe/icons/gnome-theme/ace_16x16.png
 share/xfe/icons/gnome-theme/ace_32x32.png
 share/xfe/icons/gnome-theme/archadd.png
 share/xfe/icons/gnome-theme/archext.png
+share/xfe/icons/gnome-theme/arj_16x16.png
+share/xfe/icons/gnome-theme/arj_32x32.png
 share/xfe/icons/gnome-theme/attrib.png
 share/xfe/icons/gnome-theme/bak_16x16.png
 share/xfe/icons/gnome-theme/bak_32x32.png
@@ -715,6 +745,7 @@ share/xfe/icons/gnome-theme/filedelete.png
 share/xfe/icons/gnome-theme/filedelete_perm.png
 share/xfe/icons/gnome-theme/filedialog.png
 share/xfe/icons/gnome-theme/fileopen.png
+share/xfe/icons/gnome-theme/filerestore.png
 share/xfe/icons/gnome-theme/filter.png
 share/xfe/icons/gnome-theme/find_again.png
 share/xfe/icons/gnome-theme/fliplr.png
@@ -725,6 +756,8 @@ share/xfe/icons/gnome-theme/gif_16x16.png
 share/xfe/icons/gnome-theme/gif_32x32.png
 share/xfe/icons/gnome-theme/gotobig.png
 share/xfe/icons/gnome-theme/gotoline.png
+share/xfe/icons/gnome-theme/graybutton.png
+share/xfe/icons/gnome-theme/greenbutton.png
 share/xfe/icons/gnome-theme/gz_16x16.png
 share/xfe/icons/gnome-theme/gz_32x32.png
 share/xfe/icons/gnome-theme/h_16x16.png
@@ -747,6 +780,7 @@ share/xfe/icons/gnome-theme/java_16x16.png
 share/xfe/icons/gnome-theme/java_32x32.png
 share/xfe/icons/gnome-theme/jpeg_16x16.png
 share/xfe/icons/gnome-theme/jpeg_32x32.png
+share/xfe/icons/gnome-theme/keybindings.png
 share/xfe/icons/gnome-theme/link_big.png
 share/xfe/icons/gnome-theme/location.png
 share/xfe/icons/gnome-theme/lowercase.png
@@ -770,6 +804,7 @@ share/xfe/icons/gnome-theme/minifolderclosed.png
 share/xfe/icons/gnome-theme/minifolderlocked.png
 share/xfe/icons/gnome-theme/minifolderopen.png
 share/xfe/icons/gnome-theme/minifolderup.png
+share/xfe/icons/gnome-theme/minikeybindings.png
 share/xfe/icons/gnome-theme/minilink.png
 share/xfe/icons/gnome-theme/minipipe.png
 share/xfe/icons/gnome-theme/minishell.png
@@ -823,6 +858,7 @@ share/xfe/icons/gnome-theme/redo.png
 share/xfe/icons/gnome-theme/reload.png
 share/xfe/icons/gnome-theme/renameit.png
 share/xfe/icons/gnome-theme/replace.png
+share/xfe/icons/gnome-theme/restore_big.png
 share/xfe/icons/gnome-theme/revert.png
 share/xfe/icons/gnome-theme/rotateleft.png
 share/xfe/icons/gnome-theme/rotateright.png
@@ -931,6 +967,8 @@ share/xfe/icons/gnomeblue-theme/ace_16x16.png
 share/xfe/icons/gnomeblue-theme/ace_32x32.png
 share/xfe/icons/gnomeblue-theme/archadd.png
 share/xfe/icons/gnomeblue-theme/archext.png
+share/xfe/icons/gnomeblue-theme/arj_16x16.png
+share/xfe/icons/gnomeblue-theme/arj_32x32.png
 share/xfe/icons/gnomeblue-theme/attrib.png
 share/xfe/icons/gnomeblue-theme/bak_16x16.png
 share/xfe/icons/gnomeblue-theme/bak_32x32.png
@@ -1010,6 +1048,7 @@ share/xfe/icons/gnomeblue-theme/filedelete.png
 share/xfe/icons/gnomeblue-theme/filedelete_perm.png
 share/xfe/icons/gnomeblue-theme/filedialog.png
 share/xfe/icons/gnomeblue-theme/fileopen.png
+share/xfe/icons/gnomeblue-theme/filerestore.png
 share/xfe/icons/gnomeblue-theme/filter.png
 share/xfe/icons/gnomeblue-theme/find_again.png
 share/xfe/icons/gnomeblue-theme/fliplr.png
@@ -1020,6 +1059,8 @@ share/xfe/icons/gnomeblue-theme/gif_16x16.png
 share/xfe/icons/gnomeblue-theme/gif_32x32.png
 share/xfe/icons/gnomeblue-theme/gotobig.png
 share/xfe/icons/gnomeblue-theme/gotoline.png
+share/xfe/icons/gnomeblue-theme/graybutton.png
+share/xfe/icons/gnomeblue-theme/greenbutton.png
 share/xfe/icons/gnomeblue-theme/gz_16x16.png
 share/xfe/icons/gnomeblue-theme/gz_32x32.png
 share/xfe/icons/gnomeblue-theme/h_16x16.png
@@ -1042,6 +1083,7 @@ share/xfe/icons/gnomeblue-theme/java_16x16.png
 share/xfe/icons/gnomeblue-theme/java_32x32.png
 share/xfe/icons/gnomeblue-theme/jpeg_16x16.png
 share/xfe/icons/gnomeblue-theme/jpeg_32x32.png
+share/xfe/icons/gnomeblue-theme/keybindings.png
 share/xfe/icons/gnomeblue-theme/link_big.png
 share/xfe/icons/gnomeblue-theme/location.png
 share/xfe/icons/gnomeblue-theme/lowercase.png
@@ -1065,6 +1107,7 @@ share/xfe/icons/gnomeblue-theme/minifolderclosed.png
 share/xfe/icons/gnomeblue-theme/minifolderlocked.png
 share/xfe/icons/gnomeblue-theme/minifolderopen.png
 share/xfe/icons/gnomeblue-theme/minifolderup.png
+share/xfe/icons/gnomeblue-theme/minikeybindings.png
 share/xfe/icons/gnomeblue-theme/minilink.png
 share/xfe/icons/gnomeblue-theme/minipipe.png
 share/xfe/icons/gnomeblue-theme/minishell.png
@@ -1118,6 +1161,7 @@ share/xfe/icons/gnomeblue-theme/redo.png
 share/xfe/icons/gnomeblue-theme/reload.png
 share/xfe/icons/gnomeblue-theme/renameit.png
 share/xfe/icons/gnomeblue-theme/replace.png
+share/xfe/icons/gnomeblue-theme/restore_big.png
 share/xfe/icons/gnomeblue-theme/revert.png
 share/xfe/icons/gnomeblue-theme/rotateleft.png
 share/xfe/icons/gnomeblue-theme/rotateright.png
@@ -1226,6 +1270,8 @@ share/xfe/icons/kde-theme/ace_16x16.png
 share/xfe/icons/kde-theme/ace_32x32.png
 share/xfe/icons/kde-theme/archadd.png
 share/xfe/icons/kde-theme/archext.png
+share/xfe/icons/kde-theme/arj_16x16.png
+share/xfe/icons/kde-theme/arj_32x32.png
 share/xfe/icons/kde-theme/attrib.png
 share/xfe/icons/kde-theme/bak_16x16.png
 share/xfe/icons/kde-theme/bak_32x32.png
@@ -1305,6 +1351,7 @@ share/xfe/icons/kde-theme/filedelete.png
 share/xfe/icons/kde-theme/filedelete_perm.png
 share/xfe/icons/kde-theme/filedialog.png
 share/xfe/icons/kde-theme/fileopen.png
+share/xfe/icons/kde-theme/filerestore.png
 share/xfe/icons/kde-theme/filter.png
 share/xfe/icons/kde-theme/find_again.png
 share/xfe/icons/kde-theme/fliplr.png
@@ -1315,6 +1362,8 @@ share/xfe/icons/kde-theme/gif_16x16.png
 share/xfe/icons/kde-theme/gif_32x32.png
 share/xfe/icons/kde-theme/gotobig.png
 share/xfe/icons/kde-theme/gotoline.png
+share/xfe/icons/kde-theme/graybutton.png
+share/xfe/icons/kde-theme/greenbutton.png
 share/xfe/icons/kde-theme/gz_16x16.png
 share/xfe/icons/kde-theme/gz_32x32.png
 share/xfe/icons/kde-theme/h_16x16.png
@@ -1337,6 +1386,7 @@ share/xfe/icons/kde-theme/java_16x16.png
 share/xfe/icons/kde-theme/java_32x32.png
 share/xfe/icons/kde-theme/jpeg_16x16.png
 share/xfe/icons/kde-theme/jpeg_32x32.png
+share/xfe/icons/kde-theme/keybindings.png
 share/xfe/icons/kde-theme/link_big.png
 share/xfe/icons/kde-theme/location.png
 share/xfe/icons/kde-theme/lowercase.png
@@ -1360,6 +1410,7 @@ share/xfe/icons/kde-theme/minifolderclosed.png
 share/xfe/icons/kde-theme/minifolderlocked.png
 share/xfe/icons/kde-theme/minifolderopen.png
 share/xfe/icons/kde-theme/minifolderup.png
+share/xfe/icons/kde-theme/minikeybindings.png
 share/xfe/icons/kde-theme/minilink.png
 share/xfe/icons/kde-theme/minipipe.png
 share/xfe/icons/kde-theme/minishell.png
@@ -1413,6 +1464,7 @@ share/xfe/icons/kde-theme/redo.png
 share/xfe/icons/kde-theme/reload.png
 share/xfe/icons/kde-theme/renameit.png
 share/xfe/icons/kde-theme/replace.png
+share/xfe/icons/kde-theme/restore_big.png
 share/xfe/icons/kde-theme/revert.png
 share/xfe/icons/kde-theme/rotateleft.png
 share/xfe/icons/kde-theme/rotateright.png
@@ -1521,6 +1573,8 @@ share/xfe/icons/tango-theme/ace_16x16.png
 share/xfe/icons/tango-theme/ace_32x32.png
 share/xfe/icons/tango-theme/archadd.png
 share/xfe/icons/tango-theme/archext.png
+share/xfe/icons/tango-theme/arj_16x16.png
+share/xfe/icons/tango-theme/arj_32x32.png
 share/xfe/icons/tango-theme/attrib.png
 share/xfe/icons/tango-theme/bak_16x16.png
 share/xfe/icons/tango-theme/bak_32x32.png
@@ -1600,6 +1654,7 @@ share/xfe/icons/tango-theme/filedelete.png
 share/xfe/icons/tango-theme/filedelete_perm.png
 share/xfe/icons/tango-theme/filedialog.png
 share/xfe/icons/tango-theme/fileopen.png
+share/xfe/icons/tango-theme/filerestore.png
 share/xfe/icons/tango-theme/filter.png
 share/xfe/icons/tango-theme/find_again.png
 share/xfe/icons/tango-theme/fliplr.png
@@ -1610,6 +1665,8 @@ share/xfe/icons/tango-theme/gif_16x16.png
 share/xfe/icons/tango-theme/gif_32x32.png
 share/xfe/icons/tango-theme/gotobig.png
 share/xfe/icons/tango-theme/gotoline.png
+share/xfe/icons/tango-theme/graybutton.png
+share/xfe/icons/tango-theme/greenbutton.png
 share/xfe/icons/tango-theme/gz_16x16.png
 share/xfe/icons/tango-theme/gz_32x32.png
 share/xfe/icons/tango-theme/h_16x16.png
@@ -1632,6 +1689,7 @@ share/xfe/icons/tango-theme/java_16x16.png
 share/xfe/icons/tango-theme/java_32x32.png
 share/xfe/icons/tango-theme/jpeg_16x16.png
 share/xfe/icons/tango-theme/jpeg_32x32.png
+share/xfe/icons/tango-theme/keybindings.png
 share/xfe/icons/tango-theme/link_big.png
 share/xfe/icons/tango-theme/location.png
 share/xfe/icons/tango-theme/lowercase.png
@@ -1655,6 +1713,7 @@ share/xfe/icons/tango-theme/minifolderclosed.png
 share/xfe/icons/tango-theme/minifolderlocked.png
 share/xfe/icons/tango-theme/minifolderopen.png
 share/xfe/icons/tango-theme/minifolderup.png
+share/xfe/icons/tango-theme/minikeybindings.png
 share/xfe/icons/tango-theme/minilink.png
 share/xfe/icons/tango-theme/minipipe.png
 share/xfe/icons/tango-theme/minishell.png
@@ -1708,6 +1767,7 @@ share/xfe/icons/tango-theme/redo.png
 share/xfe/icons/tango-theme/reload.png
 share/xfe/icons/tango-theme/renameit.png
 share/xfe/icons/tango-theme/replace.png
+share/xfe/icons/tango-theme/restore_big.png
 share/xfe/icons/tango-theme/revert.png
 share/xfe/icons/tango-theme/rotateleft.png
 share/xfe/icons/tango-theme/rotateright.png
@@ -1816,6 +1876,8 @@ share/xfe/icons/windows-theme/ace_16x16.png
 share/xfe/icons/windows-theme/ace_32x32.png
 share/xfe/icons/windows-theme/archadd.png
 share/xfe/icons/windows-theme/archext.png
+share/xfe/icons/windows-theme/arj_16x16.png
+share/xfe/icons/windows-theme/arj_32x32.png
 share/xfe/icons/windows-theme/attrib.png
 share/xfe/icons/windows-theme/bak_16x16.png
 share/xfe/icons/windows-theme/bak_32x32.png
@@ -1895,6 +1957,7 @@ share/xfe/icons/windows-theme/filedelete.png
 share/xfe/icons/windows-theme/filedelete_perm.png
 share/xfe/icons/windows-theme/filedialog.png
 share/xfe/icons/windows-theme/fileopen.png
+share/xfe/icons/windows-theme/filerestore.png
 share/xfe/icons/windows-theme/filter.png
 share/xfe/icons/windows-theme/find_again.png
 share/xfe/icons/windows-theme/fliplr.png
@@ -1905,6 +1968,8 @@ share/xfe/icons/windows-theme/gif_16x16.png
 share/xfe/icons/windows-theme/gif_32x32.png
 share/xfe/icons/windows-theme/gotobig.png
 share/xfe/icons/windows-theme/gotoline.png
+share/xfe/icons/windows-theme/graybutton.png
+share/xfe/icons/windows-theme/greenbutton.png
 share/xfe/icons/windows-theme/gz_16x16.png
 share/xfe/icons/windows-theme/gz_32x32.png
 share/xfe/icons/windows-theme/h_16x16.png
@@ -1927,6 +1992,7 @@ share/xfe/icons/windows-theme/java_16x16.png
 share/xfe/icons/windows-theme/java_32x32.png
 share/xfe/icons/windows-theme/jpeg_16x16.png
 share/xfe/icons/windows-theme/jpeg_32x32.png
+share/xfe/icons/windows-theme/keybindings.png
 share/xfe/icons/windows-theme/link_big.png
 share/xfe/icons/windows-theme/location.png
 share/xfe/icons/windows-theme/lowercase.png
@@ -1950,6 +2016,7 @@ share/xfe/icons/windows-theme/minifolderclosed.png
 share/xfe/icons/windows-theme/minifolderlocked.png
 share/xfe/icons/windows-theme/minifolderopen.png
 share/xfe/icons/windows-theme/minifolderup.png
+share/xfe/icons/windows-theme/minikeybindings.png
 share/xfe/icons/windows-theme/minilink.png
 share/xfe/icons/windows-theme/minipipe.png
 share/xfe/icons/windows-theme/minishell.png
@@ -2003,6 +2070,7 @@ share/xfe/icons/windows-theme/redo.png
 share/xfe/icons/windows-theme/reload.png
 share/xfe/icons/windows-theme/renameit.png
 share/xfe/icons/windows-theme/replace.png
+share/xfe/icons/windows-theme/restore_big.png
 share/xfe/icons/windows-theme/revert.png
 share/xfe/icons/windows-theme/rotateleft.png
 share/xfe/icons/windows-theme/rotateright.png
@@ -2111,6 +2179,8 @@ share/xfe/icons/xfce-theme/ace_16x16.png
 share/xfe/icons/xfce-theme/ace_32x32.png
 share/xfe/icons/xfce-theme/archadd.png
 share/xfe/icons/xfce-theme/archext.png
+share/xfe/icons/xfce-theme/arj_16x16.png
+share/xfe/icons/xfce-theme/arj_32x32.png
 share/xfe/icons/xfce-theme/attrib.png
 share/xfe/icons/xfce-theme/bak_16x16.png
 share/xfe/icons/xfce-theme/bak_32x32.png
@@ -2190,6 +2260,7 @@ share/xfe/icons/xfce-theme/filedelete.png
 share/xfe/icons/xfce-theme/filedelete_perm.png
 share/xfe/icons/xfce-theme/filedialog.png
 share/xfe/icons/xfce-theme/fileopen.png
+share/xfe/icons/xfce-theme/filerestore.png
 share/xfe/icons/xfce-theme/filter.png
 share/xfe/icons/xfce-theme/find_again.png
 share/xfe/icons/xfce-theme/fliplr.png
@@ -2200,6 +2271,8 @@ share/xfe/icons/xfce-theme/gif_16x16.png
 share/xfe/icons/xfce-theme/gif_32x32.png
 share/xfe/icons/xfce-theme/gotobig.png
 share/xfe/icons/xfce-theme/gotoline.png
+share/xfe/icons/xfce-theme/graybutton.png
+share/xfe/icons/xfce-theme/greenbutton.png
 share/xfe/icons/xfce-theme/gz_16x16.png
 share/xfe/icons/xfce-theme/gz_32x32.png
 share/xfe/icons/xfce-theme/h_16x16.png
@@ -2222,6 +2295,7 @@ share/xfe/icons/xfce-theme/java_16x16.png
 share/xfe/icons/xfce-theme/java_32x32.png
 share/xfe/icons/xfce-theme/jpeg_16x16.png
 share/xfe/icons/xfce-theme/jpeg_32x32.png
+share/xfe/icons/xfce-theme/keybindings.png
 share/xfe/icons/xfce-theme/link_big.png
 share/xfe/icons/xfce-theme/location.png
 share/xfe/icons/xfce-theme/lowercase.png
@@ -2245,6 +2319,7 @@ share/xfe/icons/xfce-theme/minifolderclosed.png
 share/xfe/icons/xfce-theme/minifolderlocked.png
 share/xfe/icons/xfce-theme/minifolderopen.png
 share/xfe/icons/xfce-theme/minifolderup.png
+share/xfe/icons/xfce-theme/minikeybindings.png
 share/xfe/icons/xfce-theme/minilink.png
 share/xfe/icons/xfce-theme/minipipe.png
 share/xfe/icons/xfce-theme/minishell.png
@@ -2298,6 +2373,7 @@ share/xfe/icons/xfce-theme/redo.png
 share/xfe/icons/xfce-theme/reload.png
 share/xfe/icons/xfce-theme/renameit.png
 share/xfe/icons/xfce-theme/replace.png
+share/xfe/icons/xfce-theme/restore_big.png
 share/xfe/icons/xfce-theme/revert.png
 share/xfe/icons/xfce-theme/rotateleft.png
 share/xfe/icons/xfce-theme/rotateright.png
@@ -2406,6 +2482,8 @@ share/xfe/icons/xfe-theme/ace_16x16.png
 share/xfe/icons/xfe-theme/ace_32x32.png
 share/xfe/icons/xfe-theme/archadd.png
 share/xfe/icons/xfe-theme/archext.png
+share/xfe/icons/xfe-theme/arj_16x16.png
+share/xfe/icons/xfe-theme/arj_32x32.png
 share/xfe/icons/xfe-theme/attrib.png
 share/xfe/icons/xfe-theme/bak_16x16.png
 share/xfe/icons/xfe-theme/bak_32x32.png
@@ -2485,6 +2563,7 @@ share/xfe/icons/xfe-theme/filedelete.png
 share/xfe/icons/xfe-theme/filedelete_perm.png
 share/xfe/icons/xfe-theme/filedialog.png
 share/xfe/icons/xfe-theme/fileopen.png
+share/xfe/icons/xfe-theme/filerestore.png
 share/xfe/icons/xfe-theme/filter.png
 share/xfe/icons/xfe-theme/find_again.png
 share/xfe/icons/xfe-theme/fliplr.png
@@ -2495,6 +2574,8 @@ share/xfe/icons/xfe-theme/gif_16x16.png
 share/xfe/icons/xfe-theme/gif_32x32.png
 share/xfe/icons/xfe-theme/gotobig.png
 share/xfe/icons/xfe-theme/gotoline.png
+share/xfe/icons/xfe-theme/graybutton.png
+share/xfe/icons/xfe-theme/greenbutton.png
 share/xfe/icons/xfe-theme/gz_16x16.png
 share/xfe/icons/xfe-theme/gz_32x32.png
 share/xfe/icons/xfe-theme/h_16x16.png
@@ -2517,6 +2598,7 @@ share/xfe/icons/xfe-theme/java_16x16.png
 share/xfe/icons/xfe-theme/java_32x32.png
 share/xfe/icons/xfe-theme/jpeg_16x16.png
 share/xfe/icons/xfe-theme/jpeg_32x32.png
+share/xfe/icons/xfe-theme/keybindings.png
 share/xfe/icons/xfe-theme/link_big.png
 share/xfe/icons/xfe-theme/location.png
 share/xfe/icons/xfe-theme/lowercase.png
@@ -2540,6 +2622,7 @@ share/xfe/icons/xfe-theme/minifolderclosed.png
 share/xfe/icons/xfe-theme/minifolderlocked.png
 share/xfe/icons/xfe-theme/minifolderopen.png
 share/xfe/icons/xfe-theme/minifolderup.png
+share/xfe/icons/xfe-theme/minikeybindings.png
 share/xfe/icons/xfe-theme/minilink.png
 share/xfe/icons/xfe-theme/minipipe.png
 share/xfe/icons/xfe-theme/minishell.png
@@ -2593,6 +2676,7 @@ share/xfe/icons/xfe-theme/redo.png
 share/xfe/icons/xfe-theme/reload.png
 share/xfe/icons/xfe-theme/renameit.png
 share/xfe/icons/xfe-theme/replace.png
+share/xfe/icons/xfe-theme/restore_big.png
 share/xfe/icons/xfe-theme/revert.png
 share/xfe/icons/xfe-theme/rotateleft.png
 share/xfe/icons/xfe-theme/rotateright.png
@@ -2695,3 +2779,5 @@ share/xfe/icons/xfe-theme/zoomin.png
 share/xfe/icons/xfe-theme/zoomout.png
 share/xfe/icons/xfe-theme/zoomwin.png
 share/xfe/xferc
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
