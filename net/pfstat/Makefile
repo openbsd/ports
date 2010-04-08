@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2009/04/09 22:08:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/04/08 19:31:31 naddy Exp $
 
 COMMENT-main=	packet filter statistics visualization
 COMMENT-daemon=	pfstat daemon
@@ -6,7 +6,7 @@ COMMENT-daemon=	pfstat daemon
 DISTNAME=	pfstat-2.3
 
 PKGNAME-main=	${DISTNAME}p1
-PKGNAME-daemon=	${DISTNAME:S/-/d-/}p1
+PKGNAME-daemon=	${DISTNAME:S/-/d-/}p2
 CATEGORIES=	net
 MASTER_SITES=	http://www.benzedrine.cx/
 
@@ -39,11 +39,12 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pfstat ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pfstat.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/pfstat.cat8 ${PREFIX}/man/cat8/pfstat.0
 	${INSTALL_PROGRAM} ${WRKSRC}/pfstatd/pfstatd ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pfstatd/pfstatd.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/pfstatd/pfstatd.cat8 \
+		       ${PREFIX}/man/cat8/pfstatd.0
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pfstat
-	$(INSTALL_DATA) ${WRKSRC}/pfstat.conf.example	\
+	${INSTALL_DATA} ${WRKSRC}/pfstat.conf.example	\
 			${PREFIX}/share/examples/pfstat/pfstat.conf
 
 .include <bsd.port.mk>
