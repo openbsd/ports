@@ -26,7 +26,7 @@
 #include <glib.h>
 #include <gtk/gtk.h>
 
-#include "driver-out.h"
+#include "driver-inout.h"
 #include "mixer.h"
 #include "errors.h"
 
@@ -220,7 +220,7 @@ sndio_savesettings(void *dp, prefs_node *f)
 	return TRUE;
 }
 
-st_out_driver driver_out_sndio = {
+st_io_driver driver_out_sndio = {
 	{
 		"Sndio Output",
 		sndio_new,

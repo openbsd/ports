@@ -1,6 +1,6 @@
-$OpenBSD: patch-app_audio_c,v 1.1 2009/12/19 22:59:27 jakemsr Exp $
---- app/audio.c.orig	Sat Feb 25 04:30:54 2006
-+++ app/audio.c	Fri Dec 18 20:07:19 2009
+$OpenBSD: patch-app_audio_c,v 1.2 2010/04/08 08:47:09 jasper Exp $
+--- app/audio.c.orig	Thu Mar 25 10:48:05 2010
++++ app/audio.c	Thu Mar 25 10:50:18 2010
 @@ -52,6 +52,11 @@
  #include "gui-settings.h"
  #include "tracer.h"
@@ -11,23 +11,22 @@ $OpenBSD: patch-app_audio_c,v 1.1 2009/12/19 22:59:27 jakemsr Exp $
 +#endif
 +
  st_mixer *mixer = NULL;
- st_out_driver *playback_driver = NULL;
- st_out_driver *editing_driver = NULL;
-@@ -454,6 +459,10 @@ audio_thread (void)
-     static char *msgbuf = NULL;
-     static int msgbuflen = 0;
+ st_io_driver *playback_driver = NULL;
+ st_io_driver *editing_driver = NULL;
+@@ -391,16 +396,37 @@ static void audio_thread (void){
+ 	static gchar *msgbuf = NULL;
+ 	static gint msgbuflen = 0;
  
 +#ifdef DRIVER_SNDIO
 +    struct sio_hdl *hdl;
 +#endif
 +
-     audio_raise_priority();
+ 	audio_raise_priority();
  
-   loop:
-@@ -461,10 +470,27 @@ audio_thread (void)
+ 	loop: pfd[0].revents = 0;
  
-     for(pl = inputs, npl = 1; pl; pl = pl->next, npl++) {
- 	pi = pl->data;
+ 	for(pl = inputs, npl = 1; pl; pl = pl->next, npl++) {
+ 		pi = pl->data;
 +
 +#ifdef DRIVER_SNDIO
 +	if (pi->fd == -1) {
@@ -44,34 +43,31 @@ $OpenBSD: patch-app_audio_c,v 1.1 2009/12/19 22:59:27 jakemsr Exp $
 +	    continue;
 +	}
 +#else
- 	if(pi->fd == -1) {
- 	    inputs = g_list_remove(inputs, pi);
- 	    goto loop;
+ 		if(pi->fd == -1) {
+ 			inputs = g_list_remove(inputs, pi);
+ 			goto loop;
+ 		}
++#endif
+ 		pfd[npl].events = pfd[npl].revents = 0;
+ 		pfd[npl].fd = pi->fd;
+ 		if(pi->condition & GDK_INPUT_READ) pfd[npl].events |= POLLIN;
+@@ -495,7 +521,19 @@ static void audio_thread (void){
  	}
-+#endif
- 	pfd[npl].events = pfd[npl].revents = 0;
- 	pfd[npl].fd = pi->fd;
- 	if(pi->condition & GDK_INPUT_READ)
-@@ -564,8 +590,22 @@ audio_thread (void)
- 
-     for(pl = inputs, i = 1; i < npl; pl = pl->next, i++) {
- 	pi = pl->data;
-+
+ 	for(pl = inputs, i = 1; i < npl; pl = pl->next, i++) {
+ 		pi = pl->data;
 +#ifdef DRIVER_SNDIO
-+	if(pi->fd == -1) {
-+	    hdl = sndio_driver_get_hdl(pi->data);
-+	    if (hdl && (pi->condition & GDK_INPUT_WRITE)) {
-+		pfd[i].revents = sio_revents(hdl, &pfd[i]);
-+	    } else {
-+		continue;
-+	    }
-+	    pfd[i].events = POLLOUT;
-+	}
++		if(pi->fd == -1) {
++		    hdl = sndio_driver_get_hdl(pi->data);
++		    if (hdl && (pi->condition & GDK_INPUT_WRITE)) {
++			pfd[i].revents = sio_revents(hdl, &pfd[i]);
++		    } else {
++			continue;
++		    }
++		    pfd[i].events = POLLOUT;
++		}
 +#else
- 	if(pi->fd == -1)
- 	    continue;
+ 		if(pi->fd == -1) continue;
 +#endif
-+
- 	if(pfd[i].revents & pfd[i].events) {
- 	    int x = 0;
- 	    if(pfd[i].revents & POLLIN)
+ 		if(pfd[i].revents & pfd[i].events) {
+ 			int x = 0;
+ 			if(pfd[i].revents & POLLIN) x |= GDK_INPUT_READ;
