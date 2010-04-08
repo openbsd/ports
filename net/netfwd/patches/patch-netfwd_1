@@ -1,0 +1,28 @@
+$OpenBSD: patch-netfwd_1,v 1.1 2010/04/08 19:39:06 naddy Exp $
+--- netfwd.1.orig	Thu Apr  8 21:34:31 2010
++++ netfwd.1	Thu Apr  8 21:37:09 2010
+@@ -89,7 +89,7 @@ flowcontrol: X|H|N (X - Xon/Xoff, H - full hardware, N
+ Any
+ .Ar tty_settings
+ parameter can be omitted. The default
+-.At tty_settings
++.Ar tty_settings
+ is 115200,8,N,1,H.
+ .El
+ .Pp
+@@ -108,7 +108,6 @@ So you can, for example, forward TCP traffic into Unix
+ You have a couple of applications that use unix socket to communicate with each
+ other. But you want to run them on separate computers. To achieve this, do the
+ following:
+-.Bd -literal -compact
+ On computer, where one of applications creates server unix socket:
+ .Pp
+ .Dl # netfwd inet tcp 5555 unix stream /path_to_socket
+@@ -116,7 +115,6 @@ On computer, where one of applications creates server 
+ On another computer:
+ .Pp
+ .Dl # netfwd unix stream /path_to_socket inet tcp 1st_host 5555
+-.Ed
+ .Pp
+ So, when the second application connects to local unix socket, it automatically
+ connects to the remote computer to 5555 TCP port. And all communication will be
