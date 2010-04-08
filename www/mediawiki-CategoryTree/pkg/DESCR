@@ -1,0 +1,2 @@
+The CategoryTree extension provides a dynamic view of the wiki's category
+structure as a tree. It uses AJAX to load parts of the tree on demand.
