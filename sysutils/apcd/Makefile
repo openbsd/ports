@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/03 18:30:58 mglocker Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/08 14:48:16 naddy Exp $
 
 COMMENT=		APC SmartUPS daemon
 
 DISTNAME=		apcd-0.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
@@ -22,8 +23,8 @@ NO_REGRESS=		Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/apcd/apcd ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/apcmon/apcmon ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/apcd/apcd.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/apcmon/apcmon.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/apcd/apcd.cat8 ${PREFIX}/man/cat8/apcd.0
+	${INSTALL_MAN} ${WRKSRC}/apcmon/apcmon.cat8 ${PREFIX}/man/cat8/apcmon.0
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/apcd
 	${INSTALL_DATA} ${WRKSRC}/apcd/apcd.conf \
 	    ${PREFIX}/share/examples/apcd

@@ -1,0 +1,11 @@
+$OpenBSD: patch-apcmon_apcmon_8,v 1.1 2010/04/08 14:48:16 naddy Exp $
+--- apcmon/apcmon.8.orig	Thu Apr  8 16:44:25 2010
++++ apcmon/apcmon.8	Thu Apr  8 16:45:23 2010
+@@ -47,6 +47,7 @@ Prints version.
+ .Bl -tag -width "xxxxxxxxxxxxxxxxxxxxxx" -compact
+ .It Pa /usr/local/sbin/apcmon
+ APC monitor
++.El
+ .Sh SEE ALSO
+ .Xr apcd 8
+ .Sh AUTHORS

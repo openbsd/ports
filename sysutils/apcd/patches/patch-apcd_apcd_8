@@ -1,0 +1,11 @@
+$OpenBSD: patch-apcd_apcd_8,v 1.1 2010/04/08 14:48:16 naddy Exp $
+--- apcd/apcd.8.orig	Thu Apr  8 16:46:04 2010
++++ apcd/apcd.8	Thu Apr  8 16:46:18 2010
+@@ -45,6 +45,7 @@ Prints version.
+ APC daemon
+ .It Pa /etc/apcd.conf
+ configuration file
++.El
+ .Sh SEE ALSO
+ .Xr apcmon 8
+ .Sh AUTHORS
