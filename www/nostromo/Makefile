@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2009/08/05 07:25:48 mglocker Exp $
+# $OpenBSD: Makefile,v 1.30 2010/04/08 13:59:03 naddy Exp $
 
 COMMENT=		Nostromo webserver
 
 DISTNAME=		nostromo-1.9.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
@@ -26,7 +27,8 @@ WRKSRC=			${WRKDIST}/src
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nhttpd/nhttpd ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/crypt ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/nhttpd/nhttpd.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/nhttpd/nhttpd.cat8 \
+		${PREFIX}/man/cat8/nhttpd.0
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA} ${WRKDIST}/ChangeLog ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/doc/nostromo
