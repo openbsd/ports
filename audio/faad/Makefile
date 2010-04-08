@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2009/08/10 06:29:52 kili Exp $
+# $OpenBSD: Makefile,v 1.40 2010/04/08 07:17:21 jasper Exp $
 
 COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
 COMMENT-xmms=	XMMS input plugin for AAC files
 V=		2.6.1
 DISTNAME=	faad2-${V}
-PKGNAME-main=	faad-${V}
+PKGNAME-main=	faad-${V}p0
 PKGNAME-xmms=	faad-xmms-${V}p0
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
@@ -66,5 +66,7 @@ post-configure:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/faadconfig.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/common/mp4ff/mp4ff.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/common/mp4ff/mp4ff_int_types.h ${PREFIX}/include
 
 .include <bsd.port.mk>
