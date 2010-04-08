@@ -1,4 +1,4 @@
-# $OpenBSD: mono.port.mk,v 1.9 2010/04/05 10:39:35 robert Exp $
+# $OpenBSD: mono.port.mk,v 1.10 2010/04/08 13:36:13 ajacoutot Exp $
 
 ONLY_FOR_ARCHS?=	i386 amd64 powerpc
 
@@ -7,11 +7,14 @@ CATEGORIES+=		lang/mono
 CONFIGURE_ENV+=		MONO_SHARED_DIR=${TMPDIR}
 MAKE_FLAGS+=		MONO_SHARED_DIR=${TMPDIR}
 
+MODMONO_BUILD_DEPENDS=	::lang/mono
+MODMONO_RUN_DEPENDS=	::lang/mono
+
 MODMONO_DEPS?=		Yes
 
 .if ${MODMONO_DEPS:L} != "no"
-BUILD_DEPENDS+=		::lang/mono
-RUN_DEPENDS+=		::lang/mono
+BUILD_DEPENDS+=		${MODMONO_BUILD_DEPENDS}
+RUN_DEPENDS+=		${MODMONO_RUN_DEPENDS}
 .endif
 
 # A list of files where we have to remove the stupid hardcoded .[0-9] major
