@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/08 14:37:53 kili Exp $
+lib/${DISTNAME}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/Binary/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/Binary.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/Binary/Builder.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/Binary/Get.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/Binary/Put.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
+lib/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
+@unexec-delete /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+lib/${DISTNAME}/unregister.sh
+share/doc/${DISTNAME}/
+share/doc/${DISTNAME}/LICENSE
+share/doc/${DISTNAME}/html/
+share/doc/${DISTNAME}/html/Data-Binary-Builder.html
+share/doc/${DISTNAME}/html/Data-Binary-Get.html
+share/doc/${DISTNAME}/html/Data-Binary-Put.html
+share/doc/${DISTNAME}/html/Data-Binary.html
+share/doc/${DISTNAME}/html/binary.haddock
+share/doc/${DISTNAME}/html/doc-index.html
+share/doc/${DISTNAME}/html/frames.html
+share/doc/${DISTNAME}/html/haddock-util.js
+share/doc/${DISTNAME}/html/haddock.css
+share/doc/${DISTNAME}/html/haskell_icon.gif
+share/doc/${DISTNAME}/html/index-frames.html
+share/doc/${DISTNAME}/html/index.html
+share/doc/${DISTNAME}/html/mini_Data-Binary-Builder.html
+share/doc/${DISTNAME}/html/mini_Data-Binary-Get.html
+share/doc/${DISTNAME}/html/mini_Data-Binary-Put.html
+share/doc/${DISTNAME}/html/mini_Data-Binary.html
+share/doc/${DISTNAME}/html/minus.gif
+share/doc/${DISTNAME}/html/plus.gif
