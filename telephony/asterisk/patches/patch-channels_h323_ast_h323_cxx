@@ -1,7 +1,7 @@
-$OpenBSD: patch-channels_h323_ast_h323_cxx,v 1.4 2010/03/23 21:16:53 ajacoutot Exp $
---- channels/h323/ast_h323.cxx.orig	Thu Jan 28 12:05:04 2010
-+++ channels/h323/ast_h323.cxx	Thu Jan 28 12:05:42 2010
-@@ -2364,6 +2364,7 @@ int h323_start_listener(int listenPort, struct sockadd
+$OpenBSD: patch-channels_h323_ast_h323_cxx,v 1.5 2010/04/08 16:18:00 sthen Exp $
+--- channels/h323/ast_h323.cxx.orig	Thu Jun 18 17:44:37 2009
++++ channels/h323/ast_h323.cxx	Thu Apr  1 02:57:26 2010
+@@ -2365,6 +2365,7 @@ int h323_start_listener(int listenPort, struct sockadd
  	return 0;
  };
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-channels_h323_ast_h323_cxx,v 1.4 2010/03/23 21:16:53 ajacoutot E
  /* Addition of functions just to make the channel driver compile with H323Plus */
  #if VERSION(OPENH323_MAJOR, OPENH323_MINOR, OPENH323_BUILD) > VERSION(1,19,4)
  /* Alternate RTP port information for Same NAT */
-@@ -2389,6 +2390,7 @@ BOOL MyH323_ExternalRTPChannel::OnReceivedAckAltPDU(co
+@@ -2390,6 +2391,7 @@ BOOL MyH323_ExternalRTPChannel::OnReceivedAckAltPDU(co
  	return TRUE;
  }
  #endif

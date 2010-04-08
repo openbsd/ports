@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2010/03/25 12:01:47 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2010/04/08 16:18:00 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict chan_unistim-*
@@ -27,7 +27,11 @@ include/asterisk/astobj2.h
 include/asterisk/astosp.h
 include/asterisk/audiohook.h
 include/asterisk/autoconfig.h
+include/asterisk/bridging.h
+include/asterisk/bridging_features.h
+include/asterisk/bridging_technology.h
 include/asterisk/build.h
+include/asterisk/buildinfo.h
 include/asterisk/buildopts.h
 include/asterisk/callerid.h
 include/asterisk/causes.h
@@ -39,8 +43,10 @@ include/asterisk/compat.h
 include/asterisk/compiler.h
 include/asterisk/config.h
 include/asterisk/crypto.h
+include/asterisk/datastore.h
 include/asterisk/devicestate.h
 include/asterisk/dial.h
+include/asterisk/dlinkedlists.h
 include/asterisk/dns.h
 include/asterisk/dnsmgr.h
 include/asterisk/doxyref.h
@@ -59,6 +65,7 @@ include/asterisk/fskmodem_float.h
 include/asterisk/fskmodem_int.h
 include/asterisk/global_datastores.h
 include/asterisk/hashtab.h
+include/asterisk/heap.h
 include/asterisk/http.h
 include/asterisk/image.h
 include/asterisk/indications.h
@@ -87,17 +94,20 @@ include/asterisk/rtp.h
 include/asterisk/say.h
 include/asterisk/sched.h
 include/asterisk/sha1.h
+include/asterisk/slin.h
 include/asterisk/slinfactory.h
 include/asterisk/smdi.h
 include/asterisk/speech.h
 include/asterisk/srv.h
 include/asterisk/stringfields.h
 include/asterisk/strings.h
+include/asterisk/taskprocessor.h
 include/asterisk/tcptls.h
 include/asterisk/tdd.h
 include/asterisk/term.h
 include/asterisk/threadstorage.h
 include/asterisk/time.h
+include/asterisk/timing.h
 include/asterisk/transcap.h
 include/asterisk/translate.h
 include/asterisk/udptl.h
@@ -105,6 +115,8 @@ include/asterisk/ulaw.h
 include/asterisk/unaligned.h
 include/asterisk/utils.h
 include/asterisk/version.h
+include/asterisk/xml.h
+include/asterisk/xmldoc.h
 lib/asterisk/
 lib/asterisk/modules/
 lib/asterisk/modules/app_adsiprog.so
@@ -115,6 +127,7 @@ lib/asterisk/modules/app_cdr.so
 lib/asterisk/modules/app_chanisavail.so
 lib/asterisk/modules/app_channelredirect.so
 lib/asterisk/modules/app_chanspy.so
+lib/asterisk/modules/app_confbridge.so
 lib/asterisk/modules/app_controlplayback.so
 lib/asterisk/modules/app_db.so
 lib/asterisk/modules/app_dial.so
@@ -139,9 +152,10 @@ lib/asterisk/modules/app_mixmonitor.so
 lib/asterisk/modules/app_morsecode.so
 lib/asterisk/modules/app_mp3.so
 lib/asterisk/modules/app_nbscat.so
+lib/asterisk/modules/app_originate.so
 lib/asterisk/modules/app_parkandannounce.so
-lib/asterisk/modules/app_pickupchan.so
 lib/asterisk/modules/app_playback.so
+lib/asterisk/modules/app_playtones.so
 lib/asterisk/modules/app_privacy.so
 lib/asterisk/modules/app_queue.so
 lib/asterisk/modules/app_read.so
@@ -169,11 +183,16 @@ lib/asterisk/modules/app_waitforsilence.so
 lib/asterisk/modules/app_waituntil.so
 lib/asterisk/modules/app_while.so
 lib/asterisk/modules/app_zapateller.so
+lib/asterisk/modules/bridge_builtin_features.so
+lib/asterisk/modules/bridge_multiplexed.so
+lib/asterisk/modules/bridge_simple.so
+lib/asterisk/modules/bridge_softmix.so
 lib/asterisk/modules/cdr_csv.so
 lib/asterisk/modules/cdr_custom.so
 lib/asterisk/modules/cdr_manager.so
 lib/asterisk/modules/cdr_sqlite3_custom.so
 lib/asterisk/modules/chan_agent.so
+lib/asterisk/modules/chan_bridge.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so
 lib/asterisk/modules/chan_mgcp.so
@@ -198,17 +217,21 @@ lib/asterisk/modules/format_ilbc.so
 lib/asterisk/modules/format_jpeg.so
 lib/asterisk/modules/format_ogg_vorbis.so
 lib/asterisk/modules/format_pcm.so
+lib/asterisk/modules/format_siren14.so
+lib/asterisk/modules/format_siren7.so
 lib/asterisk/modules/format_sln.so
 lib/asterisk/modules/format_sln16.so
 lib/asterisk/modules/format_vox.so
 lib/asterisk/modules/format_wav.so
 lib/asterisk/modules/format_wav_gsm.so
+lib/asterisk/modules/func_aes.so
 lib/asterisk/modules/func_audiohookinherit.so
 lib/asterisk/modules/func_base64.so
 lib/asterisk/modules/func_blacklist.so
 lib/asterisk/modules/func_callerid.so
 lib/asterisk/modules/func_cdr.so
 lib/asterisk/modules/func_channel.so
+lib/asterisk/modules/func_config.so
 lib/asterisk/modules/func_cut.so
 lib/asterisk/modules/func_db.so
 lib/asterisk/modules/func_devstate.so
@@ -228,6 +251,7 @@ lib/asterisk/modules/func_rand.so
 lib/asterisk/modules/func_realtime.so
 lib/asterisk/modules/func_sha1.so
 lib/asterisk/modules/func_shell.so
+lib/asterisk/modules/func_sprintf.so
 lib/asterisk/modules/func_strings.so
 lib/asterisk/modules/func_sysinfo.so
 lib/asterisk/modules/func_timeout.so
@@ -244,10 +268,10 @@ lib/asterisk/modules/pbx_spool.so
 lib/asterisk/modules/res_adsi.so
 lib/asterisk/modules/res_ael_share.so
 lib/asterisk/modules/res_agi.so
+lib/asterisk/modules/res_clialiases.so
 lib/asterisk/modules/res_clioriginate.so
 lib/asterisk/modules/res_convert.so
 lib/asterisk/modules/res_crypto.so
-lib/asterisk/modules/res_indications.so
 lib/asterisk/modules/res_limit.so
 lib/asterisk/modules/res_monitor.so
 lib/asterisk/modules/res_musiconhold.so
@@ -255,6 +279,7 @@ lib/asterisk/modules/res_phoneprov.so
 lib/asterisk/modules/res_realtime.so
 lib/asterisk/modules/res_smdi.so
 lib/asterisk/modules/res_speech.so
+lib/asterisk/modules/res_timing_pthread.so
 @man man/man8/asterisk.8
 @man man/man8/astgenkey.8
 @man man/man8/autosupport.8
@@ -268,6 +293,7 @@ sbin/autosupport
 @bin sbin/hashtest
 @bin sbin/hashtest2
 sbin/rasterisk
+@bin sbin/refcounter
 sbin/safe_asterisk
 @bin sbin/smsq
 @bin sbin/stereorize
@@ -278,6 +304,10 @@ share/asterisk/agi-bin/agi-test.agi
 @bin share/asterisk/agi-bin/eagi-sphinx-test
 @bin share/asterisk/agi-bin/eagi-test
 share/asterisk/agi-bin/jukebox.agi
+share/asterisk/documentation/
+share/asterisk/documentation/appdocsxml.dtd
+share/asterisk/documentation/core-en_US.xml
+share/asterisk/documentation/thirdparty/
 share/asterisk/firmware/
 share/asterisk/firmware/iax/
 share/asterisk/images/
@@ -301,6 +331,7 @@ share/asterisk/phoneprov/000000000000-directory.xml
 share/asterisk/phoneprov/000000000000-phone.cfg
 share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
+share/asterisk/phoneprov/polycom_line.xml
 share/asterisk/sounds/
 share/asterisk/sounds/.asterisk-core-sounds-en-gsm-${CORESOUNDS}
 share/asterisk/sounds/en/
@@ -762,10 +793,15 @@ share/asterisk/static-http/docs/images.out
 share/asterisk/static-http/docs/images.pl
 share/asterisk/static-http/docs/images.tex
 share/asterisk/static-http/docs/img1.png
+share/asterisk/static-http/docs/img10.png
 share/asterisk/static-http/docs/img2.png
 share/asterisk/static-http/docs/img3.png
 share/asterisk/static-http/docs/img4.png
 share/asterisk/static-http/docs/img5.png
+share/asterisk/static-http/docs/img6.png
+share/asterisk/static-http/docs/img7.png
+share/asterisk/static-http/docs/img8.png
+share/asterisk/static-http/docs/img9.png
 share/asterisk/static-http/docs/index.html
 share/asterisk/static-http/docs/internals.pl
 share/asterisk/static-http/docs/labels.pl
@@ -973,6 +1009,7 @@ share/asterisk/static-http/docs/node28.html
 share/asterisk/static-http/docs/node280.html
 share/asterisk/static-http/docs/node281.html
 share/asterisk/static-http/docs/node282.html
+share/asterisk/static-http/docs/node283.html
 share/asterisk/static-http/docs/node29.html
 share/asterisk/static-http/docs/node3.html
 share/asterisk/static-http/docs/node30.html
@@ -1076,7 +1113,9 @@ share/doc/asterisk/WARNINGS
 share/doc/asterisk/ael.tex
 share/doc/asterisk/ajam.tex
 share/doc/asterisk/api-1.6.0-changes.odt
+share/doc/asterisk/api-1.6.2-changes.txt
 share/doc/asterisk/app-sms.tex
+share/doc/asterisk/appdocsxml.dtd
 share/doc/asterisk/asterisk-conf.tex
 share/doc/asterisk/asterisk-mib.txt
 share/doc/asterisk/asterisk.8
@@ -1092,22 +1131,30 @@ share/doc/asterisk/asterisk.toc
 share/doc/asterisk/backtrace.tex
 share/doc/asterisk/backtrace.txt
 share/doc/asterisk/billing.tex
+share/doc/asterisk/building_queues.txt
 share/doc/asterisk/callfiles.txt
 share/doc/asterisk/cdrdriver.tex
+share/doc/asterisk/chan_sip-perf-testing.txt
 share/doc/asterisk/chaniax.tex
 share/doc/asterisk/channelvariables.tex
 share/doc/asterisk/cli.txt
 share/doc/asterisk/cliprompt.tex
 share/doc/asterisk/configuration.tex
+share/doc/asterisk/core-en_US.xml
+share/doc/asterisk/database_transactions.txt
 share/doc/asterisk/datastores.txt
 share/doc/asterisk/digium-mib.txt
+share/doc/asterisk/distributed_devstate.txt
 share/doc/asterisk/dundi.tex
 share/doc/asterisk/enum.tex
 share/doc/asterisk/extensions.tex
 share/doc/asterisk/externalivr.txt
+share/doc/asterisk/followme.txt
 share/doc/asterisk/freetds.tex
+share/doc/asterisk/google-soc2009-ideas.txt
 share/doc/asterisk/hardware.tex
 share/doc/asterisk/hebrew.ods
+share/doc/asterisk/hoard.txt
 share/doc/asterisk/ices.tex
 share/doc/asterisk/images.aux
 share/doc/asterisk/images.log
@@ -1116,10 +1163,15 @@ share/doc/asterisk/images.pl
 share/doc/asterisk/images.tex
 share/doc/asterisk/imapstorage.tex
 share/doc/asterisk/img1.png
+share/doc/asterisk/img10.png
 share/doc/asterisk/img2.png
 share/doc/asterisk/img3.png
 share/doc/asterisk/img4.png
 share/doc/asterisk/img5.png
+share/doc/asterisk/img6.png
+share/doc/asterisk/img7.png
+share/doc/asterisk/img8.png
+share/doc/asterisk/img9.png
 share/doc/asterisk/index.html
 share/doc/asterisk/internals.pl
 share/doc/asterisk/janitor-projects.txt
@@ -1336,6 +1388,7 @@ share/doc/asterisk/node28.html
 share/doc/asterisk/node280.html
 share/doc/asterisk/node281.html
 share/doc/asterisk/node282.html
+share/doc/asterisk/node283.html
 share/doc/asterisk/node29.html
 share/doc/asterisk/node3.html
 share/doc/asterisk/node30.html
@@ -1433,9 +1486,11 @@ share/doc/asterisk/smdi.txt
 share/doc/asterisk/sms.txt
 share/doc/asterisk/speechrec.txt
 share/doc/asterisk/ss7.txt
+share/doc/asterisk/timing.txt
 share/doc/asterisk/unistim.txt
 share/doc/asterisk/valgrind.txt
 share/doc/asterisk/video.txt
+share/doc/asterisk/video_console.txt
 share/examples/asterisk/
 @mode 750
 @group _asterisk
@@ -1446,6 +1501,7 @@ share/examples/asterisk/default/
 share/examples/asterisk/default/adsi.conf
 @comment share/examples/asterisk/default/adtranvofr.conf
 share/examples/asterisk/default/agents.conf
+share/examples/asterisk/default/ais.conf
 share/examples/asterisk/default/alarmreceiver.conf
 @comment share/examples/asterisk/default/alsa.conf
 share/examples/asterisk/default/amd.conf
@@ -1460,9 +1516,13 @@ share/examples/asterisk/default/cdr_sqlite3_custom.conf
 @comment share/examples/asterisk/default/cdr_tds.conf
 @comment share/examples/asterisk/default/chan_dahdi.conf
 share/examples/asterisk/default/cli.conf
+share/examples/asterisk/default/cli_aliases.conf
+share/examples/asterisk/default/cli_permissions.conf
 share/examples/asterisk/default/codecs.conf
 share/examples/asterisk/default/console.conf
+share/examples/asterisk/default/dbsep.conf
 share/examples/asterisk/default/dnsmgr.conf
+share/examples/asterisk/default/dsp.conf
 share/examples/asterisk/default/dundi.conf
 share/examples/asterisk/default/enum.conf
 share/examples/asterisk/default/extconfig.conf
@@ -1494,6 +1554,7 @@ share/examples/asterisk/default/phone.conf
 share/examples/asterisk/default/phoneprov.conf
 share/examples/asterisk/default/queuerules.conf
 share/examples/asterisk/default/queues.conf
+share/examples/asterisk/default/res_config_sqlite.conf
 @comment share/examples/asterisk/default/rpt.conf
 share/examples/asterisk/default/rtp.conf
 share/examples/asterisk/default/say.conf

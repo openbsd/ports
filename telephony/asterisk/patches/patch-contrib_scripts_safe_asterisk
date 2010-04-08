@@ -1,12 +1,10 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.10 2010/03/25 12:01:47 sthen Exp $
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.11 2010/04/08 16:18:00 sthen Exp $
 
 - more useful defaults
 - create /var/run/asterisk with sane ownership/perms
-- shell portability fix (s/function//)
-- use pkill, it's slightly less unportable than killall
 
---- contrib/scripts/safe_asterisk.orig	Tue Jan 12 03:24:05 2010
-+++ contrib/scripts/safe_asterisk	Thu Mar 25 11:47:50 2010
+--- contrib/scripts/safe_asterisk.orig	Tue Jan 12 03:25:20 2010
++++ contrib/scripts/safe_asterisk	Fri Apr  2 00:55:43 2010
 @@ -2,9 +2,9 @@
  # vim:textwidth=80:tabstop=4:shiftwidth=4:smartindent:autoindent
  
@@ -20,11 +18,11 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.10 2010/03/25 12:01:47 sthen E
  #EXEC=/path/to/somescript	# Run this command if Asterisk crashes
  #LOGFILE=/path/to/logfile	# Where to place the normal logfile (disabled if blank)
  #SYSLOG=local0				# Which syslog facility to use (disabled if blank)
-@@ -13,10 +13,11 @@ DUMPDROP=/tmp
- SLEEPSECS=4
+@@ -14,10 +14,11 @@ SLEEPSECS=4
  ASTSBINDIR=__ASTERISK_SBIN_DIR__
- ASTPIDFILE=__ASTERISK_VARRUN_DIR__/asterisk.pid
-+VARRUNOWNER="_asterisk:wheel"	# chown __ASTERISK_VARRUN_DIR__ if it's created.
+ ASTVARRUNDIR=__ASTERISK_VARRUN_DIR__
+ ASTPIDFILE=${ASTVARRUNDIR}/asterisk.pid
++VARRUNOWNER="_asterisk:wheel"  # chown __ASTERISK_VARRUN_DIR__ if it's created.
  
 -# comment this line out to have this script _not_ kill all mpg123 processes when
 +# uncomment this line to have this script kill all mpg123 processes when
@@ -34,19 +32,11 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.10 2010/03/25 12:01:47 sthen E
  
  # run asterisk with this priority
  PRIORITY=0
-@@ -32,7 +33,7 @@ PRIORITY=0
- # set to the system's maximum files open devided by two, if not set here.
- # MAXFILES=32768
- 
--function message() {
-+message() {
- 	echo "$1" >&2
- 	if test "x$SYSLOG" != "x" ; then
- 	    logger -p "${SYSLOG}.warn" -t safe_asterisk[$$] "$1"
-@@ -42,6 +43,19 @@ function message() {
+@@ -42,6 +43,19 @@ message() {
+ 	    echo "safe_asterisk[$$]: $1" >> "$LOGFILE"
  	fi
  }
- 
++
 +# Create the directory for the control socket if required. As of 1.6.0.26,
 +# Asterisk tries to create this itself at startup but doesn't give suitable
 +# ownership. This must be created before the 'check if asterisk is already
@@ -59,16 +49,6 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.10 2010/03/25 12:01:47 sthen E
 +		chmod 770 $varrundir
 +	fi
 +fi
-+
+ 
  # Check if Asterisk is already running.  If it is, then bug out, because
  # starting safe_asterisk when Asterisk is running is very bad.
- VERSION=`${ASTSBINDIR}/asterisk -rx 'core show version'`
-@@ -186,7 +200,7 @@ run_asterisk()
- 		message "Automatically restarting Asterisk."
- 		sleep $SLEEPSECS
- 		if test "0$KILLALLMPG123" -gt "0" ; then
--			killall -9 mpg123
-+			pkill -9 mpg123
- 		fi
- 	done
- }

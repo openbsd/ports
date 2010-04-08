@@ -1,12 +1,12 @@
-$OpenBSD: patch-main_asterisk_c,v 1.12 2010/03/25 12:01:47 sthen Exp $
+$OpenBSD: patch-main_asterisk_c,v 1.13 2010/04/08 16:18:00 sthen Exp $
 
 from upstream ticket #17076; don't chgrp /var/run/asterisk
 unless it was automatically created
 
 
---- main/asterisk.c.orig	Thu Feb 25 21:24:06 2010
-+++ main/asterisk.c	Thu Mar 25 08:27:17 2010
-@@ -2929,7 +2929,7 @@ int main(int argc, char *argv[])
+--- main/asterisk.c.orig	Thu Feb 25 21:25:05 2010
++++ main/asterisk.c	Thu Apr  1 02:57:26 2010
+@@ -3103,7 +3103,7 @@ int main(int argc, char *argv[])
  	FILE *f;
  	sigset_t sigs;
  	int num;
@@ -15,7 +15,7 @@ unless it was automatically created
  	char *buf;
  	const char *runuser = NULL, *rungroup = NULL;
  	char *remotesock = NULL;
-@@ -3118,8 +3118,12 @@ int main(int argc, char *argv[])
+@@ -3303,8 +3303,12 @@ int main(int argc, char *argv[])
  
  	/* It's common on some platforms to clear /var/run at boot.  Create the
  	 * socket file directory before we drop privileges. */
@@ -30,7 +30,7 @@ unless it was automatically created
  	}
  
  #ifndef __CYGWIN__
-@@ -3135,7 +3139,7 @@ int main(int argc, char *argv[])
+@@ -3320,7 +3324,7 @@ int main(int argc, char *argv[])
  			ast_log(LOG_WARNING, "No such group '%s'!\n", rungroup);
  			exit(1);
  		}
