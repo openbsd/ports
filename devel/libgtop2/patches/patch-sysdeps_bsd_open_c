@@ -1,0 +1,11 @@
+$OpenBSD: patch-sysdeps_bsd_open_c,v 1.1 2010/04/08 15:57:46 ajacoutot Exp $
+--- sysdeps/bsd/open.c.orig	Fri Apr  2 09:53:44 2010
++++ sysdeps/bsd/open.c	Fri Apr  2 09:54:10 2010
+@@ -21,6 +21,7 @@
+ 
+ #include <config.h>
+ #include <glibtop.h>
++#include <glibtop/error.h>
+ #include <glibtop/open.h>
+ #include <glibtop/init_hooks.h>
+ 

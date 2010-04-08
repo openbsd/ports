@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
---- sysdeps/bsd/sysinfo.c.orig	Sat May 19 16:27:30 2007
-+++ sysdeps/bsd/sysinfo.c	Fri Dec 28 19:00:25 2007
+$OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.2 2010/04/08 15:57:46 ajacoutot Exp $
+--- sysdeps/bsd/sysinfo.c.orig	Sun Apr 19 19:51:00 2009
++++ sysdeps/bsd/sysinfo.c	Mon Apr  5 14:23:52 2010
 @@ -35,16 +35,49 @@ static glibtop_sysinfo sysinfo = { .flags = 0 };
  static void
  init_sysinfo (glibtop *server)
@@ -11,7 +11,7 @@ $OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.1 2008/02/09 16:52:25 ajacoutot Exp $
 +#if defined(__OpenBSD__)
 +	int mib[2];
 +#endif
-+	int ncpus = 0;
++	unsigned int ncpus = 0;
  	int mhz = 0;
 -	size_t len;
 +	size_t len = 0;

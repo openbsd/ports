@@ -1,12 +1,15 @@
-$OpenBSD: patch-sysdeps_bsd_netload_c,v 1.1 2010/01/18 09:27:00 sthen Exp $
---- sysdeps/bsd/netload.c.orig	Mon Jan 18 08:24:30 2010
-+++ sysdeps/bsd/netload.c	Mon Jan 18 08:26:34 2010
-@@ -220,7 +220,7 @@ glibtop_get_netload_p (glibtop *server, glibtop_netloa
+$OpenBSD: patch-sysdeps_bsd_netload_c,v 1.2 2010/04/08 15:57:46 ajacoutot Exp $
+--- sysdeps/bsd/netload.c.orig	Sun Apr 19 19:51:00 2009
++++ sysdeps/bsd/netload.c	Thu Apr  1 18:19:01 2010
+@@ -220,7 +220,11 @@ glibtop_get_netload_p (glibtop *server, glibtop_netloa
  		sin = (struct sockaddr_in *)sa;
  #if !defined(__bsdi__)
  		/* Commenting out to "fix" #13345. */
--		buf->subnet = htonl (ifaddr.in.ia_subnet);
-+		buf->subnet = htonl (ifaddr.in.ia_net);
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++		buf->subnet = ifaddr.in.ia_net;
++#else
+ 		buf->subnet = htonl (ifaddr.in.ia_subnet);
++#endif
  #endif
  		buf->address = sin->sin_addr.s_addr;
  		buf->mtu = ifnet.if_mtu;

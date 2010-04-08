@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2010/03/30 16:24:24 ajacoutot Exp $
---- configure.orig	Tue Mar 30 18:14:23 2010
-+++ configure	Tue Mar 30 18:17:52 2010
+$OpenBSD: patch-configure,v 1.8 2010/04/08 15:57:46 ajacoutot Exp $
+--- configure.orig	Tue Mar 30 17:10:07 2010
++++ configure	Mon Apr  5 14:10:33 2010
 @@ -6934,10 +6934,12 @@ newos6*)
    ;;
  
@@ -86,7 +86,15 @@ $OpenBSD: patch-configure,v 1.7 2010/03/30 16:24:24 ajacoutot Exp $
  prefix="$glib_save_prefix"
  exec_prefix="$glib_save_exec_prefix"
  datarootdir="$glib_save_datarootdir"
-@@ -23391,9 +23393,9 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -22880,6 +22882,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <sys/param.h>
+ #include <$ac_header>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -23391,9 +23394,9 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  

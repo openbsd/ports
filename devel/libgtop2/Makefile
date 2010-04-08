@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2010/03/30 16:24:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/04/08 15:57:46 ajacoutot Exp $
 
 COMMENT=		portable library for obtaining system information
 
 GNOME_VERSION=		2.28.1
 GNOME_PROJECT=		libgtop
-PKGNAME=		libgtop2-${VERSION}
+PKGNAME=		libgtop2-${VERSION}p0
 
 SHARED_LIBS=		gtop-2.0	9.0	# .9.0
 
@@ -31,11 +31,14 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			GMSGFMT="${LOCALBASE}/bin/msgfmt"
 
+.ifdef DEBUG
+CONFIGURE_ARGS+=	--enable-debug
+CPPFLAGS+=		-DDEBUG \
+			-DLIBGTOP_ENABLE_DEBUG \
+			-DLIBGTOP_FATAL_WARNINGS
+.endif
+
 post-extract:
 	cp ${FILESDIR}/procaffinity.c ${WRKSRC}/sysdeps/bsd/
-
-post-install:
-	@chgrp kmem ${PREFIX}/bin/libgtop_server2
-	@chmod 2555 ${PREFIX}/bin/libgtop_server2
 
 .include <bsd.port.mk>

@@ -1,0 +1,17 @@
+$OpenBSD: patch-doc_reference_texi,v 1.1 2010/04/08 15:57:46 ajacoutot Exp $
+
+Prevent the following:
+    doc/reference.texi:746: warning: @strong{Note...} produces a
+    spurious cross-reference in Info; reword to avoid that.
+
+--- doc/reference.texi.orig	Mon Apr  5 15:05:02 2010
++++ doc/reference.texi	Mon Apr  5 15:05:32 2010
+@@ -743,7 +743,7 @@ The description above is taken from the manual page of
+ filesystem under Linux and is a little bit confusing, so I make this clear
+ here. 
+ 
+-@strong{Note for people porting LibGTop to other systems:}
++@strong{A word for people porting LibGTop to other systems:}
+ Every operating system has its own idea about the memory usage of a process
+ and also system utilities like @code{ps} show different things on different
+ systems.

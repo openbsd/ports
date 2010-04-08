@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_daemon_server_c,v 1.1 2010/04/08 15:57:46 ajacoutot Exp $
+
+From FreeBSD.
+
+--- src/daemon/server.c.orig	Sun Apr 19 19:51:00 2009
++++ src/daemon/server.c	Fri Apr  2 10:50:15 2010
+@@ -90,11 +90,13 @@ main(int argc, char *argv[])
+ 	if (strcmp (uts.sysname, LIBGTOP_COMPILE_SYSTEM) ||
+ 	    strcmp (uts.release, LIBGTOP_COMPILE_RELEASE) ||
+ 	    strcmp (uts.machine, LIBGTOP_COMPILE_MACHINE)) {
+-		fprintf (stderr, "Can only run on %s %s %s\n",
++		fprintf (stderr, "This libgtop was compiled on %s %s %s\n",
+ 			 LIBGTOP_COMPILE_SYSTEM,
+ 			 LIBGTOP_COMPILE_RELEASE,
+ 			 LIBGTOP_COMPILE_MACHINE);
+-		_exit (1);
++                fprintf (stderr, "If you see strange problems caused by it,\n");
++                fprintf (stderr, "you should recompile libgtop and dependent"
++                         "applications.\n");
+ 	}
+ #endif
+ 
