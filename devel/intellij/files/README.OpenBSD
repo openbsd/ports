@@ -1,0 +1,21 @@
+IntelliJ on OpenBSD
+===================
+
+1. Windowing Problems
+---------------------
+
+If you have windowing problems, it has been reported that you may need
+to install x11/wmname to fix the problem.
+
+2. JDK Version
+--------------
+
+Note that intellij requires JDK 1.6 and will not work with OpenJDK 1.7.
+If you have a 'java' binary on your path ahead of JDK 1.6 or if you
+define $JAVA_HOME to be something other than JDK 1.6, javaPathHelper
+could pick those up resulting in the application failing to launch.
+
+3. Native Libraries
+-------------------
+
+Functionality depending on native libraries is not likely to work.
