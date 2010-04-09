@@ -1,9 +1,0 @@
-$OpenBSD: patch-src_lib_env_openbsd_common_80x86_static,v 1.1.1.1 2003/08/04 23:37:06 avsm Exp $
---- src/lib/env/openbsd/common/80x86/static.orig	2003-08-05 00:08:29.000000000 +0100
-+++ src/lib/env/openbsd/common/80x86/static	2003-08-05 00:08:29.000000000 +0100
-@@ -0,0 +1,5 @@
-+/* 
-+ * $TenDRA$
-+*/
-+
-++FLAG_LD	"-static"
