@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/06/13 17:10:30 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/09 12:11:53 mglocker Exp $
 
 COMMENT=		fswebcam is a small and simple webcam app
 
-DISTNAME=		fswebcam-20070108
+DISTNAME=		fswebcam-20100405
 CATEGORIES=		graphics
 MASTER_SITES=		http://www.firestorm.cx/fswebcam/files/
 
