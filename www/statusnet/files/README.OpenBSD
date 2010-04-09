@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.3 2010/01/04 19:10:19 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.4 2010/04/09 21:10:34 jasper Exp $
 
 This document will briefly describe the steps needed before one can
 complete the Status.net installation. After taking these steps you
@@ -41,8 +41,8 @@ Now connect to MySQL and create a user and database for Status.net:
     	  mysqladmin -u "username" --password="password" create statusnet
 
           mysql> GRANT ALL on statusnet.*
-	  TO 'lacuser'@'localhost'
-	  IDENTIFIED BY 'lacpassword';
+	  TO 'statusnet'@'localhost'
+	  IDENTIFIED BY 'statnetpassword';
 
 == PostgreSQL ==
 
@@ -52,7 +52,7 @@ Assuming you have an administrative account named `postgres',
 you can create the 'statusnet' user and database like this:
 
 	createuser -U postgres --pwprompt --no-superuser \
-		--createdb --no-createrole lacuser
+		--createdb --no-createrole statusnet
 
 Now you can create the database for Status.net with:
 

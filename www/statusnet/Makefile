@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/03/03 14:17:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/09 21:10:34 jasper Exp $
 
 COMMENT=		open source micro messaging platform
 
 DISTNAME=		statusnet-0.8.3
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		www net
 
