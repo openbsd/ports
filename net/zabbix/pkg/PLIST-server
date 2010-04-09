@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-server,v 1.6 2010/01/24 14:09:01 okan Exp $
-@bin sbin/zabbix_proxy
-@bin sbin/zabbix_server
+@comment $OpenBSD: PLIST-server,v 1.7 2010/04/09 10:17:59 ajacoutot Exp $
 @man man/man8/zabbix_proxy.8
 @man man/man8/zabbix_server.8
-share/examples/zabbix/
 @sample ${SYSCONFDIR}/zabbix/
+@bin sbin/zabbix_proxy
+@bin sbin/zabbix_server
+share/examples/zabbix/
 share/examples/zabbix/zabbix_proxy.conf
 @mode 640
 @group _zabbix

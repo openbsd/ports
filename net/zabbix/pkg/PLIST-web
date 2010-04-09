@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-web,v 1.8 2010/01/24 14:09:01 okan Exp $
+@comment $OpenBSD: PLIST-web,v 1.9 2010/04/09 10:17:59 ajacoutot Exp $
+@pkgpath net/zabbix,-web,mysql
+@pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
 @comment conf/php5.sample/
 conf/php5.sample/zabbix.ini
@@ -8,6 +10,7 @@ zabbix/actionconf.php
 zabbix/api/
 zabbix/api/.htaccess
 zabbix/api/classes/
+zabbix/api/classes/class.apiexception.php
 zabbix/api/classes/class.caction.php
 zabbix/api/classes/class.calert.php
 zabbix/api/classes/class.capiinfo.php
@@ -17,9 +20,11 @@ zabbix/api/classes/class.cgraph.php
 zabbix/api/classes/class.cgraphitem.php
 zabbix/api/classes/class.chost.php
 zabbix/api/classes/class.chostgroup.php
+zabbix/api/classes/class.cimage.php
 zabbix/api/classes/class.citem.php
 zabbix/api/classes/class.cmaintenance.php
 zabbix/api/classes/class.cmap.php
+zabbix/api/classes/class.cproxy.php
 zabbix/api/classes/class.cscreen.php
 zabbix/api/classes/class.cscript.php
 zabbix/api/classes/class.ctemplate.php
@@ -63,6 +68,7 @@ zabbix/conf/zabbix.conf.php.example
 zabbix/config.php
 zabbix/css.css
 zabbix/dashboard.php
+zabbix/dashconf.php
 zabbix/discovery.php
 zabbix/discoveryconf.php
 zabbix/events.php
@@ -105,6 +111,10 @@ zabbix/images/general/bttn/arrowright.png
 zabbix/images/general/bttn/arrowright_bb.png
 zabbix/images/general/bttn/arrowup.png
 zabbix/images/general/bttn/arrowup_bb.png
+zabbix/images/general/bttn/config.png
+zabbix/images/general/bttn/config_bb.png
+zabbix/images/general/bttn/config_hl.png
+zabbix/images/general/bttn/config_hl_bb.png
 zabbix/images/general/bttn/down.png
 zabbix/images/general/bttn/down_bb.png
 zabbix/images/general/bttn/fullscreen.png
@@ -143,6 +153,7 @@ zabbix/images/general/ipmi_available.png
 zabbix/images/general/ipmi_available_bb.png
 zabbix/images/general/ipmi_unavailable.png
 zabbix/images/general/ipmi_unknown.png
+zabbix/images/general/no_icon.png
 zabbix/images/general/ok.png
 zabbix/images/general/ok_bb.png
 zabbix/images/general/ok_icon.png
@@ -240,6 +251,7 @@ zabbix/include/
 zabbix/include/.htaccess
 zabbix/include/acknow.inc.php
 zabbix/include/actions.inc.php
+zabbix/include/apicalls.inc.php
 zabbix/include/audit.inc.php
 zabbix/include/blocks.inc.php
 zabbix/include/classes/
@@ -306,6 +318,7 @@ zabbix/include/classes/class.cwidget.php
 zabbix/include/config.inc.php
 zabbix/include/copt.lib.php
 zabbix/include/db.inc.php
+zabbix/include/debug.inc.php
 zabbix/include/defines.inc.php
 zabbix/include/discovery.inc.php
 zabbix/include/events.inc.php
@@ -316,6 +329,7 @@ zabbix/include/graphs.inc.php
 zabbix/include/hosts.inc.php
 zabbix/include/html.inc.php
 zabbix/include/httptest.inc.php
+zabbix/include/ident.inc.php
 zabbix/include/images.inc.php
 zabbix/include/items.inc.php
 zabbix/include/js.inc.php
@@ -336,6 +350,7 @@ zabbix/include/locales/pt_br.inc.php
 zabbix/include/locales/ru_ru.inc.php
 zabbix/include/locales/sp_sp.inc.php
 zabbix/include/locales/sv_se.inc.php
+zabbix/include/locales/ua_ua.inc.php
 zabbix/include/maintenances.inc.php
 zabbix/include/maps.inc.php
 zabbix/include/media.inc.php
@@ -347,6 +362,7 @@ zabbix/include/perm.inc.php
 zabbix/include/profiles.inc.php
 zabbix/include/regexp.inc.php
 zabbix/include/reports.inc.php
+zabbix/include/requirements.inc.php
 zabbix/include/screens.inc.php
 zabbix/include/scripts.inc.php
 zabbix/include/services.inc.php
@@ -359,13 +375,14 @@ zabbix/instal.php
 zabbix/items.php
 zabbix/js/
 zabbix/js/class.calendar.js
+zabbix/js/class.cdate.js
 zabbix/js/class.cmap.js
 zabbix/js/class.cookie.js
 zabbix/js/class.cscreen.js
+zabbix/js/class.cswitcher.js
 zabbix/js/class.ctree.js
 zabbix/js/class.curl.js
 zabbix/js/class.pmaster.js
-zabbix/js/class.switcher.js
 zabbix/js/common.js
 zabbix/js/functions.js
 zabbix/js/gtlc.js
