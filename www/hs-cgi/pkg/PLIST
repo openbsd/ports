@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/09 15:53:43 kili Exp $
+lib/${DISTNAME}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Network/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Network/CGI/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Network/CGI.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Network/CGI/Accept.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Network/CGI/Compat.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Network/CGI/Cookie.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Network/CGI/Header.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Network/CGI/Monad.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Network/CGI/Multipart.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Network/CGI/Protocol.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
+lib/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
+@unexec-delete /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+lib/${DISTNAME}/unregister.sh
+share/doc/${DISTNAME}/
+share/doc/${DISTNAME}/LICENSE
+share/doc/${DISTNAME}/html/
+share/doc/${DISTNAME}/html/Network-CGI-Compat.html
+share/doc/${DISTNAME}/html/Network-CGI-Cookie.html
+share/doc/${DISTNAME}/html/Network-CGI-Monad.html
+share/doc/${DISTNAME}/html/Network-CGI-Protocol.html
+share/doc/${DISTNAME}/html/Network-CGI.html
+share/doc/${DISTNAME}/html/cgi.haddock
+share/doc/${DISTNAME}/html/doc-index.html
+share/doc/${DISTNAME}/html/frames.html
+share/doc/${DISTNAME}/html/haddock-util.js
+share/doc/${DISTNAME}/html/haddock.css
+share/doc/${DISTNAME}/html/haskell_icon.gif
+share/doc/${DISTNAME}/html/index-frames.html
+share/doc/${DISTNAME}/html/index.html
+share/doc/${DISTNAME}/html/mini_Network-CGI-Compat.html
+share/doc/${DISTNAME}/html/mini_Network-CGI-Cookie.html
+share/doc/${DISTNAME}/html/mini_Network-CGI-Monad.html
+share/doc/${DISTNAME}/html/mini_Network-CGI-Protocol.html
+share/doc/${DISTNAME}/html/mini_Network-CGI.html
+share/doc/${DISTNAME}/html/minus.gif
+share/doc/${DISTNAME}/html/plus.gif
