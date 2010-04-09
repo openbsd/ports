@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/25 10:23:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/09 21:56:05 sthen Exp $
 %%SHARED%%
 @bin bin/orcc
 include/orc-0.4/
 include/orc-0.4/orc/
 include/orc-0.4/orc-float/
 include/orc-0.4/orc-float/orcfloat.h
-include/orc-0.4/orc-pixel/
-include/orc-0.4/orc-pixel/orcpixel.h
 include/orc-0.4/orc-test/
 include/orc-0.4/orc-test/orcarray.h
 include/orc-0.4/orc-test/orcprofile.h
@@ -30,8 +28,6 @@ lib/liborc-0.4.a
 lib/liborc-0.4.la
 lib/liborc-float-0.4.a
 lib/liborc-float-0.4.la
-lib/liborc-pixel-0.4.a
-lib/liborc-pixel-0.4.la
 lib/liborc-test-0.4.a
 lib/liborc-test-0.4.la
 lib/orc/

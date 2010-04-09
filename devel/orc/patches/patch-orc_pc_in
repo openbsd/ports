@@ -1,12 +1,12 @@
-$OpenBSD: patch-orc_pc_in,v 1.1.1.1 2010/03/25 10:23:26 sthen Exp $
---- orc.pc.in.orig	Wed Mar 17 19:18:52 2010
-+++ orc.pc.in	Wed Mar 17 19:19:23 2010
+$OpenBSD: patch-orc_pc_in,v 1.2 2010/04/09 21:56:05 sthen Exp $
+--- orc.pc.in.orig	Fri Mar 19 18:44:36 2010
++++ orc.pc.in	Sat Apr  3 01:02:13 2010
 @@ -8,7 +8,7 @@ toolsdir=${exec_prefix}/bin
  Name: orc-@ORC_MAJORMINOR@
  Description: Library of Optimized Inner Loops Runtime Compiler
  Version: @VERSION@
--Libs: -L${libdir} -lorc-@ORC_MAJORMINOR@ @LIBM@ @LIBRT@
-+Libs: -L${libdir} -lorc-@ORC_MAJORMINOR@ -pthread @LIBM@ @LIBRT@
+-Libs: -L${libdir} -lorc-@ORC_MAJORMINOR@
++Libs: -L${libdir} -lorc-@ORC_MAJORMINOR@ -pthread
+ Libs.private: @LIBM@ @LIBRT@
  Cflags: -I${includedir}
  
- orcc=${toolsdir}/orcc@EXEEXT@

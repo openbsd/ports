@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2010/03/25 10:23:26 sthen Exp $
---- configure.ac.orig	Wed Mar 17 19:16:07 2010
-+++ configure.ac	Wed Mar 17 19:16:50 2010
-@@ -113,7 +113,7 @@ AC_DEFINE(ORC_EXPORTS, 1, [Defined for compiling inter
+$OpenBSD: patch-configure_ac,v 1.2 2010/04/09 21:56:05 sthen Exp $
+--- configure.ac.orig	Tue Mar 30 01:46:21 2010
++++ configure.ac	Sat Apr  3 01:00:59 2010
+@@ -114,7 +114,7 @@ AC_DEFINE(ORC_EXPORTS, 1, [Defined for compiling inter
  ORC_CFLAGS="$ORC_CFLAGS -I\$(top_srcdir)"
  AC_SUBST(ORC_CFLAGS)
  
