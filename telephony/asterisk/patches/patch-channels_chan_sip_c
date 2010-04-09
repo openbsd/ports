@@ -1,0 +1,14 @@
+$OpenBSD: patch-channels_chan_sip_c,v 1.4 2010/04/09 11:05:55 sthen Exp $
+
+https://issues.asterisk.org/view.php?id=15827
+
+--- channels/chan_sip.c.orig	Wed Mar  3 00:19:57 2010
++++ channels/chan_sip.c	Fri Apr  9 11:56:12 2010
+@@ -3329,6 +3329,7 @@ static struct sip_proxy *proxy_allocate(char *name, ch
+ 	proxy->force = force;
+ 	ast_copy_string(proxy->name, name, sizeof(proxy->name));
+ 	proxy->ip.sin_port = htons(port_str2int(port, STANDARD_SIP_PORT));
++	proxy->ip.sin_family = AF_INET;
+ 	proxy_update(proxy);
+ 	return proxy;
+ }

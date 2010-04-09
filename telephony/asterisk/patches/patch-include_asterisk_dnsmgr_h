@@ -1,0 +1,30 @@
+$OpenBSD: patch-include_asterisk_dnsmgr_h,v 1.1 2010/04/09 11:05:55 sthen Exp $
+
+https://issues.asterisk.org/view.php?id=15827
+
+--- include/asterisk/dnsmgr.h.orig	Mon Mar  9 20:58:17 2009
++++ include/asterisk/dnsmgr.h	Fri Apr  9 10:46:27 2010
+@@ -42,12 +42,12 @@ struct ast_dnsmgr_entry;
+  *
+  * \param name the hostname
+  * \param result where the DNS manager should store the IP address as it refreshes it.
+- *      it.
++ * \param service SRV prefix (optional, set to NULL to disable SRV)
+  *
+  * This function allocates a new DNS manager entry object, and fills it with the
+  * provided hostname and IP address.  This function does not force an initial lookup
+- * of the IP address.  So, generally, this should be used when the initial address
+- * is already known.
++ * of the IP address.  So, this should be used when the initial address
++ * is already known and stored in result.
+  *
+  * \return a DNS manager entry
+  * \version 1.6.1 result changed from struct in_addr to struct sockaddr_in to store port number
+@@ -69,6 +69,7 @@ void ast_dnsmgr_release(struct ast_dnsmgr_entry *entry
+  * \param name the hostname
+  * \param result where to store the IP address as the DNS manager refreshes it
+  * \param dnsmgr Where to store the allocate DNS manager entry
++ * \param service SRV prefix (optional, set to NULL to disable SRV)
+  *
+  * This function allocates a new DNS manager entry object, and fills it with
+  * the provided hostname and IP address.  This function _does_ force an initial
