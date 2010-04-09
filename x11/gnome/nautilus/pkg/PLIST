@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2009/12/21 18:03:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2010/04/09 09:01:11 ajacoutot Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 @bin bin/nautilus-connect-server
@@ -65,8 +65,6 @@ share/locale/af/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
 share/locale/ar/LC_MESSAGES/nautilus.mo
 share/locale/as/LC_MESSAGES/nautilus.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/nautilus.mo
 share/locale/az/LC_MESSAGES/nautilus.mo
 share/locale/be/LC_MESSAGES/nautilus.mo

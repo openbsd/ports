@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2009/12/21 18:03:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2010/04/09 09:01:11 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -10,10 +10,11 @@ COMMENT=		GNOME shell and file manager
 # x11/gnome/nautilus-open-terminal
 # x11/gnome/nautilus-sendto
 # x11/gnome/totem
+# x11/gnome/tracker
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		2.28.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 
@@ -46,7 +47,6 @@ RUN_DEPENDS=		:shared-mime-info->=0.21:misc/shared-mime-info \
 			:gvfs->=1.0.3:x11/gnome/gvfs
 LIB_DEPENDS=		exif::graphics/libexif \
 			gnome-desktop-2::x11/gnome/desktop \
-			trackerclient::x11/gnome/tracker \
 			unique-1.0.>=1::devel/libunique
 
 USE_X11=		Yes
@@ -54,7 +54,7 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	nautilus
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
-			--enable-tracker \
+			--disable-tracker \
 			--disable-beagle \
 			--disable-update-mimedb \
 			--disable-packagekit
