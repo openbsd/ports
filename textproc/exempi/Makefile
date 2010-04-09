@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/02/09 15:35:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/09 08:59:56 ajacoutot Exp $
 
 COMMENT =		implementation of XMP
-DISTNAME =		exempi-2.0.2
-PKGNAME =		${DISTNAME}p0
+DISTNAME =		exempi-2.1.1
 
 CATEGORIES =		textproc
 
-SHARED_LIBS +=		exempi		1.0 # .4.4
+SHARED_LIBS +=		exempi		1.0 # .5.1
 
 HOMEPAGE =		http://libopenraw.freedesktop.org/wiki/Exempi
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += expat
+WANTLIB += expat z
 
 MODULES =		converters/libiconv
 MASTER_SITES =		http://libopenraw.freedesktop.org/download/
