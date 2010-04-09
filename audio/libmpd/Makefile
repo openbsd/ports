@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/09/21 18:31:48 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/09 13:29:13 landry Exp $
 
 COMMENT=		mpd client library
 
-VERSION=		0.19.0
+VERSION=		0.20.0
 DISTNAME=		libmpd-${VERSION}
-SHARED_LIBS=		mpd	3.1
+SHARED_LIBS=		mpd	3.2	#.3.0
 CATEGORIES=		audio
 
 MAINTAINER=		Landry Breuil <gaston@gcu.info>
