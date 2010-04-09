@@ -4,3 +4,6 @@ ${PREFIX-web}/zabbix
 You should point this to the DocumentRoot of your web-server:
     # ln -s ../zabbix /var/www/htdocs/zabbix
 (make sure you use a relative symlink since Apache is chrooted)
+
+zabbix-web frontend can use a PostgreSQL or MySQL database.  Install the
+php5-pgsql or php5-mysql package according to the one you wish to use.

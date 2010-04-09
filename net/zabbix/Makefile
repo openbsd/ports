@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/04/09 10:17:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/04/09 16:41:45 ajacoutot Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -6,10 +6,10 @@ COMMENT-web =		network and application monitoring - web frontend
 
 VERSION =		1.8.2
 DISTNAME =		zabbix-${VERSION}
-FULLPKGNAME-main =	zabbix-agent-${VERSION}
+FULLPKGNAME-main =	zabbix-agent-${VERSION}p0
 FULLPKGPATH-main =	net/zabbix,-main
-PKGNAME-server =	zabbix-server-${VERSION}
-FULLPKGNAME-web =	zabbix-web-${VERSION}
+PKGNAME-server =	zabbix-server-${VERSION}p0
+FULLPKGNAME-web =	zabbix-web-${VERSION}p0
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
@@ -25,7 +25,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 
 MODULES=		converters/libiconv
 
-MULTI_PACKAGES =	-main
+MULTI_PACKAGES =	-main -web
 PSEUDO_FLAVORS =	no_server
 FLAVORS =		mysql pgsql
 
@@ -67,18 +67,16 @@ FLAVOR ?=		no_server
 #they don't trigger a "Conflicting flavors" error.
 BACKEND =		${FLAVOR}
 .if ${BACKEND} == "mysql"
-MULTI_PACKAGES += -server -web
+MULTI_PACKAGES += -server
 LIB_DEPENDS-server +=	mysqlclient::databases/mysql,-main
-RUN_DEPENDS-web + =	::www/php5/extensions,-mysql
 CONFIGURE_ARGS +=	--with-mysql
 .elif ${BACKEND} == "pgsql"
-MULTI_PACKAGES += -server -web
+MULTI_PACKAGES += -server
 LIB_DEPENDS-server +=	pq::databases/postgresql,-main
-RUN_DEPENDS-web + =	::www/php5/extensions,-pgsql
 CONFIGURE_ARGS +=	--with-pgsql
 .elif ${BACKEND} == "no_server"
 CONFIGURE_ARGS += --disable-server \
-                  --disable-proxy
+		--disable-proxy
 .else
 ERRORS +=		"Fatal: Conflicting flavors: ${FLAVOR}";
 .endif
