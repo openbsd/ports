@@ -1,0 +1,52 @@
+$OpenBSD: patch-src_tracker-preferences_tracker-preferences_ui,v 1.1 2010/04/09 09:00:31 ajacoutot Exp $
+
+Don't display battery options as this requires HAL or DeviceKIT.
+
+--- src/tracker-preferences/tracker-preferences.ui.orig	Sat Apr  3 11:56:37 2010
++++ src/tracker-preferences/tracker-preferences.ui	Sat Apr  3 11:57:05 2010
+@@ -281,45 +281,6 @@
+                               </packing>
+                             </child>
+                             <child>
+-                              <object class="GtkCheckButton" id="checkbutton_enable_index_on_battery">
+-                                <property name="label" translatable="yes">Enable when running on _battery</property>
+-                                <property name="visible">True</property>
+-                                <property name="can_focus">True</property>
+-                                <property name="receives_default">False</property>
+-                                <property name="use_underline">True</property>
+-                                <property name="active">True</property>
+-                                <property name="draw_indicator">True</property>
+-                                <signal name="toggled" handler="checkbutton_enable_index_on_battery_toggled_cb"/>
+-                              </object>
+-                              <packing>
+-                                <property name="expand">False</property>
+-                                <property name="fill">False</property>
+-                                <property name="position">1</property>
+-                              </packing>
+-                            </child>
+-                            <child>
+-                              <object class="GtkAlignment" id="alignment4">
+-                                <property name="visible">True</property>
+-                                <property name="left_padding">12</property>
+-                                <child>
+-                                  <object class="GtkCheckButton" id="checkbutton_enable_index_on_battery_first_time">
+-                                    <property name="label" translatable="yes">Enable for _first time</property>
+-                                    <property name="visible">True</property>
+-                                    <property name="can_focus">True</property>
+-                                    <property name="receives_default">False</property>
+-                                    <property name="use_underline">True</property>
+-                                    <property name="active">True</property>
+-                                    <property name="draw_indicator">True</property>
+-                                    <signal name="toggled" handler="checkbutton_enable_index_on_battery_first_time_toggled_cb"/>
+-                                  </object>
+-                                </child>
+-                              </object>
+-                              <packing>
+-                                <property name="expand">False</property>
+-                                <property name="position">2</property>
+-                              </packing>
+-                            </child>
+-                            <child>
+                               <object class="GtkCheckButton" id="checkbutton_index_mounted_directories">
+                                 <property name="label" translatable="yes">Include mou_nted directories</property>
+                                 <property name="visible">True</property>

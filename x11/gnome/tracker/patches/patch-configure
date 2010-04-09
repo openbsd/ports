@@ -1,27 +1,75 @@
-$OpenBSD: patch-configure,v 1.2 2010/03/21 10:41:37 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.3 2010/04/09 09:00:31 ajacoutot Exp $
 
-deskbar-applet is not really needed for tracker to build but we still
-want the functionnality. We cannot add deskbar-applet as a build
-dependency without creating a loop:
-evince -> nautilus -> tracker -> deskbar-applet -> py-gnome-desktop -> evince
+uuid_generate(3):
+    needs e2fs-uuid from sysutils/e2fsprogs over libuuid (devel/uuid).
 
---- configure.orig	Thu Feb  4 11:56:45 2010
-+++ configure	Thu Feb  4 14:09:19 2010
-@@ -16007,17 +16007,6 @@ else
-   enable_deskbar_applet=auto
+--- configure.orig	Thu Apr  1 17:06:14 2010
++++ configure	Sat Apr  3 11:56:18 2010
+@@ -17023,12 +17023,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_UUID_CFLAGS="$UUID_CFLAGS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"uuid\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "uuid") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"e2fs-uuid\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "e2fs-uuid") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_UUID_CFLAGS=`$PKG_CONFIG --cflags "uuid" 2>/dev/null`
++  pkg_cv_UUID_CFLAGS=`$PKG_CONFIG --cflags "e2fs-uuid" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -17041,12 +17041,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_UUID_LIBS="$UUID_LIBS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"uuid\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "uuid") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"e2fs-uuid\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "e2fs-uuid") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_UUID_LIBS=`$PKG_CONFIG --libs "uuid" 2>/dev/null`
++  pkg_cv_UUID_LIBS=`$PKG_CONFIG --libs "e2fs-uuid" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -17065,14 +17065,14 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        UUID_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "uuid"`
++	        UUID_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "e2fs-uuid"`
+         else
+-	        UUID_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "uuid"`
++	        UUID_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "e2fs-uuid"`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$UUID_PKG_ERRORS" >&5
+ 
+-	as_fn_error "Package requirements (uuid) were not met:
++	as_fn_error "Package requirements (e2fs-uuid) were not met:
+ 
+ $UUID_PKG_ERRORS
+ 
+@@ -17330,7 +17330,7 @@ if test "${ac_cv_lib_id3_ID3Tag_New+set}" = set; then 
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lid3 -lstdc++ -lz $LIBS"
++LIBS="-lid3 -lstdc++ -lz -lm $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -17365,7 +17365,7 @@ if test "x$ac_cv_lib_id3_ID3Tag_New" = x""yes; then :
+ #define HAVE_LIBID3 1
+ _ACEOF
+ 
+-  LIBS="-lid3 $LIBS"
++  LIBS="-lid3 -lm $LIBS"
+ 
  fi
  
--
--if test "x$enable_deskbar_applet" != "xno" ; then
--   if pkg-config --atleast-version=2.19 deskbar-applet ; then
--      have_deskbar_applet="module"
--   elif pkg-config --atleast-version=2.16 deskbar-applet ; then
--      have_deskbar_applet="handler"
--   else
--      have_deskbar_applet="no"
--   fi
--fi
--
- if test "x$enable_deskbar_applet" = "xyes"; then
-    if test "x$have_deskbar_applet" = "xno"; then
-       as_fn_error "Couldn't find deskbar-applet >= 2.16." "$LINENO" 5

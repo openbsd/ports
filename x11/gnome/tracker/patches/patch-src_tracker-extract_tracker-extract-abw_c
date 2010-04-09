@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_tracker-extract_tracker-extract-abw_c,v 1.1.1.1 2009/04/21 21:34:46 jasper Exp $
+$OpenBSD: patch-src_tracker-extract_tracker-extract-abw_c,v 1.2 2010/04/09 09:00:31 ajacoutot Exp $
 
 - implement getline() in case it's not found on this system.
 
---- src/tracker-extract/tracker-extract-abw.c.orig	Wed Apr  8 00:04:00 2009
-+++ src/tracker-extract/tracker-extract-abw.c	Tue Apr 14 16:23:54 2009
-@@ -31,6 +31,10 @@
+--- src/tracker-extract/tracker-extract-abw.c.orig	Tue Mar 30 11:07:49 2010
++++ src/tracker-extract/tracker-extract-abw.c	Fri Apr  2 17:05:59 2010
+@@ -30,6 +30,10 @@
  #include <sys/stat.h>
  #include <unistd.h>
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_tracker-extract_tracker-extract-abw_c,v 1.1.1.1 2009/04/21 2
  #include <glib.h>
  #include <glib/gstdio.h>
  
-@@ -46,6 +50,81 @@ static TrackerExtractData data[] = {
+@@ -45,6 +49,81 @@ static TrackerExtractData data[] = {
  	{ "application/x-abiword", extract_abw },
  	{ NULL, NULL }
  };
@@ -96,4 +96,4 @@ $OpenBSD: patch-src_tracker-extract_tracker-extract-abw_c,v 1.1.1.1 2009/04/21 2
 +#endif
  
  static void
- extract_abw (const gchar *filename,
+ extract_abw (const gchar          *uri,

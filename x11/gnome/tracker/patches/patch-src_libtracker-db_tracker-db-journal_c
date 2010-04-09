@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_libtracker-db_tracker-db-journal_c,v 1.1 2010/04/09 09:00:31 ajacoutot Exp $
+--- src/libtracker-db/tracker-db-journal.c.orig	Fri Apr  2 19:33:55 2010
++++ src/libtracker-db/tracker-db-journal.c	Fri Apr  2 19:34:40 2010
+@@ -792,6 +792,15 @@ tracker_db_journal_reader_verify_last (GError **error)
+ 	return success;
+ }
+ 
++#ifdef __OpenBSD__
++size_t
++strnlen (const char *string, size_t maxlen)
++{
++	const char *end = memchr (string, '\0', maxlen);
++	return end ? (size_t) (end - string) : maxlen;
++}
++#endif // __OpenBSD__
++
+ gboolean
+ tracker_db_journal_reader_next (GError **error)
+ {

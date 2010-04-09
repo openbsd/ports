@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_libtracker-miner_tracker-monitor_c,v 1.1 2010/04/09 09:00:31 ajacoutot Exp $
+
+Fix a segfault where there is no monitor running.
+
+--- src/libtracker-miner/tracker-monitor.c.orig	Fri Apr  2 17:18:49 2010
++++ src/libtracker-miner/tracker-monitor.c	Fri Apr  2 17:21:10 2010
+@@ -227,6 +227,7 @@ tracker_monitor_init (TrackerMonitor *object)
+ 	GFile                 *file;
+ 	GFileMonitor          *monitor;
+ 	const gchar           *name;
++	GError                *error = NULL;
+ #endif /* HAVE_LIBINOTIFY */
+ 
+ 	object->private = TRACKER_MONITOR_GET_PRIVATE (object);
+@@ -280,7 +281,16 @@ tracker_monitor_init (TrackerMonitor *object)
+ 	monitor = g_file_monitor_directory (file,
+ 	                                    G_FILE_MONITOR_WATCH_MOUNTS,
+ 	                                    NULL,
+-	                                    NULL);
++	                                    &error);
++
++	/* Directory monitoring is missing, error out, don't crash. */
++	if (error) {
++		g_critical ("Could not obtain monitor: %s", error->message);
++		g_error_free (error);
++
++		exit (EXIT_FAILURE);
++		return FALSE;
++	}
+ 
+ 	priv->monitor_backend = G_OBJECT_TYPE (monitor);
+ 

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_miners_fs_tracker-miner-applications_c,v 1.1 2010/04/09 09:00:31 ajacoutot Exp $
+--- src/miners/fs/tracker-miner-applications.c.orig	Thu Apr  8 18:43:45 2010
++++ src/miners/fs/tracker-miner-applications.c	Fri Apr  9 10:09:35 2010
+@@ -95,11 +95,11 @@ miner_applications_constructed (GObject *object)
+ 
+ 	G_OBJECT_CLASS (tracker_miner_applications_parent_class)->constructed (object);
+ 
+-	file = g_file_new_for_path ("/usr/share/applications/");
++	file = g_file_new_for_path ("${LOCALBASE}/share/applications/");
+ 	tracker_miner_fs_directory_add (TRACKER_MINER_FS (object), file, TRUE);
+ 	g_object_unref (file);
+ 
+-	file = g_file_new_for_path ("/usr/share/desktop-directories/");
++	file = g_file_new_for_path ("${LOCALBASE}/share/desktop-directories/");
+ 	tracker_miner_fs_directory_add (TRACKER_MINER_FS (object), file, TRUE);
+ 	g_object_unref (file);
+ 
