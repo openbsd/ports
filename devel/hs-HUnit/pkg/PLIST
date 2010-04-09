@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/09 18:34:00 kili Exp $
+@bin bin/basic-tests
+@bin bin/extended-tests
+@bin bin/terminal-tests
+lib/${DISTNAME}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Test/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Test/HUnit/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Test/HUnit.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Test/HUnit/Base.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Test/HUnit/Lang.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Test/HUnit/Terminal.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Test/HUnit/Text.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
+lib/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
+@unexec-delete /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+lib/${DISTNAME}/unregister.sh
+share/doc/${DISTNAME}/
+share/doc/${DISTNAME}/LICENSE
+share/doc/${DISTNAME}/README
+share/doc/${DISTNAME}/doc/
+share/doc/${DISTNAME}/doc/Guide.html
+share/doc/${DISTNAME}/examples/
+share/doc/${DISTNAME}/examples/Example.hs
+share/doc/${DISTNAME}/html/
+share/doc/${DISTNAME}/html/HUnit.haddock
+share/doc/${DISTNAME}/html/Test-HUnit-Base.html
+share/doc/${DISTNAME}/html/Test-HUnit-Lang.html
+share/doc/${DISTNAME}/html/Test-HUnit-Terminal.html
+share/doc/${DISTNAME}/html/Test-HUnit-Text.html
+share/doc/${DISTNAME}/html/Test-HUnit.html
+share/doc/${DISTNAME}/html/doc-index.html
+share/doc/${DISTNAME}/html/frames.html
+share/doc/${DISTNAME}/html/haddock-util.js
+share/doc/${DISTNAME}/html/haddock.css
+share/doc/${DISTNAME}/html/haskell_icon.gif
+share/doc/${DISTNAME}/html/index-frames.html
+share/doc/${DISTNAME}/html/index.html
+share/doc/${DISTNAME}/html/mini_Test-HUnit-Base.html
+share/doc/${DISTNAME}/html/mini_Test-HUnit-Lang.html
+share/doc/${DISTNAME}/html/mini_Test-HUnit-Terminal.html
+share/doc/${DISTNAME}/html/mini_Test-HUnit-Text.html
+share/doc/${DISTNAME}/html/mini_Test-HUnit.html
+share/doc/${DISTNAME}/html/minus.gif
+share/doc/${DISTNAME}/html/plus.gif
+share/doc/${DISTNAME}/prologue.txt
