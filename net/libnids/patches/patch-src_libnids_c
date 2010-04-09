@@ -1,7 +1,17 @@
-$OpenBSD: patch-src_libnids_c,v 1.5 2008/07/15 16:11:02 brad Exp $
---- src/libnids.c.orig	Thu Feb 21 05:47:12 2008
-+++ src/libnids.c	Wed Jul  9 23:20:06 2008
-@@ -31,6 +31,12 @@
+$OpenBSD: patch-src_libnids_c,v 1.6 2010/04/09 09:48:18 jasper Exp $
+--- src/libnids.c.orig	Mon Mar  1 22:13:25 2010
++++ src/libnids.c	Fri Apr  9 10:00:43 2010
+@@ -14,7 +14,9 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <syslog.h>
++#ifndef __OpenBSD__
+ #include <alloca.h>
++#endif
+ #include <pcap.h>
+ #include <errno.h>
+ #include <config.h>
+@@ -32,6 +34,12 @@
  #include <glib.h>
  #endif
  
@@ -14,7 +24,7 @@ $OpenBSD: patch-src_libnids_c,v 1.5 2008/07/15 16:11:02 brad Exp $
  #ifdef __linux__
  extern int set_all_promisc();
  #endif
-@@ -618,22 +624,46 @@ int nids_init()
+@@ -619,22 +627,46 @@ int nids_init()
      case DLT_NULL:
          nids_linkoffset = 4;
          break;
