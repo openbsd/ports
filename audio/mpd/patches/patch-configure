@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure,v 1.10 2010/04/09 11:39:33 jasper Exp $
+
+Don't reset CPPFLAGS...stupid configure.
+
+--- configure.orig	Sun Dec 27 17:06:13 2009
++++ configure	Tue Apr  6 16:40:39 2010
+@@ -9181,7 +9181,7 @@ if test x$enable_aac = xyes; then
+ 	oldcppflags=$CPPFLAGS
+ 	CFLAGS="$CFLAGS $MPD_CFLAGS $FAAD_CFLAGS -I."
+ 	LIBS="$LIBS $MPD_LIBS $FAAD_LIBS"
+-	CPPFLAGS=$CFLAGS
++	CPPFLAGS="$CPPFLAGS $CFLAGS"
+ 	ac_fn_c_check_header_mongrel "$LINENO" "faad.h" "ac_cv_header_faad_h" "$ac_includes_default"
+ if test "x$ac_cv_header_faad_h" = x""yes; then :
+ 
+@@ -9435,7 +9435,7 @@ if test x$enable_aac = xyes; then
+ 	oldcppflags=$CPPFLAGS
+ 	CFLAGS="$CFLAGS $MPD_CFLAGS $FAAD_CFLAGS -Werror"
+ 	LIBS="$LIBS $MPD_LIBS $FAAD_LIBS"
+-	CPPFLAGS=$CFLAGS
++	CPPFLAGS="$CPPFLAGS $CFLAGS"
+ 
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for broken libfaad headers" >&5
+ $as_echo_n "checking for broken libfaad headers... " >&6; }
+@@ -9481,7 +9481,7 @@ if test x$enable_aac = xyes; then
+ 	oldcppflags=$CPPFLAGS
+ 	CFLAGS="$CFLAGS $FAAD_CFLAGS"
+ 	LIBS="$LIBS $FAAD_LIBS $MP4FF_LIBS"
+-	CPPFLAGS=$CFLAGS
++	CPPFLAGS="$CPPFLAGS $CFLAGS"
+ 
+ 	ac_fn_c_check_header_mongrel "$LINENO" "mp4ff.h" "ac_cv_header_mp4ff_h" "$ac_includes_default"
+ if test "x$ac_cv_header_mp4ff_h" = x""yes; then :
