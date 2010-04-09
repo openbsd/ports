@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/12/21 18:03:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/04/09 09:01:54 ajacoutot Exp $
 @pkgpath x11/gnome/totem,xine
 @bin bin/totem
 @bin bin/totem-audio-preview
@@ -6,8 +6,8 @@
 @bin bin/totem-video-thumbnailer
 lib/nautilus/
 lib/nautilus/extensions-2.0/
-lib/nautilus/extensions-2.0/libtotem-properties-page.a
-lib/nautilus/extensions-2.0/libtotem-properties-page.la
+@comment lib/nautilus/extensions-2.0/libtotem-properties-page.a
+@comment lib/nautilus/extensions-2.0/libtotem-properties-page.la
 lib/nautilus/extensions-2.0/libtotem-properties-page.so
 lib/totem/
 lib/totem/plugins/
@@ -18,13 +18,13 @@ lib/totem/plugins/dbus/dbus-service.pyo
 lib/totem/plugins/dbus/dbus-service.totem-plugin
 lib/totem/plugins/galago/
 lib/totem/plugins/galago/galago.totem-plugin
-lib/totem/plugins/galago/libtgp.a
-lib/totem/plugins/galago/libtgp.la
+@comment lib/totem/plugins/galago/libtgp.a
+@comment lib/totem/plugins/galago/libtgp.la
 lib/totem/plugins/galago/libtgp.so
 lib/totem/plugins/gromit/
 lib/totem/plugins/gromit/gromit.totem-plugin
-lib/totem/plugins/gromit/libgromit.a
-lib/totem/plugins/gromit/libgromit.la
+@comment lib/totem/plugins/gromit/libgromit.a
+@comment lib/totem/plugins/gromit/libgromit.la
 lib/totem/plugins/gromit/libgromit.so
 lib/totem/plugins/jamendo/
 lib/totem/plugins/jamendo/jamendo.py
@@ -33,13 +33,13 @@ lib/totem/plugins/jamendo/jamendo.pyo
 lib/totem/plugins/jamendo/jamendo.totem-plugin
 lib/totem/plugins/jamendo/jamendo.ui
 lib/totem/plugins/media-player-keys/
-lib/totem/plugins/media-player-keys/libmedia_player_keys.a
-lib/totem/plugins/media-player-keys/libmedia_player_keys.la
+@comment lib/totem/plugins/media-player-keys/libmedia_player_keys.a
+@comment lib/totem/plugins/media-player-keys/libmedia_player_keys.la
 lib/totem/plugins/media-player-keys/libmedia_player_keys.so
 lib/totem/plugins/media-player-keys/media-player-keys.totem-plugin
 lib/totem/plugins/ontop/
-lib/totem/plugins/ontop/libontop.a
-lib/totem/plugins/ontop/libontop.la
+@comment lib/totem/plugins/ontop/libontop.a
+@comment lib/totem/plugins/ontop/libontop.la
 lib/totem/plugins/ontop/libontop.so
 lib/totem/plugins/ontop/ontop.totem-plugin
 lib/totem/plugins/opensubtitles/
@@ -52,45 +52,40 @@ lib/totem/plugins/opensubtitles/opensubtitles.pyo
 lib/totem/plugins/opensubtitles/opensubtitles.totem-plugin
 lib/totem/plugins/opensubtitles/opensubtitles.ui
 lib/totem/plugins/properties/
-lib/totem/plugins/properties/libmovie-properties.a
-lib/totem/plugins/properties/libmovie-properties.la
+@comment lib/totem/plugins/properties/libmovie-properties.a
+@comment lib/totem/plugins/properties/libmovie-properties.la
 lib/totem/plugins/properties/libmovie-properties.so
 lib/totem/plugins/properties/movie-properties.totem-plugin
 lib/totem/plugins/screensaver/
-lib/totem/plugins/screensaver/libscreensaver.a
-lib/totem/plugins/screensaver/libscreensaver.la
+@comment lib/totem/plugins/screensaver/libscreensaver.a
+@comment lib/totem/plugins/screensaver/libscreensaver.la
 lib/totem/plugins/screensaver/libscreensaver.so
 lib/totem/plugins/screensaver/screensaver.totem-plugin
 lib/totem/plugins/screenshot/
 lib/totem/plugins/screenshot/gallery.ui
 lib/totem/plugins/screenshot/gnome-screenshot.ui
-lib/totem/plugins/screenshot/libscreenshot.a
-lib/totem/plugins/screenshot/libscreenshot.la
+@comment lib/totem/plugins/screenshot/libscreenshot.a
+@comment lib/totem/plugins/screenshot/libscreenshot.la
 lib/totem/plugins/screenshot/libscreenshot.so
 lib/totem/plugins/screenshot/screenshot.totem-plugin
 lib/totem/plugins/skipto/
-lib/totem/plugins/skipto/libskipto.a
-lib/totem/plugins/skipto/libskipto.la
+@comment lib/totem/plugins/skipto/libskipto.a
+@comment lib/totem/plugins/skipto/libskipto.la
 lib/totem/plugins/skipto/libskipto.so
 lib/totem/plugins/skipto/skipto.totem-plugin
 lib/totem/plugins/skipto/skipto.ui
 lib/totem/plugins/thumbnail/
-lib/totem/plugins/thumbnail/libthumbnail.a
-lib/totem/plugins/thumbnail/libthumbnail.la
+@comment lib/totem/plugins/thumbnail/libthumbnail.a
+@comment lib/totem/plugins/thumbnail/libthumbnail.la
 lib/totem/plugins/thumbnail/libthumbnail.so
 lib/totem/plugins/thumbnail/thumbnail.totem-plugin
 lib/totem/plugins/totem/
 lib/totem/plugins/totem/__init__.py
 lib/totem/plugins/totem/__init__.pyc
 lib/totem/plugins/totem/__init__.pyo
-lib/totem/plugins/tracker/
-lib/totem/plugins/tracker/libtracker.a
-lib/totem/plugins/tracker/libtracker.la
-lib/totem/plugins/tracker/libtracker.so
-lib/totem/plugins/tracker/tracker.totem-plugin
 lib/totem/plugins/youtube/
-lib/totem/plugins/youtube/libyoutube.a
-lib/totem/plugins/youtube/libyoutube.la
+@comment lib/totem/plugins/youtube/libyoutube.a
+@comment lib/totem/plugins/youtube/libyoutube.la
 lib/totem/plugins/youtube/libyoutube.so
 lib/totem/plugins/youtube/youtube.totem-plugin
 lib/totem/plugins/youtube/youtube.ui

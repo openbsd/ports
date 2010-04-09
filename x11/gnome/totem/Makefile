@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2009/12/22 14:35:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/04/09 09:01:54 ajacoutot Exp $
 
 COMMENT=	simple media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.28.5
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	multimedia
 
@@ -23,7 +24,7 @@ WANTLIB += glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-keyring
 WANTLIB += gnutls gobject-2.0 gpg-error gstbase-0.10 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 tasn1 trackerclient
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 tasn1
 WANTLIB += unique-1.0 util xcb xml2 z
 
 MODULES=	devel/gettext \
@@ -72,9 +73,9 @@ MODGNOME_HELP_FILES=Yes
 MODGCONF2_SCHEMAS_DIR= totem
 
 # Browser bemused lirc mythtv sample-python sample-val sidebar-test
-# publish iplayer pythonconsole coherence_upnp
+# publish iplayer pythonconsole coherence_upnp tracker
 TOTEM_PLUGINS=	"galago gromit media-player-keys ontop properties \
-		screensaver skipto thumbnail youtube tracker \
+		screensaver skipto thumbnail youtube \
 		opensubtitles jamendo screenshot dbus-service"
 
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
