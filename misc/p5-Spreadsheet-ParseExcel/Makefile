@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/10/11 09:44:59 steven Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/09 17:58:19 stephan Exp $
 
 COMMENT=	get information from Excel spreadsheets
 
 MODULES=	cpan
-DISTNAME=	Spreadsheet-ParseExcel-0.55
+DISTNAME=	Spreadsheet-ParseExcel-0.57
 CATEGORIES=	misc
 
 # Perl
@@ -18,9 +18,9 @@ RUN_DEPENDS=	::devel/p5-OLE-Storage_Lite \
 REGRESS_DEPENDS=::converters/p5-Unicode-Map \
 		::converters/p5-Jcode \
 		::misc/p5-Spreadsheet-WriteExcel
+BUILD_DEPENDS = ${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes
-CONFIGURE_STYLE=modbuild
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/p5-Spreadsheet-ParseExcel
 
