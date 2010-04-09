@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/04/03 00:32:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/09 13:32:57 landry Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT-main =		bundle of plugins for gmpc
 COMMENT-wikipedia =	wikipedia plugin for gmpc
 
-VERSION =	0.19.0
+VERSION =	0.20.0
 DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}p0
@@ -68,6 +68,7 @@ USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =gnu
 CONFIGURE_ARGS+=--disable-mserver \
+		--disable-mmkeys \
 		--disable-libnotify \
 		--disable-lirc
 

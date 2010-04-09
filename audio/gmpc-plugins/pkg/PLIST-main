@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/09/21 18:33:57 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2010/04/09 13:32:57 landry Exp $
 @conflict gmpc-coveramazon-*
 @conflict gmpc-osd-*
 @conflict gmpc-lyrics-*
@@ -62,6 +62,70 @@ lib/gmpc/plugins/playlistsortplugin.so
 lib/gmpc/plugins/shoutplugin.a
 lib/gmpc/plugins/shoutplugin.la
 lib/gmpc/plugins/shoutplugin.so
+share/gmpc-albumview/
+share/gmpc-albumview/icons/
+share/gmpc-albumview/icons/Humanity/
+share/gmpc-albumview/icons/Humanity/128x128/
+share/gmpc-albumview/icons/Humanity/128x128/apps/
+share/gmpc-albumview/icons/Humanity/128x128/apps/albumview.png
+share/gmpc-albumview/icons/Humanity/16x16/
+share/gmpc-albumview/icons/Humanity/16x16/apps/
+share/gmpc-albumview/icons/Humanity/16x16/apps/albumview.png
+share/gmpc-albumview/icons/Humanity/22x22/
+share/gmpc-albumview/icons/Humanity/22x22/apps/
+share/gmpc-albumview/icons/Humanity/22x22/apps/albumview.png
+share/gmpc-albumview/icons/Humanity/24x24/
+share/gmpc-albumview/icons/Humanity/24x24/apps/
+share/gmpc-albumview/icons/Humanity/24x24/apps/albumview.png
+share/gmpc-albumview/icons/Humanity/32x32/
+share/gmpc-albumview/icons/Humanity/32x32/apps/
+share/gmpc-albumview/icons/Humanity/32x32/apps/albumview.png
+share/gmpc-albumview/icons/Humanity/48x48/
+share/gmpc-albumview/icons/Humanity/48x48/apps/
+share/gmpc-albumview/icons/Humanity/48x48/apps/albumview.png
+share/gmpc-albumview/icons/Humanity/64x64/
+share/gmpc-albumview/icons/Humanity/64x64/apps/
+share/gmpc-albumview/icons/Humanity/64x64/apps/albumview.png
+share/gmpc-albumview/icons/Humanity/72x72/
+share/gmpc-albumview/icons/Humanity/72x72/apps/
+share/gmpc-albumview/icons/Humanity/72x72/apps/albumview.png
+share/gmpc-albumview/icons/Humanity/96x96/
+share/gmpc-albumview/icons/Humanity/96x96/apps/
+share/gmpc-albumview/icons/Humanity/96x96/apps/albumview.png
+share/gmpc-albumview/icons/Humanity/scalable/
+share/gmpc-albumview/icons/Humanity/scalable/apps/
+share/gmpc-albumview/icons/Humanity/scalable/apps/albumview.svg
+share/gmpc-albumview/icons/hicolor/
+share/gmpc-albumview/icons/hicolor/128x128/
+share/gmpc-albumview/icons/hicolor/128x128/apps/
+share/gmpc-albumview/icons/hicolor/128x128/apps/albumview.png
+share/gmpc-albumview/icons/hicolor/16x16/
+share/gmpc-albumview/icons/hicolor/16x16/apps/
+share/gmpc-albumview/icons/hicolor/16x16/apps/albumview.png
+share/gmpc-albumview/icons/hicolor/22x22/
+share/gmpc-albumview/icons/hicolor/22x22/apps/
+share/gmpc-albumview/icons/hicolor/22x22/apps/albumview.png
+share/gmpc-albumview/icons/hicolor/24x24/
+share/gmpc-albumview/icons/hicolor/24x24/apps/
+share/gmpc-albumview/icons/hicolor/24x24/apps/albumview.png
+share/gmpc-albumview/icons/hicolor/32x32/
+share/gmpc-albumview/icons/hicolor/32x32/apps/
+share/gmpc-albumview/icons/hicolor/32x32/apps/albumview.png
+share/gmpc-albumview/icons/hicolor/48x48/
+share/gmpc-albumview/icons/hicolor/48x48/apps/
+share/gmpc-albumview/icons/hicolor/48x48/apps/albumview.png
+share/gmpc-albumview/icons/hicolor/64x64/
+share/gmpc-albumview/icons/hicolor/64x64/apps/
+share/gmpc-albumview/icons/hicolor/64x64/apps/albumview.png
+share/gmpc-albumview/icons/hicolor/72x72/
+share/gmpc-albumview/icons/hicolor/72x72/apps/
+share/gmpc-albumview/icons/hicolor/72x72/apps/albumview.png
+share/gmpc-albumview/icons/hicolor/96x96/
+share/gmpc-albumview/icons/hicolor/96x96/apps/
+share/gmpc-albumview/icons/hicolor/96x96/apps/albumview.png
+share/gmpc-albumview/icons/hicolor/scalable/
+share/gmpc-albumview/icons/hicolor/scalable/apps/
+share/gmpc-albumview/icons/hicolor/scalable/apps/albumview.svg
 share/gmpc/plugins/
 share/gmpc/plugins/jamendo/
 share/gmpc/plugins/jamendo/jamendo.png
@@ -89,6 +153,7 @@ share/locale/de/LC_MESSAGES/gmpc-lyricwiki.mo
 share/locale/de/LC_MESSAGES/gmpc-mdcover.mo
 share/locale/de/LC_MESSAGES/gmpc-shout.mo
 share/locale/de/LC_MESSAGES/gmpc-tagedit.mo
+share/locale/en_CA/LC_MESSAGES/gmpc-alarm.mo
 share/locale/es/LC_MESSAGES/gmpc-alarm.mo
 share/locale/es/LC_MESSAGES/gmpc-discogs.mo
 share/locale/es/LC_MESSAGES/gmpc-fullscreeninfo.mo
@@ -113,6 +178,7 @@ share/locale/hu/LC_MESSAGES/gmpc-alarm.mo
 share/locale/hu/LC_MESSAGES/gmpc-discogs.mo
 share/locale/hu/LC_MESSAGES/gmpc-fullscreeninfo.mo
 share/locale/hu/LC_MESSAGES/gmpc-lastfm.mo
+share/locale/id/LC_MESSAGES/gmpc-alarm.mo
 share/locale/it/LC_MESSAGES/gmpc-alarm.mo
 share/locale/it/LC_MESSAGES/gmpc-lyricwiki.mo
 share/locale/it/LC_MESSAGES/gmpc-tagedit.mo
@@ -144,6 +210,7 @@ share/locale/pl/LC_MESSAGES/gmpc-mdcover.mo
 share/locale/pl/LC_MESSAGES/gmpc-shout.mo
 share/locale/pl/LC_MESSAGES/gmpc-tagedit.mo
 share/locale/pt/LC_MESSAGES/gmpc-lastfm.mo
+share/locale/pt_BR/LC_MESSAGES/gmpc-alarm.mo
 share/locale/pt_BR/LC_MESSAGES/gmpc-lastfm.mo
 share/locale/pt_BR/LC_MESSAGES/gmpc-lyricwiki.mo
 share/locale/ro/LC_MESSAGES/gmpc-alarm.mo
