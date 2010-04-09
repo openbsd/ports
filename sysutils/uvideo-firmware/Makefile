@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/02/10 15:11:30 mglocker Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/09 17:40:19 mglocker Exp $
 
 COMMENT=		firmware binary images for uvideo driver
 
-DISTNAME=		uvideo-firmware-1.1
+DISTNAME=		uvideo-firmware-1.2
 CATEGORIES=		sysutils
 MASTER_SITES=		${HOMEPAGE}	
 
@@ -21,8 +21,11 @@ PKG_ARCH=		*
 
 PREFIX=			/etc
 
+# Info file
+FIRMWARE=	info
+
 # Apple iSight first generation
-FIRMWARE=	isight_05ac-8300
+FIRMWARE+=	isight_05ac-8300
 
 # Ricoh R5U87x
 FIRMWARE+=	r5u87x_05ca-1803 r5u87x_05ca-1810 r5u87x_05ca-1812 \
