@@ -1,0 +1,17 @@
+$OpenBSD: patch-gnome-breakpad_gnome-breakpad_cc,v 1.1 2010/04/10 10:17:25 ajacoutot Exp $
+--- gnome-breakpad/gnome-breakpad.cc.orig	Sat Apr 10 12:12:11 2010
++++ gnome-breakpad/gnome-breakpad.cc	Sat Apr 10 12:13:45 2010
+@@ -429,8 +429,12 @@ check_if_gdb ()
+ 			_exit (1);
+ 		_exit(0);
+ 	}
+-	
++
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ 	mypath = g_file_read_link ("/proc/self/exe", NULL);
++#else
++	mypath = g_file_read_link ("/proc/curproc/file", NULL);
++#endif
+ 	if (mypath)
+ 		has_debug_symbols = elf_has_debug_symbols (mypath);
+ 
