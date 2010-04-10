@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/10/23 10:10:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/04/10 11:59:25 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}pathauto/
@@ -20,6 +20,7 @@ ${DRUPAL_MODS}pathauto/pathauto_user.inc
 ${DRUPAL_MODS}pathauto/tests/
 ${DRUPAL_MODS}pathauto/tests/pathauto.test
 ${DRUPAL_MODS}pathauto/translations/
+${DRUPAL_MODS}pathauto/translations/ar.po
 ${DRUPAL_MODS}pathauto/translations/cs.po
 ${DRUPAL_MODS}pathauto/translations/da.po
 ${DRUPAL_MODS}pathauto/translations/de.po
