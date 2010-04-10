@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/02/26 18:51:12 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/10 10:11:09 sthen Exp $
 
 COMMENT-main=	bird internet routing daemon
 COMMENT-doc=	bird internet routing daemon (documentation)
 
-V=		1.1.7
+V=		1.2.2
 PORTVER=
 # XXX handle standard PKGNAME-main and FULLPKGNAME-main bumps by
 # setting PORTVER. see below.
