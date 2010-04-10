@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/04/10 10:05:13 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2010/04/10 10:17:49 ajacoutot Exp $
 
 COMMENT=	graphical bug reporting tool for GNOME
 
 GNOME_PROJECT=	bug-buddy
 GNOME_VERSION=	2.28.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
