@@ -1,12 +1,14 @@
---- GrabWeather.orig	Fri Jul  4 19:28:21 2008
-+++ GrabWeather	Fri Jul  4 19:29:05 2008
-@@ -40,8 +40,7 @@
+--- GrabWeather.orig	Sun Jan 11 18:15:02 2009
++++ GrabWeather	Sat Apr 10 10:46:54 2010
+@@ -40,9 +40,8 @@ my $DataFileName = "$StationID.dat";
  # Is LWP installed?
  eval { require LWP::UserAgent };
  if ($@) {
 -  my $cmd = qq{wget --proxy=off --passive-ftp --tries=0 --quiet } .
 -            qq{--output-document=$home/$ReportDir/$HTMLFileName $URL};
+-  `$cmd` == 0 or die "unable to fetch weather: $?";
 +  my $cmd = qq{ftp -o $home/$ReportDir/$HTMLFileName $URL};
-   `$cmd` == 0 or die "unable to fetch weather: $?";
++  die "unable to fetch weather: $?" if `$cmd` == 0; 
  } else {
    $ENV{FTP_PASSIVE} = 1; # LWP uses Net::FTP internally.
+   my $ua  = new LWP::UserAgent;

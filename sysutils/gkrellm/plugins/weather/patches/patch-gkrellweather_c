@@ -1,20 +1,20 @@
---- gkrellweather.c.orig	Fri Jul  4 19:27:02 2008
-+++ gkrellweather.c	Fri Jul  4 19:27:51 2008
-@@ -714,7 +714,7 @@
+--- gkrellweather.c.orig	Sun Jan 11 18:15:02 2009
++++ gkrellweather.c	Sat Apr 10 10:39:52 2010
+@@ -721,7 +721,7 @@ apply_air_config (void)
          options.station[1] = c[1];
          options.station[2] = c[2];
          options.station[3] = c[3];
--        sprintf(options.command, PREFIX "/bin/GrabWeather %s", options.station);
-+        sprintf(options.command, PREFIX "/bin/gkrellm.GrabWeather %s", options.station);
-         sprintf(options.filename, "%s/.wmWeatherReports/%s.dat",
+-        snprintf(options.command, 512, PREFIX "/bin/GrabWeather %s", options.station);
++        snprintf(options.command, 512, PREFIX "/bin/gkrellm.GrabWeather %s", options.station);
+         options.command[511] = 0;
+         snprintf(options.filename, 512, "%s/.wmWeatherReports/%s.dat",
                  getenv("HOME"), options.station);
- 	net_update = FALSE;
-@@ -977,7 +977,7 @@
+@@ -986,7 +986,7 @@ read_default(void)
      options.windspeed_unit = 1;
      options.pressure_unit = 1;
      strcpy(options.station, DEFAULT_STATION_ID);
--    sprintf(options.command, "/usr/share/gkrellm/GrabWeather %s", options.station);
-+    sprintf(options.command, PREFIX "/bin/gkrellm.GrabWeather %s", options.station);
-     sprintf(options.filename, "%s/.wmWeatherReports/%s.dat",
-             getenv("HOME"), options.station);
- }
+-    snprintf(options.command, 512, "/usr/share/gkrellm/GrabWeather %s", options.station);
++    snprintf(options.command, 512, PREFIX "/bin/gkrellm.GrabWeather %s", options.station);
+     options.command[511] = 0;
+     snprintf(options.filename, 512, "%s/.wmWeatherReports/%s.dat",
+              getenv("HOME"), options.station);

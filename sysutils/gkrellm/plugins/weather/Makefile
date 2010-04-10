@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2009/08/10 06:34:30 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2010/04/10 13:11:30 dhill Exp $
 
 COMMENT=	Weather plugin for GkrellM2
 
-DISTNAME=	gkrellweather-2.0.7
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	gkrellweather-2.0.8
 CATEGORIES=	x11
 EXTRACT_SUFX=	.tgz
 
-HOMEPAGE=	http://makovick.googlepages.com/gkrellmplugins
-MASTER_SITES=	http://makovick.googlepages.com/
+HOMEPAGE=	http://sites.google.com/site/makovick/gkrellm-plugins
+MASTER_SITES=	http://sites.google.com/site/makovick/projects/
 
 ALL_TARGET=	gkrellweather.so
 PLUGIN=		${WRKSRC}/gkrellweather.so
