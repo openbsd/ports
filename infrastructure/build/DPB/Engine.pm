@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.4 2010/03/20 18:29:18 espie Exp $
+# $OpenBSD: Engine.pm,v 1.5 2010/04/10 11:21:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -36,6 +36,7 @@ sub new
 	    locker => $locker,
 	    logger => $logger,
 	    errors => [],
+	    requeued => [],
 	    ignored => []}, $class;
 	$o->{log} = DPB::Util->make_hot($logger->open("engine"));
 	$o->{stats} = DPB::Util->make_hot($logger->open("stats"));
@@ -366,10 +367,28 @@ sub new_job
 	    $lock, sub {$self->end_job($core, $v)});
 }
 
+sub rebuild_info
+{
+	my ($self, $core) = @_;
+	my @l = @{$self->{requeued}};
+	$self->{requeued} = [];
+	for my $v (@l) {
+		delete $v->{info};
+	}
+	# todo: calls vars again after stripping stuff bare.
+	for my $v (@l) {
+		$self->new_path($v);
+	}
+}
+
 sub start_new_job
 {
 	my $self = shift;
 	my $core = $self->{builder}->get;
+	if (@{$self->{requeued} > 0}) {
+		$self->rebuild_info($core);
+		return;
+	}
 	my $o = $self->{buildable}->sorted($core);
 	while (my $v = $o->next) {
 		$self->{buildable}->remove($v);
@@ -397,7 +416,7 @@ sub can_build
 {
 	my $self = shift;
 	
-	return $self->{buildable}->non_empty;
+	return $self->{buildable}->non_empty || @{$self->{requeued}} > 0;
 }
 
 sub dump_category
