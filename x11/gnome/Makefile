@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2010/03/22 22:24:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2010/04/10 16:52:01 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -75,6 +75,7 @@
      SUBDIR += nautilus
      SUBDIR += nautilus-open-terminal
      SUBDIR += nautilus-sendto
+     SUBDIR += nettool
      SUBDIR += orca
      SUBDIR += panel
      SUBDIR += pessulus
