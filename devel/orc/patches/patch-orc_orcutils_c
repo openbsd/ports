@@ -1,0 +1,17 @@
+$OpenBSD: patch-orc_orcutils_c,v 1.1 2010/04/10 11:11:06 sthen Exp $
+--- orc/orcutils.c.orig	Fri Mar 19 18:44:36 2010
++++ orc/orcutils.c	Fri Apr  9 20:17:12 2010
+@@ -41,7 +41,6 @@
+  * @short_description: Orc utility functions
+  */
+ 
+-#ifdef unused
+ int
+ get_file_int (const char *file, int *value)
+ {
+@@ -169,5 +168,4 @@ get_tag_value (char *s, const char *tag)
+ 
+   return _strndup (colon, end-colon);
+ }
+-#endif
+ 

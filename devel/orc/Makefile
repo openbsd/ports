@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/09 21:56:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/10 11:11:06 sthen Exp $
 
 COMMENT=	library and toolset to operate arrays of data
 
 DISTNAME=	orc-0.4.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 MASTER_SITES=	http://code.entropywave.com/download/orc/
 
