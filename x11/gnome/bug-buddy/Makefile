@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2009/12/21 18:03:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/04/10 10:05:13 kili Exp $
 
 COMMENT=	graphical bug reporting tool for GNOME
 
@@ -33,7 +33,7 @@ LIB_DEPENDS=	camel-1.2,ebook-1.2,edataserver-1.2,smime3.>=22,softokn3::databases
 		elf::devel/libelf \
 		gtop-2.0.>=8::devel/libgtop2
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libelf" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-eds
