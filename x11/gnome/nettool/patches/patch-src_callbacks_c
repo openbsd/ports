@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_callbacks_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
+--- src/callbacks.c.orig	Tue Sep 22 15:30:34 2009
++++ src/callbacks.c	Sat Apr 10 15:15:22 2010
+@@ -284,12 +284,10 @@ gn_quit_app (GtkWidget * widget, gpointer data)
+ {
+ 	gint status, pid;
+ 
+-	pid = getpid () + 1;
+-	while (waitpid (-1, &status, WNOHANG) == 0) {
+-		if (waitpid (pid, &status, WNOHANG) == 0)
+-			kill (pid, SIGKILL);
+-		pid ++;
+-	}
++	pid = getpid ();
++	kill (0, SIGKILL);
++	if (waitpid (pid, &status, WNOHANG) == 0)
++		kill (pid, SIGKILL);
+ 
+ 	netinfo_progress_indicator_stop (NULL);
+ 

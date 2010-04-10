@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_netstat_h,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
+--- src/netstat.h.orig	Thu Apr  1 17:09:42 2010
++++ src/netstat.h	Thu Apr  1 17:09:45 2010
+@@ -30,10 +30,16 @@
+ #   define NETSTAT_ROUTE6_FORMAT "%s %s %s %d %d %d %s"
+ #   define NETSTAT_MULTICAST_FORMAT "%s %d %s"
+ 
+-#elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
++#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
+ #   define NETSTAT_PROTOCOL_FORMAT "%s %d %d %d.%d.%d.%d.%s %s %s"
+ #   define ALT_NETSTAT_PROTOCOL_FORMAT "%s %d %d *.%s %s %s"
+ #   define NETSTAT_ROUTE_FORMAT "%s %s %s %d %d %s"
++#   define NETSTAT_MULTICAST_FORMAT "%s %d %s"
++
++#elif defined(__OpenBSD__)
++#   define NETSTAT_PROTOCOL_FORMAT "%s %d %d %d.%d.%d.%d.%s %s %s"
++#   define ALT_NETSTAT_PROTOCOL_FORMAT "%s %d %d *.%s %s %s"
++#   define NETSTAT_ROUTE_FORMAT "%s %s %s %d %d %s %d %s"
+ #   define NETSTAT_MULTICAST_FORMAT "%s %d %s"
+ 
+ #endif

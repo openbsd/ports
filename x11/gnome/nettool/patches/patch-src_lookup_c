@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_lookup_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
+--- src/lookup.c.orig	Tue Sep 22 15:30:34 2009
++++ src/lookup.c	Tue Mar 30 15:38:12 2010
+@@ -21,6 +21,7 @@
+ #include <gtk/gtk.h>
+ #include <glib/gi18n.h>
+ #include <glib/gprintf.h>
++#include <sys/types.h>
+ 
+ #include "lookup.h"
+ #include "utils.h"

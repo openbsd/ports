@@ -1,0 +1,61 @@
+$OpenBSD: patch-src_netstat_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
+--- src/netstat.c.orig	Tue Sep 22 15:30:34 2009
++++ src/netstat.c	Thu Apr  1 17:43:32 2010
+@@ -110,12 +110,17 @@ netstat_get_active_option (Netinfo * netinfo)
+ 	g_return_val_if_fail (netinfo != NULL, NULL);
+ 	
+ 	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (netinfo->routing))) {
++#if defined (__FreeBSD__) || defined (__OpenBSD__)
++		/* XXX We only support ipv4 now */
++		option = g_strdup ("-rn -f inet");
++#else
+ 		/* Works for Solaris and Linux */
+ 		if (netinfo_is_ipv6_enable ()) {
+ 			option = g_strdup ("-rn -A inet -A inet6");
+ 		} else {
+ 			option = g_strdup ("-rn -A inet");
+ 		}
++#endif
+ 
+ 		if (netinfo->stbar_text)
+ 			g_free (netinfo->stbar_text);
+@@ -485,8 +490,10 @@ netstat_route_tree_insert (GtkTreeView *widget, gchar 
+ 	g_return_if_fail (line != NULL);
+ 
+ 	count = strip_route_line (line, &data);
+-#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
+ 	if (count == 6) {
++#elif defined(__OpenBSD__)
++	if (count == 8) {
+ #else
+ 	if ((count == 8) || (count == 7)) {
+ #endif
+@@ -557,16 +564,25 @@ strip_route_line (gchar * line, netstat_route_data *da
+ 	gint count = 0;
+ 	gchar flags[30];
+ 	gint ref, use;
+-#ifndef __FreeBDD__
++#if !defined (__FreeBSD__) && !defined(__OpenBSD__)
+ 	gchar dest[50];
+ 	gchar **items;
+ #endif
++#if defined(__OpenBSD__)
++	gint mtu, prio;
++#endif
+ 
+-#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
+ 	count = sscanf (line, NETSTAT_ROUTE_FORMAT,
+ 			data->destination,
+ 			data->gateway, flags,
+ 			&ref, &use, data->iface);
++#elif defined(__OpenBSD__)
++	count = sscanf (line, NETSTAT_ROUTE_FORMAT,
++			data->destination,
++			data->gateway, flags,
++			&ref, &use, &mtu, &prio,
++			data->iface);
+ #else
+ 	count = sscanf (line, NETSTAT_ROUTE_FORMAT,
+ 			data->destination,
