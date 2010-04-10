@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/10 15:37:56 kili Exp $
+lib/${DISTNAME}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Control/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Control/Parallel/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Control/Parallel.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Control/Parallel/Strategies.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
+lib/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
+@unexec-delete /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+lib/${DISTNAME}/unregister.sh
+share/doc/${DISTNAME}/
+share/doc/${DISTNAME}/LICENSE
+share/doc/${DISTNAME}/html/
+share/doc/${DISTNAME}/html/Control-Parallel-Strategies.html
+share/doc/${DISTNAME}/html/Control-Parallel.html
+share/doc/${DISTNAME}/html/doc-index.html
+share/doc/${DISTNAME}/html/frames.html
+share/doc/${DISTNAME}/html/haddock-util.js
+share/doc/${DISTNAME}/html/haddock.css
+share/doc/${DISTNAME}/html/haskell_icon.gif
+share/doc/${DISTNAME}/html/index-frames.html
+share/doc/${DISTNAME}/html/index.html
+share/doc/${DISTNAME}/html/mini_Control-Parallel-Strategies.html
+share/doc/${DISTNAME}/html/mini_Control-Parallel.html
+share/doc/${DISTNAME}/html/minus.gif
+share/doc/${DISTNAME}/html/parallel.haddock
+share/doc/${DISTNAME}/html/plus.gif
