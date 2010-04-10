@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/03/29 07:53:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/04/10 13:42:25 sthen Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
 
-V =			1.0.25
+V =			1.0.26
 
 DISTNAME =		ssvnc-$V.src
 PKGNAME =		ssvnc-$V
