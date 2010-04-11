@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/03/19 18:26:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/11 10:07:10 sthen Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
 %%SHARED%%
@@ -12,6 +12,7 @@ lib/ejabberd/ebin/cyrsasl.beam
 lib/ejabberd/ebin/cyrsasl_anonymous.beam
 lib/ejabberd/ebin/cyrsasl_digest.beam
 lib/ejabberd/ebin/cyrsasl_plain.beam
+lib/ejabberd/ebin/dynamic_compile.beam
 lib/ejabberd/ebin/ejabberd.app
 lib/ejabberd/ebin/ejabberd.beam
 lib/ejabberd/ebin/ejabberd_admin.beam
@@ -25,9 +26,12 @@ lib/ejabberd/ebin/ejabberd_auth_odbc.beam
 @comment lib/ejabberd/ebin/ejabberd_auth_pam.beam
 lib/ejabberd/ebin/ejabberd_c2s.beam
 lib/ejabberd/ebin/ejabberd_c2s_config.beam
+lib/ejabberd/ebin/ejabberd_captcha.beam
 lib/ejabberd/ebin/ejabberd_check.beam
+lib/ejabberd/ebin/ejabberd_commands.beam
 lib/ejabberd/ebin/ejabberd_config.beam
 lib/ejabberd/ebin/ejabberd_ctl.beam
+lib/ejabberd/ebin/ejabberd_debug.beam
 lib/ejabberd/ebin/ejabberd_frontend_socket.beam
 lib/ejabberd/ebin/ejabberd_hooks.beam
 lib/ejabberd/ebin/ejabberd_http.beam
@@ -40,6 +44,7 @@ lib/ejabberd/ebin/ejabberd_loglevel.beam
 lib/ejabberd/ebin/ejabberd_node_groups.beam
 lib/ejabberd/ebin/ejabberd_odbc.beam
 lib/ejabberd/ebin/ejabberd_odbc_sup.beam
+lib/ejabberd/ebin/ejabberd_piefxis.beam
 lib/ejabberd/ebin/ejabberd_rdbms.beam
 lib/ejabberd/ebin/ejabberd_receiver.beam
 lib/ejabberd/ebin/ejabberd_router.beam
@@ -49,6 +54,7 @@ lib/ejabberd/ebin/ejabberd_s2s_out.beam
 lib/ejabberd/ebin/ejabberd_service.beam
 lib/ejabberd/ebin/ejabberd_sm.beam
 lib/ejabberd/ebin/ejabberd_socket.beam
+lib/ejabberd/ebin/ejabberd_stun.beam
 lib/ejabberd/ebin/ejabberd_sup.beam
 lib/ejabberd/ebin/ejabberd_system_monitor.beam
 lib/ejabberd/ebin/ejabberd_tmp_sup.beam
@@ -89,6 +95,7 @@ lib/ejabberd/ebin/mod_muc_log.beam
 lib/ejabberd/ebin/mod_muc_room.beam
 lib/ejabberd/ebin/mod_offline.beam
 lib/ejabberd/ebin/mod_offline_odbc.beam
+lib/ejabberd/ebin/mod_ping.beam
 lib/ejabberd/ebin/mod_privacy.beam
 lib/ejabberd/ebin/mod_privacy_odbc.beam
 lib/ejabberd/ebin/mod_private.beam
@@ -99,11 +106,13 @@ lib/ejabberd/ebin/mod_proxy65_service.beam
 lib/ejabberd/ebin/mod_proxy65_sm.beam
 lib/ejabberd/ebin/mod_proxy65_stream.beam
 lib/ejabberd/ebin/mod_pubsub.beam
+lib/ejabberd/ebin/mod_pubsub_odbc.beam
 lib/ejabberd/ebin/mod_register.beam
 lib/ejabberd/ebin/mod_roster.beam
 lib/ejabberd/ebin/mod_roster_odbc.beam
 lib/ejabberd/ebin/mod_service_log.beam
 lib/ejabberd/ebin/mod_shared_roster.beam
+lib/ejabberd/ebin/mod_sic.beam
 lib/ejabberd/ebin/mod_stats.beam
 lib/ejabberd/ebin/mod_time.beam
 lib/ejabberd/ebin/mod_vcard.beam
@@ -112,35 +121,72 @@ lib/ejabberd/ebin/mod_vcard_odbc.beam
 lib/ejabberd/ebin/mod_version.beam
 lib/ejabberd/ebin/node_buddy.beam
 lib/ejabberd/ebin/node_club.beam
-lib/ejabberd/ebin/node_default.beam
+lib/ejabberd/ebin/node_dag.beam
 lib/ejabberd/ebin/node_dispatch.beam
+lib/ejabberd/ebin/node_flat.beam
+lib/ejabberd/ebin/node_flat_odbc.beam
+lib/ejabberd/ebin/node_hometree.beam
+lib/ejabberd/ebin/node_hometree_odbc.beam
+lib/ejabberd/ebin/node_mb.beam
 lib/ejabberd/ebin/node_pep.beam
+lib/ejabberd/ebin/node_pep_odbc.beam
 lib/ejabberd/ebin/node_private.beam
 lib/ejabberd/ebin/node_public.beam
-lib/ejabberd/ebin/nodetree_default.beam
+lib/ejabberd/ebin/nodetree_dag.beam
+lib/ejabberd/ebin/nodetree_tree.beam
+lib/ejabberd/ebin/nodetree_tree_odbc.beam
 lib/ejabberd/ebin/nodetree_virtual.beam
 lib/ejabberd/ebin/odbc_queries.beam
 lib/ejabberd/ebin/p1_fsm.beam
 lib/ejabberd/ebin/p1_mnesia.beam
-lib/ejabberd/ebin/ram_file_io_server.beam
+lib/ejabberd/ebin/pubsub_db_odbc.beam
+lib/ejabberd/ebin/pubsub_index.beam
+lib/ejabberd/ebin/pubsub_subscription.beam
+lib/ejabberd/ebin/pubsub_subscription_odbc.beam
 lib/ejabberd/ebin/randoms.beam
 lib/ejabberd/ebin/sha.beam
 lib/ejabberd/ebin/shaper.beam
 lib/ejabberd/ebin/stringprep.beam
 lib/ejabberd/ebin/stringprep_sup.beam
+lib/ejabberd/ebin/stun_codec.beam
 lib/ejabberd/ebin/tls.beam
 lib/ejabberd/ebin/translate.beam
 lib/ejabberd/ebin/treap.beam
 @comment lib/ejabberd/ebin/win32_dns.beam
 lib/ejabberd/ebin/xml.beam
 lib/ejabberd/ebin/xml_stream.beam
+lib/ejabberd/include/
+lib/ejabberd/include/XmppAddr.hrl
+lib/ejabberd/include/adhoc.hrl
+lib/ejabberd/include/ejabberd.hrl
+lib/ejabberd/include/ejabberd_commands.hrl
+lib/ejabberd/include/ejabberd_config.hrl
+lib/ejabberd/include/ejabberd_ctl.hrl
+lib/ejabberd/include/eldap/
+lib/ejabberd/include/eldap/ELDAPv3.hrl
+lib/ejabberd/include/eldap/eldap.hrl
+lib/ejabberd/include/jlib.hrl
+lib/ejabberd/include/mod_muc/
+lib/ejabberd/include/mod_muc/mod_muc_room.hrl
+lib/ejabberd/include/mod_privacy.hrl
+lib/ejabberd/include/mod_proxy65/
+lib/ejabberd/include/mod_proxy65/mod_proxy65.hrl
+lib/ejabberd/include/mod_pubsub/
+lib/ejabberd/include/mod_pubsub/pubsub.hrl
+lib/ejabberd/include/mod_roster.hrl
+lib/ejabberd/include/web/
+lib/ejabberd/include/web/ejabberd_http.hrl
+lib/ejabberd/include/web/ejabberd_web_admin.hrl
+lib/ejabberd/include/web/http_bind.hrl
 lib/ejabberd/priv/
 lib/ejabberd/priv/bin/
+lib/ejabberd/priv/bin/captcha.sh
 lib/ejabberd/priv/lib/
 lib/ejabberd/priv/msgs/
 lib/ejabberd/priv/msgs/ca.msg
 lib/ejabberd/priv/msgs/cs.msg
 lib/ejabberd/priv/msgs/de.msg
+lib/ejabberd/priv/msgs/el.msg
 lib/ejabberd/priv/msgs/eo.msg
 lib/ejabberd/priv/msgs/es.msg
 lib/ejabberd/priv/msgs/fr.msg

@@ -1,0 +1,22 @@
+No need to install release notes.
+
+$OpenBSD: patch-src_Makefile_in,v 1.1 2010/04/11 10:07:10 sthen Exp $
+--- src/Makefile.in.orig	Fri Mar 12 11:40:41 2010
++++ src/Makefile.in	Sun Mar 14 02:57:29 2010
+@@ -111,7 +111,7 @@ MSGSDIR = $(PRIVDIR)/msgs
+ SPOOLDIR = $(DESTDIR)@localstatedir@/lib/ejabberd
+ 
+ # /var/lock/ejabberdctl
+-CTLLOCKDIR = $(DESTDIR)@localstatedir@/lock/ejabberdctl
++CTLLOCKDIR = $(DESTDIR)/tmp
+ 
+ # /var/lib/ejabberd/.erlang.cookie
+ COOKIEFILE = $(SPOOLDIR)/.erlang.cookie
+@@ -249,7 +249,6 @@ install: all
+ 	install -d $(DOCDIR)
+ 	install -m 644 ../doc/guide.html $(DOCDIR)
+ 	install -m 644 ../doc/*.png $(DOCDIR)
+-	install -m 644 ../doc/*.txt $(DOCDIR)
+ 
+ uninstall: uninstall-binary
+ 
