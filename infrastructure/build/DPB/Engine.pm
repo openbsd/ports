@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.5 2010/04/10 11:21:24 espie Exp $
+# $OpenBSD: Engine.pm,v 1.6 2010/04/11 15:02:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -385,7 +385,7 @@ sub start_new_job
 {
 	my $self = shift;
 	my $core = $self->{builder}->get;
-	if (@{$self->{requeued} > 0}) {
+	if (@{$self->{requeued}} > 0) {
 		$self->rebuild_info($core);
 		return;
 	}
