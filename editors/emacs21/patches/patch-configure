@@ -1,14 +1,15 @@
-$OpenBSD: patch-configure,v 1.10 2007/07/06 16:59:32 kettenis Exp $
+$OpenBSD: patch-configure,v 1.11 2010/04/11 21:26:24 jasper Exp $
 disable Xaw3d
---- configure.orig	Tue Mar 18 15:19:12 2003
-+++ configure	Wed Jun 27 22:27:02 2007
-@@ -830,12 +830,17 @@ case "${canonical}" in
+--- configure.orig	Tue Mar 18 07:19:12 2003
++++ configure	Sun Apr 11 14:57:06 2010
+@@ -830,12 +830,18 @@ case "${canonical}" in
      opsys=openbsd
      case "${canonical}" in
        alpha*-*-openbsd*)	machine=alpha ;;
 +      arm*-*-openbsd*)	machine=arm ;;
        i386-*-openbsd*)	machine=intel386 ;;
        m68k-*-openbsd*)  machine=hp9000s300 ;;
++      mips64el-*-openbsd*) machine=mips64el ;;
        mipsel-*-openbsd*) machine=pmax ;;
        ns32k-*-openbsd*)	machine=ns32000 ;;
 -      sparc-*-openbsd*)	machine=sparc ;;
@@ -21,7 +22,7 @@ disable Xaw3d
      esac
    ;;
  
-@@ -5038,9 +5043,9 @@ EOF
+@@ -5038,9 +5044,9 @@ EOF
    fi
  fi
  
