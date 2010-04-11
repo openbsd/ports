@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/10/19 09:48:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/04/11 16:39:05 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
@@ -38,9 +38,8 @@ MODGCONF2_SCHEMAS_DIR=	at-spi
 MODGCONF2_LIBDEP=	No
 DESKTOP_FILES=		Yes
 
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-# not enabled in X.org
-CONFIGURE_ARGS+= --disable-xevie
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+		--disable-xevie
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2009/12/21 18:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2010/04/11 16:39:05 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
@@ -38,6 +38,7 @@ MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-xevie=no \
 			--sysconfdir="${SYSCONFDIR}/X11" \
 			--localstatedir=/var \
 			--mandir=${PREFIX}/man \
@@ -46,8 +47,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-scrollkeeper \
 			--with-console-kit=no \
 			--with-libaudit=no
-# not enabled in X.org
-CONFIGURE_ARGS+=	--with-xevie=no
 
 # -pthread is needed to resolve some undefined symbols
 # (pthread_mutex_trylock in libgthread for gdmflexiserver, gdmXnest...)

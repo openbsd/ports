@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2009/12/21 18:14:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/04/11 16:39:05 ajacoutot Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
@@ -40,9 +40,8 @@ USE_X11=		Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gok
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-# XXX X Window System Error ('BadLenght...')
-CONFIGURE_ARGS+=	--disable-xevie
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--disable-xevie
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
