@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.2 2010/04/08 15:57:46 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.3 2010/04/11 12:38:56 ajacoutot Exp $
 --- sysdeps/bsd/sysinfo.c.orig	Sun Apr 19 19:51:00 2009
-+++ sysdeps/bsd/sysinfo.c	Mon Apr  5 14:23:52 2010
++++ sysdeps/bsd/sysinfo.c	Sat Apr 10 16:57:45 2010
 @@ -35,16 +35,49 @@ static glibtop_sysinfo sysinfo = { .flags = 0 };
  static void
  init_sysinfo (glibtop *server)
@@ -54,12 +54,22 @@ $OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.2 2010/04/08 15:57:46 ajacoutot Exp $
  	len = sizeof (ncpus);
  	sysctlbyname ("hw.ncpu", &ncpus, &len, NULL, 0);
  	len = 0;
-@@ -53,6 +86,8 @@ init_sysinfo (glibtop *server)
- 	sysctlbyname ("hw.model", model, &len, NULL, 0);
+@@ -54,6 +87,8 @@ init_sysinfo (glibtop *server)
  	len = sizeof (mhz);
  	sysctlbyname ("hw.clockrate", &mhz, &len, NULL, 0);
-+
-+#endif /* __OpenBSD__ */
  
++#endif /* __OpenBSD__ */
++
  	for (sysinfo.ncpu = 0;
  	     sysinfo.ncpu < GLIBTOP_NCPU && sysinfo.ncpu < ncpus;
+ 	     sysinfo.ncpu++) {
+@@ -78,7 +113,9 @@ init_sysinfo (glibtop *server)
+ 				     g_strdup_printf("%d", mhz));
+ 	}
+ 
++#ifndef __OpenBSD__
+ 	g_free (model);
++#endif
+ 
+ 	sysinfo.flags = _glibtop_sysdeps_sysinfo;
+ }
