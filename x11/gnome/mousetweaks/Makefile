@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2009/12/14 12:11:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/04/11 17:52:00 ajacoutot Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
@@ -35,6 +35,5 @@ MODGCONF2_SCHEMAS_DIR=	mousetweaks
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
