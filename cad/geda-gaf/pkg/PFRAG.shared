@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/04/11 22:22:40 edd Exp $
+@lib lib/libgeda.so.${LIBgeda_VERSION}

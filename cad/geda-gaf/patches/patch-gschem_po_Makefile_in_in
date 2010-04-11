@@ -1,0 +1,25 @@
+$OpenBSD: patch-gschem_po_Makefile_in_in,v 1.1.1.1 2010/04/11 22:22:40 edd Exp $
+
+Don't use install(1) during build.
+
+Make the timestamp not depend on $(DESKTOP_I18N_LOCALE_DIR) to prevent
+extra recursion during install.
+
+--- gschem/po/Makefile.in.in.orig	Mon Oct  5 03:38:14 2009
++++ gschem/po/Makefile.in.in	Mon Apr  5 17:14:29 2010
+@@ -431,12 +431,11 @@ DESKTOP_I18N_LOCALE_DIR = @DESKTOP_I18N_LOCALE_DIR@
+ # the timestamp before *and* after running 'make install' so that the
+ # make doesn't go into an infinite loop!
+ all: stamp-i18n
+-stamp-i18n: $(DESKTOP_I18N_LOCALE_DIR) stamp-po Makefile
++stamp-i18n: stamp-po Makefile
++	$(MKDIR_P) $(DESKTOP_I18N_LOCALE_DIR)
+ 	@echo timestamp > stamp-i18nT && mv stamp-i18nT stamp-i18n
+-	$(MAKE) prefix=$(DESKTOP_I18N_LOCALE_DIR) install && 	cp $(srcdir)/LINGUAS $(DESKTOP_I18N_LOCALE_DIR)/$(DOMAIN).LINGUAS 	|| rm stamp-i18n
++	$(MAKE) prefix=$(DESKTOP_I18N_LOCALE_DIR) INSTALL_DATA=cp install && 	cp $(srcdir)/LINGUAS $(DESKTOP_I18N_LOCALE_DIR)/$(DOMAIN).LINGUAS 	|| rm stamp-i18n
+ 	@echo timestamp > stamp-i18nT && mv stamp-i18nT stamp-i18n
+-$(DESKTOP_I18N_LOCALE_DIR):
+-	$(MKDIR_P) $(DESKTOP_I18N_LOCALE_DIR)
+ 
+ clean: clean-i18n
+ clean-i18n:
