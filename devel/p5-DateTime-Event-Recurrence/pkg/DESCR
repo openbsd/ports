@@ -1,0 +1,5 @@
+This module provides convenience methods that let you easily create
+DateTime::Set objects for various recurrences, such as "once a
+month" or "every day". You can also create more complicated
+recurrences, such as "every Monday, Wednesday and Thursday at 10:00
+AM and 2:00 PM".
