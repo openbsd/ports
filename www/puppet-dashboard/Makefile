@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/25 21:54:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/12 16:25:54 jasper Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
 V=		0.2.1
 DISTNAME=	puppet-dashboard-$V
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www sysutils
 
-HOMEPAGE=	http://projects.reductivelabs.com/projects/dashboard
+HOMEPAGE=	http://www.puppetlabs.com/puppet/related-projects/dashboard/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
