@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.988 2010/04/05 14:03:26 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.989 2010/04/12 13:08:20 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -94,6 +94,7 @@ _ALL_VARIABLES = BUILD_DEPENDS IGNORE IS_INTERACTIVE \
 	SUBPACKAGE MULTI_PACKAGES
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS PKG_ARCH
+_ALL_VARIABLES_PER_ARCH =
 
 .if ${DPB:L:Mfetch}
 _ALL_VARIABLES += DISTFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
@@ -110,6 +111,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
 	SHARED_LIBS USE_MOTIF \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
+_ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
 	PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM WANTLIB CATEGORIES DESCR
@@ -123,6 +125,9 @@ ARCH ?!= uname -m
 OPSYS = OpenBSD
 OPSYS_VER = ${OSREV}
 
+ALL_ARCHS = alpha amd64 arm armish arm hppa hppa64 i386 landisk \
+	loongson luna88k m68k m88k mac68k macppc mips64 mips64el \
+	mvme68k mvme88k mvmeppc palm sgi socppc sparc sparc64 zaurus
 # not all powerpc have apm(4), hence the use of macppc
 APM_ARCHS = amd64 arm i386 loongson macppc sparc sparc64
 LP64_ARCHS = alpha amd64 hppa64 sparc64 mips64 mips64el
@@ -3134,6 +3139,14 @@ dump-vars:
 .    endfor
 .  endfor
 .endif
+.for _v in ${_ALL_VARIABLES_PER_ARCH}
+.  for _a in ${ALL_ARCHS}
+.    if defined(${_v}-${_a})
+	@echo ${FULLPKGPATH}.${_v}-${_a}=${${_v}-${_a}:Q}
+.    endif
+.  endfor
+.endfor
+
 
 _all_phony = ${_recursive_depends_targets} \
 	${_recursive_targets} ${_dangerous_recursive_targets} \
