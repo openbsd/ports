@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/09/05 16:17:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/04/12 20:06:50 dcoppa Exp $
 @bin bin/sip
 include/python${MODPY_VERSION}/sip.h
 lib/python${MODPY_VERSION}/site-packages/sip.so
 lib/python${MODPY_VERSION}/site-packages/sipconfig.py
+lib/python${MODPY_VERSION}/site-packages/sipconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/sipdistutils.py
+lib/python${MODPY_VERSION}/site-packages/sipdistutils.pyc
 share/doc/py-sip/
 share/doc/py-sip/annotations.txt
 share/doc/py-sip/build_system.txt
