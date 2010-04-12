@@ -1,0 +1,2 @@
+Haskell bindings for the GNU readline library. Note that this is
+considered obsolete now; please use the Haskeline library instead.
