@@ -1,0 +1,11 @@
+$OpenBSD: patch-Build_PL,v 1.1.1.1 2010/04/12 17:26:26 giovanni Exp $
+--- Build.PL.orig	Mon Apr 12 19:22:10 2010
++++ Build.PL	Mon Apr 12 19:21:53 2010
+@@ -5,6 +5,7 @@ Module::Build->new
+       author       => 'Dave Rolsky <autarch@urth.org>',
+       license      => 'perl',
+ 
++      create_packlist => 0,
+       requires     => { 'DateTime' => 0.17,
+                         'DateTime::Event::ICal' => 0.03,
+                         'DateTime::Set' => 0.10, # really want DT::Span in same distro
