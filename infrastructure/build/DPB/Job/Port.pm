@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.12 2010/04/12 11:57:59 espie Exp $
+# $OpenBSD: Port.pm,v 1.13 2010/04/12 13:43:05 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -122,7 +122,7 @@ sub run
 		if (exists $v->{info}{$kind}) {
 			for my $d (values %{$v->{info}{$kind}}) {
 				next if $d eq $v;
-				$dep->{$d->fullpkgname.".tgz"} = 1;
+				$dep->{$d->fullpkgname} = 1;
 			}
 		}
 	}
