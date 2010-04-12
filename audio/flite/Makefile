@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/12 08:42:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/04/12 16:41:46 jasper Exp $
 
-# GCC hangs compiling cmu_us_kal_diphone.c
-NOT_FOR_ARCHS=	hppa mips64 mips64el
+BROKEN-hppa=	GCC hangs compiling cmu_us_kal_diphone.c
+BROKEN-mips64=	GCC hangs compiling cmu_us_kal_diphone.c
+BROKEN-mips64el= GCC hangs compiling cmu_us_kal_diphone.c
 
 COMMENT=	text to speech utility
 

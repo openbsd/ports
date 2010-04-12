@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2010/04/12 08:35:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2010/04/12 16:41:46 jasper Exp $
 
-NOT_FOR_ARCHS=	alpha
+BROKEN-alpha=	Alpha architecture not yet supported
 
 COMMENT=	C library to parse CGI Forms
 

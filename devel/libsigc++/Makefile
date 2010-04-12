@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2010/04/12 08:39:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/04/12 16:41:46 jasper Exp $
 
-# Signal-related bug? any program linked with this hangs
-NOT_FOR_ARCHS=	hppa
+BROKEN-hppa=	Signal-related bug? any program linked with this hangs
 
 COMMENT=	callback framework for C++
 
