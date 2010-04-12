@@ -1,4 +1,4 @@
-$OpenBSD: patch-foomaticrip_c,v 1.2 2010/03/21 14:39:40 ajacoutot Exp $
+$OpenBSD: patch-foomaticrip_c,v 1.3 2010/04/12 16:34:49 ajacoutot Exp $
 --- foomaticrip.c.orig	Mon Feb 15 13:57:40 2010
 +++ foomaticrip.c	Sun Mar 21 15:28:12 2010
 @@ -173,11 +173,11 @@ char echopath[PATH_MAX] = "echo";
@@ -11,7 +11,7 @@ $OpenBSD: patch-foomaticrip_c,v 1.2 2010/03/21 14:39:40 ajacoutot Exp $
                                  "/usr/lib/cups/filter";
  
 -char modern_shell[64] = "/bin/bash";
-+char modern_shell[64] = "/bin/sh";
++char modern_shell[64] = "/bin/ksh";
  
  void config_set_option(const char *key, const char *value)
  {
