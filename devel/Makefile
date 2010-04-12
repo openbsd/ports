@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.783 2010/04/09 22:28:01 ian Exp $
+# $OpenBSD: Makefile,v 1.784 2010/04/12 17:37:26 giovanni Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -345,6 +345,7 @@
      SUBDIR += p5-Data-FormValidator
      SUBDIR += p5-Data-Hierarchy
      SUBDIR += p5-Data-ICal
+     SUBDIR += p5-Data-ICal-TimeZone
      SUBDIR += p5-Data-Lazy
      SUBDIR += p5-Data-OptList
      SUBDIR += p5-Data-Random
@@ -363,8 +364,11 @@
      SUBDIR += p5-DateTime
      SUBDIR += p5-DateTime-Calendar-Mayan
      SUBDIR += p5-DateTime-Cron-Simple
+     SUBDIR += p5-DateTime-Event-ICal
+     SUBDIR += p5-DateTime-Event-Recurrence
      SUBDIR += p5-DateTime-Format-Builder
      SUBDIR += p5-DateTime-Format-HTTP
+     SUBDIR += p5-DateTime-Format-ICal
      SUBDIR += p5-DateTime-Format-ISO8601
      SUBDIR += p5-DateTime-Format-Mail
      SUBDIR += p5-DateTime-Format-MySQL
