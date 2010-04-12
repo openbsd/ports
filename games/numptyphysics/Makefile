@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/03/30 08:01:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.12 2010/04/12 09:33:44 dcoppa Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
@@ -21,9 +21,7 @@ MASTER_SITES =	http://mirror.amdmi3.ru/distfiles/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		npcomplete-0.0.r20090116.tar.bz2
 
-.if ${MACHINE_ARCH} == "sparc64"
-BROKEN =	SIGBUS on sparc64 when starting
-.endif
+BROKEN-sparc64 =SIGBUS on sparc64 when starting
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
