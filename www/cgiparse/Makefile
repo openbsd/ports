@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/04/12 08:35:11 jasper Exp $
+
+NOT_FOR_ARCHS=	alpha
 
 COMMENT=	C library to parse CGI Forms
 
@@ -18,10 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/
 
 CONFIGURE_STYLE=	gnu
-
-.if $(MACHINE_ARCH) == "alpha"
-BROKEN=		Alpha architecture not yet supported
-.endif
 
 NO_REGRESS=	Yes
 
