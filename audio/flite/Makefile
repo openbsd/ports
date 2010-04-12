@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/02/09 12:23:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/12 08:42:34 jasper Exp $
+
+# GCC hangs compiling cmu_us_kal_diphone.c
+NOT_FOR_ARCHS=	hppa mips64 mips64el
 
 COMMENT=	text to speech utility
-
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH:Mmips64*}
-BROKEN=		gcc hang compiling cmu_us_kal_diphone.c
-.endif
 
 VERSION=	1.2
 DISTNAME=	flite-${VERSION}-release
