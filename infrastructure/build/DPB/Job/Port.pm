@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.11 2010/04/06 10:10:03 espie Exp $
+# $OpenBSD: Port.pm,v 1.12 2010/04/12 11:57:59 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -117,9 +117,11 @@ sub run
 	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $dep = {};
+	my $v = $job->{v};
 	for my $kind (qw(BUILD_DEPENDS LIB_DEPENDS)) {
-		if (exists $job->{v}{info}{$kind}) {
-			for my $d (values %{$job->{v}{info}{$kind}}) {
+		if (exists $v->{info}{$kind}) {
+			for my $d (values %{$v->{info}{$kind}}) {
+				next if $d eq $v;
 				$dep->{$d->fullpkgname.".tgz"} = 1;
 			}
 		}
