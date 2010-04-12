@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2010/03/29 12:40:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/04/12 08:39:32 jasper Exp $
 
-.if ${MACHINE_ARCH} == "hppa"
-BROKEN=		signal-related bug? any program linked with this hangs
-.endif
+# Signal-related bug? any program linked with this hangs
+NOT_FOR_ARCHS=	hppa
 
 COMMENT=	callback framework for C++
 
