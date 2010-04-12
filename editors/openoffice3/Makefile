@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/04/06 21:56:31 robert Exp $
+# $OpenBSD: Makefile,v 1.40 2010/04/12 18:45:27 jasper Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -78,6 +78,7 @@ LIB_DEPENDS-i18n-$l=
 
 BUILD_DEPENDS+=	:zip-*:archivers/zip \
 		:unzip-*:archivers/unzip \
+		:gtar-*:archivers/gtar \
 		:bison-*:devel/bison \
 		:tcsh-*:shells/tcsh \
 		:bash-*:shells/bash \
