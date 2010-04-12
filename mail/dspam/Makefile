@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2008/12/11 00:46:01 todd Exp $
+# $OpenBSD: Makefile,v 1.25 2010/04/12 08:37:38 jasper Exp $
 
 COMMENT=	anti-spam filter
 
@@ -49,7 +49,7 @@ FLAVOR?=	sqlite3
 
 .if ${FLAVOR:L:Mmysql}
 .if !empty(DRIVER)
-BROKEN=			choose either mysql or pgsql or sqlite or sqlite3 or hash
+ERRORS+=		choose either mysql or pgsql or sqlite or sqlite3 or hash
 .endif
 CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
 			--with-mysql-includes=${LOCALBASE}/include/mysql \
@@ -62,7 +62,7 @@ WANTLIB+=		z ssl crypto
 
 .if ${FLAVOR:L:Mpgsql}
 .if !empty(DRIVER)
-BROKEN=			choose either mysql or pgsql or sqlite or sqlite3 or hash
+ERRORS+=		choose either mysql or pgsql or sqlite or sqlite3 or hash
 .endif
 CONFIGURE_ARGS+=	--with-storage-driver=pgsql_drv \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql \
@@ -74,7 +74,7 @@ DRIVER=			pgsql
 
 .if ${FLAVOR:L:Mhash}
 .if !empty(DRIVER)
-BROKEN=			choose either mysql or pgsql or sqlite or sqlite3 or hash
+ERRORS+=		choose either mysql or pgsql or sqlite or sqlite3 or hash
 .endif
 CONFIGURE_ARGS+=	--with-storage-driver=hash_drv
 DRIVER=			hash
@@ -82,7 +82,7 @@ DRIVER=			hash
 
 .if ${FLAVOR:L:Msqlite}
 .if !empty(DRIVER)
-BROKEN=			choose either mysql or pgsql or sqlite or sqlite3 or hash
+ERRORS+=		choose either mysql or pgsql or sqlite or sqlite3 or hash
 .endif
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
 			--with-sqlite-includes=${LOCALBASE}/include \
@@ -93,7 +93,7 @@ DRIVER=			sqlite
 
 .if ${FLAVOR:L:Msqlite3} || empty(DRIVER)
 .if !empty(DRIVER)
-BROKEN=			choose either mysql or pgsql or sqlite or sqlite3 or hash
+ERRORS+=		choose either mysql or pgsql or sqlite or sqlite3 or hash
 .else
 FLAVOR+=		sqlite3
 .endif
@@ -133,7 +133,7 @@ CONFIGURE_ARGS+=	--enable-preferences-extension
 .if ${FLAVOR:L:Mdomainscale}
 CONFIGURE_ARGS+=	--enable-domain-scale
 . if ${FLAVOR:L:Mlargescale}
-BROKEN=			choose either domainscale or largescale, not both
+ERRORS+=		choose either domainscale or largescale, not both
 . endif
 .else
 CONFIGURE_ARGS+=	--disable-domain-scale
@@ -142,7 +142,7 @@ CONFIGURE_ARGS+=	--disable-domain-scale
 .if ${FLAVOR:L:Mlargescale}
 CONFIGURE_ARGS+=	--enable-large-scale
 . if ${FLAVOR:L:Mdomainscale}
-BROKEN=			choose either domainscale or largescale, not both
+ERRORS+=		choose either domainscale or largescale, not both
 . endif
 .else
 CONFIGURE_ARGS+=	--disable-large-scale
