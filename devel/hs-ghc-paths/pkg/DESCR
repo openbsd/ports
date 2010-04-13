@@ -1,0 +1,2 @@
+This small library provides other ghc projects with knowledge about
+GHC's installation directories.
