@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2009/12/22 16:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/13 09:03:08 sthen Exp $
+
+VMEM_WARNING =		Yes
 
 COMMENT =		panorama image stitcher
 
