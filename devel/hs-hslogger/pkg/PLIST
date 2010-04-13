@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/13 19:06:13 dcoppa Exp $
+lib/${DISTNAME}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+lib/${DISTNAME}/ghc-${MODGHC_VER}/System/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/System/Log/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/System/Log.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/System/Log/Handler/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/System/Log/Handler.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/System/Log/Handler/Growl.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/System/Log/Handler/Log4jXML.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/System/Log/Handler/Simple.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/System/Log/Handler/Syslog.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/System/Log/Logger.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
+lib/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
+@unexec-delete /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+lib/${DISTNAME}/unregister.sh
+share/doc/${DISTNAME}/
+share/doc/${DISTNAME}/COPYRIGHT
+share/doc/${DISTNAME}/html/
+share/doc/${DISTNAME}/html/System-Log-Handler-Growl.html
+share/doc/${DISTNAME}/html/System-Log-Handler-Log4jXML.html
+share/doc/${DISTNAME}/html/System-Log-Handler-Simple.html
+share/doc/${DISTNAME}/html/System-Log-Handler-Syslog.html
+share/doc/${DISTNAME}/html/System-Log-Handler.html
+share/doc/${DISTNAME}/html/System-Log-Logger.html
+share/doc/${DISTNAME}/html/System-Log.html
+share/doc/${DISTNAME}/html/doc-index.html
+share/doc/${DISTNAME}/html/frames.html
+share/doc/${DISTNAME}/html/haddock-util.js
+share/doc/${DISTNAME}/html/haddock.css
+share/doc/${DISTNAME}/html/haskell_icon.gif
+share/doc/${DISTNAME}/html/hslogger.haddock
+share/doc/${DISTNAME}/html/index-frames.html
+share/doc/${DISTNAME}/html/index.html
+share/doc/${DISTNAME}/html/mini_System-Log-Handler-Growl.html
+share/doc/${DISTNAME}/html/mini_System-Log-Handler-Log4jXML.html
+share/doc/${DISTNAME}/html/mini_System-Log-Handler-Simple.html
+share/doc/${DISTNAME}/html/mini_System-Log-Handler-Syslog.html
+share/doc/${DISTNAME}/html/mini_System-Log-Handler.html
+share/doc/${DISTNAME}/html/mini_System-Log-Logger.html
+share/doc/${DISTNAME}/html/mini_System-Log.html
+share/doc/${DISTNAME}/html/minus.gif
+share/doc/${DISTNAME}/html/plus.gif
