@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/13 19:31:33 dcoppa Exp $
+lib/${DISTNAME}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ConfigFile/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ConfigFile.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ConfigFile/Lexer.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ConfigFile/Parser.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/ConfigFile/Types.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
+lib/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
+@unexec-delete /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+lib/${DISTNAME}/unregister.sh
+share/doc/${DISTNAME}/
+share/doc/${DISTNAME}/COPYRIGHT
+share/doc/${DISTNAME}/html/
+share/doc/${DISTNAME}/html/ConfigFile.haddock
+share/doc/${DISTNAME}/html/Data-ConfigFile-Parser.html
+share/doc/${DISTNAME}/html/Data-ConfigFile-Types.html
+share/doc/${DISTNAME}/html/Data-ConfigFile.html
+share/doc/${DISTNAME}/html/doc-index.html
+share/doc/${DISTNAME}/html/frames.html
+share/doc/${DISTNAME}/html/haddock-util.js
+share/doc/${DISTNAME}/html/haddock.css
+share/doc/${DISTNAME}/html/haskell_icon.gif
+share/doc/${DISTNAME}/html/index-frames.html
+share/doc/${DISTNAME}/html/index.html
+share/doc/${DISTNAME}/html/mini_Data-ConfigFile-Parser.html
+share/doc/${DISTNAME}/html/mini_Data-ConfigFile-Types.html
+share/doc/${DISTNAME}/html/mini_Data-ConfigFile.html
+share/doc/${DISTNAME}/html/minus.gif
+share/doc/${DISTNAME}/html/plus.gif
