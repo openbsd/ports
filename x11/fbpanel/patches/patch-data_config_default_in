@@ -1,0 +1,63 @@
+$OpenBSD: patch-data_config_default_in,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
+
+remove linux-only plugins from default config file
+use xlock (it's in base) instead of slock
+
+--- data/config/default.in.orig	Mon Mar 22 08:57:30 2010
++++ data/config/default.in	Thu Apr  8 11:41:05 2010
+@@ -157,7 +157,7 @@ Plugin {
+             item {
+                 name = Lock Display
+                 icon = gnome-lockscreen
+-                action = slock
++                action = xlock
+             }
+             separator {
+             }
+@@ -271,46 +271,6 @@ Plugin {
+         size = 10
+     }
+ }
+-
+-Plugin {
+-    type = mem
+-    expand = false
+-    padding = 2
+-    config {
+-        ShowSwap = false
+-    }
+-}
+-
+-Plugin {
+-    type = cpu
+-    config {
+-        Color = green
+-    }
+-}
+-
+-Plugin {
+-    type = net
+-    expand = false
+-    padding = 0
+-    config {
+-        #interface = ppp0
+-        interface = eth0
+-        # set connection limits to make traffic graph more accurate
+-        TxLimit = 20
+-        RxLimit = 190
+-        TxColor = violet
+-        RxColor = blue
+-    }
+-}
+-
+-
+-Plugin {
+-    type = space
+-    config {
+-        size = 10
+-    }
+-}
+-
+ 
+ Plugin {
+     type = tray

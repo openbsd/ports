@@ -1,0 +1,26 @@
+$OpenBSD: patch-scripts_endianess_sh,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
+
+fix endianess detection on OpenBSD
+
+--- scripts/endianess.sh.orig	Tue Apr  6 13:19:08 2010
++++ scripts/endianess.sh	Tue Apr  6 13:20:08 2010
+@@ -1,16 +1,13 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # When cross compiling, you may put cross compiler directory 
+ # in PATH before native gcc (aka spoofing), or you may set CC 
+ # to exact name of cross compiler:
+ #    CC=/opt/ppc_gcc/bin/gcc endianess
+ 
+-# x86 and friends are considerd LITTLE endian, all others are BIG
+-a=`${CC:-gcc} -v 2>&1 | grep Target`
+-[ $? -ne 0 ] && exit 1
+-#echo $a
++a=`sysctl -n hw.byteorder`
+ 
+-if [ "${a/86/}" != "$a" ]; then
++if [ "${a}" == "1234" ]; then
+     echo LITTLE
+ else
+     echo BIG

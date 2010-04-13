@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_rfs-pkg-config,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
+
+fix bash path
+
+--- scripts/rfs-pkg-config.orig	Thu Apr  8 11:12:19 2010
++++ scripts/rfs-pkg-config	Thu Apr  8 11:12:34 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ 
+ # Tt runs pkg-config in a way that everything is searched under RFS
+ # but reported including full path. Suitable for cross-compiling

@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_deskno_deskno_c,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
+
+use snprintf instead of sprintf
+
+--- plugins/deskno/deskno.c.orig	Tue Apr  6 16:19:02 2010
++++ plugins/deskno/deskno.c	Tue Apr  6 16:19:55 2010
+@@ -57,7 +57,7 @@ name_update(GtkWidget *widget, deskno_priv *dc)
+ 
+     ENTER;
+     dc->deskno = get_net_current_desktop();
+-    sprintf(buffer, "<b>%d</b>", dc->deskno + 1);
++    snprintf(buffer, sizeof(buffer), "<b>%d</b>", dc->deskno + 1);
+     gtk_label_set_markup(GTK_LABEL(dc->namew), buffer);
+     RET(TRUE);
+ }

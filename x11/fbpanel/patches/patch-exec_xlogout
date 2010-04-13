@@ -1,0 +1,61 @@
+$OpenBSD: patch-exec_xlogout,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
+
+fix xlogout script on OpenBSD
+use some sane defaults for X session names: that's a best effort 
+task :-)
+
+--- exec/xlogout.orig	Tue Apr 13 12:58:08 2010
++++ exec/xlogout	Tue Apr 13 13:00:31 2010
+@@ -1,49 +1,5 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+-# xlogout - logs user out of its X session
+-# Linux specific since uses /proc
++XSESS=$(pgrep -U `id -u` -f '(Xsession|cwm|fvwm|gnome-session|startkde|xfce4-session|xinit|xinitrc|xsession)')
+ 
+-# get display name without screen number
+-[ -z "$DISPLAY" ] && exit 1
+-DPY=${DISPLAY:1}
+-DPY=${DPY/.*/}
+-echo "DPY=${DPY}"
+-
+-# get X pid
+-XPID=`< /tmp/.X${DPY}-lock`
+-XPID=`echo $XPID`
+-echo "XPID=$XPID"
+-
+-# get pid of xdm (or gdm, kdm, etc). usually it's parent of X
+-XDMPID=`ps -o ppid --pid=$XPID | awk '{if (FNR != 1) print $1}'`
+-echo "XDMPID=$XDMPID"
+-
+-# recursivly find child of xdm that was started in home dir - 
+-# it's user's session start up script
+-function pid_scan()
+-{
+-
+-    rm -f $PF
+-    while [ $# != 0 ]; do
+-        ps --no-headers -o pid --ppid=$1 >> $PF
+-        shift
+-    done
+-    for pid in `< $PF`; do
+-        if cwd=`ls -al /proc/$pid/cwd 2>/dev/null`; then
+-            cwd=`sed 's/.*-> //' <<< $cwd`
+-            [ "$cwd" == "$HOME" ] && echo $pid && return
+-        fi
+-    done
+-    pids=`< $PF`
+-    [ -n "$pids" ] && pid_scan `< $PF`;
+-}
+-
+-PF=/tmp/$$-pids
+-SPID=`pid_scan $XDMPID`
+-rm -f $PF
+-
+-[ -z "$SPID" ] && exit 1
+-echo "Session start up script"
+-ps -o uid,pid,ppid,sess,cmd --pid $SPID
+-kill -SIGTERM -$SPID
+-
++for pid in ${XSESS} ; do kill ${pid} ; done
