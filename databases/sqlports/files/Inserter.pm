@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.1 2010/04/13 10:23:53 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.2 2010/04/13 10:56:42 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -40,9 +40,9 @@ sub make_table
 
 	unshift(@columns, PathColumn->new);
 	for my $c (@columns) {
-		$c->set_class($class) unless defined $c->{class};
+		$c->set_vartype($class) unless defined $c->{vartype};
 	}
-	my @l = map {$_->render($self)} @columns;
+	my @l = map {$_->normal_schema($self)} @columns;
 	push(@l, $constraint) if defined $constraint;
 	$self->new_table($class->table, @l);
 }
@@ -122,14 +122,14 @@ sub add_to_port
 	$self->{vars}->{$var} = $value;
 }
 
-sub create_tables
+sub create_other_tables
 {
-	my ($self, $vars) = @_;
+	my $self = shift;
 
 	$self->db->commit;
 	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
 	unshift(@columns, PathColumn->new);
-	my @l = map {$_->render($self)} @columns;
+	my @l = map {$_->normal_schema($self)} @columns;
 	$self->new_table("Ports", @l, "UNIQUE(FULLPKGPATH)");
 	$self->prepare_normal_inserter('Ports', @{$self->{varlist}});
 	$self->prepare_normal_inserter('Paths', 'PKGPATH');
@@ -200,8 +200,8 @@ sub create_view
 
 	unshift(@columns, PathColumn->new);
 	my $name = "_$table";
-	my @l = map {$_->render_view($table) } @columns;
-	my @j = map {$_->render_join($table)} @columns;
+	my @l = map {$_->view_schema($table) } @columns;
+	my @j = map {$_->join_schema($table)} @columns;
 	my $v = "CREATE VIEW $name AS SELECT ".join(", ", @l). " FROM ".$table.' '.join(' ', @j);
 	$self->db->do("DROP VIEW IF EXISTS $name");
 	print "$v\n" if $main::opt_v;
@@ -235,7 +235,7 @@ sub create_tables
 		$class->create_table($self);
 	}
 
-	$self->SUPER::create_tables($vars);
+	$self->create_other_tables;
 	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
 	$self->create_view("Ports", @columns);
 	$self->{find_pathkey} =  
@@ -330,7 +330,7 @@ sub create_tables
 		$class->create_table($self);
 	}
 
-	$self->SUPER::create_tables($vars);
+	$self->create_other_tables;
 
 }
 

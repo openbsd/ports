@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Var.pm,v 1.1 2010/04/13 10:23:53 espie Exp $
+# $OpenBSD: Var.pm,v 1.2 2010/04/13 10:56:42 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -57,7 +57,7 @@ sub add_value
 sub column
 {
 	my ($self, $name) = @_;
-	return $self->columntype->new($name)->set_class($self);
+	return $self->columntype->new($name)->set_vartype($self);
 }
 
 sub columntype

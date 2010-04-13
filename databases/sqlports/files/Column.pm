@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.1 2010/04/13 10:23:53 espie Exp $
+# $OpenBSD: Column.pm,v 1.2 2010/04/13 10:56:42 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -18,21 +18,22 @@
 use strict;
 use warnings;
 
+# The Column hierarchy is mostly responsible for dealing with the database
+# schema itself.
+
 package Column;
 sub new
 {
 	my ($class, $name) = @_;
-	if (!defined $name) {
-		$name = $class->default_name;
-	}
+	$name //= $class->default_name;
 	bless {name => $name}, $class;
 }
 
-sub set_class
+sub set_vartype
 {
-	my ($self, $varclass) = @_;
+	my ($self, $vartype) = @_;
 
-	$self->{class} = $varclass;
+	$self->{vartype} = $vartype;
 	return $self;
 }
 
@@ -42,19 +43,19 @@ sub name
 	return $self->{name};
 }
 
-sub render
+sub normal_schema
 {
 	my ($self, $inserter, $class) = @_;
 	return $self->name." ".$self->sqltype;
 }
 
-sub render_view
+sub view_schema
 {
 	my ($self, $t) = @_;
 	return $t.".".$self->name." AS ".$self->name;
 }
 
-sub render_join
+sub join_schema
 {
 	return "";
 }
@@ -97,9 +98,7 @@ my $table = "T0001";
 sub table
 {
 	my $self = shift;
-	if (!defined $self->{table}) {
-		$self->{table} = $table++;
-	}
+	$self->{table} //= $table++;
 	return $self->{table};
 }
 
@@ -111,19 +110,19 @@ sub default_name
 	return "FULLPKGPATH";
 }
 
-sub render_view
+sub view_schema
 {
 	my ($self, $t) = @_;
 	return $self->table.".FULLPKGPATH AS ".$self->name;
 }
 
-sub render
+sub normal_schema
 {
 	my ($self, $inserter, $class) = @_;
 	return $inserter->pathref($self->name);
 }
 
-sub render_join
+sub join_schema
 {
 	my ($self, $table) = @_;
 	return "JOIN Paths ".$self->{table}." ON ".$self->table.".ID=$table.".$self->name;
@@ -140,26 +139,26 @@ sub default_name
 sub k
 {
 	my $self = shift;
-	return $self->{class}->keyword_table;
+	return $self->{vartype}->keyword_table;
 }
 
-sub render
+sub normal_schema
 {
 	my ($self, $inserter) = @_;
 	return $inserter->value($self->k, $self->name);
 }
 
-sub render_view
+sub view_schema
 {
 	my ($self, $t) = @_;
 	if (defined $self->k) {
 		return $self->table.".VALUE AS ".$self->name;
 	} else {
-		return $self->SUPER::render_view($t);
+		return $self->SUPER::view_schema($t);
 	}
 }
 
-sub render_join
+sub join_schema
 {
 	my ($self, $table) = @_;
 	if (defined $self->k) {
@@ -170,16 +169,16 @@ sub render_join
 package OptValueColumn;
 our @ISA = qw(ValueColumn);
 
-sub render
+sub normal_schema
 {
 	my ($self, $inserter) = @_;
 	return $inserter->optvalue($self->k, $self->name);
 }
 
-sub render_join
+sub join_schema
 {
 	my ($self, $table) = @_;
-	return "LEFT ".$self->SUPER::render_join($table);
+	return "LEFT ".$self->SUPER::join_schema($table);
 }
 
 1;
