@@ -1,0 +1,12 @@
+$OpenBSD: patch-boost_math_tools_config_hpp,v 1.1 2010/04/13 17:15:28 landry Exp $
+--- boost/math/tools/config.hpp.orig	Mon Apr 12 06:14:08 2010
++++ boost/math/tools/config.hpp	Mon Apr 12 06:14:38 2010
+@@ -24,7 +24,7 @@
+ #include <boost/math/special_functions/detail/round_fwd.hpp>
+ 
+ #if defined(__CYGWIN__) || defined(__FreeBSD__) || defined(__NetBSD__) \
+-   || defined(__hppa) || defined(__NO_LONG_DOUBLE_MATH)
++   || defined(__NO_LONG_DOUBLE_MATH)
+ #  define BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS
+ #endif
+ #if BOOST_WORKAROUND(__BORLANDC__, BOOST_TESTED_AT(0x582))
