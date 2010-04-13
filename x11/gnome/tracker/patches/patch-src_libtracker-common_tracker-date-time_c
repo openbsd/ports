@@ -1,22 +1,12 @@
-$OpenBSD: patch-src_libtracker-common_tracker-date-time_c,v 1.1 2010/04/09 09:00:31 ajacoutot Exp $
---- src/libtracker-common/tracker-date-time.c.orig	Fri Apr  2 19:08:27 2010
-+++ src/libtracker-common/tracker-date-time.c	Fri Apr  2 19:09:19 2010
-@@ -49,6 +49,8 @@ tracker_string_to_date (const gchar *date_string,
- 	struct tm tm;
- 	time_t    t;
- 	gint offset;
-+	time_t gmt;
-+	struct tm *ltm;
- 
- 	g_return_val_if_fail (date_string, -1);
- 
-@@ -160,7 +162,8 @@ tracker_string_to_date (const gchar *date_string,
+$OpenBSD: patch-src_libtracker-common_tracker-date-time_c,v 1.2 2010/04/13 14:33:27 ajacoutot Exp $
+--- src/libtracker-common/tracker-date-time.c.orig	Thu Apr  1 17:24:01 2010
++++ src/libtracker-common/tracker-date-time.c	Tue Apr 13 16:05:50 2010
+@@ -160,7 +160,7 @@ tracker_string_to_date (const gchar *date_string,
                  t = timegm (&tm);
  #endif
  
 -		offset = -timezone + (tm.tm_isdst > 0 ? 3600 : 0);
-+		ltm = localtime(&gmt);
-+		offset = -ltm->tm_gmtoff + (tm.tm_isdst > 0 ? 3600 : 0);
++		offset = -localtime(&t)->tm_gmtoff + (tm.tm_isdst > 0 ? 3600 : 0);
  	}
  
  	g_match_info_free (match_info);
