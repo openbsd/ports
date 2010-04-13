@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2009/12/22 15:54:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/04/13 11:55:30 kili Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.3.4
-PKGNAME=	${DISTNAME}p11
+PKGNAME=	${DISTNAME}p12
 CATEGORIES=	print
 
 # These are actually internal modules, not generic shared libs
@@ -31,6 +31,7 @@ EXTRACT_SUFX=	.tar.bz2
 MODULES=	x11/qt3 \
 		converters/libiconv \
 		lang/python
+MODPY_VERSION=	2.6
 MODQT_MT=	Yes
 
 RUN_DEPENDS=	:shared-mime-info-*:misc/shared-mime-info \
