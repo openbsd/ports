@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2009/09/15 17:37:22 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2010/04/14 00:05:41 fgsch Exp $
 
 COMMENT=	content management system built on top of Zope
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES?=		${MASTER_SITE_SOURCEFORGE:=plone/}
 
 MODULES=		www/zope
-MODZOPE_VERSION?=	2.9
+MODZOPE_VERSION?=	2.10
 PY_FLAVOR=		python${MODZOPE_PYTHON_VERSION}
 
 RUN_DEPENDS+=	:py-Imaging-*-${PY_FLAVOR}:graphics/py-Imaging,${PY_FLAVOR}
