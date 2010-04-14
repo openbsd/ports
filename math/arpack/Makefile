@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/05 20:29:18 steven Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/14 15:43:23 jasper Exp $
 
 COMMENT=	solve large scale eigenvalue problems
 
 DISTNAME=	arpack96
-PKGNAME=	arpack-96p1
+PKGNAME=	arpack-96p2
 SHARED_LIBS=	arpack 1.0
 CATEGORIES=	math
 
@@ -18,6 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}SRC/
 DISTFILES=	${DISTNAME}.tar.gz patch.tar.gz ug.ps.gz
 DIST_SUBDIR=	arpack
+
+# See bsd.lib.mk:162
+.if ${MACHINE_ARCH:Mmips64*}
+PKG_ARGS+=	-Dno_mips64=0
+.else
+PKG_ARGS+=	-Dno_mips64=1
+.endif
 
 LIB_DEPENDS=	lapack.>=1::math/lapack \
 		blas.>=1::math/blas
