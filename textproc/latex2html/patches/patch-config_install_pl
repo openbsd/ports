@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_install_pl,v 1.2 2005/04/28 14:42:27 sturm Exp $
---- config/install.pl.orig	Sun Apr 28 07:15:01 2002
-+++ config/install.pl	Thu Apr 28 16:34:43 2005
+$OpenBSD: patch-config_install_pl,v 1.3 2010/04/14 12:16:29 kili Exp $
+--- config/install.pl.orig	Fri Nov 29 12:49:01 2002
++++ config/install.pl	Fri Apr  9 14:59:24 2010
 @@ -219,9 +219,7 @@ my %Install_items = (
    #'configure'         => 'lib',
    #'configure.in'      => 'lib',
@@ -11,7 +11,7 @@ $OpenBSD: patch-config_install_pl,v 1.2 2005/04/28 14:42:27 sturm Exp $
    'foilhtml'          => 'lib,recurse',
    # icons are teated specially below
    # the local config is also installed
-@@ -371,12 +369,13 @@ foreach $item (sort keys %Install_items)
+@@ -371,12 +369,13 @@ foreach $item (sort keys %Install_items) {
  #-----------------------------------------------------------------------------
  
  if($cfg{TEXPATH}) {

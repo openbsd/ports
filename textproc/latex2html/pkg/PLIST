@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/04/28 14:42:27 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/14 12:16:29 kili Exp $
 bin/latex2html
 bin/pstoimg
 bin/texexpand
@@ -207,6 +207,7 @@ share/latex2html/makeseg/makeseg.tex
 share/latex2html/readme.hthtml
 share/latex2html/styles/
 share/latex2html/styles/CJK.perl
+share/latex2html/styles/SIunits.perl
 share/latex2html/styles/TEMPLATE.perl
 share/latex2html/styles/afrikaan.perl
 share/latex2html/styles/alltt.perl
@@ -285,6 +286,7 @@ share/latex2html/styles/psfrag.perl
 share/latex2html/styles/report.perl
 share/latex2html/styles/rgb.txt
 share/latex2html/styles/romanian.perl
+share/latex2html/styles/russian.perl
 share/latex2html/styles/scottish.perl
 share/latex2html/styles/seminar.perl
 share/latex2html/styles/slides.perl
@@ -305,7 +307,6 @@ share/latex2html/styles/wrapfig.perl
 share/latex2html/styles/xspace.perl
 share/latex2html/styles/xy.perl
 share/latex2html/texinputs/
-share/latex2html/texinputs/floatflt.ins
 share/latex2html/texinputs/frames.sty
 share/latex2html/texinputs/heqn.sty
 share/latex2html/texinputs/hthtml.sty
@@ -351,17 +352,16 @@ share/latex2html/versions/utf8.pl
 share/texmf-local/tex/
 share/texmf-local/tex/latex/
 share/texmf-local/tex/latex/html/
-share/texmf-local/tex/latex/html/floatflt.ins
 share/texmf-local/tex/latex/html/frames.sty
 share/texmf-local/tex/latex/html/heqn.sty
 share/texmf-local/tex/latex/html/hthtml.sty
 share/texmf-local/tex/latex/html/html.sty
 share/texmf-local/tex/latex/html/htmllist.sty
 share/texmf-local/tex/latex/html/justify.sty
-share/texmf-local/tex/latex/html/latin9.def
+@comment share/texmf-local/tex/latex/html/latin9.def
 share/texmf-local/tex/latex/html/ldump.sty
 share/texmf-local/tex/latex/html/techexplHTML.tex
-share/texmf-local/tex/latex/html/url.sty
+@comment share/texmf-local/tex/latex/html/url.sty
 share/texmf-local/tex/latex/html/verbatimfiles.sty
-@exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
-@unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
+@exec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1
+@unexec %D/bin/mktexlsr %D/share/texmf-local > /dev/null 2>&1

@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2007/10/01 11:42:30 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2010/04/14 12:16:29 kili Exp $
 
 COMMENT=	LaTeX to HTML converter
 
-VERSION=	2002-2-1
-DISTNAME=	latex2html-${VERSION}
-PKGNAME=	latex2html-${VERSION:S/-/./g}p1
+DISTNAME=	latex2html-2008
 CATEGORIES=	textproc www
 
 HOMEPAGE=	http://www.latex2html.org/
 
-# mixed licenses
-PERMIT_PACKAGE_CDROM=	no fee
+# GPLv2
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	no fee
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=support/latex2html/}
