@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_deliver_mail-send_c,v 1.1 2010/04/14 08:28:54 sthen Exp $
+--- src/deliver/mail-send.c.orig	Sat Apr 10 19:03:50 2010
++++ src/deliver/mail-send.c	Sat Apr 10 19:05:09 2010
+@@ -61,6 +61,9 @@ int mail_send_rejection(struct mail *mail, const char 
+     size_t size;
+     int ret;
+ 
++    if (mail_get_first_header(mail, "Message-ID", &orig_msgid) < 0)
++	    orig_msgid = NULL;
++
+     if (mail_get_first_header(mail, "Auto-Submitted", &value) > 0 &&
+ 	strcasecmp(value, "no") != 0) {
+ 	    i_info("msgid=%s: Auto-submitted message discarded: %s",
+@@ -69,8 +72,6 @@ int mail_send_rejection(struct mail *mail, const char 
+ 	    return 0;
+     }
+ 
+-    if (mail_get_first_header(mail, "Message-ID", &orig_msgid) < 0)
+-	    orig_msgid = NULL;
+     return_addr = deliver_get_return_address(mail);
+     if (return_addr == NULL) {
+ 	    i_info("msgid=%s: Return-Path missing, rejection reason: %s",
