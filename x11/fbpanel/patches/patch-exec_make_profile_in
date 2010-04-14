@@ -1,15 +1,15 @@
-$OpenBSD: patch-exec_make_profile_in,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
+$OpenBSD: patch-exec_make_profile_in,v 1.2 2010/04/14 14:12:20 dcoppa Exp $
 
-fix bash path
+remove bashism
 fix default config file path
 use some sane defaults for menu/launchbar apps: that's a best effort 
 task :-)
 
 --- exec/make_profile.in.orig	Wed Mar 24 10:58:10 2010
-+++ exec/make_profile.in	Thu Apr  8 12:03:41 2010
++++ exec/make_profile.in	Wed Apr 14 16:01:58 2010
 @@ -1,4 +1,4 @@
 -#!/bin/bash
-+#!${LOCALBASE}/bin/bash
++#!/bin/sh
  
  umask 0077
  # new profile directory
@@ -22,7 +22,13 @@ task :-)
  # if profile name was not set, use  'default'
  profile=${1:-default}
  
-@@ -47,19 +47,19 @@ function take_system_profile ()
+@@ -42,24 +42,24 @@ fi
+ # Creates new profile using system profile as template
+ # $1 - system profile name
+ # $2 - destination profile name
+-function take_system_profile ()
++take_system_profile ()
+ {
      [ -r "$spdir/$1" ] || return 1
  
      local browser terminal filer
@@ -34,7 +40,7 @@ task :-)
          fi
      done
 -    for terminal in x-terminal urxvt gnome-terminal; do
-+    for terminal in gnome-terminal Terminal xterm; do
++    for terminal in gnome-terminal Terminal konsole roxterm xterm; do
          if which $terminal 2> /dev/null > /dev/null; then
              opt="$opt -e s/x-terminal/$terminal/"
              break

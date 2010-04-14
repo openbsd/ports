@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/13 16:28:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2010/04/14 14:12:20 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lightweight NETWM compliant desktop panel
 
 DISTNAME=	fbpanel-6.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 EXTRACT_SUFX=	.tbz2
 
@@ -29,7 +30,6 @@ CONFIGURE_STYLE=simple
 
 BUILD_DEPENDS=	::shells/bash
 LIB_DEPENDS=	gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
-RUN_DEPENDS=	::shells/bash
 
 WANTLIB =       X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
                 Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
@@ -43,8 +43,7 @@ EXECDIR =	${PREFIX}/libexec/fbpanel
 EXAMPLEDIR =	${PREFIX}/share/examples/fbpanel
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/exec/make_profile.in \
-		${WRKSRC}/scripts/rfs-pkg-config
+	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/scripts/rfs-pkg-config
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/panel/fbpanel ${PREFIX}/bin/
