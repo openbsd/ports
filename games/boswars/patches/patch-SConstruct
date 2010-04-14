@@ -1,23 +1,23 @@
-$OpenBSD: patch-SConstruct,v 1.4 2008/03/15 10:06:01 ajacoutot Exp $
---- SConstruct.orig	Mon Mar  3 10:32:55 2008
-+++ SConstruct	Mon Mar  3 10:37:57 2008
+$OpenBSD: patch-SConstruct,v 1.5 2010/04/14 18:29:59 ajacoutot Exp $
+--- SConstruct.orig	Sun Apr 11 14:13:04 2010
++++ SConstruct	Mon Apr 12 15:27:22 2010
 @@ -32,12 +32,12 @@ SConsignFile()
  
  def DefineOptions(filename, args):
-    opts = Options(filename, args)
+    opts = Variables(filename, args)
 -   opts.Add('CPPPATH', 'Additional preprocessor paths', ['/usr/local/include'])
-+   opts.Add('CPPPATH', 'Additional preprocessor paths', ['/usr/local/include'], Split(''))
++   opts.Add('CPPPATH', 'Additional preprocessor paths', ['${LOCALBASE}/include'], Split(''))
     opts.Add('CPPFLAGS', 'Additional preprocessor flags')
     opts.Add('CPPDEFINES', 'defined constants', Split(''))
 -   opts.Add('LIBPATH', 'Additional library paths', ['/usr/local/lib'])
-+   opts.Add('LIBPATH', 'Additional library paths', ['/usr/local/lib'], Split(''))
++   opts.Add('LIBPATH', 'Additional library paths', ['${LOCALBASE}/lib'], Split(''))
     opts.Add('LIBS', 'Additional libraries')
 -   opts.Add('CCFLAGS', 'C Compiler flags', Split(ccflags))
 +   opts.Add('CCFLAGS', 'C Compiler flags', Split(ccflags), Split(''))
     opts.Add('LINKFLAGS', 'Linker Compiler flags')
     opts.Add('CC', 'C Compiler')
     opts.Add('CXX', 'C++ Compiler')
-@@ -50,6 +50,9 @@ def DefineOptions(filename, args):
+@@ -51,6 +51,9 @@ def DefineOptions(filename, args):
  opts = DefineOptions("build_options.py", ARGUMENTS)
  env = Environment(ENV = {'PATH':os.environ['PATH']}) # for an unknown reason Environment(options=opts) doesnt work well
  opts.Update(env) # Needed as Environment(options=opts) doesnt seem to work
@@ -25,20 +25,20 @@ $OpenBSD: patch-SConstruct,v 1.4 2008/03/15 10:06:01 ajacoutot Exp $
 +env['CPPPATH'] = Split(env['CPPPATH'])
 +env['LIBPATH'] = Split(env['LIBPATH'])
  Help(opts.GenerateHelpText(env))
- mingw = env.Copy()
+ mingw = env.Clone()
  optionsChanged = True
-@@ -143,6 +146,10 @@ def CheckOpenGL(env, conf):
+@@ -144,6 +147,10 @@ def CheckOpenGL(env, conf):
        'LIBS': ['GL'], 
        'LIBPATH': ['/usr/lib', '/usr/X11R6/lib'],
        'CPPPATH': ['/usr/include']}
 +  opengl['openbsd'] = { 
 +      'LIBS': ['GL'], 
-+      'LIBPATH': ['!!X11BASE!!/lib'],
-+      'CPPPATH': ['!!X11BASE!!/include']}
++      'LIBPATH': ['${X11BASE}/lib'],
++      'CPPPATH': ['${X11BASE}/include']}
    opengl['cygwin'] = {
        'LIBS': ['opengl3']}
    opengl['darwin'] = {
-@@ -154,6 +161,8 @@ def CheckOpenGL(env, conf):
+@@ -155,6 +162,8 @@ def CheckOpenGL(env, conf):
    else:
       if sys.platform[:5] == 'linux':
          platform = 'linux'
@@ -47,27 +47,25 @@ $OpenBSD: patch-SConstruct,v 1.4 2008/03/15 10:06:01 ajacoutot Exp $
       glconfig = opengl.get(platform, {})
    for key in glconfig:
        if key != 'LIBS':
-@@ -168,8 +177,8 @@ def CheckOpenGL(env, conf):
- 
+@@ -170,7 +179,7 @@ def CheckOpenGL(env, conf):
  def CheckLuaLib(env, conf):
    if not 'USE_WIN32' in env['CPPDEFINES']:
--     if env.WhereIs('lua-config'):
--        env.ParseConfig('lua-config --include --libs')
-+     if env.WhereIs('pkg-config'):
-+        env.ParseConfig('pkg-config --cflags --libs lua')
-      elif env.WhereIs('pkg-config'):
-         for packagename in ['lua5.1', 'lua51', 'lua']:
-            exitcode, _ = ParseConfig(env, 'pkg-config --cflags --libs ' + packagename)
-@@ -192,7 +201,7 @@ def CheckLuaLib(env, conf):
-   lualibfound = 0
+      if env.WhereIs('pkg-config'):
+-        for packagename in ['lua5.1', 'lua51', 'lua']:
++        for packagename in ['lua']:
+            exitcode,_ = ParseConfig(env, 'pkg-config --cflags --libs ' + packagename)
+            if exitcode == 0:
+               break
+@@ -178,7 +187,7 @@ def CheckLuaLib(env, conf):
+     return 1
+   if conf.CheckLibWithHeader('lua5.1', 'lua.h', 'c'):
+     return 1
+-  if not conf.CheckLibWithHeader('lua', 'lua.h', 'c'):
++  if not conf.CheckLibWithHeader('lua', 'lualib.h', 'c'):
+     return 0
+   # make sure we have lualib which is included in lua 5.1
    if conf.CheckFunc('luaopen_base'):
-      return 1
--  if conf.CheckLibWithHeader('lualib', 'lualib.h', 'c'):
-+  if conf.CheckLibWithHeader('lua', 'lualib.h', 'c'):
-      lualibfound = 1
-   elif conf.CheckLibWithHeader('lualib50', 'lualib.h', 'c'):
-      lualibfound = 1
-@@ -207,13 +216,13 @@ def AutoConfigure(env):
+@@ -189,13 +198,13 @@ def AutoConfigure(env):
    conf = Configure(env)
  
    ## check for required libs ##
@@ -85,7 +83,7 @@ $OpenBSD: patch-SConstruct,v 1.4 2008/03/15 10:06:01 ajacoutot Exp $
       if not conf.CheckLib('dl'):
          print 'Did not find dl library or header which is needed on some systems for lua. Exiting!'
          Exit(1)
-@@ -225,12 +234,12 @@ def AutoConfigure(env):
+@@ -207,12 +216,12 @@ def AutoConfigure(env):
       Exit(1)
  
    # Check for optional libraries #
@@ -100,10 +98,10 @@ $OpenBSD: patch-SConstruct,v 1.4 2008/03/15 10:06:01 ajacoutot Exp $
  
    # check for optional functions
    if conf.CheckFunc('strcasestr'):
-@@ -283,7 +292,7 @@ addBosWarsPaths(env)
+@@ -265,7 +274,7 @@ addBosWarsPaths(env)
  
  # define the different build environments (variants)
- release = env.Copy()
+ release = env.Clone()
 -release.Append(CCFLAGS = Split('-O2 -pipe -fomit-frame-pointer -fexpensive-optimizations -ffast-math'))
 +release.Append(CCFLAGS = Split('-fomit-frame-pointer -fexpensive-optimizations -ffast-math'))
  
