@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.784 2010/04/12 17:37:26 giovanni Exp $
+# $OpenBSD: Makefile,v 1.785 2010/04/14 06:35:14 stephan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -565,6 +565,7 @@
      SUBDIR += p5-PerlIO-via-symlink
      SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Pod-ToDemo
+     SUBDIR += p5-Probe-Perl
      SUBDIR += p5-Proc-Background
      SUBDIR += p5-Proc-Daemon
      SUBDIR += p5-Proc-Simple
