@@ -1,0 +1,2 @@
+This module provides methods for obtaining information about the
+currently running Perl interpreter.
