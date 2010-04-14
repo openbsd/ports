@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/10 12:59:22 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/14 07:39:52 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/Beaker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Beaker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Beaker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -25,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/beaker/crypto/pbkdf2.py
 lib/python${MODPY_VERSION}/site-packages/beaker/crypto/pbkdf2.pyc
 lib/python${MODPY_VERSION}/site-packages/beaker/crypto/pycrypto.py
 lib/python${MODPY_VERSION}/site-packages/beaker/crypto/pycrypto.pyc
+lib/python${MODPY_VERSION}/site-packages/beaker/crypto/util.py
+lib/python${MODPY_VERSION}/site-packages/beaker/crypto/util.pyc
 lib/python${MODPY_VERSION}/site-packages/beaker/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/beaker/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/
