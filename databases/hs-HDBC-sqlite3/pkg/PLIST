@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/15 14:24:47 dcoppa Exp $
+lib/${DISTNAME}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Database/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Database/HDBC/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Database/HDBC/Sqlite3/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Database/HDBC/Sqlite3.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Database/HDBC/Sqlite3/Connection.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Database/HDBC/Sqlite3/ConnectionImpl.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Database/HDBC/Sqlite3/Consts.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Database/HDBC/Sqlite3/Statement.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Database/HDBC/Sqlite3/Types.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/Database/HDBC/Sqlite3/Utils.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
+lib/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
+@unexec-delete /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+lib/${DISTNAME}/unregister.sh
+share/doc/${DISTNAME}/
+share/doc/${DISTNAME}/COPYRIGHT
+share/doc/${DISTNAME}/html/
+share/doc/${DISTNAME}/html/Database-HDBC-Sqlite3.html
+share/doc/${DISTNAME}/html/HDBC-sqlite3.haddock
+share/doc/${DISTNAME}/html/doc-index.html
+share/doc/${DISTNAME}/html/frames.html
+share/doc/${DISTNAME}/html/haddock-util.js
+share/doc/${DISTNAME}/html/haddock.css
+share/doc/${DISTNAME}/html/haskell_icon.gif
+share/doc/${DISTNAME}/html/index-frames.html
+share/doc/${DISTNAME}/html/index.html
+share/doc/${DISTNAME}/html/mini_Database-HDBC-Sqlite3.html
+share/doc/${DISTNAME}/html/minus.gif
+share/doc/${DISTNAME}/html/plus.gif
