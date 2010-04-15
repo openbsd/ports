@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/28 17:11:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/15 20:49:13 dcoppa Exp $
 @bin bin/deepfind
 @bin bin/deepgrep
 @bin bin/luceneindexer
@@ -55,15 +55,10 @@ include/strigi/substreamprovider.h
 include/strigi/substreamproviderprovider.h
 include/strigi/textutils.h
 include/strigi/variant.h
-lib/libsearchclient.so
 @lib lib/libsearchclient.so.${LIBsearchclient_VERSION}
-lib/libstreamanalyzer.so
 @lib lib/libstreamanalyzer.so.${LIBstreamanalyzer_VERSION}
-lib/libstreams.so
 @lib lib/libstreams.so.${LIBstreams_VERSION}
-lib/libstrigihtmlgui.so
 @lib lib/libstrigihtmlgui.so.${LIBstrigihtmlgui_VERSION}
-lib/libstrigiqtdbusclient.so
 @lib lib/libstrigiqtdbusclient.so.${LIBstrigiqtdbusclient_VERSION}
 lib/pkgconfig/libstreamanalyzer.pc
 lib/pkgconfig/libstreams.pc
@@ -85,6 +80,8 @@ lib/strigi/strigita_rgb.so
 lib/strigi/strigita_sid.so
 lib/strigi/strigita_wav.so
 lib/strigi/strigita_xbm.so
+share/dbus-1/
+share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.xesam.searcher.service
 share/dbus-1/services/vandenoever.strigi.service
 share/strigi/

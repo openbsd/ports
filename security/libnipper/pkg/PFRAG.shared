@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/09/20 20:26:05 steven Exp $
-lib/libnipper.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2010/04/15 20:36:42 dcoppa Exp $
 @lib lib/libnipper.so.${LIBnipper_VERSION}

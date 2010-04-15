@@ -1,11 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2010/01/11 20:13:31 landry Exp $
-lib/libqgis_analysis.so
+@comment $OpenBSD: PFRAG.shared,v 1.5 2010/04/15 20:45:34 dcoppa Exp $
 @lib lib/libqgis_analysis.so.${LIBqgis_analysis_VERSION}
-lib/libqgis_core.so
 @lib lib/libqgis_core.so.${LIBqgis_core_VERSION}
-lib/libqgis_gui.so
 @lib lib/libqgis_gui.so.${LIBqgis_gui_VERSION}
-lib/libqgispython.so
 @lib lib/libqgispython.so.${LIBqgispython_VERSION}
 lib/qgis/
 lib/qgis/libcoordinatecaptureplugin.so

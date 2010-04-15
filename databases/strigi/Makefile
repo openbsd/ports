@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/15 20:49:13 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	document indexer
@@ -6,7 +6,7 @@ CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	http://strigi.sourceforge.net
 DISTNAME =	strigi-0.5.10
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=strigi/}
 

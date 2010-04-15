@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2008/10/28 16:44:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/15 20:48:10 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	rdf framework
@@ -11,6 +11,7 @@ SHARED_LIBS += sopranoserver       0.0 # .1.0
 
 HOMEPAGE =	http://soprano.sourceforge.net/
 DISTNAME =	soprano-2.1.1
+PKGNAME=	${DISTNAME}p0
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 

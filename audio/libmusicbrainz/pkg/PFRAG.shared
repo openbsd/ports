@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/03/25 09:19:23 jasper Exp $
-lib/libmusicbrainz3.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2010/04/15 20:35:46 dcoppa Exp $
 @lib lib/libmusicbrainz3.so.${LIBmusicbrainz3_VERSION}

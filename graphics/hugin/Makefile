@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/13 09:03:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/04/15 20:47:17 dcoppa Exp $
 
 VMEM_WARNING =		Yes
 
 COMMENT =		panorama image stitcher
 
 DISTNAME =		hugin-0.8.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 #PKGNAME =		${DISTNAME:S/_//}
 #WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 

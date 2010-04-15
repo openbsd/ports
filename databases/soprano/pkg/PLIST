@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:44:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/04/15 20:48:10 dcoppa Exp $
 @bin bin/onto2vocabularyclass
 @bin bin/sopranocmd
 @bin bin/sopranod
@@ -141,18 +141,15 @@ include/soprano/version.h
 include/soprano/vocabulary.h
 include/soprano/xesam.h
 include/soprano/xsd.h
-lib/libsoprano.so
 @lib lib/libsoprano.so.${LIBsoprano_VERSION}
-lib/libsopranoclient.so
 @lib lib/libsopranoclient.so.${LIBsopranoclient_VERSION}
-lib/libsopranoindex.so
 @lib lib/libsopranoindex.so.${LIBsopranoindex_VERSION}
-lib/libsopranoserver.so
 @lib lib/libsopranoserver.so.${LIBsopranoserver_VERSION}
 lib/pkgconfig/soprano.pc
 lib/soprano/
 lib/soprano/libsoprano_nquadparser.so
 lib/soprano/libsoprano_nquadserializer.so
+share/dbus-1/
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.soprano.Model.xml
 share/dbus-1/interfaces/org.soprano.NodeIterator.xml

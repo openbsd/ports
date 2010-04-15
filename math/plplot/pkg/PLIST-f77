@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-f77,v 1.4 2009/06/28 16:17:27 sthen Exp $
-lib/libplplotf77cd.so
+@comment $OpenBSD: PLIST-f77,v 1.5 2010/04/15 20:41:42 dcoppa Exp $
 @lib lib/libplplotf77cd.so.${LIBplplotf77cd_VERSION}
 lib/libplplotf77d.so
 lib/pkgconfig/plplotd-f77.pc

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2009/08/30 16:44:45 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2010/04/15 20:36:42 dcoppa Exp $
 
 COMMENT =		library for nipper
 
 DISTNAME =		libnipper-0.12.6
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		security net
 
 SHARED_LIBS =		nipper 0.0

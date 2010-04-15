@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/10 06:34:29 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/15 20:44:19 dcoppa Exp $
 
 COMMENT =	Qt Cryptographic Architecture
 SHARED_ONLY =	Yes
 
 DISTNAME =	qca-2.0.0
-PKGNAME =	qca2-2.0.0p0
+PKGNAME =	qca2-2.0.0p1
 CATEGORIES =	security
 SHARED_LIBS +=	qca	3.0
 
