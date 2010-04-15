@@ -1,6 +1,2 @@
-
 Tcpreplay is a program for replaying network traffic saved in
 packet-trace files generated using tcpdump(8)'s -w flag.
-
--d.
-

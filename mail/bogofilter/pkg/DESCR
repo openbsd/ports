@@ -1,4 +1,3 @@
-
 		bogofilter -- fast Bayesian spam filtering
 
 This package implements a fast Bayesian spam filter along the lines suggested 

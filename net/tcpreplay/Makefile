@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2009/05/17 19:51:54 rui Exp $
+# $OpenBSD: Makefile,v 1.26 2010/04/15 13:27:48 ajacoutot Exp $
 
 COMMENT=	resend network traffic saved by tcpdump
 
 DISTNAME=	tcpreplay-3.4.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 HOMEPAGE=	http://tcpreplay.synfin.net

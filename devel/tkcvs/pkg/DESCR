@@ -1,4 +1,3 @@
-
 README for tkCVS release 6.0
 
 tkCVS is a Tk based graphical interface to the CVS configuration
@@ -34,4 +33,3 @@ Some of the features of tkCVS include:
 
 -	Viewing of diff and status listings for currently checked out
 	modules.
-

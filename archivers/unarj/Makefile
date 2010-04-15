@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2010/04/15 13:27:48 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.12 1999/02/17 22:25:36 ache Exp $
 
 COMMENT=	extract files from ARJ archives
 
 DISTNAME=	unarj-2.43
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=	.tgz
@@ -13,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+
 WANTLIB=		c
 
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"

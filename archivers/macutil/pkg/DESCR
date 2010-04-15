@@ -9,4 +9,3 @@ contains the following utilities:
   macstream - Combine a series of files to a MacBinary stream
   macunpack - Unpack a Macintosh archive into its constituents
   tomac     - Transmits files from the Unix system to a Macintosh
-
