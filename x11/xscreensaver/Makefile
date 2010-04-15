@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.59 2009/12/21 20:46:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2010/04/15 09:16:07 ajacoutot Exp $
 
 COMMENT-main=		screen saver and locker for the X Window System
 COMMENT-data=		graphical demos (savers) for screensavers
 COMMENT-gle=		OpenGL Extrusion library support for screensaver-data
 
-V=			5.10
+V=			5.11
 DISTNAME=		xscreensaver-${V}
-PKGNAME-main=		${DISTNAME}p0
+PKGNAME-main=		${DISTNAME}
 PKGNAME-data=		xscreensaver-data-${V}
 PKGNAME-gle=		xscreensaver-gle-${V}
 
@@ -32,7 +32,7 @@ WANTLIB-main=	${WANTLIB} Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
 		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gdk_pixbuf_xlib-2.0 gio-2.0 glitz gtk-x11-2.0 jpeg \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
-		pthread-stubs xcb xml2 z
+		pthread-stubs xcb xml2 z xcb-render xcb-render-util
 
 WANTLIB-data=	${WANTLIB} jpeg util
 

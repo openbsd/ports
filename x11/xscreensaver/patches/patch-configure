@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.12 2009/11/28 10:49:49 ajacoutot Exp $
---- configure.orig	Tue Sep  8 06:54:40 2009
-+++ configure	Sat Nov 28 11:15:05 2009
-@@ -9387,7 +9387,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+$OpenBSD: patch-configure,v 1.13 2010/04/15 09:16:07 ajacoutot Exp $
+--- configure.orig	Tue Apr 13 22:37:06 2010
++++ configure	Thu Apr 15 11:06:36 2010
+@@ -9874,7 +9874,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
@@ -10,8 +10,8 @@ $OpenBSD: patch-configure,v 1.12 2009/11/28 10:49:49 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -9454,7 +9454,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -9945,7 +9945,7 @@ if test "${ac_cv_lib_intl_dgettext+set}" = set; then
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.12 2009/11/28 10:49:49 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -9523,7 +9523,7 @@ fi
+@@ -10018,7 +10018,7 @@ fi
  	  fi
  
            if test "$gt_cv_func_dgettext_libintl" = "yes"; then
@@ -28,16 +28,24 @@ $OpenBSD: patch-configure,v 1.12 2009/11/28 10:49:49 ajacoutot Exp $
            fi
  
  	  if test "$gt_cv_func_dgettext_libc" = "yes" \
-@@ -16460,13 +16460,13 @@ echo "${ECHO_T}adding \"$osx_crud\" to GL_LIBS" >&6; }
-     # link -lpthread after the Mesa libs (be they named -lGL or -lMesaGL.)
+@@ -17118,18 +17118,18 @@ $as_echo "adding \"$osx_crud\" to GL_LIBS" >&6; }
+     fi
+ 
+ 
+-    # Some versions of MesaGL are compiled to require -lpthread.
+-    # So if the Mesa headers exist, and -lpthread exists, then always
+-    # link -lpthread after the Mesa libs (be they named -lGL or -lMesaGL.)
++    # Some versions of MesaGL are compiled to require -pthread.
++    # So if the Mesa headers exist, and -pthread exists, then always
++    # link -pthread after the Mesa libs (be they named -lGL or -lMesaGL.)
      #
      if test "$ac_have_mesa_gl" = yes; then
--      { echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
-+      { echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+-      { $as_echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
++      { $as_echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++$as_echo_n "checking for pthread_create in -pthread... " >&6; }
  if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
@@ -45,10 +53,10 @@ $OpenBSD: patch-configure,v 1.12 2009/11/28 10:49:49 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -16522,7 +16522,7 @@ fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
- if test $ac_cv_lib_pthread_pthread_create = yes; then
+@@ -17189,7 +17189,7 @@ fi
+ { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
+ if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then
 -  GL_LIBS="-lpthread"
 +  GL_LIBS="-pthread"
  fi
