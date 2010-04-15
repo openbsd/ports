@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.13 2010/04/12 13:43:05 espie Exp $
+# $OpenBSD: Port.pm,v 1.14 2010/04/15 09:59:07 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -118,10 +118,11 @@ sub run
 	my $job = $core->job;
 	my $dep = {};
 	my $v = $job->{v};
+	my $base = $v->pkgpath_and_flavors;
 	for my $kind (qw(BUILD_DEPENDS LIB_DEPENDS)) {
 		if (exists $v->{info}{$kind}) {
 			for my $d (values %{$v->{info}{$kind}}) {
-				next if $d eq $v;
+				next if $d->pkgpath_and_flavors eq $v;
 				$dep->{$d->fullpkgname} = 1;
 			}
 		}
@@ -132,7 +133,7 @@ sub run
 	$self->redirect($job->{log});
 	my @cmd = ('/usr/sbin/pkg_add');
 	if ($job->{builder}->{update}) {
-		push(@cmd, "-rq", "-Dupdate", "-Dupdatedepends");
+		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
 	}
 	if ($job->{builder}->{forceupdate}) {
 		push(@cmd,  "-Dinstalled");
@@ -287,6 +288,16 @@ sub new
 	    special => $special,  current => '',
 	    builder => $builder, endcode => $endcode},
 		$class;
+}
+
+sub current_task
+{
+	my $self = shift;
+	if (@{$self->{tasks}} > 0) {
+		return $self->{tasks}[0]{phase};
+	} else {
+		return "<nothing>";
+	}
 }
 
 sub pkgpath

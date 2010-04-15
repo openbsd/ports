@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.5 2010/04/06 10:10:03 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.6 2010/04/15 09:59:07 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -85,9 +85,10 @@ sub get
 
 sub end_lock
 {
-	my ($self, $lock, $core) = @_;
+	my ($self, $lock, $core, $job) = @_;
 	my $end = time();
 	print $lock "status=$core->{status}\n";
+	print $lock "todo=", $job->current_task, "\n";
 	print $lock "end=$end (", DPB::Util->time2string($end), ")\n";
 	close $lock;
 }
@@ -99,7 +100,7 @@ sub build
 	my $log = $self->{logger}->make_logs($v);
 	my $job;
 	$job = DPB::Job::Port->new($log, $v, $self, $special,
-	    sub {$self->end_lock($lock, $core); $self->report($v, $job, $core); &$final_sub;});
+	    sub {$self->end_lock($lock, $core, $job); $self->report($v, $job, $core); &$final_sub;});
 	$core->start_job($job, $v);
 #	(sub {
 #	}, 	$v, " (".$self->{heuristics}->measure($v).")");
