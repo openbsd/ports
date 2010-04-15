@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2007/09/15 23:54:16 merdely Exp $
+# $OpenBSD: Makefile,v 1.29 2010/04/15 14:44:02 ajacoutot Exp $
 
 COMMENT=	write audio/data CD-Rs in disk-at-once mode
 
 DISTNAME= 	cdrdao-1.2.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cdrdao/}
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 23:29:57 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2010/04/15 14:44:02 ajacoutot Exp $
 
 COMMENT=		SNMP audit scanner
 
 DISTNAME=       	ADMsnmp.0.1
-PKGNAME=        	ADMsnmp-0.1
+PKGNAME=		ADMsnmp-0.1p0
 CATEGORIES=		security
 EXTRACT_SUFX=		.tgz
 
