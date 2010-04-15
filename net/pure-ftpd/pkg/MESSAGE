@@ -5,4 +5,3 @@ if [ -x ${PREFIX}/sbin/pure-ftpd ]; then
   echo Starting Pure-FTPd
   ${PREFIX}/sbin/pure-ftpd -A -B -H -u1000
 fi
-

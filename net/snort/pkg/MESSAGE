@@ -8,4 +8,3 @@ purpose. You should start snort with the following options to take
 advantage of this:
 
   -c /etc/snort/snort.conf -u _snort -g _snort -t /var/snort -l /var/snort/log
-

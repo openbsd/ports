@@ -4,4 +4,3 @@ add the following lines to /etc/rc.local:
 if [ -x ${PREFIX}/sbin/olsrd ]; then
         echo -n ' olsrd';       ${PREFIX}/sbin/olsrd
 fi
-

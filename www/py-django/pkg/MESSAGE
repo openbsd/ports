@@ -17,4 +17,3 @@ version 0.96 and 1.0 that may cause problems when upgrading
 projects.  A guide for upgrading projects can be found
 online at:
 http://docs.djangoproject.com/en/1.0/releases/1.0-porting-guide/
-

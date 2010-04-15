@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/09/17 14:27:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/15 14:58:24 ajacoutot Exp $
 
 COMMENT=	high-performance server that centralizes key/data pairs
 
 DISTNAME=	sharedance-0.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://sharedance.pureftpd.org/project/sharedance

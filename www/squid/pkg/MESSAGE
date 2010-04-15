@@ -19,4 +19,3 @@ You can also edit /etc/rc.local so that Squid is started automatically:
     if [ -x ${PREFIX}/sbin/squid ]; then
 	echo -n ' squid';	${PREFIX}/sbin/squid
     fi
-

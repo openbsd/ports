@@ -1,4 +1,3 @@
-
 Notes on Preparing X-CD-Roast for Operation
 -------------------------------------------
 Due to cdrecord's -scanbus option being wholly unusable under
@@ -18,4 +17,3 @@ with the correct options.  If you wish to enable CD burning for
 non-root users, click the "Activate Non-Root-Mode" button.  You will be
 presented with the list of commands that are to be executed and
 have the opportunity to cancel.
-

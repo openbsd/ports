@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2007/09/15 10:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/04/15 14:58:24 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -12,11 +12,11 @@ DISTNAME=rar-2.0x
 
 .if ${MACHINE_ARCH} == "i386"
 DISTFILES=	rarbsd.sfx
-PKGNAME=	rar-2.02
+PKGNAME=	rar-2.02p0
 EMUL=		bsdos
 .elif ${MACHINE_ARCH} == "sparc"
 DISTFILES=	rarsparc.sfx
-PKGNAME=	rar-2.01
+PKGNAME=	rar-2.01p0
 EMUL=		svr4
 .else
 DISTFILES=

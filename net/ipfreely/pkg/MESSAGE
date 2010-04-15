@@ -9,4 +9,3 @@ if [ -x ${PREFIX}/sbin/ipfreely ]; then
         -u _ipfreely \
         -c /var/empty/
 fi
-

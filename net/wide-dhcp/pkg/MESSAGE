@@ -9,4 +9,3 @@ Also, ensure that BPF support is compiled into the kernel.
 Examples and documentation are in:
  ${PREFIX}/share/doc/wide-dhcp , and
  ${PREFIX}/share/examples/wide-dhcp
-

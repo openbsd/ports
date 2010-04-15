@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2009/08/10 06:30:30 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2010/04/15 14:58:25 ajacoutot Exp $
 
 COMMENT=	reciprocating engine for X11
-PKGNAME=	xengine-1.0.1p1
+PKGNAME=	xengine-1.0.1p2
 CATEGORIES=	benchmarks x11
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
 DISTFILES=	part01.z patch1.z

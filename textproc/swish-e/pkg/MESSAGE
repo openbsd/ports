@@ -5,4 +5,3 @@ Additional indexing functionality:
 * For MS Word Documents, install catdoc package.
 * For MP3 ID3 Tags, install p5-MP3-Tag package.
 * For MS Excel Files, install p5-Spreadsheet-ParseExcel package.
-

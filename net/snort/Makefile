@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2009/08/16 13:31:27 rui Exp $
+# $OpenBSD: Makefile,v 1.55 2010/04/15 14:58:24 ajacoutot Exp $
 
 SHARED_ONLY = 		Yes
 
 COMMENT =		highly flexible sniffer/NIDS
 
 DISTNAME = 		snort-2.8.4.1
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		net security
 MASTER_SITES = 		http://dl.snort.org/snort-current/
 

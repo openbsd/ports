@@ -1,4 +1,3 @@
-
 Post Installation Set-Up of trickle
 -----------------------------------
 
@@ -13,4 +12,3 @@ with, but does not require root privileges):
 if [ -x ${PREFIX}/bin/trickled ]; then
         echo -n ' trickled';     ${PREFIX}/bin/trickled
 fi
-

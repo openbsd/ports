@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/09/11 20:52:49 merdely Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/15 14:58:24 ajacoutot Exp $
 
 COMMENT=		web/text search engine
 
 DISTNAME=		swish-e-2.4.5
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		swish-e	2.0
 CATEGORIES=		textproc www
 

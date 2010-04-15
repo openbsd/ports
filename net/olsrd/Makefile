@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/04/09 16:22:00 martin Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/15 14:58:24 ajacoutot Exp $
 
 COMMENT=	OLSR routing daemon
 
 DISTNAME=	olsrd-0.5.6-r8
-PKGNAME=	${DISTNAME:S/-r/r/}
+PKGNAME=	${DISTNAME:S/-r/r/}p0
 CATEGORIES=     net
 
 HOMEPAGE=	http://www.olsr.org/

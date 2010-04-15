@@ -20,4 +20,3 @@ example).
 Eventually, you should start snort with the following options:
 
     -c /etc/snort/snort.conf -u _snort -g _snort -l /var/snort/log
-

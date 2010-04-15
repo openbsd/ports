@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/15 14:11:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/04/15 14:58:24 ajacoutot Exp $
 
 VERSION=		2.6
 PATCHLEVEL=		.3
-PKG_PATCHLEVEL=		p2
+PKG_PATCHLEVEL=		p3
 SHARED_LIBS=		python2.6 1.0
 
 # PSUBDIR=		python/${VERSION}

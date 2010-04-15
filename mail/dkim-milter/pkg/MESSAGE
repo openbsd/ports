@@ -80,4 +80,3 @@
     connections from MTAs in order to process messages.  See the
     documentation in libmilter (available with the open source sendmail
     source code) for details on selecting and specifying a socket.
-
