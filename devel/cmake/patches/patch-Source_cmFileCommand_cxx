@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmFileCommand_cxx,v 1.2 2007/08/25 08:35:20 espie Exp $
---- Source/cmFileCommand.cxx.orig	Mon Jul 16 23:12:30 2007
-+++ Source/cmFileCommand.cxx	Mon Aug 13 02:50:05 2007
-@@ -1279,10 +1279,44 @@ bool cmFileCommand::HandleInstallCommand(
+$OpenBSD: patch-Source_cmFileCommand_cxx,v 1.3 2010/04/15 20:30:47 dcoppa Exp $
+--- Source/cmFileCommand.cxx.orig	Mon Jan 21 19:59:52 2008
++++ Source/cmFileCommand.cxx	Sun Apr  4 18:54:42 2010
+@@ -1279,14 +1279,49 @@ bool cmFileCommand::HandleInstallCommand(
            std::string libname = toFile;
            std::string soname = toFile;
            std::string soname_nopath = fromName;
@@ -46,3 +46,16 @@ $OpenBSD: patch-Source_cmFileCommand_cxx,v 1.2 2007/08/25 08:35:20 espie Exp $
  
            cmSystemTools::RemoveFile(soname.c_str());
            cmSystemTools::RemoveFile(libname.c_str());
+ 
++#if !defined(__OpenBSD__)
+           if (!cmSystemTools::CreateSymlink(soname_nopath.c_str(), 
+                                             libname.c_str()) )
+             {
+@@ -1296,6 +1331,7 @@ bool cmFileCommand::HandleInstallCommand(
+             return false;
+             }
+           installer.ManifestAppend(libname);
++#endif
+           if ( toFile != soname )
+             {
+             if ( !cmSystemTools::CreateSymlink(fromName.c_str(), 
