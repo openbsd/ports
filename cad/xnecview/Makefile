@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/12 11:21:11 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/15 18:55:38 sthen Exp $
 
 COMMENT=	NEC2 antenna simulator visualizer
+
 BROKEN-hppa=	makedepend infinite loop
+BROKEN-arm=	makedepend infinite loop
 
 VERSION=	1.35
 DISTNAME=	xnecview-${VERSION}
