@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/03/02 08:17:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/04/15 09:15:06 sthen Exp $
 @bin bin/pmacct
 @bin sbin/nfacctd
 @bin sbin/pmacctd
@@ -14,6 +14,9 @@ share/doc/pmacct/PLUGINS
 share/doc/pmacct/README.64bit
 share/doc/pmacct/README.IPv6
 share/doc/pmacct/README.agent_id2
+share/doc/pmacct/README.iface
+share/doc/pmacct/README.is_symmetric
+share/doc/pmacct/README.mask
 share/doc/pmacct/README.sqlite3
 share/doc/pmacct/SIGNALS
 share/doc/pmacct/TRIGGER_VARS
