@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2008/11/29 09:49:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/04/15 14:11:01 ajacoutot Exp $
 
 COMMENT=	Classic Gnu Chess
 
 DISTNAME=	gnuchess-5.07
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 DISTFILES=	${DISTNAME}.tar.gz book_1.01.pgn.gz
 
 CATEGORIES=	games

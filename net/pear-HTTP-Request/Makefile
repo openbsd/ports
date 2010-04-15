@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2009/11/18 19:48:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/04/15 14:11:01 ajacoutot Exp $
 
 COMMENT=	provide an easy way to perform HTTP requests
 
 DISTNAME=	HTTP_Request-1.4.4
-PKGNAME=	pear-${DISTNAME:S/_/-/}
+PKGNAME=	pear-${DISTNAME:S/_/-/}p0
 CATEGORIES=	net
 
 MODULES=	www/pear

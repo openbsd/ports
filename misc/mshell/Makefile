@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2009/03/26 18:25:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2010/04/15 14:11:02 ajacoutot Exp $
 
 COMMENT=	Unix menuing shell
 
 DISTNAME=	mshell
-PKGNAME=	mshell-1.0p0
+PKGNAME=	mshell-1.0p1
 CATEGORIES=	misc
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}

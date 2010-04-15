@@ -9,4 +9,3 @@ It connects to the POP3 server on behalf of the client, performs the login
 and then passes data both ways until either the client or the server shut
 down the connection. In the meanwhile, the connection will appear to have
 originated on the host running the proxy.
-

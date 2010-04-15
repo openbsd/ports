@@ -15,4 +15,3 @@ A side-effect of the load-balancing is that several logfiles are
 produced, and all accesses seem to come from the load balancer. The
 program mergelogs solves this problem by merging pen's log file with the
 ones produced by the web servers.
-

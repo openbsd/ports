@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2007/09/15 23:54:17 merdely Exp $
+# $OpenBSD: Makefile,v 1.14 2010/04/15 14:11:02 ajacoutot Exp $
 
 COMMENT=	Convert invisible (binary) characters to a visible form
 
 DISTNAME=	viz-1.1.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc
 
 EXTRACT_SUFX=	.tgz

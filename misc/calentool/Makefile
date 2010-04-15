@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2009/08/10 06:33:02 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2010/04/15 14:11:02 ajacoutot Exp $
 
 COMMENT=	nice X11-based calendar/scheduling tool (using XView)
 
 DISTNAME=	calentool-2.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	misc x11
 
 MASTER_SITES = 	http://www.darwinsys.com/freeware/

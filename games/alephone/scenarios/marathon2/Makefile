@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2009/05/18 05:56:03 phessler Exp $
+#	$OpenBSD: Makefile,v 1.4 2010/04/15 14:11:01 ajacoutot Exp $
 PKG_ARCH-main=		*
 PKG_ARCH-hires=		*
 
@@ -6,8 +6,8 @@ COMMENT-main=		marathon two data files
 COMMENT-hires=		hires graphics and sounds
 V=			0.0.20090509
 DISTNAME=		marathon2-${V}
-PKGNAME-main=		marathon2-${V}
-PKGNAME-hires=		marathon2-hires-${V}
+PKGNAME-main=		marathon2-${V}p0
+PKGNAME-hires=		marathon2-hires-${V}p0
 HOMEPAGE=		http://source.bungie.org/get/
 
 DISTFILES=		Marathon2.zip

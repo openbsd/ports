@@ -3,4 +3,3 @@ vmstat/iostat do for other system counters.
 
 Flavors:
 	snmp: poll remote hosts through SNMP
-

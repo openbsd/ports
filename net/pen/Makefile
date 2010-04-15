@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/15 14:11:01 ajacoutot Exp $
 
 COMMENT=		load balancer for simple TCP-based protocols
 
 DISTNAME=		pen-0.15.0
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 HOMEPAGE=		http://siag.nu/pen/
 

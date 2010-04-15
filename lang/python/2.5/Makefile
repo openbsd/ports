@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2010/02/25 11:02:39 phessler Exp $
+# $OpenBSD: Makefile,v 1.36 2010/04/15 14:11:01 ajacoutot Exp $
 
 VERSION=		2.5
 PATCHLEVEL=		.4
-PKG_PATCHLEVEL=		p3
+PKG_PATCHLEVEL=		p4
 SHARED_LIBS=		python2.5 1.0
 
 .if ${MACHINE_ARCH} == "mips64"

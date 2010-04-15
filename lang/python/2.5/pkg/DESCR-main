@@ -12,4 +12,3 @@ written in C or C++.  On most systems such modules may be
 dynamically loaded. Python is also adaptable as an
 extension language for existing applications. See the
 internal documentation for hints.
-

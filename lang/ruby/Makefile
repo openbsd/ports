@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2010/01/27 21:43:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.75 2010/04/15 14:11:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,7 +12,7 @@ PATCHLEVEL=		369
 DISTNAME=		ruby-${VERSION}-p${PATCHLEVEL}
 SHARED_LIBS=		ruby 2.0
 PKGNAME-main=		ruby-${VERSION}.${PATCHLEVEL}p1
-PKGNAME-iconv=		ruby-iconv-${VERSION}.${PATCHLEVEL}p1
+PKGNAME-iconv=		ruby-iconv-${VERSION}.${PATCHLEVEL}p2
 PKGNAME-gdbm=		ruby-gdbm-${VERSION}.${PATCHLEVEL}p1
 PKGNAME-tk=		ruby-tk-${VERSION}.${PATCHLEVEL}p2
 

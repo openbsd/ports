@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2009/05/18 05:56:03 phessler Exp $
+#	$OpenBSD: Makefile,v 1.4 2010/04/15 14:11:01 ajacoutot Exp $
 PKG_ARCH-main =		*
 PKG_ARCH-hires =	*
 
@@ -6,8 +6,8 @@ COMMENT-main =		marathon infinity data files
 COMMENT-hires =		hires graphics and sounds
 V =			0.0.20090509
 DISTNAME =		marathoninfinity-${V}
-PKGNAME-main =		marathoninfinity-${V}
-PKGNAME-hires =		marathoninfinity-hires-${V}
+PKGNAME-main =		marathoninfinity-${V}p0
+PKGNAME-hires =		marathoninfinity-hires-${V}p0
 HOMEPAGE =		http://source.bungie.org/get/
 
 DISTFILES =		MarathonInfinity.zip

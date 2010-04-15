@@ -1,4 +1,3 @@
 milter-regex is a sendmail milter plugin that allows to reject mail
 based on regular expressions matching SMTP envelope parameters and
 mail headers and body.
-

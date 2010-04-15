@@ -3,4 +3,3 @@ NS provides substantial support for simulation of TCP, routing, and
 multicast protocols. 
 
 A graphical front-end for ns can be found in the nam package.
-

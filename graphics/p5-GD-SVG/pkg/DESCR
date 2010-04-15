@@ -1,4 +1,3 @@
 With GD::SVG,  scripts that use GD can generate SVG output transparently.
 
 GDB::SVG translates GD functions into SVG functions.
-

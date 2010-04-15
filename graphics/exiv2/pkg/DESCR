@@ -8,4 +8,3 @@ programs like Photoshop store in the same image segment
  * Exif MakerNote support
  * extract and delete methods for Exif thumbnails
  * set methods for Exif thumbnails
-

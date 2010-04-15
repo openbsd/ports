@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/03/21 09:10:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/04/15 14:11:01 ajacoutot Exp $
 
 COMMENT=	Japanese handwriting recognition
 
 DISTNAME=	kanjipad-2.0.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	japanese
 
 HOMEPAGE=	http://fishsoup.net/software/kanjipad/

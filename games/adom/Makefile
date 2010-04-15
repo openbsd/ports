@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2007/09/15 18:01:00 simon Exp $
+# $OpenBSD: Makefile,v 1.23 2010/04/15 14:11:01 ajacoutot Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 COMMENT=	Ancient Domains of Mystery - roguelike
 
 DISTNAME=	adom-1.1.1
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	games
 MASTER_SITES=   http://www.adom.de/adom/download/linux/
 HOMEPAGE=	http://www.adom.de/
