@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:42 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/15 07:10:43 jasper Exp $
 
-.if ${MACHINE_ARCH} == "sparc64"
-BROKEN=	SIGBUS on sparc64 when starting
-.endif
+BROKEN-sparc64=	SIGBUS on sparc64 when starting
 
 COMMENT=	graphical roguelike game
 
