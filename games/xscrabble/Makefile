@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/02/13 12:20:23 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2010/04/15 07:11:54 jasper Exp $
 
 COMMENT=	X11 version of the popular board game
 
@@ -37,7 +37,7 @@ FLAVORS=	en fr
 FLAVOR?=	en
 
 .if ${FLAVOR} != "en" && ${FLAVOR} != "fr"
-BROKEN=		you must choose (only) one language: ${FLAVORS}
+ERRORS+=	you must choose (only) one language: ${FLAVORS}
 .endif
 
 .if ${FLAVOR} == "en"

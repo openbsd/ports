@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/03/20 16:59:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/04/15 07:11:54 jasper Exp $
 
 COMMENT-main=		Quake/Quake-world client
 COMMENT-server=		Quake world server
@@ -56,7 +56,7 @@ WANTLIB-main=		X11 Xext c m pthread-stubs xcb
 CONFIGURE_ARGS+=	--with-opengl=yes --with-opengl-includes=${X11BASE}/include
 WANTLIB+=		GL X11 Xext pthread
 .else
-BROKEN=			choose either sdl, ggi, gl or x11
+ERRORS+=		choose either sdl, ggi, gl or x11
 .endif
 
 WRKDIST=	${WRKDIR}/quakeforge
