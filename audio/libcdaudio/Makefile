@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/02/09 12:23:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2010/04/15 21:31:01 jasper Exp $
 
 COMMENT=	multi-platform cd player development library
 DISTNAME=	libcdaudio-0.99.12
@@ -23,7 +23,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 
 # Workaround compiler bug with cddb.c, otherwise we get a sig11
-.if ${MACHINE_ARCH:Mmips64*} || ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "powerpc"
 PATCH_LIST+=	sup-no_optimization
 .endif
 
