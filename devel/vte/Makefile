@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2009/11/17 22:10:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2010/04/15 17:44:04 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -6,7 +6,7 @@ COMMENT-python= 	python bindings for vte
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.22.5
 PKGNAME-main=		${DISTNAME}
-PKGNAME-python= 	py-${DISTNAME}
+PKGNAME-python= 	py-${DISTNAME}p0
 
 CATEGORIES=		devel
 
@@ -41,11 +41,12 @@ WANTLIB-main=		${WANTLIB} util c
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			gdk-x11-2.0.>=1000,gdk_pixbuf-2.0.>=1000,gtk-x11-2.0.>=1000::x11/gtk+2
 
-WANTLIB-python= 	${WANTLIB} ffi
+WANTLIB-python= 	${WANTLIB}
 
 BUILD_DEPENDS=		${RUN_DEPENDS-python}
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
-			vte.>=11::${BASE_PKGPATH}
+			vte.>=11::${BASE_PKGPATH} \
+			ffi::devel/libffi
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
 			::x11/py-gtk2
 
