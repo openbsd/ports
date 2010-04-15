@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2010/03/20 16:49:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2010/04/15 08:28:07 jasper Exp $
 
 COMMENT=	text search engine by CNIDR
-
-#BROKEN=		C++ syntax errors, index.cxx:533: ANSI C++ forbids declaration PhraseLength with no type
 
 DISTNAME=	Isearch-1.14
 PKGNAME=	${DISTNAME:L}p0
