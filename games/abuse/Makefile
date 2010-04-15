@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.30 2009/08/10 06:31:41 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2010/04/15 18:25:59 jasper Exp $
+
+BROKEN-sparc=	Does not work on SPARC
+BROKEN-vax=	gmake loops forever
 
 COMMENT=	full color 320x200 arcade quality platform shooter
 
@@ -14,14 +17,6 @@ PERMIT_PACKAGE_FTP=	unclear
 PERMIT_DISTFILES_CDROM=	unclear
 PERMIT_DISTFILES_FTP=	unclear
 WANTLIB=		X11 Xext c m pthread-stubs stdc++ xcb
-
-.if ${MACHINE_ARCH} == "sparc"
-BROKEN=		Does not work on SPARC
-.endif
-
-.if ${MACHINE_ARCH} == "vax"
-BROKEN=		gmake loops forever
-.endif
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
