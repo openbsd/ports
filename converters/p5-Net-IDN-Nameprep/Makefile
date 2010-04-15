@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2007/10/04 21:23:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/15 13:56:34 ajacoutot Exp $
 
 COMMENT=	Perl IDN nameprep tools
 
 DISTNAME=	Net-IDN-Nameprep-0.02
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	converters net
 MODULES=	cpan
 

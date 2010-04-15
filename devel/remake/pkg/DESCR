@@ -10,5 +10,3 @@ debugger are:
     * issue shell commands while stopped in the middle of execution,
     * inspect target descriptions
     * write a file with the commands of the target expanded.
-
-

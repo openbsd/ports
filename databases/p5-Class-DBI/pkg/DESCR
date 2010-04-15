@@ -3,4 +3,3 @@ layer, but can be used to implement several higher order
 database functions (triggers, referential integrity,
 cascading delete etc.), at the application level, rather
 than at the database.
-

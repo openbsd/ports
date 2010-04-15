@@ -8,4 +8,3 @@ Bakery is a C++ Framework for creating GNOME applications using gtkmm.
     * Bakery makes it easy to start developing GNOME applications.
     * Bakery gives your application structure.
     * Bakery contains a few utility classes.
-

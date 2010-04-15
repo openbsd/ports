@@ -3,4 +3,3 @@ traditional way, from the keyboard, without echoing.
 
 It's only dependent on posix functionalities to put the keyboard
 in raw mode without echo.
-

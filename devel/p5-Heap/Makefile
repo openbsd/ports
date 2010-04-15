@@ -1,9 +1,10 @@
-#	$OpenBSD: Makefile,v 1.5 2008/10/02 23:10:26 jasper Exp $
+#	$OpenBSD: Makefile,v 1.6 2010/04/15 13:56:34 ajacoutot Exp $
 
 COMMENT=	heap data structure in perl
 
 MODULES=	cpan
 DISTNAME=	Heap-0.80
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 # perl

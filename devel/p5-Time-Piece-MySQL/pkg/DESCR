@@ -10,4 +10,3 @@ CONSTRUCTORS
     Given a date, datetime, or timestamp value as returned from MySQL, these
     constructors return a new Time::Piece object. If the value is NULL, they
     will retrun undef.
-

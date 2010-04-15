@@ -10,4 +10,3 @@ distributions. By including just a single bootstrap module (an 8K .py
 file), your package will automatically download and install setuptools
 if the user is building your package from source and doesn't have a
 suitable version already installed.
-

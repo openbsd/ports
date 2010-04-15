@@ -1,4 +1,3 @@
 This module allows Class::DBI-based classes to query their
 columns for data type information in a database-
 independent manner.
-

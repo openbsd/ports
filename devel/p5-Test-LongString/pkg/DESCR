@@ -1,4 +1,3 @@
 This module provides some drop-in replacements for the string comparison
 functions of Test::More, but which are more suitable when you test
 against long strings.
-

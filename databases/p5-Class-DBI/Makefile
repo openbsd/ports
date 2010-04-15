@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2008/09/29 22:53:57 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/15 13:56:34 ajacoutot Exp $
 
 COMMENT=	simple database abstraction
 
 MODULES=	cpan
 V=		3.0.16
 DISTNAME=	Class-DBI-v${V}
-PKGNAME=	p5-Class-DBI-${V}p0
+PKGNAME=	p5-Class-DBI-${V}p1
 CATEGORIES=	databases
 
 # perl

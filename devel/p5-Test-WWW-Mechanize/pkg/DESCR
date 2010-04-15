@@ -1,3 +1,2 @@
 Test::WWW::Mechanize is a subclass of WWW::Mechanize that incorporates
 features that make sense for doing web application testing.
-

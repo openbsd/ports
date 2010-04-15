@@ -12,4 +12,3 @@ methods are provided to users of the Proc::Background package:
     wait:       wait for the process to exit and return the exit status.
     start_time: return the time that the process started.
     end_time:   return the time when the exit status was retrieved.
-

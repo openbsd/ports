@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/27 19:51:35 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/15 13:56:34 ajacoutot Exp $
 
 COMMENT=	generate SQL from Perl data structures
 
 MODULES=	cpan
 DISTNAME=	SQL-Abstract-1.22
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	databases
 EXTRACT_SUFX=	.tgz
 

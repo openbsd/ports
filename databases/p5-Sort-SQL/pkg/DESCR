@@ -9,4 +9,3 @@ an array of key/value pair hashrefs.
 
 This method can be used e.g. in Template Toolkit applications, to create
 re-sortable table columns.
-

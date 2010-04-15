@@ -5,4 +5,3 @@ A Test::MockModule object is set up to mock subroutines for a given
 module. The object remembers the original subroutine so it can be easily
 restored. This happens automatically when all MockModule objects for the given
 module go out of scope, or when you unmock() the subroutine.
-

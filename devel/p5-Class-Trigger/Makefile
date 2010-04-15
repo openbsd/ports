@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2007/07/27 18:40:21 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/15 13:56:34 ajacoutot Exp $
 
 COMMENT=	add / call inheritable triggers
 
 MODULES=	cpan
 DISTNAME=	Class-Trigger-0.11
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 # perl

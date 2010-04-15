@@ -12,4 +12,3 @@ Packages can be built with additional FLAVORs:
 
   esd:	built with esound audio plugin.
 	This FLAVOR requires the esound package.
-

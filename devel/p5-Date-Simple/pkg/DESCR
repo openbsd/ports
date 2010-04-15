@@ -2,4 +2,3 @@ This module may be used to create simple date objects. It
 only handles dates within the range of Unix time. It will
 only allow the creation of objects for valid dates.
 Attempting to create an invalid date will return undef.
-

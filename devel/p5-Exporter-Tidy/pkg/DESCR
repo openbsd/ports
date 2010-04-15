@@ -4,4 +4,3 @@ into your namespace.
 
 With Exporter::Tidy, you don't need to use any package global in your
 module. Even the subs you export can be lexically scoped.
-

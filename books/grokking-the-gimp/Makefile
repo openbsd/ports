@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 21:34:36 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/15 13:56:34 ajacoutot Exp $
 
 COMMENT=book about gimp
 CATEGORIES=books graphics
 
 VERSION=1.0
 DISTNAME=Grokking-the-GIMP-v${VERSION}
-PKGNAME=grokking-the-gimp-${VERSION}p0
+PKGNAME=grokking-the-gimp-${VERSION}p1
 
 # Open publication license
 PERMIT_DISTFILES_CDROM=Yes

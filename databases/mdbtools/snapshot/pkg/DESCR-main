@@ -15,4 +15,3 @@ In a separate package:
 Not featured in this port:
 . odbc      - An ODBC driver for use with unixODBC or iODBC driver manager.
               Allows one to use MDB files with PHP for example.
-

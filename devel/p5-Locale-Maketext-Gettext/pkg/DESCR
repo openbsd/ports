@@ -3,4 +3,3 @@ It is a subclass of Locale::Maketext(3) that follows the way GNU gettext
 works. It works seam- lessly, both in the sense of GNU gettext and
 Maketext. As a result, you enjoy both their advantages, and get rid of
 both their problems, too.
-

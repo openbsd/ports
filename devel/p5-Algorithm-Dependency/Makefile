@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/15 13:56:34 ajacoutot Exp $
 
 COMMENT=	base class for implementing various dependency trees
 
 MODULES=	cpan
 
 DISTNAME=	Algorithm-Dependency-1.102
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	devel
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

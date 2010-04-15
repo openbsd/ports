@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2008/02/20 20:48:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/15 13:56:35 ajacoutot Exp $
 
 COMMENT=		dependency configuration tool
 
 VERSION=		0.9.3
 DISTNAME=		pmk-${VERSION}
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://pmk.sourceforge.net/

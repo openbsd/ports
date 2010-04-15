@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2008/10/03 10:33:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/15 13:56:35 ajacoutot Exp $
 
 COMMENT=		ask passwords from perl
 
 MODULES=		cpan
 DISTNAME=		Term-ReadPassword-0.11
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		devel
 
 # perl

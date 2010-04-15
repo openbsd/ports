@@ -1,3 +1,2 @@
 Class::DBI::Pager is a plugin for Class::DBI, which glues
 Data::Page with Class::DBI.
-

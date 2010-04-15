@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/16 02:53:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/15 13:56:35 ajacoutot Exp $
 
 COMMENT=	peek at lexical variables
 
 MODULES=	cpan
 DISTNAME=	Proc-Background-1.08
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 # perl

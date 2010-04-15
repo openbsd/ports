@@ -16,4 +16,3 @@ mappings
 * Invoke ETL engine to load initial set of data into the target
 database
 * Enable easy, centralized installation and updates..."
-

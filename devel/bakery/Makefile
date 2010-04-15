@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/15 13:56:35 ajacoutot Exp $
 
 COMMENT=		C++ Application Framework for use with Gtkmm
 
 GNOME_PROJECT=		bakery
 GNOME_VERSION=		2.6.3
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 SHARED_LIBS +=  bakery-2.6           0.0      # .1.0
 CATEGORIES=		devel x11/gnome
 

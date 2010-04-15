@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2009/08/27 14:43:53 bluhm Exp $
+# $OpenBSD: Makefile,v 1.23 2010/04/15 13:56:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	BSD process resource limit and priority functions
 
 MODULES=	cpan
 DISTNAME=	BSD-Resource-1.2903
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 # perl

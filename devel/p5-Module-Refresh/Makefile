@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/09/03 09:29:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/15 13:56:35 ajacoutot Exp $
 
 COMMENT=	refresh perl %INC files when updated on disk
 
 MODULES=	cpan
 DISTNAME=	Module-Refresh-0.13
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	devel
 
 # Artistic

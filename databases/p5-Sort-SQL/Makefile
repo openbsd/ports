@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/06 08:59:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/15 13:56:34 ajacoutot Exp $
 
 COMMENT=	manipulate SQL sort strings
 
 MODULES=	cpan
 DISTNAME=	Sort-SQL-0.03
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	databases devel
 
 # perl

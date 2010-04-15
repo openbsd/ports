@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/16 02:53:10 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/15 13:56:35 ajacoutot Exp $
 
 COMMENT=	lightweight, universal exporting/require of variables
 
 MODULES=	cpan
 V=		0.05
 DISTNAME=	UNIVERSAL-exports-${V}
-PKGNAME=	p5-Universal-exports-${V}
+PKGNAME=	p5-Universal-exports-${V}p0
 CATEGORIES=	devel
 
 MAINTAINER=	Sam Smith <S@msmith.net>

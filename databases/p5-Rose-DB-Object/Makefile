@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/10 13:45:04 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/15 13:56:34 ajacoutot Exp $
 
 COMMENT=	object-oriented database mapper
 
 MODULES=	cpan
 
 DISTNAME=	Rose-DB-Object-0.784
-PKGNAME=	p5-${DISTNAME}
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	databases
 
 # perl

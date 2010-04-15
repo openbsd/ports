@@ -16,4 +16,3 @@ Class::Factory - Base class for dynamic factory classes
 
   my $perl_item = My::Factory->new( 'perl', foo => 'bar' );  
   my $blech_item = My::Factory->new( 'blech', foo => 'baz' );  
-

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 20:34:01 simon Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/15 13:56:34 ajacoutot Exp $
 
 COMMENT=	determine type information for columns
 
 MODULES=	cpan
 DISTNAME=	Class-DBI-Plugin-Type-0.02
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	databases
 
 MAINTAINER=	Sam Smith <S@msmith.net>

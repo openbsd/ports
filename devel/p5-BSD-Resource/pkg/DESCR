@@ -15,5 +15,3 @@ Also is provided
 
         get_rlimits() -- a pure perl function with no BSD analog to
                          find which limits are available
-
-

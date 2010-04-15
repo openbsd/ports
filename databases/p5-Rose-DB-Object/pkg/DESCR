@@ -8,4 +8,3 @@ table, subject to the following constraints.
 * The database server must be supported by L<Rose::DB>.
 * The database table must have a primary key.
 * The primary key must not allow null values in any of its columns.
-

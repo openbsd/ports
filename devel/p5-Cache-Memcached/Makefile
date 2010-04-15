@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/04 22:59:43 simon Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/15 13:56:34 ajacoutot Exp $
 
 COMMENT= 	pure perl client interface to memcached
 
 MODULES=	cpan
 
 DISTNAME=	Cache-Memcached-1.24
-PKGNAME=	p5-${DISTNAME}p0
+PKGNAME=	p5-${DISTNAME}p1
 CATEGORIES=	devel
 HOMEPAGE=	http://www.danga.com/memcached/
 

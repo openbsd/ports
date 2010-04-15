@@ -18,4 +18,3 @@ DB layers itself on top of PHP's existing database
 extensions. The currently supported extensions are:
 dbase, fbsql, interbase, informix, msql, mssql, mysql,
 mysqli, oci8, odbc, pgsql, sqlite and sybase.
-
