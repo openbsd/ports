@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/30 05:20:42 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/15 19:16:42 steven Exp $
 @comment argus/
 @comment bin/argusbug
 @bin bin/ra
@@ -9,7 +9,6 @@ bin/radark
 @bin bin/radump
 @bin bin/rafilteraddr
 bin/ragraph
-@bin bin/ragrep
 @bin bin/rahisto
 bin/rahosts
 @bin bin/ralabel
@@ -17,6 +16,7 @@ bin/rahosts
 @bin bin/rapath
 @bin bin/rapolicy
 bin/raports
+@bin bin/raservices
 @bin bin/rasort
 @bin bin/rasplit
 @bin bin/rastream
@@ -25,13 +25,14 @@ bin/raports
 @bin bin/ratimerange
 @bin bin/ratop
 @bin bin/ratree
+@bin bin/rauserdata
 @man man/man1/ra.1
 @man man/man1/rabins.1
 @man man/man1/racluster.1
 @man man/man1/racount.1
 @man man/man1/ragraph.1
-@man man/man1/ragrep.1
 @man man/man1/rahisto.1
+@man man/man1/ranonymize.1
 @man man/man1/rasort.1
 @man man/man1/rasplit.1
 @man man/man1/rastream.1
@@ -46,20 +47,53 @@ share/argus/
 share/argus/delegated-ipv4-latest
 @comment share/argus/lib/
 @comment share/argus/rarc
+share/doc/argus-clients/
+share/doc/argus-clients/CHANGES
+share/doc/argus-clients/COPYING
+share/doc/argus-clients/FAQ
+share/doc/argus-clients/HOW-TO
+share/doc/argus-clients/README
+share/doc/argus-clients/html/
+share/doc/argus-clients/html/man/
+share/doc/argus-clients/html/man/man1/
+share/doc/argus-clients/html/man/man1/ra.1.html
+share/doc/argus-clients/html/man/man1/rabins.1.html
+share/doc/argus-clients/html/man/man1/racluster.1.html
+share/doc/argus-clients/html/man/man1/racount.1.html
+share/doc/argus-clients/html/man/man1/ragraph.1.html
+share/doc/argus-clients/html/man/man1/ragrep.1.html
+share/doc/argus-clients/html/man/man1/rahisto.1.html
+share/doc/argus-clients/html/man/man1/ranonymize.1.html
+share/doc/argus-clients/html/man/man1/rapolicy.1.html
+share/doc/argus-clients/html/man/man1/rasort.1.html
+share/doc/argus-clients/html/man/man1/rasplit.1.html
+share/doc/argus-clients/html/man/man1/rastrip.1.html
+share/doc/argus-clients/html/man/man5/
+share/doc/argus-clients/html/man/man5/racluster.5.html
+share/doc/argus-clients/html/man/man5/radium.conf.5.html
+share/doc/argus-clients/html/man/man5/ranonymize.5.html
+share/doc/argus-clients/html/man/man5/rarc.5.html
+share/doc/argus-clients/html/man/man8/
+share/doc/argus-clients/html/man/man8/radium.8.html
 share/examples/argus-clients/
 share/examples/argus-clients/Config/
 share/examples/argus-clients/Config/delegated-ipv4-latest
 share/examples/argus-clients/Config/excel.rc
+share/examples/argus-clients/Config/iana-address-file
+share/examples/argus-clients/Config/iana-ipv4-address
+share/examples/argus-clients/Config/iana-multicast-address
+share/examples/argus-clients/Config/iana-port-numbers
 share/examples/argus-clients/Config/ra.print.all.conf
 share/examples/argus-clients/Config/racluster.conf
 share/examples/argus-clients/Config/radium.conf
 share/examples/argus-clients/Config/ragetcountrycodes.sh
+share/examples/argus-clients/Config/ralabel.conf
 share/examples/argus-clients/Config/ranonymize.conf
 share/examples/argus-clients/Config/rarc
 share/examples/argus-clients/Config/rastream.sh
+share/examples/argus-clients/Config/std.sig
 share/examples/argus-clients/Startup/
 share/examples/argus-clients/Startup/radium
 share/examples/argus-clients/System/
 share/examples/argus-clients/System/magic
 share/examples/argus-clients/System/protocols
-share/examples/argus-clients/Xml/

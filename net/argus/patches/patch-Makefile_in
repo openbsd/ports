@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/06/30 05:19:33 steven Exp $
---- Makefile.in.orig	Wed Feb 13 06:16:07 2008
-+++ Makefile.in	Mon Jun 23 22:04:09 2008
+$OpenBSD: patch-Makefile_in,v 1.2 2010/04/15 19:15:19 steven Exp $
+--- Makefile.in.orig	Wed Oct  7 19:13:20 2009
++++ Makefile.in	Sat Apr 10 12:32:04 2010
 @@ -34,7 +34,7 @@ prefix = @prefix@
  exec_prefix = @exec_prefix@
  datarootdir = @datarootdir@
@@ -18,10 +18,10 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/06/30 05:19:33 steven Exp $
 -		(mkdir -p $(DESTDIR)$(exec_prefix)/argus; chmod 755 $(DESTDIR)$(exec_prefix)/argus)
 -	[ -d $(DESTDIR)$(exec_prefix)/argus/archive ] || \
 -		(mkdir -p $(DESTDIR)$(exec_prefix)/argus/archive; chmod 755 $(DESTDIR)$(exec_prefix)/argus/archive)
+ 
  	@-for d in $(INSTDIRS); \
  	do \
- 		(cd $$d; echo "### Make install in" `pwd`;    \
-@@ -99,7 +95,6 @@ install-doc:  force
+@@ -100,7 +96,6 @@ install-doc:  force
  	$(INSTALL) -m 0644 $(srcdir)/doc/FAQ $(DESTDIR)$(docdir)
  	$(INSTALL) -m 0644 $(srcdir)/doc/HOW-TO $(DESTDIR)$(docdir)
  	$(INSTALL) -m 0644 $(srcdir)/README $(DESTDIR)$(docdir)
@@ -29,7 +29,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/06/30 05:19:33 steven Exp $
  
  uninstall:
  	rm -f $(DESTDIR)@mandir@/man5/argus.5
-@@ -116,7 +111,7 @@ uninstall:
+@@ -117,7 +112,7 @@ uninstall:
  
  installdirs:
  	${srcdir}/config/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(mandir)\

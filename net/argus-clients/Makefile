@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/30 05:20:42 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/15 19:16:42 steven Exp $
 
 COMMENT=	utilities to read and parse Argus data
 
-DISTNAME=	argus-clients-3.0.0
+DISTNAME=	argus-clients-3.0.2
 CATEGORIES=     net
 
 HOMEPAGE=	http://qosient.com/argus/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m ncurses
+WANTLIB=	c m ncurses readline
 
 NO_REGRESS=	Yes
 

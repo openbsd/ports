@@ -1,7 +1,7 @@
-$OpenBSD: patch-clients_Makefile_in,v 1.1.1.1 2008/06/30 05:20:42 steven Exp $
---- clients/Makefile.in.orig	Wed Jun 25 23:35:01 2008
-+++ clients/Makefile.in	Wed Jun 25 23:38:04 2008
-@@ -141,13 +141,13 @@ all: $(PROGS)
+$OpenBSD: patch-clients_Makefile_in,v 1.2 2010/04/15 19:16:42 steven Exp $
+--- clients/Makefile.in.orig	Fri May 15 19:49:11 2009
++++ clients/Makefile.in	Sat Apr 10 12:50:16 2010
+@@ -146,13 +146,13 @@ all: $(PROGS)
  	$(CC) $(CCOPT) -o $@ ratree.o $(LIB) $(COMPATLIB)
  
  @INSTALL_BIN@/raports: raports.pl
@@ -16,5 +16,5 @@ $OpenBSD: patch-clients_Makefile_in,v 1.1.1.1 2008/06/30 05:20:42 steven Exp $
 -	$(INSTALL) radark.pl $@
 +	cp radark.pl $@
  
- @INSTALL_BIN@/ratemplate: ratemplate.o $(LIB)
- 	$(CC) $(CCOPT) -o $@ ratemplate.o $(LIB) $(COMPATLIB)
+ @INSTALL_BIN@/rauserdata: rauserdata.o $(LIB)
+ 	$(CC) $(CCOPT) -o $@ rauserdata.o $(LIB) $(COMPATLIB)

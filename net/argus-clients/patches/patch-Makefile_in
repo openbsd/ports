@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2010/04/15 19:16:42 steven Exp $
+--- Makefile.in.orig	Sat Apr 10 12:56:00 2010
++++ Makefile.in	Sat Apr 10 12:56:09 2010
+@@ -37,7 +37,7 @@ exec_prefix = @exec_prefix@
+ datarootdir = @datarootdir@
+ 
+ srcdir = @srcdir@
+-docdir = @datadir@/doc/argus-clients-3.0
++docdir = @datadir@/doc/argus-clients
+ 
+ #### End of system configuration section. ####
+ 

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2008/07/04 17:23:39 steven Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/15 19:15:19 steven Exp $
 
 COMMENT=	Audit Record Generation and Utilization System
 
-DISTNAME=	argus-3.0.0
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	argus-3.0.2
 CATEGORIES=	net
 
 HOMEPAGE=	http://qosient.com/argus/
@@ -26,9 +25,11 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 BUILD_DEPENDS=	::devel/bison
 
 MAKE_FLAGS=	CCOPT=
-INSTALL_TARGET=	install install-doc
+INSTALL_TARGET=	install
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/argus/
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/argus/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/argus/
 	cd ${WRKSRC}/support && tar cf - . | \
 		tar -C ${PREFIX}/share/examples/argus/ -xf - 
