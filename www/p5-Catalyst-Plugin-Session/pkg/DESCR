@@ -8,4 +8,3 @@ logically string several requests together into a session.
 The second part, the Store, deals with the actual storage of information
 about the client. This data is stored so that the it may be revived for
 every request made by the same client.
-

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/20 23:46:56 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/15 14:29:17 ajacoutot Exp $
 
 COMMENT= 	simple interface to HTML::TokeParser
 
 DISTNAME=	HTML-TokeParser-Simple-3.15
-PKGNAME=	p5-${DISTNAME}p2
+PKGNAME=	p5-${DISTNAME}p3
 CATEGORIES=	www
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>

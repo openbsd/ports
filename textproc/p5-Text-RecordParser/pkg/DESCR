@@ -7,4 +7,3 @@ in which case you should call "bind_header" to bind the field names.
 If the first line contains data, you can still bind your own field names via
 "bind_fields". In both cases, you may afterwards use many methods to get 
 at the data as arrays or hashes.
-

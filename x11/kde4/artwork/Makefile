@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/29 00:26:25 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/15 14:34:12 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, artwork
 DISTNAME =		kdeartwork-${VERSION}
-PKGNAME =		${DISTNAME}
+PKGNAME =		${DISTNAME}p0
 
 LIB_DEPENDS += 	kdecore.>=8,kdeui,kde3support,kio,kparts,kfile,kpty,solid::x11/kde4/libs \
 		kscreensaver::x11/kde4/base-workspace

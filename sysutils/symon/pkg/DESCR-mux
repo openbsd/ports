@@ -1,4 +1,3 @@
 symux is a heavyweight data gatherer for the lightweight symon system
 monitor.  symon is a lightweight system monitor that measures cpu,
 memory, interface and disk statistics every 5 seconds.
-

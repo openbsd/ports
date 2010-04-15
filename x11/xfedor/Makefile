@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2007/09/15 20:04:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.22 2010/04/15 14:34:12 ajacoutot Exp $
 # ATTENTION: It does not work in > 256 color modes, please fix
 # it if you can.
 
 COMMENT=	.bdf, .xbm, .xpm mouse cursor editor
 
 DISTNAME=       xfedor-5.0.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 
 MASTER_SITES= 	${MASTER_SITE_SUNSITE:=X11/fonts/}

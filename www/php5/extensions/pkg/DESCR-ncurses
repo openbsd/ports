@@ -2,4 +2,3 @@ ncurses (new curses) is a free software emulation of curses in
 System V Rel 4.0 (and above). It uses terminfo format, supports
 pads, colors, multiple highlights, form characters and function key
 mapping.
-

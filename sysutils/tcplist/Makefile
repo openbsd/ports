@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2007/09/15 21:14:03 merdely Exp $
+# $OpenBSD: Makefile,v 1.21 2010/04/15 14:29:16 ajacoutot Exp $
 
 COMMENT=	list tcp connections to/from the local machine
 
 DISTNAME=	tcplist-2.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	sysutils net
 
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/jdd/tcplist/

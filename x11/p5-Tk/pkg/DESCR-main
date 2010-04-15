@@ -5,4 +5,3 @@ The perl code corresponding to Tix's Tcl code is not fully implemented.
 
 Perl API is essentially the same as Tk800 series Tk800.025 but has not
 been verified as compliant. There ARE differences see pod/804delta.pod.
-

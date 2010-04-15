@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/03/21 09:05:55 robert Exp $
+# $OpenBSD: Makefile,v 1.59 2010/04/15 14:29:18 ajacoutot Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 FULLPKGPATH-main=	www/php5/extensions,-main
@@ -392,7 +392,7 @@ WANTLIB-xsl=		${WANTLIB} iconv xml2 z
 .endif
 
 .for i in ${MULTI_PACKAGES}
-FULLPKGNAME${i} ?=	php5${i}-${V}
+FULLPKGNAME${i} ?=	php5${i}-${V}p0
 FULLPKGPATH${i} ?=	www/php5/extensions,${i}
 RUN_DEPENDS${i}=	:php5-core-${V}:www/php5/core
 MODULE_NAME${i}=	${i:S/-//g}

@@ -7,4 +7,3 @@ that allow you to write WWW clients, thus libwww-perl said to be a
 WWW client library. The library also contain modules that are of
 more general use and even classes that help you implement simple
 HTTP servers.
-

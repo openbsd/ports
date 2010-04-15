@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 20:59:39 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/15 14:29:16 ajacoutot Exp $
 
 COMMENT= 	catalyst TT views with explicit UTF8 encoding
 
 MODULES=	cpan
+PKGNAME=	p5-${DISTNAME}p0
 DISTNAME=	Catalyst-View-TT-ForceUTF8-0.06
 CATEGORIES=	textproc devel
 

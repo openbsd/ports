@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:25 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/15 14:29:18 ajacoutot Exp $
 
 COMMENT=		smart URI fetching/caching
 
 MODULES=		cpan
 DISTNAME=		URI-Fetch-0.08
+PKGNAME=		p5-${DISTNAME}p0
 CATEGORIES=		www
 
 CONFIGURE_STYLE=	modbuild

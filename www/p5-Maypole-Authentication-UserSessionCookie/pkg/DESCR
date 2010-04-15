@@ -5,4 +5,3 @@ and sessions.
 It provides three methods to be inherited by a Maypole
 class. The first is get_user, which tries to populate the
 user slot of the Maypole request object.
-

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2009/09/30 05:24:24 matthieu Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/15 14:29:16 ajacoutot Exp $
 
 NOT_FOR_ARCHS =		sparc m68k m88k vax
 
 COMMENT =		PCI bus configuration register access tools
 
 DISTNAME =		pciutils-3.1.2
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml

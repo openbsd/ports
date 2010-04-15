@@ -1,4 +1,3 @@
 Password cracker for compressed archives (rar, 7z, zip). rarcrack makes
 use of a bruteforce algorithm to find correct password. You can specify
 which characters will be used in the generated passwords.
-

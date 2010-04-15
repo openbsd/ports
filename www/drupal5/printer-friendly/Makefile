@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2008/10/25 16:54:37 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/15 14:29:17 ajacoutot Exp $
 
 COMMENT =	printer-friendly pages in drupal
 
 DISTNAME = 	print-5.x-4.0
-PKGNAME =	drupal5-printer-friendly-4.0
+PKGNAME =	drupal5-printer-friendly-4.0p0
 #DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 #		dompdf-0.5.1${EXTRACT_SUFX}:0
 

@@ -6,4 +6,3 @@ changes to any managed filesystem object, e.g. files, directories,
 links, etc. However, radmind goes further than just integrity 
 checking: once a change is detected, radmind can optionally reverse 
 the change.
-

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/03/24 09:11:40 laurent Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/15 14:29:17 ajacoutot Exp $
+
 COMMENT =		tests lexical similarity in texts
 
-DISTNAME =               sim_2_26
-PKGNAME =                sim-2.26
+DISTNAME =		sim_2_26
+PKGNAME =		sim-2.26p0
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://www.cs.vu.nl/~dick/sim.html

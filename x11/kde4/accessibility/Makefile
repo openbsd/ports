@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2008/01/27 13:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/15 14:34:12 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, accessibility
 DISTNAME =		kdeaccessibility-${VERSION}
-PKGNAME =		${DISTNAME}
+PKGNAME =		${DISTNAME}p0
 
 SHARED_LIBS +=  kttsd             3.0 # .4.0
 

@@ -15,4 +15,3 @@ common choices with PHP. dBase support is here to allow you to
 import and export data to and from your web database, because the
 file format is commonly understood by Windows spreadsheets and
 organizers.
-

@@ -1,4 +1,3 @@
 The exportable subroutines of Lingua::EN::Inflect provide
 plural inflections, "a"/"an" selection for English words,
 and manipulation of numbers as words.
-

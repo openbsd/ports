@@ -5,4 +5,3 @@ This plugin to the qca library provides an easy API for the following features:
   RSA
   Hashing (SHA1, MD5)
   Ciphers (BlowFish, 3DES, AES)
-

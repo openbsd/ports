@@ -2,4 +2,3 @@ x2x  allows  the keyboard and mouse on one ("from") X dis-
 play to be used  to  control  another  ("to")  X  display.
 Since  x2x  uses  the  XTEST extension, the "to" X display
 must support XTEST.
-

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2008/07/27 18:05:04 simon Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/15 14:29:16 ajacoutot Exp $
 
 COMMENT=	unicode-aware catalyst
 
 DISTNAME=	Catalyst-Plugin-Unicode-0.8
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	textproc
 
 # Perl

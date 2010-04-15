@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/06/11 21:55:36 laurent Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/15 14:29:16 ajacoutot Exp $
 
 COMMENT=		rar, 7zip and zip password bruteforcer
 
 DISTNAME=		rarcrack-0.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		security
 
 HOMEPAGE=		http://rarcrack.sourceforge.net/

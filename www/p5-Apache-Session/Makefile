@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/21 02:13:21 msf Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/15 14:29:17 ajacoutot Exp $
 
 COMMENT=	persistence framework for Apache session data
 
 MODULES=	cpan
 DISTNAME=	Apache-Session-1.83
+PKGNAME=	p5-${DISTNAME}p0
 CATEGORIES=	www databases
 
 MAINTAINER=	Michael Coulter <mjc@openbsd.org>

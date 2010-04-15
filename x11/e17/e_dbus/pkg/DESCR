@@ -2,4 +2,3 @@ This is the start of some basic convenience wrappers around dbus
 to ease integrating dbus with EFL based applications.
 When using e_dbus, direct use of the low level dbus api is still 
 heavily required for processing messages.
-

@@ -22,4 +22,3 @@ The utilities include:  (See manual pages for more details)
 
 On OpenBSD you need to set sysctl machdep.allowaperture=2 in
 /etc/sysctl.conf, and run lspci and setpci as root.
-

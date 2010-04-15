@@ -31,4 +31,3 @@ sorted correctly.
 the content types that contain your selected date fields. The default
 view has a Node: Type filter that selects all node types. Change
 it to select only the node types you want in your calendar.
-

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/02/09 13:18:16 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/15 14:34:12 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, base
 DISTNAME =		kdebase-${VERSION}
-PKGNAME =		${DISTNAME}
+PKGNAME =		${DISTNAME}p0
 
 SHARED_LIBS +=	kateinterfaces       2.0      # .4.0
 SHARED_LIBS +=	kdecorations         3.0      # .4.0
