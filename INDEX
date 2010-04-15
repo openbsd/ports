@@ -3482,7 +3482,7 @@ p5-RPC-XML-0.59|net/p5-RPC-XML||perl implementation of XML-RPC|net/p5-RPC-XML/pk
 p5-SNMP-BridgeQuery-0.61|net/p5-SNMP-BridgeQuery||Perl extension for retrieving bridge tables|net/p5-SNMP-BridgeQuery/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|devel net perl5||:net/p5-Net-SNMP|:net/p5-Net-SNMP|any|y|y|y|y
 p5-SNMP-Info-1.04|net/p5-SNMP-Info||perl5 interface to network devices and MIBs through SNMP|net/p5-SNMP-Info/pkg/DESCR|Mathieu Sauve-Frankel <msf@openbsd.org>|net perl5|||:net/net-snmp,-perl|any|y|y|y|y
 p5-SNMP_Session-1.13p1|net/p5-SNMP_Session||provides rudimentary access to remote SNMP agents|net/p5-SNMP_Session/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|net perl5||||any|y|y|y|y
-Socket6-0.22p0|net/p5-Socket6||Perl defines relating to AF_INET6 sockets|net/p5-Socket6/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|net devel perl5||||any|y|y|y|y
+p5-Socket6-0.22p0|net/p5-Socket6||Perl defines relating to AF_INET6 sockets|net/p5-Socket6/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|net devel perl5||||any|y|y|y|y
 p5-Sys-Hostname-Long-1.4p0|net/p5-Sys-Hostname-Long||perl module to get FQDN|net/p5-Sys-Hostname-Long/pkg/DESCR|Michael Erdely <merdely@openbsd.org>|net perl5||||any|y|y|y|y
 p5-Validate-Net-0.6|net/p5-Validate-Net||module to format validation for Net:: related strings|net/p5-Validate-Net/pkg/DESCR|Simon Bertrang <simon@openbsd.org>|net devel perl5|||:devel/p5-Class-Default|any|y|y|y|y
 p5-flowd-0.9.1|net/p5-flowd||Perl API to flowd binary logfiles|net/p5-flowd/pkg/DESCR|Damien Miller <djm@openbsd.org>|net devel||:net/flowd||any|y|y|y|y
