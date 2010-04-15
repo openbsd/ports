@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/08 07:41:09 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2010/04/15 06:55:59 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		NetBeans Java IDE
 
 V=			6.8
 DISTNAME=		netbeans-${V}-200912041610-ml
-PKGNAME=		netbeans-${V}p1
+PKGNAME=		netbeans-${V}p2
 CATEGORIES=		java devel
 
 HOMEPAGE=		http://www.netbeans.org/
@@ -37,6 +37,9 @@ NO_REGRESS=		Yes
 WRKDIST=		${WRKDIR}/netbeans
 
 NB=			${PREFIX}/netbeans
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/platform11/lib/nbexec
 
 do-install:
 	${INSTALL_DATA_DIR} ${NB}

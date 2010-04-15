@@ -1,6 +1,24 @@
-$OpenBSD: patch-platform11_lib_nbexec,v 1.1 2010/04/03 11:42:06 landry Exp $
---- platform11/lib/nbexec.orig	Tue Dec 29 15:24:00 2009
-+++ platform11/lib/nbexec	Tue Dec 29 15:24:36 2009
+$OpenBSD: patch-platform11_lib_nbexec,v 1.2 2010/04/15 06:56:00 landry Exp $
+--- platform11/lib/nbexec.orig	Sat Dec  5 01:15:20 2009
++++ platform11/lib/nbexec	Mon Apr 12 19:54:09 2010
+@@ -351,7 +351,7 @@ detect_system_proxy () {
+ }
+ 
+ detect_gnome_proxy () {
+-    gconftool=/usr/bin/gconftool-2
++    gconftool=${LOCALBASE}/bin/gconftool-2
+     if [ -x  $gconftool ] ; then
+         proxy_mode=`$gconftool --get /system/proxy/mode 2>/dev/null`
+         if [ "$proxy_mode" = "manual" ] ; then
+@@ -360,7 +360,7 @@ detect_gnome_proxy () {
+             http_proxy_tmp=$http_proxy_host:$http_proxy_port
+             http_non_proxy_hosts=`$gconftool --get /system/http_proxy/ignore_hosts 2>/dev/null`
+             if [ $? ] ; then
+-                http_non_proxy_hosts=`echo $http_non_proxy_hosts | /bin/sed 's/\]//'`
++                http_non_proxy_hosts=`echo $http_non_proxy_hosts | /usr/bin/sed 's/\]//'`
+             fi
+             socks_proxy_host=`$gconftool --get /system/proxy/socks_host 2>/dev/null`
+             socks_proxy_port=`$gconftool --get /system/proxy/socks_port 2>/dev/null`
 @@ -383,18 +383,18 @@ detect_gnome_proxy () {
  detect_kde_proxy () {
      kioslaverc="${HOME}/.kde/share/config/kioslaverc"
@@ -10,13 +28,15 @@ $OpenBSD: patch-platform11_lib_nbexec,v 1.1 2010/04/03 11:42:06 landry Exp $
 +        if /usr/bin/grep -q 'ProxyType=1' "$kioslaverc" ; then
 +            http_proxy_tmp=`/usr/bin/grep 'httpProxy=http://' "$kioslaverc"`
              if [ $? ] ; then
-                 http_proxy_tmp=`echo $http_proxy_tmp | /bin/sed 's/httpProxy=http:\/\///'`
+-                http_proxy_tmp=`echo $http_proxy_tmp | /bin/sed 's/httpProxy=http:\/\///'`
++                http_proxy_tmp=`echo $http_proxy_tmp | /usr/bin/sed 's/httpProxy=http:\/\///'`
                  return 0
              fi
 -            http_non_proxy_hosts=`/bin/grep 'NoProxyFor=' "$kioslaverc"`
 +            http_non_proxy_hosts=`/usr/bin/grep 'NoProxyFor=' "$kioslaverc"`
              if [ $? ] ; then
-                 http_non_proxy_hosts=`echo $http_non_proxy_hosts | /bin/sed 's/NoProxyFor=//'`
+-                http_non_proxy_hosts=`echo $http_non_proxy_hosts | /bin/sed 's/NoProxyFor=//'`
++                http_non_proxy_hosts=`echo $http_non_proxy_hosts | /usr/bin/sed 's/NoProxyFor=//'`
              fi
          else
 -            if /bin/grep -q 'ProxyType=0' "$kioslaverc" ; then
