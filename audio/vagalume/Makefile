@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/03/20 16:57:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/15 17:31:35 jasper Exp $
 
 COMMENT=		last.fm client for GNOME
 
 V=			0.8.2
 DISTNAME=		vagalume_$V.orig
-PKGNAME=		vagalume-$V
+PKGNAME=		vagalume-$Vp0
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://vagalume.igalia.com/
@@ -27,7 +27,8 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += ssl xcb xml2 z
 
-MODULES+=		devel/gettext
+MODULES+=		devel/gettext \
+			textproc/intltool
 
 RUN_DEPENDS+=		::devel/desktop-file-utils \
 			::multimedia/gstreamer-0.10/plugins-good
