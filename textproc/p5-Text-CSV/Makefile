@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/12/28 09:31:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/15 09:09:49 stephan Exp $
 
 COMMENT=	comma-separated values manipulation routines
 
 MODULES=	cpan
-DISTNAME=	Text-CSV-1.16
+DISTNAME=	Text-CSV-1.17
 CATEGORIES=	textproc
 
 # Perl
