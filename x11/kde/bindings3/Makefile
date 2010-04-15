@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.59 2010/01/27 21:43:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2010/04/15 18:35:02 jasper Exp $
 
-.if ${MACHINE_ARCH} == "powerpc"
-BROKEN =			gcc spins on x_20.cpp
-.endif
+BROKEN-powerpc =	gcc spins on x_20.cpp
 
 COMMENT = 		K Desktop Environment, extra language support
 CATEGORIES =		x11 x11/kde devel
