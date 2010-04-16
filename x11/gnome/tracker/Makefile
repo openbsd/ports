@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2010/04/13 14:33:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/04/16 06:36:50 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
+GNOME_PROJECT=	tracker
+GNOME_VERSION=	0.8.2
+
 # there is already audio/tracker, so this port has to live
 # as tracker-search.
-GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.8.1
-PKGNAME=	tracker-search-${VERSION}p0
+PKGNAME=	tracker-search-${VERSION}
 
 EVO_VERSION=	2.28
 SUBST_VARS=	EVO_VERSION
