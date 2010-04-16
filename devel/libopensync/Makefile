@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/15 20:39:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2010/04/16 17:36:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,15 +6,13 @@ COMMENT=	data synchronization framework
 
 V=		0.36
 DISTNAME=	libopensync-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 SHARED_LIBS +=	opensync 1.1
 CATEGORIES=	devel comms
 
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.opensync.org/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
