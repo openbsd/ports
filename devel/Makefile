@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.785 2010/04/14 06:35:14 stephan Exp $
+# $OpenBSD: Makefile,v 1.786 2010/04/16 07:48:33 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -136,7 +136,6 @@
      SUBDIR += iso-codes
      SUBDIR += itcl
      SUBDIR += ivy
-     SUBDIR += jad
      SUBDIR += jakarta-servletapi
      SUBDIR += jam
      SUBDIR += jdk

@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/11/09 14:48:25 alek Exp $
-bin/jad
-share/doc/jad/
-share/doc/jad/Readme.txt
-@sysctl kern.emul.aout=1
