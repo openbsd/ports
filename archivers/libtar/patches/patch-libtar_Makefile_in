@@ -1,0 +1,40 @@
+$OpenBSD: patch-libtar_Makefile_in,v 1.1.1.1 2010/04/16 13:10:47 ajacoutot Exp $
+
+Enable shared library, from pkgsrc.
+
+--- libtar/Makefile.in.orig	Sun Dec 15 19:02:30 2002
++++ libtar/Makefile.in	Thu Apr 15 17:58:09 2010
+@@ -45,7 +45,7 @@ LIBTAR_HDRS	= ../config.h \
+ 		  ${top_srcdir}/compat/compat.h \
+ 		  ${top_srcdir}/lib/libtar.h \
+ 		  ../listhash/libtar_listhash.h
+-LIBTAR_LIBS	= ../lib/libtar.a
++LIBTAR_LIBS	= ../lib/libtar.la
+ ALL		= libtar
+ 
+ 
+@@ -54,12 +54,15 @@ all: ${ALL}
+ .PHONY: clean distclean install
+ 
+ libtar: ${LIBTAR_OBJS} ${LIBTAR_LIBS} ${LIBTAR_HDRS}
+-	${CC} ${CFLAGS} ${LDFLAGS} -o libtar libtar.o ${LIBTAR_LIBS} ${LIBS}
++	${LIBTOOL} --mode=link --tag=CC \
++		${CC} ${CFLAGS} ${LDFLAGS} -o libtar libtar.lo \
++		${LIBTAR_LIBS} ${LIBS}
+ 
+ ${LIBTAR_OBJS}: ${LIBTAR_HDRS}
+ 
+ .c.o:
+-	${CC} ${CFLAGS} ${CPPFLAGS} -c -o $@ $<
++	${LIBTOOL} --mode=compile \
++		${CC} ${CFLAGS} ${CPPFLAGS} -c -o ${@:.o=.lo} $< -prefer-pic
+ 
+ clean:
+ 	rm -f *~ *.o ${ALL} core
+@@ -69,5 +72,5 @@ distclean: clean
+ 
+ install: ${ALL}
+ 	${MKDIR} ${DESTDIR}${bindir}
+-	${INSTALL_PROGRAM} libtar ${DESTDIR}${bindir}
++	${LIBTOOL} --mode=install ${INSTALL_PROGRAM} libtar ${DESTDIR}${bindir}
+ 

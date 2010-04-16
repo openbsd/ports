@@ -1,0 +1,7 @@
+libtar is a library for manipulating tar files from within C programs.
+Here are some of its features:
+
+  * Handles both POSIX tar file format and the GNU extensions.
+  * API provides functions for easy use, such as tar_extract_all().
+  * Also provides functions for more granular use, such as 
+    tar_append_regfile().

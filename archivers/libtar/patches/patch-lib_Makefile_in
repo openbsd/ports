@@ -1,0 +1,35 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2010/04/16 13:10:47 ajacoutot Exp $
+
+Enable shared library, from pkgsrc.
+
+--- lib/Makefile.in.orig	Sun Dec 15 19:02:30 2002
++++ lib/Makefile.in	Thu Apr 15 17:58:07 2010
+@@ -69,13 +69,15 @@ all: ${ALL}
+ .PHONY: clean distclean install
+ 
+ libtar.a: ${LIBTAR_OBJS} ${LIBOBJS}
+-	${AR} rc libtar.a ${LIBTAR_OBJS} ${LIBOBJS}
+-	${RANLIB} libtar.a
++	${LIBTOOL} --mode=link --tag=CC \
++		${CC} -o libtar.la ${LIBTAR_OBJS:.o=.lo} ${LIBOBJS:.o=.lo} \
++		${LDFLAGS} -rpath ${PREFIX}/lib -version-info 1:2
+ 
+ ${LIBTAR_OBJS}: ${LIBTAR_HDRS}
+ 
+ .c.o:
+-	${CC} ${CFLAGS} ${CPPFLAGS} -c -o $@ $<
++	${LIBTOOL} --mode=compile --tag=CC \
++		${CC} ${CFLAGS} ${CPPFLAGS} -c -o ${@:.o=.lo} $< -prefer-pic
+ 
+ clean:
+ 	rm -f *~ *.o ${ALL} core
+@@ -85,7 +87,8 @@ distclean: clean
+ 
+ install: ${ALL}
+ 	${MKDIR} ${DESTDIR}${libdir}
+-	${INSTALL_DATA} libtar.a ${DESTDIR}${libdir}
++	${LIBTOOL} --mode=install \
++		${INSTALL_DATA} libtar.la ${DESTDIR}${libdir}
+ 	${MKDIR} ${DESTDIR}${includedir}
+ 	${BSD_INSTALL_DATA} ${srcdir}/libtar.h ${DESTDIR}${includedir}
+ 	${BSD_INSTALL_DATA} ../listhash/libtar_listhash.h ${DESTDIR}${includedir}
