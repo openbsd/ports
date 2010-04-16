@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.5 2010/03/29 09:34:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.6 2010/04/16 12:37:40 ajacoutot Exp $
 @option no-default-conflict
 @conflict libsigc++-docs-2.*
 share/devhelp/
@@ -341,6 +341,7 @@ share/doc/libsigc++-${V}/reference/html/group__lambdas.html
 share/doc/libsigc++-${V}/reference/html/group__mem__fun.html
 share/doc/libsigc++-${V}/reference/html/group__ptr__fun.html
 share/doc/libsigc++-${V}/reference/html/group__retype.html
+share/doc/libsigc++-${V}/reference/html/group__sigcfunctors.html
 share/doc/libsigc++-${V}/reference/html/group__signal.html
 share/doc/libsigc++-${V}/reference/html/group__slot.html
 share/doc/libsigc++-${V}/reference/html/hierarchy.html
