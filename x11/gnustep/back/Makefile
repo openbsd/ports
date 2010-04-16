@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2009/08/11 08:42:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/16 07:49:26 jasper Exp $
 
 COMMENT=	GNUstep gui backend
 
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=--enable-graphics=xlib \
 		--with-name=back
 WANTLIB+=	Xau Xdmcp Xft Xrender expat fontconfig
 .else
-BROKEN=		choose one backend FLAVOR: cairo, libart or xlib
+ERRORS+=	choose one backend FLAVOR: cairo, libart or xlib
 .endif
 		
 .include <bsd.port.mk>

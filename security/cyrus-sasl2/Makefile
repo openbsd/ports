@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2009/05/16 09:09:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2010/04/16 07:49:26 jasper Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=--without-ldap
 
 .if ${FLAVOR:L:Mmysql}
 .if ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite}
-BROKEN=		${BRKFLAVORMSG}
+ERRORS+=	${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
 LIB_DEPENDS+=	lib/mysql/mysqlclient.>=10::databases/mysql
@@ -90,7 +90,7 @@ CONFIGURE_ARGS+=--enable-sql \
 
 .if ${FLAVOR:L:Mpgsql}
 .if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Msqlite}
-BROKEN=		${BRKFLAVORMSG}
+ERRORS+=	${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
 LIB_DEPENDS+=	pq.>=3:postgresql-client-*:databases/postgresql
@@ -103,7 +103,7 @@ CFLAGS+=	-I${LOCALBASE}/include/postgresql
 
 .if ${FLAVOR:L:Msqlite}
 .if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql}
-BROKEN=		${BRKFLAVORMSG}
+ERRORS+=		${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
 LIB_DEPENDS+=	sqlite.>=8.6::databases/sqlite
