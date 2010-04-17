@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2010/03/21 11:01:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/04/17 05:45:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.8.1
+GNOME_VERSION=	0.8.2
 
 SHARED_LIBS +=	goffice-0.8          0.0      # .8.0
 CATEGORIES=	devel
@@ -22,17 +22,19 @@ WANTLIB += dbus-1 dbus-glib-1 expat fontconfig freetype gconf-2
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xml2
-WANTLIB += z
+WANTLIB += z xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
 			x11/gnome
+
+USE_X11=		Yes
 
 # XXX: Although we don't like to gsf-gnome, we depend on it's dependencies.
 LIB_DEPENDS=		gsf-1.>=114:libgsf-gnome-*:devel/libgsf,-gnome
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-gtk-doc=no
 

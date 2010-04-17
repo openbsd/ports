@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/03/21 11:01:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/17 05:45:14 ajacoutot Exp $
 include/libgoffice-0.8/
 include/libgoffice-0.8/goffice/
 include/libgoffice-0.8/goffice/app/
@@ -29,6 +29,7 @@ include/libgoffice-0.8/goffice/canvas/goc-graph.h
 include/libgoffice-0.8/goffice/canvas/goc-group.h
 include/libgoffice-0.8/goffice/canvas/goc-item.h
 include/libgoffice-0.8/goffice/canvas/goc-line.h
+include/libgoffice-0.8/goffice/canvas/goc-path.h
 include/libgoffice-0.8/goffice/canvas/goc-pixbuf.h
 include/libgoffice-0.8/goffice/canvas/goc-polygon.h
 include/libgoffice-0.8/goffice/canvas/goc-polyline.h
@@ -305,6 +306,7 @@ share/gtk-doc/html/goffice/GOSearchReplace.html
 share/gtk-doc/html/goffice/GOSelector.html
 share/gtk-doc/html/goffice/GOStyle.html
 share/gtk-doc/html/goffice/GOStyledObject.html
+share/gtk-doc/html/goffice/GocArc.html
 share/gtk-doc/html/goffice/GocCanvas.html
 share/gtk-doc/html/goffice/GocCircle.html
 share/gtk-doc/html/goffice/GocEllipse.html
