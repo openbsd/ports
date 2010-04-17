@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.5 2010/04/17 14:37:02 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.6 2010/04/17 14:48:15 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -111,6 +111,13 @@ sub create_view_info
 {
 }
 
+sub map_columns
+{
+	my ($self, $mapper, $o, @columns) = @_;
+	$mapper .= '_schema';
+	return grep {defined $_} (map {$_->$mapper($o)} @columns);
+}
+
 sub make_table
 {
 	my ($self, $class, $constraint, @columns) = @_;
@@ -121,7 +128,7 @@ sub make_table
 	for my $c (@columns) {
 		$c->set_vartype($class) unless defined $c->{vartype};
 	}
-	my @l = map {$_->normal_schema($self)} @columns;
+	my @l = $self->map_columns('normal', $self, @columns);
 	push(@l, $constraint) if defined $constraint;
 	$self->new_table($class->table, @l);
 }
@@ -210,7 +217,7 @@ sub create_ports_table
 
 	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
 	unshift(@columns, PathColumn->new);
-	my @l = map {$_->normal_schema($self)} @columns;
+	my @l = $self->map_columns('normal', $self, @columns);
 	$self->new_table("Ports", @l, "UNIQUE(FULLPKGPATH)");
 }
 
@@ -291,8 +298,8 @@ sub create_view
 
 	unshift(@columns, PathColumn->new);
 	my $name = "_$table";
-	my @l = map {$_->view_schema($table) } @columns;
-	my @j = map {$_->join_schema($table)} @columns;
+	my @l = $self->map_columns('view', $table, @columns);
+	my @j = $self->map_columns('join', $table, @columns);
 	my $v = "CREATE VIEW $name AS SELECT ".join(", ", @l). " FROM ".$table.' '.join(' ', @j);
 	$self->db->do("DROP VIEW IF EXISTS $name");
 	print "$v\n" if $self->{verbose};

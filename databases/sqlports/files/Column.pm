@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.3 2010/04/17 13:06:49 espie Exp $
+# $OpenBSD: Column.pm,v 1.4 2010/04/17 14:48:15 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -57,7 +57,7 @@ sub view_schema
 
 sub join_schema
 {
-	return "";
+	return undef;
 }
 
 package TextColumn;
