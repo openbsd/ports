@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2010/04/17 05:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/04/17 06:57:05 ajacoutot Exp $
+
+# XXX on goffice version change,
+# update API_VERSION in math/gnumeric
 
 SHARED_ONLY=	Yes
 
