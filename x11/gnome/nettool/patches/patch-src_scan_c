@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_scan_c,v 1.1 2010/04/17 10:01:39 ajacoutot Exp $
+--- src/scan.c.orig	Sat Apr 17 10:26:17 2010
++++ src/scan.c	Sat Apr 17 10:26:39 2010
+@@ -67,7 +67,6 @@ scan_do (Netinfo * netinfo)
+ 	GIOChannel *channel;
+ 	GIOChannel *channel2;
+ 	gint pfd[2];
+-	gint pid;
+ 	gchar buf[SIZE];
+ 	gchar *service_name = NULL;
+ 	gint ip_version, pf;
+@@ -126,12 +125,12 @@ scan_do (Netinfo * netinfo)
+ 
+         netinfo_toggle_state (netinfo, INACTIVE, NULL);
+ 
+-	if ((pid = fork ()) < 0) {
++	if ((childpid = fork ()) < 0) {
+ 		perror ("fork failed");
+ 		return;
+ 	}
+ 
+-	if (pid == 0) {
++	if (childpid == 0) {
+ 		/* child */
+ 		close (pfd[0]);
+ 		for (i = start_port; i <= end_port; i++) {
+@@ -183,7 +182,7 @@ scan_do (Netinfo * netinfo)
+ 		/* parent */
+ 		close (pfd[1]);
+ 
+-		netinfo->child_pid = pid;
++		netinfo->child_pid = childpid;
+ 		netinfo->pipe_out = pfd[0];
+ 
+ 		channel2 = g_io_channel_unix_new (pfd[0]);

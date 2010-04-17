@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_utils_h,v 1.1 2010/04/17 10:01:39 ajacoutot Exp $
+--- src/utils.h.orig	Sat Apr 17 10:25:25 2010
++++ src/utils.h	Sat Apr 17 10:26:07 2010
+@@ -29,6 +29,8 @@
+ #  include <config.h>
+ #endif
+ 
++gint childpid;
++
+ #if (GLIB_MINOR_VERSION < 2)
+ 
+ #  define _g_vsprintf  vsprintf
