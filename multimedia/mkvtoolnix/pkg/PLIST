@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/05 20:27:13 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/17 13:14:05 benoit Exp $
 @bin bin/mkvextract
 @bin bin/mkvinfo
 @bin bin/mkvmerge
@@ -17,36 +17,8 @@ man/zh_CN.po/mkvextract.1
 man/zh_CN.po/mkvinfo.1
 man/zh_CN.po/mkvmerge.1
 man/zh_CN.po/mkvpropedit.1
-share/locale/
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/mkvtoolnix.mo
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
-share/mkvtoolnix/
-share/mkvtoolnix/images/
-share/mkvtoolnix/images/addingremovingattachments.gif
-share/mkvtoolnix/images/addremovefiles.gif
-share/mkvtoolnix/images/attachmentoptions.gif
-share/mkvtoolnix/images/audiotrackoptions.gif
-share/mkvtoolnix/images/chaptereditor.gif
-share/mkvtoolnix/images/generaltrackoptions.gif
-share/mkvtoolnix/images/jobmanager.gif
-share/mkvtoolnix/images/movietitle.gif
-share/mkvtoolnix/images/muxingwindow.gif
-share/mkvtoolnix/images/selectmkvmergeexecutable.gif
-share/mkvtoolnix/images/splitting.gif
-share/mkvtoolnix/images/textsubtitlestrackoptions.gif
-share/mkvtoolnix/images/trackselection.gif
-share/mkvtoolnix/images/videotrackoptions.gif
-share/mkvtoolnix/mkvmerge-gui.hhc
-share/mkvtoolnix/mkvmerge-gui.hhp
-share/mkvtoolnix/mkvmerge-gui.html
 !%%no_x11%%

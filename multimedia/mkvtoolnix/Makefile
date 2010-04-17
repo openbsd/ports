@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/04/05 20:27:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2010/04/17 13:14:01 benoit Exp $
 
 COMMENT =	create, alter and inspect Matroska files
 
 DISTNAME =	mkvtoolnix-3.2.0
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	multimedia x11
 
 HOMEPAGE =	http://www.bunkus.org/videotools/mkvtoolnix/
@@ -15,13 +16,14 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	c ebml expat m ogg stdc++ z
+WANTLIB =	c ebml expat m ogg stdc++ z pthread
 
 MASTER_SITES =	${HOMEPAGE}/sources/
 
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES =	converters/libiconv
+MODULES +=	converters/libiconv
+MODULES +=	devel/gettext
 
 LIB_DEPENDS =	FLAC.>=7::audio/flac \
 		bz2.>=10::archivers/bzip2 \
@@ -29,15 +31,14 @@ LIB_DEPENDS =	FLAC.>=7::audio/flac \
 		matroska:libmatroska->=0.8.1:multimedia/libmatroska \
 		vorbis.>=5::audio/libvorbis \
 		magic.>=1::devel/libmagic \
-		boost_regex-mt.>=1.1,boost_filesystem-mt.>=1.1::devel/boost
+		boost_system-mt.>=1.1,boost_regex-mt.>=1.1,boost_filesystem-mt.>=1.1::devel/boost
 
 MAKE_FLAGS +=	V=1
 
 USE_GMAKE =	Yes
-USE_X11 =	Yes
 
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS = --enable-lzo \
+CONFIGURE_ARGS += --enable-lzo \
 		--enable-bz2 \
 		--disable-qt \
 		--with-flac \
@@ -53,12 +54,11 @@ FLAVORS =	no_x11
 FLAVOR ?=
 
 .if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS += --disable-gui
+CONFIGURE_ARGS += --disable-gui --disable-wxwidgets
 .else
-WANTLIB +=	pthread
-LIB_DEPENDS +=	wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc,wx_gtk2_aui,wx_gtk2_richtext:wxWidgets-gtk2->=2.6.3:x11/wxWidgets
-CONFIGURE_ARGS += --enable-gui \
-		--enable-wxwidgets
+USE_X11 =	Yes
+LIB_DEPENDS +=	wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_xrc,wx_gtk2_richtext:wxWidgets-gtk2->=2.8.10:x11/wxWidgets
+CONFIGURE_ARGS += --enable-gui --enable-wxwidgets
 .endif
 
 NO_REGRESS =    Yes
@@ -73,12 +73,16 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/man/ja/$i.1 ${PREFIX}/man/ja.po
 	${INSTALL_DATA} ${WRKSRC}/doc/man/zh_CN/$i.1 ${PREFIX}/man/zh_CN.po	
 .endfor
+.if !${FLAVOR:L:Mno_x11}
+	${INSTALL_PROGRAM} ${WRKBUILD}/src/mmg/mmg ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/doc/man/mmg.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mkvtoolnix/images
+	${INSTALL_DATA} ${WRKSRC}/doc/guide/en/mkvmerge-gui.* ${PREFIX}/share/mkvtoolnix
+	${INSTALL_DATA} ${WRKSRC}/doc/guide/en/images/*.gif ${PREFIX}/share/mkvtoolnix/images
+.endif
 .for l in de ja zh_CN zh_TW
 	${INSTALL_DATA_DIR} ${PREFIX}/share/locale/$l/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/$l.mo ${PREFIX}/share/locale/$l/LC_MESSAGES/mkvtoolnix.mo
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/mkvtoolnix/images
-	${INSTALL_DATA} ${WRKSRC}/doc/guide/en/mkvmerge-gui.* ${PREFIX}/share/mkvtoolnix
-	${INSTALL_DATA} ${WRKSRC}/doc/guide/en/images/*.gif ${PREFIX}/share/mkvtoolnix/images
 
 .include <bsd.port.mk>

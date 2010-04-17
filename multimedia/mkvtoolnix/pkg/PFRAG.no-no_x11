@@ -1,3 +1,23 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2008/09/09 07:27:49 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.3 2010/04/17 13:14:05 benoit Exp $
 @bin bin/mmg
 @man man/man1/mmg.1
+share/mkvtoolnix/
+share/mkvtoolnix/images/
+share/mkvtoolnix/images/addingremovingattachments.gif
+share/mkvtoolnix/images/addremovefiles.gif
+share/mkvtoolnix/images/attachmentoptions.gif
+share/mkvtoolnix/images/audiotrackoptions.gif
+share/mkvtoolnix/images/chaptereditor.gif
+share/mkvtoolnix/images/generaltrackoptions.gif
+share/mkvtoolnix/images/jobmanager.gif
+share/mkvtoolnix/images/movietitle.gif
+share/mkvtoolnix/images/muxingwindow.gif
+share/mkvtoolnix/images/selectmkvmergeexecutable.gif
+share/mkvtoolnix/images/splitting.gif
+share/mkvtoolnix/images/textsubtitlestrackoptions.gif
+share/mkvtoolnix/images/trackselection.gif
+share/mkvtoolnix/images/videotrackoptions.gif
+share/mkvtoolnix/mkvmerge-gui.hhc
+share/mkvtoolnix/mkvmerge-gui.hhk
+share/mkvtoolnix/mkvmerge-gui.hhp
+share/mkvtoolnix/mkvmerge-gui.html
