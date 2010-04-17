@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.454 2010/04/08 08:08:08 stephan Exp $
+# $OpenBSD: Makefile,v 1.455 2010/04/17 11:51:41 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -109,6 +109,7 @@
      SUBDIR += mod_security
      SUBDIR += mod_text2html
      SUBDIR += moinmoin
+     SUBDIR += mollify
      SUBDIR += moodle
      SUBDIR += mozilla-firefox
      SUBDIR += mozplugger
