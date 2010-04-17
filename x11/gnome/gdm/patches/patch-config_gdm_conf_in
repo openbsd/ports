@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_gdm_conf_in,v 1.8 2008/11/21 17:43:02 jasper Exp $
---- config/gdm.conf.in.orig	Tue Nov 18 22:53:51 2008
-+++ config/gdm.conf.in	Tue Nov 18 22:54:45 2008
+$OpenBSD: patch-config_gdm_conf_in,v 1.9 2010/04/17 05:41:02 ajacoutot Exp $
+--- config/gdm.conf.in.orig	Thu Mar 19 05:59:27 2009
++++ config/gdm.conf.in	Sat Apr 17 07:39:30 2010
 @@ -99,8 +99,8 @@ TimedLoginDelay=30
  # User and group used for running GDM GUI applications.  By default this is set
  # to user "gdm" and group "gdm".  This user/group should have very limited
@@ -20,6 +20,15 @@ $OpenBSD: patch-config_gdm_conf_in,v 1.8 2008/11/21 17:43:02 jasper Exp $
  # Should double login be treated with a warning (and possibility to change VT's
  # on Linux and FreeBSD systems for console logins)
  #DoubleLoginWarning=true
+@@ -237,7 +238,7 @@ XnestUnscaledFontPath=@X_XNEST_UNSCALED_FONTPATH@
+ 
+ # How long gdm should wait before it assumes a started Xserver is defunct and
+ # kills it.  10 seconds should be long enough for X, but Xgl may need 20 or 25. 
+-GdmXserverTimeout=10
++GdmXserverTimeout=30
+ 
+ [security]
+ # Allow root to login.  It makes sense to turn this off for kiosk use, when
 @@ -397,7 +398,7 @@ Browser=false
  # User ID's less than the MinimalUID value will not be included in the face
  # browser or in the gdmselection list for Automatic/Timed login.  They will not
