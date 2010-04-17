@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.20 2010/04/13 10:23:53 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.21 2010/04/17 09:33:18 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -33,14 +33,6 @@ use DBI;
 
 our ($opt_v);
 
-sub words($)
-{
-	my $v = shift;
-	$v =~ s/^\s+//;
-	$v =~ s/\s+$//;
-	return split(/\s+/, $v);
-}
-
 getopts('v');
 my $dbname;
 if (@ARGV > 0) {
@@ -48,13 +40,13 @@ if (@ARGV > 0) {
 } else {
 	$dbname = 'sqlports';
 }
-my @inserters;
+my $inserter = InserterList->new;
 
 my $db =DBI->connect("dbi:SQLite:dbname=$dbname", '', '', {AutoCommit => 0});
 my $db2 =DBI->connect("dbi:SQLite:dbname=$dbname-compact", '', '', 
     {AutoCommit => 0});
-push(@inserters, NormalInserter->new($db, 1000));
-push(@inserters, CompactInserter->new($db2, 1000));
+$inserter->add(NormalInserter->new($db, 1000, $opt_v), 
+    CompactInserter->new($db2, 1000, $opt_v));
 
 
 my $vars = {
@@ -118,12 +110,7 @@ my $vars = {
     WANTLIB => 'WantlibVar',
 };
 
-for my $inserter (@inserters) {
-	$inserter->create_tables($vars);
-	if ($opt_v) {
-		print "-"x50, "\n";
-	}
-}
+$inserter->create_tables($vars);
 
 my $lastkey;
 my $unknown = {};
@@ -144,28 +131,19 @@ while (<STDIN>) {
 
 	if (!(defined $lastkey) || $key ne $lastkey) {
 		if (defined $lastkey) {
-			for my $inserter (@inserters) {
-				$inserter->finish_port;
-			}
+			$inserter->finish_port;
 		}
-		for my $inserter (@inserters) {
-			$inserter->set_newkey($key);
-		}
+		$inserter->set_newkey($key);
 		$lastkey = $key;
 	}
-	if (!defined $vars->{$var}) {
-		$unknown->{$var} //= $key;
+	if (defined $vars->{$var}) {
+		$inserter->add_var($vars->{$var}->new($var, $value));
 	} else {
-		my $v = $vars->{$var}->new($var, $value);
-		for my $inserter (@inserters) {
-			$v->add($inserter);
-		}
+		$unknown->{$var} //= $key;
     	}
 }
-for my $inserter (@inserters) {
-	$inserter->finish_port;
-	$inserter->db->commit;
-}
+$inserter->finish_port;
+$inserter->commit_to_db;
 
 while (my ($k, $v) = each %$unknown) {
 	print STDERR "Unknown variable $k in $v\n";

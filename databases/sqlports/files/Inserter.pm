@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.2 2010/04/13 10:56:42 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.3 2010/04/17 09:33:18 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -18,18 +18,90 @@
 use strict;
 use warnings;
 
+package InserterList;
+sub new
+{
+	my $class = shift;
+	bless [], $class;
+}
+
+sub add
+{
+	my $self = shift;
+	push(@$self, @_);
+}
+
+sub AUTOLOAD
+{
+	our $AUTOLOAD;
+	my $fullsub = $AUTOLOAD;
+	(my $sub = $fullsub) =~ s/.*:://o;
+	return if $sub eq 'DESTROY'; # special case
+	# verify it makes sense
+	if (NormalInserter->can($sub)) {
+		no strict "refs";
+		# create the sub to avoid regenerating further calls
+		*$fullsub = sub {
+			my $self = shift;
+			$self->visit($sub, @_);
+		};
+		# and jump to it
+		goto &$fullsub;
+	} else {
+		die "Can't call $sub on ", __PACKAGE__;
+	}
+}
+
+sub visit
+{
+	my ($self, $method, @r) = @_;
+	for my $i (@$self) {
+		$i->$method(@r);
+	}
+}
+
 package AbstractInserter;
 # this is the object to use to put stuff into the db...
 sub new
 {
-	my ($class, $db, $i) = @_;
+	my ($class, $db, $i, $verbose) = @_;
 	bless {
 		db => $db, 
 		transaction => 0, 
 		threshold => $i, 
 		vars => {},
-		tables_created => {}
+		tables_created => {},
+		verbose => $verbose,
 	}, $class;
+}
+
+sub create_tables
+{
+	my ($self, $vars) = @_;
+
+	$self->create_path_table;
+	while (my ($name, $varclass) = each %$vars) {
+		$self->handle_column($varclass->column($name));
+		$varclass->create_table($self);
+	}
+
+	$self->create_ports_table;
+	$self->prepare_normal_inserter('Ports', @{$self->{varlist}});
+	$self->prepare_normal_inserter('Paths', 'PKGPATH');
+	$self->create_view_info;
+	$self->db->commit;
+	print '-'x50, "\n" if $self->{verbose};
+}
+
+sub handle_column
+{
+	my ($self, $column) = @_;
+	push(@{$self->{varlist}}, $column->{name});
+	push(@{$self->{columnlist}}, $column);
+}
+
+sub create_view_info
+{
 }
 
 sub make_table
@@ -78,7 +150,8 @@ sub new_table
 	return if defined $self->{tables_created}->{$name};
 
 	$self->db->do("DROP TABLE IF EXISTS $name");
-	print "CREATE TABLE $name (".join(', ', @cols).")\n" if $main::opt_v;
+	print "CREATE TABLE $name (".join(', ', @cols).")\n" 
+	    if $self->{verbose};
 	$self->db->do("CREATE TABLE $name (".join(', ', @cols).")");
 	$self->{tables_created}->{$name} = 1;
 }
@@ -122,17 +195,14 @@ sub add_to_port
 	$self->{vars}->{$var} = $value;
 }
 
-sub create_other_tables
+sub create_ports_table
 {
 	my $self = shift;
 
-	$self->db->commit;
 	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
 	unshift(@columns, PathColumn->new);
 	my @l = map {$_->normal_schema($self)} @columns;
 	$self->new_table("Ports", @l, "UNIQUE(FULLPKGPATH)");
-	$self->prepare_normal_inserter('Ports', @{$self->{varlist}});
-	$self->prepare_normal_inserter('Paths', 'PKGPATH');
 }
 
 sub ref
@@ -146,6 +216,18 @@ sub insert
 	my $table = shift;
 	$self->{insert}->{$table}->execute(@_);
 	$self->insert_done;
+}
+
+sub add_var
+{
+	my ($self, $v) = @_;
+	$v->add($self);
+}
+
+sub commit_to_db
+{
+	my $self = shift;
+	$self->db->commit;
 }
 
 package CompactInserter;
@@ -204,7 +286,7 @@ sub create_view
 	my @j = map {$_->join_schema($table)} @columns;
 	my $v = "CREATE VIEW $name AS SELECT ".join(", ", @l). " FROM ".$table.' '.join(' ', @j);
 	$self->db->do("DROP VIEW IF EXISTS $name");
-	print "$v\n" if $main::opt_v;
+	print "$v\n" if $self->{verbose};
 	$self->db->do($v);
 }
 
@@ -218,24 +300,25 @@ sub make_table
 	$self->create_view($class->table, @columns);
 }
 
-sub create_tables
+sub create_path_table
 {
-	my ($self, $vars) = @_;
-	# create the various tables, dropping old versions
-
+	my $self = shift;
 	$self->new_table("Paths", "ID INTEGER PRIMARY KEY", 
 	    "FULLPKGPATH TEXT NOT NULL UNIQUE", "PKGPATH INTEGER");
 
-	while (my ($name, $class) = each %$vars) {
-		my $c = $class->column($name);
-		if (!defined( $class->table )) {
-			push(@{$self->{varlist}}, $name);
-			push(@{$self->{columnlist}}, $c);
-		}
-		$class->create_table($self);
-	}
+}
 
-	$self->create_other_tables;
+sub handle_column
+{
+	my ($self, $column) = @_;
+	if (!defined($column->{vartype}->table)) {
+		$self->SUPER::handle_column($column);
+	}
+}
+
+sub create_view_info
+{
+	my $self = shift;
 	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
 	$self->create_view("Ports", @columns);
 	$self->{find_pathkey} =  
@@ -317,21 +400,11 @@ sub convert_depends
 	return $c->{$value};
 }
 
-sub create_tables
+sub create_path_table
 {
-	my ($self, $vars) = @_;
-	# create the various tables, dropping old versions
-
+	my $self = shift;
 	$self->new_table("Paths", "FULLPKGPATH TEXT NOT NULL PRIMARY KEY", 
 	    "PKGPATH TEXT NOT NULL");
-	while (my ($name, $class) = each %$vars) {
-		push(@{$self->{varlist}}, $name);
-		push(@{$self->{columnlist}}, $class->column($name));
-		$class->create_table($self);
-	}
-
-	$self->create_other_tables;
-
 }
 
 sub pathref
