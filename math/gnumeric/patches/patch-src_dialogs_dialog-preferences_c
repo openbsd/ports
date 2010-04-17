@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_dialogs_dialog-preferences_c,v 1.1 2010/03/21 11:01:30 jasper Exp $
+$OpenBSD: patch-src_dialogs_dialog-preferences_c,v 1.2 2010/04/17 06:56:05 ajacoutot Exp $
 
 gcc3 doesn't like function names that end with a numeral right after
 alphabetical characters.
 
---- src/dialogs/dialog-preferences.c.orig	Mon Feb 15 20:11:08 2010
-+++ src/dialogs/dialog-preferences.c	Mon Feb 15 20:11:37 2010
-@@ -349,7 +349,7 @@ int_pref_create_widget (GOConfNode *node, GtkWidget *t
+--- src/dialogs/dialog-preferences.c.orig	Fri Mar 26 23:38:55 2010
++++ src/dialogs/dialog-preferences.c	Sat Apr 17 07:46:19 2010
+@@ -377,7 +377,7 @@ int_pref_create_widget (GOConfNode *node, GtkWidget *t
  }
  
  static gboolean
@@ -14,7 +14,7 @@ alphabetical characters.
  {
  	return i > 0 && (i & (i - 1)) == 0;
  }
-@@ -359,9 +359,9 @@ cb_power_of_2 (GtkAdjustment *adj)
+@@ -387,9 +387,9 @@ cb_power_of_2 (GtkAdjustment *adj)
  {
  	int val = (int)adj->value;
  

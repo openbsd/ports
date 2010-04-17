@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2010/03/26 13:25:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2010/04/17 06:56:05 ajacoutot Exp $
 %%SHARED%%
 bin/gnumeric
 @bin bin/gnumeric-${VERSION}
@@ -988,6 +988,8 @@ share/locale/rw/LC_MESSAGES/gnumeric-functions.mo
 share/locale/rw/LC_MESSAGES/gnumeric.mo
 share/locale/sk/LC_MESSAGES/gnumeric-functions.mo
 share/locale/sk/LC_MESSAGES/gnumeric.mo
+share/locale/sl/LC_MESSAGES/gnumeric-functions.mo
+share/locale/sl/LC_MESSAGES/gnumeric.mo
 share/locale/sr/LC_MESSAGES/gnumeric-functions.mo
 share/locale/sr/LC_MESSAGES/gnumeric.mo
 share/locale/sr@latin/LC_MESSAGES/gnumeric-functions.mo
