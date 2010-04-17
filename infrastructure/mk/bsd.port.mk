@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.989 2010/04/12 13:08:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.990 2010/04/17 09:49:52 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -127,7 +127,7 @@ OPSYS_VER = ${OSREV}
 
 ALL_ARCHS = alpha amd64 arm armish arm hppa hppa64 i386 landisk \
 	loongson luna88k m68k m88k mac68k macppc mips64 mips64el \
-	mvme68k mvme88k mvmeppc palm sgi socppc sparc sparc64 zaurus
+	mvme68k mvme88k mvmeppc palm sgi socppc sparc sparc64 vax zaurus
 # not all powerpc have apm(4), hence the use of macppc
 APM_ARCHS = amd64 arm i386 loongson macppc sparc sparc64
 LP64_ARCHS = alpha amd64 hppa64 sparc64 mips64 mips64el
