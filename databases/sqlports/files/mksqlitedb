@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.21 2010/04/17 09:33:18 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.22 2010/04/17 13:06:49 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -42,17 +42,17 @@ if (@ARGV > 0) {
 }
 my $inserter = InserterList->new;
 
-my $db =DBI->connect("dbi:SQLite:dbname=$dbname", '', '', {AutoCommit => 0});
-my $db2 =DBI->connect("dbi:SQLite:dbname=$dbname-compact", '', '', 
+my $db = DBI->connect("dbi:SQLite:dbname=$dbname", '', '', {AutoCommit => 0});
+my $db2 = DBI->connect("dbi:SQLite:dbname=$dbname-compact", '', '', 
     {AutoCommit => 0});
-$inserter->add(NormalInserter->new($db, 1000, $opt_v), 
+$inserter->add(NormalInserter->new($db, 1000, $opt_v),
     CompactInserter->new($db2, 1000, $opt_v));
 
 
 my $vars = {
     AUTOCONF_VERSION => 'AutoVersionVar',
     AUTOMAKE_VERSION => 'AutoVersionVar',
-    BROKEN => 'AnyVar',
+    BROKEN => 'BrokenVar',
     BUILD_DEPENDS => 'BuildDependsVar',
     CATEGORIES=> 'CategoriesVar',
     COMES_WITH => 'DefinedVar',
@@ -121,9 +121,9 @@ while (<STDIN>) {
 		print "---", $_, "\n";
 		next;
 	}
-	next unless m/^(.*?)\.([A-Z][A-Z_0-9]*)\=(.*)$/;
+	next unless m/^(.*?)\.([A-Z][A-Z_0-9]*)(?:\-([a-z0-9]+))?\=(.*)$/;
 
-	my ($key, $var, $value) = ($1, $2, $3);
+	my ($key, $var, $arch, $value) = ($1, $2, $3, $4);
 	# strip extra quotes
 	if ($value =~ m/^\"(.*)\"$/) {
 		$value = $1;
@@ -137,11 +137,12 @@ while (<STDIN>) {
 		$lastkey = $key;
 	}
 	if (defined $vars->{$var}) {
-		$inserter->add_var($vars->{$var}->new($var, $value));
+		$inserter->add_var($vars->{$var}->new($var, $value, $arch));
 	} else {
 		$unknown->{$var} //= $key;
     	}
 }
+
 $inserter->finish_port;
 $inserter->commit_to_db;
 

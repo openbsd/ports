@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.2 2010/04/13 10:56:42 espie Exp $
+# $OpenBSD: Column.pm,v 1.3 2010/04/17 13:06:49 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -77,7 +77,7 @@ sub sqltype
 }
 
 package IntegerColumn;
-our @ISA =qw(Column);
+our @ISA = qw(Column);
 sub sqltype
 {
 	return "INTEGER NOT NULL";

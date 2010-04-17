@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.3 2010/04/17 09:33:18 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.4 2010/04/17 13:06:49 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -18,7 +18,34 @@
 use strict;
 use warnings;
 
+package Composite;
+sub AUTOLOAD
+{
+	our $AUTOLOAD;
+	my $fullsub = $AUTOLOAD;
+	(my $sub = $fullsub) =~ s/.*:://o;
+	return if $sub eq 'DESTROY'; # special case
+	my $self = $_[0];
+	# verify it makes sense
+	if ($self->element_class->can($sub)) {
+		no strict "refs";
+		# create the sub to avoid regenerating further calls
+		*$fullsub = sub {
+			my $self = shift;
+			$self->visit($sub, @_);
+		};
+		# and jump to it
+		goto &$fullsub;
+	} else {
+		die "Can't call $sub on ".ref($self);
+	}
+}
+
+
 package InserterList;
+our @ISA = qw(Composite);
+sub element_class() { 'NormalInserter' }
+
 sub new
 {
 	my $class = shift;
@@ -29,27 +56,6 @@ sub add
 {
 	my $self = shift;
 	push(@$self, @_);
-}
-
-sub AUTOLOAD
-{
-	our $AUTOLOAD;
-	my $fullsub = $AUTOLOAD;
-	(my $sub = $fullsub) =~ s/.*:://o;
-	return if $sub eq 'DESTROY'; # special case
-	# verify it makes sense
-	if (NormalInserter->can($sub)) {
-		no strict "refs";
-		# create the sub to avoid regenerating further calls
-		*$fullsub = sub {
-			my $self = shift;
-			$self->visit($sub, @_);
-		};
-		# and jump to it
-		goto &$fullsub;
-	} else {
-		die "Can't call $sub on ", __PACKAGE__;
-	}
 }
 
 sub visit
@@ -89,7 +95,7 @@ sub create_tables
 	$self->prepare_normal_inserter('Ports', @{$self->{varlist}});
 	$self->prepare_normal_inserter('Paths', 'PKGPATH');
 	$self->create_view_info;
-	$self->db->commit;
+	$self->commit_to_db;
 	print '-'x50, "\n" if $self->{verbose};
 }
 
@@ -138,9 +144,7 @@ sub last_id
 sub insert_done
 {
 	my $self = shift;
-	if ($self->{transaction}++ % $self->{threshold} == 0) {
-		$self->db->commit;
-	}
+	$self->{transaction}++;
 }
 
 sub new_table
@@ -187,6 +191,10 @@ sub finish_port
 	}
 	$self->insert('Ports', @values);
 	$self->{vars} = {};
+	if ($self->{transaction} >= $self->{threshold}) {
+		$self->commit_to_db;
+		$self->{transaction} = 0;
+	}
 }
 
 sub add_to_port
@@ -231,7 +239,7 @@ sub commit_to_db
 }
 
 package CompactInserter;
-our @ISA=(qw(AbstractInserter));
+our @ISA = qw(AbstractInserter);
 
 our $c = {
 	Library => 0,
@@ -385,7 +393,7 @@ sub create_keyword_table
 }
 
 package NormalInserter;
-our @ISA=(qw(AbstractInserter));
+our @ISA = qw(AbstractInserter);
 
 our $c = {
 	Library => 'L',

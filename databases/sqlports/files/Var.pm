@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Var.pm,v 1.3 2010/04/17 09:33:18 espie Exp $
+# $OpenBSD: Var.pm,v 1.4 2010/04/17 13:06:49 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,7 +31,8 @@ sub keyword_table() { undef }
 
 sub new
 {
-	my ($class, $var, $value) = @_;
+	my ($class, $var, $value, $arch) = @_;
+	print STDERR  "$var-$arch\n" if defined $arch;
 	bless [$var, $value], $class;
 }
 
@@ -107,7 +108,7 @@ sub normal_insert
 }
 
 package KeyVar;
-our @ISA=(qw(AnyVar));
+our @ISA = qw(AnyVar);
 sub columntype() { 'ValueColumn' }
 
 sub add
@@ -118,11 +119,11 @@ sub add
 
 
 package ArchKeyVar;
-our @ISA=(qw(KeyVar));
+our @ISA = qw(KeyVar);
 sub keyword_table() { 'Arch' }
 
 package OptKeyVar;
-our @ISA=(qw(KeyVar));
+our @ISA = qw(KeyVar);
 sub columntype() { 'OptValueColumn' }
 
 sub add
@@ -133,8 +134,51 @@ sub add
 	}
 }
 
+package ArchDependentVar;
+our @ISA = qw(AnyVar);
+sub keyword_table() { 'Arch' }
+
+sub new
+{
+	my ($class, $var, $value, $arch) = @_;
+	bless [$var, $value, $arch], $class;
+}
+
+sub arch
+{
+	return shift->[2];
+}
+
+sub add
+{
+	my ($self, $ins) = @_;
+
+	my $arch = $self->arch;
+	if (defined $arch) {
+		$arch = $self->keyword($ins, $arch);
+	} else {
+		$self->SUPER::add($ins);
+	}
+	$self->normal_insert($ins, $arch, $self->value);
+}
+
+sub create_table
+{
+	my ($self, $inserter) = @_;
+	$self->create_keyword_table($inserter);
+	$inserter->make_table($self, 'UNIQUE(FULLPKGPATH, ARCH, VALUE)',
+	    OptValueColumn->new("ARCH"),
+	    TextColumn->new("VALUE"));
+	$inserter->prepare_normal_inserter($self->table, 
+	    "ARCH", "VALUE");
+}
+
+package BrokenVar;
+our @ISA = qw(ArchDependentVar);
+sub table() { 'Broken' }
+
 package YesNoVar;
-our @ISA=(qw(AnyVar));
+our @ISA = qw(AnyVar);
 sub columntype() { 'OptIntegerColumn' }
 
 sub add
@@ -145,7 +189,7 @@ sub add
 
 # variable is always defined, but we don't need to store empty values.
 package DefinedVar;
-our @ISA=(qw(AnyVar));
+our @ISA = qw(AnyVar);
 
 sub add
 {
@@ -158,7 +202,7 @@ sub add
 # all the dependencies are converted into list. Stuff like LIB_DEPENDS will
 # end up being treated as WANTLIB as well.
 package DependsVar;
-our @ISA=(qw(AnyVar));
+our @ISA = qw(AnyVar);
 sub table() { 'Depends' }
 
 sub add
@@ -201,7 +245,7 @@ sub add_lib
 }
 
 package LibDependsVar;
-our @ISA=(qw(DependsVar));
+our @ISA = qw(DependsVar);
 sub depends_type() { 'Library' }
 
 sub add_lib
@@ -211,20 +255,20 @@ sub add_lib
 }
 
 package RunDependsVar;
-our @ISA=(qw(DependsVar));
+our @ISA = qw(DependsVar);
 sub depends_type() { 'Run' }
 
 package BuildDependsVar;
-our @ISA=(qw(DependsVar));
+our @ISA = qw(DependsVar);
 sub depends_type() { 'Build' }
 
 package RegressDependsVar;
-our @ISA=(qw(DependsVar));
+our @ISA = qw(DependsVar);
 sub depends_type() { 'Regress' }
 
 # Stuff that gets stored in another table
 package SecondaryVar;
-our @ISA=(qw(KeyVar));
+our @ISA = qw(KeyVar);
 sub keyword_table() { undef }
 
 sub add_value
@@ -249,7 +293,7 @@ sub create_table
 }
 
 package MasterSitesVar;
-our @ISA=(qw(OptKeyVar));
+our @ISA = qw(OptKeyVar);
 sub table() { 'MasterSites' }
 
 sub add
@@ -275,7 +319,7 @@ sub create_table
 
 # Generic handling for any blank-separated list
 package ListVar;
-our @ISA=(qw(SecondaryVar));
+our @ISA = qw(SecondaryVar);
 sub columntype() { 'OptTextColumn' }
 
 sub add
@@ -288,7 +332,7 @@ sub add
 }
 
 package ListKeyVar;
-our @ISA=(qw(SecondaryVar));
+our @ISA = qw(SecondaryVar);
 sub keyword_table() { 'Keywords' }
 
 sub add
@@ -301,7 +345,7 @@ sub add
 }
 
 package QuotedListVar;
-our @ISA=(qw(ListVar));
+our @ISA = qw(ListVar);
 
 sub add
 {
@@ -323,7 +367,7 @@ sub add
 }
 
 package DefinedListKeyVar;
-our @ISA=(qw(ListKeyVar));
+our @ISA = qw(ListKeyVar);
 sub columntype() { 'OptValueColumn' }
 
 sub add
@@ -334,32 +378,32 @@ sub add
 }
 
 package FlavorsVar;
-our @ISA=(qw(DefinedListKeyVar));
+our @ISA = qw(DefinedListKeyVar);
 sub table() { 'Flavors' }
 
 package PseudoFlavorsVar;
-our @ISA=(qw(DefinedListKeyVar));
+our @ISA = qw(DefinedListKeyVar);
 sub table() { 'PseudoFlavors' }
 
 package ArchListVar;
-our @ISA=(qw(DefinedListKeyVar));
+our @ISA = qw(DefinedListKeyVar);
 sub keyword_table() { 'Arch' }
 
 package OnlyForArchListVar;
-our @ISA=(qw(ArchListVar));
+our @ISA = qw(ArchListVar);
 sub table() { 'OnlyForArch' }
 
 package NotForArchListVar;
-our @ISA=(qw(ArchListVar));
+our @ISA = qw(ArchListVar);
 sub table() { 'NotForArch' }
 
 package CategoriesVar;
-our @ISA=(qw(ListKeyVar));
+our @ISA = qw(ListKeyVar);
 sub table() { 'Categories' }
 sub keyword_table() { 'CategoryKeys' }
 
 package MultiVar;
-our @ISA=(qw(ListVar));
+our @ISA = qw(ListVar);
 sub table() { 'Multi' }
 
 sub add
@@ -370,21 +414,21 @@ sub add
 }
 
 package ModulesVar;
-our @ISA=(qw(DefinedListKeyVar));
+our @ISA = qw(DefinedListKeyVar);
 sub table() { 'Modules' }
 sub keyword_table() { 'ModuleKeys' }
 
 package ConfigureVar;
-our @ISA=(qw(DefinedListKeyVar));
+our @ISA = qw(DefinedListKeyVar);
 sub table() { 'Configure' }
 sub keyword_table() { 'ConfigureKeys' }
 
 package ConfigureArgsVar;
-our @ISA=(qw(QuotedListVar));
+our @ISA = qw(QuotedListVar);
 sub table() { 'ConfigureArgs' }
 
 package WantlibVar;
-our @ISA=(qw(ListVar));
+our @ISA = qw(ListVar);
 sub table() { 'Wantlib' }
 sub keyword_table() { 'Library' }
 
@@ -417,12 +461,12 @@ sub create_table
 }
 
 package OnlyForArchVar;
-our @ISA=(qw(DefinedListKeyVar));
+our @ISA = qw(DefinedListKeyVar);
 sub table() { 'OnlyForArch' }
 sub keyword_table() { 'Arches' }
 
 package FileVar;
-our @ISA=(qw(SecondaryVar));
+our @ISA = qw(SecondaryVar);
 sub table() { 'Descr' }
 
 sub add
@@ -435,7 +479,7 @@ sub add
 }
 
 package SharedLibsVar;
-our @ISA=(qw(KeyVar));
+our @ISA = qw(KeyVar);
 sub table() { 'Shared_Libs' }
 sub keyword_table() { 'Library' }
 
@@ -460,15 +504,15 @@ sub create_table
 }
 
 package EmailVar;
-our @ISA=(qw(KeyVar));
+our @ISA = qw(KeyVar);
 sub keyword_table() { 'Email' }
 
 package YesKeyVar;
-our @ISA=(qw(KeyVar));
+our @ISA = qw(KeyVar);
 sub keyword_table() { 'Keywords2' }
 
 package AutoVersionVar;
-our @ISA=(qw(OptKeyVar));
+our @ISA = qw(OptKeyVar);
 sub keyword_table() { 'AutoVersion' }
 
 1;

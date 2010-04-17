@@ -76,6 +76,10 @@ All the libraries the FULLPKGPATH depends upon, with optional version
 number specification stored in EXTRA
 coming from either the WANTLIB variable or various LIB_DEPENDS.
 
+- Broken(FULLPKGPATH, ARCH, TEXT)
+This is stored both in the main table (for now) and in a separate table, with
+keywords since it may be arch-dependent
+
 - Shared_Libs(FULLPKGPATH, LIBNAME, VERSION)
 
 Some information, both in the main table and in secondary tables 

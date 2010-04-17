@@ -74,4 +74,7 @@ we depend upon.
 All the libraries the FULLPKGPATH depends upon, with and without version number,
 coming from either the WANTLIB variable or various LIB_DEPENDS.
 
+- BROKEN(FULLPKGPATH, ARCH, VALUE)
+All the broken entries, which might be arch-dependent.
+
 - Shared_Libs(FULLPKGPATH, LIBNAME, VERSION)
