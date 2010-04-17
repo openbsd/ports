@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.4 2010/04/17 13:06:49 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.5 2010/04/17 14:37:02 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -71,6 +71,7 @@ package AbstractInserter;
 sub new
 {
 	my ($class, $db, $i, $verbose) = @_;
+	$db->do("PRAGMA foreign_keys=ON");
 	bless {
 		db => $db, 
 		transaction => 0, 

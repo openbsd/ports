@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.22 2010/04/17 13:06:49 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.23 2010/04/17 14:37:02 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -117,8 +117,8 @@ my $unknown = {};
 while (<STDIN>) {
 	chomp;
 	# kill noise
-	if (m/^\=\=\=/) {
-		print "---", $_, "\n";
+	if (s/^\=\=\=/---/) {
+		print $_, "\n";
 		next;
 	}
 	next unless m/^(.*?)\.([A-Z][A-Z_0-9]*)(?:\-([a-z0-9]+))?\=(.*)$/;
