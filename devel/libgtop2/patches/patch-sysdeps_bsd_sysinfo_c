@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.5 2010/04/17 12:05:13 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.6 2010/04/17 14:44:18 ajacoutot Exp $
 --- sysdeps/bsd/sysinfo.c.orig	Sun Apr 19 19:51:00 2009
-+++ sysdeps/bsd/sysinfo.c	Sat Apr 17 13:55:55 2010
++++ sysdeps/bsd/sysinfo.c	Sat Apr 17 16:29:02 2010
 @@ -37,6 +37,9 @@ init_sysinfo (glibtop *server)
  {
  	char *model;
@@ -11,7 +11,7 @@ $OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.5 2010/04/17 12:05:13 ajacoutot Exp $
  	int mhz = 0;
  	size_t len;
  
-@@ -45,6 +48,33 @@ init_sysinfo (glibtop *server)
+@@ -45,6 +48,34 @@ init_sysinfo (glibtop *server)
  
  	glibtop_init_s (&server, GLIBTOP_SYSDEPS_CPU, 0);
  
@@ -31,8 +31,9 @@ $OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.5 2010/04/17 12:05:13 ajacoutot Exp $
 +
 +	if (sysctl(mib, 2, NULL, &len, NULL, 0) != 0) {
 +		model = g_malloc (len);
-+		if (sysctl(mib, 2, model, &len, NULL, 0) != 0)
-+			printf("Couldn't determine hw.model.\n");
++		sysctl(mib, 2, model, &len, NULL, 0);
++	} else {
++		printf("Couldn't determine hw.model.\n");
 +	}
 +
 +	/* Get the clockrate */
@@ -45,12 +46,23 @@ $OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.5 2010/04/17 12:05:13 ajacoutot Exp $
  	len = sizeof (ncpus);
  	sysctlbyname ("hw.ncpu", &ncpus, &len, NULL, 0);
  	len = 0;
-@@ -53,6 +83,8 @@ init_sysinfo (glibtop *server)
- 	sysctlbyname ("hw.model", model, &len, NULL, 0);
+@@ -54,6 +85,8 @@ init_sysinfo (glibtop *server)
  	len = sizeof (mhz);
  	sysctlbyname ("hw.clockrate", &mhz, &len, NULL, 0);
-+
-+#endif /* __OpenBSD__ */
  
++#endif /* __OpenBSD__ */
++
  	for (sysinfo.ncpu = 0;
  	     sysinfo.ncpu < GLIBTOP_NCPU && sysinfo.ncpu < ncpus;
+ 	     sysinfo.ncpu++) {
+@@ -71,6 +104,10 @@ init_sysinfo (glibtop *server)
+ 
+ 		g_ptr_array_add (cpuinfo->labels, "vendor_id");
+ 		g_hash_table_insert (cpuinfo->values, "vendor_id",
++				     g_strdup(model));
++
++		g_ptr_array_add (cpuinfo->labels, "model name");
++		g_hash_table_insert (cpuinfo->values, "model name",
+ 				     g_strdup(model));
+ 
+ 		g_ptr_array_add (cpuinfo->labels, "cpu MHz");
