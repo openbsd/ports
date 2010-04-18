@@ -1,0 +1,123 @@
+$OpenBSD: patch-sysdeps_bsd_proctime_c,v 1.1 2010/04/18 12:32:09 ajacoutot Exp $
+--- sysdeps/bsd/proctime.c.orig	Sun Apr 19 19:51:00 2009
++++ sysdeps/bsd/proctime.c	Sun Apr 18 12:20:27 2010
+@@ -40,11 +40,25 @@ static const unsigned long _glibtop_sysdeps_proc_time_
+ 
+ #define tv2sec(tv)	(((guint64) tv.tv_sec * 1000000) + (guint64) tv.tv_usec)
+ 
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++static unsigned int clockrate;
++static const int mib [] = { CTL_KERN, KERN_CLOCKRATE };
++#endif
++
+ /* Init function. */
+ 
+ void
+ _glibtop_init_proc_time_p (glibtop *server)
+ {
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++	struct clockinfo ci;
++	size_t length;
++	length = sizeof (ci);
++	if (sysctl (mib, 2, &ci, &length, NULL, 0) == 0)
++		clockrate = ci.hz;
++	if (!clockrate)
++		clockrate = 1; /* XXX avoid div by 0 later */
++#endif
+ 	server->sysdeps.proc_time = _glibtop_sysdeps_proc_time |
+ 		_glibtop_sysdeps_proc_time_user;
+ }
+@@ -56,7 +70,7 @@ _glibtop_init_proc_time_p (glibtop *server)
+  * system, and interrupt time usage.
+  */
+ 
+-#if !(defined(__FreeBSD__) || defined(__FreeBSD_kernel__))
++#if !(defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__NetBSD__) || defined(__OpenBSD__))
+ 
+ static void
+ calcru(p, up, sp, ip)
+@@ -114,13 +128,13 @@ void
+ glibtop_get_proc_time_p (glibtop *server, glibtop_proc_time *buf,
+ 			 pid_t pid)
+ {
+-	struct kinfo_proc *pinfo;
+-#if (defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)) || (defined(OpenBSD) && (OpenBSD >= 199912))
+-	register struct rusage *rup;
++#if defined (__NetBSD__) || defined(__OpenBSD__)
++	struct kinfo_proc2 *pinfo;
+ #else
++	struct kinfo_proc *pinfo;
+ 	struct user *u_addr = (struct user *)USRSTACK;
+-#endif
+ 	struct pstats pstats;
++#endif
+ 	int count;
+ 
+ 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_TIME), 0);
+@@ -136,7 +150,12 @@ glibtop_get_proc_time_p (glibtop *server, glibtop_proc
+ #endif
+ 
+ 	/* Get the process information */
++#if defined (__NetBSD__) || defined(__OpenBSD__)
++	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid,
++			      sizeof (*pinfo), &count);
++#else
+ 	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
++#endif
+ 	if ((pinfo == NULL) || (count != 1)) {
+ 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		return;
+@@ -146,38 +165,30 @@ glibtop_get_proc_time_p (glibtop *server, glibtop_proc
+ 	buf->rtime = pinfo [0].ki_runtime;
+ #elif (defined __FreeBSD__) && (__FreeBSD_version <= 500013)
+ 	buf->rtime = pinfo [0].kp_proc.p_runtime;
++#elif defined (__NetBSD__) || defined(__OpenBSD__)
++	buf->rtime = pinfo[0].p_rtime_sec * clockrate 
++		+ pinfo[0].p_rtime_usec  * clockrate / 1000000;
++	buf->frequency = clockrate;
+ #else
+ 	buf->rtime = tv2sec (pinfo [0].kp_proc.p_rtime);
++	buf->frequency = 1000000;
+ #endif
+ 
+-	buf->frequency = 1000000;
+ 	buf->flags = _glibtop_sysdeps_proc_time;
+ 
+-#if (defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)) || (defined(OpenBSD) && (OpenBSD >= 199912))
+-	glibtop_suid_enter (server);
++#if (defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)) || defined(__OpenBSD__)
+ 
+-	if (kvm_read (server->machine.kd,
+-		      (unsigned long) pinfo [0].kp_proc.p_stats,
+-		      &pstats, sizeof (pstats)) != sizeof (pstats)) {
+-		glibtop_warn_io_r (server, "kvm_read (pstats)");
+-		return;
+-	}
++	buf->utime = pinfo[0].p_uutime_sec * 1000000
++		+ pinfo[0].p_uutime_usec;
++	buf->stime = pinfo[0].p_ustime_sec * 1000000
++		+ pinfo[0].p_ustime_usec;
++	buf->cutime = pinfo[0].p_uctime_sec * 1000000
++		+ pinfo[0].p_uctime_usec; /* XXX is u+s */
++	buf->cstime = 0; /* XXX */
++	buf->start_time = pinfo[0].p_ustart_sec;
+ 
+-	glibtop_suid_leave (server);
+-
+-	rup = &pstats.p_ru;
+-	calcru(&(pinfo [0]).kp_proc,
+-	       &rup->ru_utime, &rup->ru_stime, NULL);
+-
+-	buf->utime = tv2sec (pstats.p_ru.ru_utime);
+-	buf->stime = tv2sec (pstats.p_ru.ru_stime);
+-
+-	buf->cutime = tv2sec (pstats.p_cru.ru_utime);
+-	buf->cstime = tv2sec (pstats.p_cru.ru_stime);
+-
+-	buf->start_time = (guint64) pstats.p_start.tv_sec;
+-
+ 	buf->flags |= _glibtop_sysdeps_proc_time_user;
++
+ #else
+ #if (defined(__FreeBSD__) && (__FreeBSD_version >= 500013)) || defined(__FreeBSD_kernel__)
+ #if (__FreeBSD_version >= 500016) || defined(__FreeBSD_kernel__)

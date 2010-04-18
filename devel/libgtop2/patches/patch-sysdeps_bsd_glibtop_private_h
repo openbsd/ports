@@ -1,0 +1,20 @@
+$OpenBSD: patch-sysdeps_bsd_glibtop_private_h,v 1.1 2010/04/18 12:32:09 ajacoutot Exp $
+--- sysdeps/bsd/glibtop_private.h.orig	Sun Apr 18 13:27:38 2010
++++ sysdeps/bsd/glibtop_private.h	Sun Apr 18 13:28:09 2010
+@@ -17,8 +17,8 @@
+    Boston, MA 02111-1307, USA.
+ */
+ 
+-#ifndef __FREEBSD__GLIBTOP_PRIVATE_H__
+-#define __FREEBSD__GLIBTOP_PRIVATE_H__
++#ifndef __OPENBSD__GLIBTOP_PRIVATE_H__
++#define __OPENBSD__GLIBTOP_PRIVATE_H__
+ 
+ #include <glibtop.h>
+ #include <glibtop/error.h>
+@@ -37,4 +37,4 @@ gboolean safe_readlink(const char *path, char *buf, in
+ 
+ G_END_DECLS
+ 
+-#endif /* __FREEBSD__GLIBTOP_PRIVATE_H__ */
++#endif /* __OPENBSD__GLIBTOP_PRIVATE_H__ */

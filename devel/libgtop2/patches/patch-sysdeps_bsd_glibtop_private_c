@@ -1,0 +1,14 @@
+$OpenBSD: patch-sysdeps_bsd_glibtop_private_c,v 1.1 2010/04/18 12:32:09 ajacoutot Exp $
+--- sysdeps/bsd/glibtop_private.c.orig	Sun Apr 18 14:23:23 2010
++++ sysdeps/bsd/glibtop_private.c	Sun Apr 18 14:23:49 2010
+@@ -26,8 +26,8 @@ execute_lsof(pid_t pid) {
+ 
+ 	if (g_spawn_command_line_sync (command, &output, NULL, &exit_status, NULL)) {
+ 		if (exit_status != 0) {
+-			g_warning("Could not execute \"%s\" (%i)", command,
+-				   exit_status);
++			g_warning("Could not execute \"%s\" (%i)\nMake sure lsof(8) is installed sgid kmem.",
++				   command, exit_status);
+ 			output = NULL;
+ 		}
+ 	}

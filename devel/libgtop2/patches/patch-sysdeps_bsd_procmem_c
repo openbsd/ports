@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_bsd_procmem_c,v 1.2 2010/04/08 15:57:46 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_bsd_procmem_c,v 1.3 2010/04/18 12:32:09 ajacoutot Exp $
 --- sysdeps/bsd/procmem.c.orig	Sun Apr 19 19:51:00 2009
-+++ sysdeps/bsd/procmem.c	Fri Apr  2 14:30:09 2010
++++ sysdeps/bsd/procmem.c	Sun Apr 18 12:10:09 2010
 @@ -30,7 +30,7 @@
  #include <sys/param.h>
  #include <sys/proc.h>
@@ -42,7 +42,7 @@ $OpenBSD: patch-sysdeps_bsd_procmem_c,v 1.2 2010/04/08 15:57:46 ajacoutot Exp $
  #else
  0;
  #endif
-@@ -116,10 +116,13 @@ void
+@@ -116,6 +116,9 @@ void
  glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_mem *buf,
  			pid_t pid)
  {
@@ -52,11 +52,6 @@ $OpenBSD: patch-sysdeps_bsd_procmem_c,v 1.2 2010/04/08 15:57:46 ajacoutot Exp $
  	struct kinfo_proc *pinfo;
  	struct vm_map_entry entry, *first;
  	struct vmspace *vms, vmspace;
--#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if (defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000))
- 	struct vnode vnode;
- #else
- 	struct vm_object object;
 @@ -127,6 +130,8 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
  #if (!defined(__FreeBSD__) || (__FreeBSD_version < 500013)) && !defined(__FreeBSD_kernel__)
  	struct plimit plimit;
@@ -107,43 +102,7 @@ $OpenBSD: patch-sysdeps_bsd_procmem_c,v 1.2 2010/04/08 15:57:46 ajacoutot Exp $
  	if (kvm_read (server->machine.kd,
  		      (unsigned long) pinfo [0].PROC_VMSPACE,
  		      (char *) &vmspace, sizeof (vmspace)) != sizeof (vmspace)) {
-@@ -221,7 +244,7 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
-  			continue;
- #endif
- #else
--#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if (defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000))
-  		if (UVM_ET_ISSUBMAP (&entry))
- 			continue;
- #else
-@@ -230,7 +253,8 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
- #endif
- #endif
- 
--#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if (defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)) || \
-+	defined(__OpenBSD__)
- 		if (!entry.object.uvm_obj)
- 			continue;
- 
-@@ -257,14 +281,14 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
- #endif
- 		/* If the object is of type vnode, add its size */
- 
--#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
-+#if (defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000))
- #if defined(UVM_VNODE_VALID)
- 		if (!vnode.v_uvm.u_flags & UVM_VNODE_VALID)
- 			continue;
- #endif
- 		if ((vnode.v_type != VREG) || (vnode.v_tag != VT_UFS) ||
- 		    !vnode.v_data) continue;
--#if defined(__NetBSD__) && (__NetBSD_Version__ >= 105250000)
-+#if (defined(__NetBSD__) && (__NetBSD_Version__ >= 105250000))
- 		/* Reference count must be at least two. */
- 		if (vnode.v_usecount <= 1)
- 			continue;
-@@ -287,6 +311,8 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
+@@ -287,6 +310,8 @@ glibtop_get_proc_mem_p (glibtop *server, glibtop_proc_
  		buf->share += object.un_pager.vnp.vnp_size;
  #endif
  	}

@@ -1,0 +1,2 @@
+LibGTop uses lsof(8) to get open files information. If you want to be
+able to use this feature, the lsof binary needs to be sgid kmem.

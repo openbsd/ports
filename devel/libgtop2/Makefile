@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/04/18 09:49:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/04/18 12:32:09 ajacoutot Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -40,5 +40,9 @@ CPPFLAGS+=		-DDEBUG \
 
 post-extract:
 	cp ${FILESDIR}/procaffinity.c ${WRKSRC}/sysdeps/bsd/
+	cp ${WRKSRC}/sysdeps/{freebsd,bsd}/glibtop_private.h
+	cp ${WRKSRC}/sysdeps/{freebsd,bsd}/procwd.c
+	cp ${WRKSRC}/sysdeps/{freebsd,bsd}/glibtop_private.c
+	cp ${WRKSRC}/sysdeps/{freebsd,bsd}/procopenfiles.c
 
 .include <bsd.port.mk>
