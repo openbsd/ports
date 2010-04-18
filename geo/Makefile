@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/03/25 10:14:04 kevlo Exp $
+# $OpenBSD: Makefile,v 1.30 2010/04/18 13:30:58 landry Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
  
      SUBDIR =
@@ -38,6 +38,7 @@
      SUBDIR += qgis
      SUBDIR += qlandkarte
      SUBDIR += ruby-findmyiphone
+     SUBDIR += tangogps
      SUBDIR += tilecache
 
 .include <bsd.port.subdir.mk>
