@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/18 13:30:17 landry Exp $
+@bin bin/tangogps
+share/applications/tangogps.desktop
+share/doc/tangogps/
+share/doc/tangogps/COPYING
+share/locale/bg/LC_MESSAGES/tangogps.mo
+share/locale/cs/LC_MESSAGES/tangogps.mo
+share/locale/de/LC_MESSAGES/tangogps.mo
+share/locale/es/LC_MESSAGES/tangogps.mo
+share/locale/fi/LC_MESSAGES/tangogps.mo
+share/locale/fr/LC_MESSAGES/tangogps.mo
+share/locale/hu/LC_MESSAGES/tangogps.mo
+share/locale/nl/LC_MESSAGES/tangogps.mo
+share/locale/ru/LC_MESSAGES/tangogps.mo
+share/locale/sk/LC_MESSAGES/tangogps.mo
+share/pixmaps/
+share/pixmaps/tangogps-friend.png
+share/pixmaps/tangogps-myposition.png
+share/pixmaps/tangogps-photo.png
+share/pixmaps/tangogps-poi.png
+share/pixmaps/tangogps-wp.png
+share/pixmaps/tangogps.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
