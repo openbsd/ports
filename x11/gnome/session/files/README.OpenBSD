@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.31 2010/04/18 17:30:50 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.32 2010/04/18 17:40:20 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -71,8 +71,7 @@ related ports under the x11/gnome category)
    * eog-plugins - plugins for EOG
    * evince - document viewer for multiple document formats
    * f-spot - photo management application
-   * gnome-games - collection of games
-   * gnome-games-extra-data - extra themes and artwork for GNOME games
+   * gnome-games (+gnome-games-extra-data) - collection of games
    * gnome-video-arcade - MAME front-end
    * rhythmbox - music management application
    * simple-scan - simple scanning utility
