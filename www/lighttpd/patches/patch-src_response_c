@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_response_c,v 1.3 2010/04/18 08:24:31 sthen Exp $
+--- src/response.c.orig	Sat Apr 17 21:03:28 2010
++++ src/response.c	Sat Apr 17 21:06:03 2010
+@@ -136,6 +136,8 @@ static void https_add_ssl_entries(connection *con) {
+ 	X509 *xs;
+ 	X509_NAME *xn;
+ 	X509_NAME_ENTRY *xe;
++	int i, nentries;
++
+ 	if (
+ 		SSL_get_verify_result(con->ssl) != X509_V_OK
+ 		|| !(xs = SSL_get_peer_certificate(con->ssl))
+@@ -144,7 +146,7 @@ static void https_add_ssl_entries(connection *con) {
+ 	}
+ 
+ 	xn = X509_get_subject_name(xs);
+-	for (int i = 0, nentries = X509_NAME_entry_count(xn); i < nentries; ++i) {
++	for (i = 0, nentries = X509_NAME_entry_count(xn); i < nentries; ++i) {
+ 		int xobjnid;
+ 		const char * xobjsn;
+ 		data_string *envds;
+@@ -581,7 +583,7 @@ handler_t http_response_prepare(server *srv, connectio
+ 			};
+ #endif
+ 			if (S_ISDIR(sce->st.st_mode)) {
+-				if (con->physical.path->ptr[con->physical.path->used - 2] != '/') {
++				if (con->uri.path->ptr[con->uri.path->used - 2] != '/') {
+ 					/* redirect to .../ */
+ 
+ 					http_response_redirect_to_directory(srv, con);
