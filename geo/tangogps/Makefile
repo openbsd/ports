@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/18 13:30:17 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/18 21:18:36 landry Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		tangogps-0.99.3
+PKGNAME =		${DISTNAME}p0
 
 CATEGORIES =		geo
 

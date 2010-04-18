@@ -5,3 +5,4 @@ uses map data from the Openstreetmap project. Additionally a variety of
 other repositories can be easily added.  The maps are automagically
 downloaded and cached for offline use while you drag or zoom the map.
 Furthermore you can conveniently pre-cache areas with tangoGPS.
+To get real-time positioning from GPS-reciever you need to run gpsd.
