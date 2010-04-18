@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/03/21 09:50:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/18 18:31:25 ajacoutot Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 SHARED_ONLY=	Yes
 
 COMMENT=	library for rendering Postscript documents
 
-DISTNAME=	libspectre-0.2.4
+DISTNAME=	libspectre-0.2.5
 CATEGORIES=	print
 
 SHARED_LIBS=	spectre 0.1	# .2.4
@@ -31,7 +31,8 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-silent-rules
 
 .ifdef DEBUG
 BUILD_DEPENDS+=	::graphics/cairo
