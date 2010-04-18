@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/03 23:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/18 21:34:16 sthen Exp $
 
 COMMENT =		dump RTMP media streams
 
-DISTNAME =		rtmpdump-2.2b
+DISTNAME =		rtmpdump-2.2c
 
 CATEGORIES =		net
 
