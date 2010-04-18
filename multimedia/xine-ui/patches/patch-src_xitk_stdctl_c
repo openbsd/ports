@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_xitk_stdctl_c,v 1.1 2010/04/18 20:59:39 sthen Exp $
+--- src/xitk/stdctl.c.orig	Fri Apr  9 19:23:40 2010
++++ src/xitk/stdctl.c	Fri Apr  9 19:23:53 2010
+@@ -170,7 +170,7 @@ void stdctl_start(void) {
+   int err;
+ 
+   stdctl.fd = STDIN_FILENO;
+-  stdctl.fbk = gGui->stdout;
++  stdctl.fbk = gGui->orig_stdout;
+   
+   if((err = pthread_create(&(stdctl.thread), NULL, xine_stdctl_loop, NULL)) != 0) {
+     fprintf(stderr, _("%s(): can't create new thread (%s)\n"), __XINE_FUNCTION__, strerror(err));

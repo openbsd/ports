@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_xitk_common_h,v 1.1 2010/04/18 20:59:39 sthen Exp $
+--- src/xitk/common.h.orig	Fri Apr  9 19:01:24 2010
++++ src/xitk/common.h	Fri Apr  9 19:09:16 2010
+@@ -375,8 +375,8 @@ typedef struct {
+ 
+   void                     (*nongui_error_msg)(char *text);
+ 
+-  FILE                      *stdout; /* Channel to original stdout at startup */
+-                                     /* before an evtl. later redirection     */
++  FILE                      *orig_stdout; /* original stdout at startup */
++                                          /* before an evtl. later redirection     */
+ } gGui_t;
+ 
+ extern gGui_t *gGui;

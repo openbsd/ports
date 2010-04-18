@@ -1,0 +1,31 @@
+$OpenBSD: patch-configure_ac,v 1.1 2010/04/18 20:59:39 sthen Exp $
+--- configure.ac.orig	Fri Mar  5 20:31:43 2010
++++ configure.ac	Fri Apr  9 18:26:10 2010
+@@ -88,13 +88,17 @@ dnl          linked to thread lib, so the following AC
+ dnl          in src/xitk/xine-toolkit/Makefile.am
+ dnl
+ case "$host" in
+-  *-*-freebsd*|*-*-openbsd*)
++  *-*-freebsd*)
+     THREAD_LIBS="-L/usr/local/lib -pthread"
+     THREAD_CFLAGS="-I/usr/local/include -D_THREAD_SAFE"
+     CFLAGS="-L/usr/local/lib $THREAD_CFLAGS $CFLAGS"
+     CPPFLAGS="-I/usr/local/include -L/usr/local/lib $CPPFLAGS"
+     ;;
+ 
++  *-*-openbsd*)
++    THREAD_LIBS="-pthread"
++    ;;
++
+   *-*-hpux11*)
+     THREAD_LIBS=" -pthread"
+     THREAD_CFLAGS="-D_REENTRANT"
+@@ -471,7 +475,7 @@ dnl
+ dnl
+ BUILD_CC="`$CC -v 2>&1 | tail -n 1`"
+ BUILD_OS="`uname -s -r -m`"
+-BUILD_DATE="`date \"+%a %d %b %Y %T\"`"
++BUILD_DATE="`date "+%a %d %b %Y %T"`"
+ AC_SUBST(BUILD_CC)
+ AC_SUBST(BUILD_OS)
+ AC_SUBST(BUILD_DATE)
