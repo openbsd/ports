@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/09 22:23:26 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/18 19:22:44 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,6 +24,7 @@ MASTER_SITES=		http://download.jetbrains.com/idea/
 MODULES=		java
 MODJAVA_VER=		1.6
 
+BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 RUN_DEPENDS=		::java/javaPathHelper
 
 NO_BUILD=		Yes
