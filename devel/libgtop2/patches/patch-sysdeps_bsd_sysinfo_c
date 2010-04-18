@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.6 2010/04/17 14:44:18 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.7 2010/04/18 09:49:22 ajacoutot Exp $
 --- sysdeps/bsd/sysinfo.c.orig	Sun Apr 19 19:51:00 2009
 +++ sysdeps/bsd/sysinfo.c	Sat Apr 17 16:29:02 2010
 @@ -37,6 +37,9 @@ init_sysinfo (glibtop *server)
@@ -29,7 +29,7 @@ $OpenBSD: patch-sysdeps_bsd_sysinfo_c,v 1.6 2010/04/17 14:44:18 ajacoutot Exp $
 +	mib[1] = HW_MODEL;
 +	len = 0;
 +
-+	if (sysctl(mib, 2, NULL, &len, NULL, 0) != 0) {
++	if (sysctl(mib, 2, NULL, &len, NULL, 0) != -1) {
 +		model = g_malloc (len);
 +		sysctl(mib, 2, model, &len, NULL, 0);
 +	} else {
