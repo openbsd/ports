@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.30 2010/03/22 17:34:04 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.31 2010/04/18 17:30:50 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -53,7 +53,7 @@ related ports under the x11/gnome category)
  - Communication
    * ekiga - SIP and H.323 conferencing application
    * empathy - Telepathy based messenger for e.g. MSN, Jabber, etc
-   * epiphany - lightweight and simple web browser
+   * epiphany (+epiphany-extensions) - lightweight and simple web browser
    * evolution - integrated email and PIM software
    * gossip - Jabber client
 
@@ -64,38 +64,49 @@ related ports under the x11/gnome category)
    * ghex - HEX editor
    * glade3 - user interface builder
    * gnome-devel-docs - developer documentation
+   * gnome-development-monitor - GUI to follow GNOME development activity
+
+ - Graphics & Multimedia
+   * cheese - take photos and videos with your webcam
+   * eog-plugins - plugins for EOG
+   * evince - document viewer for multiple document formats
+   * f-spot - photo management application
+   * gnome-games - collection of games
+   * gnome-games-extra-data - extra themes and artwork for GNOME games
+   * gnome-video-arcade - MAME front-end
+   * rhythmbox - music management application
+   * simple-scan - simple scanning utility
+   * totem - multimedia player
 
  - Utilities
    * alacarte - simple menu editing tool
-   * cheese - take photos and videos with your webcam
    * conduit - all-in-one synchronization application
-   * evince - document viewer for multiple document formats
    * gcalctool - desktop calculator
    * gconf-editor - editor for GConf settings
-   * gnome-games - collection of games
-   * gnome-scan - scanning application
-   * gnome-themes-extras - extra themes for GNOME
-   * gnome-video-arcade - MAME front-end
    * gnomebaker - CD/DVD burning application
-   * gucharmap - Unicode character map
-   * hamster-applet - time tracker applet
-   * mergeant - database administration GUI
-   * nautilus-open-terminal - open terminal from a nautilus folder
+   * gnome-nettool - interface for various networking tools
    * nautilus-sendto - integrate applications into Nautilus
-   * tango-icon-theme - Tango icon theme
    * pessulus - lockdown editor for desktop
    * planner - project management
-   * seahorse - encryption, keys and passwords manager
+   * seahorse (+seahorse-plugins) - encryption, keys and passwords manager
    * system-config-printer - printer (CUPS) administration tool
    * tomboy - desktop note-taking
-   * totem - multimedia player
+   * tracker-search - powerful desktop search tool and indexer
+   * vinagre - VNC Client (remote Desktop client)
+   * vino - VNC server (allows remote access to your Desktop)
    * xdg-user-dirs-gtk - manage well know user directories
+
+ - Themes
+   * gnome-themes-extras - extra themes for GNOME
+   * tango-icon-theme - Tango icon theme
 
 * Startup and more documentation
   ------------------------------
-One can log in using the login manager, GDM. Or by using the 'startx' command.
-In order to use the latter, add a line like the following to your .xinitrc
-or .xsession script: 'exec ${TRUEPREFIX}/bin/gnome-session' .
+Login can be made using the GNOME Login Manager: GDM. Or you can add the
+following line corresponding to your login preference:
+    exec ${TRUEPREFIX}/bin/gnome-session
+in ~/.xinitrc when using startx(1)
+in ~/.xsession when using xdm(1)
 
 For more information on using OpenBSD packages please refer to:
 http://www.OpenBSD.org/faq/faq15.html . For more general information on
