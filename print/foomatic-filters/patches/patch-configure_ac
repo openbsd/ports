@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.1 2010/04/18 09:04:36 ajacoutot Exp $
+--- configure.ac.orig	Sun Apr 18 10:56:08 2010
++++ configure.ac	Sun Apr 18 10:57:09 2010
+@@ -42,8 +42,8 @@ AC_FUNC_VPRINTF
+ AC_CHECK_FUNCS([dup2 getcwd gethostname regcomp setenv strcasecmp strchr strcspn strdup strncasecmp strndup strrchr strstr strtol])
+ 
+ 
+-ETCSEARCHPATH=${prefix}/etc:/usr/etc:/usr/local/etc
+-LIBSEARCHPATH=${prefix}/lib:${prefix}/lib64:/usr/lib:/usr/lib64:/usr/local/lib:${prefix}/libexec:/usr/libexec:/usr/local/libexec
++ETCSEARCHPATH=${SYSCONFDIR}
++LIBSEARCHPATH=${LOCALBASE}/lib:/usr/lib:${LOCALBASE}/libexec:/usr/libexec
+ 
+ uname=`uname`
+ uversion=`uname -r | sed -e '1,$s/[[^0-9]]//g'`
