@@ -1,0 +1,65 @@
+$OpenBSD: patch-src_sysinfo_cpp,v 1.1.1.1 2010/04/18 12:54:12 ajacoutot Exp $
+--- src/sysinfo.cpp.orig	Sun Apr 11 16:28:31 2010
++++ src/sysinfo.cpp	Sun Apr 11 16:29:53 2010
+@@ -74,7 +74,11 @@ namespace {
+ 		   NULL);
+ 
+ 
++#ifndef __OpenBSD__
+       char* markup = g_strdup_printf(_("Release %s"), this->distro_release.c_str());
++#else
++      char* markup = g_strdup_printf(_("Kernel %s"), this->distro_release.c_str());
++#endif
+ 
+       g_object_set(G_OBJECT(release),
+ 		   "label",
+@@ -387,6 +391,27 @@ namespace {
+   };
+ 
+ 
++  class OpenBSDSysInfo
++    : public SysInfo
++  {
++  public:
++    OpenBSDSysInfo()
++    {
++      this->load_openbsd_info();
++    }
++
++  private:
++    void load_openbsd_info()
++    {
++      this->distro_name = "OpenBSD";
++
++      std::ifstream input("/var/run/dmesg.boot");
++
++      if (input)
++        std::getline(input, this->distro_release);
++   }
++  };
++
+   SysInfo* get_sysinfo()
+   {
+     if (char *p = g_find_program_in_path("lsb_release")) {
+@@ -399,6 +424,9 @@ namespace {
+     else if (SysInfo::system() == "NetBSD") {
+       return new NetBSDSysInfo;
+     }
++    else if (SysInfo::system() == "OpenBSD") {
++      return new OpenBSDSysInfo;
++    }
+ 
+     return new SysInfo;
+   }
+@@ -583,7 +611,11 @@ procman_create_sysinfo_view(void)
+   table_count++;
+   data->set_distro_labels(gtk_frame_get_label_widget(GTK_FRAME(distro_frame)), distro_release_label);
+ 
++#ifndef __OpenBSD__
+   markup = g_strdup_printf(_("Kernel %s"), data->kernel.c_str());
++#else
++  markup = g_strdup_printf(_("Release %s"), data->kernel.c_str());
++#endif
+   header = gtk_label_new(markup);
+   g_free(markup);
+   gtk_misc_set_alignment(GTK_MISC(header), 0.0, 0.5);

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_openfiles_cpp,v 1.1.1.1 2010/04/18 12:54:12 ajacoutot Exp $
+--- src/openfiles.cpp.orig	Tue Jun 23 02:03:02 2009
++++ src/openfiles.cpp	Thu Apr  8 18:08:11 2010
+@@ -67,7 +67,11 @@ friendlier_hostname(const char *addr_str, int port)
+ 		goto failsafe;
+ 
+ 	if (getnameinfo(res->ai_addr, res->ai_addrlen, hostname,
++#ifdef NI_IDN
+ 			sizeof hostname, service, sizeof service, NI_IDN))
++#else
++	    		sizeof hostname, service, sizeof service, 0))
++#endif
+ 		goto failsafe;
+ 
+ 	if (res) freeaddrinfo(res);
