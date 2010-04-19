@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/04/17 14:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/04/19 09:21:31 espie Exp $
 
 CATEGORIES =		databases
 V =			1.10
@@ -21,6 +21,7 @@ MULTI_PACKAGES =	-main -compact
 DBNAME =		${WRKBUILD}/sqlports
 
 do-build:
+	unset SUBDIR || true; \
 	cd ${PORTSDIR} && ${MAKE} dump-vars NO_IGNORE=Yes| \
 	perl ${FILESDIR}/mksqlitedb -v ${DBNAME}
 

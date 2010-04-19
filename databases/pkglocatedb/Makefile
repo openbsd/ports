@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/03/25 00:01:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/19 09:21:31 espie Exp $
 
 COMMENT =		database of packages for use with locate(1)
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 do-build:
+	unset SUBDIR || true; \
 	pkg_mklocatedb -a -p ${PORTSDIR} > ${WRKBUILD}/pkglocatedb
 
 do-install:
