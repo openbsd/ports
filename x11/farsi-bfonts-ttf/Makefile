@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2009/12/28 18:10:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/19 10:57:16 ajacoutot Exp $
 
 COMMENT=	farsi bornaray fonts
 
 DISTNAME=	bfonts
-PKGNAME=	farsi-bfonts-ttf-2.0
+PKGNAME=	farsi-bfonts-ttf-2.0p0
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		farsi-bfonts-ttf-extra-0.1.tar.gz:0
 
 CATEGORIES=	x11
 
@@ -16,6 +19,7 @@ PERMIT_DISTFILES_CDROM= No license
 PERMIT_DISTFILES_FTP=	No license
 
 MASTER_SITES=	http://www.bornaray.com/download/fonts/
+MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
 
 EXTRACT_SUFX=	.exe
 BUILD_DEPENDS += :unzip-*:archivers/unzip
