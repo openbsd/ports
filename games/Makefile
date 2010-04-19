@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2010/03/24 22:36:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.208 2010/04/19 23:47:12 nicm Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -108,6 +108,7 @@
      SUBDIR += numptyphysics
      SUBDIR += oilwar
      SUBDIR += omega
+     SUBDIR += oolite
      SUBDIR += openarena
      SUBDIR += opensonic
      SUBDIR += openttd
