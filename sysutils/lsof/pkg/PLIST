@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/01/01 22:31:43 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/04/19 05:56:44 ajacoutot Exp $
 @man man/cat8/lsof.0
+@group kmem
 @bin sbin/lsof
+@group
 share/lsof/
 share/lsof/00MANIFEST
 share/lsof/00README
