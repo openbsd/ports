@@ -1,0 +1,153 @@
+$OpenBSD: patch-src_battery_battery_c,v 1.1 2010/04/19 13:55:56 edd Exp $
+--- src/battery/battery.c.orig	Tue Jan 19 19:29:28 2010
++++ src/battery/battery.c	Fri Apr 16 11:03:54 2010
+@@ -24,6 +24,13 @@
+ #include <cairo-xlib.h>
+ #include <pango/pangocairo.h>
+ 
++#if defined(__OpenBSD__)
++#include <machine/apmvar.h>
++#include <err.h>
++#include <sys/ioctl.h>
++#include <unistd.h>
++#endif
++
+ #include "window.h"
+ #include "server.h"
+ #include "area.h"
+@@ -51,6 +58,10 @@ char *path_energy_full=0;
+ char *path_current_now=0;
+ char *path_status=0;
+ 
++#if defined(__OpenBSD__)
++int apm_fd = NULL;
++#endif
++
+ void update_batterys(void* arg)
+ {
+ 	int i;
+@@ -80,6 +91,21 @@ void update_batterys(void* arg)
+ 
+ void init_battery()
+ {
++
++#if defined(__OpenBSD__)
++
++	apm_fd = open("/dev/apm", O_RDONLY, "r");
++	if (apm_fd < 0) {
++		warn("init_battery: failed to open /dev/apm.");
++		battery_enabled = 0;
++		return;
++	}
++
++	if (battery_enabled && battery_timeout==0)
++		battery_timeout = add_timeout(10, 10000, update_batterys, 0);
++
++#else
++
+ 	// check battery
+ 	GDir *directory = 0;
+ 	GError *error = NULL;
+@@ -150,9 +176,8 @@ void init_battery()
+ 
+ 	g_free(path1);
+ 	g_free(battery_dir);
++#endif
+ 
+-	if (battery_enabled && battery_timeout==0)
+-		battery_timeout = add_timeout(10, 10000, update_batterys, 0);
+ }
+ 
+ 
+@@ -176,6 +201,12 @@ void cleanup_battery()
+ 
+ 	battery_low_cmd = path_energy_now = path_energy_full = path_current_now = path_status = 0;
+ 	bat1_font_desc = bat2_font_desc = 0;
++
++#if defined(__OpenBSD__)
++	if (close(apm_fd) == -1)
++		warn("cannot close /dev/apm");
++#endif
++
+ }
+ 
+ 
+@@ -227,8 +258,43 @@ void update_battery() {
+ 	char tmp[25];
+ 	int64_t energy_now = 0, energy_full = 0, current_now = 0;
+ 	int seconds = 0;
+-	int8_t new_percentage = 0;
++	unsigned int new_percentage = 0;
+ 
++#if defined(__OpenBSD__)
++
++	/* OpenBSD */
++	struct apm_power_info info;
++	if (ioctl(apm_fd, APM_IOC_GETPOWER, &(info)) < 0)
++		warn("power update: APM_IOC_GETPOWER");
++
++	/* best attempt at mapping to linux battery states */
++	battery_state.state = BATTERY_UNKNOWN;
++	switch (info.battery_state) {
++		case APM_BATT_CHARGING:
++			battery_state.state = BATTERY_CHARGING;
++			break;
++		default:
++			battery_state.state = BATTERY_DISCHARGING;
++			break;
++	}
++
++	if (info.battery_life == 100)
++		battery_state.state = BATTERY_FULL;
++
++	/* no mapping for openbsd really */
++	energy_full = 0;
++	energy_now = 0;
++
++	if (info.minutes_left != -1)
++		seconds = info.minutes_left * 60;
++	else
++		seconds = -1;
++
++	new_percentage = info.battery_life;
++
++#else
++	/* original linuxesque code */
++
+ 	fp = fopen(path_status, "r");
+ 	if(fp != NULL) {
+ 		if (fgets(tmp, sizeof tmp, fp)) {
+@@ -240,6 +306,7 @@ void update_battery() {
+ 		fclose(fp);
+ 	}
+ 
++
+ 	fp = fopen(path_energy_now, "r");
+ 	if(fp != NULL) {
+ 		if (fgets(tmp, sizeof tmp, fp)) energy_now = atoi(tmp);
+@@ -272,20 +339,22 @@ void update_battery() {
+ 		}
+ 	} else seconds = 0;
+ 
++	if(energy_full > 0)
++		new_percentage = (energy_now*100)/energy_full;
++#endif
++
+ 	battery_state.time.hours = seconds / 3600;
+ 	seconds -= 3600 * battery_state.time.hours;
+ 	battery_state.time.minutes = seconds / 60;
+ 	seconds -= 60 * battery_state.time.minutes;
+ 	battery_state.time.seconds = seconds;
+ 
+-	if(energy_full > 0)
+-		new_percentage = (energy_now*100)/energy_full;
+-
+ 	if(battery_low_status > new_percentage && battery_state.state == BATTERY_DISCHARGING && !battery_low_cmd_send) {
+ 		if (battery_low_cmd)
+ 			if (-1 != system(battery_low_cmd))
+ 				battery_low_cmd_send = 1;
+ 	}
++
+ 	if(battery_low_status < new_percentage && battery_state.state == BATTERY_CHARGING && battery_low_cmd_send) {
+ 		battery_low_cmd_send = 0;
+ 	}

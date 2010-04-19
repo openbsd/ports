@@ -1,0 +1,114 @@
+$OpenBSD: patch-sample_tint2rc,v 1.1 2010/04/19 13:55:56 edd Exp $
+--- sample/tint2rc.orig	Thu Jan 28 11:16:34 2010
++++ sample/tint2rc	Fri Apr 16 02:22:44 2010
+@@ -1,31 +1,33 @@
+ #---------------------------------------------
+ # TINT2 CONFIG FILE
++# Hacked for sensible OpenBSD defaults.
+ #---------------------------------------------
+ 
+ #---------------------------------------------
+ # BACKGROUND AND BORDER
+ #---------------------------------------------
+-rounded = 7
+-border_width = 2
+-background_color = #000000 60
+-border_color = #ffffff 18
+ 
+-rounded = 5
+-border_width = 0
+-background_color = #ffffff 40
+-border_color = #ffffff 50
++# id = 0
++# transparent
+ 
+-rounded = 5
++# id = 1
++rounded = 0
+ border_width = 0
+-background_color = #ffffff 18
+-border_color = #ffffff 70
++background_color = #ffffff 5
++border_color = #333333 
+ 
++# id = 2
++rounded = 0
++border_width = 1
++background_color = #424343 
++border_color = #333333
++
+ #---------------------------------------------
+ # PANEL
+ #---------------------------------------------
+ panel_monitor = all
+ panel_position = bottom center
+-panel_size = 94% 30
++panel_size = 100% 30
+ panel_margin = 0 0
+ panel_padding = 7 0
+ font_shadow = 0
+@@ -40,8 +42,8 @@ panel_layer = bottom
+ #taskbar_mode = multi_desktop
+ taskbar_mode = single_desktop
+ taskbar_padding = 2 3 2
+-taskbar_background_id = 0
+-#taskbar_active_background_id = 0
++taskbar_background_id = 1
++taskbar_active_background_id = 0
+ 
+ #---------------------------------------------
+ # TASKS
+@@ -51,9 +53,9 @@ task_text = 1
+ task_maximum_size = 140 35
+ task_centered = 1
+ task_padding = 6 3
+-task_font = sans 7
++task_font = sans 10 
+ task_font_color = #ffffff 70
+-task_background_id = 3
++task_background_id = 0
+ task_icon_asb = 100 0 0
+ # replace STATUS by 'urgent', 'active' or 'iconfied'
+ #task_STATUS_background_id = 2
+@@ -61,7 +63,7 @@ task_icon_asb = 100 0 0
+ #task_STATUS_icon_asb = 100 0 0
+ # example:
+ task_active_background_id = 2
+-task_active_font_color = #ffffff 85
++task_active_font_color = #ffffff
+ task_active_icon_asb = 100 0 0
+ urgent_nb_of_blink = 8
+ 
+@@ -95,8 +97,8 @@ clock_rclick_command = orage
+ #---------------------------------------------
+ # BATTERY
+ #---------------------------------------------
+-battery = 0
+-battery_hide = 98
++battery = 1
++battery_hide = never
+ battery_low_status = 10
+ battery_low_cmd = notify-send "battery low"
+ bat1_font = sans 8
+@@ -105,16 +107,17 @@ battery_font_color = #ffffff 76
+ battery_padding = 1 0
+ battery_background_id = 0
+ 
++
+ #---------------------------------------------
+ # TOOLTIP
+ #---------------------------------------------
+-tooltip = 0
++tooltip = 1
+ tooltip_padding = 2 2
+ tooltip_show_timeout = 0.7
+ tooltip_hide_timeout = 0.3
+-tooltip_background_id = 1
+-tooltip_font_color = #OOOOOO 80
+-tooltip_font = sans 10
++tooltip_background_id = 2
++tooltip_font_color = #ffffff 80
++tooltip_font = sans 10 
+ 
+ #---------------------------------------------
+ # MOUSE ACTION ON TASK

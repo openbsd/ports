@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/17 15:39:51 ajacoutot Exp $
-@bin bin/tint
-share/doc/tint/
-share/doc/tint/tint-0.6.odt
-share/doc/tint/tint-0.6.pdf
-share/examples/tint/
+@comment $OpenBSD: PLIST,v 1.2 2010/04/19 13:55:56 edd Exp $
+@bin bin/tint2
+@man man/man1/tint2.1
+share/doc/tint2/
 @sample ${SYSCONFDIR}/xdg/
-@sample ${SYSCONFDIR}/xdg/tint/
-share/examples/tint/tintrc
-@sample ${SYSCONFDIR}/xdg/tint/tintrc
+@sample ${SYSCONFDIR}/xdg/tint2/
+share/doc/tint2/AUTHORS
+share/doc/tint2/ChangeLog
+share/doc/tint2/NEWS
+share/doc/tint2/README
+share/examples/tint2/
+share/examples/tint2/tint2rc
+@sample ${SYSCONFDIR}/xdg/tint2/tint2rc
+share/tint2/
+share/tint2/default_icon.png

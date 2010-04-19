@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_battery_battery_h,v 1.1 2010/04/19 13:55:56 edd Exp $
+--- src/battery/battery.h.orig	Tue Jan 19 19:29:28 2010
++++ src/battery/battery.h	Fri Apr 16 01:40:55 2010
+@@ -42,7 +42,7 @@ typedef struct battime {
+ } battime;
+ 
+ typedef struct batstate {
+-	int percentage;
++	unsigned int percentage;
+ 	struct battime time;
+ 	enum chargestate state;
+ } batstate;
