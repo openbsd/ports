@@ -1,0 +1,44 @@
+$OpenBSD: patch-masquerade_install,v 1.1 2010/04/19 09:21:10 stephan Exp $
+--- masquerade.install.orig	Mon Aug 31 19:49:45 2009
++++ masquerade.install	Mon Apr 19 10:22:38 2010
+@@ -15,18 +15,22 @@
+ function masquerade_schema() {
+   return array(
+     'masquerade' => array(
++      'description' => "Each masquerading user has their session recorded into the masquerade table. Each record represents a masquerading user.",
+       'fields' => array(
+         'sid' => array(
++          'description' => "The current session for this masquerading user corresponding to their {sessions}.sid.",
+           'type' => 'varchar',
+           'length' => '64',
+           'not null' => TRUE,
+           'default' => ''),
+         'uid_from' => array(
++          'description' => 'The {users}.uid corresponding to a session.',
+           'type' => 'int',
+           'not null' => TRUE,
+           'default' => 0,
+           'disp-width' => '10'),
+         'uid_as' => array(
++          'description' => 'The {users}.uid this session is masquerading as.',
+           'type' => 'int',
+           'not null' => TRUE,
+           'default' => 0,
+@@ -38,14 +42,17 @@ function masquerade_schema() {
+       )
+     ),
+     'masquerade_users' => array(
++      'description' => 'Per-user permission table granting permissions to switch as a specific user.',
+       'fields' => array(
+         'uid_from' => array(
++          'description' => 'The {users}.uid that can masquerade as {masquerade_users}.uid_to.',
+           'type' => 'int',
+           'not null' => true,
+           'default' => 0,
+           'disp-width' => 10,
+         ),
+         'uid_to' => array(
++          'description' => 'The {users}.uid that {masquerade_users}.uid_from can masquerade as.',
+           'type' => 'int',
+           'not null' => true,
+           'default' => 0,
