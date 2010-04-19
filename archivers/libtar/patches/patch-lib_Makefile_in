@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2010/04/16 13:10:47 ajacoutot Exp $
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2010/04/19 08:16:17 ajacoutot Exp $
 
 Enable shared library, from pkgsrc.
 
@@ -12,7 +12,7 @@ Enable shared library, from pkgsrc.
 -	${RANLIB} libtar.a
 +	${LIBTOOL} --mode=link --tag=CC \
 +		${CC} -o libtar.la ${LIBTAR_OBJS:.o=.lo} ${LIBOBJS:.o=.lo} \
-+		${LDFLAGS} -rpath ${PREFIX}/lib -version-info 1:2
++		${LDFLAGS} -rpath ${TRUEPREFIX}/lib -version-info 1:2
  
  ${LIBTAR_OBJS}: ${LIBTAR_HDRS}
  

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/16 13:10:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/19 08:16:17 ajacoutot Exp $
 
 COMMENT=	C library for manipulating tar files
 
 DISTNAME=	libtar-1.2.11
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS=	tar	0.0	# .1.2
 
