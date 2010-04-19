@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2009/09/09 14:13:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/19 09:51:30 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
 
-V=		4.5.4
+V=		4.7.2
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
-PKGNAME-main=	py-qt4-${V}p0
+PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
 
 CATEGORIES=	x11 devel
@@ -35,7 +35,7 @@ RUN_DEPENDS-docs=
 PKG_ARCH-docs=	*
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:py-sip->=4.8.1:devel/py-sip \
+RUN_DEPENDS=	:py-sip->=4.10.0:devel/py-sip \
 		::x11/dbus-python
 LIB_DEPENDS=	QtAssistantClient,QtDesigner,QtGui,QtNetwork,QtOpenGL,QtScript,QtSql,QtSvg,QtTest,QtXml::x11/qt4 \
 		${MODPY_LIB_DEPENDS}
@@ -68,6 +68,7 @@ CONFIGURE_ARGS=	--verbose \
 		CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}"
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
 PYQTMODS=	QtCore QtGui QtNetwork QtOpenGL QtScript QtSql QtSvg \
 		QtTest QtXml QtAssistant QtDesigner

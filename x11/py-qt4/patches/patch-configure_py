@@ -1,7 +1,25 @@
-$OpenBSD: patch-configure_py,v 1.3 2009/09/05 16:18:43 sthen Exp $
---- configure.py.orig	Thu Sep  3 23:05:04 2009
-+++ configure.py	Thu Sep  3 23:05:47 2009
-@@ -1495,7 +1495,7 @@ Type 'no' to decline the terms of the license.
+$OpenBSD: patch-configure_py,v 1.4 2010/04/19 09:51:30 espie Exp $
+--- configure.py.orig	Wed Mar 17 19:29:19 2010
++++ configure.py	Mon Apr 19 11:45:31 2010
+@@ -1060,6 +1060,17 @@ def run_command(cmd):
+ 
+     cmd is the command to run.
+     """
++    try:
++        localbase = os.environ["LOCALBASE"]
++    except KeyError:
++        localbase = "/usr/local"
++    try:
++        x11base = os.environ["X11BASE"]
++    except KeyError:
++        x11base = "/usr/X11R6"
++
++    cmd = cmd.replace("${LOCALBASE}", localbase).replace("$(LOCALBASE)", localbase)
++    cmd = cmd.replace("${X11BASE}", x11base).replace("$(X11BASE)", x11base)
+     if opts.verbose:
+         sys.stdout.write(cmd + "\n")
+ 
+@@ -1670,7 +1681,7 @@ Type 'no' to decline the terms of the license.
              sys.stdout.flush()
  
              try:
