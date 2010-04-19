@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Core_GameController_h,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- src/Core/GameController.h.orig	Tue Mar 30 23:56:11 2010
++++ src/Core/GameController.h	Tue Mar 30 23:55:57 2010
+@@ -34,7 +34,7 @@ MA 02110-1301, USA.
+ #define DISPLAY_MIN_WIDTH		640
+ #define DISPLAY_MIN_HEIGHT		480
+ 
+-#ifndef GNUSTEP
++//#ifndef GNUSTEP
+ /*	OS X apps are permitted to assume 800x600 screens. Under OS X, we always
+ 	start up in windowed mode. Therefore, the default size fits an 800x600
+ 	screen and leaves space for the menu bar and title bar.
+@@ -42,7 +42,7 @@ MA 02110-1301, USA.
+ #define DISPLAY_DEFAULT_WIDTH	800
+ #define DISPLAY_DEFAULT_HEIGHT	540
+ #define DISPLAY_DEFAULT_REFRESH	75
+-#endif
++//#endif
+ 
+ #define DISPLAY_MAX_WIDTH		2400
+ #define DISPLAY_MAX_HEIGHT		1800

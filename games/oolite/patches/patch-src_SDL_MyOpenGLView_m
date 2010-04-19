@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_SDL_MyOpenGLView_m,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- src/SDL/MyOpenGLView.m.orig	Wed Mar 31 00:27:49 2010
++++ src/SDL/MyOpenGLView.m	Wed Mar 31 00:28:33 2010
+@@ -128,7 +128,7 @@ MA 02110-1301, USA.
+ 
+ 	// Generate the window caption, containing the version number and the date the executable was compiled.
+ 	static char windowCaption[128];
+-	NSString *versionString = [NSString stringWithFormat:@"Oolite v%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
++	NSString *versionString = [NSString stringWithFormat:@"Oolite v%@", [[[NSBundle bundleWithPath: BUNDLE_PATH] infoDictionary] objectForKey:@"CFBundleVersion"]];
+ 
+ 	strcpy (windowCaption, [versionString UTF8String]);
+ 	strcat (windowCaption, " - "__DATE__);
+@@ -144,7 +144,7 @@ MA 02110-1301, USA.
+ 
+ #endif
+ 
+-	imagesDir = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Images"];
++	imagesDir = [[[NSBundle bundleWithPath: BUNDLE_PATH] resourcePath] stringByAppendingPathComponent:@"Images"];
+ 	icon = SDL_LoadBMP([[imagesDir stringByAppendingPathComponent:@"WMicon.bmp"] cString]);
+ 
+ 	if (icon != NULL)
+@@ -487,7 +487,7 @@ MA 02110-1301, USA.
+   #if OOLITE_WINDOWS
+ 	NSString		*imagesDir = @"Resources/Images";
+   #else
+-	NSString		*imagesDir = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Images"];
++	NSString		*imagesDir = [[[NSBundle bundleWithPath: BUNDLE_PATH] resourcePath] stringByAppendingPathComponent:@"Images"];
+   #endif
+ 
+ 	image = SDL_LoadBMP([[imagesDir stringByAppendingPathComponent:@"splash.bmp"] cString]);

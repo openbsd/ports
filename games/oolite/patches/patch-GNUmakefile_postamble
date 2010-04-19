@@ -1,0 +1,24 @@
+$OpenBSD: patch-GNUmakefile_postamble,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- GNUmakefile.postamble.orig	Tue Mar 30 22:22:40 2010
++++ GNUmakefile.postamble	Tue Mar 30 22:22:48 2010
+@@ -18,15 +18,15 @@ PROGDIR=$(OBJC_PROGRAM_NAME).app
+ after-all:: 
+ 	$(MKDIRS) $(PROGDIR)
+ 	$(MKDIRS) $(PROGDIR)/Resources
+-	$(CP) -r -u -f Resources $(PROGDIR)
+-	$(CP) -r -u -f Schemata $(PROGDIR)/Resources
+-	$(CP) -u -f src/Cocoa/Info-Oolite.plist $(PROGDIR)/Resources/Info-gnustep.plist
+-	$(CP) -u -f $(GNUSTEP_OBJ_DIR_NAME)/$(SRC_BIN) $(PROGDIR)/$(DEST_BIN)
++	$(CP) -r -f Resources $(PROGDIR)
++	$(CP) -r -f Schemata $(PROGDIR)/Resources
++	$(CP) -f src/Cocoa/Info-Oolite.plist $(PROGDIR)/Resources/Info-gnustep.plist
++	$(CP) -f $(GNUSTEP_OBJ_DIR_NAME)/$(SRC_BIN) $(PROGDIR)/$(DEST_BIN)
+ ifeq ($(debug),no)
+ 	strip $(PROGDIR)/$(DEST_BIN)
+ endif
+ ifeq ($(GNUSTEP_HOST_OS),mingw32)
+-	$(CP) -r -u -f deps/Windows-x86-deps/DLLs/*.dll $(PROGDIR)
++	$(CP) -r -f deps/Windows-x86-deps/DLLs/*.dll $(PROGDIR)
+ endif
+ 
+ after-clean::

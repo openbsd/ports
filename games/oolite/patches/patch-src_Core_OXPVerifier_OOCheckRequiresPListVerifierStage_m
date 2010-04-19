@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Core_OXPVerifier_OOCheckRequiresPListVerifierStage_m,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- src/Core/OXPVerifier/OOCheckRequiresPListVerifierStage.m.orig	Wed Mar 31 21:55:41 2010
++++ src/Core/OXPVerifier/OOCheckRequiresPListVerifierStage.m	Wed Mar 31 21:56:38 2010
+@@ -114,7 +114,7 @@ static NSString * const kStageName	= @"Checking requir
+ 	
+ 	if (version != nil || maxVersion != nil)
+ 	{
+-		ooVersionComponents = ComponentsFromVersionString([[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]);
++		ooVersionComponents = ComponentsFromVersionString([[[NSBundle bundleWithPath: BUNDLE_PATH] infoDictionary] objectForKey:@"CFBundleVersion"]);
+ 		if (ooVersionComponents == nil)
+ 		{
+ 			OOLog(@"verifyOXP.requiresPList.cantFindOoliteVersion", @"----- WARNING: could not find Oolite's version for requires.plist sanity check.");

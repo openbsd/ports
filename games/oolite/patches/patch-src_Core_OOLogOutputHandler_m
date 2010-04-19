@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Core_OOLogOutputHandler_m,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- src/Core/OOLogOutputHandler.m.orig	Wed Mar 31 00:04:42 2010
++++ src/Core/OOLogOutputHandler.m	Wed Mar 31 00:18:24 2010
+@@ -634,7 +634,7 @@ static NSString *GetAppName(void)
+ 	
+ 	if (appName == nil)
+ 	{
+-		bundle = [NSBundle mainBundle];
++		bundle = [NSBundle bundleWithPath: BUNDLE_PATH];
+ 		appName = [bundle objectForInfoDictionaryKey:@"CFBundleName"];
+ 		if (appName == nil)  appName = [bundle bundleIdentifier];
+ 		if (appName == nil)  appName = @"<unknown application>";

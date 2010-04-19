@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Core_OOLogHeader_m,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- src/Core/OOLogHeader.m.orig	Wed Mar 31 00:05:05 2010
++++ src/Core/OOLogHeader.m	Wed Mar 31 00:19:27 2010
+@@ -130,7 +130,7 @@ void OOPrintLogHeader(void)
+ 		#define systemString @OS_TYPE_STRING
+ 	#endif
+ 	
+-	NSString *versionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
++	NSString *versionString = [[[NSBundle bundleWithPath: BUNDLE_PATH] infoDictionary] objectForKey:@"CFBundleVersion"];
+ 	if (versionString == nil)  versionString = @"<unknown version>";
+ 	
+ 	NSMutableString *miscString = [NSMutableString stringWithFormat:@"Opening log for Oolite version %@ (" CPU_TYPE_STRING RELEASE_VARIANT_STRING ") under %@ at %@.\n", versionString, systemString, [NSDate date]];

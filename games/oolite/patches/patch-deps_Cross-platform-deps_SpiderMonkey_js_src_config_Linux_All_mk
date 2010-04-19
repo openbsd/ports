@@ -1,0 +1,35 @@
+$OpenBSD: patch-deps_Cross-platform-deps_SpiderMonkey_js_src_config_Linux_All_mk,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- deps/Cross-platform-deps/SpiderMonkey/js/src/config/Linux_All.mk.orig	Sun Aug 30 12:41:18 2009
++++ deps/Cross-platform-deps/SpiderMonkey/js/src/config/Linux_All.mk	Tue Mar 30 21:59:00 2010
+@@ -41,9 +41,9 @@
+ # Config for all versions of Linux
+ #
+ 
+-CC = gcc
+-CCC = g++
+-CFLAGS +=  -Wall -Wno-format
++#CC = gcc
++#CCC = g++
++#CFLAGS +=  -Wall -Wno-format
+ OS_CFLAGS = -DXP_UNIX -DSVR4 -DSYSV -D_BSD_SOURCE -DPOSIX_SOURCE -DHAVE_LOCALTIME_R
+ 
+ RANLIB = echo
+@@ -90,14 +90,14 @@ endif
+ # Use the editline library to provide line-editing support.
+ JS_EDITLINE = 1
+ 
+-ifeq ($(CPU_ARCH),x86_64)
++#ifeq ($(CPU_ARCH),x86_64)
+ # Use VA_COPY() standard macro on x86-64
+ # FIXME: better use it everywhere
+ OS_CFLAGS += -DHAVE_VA_COPY -DVA_COPY=va_copy
+-endif
++#endif
+ 
+-ifeq ($(CPU_ARCH),x86_64)
++#ifeq ($(CPU_ARCH),x86_64)
+ # We need PIC code for shared libraries
+ # FIXME: better patch rules.mk & fdlibm/Makefile*
+ OS_CFLAGS += -DPIC -fPIC
+-endif
++#endif

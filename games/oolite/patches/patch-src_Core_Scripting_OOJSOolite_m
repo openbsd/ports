@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Core_Scripting_OOJSOolite_m,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- src/Core/Scripting/OOJSOolite.m.orig	Wed Mar 31 21:55:16 2010
++++ src/Core/Scripting/OOJSOolite.m	Wed Mar 31 21:56:45 2010
+@@ -130,7 +130,7 @@ static JSBool OoliteGetProperty(JSContext *context, JS
+ 
+ static NSString *VersionString(void)
+ {
+-	return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
++	return [[[NSBundle bundleWithPath: BUNDLE_PATH] infoDictionary] objectForKey:@"CFBundleVersion"];
+ }
+ 
+ 

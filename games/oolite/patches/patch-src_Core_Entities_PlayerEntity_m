@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Core_Entities_PlayerEntity_m,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- src/Core/Entities/PlayerEntity.m.orig	Wed Mar 31 21:43:01 2010
++++ src/Core/Entities/PlayerEntity.m	Wed Mar 31 21:43:50 2010
+@@ -306,7 +306,7 @@ static PlayerEntity *sSharedPlayer = nil;
+ {
+ 	NSMutableDictionary *result = [NSMutableDictionary dictionary];
+ 	
+-	[result setObject:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"] forKey:@"written_by_version"];
++	[result setObject:[[[NSBundle bundleWithPath: BUNDLE_PATH] infoDictionary] objectForKey:@"CFBundleVersion"] forKey:@"written_by_version"];
+ 	
+ 	NSString *gal_seed = [NSString stringWithFormat:@"%d %d %d %d %d %d",galaxy_seed.a, galaxy_seed.b, galaxy_seed.c, galaxy_seed.d, galaxy_seed.e, galaxy_seed.f];
+ 	NSString *gal_coords = [NSString stringWithFormat:@"%d %d",(int)galaxy_coordinates.x,(int)galaxy_coordinates.y];
+@@ -5361,7 +5361,7 @@ static int last_outfitting_index;
+ 			if ([[arguments objectAtIndex:i] isEqual:@"-showversion"])
+ 			{
+ 				int ms_start = msgLine;
+-				NSString *version = [NSString stringWithFormat:@"Version %@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
++				NSString *version = [NSString stringWithFormat:@"Version %@", [[[NSBundle bundleWithPath: BUNDLE_PATH] infoDictionary] objectForKey:@"CFBundleVersion"]];
+ 				int i = msgLine = [gui addLongText:version startingAtRow:ms_start align:GUI_ALIGN_CENTER];
+ 				for (i-- ; i >= ms_start; i--) [gui setColor:[OOColor magentaColor] forRow:i];
+ 			}

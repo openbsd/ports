@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Core_GameController_m,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- src/Core/GameController.m.orig	Wed Mar 31 00:04:47 2010
++++ src/Core/GameController.m	Wed Mar 31 00:18:38 2010
+@@ -855,7 +855,7 @@ static NSComparisonResult CompareDisplayModes(id arg1,
+ 	NSString				*path = nil;
+ 	
+ 	// Set contents of Help window
+-	path = [[NSBundle mainBundle] pathForResource:@"ReadMe" ofType:@"rtfd"];
++	path = [[NSBundle bundleWithPath: BUNDLE_PATH] pathForResource:@"ReadMe" ofType:@"rtfd"];
+ 	if (path != nil)
+ 	{
+ 		[helpView readRTFDFromFile:path];

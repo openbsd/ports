@@ -1,0 +1,30 @@
+$OpenBSD: patch-deps_Cross-platform-deps_SpiderMonkey_js_src_config_mk,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- deps/Cross-platform-deps/SpiderMonkey/js/src/config.mk.orig	Sun Aug 30 12:41:24 2009
++++ deps/Cross-platform-deps/SpiderMonkey/js/src/config.mk	Tue Mar 30 22:01:54 2010
+@@ -94,6 +94,9 @@ endif
+ ifeq ($(OS_ARCH),Linux)
+ OS_CONFIG      := Linux_All
+ else
++ifeq ($(OS_ARCH),OpenBSD)
++OS_CONFIG      := Linux_All
++else
+ ifeq ($(OS_ARCH),dgux)
+ OS_CONFIG      := dgux
+ else
+@@ -104,6 +107,7 @@ OS_CONFIG       := $(OS_ARCH)$(OS_OBJTYPE)$(OS_RELEASE
+ endif
+ endif
+ endif
++endif
+ 
+ ASFLAGS         =
+ DEFINES         =
+@@ -117,7 +121,7 @@ CP = cp
+ endif
+ 
+ ifdef BUILD_OPT
+-OPTIMIZER  = -O
++#OPTIMIZER  = -O
+ DEFINES    += -UDEBUG -DNDEBUG -UDEBUG_$(USER)
+ OBJDIR_TAG = _OPT
+ else

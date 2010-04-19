@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Core_OOCacheManager_m,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
+--- src/Core/OOCacheManager.m.orig	Wed Mar 31 00:04:56 2010
++++ src/Core/OOCacheManager.m	Wed Mar 31 00:19:13 2010
+@@ -306,7 +306,7 @@ static OOCacheManager *sSingleton = nil;
+ 	BOOL					accept = YES;
+ 	uint64_t				endianTagValue = 0;
+ 	
+-	ooliteVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:kCacheKeyVersion];
++	ooliteVersion = [[[NSBundle bundleWithPath: BUNDLE_PATH] infoDictionary] objectForKey:kCacheKeyVersion];
+ 	
+ 	[self clear];
+ 	
+@@ -385,7 +385,7 @@ static OOCacheManager *sSingleton = nil;
+ #endif
+ 	
+ 	OOLog(@"dataCache.willWrite", @"About to write data cache.");	// Added for 1.69 to detect possible write-related crash. -- Ahruman
+-	ooliteVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:kCacheKeyVersion];
++	ooliteVersion = [[[NSBundle bundleWithPath: BUNDLE_PATH] infoDictionary] objectForKey:kCacheKeyVersion];
+ 	endianTag = [NSData dataWithBytes:&endianTagValue length:sizeof endianTagValue];
+ 	formatVersion = [NSNumber numberWithUnsignedInt:kFormatVersionValue];
+ 	
