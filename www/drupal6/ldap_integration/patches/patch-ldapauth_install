@@ -1,0 +1,93 @@
+$OpenBSD: patch-ldapauth_install,v 1.1 2010/04/19 14:15:01 stephan Exp $
+--- ldapauth.install.orig	Mon Apr 19 11:35:38 2010
++++ ldapauth.install	Mon Apr 19 11:36:55 2010
+@@ -40,73 +40,89 @@ function ldapauth_uninstall() {
+  */
+ function ldapauth_schema() {
+   $schema['ldapauth'] = array(
++    'description' => 'Store LDAP server and connection/authentication information.',
+     'fields' => array(
+       'sid' => array(
++        'description' => 'The primary identifier for an LDAP server.',
+         'type' => 'serial',
+         'size' => 'tiny',
+         'not null' => TRUE,
+       ),
+       'name' => array(
++        'description' => 'A unique name for an LDAP server configuration.',
+         'type' => 'varchar',
+         'length' => 255,
+         'not null' => TRUE,
+       ),
+       'status' => array(
++        'description' => 'Whether or not an LDAP server is active.',
+         'type' => 'int',
+         'size' => 'tiny',
+         'not null' => TRUE,
+         'default' => 0,
+       ),
+       'server' => array(
++        'description' => 'The domain name or IP address of an LDAP server.',
+         'type' => 'varchar',
+         'length' => 255,
+         'not null' => TRUE,
+       ),
+       'port' => array(
++        'description' => 'The TCP/IP server port which accepts LDAP connections.',
+         'type' => 'int',
+         'not null' => TRUE,
+         'default' => 389,
+       ),
+       'tls' => array(
++        'description' => 'Whether or not an LDAP server can use TLS.',
+         'type' => 'int',
+         'size' => 'tiny',
+         'not null' => TRUE,
+         'default' => 0,
+       ),
+       'encrypted' => array(
++        'description' => 'MD5 encrypted LDAP password.',
+         'type' => 'int',
+         'size' => 'tiny',
+         'not null' => TRUE,
+         'default' => 0,
+       ),
+       'basedn' => array(
++        'description' => 'Base DNs for users.',
+         'type' => 'text',
+       ),
+       'user_attr' => array(
++        'description' => 'The attribute that holds the login name of the users.',
+         'type' => 'varchar',
+         'length' => 255,
+       ),
+       'mail_attr' => array(
++        'description' => 'The attribute that holds the email address of the users.',
+         'type' => 'varchar',
+         'length' => 255,
+       ),
+       'binddn' => array(
++        'description' => 'DN for non-anonymous search.',
+         'type' => 'varchar',
+         'length' => 255,
+       ),
+       'bindpw' => array(
++        'description' => 'Password for non-anonymous search.',
+         'type' => 'varchar',
+         'length' => 255,
+       ),
+       'login_php' =>  array(
++        'description' => 'PHP code to transform a login name before it is sent to LDAP for authentication.',
+         'type' => 'text',
+         'not null' => FALSE,
+       ),
+       'filter_php' =>  array(
++        'description' => 'PHP code to filter users which are allowed to login based on their LDAP data.',
+         'type' => 'text',
+         'not null' => FALSE,
+       ),
+       'weight' =>  array(
++        'description' => 'Weight of an LDAP server.',
+         'type' => 'int',
+         'not null' => TRUE,
+         'default' => 0,
