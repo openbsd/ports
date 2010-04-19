@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_corelib_statemachine_qabstractstate_p_h,v 1.1 2010/04/19 09:36:30 espie Exp $
+--- src/corelib/statemachine/qabstractstate_p.h.orig	Sun Dec  6 10:18:33 2009
++++ src/corelib/statemachine/qabstractstate_p.h	Sun Dec  6 10:18:42 2009
+@@ -85,8 +85,8 @@ class QAbstractStatePrivate : public QObjectPrivate (p
+     void emitEntered();
+     void emitExited();
+ 
+-    uint stateType:31;
+-    uint isMachine:1;
++    uint stateType;
++    uint isMachine;
+     mutable QState *parentState;
+ };
+ 

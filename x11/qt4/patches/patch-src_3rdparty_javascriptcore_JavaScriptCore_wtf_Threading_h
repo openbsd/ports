@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Threading_h,v 1.1 2010/04/19 09:36:30 espie Exp $
+--- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Threading.h.orig	Sun Dec  6 12:38:14 2009
++++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Threading.h	Sun Dec  6 12:39:49 2009
+@@ -228,7 +228,7 @@ inline int atomicDecrement(int volatile* addend) { ret
+ inline int atomicIncrement(int volatile* addend) { return OSAtomicIncrement32Barrier(const_cast<int*>(addend)); }
+ inline int atomicDecrement(int volatile* addend) { return OSAtomicDecrement32Barrier(const_cast<int*>(addend)); }
+ 
+-#elif COMPILER(GCC) && !PLATFORM(SPARC64) // sizeof(_Atomic_word) != sizeof(int) on sparc64 gcc
++#elif COMPILER(GCC) && !PLATFORM(SPARC64) && !PLATFORM(OPENBSD) // sizeof(_Atomic_word) != sizeof(int) on sparc64 gcc
+ #define WTF_USE_LOCKFREE_THREADSAFESHARED 1
+ 
+ inline int atomicIncrement(int volatile* addend) { return __gnu_cxx::__exchange_and_add(addend, 1) + 1; }

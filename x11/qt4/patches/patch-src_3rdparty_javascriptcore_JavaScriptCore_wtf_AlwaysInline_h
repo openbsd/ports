@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_AlwaysInline_h,v 1.1 2010/04/19 09:36:30 espie Exp $
+--- src/3rdparty/javascriptcore/JavaScriptCore/wtf/AlwaysInline.h.orig	Sun Dec  6 12:46:00 2009
++++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/AlwaysInline.h	Sun Dec  6 12:46:28 2009
+@@ -21,7 +21,7 @@
+ #include "Platform.h"
+ 
+ #ifndef ALWAYS_INLINE
+-#if COMPILER(GCC) && defined(NDEBUG) && !COMPILER(MINGW)
++#if COMPILER(GCC) && defined(NDEBUG) && !COMPILER(MINGW) && !PLATFORM(OPENBSD)
+ #define ALWAYS_INLINE inline __attribute__((__always_inline__))
+ #elif COMPILER(MSVC) && defined(NDEBUG)
+ #define ALWAYS_INLINE __forceinline

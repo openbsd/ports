@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_plugins_graphicssystems_trace_qgraphicssystem_trace_cpp,v 1.1 2010/04/19 09:36:30 espie Exp $
+--- src/plugins/graphicssystems/trace/qgraphicssystem_trace.cpp.orig	Sun Dec  6 13:01:23 2009
++++ src/plugins/graphicssystems/trace/qgraphicssystem_trace.cpp	Sun Dec  6 13:03:54 2009
+@@ -79,7 +79,9 @@ QTraceWindowSurface::QTraceWindowSurface(QWidget *widg
+ QTraceWindowSurface::~QTraceWindowSurface()
+ {
+     if (buffer) {
+-        QFile outputFile(QString(QLatin1String("qtgraphics-%0.trace")).arg(winId));
++    	QLatin1String a_latin1("qtgraphics-%0.trace");
++	QString a_string(a_latin1);
++        QFile outputFile(a_string.arg(winId));
+         if (outputFile.open(QIODevice::WriteOnly)) {
+             QDataStream out(&outputFile);
+             out.writeBytes("qttrace", 7);

@@ -1,7 +1,7 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.12 2009/10/11 09:43:08 espie Exp $
---- qmake/generators/unix/unixmake.cpp.orig	Tue Sep 29 13:01:33 2009
-+++ qmake/generators/unix/unixmake.cpp	Sat Oct 10 13:19:31 2009
-@@ -692,7 +692,7 @@ UnixMakefileGenerator::defaultInstall(const QString &t
+$OpenBSD: patch-qmake_generators_unix_unixmake_cpp,v 1.13 2010/04/19 09:36:30 espie Exp $
+--- qmake/generators/unix/unixmake.cpp.orig	Fri Nov 27 02:27:48 2009
++++ qmake/generators/unix/unixmake.cpp	Sun Dec  6 09:15:16 2009
+@@ -693,7 +693,7 @@ UnixMakefileGenerator::defaultInstall(const QString &t
          if(project->isEmpty("QMAKE_CYGWIN_SHLIB")) {
              if(!project->isActiveConfig("staticlib") && !project->isActiveConfig("plugin")) {
                  if(project->isEmpty("QMAKE_HPUX_SHLIB")) {

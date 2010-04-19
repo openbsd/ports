@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_plugins_imageformats_mng_mng_pro,v 1.2 2007/05/22 09:09:32 espie Exp $
---- src/plugins/imageformats/mng/mng.pro.orig	Mon Mar 19 21:15:21 2007
-+++ src/plugins/imageformats/mng/mng.pro	Sat Apr 21 16:08:28 2007
-@@ -8,7 +8,7 @@ SOURCES += main.cpp \
-            qmnghandler.cpp
+$OpenBSD: patch-src_plugins_imageformats_mng_mng_pro,v 1.3 2010/04/19 09:36:30 espie Exp $
+--- src/plugins/imageformats/mng/mng.pro.orig	Fri Nov 27 02:27:53 2009
++++ src/plugins/imageformats/mng/mng.pro	Sun Dec  6 09:15:16 2009
+@@ -14,7 +14,7 @@ symbian: {
+ }
  
  contains(QT_CONFIG, system-mng) {
 -        unix:LIBS += -lmng

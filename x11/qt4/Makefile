@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/04/05 09:54:35 landry Exp $
+# $OpenBSD: Makefile,v 1.65 2010/04/19 09:36:30 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -17,47 +17,49 @@ PKGNAME-examples =	qt4-examples-${PKGVERSION}
 PKGNAME-sqlite2 =	qt4-sqlite2-${PKGVERSION}
 PKGNAME-sqlite =	qt4-sqlite-${PKGVERSION}
 PKGNAME-tds =		qt4-tds-${PKGVERSION}
-PKGNAME-main =		qt4-${VERSION}p0
+PKGNAME-main =		qt4-${VERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
 SHARED_LIBS =	Qt3Support 8.0 \
-		QtCore 7.0 \
+		QtCore 8.0 \
 		QtDesigner 7.0 \
 		QtDesignerComponents 7.0 \
-		QtGui 8.0 \
-		QtNetwork 7.0 \
+		QtGui 9.0 \
+		QtNetwork 8.0 \
 		QtOpenGL 7.0 \
-		QtSql 7.0 \
-		QtXml 7.0 \
+		QtSql 8.0 \
+		QtXml 8.0 \
 		QtSvg 7.0 \
 		QtTest 7.0 \
 		QtAssistantClient 3.0 \
-		QtDBus 1.0 \
-		QtScript 0.0 \
+		QtDBus 2.0 \
+		QtMultimedia 0.0 \
+		QtScript 1.0 \
 		QtCLucene 0.0 \
-		QtHelp 0.0 \
+		QtHelp 1.0 \
+		QtMultimedia 0.0 \
 		QtXmlPatterns 0.0 \
 		QtScriptTools 0.0 \
-		QtWebKit 0.0 \
+		QtWebKit 1.0 \
 		phonon 4.1
 
 
-VERSION =	4.5.3
-PKGVERSION =	4.5.3
-DISTNAME =	qt-x11-opensource-src-${VERSION}
+VERSION =	4.6.2
+PKGVERSION =	4.6.2
+DISTNAME =	qt-everywhere-opensource-src-${VERSION}
 
 
 CATEGORIES =	x11
-MASTER_SITES =	ftp://ftp.qtsoftware.com/qt/source/ \
+MASTER_SITES =	ftp://ftp.qt.nokia.com/qt/source/ \
 		ftp://ftp.troll.no/qt/source/ \
 		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/ \
 		ftp://ftp.ntua.gr/pub/X11/Qt/qt/source/ \
 		ftp://ftp.tu-chemnitz.de/pub/Qt/qt/source/ \
 		http://ftp.silug.org/pub/qt/source/
 
-HOMEPAGE =	http://www.qtsoftware.com/
+HOMEPAGE =	http://qt.nokia.com/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
  
@@ -220,7 +222,7 @@ LIB_DEPENDS-tds =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
 WANTLIB-tds =		${WANTLIB} ${sqlWANTLIB}
 
 LIB_DEPENDS-examples =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus,QtScript,QtScriptTools,QtHelp,QtCLucene,phonon::${BASE_PKGPATH}
+			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus,QtScript,QtScriptTools,QtHelp,QtCLucene,phonon,QtMultimedia::${BASE_PKGPATH}
 WANTLIB-examples =	${WANTLIB} ${commonWANTLIB} gobject-2.0 Xrandr
 
 
@@ -277,7 +279,7 @@ post-install:
 	# programs
 	${INSTALL_PROGRAM_DIR} ${QT_BINDIR} 
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/{findtr,syncqt} ${QT_BINDIR}
-	${INSTALL_PROGRAM} ${WRKBUILD}/tools/qdoc3/qdoc3 ${QT_BINDIR}
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/qdoc3 ${QT_BINDIR}
 .for p in ${PROGRAMS4} 
 	@ln -sf ${TRUEPREFIX}/lib/qt4/bin/$p ${PREFIX}/bin/$p4
 .endfor

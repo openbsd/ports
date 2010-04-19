@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_corelib_kernel_qmetaobject_cpp,v 1.1 2010/04/19 09:36:30 espie Exp $
+--- src/corelib/kernel/qmetaobject.cpp.orig	Sun Dec  6 10:12:13 2009
++++ src/corelib/kernel/qmetaobject.cpp	Sun Dec  6 10:12:52 2009
+@@ -943,7 +943,8 @@ QByteArray QMetaObject::normalizedType(const char *typ
+     if (!type || !*type)
+         return result;
+ 
+-    QVarLengthArray<char> stackbuf(int(strlen(type)) + 1);
++    int sz = int(strlen(type)) + 1;
++    QVarLengthArray<char> stackbuf(sz);
+     qRemoveWhitespace(type, stackbuf.data());
+     int templdepth = 0;
+     qNormalizeType(stackbuf.data(), templdepth, result);

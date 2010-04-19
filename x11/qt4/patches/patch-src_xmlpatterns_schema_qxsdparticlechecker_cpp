@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_xmlpatterns_schema_qxsdparticlechecker_cpp,v 1.1 2010/04/19 09:36:30 espie Exp $
+--- src/xmlpatterns/schema/qxsdparticlechecker.cpp.orig	Sun Dec  6 12:00:36 2009
++++ src/xmlpatterns/schema/qxsdparticlechecker.cpp	Sun Dec  6 12:01:27 2009
+@@ -193,7 +193,9 @@ static bool derivedTermValid(const XsdTerm::Ptr &baseT
+                     return false;
+                 }
+ 
+-                const QSourceLocation dummyLocation(QUrl(QLatin1String("http://dummy.org")), 1, 1);
++		QLatin1String a_string("http://dummy.org");
++		QUrl a_url(a_string);
++                const QSourceLocation dummyLocation(a_url, 1, 1);
+                 const XsdTypeChecker checker(context, QVector<QXmlName>(), dummyLocation);
+                 if (!checker.valuesAreEqual(element->valueConstraint()->value(), derivedElement->valueConstraint()->value(), derivedElement->type())) {
+                     errorMsg = QtXmlPatterns::tr("Fixed value constraint of element %1 differs from value constraint in base particle.").arg(formatKeyword(derivedElement->displayName(namePool)));

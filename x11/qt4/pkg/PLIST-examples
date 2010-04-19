@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.22 2009/10/11 09:43:08 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.23 2010/04/19 09:36:30 espie Exp $
 @conflict qt4-<=4.2.2
 %%SHARED%%
 %%GCC4%%
@@ -68,8 +68,6 @@ lib/qt4/demos/boxes/glbuffers.cpp
 lib/qt4/demos/boxes/glbuffers.h
 lib/qt4/demos/boxes/glextensions.cpp
 lib/qt4/demos/boxes/glextensions.h
-lib/qt4/demos/boxes/glshaders.cpp
-lib/qt4/demos/boxes/glshaders.h
 lib/qt4/demos/boxes/gltrianglemesh.h
 lib/qt4/demos/boxes/granite.fsh
 lib/qt4/demos/boxes/main.cpp
@@ -89,7 +87,6 @@ lib/qt4/demos/boxes/smiley.png
 lib/qt4/demos/boxes/square.jpg
 lib/qt4/demos/boxes/trackball.cpp
 lib/qt4/demos/boxes/trackball.h
-lib/qt4/demos/boxes/vector.h
 lib/qt4/demos/boxes/wood.fsh
 lib/qt4/demos/chip/
 @bin lib/qt4/demos/chip/chip
@@ -173,16 +170,6 @@ lib/qt4/demos/mainwindow/titlebarLeft.png
 lib/qt4/demos/mainwindow/titlebarRight.png
 lib/qt4/demos/mainwindow/toolbar.cpp
 lib/qt4/demos/mainwindow/toolbar.h
-lib/qt4/demos/mediaplayer/
-lib/qt4/demos/mediaplayer/images/
-lib/qt4/demos/mediaplayer/images/screen.png
-lib/qt4/demos/mediaplayer/main.cpp
-@bin lib/qt4/demos/mediaplayer/mediaplayer
-lib/qt4/demos/mediaplayer/mediaplayer.cpp
-lib/qt4/demos/mediaplayer/mediaplayer.h
-lib/qt4/demos/mediaplayer/mediaplayer.pro
-lib/qt4/demos/mediaplayer/mediaplayer.qrc
-lib/qt4/demos/mediaplayer/settings.ui
 lib/qt4/demos/pathstroke/
 lib/qt4/demos/pathstroke/main.cpp
 @bin lib/qt4/demos/pathstroke/pathstroke
@@ -191,7 +178,18 @@ lib/qt4/demos/pathstroke/pathstroke.h
 lib/qt4/demos/pathstroke/pathstroke.html
 lib/qt4/demos/pathstroke/pathstroke.pro
 lib/qt4/demos/pathstroke/pathstroke.qrc
+lib/qt4/demos/qmediaplayer/
+lib/qt4/demos/qmediaplayer/images/
+lib/qt4/demos/qmediaplayer/images/screen.png
+lib/qt4/demos/qmediaplayer/main.cpp
+lib/qt4/demos/qmediaplayer/mediaplayer.cpp
+lib/qt4/demos/qmediaplayer/mediaplayer.h
+lib/qt4/demos/qmediaplayer/mediaplayer.qrc
+@bin lib/qt4/demos/qmediaplayer/qmediaplayer
+lib/qt4/demos/qmediaplayer/qmediaplayer.pro
+lib/qt4/demos/qmediaplayer/settings.ui
 lib/qt4/demos/qtdemo/
+lib/qt4/demos/qtdemo/Info_mac.plist
 lib/qt4/demos/qtdemo/colors.cpp
 lib/qt4/demos/qtdemo/colors.h
 lib/qt4/demos/qtdemo/demoitem.cpp
@@ -323,6 +321,86 @@ lib/qt4/demos/sqlbrowser/qsqlconnectiondialog.h
 lib/qt4/demos/sqlbrowser/qsqlconnectiondialog.ui
 @bin lib/qt4/demos/sqlbrowser/sqlbrowser
 lib/qt4/demos/sqlbrowser/sqlbrowser.pro
+lib/qt4/demos/sub-attaq/
+lib/qt4/demos/sub-attaq/animationmanager.cpp
+lib/qt4/demos/sub-attaq/animationmanager.h
+lib/qt4/demos/sub-attaq/boat.cpp
+lib/qt4/demos/sub-attaq/boat.h
+lib/qt4/demos/sub-attaq/boat_p.h
+lib/qt4/demos/sub-attaq/bomb.cpp
+lib/qt4/demos/sub-attaq/bomb.h
+lib/qt4/demos/sub-attaq/graphicsscene.cpp
+lib/qt4/demos/sub-attaq/graphicsscene.h
+lib/qt4/demos/sub-attaq/main.cpp
+lib/qt4/demos/sub-attaq/mainwindow.cpp
+lib/qt4/demos/sub-attaq/mainwindow.h
+lib/qt4/demos/sub-attaq/pics/
+lib/qt4/demos/sub-attaq/pics/big/
+lib/qt4/demos/sub-attaq/pics/big/background.png
+lib/qt4/demos/sub-attaq/pics/big/boat.png
+lib/qt4/demos/sub-attaq/pics/big/bomb.png
+lib/qt4/demos/sub-attaq/pics/big/explosion/
+lib/qt4/demos/sub-attaq/pics/big/explosion/boat/
+lib/qt4/demos/sub-attaq/pics/big/explosion/boat/step1.png
+lib/qt4/demos/sub-attaq/pics/big/explosion/boat/step2.png
+lib/qt4/demos/sub-attaq/pics/big/explosion/boat/step3.png
+lib/qt4/demos/sub-attaq/pics/big/explosion/boat/step4.png
+lib/qt4/demos/sub-attaq/pics/big/explosion/submarine/
+lib/qt4/demos/sub-attaq/pics/big/explosion/submarine/step1.png
+lib/qt4/demos/sub-attaq/pics/big/explosion/submarine/step2.png
+lib/qt4/demos/sub-attaq/pics/big/explosion/submarine/step3.png
+lib/qt4/demos/sub-attaq/pics/big/explosion/submarine/step4.png
+lib/qt4/demos/sub-attaq/pics/big/submarine.png
+lib/qt4/demos/sub-attaq/pics/big/surface.png
+lib/qt4/demos/sub-attaq/pics/big/torpedo.png
+lib/qt4/demos/sub-attaq/pics/scalable/
+lib/qt4/demos/sub-attaq/pics/scalable/background-n810.svg
+lib/qt4/demos/sub-attaq/pics/scalable/background.svg
+lib/qt4/demos/sub-attaq/pics/scalable/boat.svg
+lib/qt4/demos/sub-attaq/pics/scalable/bomb.svg
+lib/qt4/demos/sub-attaq/pics/scalable/sand.svg
+lib/qt4/demos/sub-attaq/pics/scalable/see.svg
+lib/qt4/demos/sub-attaq/pics/scalable/sky.svg
+lib/qt4/demos/sub-attaq/pics/scalable/sub-attaq.svg
+lib/qt4/demos/sub-attaq/pics/scalable/submarine.svg
+lib/qt4/demos/sub-attaq/pics/scalable/surface.svg
+lib/qt4/demos/sub-attaq/pics/scalable/torpedo.svg
+lib/qt4/demos/sub-attaq/pics/small/
+lib/qt4/demos/sub-attaq/pics/small/background.png
+lib/qt4/demos/sub-attaq/pics/small/boat.png
+lib/qt4/demos/sub-attaq/pics/small/bomb.png
+lib/qt4/demos/sub-attaq/pics/small/submarine.png
+lib/qt4/demos/sub-attaq/pics/small/surface.png
+lib/qt4/demos/sub-attaq/pics/small/torpedo.png
+lib/qt4/demos/sub-attaq/pics/welcome/
+lib/qt4/demos/sub-attaq/pics/welcome/logo-a.png
+lib/qt4/demos/sub-attaq/pics/welcome/logo-a2.png
+lib/qt4/demos/sub-attaq/pics/welcome/logo-b.png
+lib/qt4/demos/sub-attaq/pics/welcome/logo-dash.png
+lib/qt4/demos/sub-attaq/pics/welcome/logo-excl.png
+lib/qt4/demos/sub-attaq/pics/welcome/logo-q.png
+lib/qt4/demos/sub-attaq/pics/welcome/logo-s.png
+lib/qt4/demos/sub-attaq/pics/welcome/logo-t.png
+lib/qt4/demos/sub-attaq/pics/welcome/logo-t2.png
+lib/qt4/demos/sub-attaq/pics/welcome/logo-u.png
+lib/qt4/demos/sub-attaq/pixmapitem.cpp
+lib/qt4/demos/sub-attaq/pixmapitem.h
+lib/qt4/demos/sub-attaq/progressitem.cpp
+lib/qt4/demos/sub-attaq/progressitem.h
+lib/qt4/demos/sub-attaq/qanimationstate.cpp
+lib/qt4/demos/sub-attaq/qanimationstate.h
+lib/qt4/demos/sub-attaq/states.cpp
+lib/qt4/demos/sub-attaq/states.h
+@bin lib/qt4/demos/sub-attaq/sub-attaq
+lib/qt4/demos/sub-attaq/sub-attaq.pro
+lib/qt4/demos/sub-attaq/subattaq.qrc
+lib/qt4/demos/sub-attaq/submarine.cpp
+lib/qt4/demos/sub-attaq/submarine.h
+lib/qt4/demos/sub-attaq/submarine_p.h
+lib/qt4/demos/sub-attaq/textinformationitem.cpp
+lib/qt4/demos/sub-attaq/textinformationitem.h
+lib/qt4/demos/sub-attaq/torpedo.cpp
+lib/qt4/demos/sub-attaq/torpedo.h
 lib/qt4/demos/textedit/
 lib/qt4/demos/textedit/example.html
 lib/qt4/demos/textedit/images/
@@ -404,6 +482,62 @@ lib/qt4/demos/undo/undo.pro
 lib/qt4/demos/undo/undo.qrc
 lib/qt4/examples/
 lib/qt4/examples/README
+lib/qt4/examples/animation/
+lib/qt4/examples/animation/README
+lib/qt4/examples/animation/animatedtiles/
+@bin lib/qt4/examples/animation/animatedtiles/animatedtiles
+lib/qt4/examples/animation/animatedtiles/animatedtiles.pro
+lib/qt4/examples/animation/animatedtiles/animatedtiles.qrc
+lib/qt4/examples/animation/animatedtiles/images/
+lib/qt4/examples/animation/animatedtiles/images/Time-For-Lunch-2.jpg
+lib/qt4/examples/animation/animatedtiles/images/centered.png
+lib/qt4/examples/animation/animatedtiles/images/ellipse.png
+lib/qt4/examples/animation/animatedtiles/images/figure8.png
+lib/qt4/examples/animation/animatedtiles/images/kinetic.png
+lib/qt4/examples/animation/animatedtiles/images/random.png
+lib/qt4/examples/animation/animatedtiles/images/tile.png
+lib/qt4/examples/animation/animatedtiles/main.cpp
+lib/qt4/examples/animation/animation.pro
+lib/qt4/examples/animation/appchooser/
+@bin lib/qt4/examples/animation/appchooser/appchooser
+lib/qt4/examples/animation/appchooser/appchooser.pro
+lib/qt4/examples/animation/appchooser/appchooser.qrc
+lib/qt4/examples/animation/appchooser/main.cpp
+lib/qt4/examples/animation/easing/
+lib/qt4/examples/animation/easing/animation.h
+@bin lib/qt4/examples/animation/easing/easing
+lib/qt4/examples/animation/easing/easing.pro
+lib/qt4/examples/animation/easing/easing.qrc
+lib/qt4/examples/animation/easing/form.ui
+lib/qt4/examples/animation/easing/images/
+lib/qt4/examples/animation/easing/images/qt-logo.png
+lib/qt4/examples/animation/easing/main.cpp
+lib/qt4/examples/animation/easing/window.cpp
+lib/qt4/examples/animation/easing/window.h
+lib/qt4/examples/animation/moveblocks/
+lib/qt4/examples/animation/moveblocks/main.cpp
+@bin lib/qt4/examples/animation/moveblocks/moveblocks
+lib/qt4/examples/animation/moveblocks/moveblocks.pro
+lib/qt4/examples/animation/states/
+lib/qt4/examples/animation/states/main.cpp
+@bin lib/qt4/examples/animation/states/states
+lib/qt4/examples/animation/states/states.pro
+lib/qt4/examples/animation/states/states.qrc
+lib/qt4/examples/animation/stickman/
+lib/qt4/examples/animation/stickman/animation.cpp
+lib/qt4/examples/animation/stickman/animation.h
+lib/qt4/examples/animation/stickman/graphicsview.cpp
+lib/qt4/examples/animation/stickman/graphicsview.h
+lib/qt4/examples/animation/stickman/lifecycle.cpp
+lib/qt4/examples/animation/stickman/lifecycle.h
+lib/qt4/examples/animation/stickman/main.cpp
+lib/qt4/examples/animation/stickman/node.cpp
+lib/qt4/examples/animation/stickman/node.h
+@bin lib/qt4/examples/animation/stickman/stickman
+lib/qt4/examples/animation/stickman/stickman.cpp
+lib/qt4/examples/animation/stickman/stickman.h
+lib/qt4/examples/animation/stickman/stickman.pro
+lib/qt4/examples/animation/stickman/stickman.qrc
 lib/qt4/examples/assistant/
 lib/qt4/examples/assistant/README
 lib/qt4/examples/assistant/assistant.pro
@@ -694,9 +828,47 @@ lib/qt4/examples/draganddrop/puzzle/puzzle.pro
 lib/qt4/examples/draganddrop/puzzle/puzzle.qrc
 lib/qt4/examples/draganddrop/puzzle/puzzlewidget.cpp
 lib/qt4/examples/draganddrop/puzzle/puzzlewidget.h
+lib/qt4/examples/effects/
+lib/qt4/examples/effects/blurpicker/
+lib/qt4/examples/effects/blurpicker/blureffect.cpp
+lib/qt4/examples/effects/blurpicker/blureffect.h
+@bin lib/qt4/examples/effects/blurpicker/blurpicker
+lib/qt4/examples/effects/blurpicker/blurpicker.cpp
+lib/qt4/examples/effects/blurpicker/blurpicker.h
+lib/qt4/examples/effects/blurpicker/blurpicker.pro
+lib/qt4/examples/effects/blurpicker/blurpicker.qrc
+lib/qt4/examples/effects/blurpicker/main.cpp
+lib/qt4/examples/effects/effects.pro
+lib/qt4/examples/effects/fademessage/
+@bin lib/qt4/examples/effects/fademessage/fademessage
+lib/qt4/examples/effects/fademessage/fademessage.cpp
+lib/qt4/examples/effects/fademessage/fademessage.h
+lib/qt4/examples/effects/fademessage/fademessage.pro
+lib/qt4/examples/effects/fademessage/fademessage.qrc
+lib/qt4/examples/effects/fademessage/main.cpp
+lib/qt4/examples/effects/lighting/
+@bin lib/qt4/examples/effects/lighting/lighting
+lib/qt4/examples/effects/lighting/lighting.cpp
+lib/qt4/examples/effects/lighting/lighting.h
+lib/qt4/examples/effects/lighting/lighting.pro
+lib/qt4/examples/effects/lighting/main.cpp
 lib/qt4/examples/examples.pro
+lib/qt4/examples/gestures/
+lib/qt4/examples/gestures/gestures.pro
+lib/qt4/examples/gestures/imagegestures/
+@bin lib/qt4/examples/gestures/imagegestures/imagegestures
+lib/qt4/examples/gestures/imagegestures/imagegestures.pro
+lib/qt4/examples/gestures/imagegestures/imagewidget.cpp
+lib/qt4/examples/gestures/imagegestures/imagewidget.h
+lib/qt4/examples/gestures/imagegestures/main.cpp
+lib/qt4/examples/gestures/imagegestures/mainwidget.cpp
+lib/qt4/examples/gestures/imagegestures/mainwidget.h
 lib/qt4/examples/graphicsview/
 lib/qt4/examples/graphicsview/README
+lib/qt4/examples/graphicsview/anchorlayout/
+@bin lib/qt4/examples/graphicsview/anchorlayout/anchorlayout
+lib/qt4/examples/graphicsview/anchorlayout/anchorlayout.pro
+lib/qt4/examples/graphicsview/anchorlayout/main.cpp
 lib/qt4/examples/graphicsview/basicgraphicslayouts/
 @bin lib/qt4/examples/graphicsview/basicgraphicslayouts/basicgraphicslayouts
 lib/qt4/examples/graphicsview/basicgraphicslayouts/basicgraphicslayouts.pro
@@ -996,6 +1168,22 @@ lib/qt4/examples/graphicsview/portedcanvas/portedcanvas.pro
 lib/qt4/examples/graphicsview/portedcanvas/portedcanvas.qrc
 lib/qt4/examples/graphicsview/portedcanvas/qt-trans.xpm
 lib/qt4/examples/graphicsview/portedcanvas/qtlogo.png
+lib/qt4/examples/graphicsview/simpleanchorlayout/
+lib/qt4/examples/graphicsview/simpleanchorlayout/main.cpp
+@bin lib/qt4/examples/graphicsview/simpleanchorlayout/simpleanchorlayout
+lib/qt4/examples/graphicsview/simpleanchorlayout/simpleanchorlayout.pro
+lib/qt4/examples/graphicsview/weatheranchorlayout/
+lib/qt4/examples/graphicsview/weatheranchorlayout/images/
+lib/qt4/examples/graphicsview/weatheranchorlayout/images/5days.jpg
+lib/qt4/examples/graphicsview/weatheranchorlayout/images/details.jpg
+lib/qt4/examples/graphicsview/weatheranchorlayout/images/place.jpg
+lib/qt4/examples/graphicsview/weatheranchorlayout/images/tabbar.jpg
+lib/qt4/examples/graphicsview/weatheranchorlayout/images/title.jpg
+lib/qt4/examples/graphicsview/weatheranchorlayout/images/weather-few-clouds.png
+lib/qt4/examples/graphicsview/weatheranchorlayout/main.cpp
+@bin lib/qt4/examples/graphicsview/weatheranchorlayout/weatheranchorlayout
+lib/qt4/examples/graphicsview/weatheranchorlayout/weatheranchorlayout.pro
+lib/qt4/examples/graphicsview/weatheranchorlayout/weatheranchorlayout.qrc
 lib/qt4/examples/help/
 lib/qt4/examples/help/README
 lib/qt4/examples/help/contextsensitivehelp/
@@ -1375,6 +1563,66 @@ lib/qt4/examples/mainwindows/sdi/mainwindow.h
 @bin lib/qt4/examples/mainwindows/sdi/sdi
 lib/qt4/examples/mainwindows/sdi/sdi.pro
 lib/qt4/examples/mainwindows/sdi/sdi.qrc
+lib/qt4/examples/multimedia/
+lib/qt4/examples/multimedia/README
+lib/qt4/examples/multimedia/audiodevices/
+@bin lib/qt4/examples/multimedia/audiodevices/audiodevices
+lib/qt4/examples/multimedia/audiodevices/audiodevices.cpp
+lib/qt4/examples/multimedia/audiodevices/audiodevices.h
+lib/qt4/examples/multimedia/audiodevices/audiodevices.pro
+lib/qt4/examples/multimedia/audiodevices/audiodevicesbase.ui
+lib/qt4/examples/multimedia/audiodevices/main.cpp
+lib/qt4/examples/multimedia/audioinput/
+@bin lib/qt4/examples/multimedia/audioinput/audioinput
+lib/qt4/examples/multimedia/audioinput/audioinput.cpp
+lib/qt4/examples/multimedia/audioinput/audioinput.h
+lib/qt4/examples/multimedia/audioinput/audioinput.pro
+lib/qt4/examples/multimedia/audioinput/main.cpp
+lib/qt4/examples/multimedia/audiooutput/
+@bin lib/qt4/examples/multimedia/audiooutput/audiooutput
+lib/qt4/examples/multimedia/audiooutput/audiooutput.cpp
+lib/qt4/examples/multimedia/audiooutput/audiooutput.h
+lib/qt4/examples/multimedia/audiooutput/audiooutput.pro
+lib/qt4/examples/multimedia/audiooutput/main.cpp
+lib/qt4/examples/multimedia/multimedia.pro
+lib/qt4/examples/multimedia/videographicsitem/
+lib/qt4/examples/multimedia/videographicsitem/main.cpp
+@bin lib/qt4/examples/multimedia/videographicsitem/videographicsitem
+lib/qt4/examples/multimedia/videographicsitem/videographicsitem.pro
+lib/qt4/examples/multimedia/videographicsitem/videoitem.cpp
+lib/qt4/examples/multimedia/videographicsitem/videoitem.h
+lib/qt4/examples/multimedia/videographicsitem/videoplayer.cpp
+lib/qt4/examples/multimedia/videographicsitem/videoplayer.h
+lib/qt4/examples/multimedia/videowidget/
+lib/qt4/examples/multimedia/videowidget/main.cpp
+lib/qt4/examples/multimedia/videowidget/videoplayer.cpp
+lib/qt4/examples/multimedia/videowidget/videoplayer.h
+@bin lib/qt4/examples/multimedia/videowidget/videowidget
+lib/qt4/examples/multimedia/videowidget/videowidget.cpp
+lib/qt4/examples/multimedia/videowidget/videowidget.h
+lib/qt4/examples/multimedia/videowidget/videowidget.pro
+lib/qt4/examples/multimedia/videowidget/videowidgetsurface.cpp
+lib/qt4/examples/multimedia/videowidget/videowidgetsurface.h
+lib/qt4/examples/multitouch/
+lib/qt4/examples/multitouch/fingerpaint/
+@bin lib/qt4/examples/multitouch/fingerpaint/fingerpaint
+lib/qt4/examples/multitouch/fingerpaint/fingerpaint.pro
+lib/qt4/examples/multitouch/fingerpaint/main.cpp
+lib/qt4/examples/multitouch/fingerpaint/mainwindow.cpp
+lib/qt4/examples/multitouch/fingerpaint/mainwindow.h
+lib/qt4/examples/multitouch/fingerpaint/scribblearea.cpp
+lib/qt4/examples/multitouch/fingerpaint/scribblearea.h
+lib/qt4/examples/multitouch/pinchzoom/
+lib/qt4/examples/multitouch/pinchzoom/graphicsview.cpp
+lib/qt4/examples/multitouch/pinchzoom/graphicsview.h
+lib/qt4/examples/multitouch/pinchzoom/images/
+lib/qt4/examples/multitouch/pinchzoom/images/cheese.jpg
+lib/qt4/examples/multitouch/pinchzoom/main.cpp
+lib/qt4/examples/multitouch/pinchzoom/mice.qrc
+lib/qt4/examples/multitouch/pinchzoom/mouse.cpp
+lib/qt4/examples/multitouch/pinchzoom/mouse.h
+@bin lib/qt4/examples/multitouch/pinchzoom/pinchzoom
+lib/qt4/examples/multitouch/pinchzoom/pinchzoom.pro
 lib/qt4/examples/network/
 lib/qt4/examples/network/README
 lib/qt4/examples/network/blockingfortuneclient/
@@ -1421,17 +1669,6 @@ lib/qt4/examples/network/fortuneserver/fortuneserver.pro
 lib/qt4/examples/network/fortuneserver/main.cpp
 lib/qt4/examples/network/fortuneserver/server.cpp
 lib/qt4/examples/network/fortuneserver/server.h
-lib/qt4/examples/network/ftp/
-@bin lib/qt4/examples/network/ftp/ftp
-lib/qt4/examples/network/ftp/ftp.pro
-lib/qt4/examples/network/ftp/ftp.qrc
-lib/qt4/examples/network/ftp/ftpwindow.cpp
-lib/qt4/examples/network/ftp/ftpwindow.h
-lib/qt4/examples/network/ftp/images/
-lib/qt4/examples/network/ftp/images/cdtoparent.png
-lib/qt4/examples/network/ftp/images/dir.png
-lib/qt4/examples/network/ftp/images/file.png
-lib/qt4/examples/network/ftp/main.cpp
 lib/qt4/examples/network/googlesuggest/
 @bin lib/qt4/examples/network/googlesuggest/googlesuggest
 lib/qt4/examples/network/googlesuggest/googlesuggest.cpp
@@ -1469,6 +1706,17 @@ lib/qt4/examples/network/network-chat/peermanager.h
 lib/qt4/examples/network/network-chat/server.cpp
 lib/qt4/examples/network/network-chat/server.h
 lib/qt4/examples/network/network.pro
+lib/qt4/examples/network/qftp/
+lib/qt4/examples/network/qftp/ftp.qrc
+lib/qt4/examples/network/qftp/ftpwindow.cpp
+lib/qt4/examples/network/qftp/ftpwindow.h
+lib/qt4/examples/network/qftp/images/
+lib/qt4/examples/network/qftp/images/cdtoparent.png
+lib/qt4/examples/network/qftp/images/dir.png
+lib/qt4/examples/network/qftp/images/file.png
+lib/qt4/examples/network/qftp/main.cpp
+@bin lib/qt4/examples/network/qftp/qftp
+lib/qt4/examples/network/qftp/qftp.pro
 lib/qt4/examples/network/securesocketclient/
 lib/qt4/examples/network/securesocketclient/certificateinfo.cpp
 lib/qt4/examples/network/securesocketclient/certificateinfo.h
@@ -1578,6 +1826,8 @@ lib/qt4/examples/opengl/hellogl/glwidget.h
 @bin lib/qt4/examples/opengl/hellogl/hellogl
 lib/qt4/examples/opengl/hellogl/hellogl.pro
 lib/qt4/examples/opengl/hellogl/main.cpp
+lib/qt4/examples/opengl/hellogl/qtlogo.cpp
+lib/qt4/examples/opengl/hellogl/qtlogo.h
 lib/qt4/examples/opengl/hellogl/window.cpp
 lib/qt4/examples/opengl/hellogl/window.h
 lib/qt4/examples/opengl/opengl.pro
@@ -1589,7 +1839,11 @@ lib/qt4/examples/opengl/overpainting/glwidget.h
 lib/qt4/examples/opengl/overpainting/main.cpp
 @bin lib/qt4/examples/opengl/overpainting/overpainting
 lib/qt4/examples/opengl/overpainting/overpainting.pro
+lib/qt4/examples/opengl/overpainting/qtlogo.cpp
+lib/qt4/examples/opengl/overpainting/qtlogo.h
 lib/qt4/examples/opengl/pbuffers/
+lib/qt4/examples/opengl/pbuffers/cube.cpp
+lib/qt4/examples/opengl/pbuffers/cube.h
 lib/qt4/examples/opengl/pbuffers/cubelogo.png
 lib/qt4/examples/opengl/pbuffers/glwidget.cpp
 lib/qt4/examples/opengl/pbuffers/glwidget.h
@@ -1717,13 +1971,13 @@ lib/qt4/examples/phonon/capabilities/capabilities.pro
 lib/qt4/examples/phonon/capabilities/main.cpp
 lib/qt4/examples/phonon/capabilities/window.cpp
 lib/qt4/examples/phonon/capabilities/window.h
-lib/qt4/examples/phonon/musicplayer/
-lib/qt4/examples/phonon/musicplayer/main.cpp
-lib/qt4/examples/phonon/musicplayer/mainwindow.cpp
-lib/qt4/examples/phonon/musicplayer/mainwindow.h
-@bin lib/qt4/examples/phonon/musicplayer/musicplayer
-lib/qt4/examples/phonon/musicplayer/musicplayer.pro
 lib/qt4/examples/phonon/phonon.pro
+lib/qt4/examples/phonon/qmusicplayer/
+lib/qt4/examples/phonon/qmusicplayer/main.cpp
+lib/qt4/examples/phonon/qmusicplayer/mainwindow.cpp
+lib/qt4/examples/phonon/qmusicplayer/mainwindow.h
+@bin lib/qt4/examples/phonon/qmusicplayer/qmusicplayer
+lib/qt4/examples/phonon/qmusicplayer/qmusicplayer.pro
 lib/qt4/examples/qtconcurrent/
 lib/qt4/examples/qtconcurrent/README
 lib/qt4/examples/qtconcurrent/imagescaling/
@@ -1956,6 +2210,36 @@ lib/qt4/examples/sql/tablemodel/
 @bin lib/qt4/examples/sql/tablemodel/tablemodel
 lib/qt4/examples/sql/tablemodel/tablemodel.cpp
 lib/qt4/examples/sql/tablemodel/tablemodel.pro
+lib/qt4/examples/statemachine/
+lib/qt4/examples/statemachine/README
+lib/qt4/examples/statemachine/eventtransitions/
+@bin lib/qt4/examples/statemachine/eventtransitions/eventtransitions
+lib/qt4/examples/statemachine/eventtransitions/eventtransitions.pro
+lib/qt4/examples/statemachine/eventtransitions/main.cpp
+lib/qt4/examples/statemachine/factorial/
+@bin lib/qt4/examples/statemachine/factorial/factorial
+lib/qt4/examples/statemachine/factorial/factorial.pro
+lib/qt4/examples/statemachine/factorial/main.cpp
+lib/qt4/examples/statemachine/pingpong/
+lib/qt4/examples/statemachine/pingpong/main.cpp
+@bin lib/qt4/examples/statemachine/pingpong/pingpong
+lib/qt4/examples/statemachine/pingpong/pingpong.pro
+lib/qt4/examples/statemachine/rogue/
+lib/qt4/examples/statemachine/rogue/main.cpp
+lib/qt4/examples/statemachine/rogue/movementtransition.h
+@bin lib/qt4/examples/statemachine/rogue/rogue
+lib/qt4/examples/statemachine/rogue/rogue.pro
+lib/qt4/examples/statemachine/rogue/window.cpp
+lib/qt4/examples/statemachine/rogue/window.h
+lib/qt4/examples/statemachine/statemachine.pro
+lib/qt4/examples/statemachine/trafficlight/
+lib/qt4/examples/statemachine/trafficlight/main.cpp
+@bin lib/qt4/examples/statemachine/trafficlight/trafficlight
+lib/qt4/examples/statemachine/trafficlight/trafficlight.pro
+lib/qt4/examples/statemachine/twowaybutton/
+lib/qt4/examples/statemachine/twowaybutton/main.cpp
+@bin lib/qt4/examples/statemachine/twowaybutton/twowaybutton
+lib/qt4/examples/statemachine/twowaybutton/twowaybutton.pro
 lib/qt4/examples/threads/
 lib/qt4/examples/threads/README
 lib/qt4/examples/threads/mandelbrot/
@@ -2004,6 +2288,12 @@ lib/qt4/examples/tools/completer/mainwindow.h
 lib/qt4/examples/tools/completer/resources/
 lib/qt4/examples/tools/completer/resources/countries.txt
 lib/qt4/examples/tools/completer/resources/wordlist.txt
+lib/qt4/examples/tools/contiguouscache/
+@bin lib/qt4/examples/tools/contiguouscache/contiguouscache
+lib/qt4/examples/tools/contiguouscache/contiguouscache.pro
+lib/qt4/examples/tools/contiguouscache/main.cpp
+lib/qt4/examples/tools/contiguouscache/randomlistmodel.cpp
+lib/qt4/examples/tools/contiguouscache/randomlistmodel.h
 lib/qt4/examples/tools/customcompleter/
 @bin lib/qt4/examples/tools/customcompleter/customcompleter
 lib/qt4/examples/tools/customcompleter/customcompleter.pro
@@ -2066,6 +2356,16 @@ lib/qt4/examples/tools/i18n/translations/i18n_sv.qm
 lib/qt4/examples/tools/i18n/translations/i18n_sv.ts
 lib/qt4/examples/tools/i18n/translations/i18n_zh.qm
 lib/qt4/examples/tools/i18n/translations/i18n_zh.ts
+lib/qt4/examples/tools/inputpanel/
+@bin lib/qt4/examples/tools/inputpanel/inputpanel
+lib/qt4/examples/tools/inputpanel/inputpanel.pro
+lib/qt4/examples/tools/inputpanel/main.cpp
+lib/qt4/examples/tools/inputpanel/mainform.ui
+lib/qt4/examples/tools/inputpanel/myinputpanel.cpp
+lib/qt4/examples/tools/inputpanel/myinputpanel.h
+lib/qt4/examples/tools/inputpanel/myinputpanelcontext.cpp
+lib/qt4/examples/tools/inputpanel/myinputpanelcontext.h
+lib/qt4/examples/tools/inputpanel/myinputpanelform.ui
 lib/qt4/examples/tools/plugandpaint/
 lib/qt4/examples/tools/plugandpaint/interfaces.h
 lib/qt4/examples/tools/plugandpaint/main.cpp
@@ -2482,6 +2782,16 @@ lib/qt4/examples/xml/dombookmarks/mainwindow.cpp
 lib/qt4/examples/xml/dombookmarks/mainwindow.h
 lib/qt4/examples/xml/dombookmarks/xbeltree.cpp
 lib/qt4/examples/xml/dombookmarks/xbeltree.h
+lib/qt4/examples/xml/htmlinfo/
+lib/qt4/examples/xml/htmlinfo/apache_org.html
+@bin lib/qt4/examples/xml/htmlinfo/htmlinfo
+lib/qt4/examples/xml/htmlinfo/htmlinfo.pro
+lib/qt4/examples/xml/htmlinfo/main.cpp
+lib/qt4/examples/xml/htmlinfo/nokia_com.html
+lib/qt4/examples/xml/htmlinfo/simpleexample.html
+lib/qt4/examples/xml/htmlinfo/trolltech_com.html
+lib/qt4/examples/xml/htmlinfo/w3c_org.html
+lib/qt4/examples/xml/htmlinfo/youtube_com.html
 lib/qt4/examples/xml/rsslisting/
 lib/qt4/examples/xml/rsslisting/main.cpp
 @bin lib/qt4/examples/xml/rsslisting/rsslisting

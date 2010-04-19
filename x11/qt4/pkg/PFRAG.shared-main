@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.4 2009/04/18 17:25:43 espie Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.5 2010/04/19 09:36:30 espie Exp $
 %%GCC4%%
 @lib lib/libQt3Support.so.${LIBQt3Support_VERSION}
 @lib lib/libQtAssistantClient.so.${LIBQtAssistantClient_VERSION}
@@ -9,6 +9,7 @@
 @lib lib/libQtDesignerComponents.so.${LIBQtDesignerComponents_VERSION}
 @lib lib/libQtGui.so.${LIBQtGui_VERSION}
 @lib lib/libQtHelp.so.${LIBQtHelp_VERSION}
+@lib lib/libQtMultimedia.so.${LIBQtMultimedia_VERSION}
 @lib lib/libQtNetwork.so.${LIBQtNetwork_VERSION}
 @lib lib/libQtOpenGL.so.${LIBQtOpenGL_VERSION}
 @lib lib/libQtScript.so.${LIBQtScript_VERSION}
@@ -28,6 +29,7 @@
 @lib lib/qt4/libQtDesignerComponents.so.${LIBQtDesignerComponents_VERSION}
 @lib lib/qt4/libQtGui.so.${LIBQtGui_VERSION}
 @lib lib/qt4/libQtHelp.so.${LIBQtHelp_VERSION}
+@lib lib/qt4/libQtMultimedia.so.${LIBQtMultimedia_VERSION}
 @lib lib/qt4/libQtNetwork.so.${LIBQtNetwork_VERSION}
 @lib lib/qt4/libQtOpenGL.so.${LIBQtOpenGL_VERSION}
 @lib lib/qt4/libQtScript.so.${LIBQtScript_VERSION}
@@ -43,6 +45,7 @@ lib/qt4/plugins/accessible/libqtaccessiblewidgets.so
 lib/qt4/plugins/designer/libphononwidgets.so
 lib/qt4/plugins/designer/libqt3supportwidgets.so
 lib/qt4/plugins/graphicssystems/libqglgraphicssystem.so
+lib/qt4/plugins/graphicssystems/libqtracegraphicssystem.so
 lib/qt4/plugins/iconengines/libqsvgicon.so
 lib/qt4/plugins/imageformats/libqgif.so
 lib/qt4/plugins/imageformats/libqico.so
