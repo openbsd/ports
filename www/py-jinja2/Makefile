@@ -1,33 +1,34 @@
-# $OpenBSD: Makefile,v 1.3 2009/08/07 08:36:52 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/19 17:30:54 fgsch Exp $
 
-COMMENT=		fast, optionally sandboxed, Python template engine
+COMMENT =		fast, optionally sandboxed, Python template engine
 
-MODPY_EGG_VERSION=	2.1.1
-DISTNAME=		Jinja2-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME:L}p0
+MODPY_EGG_VERSION =	2.4
+DISTNAME =		Jinja2-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME:L}
 
-CATEGORIES=		www devel
+CATEGORIES =		www devel
 
-HOMEPAGE=		http://jinja.pocoo.org/2/
-MASTER_SITES=		${MASTER_SITE_PYPI:=J/Jinja2/}
+HOMEPAGE =		http://jinja.pocoo.org/2/
 
-MAINTAINER=		Damien Miller <djm@openbsd.org>
+MAINTAINER =		Damien Miller <djm@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
+MASTER_SITES =		${MASTER_SITE_PYPI:=J/Jinja2/}
 
-REGRESS_DEPENDS=	::devel/py-py
+MODULES =		lang/python
+
+MODPY_SETUPTOOLS =	Yes
+
+REGRESS_DEPENDS =	::devel/py-nose
 
 post-install:
-	mv ${PREFIX}/docs ${PREFIX}/share/doc/py-jinja2
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-jinja2
+	cd ${WRKSRC}/docs/_build/html && \
+	    pax -rw * ${PREFIX}/share/doc/py-jinja2
 
-do-regress:
-	cd ${WRKSRC}/tests && py.test
- 
 .include <bsd.port.mk>
