@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2009/12/22 13:02:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2010/04/20 18:51:10 jasper Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	GNOME web browser based on mozilla
+COMMENT=	GNOME web browser based on webkit
 
 # PLIST regen is needed for at least the following ports when
 # the epiphany extensions directory changes:
@@ -12,7 +12,7 @@ COMMENT=	GNOME web browser based on mozilla
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.28.2
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
