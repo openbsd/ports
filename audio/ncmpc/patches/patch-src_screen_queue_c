@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_screen_queue_c,v 1.1 2010/04/20 21:40:45 edd Exp $
+
+Fix the shuffle feature when no range selection is made.
+http://git.musicpd.org/cgit/master/ncmpc.git/patch/?id=665ebd4662110c8cc14b64356914af9212846caf
+
+--- src/screen_queue.c.orig	Sun Jan 17 23:54:56 2010
++++ src/screen_queue.c	Tue Apr 20 21:37:26 2010
+@@ -738,7 +738,7 @@ screen_queue_cmd(struct mpdclient *c, command_t cmd)
+ 
+ 	case CMD_SHUFFLE:
+ 		list_window_get_range(lw, &range);
+-		if (range.end < range.start + 1)
++		if (range.end <= range.start + 1)
+ 			/* No range selection, shuffle all list. */
+ 			break;
+ 
