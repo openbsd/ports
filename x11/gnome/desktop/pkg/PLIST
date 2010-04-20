@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2009/12/21 18:03:18 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.29 2010/04/20 13:29:41 jasper Exp $
 bin/gnome-about
 include/gnome-desktop-2.0/
 include/gnome-desktop-2.0/libgnome/
@@ -14,6 +13,7 @@ include/gnome-desktop-2.0/libgnomeui/gnome-rr-labeler.h
 include/gnome-desktop-2.0/libgnomeui/gnome-rr.h
 lib/libgnome-desktop-2.a
 lib/libgnome-desktop-2.la
+@lib lib/libgnome-desktop-2.so.${LIBgnome-desktop-2_VERSION}
 lib/pkgconfig/gnome-desktop-2.0.pc
 @man man/man1/gnome-about.1
 share/applications/gnome-about.desktop
@@ -88,6 +88,8 @@ share/gnome/help/gpl/hu/
 share/gnome/help/gpl/hu/gpl.xml
 share/gnome/help/gpl/ko/
 share/gnome/help/gpl/ko/gpl.xml
+share/gnome/help/gpl/nds/
+share/gnome/help/gpl/nds/gpl.xml
 share/gnome/help/gpl/oc/
 share/gnome/help/gpl/oc/gpl.xml
 share/gnome/help/gpl/pa/
@@ -304,6 +306,7 @@ share/omf/gpl/gpl-fi.omf
 share/omf/gpl/gpl-fr.omf
 share/omf/gpl/gpl-hu.omf
 share/omf/gpl/gpl-ko.omf
+share/omf/gpl/gpl-nds.omf
 share/omf/gpl/gpl-oc.omf
 share/omf/gpl/gpl-pa.omf
 share/omf/gpl/gpl-sv.omf

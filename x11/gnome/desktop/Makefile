@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.54 2009/12/21 18:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2010/04/20 13:29:41 jasper Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
-GNOME_VERSION=		2.28.2
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		2.30.0
 
-SHARED_LIBS +=  gnome-desktop-2      7.0      # .15.2
+SHARED_LIBS +=  gnome-desktop-2      8.0      # .15.2
 
 CATEGORIES=		x11
 
@@ -22,7 +23,8 @@ WANTLIB += dbus-1 dbus-glib-1 execinfo expat fontconfig freetype
 WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread-stubs xcb xcb-atom xcb-aux xcb-event z
+WANTLIB += png pthread-stubs xcb xcb-atom xcb-aux xcb-event
+WANTLIB += xcb-render xcb-render-util z
 
 MODULES=		devel/gettext \
 			lang/python \

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2006/01/09 12:17:01 alek Exp $
-@lib lib/libgnome-desktop-2.so.${LIBgnome-desktop-2_VERSION}
