@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2009/10/12 10:25:40 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2010/04/20 10:03:36 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -77,11 +77,11 @@ SUBDIR += x11
 
 index:
 	@rm -f ${.CURDIR}/INDEX
-	@${MAKE} ${.CURDIR}/INDEX
+	@${_MAKE} ${.CURDIR}/INDEX
 
 ${.CURDIR}/INDEX:
 	@echo "Generating INDEX..."
-	@${MAKE} describe MACHINE_ARCH=i386 ECHO_MSG="echo 1>&2" > ${.CURDIR}/INDEX
+	@${_MAKE} describe MACHINE_ARCH=i386 ECHO_MSG="echo 1>&2" > ${.CURDIR}/INDEX
 	@echo "Done."
 
 print-index:	${.CURDIR}/INDEX
@@ -126,13 +126,13 @@ mirror-maker:
 	@_DONE_FILES=`mktemp /tmp/depends.XXXXXXXXX|| exit 1`; \
 	export _DONE_FILES; \
 	trap "rm -f $${_DONE_FILES}" 0 1 2 3 13 15; \
-	${MAKE} fetch-makefile \
+	${_MAKE} fetch-makefile \
 		ECHO_MSG='echo >&2' \
 		_FETCH_MAKEFILE=${MIRROR_MK}
 
 homepages.html:
 	@echo '<html><ul>' >$@
-	@${MAKE} homepage-links ECHO_MSG='echo >&2' >>$@
+	@${_MAKE} homepage-links ECHO_MSG='echo >&2' >>$@
 	@echo '</ul></html>' >>$@
 
 distfiles-update-locatedb:
