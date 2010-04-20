@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.12 2009/10/04 18:19:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.13 2010/04/20 20:20:22 ajacoutot Exp $
 share/devhelp/
 share/devhelp/books/
 share/devhelp/books/gtkmm-2.4/
@@ -235,6 +235,9 @@ share/doc/gtkmm-2.4/reference/html/classGtk_1_1CellRendererProgress__coll__graph
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1CellRendererSpin-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1CellRendererSpin.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1CellRendererSpin__coll__graph.png
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1CellRendererSpinner-members.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1CellRendererSpinner.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1CellRendererSpinner__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1CellRendererText-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1CellRendererText.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1CellRendererText__coll__graph.png
@@ -308,6 +311,9 @@ share/doc/gtkmm-2.4/reference/html/classGtk_1_1Editable.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1Editable__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1Entry-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1Entry.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1EntryBuffer-members.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1EntryBuffer.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1EntryBuffer__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1EntryCompletion-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1EntryCompletion.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1EntryCompletion__coll__graph.png
@@ -508,6 +514,9 @@ share/doc/gtkmm-2.4/reference/html/classGtk_1_1Notebook__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1Object-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1Object.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1Object__coll__graph.png
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1OffscreenWindow-members.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1OffscreenWindow.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1OffscreenWindow__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1OptionMenu-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1OptionMenu.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1OptionMenu__coll__graph.png
@@ -655,6 +664,9 @@ share/doc/gtkmm-2.4/reference/html/classGtk_1_1Socket__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1SpinButton-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1SpinButton.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1SpinButton__coll__graph.png
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1Spinner-members.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1Spinner.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1Spinner__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1StatusIcon-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1StatusIcon.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1StatusIcon__coll__graph.png
@@ -720,7 +732,13 @@ share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolButton.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolButton__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolItem-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolItem.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolItemGroup-members.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolItemGroup.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolItemGroup__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolItem__coll__graph.png
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolPalette-members.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolPalette.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolPalette__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolShell-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolShell.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ToolShell__coll__graph.png
@@ -1171,14 +1189,16 @@ share/doc/gtkmm-2.4/reference/html/pages.html
 share/doc/gtkmm-2.4/reference/html/progressbar1.png
 share/doc/gtkmm-2.4/reference/html/radiobutton1.png
 share/doc/gtkmm-2.4/reference/html/recentchooserdialog1.png
+share/doc/gtkmm-2.4/reference/html/since_1_3.html
+share/doc/gtkmm-2.4/reference/html/since_1_4.html
 share/doc/gtkmm-2.4/reference/html/since_1_9.html
 share/doc/gtkmm-2.4/reference/html/since_2_10.html
 share/doc/gtkmm-2.4/reference/html/since_2_12.html
-share/doc/gtkmm-2.4/reference/html/since_2_13.html
 share/doc/gtkmm-2.4/reference/html/since_2_14.html
 share/doc/gtkmm-2.4/reference/html/since_2_16.html
 share/doc/gtkmm-2.4/reference/html/since_2_18.html
 share/doc/gtkmm-2.4/reference/html/since_2_2.html
+share/doc/gtkmm-2.4/reference/html/since_2_20.html
 share/doc/gtkmm-2.4/reference/html/since_2_4.html
 share/doc/gtkmm-2.4/reference/html/since_2_6.html
 share/doc/gtkmm-2.4/reference/html/since_2_8.html

@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.1 2010/04/20 20:20:22 ajacoutot Exp $
+
+XXX remove when we have a newer glib2.
+
+--- configure.orig	Tue Apr 20 21:52:19 2010
++++ configure	Tue Apr 20 21:53:03 2010
+@@ -14906,11 +14906,11 @@ $as_echo "#define GTKMM_STATIC_LIB 1" >>confdefs.h
+ 
+ fi
+ 
+-ATKMM_MODULES='glibmm-2.4 >= 2.24 atk >= 1.12'
++ATKMM_MODULES='glibmm-2.4 >= 2.22 atk >= 1.12'
+ 
+ 
+ # gdkmm really does need GTK+, because part of Gdk::DragContext is in GTK+.
+-GDKMM_MODULES='giomm-2.4 >= 2.24 pangomm-1.4 >= 2.26 gtk+-2.0 >= 2.20.0'
++GDKMM_MODULES='giomm-2.4 >= 2.22 pangomm-1.4 >= 2.26 gtk+-2.0 >= 2.20.0'
+ 
+ 
+ if test "x$gtkmm_host_windows" = xyes; then :

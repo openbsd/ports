@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/10/04 18:19:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/04/20 20:20:22 ajacoutot Exp $
 @pkgpath x11/gtk2mm
 %%SHARED%%
 include/atkmm-1.6/
@@ -121,6 +121,7 @@ include/gtkmm-2.4/gtkmm/aspectframe.h
 include/gtkmm-2.4/gtkmm/assistant.h
 include/gtkmm-2.4/gtkmm/base.h
 include/gtkmm-2.4/gtkmm/bin.h
+include/gtkmm-2.4/gtkmm/border.h
 include/gtkmm-2.4/gtkmm/box.h
 include/gtkmm-2.4/gtkmm/builder.h
 include/gtkmm-2.4/gtkmm/button.h
@@ -135,6 +136,7 @@ include/gtkmm-2.4/gtkmm/cellrenderercombo.h
 include/gtkmm-2.4/gtkmm/cellrendererpixbuf.h
 include/gtkmm-2.4/gtkmm/cellrendererprogress.h
 include/gtkmm-2.4/gtkmm/cellrendererspin.h
+include/gtkmm-2.4/gtkmm/cellrendererspinner.h
 include/gtkmm-2.4/gtkmm/cellrenderertext.h
 include/gtkmm-2.4/gtkmm/cellrenderertoggle.h
 include/gtkmm-2.4/gtkmm/cellview.h
@@ -154,6 +156,7 @@ include/gtkmm-2.4/gtkmm/dialog.h
 include/gtkmm-2.4/gtkmm/drawingarea.h
 include/gtkmm-2.4/gtkmm/editable.h
 include/gtkmm-2.4/gtkmm/entry.h
+include/gtkmm-2.4/gtkmm/entrybuffer.h
 include/gtkmm-2.4/gtkmm/entrycompletion.h
 include/gtkmm-2.4/gtkmm/enums.h
 include/gtkmm-2.4/gtkmm/eventbox.h
@@ -197,6 +200,7 @@ include/gtkmm-2.4/gtkmm/messagedialog.h
 include/gtkmm-2.4/gtkmm/misc.h
 include/gtkmm-2.4/gtkmm/notebook.h
 include/gtkmm-2.4/gtkmm/object.h
+include/gtkmm-2.4/gtkmm/offscreenwindow.h
 include/gtkmm-2.4/gtkmm/optionmenu.h
 include/gtkmm-2.4/gtkmm/orientable.h
 include/gtkmm-2.4/gtkmm/pagesetup.h
@@ -237,6 +241,7 @@ include/gtkmm-2.4/gtkmm/private/cellrenderercombo_p.h
 include/gtkmm-2.4/gtkmm/private/cellrendererpixbuf_p.h
 include/gtkmm-2.4/gtkmm/private/cellrendererprogress_p.h
 include/gtkmm-2.4/gtkmm/private/cellrendererspin_p.h
+include/gtkmm-2.4/gtkmm/private/cellrendererspinner_p.h
 include/gtkmm-2.4/gtkmm/private/cellrenderertext_p.h
 include/gtkmm-2.4/gtkmm/private/cellrenderertoggle_p.h
 include/gtkmm-2.4/gtkmm/private/cellview_p.h
@@ -254,6 +259,7 @@ include/gtkmm-2.4/gtkmm/private/dialog_p.h
 include/gtkmm-2.4/gtkmm/private/drawingarea_p.h
 include/gtkmm-2.4/gtkmm/private/editable_p.h
 include/gtkmm-2.4/gtkmm/private/entry_p.h
+include/gtkmm-2.4/gtkmm/private/entrybuffer_p.h
 include/gtkmm-2.4/gtkmm/private/entrycompletion_p.h
 include/gtkmm-2.4/gtkmm/private/enums_p.h
 include/gtkmm-2.4/gtkmm/private/eventbox_p.h
@@ -295,6 +301,7 @@ include/gtkmm-2.4/gtkmm/private/messagedialog_p.h
 include/gtkmm-2.4/gtkmm/private/misc_p.h
 include/gtkmm-2.4/gtkmm/private/notebook_p.h
 include/gtkmm-2.4/gtkmm/private/object_p.h
+include/gtkmm-2.4/gtkmm/private/offscreenwindow_p.h
 include/gtkmm-2.4/gtkmm/private/optionmenu_p.h
 include/gtkmm-2.4/gtkmm/private/orientable_p.h
 include/gtkmm-2.4/gtkmm/private/pagesetup_p.h
@@ -337,6 +344,7 @@ include/gtkmm-2.4/gtkmm/private/settings_p.h
 include/gtkmm-2.4/gtkmm/private/sizegroup_p.h
 include/gtkmm-2.4/gtkmm/private/socket_p.h
 include/gtkmm-2.4/gtkmm/private/spinbutton_p.h
+include/gtkmm-2.4/gtkmm/private/spinner_p.h
 include/gtkmm-2.4/gtkmm/private/statusbar_p.h
 include/gtkmm-2.4/gtkmm/private/statusicon_p.h
 include/gtkmm-2.4/gtkmm/private/stockitem_p.h
@@ -358,6 +366,8 @@ include/gtkmm-2.4/gtkmm/private/toggletoolbutton_p.h
 include/gtkmm-2.4/gtkmm/private/toolbar_p.h
 include/gtkmm-2.4/gtkmm/private/toolbutton_p.h
 include/gtkmm-2.4/gtkmm/private/toolitem_p.h
+include/gtkmm-2.4/gtkmm/private/toolitemgroup_p.h
+include/gtkmm-2.4/gtkmm/private/toolpalette_p.h
 include/gtkmm-2.4/gtkmm/private/toolshell_p.h
 include/gtkmm-2.4/gtkmm/private/tooltip_p.h
 include/gtkmm-2.4/gtkmm/private/tooltips_p.h
@@ -409,6 +419,7 @@ include/gtkmm-2.4/gtkmm/settings.h
 include/gtkmm-2.4/gtkmm/sizegroup.h
 include/gtkmm-2.4/gtkmm/socket.h
 include/gtkmm-2.4/gtkmm/spinbutton.h
+include/gtkmm-2.4/gtkmm/spinner.h
 include/gtkmm-2.4/gtkmm/statusbar.h
 include/gtkmm-2.4/gtkmm/statusicon.h
 include/gtkmm-2.4/gtkmm/stock.h
@@ -433,6 +444,8 @@ include/gtkmm-2.4/gtkmm/toggletoolbutton.h
 include/gtkmm-2.4/gtkmm/toolbar.h
 include/gtkmm-2.4/gtkmm/toolbutton.h
 include/gtkmm-2.4/gtkmm/toolitem.h
+include/gtkmm-2.4/gtkmm/toolitemgroup.h
+include/gtkmm-2.4/gtkmm/toolpalette.h
 include/gtkmm-2.4/gtkmm/toolshell.h
 include/gtkmm-2.4/gtkmm/tooltip.h
 include/gtkmm-2.4/gtkmm/tooltips.h
