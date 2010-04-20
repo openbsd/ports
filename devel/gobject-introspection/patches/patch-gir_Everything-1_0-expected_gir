@@ -1,7 +1,7 @@
-$OpenBSD: patch-gir_Everything-1_0-expected_gir,v 1.2 2010/03/29 15:17:10 jasper Exp $
---- gir/Everything-1.0-expected.gir.orig	Mon Mar 29 16:45:16 2010
-+++ gir/Everything-1.0-expected.gir	Mon Mar 29 16:45:20 2010
-@@ -11,7 +11,7 @@ and/or use gtk-doc annotations.  -->
+$OpenBSD: patch-gir_Everything-1_0-expected_gir,v 1.3 2010/04/20 11:20:08 jasper Exp $
+--- gir/Everything-1.0-expected.gir.orig	Sun Apr 18 20:11:38 2010
++++ gir/Everything-1.0-expected.gir	Tue Apr 20 12:05:02 2010
+@@ -12,7 +12,7 @@ and/or use gtk-doc annotations.  -->
    <package name="gobject-2.0"/>
    <namespace name="Everything"
               version="1.0"

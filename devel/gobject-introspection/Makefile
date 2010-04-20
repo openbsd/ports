@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2010/03/29 15:17:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/20 11:20:08 jasper Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		0.6.9
+GNOME_VERSION=		0.6.10
 GNOME_PROJECT=		gobject-introspection
 CATEGORIES=		devel
 
-SHARED_LIBS +=  girepository-1.0        0.0      # .0.0
-SHARED_LIBS +=  girepository-everything-1.0        0.0  # .1.0
+SHARED_LIBS +=  girepository-1.0     0.0      # .0.0
+SHARED_LIBS +=  girepository-everything-1.0 0.0      # .1.0
+SHARED_LIBS +=  girepository-gimarshallingtests-1.0 0.0      # .1.0
 
 HOMEPAGE=		http://live.gnome.org/GObjectIntrospection
 

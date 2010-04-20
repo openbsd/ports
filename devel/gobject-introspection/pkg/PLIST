@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/22 15:19:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/04/20 11:20:08 jasper Exp $
 @bin bin/g-ir-compiler
 @bin bin/g-ir-generate
 bin/g-ir-scanner
@@ -7,6 +7,7 @@ include/gobject-introspection-1.0/girepository.h
 include/gobject-introspection-1.0/girffi.h
 lib/girepository-1.0/
 lib/girepository-1.0/Everything-1.0.typelib
+lib/girepository-1.0/GIMarshallingTests-1.0.typelib
 lib/girepository-1.0/GIRepository-2.0.typelib
 lib/girepository-1.0/GL-1.0.typelib
 lib/girepository-1.0/GLib-2.0.typelib
@@ -26,6 +27,9 @@ lib/libgirepository-1.0.la
 lib/libgirepository-everything-1.0.a
 lib/libgirepository-everything-1.0.la
 @lib lib/libgirepository-everything-1.0.so.${LIBgirepository-everything-1.0_VERSION}
+lib/libgirepository-gimarshallingtests-1.0.a
+lib/libgirepository-gimarshallingtests-1.0.la
+@lib lib/libgirepository-gimarshallingtests-1.0.so.${LIBgirepository-gimarshallingtests-1.0_VERSION}
 lib/pkgconfig/gobject-introspection-1.0.pc
 lib/pkgconfig/gobject-introspection-no-export-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/gobject-introspection/
@@ -96,6 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/xmlwrit
 share/aclocal/introspection.m4
 share/gir-1.0/
 share/gir-1.0/Everything-1.0.gir
+share/gir-1.0/GIMarshallingTests-1.0.gir
 share/gir-1.0/GIRepository-2.0.gir
 share/gir-1.0/GL-1.0.gir
 share/gir-1.0/GLib-2.0.gir
