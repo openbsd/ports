@@ -1,0 +1,4 @@
+The Node Relationships module provides methods to complete two way
+relationships between content types enhancing the features of node
+reference fields by adding 'Node reference extras' and 'Automatic
+back references'.
