@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/20 12:03:17 stephan Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}modalframe/
+${DRUPAL_MODS}modalframe/CHANGELOG.txt
+${DRUPAL_MODS}modalframe/LICENSE.txt
+${DRUPAL_MODS}modalframe/README.txt
+${DRUPAL_MODS}modalframe/css/
+${DRUPAL_MODS}modalframe/css/modalframe.child.css
+${DRUPAL_MODS}modalframe/css/modalframe.parent.css
+${DRUPAL_MODS}modalframe/images/
+${DRUPAL_MODS}modalframe/images/close.gif
+${DRUPAL_MODS}modalframe/images/loading.gif
+${DRUPAL_MODS}modalframe/images/throbber.gif
+${DRUPAL_MODS}modalframe/js/
+${DRUPAL_MODS}modalframe/js/child.js
+${DRUPAL_MODS}modalframe/js/parent.js
+${DRUPAL_MODS}modalframe/modalframe-page.tpl.php
+${DRUPAL_MODS}modalframe/modalframe.info
+${DRUPAL_MODS}modalframe/modalframe.module
+${DRUPAL_MODS}modalframe/modules/
+${DRUPAL_MODS}modalframe/modules/modalframe_example/
+${DRUPAL_MODS}modalframe/modules/modalframe_example/modalframe_example.info
+${DRUPAL_MODS}modalframe/modules/modalframe_example/modalframe_example.js
+${DRUPAL_MODS}modalframe/modules/modalframe_example/modalframe_example.module

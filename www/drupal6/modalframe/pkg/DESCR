@@ -1,0 +1,4 @@
+This module provides an API to render an iframe within a modal dialog
+based on the jQuery UI Dialog plugin. You should not install this module
+unless another module requires you to, or you wish to use it for your
+own custom modules.
