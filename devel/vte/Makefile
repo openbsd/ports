@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.54 2010/04/15 17:44:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2010/04/20 11:43:25 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.22.5
+GNOME_VERSION=		0.24.0
 PKGNAME-main=		${DISTNAME}
-PKGNAME-python= 	py-${DISTNAME}p0
+PKGNAME-python= 	py-${DISTNAME}
 
 CATEGORIES=		devel
 
-SHARED_LIBS+=	vte	13.0    # .14.0
+SHARED_LIBS+=	vte	14.0    # .14.0
 
 HOMEPAGE=		http://www.gnome.org/
 
@@ -30,12 +30,12 @@ MODULES=		devel/gettext \
 MODPY_RUNDEP=		No
 MULTI_PACKAGES= 	-main -python
 
-WANTLIB=	 	X11 Xau Xcursor Xdmcp Xext Xfixes \
-                        Xi Xinerama Xcomposite Xrandr Xrender \
-                        Xdamage atk-1.0 cairo expat fontconfig \
-                        freetype m z gio-2.0 glib-2.0 glitz gmodule-2.0 \
-                        gobject-2.0 ncurses pango-1.0 pangocairo-1.0 \
-                        pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb z
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
+WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread-stubs xcb xcb-render xcb-render-util
+WANTLIB += z
 
 WANTLIB-main=		${WANTLIB} util c
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
