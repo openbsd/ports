@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2010/03/21 10:33:09 ajacoutot Exp $
---- configure.orig	Tue Jan 26 00:57:11 2010
-+++ configure	Tue Jan 26 09:28:12 2010
-@@ -21616,7 +21616,7 @@ fi
+$OpenBSD: patch-configure,v 1.5 2010/04/20 18:08:24 jasper Exp $
+--- configure.orig	Tue Apr  6 12:09:46 2010
++++ configure	Tue Apr 20 20:02:12 2010
+@@ -21660,7 +21660,7 @@ fi
  
  # Warnings are there for a reason
  if test "x$GCC" = "xyes"; then
