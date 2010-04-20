@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.25 2010/04/20 10:03:36 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.26 2010/04/20 21:00:35 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -90,7 +90,9 @@ _depfile_fragment = \
 HTMLIFY =	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
 _MAKE = cd ${.CURDIR} && exec ${MAKE}
+_SUDOMAKE = cd ${.CURDIR} && exec ${SUDO} ${MAKE}
 _MAKESYS = cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE}
+_SUDOMAKESYS = cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE}
 
 REPORT_PROBLEM_LOGFILE ?=
 .if !empty(REPORT_PROBLEM_LOGFILE)
