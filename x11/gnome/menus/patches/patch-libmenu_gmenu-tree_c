@@ -1,9 +1,9 @@
-$OpenBSD: patch-libmenu_gmenu-tree_c,v 1.1 2009/11/15 14:10:02 ajacoutot Exp $
+$OpenBSD: patch-libmenu_gmenu-tree_c,v 1.2 2010/04/20 15:14:28 jasper Exp $
 
 Set default menu to gnome-applications.menu if XDG_MENU_PREFIX is not set.
 
---- libmenu/gmenu-tree.c.orig	Thu Oct  1 13:08:33 2009
-+++ libmenu/gmenu-tree.c	Sun Nov 15 12:55:42 2009
+--- libmenu/gmenu-tree.c.orig	Tue Mar 30 01:54:53 2010
++++ libmenu/gmenu-tree.c	Tue Apr 20 17:06:31 2010
 @@ -23,6 +23,7 @@
  
  #include <string.h>
@@ -36,7 +36,7 @@ Set default menu to gnome-applications.menu if XDG_MENU_PREFIX is not set.
  
        if (!tree->canonical)
          canonicalize_basename (tree, tree->basename);
-@@ -1949,18 +1947,15 @@ load_parent_merge_file (GMenuTree      *tree,
+@@ -1923,18 +1921,15 @@ load_parent_merge_file (GMenuTree      *tree,
    found = FALSE;
    menu_file = g_strconcat (menu_name, ".menu", NULL);
  

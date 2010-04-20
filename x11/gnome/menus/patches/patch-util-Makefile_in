@@ -1,7 +1,7 @@
-$OpenBSD: patch-util-Makefile_in,v 1.6 2009/10/11 10:05:34 jasper Exp $
---- util/Makefile.in.orig	Thu Oct  1 13:24:51 2009
-+++ util/Makefile.in	Sun Oct 11 01:47:51 2009
-@@ -314,6 +314,7 @@ gnome_menu_spec_test_SOURCES = \
+$OpenBSD: patch-util-Makefile_in,v 1.7 2010/04/20 15:14:28 jasper Exp $
+--- util/Makefile.in.orig	Tue Mar 30 01:59:52 2010
++++ util/Makefile.in	Tue Apr 20 17:06:31 2010
+@@ -303,6 +303,7 @@ gnome_menu_spec_test_SOURCES = \
  gnome_menu_spec_test_LDADD = \
  	../libmenu/libgnome-menu.la	\
  	$(GLIB_LIBS)			\
