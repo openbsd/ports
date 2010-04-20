@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.992 2010/04/20 10:15:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.993 2010/04/20 19:58:09 landry Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1518,12 +1518,12 @@ ${_PACKAGE_COOKIE${_S}}:
 		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
 		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
 .  else
-	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
+	@cd ${.CURDIR} && exec ${MAKE} ${_PACKAGE_COOKIE_DEPS}
 .    if target(pre-package)
-	@${_MAKE} pre-package
+	@cd ${.CURDIR} && exec ${MAKE} pre-package
 .    endif
 .  if target(do-package)
-	@${_MAKE} do-package
+	@cd ${.CURDIR} && exec ${MAKE} do-package
 .    else
 # What PACKAGE normally does:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
@@ -1542,7 +1542,7 @@ ${_PACKAGE_COOKIE${_S}}:
 # End of PACKAGE.
 .    endif
 .    if target(post-package)
-	@${_MAKE} post-package
+	@cd ${.CURDIR} && exec ${MAKE} post-package
 .    endif
 	@rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}} ${_FUPDATE_COOKIE${_S}}
 .  endif
@@ -1555,7 +1555,7 @@ ${_INSTALL_COOKIE${_S}}:
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} exec ${MAKE} subpackage
 .  else
 
-	@${_MAKE} package
+	@cd ${.CURDIR} && exec ${MAKE} package
 .  endif
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=install \
 		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
@@ -1581,7 +1581,7 @@ ${_INSTALL_COOKIE${_S}}:
 
 
 ${_UPDATE_COOKIE${_S}}:
-	@${_MAKE} _internal-package
+	@cd ${.CURDIR} && exec ${MAKE} _internal-package
 .  if empty(UPDATE_COOKIES_DIR)
 	@exec ${MAKE} ${WRKDIR}
 .  else
@@ -1600,7 +1600,7 @@ ${_UPDATE_COOKIE${_S}}:
 	@${_MAKE_COOKIE} $@
 
 ${_FUPDATE_COOKIE${_S}}:
-	@${_MAKE} _internal-package
+	@cd ${.CURDIR} && exec ${MAKE} _internal-package
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=package \
 		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
 		_internal-runwantlib-depends
@@ -1801,15 +1801,15 @@ _internal-fetch-all:
 # See ports/infrastructure/templates/Makefile.template
 	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-fetch)
-	@${_MAKE} pre-fetch __FETCH_ALL=Yes
+	@cd ${.CURDIR} && exec ${MAKE} pre-fetch __FETCH_ALL=Yes
 .endif
 # What FETCH-ALL normally does:
 .  if !empty(MAKESUMFILES)
-	@${_MAKE} ${MAKESUMFILES:S@^@${DISTDIR}/@}
+	@cd ${.CURDIR} && exec ${MAKE} ${MAKESUMFILES:S@^@${DISTDIR}/@}
 .    endif
 # End of FETCH
 .if target(post-fetch)
-	@${_MAKE} post-fetch __FETCH_ALL=Yes
+	@cd ${.CURDIR} && exec ${MAKE} post-fetch __FETCH_ALL=Yes
 .endif
 
 .if !empty(IGNORE) && !defined(NO_IGNORE)
@@ -1834,7 +1834,7 @@ _LIB_DEPENDS_FLAGS=
 .  endif
 
 lib-depends-check:
-	@${_MAKE} package
+	@cd ${.CURDIR} && exec ${MAKE} package
 	@PORTSDIR=${PORTSDIR} perl ${PORTSDIR}/infrastructure/package/check-lib-depends \
 		${_LIB_DEPENDS_FLAGS} -d ${_PKG_REPO} ${_PACKAGE_COOKIE}
 
@@ -1869,19 +1869,19 @@ _internal-fetch:
 # See ports/infrastructure/templates/Makefile.template
 	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}${_MASTER}"
 .  if target(pre-fetch)
-	@${_MAKE} pre-fetch
+	@cd ${.CURDIR} && exec ${MAKE} pre-fetch
 .  endif
 .  if target(do-fetch)
-	@${_MAKE} do-fetch
+	@cd ${.CURDIR} && exec ${MAKE} do-fetch
 .  else
 # What FETCH normally does:
 .    if !empty(CHECKSUMFILES)
-	@${_MAKE} ${CHECKSUMFILES:S@^@${DISTDIR}/@}
+	@cd ${.CURDIR} && exec ${MAKE} ${CHECKSUMFILES:S@^@${DISTDIR}/@}
 .    endif
 # End of FETCH
 .  endif
 .  if target(post-fetch)
-	@${_MAKE} post-fetch
+	@cd ${.CURDIR} && exec ${MAKE} post-fetch
 .  endif
 
 
@@ -1933,10 +1933,10 @@ _internal-checksum: _internal-fetch
 _refetch:
 .  for file cipher value in ${_PROBLEMS}
 	@rm ${DISTDIR}/${file}
-	@${_MAKE} ${DISTDIR}/${file} \
+	@cd ${.CURDIR} && exec ${MAKE} ${DISTDIR}/${file} \
 		MASTER_SITE_OVERRIDE="${MASTER_SITE_OPENBSD:=by_cipher/${cipher}/${value:C/(..).*/\1/}/${value}/} ${MASTER_SITE_OPENBSD:=${cipher}/${value}/}"
 .  endfor
-	${_MAKE} _internal-checksum REFETCH=false
+	cd ${.CURDIR} && exec ${MAKE} _internal-checksum REFETCH=false
 
 
 # The cookie's recipe hold the real rule for each of those targets.
@@ -2046,23 +2046,23 @@ subpackage:
 	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-subpackage
 
 _internal-package: 
-	@${_MAKE} _internal-package-only
+	@cd ${.CURDIR} && exec ${MAKE} _internal-package-only
 .if ${BULK_${PKGPATH}:L} == "yes"
-	@${_MAKE} ${_BULK_COOKIE}
+	@cd ${.CURDIR} && exec ${MAKE} ${_BULK_COOKIE}
 .endif
 
 
 ${_BULK_COOKIE}:
-	@${_MAKE} _internal-package-only
+	@cd ${.CURDIR} && exec ${MAKE} _internal-package-only
 	@mkdir -p ${BULK_COOKIES_DIR}
 .for _i in ${BULK_TARGETS_${PKGPATH}}
 	@${ECHO_MSG} "===> Running ${_i}"
-	@${_MAKE} ${_i} ${BULK_FLAGS}
+	@cd ${.CURDIR} && exec ${MAKE} ${_i} ${BULK_FLAGS}
 .endfor
 .if !empty(BULK_DO_${PKGPATH})
 	@${BULK_DO_${PKGPATH}}
 .endif
-	@${SUDO} ${_MAKE} _internal-clean
+	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} _internal-clean
 	@${_MAKE_COOKIE} $@
 
 # The real targets. Note that some parts always get run, some parts can be
@@ -2078,14 +2078,15 @@ ${_WRKDIR_COOKIE}:
 	@${_MAKE_COOKIE} $@
 
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
-	@${_MAKE} _internal-checksum _internal-prepare
+	@cd ${.CURDIR} && exec ${MAKE} \
+		_internal-checksum _internal-prepare
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-extract)
-	@${_MAKESYS} pre-extract
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-extract
 .endif
-	@${_MAKESYS} do-extract
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-extract
 .if target(post-extract)
-	@${_MAKESYS} post-extract
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-extract
 .endif
 	@${_MAKE_COOKIE} $@
 
@@ -2107,7 +2108,7 @@ do-extract:
 # Hence it needs special treatment (a specific cookie).
 .if target(pre-patch)
 ${_PREPATCH_COOKIE}:
-	@${_MAKESYS} pre-patch
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-patch
 .  if ${PATCH_CHECK_ONLY:L} != "yes"
 	@${_MAKE_COOKIE} $@
 .  endif
@@ -2119,11 +2120,11 @@ ${_PREPATCH_COOKIE}:
 
 ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if target(pre-patch)
-	@${_MAKE} ${_PREPATCH_COOKIE}
+	@cd ${.CURDIR} && exec ${MAKE} ${_PREPATCH_COOKIE}
 .endif
-	@${_MAKESYS} do-distpatch
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-distpatch
 .if target(post-distpatch)
-	@${_MAKESYS} post-distpatch
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-distpatch
 .endif
 .if ${PATCH_CHECK_ONLY:L} != "yes"
 	@${_MAKE_COOKIE} $@
@@ -2153,15 +2154,15 @@ do-distpatch:
 ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@${ECHO_MSG} "===>  Patching for ${FULLPKGNAME}${_MASTER}"
 .if target(pre-patch)
-	@${_MAKE} ${_PREPATCH_COOKIE}
+	@cd ${.CURDIR} && exec ${MAKE} ${_PREPATCH_COOKIE}
 .endif
 .if target(do-patch)
-	@${_MAKESYS} do-patch
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-patch
 .else
 # What PATCH normally does:
 # XXX test for efficiency, don't bother with distpatch if it's not needed
 .  if target(do-distpatch) || target(post-distpatch) || defined(PATCHFILES)
-	@${_MAKE} _internal-distpatch
+	@cd ${.CURDIR} && exec ${MAKE} _internal-distpatch
 .  endif
 	@if cd ${PATCHDIR} 2>/dev/null || [ x"${PATCH_LIST:M/*}" != x"" ]; then \
 		error=false; \
@@ -2193,7 +2194,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 # End of PATCH.
 .endif
 .if target(post-patch)
-	@${_MAKESYS} post-patch
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-patch
 .endif
 .for _m in ${MODULES:T:U}
 .  if defined(MOD${_m}_post-patch)
@@ -2227,10 +2228,10 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@${ECHO_MSG} "===>  Configuring for ${FULLPKGNAME}${_MASTER}"
 	@mkdir -p ${WRKBUILD}
 .if target(pre-configure)
-	@${_MAKESYS} pre-configure
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-configure
 .endif
 .if target(do-configure)
-	@${_MAKESYS} do-configure
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-configure
 .else
 # What CONFIGURE normally does
 .  for _c in ${CONFIGURE_STYLE:U}
@@ -2241,7 +2242,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 # End of CONFIGURE.
 .endif
 .if target(post-configure)
-	@${_MAKESYS} post-configure
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-configure
 .endif
 	@${_MAKE_COOKIE} $@
 
@@ -2264,10 +2265,10 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 	echo ""
 .  endif
 .  if target(pre-build)
-	@${_MAKESYS} pre-build
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} pre-build
 .  endif
 .  if target(do-build)
-	@${_MAKESYS} do-build
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} do-build
 .  else
 # What BUILD normally does:
 	@cd ${WRKBUILD} && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
@@ -2275,7 +2276,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 # End of BUILD
 .  endif
 .  if target(post-build)
-	@${_MAKESYS} post-build
+	@cd ${.CURDIR} && exec ${_SYSTRACE_CMD} ${MAKE} post-build
 .  endif
 .endif
 	@${_MAKE_COOKIE} $@
@@ -2294,7 +2295,7 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 .    endif
 .  endif
 .  if target(pre-regress)
-	@${_MAKE} pre-regress
+	@cd ${.CURDIR} && exec ${MAKE} pre-regress
 .  endif
 .  if target(do-regress)
 	@${REGRESS_STATUS_IGNORE}cd ${.CURDIR} && exec 3>&1 && exit `exec 4>&1 1>&3; \
@@ -2309,7 +2310,7 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 # End of REGRESS
 .  endif
 .  if target(post-regress)
-	@${_MAKE} post-regress
+	@cd ${.CURDIR} && exec ${MAKE} post-regress
 .  endif
 .else
 	@echo 1>&2 "No regression check for ${FULLPKGNAME}"
@@ -2335,14 +2336,17 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .endfor
 
 .if target(pre-fake)
-	@${SUDO} ${_MAKESYS} pre-fake ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} \
+		${MAKE} pre-fake ${_FAKE_SETUP}
 .endif
 	@${SUDO} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .if target(pre-install)
-	@${SUDO} ${_MAKESYS} pre-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} \
+		${MAKE} pre-install ${_FAKE_SETUP}
 .endif
 .if target(do-install)
-	@${SUDO} ${_MAKESYS} do-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} \
+		${MAKE} do-install ${_FAKE_SETUP}
 .else
 # What FAKE normally does:
 	@cd ${WRKBUILD} && exec ${SUDO} ${_SYSTRACE_CMD} \
@@ -2351,7 +2355,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 # End of FAKE.
 .endif
 .if target(post-install)
-	@${SUDO} ${_MAKESYS} post-install ${_FAKE_SETUP}
+	@cd ${.CURDIR} && exec ${SUDO} ${_SYSTRACE_CMD} ${MAKE} post-install ${_FAKE_SETUP}
 .endif
 .for _p in ${PROTECT_MOUNT_POINTS}
 	@${SUDO} mount -u -w ${_p}
@@ -3048,28 +3052,28 @@ homepage-links:
 #####################################################
 
 checkpatch:
-	@${_MAKE} PATCH_CHECK_ONLY=Yes patch
+	@cd ${.CURDIR} && exec ${MAKE} PATCH_CHECK_ONLY=Yes patch
 
 clean-depends:
-	@${_MAKE} clean=depends
+	@cd ${.CURDIR} && exec ${MAKE} clean=depends
 
 distclean:
-	@${_MAKE} clean=dist
+	@cd ${.CURDIR} && exec ${MAKE} clean=dist
 
 delete-package:
-	@${_MAKE} clean=package
+	@cd ${.CURDIR} && exec ${MAKE} clean=package
 
 reinstall:
-	@${_MAKE} clean='install force'
+	@cd ${.CURDIR} && exec ${MAKE} clean='install force'
 	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} exec ${MAKE} install
 
 repackage:
-	@${_MAKE} clean=packages
-	@${_MAKE} package
+	@cd ${.CURDIR} && exec ${MAKE} clean=packages
+	@cd ${.CURDIR} && exec ${MAKE} package
 
 rebuild:
 	@rm -f ${_BUILD_COOKIE}
-	@${_MAKE} build
+	@cd ${.CURDIR} && exec ${MAKE} build
 
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME${SUBPACKAGE}}"
