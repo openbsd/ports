@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.32 2010/04/18 17:40:20 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.33 2010/04/20 15:55:12 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -96,6 +96,7 @@ related ports under the x11/gnome category)
    * xdg-user-dirs-gtk - manage well know user directories
 
  - Themes
+   * gnome-icon-theme-extras - extra icons for GNOME
    * gnome-themes-extras - extra themes for GNOME
    * tango-icon-theme - Tango icon theme
 
