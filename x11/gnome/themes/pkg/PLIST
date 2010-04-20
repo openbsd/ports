@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2009/12/21 18:03:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2010/04/20 15:27:10 ajacoutot Exp $
 @conflict gtk2-clearlooks-engine-<0.6.2p7
 share/icons/Crux/
 share/icons/Crux/16x16/
@@ -700,9 +700,11 @@ share/icons/HighContrast-SVG/scalable/apps/accessories-calculator.svg
 share/icons/HighContrast-SVG/scalable/apps/accessories-character-map.svg
 share/icons/HighContrast-SVG/scalable/apps/accessories-text-editor.svg
 share/icons/HighContrast-SVG/scalable/apps/arts.svg
+share/icons/HighContrast-SVG/scalable/apps/browser.svg
 share/icons/HighContrast-SVG/scalable/apps/bug-buddy.svg
 share/icons/HighContrast-SVG/scalable/apps/calc.svg
 share/icons/HighContrast-SVG/scalable/apps/config-language.svg
+share/icons/HighContrast-SVG/scalable/apps/email.svg
 share/icons/HighContrast-SVG/scalable/apps/file-manager.svg
 share/icons/HighContrast-SVG/scalable/apps/fonts.svg
 share/icons/HighContrast-SVG/scalable/apps/glchess.svg
@@ -711,9 +713,11 @@ share/icons/HighContrast-SVG/scalable/apps/gnome-character-map.svg
 share/icons/HighContrast-SVG/scalable/apps/gnome-help.svg
 share/icons/HighContrast-SVG/scalable/apps/gnome-mixer.svg
 share/icons/HighContrast-SVG/scalable/apps/gnome-monitor.svg
+share/icons/HighContrast-SVG/scalable/apps/gnome-session.svg
 share/icons/HighContrast-SVG/scalable/apps/gnome-settings-accessibility-technologies.svg
 share/icons/HighContrast-SVG/scalable/apps/gnome-settings-font.svg
 share/icons/HighContrast-SVG/scalable/apps/gnome-terminal.svg
+share/icons/HighContrast-SVG/scalable/apps/gnome-window-manager.svg
 share/icons/HighContrast-SVG/scalable/apps/gucharmap.svg
 share/icons/HighContrast-SVG/scalable/apps/help-browser.svg
 share/icons/HighContrast-SVG/scalable/apps/internet-group-chat.svg
@@ -722,6 +726,7 @@ share/icons/HighContrast-SVG/scalable/apps/internet-news-reader.svg
 share/icons/HighContrast-SVG/scalable/apps/internet-web-browser.svg
 share/icons/HighContrast-SVG/scalable/apps/kcalc.svg
 share/icons/HighContrast-SVG/scalable/apps/kcharselect.svg
+share/icons/HighContrast-SVG/scalable/apps/kcmkwm.svg
 share/icons/HighContrast-SVG/scalable/apps/kcmsound.svg
 share/icons/HighContrast-SVG/scalable/apps/kedit.svg
 share/icons/HighContrast-SVG/scalable/apps/kfm.svg
@@ -729,7 +734,9 @@ share/icons/HighContrast-SVG/scalable/apps/khelpcenter.svg
 share/icons/HighContrast-SVG/scalable/apps/konsole.svg
 share/icons/HighContrast-SVG/scalable/apps/kscreensaver.svg
 share/icons/HighContrast-SVG/scalable/apps/ksysguard.svg
+share/icons/HighContrast-SVG/scalable/apps/kwin.svg
 share/icons/HighContrast-SVG/scalable/apps/locale.svg
+share/icons/HighContrast-SVG/scalable/apps/mail_generic.svg
 share/icons/HighContrast-SVG/scalable/apps/multimedia-volume-control.svg
 share/icons/HighContrast-SVG/scalable/apps/multimedia.svg
 share/icons/HighContrast-SVG/scalable/apps/openterm.svg
@@ -741,8 +748,13 @@ share/icons/HighContrast-SVG/scalable/apps/preferences-desktop-screensaver.svg
 share/icons/HighContrast-SVG/scalable/apps/preferences-system-network-proxy.svg
 share/icons/HighContrast-SVG/scalable/apps/preferences-system-session.svg
 share/icons/HighContrast-SVG/scalable/apps/preferences-system-windows.svg
+share/icons/HighContrast-SVG/scalable/apps/proxy-config.svg
+share/icons/HighContrast-SVG/scalable/apps/proxy.svg
+share/icons/HighContrast-SVG/scalable/apps/redhat-email.svg
 share/icons/HighContrast-SVG/scalable/apps/redhat-filemanager.svg
+share/icons/HighContrast-SVG/scalable/apps/redhat-web-browser.svg
 share/icons/HighContrast-SVG/scalable/apps/screensaver.svg
+share/icons/HighContrast-SVG/scalable/apps/stock_proxy.svg
 share/icons/HighContrast-SVG/scalable/apps/susehelpcenter.svg
 share/icons/HighContrast-SVG/scalable/apps/system-file-manager.svg
 share/icons/HighContrast-SVG/scalable/apps/terminal.svg
@@ -751,9 +763,13 @@ share/icons/HighContrast-SVG/scalable/apps/tomboy.svg
 share/icons/HighContrast-SVG/scalable/apps/utilities-system-monitor.svg
 share/icons/HighContrast-SVG/scalable/apps/utilities-terminal.svg
 share/icons/HighContrast-SVG/scalable/apps/volume-knob.svg
+share/icons/HighContrast-SVG/scalable/apps/web-browser.svg
 share/icons/HighContrast-SVG/scalable/apps/xfce-filemanager.svg
+share/icons/HighContrast-SVG/scalable/apps/xfce-mail.svg
 share/icons/HighContrast-SVG/scalable/apps/xfce-terminal.svg
 share/icons/HighContrast-SVG/scalable/apps/xfce4-mixer.svg
+share/icons/HighContrast-SVG/scalable/apps/xfce4-session.svg
+share/icons/HighContrast-SVG/scalable/apps/xfwm4.svg
 share/icons/HighContrast-SVG/scalable/apps/xscreensaver.svg
 share/icons/HighContrast-SVG/scalable/categories/
 share/icons/HighContrast-SVG/scalable/categories/applications-accessories.svg
@@ -2311,6 +2327,9 @@ share/icons/Mist/scalable/status/folder_open.svg
 share/icons/Mist/scalable/status/gnome-fs-directory-accept.svg
 share/icons/Mist/scalable/status/gnome-fs-directory-visiting.svg
 share/icons/Mist/scalable/status/stock_open.svg
+share/locale/af/
+share/locale/af/LC_MESSAGES/
+share/locale/af/LC_MESSAGES/gnome-themes.mo
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/gnome-themes.mo
@@ -2360,6 +2379,7 @@ share/locale/dz/
 share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/gnome-themes.mo
 share/locale/el/LC_MESSAGES/gnome-themes.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-themes.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gnome-themes.mo
