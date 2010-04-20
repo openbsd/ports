@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_eggdbus_Makefile_in,v 1.1.1.1 2010/04/20 14:00:07 ajacoutot Exp $
+--- src/eggdbus/Makefile.in.orig	Tue Apr 20 15:34:00 2010
++++ src/eggdbus/Makefile.in	Tue Apr 20 15:34:19 2010
+@@ -1375,6 +1375,7 @@ eggdbus-built-sources.stamp : eggdbus-binding-tool Mak
+ 		--dbus-namespace org.freedesktop.DBus							\
+ 		--interfaces-only									\
+ 		--no-types-header									\
++		--include-header "unistd.h"								\
+ 		--include-header "eggdbus/eggdbustypes.h"						\
+ 		--include-header "eggdbus/eggdbusinterface.h"						\
+ 		--include-header "eggdbus/eggdbusinterfaceproxy.h"					\

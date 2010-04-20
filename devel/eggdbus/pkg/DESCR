@@ -1,0 +1,3 @@
+EggDBus aims to be an easy-to-use set of GObject bindings for
+interacting with DBus.  Currently, this interaction is done using
+libdbus-1.

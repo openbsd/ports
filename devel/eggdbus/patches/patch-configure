@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/04/20 14:00:07 ajacoutot Exp $
+--- configure.orig	Tue Apr 20 15:29:31 2010
++++ configure	Tue Apr 20 15:29:38 2010
+@@ -14073,7 +14073,7 @@ fi
+ 
+ 
+ if test "x$GCC" = "xyes"; then
+-  LDFLAGS="-Wl,--as-needed $LDFLAGS"
++  LDFLAGS="$LDFLAGS"
+ fi
+ 
+ ac_config_files="$ac_config_files Makefile eggdbus-1.pc src/Makefile src/eggdbus/Makefile src/tests/Makefile docs/Makefile docs/version.xml docs/man/Makefile docs/tests/Makefile docs/eggdbus/Makefile"
