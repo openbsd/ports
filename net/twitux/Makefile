@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/22 11:41:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/20 20:11:53 ajacoutot Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS=	:iso-codes-*:devel/iso-codes
 
 LIB_DEPENDS=	soup-2.4::devel/libsoup \
 		sexy::x11/libsexy \
-		gnome-keyring::x11/gnome/keyring \
+		gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
 		notify::devel/libnotify \
 		canberra,canberra-gtk::audio/libcanberra \
 		enchant::textproc/enchant

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/02/11 15:47:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/20 20:11:53 ajacoutot Exp $
 
 COMMENT=		provide limited command-line access to the GNOME keyring
 
 GNOME_PROJECT=		gnome-keyring-query
 GNOME_VERSION=		0.0.1
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 DISTFILES=
 CATEGORIES=		sysutils
 
@@ -19,7 +19,7 @@ MODULES=		x11/gnome \
 
 WANTLIB=		c glib-2.0 pthread
 
-LIB_DEPENDS=		gnome-keyring::x11/gnome/keyring
+LIB_DEPENDS=		gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring
 
 CONFIGURE_STYLE=	none
 

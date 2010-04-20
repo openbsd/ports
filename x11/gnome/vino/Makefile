@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/03/30 14:05:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/04/20 20:11:53 ajacoutot Exp $
 
 COMMENT=	VNC server for remote acces to your GNOME desktop
 
 GNOME_PROJECT=	vino
 GNOME_VERSION=	2.28.2
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	net
 
@@ -31,7 +32,7 @@ LIB_DEPENDS=	notify::devel/libnotify \
 		gnutls::security/gnutls \
 		telepathy-glib.>=4::net/telepathy/telepathy-glib \
 		soup-2.4.>=2::devel/libsoup \
-		gnome-keyring.>=5::x11/gnome/keyring \
+		gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
 		avahi-client,avahi-common,avahi-glib::net/avahi
 
 USE_X11=	Yes

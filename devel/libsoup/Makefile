@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/04/20 11:07:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2010/04/20 20:11:53 ajacoutot Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
@@ -7,7 +7,7 @@ GNOME_PROJECT =		libsoup
 GNOME_VERSION =		2.30.0
 
 PKGNAME-main =		${DISTNAME}
-PKGNAME-gnome =		${GNOME_PROJECT}-gnome-${GNOME_VERSION}
+PKGNAME-gnome =		${GNOME_PROJECT}-gnome-${GNOME_VERSION}p0
 
 SHARED_LIBS +=  soup-2.4             2.2      # .4.0
 SHARED_LIBS +=  soup-gnome-2.4       1.1      # .4.0
@@ -33,7 +33,7 @@ WANTLIB-gnome =		${WANTLIB-main} ORBit-2 dbus-1 dbus-glib-1 sqlite3
 
 LIB_DEPENDS-gnome =	${LIB_DEPENDS-main} \
 			soup-2.4::${BUILD_PKGPATH},-main \
-			gnome-keyring::x11/gnome/keyring \
+			gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
 			gconf-2::devel/gconf2 \
 			proxy::net/libproxy
 

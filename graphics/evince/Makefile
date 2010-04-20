@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2009/12/22 16:06:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/04/20 20:11:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,7 @@ GNOME_VERSION=	2.28.2
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}p1
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
@@ -51,7 +51,7 @@ WANTLIB-main=	${WANTLIB} ICE ORBit-2 SM c dbus-1 dbus-glib-1 \
 		jpeg pthread tiff xml2 lcms
 LIB_DEPENDS-main= poppler.>=3,poppler-glib.>=3::print/poppler \
 		spectre::print/libspectre \
-		gnome-keyring::x11/gnome/keyring \
+		gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
 		${MODGCONF2_LIB_DEPENDS} \
 		${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-main= ${RUN_DEPENDS} \

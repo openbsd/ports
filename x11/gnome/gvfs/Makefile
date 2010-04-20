@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2009/12/21 18:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/04/20 20:11:53 ajacoutot Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
@@ -6,8 +6,8 @@ COMMENT-smb=	samba module for GVFS
 GNOME_PROJECT=	gvfs
 GNOME_VERSION=	1.4.3
 
-PKGNAME-main=	${DISTNAME}p0
-PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
+PKGNAME-main=	${DISTNAME}p1
+PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}p0
 
 SHARED_LIBS +=	gvfscommon           2.0      # .0.0
 SHARED_LIBS +=  gvfscommon-dnssd     0.0      # .0.0
@@ -26,7 +26,7 @@ MODULES=	devel/gettext \
 WANTLIB += ORBit-2 c dbus-1 dbus-glib-1 gconf-2 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 pcre pthread util
 
-LIB_DEPENDS=	gnome-keyring::x11/gnome/keyring
+LIB_DEPENDS=	gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring
 
 WANTLIB-main +=	${WANTLIB}
 WANTLIB-main += bz2 crypto gcrypt gnutls gpg-error lzma m proxy soup-2.4

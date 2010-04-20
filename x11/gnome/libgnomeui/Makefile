@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2010/03/30 14:48:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/04/20 20:11:53 ajacoutot Exp $
 
 COMMENT=		user interface components for GNOME
 
 GNOME_PROJECT=		libgnomeui
 GNOME_VERSION=		2.24.3
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=	gnomeui-2      2400.0         # .2400.2
 
@@ -27,7 +28,7 @@ WANTLIB += z
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	gnome-keyring.>=1::x11/gnome/keyring \
+LIB_DEPENDS=	gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
 		gnome-2.>=1800::x11/gnome/libgnome \
 		gnomecanvas-2.>=1400::x11/gnome/libgnomecanvas \
 		bonoboui-2.>=1::x11/gnome/libbonoboui

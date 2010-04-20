@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/04/03 11:22:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2010/04/20 20:11:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		2.28.3.1
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		databases
 
@@ -59,7 +59,7 @@ LIB_DEPENDS= 		db:db->=4,<5:databases/db/v4 \
 			gnutls::security/gnutls \
 			nss3.>=19,smime3.>=19,softokn3.>=19,ssl3.>=19:nss->=3.11.4p1:security/nss \
 			ical,icalss,icalvcal::textproc/libical \
-			gnome-keyring::x11/gnome/keyring \
+			gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
 			bonobo-2,bonobo-activation::x11/gnome/libbonobo \
 			gweather::x11/gnome/libgweather
 			

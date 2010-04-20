@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2009/12/21 18:03:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/04/20 20:11:53 ajacoutot Exp $
 
 COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.28.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 
 SHARED_LIBS +=	cryptui              1.0      # .0.0
 
@@ -31,7 +31,8 @@ LIB_DEPENDS=		lber,ldap::databases/openldap \
 			notify::devel/libnotify \
 			soup-2.4::devel/libsoup \
 			gpgme::security/gpgme \
-			gcr,gnome-keyring.>=5,gp11::x11/gnome/keyring \
+			gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
+			gcr.>=1,gp11:gnome-keyring->=2.30.0:x11/gnome/keyring \
 			avahi-client,avahi-common,avahi-glib::net/avahi
 
 MODULES=		devel/gettext \
