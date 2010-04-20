@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/04/20 20:11:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2010/04/20 22:06:50 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,17 +8,17 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	2.28.2
+GNOME_VERSION=	2.30.0
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-SHARED_LIBS +=  evdocument 0.0                   # .1.0
-SHARED_LIBS +=  evview     0.0                   # .1.0
+SHARED_LIBS +=  evdocument 1.0                   # .2.0
+SHARED_LIBS +=  evview     1.0                   # .2.0
 
 HOMEPAGE=	http://www.gnome.org/projects/evince/
 
@@ -44,7 +44,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += xcb z
+WANTLIB += xcb xcb-render xcb-render-util z
 
 WANTLIB-main=	${WANTLIB} ICE ORBit-2 SM c dbus-1 dbus-glib-1 \
 		gnome-keyring gs gthread-2.0 \
@@ -61,15 +61,15 @@ RUN_DEPENDS-main= ${RUN_DEPENDS} \
 
 WANTLIB-djvu=	${WANTLIB} jpeg
 # port-lib-depends-check misses these ones because the depending lib
-# is under lib/evince/1/backends/
+# is under lib/evince/2/backends/
 LIB_DEPENDS-djvu= ${MODGETTEXT_LIB_DEPENDS} \
 		evdocument::${BASE_PKGPATH} \
 		djvulibre.>=21::graphics/djvulibre
 RUN_DEPENDS-djvu= ${MODGCONF2_RUN_DEPENDS}
 
-WANTLIB-dvi=	${WANTLIB} gs
+WANTLIB-dvi=	${WANTLIB} pthread gs
 # port-lib-depends-check misses these ones because the depending lib
-# is under lib/evince/1/backends/
+# is under lib/evince/2/backends/
 LIB_DEPENDS-dvi= ${MODGETTEXT_LIB_DEPENDS} \
 		evdocument::${BASE_PKGPATH} \
 		kpathsea.>=1::print/texlive/base \
@@ -83,11 +83,11 @@ LIB_DEPENDS-nautilus= evdocument::${BASE_PKGPATH} \
 		nautilus-extension.>=2::x11/gnome/nautilus
 RUN_DEPENDS-nautilus=
 
-USE_X11=	Yes
-MODGNOME_HELP_FILES= Yes
-DESKTOP_FILES=	Yes
-MODGCONF2_SCHEMAS_DIR= evince
-MODGCONF2_LIBDEP= No
+USE_X11=		Yes
+MODGNOME_HELP_FILES= 	Yes
+DESKTOP_FILES=		Yes
+MODGCONF2_SCHEMAS_DIR=  evince
+MODGCONF2_LIBDEP= 	No
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
