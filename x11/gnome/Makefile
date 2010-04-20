@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2010/04/10 16:52:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2010/04/20 15:54:22 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -42,6 +42,7 @@
      SUBDIR += gyrus
      SUBDIR += hamster-applet
      SUBDIR += icon-theme
+     SUBDIR += icon-theme-extras
      SUBDIR += keyring
      SUBDIR += keyring-query
      SUBDIR += krb5-auth-dialog
