@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/06/07 08:47:57 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/20 17:51:21 ajacoutot Exp $
 ${P5ARCH}/Gtk2/
 ${P5ARCH}/Gtk2.pm
 ${P5ARCH}/Gtk2/AboutDialog.pod
@@ -180,6 +180,7 @@ ${P5ARCH}/Gtk2/Misc.pod
 ${P5ARCH}/Gtk2/Notebook.pod
 ${P5ARCH}/Gtk2/Object.pod
 ${P5ARCH}/Gtk2/OptionMenu.pod
+${P5ARCH}/Gtk2/Orientable.pod
 ${P5ARCH}/Gtk2/PageSetup.pod
 ${P5ARCH}/Gtk2/Paned.pod
 ${P5ARCH}/Gtk2/Pango/
@@ -503,6 +504,7 @@ ${P5ARCH}/auto/Gtk2/Gtk2.so
 @man man/man3p/Gtk2::Notebook.3p
 @man man/man3p/Gtk2::Object.3p
 @man man/man3p/Gtk2::OptionMenu.3p
+@man man/man3p/Gtk2::Orientable.3p
 @man man/man3p/Gtk2::PageSetup.3p
 @man man/man3p/Gtk2::Paned.3p
 @man man/man3p/Gtk2::Pango.3p
