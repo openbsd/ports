@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2010/04/02 20:07:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2010/04/20 10:00:17 sthen Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
 COMMENT-lemon=	LEMON LALR(1) parser generator
 V=		3.6.23
 DISTNAME=	sqlite-${V}
-PKGNAME-main=	sqlite3-${V}
+PKGNAME-main=	sqlite3-${V}p0
 PKGNAME-tcl=	sqlite3-tcl-${V}
 PKGNAME-lemon=	lemon-${V}
 CATEGORIES=	databases
@@ -72,5 +72,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/lemon
 	${INSTALL_DATA} ${WRKBUILD}/tool/lempar.c ${PREFIX}/share/lemon
 	${INSTALL_PROGRAM} ${WRKBUILD}/lemon ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKBUILD}/sqlite3.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
