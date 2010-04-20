@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/03/20 16:55:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/04/20 14:59:26 ajacoutot Exp $
 %%SHARED%%
 @bin bin/dbus-binding-tool
 include/dbus-1.0/
@@ -25,6 +25,7 @@ share/gtk-doc/html/dbus-glib/ch01.html
 share/gtk-doc/html/dbus-glib/ch02.html
 share/gtk-doc/html/dbus-glib/ch03.html
 share/gtk-doc/html/dbus-glib/dbus-binding-tool.html
+share/gtk-doc/html/dbus-glib/dbus-glib-DBus-GLib-low-level.html
 share/gtk-doc/html/dbus-glib/dbus-glib-DBus-GObject-related-functions.html
 share/gtk-doc/html/dbus-glib/dbus-glib-DBusGConnection.html
 share/gtk-doc/html/dbus-glib/dbus-glib-DBusGError.html

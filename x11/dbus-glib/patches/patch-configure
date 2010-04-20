@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2010/03/20 16:55:56 ajacoutot Exp $
---- configure.orig	Wed Jan 27 19:47:41 2010
-+++ configure	Sun Jan 31 09:24:25 2010
-@@ -17117,7 +17117,6 @@ echo "
+$OpenBSD: patch-configure,v 1.5 2010/04/20 14:59:26 ajacoutot Exp $
+--- configure.orig	Thu Mar 25 01:20:01 2010
++++ configure	Tue Apr 20 16:54:45 2010
+@@ -17135,7 +17135,6 @@ echo "
          Building Gtk-doc docs:    ${enable_gtk_doc}
          Bash Completion:          ${enable_bash_completion}
          Gettext libs (empty OK):  ${INTLLIBS}
