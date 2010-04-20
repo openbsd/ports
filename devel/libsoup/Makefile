@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.38 2009/12/16 16:25:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/04/20 11:07:07 jasper Exp $
 
-COMMENT-main =	SOAP implementation in C
-COMMENT-gnome =	GNOME specific libsoup parts
+COMMENT-main =		SOAP implementation in C
+COMMENT-gnome =		GNOME specific libsoup parts
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.28.2
+GNOME_VERSION =		2.30.0
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gnome =		${GNOME_PROJECT}-gnome-${GNOME_VERSION}
 
-SHARED_LIBS +=		soup-2.4	2.1 \
-			soup-gnome-2.4	1.1	# .4.0
+SHARED_LIBS +=  soup-2.4             2.2      # .4.0
+SHARED_LIBS +=  soup-gnome-2.4       1.1      # .4.0
 API_VERSION =		2.4
 CATEGORIES =		devel
 HOMEPAGE =		http://live.gnome.org/LibSoup
@@ -45,6 +45,9 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-ssl \
 			--disable-more-warnings \
 			--disable-gtk-doc
+# checking Apache version... 1.3.29 (Unix) (ignoring)
+# But this prevents needing apache2 for certain regress tests.
+CONFIGURE_ARGS+=	--with-apache-httpd="/usr/sbin/httpd"
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

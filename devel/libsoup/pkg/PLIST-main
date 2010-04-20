@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2009/12/16 16:25:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/04/20 11:07:07 jasper Exp $
 @pkgpath devel/libsoup
 @pkgpath devel/libsoup,ssl
 %%SHARED%%
@@ -53,11 +53,13 @@ share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuth.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomain.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomainBasic.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomainDigest.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupContentSniffer.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJar.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJarSqlite.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJarText.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupLogger.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessage.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupProxyURIResolver.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupServer.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSession.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSessionAsync.html
@@ -80,12 +82,10 @@ share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}.devhelp2
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-GValue-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-HTML-Form-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-Soup-Miscellaneous-Utilities.html
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupContentSniffer.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupCookie.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupMessageBody.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupMessageHeaders.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupMultipart.html
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupProxyURIResolver.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-SoupURI.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-XMLRPC-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-24-soup-gnome-features.html
