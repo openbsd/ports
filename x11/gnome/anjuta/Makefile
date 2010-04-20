@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/08 11:33:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/20 17:55:02 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for C and C++
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		2.28.2.0
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		2.30.0.0
 
 SHARED_LIBS=		anjuta		0.0	\
 			anjuta-ctags 	0.0	\
 			anjuta-egg	0.0	\
 			file-manager	0.0	\
-			language-manager	0.0
+			language-manager 0.0 \
+			js_debugger       0.0 \
+			js_support_plugin 0.0
+
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.anjuta.org/
@@ -39,12 +41,14 @@ WANTLIB += icuuc jpeg krb5 m ncurses neon pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 soup-2.4 sqlite3 ssl startup-notification-1 stdc++
 WANTLIB += tasn1 unique-1.0 util webkit-1.0 wnck-1 xcb xcb-atom
-WANTLIB += xcb-aux xcb-event xml2 xslt z
+WANTLIB += xcb-aux xcb-event xcb-render xcb-render-util xml2 xslt z
 
 BUILD_DEPENDS=		:autogen->=5.6.5:devel/autogen \
 			::devel/p5-Locale-gettext \
+			::lang/vala \
 			::x11/gnome/libgda
-RUN_DEPENDS=		::misc/shared-mime-info \
+RUN_DEPENDS=		::lang/vala \
+			::misc/shared-mime-info \
 			::devel/p5-Locale-gettext
 LIB_DEPENDS=		gladeui-1::devel/glade3 \
 			svn_client-1,svn_delta-1,svn_diff-1,svn_fs-1,svn_fs_base-1,svn_fs_fs-1,svn_ra-1,svn_ra_local-1,svn_ra_svn-1,svn_repos-1,svn_subr-1,svn_wc-1,svn_fs_util-1,svn_ra_neon-1::devel/subversion \

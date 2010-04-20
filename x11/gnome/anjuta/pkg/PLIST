@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/22 17:32:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/20 17:55:02 jasper Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -18,7 +18,6 @@ include/libanjuta-1.0/libanjuta/anjuta-enum-types.h
 include/libanjuta-1.0/libanjuta/anjuta-error.h
 include/libanjuta-1.0/libanjuta/anjuta-launcher.h
 include/libanjuta-1.0/libanjuta/anjuta-marshal.h
-include/libanjuta-1.0/libanjuta/anjuta-message-area.h
 include/libanjuta-1.0/libanjuta/anjuta-plugin-description.h
 include/libanjuta-1.0/libanjuta/anjuta-plugin-handle.h
 include/libanjuta-1.0/libanjuta/anjuta-plugin-manager.h
@@ -27,6 +26,7 @@ include/libanjuta-1.0/libanjuta/anjuta-preferences-dialog.h
 include/libanjuta-1.0/libanjuta/anjuta-preferences.h
 include/libanjuta-1.0/libanjuta/anjuta-profile-manager.h
 include/libanjuta-1.0/libanjuta/anjuta-profile.h
+include/libanjuta-1.0/libanjuta/anjuta-project.h
 include/libanjuta-1.0/libanjuta/anjuta-save-prompt.h
 include/libanjuta-1.0/libanjuta/anjuta-serializer.h
 include/libanjuta-1.0/libanjuta/anjuta-session.h
@@ -64,6 +64,7 @@ include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-language.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-line-mode.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-search.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-selection.h
+include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-tip.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-view.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-zoom.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor.h
@@ -88,6 +89,8 @@ include/libanjuta-1.0/libanjuta/interfaces/ianjuta-preferences.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-print.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-project-backend.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-project-manager.h
+include/libanjuta-1.0/libanjuta/interfaces/ianjuta-project.h
+include/libanjuta-1.0/libanjuta/interfaces/ianjuta-provider.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-stream-loader.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-stream-savable.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-stream.h
@@ -127,10 +130,13 @@ lib/anjuta/anjuta-starter.plugin
 lib/anjuta/anjuta-subversion.plugin
 lib/anjuta/anjuta-terminal.plugin
 lib/anjuta/anjuta-tools.plugin
+lib/anjuta/dir-project.plugin
 lib/anjuta/file-manager.plugin
 lib/anjuta/gbf-am.plugin
 lib/anjuta/gbf-mkfile.plugin
 lib/anjuta/git.plugin
+lib/anjuta/js_debugger.plugin
+lib/anjuta/js_support_plugin.plugin
 lib/anjuta/language-manager.plugin
 @comment lib/anjuta/libanjuta-build-basic-autotools.la
 lib/anjuta/libanjuta-build-basic-autotools.so
@@ -184,12 +190,18 @@ lib/anjuta/libanjuta-subversion.so
 lib/anjuta/libanjuta-terminal.so
 @comment lib/anjuta/libanjuta-tools.la
 lib/anjuta/libanjuta-tools.so
+lib/anjuta/libdir-project.la
+lib/anjuta/libdir-project.so
 @comment lib/anjuta/libfile-manager.la
 lib/anjuta/libfile-manager.so
 @comment lib/anjuta/libgbf-am.la
 lib/anjuta/libgbf-am.so
 @comment lib/anjuta/libgbf-mkfile.la
 lib/anjuta/libgbf-mkfile.so
+lib/anjuta/libjs_debugger.la
+@lib lib/anjuta/libjs_debugger.so.${LIBjs_debugger_VERSION}
+lib/anjuta/libjs_support_plugin.la
+@lib lib/anjuta/libjs_support_plugin.so.${LIBjs_support_plugin_VERSION}
 @comment lib/anjuta/liblanguage-manager.la
 lib/anjuta/liblanguage-manager.so
 lib/anjuta/sourceview.plugin
@@ -226,6 +238,7 @@ share/anjuta/glade/anjuta-file-wizard.ui
 share/anjuta/glade/anjuta-git.ui
 share/anjuta/glade/anjuta-glade.glade
 share/anjuta/glade/anjuta-language-cpp-java.ui
+share/anjuta/glade/anjuta-language-javascript.ui
 share/anjuta/glade/anjuta-macro.ui
 share/anjuta/glade/anjuta-message-manager-plugin.ui
 share/anjuta/glade/anjuta-project-wizard.ui
@@ -279,6 +292,8 @@ share/anjuta/project/cpp/src/
 share/anjuta/project/cpp/src/Makefile.am.tpl
 share/anjuta/project/cpp/src/cvsignore
 share/anjuta/project/cpp/src/main.cc
+share/anjuta/project/directory/
+share/anjuta/project/directory/project.anjuta
 share/anjuta/project/django-logo.png
 share/anjuta/project/django.wiz
 share/anjuta/project/gcj/
@@ -331,6 +346,18 @@ share/anjuta/project/java/project.anjuta
 share/anjuta/project/java/src/
 share/anjuta/project/java/src/Makefile.am.tpl
 share/anjuta/project/java/src/main.java
+share/anjuta/project/js.wiz
+share/anjuta/project/js_minimal/
+share/anjuta/project/js_minimal/Makefile.am.tpl
+share/anjuta/project/js_minimal/autogen.sh
+share/anjuta/project/js_minimal/configure.ac.tpl
+share/anjuta/project/js_minimal/project.anjuta
+share/anjuta/project/js_minimal/src/
+share/anjuta/project/js_minimal/src/Makefile.am.tpl
+share/anjuta/project/js_minimal/src/debug.c
+share/anjuta/project/js_minimal/src/debug.h
+share/anjuta/project/js_minimal/src/main.c
+share/anjuta/project/js_minimal/src/main.js
 share/anjuta/project/library/
 share/anjuta/project/library.wiz
 share/anjuta/project/library/configure.ac.tpl
@@ -434,6 +461,7 @@ share/anjuta/project/xlib/po/POTFILES.in
 share/anjuta/project/xlib/src/
 share/anjuta/project/xlib/src/Makefile.am.tpl
 share/anjuta/project/xlib/src/main.c
+share/anjuta/sources.list
 share/anjuta/tools/
 share/anjuta/tools/find-fixmes.pl
 share/anjuta/tools/prepare-changelog.pl
@@ -449,6 +477,7 @@ share/anjuta/ui/anjuta-document-manager.xml
 share/anjuta/ui/anjuta-git.xml
 share/anjuta/ui/anjuta-glade.ui
 share/anjuta/ui/anjuta-gtodo.ui
+share/anjuta/ui/anjuta-language-javascript.xml
 share/anjuta/ui/anjuta-language-support-cpp-java.xml
 share/anjuta/ui/anjuta-loader-plugin.ui
 share/anjuta/ui/anjuta-macro.xml
@@ -460,7 +489,7 @@ share/anjuta/ui/anjuta-search.xml
 share/anjuta/ui/anjuta-subversion.xml
 share/anjuta/ui/anjuta-terminal-plugin.xml
 share/anjuta/ui/anjuta-tools.xml
-share/anjuta/ui/anjuta.ui
+share/anjuta/ui/anjuta.xml
 share/anjuta/ui/file-manager.xml
 share/anjuta/welcome.txt
 share/applications/anjuta.desktop
@@ -737,6 +766,51 @@ share/gnome/help/anjuta-manual/eu/figures/signals.png
 share/gnome/help/anjuta-manual/eu/figures/stack.png
 share/gnome/help/anjuta-manual/eu/figures/symbol_browser.png
 share/gnome/help/anjuta-manual/eu/figures/tool-editor.png
+share/gnome/help/anjuta-manual/fr/
+share/gnome/help/anjuta-manual/fr/anjuta-manual.xml
+share/gnome/help/anjuta-manual/fr/figures/
+share/gnome/help/anjuta-manual/fr/figures/add_edit_macro.png
+share/gnome/help/anjuta-manual/fr/figures/anjuta-in-action.png
+share/gnome/help/anjuta-manual/fr/figures/attach.png
+share/gnome/help/anjuta-manual/fr/figures/brk_add.png
+share/gnome/help/anjuta-manual/fr/figures/brk_dlg.png
+share/gnome/help/anjuta-manual/fr/figures/configure_dlg.png
+share/gnome/help/anjuta-manual/fr/figures/display_macro.png
+share/gnome/help/anjuta-manual/fr/figures/editor_guides.png
+share/gnome/help/anjuta-manual/fr/figures/editor_margins.png
+share/gnome/help/anjuta-manual/fr/figures/editor_markers.png
+share/gnome/help/anjuta-manual/fr/figures/file_menu.png
+share/gnome/help/anjuta-manual/fr/figures/insert_text.png
+share/gnome/help/anjuta-manual/fr/figures/keyword_macro.png
+share/gnome/help/anjuta-manual/fr/figures/local_variables.png
+share/gnome/help/anjuta-manual/fr/figures/menubar.png
+share/gnome/help/anjuta-manual/fr/figures/message_win.png
+share/gnome/help/anjuta-manual/fr/figures/new_file_wizard.png
+share/gnome/help/anjuta-manual/fr/figures/open_file.png
+share/gnome/help/anjuta-manual/fr/figures/open_file_multiple.png
+share/gnome/help/anjuta-manual/fr/figures/prefs_print.png
+share/gnome/help/anjuta-manual/fr/figures/print_dlg.png
+share/gnome/help/anjuta-manual/fr/figures/print_preview.png
+share/gnome/help/anjuta-manual/fr/figures/project-window.png
+share/gnome/help/anjuta-manual/fr/figures/project_group.png
+share/gnome/help/anjuta-manual/fr/figures/project_info.png
+share/gnome/help/anjuta-manual/fr/figures/project_target.png
+share/gnome/help/anjuta-manual/fr/figures/project_target_details.png
+share/gnome/help/anjuta-manual/fr/figures/registers.png
+share/gnome/help/anjuta-manual/fr/figures/save_as_file.png
+share/gnome/help/anjuta-manual/fr/figures/search_expr.png
+share/gnome/help/anjuta-manual/fr/figures/search_expr_basic.png
+share/gnome/help/anjuta-manual/fr/figures/search_file_pattern.png
+share/gnome/help/anjuta-manual/fr/figures/search_replace.png
+share/gnome/help/anjuta-manual/fr/figures/search_setting.png
+share/gnome/help/anjuta-manual/fr/figures/search_target.png
+share/gnome/help/anjuta-manual/fr/figures/search_target_action.png
+share/gnome/help/anjuta-manual/fr/figures/search_target_in.png
+share/gnome/help/anjuta-manual/fr/figures/sharedlibs.png
+share/gnome/help/anjuta-manual/fr/figures/signals.png
+share/gnome/help/anjuta-manual/fr/figures/stack.png
+share/gnome/help/anjuta-manual/fr/figures/symbol_browser.png
+share/gnome/help/anjuta-manual/fr/figures/tool-editor.png
 share/gnome/help/anjuta-manual/oc/
 share/gnome/help/anjuta-manual/oc/anjuta-manual.xml
 share/gnome/help/anjuta-manual/oc/figures/
@@ -964,9 +1038,9 @@ share/gnome/help/anjuta-manual/zh_CN/figures/symbol_browser.png
 share/gnome/help/anjuta-manual/zh_CN/figures/tool-editor.png
 share/gtk-doc/html/libanjuta/
 share/gtk-doc/html/libanjuta/AnjutaAsyncCommand.html
+share/gtk-doc/html/libanjuta/AnjutaCellRendererCaptionedImage.html
 share/gtk-doc/html/libanjuta/AnjutaCommand.html
 share/gtk-doc/html/libanjuta/AnjutaLauncher.html
-share/gtk-doc/html/libanjuta/AnjutaMessageArea.html
 share/gtk-doc/html/libanjuta/AnjutaPlugin.html
 share/gtk-doc/html/libanjuta/AnjutaPluginHandle.html
 share/gtk-doc/html/libanjuta/AnjutaPluginManager.html
@@ -981,6 +1055,7 @@ share/gtk-doc/html/libanjuta/AnjutaStatus.html
 share/gtk-doc/html/libanjuta/AnjutaSyncCommand.html
 share/gtk-doc/html/libanjuta/AnjutaUI.html
 share/gtk-doc/html/libanjuta/AnjutaVcsStatusTreeView.html
+share/gtk-doc/html/libanjuta/ESplash.html
 share/gtk-doc/html/libanjuta/action-block.html
 share/gtk-doc/html/libanjuta/anjuta-architecture.html
 share/gtk-doc/html/libanjuta/anjuta-architecture.png
@@ -991,8 +1066,6 @@ share/gtk-doc/html/libanjuta/home.png
 share/gtk-doc/html/libanjuta/index.html
 share/gtk-doc/html/libanjuta/index.sgml
 share/gtk-doc/html/libanjuta/left.png
-share/gtk-doc/html/libanjuta/libanjuta-AnjutaCellRendererCaptionedImage.html
-share/gtk-doc/html/libanjuta/libanjuta-ESplash.html
 share/gtk-doc/html/libanjuta/libanjuta-anjuta-c-module.html
 share/gtk-doc/html/libanjuta/libanjuta-anjuta-c-plugin-factory.html
 share/gtk-doc/html/libanjuta/libanjuta-anjuta-convert.html
@@ -1007,7 +1080,6 @@ share/gtk-doc/html/libanjuta/libanjuta-anjuta-utils-priv.html
 share/gtk-doc/html/libanjuta/libanjuta-anjuta-utils.html
 share/gtk-doc/html/libanjuta/libanjuta-anjuta-version.html
 share/gtk-doc/html/libanjuta/libanjuta-api.html
-share/gtk-doc/html/libanjuta/libanjuta-ianjuta-bookmark.html
 share/gtk-doc/html/libanjuta/libanjuta-ianjuta-buildable.html
 share/gtk-doc/html/libanjuta/libanjuta-ianjuta-builder.html
 share/gtk-doc/html/libanjuta/libanjuta-ianjuta-debug-manager.html
@@ -1102,6 +1174,7 @@ share/locale/da/LC_MESSAGES/anjuta.mo
 share/locale/de/LC_MESSAGES/anjuta.mo
 share/locale/dz/LC_MESSAGES/anjuta.mo
 share/locale/el/LC_MESSAGES/anjuta.mo
+share/locale/en@shaw/LC_MESSAGES/anjuta.mo
 share/locale/en_CA/LC_MESSAGES/anjuta.mo
 share/locale/en_GB/LC_MESSAGES/anjuta.mo
 share/locale/es/LC_MESSAGES/anjuta.mo
@@ -1161,6 +1234,7 @@ share/omf/anjuta-manual/anjuta-manual-de.omf
 share/omf/anjuta-manual/anjuta-manual-el.omf
 share/omf/anjuta-manual/anjuta-manual-es.omf
 share/omf/anjuta-manual/anjuta-manual-eu.omf
+share/omf/anjuta-manual/anjuta-manual-fr.omf
 share/omf/anjuta-manual/anjuta-manual-oc.omf
 share/omf/anjuta-manual/anjuta-manual-sv.omf
 share/omf/anjuta-manual/anjuta-manual-th.omf
@@ -1290,6 +1364,7 @@ share/pixmaps/anjuta/anjuta_logo.png
 share/pixmaps/anjuta/anjuta_splash.png
 share/pixmaps/anjuta/breakpoint.png
 share/pixmaps/anjuta/class_logo.xpm
+share/pixmaps/anjuta/dir-project-plugin-48.png
 share/pixmaps/anjuta/directory-accept.png
 share/pixmaps/anjuta/directory.png
 share/pixmaps/anjuta/gbf-am-plugin-48.png
@@ -1298,6 +1373,8 @@ share/pixmaps/anjuta/gbf-install.png
 share/pixmaps/anjuta/gbf-mkfile-plugin-48.png
 share/pixmaps/anjuta/gtodo-about.png
 share/pixmaps/anjuta/gtodo-edit.png
+share/pixmaps/anjuta/js_debugger.png
+share/pixmaps/anjuta/js_support_plugin.png
 share/pixmaps/anjuta/locals.png
 share/pixmaps/anjuta/madeinanjuta.xcf
 share/pixmaps/anjuta/password.png
