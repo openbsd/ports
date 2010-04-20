@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2010/04/04 10:50:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2010/04/20 15:36:01 jasper Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
-GNOME_VERSION=	2.28.1
-PKGNAME=	${DISTNAME}p1
+GNOME_VERSION=	2.30.0
 
 SHARED_LIBS +=	devhelp-1             1.0        # .0.0
 
@@ -23,11 +22,12 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c
 WANTLIB += cairo dbus-1 dbus-glib-1 enchant execinfo expat fontconfig
 WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0
-WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 icudata icui18n icuuc
-WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 stdc++ tasn1
-WANTLIB += xcb xcb-atom xcb-aux xcb-event xml2 xslt z
 WANTLIB += gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
+WANTLIB += gthread-2.0 gtk-x11-2.0 icudata icui18n icuuc jpeg
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 stdc++ tasn1
+WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
+WANTLIB += xml2 xslt z
 
 MODULES=	devel/gettext \
 		lang/python \
