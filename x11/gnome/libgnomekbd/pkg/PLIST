@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/21 18:03:19 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.10 2010/04/20 18:48:27 jasper Exp $
 @bin bin/gkbd-indicator-plugins-capplet
 include/libgnomekbd/
 include/libgnomekbd/gkbd-desktop-config.h
@@ -8,11 +7,14 @@ include/libgnomekbd/gkbd-indicator-plugin.h
 include/libgnomekbd/gkbd-indicator.h
 include/libgnomekbd/gkbd-keyboard-config.h
 include/libgnomekbd/gkbd-keyboard-drawing.h
+include/libgnomekbd/gkbd-status.h
 include/libgnomekbd/gkbd-util.h
 lib/libgnomekbd.a
 lib/libgnomekbd.la
+@lib lib/libgnomekbd.so.${LIBgnomekbd_VERSION}
 lib/libgnomekbdui.a
 lib/libgnomekbdui.la
+@lib lib/libgnomekbdui.so.${LIBgnomekbdui_VERSION}
 lib/pkgconfig/libgnomekbd.pc
 lib/pkgconfig/libgnomekbdui.pc
 share/applications/gkbd-indicator-plugins-capplet.desktop
@@ -22,8 +24,7 @@ share/libgnomekbd/ui/gkbd-indicator-plugins.ui
 share/libgnomekbd/ui/gkbd-indicator-plugins_add.ui
 share/locale/ar/LC_MESSAGES/libgnomekbd.mo
 share/locale/as/LC_MESSAGES/libgnomekbd.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/libgnomekbd.mo
 share/locale/be@latin/LC_MESSAGES/libgnomekbd.mo
 share/locale/bg/LC_MESSAGES/libgnomekbd.mo
 share/locale/bn/LC_MESSAGES/libgnomekbd.mo
@@ -35,8 +36,6 @@ share/locale/da/LC_MESSAGES/libgnomekbd.mo
 share/locale/de/LC_MESSAGES/libgnomekbd.mo
 share/locale/dz/LC_MESSAGES/libgnomekbd.mo
 share/locale/el/LC_MESSAGES/libgnomekbd.mo
-share/locale/en@shaw/
-share/locale/en@shaw/LC_MESSAGES/
 share/locale/en@shaw/LC_MESSAGES/libgnomekbd.mo
 share/locale/en_GB/LC_MESSAGES/libgnomekbd.mo
 share/locale/es/LC_MESSAGES/libgnomekbd.mo
@@ -73,6 +72,7 @@ share/locale/pt_BR/LC_MESSAGES/libgnomekbd.mo
 share/locale/ro/LC_MESSAGES/libgnomekbd.mo
 share/locale/ru/LC_MESSAGES/libgnomekbd.mo
 share/locale/si/LC_MESSAGES/libgnomekbd.mo
+share/locale/sk/LC_MESSAGES/libgnomekbd.mo
 share/locale/sl/LC_MESSAGES/libgnomekbd.mo
 share/locale/sq/LC_MESSAGES/libgnomekbd.mo
 share/locale/sr/LC_MESSAGES/libgnomekbd.mo
