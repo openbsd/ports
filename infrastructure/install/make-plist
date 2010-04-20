@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.143 2009/12/08 18:15:50 ajacoutot Exp $
+# $OpenBSD: make-plist,v 1.144 2010/04/20 21:54:40 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -519,7 +519,7 @@ sub register
 		my $f2 = pseudo_expand($self->{name}, 
 		    $plist->{state}->{lastreal});
 		if ($f1 ne $f2) {
-			main::report " orphaned \@", $self->keyword, $self,
+			main::report " orphaned \@", $self->keyword, " ", $self,
 			    " in ", $plist;
 			return;
 		}
@@ -1017,7 +1017,7 @@ for my $plist (@l) {
 	if (defined $orig) {
 		delete $orig->{state}->{lastobject};
 		# place holder for extra stuff that comes before any file
-		my $orphans = new OpenBSD::PackingElement('');
+		my $orphans = new OpenBSD::PackingElement::Object('');
 		$orig->{state}->{lastreal} = $orphans;
 		$orig->register($orig);
 		$orig->copy_annotations($plist);
