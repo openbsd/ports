@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgnomekbd_desktop_gnome_peripherals_keyboard_xkb_schemas_in,v 1.1 2010/04/20 22:44:41 ajacoutot Exp $
+--- libgnomekbd/desktop_gnome_peripherals_keyboard_xkb.schemas.in.orig	Mon Mar 29 00:14:54 2010
++++ libgnomekbd/desktop_gnome_peripherals_keyboard_xkb.schemas.in	Wed Apr 21 00:40:21 2010
+@@ -230,7 +230,7 @@
+       <applyto>/desktop/gnome/peripherals/keyboard/indicator/fontSize</applyto>
+       <owner>gnome</owner>    
+       <type>int</type>
+-      <default></default>
++      <default>10</default>
+       <locale name="C">
+         <short>The font size</short>
+         <long>The font size for the layout indicator</long>

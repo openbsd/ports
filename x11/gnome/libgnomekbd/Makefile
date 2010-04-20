@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/04/20 18:48:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/04/20 22:44:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		keyboard configuration library
 
 GNOME_PROJECT=		libgnomekbd
 GNOME_VERSION=		2.30.0
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=	gnomekbd             4.0      # .5.0
 SHARED_LIBS +=	gnomekbdui           4.0      # .5.0
