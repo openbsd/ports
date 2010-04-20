@@ -1,17 +1,7 @@
-$OpenBSD: patch-src_xine-engine_video_decoder_c,v 1.6 2010/01/05 11:48:51 sthen Exp $
---- src/xine-engine/video_decoder.c.orig	Mon Nov 30 15:55:51 2009
-+++ src/xine-engine/video_decoder.c	Wed Dec  2 19:15:36 2009
-@@ -41,6 +41,9 @@
- 
- #define SPU_SLEEP_INTERVAL (90000/2)
- 
-+#ifndef SCHED_OTHER
-+#define SCHED_OTHER 0
-+#endif
- 
- static void update_spu_decoder (xine_stream_t *stream, int type) {
- 
-@@ -486,7 +489,9 @@ int _x_video_decoder_init (xine_stream_t *stream) {
+$OpenBSD: patch-src_xine-engine_video_decoder_c,v 1.7 2010/04/20 11:32:14 sthen Exp $
+--- src/xine-engine/video_decoder.c.orig	Tue Feb 23 17:27:15 2010
++++ src/xine-engine/video_decoder.c	Sun Apr 18 13:01:34 2010
+@@ -486,7 +486,9 @@ int _x_video_decoder_init (xine_stream_t *stream) {
    } else {
  
      pthread_attr_t       pth_attrs;
@@ -21,7 +11,7 @@ $OpenBSD: patch-src_xine-engine_video_decoder_c,v 1.6 2010/01/05 11:48:51 sthen 
      int		       err, num_buffers;
      /* The fifo size is based on dvd playback where buffers are filled
       * with 2k of data. With 500 buffers and a typical video data rate
-@@ -515,10 +520,12 @@ int _x_video_decoder_init (xine_stream_t *stream) {
+@@ -515,10 +517,12 @@ int _x_video_decoder_init (xine_stream_t *stream) {
      stream->spu_track_map_entries = 0;
  
      pthread_attr_init(&pth_attrs);
