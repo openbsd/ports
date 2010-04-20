@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/10/10 16:17:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/04/20 11:35:08 ajacoutot Exp $
 %%SHARED%%
 include/libgnomecanvas-2.0/
 include/libgnomecanvas-2.0/libgnomecanvas/
@@ -67,6 +67,9 @@ share/locale/ar/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/as/
 share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/libgnomecanvas-2.0.mo
@@ -78,10 +81,16 @@ share/locale/bn/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/bn_IN/
 share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/br/
+share/locale/br/LC_MESSAGES/
+share/locale/br/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/bs/
 share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/crh/
 share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/libgnomecanvas-2.0.mo
@@ -95,6 +104,9 @@ share/locale/dz/
 share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/el/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/en@shaw/
+share/locale/en@shaw/LC_MESSAGES/
+share/locale/en@shaw/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/libgnomecanvas-2.0.mo
