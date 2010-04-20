@@ -1,14 +1,17 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2009/10/10 13:45:31 jasper Exp $
---- Makefile.in.orig	Tue Sep 22 03:41:00 2009
-+++ Makefile.in	Sat Oct 10 12:49:10 2009
-@@ -235,8 +235,8 @@ themedir = @themedir@
- top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-Makefile_in,v 1.6 2010/04/20 17:49:51 jasper Exp $
+--- Makefile.in.orig	Sat Apr 17 02:28:17 2010
++++ Makefile.in	Tue Apr 20 18:37:38 2010
+@@ -227,11 +227,11 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
--SUBDIRS = 8x8 16x16 22x22 24x24 32x32 48x48 scalable po
+ DISTCHECK_CONFIGURE_FLAGS = --disable-icon-mapping
+-SUBDIRS = po $(SVGSRCDIR)
++SUBDIRS = $(SVGSRCDIR)
+ theme_in_files = index.theme.in.in
+ theme_DATA = $(theme_in_files:.theme.in.in=.theme)
+ THEME_DIRS = $(shell SIZES="$(render_sizes)"; for size in $$SIZES; do for dir in `find $(srcdir)/$(SVGOUTDIR)/$$size/* -type d`; do printf "$$dir,"; done; done | sed -e "s/,$$//g")
 -pkgconfigdir = $(datadir)/pkgconfig
-+SUBDIRS = 8x8 16x16 22x22 24x24 32x32 48x48 scalable
 +pkgconfigdir = $(libdir)/pkgconfig
  pkgconfig_DATA = gnome-icon-theme.pc
- THEME_IN_FILES = index.theme.in
- theme_DATA = index.theme
+ EXTRA_DIST = \
+ 	gnome-icon-theme.pc.in  \
