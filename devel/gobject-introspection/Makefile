@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/20 11:20:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/20 11:36:37 jasper Exp $
+
+# Look at cairo-related regression failure.
 
 COMMENT=		GObject Introspection
 
