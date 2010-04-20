@@ -1,0 +1,4 @@
+A wrapper module around the jQuery UI effects library that lets module
+developers add swooshy, swishy effects to their code. This is a utility
+module that won't do anything on its own. See README.txt for how your
+module can use it to add jQuery UI effects to your pages.
