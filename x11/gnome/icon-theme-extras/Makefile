@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/20 15:53:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/20 18:05:05 ajacoutot Exp $
 
 COMMENT=	extra icon theme for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme-extras
 GNOME_VERSION=	2.30.1
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	x11
 
@@ -15,7 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome
 
-BUILD_DEPENDS=	:icon-naming-utils->=0.8.90:x11/icon-naming-utils
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	::x11/gnome/icon-theme
 
 USE_LIBTOOL=	No
 
