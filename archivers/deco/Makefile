@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/01/29 10:28:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/20 10:25:09 kevlo Exp $
 
 COMMENT=	extract various archive file formats
 
-V=		1.6
-ARCHIVE_V=	1.4
+V=		1.6.1.1
+ARCHIVE_V=	1.5.1
 DISTNAME=	deco-${V}
-PKGNAME=	deco-archive-${V}p0
+PKGNAME=	deco-archive-${V}
 
 CATEGORIES=	archivers
 

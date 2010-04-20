@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/23 02:30:20 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/20 10:25:09 kevlo Exp $
 @conflict deco-*
 @bin bin/deco
 share/deco/
@@ -101,6 +101,8 @@ share/deco/tar\.lzma/
 share/deco/tar\.lzma/extract
 share/deco/tar\.rz/
 share/deco/tar\.rz/extract
+share/deco/tar\.xz/
+share/deco/tar\.xz/extract
 share/deco/tar\.z
 share/deco/taz
 share/deco/tbz
@@ -108,9 +110,12 @@ share/deco/tbz2
 share/deco/tgz
 share/deco/tlz/
 share/deco/tlz/extract
+share/deco/txz
 share/deco/udeb
 share/deco/wsz
 share/deco/xpi
+share/deco/xz/
+share/deco/xz/extract
 share/deco/z
 share/deco/zip/
 share/deco/zip/extract
