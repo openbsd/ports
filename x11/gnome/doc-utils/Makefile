@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2009/11/19 17:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/04/20 22:01:26 ajacoutot Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
 GNOME_PROJECT=	gnome-doc-utils
-GNOME_VERSION=	0.18.1
+GNOME_VERSION=	0.20.0
 
 CATEGORIES=	textproc
 
