@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2009/12/14 16:53:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/04/20 20:11:26 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-keyring
 @bin bin/gnome-keyring-daemon
@@ -9,11 +9,8 @@ include/gcr/gcr-certificate.h
 include/gcr/gcr-importer.h
 include/gcr/gcr-parser.h
 include/gcr/gcr-types.h
+include/gcr/gcr-unlock-options-widget.h
 include/gcr/gcr.h
-include/gnome-keyring-1/
-include/gnome-keyring-1/gnome-keyring-memory.h
-include/gnome-keyring-1/gnome-keyring-result.h
-include/gnome-keyring-1/gnome-keyring.h
 include/gp11/
 include/gp11/gp11.h
 include/gp11/pkcs11.h
@@ -30,27 +27,40 @@ lib/gnome-keyring/gnome-keyring-pkcs11.la
 lib/gnome-keyring/standalone/
 lib/gnome-keyring/standalone/gck-roots-store-standalone.a
 lib/gnome-keyring/standalone/gck-roots-store-standalone.la
+lib/gnome-keyring/standalone/gck-secret-store-standalone.a
+lib/gnome-keyring/standalone/gck-secret-store-standalone.la
 lib/libgcr.a
 lib/libgcr.la
-lib/libgnome-keyring.a
-lib/libgnome-keyring.la
 lib/libgp11.a
 lib/libgp11.la
 lib/pkgconfig/gcr-0.pc
-lib/pkgconfig/gnome-keyring-1.pc
 lib/pkgconfig/gp11-0.pc
-@bin libexec/gnome-keyring-ask
+@bin libexec/gnome-keyring-prompt
 share/dbus-1/services/org.gnome.keyring.service
 share/examples/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/xdg/autostart/gnome-keyring-daemon.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/gnome-keyring-daemon.desktop
+share/examples/xdg/autostart/gnome-keyring-pkcs11.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/gnome-keyring-pkcs11.desktop
+share/examples/xdg/autostart/gnome-keyring-secrets.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/gnome-keyring-secrets.desktop
+share/examples/xdg/autostart/gnome-keyring-ssh.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/gnome-keyring-ssh.desktop
 share/gcr/
 share/gcr/ui/
 share/gcr/ui/gcr-certificate-basics-widget.ui
 share/gcr/ui/gcr-import-dialog.ui
+share/gcr/ui/gcr-unlock-options-widget.ui
+share/gnome-keyring/
+share/gnome-keyring/introspect/
+share/gnome-keyring/introspect/introspect-collection.xml
+share/gnome-keyring/introspect/introspect-item.xml
+share/gnome-keyring/introspect/introspect-prompt.xml
+share/gnome-keyring/introspect/introspect-service.xml
+share/gnome-keyring/introspect/introspect-session.xml
+share/gnome-keyring/ui/
+share/gnome-keyring/ui/gkd-prompt.ui
 share/gtk-doc/html/gcr/
 share/gtk-doc/html/gcr/GcrCertificateBasicsWidget.html
 share/gtk-doc/html/gcr/GcrCertificateDetailsWidget.html
@@ -72,29 +82,6 @@ share/gtk-doc/html/gcr/left.png
 share/gtk-doc/html/gcr/right.png
 share/gtk-doc/html/gcr/style.css
 share/gtk-doc/html/gcr/up.png
-share/gtk-doc/html/gnome-keyring/
-share/gtk-doc/html/gnome-keyring/ch01.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-acl.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-attributes.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-daemon.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-find.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-item-info.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-items.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-keyrings.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-memory.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-misc.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-network.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-password.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring-gnome-keyring-result.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring.devhelp
-share/gtk-doc/html/gnome-keyring/gnome-keyring.devhelp2
-share/gtk-doc/html/gnome-keyring/home.png
-share/gtk-doc/html/gnome-keyring/index.html
-share/gtk-doc/html/gnome-keyring/index.sgml
-share/gtk-doc/html/gnome-keyring/left.png
-share/gtk-doc/html/gnome-keyring/right.png
-share/gtk-doc/html/gnome-keyring/style.css
-share/gtk-doc/html/gnome-keyring/up.png
 share/gtk-doc/html/gp11/
 share/gtk-doc/html/gp11/ch01.html
 share/gtk-doc/html/gp11/gp11-gp11-attribute.html
@@ -116,8 +103,6 @@ share/gtk-doc/html/gp11/style.css
 share/gtk-doc/html/gp11/up.png
 share/locale/ar/LC_MESSAGES/gnome-keyring.mo
 share/locale/as/LC_MESSAGES/gnome-keyring.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gnome-keyring.mo
 share/locale/az/LC_MESSAGES/gnome-keyring.mo
 share/locale/be/LC_MESSAGES/gnome-keyring.mo
@@ -136,8 +121,6 @@ share/locale/da/LC_MESSAGES/gnome-keyring.mo
 share/locale/de/LC_MESSAGES/gnome-keyring.mo
 share/locale/dz/LC_MESSAGES/gnome-keyring.mo
 share/locale/el/LC_MESSAGES/gnome-keyring.mo
-share/locale/en@shaw/
-share/locale/en@shaw/LC_MESSAGES/
 share/locale/en@shaw/LC_MESSAGES/gnome-keyring.mo
 share/locale/en_CA/LC_MESSAGES/gnome-keyring.mo
 share/locale/en_GB/LC_MESSAGES/gnome-keyring.mo
