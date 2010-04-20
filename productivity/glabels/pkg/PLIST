@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/03/21 09:49:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/20 07:45:09 ajacoutot Exp $
 %%SHARED%%
 @bin bin/glabels
 @bin bin/glabels-batch
@@ -182,7 +182,9 @@ share/locale/fr/LC_MESSAGES/glabels.mo
 share/locale/it/LC_MESSAGES/glabels.mo
 share/locale/ja/LC_MESSAGES/glabels.mo
 share/locale/ko/LC_MESSAGES/glabels.mo
+share/locale/nb/LC_MESSAGES/glabels.mo
 share/locale/pl/LC_MESSAGES/glabels.mo
+share/locale/pt/LC_MESSAGES/glabels.mo
 share/locale/pt_BR/LC_MESSAGES/glabels.mo
 share/locale/ru/LC_MESSAGES/glabels.mo
 share/locale/sl/LC_MESSAGES/glabels.mo

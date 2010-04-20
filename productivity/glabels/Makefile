@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/03/21 09:49:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/20 07:45:09 ajacoutot Exp $
 
 COMMENT =	labels and businesss card designer
 
 GNOME_PROJECT =	glabels
-GNOME_VERSION =	2.2.7
+GNOME_VERSION =	2.2.8
 
 CATEGORIES =	productivity graphics
 
@@ -34,7 +34,7 @@ WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gnutls gobject-2.0
 WANTLIB += gpg-error gssapi gthread-2.0 gtk-x11-2.0 krb5 m nspr4
 WANTLIB += nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png popt pthread pthread-stubs smime3 softokn3 soup-2.4
-WANTLIB += sqlite3 ssl ssl3 tasn1 util xcb xml2 z
+WANTLIB += sqlite3 ssl ssl3 tasn1 util xcb xml2 z xcb-render xcb-render-util
 
 LIB_DEPENDS =	gnomeui-2::x11/gnome/libgnomeui \
 		camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server
