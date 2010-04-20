@@ -1,12 +1,20 @@
-# $OpenBSD: Makefile,v 1.75 2010/03/21 09:55:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2010/04/20 18:53:29 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
 VERSION=		2.22.5
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}
+PKGNAME-main=		glib2-${VERSION}p0
 PKGNAME-docs=		glib2-docs-${VERSION}
+
+# XXX backport from newer Glib. This is needed by our Gtk+2 but we
+# cannot glib2 because libghtread now requires threads (obviously) and
+# since our perl is not threaded, applications dependending on p5-Glib
+# fails with undefined symbols to pthread_*
+MASTER_SITES0=		http://www.bsdfrog.org/OpenBSD/distfiles/
+PATCHFILES=		g_desktop_app_info_get_filename.diff:0
+PATCH_DIST_STRIP=	-p1
 
 CATEGORIES=		devel
 
@@ -14,11 +22,11 @@ HOMEPAGE=		http://www.gtk.org/
 
 # glib-2.0 and gobject-2.0 need to be in sync as glib-2.0 version is
 # used to install *-gdb.py files
-SHARED_LIBS+=	glib-2.0		1802.0 # .2200.2
-SHARED_LIBS+=	gobject-2.0		1802.0 # .2200.2
-SHARED_LIBS+=	gmodule-2.0		1802.0 # .2200.2
-SHARED_LIBS+=	gthread-2.0		1802.0 # .2200.2
-SHARED_LIBS+=	gio-2.0			1802.0 # .2200.2
+SHARED_LIBS+=	glib-2.0		1802.1 # .2200.2
+SHARED_LIBS+=	gobject-2.0		1802.1 # .2200.2
+SHARED_LIBS+=	gmodule-2.0		1802.1 # .2200.2
+SHARED_LIBS+=	gthread-2.0		1802.1 # .2200.2
+SHARED_LIBS+=	gio-2.0			1802.1 # .2200.2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
