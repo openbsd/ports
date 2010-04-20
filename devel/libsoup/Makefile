@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/04/20 20:11:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/04/20 22:24:02 ajacoutot Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
@@ -7,7 +7,7 @@ GNOME_PROJECT =		libsoup
 GNOME_VERSION =		2.30.0
 
 PKGNAME-main =		${DISTNAME}
-PKGNAME-gnome =		${GNOME_PROJECT}-gnome-${GNOME_VERSION}p0
+PKGNAME-gnome =		${GNOME_PROJECT}-gnome-${GNOME_VERSION}p1
 
 SHARED_LIBS +=  soup-2.4             2.2      # .4.0
 SHARED_LIBS +=  soup-gnome-2.4       1.1      # .4.0
@@ -29,7 +29,7 @@ LIB_DEPENDS =		gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0:glib2->=2.22
 			gnutls.>=12::security/gnutls \
 			xml2.>=7::textproc/libxml
 
-WANTLIB-gnome =		${WANTLIB-main} ORBit-2 dbus-1 dbus-glib-1 sqlite3
+WANTLIB-gnome =		${WANTLIB-main} ORBit-2 dbus-1 dbus-glib-1 sqlite3 eggdbus-1
 
 LIB_DEPENDS-gnome =	${LIB_DEPENDS-main} \
 			soup-2.4::${BUILD_PKGPATH},-main \
