@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2009/04/23 13:38:18 ajacoutot Exp $
---- configure.orig	Thu Apr 23 15:29:36 2009
-+++ configure	Thu Apr 23 15:31:14 2009
-@@ -20873,8 +20873,8 @@ esac
+$OpenBSD: patch-configure,v 1.7 2010/04/20 20:42:11 ajacoutot Exp $
+--- configure.orig	Fri Dec 11 16:43:32 2009
++++ configure	Tue Apr 20 22:36:53 2010
+@@ -19778,8 +19778,8 @@ esac
  #
  case "${host}" in
      *-openbsd*)
