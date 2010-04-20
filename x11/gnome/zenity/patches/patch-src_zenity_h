@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_zenity_h,v 1.1 2010/03/22 22:40:36 ajacoutot Exp $
+$OpenBSD: patch-src_zenity_h,v 1.2 2010/04/20 18:20:15 jasper Exp $
 
 Implement --nocancel
-ETA GNOME 2.30, see:
+ETA was GNOME 2.30, see:
     http://bugzilla-attachments.gnome.org/attachment.cgi?id=152711
 
 --- src/zenity.h.orig	Mon Sep 21 16:11:11 2009

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/10/11 12:44:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/04/20 18:20:15 jasper Exp $
 bin/gdialog
 @bin bin/zenity
 @man man/man1/zenity.1
@@ -231,6 +231,7 @@ share/gnome/help/zenity/uk/zenity.xml
 share/locale/am/LC_MESSAGES/zenity.mo
 share/locale/ar/LC_MESSAGES/zenity.mo
 share/locale/as/LC_MESSAGES/zenity.mo
+share/locale/ast/LC_MESSAGES/zenity.mo
 share/locale/az/LC_MESSAGES/zenity.mo
 share/locale/be/LC_MESSAGES/zenity.mo
 share/locale/be@latin/LC_MESSAGES/zenity.mo
@@ -246,6 +247,7 @@ share/locale/da/LC_MESSAGES/zenity.mo
 share/locale/de/LC_MESSAGES/zenity.mo
 share/locale/dz/LC_MESSAGES/zenity.mo
 share/locale/el/LC_MESSAGES/zenity.mo
+share/locale/en@shaw/LC_MESSAGES/zenity.mo
 share/locale/en_CA/LC_MESSAGES/zenity.mo
 share/locale/en_GB/LC_MESSAGES/zenity.mo
 share/locale/es/LC_MESSAGES/zenity.mo
@@ -289,8 +291,6 @@ share/locale/oc/LC_MESSAGES/zenity.mo
 share/locale/or/LC_MESSAGES/zenity.mo
 share/locale/pa/LC_MESSAGES/zenity.mo
 share/locale/pl/LC_MESSAGES/zenity.mo
-share/locale/ps/
-share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/zenity.mo
 share/locale/pt/LC_MESSAGES/zenity.mo
 share/locale/pt_BR/LC_MESSAGES/zenity.mo

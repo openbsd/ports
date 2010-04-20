@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_progress_c,v 1.1 2010/03/22 22:40:36 ajacoutot Exp $
+$OpenBSD: patch-src_progress_c,v 1.2 2010/04/20 18:20:15 jasper Exp $
 
 Implement --nocancel
-ETA GNOME 2.30, see:
+ETA was GNOME 2.30, see:
     http://bugzilla-attachments.gnome.org/attachment.cgi?id=152711
 
---- src/progress.c.orig	Mon Sep 21 16:11:11 2009
-+++ src/progress.c	Mon Feb  8 15:29:28 2010
-@@ -37,6 +37,8 @@ static ZenityData *zen_data;
- static GIOChannel *channel;
+--- src/progress.c.orig	Sun Mar 28 22:55:43 2010
++++ src/progress.c	Tue Apr 20 20:10:02 2010
+@@ -38,6 +38,8 @@ static GIOChannel *channel;
  
+ static gint pulsate_timeout = -1;
  static gboolean autokill;
 +static gboolean no_cancel;
 +static gboolean auto_close;
  
  gint zenity_progress_timeout (gpointer data);
  gint zenity_progress_pulsate_timeout (gpointer data);
-@@ -179,6 +181,7 @@ zenity_progress (ZenityData *data, ZenityProgressData 
+@@ -227,6 +229,7 @@ zenity_progress (ZenityData *data, ZenityProgressData 
    GtkWidget *dialog;
    GObject *text;
    GObject *progress_bar;
@@ -23,7 +23,7 @@ ETA GNOME 2.30, see:
  
    zen_data = data;
    builder = zenity_util_load_ui_file ("zenity_progress_dialog", NULL);
-@@ -216,6 +219,20 @@ zenity_progress (ZenityData *data, ZenityProgressData 
+@@ -264,6 +267,20 @@ zenity_progress (ZenityData *data, ZenityProgressData 
                                     progress_data->percentage/100.0);
  
    autokill = progress_data->autokill;
