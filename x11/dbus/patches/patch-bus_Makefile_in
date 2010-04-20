@@ -1,7 +1,7 @@
-$OpenBSD: patch-bus_Makefile_in,v 1.5 2009/10/10 14:30:47 ajacoutot Exp $
---- bus/Makefile.in.orig	Tue Jul 14 21:43:06 2009
-+++ bus/Makefile.in	Sat Oct 10 14:49:00 2009
-@@ -1380,20 +1380,12 @@ install-data-hook:
+$OpenBSD: patch-bus_Makefile_in,v 1.6 2010/04/20 14:54:21 ajacoutot Exp $
+--- bus/Makefile.in.orig	Tue Mar 23 20:11:23 2010
++++ bus/Makefile.in	Tue Apr 20 16:38:21 2010
+@@ -1438,20 +1438,12 @@ install-data-hook:
  		chmod 755 $(DESTDIR)$(DBUS_DAEMONDIR); \
  	fi
  	$(INSTALL_PROGRAM) dbus-daemon $(DESTDIR)$(DBUS_DAEMONDIR)

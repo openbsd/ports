@@ -1,0 +1,12 @@
+$OpenBSD: patch-bus_dir-watch-kqueue_c,v 1.1 2010/04/20 14:54:21 ajacoutot Exp $
+--- bus/dir-watch-kqueue.c.orig	Tue Apr 20 16:39:43 2010
++++ bus/dir-watch-kqueue.c	Tue Apr 20 16:40:09 2010
+@@ -169,7 +169,7 @@ bus_set_watched_dirs (BusContext *context, DBusList **
+    */
+   for (i = 0; new_dirs[i]; i++)
+     {
+-      for (j = 0; i < num_fds; j++)
++      for (j = 0; j < num_fds; j++)
+         {
+           if (dirs[j] && strcmp (new_dirs[i], dirs[j]) == 0)
+             {

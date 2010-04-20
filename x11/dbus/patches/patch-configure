@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2010/02/06 11:58:59 landry Exp $
---- configure.orig	Tue Jul 14 21:43:08 2009
-+++ configure	Sat Feb  6 12:35:50 2010
-@@ -22148,13 +22148,13 @@ fi
+$OpenBSD: patch-configure,v 1.5 2010/04/20 14:54:21 ajacoutot Exp $
+--- configure.orig	Tue Mar 23 20:11:22 2010
++++ configure	Tue Apr 20 16:38:22 2010
+@@ -22230,13 +22230,13 @@ fi
  { $as_echo "$as_me:$LINENO: result: $ac_cv_func_pthread_cond_timedwait" >&5
  $as_echo "$ac_cv_func_pthread_cond_timedwait" >&6; }
  if test "x$ac_cv_func_pthread_cond_timedwait" = x""yes; then
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.4 2010/02/06 11:58:59 landry Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -22214,7 +22214,7 @@ fi
+@@ -22296,7 +22296,7 @@ fi
  { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_cond_timedwait" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_cond_timedwait" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_cond_timedwait" = x""yes; then
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.4 2010/02/06 11:58:59 landry Exp $
  fi
  
  fi
-@@ -25213,7 +25213,10 @@ if test "x$GCC" = "xyes"; then
+@@ -25294,7 +25294,10 @@ if test "x$GCC" = "xyes"; then
       ;;
    esac
  
@@ -39,7 +39,7 @@ $OpenBSD: patch-configure,v 1.4 2010/02/06 11:58:59 landry Exp $
    *[\ \	]-fPIE[\ \	]*) ;;
    *) if cc_supports_flag -fPIE; then
          PIE_CFLAGS="-fPIE"
-@@ -25225,6 +25228,7 @@ if test "x$GCC" = "xyes"; then
+@@ -25306,6 +25309,7 @@ if test "x$GCC" = "xyes"; then
       fi
       ;;
    esac
@@ -47,7 +47,7 @@ $OpenBSD: patch-configure,v 1.4 2010/02/06 11:58:59 landry Exp $
  
    ### Disabled warnings, and compiler flag overrides
  
-@@ -25241,13 +25245,6 @@ if test "x$GCC" = "xyes"; then
+@@ -25322,13 +25326,6 @@ if test "x$GCC" = "xyes"; then
    case " $CFLAGS " in
    *[\ \	]-Wno-sign-compare[\ \	]*) ;;
    *) CFLAGS="$CFLAGS -Wno-sign-compare" ;;
@@ -60,4 +60,4 @@ $OpenBSD: patch-configure,v 1.4 2010/02/06 11:58:59 landry Exp $
 -     ;;
    esac
  
-   # http://bugs.freedesktop.org/show_bug.cgi?id=19195
+   # This one is special - it's not a warning override.
