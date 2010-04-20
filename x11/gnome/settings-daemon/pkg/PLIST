@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/03/21 10:37:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/04/20 22:55:42 ajacoutot Exp $
 @conflict control-center2-<=2.22
 %%SHARED%%
 include/gnome-settings-daemon-2.0/
@@ -61,6 +61,7 @@ share/gnome-settings-daemon/autostart/gnome-settings-daemon.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-setting-daemon.desktop
 share/gnome-settings-daemon/gsd-a11y-preferences-dialog.ui
 share/gnome-settings-daemon/modmap-dialog.ui
+share/gnome-settings-daemon/show-layout.ui
 share/gnome-settings-daemon/xrdb/
 share/gnome-settings-daemon/xrdb/Editres.ad
 share/gnome-settings-daemon/xrdb/Emacs.ad
@@ -68,10 +69,36 @@ share/gnome-settings-daemon/xrdb/General.ad
 share/gnome-settings-daemon/xrdb/Motif.ad
 share/gnome-settings-daemon/xrdb/Tk.ad
 share/gnome-settings-daemon/xrdb/Xaw.ad
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/actions/
+share/icons/hicolor/16x16/actions/touchpad-disabled.png
+share/icons/hicolor/16x16/actions/touchpad-enabled.png
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gsd-xrandr.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/actions/
+share/icons/hicolor/22x22/actions/touchpad-disabled.png
+share/icons/hicolor/22x22/actions/touchpad-enabled.png
+share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gsd-xrandr.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/actions/
+share/icons/hicolor/24x24/actions/touchpad-disabled.png
+share/icons/hicolor/24x24/actions/touchpad-enabled.png
+share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gsd-xrandr.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/actions/
+share/icons/hicolor/32x32/actions/touchpad-disabled.png
+share/icons/hicolor/32x32/actions/touchpad-enabled.png
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gsd-xrandr.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/actions/
+share/icons/hicolor/scalable/actions/touchpad-disabled.svg
+share/icons/hicolor/scalable/actions/touchpad-enabled.svg
+share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gsd-xrandr.svg
 share/locale/af/
 share/locale/af/LC_MESSAGES/
@@ -79,8 +106,6 @@ share/locale/af/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/am/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ar/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/as/LC_MESSAGES/gnome-settings-daemon.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/az/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/be/LC_MESSAGES/gnome-settings-daemon.mo
@@ -102,6 +127,7 @@ share/locale/da/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/de/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/dz/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/el/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/en_CA/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/en_GB/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/es/LC_MESSAGES/gnome-settings-daemon.mo

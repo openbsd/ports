@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2010/03/21 10:37:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2010/04/20 22:55:41 ajacoutot Exp $
 
 COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
-GNOME_VERSION=	2.28.2
+GNOME_VERSION=	2.30.0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,6 +19,7 @@ WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
 WANTLIB += xcb-atom xcb-aux xcb-event xkbfile xklavier xml2 z
+WANTLIB += xcb-render xcb-render-util
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -27,7 +28,7 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	::textproc/rarian
 LIB_DEPENDS=	notify::devel/libnotify \
 		gnome-desktop-2.>=6::x11/gnome/desktop \
-		gnomekbd::x11/gnome/libgnomekbd
+		gnomekbd,gnomekbdui.>=4::x11/gnome/libgnomekbd
 
 # otherwise we end up without icons on minimal install
 RUN_DEPENDS=	::x11/gnome/icon-theme
