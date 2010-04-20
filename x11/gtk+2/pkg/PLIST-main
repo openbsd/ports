@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2010/03/21 09:56:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2010/04/20 19:03:37 ajacoutot Exp $
 @conflict gail-*
 @pkgpath x11/gtk+2
 @bin bin/gdk-pixbuf-csource
@@ -95,6 +95,7 @@ include/gtk-2.0/gtk/gtkcellrenderercombo.h
 include/gtk-2.0/gtk/gtkcellrendererpixbuf.h
 include/gtk-2.0/gtk/gtkcellrendererprogress.h
 include/gtk-2.0/gtk/gtkcellrendererspin.h
+include/gtk-2.0/gtk/gtkcellrendererspinner.h
 include/gtk-2.0/gtk/gtkcellrenderertext.h
 include/gtk-2.0/gtk/gtkcellrenderertoggle.h
 include/gtk-2.0/gtk/gtkcellview.h
@@ -176,6 +177,7 @@ include/gtk-2.0/gtk/gtkmodules.h
 include/gtk-2.0/gtk/gtkmountoperation.h
 include/gtk-2.0/gtk/gtknotebook.h
 include/gtk-2.0/gtk/gtkobject.h
+include/gtk-2.0/gtk/gtkoffscreenwindow.h
 include/gtk-2.0/gtk/gtkoldeditable.h
 include/gtk-2.0/gtk/gtkoptionmenu.h
 include/gtk-2.0/gtk/gtkorientable.h
@@ -220,6 +222,7 @@ include/gtk-2.0/gtk/gtksignal.h
 include/gtk-2.0/gtk/gtksizegroup.h
 include/gtk-2.0/gtk/gtksocket.h
 include/gtk-2.0/gtk/gtkspinbutton.h
+include/gtk-2.0/gtk/gtkspinner.h
 include/gtk-2.0/gtk/gtkstatusbar.h
 include/gtk-2.0/gtk/gtkstatusicon.h
 include/gtk-2.0/gtk/gtkstock.h
@@ -245,6 +248,8 @@ include/gtk-2.0/gtk/gtktoggletoolbutton.h
 include/gtk-2.0/gtk/gtktoolbar.h
 include/gtk-2.0/gtk/gtktoolbutton.h
 include/gtk-2.0/gtk/gtktoolitem.h
+include/gtk-2.0/gtk/gtktoolitemgroup.h
+include/gtk-2.0/gtk/gtktoolpalette.h
 include/gtk-2.0/gtk/gtktoolshell.h
 include/gtk-2.0/gtk/gtktooltip.h
 include/gtk-2.0/gtk/gtktooltips.h
@@ -349,6 +354,9 @@ lib/gtk-2.0/2.10.0/loaders/libpixbufloader-png.so
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-pnm.a
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-pnm.la
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-pnm.so
+lib/gtk-2.0/2.10.0/loaders/libpixbufloader-qtif.a
+lib/gtk-2.0/2.10.0/loaders/libpixbufloader-qtif.la
+lib/gtk-2.0/2.10.0/loaders/libpixbufloader-qtif.so
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ras.a
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ras.la
 lib/gtk-2.0/2.10.0/loaders/libpixbufloader-ras.so
@@ -409,9 +417,7 @@ lib/pkgconfig/gtk+-x11-2.0.pc
 share/aclocal/gtk-2.0.m4
 share/examples/gtk+2/
 share/examples/gtk+2/gtk-2.0/
-@sample ${SYSCONFDIR}/gtk-2.0/
 share/examples/gtk+2/gtk-2.0/im-multipress.conf
-@sample ${SYSCONFDIR}/gtk-2.0/im-multipress.conf
 share/gtk-2.0/
 share/gtk-2.0/demo/
 share/gtk-2.0/demo/alphatest.png
@@ -460,9 +466,11 @@ share/gtk-2.0/demo/printing.c
 share/gtk-2.0/demo/rotated_text.c
 share/gtk-2.0/demo/search_entry.c
 share/gtk-2.0/demo/sizegroup.c
+share/gtk-2.0/demo/spinner.c
 share/gtk-2.0/demo/stock_browser.c
 share/gtk-2.0/demo/textscroll.c
 share/gtk-2.0/demo/textview.c
+share/gtk-2.0/demo/toolpalette.c
 share/gtk-2.0/demo/tree_store.c
 share/gtk-2.0/demo/ui_manager.c
 share/locale/af/
@@ -712,11 +720,11 @@ share/themes/Default/gtk-2.0-key/gtkrc
 share/themes/Emacs/
 share/themes/Emacs/gtk-2.0-key/
 share/themes/Emacs/gtk-2.0-key/gtkrc
-@exec mkdir -p /var/db/gtk-2.0
-@exec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
-@exec %D/bin/gtk-query-immodules-2.0 > /var/db/gtk-2.0/gtk.immodules
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 share/themes/Raleigh/
 share/themes/Raleigh/gtk-2.0/
 share/themes/Raleigh/gtk-2.0/gtkrc
 @unexec rm -fr /var/db/gtk-2.0
+@exec mkdir -p /var/db/gtk-2.0
+@exec %D/bin/gdk-pixbuf-query-loaders > /var/db/gtk-2.0/gdk-pixbuf.loaders
+@exec %D/bin/gtk-query-immodules-2.0 > /var/db/gtk-2.0/gtk.immodules
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

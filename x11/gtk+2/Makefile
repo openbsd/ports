@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2010/03/21 09:56:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2010/04/20 19:03:37 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=			multi-platform graphical toolkit
 COMMENT-docs=           	gtk+2 documentation
 COMMENT-cups=			gtk+2 CUPS print backend
 
-VERSION=			2.18.9
+VERSION=			2.20.0
 DISTNAME=			gtk+-${VERSION}
 
 PKGNAME-main=			gtk+2-${VERSION}
@@ -15,11 +15,11 @@ PKGNAME-cups=			gtk+2-cups-${VERSION}
 
 CATEGORIES=			x11 devel
 
-SHARED_LIBS+=	gdk_pixbuf-2.0		1402.0 # .1800.1
-SHARED_LIBS+=	gdk-x11-2.0		1402.0 # .1800.1
-SHARED_LIBS+=	gtk-x11-2.0		1402.0 # .1800.1
-SHARED_LIBS+=	gdk_pixbuf_xlib-2.0	1402.0 # .1800.1
-SHARED_LIBS+=	gailutil		24.0   # .18.1
+SHARED_LIBS+=	gdk_pixbuf-2.0		1403.0 # .1800.1
+SHARED_LIBS+=	gdk-x11-2.0		1403.0 # .1800.1
+SHARED_LIBS+=	gtk-x11-2.0		1403.0 # .1800.1
+SHARED_LIBS+=	gdk_pixbuf_xlib-2.0	1403.0 # .1800.1
+SHARED_LIBS+=	gailutil		25.0   # .18.1
 
 HOMEPAGE=			http://www.gtk.org/
 
@@ -46,7 +46,7 @@ RUN_DEPENDS=		::x11/hicolor-icon-theme \
 			::misc/shared-mime-info
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			glib-2.0.>=1800.0,gmodule-2.0.>=1800.0,gobject-2.0.>=1800.0,gio-2.0::devel/glib2 \
+			glib-2.0.>=1800.0,gmodule-2.0.>=1800.0,gobject-2.0.>=1800.0,gio-2.0:glib2->=2.22.5p0:devel/glib2 \
 			pango-1.0.>=1600.0,pangocairo-1.0.>=1600.0,pangoft2-1.0.>=1600.0::devel/pango \
 			atk-1.0.>=1809.0::devel/atk \
 			tiff.>=35::graphics/tiff \

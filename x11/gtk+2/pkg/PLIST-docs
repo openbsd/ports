@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.26 2009/10/04 18:17:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.27 2010/04/20 19:03:37 ajacoutot Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
@@ -18,6 +18,7 @@ share/gtk-doc/html/gail-libgail-util/up.png
 share/gtk-doc/html/gdk/
 share/gtk-doc/html/gdk-pixbuf/
 share/gtk-doc/html/gdk-pixbuf/GdkPixbufLoader.html
+share/gtk-doc/html/gdk-pixbuf/annotation-glossary.html
 share/gtk-doc/html/gdk-pixbuf/apa.html
 share/gtk-doc/html/gdk-pixbuf/apas02.html
 share/gtk-doc/html/gdk-pixbuf/apas03.html
@@ -66,12 +67,14 @@ share/gtk-doc/html/gdk/GdkDisplay.html
 share/gtk-doc/html/gdk/GdkDisplayManager.html
 share/gtk-doc/html/gdk/GdkScreen.html
 share/gtk-doc/html/gdk/X_cursor.png
+share/gtk-doc/html/gdk/annotation-glossary.html
 share/gtk-doc/html/gdk/api-index-2-10.html
 share/gtk-doc/html/gdk/api-index-2-12.html
 share/gtk-doc/html/gdk/api-index-2-14.html
 share/gtk-doc/html/gdk/api-index-2-16.html
 share/gtk-doc/html/gdk/api-index-2-18.html
 share/gtk-doc/html/gdk/api-index-2-2.html
+share/gtk-doc/html/gdk/api-index-2-20.html
 share/gtk-doc/html/gdk/api-index-2-4.html
 share/gtk-doc/html/gdk/api-index-2-6.html
 share/gtk-doc/html/gdk/api-index-2-8.html
@@ -226,6 +229,7 @@ share/gtk-doc/html/gtk/GtkCellRendererCombo.html
 share/gtk-doc/html/gtk/GtkCellRendererPixbuf.html
 share/gtk-doc/html/gtk/GtkCellRendererProgress.html
 share/gtk-doc/html/gtk/GtkCellRendererSpin.html
+share/gtk-doc/html/gtk/GtkCellRendererSpinner.html
 share/gtk-doc/html/gtk/GtkCellRendererText.html
 share/gtk-doc/html/gtk/GtkCellRendererToggle.html
 share/gtk-doc/html/gtk/GtkCellView.html
@@ -294,6 +298,7 @@ share/gtk-doc/html/gtk/GtkMessageDialog.html
 share/gtk-doc/html/gtk/GtkMisc.html
 share/gtk-doc/html/gtk/GtkNotebook.html
 share/gtk-doc/html/gtk/GtkObject.html
+share/gtk-doc/html/gtk/GtkOffscreenWindow.html
 share/gtk-doc/html/gtk/GtkOldEditable.html
 share/gtk-doc/html/gtk/GtkOptionMenu.html
 share/gtk-doc/html/gtk/GtkPageSetup.html
@@ -333,6 +338,7 @@ share/gtk-doc/html/gtk/GtkSettings.html
 share/gtk-doc/html/gtk/GtkSizeGroup.html
 share/gtk-doc/html/gtk/GtkSocket.html
 share/gtk-doc/html/gtk/GtkSpinButton.html
+share/gtk-doc/html/gtk/GtkSpinner.html
 share/gtk-doc/html/gtk/GtkStatusIcon.html
 share/gtk-doc/html/gtk/GtkStatusbar.html
 share/gtk-doc/html/gtk/GtkStyle.html
@@ -350,6 +356,8 @@ share/gtk-doc/html/gtk/GtkToggleButton.html
 share/gtk-doc/html/gtk/GtkToggleToolButton.html
 share/gtk-doc/html/gtk/GtkToolButton.html
 share/gtk-doc/html/gtk/GtkToolItem.html
+share/gtk-doc/html/gtk/GtkToolItemGroup.html
+share/gtk-doc/html/gtk/GtkToolPalette.html
 share/gtk-doc/html/gtk/GtkToolShell.html
 share/gtk-doc/html/gtk/GtkToolbar.html
 share/gtk-doc/html/gtk/GtkTooltip.html
@@ -395,12 +403,14 @@ share/gtk-doc/html/gtk/TreeWidgetObjects.html
 share/gtk-doc/html/gtk/WindowWidgets.html
 share/gtk-doc/html/gtk/aboutdialog.png
 share/gtk-doc/html/gtk/accel-label.png
+share/gtk-doc/html/gtk/annotation-glossary.html
 share/gtk-doc/html/gtk/api-index-2-10.html
 share/gtk-doc/html/gtk/api-index-2-12.html
 share/gtk-doc/html/gtk/api-index-2-14.html
 share/gtk-doc/html/gtk/api-index-2-16.html
 share/gtk-doc/html/gtk/api-index-2-18.html
 share/gtk-doc/html/gtk/api-index-2-2.html
+share/gtk-doc/html/gtk/api-index-2-20.html
 share/gtk-doc/html/gtk/api-index-2-4.html
 share/gtk-doc/html/gtk/api-index-2-6.html
 share/gtk-doc/html/gtk/api-index-2-8.html
@@ -650,10 +660,12 @@ share/gtk-doc/html/gtk/scrolledwindow.png
 share/gtk-doc/html/gtk/separator.png
 share/gtk-doc/html/gtk/setting-the-page-flow.html
 share/gtk-doc/html/gtk/spinbutton.png
+share/gtk-doc/html/gtk/spinner.png
 share/gtk-doc/html/gtk/statusbar.png
 share/gtk-doc/html/gtk/style.css
 share/gtk-doc/html/gtk/toggle-button.png
 share/gtk-doc/html/gtk/toolbar.png
+share/gtk-doc/html/gtk/toolpalette.png
 share/gtk-doc/html/gtk/tree-view-coordinates.png
 share/gtk-doc/html/gtk/ui-manager.html
 share/gtk-doc/html/gtk/up.png
