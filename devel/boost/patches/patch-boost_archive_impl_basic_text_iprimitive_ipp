@@ -1,12 +1,12 @@
-$OpenBSD: patch-boost_archive_impl_basic_text_iprimitive_ipp,v 1.1 2010/03/30 11:01:10 robert Exp $
---- boost/archive/impl/basic_text_iprimitive.ipp.orig	Sun Dec 20 19:45:27 2009
-+++ boost/archive/impl/basic_text_iprimitive.ipp	Sun Dec 20 19:45:39 2009
+$OpenBSD: patch-boost_archive_impl_basic_text_iprimitive_ipp,v 1.2 2010/04/21 09:26:58 landry Exp $
+--- boost/archive/impl/basic_text_iprimitive.ipp.orig	Sat Dec  5 07:32:01 2009
++++ boost/archive/impl/basic_text_iprimitive.ipp	Thu Apr  8 13:37:44 2010
 @@ -45,7 +45,7 @@ namespace {
      #ifndef BOOST_NO_CWCHAR
      template<>
      bool is_whitespace(wchar_t t){
--        return std::iswspace(t);
-+        return ::iswspace(t);
+-        return 0 != std::iswspace(t);
++        return 0 != ::iswspace(t);
      }
      #endif
  }

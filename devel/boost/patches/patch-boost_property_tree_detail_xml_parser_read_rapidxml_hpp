@@ -1,0 +1,14 @@
+$OpenBSD: patch-boost_property_tree_detail_xml_parser_read_rapidxml_hpp,v 1.1 2010/04/21 09:26:58 landry Exp $
+Cf http://lists.boost.org/boost-users/2009/11/53805.php
+--- boost/property_tree/detail/xml_parser_read_rapidxml.hpp.orig	Thu Apr  8 13:58:33 2010
++++ boost/property_tree/detail/xml_parser_read_rapidxml.hpp	Thu Apr  8 14:10:47 2010
+@@ -118,8 +118,7 @@ namespace boost { namespace property_tree { namespace 
+             // Swap local and result ptrees
+             pt.swap(local);
+         } catch (rapidxml::parse_error &e) {
+-            long line = static_cast<long>(
+-                std::count(&v.front(), e.where<Ch>(), Ch('\n')) + 1);
++            long line = 0;
+             BOOST_PROPERTY_TREE_THROW(
+                 xml_parser_error(e.what(), filename, line));  
+         }

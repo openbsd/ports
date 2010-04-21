@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2010/04/08 11:33:35 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2010/04/21 09:26:58 landry Exp $
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
-PKGNAME=	boost-${VERSION}p0
+PKGNAME=	boost-${VERSION}
 
-VERSION=	1.41.0
+VERSION=	1.42.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 
-SO_VERSION=	1.1
+SO_VERSION=	2.0
 BOOST_LIBS=	boost_date_time boost_date_time-mt \
 		boost_filesystem boost_filesystem-mt \
 		boost_graph boost_graph-mt \
@@ -35,8 +35,6 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://www.boost.org/
 
-MAINTAINER=	Deanna Phillips <deanna@openbsd.org>
-
 # MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -49,9 +47,7 @@ MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
 BJAM_CONFIG=	-sNO_BZIP2=1 \
 		-d+2 -q \
-		-sEXPAT_INCLUDE=/usr/include -sEXPAT_LIBPATH=/usr/lib \
 		variant=release link=static,shared threading=single,multi 
-
 
 BOOTSTRAP_CONFIG=	--without-icu \
 			--with-python=${MODPY_BIN} \
@@ -62,15 +58,19 @@ BOOTSTRAP_CONFIG=	--without-icu \
 
 CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}"
 
-REGRESS_TARGET=	check
+NO_REGRESS=	Yes
 
-WANTLIB=	z c expat pthread util
+WANTLIB=	z c pthread util
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 
 # python.port.mk makes assumptions about an empty CONFIGURE_STYLE
 CONFIGURE_STYLE=none
+
+SUBST_VARS+=	SO_VERSION
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/Jamroot
 
 do-configure:
 	@cd ${WRKSRC}/libs/config && \
