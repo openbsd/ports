@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 21:26:03 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/21 17:30:50 naddy Exp $
 
 COMMENT=	Commodore 64 music player and SID chip emulator
 
 DISTNAME=	sidplay-base-1.0.9
-PKGNAME=	${DISTNAME:S/-base//}
+PKGNAME=	${DISTNAME:S/-base//}p0
 CATEGORIES=	audio
-
-HOMEPAGE=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -17,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m ossaudio stdc++
 
-MASTER_SITES=	${HOMEPAGE}packages/
+MASTER_SITES=	${MASTER_SITE_OPENBSD}
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	sidplay.>=1::audio/libsidplay

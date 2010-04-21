@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/15 21:26:01 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2010/04/21 17:30:50 naddy Exp $
 
 COMMENT=	C64 music player and SID chip emulator library
 
 DISTNAME=	libsidplay-1.36.57
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio
-HOMEPAGE=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/
 SHARED_LIBS +=	sidplay              2.0      # .1.3
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}packages/
+MASTER_SITES=	${MASTER_SITE_OPENBSD}
 EXTRACT_SUFX=	.tgz
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/scripts
