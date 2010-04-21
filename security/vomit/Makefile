@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/03/13 11:34:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2010/04/21 22:07:22 alek Exp $
 
 COMMENT=		voice over misconfigured internet telephones
 
 DISTNAME=		vomit-0.2
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 CATEGORIES=		security
 

@@ -1,0 +1,52 @@
+$OpenBSD: patch-vomit_c,v 1.1 2010/04/21 22:07:22 alek Exp $
+--- vomit.c.orig	Wed Dec 12 20:41:51 2001
++++ vomit.c	Wed Apr 21 23:49:31 2010
+@@ -60,6 +60,7 @@
+ int debug;
+ int pcap_off;
+ pcap_t *pcap_pd;
++struct event sighup_ev, sigint_ev, sigterm_ev;
+ 
+ int
+ cleanup(void)
+@@ -69,11 +70,9 @@ cleanup(void)
+ }
+ 
+ void
+-sigcb(int sig)
++sigcb(int sig, short event, void *data)
+ {
+-	extern int event_gotsig;
+-
+-	event_gotsig = 1;
++	cleanup();
+ }
+ 
+ void
+@@ -92,7 +91,6 @@ main(int argc, char **argv)
+ {
+ 	extern char *optarg;
+ 	extern int optind;
+-	extern int (*event_sigcb)(void);
+ 	int ch;
+ 	char *name = argv[0];
+ 	char *fromfile = NULL;
+@@ -127,12 +125,13 @@ main(int argc, char **argv)
+ 
+ 	if ((pcap_off = pcap_dloff(pcap_pd)) < 0)
+ 		errx(1, "couldn't determine link layer offset");
+-	
+-	signal(SIGHUP, sigcb);
+-	signal(SIGINT, sigcb);
+-	signal(SIGTERM, sigcb);
+ 
+-	event_sigcb = cleanup;
++	signal_set(&sighup_ev, SIGHUP, sigcb, NULL);
++	signal_add(&sighup_ev, NULL);
++	signal_set(&sighup_ev, SIGINT, sigcb, NULL);
++	signal_add(&sighup_ev, NULL);
++	signal_set(&sighup_ev, SIGTERM, sigcb, NULL);
++	signal_add(&sighup_ev, NULL);
+ 
+ 	voip_init();
+ 
