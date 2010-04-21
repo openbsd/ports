@@ -1,4 +1,4 @@
-$OpenBSD: patch-arpd_c,v 1.3 2005/04/30 12:59:58 alek Exp $
+$OpenBSD: patch-arpd_c,v 1.4 2010/04/21 21:41:26 alek Exp $
 --- arpd.c.orig	Sun Feb  9 05:20:40 2003
 +++ arpd.c	Sat Apr 30 14:45:52 2005
 @@ -22,10 +22,6 @@
@@ -12,7 +12,21 @@ $OpenBSD: patch-arpd_c,v 1.3 2005/04/30 12:59:58 alek Exp $
  #include <event.h>
  #include <dnet.h>
  #include "tree.h"
-@@ -265,7 +261,7 @@ arpd_send(eth_t *eth, int op,
+@@ -61,11 +57,12 @@ SPLAY_PROTOTYPE(tree, arp_req, next, compare);
+ 
+ SPLAY_GENERATE(tree, arp_req, next, compare);
+ 
++static struct event		 arpd_sigint;
++static struct event		 arpd_sigterm;
+ static pcap_t			*arpd_pcap;
+ static arp_t			*arpd_arp;
+ static eth_t			*arpd_eth;
+ static struct intf_entry	 arpd_ifent;
+-static int			 arpd_sig;
+ 
+ static void
+ usage(void)
+@@ -265,7 +262,7 @@ arpd_send(eth_t *eth, int op,
  	    spa->addr_ip, tha->addr_eth, tpa->addr_ip);
  	
  	if (op == ARP_OP_REQUEST) {
@@ -101,3 +115,57 @@ $OpenBSD: patch-arpd_c,v 1.3 2005/04/30 12:59:58 alek Exp $
  			    addr_ntoa(&req->pa), addr_ntoa(&src.arp_ha));
  			
  			/* This address is claimed */
+@@ -441,30 +438,18 @@ arpd_recv(int fd, short type, void *ev)
+ 	if (pcap_dispatch(arpd_pcap, -1, arpd_recv_cb, NULL) < 0)
+ 		syslog(LOG_ERR, "pcap_dispatch: %s", pcap_geterr(arpd_pcap));
+ }
+- 
++
+ void
+-terminate_handler(int sig)
++arpd_signal(int sig, short events, void *data)
+ {
+-	extern int event_gotsig;
+-
+-	event_gotsig = 1;
+-	arpd_sig = sig;
+-}
+-
+-int
+-arpd_signal(void)
+-{
+-	syslog(LOG_INFO, "exiting on signal %d", arpd_sig);
++	syslog(LOG_INFO, "exiting on signal %d", sig);
+ 	arpd_exit(0);
+-	/* NOTREACHED */
+-	return (-1);
+ }
+ 
+ int
+ main(int argc, char *argv[])
+ {
+ 	struct event recv_ev;
+-	extern int (*event_sigcb)(void);
+ 	char *dev;
+ 	int c, debug;
+ 	FILE *fp;
+@@ -516,15 +501,10 @@ main(int argc, char *argv[])
+ 	event_add(&recv_ev, NULL);
+ 	
+ 	/* Setup signal handler */
+-	if (signal(SIGINT, terminate_handler) == SIG_ERR) {
+-		perror("signal");
+-		return (-1);
+-	}
+-	if (signal(SIGTERM, terminate_handler) == SIG_ERR) {
+-		perror("signal");
+-		return (-1);
+-	}
+-	event_sigcb = arpd_signal;
++	signal_set(&arpd_sigint, SIGINT, arpd_signal, NULL);
++	signal_add(&arpd_sigint, NULL);
++	signal_set(&arpd_sigterm, SIGTERM, arpd_signal, NULL);
++	signal_add(&arpd_sigterm, NULL);
+ 	
+ 	event_dispatch();
+ 
