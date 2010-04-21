@@ -1,7 +1,19 @@
-$OpenBSD: patch-fragroute_c,v 1.1 2002/07/16 00:33:29 naddy Exp $
---- fragroute.c.orig	Tue Jul 16 02:20:24 2002
-+++ fragroute.c	Tue Jul 16 02:21:31 2002
-@@ -69,8 +69,8 @@ static void
+$OpenBSD: patch-fragroute_c,v 1.2 2010/04/21 22:10:38 alek Exp $
+--- fragroute.c.orig	Mon Apr  8 00:55:20 2002
++++ fragroute.c	Wed Apr 21 22:10:34 2010
+@@ -36,9 +36,8 @@ struct fr_ctx {
+ 
+ static struct fr_ctx 	 ctx;
+ 
+-/* XXX - these should be in event.h */
+-extern int		(*event_sigcb)(void);
+-extern int		 event_gotsig;
++static struct event      fragroute_sigint;
++static struct event      fragroute_sigterm;
+ 
+ static void
+ usage(void)
+@@ -69,8 +68,8 @@ static void
  _resend_outgoing(struct pkt *pkt)
  {
  	if (timerisset(&pkt->pkt_ts)) {
@@ -12,3 +24,38 @@ $OpenBSD: patch-fragroute_c,v 1.1 2002/07/16 00:33:29 naddy Exp $
  	} else {
  		eth_pack_hdr(pkt->pkt_eth, ctx.dmac.addr_eth,
  		    ctx.smac.addr_eth, ETH_TYPE_IP);
+@@ -145,10 +144,10 @@ fragroute_signal(DWORD sig)
+ }
+ #else
+ static void
+-fragroute_signal(int sig)
++fragroute_signal(int sig, short event, void *data)
+ {
+ 	warnx("exiting on signal %d", sig);
+-	event_gotsig++;
++	fragroute_close();
+ }
+ #endif
+ 
+@@ -166,8 +165,11 @@ fragroute_init(const char *dst)
+ 
+ 	SetConsoleCtrlHandler(fragroute_signal, TRUE);
+ #else
+-	signal(SIGINT, fragroute_signal);
+-	signal(SIGTERM, fragroute_signal);
++	/* Setup signal handler */
++	signal_set(&fragroute_sigint, SIGINT, fragroute_signal, NULL);
++	signal_add(&fragroute_sigint, NULL);
++	signal_set(&fragroute_sigterm, SIGTERM, fragroute_signal, NULL);
++	signal_add(&fragroute_sigterm, NULL);
+ #endif
+ 	if (addr_aton(dst, &ctx.dst) < 0)
+ 		err(1, "destination address invalid");
+@@ -178,7 +180,6 @@ fragroute_init(const char *dst)
+ 	pkt_init(128);
+ 	
+ 	event_init();
+-	event_sigcb = fragroute_close;
+ 	
+ 	if ((ctx.arp = arp_open()) == NULL ||
+ 	    (ctx.intf = intf_open()) == NULL ||
