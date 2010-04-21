@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2010/04/20 20:05:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2010/04/21 15:11:00 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -6,7 +6,7 @@ COMMENT-docs=		glib2 documentation
 VERSION=		2.22.5
 DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}p1
-PKGNAME-docs=		glib2-docs-${VERSION}
+PKGNAME-docs=		glib2-docs-${VERSION}p0
 
 # XXX backport from newer Glib. This is needed by our Gtk+2 but we
 # cannot glib2 because libghtread now requires threads (obviously) and
