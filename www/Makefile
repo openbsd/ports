@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.455 2010/04/17 11:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.456 2010/04/21 16:27:28 landry Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -418,6 +418,7 @@
      SUBDIR += twiki
      SUBDIR += twill
      SUBDIR += visitors
+     SUBDIR += vteplugin
      SUBDIR += vtigercrm
      SUBDIR += w3m
      SUBDIR += w3m,image
