@@ -1,0 +1,24 @@
+$OpenBSD: patch-http_c,v 1.1.1.1 2010/04/21 22:55:34 nicm Exp $
+--- http.c.orig	Thu Jul  2 07:05:28 2009
++++ http.c	Tue Apr 20 21:32:53 2010
+@@ -281,15 +281,17 @@ evhttp_htmlescape(const char *html)
+ 	
+ 	for (i = 0; i < old_size; ++i)
+           new_size += strlen(html_replace(html[i], scratch_space));
++	new_size++;
+ 
+-	p = escaped_html = malloc(new_size + 1);
++	p = escaped_html = malloc(new_size);
+ 	if (escaped_html == NULL)
+-		event_err(1, "%s: malloc(%d)", __func__, new_size + 1);
++		event_err(1, "%s: malloc(%d)", __func__, new_size);
+ 	for (i = 0; i < old_size; ++i) {
+ 		const char *replaced = html_replace(html[i], scratch_space);
+ 		/* this is length checked */
+-		strcpy(p, replaced);
++		strlcpy(p, replaced, new_size);
+ 		p += strlen(replaced);
++		new_size -= strlen(replaced);
+ 	}
+ 
+ 	*p = '\0';

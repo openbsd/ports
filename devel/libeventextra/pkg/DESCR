@@ -1,0 +1,3 @@
+libevent is a library for event-driven programs.
+
+This provides the "extra" parts: asynchronous DNS, HTTP and RPC support.
