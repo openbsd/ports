@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/21 22:55:34 nicm Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/21 23:10:26 alek Exp $
 
 COMMENT =	libevent extra features
 
@@ -6,9 +6,7 @@ VERSION =	1.4.13
 DISTNAME =	libevent-${VERSION}-stable
 PKGNAME =	libeventextra-${VERSION}
 
-MAJOR =          1
-MINOR =          0
-SHARED_LIBS =    eventextra ${MAJOR}.${MINOR}
+SHARED_LIBS =    eventextra 1.0
 
 CATEGORIES =	devel
 
@@ -27,7 +25,7 @@ MASTER_SITES =	${HOMEPAGE}
 MAKE_ENV +=	CC="${CC}"
 
 pre-build:
-	@printf "major=${MAJOR}\nminor=${MINOR}\n" >${WRKBUILD}/shlib_version
+	@printf "major=${LIBeventextra_VERSION:R}\nminor=${LIBeventextra_VERSION:E}\n" >${WRKBUILD}/shlib_version
 	@cp ${FILESDIR}/Makefile ${WRKBUILD}
 	@rm -f ${WRKBUILD}/{event.h,evutil.h}
 
