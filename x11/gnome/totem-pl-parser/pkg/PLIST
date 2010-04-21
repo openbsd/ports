@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/11 12:40:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/21 09:18:00 ajacoutot Exp $
 include/totem-pl-parser/
 include/totem-pl-parser/1/
 include/totem-pl-parser/1/plparser/
@@ -7,6 +7,7 @@ include/totem-pl-parser/1/plparser/totem-pl-parser-builtins.h
 include/totem-pl-parser/1/plparser/totem-pl-parser-features.h
 include/totem-pl-parser/1/plparser/totem-pl-parser-mini.h
 include/totem-pl-parser/1/plparser/totem-pl-parser.h
+include/totem-pl-parser/1/plparser/totem-pl-playlist.h
 lib/libtotem-plparser-mini.a
 lib/libtotem-plparser-mini.la
 @lib lib/libtotem-plparser-mini.so.${LIBtotem-plparser-mini_VERSION}
@@ -17,6 +18,8 @@ lib/pkgconfig/totem-plparser-mini.pc
 lib/pkgconfig/totem-plparser.pc
 share/gtk-doc/html/totem-pl-parser/
 share/gtk-doc/html/totem-pl-parser/TotemPlParser.html
+share/gtk-doc/html/totem-pl-parser/TotemPlPlaylist.html
+share/gtk-doc/html/totem-pl-parser/annotation-glossary.html
 share/gtk-doc/html/totem-pl-parser/api-index-deprecated.html
 share/gtk-doc/html/totem-pl-parser/api-index-full.html
 share/gtk-doc/html/totem-pl-parser/api-reference.html
@@ -26,19 +29,25 @@ share/gtk-doc/html/totem-pl-parser/index.sgml
 share/gtk-doc/html/totem-pl-parser/left.png
 share/gtk-doc/html/totem-pl-parser/right.png
 share/gtk-doc/html/totem-pl-parser/style.css
-share/gtk-doc/html/totem-pl-parser/totem-pl-parser-totem-disc.html
+share/gtk-doc/html/totem-pl-parser/totem-pl-parser-TotemDisc.html
+share/gtk-doc/html/totem-pl-parser/totem-pl-parser-TotemPlPlaylistIter.html
 share/gtk-doc/html/totem-pl-parser/totem-pl-parser.devhelp
 share/gtk-doc/html/totem-pl-parser/totem-pl-parser.devhelp2
 share/gtk-doc/html/totem-pl-parser/up.png
 share/locale/am/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ar/LC_MESSAGES/totem-pl-parser.mo
 share/locale/as/LC_MESSAGES/totem-pl-parser.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/totem-pl-parser.mo
 share/locale/az/LC_MESSAGES/totem-pl-parser.mo
 share/locale/be/LC_MESSAGES/totem-pl-parser.mo
 share/locale/be@latin/LC_MESSAGES/totem-pl-parser.mo
 share/locale/bg/LC_MESSAGES/totem-pl-parser.mo
 share/locale/bn/LC_MESSAGES/totem-pl-parser.mo
 share/locale/bn_IN/LC_MESSAGES/totem-pl-parser.mo
+share/locale/br/
+share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ca/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ca@valencia/LC_MESSAGES/totem-pl-parser.mo
@@ -80,9 +89,12 @@ share/locale/mai/LC_MESSAGES/totem-pl-parser.mo
 share/locale/mg/LC_MESSAGES/totem-pl-parser.mo
 share/locale/mk/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ml/LC_MESSAGES/totem-pl-parser.mo
+share/locale/mn/LC_MESSAGES/totem-pl-parser.mo
 share/locale/mr/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ms/LC_MESSAGES/totem-pl-parser.mo
 share/locale/nb/LC_MESSAGES/totem-pl-parser.mo
+share/locale/nds/
+share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ne/LC_MESSAGES/totem-pl-parser.mo
 share/locale/nl/LC_MESSAGES/totem-pl-parser.mo
