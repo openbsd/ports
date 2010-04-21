@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/12/21 18:03:18 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.15 2010/04/21 11:26:20 jasper Exp $
 bin/charmap
 bin/gnome-character-map
 @bin bin/gucharmap
@@ -19,6 +18,7 @@ include/gucharmap-2/gucharmap/gucharmap-unicode-info.h
 include/gucharmap-2/gucharmap/gucharmap.h
 lib/libgucharmap.a
 lib/libgucharmap.la
+@lib lib/libgucharmap.so.${LIBgucharmap_VERSION}
 lib/pkgconfig/gucharmap-2.pc
 share/applications/gucharmap.desktop
 share/gnome/help/gucharmap/
@@ -144,6 +144,7 @@ share/locale/da/LC_MESSAGES/gucharmap.mo
 share/locale/de/LC_MESSAGES/gucharmap.mo
 share/locale/dz/LC_MESSAGES/gucharmap.mo
 share/locale/el/LC_MESSAGES/gucharmap.mo
+share/locale/en@shaw/LC_MESSAGES/gucharmap.mo
 share/locale/en_CA/LC_MESSAGES/gucharmap.mo
 share/locale/en_GB/LC_MESSAGES/gucharmap.mo
 share/locale/eo/LC_MESSAGES/gucharmap.mo
@@ -170,8 +171,6 @@ share/locale/ko/LC_MESSAGES/gucharmap.mo
 share/locale/lt/LC_MESSAGES/gucharmap.mo
 share/locale/lv/LC_MESSAGES/gucharmap.mo
 share/locale/mai/LC_MESSAGES/gucharmap.mo
-share/locale/mi/
-share/locale/mi/LC_MESSAGES/
 share/locale/mi/LC_MESSAGES/gucharmap.mo
 share/locale/mk/LC_MESSAGES/gucharmap.mo
 share/locale/ml/LC_MESSAGES/gucharmap.mo
