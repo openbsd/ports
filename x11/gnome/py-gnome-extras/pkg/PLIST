@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/10/14 23:54:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/21 07:36:59 jasper Exp $
 include/pygda-4.0/
 include/pygda-4.0/pygdavalue_conversions.h
 lib/pkgconfig/gnome-python-extras-2.0.pc
@@ -15,8 +15,6 @@ lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gda.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gda.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gdl.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gdl.so
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtkhtml2.la
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtkhtml2.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtkmozembed.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtkmozembed.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtkspell.la
@@ -44,6 +42,5 @@ share/pygtk/2.0/argtypes/gda-arg-types.py
 share/pygtk/2.0/argtypes/gda-arg-types.pyc
 share/pygtk/2.0/argtypes/gda-arg-types.pyo
 share/pygtk/2.0/defs/gda.defs
-share/pygtk/2.0/defs/gtkhtml2.defs
 share/pygtk/2.0/defs/gtkmozembed.defs
 share/pygtk/2.0/defs/trayicon.defs

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/04/04 10:50:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/04/21 07:36:59 jasper Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
 GNOME_PROJECT=	gnome-python-extras
 GNOME_VERSION=	2.25.3
-PKGNAME=	py-gnome-extras-${VERSION}p3
+PKGNAME=	py-gnome-extras-${VERSION}p4
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -36,7 +36,6 @@ LIB_DEPENDS=		xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8,<1.9:devel/x
 			gtkspell::textproc/gtkspell \
 			enchant::textproc/enchant \
 			gdl-1::x11/gnome/gdl \
-			gtkhtml-2::x11/gnome/libgtkhtml \
 			gda-4.0::x11/gnome/libgda \
 			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS=		:py-gnome->=2.20.0:x11/gnome/py-gnome
