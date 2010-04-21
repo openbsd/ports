@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_dataproject_c,v 1.1 2010/04/21 16:47:42 jasper Exp $
+
+Fix crash on amd64, from FreeBSD ports/130972.
+
+--- src/dataproject.c.orig	Wed Apr 21 16:17:58 2010
++++ src/dataproject.c	Wed Apr 21 16:18:23 2010
+@@ -93,6 +93,18 @@ enum
+     DVD_8GB
+ };
+ 
++static DiskSize data_disk_sizes[] =
++{
++ /* http://www.cdrfaq.org/faq07.html#S7-6
++ http://www.osta.org/technology/dvdqa/dvdqa6.htm */
++ {94500.0 * 2048, "200MB CD"},
++ {333000.0 * 2048, "650MB CD"},
++ {360000.0 * 2048, "700MB CD"},
++ {405000.0 * 2048, "800MB CD"},
++ {2294922.0 * 2048, "4.7GB DVD"},
++ {8.5 * 1000 * 1000 * 1000, "8.5GB DVD"} /* DVDs are salesman's MegaByte ie 1000 not 1024 */
++};
++
+ static DiskSize data_cd_disk_sizes[] =
+ {
+     /* http://www.cdrfaq.org/faq07.html#S7-6

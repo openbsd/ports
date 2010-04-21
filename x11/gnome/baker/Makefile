@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/12/21 18:03:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/04/21 16:47:42 jasper Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
 GNOME_PROJECT=		gnomebaker
 GNOME_VERSION=		0.6.4
-PKGNAME=		${DISTNAME}p11
+PKGNAME=		${DISTNAME}p12
 
 CATEGORIES=		sysutils multimedia
 
@@ -46,5 +46,11 @@ USE_X11=		Yes
 CONFIGURE_ARGS+=	--disable-libnotify
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
+
+.if ${MACHINE_ARCH:Mamd64}
+# XXX: See FreeBSD ports/130972
+post-configure:
+	perl -pi -e 's,\#define CAIRO_WIDGETS 1,,g' ${WRKSRC}/config.h
+.endif
 
 .include <bsd.port.mk>
