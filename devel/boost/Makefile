@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2010/04/21 09:26:58 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2010/04/21 12:30:57 landry Exp $
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
-PKGNAME=	boost-${VERSION}
+PKGNAME=	boost-${VERSION}p0
 
 VERSION=	1.42.0
 DISTNAME=	boost_${VERSION:S/./_/g}
@@ -47,6 +47,7 @@ MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
 BJAM_CONFIG=	-sNO_BZIP2=1 \
 		-d+2 -q \
+		cflags='${CFLAGS}' cxxflags='${CXXFLAGS}' \
 		variant=release link=static,shared threading=single,multi 
 
 BOOTSTRAP_CONFIG=	--without-icu \
