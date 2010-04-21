@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2010/02/26 18:52:57 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2010/04/21 07:23:58 giovanni Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
 
-V=			2.2.0
+V=			2.4.3
 DISTNAME=		maildrop-$V
-PKGNAME-main=		maildrop-$Vp1
-FULLPKGNAME-utils=	courier-utils-$Vp0
+PKGNAME-main=		maildrop-$V
+FULLPKGNAME-utils=	courier-utils-$V
 FULLPKGPATH-utils=	mail/maildrop,-utils
 CATEGORIES=		mail
 
@@ -79,6 +79,7 @@ WANTLIB-main=		c gdbm m stdc++
 LIB_DEPENDS-main=	gdbm.>=3::databases/gdbm \
 			pcre.>=1::devel/pcre \
 			courierauth::mail/courier-authlib
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/maildrop
 	@for i in ${DOCFILES}; do \
