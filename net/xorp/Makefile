@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/03/20 23:09:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/04/21 22:10:21 landry Exp $
 
 COMMENT-main=	eXtensible Open Router Platform
 
@@ -7,6 +7,8 @@ DISTNAME=	xorp-${VERSION}
 PKGNAME-main=	${DISTNAME}
 CATEGORIES=	net
 HOMEPAGE=	http://www.xorp.org/
+
+BROKEN-sparc64=	ICE in route_table_fanout.cc
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
