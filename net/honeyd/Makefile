@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2009/03/26 11:50:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2010/04/21 23:42:18 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	utility to create virtual hosts on a network
 DISTNAME=	honeyd-1.5c
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
@@ -29,11 +29,13 @@ USE_LIBTOOL=	Yes
 MODULES=	lang/python
 LIB_DEPENDS=	dnet.>=1::net/libdnet \
 		${MODPY_LIB_DEPENDS} \
-		pcre.>=1::devel/pcre
+		pcre.>=1::devel/pcre \
+		eventextra.>=1::devel/libeventextra
 RUN_DEPENDS=	::net/rrdtool
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	PATH_PYTHON=${MODPY_BIN}
+CONFIGURE_ENV=	PATH_PYTHON=${MODPY_BIN} \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS= --with-python
 
 SCRIPTS=	INSTALL.kuang2 README.cmdexe README.kuang2 	\

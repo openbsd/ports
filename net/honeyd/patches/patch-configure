@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.3 2010/04/21 23:42:18 alek Exp $
+--- configure.orig	Thu Apr 22 01:16:08 2010
++++ configure	Thu Apr 22 01:16:23 2010
+@@ -21561,7 +21561,7 @@ else
+      EVENTINC="-I/usr/include/event"
+      EVENTLIB="-levent"
+   elif test -f /usr/include/event.h; then
+-     EVENTLIB="-levent"
++     EVENTLIB="-levent -leventextra"
+   else
+      { echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6; }
