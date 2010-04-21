@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.788 2010/04/21 06:53:50 giovanni Exp $
+# $OpenBSD: Makefile,v 1.789 2010/04/21 23:00:18 nicm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -158,6 +158,7 @@
      SUBDIR += libdvdread
      SUBDIR += libelf
      SUBDIR += libev
+     SUBDIR += libeventextra
      SUBDIR += libexecinfo
      SUBDIR += libffi
      SUBDIR += libfmt
