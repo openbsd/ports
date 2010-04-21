@@ -1,4 +1,4 @@
-$OpenBSD: patch-vomit_c,v 1.1 2010/04/21 22:07:22 alek Exp $
+$OpenBSD: patch-vomit_c,v 1.2 2010/04/21 22:31:19 alek Exp $
 --- vomit.c.orig	Wed Dec 12 20:41:51 2001
 +++ vomit.c	Wed Apr 21 23:49:31 2010
 @@ -60,6 +60,7 @@
@@ -43,10 +43,10 @@ $OpenBSD: patch-vomit_c,v 1.1 2010/04/21 22:07:22 alek Exp $
 -	event_sigcb = cleanup;
 +	signal_set(&sighup_ev, SIGHUP, sigcb, NULL);
 +	signal_add(&sighup_ev, NULL);
-+	signal_set(&sighup_ev, SIGINT, sigcb, NULL);
-+	signal_add(&sighup_ev, NULL);
-+	signal_set(&sighup_ev, SIGTERM, sigcb, NULL);
-+	signal_add(&sighup_ev, NULL);
++	signal_set(&sigint_ev, SIGINT, sigcb, NULL);
++	signal_add(&sigint_ev, NULL);
++	signal_set(&sigterm_ev, SIGTERM, sigcb, NULL);
++	signal_add(&sigterm_ev, NULL);
  
  	voip_init();
  
