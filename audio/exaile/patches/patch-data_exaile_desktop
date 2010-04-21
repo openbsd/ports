@@ -1,12 +1,12 @@
-$OpenBSD: patch-data_exaile_desktop,v 1.2 2009/10/29 08:33:47 giovanni Exp $
---- data/exaile.desktop.orig	Mon Aug 24 23:25:03 2009
-+++ data/exaile.desktop	Wed Sep  2 10:41:29 2009
-@@ -32,7 +32,7 @@ Comment[pl]=Słuchanie, przeglądanie i modyfikowanie 
+$OpenBSD: patch-data_exaile_desktop,v 1.3 2010/04/21 07:02:42 giovanni Exp $
+--- data/exaile.desktop.orig	Wed Apr  7 22:09:52 2010
++++ data/exaile.desktop	Fri Apr  9 09:04:00 2010
+@@ -33,7 +33,7 @@ Comment[pl]=Słuchanie, przeglądanie i modyfikowanie 
  Comment[sv]=Spela, utforska och hantera din musiksamling
  Comment[pt_BR]=Escute, gerencie ou edite sua coleção de músicas
  Comment[ro]=Ascultați, răsfoiți sau editați-vă colecția de muzică
 -Icon=exaile
-+Icon=/usr/local/share/pixmaps/exaile.png
++Icon=${TRUEPREFIX}/share/pixmaps/exaile.png
  Exec=exaile %F
  Terminal=false
  MimeType=audio/musepack;application/musepack;application/x-ape;audio/ape;audio/x-ape;audio/x-musepack;application/x-musepack;audio/x-mp3;application/x-id3;audio/mpeg;audio/x-mpeg;audio/x-mpeg-3;audio/mpeg3;audio/mp3;audio/x-m4a;audio/mpc;audio/x-mpc;audio/mp;audio/x-mp;application/ogg;application/x-ogg;audio/vorbis;audio/x-vorbis;audio/ogg;audio/x-ogg;audio/x-flac;application/x-flac;audio/flac;

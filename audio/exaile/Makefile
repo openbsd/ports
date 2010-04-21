@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2009/12/22 15:43:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/04/21 07:02:42 giovanni Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
-V =		0.3.0.1
-PKGNAME =	${DISTNAME}p0
-
-DISTNAME =	exaile-${V}
+V =		0.3.1
+DISTNAME =	exaile-${V}.1
 
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://www.exaile.org/
 
-MASTER_SITES = http://www.launchpad.net/exaile/0.3.0/$V/+download/
+MASTER_SITES = http://www.launchpad.net/exaile/$V/$V.1/+download/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -39,13 +37,18 @@ RUN_DEPENDS =	:dbus-python->=0.82.1:x11/dbus-python \
 
 USE_X11 =	Yes
 USE_GMAKE =	Yes
-NO_REGRESS =	Yes
+
+REGRESS_TARGET=	test
+PORTHOME =	${WRKDIR}
+REGRESS_DEPENDS=::devel/py-nose \
+		::devel/py-mox
 
 CONFIGURE_STYLE =none
-ALL_TARGET =	compile
 SUBST_VARS +=	MODPY_SITEPKG
 
 post-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile ${WRKSRC}/data/exaile.desktop ${WRKSRC}/plugins/Makefile
+	${SUBST_CMD} ${WRKSRC}/Makefile ${WRKSRC}/data/exaile.desktop \
+		${WRKSRC}/plugins/Makefile ${WRKSRC}/tools/generate-launcher
+	@find ${WRKSRC} -name "*.orig" -exec rm -f {} \;
 
 .include <bsd.port.mk>

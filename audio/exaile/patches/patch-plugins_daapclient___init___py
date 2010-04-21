@@ -1,0 +1,21 @@
+$OpenBSD: patch-plugins_daapclient___init___py,v 1.1 2010/04/21 07:02:42 giovanni Exp $
+--- plugins/daapclient/__init__.py.orig	Fri Apr  2 09:49:03 2010
++++ plugins/daapclient/__init__.py	Fri Apr  2 09:49:45 2010
+@@ -41,7 +41,7 @@ gobject.threads_init()
+ try:
+     import avahi
+     AVAHI = True
+-except Exception as inst:
++except Exception, inst:
+     logger.warn('AVAHI exception: %s' % inst)
+     AVAHI = False
+ 
+@@ -266,7 +266,7 @@ class DaapConnection(object):
+             self.session = client.login()
+             self.connected = True
+ #        except DAAPError:
+-        except Exception as inst:
++        except Exception, inst:
+             #print 's:%s, p:%s (%s, %s)' % (self.server, self.port, type(self.server), type(self.port))
+             logger.warn('Exception: %s' % inst)
+             self.auth = True

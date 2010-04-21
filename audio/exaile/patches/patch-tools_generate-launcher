@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_generate-launcher,v 1.1 2010/04/21 07:02:42 giovanni Exp $
+--- tools/generate-launcher.orig	Wed Apr  7 22:09:52 2010
++++ tools/generate-launcher	Fri Apr  9 09:04:56 2010
+@@ -30,7 +30,7 @@ if test -z "\$XDG_DATA_DIRS"; then
+ fi
+ XDG_DATA_DIRS="\$EXAILE_PREFIX/share/:\$XDG_DATA_DIRS"
+ export XDG_DATA_DIRS
+-exec python \$EXAILE_PREFIX$LIBDIR/exaile/exaile.py --datadir=\$EXAILE_PREFIX/share/exaile/data --startgui "\$@"
++exec ${MODPY_BIN} \${MODPY_SITEPKG}/exaile/exaile.py --datadir=\$EXAILE_PREFIX/share/exaile/data --startgui "\$@"
+ exit \$?
+ 
+ EOF
