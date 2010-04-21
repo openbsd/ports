@@ -1,0 +1,28 @@
+$OpenBSD: patch-maildir_configure,v 1.1 2010/04/21 07:18:25 giovanni Exp $
+--- maildir/configure.orig	Sun Nov 22 15:45:17 2009
++++ maildir/configure	Tue Mar 30 11:23:32 2010
+@@ -18366,7 +18366,6 @@ if test "${ac_cv_lib_fam_FAMOpen+set}" = set; then
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lfam  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -18430,7 +18429,7 @@ if test "x$ac_cv_lib_fam_FAMOpen" = x""yes; then
+ 			LIBFAM=-lfam
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define HAVE_FAM 1
++#define HAVE_FAM 0
+ _ACEOF
+ 
+ 
+@@ -18593,7 +18592,6 @@ fi
+ 
+ 
+ 
+-echo "$LIBFAM" >maildir.libdeps
+ 
+ { $as_echo "$as_me:$LINENO: checking for missing gethostname prototype" >&5
+ $as_echo_n "checking for missing gethostname prototype... " >&6; }
