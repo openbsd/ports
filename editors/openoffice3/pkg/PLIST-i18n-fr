@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-fr,v 1.6 2010/03/30 11:03:07 robert Exp $
+@comment $OpenBSD: PLIST-i18n-fr,v 1.7 2010/04/21 13:53:01 robert Exp $
 @pkgpath editors/openoffice,-i18n-fr
 !%%no_java%%
 openoffice.org/basis3.2/help/fr/
@@ -178,25 +178,15 @@ openoffice.org/basis3.2/share/autotext/fr/
 openoffice.org/basis3.2/share/autotext/fr/crdbus50.bau
 openoffice.org/basis3.2/share/autotext/fr/standard.bau
 openoffice.org/basis3.2/share/autotext/fr/template.bau
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbapp/accelerator/fr/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbapp/accelerator/fr/default.xml
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbbrowser/accelerator/fr/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbbrowser/accelerator/fr/default.xml
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbtdata/accelerator/fr/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbtdata/accelerator/fr/default.xml
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/scalc/accelerator/fr/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/scalc/accelerator/fr/default.xml
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/sglobal/accelerator/fr/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/sglobal/accelerator/fr/default.xml
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/sweb/accelerator/fr/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/sweb/accelerator/fr/default.xml
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/swform/accelerator/fr/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/swform/accelerator/fr/default.xml
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/swreport/accelerator/fr/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/swreport/accelerator/fr/default.xml
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/swriter/accelerator/fr/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/swriter/accelerator/fr/default.xml
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/swxform/accelerator/fr/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/swxform/accelerator/fr/default.xml
 openoffice.org/basis3.2/share/registry/modules/org/openoffice/Setup/Langpack-fr.xcu
 openoffice.org/basis3.2/share/registry/res/fr/
@@ -409,7 +399,6 @@ openoffice.org/basis3.2/share/template/fr/wizard/styles/pool.ots
 openoffice.org/basis3.2/share/template/fr/wizard/styles/pumpkin.ots
 openoffice.org/basis3.2/share/template/fr/wizard/styles/sunstyle.ots
 openoffice.org/basis3.2/share/template/fr/wizard/styles/xos.ots
-openoffice.org/basis3.2/share/template/wizard/letter/fr/
 openoffice.org/basis3.2/share/template/wizard/letter/fr/bus-elegant_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/fr/bus-modern_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/fr/bus-office_l.ott
