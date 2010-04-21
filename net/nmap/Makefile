@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.86 2010/01/28 15:31:28 kili Exp $
+# $OpenBSD: Makefile,v 1.87 2010/04/21 07:08:23 giovanni Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-MODPY_EGG_VERSION=	5.00
+MODPY_EGG_VERSION=	5.21
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
-PKGNAME-main=		${DISTNAME}p1
-PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}p0
+PKGNAME-main=		${DISTNAME}
+PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
 
 CATEGORIES=	net security
-MASTER_SITES=	http://download.insecure.org/nmap/dist/
+MASTER_SITES=	http://nmap.org/dist/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.nmap.org/
@@ -39,7 +39,8 @@ CONFIGURE_ARGS=	--with-libpcap=/usr \
 		--with-libdnet=${LOCALBASE} \
 		--with-liblua=${LOCALBASE} \
 		--with-libpcre=${LOCALBASE} \
-		--with-mandir=${LOCALBASE}/man
+		--with-mandir=${LOCALBASE}/man \
+		--disable-nls
 
 LIB_DEPENDS=	pcre::devel/pcre \
 		dnet::net/libdnet \

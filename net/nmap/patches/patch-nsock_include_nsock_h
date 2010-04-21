@@ -1,6 +1,6 @@
-$OpenBSD: patch-nsock_include_nsock_h,v 1.4 2009/10/22 10:00:57 giovanni Exp $
---- nsock/include/nsock.h.orig	Sat May 30 01:19:07 2009
-+++ nsock/include/nsock.h	Tue Jul 21 19:57:38 2009
+$OpenBSD: patch-nsock_include_nsock_h,v 1.5 2010/04/21 07:08:23 giovanni Exp $
+--- nsock/include/nsock.h.orig	Thu Aug 20 23:36:58 2009
++++ nsock/include/nsock.h	Wed Jan 20 19:54:57 2010
 @@ -79,6 +79,8 @@
  extern "C" {
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-nsock_include_nsock_h,v 1.4 2009/10/22 10:00:57 giovanni Exp $
  /* The read calls will generally return after reading at least this
   * much data so that the caller can process it and so that the
   * connection spewing data doesn't monopolize resources.  The caller
-@@ -542,7 +544,7 @@ nsock_event_id nsock_pcap_read_packet(nsock_pool nsp, 
+@@ -563,7 +565,7 @@ nsock_event_id nsock_pcap_read_packet(nsock_pool nsp, 
  void nse_readpcap(nsock_event nsee,
  	const unsigned char **l2_data, size_t *l2_len,
  	const unsigned char **l3_data, size_t *l3_len,

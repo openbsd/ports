@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zenmap,v 1.9 2009/12/22 00:31:23 sthen Exp $
+@comment $OpenBSD: PLIST-zenmap,v 1.10 2010/04/21 07:08:23 giovanni Exp $
 bin/nmapfe
 bin/xnmap
 bin/zenmap
@@ -130,6 +130,8 @@ lib/python${MODPY_VERSION}/site-packages/zenmapGUI/DiffCompare.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/DiffCompare.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/FileChoosers.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/FileChoosers.pyc
+lib/python${MODPY_VERSION}/site-packages/zenmapGUI/FilterBar.py
+lib/python${MODPY_VERSION}/site-packages/zenmapGUI/FilterBar.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/Icons.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/Icons.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/MainWindow.py
@@ -150,10 +152,10 @@ lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanHostDetailsPage.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanHostDetailsPage.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanHostsView.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanHostsView.pyc
+lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanInterface.py
+lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanInterface.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanNmapOutputPage.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanNmapOutputPage.pyc
-lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanNotebook.py
-lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanNotebook.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanOpenPortsPage.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanOpenPortsPage.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanRunDetailsPage.py
@@ -236,6 +238,9 @@ share/zenmap/locale/hr/LC_MESSAGES/zenmap.mo
 share/zenmap/locale/pt_BR/
 share/zenmap/locale/pt_BR/LC_MESSAGES/
 share/zenmap/locale/pt_BR/LC_MESSAGES/zenmap.mo
+share/zenmap/locale/ru/
+share/zenmap/locale/ru/LC_MESSAGES/
+share/zenmap/locale/ru/LC_MESSAGES/zenmap.mo
 share/zenmap/misc/
 share/zenmap/misc/profile_editor.xml
 share/zenmap/pixmaps/

@@ -1,10 +1,10 @@
---- traceroute.cc.orig	Fri Jul 17 22:43:30 2009
-+++ traceroute.cc	Fri Jul 17 22:44:21 2009
-@@ -172,6 +172,7 @@
- #include "utils.h"
- #include <algorithm>
- #include <stdlib.h>
+--- traceroute.cc.orig	Fri Jan 15 04:55:23 2010
++++ traceroute.cc	Wed Jan 20 19:57:26 2010
+@@ -136,6 +136,7 @@ individually.
+ #include "timing.h"
+ #include "NmapOps.h"
+ #include "Target.h"
 +#include "sctp.h"
  
- using namespace std;
- extern NmapOps o;
+ #include <dnet.h>
+ 
