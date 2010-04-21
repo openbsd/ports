@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/21 15:06:16 landry Exp $
 
 COMMENT =	OpenStreetMap editor
 
-DISTNAME =	merkaartor-0.14
+DISTNAME =	merkaartor-0.15.3
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	geo x11
@@ -29,7 +29,8 @@ WANTLIB += freetype glib-2.0 gobject-2.0 gthread-2.0 m png pthread
 WANTLIB += stdc++ z
 
 do-configure:
-	cd ${WRKSRC} && env ${CONFIGURE_ENV} qmake4 NOUSEWEBKIT=1 NODEBUG=1 PREFIX=${WRKINST}${PREFIX}
+	cd ${WRKSRC} && env ${CONFIGURE_ENV} qmake4 NOUSEWEBKIT=1 GDAL=0 NODEBUG=1 \
+	PREFIX=${WRKINST}${PREFIX} TRANSDIR_MERKAARTOR=${WRKINST}/${PREFIX}/share/merkaartor/translations
 
 pre-build:
 	cd ${WRKSRC}/translations && ${MAKE} release

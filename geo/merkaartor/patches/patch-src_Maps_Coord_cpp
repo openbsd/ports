@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Maps_Coord_cpp,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+$OpenBSD: patch-src_Maps_Coord_cpp,v 1.2 2010/04/21 15:06:16 landry Exp $
 Confuses g++3
---- src/Maps/Coord.cpp.orig	Wed Dec 23 22:41:41 2009
-+++ src/Maps/Coord.cpp	Wed Dec 23 22:42:42 2009
-@@ -21,7 +21,7 @@ double angle(Coord p1)
+--- src/Maps/Coord.cpp.orig	Mon Sep 21 13:02:53 2009
++++ src/Maps/Coord.cpp	Wed Apr 21 09:53:42 2010
+@@ -23,7 +23,7 @@ double angle(Coord p1)
  
  void rotate(Coord & p1,double angle)
  {

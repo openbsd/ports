@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Maps_Projection_cpp,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+$OpenBSD: patch-src_Maps_Projection_cpp,v 1.2 2010/04/21 15:06:16 landry Exp $
 Confuses g++3
---- src/Maps/Projection.cpp.orig	Wed Dec 23 22:50:27 2009
-+++ src/Maps/Projection.cpp	Wed Dec 23 22:50:52 2009
-@@ -72,7 +72,7 @@ void Projection::projTransformToWGS84(long point_count
+--- src/Maps/Projection.cpp.orig	Tue Jan 26 11:20:32 2010
++++ src/Maps/Projection.cpp	Wed Apr 21 09:53:42 2010
+@@ -74,7 +74,7 @@ void Projection::projTransformToWGS84(long point_count
  QPointF Projection::projProject(const Coord & Map) const
  {
  	try {

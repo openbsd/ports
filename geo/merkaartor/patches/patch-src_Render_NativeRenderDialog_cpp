@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Render_NativeRenderDialog_cpp,v 1.1.1.1 2009/12/27 17:46:07 landry Exp $
+$OpenBSD: patch-src_Render_NativeRenderDialog_cpp,v 1.2 2010/04/21 15:06:16 landry Exp $
 Confuses g++3
---- src/Render/NativeRenderDialog.cpp.orig	Wed Dec 23 23:13:14 2009
-+++ src/Render/NativeRenderDialog.cpp	Wed Dec 23 23:16:01 2009
-@@ -108,13 +108,14 @@ void NativeRenderDialog::render()
+--- src/Render/NativeRenderDialog.cpp.orig	Thu Feb 25 13:34:54 2010
++++ src/Render/NativeRenderDialog.cpp	Wed Apr 21 09:53:42 2010
+@@ -104,13 +104,14 @@ void NativeRenderDialog::render()
  	MapView* vw = new MapView(NULL);
  	vw->setDocument(mw->document());
  
@@ -21,7 +21,7 @@ Confuses g++3
  
  	Projection aProj;
  	QRect theR(0, 0, w, h);
-@@ -162,13 +163,14 @@ void NativeRenderDialog::render()
+@@ -158,13 +159,14 @@ void NativeRenderDialog::render()
  
  void NativeRenderDialog::calcRatio()
  {
