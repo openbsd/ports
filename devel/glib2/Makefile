@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2010/04/21 15:11:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2010/04/21 17:33:31 jasper Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
 VERSION=		2.22.5
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}p1
+PKGNAME-main=		glib2-${VERSION}p2
 PKGNAME-docs=		glib2-docs-${VERSION}p0
 
 # XXX backport from newer Glib. This is needed by our Gtk+2 but we
@@ -14,7 +14,8 @@ PKGNAME-docs=		glib2-docs-${VERSION}p0
 # fails with undefined symbols to pthread_*
 MASTER_SITES0=		http://www.bsdfrog.org/OpenBSD/distfiles/
 PATCHFILES=		g_desktop_app_info_get_filename.diff:0 \
-			g_mount_get_default_location.diff:0
+			g_mount_get_default_location.diff:0 \
+			GConverter.diff:0
 PATCH_DIST_STRIP=	-p1
 
 CATEGORIES=		devel
@@ -25,11 +26,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # glib-2.0 and gobject-2.0 need to be in sync as glib-2.0 version is
 # used to install *-gdb.py files
-SHARED_LIBS+=	glib-2.0		1802.2 # .2200.2
-SHARED_LIBS+=	gobject-2.0		1802.2 # .2200.2
-SHARED_LIBS+=	gmodule-2.0		1802.2 # .2200.2
-SHARED_LIBS+=	gthread-2.0		1802.2 # .2200.2
-SHARED_LIBS+=	gio-2.0			1802.2 # .2200.2
+SHARED_LIBS+=	glib-2.0		1802.3 # .2200.2
+SHARED_LIBS+=	gobject-2.0		1802.3 # .2200.2
+SHARED_LIBS+=	gmodule-2.0		1802.3 # .2200.2
+SHARED_LIBS+=	gthread-2.0		1802.3 # .2200.2
+SHARED_LIBS+=	gio-2.0			1802.3 # .2200.2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

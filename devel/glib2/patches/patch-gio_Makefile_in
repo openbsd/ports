@@ -1,0 +1,14 @@
+$OpenBSD: patch-gio_Makefile_in,v 1.1 2010/04/21 17:33:31 jasper Exp $
+
+Install new header for GConverter.
+
+--- gio/Makefile.in.orig	Wed Apr 21 19:25:20 2010
++++ gio/Makefile.in	Wed Apr 21 19:25:23 2010
+@@ -700,6 +700,7 @@ gio_headers = \
+ 	gbufferedoutputstream.h \
+ 	gcancellable.h 		\
+ 	gcontenttype.h 		\
++	gconverter.h		\
+ 	gdatainputstream.h 	\
+ 	gdataoutputstream.h 	\
+ 	gdrive.h 		\

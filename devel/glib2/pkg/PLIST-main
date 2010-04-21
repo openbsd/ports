@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2010/04/20 20:05:34 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2010/04/21 17:33:31 jasper Exp $
 @conflict glib2-fam-*
 @pkgpath devel/glib2
 @pkgpath devel/glib2,-fam
@@ -26,6 +26,7 @@ include/glib-2.0/gio/gbufferedinputstream.h
 include/glib-2.0/gio/gbufferedoutputstream.h
 include/glib-2.0/gio/gcancellable.h
 include/glib-2.0/gio/gcontenttype.h
+include/glib-2.0/gio/gconverter.h
 include/glib-2.0/gio/gdatainputstream.h
 include/glib-2.0/gio/gdataoutputstream.h
 include/glib-2.0/gio/gdrive.h
@@ -203,8 +204,8 @@ share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/gdb/
 share/gdb/auto-load/
-share/gdb/auto-load/libglib-2.0.so.0.1802.2-gdb.py
-share/gdb/auto-load/libgobject-2.0.so.0.1802.2-gdb.py
+share/gdb/auto-load/libglib-2.0.so.0.1802.3-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.1802.3-gdb.py
 share/glib-2.0/
 share/glib-2.0/gdb/
 share/glib-2.0/gdb/glib.py
