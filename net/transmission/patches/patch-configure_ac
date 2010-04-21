@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1 2010/04/01 22:16:29 naddy Exp $
---- configure.ac.orig	Fri Mar 12 03:04:38 2010
-+++ configure.ac	Thu Apr  1 19:30:53 2010
+$OpenBSD: patch-configure_ac,v 1.2 2010/04/21 06:57:24 sthen Exp $
+--- configure.ac.orig	Fri Mar 12 02:04:38 2010
++++ configure.ac	Tue Apr 20 22:42:38 2010
 @@ -24,8 +24,8 @@ AC_PROG_LIBTOOL
  if test m4_substr(peer_id_prefix,6,1) = "0"; then
    supported_build=yes
@@ -30,6 +30,15 @@ $OpenBSD: patch-configure_ac,v 1.1 2010/04/01 22:16:29 naddy Exp $
      fi
  fi
  
+@@ -211,7 +211,7 @@ AC_CHECK_LIB([event],[evutil_vsnprintf],
+              [libevent_found=yes],
+              [libevent_found=no],
+              [$libevent_extra_libs])
+-AC_CHECK_HEADER([event-config.h],
++AC_CHECK_HEADER([evhttp.h],
+                 [libevent_headers_found=yes],
+                 [libevent_headers_found=no])
+ libevent_source=bundled
 @@ -293,10 +293,13 @@ if test "x$build_gtk" = "xyes"; then
                    AS_HELP_STRING([--enable-libnotify],[enable notifications]),, 
                    [enable_libnotify=yes]) 
