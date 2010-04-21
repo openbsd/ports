@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/21 13:31:44 ajacoutot Exp $
 @bin bin/gnome-nettool
 share/applications/gnome-nettool.desktop
 share/gnome-nettool/
@@ -82,6 +82,7 @@ share/locale/da/LC_MESSAGES/gnome-nettool.mo
 share/locale/de/LC_MESSAGES/gnome-nettool.mo
 share/locale/dz/LC_MESSAGES/gnome-nettool.mo
 share/locale/el/LC_MESSAGES/gnome-nettool.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-nettool.mo
 share/locale/en_CA/LC_MESSAGES/gnome-nettool.mo
 share/locale/en_GB/LC_MESSAGES/gnome-nettool.mo
 share/locale/es/LC_MESSAGES/gnome-nettool.mo

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_netstat_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
---- src/netstat.c.orig	Tue Sep 22 15:30:34 2009
-+++ src/netstat.c	Thu Apr  1 17:43:32 2010
+$OpenBSD: patch-src_netstat_c,v 1.2 2010/04/21 13:31:44 ajacoutot Exp $
+--- src/netstat.c.orig	Tue Mar 30 06:11:19 2010
++++ src/netstat.c	Wed Apr 21 11:35:42 2010
 @@ -110,12 +110,17 @@ netstat_get_active_option (Netinfo * netinfo)
  	g_return_val_if_fail (netinfo != NULL, NULL);
  	
@@ -23,8 +23,8 @@ $OpenBSD: patch-src_netstat_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
  	g_return_if_fail (line != NULL);
  
  	count = strip_route_line (line, &data);
--#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
-+#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
+-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__NetBSD__) || defined(__DragonFly__)
  	if (count == 6) {
 +#elif defined(__OpenBSD__)
 +	if (count == 8) {
@@ -44,7 +44,7 @@ $OpenBSD: patch-src_netstat_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
 +	gint mtu, prio;
 +#endif
  
--#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
+-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
 +#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__)
  	count = sscanf (line, NETSTAT_ROUTE_FORMAT,
  			data->destination,
