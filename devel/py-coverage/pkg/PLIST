@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/09 00:52:44 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/21 22:37:21 fgsch Exp $
 bin/coverage
 lib/python${MODPY_VERSION}/site-packages/coverage/
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -22,6 +22,8 @@ lib/python${MODPY_VERSION}/site-packages/coverage/codeunit.py
 lib/python${MODPY_VERSION}/site-packages/coverage/codeunit.pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/collector.py
 lib/python${MODPY_VERSION}/site-packages/coverage/collector.pyc
+lib/python${MODPY_VERSION}/site-packages/coverage/config.py
+lib/python${MODPY_VERSION}/site-packages/coverage/config.pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/control.py
 lib/python${MODPY_VERSION}/site-packages/coverage/control.pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/data.py
