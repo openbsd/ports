@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.50 2010/03/21 10:36:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2010/04/21 23:54:43 jasper Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
-GNOME_VERSION=		2.28.3
+GNOME_VERSION=		2.30.0
 
-SHARED_LIBS +=  gdict-1.0      6.1      # .6.6
+SHARED_LIBS +=  gdict-1.0      6.1      # .6.7
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +24,8 @@ WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 kvm ltdl m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
-WANTLIB += ssl util vorbis vorbisfile xcb xml2 z
+WANTLIB += ssl util vorbis vorbisfile xcb  xcb-render xcb-render-util
+WANTLIB += xml2 z
 
 LIB_DEPENDS=		canberra,canberra-gtk::audio/libcanberra \
 			gnome-2::x11/gnome/libgnome \
@@ -32,9 +35,9 @@ LIB_DEPENDS=		canberra,canberra-gtk::audio/libcanberra \
 # needed for at least baobab and gnome-system-log
 RUN_DEPENDS=		::x11/gnome/gvfs
 
-MODULES=		devel/gettext \
-			x11/gnome \
-			devel/gconf2
+MODULES=		devel/gconf2 \
+			devel/gettext \
+			x11/gnome
 
 MODGNOME_HELP_FILES=	Yes
 USE_X11=		Yes
