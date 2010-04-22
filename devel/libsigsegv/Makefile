@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/04/02 07:43:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/04/22 21:53:29 landry Exp $
 
 ONLY_FOR_ARCHS = 	alpha amd64 arm i386 hppa m68k mips64 mips64el powerpc sparc64 sparc sh
 
@@ -25,5 +25,11 @@ USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+
+.if ${MACHINE_ARCH} == "hppa"
+CONFIGURE_ENV +=	sv_cv_leave_handler_longjmp_sigaltstack=no \
+			sv_cv_leave_handler_siglongjmp=no \
+			sv_cv_leave_handler_siglongjmp_sigaltstack=no
+.endif
 
 .include <bsd.port.mk>
