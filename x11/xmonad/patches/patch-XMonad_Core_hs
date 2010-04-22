@@ -1,0 +1,30 @@
+$OpenBSD: patch-XMonad_Core_hs,v 1.1 2010/04/22 22:00:45 kili Exp $
+
+From Tomas Janousek.
+
+--- XMonad/Core.hs.orig	Thu Dec 17 00:25:04 2009
++++ XMonad/Core.hs	Mon Apr 12 02:12:43 2010
+@@ -465,14 +465,18 @@ trace = io . hPutStrLn stderr
+ installSignalHandlers :: MonadIO m => m ()
+ installSignalHandlers = io $ do
+     installHandler openEndedPipe Ignore Nothing
+-    installHandler sigCHLD Ignore Nothing
+-    try $ fix $ \more -> do
+-        x <- getAnyProcessStatus False False
+-        when (isJust x) more
+-    return ()
++    installHandler sigCHLD (Catch cleanZombies) Nothing
++    cleanZombies
+ 
+ uninstallSignalHandlers :: MonadIO m => m ()
+ uninstallSignalHandlers = io $ do
+     installHandler openEndedPipe Default Nothing
+     installHandler sigCHLD Default Nothing
++    return ()
++
++cleanZombies :: IO ()
++cleanZombies = do
++    try $ fix $ \more -> do
++        x <- getAnyProcessStatus False False
++        when (isJust x) more
+     return ()

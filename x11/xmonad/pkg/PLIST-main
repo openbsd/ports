@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2008/01/18 21:51:13 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/04/22 22:00:45 kili Exp $
 @pkgpath x11/xmonad
-bin/xmonad
+@bin bin/xmonad
 @man man/man1/xmonad.1
+@comment share/doc/${DISTNAME}/
+@comment share/doc/${DISTNAME}/LICENSE
+@comment share/${DISTNAME}/
+@comment share/${DISTNAME}/man/
+@comment share/${DISTNAME}/man/xmonad.hs

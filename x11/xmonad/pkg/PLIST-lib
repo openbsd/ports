@@ -1,22 +1,21 @@
-@comment $OpenBSD: PLIST-lib,v 1.1 2008/01/18 21:51:13 kili Exp $
-lib/xmonad-${V}/
-lib/xmonad-${V}/ghc-6.6.1/
-lib/xmonad-${V}/ghc-6.6.1/HSxmonad-${V}.o
-lib/xmonad-${V}/ghc-6.6.1/XMonad/
-lib/xmonad-${V}/ghc-6.6.1/XMonad.hi
-lib/xmonad-${V}/ghc-6.6.1/XMonad/Config.hi
-lib/xmonad-${V}/ghc-6.6.1/XMonad/Core.hi
-lib/xmonad-${V}/ghc-6.6.1/XMonad/Layout.hi
-lib/xmonad-${V}/ghc-6.6.1/XMonad/Main.hi
-lib/xmonad-${V}/ghc-6.6.1/XMonad/ManageHook.hi
-lib/xmonad-${V}/ghc-6.6.1/XMonad/Operations.hi
-lib/xmonad-${V}/ghc-6.6.1/XMonad/StackSet.hi
-lib/xmonad-${V}/ghc-6.6.1/include/
-lib/xmonad-${V}/ghc-6.6.1/libHSxmonad-${V}.a
-lib/xmonad-${V}/register.sh
-@exec /usr/bin/env HOME=/nonexistent %D/lib/xmonad-${V}/register.sh
-@unexec /usr/bin/env HOME=/nonexistent %D/lib/xmonad-${V}/unregister.sh
-lib/xmonad-${V}/unregister.sh
+@comment $OpenBSD: PLIST-lib,v 1.2 2010/04/22 22:00:45 kili Exp $
+lib/${DISTNAME}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+lib/${DISTNAME}/ghc-${MODGHC_VER}/XMonad/
+lib/${DISTNAME}/ghc-${MODGHC_VER}/XMonad.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/XMonad/Config.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/XMonad/Core.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/XMonad/Layout.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/XMonad/Main.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/XMonad/ManageHook.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/XMonad/Operations.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/XMonad/StackSet.hi
+lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
+lib/${DISTNAME}/register.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+lib/${DISTNAME}/unregister.sh
 share/doc/xmonad/
 share/doc/xmonad/CONFIG
 share/doc/xmonad/xmonad.hs
