@@ -1,61 +1,42 @@
-# $OpenBSD: Makefile,v 1.10 2008/09/19 21:19:15 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/22 21:48:30 kili Exp $
 
-COMMENT=	lexical analyser generator for Haskell
+COMMENT =	lexical analyser generator for Haskell
 
-V=		2.1.0
-DISTNAME=	alex-${V}
-PKGNAME=		${DISTNAME}p0
-CATEGORIES=	devel
+DISTNAME =	alex-2.3.2
+CATEGORIES =	devel
 
-HOMEPAGE=	http://www.haskell.org/alex/
+HOMEPAGE =	http://www.haskell.org/alex/
 
-# BSD style w/o advertising clause
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+# BSD3
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB=	c m
+WANTLIB =		c m pthread util
 
-MODULES=	lang/ghc
-MODGHC_RUNTIME=	No
-
-MASTER_SITES=	${HOMEPAGE}dist/${V}/
-
-BUILD_DEPENDS+=	::textproc/docbook \
-		::textproc/docbook-xsl \
-		::textproc/libxslt
-LIB_DEPENDS=	gmp::devel/gmp
-
-SETUP_CONF_ARGS=	configure -g --prefix=${PREFIX}
-SETUP_CONF_ENV=		HOME=${PORTHOME} ${CONFIGURE_ENV}
-SETUP_PROG=		${WRKSRC}/Setup
-SUBST_VARS=		V
-
-NO_REGRESS=		Yes
+MODULES =		lang/ghc converters/libiconv
+MODGHC_BUILD =          cabal hackage nort
 
 # Required for building the documentation:
-USE_GMAKE=		Yes
-CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.61
-AUTOCONF_DIR=		${WRKSRC}/doc
-WRKCONF=		${AUTOCONF_DIR}
+USE_GMAKE =		Yes
+CONFIGURE_STYLE =	autoconf no-autoheader
+AUTOCONF_VERSION =	2.61
+AUTOCONF_DIR =		${WRKSRC}/doc
+WRKCONF =		${AUTOCONF_DIR}
 
-post-configure:
-	@cd ${WRKSRC} && ghc --make -o ${SETUP_PROG} Setup.lhs
-	@cd ${WRKBUILD} && exec ${SETENV} ${SETUP_CONF_ENV} \
-		${SETUP_PROG} ${SETUP_CONF_ARGS}
+BUILD_DEPENDS +=	::textproc/docbook \
+			::textproc/docbook-xsl \
+			::textproc/libxslt
 
-do-build:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${SETUP_PROG} build
+post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
-
-do-install:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${SETUP_PROG} copy --destdir=${DESTDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
 	cd ${WRKBUILD}/doc && umask 022 && pax -rw alex ${PREFIX}/share/doc
+
+do-regress:
+	cd ${WRKBUILD}/tests && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} all
 
 .include <bsd.port.mk>
