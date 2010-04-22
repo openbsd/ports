@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/10/19 09:48:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/04/22 21:01:07 ajacoutot Exp $
 include/at-spi-1.0/
 include/at-spi-1.0/cspi/
 include/at-spi-1.0/cspi/spi-impl.h
@@ -79,13 +79,6 @@ lib/python${MODPY_VERSION}/site-packages/pyatspi/utils.py
 lib/python${MODPY_VERSION}/site-packages/pyatspi/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/pyatspi/utils.pyo
 @bin libexec/at-spi-registryd
-share/at-spi/
-share/at-spi/xdg/
-@sample ${SYSCONFDIR}/xdg/
-share/at-spi/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
-share/at-spi/xdg/autostart/at-spi-registryd.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/at-spi-registryd.desktop
 share/doc/at-spi/
 share/doc/at-spi/reference/
 share/doc/at-spi/reference/html/
@@ -139,7 +132,7 @@ share/doc/at-spi/reference/html/Accessibility__Value_8idl.html
 share/doc/at-spi/reference/html/Accessibility__Value_8idl_source.html
 share/doc/at-spi/reference/html/annotated.html
 share/doc/at-spi/reference/html/classes.html
-share/doc/at-spi/reference/html/dir_ee39139619505595933c7dd613b47914.html
+share/doc/at-spi/reference/html/dir_3b6a51dea7afd3eda1b8a5320c6a3f28.html
 share/doc/at-spi/reference/html/dirs.html
 share/doc/at-spi/reference/html/doxygen.css
 share/doc/at-spi/reference/html/doxygen.png
@@ -176,30 +169,24 @@ share/doc/at-spi/reference/html/functions_vars.html
 share/doc/at-spi/reference/html/hierarchy.html
 share/doc/at-spi/reference/html/index.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Accessible.html
-share/doc/at-spi/reference/html/interfaceAccessibility_1_1Accessible.png
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Action.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Application.html
-share/doc/at-spi/reference/html/interfaceAccessibility_1_1Application.png
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Collection.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1CommandListener.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Component.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1ContentStream.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Desktop.html
-share/doc/at-spi/reference/html/interfaceAccessibility_1_1Desktop.png
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1DeviceEventController.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1DeviceEventListener.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Document.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1EditableText.html
-share/doc/at-spi/reference/html/interfaceAccessibility_1_1EditableText.png
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1EventListener.html
-share/doc/at-spi/reference/html/interfaceAccessibility_1_1EventListener.png
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Hyperlink.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Hypertext.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Image.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1LoginHelper.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1MatchRule.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Registry.html
-share/doc/at-spi/reference/html/interfaceAccessibility_1_1Registry.png
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Relation.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Selection.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Selector.html
@@ -207,7 +194,6 @@ share/doc/at-spi/reference/html/interfaceAccessibility_1_1StateSet.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1StreamableContent.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Table.html
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Text.html
-share/doc/at-spi/reference/html/interfaceAccessibility_1_1Text.png
 share/doc/at-spi/reference/html/interfaceAccessibility_1_1Value.html
 share/doc/at-spi/reference/html/namespaceAccessibility.html
 share/doc/at-spi/reference/html/namespacemembers.html
@@ -235,6 +221,13 @@ share/doc/at-spi/reference/html/structAccessibility_1_1KeyDefinition.html
 share/doc/at-spi/reference/html/structAccessibility_1_1LoginHelper_1_1WindowInfo.html
 share/doc/at-spi/reference/html/structAccessibility_1_1Text_1_1Range.html
 share/doc/at-spi/reference/html/tabs.css
+share/examples/at-spi/
+share/examples/at-spi/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/at-spi/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/at-spi/xdg/autostart/at-spi-registryd.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/at-spi-registryd.desktop
 share/gtk-doc/html/at-spi-cspi/
 share/gtk-doc/html/at-spi-cspi/at-spi-cspi-Accessible-Objects.html
 share/gtk-doc/html/at-spi-cspi/at-spi-cspi-AccessibleAction-Interface.html
@@ -314,6 +307,7 @@ share/locale/da/LC_MESSAGES/at-spi.mo
 share/locale/de/LC_MESSAGES/at-spi.mo
 share/locale/dz/LC_MESSAGES/at-spi.mo
 share/locale/el/LC_MESSAGES/at-spi.mo
+share/locale/en@shaw/LC_MESSAGES/at-spi.mo
 share/locale/en_CA/LC_MESSAGES/at-spi.mo
 share/locale/en_GB/LC_MESSAGES/at-spi.mo
 share/locale/eo/LC_MESSAGES/at-spi.mo
@@ -347,8 +341,6 @@ share/locale/mn/LC_MESSAGES/at-spi.mo
 share/locale/mr/LC_MESSAGES/at-spi.mo
 share/locale/ms/LC_MESSAGES/at-spi.mo
 share/locale/nb/LC_MESSAGES/at-spi.mo
-share/locale/nds/
-share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/at-spi.mo
 share/locale/ne/LC_MESSAGES/at-spi.mo
 share/locale/nl/LC_MESSAGES/at-spi.mo

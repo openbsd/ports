@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2010/04/11 16:39:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/04/22 21:01:07 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
 GNOME_PROJECT=		at-spi
-GNOME_VERSION=		1.28.1
+GNOME_VERSION=		1.30.0
 
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
@@ -23,7 +23,7 @@ WANTLIB += Xrender Xtst atk-1.0 c cairo dbus-1 dbus-glib-1 expat
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb z
+WANTLIB += xcb z xcb-render xcb-render-util
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -35,15 +35,16 @@ LIB_DEPENDS=	bonobo-2.>=1,bonobo-activation.>=5::x11/gnome/libbonobo \
 
 USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	at-spi
-MODGCONF2_LIBDEP=	No
 DESKTOP_FILES=		Yes
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--disable-xevie
+		--enable-gtk-doc=no
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 REGRESS_IS_INTERACTIVE=	x11
+
+FAKE_FLAGS=	default_sessiondir=${PREFIX}/share/examples/at-spi/xdg/autostart
 
 .include <bsd.port.mk>
