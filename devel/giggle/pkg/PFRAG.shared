@@ -1,2 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/02/05 10:00:40 landry Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2010/04/22 15:01:53 landry Exp $
+lib/giggle/plugins/0.5/libpersonal-details.so
+lib/giggle/plugins/0.5/libterminal-view.so
+@lib lib/libgiggle-git.so.${LIBgiggle-git_VERSION}
 @lib lib/libgiggle.so.${LIBgiggle_VERSION}

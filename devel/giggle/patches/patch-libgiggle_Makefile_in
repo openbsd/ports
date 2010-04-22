@@ -1,0 +1,11 @@
+$OpenBSD: patch-libgiggle_Makefile_in,v 1.1 2010/04/22 15:01:53 landry Exp $
+--- libgiggle/Makefile.in.orig	Sat Apr 17 17:11:31 2010
++++ libgiggle/Makefile.in	Thu Apr 22 13:53:27 2010
+@@ -352,7 +352,6 @@ libgiggle_la_LIBADD = \
+ libgiggle_la_LDFLAGS = \
+ 	$(AM_LDFLAGS) \
+ 	-version-info $(LIBGIGGLE_ABI) \
+-	-Wl,--as-needed -Wl,--no-undefined \
+ 	$(NULL)
+ 
+ BUILT_SOURCES = \
