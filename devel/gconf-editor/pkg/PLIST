@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/12/22 15:31:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2010/04/22 20:42:35 ajacoutot Exp $
 @bin bin/gconf-editor
 @man man/man1/gconf-editor.1
 share/applications/gconf-editor.desktop
@@ -200,6 +200,7 @@ share/locale/da/LC_MESSAGES/gconf-editor.mo
 share/locale/de/LC_MESSAGES/gconf-editor.mo
 share/locale/dz/LC_MESSAGES/gconf-editor.mo
 share/locale/el/LC_MESSAGES/gconf-editor.mo
+share/locale/en@shaw/LC_MESSAGES/gconf-editor.mo
 share/locale/en_CA/LC_MESSAGES/gconf-editor.mo
 share/locale/en_GB/LC_MESSAGES/gconf-editor.mo
 share/locale/es/LC_MESSAGES/gconf-editor.mo
