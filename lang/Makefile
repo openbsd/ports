@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2010/04/15 23:09:46 tedu Exp $
+# $OpenBSD: Makefile,v 1.95 2010/04/22 22:11:27 kili Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -22,6 +22,7 @@
      SUBDIR += ghc
      SUBDIR += gprolog
      SUBDIR += guile
+     SUBDIR += hs-haskell-src
      SUBDIR += hugs
      SUBDIR += icon
      SUBDIR += intel2gas
