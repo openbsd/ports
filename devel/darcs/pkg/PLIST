@@ -1,87 +1,218 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/10/18 18:58:06 kili Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/04/22 21:53:19 kili Exp $
 @bin bin/darcs
-libexec/darcs/
-libexec/darcs/cgi-bin/
-libexec/darcs/cgi-bin/darcs.cgi
+@comment lib/${DISTNAME}/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/ByteStringUtils.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/CommandLine.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Crypt/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Crypt/SHA256.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/ArgumentDefaults.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Arguments.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Bug.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/CheckFileSystem.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/ColorPrinter.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Add.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/AmendRecord.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Annotate.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Apply.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Changes.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Check.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Convert.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Diff.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Dist.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/GZCRCs.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Get.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Help.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Init.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/MarkConflicts.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Move.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Optimize.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Pull.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Push.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Put.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Record.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Remove.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Repair.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Replace.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Revert.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Rollback.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Send.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/SetPref.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Show.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/ShowAuthors.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/ShowBug.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/ShowContents.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/ShowFiles.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/ShowIndex.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/ShowRepo.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/ShowTags.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Tag.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/TrackDown.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/TransferMode.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Unrecord.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/Unrevert.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Commands/WhatsNew.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/CommandsAux.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Compat.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Diff.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Email.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/External.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/FilePathMonad.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Flags.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Global.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Hopefully.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/IO.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Lock.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Match.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Apply.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Bundle.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Choices.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Commute.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Core.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Depends.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/FileName.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Info.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Match.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/MatchData.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Non.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/OldDate.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Patchy.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Permutations.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Prim.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Properties.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Read.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/ReadMonads.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Real.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/RegChars.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Set.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Show.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Split.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/TouchesFiles.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Patch/Viewing.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Population.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/PopulationData.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/PrintPatch.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/ProgressPatches.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/RemoteApply.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/RepoPath.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/ApplyPatches.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/Cache.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/Checkpoint.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/DarcsRepo.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/Format.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/HashedIO.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/HashedRepo.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/Internal.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/InternalTypes.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/LowLevel.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/Merge.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/Motd.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/Prefs.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/Pristine.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/Repair.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Repository/State.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Resolution.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/RunCommand.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/SelectChanges.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/SignalHandler.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/SlurpDirectory/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/SlurpDirectory.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/SlurpDirectory/Internal.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Test.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/TheCommands.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/URL.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Utils.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Witnesses/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Witnesses/Ordered.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Witnesses/Sealed.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Darcs/Witnesses/Show.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/DateMatcher.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/English.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Exec.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/HTTP.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/IsoDate.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Lcs.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Printer.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Progress.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Ratified.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/SHA1.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Ssh.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/URL.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Version.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Workaround.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
 @man man/man1/darcs.1
-share/darcs/
-share/darcs/bash_completion.d/
-share/darcs/bash_completion.d/darcs
-share/darcs/darcs/
-share/darcs/darcs/cgi.conf
-share/darcs/darcs/styles.css
-share/darcs/xslt/
-share/darcs/xslt/annotate.xslt
-share/darcs/xslt/browse.xslt
-share/darcs/xslt/common.xslt
-share/darcs/xslt/errors.xml
-share/darcs/xslt/errors.xslt
-share/darcs/xslt/patches.xslt
-share/darcs/xslt/repos.xslt
-share/darcs/xslt/rss.xslt
-share/darcs/xslt/styles.css
 share/doc/darcs/
-share/doc/darcs/examples/
-share/doc/darcs/examples/zsh_completion_new
-share/doc/darcs/examples/zsh_completion_old
-share/doc/darcs/manual/
-share/doc/darcs/manual/contents.png
-share/doc/darcs/manual/crossref.png
-share/doc/darcs/manual/darcs.html
-share/doc/darcs/manual/footnode.html
-share/doc/darcs/manual/img1.png
-share/doc/darcs/manual/img10.png
-share/doc/darcs/manual/img11.png
-share/doc/darcs/manual/img12.png
-share/doc/darcs/manual/img13.png
-share/doc/darcs/manual/img14.png
-share/doc/darcs/manual/img15.png
-share/doc/darcs/manual/img16.png
-share/doc/darcs/manual/img17.png
-share/doc/darcs/manual/img18.png
-share/doc/darcs/manual/img19.png
-share/doc/darcs/manual/img2.png
-share/doc/darcs/manual/img20.png
-share/doc/darcs/manual/img21.png
-share/doc/darcs/manual/img22.png
-share/doc/darcs/manual/img23.png
-share/doc/darcs/manual/img24.png
-share/doc/darcs/manual/img25.png
-share/doc/darcs/manual/img26.png
-share/doc/darcs/manual/img27.png
-share/doc/darcs/manual/img28.png
-share/doc/darcs/manual/img29.png
-share/doc/darcs/manual/img3.png
-share/doc/darcs/manual/img30.png
-share/doc/darcs/manual/img31.png
-share/doc/darcs/manual/img32.png
-share/doc/darcs/manual/img33.png
-share/doc/darcs/manual/img34.png
-share/doc/darcs/manual/img35.png
-share/doc/darcs/manual/img36.png
-share/doc/darcs/manual/img4.png
-share/doc/darcs/manual/img5.png
-share/doc/darcs/manual/img6.png
-share/doc/darcs/manual/img7.png
-share/doc/darcs/manual/img8.png
-share/doc/darcs/manual/img9.png
-share/doc/darcs/manual/index.html
-share/doc/darcs/manual/next.png
-share/doc/darcs/manual/next_g.png
-share/doc/darcs/manual/node1.html
-share/doc/darcs/manual/node10.html
-share/doc/darcs/manual/node11.html
-share/doc/darcs/manual/node12.html
-share/doc/darcs/manual/node2.html
-share/doc/darcs/manual/node3.html
-share/doc/darcs/manual/node4.html
-share/doc/darcs/manual/node5.html
-share/doc/darcs/manual/node6.html
-share/doc/darcs/manual/node7.html
-share/doc/darcs/manual/node8.html
-share/doc/darcs/manual/node9.html
-share/doc/darcs/manual/nx_grp_g.png
-share/doc/darcs/manual/prev.png
-share/doc/darcs/manual/prev_g.png
-share/doc/darcs/manual/up.png
-share/doc/darcs/manual/up_g.png
+@comment share/doc/${DISTNAME}/
+@comment share/doc/${DISTNAME}/COPYING
+@comment share/doc/darcs/WARNINGS
+share/doc/darcs/darcs.css
+share/doc/darcs/darcs.html
+@comment share/doc/darcs/darcs.tex
+share/doc/darcs/footnode.html
+@comment share/doc/darcs/images.aux
+@comment share/doc/darcs/images.log
+@comment share/doc/darcs/images.out
+@comment share/doc/darcs/images.pl
+@comment share/doc/darcs/images.tex
+share/doc/darcs/img1.png
+share/doc/darcs/img10.png
+share/doc/darcs/img11.png
+share/doc/darcs/img12.png
+share/doc/darcs/img13.png
+share/doc/darcs/img14.png
+share/doc/darcs/img15.png
+share/doc/darcs/img16.png
+share/doc/darcs/img17.png
+share/doc/darcs/img18.png
+share/doc/darcs/img19.png
+share/doc/darcs/img2.png
+share/doc/darcs/img20.png
+share/doc/darcs/img21.png
+share/doc/darcs/img22.png
+share/doc/darcs/img23.png
+share/doc/darcs/img24.png
+share/doc/darcs/img25.png
+share/doc/darcs/img26.png
+share/doc/darcs/img27.png
+share/doc/darcs/img28.png
+share/doc/darcs/img29.png
+share/doc/darcs/img3.png
+share/doc/darcs/img30.png
+share/doc/darcs/img31.png
+share/doc/darcs/img32.png
+share/doc/darcs/img33.png
+share/doc/darcs/img34.png
+share/doc/darcs/img35.png
+share/doc/darcs/img36.png
+share/doc/darcs/img37.png
+share/doc/darcs/img38.png
+share/doc/darcs/img4.png
+share/doc/darcs/img5.png
+share/doc/darcs/img6.png
+share/doc/darcs/img7.png
+share/doc/darcs/img8.png
+share/doc/darcs/img9.png
+share/doc/darcs/index.html
+@comment share/doc/darcs/internals.pl
+@comment share/doc/darcs/labels.pl
+share/doc/darcs/node1.html
+share/doc/darcs/node10.html
+share/doc/darcs/node11.html
+share/doc/darcs/node12.html
+share/doc/darcs/node2.html
+share/doc/darcs/node3.html
+share/doc/darcs/node4.html
+share/doc/darcs/node5.html
+share/doc/darcs/node6.html
+share/doc/darcs/node7.html
+share/doc/darcs/node8.html
+share/doc/darcs/node9.html

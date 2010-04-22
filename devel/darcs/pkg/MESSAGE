@@ -1,3 +1,0 @@
-To use the CGI, copy ${PREFIX}/libexec/darcs/cgi-bin/darcs.cgi to the
-cgi-bin directory.  An example configuration file for the cgi is in
-${PREFIX}/share/darcs/darcs, and should be copied to ${SYSCONFDIR}/darcs.
