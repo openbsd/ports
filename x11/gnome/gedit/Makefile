@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/03/23 06:37:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/04/22 21:52:39 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,7 @@ COMMENT=		lightweight GNOME text editor
 # x11/gnome/seahorse-plugins
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		2.28.4
+GNOME_VERSION=		2.30.2
 
 CATEGORIES=		editors
 
@@ -29,12 +29,12 @@ WANTLIB += dbus-1 dbus-glib-1 expat ffi fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += stdc++ util xcb xml2 z
+WANTLIB += stdc++ util xcb  xcb-render xcb-render-util xml2 z
 
-MODULES=	devel/gconf2 \
-		devel/gettext \
-		lang/python \
-		x11/gnome
+MODULES=		devel/gconf2 \
+			devel/gettext \
+			lang/python \
+			x11/gnome
 
 BUILD_DEPENDS=		:iso-codes-*:devel/iso-codes \
 			::x11/py-gtksourceview \
@@ -52,10 +52,12 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gedit
 LIBTOOL_FLAGS=		--tag=disable-static
 
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-python \
 			--disable-attr \
 			--disable-updater
+#CONFIGURE_ARGS+=	--enable-gvfs-metadata
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -lintl -liconv"
 
