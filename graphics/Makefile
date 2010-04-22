@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.258 2010/03/25 22:08:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.259 2010/04/22 22:12:07 kili Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -85,6 +85,8 @@
      SUBDIR += gtkimageview
      SUBDIR += gwenview
      SUBDIR += gwenview-i18n
+     SUBDIR += hs-GLUT
+     SUBDIR += hs-OpenGL
      SUBDIR += hugin
      SUBDIR += ilmbase
      SUBDIR += imlib
