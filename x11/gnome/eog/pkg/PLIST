@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2009/12/21 18:03:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2010/04/22 08:39:49 jasper Exp $
 @bin bin/eog
 include/eog-2.20/
 include/eog-2.20/eog/
@@ -15,7 +15,6 @@ include/eog-2.20/eog/eog-image.h
 include/eog-2.20/eog/eog-job-queue.h
 include/eog-2.20/eog/eog-jobs.h
 include/eog-2.20/eog/eog-list-store.h
-include/eog-2.20/eog/eog-message-area.h
 include/eog-2.20/eog/eog-plugin.h
 include/eog-2.20/eog/eog-properties-dialog.h
 include/eog-2.20/eog/eog-scroll-view.h
@@ -235,7 +234,6 @@ share/gtk-doc/html/eog/EogImage.html
 share/gtk-doc/html/eog/EogImageSaveInfo.html
 share/gtk-doc/html/eog/EogJobCopy.html
 share/gtk-doc/html/eog/EogListStore.html
-share/gtk-doc/html/eog/EogMessageArea.html
 share/gtk-doc/html/eog/EogMetadataReaderJpg.html
 share/gtk-doc/html/eog/EogMetadataReaderPng.html
 share/gtk-doc/html/eog/EogPlugin.html
@@ -309,6 +307,7 @@ share/locale/da/LC_MESSAGES/eog.mo
 share/locale/de/LC_MESSAGES/eog.mo
 share/locale/dz/LC_MESSAGES/eog.mo
 share/locale/el/LC_MESSAGES/eog.mo
+share/locale/en@shaw/LC_MESSAGES/eog.mo
 share/locale/en_CA/LC_MESSAGES/eog.mo
 share/locale/en_GB/LC_MESSAGES/eog.mo
 share/locale/es/LC_MESSAGES/eog.mo
