@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/10/11 18:13:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/04/22 21:52:47 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		2.28.0
+GNOME_VERSION=		2.30.0
 CATEGORIES=		editors
 
 HOMEPAGE=		http://live.gnome.org/Gedit/Plugins
@@ -20,7 +20,7 @@ WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 gtksourceview-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xml2
-WANTLIB += z
+WANTLIB += xcb-render xcb-render-util z
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -31,7 +31,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::x11/gnome/doc-utils
 LIB_DEPENDS=		gucharmap:gucharmap->=2.24.1.1:x11/gnome/gucharmap
 RUN_DEPENDS=		::devel/vte,-python \
-			:gedit->=2.28.0:x11/gnome/gedit \
+			:gedit->=2.30.0:x11/gnome/gedit \
 			:py-gtk2->=2.12.0:x11/py-gtk2
 
 USE_X11=		Yes
