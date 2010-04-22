@@ -1,13 +1,52 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/07/21 17:25:43 kili Exp $
-bin/haddock
+@comment $OpenBSD: PLIST,v 1.6 2010/04/22 21:49:12 kili Exp $
+@bin bin/haddock
+@comment lib/${DISTNAME}/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Documentation/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Documentation/Haddock.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Backends/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Backends/DevHelp.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Backends/HH.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Backends/HH2.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Backends/HaddockDB.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Backends/Hoogle.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Backends/Html.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Convert.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Doc.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/GhcUtils.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Interface/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Interface.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Interface/AttachInstances.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Interface/Create.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Interface/ExtractFnArgDocs.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Interface/LexParseRn.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Interface/ParseModuleHeader.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Interface/Rename.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Interface/Rn.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/InterfaceFile.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Lex.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/ModuleTree.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Options.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Parse.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Types.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Utils/
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Utils.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Utils/BlockTable.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Utils/Html.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Haddock/Version.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/Paths_haddock.hi
+@comment lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
 share/doc/haddock/
+@comment share/doc/${DISTNAME}/
+@comment share/doc/${DISTNAME}/LICENSE
 share/doc/haddock/ch01s03.html
 share/doc/haddock/ch03s02.html
 share/doc/haddock/ch03s03.html
 share/doc/haddock/ch03s04.html
 share/doc/haddock/ch03s05.html
-share/doc/haddock/ch03s09.html
-share/doc/haddock/deriving.html
+share/doc/haddock/ch03s08.html
 share/doc/haddock/fptools.css
 share/doc/haddock/hyperlinking.html
 share/doc/haddock/index.html
@@ -17,11 +56,12 @@ share/doc/haddock/ix01.html
 share/doc/haddock/license.html
 share/doc/haddock/markup.html
 share/doc/haddock/module-attributes.html
-share/haddock-${V}/
-share/haddock-${V}/html/
-share/haddock-${V}/html/haddock-DEBUG.css
-share/haddock-${V}/html/haddock.css
-share/haddock-${V}/html/haddock.js
-share/haddock-${V}/html/haskell_icon.gif
-share/haddock-${V}/html/minus.gif
-share/haddock-${V}/html/plus.gif
+share/${DISTNAME}/
+share/${DISTNAME}/html/
+share/${DISTNAME}/html/frames.html
+share/${DISTNAME}/html/haddock-DEBUG.css
+share/${DISTNAME}/html/haddock-util.js
+share/${DISTNAME}/html/haddock.css
+share/${DISTNAME}/html/haskell_icon.gif
+share/${DISTNAME}/html/minus.gif
+share/${DISTNAME}/html/plus.gif

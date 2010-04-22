@@ -1,59 +1,52 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/15 13:56:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/22 21:49:12 kili Exp $
 
-COMMENT=	documentation tool for the functional language Haskell
+COMMENT =	documentation-generation tool for Haskell libraries
 
-V=		0.8
-DISTNAME=	haddock-${V}
-PKGNAME=	haddock-${V}p1
-DISTFILES=	${DISTNAME}-src.tar.gz
-CATEGORIES=	devel
+DISTNAME =	haddock-2.7.2
+CATEGORIES =	devel
 
-HOMEPAGE=	http://www.haskell.org/haddock/
+HOMEPAGE =	http://www.haskell.org/haddock/
 
-# BSD style w/o advertising clause
-PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
+# BSD3
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB=	c m
+# This pseudo flavor is needed to let ghc extract the haddock sources
+# without pulling in haddocks own build dependencies (which would
+# include ghc).
+PSEUDO_FLAVORS =	no_deps
+FLAVOR ?=
 
-MODULES=	lang/ghc
-MODGHC_RUNTIME=	No
+WANTLIB =		c m pthread util
 
-MASTER_SITES=	${HOMEPAGE}
+.if ! ${FLAVOR:L:Mno_deps}
+MODULES =		lang/ghc converters/libiconv
+# No haddock library (yet).
+MODGHC_BUILD =		cabal hackage nort
 
-BUILD_DEPENDS+=	::textproc/docbook \
-		::textproc/docbook-xsl \
-		::textproc/libxslt
-LIB_DEPENDS=	gmp::devel/gmp
+RUN_DEPENDS +=		::devel/hs-ghc-paths
 
-SETUP_CONF_ARGS=	configure -g --prefix=${PREFIX}
-SETUP_CONF_ENV=		HOME=${PORTHOME} ${CONFIGURE_ENV}
-SETUP_PROG=		${WRKSRC}/Setup
-SUBST_VARS=		V
-
-NO_REGRESS=		Yes
+BUILD_DEPENDS +=	::devel/alex \
+			::devel/happy \
+			::textproc/docbook \
+			::textproc/docbook-xsl \
+			::textproc/libxslt \
+			${RUN_DEPENDS}
 
 # Required for building the documentation:
-USE_GMAKE=		Yes
-CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.61
-AUTOCONF_DIR=		${WRKSRC}/doc
-WRKCONF=		${AUTOCONF_DIR}
+USE_GMAKE =		Yes
+CONFIGURE_STYLE =	autoconf no-autoheader
+AUTOCONF_VERSION =	2.61
+AUTOCONF_DIR =		${WRKSRC}/doc
+WRKCONF =		${AUTOCONF_DIR}
+.else
+MASTER_SITES =		http://hackage.haskell.org/packages/archive/${DISTNAME:S,-,/,}/
+.endif
 
-post-configure:
-	@cd ${WRKSRC} && ghc --make -o ${SETUP_PROG} Setup.lhs
-	@cd ${WRKBUILD} && exec ${SETENV} ${SETUP_CONF_ENV} \
-		${SETUP_PROG} ${SETUP_CONF_ARGS}
-
-do-build:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${SETUP_PROG} build
+post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
-
-do-install:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${SETUP_PROG} copy --destdir=${DESTDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
