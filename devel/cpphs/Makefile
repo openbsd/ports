@@ -1,30 +1,28 @@
-# $OpenBSD: Makefile,v 1.10 2007/11/28 13:10:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/22 21:51:54 kili Exp $
 
-COMMENT=	liberalised reimplementation of cpp in Haskell
+COMMENT =	liberalised reimplementation of cpp in Haskell
 
-V=		1.5
-DISTNAME=	cpphs-${V}
-PKGNAME=	${DISTNAME}
-CATEGORIES=	devel
-MAINTAINER=	Matthias Kilian <kili@openbsd.org>
-HOMEPAGE=	http://haskell.org/cpphs/
-MASTER_SITES=	http://www.cs.york.ac.uk/fp/cpphs/
+DISTNAME =	cpphs-1.11
+CATEGORIES =	devel
+MAINTAINER =	Matthias Kilian <kili@openbsd.org>
+HOMEPAGE =	http://haskell.org/cpphs/
+MASTER_SITES =	http://www.cs.york.ac.uk/fp/cpphs/
 
-# LGPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+# LGPL2.1
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB+=	c m
+WANTLIB +=	c m
 
 # Pure Haskell 98. Could also interpret via Hugs
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-MODULES=	lang/ghc
-MODGHC_RUNTIME=	No
-LIB_DEPENDS=	gmp::devel/gmp
-HC=		ghc
-HC_OPTS=	-O -o cpphs --make
+WANTLIB +=	util pthread
+MODULES =	lang/ghc converters/libiconv
+MODGHC_BUILD =	nort
+HC =		ghc
+HC_OPTS =	-O -o cpphs --make
 .else
 BUILD_DEPENDS+=	::devel/hmake \
 		::lang/nhc98
