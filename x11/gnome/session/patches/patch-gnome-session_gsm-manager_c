@@ -1,12 +1,12 @@
-$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.2 2009/11/23 10:19:08 ajacoutot Exp $
+$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.3 2010/04/22 22:38:51 ajacoutot Exp $
 
 OpenBSD does not have DeviceKit.
 
 GNOME Bugzilla #598211
 Do not keep zombie clients.
 
---- gnome-session/gsm-manager.c.orig	Fri Sep 18 18:36:04 2009
-+++ gnome-session/gsm-manager.c	Mon Nov 23 11:03:06 2009
+--- gnome-session/gsm-manager.c.orig	Fri Apr 23 00:33:12 2010
++++ gnome-session/gsm-manager.c	Fri Apr 23 00:33:12 2010
 @@ -38,7 +38,9 @@
  #include <dbus/dbus-glib.h>
  #include <dbus/dbus-glib-lowlevel.h>
@@ -17,7 +17,7 @@ Do not keep zombie clients.
  
  #include <gtk/gtk.h> /* for logout dialog */
  #include <gconf/gconf-client.h>
-@@ -134,8 +136,10 @@ struct GsmManagerPrivate
+@@ -135,8 +137,10 @@ struct GsmManagerPrivate
          DBusGProxy             *bus_proxy;
          DBusGConnection        *connection;
  
@@ -28,7 +28,7 @@ Do not keep zombie clients.
  };
  
  enum {
-@@ -971,6 +975,7 @@ manager_perhaps_lock (GsmManager *manager)
+@@ -984,6 +988,7 @@ manager_perhaps_lock (GsmManager *manager)
  static void
  manager_attempt_hibernate (GsmManager *manager)
  {
@@ -36,7 +36,7 @@ Do not keep zombie clients.
          gboolean  can_hibernate;
          GError   *error;
          gboolean  ret;
-@@ -992,11 +997,13 @@ manager_attempt_hibernate (GsmManager *manager)
+@@ -1005,11 +1010,13 @@ manager_attempt_hibernate (GsmManager *manager)
                          g_error_free (error);
                  }
          }
@@ -50,7 +50,7 @@ Do not keep zombie clients.
          gboolean  can_suspend;
          GError   *error;
          gboolean  ret;
-@@ -1018,6 +1025,7 @@ manager_attempt_suspend (GsmManager *manager)
+@@ -1031,6 +1038,7 @@ manager_attempt_suspend (GsmManager *manager)
                          g_error_free (error);
                  }
          }
@@ -58,7 +58,7 @@ Do not keep zombie clients.
  }
  
  static void
-@@ -1988,9 +1996,11 @@ on_store_client_added (GsmStore   *store,
+@@ -2111,9 +2119,11 @@ on_store_client_added (GsmStore   *store,
                            "end-session-response",
                            G_CALLBACK (on_client_end_session_response),
                            manager);
@@ -72,7 +72,7 @@ Do not keep zombie clients.
  }
  
  static void
-@@ -2190,10 +2200,12 @@ gsm_manager_dispose (GObject *object)
+@@ -2313,10 +2323,12 @@ gsm_manager_dispose (GObject *object)
                  manager->priv->gconf_client = NULL;
          }
  
@@ -85,7 +85,7 @@ Do not keep zombie clients.
  
          G_OBJECT_CLASS (gsm_manager_parent_class)->dispose (object);
  }
-@@ -2423,7 +2435,9 @@ gsm_manager_init (GsmManager *manager)
+@@ -2546,7 +2558,9 @@ gsm_manager_init (GsmManager *manager)
                            G_CALLBACK (on_presence_status_changed),
                            manager);
  
@@ -95,7 +95,7 @@ Do not keep zombie clients.
  
          /* GConf setup */
          gconf_client_add_dir (manager->priv->gconf_client,
-@@ -2947,10 +2961,12 @@ gsm_manager_can_shutdown (GsmManager *manager,
+@@ -3105,10 +3119,12 @@ gsm_manager_can_shutdown (GsmManager *manager,
          gboolean can_suspend;
          gboolean can_hibernate;
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnome-session_main_c,v 1.2 2009/11/15 08:53:04 ajacoutot Exp $
---- gnome-session/main.c.orig	Wed Jul  1 14:45:30 2009
-+++ gnome-session/main.c	Sun Nov 15 09:52:18 2009
-@@ -490,6 +490,13 @@ main (int argc, char **argv)
+$OpenBSD: patch-gnome-session_main_c,v 1.3 2010/04/22 22:38:51 ajacoutot Exp $
+--- gnome-session/main.c.orig	Tue Mar  9 00:31:27 2010
++++ gnome-session/main.c	Fri Apr 23 00:33:12 2010
+@@ -486,6 +486,13 @@ main (int argc, char **argv)
           */
          gsm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
  

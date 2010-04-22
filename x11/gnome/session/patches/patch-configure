@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2009/10/13 23:20:41 ajacoutot Exp $
---- configure.orig	Tue Oct 13 23:22:10 2009
-+++ configure	Tue Oct 13 23:22:34 2009
-@@ -13172,13 +13172,11 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
+$OpenBSD: patch-configure,v 1.2 2010/04/22 22:38:51 ajacoutot Exp $
+--- configure.orig	Tue Mar 30 02:04:26 2010
++++ configure	Fri Apr 23 00:33:12 2010
+@@ -13254,13 +13254,11 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
          gio-2.0 >= \$GLIB_REQUIRED
          gtk+-2.0 >= \$GTK_REQUIRED
          dbus-glib-1 >= \$DBUS_GLIB_REQUIRED
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.1 2009/10/13 23:20:41 ajacoutot Exp $
  ") 2>&5
    ac_status=$?
    $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
-@@ -13187,7 +13185,6 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
+@@ -13269,7 +13267,6 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
          gio-2.0 >= $GLIB_REQUIRED
          gtk+-2.0 >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.1 2009/10/13 23:20:41 ajacoutot Exp $
  " 2>/dev/null`
  else
    pkg_failed=yes
-@@ -13203,13 +13200,11 @@ if test -n "$GNOME_SESSION_LIBS"; then
+@@ -13285,13 +13282,11 @@ if test -n "$GNOME_SESSION_LIBS"; then
          gio-2.0 >= \$GLIB_REQUIRED
          gtk+-2.0 >= \$GTK_REQUIRED
          dbus-glib-1 >= \$DBUS_GLIB_REQUIRED
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.1 2009/10/13 23:20:41 ajacoutot Exp $
  ") 2>&5
    ac_status=$?
    $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
-@@ -13218,7 +13213,6 @@ if test -n "$GNOME_SESSION_LIBS"; then
+@@ -13300,7 +13295,6 @@ if test -n "$GNOME_SESSION_LIBS"; then
          gio-2.0 >= $GLIB_REQUIRED
          gtk+-2.0 >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.1 2009/10/13 23:20:41 ajacoutot Exp $
  " 2>/dev/null`
  else
    pkg_failed=yes
-@@ -13241,14 +13235,12 @@ fi
+@@ -13323,14 +13317,12 @@ fi
          gio-2.0 >= $GLIB_REQUIRED
          gtk+-2.0 >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
@@ -60,7 +60,7 @@ $OpenBSD: patch-configure,v 1.1 2009/10/13 23:20:41 ajacoutot Exp $
  " 2>&1`
          fi
  	# Put the nasty error message in config.log where it belongs
-@@ -13258,7 +13250,6 @@ fi
+@@ -13340,7 +13332,6 @@ fi
          gio-2.0 >= $GLIB_REQUIRED
          gtk+-2.0 >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
@@ -68,7 +68,7 @@ $OpenBSD: patch-configure,v 1.1 2009/10/13 23:20:41 ajacoutot Exp $
  ) were not met:
  
  $GNOME_SESSION_PKG_ERRORS
-@@ -13274,7 +13265,6 @@ $as_echo "$as_me: error: Package requirements (glib-2.
+@@ -13356,7 +13347,6 @@ $as_echo "$as_me: error: Package requirements (glib-2.
          gio-2.0 >= $GLIB_REQUIRED
          gtk+-2.0 >= $GTK_REQUIRED
          dbus-glib-1 >= $DBUS_GLIB_REQUIRED
