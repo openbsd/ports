@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2009/12/21 18:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/04/22 20:37:26 ajacoutot Exp $
 
 COMMENT=		GTK2 desktop calculator
 
 GNOME_PROJECT=		gcalctool
-GNOME_VERSION=		5.28.2
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		5.30.0
 
 CATEGORIES=		math
 
@@ -16,10 +15,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
-WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb z
+WANTLIB += pixman-1 png pthread pthread-stubs xcb z xcb-render
+WANTLIB += xcb-render-util xml2
 
 MODULES=		devel/gettext \
 			x11/gnome \
