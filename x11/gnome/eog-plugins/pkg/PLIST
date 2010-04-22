@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/11 20:37:20 jasper Exp $
-lib/eog/plugins/champlain.eog-plugin
+@comment $OpenBSD: PLIST,v 1.2 2010/04/22 08:40:00 jasper Exp $
 lib/eog/plugins/console.py
 lib/eog/plugins/console.pyc
 lib/eog/plugins/console.pyo
@@ -8,19 +7,24 @@ lib/eog/plugins/exif-display.eog-plugin
 lib/eog/plugins/exif-display/exif-display-config.ui
 lib/eog/plugins/exif-display/exif-display.ui
 lib/eog/plugins/fit-to-width.eog-plugin
-lib/eog/plugins/libchamplain.a
-lib/eog/plugins/libchamplain.la
-lib/eog/plugins/libchamplain.so
 lib/eog/plugins/libexif-display.a
 lib/eog/plugins/libexif-display.la
 lib/eog/plugins/libexif-display.so
 lib/eog/plugins/libfit-to-width.a
 lib/eog/plugins/libfit-to-width.la
 lib/eog/plugins/libfit-to-width.so
+lib/eog/plugins/libmap.a
+lib/eog/plugins/libmap.la
+lib/eog/plugins/libmap.so
+lib/eog/plugins/libsend-by-mail.a
+lib/eog/plugins/libsend-by-mail.la
+lib/eog/plugins/libsend-by-mail.so
+lib/eog/plugins/map.eog-plugin
 lib/eog/plugins/pythonconsole.eog-plugin
 lib/eog/plugins/pythonconsole.py
 lib/eog/plugins/pythonconsole.pyc
 lib/eog/plugins/pythonconsole.pyo
+lib/eog/plugins/send-by-mail.eog-plugin
 lib/eog/plugins/slideshowshuffle.eog-plugin
 lib/eog/plugins/slideshowshuffle.py
 lib/eog/plugins/slideshowshuffle.pyc

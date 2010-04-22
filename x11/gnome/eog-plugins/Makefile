@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/04 10:50:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/22 08:40:00 jasper Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
-GNOME_VERSION=		2.28.1
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		2.30.0
+
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://live.gnome.org/EyeOfGnome/Plugins
@@ -33,7 +33,7 @@ LIB_DEPENDS=    	champlain-0.4,champlain-gtk-0.4:libchamplain->=0.4.1:geo/libcha
 			gnutls::security/gnutls
 BUILD_DEPENDS=		${RUN_DEPENDS}
 # Depend on the same x.yy version of eog
-RUN_DEPENDS=		:eog->=2.28.0:x11/gnome/eog
+RUN_DEPENDS=		:eog->=2.30.0:x11/gnome/eog
 
 USE_X11=		Yes
 MODGCONF2_SCHEMAS_DIR=	eog-plugins
