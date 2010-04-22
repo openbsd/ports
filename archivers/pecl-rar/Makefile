@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/08/16 06:39:12 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/22 03:44:13 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP support for rar archives
-DISTNAME=	rar-1.0.0
+DISTNAME=	rar-2.0.0
 PKGNAME=	pecl-${DISTNAME}
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	http://pecl.php.net/get/
 CATEGORIES=	archivers www
 
 HOMEPAGE=	http://pecl.php.net/package/rar/
+
+MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes
