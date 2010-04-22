@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/22 12:27:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/22 12:35:40 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, farsight2 component
 
 DISTNAME=		telepathy-farsight-0.0.13
+PKGNAME=		${DISTNAME}p0
+
 SHARED_LIBS +=  telepathy-farsight   0.0      # .0.4
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-farsight/}
@@ -20,5 +22,7 @@ LIB_DEPENDS=		gstfarsight-0.10::net/farsight2 \
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--enable-gtk-doc=no
 
 .include <bsd.port.mk>
