@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2007/11/28 21:04:36 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/22 21:45:07 kili Exp $
 # $FreeBSD: ports/devel/hs-c2hs/Makefile,v 1.20 2004/03/25 08:29:28 obraun Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
+
+BROKEN=			CLDouble missing in GHC
 
 V=			0.15.0
 DISTNAME=		c2hs-${V}
