@@ -1,0 +1,15 @@
+$OpenBSD: patch-camel_camel-sasl-gssapi_c,v 1.1 2010/04/22 09:17:50 ajacoutot Exp $
+--- camel/camel-sasl-gssapi.c.orig	Wed Apr 21 18:35:20 2010
++++ camel/camel-sasl-gssapi.c	Wed Apr 21 18:35:51 2010
+@@ -31,7 +31,11 @@
+ #include <string.h>
+ #include <sys/socket.h>
+ #include <sys/types.h>
++#if defined(__OpenBSD__)
++#include <krb5.h>
++#else
+ #include <krb5/krb5.h>
++#endif
+ #ifdef HAVE_ET_COM_ERR_H
+ #include <et/com_err.h>
+ #else

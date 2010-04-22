@@ -1,0 +1,11 @@
+$OpenBSD: patch-camel_camel-block-file_h,v 1.1 2010/04/22 09:17:50 ajacoutot Exp $
+--- camel/camel-block-file.h.orig	Wed Apr 21 18:35:53 2010
++++ camel/camel-block-file.h	Wed Apr 21 18:36:06 2010
+@@ -21,6 +21,7 @@
+ #ifndef _CAMEL_BLOCK_FILE_H
+ #define _CAMEL_BLOCK_FILE_H
+ 
++#include <sys/types.h>
+ #include <camel/camel-object.h>
+ #include <camel/camel-list-utils.h>
+ #include <glib.h>

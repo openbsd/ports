@@ -1,12 +1,90 @@
-$OpenBSD: patch-configure_ac,v 1.1 2009/10/11 12:42:41 jasper Exp $
---- configure.ac.orig	Sat Oct 10 18:40:55 2009
-+++ configure.ac	Sat Oct 10 18:41:04 2009
-@@ -1125,7 +1125,7 @@ if test "x${with_krb5}" != "xno"; then
- 	LIBS_save="$LIBS"
+$OpenBSD: patch-configure_ac,v 1.2 2010/04/22 09:17:50 ajacoutot Exp $
+
+Stupid configure is stupid. Using a variable that's set
+hundreds of lines later...
+
+--- configure.ac.orig	Wed Mar 17 12:17:31 2010
++++ configure.ac	Thu Apr 22 09:54:50 2010
+@@ -181,8 +181,6 @@ dnl XXX This really belongs in AM_CFLAGS.
+ AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
+ AC_SUBST(AM_CPPFLAGS)
  
- 	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
--	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
-+	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lgssapi"
- 	sunlibs="-lkrb5 -lgss"
- 	AC_CACHE_CHECK([for Kerberos 5], [ac_cv_lib_kerberos5],
- 	[
+-LDFLAGS="$LDFLAGS -Wl,--no-undefined"
+-
+ dnl ******************************
+ dnl Initialize maintainer mode
+ dnl ******************************
+@@ -256,6 +254,13 @@ case "$host" in
+ 	AC_CACHE_VAL(ac_cv_have_addrinfo, [ac_cv_have_addrinfo=yes])
+ 	AC_DEFINE(_WIN32_WINNT, 0x501, [To get getaddrinfo etc declarations])
+ 	;;
++*openbsd*)
++	os_win32='no'
++	NO_UNDEFINED=''
++	SOCKET_LIBS=''
++	DL_LIB=''
++	LIBEXECDIR_IN_SERVER_FILE="$libexecdir"
++	;;
+ *)
+ 	os_win32='no'
+ 	NO_UNDEFINED=''
+@@ -483,6 +488,29 @@ AC_RUN_IFELSE([AC_LANG_SOURCE(
+ 	)],[AC_DEFINE(HAVE_LKSTRFTIME, 1, [strftime supports use of l and k]) ac_cv_lkstrftime=yes],[ac_cv_lkstrftime=no],[ac_cv_lkstrftime=no])
+ AC_MSG_RESULT([$ac_cv_lkstrftime])
+ 
++dnl ******************************
++dnl Posix thread support
++dnl ******************************
++
++dnl GLIB_CONFIG=${GLIB_CONFIG-glib-config}
++dnl GNOME_PTHREAD_CHECK
++
++dnl if test "x$PTHREAD_LIB" = "x" ; then
++dnl 	AC_MSG_ERROR([POSIX threads are currently required for Evolution])
++dnl fi
++
++dnl Notice that this is a hack, and we wont be able to use this forever, but
++dnl at least for some time
++
++EVO_PTHREAD_CHECK
++
++THREADS_LIBS="$PTHREAD_LIB"
++THREADS_CFLAGS="$PTHREAD_CFLAGS"
++
++AC_SUBST(THREADS_LIBS)
++AC_SUBST(THREADS_CFLAGS)
++AC_DEFINE(ENABLE_THREADS,1,[Required])
++
+ dnl ********************************************************************************
+ dnl security extension support (SSL and S/MIME)
+ dnl
+@@ -1144,29 +1172,6 @@ AM_PATH_GLIB_2_0
+ dnl We use AC_SUBST_FILE because AC_SUBST won't deal with newlines
+ EVO_MARSHAL_RULE=$srcdir/marshal.mk
+ AC_SUBST_FILE(EVO_MARSHAL_RULE)
+-
+-dnl ******************************
+-dnl Posix thread support
+-dnl ******************************
+-
+-dnl GLIB_CONFIG=${GLIB_CONFIG-glib-config}
+-dnl GNOME_PTHREAD_CHECK
+-
+-dnl if test "x$PTHREAD_LIB" = "x" ; then
+-dnl 	AC_MSG_ERROR([POSIX threads are currently required for Evolution])
+-dnl fi
+-
+-dnl Notice that this is a hack, and we wont be able to use this forever, but
+-dnl at least for some time
+-
+-EVO_PTHREAD_CHECK
+-
+-THREADS_LIBS="$PTHREAD_LIB"
+-THREADS_CFLAGS="$PTHREAD_CFLAGS"
+-
+-AC_SUBST(THREADS_LIBS)
+-AC_SUBST(THREADS_CFLAGS)
+-AC_DEFINE(ENABLE_THREADS,1,[Required])
+ 
+ dnl ******************************
+ dnl DBus stuff
