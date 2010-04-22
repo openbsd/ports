@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/20 16:28:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/04/22 19:36:05 ajacoutot Exp $
+
+BROKEN=		glib2 is threaded but our perl is not so we end up with undefined symbols
 
 SHARED_ONLY=	Yes
 
