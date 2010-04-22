@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2010/04/22 18:36:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2010/04/22 22:54:35 ajacoutot Exp $
 
 COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	2.30.0
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS=	panel-applet-2       4.0      # .2.67
 
@@ -66,7 +67,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
-	perl -pi -e 's,'s,xsltproc -o,xsltproc --nonet -o,g' \
+	perl -pi -e 's,xsltproc -o,xsltproc --nonet -o,g' \
 		${WRKSRC}/help/clock/Makefile.in \
 		${WRKSRC}/help/fish/Makefile.in
 
