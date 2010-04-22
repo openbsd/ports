@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/07/21 17:20:57 kili Exp $
-bin/happy
+@comment $OpenBSD: PLIST,v 1.5 2010/04/22 21:48:51 kili Exp $
+@bin bin/happy
 share/doc/happy/
+@comment share/doc/${DISTNAME}/
+@comment share/doc/${DISTNAME}/LICENSE
 share/doc/happy/fptools.css
 share/doc/happy/happy-introduction.html
 share/doc/happy/index.html
@@ -35,17 +37,17 @@ share/doc/happy/sec-sequences.html
 share/doc/happy/sec-tips.html
 share/doc/happy/sec-type-signatures.html
 share/doc/happy/sec-using.html
-share/happy-${V}/
-share/happy-${V}/GLR_Base
-share/happy-${V}/GLR_Lib
-share/happy-${V}/GLR_Lib-ghc
-share/happy-${V}/GLR_Lib-ghc-debug
-share/happy-${V}/HappyTemplate
-share/happy-${V}/HappyTemplate-arrays
-share/happy-${V}/HappyTemplate-arrays-coerce
-share/happy-${V}/HappyTemplate-arrays-coerce-debug
-share/happy-${V}/HappyTemplate-arrays-debug
-share/happy-${V}/HappyTemplate-arrays-ghc
-share/happy-${V}/HappyTemplate-arrays-ghc-debug
-share/happy-${V}/HappyTemplate-coerce
-share/happy-${V}/HappyTemplate-ghc
+share/${DISTNAME}/
+share/${DISTNAME}/GLR_Base
+share/${DISTNAME}/GLR_Lib
+share/${DISTNAME}/GLR_Lib-ghc
+share/${DISTNAME}/GLR_Lib-ghc-debug
+share/${DISTNAME}/HappyTemplate
+share/${DISTNAME}/HappyTemplate-arrays
+share/${DISTNAME}/HappyTemplate-arrays-coerce
+share/${DISTNAME}/HappyTemplate-arrays-coerce-debug
+share/${DISTNAME}/HappyTemplate-arrays-debug
+share/${DISTNAME}/HappyTemplate-arrays-ghc
+share/${DISTNAME}/HappyTemplate-arrays-ghc-debug
+share/${DISTNAME}/HappyTemplate-coerce
+share/${DISTNAME}/HappyTemplate-ghc
