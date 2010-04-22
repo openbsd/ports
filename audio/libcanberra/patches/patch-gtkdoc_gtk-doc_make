@@ -1,20 +1,20 @@
-$OpenBSD: patch-gtkdoc_gtk-doc_make,v 1.1 2009/03/05 08:11:56 ajacoutot Exp $
---- gtkdoc/gtk-doc.make.orig	Wed Jan 21 22:02:53 2009
-+++ gtkdoc/gtk-doc.make	Tue Mar  3 09:27:23 2009
+$OpenBSD: patch-gtkdoc_gtk-doc_make,v 1.2 2010/04/22 16:29:49 ajacoutot Exp $
+--- gtkdoc/gtk-doc.make.orig	Mon Apr 19 17:10:13 2010
++++ gtkdoc/gtk-doc.make	Thu Apr 22 18:20:50 2010
 @@ -4,15 +4,15 @@
  # Everything below here is generic #
  ####################################
  
 -if GTK_DOC_USE_LIBTOOL
--GTKDOC_CC = $(LIBTOOL) --mode=compile $(CC) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+-GTKDOC_CC = $(LIBTOOL) --tag=CC --mode=compile $(CC) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 +#if GTK_DOC_USE_LIBTOOL
 +GTKDOC_CC = $(LIBTOOL) --mode=compile $(CC) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
- GTKDOC_LD = $(LIBTOOL) --mode=link $(CC) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS)
+ GTKDOC_LD = $(LIBTOOL) --tag=CC --mode=link $(CC) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS)
  GTKDOC_RUN = $(LIBTOOL) --mode=execute
 -else
 -GTKDOC_CC = $(CC) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 -GTKDOC_LD = $(CC) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS)
--GTKDOC_RUN = sh -c
+-GTKDOC_RUN =
 -endif
 +#else
 +#GTKDOC_CC = $(CC) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -24,23 +24,30 @@ $OpenBSD: patch-gtkdoc_gtk-doc_make,v 1.1 2009/03/05 08:11:56 ajacoutot Exp $
  
  # We set GPATH here; this gives us semantics for GNU make
  # which are more like other make's VPATH, when it comes to
-@@ -47,11 +47,11 @@ REPORT_FILES = \
+@@ -48,22 +48,7 @@ REPORT_FILES = \
  
  CLEANFILES = $(SCANOBJ_FILES) $(REPORT_FILES) $(DOC_STAMPS)
  
 -if ENABLE_GTK_DOC
--all-local: html-build.stamp
+-if GTK_DOC_BUILD_HTML
+-HTML_BUILD_STAMP=html-build.stamp
 -else
-+#if ENABLE_GTK_DOC
-+#all-local: html-build.stamp
-+#else
+-HTML_BUILD_STAMP=
+-endif
+-if GTK_DOC_BUILD_PDF
+-PDF_BUILD_STAMP=pdf-build.stamp
+-else
+-PDF_BUILD_STAMP=
+-endif
+-
+-all-local: $(HTML_BUILD_STAMP) $(PDF_BUILD_STAMP)
+-else
  all-local:
 -endif
-+#endif
  
- docs: html-build.stamp
+ docs: $(HTML_BUILD_STAMP) $(PDF_BUILD_STAMP)
  
-@@ -157,13 +157,13 @@ uninstall-local:
+@@ -187,13 +172,13 @@ uninstall-local:
  #
  # Require gtk-doc when making dist
  #

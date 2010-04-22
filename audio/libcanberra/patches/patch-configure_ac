@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
---- configure.ac.orig	Sat Sep 19 05:05:11 2009
-+++ configure.ac	Sun Oct 11 15:58:13 2009
+$OpenBSD: patch-configure_ac,v 1.6 2010/04/22 16:29:49 ajacoutot Exp $
+--- configure.ac.orig	Mon Apr 19 17:07:05 2010
++++ configure.ac	Thu Apr 22 18:16:26 2010
 @@ -23,14 +23,14 @@ m4_define([ca_major],[0])
- m4_define([ca_minor],[18])
+ m4_define([ca_minor],[24])
  m4_define([ca_version],[ca_major.ca_minor])
  
 -AC_PREREQ(2.63)
@@ -17,8 +17,8 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
 +AM_INIT_AUTOMAKE([foreign 1.9 -Wall])
  
  AC_SUBST(PACKAGE_URL, [http://0pointer.de/lennart/projects/libcanberra/])
- 
-@@ -91,7 +91,7 @@ dnl can give the proper place to find libltdl through 
+ AC_SUBST(LIBCANBERRA_VERSION_INFO, [2:3:2])
+@@ -90,7 +90,7 @@ dnl can give the proper place to find libltdl through 
  dnl variables like LDFLAGS and CPPFLAGS.
  
  AC_CHECK_HEADER([ltdl.h],
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
      [LIBLTDL=])
  
  AS_IF([test "x$LIBLTDL" = "x"],
-@@ -246,6 +246,36 @@ else
+@@ -245,6 +245,36 @@ else
      HAVE_OSS=0
  fi
  
@@ -64,7 +64,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
  ### PulseAudio (optional) ####
  
  AC_ARG_ENABLE([pulse],
-@@ -468,6 +498,7 @@ BUILTIN_DSO=0
+@@ -467,6 +497,7 @@ BUILTIN_DSO=0
  BUILTIN_PULSE=0
  BUILTIN_ALSA=0
  BUILTIN_OSS=0
@@ -72,7 +72,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
  BUILTIN_GSTREAMER=0
  BUILTIN_NULL=0
  
-@@ -480,6 +511,7 @@ case "x$with_builtin" in
+@@ -479,6 +510,7 @@ case "x$with_builtin" in
          BUILTIN_PULSE=1
          HAVE_ALSA=0
  	HAVE_OSS=0
@@ -80,7 +80,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
  	HAVE_GSTREAMER=0
          HAVE_NULL=0
       ;;
-@@ -491,6 +523,7 @@ case "x$with_builtin" in
+@@ -490,6 +522,7 @@ case "x$with_builtin" in
  
          BUILTIN_ALSA=1
  	HAVE_OSS=0
@@ -88,7 +88,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
          HAVE_PULSE=0
  	HAVE_GSTREAMER=0
          HAVE_NULL=0
-@@ -504,6 +537,7 @@ case "x$with_builtin" in
+@@ -503,6 +536,7 @@ case "x$with_builtin" in
          BUILTIN_GSTREAMER=1
          HAVE_ALSA=0
  	HAVE_OSS=0
@@ -96,7 +96,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
          HAVE_PULSE=0
          HAVE_NULL=0
       ;;
-@@ -515,11 +549,25 @@ case "x$with_builtin" in
+@@ -514,11 +548,25 @@ case "x$with_builtin" in
  
  	BUILTIN_OSS=1
  	HAVE_ALSA=0
@@ -122,7 +122,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
       xnull)
          if test "x$HAVE_NULL" != x1 ; then
                  AC_MSG_ERROR([*** Null output selected for builtin driver, but not enabled. ***])
-@@ -527,6 +575,7 @@ case "x$with_builtin" in
+@@ -526,6 +574,7 @@ case "x$with_builtin" in
  
          BUILTIN_NULL=1
          HAVE_PULSE=0
@@ -130,7 +130,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
          HAVE_ALSA=0
  	HAVE_OSS=0
  	HAVE_GSTREAMER=0
-@@ -542,7 +591,7 @@ case "x$with_builtin" in
+@@ -541,7 +590,7 @@ case "x$with_builtin" in
          AC_MSG_ERROR([*** Unknown driver $with_builtin selected for builtin ***])
  esac
  
@@ -139,7 +139,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
     AC_MSG_ERROR([*** No backend enabled. ***])
  fi
  
-@@ -550,23 +599,27 @@ AC_SUBST(HAVE_DSO)
+@@ -549,23 +598,27 @@ AC_SUBST(HAVE_DSO)
  AC_SUBST(HAVE_PULSE)
  AC_SUBST(HAVE_ALSA)
  AC_SUBST(HAVE_OSS)
@@ -167,7 +167,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
  AM_CONDITIONAL([BUILTIN_GSTREAMER], [test "x$BUILTIN_GSTREAMER" = x1])
  AM_CONDITIONAL([BUILTIN_NULL], [test "x$BUILTIN_NULL" = x1])
  
-@@ -624,6 +677,15 @@ if test "x$BUILTIN_OSS" = "x1" ; then
+@@ -623,6 +676,15 @@ if test "x$BUILTIN_OSS" = "x1" ; then
      ENABLE_BUILTIN_OSS=yes
  fi
  
@@ -183,7 +183,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2009/10/11 14:11:58 ajacoutot Exp $
  ENABLE_GSTREAMER=no
  if test "x$HAVE_GSTREAMER" = "x1" ; then
     ENABLE_GSTREAMER=yes
-@@ -674,6 +736,8 @@ echo "
+@@ -673,6 +735,8 @@ echo "
      Builtin ALSA:           ${ENABLE_BUILTIN_ALSA}
      Enable OSS:             ${ENABLE_OSS}
      Builtin OSS:            ${ENABLE_BUILTIN_OSS}
