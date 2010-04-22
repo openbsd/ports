@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/03/21 11:15:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/04/22 10:06:45 ajacoutot Exp $
 zarafa-webaccess/
 @owner www
 @sample zarafa-webaccess/tmp/
@@ -120,13 +120,11 @@ zarafa-webaccess/client/layout/img/appointment_outofoffice.gif
 zarafa-webaccess/client/layout/img/appointment_tentative.gif
 zarafa-webaccess/client/layout/img/appointment_unknown.gif
 zarafa-webaccess/client/layout/img/arrow.gif
-zarafa-webaccess/client/layout/img/back_black.gif
 zarafa-webaccess/client/layout/img/blank.gif
 zarafa-webaccess/client/layout/img/calbtn.gif
 zarafa-webaccess/client/layout/img/calendar_arrowdown.gif
 zarafa-webaccess/client/layout/img/calendar_arrowup.gif
 zarafa-webaccess/client/layout/img/copy.gif
-zarafa-webaccess/client/layout/img/daytitle_back.gif
 zarafa-webaccess/client/layout/img/default_contact_image.gif
 zarafa-webaccess/client/layout/img/delete.gif
 zarafa-webaccess/client/layout/img/dropdownarrow.gif
@@ -249,6 +247,8 @@ zarafa-webaccess/client/layout/img/icon_not_current.gif
 zarafa-webaccess/client/layout/img/icon_open.gif
 zarafa-webaccess/client/layout/img/icon_options.gif
 zarafa-webaccess/client/layout/img/icon_outbox.gif
+zarafa-webaccess/client/layout/img/icon_page_navigation.gif
+zarafa-webaccess/client/layout/img/icon_page_navigation_grey.gif
 zarafa-webaccess/client/layout/img/icon_prev_white.gif
 zarafa-webaccess/client/layout/img/icon_preview_bottom.gif
 zarafa-webaccess/client/layout/img/icon_preview_off.gif
@@ -898,6 +898,7 @@ zarafa-webaccess/client/widgets/fckeditor/fckstyles.xml
 zarafa-webaccess/client/widgets/fckeditor/spellchecker.php
 zarafa-webaccess/client/widgets/infobox.js
 zarafa-webaccess/client/widgets/menu.js
+zarafa-webaccess/client/widgets/pagination.js
 zarafa-webaccess/client/widgets/print.js
 zarafa-webaccess/client/widgets/quota.js
 zarafa-webaccess/client/widgets/suggestionlist.js
@@ -907,6 +908,7 @@ zarafa-webaccess/client/widgets/tree.js
 zarafa-webaccess/client/widgets/widget.js
 zarafa-webaccess/config.php.dist
 @sample zarafa-webaccess/config.php
+zarafa-webaccess/config.php.dist.beforesubst
 zarafa-webaccess/debug.php.disabled
 @mode 644
 @owner www
