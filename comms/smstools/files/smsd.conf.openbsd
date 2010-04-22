@@ -1,8 +1,14 @@
-# $OpenBSD: smsd.conf.openbsd,v 1.1.1.1 2007/07/18 11:03:34 jasper Exp $
+# $OpenBSD: smsd.conf.openbsd,v 1.2 2010/04/22 21:07:58 sthen Exp $
+# See ${TRUEPREFIX}/share/doc/smstools/configure.html for more details
 
 devices = GSM1
 #devices = GSM1, GSM2
 loglevel = 7
+
+# After initial setup this might be a good option; notices by default,
+# but debug logging is buffered and stored to another file after an error.
+#loglevel = 5
+#smart_logging = yes
 
 # setuid() to this user:
 user = _smsd
@@ -18,15 +24,20 @@ logfile = /var/log/smsd/smsd.log
 [GSM1]
 # A sample USB device with typical broken rtscts, so use
 # a send delay to reduce the risk of overruns. Some PC cards
-# also break rts/cts. For this one I have set incoming=no
-# so it doesn't pull the existing messages off the phone.
-device = /dev/cuaU0
+# also break rts/cts. On some 3G cards you might be able to
+# use the control device for SMS simultaneously with using
+# the data device for a PPP connection.
+device = /dev/cuaU1
 incoming = no
 rtscts = no
 send_delay = 20
+# smsc = +447958879879	# some devices need the smsc to be explicitly set
+# memory_start = 0	# defaults to 1; some devices start their index at 0
+# init = ATE0		# ${TRUEPREFIX}/share/doc/smstools/hardwarecomp.html
+# pin = 1111		# pin normally used only with data cards, not phones
 
 [GSM2]
+# For this one I have set incoming=no so it doesn't pull the existing
+# messages off the phone.
 device = /dev/cua00
 incoming = yes
-#pin = 1111
-# pin is normally used only with data cards, not phones
