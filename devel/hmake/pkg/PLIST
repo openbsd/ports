@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.7 2007/06/29 11:07:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/04/22 21:54:16 kili Exp $
 bin/harch
 bin/hi
 bin/hmake
 bin/hmake-config
-bin/runhs
+@bin bin/runhs
 lib/hmake/
 lib/hmake/OpenBSD/
-lib/hmake/OpenBSD/HInteractive
-lib/hmake/OpenBSD/MkConfig
-lib/hmake/OpenBSD/MkProg
-lib/hmake/OpenBSD/Older
+@bin lib/hmake/OpenBSD/HInteractive
+@bin lib/hmake/OpenBSD/MkConfig
+@bin lib/hmake/OpenBSD/MkProg
+@bin lib/hmake/OpenBSD/Older
 lib/hmake/OpenBSD/config
 lib/hmake/OpenBSD/hmakerc
-lib/hmake/OpenBSD/runhs
+@bin lib/hmake/OpenBSD/runhs
 @man man/man1/hmake.1
 share/doc/hmake/
 share/doc/hmake/bugs.html

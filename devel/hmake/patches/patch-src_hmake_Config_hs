@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_hmake_Config_hs,v 1.1 2010/04/22 21:54:16 kili Exp $
+--- src/hmake/Config.hs.orig	Fri Nov 23 15:26:05 2007
++++ src/hmake/Config.hs	Thu Apr  8 14:19:13 2010
+@@ -272,14 +272,14 @@ configure' Ghc ghcpath = do
+       ok <- doesFileExist ghcpkg0
+       let ghcpkg = if ok then ghcpkg0 else dirname fullpath++"/ghc-pkg"
+    -- pkgs <- runAndReadStdout (ghcpkg++" --list-packages")
+-      pkgs <- runAndReadStdout (ghcpkg++" -l")
++      pkgs <- runAndReadStdout (ghcpkg++" list")
+       let pkgsOK = filter (\p-> any (`isPrefixOf` p)
+                                     ["std","base","haskell98"])
+                           (deComma pkgs)
+       idirs <- mapM (\p-> runAndReadStdout
+-                              (ghcpkg++" --show-package="
++                              (ghcpkg++" field "
+                                ++deVersion (ghcsym>=604) p
+-                               ++" --field=import_dirs"))
++                               ++" import_dirs"))
+                     pkgsOK
+       return config{ includePaths = pkgDirs libdir (nub idirs) }
+  where

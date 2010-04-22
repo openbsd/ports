@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_interpreter_HiConfig_hs,v 1.1 2010/04/22 21:54:16 kili Exp $
+--- src/interpreter/HiConfig.hs.orig	Fri Jul  7 18:01:16 2006
++++ src/interpreter/HiConfig.hs	Mon Apr 12 10:57:47 2010
+@@ -64,6 +64,6 @@ nonstdShowsType c  = case c of
+ extraHiOptions c = case compilerStyle c of
+     Nhc98 -> extraCompilerFlags c
+     Hbc   -> extraCompilerFlags c
+-    Ghc   -> "-fglasgow-exts": "-package lang": extraCompilerFlags c
++    Ghc   -> "-fglasgow-exts": extraCompilerFlags c
+     _     -> []
+ 

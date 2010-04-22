@@ -1,9 +1,9 @@
-$OpenBSD: patch-script_harch,v 1.1 2007/06/15 21:28:19 kili Exp $
+$OpenBSD: patch-script_harch,v 1.2 2010/04/22 21:54:16 kili Exp $
 
 No harch black magic for OpenBSD, we don't need this.
 
---- script/harch.orig	Fri Jul  7 18:01:16 2006
-+++ script/harch	Mon Jun 11 15:44:28 2007
+--- script/harch.orig	Tue May 20 11:19:22 2008
++++ script/harch	Thu Apr  8 14:05:53 2010
 @@ -1,97 +1,2 @@
  #!/bin/sh
 -#       harch - determine canonical processor architecture
@@ -23,7 +23,7 @@ No harch black magic for OpenBSD, we don't need this.
 -  if uname -p >/dev/null 2>&1
 -  then PROCESSOR=`uname -p`
 -    case "$PROCESSOR" in
--    unknown|*\ *)
+-    unknown|*\ *|*-*)
 -      PROCESSOR=`uname -m`
 -      ;;
 -    esac
