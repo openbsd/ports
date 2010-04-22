@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/22 08:40:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/22 10:54:53 jasper Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		2.30.0
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		graphics
 
@@ -22,14 +23,15 @@ WANTLIB += drm exif expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z
-WANTLIB += gnome-keyring proxy soup-gnome-2.4
+WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z gnome-keyring proxy
+WANTLIB += soup-gnome-2.4 eggdbus-1 xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-LIB_DEPENDS=    	champlain-0.4,champlain-gtk-0.4:libchamplain->=0.4.1:geo/libchamplain/core \
+LIB_DEPENDS=    	gdata::devel/libgdata \
+			champlain-0.4,champlain-gtk-0.4:libchamplain->=0.4.1:geo/libchamplain/core \
 			gnutls::security/gnutls
 BUILD_DEPENDS=		${RUN_DEPENDS}
 # Depend on the same x.yy version of eog

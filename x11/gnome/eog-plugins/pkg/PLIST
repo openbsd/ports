@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/04/22 08:40:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/04/22 10:54:53 jasper Exp $
 lib/eog/plugins/console.py
 lib/eog/plugins/console.pyc
 lib/eog/plugins/console.pyo
@@ -16,10 +16,17 @@ lib/eog/plugins/libfit-to-width.so
 lib/eog/plugins/libmap.a
 lib/eog/plugins/libmap.la
 lib/eog/plugins/libmap.so
+lib/eog/plugins/libpostasa.a
+lib/eog/plugins/libpostasa.la
+lib/eog/plugins/libpostasa.so
 lib/eog/plugins/libsend-by-mail.a
 lib/eog/plugins/libsend-by-mail.la
 lib/eog/plugins/libsend-by-mail.so
 lib/eog/plugins/map.eog-plugin
+lib/eog/plugins/postasa/
+lib/eog/plugins/postasa.eog-plugin
+lib/eog/plugins/postasa/postasa-config.xml
+lib/eog/plugins/postasa/postasa-uploads.xml
 lib/eog/plugins/pythonconsole.eog-plugin
 lib/eog/plugins/pythonconsole.py
 lib/eog/plugins/pythonconsole.pyc
