@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.1.1.1 2006/07/20 09:23:13 espie Exp $
---- Modules/Platform/OpenBSD.cmake.orig	Wed May 17 15:48:52 2006
-+++ Modules/Platform/OpenBSD.cmake	Mon Jul  3 14:45:04 2006
-@@ -1,2 +1,37 @@
+$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.2 2010/04/22 16:10:11 dcoppa Exp $
+--- Modules/Platform/OpenBSD.cmake.orig	Mon Jan 21 19:59:51 2008
++++ Modules/Platform/OpenBSD.cmake	Fri Apr 16 10:33:28 2010
+@@ -1,2 +1,38 @@
 -SET(CMAKE_DL_LIBS "")
 -INCLUDE(Platform/UnixPaths)
 +IF(EXISTS /usr/include/dlfcn.h)
@@ -14,6 +14,7 @@ $OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.1.1.1 2006/07/20 09:23:13 esp
 +# XXX we set these so that they will be detected
 +  SET(CMAKE_SHARED_LIBRARY_SONAME_C_FLAG "-Wl,-soname,")
 +  SET(CMAKE_SHARED_LIBRARY_SONAME_CXX_FLAG "-Wl,-soname,")
++  SET(CMAKE_SHARED_LIBRARY_SONAME_Fortran_FLAG "-Wl,-soname,")
 +ENDIF(EXISTS /usr/include/dlfcn.h)
 +
 +IF($ENV{LOCALBASE})
