@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_linux_dagent_cfg,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- installer/linux/dagent.cfg.orig	Sun Oct 19 19:47:21 2008
-+++ installer/linux/dagent.cfg	Sun Oct 19 19:53:57 2008
-@@ -10,7 +10,7 @@ server_socket	=	file:///var/run/zarafa
+$OpenBSD: patch-installer_linux_dagent_cfg,v 1.2 2010/04/22 10:06:18 ajacoutot Exp $
+--- installer/linux/dagent.cfg.orig	Wed Apr 14 09:14:51 2010
++++ installer/linux/dagent.cfg	Thu Apr 22 10:28:51 2010
+@@ -11,7 +11,7 @@ server_socket	=	file:///var/run/zarafa
  #       to use this type of login method
  
  # Login to the Zarafa server using this SSL Key

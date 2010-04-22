@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_platform_linux_h,v 1.4 2010/03/21 11:15:20 ajacoutot Exp $
---- common/platform.linux.h.orig	Tue Jan 26 17:34:49 2010
-+++ common/platform.linux.h	Wed Feb  3 08:53:18 2010
+$OpenBSD: patch-common_platform_linux_h,v 1.5 2010/04/22 10:06:18 ajacoutot Exp $
+--- common/platform.linux.h.orig	Wed Apr 14 13:39:51 2010
++++ common/platform.linux.h	Thu Apr 22 10:57:22 2010
 @@ -63,8 +63,15 @@
  #include <dlfcn.h>
  #include <stddef.h>
@@ -14,6 +14,6 @@ $OpenBSD: patch-common_platform_linux_h,v 1.4 2010/03/21 11:15:20 ajacoutot Exp 
  #include <byteswap.h>
  #include <endian.h>
 +#endif
+ #include <errno.h>
  
  #ifdef HAVE_UNISTD_H
-   #include <unistd.h>

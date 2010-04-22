@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_ical_cfg,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot Exp $
---- installer/linux/ical.cfg.orig	Wed Dec 24 15:50:33 2008
-+++ installer/linux/ical.cfg	Sun Jan 11 14:45:36 2009
+$OpenBSD: patch-installer_linux_ical_cfg,v 1.2 2010/04/22 10:06:18 ajacoutot Exp $
+--- installer/linux/ical.cfg.orig	Wed Apr 14 09:14:51 2010
++++ installer/linux/ical.cfg	Thu Apr 22 10:28:51 2010
 @@ -2,16 +2,16 @@
  # ICAL SETTINGS
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-installer_linux_ical_cfg,v 1.1.1.1 2009/02/16 09:44:37 ajacoutot
  
  # IP Address to bind to (0.0.0.0 for ANY)
  server_bind = 0.0.0.0
-@@ -50,10 +50,10 @@ log_timestamp = 1
+@@ -53,10 +53,10 @@ log_timestamp = 1
  # ICAL SSL SETTINGS FOR INCOMING CONNECTIONS
  
  # File with RSA key for SSL

@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_ECLogger_cpp,v 1.4 2010/03/21 11:15:20 ajacoutot Exp $
---- common/ECLogger.cpp.orig	Tue Jan 26 17:34:48 2010
-+++ common/ECLogger.cpp	Wed Feb  3 08:53:18 2010
-@@ -290,8 +290,8 @@ ECLogger* CreateLogger(ECConfig *lpConfig, char *argv0
+$OpenBSD: patch-common_ECLogger_cpp,v 1.5 2010/04/22 10:06:18 ajacoutot Exp $
+--- common/ECLogger.cpp.orig	Wed Apr 14 13:39:51 2010
++++ common/ECLogger.cpp	Thu Apr 22 10:28:51 2010
+@@ -523,8 +523,8 @@ ECLogger* CreateLogger(ECConfig *lpConfig, char *argv0
  			lpLogger = new ECLogger_File(atoi(lpConfig->GetSetting("log_level")), atoi(lpConfig->GetSetting("log_timestamp")), lpConfig->GetSetting("log_file"));
  			// chown file
  			if (pw || gr) {

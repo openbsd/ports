@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.8 2010/03/21 11:15:20 ajacoutot Exp $
---- installer/linux/Makefile.in.orig	Tue Jan 26 17:08:49 2010
-+++ installer/linux/Makefile.in	Wed Feb  3 08:53:18 2010
-@@ -57,22 +57,11 @@ SOURCES =
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.9 2010/04/22 10:06:18 ajacoutot Exp $
+--- installer/linux/Makefile.in.orig	Wed Apr 14 13:13:43 2010
++++ installer/linux/Makefile.in	Thu Apr 22 11:31:44 2010
+@@ -57,23 +57,11 @@ SOURCES =
  DIST_SOURCES =
  am__dist_data_DATA_DIST = server.cfg unix.cfg ldap.openldap.cfg \
  	ldap.active-directory.cfg spooler.cfg gateway.cfg monitor.cfg \
@@ -19,14 +19,15 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.8 2010/03/21 11:15:20 ajacoutot 
  	db-convert-attachments-to-files createuser.dotforward \
 -	db-convert-4.2x-to-5.00 ssl-certificates.sh \
 -	zarafa-dagent.init.cbs4 zarafa-dagent.init.suse \
--	zarafa-dagent.init.fc licensed.cfg ldapms.openldap.cfg \
--	ldapms.active-directory.cfg zarafa-licensed.init.cbs4 \
--	zarafa-licensed.init.suse zarafa-licensed.init.fc
+-	zarafa-dagent.init.fc autorespond licensed.cfg \
+-	ldapms.openldap.cfg ldapms.active-directory.cfg \
+-	zarafa-licensed.init.cbs4 zarafa-licensed.init.suse \
+-	zarafa-licensed.init.fc
 +	db-convert-4.2x-to-5.00 ssl-certificates.sh
  dist_dataDATA_INSTALL = $(INSTALL_DATA)
  am__dist_sysconf_DATA_DIST = addtrust.crt
  dist_sysconfDATA_INSTALL = $(INSTALL_DATA)
-@@ -220,6 +209,7 @@ datadir = ${docdir}
+@@ -221,6 +209,7 @@ datadir = ${docdir}
  datarootdir = @datarootdir@
  docdir = @docdir@
  dvidir = @dvidir@
@@ -34,7 +35,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.8 2010/03/21 11:15:20 ajacoutot 
  exec_prefix = @exec_prefix@
  host = @host@
  host_alias = @host_alias@
-@@ -248,13 +238,9 @@ sharedstatedir = @sharedstatedir@
+@@ -249,13 +238,10 @@ sharedstatedir = @sharedstatedir@
  sysconfdir = /etc/zarafa/report-ca
  target_alias = @target_alias@
  dist_data_DATA = server.cfg unix.cfg ldap.openldap.cfg ldap.active-directory.cfg \
@@ -45,7 +46,8 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.8 2010/03/21 11:15:20 ajacoutot 
 +	spooler.cfg gateway.cfg monitor.cfg dagent.cfg ical.cfg \
  	db-convert-4.1-to-4.2 db-convert-4.20-to-4.21 db-convert-4.20-to-innodb.sql db-calc-storesize db-convert-attachments-to-files \
  	createuser.dotforward db-convert-4.2x-to-5.00 ssl-certificates.sh \
--	zarafa-dagent.init.cbs4 zarafa-dagent.init.suse zarafa-dagent.init.fc\
+-	zarafa-dagent.init.cbs4 zarafa-dagent.init.suse zarafa-dagent.init.fc autorespond\
++	autorespond\
  $(am__append_1)
  dist_bin_SCRIPTS = zarafa-autorespond
  @OSS_ONLY_FALSE@dist_sysconf_DATA = addtrust.crt
