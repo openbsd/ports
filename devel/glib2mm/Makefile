@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2010/03/26 13:20:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/04/22 19:56:27 ajacoutot Exp $
 
 COMMENT-main=		C++ interface for glib2
 COMMENT-docs=		C++ interface for glib2 documentation
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.22.2
+GNOME_VERSION=		2.24.1
 V=			2.4
 
 PKGNAME-main=		glib2mm-${GNOME_VERSION}
@@ -29,8 +29,8 @@ MULTI_PACKAGES=		-main -docs
 MODULES=		devel/gettext \
 			x11/gnome
 LIB_DEPENDS=		sigc-2.0:libsigc++->=2,<3:devel/libsigc++-2 \
-			glib-2.0.>=1800.0,gmodule-2.0,gobject-2.0,gio-2.0::devel/glib2
-WANTLIB-main=		pcre
+			glib-2.0.>=1803,gmodule-2.0,gobject-2.0,gio-2.0,gthread-2.0:glib2->=2.24.0:devel/glib2
+WANTLIB-main=		pcre z
 PKG_ARCH-docs=		*
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=

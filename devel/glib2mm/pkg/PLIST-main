@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/10/04 18:18:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2010/04/22 19:56:28 ajacoutot Exp $
 @pkgpath devel/glib2mm
 %%SHARED%%
 include/giomm-${V}/
@@ -32,7 +32,10 @@ include/giomm-${V}/giomm/fileoutputstream.h
 include/giomm-${V}/giomm/filterinputstream.h
 include/giomm-${V}/giomm/filteroutputstream.h
 include/giomm-${V}/giomm/icon.h
+include/giomm-${V}/giomm/inetaddress.h
+include/giomm-${V}/giomm/inetsocketaddress.h
 include/giomm-${V}/giomm/init.h
+include/giomm-${V}/giomm/initable.h
 include/giomm-${V}/giomm/inputstream.h
 include/giomm-${V}/giomm/iostream.h
 include/giomm-${V}/giomm/loadableicon.h
@@ -40,6 +43,8 @@ include/giomm-${V}/giomm/memoryinputstream.h
 include/giomm-${V}/giomm/memoryoutputstream.h
 include/giomm-${V}/giomm/mount.h
 include/giomm-${V}/giomm/mountoperation.h
+include/giomm-${V}/giomm/networkaddress.h
+include/giomm-${V}/giomm/networkservice.h
 include/giomm-${V}/giomm/outputstream.h
 include/giomm-${V}/giomm/private/
 include/giomm-${V}/giomm/private/appinfo_p.h
@@ -69,6 +74,9 @@ include/giomm-${V}/giomm/private/fileoutputstream_p.h
 include/giomm-${V}/giomm/private/filterinputstream_p.h
 include/giomm-${V}/giomm/private/filteroutputstream_p.h
 include/giomm-${V}/giomm/private/icon_p.h
+include/giomm-${V}/giomm/private/inetaddress_p.h
+include/giomm-${V}/giomm/private/inetsocketaddress_p.h
+include/giomm-${V}/giomm/private/initable_p.h
 include/giomm-${V}/giomm/private/inputstream_p.h
 include/giomm-${V}/giomm/private/iostream_p.h
 include/giomm-${V}/giomm/private/loadableicon_p.h
@@ -76,15 +84,43 @@ include/giomm-${V}/giomm/private/memoryinputstream_p.h
 include/giomm-${V}/giomm/private/memoryoutputstream_p.h
 include/giomm-${V}/giomm/private/mount_p.h
 include/giomm-${V}/giomm/private/mountoperation_p.h
+include/giomm-${V}/giomm/private/networkaddress_p.h
+include/giomm-${V}/giomm/private/networkservice_p.h
 include/giomm-${V}/giomm/private/outputstream_p.h
+include/giomm-${V}/giomm/private/resolver_p.h
 include/giomm-${V}/giomm/private/seekable_p.h
+include/giomm-${V}/giomm/private/socket_p.h
+include/giomm-${V}/giomm/private/socketaddress_p.h
+include/giomm-${V}/giomm/private/socketaddressenumerator_p.h
+include/giomm-${V}/giomm/private/socketclient_p.h
+include/giomm-${V}/giomm/private/socketconnectable_p.h
+include/giomm-${V}/giomm/private/socketconnection_p.h
+include/giomm-${V}/giomm/private/socketlistener_p.h
+include/giomm-${V}/giomm/private/socketservice_p.h
+include/giomm-${V}/giomm/private/srvtarget_p.h
+include/giomm-${V}/giomm/private/tcpconnection_p.h
 include/giomm-${V}/giomm/private/themedicon_p.h
+include/giomm-${V}/giomm/private/threadedsocketservice_p.h
+include/giomm-${V}/giomm/private/unixconnection_p.h
 include/giomm-${V}/giomm/private/unixinputstream_p.h
 include/giomm-${V}/giomm/private/unixoutputstream_p.h
 include/giomm-${V}/giomm/private/volume_p.h
 include/giomm-${V}/giomm/private/volumemonitor_p.h
+include/giomm-${V}/giomm/resolver.h
 include/giomm-${V}/giomm/seekable.h
+include/giomm-${V}/giomm/socket.h
+include/giomm-${V}/giomm/socketaddress.h
+include/giomm-${V}/giomm/socketaddressenumerator.h
+include/giomm-${V}/giomm/socketclient.h
+include/giomm-${V}/giomm/socketconnectable.h
+include/giomm-${V}/giomm/socketconnection.h
+include/giomm-${V}/giomm/socketlistener.h
+include/giomm-${V}/giomm/socketservice.h
+include/giomm-${V}/giomm/srvtarget.h
+include/giomm-${V}/giomm/tcpconnection.h
 include/giomm-${V}/giomm/themedicon.h
+include/giomm-${V}/giomm/threadedsocketservice.h
+include/giomm-${V}/giomm/unixconnection.h
 include/giomm-${V}/giomm/unixinputstream.h
 include/giomm-${V}/giomm/unixoutputstream.h
 include/giomm-${V}/giomm/volume.h
@@ -94,6 +130,7 @@ include/glibmm-${V}/
 include/glibmm-${V}/glibmm/
 include/glibmm-${V}/glibmm.h
 include/glibmm-${V}/glibmm/arrayhandle.h
+include/glibmm-${V}/glibmm/balancedtree.h
 include/glibmm-${V}/glibmm/checksum.h
 include/glibmm-${V}/glibmm/class.h
 include/glibmm-${V}/glibmm/containerhandle_shared.h
@@ -127,6 +164,7 @@ include/glibmm-${V}/glibmm/optiongroup.h
 include/glibmm-${V}/glibmm/pattern.h
 include/glibmm-${V}/glibmm/priorities.h
 include/glibmm-${V}/glibmm/private/
+include/glibmm-${V}/glibmm/private/balancedtree_p.h
 include/glibmm-${V}/glibmm/private/checksum_p.h
 include/glibmm-${V}/glibmm/private/convert_p.h
 include/glibmm-${V}/glibmm/private/date_p.h
@@ -239,7 +277,6 @@ lib/libglibmm_generate_extra_defs-${V}.la
 lib/pkgconfig/
 lib/pkgconfig/giomm-${V}.pc
 lib/pkgconfig/glibmm-${V}.pc
-share/aclocal/
 share/aclocal/glibmm_check_perl.m4
 share/glibmm-${V}/
 share/glibmm-${V}/doctool/
