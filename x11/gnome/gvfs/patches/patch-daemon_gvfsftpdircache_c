@@ -1,7 +1,7 @@
-$OpenBSD: patch-daemon_gvfsftpdircache_c,v 1.1 2009/10/11 13:32:27 ajacoutot Exp $
---- daemon/gvfsftpdircache.c.orig	Sun Oct 11 11:57:49 2009
-+++ daemon/gvfsftpdircache.c	Sun Oct 11 12:02:41 2009
-@@ -586,7 +586,7 @@ g_vfs_ftp_dir_cache_funcs_process (GInputStream *     
+$OpenBSD: patch-daemon_gvfsftpdircache_c,v 1.2 2010/04/22 20:27:05 ajacoutot Exp $
+--- daemon/gvfsftpdircache.c.orig	Mon Feb 22 10:57:39 2010
++++ daemon/gvfsftpdircache.c	Thu Apr 22 21:56:56 2010
+@@ -595,7 +595,7 @@ g_vfs_ftp_dir_cache_funcs_process (GInputStream *     
                                         type == 'l' ? G_FILE_TYPE_SYMBOLIC_LINK :
                                         G_FILE_TYPE_DIRECTORY);
  

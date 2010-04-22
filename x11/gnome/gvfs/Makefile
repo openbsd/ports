@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2010/04/20 20:11:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/04/22 20:27:05 ajacoutot Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
 
 GNOME_PROJECT=	gvfs
-GNOME_VERSION=	1.4.3
+GNOME_VERSION=	1.6.0
 
-PKGNAME-main=	${DISTNAME}p1
-PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}p0
+PKGNAME-main=	${DISTNAME}
+PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
 
-SHARED_LIBS +=	gvfscommon           2.0      # .0.0
-SHARED_LIBS +=  gvfscommon-dnssd     0.0      # .0.0
+SHARED_LIBS +=  gvfscommon           3.0      # .0.0
+SHARED_LIBS +=  gvfscommon-dnssd     1.0      # .0.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,12 +25,13 @@ MODULES=	devel/gettext \
 
 WANTLIB += ORBit-2 c dbus-1 dbus-glib-1 gconf-2 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 pcre pthread util
+WANTLIB += eggdbus-1 expat gpg-error z gcrypt
 
 LIB_DEPENDS=	gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += bz2 crypto gcrypt gnutls gpg-error lzma m proxy soup-2.4
-WANTLIB-main += sqlite3 tasn1 xml2 z
+WANTLIB-main += bz2 gnutls lzma m proxy soup-2.4 sqlite3
+WANTLIB-main += tasn1 xml2
 
 DESKTOP_FILES=	Yes
 
@@ -44,10 +45,12 @@ LIB_DEPENDS-smb= ${LIB_DEPENDS} \
 		gvfscommon.>=2::${BASE_PKGPATH},-main \
 		smbclient::net/samba
 
-CONFIGURE_ARGS=	--disable-gtk-doc \
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-gtk-doc \
 		--disable-cdda \
 		--disable-fuse \
 		--disable-hal \
+		--disable-afc \
 		--disable-obexftp \
 		--disable-gphoto2 \
 		--disable-gudev \

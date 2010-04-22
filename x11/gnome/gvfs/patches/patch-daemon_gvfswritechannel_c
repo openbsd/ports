@@ -1,0 +1,11 @@
+$OpenBSD: patch-daemon_gvfswritechannel_c,v 1.1 2010/04/22 20:27:05 ajacoutot Exp $
+--- daemon/gvfswritechannel.c.orig	Tue Jul 14 13:07:59 2009
++++ daemon/gvfswritechannel.c	Thu Apr 22 22:10:34 2010
+@@ -29,6 +29,7 @@
+ #include <sys/socket.h>
+ #include <sys/un.h>
+ #include <fcntl.h>
++#include <string.h>
+ 
+ #include <glib.h>
+ #include <glib-object.h>
