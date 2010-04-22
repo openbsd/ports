@@ -1,0 +1,14 @@
+$OpenBSD: patch-dialogs_keyboard-settings_xfce-keyboard-settings_c,v 1.1 2010/04/22 16:15:27 landry Exp $
+Adapt to libxklavier 5 api
+http://git.xfce.org/xfce/xfce4-settings/commit/?id=bdeff0efd3342b36e56830fd208103c4453ad0d4
+--- dialogs/keyboard-settings/xfce-keyboard-settings.c.orig	Thu Apr 22 17:51:20 2010
++++ dialogs/keyboard-settings/xfce-keyboard-settings.c	Thu Apr 22 17:52:05 2010
+@@ -457,7 +457,7 @@ xfce_keyboard_settings_finalize (GObject *object)
+ 
+ #ifdef HAVE_LIBXKLAVIER
+   /* Stop xklavier engine */
+-  xkl_engine_stop_listen (settings->priv->xkl_engine);
++  xkl_engine_stop_listen (settings->priv->xkl_engine, XKLL_TRACK_KEYBOARD_STATE);
+ #endif /* HAVE_LIBXKLAVIER */
+ 
+   g_object_unref (settings->priv->provider);
