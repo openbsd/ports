@@ -1,0 +1,12 @@
+$OpenBSD: patch-m4_evo_krb5_support_m4,v 1.1 2010/04/22 16:30:02 jasper Exp $
+--- m4/evo_krb5_support.m4.orig	Thu Apr 22 12:36:11 2010
++++ m4/evo_krb5_support.m4	Thu Apr 22 12:36:18 2010
+@@ -27,7 +27,7 @@ AC_DEFUN([EVO_KRB5_SUPPORT],[
+ 		LIBS_save="$LIBS"
+ 
+ 		mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
+-		heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
++		heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lgssapi"
+ 		sunlibs="-lkrb5 -lgss"
+ 		AC_CACHE_VAL([ac_cv_lib_kerberos5],
+ 		[

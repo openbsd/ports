@@ -1,12 +1,10 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.4 2009/11/14 16:33:16 ajacoutot Exp $
-lib/evolution/${R}/components/libevolution-addressbook.so
-lib/evolution/${R}/components/libevolution-calendar.so
-lib/evolution/${R}/components/libevolution-mail.so
+@comment $OpenBSD: PFRAG.shared-main,v 1.5 2010/04/22 16:30:02 jasper Exp $
+@lib lib/evolution/${R}/libcomposer.so.${LIBcomposer_VERSION}
 @lib lib/evolution/${R}/libeabutil.so.${LIBeabutil_VERSION}
 @lib lib/evolution/${R}/libeconduit.so.${LIBeconduit_VERSION}
 @lib lib/evolution/${R}/libecontacteditor.so.${LIBecontacteditor_VERSION}
 @lib lib/evolution/${R}/libecontactlisteditor.so.${LIBecontactlisteditor_VERSION}
-@lib lib/evolution/${R}/libefilterbar.so.${LIBefilterbar_VERSION}
+@lib lib/evolution/${R}/libemformat.so.${LIBemformat_VERSION}
 @lib lib/evolution/${R}/libemiscwidgets.so.${LIBemiscwidgets_VERSION}
 @lib lib/evolution/${R}/libeshell.so.${LIBeshell_VERSION}
 @lib lib/evolution/${R}/libessmime.so.${LIBessmime_VERSION}
@@ -15,18 +13,19 @@ lib/evolution/${R}/components/libevolution-mail.so
 @lib lib/evolution/${R}/libetimezonedialog.so.${LIBetimezonedialog_VERSION}
 @lib lib/evolution/${R}/libeutil.so.${LIBeutil_VERSION}
 @lib lib/evolution/${R}/libevolution-a11y.so.${LIBevolution-a11y_VERSION}
-@lib lib/evolution/${R}/libevolution-addressbook-a11y.so.${LIBevolution-addressbook-a11y_VERSION}
 @lib lib/evolution/${R}/libevolution-addressbook-importers.so.${LIBevolution-addressbook-importers_VERSION}
-@lib lib/evolution/${R}/libevolution-cal-shared.so.${LIBevolution-cal-shared_VERSION}
-@lib lib/evolution/${R}/libevolution-calendar-a11y.so.${LIBevolution-calendar-a11y_VERSION}
 @lib lib/evolution/${R}/libevolution-calendar-importers.so.${LIBevolution-calendar-importers_VERSION}
+@lib lib/evolution/${R}/libevolution-calendar.so.${LIBevolution-calendar_VERSION}
 @lib lib/evolution/${R}/libevolution-mail-importers.so.${LIBevolution-mail-importers_VERSION}
-@lib lib/evolution/${R}/libevolution-mail-shared.so.${LIBevolution-mail-shared_VERSION}
+@lib lib/evolution/${R}/libevolution-mail-settings.so.${LIBevolution-mail-settings_VERSION}
+@lib lib/evolution/${R}/libevolution-mail.so.${LIBevolution-mail_VERSION}
 @lib lib/evolution/${R}/libevolution-smime.so.${LIBevolution-smime_VERSION}
-@lib lib/evolution/${R}/libevolution-widgets-a11y.so.${LIBevolution-widgets-a11y_VERSION}
 @lib lib/evolution/${R}/libfilter.so.${LIBfilter_VERSION}
 @lib lib/evolution/${R}/libmenus.so.${LIBmenus_VERSION}
-lib/evolution/${R}/plugins/libmail-account-disable.so
+lib/evolution/${R}/modules/libevolution-module-addressbook.so
+lib/evolution/${R}/modules/libevolution-module-calendar.so
+lib/evolution/${R}/modules/libevolution-module-mail.so
+lib/evolution/${R}/modules/libevolution-module-plugin-lib.so
 lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.so
 lib/evolution/${R}/plugins/liborg-gnome-bogo-junk-plugin.so
 lib/evolution/${R}/plugins/liborg-gnome-calendar-file.so
@@ -37,9 +36,8 @@ lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-google.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.so
 lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.so
-lib/evolution/${R}/plugins/liborg-gnome-exchange-operations.so
 lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.so
-lib/evolution/${R}/plugins/liborg-gnome-gw-account-setup.so
+lib/evolution/${R}/plugins/liborg-gnome-image-inline.so
 lib/evolution/${R}/plugins/liborg-gnome-imap-features.so
 lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.so
 lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.so
