@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/01/03 16:40:42 jcs Exp $
+# $OpenBSD: Makefile,v 1.54 2010/04/22 01:28:02 sthen Exp $
 
 CATEGORIES=		geo
 COMMENT=		geographic location of OpenBSD developers
@@ -14,6 +14,9 @@ NO_REGRESS=		Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/markers
 	${INSTALL_DATA} ${FILESDIR}/OpenBSD ${PREFIX}/share/markers
+
+where-am-i:
+	@echo "$$(sysctl -n hw.sensors.nmea0.angle0 | cut -d' ' -f1)\t\t$$(sysctl -n hw.sensors.nmea0.angle1 | cut -d' ' -f1)\t\t\"$$(whoami)\"\\t\t#$$(finger $$(whoami) | head -1 | cut -d\: -f3-)"
 
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
