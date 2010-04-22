@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2010/04/09 09:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2010/04/22 11:20:02 jasper Exp $
 
-COMMENT=	simple media player for GNOME
+COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
-GNOME_VERSION=	2.28.5
-PKGNAME=	${DISTNAME}p0
+GNOME_VERSION=	2.30.0
 
 CATEGORIES=	multimedia
 
@@ -24,8 +23,8 @@ WANTLIB += glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-keyring
 WANTLIB += gnutls gobject-2.0 gpg-error gstbase-0.10 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 tasn1
-WANTLIB += unique-1.0 util xcb xml2 z
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 tasn1 unique-1.0
+WANTLIB += util xcb xml2 z eggdbus-1 xcb-render xcb-render-util
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -89,7 +88,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-easy-codec-installation \
 		--disable-browser-plugins \
 		--disable-gmp-plugin \
-		--disable-complex-plugin \
 		--disable-narrowspace-plugin \
 		--disable-mully-plugin \
 		--disable-cone-plugin \
