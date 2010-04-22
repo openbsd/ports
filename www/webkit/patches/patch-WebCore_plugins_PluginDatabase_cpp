@@ -1,7 +1,7 @@
-$OpenBSD: patch-WebCore_plugins_PluginDatabase_cpp,v 1.2 2010/04/05 21:44:41 landry Exp $
---- WebCore/plugins/PluginDatabase.cpp.orig	Tue Jan  5 17:07:28 2010
-+++ WebCore/plugins/PluginDatabase.cpp	Wed Mar 24 17:42:53 2010
-@@ -339,6 +339,7 @@ Vector<String> PluginDatabase::defaultPluginDirectorie
+$OpenBSD: patch-WebCore_plugins_PluginDatabase_cpp,v 1.3 2010/04/22 13:37:00 landry Exp $
+--- WebCore/plugins/PluginDatabase.cpp.orig	Fri Mar 19 16:20:54 2010
++++ WebCore/plugins/PluginDatabase.cpp	Tue Apr 20 21:14:44 2010
+@@ -340,6 +340,7 @@ Vector<String> PluginDatabase::defaultPluginDirectorie
      userPluginPath.append(String("/.netscape/plugins"));
      paths.append(userPluginPath);
  

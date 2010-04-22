@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2010/04/05 21:44:41 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2010/04/22 13:36:59 landry Exp $
 
 COMMENT =	open source web browser engine
 
-V = 1.1.18
+V = 1.2.0
 DISTNAME =	webkit-${V}
 # XXX do not remove v0. pX comes before vX.
-PKGNAME =	webkit-${V}p1v0
+PKGNAME =	webkit-${V}v0
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -13,7 +13,7 @@ MASTER_SITES =	${HOMEPAGE}
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
-SHARED_LIBS =	webkit-1.0	2.0 #.16.0
+SHARED_LIBS =	webkit-1.0	2.1 #.19.2
 
 # LGPLv2 / BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -54,7 +54,7 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 
 LIB_DEPENDS =	gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0,gailutil::x11/gtk+2,-main \
 		gstreamer-0.10,gstbase-0.10::multimedia/gstreamer-0.10/core \
-		gstvideo-0.10,gstpbutils-0.10::multimedia/gstreamer-0.10/plugins-base \
+		gstvideo-0.10,gstapp-0.10,gstpbutils-0.10::multimedia/gstreamer-0.10/plugins-base \
 		icudata,icui18n,icuuc::textproc/icu4c \
 		sqlite3::databases/sqlite3 \
 		xslt::textproc/libxslt \

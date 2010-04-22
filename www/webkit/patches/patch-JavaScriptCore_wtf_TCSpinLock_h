@@ -1,4 +1,4 @@
-$OpenBSD: patch-JavaScriptCore_wtf_TCSpinLock_h,v 1.1 2010/01/10 20:06:17 landry Exp $
+$OpenBSD: patch-JavaScriptCore_wtf_TCSpinLock_h,v 1.2 2010/04/22 13:37:00 landry Exp $
 workaround for a g++4 regression(?) on powerpc, reported as
 https://bugs.webkit.org/show_bug.cgi?id=33451 :
 JavaScriptCore/wtf/TCSpinLock.h:112: error: 'asm' operand requires impossible reload"
@@ -7,14 +7,14 @@ Another option is :
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	--enable-optimizations=no
 .endif
---- JavaScriptCore/wtf/TCSpinLock.h.orig	Sat Jan  9 15:20:30 2010
-+++ JavaScriptCore/wtf/TCSpinLock.h	Sat Jan  9 15:20:48 2010
+--- JavaScriptCore/wtf/TCSpinLock.h.orig	Fri Mar 19 16:20:53 2010
++++ JavaScriptCore/wtf/TCSpinLock.h	Tue Apr 20 21:09:25 2010
 @@ -33,7 +33,7 @@
  #ifndef TCMALLOC_INTERNAL_SPINLOCK_H__
  #define TCMALLOC_INTERNAL_SPINLOCK_H__
  
--#if (CPU(X86) || CPU(PPC)) && (COMPILER(GCC) || COMPILER(MSVC))
-+#if CPU(X86) && (COMPILER(GCC) || COMPILER(MSVC))
+-#if (CPU(X86) || CPU(X86_64) || CPU(PPC)) && (COMPILER(GCC) || COMPILER(MSVC))
++#if (CPU(X86) || CPU(X86_64)) && (COMPILER(GCC) || COMPILER(MSVC))
  
  #include <time.h>       /* For nanosleep() */
  

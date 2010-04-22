@@ -1,7 +1,20 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.5 2010/01/10 20:06:17 landry Exp $
---- GNUmakefile.in.orig	Tue Jan  5 17:50:30 2010
-+++ GNUmakefile.in	Tue Jan  5 23:00:36 2010
-@@ -5642,7 +5642,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+$OpenBSD: patch-GNUmakefile_in,v 1.6 2010/04/22 13:37:00 landry Exp $
+install GtkLauncher, remove silent build lines, fix lpthread/pthread
+--- GNUmakefile.in.orig	Mon Apr  5 14:55:24 2010
++++ GNUmakefile.in	Wed Apr 21 15:32:34 2010
+@@ -82,9 +82,9 @@ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-bin_PROGRAMS = Programs/jsc$(EXEEXT)
++bin_PROGRAMS = Programs/jsc$(EXEEXT) Programs/GtkLauncher$(EXEEXT)
+ noinst_PROGRAMS = Programs/minidom$(EXEEXT) \
+-	Programs/GtkLauncher$(EXEEXT) Programs/DumpRenderTree$(EXEEXT) \
++	Programs/DumpRenderTree$(EXEEXT) \
+ 	$(am__EXEEXT_1)
+ 
+ # For the Gtk port we want to use XP_UNIX both in X11 and Mac
+@@ -5877,7 +5877,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  AM_V_CC = $(am__v_CC_$(V))
  am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
@@ -10,7 +23,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.5 2010/01/10 20:06:17 landry Exp $
  AM_V_at = $(am__v_at_$(V))
  am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
  am__v_at_0 = @
-@@ -5652,22 +5652,22 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
+@@ -5887,22 +5887,22 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CCLD = $(am__v_CCLD_$(V))
  am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
@@ -37,7 +50,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.5 2010/01/10 20:06:17 landry Exp $
  SOURCES = $(TestNetscapePlugin_libtestnetscapeplugin_la_SOURCES) \
  	$(libJavaScriptCore_la_SOURCES) \
  	$(nodist_libJavaScriptCore_la_SOURCES) \
-@@ -8650,9 +8650,10 @@ libJavaScriptCore_la_SOURCES = \
+@@ -8956,9 +8956,10 @@ libJavaScriptCore_la_SOURCES = \
  
  libJavaScriptCore_la_LIBADD = \
  	$(UNICODE_LIBS) \
@@ -50,7 +63,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.5 2010/01/10 20:06:17 landry Exp $
  libJavaScriptCore_la_CXXFLAGS = \
  	$(global_cxxflags) \
  	$(libJavaScriptCore_la_CFLAGS)
-@@ -8718,12 +8719,12 @@ libwebkit_1_0_la_CPPFLAGS = \
+@@ -9007,12 +9008,12 @@ libwebkit_1_0_la_CPPFLAGS = \
  	$(HILDON_CPPFLAGS)
  
  libwebkit_1_0_la_LDFLAGS = \
@@ -62,9 +75,9 @@ $OpenBSD: patch-GNUmakefile_in,v 1.5 2010/01/10 20:06:17 landry Exp $
  libwebkit_1_0_la_LIBADD = \
 -	-lpthread \
  	libJavaScriptCore.la \
- 	libWebCore.la \
  	libWebCoreJS.la \
-@@ -8786,7 +8787,7 @@ Programs_minidom_CFLAGS = \
+ 	$(webcore_ldflags) \
+@@ -9074,7 +9075,7 @@ Programs_minidom_CFLAGS = \
  Programs_minidom_LDADD = \
  	 libJavaScriptCore.la \
  	 -lm \
