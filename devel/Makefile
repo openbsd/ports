@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.789 2010/04/21 23:00:18 nicm Exp $
+# $OpenBSD: Makefile,v 1.790 2010/04/22 22:18:27 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -37,6 +37,7 @@
      SUBDIR += bouml
      SUBDIR += bzr
      SUBDIR += c2hs
+     SUBDIR += cabal-install
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
      SUBDIR += ccache
@@ -127,7 +128,25 @@
      SUBDIR += help2man
      SUBDIR += hmake
      SUBDIR += horde
-     SUBDIR += hs-newbinary
+     SUBDIR += hs-HUnit
+     SUBDIR += hs-QuickCheck
+     SUBDIR += hs-binary
+     SUBDIR += hs-binary-shared
+     SUBDIR += hs-dataenc
+     SUBDIR += hs-deepseq
+     SUBDIR += hs-fgl
+     SUBDIR += hs-ghc-paths
+     SUBDIR += hs-hashed-storage
+     SUBDIR += hs-language-c
+     SUBDIR += hs-mmap
+     SUBDIR += hs-network
+     SUBDIR += hs-parallel
+     SUBDIR += hs-parsec
+     SUBDIR += hs-readline
+     SUBDIR += hs-regex-base
+     SUBDIR += hs-regex-compat
+     SUBDIR += hs-regex-posix
+     SUBDIR += hs-stm
      SUBDIR += hscolour
      SUBDIR += hudson
      SUBDIR += id-utils
