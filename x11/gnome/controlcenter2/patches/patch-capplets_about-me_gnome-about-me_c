@@ -1,12 +1,12 @@
-$OpenBSD: patch-capplets_about-me_gnome-about-me_c,v 1.4 2009/10/13 19:09:05 ajacoutot Exp $
+$OpenBSD: patch-capplets_about-me_gnome-about-me_c,v 1.5 2010/04/22 22:32:19 ajacoutot Exp $
 
 Spawn a gnome-terminal to allow users to change their passwords, as we cannot
 fork passwd(1) to the background.
 From Open Solaris' control-center-01-passwd-in-terminal.diff
 
---- capplets/about-me/gnome-about-me.c.orig	Mon Aug 17 10:40:16 2009
-+++ capplets/about-me/gnome-about-me.c	Tue Oct 13 19:25:22 2009
-@@ -820,7 +820,25 @@ about_me_passwd_clicked_cb (GtkWidget *button, GnomeAb
+--- capplets/about-me/gnome-about-me.c.orig	Mon Mar 29 16:22:56 2010
++++ capplets/about-me/gnome-about-me.c	Fri Apr 23 00:12:22 2010
+@@ -824,7 +824,25 @@ about_me_passwd_clicked_cb (GtkWidget *button, GnomeAb
  	GtkBuilder *dialog;
  
  	dialog = me->dialog;
