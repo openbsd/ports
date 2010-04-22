@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2010/04/21 17:33:31 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2010/04/22 19:34:06 ajacoutot Exp $
 @conflict glib2-fam-*
 @pkgpath devel/glib2
 @pkgpath devel/glib2,-fam
 %%SHARED%%
+@bin bin/gio-querymodules
 @bin bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
@@ -11,7 +12,9 @@ bin/glib-mkenums
 include/gio-unix-2.0/
 include/gio-unix-2.0/gio/
 include/gio-unix-2.0/gio/gdesktopappinfo.h
+include/gio-unix-2.0/gio/gfiledescriptorbased.h
 include/gio-unix-2.0/gio/gunixconnection.h
+include/gio-unix-2.0/gio/gunixfdlist.h
 include/gio-unix-2.0/gio/gunixfdmessage.h
 include/gio-unix-2.0/gio/gunixinputstream.h
 include/gio-unix-2.0/gio/gunixmounts.h
@@ -25,8 +28,11 @@ include/glib-2.0/gio/gasyncresult.h
 include/glib-2.0/gio/gbufferedinputstream.h
 include/glib-2.0/gio/gbufferedoutputstream.h
 include/glib-2.0/gio/gcancellable.h
+include/glib-2.0/gio/gcharsetconverter.h
 include/glib-2.0/gio/gcontenttype.h
 include/glib-2.0/gio/gconverter.h
+include/glib-2.0/gio/gconverterinputstream.h
+include/glib-2.0/gio/gconverteroutputstream.h
 include/glib-2.0/gio/gdatainputstream.h
 include/glib-2.0/gio/gdataoutputstream.h
 include/glib-2.0/gio/gdrive.h
@@ -85,6 +91,8 @@ include/glib-2.0/gio/gthreadedsocketservice.h
 include/glib-2.0/gio/gvfs.h
 include/glib-2.0/gio/gvolume.h
 include/glib-2.0/gio/gvolumemonitor.h
+include/glib-2.0/gio/gzlibcompressor.h
+include/glib-2.0/gio/gzlibdecompressor.h
 include/glib-2.0/glib/
 include/glib-2.0/glib-object.h
 include/glib-2.0/glib.h
@@ -94,6 +102,7 @@ include/glib-2.0/glib/gasyncqueue.h
 include/glib-2.0/glib/gatomic.h
 include/glib-2.0/glib/gbacktrace.h
 include/glib-2.0/glib/gbase64.h
+include/glib-2.0/glib/gbitlock.h
 include/glib-2.0/glib/gbookmarkfile.h
 include/glib-2.0/glib/gcache.h
 include/glib-2.0/glib/gchecksum.h
@@ -148,6 +157,8 @@ include/glib-2.0/glib/gtypes.h
 include/glib-2.0/glib/gunicode.h
 include/glib-2.0/glib/gurifuncs.h
 include/glib-2.0/glib/gutils.h
+include/glib-2.0/glib/gvariant.h
+include/glib-2.0/glib/gvarianttype.h
 include/glib-2.0/glib/gwin32.h
 include/glib-2.0/gmodule.h
 include/glib-2.0/gobject/
@@ -204,8 +215,8 @@ share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/gdb/
 share/gdb/auto-load/
-share/gdb/auto-load/libglib-2.0.so.0.1802.3-gdb.py
-share/gdb/auto-load/libgobject-2.0.so.0.1802.3-gdb.py
+share/gdb/auto-load/libglib-2.0.so.0.1803.0-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.1803.0-gdb.py
 share/glib-2.0/
 share/glib-2.0/gdb/
 share/glib-2.0/gdb/glib.py
@@ -214,6 +225,9 @@ share/glib-2.0/gettext/
 share/glib-2.0/gettext/mkinstalldirs
 share/glib-2.0/gettext/po/
 share/glib-2.0/gettext/po/Makefile.in.in
+share/locale/af/
+share/locale/af/LC_MESSAGES/
+share/locale/af/LC_MESSAGES/glib20.mo
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/glib20.mo
@@ -223,6 +237,9 @@ share/locale/ar/LC_MESSAGES/glib20.mo
 share/locale/as/
 share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/glib20.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/glib20.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/glib20.mo
@@ -254,6 +271,9 @@ share/locale/dz/
 share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/glib20.mo
 share/locale/el/LC_MESSAGES/glib20.mo
+share/locale/en@shaw/
+share/locale/en@shaw/LC_MESSAGES/
+share/locale/en@shaw/LC_MESSAGES/glib20.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/glib20.mo
@@ -325,6 +345,9 @@ share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/glib20.mo
 share/locale/nb/LC_MESSAGES/glib20.mo
+share/locale/nds/
+share/locale/nds/LC_MESSAGES/
+share/locale/nds/LC_MESSAGES/glib20.mo
 share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/glib20.mo

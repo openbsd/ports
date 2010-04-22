@@ -1,7 +1,7 @@
-$OpenBSD: patch-glib_grand_c,v 1.1 2007/09/13 10:51:14 djm Exp $
---- glib/grand.c.orig	Thu Sep 13 09:01:56 2007
-+++ glib/grand.c	Thu Sep 13 09:02:35 2007
-@@ -173,7 +173,7 @@ g_rand_new (void)
+$OpenBSD: patch-glib_grand_c,v 1.2 2010/04/22 19:34:06 ajacoutot Exp $
+--- glib/grand.c.orig	Wed Mar 17 21:55:34 2010
++++ glib/grand.c	Sun Mar 28 07:51:43 2010
+@@ -223,7 +223,7 @@ g_rand_new (void)
        do
          {
  	  errno = 0;
