@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/12/21 18:03:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/04/22 20:51:13 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	plugins and utilities for seahorse
 
 GNOME_PROJECT=	seahorse-plugins
 GNOME_VERSION=	2.28.1
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 
 CATEGORIES=	security
 
