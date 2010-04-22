@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2010/04/22 22:38:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2010/04/22 22:44:28 ajacoutot Exp $
 @bin bin/gnome-session
 @bin bin/gnome-session-properties
 @bin bin/gnome-session-save
@@ -167,5 +167,7 @@ ${SCHEMAS_INSTDIR}/gnome-session.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/xsessions/
 share/xsessions/gnome.desktop
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
