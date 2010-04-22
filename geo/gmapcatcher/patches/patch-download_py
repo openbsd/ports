@@ -1,0 +1,12 @@
+$OpenBSD: patch-download_py,v 1.1 2010/04/22 10:39:28 kevlo Exp $
+--- download.py.orig	Thu Apr 22 13:59:41 2010
++++ download.py	Thu Apr 22 13:59:53 2010
+@@ -12,7 +12,7 @@ from gmapcatcher.mapServices import MapServ
+ from gmapcatcher.mapDownloader import MapDownloader
+ 
+ mConf = mapConf.MapConf()
+-ctx_map = MapServ(conf.init_path, conf.repository_type)
++ctx_map = MapServ(mConf.init_path, mConf.repository_type)
+ downloader = None
+ 
+ def do_nothing(*args, **kwargs):

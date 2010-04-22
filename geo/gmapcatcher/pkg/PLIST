@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/25 10:13:26 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/22 10:39:28 kevlo Exp $
 bin/gmapcatcher
 bin/gmapcatcher-download
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/
@@ -127,8 +127,14 @@ lib/python${MODPY_VERSION}/site-packages/gmapcatcher/pyGPSD/nmea/track.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/pyGPSD/nmea/track.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/pyGPSD/scan.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/pyGPSD/scan.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepo.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepo.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoFS.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoFS.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoFactory.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoFactory.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoSQLite3.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoSQLite3.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widChangeTheme.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widChangeTheme.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widDrawingArea.py

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/25 10:13:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/22 10:39:28 kevlo Exp $
 
 COMMENT=	offline maps viewer
 
-VERSION=	0.6.3.0
+VERSION=	0.7.0.0
 DISTNAME=	GMapCatcher-${VERSION}
 PKGNAME=	gmapcatcher-${VERSION}
 
@@ -23,7 +23,8 @@ MASTER_SITES=	http://gmapcatcher.googlecode.com/files/
 MODULES=	lang/python
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:py-gtk2->=1.10:x11/py-gtk2 \
-		::graphics/py-Imaging
+		:py-sqlite2-*:databases/py-sqlite2 \
+		::graphics/py-Imaging 
 
 USE_X11=	Yes
 
