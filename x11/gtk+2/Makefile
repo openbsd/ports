@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2010/04/20 19:03:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2010/04/22 19:45:46 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -9,7 +9,7 @@ COMMENT-cups=			gtk+2 CUPS print backend
 VERSION=			2.20.0
 DISTNAME=			gtk+-${VERSION}
 
-PKGNAME-main=			gtk+2-${VERSION}
+PKGNAME-main=			gtk+2-${VERSION}p0
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 PKGNAME-cups=			gtk+2-cups-${VERSION}
 
@@ -46,7 +46,7 @@ RUN_DEPENDS=		::x11/hicolor-icon-theme \
 			::misc/shared-mime-info
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			glib-2.0.>=1800.0,gmodule-2.0.>=1800.0,gobject-2.0.>=1800.0,gio-2.0:glib2->=2.22.5p0:devel/glib2 \
+			glib-2.0.>=1803,gmodule-2.0,gobject-2.0,gio-2.0:glib2->=2.24.0:devel/glib2 \
 			pango-1.0.>=1600.0,pangocairo-1.0.>=1600.0,pangoft2-1.0.>=1600.0::devel/pango \
 			atk-1.0.>=1809.0::devel/atk \
 			tiff.>=35::graphics/tiff \
