@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/22 12:27:34 jasper Exp $
+include/telepathy-1.0/telepathy-farsight/
+include/telepathy-1.0/telepathy-farsight/channel.h
+include/telepathy-1.0/telepathy-farsight/stream.h
+lib/libtelepathy-farsight.a
+lib/libtelepathy-farsight.la
+@lib lib/libtelepathy-farsight.so.${LIBtelepathy-farsight_VERSION}
+lib/pkgconfig/telepathy-farsight.pc
+lib/python${MODPY_VERSION}/site-packages/tpfarsight.a
+lib/python${MODPY_VERSION}/site-packages/tpfarsight.la
+lib/python${MODPY_VERSION}/site-packages/tpfarsight.so
+share/gtk-doc/html/telepathy-farsight/
+share/gtk-doc/html/telepathy-farsight/TfChannel.html
+share/gtk-doc/html/telepathy-farsight/TfStream.html
+share/gtk-doc/html/telepathy-farsight/ch01.html
+share/gtk-doc/html/telepathy-farsight/home.png
+share/gtk-doc/html/telepathy-farsight/index.html
+share/gtk-doc/html/telepathy-farsight/index.sgml
+share/gtk-doc/html/telepathy-farsight/left.png
+share/gtk-doc/html/telepathy-farsight/right.png
+share/gtk-doc/html/telepathy-farsight/style.css
+share/gtk-doc/html/telepathy-farsight/telepathy-farsight.devhelp
+share/gtk-doc/html/telepathy-farsight/telepathy-farsight.devhelp2
+share/gtk-doc/html/telepathy-farsight/up.png
