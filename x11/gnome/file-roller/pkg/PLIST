@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/12/21 18:03:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/04/22 11:45:14 jasper Exp $
 %%SHARED%%
 @bin bin/file-roller
 lib/nautilus/
@@ -22,6 +22,7 @@ share/file-roller/icons/hicolor/24x24/actions/
 share/file-roller/icons/hicolor/24x24/actions/add-files-to-archive.png
 share/file-roller/icons/hicolor/24x24/actions/add-folder-to-archive.png
 share/file-roller/icons/hicolor/24x24/actions/extract-archive.png
+share/file-roller/packages.match
 share/file-roller/ui/
 share/file-roller/ui/add-options.ui
 share/file-roller/ui/batch-add-files.ui
@@ -170,6 +171,14 @@ share/gnome/help/file-roller/vi/figures/file-roller_main_window.png
 share/gnome/help/file-roller/vi/figures/file-roller_rightarrow.png
 share/gnome/help/file-roller/vi/figures/file-roller_uparrow.png
 share/gnome/help/file-roller/vi/file-roller.xml
+share/gnome/help/file-roller/zh_CN/
+share/gnome/help/file-roller/zh_CN/figures/
+share/gnome/help/file-roller/zh_CN/figures/file-roller_home.png
+share/gnome/help/file-roller/zh_CN/figures/file-roller_leftarrow.png
+share/gnome/help/file-roller/zh_CN/figures/file-roller_main_window.png
+share/gnome/help/file-roller/zh_CN/figures/file-roller_rightarrow.png
+share/gnome/help/file-roller/zh_CN/figures/file-roller_uparrow.png
+share/gnome/help/file-roller/zh_CN/file-roller.xml
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/file-roller.png
@@ -206,6 +215,7 @@ share/locale/da/LC_MESSAGES/file-roller.mo
 share/locale/de/LC_MESSAGES/file-roller.mo
 share/locale/dz/LC_MESSAGES/file-roller.mo
 share/locale/el/LC_MESSAGES/file-roller.mo
+share/locale/en@shaw/LC_MESSAGES/file-roller.mo
 share/locale/en_CA/LC_MESSAGES/file-roller.mo
 share/locale/en_GB/LC_MESSAGES/file-roller.mo
 share/locale/es/LC_MESSAGES/file-roller.mo
@@ -307,6 +317,7 @@ share/omf/file-roller/file-roller-ru.omf
 share/omf/file-roller/file-roller-sv.omf
 share/omf/file-roller/file-roller-uk.omf
 share/omf/file-roller/file-roller-vi.omf
+share/omf/file-roller/file-roller-zh_CN.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/file-roller.schemas
