@@ -1,0 +1,14 @@
+$OpenBSD: patch-libraries_base_System_IO_hs,v 1.1 2010/04/22 21:49:37 kili Exp $
+--- libraries/base/System/IO.hs.orig	Tue Apr 20 20:10:11 2010
++++ libraries/base/System/IO.hs	Thu Apr 22 19:08:46 2010
+@@ -173,7 +173,9 @@ module System.IO (
+     -- on your system, which is also available as 'localeEncoding'.
+     -- (GHC note: on Windows, we currently do not support double-byte
+     -- encodings; if the console\'s code page is unsupported, then
+-    -- 'localeEncoding' will be 'latin1'.)
++    -- 'localeEncoding' will be 'latin1'. On OpenBSD, the default
++    -- encoding is always 'latin1' but can be overridden with the
++    -- environment variable `HS_ENCODING')
+     --
+     -- Encoding and decoding errors are always detected and reported,
+     -- except during lazy I/O ('hGetContents', 'getContents', and

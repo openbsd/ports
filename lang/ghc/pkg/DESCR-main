@@ -3,22 +3,18 @@ interactive environment for the functional language Haskell. Highlights:
 
    * GHC supports the entire Haskell 98 language plus a wide variety of
      extensions.
-   * GHC works on several platforms including Windows and most varieties of
-     Unix, and several different processor architectures. There are detailed
-     instructions for porting GHC to a new platform.                         
-   * GHC has extensive optimisation capabilities, including inter-module     
-     optimisation.                   
-   * GHC compiles Haskell code either by using an intermediate C compiler 
-     (GCC), or by generating native code on some platforms. The interactive
-     environment compiles Haskell to bytecode, and supports execution of
-     mixed bytecode/compiled programs.
+   * GHC works on several platforms including Windows and a few varieties of
+     Unix, and a few different processor architectures. There are detailed
+     instructions for porting GHC to a new platform. Which doesn't work.
+   * GHC has extensive optimisation capabilities, including inter-module
+     optimisation.
+   * GHC compiles Haskell code either by using an intermediate C compiler
+     (GCC), or by generating native code on most currently supported
+     platforms. The interactive environment compiles Haskell to
+     bytecode, and supports execution of mixed bytecode/compiled
+     programs.
    * Profiling is supported, both by time/allocation and various kinds of
-     heap profiling.                                                         
-   * GHC comes with a wide range of libraries.
-
-The following flavors are available:
-
-- native_bootstrap (PSEUDO_FLAVOR):
-        Use an already installed ghc for bootstrapping (default is
-        to boot from .hc files). If there's no preinstalled GHC, this
-	may lead to GHC being built twice!
+     heap profiling.
+   * GHC comes with a minimal range of libraries, but a wide range of
+     additional libraries are available as separate packages, including
+     the full set of the Haskell Platform.

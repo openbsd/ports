@@ -1,0 +1,14 @@
+$OpenBSD: patch-libraries_base_GHC_IO_Encoding_hs,v 1.1 2010/04/22 21:49:37 kili Exp $
+--- libraries/base/GHC/IO/Encoding.hs.orig	Tue Apr 20 20:10:11 2010
++++ libraries/base/GHC/IO/Encoding.hs	Thu Apr 22 19:11:45 2010
+@@ -94,7 +94,9 @@ utf32le = UTF32.utf32le
+ utf32be  :: TextEncoding
+ utf32be = UTF32.utf32be
+ 
+--- | The Unicode encoding of the current locale
++-- | The Unicode encoding of the current locale. On OpenBSD this is set
++-- to the value of the environment variable 'HS_ENCODING' or to 'latin1'
++-- if that variable isn't set.
+ localeEncoding  :: TextEncoding
+ #if !defined(mingw32_HOST_OS)
+ localeEncoding = Iconv.localeEncoding

@@ -1,0 +1,21 @@
+$OpenBSD: patch-libraries_base_System_Posix_Internals_hs,v 1.1 2010/04/22 21:49:37 kili Exp $
+
+Kids, please don't blindly fix stupid compiler warnings without
+looking at what you are changing. (In this case, the comment right
+above the chunk was there for a reason, I guess; go read it)
+
+Only this part for now, but there may be more.
+
+--- libraries/base/System/Posix/Internals.hs.orig	Tue Apr 13 20:10:09 2010
++++ libraries/base/System/Posix/Internals.hs	Thu Apr 15 13:18:27 2010
+@@ -327,8 +327,8 @@ setNonBlockingFD fd set = do
+   let flags' | set       = flags .|. o_NONBLOCK
+              | otherwise = flags .&. complement o_NONBLOCK
+   unless (flags == flags') $ do
+-    throwErrnoIfMinus1Retry_ "fcntl_write" $
+-        c_fcntl_write fd const_f_setfl (fromIntegral flags')
++    _ <- c_fcntl_write fd const_f_setfl (fromIntegral flags')
++    return ()
+ #else
+ 
+ -- bogus defns for win32

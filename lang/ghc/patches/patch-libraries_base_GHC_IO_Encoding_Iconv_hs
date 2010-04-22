@@ -1,0 +1,45 @@
+$OpenBSD: patch-libraries_base_GHC_IO_Encoding_Iconv_hs,v 1.1 2010/04/22 21:49:37 kili Exp $
+
+This is needed for our version of GNU libiconv-1.13.
+
+--- libraries/base/GHC/IO/Encoding/Iconv.hs.orig	Tue Apr 13 20:10:08 2010
++++ libraries/base/GHC/IO/Encoding/Iconv.hs	Mon Apr 19 13:26:59 2010
+@@ -71,31 +71,31 @@ latin1 = unsafePerformIO (mkTextEncoding "Latin1")
+ 
+ {-# NOINLINE utf8 #-}
+ utf8 :: TextEncoding
+-utf8 = unsafePerformIO (mkTextEncoding "UTF8")
++utf8 = unsafePerformIO (mkTextEncoding "UTF-8")
+ 
+ {-# NOINLINE utf16 #-}
+ utf16 :: TextEncoding
+-utf16 = unsafePerformIO (mkTextEncoding "UTF16")
++utf16 = unsafePerformIO (mkTextEncoding "UTF-16")
+ 
+ {-# NOINLINE utf16le #-}
+ utf16le :: TextEncoding
+-utf16le = unsafePerformIO (mkTextEncoding "UTF16LE")
++utf16le = unsafePerformIO (mkTextEncoding "UTF-16LE")
+ 
+ {-# NOINLINE utf16be #-}
+ utf16be :: TextEncoding
+-utf16be = unsafePerformIO (mkTextEncoding "UTF16BE")
++utf16be = unsafePerformIO (mkTextEncoding "UTF-16BE")
+ 
+ {-# NOINLINE utf32 #-}
+ utf32 :: TextEncoding
+-utf32 = unsafePerformIO (mkTextEncoding "UTF32")
++utf32 = unsafePerformIO (mkTextEncoding "UTF-32")
+ 
+ {-# NOINLINE utf32le #-}
+ utf32le :: TextEncoding
+-utf32le = unsafePerformIO (mkTextEncoding "UTF32LE")
++utf32le = unsafePerformIO (mkTextEncoding "UTF-32LE")
+ 
+ {-# NOINLINE utf32be #-}
+ utf32be :: TextEncoding
+-utf32be = unsafePerformIO (mkTextEncoding "UTF32BE")
++utf32be = unsafePerformIO (mkTextEncoding "UTF-32BE")
+ 
+ {-# NOINLINE localeEncoding #-}
+ localeEncoding :: TextEncoding

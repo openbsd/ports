@@ -1,0 +1,13 @@
+$OpenBSD: patch-testsuite_tests_ghc-regress_codeGen_should_run_all_T,v 1.1 2010/04/22 21:49:37 kili Exp $
+
+With 8k of stack, this test fails for WAY=normal.
+
+--- testsuite/tests/ghc-regress/codeGen/should_run/all.T.orig	Thu Apr 15 15:23:20 2010
++++ testsuite/tests/ghc-regress/codeGen/should_run/all.T	Sun Apr 18 18:23:34 2010
+@@ -77,5 +77,5 @@ test('1861', extra_run_opts('0'), compile_and_run, [''
+ test('2838', normal, compile_and_run, [''])
+ test('3207', normal, compile_and_run, [''])
+ test('3561', normal, compile_and_run, [''])
+-test('3677', extra_run_opts('+RTS -K8k -RTS'), compile_and_run, [''])
++test('3677', extra_run_opts('+RTS -K10k -RTS'), compile_and_run, [''])
+ 

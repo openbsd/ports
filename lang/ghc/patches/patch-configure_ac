@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2010/04/22 21:49:37 kili Exp $
+--- configure.ac.orig	Wed Mar 31 20:10:08 2010
++++ configure.ac	Fri Apr  2 09:45:09 2010
+@@ -321,7 +321,7 @@ esac
+ 
+ checkArch() {
+     case $1 in
+-    alpha|arm|hppa|hppa1_1|i386|ia64|m68k|mips|mipseb|mipsel|powerpc|powerpc64|rs6000|s390|sparc|sparc64|vax|x86_64)
++    alpha|amd64|arm|hppa|hppa1_1|i386|ia64|m68k|mips|mipseb|mipsel|powerpc|powerpc64|rs6000|s390|sparc|sparc64|vax|x86_64)
+         ;;
+     *)
+         echo "Unknown arch $1"

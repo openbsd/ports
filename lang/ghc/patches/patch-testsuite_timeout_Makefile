@@ -1,0 +1,14 @@
+$OpenBSD: patch-testsuite_timeout_Makefile,v 1.1 2010/04/22 21:49:37 kili Exp $
+--- testsuite/timeout/Makefile.orig	Thu Apr 15 15:26:22 2010
++++ testsuite/timeout/Makefile	Fri Apr 16 16:02:57 2010
+@@ -27,7 +27,9 @@ $(TIMEOUT_PROGRAM): timeout.py
+ 	rm -rf install-inplace
+ 	mkdir install-inplace
+ 	mkdir install-inplace/bin
+-	cp $< $@
++	cp $< $@.py
++	echo '#!/bin/sh' > $@
++	echo exec ${PYTHON} \$$0.py \"\$$@\" >> $@
+ 	chmod +x $@
+ else
+ # The python timeout program doesn't work on mingw, so we still use the

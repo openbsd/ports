@@ -1,0 +1,17 @@
+$OpenBSD: patch-ghc_mk,v 1.1 2010/04/22 21:49:37 kili Exp $
+
+I don't see the point in not installing libraries that are required
+by the build (and by several external haskell libraries we have or
+will have in the ports tree).
+
+--- ghc.mk.orig	Wed Mar 31 20:10:09 2010
++++ ghc.mk	Fri Apr  2 09:47:24 2010
+@@ -841,7 +841,7 @@ INSTALLED_GHC_REAL=$(DESTDIR)$(bindir)/ghc.exe
+ INSTALLED_GHC_PKG_REAL=$(DESTDIR)$(bindir)/ghc-pkg.exe
+ endif
+ 
+-INSTALLED_PACKAGES = $(filter-out haskeline mtl terminfo utf8-string,$(PACKAGES))
++INSTALLED_PACKAGES = $(PACKAGES)
+ HIDDEN_PACKAGES = ghc-binary
+ 
+ define set_INSTALL_DISTDIR

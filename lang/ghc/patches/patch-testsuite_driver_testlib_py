@@ -1,0 +1,32 @@
+$OpenBSD: patch-testsuite_driver_testlib_py,v 1.1 2010/04/22 21:49:37 kili Exp $
+--- testsuite/driver/testlib.py.orig	Thu Apr 15 15:23:09 2010
++++ testsuite/driver/testlib.py	Fri Apr 16 16:02:57 2010
+@@ -1224,6 +1224,12 @@ def compare_outputs( kind, normaliser, extra_normalise
+     actual_raw = read_no_crs(actual_file)
+     actual_str = normaliser(actual_raw)
+ 
++    # Strip OpenBSDs linker warnings about strcpy(3) & friends.
++    if config.os == 'openbsd':
++        actual_str = re.sub('.*: In function .*:\n: warning: .* is .* misused, please use .*\n',
++                            '', actual_str)
++
++
+     if extra_normaliser(expected_str) != extra_normaliser(actual_str):
+         print 'Actual ' + kind + ' output differs from expected:'
+ 
+@@ -1238,13 +1244,13 @@ def compare_outputs( kind, normaliser, extra_normalise
+ 
+         # Ignore whitespace when diffing. We should only get to this
+         # point if there are non-whitespace differences
+-        r = os.system( 'diff -uw ' + expected_normalised_file + \
++        r = os.system( 'diff -auw ' + expected_normalised_file + \
+                                ' ' + actual_normalised_file )
+ 
+         # If for some reason there were no non-whitespace differences,
+         # then do a full diff
+         if r == 0:
+-            r = os.system( 'diff -u ' + expected_normalised_file + \
++            r = os.system( 'diff -au ' + expected_normalised_file + \
+                                   ' ' + actual_normalised_file )
+ 
+         if config.accept:

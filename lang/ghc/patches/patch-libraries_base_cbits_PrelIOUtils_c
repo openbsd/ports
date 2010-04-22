@@ -1,0 +1,23 @@
+$OpenBSD: patch-libraries_base_cbits_PrelIOUtils_c,v 1.1 2010/04/22 21:49:37 kili Exp $
+
+We have very limited locale support so used latin1 as default codeset
+which can be overridden by the environment variable `HS_ENCODING'.
+
+--- libraries/base/cbits/PrelIOUtils.c.orig	Tue Apr 13 20:10:09 2010
++++ libraries/base/cbits/PrelIOUtils.c	Mon Apr 19 23:12:08 2010
+@@ -26,10 +26,13 @@ void debugBelch2(const char*s, char *t)
+ 
+ // Use a C wrapper for this because we avoid hsc2hs in base
+ #if HAVE_LANGINFO_H
+-#include <langinfo.h>
++#include <stdlib.h>
++#include <string.h>
+ char *localeEncoding (void)
+ {
+-    return nl_langinfo(CODESET);
++	char *l;
++	l = getenv("HS_ENCODING");
++	return l != NULL ? l : "latin1";
+ }
+ #endif
+ 
