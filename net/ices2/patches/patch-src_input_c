@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_input_c,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
+--- src/input.c.orig	Mon Jan 18 03:06:33 2010
++++ src/input.c	Mon Jan 18 03:08:36 2010
+@@ -40,6 +40,10 @@
+ #include "im_oss.h"
+ #endif
+ 
++#ifdef HAVE_SNDIO
++#include "im_sndio.h"
++#endif
++
+ #ifdef HAVE_SUN_AUDIO
+ #include "im_sun.h"
+ #endif
+@@ -79,6 +83,9 @@ static module modules[] = {
+     { "stdinpcm", stdin_open_module},
+ #ifdef HAVE_OSS
+     { "oss", oss_open_module},
++#endif
++#ifdef HAVE_SNDIO
++    { "sndio", sndio_open_module},
+ #endif
+ #ifdef HAVE_SUN_AUDIO
+     { "sun", sun_open_module},

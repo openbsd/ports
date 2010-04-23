@@ -1,0 +1,10 @@
+$OpenBSD: patch-doc_Makefile_am,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
+--- doc/Makefile.am.orig	Mon Jan 18 04:21:35 2010
++++ doc/Makefile.am	Mon Jan 18 04:21:58 2010
+@@ -2,4 +2,6 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
++pkgdatadir = $(datadir)/doc/@PACKAGE@2
++
+ dist_pkgdata_DATA = basic.html config.html faq.html index.html inputs.html intro.html style.css

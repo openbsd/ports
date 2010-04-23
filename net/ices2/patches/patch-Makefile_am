@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/02/19 20:49:51 alek Exp $
---- Makefile.in.orig	Thu Mar 11 22:18:02 2004
-+++ Makefile.in	Sun Oct 24 23:02:02 2004
-@@ -117,9 +117,9 @@ install_sh = @install_sh@
+$OpenBSD: patch-Makefile_am,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
+--- Makefile.am.orig	Mon Jan 18 03:48:33 2010
++++ Makefile.am	Mon Jan 18 03:49:20 2010
+@@ -3,9 +3,9 @@
  AUTOMAKE_OPTIONS = foreign 1.6 dist-bzip2
  ACLOCAL_AMFLAGS = -I m4
  

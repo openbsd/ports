@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/02/05 15:34:54 alek Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/04/23 05:54:26 jakemsr Exp $
 @option no-default-conflict
 @conflict ices-2.*
-bin/ices2
+@bin bin/ices2
 share/doc/ices2/
 share/doc/ices2/basic.html
 share/doc/ices2/config.html
@@ -11,9 +11,8 @@ share/doc/ices2/inputs.html
 share/doc/ices2/intro.html
 share/doc/ices2/style.css
 share/examples/ices2/
-share/examples/ices2/ices-oss.xml
 share/examples/ices2/ices-playlist.xml
 @mode 660
 @sample ${SYSCONFDIR}/ices2.xml
 @mode
-share/examples/ices2/ices-sun.xml
+share/examples/ices2/ices-sndio.xml

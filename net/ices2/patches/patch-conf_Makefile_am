@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_Makefile_am,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
+--- conf/Makefile.am.orig	Mon Jan 18 03:49:43 2010
++++ conf/Makefile.am	Mon Jan 18 03:51:10 2010
+@@ -2,5 +2,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-dist_pkgdata_DATA = ices-oss.xml ices-alsa.xml ices-playlist.xml
++pkgdatadir = $(datadir)/examples/@PACKAGE@2
++
++dist_pkgdata_DATA = ices-sndio.xml ices-playlist.xml
+ 
