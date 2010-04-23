@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.790 2010/04/22 22:18:27 kili Exp $
+# $OpenBSD: Makefile,v 1.791 2010/04/23 13:25:26 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -131,7 +131,6 @@
      SUBDIR += hs-HUnit
      SUBDIR += hs-QuickCheck
      SUBDIR += hs-binary
-     SUBDIR += hs-binary-shared
      SUBDIR += hs-dataenc
      SUBDIR += hs-deepseq
      SUBDIR += hs-fgl
