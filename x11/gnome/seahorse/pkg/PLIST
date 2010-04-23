@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/12/21 18:03:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/04/23 11:40:26 ajacoutot Exp $
 %%SHARED%%
 @bin bin/seahorse
 @bin bin/seahorse-daemon
@@ -16,15 +16,9 @@ lib/seahorse/
 @bin lib/seahorse/seahorse-ssh-askpass
 @bin lib/seahorse/xloadimage
 @man man/man1/seahorse-daemon.1
+@man man/man1/seahorse.1
 share/applications/seahorse.desktop
 share/dbus-1/services/org.gnome.seahorse.service
-share/examples/seahorse/
-share/examples/seahorse/xdg/
-@sample ${SYSCONFDIR}/xdg/
-share/examples/seahorse/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/seahorse/xdg/autostart/seahorse-daemon.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/seahorse-daemon.desktop
 share/gnome/help/seahorse/
 share/gnome/help/seahorse/C/
 share/gnome/help/seahorse/C/figures/
@@ -170,6 +164,7 @@ share/icons/hicolor/48x48/apps/seahorse-preferences.png
 share/icons/hicolor/48x48/apps/seahorse.png
 share/locale/ar/LC_MESSAGES/seahorse.mo
 share/locale/as/LC_MESSAGES/seahorse.mo
+share/locale/ast/LC_MESSAGES/seahorse.mo
 share/locale/az/LC_MESSAGES/seahorse.mo
 share/locale/be@latin/LC_MESSAGES/seahorse.mo
 share/locale/bg/LC_MESSAGES/seahorse.mo
@@ -184,6 +179,7 @@ share/locale/da/LC_MESSAGES/seahorse.mo
 share/locale/de/LC_MESSAGES/seahorse.mo
 share/locale/dz/LC_MESSAGES/seahorse.mo
 share/locale/el/LC_MESSAGES/seahorse.mo
+share/locale/en@shaw/LC_MESSAGES/seahorse.mo
 share/locale/en_CA/LC_MESSAGES/seahorse.mo
 share/locale/en_GB/LC_MESSAGES/seahorse.mo
 share/locale/es/LC_MESSAGES/seahorse.mo
@@ -220,6 +216,7 @@ share/locale/pa/LC_MESSAGES/seahorse.mo
 share/locale/pl/LC_MESSAGES/seahorse.mo
 share/locale/pt/LC_MESSAGES/seahorse.mo
 share/locale/pt_BR/LC_MESSAGES/seahorse.mo
+share/locale/ro/LC_MESSAGES/seahorse.mo
 share/locale/ru/LC_MESSAGES/seahorse.mo
 share/locale/rw/LC_MESSAGES/seahorse.mo
 share/locale/si/LC_MESSAGES/seahorse.mo

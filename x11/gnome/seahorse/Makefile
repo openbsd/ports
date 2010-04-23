@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2010/04/20 20:11:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/04/23 11:40:26 ajacoutot Exp $
 
 COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
-GNOME_VERSION=		2.28.1
-PKGNAME=		${DISTNAME}p3
+GNOME_VERSION=		2.30.0
 
 SHARED_LIBS +=	cryptui              1.0      # .0.0
 
@@ -25,7 +24,7 @@ WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 gpg-error
 WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 krb5 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += sasl2 ssl tasn1 xcb xml2 z
+WANTLIB += sasl2 ssl tasn1 xcb xml2 z eggdbus-1 xcb-render xcb-render-util
 
 LIB_DEPENDS=		lber,ldap::databases/openldap \
 			notify::devel/libnotify \
@@ -45,10 +44,11 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	seahorse
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--enable-introspection=no \
 			--enable-hkp \
 			--enable-ldap \
+			--enable-pgp \
 			--enable-sharing \
-			--disable-scrollkeeper \
 			--disable-update-mime-database
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
