@@ -1,0 +1,63 @@
+$OpenBSD: patch-lib_gibber_gibber-unix-transport_c,v 1.1 2010/04/23 12:43:44 jasper Exp $
+--- lib/gibber/gibber-unix-transport.c.orig	Thu Apr 22 17:42:08 2010
++++ lib/gibber/gibber-unix-transport.c	Thu Apr 22 18:04:21 2010
+@@ -22,15 +22,21 @@
+ /* needed for struct ucred */
+ #define _GNU_SOURCE
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <sys/param.h>
++#include <sys/un.h>
++#include <sys/ucred.h>
++#include <sys/socket.h>
++#include <sys/uio.h>
++#include <netinet/in.h>
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <string.h>
+ #include <errno.h>
+-#include <sys/types.h>
+-#include <sys/socket.h>
+-#include <sys/un.h>
+ 
+ #include "gibber-unix-transport.h"
+ #include "gibber-util.h"
+@@ -38,6 +44,9 @@
+ #define DEBUG_FLAG DEBUG_NET
+ #include "gibber-debug.h"
+ 
++#define SCM_CREDENTIALS	0x9001
++#define SO_PASSCRED	0x9002
++
+ G_DEFINE_TYPE(GibberUnixTransport, gibber_unix_transport, \
+     GIBBER_TYPE_FD_TRANSPORT)
+ 
+@@ -227,9 +236,8 @@ gibber_unix_transport_send_credentials (GibberUnixTran
+   ch->cmsg_type = SCM_CREDENTIALS;
+ 
+   cred = (struct ucred *) CMSG_DATA (ch);
+-  cred->pid = getpid ();
+-  cred->uid = getuid ();
+-  cred->gid = getgid ();
++  cred->cr_uid = getuid ();
++  cred->cr_gid = getgid ();
+ 
+   ret = sendmsg (fd, &msg, 0);
+   if (ret == -1)
+@@ -326,9 +334,9 @@ gibber_unix_transport_read (GibberFdTransport *transpo
+       GibberCredentials credentials;
+ 
+       cred = (struct ucred *) CMSG_DATA (ch);
+-      credentials.pid = cred->pid;
+-      credentials.uid = cred->uid;
+-      credentials.gid = cred->gid;
++      credentials.pid = getpid();
++      credentials.uid = cred->cr_uid;
++      credentials.gid = cred->cr_gid;
+ 
+       priv->recv_creds_cb (self, &buf, &credentials, NULL,
+           priv->recv_creds_data);
