@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_util_c,v 1.1 2009/06/02 04:43:33 jasper Exp $
---- src/util.c.orig	Mon Jun  1 17:56:48 2009
-+++ src/util.c	Mon Jun  1 17:57:01 2009
-@@ -30,7 +30,7 @@
- #include <telepathy-glib/handle-repo-dynamic.h>
+$OpenBSD: patch-src_util_c,v 1.2 2010/04/23 12:41:16 jasper Exp $
+--- src/util.c.orig	Fri Apr 23 00:08:57 2010
++++ src/util.c	Fri Apr 23 00:09:07 2010
+@@ -36,7 +36,7 @@
+ #include <extensions/extensions.h>
  
  #ifdef HAVE_UUID
 -# include <uuid.h>

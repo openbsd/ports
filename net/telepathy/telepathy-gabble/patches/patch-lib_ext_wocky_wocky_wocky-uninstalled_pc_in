@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_ext_wocky_wocky_wocky-uninstalled_pc_in,v 1.1 2010/04/23 12:41:16 jasper Exp $
+--- lib/ext/wocky/wocky/wocky-uninstalled.pc.in.orig	Fri Apr 23 00:31:45 2010
++++ lib/ext/wocky/wocky/wocky-uninstalled.pc.in	Fri Apr 23 00:31:52 2010
+@@ -6,7 +6,6 @@ abs_top_builddir=@abs_top_builddir@
+ Name: Wocky (uninstalled copy)
+ Description: XMPP library
+ Version: @VERSION@
+-Requires: pkg-config >= 0.21
+ Requires.private: glib-2.0 >= 2.16, gobject-2.0 >= 2.16, gio-2.0
+ Libs: ${abs_top_builddir}/wocky/libwocky.la
+ Cflags: -I${abs_top_srcdir} -I${abs_top_builddir}

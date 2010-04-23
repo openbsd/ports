@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/20 10:28:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/23 12:41:16 jasper Exp $
+lib/telepathy/
+lib/telepathy/gabble-0/
+lib/telepathy/gabble-0/gateways.a
+lib/telepathy/gabble-0/gateways.la
+lib/telepathy/gabble-0/gateways.so
 @bin libexec/telepathy-gabble
 @man man/man8/telepathy-gabble.8
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.gabble.service

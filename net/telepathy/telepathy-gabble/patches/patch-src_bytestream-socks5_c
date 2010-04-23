@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_bytestream-socks5_c,v 1.1 2010/04/23 12:41:16 jasper Exp $
+--- src/bytestream-socks5.c.orig	Fri Apr 23 00:10:32 2010
++++ src/bytestream-socks5.c	Fri Apr 23 00:11:15 2010
+@@ -34,6 +34,12 @@
+ #include <string.h>
+ #include <sys/types.h>
+ 
++#include <sys/socket.h>
++
++#include <netdb.h>
++
++#include <netinet/in.h>
++
+ #ifdef HAVE_UNISTD_H
+ # include <unistd.h>
+ #endif
