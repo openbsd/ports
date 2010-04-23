@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.116 2010/04/23 16:33:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.117 2010/04/23 18:39:33 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
      SUBDIR += anjuta
+     SUBDIR += anjuta-extras
      SUBDIR += applets2
      SUBDIR += at-spi
      SUBDIR += audio
