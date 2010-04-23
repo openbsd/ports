@@ -1,21 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2009/11/18 14:42:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/04/23 10:56:54 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		RSS-reader plugin for GNOME
 
 GNOME_PROJECT=		evolution-rss
-GNOME_VERSION=		0.1.4
-PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}p2
+GNOME_VERSION=		0.1.4.99 # Debian evolution-rss_0.1.9~20100320
+PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}
 
 CATEGORIES=		mail
 
-# Upstream patch so that RSS feeds are updated again.
-MASTER_SITES0=		http://gnome.eu.org/patches/
-PATCHFILES=		evolution-rss-${GNOME_VERSION}-recv-feeds.patch:0
-PATCH_DIST_STRIP=	-p1
-
-EVO_VERSION=		2.28
+EVO_VERSION=		2.30
 SUBST_VARS=		EVO_VERSION
 
 HOMEPAGE=		http://gnome.eu.org/evo/index.php/Evolution_RSS_Reader_Plugin
@@ -37,8 +32,10 @@ WANTLIB += glitz gmodule-2.0 gnome-keyring gnutls gobject-2.0
 WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 stdc++ tasn1 xcb xml2 z
+WANTLIB += eggdbus-1 xcb-render xcb-render-util
 
-MASTER_SITES=		http://gnome.eu.org/
+#MASTER_SITES=		http://gnome.eu.org/
+MASTER_SITES=		http://crappydiffs.org/
 EXTRACT_SUFX=		.tar.gz
 
 MODULES=		devel/gettext \

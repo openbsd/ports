@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/09/14 15:39:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/04/23 10:56:54 jasper Exp $
 @bin bin/evolution-import-rss
-lib/bonobo/servers/GNOME_Evolution_RSS_${EVO_VERSION}.server
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.a
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.la
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.so
 lib/evolution/${EVO_VERSION}/plugins/org-gnome-evolution-rss.eplug
 lib/evolution/${EVO_VERSION}/plugins/org-gnome-evolution-rss.xml
 share/evolution/${EVO_VERSION}/errors/org-gnome-evolution-rss.error
+share/evolution/${EVO_VERSION}/glade/
 share/evolution/${EVO_VERSION}/glade/rss-html-rendering.glade
 share/evolution/${EVO_VERSION}/glade/rss-ui.glade
 share/evolution/${EVO_VERSION}/images/pix.png
@@ -21,6 +21,8 @@ share/evolution/${EVO_VERSION}/images/rss.png
 share/locale/as/LC_MESSAGES/evolution-rss.mo
 share/locale/bn_IN/LC_MESSAGES/evolution-rss.mo
 share/locale/cs/LC_MESSAGES/evolution-rss.mo
+share/locale/de/LC_MESSAGES/evolution-rss.mo
+share/locale/el/LC_MESSAGES/evolution-rss.mo
 share/locale/en_AU/LC_MESSAGES/evolution-rss.mo
 share/locale/en_GB/LC_MESSAGES/evolution-rss.mo
 share/locale/es/LC_MESSAGES/evolution-rss.mo
@@ -28,14 +30,18 @@ share/locale/fr/LC_MESSAGES/evolution-rss.mo
 share/locale/gl/LC_MESSAGES/evolution-rss.mo
 share/locale/gu/LC_MESSAGES/evolution-rss.mo
 share/locale/hi/LC_MESSAGES/evolution-rss.mo
+share/locale/hu/LC_MESSAGES/evolution-rss.mo
 share/locale/it/LC_MESSAGES/evolution-rss.mo
 share/locale/kn/LC_MESSAGES/evolution-rss.mo
 share/locale/ml/LC_MESSAGES/evolution-rss.mo
 share/locale/mr/LC_MESSAGES/evolution-rss.mo
+share/locale/nb/LC_MESSAGES/evolution-rss.mo
 share/locale/or/LC_MESSAGES/evolution-rss.mo
 share/locale/pt/LC_MESSAGES/evolution-rss.mo
+share/locale/pt_BR/LC_MESSAGES/evolution-rss.mo
 share/locale/ro/LC_MESSAGES/evolution-rss.mo
 share/locale/ru/LC_MESSAGES/evolution-rss.mo
+share/locale/sl/LC_MESSAGES/evolution-rss.mo
 share/locale/sv/LC_MESSAGES/evolution-rss.mo
 share/locale/ta/LC_MESSAGES/evolution-rss.mo
 share/locale/te/LC_MESSAGES/evolution-rss.mo
