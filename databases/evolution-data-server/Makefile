@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/04/22 09:17:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2010/04/23 08:39:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -86,9 +86,3 @@ post-extract:
 		${WRKSRC}/addressbook/libebook/gen-western-table.py
 
 .include <bsd.port.mk>
-
-# XXX:
-# No NTLM support in OpenLDAP; Plaintext password authentication will be
-# used when connecting to the Exchange Global Catalog server. Consider 
-# installing the evo-openldap package, or building OpenLDAP with the 
-# patch in servers/exchange/docs/openldap-ntlm.diff
