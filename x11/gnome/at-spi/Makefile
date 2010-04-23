@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2010/04/22 21:01:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/04/23 14:05:31 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
 GNOME_PROJECT=		at-spi
 GNOME_VERSION=		1.30.0
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
