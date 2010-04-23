@@ -1,11 +1,11 @@
-$OpenBSD: patch-gnibbles_Makefile_in,v 1.5 2009/12/17 09:10:02 ajacoutot Exp $
+$OpenBSD: patch-gnibbles_Makefile_in,v 1.6 2010/04/23 17:39:02 ajacoutot Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- gnibbles/Makefile.in.orig	Thu Dec 17 01:13:41 2009
-+++ gnibbles/Makefile.in	Thu Dec 17 09:23:56 2009
-@@ -470,7 +470,7 @@ psdir = @psdir@
+--- gnibbles/Makefile.in.orig	Mon Mar 29 20:02:31 2010
++++ gnibbles/Makefile.in	Fri Apr 23 18:45:19 2010
+@@ -378,7 +378,7 @@ psdir = @psdir@
  pyexecdir = @pyexecdir@
  pythondir = @pythondir@
  sbindir = @sbindir@
@@ -14,7 +14,7 @@ into /var/games/ later.
  scores_group = @scores_group@
  scores_user = @scores_user@
  setgid = @setgid@
-@@ -1460,14 +1460,9 @@ install-data-local: $(ggzclient_dsc_in_files:.dsc.in=.
+@@ -1249,14 +1249,9 @@ install-data-local:
  	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
  	-for i in ${SCOREFILES} ; do \
  	   touch $(DESTDIR)$(scoredir)/gnibbles.$$i.scores; \
@@ -27,5 +27,5 @@ into /var/games/ later.
 -	  chgrp $(scores_group) $(DESTDIR)$(bindir)/gnibbles && chmod 2555 $(DESTDIR)$(bindir)/gnibbles ;\
 -	fi
  
- uninstall-local:
- @GGZ_CLIENT_TRUE@	-$(GGZ_CONFIG) -D --remove --modfile=gnibbles-client.dsc
+ @INTLTOOL_DESKTOP_RULE@
+ @INTLTOOL_SCHEMAS_RULE@

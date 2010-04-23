@@ -1,0 +1,26 @@
+$OpenBSD: patch-quadrapassel_Makefile_in,v 1.1 2010/04/23 17:39:02 ajacoutot Exp $
+--- quadrapassel/Makefile.in.orig	Fri Apr 23 19:18:58 2010
++++ quadrapassel/Makefile.in	Fri Apr 23 19:20:01 2010
+@@ -395,7 +395,7 @@ psdir = @psdir@
+ pyexecdir = @pyexecdir@
+ pythondir = @pythondir@
+ sbindir = @sbindir@
+-scoredir = @scoredir@
++scoredir = ${pkgdatadir}/scores/
+ scores_group = @scores_group@
+ scores_user = @scores_user@
+ setgid = @setgid@
+@@ -1168,13 +1168,8 @@ install-data-local:
+ @GCONF_SCHEMAS_INSTALL_TRUE@	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(top_builddir)/quadrapassel/$(schema_DATA)
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	-touch $(DESTDIR)$(scoredir)/quadrapassel.scores
+-	-chown $(scores_user):$(scores_group) $(DESTDIR)$(scoredir)/quadrapassel.scores
+-	-chmod 664 $(DESTDIR)$(scoredir)/quadrapassel.scores
+ 
+ install-exec-hook:
+-	-if test "$(setgid)" = "true"; then \
+-	  chgrp $(scores_group) $(DESTDIR)$(bindir)/quadrapassel && chmod 2555 $(DESTDIR)$(bindir)/quadrapassel ;\
+-	fi
+ 
+ -include $(top_srcdir)/git.mk
+ 

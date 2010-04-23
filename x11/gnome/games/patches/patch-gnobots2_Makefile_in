@@ -1,11 +1,11 @@
-$OpenBSD: patch-gnobots2_Makefile_in,v 1.5 2009/12/17 09:10:02 ajacoutot Exp $
+$OpenBSD: patch-gnobots2_Makefile_in,v 1.6 2010/04/23 17:39:02 ajacoutot Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- gnobots2/Makefile.in.orig	Thu Dec 17 01:13:41 2009
-+++ gnobots2/Makefile.in	Thu Dec 17 09:23:56 2009
-@@ -433,7 +433,7 @@ psdir = @psdir@
+--- gnobots2/Makefile.in.orig	Mon Mar 29 20:02:31 2010
++++ gnobots2/Makefile.in	Fri Apr 23 18:45:19 2010
+@@ -380,7 +380,7 @@ psdir = @psdir@
  pyexecdir = @pyexecdir@
  pythondir = @pythondir@
  sbindir = @sbindir@
@@ -14,7 +14,7 @@ into /var/games/ later.
  scores_group = @scores_group@
  scores_user = @scores_user@
  setgid = @setgid@
-@@ -1315,15 +1315,12 @@ install-data-local:
+@@ -1262,15 +1262,12 @@ install-data-local:
              fname1=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2.scores; \
              fname2=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-safe.scores; \
              fname3=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-super-safe.scores; \
@@ -31,5 +31,5 @@ into /var/games/ later.
 -	  chgrp $(scores_group) $(DESTDIR)$(bindir)/gnobots2 && chmod 2555 $(DESTDIR)$(bindir)/gnobots2 ;\
 -	fi
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ -include $(top_srcdir)/git.mk
+ 

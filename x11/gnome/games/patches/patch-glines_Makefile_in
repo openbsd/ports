@@ -1,11 +1,11 @@
-$OpenBSD: patch-glines_Makefile_in,v 1.5 2009/12/17 09:10:02 ajacoutot Exp $
+$OpenBSD: patch-glines_Makefile_in,v 1.6 2010/04/23 17:39:02 ajacoutot Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
---- glines/Makefile.in.orig	Thu Dec 17 01:13:39 2009
-+++ glines/Makefile.in	Thu Dec 17 09:23:56 2009
-@@ -425,7 +425,7 @@ psdir = @psdir@
+--- glines/Makefile.in.orig	Mon Mar 29 20:02:30 2010
++++ glines/Makefile.in	Fri Apr 23 18:45:19 2010
+@@ -372,7 +372,7 @@ psdir = @psdir@
  pyexecdir = @pyexecdir@
  pythondir = @pythondir@
  sbindir = @sbindir@
@@ -14,7 +14,7 @@ into /var/games/ later.
  scores_group = @scores_group@
  scores_user = @scores_user@
  setgid = @setgid@
-@@ -1072,16 +1072,11 @@ install-scorefiles-local:
+@@ -1019,16 +1019,11 @@ install-scorefiles-local:
  	fi
  	-for i in ${SCOREFILES} ; do \
  	  touch $(DESTDIR)$(scoredir)/glines.$$i.scores; \
@@ -29,5 +29,5 @@ into /var/games/ later.
 -	  chgrp $(scores_group) $(DESTDIR)$(bindir)/glines && chmod 2555 $(DESTDIR)$(bindir)/glines ;\
 -	fi
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ -include $(top_srcdir)/git.mk
+ 
