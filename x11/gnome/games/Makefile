@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/04/23 17:39:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/04/23 18:02:11 jasper Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
@@ -51,6 +51,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 REGRESS_IS_INTERACTIVE= x11
+
+FAKE_FLAGS=		scoredir=${PREFIX}/share/gnome-games/scores/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/glchess/src/glchess.in.in \

@@ -1,19 +1,10 @@
-$OpenBSD: patch-gnobots2_Makefile_in,v 1.6 2010/04/23 17:39:02 ajacoutot Exp $
+$OpenBSD: patch-gnobots2_Makefile_in,v 1.7 2010/04/23 18:02:11 jasper Exp $
 
 Install the .scores files into share/ , to @sample them
 into /var/games/ later.
 
 --- gnobots2/Makefile.in.orig	Mon Mar 29 20:02:31 2010
 +++ gnobots2/Makefile.in	Fri Apr 23 18:45:19 2010
-@@ -380,7 +380,7 @@ psdir = @psdir@
- pyexecdir = @pyexecdir@
- pythondir = @pythondir@
- sbindir = @sbindir@
--scoredir = @scoredir@
-+scoredir = ${pkgdatadir}/scores/
- scores_group = @scores_group@
- scores_user = @scores_user@
- setgid = @setgid@
 @@ -1262,15 +1262,12 @@ install-data-local:
              fname1=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2.scores; \
              fname2=$(DESTDIR)$(scoredir)/gnobots2.$$cfn2-safe.scores; \
