@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2010/04/23 13:03:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2010/04/23 18:26:13 jasper Exp $
 
 # XXX
 # (empathy:10245): Gtk-WARNING **: could not load image: Icon 'im-xmpp' not present in theme
+# make a symlink from im-jabber to im-xmpp if needed?
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.30.0.2
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		net
 
@@ -69,10 +71,12 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-map=Yes\
 			--enable-webkit=no \
 			--enable-nautilus-sendto=no \
-			--enable-control-center-embedding=no
-#CONFIGURE_ARGS+=	--enable-tpl # Needs telepathy-logger
+			--enable-control-center-embedding=no \
+			--enable-tpl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS+=		pkgdatadir=${PREFIX}/share/
 
 pre-configure:
 	@ln -s ${LOCALBASE}/bin/python${MODPY_VERSION}-config \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/04/23 13:03:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/04/23 18:26:13 jasper Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
@@ -34,7 +34,6 @@ share/empathy/empathy-contact-widget.ui
 share/empathy/empathy-ft-manager.ui
 share/empathy/empathy-import-dialog.ui
 share/empathy/empathy-irc-networks.dtd
-share/empathy/empathy-log-manager.xsl
 share/empathy/empathy-log-window.ui
 share/empathy/empathy-main-window.ui
 share/empathy/empathy-map-view.ui
