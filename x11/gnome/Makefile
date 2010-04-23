@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2010/04/21 07:41:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.116 2010/04/23 16:33:38 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -72,6 +72,7 @@
      SUBDIR += mime-data
      SUBDIR += mono-gnome
      SUBDIR += mono-gnome-desktop
+     SUBDIR += mono-keyring
      SUBDIR += mousetweaks
      SUBDIR += nautilus
      SUBDIR += nautilus-open-terminal
