@@ -1,2 +1,5 @@
-Butterfly is an MSN connection manager that handles presence, personal
-messages, and conversations.
+Butterfly is a MSN connection manager for the Telepathy framework,
+currently supporting:
+
+* single-user chats
+* multi-user chats
