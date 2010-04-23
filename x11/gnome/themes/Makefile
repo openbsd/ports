@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2010/04/20 15:27:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2010/04/23 07:40:27 ajacoutot Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes
 GNOME_VERSION=		2.30.0
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		x11
 
