@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/04/22 20:49:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2010/04/23 10:41:40 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -65,12 +65,12 @@ MODGCONF2_SCHEMAS_DIR=  epiphany
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-introspection=no \
 		--disable-static \
 		--disable-scrollkeeper \
 		--disable-gtk-doc \
 		--disable-zeroconf \
 		--with-distributor-name="OpenBSD ports" \
-		--with-introspection=no \
 		--with-ca-file=/etc/ssl/cert.pem
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
