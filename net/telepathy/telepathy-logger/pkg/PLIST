@@ -1,0 +1,66 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/23 13:35:15 jasper Exp $
+@bin bin/telepathy-logger
+include/telepathy-logger/
+include/telepathy-logger/action-chain.h
+include/telepathy-logger/channel-factory.h
+include/telepathy-logger/channel-text.h
+include/telepathy-logger/channel.h
+include/telepathy-logger/conf.h
+include/telepathy-logger/contact.h
+include/telepathy-logger/datetime.h
+include/telepathy-logger/dbus-service.h
+include/telepathy-logger/debug.h
+include/telepathy-logger/log-entry-text.h
+include/telepathy-logger/log-entry.h
+include/telepathy-logger/log-manager-priv.h
+include/telepathy-logger/log-manager.h
+include/telepathy-logger/log-store-empathy.h
+include/telepathy-logger/log-store-factory.h
+include/telepathy-logger/log-store.h
+include/telepathy-logger/observer.h
+include/telepathy-logger/util.h
+lib/libtelepathy-logger.a
+lib/libtelepathy-logger.la
+@lib lib/libtelepathy-logger.so.${LIBtelepathy-logger_VERSION}
+lib/pkgconfig/telepathy-logger.pc
+share/dbus-1/services/org.freedesktop.Telepathy.Client.Logger.service
+share/dbus-1/services/org.freedesktop.Telepathy.Logger.service
+share/gtk-doc/html/telepathy-logger/
+share/gtk-doc/html/telepathy-logger/api-index-full.html
+share/gtk-doc/html/telepathy-logger/ch01.html
+share/gtk-doc/html/telepathy-logger/home.png
+share/gtk-doc/html/telepathy-logger/index.html
+share/gtk-doc/html/telepathy-logger/index.sgml
+share/gtk-doc/html/telepathy-logger/left.png
+share/gtk-doc/html/telepathy-logger/object-tree.html
+share/gtk-doc/html/telepathy-logger/right.png
+share/gtk-doc/html/telepathy-logger/style.css
+share/gtk-doc/html/telepathy-logger/telepathy-logger-action-chain.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-channel-factory.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-channel-text.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-channel.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-conf.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-contact.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-datetime.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-dbus-service-server.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-dbus-service.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-debug.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-log-entry-text.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-log-entry.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-log-manager-priv.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-log-manager.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-log-store-empathy.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-log-store-factory.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-log-store.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-observer.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-util.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger.devhelp
+share/gtk-doc/html/telepathy-logger/telepathy-logger.devhelp2
+share/gtk-doc/html/telepathy-logger/up.png
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/telepathy-logger.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/telepathy/
+share/telepathy/clients/
+share/telepathy/clients/TelepathyLogger.client
