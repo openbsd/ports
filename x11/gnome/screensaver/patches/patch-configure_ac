@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.2 2009/10/14 09:55:24 ajacoutot Exp $
---- configure.ac.orig	Wed Sep 23 10:36:43 2009
-+++ configure.ac	Wed Oct 14 11:35:09 2009
-@@ -621,6 +621,7 @@ have_shadow_enhanced=no
+$OpenBSD: patch-configure_ac,v 1.3 2010/04/23 11:56:09 ajacoutot Exp $
+--- configure.ac.orig	Tue Mar 30 17:16:51 2010
++++ configure.ac	Fri Apr 23 13:41:53 2010
+@@ -625,6 +625,7 @@ have_shadow_enhanced=no
  have_shadow_adjunct=no
  have_shadow_hpux=no
  have_passwd_helper=no
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure_ac,v 1.2 2009/10/14 09:55:24 ajacoutot Exp $
  
  with_shadow_req=unspecified
  
-@@ -837,6 +838,44 @@ esac
+@@ -841,6 +842,44 @@ esac
  AM_CONDITIONAL(HAVE_PASSWD_HELPER, test x$have_passwd_helper = xyes)
  AC_SUBST(HAVE_PASSWD_HELPER)
  
@@ -54,7 +54,7 @@ $OpenBSD: patch-configure_ac,v 1.2 2009/10/14 09:55:24 ajacoutot Exp $
  if test "$need_setuid" = yes -a "$have_pam" != yes ; then
    NEED_SETUID=yes
  else
-@@ -849,7 +888,7 @@ dnl  Authentication scheme
+@@ -853,7 +892,7 @@ dnl  Authentication scheme
  dnl ---------------------------------------------------------------------------
  
  AC_ARG_ENABLE(authentication-scheme,
@@ -63,7 +63,7 @@ $OpenBSD: patch-configure_ac,v 1.2 2009/10/14 09:55:24 ajacoutot Exp $
                            authentication scheme [default=auto]],,
    enable_authentication_scheme=auto)
  
-@@ -861,11 +900,16 @@ fi
+@@ -865,11 +904,16 @@ fi
  if test x$enable_authentication_scheme = xhelper -a x$have_passwd_helper = xno ; then
  	AC_MSG_ERROR(Password helper support requested but not available)
  fi
@@ -80,7 +80,7 @@ $OpenBSD: patch-configure_ac,v 1.2 2009/10/14 09:55:24 ajacoutot Exp $
  elif test x$enable_authentication_scheme = xpwent ; then
          AUTH_SCHEME="pwent"
  elif test x$enable_authentication_scheme = xauto ; then
-@@ -873,6 +917,8 @@ elif test x$enable_authentication_scheme = xauto ; the
+@@ -877,6 +921,8 @@ elif test x$enable_authentication_scheme = xauto ; the
  		AUTH_SCHEME="pam"
  	elif test x$have_passwd_helper != xno ; then
  		AUTH_SCHEME="helper"
