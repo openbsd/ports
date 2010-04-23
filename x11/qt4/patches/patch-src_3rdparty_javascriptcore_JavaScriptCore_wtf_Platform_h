@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.1 2010/04/23 16:22:25 espie Exp $
+--- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h.orig	Fri Apr 23 15:48:40 2010
++++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	Fri Apr 23 15:49:35 2010
+@@ -718,7 +718,7 @@
+ #endif
+ 
+ #if !defined(WTF_USE_JSVALUE64) && !defined(WTF_USE_JSVALUE32) && !defined(WTF_USE_JSVALUE32_64)
+-#if PLATFORM(X86_64) && (PLATFORM(DARWIN) || PLATFORM(LINUX) || PLATFORM(SOLARIS) || PLATFORM(HPUX))
++#if PLATFORM(X86_64) && (PLATFORM(DARWIN) || PLATFORM(LINUX) || PLATFORM(SOLARIS) || PLATFORM(HPUX)) || PLATFORM(OPENBSD)
+ #define WTF_USE_JSVALUE64 1
+ #elif (PLATFORM(IA64) && !PLATFORM(IA64_32)) || PLATFORM(SPARC64)
+ #define WTF_USE_JSVALUE64 1
