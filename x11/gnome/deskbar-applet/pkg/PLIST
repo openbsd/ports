@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/10/14 09:30:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/04/23 23:45:30 jasper Exp $
 lib/bonobo/servers/Deskbar_Applet.server
 lib/pkgconfig/deskbar-applet.pc
 lib/python${MODPY_VERSION}/site-packages/deskbar/
@@ -434,6 +434,7 @@ share/locale/da/LC_MESSAGES/deskbar-applet.mo
 share/locale/de/LC_MESSAGES/deskbar-applet.mo
 share/locale/dz/LC_MESSAGES/deskbar-applet.mo
 share/locale/el/LC_MESSAGES/deskbar-applet.mo
+share/locale/en@shaw/LC_MESSAGES/deskbar-applet.mo
 share/locale/en_CA/LC_MESSAGES/deskbar-applet.mo
 share/locale/en_GB/LC_MESSAGES/deskbar-applet.mo
 share/locale/es/LC_MESSAGES/deskbar-applet.mo
