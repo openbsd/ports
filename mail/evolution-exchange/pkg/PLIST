@@ -1,20 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/03/21 10:43:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/04/23 09:05:06 ajacoutot Exp $
 @bin bin/exchange-connector-setup-${EVO_VERSION}
-lib/bonobo/servers/GNOME_Evolution_Exchange_Storage_${EVO_VERSION}.server
 lib/evolution-data-server-1.2/camel-providers/libcamelexchange.la
 lib/evolution-data-server-1.2/camel-providers/libcamelexchange.so
 lib/evolution-data-server-1.2/camel-providers/libcamelexchange.urls
-@bin libexec/evolution/${EVO_VERSION}/evolution-exchange-storage
+lib/evolution-data-server-1.2/extensions/libebookbackendexchange.la
+lib/evolution-data-server-1.2/extensions/libebookbackendexchange.so
+lib/evolution-data-server-1.2/extensions/libecalbackendexchange.la
+lib/evolution-data-server-1.2/extensions/libecalbackendexchange.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-exchange-operations.la
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-exchange-operations.so
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-exchange-operations.eplug
 share/evolution-exchange/
 share/evolution-exchange/${EVO_VERSION}/
-share/evolution-exchange/${EVO_VERSION}/glade/
-share/evolution-exchange/${EVO_VERSION}/glade/exchange-autoconfig-wizard.glade
-share/evolution-exchange/${EVO_VERSION}/glade/exchange-change-password.glade
-share/evolution-exchange/${EVO_VERSION}/glade/exchange-delegates.glade
-share/evolution-exchange/${EVO_VERSION}/glade/exchange-folder-tree.glade
-share/evolution-exchange/${EVO_VERSION}/glade/exchange-oof.glade
-share/evolution-exchange/${EVO_VERSION}/glade/exchange-passwd-expiry.glade
-share/evolution-exchange/${EVO_VERSION}/glade/exchange-permissions-dialog.glade
 share/evolution-exchange/${EVO_VERSION}/images/
 share/evolution-exchange/${EVO_VERSION}/images/connector-mini.png
 share/evolution-exchange/${EVO_VERSION}/images/connector.png
@@ -22,6 +19,7 @@ share/evolution-exchange/${EVO_VERSION}/images/exchange-delegates-48.png
 share/evolution-exchange/${EVO_VERSION}/images/exchange-oof-48.png
 share/evolution-exchange/${EVO_VERSION}/ui/
 share/evolution-exchange/${EVO_VERSION}/ui/ximian-connector.xml
+share/evolution/${EVO_VERSION}/errors/org-gnome-exchange-operations.error
 share/gtk-doc/html/evolution-exchange/
 share/gtk-doc/html/evolution-exchange/E2kContext.html
 share/gtk-doc/html/evolution-exchange/E2kGlobalCatalog.html
@@ -82,18 +80,19 @@ share/gtk-doc/html/evolution-exchange/ximian-connector-permissions.html
 share/gtk-doc/html/evolution-exchange/ximian-connnector-booking.html
 share/locale/ar/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/as/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
+share/locale/ast/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/az/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/bg/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/bn/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/bn_IN/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/ca/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
-share/locale/ca@valencia/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/cs/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/cy/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/da/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/de/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/dz/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/el/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
+share/locale/en@shaw/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/en_CA/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/en_GB/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/es/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
