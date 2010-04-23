@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/23 10:07:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/23 17:59:12 jasper Exp $
 
 COMMENT=		flexible communications framework, farsight2 component
 
 DISTNAME=		telepathy-farsight-0.0.13
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 
 SHARED_LIBS +=  telepathy-farsight   0.0      # .0.4
 
