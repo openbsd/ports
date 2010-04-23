@@ -1,0 +1,6 @@
+gnome-keyring-sharp is a fully managed implementation of
+libgnome-keyring.
+
+When the gnome-keyring-daemon is running, you can use this to
+retrive/store confidential information such as passwords, notes or
+network services user information.
