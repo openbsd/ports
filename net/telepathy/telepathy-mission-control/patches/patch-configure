@@ -1,12 +1,34 @@
-$OpenBSD: patch-configure,v 1.1 2008/11/04 22:48:17 jasper Exp $
---- configure.orig	Wed Jul 16 08:36:39 2008
-+++ configure	Tue Nov  4 23:45:02 2008
-@@ -20238,7 +20238,7 @@ echo "$as_me: error: xsltproc (from the libxslt source
- fi
+$OpenBSD: patch-configure,v 1.2 2010/04/23 12:42:54 jasper Exp $
+--- configure.orig	Thu Apr 15 21:29:32 2010
++++ configure	Fri Apr 23 00:49:35 2010
+@@ -2708,14 +2708,6 @@ echo timestamp > conftest.file
+ # name.  Accept space and tab only in the latter.
+ am_lf='
+ '
+-case `pwd` in
+-  *[\\\"\#\$\&\'\`$am_lf]*)
+-    as_fn_error "unsafe absolute working directory name" "$LINENO" 5;;
+-esac
+-case $srcdir in
+-  *[\\\"\#\$\&\'\`$am_lf\ \	]*)
+-    as_fn_error "unsafe srcdir value: \`$srcdir'" "$LINENO" 5;;
+-esac
  
- PYTHON=
--for ac_prog in python2.3 python2.4 python2.5 python
-+for ac_prog in python${MODPY_VERSION}
- do
-   # Extract the first word of "$ac_prog", so it can be a program name with args.
- set dummy $ac_prog; ac_word=$2
+ # Do `set' in a subshell so we don't clobber the current shell's
+ # arguments.  Must try -L first in case configure is actually a
+@@ -15024,13 +15016,13 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+ 
+-	for am_cv_pathless_PYTHON in python python2 python3 python3.0 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 none; do
++	for am_cv_pathless_PYTHON in python${MODPY_VERSION}; do
+ 	  test "$am_cv_pathless_PYTHON" = none && break
+ 	  prog="import sys
+ # split strings by '.' and convert to numeric.  Append some zeros
+ # because we need at least 4 digits for the hex conversion.
+ # map returns an iterator in Python 3.0 and a list in 2.x
+-minver = list(map(int, '2.5'.split('.'))) + [0, 0, 0]
++minver = list(map(int, '${MODPY_VERSION}'.split('.'))) + [0, 0, 0]
+ minverhex = 0
+ # xrange is not present in Python 3.0 and range returns an iterator
+ for i in list(range(0, 4)): minverhex = (minverhex << 8) + minver[i]
