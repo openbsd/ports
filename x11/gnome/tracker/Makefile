@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2010/04/16 06:36:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/04/23 09:57:25 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.8.2
+GNOME_VERSION=	0.8.3
 
 # there is already audio/tracker, so this port has to live
 # as tracker-search.
 PKGNAME=	tracker-search-${VERSION}
 
-EVO_VERSION=	2.28
+EVO_VERSION=	2.30
 SUBST_VARS=	EVO_VERSION
 
 SHARED_LIBS +=  tracker-common       1.0      # .800.0
@@ -24,17 +24,18 @@ WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 avahi-client avahi-common
 WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 bz2
 WANTLIB += c cairo camel-1.2 camel-provider-1.2 com_err crypto
 WANTLIB += dbus-1 dbus-glib-1 ebook-1.2 edataserver-1.2 edataserverui-1.2
-WANTLIB += execinfo exif expat fontconfig freetype gailutil gconf-2
-WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
-WANTLIB += glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-2 gnome-desktop-2
-WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls
-WANTLIB += gobject-2.0 gpg-error gsf-1 gssapi gstbase-0.10 gstreamer-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 jpeg krb5 lcms m nspr4 nss3 ogg
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png popt pthread pthread-stubs smime3 softokn3
-WANTLIB += soup-2.4 sqlite3 ssl ssl3 startup-notification-1 stdc++
-WANTLIB += tasn1 tiff util xcb xcb-atom xcb-aux xcb-event xml2
-WANTLIB += z xcb-render xcb-render-util
+WANTLIB += eggdbus-1 enchant execinfo exif expat fontconfig freetype
+WANTLIB += gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-2
+WANTLIB += gnome-desktop-2 gnome-keyring gnomecanvas-2 gnomevfs-2
+WANTLIB += gnutls gobject-2.0 gpg-error gsf-1 gssapi gstbase-0.10
+WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 gtkhtml-3.14
+WANTLIB += gtkhtml-editor jpeg krb5 lcms m nspr4 nss3 ogg pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
+WANTLIB += png popt pthread pthread-stubs smime3 soup-2.4 sqlite3
+WANTLIB += ssl ssl3 startup-notification-1 stdc++ tasn1 tiff unique-1.0
+WANTLIB += util xcb xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
+WANTLIB += xml2 z
 
 HOMEPAGE=	http://tracker-project.org/
 
@@ -99,7 +100,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gstreamer-helix \
 		--disable-unac \
 		--without-enca \
-		--disable-libiptcdata
+		--disable-libiptcdata \
+		--disable-libflac
 
 # needs libgee
 CONFIGURE_ARGS+= --disable-tracker-search-tool \
