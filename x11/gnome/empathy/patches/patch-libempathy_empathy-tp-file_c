@@ -1,0 +1,11 @@
+$OpenBSD: patch-libempathy_empathy-tp-file_c,v 1.1 2010/04/23 13:03:28 jasper Exp $
+--- libempathy/empathy-tp-file.c.orig	Thu Dec 24 14:37:56 2009
++++ libempathy/empathy-tp-file.c	Thu Dec 24 14:38:32 2009
+@@ -30,6 +30,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
++#include <netinet/in.h>
+ 
+ #include <glib/gi18n-lib.h>
+ 
