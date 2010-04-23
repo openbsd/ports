@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.4 2009/06/02 04:45:33 jasper Exp $
---- Makefile.orig	Wed May 27 04:02:03 2009
-+++ Makefile	Sun May 31 15:06:38 2009
+$OpenBSD: patch-Makefile,v 1.5 2010/04/23 12:44:03 jasper Exp $
+--- Makefile.orig	Thu Sep 24 14:23:59 2009
++++ Makefile	Mon Oct 12 11:58:58 2009
 @@ -8,7 +8,7 @@ CANONXML = xmllint --nsclean --noblanks --c14n --nonet
  XML_LINEBREAKS = perl -pe 's/>/>\n/g'
  DROP_NAMESPACE = perl -pe '$$hash = chr(35); s{xmlns:tp="http://telepathy\.freedesktop\.org/wiki/DbusSpec$${hash}extensions-v0"}{}g'
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/06/02 04:45:33 jasper Exp $
  	tr a-z A-Z < $@ > $@.upper
  	tr A-Z a-z < $@ > $@.lower
  	tr -d _ < $@ > $@.camel
-@@ -76,10 +76,10 @@ $(TEST_INTROSPECT): $(TEST_INTERFACE_XMLS) tools/spec-
+@@ -77,10 +77,10 @@ $(TEST_INTROSPECT): $(TEST_INTERFACE_XMLS) tools/spec-
  
  $(ASYNC_INTROSPECT): introspect/async/%.xml: introspect/%.xml tools/make_all_async.py
  	@install -d introspect/async

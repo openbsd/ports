@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/06/02 04:45:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/04/23 12:44:03 jasper Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		flexible communications framework, specifications
 
-DISTNAME=		telepathy-spec-0.17.25
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		telepathy-spec-0.19.5
 CATEGORIES=		books
 
 MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-spec/}
