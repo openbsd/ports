@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/20 17:55:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/23 17:51:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		versatile IDE for C and C++
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		2.30.0.0
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS=		anjuta		0.0	\
 			anjuta-ctags 	0.0	\
@@ -42,6 +43,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 soup-2.4 sqlite3 ssl startup-notification-1 stdc++
 WANTLIB += tasn1 unique-1.0 util webkit-1.0 wnck-1 xcb xcb-atom
 WANTLIB += xcb-aux xcb-event xcb-render xcb-render-util xml2 xslt z
+WANTLIB += gstapp-0.10
 
 BUILD_DEPENDS=		:autogen->=5.6.5:devel/autogen \
 			::devel/p5-Locale-gettext \
