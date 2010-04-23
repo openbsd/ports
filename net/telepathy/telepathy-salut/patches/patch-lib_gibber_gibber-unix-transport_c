@@ -1,18 +1,16 @@
-$OpenBSD: patch-lib_gibber_gibber-unix-transport_c,v 1.1 2010/04/23 12:43:44 jasper Exp $
---- lib/gibber/gibber-unix-transport.c.orig	Thu Apr 22 17:42:08 2010
-+++ lib/gibber/gibber-unix-transport.c	Thu Apr 22 18:04:21 2010
-@@ -22,15 +22,21 @@
+$OpenBSD: patch-lib_gibber_gibber-unix-transport_c,v 1.2 2010/04/23 13:49:24 jasper Exp $
+--- lib/gibber/gibber-unix-transport.c.orig	Mon Mar 22 00:13:59 2010
++++ lib/gibber/gibber-unix-transport.c	Fri Apr 23 15:47:59 2010
+@@ -22,15 +22,19 @@
  /* needed for struct ucred */
  #define _GNU_SOURCE
  
 +#include <sys/types.h>
-+#include <sys/socket.h>
 +#include <sys/param.h>
-+#include <sys/un.h>
-+#include <sys/ucred.h>
-+#include <sys/socket.h>
 +#include <sys/uio.h>
 +#include <netinet/in.h>
++#include <sys/socket.h>
++#include <sys/ucred.h>
 +
  #include <stdio.h>
  #include <stdlib.h>
@@ -26,7 +24,7 @@ $OpenBSD: patch-lib_gibber_gibber-unix-transport_c,v 1.1 2010/04/23 12:43:44 jas
  
  #include "gibber-unix-transport.h"
  #include "gibber-util.h"
-@@ -38,6 +44,9 @@
+@@ -38,6 +42,9 @@
  #define DEBUG_FLAG DEBUG_NET
  #include "gibber-debug.h"
  
@@ -36,7 +34,7 @@ $OpenBSD: patch-lib_gibber_gibber-unix-transport_c,v 1.1 2010/04/23 12:43:44 jas
  G_DEFINE_TYPE(GibberUnixTransport, gibber_unix_transport, \
      GIBBER_TYPE_FD_TRANSPORT)
  
-@@ -227,9 +236,8 @@ gibber_unix_transport_send_credentials (GibberUnixTran
+@@ -227,9 +234,8 @@ gibber_unix_transport_send_credentials (GibberUnixTran
    ch->cmsg_type = SCM_CREDENTIALS;
  
    cred = (struct ucred *) CMSG_DATA (ch);
@@ -48,7 +46,7 @@ $OpenBSD: patch-lib_gibber_gibber-unix-transport_c,v 1.1 2010/04/23 12:43:44 jas
  
    ret = sendmsg (fd, &msg, 0);
    if (ret == -1)
-@@ -326,9 +334,9 @@ gibber_unix_transport_read (GibberFdTransport *transpo
+@@ -326,9 +332,9 @@ gibber_unix_transport_read (GibberFdTransport *transpo
        GibberCredentials credentials;
  
        cred = (struct ucred *) CMSG_DATA (ch);
