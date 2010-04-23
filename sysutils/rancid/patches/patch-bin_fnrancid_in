@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_fnrancid_in,v 1.3 2009/02/11 13:17:28 pea Exp $
---- bin/fnrancid.in.orig	Fri Feb  8 10:59:08 2008
-+++ bin/fnrancid.in	Tue Feb 10 14:21:53 2009
+$OpenBSD: patch-bin_fnrancid_in,v 1.4 2010/04/23 11:18:43 pea Exp $
+--- bin/fnrancid.in.orig	Wed Mar 24 00:33:50 2010
++++ bin/fnrancid.in	Fri Apr 16 10:34:08 2010
 @@ -172,6 +172,7 @@ sub GetSystem {
  
      while (<INPUT>) {
@@ -9,23 +9,23 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.3 2009/02/11 13:17:28 pea Exp $
  	next if /^\s*$/;
  	last if(/$prompt/);
  	ProcessHistory("","","","$_");
-@@ -202,6 +203,15 @@ sub GetConf {
+@@ -201,6 +202,15 @@ sub GetConf {
  	    next;
  	}
  	ProcessHistory("","","","$_");
-+if (length($host) == 0) {
-+    if ($file) {
-+	print(STDERR "Too few arguments: file name required\n");
-+	exit(1);
-+    } else {
-+	print(STDERR "Too few arguments: host name required\n");
-+	exit(1);
-+    }
-+}
- 	#print STDOUT "$_";
++	if (length($host) == 0) {
++    	   if ( $file) {
++	      print(STDERR "Too few arguments: file name required\n");
++	      exit(1);
++    	} else {
++	  print(STDERR "Too few arguments: host name required\n");
++	  exit(1);
++    	  }
++	}
      }
-     $found_end=1;
-@@ -214,7 +224,7 @@ sub DoNothing {print STDOUT;}
+     $found_end = 1;
+     return(1);
+@@ -212,7 +222,7 @@ sub DoNothing {print STDOUT;}
  # Main
  @commandtable = (
  	{'get system status'	=> 'GetSystem'},
@@ -34,10 +34,10 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.3 2009/02/11 13:17:28 pea Exp $
  );
  # Use an array to preserve the order of the commands and a hash for mapping
  # commands to the subroutine and track commands that have been completed.
-@@ -242,13 +252,13 @@ if ($file) {
-     print STDERR "opening file $host\n" if ($debug);
+@@ -241,13 +251,13 @@ if ($file) {
      print STDOUT "opening file $host\n" if ($log);
-     open(INPUT,"<$host") || die "open failed for $host: $!\n"; } else {
+     open(INPUT,"<$host") || die "open failed for $host: $!\n";
+ } else {
 -    print STDERR "executing nlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($debug);
 -    print STDOUT "executing nlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($log);
 +    print STDERR "executing fnlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($debug);
@@ -53,7 +53,7 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.3 2009/02/11 13:17:28 pea Exp $
      }
  }
  
-@@ -276,13 +286,32 @@ ProcessHistory("","","","!RANCID-CONTENT-TYPE: fortiga
+@@ -275,13 +285,32 @@ ProcessHistory("","","","!RANCID-CONTENT-TYPE: fortiga
  TOP: while(<INPUT>) {
      tr/\015//d;
      if (/^Error:/) {

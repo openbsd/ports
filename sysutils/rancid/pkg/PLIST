@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/07/29 07:40:15 pea Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/23 11:18:43 pea Exp $
 @conflict par-*
 @newgroup _rancid:613
 @newuser _rancid:613:_rancid:daemon:Rancid user:/var/rancid:/bin/sh
 bin/agmrancid
 bin/alogin
 bin/arancid
+bin/arrancid
 bin/avologin
 bin/avorancid
 bin/blogin
@@ -58,6 +59,7 @@ bin/zrancid
 @man man/man1/agmrancid.1
 @man man/man1/alogin.1
 @man man/man1/arancid.1
+@man man/man1/arrancid.1
 @man man/man1/avologin.1
 @man man/man1/avorancid.1
 @man man/man1/blogin.1
@@ -82,6 +84,8 @@ bin/zrancid
 @man man/man1/jrancid.1
 @man man/man1/lg_intro.1
 @man man/man1/mrancid.1
+@man man/man1/mrvlogin.1
+@man man/man1/mrvrancid.1
 @man man/man1/nlogin.1
 @man man/man1/nrancid.1
 @man man/man1/nslogin.1

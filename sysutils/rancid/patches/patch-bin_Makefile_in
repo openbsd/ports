@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_Makefile_in,v 1.3 2009/07/29 07:40:15 pea Exp $
---- bin/Makefile.in.orig	Fri Apr 17 00:04:43 2009
-+++ bin/Makefile.in	Fri May 15 16:49:22 2009
-@@ -60,7 +60,7 @@ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile
+$OpenBSD: patch-bin_Makefile_in,v 1.4 2010/04/23 11:18:43 pea Exp $
+--- bin/Makefile.in.orig	Wed Mar 24 00:33:49 2010
++++ bin/Makefile.in	Fri Apr 16 10:29:28 2010
+@@ -62,7 +62,7 @@ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile
  	$(srcdir)/rivrancid.in $(srcdir)/rrancid.in \
  	$(srcdir)/srancid.in $(srcdir)/tlogin.in $(srcdir)/tntlogin.in \
  	$(srcdir)/tntrancid.in $(srcdir)/trancid.in \
@@ -10,25 +10,25 @@ $OpenBSD: patch-bin_Makefile_in,v 1.3 2009/07/29 07:40:15 pea Exp $
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
  	$(top_srcdir)/configure.in
-@@ -74,7 +74,7 @@ CONFIG_CLEAN_FILES = control_rancid par rancid-fe agmr
- 	francid fnrancid hlogin hrancid htlogin htrancid jlogin \
+@@ -76,7 +76,7 @@ CONFIG_CLEAN_FILES = control_rancid par rancid-fe agmr
+ 	flogin francid fnrancid hlogin hrancid htlogin htrancid jlogin \
  	jrancid jerancid mrancid mrvlogin mrvrancid nlogin nrancid \
  	nslogin nsrancid nxrancid prancid rivlogin rivrancid rrancid \
 -	srancid tlogin tntlogin tntrancid trancid xrancid zrancid
 +	srancid tlogin tntlogin tntrancid trancid xrancid zrancid fnlogin
+ CONFIG_CLEAN_VPATH_FILES =
  am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)"
- binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
  PROGRAMS = $(bin_PROGRAMS)
-@@ -224,7 +224,7 @@ bin_SCRIPTS = agmrancid alogin arancid avologin avoran
- 	mrvlogin mrvrancid nlogin nrancid nslogin nsrancid nxrancid \
- 	par prancid rancid-fe rancid rivlogin rivrancid rrancid \
- 	srancid tlogin tntlogin tntrancid trancid xrancid zrancid \
--	lg.cgi lgform.cgi rancid-cvs rancid-run
-+	lg.cgi lgform.cgi rancid-cvs rancid-run fnlogin
+@@ -248,7 +248,7 @@ bin_SCRIPTS = agmrancid alogin arancid arrancid avolog
+ 	mrancid mrvlogin mrvrancid nlogin nrancid nslogin nsrancid \
+ 	nxrancid par prancid rancid-fe rancid rivlogin rivrancid \
+ 	rrancid srancid tlogin tntlogin tntrancid trancid xrancid \
+-	zrancid lg.cgi lgform.cgi rancid-cvs rancid-run
++	zrancid lg.cgi lgform.cgi rancid-cvs rancid-run fnlogin 
  EXTRA_DIST = lg.cgi.in lgform.cgi.in rancid-cvs.in rancid-run.in
  #dist_bin_SCRIPTS= $(bin_SCRIPTS:%=%.in)
  CLEANFILES = lg.cgi lgform.cgi rancid-cvs rancid-run
-@@ -329,6 +329,8 @@ f5rancid: $(top_builddir)/config.status $(srcdir)/f5ra
+@@ -356,6 +356,8 @@ f5rancid: $(top_builddir)/config.status $(srcdir)/f5ra
  f10rancid: $(top_builddir)/config.status $(srcdir)/f10rancid.in
  	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
  flogin: $(top_builddir)/config.status $(srcdir)/flogin.in
