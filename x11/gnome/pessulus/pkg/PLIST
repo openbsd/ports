@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/21 18:03:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/23 12:27:09 ajacoutot Exp $
 bin/pessulus
 lib/python${MODPY_VERSION}/site-packages/Pessulus/
 lib/python${MODPY_VERSION}/site-packages/Pessulus/__init__.py
@@ -68,6 +68,7 @@ share/locale/da/LC_MESSAGES/pessulus.mo
 share/locale/de/LC_MESSAGES/pessulus.mo
 share/locale/dz/LC_MESSAGES/pessulus.mo
 share/locale/el/LC_MESSAGES/pessulus.mo
+share/locale/en@shaw/LC_MESSAGES/pessulus.mo
 share/locale/en_CA/LC_MESSAGES/pessulus.mo
 share/locale/en_GB/LC_MESSAGES/pessulus.mo
 share/locale/es/LC_MESSAGES/pessulus.mo
@@ -120,6 +121,7 @@ share/locale/te/LC_MESSAGES/pessulus.mo
 share/locale/th/LC_MESSAGES/pessulus.mo
 share/locale/tr/LC_MESSAGES/pessulus.mo
 share/locale/uk/LC_MESSAGES/pessulus.mo
+share/locale/uz@cyrillic/LC_MESSAGES/pessulus.mo
 share/locale/vi/LC_MESSAGES/pessulus.mo
 share/locale/zh_CN/LC_MESSAGES/pessulus.mo
 share/locale/zh_HK/LC_MESSAGES/pessulus.mo
