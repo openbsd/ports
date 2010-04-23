@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/04/22 14:27:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2010/04/23 18:05:26 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -6,16 +6,16 @@ COMMENT-python=		python interface to subversion
 COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 
-VERSION=		1.6.6
+VERSION=		1.6.11
 DISTNAME=		subversion-${VERSION}
-PKGNAME-main=		${DISTNAME}p2
-FULLPKGNAME-perl=	p5-SVN-${VERSION}p0
+PKGNAME-main=		${DISTNAME}
+FULLPKGNAME-perl=	p5-SVN-${VERSION}
 FULLPKGPATH-perl=	devel/subversion,-perl
-FULLPKGNAME-python=	py-subversion-${VERSION}p0
+FULLPKGNAME-python=	py-subversion-${VERSION}
 FULLPKGPATH-python=	devel/subversion,-python
-FULLPKGNAME-ruby=	ruby-subversion-${VERSION}p1
+FULLPKGNAME-ruby=	ruby-subversion-${VERSION}
 FULLPKGPATH-ruby=	devel/subversion,-ruby
-FULLPKGNAME-ap2=	ap2-subversion-${VERSION}p0
+FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
 
 SO_VERSION=	1.2
@@ -28,7 +28,7 @@ SHARED_LIBS+=	${_lib} ${SO_VERSION}
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://subversion.tigris.org/
+HOMEPAGE=	http://subversion.apache.org
 
 MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 
@@ -38,7 +38,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/downloads/
+# Subversion 1.6.x tarballs are still hosted at tigris.org, not apache.org
+MASTER_SITES=	http://subversion.tigris.org/downloads/
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_bindings no_ap2
@@ -154,7 +155,7 @@ MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
 USE_LIBTOOL=	Yes
 # should be 2.63
 AUTOCONF_VERSION=2.62
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PYTHON2=${MODPY_BIN}
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--with-sasl=${LOCALBASE} \
