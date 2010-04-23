@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/21 18:03:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/04/23 12:23:32 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -64,6 +64,9 @@ lib/python${MODPY_VERSION}/site-packages/orca/generator.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/gnomespeechfactory.py
 lib/python${MODPY_VERSION}/site-packages/orca/gnomespeechfactory.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/gnomespeechfactory.pyo
+lib/python${MODPY_VERSION}/site-packages/orca/gsmag.py
+lib/python${MODPY_VERSION}/site-packages/orca/gsmag.pyc
+lib/python${MODPY_VERSION}/site-packages/orca/gsmag.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/httpserver.py
 lib/python${MODPY_VERSION}/site-packages/orca/httpserver.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/httpserver.pyo
@@ -147,6 +150,19 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/__init__.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/__init__.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/formatting.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/formatting.pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/formatting.pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/script.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/script.pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/script.pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/speech_generator.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/speech_generator.pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Banshee/speech_generator.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Mozilla.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Mozilla.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/Mozilla.pyo
@@ -270,6 +286,9 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/packagemanager/braill
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/packagemanager/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/packagemanager/script.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/packagemanager/script.pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/packagemanager/script_settings.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/packagemanager/script_settings.pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/packagemanager/script_settings.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/packagemanager/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/packagemanager/speech_generator.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/packagemanager/speech_generator.pyo
@@ -340,9 +359,16 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/speech_genera
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/structural_navigation.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/structural_navigation.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/soffice/structural_navigation.pyo
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp.py
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp.pyc
-lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp.pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp/
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp/__init__.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp/script.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp/script.pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp/script.pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp/script_settings.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp/script_settings.pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/yelp/script_settings.pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/self_voicing.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/self_voicing.pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/self_voicing.pyo
