@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_scintilla_FilePath_cxx,v 1.1.1.1 2010/04/23 18:38:38 ajacoutot Exp $
+--- plugins/scintilla/FilePath.cxx.orig	Fri Apr 23 20:18:57 2010
++++ plugins/scintilla/FilePath.cxx	Fri Apr 23 20:19:15 2010
+@@ -19,6 +19,10 @@
+ #include <dirent.h>
+ #include <errno.h>
+ 
++#ifndef MAX_PATH
++#define MAX_PATH 1024
++#endif
++
+ #include "SString.h"
+ #include "PropSet.h"
+ #include "FilePath.h"

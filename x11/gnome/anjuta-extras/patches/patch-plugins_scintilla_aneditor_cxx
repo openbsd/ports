@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_scintilla_aneditor_cxx,v 1.1.1.1 2010/04/23 18:38:38 ajacoutot Exp $
+--- plugins/scintilla/aneditor.cxx.orig	Fri Apr 23 20:15:39 2010
++++ plugins/scintilla/aneditor.cxx	Fri Apr 23 20:16:22 2010
+@@ -27,6 +27,10 @@
+ 
+ #include <libanjuta/anjuta-debug.h>
+ 
++#ifndef MAX_PATH
++#define MAX_PATH 1024
++#endif
++
+ static void lowerCaseString(char *s);
+ static AnEditor * aneditor_get(AnEditorID id);
+ 

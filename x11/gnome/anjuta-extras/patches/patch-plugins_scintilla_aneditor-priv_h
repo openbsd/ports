@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_scintilla_aneditor-priv_h,v 1.1.1.1 2010/04/23 18:38:38 ajacoutot Exp $
+--- plugins/scintilla/aneditor-priv.h.orig	Fri Apr 23 20:16:58 2010
++++ plugins/scintilla/aneditor-priv.h	Fri Apr 23 20:17:20 2010
+@@ -56,6 +56,10 @@
+ #include <string>
+ #include <memory>
+ 
++#ifndef MAX_PATH
++#define MAX_PATH 1024
++#endif
++
+ using namespace std;
+ 
+ // #include "debugger.h"
