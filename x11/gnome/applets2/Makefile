@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.87 2010/04/04 10:50:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2010/04/23 13:58:34 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
 
 GNOME_PROJECT=		gnome-applets
-GNOME_VERSION=		2.28.0
+GNOME_VERSION=		2.30.0
 
-PKGNAME-main=		gnome-applets2-${VERSION}p7
-PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}p1
+PKGNAME-main=		gnome-applets2-${VERSION}
+PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
 
 CATEGORIES=		x11
 
@@ -26,7 +26,7 @@ WANTLIB += freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-2 gnomecanvas-2 gnomevfs-2
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
-WANTLIB += ssl util xcb xml2 z
+WANTLIB += ssl util xcb xml2 z xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -45,9 +45,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			gstbase-0.10,gstreamer-0.10::multimedia/gstreamer-0.10/core \
 			gstaudio-0.10.>=0.1,gstinterfaces-0.10.>=0.1::multimedia/gstreamer-0.10/plugins-base \
 			gtop-2.0.>=3.0::devel/libgtop2 \
-			xklavier::x11/gnome/libxklavier \
-			gucharmap:gucharmap->=1.8:x11/gnome/gucharmap \
-			gnomekbd,gnomekbdui::x11/gnome/libgnomekbd
+			gucharmap:gucharmap->=1.8:x11/gnome/gucharmap
 
 PSEUDO_FLAVORS=		no_battstat
 FLAVOR?=
@@ -62,16 +60,17 @@ RUN_DEPENDS-battstat=	::${BUILD_PKGPATH},-main
 
 MODGCONF2_SCHEMAS_DIR=	gnome-applets2
 
-CONFIGURE_ARGS+=	--enable-mixer-applet \
-			--disable-scrollkeeper
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--enable-mixer-applet \
+			--enable-networkmanager=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 WANTLIB-main=		${WANTLIB} \
-			XRes kvm xkbfile gcrypt gnome-desktop-2 gnutls \
+			XRes kvm gcrypt gnome-desktop-2 gnutls \
 			gpg-error gweather execinfo xcb-atom xcb-aux xcb-event \
 			soup-2.4 startup-notification-1 tasn1 wnck-1 \
-			gnome-keyring proxy soup-gnome-2.4 sqlite3
+			gnome-keyring proxy soup-gnome-2.4 sqlite3 eggdbus-1
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-applets2
 

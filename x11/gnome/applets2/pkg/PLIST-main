@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2009/12/21 18:03:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2010/04/23 13:58:34 ajacoutot Exp $
 @conflict libgweather-<2.24.1
 @pkgpath x11/gnome/applets2
 @pkgpath x11/gnome/applets2,no_battstat
@@ -35,6 +35,9 @@ lib/python${MODPY_VERSION}/site-packages/invest/chart.pyo
 lib/python${MODPY_VERSION}/site-packages/invest/defs.py
 lib/python${MODPY_VERSION}/site-packages/invest/defs.pyc
 lib/python${MODPY_VERSION}/site-packages/invest/defs.pyo
+lib/python${MODPY_VERSION}/site-packages/invest/networkmanager.py
+lib/python${MODPY_VERSION}/site-packages/invest/networkmanager.pyc
+lib/python${MODPY_VERSION}/site-packages/invest/networkmanager.pyo
 lib/python${MODPY_VERSION}/site-packages/invest/preferences.py
 lib/python${MODPY_VERSION}/site-packages/invest/preferences.pyc
 lib/python${MODPY_VERSION}/site-packages/invest/preferences.pyo
@@ -47,7 +50,6 @@ lib/python${MODPY_VERSION}/site-packages/invest/widgets.pyo
 @bin libexec/accessx-status-applet
 @bin libexec/charpick_applet2
 @bin libexec/geyes_applet2
-@bin libexec/gnome-keyboard-applet
 @bin libexec/gweather-applet-2
 libexec/invest-applet
 @bin libexec/mixer_applet2
@@ -57,7 +59,6 @@ libexec/invest-applet
 @bin libexec/trashapplet
 share/gnome-2.0/ui/GNOME_AccessxApplet.xml
 share/gnome-2.0/ui/GNOME_CharpickerApplet.xml
-share/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
 share/gnome-2.0/ui/GNOME_GWeatherApplet.xml
 share/gnome-2.0/ui/GNOME_GeyesApplet.xml
 share/gnome-2.0/ui/GNOME_MixerApplet.xml
@@ -68,7 +69,6 @@ share/gnome-2.0/ui/Invest_Applet.xml
 share/gnome-applets/
 share/gnome-applets/builder/
 share/gnome-applets/builder/financialchart.ui
-share/gnome-applets/builder/gswitchit.ui
 share/gnome-applets/builder/prefs-dialog.ui
 share/gnome-applets/builder/stickynotes.ui
 share/gnome-applets/builder/trashapplet-empty-progress.ui
@@ -507,6 +507,10 @@ share/gnome/help/geyes/C/figures/
 share/gnome/help/geyes/C/figures/geyes_applet.png
 share/gnome/help/geyes/C/geyes.xml
 share/gnome/help/geyes/C/legal.xml
+share/gnome/help/geyes/ast/
+share/gnome/help/geyes/ast/figures/
+share/gnome/help/geyes/ast/figures/geyes_applet.png
+share/gnome/help/geyes/ast/geyes.xml
 share/gnome/help/geyes/bg/
 share/gnome/help/geyes/bg/figures/
 share/gnome/help/geyes/bg/figures/geyes_applet.png
@@ -579,38 +583,14 @@ share/gnome/help/geyes/zh_CN/
 share/gnome/help/geyes/zh_CN/figures/
 share/gnome/help/geyes/zh_CN/figures/geyes_applet.png
 share/gnome/help/geyes/zh_CN/geyes.xml
-share/gnome/help/gswitchit/
-share/gnome/help/gswitchit/C/
-share/gnome/help/gswitchit/C/gswitchit.xml
-share/gnome/help/gswitchit/C/legal.xml
-share/gnome/help/gswitchit/ca/
-share/gnome/help/gswitchit/ca/gswitchit.xml
-share/gnome/help/gswitchit/cs/
-share/gnome/help/gswitchit/cs/gswitchit.xml
-share/gnome/help/gswitchit/de/
-share/gnome/help/gswitchit/de/gswitchit.xml
-share/gnome/help/gswitchit/el/
-share/gnome/help/gswitchit/el/gswitchit.xml
-share/gnome/help/gswitchit/en_GB/
-share/gnome/help/gswitchit/en_GB/gswitchit.xml
-share/gnome/help/gswitchit/es/
-share/gnome/help/gswitchit/es/gswitchit.xml
-share/gnome/help/gswitchit/eu/
-share/gnome/help/gswitchit/eu/gswitchit.xml
-share/gnome/help/gswitchit/fi/
-share/gnome/help/gswitchit/fi/gswitchit.xml
-share/gnome/help/gswitchit/fr/
-share/gnome/help/gswitchit/fr/gswitchit.xml
-share/gnome/help/gswitchit/oc/
-share/gnome/help/gswitchit/oc/gswitchit.xml
-share/gnome/help/gswitchit/ru/
-share/gnome/help/gswitchit/ru/gswitchit.xml
-share/gnome/help/gswitchit/sv/
-share/gnome/help/gswitchit/sv/gswitchit.xml
-share/gnome/help/gswitchit/uk/
-share/gnome/help/gswitchit/uk/gswitchit.xml
-share/gnome/help/gswitchit/zh_CN/
-share/gnome/help/gswitchit/zh_CN/gswitchit.xml
+share/gnome/help/geyes/zh_HK/
+share/gnome/help/geyes/zh_HK/figures/
+share/gnome/help/geyes/zh_HK/figures/geyes_applet.png
+share/gnome/help/geyes/zh_HK/geyes.xml
+share/gnome/help/geyes/zh_TW/
+share/gnome/help/geyes/zh_TW/figures/
+share/gnome/help/geyes/zh_TW/figures/geyes_applet.png
+share/gnome/help/geyes/zh_TW/geyes.xml
 share/gnome/help/gweather/
 share/gnome/help/gweather/C/
 share/gnome/help/gweather/C/figures/
@@ -989,6 +969,10 @@ share/gnome/help/mixer_applet2/cs/
 share/gnome/help/mixer_applet2/cs/figures/
 share/gnome/help/mixer_applet2/cs/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/cs/mixer_applet2.xml
+share/gnome/help/mixer_applet2/da/
+share/gnome/help/mixer_applet2/da/figures/
+share/gnome/help/mixer_applet2/da/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/da/mixer_applet2.xml
 share/gnome/help/mixer_applet2/de/
 share/gnome/help/mixer_applet2/de/figures/
 share/gnome/help/mixer_applet2/de/figures/volumecontrol_applet.png
@@ -1313,6 +1297,22 @@ share/gnome/help/stickynotes_applet/zh_CN/figures/stickynotes-note-prefs.png
 share/gnome/help/stickynotes_applet/zh_CN/figures/stickynotes-prefs.png
 share/gnome/help/stickynotes_applet/zh_CN/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/zh_CN/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/zh_HK/
+share/gnome/help/stickynotes_applet/zh_HK/figures/
+share/gnome/help/stickynotes_applet/zh_HK/figures/stickynote-right-menu-lock.png
+share/gnome/help/stickynotes_applet/zh_HK/figures/stickynote-right-menu-new.png
+share/gnome/help/stickynotes_applet/zh_HK/figures/stickynotes-note-prefs.png
+share/gnome/help/stickynotes_applet/zh_HK/figures/stickynotes-prefs.png
+share/gnome/help/stickynotes_applet/zh_HK/figures/stickynotes_applet.png
+share/gnome/help/stickynotes_applet/zh_HK/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/zh_TW/
+share/gnome/help/stickynotes_applet/zh_TW/figures/
+share/gnome/help/stickynotes_applet/zh_TW/figures/stickynote-right-menu-lock.png
+share/gnome/help/stickynotes_applet/zh_TW/figures/stickynote-right-menu-new.png
+share/gnome/help/stickynotes_applet/zh_TW/figures/stickynotes-note-prefs.png
+share/gnome/help/stickynotes_applet/zh_TW/figures/stickynotes-prefs.png
+share/gnome/help/stickynotes_applet/zh_TW/figures/stickynotes_applet.png
+share/gnome/help/stickynotes_applet/zh_TW/stickynotes_applet.xml
 share/gnome/help/trashapplet/
 share/gnome/help/trashapplet/C/
 share/gnome/help/trashapplet/C/figures/
@@ -1444,6 +1444,7 @@ share/locale/da/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/dz/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-applets-2.0.mo
@@ -1569,6 +1570,7 @@ share/omf/char-palette/char-palette-uk.omf
 share/omf/char-palette/char-palette-zh_CN.omf
 share/omf/geyes/
 share/omf/geyes/geyes-C.omf
+share/omf/geyes/geyes-ast.omf
 share/omf/geyes/geyes-bg.omf
 share/omf/geyes/geyes-ca.omf
 share/omf/geyes/geyes-cs.omf
@@ -1587,22 +1589,8 @@ share/omf/geyes/geyes-ru.omf
 share/omf/geyes/geyes-sv.omf
 share/omf/geyes/geyes-uk.omf
 share/omf/geyes/geyes-zh_CN.omf
-share/omf/gswitchit/
-share/omf/gswitchit/gswitchit-C.omf
-share/omf/gswitchit/gswitchit-ca.omf
-share/omf/gswitchit/gswitchit-cs.omf
-share/omf/gswitchit/gswitchit-de.omf
-share/omf/gswitchit/gswitchit-el.omf
-share/omf/gswitchit/gswitchit-en_GB.omf
-share/omf/gswitchit/gswitchit-es.omf
-share/omf/gswitchit/gswitchit-eu.omf
-share/omf/gswitchit/gswitchit-fi.omf
-share/omf/gswitchit/gswitchit-fr.omf
-share/omf/gswitchit/gswitchit-oc.omf
-share/omf/gswitchit/gswitchit-ru.omf
-share/omf/gswitchit/gswitchit-sv.omf
-share/omf/gswitchit/gswitchit-uk.omf
-share/omf/gswitchit/gswitchit-zh_CN.omf
+share/omf/geyes/geyes-zh_HK.omf
+share/omf/geyes/geyes-zh_TW.omf
 share/omf/gweather/
 share/omf/gweather/gweather-C.omf
 share/omf/gweather/gweather-ar.omf
@@ -1639,6 +1627,7 @@ share/omf/mixer_applet2/
 share/omf/mixer_applet2/mixer_applet2-C.omf
 share/omf/mixer_applet2/mixer_applet2-ca.omf
 share/omf/mixer_applet2/mixer_applet2-cs.omf
+share/omf/mixer_applet2/mixer_applet2-da.omf
 share/omf/mixer_applet2/mixer_applet2-de.omf
 share/omf/mixer_applet2/mixer_applet2-el.omf
 share/omf/mixer_applet2/mixer_applet2-en_GB.omf
@@ -1694,6 +1683,8 @@ share/omf/stickynotes_applet/stickynotes_applet-ru.omf
 share/omf/stickynotes_applet/stickynotes_applet-sv.omf
 share/omf/stickynotes_applet/stickynotes_applet-uk.omf
 share/omf/stickynotes_applet/stickynotes_applet-zh_CN.omf
+share/omf/stickynotes_applet/stickynotes_applet-zh_HK.omf
+share/omf/stickynotes_applet/stickynotes_applet-zh_TW.omf
 share/omf/trashapplet/
 share/omf/trashapplet/trashapplet-C.omf
 share/omf/trashapplet/trashapplet-ca.omf

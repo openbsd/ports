@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2009/10/12 11:38:11 jasper Exp $
---- Makefile.in.orig	Mon Sep 21 08:19:35 2009
-+++ Makefile.in	Mon Oct 12 13:13:03 2009
-@@ -324,7 +324,6 @@ modemlights_applets = \
+$OpenBSD: patch-Makefile_in,v 1.3 2010/04/23 13:58:34 ajacoutot Exp $
+--- Makefile.in.orig	Sun Mar 28 08:28:02 2010
++++ Makefile.in	Fri Apr 23 11:28:40 2010
+@@ -353,7 +353,6 @@ modemlights_applets = \
  @BUILD_MIXER_APPLET_TRUE@mixer_applet_SUBDIR = mixer
  always_built_SUBDIRS = \
  	charpick	\
@@ -9,7 +9,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2009/10/12 11:38:11 jasper Exp $
  	geyes		\
  	mini-commander	\
  	gkb-new		\
-@@ -349,7 +348,6 @@ SUBDIRS = \
+@@ -377,7 +376,6 @@ SUBDIRS = \
  DIST_SUBDIRS = \
  	po		\
  	modemlights	\

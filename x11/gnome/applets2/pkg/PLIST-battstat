@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-battstat,v 1.23 2009/10/12 11:38:11 jasper Exp $
+@comment $OpenBSD: PLIST-battstat,v 1.24 2010/04/23 13:58:34 ajacoutot Exp $
 lib/bonobo/servers/GNOME_BattstatApplet.server
 @bin libexec/battstat-applet-2
 share/examples/gnome-applets2/
@@ -11,6 +11,7 @@ share/examples/gnome-applets2/sound/events/battstat_applet.soundlist
 @sample ${SYSCONFDIR}/gnome/sound/events/battstat_applet.soundlist
 share/gnome-2.0/ui/GNOME_BattstatApplet.xml
 share/gnome-applets/builder/battstat_applet.ui
+share/gnome/help/
 share/gnome/help/battstat/
 share/gnome/help/battstat/C/
 share/gnome/help/battstat/C/battstat.xml
@@ -45,6 +46,14 @@ share/gnome/help/battstat/cs/figures/battstat-applet.png
 share/gnome/help/battstat/cs/figures/battstat-credits-hal.png
 share/gnome/help/battstat/cs/figures/battstat-preferences.png
 share/gnome/help/battstat/cs/figures/context-menu.png
+share/gnome/help/battstat/da/
+share/gnome/help/battstat/da/battstat.xml
+share/gnome/help/battstat/da/figures/
+share/gnome/help/battstat/da/figures/battstat-applet-expanded.png
+share/gnome/help/battstat/da/figures/battstat-applet.png
+share/gnome/help/battstat/da/figures/battstat-credits-hal.png
+share/gnome/help/battstat/da/figures/battstat-preferences.png
+share/gnome/help/battstat/da/figures/context-menu.png
 share/gnome/help/battstat/de/
 share/gnome/help/battstat/de/battstat.xml
 share/gnome/help/battstat/de/figures/
@@ -162,6 +171,7 @@ share/omf/battstat/battstat-C.omf
 share/omf/battstat/battstat-bg.omf
 share/omf/battstat/battstat-ca.omf
 share/omf/battstat/battstat-cs.omf
+share/omf/battstat/battstat-da.omf
 share/omf/battstat/battstat-de.omf
 share/omf/battstat/battstat-el.omf
 share/omf/battstat/battstat-en_GB.omf

@@ -1,11 +1,11 @@
-$OpenBSD: patch-stickynotes_stickynotes_ui,v 1.1 2009/11/10 17:56:24 jasper Exp $
+$OpenBSD: patch-stickynotes_stickynotes_ui,v 1.2 2010/04/23 13:58:34 ajacoutot Exp $
 
 Fix crash of stickynotes. Patch from Open Solaris'
 gnome-applets-07-stickynotes-crash.diff
 
---- stickynotes/stickynotes.ui.orig	Mon Nov  9 18:31:32 2009
-+++ stickynotes/stickynotes.ui	Mon Nov  9 18:31:48 2009
-@@ -474,7 +474,7 @@
+--- stickynotes/stickynotes.ui.orig	Sun Mar 28 07:29:51 2010
++++ stickynotes/stickynotes.ui	Fri Apr 23 11:28:40 2010
+@@ -593,7 +593,7 @@
                </packing>
              </child>
              <child>
@@ -14,7 +14,7 @@ gnome-applets-07-stickynotes-crash.diff
                  <property name="visible">True</property>
                  <property name="orientation">vertical</property>
                  <child>
-@@ -494,7 +494,7 @@
+@@ -613,7 +613,7 @@
                    </packing>
                  </child>
                  <child>
