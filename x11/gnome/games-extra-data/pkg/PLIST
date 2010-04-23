@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/13 00:01:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/04/23 17:49:08 ajacoutot Exp $
 share/gnome-games-common/cards/anglo.svg
 share/gnome-games-common/cards/anglo_bitmap.svg
 share/gnome-games-common/cards/bellot.svg
@@ -15,12 +15,6 @@ share/gnome-games/glines/pixmaps/pulse.png
 share/gnome-games/gnobots2/themes/cows.png
 share/gnome-games/gnobots2/themes/eggs.png
 share/gnome-games/gnobots2/themes/mice.png
-share/gnome-games/gnometris/pixmaps/5blocks-tig.png
-share/gnome-games/gnometris/pixmaps/5blocks-tim.png
-share/gnome-games/gnometris/pixmaps/5blocks.png
-share/gnome-games/gnometris/pixmaps/7blocks.png
-share/gnome-games/gnometris/pixmaps/7stones-gn.png
-share/gnome-games/gnometris/pixmaps/7stones2-gn.png
 share/gnome-games/iagno/pixmaps/blend.png
 share/gnome-games/iagno/pixmaps/flipblend.png
 share/gnome-games/iagno/pixmaps/metal.png
@@ -32,8 +26,3 @@ share/gnome-games/mahjongg/pixmaps/default2.png
 share/gnome-games/mahjongg/pixmaps/greek-letters.png
 share/gnome-games/mahjongg/pixmaps/maya.png
 share/gnome-games/mahjongg/pixmaps/seta.png
-share/gnome-games/same-gnome/themes/2.10/blink.png
-share/gnome-games/same-gnome/themes/2.10/glass.png
-share/gnome-games/same-gnome/themes/2.10/marbles.png
-share/gnome-games/same-gnome/themes/2.10/matrix.png
-share/gnome-games/same-gnome/themes/2.10/rotate.svg
