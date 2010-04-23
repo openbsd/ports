@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2010/04/19 09:36:30 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2010/04/23 13:30:42 espie Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 %%SHARED%%
@@ -1325,7 +1325,7 @@ include/X11/qt4/QtCore/qatomic_avr32.h
 include/X11/qt4/QtCore/qatomic_bfin.h
 include/X11/qt4/QtCore/qatomic_bootstrap.h
 include/X11/qt4/QtCore/qatomic_generic.h
-include/X11/qt4/QtCore/qatomic_${MACHINE_ARCH}.h
+include/X11/qt4/QtCore/qatomic_i386.h
 include/X11/qt4/QtCore/qatomic_ia64.h
 include/X11/qt4/QtCore/qatomic_macosx.h
 include/X11/qt4/QtCore/qatomic_mips.h
@@ -3313,9 +3313,9 @@ lib/qt4/mkspecs/unsupported/qws/
 lib/qt4/mkspecs/unsupported/qws/qnx-generic-g++/
 lib/qt4/mkspecs/unsupported/qws/qnx-generic-g++/qmake.conf
 lib/qt4/mkspecs/unsupported/qws/qnx-generic-g++/qplatformdefs.h
-lib/qt4/mkspecs/unsupported/qws/qnx-${MACHINE_ARCH}-g++/
-lib/qt4/mkspecs/unsupported/qws/qnx-${MACHINE_ARCH}-g++/qmake.conf
-lib/qt4/mkspecs/unsupported/qws/qnx-${MACHINE_ARCH}-g++/qplatformdefs.h
+lib/qt4/mkspecs/unsupported/qws/qnx-i386-g++/
+lib/qt4/mkspecs/unsupported/qws/qnx-i386-g++/qmake.conf
+lib/qt4/mkspecs/unsupported/qws/qnx-i386-g++/qplatformdefs.h
 lib/qt4/mkspecs/unsupported/qws/qnx-ppc-g++/
 lib/qt4/mkspecs/unsupported/qws/qnx-ppc-g++/qmake.conf
 lib/qt4/mkspecs/unsupported/qws/qnx-ppc-g++/qplatformdefs.h
