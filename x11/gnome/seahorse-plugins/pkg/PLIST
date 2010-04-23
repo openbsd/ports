@@ -1,14 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/04/22 20:51:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/23 11:40:42 ajacoutot Exp $
 @bin bin/seahorse-agent
 @bin bin/seahorse-preferences
 @bin bin/seahorse-tool
 lib/bonobo/servers/GNOME_SeahorseApplet.server
-lib/epiphany/
-lib/epiphany/2.29/
-lib/epiphany/2.29/extensions/
 @comment lib/epiphany/2.29/extensions/libseahorseextension.la
-lib/epiphany/2.29/extensions/libseahorseextension.so
-lib/epiphany/2.29/extensions/seahorse.ephy-extension
 @comment lib/gedit-2/plugins/libseahorse-pgp.la
 lib/gedit-2/plugins/libseahorse-pgp.so
 lib/gedit-2/plugins/seahorse-pgp.gedit-plugin
@@ -87,6 +82,7 @@ share/locale/da/LC_MESSAGES/seahorse-plugins.mo
 share/locale/de/LC_MESSAGES/seahorse-plugins.mo
 share/locale/dz/LC_MESSAGES/seahorse-plugins.mo
 share/locale/el/LC_MESSAGES/seahorse-plugins.mo
+share/locale/en@shaw/LC_MESSAGES/seahorse-plugins.mo
 share/locale/en_CA/LC_MESSAGES/seahorse-plugins.mo
 share/locale/en_GB/LC_MESSAGES/seahorse-plugins.mo
 share/locale/es/LC_MESSAGES/seahorse-plugins.mo
@@ -123,6 +119,7 @@ share/locale/pa/LC_MESSAGES/seahorse-plugins.mo
 share/locale/pl/LC_MESSAGES/seahorse-plugins.mo
 share/locale/pt/LC_MESSAGES/seahorse-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/seahorse-plugins.mo
+share/locale/ro/LC_MESSAGES/seahorse-plugins.mo
 share/locale/ru/LC_MESSAGES/seahorse-plugins.mo
 share/locale/rw/LC_MESSAGES/seahorse-plugins.mo
 share/locale/si/LC_MESSAGES/seahorse-plugins.mo
@@ -213,13 +210,13 @@ ${SCHEMAS_INSTDIR}/seahorse-gedit.schemas
 ${SCHEMAS_INSTDIR}/seahorse-plugins.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/seahorse-plugins/
-share/seahorse-plugins/glade/
-share/seahorse-plugins/glade/seahorse-agent-cache.glade
-share/seahorse-plugins/glade/seahorse-applet-preferences.glade
-share/seahorse-plugins/glade/seahorse-multi-encrypt.glade
-share/seahorse-plugins/glade/seahorse-notify.glade
-share/seahorse-plugins/glade/seahorse-prefs.glade
-share/seahorse-plugins/glade/seahorse-progress.glade
+share/seahorse-plugins/ui/
+share/seahorse-plugins/ui/seahorse-agent-cache.xml
+share/seahorse-plugins/ui/seahorse-applet-preferences.xml
+share/seahorse-plugins/ui/seahorse-multi-encrypt.xml
+share/seahorse-plugins/ui/seahorse-notify.xml
+share/seahorse-plugins/ui/seahorse-prefs.xml
+share/seahorse-plugins/ui/seahorse-progress.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime

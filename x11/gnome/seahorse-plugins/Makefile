@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/22 20:51:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/23 11:40:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	plugins and utilities for seahorse
 
 GNOME_PROJECT=	seahorse-plugins
-GNOME_VERSION=	2.28.1
-PKGNAME=	${DISTNAME}p3
+GNOME_VERSION=	2.30.0
 
 CATEGORIES=	security
 
@@ -22,13 +21,13 @@ WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
 WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 c
-WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
-WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
-WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
-WANTLIB += gnomevfs-2 gobject-2.0 gpg-error gpgme gthread-2.0
-WANTLIB += gtk-x11-2.0 m notify nspr4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread
-WANTLIB += pthread-stubs ssl util xcb xml2 z
+WANTLIB += cairo crypto dbus-1 dbus-glib-1 eggdbus-1 expat fontconfig
+WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring
+WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 gpg-error gpgme
+WANTLIB += gthread-2.0 gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
+WANTLIB += ssl util xcb xcb-render xcb-render-util xml2 z
 
 BUILD_DEPENDS=	:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel \
 		::www/epiphany \
@@ -37,8 +36,7 @@ BUILD_DEPENDS=	:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel \
 LIB_DEPENDS=	cryptui::x11/gnome/seahorse \
 		gtksourceview-2.0.>=2::x11/gtksourceview \
 		nautilus-extension.>=2::x11/gnome/nautilus\
-		panel-applet-2.>=1::x11/gnome/panel \
-		xulrunner/gtkembedmoz,xulrunner/xpcom:xulrunner->=1.8,<1.9:devel/xulrunner/1.8
+		panel-applet-2.>=1::x11/gnome/panel
 
 RUN_DEPENDS=	:shared-mime-info->=0.21:misc/shared-mime-info \
 		::x11/gnome/gedit \
