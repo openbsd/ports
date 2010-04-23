@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/23 16:03:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/23 16:06:30 jasper Exp $
 
-COMMENT=	C# client implementation for Desktop Notifications
+COMMENT=	C\# client implementation for Desktop Notifications
 
 # SVN r3032
 V=		0.4.0
