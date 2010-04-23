@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.792 2010/04/23 16:05:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.793 2010/04/23 18:11:16 stsp Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -913,6 +913,7 @@
      SUBDIR += startup-notification
      SUBDIR += stp
      SUBDIR += subversion
+     SUBDIR += subversion,gnome_keyring
      SUBDIR += svk
      SUBDIR += swig
      SUBDIR += t1lib
