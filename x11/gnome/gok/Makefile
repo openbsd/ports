@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/11 16:39:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/04/23 16:26:33 ajacoutot Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
 GNOME_PROJECT=		gok
-GNOME_VERSION=		2.28.1
-PKGNAME=		${DISTNAME}p1
+GNOME_VERSION=		2.30.0
 
 HOMEPAGE=		http://live.gnome.org/Gok
 
@@ -23,14 +22,13 @@ WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += vorbis vorbisfile xcb xcb-atom xcb-aux xcb-event xml2
-WANTLIB += z
+WANTLIB += z xcb-render xcb-render-util
 
 MODULES=	devel/gconf2 \
 		devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=		canberra-gtk,canberra::audio/libcanberra \
-			glade-2.0::devel/libglade2 \
 			wnck-1::devel/libwnck \
 			cspi,loginhelper,spi::x11/gnome/at-spi \
 			gnomespeech::x11/gnome/speech
@@ -41,7 +39,7 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gok
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-xevie
+			--enable-gtk-doc=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

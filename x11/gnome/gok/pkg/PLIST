@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/21 18:14:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/04/23 16:26:34 ajacoutot Exp $
 @bin bin/create-branching-keyboard
 @bin bin/gok
 lib/bonobo/
@@ -224,6 +224,17 @@ share/gok/el/quit.kbd
 share/gok/el/text-operations.kbd
 share/gok/el/valuator.kbd
 share/gok/empty.png
+share/gok/en@shaw/
+share/gok/en@shaw/gok-controls.kbd
+share/gok/en@shaw/hide.kbd
+share/gok/en@shaw/launcher.kbd
+share/gok/en@shaw/main.kbd
+share/gok/en@shaw/mouse.kbd
+share/gok/en@shaw/move-resize.kbd
+share/gok/en@shaw/numberpad.kbd
+share/gok/en@shaw/quit.kbd
+share/gok/en@shaw/text-operations.kbd
+share/gok/en@shaw/valuator.kbd
 share/gok/en_CA/
 share/gok/en_CA/gok-controls.kbd
 share/gok/en_CA/hide.kbd
@@ -334,8 +345,8 @@ share/gok/gl/numberpad.kbd
 share/gok/gl/quit.kbd
 share/gok/gl/text-operations.kbd
 share/gok/gl/valuator.kbd
-share/gok/glade/
-share/gok/glade/gok.glade2
+share/gok/gok-editor.ui
+share/gok/gok-settingsdialog.ui
 share/gok/gok.rc
 share/gok/goklogo.png
 share/gok/gu/
@@ -896,7 +907,6 @@ share/gtk-doc/html/gok/ch01.html
 share/gtk-doc/html/gok/ch02.html
 share/gtk-doc/html/gok/ch03.html
 share/gtk-doc/html/gok/ch04.html
-share/gtk-doc/html/gok/gok-GokButton.html
 share/gtk-doc/html/gok/gok-arraylist.html
 share/gtk-doc/html/gok/gok-callbacks.html
 share/gtk-doc/html/gok/gok-command-common.html
@@ -909,6 +919,7 @@ share/gtk-doc/html/gok/gok-command-vertex.html
 share/gtk-doc/html/gok/gok-global.html
 share/gtk-doc/html/gok/gok-gok-action.html
 share/gtk-doc/html/gok/gok-gok-branchback-stack.html
+share/gtk-doc/html/gok/gok-gok-button.html
 share/gtk-doc/html/gok/gok-gok-chunker.html
 share/gtk-doc/html/gok/gok-gok-control.html
 share/gtk-doc/html/gok/gok-gok-data.html
@@ -974,6 +985,7 @@ share/locale/da/LC_MESSAGES/gok.mo
 share/locale/de/LC_MESSAGES/gok.mo
 share/locale/dz/LC_MESSAGES/gok.mo
 share/locale/el/LC_MESSAGES/gok.mo
+share/locale/en@shaw/LC_MESSAGES/gok.mo
 share/locale/en_CA/LC_MESSAGES/gok.mo
 share/locale/en_GB/LC_MESSAGES/gok.mo
 share/locale/es/LC_MESSAGES/gok.mo
