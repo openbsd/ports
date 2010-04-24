@@ -1,27 +1,33 @@
-$OpenBSD: patch-wafadmin_Tools_ccroot_py,v 1.1.1.1 2009/06/03 18:25:25 ajacoutot Exp $
+$OpenBSD: patch-wafadmin_Tools_ccroot_py,v 1.2 2010/04/24 17:37:54 jasper Exp $
 
 Don't create symlink for shared librairies versions.
-Don't put (wrong) SONAME in shared libraries.
+Use good version numbers for libs.
 
---- wafadmin/Tools/ccroot.py.orig	Tue Apr 21 19:50:47 2009
-+++ wafadmin/Tools/ccroot.py	Tue May 26 23:24:47 2009
-@@ -113,8 +113,8 @@ def install_shlib(self):
- 	filename = self.outputs[0].abspath(self.env)
- 	bld = Build.bld
- 	bld.install_as(os.path.join(path, name3), filename, env=self.env)
--	bld.symlink_as(os.path.join(path, name2), name3)
--	bld.symlink_as(os.path.join(path, name1), name3)
-+	#bld.symlink_as(os.path.join(path, name2), name3)
-+	#bld.symlink_as(os.path.join(path, name1), name3)
+--- wafadmin/Tools/ccroot.py.orig	Sun Mar 14 17:57:48 2010
++++ wafadmin/Tools/ccroot.py	Sun Mar 14 17:59:04 2010
+@@ -580,7 +580,7 @@ def apply_vnum(self):
+ 		name2 = libname + '.' + nums[0]
  
- # TODO reference the d programs, shlibs in d.py, not here
+ 	if self.env.SONAME_ST:
+-		v = self.env.SONAME_ST % name2
++		v = self.env.SONAME_ST % name3
+ 		self.env.append_value('LINKFLAGS', v.split())
  
-@@ -384,7 +384,7 @@ def apply_vnum(self):
- 			try: name3 = self.soname
- 			except AttributeError: name3 = self.link_task.outputs[0].name + '.' + nums[0]
- 			self.link_task.outputs.append(self.link_task.outputs[0].parent.find_or_declare(name3))
--			self.env.append_value('LINKFLAGS', '-Wl,-h,'+name3)
-+			self.env.append_value('LINKFLAGS', '-Wl')
+ 	bld = self.bld
+@@ -590,13 +590,13 @@ def apply_vnum(self):
+ 	if not path: return
  
- @taskgen
- @after('apply_link')
+ 	bld.install_as(path + os.sep + name3, node, env=self.env)
+-	bld.symlink_as(path + os.sep + name2, name3)
+-	bld.symlink_as(path + os.sep + libname, name3)
++	#bld.symlink_as(path + os.sep + name2, name3)
++	#bld.symlink_as(path + os.sep + libname, name3)
+ 
+ 	# the following task is just to enable execution from the build dir :-/
+ 	tsk = self.create_task('vnum')
+ 	tsk.set_inputs([node])
+-	tsk.set_outputs(node.parent.find_or_declare(name2))
++	tsk.set_outputs(node.parent.find_or_declare(name3))
+ 
+ def exec_vnum_link(self):
+ 	path = self.outputs[0].abspath(self.env)

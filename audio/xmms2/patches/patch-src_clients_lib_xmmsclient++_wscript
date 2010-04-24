@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_clients_lib_xmmsclient++_wscript,v 1.1 2009/07/12 20:25:00 ajacoutot Exp $
---- src/clients/lib/xmmsclient++/wscript.orig	Tue Jun 16 20:43:39 2009
-+++ src/clients/lib/xmmsclient++/wscript	Tue Jun 16 20:43:58 2009
+$OpenBSD: patch-src_clients_lib_xmmsclient++_wscript,v 1.2 2010/04/24 17:37:54 jasper Exp $
+--- src/clients/lib/xmmsclient++/wscript.orig	Fri Feb 19 18:43:54 2010
++++ src/clients/lib/xmmsclient++/wscript	Sat Apr 24 19:31:49 2010
 @@ -26,7 +26,7 @@ def build(bld):
      """.split()
      obj.uselib_local = 'xmmsclient'
-     obj.uselib = 'BOOST BOOST_SIGNALS socket'
--    obj.vnum = '3.0.0'
+     obj.uselib = 'BOOST socket'
+-    obj.vnum = '4.0.0'
 +    obj.vnum = '${LIBxmmsclient++_VERSION}'
      tool.add_install_flag(bld, obj)
-
+ 
  def configure(conf):

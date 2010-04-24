@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2009/07/19 22:49:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/24 17:37:54 jasper Exp $
 
 COMMENT =		audio player daemon with library management
 
-V =			0.6
-DISTNAME =		xmms2-${V}DrMattDestruction
-PKGNAME =		xmms2-${V}p3
+V =			0.7
+DISTNAME =		xmms2-${V}DrNo
+PKGNAME =		xmms2-${V}
 
-SHARED_LIBS +=		xmmsclient++		0.0 # 3.0.0
+SHARED_LIBS +=		xmmsclient++		1.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	0.0 # 1.0.0
 SHARED_LIBS +=		xmmsclient-glib		0.0 # 1.0.0
-SHARED_LIBS +=		xmmsclient		0.0 # 5.0.0
+SHARED_LIBS +=		xmmsclient		1.0 # 6.0.0
 
 CATEGORIES =		audio
 
-HOMEPAGE =		http://wiki.xmms2.xmms.se
+HOMEPAGE =		http://wiki.xmms2.xmms.se/
 
 MAINTAINER=		Amaury Gauthier <amaury.gauthier@etu.unilim.fr>
 
@@ -50,7 +50,8 @@ LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 			FLAC.>=9::audio/flac \
 			curl.>=13::net/curl \
 			mad.>=2::audio/libmad \
-			avahi-client,avahi-common,avahi-glib::net/avahi
+			avahi-client,avahi-common,avahi-glib::net/avahi \
+			vorbisidec.>=2::audio/tremor
 
 WSCRIPT_PATCHES =	src/clients/lib/xmmsclient++/wscript \
 			src/clients/lib/xmmsclient++-glib/wscript \
@@ -64,13 +65,12 @@ pre-configure:
 # Disable shared memory support for visualization because it requires semtimedop()
 do-configure:
 	cd ${WRKSRC} && PYTHON=${MODPY_BIN} ${MODPY_BIN} ./waf configure --prefix=${PREFIX} \
-		--with-mandir=${PREFIX}/man \
+		--mandir=${PREFIX}/man \
 		--conf-prefix=${PREFIX} \
-		--without-plugins=speex,sun \
 		--with-default-output-plugin=ao \
 		--disable-shmvis-server \
 		--without-optionals=dns_sd,medialib-updater,tests,xmmsclient-cf,xmmsclient-ecore,ruby \
-		--without-plugins=airplay,alsa,cdda,coreaudio,faad,ices,mac,mms,modplug,mpg123,musepack,nms,ofa,oss,pulse,samba,sid,vocoder,waveout,wavpack
+		--without-plugins=airplay,alsa,cdda,coreaudio,faad,gme,ices,mac,mms,modplug,mpg123,musepack,nms,ofa,oss,pulse,samba,sid,speex,sun,vocoder,waveout,wavpack
 
 do-build:
 	cd ${WRKSRC} && ${MODPY_BIN} ./waf build

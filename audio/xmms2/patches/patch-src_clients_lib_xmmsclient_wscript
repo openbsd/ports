@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_clients_lib_xmmsclient_wscript,v 1.1.1.1 2009/06/03 18:25:25 ajacoutot Exp $
---- src/clients/lib/xmmsclient/wscript.orig	Sat May 16 17:20:23 2009
-+++ src/clients/lib/xmmsclient/wscript	Sat May 16 17:36:07 2009
+$OpenBSD: patch-src_clients_lib_xmmsclient_wscript,v 1.2 2010/04/24 17:37:54 jasper Exp $
+--- src/clients/lib/xmmsclient/wscript.orig	Sat Mar 13 19:27:38 2010
++++ src/clients/lib/xmmsclient/wscript	Sat Mar 13 19:28:13 2010
 @@ -31,7 +31,7 @@ def build(bld):
      else:
          obj.source += ["visualization/dummy.c"]
  
--    obj.vnum = "5.0.0"
+-    obj.vnum = "6.0.0"
 +    obj.vnum = "${LIBxmmsclient_VERSION}"
  
      tool.add_install_flag(bld, obj)

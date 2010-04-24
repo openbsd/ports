@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/07/12 20:25:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/04/24 17:37:54 jasper Exp $
 @bin bin/nyxmms2
 @bin bin/vistest
 @bin bin/vistest-fft
@@ -22,7 +22,6 @@ include/xmms2/xmms/xmms_outputplugin.h
 include/xmms2/xmms/xmms_plugin.h
 include/xmms2/xmms/xmms_sample.h
 include/xmms2/xmms/xmms_streamtype.h
-include/xmms2/xmms/xmms_strfunc.h
 include/xmms2/xmms/xmms_util.h
 include/xmms2/xmms/xmms_xformplugin.h
 include/xmms2/xmmsc/
@@ -101,7 +100,6 @@ lib/xmms2/libxmms_equalizer.so
 lib/xmms2/libxmms_file.so
 lib/xmms2/libxmms_flac.so
 lib/xmms2/libxmms_flv.so
-lib/xmms2/libxmms_gme.so
 lib/xmms2/libxmms_gvfs.so
 lib/xmms2/libxmms_html.so
 lib/xmms2/libxmms_icymetaint.so
@@ -117,6 +115,7 @@ lib/xmms2/libxmms_nulstripper.so
 lib/xmms2/libxmms_pls.so
 lib/xmms2/libxmms_replaygain.so
 lib/xmms2/libxmms_rss.so
+lib/xmms2/libxmms_tremor.so
 lib/xmms2/libxmms_tta.so
 lib/xmms2/libxmms_vorbis.so
 lib/xmms2/libxmms_wave.so
