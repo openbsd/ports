@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/03/28 10:48:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2010/04/24 17:14:00 ajacoutot Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -7,6 +7,7 @@ COMMENT=		music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.8
+PKGNAME=		${DISTNAME}p0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -27,12 +28,13 @@ WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0
 WANTLIB += c cairo crypto dbus-1 dbus-glib-1 expat fontconfig
 WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glade-2.0 glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-keyring
+WANTLIB += glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-keyring
 WANTLIB += gnutls gobject-2.0 gpg-error gssapi gstbase-0.10 gstcontroller-0.10
 WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 krb5 m neon pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 ssl tasn1 util xcb xml2 z
+WANTLIB += eggdbus-1 xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
 			x11/gnome \
