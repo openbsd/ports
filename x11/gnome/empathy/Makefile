@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/04/23 18:26:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2010/04/24 13:04:31 ajacoutot Exp $
 
 # XXX
 # (empathy:10245): Gtk-WARNING **: could not load image: Icon 'im-xmpp' not present in theme
@@ -52,7 +52,8 @@ LIB_DEPENDS=		canberra,canberra-gtk::audio/libcanberra \
 			clutter-gtk-0.10::graphics/clutter/clutter-gtk \
 			telepathy-farsight::net/telepathy/telepathy-farsight \
 			mcclient::net/telepathy/telepathy-mission-control \
-			enchant::textproc/enchant
+			enchant::textproc/enchant \
+			telepathy-logger::net/telepathy/telepathy-logger
 
 RUN_DEPENDS=		::net/telepathy/telepathy-gabble \
 			::net/telepathy/telepathy-haze \
