@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/12/21 18:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/04/24 11:08:21 ajacoutot Exp $
 
 COMMENT=		time tracker applet for GNOME
 
 GNOME_PROJECT=		hamster-applet
-GNOME_VERSION=		2.28.2
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		2.30.0.1
 
 CATEGORIES=		productivity
 
@@ -21,7 +20,8 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread-stubs xcb z
+WANTLIB += png pthread-stubs xcb z gthread-2.0 xcb-render
+WANTLIB += xcb-render-util
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -40,7 +40,10 @@ RUN_DEPENDS=		::x11/gnome/controlcenter2 \
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/hamster/hamster-applet.py
+	${SUBST_CMD} ${WRKSRC}/src/hamster-applet.py \
+		${WRKSRC}/src/gnome-time-tracker \
+		${WRKSRC}/src/hamster-standalone
 
 .include <bsd.port.mk>

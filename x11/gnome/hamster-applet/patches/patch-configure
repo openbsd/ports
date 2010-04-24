@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.1 2010/04/24 11:08:21 ajacoutot Exp $
+
+The test cannot open the display and crashes.
+
+--- configure.orig	Fri Apr 23 12:13:03 2010
++++ configure	Fri Apr 23 12:14:54 2010
+@@ -13330,7 +13330,7 @@ $as_echo "yes" >&6; }
+ fi
+ 
+ 
+-
++if false; then
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gnomeapplet module" >&5
+ $as_echo_n "checking for gnomeapplet module... " >&6; }
+ if { { $as_echo "$as_me:${as_lineno-$LINENO}: DISPLAY= \$PYTHON -c '
+@@ -13369,7 +13369,7 @@ else
+ $as_echo "no" >&6; }
+   as_fn_error "gnomeapplet Python module required to build hamster" "$LINENO" 5
+ fi
+-
++fi
+ # Extract the first word of "pygtk-codegen-2.0", so it can be a program name with args.
+ set dummy pygtk-codegen-2.0; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
