@@ -1,0 +1,17 @@
+$OpenBSD: patch-scli_cmds_c,v 1.1 2010/04/24 16:37:45 jasper Exp $
+--- scli/cmds.c.orig	Sat Apr 24 18:30:15 2010
++++ scli/cmds.c	Sat Apr 24 18:30:38 2010
+@@ -22,10 +22,11 @@
+ 
+ #include "scli.h"
+ 
++#include <sys/types.h>
++#include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <ctype.h>
+ #include <readline/history.h>
+-#include <arpa/inet.h>
+-
+ 
+ 
+ static GNetSnmpEnum const scli_regex_table[] = {
