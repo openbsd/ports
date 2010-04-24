@@ -1,4 +1,4 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_xptcinvoke_asm_ppc_openbsd_s,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_xptcinvoke_asm_ppc_openbsd_s,v 1.2 2010/04/24 16:08:01 landry Exp $
 --- xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_ppc_openbsd.s.orig	Sun Dec 23 01:57:11 2007
 +++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_ppc_openbsd.s	Sun Sep 14 22:24:42 2008
 @@ -1,43 +1,43 @@

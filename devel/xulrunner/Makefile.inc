@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2010/01/30 19:08:30 jolan Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2010/04/24 16:08:01 landry Exp $
 
 #
 # For legacy reasons (smooth updates), directory is xulrunner.
@@ -11,7 +11,7 @@ ONLY_FOR_ARCHS+=	alpha amd64 arm i386 powerpc sparc sparc64
 COMMENT-main=		standalone XUL/XPCOM runtime environment
 COMMENT-devel=		devel files for Gecko
 
-DISTNAME=		mozilla
+DISTNAME?=		mozilla
 PKGNAME=		xulrunner-${VERSION}
 PKGNAME-main=		xulrunner-${VERSION}${PATCHLEVEL}
 PKGNAME-devel=		xulrunner-devel-${VERSION}${PATCHLEVEL}
@@ -30,7 +30,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES+=		http://releases.mozilla.org/pub/mozilla.org/xulrunner/releases/${VERSION}/source/ \
 			http://openbsddistfiles.org/martynas/mozilla/xulrunner/
-DISTFILES+=		xulrunner-${VERSION}-source.tar.bz2
+DISTFILES?=		xulrunner-${VERSION}-source.tar.bz2
 
 MODULES+=		devel/gettext
 BUILD_DEPENDS+=		:zip->=2.3:archivers/zip

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_xslt_public_txDouble_h,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+$OpenBSD: patch-content_xslt_public_txDouble_h,v 1.2 2010/04/24 16:08:01 landry Exp $
 --- content/xslt/public/txDouble.h.orig	Fri Jan 25 09:02:04 2008
 +++ content/xslt/public/txDouble.h	Mon Jul 14 01:25:38 2008
 @@ -63,7 +63,7 @@ static fp_except_t oldmask = fpsetmask(~allmask);

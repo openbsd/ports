@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/07/27 21:36:01 martynas Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/04/24 16:08:01 landry Exp $
 @option no-default-conflict
 @conflict xulrunner->=1.9,<1.9.1
 @unexec xulrunner1.9 --unregister-global
@@ -23,6 +23,7 @@ xulrunner1.9/chrome/toolkit.jar
 xulrunner1.9/chrome/toolkit.manifest
 xulrunner1.9/components/
 xulrunner1.9/components/FeedProcessor.js
+xulrunner1.9/components/NetworkGeolocationProvider.js
 xulrunner1.9/components/accessibility.xpt
 xulrunner1.9/components/alerts.xpt
 xulrunner1.9/components/appshell.xpt
@@ -51,6 +52,7 @@ xulrunner1.9/components/dom_canvas.xpt
 xulrunner1.9/components/dom_core.xpt
 xulrunner1.9/components/dom_css.xpt
 xulrunner1.9/components/dom_events.xpt
+xulrunner1.9/components/dom_geolocation.xpt
 xulrunner1.9/components/dom_html.xpt
 xulrunner1.9/components/dom_json.xpt
 xulrunner1.9/components/dom_loadsave.xpt
@@ -60,6 +62,7 @@ xulrunner1.9/components/dom_sidebar.xpt
 xulrunner1.9/components/dom_storage.xpt
 xulrunner1.9/components/dom_stylesheets.xpt
 xulrunner1.9/components/dom_svg.xpt
+xulrunner1.9/components/dom_threads.xpt
 xulrunner1.9/components/dom_traversal.xpt
 xulrunner1.9/components/dom_views.xpt
 xulrunner1.9/components/dom_xbl.xpt
@@ -113,7 +116,6 @@ xulrunner1.9/components/nsBlocklistService.js
 xulrunner1.9/components/nsContentDispatchChooser.js
 xulrunner1.9/components/nsContentPrefService.js
 xulrunner1.9/components/nsDefaultCLH.js
-xulrunner1.9/components/nsDictionary.js
 xulrunner1.9/components/nsDownloadManagerUI.js
 xulrunner1.9/components/nsExtensionManager.js
 xulrunner1.9/components/nsFilePicker.js
@@ -123,16 +125,17 @@ xulrunner1.9/components/nsLivemarkService.js
 xulrunner1.9/components/nsLoginInfo.js
 xulrunner1.9/components/nsLoginManager.js
 xulrunner1.9/components/nsLoginManagerPrompter.js
+xulrunner1.9/components/nsPlacesDBFlush.js
 xulrunner1.9/components/nsProgressDialog.js
 xulrunner1.9/components/nsProxyAutoConfig.js
-xulrunner1.9/components/nsResetPref.js
+xulrunner1.9/components/nsSearchService.js
+xulrunner1.9/components/nsSearchSuggestions.js
 xulrunner1.9/components/nsTaggingService.js
 xulrunner1.9/components/nsTryToClose.js
 xulrunner1.9/components/nsURLFormatter.js
 xulrunner1.9/components/nsUpdateService.js
 xulrunner1.9/components/nsWebHandlerApp.js
 xulrunner1.9/components/nsXULAppInstall.js
-xulrunner1.9/components/nsXmlRpcClient.js
 xulrunner1.9/components/oji.xpt
 xulrunner1.9/components/parentalcontrols.xpt
 xulrunner1.9/components/pipboot.xpt
@@ -151,9 +154,11 @@ xulrunner1.9/components/saxparser.xpt
 xulrunner1.9/components/shistory.xpt
 xulrunner1.9/components/spellchecker.xpt
 xulrunner1.9/components/storage-Legacy.js
+xulrunner1.9/components/storage-mozStorage.js
 xulrunner1.9/components/storage.xpt
 xulrunner1.9/components/toolkitprofile.xpt
 xulrunner1.9/components/toolkitremote.xpt
+xulrunner1.9/components/toolkitsearch.xpt
 xulrunner1.9/components/txEXSLTRegExFunctions.js
 xulrunner1.9/components/txmgr.xpt
 xulrunner1.9/components/txtsvc.xpt
@@ -168,7 +173,6 @@ xulrunner1.9/components/webshell_idls.xpt
 xulrunner1.9/components/widget.xpt
 xulrunner1.9/components/windowds.xpt
 xulrunner1.9/components/windowwatcher.xpt
-xulrunner1.9/components/xml-rpc.xpt
 xulrunner1.9/components/xpcom_base.xpt
 xulrunner1.9/components/xpcom_components.xpt
 xulrunner1.9/components/xpcom_ds.xpt
@@ -214,11 +218,14 @@ xulrunner1.9/icons/mozicon50.xpm
 @lib xulrunner1.9/libxpcom.so.${LIBxpcom_VERSION}
 @lib xulrunner1.9/libxul.so.${LIBxul_VERSION}
 xulrunner1.9/modules/
+xulrunner1.9/modules/DownloadLastDir.jsm
 xulrunner1.9/modules/DownloadUtils.jsm
 xulrunner1.9/modules/ISO8601DateUtils.jsm
-xulrunner1.9/modules/JSON.jsm
 xulrunner1.9/modules/Microformats.js
+xulrunner1.9/modules/PlacesDBUtils.jsm
 xulrunner1.9/modules/PluralForm.jsm
+xulrunner1.9/modules/SpatialNavigation.js
+xulrunner1.9/modules/WindowDraggingUtils.jsm
 xulrunner1.9/modules/XPCOMUtils.jsm
 xulrunner1.9/modules/debug.js
 xulrunner1.9/modules/utils.js

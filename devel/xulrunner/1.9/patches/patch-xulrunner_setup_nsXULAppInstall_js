@@ -5,7 +5,7 @@
        aDirectory = Components.classes["@mozilla.org/file/local;1"].
          createInstance(nsILocalFile);
 -      aDirectory.initWithPath("/usr/lib");
-+      aDirectory.initWithPath("_LOCALBASE_");
++      aDirectory.initWithPath("${LOCALBASE}/xulrunner1.9");
        if (vendor)
          aDirectory.append(vendor.toLowerCase());
  #endif

@@ -1,0 +1,37 @@
+$OpenBSD: patch-build_unix_mozilla_in,v 1.1 2010/04/24 16:08:01 landry Exp $
+--- build/unix/mozilla.in.orig	Tue Dec 22 00:03:25 2009
++++ build/unix/mozilla.in	Thu Apr 22 13:23:49 2010
+@@ -50,6 +50,11 @@
+ #uncomment for debugging
+ #set -x
+ 
++LIMIT=`ulimit -n`
++if [ $LIMIT -lt 128 -a "${LIMIT}" != "unlimited" ]; then
++	ulimit -Sn 128
++fi
++
+ moz_libdir=%MOZAPPDIR%
+ 
+ # Use run-mozilla.sh in the current dir if it exists
+@@ -97,7 +102,7 @@ fi
+ 
+ script_args=""
+ debugging=0
+-MOZILLA_BIN="${progbase}-bin"
++MOZILLA_BIN="xulrunner-bin"
+ 
+ if [ "$OSTYPE" = "beos" ]; then
+   mimeset -F "$MOZILLA_BIN"
+@@ -129,6 +134,12 @@ do
+       ;;
+   esac
+ done
++
++if [ `${X11BASE}/bin/fc-list | wc -l` -eq 0 ]; then
++	export GDK_USE_XFT=0
++fi
++
++export MOZ_PLUGIN_PATH=${MOZ_PLUGIN_PATH:=${LOCALBASE}/lib/mozilla-plugins}
+ 
+ if [ $debugging = 1 ]
+ then

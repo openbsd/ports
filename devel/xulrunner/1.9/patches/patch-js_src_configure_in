@@ -1,0 +1,39 @@
+$OpenBSD: patch-js_src_configure_in,v 1.1 2010/04/24 16:08:01 landry Exp $
+--- js/src/configure.in.orig	Tue Dec 22 00:03:36 2009
++++ js/src/configure.in	Thu Apr 22 02:10:25 2010
+@@ -906,7 +906,7 @@ HOST_AR='$(AR)'
+ HOST_AR_FLAGS='$(AR_FLAGS)'
+ 
+ MOZ_JS_LIBS='-L$(libdir) -lmozjs'
+-MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(PREFIX)/lib'
++MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(PREFIX)/lib -L$(LIBXUL_DIST)/bin'
+ 
+ MOZ_COMPONENT_NSPR_LIBS='-L$(LIBXUL_DIST)/bin $(NSPR_LIBS)'
+ MOZ_XPCOM_OBSOLETE_LIBS='-L$(LIBXUL_DIST)/lib -lxpcom_compat'
+@@ -2135,7 +2135,7 @@ case "$target" in
+ 	;;
+ 
+ *-openbsd*)
+-    DLL_SUFFIX=".so.1.0"
++    DLL_SUFFIX=".so.${SO_VERSION}"
+     DSO_CFLAGS=''
+     DSO_PIC_CFLAGS='-fPIC'
+     DSO_LDOPTS='-shared -fPIC'
+@@ -2467,7 +2467,7 @@ arm*-*)
+     ENABLE_JIT=1
+     NANOJIT_ARCH=ARM
+     ;;
+-sparc*-*)
++sparc-*)
+     ENABLE_JIT=1
+     NANOJIT_ARCH=Sparc
+     ;;
+@@ -2504,7 +2504,7 @@ darwin*)
+ solaris*)
+     AC_DEFINE(AVMPLUS_UNIX)
+     ;;
+-freebsd*|kfreebsd*)
++freebsd*|kfreebsd*|openbsd*)
+     AC_DEFINE(AVMPLUS_UNIX)
+     ;;
+ *cygwin*|*mingw*|*mks*|*msvc*|*wince)

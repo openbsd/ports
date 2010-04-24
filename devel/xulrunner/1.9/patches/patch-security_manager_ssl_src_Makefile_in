@@ -1,7 +1,7 @@
-$OpenBSD: patch-security_manager_ssl_src_Makefile_in,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
---- security/manager/ssl/src/Makefile.in.orig	Wed Dec  5 09:34:57 2007
-+++ security/manager/ssl/src/Makefile.in	Sun Apr 13 20:35:35 2008
-@@ -135,7 +135,10 @@ REQUIRES	= nspr \
+$OpenBSD: patch-security_manager_ssl_src_Makefile_in,v 1.2 2010/04/24 16:08:01 landry Exp $
+--- security/manager/ssl/src/Makefile.in.orig	Wed Jun 17 07:22:08 2009
++++ security/manager/ssl/src/Makefile.in	Sat Jun 20 22:09:10 2009
+@@ -134,7 +134,10 @@ REQUIRES	= nspr \
  
  EXTRA_DEPS = $(NSS_DEP_LIBS)
  

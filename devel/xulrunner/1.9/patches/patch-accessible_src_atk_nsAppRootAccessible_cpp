@@ -1,4 +1,4 @@
-$OpenBSD: patch-accessible_src_atk_nsAppRootAccessible_cpp,v 1.1.1.1 2009/07/27 21:35:56 martynas Exp $
+$OpenBSD: patch-accessible_src_atk_nsAppRootAccessible_cpp,v 1.2 2010/04/24 16:08:01 landry Exp $
 --- accessible/src/atk/nsAppRootAccessible.cpp.orig	Thu Oct 11 13:13:32 2007
 +++ accessible/src/atk/nsAppRootAccessible.cpp	Fri Jun 13 19:31:10 2008
 @@ -55,7 +55,7 @@ typedef GType (* AtkGetTypeType) (void);

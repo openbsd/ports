@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2009/10/16 12:38:17 martynas Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/24 16:08:01 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
-VERSION=		1.9.0.14
+VERSION=		1.9.1.7
 #PATCHLEVEL=		p0
 DIRECTORY=		xulrunner1.9
+DISTNAME=		mozilla-1.9.1
+DISTFILES=		xulrunner-${VERSION}.source.tar.bz2
 
-SO_VERSION=		1.0
+SO_VERSION=		2.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in imgicon mozjs xpcom xul nullplugin unixprintplugin
@@ -32,12 +34,22 @@ PCFILES=		libxul.pc libxul-embedding.pc mozilla-js.pc \
 			mozilla-plugin.pc mozilla-gtkmozembed.pc \
 			mozilla-gtkmozembed-embedding.pc
 
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
+				${WRKSRC}/js/src/build/autoconf \
+				${WRKSRC}/nsprpub/build/autoconf
+post-extract:
+	cp -f ${FILESDIR}/sydney_audio_sndio.c \
+		${WRKSRC}/media/libsydneyaudio/src/
+	@cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/widget/src/gtk2/
+
 pre-configure:
-	perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
+	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	${SUBST_CMD} \
+		${WRKSRC}/build/unix/mozilla.in \
 		${WRKSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
 		${WRKSRC}/js/src/xpconnect/shell/Makefile.in \
 		${WRKSRC}/toolkit/xre/nsXREDirProvider.cpp \
-		${WRKSRC}/xulrunner/app/mozilla.in \
 		${WRKSRC}/xulrunner/setup/nsXULAppInstall.js
 
 post-build:
