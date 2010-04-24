@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/03/21 09:43:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/04/24 08:41:24 jasper Exp $
 
 COMMENT=	digital camera frontend
 
 DISTNAME=	gtkam-0.1.16.1
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 CATEGORIES=	graphics
 
@@ -31,7 +31,8 @@ LIB_DEPENDS=	gphoto2,gphoto2_port::graphics/libgphoto2 \
 		exif-gtk::graphics/libexif-gtk
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
