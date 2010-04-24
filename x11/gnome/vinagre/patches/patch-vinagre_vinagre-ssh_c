@@ -1,0 +1,11 @@
+$OpenBSD: patch-vinagre_vinagre-ssh_c,v 1.1 2010/04/24 09:45:22 ajacoutot Exp $
+--- vinagre/vinagre-ssh.c.orig	Sat Apr 24 11:09:16 2010
++++ vinagre/vinagre-ssh.c	Sat Apr 24 11:09:32 2010
+@@ -20,6 +20,7 @@
+  */
+ 
+ #include <config.h>
++#include <arpa/inet.h>
+ #include <netinet/in.h>
+ #include <unistd.h>
+ #include <fcntl.h>
