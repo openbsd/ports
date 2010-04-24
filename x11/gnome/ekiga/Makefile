@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2010/03/23 21:18:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/04/24 16:50:20 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	3.2.6
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	net multimedia
 
@@ -15,16 +16,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor
+WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xv asn1 atk-1.0 bonobo-2 bonobo-activation c cairo
+WANTLIB += Xv asn1 atk-1.0 c cairo xcb-render xcb-render-util
 WANTLIB += com_err crypto dbus-1 dbus-glib-1 expat fontconfig
 WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 gpg-error
 WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 krb5 lber ldap ldap_r
 WANTLIB += m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pt pthread pthread-stubs
-WANTLIB += sasl2 smime3 sndio softokn3 soup-2.4 speexdsp sqlite3
+WANTLIB += sasl2 smime3 sndio soup-2.4 speexdsp sqlite3
 WANTLIB += ssl ssl3 stdc++ tasn1 usbhid xcb xml2 z
 
 MODULES=	devel/gettext \

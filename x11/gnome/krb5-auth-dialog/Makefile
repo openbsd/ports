@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/21 18:03:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/24 16:50:20 ajacoutot Exp $
 
 COMMENT=	monitor kerberos tickets
 
 GNOME_PROJECT=	krb5-auth-dialog
 GNOME_VERSION=	0.14
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	security
 
@@ -22,7 +22,7 @@ WANTLIB += crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0 krb5 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += z pthread-stubs xcb
+WANTLIB += z pthread-stubs xcb xcb-render xcb-render-util
 
 MODULES=	devel/gettext \
 		x11/gnome \

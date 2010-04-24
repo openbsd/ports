@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/05 10:52:50 robert Exp $
+# $OpenBSD: Makefile,v 1.28 2010/04/24 16:50:20 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		personal photo management application for GNOME
 
 GNOME_VERSION=		0.6.1.5
 GNOME_PROJECT=		f-spot
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 CATEGORIES=		graphics
 
@@ -29,6 +29,7 @@ WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png popt pthread-stubs ssl util xcb xml2 z
+WANTLIB += eggdbus-1 gcrypt gpg-error xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
 			lang/mono \

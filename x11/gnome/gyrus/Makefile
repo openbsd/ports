@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/03/20 16:45:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/24 16:50:20 ajacoutot Exp $
 
 COMMENT=	Cyrus imapd administration GUI
 
 GNOME_PROJECT=	gyrus
 GNOME_VERSION=	0.3.9
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	mail
 
@@ -21,6 +22,7 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread xml2 z pthread-stubs xcb
+WANTLIB += xcb-render xcb-render-util
 
 MODULES=	devel/gettext \
 		x11/gnome

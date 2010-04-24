@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2010/02/23 20:08:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2010/04/24 16:50:20 ajacoutot Exp $
 
 COMMENT=		Jabber client for the GNOME desktop
 
 GNOME_PROJECT=		gossip
 GNOME_VERSION=		0.31
-PKGNAME=		${DISTNAME}p17
+PKGNAME=		${DISTNAME}p18
 
 CATEGORIES=		net
 
@@ -27,8 +27,8 @@ WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gnutls
 WANTLIB += gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
 WANTLIB += krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png popt pthread pthread-stubs
-WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 tasn1 util
-WANTLIB += xcb xml2 z
+WANTLIB += smime3 soup-2.4 sqlite3 ssl ssl3 tasn1 util
+WANTLIB += xcb xml2 z eggdbus-1 xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
 			x11/gnome \

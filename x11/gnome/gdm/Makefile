@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2010/04/17 05:41:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2010/04/24 16:50:20 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.10
-PKGNAME=		${DISTNAME}p11
+PKGNAME=		${DISTNAME}p12
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -21,6 +21,7 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gsf-1 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs util wrap xcb xml2 z
+WANTLIB += gthread-2.0 xcb-render xcb-render-util
 
 BUILD_DEPENDS=		::x11/gnome/zenity
 RUN_DEPENDS=		:sox-*:audio/sox \

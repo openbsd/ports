@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2009/12/21 18:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/04/24 16:50:20 ajacoutot Exp $
 
 COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
 GNOME_VERSION=		2.24.0
-PKGNAME=		${DISTNAME}p6
+PKGNAME=		${DISTNAME}p7
 
 SHARED_LIBS +=  gtkhex               1.0      # .0.0
 CATEGORIES=		sysutils editors
@@ -24,7 +24,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gnomecanvas-2 gnomeprint-2-2 gnomevfs-2 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png popt pthread ssl util xml2 z \
-		avahi-client avahi-common avahi-glib pthread-stubs xcb
+		avahi-client avahi-common avahi-glib pthread-stubs xcb \
+		eggdbus-1 gcrypt gpg-error xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
 			x11/gnome \

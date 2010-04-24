@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/04/21 16:47:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/04/24 16:50:20 ajacoutot Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
 GNOME_PROJECT=		gnomebaker
 GNOME_VERSION=		0.6.4
-PKGNAME=		${DISTNAME}p12
+PKGNAME=		${DISTNAME}p13
 
 CATEGORIES=		sysutils multimedia
 
@@ -24,7 +24,7 @@ WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 \
 		gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png popt pthread xml2 z \
-		pthread-stubs xcb
+		pthread-stubs xcb xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
 			x11/gnome
