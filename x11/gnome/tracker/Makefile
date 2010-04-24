@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/04/23 09:57:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/04/24 00:35:20 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -7,7 +7,7 @@ GNOME_VERSION=	0.8.3
 
 # there is already audio/tracker, so this port has to live
 # as tracker-search.
-PKGNAME=	tracker-search-${VERSION}
+PKGNAME=	tracker-search-${VERSION}p0
 
 EVO_VERSION=	2.30
 SUBST_VARS=	EVO_VERSION
@@ -57,7 +57,8 @@ LIB_DEPENDS=	vorbis,vorbisfile.>=6::audio/libvorbis \
 		panel-applet-2::x11/gnome/panel \
 		nautilus-extension:nautilus->=2.28.4p1:x11/gnome/nautilus \
 		totem-plparser.>=2:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
-		e2fs-uuid:e2fsprogs->=1.41.4p3:sysutils/e2fsprogs
+		e2fs-uuid:e2fsprogs->=1.41.4p3:sysutils/e2fsprogs \
+		gee::devel/libgee
 BUILD_DEPENDS=	::devel/xdg-utils \
 		::lang/vala
 RUN_DEPENDS=	:gamin-*:sysutils/gamin,-server \
@@ -87,6 +88,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-libtiff \
 		--enable-libxml2 \
 		--enable-libvorbis \
+		--enable-tracker-search-tool \
+		--enable-tracker-explorer \
 		--disable-unit-tests \
 		--disable-miner-rss \
 		--disable-libstreamanalyzer \
@@ -102,10 +105,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-enca \
 		--disable-libiptcdata \
 		--disable-libflac
-
-# needs libgee
-CONFIGURE_ARGS+= --disable-tracker-search-tool \
-		--disable-tracker-explorer
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

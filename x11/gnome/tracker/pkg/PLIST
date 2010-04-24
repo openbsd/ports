@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/04/23 09:57:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/04/24 00:35:20 ajacoutot Exp $
 @bin bin/tracker-control
+@bin bin/tracker-explorer
 @bin bin/tracker-import
 @bin bin/tracker-info
 @bin bin/tracker-preferences
 @bin bin/tracker-search
+@bin bin/tracker-search-tool
 @bin bin/tracker-sparql
 @bin bin/tracker-stats
 @bin bin/tracker-status
@@ -127,6 +129,7 @@ lib/tracker-0.8/writeback-modules/libwriteback-xmp.so
 @man man/man1/tracker-miner-fs.1
 @man man/man1/tracker-preferences.1
 @man man/man1/tracker-search-bar.1
+@man man/man1/tracker-search-tool.1
 @man man/man1/tracker-search.1
 @man man/man1/tracker-sparql.1
 @man man/man1/tracker-stats.1
@@ -139,6 +142,7 @@ lib/tracker-0.8/writeback-modules/libwriteback-xmp.so
 @man man/man5/tracker-miner-fs.cfg.5
 @man man/man5/tracker-store.cfg.5
 share/applications/tracker-preferences.desktop
+share/applications/tracker-search-tool.desktop
 share/dbus-1/services/org.freedesktop.Tracker1.Extract.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Applications.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.EMails.service
@@ -201,6 +205,7 @@ share/tracker/
 share/tracker/GNOME_Search_Bar_Applet.xml
 share/tracker/gtk-sparql.ui
 share/tracker/icons/
+share/tracker/icons/thumbnail_frame.png
 share/tracker/icons/tracker-applet-default.png
 share/tracker/icons/tracker-applet-indexing1.png
 share/tracker/icons/tracker-applet-indexing2.png
@@ -246,6 +251,7 @@ share/tracker/rss_viewer.ui
 share/tracker/sqlite-contents.sql
 share/tracker/sqlite-tracker.sql
 share/tracker/tracker-backup.xml
+share/tracker/tracker-explorer.ui
 share/tracker/tracker-extract.xml
 share/tracker/tracker-miner-web.xml
 share/tracker/tracker-miner.xml
@@ -256,6 +262,7 @@ share/tracker/tracker-search-bar.ui
 share/tracker/tracker-statistics.xml
 share/tracker/tracker-status.xml
 share/tracker/tracker-writeback.xml
+share/tracker/tst.ui
 share/vala/vapi/tracker-client-0.8.vapi
 share/vala/vapi/tracker-miner-0.8.vapi
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
