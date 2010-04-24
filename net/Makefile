@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.629 2010/04/23 12:56:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.630 2010/04/24 15:28:04 merdely Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -302,6 +302,7 @@
      SUBDIR += p5-Net-Whois-RIPE
      SUBDIR += p5-Net-Whois-Raw
      SUBDIR += p5-Net-XMPP
+     SUBDIR += p5-Net-XWhois
      SUBDIR += p5-Net-Z3950-Zoom
      SUBDIR += p5-NetAddr-IP
      SUBDIR += p5-NetPacket
