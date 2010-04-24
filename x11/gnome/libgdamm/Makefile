@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/03/22 13:57:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/24 09:56:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -37,8 +37,7 @@ LIB_DEPENDS=		glibmm-2.4::devel/glib2mm \
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			MAKE=${MAKE_PROGRAM}
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS+=		GDA_MAJOR
 

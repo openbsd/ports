@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/04/20 20:20:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2010/04/24 09:56:34 ajacoutot Exp $
 
 COMMENT-main=		C++ interface for gtk2+
 COMMENT-docs=		C++ interface for gtk2+ documentation
@@ -50,7 +50,6 @@ USE_GMAKE=		Yes
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		MAKE=${MAKE_PROGRAM}
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
 			--disable-dependency-tracking

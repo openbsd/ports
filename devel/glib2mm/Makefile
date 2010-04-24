@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/04/22 19:56:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/04/24 09:56:34 ajacoutot Exp $
 
 COMMENT-main=		C++ interface for glib2
 COMMENT-docs=		C++ interface for glib2 documentation
@@ -39,8 +39,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--disable-dependency-tracking
-CONFIGURE_ENV=		M4='m4 -g' \
-			MAKE=${MAKE_PROGRAM}
+CONFIGURE_ENV=		M4='m4 -g'
 
 SUBST_VARS=		V
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/04/20 13:13:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/24 09:56:34 ajacoutot Exp $
 
 COMMENT=	C++ wrapper for the libxml XML parser library
 
@@ -30,7 +30,6 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	MAKE=${MAKE_PROGRAM}
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 FAKE_FLAGS=	docdir="${PREFIX}/share/doc/libxml++-2.6"

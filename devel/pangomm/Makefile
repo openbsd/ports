@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/16 12:45:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/24 09:56:34 ajacoutot Exp $
 
 COMMENT =		C++ interface for pango
 
@@ -35,7 +35,6 @@ USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" \
-			MAKE=${MAKE_PROGRAM}
+CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
 
 .include <bsd.port.mk>

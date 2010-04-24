@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/22 22:26:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/24 09:56:34 ajacoutot Exp $
 
 COMMENT=	UPnP A/V media server
 
@@ -29,8 +29,7 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= simple
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv" \
-		MAKE=${MAKE_PROGRAM}
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv"
 CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} \
 		--with-libupnp-dir=${LOCALBASE}/lib \
 		--disable-optimize \

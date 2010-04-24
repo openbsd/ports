@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/16 12:37:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/24 09:56:34 ajacoutot Exp $
 
 COMMENT-main=		callback framework for C++
 COMMENT-docs=		callback framework for C++ documentation
@@ -31,7 +31,6 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ENV=		M4='m4 -g' \
-			MAKE=${MAKE_PROGRAM}
+CONFIGURE_ENV=		M4='m4 -g'
 
 .include <bsd.port.mk>

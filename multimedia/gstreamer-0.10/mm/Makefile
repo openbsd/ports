@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/13 11:50:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/24 09:56:34 ajacoutot Exp $
 
 COMMENT =	C++ bindings for GStreamer
 
@@ -27,6 +27,5 @@ LIB_DEPENDS =	giomm-2.4.>=9,glibmm-2.4,glibmm_generate_extra_defs-2.4::devel/gli
 		xml++-2.6::textproc/libxml++
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		MAKE=${MAKE_PROGRAM}
 
 .include <bsd.port.mk>

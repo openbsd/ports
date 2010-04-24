@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/15 14:38:05 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/24 09:56:34 ajacoutot Exp $
 
 COMMENT =	game programming library for C/C++ developers
 
@@ -36,7 +36,6 @@ CONFIGURE_ARGS =	--enable-artsdigi=no \
 			--enable-jackdigi=no \
 			--enable-ossmidi=no \
 			--with-x
-CONFIGURE_ENV =		MAKE=${MAKE_PROGRAM}
 MAKE_ENV +=		shared_major_minor=${LIBalleg_VERSION}
 
 NO_REGRESS =		Yes

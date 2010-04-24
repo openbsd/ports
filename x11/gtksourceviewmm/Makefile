@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/07 07:58:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/24 09:56:34 ajacoutot Exp $
 
 COMMENT=	C++ wrapper for gtksourceview
 
@@ -35,7 +35,6 @@ USE_X11=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	MAKE=${MAKE_PROGRAM}
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
