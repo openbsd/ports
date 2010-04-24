@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2010/04/23 13:58:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2010/04/24 16:37:18 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -6,7 +6,7 @@ COMMENT-battstat=	GNOME applet for monitoring battery level
 GNOME_PROJECT=		gnome-applets
 GNOME_VERSION=		2.30.0
 
-PKGNAME-main=		gnome-applets2-${VERSION}
+PKGNAME-main=		gnome-applets2-${VERSION}p0
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
 
 CATEGORIES=		x11
