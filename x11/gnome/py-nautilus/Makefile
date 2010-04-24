@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/03/21 09:47:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/24 17:00:35 ajacoutot Exp $
 
 COMMENT=	nautilus Python bindings
 
 GNOME_PROJECT=	nautilus-python
 GNOME_VERSION=	0.6.1
-PKGNAME=	py-nautilus-${GNOME_VERSION}
+PKGNAME=	py-nautilus-${GNOME_VERSION}p0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,6 +17,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += gthread-2.0 xcb-render xcb-render-util
 WANTLIB += png pthread-stubs util xcb z
 
 MODULES=	devel/gettext \

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/03/30 16:09:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/24 17:00:34 ajacoutot Exp $
 
 COMMENT=		implementation of the ATK interface for GNOME widgets
 
 GNOME_PROJECT=		libgail-gnome
 GNOME_VERSION=		1.20.2
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		devel
 
@@ -28,6 +29,7 @@ WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-keyring gnomeui-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
 WANTLIB += pthread-stubs ssl util xcb xml2 z
+WANTLIB += eggdbus-1 gcrypt gpg-error xcb-render xcb-render-util
 
 LIB_DEPENDS=		spi::x11/gnome/at-spi \
 			gnome-2::x11/gnome/libgnome \

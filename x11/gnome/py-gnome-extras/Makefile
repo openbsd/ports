@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/04/21 07:36:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/04/24 17:00:35 ajacoutot Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
 GNOME_PROJECT=	gnome-python-extras
 GNOME_VERSION=	2.25.3
-PKGNAME=	py-gnome-extras-${VERSION}p4
+PKGNAME=	py-gnome-extras-${VERSION}p5
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -24,6 +24,7 @@ WANTLIB += glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png popt pthread-stubs ssl stdc++
+WANTLIB += eggdbus-1 gcrypt gpg-error xcb-render xcb-render-util
 WANTLIB += util xcb xml2 z sqlite3
 
 MODULES=		devel/gettext \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/04/21 11:52:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/04/24 17:00:35 ajacoutot Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.30.0
-PKGNAME=		py-gnome-desktop-${VERSION}
+PKGNAME=		py-gnome-desktop-${VERSION}p0
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -21,16 +21,16 @@ WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 bz2
 WANTLIB += cairo camel-1.2 canberra canberra-gtk com_err croco-0.6
 WANTLIB += crypto dbus-1 dbus-glib-1 ebook-1.2 ecal-1.2 edataserver-1.2
 WANTLIB += execinfo expat ffi fontconfig freetype gailutil gconf-2
-WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
+WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmime-2.4 gmodule-2.0 gnome-2 gnome-desktop-2
 WANTLIB += gnome-keyring gnomecanvas-2 gnomeprint-2-2 gnomeui-2
 WANTLIB += gnomevfs-2 gnutls gobject-2.0 gpg-error gsf-1 gssapi
-WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 ical icalss
+WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 ical icalss eggdbus-1
 WANTLIB += icalvcal krb5 kvm ltdl m nspr4 nss3 ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread-stubs
-WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 startup-notification-1
+WANTLIB += smime3 soup-2.4 sqlite3 ssl ssl3 startup-notification-1
 WANTLIB += tasn1 util vorbis vorbisfile wnck-1 xcb xcb-atom xcb-aux
-WANTLIB += xcb-event xcb-render xcb-render-util xml2 z pthread
+WANTLIB += xcb-event xcb-render xcb-render-util xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \

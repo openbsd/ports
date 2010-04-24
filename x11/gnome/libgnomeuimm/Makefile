@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2009/10/11 09:23:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/24 17:00:34 ajacoutot Exp $
 
 COMMENT=	C++ interface for libgnomeui
 
 GNOME_PROJECT=	libgnomeuimm
 GNOME_VERSION=	2.28.0
+PKGNAME=	${DISTNAME}p0
 
 SHARED_LIBS +=	gnomeuimm-2.6        1.0      # .1.4
 
@@ -26,7 +27,7 @@ WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png popt pthread-stubs sigc-2.0 ssl util
-WANTLIB += xcb xml2 z
+WANTLIB += xcb xml2 z eggdbus-1 gcrypt gpg-error xcb-render xcb-render-util
 
 MODULES=	devel/gettext \
 		x11/gnome

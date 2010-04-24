@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/05 10:52:50 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/24 17:00:35 ajacoutot Exp $
 
 COMMENT=	.NET language bindings for the GNOME desktop
 
 GNOME_PROJECT=	gnome-desktop-sharp
 GNOME_VERSION=	2.24.0
-PKGNAME=	mono-gnome-desktop-${VERSION}p2
+PKGNAME=	mono-gnome-desktop-${VERSION}p3
 
 CATEGORIES=	x11
 
@@ -22,12 +22,12 @@ WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
 WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 cairo
 WANTLIB += crypto dbus-1 dbus-glib-1 execinfo expat fontconfig
 WANTLIB += freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glade-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
-WANTLIB += gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0
+WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2
+WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m ncurses pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread-stubs ssl
 WANTLIB += startup-notification-1 stdc++ util wnck-1 xcb xcb-atom
-WANTLIB += xcb-aux xcb-event xml2 z enchant
+WANTLIB += xcb-aux xcb-event xml2 z enchant xcb-render xcb-render-util
 
 MODULES=	devel/gettext \
 		lang/mono \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2009/12/21 18:03:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/04/24 17:00:35 ajacoutot Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.4
-PKGNAME=		${DISTNAME}p7
+PKGNAME=		${DISTNAME}p8
 
 CATEGORIES=		x11
 
@@ -28,7 +28,7 @@ WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread ssl util
 WANTLIB += xml2 xslt z avahi-client avahi-common avahi-glib
-WANTLIB += pthread-stubs xcb
+WANTLIB += pthread-stubs xcb eggdbus-1 xcb-render xcb-render-util
 
 MODULES=		devel/gettext \
 			lang/python \
