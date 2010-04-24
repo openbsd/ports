@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/03/30 07:40:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/24 15:13:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,7 +43,7 @@ MODGCONF2_SCHEMAS_DIR= nautilus-sendto
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--with-gajim=${LOCALBASE}
 
-# --with-plugins=all ; needs newer empathy
+# --with-plugins=all ; empathy comes with its own nautilus-sendto plugin
 # allowed_plugins="bluetooth empathy evolution gajim nautilus-burn pidgin removable-devices upnp"
 CONFIGURE_ARGS+= --with-plugins="evolution gajim pidgin removable-devices"
 
