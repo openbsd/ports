@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.793 2010/04/23 18:11:16 stsp Exp $
+# $OpenBSD: Makefile,v 1.794 2010/04/24 00:50:34 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -182,6 +182,7 @@
      SUBDIR += libfmt
      SUBDIR += libftdi
      SUBDIR += libgdata
+     SUBDIR += libgee
      SUBDIR += libglade2
      SUBDIR += libglademm
      SUBDIR += libgsf
