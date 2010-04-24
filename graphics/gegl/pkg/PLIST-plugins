@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-plugins,v 1.2 2009/10/14 14:19:38 ajacoutot Exp $
-@comment lib/gegl-0.0/exr-load.la
-lib/gegl-0.0/exr-load.so
-@comment lib/gegl-0.0/ff-load.la
-lib/gegl-0.0/ff-load.so
+@comment $OpenBSD: PLIST-plugins,v 1.3 2010/04/24 13:07:54 ajacoutot Exp $
+@comment lib/gegl-0.1/exr-load.la
+lib/gegl-0.1/exr-load.so
+@comment lib/gegl-0.1/ff-load.la
+lib/gegl-0.1/ff-load.so

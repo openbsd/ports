@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.16 2009/10/14 14:19:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/04/24 13:07:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	graph based image processing framework
 COMMENT-plugins=gegl plugins
 
-V=		0.1.0
+V=		0.1.2
 DISTNAME=	gegl-${V}
 CATEGORIES=	graphics devel
 
 PKGNAME-main=	gegl-${V}
 PKGNAME-plugins=gegl-plugins-${V}
 
-SHARED_LIBS=	gegl-0.0	3.0 # .100.0
+SHARED_LIBS=	gegl-0.1	0.0 # .101.1
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -43,15 +43,19 @@ WANTLIB-main +=	${WANTLIB}
 WANTLIB-main += X11 Xau Xdmcp Xrender c cairo croco-0.6 expat fontconfig
 WANTLIB-main += freetype gdk_pixbuf-2.0 glitz gsf-1 jpeg pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
-WANTLIB-main += pthread-stubs xcb xml2
+WANTLIB-main += pthread-stubs xcb xml2 xcb-render xcb-render-util
+
+LIB_DEPENDS=	execinfo::devel/libexecinfo
+
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		rsvg-2::x11/gnome/librsvg \
-		babl-0.0::graphics/babl
+		babl-0.1::graphics/babl
 
 WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += Half Iex IlmThread Imath a52 faac faad mp3lame ogg
 WANTLIB-plugins += oil-0.3 schroedinger-1.0 stdc++ theora vorbis vorbisenc
 WANTLIB-plugins += x264
+
 RUN_DEPENDS-plugins= ::${BUILD_PKGPATH},-main
 LIB_DEPENDS-plugins= ${LIB_DEPENDS} \
 		IlmImf.>=4::graphics/openexr \
@@ -59,13 +63,14 @@ LIB_DEPENDS-plugins= ${LIB_DEPENDS} \
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
 		ac_cv_path_ASCIIDOC="no" \
 		ac_cv_path_W3M="no" \
 		ac_cv_path_ENSCRIPT="no" \
 		ac_cv_prog_RUBY=""
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-static \
+		--disable-silent-rules \
 		--disable-docs \
 		--disable-gtk-doc \
 		--without-sdl \
