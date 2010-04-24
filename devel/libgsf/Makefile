@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/04/08 06:43:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2010/04/24 08:46:41 jasper Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
@@ -6,8 +6,8 @@ COMMENT-gnome=		GNOME specific extensions to libgsf
 GNOME_PROJECT=		libgsf
 GNOME_VERSION=		1.14.18
 
-PKGNAME-main=		${DISTNAME}
-PKGNAME-gnome=		libgsf-gnome-${VERSION}
+PKGNAME-main=		${DISTNAME}p0
+PKGNAME-gnome=		libgsf-gnome-${VERSION}p0
 
 CATEGORIES=		devel
 
@@ -27,7 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-main -gnome
 
-WANTLIB += c m z pcre
+WANTLIB += c m z pcre pthread
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -37,7 +37,7 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=  	:py-gtk2->=2.10:x11/py-gtk2 \
 			:popt-*:devel/popt
 LIB_DEPENDS=		bz2.>=10.2::archivers/bzip2 \
-			gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
+			gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
 			xml2.>=8.4::textproc/libxml
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
