@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/06/05 21:31:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/24 17:38:06 jasper Exp $
 
 COMMENT =		last.fm client for xmms2
 
-DISTNAME =		xmms2-scrobbler-0.3.0
-PKGNAME =		${DISTNAME}p0
+DISTNAME =		xmms2-scrobbler-0.4.0
 
 CATEGORIES =		audio
 
