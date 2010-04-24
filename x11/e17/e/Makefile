@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2010/04/24 15:10:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2010/04/24 20:18:40 naddy Exp $
 
 COMMENT =		the enlightened window manager
 DISTNAME =		enlightenment-0.16.999.061
-PKGNAME =		${DISTNAME}p1v0
+PKGNAME =		${DISTNAME}p2v0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		devel/gettext
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xinerama Xp Xrandr Xrender Xss Xtst c crypto dbus-1
+WANTLIB += Xinerama Xrandr Xrender Xss Xtst c crypto dbus-1
 WANTLIB += ecore ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas
 WANTLIB += ecore_input ecore_ipc ecore_job ecore_txt ecore_x eet
 WANTLIB += eina embryo evas expat fontconfig freetype jpeg m pthread

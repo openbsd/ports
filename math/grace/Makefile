@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2009/12/16 14:46:57 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2010/04/24 20:18:39 naddy Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.15
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
@@ -49,7 +49,7 @@ ERRORS+=	"Fatal: Flavors 'no_x11' and 'xmhtml' are mutually exclusive."
 REGRESS_IS_INTERACTIVE=	x11
 USE_X11=		Yes
 USE_MOTIF=		openmotif
-WANTLIB+=		ICE SM X11 Xext Xmu Xp Xpm Xt
+WANTLIB+=		ICE SM X11 Xext Xmu Xpm Xt
 .  if ${FLAVOR:L:Mxmhtml}
 LIB_DEPENDS+=		XmHTML.>=1::www/xmhtml
 CONFIGURE_ARGS+=	--enable-xmhtml

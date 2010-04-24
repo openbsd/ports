@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2010/04/15 07:11:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2010/04/24 20:18:39 naddy Exp $
 
 COMMENT=	X11 version of the popular board game
 
 V=		2.12
 DISTNAME=	xscrabble-${V}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xp Xpm Xt c pthread-stubs \
+WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c pthread-stubs \
 		xcb z
 
 LIB_DEPENDS=	bz2.>=10::archivers/bzip2

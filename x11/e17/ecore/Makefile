@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/01/11 15:00:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/04/24 20:18:40 naddy Exp $
 
 COMMENT =		core event/X abstraction layer
 DISTNAME =		ecore-0.9.9.061
-PKGNAME =               ${DISTNAME}v0
+PKGNAME =               ${DISTNAME}p0v0
 
 SO_VERSION =		0.1
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xinerama Xp Xrandr Xrender Xss Xtst c crypto eet eina
+WANTLIB += Xinerama Xrandr Xrender Xss Xtst c crypto eet eina
 WANTLIB += expat fontconfig freetype jpeg m pthread pthread-stubs
 WANTLIB += ssl xcb z
 

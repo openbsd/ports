@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/03/07 15:37:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/24 20:18:40 naddy Exp $
 
 COMMENT=		virtual keyboard for X Window System
 
 DISTNAME=		xvkbd-2.8
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		x11
 HOMEPAGE=		http://homepage3.nifty.com/tsato/xvkbd/
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xmu Xp Xpm Xt Xtst c
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt Xtst c
 
 MASTER_SITES=		${HOMEPAGE}
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2010/02/27 15:03:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2010/04/24 20:18:39 naddy Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
 DISTNAME=		nedit-5.5
-PKGNAME=		${DISTNAME}p9
+PKGNAME=		${DISTNAME}p10
 P_V=			0.1
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
 			nedit_patterns-${P_V}.tgz:1
@@ -29,7 +29,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xmu Xp Xpm Xrender Xt
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xmu Xpm Xrender Xt
 WANTLIB += c expat fontconfig freetype m z
 
 MODULES=		converters/libiconv

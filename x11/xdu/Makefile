@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2009/05/19 14:03:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2010/04/24 20:18:40 naddy Exp $
 
 COMMENT=		graphic disk usage viewer
 
 DISTNAME=		xdu-3.0
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=     	x11
 
 # custom
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xp Xpm Xt c
+WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 
 HOMEPAGE=		http://sd.wareonearth.com/~phil/xdu/
 

@@ -1,0 +1,20 @@
+$OpenBSD: patch-j2se_make_sun_awt_mawt_gmk,v 1.3 2010/04/24 20:18:39 naddy Exp $
+--- j2se/make/sun/awt/mawt.gmk.orig	Sat Apr 24 16:30:25 2010
++++ j2se/make/sun/awt/mawt.gmk	Sat Apr 24 16:41:02 2010
+@@ -144,7 +144,7 @@ else
+     ifeq ($(TRUE_PLATFORM), NetBSD)
+ 	LIBXM += -Wl,-R$(MOTIF_LIB)
+     endif
+-    LIBXM = -L$(MOTIF_LIB) -lXm -lXp
++    LIBXM = -L$(MOTIF_LIB) -lXm
+ 
+     ifeq ($(LINUX_OR_BSD), true)
+ 	LIBXT = -lXt
+@@ -239,6 +239,7 @@ ifeq ($(LINUX_OR_BSD), true)
+   X11DIR ?= /usr/X11R6
+   LOCALDIR ?= /usr/local
+   CPPFLAGS += -I$(X11DIR)/include -I$(X11DIR)/include/X11/extensions \
++              -I$(X11DIR)/include/freetype2 \
+               -DX11DIR=\"$(X11DIR)\" -DLOCALDIR=\"$(LOCALDIR)\"
+ endif
+ 

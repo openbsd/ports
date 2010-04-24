@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2008/02/02 09:18:54 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2010/04/24 20:18:40 naddy Exp $
 
 COMMENT=	PostIt (R) messages onto your X11 screen
 
 DISTNAME=	xpostit3.3.1
-PKGNAME=	xpostit-3.3.1p0
+PKGNAME=	xpostit-3.3.1p1
 CATEGORIES=	x11
 
 # Not all servers archie could find actually still have it.  Alas, some
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xp Xpm Xt c
+WANTLIB=	ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c
 
 USE_X11=	Yes
 CONFIGURE_STYLE=	imake

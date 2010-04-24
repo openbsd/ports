@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2009/12/16 14:59:40 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2010/04/24 20:18:39 naddy Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-motif=		motif-based test apps using gpsd
@@ -8,7 +8,7 @@ COMMENT-python=		python bindings for gpsd
 VERSION=		2.38
 DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}p0
-PKGNAME-motif=		gpsd-motif-${VERSION}p2
+PKGNAME-motif=		gpsd-motif-${VERSION}p3
 PKGNAME-php=		gpsd-php-${VERSION}
 PKGNAME-python=		gpsd-python-${VERSION}p1
 SHARED_LIBS=		gps	18.0
@@ -45,7 +45,7 @@ BUILD_DEPENDS=		::textproc/libxslt \
 CONFIGURE_ARGS+=	--without-x
 .else
 MULTI_PACKAGES+=	-motif
-WANTLIB-motif=		ICE Xaw8 Xau Xdmcp Xext Xft Xmu Xp Xpm Xrender X11 SM Xt \
+WANTLIB-motif=		ICE Xaw7 Xau Xdmcp Xext Xft Xmu Xpm Xrender X11 SM Xt \
 			c m pthread expat fontconfig freetype iconv jpeg png \
 			pthread-stubs xcb z
 LIB_DEPENDS-motif=	Xm::x11/openmotif gps::misc/gpsd

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2009/08/26 00:15:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/04/24 20:18:39 naddy Exp $
 
 COMMENT=	win land without colliding with 'flyers' and 'eaters'
 
 DISTNAME=	xonix-1.4
-PKGNAME=	${DISTNAME}p6
+PKGNAME=	${DISTNAME}p7
 CATEGORIES=	games
 
 MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/ \
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xp Xpm Xt c m
+WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c m
 
 CONFIGURE_STYLE=imake
 USE_X11=	Yes

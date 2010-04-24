@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2008/02/01 21:38:26 steven Exp $
+# $OpenBSD: Makefile,v 1.27 2010/04/24 20:18:39 naddy Exp $
 
 COMMENT=	3D Athena Widget set that looks like Motif
 
 DISTNAME=	Xaw3d-1.5
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 SHARED_LIBS=	Xaw3d 11.0
 CATEGORIES=	x11
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xext Xmu Xp Xpm Xt Xau Xdmcp
+WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt Xau Xdmcp
 
 USE_X11=	Yes
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/02 09:18:54 steven Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/24 20:18:40 naddy Exp $
 
 COMMENT=	stylus character recognition tool for X11
 
 DISTNAME=	xscribble
-PKGNAME=	xscribble-20000616p2
+PKGNAME=	xscribble-20000616p3
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.handhelds.org/projects/xscribble.html
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext ICE Xt Xtst Xmu c Xp m SM Xpm Xaw
+WANTLIB=	X11 Xau Xdmcp Xext ICE Xt Xtst Xmu c m SM Xpm Xaw
 
 MASTER_SITES=	ftp://ftp.handhelds.org/projects/xscribble/
 

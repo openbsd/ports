@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2009/09/10 22:17:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2010/04/24 20:18:39 naddy Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=   no modifications, no fee
 PERMIT_PACKAGE_FTP=     no modifications
 PERMIT_DISTFILES_CDROM= no fee
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xp Xt c m \
+WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xt c m \
 			pthread-stubs xcb
 
 USE_MOTIF=	any
