@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/04/19 09:36:30 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2010/04/24 22:36:49 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -239,7 +239,7 @@ MODULES =
 PKG_ARGS += -DGCC4=1
 LIB_DEPENDS-examples +=	QtWebKit,QtXmlPatterns::${BASE_PKGPATH}
 WANTLIB-examples +=	sqlite3
-WANTLIB-main += sqlite3
+LIB_DEPENDS-main += sqlite3::databases/sqlite3
 .else
 PKG_ARGS += -DGCC4=0
 commonWANTLIB += 	stdc++
@@ -295,7 +295,8 @@ post-install:
 	# this helps qdbuscpp2xml
 	cd ${QT_BINDIR} && ln -sf moc moc4
 .for l v in ${SHARED_LIBS}
-	ln -sf qt4/lib$l.so.$v ${PREFIX}/lib
+	test -f ${PREFIX}/lib/qt4/lib$l.so.$v && \
+	    ln -sf qt4/lib$l.so.$v ${PREFIX}/lib
 .endfor
 # cleanup
 	cd ${PREFIX}/lib/qt4 && ln -sf ../../include/X11/qt4 include
