@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2010/04/05 10:52:50 robert Exp $
+# $OpenBSD: Makefile,v 1.29 2010/04/24 22:59:37 ajacoutot Exp $
 
 COMMENT=	desktop note-taking application written in C\#
 
 GNOME_PROJECT=	tomboy
 GNOME_VERSION=	1.2.0
-PKGNAME=	tomboy-${VERSION}p0
+PKGNAME=	tomboy-${VERSION}p1
 
 CATEGORIES=	x11
 
@@ -19,7 +19,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread-stubs xcb z
+WANTLIB += png pthread-stubs xcb z gthread-2.0 xcb-render xcb-render-util
 
 MODULES=	x11/gnome \
 		lang/mono \
