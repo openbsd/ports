@@ -1,0 +1,12 @@
+$OpenBSD: patch-deskbar_core_Utils_py,v 1.1 2010/04/24 09:37:46 ajacoutot Exp $
+--- deskbar/core/Utils.py.orig	Sat Apr 24 10:52:20 2010
++++ deskbar/core/Utils.py	Sat Apr 24 10:52:39 2010
+@@ -71,7 +71,7 @@ def get_xdg_data_dirs():
+     
+     sysdirs = os.getenv("XDG_DATA_DIRS")
+     if sysdirs == None:
+-        sysdirs = "/usr/local/share:/usr/share"
++        sysdirs = "${LOCALBASE}/share:/usr/share"
+     
+     dirs = "%s:%s" % (dirs, sysdirs)
+     return [dir for dir in dirs.split(":") if dir.strip() != "" and exists(dir)]

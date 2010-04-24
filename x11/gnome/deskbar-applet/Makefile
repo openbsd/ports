@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2010/04/23 23:45:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2010/04/24 09:37:46 ajacoutot Exp $
 
 COMMENT=	universal search and navigation for GNOME
 
 GNOME_PROJECT=	deskbar-applet
 GNOME_VERSION=	2.30.0
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	sysutils
 
@@ -43,11 +44,14 @@ LIB_DEPENDS=	camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-serve
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	deskbar-applet
 
-CONFIGURE_ARGS= --enable-evolution
+CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
+		--enable-evolution
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/deskbar/deskbar-applet.py
+	${SUBST_CMD} ${WRKSRC}/deskbar/deskbar-applet.py \
+		${WRKSRC}/deskbar/core/Utils.py \
+		${WRKSRC}/deskbar/handlers/mozilla.py
 
 .include <bsd.port.mk>
