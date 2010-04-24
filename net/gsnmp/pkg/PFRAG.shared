@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/04/24 16:34:20 jasper Exp $
+@lib lib/libgsnmp.so.${LIBgsnmp_VERSION}

@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/24 16:34:20 jasper Exp $
+%%SHARED%%
+@bin bin/gsnmp-get
+include/gsnmp/
+include/gsnmp/ber.h
+include/gsnmp/dispatch.h
+include/gsnmp/gsnmp.h
+include/gsnmp/message.h
+include/gsnmp/pdu.h
+include/gsnmp/security.h
+include/gsnmp/session.h
+include/gsnmp/transport.h
+include/gsnmp/utils.h
+lib/libgsnmp.a
+lib/libgsnmp.la
+lib/pkgconfig/
+lib/pkgconfig/gsnmp.pc
+@man man/man1/gsnmp-get.1
+share/aclocal/
+share/aclocal/gsnmp.m4
