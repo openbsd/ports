@@ -1,0 +1,2 @@
+The Net::XWhois class provides a generic client framework for doing
+Whois queries and parsing server response.
