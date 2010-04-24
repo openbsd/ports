@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_SVG_Extension_pm,v 1.1 2010/04/24 22:31:20 jasper Exp $
+--- lib/SVG/Extension.pm.orig	Mon Apr  5 13:40:51 2010
++++ lib/SVG/Extension.pm	Sun Apr 25 00:27:52 2010
+@@ -23,6 +23,9 @@ use constant ENTITY => "ENTITY";
+ %TYPES=map { $_ => 1 } @TYPES;
+ 
+ #-----------------
++=head1 NAME
++
++SVG::Extension
+ 
+ sub new {
+     return shift->SUPER::new(@_);
