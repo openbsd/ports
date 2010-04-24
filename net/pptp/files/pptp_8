@@ -1,4 +1,4 @@
-.\" $OpenBSD: pptp_8,v 1.8 2009/08/14 00:02:54 stsp Exp $
+.\" $OpenBSD: pptp_8,v 1.9 2010/04/24 12:09:43 schwarze Exp $
 .\" Manual page for pptp-1.1.0
 .\" Information gleaned from USING file in the distribution
 .\" SH section heading
@@ -8,6 +8,7 @@
 .\" TP hanging label
 .Dd April 9, 2000
 .Dt pptp 8
+.Os
 .Sh NAME
 .Nm pptp
 .Nd Point-to-Point Tunneling Protocol daemon
@@ -16,7 +17,7 @@
 .Ar hostname
 .Op Fl -version
 .Op Fl -phone Ar number
-.Op Fl -nolaunchpppd 
+.Op Fl -nolaunchpppd
 .Op Fl -quirks Ar quirk
 .Op Fl -debug
 .Op Fl -sync
@@ -66,11 +67,12 @@ Display version number and exit.
 Pass
 .Ar number
 to remote host as phone number.
-.It Fl -nolaunchpppd 
+.It Fl -nolaunchpppd
 Do not launch a ppp daemon, for use as a ppp daemon pty.
 .It Fl -quirks Ar quirk
 Some ADSL providers and some ADSL hardware are buggy or not conforming
-to the RFC, and require special handling.  To this end,
+to the RFC, and require special handling.
+To this end,
 .Nm
 supports a 'quirks' mechanism.
 Currently, only '--quirks BEZEQ_ISRAEL' is defined, for connecting to
@@ -90,7 +92,8 @@ Disable packet buffering and reordering completely
 .It Fl -idle-wait Ar secs
 Time to wait before sending echo request.
 .It Fl -max-echo-wait Ar secs
-Time to wait before giving up on lack of reply. This option
+Time to wait before giving up on lack of reply.
+This option
 seems to be unimplemented, because the flag can be set but is
 never evaluated (look at pptp_ctrl.c) \(em dead, unused code?
 .It Fl -logstring Ar name
@@ -103,6 +106,7 @@ in syslog messages.
 Bind to specified IP address instead of wildcard.
 .It Fl -loglevel Ar level
 Sets the debugging level (0=low, 1=default, 2=high).
+.El
 .Sh EXAMPLES
 .Ss PPTP on a stand-alone VPN client
 This example assumes that you want to use
@@ -113,8 +117,8 @@ Let us assume that the PPTP server is called pptp.example.net.
 .Pp
 First, edit
 .Pa /etc/ppp/ppp.conf
-and add an entry for the VPN
-connection. See
+and add an entry for the VPN connection.
+See
 .Xr ppp 8
 for details on the format of this file.
 .Bd -literal
@@ -148,7 +152,8 @@ Assuming the standard default route is 192.168.1.1:
 If your default route is not fixed, for example if you connect
 to the VPN from many different networks while on the road,
 use a script to figure out the current default route and add the
-host route to the VPN gateway. For example:
+host route to the VPN gateway.
+For example:
 .Pp
 .Pa /etc/ppp/vpn-default-route.sh :
 .Bd -literal
@@ -163,6 +168,7 @@ Call the script from
   vpn:
     ! sh /etc/ppp/vpn-default-route.sh
     add default HISADDR
+.Ed
 .Pp
 Make sure the changes to the routing table are reversed in
 .Pa /etc/ppp/ppp.linkdown :
@@ -173,15 +179,18 @@ Make sure the changes to the routing table are reversed in
 .Pp
 Restoring the previous default route in
 .Pa /etc/ppp/ppp.linkdown
-is left as an exercise for the reader. On a laptop it is usually
+is left as an exercise for the reader.
+On a laptop it is usually
 enough to issue a DHCP request to restore the routing table
 after the VPN connection is terminated.
 .Pp
 Connect by running:
 .Dl ppp -ddial vpn
 .Pp
-To terminate the connection, kill the ppp process. It creates a PID
-file in /var/run/tunX.pid, where X is the number of the tun device used.
+To terminate the connection, kill the ppp process.
+It creates a PID file in
+.Pa /var/run/tunX.pid ,
+where X is the number of the tun device used.
 .Ss PPTP on a router
 This example assumes that you want to configure a router running
 OpenBSD to provide PPTP VPN access to a remote network for all hosts
@@ -194,8 +203,8 @@ this network to go through the VPN tunnel.
 .Pp
 First, edit
 .Pa /etc/ppp/ppp.conf
-and add an entry for the VPN
-connection. See
+and add an entry for the VPN connection.
+See
 .Xr ppp 8
 for details on the format of this file.
 .Bd -literal
@@ -253,6 +262,7 @@ Call the script from
     ! sh /etc/ppp/vpn-default-route.sh
     add 10.42.0.0/16 HISADDR
     ! sh -c "/sbin/pfctl -a vpn -f /etc/pf.conf.vpn"
+.Ed
 .Pp
 Make sure the changes to the routing table are
 reversed when the VPN connection drops:
@@ -267,12 +277,9 @@ reversed when the VPN connection drops:
 .Pp
 To make
 .Xr pf 4
-aware of the vpn anchors, put these lines into the
-NAT and Filter sections of
-.Pa /etc/pf.conf ,
-respectively:
+aware of the vpn anchors, put the following line into the file
+.Pa /etc/pf.conf :
 .Bd -literal
-  nat-anchor	vpn
   anchor	vpn
 .Ed
 .Pp
@@ -287,9 +294,8 @@ for example:
   int_if=xl0
   vpn_if=tun0
 
-  # NAT is of course optional. The remote network needs
-  # a route to our network as well if we don't do NAT.
-  nat on $vpn_if from $int_if:network to any -> ($vpn_if)
+  # NAT packets from our internal network to the VPN interface address
+  match out on $vpn_if from $int_if:network to any nat-to ($vpn_if)
 
   block drop on $vpn_if
   pass out on $vpn_if 
@@ -312,26 +318,28 @@ connection end point, and not some other tun device.
 The packet filter rules configured above assume tun0 as the
 VPN connection end point.
 .Pp
-To terminate the connection, kill the ppp process. It creates a PID
-file in /var/run/tunX.pid, where X is the number of the tun device used.
+To terminate the connection, kill the ppp process.
+It creates a PID file in
+.Pa /var/run/tunX.pid ,
+where X is the number of the tun device used.
 .Sh FILES
 .Pa /var/run/pptp/<ip-address>
-is created as a socket.  It is used for communicating with an existing
+is created as a socket.
+It is used for communicating with an existing
 PPTP call manager for a given remote server host.
 .Sh CAVEATS
 The PPTP protocol is insecure.
 .Sh SEE ALSO
-.Xr ppp 8 ,
 .Xr gre 4 ,
 .Xr pf 4 ,
 .Xr pf.conf 5 ,
+.Xr ppp 8 ,
 .Pa PREFIX/share/doc/pptp/PROTOCOL-SECURITY .
 .Sh HISTORY
-This man page appeared first in 
-.Nx
-\'s pptp package.
+This man page appeared first in
+.Nx Ns 's pptp package.
 .Sh AUTHORS
-.An Stefan Sperling Aq stsp@openbsd.org
+.An Stefan Sperling Aq stsp@openbsd.org ,
 .An C. Scott Ananian Aq cananian@alumni.princeton.edu ,
-.An John Kohl Aq jtk@NetBSD.org 
+.An John Kohl Aq jtk@NetBSD.org
 (patches and original man page).
