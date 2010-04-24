@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2010/04/23 18:39:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2010/04/24 16:36:33 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -95,6 +95,7 @@
      SUBDIR += settings-daemon
      SUBDIR += speech
      SUBDIR += ssh-askpass
+     SUBDIR += system-monitor
      SUBDIR += terminal
      SUBDIR += themes
      SUBDIR += themes-extras
