@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/10 06:31:09 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/24 13:54:32 jasper Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -10,8 +10,8 @@ COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
 V =			0.132
 DISTNAME =		sdlmame${V:S/.//}
-PKGNAME-main =		sdlmame-${V}p0
-PKGNAME-tools =		sdlmame-tools-${V}p0
+PKGNAME-main =		sdlmame-${V}p1
+PKGNAME-tools =		sdlmame-tools-${V}p1
 
 CATEGORIES =		emulators games
 

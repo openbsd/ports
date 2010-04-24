@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_osd_sdl_dview_c,v 1.1 2010/04/24 13:54:32 jasper Exp $
+
+Fix build with newer gtk versions.
+
+--- src/osd/sdl/dview.c.orig	Sat Apr 24 15:34:35 2010
++++ src/osd/sdl/dview.c	Sat Apr 24 15:34:58 2010
+@@ -213,7 +213,7 @@ static void dview_size_allocate(GtkWidget *wdv, GtkAll
+ 	debug_view_set_visible_position(dv->dw, pos); 
+ 	debug_view_set_visible_size(dv->dw, vsize);
+ 
+-	if(GTK_WIDGET_REALIZED(wdv))
++	if(gtk_widget_get_realized(wdv))
+ 		gdk_window_move_resize(wdv->window,
+ 							   allocation->x, allocation->y,
+ 							   allocation->width, allocation->height);
