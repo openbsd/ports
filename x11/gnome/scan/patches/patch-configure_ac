@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure_ac,v 1.1 2010/04/24 18:21:49 ajacoutot Exp $
+--- configure.ac.orig	Sat Apr 24 20:03:31 2010
++++ configure.ac	Sat Apr 24 20:04:39 2010
+@@ -63,10 +63,20 @@ PKG_CHECK_MODULES(GNOME_SCAN, [gmodule-2.0 gthread-2.0
+ AC_SUBST(GNOME_SCAN_CFLAGS)
+ AC_SUBST(GNOME_SCAN_LIBS)
+ 
++AC_MSG_CHECKING([gegl version >= 0.1.0])
++if pkg-config --modversion "gegl >= 0.1.0" > /dev/null 2>&1; then
++    AC_DEFINE(ENABLE_GEGL_010, 1, [Defined to 1 if we use GEGL version 0.1.0 or above.])
++    AC_MSG_RESULT([yes])
++else
++    AC_DEFINE(ENABLE_GEGL_010, 0, [Defined to 0 if we do not use GEGL version 0.1.0 or above.])
++    AC_MSG_RESULT([no])
++fi
++
++
+ MODULE_DIR=[${libdir}/${PACKAGE_NAME}-${API_VERSION}]
+ AC_SUBST(MODULE_DIR)
+ 
+-ICON_DIR=[${datadir}/${PACKAGE_NAME}/icons]
++ICON_DIR=[${datadir}/icons]
+ AC_SUBST(ICON_DIR)
+ 
+ dnl ***************************************************************************

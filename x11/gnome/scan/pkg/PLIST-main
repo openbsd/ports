@@ -1,30 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/12/21 18:03:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/04/24 18:21:49 ajacoutot Exp $
 @bin bin/flegita
-include/gnome-scan-1.0/
-include/gnome-scan-1.0/gnome-scan-acquisition-dialog.h
-include/gnome-scan-1.0/gnome-scan-backend.h
-include/gnome-scan-1.0/gnome-scan-dialog.h
-include/gnome-scan-1.0/gnome-scan-init.h
-include/gnome-scan-1.0/gnome-scan-job.h
-include/gnome-scan-1.0/gnome-scan-module-manager.h
-include/gnome-scan-1.0/gnome-scan-module.h
-include/gnome-scan-1.0/gnome-scan-param-specs.h
-include/gnome-scan-1.0/gnome-scan-param-widget.h
-include/gnome-scan-1.0/gnome-scan-plugin.h
-include/gnome-scan-1.0/gnome-scan-preview-area.h
-include/gnome-scan-1.0/gnome-scan-settings.h
-include/gnome-scan-1.0/gnome-scan-sink.h
-include/gnome-scan-1.0/gnome-scan-types.h
-include/gnome-scan-1.0/gnome-scan-utils.h
-include/gnome-scan-1.0/gnome-scan.h
-include/gnome-scan-1.0/gnome-scanner.h
+include/gnome-scan/
 lib/gnome-scan-1.0/
 lib/gnome-scan-1.0/libgsane.la
 lib/gnome-scan-1.0/libgsane.so
 lib/gnome-scan-1.0/libgsfiles.la
 lib/gnome-scan-1.0/libgsfiles.so
-lib/libgnomescan.la
-@lib lib/libgnomescan.so.${LIBgnomescan_VERSION}
+lib/libgnome-scan.la
+@lib lib/libgnome-scan.so.${LIBgnome-scan_VERSION}
 lib/pkgconfig/gnome-scan.pc
 share/applications/flegita.desktop
 share/gtk-doc/html/gnome-scan/
@@ -33,22 +16,22 @@ share/gtk-doc/html/gnome-scan/GnomeScanDialog.html
 share/gtk-doc/html/gnome-scan/GnomeScanDialog.png
 share/gtk-doc/html/gnome-scan/GnomeScanJob.html
 share/gtk-doc/html/gnome-scan/GnomeScanModule.html
-share/gtk-doc/html/gnome-scan/GnomeScanParamWidget.html
-share/gtk-doc/html/gnome-scan/GnomeScanPlugin.html
-share/gtk-doc/html/gnome-scan/GnomeScanPreviewPlugin.html
-share/gtk-doc/html/gnome-scan/GnomeScanSettings.html
+share/gtk-doc/html/gnome-scan/GnomeScanScanner.html
 share/gtk-doc/html/gnome-scan/GnomeScanSink.html
-share/gtk-doc/html/gnome-scan/GnomeScanner.html
 share/gtk-doc/html/gnome-scan/backend.html
 share/gtk-doc/html/gnome-scan/core.html
 share/gtk-doc/html/gnome-scan/extends.html
 share/gtk-doc/html/gnome-scan/gallery.html
-share/gtk-doc/html/gnome-scan/gnome-scan-1.0.devhelp
-share/gtk-doc/html/gnome-scan/gnome-scan-1.0.devhelp2
-share/gtk-doc/html/gnome-scan/gnome-scan-10-gnome-scan-init.html
-share/gtk-doc/html/gnome-scan/gnome-scan-10-gnome-scan-param-specs.html
-share/gtk-doc/html/gnome-scan/gnome-scan-10-gnome-scan-types.html
-share/gtk-doc/html/gnome-scan/gnome-scan-10-gnome-scan-utils.html
+share/gtk-doc/html/gnome-scan/gnome-scan-GnomeScanParamWidget.html
+share/gtk-doc/html/gnome-scan/gnome-scan-GnomeScanPlugin.html
+share/gtk-doc/html/gnome-scan/gnome-scan-GnomeScanPreviewPlugin.html
+share/gtk-doc/html/gnome-scan/gnome-scan-GnomeScanSettings.html
+share/gtk-doc/html/gnome-scan/gnome-scan-gnome-scan-common.html
+share/gtk-doc/html/gnome-scan/gnome-scan-gnome-scan-init.html
+share/gtk-doc/html/gnome-scan/gnome-scan-gnome-scan-param-specs.html
+share/gtk-doc/html/gnome-scan/gnome-scan-gnome-scan-types.html
+share/gtk-doc/html/gnome-scan/gnome-scan.devhelp
+share/gtk-doc/html/gnome-scan/gnome-scan.devhelp2
 share/gtk-doc/html/gnome-scan/hierarchy.html
 share/gtk-doc/html/gnome-scan/home.png
 share/gtk-doc/html/gnome-scan/index.html
@@ -67,20 +50,33 @@ share/icons/hicolor/scalable/apps/flegita-gimp.svg
 share/icons/hicolor/scalable/apps/flegita.svg
 share/locale/ar/LC_MESSAGES/gnome-scan.mo
 share/locale/ca/LC_MESSAGES/gnome-scan.mo
+share/locale/cs/LC_MESSAGES/gnome-scan.mo
+share/locale/da/LC_MESSAGES/gnome-scan.mo
 share/locale/de/LC_MESSAGES/gnome-scan.mo
 share/locale/dz/LC_MESSAGES/gnome-scan.mo
+share/locale/el/LC_MESSAGES/gnome-scan.mo
 share/locale/en_GB/LC_MESSAGES/gnome-scan.mo
 share/locale/es/LC_MESSAGES/gnome-scan.mo
+share/locale/et/LC_MESSAGES/gnome-scan.mo
 share/locale/fi/LC_MESSAGES/gnome-scan.mo
 share/locale/fr/LC_MESSAGES/gnome-scan.mo
+share/locale/gl/LC_MESSAGES/gnome-scan.mo
+share/locale/gu/LC_MESSAGES/gnome-scan.mo
+share/locale/he/LC_MESSAGES/gnome-scan.mo
+share/locale/hu/LC_MESSAGES/gnome-scan.mo
 share/locale/it/LC_MESSAGES/gnome-scan.mo
 share/locale/nb/LC_MESSAGES/gnome-scan.mo
 share/locale/oc/LC_MESSAGES/gnome-scan.mo
+share/locale/pa/LC_MESSAGES/gnome-scan.mo
 share/locale/pl/LC_MESSAGES/gnome-scan.mo
 share/locale/pt/LC_MESSAGES/gnome-scan.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-scan.mo
 share/locale/ru/LC_MESSAGES/gnome-scan.mo
+share/locale/sl/LC_MESSAGES/gnome-scan.mo
 share/locale/sv/LC_MESSAGES/gnome-scan.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-scan.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-scan.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-scan.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database

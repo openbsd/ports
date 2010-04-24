@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2009/12/21 18:03:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/04/24 18:21:48 ajacoutot Exp $
 
-BROKEN=		dereferencing pointer (babl/gegl)
+BROKEN=		sigsegv on startup
 
 SHARED_ONLY=	Yes
 
@@ -8,13 +8,13 @@ COMMENT-main=	easy-to-use scanning application for GNOME
 COMMENT-gimp=	flegita GIMP plugin for gnome-scan
 
 GNOME_PROJECT=	gnome-scan
-GNOME_VERSION=	0.6.2
+GNOME_VERSION=	0.7.2
 CATEGORIES=	graphics
 
-PKGNAME-main=	${DISTNAME}p3
-PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}p1
+PKGNAME-main=	${DISTNAME}
+PKGNAME-gimp=	${GNOME_PROJECT}-gimp-${GNOME_VERSION}
 
-SHARED_LIBS=	gnomescan	0.0 # .0.0
+SHARED_LIBS=	gnome-scan	0.0 # .0.0
 
 EXTRACT_SUFX=	.tar.gz
 
@@ -26,15 +26,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 babl-0.0 c \
-		cairo expat fontconfig freetype gdk-x11-2.0 \
-		gdk_pixbuf-2.0  glib-2.0 glitz gmodule-2.0 gobject-2.0 \
-		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread z gio-2.0 \
-		dbus-1 dbus-glib-1 pthread-stubs xcb
+WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 babl-0.1
+WANTLIB += c cairo dbus-1 dbus-glib-1 execinfo expat fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-render-util
+WANTLIB += z
 
-MULTI_PACKAGES=	-main -gimp
+MULTI_PACKAGES=	-main # -gimp
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -44,7 +45,7 @@ WANTLIB-main=	${WANTLIB} exif gphoto2 gphoto2_port jpeg ltdl tiff usb \
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		sane.>=1::graphics/sane-backends \
-		gegl-0.0::graphics/gegl \
+		gegl-0.1::graphics/gegl \
 		gconf-2.>=6::devel/gconf2
 
 WANTLIB-gimp=	${WANTLIB} gconf-2 gegl-0.0
@@ -56,6 +57,9 @@ USE_X11=	Yes
 DESKTOP_FILES=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
+AUTOCONF_VERSION= 2.64
+
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--disable-gtk-doc
