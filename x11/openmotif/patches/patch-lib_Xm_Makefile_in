@@ -1,22 +1,22 @@
-$OpenBSD: patch-lib_Xm_Makefile_in,v 1.2 2009/12/14 18:03:36 jasper Exp $
---- lib/Xm/Makefile.in.orig	Thu Dec 10 00:24:07 2009
-+++ lib/Xm/Makefile.in	Thu Dec 10 00:25:01 2009
-@@ -155,7 +155,8 @@ am_libXm_la_OBJECTS = $(am__objects_1) $(am__objects_2
- 	$(am__objects_6) $(am__objects_7) $(am__objects_8) \
- 	$(am__objects_9) $(am__objects_10) $(am__objects_11)
- libXm_la_OBJECTS = $(am_libXm_la_OBJECTS)
--DEFAULT_INCLUDES = -I. -I$(top_builddir)/include@am__isrc@
-+DEFAULT_INCLUDES = -I. -I$(top_builddir)/include@am__isrc@ \
+$OpenBSD: patch-lib_Xm_Makefile_in,v 1.3 2010/04/24 20:17:13 naddy Exp $
+--- lib/Xm/Makefile.in.orig	Fri Apr 23 17:21:51 2010
++++ lib/Xm/Makefile.in	Fri Apr 23 17:22:47 2010
+@@ -178,7 +178,8 @@ libXm_la_OBJECTS = $(am_libXm_la_OBJECTS)
+ libXm_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(libXm_la_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+-DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/include
++DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/include \
 +	-I${PREFIX}/include
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
- COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-@@ -243,7 +244,7 @@ LEXLIB = @LEXLIB@
+ am__mv = mv -f
+@@ -263,7 +264,7 @@ LEXLIB = @LEXLIB@
  LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
  LIBDIR = @LIBDIR@
  LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@
 +LIBS = @LIBS@ -L${LOCALBASE}/lib -liconv
  LIBTOOL = @LIBTOOL@
- LN_S = @LN_S@
- LTLIBOBJS = @LTLIBOBJS@
+ LIB_XP = @LIB_XP@
+ LIPO = @LIPO@

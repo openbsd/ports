@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.40 2010/02/17 18:15:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2010/04/24 20:17:13 naddy Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
 
-VERSION=		2.3.2
+VERSION=		2.3.3
 DISTNAME=		openmotif-${VERSION}
-PKGNAME-main=		openmotif-${VERSION}p1
-PKGNAME-demos=		openmotif-demos-${VERSION}p0
+PKGNAME-main=		openmotif-${VERSION}
+PKGNAME-demos=		openmotif-demos-${VERSION}
 
 SHARED_LIBS=		Mrm	4.1	\
-			Uil	4.1	\
-			Xm	5.0
+			Uil	5.0	\
+			Xm	6.0
 
 CATEGORIES=		x11
 #MASTER_SITES=		ftp://ftp.ics.com/openmotif/2.3/${VERSION}/
@@ -31,7 +31,8 @@ USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-themes \
 			--enable-xft \
-			--enable-jpg \
+			--enable-jpeg \
+			--disable-printing \
 			--enable-png
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm"
@@ -50,7 +51,7 @@ LIB_DEPENDS=		jpeg::graphics/jpeg \
 LIB_DEPENDS-demos=	Xm.>=4.0,Mrm.>=4.0::x11/openmotif \
 			${MODLIBICONV_LIB_DEPENDS} \
 			${LIB_DEPENDS}
-WANTLIB=		ICE SM X11 Xext Xp Xt c Xau Xdmcp Xft Xrender \
+WANTLIB=		ICE SM X11 Xext Xt c Xau Xdmcp Xft Xmu Xrender \
 			expat fontconfig freetype m z pthread-stubs xcb
 WANTLIB-demos=		${WANTLIB}
 
