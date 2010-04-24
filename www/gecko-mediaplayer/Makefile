@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/03/29 12:17:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/24 16:11:05 landry Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
 V =			0.9.9.2
 DISTNAME =		gecko-mediaplayer-$V
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		www
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -44,9 +45,5 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
 CONFIGURE_ARGS =	--with-gconf \
 			--with-xulrunner-sdk=${LOCALBASE}/xulrunner-1.9 \
 			--with-plugin-dir=${LOCALBASE}/lib/mozilla-plugins
-
-# the build-scheme will get confused otherwise
-post-patch:
-	@rm -f ${WRKDIST}/src/npupp.h
 
 .include <bsd.port.mk>
