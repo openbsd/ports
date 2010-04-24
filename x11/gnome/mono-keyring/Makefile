@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/23 16:32:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/24 09:20:04 jasper Exp $
 
 COMMENT=	.NET language bindings for GNOME keyring
 
@@ -24,7 +24,7 @@ MODULES=	lang/mono \
 		x11/gnome
 
 RUN_DEPENDS=	::sysutils/ndesk-dbus \
-		::x11/gnome/gnome-keyring \
+		::x11/gnome/keyring \
 		::x11/mono-gtk2
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
