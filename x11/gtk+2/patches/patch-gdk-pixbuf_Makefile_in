@@ -1,35 +1,15 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.27 2010/04/20 19:03:37 ajacoutot Exp $
---- gdk-pixbuf/Makefile.in.orig	Tue Mar 23 04:32:58 2010
-+++ gdk-pixbuf/Makefile.in	Tue Apr 20 19:24:50 2010
-@@ -1379,7 +1379,7 @@ test_gdk_pixbuf_LDADD = $(LDADDS)
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.28 2010/04/24 15:54:28 jasper Exp $
+--- gdk-pixbuf/Makefile.in.orig	Sat Apr 24 16:57:07 2010
++++ gdk-pixbuf/Makefile.in	Sat Apr 24 16:57:31 2010
+@@ -1377,9 +1377,9 @@ AM_CPPFLAGS = "-DPIXBUF_LIBDIR=\"$(loaderdir)\"" "-DBU
+ LDADDS = libgdk_pixbuf-$(GTK_API_VERSION).la $(GDK_PIXBUF_DEP_LIBS)
+ test_gdk_pixbuf_LDADD = $(LDADDS)
  gdk_pixbuf_csource_SOURCES = gdk-pixbuf-csource.c
- gdk_pixbuf_csource_LDADD = $(LDADDS)
+-gdk_pixbuf_csource_LDADD = $(LDADDS)
++gdk_pixbuf_csource_LDADD = $(LDADDS) $(GLIB_LIBS)
  gdk_pixbuf_query_loaders_DEPENDENCIES = $(DEPS)
 -gdk_pixbuf_query_loaders_LDADD = $(LDADDS)
-+gdk_pixbuf_query_loaders_LDADD = $(LDADDS) -pthread
++gdk_pixbuf_query_loaders_LDADD = $(LDADDS) $(GLIB_LIBS)
  gdk_pixbuf_query_loaders_SOURCES = queryloaders.c
  
  #
-@@ -2451,13 +2451,6 @@ install-data-hook: install-ms-lib install-def-file
- 	@if $(RUN_QUERY_LOADER_TEST) ; then \
- 	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
- 	  $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders > $(DESTDIR)$(sysconfdir)/gtk-2.0/gdk-pixbuf.loaders ; \
--	else \
--	  echo "***" ; \
--	  echo "*** Warning: gdk-pixbuf.loaders not built" ; \
--	  echo "***" ; \
--	  echo "*** Generate this file manually on host" ; \
--	  echo "*** system using gdk-pixbuf-query-loaders" ; \
--	  echo "***" ; \
- 	fi
- 
- uninstall-local: uninstall-ms-lib uninstall-def-file
-@@ -2469,7 +2462,7 @@ uninstall-local: uninstall-ms-lib uninstall-def-file
- @BUILD_DYNAMIC_MODULES_TRUE@	LOADERS=`echo libpixbufloader-*.la` ; \
- @BUILD_DYNAMIC_MODULES_TRUE@	if test "x$$LOADERS" != 'xlibpixbufloader-*.la' ; then \
- @BUILD_DYNAMIC_MODULES_TRUE@          echo "Writing a gdk-pixbuf.loader file to use when running examples before installing gdk-pixbuf."; \
--@BUILD_DYNAMIC_MODULES_TRUE@	  $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders $$LOADERS > ./gdk-pixbuf.loaders ;\
-+@BUILD_DYNAMIC_MODULES_TRUE@	  LD_LIBRARY_PATH=$(top_builddir)/gdk-pixbuf/.libs $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders $$LOADERS > ./gdk-pixbuf.loaders ;\
- @BUILD_DYNAMIC_MODULES_TRUE@	else \
- @BUILD_DYNAMIC_MODULES_TRUE@          echo "No dynamic modules found; will use only static modules for uninstalled example programs."; \
- @BUILD_DYNAMIC_MODULES_TRUE@	  touch gdk-pixbuf.loaders; \

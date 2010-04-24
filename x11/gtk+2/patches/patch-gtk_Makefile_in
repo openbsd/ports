@@ -1,6 +1,6 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.19 2010/04/20 19:03:37 ajacoutot Exp $
+$OpenBSD: patch-gtk_Makefile_in,v 1.20 2010/04/24 15:54:28 jasper Exp $
 --- gtk/Makefile.in.orig	Tue Mar 23 04:32:59 2010
-+++ gtk/Makefile.in	Tue Apr 20 19:24:50 2010
++++ gtk/Makefile.in	Sat Apr 24 16:56:48 2010
 @@ -971,7 +971,7 @@ SUBDIRS = theme-bits . tests
  DIST_SUBDIRS = theme-bits tests
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_FALSE@GTK_PRINT_BACKENDS = file,lpr
@@ -10,3 +10,17 @@ $OpenBSD: patch-gtk_Makefile_in,v 1.19 2010/04/20 19:03:37 ajacoutot Exp $
  @HAVE_PAPI_CUPS_TRUE@GTK_PRINT_BACKENDS = file,papi,cups
  INCLUDES = \
  	-DG_LOG_DOMAIN=\"Gtk\"				\
+@@ -1380,11 +1380,11 @@ bin_SCRIPTS = gtk-builder-convert $(am__append_17)
+ # gtk-update-icon-cache.exe doesn't require any special privileges.
+ @OS_WIN32_TRUE@GTK_UPDATE_ICON_CACHE_MANIFEST = gtk-update-icon-cache.exe.manifest
+ gtk_query_immodules_2_0_DEPENDENCIES = $(DEPS)
+-gtk_query_immodules_2_0_LDADD = $(LDADDS)
++gtk_query_immodules_2_0_LDADD = $(LDADDS) $(GLIB_LIBS)
+ gtk_query_immodules_2_0_SOURCES = queryimmodules.c
+ gtk_update_icon_cache_LDADD = \
+ 	$(top_builddir)/gdk-pixbuf/libgdk_pixbuf-$(GTK_API_VERSION).la \
+-	$(GDK_PIXBUF_DEP_LIBS)
++	$(GDK_PIXBUF_DEP_LIBS) $(GLIB_LIBS)
+ 
+ gtk_update_icon_cache_SOURCES = \
+ 	updateiconcache.c 
