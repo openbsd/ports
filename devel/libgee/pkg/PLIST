@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/24 00:32:08 ajacoutot Exp $
+%%SHARED%%
+include/gee-1.0/
+include/gee-1.0/gee.h
+lib/libgee.a
+lib/libgee.la
+lib/pkgconfig/
+lib/pkgconfig/gee-1.0.pc
+share/gir-1.0/
+share/gir-1.0/Gee-1.0.gir
+share/vala/
+share/vala/vapi/
+share/vala/vapi/gee-1.0.vapi
