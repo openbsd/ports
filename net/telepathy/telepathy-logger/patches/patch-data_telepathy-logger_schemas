@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_telepathy-logger_schemas,v 1.1 2010/04/24 13:18:37 ajacoutot Exp $
+--- data/telepathy-logger.schemas.orig	Sat Apr 24 15:12:20 2010
++++ data/telepathy-logger.schemas	Sat Apr 24 15:12:27 2010
+@@ -20,7 +20,7 @@ Setting it to "false" will completely disable any logg
+       <owner>telepathy-logger</owner>
+       <type>list</type>
+       <list_type>string</list_type>
+-      <default>true</default>
++      <default>[]</default>
+       <locale name="C">
+         <short>A list of accounts for which logging is disabled</short>
+         <long>Disables logging for the named accounts, when logging is

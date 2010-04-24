@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/23 17:59:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/24 13:18:37 ajacoutot Exp $
 
 COMMENT=	flexible communications framework, logger component
 
 DISTNAME=	telepathy-logger-0.1.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS=	telepathy-logger 0.0
 
@@ -26,6 +26,7 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--disable-silent-rules \
 			--enable-gtk-doc=no \
 			--enable-shave
 
