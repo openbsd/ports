@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/04/24 13:04:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/04/24 15:25:38 ajacoutot Exp $
 
 # XXX
 # (empathy:10245): Gtk-WARNING **: could not load image: Icon 'im-xmpp' not present in theme
@@ -8,7 +8,7 @@ COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.30.0.2
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		net
 
@@ -40,7 +40,8 @@ WANTLIB += tasn1 telepathy-glib vorbis vorbisfile xcb xcb-render
 WANTLIB += xcb-render-util xml2 z
 
 BUILD_DEPENDS=		::devel/iso-codes \
-			::x11/py-gtk2
+			::x11/py-gtk2 \
+			::x11/gnome/nautilus-sendto
 LIB_DEPENDS=		canberra,canberra-gtk::audio/libcanberra \
 			camel-1.2,ebook-1.2,edataserver-1.2::databases/evolution-data-server \
 			json-glib-1.0::devel/json-glib \
@@ -71,7 +72,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-location=Yes \
 			--enable-map=Yes\
 			--enable-webkit=no \
-			--enable-nautilus-sendto=no \
+			--enable-nautilus-sendto \
 			--enable-control-center-embedding=no \
 			--enable-tpl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

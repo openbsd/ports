@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/04/23 18:26:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/04/24 15:25:38 ajacoutot Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
+lib/nautilus-sendto/
+lib/nautilus-sendto/plugins/
+@comment lib/nautilus-sendto/plugins/libnstempathy.a
+@comment lib/nautilus-sendto/plugins/libnstempathy.la
+lib/nautilus-sendto/plugins/libnstempathy.so
 @man man/man1/empathy.1
 share/applications/empathy-accounts.desktop
 share/applications/empathy.desktop
@@ -977,7 +982,6 @@ share/locale/zh_TW/LC_MESSAGES/empathy.mo
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/empathy.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-share/telepathy/clients/
 share/telepathy/clients/Empathy.client
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
