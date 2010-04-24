@@ -1,26 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/10/14 14:19:18 ajacoutot Exp $
-include/babl-0.0/
-include/babl-0.0/babl/
-include/babl-0.0/babl/babl-macros.h
-include/babl-0.0/babl/babl-types.h
-include/babl-0.0/babl/babl-version.h
-include/babl-0.0/babl/babl.h
-lib/babl-0.0/
-@comment lib/babl-0.0/CIE-Lab.la
-lib/babl-0.0/CIE-Lab.so
-@comment lib/babl-0.0/gegl-fixups.la
-lib/babl-0.0/gegl-fixups.so
-@comment lib/babl-0.0/gggl-lies.la
-lib/babl-0.0/gggl-lies.so
-@comment lib/babl-0.0/gggl.la
-lib/babl-0.0/gggl.so
-@comment lib/babl-0.0/gimp-8bit.la
-lib/babl-0.0/gimp-8bit.so
-@comment lib/babl-0.0/naive-CMYK.la
-lib/babl-0.0/naive-CMYK.so
-@comment lib/babl-0.0/sse-fixups.la
-lib/babl-0.0/sse-fixups.so
-lib/libbabl-0.0.la
-@lib lib/libbabl-0.0.so.${LIBbabl-0.0_VERSION}
+@comment $OpenBSD: PLIST,v 1.4 2010/04/24 13:07:28 ajacoutot Exp $
+include/babl-0.1/
+include/babl-0.1/babl/
+include/babl-0.1/babl/babl-macros.h
+include/babl-0.1/babl/babl-types.h
+include/babl-0.1/babl/babl-version.h
+include/babl-0.1/babl/babl.h
+lib/babl-0.1/
+@comment lib/babl-0.1/CIE.la
+lib/babl-0.1/CIE.so
+@comment lib/babl-0.1/gegl-fixups.la
+lib/babl-0.1/gegl-fixups.so
+@comment lib/babl-0.1/gggl-lies.la
+lib/babl-0.1/gggl-lies.so
+@comment lib/babl-0.1/gggl.la
+lib/babl-0.1/gggl.so
+@comment lib/babl-0.1/gimp-8bit.la
+lib/babl-0.1/gimp-8bit.so
+@comment lib/babl-0.1/naive-CMYK.la
+lib/babl-0.1/naive-CMYK.so
+@comment lib/babl-0.1/sse-fixups.la
+lib/babl-0.1/sse-fixups.so
+lib/libbabl-0.1.la
+@lib lib/libbabl-0.1.so.${LIBbabl-0.1_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/babl.pc

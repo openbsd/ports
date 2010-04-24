@@ -1,30 +1,12 @@
-$OpenBSD: patch-extensions_Makefile_in,v 1.4 2009/10/14 14:19:18 ajacoutot Exp $
---- extensions/Makefile.in.orig	Wed May 20 22:42:51 2009
-+++ extensions/Makefile.in	Sun Oct 11 13:44:29 2009
-@@ -149,7 +149,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
- INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+$OpenBSD: patch-extensions_Makefile_in,v 1.5 2010/04/24 13:07:28 ajacoutot Exp $
+--- extensions/Makefile.in.orig	Thu Jan 14 18:55:50 2010
++++ extensions/Makefile.in	Sat Apr 24 13:18:34 2010
+@@ -184,7 +184,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LD = @LD@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
 -LIBS = $(top_builddir)/babl/libbabl-@BABL_API_VERSION@.la $(MATH_LIB)
 +LIBS = $(MATH_LIB)
  LIBTOOL = @LIBTOOL@
+ LIPO = @LIPO@
  LN_S = @LN_S@
- LTLIBOBJS = @LTLIBOBJS@
-@@ -233,7 +233,7 @@ target_alias = @target_alias@
- top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
--@OS_WIN32_FALSE@AM_LDFLAGS = -module
-+@OS_WIN32_FALSE@AM_LDFLAGS = -module -avoid-version
- @OS_WIN32_TRUE@AM_LDFLAGS = -module -no-undefined
- noinst_HEADERS = util.h
- AM_CPPFLAGS = \
-@@ -242,7 +242,7 @@ AM_CPPFLAGS = \
- 	-I$(top_srcdir)/babl		\
- 	-I$(top_srcdir)/extensions
- 
--extdir = $(DESTDIR)$(libdir)/babl-@BABL_API_VERSION@
-+extdir = $(libdir)/babl-@BABL_API_VERSION@
- ext_LTLIBRARIES = \
- 	CIE-Lab.la      \
- 	gegl-fixups.la  \

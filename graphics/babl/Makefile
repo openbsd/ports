@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2009/10/14 14:19:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/24 13:07:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	dynamic pixel format conversion library
 
-V=		0.1.0
+V=		0.1.2
 DISTNAME=	babl-${V}
 CATEGORIES=	graphics devel
 
-SHARED_LIBS=	babl-0.0	2.0 # .100.0
+SHARED_LIBS=	babl-0.1	0.0 # .101.1
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -33,7 +33,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_path_W3M=no \
 		ac_cv_path_RSVG=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static
+		--disable-static \
+		--disable-silent-rules
 
 # be safe until proven stable
 CONFIGURE_ARGS+= --enable-mmx \
