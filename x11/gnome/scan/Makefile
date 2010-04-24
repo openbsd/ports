@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/04/24 18:21:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/04/24 22:42:47 ajacoutot Exp $
 
 BROKEN=		sigsegv on startup
 
@@ -42,6 +42,8 @@ MODULES=	devel/gettext \
 
 WANTLIB-main=	${WANTLIB} exif gphoto2 gphoto2_port jpeg ltdl tiff usb \
 		avahi-client avahi-common
+
+BUILD_DEPENDS=	::lang/vala
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		sane.>=1::graphics/sane-backends \
