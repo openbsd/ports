@@ -1,2 +1,5 @@
-This package contains updated versions of Warrick Gray's excellent
-Haskell HTTP and Browser modules. 
+The HTTP package supports client-side web programming in Haskell.
+It lets you set up HTTP connections, transmitting requests and
+processing the responses coming back, all from within the comforts
+of Haskell. It's dependent on the network package to operate, but
+other than that, the implementation is all written in Haskell.
