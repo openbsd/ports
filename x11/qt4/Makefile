@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/04/24 22:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2010/04/25 19:03:30 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -39,7 +39,6 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		QtScript 1.0 \
 		QtCLucene 0.0 \
 		QtHelp 1.0 \
-		QtMultimedia 0.0 \
 		QtXmlPatterns 0.0 \
 		QtScriptTools 0.0 \
 		QtWebKit 1.0 \
@@ -295,7 +294,7 @@ post-install:
 	# this helps qdbuscpp2xml
 	cd ${QT_BINDIR} && ln -sf moc moc4
 .for l v in ${SHARED_LIBS}
-	test -f ${PREFIX}/lib/qt4/lib$l.so.$v && \
+	-test -f ${PREFIX}/lib/qt4/lib$l.so.$v && \
 	    ln -sf qt4/lib$l.so.$v ${PREFIX}/lib
 .endfor
 # cleanup
