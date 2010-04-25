@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.4 2010/04/17 14:48:15 espie Exp $
+# $OpenBSD: Column.pm,v 1.5 2010/04/25 12:35:26 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -52,7 +52,13 @@ sub normal_schema
 sub view_schema
 {
 	my ($self, $t) = @_;
-	return $t.".".$self->name." AS ".$self->name;
+	return $self->realname($t)." AS ".$self->name;
+}
+
+sub realname
+{
+	my ($self, $t) = @_;
+	return $t.".".$self->name;
 }
 
 sub join_schema
@@ -110,10 +116,10 @@ sub default_name
 	return "FULLPKGPATH";
 }
 
-sub view_schema
+sub realname
 {
 	my ($self, $t) = @_;
-	return $self->table.".FULLPKGPATH AS ".$self->name;
+	return $self->table.".FULLPKGPATH";
 }
 
 sub normal_schema
@@ -148,13 +154,13 @@ sub normal_schema
 	return $inserter->value($self->k, $self->name);
 }
 
-sub view_schema
+sub realname
 {
 	my ($self, $t) = @_;
 	if (defined $self->k) {
-		return $self->table.".VALUE AS ".$self->name;
+		return $self->table.".VALUE";
 	} else {
-		return $self->SUPER::view_schema($t);
+		return $self->SUPER::realname($t);
 	}
 }
 
