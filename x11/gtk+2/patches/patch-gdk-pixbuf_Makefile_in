@@ -1,15 +1,12 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.29 2010/04/24 16:41:16 jasper Exp $
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.30 2010/04/25 20:35:08 ajacoutot Exp $
 --- gdk-pixbuf/Makefile.in.orig	Tue Mar 23 04:32:58 2010
-+++ gdk-pixbuf/Makefile.in	Sat Apr 24 18:40:34 2010
-@@ -1377,9 +1377,9 @@ AM_CPPFLAGS = "-DPIXBUF_LIBDIR=\"$(loaderdir)\"" "-DBU
- LDADDS = libgdk_pixbuf-$(GTK_API_VERSION).la $(GDK_PIXBUF_DEP_LIBS)
- test_gdk_pixbuf_LDADD = $(LDADDS)
++++ gdk-pixbuf/Makefile.in	Sun Apr 25 22:29:27 2010
+@@ -1379,7 +1379,7 @@ test_gdk_pixbuf_LDADD = $(LDADDS)
  gdk_pixbuf_csource_SOURCES = gdk-pixbuf-csource.c
--gdk_pixbuf_csource_LDADD = $(LDADDS)
-+gdk_pixbuf_csource_LDADD = $(LDADDS) -pthread $(GLIB_LIBS)
+ gdk_pixbuf_csource_LDADD = $(LDADDS)
  gdk_pixbuf_query_loaders_DEPENDENCIES = $(DEPS)
 -gdk_pixbuf_query_loaders_LDADD = $(LDADDS)
-+gdk_pixbuf_query_loaders_LDADD = $(LDADDS) $(GLIB_LIBS)
++gdk_pixbuf_query_loaders_LDADD = $(LDADDS) -pthread
  gdk_pixbuf_query_loaders_SOURCES = queryloaders.c
  
  #

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtk_gtksettings_c,v 1.9 2010/04/25 20:35:08 ajacoutot Exp $
+--- gtk/gtksettings.c.orig	Sun Apr 25 22:31:10 2010
++++ gtk/gtksettings.c	Sun Apr 25 22:31:53 2010
+@@ -38,7 +38,7 @@
+ #ifdef GDK_WINDOWING_QUARTZ
+ #define DEFAULT_KEY_THEME "Mac"
+ #else
+-#define DEFAULT_KEY_THEME NULL
++#define DEFAULT_KEY_THEME "Emacs"
+ #endif
+ 
+ #define DEFAULT_TIMEOUT_INITIAL 200
