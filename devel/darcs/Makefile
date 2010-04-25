@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2010/04/22 21:53:18 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2010/04/25 21:20:45 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
 DISTNAME =		darcs-2.4.1
+PKGNAME =		${DISTNAME}p0
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/

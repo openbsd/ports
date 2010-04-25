@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_Darcs_Patch_Info_hs,v 1.1 2010/04/25 21:20:45 kili Exp $
+--- src/Darcs/Patch/Info.hs.orig	Mon Apr 12 21:42:42 2010
++++ src/Darcs/Patch/Info.hs	Sun Apr 25 22:56:01 2010
+@@ -18,10 +18,10 @@
+ module Darcs.Patch.Info ( PatchInfo, patchinfo, invert_name, is_inverted,
+                           idpatchinfo, add_junk,
+                           make_filename, make_alt_filename, readPatchInfo,
+-                          just_name, just_author, repopatchinfo, RepoPatchInfo,
+-                          human_friendly, to_xml, pi_date, set_pi_date,
+-                          pi_name, pi_rename, pi_author, pi_tag, pi_log,
+-                          showPatchInfo, is_tag
++                          just_name, just_author, just_log, repopatchinfo,
++			  RepoPatchInfo, human_friendly, to_xml, pi_date,
++			  set_pi_date, pi_name, pi_rename, pi_author, pi_tag,
++			  pi_log, showPatchInfo, is_tag
+                         ) where
+ import Text.Html hiding (name, text)
+ import System.Random ( randomRIO )
+@@ -98,6 +98,9 @@ just_name pinf = if is_inverted pinf then "UNDO: " ++ 
+ 
+ just_author :: PatchInfo -> String
+ just_author = BC.unpack . _pi_author
++
++just_log :: PatchInfo -> String
++just_log = unlines . map BC.unpack . _pi_log
+ 
+ human_friendly :: PatchInfo -> Doc
+ human_friendly pi =

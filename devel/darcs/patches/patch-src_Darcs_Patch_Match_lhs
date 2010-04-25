@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_Darcs_Patch_Match_lhs,v 1.1 2010/04/25 21:20:45 kili Exp $
+--- src/Darcs/Patch/Match.lhs.orig	Mon Apr 12 21:42:42 2010
++++ src/Darcs/Patch/Match.lhs	Sun Apr 25 22:55:57 2010
+@@ -36,7 +36,7 @@ import System.IO.Unsafe ( unsafePerformIO )
+ 
+ import Darcs.Hopefully ( PatchInfoAnd, hopefully, info )
+ import Darcs.Patch ( Patch, Patchy, hunkMatches, listTouchedFiles, patchcontents )
+-import Darcs.Patch.Info ( just_name, just_author, make_filename,
++import Darcs.Patch.Info ( just_name, just_author, just_log, make_filename,
+                           pi_date )
+ import Darcs.Witnesses.Sealed ( Sealed2(..), seal2 )
+ import DateMatcher ( parseDateMatcher )
+@@ -308,6 +308,9 @@ primitiveMatchers =
+  , ("hunk", "check a regular expression against the contents of a hunk patch"
+             , ["foo = 2", "^instance .* Foo where$"]
+             , hunkmatch )
++ , ("log", "check a regular expression against the log message"
++         , []
++         , logmatch )
+  , ("hash",  "match the darcs hash for a patch"
+           ,  ["20040403105958-53a90-c719567e92c3b0ab9eddd5290b705712b8b918ef"]
+           ,  hashmatch )
+@@ -339,6 +342,7 @@ exactmatch r (Sealed2 hp) = r == (just_name (info hp))
+ 
+ authormatch a (Sealed2 hp) = isJust $ matchRegex (mkRegex a) $ just_author (info hp)
+ 
++logmatch l (Sealed2 hp) = isJust $ matchRegex (mkRegex l) $ just_log (info hp)
+ 
+ hunkmatch r (Sealed2 hp) = let patch = patchcontents $ hopefully hp
+                                regexMatcher = isJust . (matchRegex (mkRegex r) . BC.unpack)
