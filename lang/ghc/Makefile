@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2010/04/22 21:49:37 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2010/04/25 13:40:30 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
-PKGNAME-main =		ghc-${MODGHC_VER}
+PKGNAME-main =		ghc-${MODGHC_VER}p0
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
@@ -17,9 +17,6 @@ BIN_VER =		6.12.1.20100318
 MODULES =		lang/ghc lang/python converters/libiconv
 
 MULTI_PACKAGES =	-main -doc
-
-PSEUDO_FLAVORS =	native_bootstrap
-FLAVOR ?=
 
 # BSD w/o advertising clause.
 # Distfile is bundled with ofther stuff like libffi, libgmp, mingw
@@ -46,11 +43,7 @@ DIST_SUBDIR =		ghc-${MODGHC_VER}
 
 VMEM_WARNING =		Yes
 
-.if ${FLAVOR:L:Mnative_bootstrap}
-BUILD_DEPENDS +=	:ghc->=6.10:lang/ghc
-.else
 BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
-.endif
 
 DISTFILES =		ghc-${MODGHC_VER}-src.tar.bz2 \
 			testsuite-${MODGHC_VER}.tar.bz2 \
@@ -73,16 +66,11 @@ MAKE_FLAGS +=		StripLibraries=YES \
 			HSCOLOUR_SRCS=NO \
 			INTEGER_LIBRARY=integer-simple
 
-.if ${FLAVOR:L:Mnative_bootstrap}
-BUILD_DEPENDS +=	::devel/haddock
-.else
 BUILD_DEPENDS +=	::devel/haddock,no_deps:patch
-.endif
 
 REGRESS_DEPENDS =	::print/ghostscript/gnu
 
 post-extract:
-.if !${FLAVOR:L:Mnative_bootstrap}
 # - Install a precompiled binary.
 # - Replace utils/haddock by the version from the ports tree, move
 #   the alex- and happy-generated files into the src dir and rename the
@@ -99,7 +87,6 @@ post-extract:
 		find . -name \*.[xy] -print | \
 		sed 's@\(.*\)\.[xy]@mv & &.source \&\& mv ../dist/build/haddock/haddock-tmp/\1.hs \1.hs@' | \
 		sh
-.endif
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/docs/index.html
