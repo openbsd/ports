@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2010/04/23 08:39:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2010/04/25 20:43:00 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		2.30.0
+PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		databases
 
@@ -45,9 +46,11 @@ WANTLIB += ssl tasn1 xcb xcb-render xcb-render-util xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \
+			textproc/intltool \
 			x11/gnome
 
-BUILD_DEPENDS=		:bison-*:devel/bison
+BUILD_DEPENDS=		:bison-*:devel/bison \
+			:gperf-*:devel/gperf
 LIB_DEPENDS= 		db:db->=4,<5:databases/db/v4 \
 			ldap,lber::databases/openldap \
 			gpg-error::security/libgpg-error \
