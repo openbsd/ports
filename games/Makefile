@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.208 2010/04/19 23:47:12 nicm Exp $
+# $OpenBSD: Makefile,v 1.209 2010/04/25 19:12:13 kili Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -95,6 +95,7 @@
      SUBDIR += micropolis
      SUBDIR += mirrormagic
      SUBDIR += mnemosyne
+     SUBDIR += monadius
      SUBDIR += moon-buggy
      SUBDIR += moonlander
      SUBDIR += moonlander,no_sound
