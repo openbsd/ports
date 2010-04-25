@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2010/04/22 16:30:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.99 2010/04/25 08:33:00 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -17,7 +17,7 @@ SUBST_VARS=		R
 
 # -plugins depends on the exact version of -main, so whenever -main is
 # bumped, -plugins needs a bump too
-#PATCH_NUMBER=		p0
+PATCH_NUMBER=		p0
 PKGNAME-main=		${DISTNAME}${PATCH_NUMBER}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}${PATCH_NUMBER}
 

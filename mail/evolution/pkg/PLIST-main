@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2010/04/22 16:30:02 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2010/04/25 08:33:00 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution-alarm-notify
@@ -440,55 +440,55 @@ lib/evolution/${R}/libfilter.la
 lib/evolution/${R}/libmenus.a
 lib/evolution/${R}/libmenus.la
 lib/evolution/${R}/modules/
-lib/evolution/${R}/modules/libevolution-module-addressbook.a
-lib/evolution/${R}/modules/libevolution-module-addressbook.la
-lib/evolution/${R}/modules/libevolution-module-calendar.a
-lib/evolution/${R}/modules/libevolution-module-calendar.la
-lib/evolution/${R}/modules/libevolution-module-mail.a
-lib/evolution/${R}/modules/libevolution-module-mail.la
-lib/evolution/${R}/modules/libevolution-module-plugin-lib.a
-lib/evolution/${R}/modules/libevolution-module-plugin-lib.la
+@comment lib/evolution/${R}/modules/libevolution-module-addressbook.a
+@comment lib/evolution/${R}/modules/libevolution-module-addressbook.la
+@comment lib/evolution/${R}/modules/libevolution-module-calendar.a
+@comment lib/evolution/${R}/modules/libevolution-module-calendar.la
+@comment lib/evolution/${R}/modules/libevolution-module-mail.a
+@comment lib/evolution/${R}/modules/libevolution-module-mail.la
+@comment lib/evolution/${R}/modules/libevolution-module-plugin-lib.a
+@comment lib/evolution/${R}/modules/libevolution-module-plugin-lib.la
 lib/evolution/${R}/plugins/
-lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.a
-lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.la
-lib/evolution/${R}/plugins/liborg-gnome-bogo-junk-plugin.a
-lib/evolution/${R}/plugins/liborg-gnome-bogo-junk-plugin.la
-lib/evolution/${R}/plugins/liborg-gnome-calendar-file.a
-lib/evolution/${R}/plugins/liborg-gnome-calendar-file.la
-lib/evolution/${R}/plugins/liborg-gnome-calendar-http.a
-lib/evolution/${R}/plugins/liborg-gnome-calendar-http.la
-lib/evolution/${R}/plugins/liborg-gnome-calendar-weather.a
-lib/evolution/${R}/plugins/liborg-gnome-calendar-weather.la
-lib/evolution/${R}/plugins/liborg-gnome-default-source.a
-lib/evolution/${R}/plugins/liborg-gnome-default-source.la
-lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.a
-lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.la
-lib/evolution/${R}/plugins/liborg-gnome-evolution-google.a
-lib/evolution/${R}/plugins/liborg-gnome-evolution-google.la
-lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.a
-lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.la
-lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.a
-lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.la
-lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.a
-lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.la
-lib/evolution/${R}/plugins/liborg-gnome-image-inline.a
-lib/evolution/${R}/plugins/liborg-gnome-image-inline.la
-lib/evolution/${R}/plugins/liborg-gnome-imap-features.a
-lib/evolution/${R}/plugins/liborg-gnome-imap-features.la
-lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.a
-lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.la
-lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.a
-lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.la
-lib/evolution/${R}/plugins/liborg-gnome-plugin-manager.a
-lib/evolution/${R}/plugins/liborg-gnome-plugin-manager.la
-lib/evolution/${R}/plugins/liborg-gnome-pst-import.a
-lib/evolution/${R}/plugins/liborg-gnome-pst-import.la
-lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.a
-lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.la
-lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.a
-lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.la
-lib/evolution/${R}/plugins/liborg-gnome-vcard-inline.a
-lib/evolution/${R}/plugins/liborg-gnome-vcard-inline.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-bogo-junk-plugin.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-bogo-junk-plugin.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-file.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-file.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-http.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-http.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-weather.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-weather.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-default-source.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-default-source.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-google.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-google.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-startup-wizard.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-image-inline.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-image-inline.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-imap-features.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-imap-features.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.la
+@comment liblib/evolution/${R}/plugins/liborg-gnome-mark-all-read.a
+@comment liblib/evolution/${R}/plugins/liborg-gnome-mark-all-read.la
+@comment liblib/evolution/${R}/plugins/liborg-gnome-plugin-manager.a
+@comment liblib/evolution/${R}/plugins/liborg-gnome-plugin-manager.la
+@comment liblib/evolution/${R}/plugins/liborg-gnome-pst-import.a
+@comment liblib/evolution/${R}/plugins/liborg-gnome-pst-import.la
+@comment liblib/evolution/${R}/plugins/liborg-gnome-publish-calendar.a
+@comment liblib/evolution/${R}/plugins/liborg-gnome-publish-calendar.la
+@comment liblib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.a
+@comment liblib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.la
+@comment liblib/evolution/${R}/plugins/liborg-gnome-vcard-inline.a
+@comment liblib/evolution/${R}/plugins/liborg-gnome-vcard-inline.la
 lib/evolution/${R}/plugins/org-gnome-addressbook-file.eplug
 lib/evolution/${R}/plugins/org-gnome-bogo-junk-plugin.eplug
 lib/evolution/${R}/plugins/org-gnome-calendar-file.eplug

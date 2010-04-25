@@ -1,31 +1,31 @@
-@comment $OpenBSD: PLIST-plugins,v 1.6 2010/04/22 16:30:02 jasper Exp $
+@comment $OpenBSD: PLIST-plugins,v 1.7 2010/04/25 08:33:00 ajacoutot Exp $
 %%SHARED%%
-lib/evolution/${R}/plugins/liborg-gnome-audio-inline.a
-lib/evolution/${R}/plugins/liborg-gnome-audio-inline.la
-lib/evolution/${R}/plugins/liborg-gnome-backup-restore.a
-lib/evolution/${R}/plugins/liborg-gnome-backup-restore.la
-lib/evolution/${R}/plugins/liborg-gnome-default-mailer.a
-lib/evolution/${R}/plugins/liborg-gnome-default-mailer.la
-lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.a
-lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.la
-lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.a
-lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.la
-lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.a
-lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.la
-lib/evolution/${R}/plugins/liborg-gnome-mail-notification.a
-lib/evolution/${R}/plugins/liborg-gnome-mail-notification.la
-lib/evolution/${R}/plugins/liborg-gnome-mail-to-task.a
-lib/evolution/${R}/plugins/liborg-gnome-mail-to-task.la
-lib/evolution/${R}/plugins/liborg-gnome-mailing-list-actions.a
-lib/evolution/${R}/plugins/liborg-gnome-mailing-list-actions.la
-lib/evolution/${R}/plugins/liborg-gnome-prefer-plain.a
-lib/evolution/${R}/plugins/liborg-gnome-prefer-plain.la
-lib/evolution/${R}/plugins/liborg-gnome-save-calendar.a
-lib/evolution/${R}/plugins/liborg-gnome-save-calendar.la
-lib/evolution/${R}/plugins/liborg-gnome-subject-thread.a
-lib/evolution/${R}/plugins/liborg-gnome-subject-thread.la
-lib/evolution/${R}/plugins/liborg-gnome-templates.a
-lib/evolution/${R}/plugins/liborg-gnome-templates.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-audio-inline.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-audio-inline.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-backup-restore.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-backup-restore.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-default-mailer.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-default-mailer.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-mail-notification.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-mail-notification.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-mail-to-task.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-mail-to-task.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-mailing-list-actions.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-mailing-list-actions.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-prefer-plain.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-prefer-plain.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-save-calendar.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-save-calendar.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-subject-thread.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-subject-thread.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-templates.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-templates.la
 lib/evolution/${R}/plugins/org-gnome-audio-inline.eplug
 lib/evolution/${R}/plugins/org-gnome-backup-restore.eplug
 lib/evolution/${R}/plugins/org-gnome-default-mailer.eplug
