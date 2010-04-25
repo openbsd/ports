@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2010/04/23 18:05:26 stsp Exp $
+# $OpenBSD: Makefile,v 1.70 2010/04/25 08:43:29 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -55,6 +55,8 @@ LIB_DEPENDS=	neon.>=26:neon->=0.26.2:net/neon \
 		aprutil-1::devel/apr-util \
 		sasl2.>=2::security/cyrus-sasl2 \
 		sqlite3::databases/sqlite3
+
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
 
 MULTI_PACKAGES=	-main
 
