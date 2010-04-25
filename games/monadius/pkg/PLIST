@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/25 19:11:51 kili Exp $
+@bin bin/monadius
+share/doc/${DISTNAME}/
+@comment share/doc/${DISTNAME}/LICENSE
+share/doc/${DISTNAME}/readme-e.txt
+share/doc/${DISTNAME}/readme-j.txt
