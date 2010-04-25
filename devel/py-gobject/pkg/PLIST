@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/04/23 12:51:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/04/25 20:59:38 jasper Exp $
 @conflict py-gtk2-2.8.6*
 bin/pygobject-codegen-2.0
 include/pygobject/
@@ -8,7 +8,7 @@ include/pygtk-2.0/pyglib.h
 include/pygtk-2.0/pygobject.h
 lib/libpyglib-2.0-python${MODPY_VERSION}.a
 lib/libpyglib-2.0-python${MODPY_VERSION}.la
-@lib lib/libpyglib-2.0-python${MODPY_VERSION}.so.${LIBpyglib-2.0-python2.5_VERSION}
+@lib lib/libpyglib-2.0-python${MODPY_VERSION}.so.${PYGLIB_VER}
 lib/pkgconfig/pygobject-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/dsextras.py
