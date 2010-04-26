@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.4 2010/03/20 18:29:18 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.5 2010/04/26 08:32:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.2 2010/04/26 08:32:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -154,7 +154,7 @@ sub dump
 {
 	my ($self, $fh) = @_;
 	for my $k (sort keys %adder) {
-		print $fh "\t $k = ", $self->{$k}->string, "\n" 
+		print $fh "\t $k = ", $self->{$k}->string, "\n"
 		    if defined $self->{$k};
 	}
 }
@@ -178,8 +178,8 @@ sub quick_dump
 sub fullpkgname
 {
 	my $self = shift;
-	
-	return (defined $self->{FULLPKGNAME}) ? 
+
+	return (defined $self->{FULLPKGNAME}) ?
 	    $self->{FULLPKGNAME}->string : undef;
 }
 

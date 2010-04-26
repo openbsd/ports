@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: Vars.pm,v 1.2 2010/04/26 08:32:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -97,7 +97,7 @@ sub grab_list
 		} else {
 			if (defined $subdirs) {
 				$ENV{SUBDIR} = join(' ', sort @$subdirs);
-			} 
+			}
 			chdir($ports) or die "Bad directory $ports";
 			exec {$make} ('make', @args);
 		}
@@ -125,7 +125,7 @@ sub grab_list
 			$core->job->set_status(" at $1");
 			$subdir = DPB::PkgPath->new_hidden($1);
 			&$reset;
-		} elsif (my ($pkgpath, $var, $value) = 
+		} elsif (my ($pkgpath, $var, $value) =
 		    m/^(.*?)\.([A-Z][A-Z_0-9]*)\=(.*)$/) {
 			next unless DPB::PortInfo->wanted($var);
 

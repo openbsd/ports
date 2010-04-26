@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.6 2010/03/22 12:55:07 espie Exp $
+# $OpenBSD: Distant.pm,v 1.7 2010/04/26 08:32:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #

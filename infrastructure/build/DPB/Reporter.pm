@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.11 2010/03/23 09:57:45 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.12 2010/04/26 08:32:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -121,7 +121,7 @@ sub new
 		$class->ttyclass->new(@_);
 	} else {
 		$singleton //= bless {msg => '', tty => $isatty,
-		    producers => $class->filter_can(\@_, 'important'), 
+		    producers => $class->filter_can(\@_, 'important'),
 		    continued => 0}, $class;
 	}
 }
@@ -165,7 +165,7 @@ sub find_window_size
 	require 'sys/ttycom.ph';
 	$width = 80;
 	if (ioctl(STDOUT, &TIOCGWINSZ, $r)) {
-		my ($rows, $cols, $xpix, $ypix) = 
+		my ($rows, $cols, $xpix, $ypix) =
 		    unpack($wsz_format, $r);
 		$self->{width} = $cols;
 		$self->{height} = $rows;
@@ -196,15 +196,15 @@ sub set_sig_handlers
 	OpenBSD::Handler->register(sub {
 		$self->reset_cursor; });
 	$SIG{'__DIE__'} = sub {
-		$self->reset_cursor; 
+		$self->reset_cursor;
 	};
 }
 
 sub new
 {
 	my $class = shift;
-	$singleton //= bless {msg => '', 
-	    producers => $class->filter_can(\@_, 'report'), 
+	$singleton //= bless {msg => '',
+	    producers => $class->filter_can(\@_, 'report'),
 	    continued => 0}, $class;
 	my $oldfh = select(STDOUT);
 	$| = 1;
@@ -214,7 +214,7 @@ sub new
 	use POSIX;
 	my $termios = POSIX::Termios->new;
 	$termios->getattr(0);
-	$singleton->{terminal} = Term::Cap->Tgetent({ OSPEED => 
+	$singleton->{terminal} = Term::Cap->Tgetent({ OSPEED =>
 	    $termios->getospeed });
 	$singleton->find_window_size;
 	$singleton->set_sig_handlers;
@@ -339,7 +339,7 @@ sub go_write_home
 sub report
 {
 	my $self = shift;
-	my $msg = ""; 
+	my $msg = "";
 	for my $prod (@{$self->{producers}}) {
 		$msg.= $prod->report;
 	}

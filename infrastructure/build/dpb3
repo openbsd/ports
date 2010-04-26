@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.12 2010/04/12 13:30:11 espie Exp $
+# $OpenBSD: dpb3,v 1.13 2010/04/26 08:32:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -45,7 +45,7 @@ use DPB::Grabber;
 use OpenBSD::Paths;
 my $make = $ENV{MAKE} || OpenBSD::Paths->make;
 
-our ($opt_t, $opt_e, $opt_T, $opt_c, $opt_h, $opt_A, $opt_j, $opt_a, 
+our ($opt_t, $opt_e, $opt_T, $opt_c, $opt_h, $opt_A, $opt_j, $opt_a,
     $opt_r, $opt_s, $opt_u, $opt_U,
     $opt_L, $opt_m, $opt_f, $opt_x);
 my @subdirlist;
@@ -142,7 +142,7 @@ for my $arg (@ARGV) {
 	$pkgpath->add_to_subdirlist(\@subdirlist);
 }
 
-my ($ports, $repo, $localarch, $distdir) = DPB::Vars->get($make, 
+my ($ports, $repo, $localarch, $distdir) = DPB::Vars->get($make,
     "PORTSDIR", "PACKAGE_REPOSITORY", "MACHINE_ARCH", "DISTDIR");
 
 my $arch = $opt_A // $localarch;
@@ -182,12 +182,12 @@ if (@build_files > 0) {
 }
 
 my $builder = DPB::PortBuilder->new(
-    $opt_c, $opt_s, $opt_u, $opt_U, $fullrepo, $logger, $ports, $make, 
+    $opt_c, $opt_s, $opt_u, $opt_U, $fullrepo, $logger, $ports, $make,
     $heuristics);
 
 my $locker = DPB::Locks->new($lockdir);
 my $engine = DPB::Engine->new($builder, $heuristics, $logger, $locker);
-my $reporter = DPB::Reporter->new($opt_x, $heuristics, "DPB::Core", 
+my $reporter = DPB::Reporter->new($opt_x, $heuristics, "DPB::Core",
     "DPB::Vars", $engine);
 while (!DPB::Core->avail) {
 	DPB::Core->reap;

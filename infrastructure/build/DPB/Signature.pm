@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.5 2010/03/20 18:29:19 espie Exp $
+# $OpenBSD: Signature.pm,v 1.6 2010/04/26 08:32:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -44,7 +44,7 @@ sub compare1
 			$r .= "Can't find ".$lib->to_string." on $h2\n";
 		} elsif ($s2->{$stem}->to_string ne $lib->to_string) {
 			$r .= "versions don't match: ".
-			    $s2->{$stem}->to_string." on $h2 vs ". 
+			    $s2->{$stem}->to_string." on $h2 vs ".
 			    $lib->to_string.  " on $h1\n";
 		}
 	}
@@ -111,7 +111,7 @@ sub compare
 	my ($s1, $s2) = @_;
 	my $r = '';
 	for my $dir (OpenBSD::Paths->library_dirs) {
-		$r .= $s1->{$dir}->compare($s2->{$dir}, 
+		$r .= $s1->{$dir}->compare($s2->{$dir},
 		    $s1->{host}, $s2->{host});
 	}
 	if ($r) {
