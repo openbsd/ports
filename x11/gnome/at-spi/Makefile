@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/23 14:05:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/04/26 08:12:54 jasper Exp $
 
 COMMENT=		GNOME accessibility interface
 
 GNOME_PROJECT=		at-spi
-GNOME_VERSION=		1.30.0
-PKGNAME=		${DISTNAME}p0
+GNOME_VERSION=		1.30.1
 
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
@@ -46,6 +45,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 REGRESS_IS_INTERACTIVE=	x11
 
-FAKE_FLAGS=	default_sessiondir=${PREFIX}/share/examples/at-spi/xdg/autostart
+FAKE_FLAGS=	default_sessiondir=${PREFIX}/share/examples/at-spi/xdg/autostart \
+		referencetopdir=${PREFIX}/share/doc/at-spi/reference
 
 .include <bsd.port.mk>
