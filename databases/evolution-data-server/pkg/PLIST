@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2010/04/22 09:17:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2010/04/26 07:06:49 ajacoutot Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/camel-address.h
@@ -741,6 +741,7 @@ share/locale/bn/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/bn_IN/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/bs/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ca/LC_MESSAGES/evolution-data-server-${R}.mo
+share/locale/ca@valencia/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/cs/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/cy/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/da/LC_MESSAGES/evolution-data-server-${R}.mo
