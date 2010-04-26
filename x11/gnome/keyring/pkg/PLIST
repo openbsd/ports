@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2010/04/20 20:11:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2010/04/26 20:29:30 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-keyring
 @bin bin/gnome-keyring-daemon
@@ -62,17 +62,17 @@ share/gnome-keyring/introspect/introspect-session.xml
 share/gnome-keyring/ui/
 share/gnome-keyring/ui/gkd-prompt.ui
 share/gtk-doc/html/gcr/
-share/gtk-doc/html/gcr/GcrCertificateBasicsWidget.html
-share/gtk-doc/html/gcr/GcrCertificateDetailsWidget.html
-share/gtk-doc/html/gcr/GcrImporter.html
-share/gtk-doc/html/gcr/GcrParser.html
-share/gtk-doc/html/gcr/GcrSimpleCertificate.html
 share/gtk-doc/html/gcr/ch01.html
-share/gtk-doc/html/gcr/gcr-GcrImportDialog.html
-share/gtk-doc/html/gcr/gcr-GcrTokenManager.html
-share/gtk-doc/html/gcr/gcr-GcrXxx.html
-share/gtk-doc/html/gcr/gcr-gcr-certificate.html
+share/gtk-doc/html/gcr/gcr-GcrCertificate.html
+share/gtk-doc/html/gcr/gcr-gcr-certificate-basics-widget.html
+share/gtk-doc/html/gcr/gcr-gcr-certificate-details-widget.html
+share/gtk-doc/html/gcr/gcr-gcr-import-dialog.html
+share/gtk-doc/html/gcr/gcr-gcr-importer.html
+share/gtk-doc/html/gcr/gcr-gcr-initializer.html
+share/gtk-doc/html/gcr/gcr-gcr-parser.html
+share/gtk-doc/html/gcr/gcr-gcr-simple-certificate.html
 share/gtk-doc/html/gcr/gcr-gcr-types.html
+share/gtk-doc/html/gcr/gcr-gcr-xxx.html
 share/gtk-doc/html/gcr/gcr.devhelp
 share/gtk-doc/html/gcr/gcr.devhelp2
 share/gtk-doc/html/gcr/home.png
@@ -83,15 +83,15 @@ share/gtk-doc/html/gcr/right.png
 share/gtk-doc/html/gcr/style.css
 share/gtk-doc/html/gcr/up.png
 share/gtk-doc/html/gp11/
+share/gtk-doc/html/gp11/GP11Module.html
+share/gtk-doc/html/gp11/GP11Object.html
+share/gtk-doc/html/gp11/GP11Session.html
+share/gtk-doc/html/gp11/GP11Slot.html
 share/gtk-doc/html/gp11/ch01.html
-share/gtk-doc/html/gp11/gp11-gp11-attribute.html
-share/gtk-doc/html/gp11/gp11-gp11-attributes.html
-share/gtk-doc/html/gp11/gp11-gp11-error.html
-share/gtk-doc/html/gp11/gp11-gp11-misc.html
-share/gtk-doc/html/gp11/gp11-gp11-module.html
-share/gtk-doc/html/gp11/gp11-gp11-object.html
-share/gtk-doc/html/gp11/gp11-gp11-session.html
-share/gtk-doc/html/gp11/gp11-gp11-slot.html
+share/gtk-doc/html/gp11/gp11-Errors.html
+share/gtk-doc/html/gp11/gp11-GP11Attribute.html
+share/gtk-doc/html/gp11/gp11-GP11Attributes.html
+share/gtk-doc/html/gp11/gp11-Miscellaneous-Functions.html
 share/gtk-doc/html/gp11/gp11.devhelp
 share/gtk-doc/html/gp11/gp11.devhelp2
 share/gtk-doc/html/gp11/home.png
