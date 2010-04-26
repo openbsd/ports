@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2010/02/26 18:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2010/04/26 20:09:18 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_LIBTOOL=	Yes
+USE_LIBTOOL=	gnu
 USE_X11=	Yes
 
 MODULES=	devel/gettext

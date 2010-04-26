@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/03 11:54:56 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/26 20:09:18 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -73,7 +73,7 @@ LIB_DEPENDS-snmp=${LIB_DEPENDS} \
 		netsnmp.>=7,netsnmpagent,netsnmphelpers,netsnmpmibs::net/net-snmp
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
+USE_LIBTOOL=	gnu
 LIBTOOL_FLAGS=	--tag=disable-static
 
 AUTOCONF_VERSION=2.61

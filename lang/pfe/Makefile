@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/06/29 20:21:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/04/26 20:09:18 steven Exp $
 
 COMMENT=	Portable Forth Environment
 
@@ -32,7 +32,7 @@ MODGCC4_LANGS=	c
 CONFIGURE_ARGS+=--with-regs
 .endif
 
-USE_LIBTOOL=	Yes
+USE_LIBTOOL=	gnu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pfe/

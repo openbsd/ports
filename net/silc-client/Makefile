@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/04/03 00:21:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2010/04/26 20:09:18 steven Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
@@ -35,7 +35,7 @@ BUILD_DEPENDS+= :yasm-*:devel/yasm
 CONFDIR=	${SYSCONFDIR}/silc
 SUBST_VARS=	CONFDIR
 
-USE_LIBTOOL=	Yes
+USE_LIBTOOL=	gnu
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63
