@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/04/24 15:25:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2010/04/26 15:31:55 jasper Exp $
 
 # XXX
 # (empathy:10245): Gtk-WARNING **: could not load image: Icon 'im-xmpp' not present in theme
@@ -7,8 +7,7 @@
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
-GNOME_VERSION=		2.30.0.2
-PKGNAME=		${DISTNAME}p1
+GNOME_VERSION=		2.30.1
 
 CATEGORIES=		net
 
