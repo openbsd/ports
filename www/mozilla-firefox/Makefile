@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2010/04/26 19:55:58 landry Exp $
+# $OpenBSD: Makefile,v 1.135 2010/04/26 22:14:37 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.6.3
 DISTNAME=	mozilla-1.9.2
-PKGNAME=	mozilla-firefox-${VER}
+PKGNAME=	mozilla-firefox-${VER}p0
 SO_VERSION=	21.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -36,6 +36,7 @@ DISTFILES=	firefox-${VER}.source.tar.bz2
 MODULES=	devel/gettext lang/python
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
+		::graphics/netpbm \
 		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 		sqlite3.>=13.3:sqlite3->=3.6.16:databases/sqlite3
@@ -86,6 +87,9 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--disable-libnotify		\
 		--disable-necko-wifi		\
 		--enable-official-branding
+
+# --with-system-png=${LOCALBASE}
+# no system png : apng support not bundled in
 
 # from browser/config/mozconfig
 CONFIGURE_ARGS+=--enable-application=browser
@@ -152,5 +156,14 @@ do-install:
 	${INSTALL_PROGRAM} ${MOB}/firefox-bin ${MOB}/mozilla-xremote-client \
 		${MOB}/regxpcom ${MOZ}
 	ln -f ${MOZ}/firefox-bin ${MOZ}/mozilla-firefox-bin
+	# create an xpm icon from the png one as nsWindow::SetWindowIconList
+	# fails to load png icons : confuses the png pixbuf loader from gtk, which
+	# differs from the libpng bundled in firefox
+	cd ${WRKSRC} && \
+		${LOCALBASE}/bin/pngtopnm -alpha ${MOZ}/icons/mozicon128.png > alpha.pgm
+	cd ${WRKSRC} && \
+		${LOCALBASE}/bin/pngtopnm ${MOZ}/icons/mozicon128.png | \
+			${LOCALBASE}/bin/ppmtoxpm -alphamask=alpha.pgm > \
+			${MOZ}/chrome/icons/default/default.xpm
 
 .include <bsd.port.mk>

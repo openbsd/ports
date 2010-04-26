@@ -1,6 +1,9 @@
-$OpenBSD: patch-widget_src_gtk2_nsWindow_cpp,v 1.1 2010/04/26 19:55:58 landry Exp $
+$OpenBSD: patch-widget_src_gtk2_nsWindow_cpp,v 1.2 2010/04/26 22:14:37 landry Exp $
+Don't try to use png icons when setting app icon for window manager
+Firefox uses itss building libpng for APNG support, and gdk_pixbuf_new_from_file
+bails out later on when trying to load png files.
 --- widget/src/gtk2/nsWindow.cpp.orig	Fri Apr  2 18:03:20 2010
-+++ widget/src/gtk2/nsWindow.cpp	Sun Apr 25 23:45:31 2010
++++ widget/src/gtk2/nsWindow.cpp	Mon Apr 26 22:21:56 2010
 @@ -38,6 +38,8 @@
   *
   * ***** END LICENSE BLOCK ***** */
@@ -10,3 +13,13 @@ $OpenBSD: patch-widget_src_gtk2_nsWindow_cpp,v 1.1 2010/04/26 19:55:58 landry Ex
  #ifdef MOZ_PLATFORM_MAEMO
  #define MAEMO_CHANGES
  #endif
+@@ -1910,8 +1912,7 @@ nsWindow::SetIcon(const nsAString& aIconSpec)
+     // The last two entries (for the old XPM format) will be ignored unless
+     // no icons are found using the other suffixes. XPM icons are depricated.
+ 
+-    const char extensions[6][7] = { ".png", "16.png", "32.png", "48.png",
+-                                    ".xpm", "16.xpm" };
++    const char extensions[2][7] =  {".xpm", "16.xpm" };
+ 
+     for (PRUint32 i = 0; i < NS_ARRAY_LENGTH(extensions); i++) {
+         // Don't bother looking for XPM versions if we found a PNG.

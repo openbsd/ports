@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2010/04/26 19:55:58 landry Exp $
+@comment $OpenBSD: PLIST,v 1.26 2010/04/26 22:14:37 landry Exp $
 @conflict firefox3-*
 @conflict mozilla-firebird-*
 @pkgpath www/firefox3
@@ -24,6 +24,7 @@ mozilla-firefox/chrome/en-US.jar
 mozilla-firefox/chrome/en-US.manifest
 mozilla-firefox/chrome/icons/
 mozilla-firefox/chrome/icons/default/
+mozilla-firefox/chrome/icons/default/default.xpm
 mozilla-firefox/chrome/icons/default/default16.png
 mozilla-firefox/chrome/icons/default/default32.png
 mozilla-firefox/chrome/icons/default/default48.png
