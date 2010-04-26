@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:42:04 espie Exp $
-bin/readdisk
-bin/uae
+@comment $OpenBSD: PLIST,v 1.4 2010/04/26 01:30:26 jakemsr Exp $
+@pkgpath emulators/uae,sdl
+@pkgpath emulators/uae
+@bin bin/readdisk
+@bin bin/uae
 share/uae/
 share/uae/COMPATIBILITY
 share/uae/CREDITS

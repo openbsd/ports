@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2009/08/10 06:31:09 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2010/04/26 01:30:26 jakemsr Exp $
 
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	emulators x11
 
 HOMEPAGE=	http://uae.coresystems.de/
@@ -22,19 +22,14 @@ WANTLIB=	ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 MASTER_SITES=	ftp://ftp.coresystems.de/pub/uae/sources/develop/
 
 MODULES=	devel/gettext
-LIB_DEPENDS+=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2
+LIB_DEPENDS+=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
+		SDL::devel/sdl
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-dga --enable-vidmode
-
-FLAVORS=	sdl
-FLAVOR?=
-
-.if ${FLAVOR:L:Msdl}
-CONFIGURE_ARGS+=	--with-sdl-sound
-LIB_DEPENDS+=		SDL::devel/sdl
-.endif
+CONFIGURE_ARGS+=	--enable-dga --enable-vidmode \
+			--with-sdl-sound
+CONFIGURE_ENV=		ac_cv_header_sys_audioio_h=no
 
 NO_REGRESS=	Yes
 
