@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.794 2010/04/24 00:50:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.795 2010/04/26 17:23:47 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -207,6 +207,7 @@
      SUBDIR += libsoup
      SUBDIR += libspectrum
      SUBDIR += libstdc++-man
+     SUBDIR += libtalloc
      SUBDIR += libtool
      SUBDIR += libunicode
      SUBDIR += libunique
