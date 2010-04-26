@@ -1,0 +1,13 @@
+# $OpenBSD: patch-nsswitch_wbinfo_c,v 1.1 2010/04/26 17:31:57 sthen Exp $
+--- ../nsswitch/wbinfo.c.orig	Tue Mar  2 17:18:23 2010
++++ ../nsswitch/wbinfo.c	Tue Mar  2 17:18:44 2010
+@@ -26,9 +26,6 @@
+ #include "libwbclient/wbclient.h"
+ #include "lib/popt/popt.h"
+ #include "../libcli/auth/libcli_auth.h"
+-#if !(_SAMBA_VERSION_) < 4
+-#include "lib/cmdline/popt_common.h"
+-#endif
+ 
+ #ifdef DBGC_CLASS
+ #undef DBGC_CLASS

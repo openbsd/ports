@@ -1,7 +1,7 @@
-$OpenBSD: patch-passdb_pdb_nds_c,v 1.1 2005/04/03 11:20:38 mbalmer Exp $
---- passdb/pdb_nds.c.orig	Thu Mar 31 14:46:05 2005
-+++ passdb/pdb_nds.c	Thu Mar 31 14:47:10 2005
-@@ -23,7 +23,11 @@
+$OpenBSD: patch-passdb_pdb_nds_c,v 1.2 2010/04/26 17:31:57 sthen Exp $
+--- passdb/pdb_nds.c.orig	Tue Apr 28 16:46:16 2009
++++ passdb/pdb_nds.c	Wed Jun  3 21:13:32 2009
+@@ -22,7 +22,11 @@
  
  #include <lber.h>
  #include <ldap.h>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.13 2010/04/26 17:31:57 sthen Exp $
+--- configure.in.orig	Sat Mar 13 11:29:45 2010
++++ configure.in	Sat Mar 13 11:30:19 2010
+@@ -750,7 +750,7 @@ if test x$enable_cups != xno; then
+ 		ac_save_PRINT_LIBS=$PRINT_LIBS
+ 		CFLAGS="$CFLAGS `$CUPS_CONFIG --cflags`"
+ 		LDFLAGS="$LDFLAGS `$CUPS_CONFIG --ldflags`"
+-		PRINT_LIBS="$PRINT_LIBS -lcups"
++		PRINT_LIBS="$PRINT_LIBS `$CUPS_CONFIG --libs`"
+ 		AC_CHECK_HEADERS(cups/cups.h cups/language.h)
+ 		if test x"$ac_cv_header_cups_cups_h" = xyes -a \
+ 		        x"$ac_cv_header_cups_language_h" = xyes; then

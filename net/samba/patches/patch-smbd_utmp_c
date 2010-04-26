@@ -1,64 +1,64 @@
-$OpenBSD: patch-smbd_utmp_c,v 1.5 2007/04/06 14:20:35 ajacoutot Exp $
---- smbd/utmp.c.orig	Fri Feb 25 18:59:26 2005
-+++ smbd/utmp.c	Fri Apr  6 14:46:58 2007
-@@ -245,6 +245,7 @@ static void uw_pathname(pstring fname, const char *uw_
+$OpenBSD: patch-smbd_utmp_c,v 1.6 2010/04/26 17:31:57 sthen Exp $
+--- smbd/utmp.c.orig	Tue Apr 28 16:46:16 2009
++++ smbd/utmp.c	Wed Jun  3 21:37:53 2009
+@@ -251,14 +251,58 @@ static char *uw_pathname(TALLOC_CTX *ctx,
  }
  
  #ifndef HAVE_PUTUTLINE
 +#include <ttyent.h>
- 
++
  /****************************************************************************
   Update utmp file directly.  No subroutine interface: probably a BSD system.
-@@ -252,8 +253,50 @@ static void uw_pathname(pstring fname, const char *uw_
+ ****************************************************************************/
  
- static void pututline_my(pstring uname, struct utmp *u, BOOL claim)
+ static void pututline_my(const char *uname, struct utmp *u, bool claim)
  {
 -	DEBUG(1,("pututline_my: not yet implemented\n"));
 -	/* BSD implementor: may want to consider (or not) adjusting "lastlog" */
-+	int fd, topslot;
-+	struct utmp ubuf;
++       int fd, topslot;
++       struct utmp ubuf;
 +
-+	if ((fd = open(uname, O_RDWR, 0)) < 0)
-+		return;
++       if ((fd = open(uname, O_RDWR, 0)) < 0)
++               return;
 +
-+	if (!setttyent())
-+		return;
++       if (!setttyent())
++               return;
 +
-+	for (topslot = 0; getttyent() != (struct ttyent *)NULL; )
-+		topslot++;
++       for (topslot = 0; getttyent() != (struct ttyent *)NULL; )
++               topslot++;
 +
-+	if (!endttyent())
-+		return;
-+
-+	(void) lseek(fd, (off_t)(topslot * sizeof(struct utmp)), SEEK_SET);
-+
-+	DEBUG(1,("pututline(%s, %s, %d); topslot=%d\n",
-+	    u->ut_line, u->ut_name, claim, topslot));
-+
-+	while (1) {
-+		if (read(fd, &ubuf, sizeof(ubuf)) == sizeof(ubuf)) {
-+			if ((claim && !ubuf.ut_name[0]) ||
-+			    (!claim && ubuf.ut_name[0] &&
-+			    !strncmp(ubuf.ut_line, u->ut_line, UT_LINESIZE))) {
-+				(void) lseek(fd, -(off_t)sizeof(struct utmp),
-+				    SEEK_CUR);
-+				break;
-+			}
-+			topslot++;
-+		} else {
-+			(void) lseek(fd, (off_t)(topslot *
-+			    sizeof(struct utmp)), SEEK_SET);
-+			break;
-+		}
-+	}
-+
-+	if (!claim) {
-+		memset((char *)&u->ut_name, '\0', sizeof(u->ut_name));
-+		memset((char *)&u->ut_host, '\0', sizeof(u->ut_host));
-+	}
-+	(void) write(fd, u, sizeof(struct utmp));
-+
-+	(void) close(fd);
++      if (!endttyent())
++               return;
++               
++       (void) lseek(fd, (off_t)(topslot * sizeof(struct utmp)), SEEK_SET);
++       
++       DEBUG(1,("pututline(%s, %s, %d); topslot=%d\n",
++           u->ut_line, u->ut_name, claim, topslot));
++       
++       while (1) {
++               if (read(fd, &ubuf, sizeof(ubuf)) == sizeof(ubuf)) {
++                       if ((claim && !ubuf.ut_name[0]) ||
++                           (!claim && ubuf.ut_name[0] &&
++                           !strncmp(ubuf.ut_line, u->ut_line, UT_LINESIZE))) {
++                               (void) lseek(fd, -(off_t)sizeof(struct utmp),
++                                   SEEK_CUR);
++                               break;
++                       }
++                       topslot++;
++               } else {
++                       (void) lseek(fd, (off_t)(topslot *
++                           sizeof(struct utmp)), SEEK_SET);
++                       break;
++               }
++       }
++                                   
++       if (!claim) {
++               memset((char *)&u->ut_name, '\0', sizeof(u->ut_name));
++               memset((char *)&u->ut_host, '\0', sizeof(u->ut_host));
++       }
++       (void) write(fd, u, sizeof(struct utmp));
++                           
++       (void) close(fd);
  }
  #endif /* HAVE_PUTUTLINE */
  

@@ -1,25 +1,7 @@
-To start the Samba server and naming service enter the following commands:
+See the documentation at ${LOCALBASE}/share/doc/samba/
+for information on configuring samba.
 
-$ sudo ${PREFIX}/libexec/smbd # Start the Samba server component
-$ sudo ${PREFIX}/libexec/nmbd # Start the Samba naming service
-
-The configuration file, found at ${CONFDIR}/smb.conf can be used right
-away for simple configurations.  Local users must be added to the Samba user
-database using the smbpasswd utility in order to use the Samba server.
-
-$ sudo smbpasswd -a <username>
-
-To have Samba start whenever the machine boots, add the following lines to the
-/etc/rc.local script:
-
-if [ -x ${PREFIX}/libexec/smbd ]; then
-	echo -n ' smbd'
-	${PREFIX}/libexec/smbd
-fi
-if [ -x ${PREFIX}/libexec/nmbd ]; then
-	echo -n ' nmbd'
-	${PREFIX}/libexec/nmbd
-fi
-
-For more information and complete documentation, install the samba-docs package
-and check the ${LOCALBASE}/share/doc/samba directory.
+!!! ATTENTION !!!
+The default passdb backend has been changed to 'tdbsam'!
+See the ${LOCALBASE}/share/doc/samba/README.OpenBSD file for
+more information.
