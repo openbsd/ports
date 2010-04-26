@@ -1,0 +1,2 @@
+talloc is a hierarchical, reference counted memory pool system with
+destructors.

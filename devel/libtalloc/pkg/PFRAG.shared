@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/04/26 17:23:25 sthen Exp $
+@lib lib/libtalloc.so.${LIBtalloc_VERSION}
