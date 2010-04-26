@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.1 2010/04/12 13:30:11 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.2 2010/04/26 07:10:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,7 +25,7 @@ package DPB::Grabber;
 sub new
 {
 	my ($class, $ports, $make, $logger, $engine, $dpb, $endcode) = @_;
-	bless { ports => $ports, make => $make, 
+	bless { ports => $ports, make => $make,
 		loglist => DPB::Util->make_hot($logger->open("vars")),
 		engine => $engine,
 		dpb => $dpb,
@@ -46,7 +46,7 @@ sub finish
 sub grab_subdirs
 {
 	my ($self, $core, $list) = @_;
-	DPB::Vars->grab_list($core, $self->{ports}, $self->{make}, $list, 
+	DPB::Vars->grab_list($core, $self->{ports}, $self->{make}, $list,
 	    $self->{loglist}, $self->{dpb},
 	    sub {
 		$self->finish(shift);
@@ -63,7 +63,7 @@ sub complete_subdirs
 		for my $v (DPB::PkgPath->seen) {
 			next if defined $v->{info};
 			if (defined $v->{tried}) {
-				$self->engine->add_fatal($v);
+				$self->{engine}->add_fatal($v);
 			}
 			$v->add_to_subdirlist(\@subdirlist);
 			$v->{tried} = 1;
