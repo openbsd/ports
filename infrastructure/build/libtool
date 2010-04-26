@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.116 2009/11/15 22:05:36 steven Exp $
+# $OpenBSD: libtool,v 1.117 2010/04/26 17:49:00 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -86,6 +86,11 @@ sub dry_run
 sub verbose_run
 {
 	$verbose = 1;
+}
+
+sub silent_run
+{
+	$verbose = 0;
 }
 
 sub new
@@ -1568,6 +1573,7 @@ if ($mode eq 'compile') {
 	exit 0;
 } elsif ($mode eq 'execute') {
 	# XXX check whether this is right
+	Exec->silent_run;
 	Exec->command(@$ltprog, @ARGV);
 } else {
 	die "MODE=$mode not implemented yet.\n";
