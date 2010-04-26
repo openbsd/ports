@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/03/21 09:53:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/04/26 10:41:28 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -86,6 +86,10 @@ lib/sane/
 @comment lib/sane/libsane-hs2p.la
 @comment lib/sane/libsane-ibm.a
 @comment lib/sane/libsane-ibm.la
+@comment lib/sane/libsane-kodak.a
+@comment lib/sane/libsane-kodak.la
+@comment lib/sane/libsane-kvs1025.a
+@comment lib/sane/libsane-kvs1025.la
 @comment lib/sane/libsane-leo.a
 @comment lib/sane/libsane-leo.la
 @comment lib/sane/libsane-lexmark.a
@@ -102,14 +106,14 @@ lib/sane/
 @comment lib/sane/libsane-mustek.la
 @comment lib/sane/libsane-mustek_usb.a
 @comment lib/sane/libsane-mustek_usb.la
-@comment lib/sane/libsane-mustek_usb2.a
-@comment lib/sane/libsane-mustek_usb2.la
 @comment lib/sane/libsane-nec.a
 @comment lib/sane/libsane-nec.la
 @comment lib/sane/libsane-net.a
 @comment lib/sane/libsane-net.la
 @comment lib/sane/libsane-niash.a
 @comment lib/sane/libsane-niash.la
+@comment lib/sane/libsane-p5.a
+@comment lib/sane/libsane-p5.la
 @comment lib/sane/libsane-pie.a
 @comment lib/sane/libsane-pie.la
 @comment lib/sane/libsane-pint.a
@@ -203,6 +207,8 @@ lib/sane/
 @man man/man5/sane-hpljm1005.5
 @man man/man5/sane-hs2p.5
 @man man/man5/sane-ibm.5
+@man man/man5/sane-kodak.5
+@man man/man5/sane-kvs1025.5
 @man man/man5/sane-leo.5
 @man man/man5/sane-lexmark.5
 @man man/man5/sane-ma1509.5
@@ -211,10 +217,10 @@ lib/sane/
 @man man/man5/sane-microtek2.5
 @man man/man5/sane-mustek.5
 @man man/man5/sane-mustek_usb.5
-@man man/man5/sane-mustek_usb2.5
 @man man/man5/sane-nec.5
 @man man/man5/sane-net.5
 @man man/man5/sane-niash.5
+@man man/man5/sane-p5.5
 @man man/man5/sane-pie.5
 @man man/man5/sane-pint.5
 @man man/man5/sane-pixma.5
@@ -401,6 +407,8 @@ share/examples/sane-backends/sane.d/hs2p.conf
 @sample ${SYSCONFDIR}/sane.d/hs2p.conf
 share/examples/sane-backends/sane.d/ibm.conf
 @sample ${SYSCONFDIR}/sane.d/ibm.conf
+share/examples/sane-backends/sane.d/kodak.conf
+@sample ${SYSCONFDIR}/sane.d/kodak.conf
 share/examples/sane-backends/sane.d/leo.conf
 @sample ${SYSCONFDIR}/sane.d/leo.conf
 share/examples/sane-backends/sane.d/lexmark.conf
@@ -421,6 +429,8 @@ share/examples/sane-backends/sane.d/nec.conf
 @sample ${SYSCONFDIR}/sane.d/nec.conf
 share/examples/sane-backends/sane.d/net.conf
 @sample ${SYSCONFDIR}/sane.d/net.conf
+share/examples/sane-backends/sane.d/p5.conf
+@sample ${SYSCONFDIR}/sane.d/p5.conf
 share/examples/sane-backends/sane.d/pie.conf
 @sample ${SYSCONFDIR}/sane.d/pie.conf
 share/examples/sane-backends/sane.d/pixma.conf
@@ -471,24 +481,6 @@ share/examples/sane-backends/sane.d/umax_pp.conf
 @sample ${SYSCONFDIR}/sane.d/umax_pp.conf
 share/examples/sane-backends/sane.d/xerox_mfp.conf
 @sample ${SYSCONFDIR}/sane.d/xerox_mfp.conf
-share/locale/bg/LC_MESSAGES/sane-backends.mo
-share/locale/cs/LC_MESSAGES/sane-backends.mo
-share/locale/da/LC_MESSAGES/sane-backends.mo
-share/locale/de/LC_MESSAGES/sane-backends.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
-share/locale/en_GB/LC_MESSAGES/sane-backends.mo
-share/locale/eo/LC_MESSAGES/sane-backends.mo
-share/locale/es/LC_MESSAGES/sane-backends.mo
-share/locale/fi/LC_MESSAGES/sane-backends.mo
-share/locale/fr/LC_MESSAGES/sane-backends.mo
-share/locale/it/LC_MESSAGES/sane-backends.mo
-share/locale/nb/LC_MESSAGES/sane-backends.mo
-share/locale/nl/LC_MESSAGES/sane-backends.mo
-share/locale/pl/LC_MESSAGES/sane-backends.mo
-share/locale/pt/LC_MESSAGES/sane-backends.mo
-share/locale/ru/LC_MESSAGES/sane-backends.mo
-share/locale/sv/LC_MESSAGES/sane-backends.mo
 share/sane/
 share/sane/artec_eplus48u/
 share/sane/epjitsu/

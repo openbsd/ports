@@ -1,0 +1,18 @@
+$OpenBSD: patch-backend_kodak_c,v 1.1 2010/04/26 10:41:28 ajacoutot Exp $
+--- backend/kodak.c.orig	Mon Apr 26 08:45:06 2010
++++ backend/kodak.c	Mon Apr 26 09:03:45 2010
+@@ -110,10 +110,10 @@
+ # include <libc.h>              /* NeXTStep/OpenStep */
+ #endif
+ 
+-#include "sane/sanei_backend.h"
+-#include "sane/sanei_scsi.h"
+-#include "sane/saneopts.h"
+-#include "sane/sanei_config.h"
++#include "../include/sane/sanei_backend.h"
++#include "../include/sane/sanei_scsi.h"
++#include "../include/sane/saneopts.h"
++#include "../include/sane/sanei_config.h"
+ 
+ #include "kodak-cmd.h"
+ #include "kodak.h"
