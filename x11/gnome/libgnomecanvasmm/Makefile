@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/24 17:00:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/04/26 13:34:30 jasper Exp $
 
 COMMENT=		C++ interface to the graphics library for GNOME
 
 GNOME_PROJECT=		libgnomecanvasmm
 GNOME_VERSION=		2.26.0
+PKGNAME=		${DISTNAME}p0
 SHARED_LIBS=		gnomecanvasmm-2.6	1.0	# .1.6
 
 # LGPLv2.1
