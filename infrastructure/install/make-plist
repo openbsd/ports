@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.144 2010/04/20 21:54:40 espie Exp $
+# $OpenBSD: make-plist,v 1.145 2010/04/26 12:00:57 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1018,6 +1018,7 @@ for my $plist (@l) {
 		delete $orig->{state}->{lastobject};
 		# place holder for extra stuff that comes before any file
 		my $orphans = new OpenBSD::PackingElement::Object('');
+		$orphans->{cwd} = $plist->{state}->{cwd};
 		$orig->{state}->{lastreal} = $orphans;
 		$orig->register($orig);
 		$orig->copy_annotations($plist);
