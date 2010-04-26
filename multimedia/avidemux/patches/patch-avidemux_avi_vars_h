@@ -1,0 +1,13 @@
+$OpenBSD: patch-avidemux_avi_vars_h,v 1.1 2010/04/26 02:09:03 jakemsr Exp $
+--- avidemux/avi_vars.h.orig	Wed Apr 21 07:22:01 2010
++++ avidemux/avi_vars.h	Wed Apr 21 07:22:26 2010
+@@ -16,7 +16,8 @@
+ #if (defined( HAVE_LIBESD) && defined(HAVE_ESD_H)) || \
+  defined(OSS_SUPPORT) || defined (USE_ARTS) || \
+   defined(USE_SDL) || defined(CONFIG_DARWIN) || \
+-  defined(ADM_WIN32) || defined(ALSA_SUPPORT)
++  defined(ADM_WIN32) || defined(ALSA_SUPPORT) || \
++  defined(USE_SNDIO)
+   
+ #define HAVE_AUDIO
+ #endif

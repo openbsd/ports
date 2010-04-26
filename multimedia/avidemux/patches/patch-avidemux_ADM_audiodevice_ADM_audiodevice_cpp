@@ -1,0 +1,36 @@
+$OpenBSD: patch-avidemux_ADM_audiodevice_ADM_audiodevice_cpp,v 1.1 2010/04/26 02:09:03 jakemsr Exp $
+--- avidemux/ADM_audiodevice/ADM_audiodevice.cpp.orig	Sat Jun 28 01:20:38 2008
++++ avidemux/ADM_audiodevice/ADM_audiodevice.cpp	Wed Apr 21 09:32:24 2010
+@@ -66,8 +66,10 @@
+ #include "ADM_audiodevice/ADM_deviceAudioCore.h"
+ #endif
+ 
++#ifdef USE_SNDIO
++#include "ADM_devicesndio.h"
++#endif
+ 
+-
+ #include "gui_action.hxx"
+ #include "audio_out.h"
+ 
+@@ -148,6 +150,7 @@ AUDIO_DEVICE id;
+ 			case DEVICE_ARTS:									
+ 			case DEVICE_ALSA:
+ 			case DEVICE_COREAUDIO:
++			case DEVICE_SNDIO:
+ 			case DEVICE_SDL:
+ 			case DEVICE_WIN32:
+ 			case DEVICE_ESD:
+@@ -255,6 +258,12 @@ void AVDM_switch(AUDIO_DEVICE action)
+ 							 	currentDevice=DEVICE_ALSA;
+ 								break;
+ 
++#endif
++#ifdef USE_SNDIO
++		case DEVICE_SNDIO:
++								device=new sndioAudioDevice;
++								currentDevice=DEVICE_SNDIO;
++								break;
+ #endif
+ #ifdef USE_SDL
+ 		case DEVICE_SDL:

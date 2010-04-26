@@ -1,0 +1,39 @@
+$OpenBSD: patch-avidemux_ADM_userInterfaces_ADM_commonUI_DIA_builtin_cpp,v 1.1 2010/04/26 02:09:03 jakemsr Exp $
+--- avidemux/ADM_userInterfaces/ADM_commonUI/DIA_builtin.cpp.orig	Wed Apr 21 10:10:06 2010
++++ avidemux/ADM_userInterfaces/ADM_commonUI/DIA_builtin.cpp	Wed Apr 21 10:13:02 2010
+@@ -44,7 +44,7 @@
+ uint8_t DIA_builtin(void)
+ {
+   uint32_t altivec=0,mad=0,a52dec=0,xvid4=0,X264=0,freetype=0,esd=0,arts=0,vorbis=0,win32=0;
+-  uint32_t faac=0,faad=0,libdca=0,aften=0,libamrnb=0,lame=0,sdl=0,oss=0,xvideo=0,x86=0,x86_64=0,alsa=0;
++  uint32_t faac=0,faad=0,libdca=0,aften=0,libamrnb=0,lame=0,sdl=0,oss=0,xvideo=0,x86=0,x86_64=0,alsa,sndio=0;
+   uint32_t adm_powerpc=0,adm_gettext=0,adm_fontconfig=0;
+ #ifdef USE_FONTCONFIG
+   adm_fontconfig=1;
+@@ -108,6 +108,9 @@ uint8_t DIA_builtin(void)
+ #ifdef ALSA_SUPPORT
+ 	alsa=1;
+ #endif
++#ifdef USE_SNDIO
++	sndio=1;
++#endif
+ 
+ #ifdef USE_XV
+ 	xvideo=1;
+@@ -160,6 +163,7 @@ uint8_t DIA_builtin(void)
+ 	diaElemNotch tGettext(adm_gettext, QT_TR_NOOP("Gettext"));
+         diaElemNotch tAlsa(alsa, QT_TR_NOOP("ALSA"));
+ 	diaElemNotch tOss(oss, QT_TR_NOOP("OSS"));
++	diaElemNotch tSndio(sndio, QT_TR_NOOP("sndio"));
+ 	diaElemNotch tSdl(sdl, QT_TR_NOOP("SDL"));
+ 	diaElemNotch tXvideo(xvideo, QT_TR_NOOP("XVideo"));
+ 
+@@ -170,7 +174,7 @@ uint8_t DIA_builtin(void)
+ 
+ 
+ 	diaElem *codecElems[] = {&videoFrame, &audioFrame};
+-	diaElem *libsElems[] = {&tArts, &tEsd, &tFontConfig, &tFreetype, &tGettext, &tAlsa, &tOss, &tSdl, &tXvideo};
++	diaElem *libsElems[] = {&tArts, &tEsd, &tFontConfig, &tFreetype, &tGettext, &tAlsa, &tOss, &tSdl, &tSndio, &tXvideo};
+ 	diaElem *CPUElems[] = {&tAltivec, &tPowerPc, &tX86, &tX86_64};
+ 
+ 	diaElemTabs tabCodec(QT_TR_NOOP("Codecs"), 2, codecElems);

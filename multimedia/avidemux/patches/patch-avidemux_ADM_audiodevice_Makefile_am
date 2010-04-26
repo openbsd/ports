@@ -1,0 +1,21 @@
+$OpenBSD: patch-avidemux_ADM_audiodevice_Makefile_am,v 1.1 2010/04/26 02:09:03 jakemsr Exp $
+--- avidemux/ADM_audiodevice/Makefile.am.orig	Wed Apr 21 07:07:08 2010
++++ avidemux/ADM_audiodevice/Makefile.am	Wed Apr 21 07:08:44 2010
+@@ -7,14 +7,14 @@ libADM_audiodevice_a_METASOURCES = AUTO
+ 
+ libADM_audiodevice_a_SOURCES = ADM_deviceArts.cpp ADM_audiodevice.cpp \
+ 	ADM_deviceoss.cpp ADM_deviceALSA.cpp ADM_deviceALSA.h ADM_deviceAudioCore.cpp \
+-	ADM_deviceSDL.cpp ADM_deviceWin32.cpp ADM_deviceEsd.cpp
++	ADM_deviceSDL.cpp ADM_deviceWin32.cpp ADM_deviceEsd.cpp ADM_devicesndio.cpp
+ 
+ 
+ EXTRA_DIST = ADM_audiodevice.cpp  ADM_deviceArts.cpp       \
+ ADM_deviceEsd.cpp  ADM_deviceWin32.cpp  audio_out.h \
+ ADM_audiodevice.h    ADM_deviceArts.h         ADM_deviceEsd.h    ADM_deviceWin32.h    oss_out.cpp \
+-ADM_deviceALSA.cpp   ADM_deviceAudioCore.cpp  ADM_deviceSDL.cpp  ADM_deviceoss.cpp \
+-ADM_deviceALSA.h     ADM_deviceAudioCore.h    ADM_deviceSDL.h    ADM_deviceoss.h
++ADM_deviceALSA.cpp   ADM_deviceAudioCore.cpp  ADM_deviceSDL.cpp  ADM_deviceoss.cpp  ADM_devicesndio.cpp \
++ADM_deviceALSA.h     ADM_deviceAudioCore.h    ADM_deviceSDL.h    ADM_deviceoss.h    ADM_devicesndio.h
+ 
+ ####### kdevelop will overwrite this part!!! (end)############
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-avidemux_ADM_audiodevice_audio_out_h,v 1.1 2010/04/26 02:09:03 jakemsr Exp $
+--- avidemux/ADM_audiodevice/audio_out.h.orig	Wed Apr 21 07:14:40 2010
++++ avidemux/ADM_audiodevice/audio_out.h	Wed Apr 21 07:15:34 2010
+@@ -29,6 +29,7 @@ typedef enum
+ 	DEVICE_WIN32,
+ 	DEVICE_ESD,
+ 	DEVICE_JACK,
++	DEVICE_SNDIO,
+     DEVICE_PULSE_SIMPLE,
+     DEVICE_LIMIT
+ }AUDIO_DEVICE;
+@@ -65,6 +66,9 @@ static const DEVICELIST audioDeviceList[]=
+ #endif	
+ #ifdef USE_JACK	
+ 	MKADID(JACK),
++#endif	
++#ifdef USE_SNDIO
++	MKADID(SNDIO),
+ #endif	
+ #ifdef USE_PULSE_SIMPLE	
+ 	MKADID(PULSE_SIMPLE),

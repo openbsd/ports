@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in_bot,v 1.1 2010/04/26 02:09:03 jakemsr Exp $
+--- configure.in.bot.orig	Wed Apr 21 07:50:26 2010
++++ configure.in.bot	Wed Apr 21 07:50:58 2010
+@@ -29,6 +29,7 @@ echo " FreeType 2          : $have_freetype"
+ echo " gettext locale      : $ADM_LOCALEDIR"
+ echo " Libxml2             : $have_xml2"
+ echo " OSS                 : $have_oss"
++echo " sndio               : $have_sndio"
+ echo " SDL                 : $have_sdl"
+ echo " XVideo              : $have_xv"
+ echo "********** Machine Dependent ***********"

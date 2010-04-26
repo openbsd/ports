@@ -1,0 +1,13 @@
+$OpenBSD: patch-avidemux_ADM_libraries_ADM_utilities_default_h,v 1.1 2010/04/26 02:09:03 jakemsr Exp $
+--- avidemux/ADM_libraries/ADM_utilities/default.h.orig	Wed Apr 21 07:28:42 2010
++++ avidemux/ADM_libraries/ADM_utilities/default.h	Wed Apr 21 07:29:03 2010
+@@ -103,7 +103,8 @@ extern const char* translate(const char *__domainname,
+ #if (defined( HAVE_LIBESD) && defined(HAVE_ESD_H)) || \
+  defined(OSS_SUPPORT) || defined (USE_ARTS) || \
+   defined(USE_SDL) || defined(CONFIG_DARWIN) || \
+-  defined(ADM_WIN32) || defined(ALSA_SUPPORT)
++  defined(ADM_WIN32) || defined(ALSA_SUPPORT) || \
++  defined(USE_SNDIO)
+   
+ #define HAVE_AUDIO
+ #endif

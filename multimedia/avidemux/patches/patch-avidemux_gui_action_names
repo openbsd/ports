@@ -1,0 +1,11 @@
+$OpenBSD: patch-avidemux_gui_action_names,v 1.1 2010/04/26 02:09:03 jakemsr Exp $
+--- avidemux/gui_action.names.orig	Wed Apr 21 10:24:43 2010
++++ avidemux/gui_action.names	Wed Apr 21 10:25:11 2010
+@@ -95,6 +95,7 @@ ACT(SelectDevOSS)
+ ACT(SelectDevDummy)
+ ACT(SelectDevArts)
+ ACT(SelectDevALSA)
++ACT(SelectDevSNDIO)
+ 
+ ACT(CutWizard)
+ 

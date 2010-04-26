@@ -1,0 +1,13 @@
+$OpenBSD: patch-avidemux_gtk_gui_cpp,v 1.1 2010/04/26 02:09:03 jakemsr Exp $
+--- avidemux/gtk_gui.cpp.orig	Wed Apr 21 10:04:53 2010
++++ avidemux/gtk_gui.cpp	Wed Apr 21 10:23:32 2010
+@@ -307,6 +307,9 @@ int nw;
+ 	case ACT_SelectDevALSA:
+ 				   AVDM_switch (DEVICE_ALSA);
+ 				   return;break;
++	case ACT_SelectDevSNDIO:
++				   AVDM_switch (DEVICE_SNDIO);
++				   return;break;
+ #endif
+     case ACT_Fast:
+       ADM_assert(0);

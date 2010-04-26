@@ -1,0 +1,12 @@
+$OpenBSD: patch-avidemux_ADM_libraries_ADM_utilities_prefs_cpp,v 1.1 2010/04/26 02:09:03 jakemsr Exp $
+--- avidemux/ADM_libraries/ADM_utilities/prefs.cpp.orig	Wed Jul 23 09:47:32 2008
++++ avidemux/ADM_libraries/ADM_utilities/prefs.cpp	Wed Apr 21 10:42:49 2010
+@@ -103,7 +103,7 @@ static opt_def opt_defs [] = {
+ #ifdef __WIN32
+ 	{"device.audiodevice",		STRING,"WIN32",NULL, NULL, NULL },
+ #else
+-	{"device.audiodevice",		STRING,"ALSA",	NULL, NULL, NULL },
++	{"device.audiodevice",		STRING,"SNDIO",	NULL, NULL, NULL },
+ #endif
+ 	{"device.audio.alsa_device",		STRING,"dmix",	NULL, NULL, NULL },
+ 	{"device.videodevice",		UINT,	"0",	NULL,	"0",	"10"	},
