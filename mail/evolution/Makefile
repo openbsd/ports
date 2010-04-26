@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.99 2010/04/25 08:33:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2010/04/26 19:52:25 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		2.30.0.1
+GNOME_VERSION=		2.30.1.1
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -17,7 +17,7 @@ SUBST_VARS=		R
 
 # -plugins depends on the exact version of -main, so whenever -main is
 # bumped, -plugins needs a bump too
-PATCH_NUMBER=		p0
+#PATCH_NUMBER=		p0
 PKGNAME-main=		${DISTNAME}${PATCH_NUMBER}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}${PATCH_NUMBER}
 
@@ -102,7 +102,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
 			gstreamer-0.10::multimedia/gstreamer-0.10/core \
-			lib/evolution/${R}/emiscwidgets,lib/evolution/${R}/eutil:${PKGNAME-main}:mail/evolution,-main
+			lib/evolution/${R}/composer.>=6,lib/evolution/${R}/emformat,lib/evolution/${R}/eshell,lib/evolution/${R}/evolution-calendar,lib/evolution/${R}/evolution-mail,lib/evolution/${R}/emiscwidgets,lib/evolution/${R}/eutil:${PKGNAME-main}:mail/evolution,-main
 # needed for the audio-inline plugin
 RUN_DEPENDS-plugins=	::multimedia/gstreamer-0.10/plugins-good
 
@@ -129,6 +129,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}/components:${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib" \
 			PTHREAD_LIB="-pthread"
+
+FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 
 # ltasneededhack in bsd.gnome.mk from FreeBSD ports
 LIBTOOL=	${WRKDIR}/bin/libtool

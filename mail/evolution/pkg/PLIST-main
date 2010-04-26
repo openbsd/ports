@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2010/04/25 08:33:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2010/04/26 19:52:25 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
+@bin bin/evolution
 @bin bin/evolution-alarm-notify
 @bin bin/evolution-settings
-@bin bin/evolution
 include/evolution-${R}/
 include/evolution-${R}/addressbook/
 include/evolution-${R}/addressbook/gui/
@@ -114,6 +114,8 @@ include/evolution-${R}/e-util/e-datetime-format.h
 include/evolution-${R}/e-util/e-dialog-utils.h
 include/evolution-${R}/e-util/e-dialog-widgets.h
 include/evolution-${R}/e-util/e-event.h
+include/evolution-${R}/e-util/e-extensible.h
+include/evolution-${R}/e-util/e-extension.h
 include/evolution-${R}/e-util/e-file-utils.h
 include/evolution-${R}/e-util/e-folder-map.h
 include/evolution-${R}/e-util/e-html-utils.h
@@ -477,18 +479,18 @@ lib/evolution/${R}/plugins/
 @comment lib/evolution/${R}/plugins/liborg-gnome-imap-features.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.la
-@comment liblib/evolution/${R}/plugins/liborg-gnome-mark-all-read.a
-@comment liblib/evolution/${R}/plugins/liborg-gnome-mark-all-read.la
-@comment liblib/evolution/${R}/plugins/liborg-gnome-plugin-manager.a
-@comment liblib/evolution/${R}/plugins/liborg-gnome-plugin-manager.la
-@comment liblib/evolution/${R}/plugins/liborg-gnome-pst-import.a
-@comment liblib/evolution/${R}/plugins/liborg-gnome-pst-import.la
-@comment liblib/evolution/${R}/plugins/liborg-gnome-publish-calendar.a
-@comment liblib/evolution/${R}/plugins/liborg-gnome-publish-calendar.la
-@comment liblib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.a
-@comment liblib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.la
-@comment liblib/evolution/${R}/plugins/liborg-gnome-vcard-inline.a
-@comment liblib/evolution/${R}/plugins/liborg-gnome-vcard-inline.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-plugin-manager.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-plugin-manager.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-pst-import.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-pst-import.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-vcard-inline.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-vcard-inline.la
 lib/evolution/${R}/plugins/org-gnome-addressbook-file.eplug
 lib/evolution/${R}/plugins/org-gnome-bogo-junk-plugin.eplug
 lib/evolution/${R}/plugins/org-gnome-calendar-file.eplug
@@ -664,86 +666,6 @@ share/evolution/${R}/help/quickref/sq/quickref.pdf
 share/evolution/${R}/help/quickref/sv/
 share/evolution/${R}/help/quickref/sv/quickref.pdf
 share/evolution/${R}/icons/
-share/evolution/${R}/icons/gnome/
-share/evolution/${R}/icons/gnome/16x16/
-share/evolution/${R}/icons/gnome/16x16/stock/
-share/evolution/${R}/icons/gnome/16x16/stock/data/
-share/evolution/${R}/icons/gnome/16x16/stock/data/stock_signature-bad.png
-share/evolution/${R}/icons/gnome/16x16/stock/data/stock_signature-ok.png
-share/evolution/${R}/icons/gnome/16x16/stock/data/stock_signature.png
-share/evolution/${R}/icons/gnome/16x16/stock/document/
-share/evolution/${R}/icons/gnome/16x16/stock/document/stock_task-assigned-to.png
-share/evolution/${R}/icons/gnome/16x16/stock/document/stock_task-assigned.png
-share/evolution/${R}/icons/gnome/16x16/stock/document/stock_task-recurring.png
-share/evolution/${R}/icons/gnome/16x16/stock/document/stock_task.png
-share/evolution/${R}/icons/gnome/16x16/stock/document/stock_todo.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_bell.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_check-filled.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_new-meeting.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_score-high.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_score-higher.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_score-highest.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_score-low.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_score-lower.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_score-lowest.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_score-normal.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_show-all.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_timezone.png
-share/evolution/${R}/icons/gnome/16x16/stock/generic/stock_view-details.png
-share/evolution/${R}/icons/gnome/16x16/stock/net/
-share/evolution/${R}/icons/gnome/16x16/stock/net/stock_contact-list.png
-share/evolution/${R}/icons/gnome/16x16/stock/net/stock_mail-filters-apply.png
-share/evolution/${R}/icons/gnome/16x16/stock/net/stock_mail-flag-for-followup-done.png
-share/evolution/${R}/icons/gnome/16x16/stock/net/stock_mail-flag-for-followup.png
-share/evolution/${R}/icons/gnome/16x16/stock/net/stock_mail-open-multiple.png
-share/evolution/${R}/icons/gnome/16x16/stock/net/stock_mail-unread-multiple.png
-share/evolution/${R}/icons/gnome/16x16/stock/net/stock_shared-by-me.png
-share/evolution/${R}/icons/gnome/16x16/stock/net/stock_shared-to-me.png
-share/evolution/${R}/icons/gnome/16x16/stock/net/stock_video-conferencing.png
-share/evolution/${R}/icons/gnome/16x16/stock/object/
-share/evolution/${R}/icons/gnome/16x16/stock/object/stock_insert-note.png
-share/evolution/${R}/icons/gnome/24x24/
-share/evolution/${R}/icons/gnome/24x24/stock/
-share/evolution/${R}/icons/gnome/24x24/stock/data/
-share/evolution/${R}/icons/gnome/24x24/stock/data/stock_signature-bad.png
-share/evolution/${R}/icons/gnome/24x24/stock/data/stock_signature-ok.png
-share/evolution/${R}/icons/gnome/24x24/stock/data/stock_signature.png
-share/evolution/${R}/icons/gnome/24x24/stock/document/
-share/evolution/${R}/icons/gnome/24x24/stock/document/stock_task-assigned-to.png
-share/evolution/${R}/icons/gnome/24x24/stock/document/stock_task-assigned.png
-share/evolution/${R}/icons/gnome/24x24/stock/document/stock_task-recurring.png
-share/evolution/${R}/icons/gnome/24x24/stock/document/stock_task.png
-share/evolution/${R}/icons/gnome/24x24/stock/document/stock_todo.png
-share/evolution/${R}/icons/gnome/24x24/stock/generic/
-share/evolution/${R}/icons/gnome/24x24/stock/generic/stock_new-meeting.png
-share/evolution/${R}/icons/gnome/24x24/stock/generic/stock_show-all.png
-share/evolution/${R}/icons/gnome/24x24/stock/generic/stock_timezone.png
-share/evolution/${R}/icons/gnome/24x24/stock/net/
-share/evolution/${R}/icons/gnome/24x24/stock/net/stock_contact-list.png
-share/evolution/${R}/icons/gnome/24x24/stock/net/stock_mail-filters-apply.png
-share/evolution/${R}/icons/gnome/24x24/stock/net/stock_mail-open-multiple.png
-share/evolution/${R}/icons/gnome/24x24/stock/net/stock_mail-unread-multiple.png
-share/evolution/${R}/icons/gnome/24x24/stock/net/stock_shared-by-me.png
-share/evolution/${R}/icons/gnome/24x24/stock/net/stock_shared-to-me.png
-share/evolution/${R}/icons/gnome/24x24/stock/net/stock_video-conferencing.png
-share/evolution/${R}/icons/gnome/24x24/stock/object/
-share/evolution/${R}/icons/gnome/24x24/stock/object/stock_insert-note.png
-share/evolution/${R}/icons/gnome/48x48/
-share/evolution/${R}/icons/gnome/48x48/stock/
-share/evolution/${R}/icons/gnome/48x48/stock/data/
-share/evolution/${R}/icons/gnome/48x48/stock/data/stock_signature-bad.png
-share/evolution/${R}/icons/gnome/48x48/stock/data/stock_signature-ok.png
-share/evolution/${R}/icons/gnome/48x48/stock/data/stock_signature.png
-share/evolution/${R}/icons/gnome/48x48/stock/document/
-share/evolution/${R}/icons/gnome/48x48/stock/document/stock_todo.png
-share/evolution/${R}/icons/gnome/48x48/stock/generic/
-share/evolution/${R}/icons/gnome/48x48/stock/generic/stock_alarm.png
-share/evolution/${R}/icons/gnome/48x48/stock/generic/stock_new-meeting.png
-share/evolution/${R}/icons/gnome/48x48/stock/generic/stock_timezone.png
-share/evolution/${R}/icons/gnome/48x48/stock/net/
-share/evolution/${R}/icons/gnome/48x48/stock/net/stock_mail-flag-for-followup-done.png
-share/evolution/${R}/icons/gnome/48x48/stock/net/stock_mail-flag-for-followup.png
 share/evolution/${R}/icons/hicolor/
 share/evolution/${R}/icons/hicolor/16x16/
 share/evolution/${R}/icons/hicolor/16x16/actions/
@@ -752,6 +674,29 @@ share/evolution/${R}/icons/hicolor/16x16/actions/folder-move.png
 share/evolution/${R}/icons/hicolor/16x16/actions/go-today.png
 share/evolution/${R}/icons/hicolor/16x16/actions/mail-copy.png
 share/evolution/${R}/icons/hicolor/16x16/actions/mail-move.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_bell.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_contact-list.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_insert-note.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_mail-filters-apply.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_mail-flag-for-followup-done.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_mail-flag-for-followup.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_mail-open-multiple.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_mail-unread-multiple.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_new-24h-appointment.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_new-meeting.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_notes.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_people.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_shared-by-me.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_shared-to-me.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_show-all.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_task-assigned-to.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_task-assigned.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_task-recurring.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_task.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_timezone.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_todo.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_video-conferencing.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_view-details.png
 share/evolution/${R}/icons/hicolor/16x16/actions/view-calendar-day.png
 share/evolution/${R}/icons/hicolor/16x16/actions/view-calendar-list.png
 share/evolution/${R}/icons/hicolor/16x16/actions/view-calendar-month.png
@@ -783,6 +728,15 @@ share/evolution/${R}/icons/hicolor/24x24/
 share/evolution/${R}/icons/hicolor/24x24/actions/
 share/evolution/${R}/icons/hicolor/24x24/actions/go-today.png
 share/evolution/${R}/icons/hicolor/24x24/actions/query-free-busy.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_contact-list.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_insert-note.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_mail-filters-apply.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_mail-open-multiple.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_mail-unread-multiple.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_new-24h-appointment.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_new-meeting.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_notes.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_people.png
 share/evolution/${R}/icons/hicolor/24x24/actions/view-calendar-day.png
 share/evolution/${R}/icons/hicolor/24x24/actions/view-calendar-list.png
 share/evolution/${R}/icons/hicolor/24x24/actions/view-calendar-month.png
@@ -907,6 +861,13 @@ share/evolution/${R}/views/tasks/Tasks.galview
 share/evolution/${R}/views/tasks/With_DueDate.galview
 share/evolution/${R}/views/tasks/With_Status.galview
 share/evolution/${R}/views/tasks/galview.xml
+share/examples/evolution/
+share/examples/evolution/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/evolution/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/evolution/xdg/autostart/evolution-alarm-notify.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/evolution-alarm-notify.desktop
 share/gnome/help/evolution/
 share/gnome/help/evolution/C/
 share/gnome/help/evolution/C/evolution.xml
@@ -1817,6 +1778,7 @@ share/locale/bn_IN/LC_MESSAGES/evolution-${R}.mo
 share/locale/br/LC_MESSAGES/evolution-${R}.mo
 share/locale/bs/LC_MESSAGES/evolution-${R}.mo
 share/locale/ca/LC_MESSAGES/evolution-${R}.mo
+share/locale/ca@valencia/LC_MESSAGES/evolution-${R}.mo
 share/locale/cs/LC_MESSAGES/evolution-${R}.mo
 share/locale/cy/LC_MESSAGES/evolution-${R}.mo
 share/locale/da/LC_MESSAGES/evolution-${R}.mo

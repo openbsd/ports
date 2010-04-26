@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.14 2010/04/22 16:30:02 jasper Exp $
---- configure.orig	Tue Mar 30 13:25:24 2010
-+++ configure	Thu Apr 22 13:11:06 2010
-@@ -4353,8 +4353,6 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
+$OpenBSD: patch-configure,v 1.15 2010/04/26 19:52:25 ajacoutot Exp $
+--- configure.orig	Mon Apr 26 05:22:50 2010
++++ configure	Mon Apr 26 14:13:37 2010
+@@ -4456,8 +4456,6 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
  AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
  
  
@@ -9,23 +9,23 @@ $OpenBSD: patch-configure,v 1.14 2010/04/22 16:30:02 jasper Exp $
 -
  # Make sure we can run config.sub.
  $SHELL "$ac_aux_dir/config.sub" sun4 >/dev/null 2>&1 ||
-   { { $as_echo "$as_me:$LINENO: error: cannot run $SHELL $ac_aux_dir/config.sub" >&5
-@@ -18863,9 +18861,6 @@ LIBS=$ac_check_lib_save_LIBS
+   as_fn_error "cannot run $SHELL $ac_aux_dir/config.sub" "$LINENO" 5
+@@ -16033,9 +16031,6 @@ LIBS=$ac_check_lib_save_LIBS
  fi
- { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_query" >&5
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_resolv_res_query" >&5
  $as_echo "$ac_cv_lib_resolv_res_query" >&6; }
--if test "x$ac_cv_lib_resolv_res_query" = x""yes; then
+-if test "x$ac_cv_lib_resolv_res_query" = x""yes; then :
 -  LDAP_LIBS="-lresolv"
 -fi
  
- 		{ $as_echo "$as_me:$LINENO: checking for bind in -lsocket" >&5
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for bind in -lsocket" >&5
  $as_echo_n "checking for bind in -lsocket... " >&6; }
-@@ -21066,7 +21061,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
+@@ -16815,7 +16810,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
  		LIBS_save="$LIBS"
  
  		mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
 -		heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
 +		heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lgssapi"
  		sunlibs="-lkrb5 -lgss"
- 		if test "${ac_cv_lib_kerberos5+set}" = set; then
+ 		if test "${ac_cv_lib_kerberos5+set}" = set; then :
    $as_echo_n "(cached) " >&6
