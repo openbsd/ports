@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/15 14:35:29 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/26 03:01:06 jakemsr Exp $
 
 COMMENT=	IT/MOD/XM player and library
 
 DISTNAME=	dumb-0.9.3
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	audio
 
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	yes
 LIB_DEPENDS=	alleg::games/allegro
-WANTLIB=	c m sndio
+WANTLIB=	c m pthread
 
 NO_REGRESS=	Yes
 
