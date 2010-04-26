@@ -1,12 +1,16 @@
-$OpenBSD: patch-widget_src_gtk2_nsBidiKeyboard_cpp,v 1.1 2008/11/20 23:41:32 martynas Exp $
---- widget/src/gtk2/nsBidiKeyboard.cpp.orig	Wed Apr 16 23:03:19 2008
-+++ widget/src/gtk2/nsBidiKeyboard.cpp	Fri Jun 13 19:41:59 2008
-@@ -54,7 +54,7 @@ NS_IMPL_ISUPPORTS1(nsBidiKeyboard, nsIBidiKeyboard)
- nsBidiKeyboard::nsBidiKeyboard()
+$OpenBSD: patch-widget_src_gtk2_nsBidiKeyboard_cpp,v 1.2 2010/04/26 19:55:58 landry Exp $
+--- widget/src/gtk2/nsBidiKeyboard.cpp.orig	Thu Mar  5 23:32:52 2009
++++ widget/src/gtk2/nsBidiKeyboard.cpp	Fri Mar 13 17:26:18 2009
+@@ -55,10 +55,10 @@ nsBidiKeyboard::nsBidiKeyboard()
  {
+ #if defined(MOZ_X11)
      if (!gtklib)
 -        gtklib = PR_LoadLibrary("libgtk-x11-2.0.so.0");
 +        gtklib = PR_LoadLibrary("libgtk-x11-2.0.so");
- 
-     if (gtklib && !GdkKeymapHaveBidiLayouts)
-             GdkKeymapHaveBidiLayouts = (GdkKeymapHaveBidiLayoutsType) PR_FindFunctionSymbol(gtklib, "gdk_keymap_have_bidi_layouts");
+ #elif defined(MOZ_DFB)
+     if (!gtklib)
+-        gtklib = PR_LoadLibrary("libgtk-directfb-2.0.so.0");
++        gtklib = PR_LoadLibrary("libgtk-directfb-2.0.so");
+ #else
+     return;
+ #endif

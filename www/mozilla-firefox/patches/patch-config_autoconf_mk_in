@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_autoconf_mk_in,v 1.6 2008/11/20 23:41:32 martynas Exp $
---- config/autoconf.mk.in.orig	Thu Oct 11 21:50:54 2007
-+++ config/autoconf.mk.in	Sun Nov 18 15:03:16 2007
+$OpenBSD: patch-config_autoconf_mk_in,v 1.7 2010/04/26 19:55:58 landry Exp $
+--- config/autoconf.mk.in.orig	Wed Jan  6 05:35:11 2010
++++ config/autoconf.mk.in	Sun Jan 10 17:47:23 2010
 @@ -58,14 +58,14 @@ MOZ_PKG_SPECIAL = @MOZ_PKG_SPECIAL@
  prefix		= @prefix@
  exec_prefix	= @exec_prefix@

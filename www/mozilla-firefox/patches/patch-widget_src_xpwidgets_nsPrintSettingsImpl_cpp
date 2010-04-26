@@ -1,7 +1,7 @@
-$OpenBSD: patch-widget_src_xpwidgets_nsPrintSettingsImpl_cpp,v 1.1 2009/04/22 21:00:23 martynas Exp $
---- widget/src/xpwidgets/nsPrintSettingsImpl.cpp.orig	Thu Mar 20 07:58:48 2008
-+++ widget/src/xpwidgets/nsPrintSettingsImpl.cpp	Wed Apr 22 22:32:46 2009
-@@ -62,7 +62,7 @@ nsPrintSettings::nsPrintSettings() :
+$OpenBSD: patch-widget_src_xpwidgets_nsPrintSettingsImpl_cpp,v 1.2 2010/04/26 19:55:58 landry Exp $
+--- widget/src/xpwidgets/nsPrintSettingsImpl.cpp.orig	Wed Jan  6 05:35:35 2010
++++ widget/src/xpwidgets/nsPrintSettingsImpl.cpp	Sun Jan 10 17:47:30 2010
+@@ -61,7 +61,7 @@ nsPrintSettings::nsPrintSettings() :
    mIsCancelled(PR_FALSE),
    mPrintSilent(PR_FALSE),
    mPrintPreview(PR_FALSE),

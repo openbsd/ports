@@ -1,0 +1,13 @@
+$OpenBSD: patch-toolkit_library_Makefile_in,v 1.1 2010/04/26 19:55:58 landry Exp $
+--- toolkit/library/Makefile.in.orig	Tue Mar 16 10:57:18 2010
++++ toolkit/library/Makefile.in	Sat Mar 27 01:54:28 2010
+@@ -282,6 +282,9 @@ ifdef MOZ_ENABLE_QT
+ EXTRA_DSO_LDOPTS += $(MOZ_QT_LDFLAGS)
+ endif
+ 
++# GTK2 widget and Sydney audio sndio backends.
++EXTRA_DSO_LDOPTS += -lsndio
++
+ ifdef MOZ_JAVAXPCOM
+ dlldeps-javaxpcom.cpp: $(topsrcdir)/extensions/java/xpcom/src/dlldeps-javaxpcom.cpp
+ 	$(INSTALL) $^ .

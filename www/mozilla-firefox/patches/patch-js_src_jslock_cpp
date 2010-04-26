@@ -1,0 +1,19 @@
+$OpenBSD: patch-js_src_jslock_cpp,v 1.1 2010/04/26 19:55:58 landry Exp $
+Fix for infinite loop in js binary during build
+cf pkgsrc/devel/xulrunner/patches/patch-bb
+http://lists.freebsd.org/pipermail/freebsd-gecko/2010-January/000640.html
+https://bugzilla.mozilla.org/show_bug.cgi?id=550271
+--- js/src/jslock.cpp.orig	Sat Apr 24 16:47:57 2010
++++ js/src/jslock.cpp	Sat Apr 24 16:52:44 2010
+@@ -161,7 +161,11 @@ NativeCompareAndSwap(jsword *w, jsword ov, jsword nv)
+ 
+     __asm__ __volatile__ (
+                   "stbar\n"
++#if defined (__sparc64__)
++                  "casx [%1],%2,%3\n"
++#else
+                   "cas [%1],%2,%3\n"
++#endif
+                   "cmp %2,%3\n"
+                   "be,a 1f\n"
+                   "mov 1,%0\n"

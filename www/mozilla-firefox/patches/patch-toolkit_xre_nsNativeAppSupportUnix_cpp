@@ -1,9 +1,9 @@
-$OpenBSD: patch-toolkit_xre_nsNativeAppSupportUnix_cpp,v 1.1 2008/11/20 23:41:32 martynas Exp $
---- toolkit/xre/nsNativeAppSupportUnix.cpp.orig	Thu Feb 21 12:55:06 2008
-+++ toolkit/xre/nsNativeAppSupportUnix.cpp	Tue May  6 03:25:56 2008
-@@ -214,11 +214,11 @@ nsNativeAppSupportUnix::Start(PRBool *aRetVal)
+$OpenBSD: patch-toolkit_xre_nsNativeAppSupportUnix_cpp,v 1.2 2010/04/26 19:55:58 landry Exp $
+--- toolkit/xre/nsNativeAppSupportUnix.cpp.orig	Wed Jan  6 05:35:34 2010
++++ toolkit/xre/nsNativeAppSupportUnix.cpp	Sun Jan 10 17:47:30 2010
+@@ -404,11 +404,11 @@ nsNativeAppSupportUnix::Start(PRBool *aRetVal)
  
-   *aRetVal = PR_TRUE;
+ #ifdef MOZ_X11
  
 -  PRLibrary *gnomeuiLib = PR_LoadLibrary("libgnomeui-2.so.0");
 +  PRLibrary *gnomeuiLib = PR_LoadLibrary("libgnomeui-2.so");

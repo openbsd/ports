@@ -1,27 +1,19 @@
-# $OpenBSD: Makefile,v 1.133 2010/04/04 19:11:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.134 2010/04/26 19:55:58 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's browser component
 
-VER=		3.0.19
-DISTNAME=	mozilla
+VER=		3.6.3
+DISTNAME=	mozilla-1.9.2
 PKGNAME=	mozilla-firefox-${VER}
-SO_VERSION=	20.0
+SO_VERSION=	21.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-.for _lib in accessibility appcomps auth autoconfig browsercomps \
-	browserdirprovider caps chardet chrome commandlines composer \
-	cookie docshell embedcomponents fileview gkgfxthebes gklayout \
-	gkplugin htmlpars i18n imgicon imglib2 intlapp jar50 jsd \
-	mozfind necko nsappshell oji permissions pipboot pipnss \
-	pippki places pref rdf remoteservice satchel spellchecker \
-	storagecomps system-pref tkautocomplete toolkitcomps txmgr \
-	uconv ucvmath universalchardet unixproxy webbrwsr widget_gtk2 \
-	windowds xmlextras xpconnect xpinstall zipwriter gfxpsshar \
-	gkgfx gtkxtbin jsj mozjs mozlcms thebes xpcom xpcom_core \
-	xul nullplugin unixprintplugin
+.for _lib in browsercomps browserdirprovider imgicon freebl3 mozjs \
+	nspr4 nss3 nssckbi nssdbm3 nssutil3 plc4 plds4 smime3 \
+	softokn3 ssl3 xpcom xul nullplugin unixprintplugin
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
@@ -38,22 +30,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${VER}-real/source/
-DISTFILES=	firefox-${VER}-source.tar.bz2
+MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${VER}/source/
+DISTFILES=	firefox-${VER}.source.tar.bz2
 
 MODULES=	devel/gettext lang/python
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
-		nspr4.>=21,plc4.>=21,plds4.>=21:nspr->=4.8:devel/nspr \
-		nss3.>=23,smime3.>=23,softokn3.>=23,ssl3.>=23:nss->=3.12.3:security/nss \
-		sqlite3.>=10.0:sqlite3->=3.6.7:databases/sqlite3
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi \
+		sqlite3.>=13.3:sqlite3->=3.6.16:databases/sqlite3
+WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread pthread-stubs stdc++ xcb z
+		pixman-1 png pthread pthread-stubs sndio stdc++ xcb z
 
 VMEM_WARNING=	Yes
 
@@ -62,14 +52,14 @@ USE_GMAKE=	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS=	Yes
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
+				${WRKSRC}/js/src/build/autoconf \
+				${WRKSRC}/nsprpub/build/autoconf
 
 AUTOCONF_VERSION= 2.13
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
-		--with-system-nspr		\
-		--with-system-nss		\
 		--with-pthreads			\
 		--enable-xft			\
 		--disable-optimize		\
@@ -92,8 +82,9 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--enable-system-cairo		\
 		--enable-system-sqlite		\
 		--enable-canvas			\
-		--disable-libxul		\
 		--disable-crashreporter		\
+		--disable-libnotify		\
+		--disable-necko-wifi		\
 		--enable-official-branding
 
 # from browser/config/mozconfig
@@ -107,6 +98,8 @@ MAKE_ENV=	MOZ_CO_PROJECT=browser \
 		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		BUILD_OFFICIAL=1 \
 		MOZILLA_OFFICIAL=1 \
+		NSS_ENABLE_ECC=1 \
+		NSS_USE_SYSTEM_SQLITE=1 \
 		SO_VERSION="${SO_VERSION}"
 CONFIGURE_ENV=	${MAKE_ENV} \
 		MOZ_ENABLE_COREXFONTS=1 \
@@ -121,11 +114,16 @@ DATADIRS=	chrome components defaults dictionaries extensions \
 		greprefs icons modules plugins res searchplugins
 
 post-extract:
+	@find ${WRKSRC} -name "*.orig" -exec rm -f {} \;
 	@cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/widget/src/gtk2/
+	@cp -f ${FILESDIR}/sydney_audio_sndio.c \
+		${WRKSRC}/media/libsydneyaudio/src/
 
 pre-configure:
+	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
-		${WRKSRC}/browser/app/mozilla.in \
+		${WRKSRC}/build/unix/mozilla.in \
 		${WRKSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
 		${WRKSRC}/js/src/xpconnect/shell/Makefile.in \
 		${WRKSRC}/toolkit/xre/nsXREDirProvider.cpp

@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_plugin_base_src_nsPluginNativeWindowGtk2_cpp,v 1.1 2010/04/26 19:55:58 landry Exp $
+--- modules/plugin/base/src/nsPluginNativeWindowGtk2.cpp.orig	Thu Jan 21 05:30:55 2010
++++ modules/plugin/base/src/nsPluginNativeWindowGtk2.cpp	Thu Jan 21 13:56:10 2010
+@@ -355,7 +355,7 @@ nsresult nsPluginNativeWindowGtk2::CreateXCompositedWi
+      * ensures that those functions stay around even after flash is gone. */
+     static void *libplayback_handle;
+     if (!libplayback_handle) {
+-      libplayback_handle = dlopen("libplayback-1.so.0", RTLD_NOW);
++      libplayback_handle = dlopen("libplayback-1.so", RTLD_NOW);
+     }
+ 
+   }
