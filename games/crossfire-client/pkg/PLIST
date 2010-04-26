@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/04/01 09:14:31 ajacoutot Exp $
-bin/cfclient
-bin/cfsndserv
-bin/gcfclient2
+@comment $OpenBSD: PLIST,v 1.6 2010/04/26 01:43:03 jakemsr Exp $
+@bin bin/cfclient
+@bin bin/cfsndserv
+@bin bin/gcfclient2
 @man man/man6/cfclient.6
 @man man/man6/gcfclient.6
 share/crossfire-client/

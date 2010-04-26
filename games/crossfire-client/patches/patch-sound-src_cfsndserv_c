@@ -1,0 +1,230 @@
+$OpenBSD: patch-sound-src_cfsndserv_c,v 1.1 2010/04/26 01:43:03 jakemsr Exp $
+--- sound-src/cfsndserv.c.orig	Mon Jan 28 23:29:08 2008
++++ sound-src/cfsndserv.c	Fri Dec 25 23:14:53 2009
+@@ -93,6 +93,10 @@ static char *rcsid_cfsndserv_c =
+ #elif defined(SGI_SOUND)
+ #  include <audio.h>
+ #  define AUDIODEV "/foo/bar"
++#elif defined(SNDIO_SOUND)
++#  include <poll.h>
++#  include <sndio.h>
++#  define AUDIODEV "default"
+ #elif defined(SUN_SOUND)
+ #  include <sys/audioio.h>
+ #  define AUDIODEV "/dev/audio"
+@@ -135,7 +139,11 @@ int *sounds_in_buffer=NULL;
+ int current_buffer=0; /* Next buffer we will write out */
+ int first_free_buffer=0; /* So we know when to stop playing sounds */
+ 
++#ifdef SNDIO_SOUND
++struct sio_hdl *hdl;
++#else
+ int soundfd=0;
++#endif
+ 
+ /* sound device parameters */
+ int stereo=0,bit8=0,sample_size=0,frequency=0,sign=0,zerolevel=0;
+@@ -514,6 +522,70 @@ int audio_play(int buffer,int off)
+ 	return settings.buflen-off;
+ }
+ 
++#elif defined(SNDIO_SOUND)
++
++int init_audio(){
++
++  struct sio_par par;
++  const char *audiodev;
++
++  printf("cfsndserv compiled for sndio sound system\n");
++  fflush(stdout);
++
++  /* Open the audio device */
++  /* respect settings.audiodev ? */
++  hdl = sio_open(NULL, SIO_PLAY, 0);
++  if ( hdl == NULL ) {
++           fprintf(stderr,"Couldn't open sndio device\n");
++           return(-1);
++  }
++
++  sio_initpar(&par);
++  par.bits = settings.bit8?8:16;
++  par.sig = settings.bit8?0:1;
++  par.rate = settings.frequency;
++  par.pchan = settings.stereo?2:1;
++
++  if ( ! sio_setpar(hdl, &par) || ! sio_getpar(hdl, &par) ) {
++            fprintf(stderr, "Couldn't set audio information\n");
++            return(-1);
++  }
++  if ( par.bits > 16) {
++            fprintf(stderr, "Unsupported audio bit-depth: %d\n", par.bits);
++            return(-1);
++  }
++
++  bit8=(par.bits==8)?1:0;
++  stereo=(par.pchan==2)?1:0;
++  frequency=par.rate;
++  sample_size=(bit8?1:2)*(stereo?2:1);
++  fprintf(stderr,"SNDIO_SOUND: bit8=%d, stereo=%d, freq=%d, sample_size=%d\n",
++	  bit8, stereo, frequency, sample_size);
++
++  if ( ! sio_start(hdl) ) {
++            fprintf(stderr, "Couldn't start sndio\n");
++            return(-1);
++  }
++
++  return 0;
++}
++
++int audio_play(int buffer,int off){
++    int wrote;
++#ifdef SOUND_DEBUG
++    printf("audio play - writing starting at %d, %d bytes",
++	  settings.buflen*buffer+off,settings.buflen-off);
++    fflush(stdout);
++#endif
++  wrote=sio_write(hdl,buffers+settings.buflen*buffer+off,settings.buflen-off);
++#ifdef SOUND_DEBUG
++    printf("...wrote %d bytes\n", wrote);
++    fflush(stdout);
++#endif
++  return wrote;
++}
++/* End of Sndio sound */
++
+ #elif defined(SUN_SOUND)
+ 
+ int init_audio(){
+@@ -711,7 +783,11 @@ static void play_sound(int soundnum, int soundtype, in
+ 	fprintf(stderr,"Invalid sound number: %d\n", soundnum);
+ 	return;
+     }
++#ifdef SNDIO_SOUND
++    if (hdl == NULL) {
++#else
+     if (soundfd==-1) {
++#endif
+ 	fprintf(stderr,"Sound device is not open\n");
+ 	return;
+     }
+@@ -949,19 +1025,37 @@ int main(int argc, char *argv[])
+     int infd;
+     char inbuf[1024];
+     int inbuf_pos=0,sndbuf_pos=0;
++#ifdef SNDIO_SOUND
++    struct pollfd fds[2];
++    nfds_t nfds;
++    int poll_audio;
++#else
+     fd_set inset,outset;
++#endif
+ 
+     printf ("%s\n",rcsid_cfsndserv_c);
+     fflush(stdout);
+     if (read_settings()) write_settings();
+     if (init_sounds()) return 1;
++    infd=fileno(stdin);
++#ifdef SNDIO_SOUND
++    if (!hdl) return 1;
++    nfds = sio_nfds(hdl);
++    if (nfds != 1) {
++      fprintf(stderr, "too many sndio fds\n");
++      return -1;
++    }
++    fds[1].fd = infd;
++    fds[1].events = POLLIN;
++    poll_audio = 1;
++#else
+     /* we don't use the file descriptor method */
+     if (!soundfd) return 1;
+-    infd=fileno(stdin);
+     FD_ZERO(&inset);
+     FD_ZERO(&outset);
+     FD_SET(soundfd,&outset);
+     FD_SET(infd,&inset);
++#endif
+     while(1){
+ #if defined(SGI_SOUND)
+       /*
+@@ -973,13 +1067,30 @@ int main(int argc, char *argv[])
+       ALsetfillpoint(soundport,100000);
+ #endif
+ 
++#ifdef SNDIO_SOUND
++      if (poll_audio) {
++        nfds = sio_pollfd(hdl, &fds[0], POLLOUT);
++        if (nfds == 0)
++            fds[0].fd = -1;
++      } else
++        fds[0].fd = -1;
+ 
++      poll(fds, 2, INFTIM);
++
++      if (sio_revents(hdl, &fds[0]) & POLLOUT) {
++#else
+       select(FD_SETSIZE,&inset,&outset,NULL,NULL);
+ 
+       if (FD_ISSET(soundfd,&outset)){
++#endif
+          /* no sounds to play */
+-         if (current_buffer==first_free_buffer) FD_CLR(soundfd,&outset);
+-	 else{
++         if (current_buffer==first_free_buffer) {
++#ifdef SNDIO_SOUND
++           poll_audio = 0;
++#else
++           FD_CLR(soundfd,&outset);
++#endif
++	 }else{
+ 	   int wrote;
+            wrote=audio_play(current_buffer,sndbuf_pos);
+            if (wrote<settings.buflen-sndbuf_pos) sndbuf_pos+=wrote;
+@@ -991,15 +1102,23 @@ int main(int argc, char *argv[])
+ 	     current_buffer++;
+              if (current_buffer>=settings.buffers) current_buffer=0;
+            }
+-	}
++	 }
+       } else {
+ 	/* We need to reset this if it is not set - otherwise, we will never
+ 	 * finish playing the sounds
+ 	 */
++#ifdef SNDIO_SOUND
++        poll_audio = 1;
++#else
+ 	FD_SET(soundfd,&outset);
++#endif
+       }
+ 
++#ifdef SNDIO_SOUND
++      if (fds[1].revents & POLLIN){
++#else
+       if (FD_ISSET(infd,&inset)){
++#endif
+         int err=read(infd,inbuf+inbuf_pos,1);
+ 	if (err<1 && errno!=EINTR){
+ 	  if (err<0) perror("read");
+@@ -1007,7 +1126,12 @@ int main(int argc, char *argv[])
+ 	}
+         if (inbuf[inbuf_pos]=='\n'){
+ 	  inbuf[inbuf_pos++]=0;
+-          if (!SoundCmd((unsigned char*)inbuf,inbuf_pos)) FD_SET(soundfd,&outset);
++          if (!SoundCmd((unsigned char*)inbuf,inbuf_pos))
++#ifdef SNDIO_SOUND
++            poll_audio = 1;
++#else
++            FD_SET(soundfd,&outset);
++#endif
+           inbuf_pos=0;
+         }
+         else{
+@@ -1018,7 +1142,9 @@ int main(int argc, char *argv[])
+           }
+         }
+       }
++#ifndef SNDIO_SOUND
+       FD_SET(infd,&inset);
++#endif
+     }
+ 
+     return 0;

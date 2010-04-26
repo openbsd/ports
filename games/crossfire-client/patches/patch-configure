@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2008/04/01 09:14:31 ajacoutot Exp $
---- configure.orig	Sat Feb 12 19:09:25 2005
-+++ configure	Sat Feb 12 19:09:27 2005
+$OpenBSD: patch-configure,v 1.3 2010/04/26 01:43:03 jakemsr Exp $
+--- configure.orig	Mon Jan 28 23:29:08 2008
++++ configure	Fri Dec 25 22:50:32 2009
 @@ -7688,13 +7688,13 @@ fi
  
  
@@ -27,3 +27,23 @@ $OpenBSD: patch-configure,v 1.2 2008/04/01 09:14:31 ajacoutot Exp $
  
  fi
  
+@@ -9164,6 +9164,11 @@ fi
+ 
+ 	  SOUND_SRC="sound-src";
+         else
++          if eval "test x$sndio_sound = xyes"; then
++  	      CFLAGS="$CFLAGS -DSNDIO_SOUND"
++  	      SND_LIBS="-lsndio -lm"
++	      SOUND_SRC="sound-src";
++          else
+           if eval "test x$sun_sound = xyes"; then
+   	      echo "Using solaris sound system"
+   	      CFLAGS="$CFLAGS -DSUN_SOUND"
+@@ -9172,6 +9177,7 @@ fi
+   	  else
+   	      echo "No suitable sound system found."
+               sound="no"
++          fi
+           fi
+         fi
+       fi
