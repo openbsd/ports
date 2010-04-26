@@ -1,0 +1,253 @@
+$OpenBSD: patch-libavdevice_audio_c,v 1.1 2010/04/26 01:57:13 jakemsr Exp $
+--- libavdevice/audio.c.orig	Fri Jun 20 19:40:10 2008
++++ libavdevice/audio.c	Wed Apr 21 06:21:34 2010
+@@ -25,16 +25,12 @@
+ #include <stdint.h>
+ #include <string.h>
+ #include <errno.h>
+-#ifdef HAVE_SOUNDCARD_H
+-#include <soundcard.h>
+-#else
+-#include <sys/soundcard.h>
+-#endif
+ #include <unistd.h>
+ #include <fcntl.h>
+-#include <sys/ioctl.h>
+ #include <sys/time.h>
+ 
++#include <sndio.h>
++
+ #include "libavutil/log.h"
+ #include "libavcodec/avcodec.h"
+ #include "libavformat/avformat.h"
+@@ -42,7 +38,7 @@
+ #define AUDIO_BLOCK_SIZE 4096
+ 
+ typedef struct {
+-    int fd;
++    struct sio_hdl *hdl;
+     int sample_rate;
+     int channels;
+     int frame_size; /* in bytes ! */
+@@ -50,20 +46,28 @@ typedef struct {
+     int flip_left : 1;
+     uint8_t buffer[AUDIO_BLOCK_SIZE];
+     int buffer_ptr;
++    long long hwpos, softpos;
+ } AudioData;
+ 
++static void movecb(void *addr, int delta)
++{
++	AudioData *s = addr;
++
++	s->hwpos += delta * s->channels * 2; /* always 16-bit */
++}
++
+ static int audio_open(AudioData *s, int is_output, const char *audio_device)
+ {
+-    int audio_fd;
+-    int tmp, err;
++    struct sio_hdl *hdl;
++    struct sio_par par, gpar;
+     char *flip = getenv("AUDIO_FLIP_LEFT");
+ 
+     if (is_output)
+-        audio_fd = open(audio_device, O_WRONLY);
++        hdl = sio_open(audio_device, SIO_PLAY, 0);
+     else
+-        audio_fd = open(audio_device, O_RDONLY);
+-    if (audio_fd < 0) {
+-        av_log(NULL, AV_LOG_ERROR, "%s: %s\n", audio_device, strerror(errno));
++        hdl = sio_open(audio_device, SIO_REC, 0);
++    if (hdl == NULL) {
++        av_log(NULL, AV_LOG_ERROR, "could not open sndio device\n");
+         return AVERROR(EIO);
+     }
+ 
+@@ -71,85 +75,58 @@ static int audio_open(AudioData *s, int is_output, con
+         s->flip_left = 1;
+     }
+ 
+-    /* non blocking mode */
+-    if (!is_output)
+-        fcntl(audio_fd, F_SETFL, O_NONBLOCK);
+-
+     s->frame_size = AUDIO_BLOCK_SIZE;
+-#if 0
+-    tmp = (NB_FRAGMENTS << 16) | FRAGMENT_BITS;
+-    err = ioctl(audio_fd, SNDCTL_DSP_SETFRAGMENT, &tmp);
+-    if (err < 0) {
+-        perror("SNDCTL_DSP_SETFRAGMENT");
+-    }
+-#endif
+ 
+-    /* select format : favour native format */
+-    err = ioctl(audio_fd, SNDCTL_DSP_GETFMTS, &tmp);
++    sio_initpar(&par);
++    par.bits = 16;
++    par.sig = 1;
++    par.le = SIO_LE_NATIVE;
++    if (is_output)
++        par.pchan = s->channels;
++    else
++        par.rchan = s->channels;
++    par.rate = s->sample_rate;
+ 
+-#ifdef WORDS_BIGENDIAN
+-    if (tmp & AFMT_S16_BE) {
+-        tmp = AFMT_S16_BE;
+-    } else if (tmp & AFMT_S16_LE) {
+-        tmp = AFMT_S16_LE;
+-    } else {
+-        tmp = 0;
++    if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &gpar)) {
++        av_log(NULL, AV_LOG_ERROR, "error setting sndio parameters\n");
++        goto fail;
+     }
+-#else
+-    if (tmp & AFMT_S16_LE) {
+-        tmp = AFMT_S16_LE;
+-    } else if (tmp & AFMT_S16_BE) {
+-        tmp = AFMT_S16_BE;
+-    } else {
+-        tmp = 0;
++
++    if (gpar.bits != 16 || gpar.sig != 1 || gpar.le != SIO_LE_NATIVE ||
++      (is_output && (gpar.pchan != 1 && gpar.pchan != 2)) ||
++      (!is_output && (gpar.rchan != 1 && gpar.rchan != 2)) ) {
++        av_log(NULL, AV_LOG_ERROR, "could not set appropriate sndio parameters\n");
++        goto fail;
+     }
+-#endif
+ 
+-    switch(tmp) {
+-    case AFMT_S16_LE:
++    if (SIO_LE_NATIVE)
+         s->codec_id = CODEC_ID_PCM_S16LE;
+-        break;
+-    case AFMT_S16_BE:
++    else
+         s->codec_id = CODEC_ID_PCM_S16BE;
+-        break;
+-    default:
+-        av_log(NULL, AV_LOG_ERROR, "Soundcard does not support 16 bit sample format\n");
+-        close(audio_fd);
+-        return AVERROR(EIO);
+-    }
+-    err=ioctl(audio_fd, SNDCTL_DSP_SETFMT, &tmp);
+-    if (err < 0) {
+-        av_log(NULL, AV_LOG_ERROR, "SNDCTL_DSP_SETFMT: %s\n", strerror(errno));
+-        goto fail;
+-    }
++    if (is_output)
++        s->channels = gpar.pchan;
++    else
++        s->channels = gpar.rchan;
++    s->sample_rate = gpar.rate;
+ 
+-    tmp = (s->channels == 2);
+-    err = ioctl(audio_fd, SNDCTL_DSP_STEREO, &tmp);
+-    if (err < 0) {
+-        av_log(NULL, AV_LOG_ERROR, "SNDCTL_DSP_STEREO: %s\n", strerror(errno));
+-        goto fail;
+-    }
+-    if (tmp)
+-        s->channels = 2;
++    sio_onmove(hdl, movecb, s);
+ 
+-    tmp = s->sample_rate;
+-    err = ioctl(audio_fd, SNDCTL_DSP_SPEED, &tmp);
+-    if (err < 0) {
+-        av_log(NULL, AV_LOG_ERROR, "SNDCTL_DSP_SPEED: %s\n", strerror(errno));
++    if (!sio_start(hdl)) {
++        av_log(NULL, AV_LOG_ERROR, "could not start sndio\n");
+         goto fail;
+     }
+-    s->sample_rate = tmp; /* store real sample rate */
+-    s->fd = audio_fd;
+ 
++    s->hdl = hdl;
++
+     return 0;
+  fail:
+-    close(audio_fd);
++    sio_close(hdl);
+     return AVERROR(EIO);
+ }
+ 
+ static int audio_close(AudioData *s)
+ {
+-    close(s->fd);
++    sio_close(s->hdl);
+     return 0;
+ }
+ 
+@@ -186,12 +163,13 @@ static int audio_write_packet(AVFormatContext *s1, AVP
+         s->buffer_ptr += len;
+         if (s->buffer_ptr >= AUDIO_BLOCK_SIZE) {
+             for(;;) {
+-                ret = write(s->fd, s->buffer, AUDIO_BLOCK_SIZE);
++                ret = sio_write(s->hdl, s->buffer, AUDIO_BLOCK_SIZE);
+                 if (ret > 0)
+                     break;
+-                if (ret < 0 && (errno != EAGAIN && errno != EINTR))
++                if (ret == 0 && sio_eof(s->hdl))
+                     return AVERROR(EIO);
+             }
++            s->softpos += ret;
+             s->buffer_ptr = 0;
+         }
+         buf += len;
+@@ -247,47 +225,27 @@ static int audio_read_packet(AVFormatContext *s1, AVPa
+     AudioData *s = s1->priv_data;
+     int ret, bdelay;
+     int64_t cur_time;
+-    struct audio_buf_info abufi;
+ 
+     if (av_new_packet(pkt, s->frame_size) < 0)
+         return AVERROR(EIO);
+     for(;;) {
+-        struct timeval tv;
+-        fd_set fds;
+-
+-        tv.tv_sec = 0;
+-        tv.tv_usec = 30 * 1000; /* 30 msecs -- a bit shorter than 1 frame at 30fps */
+-
+-        FD_ZERO(&fds);
+-        FD_SET(s->fd, &fds);
+-
+-        /* This will block until data is available or we get a timeout */
+-        (void) select(s->fd + 1, &fds, 0, 0, &tv);
+-
+-        ret = read(s->fd, pkt->data, pkt->size);
++        ret = sio_read(s->hdl, pkt->data, pkt->size);
+         if (ret > 0)
+             break;
+-        if (ret == -1 && (errno == EAGAIN || errno == EINTR)) {
++        if (ret == 0 && sio_eof(s->hdl)) {
+             av_free_packet(pkt);
+             pkt->size = 0;
+             pkt->pts = av_gettime();
+             return 0;
+         }
+-        if (!(ret == 0 || (ret == -1 && (errno == EAGAIN || errno == EINTR)))) {
+-            av_free_packet(pkt);
+-            return AVERROR(EIO);
+-        }
+     }
+     pkt->size = ret;
++    s->softpos += ret;
+ 
+     /* compute pts of the start of the packet */
+     cur_time = av_gettime();
+-    bdelay = ret;
+-    if (ioctl(s->fd, SNDCTL_DSP_GETISPACE, &abufi) == 0) {
+-        bdelay += abufi.bytes;
+-    }
+-    /* subtract time represented by the number of bytes in the audio fifo */
+-    cur_time -= (bdelay * 1000000LL) / (s->sample_rate * s->channels);
++
++    bdelay = ret + s->hwpos - s->softpos;
+ 
+     /* convert to wanted units */
+     pkt->pts = cur_time;

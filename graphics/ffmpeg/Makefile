@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2009/09/02 11:50:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2010/04/26 01:57:13 jakemsr Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
 V=			20080620
 DISTNAME=		ffmpeg-svn-${V}
-PKGNAME=		ffmpeg-${V}p12
+PKGNAME=		ffmpeg-${V}p13
 SHARED_LIBS=		avutil		6.0 \
 			avcodec		13.1 \
 			avformat	12.0 \
@@ -38,7 +38,7 @@ LIB_DEPENDS=		SDL.>=4::devel/sdl \
 			Imlib2::graphics/imlib2 \
 			bz2.>=10::archivers/bzip2
 
-WANTLIB=		X11 Xext c freetype m ogg oil-0.3 ossaudio pthread z
+WANTLIB=		X11 Xext c freetype m ogg oil-0.3 pthread sndio z
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -53,7 +53,7 @@ LIBavutil_EXTRALIBS=-lm
 LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfaac -lfaad -lmp3lame -lvorbis -lvorbisenc -la52 -lschroedinger-1.0 -loil-0.3 -ltheora -logg -lx264 -lz -lm -pthread -Wl,-rpath,${LOCALBASE}/lib 
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lm -Wl,-rpath,${LOCALBASE}/lib
 LIBpostproc_EXTRALIBS=-lm
-LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lossaudio -lm -Wl,-rpath,${LOCALBASE}/lib -Wl,-rpath,${X11BASE}/lib
+LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lsndio -lm -Wl,-rpath,${LOCALBASE}/lib -Wl,-rpath,${X11BASE}/lib
 LIBswscale_EXTRALIBS=-lm
 
 # configure wants a directory it can execute files in 
