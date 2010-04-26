@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/01/23 10:29:45 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2010/04/26 01:47:15 jakemsr Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
 GNOME_PROJECT=	gmfsk
 GNOME_VERSION=	0.6
-PKGNAME=	${DISTNAME}p14
+PKGNAME=	${DISTNAME}p15
 CATEGORIES=    	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/
@@ -24,8 +24,8 @@ WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo dbus-1
 WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomevfs-2 gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs stdc++ xcb
-WANTLIB += xml2 z
+WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs sndio
+WANTLIB += stdc++ xcb xcb-render xcb-render-util xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -44,7 +44,8 @@ LIB_DEPENDS=		fftw.>=2::math/fftw \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-hamlib
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			LIBS="-lsndio"
 
 USE_X11=		Yes
 
