@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2010/04/20 22:55:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/04/26 13:28:02 ajacoutot Exp $
 
 COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
-GNOME_VERSION=	2.30.0
+GNOME_VERSION=	2.30.1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
