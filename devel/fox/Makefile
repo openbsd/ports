@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2009/08/10 06:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2010/04/26 09:15:00 stephan Exp $
 
 COMMENT=	C++ toolkit for GUI
 CATEGORIES=	devel
 
-DISTNAME=	fox-1.6.28
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	fox-1.6.37
 
-SHARED_LIBS +=	FOX-1.6              1.0      # .0.28
+SHARED_LIBS +=	FOX-1.6              2.0      # .0.37
 SHARED_LIBS +=	CHART-1.6            1.0      # .0.28
 MASTER_SITES=	${HOMEPAGE}/ftp/
 HOMEPAGE=	http://www.fox-toolkit.org/
@@ -26,6 +25,7 @@ CONFIGURE_ARGS+= \
 	--x-includes=${X11BASE}/include \
 	--x-libraries=${X11BASE}/lib \
 	--with-xft
+
 # LGPL or looser
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
