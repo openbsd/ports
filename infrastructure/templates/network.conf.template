@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.140 2010/04/03 04:28:45 jcs Exp $
+# $OpenBSD: network.conf.template,v 1.141 2010/04/26 18:03:37 ajacoutot Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -126,9 +126,9 @@ MASTER_SITE_SOURCEFORGE_JP+=	\
 	http://prdownloads.sourceforge.jp/
 
 MASTER_SITE_GNOME+=	\
+	http://ftp.acc.umu.se/pub/GNOME/ \
 	ftp://ftp.no.gnome.org/pub/GNOME/ \
 	ftp://ftp.dit.upm.es/linux/gnome/ \
-	http://ftp.acc.umu.se/pub/GNOME/ \
 	ftp://ftp.belnet.be/mirror/ftp.gnome.org/ \
 	ftp://ftp.unina.it/pub/linux/GNOME/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/ \
