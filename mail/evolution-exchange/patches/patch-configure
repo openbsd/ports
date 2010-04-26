@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1 2010/04/23 09:05:06 ajacoutot Exp $
---- configure.orig	Fri Apr 23 10:37:37 2010
-+++ configure	Fri Apr 23 10:37:45 2010
-@@ -18412,7 +18412,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
+$OpenBSD: patch-configure,v 1.2 2010/04/26 18:00:30 ajacoutot Exp $
+--- configure.orig	Mon Apr 26 06:29:04 2010
++++ configure	Mon Apr 26 19:50:26 2010
+@@ -15597,7 +15597,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
  		LIBS_save="$LIBS"
  
  		mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
 -		heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
 +		heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lgssapi"
  		sunlibs="-lkrb5 -lgss"
- 		if test "${ac_cv_lib_kerberos5+set}" = set; then
+ 		if test "${ac_cv_lib_kerberos5+set}" = set; then :
    $as_echo_n "(cached) " >&6

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/04/23 09:05:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/26 18:00:30 ajacoutot Exp $
 @bin bin/exchange-connector-setup-${EVO_VERSION}
 lib/evolution-data-server-1.2/camel-providers/libcamelexchange.la
 lib/evolution-data-server-1.2/camel-providers/libcamelexchange.so
@@ -86,6 +86,7 @@ share/locale/bg/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/bn/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/bn_IN/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/ca/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
+share/locale/ca@valencia/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/cs/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/cy/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/da/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
