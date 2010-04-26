@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/03/22 09:38:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/26 17:22:06 sthen Exp $
 
 COMMENT=	trivial database library
 
-DISTNAME=	tdb-1.0.6
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	tdb-1.2.1
 CATEGORIES=	databases
-SHARED_LIBS+=	tdb	1.0
+SHARED_LIBS+=	tdb	2.0
 
 MAINTAINER=    	Nicholas Marriott <nicm@users.sourceforge.net>
 
@@ -15,10 +14,22 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tdb/}
-CONFIGURE_STYLE=autoconf
-CONFIGURE_ARGS=	--includedir=${TRUEPREFIX}/include/tdb
-AUTOCONF_VERSION=2.13
+WANTLIB=	c
+
+HOMEPAGE=	http://tdb.samba.org/
+MASTER_SITES=	http://samba.org/ftp/tdb/
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS= --disable-python
+USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+MAKE_FLAGS=	TDB_SOLIB=libtdb.so.${LIBtdb_VERSION} \
+		TDB_SONAME=libtdb.so.${LIBtdb_VERSION}
+
+INSTALL_TARGET=	installdirs installbin installheaders installlibs
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tdb
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/tdb/
 
 .include <bsd.port.mk>

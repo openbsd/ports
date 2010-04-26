@@ -1,17 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/03/22 09:38:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/04/26 17:22:06 sthen Exp $
+@conflict samba-<3.5.0
 %%SHARED%%
-include/tdb/
-include/tdb/tdb.h
+@bin bin/tdbbackup
+@bin bin/tdbdump
+@bin bin/tdbtool
+include/tdb.h
 lib/libtdb.a
-lib/libtdb.la
-@man man/man3/tdb.3
-@man man/man3/tdb_chainlock.3
-@man man/man3/tdb_close.3
-@man man/man3/tdb_delete.3
-@man man/man3/tdb_error.3
-@man man/man3/tdb_exists.3
-@man man/man3/tdb_fetch.3
-@man man/man3/tdb_firstkey.3
-@man man/man3/tdb_open.3
-@man man/man3/tdb_store.3
-@man man/man3/tdb_traverse.3
+lib/pkgconfig/
+lib/pkgconfig/tdb.pc
+share/doc/tdb/
+share/doc/tdb/README
+share/doc/tdb/tdb.magic
+share/doc/tdb/tracing.txt
