@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.6 2010/04/17 14:48:15 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.7 2010/04/26 08:52:09 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -73,9 +73,9 @@ sub new
 	my ($class, $db, $i, $verbose) = @_;
 	$db->do("PRAGMA foreign_keys=ON");
 	bless {
-		db => $db, 
-		transaction => 0, 
-		threshold => $i, 
+		db => $db,
+		transaction => 0,
+		threshold => $i,
 		vars => {},
 		tables_created => {},
 		verbose => $verbose,
@@ -162,7 +162,7 @@ sub new_table
 	return if defined $self->{tables_created}->{$name};
 
 	$self->db->do("DROP TABLE IF EXISTS $name");
-	print "CREATE TABLE $name (".join(', ', @cols).")\n" 
+	print "CREATE TABLE $name (".join(', ', @cols).")\n"
 	    if $self->{verbose};
 	$self->db->do("CREATE TABLE $name (".join(', ', @cols).")");
 	$self->{tables_created}->{$name} = 1;
@@ -180,7 +180,7 @@ sub prepare_inserter
 	$ins->{insert}->{$table} = $ins->prepare(
 	    "INSERT OR REPLACE INTO $table (".
 	    join(', ', @cols).
-	    ") VALUES (". 
+	    ") VALUES (".
 	    join(', ', map {'?'} @cols).")");
 }
 
@@ -319,9 +319,9 @@ sub make_table
 sub create_path_table
 {
 	my $self = shift;
-	$self->new_table("Paths", "ID INTEGER PRIMARY KEY", 
-	    "FULLPKGPATH TEXT NOT NULL UNIQUE", "PKGPATH INTEGER");
-
+	$self->new_table("Paths", "ID INTEGER PRIMARY KEY",
+	    "FULLPKGPATH TEXT NOT NULL UNIQUE",
+	    "PKGPATH INTEGER REFERENCES Paths(ID)");
 }
 
 sub handle_column
@@ -337,8 +337,8 @@ sub create_view_info
 	my $self = shift;
 	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
 	$self->create_view("Ports", @columns);
-	$self->{find_pathkey} =  
-	    $self->prepare("SELECT ID From Paths WHERE FULLPKGPATH=(?)");
+	$self->{find_pathkey} =
+	    $self->prepare("SELECT ID From Paths WHERE FULLPKGPATH=?");
 }
 
 sub find_pathkey
@@ -394,9 +394,9 @@ sub create_keyword_table
 {
 	my ($self, $t) = @_;
 	$self->new_table($t,
-	    "KEYREF INTEGER PRIMARY KEY AUTOINCREMENT", 
+	    "KEYREF INTEGER PRIMARY KEY AUTOINCREMENT",
 	    "VALUE TEXT NOT NULL UNIQUE");
-	$self->{$t}->{find_key1} = $self->prepare("SELECT KEYREF FROM $t WHERE VALUE=(?)");
+	$self->{$t}->{find_key1} = $self->prepare("SELECT KEYREF FROM $t WHERE VALUE=?");
 	$self->{$t}->{find_key2} = $self->prepare("INSERT INTO $t (VALUE) VALUES (?)");
 }
 
@@ -419,7 +419,7 @@ sub convert_depends
 sub create_path_table
 {
 	my $self = shift;
-	$self->new_table("Paths", "FULLPKGPATH TEXT NOT NULL PRIMARY KEY", 
+	$self->new_table("Paths", "FULLPKGPATH TEXT NOT NULL PRIMARY KEY",
 	    "PKGPATH TEXT NOT NULL");
 }
 

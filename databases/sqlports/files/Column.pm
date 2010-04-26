@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.5 2010/04/25 12:35:26 espie Exp $
+# $OpenBSD: Column.pm,v 1.6 2010/04/26 08:52:09 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
