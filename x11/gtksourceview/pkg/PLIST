@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/03/29 07:47:45 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/04/26 16:49:25 ajacoutot Exp $
 %%SHARED%%
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
@@ -33,7 +33,6 @@ share/gtk-doc/html/
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceBuffer.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceCompletion.html
-share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceCompletionContext.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceCompletionInfo.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceCompletionItem.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceCompletionProposal.html
@@ -49,6 +48,7 @@ share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceStyleSchemeManager.ht
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceUndoManager.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/GtkSourceView.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}-Searching-in-a-GtkSourceBuffer.html
+share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}-completioncontext.html
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}.devhelp
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/gtksourceview-${MAJOR_VERSION}.devhelp2
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/home.png
