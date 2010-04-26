@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Column.pm,v 1.6 2010/04/26 08:52:09 espie Exp $
+# $OpenBSD: Column.pm,v 1.7 2010/04/26 10:19:02 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -185,6 +185,24 @@ sub join_schema
 {
 	my ($self, $table) = @_;
 	return "LEFT ".$self->SUPER::join_schema($table);
+}
+
+package OptCoalesceColumn;
+our @ISA = qw(OptValueColumn);
+
+sub realname
+{
+	my ($self, $t) = @_;
+	return "group_concat(".$self->SUPER::realname($t).", ' ')";
+}
+
+package CoalesceColumn;
+our @ISA = qw(ValueColumn);
+
+sub realname
+{
+	my ($self, $t) = @_;
+	return "group_concat(".$self->SUPER::realname($t).", ' ')";
 }
 
 1;
