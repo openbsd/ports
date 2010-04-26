@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-hr,v 1.1 2010/04/26 19:57:04 landry Exp $
+mozilla-firefox/extensions/langpack-hr@firefox.mozilla.org/
+mozilla-firefox/extensions/langpack-hr@firefox.mozilla.org/chrome/
+mozilla-firefox/extensions/langpack-hr@firefox.mozilla.org/chrome.manifest
+mozilla-firefox/extensions/langpack-hr@firefox.mozilla.org/chrome/hr.jar
+mozilla-firefox/extensions/langpack-hr@firefox.mozilla.org/install.rdf

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-es-MX,v 1.1 2010/04/26 19:57:04 landry Exp $
+mozilla-firefox/extensions/langpack-es-MX@firefox.mozilla.org/
+mozilla-firefox/extensions/langpack-es-MX@firefox.mozilla.org/chrome/
+mozilla-firefox/extensions/langpack-es-MX@firefox.mozilla.org/chrome.manifest
+mozilla-firefox/extensions/langpack-es-MX@firefox.mozilla.org/chrome/es-MX.jar
+mozilla-firefox/extensions/langpack-es-MX@firefox.mozilla.org/install.rdf
