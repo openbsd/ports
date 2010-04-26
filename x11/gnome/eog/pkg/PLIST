@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2010/04/22 08:39:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2010/04/26 20:45:19 ajacoutot Exp $
 @bin bin/eog
 include/eog-2.20/
 include/eog-2.20/eog/
@@ -226,30 +226,19 @@ share/gnome/help/eog/zh_TW/figures/eog_save_as_window.png
 share/gnome/help/eog/zh_TW/figures/eog_start_window.png
 share/gnome/help/eog/zh_TW/figures/eog_toolbar_editor_window.png
 share/gtk-doc/html/eog/
-share/gtk-doc/html/eog/EogApplication.html
 share/gtk-doc/html/eog/EogDialog.html
 share/gtk-doc/html/eog/EogExifDetails.html
 share/gtk-doc/html/eog/EogFileChooser.html
-share/gtk-doc/html/eog/EogImage.html
 share/gtk-doc/html/eog/EogImageSaveInfo.html
-share/gtk-doc/html/eog/EogJobCopy.html
-share/gtk-doc/html/eog/EogListStore.html
 share/gtk-doc/html/eog/EogMetadataReaderJpg.html
 share/gtk-doc/html/eog/EogMetadataReaderPng.html
-share/gtk-doc/html/eog/EogPlugin.html
 share/gtk-doc/html/eog/EogPluginManager.html
 share/gtk-doc/html/eog/EogPreferencesDialog.html
 share/gtk-doc/html/eog/EogPrintImageSetup.html
 share/gtk-doc/html/eog/EogPrintPreview.html
-share/gtk-doc/html/eog/EogPropertiesDialog.html
 share/gtk-doc/html/eog/EogScrollView.html
 share/gtk-doc/html/eog/EogSidebar.html
 share/gtk-doc/html/eog/EogStatusbar.html
-share/gtk-doc/html/eog/EogThumbNav.html
-share/gtk-doc/html/eog/EogThumbView.html
-share/gtk-doc/html/eog/EogTransform.html
-share/gtk-doc/html/eog/EogURIConverter.html
-share/gtk-doc/html/eog/EogWindow.html
 share/gtk-doc/html/eog/ch01.html
 share/gtk-doc/html/eog/ch02.html
 share/gtk-doc/html/eog/ch03.html
@@ -257,19 +246,30 @@ share/gtk-doc/html/eog/ch04.html
 share/gtk-doc/html/eog/ch05.html
 share/gtk-doc/html/eog/ch06.html
 share/gtk-doc/html/eog/ch07.html
+share/gtk-doc/html/eog/eog-eog-application.html
 share/gtk-doc/html/eog/eog-eog-config-keys.html
 share/gtk-doc/html/eog/eog-eog-debug.html
 share/gtk-doc/html/eog/eog-eog-error-message-area.html
 share/gtk-doc/html/eog/eog-eog-exif-util.html
+share/gtk-doc/html/eog/eog-eog-image.html
 share/gtk-doc/html/eog/eog-eog-job-queue.html
+share/gtk-doc/html/eog/eog-eog-jobs.html
+share/gtk-doc/html/eog/eog-eog-list-store.html
 share/gtk-doc/html/eog/eog-eog-metadata-reader.html
 share/gtk-doc/html/eog/eog-eog-pixbuf-util.html
 share/gtk-doc/html/eog/eog-eog-plugin-engine.html
+share/gtk-doc/html/eog/eog-eog-plugin.html
 share/gtk-doc/html/eog/eog-eog-print.html
+share/gtk-doc/html/eog/eog-eog-properties-dialog.html
 share/gtk-doc/html/eog/eog-eog-save-as-dialog-helper.html
 share/gtk-doc/html/eog/eog-eog-session.html
+share/gtk-doc/html/eog/eog-eog-thumb-nav.html
+share/gtk-doc/html/eog/eog-eog-thumb-view.html
 share/gtk-doc/html/eog/eog-eog-thumbnail.html
+share/gtk-doc/html/eog/eog-eog-transform.html
+share/gtk-doc/html/eog/eog-eog-uri-converter.html
 share/gtk-doc/html/eog/eog-eog-util.html
+share/gtk-doc/html/eog/eog-eog-window.html
 share/gtk-doc/html/eog/eog-uta.html
 share/gtk-doc/html/eog/eog-zoom.html
 share/gtk-doc/html/eog/eog.devhelp
