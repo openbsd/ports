@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/03/30 09:08:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/04/26 18:34:00 ajacoutot Exp $
 bin/tomboy
 bin/tomboy-panel
 lib/bonobo/
@@ -445,14 +445,29 @@ share/gnome/help/tomboy/zh_CN/figures/tomboy-preferences-synchronization.png
 share/gnome/help/tomboy/zh_CN/figures/tomboy-tools.png
 share/gnome/help/tomboy/zh_CN/legal.xml
 share/gnome/help/tomboy/zh_CN/tomboy.xml
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/tomboy.png
+share/icons/hicolor/16x16/mimetypes/
 share/icons/hicolor/16x16/mimetypes/application-x-note.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/tomboy.png
+share/icons/hicolor/22x22/mimetypes/
 share/icons/hicolor/22x22/mimetypes/application-x-note.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/tomboy.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/tomboy.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/tomboy.png
+share/icons/hicolor/48x48/mimetypes/
 share/icons/hicolor/48x48/mimetypes/application-x-note.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/tomboy.svg
 share/locale/ar/LC_MESSAGES/tomboy.mo
 share/locale/as/LC_MESSAGES/tomboy.mo
