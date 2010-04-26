@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2009/12/21 20:46:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2010/04/26 01:37:59 jakemsr Exp $
 
 COMMENT = 		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdemultimedia-${VERSION}
-PKGNAME =		${DISTNAME}p4
+PKGNAME =		${DISTNAME}p5
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
 SHARED_LIBS +=	artsmidi_idl         1.0      # .0.0
@@ -67,5 +67,8 @@ WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm \
 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 idn \
 		jpeg m mad ossaudio pcre pcreposix png pthread rpcsvc sndio \
 		stdc++ util xml2 z pthread-stubs xcb
+
+post-extract:
+	cp ${FILESDIR}/audioIO_sndio.cpp ${WRKSRC}/mpeglib/lib/util/audio
 
 .include <bsd.port.mk>

@@ -1,12 +1,12 @@
-$OpenBSD: patch-mpeglib_lib_util_audio_audioIO_cpp,v 1.1 2009/01/29 22:37:21 jakemsr Exp $
---- mpeglib/lib/util/audio/audioIO.cpp.orig	Sun Dec 28 13:31:48 2008
-+++ mpeglib/lib/util/audio/audioIO.cpp	Sun Dec 28 13:32:36 2008
+$OpenBSD: patch-mpeglib_lib_util_audio_audioIO_cpp,v 1.2 2010/04/26 01:37:59 jakemsr Exp $
+--- mpeglib/lib/util/audio/audioIO.cpp.orig	Sat Sep 10 01:19:53 2005
++++ mpeglib/lib/util/audio/audioIO.cpp	Thu Apr 22 19:06:05 2010
 @@ -26,7 +26,11 @@
  #endif
  
  #ifdef OS_BSD
 +#ifdef __OpenBSD__
-+  #include "audioIO_SunOS.cpp"
++  #include "audioIO_sndio.cpp"
 +#else
    #include "audioIO_Linux.cpp"
 +#endif
