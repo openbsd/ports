@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/22 22:33:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/26 09:57:59 ajacoutot Exp $
 
 COMMENT=	simple scanning utility
 
 GNOME_PROJECT=	simple-scan
 GNOME_VERSION=	0.9.7
+PKGNAME=	${DISTNAME}p0
 
 EXTRACT_SUFX=	.tar.gz
 
@@ -25,6 +26,7 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb z
+WANTLIB += xcb-render xcb-render-util
 
 MASTER_SITES=	http://people.ubuntu.com/~robert-ancell/simple-scan/
 

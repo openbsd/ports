@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2009/12/22 16:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/04/26 09:57:59 ajacoutot Exp $
 
 COMMENT=	scanner frontend for SANE
 
 DISTNAME=	xsane-0.997
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	graphics
 
@@ -24,7 +24,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo exif expat
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gphoto2 gphoto2_port jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs tiff usb xcb z
-WANTLIB += avahi-client avahi-common
+WANTLIB += avahi-client avahi-common gthread-2.0 xcb-render xcb-render-util
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
