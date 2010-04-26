@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/04/20 22:06:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2010/04/26 17:39:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,11 +8,11 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	2.30.0
+GNOME_VERSION=	2.30.1
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p0
+PKGNAME-main=	${DISTNAME}
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
@@ -44,10 +44,10 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += xcb xcb-render xcb-render-util z
+WANTLIB += xcb xcb-render xcb-render-util z gthread-2.0
 
 WANTLIB-main=	${WANTLIB} ICE ORBit-2 SM c dbus-1 dbus-glib-1 \
-		gnome-keyring gs gthread-2.0 \
+		gnome-keyring gs eggdbus-1 gcrypt gpg-error \
 		jpeg pthread tiff xml2 lcms
 LIB_DEPENDS-main= poppler.>=3,poppler-glib.>=3::print/poppler \
 		spectre::print/libspectre \
