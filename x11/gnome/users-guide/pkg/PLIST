@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/04/20 15:40:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/04/26 15:30:42 jasper Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/gnome/
@@ -586,6 +586,47 @@ share/gnome/help/gnome-access-guide/sv/figures/tabbed_section.png
 share/gnome/help/gnome-access-guide/sv/figures/text_box.png
 share/gnome/help/gnome-access-guide/sv/figures/tree.png
 share/gnome/help/gnome-access-guide/sv/gnome-access-guide.xml
+share/gnome/help/gnome-access-guide/uk/
+share/gnome/help/gnome-access-guide/uk/figures/
+share/gnome/help/gnome-access-guide/uk/figures/Braille_Tab.png
+share/gnome/help/gnome-access-guide/uk/figures/General_Tab.png
+share/gnome/help/gnome-access-guide/uk/figures/KeyBindings_Tab.png
+share/gnome/help/gnome-access-guide/uk/figures/KeyBindings_Tab_Unbound.png
+share/gnome/help/gnome-access-guide/uk/figures/KeyEcho_Tab.png
+share/gnome/help/gnome-access-guide/uk/figures/Magnifier_Advanced.png
+share/gnome/help/gnome-access-guide/uk/figures/Magnifier_Tab.png
+share/gnome/help/gnome-access-guide/uk/figures/MainWindow.png
+share/gnome/help/gnome-access-guide/uk/figures/Pronunciation_Tab.png
+share/gnome/help/gnome-access-guide/uk/figures/RPM_search_gnome_common.png
+share/gnome/help/gnome-access-guide/uk/figures/Speech_Tab.png
+share/gnome/help/gnome-access-guide/uk/figures/TextAttributes_Tab.png
+share/gnome/help/gnome-access-guide/uk/figures/accessx.png
+share/gnome/help/gnome-access-guide/uk/figures/bouncekeys.png
+share/gnome/help/gnome-access-guide/uk/figures/button.png
+share/gnome/help/gnome-access-guide/uk/figures/check_box.png
+share/gnome/help/gnome-access-guide/uk/figures/dropdown_combination_box.png
+share/gnome/help/gnome-access-guide/uk/figures/dropdown_list_box.png
+share/gnome/help/gnome-access-guide/uk/figures/mousekeys.png
+share/gnome/help/gnome-access-guide/uk/figures/move_object_arrows.png
+share/gnome/help/gnome-access-guide/uk/figures/move_object_before.png
+share/gnome/help/gnome-access-guide/uk/figures/move_object_jump.png
+share/gnome/help/gnome-access-guide/uk/figures/move_object_push.png
+share/gnome/help/gnome-access-guide/uk/figures/radio_button.png
+share/gnome/help/gnome-access-guide/uk/figures/slider.png
+share/gnome/help/gnome-access-guide/uk/figures/slowkeys.png
+share/gnome/help/gnome-access-guide/uk/figures/spin_box.png
+share/gnome/help/gnome-access-guide/uk/figures/stickyaltlatch.png
+share/gnome/help/gnome-access-guide/uk/figures/stickyaltlock.png
+share/gnome/help/gnome-access-guide/uk/figures/stickyctrllatch.png
+share/gnome/help/gnome-access-guide/uk/figures/stickyctrllock.png
+share/gnome/help/gnome-access-guide/uk/figures/stickyshiftlatch.png
+share/gnome/help/gnome-access-guide/uk/figures/stickyshiftlock.png
+share/gnome/help/gnome-access-guide/uk/figures/stickywindowlatch.png
+share/gnome/help/gnome-access-guide/uk/figures/stickywindowlock.png
+share/gnome/help/gnome-access-guide/uk/figures/tabbed_section.png
+share/gnome/help/gnome-access-guide/uk/figures/text_box.png
+share/gnome/help/gnome-access-guide/uk/figures/tree.png
+share/gnome/help/gnome-access-guide/uk/gnome-access-guide.xml
 share/gnome/help/gnome-access-guide/zh_CN/
 share/gnome/help/gnome-access-guide/zh_CN/figures/
 share/gnome/help/gnome-access-guide/zh_CN/figures/Braille_Tab.png
@@ -2511,6 +2552,7 @@ share/omf/gnome-access-guide/gnome-access-guide-oc.omf
 share/omf/gnome-access-guide/gnome-access-guide-pt.omf
 share/omf/gnome-access-guide/gnome-access-guide-ru.omf
 share/omf/gnome-access-guide/gnome-access-guide-sv.omf
+share/omf/gnome-access-guide/gnome-access-guide-uk.omf
 share/omf/gnome-access-guide/gnome-access-guide-zh_CN.omf
 share/omf/system-admin-guide/
 share/omf/system-admin-guide/system-admin-guide-C.omf
