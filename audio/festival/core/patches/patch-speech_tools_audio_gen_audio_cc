@@ -1,0 +1,48 @@
+$OpenBSD: patch-speech_tools_audio_gen_audio_cc,v 1.1 2010/04/26 01:32:38 jakemsr Exp $
+--- speech_tools/audio/gen_audio.cc.orig	Fri Apr 30 09:56:49 2004
++++ speech_tools/audio/gen_audio.cc	Sat Apr 24 18:40:17 2010
+@@ -103,6 +103,8 @@ int play_wave(EST_Wave &inwave, EST_Option &al)
+ 	    protocol = "win32audio";
+ 	else if (mplayer_supported)
+ 	    protocol = "mplayeraudio";
++	else if (sndio_supported)
++	    protocol = "sndioaudio";
+ 	else
+ 	    protocol = "sunaudio";
+     }
+@@ -118,6 +120,8 @@ int play_wave(EST_Wave &inwave, EST_Option &al)
+     else if ((upcase(protocol) == "FREEBSD16AUDIO") ||
+ 	     (upcase(protocol) == "LINUX16AUDIO"))
+ 	return play_voxware_wave(*toplay,al);
++    else if (upcase(protocol) == "SNDIOAUDIO")
++	return play_sndio_wave(*toplay,al);
+     else if (upcase(protocol) == "IRIXAUDIO")
+ 	return play_irix_wave(*toplay,al);
+     else if (upcase(protocol) == "MPLAYERAUDIO")
+@@ -256,6 +260,8 @@ EST_String options_supported_audio(void)
+ 	audios += " win32audio";
+     if (os2audio_supported)
+ 	audios += " os2audio";
++    if (sndio_supported)
++	audios += " sndioaudio";
+ 
+     return audios;
+ }
+@@ -294,6 +300,8 @@ int record_wave(EST_Wave &wave, EST_Option &al)
+ 	    protocol = "win32audio";
+ 	else if (mplayer_supported)
+ 	    protocol = "mplayeraudio";
++	else if (sndio_supported)
++	    protocol = "sndioaudio";
+ 	else
+ 	    protocol = "sunaudio";
+     }
+@@ -307,6 +315,8 @@ int record_wave(EST_Wave &wave, EST_Option &al)
+     else if ((upcase(protocol) == "FREEBSD16AUDIO") ||
+ 	     (upcase(protocol) == "LINUX16AUDIO"))
+ 	return record_voxware_wave(wave,al);
++    else if (upcase(protocol) == "SNDIOAUDIO")
++	return record_sndio_wave(wave,al);
+     else if (upcase(protocol) == "SUNAUDIO")
+ 	return record_sunau_wave(wave,al);
+     else

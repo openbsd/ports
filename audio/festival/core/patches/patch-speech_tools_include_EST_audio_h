@@ -1,0 +1,11 @@
+$OpenBSD: patch-speech_tools_include_EST_audio_h,v 1.1 2010/04/26 01:32:38 jakemsr Exp $
+--- speech_tools/include/EST_audio.h.orig	Sat Apr 24 04:30:41 2010
++++ speech_tools/include/EST_audio.h	Sat Apr 24 04:30:56 2010
+@@ -46,6 +46,7 @@ extern int nas_supported;
+ extern int esd_supported;
+ extern int sun16_supported;
+ extern int freebsd16_supported;
++extern int sndio_supported;
+ extern int linux16_supported;
+ extern int mplayer_supported;
+ extern int win32audio_supported;

@@ -1,5 +1,5 @@
-#	$OpenBSD: OpenBSD.mak,v 1.1 2004/07/11 06:27:07 jolan Exp $
+#	$OpenBSD: OpenBSD.mak,v 1.2 2010/04/26 01:32:38 jakemsr Exp $
 include $(EST)/config/systems/default.mak
 ECHO_N = /usr/bin/printf "%s"
-NATIVE_AUDIO_MODULE= FREEBSD16
+NATIVE_AUDIO_MODULE= SNDIO
 NAWK=awk

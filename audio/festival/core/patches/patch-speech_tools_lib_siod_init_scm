@@ -1,0 +1,16 @@
+$OpenBSD: patch-speech_tools_lib_siod_init_scm,v 1.1 2010/04/26 01:32:38 jakemsr Exp $
+--- speech_tools/lib/siod/init.scm.orig	Sat Apr 24 18:23:13 2010
++++ speech_tools/lib/siod/init.scm	Sat Apr 24 18:33:03 2010
+@@ -76,8 +76,10 @@
+   (Parameter.def 'Audio_Method 'os2audio))
+  ((member 'mplayeraudio *modules*)
+   (Parameter.def 'Audio_Method 'mplayeraudio))
+- (t  ;; can't find direct support so guess that /dev/audio for 8k ulaw exists
+-  (Parameter.def 'Audio_Method 'sunaudio)))
++ ((member 'sndioaudio *modules*)
++  (Parameter.def 'Audio_Method 'sndioaudio))
++ (t  ;; stupid crappy software.  default to only supported "protocol"
++  (Parameter.def 'Audio_Method 'sndioaudio)))
+ 
+ ;;;  If you have an external program to play audio add its definition
+ ;;;  in siteinit.scm

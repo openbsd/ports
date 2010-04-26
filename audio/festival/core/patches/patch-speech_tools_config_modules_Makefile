@@ -1,0 +1,12 @@
+$OpenBSD: patch-speech_tools_config_modules_Makefile,v 1.1 2010/04/26 01:32:38 jakemsr Exp $
+--- speech_tools/config/modules/Makefile.orig	Sat Apr 24 03:21:12 2010
++++ speech_tools/config/modules/Makefile	Sat Apr 24 03:21:28 2010
+@@ -41,7 +41,7 @@ RULESETS = efence.mak dmalloc.mak debugging.mak \
+ 	psola_tm.mak editline.mak tcl.mak \
+ 	freebsd16_audio.mak irix_audio.mak linux16_audio.mak \
+ 	sun16_audio.mak win32_audio.mak \
+-	mplayer_audio.mak nas_audio.mak esd_audio.mak
++	mplayer_audio.mak nas_audio.mak esd_audio.mak sndio_audio.mak
+ 
+ FILES = Makefile descriptions $(RULESETS) 
+ 

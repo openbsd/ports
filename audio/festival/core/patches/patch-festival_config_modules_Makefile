@@ -1,0 +1,12 @@
+$OpenBSD: patch-festival_config_modules_Makefile,v 1.1 2010/04/26 01:32:38 jakemsr Exp $
+--- festival/config/modules/Makefile.orig	Sat Apr 24 03:19:52 2010
++++ festival/config/modules/Makefile	Sat Apr 24 03:20:10 2010
+@@ -40,7 +40,7 @@ DIRNAME=config/modules
+ RULESETS = efence.mak dmalloc.mak \
+ 	psola_tm.mak editline.mak tcl.mak \
+ 	freebsd16_audio.mak irix_audio.mak linux16_audio.mak \
+-	sun16_audio.mak win32_audio.mak \
++	sun16_audio.mak win32_audio.mak sndio_audio.mak \
+ 	mplayer_audio.mak nas_audio.mak esd_audio.mak native_audio.mak \
+ 	 siod.mak wagon.mak scfg.mak wfst.mak ols.mak debugging.mak
+ 

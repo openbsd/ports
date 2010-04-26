@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/01/30 19:08:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2010/04/26 01:32:38 jakemsr Exp $
 
 COMMENT=	general multi-lingual speech synthesis system
 V=		1.95
 DISTNAME=	festival-${V}-beta
-PKGNAME=	${DISTNAME:S/-beta/beta/}p2
+PKGNAME=	${DISTNAME:S/-beta/beta/}p3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cstr.ed.ac.uk/downloads/festival/${V}/ \
 		http://festvox.org/packed/festival/${V}/
@@ -51,11 +51,14 @@ PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		c m ossaudio stdc++ termcap
+WANTLIB=		c m sndio stdc++ termcap
 
 post-patch:
 	@cp ${FILESDIR}/OpenBSD.mak ${WRKSRC}/speech_tools/config/systems/OpenBSD.mak
 	@cp ${FILESDIR}/Makefile ${WRKSRC}
+	@cp ${FILESDIR}/sndio_audio.mak ${WRKSRC}/festival/config/modules
+	@cp ${FILESDIR}/sndio_audio.mak ${WRKSRC}/speech_tools/config/modules
+	@cp ${FILESDIR}/sndio.cc ${WRKSRC}/speech_tools/audio
 
 do-configure:
 	@cd ${FESTIVAL} && ${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}

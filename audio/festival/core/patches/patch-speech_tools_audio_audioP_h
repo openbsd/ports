@@ -1,0 +1,18 @@
+$OpenBSD: patch-speech_tools_audio_audioP_h,v 1.1 2010/04/26 01:32:38 jakemsr Exp $
+--- speech_tools/audio/audioP.h.orig	Sat Apr 24 04:27:45 2010
++++ speech_tools/audio/audioP.h	Sat Apr 24 04:28:17 2010
+@@ -43,6 +43,7 @@ int play_nas_wave(EST_Wave &inwave, EST_Option &al);
+ int play_esd_wave(EST_Wave &inwave, EST_Option &al);
+ int play_sun16_wave(EST_Wave &inwave, EST_Option &al);
+ int play_voxware_wave(EST_Wave &inwave, EST_Option &al);
++int play_sndio_wave(EST_Wave &inwave, EST_Option &al);
+ int play_mplayer_wave(EST_Wave &inwave, EST_Option &al);
+ int play_win32audio_wave(EST_Wave &inwave, EST_Option &al);
+ int play_irix_wave(EST_Wave &inwave, EST_Option &al);
+@@ -51,5 +52,6 @@ int record_nas_wave(EST_Wave &inwave, EST_Option &al);
+ int record_esd_wave(EST_Wave &inwave, EST_Option &al);
+ int record_sun16_wave(EST_Wave &inwave, EST_Option &al);
+ int record_voxware_wave(EST_Wave &inwave, EST_Option &al);
++int record_sndio_wave(EST_Wave &inwave, EST_Option &al);
+ 
+ #endif /* __AUDIOP_H__ */

@@ -1,0 +1,12 @@
+$OpenBSD: patch-speech_tools_audio_Makefile,v 1.1 2010/04/26 01:32:38 jakemsr Exp $
+--- speech_tools/audio/Makefile.orig	Wed Apr 21 19:21:55 2010
++++ speech_tools/audio/Makefile	Wed Apr 21 19:22:12 2010
+@@ -43,7 +43,7 @@ LOCAL_DEFAULT_LIBRARY = estbase
+ 
+ H = audioP.h
+ CPPSRCS = gen_audio.cc nas.cc esd.cc sun16audio.cc voxware.cc  \
+-          mplayer.cc win32audio.cc irixaudio.cc os2audio.cc
++          mplayer.cc win32audio.cc irixaudio.cc os2audio.cc sndio.cc
+ SRCS = $(CPPSRCS)
+ OBJS = $(CPPSRCS:.cc=.o)
+ FILES = $(CPPSRCS) $(H) Makefile

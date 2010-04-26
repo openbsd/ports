@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/06 03:36:24 jolan Exp $
-bin/audsp
-bin/festival
-bin/festival_client
+@comment $OpenBSD: PLIST,v 1.3 2010/04/26 01:32:38 jakemsr Exp $
+@bin bin/audsp
+@bin bin/festival
+@bin bin/festival_client
 bin/festival_server
 bin/festival_server_control
 bin/text2wave
