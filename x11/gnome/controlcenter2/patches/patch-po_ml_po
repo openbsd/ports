@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_ml_po,v 1.1 2010/04/26 16:15:46 ajacoutot Exp $
+--- po/ml.po.orig	Mon Apr 26 18:02:19 2010
++++ po/ml.po	Mon Apr 26 18:03:02 2010
+@@ -3162,7 +3162,7 @@ msgid ""
+ "applications.desktop,Add Printer;gnome-cups-manager.desktop]"
+ msgstr ""
+ "[രംഗവിതാനം മാറ്റുക;gnome-appearance-properties.desktop,മുന്‍ഗണനാ പ്രയോഗങ്ങള്‍ സജ്ജമാക്കുക;"
+-"gnome-default-applications.desktop,പ്രിന്റര്‍ ചേര്‍ക്കുക;system-config-printer.desktop] "
++"gnome-default-applications.desktop,പ്രിന്റര്‍ ചേര്‍ക്കുക;system-config-printer.desktop]"
+ 
+ #: ../shell/control-center.schemas.in.h:14
+ msgid "if true, the control-center will close when a \"Common Task\" is activated."
