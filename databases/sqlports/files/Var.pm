@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Var.pm,v 1.4 2010/04/17 13:06:49 espie Exp $
+# $OpenBSD: Var.pm,v 1.5 2010/04/26 10:20:50 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -169,7 +169,7 @@ sub create_table
 	$inserter->make_table($self, 'UNIQUE(FULLPKGPATH, ARCH, VALUE)',
 	    OptValueColumn->new("ARCH"),
 	    TextColumn->new("VALUE"));
-	$inserter->prepare_normal_inserter($self->table, 
+	$inserter->prepare_normal_inserter($self->table,
 	    "ARCH", "VALUE");
 }
 
@@ -215,9 +215,9 @@ sub add
 			print STDERR "Wrong depends $depends\n";
 			return;
 		}
-		$self->normal_insert($ins, $depends, 
-		    $ins->find_pathkey($pkgpath2), 
-		    $ins->convert_depends($self->depends_type), 
+		$self->normal_insert($ins, $depends,
+		    $ins->find_pathkey($pkgpath2),
+		    $ins->convert_depends($self->depends_type),
 		    $pkgspec, $rest);
 		if ($libs ne '') {
 			for my $lib (split(/\,/, $libs)) {
@@ -230,13 +230,13 @@ sub add
 sub create_table
 {
 	my ($self, $inserter) = @_;
-	$inserter->make_table($self, undef, 
+	$inserter->make_table($self, undef,
 	    TextColumn->new("FULLDEPENDS"),
 	    OptTextColumn->new("PKGSPEC"),
 	    OptTextColumn->new("REST"),
 	    PathColumn->new("DEPENDSPATH"),
 	    TextColumn->new("TYPE"));
-	$inserter->prepare_normal_inserter($self->table, 
+	$inserter->prepare_normal_inserter($self->table,
 	    "FULLDEPENDS", "DEPENDSPATH", "TYPE", "PKGSPEC", "REST");
 }
 
@@ -287,7 +287,7 @@ sub create_table
 {
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
-	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE)", 
+	$inserter->make_table($self, "UNIQUE(FULLPKGPATH, VALUE)",
 	    ValueColumn->new);
 	$inserter->prepare_normal_inserter($self->table, "VALUE");
 }
