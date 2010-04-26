@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/06/28 02:50:59 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/26 16:37:24 jakemsr Exp $
 @bin bin/quake2
 lib/quake2/
 lib/quake2/baseq2/
@@ -15,8 +15,6 @@ lib/quake2/ref_softsdl.la
 lib/quake2/ref_softsdl.so
 lib/quake2/ref_softx.la
 lib/quake2/ref_softx.so
-lib/quake2/snd_oss.la
-lib/quake2/snd_oss.so
 lib/quake2/snd_sdl.la
 lib/quake2/snd_sdl.so
 share/quake2/

@@ -1,6 +1,24 @@
-$OpenBSD: patch-configure,v 1.1 2008/06/28 02:54:30 jakemsr Exp $
+$OpenBSD: patch-configure,v 1.2 2010/04/26 16:37:24 jakemsr Exp $
 --- configure.orig	Tue Mar 16 02:38:24 2004
-+++ configure	Fri May 30 05:15:37 2008
++++ configure	Tue Jan 20 03:37:35 2009
+@@ -22152,7 +22152,7 @@ rm -f conftest*
+ fi
+ 
+ 
+-
++HAVE_OSS="no"
+ if test "x$HAVE_OSS" = xyes; then
+   BUILD_SNDOSS_TRUE=
+   BUILD_SNDOSS_FALSE='#'
+@@ -22161,7 +22161,7 @@ else
+   BUILD_SNDOSS_FALSE=
+ fi
+ 
+-SNDDRIVERS="$SNDDRIVERS snd_oss.la"
++# SNDDRIVERS="$SNDDRIVERS snd_oss.la"
+ 
+ 
+ HAVE_AO=no
 @@ -22854,12 +22854,11 @@ fi
  
  HAVE_SOLARIS="$ac_cv_header_sys_audioio_h"

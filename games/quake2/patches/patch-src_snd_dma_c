@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_snd_dma_c,v 1.1 2010/04/26 16:37:24 jakemsr Exp $
+--- src/snd_dma.c.orig	Tue Jan 20 03:20:20 2009
++++ src/snd_dma.c	Tue Jan 20 03:21:26 2009
+@@ -164,7 +164,7 @@ void S_Init (void)
+ 		    struct stat st;
+ 
+ 		    /* load sound driver */
+-		    snddriver = Cvar_Get("snddriver", "oss", CVAR_ARCHIVE);
++		    snddriver = Cvar_Get("snddriver", "sdl", CVAR_ARCHIVE);
+ 
+ 		    Com_Printf("loading %s sound output driver", snddriver->string);
+ 		    snprintf(fn, MAX_OSPATH, PKGLIBDIR"/snd_%s.so", snddriver->string);

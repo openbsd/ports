@@ -1,0 +1,52 @@
+$OpenBSD: patch-src_snd_sdl_c,v 1.1 2010/04/26 16:37:24 jakemsr Exp $
+--- src/snd_sdl.c.orig	Mon Mar 15 04:50:39 2004
++++ src/snd_sdl.c	Wed Feb 10 12:38:45 2010
+@@ -63,12 +63,12 @@ SNDDMA_Init (struct sndinfo * s)
+ 	
+ 	if (SDL_WasInit(SDL_INIT_EVERYTHING) == 0) {
+ 		if (SDL_Init(SDL_INIT_AUDIO) < 0) {
+-			Com_Printf ("Couldn't init SDL audio: %s\n", SDL_GetError ());
++			s->Com_Printf ("Couldn't init SDL audio: %s\n", SDL_GetError ());
+ 			return 0;
+ 		}
+ 	} else if (SDL_WasInit(SDL_INIT_AUDIO) == 0) {
+ 		if (SDL_InitSubSystem(SDL_INIT_AUDIO) < 0) {
+-			Com_Printf ("Couldn't init SDL audio: %s\n", SDL_GetError ());
++			s->Com_Printf ("Couldn't init SDL audio: %s\n", SDL_GetError ());
+ 			return 0;
+ 		}
+ 	}
+@@ -97,7 +97,7 @@ SNDDMA_Init (struct sndinfo * s)
+ 				desired.format = AUDIO_S16LSB;
+ 			break;
+ 		default:
+-			Com_Printf ("Unknown number of audio bits: %d\n", desired_bits);
++			si->Com_Printf ("Unknown number of audio bits: %d\n", desired_bits);
+ 			return 0;
+ 	}
+ 	desired.channels = si->channels->value;
+@@ -108,12 +108,14 @@ SNDDMA_Init (struct sndinfo * s)
+ 		desired.samples = 1024;
+ 	else
+ 		desired.samples = 512;
++
++	desired.samples *= 2;
+ 	
+ 	desired.callback = paint_audio;
+ 	
+ 	/* Open the audio device */
+ 	if (SDL_OpenAudio (&desired, &obtained) < 0) {
+-		Com_Printf ("Couldn't open SDL audio: %s\n", SDL_GetError ());
++		si->Com_Printf ("Couldn't open SDL audio: %s\n", SDL_GetError ());
+ 		return 0;
+ 	}
+ 
+@@ -136,7 +138,7 @@ SNDDMA_Init (struct sndinfo * s)
+ 			/* Not supported -- force SDL to do our bidding */
+ 			SDL_CloseAudio ();
+ 			if (SDL_OpenAudio (&desired, NULL) < 0) {
+-				Com_Printf ("Couldn't open SDL audio: %s\n", SDL_GetError ());
++				si->Com_Printf ("Couldn't open SDL audio: %s\n", SDL_GetError ());
+ 				return 0;
+ 			}
+ 			memcpy (&obtained, &desired, sizeof (desired));
