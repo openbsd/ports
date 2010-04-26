@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_unix_usnddrv_c,v 1.1 2010/04/26 02:56:30 jakemsr Exp $
+--- src/unix/usnddrv.c.orig	Tue Jan 12 02:05:31 2010
++++ src/unix/usnddrv.c	Tue Jan 12 02:06:08 2010
+@@ -24,6 +24,9 @@ BEGIN_DIGI_DRIVER_LIST
+ #if (defined ALLEGRO_WITH_JACKDIGI) && (!defined ALLEGRO_WITH_MODULES)
+    DIGI_DRIVER_JACK
+ #endif
++#if (defined ALLEGRO_WITH_SNDIODIGI) && (!defined ALLEGRO_WITH_MODULES)
++   DIGI_DRIVER_SNDIO
++#endif
+ #if (defined ALLEGRO_WITH_SGIALDIGI) && (!defined ALLEGRO_WITH_MODULES)
+    DIGI_DRIVER_SGIAL
+ #endif

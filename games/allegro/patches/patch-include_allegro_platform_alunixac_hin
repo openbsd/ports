@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_allegro_platform_alunixac_hin,v 1.1 2010/04/26 02:56:30 jakemsr Exp $
+--- include/allegro/platform/alunixac.hin.orig	Tue Jan 12 02:01:05 2010
++++ include/allegro/platform/alunixac.hin	Tue Jan 12 02:01:34 2010
+@@ -153,6 +153,9 @@
+ /* Define if JACK DIGI driver is supported. */
+ #undef ALLEGRO_WITH_JACKDIGI
+ 
++/* Define if SNDIO DIGI driver is supported. */
++#undef ALLEGRO_WITH_SNDIODIGI
++
+ /* Define if you need to use a magic main. */
+ #undef ALLEGRO_WITH_MAGIC_MAIN
+ 

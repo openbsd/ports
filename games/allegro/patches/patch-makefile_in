@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile_in,v 1.1.1.1 2009/10/15 14:38:06 phessler Exp $
---- makefile.in.orig	Wed Sep 19 15:19:25 2007
-+++ makefile.in	Thu Oct 15 13:12:42 2009
+$OpenBSD: patch-makefile_in,v 1.2 2010/04/26 02:56:30 jakemsr Exp $
+--- makefile.in.orig	Wed Sep 19 06:19:25 2007
++++ makefile.in	Tue Jan 12 02:03:00 2010
 @@ -472,9 +472,9 @@ install-lib: lib modules
  	  fi; \
  	done
@@ -36,3 +36,11 @@ $OpenBSD: patch-makefile_in,v 1.1.1.1 2009/10/15 14:38:06 phessler Exp $
  	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/aclocal
  	@echo Installing allegro.m4 to $(DESTDIR)$(prefix)/share/aclocal
  	@$(INSTALL_DATA) misc/allegro.m4 $(DESTDIR)$(prefix)/share/aclocal
+@@ -687,6 +672,7 @@ depend:
+ 	$(SHELL) -c 'cd $(srcdir) && misc/depmod.sh esddigi "\`esd-config --libs\`" $(ALLEGRO_MODULE_ESD_FILES)' >>makefile.dep
+ 	$(SHELL) -c 'cd $(srcdir) && misc/depmod.sh artsdigi "\`artsc-config --libs\`" $(ALLEGRO_MODULE_ARTS_FILES)' >>makefile.dep
+ 	$(SHELL) -c 'cd $(srcdir) && misc/depmod.sh sgialdigi -laudio $(ALLEGRO_MODULE_SGIAL_FILES)' >>makefile.dep
++	$(SHELL) -c 'cd $(srcdir) && misc/depmod.sh sndiodigi -lsndio $(ALLEGRO_MODULE_SNDIO_FILES)' >>makefile.dep
+ 	$(SHELL) -c 'cd $(srcdir) && misc/depmod.sh jackdigi "\`pkg-config --libs jack\`" $(ALLEGRO_MODULE_JACK_FILES)' >>makefile.dep
+ 	@echo "Generating dependencies for simple programs"
+ 	$(SHELL) -c 'cd $(srcdir) && misc/deplexe.sh -- $(ALLEGRO_LIB_EXE_SOURCES) $(ALLEGRO_EXAMPLE_FILES)' >>makefile.dep

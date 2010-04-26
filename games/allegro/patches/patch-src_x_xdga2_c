@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_x_xdga2_c,v 1.1 2010/04/26 02:56:30 jakemsr Exp $
+--- src/x/xdga2.c.orig	Wed Jan 13 04:02:59 2010
++++ src/x/xdga2.c	Wed Jan 13 04:13:31 2010
+@@ -49,7 +49,7 @@ static void _xdga2_set_palette_range(AL_CONST PALETTE 
+ static void _xdga2_acquire(BITMAP *bmp);
+ static GFX_MODE_LIST *_xdga2_fetch_mode_list(void);
+ 
+-#ifdef ALLEGRO_NO_ASM
++#if 1 //def ALLEGRO_NO_ASM
+ uintptr_t _xdga2_write_line(BITMAP *bmp, int line);
+ #else
+ uintptr_t _xdga2_write_line_asm(BITMAP *bmp, int line);
+@@ -559,7 +559,7 @@ static BITMAP *_xdga2_private_gfxdrv_init_drv(GFX_DRIV
+       /* Hardware acceleration has been requested */
+       
+       /* Updates line switcher to accommodate framebuffer synchronization */
+-#ifdef ALLEGRO_NO_ASM
++#if 1 //def ALLEGRO_NO_ASM
+       bmp->write_bank = _xdga2_write_line;
+       bmp->read_bank = _xdga2_write_line;
+ #else
+@@ -816,7 +816,7 @@ static void _xdga2_acquire(BITMAP *bmp)
+ }
+ 
+ 
+-#ifdef ALLEGRO_NO_ASM
++#if 1 //def ALLEGRO_NO_ASM
+ 
+ /* _xdga2_write_line:
+  *  Returns new line and synchronizes framebuffer if needed.

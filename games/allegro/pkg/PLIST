@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/15 14:38:06 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/26 02:56:30 jakemsr Exp $
 bin/allegro-config
 @bin bin/colormap
 @bin bin/dat
@@ -101,10 +101,6 @@ include/allegro/timer.h
 include/allegro/unicode.h
 include/linalleg.h
 include/xalleg.h
-lib/allegro/
-lib/allegro/${V}/
-lib/allegro/${V}/alleg-dga2.so
-lib/allegro/${V}/modules.lst
 @lib lib/liballeg.so.${LIBalleg_VERSION}
 lib/liballeg_unsharable.a
 @man man/man3/ALLEGRO_DATE.3

@@ -1,0 +1,11 @@
+$OpenBSD: patch-docs_txt_allegro_txt,v 1.1 2010/04/26 02:56:30 jakemsr Exp $
+--- docs/txt/allegro.txt.orig	Tue Jan 12 01:50:48 2010
++++ docs/txt/allegro.txt	Tue Jan 12 01:51:56 2010
+@@ -12181,6 +12181,7 @@ Drivers DIGI_*/Unix
+       DIGI_ARTS            - aRts (Analog Real-Time Synthesizer)
+       DIGI_ALSA            - ALSA sound driver
+       DIGI_JACK            - JACK sound driver
++      DIGI_SNDIO           - sndio sound driver
+ 
+ Drivers MIDI_*/Unix
+    The Unix sound functions support the following MIDI sound cards:
