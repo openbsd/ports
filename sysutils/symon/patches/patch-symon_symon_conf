@@ -1,0 +1,12 @@
+$OpenBSD: patch-symon_symon_conf,v 1.1 2010/04/26 09:44:24 sthen Exp $
+--- symon/symon.conf.orig	Mon Apr 26 10:03:44 2010
++++ symon/symon.conf	Mon Apr 26 10:04:09 2010
+@@ -7,7 +7,7 @@ monitor { cpu(0),  mem,
+ 	  if(lo0),
+ #	  pf,
+ #         mbuf,
+-#         sensor(0),
++#         sensor(cpu0.temp0),
+ #         proc(httpd),
+ #         if(xl0), if(de0), if(wi0),
+ #	  io(wd1), io(wd2), io(wd3), io(cd0)

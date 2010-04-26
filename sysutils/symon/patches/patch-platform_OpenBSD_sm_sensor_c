@@ -1,0 +1,23 @@
+$OpenBSD: patch-platform_OpenBSD_sm_sensor_c,v 1.1 2010/04/26 09:44:24 sthen Exp $
+--- platform/OpenBSD/sm_sensor.c.orig	Mon Apr 26 09:52:18 2010
++++ platform/OpenBSD/sm_sensor.c	Mon Apr 26 09:57:30 2010
+@@ -93,10 +93,16 @@ init_sensor(struct stream *st)
+               __FILE__, __LINE__, st->arg);
+ 
+     /* convert sensor device string to an integer */
+-    for (dev = 0; dev < MAXSENSORDEVICES; dev++) {
++#define SYMON_MAXSENSORDEVICES 1024
++    for (dev = 0; dev < SYMON_MAXSENSORDEVICES; dev++) {
+         st->parg.sn.mib[2] = dev;
+-        if (sysctl(st->parg.sn.mib, 3, &sensordev, &sdlen, NULL, 0) == -1)
+-            continue;
++        if (sysctl(st->parg.sn.mib, 3, &sensordev, &sdlen, NULL, 0) == -1) {
++            if (errno == ENOENT)
++                break;
++            if (errno == ENXIO)
++                continue;
++            fatal("sensor sysctl: %s", strerror(errno));
++	}
+         if (strcmp(devname, sensordev.xname) == 0)
+             break;
+     }

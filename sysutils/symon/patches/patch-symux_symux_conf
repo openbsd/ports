@@ -1,0 +1,12 @@
+$OpenBSD: patch-symux_symux_conf,v 1.1 2010/04/26 09:44:24 sthen Exp $
+--- symux/symux.conf.orig	Mon Apr 26 10:04:16 2010
++++ symux/symux.conf	Mon Apr 26 10:04:28 2010
+@@ -10,7 +10,7 @@ source 127.0.0.1 {
+ 	  	 if(lo0),
+ #	  	 pf,
+ #         	 mbuf,
+-#         	 sensor(0),
++#         	 sensor(cpu0.temp0),
+ #         	 proc(httpd),
+ #         	 if(xl0), if(de0), if(wi0),
+ #	  	 io(wd1), io(wd2), io(wd3), io(cd0)
