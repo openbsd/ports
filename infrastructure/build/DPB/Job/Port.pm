@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.14 2010/04/15 09:59:07 espie Exp $
+# $OpenBSD: Port.pm,v 1.15 2010/04/26 08:31:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -78,7 +78,7 @@ sub run
 	my $sudo = OpenBSD::Paths->sudo;
 	my $shell = $core->{shell};
 	$self->redirect($job->{log});
-	my @args = ($t, "TRUST_PACKAGES=Yes", 
+	my @args = ($t, "TRUST_PACKAGES=Yes",
 	    "REPORT_PROBLEM='exit 1'", "BULK=No");
 	if ($job->{special}) {
 		push(@args, "WRKOBJDIR=/tmp/ports");
@@ -91,7 +91,7 @@ sub run
 		$shell->run("cd $ports && SUBDIR=".
 		    $fullpkgpath." ".join(' ', @args));
 	} else {
-		chdir($ports) or 
+		chdir($ports) or
 		    die "Wrong ports tree $ports";
 		$ENV{SUBDIR} = $fullpkgpath;
 		if ($self->{sudo}) {
@@ -118,11 +118,11 @@ sub run
 	my $job = $core->job;
 	my $dep = {};
 	my $v = $job->{v};
-	my $base = $v->pkgpath_and_flavors;
+	my $base = $v->{pkgpath};
 	for my $kind (qw(BUILD_DEPENDS LIB_DEPENDS)) {
 		if (exists $v->{info}{$kind}) {
 			for my $d (values %{$v->{info}{$kind}}) {
-				next if $d->pkgpath_and_flavors eq $v;
+				next if $d->{pkgpath} eq $v;
 				$dep->{$d->fullpkgname} = 1;
 			}
 		}
@@ -141,7 +141,7 @@ sub run
 	print join(' ', @cmd, (sort keys %$dep)), "\n";
 	my $path = $job->{builder}->{fullrepo}.'/';
 	if (defined $shell) {
-		$shell->run(join(' ', "PKG_PATH=$path", $sudo, @cmd, 
+		$shell->run(join(' ', "PKG_PATH=$path", $sudo, @cmd,
 		    (sort keys %$dep)));
 	} else {
 		$ENV{PKG_PATH} = $path;
@@ -381,7 +381,7 @@ sub watched
 	$self->watch;
 	my $progress = '';
 	if (defined $self->{sz}) {
-		if (defined $self->{expected} && 
+		if (defined $self->{expected} &&
 		    $self->{sz} < 4 * $self->{expected}) {
 			$progress = ' '.
 			    int($self->{sz}*100/$self->{expected}). '%';
