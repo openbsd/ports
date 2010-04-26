@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/07 07:23:37 eric Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/26 07:12:30 eric Exp $
 %%SHARED%%
 @bin bin/sphinx_cepview
 @bin bin/sphinx_cont_adseg
 @bin bin/sphinx_cont_fileseg
 @bin bin/sphinx_fe
 @bin bin/sphinx_jsgf2fsg
+@bin bin/sphinx_lm_convert
 @bin bin/sphinx_lm_eval
 bin/sphinx_lm_sort
 @bin bin/sphinx_pitch
@@ -31,6 +32,7 @@ include/sphinxbase/genrand.h
 include/sphinxbase/glist.h
 include/sphinxbase/hash_table.h
 include/sphinxbase/heap.h
+include/sphinxbase/huff_code.h
 include/sphinxbase/info.h
 include/sphinxbase/jsgf.h
 include/sphinxbase/libutil.h

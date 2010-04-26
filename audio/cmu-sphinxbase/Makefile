@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2009/07/16 09:05:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/26 07:12:30 eric Exp $
 
 COMMENT=	common libraries for the CMU speech recognition engines
 
-VERSION=	0.4.1
+VERSION=	0.6
 DISTNAME=	sphinxbase-${VERSION}
-PKGNAME=	cmu-sphinxbase-${VERSION}p0
+PKGNAME=	cmu-sphinxbase-${VERSION}
 CATEGORIES=	audio
-SHARED_LIBS= 	sphinxbase	0.0 \
-		sphinxad	0.0
+SHARED_LIBS= 	sphinxbase	1.0 \
+		sphinxad	1.0
 
 HOMEPAGE=	http://cmusphinx.sourceforge.net/
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cmusphinx/}
 
-WANTLIB=	blas c g2c m ossaudio pthread
+WANTLIB=	blas c g2c m pthread sndio
 
 MODULES=	converters/libiconv
 
@@ -33,6 +33,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-python
 CONFIGURE_ENV=		CPPFLAGS=-I${LOCALBASE}/include	\
 			LDFLAGS=-L${LOCALBASE}/lib 	\
-			LIBS="-lblas -lm -lg2c -lossaudio"
+			LIBS="-lblas -lm -lg2c -lsndio"
+
+pre-build:
+	@cp ${FILESDIR}/ad_sndio.c ${WRKSRC}/src/libsphinxad/
 
 .include <bsd.port.mk>
