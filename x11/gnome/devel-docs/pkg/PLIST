@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/04/20 15:26:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/04/26 15:13:55 jasper Exp $
 share/gnome/help/accessibility-devel-guide/
 share/gnome/help/accessibility-devel-guide/C/
 share/gnome/help/accessibility-devel-guide/C/accessibility-devel-guide.xml
@@ -959,6 +959,14 @@ share/gnome/help/optimization-guide/C/optimization-guide.xml
 share/gnome/help/optimization-guide/C/optimization-harmful.xml
 share/gnome/help/optimization-guide/C/optimization-intro.xml
 share/gnome/help/optimization-guide/C/optimization-massif.xml
+share/gnome/help/optimization-guide/cs/
+share/gnome/help/optimization-guide/cs/figures/
+share/gnome/help/optimization-guide/cs/figures/massif-after.png
+share/gnome/help/optimization-guide/cs/figures/massif-before.png
+share/gnome/help/optimization-guide/cs/optimization-guide.xml
+share/gnome/help/optimization-guide/cs/optimization-harmful.xml
+share/gnome/help/optimization-guide/cs/optimization-intro.xml
+share/gnome/help/optimization-guide/cs/optimization-massif.xml
 share/gnome/help/optimization-guide/de/
 share/gnome/help/optimization-guide/de/figures/
 share/gnome/help/optimization-guide/de/figures/massif-after.png
@@ -1110,6 +1118,20 @@ share/gnome/help/platform-overview/ru/ipc-network.xml
 share/gnome/help/platform-overview/ru/legal-fdl.xml
 share/gnome/help/platform-overview/ru/platform-overview.xml
 share/gnome/help/platform-overview/ru/platform.xml
+share/gnome/help/platform-overview/uk/
+share/gnome/help/platform-overview/uk/apx-modules.xml
+share/gnome/help/platform-overview/uk/bindings.xml
+share/gnome/help/platform-overview/uk/core-tech.xml
+share/gnome/help/platform-overview/uk/desktop-tech.xml
+share/gnome/help/platform-overview/uk/figures/
+share/gnome/help/platform-overview/uk/figures/graphics.png
+share/gnome/help/platform-overview/uk/figures/i18n.png
+share/gnome/help/platform-overview/uk/figures/pango.png
+share/gnome/help/platform-overview/uk/intro.xml
+share/gnome/help/platform-overview/uk/ipc-network.xml
+share/gnome/help/platform-overview/uk/legal-fdl.xml
+share/gnome/help/platform-overview/uk/platform-overview.xml
+share/gnome/help/platform-overview/uk/platform.xml
 share/omf/accessibility-devel-guide/
 share/omf/accessibility-devel-guide/accessibility-devel-guide-C.omf
 share/omf/accessibility-devel-guide/accessibility-devel-guide-de.omf
@@ -1138,6 +1160,7 @@ share/omf/integration-guide/integration-guide-sv.omf
 share/omf/integration-guide/integration-guide-zh_CN.omf
 share/omf/optimization-guide/
 share/omf/optimization-guide/optimization-guide-C.omf
+share/omf/optimization-guide/optimization-guide-cs.omf
 share/omf/optimization-guide/optimization-guide-de.omf
 share/omf/optimization-guide/optimization-guide-el.omf
 share/omf/optimization-guide/optimization-guide-es.omf
@@ -1151,3 +1174,4 @@ share/omf/platform-overview/platform-overview-fr.omf
 share/omf/platform-overview/platform-overview-it.omf
 share/omf/platform-overview/platform-overview-oc.omf
 share/omf/platform-overview/platform-overview-ru.omf
+share/omf/platform-overview/platform-overview-uk.omf
