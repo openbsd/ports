@@ -1,0 +1,33 @@
+$OpenBSD: patch-gtkbar_c,v 1.1 2010/04/27 20:05:05 jasper Exp $
+
+Fix build with gtk+ 2.20.
+
+--- gtkbar.c.orig	Wed Jun  2 04:04:09 2004
++++ gtkbar.c	Tue Apr 27 22:02:43 2010
+@@ -118,7 +118,7 @@ gtk_bar_size_request (GtkWidget *widget, GtkRequisitio
+         child = children->data;
+         children = children->next;
+ 
+-        if (GTK_WIDGET_VISIBLE (child->widget))	{
++        if (gtk_widget_get_visible (child->widget))	{
+             GtkRequisition child_requisition;
+ 
+             gtk_widget_size_request (child->widget, &child_requisition);
+@@ -168,7 +168,7 @@ gtk_bar_size_allocate (GtkWidget     *widget,
+         child = children->data;
+         children = children->next;
+ 
+-        if (GTK_WIDGET_VISIBLE (child->widget))
++        if (gtk_widget_get_visible (child->widget))
+             nvis_children += 1;
+     }
+ 
+@@ -193,7 +193,7 @@ gtk_bar_size_allocate (GtkWidget     *widget,
+         child = children->data;
+         children = children->next;
+ 
+-        if (GTK_WIDGET_VISIBLE (child->widget)) {
++        if (gtk_widget_get_visible (child->widget)) {
+             gtk_widget_size_allocate (child->widget, &child_allocation);
+             if (bar->orient == GTK_BAR_HORIZ)
+                 child_allocation.x += child_allocation.width + box->spacing;

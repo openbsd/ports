@@ -1,0 +1,15 @@
+$OpenBSD: patch-systray_eggtraymanager_c,v 1.1 2010/04/27 20:05:05 jasper Exp $
+
+Fix build with gtk+ 2.20.
+
+--- systray/eggtraymanager.c.orig	Tue Apr 27 22:02:55 2010
++++ systray/eggtraymanager.c	Tue Apr 27 22:03:55 2010
+@@ -399,7 +399,7 @@ egg_tray_manager_unmanage (EggTrayManager *manager)
+ 
+   invisible = manager->invisible;
+   g_assert (GTK_IS_INVISIBLE (invisible));
+-  g_assert (GTK_WIDGET_REALIZED (invisible));
++  g_assert (gtk_widget_get_realized (invisible));
+   g_assert (GDK_IS_WINDOW (invisible->window));
+   
+   display = GDK_WINDOW_XDISPLAY (invisible->window);

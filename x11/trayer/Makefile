@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/27 20:05:05 jasper Exp $
 
 COMMENT=		lightweight GTK2-based systray
 
 DISTNAME=		trayer-1.0
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		x11
 
 HOMEPAGE=		http://fvwm-crystal.org/
