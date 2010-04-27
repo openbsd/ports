@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2010/04/26 19:52:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2010/04/27 15:07:50 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
@@ -709,6 +709,17 @@ share/evolution/${R}/icons/hicolor/16x16/places/mail-inbox.png
 share/evolution/${R}/icons/hicolor/16x16/places/mail-outbox.png
 share/evolution/${R}/icons/hicolor/16x16/places/mail-sent.png
 share/evolution/${R}/icons/hicolor/16x16/status/
+share/evolution/${R}/icons/hicolor/16x16/status/stock_check-filled.png
+share/evolution/${R}/icons/hicolor/16x16/status/stock_score-high.png
+share/evolution/${R}/icons/hicolor/16x16/status/stock_score-higher.png
+share/evolution/${R}/icons/hicolor/16x16/status/stock_score-highest.png
+share/evolution/${R}/icons/hicolor/16x16/status/stock_score-low.png
+share/evolution/${R}/icons/hicolor/16x16/status/stock_score-lower.png
+share/evolution/${R}/icons/hicolor/16x16/status/stock_score-lowest.png
+share/evolution/${R}/icons/hicolor/16x16/status/stock_score-normal.png
+share/evolution/${R}/icons/hicolor/16x16/status/stock_signature-bad.png
+share/evolution/${R}/icons/hicolor/16x16/status/stock_signature-ok.png
+share/evolution/${R}/icons/hicolor/16x16/status/stock_signature.png
 share/evolution/${R}/icons/hicolor/16x16/status/wrapped.png
 share/evolution/${R}/icons/hicolor/22x22/
 share/evolution/${R}/icons/hicolor/22x22/actions/
@@ -737,6 +748,16 @@ share/evolution/${R}/icons/hicolor/24x24/actions/stock_new-24h-appointment.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_new-meeting.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_notes.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_people.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_shared-by-me.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_shared-to-me.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_show-all.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_task-assigned-to.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_task-assigned.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_task-recurring.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_task.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_timezone.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_todo.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_video-conferencing.png
 share/evolution/${R}/icons/hicolor/24x24/actions/view-calendar-day.png
 share/evolution/${R}/icons/hicolor/24x24/actions/view-calendar-list.png
 share/evolution/${R}/icons/hicolor/24x24/actions/view-calendar-month.png
@@ -748,6 +769,10 @@ share/evolution/${R}/icons/hicolor/24x24/places/
 share/evolution/${R}/icons/hicolor/24x24/places/mail-inbox.png
 share/evolution/${R}/icons/hicolor/24x24/places/mail-outbox.png
 share/evolution/${R}/icons/hicolor/24x24/places/mail-sent.png
+share/evolution/${R}/icons/hicolor/24x24/status/
+share/evolution/${R}/icons/hicolor/24x24/status/stock_signature-bad.png
+share/evolution/${R}/icons/hicolor/24x24/status/stock_signature-ok.png
+share/evolution/${R}/icons/hicolor/24x24/status/stock_signature.png
 share/evolution/${R}/icons/hicolor/32x32/
 share/evolution/${R}/icons/hicolor/32x32/actions/
 share/evolution/${R}/icons/hicolor/32x32/actions/view-calendar-day.png
@@ -761,6 +786,16 @@ share/evolution/${R}/icons/hicolor/32x32/status/
 share/evolution/${R}/icons/hicolor/32x32/status/offline.png
 share/evolution/${R}/icons/hicolor/32x32/status/online.png
 share/evolution/${R}/icons/hicolor/48x48/
+share/evolution/${R}/icons/hicolor/48x48/actions/
+share/evolution/${R}/icons/hicolor/48x48/actions/stock_alarm.png
+share/evolution/${R}/icons/hicolor/48x48/actions/stock_mail-flag-for-followup-done.png
+share/evolution/${R}/icons/hicolor/48x48/actions/stock_mail-flag-for-followup.png
+share/evolution/${R}/icons/hicolor/48x48/actions/stock_new-24h-appointment.png
+share/evolution/${R}/icons/hicolor/48x48/actions/stock_new-meeting.png
+share/evolution/${R}/icons/hicolor/48x48/actions/stock_notes.png
+share/evolution/${R}/icons/hicolor/48x48/actions/stock_people.png
+share/evolution/${R}/icons/hicolor/48x48/actions/stock_timezone.png
+share/evolution/${R}/icons/hicolor/48x48/actions/stock_todo.png
 share/evolution/${R}/icons/hicolor/48x48/apps/
 share/evolution/${R}/icons/hicolor/48x48/apps/contact-editor.png
 share/evolution/${R}/icons/hicolor/48x48/categories/
@@ -771,6 +806,10 @@ share/evolution/${R}/icons/hicolor/48x48/categories/preferences-composer.png
 share/evolution/${R}/icons/hicolor/48x48/categories/preferences-mail-accounts.png
 share/evolution/${R}/icons/hicolor/48x48/categories/preferences-mail.png
 share/evolution/${R}/icons/hicolor/48x48/categories/preferences-system-network-proxy.png
+share/evolution/${R}/icons/hicolor/48x48/status/
+share/evolution/${R}/icons/hicolor/48x48/status/stock_signature-bad.png
+share/evolution/${R}/icons/hicolor/48x48/status/stock_signature-ok.png
+share/evolution/${R}/icons/hicolor/48x48/status/stock_signature.png
 share/evolution/${R}/icons/hicolor/scalable/
 share/evolution/${R}/icons/hicolor/scalable/actions/
 share/evolution/${R}/icons/hicolor/scalable/actions/view-calendar-day.svg
