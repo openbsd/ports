@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/26 18:00:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/27 08:21:35 ajacoutot Exp $
 @bin bin/exchange-connector-setup-${EVO_VERSION}
-lib/evolution-data-server-1.2/camel-providers/libcamelexchange.la
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelexchange.la
 lib/evolution-data-server-1.2/camel-providers/libcamelexchange.so
 lib/evolution-data-server-1.2/camel-providers/libcamelexchange.urls
-lib/evolution-data-server-1.2/extensions/libebookbackendexchange.la
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendexchange.la
 lib/evolution-data-server-1.2/extensions/libebookbackendexchange.so
-lib/evolution-data-server-1.2/extensions/libecalbackendexchange.la
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendexchange.la
 lib/evolution-data-server-1.2/extensions/libecalbackendexchange.so
-lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-exchange-operations.la
+@comment lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-exchange-operations.la
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-exchange-operations.so
 lib/evolution/${EVO_VERSION}/plugins/org-gnome-exchange-operations.eplug
 share/evolution-exchange/
