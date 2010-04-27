@@ -1,0 +1,11 @@
+$OpenBSD: patch-glchess_src_lib_defaults_py_in,v 1.1 2010/04/27 12:32:01 ajacoutot Exp $
+--- glchess/src/lib/defaults.py.in.orig	Tue Apr 27 08:47:26 2010
++++ glchess/src/lib/defaults.py.in	Tue Apr 27 08:48:18 2010
+@@ -43,7 +43,6 @@ else:
+     GGZ_CONFIG_FILE  = os.path.join(GGZ_DIR, 'ggz-gtk.rc')
+ 
+ DOMAIN = 'gnome-games'
+-locale.bind_textdomain_codeset(DOMAIN, "UTF-8") # See Bug 608425
+ gettext.bindtextdomain(DOMAIN, LOCALEDIR)
+ gettext.textdomain(DOMAIN)
+ from gettext import gettext as _

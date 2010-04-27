@@ -1,0 +1,11 @@
+$OpenBSD: patch-gnome-sudoku_src_lib_defaults_py_in,v 1.1 2010/04/27 12:32:01 ajacoutot Exp $
+--- gnome-sudoku/src/lib/defaults.py.in.orig	Tue Apr 27 08:48:45 2010
++++ gnome-sudoku/src/lib/defaults.py.in	Tue Apr 27 08:48:56 2010
+@@ -30,7 +30,6 @@ else:
+     PUZZLE_DIR   = BASE_DIR
+ 
+ DOMAIN = 'gnome-games'
+-locale.bind_textdomain_codeset(DOMAIN, "UTF-8") # See Bug 608425
+ gettext.bindtextdomain(DOMAIN, LOCALEDIR)
+ gettext.textdomain(DOMAIN)
+ from gettext import gettext as _
