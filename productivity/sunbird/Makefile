@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/03 09:43:20 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/27 21:00:50 landry Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,7 @@ COMMENT-seamonkey =	Mozilla Seamonkey calendar extension
 
 VER =			1.0b1
 DISTNAME =		lightning-sunbird-1.0b1.source
-PKGNAME-main =		sunbird-${VER}
+PKGNAME-main =		sunbird-${VER}p0
 PKGNAME-lightning =	lightning-${VER}
 PKGNAME-seamonkey =	lightning-seamonkey-${VER}
 
@@ -138,6 +138,7 @@ pre-configure:
 	cd ${WRKSRC}/mozilla/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/mozilla/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	${SUBST_CMD} ${WRKSRC}/mozilla/js/src/xpconnect/shell/Makefile.in \
+		${WRKSRC}/mozilla/xpcom/io/nsAppFileLocationProvider.cpp \
 		${WRKSRC}/mozilla/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
 		${WRKSRC}/mozilla/build/unix/mozilla.in \
 		${WRKSRC}/mozilla/toolkit/xre/nsXREDirProvider.cpp
