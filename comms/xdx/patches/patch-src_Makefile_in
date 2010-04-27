@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2010/04/27 20:48:54 ajacoutot Exp $
+
+Fix build with newer gtk+2 (2.20.0).
+
+--- src/Makefile.in.orig	Tue Apr 27 22:45:34 2010
++++ src/Makefile.in	Tue Apr 27 22:45:40 2010
+@@ -184,8 +184,7 @@ INCLUDES = \
+ 	-DPACKAGE_SOURCE_DIR=\"$(srcdir)\" \
+ 	-DG_DISABLE_DEPRECATED \
+ 	-DGDK_DISABLE_DEPRECATED \
+-	-DGDK_PIXBUF_DISABLE_DEPRECATED \
+-	-DGTK_DISABLE_DEPRECATED
++	-DGDK_PIXBUF_DISABLE_DEPRECATED
+ 
+ xdx_SOURCES = \
+ 	gui.h \
