@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_debug-manager_anjuta-debug-manager_schemas,v 1.1 2010/04/27 18:09:35 ajacoutot Exp $
+--- plugins/debug-manager/anjuta-debug-manager.schemas.orig	Tue Apr 27 19:46:27 2010
++++ plugins/debug-manager/anjuta-debug-manager.schemas	Tue Apr 27 19:46:36 2010
+@@ -9,7 +9,6 @@
+       <owner>anjuta</owner>
+       <type>bool</type>
+       <default>false</default>
+-      <gettext_domain>anjuta</gettext_domain>
+       <locale name="C">
+          <short>Do not display warning if not using a Debug configuration</short>
+       </locale>
