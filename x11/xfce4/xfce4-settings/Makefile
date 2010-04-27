@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/22 16:15:27 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2010/04/27 16:20:16 landry Exp $
 
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
 XFCE_VERSION=	4.6.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -18,7 +18,7 @@ LIB_DEPENDS=	xfce4kbd-private,xfcegui4::x11/xfce4/libxfcegui4 \
 		wnck-1::devel/libwnck \
 		notify::devel/libnotify \
 		exo-0.3::x11/xfce4/exo \
-		xklavier::x11/gnome/libxklavier \
+		xklavier:libxklavier->=5.*:x11/gnome/libxklavier \
 		xfconf-0::x11/xfce4/xfconf
 
 WANTLIB =	X11 Xcursor Xi Xrandr c cairo dbus-glib-1 gdk-x11-2.0 gdk_pixbuf-2.0 \
