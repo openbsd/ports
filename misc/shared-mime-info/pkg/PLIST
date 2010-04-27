@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2009/12/21 22:15:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2010/04/27 11:08:09 ajacoutot Exp $
 share/mime/
 share/mime/packages/
 share/mime/packages/freedesktop.org.xml
@@ -7,6 +7,9 @@ share/mime/packages/freedesktop.org.xml
 lib/pkgconfig/
 lib/pkgconfig/shared-mime-info.pc
 @man man/man1/update-mime-database.1
+share/locale/ara/
+share/locale/ara/LC_MESSAGES/
+share/locale/ara/LC_MESSAGES/shared-mime-info.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/shared-mime-info.mo
