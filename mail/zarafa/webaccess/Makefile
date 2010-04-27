@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/04/22 10:06:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/04/27 07:26:34 ajacoutot Exp $
 
 COMMENT=	zarafa webaccess frontend
 
 V=		6.30.13
 DISTNAME=	zarafa-webaccess-ajax-${V}
-PKGNAME=	zarafa-webaccess-${V}
+PKGNAME=	zarafa-webaccess-${V}p0
 
 CATEGORIES=	mail www productivity
 
@@ -32,5 +32,6 @@ do-install:
 		${INSTDIR}/client/layout/img/_login.jpg
 	${INSTALL_DATA} /dev/null ${INSTDIR}/debug.txt 
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
+	find ${PREFIX} -name \*.beforesubst -exec rm {} \;
 
 .include <bsd.port.mk>

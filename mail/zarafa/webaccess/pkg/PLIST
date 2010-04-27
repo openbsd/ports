@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/04/22 10:06:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/04/27 07:26:34 ajacoutot Exp $
 zarafa-webaccess/
 @owner www
 @sample zarafa-webaccess/tmp/
@@ -908,7 +908,6 @@ zarafa-webaccess/client/widgets/tree.js
 zarafa-webaccess/client/widgets/widget.js
 zarafa-webaccess/config.php.dist
 @sample zarafa-webaccess/config.php
-zarafa-webaccess/config.php.dist.beforesubst
 zarafa-webaccess/debug.php.disabled
 @mode 644
 @owner www
