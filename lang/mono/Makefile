@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2010/04/16 11:59:45 robert Exp $
+# $OpenBSD: Makefile,v 1.41 2010/04/27 12:39:49 robert Exp $
 
 # sync with net/avahi,-mono
 ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
 
 COMMENT=	cross platform, open source .NET developement framework
 
-DISTNAME=	mono-2.6.3
-PKGNAME=	${DISTNAME}p18
+DISTNAME=	mono-2.6.4
 
 CATEGORIES=	lang devel
 
@@ -53,11 +52,8 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LC_ALL=C
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--with-gc=boehm \
 		--with-glib=system \
-		--with-tls=pthread \
-		--with-jit=yes \
-		--with-interp=no \
-		--with-libgdiplus=installed \
 		--enable-quiet-build=no \
 		--disable-shared-handles
 
@@ -84,6 +80,11 @@ BASH_SCRIPTS=	mcs/class/Mono.WebBrowser/build-csproj2k5 \
 		mono/arch/arm/dpiops.sh
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
+
+# XXX gmake randomy breaks here
+pre-build:
+	@cd ${WRKSRC}/mono && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
+                ${MAKE} ${MAKE_FLAGS}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/runtime/mono-wrapper.in \
