@@ -1,0 +1,12 @@
+$OpenBSD: patch-frontend_plugin_exercises_gtkmm_src_ExercisesPanel_cc,v 1.1 2010/04/27 20:20:55 ajacoutot Exp $
+--- frontend/plugin/exercises/gtkmm/src/ExercisesPanel.cc.orig	Fri Sep 14 20:50:32 2007
++++ frontend/plugin/exercises/gtkmm/src/ExercisesPanel.cc	Tue Apr 27 22:13:03 2010
+@@ -206,7 +206,7 @@ text_buffer_set_markup (GtkTextBuffer *buffer,
+ 
+ int ExercisesPanel::exercises_pointer = 0;
+ 
+-ExercisesPanel::ExercisesPanel(Gtk::HButtonBox *dialog_action_area)
++ExercisesPanel::ExercisesPanel(Gtk::ButtonBox *dialog_action_area)
+   : Gtk::HBox(false, 6),
+          exercises(Exercise::get_exercises())
+ {

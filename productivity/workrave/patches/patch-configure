@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2007/11/12 22:05:41 jasper Exp $
+$OpenBSD: patch-configure,v 1.3 2010/04/27 20:20:55 ajacoutot Exp $
 --- configure.orig	Fri Sep 14 22:25:06 2007
-+++ configure	Thu Nov  8 20:48:27 2007
++++ configure	Tue Apr 27 20:22:39 2010
 @@ -2953,9 +2953,9 @@ if test "x$config_debug" = "xyes"; then
     CXXFLAGS="${CXXFLAGS} -g -Wall -DGLIBCXX_FORCE_NEW -DGLIBCPP_FORCE_NEW"
     LDFLAGS="${LDFLAGS} -g"
@@ -14,3 +14,78 @@ $OpenBSD: patch-configure,v 1.2 2007/11/12 22:05:41 jasper Exp $
  fi
  
  { echo "$as_me:$LINENO: checking whether to enable maintainer-specific portions of Makefiles" >&5
+@@ -31596,13 +31596,13 @@ fi
+   fi
+ 
+   if test -z "$LIBPTHREAD"; then
+-    { echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++    { echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -31658,7 +31658,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
+ if test $ac_cv_lib_pthread_pthread_create = yes; then
+-  LIBPTHREAD="-lpthread"
++  LIBPTHREAD="-pthread"
+ fi
+ 
+   fi
+@@ -41289,13 +41289,13 @@ fi
+ rm -f conftest*
+ 
+         if test "x$PTHREAD_LIBS" = xerror; then
+-        	{ echo "$as_me:$LINENO: checking for pthread_attr_init in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_attr_init in -lpthread... $ECHO_C" >&6; }
++        	{ echo "$as_me:$LINENO: checking for pthread_attr_init in -pthread" >&5
++echo $ECHO_N "checking for pthread_attr_init in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_attr_init+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -41351,18 +41351,18 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_attr_init" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_attr_init" >&6; }
+ if test $ac_cv_lib_pthread_pthread_attr_init = yes; then
+-  PTHREAD_LIBS="-lpthread"
++  PTHREAD_LIBS="-pthread"
+ fi
+ 
+         fi
+         if test "x$PTHREAD_LIBS" = xerror; then
+-                { echo "$as_me:$LINENO: checking for pthread_attr_init in -lpthreads" >&5
+-echo $ECHO_N "checking for pthread_attr_init in -lpthreads... $ECHO_C" >&6; }
++                { echo "$as_me:$LINENO: checking for pthread_attr_init in -pthreads" >&5
++echo $ECHO_N "checking for pthread_attr_init in -pthreads... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthreads_pthread_attr_init+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthreads  $LIBS"
++LIBS="-pthreads  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -41418,7 +41418,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthreads_pthread_attr_init" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthreads_pthread_attr_init" >&6; }
+ if test $ac_cv_lib_pthreads_pthread_attr_init = yes; then
+-  PTHREAD_LIBS="-lpthreads"
++  PTHREAD_LIBS="-pthreads"
+ fi
+ 
+         fi

@@ -1,0 +1,12 @@
+$OpenBSD: patch-frontend_plugin_exercises_gtkmm_src_ExercisesPanel_hh,v 1.1 2010/04/27 20:20:55 ajacoutot Exp $
+--- frontend/plugin/exercises/gtkmm/src/ExercisesPanel.hh.orig	Fri Sep 14 20:50:32 2007
++++ frontend/plugin/exercises/gtkmm/src/ExercisesPanel.hh	Tue Apr 27 22:13:00 2010
+@@ -42,7 +42,7 @@
+ class ExercisesPanel : public Gtk::HBox
+ {
+ public:
+-  ExercisesPanel(Gtk::HButtonBox *dialog_action_area);
++  ExercisesPanel(Gtk::ButtonBox *dialog_action_area);
+   ~ExercisesPanel();
+ 
+   void set_exercise_count(int num);

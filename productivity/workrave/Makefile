@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/10/16 00:58:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/04/27 20:20:55 ajacoutot Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
 DISTNAME=		workrave-1.8.5
-PKGNAME=		${DISTNAME}p8
+PKGNAME=		${DISTNAME}p9
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.workrave.org/welcome/
@@ -27,7 +27,8 @@ WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
 		gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pangomm-1.4 pcre pixman-1 png popt pthread sigc-2.0 ssl \
 		stdc++ util xml2 z avahi-client avahi-common avahi-glib \
-		pthread-stubs xcb
+		pthread-stubs xcb eggdbus-1 gcrypt gpg-error xcb-render \
+		xcb-render-util
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
 
