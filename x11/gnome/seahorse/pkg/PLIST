@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/04/23 11:40:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/04/27 06:51:54 ajacoutot Exp $
 %%SHARED%%
 @bin bin/seahorse
 @bin bin/seahorse-daemon
@@ -194,6 +194,7 @@ share/locale/he/LC_MESSAGES/seahorse.mo
 share/locale/hi/LC_MESSAGES/seahorse.mo
 share/locale/hr/LC_MESSAGES/seahorse.mo
 share/locale/hu/LC_MESSAGES/seahorse.mo
+share/locale/id/LC_MESSAGES/seahorse.mo
 share/locale/it/LC_MESSAGES/seahorse.mo
 share/locale/ja/LC_MESSAGES/seahorse.mo
 share/locale/kn/LC_MESSAGES/seahorse.mo
