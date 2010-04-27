@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/24 13:54:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/04/27 13:00:25 jasper Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -10,7 +10,7 @@ COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
 V =			0.132
 DISTNAME =		sdlmame${V:S/.//}
-PKGNAME-main =		sdlmame-${V}p1
+PKGNAME-main =		sdlmame-${V}p2
 PKGNAME-tools =		sdlmame-tools-${V}p1
 
 CATEGORIES =		emulators games
@@ -20,6 +20,7 @@ HOMEPAGE =		http://rbelmont.mameworld.info/?page_id=163
 MAINTAINER =		Pierre Riteau <pierre.riteau@gmail.com>
 
 # MAME Distribution License, see http://mamedev.org/license.html
+# history.dat : Creative Commons Attribution 3.0
 PERMIT_PACKAGE_CDROM =		may not sell
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	may not sell
@@ -34,10 +35,15 @@ WANTLIB +=	pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb z
 MASTER_SITES =		http://rbelmont.mameworld.info/
 EXTRACT_SUFX =		.zip
 
+MASTER_SITES0 = 	http://www.arcade-history.com/dats/
+DISTFILES+=		${DISTNAME}${EXTRACT_SUFX} \
+			mamehistory137.zip:0
+
 MODULES =		gcc4
 MODGCC4_ARCHES =	*
 MODGCC4_LANGS =		c
 
+BUILD_DEPENDS = 	::archivers/unzip
 LIB_DEPENDS =		SDL::devel/sdl gconf-2.>=5::devel/gconf2 \
 			gdk-x11-2.0.>=0.11,gdk_pixbuf-2.0.>=0.11,gtk-x11-2.0.>=0.11::x11/gtk+2
 RUN_DEPENDS-main =	:${PKGNAME-tools}:emulators/sdlmame,-tools
@@ -81,5 +87,6 @@ do-install:
 		${PREFIX}/share/examples/sdlmame/mame.ini
 	chown ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/share/examples/sdlmame/mame.ini
+	${INSTALL_DATA} ${WRKDIR}/history.dat ${PREFIX}/share/sdlmame
 
 .include <bsd.port.mk>
