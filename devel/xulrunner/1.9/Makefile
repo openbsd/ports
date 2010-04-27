@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/04/24 16:08:01 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/27 16:08:21 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
 VERSION=		1.9.1.7
-#PATCHLEVEL=		p0
+PATCHLEVEL=		p0
 DIRECTORY=		xulrunner1.9
 DISTNAME=		mozilla-1.9.1
 DISTFILES=		xulrunner-${VERSION}.source.tar.bz2

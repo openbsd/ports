@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-devel,v 1.2 2010/04/24 16:08:01 landry Exp $
+@comment $OpenBSD: PLIST-devel,v 1.3 2010/04/27 16:08:21 landry Exp $
 @option no-default-conflict
 @conflict xulrunner-devel->=1.9,<1.9.1
 lib/pkgconfig/libxul-embedding.pc
 lib/pkgconfig/libxul.pc
 lib/pkgconfig/xulrunner-gtkmozembed-embedding.pc
-lib/pkgconfig/xulrunner-gtkmozembed.pc
-lib/pkgconfig/xulrunner-js.pc
-lib/pkgconfig/xulrunner-plugin.pc
+@comment lib/pkgconfig/xulrunner-gtkmozembed.pc
+@comment lib/pkgconfig/xulrunner-js.pc
+@comment lib/pkgconfig/xulrunner-plugin.pc
 xulrunner1.9/idl/
 xulrunner1.9/idl/XPCIDispatch.idl
 xulrunner1.9/idl/domstubs.idl
