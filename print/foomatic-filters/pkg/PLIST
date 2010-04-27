@@ -1,12 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/03/21 14:39:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/04/27 14:01:43 ajacoutot Exp $
 @conflict hpijs-<1.5p1
 @conflict cups-<=1.2.7p13
 @bin bin/foomatic-rip
-@comment lib/ppr/
-@comment lib/ppr/interfaces/
-@comment lib/ppr/interfaces/foomatic-rip
-@comment lib/ppr/lib/
-@comment lib/ppr/lib/foomatic-rip
 libexec/cups/backend/
 libexec/cups/backend/beh
 libexec/cups/filter/foomatic-rip

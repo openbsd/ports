@@ -1,0 +1,14 @@
+$OpenBSD: patch-util_h,v 1.1 2010/04/27 14:01:43 ajacoutot Exp $
+--- util.h.orig	Mon Apr 19 10:29:24 2010
++++ util.h	Mon Apr 19 10:29:52 2010
+@@ -63,8 +63,10 @@ int omit_whitespace(int c);
+ /* Copy at most size-1 characters from src to dest
+    dest will always be \0 terminated (unless size == 0)
+    returns strlen(src) */
++#ifndef __OpenBSD__
+ size_t strlcpy(char *dest, const char *src, size_t size);
+ size_t strlcat(char *dest, const char *src, size_t size);
++#endif
+ 
+ /* Replace all occurences of each of the characters in 'chars' by 'repl' */
+ void strrepl(char *str, const char *chars, char repl);

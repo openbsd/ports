@@ -1,0 +1,19 @@
+$OpenBSD: patch-util_c,v 1.1 2010/04/27 14:01:43 ajacoutot Exp $
+--- util.c.orig	Mon Apr 19 10:28:13 2010
++++ util.c	Mon Apr 19 10:28:55 2010
+@@ -138,6 +138,7 @@ int omit_shellescapes(int c) { return strchr(shellesca
+ int omit_specialchars(int c) { return omit_unprintables(c) || omit_shellescapes(c); }
+ int omit_whitespace(int c) { return c == ' ' || c == '\t'; }
+ 
++#ifndef __OpenBSD__
+ size_t strlcpy(char *dest, const char *src, size_t size)
+ {
+     char *pdest = dest;
+@@ -177,6 +178,7 @@ size_t strlcat(char *dest, const char *src, size_t siz
+ 
+     return len + (psrc - src);
+ }
++#endif /* ! __OpenBSD__ */
+ 
+ void strrepl(char *str, const char *chars, char repl)
+ {
