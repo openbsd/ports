@@ -1,0 +1,15 @@
+$OpenBSD: patch-gtk_window-decorator_gtk-window-decorator_c,v 1.1 2010/04/27 21:01:51 jasper Exp $
+
+Fix build with gtk+ 2.20.
+
+--- gtk/window-decorator/gtk-window-decorator.c.orig	Tue Apr 27 22:54:04 2010
++++ gtk/window-decorator/gtk-window-decorator.c	Tue Apr 27 22:54:52 2010
+@@ -4233,7 +4233,7 @@ show_tooltip (const char *text)
+ static void
+ hide_tooltip (void)
+ {
+-    if (GTK_WIDGET_VISIBLE (tip_window))
++    if (gtk_widget_get_visible (tip_window))
+ 	g_get_current_time (&tooltip_last_popdown);
+ 
+     gtk_widget_hide (tip_window);

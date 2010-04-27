@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/09/28 15:14:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/27 21:01:51 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.2
 DISTNAME =	compiz-${V}
-PKGNAME =	${DISTNAME}p2
+PKGNAME =	${DISTNAME}p3
 
 SHARED_LIBS =	decoration	0.0
 
@@ -20,14 +20,14 @@ PERMIT_PACKAGE_FTP =   Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = Yes
 
-WANTLIB =	GL GLU ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor \
-		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
-		atk-1.0 c cairo dbus-1 dbus-glib-1 execinfo expat fontconfig \
-		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 pthread pthread-stubs xcb xcb-atom xcb-aux \
-		xcb-event z
+WANTLIB += GL GLU ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xxf86vm atk-1.0 c cairo dbus-1 dbus-glib-1 drm execinfo
+WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 pthread pthread-stubs xcb xcb-atom xcb-aux
+WANTLIB += xcb-event xcb-render xcb-render-util z
 
 MASTER_SITES =	http://releases.compiz-fusion.org/${V}/
 
