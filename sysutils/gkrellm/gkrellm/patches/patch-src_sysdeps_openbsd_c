@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.15 2010/01/18 14:27:16 sthen Exp $
---- src/sysdeps/openbsd.c.orig	Sat Oct  4 00:46:45 2008
-+++ src/sysdeps/openbsd.c	Mon Jan 18 08:58:33 2010
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.16 2010/04/27 21:53:56 sthen Exp $
+--- src/sysdeps/openbsd.c.orig	Sat Oct  4 01:46:45 2008
++++ src/sysdeps/openbsd.c	Tue Apr 27 22:20:22 2010
 @@ -62,85 +62,96 @@ gkrellm_sys_main_cleanup(void)
  /* ===================================================================== */
  /* CPU monitor interface */
@@ -205,7 +205,7 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.15 2010/01/18 14:27:16 sthen Exp $
  
     /* For page in/out operations, uvmexp struct doesn't seem to be reliable */
  
-@@ -271,41 +271,122 @@ gkrellm_sys_mem_init(void)
+@@ -271,41 +271,125 @@ gkrellm_sys_mem_init(void)
  
  
  /* ===================================================================== */
@@ -316,12 +316,15 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.15 2010/01/18 14:27:16 sthen Exp $
 +	int dev;
 +	gboolean found = FALSE;
 +
-+	for (dev = 0; MAXSENSORDEVICES > dev; dev++) {
++#define GKRELLM_MAXSENSORDEVICES 1024
++	for (dev = 0; GKRELLM_MAXSENSORDEVICES > dev; dev++) {
 +		mib[2] = dev;
 +		if (sysctl(mib, 3, &sensdev, &len, NULL, 0) == -1) {
-+			if (ENOENT != errno)
-+				return FALSE;
-+			continue;
++			if (errno == ENXIO)
++				continue;
++			if (errno == ENOENT)
++				break;
++			return FALSE;
 +		}
 +		if (add_sensdev(dev, &sensdev))
 +			found = TRUE;
@@ -340,7 +343,7 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.15 2010/01/18 14:27:16 sthen Exp $
  
  #include <machine/apmvar.h>
  #define	APMDEV		"/dev/apm"
-@@ -357,24 +438,10 @@ gkrellm_sys_battery_init()
+@@ -357,24 +441,10 @@ gkrellm_sys_battery_init()
  /* ===================================================================== */
  /* Disk monitor interface */
  
@@ -367,7 +370,7 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.15 2010/01/18 14:27:16 sthen Exp $
  gchar *
  gkrellm_sys_disk_name_from_device(gint device_number, gint unit_number,
  			gint *order)
-@@ -389,68 +456,50 @@ gkrellm_sys_disk_order_from_name(gchar *name)
+@@ -389,68 +459,50 @@ gkrellm_sys_disk_order_from_name(gchar *name)
  	}
  
  

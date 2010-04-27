@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.22 2009/08/10 06:34:29 kili Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2010/04/27 21:53:56 sthen Exp $
 
 SHARED_ONLY=	Yes
-
-MAINTAINER?=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 CATEGORIES+=	sysutils/gkrellm
 
@@ -17,7 +15,7 @@ WANTLIB?=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread-stubs xcb z
+		pixman-1 png pthread-stubs xcb xcb-render xcb-render-util z
 
 .if defined(EXTRA_WANTLIB)
 WANTLIB+=	${EXTRA_WANTLIB}
