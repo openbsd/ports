@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/24 22:59:37 ajacoutot Exp $
-
-# XXX: Without category, history or nplayer files for now.
+# $OpenBSD: Makefile,v 1.15 2010/04/27 13:00:51 jasper Exp $
 
 COMMENT=	MAME front-end for GNOME
 
@@ -34,14 +32,14 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		::x11/gnome/icon-theme
-RUN_DEPENDS=	::emulators/sdlmame,-main
+RUN_DEPENDS=	:sdlmame->=0.132p2:emulators/sdlmame,-main
 LIB_DEPENDS=	sqlite3.>=13::databases/sqlite3 \
 		wnck-1.>=24::devel/libwnck
 
-USE_X11=	Yes
-DESKTOP_FILES=	Yes
-MODGNOME_HELP_FILES=Yes
-MODGCONF2_SCHEMAS_DIR= gnome-video-arcade
+USE_X11=		Yes
+DESKTOP_FILES=		Yes
+MODGNOME_HELP_FILES=	Yes
+MODGCONF2_SCHEMAS_DIR=  gnome-video-arcade
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -49,6 +47,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-scrollkeeper \
 		--disable-gtk-doc \
 		--with-gnome \
-		--with-wnck
+		--with-wnck \
+		--with-history-file="${LOCALBASE}/share/sdlmame/history.dat"
 
 .include <bsd.port.mk>
