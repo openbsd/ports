@@ -1,0 +1,24 @@
+$OpenBSD: patch-sgtk_swidgets_sactiveconsole_c,v 1.1 2010/04/27 20:50:21 jasper Exp $
+
+Fix build with gtk+ 2.20.
+
+--- sgtk/swidgets/sactiveconsole.c.orig	Tue Apr 27 22:43:32 2010
++++ sgtk/swidgets/sactiveconsole.c	Tue Apr 27 22:43:46 2010
+@@ -408,7 +408,7 @@ static void _sc_active_console_paint_region(ScConsole 
+ 
+ static void _sc_active_console_enter_spot(ScActiveConsole *cons, gboolean forceenter) {
+ 
+-   if(!forceenter && !GTK_WIDGET_HAS_FOCUS(GTK_WIDGET(cons))) {
++   if(!forceenter && !gtk_widget_has_focus(GTK_WIDGET(cons))) {
+       return;
+    }
+    if(cons->current != NULL) {
+@@ -421,7 +421,7 @@ static void _sc_active_console_enter_spot(ScActiveCons
+ 
+ static void _sc_active_console_leave_spot(ScActiveConsole *cons, gboolean forceleave) {
+ 
+-   if(!forceleave && !GTK_WIDGET_HAS_FOCUS(GTK_WIDGET(cons))) {
++   if(!forceleave && !gtk_widget_has_focus(GTK_WIDGET(cons))) {
+       return;
+    }
+    if(cons->current != NULL) {

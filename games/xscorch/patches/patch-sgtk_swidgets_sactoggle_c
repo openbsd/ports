@@ -1,0 +1,21 @@
+$OpenBSD: patch-sgtk_swidgets_sactoggle_c,v 1.1 2010/04/27 20:50:21 jasper Exp $
+
+Fix build with gtk+ 2.20.
+
+--- sgtk/swidgets/sactoggle.c.orig	Tue Apr 27 22:42:29 2010
++++ sgtk/swidgets/sactoggle.c	Tue Apr 27 22:45:20 2010
+@@ -69,12 +69,12 @@ static void _sc_ac_toggle_draw(ScGadget *gadget) {
+    sc_gadget_get_extents(gadget, &bounds);
+ 
+    /* Find out if this gadget has the focus right now. */
+-   focus = (GTK_WIDGET_HAS_FOCUS(gadget->console) &&
++   focus = (gtk_widget_has_focus(gadget->console) &&
+             (gadget->console->current->data == gadget->spot))
+            ? TRUE : FALSE;
+ 
+    /* Find out if the gadget will be sensitive. */
+-   sensitive = GTK_WIDGET_IS_SENSITIVE(GTK_WIDGET(gadget->console));
++   sensitive = gtk_widget_is_sensitive(GTK_WIDGET(gadget->console));
+ 
+    /* Setup the GC colors for the toggle (drawing outer). */
+    if(!sensitive)

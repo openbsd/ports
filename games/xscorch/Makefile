@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/03/21 09:24:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/27 20:50:21 jasper Exp $
 
 COMMENT=		Scorched Earth-clone
 
 DISTNAME=		xscorch-0.2.1-pre2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		games
 
 HOMEPAGE=		http://www.xscorch.org/

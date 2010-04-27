@@ -1,0 +1,15 @@
+$OpenBSD: patch-sgtk_swidgets_sdrawbuf_c,v 1.1 2010/04/27 20:50:21 jasper Exp $
+
+Fix build with gtk+ 2.20.
+
+--- sgtk/swidgets/sdrawbuf.c.orig	Tue Apr 27 22:42:37 2010
++++ sgtk/swidgets/sdrawbuf.c	Tue Apr 27 22:44:43 2010
+@@ -116,7 +116,7 @@ static gint _sc_drawbuf_configure(GtkWidget *widget, G
+ static gint _sc_drawbuf_expose(GtkWidget *widget, GdkEventExpose *event) {
+ 
+    ScDrawbuf *draw = SC_DRAWBUF(widget);
+-   GdkGC *fg_gc = widget->style->fg_gc[GTK_WIDGET_STATE((GtkWidget *)draw)];
++   GdkGC *fg_gc = widget->style->fg_gc[gtk_widget_get_state((GtkWidget *)draw)];
+ 
+    /* Make sure buffer is allocated */
+    g_return_val_if_fail(sc_drawbuf_get_buffer(draw) != NULL, TRUE);
