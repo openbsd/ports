@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/01/11 12:05:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/04/27 21:50:45 jasper Exp $
 @bin bin/gamgi
 share/doc/gamgi/
 share/doc/gamgi/LICENSE
@@ -137,19 +137,14 @@ share/doc/gamgi/icon/icon.html
 share/doc/gamgi/icon/icon.xml
 share/doc/gamgi/icon/icon_screen.xml
 share/doc/gamgi/images/
-share/doc/gamgi/images/above0.png
-share/doc/gamgi/images/above1.png
-share/doc/gamgi/images/above2.png
-share/doc/gamgi/images/above3.png
-share/doc/gamgi/images/below0.png
-share/doc/gamgi/images/below1.png
-share/doc/gamgi/images/below2.png
-share/doc/gamgi/images/below3.png
+share/doc/gamgi/images/front02.png
+share/doc/gamgi/images/front12.png
+share/doc/gamgi/images/front20.png
+share/doc/gamgi/images/front22.png
 share/doc/gamgi/images/gamgi.png
 share/doc/gamgi/images/header0.png
 share/doc/gamgi/images/patents.png
 share/doc/gamgi/index.shtml
-share/doc/gamgi/index_draft.shtml
 share/doc/gamgi/installation/
 share/doc/gamgi/installation/compilation.html
 share/doc/gamgi/installation/configuration.html
@@ -160,6 +155,7 @@ share/doc/gamgi/installation/options.html
 share/doc/gamgi/installation/requirements.html
 share/doc/gamgi/installation/tips.html
 share/doc/gamgi/interfaces/
+share/doc/gamgi/interfaces.tar.gz
 share/doc/gamgi/interfaces/arrow/
 share/doc/gamgi/interfaces/arrow/select.html
 share/doc/gamgi/interfaces/assembly/
@@ -175,19 +171,19 @@ share/doc/gamgi/interfaces/atom/config_view.html
 share/doc/gamgi/interfaces/atom/copy_copies.html
 share/doc/gamgi/interfaces/atom/copy_shift.html
 share/doc/gamgi/interfaces/atom/create_analysis.html
-share/doc/gamgi/interfaces/atom/create_element.html
 share/doc/gamgi/interfaces/atom/create_position.html
 share/doc/gamgi/interfaces/atom/create_property.html
+share/doc/gamgi/interfaces/atom/create_type.html
 share/doc/gamgi/interfaces/atom/create_view.html
 share/doc/gamgi/interfaces/atom/link_object.html
 share/doc/gamgi/interfaces/atom/measure_angle.html
 share/doc/gamgi/interfaces/atom/measure_length.html
 share/doc/gamgi/interfaces/atom/modify_analysis.html
 share/doc/gamgi/interfaces/atom/modify_angle.html
-share/doc/gamgi/interfaces/atom/modify_element.html
 share/doc/gamgi/interfaces/atom/modify_length.html
 share/doc/gamgi/interfaces/atom/modify_position.html
 share/doc/gamgi/interfaces/atom/modify_property.html
+share/doc/gamgi/interfaces/atom/modify_type.html
 share/doc/gamgi/interfaces/atom/modify_view.html
 share/doc/gamgi/interfaces/atom/remove_object.html
 share/doc/gamgi/interfaces/atom/select_list.html
@@ -447,6 +443,7 @@ share/doc/gamgi/questions/questions.html
 share/doc/gamgi/questions/troubleshooting_formats.html
 share/doc/gamgi/questions/troubleshooting_interfaces.html
 share/doc/gamgi/tutorials/
+share/doc/gamgi/tutorials.tar.gz
 share/doc/gamgi/tutorials/calcite_page1.html
 share/doc/gamgi/tutorials/cscl_page1.html
 share/doc/gamgi/tutorials/interstices_bcc_page1.html

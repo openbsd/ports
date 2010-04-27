@@ -1,12 +1,21 @@
-$OpenBSD: patch-src-make_rules,v 1.4 2010/01/11 12:05:39 jasper Exp $
---- src/make_rules.orig	Mon Jan 11 11:08:35 2010
-+++ src/make_rules	Mon Jan 11 11:08:51 2010
+$OpenBSD: patch-src-make_rules,v 1.5 2010/04/27 21:50:45 jasper Exp $
+--- src/make_rules.orig	Sun Feb  7 18:06:00 2010
++++ src/make_rules	Tue Apr 27 23:30:38 2010
+@@ -18,7 +18,7 @@ CC ?= gcc
+ 
+ CFLAGS ?= -O3 -Wall -ansi
+ override CFLAGS += -DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED \
+-	-DGDK_PIXBUF_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED
++	-DGDK_PIXBUF_DISABLE_DEPRECATED -pthread
+ #	-DGSEAL_ENABLE \
+ #	-DG_DISABLE_SINGLE_INCLUDES -DATK_DISABLE_SINGLE_INCLUDES \
+ #	-DGDK_PIXBUF_DISABLE_SINGLE_INCLUDES -DGTK_DISABLE_SINGLE_INCLUDES
 @@ -37,7 +37,7 @@ EXE = gamgi
  LIBS = -lgtkglext-x11-1.0 -lgdkglext-x11-1.0 -lGLU -lGL -lgtk-x11-2.0 \
  	-lgdk-x11-2.0 -latk-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lpango-1.0 \
  	-lcairo -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -lXext -lX11 \
 -	-lXi -lXmu -lfreetype -lexpat -lm -ldl
-+	-lXi -lXmu -lfreetype -lexpat -lm
++	-lXi -lXmu -lfreetype -lexpat -lm -pthread
  
  #================================ full paths ===============================
  
