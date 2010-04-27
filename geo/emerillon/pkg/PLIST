@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/21 21:21:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/04/27 20:06:59 landry Exp $
 @bin bin/emerillon
 include/emerillon-0.1/
 include/emerillon-0.1/emerillon/
@@ -23,12 +23,19 @@ lib/emerillon/plugins/libplacemarks.so
 @comment lib/emerillon/plugins/libsearch.a
 @comment lib/emerillon/plugins/libsearch.la
 lib/emerillon/plugins/libsearch.so
+lib/pkgconfig/emerillon.pc
 share/locale/ar/LC_MESSAGES/emerillon.mo
+share/locale/da/LC_MESSAGES/emerillon.mo
+share/locale/de/LC_MESSAGES/emerillon.mo
+share/locale/es/LC_MESSAGES/emerillon.mo
 share/locale/fr/LC_MESSAGES/emerillon.mo
 share/locale/id/LC_MESSAGES/emerillon.mo
+share/locale/is/LC_MESSAGES/emerillon.mo
+share/locale/ja/LC_MESSAGES/emerillon.mo
+share/locale/lv/LC_MESSAGES/emerillon.mo
+share/locale/pt_BR/LC_MESSAGES/emerillon.mo
 share/locale/sl/LC_MESSAGES/emerillon.mo
 share/locale/sv/LC_MESSAGES/emerillon.mo
-lib/pkgconfig/emerillon.pc
 share/applications/emerillon.desktop
 share/emerillon/
 share/emerillon/emerillon-ui.xml

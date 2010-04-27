@@ -1,0 +1,12 @@
+$OpenBSD: patch-emerillon_sidebar_c,v 1.1 2010/04/27 20:06:59 landry Exp $
+--- emerillon/sidebar.c.orig	Tue Apr 27 21:12:51 2010
++++ emerillon/sidebar.c	Tue Apr 27 21:13:23 2010
+@@ -239,7 +239,7 @@ emerillon_sidebar_menu_position_under (GtkMenu *menu,
+   GtkWidget *widget;
+ 
+   g_return_if_fail (GTK_IS_BUTTON (user_data));
+-  g_return_if_fail (GTK_WIDGET_NO_WINDOW (user_data));
++  g_return_if_fail (gtk_widget_get_has_window (GTK_WIDGET (user_data)));
+ 
+   widget = GTK_WIDGET (user_data);
+ 
