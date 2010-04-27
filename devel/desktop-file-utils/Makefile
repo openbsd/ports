@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/09/20 21:38:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/04/27 11:51:03 ajacoutot Exp $
 
 COMMENT=	utilities for 'desktop' entries
 
-DISTNAME=	desktop-file-utils-0.15
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	desktop-file-utils-0.16
+EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	devel
 
@@ -24,9 +24,12 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	glib-2.0::devel/glib2
 
 USE_LIBTOOL=	Yes
+USE_GMAKE=	Yes
+
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-silent-rules
 
 .include <bsd.port.mk>
