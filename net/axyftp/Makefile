@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/01/01 12:25:17 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2010/04/27 19:27:41 naddy Exp $
 
 COMMENT=	ftp client for X window system
 
@@ -30,6 +30,7 @@ WANTLIB+=		Xi m glib gmodule iconv intl
 .else
 USE_MOTIF=	any
 WANTLIB+=		ICE SM Xpm Xt m
+MAKE_FLAGS+=MOTIF_CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/freetype2"
 .endif
 
 .include <bsd.port.mk>
