@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/04/26 07:06:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2010/04/27 09:30:21 ajacoutot Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/camel-address.h
@@ -237,77 +237,77 @@ include/evolution-data-server-${R}/libedataserverui/e-source-selector.h
 include/evolution-data-server-${R}/libedataserverui/e-tree-model-generator.h
 lib/evolution-data-server-1.2/
 lib/evolution-data-server-1.2/camel-providers/
-lib/evolution-data-server-1.2/camel-providers/libcamelgroupwise.a
-lib/evolution-data-server-1.2/camel-providers/libcamelgroupwise.la
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelgroupwise.a
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelgroupwise.la
 lib/evolution-data-server-1.2/camel-providers/libcamelgroupwise.so
 lib/evolution-data-server-1.2/camel-providers/libcamelgroupwise.urls
-lib/evolution-data-server-1.2/camel-providers/libcamelimap.a
-lib/evolution-data-server-1.2/camel-providers/libcamelimap.la
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelimap.a
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelimap.la
 lib/evolution-data-server-1.2/camel-providers/libcamelimap.so
 lib/evolution-data-server-1.2/camel-providers/libcamelimap.urls
-lib/evolution-data-server-1.2/camel-providers/libcamelimapx.a
-lib/evolution-data-server-1.2/camel-providers/libcamelimapx.la
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelimapx.a
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelimapx.la
 lib/evolution-data-server-1.2/camel-providers/libcamelimapx.so
 lib/evolution-data-server-1.2/camel-providers/libcamelimapx.urls
-lib/evolution-data-server-1.2/camel-providers/libcamellocal.a
-lib/evolution-data-server-1.2/camel-providers/libcamellocal.la
+@comment lib/evolution-data-server-1.2/camel-providers/libcamellocal.a
+@comment lib/evolution-data-server-1.2/camel-providers/libcamellocal.la
 lib/evolution-data-server-1.2/camel-providers/libcamellocal.so
 lib/evolution-data-server-1.2/camel-providers/libcamellocal.urls
-lib/evolution-data-server-1.2/camel-providers/libcamelnntp.a
-lib/evolution-data-server-1.2/camel-providers/libcamelnntp.la
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelnntp.a
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelnntp.la
 lib/evolution-data-server-1.2/camel-providers/libcamelnntp.so
 lib/evolution-data-server-1.2/camel-providers/libcamelnntp.urls
-lib/evolution-data-server-1.2/camel-providers/libcamelpop3.a
-lib/evolution-data-server-1.2/camel-providers/libcamelpop3.la
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelpop3.a
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelpop3.la
 lib/evolution-data-server-1.2/camel-providers/libcamelpop3.so
 lib/evolution-data-server-1.2/camel-providers/libcamelpop3.urls
-lib/evolution-data-server-1.2/camel-providers/libcamelsendmail.a
-lib/evolution-data-server-1.2/camel-providers/libcamelsendmail.la
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelsendmail.a
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelsendmail.la
 lib/evolution-data-server-1.2/camel-providers/libcamelsendmail.so
 lib/evolution-data-server-1.2/camel-providers/libcamelsendmail.urls
-lib/evolution-data-server-1.2/camel-providers/libcamelsmtp.a
-lib/evolution-data-server-1.2/camel-providers/libcamelsmtp.la
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelsmtp.a
+@comment lib/evolution-data-server-1.2/camel-providers/libcamelsmtp.la
 lib/evolution-data-server-1.2/camel-providers/libcamelsmtp.so
 lib/evolution-data-server-1.2/camel-providers/libcamelsmtp.urls
 lib/evolution-data-server-1.2/extensions/
-lib/evolution-data-server-1.2/extensions/libebookbackendfile.a
-lib/evolution-data-server-1.2/extensions/libebookbackendfile.la
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendfile.a
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendfile.la
 lib/evolution-data-server-1.2/extensions/libebookbackendfile.so
-lib/evolution-data-server-1.2/extensions/libebookbackendgoogle.a
-lib/evolution-data-server-1.2/extensions/libebookbackendgoogle.la
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendgoogle.a
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendgoogle.la
 lib/evolution-data-server-1.2/extensions/libebookbackendgoogle.so
-lib/evolution-data-server-1.2/extensions/libebookbackendgroupwise.a
-lib/evolution-data-server-1.2/extensions/libebookbackendgroupwise.la
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendgroupwise.a
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendgroupwise.la
 lib/evolution-data-server-1.2/extensions/libebookbackendgroupwise.so
-lib/evolution-data-server-1.2/extensions/libebookbackendldap.a
-lib/evolution-data-server-1.2/extensions/libebookbackendldap.la
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendldap.a
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendldap.la
 lib/evolution-data-server-1.2/extensions/libebookbackendldap.so
-lib/evolution-data-server-1.2/extensions/libebookbackendvcf.a
-lib/evolution-data-server-1.2/extensions/libebookbackendvcf.la
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendvcf.a
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendvcf.la
 lib/evolution-data-server-1.2/extensions/libebookbackendvcf.so
-lib/evolution-data-server-1.2/extensions/libebookbackendwebdav.a
-lib/evolution-data-server-1.2/extensions/libebookbackendwebdav.la
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendwebdav.a
+@comment lib/evolution-data-server-1.2/extensions/libebookbackendwebdav.la
 lib/evolution-data-server-1.2/extensions/libebookbackendwebdav.so
-lib/evolution-data-server-1.2/extensions/libecalbackendcaldav.a
-lib/evolution-data-server-1.2/extensions/libecalbackendcaldav.la
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendcaldav.a
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendcaldav.la
 lib/evolution-data-server-1.2/extensions/libecalbackendcaldav.so
-lib/evolution-data-server-1.2/extensions/libecalbackendcontacts.a
-lib/evolution-data-server-1.2/extensions/libecalbackendcontacts.la
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendcontacts.a
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendcontacts.la
 lib/evolution-data-server-1.2/extensions/libecalbackendcontacts.so
-lib/evolution-data-server-1.2/extensions/libecalbackendfile.a
-lib/evolution-data-server-1.2/extensions/libecalbackendfile.la
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendfile.a
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendfile.la
 lib/evolution-data-server-1.2/extensions/libecalbackendfile.so
-lib/evolution-data-server-1.2/extensions/libecalbackendgoogle.a
-lib/evolution-data-server-1.2/extensions/libecalbackendgoogle.la
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendgoogle.a
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendgoogle.la
 lib/evolution-data-server-1.2/extensions/libecalbackendgoogle.so
-lib/evolution-data-server-1.2/extensions/libecalbackendgroupwise.a
-lib/evolution-data-server-1.2/extensions/libecalbackendgroupwise.la
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendgroupwise.a
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendgroupwise.la
 lib/evolution-data-server-1.2/extensions/libecalbackendgroupwise.so
-lib/evolution-data-server-1.2/extensions/libecalbackendhttp.a
-lib/evolution-data-server-1.2/extensions/libecalbackendhttp.la
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendhttp.a
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendhttp.la
 lib/evolution-data-server-1.2/extensions/libecalbackendhttp.so
-lib/evolution-data-server-1.2/extensions/libecalbackendweather.a
-lib/evolution-data-server-1.2/extensions/libecalbackendweather.la
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendweather.a
+@comment lib/evolution-data-server-1.2/extensions/libecalbackendweather.la
 lib/evolution-data-server-1.2/extensions/libecalbackendweather.so
 lib/libcamel-1.2.a
 lib/libcamel-1.2.la
