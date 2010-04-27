@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/04/23 10:56:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/04/27 08:11:23 ajacoutot Exp $
 @bin bin/evolution-import-rss
-lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.a
-lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.la
+@comment lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.a
+@comment lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.la
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.so
 lib/evolution/${EVO_VERSION}/plugins/org-gnome-evolution-rss.eplug
 lib/evolution/${EVO_VERSION}/plugins/org-gnome-evolution-rss.xml

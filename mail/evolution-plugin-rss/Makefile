@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/04/23 10:56:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2010/04/27 08:11:23 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		RSS-reader plugin for GNOME
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.1.4.99 # Debian evolution-rss_0.1.9~20100320
-PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}
+PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}p0
 
 CATEGORIES=		mail
 
