@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_openbsd_c,v 1.8 2010/04/27 20:56:11 sthen Exp $
+--- src/openbsd.c.orig	Sat Aug  8 21:05:55 2009
++++ src/openbsd.c	Tue Apr 27 20:40:38 2010
+@@ -454,14 +454,13 @@ void update_obsd_sensors()
+ 
+ 	dev = obsd_sensors.device;	// FIXME: read more than one device
+ 
+-	/* for (dev = 0; dev < MAXSENSORDEVICES; dev++) { */
++	for (dev = 0; dev < MAXSENSORDEVICES; dev++) {
+ 		mib[2] = dev;
+ 		if (sysctl(mib, 3, &sensordev, &sdlen, NULL, 0) == -1) {
+-			if (errno != ENOENT) {
+-				warn("sysctl");
+-			}
+-			return;
+-			// continue;
++			if (errno == ENOENT) /* end of sensors */
++				return;
++			if (errno == ENXIO) /* missing e.g. usb sensor that was unplugged */
++				continue;
+ 		}
+ 		for (type = 0; type < SENSOR_MAX_TYPES; type++) {
+ 			mib[3] = type;
+@@ -496,7 +495,8 @@ void update_obsd_sensors()
+ 				sensor_cnt++;
+ 			}
+ 		}
+-	/* } */
++		break; // FIXME: read more than one device
++	}
+ 
+ 	init_sensors = 1;
+ }
