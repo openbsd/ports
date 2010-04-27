@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_fe-gtk_menu_c,v 1.1 2010/04/27 21:22:00 jasper Exp $
+
+"Fix" with gtk+ 2.20.
+
+--- src/fe-gtk/menu.c.orig	Tue Apr 27 23:10:27 2010
++++ src/fe-gtk/menu.c	Tue Apr 27 23:10:32 2010
+@@ -16,8 +16,6 @@
+  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+  */
+ 
+-#define GTK_DISABLE_DEPRECATED
+-
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <fcntl.h>
