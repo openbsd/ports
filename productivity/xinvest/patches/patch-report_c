@@ -1,0 +1,19 @@
+$OpenBSD: patch-report_c,v 1.1 2010/04/27 19:45:49 naddy Exp $
+--- report.c.orig	Tue Apr 27 21:37:28 2010
++++ report.c	Tue Apr 27 21:37:48 2010
+@@ -1534,6 +1534,7 @@ void reportDestroy(Widget w, Widget client_data, XtPoi
+   reportDrawing = (Widget)NULL;
+ }
+ 
++#ifdef XPRINT
+ void reportPageCB(Widget w, Widget client, XtPointer call)
+ {
+ 	Widget				drawing = (Widget)client;
+@@ -1566,6 +1567,7 @@ void reportPageCB(Widget w, Widget client, XtPointer c
+ 
+ 	per = &Global[0];
+ }
++#endif
+ 
+ void reportPrintOk(Widget w, Widget client, XtPointer call)
+ {

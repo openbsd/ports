@@ -1,0 +1,13 @@
+$OpenBSD: patch-xinvest_h,v 1.1 2010/04/27 19:45:49 naddy Exp $
+--- xinvest.h.orig	Tue Apr 27 21:35:22 2010
++++ xinvest.h	Tue Apr 27 21:35:48 2010
+@@ -34,7 +34,9 @@
+ #define	__XINVEST_H_
+ 
+ #include <X11/Intrinsic.h>
++#if XPRINT
+ #include <X11/extensions/Print.h>
++#endif
+ #include "color.h"
+ 
+ /* Globals */
