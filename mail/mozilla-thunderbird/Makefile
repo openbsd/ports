@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2010/04/03 09:26:45 landry Exp $
+# $OpenBSD: Makefile,v 1.92 2010/04/27 20:57:55 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	e-mail, rss and usenet client based on Mozilla codebase
 
 VER=		3.0.4
 DISTNAME=	comm-1.9.1
-PKGNAME=	mozilla-thunderbird-${VER}
+PKGNAME=	mozilla-thunderbird-${VER}p0
 
 # need to be in synch with SO_VERSION in www/seamonkey
 # for productivity/sunbird,-lighting and mail/enigmail to work ine
@@ -127,7 +127,8 @@ pre-configure:
 	cd ${WRKSRC}/mozilla && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/mozilla/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/mozilla/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	${SUBST_CMD} ${WRKSRC}/mozilla/js/src/xpconnect/shell/Makefile.in \
+	${SUBST_CMD} ${WRKSRC}/mozilla/xpcom/io/nsAppFileLocationProvider.cpp \
+		${WRKSRC}/mozilla/js/src/xpconnect/shell/Makefile.in \
 		${WRKSRC}/mozilla/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
 		${WRKSRC}/mozilla/build/unix/mozilla.in \
 		${WRKSRC}/mozilla/toolkit/xre/nsXREDirProvider.cpp
