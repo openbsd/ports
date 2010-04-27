@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/24 13:18:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/04/27 15:20:21 jasper Exp $
 
 COMMENT=	flexible communications framework, logger component
 
@@ -16,7 +16,8 @@ MODULES=	devel/gconf2 \
 WANTLIB += ORBit-2 c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m pcre pthread xml2 z
 
-BUILD_DEPENDS=	::devel/py-twisted/words
+BUILD_DEPENDS=	::devel/py-twisted/words \
+		::x11/gnome/doc-utils
 LIB_DEPENDS=	telepathy-glib.>=5::net/telepathy/telepathy-glib
 
 MODGNOME_HELP_FILES=	Yes
