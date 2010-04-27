@@ -1,10 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/24 17:13:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/04/27 07:46:39 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		2.30.0
 PKGNAME=		${DISTNAME}p1
+
+# sync with www/epiphany
+API_V=		2.29
+M=		${GNOME_VERSION:R}
+SUBST_VARS=	M API_V
 
 CATEGORIES=		www
 
@@ -53,9 +58,5 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-schemas-install \
 		--disable-scrollkeeper \
 		--enable-opensp=no
-
-API_V=		2.29
-M=		${GNOME_VERSION:R}
-SUBST_VARS=	M API_V
 
 .include <bsd.port.mk>
