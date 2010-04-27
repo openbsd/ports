@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/04/26 10:41:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/04/27 14:29:44 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -481,6 +481,27 @@ share/examples/sane-backends/sane.d/umax_pp.conf
 @sample ${SYSCONFDIR}/sane.d/umax_pp.conf
 share/examples/sane-backends/sane.d/xerox_mfp.conf
 @sample ${SYSCONFDIR}/sane.d/xerox_mfp.conf
+share/locale/bg/LC_MESSAGES/sane-backends.mo
+share/locale/cs/LC_MESSAGES/sane-backends.mo
+share/locale/da/LC_MESSAGES/sane-backends.mo
+share/locale/de/LC_MESSAGES/sane-backends.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/sane-backends.mo
+share/locale/eo/LC_MESSAGES/sane-backends.mo
+share/locale/es/LC_MESSAGES/sane-backends.mo
+share/locale/fi/LC_MESSAGES/sane-backends.mo
+share/locale/fr/LC_MESSAGES/sane-backends.mo
+share/locale/gl/LC_MESSAGES/sane-backends.mo
+share/locale/it/LC_MESSAGES/sane-backends.mo
+share/locale/ja/LC_MESSAGES/sane-backends.mo
+share/locale/nb/LC_MESSAGES/sane-backends.mo
+share/locale/nl/LC_MESSAGES/sane-backends.mo
+share/locale/pl/LC_MESSAGES/sane-backends.mo
+share/locale/pt/LC_MESSAGES/sane-backends.mo
+share/locale/ru/LC_MESSAGES/sane-backends.mo
+share/locale/sv/LC_MESSAGES/sane-backends.mo
+share/locale/uk/LC_MESSAGES/sane-backends.mo
 share/sane/
 share/sane/artec_eplus48u/
 share/sane/epjitsu/
