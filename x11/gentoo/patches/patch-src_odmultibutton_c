@@ -1,0 +1,56 @@
+$OpenBSD: patch-src_odmultibutton_c,v 1.1 2010/04/27 20:20:45 jasper Exp $
+
+Fix build with gtk+ 2.20.
+
+--- src/odmultibutton.c.orig	Tue Apr 27 22:09:35 2010
++++ src/odmultibutton.c	Tue Apr 27 22:19:49 2010
+@@ -73,8 +73,8 @@ static void od_multibutton_set_page(GtkWidget *widget,
+ 		}
+ 		if(p != NULL)
+ 		{
+-			if(GTK_WIDGET_STATE(widget) != GTK_WIDGET_STATE(p))
+-				gtk_widget_set_state(p, GTK_WIDGET_STATE(widget));
++			if(gtk_widget_get_state(widget) != gtk_widget_get_state(p))
++				gtk_widget_set_state(p, gtk_widget_get_state(widget));
+ 			gtk_widget_show(p);
+ 			if(gtk_widget_get_parent(p) != NULL)
+ 				gtk_widget_reparent(p, widget);
+@@ -86,7 +86,7 @@ static void od_multibutton_set_page(GtkWidget *widget,
+ 		}
+ 		mb->last_index = index;
+ 	}
+-	if(GTK_WIDGET_DRAWABLE(widget))
++	if(gtk_widget_is_drawable(widget))
+ 		gtk_widget_queue_draw(widget);
+ }
+ 
+@@ -144,9 +144,9 @@ static void od_multibutton_paint_dog_ear(GtkWidget *wi
+ {
+ 	GtkStateType	state;
+ 
+-	state = GTK_WIDGET_STATE(widget);
++	state = gtk_widget_get_state(widget);
+ 
+-	if(GTK_WIDGET_DRAWABLE(widget) && state != GTK_STATE_ACTIVE)
++	if(gtk_widget_is_drawable(widget) && state != GTK_STATE_ACTIVE)
+ 	{
+ 		GtkStyle	*style = gtk_widget_get_style(widget);
+ 		const guint	EARSIZE = 5;
+@@ -209,7 +209,7 @@ static void od_multibutton_paint_foreground(GtkWidget 
+ 	g_return_if_fail(area != NULL);
+ 	g_return_if_fail(OD_IS_MULTIBUTTON(widget));
+ 
+-	if(GTK_WIDGET_DRAWABLE(widget))
++	if(gtk_widget_is_drawable(widget))
+ 	{
+ 		ODMultiButton	*mb = OD_MULTIBUTTON(widget);
+ 
+@@ -449,7 +449,7 @@ void od_multibutton_set_text(ODMultiButton *mb, guint 
+ 			od_multibutton_reset_label(mb, index, GTK_LABEL(w), text, bg, fg);
+ 			if(GTK_WIDGET(mb)->parent)
+ 				gtk_widget_queue_resize(GTK_WIDGET(mb));
+-			if(GTK_WIDGET_DRAWABLE(mb))
++			if(gtk_widget_is_drawable(mb))
+ 				gtk_widget_queue_draw(GTK_WIDGET(mb));
+ 		}
+ 	}
