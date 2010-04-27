@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/04/03 09:30:14 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2010/04/27 21:03:25 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	integrated mozilla application suite
 
 VER=		2.0.4
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}
+PKGNAME=	seamonkey-${VER}p0
 EXTRACT_SUFX=	.tar.bz2
 
 # must be in sync with SO_VERSION in mail/mozilla-thunderbird
@@ -157,6 +157,7 @@ pre-configure:
 	cd ${WRKSRC}/mozilla/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/mozilla/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	${SUBST_CMD} ${WRKSRC}/mozilla/js/src/xpconnect/shell/Makefile.in \
+		${WRKSRC}/mozilla/xpcom/io/nsAppFileLocationProvider.cpp \
 		${WRKSRC}/mozilla/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
 		${WRKSRC}/mozilla/build/unix/mozilla.in \
 		${WRKSRC}/mozilla/toolkit/xre/nsXREDirProvider.cpp
