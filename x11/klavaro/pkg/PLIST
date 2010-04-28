@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/01/11 15:11:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/28 15:20:24 pea Exp $
 @bin bin/klavaro
 @man man/man1/klavaro.1
 share/icons/
@@ -97,6 +97,7 @@ share/klavaro/qwerty_dk.kbd
 share/klavaro/qwerty_es.kbd
 share/klavaro/qwerty_gr.kbd
 share/klavaro/qwerty_il.kbd
+share/klavaro/qwerty_il_old.kbd
 share/klavaro/qwerty_it.kbd
 share/klavaro/qwerty_jp.kbd
 share/klavaro/qwerty_nb.kbd
