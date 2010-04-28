@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/08/14 09:22:21 pea Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/04/28 11:23:33 pea Exp $
 @bin bin/pgadmin3
 share/pgadmin3/
 share/pgadmin3/branding/
 share/pgadmin3/branding/branding.ini
 share/pgadmin3/docs/
-share/pgadmin3/docs/Docs.vcproj
-share/pgadmin3/docs/builddocs.bat
 share/pgadmin3/docs/cs_CZ/
 share/pgadmin3/docs/cs_CZ/appendices.html
 share/pgadmin3/docs/cs_CZ/backup.html
