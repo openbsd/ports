@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/28 08:07:05 pea Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/28 18:09:05 pea Exp $
 phpPgAdmin/
+phpPgAdmin/BUGS
 phpPgAdmin/CREDITS
 phpPgAdmin/DEVELOPERS
 phpPgAdmin/FAQ
@@ -37,8 +38,6 @@ phpPgAdmin/classes/plugins/Plugin.php
 phpPgAdmin/classes/plugins/Slony.php
 phpPgAdmin/colproperties.php
 phpPgAdmin/conf/
-@comment phpPgAdmin/conf/.gitignore
-@comment phpPgAdmin/conf/config.inc.php
 phpPgAdmin/conf/config.inc.php-dist
 @sample phpPgAdmin/conf/config.inc.php
 phpPgAdmin/constraints.php
