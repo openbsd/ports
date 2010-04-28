@@ -1,6 +1,6 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.1.1.1 2009/10/02 13:35:08 pea Exp $
---- gtk/Makefile.in.orig	Mon Sep 28 16:36:59 2009
-+++ gtk/Makefile.in	Mon Sep 28 16:37:12 2009
+$OpenBSD: patch-gtk_Makefile_in,v 1.2 2010/04/28 15:19:25 pea Exp $
+--- gtk/Makefile.in.orig	Mon May 11 02:57:46 2009
++++ gtk/Makefile.in	Wed Apr 28 16:47:29 2010
 @@ -231,7 +231,6 @@ libgtkdatabox_la_SOURCES = \
  
  libgtkdatabox_la_LDFLAGS = \
@@ -9,3 +9,11 @@ $OpenBSD: patch-gtk_Makefile_in,v 1.1.1.1 2009/10/02 13:35:08 pea Exp $
  			@GTK_LIBS@
  
  include_HEADERS = \
+@@ -260,7 +259,6 @@ AM_CFLAGS = \
+ 			-DG_DISABLE_DEPRECATED\
+ 			-DGDK_DISABLE_DEPRECATED\
+ 			-DGDK_PIXBUF_DISABLE_DEPRECATED\
+-			-DGTK_DISABLE_DEPRECATED\
+ 			-DGTK_MULTIHEAD_SAFE=1\
+ 			`pkg-config gtk+-2.0 --cflags`
+ 
