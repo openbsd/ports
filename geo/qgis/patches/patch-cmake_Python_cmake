@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmake_Python_cmake,v 1.1 2010/04/28 11:32:30 dcoppa Exp $
+--- cmake/Python.cmake.orig	Wed Aug 19 21:09:10 2009
++++ cmake/Python.cmake	Wed Apr 28 10:46:38 2010
+@@ -148,8 +148,8 @@ IF (PYTHON_LIBRARIES AND PYTHON_INCLUDE_PATH)
+     IF (HAVE_SIP_MODULE AND SIP_BINARY_PATH AND SIP_INCLUDE_DIR)
+       # check for SIP version
+       # minimal version is 4.7 (to support universal builds)
+-      SET (SIP_MIN_VERSION 040700)
+-      TRY_RUN_PYTHON (RES "import sip\nprint '%x' % sip.SIP_VERSION" SIP_VERSION)
++      SET (SIP_MIN_VERSION 263936) # 0x40700
++      TRY_RUN_PYTHON (RES "import sip\nprint '%d' % sip.SIP_VERSION" SIP_VERSION)
+       IF (SIP_VERSION EQUAL "${SIP_MIN_VERSION}" OR SIP_VERSION GREATER "${SIP_MIN_VERSION}")
+         SET (SIP_IS_GOOD TRUE)
+       ENDIF (SIP_VERSION EQUAL "${SIP_MIN_VERSION}" OR SIP_VERSION GREATER "${SIP_MIN_VERSION}")

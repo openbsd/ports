@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/15 20:45:34 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/28 11:32:30 dcoppa Exp $
 
 COMMENT =	desktop geographical information system
 
 DISTNAME =	qgis_1.4.0
-PKGNAME =	${DISTNAME:L:S/_/-/}p0
+PKGNAME =	${DISTNAME:L:S/_/-/}p1
 
 CATEGORIES =	geo x11
 
