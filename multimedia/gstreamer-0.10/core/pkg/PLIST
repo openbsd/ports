@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/03/21 11:22:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/04/28 08:02:38 ajacoutot Exp $
 @conflict gstreamer-frontend-*
 @conflict gstreamer->=0.8,<0.10
 @pkgpath multimedia/gstreamer-0.10/core,-main
@@ -272,8 +272,6 @@ share/gtk-doc/html/gstreamer-plugins-${VERSION}/left.png
 share/gtk-doc/html/gstreamer-plugins-${VERSION}/right.png
 share/gtk-doc/html/gstreamer-plugins-${VERSION}/style.css
 share/gtk-doc/html/gstreamer-plugins-${VERSION}/up.png
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/az/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/be/LC_MESSAGES/gstreamer-${VERSION}.mo
