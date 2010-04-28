@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/22 14:35:16 stephan Exp $
+# $OpenBSD: Makefile,v 1.28 2010/04/28 07:47:44 stephan Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -29,6 +29,7 @@ SUBDIR += imagecache_profiles
 SUBDIR += imagefield
 SUBDIR += jquery_ui
 SUBDIR += ldap_integration
+SUBDIR += link
 SUBDIR += locale-de
 SUBDIR += locale-fr
 SUBDIR += locale-it
