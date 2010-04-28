@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure_in,v 1.6 2010/04/28 17:06:26 robert Exp $
+--- configure.in.orig	Tue Apr 27 11:43:09 2010
++++ configure.in	Tue Apr 27 11:45:24 2010
+@@ -328,7 +328,7 @@ fi
+ 
+ AM_CONDITIONAL(NO_VERSION_SCRIPT, test x$no_version_script = xyes)
+ 
+-AC_CHECK_HEADERS(sys/filio.h sys/sockio.h netdb.h utime.h sys/utime.h semaphore.h sys/un.h linux/rtc.h sys/syscall.h sys/mkdev.h sys/uio.h)
++AC_CHECK_HEADERS(sys/filio.h sys/sockio.h netdb.h utime.h sys/utime.h semaphore.h sys/un.h linux/rtc.h sys/syscall.h sys/mkdev.h sys/uio.h sys/param.h)
+ AC_CHECK_HEADERS(sys/user.h sys/socket.h sys/ipc.h sys/sem.h sys/utsname.h alloca.h ucontext.h pwd.h sys/select.h netinet/tcp.h netinet/in.h unistd.h sys/types.h)
+ 
+ 
+@@ -1762,7 +1762,7 @@ AC_MSG_RESULT($try_dev_random)
+ 
+ case "{$target}" in
+     *-openbsd*)
+-    NAME_DEV_RANDOM="/dev/srandom"
++    NAME_DEV_RANDOM="/dev/arandom"
+     ;;
+ 
+ dnl Win32 does not have /dev/random, they have their own method...
+@@ -1951,8 +1951,8 @@ JIT_SUPPORTED=no
+ INTERP_SUPPORTED=no
+ LIBC="libc.so.6"
+ INTL="libc.so.6"
+-SQLITE="libsqlite.so.0"
+-SQLITE3="libsqlite3.so.0"
++SQLITE="libsqlite.so"
++SQLITE3="libsqlite3.so"
+ X11="libX11.so"
+ 
+ sizeof_register="SIZEOF_VOID_P"
