@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/03/26 08:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2010/04/28 08:03:46 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (bad)
@@ -8,7 +8,7 @@ COMMENT-mjpeg =		gstmplex and gstmpeg2enc elements for GStreamer (bad)
 V =			0.10.18
 DISTNAME =		gst-plugins-bad-${V}
 
-PKGNAME-main =		gstreamer-plugins-bad-${V}p0
+PKGNAME-main =		gstreamer-plugins-bad-${V}p1
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-real =		gstreamer-real-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
@@ -33,7 +33,7 @@ LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:${P}/core
 RUN_DEPENDS =		::${BUILD_PKGPATH}
 BUILD_DEPENDS +=        ::audio/ladspa
 
-WANTLIB-main =		${WANTLIB} \
+WANTLIB-main =		${WANTLIB} xcb-render xcb-render-util \
 			X11 Xau Xdmcp Xext Xrandr Xrender bz2 pthread-stubs \
 			sndio usbhid xcb gstbase-0.10 gstcontroller-0.10 \
 			Xcomposite Xcursor Xdamage Xfixes Xi Xinerama atk-1.0 \
