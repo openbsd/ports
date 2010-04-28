@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/03/31 15:56:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2010/04/28 06:50:23 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.5.9
 DISTNAME=	mozilla-1.9.1
-PKGNAME=	firefox35-${VER}
+PKGNAME=	firefox35-${VER}p0
 SO_VERSION=	22.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -130,7 +130,7 @@ post-extract:
 pre-configure:
 	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
+	${SUBST_CMD} ${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${WRKSRC}/build/unix/mozilla.in \
 		${WRKSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
 		${WRKSRC}/js/src/xpconnect/shell/Makefile.in \
@@ -149,10 +149,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/firefox.desktop \
 		${PREFIX}/share/applications/firefox35.desktop
-	perl -pi -e 's,!!PREFIX!!,${TRUEPREFIX},g; \
-		s,!!LOCALBASE!!,${LOCALBASE},g; s,!!VERSION!!,${VER},g' \
-		${MOZ}/README.OpenBSD \
+	${SUBST_CMD} ${MOZ}/README.OpenBSD \
 		${PREFIX}/share/applications/firefox35.desktop
+	rm -f ${MOZ}/README.OpenBSD.beforesubst \
+		${PREFIX}/share/applications/firefox35.desktop.beforesubst
 	${INSTALL_SCRIPT} ${MOB}/firefox ${PREFIX}/bin/firefox35
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/mozilla-xremote-client ${MOB}/regxpcom ${MOZ}
