@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/28 07:45:57 stephan Exp $
+@owner ${DRUPAL_OWNER}
+@group ${DRUPAL_GROUP}
+${DRUPAL_MODS}link/
+${DRUPAL_MODS}link/LICENSE.txt
+${DRUPAL_MODS}link/link.css
+${DRUPAL_MODS}link/link.info
+${DRUPAL_MODS}link/link.install
+${DRUPAL_MODS}link/link.module
+${DRUPAL_MODS}link/tests/
+${DRUPAL_MODS}link/tests/link.crud.test
+${DRUPAL_MODS}link/translations/
+${DRUPAL_MODS}link/translations/link.da.po
+${DRUPAL_MODS}link/translations/link.de.po
+${DRUPAL_MODS}link/translations/link.fr.po
+${DRUPAL_MODS}link/translations/link.nl.po
+${DRUPAL_MODS}link/translations/link.pot
+${DRUPAL_MODS}link/translations/link.ru.po
+${DRUPAL_MODS}link/views/
+${DRUPAL_MODS}link/views/link.views.inc
+${DRUPAL_MODS}link/views/link_views_handler_argument_target.inc
+${DRUPAL_MODS}link/views/link_views_handler_filter_protocol.inc

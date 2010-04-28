@@ -1,0 +1,3 @@
+A CCK content field which lets you add a complete link to your content
+types; including URL, title, and optionally a target attribute. The
+link module is a one-stop content link "field" type for CCK.
