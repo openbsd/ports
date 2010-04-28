@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/28 14:08:45 pea Exp $
 
 COMMENT =	service monitoring daemon
 
 DISTNAME = 	mon-${V}
+PKGNAME = 	${DISTNAME}p0
 
 WANTLIB = 	c
 

@@ -1,0 +1,60 @@
+$OpenBSD: patch-alert_d_irc_alert,v 1.1 2010/04/28 14:08:45 pea Exp $
+--- alert.d/irc.alert.orig	Wed Apr 28 15:49:08 2010
++++ alert.d/irc.alert	Wed Apr 28 15:49:18 2010
+@@ -22,6 +22,8 @@
+ #     -N num      try num different nicks before giving up
+ #     -p secs     when showing detail, pause secs between
+ #                 sending each line. secs may be fractional.
++#     -P port
++#     -e          encrypt (ie use ssl)
+ #
+ # Jim Trocki, trockij@arctic.org
+ #
+@@ -45,11 +47,12 @@
+ #
+ use strict;
+ use IO::Socket::INET;
++use IO::Socket::SSL;
+ use Getopt::Std;
+ use English;
+ 
+ my %opt;
+-getopts ("s:g:h:t:uTOjc:S:U:n:dN:p:", \%opt);
++getopts ("s:g:h:t:uTOjc:S:U:n:dN:p:P:e", \%opt);
+ 
+ my $CHAN = $opt{"c"} || "mon";
+ my $NICK = $opt{"n"} || "mon";
+@@ -58,6 +61,7 @@ my $SERVER = $opt{"S"} || die "must supply server via 
+ my $NICK_TRIES = $opt{"N"} || 5;
+ my $PAUSE = $opt{"p"} || 0;
+ my $TIMEOUT = 10;
++my $PORT = $opt{"P"} || 6667;
+ 
+ #
+ # read in what the mon server sends us about the alert
+@@ -82,11 +86,20 @@ eval
+     #
+     # make the connection
+     #
+-    my $s = new IO::Socket::INET (
+-	"PeerAddr" => "$SERVER:6667",
+-	"Proto" => "tcp",
+-	"Timeout" => 10,
+-    );
++    my $s;
++    if ( $opt{"e"} ) {
++	$s = new IO::Socket::SSL (
++	    "PeerAddr" => "$SERVER:$PORT",
++	    "Proto" => "tcp",
++	    "Timeout" => 10,
++	    );
++    } else {
++	$s = new IO::Socket::INET (
++	    "PeerAddr" => "$SERVER:$PORT",
++	    "Proto" => "tcp",
++	    "Timeout" => 10,
++	    );
++    }
+ 
+     die if (!defined $s);
+ 
