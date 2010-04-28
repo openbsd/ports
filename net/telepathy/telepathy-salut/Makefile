@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/04/23 17:59:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/04/28 16:37:56 jasper Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -14,6 +14,7 @@ WANTLIB += m pcre pthread ssl tasn1 xml2 z
 MODULES=		devel/gettext \
 			lang/python
 
+BUILD_DEPENDS=		::textproc/libxslt
 LIB_DEPENDS=		avahi-client,avahi-common,avahi-glib,avahi-gobject::net/avahi \
 			soup-2.4.>=1::devel/libsoup \
 			telepathy-glib.>=5::net/telepathy/telepathy-glib
