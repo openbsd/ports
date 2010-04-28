@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.9 2010/03/21 11:24:46 ajacoutot Exp $
---- configure.ac.orig	Sat Mar  6 01:27:38 2010
-+++ configure.ac	Mon Mar  8 12:23:40 2010
-@@ -457,6 +457,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
+$OpenBSD: patch-configure_ac,v 1.10 2010/04/28 08:03:23 ajacoutot Exp $
+--- configure.ac.orig	Wed Apr 28 03:48:35 2010
++++ configure.ac	Wed Apr 28 09:06:22 2010
+@@ -471,6 +471,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
  #include <sys/videodev2.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.9 2010/03/21 11:24:46 ajacoutot Exp $
  #else /* Linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
-@@ -498,6 +500,8 @@ return 0;
+@@ -512,6 +514,8 @@ return 0;
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
  #include <sys/videodev2.h>
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.9 2010/03/21 11:24:46 ajacoutot Exp $
  #else /* Linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
-@@ -682,6 +686,21 @@ AG_GST_CHECK_FEATURE(ESD, [ESounD sound daemon], esdsi
+@@ -696,6 +700,21 @@ AG_GST_CHECK_FEATURE(ESD, [ESounD sound daemon], esdsi
    fi
  ])
  
@@ -41,16 +41,7 @@ $OpenBSD: patch-configure_ac,v 1.9 2010/03/21 11:24:46 ajacoutot Exp $
  dnl *** FLAC ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_FLAC, true)
  AG_GST_CHECK_FEATURE(FLAC, [FLAC lossless audio], flac, [
-@@ -750,7 +769,7 @@ AG_GST_CHECK_FEATURE(LIBDV, [libdv DV demuxer/decoder]
- dnl *** libpng ***
- translit(dnm, m, l) AM_CONDITIONAL(USE_LIBPNG, true)
- AG_GST_CHECK_FEATURE(LIBPNG, [Portable Network Graphics library], png, [
--  AG_GST_PKG_CHECK_MODULES(LIBPNG, libpng12)
-+  AG_GST_PKG_CHECK_MODULES(LIBPNG, libpng)
- ])
- 
- dnl *** pulseaudio ***
-@@ -963,6 +982,7 @@ AM_CONDITIONAL(USE_CAIRO, false)
+@@ -977,6 +996,7 @@ AM_CONDITIONAL(USE_CAIRO, false)
  AM_CONDITIONAL(USE_DIRECTSOUND, false)
  AM_CONDITIONAL(USE_DV1394, false)
  AM_CONDITIONAL(USE_ESD, false)
@@ -58,7 +49,7 @@ $OpenBSD: patch-configure_ac,v 1.9 2010/03/21 11:24:46 ajacoutot Exp $
  AM_CONDITIONAL(USE_FLAC, false)
  AM_CONDITIONAL(USE_GCONF, false)
  AM_CONDITIONAL(USE_GCONFTOOL, false)
-@@ -1100,6 +1120,7 @@ ext/annodex/Makefile
+@@ -1111,6 +1131,7 @@ ext/annodex/Makefile
  ext/cairo/Makefile
  ext/dv/Makefile
  ext/esd/Makefile

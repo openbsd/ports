@@ -1,7 +1,7 @@
-$OpenBSD: patch-sys_oss_gstosshelper_c,v 1.3 2008/06/14 17:17:26 deanna Exp $
---- sys/oss/gstosshelper.c.orig	Tue Apr  8 15:49:34 2008
-+++ sys/oss/gstosshelper.c	Fri Jun 13 11:06:46 2008
-@@ -227,6 +227,7 @@ gst_oss_helper_rate_probe_check (GstOssProbe * probe)
+$OpenBSD: patch-sys_oss_gstosshelper_c,v 1.4 2010/04/28 08:03:23 ajacoutot Exp $
+--- sys/oss/gstosshelper.c.orig	Fri Apr 16 19:10:22 2010
++++ sys/oss/gstosshelper.c	Wed Apr 28 09:06:23 2010
+@@ -228,6 +228,7 @@ gst_oss_helper_rate_probe_check (GstOssProbe * probe)
    int exact_rates = 0;
    gboolean checking_exact_rates = TRUE;
    int n_checks = 0;
@@ -9,7 +9,7 @@ $OpenBSD: patch-sys_oss_gstosshelper_c,v 1.3 2008/06/14 17:17:26 deanna Exp $
    gboolean result = TRUE;
  
    ranges = g_queue_new ();
-@@ -254,6 +255,12 @@ gst_oss_helper_rate_probe_check (GstOssProbe * probe)
+@@ -255,6 +256,12 @@ gst_oss_helper_rate_probe_check (GstOssProbe * probe)
       * driver is seriously buggy, and probably doesn't work with other
       * media libraries/apps.  */
      probe->min = gst_oss_helper_rate_check_rate (probe, 8000);
@@ -22,7 +22,7 @@ $OpenBSD: patch-sys_oss_gstosshelper_c,v 1.3 2008/06/14 17:17:26 deanna Exp $
      probe->max = gst_oss_helper_rate_check_rate (probe, 48000);
    }
    if (probe->min == -1 || probe->max == -1) {
-@@ -278,19 +285,15 @@ gst_oss_helper_rate_probe_check (GstOssProbe * probe)
+@@ -279,19 +286,15 @@ gst_oss_helper_rate_probe_check (GstOssProbe * probe)
      }
      n_checks++;
  

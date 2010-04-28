@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/04/06 09:21:21 kili Exp $
+# $OpenBSD: Makefile,v 1.53 2010/04/28 08:03:23 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (good)
@@ -7,10 +7,10 @@ COMMENT-gdk =		gdk pixbuf element for GStreamer (good)
 COMMENT-caca =		libcaca element for GStreamer (good)
 COMMENT-soup =		libsoup element for GStreamer (good)
 
-V =			0.10.21
+V =			0.10.22
 DISTNAME =		gst-plugins-good-$V
 
-PKGNAME-main =		gstreamer-plugins-good-${V}p0v0
+PKGNAME-main =		gstreamer-plugins-good-${V}v0
 PKGNAME-aalib =		gstreamer-aalib-${V}
 PKGNAME-dv =		gstreamer-dv-${V}
 PKGNAME-gdk =		gstreamer-gdk-pixbuf-${V}
@@ -36,11 +36,11 @@ REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
 RUN_DEPENDS =		::${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 			pcre xml2 m z
-LIB_DEPENDS =		gstreamer-0.10,gstbase-0.10:gstreamer->=0.10:$P/core
+LIB_DEPENDS =		gstreamer-0.10,gstbase-0.10:gstreamer->=0.10.29:$P/core
 
 WANTLIB-main =		${WANTLIB} \
 			ICE SM X11 Xdamage Xext Xfixes sndio ossaudio \
-			gstcontroller-0.10 Xau Xdmcp \
+			gstcontroller-0.10 Xau Xdmcp xcb-render xcb-render-util \
 			pthread-stubs xcb Xrender cairo expat \
 			fontconfig freetype glitz ogg pixman-1 png \
 			stdc++ theora vorbis ORBit-2 dbus-1 dbus-glib-1
@@ -83,7 +83,7 @@ LIB_DEPENDS-caca =	${LIB_DEPENDS} \
 WANTLIB-soup =		${WANTLIB} \
 			ORBit-2 dbus-1 dbus-glib-1 gcrypt gio-2.0 \
 			gnome-keyring gnutls gpg-error gsttag-0.10 proxy \
-			sqlite3 tasn1
+			sqlite3 tasn1 eggdbus-1
 LIB_DEPENDS-soup =	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \
 			soup-2.4,soup-gnome-2.4::devel/libsoup,-gnome

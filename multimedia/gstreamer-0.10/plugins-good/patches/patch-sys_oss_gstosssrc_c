@@ -1,16 +1,16 @@
-$OpenBSD: patch-sys_oss_gstosssrc_c,v 1.4 2009/11/29 09:17:38 ajacoutot Exp $
---- sys/oss/gstosssrc.c.orig	Tue May 12 02:00:06 2009
-+++ sys/oss/gstosssrc.c	Mon Nov 23 18:28:12 2009
-@@ -73,7 +73,7 @@ GST_ELEMENT_DETAILS ("Audio Source (OSS)",
-     "Capture from a sound card via OSS",
-     "Erik Walthinsen <omega@cse.ogi.edu>, " "Wim Taymans <wim@fluendo.com>");
+$OpenBSD: patch-sys_oss_gstosssrc_c,v 1.5 2010/04/28 08:03:23 ajacoutot Exp $
+--- sys/oss/gstosssrc.c.orig	Thu Mar 18 18:55:13 2010
++++ sys/oss/gstosssrc.c	Wed Apr 28 09:06:23 2010
+@@ -67,7 +67,7 @@
+ GST_DEBUG_CATEGORY_EXTERN (oss_debug);
+ #define GST_CAT_DEFAULT oss_debug
  
 -#define DEFAULT_DEVICE          "/dev/dsp"
 +#define DEFAULT_DEVICE          "/dev/audio"
  #define DEFAULT_DEVICE_NAME     ""
  
  enum
-@@ -172,7 +172,7 @@ gst_oss_src_class_init (GstOssSrcClass * klass)
+@@ -169,7 +169,7 @@ gst_oss_src_class_init (GstOssSrcClass * klass)
  
    g_object_class_install_property (gobject_class, PROP_DEVICE,
        g_param_spec_string ("device", "Device",

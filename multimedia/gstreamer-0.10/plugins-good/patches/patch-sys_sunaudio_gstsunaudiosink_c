@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_sunaudio_gstsunaudiosink_c,v 1.5 2009/11/29 09:17:38 ajacoutot Exp $
---- sys/sunaudio/gstsunaudiosink.c.orig	Tue May 12 02:00:07 2009
-+++ sys/sunaudio/gstsunaudiosink.c	Mon Nov 23 18:28:12 2009
+$OpenBSD: patch-sys_sunaudio_gstsunaudiosink_c,v 1.6 2010/04/28 08:03:23 ajacoutot Exp $
+--- sys/sunaudio/gstsunaudiosink.c.orig	Thu Mar 18 18:55:13 2010
++++ sys/sunaudio/gstsunaudiosink.c	Wed Apr 28 09:06:23 2010
 @@ -41,7 +41,6 @@
  
  #include <fcntl.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudiosink_c,v 1.5 2009/11/29 09:17:38 ajacout
  #include <unistd.h>
  #include <sys/mman.h>
  
-@@ -316,13 +315,14 @@ gst_sunaudiosink_open (GstAudioSink * asink)
+@@ -312,13 +311,14 @@ gst_sunaudiosink_open (GstAudioSink * asink)
        sunaudiosink->info.monitor_gain);
    GST_DEBUG_OBJECT (sunaudiosink, "output_muted %d",
        sunaudiosink->info.output_muted);
@@ -25,7 +25,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudiosink_c,v 1.5 2009/11/29 09:17:38 ajacout
    return TRUE;
  
  open_failed:
-@@ -617,7 +617,7 @@ gst_sunaudiosink_reset (GstAudioSink * asink)
+@@ -613,7 +613,7 @@ gst_sunaudiosink_reset (GstAudioSink * asink)
    }
  
    /* Flush the audio */
@@ -34,7 +34,7 @@ $OpenBSD: patch-sys_sunaudio_gstsunaudiosink_c,v 1.5 2009/11/29 09:17:38 ajacout
    if (ret == -1) {
      GST_ELEMENT_ERROR (sunaudiosink, RESOURCE, SETTINGS, (NULL), ("%s",
              strerror (errno)));
-@@ -632,7 +632,7 @@ gst_sunaudiosink_reset (GstAudioSink * asink)
+@@ -628,7 +628,7 @@ gst_sunaudiosink_reset (GstAudioSink * asink)
  
    g_cond_signal (sunaudiosink->sleep_cond);
  
