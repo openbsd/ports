@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_libtracker-common_tracker-dbus_c,v 1.1 2010/04/28 09:51:09 ajacoutot Exp $
+
+XXX fix not to use /proc
+/proc is not mounted by default in OpenBSD, no need to spam xsession-errors.
+
+--- src/libtracker-common/tracker-dbus.c.orig	Wed Apr 28 11:04:19 2010
++++ src/libtracker-common/tracker-dbus.c	Wed Apr 28 11:18:55 2010
+@@ -214,9 +214,11 @@ client_data_new (gchar *sender)
+ 		g_free (pid_str);
+ 
+ 		if (!g_file_get_contents (filename, &contents, NULL, &error)) {
++/*
+ 			g_warning ("Could not get process name from id %ld, %s",
+ 			           cd->pid,
+ 			           error ? error->message : "no error given");
++*/
+ 			g_clear_error (&error);
+ 			g_free (filename);
+ 			return cd;
