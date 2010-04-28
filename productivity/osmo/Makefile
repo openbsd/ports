@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/03/23 17:24:45 pea Exp $
+# $OpenBSD: Makefile,v 1.12 2010/04/28 11:19:15 pea Exp $
 
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.2.8
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://clayo.org/osmo/
@@ -20,7 +21,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		fontconfig freetype glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 png pthread z dbus-1 dbus-glib-1 gio-2.0 \
-		pthread-stubs xcb gthread-2.0
+		pthread-stubs xcb gthread-2.0 xcb-render xcb-render-util
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
 

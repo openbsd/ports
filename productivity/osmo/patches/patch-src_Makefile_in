@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2010/04/28 11:19:15 pea Exp $
+--- src/Makefile.in.orig	Wed Apr 28 09:37:32 2010
++++ src/Makefile.in	Wed Apr 28 09:37:42 2010
+@@ -238,7 +238,7 @@ REVISION := $(shell if test -e .svn; then echo -DREV=\
+ AM_CPPFLAGS = -DLOCALEDIR=\"$(datadir)/locale\" $(REVISION) -DDATADIR=\"$(datadir)\" \
+ 			  -DSOUNDSDIR=\"$(datadir)/sounds\" \
+ 			  @GTK_CFLAGS@ @XML_CPPFLAGS@ \
+-			  -Wall -DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED
++			  -Wall -DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED 
+ 
+ osmo_SOURCES = backup.c backup.h calendar.c calendar.h calendar_calc.c \
+ 	calendar_calc.h calendar_fullyear.c calendar_fullyear.h \
