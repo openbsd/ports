@@ -1,0 +1,15 @@
+$OpenBSD: patch-examples_pixmap_c,v 1.1 2010/04/28 07:11:31 jasper Exp $
+
+Fix build with gtk2 2.20.
+
+--- examples/pixmap.c.orig	Tue Apr 27 23:42:48 2010
++++ examples/pixmap.c	Tue Apr 27 23:43:00 2010
+@@ -137,7 +137,7 @@ expose_event (GtkWidget      *widget,
+               gpointer        data)
+ {
+   gdk_draw_drawable (widget->window,
+-		     widget->style->fg_gc[GTK_WIDGET_STATE (widget)],
++		     widget->style->fg_gc[gtk_widget_get_state (widget)],
+ 		     pixmap,
+ 		     event->area.x, event->area.y,
+ 		     event->area.x, event->area.y,
