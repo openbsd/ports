@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/14 12:24:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/28 18:10:03 pea Exp $
 
 COMMENT=	import CSV data and Large Object to PostgreSQL
 
-DISTNAME=	pgloader-2.3.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	pgloader-2.3.2
 CATEGORIES=	databases
 
 HOMEPAGE=	http://pgfoundry.org/projects/pgloader/
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_FTP=	Yes
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1814/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2294/
 
 MODULES=	lang/python
 

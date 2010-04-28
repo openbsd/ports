@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/05 09:45:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/04/28 18:10:03 pea Exp $
 bin/pgloader
 lib/python${MODPY_VERSION}/pgloader/
+lib/python${MODPY_VERSION}/pgloader/RRRtools.py
 lib/python${MODPY_VERSION}/pgloader/__init__.py
 lib/python${MODPY_VERSION}/pgloader/csvreader.py
 lib/python${MODPY_VERSION}/pgloader/db.py
