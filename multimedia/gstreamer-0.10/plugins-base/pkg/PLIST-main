@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/03/21 11:23:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2010/04/28 08:03:03 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.17
 @conflict gstreamer-ogg-*
 @conflict gstreamer-theora-*
@@ -226,12 +226,7 @@ share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtc
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtpbuffer.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtppayloads.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspbase64.html
-share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspconnection.html
-share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspdefs.html
-share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspmessage.html
-share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtsprange.html
-share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtsptransport.html
-share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspurl.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstrtspextension.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gstsdpmessage.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gststreamvolume.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttag.html
@@ -239,6 +234,7 @@ share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttag
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttagid3.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttaglanguagecodes.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttagvorbis.html
+share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttagxmp.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttuner.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttunerchannel.html
 share/gtk-doc/html/gst-plugins-base-libs-${VERSION}/gst-plugins-base-libs-gsttunernorm.html
@@ -278,9 +274,6 @@ share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/ch03.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-${VERSION}.devhelp
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-${VERSION}.devhelp2
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-adder.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-alsamixer.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-alsasink.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-alsasrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-appsink.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-appsrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-audioconvert.html
@@ -291,13 +284,17 @@ share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-clockoverlay.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-decodebin.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-decodebin2.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-element-alsamixer.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-element-alsasink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-element-alsasrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-element-gdpdepay.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-element-gdppay.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-element-giosink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-element-giosrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-element-giostreamsink.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-element-giostreamsrc.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-element-vorbisdec.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-ffmpegcolorspace.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-gdpdepay.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-gdppay.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-giosink.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-giosrc.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-giostreamsink.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-giostreamsrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-gnomevfssink.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-gnomevfssrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-multifdsink.html
@@ -352,7 +349,6 @@ share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-videoscale.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-videotestsrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-volume.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-vorbisdec.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-vorbisenc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-vorbisparse.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-vorbistag.html

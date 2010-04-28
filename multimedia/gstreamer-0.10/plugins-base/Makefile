@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2010/03/21 11:23:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/04/28 08:03:03 ajacoutot Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-gnome =		gnome vfs element for GStreamer (base)
 COMMENT-cdda =		cd paranoia element for GStreamer (base)
 
-V =			0.10.28
+V =			0.10.29
 DISTNAME =		gst-plugins-base-${V}
 
 PKGNAME-main =		gstreamer-plugins-base-${V}
@@ -13,19 +13,19 @@ PKGNAME-cdda =		gstreamer-cdda-${V}
 
 MULTI_PACKAGES =	-main -gnome -cdda
 
-SHARED_LIBS +=  gstinterfaces-0.10   2.0      # .19.2
-SHARED_LIBS +=  gsttag-0.10          2.0      # .19.2
-SHARED_LIBS +=  gstaudio-0.10        2.0      # .19.2
-SHARED_LIBS +=  gstcdda-0.10         2.0      # .19.2
-SHARED_LIBS +=  gstfft-0.10          2.0      # .19.2
-SHARED_LIBS +=  gstnetbuffer-0.10    2.0      # .19.2
-SHARED_LIBS +=  gstpbutils-0.10      2.0      # .19.2
-SHARED_LIBS +=  gstriff-0.10         2.0      # .19.2
-SHARED_LIBS +=  gstrtp-0.10          2.0      # .19.2
-SHARED_LIBS +=  gstsdp-0.10          2.0      # .19.2
-SHARED_LIBS +=  gstrtsp-0.10         2.0      # .19.2
-SHARED_LIBS +=  gstvideo-0.10        2.0      # .19.2
-SHARED_LIBS +=  gstapp-0.10          2.0      # .19.2
+SHARED_LIBS +=  gstinterfaces-0.10   2.1      # .20.0
+SHARED_LIBS +=  gsttag-0.10          2.1      # .20.0
+SHARED_LIBS +=  gstaudio-0.10        2.1      # .20.0
+SHARED_LIBS +=  gstcdda-0.10         2.1      # .20.0
+SHARED_LIBS +=  gstfft-0.10          2.1      # .20.0
+SHARED_LIBS +=  gstnetbuffer-0.10    2.1      # .20.0
+SHARED_LIBS +=  gstpbutils-0.10      2.1      # .20.0
+SHARED_LIBS +=  gstriff-0.10         2.1      # .20.0
+SHARED_LIBS +=  gstrtp-0.10          2.1      # .20.0
+SHARED_LIBS +=  gstsdp-0.10          2.1      # .20.0
+SHARED_LIBS +=  gstrtsp-0.10         2.1      # .20.0
+SHARED_LIBS +=  gstvideo-0.10        2.1      # .20.0
+SHARED_LIBS +=  gstapp-0.10          2.1      # .20.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-base/}
 MODULES =		devel/gettext
@@ -37,13 +37,14 @@ REGRESS_DEPENDS +=	::${BASE_PKGPATH},${i}
 RUN_DEPENDS =		::${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
 			z m pcre
-LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10:${P}/core
+LIB_DEPENDS =		gstreamer-0.10:gstreamer->=0.10.29:${P}/core
 
 WANTLIB-main =		${WANTLIB} \
 			Xv X11 ICE SM Xext Xau Xdmcp \
 			gstdataprotocol-0.10 gstcontroller-0.10 gstbase-0.10 \
 			pthread-stubs xcb expat fontconfig freetype ogg \
-			Xrender cairo gio-2.0 glitz pixman-1 png
+			Xrender cairo gio-2.0 glitz pixman-1 png \
+			xcb-render xcb-render-util
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			oil-0.3::devel/liboil \
 			vorbis.>=7,vorbisenc::audio/libvorbis \
