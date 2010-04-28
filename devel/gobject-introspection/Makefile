@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/28 10:10:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/04/28 17:15:45 jasper Exp $
 
 # Look at cairo-related regression failure.
 # and cairo/cairo.h: No such file or directory during build.
@@ -7,6 +7,7 @@ COMMENT=		GObject Introspection
 
 GNOME_VERSION=		0.6.10
 GNOME_PROJECT=		gobject-introspection
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		devel
 
 SHARED_LIBS +=  girepository-1.0     0.0      # .0.0
