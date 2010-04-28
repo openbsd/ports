@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2010/04/26 17:31:57 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2010/04/28 08:02:38 sthen Exp $
 @conflict samba-docs-<=3.5.0
 @pkgpath ${BASE_PKGPATH}
 @bin bin/eventlogadm
@@ -34,10 +34,16 @@ include/netapi.h
 include/smb_share_modes.h
 include/wbc_async.h
 include/wbclient.h
+@lib lib/libnetapi.so.${LIBnetapi_VERSION}
+@lib lib/libsmbclient.so.${LIBsmbclient_VERSION}
+@lib lib/libsmbsharemodes.so.${LIBsmbsharemodes_VERSION}
 @lib lib/libwbclient.so.${LIBwbclient_VERSION}
 lib/samba/
 lib/samba/auth/
+lib/samba/auth/script.so
 lib/samba/charset/
+lib/samba/charset/CP437.so
+lib/samba/charset/CP850.so
 lib/samba/de.msg
 lib/samba/en.msg
 lib/samba/fi.msg
@@ -46,6 +52,12 @@ lib/samba/gpext/
 lib/samba/idmap/
 lib/samba/it.msg
 lib/samba/ja.msg
+lib/samba/libnetapi.so
+@lib lib/samba/libnetapi.so.${LIBnetapi_VERSION}
+lib/samba/libsmbclient.so
+@lib lib/samba/libsmbclient.so.${LIBsmbclient_VERSION}
+lib/samba/libsmbsharemodes.so
+@lib lib/samba/libsmbsharemodes.so.${LIBsmbsharemodes_VERSION}
 lib/samba/libwbclient.so
 @lib lib/samba/libwbclient.so.${LIBwbclient_VERSION}
 lib/samba/lowcase.dat
@@ -60,6 +72,28 @@ lib/samba/tr.msg
 lib/samba/upcase.dat
 lib/samba/valid.dat
 lib/samba/vfs/
+lib/samba/vfs/acl_tdb.so
+lib/samba/vfs/acl_xattr.so
+lib/samba/vfs/audit.so
+lib/samba/vfs/cap.so
+lib/samba/vfs/catia.so
+lib/samba/vfs/default_quota.so
+lib/samba/vfs/expand_msdfs.so
+lib/samba/vfs/extd_audit.so
+lib/samba/vfs/fake_perms.so
+lib/samba/vfs/full_audit.so
+lib/samba/vfs/netatalk.so
+lib/samba/vfs/preopen.so
+lib/samba/vfs/readahead.so
+lib/samba/vfs/readonly.so
+lib/samba/vfs/recycle.so
+lib/samba/vfs/scannedonly.so
+lib/samba/vfs/shadow_copy.so
+lib/samba/vfs/shadow_copy2.so
+lib/samba/vfs/smb_traffic_analyzer.so
+lib/samba/vfs/streams_depot.so
+lib/samba/vfs/streams_xattr.so
+lib/samba/vfs/xattr_tdb.so
 @bin libexec/nmbd
 @bin libexec/smbd
 @bin libexec/swat
@@ -172,4 +206,3 @@ share/swat/include/footer.html
 share/swat/include/header.html
 @sample /var/log/samba/
 @sample /var/spool/samba/
-%%SHARED%%
