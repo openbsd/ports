@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2010/04/26 22:14:37 landry Exp $
+# $OpenBSD: Makefile,v 1.136 2010/04/28 06:56:38 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.6.3
 DISTNAME=	mozilla-1.9.2
-PKGNAME=	mozilla-firefox-${VER}p0
+PKGNAME=	mozilla-firefox-${VER}p1
 SO_VERSION=	21.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -117,6 +117,8 @@ MOZ=		${PREFIX}/mozilla-firefox
 DATADIRS=	chrome components defaults dictionaries extensions \
 		greprefs icons modules plugins res searchplugins
 
+SUBST_VARS+=	VER
+
 post-extract:
 	@find ${WRKSRC} -name "*.orig" -exec rm -f {} \;
 	@cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/widget/src/gtk2/
@@ -126,7 +128,7 @@ post-extract:
 pre-configure:
 	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
+	${SUBST_CMD} ${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${WRKSRC}/build/unix/mozilla.in \
 		${WRKSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
 		${WRKSRC}/js/src/xpconnect/shell/Makefile.in \
@@ -145,10 +147,11 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/firefox.desktop ${PREFIX}/share/applications
 	${INSTALL_MAN} ${FILESDIR}/mozilla-firefox.1 ${PREFIX}/man/man1
-	perl -pi -e 's,!!PREFIX!!,${TRUEPREFIX},g; \
-		s,!!LOCALBASE!!,${LOCALBASE},g; s,!!VERSION!!,${VER},g' \
-		${MOZ}/README.OpenBSD ${PREFIX}/man/man1/mozilla-firefox.1 \
+	${SUBST_CMD} ${MOZ}/README.OpenBSD ${PREFIX}/man/man1/mozilla-firefox.1 \
 		${PREFIX}/share/applications/firefox.desktop
+	rm -f ${MOZ}/README.OpenBSD.beforesubst \
+		${PREFIX}/man/man1/mozilla-firefox.1.beforesubst \
+		${PREFIX}/share/applications/firefox.desktop.beforesubst
 	ln -f ${PREFIX}/man/man1/mozilla-firefox.1 ${PREFIX}/man/man1/firefox.1
 	${INSTALL_SCRIPT} ${MOB}/firefox ${PREFIX}/bin
 	ln -f ${PREFIX}/bin/firefox ${PREFIX}/bin/mozilla-firefox
@@ -159,11 +162,9 @@ do-install:
 	# create an xpm icon from the png one as nsWindow::SetWindowIconList
 	# fails to load png icons : confuses the png pixbuf loader from gtk, which
 	# differs from the libpng bundled in firefox
-	cd ${WRKSRC} && \
-		${LOCALBASE}/bin/pngtopnm -alpha ${MOZ}/icons/mozicon128.png > alpha.pgm
-	cd ${WRKSRC} && \
-		${LOCALBASE}/bin/pngtopnm ${MOZ}/icons/mozicon128.png | \
-			${LOCALBASE}/bin/ppmtoxpm -alphamask=alpha.pgm > \
-			${MOZ}/chrome/icons/default/default.xpm
+	cd ${MOZ}/chrome/icons/default/ && \
+		${LOCALBASE}/bin/pngtopnm -alpha default48.png > ${WRKSRC}/alpha.pgm && \
+		${LOCALBASE}/bin/pngtopnm default48.png | \
+		${LOCALBASE}/bin/ppmtoxpm -alphamask=${WRKSRC}/alpha.pgm > default.xpm
 
 .include <bsd.port.mk>

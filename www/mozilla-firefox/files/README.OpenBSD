@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.10 2010/04/26 19:55:58 landry Exp $
+$OpenBSD: README.OpenBSD,v 1.11 2010/04/28 06:56:38 landry Exp $
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is
@@ -20,7 +20,7 @@ in Firefox's URL text field.  Type "mailto" in the filter.  If there
 is a string called "network.protocol-handler.app.mailto", its value
 names the application for mailto URLs. If present, right click,
 choose Modify, and enter the path to your mail program, e.g.,
-"!!LOCALBASE!!/bin/thunderbird" or "!!LOCALBASE!!/bin/kmail" (other
+"${LOCALBASE}/bin/thunderbird" or "${LOCALBASE}/bin/kmail" (other
 programs may work, but these two have been tested).  If absent,
 right click, choose New String. Set the name to
 "network.protocol-handler.app.mailto" and the value to the path to
@@ -29,7 +29,7 @@ your mailer.
 Plugins
 
 Firefox looks for plugins in ~/.mozilla/plugins,
-!!PREFIX!!/lib/mozilla-plugins, and !!PREFIX!!/mozilla-firefox/plugins.
+${TRUEPREFIX}/lib/mozilla/plugins, and ${TRUEPREFIX}/mozilla-firefox/plugins.
 If the environment variable MOZ_PLUGIN_PATH is specified, this
 location will be overridden.
 
@@ -40,7 +40,7 @@ libjavaplugin_oji.so into one of the directories listed above.
 This might be done like the following:
 
 $ cd ~/.mozilla/plugins
-$ ln -s !!LOCALBASE!!/jdk-1.5.0/jre/plugin/i386/ns7/libjavaplugin_oji.so .
+$ ln -s ${LOCALBASE}/jdk-1.5.0/jre/plugin/i386/ns7/libjavaplugin_oji.so .
 $   
 
 Information on building Java (on some platforms) can be found in

@@ -1,4 +1,4 @@
-$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.2 2010/04/26 19:55:58 landry Exp $
+$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.3 2010/04/28 06:56:38 landry Exp $
 --- extensions/spellcheck/hunspell/src/mozHunspell.cpp.orig	Fri Oct  5 22:13:18 2007
 +++ extensions/spellcheck/hunspell/src/mozHunspell.cpp	Thu Sep 25 01:30:45 2008
 @@ -63,6 +63,7 @@
@@ -19,7 +19,7 @@ $OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.2 2010/04
 +  nsCOMPtr<nsIFile> mozillaDir;
 +  nsCOMPtr<nsILocalFile> localFile;
 +  rv = NS_NewNativeLocalFile(nsDependentCString(
-+    "_LOCALBASE_/share/mozilla-dicts"), PR_TRUE, getter_AddRefs(localFile));
++    "${LOCALBASE}/share/mozilla-dicts"), PR_TRUE, getter_AddRefs(localFile));
 +  if (localFile && NS_SUCCEEDED(rv)) {
 +    localFile->QueryInterface(NS_GET_IID(nsIFile), getter_AddRefs(mozillaDir));
 +    LoadDictionariesFromDir(mozillaDir);

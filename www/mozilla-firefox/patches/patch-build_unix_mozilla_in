@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_unix_mozilla_in,v 1.1 2010/04/26 19:55:58 landry Exp $
+$OpenBSD: patch-build_unix_mozilla_in,v 1.2 2010/04/28 06:56:38 landry Exp $
 --- build/unix/mozilla.in.orig	Wed Jan  6 05:35:11 2010
 +++ build/unix/mozilla.in	Sun Jan 10 17:47:23 2010
 @@ -50,6 +50,11 @@
@@ -18,11 +18,11 @@ $OpenBSD: patch-build_unix_mozilla_in,v 1.1 2010/04/26 19:55:58 landry Exp $
    esac
  done
 +
-+if [ `_X11BASE_/bin/fc-list | wc -l` -eq 0 ]; then
++if [ `${X11BASE}/bin/fc-list | wc -l` -eq 0 ]; then
 +	export GDK_USE_XFT=0
 +fi
 +
-+export MOZ_PLUGIN_PATH=${MOZ_PLUGIN_PATH:=_LOCALBASE_/lib/mozilla-plugins}
++export MOZ_PLUGIN_PATH=${MOZ_PLUGIN_PATH:=${LOCALBASE}/lib/mozilla-plugins}
  
  if [ $debugging = 1 ]
  then
