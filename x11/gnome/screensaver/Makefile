@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/04/23 11:56:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/04/28 15:18:32 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
 GNOME_VERSION=	2.30.0
+PKGNAME=	${DISTNAME}p0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,7 +38,7 @@ RUN_DEPENDS=	::x11/gnome/librsvg \
 		:notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.63
+AUTOCONF_VERSION= 2.65
 MODGCONF2_SCHEMAS_DIR= gnome-screensaver
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
