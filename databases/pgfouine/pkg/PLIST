@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/07/24 11:47:02 pea Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/04/28 18:07:56 pea Exp $
 bin/pgfouine
 bin/pgfouine_vacuum
 share/doc/pgfouine/
@@ -205,6 +205,7 @@ share/pgfouine/include/reporting/geshi/geshi.php
 share/pgfouine/include/reporting/geshi/geshi/sql.php
 share/pgfouine/include/reporting/reports/
 share/pgfouine/include/reporting/reports.lib.php
+share/pgfouine/include/reporting/reports/CsvQueriesHistoryReport.class.php
 share/pgfouine/include/reporting/reports/HourlyStatsReport.class.php
 share/pgfouine/include/reporting/reports/NormalizedErrorsMostFrequentReport.class.php
 share/pgfouine/include/reporting/reports/NormalizedErrorsReport.class.php
