@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2010/04/22 11:20:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2010/04/28 10:44:14 ajacoutot Exp $
 
 COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
-GNOME_VERSION=	2.30.0
+GNOME_VERSION=	2.30.1
 
 CATEGORIES=	multimedia
 
@@ -40,7 +40,7 @@ BUILD_DEPENDS+=	::graphics/ffmpeg \
 
 BUILD_DEPENDS+=	::x11/py-gtk2 \
 		::devel/py-gdata \
-		::multimedia/gstreamer-0.10/plugins-good,-soup \
+		:gstreamer-libsoup->=0.10.22:multimedia/gstreamer-0.10/plugins-good,-soup \
 		::devel/iso-codes
 RUN_DEPENDS+=	::x11/gnome/settings-daemon \
 		::x11/py-gtk2 \
@@ -50,7 +50,7 @@ RUN_DEPENDS+=	::x11/gnome/settings-daemon \
 		::net/galago-daemon \
 		::devel/py-xdg
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS} \
-		gstaudio-0.10,gstinterfaces-0.10,gstpbutils-0.10,gstvideo-0.10,gsttag-0.10:gstreamer-plugins-base->=0.10.25:multimedia/gstreamer-0.10/plugins-base \
+		gstaudio-0.10,gstinterfaces-0.10,gstpbutils-0.10,gstvideo-0.10,gsttag-0.10:gstreamer-plugins-base->=0.10.29:multimedia/gstreamer-0.10/plugins-base \
 		totem-plparser:totem-pl-parser->=2.28.1:x11/gnome/totem-pl-parser \
 		galago::net/libgalago \
 		nautilus-extension::x11/gnome/nautilus \

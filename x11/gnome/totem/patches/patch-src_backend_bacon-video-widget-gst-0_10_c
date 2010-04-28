@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_backend_bacon-video-widget-gst-0_10_c,v 1.4 2010/04/22 11:20:02 jasper Exp $
---- src/backend/bacon-video-widget-gst-0.10.c.orig	Mon Mar 29 18:02:17 2010
-+++ src/backend/bacon-video-widget-gst-0.10.c	Thu Apr 22 12:46:33 2010
-@@ -6652,7 +6652,7 @@ bacon_video_widget_new (int width, int height,
+$OpenBSD: patch-src_backend_bacon-video-widget-gst-0_10_c,v 1.5 2010/04/28 10:44:14 ajacoutot Exp $
+--- src/backend/bacon-video-widget-gst-0.10.c.orig	Tue Apr 27 11:17:32 2010
++++ src/backend/bacon-video-widget-gst-0.10.c	Tue Apr 27 11:47:51 2010
+@@ -6707,7 +6707,7 @@ bacon_video_widget_new (int width, int height,
                          bvw);
  
    bvw->priv->speakersetup = BVW_AUDIO_SOUND_STEREO;
