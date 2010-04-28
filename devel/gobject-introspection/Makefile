@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2010/04/20 11:36:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/28 10:10:44 jasper Exp $
 
 # Look at cairo-related regression failure.
+# and cairo/cairo.h: No such file or directory during build.
 
 COMMENT=		GObject Introspection
 
@@ -25,10 +26,13 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-WANTLIB += c pcre pthread
+WANTLIB += X11 Xau Xdmcp Xrender c expat fontconfig freetype glitz
+WANTLIB += m pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB += xcb-render-util z
 
-LIB_DEPENDS=		gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
-			ffi::devel/libffi
+LIB_DEPENDS=		gio-2.0,glib-2.0,gmodule-2.0,gobject-2.0,gthread-2.0::devel/glib2 \
+			ffi::devel/libffi \
+			cairo::graphics/cairo
 BUILD_DEPENDS=		::devel/bison
 
 USE_LIBTOOL=		Yes
