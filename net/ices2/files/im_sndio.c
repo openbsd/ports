@@ -1,7 +1,7 @@
 /* im_sndio.c
  * - Raw PCM input from sndio audio subsystem
  *
- * $Id: im_sndio.c,v 1.1 2010/04/23 05:54:26 jakemsr Exp $
+ * $Id: im_sndio.c,v 1.2 2010/04/28 04:15:58 jakemsr Exp $
  *
  * by Jacob Meuser <jakemsr@sdf.lonestar.org>, based
  * on im_sun.c which is...
@@ -224,7 +224,7 @@ input_module_t *sndio_open_module(module_param_t *params)
         LOG_ERROR0("Couldn't set signed linear encoding");
         goto fail;
     }
-    if (s->le != SIO_LE_NATIVE) {
+    if (s->par.le != SIO_LE_NATIVE) {
         LOG_ERROR0("Couldn't set proper endianness");
         goto fail;
     }
