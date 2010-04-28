@@ -1,0 +1,18 @@
+$OpenBSD: patch-hpodder_cabal,v 1.1.1.1 2010/04/28 16:21:40 dcoppa Exp $
+
+fix from upstream git:
+remove unneeded haskell98 dependency
+
+--- hpodder.cabal.orig	Wed Jul  2 17:32:27 2008
++++ hpodder.cabal	Tue Apr 13 11:46:07 2010
+@@ -68,8 +68,8 @@ Description:  Podcasting is a method of publishing rad
+  hpodder is SAFE and is designed with data integrity in mind from the
+  beginning.  It should be exceedingly difficult to lose a podcast
+  episode, even in the event of a power failure.
+-Build-Depends: haskell98, network, unix, parsec, MissingH>=1.0.0,
+- HDBC>=1.1.0, HDBC-sqlite3>=1.1.0, mtl, base, HaXml>=1.13.2, HaXml<1.19, hslogger,
++Build-Depends: network, unix, parsec, MissingH>=1.0.0,
++ HDBC>=1.1.0, HDBC-sqlite3>=1.1.0, mtl, base>=3 && < 4, HaXml>=1.13.2, HaXml<1.19, hslogger,
+  ConfigFile, filepath, old-time, directory, process
+ 
+ Executable: hpodder

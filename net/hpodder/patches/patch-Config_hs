@@ -1,0 +1,17 @@
+$OpenBSD: patch-Config_hs,v 1.1.1.1 2010/04/28 16:21:40 dcoppa Exp $
+
+fixes from upstream git:
+switch default ID3 tagger to mid3v2
+add -T ${EPID} to mid3v2
+
+--- Config.hs.orig	Wed Jul  2 17:32:27 2008
++++ Config.hs	Tue Apr 13 11:46:07 2010
+@@ -74,7 +74,7 @@ getDefaultCP =
+                  cp <- set cp "DEFAULT" "renametypes" "audio/mpeg:.mp3,audio/mp3:.mp3,x-audio/mp3:.mp3"
+                  cp <- set cp "DEFAULT" "postproctypes" "audio/mpeg,audio/mp3,x-audio/mp3"
+                  cp <- set cp "DEFAULT" "gettypecommand" "file -b -i \"${EPFILENAME}\""
+-                 cp <- set cp "DEFAULT" "postproccommand" "id3v2 -A \"${CASTTITLE}\" -t \"${EPTITLE}\" --WOAF \"${EPURL}\" --WOAS \"${FEDDURL}\" \"${EPFILENAME}\""
++                 cp <- set cp "DEFAULT" "postproccommand" "mid3v2 -T \"${EPID}\" -A \"${CASTTITLE}\" -t \"${EPTITLE}\" --WOAF \"${EPURL}\" --WOAS \"${FEEDURL}\" \"${EPFILENAME}\""
+                  return cp
+ 
+ startingcp = emptyCP {accessfunc = interpolatingAccess 10}

@@ -1,0 +1,15 @@
+$OpenBSD: patch-Commands_Download_hs,v 1.1.1.1 2010/04/28 16:21:40 dcoppa Exp $
+
+fix from upstream git:
+add EPID to the per-podcast command options
+
+--- Commands/Download.hs.orig	Wed Jul  2 17:32:27 2008
++++ Commands/Download.hs	Tue Apr 13 11:46:07 2010
+@@ -284,6 +284,7 @@ procSuccess gi ep tmpfp =
+                          ("FEEDURL", feedurl . podcast $ ep),
+                          ("SAFECASTTITLE", sanitize_fn . castname . podcast $ ep),
+                          ("SAFEEPTITLE", sanitize_fn . eptitle $ ep),
++                         ("EPID", show . epid $ ep),
+                          ("EPTITLE", eptitle ep)]
+ 
+ -- | Runs a hook script.

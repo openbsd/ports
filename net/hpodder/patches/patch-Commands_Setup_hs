@@ -1,0 +1,16 @@
+$OpenBSD: patch-Commands_Setup_hs,v 1.1.1.1 2010/04/28 16:21:40 dcoppa Exp $
+
+fix from upstream git:
+fix URL for IT conversations in default list
+
+--- Commands/Setup.hs.orig	Wed Jul  2 17:32:27 2008
++++ Commands/Setup.hs	Tue Apr 13 11:46:07 2010
+@@ -101,7 +101,7 @@ subscribeSamples gi =
+ sampleurls = 
+     ["http://soundofhistory.complete.org/files_soh/podcast.xml",
+      "http://www.thelinuxlink.net/tllts/tllts.rss",
+-     "http://www.itconversations.com/rss/recentWithEnclosures.php",
++     "http://feeds.conversationsnetwork.org/channel/itc",
+      "http://www.sciam.com/podcast/sciam_podcast_r.xml",
+      "http://www.npr.org/rss/podcast.php?id=510019",
+      "http://amateurtraveler.com/podcast/rss.xml",
