@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2009/11/29 09:16:17 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2010/04/28 08:18:16 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -35,6 +35,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-default-videosink=xvimagesink \
 			--with-default-videosrc=v4l2src \
 			--with-default-visualizer=goom \
+			--disable-silent-rules \
 			--disable-introspection \
 			--disable-shave \
 			--disable-valgrind \
