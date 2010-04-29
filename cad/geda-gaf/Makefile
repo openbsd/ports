@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/11 22:22:39 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2010/04/29 16:46:06 jasper Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -29,6 +29,7 @@ LIB_DEPENDS =		gio-2.0,glib-2.0,gobject-2.0,gmodule-2.0::devel/glib2 \
 			guile::lang/guile \
 			gmp::devel/gmp
 
+BUILD_DEPENDS = 	${RUN_DEPENDS}
 RUN_DEPENDS = 		:shared-mime-info-*:misc/shared-mime-info \
 			:desktop-file-utils-*:devel/desktop-file-utils
 
