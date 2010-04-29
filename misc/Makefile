@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2010/03/23 11:59:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.130 2010/04/29 08:12:29 jasper Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -100,7 +100,6 @@
      SUBDIR += wordnet
      SUBDIR += xcdroast
      SUBDIR += xd
-     SUBDIR += xdelta
      SUBDIR += xgas
      SUBDIR += xkcd-viewer
      SUBDIR += xless
