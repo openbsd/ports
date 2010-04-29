@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/21 22:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/04/29 08:26:45 jasper Exp $
 
 COMMENT=		lightweight calendar
 
 DISTNAME=		dates-0.4.8
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		misc x11
 
@@ -17,15 +17,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://pimlico-project.org/sources/dates/
 
-WANTLIB += ORBit-2 ORBitCosNaming-2 X11 Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += atk-1.0 bonobo-2 bonobo-activation c cairo dbus-1 dbus-glib-1
-WANTLIB += expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
-WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0 ical
-WANTLIB += icalss icalvcal m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += soup-2.4 tasn1 xcb xml2 z
+WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
+WANTLIB += dbus-glib-1 expat fontconfig freetype gconf-2 gcrypt
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
+WANTLIB += gnutls gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0
+WANTLIB += ical icalss icalvcal m nspr4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += soup-2.4 tasn1 xcb xcb-render xcb-render-util xml2
+WANTLIB += z
 
 MODULES=		devel/gettext \
 			textproc/intltool
