@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2008/09/13 08:25:12 simon Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/29 21:32:49 jasper Exp $
 
 COMMENT=	simple eyecandy ASCII Tables
 
-DISTNAME=	Text-SimpleTable-0.05
+DISTNAME=	Text-SimpleTable-2.03
 CATEGORIES=	textproc
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
