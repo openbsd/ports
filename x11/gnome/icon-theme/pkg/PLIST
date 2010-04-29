@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2010/04/27 14:44:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2010/04/29 15:26:43 ajacoutot Exp $
 lib/pkgconfig/
 lib/pkgconfig/gnome-icon-theme.pc
 share/icons/
@@ -187,7 +187,7 @@ share/icons/gnome/16x16/actions/lock.png
 share/icons/gnome/16x16/actions/mail-forward.png
 share/icons/gnome/16x16/actions/mail-mark-important.png
 share/icons/gnome/16x16/actions/mail-mark-junk.png
-share/icons/gnome/16x16/actions/mail-mark-not-junk.png
+share/icons/gnome/16x16/actions/mail-mark-notjunk.png
 share/icons/gnome/16x16/actions/mail-mark-read.png
 share/icons/gnome/16x16/actions/mail-mark-unread.png
 share/icons/gnome/16x16/actions/mail-message-new.png
@@ -275,7 +275,6 @@ share/icons/gnome/16x16/actions/stock_new-dir.png
 share/icons/gnome/16x16/actions/stock_new-tab.png
 share/icons/gnome/16x16/actions/stock_new-text.png
 share/icons/gnome/16x16/actions/stock_new-window.png
-share/icons/gnome/16x16/actions/stock_not-spam.png
 share/icons/gnome/16x16/actions/stock_paste.png
 share/icons/gnome/16x16/actions/stock_print-preview.png
 share/icons/gnome/16x16/actions/stock_print-setup.png
@@ -1199,7 +1198,7 @@ share/icons/gnome/22x22/actions/lock.png
 share/icons/gnome/22x22/actions/mail-forward.png
 share/icons/gnome/22x22/actions/mail-mark-important.png
 share/icons/gnome/22x22/actions/mail-mark-junk.png
-share/icons/gnome/22x22/actions/mail-mark-not-junk.png
+share/icons/gnome/22x22/actions/mail-mark-notjunk.png
 share/icons/gnome/22x22/actions/mail-mark-read.png
 share/icons/gnome/22x22/actions/mail-mark-unread.png
 share/icons/gnome/22x22/actions/mail-message-new.png
@@ -1287,7 +1286,6 @@ share/icons/gnome/22x22/actions/stock_new-dir.png
 share/icons/gnome/22x22/actions/stock_new-tab.png
 share/icons/gnome/22x22/actions/stock_new-text.png
 share/icons/gnome/22x22/actions/stock_new-window.png
-share/icons/gnome/22x22/actions/stock_not-spam.png
 share/icons/gnome/22x22/actions/stock_paste.png
 share/icons/gnome/22x22/actions/stock_print-preview.png
 share/icons/gnome/22x22/actions/stock_print-setup.png
@@ -2211,7 +2209,7 @@ share/icons/gnome/24x24/actions/lock.png
 share/icons/gnome/24x24/actions/mail-forward.png
 share/icons/gnome/24x24/actions/mail-mark-important.png
 share/icons/gnome/24x24/actions/mail-mark-junk.png
-share/icons/gnome/24x24/actions/mail-mark-not-junk.png
+share/icons/gnome/24x24/actions/mail-mark-notjunk.png
 share/icons/gnome/24x24/actions/mail-mark-read.png
 share/icons/gnome/24x24/actions/mail-mark-unread.png
 share/icons/gnome/24x24/actions/mail-message-new.png
@@ -2299,7 +2297,6 @@ share/icons/gnome/24x24/actions/stock_new-dir.png
 share/icons/gnome/24x24/actions/stock_new-tab.png
 share/icons/gnome/24x24/actions/stock_new-text.png
 share/icons/gnome/24x24/actions/stock_new-window.png
-share/icons/gnome/24x24/actions/stock_not-spam.png
 share/icons/gnome/24x24/actions/stock_paste.png
 share/icons/gnome/24x24/actions/stock_print-preview.png
 share/icons/gnome/24x24/actions/stock_print-setup.png
@@ -3766,7 +3763,7 @@ share/icons/gnome/32x32/actions/lock.png
 share/icons/gnome/32x32/actions/mail-forward.png
 share/icons/gnome/32x32/actions/mail-mark-important.png
 share/icons/gnome/32x32/actions/mail-mark-junk.png
-share/icons/gnome/32x32/actions/mail-mark-not-junk.png
+share/icons/gnome/32x32/actions/mail-mark-notjunk.png
 share/icons/gnome/32x32/actions/mail-mark-read.png
 share/icons/gnome/32x32/actions/mail-mark-unread.png
 share/icons/gnome/32x32/actions/mail-message-new.png
@@ -3853,7 +3850,6 @@ share/icons/gnome/32x32/actions/stock_new-bcard.png
 share/icons/gnome/32x32/actions/stock_new-dir.png
 share/icons/gnome/32x32/actions/stock_new-text.png
 share/icons/gnome/32x32/actions/stock_new-window.png
-share/icons/gnome/32x32/actions/stock_not-spam.png
 share/icons/gnome/32x32/actions/stock_paste.png
 share/icons/gnome/32x32/actions/stock_print-preview.png
 share/icons/gnome/32x32/actions/stock_print-setup.png
@@ -4771,7 +4767,7 @@ share/icons/gnome/48x48/actions/lock.png
 share/icons/gnome/48x48/actions/mail-forward.png
 share/icons/gnome/48x48/actions/mail-mark-important.png
 share/icons/gnome/48x48/actions/mail-mark-junk.png
-share/icons/gnome/48x48/actions/mail-mark-not-junk.png
+share/icons/gnome/48x48/actions/mail-mark-notjunk.png
 share/icons/gnome/48x48/actions/mail-mark-read.png
 share/icons/gnome/48x48/actions/mail-mark-unread.png
 share/icons/gnome/48x48/actions/mail-message-new.png
@@ -4858,7 +4854,6 @@ share/icons/gnome/48x48/actions/stock_new-bcard.png
 share/icons/gnome/48x48/actions/stock_new-dir.png
 share/icons/gnome/48x48/actions/stock_new-text.png
 share/icons/gnome/48x48/actions/stock_new-window.png
-share/icons/gnome/48x48/actions/stock_not-spam.png
 share/icons/gnome/48x48/actions/stock_paste.png
 share/icons/gnome/48x48/actions/stock_print-preview.png
 share/icons/gnome/48x48/actions/stock_print-setup.png
