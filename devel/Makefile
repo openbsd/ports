@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.795 2010/04/26 17:23:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.796 2010/04/29 05:28:32 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -128,14 +128,18 @@
      SUBDIR += help2man
      SUBDIR += hmake
      SUBDIR += horde
+     SUBDIR += hs-ConfigFile
      SUBDIR += hs-HUnit
+     SUBDIR += hs-MissingH
      SUBDIR += hs-QuickCheck
      SUBDIR += hs-binary
+     SUBDIR += hs-convertible
      SUBDIR += hs-dataenc
      SUBDIR += hs-deepseq
      SUBDIR += hs-fgl
      SUBDIR += hs-ghc-paths
      SUBDIR += hs-hashed-storage
+     SUBDIR += hs-hslogger
      SUBDIR += hs-language-c
      SUBDIR += hs-mmap
      SUBDIR += hs-network

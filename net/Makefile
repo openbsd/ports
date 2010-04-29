@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.631 2010/04/24 16:37:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.632 2010/04/29 05:35:34 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -111,6 +111,7 @@
      SUBDIR += haproxy
      SUBDIR += honeyd
      SUBDIR += hping
+     SUBDIR += hpodder
      SUBDIR += hs-HTTP
      SUBDIR += httptunnel
      SUBDIR += icb
