@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/01/27 21:43:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/29 16:45:53 jsg Exp $
 
 # XXX WORK IN PROGRESS.
 
@@ -11,9 +11,10 @@ ONLY_FOR_ARCHS = i386
 COMMENT =	gcc4 front-end for LLVM
 
 GCC_V =		4.2.1
-LLVM_V =	2.6
+LLVM_V =	2.7
 DISTNAME =	llvm-gcc-4.2-${LLVM_V}.source
-PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}p1
+PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}
+EXTRACT_SUFX=	.tgz
 
 SHARED_LIBS =	ssp	0.0 \
 		objc	2.0 \
@@ -72,7 +73,6 @@ CONFIGURE_ARGS +=	--enable-checking
 
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/gcc
 
-WRKDIST=		${WRKDIR}/${DISTNAME:S/gcc-/gcc/}
 WRKSRC =		${WRKDIST}/obj
 
 post-extract:
