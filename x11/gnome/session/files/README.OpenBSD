@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.35 2010/04/29 06:55:13 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.36 2010/04/29 07:49:27 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -104,7 +104,7 @@ related ports under the x11/gnome category)
    * gnome-icon-theme-extras - extra icons
    * gnome-icon-theme-symbolic - theme extension for special UI contexts
    * gnome-themes-extras - extra themes
-   * tango-icon-theme - Tango icon theme
+   * tango-icon-theme (+tango-icon-theme-extras) - Tango icon theme
 
 * Startup and more documentation
   ------------------------------
