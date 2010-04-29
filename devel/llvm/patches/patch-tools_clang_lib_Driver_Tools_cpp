@@ -1,17 +1,39 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.3 2009/11/02 22:53:27 jsg Exp $
---- tools/clang/lib/Driver/Tools.cpp.orig	Sun Nov  1 22:19:03 2009
-+++ tools/clang/lib/Driver/Tools.cpp	Sun Nov  1 22:19:06 2009
-@@ -1992,9 +1992,12 @@ void openbsd::Link::ConstructJob(Compilation &C, const
-     }
-   }
- 
-+  std::string Triple = getToolChain().getTripleString();
-+  if (Triple.substr(0, 6) == "x86_64")
-+    Triple.replace(0, 6, "amd64");
-   CmdArgs.push_back(MakeFormattedString(Args,
-                            llvm::format("-L/usr/lib/gcc-lib/%s/3.3.5",
--                           getToolChain().getTripleString().c_str())));
-+                           Triple.c_str())));
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.4 2010/04/29 16:37:09 jsg Exp $
+--- tools/clang/lib/Driver/Tools.cpp.orig	Sun Mar  7 05:46:18 2010
++++ tools/clang/lib/Driver/Tools.cpp	Wed Apr 28 21:14:33 2010
+@@ -576,6 +576,11 @@ void Clang::AddX86TargetArgs(const ArgList &Args,
+         CPUName = "core2";
+       else if (getToolChain().getArchName() == "i386")
+         CPUName = "yonah";
++    } else if (getToolChain().getOS().startswith("openbsd"))  {
++      if (getToolChain().getArchName() == "x86_64")
++        CPUName = "x86-64";
++      else if (getToolChain().getArchName() == "i386")
++        CPUName = "i486";
+     } else {
+       if (getToolChain().getArchName() == "x86_64")
+         CPUName = "x86-64";
+@@ -2550,8 +2555,8 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+   std::string Triple = getToolChain().getTripleString();
+   if (Triple.substr(0, 6) == "x86_64")
+     Triple.replace(0, 6, "amd64");
+-  CmdArgs.push_back(Args.MakeArgString("-L/usr/lib/gcc-lib/" + Triple +
+-                                       "/3.3.5"));
++  CmdArgs.push_back(Args.MakeArgString("-L/usr/local/lib/gcc/" + Triple +
++                                       "/4.2.4"));
  
    Args.AddAllArgs(CmdArgs, options::OPT_L);
    Args.AddAllArgs(CmdArgs, options::OPT_T_Group);
+@@ -2576,6 +2581,12 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+ 
+   if (!Args.hasArg(options::OPT_nostdlib) &&
+       !Args.hasArg(options::OPT_nodefaultlibs)) {
++    if (D.CCCIsCXX) {
++      CmdArgs.push_back("-L/usr/local/lib");
++      CmdArgs.push_back("-lestdc++");
++      CmdArgs.push_back("-lm");
++    }
++
+     // FIXME: For some reason GCC passes -lgcc before adding
+     // the default system libraries. Just mimic this for now.
+     CmdArgs.push_back("-lgcc");

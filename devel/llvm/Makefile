@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2009/11/18 00:49:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2010/04/29 16:37:09 jsg Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
-LLVM_V =	2.6
+LLVM_V =	2.7
 DISTNAME =	llvm-${LLVM_V}
-PKGNAME =	${DISTNAME}p0
 
 CATEGORIES =	devel
 
@@ -24,12 +23,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c m pthread
 
-#llvm+clang repackaged from SVN.
-#MASTER_SITES =	http://spacehopper.org/mirrors/
 MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
-#MASTER_SITES = ${MASTER_SITE_FREEBSD_LOCAL:=brooks/}
 
-DISTFILES= ${DISTNAME}.tar.gz clang-${LLVM_V}.tar.gz
+DISTFILES= ${DISTNAME}.tgz clang-${LLVM_V}.tgz
 
 post-extract:
 	@mv ${WRKDIR}/clang-${LLVM_V} ${WRKDIST}/tools/clang
@@ -70,18 +66,18 @@ MODGNU_CONFIG_GUESS_DIRS =  ${WRKSRC}/autoconf
 
 pre-configure:
 	@perl -pi -e s,-lpthread,-pthread,g ${WRKSRC}/configure
-	@${SUBST_CMD} ${WRKSRC}/tools/clang/utils/scan-build
+	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/scan-build/scan-build
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
-
-# XXX googletest doesn't build
 
 post-install:
 	@ln -s ${TRUEPREFIX}/libexec/clang-cc ${PREFIX}/bin
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/llvm
 	@${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/ccc-analyzer \
-	    ${WRKSRC}/tools/clang/utils/scan-build ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/tools/clang/utils/sorttable.js ${PREFIX}/share/llvm
-	@${INSTALL_DATA} ${WRKSRC}/tools/clang/utils/scanview.css ${PREFIX}/share/llvm
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
+	    ${WRKSRC}/tools/clang/tools/scan-build/c++-analyzer \
+	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js \
+	    ${WRKSRC}/tools/clang/tools/scan-build/scanview.css \
+	    ${PREFIX}/share/llvm
 
 .include <bsd.port.mk>
