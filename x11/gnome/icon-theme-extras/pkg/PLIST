@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/04/29 06:16:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/04/29 06:36:29 ajacoutot Exp $
 share/icons/gnome/16x16/devices/drive-harddisk-ieee1394.png
 share/icons/gnome/16x16/devices/drive-harddisk-usb.png
 share/icons/gnome/16x16/devices/media-optical-bd.png
@@ -90,4 +90,4 @@ share/icons/gnome/48x48/mimetypes/application-x-blender.png
 share/icons/gnome/48x48/mimetypes/application-x-cd-image.png
 share/icons/gnome/48x48/mimetypes/application-x-mono-develop-xib.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
-@unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
