@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.40 2010/04/29 19:50:14 matthieu Exp $
 # Uses pthreads
 
 COMMENT=	Generic Graphics Library
 DISTNAME=	libggi-2.1.0
-PKGNAME=	${DISTNAME}p5
+PKGNAME=	${DISTNAME}p6
 SHARED_LIBS=	ggi	2.1
 
 CATEGORIES=	graphics

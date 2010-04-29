@@ -1,13 +1,23 @@
-$OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
---- display/xf86dga/XF86VMode.c.orig	Sat Sep 18 05:50:34 2004
-+++ display/xf86dga/XF86VMode.c	Sun Jan 30 15:40:46 2005
+$OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.4 2010/04/29 19:50:14 matthieu Exp $
+--- display/xf86dga/XF86VMode.c.orig	Sat Sep 18 12:50:34 2004
++++ display/xf86dga/XF86VMode.c	Tue Apr 27 23:29:50 2010
 @@ -1,4 +1,4 @@
--/* $Id: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
-+/* $Id: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
+-/* $Id: patch-display_xf86dga_XF86VMode_c,v 1.4 2010/04/29 19:50:14 matthieu Exp $
++/* $Id: patch-display_xf86dga_XF86VMode_c,v 1.4 2010/04/29 19:50:14 matthieu Exp $
  
  This is a modified version of the XF86VMode API functions for use
  internally by the LibGGI xf86dga target.  Mods by Marcus Sundberg and
-@@ -79,7 +79,8 @@ static char *xf86vidmode_extension_name 
+@@ -55,7 +55,8 @@ from Kaleb S. KEITHLEY.
+ #define NEED_EVENTS
+ #define NEED_REPLIES
+ #include <X11/Xlibint.h>
+-#include <X11/extensions/xf86vmstr.h>
++#include <X11/extensions/xf86vmproto.h>
++#include <X11/extensions/xf86vmode.h>
+ #include <X11/extensions/Xext.h>
+ #include "extutil.h"
+ 
+@@ -79,7 +80,8 @@ static char *xf86vidmode_extension_name = XF86VIDMODEN
   *                                                                           *
   *****************************************************************************/
  
@@ -17,7 +27,7 @@ $OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
  static /* const */ XExtensionHooks xf86vidmode_extension_hooks = {
  	NULL,			/* create_gc */
  	NULL,			/* copy_gc */
-@@ -98,17 +99,32 @@ static XEXT_GENERATE_FIND_DISPLAY(find_d
+@@ -98,17 +100,32 @@ static XEXT_GENERATE_FIND_DISPLAY(find_display, xf86vi
  				  xf86vidmode_extension_name,
  				  &xf86vidmode_extension_hooks, 0, NULL)
  
@@ -56,7 +66,7 @@ $OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
  {
  	XExtDisplayInfo *info = find_display(dpy);
  
-@@ -122,7 +138,7 @@ static XEXT_GENERATE_CLOSE_DISPLAY(close
+@@ -122,7 +139,7 @@ static XEXT_GENERATE_CLOSE_DISPLAY(close_display, xf86
  }
  
  
@@ -65,7 +75,7 @@ $OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
  {
  	XExtDisplayInfo *info = find_display(dpy);
  	xXF86VidModeSetClientVersionReq *req;
-@@ -141,8 +157,8 @@ static Bool _ggi_XF86VidModeSetClientVer
+@@ -141,8 +158,8 @@ static Bool _ggi_XF86VidModeSetClientVersion(Display *
  }
  
  
@@ -76,7 +86,7 @@ $OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
  {
  	XExtDisplayInfo *info = find_display(dpy);
  	xXF86VidModeQueryVersionReply rep;
-@@ -168,8 +184,8 @@ static Bool _ggi_XF86VidModeQueryVersion
+@@ -168,8 +185,8 @@ static Bool _ggi_XF86VidModeQueryVersion(Display * dpy
  	return True;
  }
  
@@ -87,7 +97,7 @@ $OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
  {
  	XExtDisplayInfo *info = find_display(dpy);
  	xXF86VidModeSetGammaReq *req;
-@@ -190,8 +206,8 @@ static Bool _ggi_XF86VidModeSetGamma(Dis
+@@ -190,8 +207,8 @@ static Bool _ggi_XF86VidModeSetGamma(Display * dpy,
  }
  
  
@@ -98,7 +108,7 @@ $OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
  {
  	XExtDisplayInfo *info = find_display(dpy);
  	xXF86VidModeGetGammaReply rep;
-@@ -219,10 +235,9 @@ static Bool _ggi_XF86VidModeGetGamma(Dis
+@@ -219,10 +236,9 @@ static Bool _ggi_XF86VidModeGetGamma(Display * dpy,
  
  /* We don't need XF86VidModeGetModeLine */
  
@@ -112,7 +122,7 @@ $OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
  {
  	XExtDisplayInfo *info = find_display(dpy);
  	xXF86VidModeGetAllModeLinesReply rep;
-@@ -322,8 +337,7 @@ static Bool _ggi_XF86VidModeGetAllModeLi
+@@ -322,8 +338,7 @@ static Bool _ggi_XF86VidModeGetAllModeLines(Display * 
  						Xfree(modelines[i]->
  						      private);
  					} else {
@@ -122,7 +132,7 @@ $OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
  							 modelines[i]->
  							 private,
  							 oldxmdline.
-@@ -364,8 +378,7 @@ static Bool _ggi_XF86VidModeGetAllModeLi
+@@ -364,8 +379,7 @@ static Bool _ggi_XF86VidModeGetAllModeLines(Display * 
  						Xfree(modelines[i]->
  						      private);
  					} else {
@@ -132,7 +142,7 @@ $OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
  						       modelines[i]->
  						       private,
  						       xmdline.privsize *
-@@ -415,8 +428,8 @@ static Bool _ggi_XF86VidModeGetAllModeLi
+@@ -415,8 +429,8 @@ static Bool _ggi_XF86VidModeGetAllModeLines(Display * 
   * bother with those functions.  
   */
  
@@ -143,7 +153,7 @@ $OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
  {
  	XExtDisplayInfo *info = find_display(dpy);
  	xXF86VidModeSwitchToModeReq *req;
-@@ -498,8 +511,7 @@ static Bool _ggi_XF86VidModeSwitchToMode
+@@ -498,8 +512,7 @@ static Bool _ggi_XF86VidModeSwitchToMode(Display * dpy
  }
  
  
@@ -153,7 +163,7 @@ $OpenBSD: patch-display_xf86dga_XF86VMode_c,v 1.3 2005/01/31 14:20:26 todd Exp $
  {
  	XExtDisplayInfo *info = find_display(dpy);
  	xXF86VidModeLockModeSwitchReq *req;
-@@ -518,8 +530,7 @@ static Bool _ggi_XF86VidModeLockModeSwit
+@@ -518,8 +531,7 @@ static Bool _ggi_XF86VidModeLockModeSwitch(Display * d
  }
  
  
