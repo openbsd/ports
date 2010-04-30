@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/29 06:36:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/04/30 18:41:15 jasper Exp $
 
 COMMENT=	extra icon theme for GNOME
 
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	::x11/icon-naming-utils \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	::x11/gnome/icon-theme
 
 USE_LIBTOOL=	No
