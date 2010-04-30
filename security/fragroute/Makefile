@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/21 22:10:38 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2010/04/30 13:44:15 naddy Exp $
 			
 COMMENT=		intercept, modify, and rewrite egress traffic
 
 DISTNAME=		fragroute-1.2
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 CATEGORIES=    		security net
 
 HOMEPAGE=		http://www.monkey.org/~dugsong/fragroute/
