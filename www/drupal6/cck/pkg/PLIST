@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/08/08 09:20:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/04/30 07:52:34 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}cck/
@@ -191,6 +191,7 @@ ${DRUPAL_MODS}cck/modules/userreference/translations/modules-userreference.pot
 ${DRUPAL_MODS}cck/modules/userreference/translations/modules-userreference.sv.po
 ${DRUPAL_MODS}cck/modules/userreference/userreference.info
 ${DRUPAL_MODS}cck/modules/userreference/userreference.install
+@comment ${DRUPAL_MODS}cck/modules/userreference/userreference.install.orig
 ${DRUPAL_MODS}cck/modules/userreference/userreference.module
 ${DRUPAL_MODS}cck/modules/userreference/userreference.rules.inc
 ${DRUPAL_MODS}cck/tests/
