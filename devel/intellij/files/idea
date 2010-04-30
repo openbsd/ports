@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: idea,v 1.1.1.1 2010/04/09 22:23:26 ian Exp $
+# $OpenBSD: idea,v 1.2 2010/04/30 19:02:17 jasper Exp $
 #
 # OpenBSD-specific startup script for IntelliJ IDE
 
@@ -10,18 +10,19 @@ IDEA_HOME=${TRUEPREFIX}/intellij
 # Determine configuration settings
 #-----------------------------------------------------------------------------
 
-JAVA_HOME=`javaPathHelper -h intellij`
+export IDEA_JDK=${JAVA_HOME}
 
-if [ -z "${JAVA_HOME}" ]; then
+if [ ! -x "${IDEA_JDK}/bin/java" ]; then
+	echo "Error: JAVA_HOME may not be defined correctly: ${IDEA_JDK}"
+	echo "       Unable to find Java binary ${IDEA_JDK}/bin/java"
         exit 1
 fi
 
 # Check if 'idea' executable can be found
 if [ ! -x "${IDEA_HOME}/bin/idea.sh" ]; then
-	echo "Error: IDEA_HOME is not defined correctly: ${IDEA_HOME}"
-	echo "       Unable to find launcher binary"
+	echo "Error: IDEA_HOME may not be defined correctly: ${IDEA_HOME}"
+	echo "       Unable to find launcher binary: ${IDEA_HOME}/bin/idea.sh"
 	exit 1
 fi
 
-export IDEA_JDK=${JAVA_HOME}
-PATH=${JAVA_HOME}/bin:$PATH exec "${IDEA_HOME}/bin/idea.sh" $@
+PATH=${IDEA_JDK}/bin:$PATH exec "${IDEA_HOME}/bin/idea.sh" $@

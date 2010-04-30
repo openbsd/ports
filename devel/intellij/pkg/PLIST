@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/09 22:23:26 ian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/04/30 19:02:17 jasper Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -93,7 +93,7 @@ intellij/lib/looks-2.2.2.jar
 intellij/lib/microba.jar
 intellij/lib/nanoxml-2.2.3.jar
 intellij/lib/openapi.jar
-intellij/lib/org.eclipse.jdt.core_3.4.4.v_894_R34x.jar
+intellij/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar
 intellij/lib/oromatcher.jar
 intellij/lib/picocontainer.jar
 intellij/lib/resolver.jar
@@ -158,8 +158,6 @@ intellij/plugins/IntentionPowerPack/lib/IntentionPowerPack.jar
 intellij/plugins/IntentionPowerPack/lib/resources_en.jar
 intellij/plugins/SpellChecker/
 intellij/plugins/SpellChecker/lib/
-intellij/plugins/SpellChecker/lib/jazzy-core.jar
-intellij/plugins/SpellChecker/lib/patricia-trie-0.1.jar
 intellij/plugins/SpellChecker/lib/resources_en.jar
 intellij/plugins/SpellChecker/lib/spellchecker-core.jar
 intellij/plugins/ToString/
@@ -213,7 +211,7 @@ intellij/plugins/maven/lib/classworlds-1.1.jar
 intellij/plugins/maven/lib/commons-beanutils.jar
 intellij/plugins/maven/lib/commons-logging-1.1.1.jar
 intellij/plugins/maven/lib/lucene-core-2.3.0.jar
-intellij/plugins/maven/lib/maven-2.2.0-uber.jar
+intellij/plugins/maven/lib/maven-2.2.1-uber.jar
 intellij/plugins/maven/lib/maven.jar
 intellij/plugins/maven/lib/mercury-artifact-1.0-alpha-6.jar
 intellij/plugins/maven/lib/nexus-indexer-1.2.3.jar

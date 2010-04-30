@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/18 19:22:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/04/30 19:02:17 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		IntelliJ Java IDE
 
-V=			9.0.1
+V=			9.0.2
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		java devel
@@ -25,13 +25,17 @@ MODULES=		java
 MODJAVA_VER=		1.6
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
-RUN_DEPENDS=		::java/javaPathHelper
 
-NO_BUILD=		Yes
 NO_REGRESS=		Yes
+SUBST_VARS+=		JAVA_HOME
 
-WRKDIST=		${WRKDIR}/idea-IC-93.94
+WRKDIST=		${WRKDIR}/idea-IC-95.66
 IJ=			${PREFIX}/intellij
+
+# If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
+# a no-op for do-build.
+do-build:
+	@true
 
 do-install:
 	${INSTALL_DATA_DIR} ${IJ}
@@ -44,7 +48,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${IJ}
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${PREFIX}/man/man1
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	cd ${WRKDIST}/lib && ${LOCALBASE}/jdk-1.6.0/bin/jar xvf icons.jar
+	cd ${WRKDIST}/lib && ${JAVA_HOME}/bin/jar xf icons.jar
 	cp ${WRKDIST}/lib/icon.png ${IJ}/idea.png
 	@${SUBST_CMD} -c ${FILESDIR}/intellij.desktop \
 		${PREFIX}/share/applications/intellij.desktop
