@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.260 2010/04/30 09:32:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.261 2010/04/30 17:07:10 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -57,7 +57,6 @@
      SUBDIR += fxtv
      SUBDIR += fyre
      SUBDIR += gd
-     SUBDIR += gdk-pixbuf
      SUBDIR += gegl
      SUBDIR += gfract
      SUBDIR += ggi
