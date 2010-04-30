@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/05/15 06:56:05 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2010/04/30 11:50:20 sthen Exp $
+@newgroup _nfcapd:649
+@newuser _nfcapd:649:_nfcapd:daemon:nfcapd user:/nonexistent:/sbin/nologin
 @bin bin/ft2nfdump
 @bin bin/nfcapd
 @bin bin/nfdump
