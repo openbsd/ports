@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_test-canberra_c,v 1.1 2010/04/30 09:32:01 ajacoutot Exp $
+--- src/test-canberra.c.orig	Fri Apr 30 11:13:05 2010
++++ src/test-canberra.c	Fri Apr 30 11:13:32 2010
+@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
+         /* Now trigger a sound event, the quick version */
+         ret = ca_context_play(c, 0,
+                               CA_PROP_EVENT_ID, "desktop-login",
+-                              CA_PROP_MEDIA_FILENAME, "/usr/share/sounds/bar.wav",
++                              CA_PROP_MEDIA_FILENAME, "${LOCALBASE}/share/sounds/bar.wav",
+                               CA_PROP_MEDIA_NAME, "User has logged off from session",
+                               CA_PROP_MEDIA_LANGUAGE, "en_EN",
+                               CA_PROP_CANBERRA_CACHE_CONTROL, "permanent",
+@@ -71,7 +71,7 @@ int main(int argc, char *argv[]) {
+         /* Now trigger a sound event, the complex version */
+         ca_proplist_create(&p);
+         ca_proplist_sets(p, CA_PROP_EVENT_ID, "desktop-logout");
+-        ca_proplist_sets(p, CA_PROP_MEDIA_FILENAME, "/usr/share/sounds/uxknkurz.wav");
++        ca_proplist_sets(p, CA_PROP_MEDIA_FILENAME, "${LOCALBASE}/share/sounds/uxknkurz.wav");
+         ca_proplist_sets(p, CA_PROP_MEDIA_NAME, "New email received");
+         ca_proplist_setf(p, "test.foo", "%u", 4711);
+         ret = ca_context_play_full(c, 1, p, callback, (void*) 0x4711);
+@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
+ 
+         /* Now trigger a sound event, by filename */
+         ret = ca_context_play(c, 2,
+-                              CA_PROP_MEDIA_FILENAME, "/usr/share/sounds/freedesktop/stereo/audio-channel-front-left.ogg",
++                              CA_PROP_MEDIA_FILENAME, "${LOCALBASE}/share/sounds/freedesktop/stereo/audio-channel-front-left.ogg",
+                               CA_PROP_MEDIA_NAME, "Front Left",
+                               CA_PROP_MEDIA_LANGUAGE, "en_EN",
+                               NULL);

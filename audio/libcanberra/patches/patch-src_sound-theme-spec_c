@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sound-theme-spec_c,v 1.1 2010/04/30 09:32:01 ajacoutot Exp $
+--- src/sound-theme-spec.c.orig	Fri Apr 30 11:11:52 2010
++++ src/sound-theme-spec.c	Fri Apr 30 11:12:14 2010
+@@ -321,7 +321,7 @@ const char *ca_get_data_dirs(void) {
+         const char *g;
+ 
+         if (!(g = getenv("XDG_DATA_DIRS")) || *g == 0)
+-                return "/usr/local/share:/usr/share";
++                return "${LOCALBASE}/share:/usr/share";
+ 
+         return g;
+ }
