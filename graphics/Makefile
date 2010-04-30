@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.259 2010/04/22 22:12:07 kili Exp $
+# $OpenBSD: Makefile,v 1.260 2010/04/30 09:32:44 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -125,6 +125,7 @@
      SUBDIR += libungif
      SUBDIR += libwmf
      SUBDIR += libxmi
+     SUBDIR += lsys
      SUBDIR += luagd
      SUBDIR += luvcview
      SUBDIR += makehuman
