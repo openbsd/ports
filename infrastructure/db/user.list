@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.134 2010/03/24 21:51:32 landry Exp $
+$OpenBSD: user.list,v 1.135 2010/04/30 11:49:55 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -157,3 +157,4 @@ id  user		group		port options
 646 _rabbitmq		_rabbitmq	net/rabbitmq
 647 _sqlgrey		_sqlgrey	net/sqlgrey
 648 _sympa		_sympa		mail/sympa
+649 _nfcapd		_nfcapd		net/nfdump
