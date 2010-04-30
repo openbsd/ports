@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/30 09:32:05 jasper Exp $
+@bin bin/lsys
+share/examples/lsys/
+share/examples/lsys/bench.l
+share/examples/lsys/capsella_bursa_pastoris.l
+share/examples/lsys/cfg
+share/examples/lsys/disc.l
+share/examples/lsys/fantasy.l
+share/examples/lsys/fantasy2.l
+share/examples/lsys/fractint.l
+share/examples/lsys/hexagonal_gosper.l
+share/examples/lsys/mcworter.l
+share/examples/lsys/mikachuball.l
+share/examples/lsys/mycelis_muralis.l
+share/examples/lsys/penrose.l
+share/examples/lsys/penrose2.l
+share/examples/lsys/roseleaf.l
+share/examples/lsys/simple_leaf.l
+share/examples/lsys/simple_petal.l
+share/examples/lsys/tet_koch.l
+share/examples/lsys/tiling.l
