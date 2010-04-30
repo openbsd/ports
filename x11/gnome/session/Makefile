@@ -1,18 +1,12 @@
-# $OpenBSD: Makefile,v 1.104 2010/04/29 07:49:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2010/04/30 11:24:12 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.30.0
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 
 CATEGORIES=		x11
-
-# Add session saving capability in gnome-session
-# Bugzilla #575544
-MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
-PATCHFILES=	gnome-panel-2.28.0-0.save_session.patch:0
-PATCH_DIST_STRIP= -p1
 
 # GPLv2/LGPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes

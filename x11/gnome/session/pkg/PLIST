@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2010/04/22 22:44:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2010/04/30 11:24:12 ajacoutot Exp $
 @bin bin/gnome-session
 @bin bin/gnome-session-properties
 @bin bin/gnome-session-save
@@ -51,8 +51,6 @@ share/locale/br/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-session-2.0.mo
-share/locale/crh/
-share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/cy/LC_MESSAGES/gnome-session-2.0.mo
