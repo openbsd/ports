@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2009/09/08 15:33:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/04/30 09:41:20 jasper Exp $
 
 COMMENT=		command-line WebDAV client
 
-DISTNAME=		cadaver-0.23.2
+DISTNAME=		cadaver-0.23.3
 CATEGORIES=     	net www
 
 HOMEPAGE=		http://www.webdav.org/cadaver/
