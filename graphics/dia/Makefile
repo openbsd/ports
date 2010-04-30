@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2010/03/20 16:53:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2010/04/30 08:06:33 ajacoutot Exp $
 
 COMMENT=	technical diagrams drawing tool
 
 GNOME_PROJECT=	dia
 GNOME_VERSION=	0.97.1
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	graphics
 
@@ -22,6 +23,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xml2 z
+WANTLIB += xcb-render xcb-render-util
 
 BUILD_DEPENDS=	::textproc/docbook-xsl
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
