@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/23 17:59:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/04/30 09:57:49 jasper Exp $
 
 COMMENT=		flexible communications framework, libpurple component
 
@@ -13,7 +13,8 @@ WANTLIB += c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pcre pthread util xml2 z
 
 BUILD_DEPENDS=		::devel/py-twisted/words \
-			::net/py-xmpp
+			::net/py-xmpp \
+			::textproc/libxslt
 LIB_DEPENDS=		purple::net/pidgin,-libpurple \
 			telepathy-glib::net/telepathy/telepathy-glib
 
