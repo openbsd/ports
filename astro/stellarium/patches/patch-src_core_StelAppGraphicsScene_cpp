@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_core_StelAppGraphicsScene_cpp,v 1.1 2010/04/30 17:07:06 espie Exp $
+--- src/core/StelAppGraphicsScene.cpp.orig	Fri Apr 30 18:34:03 2010
++++ src/core/StelAppGraphicsScene.cpp	Fri Apr 30 18:34:33 2010
+@@ -72,12 +72,6 @@ void StelAppGraphicsScene::glWindowHasBeenResized(int 
+ 
+ void StelAppGraphicsScene::drawBackground(QPainter* painter, const QRectF &)
+ {
+-	if (painter->paintEngine()->type() != QPaintEngine::OpenGL)
+-	{
+-		qWarning("StelAppGraphicsScene: drawBackground needs a QGLWidget to be set as viewport on the graphics view");
+-		return;
+-	}
+-
+ 	const double now = StelApp::getTotalRunTime();
+ 	double dt = now-previousTime;
+ 	previousTime = now;
