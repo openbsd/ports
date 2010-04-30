@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sieve,v 1.5 2010/03/23 21:32:07 pea Exp $
+@comment $OpenBSD: PLIST-sieve,v 1.6 2010/04/30 14:40:58 pea Exp $
 @pkgpath mail/dovecot,-sieve,ldap
 @pkgpath mail/dovecot,-sieve,ldap,mysql,postgresql,sqlite,bdb
 @pkgpath mail/dovecot,-sieve,mysql
@@ -15,3 +15,5 @@ lib/dovecot/lda/lib90_sieve_plugin.so
 @man man/man1/sieve-test.1
 @man man/man1/sievec.1
 @man man/man1/sieved.1
+share/doc/dovecot/sieve/
+share/doc/dovecot/sieve/spamtest-virustest.txt
