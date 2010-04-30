@@ -1,0 +1,11 @@
+$OpenBSD: patch-kqemu-openbsd_c,v 1.1 2010/04/30 14:39:13 naddy Exp $
+--- kqemu-openbsd.c.orig	Fri Apr 30 16:30:08 2010
++++ kqemu-openbsd.c	Fri Apr 30 16:30:30 2010
+@@ -22,6 +22,7 @@
+ #include <sys/ioccom.h>
+ #include <sys/lkm.h>
+ #include <sys/malloc.h>
++#include <sys/proc.h>
+ #include <sys/signalvar.h>
+ #include <sys/namei.h>
+ #include <sys/vnode.h>
