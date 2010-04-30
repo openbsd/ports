@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/21 21:03:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/04/30 18:48:35 jasper Exp $
 
 COMMENT=		lightweight tasklist
 
 DISTNAME=		tasks-0.16
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 CATEGORIES=		productivity x11
 
@@ -18,13 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://pimlico-project.org/sources/tasks/
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 bonobo-2
-WANTLIB += bonobo-activation c cairo dbus-1 expat fontconfig freetype
-WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += glitz gmodule-2.0 gnutls gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += ical icalss icalvcal m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 xcb xml2
-WANTLIB += z
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
+WANTLIB += dbus-glib-1 expat fontconfig freetype gconf-2 gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gnutls
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 ical icalss icalvcal
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
+WANTLIB += pthread pthread-stubs soup-2.4 xcb xcb-render xcb-render-util
+WANTLIB += xml2 z
 
 MODULES=		devel/gettext \
 			textproc/intltool
