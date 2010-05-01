@@ -1,6 +1,7 @@
---- configure.ori	Tue Feb 13 23:15:36 2007
-+++ configure	Tue Feb 13 23:17:02 2007
-@@ -755,7 +755,7 @@
+$OpenBSD: patch-configure,v 1.4 2010/05/01 21:27:25 benoit Exp $
+--- configure.orig	Tue Mar 16 19:47:47 2010
++++ configure	Sat Apr 10 07:21:44 2010
+@@ -790,7 +790,7 @@
  datadir='${datarootdir}'
  sysconfdir='${prefix}/etc'
  sharedstatedir='${prefix}/com'
@@ -9,3 +10,12 @@
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
  docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
+@@ -6460,7 +6460,7 @@
+ 
+ 
+ saved_CFLAGS="$CFLAGS"
+-CFLAGS+=" $AIDE_DEFS"
++#CFLAGS+=" $AIDE_DEFS"
+ # The cast to long int works around a bug in the HP C Compiler
+ # version HP92453-01 B.11.11.23709.GP, which incorrectly rejects
+ # declarations like `int a3[[(sizeof (unsigned char)) >= 0]];'.

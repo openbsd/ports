@@ -1,14 +1,16 @@
---- doc/aide.conf.in.ori	Tue Feb 13 23:20:16 2007
-+++ doc/aide.conf.in	Tue Feb 13 23:50:41 2007
-@@ -19,7 +19,6 @@
+$OpenBSD: patch-doc_aide_conf_in,v 1.4 2010/05/01 21:27:25 benoit Exp $
+--- doc/aide.conf.in.orig	Wed Feb 17 21:19:18 2010
++++ doc/aide.conf.in	Sat Apr 10 07:05:33 2010
+@@ -19,7 +19,7 @@
  # corresponding line.
  #
  
--@@define TOPDIR @top_srcdir@
+-@@define TOPDIR @abs_top_srcdir@
++#@@define TOPDIR @abs_top_srcdir@
  
  @@ifndef TOPDIR 
  @@define TOPDIR /
-@@ -43,12 +42,12 @@
+@@ -43,12 +43,12 @@
  
  # The location of the database to be read.
  #database=file:aide.db
@@ -23,21 +25,12 @@
  
  # Whether to gzip the output to database
  # gzip_dbout=no
-@@ -100,7 +99,7 @@
- #xattr:		extended file attributes
- 
- # Rule definition
--All=R+a+sha1+rmd160+sha256+sha512+whirlpool
-+All=R+a+sha1+rmd160+sha256+sha512
- 
- # report_attributes is a special rule definition
- # the attributes listed in it are alway displayed for changed files
-@@ -115,22 +114,34 @@
+@@ -115,22 +115,32 @@
  # Attributes that can be used to verify that aide in intact
  # by people that have downloaded it from the web.
  # Let's be paranoid
--Norm=l+s+n+b+selinux+xattrs+md5+sha1+rmd160+sha256+sha512+whirlpool
-+#Norm=l+s+n+b+selinux+xattrs+md5+sha1+rmd160+sha256+sha512+whirlpool
+-Norm=l+s+n+b+md5+sha1+rmd160+sha256+sha512+tiger@aideextragroups@
++#Norm=l+s+n+b+md5+sha1+rmd160+sha256+sha512+tiger@aideextragroups@
 +=/$		R
 +/bsd$		L+s+sha256
 +/etc$		L+s+sha256
@@ -47,10 +40,10 @@
  
 +# my password database should be static at time of system build. yours
 +# may not be, if not, uncomment the lines below.
-+#/etc/passwd		L
-+#/etc/master.passwd	L
-+#/etc/pwd.db		L
-+#/etc/spwd.db		L
++#/etc/passwd           L
++#/etc/master.passwd    L
++#/etc/pwd.db           L
++#/etc/spwd.db          L
 +
  #Selection regexp rule
 -@@{TOPDIR}/.* Norm
@@ -73,6 +66,5 @@
 +#!@@{TOPDIR}/.*aide\.db.*
 +#!@@{TOPDIR}/.*\.cvsignore.*
  # @@{TOPDIR}/doc/.* All
-+# /home
+-
 +=/home$		R
- 
