@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.20 2009/11/09 11:03:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/05/01 13:28:47 ian Exp $
 
 COMMENT=	regression testing utility for use with the Java language
 
 VERSION=	3.8.2
 DISTNAME=	junit${VERSION}
-PKGNAME=	junit-${VERSION}p5
-INSTALLDIR=	${PKGNAME}
+PKGNAME=	junit-${VERSION}p6
+# INSTALLDIR must not be set to ${PKGNAME}. Doing so will break
+# the regress target in dependant ports if the patch level is bumped.
+INSTALLDIR=	junit-${VERSION}
 SUBST_VARS+=	INSTALLDIR
 CATEGORIES=	java devel
 
