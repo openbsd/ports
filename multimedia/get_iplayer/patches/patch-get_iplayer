@@ -1,13 +1,14 @@
-$OpenBSD: patch-get_iplayer,v 1.32 2010/02/26 18:48:06 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.33 2010/05/01 21:17:25 sthen Exp $
 
 - use id3tag not id3v2
 - switch default to rtmpdump
 - increase max retries for flash modes, increasing the chance of
 getting full downloads if you're not using SWFVerification
 (see FILESDIR/options.sample for an example of how to use this).
+- various fixes/tidyup from upstream 2.76 and github.com/jjl/get_iplayer
 
---- get_iplayer.orig	Thu Feb 25 23:55:19 2010
-+++ get_iplayer	Fri Feb 26 10:21:45 2010
+--- get_iplayer.orig	Fri Feb 26 11:59:42 2010
++++ get_iplayer	Sat May  1 22:07:24 2010
 @@ -330,7 +330,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
@@ -40,7 +41,78 @@ getting full downloads if you're not using SWFVerification
  	delete $binopts->{flvstreamer};
  	push @{ $binopts->{flvstreamer} }, ( '--timeout', 10 );
  	push @{ $binopts->{flvstreamer}	}, '--quiet' if $opt->{quiet};
-@@ -4224,7 +4225,7 @@ sub tag_file {
+@@ -1152,18 +1153,24 @@ sub list_progs {
+ 			$this->generate_filenames( $ua, $this->file_prefix_format() );
+ 			# info
+ 			$this->display_metadata( sort keys %{ $this } ) if $opt->{info};
+-			# subs
+-			if ( $opt->{subsonly} ) {
+-				# skip for non-tv
+-				$this->download_subtitles( $ua, "$this->{dir}/$this->{fileprefix}.srt" ) if $this->{type} eq 'tv';
++			# subs (only for tv)
++			if ( $opt->{subsonly} && $this->{type} eq 'tv') {
++				$this->create_dir();
++				$this->download_subtitles( $ua, "$this->{dir}/$this->{fileprefix}.srt" );
+ 			}
+ 			# metadata
+-			$this->create_metadata_file if $opt->{metadataonly};
++			if ( $opt->{metadataonly} ) {
++				$this->create_dir();
++				$this->create_metadata_file;
++			}
+ 			# thumbnail
+-			$this->download_thumbnail if $opt->{thumbonly} && $this->{thumbnail};
++			if ( $opt->{thumbonly} && $this->{thumbnail} ) {
++				$this->create_dir();
++				$this->download_thumbnail();
++			}
+ 			# streaminfo
+ 			if ( $opt->{streaminfo} ) {
+-				main::display_stream_info( $this, $this->{verpids}->{$version}, $version );
++				main::display_stream_info( $this, $this->{verpids}->{$this->{version}}, $this->{version} );
+ 				$opt->{quiet} = 0;
+ 			}
+ 			# remove offending metadata
+@@ -3872,6 +3879,16 @@ sub init {
+ }
+ 
+ 
++# Create dir if it does not exist
++sub create_dir {
++	my $prog = shift;
++	if ( (! -d "$prog->{dir}") && (! $opt->{test}) ) {
++		main::logger "INFO: Creating dir '$prog->{dir}'\n" if $opt->{verbose};
++		mkpath("$prog->{dir}");
++	}
++}
++
++
+ # Return metadata of the prog
+ sub get_metadata {
+ 	my $prog = shift;
+@@ -4182,11 +4199,17 @@ sub mode_ver_download_retry_loop {
+ 					$hist->add( $prog );
+ 					$prog->tag_file;
+ 				}
+-				$prog->download_thumbnail if $opt->{thumb};
+-				$prog->create_metadata_file if $opt->{metadata};
+-				if ( ! $opt->{nowrite} ) {
+-					$prog->run_user_command( $opt->{command} ) if $opt->{command};
++				if ( $opt->{thumb} ) {
++					$prog->create_dir();
++					$prog->download_thumbnail();
++                                }
++				if ( $opt->{metadata} ) {
++					$prog->create_dir();
++					$prog->create_metadata_file();
+ 				}
++				if ( $opt->{command} && ! $opt->{nowrite} ) {
++					$prog->run_user_command( $opt->{command});
++				}
+ 			}
+ 			$prog->report() if $opt->{pvr};
+ 			return 0;
+@@ -4224,7 +4247,7 @@ sub tag_file {
  		my ( $id3_name, $id3_episode, $id3_desc, $id3_channel ) = ( $prog->{name}, $prog->{episode}, $prog->{desc}, $prog->{channel} );
  		s|"|\\"|g for ($id3_name, $id3_episode, $id3_desc, $id3_channel);
  		# Only tag if the required tool exists
@@ -49,3 +121,138 @@ getting full downloads if you're not using SWFVerification
  			main::logger "INFO: id3 tagging $prog->{ext} file\n";
  			my @cmd = (
  				$bin->{id3v2}, 
+@@ -4592,9 +4615,6 @@ sub generate_filenames {
+ 		main::logger("INFO: Creating multi-part subdirectory $prog->{dir} for programme\n") if $opt->{verbose};
+ 	}
+ 
+-	# Create dir if it does not exist
+-	mkpath("$prog->{dir}") if (! -d "$prog->{dir}") && (! $opt->{test});
+-
+ 	main::logger("\rINFO: File name prefix = $prog->{fileprefix}                 \n");
+ 
+ 	# Use a dummy file ext if one isn't set - helps with readability of metadata
+@@ -4757,11 +4777,13 @@ sub create_symlink {
+ 	my $symlink = shift;
+ 	my $target = shift;
+ 
+-	# remove old symlink
+-	unlink $symlink if -l $symlink;
+-	# Create symlink
+-	symlink $target, $symlink;
+-	main::logger "INFO: Created symlink from '$symlink' -> '$target'\n" if $opt->{verbose};
++	if ( ( ! ( $opt->{stdout} && $opt->{nowrite} ) ) && ( ! $opt->{test} ) ) {
++		# remove old symlink
++		unlink $symlink if -l $symlink;
++		# Create symlink
++		symlink $target, $symlink;
++		main::logger "INFO: Created symlink from '$symlink' -> '$target'\n" if $opt->{verbose};
++	}
+ }
+ 
+ 
+@@ -5615,7 +5637,6 @@ sub get_rdf_data {
+ 		main::logger "WARNING: rdf URL contained no data\n";
+ 		return '';
+ 	}
+-	decode_entities( $entry );
+ 	# Flatten
+ 	$entry =~ s|[\n\r]| |g;
+ 	my $simple = new XML::Simple();
+@@ -6789,14 +6810,19 @@ sub download {
+ 	# Override flash ext based on raw
+ 	$prog->{ext} = 'flv' if $opt->{raw} && $mode =~ /^flash/;
+ 
+-
+ 	# Determine the correct filenames for this recording
+ 	if ( $prog->generate_filenames( $ua, $prog->file_prefix_format() ) ) {
+-		# Create symlink if required
+-		$prog->create_symlink( $prog->{symlink}, $prog->{filename}) if $opt->{symlink};
+ 		return 'skip';
+ 	}
+-	
++
++	# Create symlink if required
++	$prog->create_symlink( $prog->{symlink}, $prog->{filename}) if $opt->{symlink};
++
++	# Create dir for prog if not streaming-only
++	if ( ( ! ( $opt->{stdout} && $opt->{nowrite} ) ) && ( ! $opt->{test} ) ) {
++		$prog->create_dir();
++	}
++
+ 	# Skip from here if we are only testing recordings
+ 	return 'skip' if $opt->{test};
+ 
+@@ -7703,7 +7729,7 @@ sub get {
+ 	main::logger "INFO: Stage 3 URL = $url_2\n" if $opt->{verbose};
+ 
+ 	# Override the $rearrange value is --raw option is specified
+-	$rearrange = 1 if $prog->{type} eq 'tv' && not $opt->{raw};
++	#$rearrange = 1 if $prog->{type} eq 'tv' && not $opt->{raw};
+ 	main::logger "DEBUG: Rearrang mov file mode = $rearrange (type: $prog->{type}, raw: $opt->{raw})\n" if $opt->{debug};
+ 		
+ 	# Use url prepend if required
+@@ -8131,26 +8157,17 @@ sub get {
+ 	main::logger "INFO: $bin->{flvstreamer} version $rtmpver\n" if $opt->{verbose};
+ 	main::logger "INFO: RTMP_URL: $url_2, tcUrl: $tcurl, application: $application, authString: $authstring, swfUrl: $swfurl, file: $prog->{filepart}, file_done: $prog->{filename}\n" if $opt->{verbose};
+ 
+-	# Save the effort and don't support < v1.5
+-	if ( $rtmpver < 1.5 ) {
+-		main::logger "WARNING: rtmpdump >= 1.5 or flvstreamer is required - please upgrade\n";
++	# Save the effort and don't support < v1.8
++	if ( $rtmpver < 1.8 ) {
++		main::logger "WARNING: rtmpdump or flvstreamer >= 1.8 is required - please upgrade\n";
+ 		return 'next';
+ 	}
+ 
+ 	# Add --live option if required
+-	if ( $streamdata{live} ) {
+-		if ( $rtmpver < 1.8 ) {
+-			main::logger "WARNING: Please use flvstreamer v1.8 or later for more reliable live streaming\n";
+-		}
+-		push @cmdopts, '--live';
+-	}
++	push @cmdopts, '--live' if $streamdata{live};
+ 
+ 	# Add start stop options if defined
+ 	if ( $opt->{start} || $opt->{stop} ) {
+-		if ( $rtmpver < 1.8 ) {
+-			main::logger "ERROR: Please use flvstreamer v1.8c or later for start/stop features\n";
+-			exit 4;
+-		}
+ 		push @cmdopts, ( '--start', $opt->{start} ) if $opt->{start};
+ 		push @cmdopts, ( '--stop', $opt->{stop} ) if $opt->{stop};
+ 	}
+@@ -8166,13 +8183,7 @@ sub get {
+ 		main::logger "ERROR: Cannot stream RTMP to STDOUT and file simultaneously\n";
+ 		exit 4;
+ 	}
+-	if ( $opt->{stdout} && $opt->{nowrite} ) {
+-		if ( $rtmpver < 1.7) {
+-			push @cmdopts, ( '-o', '-' );
+-		}
+-	} else {
+-		push @cmdopts, ( '--resume', '-o', $file_tmp );
+-	}
++	push @cmdopts, ( '--resume', '-o', $file_tmp ) if ! ( $opt->{stdout} && $opt->{nowrite} );
+ 	push @cmdopts, @{ $binopts->{flvstreamer} } if $binopts->{flvstreamer};
+ 	
+ 	my $return;
+@@ -8993,16 +9004,8 @@ sub get {
+ 
+ 	# Recording - disabled
+ 	} else {
+-		# Commented out cos this is stream-only - don't want anything in history as a result
+-		#main::logger "INFO: Copying $url to $prog->{filepart}\n" if $opt->{verbose};
+-		#if ( ! copy( $url, $prog->{filepart} ) ) {
+-		#	main::logger "\rERROR: Recording failed\n";
+-			main::logger "\rERROR: Recording failed - this is a stream-only programme\n";
+-			return 'next';
+-		#}
+-		#move $prog->{filepart}, $prog->{filename} if $prog->{filepart} ne $prog->{filename};
+-		## symlink file
+-		#$prog->create_symlink( $prog->{symlink}, $prog->{filename} ) if $opt->{symlink};
++		main::logger "\rERROR: Recording failed - this is a stream-only programme\n";
++		return 'next';
+ 	}
+ 
+ 	return 0;
