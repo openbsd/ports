@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/04/28 17:15:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/05/01 09:10:00 ajacoutot Exp $
 
 # Look at cairo-related regression failure.
 # and cairo/cairo.h: No such file or directory during build.
@@ -50,9 +50,6 @@ CFLAGS+=		-pthread
 
 SUBST_VARS+=		MODPY_SITEPKG LIBTOOL
 
-SUBST_SO=	gir/GLib-2.0.gir gir/GObject-2.0.gir gir/GModule-2.0 \
-		gir/Gio-2.0.gir
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile.introspection \
 		${WRKSRC}/gir/Makefile.in \
@@ -60,8 +57,5 @@ pre-configure:
 		${WRKSRC}/tests/offsets/Makefile.in \
 		${WRKSRC}/tools/g-ir-scanner.in \
 		${WRKSRC}/gir/Everything-1.0-expected.gir
-.for i in  ${SUBST_SO}
-	perl -pi -e 's,\.so\.[0-9],\.so,g' ${WRKSRC}/${i}
-.endfor
 
 .include <bsd.port.mk>
