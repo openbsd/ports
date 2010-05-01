@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2010/04/01 22:16:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2010/05/01 13:50:05 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gui=	lightweight BitTorrent client with graphical interface
 
 VER=		1.92
 DISTNAME=	transmission-${VER}
-PKGNAME-main=	transmission-${VER}
-PKGNAME-gui=	transmission-gui-${VER}p0
+PKGNAME-main=	transmission-${VER}p0
+PKGNAME-gui=	transmission-gui-${VER}p1
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 
@@ -26,11 +26,12 @@ FLAVOR?=
 
 MULTI_PACKAGES=	-main
 
-WANTLIB=	c crypto idn m pthread ssl z
+WANTLIB=	c crypto event idn m pthread ssl z
 WANTLIB-main=	${WANTLIB}
 
 MODULES=	devel/gettext textproc/intltool
-LIB_DEPENDS=	curl.>=14::net/curl
+LIB_DEPENDS=	curl.>=14::net/curl \
+		eventextra.>=1::devel/libeventextra
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -48,7 +49,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		OPENSSL_CFLAGS="-I/usr/include" \
 		OPENSSL_LIBS="-lcrypto"
 LIBTOOL_FLAGS=	--tag=disable-shared
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/third-party/libevent
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}
 
 .if ${FLAVOR:L:Mno_gui}
 CONFIGURE_ARGS+=--disable-gtk
@@ -58,11 +59,13 @@ WANTLIB-gui=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 \
 		expat fontconfig freetype gio-2.0 glib-2.0 glitz \
 		gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 pangoft2-1.0 \
-		pangocairo-1.0 pixman-1 png pcre pthread-stubs xcb
+		pangocairo-1.0 pixman-1 png pcre pthread-stubs xcb \
+		xcb-render xcb-render-util
 LIB_DEPENDS+=	gdk_pixbuf-2.0,gdk-x11-2.0,gtk-x11-2.0::x11/gtk+2 \
 		dbus-glib-1::x11/dbus-glib
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
-		curl.>=13::net/curl
+		curl.>=14::net/curl \
+		eventextra.>=1::devel/libeventextra
 RUN_DEPENDS-gui=:${PKGNAME-main}:net/transmission,-main \
 		::devel/desktop-file-utils \
 		:gamin-*:sysutils/gamin,-server,no_python
