@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2010/05/01 08:39:13 landry Exp $
+--- configure.orig	Sat May  1 10:13:28 2010
++++ configure	Sat May  1 10:13:41 2010
+@@ -14841,7 +14841,6 @@ fi
+ $as_echo_n "checking whether $LD accepts --as-needed... " >&6; }
+     case `$LD --as-needed -v 2>&1 </dev/null` in
+     *GNU* | *'with BFD'*)
+-      LDFLAGS="$LDFLAGS -Wl,--as-needed"
+       { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+       ;;
