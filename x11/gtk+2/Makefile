@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2010/04/25 20:35:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2010/05/01 09:31:24 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -9,9 +9,9 @@ COMMENT-cups=			gtk+2 CUPS print backend
 VERSION=			2.20.0
 DISTNAME=			gtk+-${VERSION}
 
-PKGNAME-main=			gtk+2-${VERSION}p2
+PKGNAME-main=			gtk+2-${VERSION}p3
 PKGNAME-docs=			gtk+2-docs-${VERSION}
-PKGNAME-cups=			gtk+2-cups-${VERSION}
+PKGNAME-cups=			gtk+2-cups-${VERSION}p0
 
 CATEGORIES=			x11 devel
 
@@ -73,6 +73,7 @@ USE_LIBTOOL=			Yes
 CONFIGURE_STYLE=		gnu
 CONFIGURE_ARGS=			${CONFIGURE_SHARED} \
 				--disable-gtk-doc \
+				--enable-introspection=no \
 				--with-xinput=yes \
 				--disable-papi \
 				--disable-silent-rules
