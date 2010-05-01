@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/02/01 17:00:12 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2010/05/01 20:47:44 steven Exp $
 
      SUBDIR =
      SUBDIR += AsteriskTFOT
      SUBDIR += JLS
+     SUBDIR += JVMS
      SUBDIR += autobook
      SUBDIR += clisp-hyperspec
      SUBDIR += cvs-guide
