@@ -1,0 +1,13 @@
+Byzanz is a simple tool to record a running X desktop to an animation suitable
+for presentation in a web browser. It's design has been guided by the
+following principles:
+- purpose
+  Byzanz records animations for presentation in a web browser. If something
+  doesn't fit this goal, it should not be part of Byzanz.
+- correctness
+  When Byzanz provides a feature, it does this correctly. In particular, it
+  does not crash or corrupt data.
+- simplicity
+  The user interface and programming code are simple and easy to understand
+  and don't contain any unecessary features.
+  Byzanz does not attempt to do be smarter than you are.

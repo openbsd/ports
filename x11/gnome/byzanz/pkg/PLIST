@@ -1,0 +1,55 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/01 07:39:04 jasper Exp $
+@bin bin/byzanz-playback
+@bin bin/byzanz-record
+lib/bonobo/
+lib/bonobo/servers/
+lib/bonobo/servers/ByzanzApplet.server
+@bin libexec/byzanz-applet
+@man man/man1/byzanz-playback.1
+@man man/man1/byzanz-record.1
+share/gnome-2.0/
+share/gnome-2.0/ui/
+share/gnome-2.0/ui/byzanzapplet.xml
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/byzanz-record-area.png
+share/icons/hicolor/22x22/apps/byzanz-record-desktop.png
+share/icons/hicolor/22x22/apps/byzanz-record-window.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/byzanz-record-area.svg
+share/icons/hicolor/scalable/apps/byzanz-record-desktop.svg
+share/icons/hicolor/scalable/apps/byzanz-record-window.svg
+share/locale/ar/LC_MESSAGES/byzanz.mo
+share/locale/ca/LC_MESSAGES/byzanz.mo
+share/locale/cs/LC_MESSAGES/byzanz.mo
+share/locale/da/LC_MESSAGES/byzanz.mo
+share/locale/de/LC_MESSAGES/byzanz.mo
+share/locale/dz/LC_MESSAGES/byzanz.mo
+share/locale/el/LC_MESSAGES/byzanz.mo
+share/locale/en_GB/LC_MESSAGES/byzanz.mo
+share/locale/es/LC_MESSAGES/byzanz.mo
+share/locale/fi/LC_MESSAGES/byzanz.mo
+share/locale/fr/LC_MESSAGES/byzanz.mo
+share/locale/gl/LC_MESSAGES/byzanz.mo
+share/locale/hu/LC_MESSAGES/byzanz.mo
+share/locale/it/LC_MESSAGES/byzanz.mo
+share/locale/ja/LC_MESSAGES/byzanz.mo
+share/locale/nb/LC_MESSAGES/byzanz.mo
+share/locale/oc/LC_MESSAGES/byzanz.mo
+share/locale/pl/LC_MESSAGES/byzanz.mo
+share/locale/pt_BR/LC_MESSAGES/byzanz.mo
+share/locale/ru/LC_MESSAGES/byzanz.mo
+share/locale/sl/LC_MESSAGES/byzanz.mo
+share/locale/sv/LC_MESSAGES/byzanz.mo
+share/locale/tr/LC_MESSAGES/byzanz.mo
+share/locale/vi/LC_MESSAGES/byzanz.mo
+share/locale/zh_CN/LC_MESSAGES/byzanz.mo
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/byzanz.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
