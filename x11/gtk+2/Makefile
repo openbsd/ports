@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2010/05/01 09:31:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2010/05/02 06:46:12 ajacoutot Exp $
 
 SHARED_ONLY=			Yes
 
@@ -68,7 +68,6 @@ WANTLIB-cups += gssapi krb5 pango-1.0 pangocairo-1.0 pangoft2-1.0 png
 WANTLIB-cups += ssl
 
 USE_X11=			Yes
-USE_GMAKE=			Yes
 USE_LIBTOOL=			Yes
 CONFIGURE_STYLE=		gnu
 CONFIGURE_ARGS=			${CONFIGURE_SHARED} \
@@ -80,6 +79,9 @@ CONFIGURE_ARGS=			${CONFIGURE_SHARED} \
 CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 				LDFLAGS="-L${LOCALBASE}/lib"
 
+# needed for the stamp-icons target in ${WRKSRC}/gtk/Makefile
+MAKE_ENV=		RM="rm"
+
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gtk+2
 
 REGRESS_IS_INTERACTIVE= x11
@@ -90,5 +92,12 @@ MODPY_VERSION= 2.5
 pre-configure:
 	perl -pi -e 's,/usr/bin/env python,${LOCALBASE}/bin/python${MODPY_VERSION},' \
 		${WRKSRC}/gtk/gtk-builder-convert
+
+# XXX Needed to be able to use our own make(1) instead of gmake (which
+# errors out with "write error" due to the effects of userland threads
+# that changes i/o operations to non-blocking). This breaks man pages
+# and introspection support (disabled in CONFIGURE_ARGS).
+	find ${WRKBUILD} -name Makefile.in | \
+		xargs perl -pi.bak -e 's,^-include.*,,g'
 
 .include <bsd.port.mk>
