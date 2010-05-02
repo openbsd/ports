@@ -1,0 +1,21 @@
+$OpenBSD: patch-EquinoxWide_index_theme,v 1.1.1.1 2010/05/02 13:33:21 ajacoutot Exp $
+--- EquinoxWide/index.theme.orig	Sun May  2 15:09:03 2010
++++ EquinoxWide/index.theme	Sun May  2 15:09:08 2010
+@@ -1,9 +1,13 @@
+-
+ [Desktop Entry]
+ Version=1.0
+ Encoding=UTF-8
+-Name=Equinox Wide
++Name=EquinoxWide
+ Type=X-GNOME-Metatheme
+-Comment=Gtk 2.0 Equinox Wide theme
+-Name[fr_FR]=Equinox Wide
++Comment=Gtk 2.0 Equinox theme - Wide version
++Name[fr_FR]=EquinoxWide
+ 
++[X-GNOME-Metatheme]
++GtkTheme=EquinoxWide
++MetacityTheme=Equinox
++IconTheme=Faenza
++CursorTheme=DMZ-Black
