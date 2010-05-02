@@ -1,6 +1,9 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.21 2010/04/25 20:35:08 ajacoutot Exp $
+$OpenBSD: patch-gtk_Makefile_in,v 1.22 2010/05/02 14:07:14 ajacoutot Exp $
+
+Fix use of grep(1) as we don't support the -o switch.
+ 
 --- gtk/Makefile.in.orig	Tue Mar 23 04:32:59 2010
-+++ gtk/Makefile.in	Sat Apr 24 16:56:48 2010
++++ gtk/Makefile.in	Sun May  2 12:51:17 2010
 @@ -971,7 +971,7 @@ SUBDIRS = theme-bits . tests
  DIST_SUBDIRS = theme-bits tests
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_FALSE@GTK_PRINT_BACKENDS = file,lpr
@@ -10,3 +13,12 @@ $OpenBSD: patch-gtk_Makefile_in,v 1.21 2010/04/25 20:35:08 ajacoutot Exp $
  @HAVE_PAPI_CUPS_TRUE@GTK_PRINT_BACKENDS = file,papi,cups
  INCLUDES = \
  	-DG_LOG_DOMAIN=\"Gtk\"				\
+@@ -2778,7 +2778,7 @@ gtktypebuiltins.c: @REBUILD@ $(gtk_public_h_sources) g
+ gtktypefuncs.c: @REBUILD@ $(top_srcdir)/gtk/*.h $(top_srcdir)/gdk/*.h Makefile
+ 	echo '#include <gtk/gtk.h>' > xgen-gtfsrc.c && \
+ 	  ${CPP} $(DEFS) $(INCLUDES) -DGTK_ENABLE_BROKEN $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) xgen-gtfsrc.c | \
+-	  grep -o '\bg[td]k_[a-zA-Z0-9_]*_get_type\b' | \
++	  awk '{ print $$2 }' | grep -E "gdk_[a-zA-Z0-9_].*_get_type$$|gtk_[a-zA-Z0-9_].*_get_type$$" | \
+ 	  sort | uniq | \
+ 	  sed '{ s/^/*tp++ = /; s/$$/();/; }' > xgen-gtf \
+ 	&& cp xgen-gtf $@ && rm -f xgen-gtf
