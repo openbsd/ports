@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/15 14:11:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/05/02 13:35:48 ratchov Exp $
 
 COMMENT-main=		Quake/Quake-world client
 COMMENT-server=		Quake world server
@@ -6,7 +6,7 @@ CATEGORIES=		games
 
 FULLPKGNAME-server=	quakeworld-server-20000101p6p0
 FULLPKGPATH-server=	games/quake,-server
-PKGNAME-main=		quake-20000101p8
+PKGNAME-main=		quake-20000101p9
 DISTNAME=		quake-v6-bsd-kame
 PATCHFILES=		quake6-00-v6-20000202b.diff.gz:0
 PATCH_DIST_STRIP=	-p1
@@ -36,6 +36,7 @@ CONFIGURE_ARGS=		--enable-release
 CONFIGURE_ARGS+=	--bindir=/bin \
 			--with-opengl=no --with-opengl-includes=no
 
+WANTLIB-main=		${WANTLIB} sndio
 .if ${FLAVOR:L} == sdl
 WANTLIB+=		pthread
 LIB_DEPENDS-main=	SDL::devel/sdl
@@ -51,10 +52,10 @@ CFLAGS+=		-pthread
 .elif ${FLAVOR:L} == x11
 CONFIGURE_ARGS+=	--without-sdl --without-ggi
 MAKE_FLAGS=	
-WANTLIB-main=		X11 Xext c m pthread-stubs xcb
+WANTLIB-main=		X11 Xext c m pthread-stubs sndio xcb
 .elif ${FLAVOR:L} == gl
 CONFIGURE_ARGS+=	--with-opengl=yes --with-opengl-includes=${X11BASE}/include
-WANTLIB+=		GL X11 Xext pthread
+WANTLIB-main+=		GL X11 Xext pthread
 .else
 ERRORS+=		choose either sdl, ggi, gl or x11
 .endif
@@ -64,7 +65,7 @@ WRKDIST=	${WRKDIR}/quakeforge
 post-extract:
 	@rm ${WRKDIST}/{config.cache,config.log}
 	@find ${WRKDIST} -name \*.o |xargs rm
-	@cp ${FILESDIR}/snd_openbsd.c ${WRKDIST}/common
+	@cp ${FILESDIR}/snd_sndio.c ${WRKDIST}/common
 
 post-patch:
 	cd ${WRKDIST}; PATH=${PORTPATH} AUTOCONF_VERSION="${AUTOCONF_VERSION}" autoreconf

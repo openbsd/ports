@@ -1,15 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
---- configure.in.orig	Tue Jan 11 12:10:13 2000
-+++ configure.in	Tue Jul 31 17:26:42 2001
-@@ -14,7 +14,7 @@ AC_PROG_MAKE_SET
- 
+$OpenBSD: patch-configure_in,v 1.2 2010/05/02 13:35:48 ratchov Exp $
+--- configure.in.orig	Tue Jan 11 03:10:13 2000
++++ configure.in	Fri Apr 30 04:58:10 2010
+@@ -15,7 +15,7 @@ AC_PROG_MAKE_SET
  dnl Checks for header files.
  AC_CHECK_HEADERS(unistd.h windows.h sys/ioctl.h sys/mman.h sys/asoundlib.h \
--	sys/soundcard.h linux/soundcard.h machine/soundcard.h sys/audioio.h \
-+	sys/soundcard.h soundcard.h linux/soundcard.h machine/soundcard.h sys/audioio.h \
- 	dsound.h mmsystem.h mme/mmsystem.h mme/mme_public.h)
+ 	sys/soundcard.h linux/soundcard.h machine/soundcard.h sys/audioio.h \
+-	dsound.h mmsystem.h mme/mmsystem.h mme/mme_public.h)
++	dsound.h mmsystem.h mme/mmsystem.h mme/mme_public.h sndio.h)
  
  dnl checks for compiler characteristics
+ AC_PROG_GCC_TRADITIONAL
 @@ -232,10 +232,10 @@ if test "x$HAS_SVGA" != xyes; then
  fi
  
@@ -25,7 +25,23 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
  if test "x$HAS_SDL" != xyes; then
     SDL_CFLAGS="" SDL_LIBS=""
  fi
-@@ -453,6 +453,13 @@ case "${target}" in
+@@ -407,6 +407,15 @@ QF_maGiC_VALUE
+     ], SND_STYLE="OSS")
+ fi
+ 
++if test -z "$SND_STYLE" -a "x$ac_cv_header_sndio_h" = "xyes"; then
++  AC_EGREP_CPP([QF_maGiC_VALUE],[
++#include <sndio.h>
++#ifdef SIO_PLAY
++QF_maGiC_VALUE
++#endif
++    ], SND_STYLE="sndio"
++       SND_LIBS="-lsndio")
++fi
+ if test -z "$SND_STYLE" -a "x$ac_cv_header_sys_audioio_h" = "xyes"; then
+   AC_EGREP_CPP([QF_maGiC_VALUE],[
+ #include <sys/audioio.h>
+@@ -453,6 +462,13 @@ case "${target}" in
        SYS_SRC="sys_linux.c"
        QW_CL_SYS_SRC="sys_linux.c"
        QW_SRV_SYS_SRC="sys_unix.c"
@@ -34,7 +50,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2001/08/03 13:02:16 espie Exp $
 +      SYS_SRC="sys_unix.c" 
 +      QW_CL_SYS_SRC="sys_linux.c"
 +      QW_SRV_SYS_SRC="sys_unix.c"
-+      SND_STYLE="OpenBSD"
++      SND_STYLE="sndio"
 +      DEFAULT_SYS=yes
        ;;
     *)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
---- qw_client/Makefile.in.orig	Fri Jan 11 17:46:13 2008
-+++ qw_client/Makefile.in	Fri Jan 11 17:46:15 2008
+$OpenBSD: patch-qw_client_Makefile_in,v 1.3 2010/05/02 13:35:48 ratchov Exp $
+--- qw_client/Makefile.in.orig	Fri Apr 30 01:51:08 2010
++++ qw_client/Makefile.in	Fri Apr 30 05:00:43 2010
 @@ -17,9 +17,10 @@ mandir      = @mandir@
  
  BUILD_DIR    = ../targets/qw_client
@@ -22,15 +22,17 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  endif
  
  targets       = $(GGIQUAKE) $(SVGAQUAKE) $(GLQUAKE) $(TDFXQUAKE) $(X11QUAKE) $(SDLQUAKE)
-@@ -130,6 +131,7 @@ SND_SRC = snd_alsa.c alsa.c
- endif
+@@ -131,6 +132,9 @@ endif
  ifeq ($(SND_STYLE),OSS)
  SND_SRC = snd_dma.c snd_oss.c
-+LDFLAGS+=-lossaudio
  endif
++ifeq ($(SND_STYLE),sndio)
++SND_SRC = snd_dma.c snd_sndio.c
++endif
  ifeq ($(SND_STYLE),Solaris)
  SND_SRC = snd_dma.c snd_sun.c
-@@ -250,7 +252,7 @@ $(BUILD_DIR)/x11/%.o: $(SRC_DIR)/%.c
+ endif
+@@ -250,7 +254,7 @@ $(BUILD_DIR)/x11/%.o: $(SRC_DIR)/%.c
  
  $(BUILD_DIR)/x11/%.o: $(SRC_DIR)/%.s
  	$(MAKE_SURE_x11_DIR)
@@ -39,7 +41,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  
  $(BUILD_DIR)/x11/%.o: $(COMMON_DIR)/%.c
  	$(MAKE_SURE_x11_DIR)
-@@ -264,7 +266,7 @@ endif
+@@ -264,7 +268,7 @@ endif
  
  $(BUILD_DIR)/x11/%.o: $(COMMON_DIR)/%.s
  	$(MAKE_SURE_x11_DIR)
@@ -48,7 +50,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  
  $(X11QUAKE): $(BUILD_DIR)/../$(X11QUAKE)
  
-@@ -303,7 +305,7 @@ $(BUILD_DIR)/svga/%.o: $(SRC_DIR)/%.c
+@@ -303,7 +307,7 @@ $(BUILD_DIR)/svga/%.o: $(SRC_DIR)/%.c
  
  $(BUILD_DIR)/svga/%.o: $(SRC_DIR)/%.s
  	$(MAKE_SURE_svga_DIR)
@@ -57,7 +59,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  
  $(BUILD_DIR)/svga/%.o: $(COMMON_DIR)/%.c
  	$(MAKE_SURE_svga_DIR)
-@@ -317,7 +319,7 @@ endif
+@@ -317,7 +321,7 @@ endif
  
  $(BUILD_DIR)/svga/%.o: $(COMMON_DIR)/%.s
  	$(MAKE_SURE_svga_DIR)
@@ -66,7 +68,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  
  $(SVGAQUAKE): $(BUILD_DIR)/../$(SVGAQUAKE)
  
-@@ -353,7 +355,7 @@ $(BUILD_DIR)/ggi/%.o: $(SRC_DIR)/%.c
+@@ -353,7 +357,7 @@ $(BUILD_DIR)/ggi/%.o: $(SRC_DIR)/%.c
  
  $(BUILD_DIR)/ggi/%.o: $(SRC_DIR)/%.s
  	$(MAKE_SURE_ggi_DIR)
@@ -75,7 +77,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  
  $(BUILD_DIR)/ggi/%.o: $(COMMON_DIR)/%.c
  	$(MAKE_SURE_ggi_DIR)
-@@ -367,7 +369,7 @@ endif
+@@ -367,7 +371,7 @@ endif
  
  $(BUILD_DIR)/ggi/%.o: $(COMMON_DIR)/%.s
  	$(MAKE_SURE_ggi_DIR)
@@ -84,7 +86,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  
  $(GGIQUAKE): $(BUILD_DIR)/../$(GGIQUAKE)
  
-@@ -398,30 +400,30 @@ MAKE_SURE_gl_DIR = @DIR=gl; $(MAKE_SURE_DIR)
+@@ -398,30 +402,30 @@ MAKE_SURE_gl_DIR = @DIR=gl; $(MAKE_SURE_DIR)
  
  $(BUILD_DIR)/gl/%.o: $(SRC_DIR)/%.c
  	$(MAKE_SURE_gl_DIR)
@@ -121,7 +123,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  
  # XXX - Can this be automated?
  clean-$(GLQUAKE):
-@@ -450,7 +452,7 @@ $(BUILD_DIR)/3dfx/%.o: $(SRC_DIR)/%.c
+@@ -450,7 +454,7 @@ $(BUILD_DIR)/3dfx/%.o: $(SRC_DIR)/%.c
  
  $(BUILD_DIR)/3dfx/%.o: $(SRC_DIR)/%.s
  	$(MAKE_SURE_3dfx_DIR)
@@ -130,7 +132,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  
  $(BUILD_DIR)/3dfx/%.o: $(COMMON_DIR)/%.c
  	$(MAKE_SURE_3dfx_DIR)
-@@ -464,7 +466,7 @@ endif
+@@ -464,7 +468,7 @@ endif
  
  $(BUILD_DIR)/3dfx/%.o: $(COMMON_DIR)/%.s
  	$(MAKE_SURE_gl_DIR)
@@ -139,7 +141,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  
  $(TDFXQUAKE): $(BUILD_DIR)/../$(TDFXQUAKE)
  
-@@ -500,7 +502,7 @@ $(BUILD_DIR)/sdl/%.o: $(SRC_DIR)/%.c
+@@ -500,7 +504,7 @@ $(BUILD_DIR)/sdl/%.o: $(SRC_DIR)/%.c
  
  $(BUILD_DIR)/sdl/%.o: $(SRC_DIR)/%.s
  	$(MAKE_SURE_sdl_DIR)
@@ -148,7 +150,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  
  $(BUILD_DIR)/sdl/%.o: $(COMMON_DIR)/%.c
  	$(MAKE_SURE_sdl_DIR)
-@@ -514,7 +516,7 @@ endif
+@@ -514,7 +518,7 @@ endif
  
  $(BUILD_DIR)/sdl/%.o: $(COMMON_DIR)/%.s
  	$(MAKE_SURE_sdl_DIR)
@@ -157,7 +159,7 @@ $OpenBSD: patch-qw_client_Makefile_in,v 1.2 2008/01/11 16:48:44 ajacoutot Exp $
  
  $(SDLQUAKE): $(BUILD_DIR)/../$(SDLQUAKE)
  
-@@ -540,7 +542,7 @@ clean: $(CLEAN_TARGETS)
+@@ -540,7 +544,7 @@ clean: $(CLEAN_TARGETS)
  install: $(targets)
  	$(PROJECT_DIR)/mkinstalldirs $(DESTDIR)$(prefix)$(bindir)
  	for i in $(targets); do \
