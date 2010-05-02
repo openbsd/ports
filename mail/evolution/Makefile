@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2010/05/01 10:53:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2010/05/02 14:05:58 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -17,7 +17,7 @@ SUBST_VARS=		R
 
 # -plugins depends on the exact version of -main, so whenever -main is
 # bumped, -plugins needs a bump too
-PATCH_NUMBER=		p0
+PATCH_NUMBER=		p1
 PKGNAME-main=		${DISTNAME}${PATCH_NUMBER}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}${PATCH_NUMBER}
 
@@ -29,8 +29,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 SO_VERSION=		6.0
-# NOTE: Must bump minor version if any shlib's are removed from the
-# components dir to avoid pkg_add -r issues.
+
 .for _lib in eutil econduit evolution-a11y evolution-calendar-a11y \
 evolution-widgets-a11y evolution-addressbook-a11y etable etext emiscwidgets \
 efilterbar etimezonedialog menus eshell filter essmime evolution-smime eabutil \
@@ -127,7 +126,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-nm \
 			--disable-python
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}/components:${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib" \
+			LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib" \
 			PTHREAD_LIB="-pthread"
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
