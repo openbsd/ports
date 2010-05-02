@@ -1,0 +1,310 @@
+$OpenBSD: patch-install_pl,v 1.1.1.1 2010/05/02 20:52:32 sthen Exp $
+--- install.pl.orig	Wed Jun 10 09:34:16 2009
++++ install.pl	Fri Apr 30 23:05:08 2010
+@@ -60,6 +60,8 @@ my @ProfileTag = ( 
+ 	"# \n",
+ );
+ 
++my $instdir = $ENV{'INSTDIR'};
++
+ my @RequiredDirs = ( 'PREFIX', 'BINDIR', 'LIBEXECDIR', 'CONFDIR', 'DOCDIR', 
+ 					 'VARDIR', 'PROFILESTATDIR', 'PROFILEDATADIR', 
+ 					 'BACKEND_PLUGINDIR', 'FRONTEND_PLUGINDIR', 'HTMLDIR' );
+@@ -87,11 +89,11 @@ sub GetPerl {
+ 	my $ans;
+ 	$whichperl = FindCommand("perl");
+ 	if ( defined $whichperl ) {
+-		print "Perl to use: [$whichperl] ";
+-		chomp($ans = <STDIN>);
+-		if ( length $ans ) {
+-			$whichperl = $ans;
+-		}
++		print "Perl to use: [$whichperl]\n";
++#		chomp($ans = <STDIN>);
++#		if ( length $ans ) {
++#			$whichperl = $ans;
++#		}
+ 	} else {
+ 		print "No Perl found in your PATH. Please specify where to find perl [] ";
+ 		chomp($whichperl = <STDIN>);
+@@ -116,6 +118,7 @@ sub GetPerl {
+ sub CopyDir {
+ 	my $orig = shift;
+ 	my $dest = shift;
++	$dest = $instdir.$dest;
+ 
+ 	my $DIR;
+ 	mkdir $dest unless -d $dest;
+@@ -160,14 +163,14 @@ sub VerifyUser {
+ 	if ( !defined $gid_name ) {
+ 		die "Group '$user_gid' not found on this system\n";
+ 	}
+-	# Check the members list
+-	foreach my $member ( split /\s+/, $group_members ) {
+-		if ( $member eq $user ) {
+-			# user found
++#	# Check the members list
++#	foreach my $member ( split /\s+/, $group_members ) {
++#		if ( $member eq $user ) {
++#			# user found
+ 			return $uid;
+-		}
+-	}
+-	die "User '$user' not a member of group '$NfConf::WWWGROUP'\n";
++#		}
++#	}
++#	die "User '$user' not a member of group '$NfConf::WWWGROUP'\n";
+ 
+ } # End of VerifyUser
+ 
+@@ -192,7 +195,7 @@ sub VerifyConfig {
+ 	}
+ 
+ 	die "Missing PREFIX directory of nfdump tools!\n" unless defined $NfConf::PREFIX;
+-	die "Configured PREFIX directory '$NfConf::PREFIX' not found!\n" unless -d  $NfConf::PREFIX;
++	die "Configured PREFIX directory '$instdir$NfConf::PREFIX' not found!\n" unless -d  $instdir.$NfConf::PREFIX;
+ 	foreach my $binary ( 'nfcapd', 'nfdump', 'nfprofile' ) {
+ 		die "nfdump tools installation error: '$binary' not found in '$NfConf::PREFIX'" unless -f "$NfConf::PREFIX/$binary";
+ 	}
+@@ -283,8 +286,8 @@ sub PatchVars {
+ sub PatchAllScripts {
+ 
+ 	my %GlobList = ( 
+-		"bin/*"		=> 	"$NfConf::BINDIR",
+-		"libexec/*"	=>	"$NfConf::LIBEXECDIR"
++		"bin/*"		=> 	"$instdir$NfConf::BINDIR",
++		"libexec/*"	=>	"$instdir$NfConf::LIBEXECDIR"
+ 	);
+ 
+ 	foreach my $glob_list ( keys %GlobList ) {
+@@ -334,15 +337,15 @@ sub SetupHTML {
+ 	my ( $nfsen_uid, $www_gid ) = @_;
+ 
+ 	print "Setup php and html files.\n";
+-	mkdir "$NfConf::HTMLDIR" unless -d "$NfConf::HTMLDIR";
+-	die "Could not create HTMl directory '$NfConf::HTMLDIR': $!\n"  unless -d $NfConf::HTMLDIR;
++	mkdir "$instdir$NfConf::HTMLDIR" unless -d "$instdir$NfConf::HTMLDIR";
++	die "Could not create HTMl directory '$instdir$NfConf::HTMLDIR': $!\n"  unless -d $instdir.$NfConf::HTMLDIR;
+ 
+ 	$CopyRecursive::CopyLink = 1;
+ 	$CopyRecursive::MODE 	 = 0644;
+ 	$CopyRecursive::UID 	 = 0;
+ 	$CopyRecursive::GID 	 = $www_gid;
+-	CopyRecursive::dircopy("html", "$NfConf::HTMLDIR");
+-	open CONF, ">$NfConf::HTMLDIR/conf.php" || die "Can't open conf.php for writing: $!\n";
++	CopyRecursive::dircopy("html", "$instdir$NfConf::HTMLDIR");
++	open CONF, ">$instdir$NfConf::HTMLDIR/conf.php" || die "Can't open conf.php for writing: $!\n";
+ 	print CONF "<?php\n";
+ 	print CONF "/* This file was automatically created by the NfSen install.pl script */\n\n";
+ 	print CONF "\$COMMSOCKET = \"$NfConf::COMMSOCKET\";\n";
+@@ -376,6 +379,7 @@ sub SetupEnv {
+ 	print "\nUse UID/GID $nfsen_uid $www_gid\n";
+ 
+ 	foreach my $dir ( @dirs ) {
++		$dir = $instdir.$dir;
+ 		if ( ! -d $dir ) {
+ 			print "Creating: ";
+ 			mkdir $dir || die "Can't mkdir '$dir': $!\n";
+@@ -390,6 +394,7 @@ sub SetupEnv {
+ 	print "\nProfile live: spool directories:\n";
+ 	foreach my $ident ( keys %NfConf::sources ) {
+ 		my $dir = "$NfConf::PROFILEDATADIR/live/$ident";
++		$dir = $instdir.$dir;
+ 		if ( ! -d $dir ) {
+ 			print "Creating: ";
+ 			mkdir $dir || die "Can't mkdir '$dir': $!\n";
+@@ -406,7 +411,7 @@ sub SetupEnv {
+ 	my $now = time();
+ 	my $tstart = $now - ( $now % 300 );
+ 	foreach my $db ( keys %NfConf::sources ) {
+-		NfSenRRD::SetupRRD("$NfConf::PROFILESTATDIR/live", $db, $tstart - 300, 0);
++		NfSenRRD::SetupRRD("$instdir$NfConf::PROFILESTATDIR/live", $db, $tstart - 300, 0);
+ 	}
+ 	if ( $Log::ERROR ) {
+ 		die "Error setup RRD DBs: $Log::ERROR\n";
+@@ -443,7 +448,7 @@ sub SetupEnv {
+ 		print "Use existing profile info for profile 'live'\n";
+ 	}
+ 
+-	my $filelist = "$NfConf::PROFILESTATDIR/live/*rrd $NfConf::PROFILESTATDIR/live/profile.dat";
++	my $filelist = "$instdir$NfConf::PROFILESTATDIR/live/*rrd $instdir$NfConf::PROFILESTATDIR/live/profile.dat";
+ 	my @AllFIles = glob($filelist);
+ 	chown $nfsen_uid, $www_gid, @AllFIles;
+ 
+@@ -480,8 +485,8 @@ sub UpgradeProfiles {
+ 
+ 	# fix permissions - all files/directories should ne $NfConf::USER and no longer WWW, as 
+ 	# no php script will no longer write anything
+-	chown $nfsen_uid, $www_gid, "$NfConf::PROFILEDATADIR";
+-	chown $nfsen_uid, $www_gid, "$NfConf::PROFILESTATDIR";
++	chown $nfsen_uid, $www_gid, "$instdir$NfConf::PROFILEDATADIR";
++	chown $nfsen_uid, $www_gid, "$instdir$NfConf::PROFILESTATDIR";
+ 
+ 	foreach my $profilename ( @AllProfiles ) {
+ 		my %profileinfo = NfProfile::ReadProfile($profilename, '.');
+@@ -586,19 +591,19 @@ sub CopyAllFiles {
+ 	$CopyRecursive::GID 	 = $www_gid;
+ 	$CopyRecursive::MODE 	 = 0755;
+ 	unlink "$NfConf::BINDIR/nfsen.rc";
+-	CopyRecursive::dircopy("bin", "$NfConf::BINDIR");
+-	CopyRecursive::dircopy("libexec", "$NfConf::LIBEXECDIR");
++	CopyRecursive::dircopy("bin", "$instdir$NfConf::BINDIR");
++	CopyRecursive::dircopy("libexec", "$instdir$NfConf::LIBEXECDIR");
+ 	$CopyRecursive::MODE 	 = 0644;
+-	CopyRecursive::dircopy("etc", "$NfConf::CONFDIR");
+-	CopyRecursive::dircopy("plugins/backend",  "$NfConf::BACKEND_PLUGINDIR");
+-	CopyRecursive::dircopy("plugins/frontend", "$NfConf::FRONTEND_PLUGINDIR");
+-	CopyRecursive::dircopy("doc", "$NfConf::DOCDIR");
++	CopyRecursive::dircopy("etc", "$instdir$NfConf::CONFDIR");
++	CopyRecursive::dircopy("plugins/backend",  "$instdir$NfConf::BACKEND_PLUGINDIR");
++	CopyRecursive::dircopy("plugins/frontend", "$instdir$NfConf::FRONTEND_PLUGINDIR");
++	CopyRecursive::dircopy("doc", "$instdir$NfConf::DOCDIR");
+ 
+-	if ( $ConfigFile eq "$NfConf::CONFDIR/nfsen.conf" ) {
++	if ( $ConfigFile eq "$instdir$NfConf::CONFDIR/nfsen.conf" ) { # XXX??
+ 		print "Keep config file '$ConfigFile'\n";
+ 	} else {
+ 		print "Copy config file '$ConfigFile'\n";
+-		CopyRecursive::fcopy("$ConfigFile", "$NfConf::CONFDIR/nfsen.conf");
++		CopyRecursive::fcopy("$ConfigFile", "$instdir$NfConf::CONFDIR/nfsen.conf");
+ 	}
+ 	print "\n";
+ 
+@@ -617,7 +622,7 @@ sub Cleanup {
+ 					);
+ 
+ 	foreach my $file ( @OldFiles ) {
+-		unlink $file if -f $file;
++#		unlink $file if -f $file;
+ 	}
+ 
+ } # End of Cleanup
+@@ -631,7 +636,12 @@ sub Cleanup {
+ $| = 1;
+ 
+ my $ConfigFile = shift @ARGV;
++my $mode = shift @ARGV;
+ 
++my $configure;
++my $copy;
++$configure=1 if $mode eq '';
++$copy=1 if $mode eq 'copy';
+ 
+ # Load the required NfSen modules 
+ unshift @INC, "libexec";
+@@ -708,56 +718,63 @@ $NfConf::PERL = GetPerl();
+ 
+ my ($nfsen_uid, $www_gid ) = VerifyConfig();
+ my $nfsen_run = 0;
++my $need_rrdlayout_upgrade = undef;
++my $rrdtool = undef;
+ 
+-# test for two files of old layout
+-my $need_rrdlayout_upgrade = -f "$NfConf::PROFILESTATDIR/live/flows.rrd" && -f "$NfConf::PROFILESTATDIR/live/packets_other.rrd";
++if ($configure) {
++	# test for two files of old layout
++	my $need_rrdlayout_upgrade = -f "$NfConf::PROFILESTATDIR/live/flows.rrd" && -f "$NfConf::PROFILESTATDIR/live/packets_other.rrd";
+ 
+-my $rrdtool = undef;
+-if ( $need_rrdlayout_upgrade ) {
+-	$rrdtool = FindCommand("rrdtool");
+-	if ( !defined $rrdtool ) {
+-		print "\nERROR: command 'rrdtool' not found in your PATH: 'rrdtool' is needed to upgrade the DBs of your NfSen version\n";
+-		exit 1;
++	if ( $need_rrdlayout_upgrade ) {
++		$rrdtool = FindCommand("rrdtool");
++		if ( !defined $rrdtool ) {
++			print "\nERROR: command 'rrdtool' not found in your PATH: 'rrdtool' is needed to upgrade the DBs of your NfSen version\n";
++			exit 1;
++		}
+ 	}
+-}
+ 
+-my $pid_name = "nfsend.pid";
+-if ( -f "$NfConf::VARDIR/run/nfsen-run.pid" ) {
+-	# from NfSen <= 1.2
+-	$pid_name = "nfsen-run.pid";
+-}
++	my $pid_name = "nfsend.pid";
++	if ( -f "$NfConf::VARDIR/run/nfsen-run.pid" ) {
++		# from NfSen <= 1.2
++		$pid_name = "nfsen-run.pid";
++	}
+ 
+-if ( -f "$NfConf::VARDIR/run/$pid_name" ) {
+-	open PID, "$NfConf::VARDIR/run/$pid_name" || die "Can't open pid file: $!\n";
+-	my $pid = <PID>;
+-	chomp($pid);
+-	close PID;
+-	die "Can't extract PID out of '$NfConf::VARDIR/run/$pid_name'. Stop upgrade" if !defined $pid;
+-	if ( kill(0, $pid) == 1 ) {
+-		print "Stop nfsend while upgrading .";
+-		kill 15, $pid;
+-		my $cnt = 0;
+-		while ( -f "$NfConf::VARDIR/run/$pid_name" && $cnt < 300 ) {
+-			print ".";
+-			$cnt++;
+-			sleep(1);
+-		}
+-		if ( -f "$NfConf::VARDIR/run/$pid_name" ) {
+-			print "\nnfsend doesn't want to die! It's not save to upgrade NfSen!\n";
+-			exit;
++	if ( -f "$NfConf::VARDIR/run/$pid_name" ) {
++		open PID, "$NfConf::VARDIR/run/$pid_name" || die "Can't open pid file: $!\n";
++		my $pid = <PID>;
++		chomp($pid);
++		close PID;
++		die "Can't extract PID out of '$NfConf::VARDIR/run/$pid_name'. Stop upgrade" if !defined $pid;
++		if ( kill(0, $pid) == 1 ) {
++			print "Stop nfsend while upgrading .";
++			kill 15, $pid;
++			my $cnt = 0;
++			while ( -f "$NfConf::VARDIR/run/$pid_name" && $cnt < 300 ) {
++				print ".";
++				$cnt++;
++				sleep(1);
++			}
++			if ( -f "$NfConf::VARDIR/run/$pid_name" ) {
++				print "\nnfsend doesn't want to die! It's not save to upgrade NfSen!\n";
++				exit;
++			} else {
++				print "done.\n";
++				$nfsen_run = 1;
++			}
+ 		} else {
+-			print "done.\n";
+-			$nfsen_run = 1;
++			print "nfsend pid file exists, but no process is running.\n";
++			unlink "$NfConf::VARDIR/run/$pid_name";
+ 		}
+-	} else {
+-		print "nfsend pid file exists, but no process is running.\n";
+-		unlink "$NfConf::VARDIR/run/$pid_name";
+ 	}
+ }
+ 
+-SetupHTML($nfsen_uid, $www_gid);
+-CopyAllFiles($ConfigFile, $nfsen_uid, $www_gid);
+-PatchAllScripts();
++if ($copy) {
++	SetupHTML($nfsen_uid, $www_gid);
++	CopyAllFiles($ConfigFile, $nfsen_uid, $www_gid);
++	PatchAllScripts();
++}
++
++if ($configure) { # Not indented; cvs keywords in following block will break ports tree patches
+ Cleanup();
+ SetupEnv($nfsen_uid, $www_gid);
+ 
+@@ -787,9 +804,10 @@ $$$hints{'version'} 		= $nfsen_version;
+ $$$hints{'installed'} 		= time();
+ NfSen::StoreHints();
+ chown $nfsen_uid, $www_gid, "$NfConf::PROFILESTATDIR/hints" || die "Can't chown hints db: $!\n";
++}
+ print "Setup done.\n\n";
+ 
+-if ( $nfsen_run ) {
++if ( $copy && $nfsen_run ) {
+ 	print "Restart nfsend\n";
+ 	system("$NfConf::BINDIR/nfsend");
+ }

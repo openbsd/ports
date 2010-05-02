@@ -1,0 +1,91 @@
+$OpenBSD: patch-etc_nfsen-dist_conf,v 1.1.1.1 2010/05/02 20:52:32 sthen Exp $
+--- etc/nfsen-dist.conf.orig	Wed Jun 10 08:54:50 2009
++++ etc/nfsen-dist.conf	Fri Apr 30 23:10:21 2010
+@@ -8,6 +8,10 @@
+ # Set all the values to fit your NfSen setup and run the 'install.pl'
+ # script from the nfsen distribution directory.
+ #
++###   OPENBSD PACKAGE NOTE: the directory-related values are set at        ###
++###   port build time. For post-install configuration, please start with   ###
++###   "BASEDIR unrelated vars" below.                                      ###
++#
+ # The syntax must conform to Perl syntax.
+ #
+ ##############################
+@@ -18,7 +22,7 @@
+ 
+ #
+ # Required for default layout
+-$BASEDIR = "/data/nfsen";
++$BASEDIR = "${PREFIX}";
+ 
+ #
+ # Where to install the NfSen binaries
+@@ -26,25 +30,25 @@ $BINDIR="${BASEDIR}/bin";
+ 
+ #
+ # Where to install the NfSen Perl modules
+-$LIBEXECDIR="${BASEDIR}/libexec";
++$LIBEXECDIR="${BASEDIR}/${P5SITE}/NfSen";
+ 
+ #
+ # Where to install the config files
+-$CONFDIR="${BASEDIR}/etc";
++$CONFDIR="${SYSCONFDIR}";
+ 
+ #
+ # NfSen html pages directory:
+ # All php scripts will be installed here.
+ # URL: Entry point for nfsen: http://<webserver>/nfsen/nfsen.php
+-$HTMLDIR    = "/var/www/nfsen/";
++$HTMLDIR    = "/var/www/htdocs/nfsen";
+ 
+ #
+ # Where to install the docs
+-$DOCDIR="${HTMLDIR}/doc";
++$DOCDIR="${BASEDIR}/share/doc/nfsen";
+ 
+ #
+ # Var space for NfSen
+-$VARDIR="${BASEDIR}/var";
++$VARDIR="/var/db/nfsen";
+ 
+ #
+ # directory for all pid files
+@@ -53,15 +57,15 @@ $VARDIR="${BASEDIR}/var";
+ #
+ # The Profiles stat directory, where all profile information
+ # RRD DBs and png pictures of the profile are stored
+-$PROFILESTATDIR="${BASEDIR}/profiles-stat";
++$PROFILESTATDIR="${VARDIR}/profiles-stat";
+ 
+ #
+ # The Profiles directory, where all netflow data is stored
+-$PROFILEDATADIR="${BASEDIR}/profiles-data";
++$PROFILEDATADIR="${VARDIR}/profiles-data";
+ 
+ #
+ # Where go all the backend plugins
+-$BACKEND_PLUGINDIR="${BASEDIR}/plugins";
++$BACKEND_PLUGINDIR="${BASEDIR}/lib/nfsen/plugins";
+ 
+ #
+ # Where go all the frontend plugins
+@@ -69,7 +73,7 @@ $FRONTEND_PLUGINDIR="${HTMLDIR}/plugins";
+ 
+ #
+ # nfdump tools path
+-$PREFIX  = '/usr/local/bin';
++$PREFIX  = '${PREFIX}/bin';
+ 
+ #
+ # nfsend communication socket
+@@ -81,7 +85,7 @@ $PREFIX  = '/usr/local/bin';
+ # This may be a different or the same uid than your web server.
+ # Note: This user must be in group $WWWGROUP, otherwise nfcapd
+ #       is not able to write data files!
+-$USER    = "netflow";
++$USER    = "_nfcapd";
+ 
+ # user and group of the web server process
+ # All netflow processing will be done with this user

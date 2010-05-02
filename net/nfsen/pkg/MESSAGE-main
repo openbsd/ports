@@ -1,0 +1,16 @@
+Note: the _nfcapd user has been added to group www.
+
+To proceed with an installation or upgrade, adjust ${SYSCONFDIR}/nfsen.conf
+as required and run the configuration tool:
+
+# install-nfsen.pl ${SYSCONFDIR}/nfsen.conf
+
+If your httpd runs in a chroot jail of /var/www you may adapt like this:
+
+# mkdir -p /var/www/var/db
+# mv /var/db/nfsen /var/www/var/db/nfsen
+# ln -s /var/www/var/db/nfsen /var/db/nfsen
+
+To start the daemon at boot, you may add this to /etc/rc.local:
+
+[ -x ${PREFIX}/bin/nfsen ] && ${PREFIX}/bin/nfsen start
