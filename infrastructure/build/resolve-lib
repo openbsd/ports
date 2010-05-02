@@ -1,7 +1,7 @@
 #! /usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.18 2010/04/06 09:39:51 espie Exp $
+# $OpenBSD: resolve-lib,v 1.19 2010/05/02 20:54:25 espie Exp $
 #
-# Copyright (c) 2001, 2005 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2001-2010 Marc Espie <espie@openbsd.org>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -26,141 +26,23 @@
 
 use strict;
 use warnings;
+use OpenBSD::LibSpec;
+use OpenBSD::LibSpec::Build;
+use OpenBSD::Paths;
 
-my $LOCALBASE = $ENV{'LOCALBASE'};
-my $X11BASE = $ENV{'X11BASE'};
+my $LOCALBASE = $ENV{LOCALBASE};
 my $error = 0;
-
-sub parse_spec_path
-{
-    	my $req = shift;
-	my $spec = $req->{spec};
-	if ($spec =~ m|^/.*/|) {
-		$req->{specdir}=$&;
-		$req->{prefix} = '';
-		$req->{libname} = $';
-	} elsif ($spec =~ m|^.*/|) {
-		$req->{specdir} = "$LOCALBASE/$&";
-		$req->{prefix} =$&;
-		$req->{libname} = $';
-	} else {
-		$req->{libname} = $spec;
-		$req->{prefix} = '';
-	}
-}
-
-sub parse_spec_versions
-{
-    	my $spec = shift;
-	my $noshared = shift;
-
-	my $req = {noshared => $noshared, strict => 0, sharedonly => 0 };
-	$spec =~ s/\.$//;
-	if ($spec =~ m/\.a$/) {
-		$spec = $`;
-		$req->{noshared} = 1;
-	} else {
-		if ($spec =~ m/\.(\>?)\=(\d+)\.(\d+)$/) {
-			$req->{major} = $2;
-			$req->{minor} = $3;
-			$spec = $`;
-			$req->{strict} = $1 eq '';
-		} elsif ($spec =~ m/\.(\>?)\=(\d+)$/) {
-			$req->{major} = $2;
-			$req->{minor} = 0;
-			$req->{strict} = $1 eq '';
-			$spec = $`;
-		} else {
-			$req->{major} = 0;
-			$req->{minor} = 0;
-		}
-		if ($spec =~ m/\.so$/) {
-			$spec = $`;
-			$req->{sharedonly} = 1;
-		}
-	}
-	$req->{spec} = $spec;
-	return $req;
-}
-
-sub parse_spec
-{
-	my ($spec, $noshared) = @_;
-	my $req = parse_spec_versions($spec);
-	parse_spec_path($req);
-	return $req;
-}
 
 sub solve_spec
 {
-	my $spec = shift;
-	my $noshared = shift;
-	my $req = parse_spec($spec, $noshared);
-
-	my $found_shared;
-	my $found_goodshared;
-	my $bestmajor=-1; my $bestminor=-1;
-	my $found_unshared;
-	my $libname = $req->{libname};
-
-	for my $file (@_) {
-		next unless $file =~ m|(.*/)|;
-		if (defined $req->{specdir}) {
-			next unless $1 eq $req->{specdir};
-		} else {
-			next unless $1 eq '/usr/lib/' or 
-			    $1 eq "$LOCALBASE/lib/" or
-			    $1 eq "$X11BASE/lib/";
-		}
-		my $_=$';
-		if (!$req->{noshared} && 
-		    m/^lib\Q$libname\E\.so\.(\d+)\.(\d+)$/) {
-			$found_shared = $file;
-			my $major = $1;
-			my $minor = $2;
-			if ($req->{strict}) {
-				if ($major > $req->{major}) {
-					print STDERR "Error: found library has too high a version $major: $spec\n";
-					$error = 1;
-					last;
-				}
-				if ($major < $req->{major}) {
-					next;
-				}
-				if ($minor < $req->{minor}) {
-					next;
-				}
-				$found_goodshared = 1;
-				$bestmajor = $major;
-				if ($minor >= $bestminor) {
-					$bestminor = $minor;
-				}
-			} else {
-				if ($major < $req->{major} || 
-				    ($major == $req->{major} && $minor < $req->{minor})) {
-					next;
-				}
-				$found_goodshared = 1;
-				if ($major > $bestmajor || ($major == $bestmajor &&
-				    $minor > $bestminor)) {
-					$bestmajor = $major;
-					$bestminor = $minor;
-				}
-			}
-		} elsif (!$req->{sharedonly} && m/^lib\Q$libname\E\.a$/) {
-			$found_unshared = 1;
-		}
-	}
-	if ($found_goodshared) {
-		print $req->{prefix},"$libname.$bestmajor.$bestminor\n";
-	} elsif (defined $found_shared) {
-		print STDERR "Error: bad shared lib version $found_shared ($spec)\n";
+	my ($spec, $noshared, $repo) = @_;
+	my $r = $spec->findbest($repo, $LOCALBASE);
+	
+	if (!defined $r) {
+		print STDERR "Missing library for ", $spec->to_string, "\n";
 		$error = 1;
-	} elsif ($found_unshared) {
-		print $req->{prefix},"$libname.a\n";
 	} else {
-		print STDERR "Missing library for $spec\n";
-		$error = 1;
+		print $spec->key, $r->version, "\n";
 	}
 }
 
@@ -173,16 +55,24 @@ if (@ARGV > 0 && $ARGV[0] eq '-noshared') {
 }
 
 my $_;
-my @available;
+my $repo = OpenBSD::LibRepo->new;
+
 while(<STDIN>) {
 	chomp;
-	push(@available, split(/\s+/, $_));
+	for my $s (split(/\s+/, $_)) {
+		my $lib = OpenBSD::Library::Build->from_string($s);
+		next if !$lib->is_valid;
+		next if $noshared and !lib->is_static;
+		$repo->register($lib, 1);
+	}
 }
+
 my $done = {};
-for my $spec (@ARGV) {
+for my $s (@ARGV) {
+	my $spec = OpenBSD::LibSpec::Build->from_string($s);
 	next if $done->{$spec};
 	$done->{$spec} = 1;
-	solve_spec($spec, $noshared, @available);
+	solve_spec($spec, $noshared, $repo);
 }
 
 exit($error);
