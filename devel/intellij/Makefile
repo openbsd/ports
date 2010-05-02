@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/30 19:02:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/05/02 16:56:19 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		IntelliJ Java IDE
 
 V=			9.0.2
 DISTNAME=		ideaIC-${V}
-PKGNAME=		intellij-${V}
+PKGNAME=		intellij-${V}p0
 CATEGORIES=		java devel
 
 HOMEPAGE=		http://www.jetbrains.com/idea/
@@ -25,6 +25,8 @@ MODULES=		java
 MODJAVA_VER=		1.6
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
+
+RUN_DEPENDS=		::devel/desktop-file-utils
 
 NO_REGRESS=		Yes
 SUBST_VARS+=		JAVA_HOME
@@ -49,8 +51,10 @@ do-install:
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${PREFIX}/man/man1
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	cd ${WRKDIST}/lib && ${JAVA_HOME}/bin/jar xf icons.jar
-	cp ${WRKDIST}/lib/icon.png ${IJ}/idea.png
+	${INSTALL_DATA} ${WRKDIST}/lib/icon.png ${IJ}/idea.png
 	@${SUBST_CMD} -c ${FILESDIR}/intellij.desktop \
+		${PREFIX}/share/applications/intellij.desktop
+	@chmod ${SHAREMODE} \
 		${PREFIX}/share/applications/intellij.desktop
 	@chown ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/share/applications/intellij.desktop
