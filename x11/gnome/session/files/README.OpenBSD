@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.37 2010/05/01 07:39:49 jasper Exp $
+$OpenBSD: README.OpenBSD,v 1.38 2010/05/02 13:37:09 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -105,6 +105,10 @@ related ports under the x11/gnome category)
    * gnome-icon-theme-extras - extra icons
    * gnome-icon-theme-symbolic - theme extension for special UI contexts
    * gnome-themes-extras - extra themes
+   * gtk2-aurora-engine - Aurora GTK+2 theme engine
+   * gtk2-equinox-engine - Equinox GTK+2 theme engine
+   * gtk2-murrine-engine - Murrine GTK+2 theme engine
+   * gtk2-nodoka-engine - Nodoka GTK+2 theme engine
    * tango-icon-theme (+tango-icon-theme-extras) - Tango icon theme
 
 * Startup and more documentation

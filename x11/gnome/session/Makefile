@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.106 2010/05/01 07:39:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.107 2010/05/02 13:37:09 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.30.0
-PKGNAME=		${DISTNAME}p5
+PKGNAME=		${DISTNAME}p6
 
 CATEGORIES=		x11
 
