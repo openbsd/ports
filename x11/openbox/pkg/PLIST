@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2009/12/29 23:32:04 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.25 2010/05/02 09:10:58 benoit Exp $
 %%SHARED%%
 @bin bin/gdm-control
 @bin bin/gnome-panel-control
@@ -8,19 +8,19 @@ bin/openbox-gnome-session
 bin/openbox-kde-session
 bin/openbox-session
 include/openbox/
-include/openbox/3.4/
-include/openbox/3.4/openbox/
-include/openbox/3.4/openbox/color.h
-include/openbox/3.4/openbox/font.h
-include/openbox/3.4/openbox/geom.h
-include/openbox/3.4/openbox/gradient.h
-include/openbox/3.4/openbox/image.h
-include/openbox/3.4/openbox/instance.h
-include/openbox/3.4/openbox/mask.h
-include/openbox/3.4/openbox/parse.h
-include/openbox/3.4/openbox/render.h
-include/openbox/3.4/openbox/theme.h
-include/openbox/3.4/openbox/version.h
+include/openbox/${V}/
+include/openbox/${V}/openbox/
+include/openbox/${V}/openbox/color.h
+include/openbox/${V}/openbox/font.h
+include/openbox/${V}/openbox/geom.h
+include/openbox/${V}/openbox/gradient.h
+include/openbox/${V}/openbox/image.h
+include/openbox/${V}/openbox/instance.h
+include/openbox/${V}/openbox/mask.h
+include/openbox/${V}/openbox/parse.h
+include/openbox/${V}/openbox/render.h
+include/openbox/${V}/openbox/theme.h
+include/openbox/${V}/openbox/version.h
 lib/libobparser.a
 lib/libobparser.la
 lib/libobrender.a
@@ -29,6 +29,7 @@ lib/openbox/
 lib/openbox/xdg-autostart
 lib/pkgconfig/obparser-3.0.pc
 lib/pkgconfig/obrender-3.0.pc
+@man man/man1/obxprop.1
 @man man/man1/openbox-gnome-session.1
 @man man/man1/openbox-kde-session.1
 @man man/man1/openbox-session.1

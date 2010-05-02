@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.52 2010/01/08 20:38:22 benoit Exp $
+# $OpenBSD: Makefile,v 1.53 2010/05/02 09:10:53 benoit Exp $
 
 COMMENT =	small, fast & usable window manager
 
-DISTNAME =	openbox-3.4.10
-SHARED_LIBS +=	obparser	9.1 # .21.6
-SHARED_LIBS +=	obrender	9.1 # .21.6
+V =		3.4.11.1
+DISTNAME =	openbox-${V}
+SHARED_LIBS +=	obparser	9.1 # .21.7
+SHARED_LIBS +=	obrender	9.1 # .21.7
 CATEGORIES =	x11
 
-HOMEPAGE =	http://icculus.org/openbox/
+HOMEPAGE =	http://openbox.org/
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
@@ -22,7 +23,7 @@ WANTLIB =	ICE SM X11 Xext Xft Xinerama Xrandr Xrender c \
 		gobject-2.0 Xau Xcursor Xdmcp Xfixes expat pcre \
 		pthread-stubs xcb execinfo xcb-atom xcb-aux xcb-event
 
-MASTER_SITES =	http://offload1.icculus.org/openbox/releases/
+MASTER_SITES =	${HOMEPAGE}dist/openbox/
 
 MODULES =	devel/gettext \
 		lang/python
@@ -35,6 +36,7 @@ LIB_DEPENDS +=	pango-1.0,pangoxft-1.0,pangoft2-1.0::devel/pango \
 
 MAKE_FLAGS =	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/openbox"
+SUBST_VARS =	V
 
 USE_X11 =	Yes
 USE_GMAKE =	Yes
