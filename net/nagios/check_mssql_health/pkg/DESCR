@@ -1,0 +1,4 @@
+check_mssql_health is a Nagios plugin using DBD::Sybase and FreeTDS to
+monitor many parameters of Microsoft SQL Server, including login delays,
+CPU use, IO busy time, scans per second, deadlocks per second, etc.
+Custom SQL statements may also be used.
