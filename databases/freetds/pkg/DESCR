@@ -1,3 +1,15 @@
-FreeTDS is a project to document and implement the TDS (Tabular
-DataStream) protocol.  TDS is used by Sybase and Microsoft for
-client to database server communications.
+FreeTDS is a set of LGPL-licensed libraries that allow your programs
+to natively talk to Microsoft SQL Server and Sybase databases.
+
+Technically speaking, FreeTDS is an open source implementation of
+the TDS (Tabular Data Stream) protocol used by these databases for
+their own clients. It supports many different flavors of the protocol
+and three APIs to access it. Additionally FreeTDS works with other
+software such as Perl and PHP, providing access from those languages
+as well.
+
+FreeTDS has many possible uses. It has been used by Unix/Linux
+webservers to present data stored in SQL Server to the web, to port
+SQL Server database code from NT to Unix, to import data into SQL
+Server from a Unix source, and to provide database access on platforms
+(such as realtime systems) that have no native drivers.

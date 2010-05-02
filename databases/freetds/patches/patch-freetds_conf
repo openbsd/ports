@@ -1,0 +1,15 @@
+$OpenBSD: patch-freetds_conf,v 1.1 2010/05/02 11:36:27 sthen Exp $
+--- freetds.conf.orig	Thu Feb 28 22:30:19 2008
++++ freetds.conf	Sun May  2 12:35:40 2010
+@@ -9,7 +9,10 @@
+ # Global settings are overridden by those in a database
+ # server specific section
+ [global]
+-        # TDS protocol version
++        # TDS protocol version; the OpenBSD package defaults to 8.0 to
++        # avoid plaintext passwords on the wire. You may set another default
++        # here to communicate with certain types of server, or override it
++        # on a per-server basis below.
+ ;	tds version = 4.2
+ 
+ 	# Whether to write a TDSDUMP file for diagnostic purposes

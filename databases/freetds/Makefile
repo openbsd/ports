@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.35 2009/10/10 14:16:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2010/05/02 11:36:27 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 V=		0.82
 PATCHVER=	20090903
 DISTNAME=	freetds-$V
+PKGNAME=	${DISTNAME}.1pre${PATCHVER}p0
 PATCHFILES=	freetds-post82-${PATCHVER}.diff.fixed.gz:0
-PKGNAME=	${DISTNAME}.1pre${PATCHVER}
 
 SHARED_LIBS += ct                   4.0      # .4.0
 SHARED_LIBS += sybdb                6.0      # .5.0
@@ -44,6 +44,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-threadsafe \
 		--enable-static \
+		--with-tdsver=8.0 \
 		--with-gnutls \
 		--with-iodbc="${LOCALBASE}" \
 		--with-libiconv-prefix="${LOCALBASE}"
