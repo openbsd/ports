@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.104 2010/05/02 06:46:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2010/05/02 07:10:04 ajacoutot Exp $
 
-SHARED_ONLY=			Yes
+SHARED_ONLY=	Yes
 
-COMMENT-main=			multi-platform graphical toolkit
-COMMENT-docs=           	gtk+2 documentation
-COMMENT-cups=			gtk+2 CUPS print backend
+COMMENT-main=	multi-platform graphical toolkit
+COMMENT-docs=	gtk+2 documentation
+COMMENT-cups=	gtk+2 CUPS print backend
 
-VERSION=			2.20.0
-DISTNAME=			gtk+-${VERSION}
+VERSION=	2.20.0
+DISTNAME=	gtk+-${VERSION}
 
-PKGNAME-main=			gtk+2-${VERSION}p3
-PKGNAME-docs=			gtk+2-docs-${VERSION}
-PKGNAME-cups=			gtk+2-cups-${VERSION}p0
+PKGNAME-main=	gtk+2-${VERSION}p4
+PKGNAME-docs=	gtk+2-docs-${VERSION}
+PKGNAME-cups=	gtk+2-cups-${VERSION}p1
 
-CATEGORIES=			x11 devel
+CATEGORIES=	x11 devel
 
 SHARED_LIBS+=	gdk_pixbuf-2.0		1403.0 # .1800.1
 SHARED_LIBS+=	gdk-x11-2.0		1403.0 # .1800.1
@@ -21,70 +21,73 @@ SHARED_LIBS+=	gtk-x11-2.0		1403.0 # .1800.1
 SHARED_LIBS+=	gdk_pixbuf_xlib-2.0	1403.0 # .1800.1
 SHARED_LIBS+=	gailutil		25.0   # .18.1
 
-HOMEPAGE=			http://www.gtk.org/
+HOMEPAGE=	http://www.gtk.org/
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=		Yes
-PERMIT_PACKAGE_FTP=		Yes
-PERMIT_DISTFILES_CDROM=		Yes
-PERMIT_DISTFILES_FTP=		Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=			${MASTER_SITE_GNOME:=sources/gtk+/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
-EXTRACT_SUFX=			.tar.bz2
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender cairo expat fontconfig freetype
+WANTLIB += glitz gthread-2.0 m pcre pixman-1 pthread-stubs xcb
+WANTLIB += xcb-render xcb-render-util z
 
-MULTI_PACKAGES=         	-main -docs -cups
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
+EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-			Xfixes Xi Xinerama Xrandr Xrender cairo expat \
-			fontconfig freetype glitz m pcre pixman-1 z \
-			pthread-stubs xcb
+MULTI_PACKAGES=	-main -docs -cups
 
-MODULES=		devel/gettext
+MODULES=	devel/gettext
 
-BUILD_DEPENDS=		::print/cups
-RUN_DEPENDS=		::x11/hicolor-icon-theme \
-			::misc/shared-mime-info
+BUILD_DEPENDS=	::print/cups
+RUN_DEPENDS=	::x11/hicolor-icon-theme \
+		::misc/shared-mime-info
 
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			glib-2.0.>=1803,gmodule-2.0,gobject-2.0,gio-2.0:glib2->=2.24.0:devel/glib2 \
-			pango-1.0.>=1600.0,pangocairo-1.0.>=1600.0,pangoft2-1.0.>=1600.0::devel/pango \
-			atk-1.0.>=1809.0::devel/atk \
-			tiff.>=35::graphics/tiff \
-			png.>=3::graphics/png \
-			jpeg.>=62::graphics/jpeg
-WANTLIB-main=		${WANTLIB} c pthread
+LIB_DEPENDS-main= ${LIB_DEPENDS} \
+		glib-2.0.>=1803,gmodule-2.0,gobject-2.0,gio-2.0:glib2->=2.24.0:devel/glib2 \
+		pango-1.0.>=1600.0,pangocairo-1.0.>=1600.0,pangoft2-1.0.>=1600.0::devel/pango \
+		atk-1.0.>=1809.0::devel/atk \
+		tiff.>=35::graphics/tiff \
+		png.>=3::graphics/png \
+		jpeg.>=62::graphics/jpeg
+WANTLIB-main=	${WANTLIB} c pthread
 
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
-WANTLIB-docs=
-PKG_ARCH-docs=		*
+WANTLIB-docs +=
+PKG_ARCH-docs=	*
 
-LIB_DEPENDS-cups=	${LIB_DEPENDS} \
-			cups.>=3::print/cups \
-			gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::${BASE_PKGPATH},-main
+LIB_DEPENDS-cups= ${LIB_DEPENDS} \
+		cups.>=3::print/cups \
+		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::${BASE_PKGPATH},-main
 WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += asn1 atk-1.0 crypto gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-cups += gssapi krb5 pango-1.0 pangocairo-1.0 pangoft2-1.0 png
 WANTLIB-cups += ssl
 
-USE_X11=			Yes
-USE_LIBTOOL=			Yes
-CONFIGURE_STYLE=		gnu
-CONFIGURE_ARGS=			${CONFIGURE_SHARED} \
-				--disable-gtk-doc \
-				--enable-introspection=no \
-				--with-xinput=yes \
-				--disable-papi \
-				--disable-silent-rules
-CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-				LDFLAGS="-L${LOCALBASE}/lib"
+USE_X11=	Yes
+USE_LIBTOOL=	Yes
+REGRESS_IS_INTERACTIVE= x11
+
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2/ \
+			-I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/libpng" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-gtk-doc \
+		--enable-introspection=no \
+		--enable-man=no \
+		--with-xinput=yes \
+		--disable-papi \
+		--disable-silent-rules
 
 # needed for the stamp-icons target in ${WRKSRC}/gtk/Makefile
-MAKE_ENV=		RM="rm"
+MAKE_ENV=	RM="rm"
 
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gtk+2
-
-REGRESS_IS_INTERACTIVE= x11
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+2
 
 # XXX we should use MODPY_BIN from the lang/python MODULE but
 # we do not want to build/run_depends on python
@@ -96,7 +99,7 @@ pre-configure:
 # XXX Needed to be able to use our own make(1) instead of gmake (which
 # errors out with "write error" due to the effects of userland threads
 # that changes i/o operations to non-blocking). This breaks man pages
-# and introspection support (disabled in CONFIGURE_ARGS).
+# and introspection support (both are disabled in CONFIGURE_ARGS).
 	find ${WRKBUILD} -name Makefile.in | \
 		xargs perl -pi.bak -e 's,^-include.*,,g'
 
