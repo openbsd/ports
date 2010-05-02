@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.632 2010/04/29 05:35:34 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.633 2010/05/02 20:53:42 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -210,6 +210,7 @@
      SUBDIR += netrate
      SUBDIR += netsed
      SUBDIR += nfdump
+     SUBDIR += nfsen
      SUBDIR += ngrep
      SUBDIR += nicotine
      SUBDIR += nmap
