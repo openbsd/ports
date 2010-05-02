@@ -1,6 +1,6 @@
-$OpenBSD: patch-contrib_src_deprecated_Makefile_in,v 1.3 2009/09/10 21:23:28 landry Exp $
+$OpenBSD: patch-contrib_src_deprecated_Makefile_in,v 1.4 2010/05/02 16:09:55 landry Exp $
 --- contrib/src/deprecated/Makefile.in.orig	Fri Mar  6 13:11:17 2009
-+++ contrib/src/deprecated/Makefile.in	Sun Sep  6 11:17:55 2009
++++ contrib/src/deprecated/Makefile.in	Sun May  2 10:39:23 2010
 @@ -120,14 +120,14 @@ DEPRECATEDLIB_ODEP = \
  @COND_PLATFORM_WIN32_0@WXDLLNAMEPREFIXGUI = wx_$(PORTNAME)$(WXUNIVNAME)
  @COND_PLATFORM_WIN32_1@WXDLLNAMEPREFIXGUI = \
@@ -52,8 +52,9 @@ $OpenBSD: patch-contrib_src_deprecated_Makefile_in,v 1.3 2009/09/10 21:23:28 lan
  	rm -f config.cache config.log config.status bk-deps bk-make-pch shared-ld-sh Makefile
  
 -@COND_SHARED_1@$(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_deprecated$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__deprecateddll___targetsuf3): $(DEPRECATEDDLL_OBJECTS) $(__deprecateddll___win32rc)
+-@COND_SHARED_1@	$(SHARED_LD_CXX) $@ $(DEPRECATEDDLL_OBJECTS)    -L$(LIBDIRNAME) $(__deprecateddll___macinstnamecmd) $(__deprecateddll___importlib) $(__deprecateddll___soname_flags) $(WXMACVERSION_CMD) $(LDFLAGS)  $(__WXLIB_MONO_p) $(__LIB_TIFF_p) $(__LIB_JPEG_p) $(__LIB_PNG_p) $(EXTRALIBS_FOR_GUI) $(__LIB_ZLIB_p) $(__LIB_ODBC_p) $(__LIB_REGEX_p) $(__LIB_EXPAT_p) $(EXTRALIBS_FOR_BASE) $(__WXLIB_CORE_p)  $(__WXLIB_BASE_p)  $(LIBS)
 +@COND_SHARED_1@$(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)$(WXUNICODEFLAG)$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)_deprecated$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__deprecateddll___targetsuf3).$(LIBwx_gtk2_deprecated_VERSION): $(DEPRECATEDDLL_OBJECTS) $(__deprecateddll___win32rc)
- @COND_SHARED_1@	$(SHARED_LD_CXX) $@ $(DEPRECATEDDLL_OBJECTS)    -L$(LIBDIRNAME) $(__deprecateddll___macinstnamecmd) $(__deprecateddll___importlib) $(__deprecateddll___soname_flags) $(WXMACVERSION_CMD) $(LDFLAGS)  $(__WXLIB_MONO_p) $(__LIB_TIFF_p) $(__LIB_JPEG_p) $(__LIB_PNG_p) $(EXTRALIBS_FOR_GUI) $(__LIB_ZLIB_p) $(__LIB_ODBC_p) $(__LIB_REGEX_p) $(__LIB_EXPAT_p) $(EXTRALIBS_FOR_BASE) $(__WXLIB_CORE_p)  $(__WXLIB_BASE_p)  $(LIBS)
++@COND_SHARED_1@	$(SHARED_LD_CXX) $@ $(DEPRECATEDDLL_OBJECTS)    -L$(LIBDIRNAME) $(__deprecateddll___macinstnamecmd) $(__deprecateddll___importlib) $(WXMACVERSION_CMD) $(LDFLAGS)  $(__WXLIB_MONO_p) $(__LIB_TIFF_p) $(__LIB_JPEG_p) $(__LIB_PNG_p) $(EXTRALIBS_FOR_GUI) $(__LIB_ZLIB_p) $(__LIB_ODBC_p) $(__LIB_REGEX_p) $(__LIB_EXPAT_p) $(EXTRALIBS_FOR_BASE) $(__WXLIB_CORE_p)  $(__WXLIB_BASE_p)  $(LIBS)
  @COND_SHARED_1@	
  @COND_SHARED_1@	$(__deprecateddll___so_symlinks_cmd)
  
