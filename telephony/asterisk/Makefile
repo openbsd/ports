@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2010/04/14 08:23:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2010/05/03 21:00:34 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -6,7 +6,7 @@ COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 VER=			1.6.2.6
 # you can set PATCHVER=p0, p1 etc to bump everything,
 # this takes care of the subpackage/flavor maze
-PATCHVER=		p2
+PATCHVER=		p3
 CORESOUNDS=		1.4.17
 DISTNAME=		asterisk-${VER:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}${PATCHVER}
@@ -215,6 +215,13 @@ INSTALL_TARGET=		install samples
 EXAMPLEDIR=		${PREFIX}/share/examples/asterisk
 EXAMPLEFILES=		extensions.ael extensions.conf logger.conf \
 			modules.conf musiconhold.conf sip.conf voicemail.conf
+
+# we don't really want to drag in TeX as a dependency, but at least
+# allow the icons in the HTML docs to work if you already have latex2html
+# installed.
+pre-configure:
+	perl -pi -e 's,/usr/share/latex2html',${LOCALBASE}/share/latex2html,g' \
+	    ${WRKSRC}/doc/tex/asterisk/*
 
 post-patch:
 	cd ${WRKSRC}; \
