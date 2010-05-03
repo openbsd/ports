@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.5 2010/05/03 11:46:08 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.6 2010/05/03 11:58:45 ajacoutot Exp $
 
 This document gives information relevant to using ZABBIX on OpenBSD.
 The original documentation is available as a PDF file at
@@ -38,6 +38,10 @@ fi
 
 For the proxy and the client, follow the same procedure, replacing
 zabbix_server with zabbix_proxy or zabbix_clientd.
+
+The Zabbix Server might fail due to lack of shared memory ("Can't
+allocate shared memory..." errors), in which case you should set
+kern.shminfo.shmall to 32768 -- see sysctl(8) and sysctl.conf(5).
 
 The web frontend works reasonably well with OpenBSD's chroot'ed
 httpd (the "Status of ZABBIX" page uses /bin/ps and /dev/kmem to
