@@ -1,39 +1,27 @@
-$OpenBSD: patch-pjlib_src_pj_os_core_unix_c,v 1.1 2010/04/02 11:48:24 dcoppa Exp $
+$OpenBSD: patch-pjlib_src_pj_os_core_unix_c,v 1.2 2010/05/03 14:30:19 dcoppa Exp $
 
-fix undefined sched_get_priority_max() and sched_get_priority_min() 
-on OpenBSD
-protect both functions with #ifdef _POSIX_PRIORITY_SCHEDULING and 
-return 0 if __OpenBSD__ macro is declared
+31 is FreeBSD-only. Return 0 for sched_get_priority_max()
 
---- pjlib/src/pj/os_core_unix.c.orig	Wed Aug  5 12:58:02 2009
-+++ pjlib/src/pj/os_core_unix.c	Wed Mar 31 10:28:45 2010
-@@ -308,7 +308,14 @@ PJ_DEF(int) pj_thread_get_prio_min(pj_thread_t *thread
-     if (rc != 0)
- 	return -1;
+--- pjlib/src/pj/os_core_unix.c.orig	Wed Jan 13 14:09:45 2010
++++ pjlib/src/pj/os_core_unix.c	Mon May  3 10:34:25 2010
+@@ -310,7 +310,7 @@ PJ_DEF(int) pj_thread_get_prio_min(pj_thread_t *thread
  
-+#if defined _POSIX_PRIORITY_SCHEDULING
+ #if defined _POSIX_PRIORITY_SCHEDULING
      return sched_get_priority_min(policy);
-+#elif defined __OpenBSD__
-+    return 0;
-+#else
-+    pj_assert("pj_thread_get_prio_min() not supported!");
-+    return 0;
-+#endif
- }
+-#elif defined __OpenBSD__
++#elif defined __FreeBSD__ || defined __OpenBSD__
+     return 0;
+ #else
+     pj_assert("pj_thread_get_prio_min() not supported!");
+@@ -334,8 +334,10 @@ PJ_DEF(int) pj_thread_get_prio_max(pj_thread_t *thread
  
- 
-@@ -325,7 +332,14 @@ PJ_DEF(int) pj_thread_get_prio_max(pj_thread_t *thread
-     if (rc != 0)
- 	return -1;
- 
-+#if defined _POSIX_PRIORITY_SCHEDULING
+ #if defined _POSIX_PRIORITY_SCHEDULING
      return sched_get_priority_max(policy);
+-#elif defined __OpenBSD__
++#elif defined __FreeBSD__
+     return 31;
 +#elif defined __OpenBSD__
 +    return 0;
-+#else
-+    pj_assert("pj_thread_get_prio_max() not supported!");
-+    return 0;
-+#endif
- }
- 
- 
+ #else
+     pj_assert("pj_thread_get_prio_max() not supported!");
+     return 0;
