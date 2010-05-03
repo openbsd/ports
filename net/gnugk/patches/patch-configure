@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2010/03/23 21:14:45 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.7 2010/05/03 19:32:14 ajacoutot Exp $
 --- configure.orig	Sun Nov  8 22:43:34 2009
-+++ configure	Sat Jan 30 14:23:41 2010
++++ configure	Mon May  3 21:19:10 2010
 @@ -3541,7 +3541,7 @@ if test "${PWLIBDIR:-unset}" = "unset" ; then
      echo "Cannot find ptlib-config - please install and try again"
      exit
@@ -28,3 +28,21 @@ $OpenBSD: patch-configure,v 1.6 2010/03/23 21:14:45 ajacoutot Exp $
  if test "${H460SUPPORT:-unset}" = "unset" ; then
  	if test "x${h46023}" != "xno" ; then
  		{ $as_echo "$as_me:$LINENO: result: No H.460 support available" >&5
+@@ -4568,7 +4568,7 @@ $as_echo_n "checking for PQconnectdb in -lpq... " >&6;
+ 
+ 		for try in /usr/lib /usr/local/lib /usr/local/pgsql/lib $pgsql_lib_dir; do
+ 			if test -d $try; then
+-				LIBS="$old_LIBS -L$try -lpq -lcrypt ${PGSQL_LIBS}"
++				LIBS="$old_LIBS -L$try -lpq ${PGSQL_LIBS}"
+ 				cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -4605,7 +4605,7 @@ $as_echo "$ac_try_echo") >&5
+ 	 test "$cross_compiling" = yes ||
+ 	 $as_test_x conftest$ac_exeext
+        }; then
+-   PGSQL_LIBS="-lpq -lcrypt ${PGSQL_LIBS}"
++   PGSQL_LIBS="-lpq ${PGSQL_LIBS}"
+ 					  PGSQL_LDFLAGS="-L$try"
+ 
+ 
