@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.27 2010/04/20 19:03:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.28 2010/05/03 15:04:27 ajacoutot Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
@@ -234,7 +234,6 @@ share/gtk-doc/html/gtk/GtkCellRendererText.html
 share/gtk-doc/html/gtk/GtkCellRendererToggle.html
 share/gtk-doc/html/gtk/GtkCellView.html
 share/gtk-doc/html/gtk/GtkCheckButton.html
-share/gtk-doc/html/gtk/GtkCheckMenuItem.html
 share/gtk-doc/html/gtk/GtkColorButton.html
 share/gtk-doc/html/gtk/GtkColorSelection.html
 share/gtk-doc/html/gtk/GtkColorSelectionDialog.html
@@ -512,6 +511,7 @@ share/gtk-doc/html/gtk/gtk-goto-last-ltr.png
 share/gtk-doc/html/gtk/gtk-goto-last-rtl.png
 share/gtk-doc/html/gtk/gtk-goto-top.png
 share/gtk-doc/html/gtk/gtk-gtkbuildable.html
+share/gtk-doc/html/gtk/gtk-gtkcheckmenuitem.html
 share/gtk-doc/html/gtk/gtk-gtkfilefilter.html
 share/gtk-doc/html/gtk/gtk-harddisk.png
 share/gtk-doc/html/gtk/gtk-help.png
