@@ -1,0 +1,33 @@
+$OpenBSD: patch-doc_rxvtd_1_man_in,v 1.1.1.1 2010/05/03 16:35:23 dcoppa Exp $
+--- doc/rxvtd.1.man.in.orig	Tue Apr 27 18:14:47 2010
++++ doc/rxvtd.1.man.in	Tue Apr 27 18:15:41 2010
+@@ -133,7 +133,7 @@
+ @@RXVT_NAME@@d \- @@RXVT_NAME@@ terminal daemon
+ .SH "SYNOPSIS"
+ .IX Header "SYNOPSIS"
+-\&\fB@@RXVT_NAME@@d\fR [\-q|\-\-quiet] [\-o|\-\-opendisplay] [\-f|\-\-fork] [\-m|\-\-mlock]
++\&\fB@@RXVT_NAME@@d\fR [\-q|\-\-quiet] [\-o|\-\-opendisplay] [\-f|\-\-fork]
+ .PP
+ \&\fB@@RXVT_NAME@@d\fR \-q \-o \-f    # for .xsession use
+ .SH "DESCRIPTION"
+@@ -175,20 +175,6 @@ the lifetime of a specific display/server. If the serv
+ .IX Item "-f, --fork"
+ This makes \fB@@RXVT_NAME@@d\fR fork after it has bound itself to its control
+ socket.
+-.IP "\fB\-m\fR, \fB\-\-mlock\fR" 4
+-.IX Item "-m, --mlock"
+-This makes \fB@@RXVT_NAME@@d\fR call \fImlockall\fR\|(2) on itself. This locks
+-\&\fB@@RXVT_NAME@@d\fR in \s-1RAM\s0 and prevents it from being swapped out to disk,
+-at the cost of consuming a lot more memory on most operating systems.
+-.Sp
+-Note: In order to use this feature, your system administrator must have set
+-your user's \s-1RLIMIT_MEMLOCK\s0 to a size greater than or equal to the size of the
+-\&\fB@@RXVT_NAME@@d\fR binary (or to unlimited). See \fI/etc/security/limits.conf\fR.
+-.Sp
+-Note 2: There is a known bug in glibc (possibly fixed in 2.8 and later
+-versions) where calloc returns non-zeroed memory when mlockall is in
+-effect. If you experience crashes or other odd behaviour while using
+-\&\-\-mlock, try it without it.
+ .SH "EXAMPLES"
+ .IX Header "EXAMPLES"
+ This is a useful invocation of \fB@@RXVT_NAME@@d\fR in a \fI.xsession\fR\-style

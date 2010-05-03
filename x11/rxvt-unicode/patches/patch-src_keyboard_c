@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_keyboard_c,v 1.1.1.1 2010/05/03 16:35:22 dcoppa Exp $
+
+Fix possible off-by-one buffer overflows by replacing every call of
+strcpy, strcat, sprintf by respectively strlcpy, strlcat and snprintf.
+ -- 2010-04-16 Thomas de Grivel <billitch@gmail.com>
+
+diff -ruN rxvt-unicode-9.07.orig/src/keyboard.C rxvt-unicode-9.07/src/keyboard.C
+--- src/keyboard.C.orig	Sat Dec 26 11:21:21 2009
++++ src/keyboard.C	Tue Apr 27 18:13:09 2010
+@@ -335,7 +335,8 @@ keyboard_manager::dispatch (rxvt_term *term, KeySym ke
+ 
+                   memcpy (buf, prefix + 1, middle - prefix - 1);
+                   buf [middle - prefix - 1] = middle [keysym_offset + 1];
+-                  strcpy (buf + (middle - prefix), suffix + 1);
++                  strlcpy (buf + (middle - prefix), suffix + 1,
++                           sizeof (buf) - sizeof (char) * (middle - prefix));
+ 
+                   output_string (term, buf);
+                 }

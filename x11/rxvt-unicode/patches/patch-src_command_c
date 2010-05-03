@@ -1,0 +1,131 @@
+$OpenBSD: patch-src_command_c,v 1.1.1.1 2010/05/03 16:35:22 dcoppa Exp $
+
+Fix possible off-by-one buffer overflows by replacing every call of
+strcpy, strcat, sprintf by respectively strlcpy, strlcat and snprintf.
+ -- 2010-04-16 Thomas de Grivel <billitch@gmail.com>
+
+diff -ruN rxvt-unicode-9.07.orig/src/command.C rxvt-unicode-9.07/src/command.C
+--- src/command.C.orig	Sat May 30 11:49:22 2009
++++ src/command.C	Tue Apr 27 18:13:09 2010
+@@ -189,15 +189,15 @@ rxvt_term::iso14755_51 (unicode_t ch, rend_t r, int x,
+ 
+   char attr[80]; // plenty
+ 
+-  sprintf (attr, "%08x = fg %d bg %d%s%s%s%s%s%s",
+-           (int)r,
+-           fgcolor_of (r), bgcolor_of (r),
+-           r & RS_Bold    ? " bold"    : "",
+-           r & RS_Italic  ? " italic"  : "",
+-           r & RS_Blink   ? " blink"   : "",
+-           r & RS_RVid    ? " rvid"    : "",
+-           r & RS_Uline   ? " uline"   : "",
+-           r & RS_Careful ? " careful" : "");
++  snprintf (attr, sizeof (attr), "%08x = fg %d bg %d%s%s%s%s%s%s",
++            (int)r,
++            fgcolor_of (r), bgcolor_of (r),
++            r & RS_Bold    ? " bold"    : "",
++            r & RS_Italic  ? " italic"  : "",
++            r & RS_Blink   ? " blink"   : "",
++            r & RS_RVid    ? " rvid"    : "",
++            r & RS_Uline   ? " uline"   : "",
++            r & RS_Careful ? " careful" : "");
+ 
+   int width = wcswidth (fname, wcslen (fname));
+ 
+@@ -220,7 +220,7 @@ rxvt_term::iso14755_51 (unicode_t ch, rend_t r, int x,
+ 
+       ch = *chr++;
+ 
+-      sprintf (buf, "%8x", ch);
++      snprintf (buf, sizeof (buf), "%8x", ch);
+       scr_overlay_set (0, y, buf);
+       scr_overlay_set (9, y, '=');
+ # if !UNICODE_3
+@@ -657,17 +657,17 @@ rxvt_term::key_press (XKeyEvent &ev)
+                     kbuf[1] = '\0';
+                   }
+                 else
+-                  strcpy (kbuf, rs[Rs_backspace_key]);
++                  strlcpy (kbuf, rs[Rs_backspace_key], sizeof (kbuf));
+                 break;
+ #endif
+ #ifndef NO_DELETE_KEY
+               case XK_Delete:
+-                strcpy (kbuf, rs[Rs_delete_key]);
++                strlcpy (kbuf, rs[Rs_delete_key], sizeof (kbuf));
+                 break;
+ #endif
+               case XK_Tab:
+                 if (shft)
+-                  strcpy (kbuf, "\033[Z");
++                  strlcpy (kbuf, "\033[Z", sizeof (kbuf));
+                 else
+                   {
+ #ifdef CTRL_TAB_MAKES_META
+@@ -686,7 +686,7 @@ rxvt_term::key_press (XKeyEvent &ev)
+               case XK_Down:	/* "\033[B" */
+               case XK_Right:	/* "\033[C" */
+               case XK_Left:	/* "\033[D" */
+-                strcpy (kbuf, "\033[Z");
++                strlcpy (kbuf, "\033[Z", sizeof (kbuf));
+                 kbuf[2] = "DACB"[keysym - XK_Left];
+                 /* do Shift first */
+                 if (shft)
+@@ -704,7 +704,7 @@ rxvt_term::key_press (XKeyEvent &ev)
+                 /* allow shift to override */
+                 if (kp)
+                   {
+-                    strcpy (kbuf, "\033OM");
++                    strlcpy (kbuf, "\033OM", sizeof (kbuf));
+                     break;
+                   }
+ 
+@@ -728,7 +728,7 @@ rxvt_term::key_press (XKeyEvent &ev)
+               case XK_KP_F2:	/* "\033OQ" */
+               case XK_KP_F3:	/* "\033OR" */
+               case XK_KP_F4:	/* "\033OS" */
+-                strcpy (kbuf, "\033OP");
++                strlcpy (kbuf, "\033OP", sizeof (kbuf));
+                 kbuf[2] += (keysym - XK_KP_F1);
+                 break;
+ 
+@@ -751,7 +751,7 @@ rxvt_term::key_press (XKeyEvent &ev)
+                 /* allow shift to override */
+                 if (kp)
+                   {
+-                    strcpy (kbuf, "\033Oj");
++                    strlcpy (kbuf, "\033Oj", sizeof (kbuf));
+                     kbuf[2] += (keysym - XK_KP_Multiply);
+                   }
+                 else
+@@ -765,7 +765,7 @@ rxvt_term::key_press (XKeyEvent &ev)
+                 {
+                   int param = map_function_key (keysym);
+                   if (param > 0)
+-                    sprintf (kbuf,"\033[%d~", param);
++                    snprintf (kbuf, sizeof (kbuf),"\033[%d~", param);
+                   else
+                     newlen = 0;
+                 }
+@@ -791,7 +791,7 @@ rxvt_term::key_press (XKeyEvent &ev)
+         }
+       else if (keysym == XK_ISO_Left_Tab)
+         {
+-          strcpy (kbuf, "\033[Z");
++          strlcpy (kbuf, "\033[Z", sizeof (kbuf));
+           len = 3;
+         }
+       else
+@@ -3431,9 +3431,9 @@ rxvt_term::process_xterm_seq (int op, char *str, char 
+           {
+             char str[256];
+ 
+-            sprintf (str, "[%dx%d+%d+%d]",	/* can't presume snprintf () ! */
+-                     min (bgPixmap.h_scale, 32767), min (bgPixmap.v_scale, 32767),
+-                     min (bgPixmap.h_align, 32767), min (bgPixmap.v_align, 32767));
++            snprintf (str, sizeof (str), "[%dx%d+%d+%d]",
++		      min (bgPixmap.h_scale, 32767), min (bgPixmap.v_scale, 32767),
++		      min (bgPixmap.h_align, 32767), min (bgPixmap.v_align, 32767));
+             process_xterm_seq (XTerm_title, str, CHAR_ST);
+           }
+         else

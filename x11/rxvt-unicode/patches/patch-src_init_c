@@ -1,0 +1,334 @@
+$OpenBSD: patch-src_init_c,v 1.1.1.1 2010/05/03 16:35:20 dcoppa Exp $
+--- src/init.C.orig	Sat May 30 11:53:46 2009
++++ src/init.C	Thu Apr 22 13:43:13 2010
+@@ -108,7 +108,7 @@ rxvt_network_display (const char *display)
+     {
+       struct ifreq ifr2;
+ 
+-      strcpy (ifr2.ifr_name, ifr->ifr_name);
++      strlcpy (ifr2.ifr_name, ifr->ifr_name, sizeof(ifr2.ifr_name));
+ 
+       if (ioctl (skfd, SIOCGIFADDR, &ifr2) >= 0)
+         {
+@@ -128,12 +128,13 @@ rxvt_network_display (const char *display)
+               if (colon == NULL)
+                 colon = ":0.0";
+ 
+-              rval = rxvt_malloc (strlen (colon) + 16);
+-              sprintf (rval, "%d.%d.%d.%d%s",
+-                      (int) ((addr >> 030) & 0xFF),
+-                      (int) ((addr >> 020) & 0xFF),
+-                      (int) ((addr >> 010) & 0xFF),
+-                      (int) (addr & 0xFF), colon);
++              size_t rval_size = strlen (colon) + 16;
++              rval = rxvt_malloc (rval_size);
++              snprintf (rval, rval_size, "%d.%d.%d.%d%s",
++			(int) ((addr >> 030) & 0xFF),
++			(int) ((addr >> 020) & 0xFF),
++			(int) ((addr >> 010) & 0xFF),
++			(int) (addr & 0xFF), colon);
+               break;
+             }
+         }
+@@ -176,6 +177,7 @@ const char *const def_colorName[] =
+     "rgb:00/ff/ff",             // 6/14: bright cyan    (Cyan)
+     "rgb:ff/ff/ff",             // 7/15: bright white   (White)
+ 
++#if XTERM_COLORS == 88
+     // 88 xterm colours
+     "rgb:00/00/00",
+     "rgb:00/00/8b",
+@@ -249,6 +251,251 @@ const char *const def_colorName[] =
+     "rgb:b9/b9/b9",
+     "rgb:d0/d0/d0",
+     "rgb:e7/e7/e7",
++#elif XTERM_COLORS == 256
++    // 256 xterm colours
++    "rgb:00/00/00",
++    "rgb:00/00/5f",
++    "rgb:00/00/87",
++    "rgb:00/00/af",
++    "rgb:00/00/d7",
++    "rgb:00/00/ff",
++    "rgb:00/5f/00",
++    "rgb:00/5f/5f",
++    "rgb:00/5f/87",
++    "rgb:00/5f/af",
++    "rgb:00/5f/d7",
++    "rgb:00/5f/ff",
++    "rgb:00/87/00",
++    "rgb:00/87/5f",
++    "rgb:00/87/87",
++    "rgb:00/87/af",
++    "rgb:00/87/d7",
++    "rgb:00/87/ff",
++    "rgb:00/af/00",
++    "rgb:00/af/5f",
++    "rgb:00/af/87",
++    "rgb:00/af/af",
++    "rgb:00/af/d7",
++    "rgb:00/af/ff",
++    "rgb:00/d7/00",
++    "rgb:00/d7/5f",
++    "rgb:00/d7/87",
++    "rgb:00/d7/af",
++    "rgb:00/d7/d7",
++    "rgb:00/d7/ff",
++    "rgb:00/ff/00",
++    "rgb:00/ff/5f",
++    "rgb:00/ff/87",
++    "rgb:00/ff/af",
++    "rgb:00/ff/d7",
++    "rgb:00/ff/ff",
++    "rgb:5f/00/00",
++    "rgb:5f/00/5f",
++    "rgb:5f/00/87",
++    "rgb:5f/00/af",
++    "rgb:5f/00/d7",
++    "rgb:5f/00/ff",
++    "rgb:5f/5f/00",
++    "rgb:5f/5f/5f",
++    "rgb:5f/5f/87",
++    "rgb:5f/5f/af",
++    "rgb:5f/5f/d7",
++    "rgb:5f/5f/ff",
++    "rgb:5f/87/00",
++    "rgb:5f/87/5f",
++    "rgb:5f/87/87",
++    "rgb:5f/87/af",
++    "rgb:5f/87/d7",
++    "rgb:5f/87/ff",
++    "rgb:5f/af/00",
++    "rgb:5f/af/5f",
++    "rgb:5f/af/87",
++    "rgb:5f/af/af",
++    "rgb:5f/af/d7",
++    "rgb:5f/af/ff",
++    "rgb:5f/d7/00",
++    "rgb:5f/d7/5f",
++    "rgb:5f/d7/87",
++    "rgb:5f/d7/af",
++    "rgb:5f/d7/d7",
++    "rgb:5f/d7/ff",
++    "rgb:5f/ff/00",
++    "rgb:5f/ff/5f",
++    "rgb:5f/ff/87",
++    "rgb:5f/ff/af",
++    "rgb:5f/ff/d7",
++    "rgb:5f/ff/ff",
++    "rgb:87/00/00",
++    "rgb:87/00/5f",
++    "rgb:87/00/87",
++    "rgb:87/00/af",
++    "rgb:87/00/d7",
++    "rgb:87/00/ff",
++    "rgb:87/5f/00",
++    "rgb:87/5f/5f",
++    "rgb:87/5f/87",
++    "rgb:87/5f/af",
++    "rgb:87/5f/d7",
++    "rgb:87/5f/ff",
++    "rgb:87/87/00",
++    "rgb:87/87/5f",
++    "rgb:87/87/87",
++    "rgb:87/87/af",
++    "rgb:87/87/d7",
++    "rgb:87/87/ff",
++    "rgb:87/af/00",
++    "rgb:87/af/5f",
++    "rgb:87/af/87",
++    "rgb:87/af/af",
++    "rgb:87/af/d7",
++    "rgb:87/af/ff",
++    "rgb:87/d7/00",
++    "rgb:87/d7/5f",
++    "rgb:87/d7/87",
++    "rgb:87/d7/af",
++    "rgb:87/d7/d7",
++    "rgb:87/d7/ff",
++    "rgb:87/ff/00",
++    "rgb:87/ff/5f",
++    "rgb:87/ff/87",
++    "rgb:87/ff/af",
++    "rgb:87/ff/d7",
++    "rgb:87/ff/ff",
++    "rgb:af/00/00",
++    "rgb:af/00/5f",
++    "rgb:af/00/87",
++    "rgb:af/00/af",
++    "rgb:af/00/d7",
++    "rgb:af/00/ff",
++    "rgb:af/5f/00",
++    "rgb:af/5f/5f",
++    "rgb:af/5f/87",
++    "rgb:af/5f/af",
++    "rgb:af/5f/d7",
++    "rgb:af/5f/ff",
++    "rgb:af/87/00",
++    "rgb:af/87/5f",
++    "rgb:af/87/87",
++    "rgb:af/87/af",
++    "rgb:af/87/d7",
++    "rgb:af/87/ff",
++    "rgb:af/af/00",
++    "rgb:af/af/5f",
++    "rgb:af/af/87",
++    "rgb:af/af/af",
++    "rgb:af/af/d7",
++    "rgb:af/af/ff",
++    "rgb:af/d7/00",
++    "rgb:af/d7/5f",
++    "rgb:af/d7/87",
++    "rgb:af/d7/af",
++    "rgb:af/d7/d7",
++    "rgb:af/d7/ff",
++    "rgb:af/ff/00",
++    "rgb:af/ff/5f",
++    "rgb:af/ff/87",
++    "rgb:af/ff/af",
++    "rgb:af/ff/d7",
++    "rgb:af/ff/ff",
++    "rgb:d7/00/00",
++    "rgb:d7/00/5f",
++    "rgb:d7/00/87",
++    "rgb:d7/00/af",
++    "rgb:d7/00/d7",
++    "rgb:d7/00/ff",
++    "rgb:d7/5f/00",
++    "rgb:d7/5f/5f",
++    "rgb:d7/5f/87",
++    "rgb:d7/5f/af",
++    "rgb:d7/5f/d7",
++    "rgb:d7/5f/ff",
++    "rgb:d7/87/00",
++    "rgb:d7/87/5f",
++    "rgb:d7/87/87",
++    "rgb:d7/87/af",
++    "rgb:d7/87/d7",
++    "rgb:d7/87/ff",
++    "rgb:d7/af/00",
++    "rgb:d7/af/5f",
++    "rgb:d7/af/87",
++    "rgb:d7/af/af",
++    "rgb:d7/af/d7",
++    "rgb:d7/af/ff",
++    "rgb:d7/d7/00",
++    "rgb:d7/d7/5f",
++    "rgb:d7/d7/87",
++    "rgb:d7/d7/af",
++    "rgb:d7/d7/d7",
++    "rgb:d7/d7/ff",
++    "rgb:d7/ff/00",
++    "rgb:d7/ff/5f",
++    "rgb:d7/ff/87",
++    "rgb:d7/ff/af",
++    "rgb:d7/ff/d7",
++    "rgb:d7/ff/ff",
++    "rgb:ff/00/00",
++    "rgb:ff/00/5f",
++    "rgb:ff/00/87",
++    "rgb:ff/00/af",
++    "rgb:ff/00/d7",
++    "rgb:ff/00/ff",
++    "rgb:ff/5f/00",
++    "rgb:ff/5f/5f",
++    "rgb:ff/5f/87",
++    "rgb:ff/5f/af",
++    "rgb:ff/5f/d7",
++    "rgb:ff/5f/ff",
++    "rgb:ff/87/00",
++    "rgb:ff/87/5f",
++    "rgb:ff/87/87",
++    "rgb:ff/87/af",
++    "rgb:ff/87/d7",
++    "rgb:ff/87/ff",
++    "rgb:ff/af/00",
++    "rgb:ff/af/5f",
++    "rgb:ff/af/87",
++    "rgb:ff/af/af",
++    "rgb:ff/af/d7",
++    "rgb:ff/af/ff",
++    "rgb:ff/d7/00",
++    "rgb:ff/d7/5f",
++    "rgb:ff/d7/87",
++    "rgb:ff/d7/af",
++    "rgb:ff/d7/d7",
++    "rgb:ff/d7/ff",
++    "rgb:ff/ff/00",
++    "rgb:ff/ff/5f",
++    "rgb:ff/ff/87",
++    "rgb:ff/ff/af",
++    "rgb:ff/ff/d7",
++    "rgb:ff/ff/ff",
++    "rgb:08/08/08",
++    "rgb:12/12/12",
++    "rgb:1c/1c/1c",
++    "rgb:26/26/26",
++    "rgb:30/30/30",
++    "rgb:3a/3a/3a",
++    "rgb:44/44/44",
++    "rgb:4e/4e/4e",
++    "rgb:58/58/58",
++    "rgb:62/62/62",
++    "rgb:6c/6c/6c",
++    "rgb:76/76/76",
++    "rgb:80/80/80",
++    "rgb:8a/8a/8a",
++    "rgb:94/94/94",
++    "rgb:9e/9e/9e",
++    "rgb:a8/a8/a8",
++    "rgb:b2/b2/b2",
++    "rgb:bc/bc/bc",
++    "rgb:c6/c6/c6",
++    "rgb:d0/d0/d0",
++    "rgb:da/da/da",
++    "rgb:e4/e4/e4",
++    "rgb:ee/ee/ee",
++#else
++#error XTERM_COLORS needs to be set to 88 or 256
++#endif
+ 
+ #ifndef NO_CURSORCOLOR
+     COLOR_CURSOR_BACKGROUND,
+@@ -688,11 +935,12 @@ rxvt_term::init_env ()
+     rs[Rs_display_name] = val;   /* use broken `:0' value */
+ 
+   i = strlen (val);
+-  env_display = (char *)rxvt_malloc (i + 9);
++  size_t env_display_size = i + 9;
++  env_display = (char *)rxvt_malloc (env_display_size);
+ 
+-  sprintf (env_display, "DISPLAY=%s", val);
++  snprintf (env_display, env_display_size, "DISPLAY=%s", val);
+ 
+-  sprintf (env_windowid, "WINDOWID=%lu", (unsigned long)parent[0]);
++  snprintf (env_windowid, sizeof (env_windowid), "WINDOWID=%lu", (unsigned long)parent[0]);
+ 
+   /* add entries to the environment:
+    * @ DISPLAY:   in case we started with -display
+@@ -719,8 +967,9 @@ rxvt_term::init_env ()
+ 
+   if (rs[Rs_term_name] != NULL)
+     {
+-      env_term = (char *)rxvt_malloc (strlen (rs[Rs_term_name]) + 6);
+-      sprintf (env_term, "TERM=%s", rs[Rs_term_name]);
++      size_t size = strlen (rs[Rs_term_name]) + 6;
++      env_term = (char *)rxvt_malloc (size);
++      snprintf (env_term, size, "TERM=%s", rs[Rs_term_name]);
+       putenv (env_term);
+     }
+   else
+@@ -1611,10 +1860,11 @@ rxvt_term::run_child (const char *const *argv)
+ 
+       if (option (Opt_loginShell))
+         {
+-          login = (char *)rxvt_malloc (strlen (argv0) + 2);
++          size_t login_size = strlen (argv0) + 2;
++          login = (char *)rxvt_malloc (login_size);
+ 
+           login[0] = '-';
+-          strcpy (&login[1], argv0);
++          strlcpy (&login[1], argv0, login_size - sizeof(char));
+           argv0 = login;
+         }
+ 

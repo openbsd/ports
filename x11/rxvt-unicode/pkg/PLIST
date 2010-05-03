@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/03 16:35:23 dcoppa Exp $
+@bin bin/urxvt
+@bin bin/urxvtc
+@bin bin/urxvtd
+lib/urxvt/
+lib/urxvt/perl/
+lib/urxvt/perl/block-graphics-to-ascii
+lib/urxvt/perl/digital-clock
+lib/urxvt/perl/example-refresh-hooks
+lib/urxvt/perl/kuake
+lib/urxvt/perl/macosx-clipboard
+lib/urxvt/perl/matcher
+lib/urxvt/perl/option-popup
+lib/urxvt/perl/overlay-osc
+lib/urxvt/perl/readline
+lib/urxvt/perl/remote-clipboard
+lib/urxvt/perl/searchable-scrollback
+lib/urxvt/perl/selection
+lib/urxvt/perl/selection-autotransform
+lib/urxvt/perl/selection-pastebin
+lib/urxvt/perl/selection-popup
+lib/urxvt/perl/tabbed
+lib/urxvt/perl/urxvt-popup
+lib/urxvt/perl/xim-onthespot
+lib/urxvt/urxvt.pm
+@man man/man1/urxvt.1
+@man man/man1/urxvtc.1
+@man man/man1/urxvtd.1
+@man man/man3/urxvtperl.3
+@man man/man7/urxvt.7

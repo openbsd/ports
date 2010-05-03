@@ -1,0 +1,60 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2010/05/03 16:35:22 dcoppa Exp $
+--- configure.ac.orig	Sat Dec 26 11:18:16 2009
++++ configure.ac	Thu Apr 22 13:48:56 2010
+@@ -90,6 +90,7 @@ support_selectionscrolling=yes
+ support_mousewheel=yes
+ support_mouseslipwheel=yes
+ support_text_blink=yes
++support_xterm_colors=88
+ support_pointer_blank=yes
+ support_scroll_rxvt=yes
+ support_scroll_next=yes
+@@ -124,6 +125,7 @@ AC_ARG_ENABLE(everything,
+        support_mousewheel=no
+        support_mouseslipwheel=no
+        support_text_blink=no
++       support_xterm_colors=no
+        support_pointer_blank=no
+        support_scroll_rxvt=no
+        support_scroll_next=no
+@@ -152,6 +154,7 @@ AC_ARG_ENABLE(everything,
+        support_mousewheel=yes
+        support_mouseslipwheel=yes
+        support_text_blink=yes
++       support_xterm_colors=88
+        support_pointer_blank=yes
+        support_scroll_rxvt=yes
+        support_scroll_next=yes
+@@ -398,6 +401,12 @@ AC_ARG_ENABLE(text-blink,
+     support_text_blink=$enableval
+   fi])
+ 
++AC_ARG_ENABLE(xterm-colors,
++  [  --enable-xterm-colors     enable Xterm 88 or 256 color model],
++  [if test x$enableval = x88 -o x$enableval = x256 -o x$enableval = xno; then
++    support_xterm_colors=$enableval
++  fi])
++
+ AC_ARG_ENABLE(pointer-blank,
+   [  --enable-pointer-blank  enable pointer blank when typing or inactive pointer],
+   [if test x$enableval = xyes -o x$enableval = xno; then
+@@ -670,6 +679,9 @@ fi
+ if test x$support_text_blink = xyes; then
+   AC_DEFINE(TEXT_BLINK, 1, Define if you want blinking text support)
+ fi
++if test x$support_xterm_colors = x88 -o x$support_xterm_colors = x256; then
++  AC_DEFINE_UNQUOTED(XTERM_COLORS, $support_xterm_colors, Set to 88 or 256 depending on Xterm color cube you want)
++fi
+ if test x$support_unicode3 = xyes; then
+   AC_DEFINE(UNICODE_3, 1, Define if you want to represent unicode characters outside plane 0)
+ fi
+@@ -770,6 +782,9 @@ if test x$term != x; then
+ fi
+ if test x$terminfo != x; then
+   echo "  set TERMINFO to:            $terminfo"
++fi
++if test x$support_xterm_colors != xno; then
++  echo "  Xterm color cube:           $support_xterm_colors"
+ fi
+ echo "  default resource name:      $RESNAME"
+ echo "  resource class:             $RESCLASS"

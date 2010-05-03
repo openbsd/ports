@@ -1,0 +1,135 @@
+$OpenBSD: patch-src_main_c,v 1.1.1.1 2010/05/03 16:35:22 dcoppa Exp $
+
+Fix possible off-by-one buffer overflows by replacing every call of
+strcpy, strcat, sprintf by respectively strlcpy, strlcat and snprintf.
+ -- 2010-04-16 Thomas de Grivel <billitch@gmail.com>
+
+diff -ruN rxvt-unicode-9.07.orig/src/main.C rxvt-unicode-9.07/src/main.C
+--- src/main.C.orig	Sat May 30 10:48:11 2009
++++ src/main.C	Tue Apr 27 18:13:09 2010
+@@ -77,7 +77,7 @@ rxvt_set_locale (const char *locale) NOTHROW
+ void
+ rxvt_push_locale (const char *locale) NOTHROW
+ {
+-  strcpy (savelocale, curlocale);
++  strlcpy (savelocale, curlocale, sizeof(savelocale));
+   rxvt_set_locale (locale);
+ }
+ 
+@@ -385,14 +385,16 @@ print_x_error (Display *dpy, XErrorEvent *event)
+     rxvt_warn ("An X Error occured, trying to continue after report.\n");
+     rxvt_warn ("%s:  %s\n", mesg, buffer);
+     XGetErrorDatabaseText(dpy, mtype, "MajorCode", "Request Major code %d", mesg, BUFSIZ);
+-    rxvt_warn (strncat (mesg, "\n", BUFSIZ), event->request_code);
+-    sprintf(number, "%d", event->request_code);
++    strlcat (mesg, "\n", sizeof (mesg));
++    rxvt_warn (mesg, event->request_code);
++    snprintf (number, sizeof (number), "%d", event->request_code);
+     XGetErrorDatabaseText(dpy, "XRequest", number, "", buffer, BUFSIZ);
+     rxvt_warn ("(which is %s)\n", buffer);
+     if (event->request_code >= 128) {
+ 	XGetErrorDatabaseText(dpy, mtype, "MinorCode", "Request Minor code %d",
+ 			      mesg, BUFSIZ);
+-        rxvt_warn (strncat (mesg, "\n", BUFSIZ), event->minor_code);
++        strlcat (mesg, "\n", BUFSIZ);
++        rxvt_warn (mesg, event->minor_code);
+     }
+     if ((event->error_code == BadWindow) ||
+ 	       (event->error_code == BadPixmap) ||
+@@ -413,11 +415,13 @@ print_x_error (Display *dpy, XErrorEvent *event)
+ 	else
+ 	    XGetErrorDatabaseText(dpy, mtype, "ResourceID", "ResourceID 0x%x",
+ 				  mesg, BUFSIZ);
+-	rxvt_warn (strncat (mesg, "\n", BUFSIZ), event->resourceid);
++	strlcat (mesg, "\n", BUFSIZ);
++	rxvt_warn (mesg, event->resourceid);
+     }
+     XGetErrorDatabaseText(dpy, mtype, "ErrorSerial", "Error Serial #%d",
+ 			  mesg, BUFSIZ);
+-    rxvt_warn (strncat (mesg, "\n", BUFSIZ), event->serial);
++    strlcat (mesg, "\n", BUFSIZ);
++    rxvt_warn (mesg, event->serial);
+ }
+ #endif
+ 
+@@ -862,26 +866,26 @@ rxvt_term::set_colorfgbg ()
+   const char *xpmb = "";
+   char fstr[sizeof ("default") + 1], bstr[sizeof ("default") + 1];
+ 
+-  strcpy (fstr, "default");
+-  strcpy (bstr, "default");
++  strlcpy (fstr, "default", sizeof (fstr));
++  strlcpy (bstr, "default", sizeof (bstr));
+   for (i = Color_Black; i <= Color_White; i++)
+     if (pix_colors[Color_fg] == pix_colors[i])
+       {
+-        sprintf (fstr, "%d", (i - Color_Black));
++        snprintf (fstr, sizeof (fstr), "%d", (i - Color_Black));
+         break;
+       }
+ 
+   for (i = Color_Black; i <= Color_White; i++)
+     if (pix_colors[Color_bg] == pix_colors[i])
+       {
+-        sprintf (bstr, "%d", (i - Color_Black));
++        snprintf (bstr, sizeof (bstr), "%d", (i - Color_Black));
+ #ifdef BG_IMAGE_FROM_FILE
+         xpmb = "default;";
+ #endif
+         break;
+       }
+ 
+-  sprintf (env_colorfgbg, "COLORFGBG=%s;%s%s", fstr, xpmb, bstr);
++  snprintf (env_colorfgbg, sizeof (env_colorfgbg), "COLORFGBG=%s;%s%s", fstr, xpmb, bstr);
+ }
+ 
+ /*----------------------------------------------------------------------*/
+@@ -1085,8 +1089,8 @@ rxvt_term::IMisRunning ()
+   /* get current locale modifier */
+   if (char *p = XSetLocaleModifiers (0))
+     {
+-      strcpy (server, "@server=");
+-      strncat (server, p + 4, IMBUFSIZ - 9); /* skip "@im=" */
++      strlcpy (server, "@server=", sizeof (server));
++      strlcat (server, p + 4, sizeof (server)); /* skip "@im=" */
+ 
+       if (p = strchr (server + 1, '@'))      /* first one only */
+         *p = '\0';
+@@ -1315,16 +1319,16 @@ foundpet:
+       char *def_string;
+       char pat[512];
+ 
+-      sprintf (pat,
+-               "-*-*-*-R-*-*-%d-*-*-*-*-*-*,"
+-               "-*-*-*-R-*-*-%d-*-*-*-*-*-*,"
+-               "-*-*-*-R-*-*-%d-*-*-*-*-*-*,"
+-               "-*-*-*-R-*-*-%d-*-*-*-*-*-*,"
+-               "-*-*-*-R-*-*-%d-*-*-*-*-*-*,"
+-               "*",
+-               fheight,
+-               fheight + 1, fheight - 1,
+-               fheight - 2, fheight + 2);
++      snprintf (pat, sizeof (pat),
++                "-*-*-*-R-*-*-%d-*-*-*-*-*-*,"
++                "-*-*-*-R-*-*-%d-*-*-*-*-*-*,"
++                "-*-*-*-R-*-*-%d-*-*-*-*-*-*,"
++                "-*-*-*-R-*-*-%d-*-*-*-*-*-*,"
++                "-*-*-*-R-*-*-%d-*-*-*-*-*-*,"
++                "*",
++                fheight,
++                fheight + 1, fheight - 1,
++                fheight - 2, fheight + 2);
+ 
+       fs = XCreateFontSet (dpy, rs[Rs_imFont] ? rs[Rs_imFont] : pat,
+                            &missing_charset_list, &missing_charset_count, &def_string);
+@@ -1463,8 +1467,8 @@ rxvt_term::im_cb ()
+         {
+           if (*s[i])
+             {
+-              strcpy (buf, "@im=");
+-              strncat (buf, s[i], IMBUFSIZ - 5);
++              strlcpy (buf, "@im=", sizeof (buf));
++              strlcat (buf, s[i], sizeof (buf));
+               if (IM_get_IC (buf))
+                 {
+                   found = true;

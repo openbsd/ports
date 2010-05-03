@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_logging_c,v 1.1.1.1 2010/05/03 16:35:20 dcoppa Exp $
+
+Fix possible off-by-one buffer overflows by replacing every call of
+strcpy, strcat, sprintf by respectively strlcpy, strlcat and snprintf.
+ -- 2010-04-16 Thomas de Grivel <billitch@gmail.com>
+
+diff -ruN rxvt-unicode-9.07.orig/src/logging.C rxvt-unicode-9.07/src/logging.C
+--- src/logging.C.orig	Sun May  3 23:57:43 2009
++++ src/logging.C	Tue Apr 27 18:13:09 2010
+@@ -164,11 +164,11 @@ update_lastlog (const char *fname, const char *pty, co
+     return;
+   if (S_ISDIR (st.st_mode))
+     {
+-      sprintf (lastlogfile, "%.*s/%.*s",
+-               (int)(sizeof (lastlogfile) - sizeof (pwent->pw_name) - 2), fname,
+-               (int)sizeof (pwent->pw_name),
+-               (!pwent->pw_name || pwent->pw_name[0] == '\0') ? "unknown"
+-               : pwent->pw_name);
++      snprintf (lastlogfile, sizeof (lastlogfile), "%.*s/%.*s",
++                (int)(sizeof (lastlogfile) - sizeof (pwent->pw_name) - 2), fname,
++                (int)sizeof (pwent->pw_name),
++                (!pwent->pw_name || pwent->pw_name[0] == '\0') ? "unknown"
++                : pwent->pw_name);
+       if ((fd = open (lastlogfile, O_WRONLY | O_CREAT, 0644)) >= 0)
+         {
+           write (fd, &ll, sizeof (ll));

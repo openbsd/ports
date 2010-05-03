@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_rxvtfont_c,v 1.1.1.1 2010/05/03 16:35:20 dcoppa Exp $
+
+Fix possible off-by-one buffer overflows by replacing every call of
+strcpy, strcat, sprintf by respectively strlcpy, strlcat and snprintf.
+ -- 2010-04-16 Thomas de Grivel <billitch@gmail.com>
+
+diff -ruN rxvt-unicode-9.07.orig/src/rxvtfont.C rxvt-unicode-9.07/src/rxvtfont.C
+--- src/rxvtfont.C.orig	Sat Apr  4 23:27:28 2009
++++ src/rxvtfont.C	Tue Apr 27 18:13:09 2010
+@@ -632,10 +632,13 @@ replace_field (char **ptr, const char *name, int index
+   if (slashes >= 13 && (!old || *field == old))
+     {
+       size_t len = field - name;
+-      *ptr = (char *)malloc (len + strlen (replace) + strlen (end) + 1);
++      size_t len_replace = strlen (replace);
++      size_t len_end = strlen (end);
++      *ptr = (char *)malloc (len + len_replace + len_end + 1);
+       memcpy (*ptr, name, len);
+-      strcpy (*ptr + len, replace);
+-      strcat (*ptr, end);
++      memcpy (*ptr + len, replace, len_replace);
++      memcpy (*ptr + len + len_replace, end, len_end);
++      (*ptr)[len + len_replace + len_end] = 0;
+ 
+       return true;
+     }
+@@ -696,8 +699,8 @@ rxvt_font_x11::load (const rxvt_fontprop &prop, bool f
+         }
+     }
+ 
+-  sprintf (field_str, "%d", prop.height == rxvt_fontprop::unset
+-                              ? 0 : prop.height);
++  snprintf (field_str, sizeof (field_str), "%d",
++            prop.height == rxvt_fontprop::unset ? 0 : prop.height);
+ 
+   struct font_weight {
+     char *name;

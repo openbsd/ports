@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_feature_h,v 1.1.1.1 2010/05/03 16:35:22 dcoppa Exp $
+--- src/feature.h.orig	Sat May 30 10:48:11 2009
++++ src/feature.h	Thu Apr 22 13:38:22 2010
+@@ -34,6 +34,8 @@
+ # define XAPPLOADDIRLOCALE	X11LIBDIR "/%s/app-defaults"
+ #endif
+ 
++#include "../config.h"
++
+ /*-------------------------------SECURITY-------------------------------*/
+ 
+ /*
+@@ -78,7 +80,9 @@
+ /*
+  * Make colours match xterm colours instead of `traditional' rxvt colours
+  */
+-#define XTERM_COLORS
++#ifndef XTERM_COLORS
++#define XTERM_COLORS 256
++#endif
+ 
+ /*
+  * Disable separate colours for bold, underline and reverse video

@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_rxvtd_c,v 1.1.1.1 2010/05/03 16:35:22 dcoppa Exp $
+
+Fix possible off-by-one buffer overflows by replacing every call of
+strcpy, strcat, sprintf by respectively strlcpy, strlcat and snprintf.
+ -- 2010-04-16 Thomas de Grivel <billitch@gmail.com>
+
+diff -ruN rxvt-unicode-9.07.orig/src/rxvtd.C rxvt-unicode-9.07/src/rxvtd.C
+--- src/rxvtd.C.orig	Sat May  9 01:52:42 2009
++++ src/rxvtd.C	Tue Apr 27 18:13:09 2010
+@@ -100,7 +100,7 @@ unix_listener::unix_listener (const char *sockname)
+   fcntl (fd, F_SETFL, O_NONBLOCK);
+ 
+   sa.sun_family = AF_UNIX;
+-  strcpy (sa.sun_path, sockname);
++  strlcpy (sa.sun_path, sockname, sizeof(sa.sun_path));
+ 
+   unlink (rxvt_connection::unix_sockname ());
+ 

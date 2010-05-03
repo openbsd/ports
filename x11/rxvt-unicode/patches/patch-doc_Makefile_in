@@ -1,0 +1,11 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2010/05/03 16:35:22 dcoppa Exp $
+--- doc/Makefile.in.orig	Wed Apr 21 15:23:56 2010
++++ doc/Makefile.in	Wed Apr 21 15:24:12 2010
+@@ -98,7 +98,6 @@ install: all
+ 	$(INSTALL_DATA) rxvt.7.man  $(DESTDIR)$(man7dir)/$(RXVTNAME).$(man7ext)
+ @IF_PERL@	$(INSTALL) -d $(DESTDIR)$(man3dir)
+ @IF_PERL@	$(INSTALL_DATA) rxvtperl.3.man $(DESTDIR)$(man3dir)/$(RXVTNAME)perl.$(man3ext)
+-	@TIC@ $(srcdir)/etc/rxvt-unicode.terminfo
+ 
+ distdepend: alldoc
+ 

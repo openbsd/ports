@@ -1,0 +1,88 @@
+$OpenBSD: patch-src_rxvt_h,v 1.1.1.1 2010/05/03 16:35:22 dcoppa Exp $
+--- src/rxvt.h.orig	Sat May 30 10:48:11 2009
++++ src/rxvt.h	Thu Apr 22 13:38:22 2010
+@@ -312,24 +312,46 @@ enum {
+ 
+ #define RS_None                 0
+ 
++#if !defined(XTERM_COLORS) || XTERM_COLORS == 88
+ #define RS_fgMask               0x0000007fUL    // 128 colors
+ #define RS_bgMask               0x00003f80UL    // 128 colors
++#elif XTERM_COLORS == 256
++#define RS_fgMask               0x000001ffUL    // 512 colors
++#define RS_bgMask               0x0003fe00UL    // 512 colors
++#endif
+ 
+ // font styles
++#if !defined(XTERM_COLORS) || XTERM_COLORS == 88
+ #define RS_Bold                 0x00004000UL    // value 1
+ #define RS_Italic		0x00008000UL    // value 2
++#elif XTERM_COLORS == 256
++#define RS_Bold                 0x00040000UL    // value 1
++#define RS_Italic		0x00080000UL    // value 2
++#endif
+ 
+ // fake styles
++#if !defined(XTERM_COLORS) || XTERM_COLORS == 88
+ #define RS_Blink                0x00010000UL    // blink
+ #define RS_RVid                 0x00020000UL    // reverse video
+ #define RS_Uline                0x00040000UL    // underline
++#elif XTERM_COLORS == 256
++#define RS_Blink                0x00100000UL    // blink	 (disabled)
++#define RS_RVid                 0x00200000UL    // reverse video (disabled)
++#define RS_Uline                0x00400000UL    // underline
++#endif
+ 
++
+ // toggle this to force redraw, must be != RS_Careful
+ #define RS_redraw               0x01000000UL
+ 
++#if !defined(XTERM_COLORS) || XTERM_COLORS == 88
+ // 5 custom bits for extensions
+ #define RS_customCount          32
+ #define RS_customMask           0x00f80000UL
++#elif XTERM_COLORS == 256
++#define RS_customCount          0
++#define RS_customMask           0x00000000UL
++#endif
+ #define RS_customShift          19
+ 
+ // other flags
+@@ -337,7 +359,11 @@ enum {
+ 
+ #define RS_styleCount		4
+ #define RS_styleMask		(RS_Bold | RS_Italic)
++#if !defined(XTERM_COLORS) || XTERM_COLORS == 88
+ #define RS_styleShift		14
++#elif XTERM_COLORS == 256
++#define RS_styleShift		18
++#endif
+ 
+ #define RS_baseattrMask         (RS_Italic | RS_Bold | RS_Blink | RS_RVid | RS_Uline)
+ #define RS_attrMask             (RS_baseattrMask | RS_fontMask)
+@@ -463,7 +489,13 @@ enum colour_list {
+   Color_White = maxCOLOR,
+ #endif
+   minTermCOLOR = Color_White + 1,
++#if !defined(XTERM_COLORS) || XTERM_COLORS == 88
+   maxTermCOLOR = Color_White + 72,
++#elif (XTERM_COLORS == 256)
++  maxTermCOLOR = Color_White + 240,
++#else
++#error XTERM_COLORS needs to be set to 88 or 256
++#endif
+ #ifndef NO_CURSORCOLOR
+   Color_cursor,
+   Color_cursor2,
+@@ -503,7 +535,11 @@ enum colour_list {
+ #endif
+ };
+ 
++#if !defined(XTERM_COLORS) || XTERM_COLORS == 88
+ #define Color_Bits      7 // 0 .. maxTermCOLOR
++#elif XTERM_COLORS == 256
++#define Color_Bits      9 // 0 .. maxTermCOLOR
++#endif
+ 
+ /*
+  * Resource list
