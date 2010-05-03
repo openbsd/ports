@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2009/03/26 18:52:50 steven Exp $
---- Makefile.in.orig	Tue Mar 17 13:40:07 2009
-+++ Makefile.in	Wed Mar 25 08:51:35 2009
-@@ -170,7 +170,7 @@ sbindir = @sbindir@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
--SUBDIRS = src tests doc contrib solbuild tgzbuild
-+SUBDIRS = src doc contrib solbuild tgzbuild
- EXTRA_DIST = debian/README.Debian debian/copyright debian/syslog-ng.conf.example debian/syslog-ng.files debian/syslog-ng.logrotate debian/syslog-ng.postrm \
- 	debian/changelog debian/changelog.in debian/rules debian/syslog-ng.default debian/syslog-ng.init debian/syslog-ng.logrotate.example debian/syslog-ng.preinst \
- 	debian/control debian/syslog-ng.conf debian/syslog-ng.docs debian/syslog-ng.logcheck.ignore debian/syslog-ng.postinst VERSION \
+$OpenBSD: patch-Makefile_in,v 1.3 2010/05/03 20:51:17 steven Exp $
+--- Makefile.in.orig	Thu Mar 18 04:14:29 2010
++++ Makefile.in	Tue Mar 23 14:10:37 2010
+@@ -218,7 +218,7 @@ timezonedir = @timezonedir@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = src tests doc contrib debian tgz2build
++SUBDIRS = src doc contrib debian tgz2build
+ EXTRA_DIST = VERSION \
+ 	syslog-ng.spec syslog-ng.spec.in dist.conf dist.conf.in ChangeLog
+ 
