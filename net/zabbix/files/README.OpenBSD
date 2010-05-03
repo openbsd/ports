@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.4 2009/10/02 14:09:10 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.5 2010/05/03 11:46:08 ajacoutot Exp $
 
 This document gives information relevant to using ZABBIX on OpenBSD.
 The original documentation is available as a PDF file at
@@ -58,7 +58,7 @@ changes, stop and start httpd.
 Next you must create the database following the relevant set of
 instructions below. When this is done you can proceed to configure
 through the web interface at http://<hostname>/zabbix/setup.php.
-(default user is 'admin' with password 'zabbix')
+(default user is 'Admin' with password 'zabbix')
 
 == MySQL ==
 
@@ -107,9 +107,6 @@ you can create the 'zabbix' user and database like this:
 
 And initialize the database:
 
-	$ psql -U zabbix
-	psql> create database zabbix;
-	psql> \q
 	$ cd ${TRUEPREFIX}/share/zabbix/schema
 	$ cat postgresql.sql | psql -U zabbix zabbix
 	$ cd ../data

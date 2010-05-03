@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/04/09 16:41:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/05/03 11:46:08 ajacoutot Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -6,10 +6,10 @@ COMMENT-web =		network and application monitoring - web frontend
 
 VERSION =		1.8.2
 DISTNAME =		zabbix-${VERSION}
-FULLPKGNAME-main =	zabbix-agent-${VERSION}p0
+FULLPKGNAME-main =	zabbix-agent-${VERSION}p1
 FULLPKGPATH-main =	net/zabbix,-main
 PKGNAME-server =	zabbix-server-${VERSION}p0
-FULLPKGNAME-web =	zabbix-web-${VERSION}p0
+FULLPKGNAME-web =	zabbix-web-${VERSION}p1
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
@@ -56,7 +56,8 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 PREFIX-web =		/var/www
 LIB_DEPENDS-web =
-RUN_DEPENDS-web =	::www/php5/extensions,-gd
+RUN_DEPENDS-web =	::www/php5/extensions,-gd \
+			::www/php5/extensions,-mbstring
 WANTLIB-web =
 ZABBIX_WEB =		${PREFIX-web}/zabbix
 
