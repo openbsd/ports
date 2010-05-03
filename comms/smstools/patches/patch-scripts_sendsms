@@ -1,9 +1,9 @@
-$OpenBSD: patch-scripts_sendsms,v 1.1 2009/06/02 15:57:48 sthen Exp $
---- scripts/sendsms.orig	Tue Jun  2 15:07:51 2009
-+++ scripts/sendsms	Tue Jun  2 15:07:52 2009
-@@ -10,7 +10,7 @@
- # If a destination is asked, you can type multiple numbers
- # delimited with spaces.
+$OpenBSD: patch-scripts_sendsms,v 1.2 2010/05/03 14:29:31 sthen Exp $
+--- scripts/sendsms.orig	Wed Apr 28 07:10:41 2010
++++ scripts/sendsms	Mon May  3 14:55:19 2010
+@@ -18,7 +18,7 @@ KEYS=""
+ # When creating keys, remember to use -n for echo:
+ # echo -n "key" | md5sum
  
 -smsd_user="smsd"
 +smsd_user="_smsd"
