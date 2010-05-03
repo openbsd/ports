@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/12/02 16:19:31 wcmaier Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/05/03 20:23:08 wcmaier Exp $
 %%SHARED%%
 bin/hg
 lib/python${MODPY_VERSION}/site-packages/hgext/
@@ -78,6 +78,8 @@ lib/python${MODPY_VERSION}/site-packages/hgext/parentrevspec.py
 lib/python${MODPY_VERSION}/site-packages/hgext/parentrevspec.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/patchbomb.py
 lib/python${MODPY_VERSION}/site-packages/hgext/patchbomb.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/progress.py
+lib/python${MODPY_VERSION}/site-packages/hgext/progress.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/purge.py
 lib/python${MODPY_VERSION}/site-packages/hgext/purge.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/rebase.py
@@ -191,20 +193,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/hook.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/hook.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/httprepo.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/httprepo.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/
 lib/python${MODPY_VERSION}/site-packages/mercurial/i18n.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/i18n.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/da.po
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/de.po
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/el.po
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/fr.po
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/hggettext
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/it.po
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/ja.po
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/pt_BR.po
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/sv.po
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/zh_CN.po
-lib/python${MODPY_VERSION}/site-packages/mercurial/i18n/zh_TW.po
 lib/python${MODPY_VERSION}/site-packages/mercurial/ignore.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/ignore.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/keepalive.py
@@ -293,6 +283,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/tags.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/tags.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/templatefilters.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/templatefilters.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/templatekw.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/templatekw.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/templater.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/templater.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/
@@ -332,6 +324,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/tags.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.changelog
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.compact
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.default
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.xml
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/branches.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/changelog.tmpl
