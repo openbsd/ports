@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/04/24 09:45:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/05/04 14:01:44 ajacoutot Exp $
 @bin bin/vinagre
 include/vinagre-1.0/
 include/vinagre-1.0/vinagre/
@@ -246,6 +246,7 @@ share/locale/gu/LC_MESSAGES/vinagre.mo
 share/locale/he/LC_MESSAGES/vinagre.mo
 share/locale/hi/LC_MESSAGES/vinagre.mo
 share/locale/hu/LC_MESSAGES/vinagre.mo
+share/locale/id/LC_MESSAGES/vinagre.mo
 share/locale/it/LC_MESSAGES/vinagre.mo
 share/locale/ja/LC_MESSAGES/vinagre.mo
 share/locale/kn/LC_MESSAGES/vinagre.mo
@@ -269,6 +270,7 @@ share/locale/pt_BR/LC_MESSAGES/vinagre.mo
 share/locale/ro/LC_MESSAGES/vinagre.mo
 share/locale/ru/LC_MESSAGES/vinagre.mo
 share/locale/si/LC_MESSAGES/vinagre.mo
+share/locale/sk/LC_MESSAGES/vinagre.mo
 share/locale/sl/LC_MESSAGES/vinagre.mo
 share/locale/sq/LC_MESSAGES/vinagre.mo
 share/locale/sr/LC_MESSAGES/vinagre.mo

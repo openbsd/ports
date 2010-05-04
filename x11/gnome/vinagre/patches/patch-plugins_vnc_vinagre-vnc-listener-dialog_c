@@ -1,9 +1,9 @@
-$OpenBSD: patch-plugins_vnc_vinagre-vnc-listener-dialog_c,v 1.1 2010/04/24 09:45:22 ajacoutot Exp $
---- plugins/vnc/vinagre-vnc-listener-dialog.c.orig	Sat Apr 24 11:14:22 2010
-+++ plugins/vnc/vinagre-vnc-listener-dialog.c	Sat Apr 24 11:14:37 2010
-@@ -18,6 +18,8 @@
-  * along with this program. If not, see <http://www.gnu.org/licenses/>.
-  */
+$OpenBSD: patch-plugins_vnc_vinagre-vnc-listener-dialog_c,v 1.2 2010/05/04 14:01:44 ajacoutot Exp $
+--- plugins/vnc/vinagre-vnc-listener-dialog.c.orig	Thu Apr 29 16:11:43 2010
++++ plugins/vnc/vinagre-vnc-listener-dialog.c	Tue May  4 15:39:22 2010
+@@ -20,6 +20,8 @@
+ 
+ #include <config.h>
  
 +#include <sys/types.h>
 +#include <sys/socket.h>
