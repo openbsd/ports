@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2010/04/24 09:56:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2010/05/04 12:36:20 ajacoutot Exp $
 
 COMMENT-main=		C++ interface for gtk2+
 COMMENT-docs=		C++ interface for gtk2+ documentation
 
 GNOME_PROJECT=		gtkmm
-GNOME_VERSION=		2.20.2
+GNOME_VERSION=		2.20.3
 
 PKGNAME-main=		gtk2mm-${VERSION}
 PKGNAME-docs=		gtk2mm-docs-${VERSION}
@@ -30,7 +30,7 @@ WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 			fontconfig freetype pcre pixman-1 gio-2.0 \
 			glib-2.0 glitz gmodule-2.0 gobject-2.0 m pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 png sigc-2.0 z \
-			pthread-stubs xcb xcb-render xcb-render-util
+			pthread-stubs xcb xcb-render xcb-render-util gthread-2.0
 
 MODULES=		devel/gettext \
 			x11/gnome
