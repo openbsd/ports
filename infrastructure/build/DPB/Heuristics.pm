@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.5 2010/04/26 08:32:53 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.6 2010/05/04 09:45:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -22,7 +22,7 @@ use warnings;
 # consequences
 package DPB::Heuristics;
 
-# for now, we don't create a separate object, we assume everything here is 
+# for now, we don't create a separate object, we assume everything here is
 # "global"
 
 my (%weight, %bad_weight, %wrkdir, %needed_by);
@@ -241,7 +241,7 @@ sub report
 		$sum_sf += $sf;
 	}
 
-	return scalar(keys %$todo)." ".$total*$max_sf." $sum_sf\n".DPB::Util->time2string($time)." -> ". 
+	return scalar(keys %$todo)." ".$total*$max_sf." $sum_sf\n".DPB::Util->time2string($time)." -> ".
 		DPB::Util->time2string($time+$total*$max_sf*$max_sf/$sum_sf)." [$$]\n";
 }
 
@@ -400,7 +400,7 @@ sub sorted
 	if ($core->sf > $all->[-1] - 1) {
 		return $self->SUPER::sorted($core);
 	} else {
-		return DPB::Heuristics::Sorter->new($self->bin_part($core->sf, 
+		return DPB::Heuristics::Sorter->new($self->bin_part($core->sf,
 		    $all));
 	}
 }

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.11 2010/04/26 08:32:53 espie Exp $
+# $OpenBSD: Core.pm,v 1.12 2010/05/04 09:45:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -438,7 +438,7 @@ sub one_core
 	    $core->job->watched($time);
 }
 
-sub report 
+sub report
 {
 	my $current = time();
 
@@ -591,16 +591,16 @@ sub hostname
 	}
 	return $host;
 }
- 
+
 package DPB::Core::Clock;
 our @ISA = qw(DPB::Core::Special);
 
 sub start
-{	
+{
 	my ($class, $timeout) = @_;
 	my $core = $class->new('localhost');
 	$timeout //= 10;
-	$core->start_job(DPB::Job::Infinite->new(DPB::Task::Fork->new(sub { 
+	$core->start_job(DPB::Job::Infinite->new(DPB::Task::Fork->new(sub {
 		sleep($timeout);
 		exit(0);
 		}), 'clock'));

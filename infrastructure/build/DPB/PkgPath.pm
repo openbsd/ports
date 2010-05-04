@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.1 2010/02/24 11:33:31 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.2 2010/05/04 09:45:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.2 2010/04/26 08:32:53 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.3 2010/05/04 09:45:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #

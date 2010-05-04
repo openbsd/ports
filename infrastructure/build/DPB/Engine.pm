@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.7 2010/04/26 08:32:53 espie Exp $
+# $OpenBSD: Engine.pm,v 1.8 2010/05/04 09:45:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -26,10 +26,10 @@ use DPB::Util;
 sub new
 {
 	my ($class, $builder, $heuristics, $logger, $locker) = @_;
-	my $o = bless {built => {}, tobuild => {}, 
+	my $o = bless {built => {}, tobuild => {},
 	    buildable => $heuristics->new_queue,
 	    later => {}, building => {},
-	    installable => {}, builder => $builder, 
+	    installable => {}, builder => $builder,
 	    packages => {},
 	    all => {},
 	    heuristics => $heuristics,
@@ -88,7 +88,7 @@ sub errors_string
 sub report
 {
 	my $self = shift;
-	return join(" ", 
+	return join(" ",
 	    "P=".$self->count("packages"),
 	    "I=".$self->count("installable"),
 	    "B=".$self->count("built"),
@@ -103,7 +103,7 @@ sub stats
 	my $self = shift;
 	my $fh = $self->{stats};
 	$self->{statline} //= "";
-	my $line = join(" ", 
+	my $line = join(" ",
 	    "P=".$self->count("packages"),
 	    "I=".$self->count("installable"),
 	    "B=".$self->count("built"),
@@ -170,8 +170,8 @@ sub adjust
 	my $not_yet = 0;
 	for my $d (values %{$v->{info}{$kind}}) {
 		$self->{heuristics}->mark_depend($d, $v);
-		if ($self->{installable}{$d} || 
-		    (defined $d->{info} && 
+		if ($self->{installable}{$d} ||
+		    (defined $d->{info} &&
 		    $d->fullpkgname eq $v->fullpkgname)) {
 			delete $v->{info}{$kind}{$d};
 		} else {
@@ -191,7 +191,7 @@ sub adjust_extra
 	for my $d (values %{$v->{info}{$kind}}) {
 		$self->{heuristics}->mark_depend($d, $v);
 		if ((defined $d->{info} && !$self->{tobuild}{$d}) ||
-		    (defined $d->fullpkgname && 
+		    (defined $d->fullpkgname &&
 		    $d->fullpkgname eq $v->fullpkgname)) {
 			delete $v->{info}{$kind}{$d};
 		} else {
@@ -276,7 +276,7 @@ sub check_buildable
 				$self->log_no_ts('Q', $v);
 				delete $self->{tobuild}{$v};
 				$changes++;
-			} 
+			}
 		}
 	} while ($changes);
 	$self->stats;
@@ -407,7 +407,7 @@ sub start_new_job
 		} else {
 			push(@{$self->{errors}}, $v);
 			$self->log('L', $v);
-		} 
+		}
 	}
 	$core->mark_ready;
 }
@@ -415,7 +415,7 @@ sub start_new_job
 sub can_build
 {
 	my $self = shift;
-	
+
 	return $self->{buildable}->non_empty || @{$self->{requeued}} > 0;
 }
 
@@ -426,9 +426,9 @@ sub dump_category
 
 	$k =~ m/^./;
 	my $q = "\u$&: ";
-	for my $v (sort {$a->fullpkgpath cmp $b->fullpkgpath} 
+	for my $v (sort {$a->fullpkgpath cmp $b->fullpkgpath}
 	    values %{$self->{$k}}) {
-		print $fh $q; 
+		print $fh $q;
 		$v->quick_dump($fh);
 	}
 }

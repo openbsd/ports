@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.7 2010/04/26 08:32:53 espie Exp $
+# $OpenBSD: Distant.pm,v 1.8 2010/05/04 09:45:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -24,8 +24,8 @@ package DPB::Ssh;
 sub ssh
 {
 	my ($class, $socket, $timeout) = @_;
-	return ('ssh', '-o', "connectTimeout=$timeout", 
-	    '-o', "serverAliveInterval=$timeout", 
+	return ('ssh', '-o', "connectTimeout=$timeout",
+	    '-o', "serverAliveInterval=$timeout",
 	    '-S', $socket);
 }
 
@@ -61,8 +61,8 @@ sub hostname
 sub run
 {
 	my ($self, $cmd) = @_;
-	exec {OpenBSD::Paths->ssh} 
-	    ($self->ssh($self->socket, $self->timeout), 
+	exec {OpenBSD::Paths->ssh}
+	    ($self->ssh($self->socket, $self->timeout),
 	    $self->hostname, $cmd);
 }
 
@@ -84,8 +84,8 @@ sub run
 	close STDERR;
 	open STDOUT, '>/dev/null';
 	open STDERR, '>&STDOUT';
-	exec {OpenBSD::Paths->ssh} 
-	    (DPB::Ssh->ssh($socket, $timeout), 
+	exec {OpenBSD::Paths->ssh}
+	    (DPB::Ssh->ssh($socket, $timeout),
 		'-N', '-M', $host);
 	exit(1);
 }
@@ -112,7 +112,7 @@ sub new
 	$TMPDIR //= $ENV{PKG_TMPDIR} || '/var/tmp';
 	my $timeout = 60;
 	my $socket = "$TMPDIR/ssh-$host-$$";
-	my $o = $class->SUPER::new(DPB::Task::SshMaster->new($socket, 
+	my $o = $class->SUPER::new(DPB::Task::SshMaster->new($socket,
 	    $timeout, $host), "ssh master for $host");
 	$o->{host} = $host;
 	$o->{timeout} = $timeout;
