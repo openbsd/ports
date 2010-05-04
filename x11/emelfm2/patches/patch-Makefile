@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.4 2009/08/17 12:14:52 giovanni Exp $
---- Makefile.orig	Mon Jul 20 01:29:58 2009
-+++ Makefile	Mon Aug 17 11:12:34 2009
-@@ -133,7 +133,7 @@ LIBS_XOBJECTS = $(LIBS_XSOURCES:%.c=$(OBJECTS_DIR)/%.s
+$OpenBSD: patch-Makefile,v 1.5 2010/05/04 07:25:54 giovanni Exp $
+--- Makefile.orig	Wed Mar  3 12:57:22 2010
++++ Makefile	Mon Apr 12 19:48:30 2010
+@@ -140,7 +140,7 @@ LIBS_XOBJECTS = $(LIBS_XSOURCES:%.c=$(OBJECTS_DIR)/%.s
  LIBS_XDEP_FILES = $(LIBS_XSOURCES:%.c=$(OBJECTS_DIR)/%.deps)
  
  # set up flags
 -lCFLAGS = $(CFLAGS)
 +lCFLAGS = ${CFLAGS}
+ ifeq ($(USE_LATEST), 1)
  #these are redundant now
  #lCFLAGS += -DGTK_DISABLE_DEPRECATED
- #lCFLAGS += -DGDK_DISABLE_DEPRECATED
-@@ -217,7 +217,7 @@ lLIBS_CFLAGS = -shared -fPIC -DPIC
+@@ -228,7 +228,7 @@ lLIBS_CFLAGS = -shared -fPIC -DPIC
  
  #setup linking
  # -lrt needed for clock_gettime()
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/08/17 12:14:52 giovanni Exp $
  ifeq ($(USE_FAM),1)
  lLIBS += -lfam
  endif
-@@ -247,7 +247,7 @@ all: $(OBJECTS_DIR) $(BUILD_FILE) $(TARGET) $(LIBS) $(
+@@ -258,7 +258,7 @@ all: $(OBJECTS_DIR) $(BUILD_FILE) $(TARGET) $(LIBS) $(
  
  plugins: $(OBJECTS_DIR)/$(LIBS) $(LIBS_OBJECTS) $(LIBS_XOBJECTS)
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/08/17 12:14:52 giovanni Exp $
  	@echo "installing $(TARGET) to prefix '$(PREFIX)'"
  	@install -d -m 755 $(BIN_DIR)
  	@install -m 755 $(TARGET) $(BIN_DIR)
-@@ -259,8 +259,7 @@ install: all install_plugins
+@@ -270,8 +270,7 @@ install: all install_plugins
  	@for file in `ls $(DOCS)/ |grep -v svn |grep -v desktop_environment |grep -v api |grep -v $(TARGET).1`; do \
  		install -m 644 $(DOCS)/$$file $(DOC_DIR); \
  	done
@@ -37,8 +37,8 @@ $OpenBSD: patch-Makefile,v 1.4 2009/08/17 12:14:52 giovanni Exp $
 +	@install -m 644 $(DOCS)/$(TARGET).1 $(PREFIX)/man/man1;
  #	@bzip2 -f $(MAN_DIR)/$(TARGET).1;
  
- ifeq ($(XDG_INTEGRATION), 1)
-@@ -324,7 +323,7 @@ clean_plugins:
+ 	@if [ "`grep "#define E2_XDG" $(BUILD_FILE)`" = "#define E2_XDG" ]; then \
+@@ -336,7 +335,7 @@ clean_plugins:
  
  $(TARGET): $(OBJECTS)
  	@echo "linking binary '$(TARGET)'"
@@ -47,7 +47,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/08/17 12:14:52 giovanni Exp $
  ifeq ($(STRIP), 1)
  ifneq ($(DEBUG), 1)
  	@echo "stripping binary '$(TARGET)'"
-@@ -334,11 +333,11 @@ endif
+@@ -346,11 +345,11 @@ endif
  
  $(OBJECTS): $(OBJECTS_DIR)/%.o: %.c
  	@echo "compiling '$*.c'"
@@ -61,7 +61,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/08/17 12:14:52 giovanni Exp $
  ifeq ($(STRIP), 1)
  ifneq ($(DEBUG), 1)
  	@strip -g $@
-@@ -347,7 +346,7 @@ endif
+@@ -359,7 +358,7 @@ endif
  
  $(THUMBS_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
  	@echo "compiling '$*.c'"
@@ -70,7 +70,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/08/17 12:14:52 giovanni Exp $
  ifeq ($(STRIP), 1)
  ifneq ($(DEBUG), 1)
  	@strip -g $@
-@@ -356,7 +355,7 @@ endif
+@@ -368,7 +367,7 @@ endif
  
  $(ACL_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
  	@echo "compiling '$*.c'"
@@ -79,7 +79,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/08/17 12:14:52 giovanni Exp $
  ifeq ($(STRIP), 1)
  ifneq ($(DEBUG), 1)
  	@strip -g $@
-@@ -365,7 +364,7 @@ endif
+@@ -377,7 +376,7 @@ endif
  
  $(TRACKER_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
  	@echo "compiling '$*.c'"
@@ -88,7 +88,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/08/17 12:14:52 giovanni Exp $
  ifeq ($(STRIP), 1)
  ifneq ($(DEBUG), 1)
  	@strip -g $@
-@@ -374,7 +373,7 @@ endif
+@@ -386,7 +385,7 @@ endif
  
  $(VFS_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
  	@echo "compiling '$*.c'"
@@ -97,7 +97,7 @@ $OpenBSD: patch-Makefile,v 1.4 2009/08/17 12:14:52 giovanni Exp $
  ifeq ($(STRIP), 1)
  ifneq ($(DEBUG), 1)
  	@strip -g $@
-@@ -386,27 +385,27 @@ $(DEP_FILES): $(OBJECTS_DIR)
+@@ -398,27 +397,27 @@ $(DEP_FILES): $(OBJECTS_DIR)
  $(DEP_FILES): $(BUILD_FILE)
  $(DEP_FILES): $(OBJECTS_DIR)/%.deps: %.c
  	@echo "generating '$@'"
@@ -129,8 +129,8 @@ $OpenBSD: patch-Makefile,v 1.4 2009/08/17 12:14:52 giovanni Exp $
 +	$(BIN_XGETTEXT) $(foreach dir, $(DIRS) $(LIBS) $(OPTLIBS), -D $(dir)) \
  		-p ./$(PO_DIR) --from-code=UTF-8 --no-wrap --omit-header -i -F \
  		--copyright-holder="$(COPYRIGHT)" --keyword=_ --keyword=N_ \
- 		$(foreach file, $(SOURCES) $(HEADERS) $(LIBS_SOURCES) $(LIBS_HEADERS), $(shell basename $(file)))
-@@ -465,7 +464,7 @@ help:
+ 		$(foreach file, $(SOURCES) $(HEADERS) $(LIBS_SOURCES) $(LIBS_HEADERS) \
+@@ -478,7 +477,7 @@ help:
  
  $(OBJECTS_DIR):
  	@echo "creating object directories in '$(OBJECTS_DIR)'"
