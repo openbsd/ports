@@ -5,5 +5,6 @@ You should point this to the DocumentRoot of your web-server:
     # ln -s ../zabbix /var/www/htdocs/zabbix
 (make sure you use a relative symlink since Apache is chrooted)
 
-zabbix-web frontend can use a PostgreSQL or MySQL database.  Install the
-php5-pgsql or php5-mysql package according to the one you wish to use.
+zabbix-web frontend can use a PostgreSQL, MySQL or SQLite3 database.
+Install the php5-pgsql, php5-mysql or php5-pdo_sqlite package according
+to the one you wish to use.

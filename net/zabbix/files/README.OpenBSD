@@ -1,10 +1,15 @@
-$OpenBSD: README.OpenBSD,v 1.6 2010/05/03 11:58:45 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.7 2010/05/04 05:51:22 ajacoutot Exp $
 
-This document gives information relevant to using ZABBIX on OpenBSD.
+Using ZABBIX on OpenBSD
+=======================
+
 The original documentation is available as a PDF file at
     ${HOMEPAGE}
 (or via the -doc subpackage of the zabbix port) but may not be
 redistributed. 
+
+A manual is available at:
+    http://www.zabbix.com/documentation/${MAJV}/complete
 
 On OpenBSD, ZABBIX is packaged in four parts:
 
@@ -39,8 +44,8 @@ fi
 For the proxy and the client, follow the same procedure, replacing
 zabbix_server with zabbix_proxy or zabbix_clientd.
 
-The Zabbix Server might fail due to lack of shared memory ("Can't
-allocate shared memory..." errors), in which case you should set
+The Zabbix Server or Proxy might fail due to lack of shared memory
+("Can't allocate shared memory..." errors), in which case you should set
 kern.shminfo.shmall to 32768 -- see sysctl(8) and sysctl.conf(5).
 
 The web frontend works reasonably well with OpenBSD's chroot'ed
@@ -96,6 +101,7 @@ ${TRUEPREFIX}/share/examples/zabbix:
 
 	$ cd ${TRUEPREFIX}/share/zabbix/schema
 	$ mysql -uzabbix -p[password] zabbix < mysql.sql
+The following steps are not required for setting up a Zabbix Proxy.
 	$ cd ../data
 	$ mysql -uzabbix -p[password] zabbix < data.sql	     ## N.B. slow!!
 	$ mysql -uzabbix -p[password] zabbix < images_mysql.sql
@@ -113,6 +119,22 @@ And initialize the database:
 
 	$ cd ${TRUEPREFIX}/share/zabbix/schema
 	$ cat postgresql.sql | psql -U zabbix zabbix
+The following steps are not required for setting up a Zabbix Proxy.
 	$ cd ../data
 	$ cat data.sql | psql -U zabbix zabbix
 	$ cat images_pgsql.sql | psql -U zabbix zabbix
+
+== SQLite3 ==
+
+	$ mkdir /var/db/zabbix
+	$ chown _zabbix /var/db/zabbix
+
+The following steps are optional as Zabbix will automatically create
+and initialize the database if it does not exist.
+
+	$ cd ${TRUEPREFIX}/share/zabbix/schema
+	$ cat sqlite.sql | sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db
+The following steps are not required for setting up a Zabbix Proxy.
+	$ cd ../data
+	$ cat data.sql | sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db
+	$ cat images_sqlite3.sql | sudo -u _zabbix sqlite3 /var/db/zabbix/zabbix.db
