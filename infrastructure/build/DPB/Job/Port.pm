@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.17 2010/05/04 09:41:46 espie Exp $
+# $OpenBSD: Port.pm,v 1.18 2010/05/04 10:10:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -126,6 +126,19 @@ sub run
 			}
 		}
 	}
+	# recurse for extra stuff
+	if (exists $v->{info}{EXTRA}) {
+		for my $two (values %{$v->{info}{EXTRA}}) {
+			for my $kind (qw(RUN_DEPENDS LIB_DEPENDS)) {
+				if (exists $two->{info}{$kind}) {
+					for my $d (values %{$two->{info}{$kind}}) {
+						$dep->{$d->fullpkgname} = 1;
+					}
+				}
+			}
+		}
+	}
+
 	exit(0) unless %$dep;
 	my $sudo = OpenBSD::Paths->sudo;
 	my $shell = $core->{shell};
