@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2010/05/01 21:27:25 benoit Exp $
+$OpenBSD: patch-configure,v 1.5 2010/05/04 14:42:28 ajacoutot Exp $
 --- configure.orig	Tue Mar 16 19:47:47 2010
-+++ configure	Sat Apr 10 07:21:44 2010
-@@ -790,7 +790,7 @@
++++ configure	Tue May  4 16:41:43 2010
+@@ -790,7 +790,7 @@ datarootdir='${prefix}/share'
  datadir='${datarootdir}'
  sysconfdir='${prefix}/etc'
  sharedstatedir='${prefix}/com'
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2010/05/01 21:27:25 benoit Exp $
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
  docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
-@@ -6460,7 +6460,7 @@
+@@ -6460,7 +6460,7 @@ fi
  
  
  saved_CFLAGS="$CFLAGS"
