@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.16 2010/04/26 08:32:53 espie Exp $
+# $OpenBSD: Port.pm,v 1.17 2010/05/04 09:41:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -118,11 +118,10 @@ sub run
 	my $job = $core->job;
 	my $dep = {};
 	my $v = $job->{v};
-	my $base = $v->{pkgpath};
 	for my $kind (qw(BUILD_DEPENDS LIB_DEPENDS)) {
 		if (exists $v->{info}{$kind}) {
 			for my $d (values %{$v->{info}{$kind}}) {
-				next if $d->{pkgpath} eq $v;
+				next if $d->{pkgpath} eq $v->{pkgpath};
 				$dep->{$d->fullpkgname} = 1;
 			}
 		}
