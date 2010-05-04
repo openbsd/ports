@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2010/04/12 09:18:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.200 2010/05/04 12:54:19 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -8,6 +8,7 @@
      SUBDIR += apc-upsd
      SUBDIR += apcd
      SUBDIR += autossh
+     SUBDIR += backintime
      SUBDIR += bacula,mysql
      SUBDIR += bacula,pgsql
      SUBDIR += bacula,sqlite3
