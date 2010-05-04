@@ -1,0 +1,35 @@
+$OpenBSD: patch-common_config_py,v 1.1.1.1 2010/05/04 12:53:49 ajacoutot Exp $
+--- common/config.py.orig	Tue May  4 10:28:34 2010
++++ common/config.py	Tue May  4 10:29:26 2010
+@@ -27,7 +27,7 @@ import tools
+ 
+ _=gettext.gettext
+ 
+-gettext.bindtextdomain( 'backintime', '/usr/share/locale' )
++gettext.bindtextdomain( 'backintime', '${PREFIX}/share/locale' )
+ gettext.textdomain( 'backintime' )
+ 
+ 
+@@ -70,11 +70,11 @@ class Config( configfile.ConfigFile ):
+ 
+ 	def __init__( self ):
+ 		self._APP_PATH =  os.path.dirname( os.path.abspath( os.path.dirname( __file__ ) ) )
+-		self._DOC_PATH = '/usr/share/doc/backintime'
++		self._DOC_PATH = '${PREFIX}/share/doc/backintime'
+ 		if os.path.exists( os.path.join( self._APP_PATH, 'LICENSE' ) ):
+ 			self._DOC_PATH = self._APP_PATH
+ 
+-		self._GLOBAL_CONFIG_PATH = '/etc/backintime/config'
++		self._GLOBAL_CONFIG_PATH = '${SYSCONFDIR}/backintime/config'
+ 
+ 		HOME_FOLDER = os.path.expanduser( '~' )
+ 		self._LOCAL_DATA_FOLDER = os.path.join( os.getenv( 'XDG_DATA_HOME', '$HOME/.local/share' ).replace( '$HOME', HOME_FOLDER ), 'backintime' )
+@@ -466,7 +466,7 @@ class Config( configfile.ConfigFile ):
+ 			cron_line = 'echo "@monthly {cmd}"'
+ 
+ 		if len( cron_line ) > 0:
+-			cmd = '/usr/bin/backintime --backup-job >/dev/null 2>&1'
++			cmd = '${PREFIX}/bin/backintime --backup-job >/dev/null 2>&1'
+ 			if self.is_run_nice_from_cron_enabled():
+ 				cmd = 'nice -n 19 ' + cmd
+ 			cron_line = cron_line.replace( '{cmd}', cmd )

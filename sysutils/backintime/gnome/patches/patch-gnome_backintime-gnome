@@ -1,0 +1,14 @@
+$OpenBSD: patch-gnome_backintime-gnome,v 1.1.1.1 2010/05/04 12:53:49 ajacoutot Exp $
+--- gnome/backintime-gnome.orig	Tue May  4 10:14:18 2010
++++ gnome/backintime-gnome	Tue May  4 10:14:33 2010
+@@ -20,8 +20,8 @@
+ if [ -f app.py ]; then
+ 	APP_PATH="."
+ else
+-	APP_PATH="/usr/share/backintime/gnome"
++	APP_PATH="${PREFIX}/share/backintime/gnome"
+ fi
+ 
+-python ${APP_PATH}/app.py $*
++${MODPY_BIN} ${APP_PATH}/app.py $*
+ 

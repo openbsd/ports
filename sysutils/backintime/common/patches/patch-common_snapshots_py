@@ -1,0 +1,60 @@
+$OpenBSD: patch-common_snapshots_py,v 1.1.1.1 2010/05/04 12:53:49 ajacoutot Exp $
+
+OpenBSD does not support extended attributes & ACLs.
+Needs the "--link" option from gcp(1) for incremental backups.
+
+--- common/snapshots.py.orig	Mon May 18 10:24:21 2009
++++ common/snapshots.py	Tue May  4 10:36:57 2010
+@@ -256,7 +256,7 @@ class Snapshots:
+ 
+ 		backup_suffix = '.backup.' + datetime.date.today().strftime( '%Y%m%d' )
+ 		#cmd = "rsync -avR --copy-unsafe-links --whole-file --backup --suffix=%s --chmod=+w %s/.%s %s" % ( backup_suffix, self.get_snapshot_path_to( snapshot_id ), path, '/' )
+-		cmd = "rsync -avRAXE --whole-file --backup --suffix=%s " % backup_suffix
++		cmd = "rsync -avRE --whole-file --backup --suffix=%s " % backup_suffix
+ 		cmd = cmd + '--chmod=+w '
+ 		cmd = cmd + "\"%s.%s\" %s" % ( self.get_snapshot_path_to( snapshot_id ), path, '/' )
+ 		self._execute( cmd )
+@@ -316,7 +316,7 @@ class Snapshots:
+ 		path = self.get_snapshot_path( snapshot_id )
+ 		cmd = "chmod -R a+rwx \"%s\"" %  path
+ 		self._execute( cmd )
+-		cmd = "rm -rfv \"%s\"" % path
++		cmd = "rm -rf \"%s\"" % path
+ 		self._execute( cmd )
+ 
+ 	def _get_last_snapshot_info( self ):
+@@ -608,7 +608,7 @@ class Snapshots:
+ 		rsync_include2 = ' '.join( items2 )
+ 
+ 		#rsync prefix & suffix
+-		rsync_prefix = 'rsync -aEAX '
++		rsync_prefix = 'rsync -aE '
+ 		rsync_exclude_backup_directory = " --exclude=\"%s\" --exclude=\"%s\" " % ( self.config.get_snapshots_path(), self.config._LOCAL_DATA_FOLDER )
+ 		rsync_suffix = ' --chmod=Fa-w,D+w --whole-file --delete ' + rsync_exclude_backup_directory  + rsync_include + ' ' + rsync_exclude + ' ' + rsync_include2 + ' --exclude=\"*\" / '
+ 
+@@ -653,14 +653,14 @@ class Snapshots:
+ 			logger.info( "Create hard-links" )
+ 			
+ 			if force or len( ignore_folders ) == 0:
+-				cmd = "cp -al \"%s\"* \"%s\"" % ( self.get_snapshot_path_to( prev_snapshot_id ), new_snapshot_path_to )
++				cmd = "gcp -al \"%s\"* \"%s\"" % ( self.get_snapshot_path_to( prev_snapshot_id ), new_snapshot_path_to )
+ 				self._execute( cmd )
+ 			else:
+ 				for folder in include_folders:
+ 					prev_path = self.get_snapshot_path_to( prev_snapshot_id, folder )
+ 					new_path = self.get_snapshot_path_to( new_snapshot_id, folder )
+ 					tools.make_dirs( new_path )
+-					cmd = "cp -alb \"%s\"* \"%s\"" % ( prev_path, new_path )
++					cmd = "gcp -alb \"%s\"* \"%s\"" % ( prev_path, new_path )
+ 					self._execute( cmd )
+ 		else:
+ 			if not self._create_directory( new_snapshot_path_to ):
+@@ -695,7 +695,7 @@ class Snapshots:
+ 				prev_path = self.get_snapshot_path_to( prev_snapshot_id, folder )
+ 				new_path = self.get_snapshot_path_to( new_snapshot_id, folder )
+ 				tools.make_dirs( new_path )
+-				cmd = "cp -alb \"%s/\"* \"%s\"" % ( prev_path, new_path )
++				cmd = "gcp -alb \"%s/\"* \"%s\"" % ( prev_path, new_path )
+ 				self._execute( cmd )
+ 		
+ 				if len( prev_fileinfo_dict ) > 0:

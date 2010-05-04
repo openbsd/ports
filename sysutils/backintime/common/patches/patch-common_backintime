@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_backintime,v 1.1.1.1 2010/05/04 12:53:49 ajacoutot Exp $
+--- common/backintime.orig	Tue May  4 09:31:19 2010
++++ common/backintime	Tue May  4 09:31:41 2010
+@@ -20,8 +20,8 @@
+ if [ -f backintime.py ]; then
+ 	APP_PATH="."
+ else
+-	APP_PATH="/usr/share/backintime/common"
++	APP_PATH="${PREFIX}/share/backintime/common"
+ fi
+ 
+-python $APP_PATH/backintime.py $*
++${MODPY_BIN} $APP_PATH/backintime.py $*
+ 

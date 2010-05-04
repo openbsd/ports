@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_tools_py,v 1.1.1.1 2010/05/04 12:53:49 ajacoutot Exp $
+--- common/tools.py.orig	Tue May  4 11:47:10 2010
++++ common/tools.py	Tue May  4 11:47:34 2010
+@@ -103,7 +103,7 @@ def make_dirs( path ):
+ 
+ 
+ def process_exists( name ):
+-	output = read_command_output( "ps -o pid= -C %s" % name )
++	output = read_command_output( "pgrep -f %s" % name )
+ 	return len( output ) > 0
+ 
+ 
