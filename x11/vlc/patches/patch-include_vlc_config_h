@@ -1,14 +1,17 @@
-$OpenBSD: patch-include_vlc_config_h,v 1.5 2005/12/22 03:45:36 jolan Exp $
---- include/vlc_config.h.orig	Sun Dec 11 15:36:28 2005
-+++ include/vlc_config.h	Fri Dec 16 11:44:19 2005
-@@ -92,8 +92,8 @@
+$OpenBSD: patch-include_vlc_config_h,v 1.6 2010/05/05 08:43:35 edd Exp $
+--- include/vlc_config.h.orig	Fri May  8 20:10:47 2009
++++ include/vlc_config.h	Sat May 16 08:47:18 2009
+@@ -86,8 +86,13 @@
  
  /* DVD and VCD devices */
  #if !defined( WIN32 ) && !defined( UNDER_CE )
--#   define VCD_DEVICE "/dev/cdrom"
--#   define CDAUDIO_DEVICE "/dev/cdrom"
-+#   define VCD_DEVICE "/dev/rcd0c"
-+#   define CDAUDIO_DEVICE "/dev/rcd0c"
++#if defined(__OpenBSD__)
++#   define CD_DEVICE      "/dev/cd0c"
++#   define DVD_DEVICE     "/dev/cd0c"
++#else
+ #   define CD_DEVICE      "/dev/cdrom"
+ #   define DVD_DEVICE     "/dev/dvd"
++#endif
  #else
- #   define VCD_DEVICE "D:"
- #   define CDAUDIO_DEVICE "D:"
+ #   define CD_DEVICE      "D:"
+ #   define DVD_DEVICE     NULL

@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_codec_faad_c,v 1.5 2008/09/15 22:14:23 jakemsr Exp $
---- modules/codec/faad.c.orig	Tue Jul  8 13:59:23 2008
-+++ modules/codec/faad.c	Sat Sep  6 15:16:11 2008
-@@ -150,7 +150,7 @@ static int Open( vlc_object_t *p_this )
+$OpenBSD: patch-modules_codec_faad_c,v 1.6 2010/05/05 08:43:35 edd Exp $
+--- modules/codec/faad.c.orig	Tue Oct 20 16:30:34 2009
++++ modules/codec/faad.c	Sat Nov 28 16:25:46 2009
+@@ -149,7 +149,7 @@ static int Open( vlc_object_t *p_this )
      if( p_dec->fmt_in.i_extra > 0 )
      {
          /* We have a decoder config so init the handle */
@@ -10,7 +10,7 @@ $OpenBSD: patch-modules_codec_faad_c,v 1.5 2008/09/15 22:14:23 jakemsr Exp $
          unsigned char i_channels;
  
          if( faacDecInit2( p_sys->hfaad, p_dec->fmt_in.p_extra,
-@@ -253,7 +253,7 @@ static aout_buffer_t *DecodeBlock( decoder_t *p_dec, b
+@@ -257,7 +257,7 @@ static aout_buffer_t *DecodeBlock( decoder_t *p_dec, b
      if( p_dec->fmt_out.audio.i_rate == 0 && p_dec->fmt_in.i_extra > 0 )
      {
          /* We have a decoder config so init the handle */
@@ -19,7 +19,7 @@ $OpenBSD: patch-modules_codec_faad_c,v 1.5 2008/09/15 22:14:23 jakemsr Exp $
          unsigned char i_channels;
  
          if( faacDecInit2( p_sys->hfaad, p_dec->fmt_in.p_extra,
-@@ -268,7 +268,7 @@ static aout_buffer_t *DecodeBlock( decoder_t *p_dec, b
+@@ -276,7 +276,7 @@ static aout_buffer_t *DecodeBlock( decoder_t *p_dec, b
  
      if( p_dec->fmt_out.audio.i_rate == 0 && p_sys->i_buffer )
      {
@@ -28,7 +28,7 @@ $OpenBSD: patch-modules_codec_faad_c,v 1.5 2008/09/15 22:14:23 jakemsr Exp $
          unsigned char i_channels;
  
          /* Init faad with the first frame */
-@@ -368,7 +368,7 @@ static aout_buffer_t *DecodeBlock( decoder_t *p_dec, b
+@@ -379,7 +379,7 @@ static aout_buffer_t *DecodeBlock( decoder_t *p_dec, b
              const char *psz_ext = (frame.sbr && frame.ps) ? "SBR+PS" :
                                      frame.sbr ? "SBR" : "PS";
  
@@ -36,4 +36,4 @@ $OpenBSD: patch-modules_codec_faad_c,v 1.5 2008/09/15 22:14:23 jakemsr Exp $
 +            msg_Dbg( p_dec, "AAC %s (channels: %u, samplerate: %u)",
                      psz_ext, frame.channels, frame.samplerate );
  
-             if( asprintf( &psz_cat, _("Stream %d"), p_dec->fmt_in.i_id ) != -1 )
+             if( !p_dec->p_description )

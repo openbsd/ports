@@ -1,8 +1,8 @@
-$OpenBSD: patch-modules_gui_pda_pda_callbacks_c,v 1.3 2007/04/08 17:34:20 ajacoutot Exp $
---- modules/gui/pda/pda_callbacks.c.orig	Sat Dec  9 02:12:14 2006
-+++ modules/gui/pda/pda_callbacks.c	Sun Apr  8 10:45:30 2007
-@@ -1041,7 +1041,7 @@ void onAddTranscodeToPlaylist(GtkButton *button, gpoin
-     if( p_playlist == NULL ) return;
+$OpenBSD: patch-modules_gui_pda_pda_callbacks_c,v 1.4 2010/05/05 08:43:35 edd Exp $
+--- modules/gui/pda/pda_callbacks.c.orig	Fri May  8 20:10:50 2009
++++ modules/gui/pda/pda_callbacks.c	Sat May 16 08:47:18 2009
+@@ -1032,7 +1032,7 @@ void onAddTranscodeToPlaylist(GtkButton *button, gpoin
+     pl_Release( p_intf );
  
      /* Get all the options. */
 -    i_pos = snprintf( &mrl[0], VLC_MAX_MRL, "sout");

@@ -1,0 +1,12 @@
+$OpenBSD: patch-projects_mozilla_Makefile_in,v 1.1 2010/05/05 08:43:35 edd Exp $
+--- projects/mozilla/Makefile.in.orig	Sun Jan 24 16:28:52 2010
++++ projects/mozilla/Makefile.in	Sun Jan 31 22:17:13 2010
+@@ -801,7 +801,7 @@ DIST_sources = $(SOURCES_mozilla_common) \
+ @BUILD_MOZILLA_TRUE@@HAVE_DARWIN_TRUE@@HAVE_WIN32_FALSE@noinst_DATA = npvlc.rsrc VLC\ Plugin.plugin
+ @BUILD_MOZILLA_TRUE@@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@npvlc_LTLIBRARIES = libvlcplugin.la
+ @BUILD_MOZILLA_TRUE@@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@npvlc = libvlcplugin$(LIBEXT)
+-@BUILD_MOZILLA_TRUE@@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@npvlcdir = $(libdir)/mozilla/plugins
++@BUILD_MOZILLA_TRUE@@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@npvlcdir = $(libdir)/mozilla-plugins
+ @BUILD_MOZILLA_TRUE@@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@libvlcplugin_la_SOURCES = $(SOURCES_mozilla_common) $(SOURCES_support)
+ @BUILD_MOZILLA_TRUE@@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@libvlcplugin_la_CFLAGS = `$(VLC_CONFIG) --cflags mozilla` $(CPPFLAGS_mozilla_EXTRA)
+ @BUILD_MOZILLA_TRUE@@HAVE_DARWIN_FALSE@@HAVE_WIN32_FALSE@libvlcplugin_la_CXXFLAGS = `$(VLC_CONFIG) --cxxflags mozilla` $(CPPFLAGS_mozilla_EXTRA)

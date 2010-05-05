@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_gui_qt4_Makefile_in,v 1.1 2010/05/05 08:43:35 edd Exp $
+--- modules/gui/qt4/Makefile.in.orig	Sun Jan 24 16:28:46 2010
++++ modules/gui/qt4/Makefile.in	Sun Jan 31 22:17:13 2010
+@@ -1082,7 +1082,7 @@ libqt4_plugin_la_CFLAGS = $(AM_CFLAGS)
+ libqt4_plugin_la_CXXFLAGS = $(AM_CXXFLAGS)
+ libqt4_plugin_la_OBJCFLAGS = $(AM_OBJCFLAGS)
+ # Set LIBADD and DEPENDENCIES manually:
+-libqt4_plugin_la_LIBADD = $(AM_LIBADD)
++libqt4_plugin_la_LIBADD = $(AM_LIBADD) -lstdc++
+ libqt4_plugin_la_DEPENDENCIES = $(top_srcdir)/src/libvlccore.sym
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am

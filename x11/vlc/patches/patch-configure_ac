@@ -1,25 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.14 2008/07/15 16:19:15 brad Exp $
---- configure.ac.orig	Tue Jul  8 16:59:22 2008
-+++ configure.ac	Sun Jul 13 03:40:00 2008
-@@ -199,7 +199,7 @@ case "${target_os}" in
-     VLC_ADD_CFLAGS([libvlc],[-x objective-c])
-     VLC_ADD_CFLAGS([vlc],[-x objective-c])
-     ;;
--  *mingw32* | *cygwin* | *wince* | *mingwce* | *pe*)
-+  *mingw32* | *cygwin* | *wince* | *mingwce*)
-     AC_CHECK_TOOL(WINDRES, windres, :)
- 
-     case "${target_os}" in
-@@ -215,7 +215,7 @@ case "${target_os}" in
-              #endif],
-             SYS=mingw32, SYS=cygwin)
-         ;;
--      *wince* | *mingwce* | *pe*)
-+      *wince* | *mingwce*)
-         SYS=mingwce
-         ;;
-     esac
-@@ -657,6 +657,9 @@ if test "${SYS}" != "mingw32" -a "${SYS}" != "mingwce"
+$OpenBSD: patch-configure_ac,v 1.15 2010/05/05 08:43:35 edd Exp $
+--- configure.ac.orig	Sun Jan 24 16:26:15 2010
++++ configure.ac	Sun Jan 31 22:17:13 2010
+@@ -826,6 +826,9 @@ if test "${SYS}" != "mingw32" -a "${SYS}" != "mingwce"
  dnl Check for pthreads - borrowed from XMMS
  THREAD_LIB=error
  if test "${THREAD_LIB}" = "error"; then
@@ -29,46 +11,21 @@ $OpenBSD: patch-configure_ac,v 1.14 2008/07/15 16:19:15 brad Exp $
    AC_CHECK_LIB(pthread,main,THREAD_LIB="-lpthread")
  fi
  if test "${THREAD_LIB}" = "error"; then
-@@ -2703,7 +2706,7 @@ dnl Look for a ffmpeg-config (we are on debian )
-  else
- 
- dnl Trying with pkg-config
--   PKG_CHECK_MODULES(FFMPEG,[libavcodec, libavformat],
-+   PKG_CHECK_MODULES(FFMPEG,[libavcodec, libavformat, libpostproc],
-     [
-      CPPFLAGS="${CPPFLAGS} ${FFMPEG_CFLAGS}"
-      CFLAGS="${CFLAGS} ${FFMPEG_CFLAGS}"
-@@ -2769,16 +2772,6 @@ dnl Trying with pkg-config
-  fi 
- fi
- 
--dnl Check if we have (required) img_resample() in libavcodec
--if test "${enable_ffmpeg}" != "no"
--then
--     CFLAGS="${CFLAGS} ${CFLAGS_ffmpeg}"
--     LDFLAGS="${LDFLAGS} ${LDFLAGS_ffmpeg}"
--     AC_CHECK_LIB(avcodec, img_resample, ,
--       [AC_MSG_ERROR([Your FFmpeg library doesn't have the needed img_resample() function. You should rebuild it with software scaler disabled])], -lavutil)
--     VLC_RESTORE_FLAGS
--fi
--
- dnl Clean out environment
- LIBS="${LIBS_save}"
- 
-@@ -3381,13 +3374,13 @@ AC_ARG_ENABLE(png,
+@@ -3753,14 +3756,14 @@ AC_ARG_ENABLE(png,
    [  --enable-png            PNG support (default enabled)])
  if test "${enable_png}" != "no"; then
  AC_CHECK_HEADERS(png.h, [
 -  LDFLAGS="${LDFLAGS_save} -lz"
-+  LDFLAGS="${LDFLAGS_save} -lz -lm"
++  LDFLAGS="${LDFLAGS_save} -lm -lz"
    AC_CHECK_LIB(png, png_set_rows, [
--    VLC_ADD_LDFLAGS([png],[-lpng -lz])
-+    VLC_ADD_LDFLAGS([png],[-lpng -lz -lm])
-     VLC_ADD_PLUGINS([png])
-     VLC_ADD_PLUGINS([osdmenu])
+-    VLC_ADD_LIBS([png],[-lpng -lz])
++    VLC_ADD_LIBS([png],[-lpng -lm -lz])
+     VLC_ADD_PLUGIN([png])
+     VLC_ADD_PLUGIN([osdmenu])
+     VLC_ADD_PLUGIN([osd_parser])
      AC_DEFINE(HAVE_LIBPNG, 1, [Define if you have the PNG library: libpng])],
 -    [],[-lz])
-+    [],[-lz -lm])
-   LDFLAGS="${LDFLAGS_save}"
++    [],[-lm -lz])
+     LDFLAGS="${LDFLAGS_save}"
    ])
  fi

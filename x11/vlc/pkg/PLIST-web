@@ -1,6 +1,18 @@
-@comment $OpenBSD: PLIST-web,v 1.1 2007/11/11 01:37:54 jakemsr Exp $
-@comment lib/mozilla/
+@comment $OpenBSD: PLIST-web,v 1.2 2010/05/05 08:43:35 edd Exp $
 lib/mozilla-plugins/
+@comment lib/mozilla-plugins/libvlcplugin.a
+lib/mozilla-plugins/libvlcplugin.la
 lib/mozilla-plugins/libvlcplugin.so
-@comment lib/mozilla/plugins/
-@comment lib/mozilla/plugins/libvlcplugin.so
+share/vlc/mozilla/
+share/vlc/mozilla/fullscreen.xpm
+share/vlc/mozilla/pause.xpm
+share/vlc/mozilla/play.xpm
+share/vlc/mozilla/skip_next.xpm
+share/vlc/mozilla/skip_previous.xpm
+share/vlc/mozilla/stop.xpm
+share/vlc/mozilla/time_icon.xpm
+share/vlc/mozilla/time_line.xpm
+share/vlc/mozilla/volume_knob.xpm
+share/vlc/mozilla/volume_max.xpm
+share/vlc/mozilla/volume_mute.xpm
+share/vlc/mozilla/volume_slider_bar.xpm

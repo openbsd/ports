@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.amd64-main,v 1.1 2010/05/05 08:43:35 edd Exp $
+@comment lib/vlc/video_chroma/libi420_rgb_sse2_plugin.a
+lib/vlc/video_chroma/libi420_rgb_sse2_plugin.la
+lib/vlc/video_chroma/libi420_rgb_sse2_plugin.so
+@comment lib/vlc/video_chroma/libi420_yuy2_sse2_plugin.a
+lib/vlc/video_chroma/libi420_yuy2_sse2_plugin.la
+lib/vlc/video_chroma/libi420_yuy2_sse2_plugin.so
+@comment lib/vlc/video_chroma/libi422_yuy2_sse2_plugin.a
+lib/vlc/video_chroma/libi422_yuy2_sse2_plugin.la
+lib/vlc/video_chroma/libi422_yuy2_sse2_plugin.so

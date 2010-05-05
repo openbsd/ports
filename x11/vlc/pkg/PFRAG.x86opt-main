@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.x86opt-main,v 1.1 2007/11/11 01:37:54 jakemsr Exp $
-lib/vlc/libi420_rgb_mmx.a
-lib/vlc/libi420_ymga_mmx.a
-lib/vlc/libi420_yuy2_mmx.a
-lib/vlc/libi422_yuy2_mmx.a
-lib/vlc/libmemcpy3dn.a
-lib/vlc/libmemcpymmx.a
-lib/vlc/libmemcpymmxext.a

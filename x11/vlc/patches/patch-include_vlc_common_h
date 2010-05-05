@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_vlc_common_h,v 1.1 2010/05/05 08:43:35 edd Exp $
+--- include/vlc_common.h.orig	Fri Apr 30 15:50:36 2010
++++ include/vlc_common.h	Fri Apr 30 15:52:16 2010
+@@ -79,7 +79,11 @@
+ #   else
+ #     define LIBVLC_FORMAT(x,y) __attribute__ ((format(printf,x,y)))
+ #   endif
+-#   define LIBVLC_USED __attribute__ ((warn_unused_result))
++#   if __GNUC__ > 3 || (__GNUC__ == 3 && (__GNUC_MINOR__ >= 4))
++#     define LIBVLC_USED __attribute__ ((warn_unused_result))
++#   else
++#     define LIBVLC_USED
++#   endif
+ #else
+ #   define LIBVLC_FORMAT(x,y)
+ #   define LIBVLC_USED

@@ -1,12 +1,13 @@
-$OpenBSD: patch-modules_misc_freetype_c,v 1.1 2005/12/22 05:32:50 jolan Exp $
---- modules/misc/freetype.c.orig	Sun Dec 11 15:36:22 2005
-+++ modules/misc/freetype.c	Wed Dec 21 22:55:02 2005
-@@ -54,6 +54,8 @@
- #define DEFAULT_FONT "/boot/beos/etc/fonts/ttfonts/Swiss721.ttf"
+$OpenBSD: patch-modules_misc_freetype_c,v 1.2 2010/05/05 08:43:35 edd Exp $
+--- modules/misc/freetype.c.orig	Fri Sep 18 12:37:45 2009
++++ modules/misc/freetype.c	Wed Oct 14 20:50:39 2009
+@@ -63,6 +63,9 @@
  #elif defined( WIN32 )
  #define DEFAULT_FONT "" /* Default font found at run-time */
+ #define FC_DEFAULT_FONT "Arial"
 +#elif defined(__OpenBSD__)
 +#define DEFAULT_FONT "/usr/X11R6/lib/X11/fonts/TTF/Vera.ttf"
++#define FC_DEFAULT_FONT "Vera"
  #else
  #define DEFAULT_FONT "/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf"
- #endif
+ #define FC_DEFAULT_FONT "Serif Bold"

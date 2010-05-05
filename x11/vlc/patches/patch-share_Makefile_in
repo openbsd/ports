@@ -1,11 +1,11 @@
-$OpenBSD: patch-share_Makefile_in,v 1.7 2008/07/15 16:19:15 brad Exp $
---- share/Makefile.in.orig	Tue Jul  8 17:36:29 2008
-+++ share/Makefile.in	Sun Jul 13 03:38:05 2008
-@@ -852,7 +852,6 @@ skins2/default.vlt: $(skins2_default_vlt_FILES)
+$OpenBSD: patch-share_Makefile_in,v 1.8 2010/05/05 08:43:35 edd Exp $
+--- share/Makefile.in.orig	Wed Apr 21 12:31:40 2010
++++ share/Makefile.in	Fri Apr 23 16:55:32 2010
+@@ -1262,7 +1262,6 @@ uninstall-am: uninstall-dist_vlcdataDATA \
  
- skins2/default.vlt:
+ skins2/default.vlt: $(skins2_default_vlt_FILES)
  	mkdir -p skins2
 -	tar cvvzf skins2/default.vlt --exclude .svn -C $(srcdir)/skins2 default/
  
- .PHONY: $(nobase_pkgdata_DATA)
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
