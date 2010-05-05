@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/03/24 17:28:13 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/05/05 10:36:33 giovanni Exp $
 bin/mk-archiver
 bin/mk-checksum-filter
 bin/mk-deadlock-logger
@@ -10,6 +10,7 @@ bin/mk-heartbeat
 bin/mk-kill
 bin/mk-loadavg
 bin/mk-log-player
+bin/mk-merge-mqd-results
 bin/mk-parallel-dump
 bin/mk-parallel-restore
 bin/mk-profile-compact
@@ -38,6 +39,7 @@ ${P5SITE}/maatkit.pod
 @man man/man1/mk-kill.1
 @man man/man1/mk-loadavg.1
 @man man/man1/mk-log-player.1
+@man man/man1/mk-merge-mqd-results.1
 @man man/man1/mk-parallel-dump.1
 @man man/man1/mk-parallel-restore.1
 @man man/man1/mk-profile-compact.1
