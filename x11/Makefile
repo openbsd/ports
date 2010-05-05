@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.416 2010/05/03 16:37:18 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.417 2010/05/05 13:41:48 jim Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -246,7 +246,6 @@
      SUBDIR += vdesk
      SUBDIR += viewfax
      SUBDIR += vlc
-     SUBDIR += vlc,altivec
      SUBDIR += waimea
      SUBDIR += wampager
      SUBDIR += windowmaker
