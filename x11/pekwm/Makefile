@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2010/05/05 22:48:20 nicm Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
-DISTNAME=	pekwm-0.1.11
+DISTNAME=	pekwm-0.1.12
 CATEGORIES=	x11
-PKGNAME=	${DISTNAME}p0
 
 HOMEPAGE=	http://pekwm.org/
 
@@ -22,9 +21,7 @@ WANTLIB=	ICE SM X11 Xext Xft Xpm Xrandr Xrender Xau Xdmcp \
 
 MODULES=	converters/libiconv
 
-EXTRACT_SUFX=	.tar.bz2
-MASTER_SITES=	${HOMEPAGE}projects/3/files/
-
+MASTER_SITES=	${HOMEPAGE}projects/pekwm/files/
 LIB_DEPENDS=	jpeg.>=62::graphics/jpeg \
 		png.>=5::graphics/png
 
