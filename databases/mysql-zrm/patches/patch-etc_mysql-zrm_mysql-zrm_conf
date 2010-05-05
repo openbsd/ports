@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_mysql-zrm_mysql-zrm_conf,v 1.2 2008/12/22 14:44:26 giovanni Exp $
---- etc/mysql-zrm/mysql-zrm.conf.orig	Fri Dec  5 01:46:01 2008
-+++ etc/mysql-zrm/mysql-zrm.conf	Fri Dec 19 11:05:27 2008
+$OpenBSD: patch-etc_mysql-zrm_mysql-zrm_conf,v 1.3 2010/05/05 17:03:19 giovanni Exp $
+--- etc/mysql-zrm/mysql-zrm.conf.orig	Thu Feb  4 01:19:25 2010
++++ etc/mysql-zrm/mysql-zrm.conf	Wed May  5 12:10:00 2010
 @@ -40,7 +40,7 @@
  # mysqldump(1) tool
  # This parameter is optional and default value is "raw".
@@ -28,7 +28,7 @@ $OpenBSD: patch-etc_mysql-zrm_mysql-zrm_conf,v 1.2 2008/12/22 14:44:26 giovanni 
  
  # This specifies the option to be passed to the encryption 
  # program specified as "encrypt-plugin" parameter for decryption.
-@@ -159,7 +159,7 @@
+@@ -165,7 +165,7 @@
  
  #Name of Socket file that can be used for connecting to MySQL
  #
@@ -37,7 +37,7 @@ $OpenBSD: patch-etc_mysql-zrm_mysql-zrm_conf,v 1.2 2008/12/22 14:44:26 giovanni 
  
  # ssl-options are arguments that are passed to MySQL client commands 
  # for SSL connection to the MySQL server. This parameter is optional and is
-@@ -261,18 +261,18 @@ mailto="root@localhost"
+@@ -272,18 +272,18 @@
  #
  # Please read the Notes at /usr/share/doc/mysql-zrm/README-plugin-socket-copy
  #
@@ -59,7 +59,7 @@ $OpenBSD: patch-etc_mysql-zrm_mysql-zrm_conf,v 1.2 2008/12/22 14:44:26 giovanni 
  
  # Set of parameters passed to the pre-backup-plugin. These parameters are
  # passed to "pre-backup-plugin" before a backup run for the backup set.
-@@ -281,7 +281,7 @@ mailto="root@localhost"
+@@ -292,7 +292,7 @@
  
  # POST-BACKUP plugin: Plugin that will be called after a backup run for 
  # the backup set.
@@ -68,7 +68,7 @@ $OpenBSD: patch-etc_mysql-zrm_mysql-zrm_conf,v 1.2 2008/12/22 14:44:26 giovanni 
  
  # Set of parameters passed to the post-backup-plugin. These parameters are
  # passed to "post-backup-plugin" after a backup run for the backup set.
-@@ -290,7 +290,7 @@ mailto="root@localhost"
+@@ -301,7 +301,7 @@
  
  # PRE-SCHEDULER plugin: Plugin that can be used to dynamically determine the 
  # start time for a backup run.

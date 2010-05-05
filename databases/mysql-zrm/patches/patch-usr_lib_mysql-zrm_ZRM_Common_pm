@@ -1,9 +1,9 @@
-$OpenBSD: patch-usr_lib_mysql-zrm_ZRM_Common_pm,v 1.2 2008/12/22 14:44:26 giovanni Exp $
---- usr/lib/mysql-zrm/ZRM/Common.pm.orig	Fri Dec  5 01:46:01 2008
-+++ usr/lib/mysql-zrm/ZRM/Common.pm	Fri Dec 19 11:05:27 2008
-@@ -73,9 +73,9 @@ our $LOGGER;
+$OpenBSD: patch-usr_lib_mysql-zrm_ZRM_Common_pm,v 1.3 2010/05/05 17:03:19 giovanni Exp $
+--- usr/lib/mysql-zrm/ZRM/Common.pm.orig	Thu Feb  4 01:19:25 2010
++++ usr/lib/mysql-zrm/ZRM/Common.pm	Wed May  5 12:10:00 2010
+@@ -90,9 +90,9 @@ our $LOGGER;
  our $INDEX_FILENAME="index";
- our $MYSQL_ZRM_CONFIG_FILE=catfile( $MYSQL_ZRM_BASEDIR, "mysql-zrm.conf"); 
+ our $MYSQL_ZRM_CONFIG_FILE=catfile( $MYSQL_ZRM_BASEDIR, "mysql-zrm.conf");
  #Compress & Encrypt progs
 -our $TAR="tar";
 -our $TAR_COMPRESS_OPTIONS=" --same-owner -cpsC ";

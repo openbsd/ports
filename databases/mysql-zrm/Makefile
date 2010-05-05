@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/22 15:55:10 giovanni Exp $
+# $OpenBSD: Makefile,v 1.4 2010/05/05 17:03:19 giovanni Exp $
 
 COMMENT =	MySQL backup scripts
 
-V =		2.1.1
-DISTNAME =	MySQL-zrm-$V
+V =		2.2
+DISTNAME =	MySQL-zrm-$V.0
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	databases perl5
 
@@ -35,7 +35,7 @@ pre-configure:
 	    ${WRKSRC}/usr/bin/mysql-zrm-*
 
 do-install:
-	@find ${WRKSRC} \( -name "*.bak" -o -name "*.orig" \) -exec rm -f {} \;
+	@find ${WRKSRC} \( -name "*.bak" -o -name "*.orig" -o -name "*.beforesubst" \) -exec rm -f {} \;
 	${INSTALL_SCRIPT} ${WRKSRC}/usr/bin/* ${PREFIX}/bin/
 	cd ${WRKSRC}/usr/lib; \
 	    tar cf - mysql-zrm | tar xf - -C ${PREFIX}/lib/

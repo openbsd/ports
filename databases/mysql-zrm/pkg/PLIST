@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/12/22 14:44:26 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/05/05 17:03:19 giovanni Exp $
 bin/mysql-zrm
 bin/mysql-zrm-abort-backup
 bin/mysql-zrm-backup
@@ -74,8 +74,12 @@ share/examples/mysql-zrm/plugins/parse-binlogs.pl
 @sample share/mysql-zrm/plugins/parse-binlogs.pl
 share/examples/mysql-zrm/plugins/post-backup.pl
 @sample share/mysql-zrm/plugins/post-backup.pl
+share/examples/mysql-zrm/plugins/post-restore.pl
+@sample share/mysql-zrm/plugins/post-restore.pl
 share/examples/mysql-zrm/plugins/pre-backup.pl
 @sample share/mysql-zrm/plugins/pre-backup.pl
+share/examples/mysql-zrm/plugins/pre-restore.pl
+@sample share/mysql-zrm/plugins/pre-restore.pl
 share/examples/mysql-zrm/plugins/pre-scheduler-plugin.pl
 @sample share/mysql-zrm/plugins/pre-scheduler-plugin.pl
 share/examples/mysql-zrm/plugins/socket-copy.pl
