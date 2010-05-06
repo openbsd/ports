@@ -1,18 +1,36 @@
-$OpenBSD: patch-makefile,v 1.1.1.1 2007/03/26 13:03:57 jolan Exp $
---- makefile.orig	Wed Mar 21 16:48:17 2007
-+++ makefile	Mon Mar 26 03:45:58 2007
-@@ -10,11 +10,11 @@ CWARNS = -Wall -Wextra -pedantic \
+$OpenBSD: patch-makefile,v 1.2 2010/05/06 20:57:35 jasper Exp $
+--- makefile.orig	Sat Oct 11 22:21:05 2008
++++ makefile	Thu May  6 22:54:55 2010
+@@ -1,13 +1,13 @@
+-LUADIR = /usr/include/lua5.1/
++LUADIR = ${LOCALBASE}/include/
  
- LUADIR = ..
- COPT = -O2 -DNDEBUG
--CFLAGS = $(CWARNS) -ansi -I$(LUADIR)/lua -shared -o lpeg.so
+-COPT = -O2 -DNDEBUG
++COPT = -O2 -DNDEBUG -fPIC -shared
+ 
+-CWARNS = -Wall -Wextra -pedantic \
++CWARNS = -Wall -pedantic \
+         -Waggregate-return \
+ 	-Wbad-function-cast \
+         -Wcast-align \
+         -Wcast-qual \
+-	-Wdeclaration-after-statement \
++# 	-Wdeclaration-after-statement \
+ 	-Wdisabled-optimization \
+         -Wmissing-prototypes \
+         -Wnested-externs \
+@@ -17,12 +17,11 @@ CWARNS = -Wall -Wextra -pedantic \
+ 	-Wstrict-prototypes \
+ 	-Wundef \
+         -Wwrite-strings \
+-	#  -Wunreachable-code \
++#	-Wunreachable-code \
+ 
+ 
+-CFLAGS = $(CWARNS) $(COPT) -ansi -I$(LUADIR)
++CFLAGS += $(CWARNS) $(COPT) -ansi -I$(LUADIR)
+ DLLFLAGS = -shared
 -CC = gcc
-+#CFLAGS = $(CWARNS) -ansi -I$(LUADIR)/lua -shared -o lpeg.so
-+#CC = gcc
  
- lpeg.so: lpeg.c
--	$(CC) $(COPT) $(CFLAGS) lpeg.c
-+	$(CC) $(CFLAGS) -DNDEBUG -I${LOCALBASE}/include -fPIC -shared -o lpeg.so lpeg.c
- 
- deb:	lpeg.c	
- 	$(CC) -g $(CFLAGS) lpeg.c; touch deb; rm -f opt
+ lpeg.so: lpeg.o
+ 	$(CC) $(DLLFLAGS) lpeg.o -o lpeg.so
