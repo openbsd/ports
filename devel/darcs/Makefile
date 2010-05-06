@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/25 21:20:45 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2010/05/06 20:06:28 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
 DISTNAME =		darcs-2.4.1
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
 
-WANTLIB =		c m ncurses pthread util z
+WANTLIB =		c m ncurses util z
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage nort
+MODGHC_SETUP_CONF_ARGS =-f '-threaded'
 LIB_DEPENDS =		curl.>=2::net/curl
 
 # Yes, build dependencies, because GHC libs are still static and we

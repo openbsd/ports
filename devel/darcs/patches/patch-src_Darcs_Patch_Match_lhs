@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Darcs_Patch_Match_lhs,v 1.1 2010/04/25 21:20:45 kili Exp $
+$OpenBSD: patch-src_Darcs_Patch_Match_lhs,v 1.2 2010/05/06 20:06:28 kili Exp $
 --- src/Darcs/Patch/Match.lhs.orig	Mon Apr 12 21:42:42 2010
-+++ src/Darcs/Patch/Match.lhs	Sun Apr 25 22:55:57 2010
++++ src/Darcs/Patch/Match.lhs	Wed May  5 17:09:11 2010
 @@ -36,7 +36,7 @@ import System.IO.Unsafe ( unsafePerformIO )
  
  import Darcs.Hopefully ( PatchInfoAnd, hopefully, info )
@@ -10,17 +10,48 @@ $OpenBSD: patch-src_Darcs_Patch_Match_lhs,v 1.1 2010/04/25 21:20:45 kili Exp $
                            pi_date )
  import Darcs.Witnesses.Sealed ( Sealed2(..), seal2 )
  import DateMatcher ( parseDateMatcher )
-@@ -308,6 +308,9 @@ primitiveMatchers =
+@@ -81,7 +81,7 @@ trivial = const True
+ 
+ \subsection{Match}
+ 
+-Currently \verb!--match! accepts six primitive match types, although
++Currently \verb!--match! accepts eight primitive match types, although
+ there are plans to expand it to match more patterns.  Also, note that the
+ syntax is still preliminary and subject to change.
+ 
+@@ -199,6 +199,18 @@ file paths that the patch touches.  The syntax is
+ darcs annotate --summary --match 'touch foo/bar.c'
+ \end{verbatim}
+ 
++The seventh match type accepts a regular expression which is checked
++against every hunk. The syntax is
++\begin{verbatim}
++darcs annotate --summary --match 'hunk "^instance .* Foo where$"'
++\end{verbatim}
++
++The eight match type accepts a regular expression which is checked
++against the long comment. The syntax is
++\begin{verbatim}
++darcs annotate --summary --match 'comment "remote repository"'
++\end{verbatim}
++
+ The \verb!--match! pattern can include the logical operators \verb!&&!,
+ \verb!||! and \verb!not!, as well as grouping of patterns with parentheses.
+ For example
+@@ -306,8 +318,11 @@ primitiveMatchers =
+             , ["\"David Roundy\"", "droundy", "droundy@darcs.net"]
+             , authormatch )
   , ("hunk", "check a regular expression against the contents of a hunk patch"
-             , ["foo = 2", "^instance .* Foo where$"]
+-            , ["foo = 2", "^instance .* Foo where$"]
++            , ["\"foo = 2\"", "\"^instance .* Foo where$\""]
              , hunkmatch )
-+ , ("log", "check a regular expression against the log message"
-+         , []
++ , ("comment", "check a regular expression against the log message"
++         , ["\"prevent deadlocks\""]
 +         , logmatch )
   , ("hash",  "match the darcs hash for a patch"
            ,  ["20040403105958-53a90-c719567e92c3b0ab9eddd5290b705712b8b918ef"]
            ,  hashmatch )
-@@ -339,6 +342,7 @@ exactmatch r (Sealed2 hp) = r == (just_name (info hp))
+@@ -339,6 +354,7 @@ exactmatch r (Sealed2 hp) = r == (just_name (info hp))
  
  authormatch a (Sealed2 hp) = isJust $ matchRegex (mkRegex a) $ just_author (info hp)
  
