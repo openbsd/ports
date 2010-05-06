@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/23 10:10:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/05/06 09:03:56 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}filefield/
@@ -23,9 +23,12 @@ ${DRUPAL_MODS}filefield/filefield_meta/filefield_meta.install
 ${DRUPAL_MODS}filefield/filefield_meta/filefield_meta.module
 ${DRUPAL_MODS}filefield/filefield_meta/includes/
 ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta.views.inc
+${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_bitrate.inc
 ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_duration.inc
+${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_samplerate.inc
 ${DRUPAL_MODS}filefield/filefield_meta/translations/
 ${DRUPAL_MODS}filefield/filefield_meta/translations/filefield_meta.de.po
+${DRUPAL_MODS}filefield/filefield_meta/translations/filefield_meta.ja.po
 ${DRUPAL_MODS}filefield/filefield_meta/translations/filefield_meta.pot
 ${DRUPAL_MODS}filefield/filefield_widget.inc
 ${DRUPAL_MODS}filefield/icons/
@@ -54,11 +57,15 @@ ${DRUPAL_MODS}filefield/translations/filefield.de.po
 ${DRUPAL_MODS}filefield/translations/filefield.pot
 ${DRUPAL_MODS}filefield/translations/fr-ca.po
 ${DRUPAL_MODS}filefield/translations/fr.po
-${DRUPAL_MODS}filefield/translations/general.de.po
-${DRUPAL_MODS}filefield/translations/general.pot
+${DRUPAL_MODS}filefield/translations/hu.po
 ${DRUPAL_MODS}filefield/translations/ja.po
 ${DRUPAL_MODS}filefield/translations/nl.po
+${DRUPAL_MODS}filefield/translations/pt-br.po
 ${DRUPAL_MODS}filefield/translations/sv.po
+${DRUPAL_MODS}filefield/translations/uk-ua.po
+${DRUPAL_MODS}filefield/translations/uk.po
+${DRUPAL_MODS}filefield/translations/views.de.po
+${DRUPAL_MODS}filefield/translations/views.pot
 ${DRUPAL_MODS}filefield/views/
 ${DRUPAL_MODS}filefield/views/filefield.views.inc
 ${DRUPAL_MODS}filefield/views/filefield.views_convert.inc
