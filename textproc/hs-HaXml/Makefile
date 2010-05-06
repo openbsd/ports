@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/28 16:06:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/06 20:05:24 kili Exp $
 
 COMMENT =		XML parsing utilities for Haskell
 
 DISTNAME =		HaXml-1.13.3
+# Don't forget the `hs-' prefix when bumping PKGNAME!
+PKGNAME =		hs-${DISTNAME}p0
 CATEGORIES =		textproc
 HOMEPAGE =		http://www.cs.york.ac.uk/fp/HaXml/
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
-WANTLIB =		c m pthread util
+WANTLIB =		c m util
 
 # GPLv2 / LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

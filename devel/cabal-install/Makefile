@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/10 18:24:15 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/06 20:05:24 kili Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
 DISTNAME =	cabal-install-0.8.0
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/cabal/
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB =		c m pthread util z
+WANTLIB =		c m util z
 
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =          cabal hackage nort

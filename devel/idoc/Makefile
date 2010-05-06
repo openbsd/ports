@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/22 21:57:26 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/05/06 20:05:24 kili Exp $
 
 COMMENT =		minimalist documentation tool for Haskell
 
 DISTNAME =		idoc-0.2.6
-PKGNAME =		${DISTNAME}p2
+PKGNAME =		${DISTNAME}p3
 CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 HOMEPAGE =		http://www.cse.unsw.edu.au/~chak/haskell/idoc/
@@ -19,7 +19,7 @@ WANTLIB =		c m
 
 # pure Haskell 98
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-WANTLIB +=		pthread util
+WANTLIB +=		util
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		nort
 .else

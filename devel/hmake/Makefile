@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/22 21:54:16 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2010/05/06 20:05:24 kili Exp $
 
 COMMENT =	compilation manager for Haskell programs
  
 DISTNAME =	hmake-3.14
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/hmake/
@@ -25,7 +26,7 @@ CONFIGURE_STYLE =	simple
 WANTLIB +=		c m
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-WANTLIB +=		util pthread
+WANTLIB +=		util
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		nort
 CONFIGURE_ARGS =	--buildwith=ghc

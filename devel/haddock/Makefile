@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/22 21:49:12 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2010/05/06 20:05:24 kili Exp $
 
 COMMENT =	documentation-generation tool for Haskell libraries
 
 DISTNAME =	haddock-2.7.2
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/haddock/
@@ -19,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 PSEUDO_FLAVORS =	no_deps
 FLAVOR ?=
 
-WANTLIB =		c m pthread util
+WANTLIB =		c m util
 
 .if ! ${FLAVOR:L:Mno_deps}
 MODULES =		lang/ghc converters/libiconv
