@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2010/05/06 21:42:24 sthen Exp $
+--- configure.in.orig	Sat May  1 15:02:27 2010
++++ configure.in	Sat May  1 15:03:26 2010
+@@ -84,7 +84,7 @@ AC_CHECK_LIB(z, zlibVersion,,
+ AC_MSG_ERROR(Link with "-lz" failed! (Need zlib >= 1.0.2))
+ )
+ if test -d "$WHERE_FTPATH"; then
+-	if test ! -f "$WHERE_FTPATH/lib/ftlib.h"; then
++	if test ! -f "$WHERE_FTPATH/include/ftlib.h"; then
+ 		AC_MSG_ERROR(ftlib.h file not found in flow-tools directory '$WHERE_FTPATH'. Use --with-ftpath=PATH)
+ 	fi
+ 	if test ! -f "$WHERE_FTPATH/lib/libft.a"; then

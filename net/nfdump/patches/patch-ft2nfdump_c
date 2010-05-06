@@ -1,0 +1,14 @@
+$OpenBSD: patch-ft2nfdump_c,v 1.1 2010/05/06 21:42:24 sthen Exp $
+--- ft2nfdump.c.orig	Sat May  1 15:07:28 2010
++++ ft2nfdump.c	Sat May  1 15:08:03 2010
+@@ -66,7 +66,9 @@
+ #include "nffile.h"
+ #include "launch.h"
+ 
+-#include "ftbuild.h"
++#define u_int8 u_int8_t
++#define u_int16 u_int16_t
++#define u_int32 u_int32_t
+ 
+ /* Global defines */
+ #define MAXRECORDS 30
