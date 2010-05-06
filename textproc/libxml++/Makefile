@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/04/24 09:56:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/05/06 21:30:47 ajacoutot Exp $
 
 COMMENT=	C++ wrapper for the libxml XML parser library
 
-V=		2.30.0
+V=		2.30.1
 DISTNAME=	libxml++-$V
 SHARED_LIBS+=	xml++-2.6	0.1 # .2.7
 CATEGORIES=	textproc
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/libxml++/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
-WANTLIB=	m z glib-2.0 gmodule-2.0 gobject-2.0 pcre sigc-2.0
+WANTLIB=	m z glib-2.0 gmodule-2.0 gobject-2.0 pcre sigc-2.0 gthread-2.0
 
 MODULES=	devel/gettext
 
