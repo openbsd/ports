@@ -1,2 +1,9 @@
 flow-tools is a set of programs for processing and managing NetFlow
-exports from Cisco routers.
+exports from Cisco and Juniper routers and various other systems,
+including OpenBSD's pflow(4).
+
+If you wish to use the rrd conversion tools (flow-log2rrd and
+flow-rpt2rrd), install the py-rrd package.
+
+Flavors:
+	pgsql - compile flow-export with PostgreSQL support.

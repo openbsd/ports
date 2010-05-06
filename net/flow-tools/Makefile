@@ -1,63 +1,57 @@
-# $OpenBSD: Makefile,v 1.16 2009/03/24 18:14:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2010/05/06 21:40:31 sthen Exp $
+
+SHARED_LIBS +=  ft                   0.0      # .0.0
 
 COMMENT=	cisco NetFlow utilities
 
-DISTNAME=	flow-tools-0.68
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	flow-tools-0.68.5
+EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net
 
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=     Stuart Henderson <sthen@openbsd.org>
 
-HOME_PAGE=	http://www.splintered.net/sw/flow-tools/
+# forked from:  http://www.splintered.net/sw/flow-tools/
+HOME_PAGE=	http://code.google.com/p/flow-tools/
 
-MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
+MASTER_SITES=	http://flow-tools.googlecode.com/files/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+FLAVORS=		pgsql
+FLAVOR?=
+
 WANTLIB=		c z
 
 MODULES=		lang/python
 
 CONFIGURE_STYLE=	gnu
+SEPARATE_BUILD=		simple
 CONFIGURE_ARGS+=	--localstatedir=/var/flow-tools
 
-BUILD_DEPENDS+=		::textproc/docbook-to-man
+.if !${FLAVOR:L:Mpgsql}
+CONFIGURE_ARGS+=	--without-postgresql
+.else
+LIB_DEPENDS+=		pq::databases/postgresql,-main
+.endif
+
+MAKE_FLAGS+=		"SUBDIRS=lib src bin configs docs"
+FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples/flow-tools
+
+USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 
 PYTHON_SCRIPTS=		bin/flow-log2rrd \
 			bin/flow-rpt2rrd \
 			bin/flow-rptfmt
 
 post-patch:
-	cp ${WRKSRC}/lib/radix.h ${WRKSRC}/lib/ftradix.h
 .for file in ${PYTHON_SCRIPTS}
 	mv ${WRKSRC}/${file} ${WRKSRC}/${file}.dist
-	sed "s!/usr/local/bin/python!${LOCALBASE}/bin/python${MODPY_VERSION}!" \
+	sed "s!/bin/env python!${MODPY_BIN}!" \
 		< ${WRKSRC}/${file}.dist > ${WRKSRC}/${file}
 .endfor
-
-post-configure:
-	rm -f ${WRKSRC}/docs/*.[0-9]
-	rm -f ${WRKSRC}/docs/*.[0-9].in
-	(cd ${WRKSRC}/docs; ${MAKE_PROGRAM})
-
-do-install:
-	(cd ${WRKSRC}/src; env ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} install)
-	(cd ${WRKSRC}/bin; env ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} install)
-	${INSTALL_MAN} ${WRKSRC}/docs/*.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/flow-tools/cfg
-	${INSTALL_DATA} ${WRKSRC}/configs/*.cfg \
-		${PREFIX}/share/examples/flow-tools/cfg
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/flow-tools/sym
-	${INSTALL_DATA} ${WRKSRC}/configs/*.sym \
-		${PREFIX}/share/examples/flow-tools/sym
-	${INSTALL_DATA} ${WRKBUILD}/lib/libft.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKBUILD}/lib/ftconfig.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKBUILD}/lib/ftlib.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKBUILD}/lib/ftpaths.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKBUILD}/lib/ftqueue.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKBUILD}/lib/ftradix.h ${PREFIX}/include
-
 
 .include <bsd.port.mk>

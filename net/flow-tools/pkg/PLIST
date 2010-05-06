@@ -1,36 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/12/08 08:23:42 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/05/06 21:40:31 sthen Exp $
 @newgroup _netflow:575
 @newuser _netflow:575:575:daemon:flow-tools user:/var/empty:/sbin/nologin
-bin/flow-capture
-bin/flow-cat
-bin/flow-dscan
-bin/flow-expire
-bin/flow-export
-bin/flow-fanout
-bin/flow-filter
-bin/flow-gen
-bin/flow-header
-bin/flow-import
+@bin bin/flow-capture
+@bin bin/flow-cat
+@bin bin/flow-dscan
+@bin bin/flow-expire
+@bin bin/flow-export
+@bin bin/flow-fanout
+@bin bin/flow-filter
+@bin bin/flow-gen
+@bin bin/flow-header
+@bin bin/flow-import
 @comment bin/flow-log2rrd
-bin/flow-mask
-bin/flow-merge
-bin/flow-nfilter
-bin/flow-print
-bin/flow-receive
-bin/flow-report
+@bin bin/flow-mask
+@bin bin/flow-merge
+@bin bin/flow-nfilter
+@bin bin/flow-print
+@bin bin/flow-receive
+@bin bin/flow-report
 @comment bin/flow-rpt2rrd
 bin/flow-rptfmt
-bin/flow-send
-bin/flow-split
-bin/flow-stat
-bin/flow-tag
-bin/flow-xlate
-include/ftconfig.h
+@bin bin/flow-send
+@bin bin/flow-split
+@bin bin/flow-stat
+@bin bin/flow-tag
+@bin bin/flow-xlate
 include/ftlib.h
-include/ftpaths.h
 include/ftqueue.h
-include/ftradix.h
 lib/libft.a
+lib/libft.la
+@lib lib/libft.so.${LIBft_VERSION}
 @man man/man1/flow-capture.1
 @man man/man1/flow-cat.1
 @man man/man1/flow-dscan.1
