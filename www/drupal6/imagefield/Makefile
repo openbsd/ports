@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/23 10:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/05/06 09:27:40 stephan Exp $
 
 COMMENT =	image cck field
 
-DISTNAME = 	imagefield-6.x-3.2
-PKGNAME =	drupal6-imagefield-3.2
+DISTNAME = 	imagefield-6.x-3.3
+PKGNAME =	drupal6-imagefield-3.3
 
 RUN_DEPENDS =	::www/drupal6/filefield
 

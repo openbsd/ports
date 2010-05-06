@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/10/23 10:10:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/05/06 09:27:40 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}imagefield/
@@ -19,6 +19,7 @@ ${DRUPAL_MODS}imagefield/translations/de.po
 ${DRUPAL_MODS}imagefield/translations/es.po
 ${DRUPAL_MODS}imagefield/translations/fr.po
 @comment ${DRUPAL_MODS}imagefield/translations/fr.po.orig
+${DRUPAL_MODS}imagefield/translations/hu.po
 ${DRUPAL_MODS}imagefield/translations/imagefield.pot
 ${DRUPAL_MODS}imagefield/translations/it.po
 ${DRUPAL_MODS}imagefield/translations/ja.po
