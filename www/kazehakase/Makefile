@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/03 00:42:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2010/05/06 19:25:51 landry Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
 COMMENT-webkit=	kazehakase webkit backend
 CATEGORIES=	www
 
-SHARED_LIBS=	kazehakase 0.0 #.1.0
+SHARED_LIBS=	kazehakase 1.0 #.1.0
 SHARED_ONLY=	Yes
 
-VERSION=	0.5.6
+VERSION=	0.5.8
 DISTNAME=	kazehakase-${VERSION}
-PKGNAME-main=	kazehakase-common-${VERSION}p4
-PKGNAME-gecko=	${DISTNAME}p6
-PKGNAME-webkit=	kazehakase-webkit-${VERSION}p5
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/33533/}
+PKGNAME-main=	kazehakase-common-${VERSION}
+PKGNAME-gecko=	${DISTNAME}
+PKGNAME-webkit=	kazehakase-webkit-${VERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/43802/}
 
 HOMEPAGE=	http://kazehakase.sourceforge.jp/
 
@@ -36,16 +36,19 @@ MODULES=	devel/gettext \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-gecko-engine=xulrunner \
-			--disable-hyper-estraier \
+			--disable-heyper-estraier \
+			--disable-shave \
 			--without-ruby \
 			--without-rgettext
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib/xulrunner"
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/xulrunner1.9" \
+			CPPFLAGS="-I${LOCALBASE}/include"
 USE_LIBTOOL =		Yes
+USE_GMAKE =		Yes
 
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples
 
-BUILD_DEPENDS =		:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel
+BUILD_DEPENDS =		:xulrunner-devel->=1.9.1:devel/xulrunner/1.9,-devel
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			::devel/desktop-file-utils
@@ -57,11 +60,12 @@ RUN_DEPENDS-gecko =	${RUN_DEPENDS} \
 LIB_DEPENDS=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			dbus-glib-1::x11/dbus-glib \
 			gnutls::security/gnutls
 
 LIB_DEPENDS-gecko =	${LIB_DEPENDS-main} \
 			lib/kazehakase/kazehakase::www/kazehakase,-main \
-			xulrunner/xpcom:xulrunner->=1.8,<1.9:devel/xulrunner/1.8
+			xulrunner1.9/xpcom:xulrunner->=1.9.1:devel/xulrunner/1.9
 
 LIB_DEPENDS-webkit =	${LIB_DEPENDS} \
 			webkit-1.0::www/webkit
@@ -71,12 +75,14 @@ WANTLIB =		ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			freetype m z png cairo iconv intl atk-1.0 gio-2.0 glib-2.0 \
 			gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 glitz pcre pixman-1 tasn1 \
-			pthread-stubs xcb
+			pthread-stubs xcb xcb-render xcb-render-util dbus-1
 
 WANTLIB-main =		${WANTLIB} c gcrypt gpg-error pthread
 WANTLIB-gecko =		${WANTLIB} nspr4 plc4 plds4 gcrypt gpg-error
 WANTLIB-webkit =	${WANTLIB} Xt enchant gailutil gcrypt gnutls gpg-error \
 			icudata icui18n icuuc jpeg soup-2.4 sqlite3 stdc++ xml2 xslt \
-			gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
+			gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 \
+			gstapp-0.10
+
 
 .include <bsd.port.mk>

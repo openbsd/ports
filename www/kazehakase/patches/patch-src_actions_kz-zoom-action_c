@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_actions_kz-zoom-action_c,v 1.1 2010/05/06 19:25:51 landry Exp $
+--- src/actions/kz-zoom-action.c.orig	Mon May  3 22:08:21 2010
++++ src/actions/kz-zoom-action.c	Mon May  3 22:08:50 2010
+@@ -205,7 +205,7 @@ cb_spin_value_changed (GtkSpinButton *spin, KzZoomActi
+ 	KzWeb *web;
+ 	KzZoomActionPrivate *priv = KZ_ZOOM_ACTION_GET_PRIVATE (action);
+ 
+-	if (!priv->spin || !GTK_WIDGET_VISIBLE(priv->spin))
++	if (!priv->spin || !gtk_widget_get_visible(priv->spin))
+ 		return;
+ 
+ 	web = KZ_WINDOW_CURRENT_WEB(priv->kz);
+@@ -228,7 +228,7 @@ kz_zoom_action_set_ratio (KzZoomAction *action,
+ 	
+ 	priv = KZ_ZOOM_ACTION_GET_PRIVATE (action);
+ 
+-	if (!priv->spin || !GTK_WIDGET_VISIBLE(priv->spin))
++	if (!priv->spin || !gtk_widget_get_visible(priv->spin))
+ 		return;
+ 	
+ 	spin = priv->spin;
+@@ -249,7 +249,7 @@ kz_zoom_action_get_ratio (KzZoomAction *action)
+ 	
+ 	priv = KZ_ZOOM_ACTION_GET_PRIVATE (action);
+ 	
+-	if (!priv->spin || !GTK_WIDGET_VISIBLE(priv->spin))
++	if (!priv->spin || !gtk_widget_get_visible(priv->spin))
+ 		return 1.0;
+ 	ratio = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(priv->spin)) / 100;
+     

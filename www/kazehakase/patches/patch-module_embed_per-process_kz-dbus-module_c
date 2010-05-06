@@ -1,0 +1,13 @@
+$OpenBSD: patch-module_embed_per-process_kz-dbus-module_c,v 1.1 2010/05/06 19:25:51 landry Exp $
+sure, let's create dbus socket in a non-existent dir..
+--- module/embed/per-process/kz-dbus-module.c.orig	Thu May  6 20:32:57 2010
++++ module/embed/per-process/kz-dbus-module.c	Thu May  6 20:33:14 2010
+@@ -63,7 +63,7 @@ setup_dbus (void)
+     DBusError error;
+ 
+     dbus_error_init(&error);
+-    server = dbus_server_listen("unix:tmpdir=/tmp/kazehakase/dbus-server", &error);
++    server = dbus_server_listen("unix:tmpdir=/tmp", &error);
+     if (!server) {
+         g_print("%s\n", error.message);
+         dbus_error_free(&error);

@@ -1,0 +1,11 @@
+$OpenBSD: patch-module_embed_gecko_Makefile_in,v 1.1 2010/05/06 19:25:51 landry Exp $
+--- module/embed/gecko/Makefile.in.orig	Mon May  3 22:46:46 2010
++++ module/embed/gecko/Makefile.in	Mon May  3 22:47:00 2010
+@@ -440,6 +440,7 @@ INCLUDES = \
+ 	-I$(MOZILLA_INCLUDE_ROOT)/exthandler \
+ 	-I$(MOZILLA_INCLUDE_ROOT)/find \
+ 	-I$(MOZILLA_INCLUDE_ROOT)/gfx \
++	-I$(MOZILLA_INCLUDE_ROOT)/gtkembedmoz \
+ 	-I$(MOZILLA_INCLUDE_ROOT)/helperAppDlg \
+ 	-I$(MOZILLA_INCLUDE_ROOT)/intl \
+ 	-I$(MOZILLA_INCLUDE_ROOT)/imglib2 \

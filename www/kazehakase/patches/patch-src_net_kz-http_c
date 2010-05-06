@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_net_kz-http_c,v 1.1 2010/05/06 19:25:51 landry Exp $
+--- src/net/kz-http.c.orig	Mon May  3 22:01:54 2010
++++ src/net/kz-http.c	Mon May  3 22:02:01 2010
+@@ -25,7 +25,6 @@
+ #  include "config.h"
+ #endif /* HAVE_CONFIG_H */
+ 
+-#include <features.h>
+ #define __USE_XOPEN
+ #include <time.h>
+ #include "gnet.h"

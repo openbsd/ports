@@ -1,25 +1,24 @@
-$OpenBSD: patch-configure,v 1.4 2008/10/30 22:38:10 landry Exp $
---- configure.orig	Tue Oct 28 16:09:40 2008
-+++ configure	Thu Oct 30 22:43:13 2008
-@@ -29071,78 +29071,6 @@ fi
- 
+$OpenBSD: patch-configure,v 1.5 2010/05/06 19:25:51 landry Exp $
+--- configure.orig	Mon May  3 21:56:13 2010
++++ configure	Mon May  3 21:56:48 2010
+@@ -20796,77 +20796,6 @@ fi
  
  anthy_exists=no
--
+ 
 -pkg_failed=no
--{ echo "$as_me:$LINENO: checking for ANTHY" >&5
--echo $ECHO_N "checking for ANTHY... $ECHO_C" >&6; }
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ANTHY" >&5
+-$as_echo_n "checking for ANTHY... " >&6; }
 -
 -if test -n "$PKG_CONFIG"; then
 -    if test -n "$ANTHY_CFLAGS"; then
 -        pkg_cv_ANTHY_CFLAGS="$ANTHY_CFLAGS"
 -    else
 -        if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"anthy\"") >&5
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"anthy\""; } >&5
 -  ($PKG_CONFIG --exists --print-errors "anthy") 2>&5
 -  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; then
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
 -  pkg_cv_ANTHY_CFLAGS=`$PKG_CONFIG --cflags "anthy" 2>/dev/null`
 -else
 -  pkg_failed=yes
@@ -33,11 +32,11 @@ $OpenBSD: patch-configure,v 1.4 2008/10/30 22:38:10 landry Exp $
 -        pkg_cv_ANTHY_LIBS="$ANTHY_LIBS"
 -    else
 -        if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"anthy\"") >&5
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"anthy\""; } >&5
 -  ($PKG_CONFIG --exists --print-errors "anthy") 2>&5
 -  ac_status=$?
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); }; then
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
 -  pkg_cv_ANTHY_LIBS=`$PKG_CONFIG --libs "anthy" 2>/dev/null`
 -else
 -  pkg_failed=yes
@@ -64,34 +63,19 @@ $OpenBSD: patch-configure,v 1.4 2008/10/30 22:38:10 landry Exp $
 -	# Put the nasty error message in config.log where it belongs
 -	echo "$ANTHY_PKG_ERRORS" >&5
 -
--	{ echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6; }
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
 -                anthy_exists=no
 -elif test $pkg_failed = untried; then
 -	anthy_exists=no
 -else
 -	ANTHY_CFLAGS=$pkg_cv_ANTHY_CFLAGS
 -	ANTHY_LIBS=$pkg_cv_ANTHY_LIBS
--        { echo "$as_me:$LINENO: result: yes" >&5
--echo "${ECHO_T}yes" >&6; }
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
 -	anthy_exists=yes
 -fi
 -
  # Extract the first word of "mecab-config", so it can be a program name with args.
  set dummy mecab-config; ac_word=$2
- { echo "$as_me:$LINENO: checking for $ac_word" >&5
-@@ -31100,13 +31028,7 @@ done
-         sed -e "/POTFILES =/r po/POTFILES" po/Makefile.in > po/Makefile
-       esac ;;
-     "rgettext":C)
--sed \
--  -i'' \
--  -e "s/EXTRA_DISTFILES = /EXTRA_DISTFILES = rgettext.mk.in /
--      s/^itlocaledir = /itlocaledir = \$(datadir)\/locale\n#itlocaledir = /
--      /	\$(GENPOT)/r po/rgettext.mk
--     " \
--  po/Makefile
-+perl -i -pe 's/^itlocaledir = /itlocaledir = \$\(datadir\)\/locale\n#itlocaledir = /' po/Makefile
-  ;;
-     "po/stamp-it":C)
-     rm -f "po/stamp-it" "po/stamp-it.tmp" "po/POTFILES" "po/Makefile.tmp"
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5

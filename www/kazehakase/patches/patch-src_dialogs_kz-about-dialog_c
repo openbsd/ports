@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_dialogs_kz-about-dialog_c,v 1.1 2010/05/06 19:25:51 landry Exp $
+--- src/dialogs/kz-about-dialog.c.orig	Mon May  3 22:09:12 2010
++++ src/dialogs/kz-about-dialog.c	Mon May  3 22:09:30 2010
+@@ -78,7 +78,7 @@ cb_expose_event(GtkWidget *widget, GdkEventExpose *eve
+ 
+ 	/* Draw background image */
+ 	gdk_draw_pixbuf(widget->window,
+-			widget->style->bg_gc[GTK_WIDGET_STATE(widget)],
++			widget->style->bg_gc[gtk_widget_get_state(widget)],
+ 			image,
+ 			0, 0,
+ 			0, 0,
+@@ -87,7 +87,7 @@ cb_expose_event(GtkWidget *widget, GdkEventExpose *eve
+ 			0, 0);
+ 	/* Draw logo at top right */
+ 	gdk_draw_pixbuf(widget->window,
+-			widget->style->fg_gc[GTK_WIDGET_STATE(widget)],
++			widget->style->fg_gc[gtk_widget_get_state(widget)],
+ 			logo,
+ 			0, 0,
+ 			bg_width - logo_width, 0,
+@@ -113,7 +113,7 @@ cb_expose_event(GtkWidget *widget, GdkEventExpose *eve
+ 	pango_layout_set_alignment(info_layout, PANGO_ALIGN_RIGHT);
+ 	pango_layout_get_pixel_extents(info_layout, &link, &logical);
+ 	gdk_draw_layout(widget->window,
+-			widget->style->fg_gc[GTK_WIDGET_STATE(widget)],
++			widget->style->fg_gc[gtk_widget_get_state(widget)],
+ 			bg_width - logical.width, logo_height,
+ 			info_layout);
+ 	g_free (version);
+@@ -127,7 +127,7 @@ cb_expose_event(GtkWidget *widget, GdkEventExpose *eve
+ 	pango_layout_set_width(copyright_layout, -1);
+ 	pango_layout_get_pixel_extents(copyright_layout, &link, &logical);
+ 	gdk_draw_layout(widget->window,
+-			widget->style->fg_gc[GTK_WIDGET_STATE(widget)],
++			widget->style->fg_gc[gtk_widget_get_state(widget)],
+ 			bg_width - logical.width, bg_height - logical.height,
+ 			copyright_layout);
+ 

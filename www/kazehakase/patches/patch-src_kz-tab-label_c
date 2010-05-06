@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_kz-tab-label_c,v 1.1 2010/05/06 19:25:51 landry Exp $
+--- src/kz-tab-label.c.orig	Mon May  3 22:10:21 2010
++++ src/kz-tab-label.c	Mon May  3 22:11:12 2010
+@@ -519,7 +519,7 @@ kz_tab_label_set_state (KzTabLabel *kztab,
+ 	
+ 	g_return_if_fail(KZ_IS_TAB_LABEL(kztab));
+ 
+-	if (!GTK_WIDGET_REALIZED(kztab)) return;
++	if (!gtk_widget_get_realized(kztab)) return;
+ 
+ 	priv = KZ_TAB_LABEL_GET_PRIVATE (kztab);
+ 	if (priv->create_thumbnail &&
+@@ -965,7 +965,7 @@ cb_progress (KzWeb *web, gdouble ratio, KzTabLabel *kz
+ 
+ 	widget = GTK_WIDGET(kztab);
+ 
+-	if(GTK_WIDGET_REALIZED(widget))
++	if(gtk_widget_get_realized(widget))
+ 	{
+ 		GdkBitmap *mask;
+ 		KzTabLabelPrivate *priv = KZ_TAB_LABEL_GET_PRIVATE(kztab);

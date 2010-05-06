@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_kz-download-box_c,v 1.1 2010/05/06 19:25:51 landry Exp $
+--- src/kz-download-box.c.orig	Mon May  3 22:09:39 2010
++++ src/kz-download-box.c	Mon May  3 22:09:52 2010
+@@ -344,7 +344,7 @@ cb_add_item (KzDownloaderGroup *dlgrp,
+ 				icon_set,
+ 				icon->image->style,
+ 				gtk_widget_get_direction(icon->image),
+-				GTK_WIDGET_STATE(icon->image),
++				gtk_widget_get_state(icon->image),
+ 				GTK_ICON_SIZE_MENU,
+ 				icon->image,
+ 				"download icon");

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_kz-window_c,v 1.1 2010/05/06 19:25:51 landry Exp $
+--- src/kz-window.c.orig	Mon May  3 22:12:38 2010
++++ src/kz-window.c	Mon May  3 22:12:46 2010
+@@ -615,7 +615,7 @@ kz_window_remove_tab (KzWindow *kz, GtkWidget *widget)
+ 
+ 	g_return_if_fail(KZ_IS_WINDOW(kz));
+ 
+-	if (!GTK_WIDGET_REALIZED(kz)) return;
++	if (!gtk_widget_get_realized(kz)) return;
+ 
+ 	web = KZ_WINDOW_CURRENT_WEB(kz);
+ 	kz_actions_set_sensitive(kz, web);

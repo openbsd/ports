@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/12/22 13:02:12 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2010/05/06 19:25:51 landry Exp $
 @conflict kazehakase-<=0.5.4
 @bin bin/kazehakase
+@bin bin/kz-embed-process
 lib/kazehakase/
 lib/kazehakase/embed/
+lib/kazehakase/embed/per_process.a
+lib/kazehakase/embed/per_process.la
+lib/kazehakase/embed/per_process.so
 lib/kazehakase/libkazehakase.a
 lib/kazehakase/libkazehakase.la
 @lib lib/kazehakase/libkazehakase.so.${LIBkazehakase_VERSION}
@@ -80,6 +84,12 @@ share/kazehakase/icons/kz-yellow.png
 share/kazehakase/kz-no-thumbnail.png
 share/kazehakase/search-result.css
 share/kazehakase/search-result.js
+share/locale/cs/LC_MESSAGES/kazehakase.mo
+share/locale/de/LC_MESSAGES/kazehakase.mo
+share/locale/fr/LC_MESSAGES/kazehakase.mo
+share/locale/ja/LC_MESSAGES/kazehakase.mo
+share/locale/nl/LC_MESSAGES/kazehakase.mo
+share/locale/ru/LC_MESSAGES/kazehakase.mo
 share/pixmaps/
 share/pixmaps/kazehakase-icon.png
 @exec %D/bin/update-desktop-database

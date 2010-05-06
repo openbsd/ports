@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_kz-web_c,v 1.1 2010/05/06 19:25:51 landry Exp $
+--- src/kz-web.c.orig	Mon May  3 22:11:46 2010
++++ src/kz-web.c	Mon May  3 22:12:27 2010
+@@ -656,7 +656,7 @@ size_request (GtkWidget *widget, GtkRequisition *requi
+ 
+     requisition->height = GTK_CONTAINER(widget)->border_width;
+ 
+-    if (child && GTK_WIDGET_VISIBLE(child)) {
++    if (child && gtk_widget_get_visible(child)) {
+         gtk_widget_size_request(child, &child_requisition);
+         requisition->width += child_requisition.width;
+         requisition->height += child_requisition.height;
+@@ -669,11 +669,11 @@ size_allocate (GtkWidget *widget, GtkAllocation *alloc
+     GtkWidget *child;
+     GtkAllocation child_allocation;
+ 
+-    if (!GTK_WIDGET_REALIZED(widget))
++    if (!gtk_widget_get_realized(widget))
+         return;
+     widget->allocation = *allocation;
+ 
+-    if (GTK_WIDGET_NO_WINDOW(widget)) {
++    if (!gtk_widget_get_has_window(widget)) {
+         child_allocation.x = allocation->x + GTK_CONTAINER(widget)->border_width;
+         child_allocation.y = allocation->y + GTK_CONTAINER(widget)->border_width;
+     } else {
