@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST-doc,v 1.9 2010/04/22 21:49:37 kili Exp $
+@comment $OpenBSD: PLIST-doc,v 1.10 2010/05/06 20:00:19 kili Exp $
 share/doc/ghc/
+share/doc/ghc/Cabal.pdf
+share/doc/ghc/Cabal.ps
+share/doc/ghc/haddock.pdf
+share/doc/ghc/haddock.ps
 share/doc/ghc/html/
 share/doc/ghc/html/Cabal/
 share/doc/ghc/html/Cabal/authors.html
@@ -2218,7 +2222,6 @@ share/doc/ghc/html/libraries/unix-2.4.0.1/System-Posix-IO.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/System-Posix-Process-Internals.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/System-Posix-Process.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/System-Posix-Resource.html
-share/doc/ghc/html/libraries/unix-2.4.0.1/System-Posix-Semaphore.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/System-Posix-SharedMem.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/System-Posix-Signals-Exts.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/System-Posix-Signals.html
@@ -2269,7 +2272,6 @@ share/doc/ghc/html/libraries/unix-2.4.0.1/mini_System-Posix-IO.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/mini_System-Posix-Process-Internals.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/mini_System-Posix-Process.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/mini_System-Posix-Resource.html
-share/doc/ghc/html/libraries/unix-2.4.0.1/mini_System-Posix-Semaphore.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/mini_System-Posix-SharedMem.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/mini_System-Posix-Signals-Exts.html
 share/doc/ghc/html/libraries/unix-2.4.0.1/mini_System-Posix-Signals.html
@@ -2392,3 +2394,5 @@ share/doc/ghc/html/users_guide/win32-dlls.html
 share/doc/ghc/html/users_guide/win32.html
 share/doc/ghc/html/users_guide/wrong-compilee.html
 share/doc/ghc/html/users_guide/wrong.html
+share/doc/ghc/users_guide.pdf
+share/doc/ghc/users_guide.ps

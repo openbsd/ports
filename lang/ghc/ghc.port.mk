@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.7 2010/04/22 21:49:37 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.8 2010/05/06 20:00:19 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -46,7 +46,7 @@ SUBST_VARS +=			DISTNAME MODGHC_HACKAGE_VERSION
 . if ${MODGHC_BUILD:L:Mcabal}
 MODGHC_SETUP_SCRIPT ?=		Setup.lhs Setup.hs
 MODGHC_SETUP_PROG ?=		${WRKSRC}/Setup
-MODGHC_SETUP_CONF_ARGS ?=	configure -g -O --prefix=${PREFIX}
+MODGHC_SETUP_CONF_ARGS ?=
 MODGHC_SETUP_CONF_ENV ?=	HOME=${PORTHOME} PATH=${PATH}
 
 .  if ${MODGHC_BUILD:L:Mhaddock}
@@ -65,7 +65,9 @@ MODCABAL_configure = \
 		break; \
 	done && \
 	cd ${WRKBUILD} && exec ${SETENV} ${MODGHC_SETUP_CONF_ENV} \
-		${MODGHC_SETUP_PROG} ${MODGHC_SETUP_CONF_ARGS}
+		${MODGHC_SETUP_PROG} \
+			configure -g -O --prefix=${PREFIX} \
+			${MODGHC_SETUP_CONF_ARGS}
 
 CONFIGURE_STYLE +=		CABAL
 

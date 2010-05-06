@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2010/04/25 13:40:30 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2010/05/06 20:00:19 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
-PKGNAME-main =		ghc-${MODGHC_VER}p0
-PKGNAME-doc =		ghc-doc-${MODGHC_VER}
+PKGNAME-main =		ghc-${MODGHC_VER}p1
+PKGNAME-doc =		ghc-doc-${MODGHC_VER}p0
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
@@ -27,7 +27,8 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 PKG_ARCH-doc =		*
-BUILD_DEPENDS =		::textproc/docbook \
+BUILD_DEPENDS =		::textproc/dblatex \
+			::textproc/docbook \
 			::textproc/docbook-xsl \
 			::textproc/libxslt
 LIB_DEPENDS-doc =
@@ -66,6 +67,16 @@ MAKE_FLAGS +=		StripLibraries=YES \
 			HSCOLOUR_SRCS=NO \
 			INTEGER_LIBRARY=integer-simple
 
+FAKE_FLAGS +=		CREATE_DATA="${INSTALL_DATA} /dev/null " \
+			CREATE_SCRIPT="${INSTALL_SCRIPT} /dev/null " \
+			INSTALL_DATA="${INSTALL_DATA}" \
+			INSTALL_DIR="${INSTALL_DATA_DIR}" \
+			INSTALL_DOC="${INSTALL_DATA}" \
+			INSTALL_HEAD="${INSTALL_DATA}" \
+			INSTALL_MAN="${INSTALL_MAN}" \
+			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+			INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+
 BUILD_DEPENDS +=	::devel/haddock,no_deps:patch
 
 REGRESS_DEPENDS =	::print/ghostscript/gnu
@@ -94,8 +105,8 @@ post-patch:
 post-install:
 	cd ${PREFIX}/lib/ghc && \
 	GHC_PKG="./ghc-pkg --global-conf ./package.conf.d" && \
+	${INSTALL_SCRIPT} /dev/null register.sh && \
 	exec > register.sh && \
-	chmod 755 register.sh && \
 	echo '#!/bin/sh' && \
 	echo 'exec > /dev/null 2>&1' && \
 	echo 'p="$${0%/*}/ghc-pkg --global-conf $${0%/*}/package.conf.d"' && \
@@ -104,8 +115,8 @@ post-install:
 		$$GHC_PKG describe $$p && \
 		echo EOF; \
 	done && \
+	${INSTALL_SCRIPT} /dev/null unregister.sh && \
 	exec > unregister.sh && \
-	chmod 755 unregister.sh && \
 	echo '#!/bin/sh' && \
 	echo 'exec > /dev/null 2>&1' && \
 	echo 'p="$${0%/*}/ghc-pkg --global-conf $${0%/*}/package.conf.d"' && \

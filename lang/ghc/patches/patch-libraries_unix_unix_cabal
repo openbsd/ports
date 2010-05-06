@@ -1,0 +1,11 @@
+$OpenBSD: patch-libraries_unix_unix_cabal,v 1.1 2010/05/06 20:00:19 kili Exp $
+--- libraries/unix/unix.cabal.orig	Tue Apr 20 20:10:14 2010
++++ libraries/unix/unix.cabal	Sun May  2 12:30:02 2010
+@@ -45,7 +45,6 @@ Library
+         System.Posix.User
+         System.Posix.Signals
+         System.Posix.Signals.Exts
+-        System.Posix.Semaphore
+         System.Posix.SharedMem
+     build-depends:	base >= 4.2 && < 4.3
+     extensions:	CPP, ForeignFunctionInterface, EmptyDataDecls

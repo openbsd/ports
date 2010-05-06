@@ -1,0 +1,17 @@
+$OpenBSD: patch-mk_config_mk_in,v 1.3 2010/05/06 20:00:19 kili Exp $
+--- mk/config.mk.in.orig	Tue Apr 20 20:10:07 2010
++++ mk/config.mk.in	Wed May  5 18:48:09 2010
+@@ -245,13 +245,6 @@ ifeq "$(BootingFromHc)" "NO"
+ GhcRTSWays += debug 
+ endif
+ 
+-# Want the threaded versions unless we're unregisterised
+-# Defer the check until later by using $(if..), because GhcUnregisterised might
+-# be set in build.mk, which hasn't been read yet.
+-GhcRTSWays += $(if $(findstring NO, $(GhcUnregisterised)),thr thr_debug thr_l,)
+-GhcRTSWays += $(if $(findstring p, $(GhcLibWays)),$(if $(findstring NO, $(GhcUnregisterised)),thr_p,),)
+-GhcRTSWays += $(if $(findstring dyn, $(GhcLibWays)), dyn debug_dyn $(if $(findstring NO, $(GhcUnregisterised)),thr_dyn thr_debug_dyn),)
+-
+ # We can only build GHCi threaded if we have a threaded RTS:
+ GhcThreaded = $(if $(findstring thr,$(GhcRTSWays)),YES,NO)
+ 

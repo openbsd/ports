@@ -1,0 +1,19 @@
+$OpenBSD: patch-libraries_unix_System_Posix_hs,v 1.1 2010/05/06 20:00:19 kili Exp $
+--- libraries/unix/System/Posix.hs.orig	Tue Apr 20 20:10:13 2010
++++ libraries/unix/System/Posix.hs	Sun May  2 12:30:38 2010
+@@ -26,7 +26,6 @@ module System.Posix (
+   module System.Posix.Time,
+   module System.Posix.User,
+   module System.Posix.Resource,
+-  module System.Posix.Semaphore,
+   module System.Posix.SharedMem
+  ) where
+ 
+@@ -43,7 +42,6 @@ import System.Posix.Terminal
+ import System.Posix.Time
+ import System.Posix.User
+ import System.Posix.Resource
+-import System.Posix.Semaphore
+ import System.Posix.SharedMem
+ 
+ {- TODO

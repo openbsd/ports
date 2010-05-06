@@ -1,0 +1,16 @@
+$OpenBSD: patch-libraries_unix_configure,v 1.1 2010/05/06 20:00:19 kili Exp $
+--- libraries/unix/configure.orig	Tue Apr 20 20:11:13 2010
++++ libraries/unix/configure	Sat May  1 20:32:36 2010
+@@ -6649,12 +6649,6 @@ test -n "$target_alias" &&
+ PTHREAD_CFLAGS=
+ PTHREAD_LDFLAGS=
+ PTHREAD_LIBS=
+-case "$host_os" in
+-openbsd*)
+-	PTHREAD_CFLAGS=-pthread
+-	PTHREAD_LDFLAGS=-pthread
+-	;;
+-esac
+ 
+ 
+ 
