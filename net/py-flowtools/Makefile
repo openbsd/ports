@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2009/03/28 16:49:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/05/06 21:41:57 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	python interface to flow-tools file format
 
-DISTNAME=	pyflowtools-0.3
-PKGNAME=	${DISTNAME:S/pyflow/py-flow/g}p3
+MODPY_EGG_VERSION=0.3.4
+DISTNAME=	pyflowtools-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME:S/pyflow/py-flow/g}
 CATEGORIES=	net
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
@@ -16,16 +17,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://mail.net.informatik.tu-muenchen.de/~robin/flowtools/
+WANTLIB+=	z
 
-BUILD_DEPENDS=	::net/flow-tools
+HOMEPAGE=	http://code.google.com/p/pyflowtools/
+MASTER_SITES=	http://pyflowtools.googlecode.com/files/
+
+LIB_DEPENDS=	ft::net/flow-tools
 MODULES=	lang/python
 
 NO_REGRESS= 	Yes
 
 MODPY_DISTUTILS_BUILD=	build_ext
 MODPY_DISTUTILS_BUILDARGS=-I${LOCALBASE}/include -L${LOCALBASE}/lib
-WANTLIB+=	z
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-flowtools
