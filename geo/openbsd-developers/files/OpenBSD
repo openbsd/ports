@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.56 2010/05/06 09:27:31 gilles Exp $
+# $OpenBSD: OpenBSD,v 1.57 2010/05/06 10:39:55 otto Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -86,7 +86,7 @@
 52.2		12.75		"uwe"		# Uwe Stuehler
 52.26		4.63		"camield"	# Camiel Dobbelaar
 52.28083	10.57271	"kili"		# Matthias Kilian
-52.35		4.62		"otto"		# Otto Moerbeek
+52.35447	4.630657	"otto"		# Otto Moerbeek
 52.3667		9.71667		"reyk"		# Reyk Floeter
 52.3717		9.73416		"phessler"	# Peter Hessler
 52.5		21		"alek"		# Aleksander Piotrowski
