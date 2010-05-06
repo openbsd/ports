@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.7 2010/05/04 09:45:41 espie Exp $
+# $OpenBSD: Signature.pm,v 1.8 2010/05/06 15:50:13 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -40,12 +40,18 @@ sub compare1
 	my ($s1, $s2, $h1, $h2) = @_;
 	my $r = '';
 	while (my ($stem, $lib) = each %$s1) {
+		next if $stem eq 'la';
 		if (!defined $s2->{$stem}) {
 			$r .= "Can't find ".$lib->to_string." on $h2\n";
 		} elsif ($s2->{$stem}->to_string ne $lib->to_string) {
 			$r .= "versions don't match: ".
 			    $s2->{$stem}->to_string." on $h2 vs ".
 			    $lib->to_string.  " on $h1\n";
+		}
+	}
+	for my $k (keys %{$s1->{la}}) {
+		if (!defined $s2->{la}{$k}) {
+			$r .= "$h2 does not have $k.la (from $h1)\n";
 		}
 	}
 	return $r;
@@ -83,9 +89,13 @@ sub process
 	my $fh = $core->fh;
 	my $repo = $self->{repo};
 	while (<$fh>) {
-		my $lib = OpenBSD::Library->from_string("$self->{dir}/$_");
-		next unless $lib->is_valid;
-		$repo->best($lib);
+		if ($_ =~ m/(.*).la/) {
+			$repo->{la}->{$1} = 1;
+		} else {
+			my $lib = OpenBSD::Library->from_string("$self->{dir}/$_");
+			next unless $lib->is_valid;
+			$repo->best($lib);
+		}
 	}
 }
 
