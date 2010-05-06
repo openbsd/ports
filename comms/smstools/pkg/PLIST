@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/06/02 15:57:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/05/06 23:01:59 sthen Exp $
 @conflict gnokii-*
 @newgroup _smsd:590
 @newuser _smsd:590:_smsd:daemon:smsd user:/nonexistent:/sbin/nologin
@@ -8,11 +8,13 @@ bin/sms2unicode
 @bin bin/smsd
 bin/unicode2sms
 share/doc/smstools/
+share/doc/smstools/at-commands.html
 share/doc/smstools/blacklist.html
 share/doc/smstools/book.html
 share/doc/smstools/compiling.html
 share/doc/smstools/configure.html
 share/doc/smstools/configure2.html
+share/doc/smstools/error-messages.html
 share/doc/smstools/eventhandler.html
 share/doc/smstools/faq.html
 share/doc/smstools/fileformat.html
@@ -60,3 +62,5 @@ share/examples/smstools/smsd.conf.openbsd
 @sample /var/spool/sms/incoming/
 @sample /var/spool/sms/checked/
 @sample /var/spool/sms/outgoing/
+@extraunexec rm -rf /var/spool/sms
+@extraunexec rm -rf /var/log/smsd
