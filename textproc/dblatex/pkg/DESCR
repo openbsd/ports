@@ -1,0 +1,3 @@
+With dblatex you can transform a DocBook XML/SGML book or article
+to pure LaTeX and compile the temporary LaTeX file with latex,
+pdflatex, or xelatex to produce DVI, PostScript and PDF files.

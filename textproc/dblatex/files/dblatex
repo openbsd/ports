@@ -1,0 +1,3 @@
+#!${MODPY_BIN}
+from dbtexmf.dblatex import dblatex
+dblatex.main("${LOCALBASE}/share/dblatex")
