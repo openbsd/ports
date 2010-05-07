@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.7 2010/05/07 19:41:40 pirofti Exp $
+# $OpenBSD: gcc4.port.mk,v 1.8 2010/05/07 20:04:23 pirofti Exp $
 
 MODGCC4_ARCHES?=
 MODGCC4_LANGS?=
@@ -20,26 +20,26 @@ MODGCC4_LANGS+=	${_MODGCC4CC}
 .      for _j in ${MODGCC4_LANGS:L}
 .        if !empty(_MODGCC4CC:L:M${_j})
 BUILD_DEPENDS+=	::lang/gcc/4.2
-MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/eg${_MODGCC4CC} ${WRKDIR}/bin/g${_MODGCC4CC};
-MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/eg${_MODGCC4CC} ${WRKDIR}/bin/${_MODGCC4CC};
+MODGCC4_post-patch+= ln -sf ${LOCALBASE}/bin/eg${_MODGCC4CC} ${WRKDIR}/bin/g${_MODGCC4CC};
+MODGCC4_post-patch+= ln -sf ${LOCALBASE}/bin/eg${_MODGCC4CC} ${WRKDIR}/bin/${_MODGCC4CC};
 .        endif
 .        if !empty(_MODGCC4CXX:L:M${_j})
 BUILD_DEPENDS+=	::lang/gcc/4.2,-c++
 LIB_DEPENDS+=	estdc++.>=7:libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:lang/gcc/4.2,-estdc
-MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC4CXX} ${WRKDIR}/bin/g++;
-MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC4CXX} ${WRKDIR}/bin/${_MODGCC4CXX};
+MODGCC4_post-patch+= ln -sf ${LOCALBASE}/bin/e${_MODGCC4CXX} ${WRKDIR}/bin/g++;
+MODGCC4_post-patch+= ln -sf ${LOCALBASE}/bin/e${_MODGCC4CXX} ${WRKDIR}/bin/${_MODGCC4CXX};
 .        endif
 .        if !empty(_MODGCC4FORTRAN:L:M${_j})
 BUILD_DEPENDS+=	::lang/gcc/4.2,-f95
 LIB_DEPENDS+=	gfortran.>=2:g95->=4.2,<4.3|g95->=4.2v0,<4.3v0:lang/gcc/4.2,-f95
-MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/eg${_MODGCC4FORTRAN} ${WRKDIR}/bin/g${_MODGCC4FORTRAN};
+MODGCC4_post-patch+= ln -sf ${LOCALBASE}/bin/eg${_MODGCC4FORTRAN} ${WRKDIR}/bin/g${_MODGCC4FORTRAN};
 .	 endif
 .        if !empty(_MODGCC4JAVA:L:M${_j})
 BUILD_DEPENDS+=	::lang/gcc/4.2,-java,java
-MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/egcj ${WRKDIR}/bin/gcj;
-MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/egcjh ${WRKDIR}/bin/gcjh;
-MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/ejar ${WRKDIR}/bin/gjar;
-MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/egij ${WRKDIR}/bin/gij;
+MODGCC4_post-patch+= ln -sf ${LOCALBASE}/bin/egcj ${WRKDIR}/bin/gcj;
+MODGCC4_post-patch+= ln -sf ${LOCALBASE}/bin/egcjh ${WRKDIR}/bin/gcjh;
+MODGCC4_post-patch+= ln -sf ${LOCALBASE}/bin/ejar ${WRKDIR}/bin/gjar;
+MODGCC4_post-patch+= ln -sf ${LOCALBASE}/bin/egij ${WRKDIR}/bin/gij;
 .	 endif
 .      endfor
 .    endif
