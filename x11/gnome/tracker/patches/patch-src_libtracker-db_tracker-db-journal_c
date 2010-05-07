@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libtracker-db_tracker-db-journal_c,v 1.2 2010/04/23 09:57:25 ajacoutot Exp $
---- src/libtracker-db/tracker-db-journal.c.orig	Thu Apr 22 12:24:04 2010
-+++ src/libtracker-db/tracker-db-journal.c	Fri Apr 23 10:04:21 2010
-@@ -796,6 +796,15 @@ tracker_db_journal_reader_verify_last (GError **error)
+$OpenBSD: patch-src_libtracker-db_tracker-db-journal_c,v 1.3 2010/05/07 07:22:47 ajacoutot Exp $
+--- src/libtracker-db/tracker-db-journal.c.orig	Thu May  6 14:27:57 2010
++++ src/libtracker-db/tracker-db-journal.c	Fri May  7 08:49:44 2010
+@@ -797,6 +797,15 @@ tracker_db_journal_reader_verify_last (GError **error)
  	return success;
  }
  

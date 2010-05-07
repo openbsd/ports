@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/04/24 00:35:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/05/07 07:22:47 ajacoutot Exp $
 @bin bin/tracker-control
 @bin bin/tracker-explorer
 @bin bin/tracker-import
@@ -264,6 +264,7 @@ share/tracker/tracker-status.xml
 share/tracker/tracker-writeback.xml
 share/tracker/tst.ui
 share/vala/vapi/tracker-client-0.8.vapi
+share/vala/vapi/tracker-miner-0.8.deps
 share/vala/vapi/tracker-miner-0.8.vapi
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
