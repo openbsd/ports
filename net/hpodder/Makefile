@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/05/06 20:05:24 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/05/07 11:00:34 dcoppa Exp $
 
 COMMENT =		podcast aggregator written in Haskell
 
@@ -28,6 +28,6 @@ RUN_DEPENDS =		:curl->=7.15.5:net/curl \
 			:py-mutagen->=1.9:audio/py-mutagen
 
 post-install:
-	${INSTALL_MAN} files/hpodder.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/hpodder.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
