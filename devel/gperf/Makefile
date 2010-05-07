@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2009/06/09 16:00:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2010/05/07 16:00:01 robert Exp $
 
 COMMENT=	perfect hash functions, to help write parsers
 
-DISTNAME=	gperf-3.0.1
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	gperf-3.0.4
+PKGNAME=	${DISTNAME}
 CATEGORIES=   	devel
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
