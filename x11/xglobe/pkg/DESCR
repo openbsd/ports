@@ -1,16 +1,8 @@
-XGlobe displays the earth as seen from space on your X desktop, similar 
-to xearth by Kirk Lauritz Johnson. 
-The image of the globe is updated at regular intervals. 
-XGlobe uses a world map image which is mapped to the globe.
-With a good map this can look very nice.
-It is possible to mark locations on the globe.
-
-Also look for the openbsd-markers package, which collates
-the location of many major developers and other people from the OpenBSD
-community.
-
-Look at the home page of this project for a fairly extensive collection of maps.
-
-Available flavors:
-no_map
-	does not include the default map
+XGlobe displays the earth as seen from space on your X desktop, similar
+to xearth by Kirk Lauritz Johnson. The image of the globe is updated at
+regular intervals. XGlobe uses a world map image which is mapped to the
+globe. With a good map this can look very nice. It is possible to mark
+locations on the globe. Also look for the openbsd-developers package,
+which collates the location of some of the developers.
+Look at the home page of this project for a fairly extensive collection
+of maps.
