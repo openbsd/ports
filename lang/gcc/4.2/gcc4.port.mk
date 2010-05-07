@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.6 2009/11/18 00:49:09 sthen Exp $
+# $OpenBSD: gcc4.port.mk,v 1.7 2010/05/07 19:41:40 pirofti Exp $
 
 MODGCC4_ARCHES?=
 MODGCC4_LANGS?=
@@ -31,7 +31,7 @@ MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC4CXX} ${WRKDIR}/bin/${_MOD
 .        endif
 .        if !empty(_MODGCC4FORTRAN:L:M${_j})
 BUILD_DEPENDS+=	::lang/gcc/4.2,-f95
-LIB_DEPENDS+=	gfortran.>=2:g95->=4.2,<4.3:lang/gcc/4.2,-f95
+LIB_DEPENDS+=	gfortran.>=2:g95->=4.2,<4.3|g95->=4.2v0,<4.3v0:lang/gcc/4.2,-f95
 MODGCC4_post-patch+= ln -s ${LOCALBASE}/bin/eg${_MODGCC4FORTRAN} ${WRKDIR}/bin/g${_MODGCC4FORTRAN};
 .	 endif
 .        if !empty(_MODGCC4JAVA:L:M${_j})
