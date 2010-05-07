@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2010/04/25 19:12:13 kili Exp $
+# $OpenBSD: Makefile,v 1.210 2010/05/07 15:14:26 kevlo Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -62,6 +62,7 @@
      SUBDIR += frotz
      SUBDIR += frozen-bubble
      SUBDIR += gargoyle
+     SUBDIR += gbrainy
      SUBDIR += gcompris
      SUBDIR += gemdropx
      SUBDIR += ggz
