@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/04/23 10:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2010/05/07 13:17:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,9 +6,8 @@ COMMENT=	GNOME web browser based on webkit
 
 # PLIST regen is needed for at least the following ports when
 # the epiphany extensions directory changes:
-# (i.e. ${LOCALBASE}/lib/epiphany/2.29/extensions)
+# (i.e. ${LOCALBASE}/lib/epiphany/${API_V}/extensions)
 # www/epiphany-extensions
-# x11/gnome/seahorse-plugins
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.30.2
