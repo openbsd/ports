@@ -1,14 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/27 08:14:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/05/07 13:16:34 ajacoutot Exp $
 @bin bin/seahorse-agent
 @bin bin/seahorse-preferences
 @bin bin/seahorse-tool
 lib/bonobo/servers/GNOME_SeahorseApplet.server
-lib/epiphany/
-lib/epiphany/2.29/
-lib/epiphany/2.29/extensions/
-@comment lib/epiphany/2.29/extensions/libseahorseextension.la
-lib/epiphany/2.29/extensions/libseahorseextension.so
-lib/epiphany/2.29/extensions/seahorse.ephy-extension
+lib/gedit-2/
+lib/gedit-2/plugins/
 @comment lib/gedit-2/plugins/libseahorse-pgp.la
 lib/gedit-2/plugins/libseahorse-pgp.so
 lib/gedit-2/plugins/seahorse-pgp.gedit-plugin

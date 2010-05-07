@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/04/27 08:14:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2010/05/07 13:16:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	plugins and utilities for seahorse
 
 GNOME_PROJECT=	seahorse-plugins
 GNOME_VERSION=	2.30.1
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	security
 
@@ -28,17 +29,14 @@ WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 gpg-error gpgme
 WANTLIB += gthread-2.0 gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
 WANTLIB += ssl util xcb xcb-render xcb-render-util xml2 z
-WANTLIB += nspr4 plc4 plds4
 
 BUILD_DEPENDS=	:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel \
-		::www/epiphany \
 		::x11/gnome/gedit
 
 LIB_DEPENDS=	cryptui::x11/gnome/seahorse \
 		gtksourceview-2.0.>=2::x11/gtksourceview \
 		nautilus-extension.>=2::x11/gnome/nautilus\
-		panel-applet-2.>=1::x11/gnome/panel \
-		xulrunner/gtkembedmoz.>=2,xulrunner/xpcom:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8
+		panel-applet-2.>=1::x11/gnome/panel
 
 RUN_DEPENDS=	:shared-mime-info->=0.21:misc/shared-mime-info
 
@@ -55,9 +53,11 @@ MODGCONF2_SCHEMAS_DIR=	seahorse-plugins
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--disable-update-mime-database \
-		--with-gecko=xulrunner \
 		--disable-cpp-rtti
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# the plugin needs a gecko epiphany, ours uses webkit
+CONFIGURE_ARGS+= --disable-epiphany
 
 .include <bsd.port.mk>
