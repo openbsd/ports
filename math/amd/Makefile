@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/02/23 20:12:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/05/07 22:30:15 pirofti Exp $
 
 COMMENT=	order a sparse matrix prior to Cholesky factorization
 
 VERSION=	2.2.0
 DISTNAME=	AMD-${VERSION}
-PKGNAME=	amd-${VERSION}p1
+PKGNAME=	amd-${VERSION}p2
 SHARED_LIBS=	amd	0.0 \
 		amdf77	0.0
 
@@ -60,5 +60,6 @@ post-install:
 		${ALL_FAKE_FLAGS} -f ${FILESDIR}/Makefile.f77 ${INSTALL_TARGET}
 	${INSTALL_DATA_DIR} ${PREFIX}/include/amd
 	${INSTALL_DATA} ${WRKDIST}/Include/amd.h ${PREFIX}/include/amd
+	${INSTALL_DATA} ${WRKDIR}/UFconfig/UFconfig.h ${PREFIX}/include/amd
 
 .include <bsd.port.mk>
