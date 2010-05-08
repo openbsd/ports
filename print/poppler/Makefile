@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2009/11/21 21:57:50 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2010/05/08 17:09:48 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 
-V=		0.12.2
+V=		0.12.4
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -65,22 +65,27 @@ QT4INC=		-I${MODQT4_INCDIR}
 
 WANTLIB=	expat freetype fontconfig jpeg m z
 
-MODULES+=	devel/gettext
+MODULES+=	converters/libiconv devel/gettext
 
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
 		gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 \
 		lcms::graphics/lcms \
+		openjpeg::graphics/openjpeg \
 		xml2::textproc/libxml
-LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} poppler::print/poppler
-LIB_DEPENDS-qt4=QtCore,QtGui,QtXml::x11/qt4 poppler::print/poppler
+LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} \
+		${MODLIBICONV_LIB_DEPENDS} \
+		poppler::print/poppler
+LIB_DEPENDS-qt4=QtCore,QtGui,QtXml::x11/qt4 \
+		${MODLIBICONV_LIB_DEPENDS} \
+		poppler::print/poppler
 
 WANTLIB-main=	${WANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr gio-2.0 \
-		glib-2.0 gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 \
+		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		X11 Xau Xcomposite Xdamage Xdmcp Xrender cairo glitz pcre png \
-		pthread-stubs xcb
-WANTLIB-qt=	${WANTLIB} iconv lcms xml2
-WANTLIB-qt4=	${WANTLIB} iconv lcms xml2
+		pthread-stubs xcb xcb-render xcb-render-util
+WANTLIB-qt=	${WANTLIB} lcms openjpeg xml2
+WANTLIB-qt4=	${WANTLIB} lcms openjpeg xml2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --enable-xpdf-headers \

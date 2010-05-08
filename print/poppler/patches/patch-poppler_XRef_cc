@@ -1,7 +1,7 @@
-$OpenBSD: patch-poppler_XRef_cc,v 1.5 2009/11/21 21:57:50 kili Exp $
---- poppler/XRef.cc.orig	Sun Oct 18 00:23:09 2009
-+++ poppler/XRef.cc	Fri Nov 20 20:30:45 2009
-@@ -856,45 +856,38 @@ void XRef::setEncryption(int permFlagsA, GBool ownerPa
+$OpenBSD: patch-poppler_XRef_cc,v 1.6 2010/05/08 17:09:48 kili Exp $
+--- poppler/XRef.cc.orig	Sun Jan 17 01:06:57 2010
++++ poppler/XRef.cc	Fri May  7 23:04:39 2010
+@@ -881,45 +881,38 @@ void XRef::setEncryption(int permFlagsA, GBool ownerPa
  }
  
  GBool XRef::okToPrint(GBool ignoreOwnerPW) {
