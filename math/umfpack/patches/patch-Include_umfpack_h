@@ -1,0 +1,12 @@
+$OpenBSD: patch-Include_umfpack_h,v 1.1 2010/05/08 10:43:35 pirofti Exp $
+--- Include/umfpack.h.orig	Sat May  8 01:15:41 2010
++++ Include/umfpack.h	Sat May  8 01:15:46 2010
+@@ -88,7 +88,7 @@ extern "C" {
+ #include "umfpack_tictoc.h"
+ 
+ /* AMD */
+-#include "amd.h"
++#include <amd/amd.h>
+ 
+ /* global function pointers */
+ #include "umfpack_global.h"
