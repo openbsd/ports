@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.5 2010/03/31 16:01:45 ajacoutot Exp $
---- Makefile.orig	Fri Mar 26 17:17:27 2010
-+++ Makefile	Wed Mar 31 16:51:15 2010
+$OpenBSD: patch-Makefile,v 1.6 2010/05/08 09:59:23 ajacoutot Exp $
+--- Makefile.orig	Wed Apr 21 18:14:18 2010
++++ Makefile	Sat May  8 11:51:58 2010
 @@ -16,11 +16,6 @@ SYSNAME := $(shell uname -n)
  # No version number yet...
  VERSION=0.0
@@ -115,7 +115,7 @@ $OpenBSD: patch-Makefile,v 1.5 2010/03/31 16:01:45 ajacoutot Exp $
  
  APPL=$(DESTDIR)/usr/share/applications
  OLDAPPL=$(DESTDIR)/usr/share/gnome/apps/System
-@@ -1253,11 +1213,8 @@ install-doc: doc
+@@ -1264,11 +1224,8 @@ install-doc: doc
  	#
  	$(INSTALL) -d -m 755 $(DOCDIR)
  	$(INSTALL) -c -m 644 manual.pdf $(DOCDIR)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/03/31 16:01:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/05/08 09:59:23 ajacoutot Exp $
 @bin bin/arm2hpdl
 @bin bin/foo2hiperc
 bin/foo2hiperc-wrapper
@@ -130,6 +130,10 @@ share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2014.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2014n.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2035.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2035n.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_P1102.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_P1102w.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_P1566.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_P1606dn.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/KONICA_MINOLTA-magicolor_1600W.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/KONICA_MINOLTA-magicolor_1680MF.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/KONICA_MINOLTA-magicolor_1690MF.ppd.gz
@@ -153,6 +157,7 @@ share/foomatic/db/source/PPD/foo2zjs/Oki-C5100.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C5200.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C5500.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C5600.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Oki-C5650.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C5800.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-300.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-310.ppd.gz
