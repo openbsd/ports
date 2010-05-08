@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2009/11/21 21:58:26 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/05/08 17:10:24 kili Exp $
 
 COMMENT =		encoding files for poppler
-DISTNAME =		poppler-data-0.3.1
+DISTNAME =		poppler-data-0.4.2
 CATEGORIES =		print
 HOMEPAGE =		http://poppler.freedesktop.org/
 
-# Free redistribution without modifications.
+# Mixture of GPL2 and MIT and something similar to BSD4
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
