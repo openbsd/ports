@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/05/09 05:50:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/05/09 10:36:57 ajacoutot Exp $
 
 # XXX on goffice version change,
 # update API_VERSION in math/gnumeric
@@ -8,7 +8,7 @@ SHARED_ONLY=	Yes
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.8.2
+GNOME_VERSION=	0.8.3
 
 SHARED_LIBS +=	goffice-0.8          0.0      # .8.0
 CATEGORIES=	devel
@@ -32,8 +32,8 @@ MODULES=		devel/gettext \
 
 USE_X11=		Yes
 
-# XXX: Although we don't link to gsf-gnome, we depend on it's dependencies.
-LIB_DEPENDS=		gsf-1.>=114:libgsf-gnome-*:devel/libgsf,-gnome
+LIB_DEPENDS=		gsf-1.>=114::devel/libgsf \
+			gconf-2.>=6::devel/gconf2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
