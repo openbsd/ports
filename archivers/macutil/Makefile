@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/04/15 13:27:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/05/09 15:22:43 robert Exp $
 
 COMMENT=		several programs to handle macintosh files and archives
 DISTNAME=		macutil2.0b3
-PKGNAME=		macutil-2.0b3p1
+PKGNAME=		macutil-2.0b3p2
 CATEGORIES=		archivers
 
 # None
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 WANTLIB=		c
 
-MASTER_SITES=		ftp://ftp.cwi.nl/pub/dik/
+MASTER_SITES=		ftp://ftp.rz.hu-berlin.de/pub/mirrors/www.ibiblio.org/distfiles/
 EXTRACT_SUFX=		.shar.Z
 
 MAKE_FILE=		makefile
