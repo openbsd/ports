@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/31 12:21:20 espie Exp $
-bin/analyseplugin
-bin/applyplugin
-bin/listplugins
+@comment $OpenBSD: PLIST,v 1.2 2010/05/09 21:18:29 robert Exp $
+@bin bin/analyseplugin
+@bin bin/applyplugin
+@bin bin/listplugins
 include/ladspa.h
 lib/ladspa/
 lib/ladspa/amp.so
