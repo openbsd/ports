@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_tools_qmutex_unix_cpp,v 1.1 2010/05/09 16:19:22 robert Exp $
+--- src/tools/qmutex_unix.cpp.orig	Fri Feb  2 15:01:04 2007
++++ src/tools/qmutex_unix.cpp	Sun May  9 18:17:13 2010
+@@ -69,6 +69,7 @@ typedef pthread_mutex_t     Q_MUTEX_T;
+ #include "qmutex_p.h"
+ 
+ #include <errno.h>
++#include <stdint.h>
+ #include <string.h>
+ 
+ 
+@@ -261,8 +262,8 @@ void QRecursiveMutexPrivate::unlock()
+     } else {
+ #ifdef QT_CHECK_RANGE
+ 	qWarning("QMutex::unlock: unlock from different thread than locker");
+-	qWarning("                was locked by %d, unlock attempt from %d",
+-		 (int)owner, (int)pthread_self());
++	qWarning("                was locked by %d, unlock attempt from %lu",
++		 (int)owner, (uintptr_t)pthread_self());
+ #endif
+     }
+ 
