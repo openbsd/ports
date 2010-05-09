@@ -1,21 +1,21 @@
-$OpenBSD: patch-id3ed_cc,v 1.1 2004/05/08 22:20:43 kettenis Exp $
---- id3ed.cc.orig	2003-01-10 04:03:13.000000000 +0100
-+++ id3ed.cc	2004-05-08 11:27:16.000000000 +0200
+$OpenBSD: patch-id3ed_cc,v 1.2 2010/05/09 17:32:53 robert Exp $
+--- id3ed.cc.orig	Fri Jan 10 04:03:13 2003
++++ id3ed.cc	Sun May  9 19:28:44 2010
 @@ -354,7 +354,7 @@ void genreedit(unsigned char &d){
  #ifdef HAVE_LIBREADLINE
  	char *str=NULL;
  	my_rl_default=def;
 -	rl_startup_hook=(Function*)set_rl_default;
-+	(int (*)())rl_startup_hook=(Function*)set_rl_default;
++	rl_startup_hook=set_rl_default;
  #ifdef HAVE_SET_H
  	(const char *(*)(const char *,int))rl_completion_entry_function=genre_generator;
  #endif
-@@ -404,7 +404,7 @@ void stredit(const char * name, int maxl
+@@ -404,7 +404,7 @@ void stredit(const char * name, int maxlen, char * buf
  	char *str;
  	sprintf(prompt,"%s[max:%i]: ",name,maxlen);
  	my_rl_default=def;
 -	rl_startup_hook=(Function*)set_rl_default;
-+	(int (*)())rl_startup_hook=(Function*)set_rl_default;
++	rl_startup_hook=set_rl_default;
  	if((str=readline(prompt))){
  		strncpy(buf,str,maxlen);
  		if (*str){
