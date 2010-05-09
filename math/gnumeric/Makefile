@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.40 2010/04/17 06:56:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/05/09 15:31:38 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
-GNOME_VERSION=		1.10.2
+GNOME_VERSION=		1.10.3
 
 SHARED_LIBS +=	spreadsheet     1.0
 CATEGORIES=    		math
 
 HOMEPAGE=		http://www.gnome.org/projects/gnumeric/
 
-API_VERSION=		0.8.2 # from devel/goffice
+API_VERSION=		0.8.3 # from devel/goffice
 
 # GPLv2
 # Some tools: LGPL
@@ -28,7 +28,8 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre perl pixman-1 png popt pthread pthread-stubs
-WANTLIB += ssl util xcb z xcb-render xcb-render-util
+WANTLIB += ssl util xcb z xcb-render xcb-render-util eggdbus-1 gcrypt
+WANTLIB += gpg-error
 
 MODULES=		devel/gconf2 \
 			devel/gettext \
