@@ -1,9 +1,9 @@
 Missing include, probably due to jgroff-0.99 being based on groff-1.9
 initially.
-$OpenBSD: patch-hpftodit_hpftodit_cc,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
---- hpftodit/hpftodit.cc.orig	Tue Apr 11 23:05:43 2000
-+++ hpftodit/hpftodit.cc	Tue Apr 11 23:05:55 2000
-@@ -34,6 +34,7 @@ put filename in error messages (or fix l
+$OpenBSD: patch-hpftodit_hpftodit_cc,v 1.2 2010/05/09 21:26:54 robert Exp $
+--- hpftodit/hpftodit.cc.orig	Tue Jun 27 14:59:39 1995
++++ hpftodit/hpftodit.cc	Sun May  9 22:33:01 2010
+@@ -34,6 +34,7 @@ put filename in error messages (or fix lib)
  #include <string.h>
  #include <errno.h>
  #include "assert.h"

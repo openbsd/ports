@@ -1,8 +1,8 @@
 Install everything with a `j' prefix, including all manpages.
-$OpenBSD: patch-Makefile_comm,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
+$OpenBSD: patch-Makefile_comm,v 1.2 2010/05/09 21:26:54 robert Exp $
 --- Makefile.comm.orig	Tue Jun 27 13:08:27 1995
-+++ Makefile.comm	Wed Apr 12 13:56:12 2000
-@@ -44,7 +44,7 @@ MOSTLYCLEANFILES=$(MANCLEAN) $(PROG) $(O
++++ Makefile.comm	Sun May  9 22:33:01 2010
+@@ -44,7 +44,7 @@ MOSTLYCLEANFILES=$(MANCLEAN) $(PROG) $(OBJS) $(GENSRCS
  CLEANFILES=$(LIBCLEAN)
  DISTCLEANFILES=TAGS Makefile
  REALCLEANFILES=$(YTABC) $(YTABH)

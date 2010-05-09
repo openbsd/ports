@@ -1,0 +1,12 @@
+$OpenBSD: patch-refer_refer_cc,v 1.1 2010/05/09 21:26:54 robert Exp $
+--- refer/refer.cc.orig	Sun May  9 23:24:19 2010
++++ refer/refer.cc	Sun May  9 23:25:34 2010
+@@ -513,7 +513,7 @@ static void do_file(const char *filename)
+ 	  if ((flags & FORCE_LEFT_BRACKET) || !have_text)
+ 	    pending_line += PRE_LABEL_MARKER;
+ 	  pending_line += pre;
+-	  pending_line += LABEL_MARKER + lt;
++	  pending_line += LABEL_MARKER + (int)lt;
+ 	  pending_line += post;
+ 	  if ((flags & FORCE_RIGHT_BRACKET) || !have_text)
+ 	    pending_line += POST_LABEL_MARKER;

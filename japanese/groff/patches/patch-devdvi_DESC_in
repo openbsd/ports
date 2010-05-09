@@ -1,7 +1,7 @@
-$OpenBSD: patch-devdvi_DESC_in,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
---- devdvi/DESC.in.orig	Wed Apr 12 14:52:12 2000
-+++ devdvi/DESC.in	Wed Apr 12 14:52:17 2000
-@@ -8,4 +8,4 @@ sizes 500 600 700 800 900 1000 1100 1200
+$OpenBSD: patch-devdvi_DESC_in,v 1.2 2010/05/09 21:26:54 robert Exp $
+--- devdvi/DESC.in.orig	Sun May  9 22:33:01 2010
++++ devdvi/DESC.in	Sun May  9 22:33:01 2010
+@@ -8,4 +8,4 @@ sizes 500 600 700 800 900 1000 1100 1200 1400 1440 160
  fonts 15 R I B BI 0 0 0 0 0 MI S EX CW M G
  ondemand M G
  tcommand

@@ -1,0 +1,13 @@
+$OpenBSD: patch-troff_input_cc,v 1.1 2010/05/09 21:26:54 robert Exp $
+--- troff/input.cc.orig	Sun May  9 23:21:57 2010
++++ troff/input.cc	Sun May  9 23:22:15 2010
+@@ -75,6 +75,9 @@ void vjustify();
+ #endif /* COLUMN */
+ void transparent();
+ void transparent_file();
++void process_input_stack();
++extern void end_diversions();
++extern void title();
+ 
+ const char *program_name = 0;
+ token tok;
