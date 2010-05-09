@@ -1,7 +1,7 @@
-$OpenBSD: patch-README,v 1.1.1.1 2004/01/23 05:20:48 jolan Exp $
---- README.orig	2003-05-26 13:01:29.000000000 -0500
-+++ README	2004-01-19 01:47:51.000000000 -0600
-@@ -81,12 +81,6 @@ The command line parameters for par2cmdl
+$OpenBSD: patch-README,v 1.2 2010/05/09 15:30:53 robert Exp $
+--- README.orig	Thu Apr 22 16:46:05 2004
++++ README	Sun May  9 17:23:38 2010
+@@ -81,12 +81,6 @@ The command line parameters for par2cmdline are as fol
      par2 v(erify) [options] <par2 file> [files]
      par2 r(epair) [options] <par2 file> [files]
  

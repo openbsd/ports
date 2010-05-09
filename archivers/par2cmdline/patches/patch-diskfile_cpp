@@ -1,6 +1,6 @@
-$OpenBSD: patch-diskfile_cpp,v 1.2 2004/06/27 23:06:47 jolan Exp $
---- diskfile.cpp.orig	Mon Apr 12 06:25:37 2004
-+++ diskfile.cpp	Sun Jun 27 17:56:29 2004
+$OpenBSD: patch-diskfile_cpp,v 1.3 2010/05/09 15:30:53 robert Exp $
+--- diskfile.cpp.orig	Mon Apr 12 13:25:37 2004
++++ diskfile.cpp	Sun May  9 17:23:38 2010
 @@ -17,6 +17,8 @@
  //  along with this program; if not, write to the Free Software
  //  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
@@ -10,7 +10,7 @@ $OpenBSD: patch-diskfile_cpp,v 1.2 2004/06/27 23:06:47 jolan Exp $
  #include "par2cmdline.h"
  
  #ifdef _MSC_VER
-@@ -562,7 +564,7 @@ string DiskFile::GetCanonicalPathname(st
+@@ -562,7 +564,7 @@ string DiskFile::GetCanonicalPathname(string filename)
      return filename;
  
    // Get the current directory
