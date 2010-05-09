@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2010/04/06 10:15:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2010/05/09 09:34:11 dcoppa Exp $
 
 COMMENT=		library for layout and rendering of text
 
 V=			1.28.0
 DISTNAME=		pango-${V}
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
 SHARED_LIBS +=  pango-1.0            1802.0   # .2800.0
 SHARED_LIBS +=  pangox-1.0           1802.0   # .2800.0
@@ -23,15 +23,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xft Xrender c expat fontconfig freetype \
-		glitz m pcre pixman-1 png pthread-stubs xcb z \
-		xcb-render xcb-render-util
+		glitz m pcre pixman-1 png pthread pthread-stubs xcb \
+		xcb-render xcb-render-util z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/pango/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		glib-2.0.>=1800.0,gmodule-2.0.>=1800.0,gobject-2.0.>=1800.0::devel/glib2 \
+LIB_DEPENDS=		glib-2.0.>=1800.0,gmodule-2.0.>=1800.0,gobject-2.0.>=1800.0,gthread-2.0.>=1800.0::devel/glib2 \
 			cairo.>=9::graphics/cairo
 
 USE_X11=		Yes
