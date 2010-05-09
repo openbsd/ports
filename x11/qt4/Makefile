@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/04/25 19:03:30 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2010/05/09 18:38:08 espie Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -234,7 +234,11 @@ MODULES =
 #MODGCC4_ARCHES = *
 #MODGCC4_LANGS =	c++
 
-.if ${MODULES:Mgcc4}
+.include <bsd.own.mk>
+
+COMPILER_VERSION ?= gcc3
+
+.if ${MODULES:Mgcc4} || ${COMPILER_VERSION:L:Mgcc4*}
 PKG_ARGS += -DGCC4=1
 LIB_DEPENDS-examples +=	QtWebKit,QtXmlPatterns::${BASE_PKGPATH}
 WANTLIB-examples +=	sqlite3
