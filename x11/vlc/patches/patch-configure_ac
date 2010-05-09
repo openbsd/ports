@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.15 2010/05/05 08:43:35 edd Exp $
---- configure.ac.orig	Sun Jan 24 16:26:15 2010
-+++ configure.ac	Sun Jan 31 22:17:13 2010
+$OpenBSD: patch-configure_ac,v 1.16 2010/05/09 00:16:26 sthen Exp $
+--- configure.ac.orig	Sun Apr 18 09:03:54 2010
++++ configure.ac	Wed May  5 18:37:05 2010
 @@ -826,6 +826,9 @@ if test "${SYS}" != "mingw32" -a "${SYS}" != "mingwce"
  dnl Check for pthreads - borrowed from XMMS
  THREAD_LIB=error
@@ -11,6 +11,15 @@ $OpenBSD: patch-configure_ac,v 1.15 2010/05/05 08:43:35 edd Exp $
    AC_CHECK_LIB(pthread,main,THREAD_LIB="-lpthread")
  fi
  if test "${THREAD_LIB}" = "error"; then
+@@ -2525,7 +2528,7 @@ then
+   fi
+ 
+   CPPFLAGS="${CPPFLAGS_save} ${CPPFLAGS_v4l2}"
+-  AC_CHECK_HEADERS(linux/videodev2.h, [
++  AC_CHECK_HEADERS([linux/videodev2.h sys/videoio.h sys/videodev2.h], [
+     VLC_ADD_PLUGIN([v4l2])
+   ],[])
+   CPPFLAGS="${CPPFLAGS_save}"
 @@ -3753,14 +3756,14 @@ AC_ARG_ENABLE(png,
    [  --enable-png            PNG support (default enabled)])
  if test "${enable_png}" != "no"; then

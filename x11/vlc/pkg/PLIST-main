@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2010/05/05 08:43:35 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2010/05/09 00:16:26 sthen Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -120,6 +120,9 @@ lib/vlc/access/libdvdnav_plugin.so
 @comment lib/vlc/access/libdvdread_plugin.a
 lib/vlc/access/libdvdread_plugin.la
 lib/vlc/access/libdvdread_plugin.so
+@comment lib/vlc/access/libv4l2_plugin.a
+lib/vlc/access/libv4l2_plugin.la
+lib/vlc/access/libv4l2_plugin.so
 @comment lib/vlc/access/libx11_screen_plugin.a
 @comment lib/vlc/access/libx11_screen_plugin.la
 @comment lib/vlc/access/libx11_screen_plugin.so

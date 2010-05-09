@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2010/05/05 08:43:35 edd Exp $
+# $OpenBSD: Makefile,v 1.89 2010/05/09 00:16:26 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 
 V=		1.0.6
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
@@ -77,6 +77,7 @@ CONFIGURE_ARGS+=--disable-altivec \
 		--disable-libcdio \
 		--disable-libgcrypt \
 		--disable-libtar \
+		--disable-libv4l2 \
 		--disable-live555 \
 		--disable-lua \
 		--disable-mod \
@@ -88,7 +89,7 @@ CONFIGURE_ARGS+=--disable-altivec \
 		--disable-skins2 \
 		--disable-smb \
 		--disable-tiger \
-		--disable-v4l2 \
+		--disable-udev \
 		--disable-vcd \
 		--disable-zvbi \
 		--enable-dvdread \
