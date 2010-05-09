@@ -1,6 +1,6 @@
-$OpenBSD: patch-libac3_bitstream_c,v 1.1 2002/04/09 19:50:14 naddy Exp $
---- libac3/bitstream.c.orig	Tue Apr  9 21:37:14 2002
-+++ libac3/bitstream.c	Tue Apr  9 21:37:32 2002
+$OpenBSD: patch-libac3_bitstream_c,v 1.2 2010/05/09 17:08:44 robert Exp $
+--- libac3/bitstream.c.orig	Thu Mar 30 02:51:24 2000
++++ libac3/bitstream.c	Sun May  9 19:07:05 2010
 @@ -23,6 +23,7 @@
  
  #include <stdlib.h>
@@ -9,3 +9,12 @@ $OpenBSD: patch-libac3_bitstream_c,v 1.1 2002/04/09 19:50:14 naddy Exp $
  
  #include "ac3.h"
  #include "ac3_internal.h"
+@@ -90,7 +91,7 @@ bitstream_buffer_frame(uint_32 frame_size)
+ static inline void
+ bitstream_fill_current()
+ {
+-	current_word = *((uint_32*)buffer_start)++;
++	current_word = (*((uint_32*)buffer_start))++;
+ 	current_word = swab32(current_word);
+ }
+ 
