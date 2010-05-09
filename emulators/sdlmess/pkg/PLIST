@@ -1,6 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/04/10 13:56:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/05/09 17:45:12 jakemsr Exp $
 @conflict xmame+xmess-*
 @conflict xmess-*
+@pkgpath emulators/xmame,-main
+@pkgpath emulators/xmame,-main,esd
+@pkgpath emulators/xmame,-main,sdl
+@pkgpath emulators/xmame,-main,x11
+@pkgpath emulators/xmame,-main,esd,sdl
+@pkgpath emulators/xmame,-main,esd,x11
+@pkgpath emulators/xmame,-mess
+@pkgpath emulators/xmame,-mess,esd
+@pkgpath emulators/xmame,-mess,sdl
+@pkgpath emulators/xmame,-mess,x11
+@pkgpath emulators/xmame,-mess,esd,sdl
+@pkgpath emulators/xmame,-mess,esd,x11
 @bin bin/dat2html
 @bin bin/imgtool
 @bin bin/sdlmess

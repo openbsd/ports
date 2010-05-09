@@ -1,4 +1,18 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2010/04/27 13:00:25 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/05/09 17:45:12 jakemsr Exp $
+@conflict xmame+xmess-*
+@conflict xmame-*
+@pkgpath emulators/xmame,-main
+@pkgpath emulators/xmame,-main,esd
+@pkgpath emulators/xmame,-main,sdl
+@pkgpath emulators/xmame,-main,x11
+@pkgpath emulators/xmame,-main,esd,sdl
+@pkgpath emulators/xmame,-main,esd,x11
+@pkgpath emulators/xmame,-mame
+@pkgpath emulators/xmame,-mame,esd
+@pkgpath emulators/xmame,-mame,sdl
+@pkgpath emulators/xmame,-mame,x11
+@pkgpath emulators/xmame,-mame,esd,sdl
+@pkgpath emulators/xmame,-mame,esd,x11
 @bin bin/sdlmame
 share/doc/sdlmame/
 share/doc/sdlmame/SDLMAME.txt
