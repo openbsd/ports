@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/05 10:44:43 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2010/05/09 21:57:09 robert Exp $
 
 COMMENT=	.NET build tool inspired by Ant
 
-V=		0.86-beta1
+V=		0.90
 DISTNAME=	nant-${V}-src
-PKGNAME=	${DISTNAME:S/-src//}p2
+PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nant/}
 
@@ -25,7 +25,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 WRKDIST=	${WRKSRC}
 
 FAKE_FLAGS=	prefix=${WRKINST}${TRUEPREFIX} \
-		vprefix=${TRUEPREFIX}/share/NAnt
+		vprefix=${TRUEPREFIX}/share/NAnt \
+		trueprefix=${TRUEPREFIX}
 
 post-patch:
 	@find ${WRKSRC}/src ${WRKSRC}/tests -name '*.build' \
