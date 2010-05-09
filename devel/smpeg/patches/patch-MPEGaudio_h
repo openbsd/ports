@@ -1,0 +1,17 @@
+$OpenBSD: patch-MPEGaudio_h,v 1.1 2010/05/09 15:17:18 robert Exp $
+--- MPEGaudio.h.orig	Sun May  9 17:10:03 2010
++++ MPEGaudio.h	Sun May  9 17:10:20 2010
+@@ -148,6 +148,13 @@ class Mpegbitwindow (private)
+   char buffer[2*WINDOWSIZE];
+ };
+ 
++class MPEGaudio;
++	void Play_MPEGaudioSDL(void *udata, Uint8 *stream, int len);
++	int Play_MPEGaudio(MPEGaudio *audio, Uint8 *stream, int len);
++#ifdef THREADED_AUDIO
++	int Decode_MPEGaudio(void *udata);
++#endif
++
+ /* The actual MPEG audio class */
+ class MPEGaudio : public MPEGerror, public MPEGaudioaction {
+ 
