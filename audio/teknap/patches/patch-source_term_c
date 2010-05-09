@@ -1,0 +1,21 @@
+$OpenBSD: patch-source_term_c,v 1.1 2010/05/09 23:08:00 espie Exp $
+--- source/term.c.orig	Mon May 10 01:04:46 2010
++++ source/term.c	Mon May 10 01:05:32 2010
+@@ -39,6 +39,7 @@ DWORD gdwPlatform;
+ #include "screen.h"
+ #include "output.h"
+ 
++#include <stdlib.h>
+ #if defined(_ALL_SOURCE) || defined(__EMX__)
+ #include <termios.h>
+ #else
+@@ -86,9 +87,6 @@ extern	int		tgetflag();
+ #define Tgetnum(x) 	tgetnum(x.tname)
+ #define Tgetflag(x) 	tgetflag(x.tname)
+ #endif
+-
+-extern  char    *getenv();
+-extern	char	*tparm();
+ 
+ /*
+  * The old code assumed termcap. termcap is almost always present, but on

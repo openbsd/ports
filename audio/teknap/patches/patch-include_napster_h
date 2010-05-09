@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_napster_h,v 1.1 2010/05/09 23:08:00 espie Exp $
+--- include/napster.h.orig	Mon May 10 01:03:25 2010
++++ include/napster.h	Mon May 10 01:03:40 2010
+@@ -362,7 +362,6 @@ int	is_valid_dcc(char *);
+ 
+ extern unsigned long shared_count;
+ #ifdef THREAD
+-extern pthread_mutex_t fserv_struct_mutex;
+ extern pthread_mutex_t shared_count_mutex;
+ extern pthread_mutex_t send_ncommand_mutex;
+ void	init_share_mutexes(void);
