@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2010/05/06 20:06:28 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2010/05/09 17:00:39 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
-DISTNAME =		darcs-2.4.1
-PKGNAME =		${DISTNAME}p1
+DISTNAME =		darcs-2.4.3
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
@@ -17,7 +16,7 @@ LIB_DEPENDS =		curl.>=2::net/curl
 # Yes, build dependencies, because GHC libs are still static and we
 # don't want to pull in all of ghc.
 BUILD_DEPENDS =		:hs-zlib->=0.5.0,<0.6.0:archivers/hs-zlib \
-			:hs-hashed-storage-0.4.11:devel/hs-hashed-storage \
+			:hs-hashed-storage-0.4.13:devel/hs-hashed-storage \
 			:hs-parsec->=2.0,<3.1:devel/hs-parsec \
 			:hs-regex-compat->=0.71,<0.94:devel/hs-regex-compat \
 			:hs-html->=1.0,<1.1:www/hs-html \

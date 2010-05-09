@@ -1,21 +1,7 @@
-$OpenBSD: patch-GNUmakefile,v 1.13 2010/04/22 21:53:18 kili Exp $
---- GNUmakefile.orig	Mon Apr 12 21:42:42 2010
-+++ GNUmakefile	Tue Apr 13 13:27:19 2010
-@@ -8,10 +8,13 @@ PREPROC=./dist/build/darcs/darcs --preprocess-manual
- PREPROCHTML=--html
- TEXSOURCES = src/darcs.tex $(wildcard src/*.tex) $(filter %.lhs,$(DARCS_FILES))
- doc/manual/darcs.tex: $(TEXSOURCES) $(DARCS)
-+	mkdir -p doc/manual
- 	$(PREPROC) darcs.tex $(PREPROCHTML) >$@
- doc/manual/darcs_print.tex: $(TEXSOURCES) $(DARCS)
-+	mkdir -p doc/manual
- 	$(PREPROC) darcs.tex >$@
- doc/manual/patch-theory.tex: $(TEXSOURCES) $(UNIT_FILES) $(DARCS)
-+	mkdir -p doc/manual
- 	$(PREPROC) Darcs/Patch/Properties.lhs >$@
- 
- %.pdf: %.tex
-@@ -26,12 +29,12 @@ website: ps pdf html doc/manual/bigpage.html
+$OpenBSD: patch-GNUmakefile,v 1.14 2010/05/09 17:00:39 kili Exp $
+--- GNUmakefile.orig	Sat May  8 10:47:47 2010
++++ GNUmakefile	Sat May  8 13:46:37 2010
+@@ -29,12 +29,12 @@ website: ps pdf html doc/manual/bigpage.html
  ### TODO use latex2html since bigpage seems to needslatex2html anyway;
  ###      we can restore hevea/tex4ht support when we move this to Setup.lhs
  doc/manual/index.html: doc/manual/darcs.tex src/gpl.tex doc/darcs.css
