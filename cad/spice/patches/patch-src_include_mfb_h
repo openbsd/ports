@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_include_mfb_h,v 1.1 2010/05/09 17:50:26 espie Exp $
+--- src/include/mfb.h.orig	Sun May  9 19:41:32 2010
++++ src/include/mfb.h	Sun May  9 19:41:48 2010
+@@ -369,7 +369,7 @@ typedef struct mfb MFB;
+ 
+ extern MFB *MFBCurrent;         /* global FB structure */
+ 
+-extern struct err {
++struct err {
+     int errnum;
+     char    *message;
+         };
