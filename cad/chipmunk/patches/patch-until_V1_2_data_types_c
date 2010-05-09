@@ -1,7 +1,7 @@
-$OpenBSD: patch-until_V1_2_data_types_c,v 1.1.1.1 2003/10/25 18:33:27 pvalchev Exp $
---- until/V1.2/data_types.c.orig	2003-03-12 15:59:51.000000000 -0700
-+++ until/V1.2/data_types.c	2003-10-25 00:26:02.000000000 -0600
-@@ -87,7 +87,7 @@ short curRots;  /* Number of possible ro
+$OpenBSD: patch-until_V1_2_data_types_c,v 1.2 2010/05/09 17:18:53 espie Exp $
+--- until/V1.2/data_types.c.orig	Wed Mar 12 23:59:51 2003
++++ until/V1.2/data_types.c	Sun May  9 19:11:21 2010
+@@ -87,7 +87,7 @@ short curRots;  /* Number of possible rotations */
  
  Char *today(Char *Result)
  {

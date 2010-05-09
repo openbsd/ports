@@ -1,7 +1,7 @@
-$OpenBSD: patch-psys_src_lunix_pas_c,v 1.1.1.1 2003/10/25 18:33:27 pvalchev Exp $
---- psys/src/lunix_pas.c.orig	2003-03-12 15:47:35.000000000 -0700
-+++ psys/src/lunix_pas.c	2003-10-25 00:25:12.000000000 -0600
-@@ -17,7 +17,7 @@ Void lunix_intToDate (long idate, datere
+$OpenBSD: patch-psys_src_lunix_pas_c,v 1.2 2010/05/09 17:18:53 espie Exp $
+--- psys/src/lunix_pas.c.orig	Wed Mar 12 23:47:35 2003
++++ psys/src/lunix_pas.c	Sun May  9 19:11:21 2010
+@@ -17,7 +17,7 @@ Void lunix_intToDate (long idate, daterec *date, timer
  {
    struct tm *temp_tm;
  
