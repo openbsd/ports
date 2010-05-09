@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2010/05/09 10:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/05/09 11:14:17 ajacoutot Exp $
 
 # XXX on goffice version change,
-# update API_VERSION in math/gnumeric
+# update API_VERSION in math/gnumeric and bump PKGNAME
 
 SHARED_ONLY=	Yes
 
