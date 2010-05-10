@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.417 2010/05/05 13:41:48 jim Exp $
+# $OpenBSD: Makefile,v 1.418 2010/05/10 08:27:46 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -106,6 +106,7 @@
      SUBDIR += gxmessage
      SUBDIR += hicolor-icon-theme
      SUBDIR += hs-X11
+     SUBDIR += hs-xmonad-contrib
      SUBDIR += human-icon-theme
      SUBDIR += i3
      SUBDIR += icewm
@@ -321,6 +322,7 @@
      SUBDIR += xlogout
      SUBDIR += xmascot
      SUBDIR += xmbdfed
+     SUBDIR += xmobar
      SUBDIR += xmold
      SUBDIR += xmonad
      SUBDIR += xosd
