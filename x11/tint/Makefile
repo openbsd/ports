@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/19 13:55:56 edd Exp $
+# $OpenBSD: Makefile,v 1.4 2010/05/10 18:05:33 edd Exp $
 
 COMMENT=	lightweight freedesktop-compliant panel/taskbar/clock
 
 DISTNAME=	tint2-0.9
-PKGNAME=	${DISTNAME:S/tint2/tint/}
+PKGNAME=	${DISTNAME:S/tint2/tint/}p0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://code.google.com/p/tint2/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	X11 Xinerama Xrender c cairo glib-2.0 gobject-2.0 \
-		Xcomposite Xdamage
+		pixman-1 pthread Xcomposite Xdamage 
 
 MASTER_SITES=	http://tint2.googlecode.com/files/
 
