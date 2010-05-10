@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2010/03/31 16:22:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2010/05/10 18:41:49 espie Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -51,7 +51,7 @@ MAKE_FLAGS=	BINDIR=./obj				\
 		CUPSSERVERBIN="$$(cups-config --serverbin)" \
 		CUPSSERVERROOT="$$(cups-config --serverroot)" \
 		CUPSDATA="$$(cups-config --datadir)"	\
-		DEVICE_DEVS='${DEVICES:=$(DD)%.dev}'	\
+		DEVICE_DEVS='${DEVICES:C/.*/\$(DD)&.dev/}'	\
 		EXTRALIBS="${EXTRALIBS}"		\
 		GLGENDIR=./obj				\
 		GLOBJDIR=./obj				\
