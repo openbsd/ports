@@ -1,0 +1,16 @@
+$OpenBSD: patch-misc_c,v 1.1 2010/05/10 17:17:48 ajacoutot Exp $
+
+XXX THIS IS A HACK
+Make this error non-fatal by not exiting. This is needed to workaround
+the effects of userland threads which change i/o operations to
+non-blocking.
+
+--- misc.c.orig	Mon May 10 19:11:29 2010
++++ misc.c	Mon May 10 19:11:39 2010
+@@ -892,6 +892,5 @@ close_stdout (void)
+         error (NILF, _("write error: %s"), strerror (errno));
+       else
+         error (NILF, _("write error"));
+-      exit (EXIT_FAILURE);
+     }
+ }
