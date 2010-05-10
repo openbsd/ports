@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/21 08:36:58 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2010/05/10 20:22:20 jasper Exp $
 
 COMMENT =	uPnP/DLNA media server
 
@@ -22,6 +22,7 @@ MASTER_SITES =	${HOMEPAGE}/download/
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 
+BUILD_DEPENDS = ::devel/py-twisted/web
 RUN_DEPENDS =	::devel/py-twisted/core \
 		::devel/py-twisted/web \
 		::devel/py-configobj \
