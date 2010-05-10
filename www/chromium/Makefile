@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/01 21:14:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2010/05/10 15:26:31 espie Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -29,10 +29,7 @@ WANTLIB += z
 MASTER_SITES=	${MASTER_SITE_BACKUP} \
 		http://sightly.net/peter/openbsd/chromium/
 
-MODULES =	gcc4 devel/gettext
-MODGCC4_ARCHES = *
-MODGCC4_LANGS =	c c++
-
+MODULES =	devel/gettext
 PYTHON_VER=	2.6
 RUN_DEPENDS =	:gamin-*:sysutils/gamin,-server
 BUILD_DEPENDS =	:python->=${PYTHON_VER}:lang/python/${PYTHON_VER} \
@@ -44,13 +41,28 @@ LIB_DEPENDS =	execinfo::devel/libexecinfo \
 		nss3,nssutil3,ssl3,smime3,softokn3::security/nss \
 		gconf-2::devel/gconf2
 
+.include <bsd.own.mk>
+
 # Set BUILDTYPE to Debug (or omit it) for a debug build
 BUILDTYPE=	Release
+.if ${COMPILER_VERSION:L:Mgcc4*}
+MAKE_ENV =	BUILDTYPE=${BUILDTYPE} V=1 \
+		CXX=/usr/bin/g++ \
+		CXX.host=/usr/bin/g++ \
+		LINK.host=/usr/bin/g++ \
+		CC=/usr/bin/gcc
+.else
+
+MODULES +=	gcc4
+MODGCC4_ARCHES = *
+MODGCC4_LANGS =	c c++
+
 MAKE_ENV =	BUILDTYPE=${BUILDTYPE} V=1 \
 		CXX=${LOCALBASE}/bin/eg++ \
 		CXX.host=${LOCALBASE}/bin/eg++ \
 		LINK.host=${LOCALBASE}/bin/eg++ \
 		CC=${LOCALBASE}/bin/egcc
+.endif
 
 USE_X11 =	Yes
 USE_GMAKE =	Yes
