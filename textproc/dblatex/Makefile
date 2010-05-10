@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/06 18:08:02 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/10 22:04:59 kili Exp $
 
 COMMENT =		convert DocBook to LaTeX, DVI, PostScript, and PDF
 DISTNAME =		dblatex-0.3
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		textproc
 
 # GPLv2+
@@ -20,13 +21,15 @@ MODPY_DISTUTILS_INSTALL =install --prefix=${LOCALBASE} \
 				--catalogs=${LOCALBASE}/share/xsl/docbook
 
 RUN_DEPENDS =		::print/texlive/base \
+			::print/texlive/texmf,-full \
+			::print/texlive/texmf,-main \
 			::textproc/libxslt \
 			::textproc/docbook-xsl \
 			:ImageMagick-*:graphics/ImageMagick
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 NO_REGRESS =		Yes
 
-SUBST_VARS+=	LOCALBASE MODPY_BIN
+SUBST_VARS +=		LOCALBASE MODPY_BIN
 
 post-extract:
 	@perl -pi -e 's,share/man/man1,man/man1,' ${WRKSRC}/setup.py
