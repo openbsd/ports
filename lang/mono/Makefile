@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/04/27 12:39:49 robert Exp $
+# $OpenBSD: Makefile,v 1.42 2010/05/10 20:17:31 robert Exp $
 
 # sync with net/avahi,-mono
 ONLY_FOR_ARCHS=	amd64 i386 powerpc # arm
@@ -80,11 +80,6 @@ BASH_SCRIPTS=	mcs/class/Mono.WebBrowser/build-csproj2k5 \
 		mono/arch/arm/dpiops.sh
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
-
-# XXX gmake randomy breaks here
-pre-build:
-	@cd ${WRKSRC}/mono && exec ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} \
-                ${MAKE} ${MAKE_FLAGS}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/runtime/mono-wrapper.in \
