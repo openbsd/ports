@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_accessible_src_atk_nsAppRootAccessible_cpp,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/accessible/src/atk/nsAppRootAccessible.cpp.orig	Sat Dec  5 02:55:55 2009
-+++ mozilla/accessible/src/atk/nsAppRootAccessible.cpp	Sat Jan 16 16:28:32 2010
+$OpenBSD: patch-mozilla_accessible_src_atk_nsAppRootAccessible_cpp,v 1.2 2010/05/10 12:36:09 espie Exp $
+--- mozilla/accessible/src/atk/nsAppRootAccessible.cpp.orig	Wed Mar 17 19:32:26 2010
++++ mozilla/accessible/src/atk/nsAppRootAccessible.cpp	Mon May 10 09:47:01 2010
 @@ -55,7 +55,7 @@ typedef GType (* AtkGetTypeType) (void);
  GType g_atk_hyperlink_impl_type = G_TYPE_INVALID;
  static PRBool sATKChecked = PR_FALSE;
@@ -10,3 +10,28 @@ $OpenBSD: patch-mozilla_accessible_src_atk_nsAppRootAccessible_cpp,v 1.1 2010/04
  static const char sATKHyperlinkImplGetTypeSymbol[] =
      "atk_hyperlink_impl_get_type";
  static const char sAccEnv [] = "GNOME_ACCESSIBILITY";
+@@ -117,8 +117,8 @@ static GHashTable *key_listener_list = NULL;
+ static guint key_snooper_id = 0;
+ 
+ G_BEGIN_DECLS
+-typedef void (*GnomeAccessibilityInit) (void);
+-typedef void (*GnomeAccessibilityShutdown) (void);
++typedef void (*GnomeAccessibilityInit) ();
++typedef void (*GnomeAccessibilityShutdown) ();
+ G_END_DECLS
+ 
+ struct MaiUtil
+@@ -757,9 +757,11 @@ LoadGtkModule(GnomeAccessibilityModule& aModule)
+     }
+ 
+     //we have loaded the library, try to get the function ptrs
+-    if (!(aModule.init = PR_FindFunctionSymbol(aModule.lib,
++    if (!(aModule.init = (GnomeAccessibilityInit)
++                                PR_FindFunctionSymbol(aModule.lib,
+                                                aModule.initName)) ||
+-        !(aModule.shutdown = PR_FindFunctionSymbol(aModule.lib,
++        !(aModule.shutdown = (GnomeAccessibilityShutdown) 
++                                PR_FindFunctionSymbol(aModule.lib,
+                                                    aModule.shutdownName))) {
+ 
+         //fail, :(
