@@ -1,0 +1,7 @@
+The xmonad-contrib (xmc) library is a set of extension modules 
+contributed by xmonad hackers and users, which provide additional 
+xmonad features. Examples include various layout modes (tabbed, 
+spiral, three-column...), prompts, program launchers, the ability 
+to manipulate windows and workspaces in various ways, alternate 
+navigation modes, and much more. There are also "meta-modules" 
+which make it easier to write new modules and extensions.
