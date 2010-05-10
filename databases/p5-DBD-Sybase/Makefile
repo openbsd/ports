@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2009/03/15 11:45:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/05/10 12:20:35 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Sybase database driver for the DBI module
 
-DISTNAME=	DBD-Sybase-1.04
-PKGNAME=	p5-${DISTNAME}p4
+DISTNAME=	DBD-Sybase-1.10
 CATEGORIES=	databases
 
 # GPL/Artistic License
@@ -21,10 +20,12 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	ct.>=3::databases/freetds
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:p5-DBI-*:databases/p5-DBI \
+RUN_DEPENDS=	:p5-DBI-*:databases/p5-DBI
 
 CONFIGURE_ENV+=	SYBASE=${LOCALBASE}
+CONFIGURE_ARGS=	--chained=y --accept_test_defaults
 
-NO_REGRESS=	Yes
+# after building, edit ${WRKSRC}/PWD to point at an available server
+REGRESS_IS_INTERACTIVE=	Yes
 
 .include <bsd.port.mk>
