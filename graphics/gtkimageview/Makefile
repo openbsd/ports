@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/21 22:40:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2010/05/10 08:38:44 robert Exp $
 
 COMMENT=	image viewer widget for gtk
 
 DISTNAME=	gtkimageview-1.6.4
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS=	gtkimageview	0.0
 

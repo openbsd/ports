@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests_interactive_c,v 1.1 2010/05/10 08:38:44 robert Exp $
+--- tests/interactive.c.orig	Mon May 10 10:34:00 2010
++++ tests/interactive.c	Mon May 10 10:34:57 2010
+@@ -55,7 +55,7 @@ init_open_dialog ()
+ 									 GTK_RESPONSE_CANCEL,
+ 									 GTK_STOCK_OPEN,
+ 									 GTK_RESPONSE_ACCEPT,
+-									 NULL);
++									 (char *)NULL);
+ }
+ 
+ //////////////////////////////////////////////////////////////////////
+@@ -238,7 +238,7 @@ menu_item_select_cb (GtkMenuItem *proxy)
+ 	GtkAction *action = g_object_get_data (G_OBJECT (proxy), "gtk-action");
+ 
+ 	char *msg;
+-	g_object_get (G_OBJECT (action), "tooltip", &msg, NULL);
++	g_object_get (G_OBJECT (action), "tooltip", &msg, (char *)NULL);
+ 
+ 	if (msg)
+ 	{
