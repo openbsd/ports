@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.19 2010/05/09 10:01:46 espie Exp $
+# $OpenBSD: Port.pm,v 1.20 2010/05/10 13:02:35 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -144,7 +144,7 @@ sub run
 	my $sudo = OpenBSD::Paths->sudo;
 	my $shell = $core->{shell};
 	$self->redirect($job->{log});
-	my @cmd = ('/usr/sbin/pkg_add');
+	my @cmd = ('/usr/sbin/pkg_add', '-a');
 	if ($job->{builder}->{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
 	}
