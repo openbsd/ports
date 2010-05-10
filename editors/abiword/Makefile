@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.74 2010/03/21 10:55:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2010/05/10 12:31:51 ajacoutot Exp $
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
-VERSION=	2.8.1
+VERSION=	2.8.4
 MAJORVER=	${VERSION:C/..$//}
 DISTNAME=	abiword-${VERSION}
 
@@ -38,7 +38,7 @@ WANTLIB += croco-0.6 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gsf-1
 WANTLIB += gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += stdc++ wmf wmflite xcb xml2 z
+WANTLIB += stdc++ wmf wmflite xcb xml2 z xcb-render xcb-render-util
 
 MASTER_SITES=   ${HOMEPAGE}/downloads/abiword/${VERSION}/source/
 

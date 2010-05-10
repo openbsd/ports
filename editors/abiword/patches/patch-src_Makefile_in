@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2010/03/21 10:55:04 ajacoutot Exp $
---- src/Makefile.in.orig	Fri Feb  5 14:23:05 2010
-+++ src/Makefile.in	Fri Feb  5 14:23:17 2010
-@@ -498,7 +498,7 @@ libabiword_2_8_la_CPPFLAGS = \
+$OpenBSD: patch-src_Makefile_in,v 1.2 2010/05/10 12:31:52 ajacoutot Exp $
+--- src/Makefile.in.orig	Wed Apr 14 23:51:20 2010
++++ src/Makefile.in	Mon May 10 08:37:44 2010
+@@ -500,7 +500,7 @@ libabiword_2_8_la_CPPFLAGS = \
  	$(WP_CPPFLAGS) \
  	-DABIWORD_DATADIR="\"$(ABIWORD_DATADIR)\""
  
