@@ -1,15 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/05/06 08:19:49 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/05/10 07:24:51 giovanni Exp $
 @group daemon
 piwik/
 piwik/LICENSE
 piwik/README
 piwik/config/
-piwik/config/.htaccess
 piwik/config/config.ini.sample.php
 piwik/config/global.ini.php
 piwik/config/manifest.inc.php
 piwik/core/
-piwik/core/.htaccess
 piwik/core/API/
 piwik/core/API/DataTableGenericFilter.php
 piwik/core/API/DocumentationGenerator.php
@@ -219,12 +217,10 @@ piwik/core/iView.php
 piwik/core/testMinimumPhpVersion.php
 piwik/index.php
 piwik/js/
-piwik/js/.htaccess
 piwik/js/README
 piwik/js/index.php
 piwik/js/piwik.js
 piwik/lang/
-piwik/lang/.htaccess
 piwik/lang/am.php
 piwik/lang/be.php
 piwik/lang/bg.php
@@ -262,7 +258,6 @@ piwik/lang/uk.php
 piwik/lang/zh-cn.php
 piwik/lang/zh-tw.php
 piwik/libs/
-piwik/libs/.htaccess
 piwik/libs/Event/
 piwik/libs/Event/Dispatcher.php
 piwik/libs/Event/Notification.php
@@ -1035,7 +1030,6 @@ piwik/misc/widget_example_lastvisits.html
 piwik/piwik.js
 piwik/piwik.php
 piwik/plugins/
-piwik/plugins/.htaccess
 piwik/plugins/API/
 piwik/plugins/API/API.php
 piwik/plugins/API/Controller.php
@@ -1980,7 +1974,6 @@ piwik/robots.txt
 piwik/tests/
 piwik/tests/README.txt
 piwik/themes/
-piwik/themes/.htaccess
 piwik/themes/default/
 piwik/themes/default/common.css
 piwik/themes/default/common.js
