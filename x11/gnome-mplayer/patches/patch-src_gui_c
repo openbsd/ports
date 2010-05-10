@@ -1,14 +1,23 @@
-$OpenBSD: patch-src_gui_c,v 1.6 2010/03/29 12:16:07 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.7 2010/05/10 08:30:55 dcoppa Exp $
 
 fix from upstream svn:
 add missing icons to the file menu
+activate Open on enter in Open->Location (fix upstream bug #381)
 
 revised audio/video device selection gui
 set DVD device to /dev/rcd0c instead of /dev/dvd
 
 --- src/gui.c.orig	Thu Feb 25 17:01:41 2010
-+++ src/gui.c	Mon Mar 29 12:04:50 2010
-@@ -4796,15 +4796,13 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
++++ src/gui.c	Wed May  5 08:58:26 2010
+@@ -2766,6 +2766,7 @@ void menuitem_open_location_callback(GtkMenuItem * men
+     label = gtk_label_new(_("Location:"));
+     open_location = gtk_entry_new();
+     gtk_entry_set_width_chars(GTK_ENTRY(open_location), 50);
++    gtk_entry_set_activates_default(GTK_ENTRY(open_location),TRUE);
+     item_box = gtk_hbox_new(FALSE, 6);
+     gtk_box_pack_start(GTK_BOX(item_box), label, FALSE, FALSE, 12);
+     gtk_box_pack_end(GTK_BOX(item_box), open_location, TRUE, TRUE, 0);
+@@ -4796,15 +4797,13 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
      tooltip = gtk_tooltips_new();
      gtk_tooltips_set_tip(tooltip, config_vo,
                           _
@@ -25,7 +34,7 @@ set DVD device to /dev/rcd0c instead of /dev/dvd
          if (vo != NULL) {
              if (strcmp(vo, "gl") == 0)
                  gtk_combo_box_set_active(GTK_COMBO_BOX(config_vo), 0);
-@@ -4814,14 +4812,10 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+@@ -4814,14 +4813,10 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
                  gtk_combo_box_set_active(GTK_COMBO_BOX(config_vo), 2);
              if (strcmp(vo, "xv") == 0)
                  gtk_combo_box_set_active(GTK_COMBO_BOX(config_vo), 3);
@@ -41,7 +50,7 @@ set DVD device to /dev/rcd0c instead of /dev/dvd
              }
          }
      }
-@@ -4891,32 +4885,29 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+@@ -4891,32 +4886,29 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
      tooltip = gtk_tooltips_new();
      gtk_tooltips_set_tip(tooltip, config_ao,
                           _
@@ -83,7 +92,7 @@ set DVD device to /dev/rcd0c instead of /dev/dvd
              }
          }
      }
-@@ -4995,8 +4986,8 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+@@ -4995,8 +4987,8 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
      j = -1;
  
      config_mplayer_dvd_device = gtk_combo_box_entry_new_text();
@@ -94,7 +103,7 @@ set DVD device to /dev/rcd0c instead of /dev/dvd
          j = i;
      }
      i++;
-@@ -6222,12 +6213,19 @@ GtkWidget *create_window(gint windowid)
+@@ -6222,12 +6214,19 @@ GtkWidget *create_window(gint windowid)
      gtk_menu_append(menu_file, GTK_WIDGET(menuitem_file_open));
      menuitem_file_open_folder =
          GTK_MENU_ITEM(gtk_image_menu_item_new_with_mnemonic(_("Open _Folder")));
@@ -115,7 +124,7 @@ set DVD device to /dev/rcd0c instead of /dev/dvd
      menu_file_disc = GTK_MENU(gtk_menu_new());
      gtk_widget_show(GTK_WIDGET(menuitem_file_disc));
      gtk_menu_shell_append(GTK_MENU_SHELL(menu_file), GTK_WIDGET(menuitem_file_disc));
-@@ -6276,7 +6274,9 @@ GtkWidget *create_window(gint windowid)
+@@ -6276,7 +6275,9 @@ GtkWidget *create_window(gint windowid)
      gtk_menu_append(menu_file_tv, GTK_WIDGET(menuitem_file_open_dtv));
  #ifdef HAVE_GPOD
      menuitem_file_open_ipod =

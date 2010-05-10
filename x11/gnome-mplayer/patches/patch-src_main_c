@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_main_c,v 1.4 2010/03/29 12:16:07 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.5 2010/05/10 08:30:55 dcoppa Exp $
 
 fix from upstream svn:
 fix memory leak when we have an invalid item to play
+change metadata timeout count from 10 to 50 (fix upstream bug #391)
 
 set some sane defaults:
 use mplayer's software volume control (see pkg/MESSAGE)
@@ -9,7 +10,7 @@ disable bar animation in full screen
 use xscrnsaver controls over gnome-power-manager
 
 --- src/main.c.orig	Thu Feb 25 17:01:41 2010
-+++ src/main.c	Wed Mar 24 11:08:38 2010
++++ src/main.c	Wed May  5 08:57:01 2010
 @@ -260,6 +260,8 @@ gint play_iter(GtkTreeIter * playiter, gint restart_se
      } else {
          if (verbose > 1)
@@ -19,6 +20,15 @@ use xscrnsaver controls over gnome-power-manager
          return 0;
      }
  
+@@ -281,7 +283,7 @@ gint play_iter(GtkTreeIter * playiter, gint restart_se
+     if (!streaming_media(uri) && !device_name(uri)) {
+         i = 0;
+         if (playable) {
+-            while (demuxer == NULL && i < 10) {
++            while (demuxer == NULL && i < 50) {
+                 g_free(title);
+                 g_free(artist);
+                 g_free(album);
 @@ -688,7 +690,7 @@ int main(int argc, char *argv[])
      playlist_visible = FALSE;
      disable_fullscreen = FALSE;
