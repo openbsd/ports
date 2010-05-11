@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_battery_battery_c,v 1.3 2010/05/11 18:54:37 dcoppa Exp $
+$OpenBSD: patch-src_battery_battery_c,v 1.4 2010/05/11 21:36:18 kili Exp $
 --- src/battery/battery.c.orig	Tue Jan 19 20:29:28 2010
-+++ src/battery/battery.c	Tue May 11 17:43:00 2010
++++ src/battery/battery.c	Tue May 11 23:29:23 2010
 @@ -24,6 +24,13 @@
  #include <cairo-xlib.h>
  #include <pango/pangocairo.h>
@@ -33,7 +33,7 @@ $OpenBSD: patch-src_battery_battery_c,v 1.3 2010/05/11 18:54:37 dcoppa Exp $
 +
 +#if defined(__OpenBSD__)
 +
-+	apm_fd = open("/dev/apm", O_RDONLY, "r");
++	apm_fd = open("/dev/apm", O_RDONLY);
 +	if (apm_fd < 0) {
 +		warn("init_battery: failed to open /dev/apm.");
 +		battery_enabled = 0;
