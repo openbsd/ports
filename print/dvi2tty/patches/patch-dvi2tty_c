@@ -1,7 +1,7 @@
-$OpenBSD: patch-dvi2tty_c,v 1.1.1.1 2002/11/03 15:47:06 naddy Exp $
---- dvi2tty.c.orig	Mon May 27 18:48:17 1996
-+++ dvi2tty.c	Sun Nov  3 16:16:12 2002
-@@ -157,7 +157,7 @@
+$OpenBSD: patch-dvi2tty_c,v 1.2 2010/05/11 06:36:59 espie Exp $
+--- dvi2tty.c.orig	Thu Jan 23 11:28:30 2003
++++ dvi2tty.c	Tue May 11 07:06:36 2010
+@@ -180,7 +180,7 @@
                                /* don't have terminals with Scand. nat. chars */
  #define WANTPAGER   TRUE      /* default: try to pipe through a pager (like  */
                                /* more) if stdout is tty and no -o switch     */
@@ -10,7 +10,7 @@ $OpenBSD: patch-dvi2tty_c,v 1.1.1.1 2002/11/03 15:47:06 naddy Exp $
  
      /*------------------ end of customization constants ---------------------*/
  
-@@ -240,11 +240,6 @@ int     getlong   (long *, int *, char *
+@@ -263,11 +263,6 @@ int     getlong   (long *, int *, char *);
  void    usage     (int);
  #else
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-dvi2tty_c,v 1.1.1.1 2002/11/03 15:47:06 naddy Exp $
  void    setoption (char * optarg);
  void    getargs   (void);
  void    getpages  (int j, char * str);
-@@ -265,7 +260,7 @@ void    usage     (int uerr);
+@@ -288,7 +283,7 @@ void    usage     (int uerr);
  #if defined(VMS)
  main(int argc, char **argv)
  #else
