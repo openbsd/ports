@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2010/05/11 17:09:29 pirofti Exp $
+# $OpenBSD: Makefile,v 1.93 2010/05/11 17:12:33 pirofti Exp $
 #
 
      SUBDIR =
@@ -12,6 +12,7 @@
      SUBDIR += calcoo
      SUBDIR += cblas
      SUBDIR += cfitsio
+     SUBDIR += colamd
      SUBDIR += coq
      SUBDIR += ecm
      SUBDIR += eigen
