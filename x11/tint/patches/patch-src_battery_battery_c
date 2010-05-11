@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_battery_battery_c,v 1.2 2010/05/10 18:05:33 edd Exp $
---- src/battery/battery.c.orig	Tue Jan 19 19:29:28 2010
-+++ src/battery/battery.c	Sun May  9 14:43:20 2010
+$OpenBSD: patch-src_battery_battery_c,v 1.3 2010/05/11 18:54:37 dcoppa Exp $
+--- src/battery/battery.c.orig	Tue Jan 19 20:29:28 2010
++++ src/battery/battery.c	Tue May 11 17:43:00 2010
 @@ -24,6 +24,13 @@
  #include <cairo-xlib.h>
  #include <pango/pangocairo.h>
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_battery_battery_c,v 1.2 2010/05/10 18:05:33 edd Exp $
  char *path_status=0;
  
 +#if defined(__OpenBSD__)
-+int apm_fd = NULL;
++int apm_fd = -1;
 +#endif
 +
  void update_batterys(void* arg)
@@ -59,7 +59,7 @@ $OpenBSD: patch-src_battery_battery_c,v 1.2 2010/05/10 18:05:33 edd Exp $
  	bat1_font_desc = bat2_font_desc = 0;
 +
 +#if defined(__OpenBSD__)
-+	if ((apm_fd != NULL) && (close(apm_fd) == -1))
++	if ((apm_fd != -1) && (close(apm_fd) == -1))
 +		warn("cannot close /dev/apm");
 +#endif
 +
