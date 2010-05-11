@@ -1,21 +1,32 @@
-$OpenBSD: patch-filters_Makefile_in,v 1.1 2010/04/02 08:15:21 jasper Exp $
---- filters/Makefile.in.orig	Sun Jan  3 04:54:52 2010
-+++ filters/Makefile.in	Sun Jan 10 21:16:26 2010
-@@ -42,7 +42,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
- CONFIG_CLEAN_FILES =
- SOURCES =
- DIST_SOURCES =
+$OpenBSD: patch-filters_Makefile_in,v 1.2 2010/05/11 18:48:54 kili Exp $
+--- filters/Makefile.in.orig	Fri Apr 30 15:45:34 2010
++++ filters/Makefile.in	Fri May  7 20:44:10 2010
+@@ -66,7 +66,7 @@ am__nobase_list = $(am__nobase_strip_setup); \
+ am__base_list = \
+   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
+   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
 -man3dir = $(mandir)/man3
 +man3dir = $(mandir)/man3p
  am__installdirs = "$(DESTDIR)$(man3dir)"
  NROFF = nroff
  MANS = $(man_MANS)
-@@ -193,7 +193,7 @@ install-man3: $(man3_MANS) $(man_MANS)
- 	  else file=$(srcdir)/$$i; fi; \
- 	  ext=`echo $$i | sed -e 's/^.*\\.//'`; \
- 	  case "$$ext" in \
--	    3*) ;; \
-+	    3*)ext='3p' ;; \
- 	    *) ext='3' ;; \
- 	  esac; \
- 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+@@ -169,7 +169,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-man_MANS = RlwrapFilter.3pm
++man_MANS = RlwrapFilter.3p
+ all: all-am
+ 
+ .SUFFIXES:
+@@ -409,8 +409,8 @@ uninstall-man: uninstall-man3
+ 
+ # CLEANFILES = $(man_MANS)
+ 
+-RlwrapFilter.3pm: RlwrapFilter.pm
+-	pod2man --section=3pm RlwrapFilter.pm > RlwrapFilter.3pm
++RlwrapFilter.3p: RlwrapFilter.pm
++	pod2man --section=3p RlwrapFilter.pm > RlwrapFilter.3p
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

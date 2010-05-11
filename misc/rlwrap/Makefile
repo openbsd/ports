@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/02 08:15:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/05/11 18:48:54 kili Exp $
 
 COMMENT=		generic readline wrapper for various programs
 
-DISTNAME=		rlwrap-0.36
+DISTNAME=		rlwrap-0.37
 CATEGORIES=		misc
-MASTER_SITES=		http://utopia.knoware.nl/~hlub/uck/rlwrap/
 
 HOMEPAGE=		http://utopia.knoware.nl/~hlub/uck/rlwrap/
 
-MAINTAINER=		Deanna Phillips <deanna@openbsd.org>
+MASTER_SITES=		${HOMEPAGE}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
