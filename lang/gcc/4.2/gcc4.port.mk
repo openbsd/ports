@@ -1,12 +1,21 @@
-# $OpenBSD: gcc4.port.mk,v 1.8 2010/05/07 20:04:23 pirofti Exp $
+# $OpenBSD: gcc4.port.mk,v 1.9 2010/05/11 07:34:47 espie Exp $
 
 MODGCC4_ARCHES?=
 MODGCC4_LANGS?=
 # Supported languages for now
-_MODGCC4CC=	cc
-_MODGCC4CXX=	c++
 _MODGCC4FORTRAN=fortran
 _MODGCC4JAVA=	java
+
+COMPILER_VERSION ?= gcc2
+
+.if !${COMPILER_VERSION:L:Mgcc4*}
+# only support these if not in base
+_MODGCC4CC=	cc
+_MODGCC4CXX=	c++
+.else
+_MODGCC4CC=	
+_MODGCC4CXX=
+.endif
 
 .if ${MODGCC4_LANGS:L} != ${_MODGCC4JAVA}
 # Always include support for this
@@ -28,6 +37,10 @@ BUILD_DEPENDS+=	::lang/gcc/4.2,-c++
 LIB_DEPENDS+=	estdc++.>=7:libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:lang/gcc/4.2,-estdc
 MODGCC4_post-patch+= ln -sf ${LOCALBASE}/bin/e${_MODGCC4CXX} ${WRKDIR}/bin/g++;
 MODGCC4_post-patch+= ln -sf ${LOCALBASE}/bin/e${_MODGCC4CXX} ${WRKDIR}/bin/${_MODGCC4CXX};
+.        else
+.          if ${MODGCC4_LANGS:L:Mc++}
+WANTLIB += stdc++.>=50.0
+.          endif
 .        endif
 .        if !empty(_MODGCC4FORTRAN:L:M${_j})
 BUILD_DEPENDS+=	::lang/gcc/4.2,-f95
