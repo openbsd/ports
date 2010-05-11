@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/03/27 14:32:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/05/11 07:23:23 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,6 +32,11 @@ BUILD_DEPENDS=	::devel/bison \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	lber,ldap,ldap_r::databases/openldap \
 		SDL::devel/sdl
+
+.include <bsd.own.mk>
+.if !${COMPILER_VERSION:L:Mgcc4}
+PATCH_LIST = patch-* gcc3-patch-*
+.endif
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

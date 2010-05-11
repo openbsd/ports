@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_ptlib_safecoll_h,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+$OpenBSD: gcc3-patch-include_ptlib_safecoll_h,v 1.1 2010/05/11 07:23:23 espie Exp $
 
 Make this build on gcc3.
 (reversed commit from upstream SVN)

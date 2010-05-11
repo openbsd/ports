@@ -25,6 +25,11 @@
  * All Rights Reserved.
  *
  * $Log: sound_sndio.cxx,v $
+ * Revision 1.2  2010/05/11 07:23:23  espie
+ * make it compile on gcc4, by making the relevant patch dependent on
+ * compiler version.
+ * also removes lvalue cast, that's not ansi.
+ *
  * Revision 1.1.1.1  2010/03/23 21:10:17  ajacoutot
  * Import ptlib-2.6.5
  *
@@ -246,7 +251,7 @@ PBoolean PSoundChannelSNDIO::Write(const void * buf, PINDEX len)
       return FALSE;
     }
     len -= did;
-    (char *)buf += did;
+    buf = (char*)buf + did;
     tot += did;
   }
   lastWriteCount += tot;
@@ -270,7 +275,7 @@ PBoolean PSoundChannelSNDIO::Read(void * buf, PINDEX len)
       return FALSE;
     }
     len -= did;
-    (char *)buf += did;
+    buf = (char*)buf + did;
     tot += did;
   }
   lastReadCount += tot;
