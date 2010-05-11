@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2009/10/22 09:09:26 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.3 2010/05/11 07:19:00 ajacoutot Exp $
 
 Post-install/update instructions for TimeTrex
 =============================================
@@ -7,6 +7,8 @@ Depending on the database you wish to access, you'll need the
 corresponding PHP module.  e.g:
     for MySQL you'll need to install php5-mysql
     for PostreSQL you'll need to install php5-pgsql
+
+If using LDAP authentication, you will also need to install php5-ldap.
 
 The administrator Guide is available as a PDF here:
     ${TRUEPREFIX}/timetrex/documentation/Administrator_Guide_Standard_Edition_en.pdf

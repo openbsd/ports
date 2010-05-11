@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/02 07:44:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/05/11 07:19:00 ajacoutot Exp $
 
 COMMENT=	web-based payroll and time management suite
 
-V=		3.0.8
+V=		3.1.0
 DISTNAME=	TimeTrex_Standard_Edition_v${V}
 PKGNAME=	timetrex-${V}
 CATEGORIES=	www productivity
@@ -11,8 +11,7 @@ EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://www.timetrex.com/
 
-# TimeTrex Public License Version 1.1.0 ("TPL")
-# (i.e modified MPL)
+# AGPLv3 (GNU Affero Public License)
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -38,6 +37,7 @@ do-install:
 	${SUBST_CMD} ${INSTDIR}/timetrex.ini.php-example_linux \
 		${INSTDIR}/README.OpenBSD
 	find ${INSTDIR} -type f -name \*.orig -or -name \*.bak | xargs rm
+	find ${INSTDIR} -name \*.beforesubst | xargs rm
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

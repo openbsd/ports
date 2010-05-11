@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/03/20 16:54:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/05/11 07:19:00 ajacoutot Exp $
 timetrex/
 timetrex/INSTALL.txt
 timetrex/LICENSE
@@ -392,6 +392,7 @@ timetrex/classes/modules/core/StationUserListFactory.class.php
 timetrex/classes/modules/core/SystemSettingFactory.class.php
 timetrex/classes/modules/core/SystemSettingListFactory.class.php
 timetrex/classes/modules/core/TTDate.class.php
+timetrex/classes/modules/core/TTLDAP.class.php
 timetrex/classes/modules/core/TTLicense.class.php
 timetrex/classes/modules/core/TTLog.class.php
 timetrex/classes/modules/core/TTMail.class.php
@@ -495,6 +496,7 @@ timetrex/classes/modules/install/InstallSchema_1033A.class.php
 timetrex/classes/modules/install/InstallSchema_1034A.class.php
 timetrex/classes/modules/install/InstallSchema_1035A.class.php
 timetrex/classes/modules/install/InstallSchema_1036A.class.php
+timetrex/classes/modules/install/InstallSchema_1037A.class.php
 timetrex/classes/modules/install/InstallSchema_Base.class.php
 timetrex/classes/modules/install/sql/
 timetrex/classes/modules/install/sql/mysql/
@@ -550,6 +552,7 @@ timetrex/classes/modules/install/sql/mysql/1033A.sql
 timetrex/classes/modules/install/sql/mysql/1034A.sql
 timetrex/classes/modules/install/sql/mysql/1035A.sql
 timetrex/classes/modules/install/sql/mysql/1036A.sql
+timetrex/classes/modules/install/sql/mysql/1037A.sql
 timetrex/classes/modules/install/sql/postgresql/
 timetrex/classes/modules/install/sql/postgresql/1000A.sql
 timetrex/classes/modules/install/sql/postgresql/1000T.sql
@@ -603,9 +606,16 @@ timetrex/classes/modules/install/sql/postgresql/1033A.sql
 timetrex/classes/modules/install/sql/postgresql/1034A.sql
 timetrex/classes/modules/install/sql/postgresql/1035A.sql
 timetrex/classes/modules/install/sql/postgresql/1036A.sql
+timetrex/classes/modules/install/sql/postgresql/1037A.sql
 timetrex/classes/modules/message/
+timetrex/classes/modules/message/MessageControlFactory.class.php
+timetrex/classes/modules/message/MessageControlListFactory.class.php
 timetrex/classes/modules/message/MessageFactory.class.php
 timetrex/classes/modules/message/MessageListFactory.class.php
+timetrex/classes/modules/message/MessageRecipientFactory.class.php
+timetrex/classes/modules/message/MessageRecipientListFactory.class.php
+timetrex/classes/modules/message/MessageSenderFactory.class.php
+timetrex/classes/modules/message/MessageSenderListFactory.class.php
 timetrex/classes/modules/other/
 timetrex/classes/modules/other/DemoData.class.php
 timetrex/classes/modules/other/EFT.class.php
@@ -2457,6 +2467,7 @@ timetrex/interface/report/PayStubSummary.php
 timetrex/interface/report/PayrollExport.php
 timetrex/interface/report/PunchSummary.php
 timetrex/interface/report/RemittanceSummary.php
+timetrex/interface/report/ScheduleSummary.php
 timetrex/interface/report/SystemLog.php
 timetrex/interface/report/T4ASummary.php
 timetrex/interface/report/T4Summary.php
@@ -2701,6 +2712,8 @@ timetrex/templates/report/PunchSummary.tpl
 timetrex/templates/report/PunchSummaryReport.tpl
 timetrex/templates/report/RemittanceSummary.tpl
 timetrex/templates/report/RemittanceSummaryReport.tpl
+timetrex/templates/report/ScheduleSummary.tpl
+timetrex/templates/report/ScheduleSummaryReport.tpl
 timetrex/templates/report/SystemLog.tpl
 timetrex/templates/report/SystemLogReport.tpl
 timetrex/templates/report/T4ASummary.tpl
