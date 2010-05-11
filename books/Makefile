@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2010/05/01 20:47:44 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2010/05/11 00:16:54 sthen Exp $
 
      SUBDIR =
+     SUBDIR += AsteriskGuide
      SUBDIR += AsteriskTFOT
      SUBDIR += JLS
      SUBDIR += JVMS
