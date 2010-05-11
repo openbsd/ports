@@ -1,0 +1,13 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_h,v 1.1 2010/05/11 10:33:57 naddy Exp $
+--- jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.h.orig	Tue May 11 00:21:54 2010
++++ jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.h	Tue May 11 00:22:18 2010
+@@ -41,7 +41,9 @@
+ 
+ #include <sys/ipc.h>
+ #include <sys/shm.h>
++#include <X11/Xmd.h>
+ #include <X11/extensions/XShm.h>
++#include <X11/extensions/shmproto.h>
+ 
+ extern int XShmQueryExtension();
+ 
