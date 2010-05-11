@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2009/08/10 06:32:43 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2010/05/11 23:22:37 pvalchev Exp $
 
 COMMENT=	interpreted language for scientific computing
 
-VERSION=	2.1
-DISTNAME=	yorick-${VERSION}.05
-PKGNAME=	${DISTNAME}p0
+VERSION=	2.1.06
+DISTNAME=	yorick-${VERSION}
 
 CATEGORIES=	math devel
 
@@ -21,22 +20,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 c m pthread-stubs xcb
+WANTLIB=	X11 c m
 USE_X11=	Yes
 
 Y_SITE=		${PREFIX}/share/yorick
 CONFIGURE_STYLE= simple
 MAKE_FLAGS=	Y_SITE="${Y_SITE}"
 
-WRKDIST=	${WRKDIR}/yorick-${VERSION}
+WRKDIST=	${WRKDIR}/yorick-${VERSION:R}
 
 # Some tests require X started (or DISPLAY, etc set).
 REGRESS_IS_INTERACTIVE=	Yes
 SETENV=env
 REGRESS_TARGET=		check
-
-post-extract:
-	@find ${WRKDIST} -type d -name CVS -exec rm -rf {} \; 2>/dev/null
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yorick/yorick ${PREFIX}/bin

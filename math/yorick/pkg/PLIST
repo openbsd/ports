@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/10/22 00:51:01 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/05/11 23:22:37 pvalchev Exp $
 @bin bin/gist
 @bin bin/yorick
 include/README
@@ -34,6 +34,7 @@ include/matrix.i
 include/mfcapp.h
 include/mfcres.h
 include/mfcterm.h
+include/mpy.h
 include/numfmt.h
 include/parse.h
 include/paths.i
@@ -140,6 +141,7 @@ share/yorick/i/idlsave.i
 share/yorick/i/ieee.i
 share/yorick/i/kepler.i
 share/yorick/i/legndr.i
+share/yorick/i/levmar.i
 share/yorick/i/make.i
 share/yorick/i/md5.i
 share/yorick/i/mkdoc.i
@@ -183,7 +185,9 @@ share/yorick/i/testlp.i
 share/yorick/i/testm.i
 share/yorick/i/testp.i
 share/yorick/i/teststr.i
+share/yorick/i/textload.i
 share/yorick/i/txpath.i
+share/yorick/i/unsigned.i
 share/yorick/i/ylmdec.i
 share/yorick/i/zroots.i
 share/yorick/i0/
