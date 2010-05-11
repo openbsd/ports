@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/11 17:11:32 pirofti Exp $
+%%SHARED%%
+include/colamd/
+include/colamd/UFconfig.h
+include/colamd/colamd.h
+lib/libcolamd.a
+lib/libcolamd_p.a
+lib/libcolamd_pic.a
