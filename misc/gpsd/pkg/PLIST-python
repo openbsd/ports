@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-python,v 1.2 2008/04/16 06:53:35 ckuethe Exp $
+@comment $OpenBSD: PLIST-python,v 1.3 2010/05/11 18:36:13 dcoppa Exp $
+@conflict gpsd-<=2.38p0
 bin/gpscat
 bin/gpsfake
 bin/gpsprof
@@ -7,9 +8,14 @@ lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/gps.py
 lib/python${MODPY_VERSION}/site-packages/gps.pyc
 lib/python${MODPY_VERSION}/site-packages/gps.pyo
+lib/python${MODPY_VERSION}/site-packages/gpscap.py
+lib/python${MODPY_VERSION}/site-packages/gpscap.pyc
+lib/python${MODPY_VERSION}/site-packages/gpscap.pyo
 lib/python${MODPY_VERSION}/site-packages/gpsfake.py
 lib/python${MODPY_VERSION}/site-packages/gpsfake.pyc
 lib/python${MODPY_VERSION}/site-packages/gpsfake.pyo
-@man man/man1/gpsctl.1
+lib/python${MODPY_VERSION}/site-packages/gpslib.so
+lib/python${MODPY_VERSION}/site-packages/gpspacket.so
+@man man/man1/gpscat.1
 @man man/man1/gpsfake.1
 @man man/man1/gpsprof.1

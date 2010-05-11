@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2010/05/11 18:36:13 dcoppa Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-motif=		motif-based test apps using gpsd
@@ -7,10 +7,10 @@ COMMENT-python=		python bindings for gpsd
 
 VERSION=		2.38
 DISTNAME=		gpsd-${VERSION}
-PKGNAME-main=		gpsd-${VERSION}p0
-PKGNAME-motif=		gpsd-motif-${VERSION}p3
+PKGNAME-main=		gpsd-${VERSION}p1
+PKGNAME-motif=		gpsd-motif-${VERSION}p4
 PKGNAME-php=		gpsd-php-${VERSION}
-PKGNAME-python=		gpsd-python-${VERSION}p1
+PKGNAME-python=		gpsd-python-${VERSION}p2
 SHARED_LIBS=		gps	18.0
 CATEGORIES=		misc geo
 
@@ -59,7 +59,7 @@ CONFIGURE_ARGS+=	--disable-python
 .else
 MULTI_PACKAGES+=	-python
 MODULES=		lang/python
-LIB_DEPENDS-python=	gps::misc/gpsd
+RUN_DEPENDS-python=	::misc/gpsd
 WANTLIB-python=
 RUN_DEPENDS-main=
 RUN_DEPENDS-motif=
@@ -73,10 +73,16 @@ PKG_ARCH-php=		*
 RUN_DEPENDS-php=	:php5-gd-*:www/php5/extensions,-gd
 PREFIX-php=		/var/www/
 
+PYTHON_SCRIPTS=		gpsprof gps.py gpsfake gpscat
+
+pre-configure:
+.for file in ${PYTHON_SCRIPTS}
+	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' ${WRKSRC}/${file}
+.endfor
+
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/var/www/gpsd
 	${INSTALL_SCRIPT} ${WRKSRC}/gpsd.php ${WRKINST}/var/www/gpsd
 	${INSTALL_DATA} ${WRKSRC}/gpsd_config.h ${PREFIX}/include
 
 .include <bsd.port.mk>
-

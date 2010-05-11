@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/04/16 06:53:35 ckuethe Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2010/05/11 18:36:13 dcoppa Exp $
+@conflict gpsd-python-<=2.38p1
 @newuser _gpsd:551:dialer::GPS server:/nonexistent:/sbin/nologin
 %%SHARED%%
-bin/cgps
-bin/cgpxlogger
-bin/gpsctl
-bin/gpsflash
-bin/gpspipe
-bin/rtcmdecode
-bin/sirfmon
+@bin bin/cgps
+@bin bin/cgpxlogger
+@bin bin/gpsctl
+@bin bin/gpsdlcdd
+@bin bin/gpsflash
+@bin bin/gpspipe
+@bin bin/rtcmdecode
+@bin bin/sirfmon
 include/gps.h
 include/gpsd.h
 include/gpsd_config.h
@@ -20,16 +22,15 @@ lib/pkgconfig/libgpsd.pc
 @man man/man1/cgps.1
 @man man/man1/cgpxlogger.1
 @man man/man1/gps.1
+@man man/man1/gpsctl.1
 @man man/man1/gpsflash.1
-@man man/man1/gpscat.1
 @man man/man1/gpspipe.1
 @man man/man1/rtcmdecode.1
 @man man/man1/sirfmon.1
-@man man/man1/xgps.1
 @man man/man3/libgps.3
 @man man/man3/libgpsd.3
 @man man/man3/libgpsmm.3
 @man man/man5/rtcm-104.5
 @man man/man5/srec.5
 @man man/man8/gpsd.8
-sbin/gpsd
+@bin sbin/gpsd
