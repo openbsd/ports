@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/11 17:07:33 pirofti Exp $
+%%SHARED%%
+lib/libqrupdate.a
+lib/libqrupdate.so.0

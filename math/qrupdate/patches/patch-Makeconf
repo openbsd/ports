@@ -1,0 +1,28 @@
+$OpenBSD: patch-Makeconf,v 1.1.1.1 2010/05/11 17:07:33 pirofti Exp $
+--- Makeconf.orig	Thu Feb 11 13:33:48 2010
++++ Makeconf	Sat May  8 00:16:04 2010
+@@ -1,18 +1,18 @@
+ # set this to your compiler's executable name (e.g. gfortran, g77)
+-FC=gfortran
++FC=g77
+ # requested flags
+-FFLAGS=-fimplicit-none -O3 -funroll-loops 
++FFLAGS=
+ # set if you need shared library
+ FPICFLAGS=-fPIC
+ 
+ # BLAS library (only required for tests)
+-BLAS=-lblas
++#BLAS=-lblas
+ # LAPACK library (only required for tests)
+-LAPACK=-llapack
++#LAPACK=-llapack
+ 
+ # Library version
+-VERSION=1.1
+-MAJOR=1
++VERSION=0.0
++MAJOR=0
+ 
+ # The default library dir
+ LIBDIR=lib
