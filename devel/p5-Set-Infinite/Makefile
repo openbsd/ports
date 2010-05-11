@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/05/03 16:10:27 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/11 14:36:12 dhill Exp $
 
 COMMENT =	sets of intervals
 
 MODULES =	cpan
-DISTNAME =	Set-Infinite-0.63
+DISTNAME =	Set-Infinite-0.65
 CATEGORIES =	devel
 
 # Perl
