@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2008/09/28 13:55:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/05/12 07:38:49 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	Modula-3 distribution for building CVSup
 DISTNAME=	ezm3-1.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.cvsup.org/ezm3/
@@ -43,6 +43,7 @@ WRKINST=	${WRKDIST}/binaries/${M3ARCH}
 
 post-patch:
 	cp ${FILESDIR}/OpenBSD ${WRKSRC}/m3config/src
+	rm -f ${WRKSRC}/language/modula3/m3compiler/m3cc/gcc/assert.h
 
 do-install:
 	chown -R ${BINOWN}:${BINGRP} ${WRKINST}
