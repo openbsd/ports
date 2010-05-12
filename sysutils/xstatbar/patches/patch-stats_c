@@ -1,10 +1,40 @@
-$OpenBSD: patch-stats_c,v 1.1 2010/03/21 11:37:17 ajacoutot Exp $
+$OpenBSD: patch-stats_c,v 1.2 2010/05/12 13:06:54 ajacoutot Exp $
 
 Fix cpu graph on single cores:
     sizeof(long) != sizeof(int64_t) on i386
 
+Make correct use of open(2): the mode arg is only needed with the
+O_CREAT flag.
+
 --- stats.c.orig	Thu Jan  7 18:08:14 2010
-+++ stats.c	Mon Feb  1 08:29:25 2010
++++ stats.c	Wed May 12 14:04:43 2010
+@@ -85,7 +85,7 @@ volume_init()
+    volume.is_setup = false;
+ 
+    /* open mixer */
+-   if ((volume.dev_fd = open("/dev/mixer", O_RDWR, "rw")) < 0) {
++   if ((volume.dev_fd = open("/dev/mixer", O_RDWR)) < 0) {
+       warn("volume: failed to open /dev/mixer");
+       return;
+    }
+@@ -134,7 +134,7 @@ volume_init()
+ 
+    /* finished... now close the device and reopen as read only */
+    close(volume.dev_fd);
+-   volume.dev_fd = open("/dev/mixer", O_RDONLY, "r");
++   volume.dev_fd = open("/dev/mixer", O_RDONLY);
+    if (volume.dev_fd < 0) {
+       warn("volume: failed to re-open /dev/mixer");
+       return;
+@@ -242,7 +242,7 @@ power_init()
+ {
+    power.is_setup = false;
+ 
+-   power.dev_fd = open("/dev/apm", O_RDONLY, "r");
++   power.dev_fd = open("/dev/apm", O_RDONLY);
+    if (power.dev_fd < 0) {
+       warn("power: failed to open /dev/apm");
+       return;
 @@ -456,9 +456,16 @@ sysinfo_update()
              err(1, "sysinfo update: KERN.CPTIME2.%d failed", cpu);
        }
