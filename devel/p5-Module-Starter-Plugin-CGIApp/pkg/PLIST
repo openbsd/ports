@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/12 18:48:02 jamesw Exp $
+bin/cgiapp-starter
+bin/titanium-starter
+${P5SITE}/Module/Starter/Plugin/CGIApp/
+${P5SITE}/Module/Starter/Plugin/CGIApp.pm
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/00-signature.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/01-load.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/Build.PL
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/Changes
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/LICENSE
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/MANIFEST
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/MANIFEST.SKIP
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/MI_Makefile.PL
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/Makefile.PL
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/Module.pm
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/README
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/boilerplate.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/perl-critic.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/perlcriticrc
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/pod-coverage.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/pod.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/runmode1.html
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/server.pl
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/test-app.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/00-signature.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/01-load.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/Build.PL
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/Changes
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/LICENSE
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/MANIFEST
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/MANIFEST.SKIP
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/MI_Makefile.PL
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/Makefile.PL
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/Module.pm
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/README
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/boilerplate.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/perl-critic.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/perlcriticrc
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/pod-coverage.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/pod.t
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/runmode1.html
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/server.pl
+${P5SITE}/Module/Starter/Plugin/CGIApp/templates/titanium/test-app.t
+@man man/man1/cgiapp-starter.1
+@man man/man1/titanium-starter.1
+@man man/man3p/Module::Starter::Plugin::CGIApp.3p
