@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2010/03/31 09:36:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/05/12 16:43:47 jasper Exp $
 
 COMMENT=	GNUstep base library
 
-DISTNAME=	gnustep-base-1.18.0
-PKGNAME=	${DISTNAME}p3
-SHARED_LIBS=	gnustep-base 2.1	# .1.16.4
+DISTNAME=	gnustep-base-1.20.0
+SHARED_LIBS=	gnustep-base 3.0	# .1.16.4
 CATEGORIES=	devel
 
 LIBDIR=		lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}
@@ -12,10 +11,9 @@ SUBST_VARS=	LIBDIR
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB += c crypto gcrypt m objc pthread ssl xml2
-WANTLIB += z
+WANTLIB += c crypto gcrypt m objc pthread ssl xml2 z
 
-.if ${MACHINE_ARCH} != "i386"
+.if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64"
 WANTLIB += iberty
 .endif
 

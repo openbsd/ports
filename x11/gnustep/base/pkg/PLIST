@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/12/23 15:25:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/05/12 16:43:47 jasper Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -31,6 +31,7 @@ include/Foundation/NSAttributedString.h
 include/Foundation/NSAutoreleasePool.h
 include/Foundation/NSBundle.h
 include/Foundation/NSByteOrder.h
+include/Foundation/NSCache.h
 include/Foundation/NSCalendarDate.h
 include/Foundation/NSCharacterSet.h
 include/Foundation/NSClassDescription.h
@@ -56,6 +57,7 @@ include/Foundation/NSExpression.h
 include/Foundation/NSFileHandle.h
 include/Foundation/NSFileManager.h
 include/Foundation/NSFormatter.h
+include/Foundation/NSGarbageCollector.h
 include/Foundation/NSGeometry.h
 include/Foundation/NSHTTPCookie.h
 include/Foundation/NSHTTPCookieStorage.h
@@ -77,7 +79,10 @@ include/Foundation/NSNull.h
 include/Foundation/NSNumberFormatter.h
 include/Foundation/NSObjCRuntime.h
 include/Foundation/NSObject.h
+include/Foundation/NSOperation.h
 include/Foundation/NSPathUtilities.h
+include/Foundation/NSPointerArray.h
+include/Foundation/NSPointerFunctions.h
 include/Foundation/NSPort.h
 include/Foundation/NSPortCoder.h
 include/Foundation/NSPortMessage.h
@@ -118,12 +123,19 @@ include/Foundation/NSUserDefaults.h
 include/Foundation/NSUtilities.h
 include/Foundation/NSValue.h
 include/Foundation/NSValueTransformer.h
+include/Foundation/NSXMLDTD.h
+include/Foundation/NSXMLDTDNode.h
+include/Foundation/NSXMLDocument.h
+include/Foundation/NSXMLElement.h
+include/Foundation/NSXMLNode.h
+include/Foundation/NSXMLNodeOptions.h
 include/Foundation/NSXMLParser.h
 include/Foundation/NSZone.h
 include/GNUstepBase/
+include/GNUstepBase/Additions.h
 include/GNUstepBase/GCObject.h
 include/GNUstepBase/GNUstep.h
-include/GNUstepBase/GSCategories.h
+include/GNUstepBase/GSBlocks.h
 include/GNUstepBase/GSConfig.h
 include/GNUstepBase/GSFileHandle.h
 include/GNUstepBase/GSFunctions.h
@@ -136,17 +148,36 @@ include/GNUstepBase/GSObjCRuntime.h
 include/GNUstepBase/GSUnion.h
 include/GNUstepBase/GSVersionMacros.h
 include/GNUstepBase/GSXML.h
-include/GNUstepBase/NSTask+GS.h
+include/GNUstepBase/NSArray+GNUstepBase.h
+include/GNUstepBase/NSAttributedString+GNUstepBase.h
+include/GNUstepBase/NSBundle+GNUstepBase.h
+include/GNUstepBase/NSCalendarDate+GNUstepBase.h
+include/GNUstepBase/NSData+GNUstepBase.h
+include/GNUstepBase/NSDebug+GNUstepBase.h
+include/GNUstepBase/NSFileHandle+GNUstepBase.h
+include/GNUstepBase/NSLock+GNUstepBase.h
+include/GNUstepBase/NSMutableString+GNUstepBase.h
+include/GNUstepBase/NSNumber+GNUstepBase.h
+include/GNUstepBase/NSObject+GNUstepBase.h
+include/GNUstepBase/NSProcessInfo+GNUstepBase.h
+include/GNUstepBase/NSStream+GNUstepBase.h
+include/GNUstepBase/NSString+GNUstepBase.h
+include/GNUstepBase/NSTask+GNUstepBase.h
+include/GNUstepBase/NSThread+GNUstepBase.h
+include/GNUstepBase/NSURL+GNUstepBase.h
 include/GNUstepBase/Unicode.h
-include/GNUstepBase/behavior.h
-include/GNUstepBase/objc-gnu2next.h
 include/GNUstepBase/preface.h
 include/GNUstepBase/unicode/
+include/ObjectiveC2/
+include/ObjectiveC2/Availability.h
+include/ObjectiveC2/blocks_runtime.h
+include/ObjectiveC2/runtime.h
 include/gnustep/
 include/gnustep/base/
+include/gnustep/base/Additions.h
 include/gnustep/base/GCObject.h
 include/gnustep/base/GNUstep.h
-include/gnustep/base/GSCategories.h
+include/gnustep/base/GSBlocks.h
 include/gnustep/base/GSFileHandle.h
 include/gnustep/base/GSFunctions.h
 include/gnustep/base/GSIArray.h
@@ -158,10 +189,25 @@ include/gnustep/base/GSObjCRuntime.h
 include/gnustep/base/GSUnion.h
 include/gnustep/base/GSVersionMacros.h
 include/gnustep/base/GSXML.h
-include/gnustep/base/NSTask+GS.h
+include/gnustep/base/NSArray+GNUstepBase.h
+include/gnustep/base/NSAttributedString+GNUstepBase.h
+include/gnustep/base/NSBundle+GNUstepBase.h
+include/gnustep/base/NSCalendarDate+GNUstepBase.h
+include/gnustep/base/NSData+GNUstepBase.h
+include/gnustep/base/NSDebug+GNUstepBase.h
+include/gnustep/base/NSFileHandle+GNUstepBase.h
+include/gnustep/base/NSLock+GNUstepBase.h
+include/gnustep/base/NSMutableString+GNUstepBase.h
+include/gnustep/base/NSNumber+GNUstepBase.h
+include/gnustep/base/NSObject+GNUstepBase.h
+include/gnustep/base/NSProcessInfo+GNUstepBase.h
+include/gnustep/base/NSStream+GNUstepBase.h
+include/gnustep/base/NSString+GNUstepBase.h
+include/gnustep/base/NSTask+GNUstepBase.h
+include/gnustep/base/NSThread+GNUstepBase.h
+include/gnustep/base/NSURL+GNUstepBase.h
 include/gnustep/base/Unicode.h
 include/gnustep/base/behavior.h
-include/gnustep/base/objc-gnu2next.h
 include/gnustep/base/preface.h
 include/gnustep/unicode/
 include/gnustep/unicode/caseconv.h

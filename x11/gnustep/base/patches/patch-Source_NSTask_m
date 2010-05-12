@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_NSTask_m,v 1.1.1.1 2007/05/29 03:01:35 ajacoutot Exp $
---- Source/NSTask.m.orig	Mon May 28 17:24:30 2007
-+++ Source/NSTask.m	Mon May 28 17:25:19 2007
-@@ -54,7 +54,7 @@
+$OpenBSD: patch-Source_NSTask_m,v 1.2 2010/05/12 16:43:47 jasper Exp $
+--- Source/NSTask.m.orig	Fri Apr 23 18:05:55 2010
++++ Source/NSTask.m	Wed May 12 10:00:44 2010
+@@ -53,7 +53,7 @@
  #include <unistd.h>
  #endif
  #include <sys/types.h>
