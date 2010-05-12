@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/16 07:49:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/05/12 16:44:39 jasper Exp $
 
 COMMENT=	GNUstep gui backend
 
-V=		0.16.0
+V=		0.18.0
 DISTNAME=	gnustep-back-${V}
-PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 
 BACKENDV=	${V:C/([0-9])*[.]([0-9]*).*/\1\2/1}
@@ -19,7 +18,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
 USE_X11=	Yes
 MODULES=	x11/gnustep
-LIB_DEPENDS=	gnustep-base.>=1::x11/gnustep/base \
+LIB_DEPENDS=	gnustep-base.>=3::x11/gnustep/base \
 		gnustep-gui::x11/gnustep/gui
 
 CONFIGURE_STYLE=gnu
