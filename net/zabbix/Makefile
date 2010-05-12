@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/05/04 05:51:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2010/05/12 10:56:02 ajacoutot Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -8,7 +8,7 @@ VERSION =		1.8.2
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}p3
 FULLPKGPATH-main =	net/zabbix,-main
-PKGNAME-server =	zabbix-server-${VERSION}p1
+PKGNAME-server =	zabbix-server-${VERSION}p2
 FULLPKGNAME-web =	zabbix-web-${VERSION}p2
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
@@ -41,6 +41,8 @@ LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			netsnmp::net/net-snmp \
 			iksemel::textproc/iksemel
 RUN_DEPENDS-server =	::net/fping
+# we want the _zabbix user&group as well as README.OpenBSD
+RUN_DEPENDS-server +=	:zabbix-agent-${VERSION}:net/zabbix,-main
 WANTLIB-server =	${WANTLIB} crypto idn ssl z
 
 CONFIGURE_STYLE =	gnu
