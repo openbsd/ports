@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/05/12 13:06:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/05/12 17:20:22 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
 COMMENT=	simple system monitor bar
 
-DISTNAME=	xstatbar-0.3
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	xstatbar-0.4
 
 CATEGORIES=	sysutils x11
 
@@ -23,8 +22,6 @@ WANTLIB += X11 Xau Xdmcp Xext Xrender c m
 
 MASTER_SITES=	${HOMEPAGE}files/
 EXTRACT_SUFX=	.tgz
-
-WRKDIST=	${WRKDIR}/xstatbar
 
 ALL_TARGET=	# empty
 

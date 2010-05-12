@@ -1,14 +1,11 @@
-$OpenBSD: patch-stats_c,v 1.2 2010/05/12 13:06:54 ajacoutot Exp $
-
-Fix cpu graph on single cores:
-    sizeof(long) != sizeof(int64_t) on i386
+$OpenBSD: patch-stats_c,v 1.3 2010/05/12 17:20:22 ajacoutot Exp $
 
 Make correct use of open(2): the mode arg is only needed with the
 O_CREAT flag.
 
---- stats.c.orig	Thu Jan  7 18:08:14 2010
-+++ stats.c	Wed May 12 14:04:43 2010
-@@ -85,7 +85,7 @@ volume_init()
+--- stats.c.orig	Wed May 12 17:38:15 2010
++++ stats.c	Wed May 12 19:14:19 2010
+@@ -83,7 +83,7 @@ volume_init()
     volume.is_setup = false;
  
     /* open mixer */
@@ -17,40 +14,3 @@ O_CREAT flag.
        warn("volume: failed to open /dev/mixer");
        return;
     }
-@@ -134,7 +134,7 @@ volume_init()
- 
-    /* finished... now close the device and reopen as read only */
-    close(volume.dev_fd);
--   volume.dev_fd = open("/dev/mixer", O_RDONLY, "r");
-+   volume.dev_fd = open("/dev/mixer", O_RDONLY);
-    if (volume.dev_fd < 0) {
-       warn("volume: failed to re-open /dev/mixer");
-       return;
-@@ -242,7 +242,7 @@ power_init()
- {
-    power.is_setup = false;
- 
--   power.dev_fd = open("/dev/apm", O_RDONLY, "r");
-+   power.dev_fd = open("/dev/apm", O_RDONLY);
-    if (power.dev_fd < 0) {
-       warn("power: failed to open /dev/apm");
-       return;
-@@ -456,9 +456,16 @@ sysinfo_update()
-             err(1, "sysinfo update: KERN.CPTIME2.%d failed", cpu);
-       }
-    } else {
-+      int i;
-+      long cpu_raw_tmp[CPUSTATES];
-+      size = sizeof(cpu_raw_tmp);
-       mib_cpus[1] = KERN_CPTIME;
--      if (sysctl(mib_cpus, 2, sysinfo.cpu_raw[0][cur], &size, NULL, 0) < 0)
--         err(1, "sysinfo update: KERN.CPTIME2 failed");
-+
-+      if (sysctl(mib_cpus, 2, cpu_raw_tmp, &size, NULL, 0) < 0)
-+         err(1, "sysinfo update: KERN.CPTIME failed");
-+
-+      for (i = 0; i < CPUSTATES; i++)
-+              sysinfo.cpu_raw[0][cur][i] = cpu_raw_tmp[i];
-    }
- 
-    /* convert ticks to percentages */
