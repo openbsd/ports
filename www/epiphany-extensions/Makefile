@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/04/27 07:46:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/05/12 11:03:52 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
-GNOME_VERSION=		2.30.0
-PKGNAME=		${DISTNAME}p1
+GNOME_VERSION=		2.30.1
 
 # sync with www/epiphany
 API_V=		2.29
@@ -41,7 +40,7 @@ MODULES=	devel/gettext \
 
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:epiphany->=2.30.0:www/epiphany
+RUN_DEPENDS=	:epiphany->=2.30.2:www/epiphany
 LIB_DEPENDS=	gpg-error::security/libgpg-error
 
 USE_X11=	Yes
