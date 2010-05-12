@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/06 21:42:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/05/12 14:35:28 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
-DISTNAME =		nfdump-1.5.8
-FULLPKGNAME-main =	${DISTNAME}p1
-FULLPKGNAME-nfprofile =	${DISTNAME:S/nfdump/nfprofile/}
+V =			1.5.8
+DISTNAME =		nfdump-$V
+FULLPKGNAME-main =	nfdump-$Vp2
+FULLPKGNAME-nfprofile =	nfprofile-$Vp0
 
 CATEGORIES =		net
 HOMEPAGE =		http://nfdump.sourceforge.net/
@@ -34,9 +35,9 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 
 MULTI_PACKAGES =	-main -nfprofile
 
-LIB_DEPENDS-main =	ft::net/flow-tools
+LIB_DEPENDS-main =	ft:flow-tools->=0.68.5:net/flow-tools
 LIB_DEPENDS-nfprofile =	rrd:rrdtool-*:net/rrdtool
-RUN_DEPENDS-nfprofile =	:nfdump-*:net/nfdump,-main
+RUN_DEPENDS-nfprofile =	:nfdump-$V:net/nfdump,-main
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nfdump
