@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.796 2010/04/29 05:28:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.797 2010/05/12 20:17:41 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -447,6 +447,7 @@
      SUBDIR += p5-File-Copy-Recursive
      SUBDIR += p5-File-CreationTime
      SUBDIR += p5-File-DesktopEntry
+     SUBDIR += p5-File-DirCompare
      SUBDIR += p5-File-Find-Rule
      SUBDIR += p5-File-Find-Rule-Filesys-Virtual
      SUBDIR += p5-File-Find-Rule-Perl
@@ -527,6 +528,8 @@
      SUBDIR += p5-Module-Pluggable-Fast
      SUBDIR += p5-Module-Refresh
      SUBDIR += p5-Module-ScanDeps
+     SUBDIR += p5-Module-Starter
+     SUBDIR += p5-Module-Starter-Plugin-CGIApp
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Moose
      SUBDIR += p5-MooseX-Async
