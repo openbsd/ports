@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_NSFont_m,v 1.3 2008/06/23 11:00:00 ajacoutot Exp $
---- Source/NSFont.m.orig	Tue Jun 10 06:01:49 2008
-+++ Source/NSFont.m	Mon Jun 23 12:10:38 2008
-@@ -168,13 +168,13 @@ keyForFont(NSString *name, const float *matrix, BOOL f
+$OpenBSD: patch-Source_NSFont_m,v 1.4 2010/05/12 16:44:17 jasper Exp $
+--- Source/NSFont.m.orig	Sat Feb 20 17:30:27 2010
++++ Source/NSFont.m	Wed May 12 10:12:27 2010
+@@ -168,13 +168,13 @@ keyForFont(NSString *name, const CGFloat *matrix, BOOL
    <list>
      <item>NSBoldFontSize            (none)</item>
      <item>NSControlContentFontSize  (none)</item>
@@ -17,7 +17,7 @@ $OpenBSD: patch-Source_NSFont_m,v 1.3 2008/06/23 11:00:00 ajacoutot Exp $
      <item>NSTitleBarFontSize        (none)</item>
      <item>NSToolTipsFontSize        (none)</item>
      <item>NSUserFixedPitchFontSize  (none)</item>
-@@ -635,7 +635,7 @@ static void setNSFont(NSString *key, NSFont *font)
+@@ -661,7 +661,7 @@ static void setNSFont(NSString *key, NSFont *font)
    
    if (fontSize == 0)
      {
@@ -26,7 +26,7 @@ $OpenBSD: patch-Source_NSFont_m,v 1.3 2008/06/23 11:00:00 ajacoutot Exp $
      }
  
    return fontSize;
-@@ -647,7 +647,7 @@ static void setNSFont(NSString *key, NSFont *font)
+@@ -673,7 +673,7 @@ static void setNSFont(NSString *key, NSFont *font)
    
    if (fontSize == 0)
      {

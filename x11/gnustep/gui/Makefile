@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2010/03/21 09:57:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/05/12 16:44:17 jasper Exp $
 
 COMMENT=	GNUstep gui library
 
-DISTNAME=	gnustep-gui-0.16.0
-PKGNAME=	${DISTNAME}p4
+DISTNAME=	gnustep-gui-0.18.0
 CATEGORIES=	devel
 
 # needs to follow gnustep-back backend versioning
 # cf. gnustep_backend_bundle() in ${WRKSRC}/Source/NSApplication.m
-SHARED_LIBS=	gnustep-gui 0.16	# .0.16.0
+SHARED_LIBS=	gnustep-gui 0.18	# .0.18.0
 
 HOMEPAGE=	http://www.gnustep.org/
 
@@ -19,14 +18,14 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 
 MODULES=	x11/gnustep
 
-LIB_DEPENDS=	aspell.>=16::textproc/aspell/core \
-		audiofile::devel/libaudiofile \
-		cups.>=3::print/cups \
-		gnustep-base.>=1::x11/gnustep/base \
+LIB_DEPENDS=	ao::audio/libao \
+		sndfile::audio/libsndfile \
 		jpeg.>=62::graphics/jpeg \
-		png.>=5::graphics/png \
 		ungif.>=5::graphics/libungif \
-		portaudio::audio/portaudio-svn
+		png.>=5::graphics/png \
+		cups.>=3::print/cups \
+		aspell.>=16::textproc/aspell/core \
+		gnustep-base.>=3::x11/gnustep/base
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
