@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2008/10/17 14:56:53 ckuethe Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2010/05/12 02:44:29 ckuethe Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -456,6 +456,7 @@ share/vim/${P}/ftplugin/limits.vim
 share/vim/${P}/ftplugin/lisp.vim
 share/vim/${P}/ftplugin/loginaccess.vim
 share/vim/${P}/ftplugin/logindefs.vim
+share/vim/${P}/ftplugin/logtalk.dict
 share/vim/${P}/ftplugin/logtalk.vim
 share/vim/${P}/ftplugin/lprolog.vim
 share/vim/${P}/ftplugin/lua.vim
@@ -1340,6 +1341,7 @@ share/vim/${P}/syntax/z8a.vim
 share/vim/${P}/syntax/zsh.vim
 share/vim/${P}/tools/
 share/vim/${P}/tools/README.txt
+@comment share/vim/${P}/tools/README.txt.bak.orig
 share/vim/${P}/tools/blink.c
 share/vim/${P}/tools/ccfilter.1
 share/vim/${P}/tools/ccfilter.c
@@ -1353,6 +1355,8 @@ share/vim/${P}/tools/pltags.pl
 share/vim/${P}/tools/ref
 share/vim/${P}/tools/shtags.1
 share/vim/${P}/tools/shtags.pl
+share/vim/${P}/tools/unicode.vim
+@comment share/vim/${P}/tools/unicode.vim.bak.orig
 share/vim/${P}/tools/vim132
 share/vim/${P}/tools/vim_vs_net.cmd
 share/vim/${P}/tools/vimm
