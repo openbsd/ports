@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/23 18:06:28 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/05/12 16:08:15 giovanni Exp $
 %%SHARED%%
 @bin bin/unzip-mem
 @bin bin/unzzip
@@ -33,6 +33,7 @@ include/zzip/types.h
 include/zzip/wrap.h
 include/zzip/write.h
 include/zzip/zzip.h
+include/zzip/zzip32.h
 include/zziplib.h
 lib/libzzip.a
 lib/libzzip.la
@@ -67,6 +68,7 @@ lib/pkgconfig/zzipwrap.pc
 @man man/man3/zzip_dir_stat.3
 @man man/man3/zzip_dirfd.3
 @man man/man3/zzip_dirhandle.3
+@man man/man3/zzip_disk_buffer.3
 @man man/man3/zzip_disk_close.3
 @man man/man3/zzip_disk_entry_fopen.3
 @man man/man3/zzip_disk_entry_strdup_comment.3
@@ -126,11 +128,15 @@ lib/pkgconfig/zzipwrap.pc
 @man man/man3/zzip_rewind.3
 @man man/man3/zzip_rewinddir.3
 @man man/man3/zzip_seek.3
+@man man/man3/zzip_seek32.3
 @man man/man3/zzip_seekdir.3
+@man man/man3/zzip_seekdir32.3
 @man man/man3/zzip_seterror.3
 @man man/man3/zzip_strerror.3
 @man man/man3/zzip_strerror_of.3
 @man man/man3/zzip_tell.3
+@man man/man3/zzip_tell32.3
 @man man/man3/zzip_telldir.3
+@man man/man3/zzip_telldir32.3
 share/aclocal/
 share/aclocal/zziplib.m4
