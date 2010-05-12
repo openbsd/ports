@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/12 18:47:03 jamesw Exp $
+bin/module-starter
+${P5SITE}/Module/
+${P5SITE}/Module/Starter/
+${P5SITE}/Module/Starter.pm
+${P5SITE}/Module/Starter/App.pm
+${P5SITE}/Module/Starter/BuilderSet.pm
+${P5SITE}/Module/Starter/Plugin/
+${P5SITE}/Module/Starter/Plugin.pod
+${P5SITE}/Module/Starter/Plugin/Template.pm
+${P5SITE}/Module/Starter/Simple.pm
+@man man/man1/module-starter.1
+@man man/man3p/Module::Starter.3p
+@man man/man3p/Module::Starter::App.3p
+@man man/man3p/Module::Starter::BuilderSet.3p
+@man man/man3p/Module::Starter::Plugin.3p
+@man man/man3p/Module::Starter::Plugin::Template.3p
+@man man/man3p/Module::Starter::Simple.3p
+share/doc/p5-Module-Starter/
+share/doc/p5-Module-Starter/getting-started.html

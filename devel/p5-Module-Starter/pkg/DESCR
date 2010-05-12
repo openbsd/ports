@@ -1,0 +1,3 @@
+Module::Starter is used to create a skeletal CPAN distribution,
+including basic builder scripts, tests, documentation, and module
+code.
