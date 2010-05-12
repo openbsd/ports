@@ -1,0 +1,15 @@
+$OpenBSD: patch-gui_ToolbarExample_SecondWindowOwner_h,v 1.1 2010/05/12 16:48:26 jasper Exp $
+
+Fix build with new gnustep-gui.
+From upstream svn.
+
+--- gui/ToolbarExample/SecondWindowOwner.h.orig	Wed May 12 11:06:53 2010
++++ gui/ToolbarExample/SecondWindowOwner.h	Wed May 12 11:07:03 2010
+@@ -26,7 +26,6 @@
+ #include <Foundation/Foundation.h>
+ #include <AppKit/AppKit.h>
+ #include <GNUstepGUI/GSToolbarView.h>
+-#include <GNUstepGUI/GSToolbar.h>
+ 
+ @interface SecondWindowOwner : NSObject
+ {

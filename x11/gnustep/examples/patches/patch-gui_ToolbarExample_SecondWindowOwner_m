@@ -1,0 +1,86 @@
+$OpenBSD: patch-gui_ToolbarExample_SecondWindowOwner_m,v 1.1 2010/05/12 16:48:26 jasper Exp $
+
+Fix build with new gnustep-gui.
+From upstream svn.
+
+--- gui/ToolbarExample/SecondWindowOwner.m.orig	Wed May 12 11:09:06 2010
++++ gui/ToolbarExample/SecondWindowOwner.m	Wed May 12 11:09:15 2010
+@@ -24,41 +24,43 @@
+  */
+ 
+ #include "SecondWindowOwner.h"
++#include <GNUstepGUI/GSToolbarView.h>
+ 
+ @implementation SecondWindowOwner
+ 
+ - (void) awakeFromNib
+ {
+-  GSToolbar *otherToolbar;
++  NSToolbar *otherToolbar;
+   
+   //NSLog(@"Nib loaded with window");
+   
+-  otherToolbar = [[GSToolbar alloc] initWithIdentifier: @"blablaToolbar"];
++  otherToolbar = [[NSToolbar alloc] initWithIdentifier: @"blablaToolbar"];
+   //NSLog(@"Mini controller delegate %@", self);
+   
+   [otherToolbar setDelegate: self];
+   
+   [otherToolbarView setBorderMask: GSToolbarViewTopBorder 
+-                                 | GSToolbarViewBottomBorder
+-				 | GSToolbarViewRightBorder
+-			         | GSToolbarViewLeftBorder];
+-  [(GSToolbarView *)otherToolbarView setToolbar: otherToolbar];
++                    | GSToolbarViewBottomBorder
++                    | GSToolbarViewRightBorder
++                    | GSToolbarViewLeftBorder];
+   // We do a cast to eliminate a warning...
++  [otherToolbar _setToolbarView: (GSToolbarView *)otherToolbarView];
+   
+-  RELEASE(otherToolbar);  
++  // We leak the toolbar! It should rather be an instance variable and 
++  // freed when this object gets deallocated.
++  //RELEASE(otherToolbar);  
+ }
+ 
+ // Toolbar delegates
+ 
+-- (NSToolbarItem *) toolbar: (GSToolbar *)toolbar itemForItemIdentifier: (NSString *)identifier 
+-                                             willBeInsertedIntoToolbar: (BOOL)willBeInserted 
++- (NSToolbarItem *) toolbar: (NSToolbar *)toolbar 
++      itemForItemIdentifier: (NSString *)identifier 
++  willBeInsertedIntoToolbar: (BOOL)willBeInserted 
+ {
+   NSToolbarItem *toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier: identifier];
+ 
+   //NSLog(@"toolbar:itemForItemIdentifier:willBeInsertedIntoToolbar: has been called");
+   
+-  AUTORELEASE(toolbarItem);
+-
+   if ([identifier isEqual: @"Third"])
+     {
+       [toolbarItem setLabel: @"Validation example"];
+@@ -74,10 +76,11 @@
+       [toolbarItem setAction: @selector(toggleToolbarShown:)];
+     }
+ 
+-  return toolbarItem;
++  return AUTORELEASE(toolbarItem);
+ }
+ 
+-- (NSArray *) toolbarDefaultItemIdentifiers: (GSToolbar *)toolbar {
++- (NSArray *) toolbarDefaultItemIdentifiers: (NSToolbar *)toolbar
++{
+   //NSLog(@"toolbarDefaultItemIdentifiers: has been called");
+ 
+   return [NSArray arrayWithObjects: @"Third",
+@@ -87,7 +90,8 @@
+ 				    nil];
+ }
+ 
+-- (NSArray *) toolbarAllowedItemIdentifiers: (GSToolbar *)toolbar {
++- (NSArray *) toolbarAllowedItemIdentifiers: (NSToolbar *)toolbar
++{
+   //NSLog(@"toolbarAllowedItemIdentifiers: has been called"); 
+     
+   return [NSArray arrayWithObjects: @"Third", 
