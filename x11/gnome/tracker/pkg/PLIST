@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/05/07 07:22:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/05/13 15:31:08 ajacoutot Exp $
 @bin bin/tracker-control
 @bin bin/tracker-explorer
 @bin bin/tracker-import
@@ -226,7 +226,7 @@ share/tracker/languages/stopwords.ru
 share/tracker/languages/stopwords.sv
 share/tracker/miners/
 share/tracker/miners/tracker-miner-applications.desktop
-share/tracker/miners/tracker-miner-emails.desktop
+share/tracker/miners/tracker-miner-evolution.desktop
 share/tracker/miners/tracker-miner-files.desktop
 share/tracker/ontologies/
 share/tracker/ontologies/10-xsd.ontology
