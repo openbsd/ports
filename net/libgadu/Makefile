@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/05/12 23:12:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/05/13 22:45:53 sthen Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
