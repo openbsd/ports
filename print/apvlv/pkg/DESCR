@@ -1,0 +1,6 @@
+Apvlv is a PDF Viewer with vim-like keybindings.
+For example, <Ctrl-f> for next page, <Ctrl-b> to previous page,
+'k','j','h','l' to scrolling a page up, down, left or right, and so on.
+It also understands quantifiers like vim, so typing '50' and <Ctrl-f>
+will go forward 50 pages, typing '30' and <Ctrl-b> will go backwards 30
+pages.

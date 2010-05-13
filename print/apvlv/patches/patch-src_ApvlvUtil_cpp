@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_ApvlvUtil_cpp,v 1.1.1.1 2010/05/13 16:05:05 landry Exp $
+HOME and PWD are not always set in env.
+--- src/ApvlvUtil.cpp.orig	Tue Apr 20 03:01:33 2010
++++ src/ApvlvUtil.cpp	Tue May  4 10:44:58 2010
+@@ -28,6 +28,9 @@
+ 
+ #include "ApvlvUtil.hpp"
+ 
++#include <sys/types.h>
++#include <unistd.h>
++
+ #include <stdlib.h>
+ #ifndef WIN32
+ #include <sys/wait.h>
+@@ -84,7 +87,7 @@ namespace apvlv
+ 	gchar *home =
+ 	  g_win32_get_package_installation_directory_of_module (NULL);
+ #else
+-	char *home = getenv ("HOME");
++	const gchar *home = g_get_home_dir();
+ #endif
+ 	g_snprintf (abpath, sizeof abpath, "%s%s", home, ++path);
+       }
+@@ -95,7 +98,7 @@ namespace apvlv
+ 	GetCurrentDirectoryA (sizeof cpath, cpath);
+ 	g_snprintf (abpath, sizeof abpath, "%s\\%s", cpath, path);
+ #else
+-	snprintf (abpath, sizeof abpath, "%s/%s", getenv ("PWD"), path);
++	snprintf (abpath, sizeof abpath, "%s/%s", g_get_current_dir(), path);
+ #endif
+       }
+ 

@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/13 16:05:05 landry Exp $
+@bin bin/apvlv
+@man man/man1/apvlv.1
+share/doc/apvlv/
+share/doc/apvlv/Startup.pdf
+share/doc/apvlv/apvlvrc.example
+share/doc/apvlv/dir.png
+share/doc/apvlv/pdf.png
+share/doc/apvlv/reg.png
+share/examples/apvlv/
+share/examples/apvlv/apvlvrc
+@sample ${SYSCONFDIR}/apvlvrc
