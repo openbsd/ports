@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/05/13 14:14:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2010/05/13 15:42:04 giovanni Exp $
 
 COMMENT=	virtual sticky pad system
 
@@ -11,7 +11,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://xpad.sourceforge.net/
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2
 RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
@@ -23,7 +24,7 @@ WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png z pthread-stubs xcb
 WANTLIB += gthread-2.0 pthread xcb-render xcb-render-util
 
-# GPL
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
