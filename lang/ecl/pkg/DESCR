@@ -2,3 +2,10 @@ Embeddable common-lisp, that tries to conform to the ANSI standard.
 
 Contrary to other common lisp implementations, it does not rely on
 mmap at fixed addresses, and thus actually works.
+
+The most relevant features:
+ * A bytecodes compiler and interpreter.
+ * Compiles Lisp also with any C/C++ compiler.
+ * It can build standalone executables and libraries.
+ * ASDF, Sockets, Gray streams, MOP, and other useful components.
+ * Extremely portable.
