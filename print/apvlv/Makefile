@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/13 16:05:05 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/13 17:41:27 landry Exp $
 
 COMMENT=	lightweight PDF document viewer with vi bindings
 
 DISTNAME=	apvlv-0.0.9.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	print
 HOMEPAGE=	http://code.google.com/p/apvlv/
 
@@ -23,7 +24,8 @@ WANTLIB += pixman-1 png pthread-stubs stdc++ xcb z
 LIB_DEPENDS=	gtk-x11-2.0.>=0.14,gdk-x11-2.0.>=0.14,gdk_pixbuf-2.0.>=0.14::x11/gtk+2 \
 		poppler.>=3,poppler-glib.>=3::print/poppler
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--without-djvu
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS+=	--without-djvu
+FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/apvlv
 
 .include <bsd.port.mk>
