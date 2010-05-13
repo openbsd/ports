@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/13 22:19:14 pirofti Exp $
+%%SHARED%%
+@bin bin/udcli
+include/libudis86/
+include/libudis86/extern.h
+include/libudis86/itab.h
+include/libudis86/types.h
+include/udis86.h
+lib/libudis86.a
+lib/libudis86.la
+share/doc/udis86/
+share/doc/udis86/index.html
+share/doc/udis86/ss.jpg
+share/doc/udis86/style.css
+share/doc/udis86/udis86.odt
+share/doc/udis86/udis86.pdf
+share/doc/udis86/x86optable.xml
+share/doc/udis86/x86optable.xsl
