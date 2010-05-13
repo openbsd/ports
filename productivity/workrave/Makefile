@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2010/05/13 08:20:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/05/13 12:29:25 jasper Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
-DISTNAME=		workrave-1.8.5
-PKGNAME=		${DISTNAME}p10
+DISTNAME=		workrave-1.9.1
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.workrave.org/
@@ -14,29 +13,30 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
-		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xmu Xrandr \
-		Xrender Xt Xtst art_lgpl_2 atk-1.0 atkmm-1.6 \
-		bonobo-2 bonobo-activation bonoboui-2 c cairo cairomm-1.0 \
-		crypto dbus-1 dbus-glib-1 expat fontconfig freetype \
-		gailutil gconf-2 gconfmm-2.6 gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gdkmm-2.4 gio-2.0 giomm-2.4 glade-2.0 glademm-2.4 glib-2.0 \
-		glibmm-2.4 glitz gmodule-2.0 gnome-2 gnome-keyring \
-		gnomecanvas-2 gnomecanvasmm-2.6 gnomemm-2.6 gnomeui-2 \
-		gnomevfs-2 gnomevfsmm-2.6 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
-		gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pangomm-1.4 pcre pixman-1 png popt pthread sigc-2.0 ssl \
-		stdc++ util xml2 z avahi-client avahi-common avahi-glib \
-		pthread-stubs xcb eggdbus-1 gcrypt gpg-error xcb-render \
-		xcb-render-util
+WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
+WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xtst art_lgpl_2 atk-1.0 avahi-client avahi-common
+WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 c
+WANTLIB += cairo cairomm-1.0 crypto dbus-1 dbus-glib-1 expat fontconfig
+WANTLIB += freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 glitz gmodule-2.0
+WANTLIB += gnome-2 gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0
+WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pangomm-1.4 pcre pixman-1 png popt pthread pthread-stubs
+WANTLIB += sigc-2.0 ssl stdc++ util xcb xcb-render xcb-render-util
+WANTLIB += xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
 
-LIB_DEPENDS=		gnet-2.0::net/gnet \
-			gnomeuimm-2.6::x11/gnome/libgnomeuimm \
-			panel-applet-2::x11/gnome/panel
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		::devel/py-cheetah
+LIB_DEPENDS=		gstreamer-0.10::multimedia/gstreamer-0.10/core \
+			gnet-2.0::net/gnet \
+			panel-applet-2::x11/gnome/panel \
+			atkmm-1.6,gdkmm-2.4,gtkmm-2.4::x11/gtk2mm
 
 MODULES=		devel/gettext \
+			lang/python \
 			textproc/intltool
 
 USE_X11=		Yes
@@ -46,17 +46,21 @@ USE_GMAKE=		Yes
 CFLAGS+=		-DNDEBUG
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--disable-xml \
+			--enable-dbus
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 pre-configure:
-	perl -pi -e 's|#include <sigc\+\+\/compatibility\.h>||g ; \
-		s|SigC::Signal|sigc::signal|g ; \
-		s|SigC::slot_class|sigc::mem_fun|g ; \
-		s|SigC::Connection|sigc::connection|g ; \
-		s|SigC::Slot|sigc::slot|g ; \
-		s|SigC::Object|sigc::trackable|g ; \
-		s|SigC::slot|sigc::mem_fun|g' \
+	${SUBST_CMD} ${WRKSRC}/frontend/gtkmm/src/Makefile.in \
+		${WRKSRC}/frontend/gtkmm/src/gnome_applet/Makefile.in
+	perl -pi -e 's,#include <sigc\+\+\/compatibility\.h>,,g ; \
+		s,SigC::Signal,sigc::signal,g ; \
+		s,SigC::slot_class,sigc::mem_fun,g ; \
+		s,SigC::Connection,sigc::connection,g ; \
+		s,SigC::Slot,sigc::slot,g ; \
+		s,SigC::Object,sigc::trackable,g ; \
+		s,SigC::slot,sigc::mem_fun,g' \
 		${WRKSRC}/frontend/gtkmm/src/*.* \
 		${WRKSRC}/frontend/plugin/*/gtkmm/src/*.*
 

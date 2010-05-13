@@ -1,0 +1,21 @@
+$OpenBSD: patch-frontend_gtkmm_src_Makefile_in,v 1.1 2010/05/13 12:29:26 jasper Exp $
+--- frontend/gtkmm/src/Makefile.in.orig	Thu May 13 13:55:31 2010
++++ frontend/gtkmm/src/Makefile.in	Thu May 13 13:55:47 2010
+@@ -2116,7 +2116,7 @@ DBusGnomeApplet.cc:	gnome_applet/gnome-applet.xml \
+ 			$(top_srcdir)/common/bin/dbusgen.py \
+ 		    	$(top_srcdir)/common/bin/DBus-client-template.cc \
+ 		    	$(top_srcdir)/common/bin/DBus-client-template.hh
+-			python $(top_srcdir)/common/bin/dbusgen.py --language=C++ -c gnome_applet/gnome-applet.xml DBUSGnomeApplet
++			${MODPY_BIN} $(top_srcdir)/common/bin/dbusgen.py --language=C++ -c gnome_applet/gnome-applet.xml DBUSGnomeApplet
+ 
+ DBusGnomeApplet.hh:	DBusGnomeApplet.cc
+ GnomeAppletWindow.cc:   DBusGnomeApplet.hh
+@@ -2133,7 +2133,7 @@ GnomeAppletWindow.cc:   DBusGnomeApplet.hh
+ @HAVE_APP_GTKMM_TRUE@@HAVE_DBUS_TRUE@			$(top_srcdir)/common/bin/dbusgen.py \
+ @HAVE_APP_GTKMM_TRUE@@HAVE_DBUS_TRUE@			$(top_srcdir)/common/bin/DBus-template.cc \
+ @HAVE_APP_GTKMM_TRUE@@HAVE_DBUS_TRUE@			$(top_srcdir)/common/bin/DBus-template.hh
+-@HAVE_APP_GTKMM_TRUE@@HAVE_DBUS_TRUE@			python $(top_srcdir)/common/bin/dbusgen.py --language=C++ -s workrave-gui.xml DBusGUI
++@HAVE_APP_GTKMM_TRUE@@HAVE_DBUS_TRUE@			${MODPY_BIN} $(top_srcdir)/common/bin/dbusgen.py --language=C++ -s workrave-gui.xml DBusGUI
+ 
+ @HAVE_APP_GTKMM_TRUE@@HAVE_DBUS_TRUE@DBusGUI.hh: 		DBusGUI.cc
+ 

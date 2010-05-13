@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/07/15 08:39:50 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/05/13 12:29:26 jasper Exp $
 @bin bin/workrave
-lib/bonobo/
-lib/bonobo/servers/
 lib/bonobo/servers/Workrave-Applet.server
-lib/bonobo/servers/Workrave-Control.server
 @bin libexec/workrave-applet
+share/applications/workrave.desktop
+share/dbus-1/services/org.workrave.Workrave.service
 share/examples/workrave/
 @sample ${SYSCONFDIR}/gnome/
 share/examples/workrave/sound/
@@ -13,8 +12,6 @@ share/examples/workrave/sound/events/
 @sample ${SYSCONFDIR}/gnome/sound/events/
 share/examples/workrave/sound/events/workrave.soundlist
 @sample ${SYSCONFDIR}/gnome/sound/events/workrave.soundlist
-share/gnome-2.0/
-share/gnome-2.0/ui/
 share/gnome-2.0/ui/GNOME_WorkraveApplet.xml
 share/locale/bg/LC_MESSAGES/workrave.mo
 share/locale/ca/LC_MESSAGES/workrave.mo
@@ -24,19 +21,19 @@ share/locale/de/LC_MESSAGES/workrave.mo
 share/locale/el/LC_MESSAGES/workrave.mo
 share/locale/eo/LC_MESSAGES/workrave.mo
 share/locale/es/LC_MESSAGES/workrave.mo
+share/locale/et/LC_MESSAGES/workrave.mo
 share/locale/eu/LC_MESSAGES/workrave.mo
 share/locale/fr/LC_MESSAGES/workrave.mo
 share/locale/he/LC_MESSAGES/workrave.mo
 share/locale/hu/LC_MESSAGES/workrave.mo
 share/locale/it/LC_MESSAGES/workrave.mo
 share/locale/ja/LC_MESSAGES/workrave.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/workrave.mo
+share/locale/nb/LC_MESSAGES/workrave.mo
 share/locale/nl/LC_MESSAGES/workrave.mo
-share/locale/no/LC_MESSAGES/workrave.mo
 share/locale/pl/LC_MESSAGES/workrave.mo
 share/locale/pt_BR/LC_MESSAGES/workrave.mo
+share/locale/ro/LC_MESSAGES/workrave.mo
 share/locale/ru/LC_MESSAGES/workrave.mo
 share/locale/sk/LC_MESSAGES/workrave.mo
 share/locale/sl/LC_MESSAGES/workrave.mo
@@ -44,20 +41,34 @@ share/locale/sv/LC_MESSAGES/workrave.mo
 share/locale/tr/LC_MESSAGES/workrave.mo
 share/locale/zh_CN/LC_MESSAGES/workrave.mo
 share/locale/zh_TW/LC_MESSAGES/workrave.mo
-share/pixmaps/
 share/pixmaps/workrave/
 share/pixmaps/workrave/workrave-icon-huge.png
-share/sounds/
+share/pixmaps/workrave/workrave.xpm
 share/sounds/workrave/
-share/sounds/workrave/break-ignored.wav
-share/sounds/workrave/break-prelude.wav
-share/sounds/workrave/daily-limit.wav
-share/sounds/workrave/exercise-ended.wav
-share/sounds/workrave/exercises-ended.wav
-share/sounds/workrave/micro-break-ended.wav
-share/sounds/workrave/micro-break-started.wav
-share/sounds/workrave/rest-break-ended.wav
-share/sounds/workrave/rest-break-started.wav
+share/sounds/workrave/default/
+share/sounds/workrave/default/break-ignored.wav
+share/sounds/workrave/default/break-prelude.wav
+share/sounds/workrave/default/daily-limit.wav
+share/sounds/workrave/default/exercise-ended.wav
+share/sounds/workrave/default/exercise-step.wav
+share/sounds/workrave/default/exercises-ended.wav
+share/sounds/workrave/default/micro-break-ended.wav
+share/sounds/workrave/default/micro-break-started.wav
+share/sounds/workrave/default/rest-break-ended.wav
+share/sounds/workrave/default/rest-break-started.wav
+share/sounds/workrave/default/soundtheme
+share/sounds/workrave/subtle/
+share/sounds/workrave/subtle/break-ignored.wav
+share/sounds/workrave/subtle/break-prelude.wav
+share/sounds/workrave/subtle/daily-limit.wav
+share/sounds/workrave/subtle/exercise-ended.wav
+share/sounds/workrave/subtle/exercise-step.wav
+share/sounds/workrave/subtle/exercises-ended.wav
+share/sounds/workrave/subtle/micro-break-ended.wav
+share/sounds/workrave/subtle/micro-break-started.wav
+share/sounds/workrave/subtle/rest-break-ended.wav
+share/sounds/workrave/subtle/rest-break-started.wav
+share/sounds/workrave/subtle/soundtheme
 share/workrave/
 share/workrave/exercises/
 share/workrave/exercises/backward-shoulder-stretch.png
@@ -104,3 +115,4 @@ share/workrave/images/workrave-icon-small.png
 share/workrave/images/workrave-quiet-icon-medium.png
 share/workrave/images/workrave-suspended-icon-medium.png
 share/workrave/images/workrave.png
+share/workrave/images/workrave.xpm

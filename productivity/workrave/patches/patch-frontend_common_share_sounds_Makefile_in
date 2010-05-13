@@ -1,27 +1,30 @@
-$OpenBSD: patch-frontend_common_share_sounds_Makefile_in,v 1.2 2007/11/12 22:05:41 jasper Exp $
---- frontend/common/share/sounds/Makefile.in.orig	Fri Sep 14 22:24:19 2007
-+++ frontend/common/share/sounds/Makefile.in	Thu Nov  8 20:48:27 2007
-@@ -554,14 +554,6 @@ uninstall-soundsDATA:
- 	  rm -f "$(DESTDIR)$(soundsdir)/$$f"; \
- 	done
+$OpenBSD: patch-frontend_common_share_sounds_Makefile_in,v 1.3 2010/05/13 12:29:26 jasper Exp $
+--- frontend/common/share/sounds/Makefile.in.orig	Thu May 13 13:20:44 2010
++++ frontend/common/share/sounds/Makefile.in	Thu May 13 13:21:23 2010
+@@ -538,17 +538,6 @@ uninstall-rcDATA:
+ 	echo " ( cd '$(DESTDIR)$(rcdir)' && rm -f" $$files ")"; \
+ 	cd "$(DESTDIR)$(rcdir)" && rm -f $$files
  install-utilsDATA: $(utils_DATA)
 -	@$(NORMAL_INSTALL)
--	test -z "$(utilsdir)" || $(mkdir_p) "$(DESTDIR)$(utilsdir)"
--	@list='$(utils_DATA)'; for p in $$list; do \
+-	test -z "$(utilsdir)" || $(MKDIR_P) "$(DESTDIR)$(utilsdir)"
+-	@list='$(utils_DATA)'; test -n "$(utilsdir)" || list=; \
+-	for p in $$list; do \
 -	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  f=$(am__strip_dir) \
--	  echo " $(utilsDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(utilsdir)/$$f'"; \
--	  $(utilsDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(utilsdir)/$$f"; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(utilsdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(utilsdir)" || exit $$?; \
 -	done
  
  uninstall-utilsDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -608,7 +600,7 @@ check-am: all-am
- check: check-am
+@@ -756,7 +745,7 @@ check: check-recursive
  all-am: Makefile $(DATA)
- installdirs:
--	for dir in "$(DESTDIR)$(kdesoundsdir)" "$(DESTDIR)$(rcdir)" "$(DESTDIR)$(soundsdir)" "$(DESTDIR)$(utilsdir)"; do \
-+	for dir in "$(DESTDIR)$(kdesoundsdir)" "$(DESTDIR)$(rcdir)" "$(DESTDIR)$(soundsdir)"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	for dir in "$(DESTDIR)$(kdesoundsdir)" "$(DESTDIR)$(rcdir)" "$(DESTDIR)$(utilsdir)"; do \
++	for dir in "$(DESTDIR)$(kdesoundsdir)" "$(DESTDIR)$(rcdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
- install: install-am
+ install: install-recursive

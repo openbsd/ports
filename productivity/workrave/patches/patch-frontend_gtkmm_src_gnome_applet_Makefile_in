@@ -1,19 +1,16 @@
-$OpenBSD: patch-frontend_gtkmm_src_gnome_applet_Makefile_in,v 1.1 2009/10/16 00:58:43 ajacoutot Exp $
-
-Fix compilation with GNOME 2.28.
-
---- frontend/gtkmm/src/gnome_applet/Makefile.in.orig	Fri Oct 16 02:55:34 2009
-+++ frontend/gtkmm/src/gnome_applet/Makefile.in	Fri Oct 16 02:54:46 2009
-@@ -516,9 +516,9 @@ SUBDIRS = 
+$OpenBSD: patch-frontend_gtkmm_src_gnome_applet_Makefile_in,v 1.2 2010/05/13 12:29:26 jasper Exp $
+--- frontend/gtkmm/src/gnome_applet/Makefile.in.orig	Thu May 13 13:41:10 2010
++++ frontend/gtkmm/src/gnome_applet/Makefile.in	Thu May 13 13:41:27 2010
+@@ -1016,10 +1016,10 @@ uninstall-am: uninstall-libexecPROGRAMS uninstall-serv
+ @HAVE_GNOMEAPPLET_TRUE@	dbus-binding-tool --prefix=workrave --mode=glib-client $<> $@
  
- @HAVE_GNOME_TRUE@workrave_applet_SOURCES = WorkraveApplet.c
- @HAVE_GNOME_TRUE@nodist_workrave_applet_SOURCES = $(IDL_C_GENERATED) $(IDL_A_GENERATED)
--@HAVE_GNOME_TRUE@workrave_applet_LDADD = @APPLET_LIBS@
--@HAVE_GNOME_TRUE@workrave_applet_CXXFLAGS = ${FLAGS}
--@HAVE_GNOME_TRUE@workrave_applet_CFLAGS = ${FLAGS}
-+@HAVE_GNOME_TRUE@workrave_applet_LDADD = @APPLET_LIBS@ `pkg-config --libs libgnomeui-2.0`
-+@HAVE_GNOME_TRUE@workrave_applet_CXXFLAGS = ${FLAGS} `pkg-config --cflags libgnomeui-2.0
-+@HAVE_GNOME_TRUE@workrave_applet_CFLAGS = ${FLAGS} `pkg-config --cflags libgnomeui-2.0`
- all: all-recursive
+ DBusGUI.xml: $(top_srcdir)/frontend/gtkmm/src/workrave-gui.xml
+-		python $(top_srcdir)/common/bin/dbusgen.py --language=dbus-glib ../workrave-gui.xml DBusGUI
++		${MODPY_BIN} $(top_srcdir)/common/bin/dbusgen.py --language=dbus-glib ../workrave-gui.xml DBusGUI
  
- .SUFFIXES:
+ DBusGnomeApplet.xml: gnome-applet.xml
+-		python $(top_srcdir)/common/bin/dbusgen.py --language=dbus-glib gnome-applet.xml DBusGnomeApplet
++		${MODPY_BIN} $(top_srcdir)/common/bin/dbusgen.py --language=dbus-glib gnome-applet.xml DBusGnomeApplet
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
