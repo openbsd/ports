@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/18 09:31:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/05/13 18:29:47 jasper Exp $
 
 COMMENT=		minimalistic Boolean satisfiability solver
 
 V=			1.14
-DISTNAME=		MiniSat_v$V.2006-Aug-29.src
-PKGNAME=		minisat-$Vp0
+DISTNAME=		MiniSat-p_v$V.2006-Sep-07.src
+PKGNAME=		minisat-$Vp1
 CATEGORIES=		math
 
 HOMEPAGE=		http://minisat.se/
@@ -22,7 +22,7 @@ EXTRACT_SUFX=		.zip
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			MiniSat.ps.gz
 
-WRKDIST=		${WRKDIR}/MiniSat_v$V/
+WRKDIST=		${WRKDIR}/MiniSat-p_v$V/
 
 WANTLIB += c m stdc++ z
 
