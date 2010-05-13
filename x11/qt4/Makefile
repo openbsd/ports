@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/05/09 18:38:08 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2010/05/13 12:05:35 landry Exp $
 
 COMMENT-debug =		C++ GUI toolkit, debug
 COMMENT-main =		C++ X11 GUI toolkit
@@ -121,8 +121,8 @@ CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" \
 
 # fix to avoid gcc generating a huge uncompilable intermediate assembly
 .if ${MACHINE_ARCH} == "hppa"
-CXXFLAGS =		-finline-limit=60
-CONFIGURE_ENV +=	OPENSOURCE_CXXFLAGS=${CXXFLAGS}
+CXXFLAGS +=		-finline-limit=60
+CONFIGURE_ENV +=	OPENSOURCE_CXXFLAGS="${CXXFLAGS}"
 .endif
 
 BUILD_DEPENDS +=	::print/cups
