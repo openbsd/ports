@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.797 2010/05/12 20:17:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.798 2010/05/13 22:20:17 pirofti Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -936,6 +936,7 @@
      SUBDIR += tla
      SUBDIR += tmake
      SUBDIR += ucpp
+     SUBDIR += udis86
      SUBDIR += uisp
      SUBDIR += uthash
      SUBDIR += uuid
