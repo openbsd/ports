@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/06 15:01:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/05/13 16:24:36 ajacoutot Exp $
 
 COMMENT=	web proxy with antivirus filter
 
 DISTNAME=	havp-0.91
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}/download/
 

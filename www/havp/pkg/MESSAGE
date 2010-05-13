@@ -3,6 +3,6 @@ into /etc/rc.local:
 
 if [ -x ${PREFIX}/sbin/havp ]; then
 	echo -n ' havp'
-	install -d -o _havp /var/run/havp/
+	install -d -o _havp /var/run/havp/ /var/tmp/havp/
 	${PREFIX}/sbin/havp
 fi
