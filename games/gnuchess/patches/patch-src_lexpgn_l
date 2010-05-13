@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_lexpgn_l,v 1.1 2010/05/13 16:37:32 espie Exp $
+--- src/lexpgn.l.orig	Thu May 13 18:22:31 2010
++++ src/lexpgn.l	Thu May 13 18:31:28 2010
+@@ -37,6 +37,7 @@
+ #include <stdlib.h>
+ #include <ctype.h>
+ #include <string.h>
++#include <unistd.h>
+ 
+ #include "common.h"
+ #include "lexpgn.h"
