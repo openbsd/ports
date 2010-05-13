@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/03/29 21:12:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/13 18:35:51 dcoppa Exp $
 
 COMMENT =	console client for pandora
 
-VERSION =	0.20100313
-DISTNAME =	PromyLOPh-pianobar-34ff325
+VERSION =	0.20100513
+DISTNAME =	PromyLOPh-pianobar-2a1e819
 PKGNAME =	pianobar-${VERSION}
 CATEGORIES =	audio
 
