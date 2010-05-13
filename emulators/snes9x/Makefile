@@ -1,48 +1,68 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 06:31:09 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/05/13 23:31:56 jakemsr Exp $
 
-COMMENT=	emulates the Super Nintendo Entertainment System
+COMMENT =	emulates the Super Nintendo Entertainment System
 
-DISTNAME=	snes9x-1.51-src
-PKGNAME=	${DISTNAME:S/-src//}p0
-CATEGORIES=	emulators games
+DISTNAME =	snes9x-1.52-src
+PKGNAME =	${DISTNAME:S/-src//}
+CATEGORIES =	emulators games
 
-HOMEPAGE=	http://www.snes9x.com/
+HOMEPAGE =	http://www.snes9x.com/
 
 # non-commercial
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	No
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = No
+PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB+=	X11 Xext Xxf86dga Xxf86vm c m pthread pthread-stubs stdc++ xcb z
+WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender Xv atk-1.0 c cairo expat \
+		fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0 \
+		gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pixman-1 pthread pthread-stubs stdc++ \
+		xcb xcb-render xcb-render-util z
 
-MASTER_SITES=	http://vincent.grigorieff.free.fr/snes9x/ \
-		http://files.ipherswipsite.com/snes9x/
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES =	http://sites.google.com/site/bearoso/snes9x/
+EXTRACT_SUFX =	.tar.bz2
 
-LIB_DEPENDS=	png::graphics/png
+BUILD_DEPENDS =	::textproc/intltool
+RUN_DEPENDS =	:desktop-file-utils-*:devel/desktop-file-utils
+LIB_DEPENDS =	glade-2.0::devel/libglade2 \
+		SDL::devel/sdl \
+		png::graphics/png \
+		xml2::textproc/libxml \
+		gtk-x11-2.0,gdk-x11-2.0,gdk_pixbuf-2.0::x11/gtk+2 
 
 .if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS=  ::devel/nasm 
+BUILD_DEPENDS =  ::devel/nasm 
 .endif
 
-AUTOCONF_VERSION=	2.59
+MODULES =	devel/gettext
 
-USE_X11=	Yes
-USE_GMAKE=	Yes
-CONFIGURE_STYLE=autoconf no-autoheader
-CONFIGURE_ENV=	OPTFLAGS="${CXXFLAGS} -I${LOCALBASE}/include/libpng" \
-		LIBS="-L${LOCALBASE}/lib"
+USE_X11 =	Yes
+USE_GMAKE =	Yes
 
-NO_REGRESS=	Yes
+CONFIGURE_STYLE = gnu
+CONFIGURE_ARGS = --disable-silent-rules \
+		 --without-portaudio \
+		 --without-oss \
+		 --without-alsa \
+		 --without-pulseaudio \
+		 --without-opengl 
+CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		DATADIRNAME="share"
 
-post-configure:
-	@perl -pi -e 's|\b_C\b|__C|g' ${WRKSRC}/cheats.cpp
+NO_REGRESS =	Yes
 
-do-install:
+WRKSRC =	${WRKDIST}/gtk
+
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/snes9x
-	${INSTALL_PROGRAM} ${WRKSRC}/snes9x ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${WRKSRC}/unix/docs/*.txt \
-	  ${PREFIX}/share/doc/snes9x
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/snes9x
+	cd ${WRKDIST}/docs && ${INSTALL_DATA} \
+	    control-inputs.txt controls.txt snapshots.txt snes9x-license.txt \
+	    ${PREFIX}/share/doc/snes9x
+	cd ${WRKDIST}/docs && ${INSTALL_DATA} snes9x.conf.default \
+	    ${PREFIX}/share/examples/snes9x
 
 .include <bsd.port.mk>

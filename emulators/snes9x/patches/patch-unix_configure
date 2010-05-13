@@ -1,0 +1,12 @@
+$OpenBSD: patch-unix_configure,v 1.1 2010/05/13 23:31:56 jakemsr Exp $
+--- unix/configure.orig	Mon Apr 19 09:47:56 2010
++++ unix/configure	Mon Apr 19 09:48:12 2010
+@@ -8362,7 +8362,7 @@ fi
+ if test $ac_cv_header_pthread_h = yes; then
+ 
+ 		S9XDEFS="$S9XDEFS -DUSE_THREADS"
+-		S9XLIBS="$S9XLIBS -lpthread"
++		S9XLIBS="$S9XLIBS -pthread"
+ 
+ fi
+ 

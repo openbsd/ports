@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtk_configure,v 1.1 2010/05/13 23:31:56 jakemsr Exp $
+--- gtk/configure.orig	Sun Jan 10 17:28:11 2010
++++ gtk/configure	Mon Apr 19 16:59:27 2010
+@@ -2351,7 +2351,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+-CFLAGS="-O2 -Wall -W -pedantic -Wno-unused-parameter -pipe $CFLAGS"
++CFLAGS="-Wall -W -pedantic -Wno-unused-parameter $CFLAGS"
+ CXXFLAGS="$CFLAGS"
+ 
+ ac_ext=c

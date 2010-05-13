@@ -1,12 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/09/09 15:17:06 fgsch Exp $
-bin/snes9x
+@comment $OpenBSD: PLIST,v 1.4 2010/05/13 23:31:56 jakemsr Exp $
+@bin bin/snes9x-gtk
+share/applications/snes9x.desktop
 share/doc/snes9x/
-share/doc/snes9x/changes.txt
 share/doc/snes9x/control-inputs.txt
 share/doc/snes9x/controls.txt
-share/doc/snes9x/faqs.txt
-share/doc/snes9x/hardware.txt
-@comment share/doc/snes9x/readme.txt
-share/doc/snes9x/readme_unix.txt
 share/doc/snes9x/snapshots.txt
 share/doc/snes9x/snes9x-license.txt
+share/examples/snes9x/
+share/examples/snes9x/snes9x.conf.default
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/snes9x.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/snes9x.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/snes9x.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/snes9x.svg
+share/locale/es_VE/
+share/locale/es_VE/LC_MESSAGES/
+share/locale/es_VE/LC_MESSAGES/snes9x-gtk.mo
+share/locale/fr_FR/
+share/locale/fr_FR/LC_MESSAGES/
+share/locale/fr_FR/LC_MESSAGES/snes9x-gtk.mo
+share/locale/pt_BR/LC_MESSAGES/snes9x-gtk.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/snes9x-gtk.mo
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
