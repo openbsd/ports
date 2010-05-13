@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/05/13 12:29:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2010/05/13 12:37:16 jasper Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
 DISTNAME=		workrave-1.9.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.workrave.org/
@@ -28,8 +29,7 @@ WANTLIB += xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		::devel/py-cheetah
+BUILD_DEPENDS=		::devel/py-cheetah
 LIB_DEPENDS=		gstreamer-0.10::multimedia/gstreamer-0.10/core \
 			gnet-2.0::net/gnet \
 			panel-applet-2::x11/gnome/panel \
@@ -54,15 +54,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/frontend/gtkmm/src/Makefile.in \
 		${WRKSRC}/frontend/gtkmm/src/gnome_applet/Makefile.in
-	perl -pi -e 's,#include <sigc\+\+\/compatibility\.h>,,g ; \
-		s,SigC::Signal,sigc::signal,g ; \
-		s,SigC::slot_class,sigc::mem_fun,g ; \
-		s,SigC::Connection,sigc::connection,g ; \
-		s,SigC::Slot,sigc::slot,g ; \
-		s,SigC::Object,sigc::trackable,g ; \
-		s,SigC::slot,sigc::mem_fun,g' \
-		${WRKSRC}/frontend/gtkmm/src/*.* \
-		${WRKSRC}/frontend/plugin/*/gtkmm/src/*.*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/workrave/sound/events
