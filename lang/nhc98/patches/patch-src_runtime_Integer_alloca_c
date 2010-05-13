@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_runtime_Integer_alloca_c,v 1.3 2010/05/13 17:15:07 espie Exp $
+--- src/runtime/Integer/alloca.c.orig	Thu May 13 18:38:31 2010
++++ src/runtime/Integer/alloca.c	Thu May 13 18:39:05 2010
+@@ -2,8 +2,8 @@
+ #include <stdio.h>
+ 
+ 
+-void *alloca (unsigned size)
++void *alloca (size_t size)
+ {
+-  fprintf(stderr,"Failure alloca %d called:-(\n",size);
++  fprintf(stderr,"Failure alloca %lu called:-(\n",size);
+   abort();
+ }
