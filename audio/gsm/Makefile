@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.35 2009/04/05 19:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.36 2010/05/14 09:36:50 dcoppa Exp $
 
 COMMENT=	u-law to gsm encoding audio converter and library
 
 DISTNAME=	gsm-1.0.13
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
-HOMEPAGE=	http://user.cs.tu-berlin.de/~jutta/toast.html
-MASTER_SITES=	http://user.cs.tu-berlin.de/~jutta/gsm/
+HOMEPAGE=	http://www.quut.com/gsm/
+MASTER_SITES=	${HOMEPAGE}
 SHARED_LIBS=	gsm	1.0
 
 # ISC-like
