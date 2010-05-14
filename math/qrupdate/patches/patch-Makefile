@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2010/05/11 17:07:33 pirofti Exp $
+$OpenBSD: patch-Makefile,v 1.2 2010/05/14 08:45:58 ajacoutot Exp $
 --- Makefile.orig	Fri Feb  6 11:12:00 2009
 +++ Makefile	Sat May  8 00:03:43 2010
 @@ -20,6 +20,7 @@
@@ -14,29 +14,29 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2010/05/11 17:07:33 pirofti Exp $
  
  lib:
 -	make -C src/ lib
-+	gmake -C src/ lib
++	${MAKE_PROGRAM} -C src/ lib
  solib:
 -	make -C src/ solib
-+	gmake -C src/ solib
++	${MAKE_PROGRAM} -C src/ solib
  test: lib
 -	make -C test/
-+	gmake -C test/
++	${MAKE_PROGRAM} -C test/
  
  clean:
  	rm -f libqrupdate.a libqrupdate.so
 -	make -C src/ clean
 -	make -C test/ clean
-+	gmake -C src/ clean
-+	gmake -C test/ clean
++	${MAKE_PROGRAM} -C src/ clean
++	${MAKE_PROGRAM} -C test/ clean
  
  install:
 -	make -C src/ install
-+	gmake -C src/ install
++	${MAKE_PROGRAM} -C src/ install
  
  install-shlib:
 -	make -C src/ install-shlib
-+	gmake -C src/ install-shlib
++	${MAKE_PROGRAM} -C src/ install-shlib
  
  install-staticlib:
 -	make -C src/ install-staticlib
-+	gmake -C src/ install-staticlib
++	${MAKE_PROGRAM} -C src/ install-staticlib

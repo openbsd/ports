@@ -1,25 +1,20 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2010/05/11 17:07:33 pirofti Exp $
---- src/Makefile.orig	Tue Jan 19 13:32:35 2010
-+++ src/Makefile	Sat May  8 00:14:53 2010
-@@ -65,14 +65,14 @@ install: install-shlib install-staticlib
+$OpenBSD: patch-src_Makefile,v 1.2 2010/05/14 08:45:58 ajacoutot Exp $
+--- src/Makefile.orig	Tue Jan 19 12:32:35 2010
++++ src/Makefile	Fri May 14 09:38:38 2010
+@@ -65,9 +65,7 @@ install: install-shlib install-staticlib
  install-shlib: ../libqrupdate$(SOEXT) install-lib$(SOEXT)
  
  install-lib.so:
 -	install -D -m644 ../libqrupdate.so $(DESTDIR)$(PREFIX)/$(LIBDIR)/libqrupdate.so.$(VERSION)
 -	ln -s libqrupdate.so.$(VERSION) $(DESTDIR)$(PREFIX)/$(LIBDIR)/libqrupdate.so.$(MAJOR)
 -	ln -s libqrupdate.so.$(VERSION) $(DESTDIR)$(PREFIX)/$(LIBDIR)/libqrupdate.so
-+	install ../libqrupdate.so $(PREFIX)/$(LIBDIR)/libqrupdate.so.$(VERSION)
-+	ln -s libqrupdate.so.$(VERSION) $(PREFIX)/$(LIBDIR)/libqrupdate.so.$(MAJOR)
-+	ln -s libqrupdate.so.$(VERSION) $(PREFIX)/$(LIBDIR)/libqrupdate.so
++	install -m 644 ../libqrupdate.so $(PREFIX)/$(LIBDIR)/libqrupdate.so.$(VERSION)
  
  install-lib.dylib:
--	install -D -m644 ../libqrupdate.dylib $(DESTDIR)$(PREFIX)/$(LIBDIR)/libqrupdate.$(VERSION).dylib
--	ln -s libqrupdate.$(VERSION).dylib $(DESTDIR)$(PREFIX)/$(LIBDIR)/libqrupdate.$(MAJOR).dylib
--	ln -s libqrupdate.$(VERSION).dylib $(DESTDIR)$(PREFIX)/$(LIBDIR)/libqrupdate.dylib
-+	install ../libqrupdate.dylib $(PREFIX)/$(LIBDIR)/libqrupdate.$(VERSION).dylib
-+	ln -s libqrupdate.$(VERSION).dylib $(PREFIX)/$(LIBDIR)/libqrupdate.$(MAJOR).dylib
-+	ln -s libqrupdate.$(VERSION).dylib $(PREFIX)/$(LIBDIR)/libqrupdate.dylib
+ 	install -D -m644 ../libqrupdate.dylib $(DESTDIR)$(PREFIX)/$(LIBDIR)/libqrupdate.$(VERSION).dylib
+@@ -75,4 +73,4 @@ install-lib.dylib:
+ 	ln -s libqrupdate.$(VERSION).dylib $(DESTDIR)$(PREFIX)/$(LIBDIR)/libqrupdate.dylib
  
  install-staticlib: ../libqrupdate.a
 -	install -D -m644 ../libqrupdate.a $(DESTDIR)$(PREFIX)/$(LIBDIR)/libqrupdate.a
-+	install ../libqrupdate.a $(PREFIX)/$(LIBDIR)/libqrupdate.a
++	install -m 644 ../libqrupdate.a $(PREFIX)/$(LIBDIR)/libqrupdate.a
