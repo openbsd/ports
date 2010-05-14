@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.38 2010/05/02 13:37:09 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.39 2010/05/14 10:23:04 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -23,9 +23,6 @@ install at least the following packages:
 	gnome-utils
 
 (xscreensaver can be used instead of gnome-screensaver)
-
-This file will briefly explain to you how to make this experience more
-pleasant.
 
 * A note about accessibility
   --------------------------
