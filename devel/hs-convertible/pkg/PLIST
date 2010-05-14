@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/14 06:24:34 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/05/14 09:08:26 kili Exp $
 lib/${DISTNAME}/
 lib/${DISTNAME}/ghc-${MODGHC_VER}/
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/
@@ -16,7 +16,7 @@ lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
 lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
 lib/${DISTNAME}/register.sh
 @exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
-@unexec-delete /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
 lib/${DISTNAME}/unregister.sh
 share/doc/${DISTNAME}/
 share/doc/${DISTNAME}/COPYRIGHT

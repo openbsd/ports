@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/09 15:53:43 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/14 09:08:27 kili Exp $
 
 COMMENT =		CGI library for Haskell
 
 DISTNAME =		cgi-3001.1.7.2
+PKGNAME =		hs-${DISTNAME}p0
 CATEGORIES =		www devel
 HOMEPAGE =		http://www.cs.uu.nl/~daan/parsec.html
 

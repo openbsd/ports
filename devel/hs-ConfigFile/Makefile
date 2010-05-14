@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/13 19:31:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/14 09:08:26 kili Exp $
 
 COMMENT =		parser for config files in Haskell
 
 DISTNAME =		ConfigFile-1.0.6
+PKGNAME =		hs-${DISTNAME}p0
 CATEGORIES =		devel sysutils
 HOMEPAGE =		http://software.complete.org/configfile
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/13 19:13:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/14 09:08:26 kili Exp $
 
 COMMENT =		utility functions for Haskell programmers
 
 DISTNAME =		MissingH-1.1.0.3
+PKGNAME =		hs-${DISTNAME}p0
 CATEGORIES =		devel
 HOMEPAGE =		http://software.complete.org/missingh
 

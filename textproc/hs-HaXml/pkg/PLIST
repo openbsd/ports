@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/28 16:06:40 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/05/14 09:08:27 kili Exp $
 @bin bin/Canonicalise
 @bin bin/DtdToHaskell
 @bin bin/MkOneOf
@@ -40,7 +40,7 @@ lib/${DISTNAME}/ghc-${MODGHC_VER}/Text/XML/HaXml/Xtract/Parse.hi
 lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
 lib/${DISTNAME}/register.sh
 @exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
-@unexec-delete /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
 lib/${DISTNAME}/unregister.sh
 share/doc/${DISTNAME}/
 share/doc/${DISTNAME}/COPYRIGHT

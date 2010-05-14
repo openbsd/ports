@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/05/06 20:05:24 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/05/14 09:08:27 kili Exp $
 
 COMMENT =		XML parsing utilities for Haskell
 
 DISTNAME =		HaXml-1.13.3
 # Don't forget the `hs-' prefix when bumping PKGNAME!
-PKGNAME =		hs-${DISTNAME}p0
+PKGNAME =		hs-${DISTNAME}p1
 CATEGORIES =		textproc
 HOMEPAGE =		http://www.cs.york.ac.uk/fp/HaXml/
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/09 18:50:56 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/14 09:08:26 kili Exp $
 
 COMMENT =		automatic testing of Haskell programs
 
 DISTNAME =		QuickCheck-2.1.0.3
+PKGNAME =		hs-${DISTNAME}p0
 CATEGORIES =		devel
 HOMEPAGE =		http://www.cs.chalmers.se/~koen
 

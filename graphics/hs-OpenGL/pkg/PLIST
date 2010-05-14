@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/09 17:15:47 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/05/14 09:08:27 kili Exp $
 lib/${DISTNAME}/
 lib/${DISTNAME}/ghc-${MODGHC_VER}/
 lib/${DISTNAME}/ghc-${MODGHC_VER}/Graphics/
@@ -100,7 +100,7 @@ lib/${DISTNAME}/ghc-${MODGHC_VER}/include/HsOpenGL.h
 lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
 lib/${DISTNAME}/register.sh
 @exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
-@unexec-delete /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
 lib/${DISTNAME}/unregister.sh
 share/doc/${DISTNAME}/
 share/doc/${DISTNAME}/LICENSE

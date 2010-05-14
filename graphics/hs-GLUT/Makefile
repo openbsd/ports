@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/04/12 11:31:29 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/14 09:08:27 kili Exp $
 
 COMMENT =		Haskell binding for the OpenGL Utility Toolkit
 
 DISTNAME =		GLUT-2.1.2.1
+PKGNAME =		hs-${DISTNAME}p0
 CATEGORIES =		graphics devel
 HOMEPAGE =		http://www.haskell.org/HOpenGL/
 
