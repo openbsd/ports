@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/28 16:33:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/05/15 09:40:17 ajacoutot Exp $
 
 COMMENT=	C\# client implementation for Desktop Notifications
 
 # SVN r3032
 V=		0.4.0
 DISTNAME=	notify-sharp-$V
-PKGNAME=	mono-notify-$Vp0
+PKGNAME=	mono-notify-$Vp1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.ndesk.org/NotifySharp
