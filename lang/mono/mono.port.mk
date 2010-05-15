@@ -1,4 +1,4 @@
-# $OpenBSD: mono.port.mk,v 1.10 2010/04/08 13:36:13 ajacoutot Exp $
+# $OpenBSD: mono.port.mk,v 1.11 2010/05/15 09:37:48 ajacoutot Exp $
 
 ONLY_FOR_ARCHS?=	i386 amd64 powerpc
 
@@ -41,4 +41,4 @@ do-install:
 
 post-configure:
 	@for i in ${DLLMAP_FILES}; do \
-		perl -pi -e 's,\.so\.[0-9],\.so,g' ${WRKSRC}/$$i; done
+		perl -pi -e 's,\.so\.[0-9]+,\.so,g' ${WRKSRC}/$$i; done
