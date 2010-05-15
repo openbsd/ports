@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_libfspot_Makefile_in,v 1.6 2010/03/24 21:56:18 ajacoutot Exp $
---- lib/libfspot/Makefile.in.orig	Wed Nov  4 20:35:15 2009
-+++ lib/libfspot/Makefile.in	Wed Mar 24 12:21:13 2010
-@@ -87,7 +87,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
+$OpenBSD: patch-lib_libfspot_Makefile_in,v 1.7 2010/05/15 10:07:46 ajacoutot Exp $
+--- lib/libfspot/Makefile.in.orig	Fri May 14 20:39:38 2010
++++ lib/libfspot/Makefile.in	Sat May 15 10:17:31 2010
+@@ -90,7 +90,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
  	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
  LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_libfspot_Makefile_in,v 1.6 2010/03/24 21:56:18 ajacoutot Exp
  	$(LDFLAGS) -o $@
  SOURCES = $(libfspot_la_SOURCES)
  DIST_SOURCES = $(libfspot_la_SOURCES)
-@@ -320,6 +320,8 @@ libfspot_la_SOURCES = \
+@@ -338,6 +338,8 @@ libfspot_la_SOURCES = \
  	f-utils.h
  
  libfspot_la_LIBADD = \

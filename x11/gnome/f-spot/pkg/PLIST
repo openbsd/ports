@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/03/24 22:53:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/05/15 10:07:46 ajacoutot Exp $
 bin/f-spot
 bin/f-spot-sqlite-upgrade
 lib/f-spot/
@@ -22,34 +22,26 @@ lib/f-spot/FSpot.Widgets.dll
 lib/f-spot/FSpot.Widgets.dll.config
 lib/f-spot/FSpot.Widgets.dll.mdb
 lib/f-spot/FlickrNet.dll
-lib/f-spot/Mono.Addins.Gui.dll
-lib/f-spot/Mono.Addins.Setup.dll
-lib/f-spot/Mono.Addins.dll
-lib/f-spot/Mono.Addins.dll.config
 lib/f-spot/Mono.Google.dll
 lib/f-spot/Mono.Tabblo.dll
-lib/f-spot/NDesk.DBus.GLib.dll
-lib/f-spot/NDesk.DBus.GLib.dll.config
-lib/f-spot/NDesk.DBus.dll
-lib/f-spot/NDesk.Glitz.dll
 lib/f-spot/SemWeb.dll
 lib/f-spot/SmugMugNet.dll
 lib/f-spot/extensions/
-lib/f-spot/extensions/BeagleService.dll
 lib/f-spot/extensions/CDExport.dll
 lib/f-spot/extensions/ChangePhotoPath.dll
 lib/f-spot/extensions/CoverTransition.dll
 lib/f-spot/extensions/DBusService.dll
-lib/f-spot/extensions/DefaultExporters.addin.xml
 lib/f-spot/extensions/DevelopInUFRaw.dll
 lib/f-spot/extensions/FacebookExport.dll
 lib/f-spot/extensions/FlickrExport.dll
 lib/f-spot/extensions/FolderExport.dll
 lib/f-spot/extensions/GalleryExport.dll
 lib/f-spot/extensions/HashJob.dll
+lib/f-spot/extensions/LiveWebGallery.dll
 lib/f-spot/extensions/MergeDb.dll
 lib/f-spot/extensions/PicasaWebExport.dll
 lib/f-spot/extensions/RawPlusJpeg.dll
+lib/f-spot/extensions/RetroactiveRoll.dll
 lib/f-spot/extensions/ScreensaverConfig.dll
 lib/f-spot/extensions/SmugMugExport.dll
 lib/f-spot/extensions/TabbloExport.dll
@@ -70,11 +62,17 @@ lib/f-spot/libfspot.so
 lib/f-spot/libfspotjpegtran.so
 lib/f-spot/libgphoto2-sharp.dll
 lib/f-spot/libgphoto2-sharp.dll.config
+@comment lib/f-spot/libgphoto2glue.la
+@lib lib/f-spot/libgphoto2glue.so.${LIBgphoto2glue_VERSION}
+lib/f-spot/unique-sharp.dll
+lib/f-spot/unique-sharp.dll.config
 lib/pkgconfig/f-spot.pc
+libexec/gnome-screensaver/
 libexec/gnome-screensaver/f-spot-screensaver
 share/applications/f-spot-import.desktop
 share/applications/f-spot-view.desktop
 share/applications/f-spot.desktop
+share/applications/screensavers/
 share/applications/screensavers/f-spot-screensaver.desktop
 share/f-spot/
 share/f-spot/icons/
@@ -337,6 +335,19 @@ share/gnome/help/f-spot/ru/figures/f-spot-sepia.png
 share/gnome/help/f-spot/ru/figures/f-spot-slideshow.png
 share/gnome/help/f-spot/ru/figures/f-spot-soft-focus.png
 share/gnome/help/f-spot/ru/figures/f-spot-straighten.png
+share/gnome/help/f-spot/sl/
+share/gnome/help/f-spot/sl/f-spot.xml
+share/gnome/help/f-spot/sl/figures/
+share/gnome/help/f-spot/sl/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/sl/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/sl/figures/f-spot-crop.png
+share/gnome/help/f-spot/sl/figures/f-spot-desaturate.png
+share/gnome/help/f-spot/sl/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/sl/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/sl/figures/f-spot-sepia.png
+share/gnome/help/f-spot/sl/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/sl/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/sl/figures/f-spot-straighten.png
 share/gnome/help/f-spot/sv/
 share/gnome/help/f-spot/sv/f-spot.xml
 share/gnome/help/f-spot/sv/figures/
@@ -350,11 +361,22 @@ share/gnome/help/f-spot/sv/figures/f-spot-sepia.png
 share/gnome/help/f-spot/sv/figures/f-spot-slideshow.png
 share/gnome/help/f-spot/sv/figures/f-spot-soft-focus.png
 share/gnome/help/f-spot/sv/figures/f-spot-straighten.png
+share/gnome/help/f-spot/uk/
+share/gnome/help/f-spot/uk/f-spot.xml
+share/gnome/help/f-spot/uk/figures/
+share/gnome/help/f-spot/uk/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/uk/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/uk/figures/f-spot-crop.png
+share/gnome/help/f-spot/uk/figures/f-spot-desaturate.png
+share/gnome/help/f-spot/uk/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/uk/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/uk/figures/f-spot-sepia.png
+share/gnome/help/f-spot/uk/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/uk/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/uk/figures/f-spot-straighten.png
 share/icons/hicolor/16x16/apps/f-spot.png
 share/icons/hicolor/22x22/apps/f-spot.png
 share/icons/hicolor/24x24/apps/f-spot.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/f-spot.png
 share/icons/hicolor/32x32/apps/f-spot.png
 share/icons/hicolor/48x48/apps/f-spot.png
@@ -362,6 +384,7 @@ share/locale/ar/LC_MESSAGES/f-spot.mo
 share/locale/as/LC_MESSAGES/f-spot.mo
 share/locale/be@latin/LC_MESSAGES/f-spot.mo
 share/locale/bg/LC_MESSAGES/f-spot.mo
+share/locale/bn_IN/LC_MESSAGES/f-spot.mo
 share/locale/ca/LC_MESSAGES/f-spot.mo
 share/locale/cs/LC_MESSAGES/f-spot.mo
 share/locale/da/LC_MESSAGES/f-spot.mo
@@ -391,6 +414,7 @@ share/locale/lv/LC_MESSAGES/f-spot.mo
 share/locale/mk/LC_MESSAGES/f-spot.mo
 share/locale/mr/LC_MESSAGES/f-spot.mo
 share/locale/nb/LC_MESSAGES/f-spot.mo
+share/locale/nds/LC_MESSAGES/f-spot.mo
 share/locale/nl/LC_MESSAGES/f-spot.mo
 share/locale/oc/LC_MESSAGES/f-spot.mo
 share/locale/or/LC_MESSAGES/f-spot.mo
@@ -398,6 +422,7 @@ share/locale/pa/LC_MESSAGES/f-spot.mo
 share/locale/pl/LC_MESSAGES/f-spot.mo
 share/locale/pt/LC_MESSAGES/f-spot.mo
 share/locale/pt_BR/LC_MESSAGES/f-spot.mo
+share/locale/ro/LC_MESSAGES/f-spot.mo
 share/locale/ru/LC_MESSAGES/f-spot.mo
 share/locale/rw/LC_MESSAGES/f-spot.mo
 share/locale/sk/LC_MESSAGES/f-spot.mo
@@ -424,7 +449,13 @@ share/omf/f-spot/f-spot-it.omf
 share/omf/f-spot/f-spot-oc.omf
 share/omf/f-spot/f-spot-pt_BR.omf
 share/omf/f-spot/f-spot-ru.omf
+share/omf/f-spot/f-spot-sl.omf
 share/omf/f-spot/f-spot-sv.omf
+share/omf/f-spot/f-spot-uk.omf
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/f-spot.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
