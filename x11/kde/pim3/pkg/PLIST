@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2009/12/21 20:46:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2010/05/15 08:48:02 ajacoutot Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -2360,3 +2360,9 @@ share/servicetypes/korgprintplugin.desktop
 share/servicetypes/kpilotconduit.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/crystalsvg 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/crystalsvg 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/locolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/locolor 2> /dev/null || true

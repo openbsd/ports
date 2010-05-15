@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2009/12/21 20:46:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2010/05/15 08:48:02 ajacoutot Exp $
 
 COMMENT = 		some useless KDE applications
 CATEGORIES =		x11 x11/kde games
 VERSION =		3.5.10
 DISTNAME =		kdetoys-${VERSION}
-PKGNAME =		${DISTNAME}p2
+PKGNAME =		${DISTNAME}p3
 MODKDE_VERSION ?=	3.5.8
 
 MODULES =		x11/kde devel/gettext

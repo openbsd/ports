@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2009/12/21 20:46:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2010/05/15 08:48:01 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, admin tools
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeadmin-${VERSION}
-PKGNAME =		${DISTNAME}p2
+PKGNAME =		${DISTNAME}p3
 MODKDE_VERSION ?=	3.5.8
 
 MODULES =	x11/kde devel/gettext

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2008/08/29 10:54:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.34 2010/05/15 08:48:01 ajacoutot Exp $
 @bin bin/kbanner.kss
 @bin bin/kblob.kss
 @bin bin/kclock.kss
@@ -8094,3 +8094,13 @@ share/wallpapers/kraftwurm.jpg
 share/wallpapers/kubical.png
 share/wallpapers/mystical_rightturn.jpg
 share/wallpapers/vegetative_fog.jpg
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Locolor 2> /dev/null || true
+@unexec-delete rm -f %D/share/icons/Locolor/icon-theme.cache
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/ikons 2> /dev/null || true
+@unexec-delete rm -f %D/share/icons/ikons/icon-theme.cache
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/kdeclassic 2> /dev/null || true
+@unexec-delete rm -f %D/share/icons/kdeclassic/icon-theme.cache
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/kids 2> /dev/null || true
+@unexec-delete rm -f %D/share/icons/kids/icon-theme.cache
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/slick 2> /dev/null || true
+@unexec-delete rm -f %D/share/icons/slick/icon-theme.cache

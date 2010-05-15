@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2009/12/21 20:46:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2010/05/15 08:48:02 ajacoutot Exp $
 @bin bin/amor
 @bin bin/kodo
 @bin bin/kteatime
@@ -663,3 +663,5 @@ share/services/kcmweatherservice.desktop
 share/services/kweatherservice.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

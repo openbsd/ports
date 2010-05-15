@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2010/04/26 01:37:59 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.66 2010/05/15 08:48:01 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdemultimedia-${VERSION}
-PKGNAME =		${DISTNAME}p5
+PKGNAME =		${DISTNAME}p6
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
 SHARED_LIBS +=	artsmidi_idl         1.0      # .0.0

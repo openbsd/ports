@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-svn,v 1.1 2008/08/27 13:39:27 espie Exp $
+@comment $OpenBSD: PLIST-svn,v 1.2 2010/05/15 08:48:02 ajacoutot Exp $
 @bin bin/kio_svn_helper
 ${KDE}/kded_ksvnd.la
 ${KDE}/kded_ksvnd.so
@@ -12,3 +12,5 @@ share/icons/crystalsvg/128x128/actions/svn_merge.png
 share/icons/crystalsvg/128x128/actions/svn_remove.png
 share/icons/crystalsvg/128x128/actions/svn_status.png
 share/icons/crystalsvg/128x128/actions/svn_switch.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/crystalsvg 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/crystalsvg 2> /dev/null || true
