@@ -1,4 +1,6 @@
-$OpenBSD: patch-src_update-desktop-database_c,v 1.6 2010/04/27 11:51:03 ajacoutot Exp $
+$OpenBSD: patch-src_update-desktop-database_c,v 1.7 2010/05/15 07:41:19 ajacoutot Exp $
+
+Quiet warnings about deprecated/discouraged and invalid MIME types.
 
 Under OpenBSD, desktop files are installed using INSTALL_DATA which is
 defined in ports/infrastructure/mk/bsd.port.mk as:
@@ -11,8 +13,24 @@ links to applications... and a user should be able to edit the link icon
 or menu he just created.
 
 --- src/update-desktop-database.c.orig	Wed Mar 10 03:33:41 2010
-+++ src/update-desktop-database.c	Tue Apr 27 13:12:16 2010
-@@ -213,6 +213,10 @@ process_desktop_files (const char  *desktop_dir,
++++ src/update-desktop-database.c	Sat May 15 08:56:37 2010
+@@ -135,15 +135,9 @@ process_desktop_file (const char  *desktop_file,
+         case MU_VALID:
+           break;
+         case MU_DISCOURAGED:
+-          udd_print (_("Warning in file \"%s\": usage of MIME type \"%s\" is "
+-                       "discouraged (%s)\n"),
+-                     desktop_file, mime_types[i], valid_error);
+           g_free (valid_error);
+           break;
+         case MU_INVALID:
+-          udd_print (_("Error in file \"%s\": \"%s\" is an invalid MIME type "
+-                       "(%s)\n"),
+-                     desktop_file, mime_types[i], valid_error);
+           g_free (valid_error);
+           /* not a break: we continue to the next mime type */
+           continue;
+@@ -213,6 +207,10 @@ process_desktop_files (const char  *desktop_dir,
          }
  
        name = g_strdup_printf ("%s%s", prefix, filename);
