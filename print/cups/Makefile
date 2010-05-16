@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2010/04/07 13:55:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2010/05/16 14:16:36 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
 VERSION=	1.4.3
 DISTNAME=	cups-${VERSION}-source
-PKGNAME=	cups-${VERSION}p1
+PKGNAME=	cups-${VERSION}p2
 
 CATEGORIES=	print sysutils
 
@@ -64,7 +64,8 @@ FAKE_FLAGS=	BINMODE=${BINMODE} \
 		SHAREMODE=${SHAREMODE} \
 		DBUSDIR=${DESTDIR}${PREFIX}/share/examples/cups/dbus-1/system.d \
 		ICONDIR=${DESTDIR}${PREFIX}/share/icons \
-		MENUDIR=${DESTDIR}${PREFIX}/share/applications
+		MENUDIR=${DESTDIR}${PREFIX}/share/applications \
+		SERVERROOT=${DESTDIR}${PREFIX}/share/examples/cups
 
 AUTOCONF_VERSION= 2.62
 AUTOMAKE_VERSION= 1.9
@@ -133,10 +134,8 @@ post-configure:
 		config.h cups-config man/*.man
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cups/
-	cd ${WRKINST}${SYSCONFDIR}/cups/ && mv * \
-		${PREFIX}/share/examples/cups
-	@rmdir ${WRKINST}${SYSCONFDIR}/cups/
+	ln -sf ${LOCALBASE}/bin/smbspool \
+		${PREFIX}/libexec/cups/backend/smb
 .for file in cups-enable cups-disable
 	cp ${FILESDIR}/${file} ${WRKBUILD}
 	${SUBST_CMD} ${WRKBUILD}/${file}
