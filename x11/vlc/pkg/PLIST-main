@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/05/09 00:16:26 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2010/05/16 08:37:48 sthen Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -505,6 +505,9 @@ lib/vlc/misc/liblogger_plugin.so
 @comment lib/vlc/misc/libmemcpy_plugin.a
 lib/vlc/misc/libmemcpy_plugin.la
 lib/vlc/misc/libmemcpy_plugin.so
+@comment lib/vlc/misc/libnotify_plugin.a
+lib/vlc/misc/libnotify_plugin.la
+lib/vlc/misc/libnotify_plugin.so
 @comment lib/vlc/misc/libosd_parser_plugin.a
 lib/vlc/misc/libosd_parser_plugin.la
 lib/vlc/misc/libosd_parser_plugin.so
@@ -829,19 +832,9 @@ share/doc/vlc/bugreport-howto.txt
 share/doc/vlc/fortunes.txt
 share/doc/vlc/intf-cdda.txt
 share/doc/vlc/intf-vcd.txt
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/vlc.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/vlc.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/vlc.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/vlc.png
 share/locale/af/LC_MESSAGES/vlc.mo
 share/locale/ar/LC_MESSAGES/vlc.mo
@@ -890,8 +883,6 @@ share/locale/mk/LC_MESSAGES/vlc.mo
 share/locale/ml/LC_MESSAGES/vlc.mo
 share/locale/mn/LC_MESSAGES/vlc.mo
 share/locale/ms/LC_MESSAGES/vlc.mo
-share/locale/my/
-share/locale/my/LC_MESSAGES/
 share/locale/my/LC_MESSAGES/vlc.mo
 share/locale/nb/LC_MESSAGES/vlc.mo
 share/locale/ne/LC_MESSAGES/vlc.mo
