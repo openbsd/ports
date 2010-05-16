@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2010/04/24 10:13:31 ajacoutot Exp $
-
-BROKEN=			does not compile with Vala >= 0.8
+# $OpenBSD: Makefile,v 1.19 2010/05/16 08:09:05 ajacoutot Exp $
 
 COMMENT=		XML parser that extends the Vala.Parser
 
-DISTNAME=		gtkaml-0.2.9.1
+DISTNAME=		gtkaml-0.2.10
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://gtkaml.googlecode.com/
@@ -18,12 +16,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += c glib-2.0 gobject-2.0 gthread-2.0 pthread xml2
+
 MASTER_SITES=		${HOMEPAGE}/files/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
-
-WANTLIB=		c glib-2.0 gobject-2.0 xml2
 
 USE_X11=		Yes
 

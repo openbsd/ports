@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_gtkamlc_h,v 1.5 2009/11/14 11:41:04 ajacoutot Exp $
+$OpenBSD: patch-src_gtkamlc_h,v 1.6 2010/05/16 08:09:05 ajacoutot Exp $
 
 Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
 
---- src/gtkamlc.h.orig	Tue Nov 10 00:09:13 2009
-+++ src/gtkamlc.h	Sat Nov 14 12:37:38 2009
-@@ -680,7 +680,7 @@ GtkamlImplicitsParameter* gtkaml_implicits_parameter_n
+--- src/gtkamlc.h.orig	Fri May 14 13:47:03 2010
++++ src/gtkamlc.h	Sun May 16 09:53:28 2010
+@@ -681,7 +681,7 @@ GtkamlImplicitsParameter* gtkaml_implicits_parameter_n
  GtkamlImplicitsParameter* gtkaml_implicits_parameter_construct (GType object_type);
  GType gtkaml_key_file_wrapper_get_type (void);
  gboolean gtkaml_key_file_wrapper_has_key (GtkamlKeyFileWrapper* self, const char* group, const char* key);
@@ -12,4 +12,4 @@ Fix a gint-gsize-confusion to get rid of a bus error on sparc64.
 +char** gtkaml_key_file_wrapper_get_string_list (GtkamlKeyFileWrapper* self, const char* group, const char* key, gsize* result_length1);
  GtkamlKeyFileWrapper* gtkaml_key_file_wrapper_new (void);
  GtkamlKeyFileWrapper* gtkaml_key_file_wrapper_construct (GType object_type);
- ValaReadOnlyList* gtkaml_implicits_store_get_implicits_dirs (GtkamlImplicitsStore* self);
+ ValaList* gtkaml_implicits_store_get_implicits_dirs (GtkamlImplicitsStore* self);
