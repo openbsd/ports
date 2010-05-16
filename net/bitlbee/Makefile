@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2010/04/02 22:02:05 nicm Exp $
+# $OpenBSD: Makefile,v 1.31 2010/05/16 08:31:28 sthen Exp $
 
 COMMENT=	IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo
 
-DISTNAME=		bitlbee-1.2.5
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		bitlbee-1.2.7
 CATEGORIES=		net
 
-HOMEPAGE=		http://bitlbee.org
+HOMEPAGE=		http://bitlbee.org/
 
 MAINTAINER=		Andrew Dalgleish <openbsd@ajd.net.au>
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c
+WANTLIB=		c pthread
 
 MASTER_SITES=		http://get.bitlbee.org/src/
 
@@ -45,6 +44,11 @@ FAKE_TARGET=		install install-etc
 SUBST_VARS=		DB_DIR
 
 NO_REGRESS=		Yes
+
+# don't hide compile command lines
+pre-configure:
+	find ${WRKSRC} -name Makefile | \
+	    xargs perl -pi -e 's,@\$$\(CC\),\$$(CC),g'
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
