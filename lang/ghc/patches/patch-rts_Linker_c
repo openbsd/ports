@@ -1,0 +1,13 @@
+$OpenBSD: patch-rts_Linker_c,v 1.4 2010/05/16 13:51:26 kili Exp $
+--- rts/Linker.c.orig	Tue Apr 20 20:10:07 2010
++++ rts/Linker.c	Thu May 13 12:50:00 2010
+@@ -958,8 +958,7 @@ typedef struct _RtsSymbolVal {
+       SymI_NeedsProto(__muldi3)			       \
+       SymI_NeedsProto(__ashldi3)		       \
+       SymI_NeedsProto(__ashrdi3)		       \
+-      SymI_NeedsProto(__lshrdi3)		       \
+-      SymI_NeedsProto(__eprintf)
++      SymI_NeedsProto(__lshrdi3)
+ #else
+ #define RTS_LIBGCC_SYMBOLS
+ #endif
