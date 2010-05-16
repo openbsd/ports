@@ -1,0 +1,11 @@
+$OpenBSD: patch-rplayd_rplayd_h,v 1.1 2010/05/16 13:12:08 espie Exp $
+--- rplayd/rplayd.h.orig	Sun May 16 15:08:27 2010
++++ rplayd/rplayd.h	Sun May 16 15:08:58 2010
+@@ -73,7 +73,6 @@ extern RPLAY_AUDIO_TABLE *rplay_audio_table;
+ extern fd_set read_mask;
+ extern fd_set write_mask;
+ extern int debug;
+-extern int inetd;
+ extern int rptp_timeout;
+ extern char hostname[];
+ extern char *hostaddr;
