@@ -1,4 +1,25 @@
-@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2006/04/16 14:37:08 sturm Exp $
-lib/freeradius/rlm_sql_mysql.a
-lib/freeradius/rlm_sql_mysql.la
+@comment $OpenBSD: PLIST-mysql,v 1.2 2010/05/17 16:39:25 sthen Exp $
+@conflict freeradius-server-<2.1.8
 lib/freeradius/rlm_sql_mysql.so
+share/examples/freeradius/sql/mysql/
+@sample ${SYSCONFDIR}/raddb/sql/mysql/
+share/examples/freeradius/sql/mysql/admin.sql
+share/examples/freeradius/sql/mysql/counter.conf
+@sample ${SYSCONFDIR}/raddb/sql/mysql/counter.conf
+share/examples/freeradius/sql/mysql/cui.conf
+@sample ${SYSCONFDIR}/raddb/sql/mysql/cui.conf
+share/examples/freeradius/sql/mysql/cui.sql
+share/examples/freeradius/sql/mysql/dialup.conf
+@sample ${SYSCONFDIR}/raddb/sql/mysql/dialup.conf
+share/examples/freeradius/sql/mysql/ippool.conf
+@sample ${SYSCONFDIR}/raddb/sql/mysql/ippool.conf
+share/examples/freeradius/sql/mysql/ippool.sql
+share/examples/freeradius/sql/mysql/nas.sql
+share/examples/freeradius/sql/mysql/schema.sql
+share/examples/freeradius/sql/mysql/wimax.conf
+@sample ${SYSCONFDIR}/raddb/sql/mysql/wimax.conf
+share/examples/freeradius/sql/mysql/wimax.sql
+share/examples/freeradius/sql/ndb/
+share/examples/freeradius/sql/ndb/README
+share/examples/freeradius/sql/ndb/admin.sql
+share/examples/freeradius/sql/ndb/schema.sql

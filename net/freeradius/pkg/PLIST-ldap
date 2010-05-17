@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST-ldap,v 1.1.1.1 2006/04/16 14:37:09 sturm Exp $
-lib/freeradius/rlm_ldap.a
-lib/freeradius/rlm_ldap.la
+@comment $OpenBSD: PLIST-ldap,v 1.2 2010/05/17 16:39:25 sthen Exp $
+@conflict freeradius-server-<2.1.8
 lib/freeradius/rlm_ldap.so
+share/doc/freeradius/examples/iplanet.ldif
+share/doc/freeradius/examples/iplanet.schema
+share/doc/freeradius/examples/openldap.schema
+share/doc/freeradius/ldap_howto.txt
+share/doc/freeradius/rlm_ldap
+share/examples/freeradius/ldap.attrmap
+@sample ${SYSCONFDIR}/raddb/ldap.attrmap
+share/examples/freeradius/modules/ldap
+@sample ${SYSCONFDIR}/raddb/modules/ldap

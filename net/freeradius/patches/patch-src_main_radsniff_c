@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_main_radsniff_c,v 1.1 2010/05/17 16:39:25 sthen Exp $
+--- src/main/radsniff.c.orig	Mon May 10 17:27:54 2010
++++ src/main/radsniff.c	Mon May 10 17:27:55 2010
+@@ -40,7 +40,7 @@ static VALUE_PAIR *filter_vps = NULL;
+ 
+ static int minimal = 0;
+ static int do_sort = 0;
+-struct timeval start_pcap = {0, 0};
++struct bpf_timeval start_pcap = {0, 0};
+ static rbtree_t *filter_tree = NULL;
+ typedef int (*rbcmp)(const void *, const void *);
+ 
+@@ -161,8 +161,8 @@ static void sort(RADIUS_PACKET *packet)
+ }
+ 
+ #define USEC 1000000
+-static void tv_sub(struct timeval *end, struct timeval *start,
+-		   struct timeval *elapsed)
++static void tv_sub(struct bpf_timeval *end, struct bpf_timeval *start,
++		   struct bpf_timeval *elapsed)
+ {
+ 	elapsed->tv_sec = end->tv_sec - start->tv_sec;
+ 	if (elapsed->tv_sec > 0) {
