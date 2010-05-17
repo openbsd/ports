@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2009/11/03 21:14:57 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2010/05/17 20:05:36 landry Exp $
 
 COMMENT=	Xfce4 mpd client panel plugin
 
-XFCE_VERSION=	0.3.4
+XFCE_VERSION=	0.3.5
 XFCE_PLUGIN=	mpc
 
 # BSD-ISC
