@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/14 23:44:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/05/17 08:18:25 sthen Exp $
 ${P5SITE}/Date/
 ${P5SITE}/Date/Format.pm
 ${P5SITE}/Date/Language/
@@ -7,6 +7,7 @@ ${P5SITE}/Date/Language/Afar.pm
 ${P5SITE}/Date/Language/Amharic.pm
 ${P5SITE}/Date/Language/Austrian.pm
 ${P5SITE}/Date/Language/Brazilian.pm
+${P5SITE}/Date/Language/Chinese.pm
 ${P5SITE}/Date/Language/Chinese_GB.pm
 ${P5SITE}/Date/Language/Czech.pm
 ${P5SITE}/Date/Language/Danish.pm
@@ -17,18 +18,28 @@ ${P5SITE}/Date/Language/French.pm
 ${P5SITE}/Date/Language/Gedeo.pm
 ${P5SITE}/Date/Language/German.pm
 ${P5SITE}/Date/Language/Greek.pm
+${P5SITE}/Date/Language/Hungarian.pm
+${P5SITE}/Date/Language/Icelandic.pm
 ${P5SITE}/Date/Language/Italian.pm
 ${P5SITE}/Date/Language/Norwegian.pm
 ${P5SITE}/Date/Language/Oromo.pm
+${P5SITE}/Date/Language/Romanian.pm
+${P5SITE}/Date/Language/Russian.pm
+${P5SITE}/Date/Language/Russian_cp1251.pm
+${P5SITE}/Date/Language/Russian_koi8r.pm
 ${P5SITE}/Date/Language/Sidama.pm
 ${P5SITE}/Date/Language/Somali.pm
+${P5SITE}/Date/Language/Spanish.pm
 ${P5SITE}/Date/Language/Swedish.pm
 ${P5SITE}/Date/Language/Tigrinya.pm
 ${P5SITE}/Date/Language/TigrinyaEritrean.pm
 ${P5SITE}/Date/Language/TigrinyaEthiopian.pm
+${P5SITE}/Date/Language/Turkish.pm
 ${P5SITE}/Date/Parse.pm
 ${P5SITE}/Time/
 ${P5SITE}/Time/Zone.pm
 @man man/man3p/Date::Format.3p
+@man man/man3p/Date::Language.3p
+@man man/man3p/Date::Language::Hungarian.3p
 @man man/man3p/Date::Parse.3p
 @man man/man3p/Time::Zone.3p
