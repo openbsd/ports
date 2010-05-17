@@ -30,7 +30,7 @@ struct options_set *port_options=0;
 
 
 
-ID("$Id: audio.c,v 1.3 1999/03/05 16:25:49 espie Exp $")
+ID("$Id: audio.c,v 1.4 2010/05/17 18:10:05 espie Exp $")
 
 LOCAL unsigned long samples_max;
 LOCAL int audio;           	
@@ -242,6 +242,7 @@ void output_samples(long left, long right, int n)
 		add_samples8(left, right, n);
 		break;
 	default:	/* should not happen */
+		;
 	   }
    }
 
@@ -268,10 +269,8 @@ unsigned long update_frequency(void)
 
 void discard_buffer(void)
 	{
-#if 0
 	if (audio)
 		ioctl(audio, AUDIO_FLUSH, 0);
-#endif
 	remove_pending_tags();
 	total = 0;
 	}
