@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2010/05/17 08:36:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2010/05/17 22:50:13 sthen Exp $
 
 COMMENT=	toolkit for the development of SILC applications
 
 DISTNAME=	silc-toolkit-1.1.10
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS+= :yasm-*:devel/yasm
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.61
+AUTOCONF_VERSION= 2.63
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV+= ac_cv_path_NASM=no YASM=${LOCALBASE}/bin/yasm
 .endif
