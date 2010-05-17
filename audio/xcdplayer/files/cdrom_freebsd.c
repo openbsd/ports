@@ -1,4 +1,4 @@
-/* $OpenBSD: cdrom_freebsd.c,v 1.2 2003/08/24 22:15:56 naddy Exp $ */
+/* $OpenBSD: cdrom_freebsd.c,v 1.3 2010/05/17 08:31:11 espie Exp $ */
 /*
  * Copyright (C) 1990 Regents of the University of California.
  *
@@ -17,6 +17,7 @@
 static int c;
 
 # include <stdio.h>
+# include <stdlib.h>
 # include <sys/file.h>
 # include <sys/types.h>
 # include <sys/param.h>
@@ -555,7 +556,6 @@ unsigned short *
 ushort_malloc(n)
 	int		n;
 {
-	extern char	*calloc();
 	unsigned short	*ptr;
 
 	ptr = (unsigned short *) calloc(n, sizeof(unsigned short));
@@ -571,7 +571,6 @@ struct msf *
 msf_malloc(n)
 	int		n;
 {
-	extern char	*calloc();
 	struct msf	*ptr;
 
 	ptr = (struct msf *) calloc(n, sizeof(struct msf));

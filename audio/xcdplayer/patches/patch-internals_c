@@ -1,6 +1,6 @@
-$OpenBSD: patch-internals_c,v 1.1 2003/08/24 22:15:56 naddy Exp $
---- internals.c.orig	1993-01-12 19:59:45.000000000 +0100
-+++ internals.c	2003-08-24 23:13:27.000000000 +0200
+$OpenBSD: patch-internals_c,v 1.2 2010/05/17 08:31:12 espie Exp $
+--- internals.c.orig	Tue Jan 12 19:59:45 1993
++++ internals.c	Mon May 17 10:24:16 2010
 @@ -22,6 +22,9 @@
  
  # include "debug.h"
@@ -27,6 +27,21 @@ $OpenBSD: patch-internals_c,v 1.1 2003/08/24 22:15:56 naddy Exp $
  
  int
  cdrom_get_curtime() {
+@@ -77,13 +81,13 @@ cdrom_get_curtime() {
+ }
+ 
+ 
++static void	update_track();
+ /*
+  * we poll the cd-rom drive every TIMER_PERIOD milliseconds to see where 
+  * it is and if it's on a new track, and update the label widget.
+  */
+ void
+ cdrom_timer_on() {
+-	static void	update_track();
+ 
+ 	if (cdi.state & CDROM_STATE_PLAY)
+ 		ivid = XtAppAddTimeOut(appc, TIMER_PERIOD, update_track, NULL);
 @@ -170,7 +174,6 @@ cdrom_rewind () {
  	struct msf	track_start;
          struct msf	start_addr, end_addr;
