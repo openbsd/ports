@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/15 18:29:31 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/05/17 16:52:05 robert Exp $
 
 COMMENT=		V4L compatible video application
 
 DISTNAME=		luvcview-20070512
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		graphics x11
 
 # GPLv2+

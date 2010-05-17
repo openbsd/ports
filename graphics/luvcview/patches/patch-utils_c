@@ -1,6 +1,6 @@
-$OpenBSD: patch-utils_c,v 1.1.1.1 2008/06/13 16:45:01 robert Exp $
---- utils.c.orig	Fri Jun 13 00:38:44 2008
-+++ utils.c	Fri Jun 13 00:39:24 2008
+$OpenBSD: patch-utils_c,v 1.2 2010/05/17 16:52:05 robert Exp $
+--- utils.c.orig	Sat May 12 12:13:11 2007
++++ utils.c	Mon May 17 18:50:46 2010
 @@ -26,10 +26,10 @@
  #include <stdio.h>
  #include <stdlib.h>
@@ -14,3 +14,11 @@ $OpenBSD: patch-utils_c,v 1.1.1.1 2008/06/13 16:45:01 robert Exp $
  #include <time.h>
  #include <limits.h>
  #include "huffman.h"
+@@ -235,7 +235,6 @@ static int readtables(int till, int *isDHT)
+ 	    break;
+ 
+ 	case M_DRI:
+-	printf("find DRI \n");
+ 	    l = getword();
+ 	    info.dri = getword();
+ 	    break;
