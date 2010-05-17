@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.634 2010/05/03 19:33:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.635 2010/05/17 11:57:53 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -537,6 +537,7 @@
      SUBDIR += zabbix
      SUBDIR += zabbix,mysql
      SUBDIR += zabbix,pgsql
+     SUBDIR += zabbix,sqlite3
      SUBDIR += zenirc
      SUBDIR += ziproxy
      SUBDIR += znc
