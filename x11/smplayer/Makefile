@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/12/21 20:46:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/05/17 15:02:54 edd Exp $
 
 COMMENT =		complete front-end for MPlayer
 
-DISTNAME =		smplayer-0.6.8
-PKGNAME =		${DISTNAME}p0
+DISTNAME =		smplayer-0.6.9
+PKGNAME =		${DISTNAME}
 
 CATEGORIES =		multimedia x11
 
@@ -17,9 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
-WANTLIB += freetype glib-2.0 gobject-2.0 gthread-2.0 iconv intl
-WANTLIB += m png pthread stdc++ z
+WANTLIB = 		c m pthread stdc++ z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smplayer/}
 
