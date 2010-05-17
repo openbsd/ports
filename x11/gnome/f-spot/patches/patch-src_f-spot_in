@@ -1,13 +1,20 @@
-$OpenBSD: patch-src_f-spot_in,v 1.4 2010/05/15 10:07:46 ajacoutot Exp $
+$OpenBSD: patch-src_f-spot_in,v 1.5 2010/05/17 11:30:23 ajacoutot Exp $
 --- src/f-spot.in.orig	Fri May 14 20:38:21 2010
-+++ src/f-spot.in	Sat May 15 10:17:31 2010
-@@ -1,4 +1,4 @@
++++ src/f-spot.in	Mon May 17 12:41:39 2010
+@@ -1,10 +1,11 @@
 -#!/bin/bash
 +#!/bin/sh
  
  prefix=@prefix@
  exec_prefix=@exec_prefix@
-@@ -94,5 +94,5 @@ elif $run_valgrind; then
+ libdir=@libdir@ 
+ turtledir=@TURTLEDIR@
+ 
++export LD_LIBRARY_PATH=${TRUEPREFIX}/lib/f-spot
+ EXE_TO_RUN="$libdir/f-spot/f-spot.exe"
+ 
+ if test "x$DBUS_SESSION_BUS_ADDRESS" == "x"; then
+@@ -94,5 +95,5 @@ elif $run_valgrind; then
  elif $run_strace; then
  	strace -ttt -f -o /tmp/f-spot.strace mono $MONO_OPTIONS $EXE_TO_RUN "$@"
  else
