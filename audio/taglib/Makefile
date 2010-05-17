@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2009/09/24 18:15:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/05/17 11:21:50 jasper Exp $
 
 COMMENT=	managing meta-data of audio formats
-DISTNAME=	taglib-1.6
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	taglib-1.6.3
 CATEGORIES=	audio devel
 
 MASTER_SITES=	http://ktown.kde.org/~wheeler/files/src/
-SHARED_LIBS +=	tag                  7.1      # .6.1
+SHARED_LIBS +=	tag                  8.0      # .10.0
 SHARED_LIBS +=	tag_c                2.0      # .0.0
 
 HOMEPAGE= 	http://ktown.kde.org/~wheeler/taglib.html
