@@ -1,6 +1,6 @@
-$OpenBSD: patch-misc_Makefile_in,v 1.4 2009/03/15 19:59:31 landry Exp $
+$OpenBSD: patch-misc_Makefile_in,v 1.5 2010/05/17 12:01:26 ajacoutot Exp $
 --- misc/Makefile.in.orig	Sat Nov 15 18:33:33 2008
-+++ misc/Makefile.in	Sat Feb 21 18:44:08 2009
++++ misc/Makefile.in	Mon May 17 13:53:57 2010
 @@ -74,7 +74,7 @@ SRCS=	$(srcdir)/tune2fs.c $(srcdir)/mklost+found.c $(s
  		$(srcdir)/e2undo.c
  
@@ -466,8 +466,7 @@ $OpenBSD: patch-misc_Makefile_in,v 1.4 2009/03/15 19:59:31 landry Exp $
  	else \
 -		echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
  		$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
--			$(DESTDIR)$(root_sysconfdir)/mke2fs.conf; \
-+			$(DESTDIR)$(datadir)/examples/mke2fs.conf; \
+ 			$(DESTDIR)$(root_sysconfdir)/mke2fs.conf; \
  	fi
  
  install-strip: install

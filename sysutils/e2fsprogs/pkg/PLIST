@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/03 11:53:58 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/05/17 12:01:26 ajacoutot Exp $
 @conflict e2fs-uuid-*
 @pkgpath sysutils/e2fsprogs,-main
 @pkgpath sysutils/e2fsprogs,-uuid
@@ -118,7 +118,8 @@ lib/pkgconfig/ss.pc
 share/et/
 share/et/et_c.awk
 share/et/et_h.awk
-share/examples/mke2fs.conf
+share/examples/e2fsprogs/
+share/examples/e2fsprogs/mke2fs.conf
 @sample ${SYSCONFDIR}/mke2fs.conf
 share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 share/locale/cs/LC_MESSAGES/e2fsprogs.mo

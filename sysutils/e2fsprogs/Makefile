@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/03 11:53:58 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2010/05/17 12:01:26 ajacoutot Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
 
 COMMENT=		utilities to manipulate ext2 filesystems
 
 DISTNAME=		e2fsprogs-1.41.4
-PKGNAME=		${DISTNAME}p3
+PKGNAME=		${DISTNAME}p4
 CATEGORIES=		sysutils devel
 SHARED_LIBS=		blkid		0.0 \
 			e2p		3.0 \
@@ -38,6 +38,8 @@ MAKE_FLAGS=		LIBblkid_VERSION=${LIBblkid_VERSION} \
 			LIBext2fs_com_err_VERSION=${LIBext2fs_com_err_VERSION} \
 			LIBss_VERSION=${LIBss_VERSION} \
 			LIBe2fs-uuid_VERSION=${LIBe2fs-uuid_VERSION}
+
+FAKE_FLAGS=		root_sysconfdir=${PREFIX}/share/examples/e2fsprogs
 
 INSTALL_TARGET=		install install-libs
 post-install:
