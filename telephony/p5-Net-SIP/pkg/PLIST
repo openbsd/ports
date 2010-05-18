@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/19 22:47:02 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/05/18 23:04:38 bluhm Exp $
 ${P5SITE}/Net/SIP/
 ${P5SITE}/Net/SIP.pm
 ${P5SITE}/Net/SIP.pod
@@ -31,6 +31,8 @@ ${P5SITE}/Net/SIP/Packet.pm
 ${P5SITE}/Net/SIP/Packet.pod
 ${P5SITE}/Net/SIP/ReceiveChain.pm
 ${P5SITE}/Net/SIP/ReceiveChain.pod
+${P5SITE}/Net/SIP/Redirect.pm
+${P5SITE}/Net/SIP/Redirect.pod
 ${P5SITE}/Net/SIP/Registrar.pm
 ${P5SITE}/Net/SIP/Registrar.pod
 ${P5SITE}/Net/SIP/Request.pm
@@ -64,6 +66,7 @@ ${P5SITE}/Net/SIP/Util.pod
 @man man/man3p/Net::SIP::NATHelper::Server.3p
 @man man/man3p/Net::SIP::Packet.3p
 @man man/man3p/Net::SIP::ReceiveChain.3p
+@man man/man3p/Net::SIP::Redirect.3p
 @man man/man3p/Net::SIP::Registrar.3p
 @man man/man3p/Net::SIP::Request.3p
 @man man/man3p/Net::SIP::Response.3p
