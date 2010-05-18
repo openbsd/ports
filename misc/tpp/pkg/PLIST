@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/18 20:43:32 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/05/18 20:54:25 kili Exp $
 bin/tpp
 @man man/man1/tpp.1
 share/doc/tpp/
-share/doc/tpp/CHANGES
-share/doc/tpp/COPYING
 share/doc/tpp/DESIGN
 share/doc/tpp/README
 share/doc/tpp/THANKS

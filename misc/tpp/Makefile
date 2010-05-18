@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/18 20:43:32 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/18 20:54:25 kili Exp $
 
-COMMENT =		text presentation program
+COMMENT =		text-based presentation program
 
 DISTNAME =		tpp-1.3.1
+PKGNAME =		${DISTNAME}p0
 
 CATEGORIES =		misc productivity
 
@@ -25,7 +26,7 @@ NO_BUILD =		Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tpp
 	cd ${WRKSRC} && \
-	${INSTALL_DATA} DESIGN CHANGES COPYING README THANKS ${PREFIX}/share/doc/tpp
+		${INSTALL_DATA} DESIGN README THANKS ${PREFIX}/share/doc/tpp
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/tpp.1 ${PREFIX}/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/tpp.rb ${PREFIX}/bin/tpp
