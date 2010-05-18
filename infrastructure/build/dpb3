@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.14 2010/05/04 09:45:41 espie Exp $
+# $OpenBSD: dpb3,v 1.15 2010/05/18 15:56:52 sthen Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -91,8 +91,8 @@ sub parse_build_file
 
 my @build_files = ();
 my $heuristics = DPB::Heuristics->new;
-set_usage("dpb3 [-acersuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir] [-b log] ",
-	"[-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
+set_usage("dpb3 [-acersuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
+	"[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
 try {
 getopts('acersuUh:xA:f:j:m:P:b:L:S:t:T:', {
 	    P => sub {
