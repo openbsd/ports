@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_nautilus-places-sidebar_c,v 1.1 2010/05/18 14:37:02 ajacoutot Exp $
+
+Merged from upstream git.
+
+--- src/nautilus-places-sidebar.c.orig	Wed Mar 10 14:28:38 2010
++++ src/nautilus-places-sidebar.c	Tue May 18 16:08:36 2010
+@@ -1317,7 +1317,7 @@ check_unmount_and_eject (GMount *mount,
+ 	}
+ 	if (mount != NULL) {
+ 		*show_eject |= g_mount_can_eject (mount);
+-		*show_unmount = g_mount_can_unmount (mount);
++		*show_unmount = g_mount_can_unmount (mount) && !*show_eject;
+ 	}
+ }
+ 
+@@ -1349,6 +1349,9 @@ check_visibility (GMount           *mount,
+ 
+ 		*show_start = g_drive_can_start (drive) || g_drive_can_start_degraded (drive);
+ 		*show_stop  = g_drive_can_stop (drive);
++
++		if (*show_stop)
++			*show_unmount = FALSE;
+ 	}
+ 
+ 	if (volume != NULL) {

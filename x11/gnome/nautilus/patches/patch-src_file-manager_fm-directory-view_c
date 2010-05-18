@@ -1,0 +1,54 @@
+$OpenBSD: patch-src_file-manager_fm-directory-view_c,v 1.1 2010/05/18 14:37:02 ajacoutot Exp $
+
+Merged from upstream git.
+
+--- src/file-manager/fm-directory-view.c.orig	Mon Apr 26 09:50:42 2010
++++ src/file-manager/fm-directory-view.c	Tue May 18 16:08:32 2010
+@@ -7782,10 +7782,6 @@ file_should_show_foreach (NautilusFile        *file,
+ 		*show_eject = TRUE;
+ 	}
+ 
+-	if (nautilus_file_can_unmount (file)) {
+-		*show_unmount = TRUE;
+-	}
+-
+ 	if (nautilus_file_can_mount (file)) {
+ 		*show_mount = TRUE;
+ 
+@@ -7805,6 +7801,12 @@ file_should_show_foreach (NautilusFile        *file,
+ 		*show_stop = TRUE;
+ 	}
+ 
++	/* Dot not show both Unmount and Eject/Safe Removal; too confusing to
++	 * have too many menu entries */
++	if (nautilus_file_can_unmount (file) && !*show_eject && !*show_stop) {
++		*show_unmount = TRUE;
++	}
++
+ 	if (nautilus_file_can_poll_for_media (file) && !nautilus_file_is_media_check_automatic (file)) {
+ 		*show_poll = TRUE;
+ 	}
+@@ -7852,10 +7854,6 @@ file_should_show_self (NautilusFile        *file,
+ 		*show_eject = TRUE;
+ 	}
+ 
+-	if (nautilus_file_can_unmount (file)) {
+-		*show_unmount = TRUE;
+-	}
+-
+ 	if (nautilus_file_can_mount (file)) {
+ 		*show_mount = TRUE;
+ 	}
+@@ -7872,6 +7870,12 @@ file_should_show_self (NautilusFile        *file,
+ 
+ 	if (nautilus_file_can_stop (file)) {
+ 		*show_stop = TRUE;
++	}
++
++	/* Dot not show both Unmount and Eject/Safe Removal; too confusing to
++	 * have too many menu entries */
++	if (nautilus_file_can_unmount (file) && !*show_eject && !*show_stop) {
++		*show_unmount = TRUE;
+ 	}
+ 
+ 	if (nautilus_file_can_poll_for_media (file) && !nautilus_file_is_media_check_automatic (file)) {
