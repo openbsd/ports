@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2009/07/29 20:26:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2010/05/18 08:31:02 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
@@ -29,7 +29,7 @@ LIB_DEPENDS+=	sasl2::security/cyrus-sasl2
 MUTTRCDIR=	doc/
 
 DIST_COMPRESSED=compressed-1.5.20.diff.gz:2
-DIST_SIDEBAR=	sidebar-1.5.20.diff.gz:2
+DIST_SIDEBAR=	sidebar-1.5.20.diff0.gz:2
 
 .if ${FLAVOR:L:Msidebar}
 PATCHFILES+=		${DIST_SIDEBAR}
