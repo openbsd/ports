@@ -1,15 +1,6 @@
-$OpenBSD: patch-bin_mrtg,v 1.2 2010/03/20 23:01:11 sthen Exp $
+$OpenBSD: patch-bin_mrtg,v 1.3 2010/05/18 08:31:43 sthen Exp $
 --- bin/mrtg.orig	Wed Jan 20 10:56:29 2010
 +++ bin/mrtg	Tue Mar 16 15:26:34 2010
-@@ -214,7 +214,7 @@ sub main {
- 
-     my $cfgfile = shift @ARGV;
- 
--    if ( !defined $cfgfile and -r "/etc/mrtg.cfg" ) { $cfgfile = "/etc/mrtg.cfg"; }
-+    if ( !defined $cfgfile and -r "%%SYSCONFDIR%%/mrtg.cfg" ) { $cfgfile = "%%SYSCONFDIR%%/mrtg.cfg"; }
- 
-     printusage() unless defined $cfgfile;
- 
 @@ -615,6 +615,9 @@ sub getcurrent {
  		$uptime = $target->[ $u ]{ _UPTIME_ };
  		$name = $target->[ $u ]{ _NAME_ };
