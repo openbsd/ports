@@ -9,7 +9,7 @@ all arches:
   # sysctl kern.shminfo.shmall=32768
 
   The GUI is deprecated so we stripped it from the build. You can use
-  x11/gnome-mplayer instead.
+  x11/gnome-mplayer or x11/smplayer instead.
 
 i386:
   win32 codecs were disabled in OpenBSD's build, as the open-source codecs
