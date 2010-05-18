@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2010/05/18 10:28:48 landry Exp $
+--- Makefile.orig	Thu May 13 18:12:11 2010
++++ Makefile	Thu May 13 18:12:19 2010
+@@ -150,8 +150,8 @@ all: build lib
+ build: codeworker
+ 
+ codeworker: $(OBJECTS)
+-	$(CC) -c generator.cpp
+-	$(CC) -o codeworker $(OBJECTS) generator.o $(LFLAGS) 
++	$(CXX) -c generator.cpp
++	$(CXX) -o codeworker $(OBJECTS) generator.o $(LDFLAGS) 
+ 
+ lib: $(OBJECTS)
+ 	ar -r libcodeworker.a $(OBJECTS)
