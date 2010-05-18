@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/18 20:43:32 kili Exp $
+bin/tpp
+@man man/man1/tpp.1
+share/doc/tpp/
+share/doc/tpp/CHANGES
+share/doc/tpp/COPYING
+share/doc/tpp/DESIGN
+share/doc/tpp/README
+share/doc/tpp/THANKS
+share/doc/tpp/tpp.vim
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/tpp-mode.el
+share/examples/tpp/
+share/examples/tpp/ac-am.tpp
+share/examples/tpp/align-footer.tpp
+share/examples/tpp/bold.tpp
+share/examples/tpp/colors.tpp
+share/examples/tpp/colors2.tpp
+share/examples/tpp/debian-packaging.tpp
+share/examples/tpp/exec.tpp
+share/examples/tpp/horline.tpp
+share/examples/tpp/huge.tpp
+share/examples/tpp/list.tpp
+share/examples/tpp/manyslides.tpp
+share/examples/tpp/shell.tpp
+share/examples/tpp/slidein.tpp
+share/examples/tpp/source.tpp
+share/examples/tpp/test.tpp
+share/examples/tpp/tpp-features.tpp
+share/examples/tpp/wrap.tpp
