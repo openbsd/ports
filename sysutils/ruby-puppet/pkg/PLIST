@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/01/08 15:39:33 msf Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/05/18 18:44:38 robert Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 bin/filebucket
@@ -590,10 +590,11 @@ lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/suidmanager.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/tagging.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/user_attr.rb
 lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/warnings.rb
+lib/ruby/site_ruby/${MODRUBY_REV}/puppet/util/zaml.rb
+@man man/man5/puppet.conf.5.gz
 @man man/man8/filebucket.8.gz
 @man man/man8/pi.8.gz
 @man man/man8/puppet.8.gz
-@man man/man8/puppet.conf.8.gz
 @man man/man8/puppetca.8.gz
 @man man/man8/puppetd.8.gz
 @man man/man8/puppetdoc.8.gz
