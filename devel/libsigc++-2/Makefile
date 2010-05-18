@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/04/24 09:56:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/05/18 10:52:36 ajacoutot Exp $
 
 COMMENT-main=		callback framework for C++
 COMMENT-docs=		callback framework for C++ documentation
 
-VERSION=		2.2.6
+VERSION=		2.2.7
 DISTNAME=		libsigc++-${VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-docs=		libsigc++-docs-${VERSION}

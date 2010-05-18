@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.6 2010/04/16 12:37:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.7 2010/05/18 10:52:36 ajacoutot Exp $
 @option no-default-conflict
 @conflict libsigc++-docs-2.*
 share/devhelp/
@@ -477,6 +477,5 @@ share/doc/libsigc++-${V}/tutorial/html/ch03.html
 share/doc/libsigc++-${V}/tutorial/html/ch03s02.html
 share/doc/libsigc++-${V}/tutorial/html/ch04.html
 share/doc/libsigc++-${V}/tutorial/html/ch04s02.html
-share/doc/libsigc++-${V}/tutorial/html/ch04s03.html
 share/doc/libsigc++-${V}/tutorial/html/ch05.html
 share/doc/libsigc++-${V}/tutorial/html/index.html
