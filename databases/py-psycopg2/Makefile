@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/11 13:45:06 martynas Exp $
+# $OpenBSD: Makefile,v 1.10 2010/05/18 15:44:21 pea Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		PostgreSQL database adapter for Python
 
-MODPY_EGG_VERSION =	2.0.9
+MODPY_EGG_VERSION =	2.0.14
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
