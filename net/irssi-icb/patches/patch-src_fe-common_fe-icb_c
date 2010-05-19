@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_fe-common_fe-icb_c,v 1.1 2008/04/21 10:35:27 sthen Exp $
+$OpenBSD: patch-src_fe-common_fe-icb_c,v 1.2 2010/05/19 09:17:51 sthen Exp $
 --- src/fe-common/fe-icb.c.orig	Sat Apr 27 21:56:18 2002
-+++ src/fe-common/fe-icb.c	Sun Oct 21 15:31:29 2007
++++ src/fe-common/fe-icb.c	Wed May 19 10:14:42 2010
 @@ -24,6 +24,7 @@
  #include "commands.h"
  #include "servers-setup.h"
@@ -9,7 +9,13 @@ $OpenBSD: patch-src_fe-common_fe-icb_c,v 1.1 2008/04/21 10:35:27 sthen Exp $
  
  #include "icb.h"
  #include "icb-servers.h"
-@@ -36,15 +37,90 @@
+@@ -33,18 +34,96 @@
+ #include "printtext.h"
+ #include "themes.h"
+ 
++static void icb_channel_change_topic(ICB_SERVER_REC *,
++	const char *, const char *, time_t );
++
  static void event_status(ICB_SERVER_REC *server, const char *data)
  {
  	char **args;
@@ -100,7 +106,7 @@ $OpenBSD: patch-src_fe-common_fe-icb_c,v 1.1 2008/04/21 10:35:27 sthen Exp $
  static void event_error(ICB_SERVER_REC *server, const char *data)
  {
  	printformat(server, NULL, MSGLEVEL_CRAP, ICBTXT_ERROR, data);
-@@ -62,7 +138,7 @@ static void event_important(ICB_SERVER_REC *server, co
+@@ -62,7 +141,7 @@ static void event_important(ICB_SERVER_REC *server, co
  
  static void event_beep(ICB_SERVER_REC *server, const char *data)
  {
@@ -109,7 +115,7 @@ $OpenBSD: patch-src_fe-common_fe-icb_c,v 1.1 2008/04/21 10:35:27 sthen Exp $
  }
  
  static void event_open(ICB_SERVER_REC *server, const char *data)
-@@ -84,13 +160,51 @@ static void event_personal(ICB_SERVER_REC *server, con
+@@ -84,13 +163,51 @@ static void event_personal(ICB_SERVER_REC *server, con
          icb_split_free(args);
  }
  
