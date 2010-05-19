@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/03/30 15:07:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2010/05/19 09:36:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,8 +10,6 @@ GNOME_VERSION=		2.24.3
 
 PKGNAME-main=		gnome-vfs2-${VERSION}
 PKGNAME-smb=		gnome-vfs2-smb-${VERSION}
-
-MULTI_PACKAGES=		-main -smb
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 
@@ -57,6 +55,16 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-vfs2
+
+MULTI_PACKAGES=		-main
+PSEUDO_FLAVORS=		no_smb
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_smb}
+CONFIGURE_ARGS+=	--disable-samba
+.else
+MULTI_PACKAGES+=	-smb
+.endif
 
 post-extract:
 	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
