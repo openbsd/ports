@@ -1,6 +1,6 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.8 2004/08/11 10:15:07 espie Exp $
+$OpenBSD: patch-sys_unix_Makefile_src,v 1.9 2010/05/19 07:27:25 espie Exp $
 --- sys/unix/Makefile.src.orig	Mon Dec  8 00:39:13 2003
-+++ sys/unix/Makefile.src	Tue Aug 10 13:36:00 2004
++++ sys/unix/Makefile.src	Wed May 19 06:01:29 2010
 @@ -1,6 +1,7 @@
  #	NetHack Makefile.
  #	SCCS Id: @(#)Makefile.src	3.4	2002/03/02
@@ -9,7 +9,7 @@ $OpenBSD: patch-sys_unix_Makefile_src,v 1.8 2004/08/11 10:15:07 espie Exp $
  # newer makes predefine $(MAKE) to 'make' and do smarter processing of
  # recursive make calls if $(MAKE) is used
  # these makes allow $(MAKE) to be overridden by the environment if someone
-@@ -151,8 +152,7 @@ GNOMEINC=-I/usr/lib/glib/include -I/usr/
+@@ -151,8 +152,7 @@ GNOMEINC=-I/usr/lib/glib/include -I/usr/lib/gnome-libs
  # flags for debugging:
  # CFLAGS = -g -I../include
  
