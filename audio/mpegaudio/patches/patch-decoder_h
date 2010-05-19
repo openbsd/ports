@@ -1,0 +1,18 @@
+$OpenBSD: patch-decoder_h,v 1.1 2010/05/19 16:18:28 espie Exp $
+--- decoder.h.orig	Wed May 19 18:17:08 2010
++++ decoder.h	Wed May 19 18:17:17 2010
+@@ -92,14 +92,6 @@ decoder.h
+ *
+ ***********************************************************************/
+ 
+-/* The following functions are in the file "musicout.c" */
+-
+-#ifdef   PROTO_ARGS
+-extern void   usage(void);
+-#else
+-extern void   usage();
+-#endif
+-
+ /* The following functions are in the file "decode.c" */
+ 
+ #ifdef   PROTO_ARGS

@@ -1,7 +1,7 @@
-$OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
---- musicin.c.orig	Wed Jan  5 01:13:44 1994
-+++ musicin.c	Mon Apr 14 10:41:07 2003
-@@ -101,6 +101,8 @@ musicin.c
+$OpenBSD: patch-musicin_c,v 1.2 2010/05/19 16:18:28 espie Exp $
+--- musicin.c.orig	Wed Jan  5 02:13:44 1994
++++ musicin.c	Wed May 19 18:16:41 2010
+@@ -101,12 +101,15 @@ musicin.c
  #include "common.h"
  #include "encoder.h"
  
@@ -10,7 +10,14 @@ $OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
  /* Global variable definitions for "musicin.c" */
  
  FILE               *musicin;
-@@ -144,7 +146,7 @@ char            encoded_file_name[MAX_NA
+ Bit_stream_struc   bs;
+ char               *programName;
+ 
++static void usage();
+ /* Implementations */
+ 
+ /************************************************************************
+@@ -144,7 +147,7 @@ char            encoded_file_name[MAX_NAME_SIZE];
   
      do  {
         printf("Enter PCM input file name <required>: ");
@@ -19,7 +26,7 @@ $OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
         if (original_file_name[0] == NULL_CHAR)
         printf("PCM input file name is required.\n");
      } while (original_file_name[0] == NULL_CHAR);
-@@ -163,7 +165,7 @@ char            encoded_file_name[MAX_NA
+@@ -163,7 +166,7 @@ char            encoded_file_name[MAX_NAME_SIZE];
             original_file_name, DFLT_EXT);
  #endif
   
@@ -28,7 +35,7 @@ $OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
      if (encoded_file_name[0] == NULL_CHAR) {
  #ifdef  MS_DOS
          /* replace old extension with new one, 92-08-19 shn */
-@@ -207,7 +209,7 @@ char            encoded_file_name[MAX_NA
+@@ -207,7 +210,7 @@ char            encoded_file_name[MAX_NAME_SIZE];
      else {    /* Not using Audio IFF sound file headers. */
  
         printf("What is the sampling frequency? <44100>[Hz]: ");
@@ -37,7 +44,7 @@ $OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
         freq = atol(t);
         switch (freq) {
            case 48000 : info->sampling_frequency = 1;
-@@ -236,7 +238,7 @@ char            encoded_file_name[MAX_NA
+@@ -236,7 +239,7 @@ char            encoded_file_name[MAX_NAME_SIZE];
  
      printf("Which layer do you want to use?\n");
      printf("Available: Layer (1), Layer (<2>): ");
@@ -46,7 +53,7 @@ $OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
      switch(*t){
         case '1': info->lay = 1; printf(">>> Using Layer %s\n",t); break;
         case '2': info->lay = 2; printf(">>> Using Layer %s\n",t); break;
-@@ -246,7 +248,7 @@ char            encoded_file_name[MAX_NA
+@@ -246,7 +249,7 @@ char            encoded_file_name[MAX_NAME_SIZE];
      printf("Which mode do you want?\n");
      printf("Available: (<s>)tereo, (j)oint stereo, ");
      printf("(d)ual channel, s(i)ngle Channel: ");
@@ -55,7 +62,7 @@ $OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
      switch(*t){
         case 's':
         case 'S':
-@@ -275,7 +277,7 @@ char            encoded_file_name[MAX_NA
+@@ -275,7 +278,7 @@ char            encoded_file_name[MAX_NAME_SIZE];
      }
  
      printf("Which psychoacoustic model do you want to use? <2>: ");
@@ -64,7 +71,7 @@ $OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
      model = atoi(t);
      if (model > 2 || model < 1) {
         printf(">>> Default model 2 selected\n");
-@@ -287,7 +289,7 @@ char            encoded_file_name[MAX_NA
+@@ -287,7 +290,7 @@ char            encoded_file_name[MAX_NAME_SIZE];
      }
   
      printf("What is the total bitrate? <%u>[kbps]: ", DFLT_BRT);
@@ -73,7 +80,7 @@ $OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
      brt = atoi(t);
      if (brt == 0) brt = -10;
      j=0;
-@@ -310,7 +312,7 @@ char            encoded_file_name[MAX_NA
+@@ -310,7 +313,7 @@ char            encoded_file_name[MAX_NAME_SIZE];
   
      printf("What type of de-emphasis should the decoder use?\n");
      printf("Available: (<n>)one, (5)0/15 microseconds, (c)citt j.17: ");
@@ -82,7 +89,7 @@ $OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
      if (*t != 'n' && *t != '5' && *t != 'c') {
         printf(">>> Using default no de-emphasis\n");
         info->emphasis = 0;
-@@ -325,7 +327,7 @@ char            encoded_file_name[MAX_NA
+@@ -325,7 +328,7 @@ char            encoded_file_name[MAX_NAME_SIZE];
  /*  Start 2. Part changes for CD Ver 3.2; jsp; 22-Aug-1991 */
   
      printf("Do you want to set the private bit? (y/<n>): ");
@@ -91,7 +98,7 @@ $OpenBSD: patch-musicin_c,v 1.1 2003/04/14 09:46:06 avsm Exp $
      if (*t == 'y' || *t == 'Y') info->extension = 1;
      else                        info->extension = 0;
      if(info->extension) printf(">>> Private bit set\n");
-@@ -334,28 +336,28 @@ char            encoded_file_name[MAX_NA
+@@ -334,28 +337,28 @@ char            encoded_file_name[MAX_NAME_SIZE];
  /*  End changes for CD Ver 3.2; jsp; 22-Aug-1991 */
   
      printf("Do you want error protection? (y/<n>): ");
