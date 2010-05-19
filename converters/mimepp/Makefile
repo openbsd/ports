@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2007/09/16 01:40:27 merdely Exp $
+# $OpenBSD: Makefile,v 1.16 2010/05/19 16:23:28 espie Exp $
 
 COMMENT=	C++ class library for MIME messages
 
 DISTNAME=		mimepp-1.0
+PKGNAME =		${DISTNAME}p0
 CATEGORIES=		converters
 
 PERMIT_PACKAGE_CDROM=	restrictive non-commercial license
