@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2006/06/03 17:40:48 steven Exp $
+$OpenBSD: patch-configure,v 1.7 2010/05/19 15:18:35 espie Exp $
 --- configure.orig	Sat Nov 27 09:46:40 2004
-+++ configure	Thu Apr 28 23:29:06 2005
++++ configure	Wed May 19 17:08:39 2010
 @@ -20225,15 +20225,17 @@ cat >>confdefs.h <<_ACEOF
  _ACEOF
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.6 2006/06/03 17:40:48 steven Exp $
  
  cat >>confdefs.h <<_ACEOF
  #define XTERM_CMD "${XTERM_CMD}"
-@@ -21654,32 +21656,14 @@ echo "$as_me:$LINENO: checking for pytho
+@@ -21654,32 +21656,14 @@ echo "$as_me:$LINENO: checking for python" >&5
  echo $ECHO_N "checking for python... $ECHO_C" >&6
  EPATH=`echo $PATH | sed -e 's+/bin:+ +g' -e 's+:+ +g'`
  
@@ -67,7 +67,7 @@ $OpenBSD: patch-configure,v 1.6 2006/06/03 17:40:48 steven Exp $
  if test x$have_python_config = xyes && test x$have_python_include = xyes ; then
      have_python=yes
      echo "$as_me:$LINENO: result: yes" >&5
-@@ -22044,13 +22028,13 @@ if test $ac_cv_lib_pthreads_pthread_crea
+@@ -22044,13 +22028,13 @@ if test $ac_cv_lib_pthreads_pthread_create = yes; then
  
  else
  
@@ -84,7 +84,7 @@ $OpenBSD: patch-configure,v 1.6 2006/06/03 17:40:48 steven Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -22110,7 +22094,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib
+@@ -22110,7 +22094,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthre
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
  if test $ac_cv_lib_pthread_pthread_create = yes; then
  
@@ -93,7 +93,7 @@ $OpenBSD: patch-configure,v 1.6 2006/06/03 17:40:48 steven Exp $
  
  else
  
-@@ -27610,7 +27594,7 @@ if test "${ac_cv_lib_intl_tolower+set}" 
+@@ -27610,7 +27594,7 @@ if test "${ac_cv_lib_intl_tolower+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -102,7 +102,7 @@ $OpenBSD: patch-configure,v 1.6 2006/06/03 17:40:48 steven Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -27673,7 +27657,7 @@ if test $ac_cv_lib_intl_tolower = yes; t
+@@ -27673,7 +27657,7 @@ if test $ac_cv_lib_intl_tolower = yes; then
  #define HAVE_LIBINTL 1
  _ACEOF
  
