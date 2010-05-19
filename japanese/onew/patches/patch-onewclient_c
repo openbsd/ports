@@ -1,0 +1,12 @@
+$OpenBSD: patch-onewclient_c,v 1.1 2010/05/19 14:05:37 espie Exp $
+--- onewclient.c.orig	Wed May 19 15:58:17 2010
++++ onewclient.c	Wed May 19 15:58:30 2010
+@@ -21,6 +21,8 @@ History:
+ ///////////////////////////////////////////////////////////////////////*/
+ 
+ #include <signal.h>
++#include <unistd.h>
++#include <stdio.h>
+ #include "onew.h"
+ 
+ static int onew_DBG = 1;

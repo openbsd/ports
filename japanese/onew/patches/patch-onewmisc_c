@@ -1,0 +1,11 @@
+$OpenBSD: patch-onewmisc_c,v 1.1 2010/05/19 14:05:37 espie Exp $
+--- onewmisc.c.orig	Wed May 19 15:54:43 2010
++++ onewmisc.c	Wed May 19 15:55:00 2010
+@@ -5,6 +5,7 @@
+ char *getenv();
+ #include <ctype.h>
+ #include <stdio.h>
++#include <string.h>
+ #include "onew.h"
+ 
+ char *Onew_env_substitute(istr,ostr)

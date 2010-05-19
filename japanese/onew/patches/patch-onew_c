@@ -1,0 +1,13 @@
+$OpenBSD: patch-onew_c,v 1.1 2010/05/19 14:05:37 espie Exp $
+--- onew.c.orig	Wed May 19 16:00:54 2010
++++ onew.c	Wed May 19 16:01:16 2010
+@@ -26,7 +26,8 @@ History:
+ #include <signal.h>
+ #include <ctype.h>
+ #include <stdio.h>
+-extern char *getenv();
++#include <stdlib.h>
++#include <string.h>
+ #include "onew.h"
+ 
+ int on_via;

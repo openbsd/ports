@@ -1,0 +1,67 @@
+$OpenBSD: patch-onewlib_c,v 1.1 2010/05/19 14:05:37 espie Exp $
+--- onewlib.c.orig	Sun Jul  2 09:55:41 1995
++++ onewlib.c	Wed May 19 15:54:13 2010
+@@ -19,6 +19,7 @@
+ #define STATIC static
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include <ctype.h>
+ #include "onew.h"
+ 
+@@ -101,7 +102,12 @@ enq_keyinQ(c){ return strQenq(rawc_inbuff,c); }
+ deq_keyinQ(){  return strQdeq(rawc_inbuff);   }
+ ready_keyinQ(){ return rawc_inbuff[0] != 0; }
+ 
++static int definedKanamode(unsigned char);
++static void romkan_modesw();
+ char *romkan_cmode();
++static void thru_char1(int);
++static Onew_kakuteiInRomkan(int);
++
+ int ONEW_getch_asis; /* never interpret as command keys */
+ 
+ ONEW_getch0(asis){
+@@ -116,9 +122,6 @@ ONEW_getch0(asis){
+ }
+ ONEW_getch1(){
+    int ch;
+-   static definedKanamode();
+-   static romkan_modesw();
+-   static thru_char1();
+ 
+    for(;;){
+ 	ch = ONEW_getch0(ONEW_getch_asis);
+@@ -180,7 +183,7 @@ static IFUNC KanamodeSw[128];
+ static int kanamodes[16];
+ static int kanamodex;
+ 
+-static definedKanamode(ch)
++static int definedKanamode(ch)
+ 	unsigned char ch;
+ {	IFUNC func;
+ 
+@@ -198,13 +201,13 @@ Onew_defineKanamode(mode,ch,func)
+ }
+ 
+ 
+-static romkan_modesw(){
++static void romkan_modesw(){
+ 	int cmode;
+ 
+ 	cmode = ONEW_getch1();
+ 	romkan_mode_switch(cmode);
+ }
+-static thru_char1(ch){
++static void thru_char1(ch){
+ 	ins_keyinQ(ch);
+ 	ins_keyinQ(ONEW_I_THRU_NEXTCH);
+ }
+@@ -313,7 +316,6 @@ Onew_RK_init(){
+ 
+ kget_char1(){
+ 	unsigned int kc;
+-   	static Onew_kakuteiInRomkan();
+ 
+ 	if( !Onew_RK_init() ){
+ 		kc = OnewGetchar();

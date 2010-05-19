@@ -1,0 +1,11 @@
+$OpenBSD: patch-engine_WnnRomkan_c,v 1.1 2010/05/19 14:05:37 espie Exp $
+--- engine/WnnRomkan.c.orig	Wed May 19 16:04:14 2010
++++ engine/WnnRomkan.c	Wed May 19 16:04:22 2010
+@@ -21,6 +21,7 @@ History:
+ int RomkanExists;
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include WNN_RKSPCL
+ #include "onew.h"
+ 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-conf_c,v 1.1 2010/05/19 14:05:37 espie Exp $
+--- conf.c.orig	Wed May 19 15:54:43 2010
++++ conf.c	Wed May 19 15:54:49 2010
+@@ -7,6 +7,7 @@ History:
+ 	931120	extracted from onewlib.c
+ ///////////////////////////////////////////////////////////////////////*/
+ #include <stdio.h>
++#include <string.h>
+ #include "onew.h"
+ 
+ typedef struct {
