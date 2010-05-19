@@ -1,7 +1,7 @@
-$OpenBSD: patch-tla_libneon_ne_auth_c,v 1.1.1.1 2004/06/10 07:50:43 xsa Exp $
---- tla/libneon/ne_auth.c.orig	2003-12-06 20:35:28.000000000 +0100
-+++ tla/libneon/ne_auth.c	2004-06-09 23:27:35.000000000 +0200
-@@ -950,7 +950,7 @@ static int ah_post_send(ne_request *req,
+$OpenBSD: patch-tla_libneon_ne_auth_c,v 1.2 2010/05/19 23:29:14 espie Exp $
+--- tla/libneon/ne_auth.c.orig	Sat Dec  6 20:35:28 2003
++++ tla/libneon/ne_auth.c	Wed May 19 19:28:47 2010
+@@ -950,7 +950,7 @@ static int ah_post_send(ne_request *req, void *cookie,
      if (areq->auth_info_hdr != NULL && 
  	verify_response(areq, sess, areq->auth_info_hdr)) {
  	NE_DEBUG(NE_DBG_HTTPAUTH, "Response authentication invalid.\n");
