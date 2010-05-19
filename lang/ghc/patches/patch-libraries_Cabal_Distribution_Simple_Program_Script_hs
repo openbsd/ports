@@ -1,0 +1,15 @@
+$OpenBSD: patch-libraries_Cabal_Distribution_Simple_Program_Script_hs,v 1.1 2010/05/19 14:23:15 kili Exp $
+
+Pass additional parameters in generated shell scripts (and simplify).
+
+--- libraries/Cabal/Distribution/Simple/Program/Script.hs.orig	Tue Apr 20 20:10:12 2010
++++ libraries/Cabal/Distribution/Simple/Program/Script.hs	Sun May 16 11:52:14 2010
+@@ -50,7 +50,7 @@ invocationAsShellScript
+        ++ [ (case minput of
+               Nothing    -> ""
+               Just input -> "echo " ++ quote input ++ " | ")
+-         ++ quote path ++ concatMap (\arg -> ' ':quote arg) args ]
++         ++ unwords (map quote $ path : args) ++ " \"$@\""]
+ 
+   where
+     quote :: String -> String
