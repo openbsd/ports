@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2010/04/15 14:58:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2010/05/19 07:38:06 espie Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
@@ -27,10 +27,8 @@ FLAVOR?=
 
 .include <bsd.own.mk>
 
-USE_GCC3?= No
-
 # optimization workaround for gcc 2.95
-.if ${USE_GCC3:L} == "no"
+.if ${COMPILER_VERSION:L:Mgcc2}
 PATCH_LIST=     patch-* gcc-*
 .endif
 
