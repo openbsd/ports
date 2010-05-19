@@ -1,7 +1,7 @@
-$OpenBSD: patch-jenscript_jenscript_SH,v 1.6 2000/04/24 14:49:13 espie Exp $
+$OpenBSD: patch-jenscript_jenscript_SH,v 1.7 2010/05/19 14:35:18 espie Exp $
 --- jenscript/jenscript.SH.orig	Tue Jan 16 18:20:31 1990
-+++ jenscript/jenscript.SH	Mon Apr 24 16:48:43 2000
-@@ -20,14 +20,12 @@ echo "Extracting jenscript (with variabl
++++ jenscript/jenscript.SH	Wed May 19 14:28:09 2010
+@@ -20,14 +20,12 @@ echo "Extracting jenscript (with variable substitution
  : Protect any dollar signs and backticks that you do not want interpreted
  : by putting a backslash in front.  You may delete these comments.
  $spitshell >jenscript <<!GROK!THIS!
@@ -25,7 +25,7 @@ $OpenBSD: patch-jenscript_jenscript_SH,v 1.6 2000/04/24 14:49:13 espie Exp $
  $columns = 1;
  $curcolumn = 0;
  $printpage = 0;
-@@ -61,6 +60,7 @@ while($_ = $ARGV[0], /^-/){ # get option
+@@ -61,6 +60,7 @@ while($_ = $ARGV[0], /^-/){ # get options
  		elsif(s/^d//){ $dflag = 1; }
  		elsif(s/^E//){ $eflag = 1; }
  		elsif(s/^k//){ $kflag = 1; }
@@ -33,7 +33,7 @@ $OpenBSD: patch-jenscript_jenscript_SH,v 1.6 2000/04/24 14:49:13 espie Exp $
  		elsif(s/^(\d)//){ $columns = $1; }
  		elsif(/^f$/){ $kfont = $ARGV[0]; shift; last; }
  		elsif(/^f(.+)/){ $kfont = $1; last; }
-@@ -87,27 +87,33 @@ $afont ne "" ? ($afont, $afont, $afont, 
+@@ -87,27 +87,33 @@ $afont ne "" ? ($afont, $afont, $afont, $afont, $afont
  $xflag ? ("Courier", "Courier-Bold", "Courier-Oblique", "Courier", "Courier") :
    ("Times-Roman", "Times-Bold", "Times-Italic", "Times-Roman", "Times-Roman");
  
