@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/19 17:39:13 jasper Exp $
+bin/get-words
+bin/list-edges
+bin/list-rewrites
+bin/tree-collapse
+bin/tree-inflate
+bin/vocabulary
+${P5SITE}/Lingua/
+${P5SITE}/Lingua/Treebank/
+${P5SITE}/Lingua/Treebank.pm
+${P5SITE}/Lingua/Treebank/Const.pm
+${P5SITE}/Lingua/Treebank/HeadFinder.pm
+@man man/man1/get-words.1
+@man man/man1/list-edges.1
+@man man/man1/list-rewrites.1
+@man man/man1/tree-collapse.1
+@man man/man1/tree-inflate.1
+@man man/man1/vocabulary.1
+@man man/man3p/Lingua::Treebank.3p
+@man man/man3p/Lingua::Treebank::Const.3p
+@man man/man3p/Lingua::Treebank::HeadFinder.3p
