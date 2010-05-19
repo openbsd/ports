@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_core_network-openssl_c,v 1.2 2009/05/23 17:47:01 martynas Exp $
---- src/core/network-openssl.c.orig	Tue Mar 31 22:50:02 2009
-+++ src/core/network-openssl.c	Sun Apr  5 01:25:29 2009
-@@ -41,6 +41,8 @@ typedef struct
- 	unsigned int verify:1;
+$OpenBSD: patch-src_core_network-openssl_c,v 1.3 2010/05/19 15:04:28 sthen Exp $
+--- src/core/network-openssl.c.orig	Sat Apr  3 18:19:38 2010
++++ src/core/network-openssl.c	Sun Apr  4 16:34:00 2010
+@@ -43,6 +43,8 @@ typedef struct
+ 	const char *hostname;
  } GIOSSLChannel;
  
 +void irssi_redraw(void);
 +
- static SSL_CTX *ssl_ctx = NULL;
+ static int ssl_inited = FALSE;
  
  static void irssi_ssl_free(GIOChannel *handle)
-@@ -225,6 +227,17 @@ static GIOFuncs irssi_ssl_channel_funcs = {
+@@ -374,6 +376,17 @@ static GIOFuncs irssi_ssl_channel_funcs = {
      irssi_ssl_get_flags
  };
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_core_network-openssl_c,v 1.2 2009/05/23 17:47:01 martynas Ex
  static gboolean irssi_ssl_init(void)
  {
  	SSL_library_init();
-@@ -266,6 +279,8 @@ static GIOChannel *irssi_ssl_get_iochannel(GIOChannel 
+@@ -412,6 +425,8 @@ static GIOChannel *irssi_ssl_get_iochannel(GIOChannel 
  		scert = convert_home(mycert);
  		if (mypkey && *mypkey)
  			spkey = convert_home(mypkey);
