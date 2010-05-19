@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/08/10 17:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/05/19 14:23:02 espie Exp $
 
 
 COMMENT =	smalltalk system, vm
@@ -18,7 +18,8 @@ MASTER_SITES =	${SQUEAK_SITE}unix-linux/
 CONFIGURE_STYLE =	gnu
 AUTOCONF_VERSION =	2.60
 DESTDIRNAME =		ROOT
-CONFIGURE_ENV =		RANLIB=ranlib
+CONFIGURE_ENV =		RANLIB=ranlib \
+			ac_cv_socklen_t=yes
 USE_GMAKE =		Yes
 USE_X11 =		Yes
 
