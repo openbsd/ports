@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_jp_c,v 1.1 2010/05/19 14:25:44 espie Exp $
+--- src/jp.c.orig	Wed May 19 16:23:48 2010
++++ src/jp.c	Wed May 19 16:24:35 2010
+@@ -19,6 +19,7 @@
+ #endif
+ 
+ static int jisx0201rto0208();
++static void abend_handler(int);
+ 
+ #ifdef GENERAL
+ # undef free
+@@ -34,7 +35,6 @@ static int jisx0201rto0208();
+ core_handler(dummy)
+ 	int dummy;
+ {
+-	static void abend_handler();
+ 	abend_handler(TRUE);
+ }
+ 
+@@ -42,7 +42,6 @@ core_handler(dummy)
+ hup_handler(dummy)
+ 	int dummy;
+ {
+-	static void abend_handler();
+ 	abend_handler(FALSE);
+ }
+ 
