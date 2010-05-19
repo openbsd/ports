@@ -1,7 +1,13 @@
-$OpenBSD: patch-win_tty_termcap_c,v 1.1 2000/04/16 21:19:08 espie Exp $
---- win/tty/termcap.c.orig	Fri Apr 14 15:15:20 2000
-+++ win/tty/termcap.c	Fri Apr 14 15:19:54 2000
-@@ -827,7 +827,9 @@ init_hilite()
+$OpenBSD: patch-win_tty_termcap_c,v 1.2 2010/05/19 07:34:43 espie Exp $
+--- win/tty/termcap.c.orig	Wed Sep 25 02:37:10 1996
++++ win/tty/termcap.c	Wed May 19 09:29:56 2010
+@@ -821,13 +821,14 @@ init_hilite()
+ {
+ 	register int c;
+ 	char *setf, *scratch;
+-	extern char *tparm();
+ 
+ 	for (c = 0; c < SIZE(hilites); c++)
  		hilites[c] = HI;
  	hilites[CLR_GRAY] = hilites[NO_COLOR] = (char *)0;
  
