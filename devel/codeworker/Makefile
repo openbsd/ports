@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/18 10:28:48 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/19 10:48:52 ajacoutot Exp $
 
 COMMENT =		universal parsing tool & source code generator
 
 V =			4.5.4
-PKGNAME =		codeworker-${V}
+PKGNAME =		codeworker-${V}p0
 
 CATEGORIES =		devel
 
@@ -35,8 +35,8 @@ WRKDIST=${WRKDIR}/CodeWorker${V:S/./_/g}
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/codeworker ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIST}/libcodeworker.a ${PREFIX}/lib
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/codeworker/documentation
-	${INSTALL_DATA} ${WRKSRC}/Documentation/* ${PREFIX}/share/examples/codeworker/documentation
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/codeworker
+	${INSTALL_DATA} ${WRKSRC}/Documentation/* ${PREFIX}/share/examples/codeworker
 
 .include <bsd.port.mk>
 
