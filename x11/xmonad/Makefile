@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/05/16 14:12:20 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2010/05/19 15:58:23 kili Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
 
 DISTNAME =		xmonad-0.9.1
 PKGNAME-main =		${DISTNAME}p0
-PKGNAME-lib =		${DISTNAME:S,-,-lib-,}p0
+PKGNAME-lib =		${DISTNAME:S,-,-lib-,}p1
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 

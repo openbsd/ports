@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/22 21:58:53 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/05/19 15:58:22 kili Exp $
 @comment bin/HMACTest
 @comment bin/QuickTest
 @comment bin/RSATest
@@ -43,8 +43,8 @@ lib/${DISTNAME}/ghc-${MODGHC_VER}/Data/LargeWord.hi
 lib/${DISTNAME}/ghc-${MODGHC_VER}/HS${DISTNAME}.o
 lib/${DISTNAME}/ghc-${MODGHC_VER}/libHS${DISTNAME}.a
 lib/${DISTNAME}/register.sh
-@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh
-@unexec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh
+@exec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/${DISTNAME}/unregister.sh -v0 --force
 lib/${DISTNAME}/unregister.sh
 share/doc/${DISTNAME}/
 share/doc/${DISTNAME}/CryptoHomePage.html
