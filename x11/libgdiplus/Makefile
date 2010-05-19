@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/03/24 20:10:00 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2010/05/19 17:28:38 robert Exp $
 
 COMMENT=	GDI+ comptible API
 
-DISTNAME=	libgdiplus-2.6.2
+DISTNAME=	libgdiplus-2.6.4
 
 CATEGORIES=	x11 devel
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB += X11 Xau Xdmcp Xrender cairo expat fontconfig freetype
 WANTLIB += glib-2.0 glitz gmodule-2.0 gobject-2.0 jpeg m pcre
 WANTLIB += pixman-1 png pthread-stubs xcb z
+WANTLIB += gthread-2.0 xcb-render xcb-render-util
 
 MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/libgdiplus/
 EXTRACT_SUFX=	.tar.bz2
