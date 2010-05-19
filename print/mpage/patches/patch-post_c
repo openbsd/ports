@@ -1,6 +1,6 @@
-$OpenBSD: patch-post_c,v 1.2 2002/11/13 17:15:49 naddy Exp $
+$OpenBSD: patch-post_c,v 1.3 2010/05/19 14:55:00 espie Exp $
 --- post.c.orig	Wed Oct 16 23:45:54 2002
-+++ post.c	Wed Nov 13 18:04:56 2002
++++ post.c	Wed May 19 14:52:00 2010
 @@ -353,6 +353,7 @@ ps_copyprolog(fd, outfd)
   FILE *fd;
   FILE *outfd;
@@ -40,7 +40,7 @@ $OpenBSD: patch-post_c,v 1.2 2002/11/13 17:15:49 naddy Exp $
          }
          else if (strncmp(currline, "%%Page:", 7) == 0) {
              fprintf(outfd, "/p { } def\n");
-@@ -1013,6 +1016,8 @@ post_one_line(line, fd, outfd, indoc, fl
+@@ -1013,6 +1016,8 @@ post_one_line(line, fd, outfd, indoc, flush_page)
   int * indoc;
   int flush_page;
  {
@@ -49,7 +49,7 @@ $OpenBSD: patch-post_c,v 1.2 2002/11/13 17:15:49 naddy Exp $
          if (strncmp(line, "%%BeginDocument", 15) == 0) {
              (*indoc)++;
          }
-@@ -1063,15 +1068,17 @@ post_one_line(line, fd, outfd, indoc, fl
+@@ -1063,15 +1068,17 @@ post_one_line(line, fd, outfd, indoc, flush_page)
                       */
                      if (tex1)
                          free(tex1);

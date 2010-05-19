@@ -1,0 +1,36 @@
+$OpenBSD: patch-mpage_h,v 1.1 2010/05/19 14:55:00 espie Exp $
+--- mpage.h.orig	Wed May 19 16:50:06 2010
++++ mpage.h	Wed May 19 16:53:54 2010
+@@ -172,6 +172,16 @@ extern int errno;
+ extern int ps_width;	/* number of points in the X direction (8.5 inches) */
+ extern int ps_height;	/* number of points in the Y direction (11 inches) */
+ extern char * media;	/* name of output page media */
++
++/*
++ * Structure to describe a physical piece of paper, e.g. A4 or Letter
++ */
++struct page_desc {
++    char *media;
++    int width;
++    int height;
++};
++    
+ extern struct page_desc paper[];
+ 
+ /*
+@@ -213,15 +223,6 @@ struct pagebox {
+ };
+ 
+ 
+-/*
+- * Structure to describe a physical piece of paper, e.g. A4 or Letter
+- */
+-struct page_desc {
+-    char *media;
+-    int width;
+-    int height;
+-};
+-    
+ 
+ /* array of sheets where pages are ordered for coli ??? */
+ extern struct sheet coli[];
