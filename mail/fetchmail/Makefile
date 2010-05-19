@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.120 2010/03/31 19:12:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.121 2010/05/19 15:27:18 giovanni Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
-DISTNAME=	fetchmail-6.3.15
+DISTNAME=	fetchmail-6.3.17
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=fetchmail/}
 
@@ -16,11 +16,12 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto krb5 ssl
 
 MODULES=		devel/gettext
+BUILD_DEPENDS=		::devel/bison
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CFLAGS=			-I${LOCALBASE}/include
-CONFIGURE_ENV=		PYTHON=:
+CONFIGURE_ENV=		PYTHON=: YACC="bison -y"
 CONFIGURE_ARGS=		--with-ssl \
 			--with-kerberos5 \
 			--enable-NTLM
