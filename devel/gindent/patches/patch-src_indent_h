@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_indent_h,v 1.1 2010/05/19 15:11:01 espie Exp $
+--- src/indent.h.orig	Wed May 19 17:08:27 2010
++++ src/indent.h	Wed May 19 17:08:42 2010
+@@ -92,11 +92,6 @@ extern char *cur_line;
+ /* Size of the input program, not including the ' \n\0' we add at the end */
+ extern unsigned long in_prog_size;
+ 
+-/* The output file. */
+-extern FILE *output;
+-
+-
+-
+ extern char *labbuf;            /* buffer for label */
+ extern char *s_lab;             /* start ... */
+ extern char *e_lab;             /* .. and end of stored label */
