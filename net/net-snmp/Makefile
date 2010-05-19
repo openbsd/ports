@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/02/09 12:23:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2010/05/19 15:50:00 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
@@ -6,7 +6,7 @@ COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.4.2.1
 DISTNAME=	net-snmp-${V}
-PKGNAME-main=	${DISTNAME}p3
+PKGNAME-main=	${DISTNAME}p4
 PKGNAME-perl=	p5-SNMP-${V}p1
 PKGNAME-tkmib=	net-snmp-tkmib-${V}
 SHARED_LIBS=	netsnmp		8.0	\
@@ -38,6 +38,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 	--enable-ipv6 \
+	--enable-mfd-rewrites \
 	--with-libwrap \
 	--with-perl-modules \
 	--with-copy-persistent-files="no" \

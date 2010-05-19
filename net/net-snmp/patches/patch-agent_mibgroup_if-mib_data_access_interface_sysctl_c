@@ -1,7 +1,27 @@
-$OpenBSD: patch-agent_mibgroup_if-mib_data_access_interface_sysctl_c,v 1.1 2007/09/26 20:03:42 rui Exp $
---- agent/mibgroup/if-mib/data_access/interface_sysctl.c.orig	Wed Jun 20 22:34:24 2007
-+++ agent/mibgroup/if-mib/data_access/interface_sysctl.c	Mon Sep 24 11:01:51 2007
-@@ -451,22 +451,22 @@ netsnmp_arch_interface_container_load(netsnmp_containe
+$OpenBSD: patch-agent_mibgroup_if-mib_data_access_interface_sysctl_c,v 1.2 2010/05/19 15:50:00 sthen Exp $
+--- agent/mibgroup/if-mib/data_access/interface_sysctl.c.orig	Sat Mar 13 01:01:16 2010
++++ agent/mibgroup/if-mib/data_access/interface_sysctl.c	Sat Mar 13 01:01:09 2010
+@@ -183,6 +183,7 @@ netsnmp_sysctl_ifmedia_to_speed(int media, u_int *spee
+ #endif
+             }
+             break;
++#if defined(IFM_TOKEN)
+         case IFM_TOKEN:
+             switch (IFM_SUBTYPE(media)) {
+                 case IFM_TOK_STP4:
+@@ -201,9 +202,10 @@ netsnmp_sysctl_ifmedia_to_speed(int media, u_int *spee
+                     *speed = 100000000;
+                     *speed_high = 100;
+                     break;
+-#endif
++#endif /* IFM_TOKEN */
+             }
+             break;
++#endif
+ #ifdef IFM_ATM
+         case IFM_ATM:
+             switch (IFM_SUBTYPE(media)) {
+@@ -451,22 +453,22 @@ netsnmp_arch_interface_container_load(netsnmp_containe
              NETSNMP_INTERFACE_FLAGS_HAS_V6_REASMMAX;
  
          /* get counters */
