@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_signature_c,v 1.1 2002/12/30 09:15:26 pvalchev Exp $
---- lib/signature.c.orig	Mon Dec 30 00:27:20 2002
-+++ lib/signature.c	Mon Dec 30 00:28:17 2002
-@@ -253,11 +253,11 @@ static int makePGPSignature(const char *
+$OpenBSD: patch-lib_signature_c,v 1.2 2010/05/19 13:45:15 espie Exp $
+--- lib/signature.c.orig	Wed Jun 14 14:34:31 2000
++++ lib/signature.c	Wed May 19 05:28:31 2010
+@@ -253,11 +253,11 @@ static int makePGPSignature(const char *file, /*@out@*
  	    switch(pgpVer) {
  	    case PGP_2:
  		execlp(path, "pgp", "+batchmode=on", "+verbose=0", "+armor=off",
@@ -15,7 +15,7 @@ $OpenBSD: patch-lib_signature_c,v 1.1 2002/12/30 09:15:26 pvalchev Exp $
  		break;
  	    case PGP_UNKNOWN:
  	    case PGP_NOTDETECTED:
-@@ -340,7 +340,7 @@ static int makeGPGSignature(const char *
+@@ -340,7 +340,7 @@ static int makeGPGSignature(const char *file, /*@out@*
  	execlp("gpg", "gpg",
  	       "--batch", "--no-verbose", "--no-armor", "--passphrase-fd", "3",
  	       "-u", name, "-sbo", sigfile, file,
@@ -24,7 +24,7 @@ $OpenBSD: patch-lib_signature_c,v 1.1 2002/12/30 09:15:26 pvalchev Exp $
  	rpmError(RPMERR_EXEC, _("Couldn't exec gpg"));
  	_exit(RPMERR_EXEC);
      }
-@@ -536,14 +536,14 @@ static int verifyPGPSignature(const char
+@@ -536,14 +536,14 @@ static int verifyPGPSignature(const char *datafile, vo
  		   "+OutputInformationFD=1",
  		   /* Write "WARNING: ... is not trusted to... to stdout: */
  		   "+OutputWarningFD=1",
@@ -41,7 +41,7 @@ $OpenBSD: patch-lib_signature_c,v 1.1 2002/12/30 09:15:26 pvalchev Exp $
  	    break;
  	case PGP_UNKNOWN:
  	case PGP_NOTDETECTED:
-@@ -622,7 +622,7 @@ static int verifyGPGSignature(const char
+@@ -622,7 +622,7 @@ static int verifyGPGSignature(const char *datafile, vo
  	execlp("gpg", "gpg",
  	       "--batch", "--no-verbose", 
  	       "--verify", sigfile, datafile,
@@ -50,7 +50,7 @@ $OpenBSD: patch-lib_signature_c,v 1.1 2002/12/30 09:15:26 pvalchev Exp $
  	fprintf(stderr, _("exec failed!\n"));
  	rpmError(RPMERR_EXEC, 
  		 _("Could not run gpg.  Use --nogpg to skip GPG checks."));
-@@ -683,7 +683,7 @@ static int checkPassPhrase(const char *p
+@@ -683,7 +683,7 @@ static int checkPassPhrase(const char *passPhrase, con
  	    execlp("gpg", "gpg",
  	           "--batch", "--no-verbose", "--passphrase-fd", "3",
  	           "-u", name, "-so", "-",
@@ -59,7 +59,7 @@ $OpenBSD: patch-lib_signature_c,v 1.1 2002/12/30 09:15:26 pvalchev Exp $
  	    rpmError(RPMERR_EXEC, _("Couldn't exec gpg"));
  	    _exit(RPMERR_EXEC);
  	}   /*@notreached@*/ break;
-@@ -702,11 +702,11 @@ static int checkPassPhrase(const char *p
+@@ -702,11 +702,11 @@ static int checkPassPhrase(const char *passPhrase, con
  		switch(pgpVer) {
  		case PGP_2:
  		    execlp(path, "pgp", "+batchmode=on", "+verbose=0",

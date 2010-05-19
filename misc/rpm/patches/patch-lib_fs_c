@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_fs_c,v 1.1 2002/04/07 00:31:55 espie Exp $
---- lib/fs.c.orig	Sun Apr  7 02:16:12 2002
-+++ lib/fs.c	Sun Apr  7 02:17:44 2002
-@@ -3,6 +3,72 @@
+$OpenBSD: patch-lib_fs_c,v 1.2 2010/05/19 13:45:15 espie Exp $
+--- lib/fs.c.orig	Wed Jun 14 14:34:30 2000
++++ lib/fs.c	Wed May 19 13:05:05 2010
+@@ -3,6 +3,73 @@
  #include <rpmlib.h>
  #include <rpmmacro.h>
  
@@ -23,6 +23,7 @@ $OpenBSD: patch-lib_fs_c,v 1.1 2002/04/07 00:31:55 espie Exp $
 +    return &item;
 +}
 +#else 
++#define getmntent internal_getmntent
 +static our_mntent *getmntent(FILE *filep) {
 +    static our_mntent item = { NULL };
 +    char buf[1024], * start;
@@ -74,7 +75,7 @@ $OpenBSD: patch-lib_fs_c,v 1.1 2002/04/07 00:31:55 espie Exp $
  struct fsinfo {
      /*@only@*/ const char * mntPoint;
      dev_t dev;
-@@ -301,3 +367,5 @@ int rpmGetFilesystemUsage(const char ** 
+@@ -301,3 +368,5 @@ int rpmGetFilesystemUsage(const char ** fileList, int_
  
      return 0;
  }
