@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_h_in,v 1.1 2010/05/19 07:25:12 espie Exp $
+--- config.h.in.orig	Wed May 19 09:18:44 2010
++++ config.h.in	Wed May 19 09:19:25 2010
+@@ -434,7 +434,9 @@
+        #pragma alloca
+ #  else
+ #    ifndef alloca /* predefined by HP cc +Olibcalls */
++#	ifndef __OpenBSD__
+          char *alloca ();
++#	endif
+ #    endif
+ #  endif
+ #endif
