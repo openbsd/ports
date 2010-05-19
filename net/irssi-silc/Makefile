@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2009/10/12 18:52:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2010/05/19 15:05:10 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	SILC plugin for irssi
 
 DISTNAME=	irssi-silc-1.1.8
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	net
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	::devel/gettext \
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+= :yasm-*:devel/yasm
 .endif
-RUN_DEPENDS=	:irssi->=0.8.13:net/irssi
+RUN_DEPENDS=	:irssi->=0.8.15:net/irssi
 
 MAKE_FLAGS=	libfe_common_silc_la_LDFLAGS=-avoid-version \
 		libsilc_core_la_LDFLAGS=-avoid-version

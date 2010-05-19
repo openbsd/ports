@@ -1,6 +1,6 @@
-$OpenBSD: patch-apps_irssi_src_silc_core_client_ops_c,v 1.1 2009/07/26 15:39:52 martynas Exp $
---- apps/irssi/src/silc/core/client_ops.c.orig	Sat May 23 03:11:25 2009
-+++ apps/irssi/src/silc/core/client_ops.c	Sun Jul 26 15:59:30 2009
+$OpenBSD: patch-apps_irssi_src_silc_core_client_ops_c,v 1.2 2010/05/19 15:05:10 sthen Exp $
+--- apps/irssi/src/silc/core/client_ops.c.orig	Sat May 23 02:11:25 2009
++++ apps/irssi/src/silc/core/client_ops.c	Wed Apr 28 10:26:29 2010
 @@ -1069,6 +1069,8 @@ void silc_notify(SilcClient client, SilcClientConnecti
  
        nick = silc_nicklist_find(chanrec, client_entry2);
@@ -10,3 +10,28 @@ $OpenBSD: patch-apps_irssi_src_silc_core_client_ops_c,v 1.1 2009/07/26 15:39:52 
  	nick->op = (mode & SILC_CHANNEL_UMODE_CHANOP) != 0;
  	nick->founder = (mode & SILC_CHANNEL_UMODE_CHANFO) != 0;
  	signal_emit("nick mode changed", 2, chanrec, nick);
+@@ -2790,6 +2792,15 @@ static void silc_get_auth_ask_passphrase(const unsigne
+   silc_free(a);
+ }
+ 
++static SERVER_SETUP_REC *silc_server_setup_find_port(const char *address,
++						     int port) {
++  SERVER_SETUP_REC *rec;
++
++  rec = server_setup_find(address, port, NULL);
++  return (rec == NULL || rec->port != port) ? NULL : rec;
++}
++
++
+ /* Find authentication data by hostname and port. The hostname may be IP
+    address as well.*/
+ 
+@@ -2811,7 +2822,7 @@ void silc_get_auth_method(SilcClient client, SilcClien
+ 
+   /* Check whether we find the password for this server in our
+      configuration.  If it's set, always send it server. */
+-  setup = server_setup_find_port(hostname, port);
++  setup = silc_server_setup_find_port(hostname, port);
+   if (setup && setup->password) {
+     completion(SILC_AUTH_PASSWORD, setup->password, strlen(setup->password),
+ 	       context);
