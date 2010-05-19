@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/04/26 09:42:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/05/19 10:10:48 ajacoutot Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
@@ -17,8 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MULTI_PACKAGES=	-main -smb
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -60,12 +58,22 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-gconf \
 		--enable-http \
 		--enable-keyring \
-		--enable-samba \
 		--with-bash-completion-dir="${PREFIX}/share/gvfs"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS+=	GNOME_VERSION
+
+MULTI_PACKAGES=		-main
+PSEUDO_FLAVORS=		no_smb
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_smb}
+CONFIGURE_ARGS+= --disable-samba
+.else
+CONFIGURE_ARGS+= --enable-samba
+MULTI_PACKAGES+= -smb
+.endif
 
 post-install:
 	${SUBST_CMD} -c ${FILESDIR}/mount-archive.desktop.in \
