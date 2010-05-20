@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.13 2010/04/26 17:31:57 sthen Exp $
---- configure.in.orig	Sat Mar 13 11:29:45 2010
-+++ configure.in	Sat Mar 13 11:30:19 2010
-@@ -750,7 +750,7 @@ if test x$enable_cups != xno; then
+$OpenBSD: patch-configure_in,v 1.14 2010/05/20 18:16:39 sthen Exp $
+--- configure.in.orig	Mon May 17 21:51:23 2010
++++ configure.in	Wed May 19 23:42:29 2010
+@@ -749,7 +749,7 @@ if test x$enable_cups != xno; then
  		ac_save_PRINT_LIBS=$PRINT_LIBS
  		CFLAGS="$CFLAGS `$CUPS_CONFIG --cflags`"
  		LDFLAGS="$LDFLAGS `$CUPS_CONFIG --ldflags`"
