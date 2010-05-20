@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/09/14 19:54:26 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/05/20 20:04:35 bluhm Exp $
+bin/nytprofcg
 bin/nytprofcsv
 bin/nytprofhtml
+bin/nytprofmerge
 ${P5ARCH}/
 ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/NYTProf/
@@ -9,9 +11,11 @@ ${P5ARCH}/Devel/NYTProf/Apache.pm
 ${P5ARCH}/Devel/NYTProf/Constants.pm
 ${P5ARCH}/Devel/NYTProf/Core.pm
 ${P5ARCH}/Devel/NYTProf/Data.pm
+${P5ARCH}/Devel/NYTProf/FileHandle.pm
 ${P5ARCH}/Devel/NYTProf/FileInfo.pm
 ${P5ARCH}/Devel/NYTProf/ReadStream.pm
 ${P5ARCH}/Devel/NYTProf/Reader.pm
+${P5ARCH}/Devel/NYTProf/Run.pm
 ${P5ARCH}/Devel/NYTProf/SubInfo.pm
 ${P5ARCH}/Devel/NYTProf/Test.pm
 ${P5ARCH}/Devel/NYTProf/Util.pm
@@ -19,6 +23,16 @@ ${P5ARCH}/Devel/NYTProf/js/
 ${P5ARCH}/Devel/NYTProf/js/asc.png
 ${P5ARCH}/Devel/NYTProf/js/bg.png
 ${P5ARCH}/Devel/NYTProf/js/desc.png
+${P5ARCH}/Devel/NYTProf/js/jit/
+${P5ARCH}/Devel/NYTProf/js/jit/Treemap.css
+${P5ARCH}/Devel/NYTProf/js/jit/gradient-cushion1.png
+${P5ARCH}/Devel/NYTProf/js/jit/gradient.png
+${P5ARCH}/Devel/NYTProf/js/jit/gradient20.png
+${P5ARCH}/Devel/NYTProf/js/jit/gradient30.png
+${P5ARCH}/Devel/NYTProf/js/jit/gradient40.png
+${P5ARCH}/Devel/NYTProf/js/jit/gradient50.png
+${P5ARCH}/Devel/NYTProf/js/jit/jit-yc.js
+${P5ARCH}/Devel/NYTProf/js/jit/jit.js
 ${P5ARCH}/Devel/NYTProf/js/jquery-min.js
 ${P5ARCH}/Devel/NYTProf/js/jquery-tablesorter-min.js
 ${P5ARCH}/Devel/NYTProf/js/style-tablesorter.css
@@ -33,6 +47,7 @@ ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/NYTProf/
 ${P5ARCH}/auto/Devel/NYTProf/NYTProf.bs
 ${P5ARCH}/auto/Devel/NYTProf/NYTProf.so
+@man man/man1/nytprofcg.1
 @man man/man1/nytprofcsv.1
 @man man/man1/nytprofhtml.1
 @man man/man3p/Devel::NYTProf.3p
@@ -41,4 +56,5 @@ ${P5ARCH}/auto/Devel/NYTProf/NYTProf.so
 @man man/man3p/Devel::NYTProf::Data.3p
 @man man/man3p/Devel::NYTProf::ReadStream.3p
 @man man/man3p/Devel::NYTProf::Reader.3p
+@man man/man3p/Devel::NYTProf::Run.3p
 @man man/man3p/Devel::NYTProf::Util.3p
