@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2010/03/29 07:55:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/05/20 09:15:45 dcoppa Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 
-V=		3.98.3
-DISTNAME=	lame-${V}
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	lame-3.98.4
 
 SHARED_LIBS=	mp3lame	2.0	# .0.1
 
