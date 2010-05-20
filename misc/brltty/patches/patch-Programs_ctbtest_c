@@ -1,0 +1,11 @@
+$OpenBSD: patch-Programs_ctbtest_c,v 1.1 2010/05/20 09:25:31 espie Exp $
+--- Programs/ctbtest.c.orig	Thu May 20 11:23:47 2010
++++ Programs/ctbtest.c	Thu May 20 11:24:10 2010
+@@ -44,6 +44,7 @@ END_OPTION_TABLE
+ 
+ TranslationTable textTable;
+ TranslationTable untextTable;
++#define contractionTable staticContractionTable
+ static void *contractionTable;
+ 
+ static void

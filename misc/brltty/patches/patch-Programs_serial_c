@@ -1,7 +1,7 @@
-$OpenBSD: patch-Programs_serial_c,v 1.1 2004/11/14 17:34:05 naddy Exp $
+$OpenBSD: patch-Programs_serial_c,v 1.2 2010/05/20 09:25:31 espie Exp $
 --- Programs/serial.c.orig	Thu Sep 30 15:13:52 2004
-+++ Programs/serial.c	Fri Nov 12 22:09:16 2004
-@@ -192,6 +192,17 @@ serialInitializeAttributes (struct termi
++++ Programs/serial.c	Wed May 19 19:16:40 2010
+@@ -192,6 +192,17 @@ serialInitializeAttributes (struct termios *attributes
  #ifdef IEXTEN
    attributes->c_lflag = IEXTEN;
  #endif /* IEXTEN */
