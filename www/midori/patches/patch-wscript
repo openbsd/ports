@@ -1,8 +1,8 @@
-$OpenBSD: patch-wscript,v 1.8 2009/11/23 21:27:44 landry Exp $
+$OpenBSD: patch-wscript,v 1.9 2010/05/20 19:01:14 landry Exp $
 We don't need those files installed..
---- wscript.orig	Fri Nov 13 23:31:25 2009
-+++ wscript	Mon Nov 23 22:07:02 2009
-@@ -63,7 +63,7 @@ def rc_file(self, node):
+--- wscript.orig	Sun May 16 20:32:33 2010
++++ wscript	Thu May 20 20:12:21 2010
+@@ -67,7 +67,7 @@ def rc_file(self, node):
      self.compiled_tasks.append (rctask)
  rc_file = extension ('.rc')(rc_file)
  Task.simple_task_type ('winrc', '${WINRC} -o${TGT} ${SRC}', color='BLUE',
@@ -11,7 +11,7 @@ We don't need those files installed..
  
  def configure (conf):
      def option_checkfatal (option, desc):
-@@ -384,12 +384,8 @@ def build (bld):
+@@ -449,12 +449,8 @@ def build (bld):
  
      bld.add_group ()
  
