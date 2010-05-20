@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_c,v 1.1 2007/04/25 11:34:47 wilfried Exp $
+$OpenBSD: patch-src_main_c,v 1.2 2010/05/20 10:58:08 espie Exp $
 --- src/main.c.orig	Mon Oct 25 03:32:51 2004
-+++ src/main.c	Wed Mar 14 22:50:36 2007
-@@ -331,6 +331,7 @@ ExecuteShellCommand(WScreen *scr, char *
++++ src/main.c	Thu May 20 12:50:56 2010
+@@ -331,6 +331,7 @@ ExecuteShellCommand(WScreen *scr, char *command)
   * forked by wmaker.
   *---------------------------------------------------------------------------
   */

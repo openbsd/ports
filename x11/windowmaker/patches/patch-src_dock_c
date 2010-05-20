@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dock_c,v 1.1 2007/04/25 11:33:21 wilfried Exp $
+$OpenBSD: patch-src_dock_c,v 1.2 2010/05/20 10:58:08 espie Exp $
 --- src/dock.c.orig	Sat Oct 23 05:10:40 2004
-+++ src/dock.c	Wed Mar 14 21:17:01 2007
-@@ -2977,7 +2977,7 @@ execCommand(WAppIcon *btn, char *command
++++ src/dock.c	Thu May 20 12:50:56 2010
+@@ -2977,7 +2977,7 @@ execCommand(WAppIcon *btn, char *command, WSavedState 
  
      wtokensplit(cmdline, &argv, &argc);
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_wmspec_c,v 1.2 2005/12/27 23:12:24 naddy Exp $
+$OpenBSD: patch-src_wmspec_c,v 1.3 2010/05/20 10:58:08 espie Exp $
 --- src/wmspec.c.orig	Sun May 15 18:41:09 2005
-+++ src/wmspec.c	Tue Dec 27 22:18:30 2005
++++ src/wmspec.c	Thu May 20 12:50:56 2010
 @@ -322,14 +322,14 @@ setSupportedHints(WScreen *scr)
  void
  wNETWMUpdateDesktop(WScreen *scr)
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_wmspec_c,v 1.2 2005/12/27 23:12:24 naddy Exp $
      /*memset(views, 0, sizeof(CARD32) * count);*/
  
  #ifdef VIRTUAL_DESKTOP
-@@ -487,7 +487,7 @@ updateIconImage(WScreen *scr, WWindow *w
+@@ -487,7 +487,7 @@ updateIconImage(WScreen *scr, WWindow *wwin)
  static void
  updateShowDesktop(WScreen * scr, Bool show)
  {
@@ -27,7 +27,7 @@ $OpenBSD: patch-src_wmspec_c,v 1.2 2005/12/27 23:12:24 naddy Exp $
  
      foo = (show == True);
      XChangeProperty(dpy, scr->root_win, net_showing_desktop, XA_CARDINAL, 32,
-@@ -660,7 +660,7 @@ wNETWMUpdateActions(WWindow *wwin, Bool 
+@@ -660,7 +660,7 @@ wNETWMUpdateActions(WWindow *wwin, Bool del)
  void
  wNETWMUpdateWorkarea(WScreen *scr, WArea usableArea)
  {
@@ -36,7 +36,7 @@ $OpenBSD: patch-src_wmspec_c,v 1.2 2005/12/27 23:12:24 naddy Exp $
      int count, i;
  
      /* XXX: not Xinerama compatible,
-@@ -670,7 +670,7 @@ wNETWMUpdateWorkarea(WScreen *scr, WArea
+@@ -670,7 +670,7 @@ wNETWMUpdateWorkarea(WScreen *scr, WArea usableArea)
          return;
  
      count = scr->workspace_count * 4;
@@ -45,7 +45,7 @@ $OpenBSD: patch-src_wmspec_c,v 1.2 2005/12/27 23:12:24 naddy Exp $
      for (i=0; i<scr->workspace_count; i++) {
          area[4*i + 0] = usableArea.x1;
          area[4*i + 1] = usableArea.y1;
-@@ -793,7 +793,7 @@ updateClientListStacking(WScreen *scr, W
+@@ -793,7 +793,7 @@ updateClientListStacking(WScreen *scr, WWindow *wwin_e
  static void
  updateWorkspaceCount(WScreen *scr) /* changeable */
  {
@@ -54,7 +54,7 @@ $OpenBSD: patch-src_wmspec_c,v 1.2 2005/12/27 23:12:24 naddy Exp $
  
      count = scr->workspace_count;
  
-@@ -805,7 +805,7 @@ updateWorkspaceCount(WScreen *scr) /* ch
+@@ -805,7 +805,7 @@ updateWorkspaceCount(WScreen *scr) /* changeable */
  static void
  updateCurrentWorkspace(WScreen *scr) /* changeable */
  {
@@ -63,7 +63,7 @@ $OpenBSD: patch-src_wmspec_c,v 1.2 2005/12/27 23:12:24 naddy Exp $
  
      count = scr->current_workspace;
  
-@@ -852,7 +852,7 @@ updateFocusHint(WScreen *scr, WWindow *w
+@@ -852,7 +852,7 @@ updateFocusHint(WScreen *scr, WWindow *wwin) /* change
  static void
  updateWorkspaceHint(WWindow *wwin, Bool fake, Bool del)
  {
