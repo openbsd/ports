@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_linux_main_linux_c,v 1.1.1.1 2005/03/08 14:36:26 niallo Exp $
---- src/linux/main_linux.c.orig	Fri Mar  4 10:57:15 2005
-+++ src/linux/main_linux.c	Fri Mar  4 10:57:46 2005
+$OpenBSD: patch-src_linux_main_linux_c,v 1.2 2010/05/20 09:55:22 espie Exp $
+--- src/linux/main_linux.c.orig	Sun May  2 01:53:54 2004
++++ src/linux/main_linux.c	Wed May 19 19:22:49 2010
 @@ -17,8 +17,9 @@ UNIX systems */
  
  #include <sys/ioctl.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_linux_main_linux_c,v 1.1.1.1 2005/03/08 14:36:26 niallo Exp 
  
  #include "types.h"
  #include "nsf.h"
-@@ -223,7 +224,7 @@ static void open_hardware(const char *de
+@@ -223,7 +224,7 @@ static void open_hardware(const char *device)
     doesn't show up as a char device. The original author (Matthew Conte) seems
     to have thought that esddsp should work without this hack.  Is doing this 
     bad? --Matthew Strait */

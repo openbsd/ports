@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_sndhrdw_nes_apu_c,v 1.1 2010/05/20 09:55:22 espie Exp $
+--- src/sndhrdw/nes_apu.c.orig	Thu May 20 11:53:26 2010
++++ src/sndhrdw/nes_apu.c	Thu May 20 11:54:17 2010
+@@ -1034,10 +1034,13 @@ void apu_process(void *buffer, int num_samples)
+          accum = -0x8000;
+ 
+       /* signed 16-bit output, unsigned 8-bit */
+-      if (16 == apu->sample_bits)
+-         *((int16 *) buffer)++ = (int16) accum;
+-      else
+-         *((uint8 *) buffer)++ = (accum >> 8) ^ 0x80;
++      if (16 == apu->sample_bits) {
++         *((int16 *) buffer) = (int16) accum;
++	 buffer = (int16 *)buffer + 1;
++      } else {
++         *((uint8 *) buffer) = (accum >> 8) ^ 0x80;
++	 buffer = (uint8 *)buffer + 1;
++      }
+    }
+ 
+    /* resync cycle counter */
