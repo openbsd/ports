@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/04/26 17:39:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/05/20 09:57:21 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,7 @@ GNOME_VERSION=	2.30.1
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}
+PKGNAME-main=	${DISTNAME}p0
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
@@ -37,8 +37,6 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	::x11/gnome/icon-theme
 
-MULTI_PACKAGES=	-main -djvu -dvi -nautilus
-
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
@@ -48,7 +46,7 @@ WANTLIB += xcb xcb-render xcb-render-util z gthread-2.0
 
 WANTLIB-main=	${WANTLIB} ICE ORBit-2 SM c dbus-1 dbus-glib-1 \
 		gnome-keyring gs eggdbus-1 gcrypt gpg-error \
-		jpeg pthread tiff xml2 lcms
+		jpeg pthread tiff xml2 lcms openjpeg
 LIB_DEPENDS-main= poppler.>=3,poppler-glib.>=3::print/poppler \
 		spectre::print/libspectre \
 		gnome-keyring.>=6:libgnome-keyring-*:x11/gnome/libgnome-keyring \
@@ -93,6 +91,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+		--enable-gtk-doc=no \
 		--disable-static \
 		--disable-comics \
 		--disable-impress \
@@ -108,5 +107,20 @@ CONFIGURE_ARGS+= --enable-introspection=no
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MULTI_PACKAGES=	-main
+PSEUDO_FLAVORS=	light
+FLAVOR?=
+
+.if ${FLAVOR:L:Mlight}
+CONFIGURE_ARGS+= --disable-nautilus \
+		--disable-djvu \
+		--disable-dvi
+.else
+MULTI_PACKAGES+= -djvu -dvi -nautilus
+CONFIGURE_ARGS+= --enable-nautilus \
+		--enable-djvu \
+		--enable-dvi
+.endif
 
 .include <bsd.port.mk>
