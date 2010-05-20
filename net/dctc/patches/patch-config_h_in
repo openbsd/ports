@@ -1,17 +1,12 @@
-$OpenBSD: patch-config_h_in,v 1.3 2008/08/25 15:14:43 jasper Exp $
+$OpenBSD: patch-config_h_in,v 1.4 2010/05/20 09:21:17 espie Exp $
 --- config.h.in.orig	Sat Jan 24 07:30:27 2004
-+++ config.h.in	Sat Aug 23 18:04:36 2008
-@@ -1,7 +1,8 @@
++++ config.h.in	Wed May 19 18:54:23 2010
+@@ -1,4 +1,5 @@
  /* config.h.in.  Generated from configure.in by autoheader.  */
 +#undef HAVE_LIBPTHREAD
  
--/* Define to 1 if you have the <db.h> header file. */
--#undef HAVE_DB_H
-+/* Define to 1 if you have the <db/db.h> header file. */
-+#undef HAVE_DB_DB_H
- 
- /* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'.
-    */
+ /* Define to 1 if you have the <db.h> header file. */
+ #undef HAVE_DB_H
 @@ -22,6 +23,12 @@
  /* Define to 1 if you have the `getcwd' function. */
  #undef HAVE_GETCWD

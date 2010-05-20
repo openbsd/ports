@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_user_manage_h,v 1.1 2010/05/20 09:21:17 espie Exp $
+--- src/user_manage.h.orig	Thu May 20 11:19:29 2010
++++ src/user_manage.h	Thu May 20 11:19:58 2010
+@@ -27,12 +27,6 @@ $Id: user_manage.h,v 1.2 2003/12/28 08:12:38 uid68112 
+ extern GPtrArray *hub_user_list;    /* list of all users connected to the hub */
+ extern GPtrArray *hub_op_list;      /* list of all ops connected to the hub (ops are also in the user_list) */
+ 
+-extern GPtrArray *hub_user_xtra_info;			/* array of extra data stored for each hub user */
+-                                    /* the nth pointer of this array is for the nth user of the hub_user_list */
+-												/* a user having no extra info has a null pointer as extra info */
+-
+-extern GPtrArray *hub_user_uinfo;     /* it is the result of /UINFO command for each user */
+-
+ typedef enum
+ {
+ 	UNDEFINED=0,
