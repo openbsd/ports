@@ -1,0 +1,11 @@
+$OpenBSD: patch-astyle_main_cpp,v 1.1 2010/05/20 09:52:14 espie Exp $
+--- astyle_main.cpp.orig	Thu May 20 11:49:16 2010
++++ astyle_main.cpp	Thu May 20 11:50:24 2010
+@@ -150,6 +150,7 @@ void error(const char *why, const char* what)
+ }
+ 
+ 
++bool parseOption(ASFormatter &, const string &, const string &);
+ 
+ template<class ITER>
+ bool parseOptions(ASFormatter &formatter,
