@@ -1,0 +1,13 @@
+$OpenBSD: patch-iodev_cdrom_cc,v 1.3 2010/05/20 15:30:05 naddy Exp $
+--- iodev/cdrom.cc.orig	Thu May 20 09:25:50 2010
++++ iodev/cdrom.cc	Thu May 20 09:26:46 2010
+@@ -97,6 +97,9 @@ extern "C" {
+ #include <sys/param.h>
+ #include <sys/file.h>
+ #include <sys/cdio.h>
++#if defined(__OpenBSD__)
++#include <sys/dkio.h>
++#endif
+ #include <sys/ioctl.h>
+ #include <sys/disklabel.h>
+ // ntohl(x) et al have been moved out of sys/param.h in FreeBSD 5
