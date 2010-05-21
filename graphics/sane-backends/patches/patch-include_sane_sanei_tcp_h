@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_sane_sanei_tcp_h,v 1.1 2010/05/21 11:47:54 ajacoutot Exp $
+--- include/sane/sanei_tcp.h.orig	Fri May 21 13:36:09 2010
++++ include/sane/sanei_tcp.h	Fri May 21 13:36:22 2010
+@@ -20,6 +20,7 @@
+ 
+ #include <sane/sane.h>
+ 
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #include <netdb.h>
+ 
