@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2005/07/26 17:00:51 fgsch Exp $
---- src/Makefile.in.orig	Tue Jul 26 02:17:08 2005
-+++ src/Makefile.in	Tue Jul 26 02:17:15 2005
-@@ -89,7 +89,7 @@ distclean: clean $(patsubst %,%-distclea
+$OpenBSD: patch-src_Makefile_in,v 1.2 2010/05/21 14:13:22 ajacoutot Exp $
+--- src/Makefile.in.orig	Fri Jun 10 20:22:12 2005
++++ src/Makefile.in	Fri May 21 16:10:57 2010
+@@ -89,7 +89,7 @@ distclean: clean $(patsubst %,%-distclean,$(SUBDIRS))
  .PHONY: install
  install: $(BINARY)
  	$(INSTALL) -d $(DESTDIR)$(bindir)
