@@ -1,0 +1,15 @@
+$OpenBSD: patch-trackdb_FormatConverter_h,v 1.1 2010/05/21 20:30:52 espie Exp $
+--- trackdb/FormatConverter.h.orig	Fri May 21 22:03:00 2010
++++ trackdb/FormatConverter.h	Fri May 21 22:03:10 2010
+@@ -27,8 +27,11 @@
+ #include "TrackData.h"
+ #include "Toc.h"
+ 
++class Toc;
++
+ // Quick abstract class declarations. Format converters should derive
+ // their own FormatSupport and FormatSupportManager.
++
+ 
+ class FormatSupport
+ {

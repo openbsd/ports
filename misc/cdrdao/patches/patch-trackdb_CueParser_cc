@@ -1,0 +1,11 @@
+$OpenBSD: patch-trackdb_CueParser_cc,v 1.1 2010/05/21 20:30:52 espie Exp $
+--- trackdb/CueParser.cc.orig	Fri May 21 22:28:20 2010
++++ trackdb/CueParser.cc	Fri May 21 22:28:25 2010
+@@ -23,6 +23,7 @@
+ 
+ #include "Cue2Toc.h"
+ 
++class Toc;
+ extern Toc *parseToc(const char* tocBuffer, const char *filename);
+ 
+ Toc *parseCue(FILE *fp, const char *filename)

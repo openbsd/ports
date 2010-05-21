@@ -1,6 +1,6 @@
-$OpenBSD: patch-scsilib_include_btorder_h,v 1.3 2005/05/31 19:40:24 millert Exp $
---- scsilib/include/btorder.h.orig	Sun Jun 15 15:41:22 2003
-+++ scsilib/include/btorder.h	Sun May 29 10:18:06 2005
+$OpenBSD: patch-scsilib_include_btorder_h,v 1.4 2010/05/21 20:30:52 espie Exp $
+--- scsilib/include/btorder.h.orig	Sun Jun 15 23:41:22 2003
++++ scsilib/include/btorder.h	Fri May 21 21:05:09 2010
 @@ -28,6 +28,9 @@
  #include <sys/types.h>			/* try to load isa_defs.h on Solaris */
  #define	_INCL_SYS_TYPES_H
@@ -11,7 +11,7 @@ $OpenBSD: patch-scsilib_include_btorder_h,v 1.3 2005/05/31 19:40:24 millert Exp 
  
  #ifndef _MCONFIG_H
  #include <mconfig.h>			/* load bit/byte-oder from xmconfig.h*/
-@@ -108,7 +111,7 @@ error  Only one of _BIT_FIELDS_LTOH or _
+@@ -108,7 +111,7 @@ error  Only one of _BIT_FIELDS_LTOH or _BIT_FIELDS_HTO
  #	if defined(__ppc__) || defined(ppc) || defined(__ppc) || \
  	    defined(__PPC) || defined(powerpc) || defined(__powerpc__)
  
