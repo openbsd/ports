@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2008/05/28 00:29:36 pvalchev Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2010/05/21 19:56:02 jasper Exp $
 lib/qlandkarte/libEmap.so
+lib/qlandkarte/libEtrexClassic.so
 lib/qlandkarte/libEtrexH.so
 lib/qlandkarte/libEtrexLegend.so
 lib/qlandkarte/libEtrexLegendC.so
@@ -21,5 +22,6 @@ lib/qlandkarte/libGPSMap76CSx.so
 lib/qlandkarte/libGPSMap76Cx.so
 lib/qlandkarte/libNMEA.so
 lib/qlandkarte/libNMEATcp.so
+lib/qlandkarte/libQuest.so
 lib/qlandkarte/libwhatGarmin.so
 lib/qlandkarte/libwhatGarminSerial.so

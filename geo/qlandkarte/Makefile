@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2009/12/21 21:21:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2010/05/21 19:56:02 jasper Exp $
 
 COMMENT=	garmin gps map management tool
 
-DISTNAME=	QLandkarte_0.7.3
-PKGNAME=	${DISTNAME:L:S/_/-/}p5
+DISTNAME=	QLandkarte_final
+PKGNAME=	qlandkarte-0.7.4
 
 CATEGORIES=	geo x11
 
@@ -34,21 +34,24 @@ WANTLIB+=	ICE SM X11 Xext Xi Xinerama Xrender \
 PORTHOME=	${WRKDIR}
 
 NO_REGRESS=	Yes
-CONFIGURE_STYLE= gnu
+AUTOCONF_VERSION=2.59
+CONFIGURE_STYLE= autoconf gnu
 CONFIGURE_ARGS=	--with-qt-dir=${LOCALBASE}/lib/qt4 \
 		--with-extra-libs=${LOCALBASE}/lib \
 		--with-extra-includes=${LOCALBASE}/include \
 		--enable-release
 
+QLANDKARTE_BINDIR=	${WRKINST}${PREFIX}/bin
+SUBST_VARS+=	CXXFLAGS QLANDKARTE_BINDIR
+
 pre-configure:
 	@perl -pi -e 's,\/usr,${WRKINST}${PREFIX},g' \
-		${WRKSRC}/src/src.pro
-	@perl -pi -e 's,!!QLANDKARTE_BINDIR!!,${WRKINST}${PREFIX}/bin,g' \
 		${WRKSRC}/src/src.pro
 	@perl -pi -e 's,\$$\$$\{QLANDKARTE_LIBDIR\},\
 		${WRKINST}${PREFIX}/lib/qlandkarte,g' \
 		${WRKSRC}/src/device/*/*.pro
-	@perl -pi -e 's,!!CXXFLAGS!!,${CXXFLAGS},g' ${WRKSRC}/common.in
+	${SUBST_CMD} ${WRKSRC}/src/src.pro \
+		${WRKSRC}/common.in
 
 post-install:
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/qlandkarte
