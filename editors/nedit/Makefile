@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2010/05/21 22:39:58 jasper Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
@@ -43,13 +43,6 @@ NO_REGRESS=		Yes
 FLAVOR?=
 
 CFLAGS+=		-DBUILD_UNTESTED_NEDIT
-
-# gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH:Mmips64*}
-EXTRA_CFLAGS=	-O0
-.endif
-
-MAKE_FLAGS+=	EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/source/nedit ${PREFIX}/bin
