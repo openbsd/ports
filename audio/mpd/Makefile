@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2010/04/09 11:39:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2010/05/22 11:10:09 jasper Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.15.9
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		Tobias Ulmer <tobiasu@tmux.org>
@@ -50,7 +51,7 @@ CONFIGURE_ARGS +=	--enable-ao \
 			--disable-modplug \
 			--disable-sidplay \
 			--disable-ffmpeg \
-			--disable-mpc
+			--enable-mpc
 # OggFLAC and tremor tests, initgroups(3)
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -D_BSD_SOURCE"
@@ -61,16 +62,17 @@ CONFIGURE_ARGS +=	--with-tremor \
 			--disable-shout \
 			--disable-vorbis-encoder \
 			--disable-lame-encoder \
-			--disable-aac
+			--disable-aac \
+			--disable-mpc
 LIB_DEPENDS +=		vorbisidec::audio/tremor
 .else
-
 WANTLIB +=		theora
 LIB_DEPENDS +=		vorbis,vorbisfile,vorbisenc::audio/libvorbis \
 			speex::audio/speex \
 			mp3lame::audio/lame \
 			shout::net/libshout \
-			faad,mp4ff:faad->=2.6.1p0:audio/faad
+			faad,mp4ff:faad->=2.6.1p0:audio/faad \
+			mpcdec::audio/libmpcdec
 CONFIGURE_ARGS +=	--enable-aac
 .endif
 
