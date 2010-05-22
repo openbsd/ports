@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2006/10/19 09:16:32 wilfried Exp $
+$OpenBSD: patch-Makefile_in,v 1.9 2010/05/22 21:23:33 espie Exp $
 --- Makefile.in.orig	Fri Jun 14 23:12:25 2002
-+++ Makefile.in	Thu Oct 19 11:14:03 2006
++++ Makefile.in	Sat May 22 16:29:40 2010
 @@ -29,25 +29,25 @@ FLTKLIBDIR	=	@ac_fltk_libraries@
  # Program options...
  #
@@ -36,7 +36,7 @@ $OpenBSD: patch-Makefile_in,v 1.8 2006/10/19 09:16:32 wilfried Exp $
  
  
  #
-@@ -62,7 +62,7 @@ INCLUDEDEPS = FL/Fl_Editor.H FL/Fl_Fancy
+@@ -62,7 +62,7 @@ INCLUDEDEPS = FL/Fl_Editor.H FL/Fl_FancyEditor.H FL/Fl
  # Make all targets...
  #
  
@@ -84,7 +84,7 @@ $OpenBSD: patch-Makefile_in,v 1.8 2006/10/19 09:16:32 wilfried Exp $
  
  #
  # Make the editor widget library.
-@@ -124,12 +129,10 @@ EDITOR_OBJS = src/Fl_Editor.o src/Fl_Fan
+@@ -124,12 +129,10 @@ EDITOR_OBJS = src/Fl_Editor.o src/Fl_FancyEditor.o src
          src/editengine.o src/lists.o src/wstring.o
  
  libfleditor.a:	$(EDITOR_OBJS)
