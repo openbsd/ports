@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmtz_wmtz_c,v 1.2 2004/01/14 22:42:52 wilfried Exp $
---- wmtz/wmtz.c.orig	2001-04-16 21:26:34.000000000 +0200
-+++ wmtz/wmtz.c	2004-01-14 23:39:10.000000000 +0100
+$OpenBSD: patch-wmtz_wmtz_c,v 1.3 2010/05/22 15:15:52 espie Exp $
+--- wmtz/wmtz.c.orig	Mon Apr 16 21:26:34 2001
++++ wmtz/wmtz.c	Sat May 22 17:15:07 2010
 @@ -51,8 +51,7 @@
  #define STRSIZE 10
  #define LMST 1
@@ -20,3 +20,19 @@ $OpenBSD: patch-wmtz_wmtz_c,v 1.2 2004/01/14 22:42:52 wilfried Exp $
    
    week_day[0] = "SUNDAY   ";
    week_day[1] = "MONDAY   ";
+@@ -479,6 +478,7 @@ void wmtz_routine(int argc, char **argv)
+ 		   but_stat = -1;
+                    break;
+ 	    default:
++	    	;
+ 	  }
+         }  
+ 
+@@ -529,6 +529,7 @@ void handleTheMenu(int but_stat)
+ 	    exit(0);
+ 	    break;
+ 	default:
++		;
+       }
+     return;
+ }
