@@ -1,0 +1,14 @@
+$OpenBSD: patch-sngd_c,v 1.1 2010/05/22 14:58:36 espie Exp $
+--- sngd.c.orig	Sat May 22 16:55:39 2010
++++ sngd.c	Sat May 22 16:57:33 2010
+@@ -29,8 +29,8 @@ static char *rendering_intent[] = {
+ };
+ 
+ static char *current_file;
+-static png_structp png_ptr;
+-static png_infop info_ptr;
++png_structp png_ptr;
++png_infop info_ptr;
+ 
+ /*****************************************************************************
+  *
