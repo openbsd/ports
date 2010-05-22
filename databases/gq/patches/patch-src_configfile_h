@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_configfile_h,v 1.1 2010/05/22 10:26:45 espie Exp $
+--- src/configfile.h.orig	Sat May 22 12:18:44 2010
++++ src/configfile.h	Sat May 22 12:23:38 2010
+@@ -220,6 +220,7 @@ void transient_remove_server(struct ldapserver *server
+ extern struct gq_config *config;
+ extern GList *transient_servers;
+ 
++#include "util.h"
+ extern const struct tokenlist token_bindtype[];
+ extern const struct tokenlist token_ldifformat[];
+ extern const struct tokenlist token_searchargument[];
