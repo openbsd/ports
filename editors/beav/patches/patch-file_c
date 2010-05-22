@@ -1,0 +1,11 @@
+$OpenBSD: patch-file_c,v 1.1 2010/05/22 15:05:29 espie Exp $
+--- file.c.orig	Sat May 22 17:01:04 2010
++++ file.c	Sat May 22 17:01:12 2010
+@@ -9,7 +9,6 @@
+ char load_file ();
+ char readin ();
+ void makename ();
+-bool writeout ();
+ bool parse_f_name ();
+ A32 ffseek ();
+ A32 file_len ();

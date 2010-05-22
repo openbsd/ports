@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcap_c,v 1.1 2002/08/02 03:45:19 kevlo Exp $
---- tcap.c.orig	Sat Dec 13 08:34:59 1997
-+++ tcap.c	Thu Aug  1 15:26:10 2002
-@@ -39,7 +39,7 @@ char *UP, PC, *CM, *CE, *CL, *SO, *SE, *
+$OpenBSD: patch-tcap_c,v 1.2 2010/05/22 15:05:29 espie Exp $
+--- tcap.c.orig	Sat Dec 13 09:34:59 1997
++++ tcap.c	Sat May 22 16:56:49 2010
+@@ -39,7 +39,7 @@ char *UP, PC, *CM, *CE, *CL, *SO, *SE, *TI, *TE;	/* DR
  
  #ifdef BSD
  #include <sys/ioctl.h>
