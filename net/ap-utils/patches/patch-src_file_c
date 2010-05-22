@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_file_c,v 1.1 2010/05/22 14:03:24 espie Exp $
+--- src/file.c.orig	Wed Feb 26 00:05:41 2003
++++ src/file.c	Sat May 22 16:01:58 2010
+@@ -115,7 +115,8 @@ struct APList *parse_db_str(char *str)
+ 
+ int get_opts()
+ {
+-        extern char ap_type, *community;
++        extern short ap_type;
++	extern char *community;
+ 	extern struct in_addr ap_ip;
+ 	extern int sockfd;
+ 	
