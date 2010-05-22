@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2005/11/19 01:23:42 alek Exp $
---- configure.orig	Sat Nov 19 00:29:02 2005
-+++ configure	Sat Nov 19 00:29:44 2005
-@@ -11036,7 +11036,7 @@ if eval "test \"\${ac_cv_lib_$ac_lib_var
+$OpenBSD: patch-configure,v 1.2 2010/05/22 13:26:59 espie Exp $
+--- configure.orig	Sat Aug 14 14:51:35 1999
++++ configure	Sat May 22 15:20:21 2010
+@@ -11036,7 +11036,7 @@ if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1 2005/11/19 01:23:42 alek Exp $
  cat > conftest.$ac_ext <<EOF
  #line 11042 "configure"
  #include "confdefs.h"
-@@ -11071,7 +11071,7 @@ if eval "test \"\${ac_cv_lib_$ac_lib_var
+@@ -11071,7 +11071,7 @@ if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.1 2005/11/19 01:23:42 alek Exp $
  cat > conftest.$ac_ext <<EOF
  #line 11077 "configure"
  #include "confdefs.h"
-@@ -11105,7 +11105,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+@@ -11105,7 +11105,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = ye
  #define $ac_tr_lib 1
  EOF
  

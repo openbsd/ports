@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_sys2_h,v 1.1 2010/05/22 13:26:59 espie Exp $
+--- src/sys2.h.orig	Sat May 22 15:23:31 2010
++++ src/sys2.h	Sat May 22 15:24:44 2010
+@@ -131,34 +131,13 @@ char *alloca ();
+ 
+ #define STREQ(a, b) (strcmp ((a), (b)) == 0)
+ 
+-#ifndef HAVE_DECL_FREE
+-void free ();
+-#endif
++#include <string.h>
++#include <stdlib.h>
+ 
+-#ifndef HAVE_DECL_MALLOC
+-char *malloc ();
+-#endif
+-
+-#ifndef HAVE_DECL_MEMCHR
+-char *memchr ();
+-#endif
+-
+-#ifndef HAVE_DECL_REALLOC
+-char *realloc ();
+-#endif
+-
+ #ifndef HAVE_DECL_STPCPY
+ # ifndef stpcpy
+ char *stpcpy ();
+ # endif
+-#endif
+-
+-#ifndef HAVE_DECL_STRSTR
+-char *strstr ();
+-#endif
+-
+-#ifndef HAVE_DECL_GETENV
+-char *getenv ();
+ #endif
+ 
+ #ifndef HAVE_DECL_LSEEK
