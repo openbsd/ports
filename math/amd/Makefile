@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/05/07 22:30:15 pirofti Exp $
+# $OpenBSD: Makefile,v 1.11 2010/05/22 22:01:54 espie Exp $
 
 COMMENT=	order a sparse matrix prior to Cholesky factorization
 
@@ -29,7 +29,8 @@ MAKE_ENV=	SHLIB_MAJOR=${LIBamd_VERSION:R} \
 		SHLIB_MINOR=${LIBamd_VERSION:E}
 MAKE_FLAGS=	CSRC="${CSRC}"
 MAKE_ENV_F77=	SHLIB_MAJOR=${LIBamdf77_VERSION:R} \
-		SHLIB_MINOR=${LIBamdf77_VERSION:E}
+		SHLIB_MINOR=${LIBamdf77_VERSION:E} \
+		PATH=${PORTPATH}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 CFLAGS+=	-I${WRKDIST}/Include -I${WRKDIR}/UFconfig
 
