@@ -1,6 +1,6 @@
-$OpenBSD: patch-cmn_utils_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
+$OpenBSD: patch-cmn_utils_cpp,v 1.2 2010/05/22 11:38:57 espie Exp $
 --- cmn/utils.cpp.orig	Wed Mar 19 10:05:12 2003
-+++ cmn/utils.cpp	Fri Dec  7 14:27:50 2007
++++ cmn/utils.cpp	Sat May 22 13:36:31 2010
 @@ -30,18 +30,21 @@
  
  // Include Files
@@ -29,3 +29,12 @@ $OpenBSD: patch-cmn_utils_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
  #ifdef WIN32
  // For file manipulation routines.
  #include <direct.h>
+@@ -761,7 +764,7 @@ class HashTable: public IDictionary { (public)
+ 
+ 
+ private:
+-  Bucket* HashTable::_get(int &index,void* key);
++  Bucket* _get(int &index,void* key);
+   /* MODIFIES: index */
+   /* EFFECTS: Internal helper function.  Return the Bucket containing key
+      or NULL if not found.  Set index to the bucket list for key whether
