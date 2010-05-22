@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcl_tclCmdAH_c,v 1.1 2001/05/14 16:42:55 millert Exp $
---- tcl/tclCmdAH.c.orig	Fri Feb 24 14:19:53 1995
-+++ tcl/tclCmdAH.c	Mon May 14 10:33:02 2001
-@@ -38,9 +38,17 @@ static char rcsid[] = "$Header: /home/ag
+$OpenBSD: patch-tcl_tclCmdAH_c,v 1.2 2010/05/22 14:23:48 espie Exp $
+--- tcl/tclCmdAH.c.orig	Fri Feb 24 22:19:53 1995
++++ tcl/tclCmdAH.c	Sat May 22 16:16:44 2010
+@@ -38,9 +38,17 @@ static char rcsid[] = "$Header: /home/agamotto/mark/pk
  #include <sys/wait.h>
  #include "tclInt.h"
  

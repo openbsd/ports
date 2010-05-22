@@ -1,0 +1,19 @@
+$OpenBSD: patch-icb_history_c,v 1.1 2010/05/22 14:23:48 espie Exp $
+--- icb/history.c.orig	Sat May 22 16:22:30 2010
++++ icb/history.c	Sat May 22 16:22:40 2010
+@@ -3,6 +3,7 @@
+ 
+ #include "icb.h"
+ #include "externs.h"
++#include <stdlib.h>
+ 
+ /* message history routines */
+ 
+@@ -19,7 +20,6 @@ static STRLIST *hp = (STRLIST *) 0;	/* user current lo
+ histput(nick)
+ char *nick;
+ {
+-	char *malloc();
+ 	STRLIST *sp;
+ 
+ 	/* hunt for user within list */

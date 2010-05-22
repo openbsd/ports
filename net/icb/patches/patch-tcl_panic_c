@@ -1,7 +1,7 @@
-$OpenBSD: patch-tcl_panic_c,v 1.1 2004/01/04 20:36:49 espie Exp $
---- tcl/panic.c.orig	2004-01-04 21:31:21.000000000 +0100
-+++ tcl/panic.c	2004-01-04 21:32:25.000000000 +0100
-@@ -19,7 +19,7 @@ static char rcsid[] = "$Header: /home/ag
+$OpenBSD: patch-tcl_panic_c,v 1.2 2010/05/22 14:23:48 espie Exp $
+--- tcl/panic.c.orig	Fri Feb 24 22:19:49 1995
++++ tcl/panic.c	Sat May 22 16:16:44 2010
+@@ -19,7 +19,7 @@ static char rcsid[] = "$Header: /home/agamotto/mark/pk
  
  #include <stdio.h>
  #include <stdlib.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-tcl_panic_c,v 1.1 2004/01/04 20:36:49 espie Exp $
  
  /*
   *----------------------------------------------------------------------
-@@ -39,19 +39,18 @@ static char rcsid[] = "$Header: /home/ag
+@@ -39,19 +39,18 @@ static char rcsid[] = "$Header: /home/agamotto/mark/pk
  
  #ifndef lint
  void

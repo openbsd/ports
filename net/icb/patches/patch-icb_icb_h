@@ -1,7 +1,17 @@
-$OpenBSD: patch-icb_icb_h,v 1.1 2001/05/14 16:42:53 millert Exp $
---- icb/icb.h.orig	Fri Feb 24 14:20:23 1995
-+++ icb/icb.h	Mon May 14 10:33:06 2001
-@@ -38,6 +38,7 @@ typedef struct {
+$OpenBSD: patch-icb_icb_h,v 1.2 2010/05/22 14:23:48 espie Exp $
+--- icb/icb.h.orig	Fri Feb 24 22:20:23 1995
++++ icb/icb.h	Sat May 22 16:20:32 2010
+@@ -9,8 +9,7 @@
+ #include <ctype.h>
+ #endif
+ 
+-char *malloc();
+-
++#include <stdlib.h>
+ /* command usage information */
+ 
+ typedef struct Usage {
+@@ -38,6 +37,7 @@ typedef struct {
  	int beeps;		/* whether beeps are audible */
  	char *editmode;		/* input editing mode */
  	int tabreply;		/* should replies go into the tab history? */

@@ -1,7 +1,15 @@
-$OpenBSD: patch-icb_oset_c,v 1.1 2001/05/14 16:42:53 millert Exp $
---- icb/oset.c.orig	Fri Feb 24 14:20:24 1995
-+++ icb/oset.c	Mon May 14 10:33:06 2001
-@@ -39,6 +39,7 @@ VARIABLE vars[] = {
+$OpenBSD: patch-icb_oset_c,v 1.2 2010/05/22 14:23:48 espie Exp $
+--- icb/oset.c.orig	Fri Feb 24 22:20:24 1995
++++ icb/oset.c	Sat May 22 16:21:47 2010
+@@ -5,6 +5,7 @@
+ 
+ #include "icb.h"
+ #include "externs.h"
++#include <stdlib.h>
+ 
+ /* struct for variable table */
+ typedef struct Variable {
+@@ -39,6 +40,7 @@ VARIABLE vars[] = {
  	{ "pagesize",	V_INT,		(char *)&gv.pagesize },
  	{ "pauseonshell",	V_BOOLEAN,	(char *)&gv.pauseonshell },
  	{ "personalto", V_STRING,	(char *)&gv.personalto },
@@ -9,3 +17,12 @@ $OpenBSD: patch-icb_oset_c,v 1.1 2001/05/14 16:42:53 millert Exp $
  	{ "restricted",	V_BOOLEAN,	(char *)&gv.restricted },
  	{ "tabreply",	V_BOOLEAN,	(char *)&gv.tabreply },
  	{ "timedisplay",	V_STRING,	(char *)&gv.timedisplay },
+@@ -140,7 +142,7 @@ char *s;
+ {
+ 	int zero = 0, one = 1;
+ 	int tmp;
+-	char *p, *malloc();
++	char *p;
+ 
+ 	switch(type) {
+ 	case V_CHAR:

@@ -1,6 +1,6 @@
-$OpenBSD: patch-glob_tilde_c,v 1.1 2005/12/31 02:09:46 fgsch Exp $
---- glob/tilde.c.orig	Sat Dec 31 02:02:06 2005
-+++ glob/tilde.c	Sat Dec 31 02:02:22 2005
+$OpenBSD: patch-glob_tilde_c,v 1.2 2010/05/22 14:23:48 espie Exp $
+--- glob/tilde.c.orig	Fri Feb 24 22:20:46 1995
++++ glob/tilde.c	Sat May 22 16:19:19 2010
 @@ -28,6 +28,7 @@
  #endif
  
@@ -9,3 +9,12 @@ $OpenBSD: patch-glob_tilde_c,v 1.1 2005/12/31 02:09:46 fgsch Exp $
  
  #ifndef savestring
  #define savestring(x) (char *)strcpy ((char *)xmalloc (1 + strlen (x)), (x))
+@@ -41,7 +42,7 @@ typedef int Function ();
+ #if defined (TEST)
+ static char *xmalloc (), *xrealloc ();
+ #else
+-extern char *malloc (), *xrealloc ();
++extern char *xrealloc ();
+ #endif /* TEST */
+ 
+ /* The default value of tilde_additional_prefixes.  This is set to
