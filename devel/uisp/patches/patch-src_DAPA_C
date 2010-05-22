@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_DAPA_C,v 1.1 2008/10/12 08:29:39 martin Exp $
+$OpenBSD: patch-src_DAPA_C,v 1.2 2010/05/22 14:27:21 espie Exp $
 --- src/DAPA.C.orig	Tue Dec 28 15:39:38 2004
-+++ src/DAPA.C	Sun Jun  8 18:04:35 2008
++++ src/DAPA.C	Sat May 22 16:17:55 2010
 @@ -84,6 +84,35 @@
  #define ioport_enable(port, num)  i386_set_ioperm(port, num, 1)
  #define ioport_disable(port, num) i386_set_ioperm(port, num, 0)
-
+ 
 +#elif defined(__OpenBSD__) && defined(__i386__)
 +
 +#include <sys/types.h>
@@ -35,5 +35,5 @@ $OpenBSD: patch-src_DAPA_C,v 1.1 2008/10/12 08:29:39 martin Exp $
 +}
 +
  #else
-
+ 
  /* Direct I/O port access not supported - ppdev/ppi kernel driver

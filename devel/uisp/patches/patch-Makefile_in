@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Apr 22 19:51:15 2005
-+++ Makefile.in	Fri Apr 22 19:51:59 2005
-@@ -164,7 +164,7 @@
+--- Makefile.in.orig	Mon Feb  7 22:48:03 2005
++++ Makefile.in	Sat May 22 16:17:55 2010
+@@ -164,7 +164,7 @@ install_aux_files = AUTHORS COPYING INSTALL CHANGES CH
                         ChangeLog ChangeLog-2003 ChangeLog-2002
  
  
@@ -9,7 +9,7 @@
  subdir = .
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -382,7 +382,7 @@
+@@ -382,7 +382,7 @@ distclean-tags:
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
  
  top_distdir = .

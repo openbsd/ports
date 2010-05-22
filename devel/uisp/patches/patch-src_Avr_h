@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Avr_h,v 1.1 2010/05/22 14:27:21 espie Exp $
+--- src/Avr.h.orig	Sat May 22 16:25:08 2010
++++ src/Avr.h	Sat May 22 16:25:19 2010
+@@ -142,7 +142,7 @@ class TAvr: public TDevice{
+ private:
+   /* AVR Family Device (Part) List */
+   struct TPart {
+-    char* name;
++    const char* const name;
+     TByte part_family;
+     TByte part_number;
+     TAddr flash_size;
