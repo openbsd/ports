@@ -1,0 +1,20 @@
+$OpenBSD: patch-io_h,v 1.1 2010/05/22 20:35:17 espie Exp $
+--- io.h.orig	Sat May 22 22:33:00 2010
++++ io.h	Sat May 22 22:33:26 2010
+@@ -96,14 +96,14 @@ struct io_header {
+ #define IO_OBJ_HOLD(x)	\
+ 	do { \
+ 		if ((x)->io_flags & IOOBJ_HOLD) \
+-			errx(1, __FUNCTION__": %p already held", x); \
++			errx(1, "%s: %p already held", __FUNCTION__, x); \
+ 		(x)->io_flags |= IOOBJ_HOLD; \
+ 	} while (0)
+ 
+ #define IO_OBJ_RELEASE(x)	\
+ 	do { \
+ 		if (!((x)->io_flags & IOOBJ_HOLD)) \
+-			errx(1, __FUNCTION__": %p not held", x); \
++			errx(1, "%s: %p not held", __FUNCTION__, x); \
+ 		(x)->io_flags &= ~IOOBJ_HOLD; \
+ 	} while (0)
+ 

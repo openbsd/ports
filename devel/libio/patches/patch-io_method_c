@@ -1,6 +1,6 @@
-$OpenBSD: patch-io_method_c,v 1.1.1.1 2003/04/17 10:59:48 sturm Exp $
---- io_method.c.orig	Tue Mar 26 22:41:23 2002
-+++ io_method.c	Sun Apr 13 08:20:08 2003
+$OpenBSD: patch-io_method_c,v 1.2 2010/05/22 20:35:17 espie Exp $
+--- io_method.c.orig	Wed Mar 27 05:41:23 2002
++++ io_method.c	Sat May 22 22:34:22 2010
 @@ -59,7 +59,7 @@ ssize_t
  io_method_accept(int fd, void *buf, size_t size)
  {
@@ -10,3 +10,12 @@ $OpenBSD: patch-io_method_c,v 1.1.1.1 2003/04/17 10:59:48 sturm Exp $
  
  	if (size < sizeof(int))
  		return (0);
+@@ -177,7 +177,7 @@ io_method_connect(struct io_obj *obj, int fd, void *bu
+ 
+ 	/* Check if the connection completed */
+ 	if (getsockopt(fd, SOL_SOCKET, SO_ERROR, &error, &errsz) == -1) {
+-		warn(__FUNCTION__": getsockopt for %d", fd);
++		warn("%s: getsockopt for %d", __FUNCTION__, fd);
+ 		return (-1);
+ 	}
+ 

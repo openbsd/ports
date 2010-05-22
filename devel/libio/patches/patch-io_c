@@ -1,7 +1,61 @@
-$OpenBSD: patch-io_c,v 1.1.1.1 2003/04/17 10:59:48 sturm Exp $
---- io.c.orig	Tue Mar 26 22:41:07 2002
-+++ io.c	Mon Mar 10 18:48:50 2003
-@@ -704,7 +704,7 @@ io_header_init(struct io_header *hdr, in
+$OpenBSD: patch-io_c,v 1.2 2010/05/22 20:35:17 espie Exp $
+--- io.c.orig	Wed Mar 27 05:41:07 2002
++++ io.c	Sat May 22 22:33:59 2010
+@@ -102,7 +102,7 @@ io_detach_child(struct io_header *hparent, struct io_l
+ 	}
+ 
+ 	if (lparent == NULL)
+-		errx(1, __FUNCTION__": data corrupt");
++		errx(1, "%s: data corrupt", __FUNCTION__);
+ 
+ 	TAILQ_REMOVE(&hchild->ihdr_parent, lparent, il_next);
+ 	free(lparent);
+@@ -121,7 +121,7 @@ io_detach_parent(struct io_list *lparent, struct io_he
+ 	}
+ 
+ 	if (lchild == NULL)
+-		errx(1, __FUNCTION__": data corrupt");
++		errx(1, "%s: data corrupt", __FUNCTION__);
+ 
+ 	TAILQ_REMOVE(&hparent->ihdr_queue, lchild, il_next);
+ 	free(lchild);
+@@ -142,7 +142,7 @@ io_detach_hdr(struct io_header *parent, struct io_head
+ 	}
+ 
+ 	if (lchild == NULL)
+-		errx(1, __FUNCTION__": data corrupt");
++		errx(1, "%s: data corrupt", __FUNCTION__);
+ 	TAILQ_REMOVE(&parent->ihdr_queue, lchild, il_next);
+ 	free(lchild);
+ 
+@@ -152,7 +152,7 @@ io_detach_hdr(struct io_header *parent, struct io_head
+ 	}
+ 
+ 	if (lparent == NULL)
+-		errx(1, __FUNCTION__": data corrupt");
++		errx(1, "%s: data corrupt", __FUNCTION__);
+ 	TAILQ_REMOVE(&child->ihdr_parent, lparent, il_next);
+ 	free(lparent);
+ }
+@@ -311,7 +311,7 @@ io_buffer_extend(struct io_buffer *buf, size_t size)
+ 
+ 	p = realloc(buf->data, buf->off + size);
+ 	if (p == NULL) {
+-		warn(__FUNCTION__": realloc");
++		warn("%s: realloc", __FUNCTION__);
+ 		return (-1);
+ 	}
+ 
+@@ -424,7 +424,7 @@ io_buffer_write(struct io_obj *obj, struct io_buffer *
+ 
+ 	filt = (struct io_filter *)obj;
+ 	if (obj->io_type != IOTYPE_FILTER || filt->io_filter == NULL)
+-		errx(1, __FUNCTION__": data corrupt: %p\n", obj);
++		errx(1, "%s: data corrupt: %p\n", __FUNCTION__, obj);
+ 
+ 	res = filt->io_filter(filt->io_state, filt, buf, 0);
+ 	switch (res) {
+@@ -704,12 +704,12 @@ io_header_init(struct io_header *hdr, int type)
  
  struct io_obj *
  io_new_obj(int fd, int type,
@@ -10,7 +64,13 @@ $OpenBSD: patch-io_c,v 1.1.1.1 2003/04/17 10:59:48 sturm Exp $
  {
  	struct io_obj *obj;
  
-@@ -759,8 +759,8 @@ io_duplex_halffree(struct io_duplex *dpl
+ 	if (type != IOTYPE_SOURCE && type != IOTYPE_SINK) {
+-		warnx(__FUNCTION__": bad type: %d", type);
++		warnx("%s: bad type: %d", type, __FUNCTION__);
+ 		return (NULL);
+ 	}
+ 
+@@ -759,8 +759,8 @@ io_duplex_halffree(struct io_duplex *dplx, struct io_o
   */
  
  struct io_duplex *
