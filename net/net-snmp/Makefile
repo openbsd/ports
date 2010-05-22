@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/05/19 15:50:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2010/05/22 09:50:06 jasper Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
@@ -6,7 +6,7 @@ COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.4.2.1
 DISTNAME=	net-snmp-${V}
-PKGNAME-main=	${DISTNAME}p4
+PKGNAME-main=	${DISTNAME}p5
 PKGNAME-perl=	p5-SNMP-${V}p1
 PKGNAME-tkmib=	net-snmp-tkmib-${V}
 SHARED_LIBS=	netsnmp		8.0	\
@@ -48,11 +48,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 	--with-sys-location="somewhere" \
 	--with-logfile="/var/log/snmpd" \
 	--with-persistent-directory="/var/net-snmp"
-
-# gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH:Mmips64*}
-CFLAGS+=  -O0
-.endif
 
 REGRESS_TARGET=	test
 
