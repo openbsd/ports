@@ -1,6 +1,15 @@
-$OpenBSD: patch-pcapu_c,v 1.1 2002/07/18 15:46:50 naddy Exp $
---- pcapu.c.orig	Tue Jul 16 02:30:31 2002
-+++ pcapu.c	Tue Jul 16 02:30:49 2002
+$OpenBSD: patch-pcapu_c,v 1.2 2010/05/22 15:17:13 espie Exp $
+--- pcapu.c.orig	Wed Dec 12 19:31:10 2001
++++ pcapu.c	Sat May 22 17:16:46 2010
+@@ -78,7 +78,7 @@ pcap_cb(int fd, short event, void *arg)
+ 
+ 	if ((pkt = (u_char *) pcap_next(pd, &pkthdr)) == NULL) {
+ 		if (filemode) {
+-			fprintf(stderr, __FUNCTION__": ! add\n");
++			fprintf(stderr, "%s: ! add\n", __FUNCTION__);
+ 			return;
+ 		}
+ 
 @@ -89,7 +89,7 @@ pcap_cb(int fd, short event, void *arg)
  	voip_sniff((u_char *)pd, &pkthdr, pkt);
  
@@ -10,7 +19,7 @@ $OpenBSD: patch-pcapu_c,v 1.1 2002/07/18 15:46:50 naddy Exp $
  }
  
  pcap_t *
-@@ -139,9 +139,9 @@ pcap_init(char *intf, char *file, char *
+@@ -139,9 +139,9 @@ pcap_init(char *intf, char *file, char *filter, int sn
  	}
  #endif
  
