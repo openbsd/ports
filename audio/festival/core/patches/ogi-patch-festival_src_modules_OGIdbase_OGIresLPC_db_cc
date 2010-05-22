@@ -1,7 +1,16 @@
-$OpenBSD: ogi-patch-festival_src_modules_OGIdbase_OGIresLPC_db_cc,v 1.1 2004/08/11 23:08:24 jolan Exp $
---- festival/src/modules/OGIdbase/OGIresLPC_db.cc.orig	Mon Aug  9 04:29:37 2004
-+++ festival/src/modules/OGIdbase/OGIresLPC_db.cc	Mon Aug  9 04:29:43 2004
-@@ -453,7 +453,7 @@ void OGIresLPC_db::load_ungrp_gains(OGId
+$OpenBSD: ogi-patch-festival_src_modules_OGIdbase_OGIresLPC_db_cc,v 1.2 2010/05/22 09:30:04 espie Exp $
+--- festival/src/modules/OGIdbase/OGIresLPC_db.cc.orig	Thu Sep 14 00:08:16 2000
++++ festival/src/modules/OGIdbase/OGIresLPC_db.cc	Sat May 22 10:34:59 2010
+@@ -345,7 +345,7 @@ void OGIresLPC_db::load_ungrp_lpc(int n, OGIdbase &db)
+ }
+ 
+ 
+-#define chk_clip(A)  if ((A)  > (float) OGI_MAXSHORT) { clip = 1; A = min(OGI_MAXSHORT, max(-OGI_MAXSHORT, A));}
++#define chk_clip(A)  if ((A)  > double(OGI_MAXSHORT)) { clip = 1; A = min(double(OGI_MAXSHORT), max(double(-OGI_MAXSHORT), A));}
+ void OGIresLPC_db::modify_gain(int n){ 
+ 
+   if ((p_gainL[n]==1.0) && (p_gainR[n]==1.0))
+@@ -453,7 +453,7 @@ void OGIresLPC_db::load_ungrp_gains(OGIdbase &db){ 
    ts.set_PunctuationSymbols("");
    
    for (i=0; (!ts.eof()) && (i<db.unitdic.Nunits());){
@@ -10,3 +19,32 @@ $OpenBSD: ogi-patch-festival_src_modules_OGIdbase_OGIresLPC_db_cc,v 1.1 2004/08/
      if ((line.length() > 0) && (line[0] != ';')){
  
        EST_TokenStream ls;
+@@ -578,22 +578,28 @@ template class EST_TVector<EST_Track *>;
+ //
+ template ostream& operator << (ostream &st, const EST_TVector<long> &v);
+ static long const def_val_long = -1;
++template<>
+ long const *EST_TVector<long>::def_val = &def_val_long;
+ static long error_return_long = -1;
++template<>
+ long *EST_TVector<long>::error_return = &error_return_long;
+ 
+ //
+ // Wave *
+ //
+ static EST_Wave * const def_val_WaveVect = NULL;
++template<>
+ EST_Wave * const *EST_TVector<EST_Wave *>::def_val = &def_val_WaveVect;
+ static EST_Wave *error_return_WaveVect = NULL;
++template<>
+ EST_Wave * *EST_TVector<EST_Wave *>::error_return = &error_return_WaveVect;
+  
+ //
+ // Track *
+ //
+ static EST_Track * const def_val_TrackVect = NULL;
++template<>
+ EST_Track * const *EST_TVector<EST_Track *>::def_val = &def_val_TrackVect;
+ static EST_Track *error_return_TrackVect = NULL;
++template<>
+ EST_Track * *EST_TVector<EST_Track *>::error_return = &error_return_TrackVect;

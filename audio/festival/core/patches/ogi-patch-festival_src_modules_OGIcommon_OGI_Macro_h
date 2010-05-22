@@ -1,0 +1,33 @@
+$OpenBSD: ogi-patch-festival_src_modules_OGIcommon_OGI_Macro_h,v 1.1 2010/05/22 09:30:04 espie Exp $
+--- festival/src/modules/OGIcommon/OGI_Macro.h.orig	Sat May 22 10:27:39 2010
++++ festival/src/modules/OGIcommon/OGI_Macro.h	Sat May 22 10:40:48 2010
+@@ -27,16 +27,10 @@
+ #define _V_  1
+ #endif
+ 
+-#ifndef min
+-#define min(a,b) ((a) < (b) ? (a) : (b))
+-#endif
++#include <algorithm>
++using std::min;
++using std::max;
+ 
+-#ifndef max
+-#define max(a,b) ((a) > (b) ? (a) : (b))
+-#endif
+-
+-
+-
+ #ifndef OGI_MAXSHORT
+ #define OGI_MAXSHORT ((short) 32767)
+ #endif
+@@ -49,7 +43,8 @@
+ #define OGI_MAXUSHORT ((unsigned short) 65535)
+ #endif
+ 
+-#define clip(A)  ((short) (max(min((A), OGI_MAXSHORT), OGI_MINSHORT)))
++#define clip(A) ((A) > OGI_MAXSHORT ? OGI_MAXSHORT : \
++	((A) < OGI_MINSHORT ? OGI_MINSHORT : short(A)))
+ 
+ #define check_ov_ushort(A)  if (A > OGI_MAXUSHORT){ cerr << __FILE__  << ": line " << __LINE__ << " overflow of ushort cast:" << A << endl; exit(-1);}
+  

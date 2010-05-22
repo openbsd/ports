@@ -1,0 +1,12 @@
+$OpenBSD: ogi-patch-festival_src_modules_OGIcommon_OGI_Wave_h,v 1.1 2010/05/22 09:30:04 espie Exp $
+--- festival/src/modules/OGIcommon/OGI_Wave.h.orig	Sat May 22 10:35:47 2010
++++ festival/src/modules/OGIcommon/OGI_Wave.h	Sat May 22 10:36:47 2010
+@@ -70,7 +70,7 @@ class OGI_Wave { (public)
+     for (k=0; k < Nv_in; k++){
+       if (fabs(v_in[k]) > (double) OGI_MAXSHORT){
+ 	clip = TRUE;
+-	buf[k+pNused] = (short) (max(min(v_in[k], OGI_MAXSHORT), OGI_MINSHORT));
++	buf[k+pNused] = clip(v_in[k]);
+       }
+       else
+ 	buf[k+pNused] = (short) v_in[k];

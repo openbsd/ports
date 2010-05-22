@@ -1,0 +1,15 @@
+$OpenBSD: patch-festival_src_modules_clunits_clunits_h,v 1.1 2010/05/22 09:30:04 espie Exp $
+--- festival/src/modules/clunits/clunits.h.orig	Thu May 13 12:12:42 2010
++++ festival/src/modules/clunits/clunits.h	Thu May 13 12:13:05 2010
+@@ -83,9 +83,9 @@ class CLDB {
+     CLfile *get_fileitem(const EST_String &name)
+ 	{ return (CLfile *)fileindex.lookup(name); }
+     void load_coefs_sig(EST_Item *unit);
+-    CLfile *CLDB::get_file_coefs_sig(const EST_String &fileid);
++    CLfile *get_file_coefs_sig(const EST_String &fileid);
+     void load_join_coefs(CLunit *unit);
+-    CLfile *CLDB::get_file_join_coefs(const EST_String &fileid);
++    CLfile *get_file_join_coefs(const EST_String &fileid);
+ };
+ 
+ 

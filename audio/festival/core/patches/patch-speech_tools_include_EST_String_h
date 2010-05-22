@@ -1,0 +1,23 @@
+$OpenBSD: patch-speech_tools_include_EST_String_h,v 1.1 2010/05/22 09:30:04 espie Exp $
+--- speech_tools/include/EST_String.h.orig	Thu May 13 11:35:04 2010
++++ speech_tools/include/EST_String.h	Thu May 13 12:00:07 2010
+@@ -75,5 +75,6 @@ extern "C" void abort(void);
+   */
+ 
++extern void make_updatable(EST_ChunkPtr &, EST_Chunk::EST_chunk_size);
+ class EST_String {
+ 
+     /** For better libg++ compatibility. 
+@@ -644,7 +645,11 @@ class EST_String { (public)
+ int operator == (const char *a, const EST_String &b);
+ int operator == (const EST_String &a, const EST_String &b);
+ ostream &operator << (ostream &s, const EST_String &str);
++EST_String operator + (const EST_String &a, const EST_String &b);
++    /// Concatenate C String with EST_String
++EST_String operator + (const char *a, const EST_String &b);
++    /// Concatenate EST_String with C String
++EST_String operator + (const EST_String &a, const char *b);
+ 
+ #include "EST_Regex.h"
+-
+ #endif	

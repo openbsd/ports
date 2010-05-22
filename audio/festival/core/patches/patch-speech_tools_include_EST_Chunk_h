@@ -1,0 +1,15 @@
+$OpenBSD: patch-speech_tools_include_EST_Chunk_h,v 1.1 2010/05/22 09:30:04 espie Exp $
+--- speech_tools/include/EST_Chunk.h.orig	Thu May 13 11:33:56 2010
++++ speech_tools/include/EST_Chunk.h	Thu May 13 11:50:09 2010
+@@ -103,6 +103,11 @@
+  /*                                                                      */
+  /************************************************************************/
+ 
++class EST_ChunkPtr;
++extern EST_ChunkPtr chunk_allocate(int);
++extern EST_ChunkPtr chunk_allocate(int, const char *, int);
++extern EST_ChunkPtr chunk_allocate(int, const EST_ChunkPtr &, int, int);
++
+ class EST_Chunk  {
+   public:
+     typedef  unsigned short use_counter;

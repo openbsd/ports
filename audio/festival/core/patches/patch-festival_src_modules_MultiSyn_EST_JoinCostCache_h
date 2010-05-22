@@ -1,0 +1,11 @@
+$OpenBSD: patch-festival_src_modules_MultiSyn_EST_JoinCostCache_h,v 1.1 2010/05/22 09:30:04 espie Exp $
+--- festival/src/modules/MultiSyn/EST_JoinCostCache.h.orig	Thu May 13 12:16:45 2010
++++ festival/src/modules/MultiSyn/EST_JoinCostCache.h	Thu May 13 12:16:58 2010
+@@ -60,7 +60,6 @@
+ #include "ling_class/EST_Item.h"
+ 
+ class EST_JoinCost;
+-class ostream;
+ 
+ class EST_JoinCostCache {
+ public:

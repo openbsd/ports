@@ -1,0 +1,21 @@
+$OpenBSD: ogi-patch-festival_src_modules_OGIcommon_OGI_TimeWarp_cc,v 1.1 2010/05/22 09:30:04 espie Exp $
+--- festival/src/modules/OGIcommon/OGI_TimeWarp.cc.orig	Sat May 22 10:23:26 2010
++++ festival/src/modules/OGIcommon/OGI_TimeWarp.cc	Sat May 22 10:24:53 2010
+@@ -94,7 +94,7 @@ void OGI_TimeWarp::nonuniform_stretch(
+   if (modfactor < 0.0001)
+     EST_error("OGI_TimeWarp::nonuniform_stretch - illegal mod factor input\n");
+     
+-  breakpt = max(min(breakpt, 0.9999), 0.0001);
++  breakpt = max(min(breakpt, 0.9999f), 0.0001f);
+   
+   if (n > 1){
+     x0 = x.a(n-2);
+@@ -117,7 +117,7 @@ void OGI_TimeWarp::nonuniform_stretch(
+   }
+ 
+   // make sure it is a legal warp
+-  targ = min(max(targ, y0 + 0.0001*(y1-y0)), y1-0.0001*(y1-y0));
++  targ = min(max(targ, float(y0 + 0.0001*(y1-y0))), float(y1-0.0001*(y1-y0)));
+   
+   // insert a point into time warp function
+   insert_before(n-1, src, targ);

@@ -1,0 +1,14 @@
+$OpenBSD: patch-speech_tools_include_ling_class_EST_Item_h,v 1.1 2010/05/22 09:30:04 espie Exp $
+--- speech_tools/include/ling_class/EST_Item.h.orig	Thu May 13 11:37:38 2010
++++ speech_tools/include/ling_class/EST_Item.h	Thu May 13 11:38:53 2010
+@@ -79,6 +79,10 @@ use we envisage.  Traversal of the items ....
+ 
+ */
+ 
++class EST_Item;
++
++extern int same_item(const EST_Item *,const EST_Item *);
++
+ class EST_Item 
+ {
+   private:

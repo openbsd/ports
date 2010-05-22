@@ -1,0 +1,24 @@
+$OpenBSD: ogi-patch-festival_src_modules_OGIcommon_OGI_file_h,v 1.1 2010/05/22 09:30:04 espie Exp $
+--- festival/src/modules/OGIcommon/OGI_file.h.orig	Sat May 22 10:17:21 2010
++++ festival/src/modules/OGIcommon/OGI_file.h	Sat May 22 10:19:20 2010
+@@ -21,16 +21,13 @@
+ 
+ #define OGI_ALL -99
+ 
++#include <algorithm>
++using std::min;
++using std::max;
++
+ // note: sizeof(bool)=4 on MS VC++ 5.0 because they define it as int
+ //       sizeof(bool)=1 in gcc (much more reasonable)
+ typedef char OGIbool;
+-
+-#ifndef min
+-#define min(a,b) ((a) < (b) ? (a) : (b))
+-#endif
+-#ifndef max
+-#define max(a,b) ((a) > (b) ? (a) : (b))
+-#endif
+ 
+ void save_OGI_label(const EST_FVector &y, const EST_StrList &names, const EST_String &filename, int N=OGI_ALL);
+ 
