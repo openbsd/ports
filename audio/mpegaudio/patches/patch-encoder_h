@@ -1,0 +1,17 @@
+$OpenBSD: patch-encoder_h,v 1.1 2010/05/22 15:11:10 espie Exp $
+--- encoder.h.orig	Sat May 22 17:09:59 2010
++++ encoder.h	Sat May 22 17:10:09 2010
+@@ -150,13 +150,11 @@ extern void   parse_args(int, char**, frame_params*, i
+                            char[MAX_NAME_SIZE], char[MAX_NAME_SIZE]);
+ extern void   print_config(frame_params*, int*, unsigned long*,
+                            char[MAX_NAME_SIZE], char[MAX_NAME_SIZE]);
+-extern void   usage(void);
+ extern void   aiff_check(char*, IFF_AIFF*);
+ #else
+ extern void   obtain_parameters();
+ extern void   parse_args();
+ extern void   print_config();
+-extern void   usage();
+ extern void   aiff_check();
+ #endif
+ 

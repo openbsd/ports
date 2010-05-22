@@ -1,0 +1,12 @@
+$OpenBSD: patch-trafd_trafd_h,v 1.1 2010/05/22 15:08:52 espie Exp $
+--- trafd/trafd.h.orig	Sat May 22 17:06:41 2010
++++ trafd/trafd.h	Sat May 22 17:06:56 2010
+@@ -25,8 +25,6 @@ extern char *device_name;	/* readable interface name *
+ extern char file_out[];		/* filename for temporary save to */
+ extern char file_backup[];	/* filename for append overflow table to */
+ extern char file_fifo[];
+-extern struct timeval begin_time;
+-
+ extern int traf_init();
+ extern void traf_restore();
+ extern void traf_save();
