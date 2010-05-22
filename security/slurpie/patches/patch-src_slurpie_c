@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_slurpie_c,v 1.1 2010/05/22 16:02:23 espie Exp $
+--- src/slurpie.c.orig	Sat Jan 30 23:03:45 1999
++++ src/slurpie.c	Sat May 22 18:00:32 2010
+@@ -8,6 +8,7 @@ slurpie.c: distributes tasks among slurps (slurp.c).
+ /////////////////////////////
+ #include "master.h"
+ #include "shared.h"
++#include <string.h>
+ 
+ /////////////////////////////
+ static const u_char *CL_HELP_MENU =
+@@ -129,7 +130,8 @@ u_char *send_init( u_char *sendbuf, u_int *send_len )
+    *(pstr++) = (u_char)cfg.cl;
+    if( cfg.cl & CL_PDICT )
+    {
+-     *(pstr++) = (u_char)cfg.ptask_level = *num_nodes*PTASK_LEVEL;
++     cfg.ptask_level = *num_nodes*PTASK_LEVEL;
++     *(pstr++) = (u_char)cfg.ptask_level;
+       pstr += strcpy_len( pstr, cfg.dictfile_name );
+    }
+    if( cfg.cl & CL_GDICT )

@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_slurp_c,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
---- src/slurp.c.orig	Wed Jan  3 15:26:35 2001
-+++ src/slurp.c	Wed Jan  3 15:26:54 2001
-@@ -239,7 +239,7 @@ int cl_proc( int argc, u_char **argv )
+$OpenBSD: patch-src_slurp_c,v 1.2 2010/05/22 16:02:23 espie Exp $
+--- src/slurp.c.orig	Sat Jan 30 23:11:50 1999
++++ src/slurp.c	Sat May 22 18:01:19 2010
+@@ -13,6 +13,7 @@ dictionary comparison cracking.
+ #include <unistd.h>
+ #define _XOPEN_SOURCE
+ #endif
++#include <string.h>
+ 
+ 
+ /////////////////////////////
+@@ -239,7 +240,7 @@ int cl_proc( int argc, u_char **argv )
     
     if(argc>1)
     {

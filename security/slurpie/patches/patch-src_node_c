@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_node_c,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
---- src/node.c.orig	Sat Jan 30 16:10:17 1999
-+++ src/node.c	Wed Jan  3 15:26:17 2001
-@@ -49,7 +49,7 @@ int init( void )
+$OpenBSD: patch-src_node_c,v 1.2 2010/05/22 16:02:23 espie Exp $
+--- src/node.c.orig	Sat Jan 30 22:10:17 1999
++++ src/node.c	Sat May 22 18:01:33 2010
+@@ -8,6 +8,8 @@ node.c: network core for serving the master (master.c)
+ 
+ /////////////////////////////
+ #include "node.h"
++#include <string.h>
++#include <stdlib.h>
+ 
+ 
+ /////////////////////////////
+@@ -49,7 +51,7 @@ int init( void )
     global.self.addr.sin_family = AF_INET;
     global.self.addr.sin_addr.s_addr = INADDR_ANY;
     if( !global.self.addr.sin_port )
@@ -10,7 +19,7 @@ $OpenBSD: patch-src_node_c,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
     global.self.sa_len = sizeof(global.self.addr);
     
     if( bind( global.self.socket,
-@@ -111,12 +111,13 @@ int main( int argc, u_char **argv )
+@@ -111,12 +113,13 @@ int main( int argc, u_char **argv )
     if(!commline_handler(argc,argv))
        clean_up(1);
     if(!init())

@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_master_c,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
---- src/master.c.orig	Wed Jan  3 15:24:09 2001
-+++ src/master.c	Wed Jan  3 15:25:01 2001
-@@ -56,7 +56,7 @@ int init( void )
+$OpenBSD: patch-src_master_c,v 1.2 2010/05/22 16:02:23 espie Exp $
+--- src/master.c.orig	Sat Jan 30 22:08:08 1999
++++ src/master.c	Sat May 22 18:00:53 2010
+@@ -7,6 +7,8 @@ master.c: network core for controlling nodes (node.c).
+ 
+ /////////////////////////////
+ #include "master.h"
++#include <stdlib.h>
++#include <string.h>
+ 
+ 
+ /////////////////////////////
+@@ -56,7 +58,7 @@ int init( void )
        strcpy( global.node[id]->ipstr, str );
        global.node[id]->addr.sin_addr.s_addr = inet_addr(str);
        fscanf(fp,"%s\n", str );
@@ -10,7 +19,7 @@ $OpenBSD: patch-src_master_c,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
        global.node[id]->addr.sin_family = AF_INET;
        global.node[id]->socket = socket( AF_INET, SOCK_STREAM, 0 );
     }
-@@ -147,7 +147,7 @@ int main( int argc, u_char **argv )
+@@ -147,7 +149,7 @@ int main( int argc, u_char **argv )
     {
        print_handler("connecting to: %s %d: ",
           global.node[id]->ipstr,
@@ -19,7 +28,7 @@ $OpenBSD: patch-src_master_c,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
        if(!connect_node(id))
           print_handler("connect failed.\n");
        else
-@@ -187,7 +187,7 @@ int main( int argc, u_char **argv )
+@@ -187,7 +189,7 @@ int main( int argc, u_char **argv )
                 {
                    print("closing connection: %s %d.\n",
                       global.node[id]->ipstr,
