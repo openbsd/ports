@@ -1,7 +1,16 @@
-$OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
+$OpenBSD: patch-buffer_c,v 1.2 2010/05/22 21:28:21 espie Exp $
 --- buffer.c.orig	Sat Oct 30 18:54:47 1999
-+++ buffer.c	Wed Nov 17 15:55:05 2004
-@@ -168,7 +168,7 @@ int max_shmem = DEF_SHMEM;
++++ buffer.c	Sat May 22 23:27:19 2010
+@@ -118,6 +118,7 @@
+ #endif
+ 
+-extern char *shmat();
++#include <string.h>
++#include <stdlib.h>
+ 
+ /* General macros */
+ #define TRUE 1
+@@ -168,7 +169,7 @@ int max_shmem = DEF_SHMEM;
  /* the shared memory id of the buffer */
  int buffer_id = NONE;
  struct block {
@@ -10,7 +19,7 @@ $OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
  	char *data;
  } *curr_block;
  
-@@ -185,12 +185,13 @@ struct buffer {
+@@ -185,12 +186,13 @@ struct buffer {
  	int next_block_in;
  	int next_block_out;
  
@@ -26,7 +35,7 @@ $OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
  int buffer_size;
  
  int fdin	= 0;
-@@ -447,7 +448,7 @@ buffer_allocate()
+@@ -447,7 +449,7 @@ buffer_allocate()
  
  	/* Allow for the data space */
  	buffer_size = sizeof( struct buffer ) +
@@ -35,7 +44,7 @@ $OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
  
  	/* Create the space for the buffer */
  	buffer_id = shmget( IPC_PRIVATE,
-@@ -533,8 +534,13 @@ get_buffer()
+@@ -533,8 +535,13 @@ get_buffer()
  
  	/* Setup the data space pointers */
  	for( b = 0; b < blocks; b++ )
@@ -51,7 +60,7 @@ $OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
  
  }
  
-@@ -592,7 +598,7 @@ get_next_free_block()
+@@ -592,7 +599,7 @@ get_next_free_block()
  	/* Maybe wait till there is room in the buffer */
  	lock( pbuffer->semid, pbuffer->blocks_free_lock );
  
@@ -60,7 +69,7 @@ $OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
  
  	pbuffer->next_block_in = INC( pbuffer->next_block_in );
  }
-@@ -605,7 +611,7 @@ fill_block()
+@@ -605,7 +612,7 @@ fill_block()
  	static char eof_reached = 0;
  	
  	if( eof_reached ){
@@ -69,7 +78,7 @@ $OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
  		unlock( pbuffer->semid, pbuffer->blocks_used_lock );
  		return 0;
  	}
-@@ -631,10 +637,10 @@ fill_block()
+@@ -631,10 +638,10 @@ fill_block()
  
  	/* number of bytes available. Zero will be taken as eof */
  	if( !padblock || toread == blocksize )
@@ -82,7 +91,7 @@ $OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
  	}
  
  	if( debug > 1 )
-@@ -642,7 +648,7 @@ fill_block()
+@@ -642,7 +649,7 @@ fill_block()
  
  	unlock( pbuffer->semid, pbuffer->blocks_used_lock );
  
@@ -91,7 +100,7 @@ $OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
  }
  
  /* Write the buffer to stdout */
-@@ -697,14 +703,14 @@ get_next_filled_block()
+@@ -697,14 +704,14 @@ get_next_filled_block()
  	/* Hang till some data is available */
  	lock( pbuffer->semid, pbuffer->blocks_used_lock );
  
@@ -108,7 +117,7 @@ $OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
  }
  
  write_blocks_to_stdout( filled, first_block )
-@@ -714,7 +720,7 @@ write_blocks_to_stdout( filled, first_bl
+@@ -714,7 +721,7 @@ write_blocks_to_stdout( filled, first_block )
  	pbuffer->next_block_out = first_block;
  
  	while( filled-- ){
@@ -117,7 +126,7 @@ $OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
  		pbuffer->next_block_out = INC( pbuffer->next_block_out );
  		write_block_to_stdout();
  	}
-@@ -734,7 +740,7 @@ write_block_to_stdout()
+@@ -734,7 +741,7 @@ write_block_to_stdout()
  		next_k = showevery;
  	}
  
@@ -126,7 +135,7 @@ $OpenBSD: patch-buffer_c,v 1.1 2004/11/18 13:49:20 naddy Exp $
  		report_proc();
  		perror( "write of data failed" );
  		fprintf( stderr, "bytes to write=%d, bytes written=%d, total written %10luK\n", curr_block->bytes, written, outk );
-@@ -745,7 +751,7 @@ write_block_to_stdout()
+@@ -745,7 +752,7 @@ write_block_to_stdout()
  		usleep( write_pause );
  	}
  
