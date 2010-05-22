@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_xfeutils_cpp,v 1.1 2010/04/08 09:50:06 stephan Exp $
---- src/xfeutils.cpp.orig	Mon Nov  9 11:17:17 2009
-+++ src/xfeutils.cpp	Fri Mar 26 08:33:37 2010
+$OpenBSD: patch-src_xfeutils_cpp,v 1.2 2010/05/22 15:50:26 espie Exp $
+--- src/xfeutils.cpp.orig	Mon Nov  9 17:17:17 2009
++++ src/xfeutils.cpp	Sat May 22 17:42:08 2010
 @@ -467,36 +467,36 @@ FXbool isUtf8(const FXchar* string, FXuint length)
  	while (n<length)
      {
@@ -54,6 +54,15 @@ $OpenBSD: patch-src_xfeutils_cpp,v 1.1 2010/04/08 09:50:06 stephan Exp $
  // Replacement of the stat function
 -inline FXint statrep(const FXchar* filename, struct stat* buf)
 +FXint statrep(const FXchar* filename, struct stat* buf)
+ {
+ #if defined(linux)
+ 
+@@ -546,7 +546,7 @@ inline FXint statrep(const FXchar* filename, struct st
+ 
+ 
+ // Replacement of the lstat function
+-inline FXint lstatrep(const FXchar* filename, struct stat* buf)
++FXint lstatrep(const FXchar* filename, struct stat* buf)
  {
  #if defined(linux)
  
