@@ -1,0 +1,16 @@
+$OpenBSD: patch-GUI_menu_h,v 1.1 2010/05/22 21:02:34 espie Exp $
+--- GUI_menu.h.orig	Sat May 22 23:00:28 2010
++++ GUI_menu.h	Sat May 22 23:00:48 2010
+@@ -39,9 +39,9 @@ class GUI_Submenu : public GUI_Button
+   virtual void AddSubitem(GUI_Menuitem *newitem);
+   virtual GUI_Menuitem* GetSubItem(int Aid);
+ 
+-  GUI_status GUI_Submenu:: MouseDown(int x, int y, int button);
+-  GUI_status GUI_Submenu::MouseUp(int x,int y,int button);
+-  GUI_status GUI_Submenu::MouseMotion(int x,int y,Uint8 state);
++  GUI_status MouseDown(int x, int y, int button);
++  GUI_status MouseUp(int x,int y,int button);
++  GUI_status MouseMotion(int x,int y,Uint8 state);
+ 
+   inline virtual int GetSubmenuId()
+     {return submenuid;}
