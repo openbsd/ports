@@ -1,0 +1,12 @@
+$OpenBSD: patch-DockWidget_dockmanager_h,v 1.1 2010/05/22 07:46:48 espie Exp $
+--- DockWidget/dockmanager.h.orig	Sat May 22 09:43:13 2010
++++ DockWidget/dockmanager.h	Sat May 22 09:43:25 2010
+@@ -57,6 +57,8 @@ class SDockButton : public QPushButton (private)
+   bool moveMouse;
+ };
+ 
++class DockManager;
++
+ class DockWidget: public QWidget
+ { Q_OBJECT
+ friend class DockManager;
