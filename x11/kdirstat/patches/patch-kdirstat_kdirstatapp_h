@@ -1,0 +1,12 @@
+$OpenBSD: patch-kdirstat_kdirstatapp_h,v 1.1 2010/05/22 10:46:54 espie Exp $
+--- kdirstat/kdirstatapp.h.orig	Sat May 22 12:44:24 2010
++++ kdirstat/kdirstatapp.h	Sat May 22 12:44:29 2010
+@@ -46,7 +46,7 @@ namespace KDirStat
+     class KSettingsDialog;
+     class KTreemapView;
+     class KTreemapTile;
+-};
++}
+ 
+ using namespace KDirStat;
+ 
