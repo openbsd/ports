@@ -1,16 +1,16 @@
-$OpenBSD: patch-headers_libpnmrw_h,v 1.1.1.1 2001/06/19 03:22:33 angelos Exp $
---- headers/libpnmrw.h.orig	Wed Aug  9 11:17:41 1995
-+++ headers/libpnmrw.h	Sun Jun 10 01:24:11 2001
-@@ -19,7 +19,12 @@
+$OpenBSD: patch-headers_libpnmrw_h,v 1.2 2010/05/22 14:17:56 espie Exp $
+--- headers/libpnmrw.h.orig	Wed Aug  9 17:17:41 1995
++++ headers/libpnmrw.h	Sat May 22 16:16:24 2010
+@@ -19,10 +19,8 @@
  ** malloc.h at all.  A sad situation.  If you have compilation problems
  ** that point here, feel free to tweak or remove these declarations.
  */
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
+-#include <malloc.h>
+-#if !defined(sco)  &&  !defined(sgi) && !defined(IRIX)
+-extern char* malloc();
+-#endif
 +#include <stdlib.h>
-+#else
- #include <malloc.h>
-+#endif
 +
- #if !defined(sco)  &&  !defined(sgi) && !defined(IRIX)
- extern char* malloc();
- #endif
+ /* End of configurable definitions. */
+ 
+ 
