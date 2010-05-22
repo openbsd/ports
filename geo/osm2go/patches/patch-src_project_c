@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_project_c,v 1.1 2010/05/22 11:31:04 espie Exp $
---- src/project.c.orig	Sat May 22 13:15:00 2010
-+++ src/project.c	Sat May 22 13:27:36 2010
-@@ -1463,7 +1463,7 @@ static GtkWidget *wizard_create_intro_page(wizard_page
+$OpenBSD: patch-src_project_c,v 1.2 2010/05/22 12:29:04 landry Exp $
+--- src/project.c.orig	Thu Oct  8 13:33:20 2009
++++ src/project.c	Sat May 22 14:15:15 2010
+@@ -1546,7 +1546,7 @@ static GtkWidget *wizard_create_intro_page(wizard_page
  }
  
  /* ---------------- page 2: source selection ----------------- */
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_project_c,v 1.1 2010/05/22 11:31:04 espie Exp $
    GValue is_sensitive= { 0, };
    g_value_init(&is_sensitive, G_TYPE_BOOLEAN);
    g_object_get_property(G_OBJECT(widget), "sensitive", &is_sensitive);
-@@ -1502,7 +1502,7 @@ static void wizard_update_source_selection_page(wizard
+@@ -1585,7 +1585,7 @@ static void wizard_update_source_selection_page(wizard
    for(i=0;i<4;i++) {
      if(gtk_toggle_button_get_active(
  	    GTK_TOGGLE_BUTTON(page->state.source_selection.check[i])))

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/21 21:21:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/05/22 12:29:04 landry Exp $
 @bin bin/osm2go
 share/applications/osm2go.desktop
 share/icons/
@@ -30,6 +30,8 @@ share/osm2go/icons/
 share/osm2go/icons/about.png
 share/osm2go/icons/cancel.png
 share/osm2go/icons/cancel_thumb.png
+share/osm2go/icons/detaildown_thumb.png
+share/osm2go/icons/detailup_thumb.png
 share/osm2go/icons/download.16.png
 share/osm2go/icons/exit.png
 share/osm2go/icons/info.png
@@ -519,6 +521,8 @@ share/osm2go/icons/way_node_add_thumb.png
 share/osm2go/icons/way_reverse.png
 share/osm2go/icons/way_reverse_thumb.png
 share/osm2go/icons/way_thumb.png
+share/osm2go/icons/zoomin_thumb.png
+share/osm2go/icons/zoomout_thumb.png
 share/osm2go/josm.style
 share/osm2go/josm_wireframe.style
 share/osm2go/mapnik.style
