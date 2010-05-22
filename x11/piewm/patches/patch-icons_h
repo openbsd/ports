@@ -1,0 +1,11 @@
+$OpenBSD: patch-icons_h,v 1.1 2010/05/22 21:17:19 espie Exp $
+--- icons.h.orig	Sat May 22 23:16:19 2010
++++ icons.h	Sat May 22 23:16:26 2010
+@@ -53,7 +53,6 @@ void CreateIconWindow(TwmWindow *tmp_win, int def_x, i
+ void AddIconRegion(char *geom, int grav1, int grav2, int stepx, int stepy);
+ void IconDown (TwmWindow *tmp_win);
+ void IconUp (TwmWindow *tmp_win);
+-void PlaceIcon(TwmWindow *tmp_win, int def_x, int def_y, int *final_x, int *final_y);
+ 
+ 
+ 
