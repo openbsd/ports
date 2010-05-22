@@ -1,7 +1,7 @@
-$OpenBSD: patch-audsav_dlg_c,v 1.1 2002/11/28 05:36:59 wcobb Exp $
---- audsav_dlg.c.orig	Sat Sep  4 15:09:01 1999
-+++ audsav_dlg.c	Thu Nov 28 01:31:27 2002
-@@ -373,8 +373,10 @@ static void RecordCmdCB( Widget w, XtPoi
+$OpenBSD: patch-audsav_dlg_c,v 1.2 2010/05/22 14:12:50 espie Exp $
+--- audsav_dlg.c.orig	Sat Sep  4 20:09:01 1999
++++ audsav_dlg.c	Sat May 22 16:04:13 2010
+@@ -373,8 +373,10 @@ static void RecordCmdCB( Widget w, XtPointer cl, XtPoi
          return;
      }
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-audsav_dlg_c,v 1.1 2002/11/28 05:36:59 wcobb Exp $
  
      /*  Grab values off dialog  */
      if ( !PrepareForAudio( TRUE, 1, &dsp_fd, &bps ) )
-@@ -426,8 +428,10 @@ static void RecordCmdCB( Widget w, XtPoi
+@@ -426,8 +428,10 @@ static void RecordCmdCB( Widget w, XtPointer cl, XtPoi
  
      Recording = True;
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-audsav_dlg_c,v 1.1 2002/11/28 05:36:59 wcobb Exp $
      UpdateButtons();
  
      /*  Flush X events (update GUI buttons, etc.)  */
-@@ -520,7 +524,9 @@ static void RecordCmdCB( Widget w, XtPoi
+@@ -520,7 +524,9 @@ static void RecordCmdCB( Widget w, XtPointer cl, XtPoi
      if ( state != NULL )
          free( state );
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-audsav_dlg_c,v 1.1 2002/11/28 05:36:59 wcobb Exp $
  
      /*  FIXME:  Check code - make sure no problem (other than CPU) starting  */
      /*    another record/play while conversion for previous still going on.  */
-@@ -576,7 +582,9 @@ static void PlaybackCmdDoneCB( TV_BOOL a
+@@ -576,7 +582,9 @@ static void PlaybackCmdDoneCB( TV_BOOL aborted, int st
      if ( !aborted && ( status != 0 ) )
          DoCmdFailDialog( state->cmd, status );
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-audsav_dlg_c,v 1.1 2002/11/28 05:36:59 wcobb Exp $
  
      /*  Do post-cmd cleanup  */
      free( state->cmd );
-@@ -616,8 +624,10 @@ static void PlaybackCmdCB( Widget w, XtP
+@@ -616,8 +624,10 @@ static void PlaybackCmdCB( Widget w, XtPointer cl, XtP
          return;
      }
  
@@ -54,7 +54,7 @@ $OpenBSD: patch-audsav_dlg_c,v 1.1 2002/11/28 05:36:59 wcobb Exp $
  
      /*  Grab values off dialog  */
      if ( !PrepareForAudio( FALSE, 1, &dsp_fd, &bps ) )
-@@ -637,7 +647,9 @@ static void PlaybackCmdCB( Widget w, XtP
+@@ -637,7 +647,9 @@ static void PlaybackCmdCB( Widget w, XtPointer cl, XtP
      Playing = True;
  
      /*  Make sure mute is on, & disable all but stop btn  */
@@ -64,7 +64,7 @@ $OpenBSD: patch-audsav_dlg_c,v 1.1 2002/11/28 05:36:59 wcobb Exp $
      UpdateButtons();
  
      /*  Flush X events (update GUI buttons, etc.)  */
-@@ -779,7 +791,9 @@ static void PlaybackCmdCB( Widget w, XtP
+@@ -779,7 +791,9 @@ static void PlaybackCmdCB( Widget w, XtPointer cl, XtP
          free( state );
  
      if ( !cmd_running ) {
