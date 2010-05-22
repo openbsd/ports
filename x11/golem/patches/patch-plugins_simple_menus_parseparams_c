@@ -1,0 +1,10 @@
+$OpenBSD: patch-plugins_simple_menus_parseparams_c,v 1.1 2010/05/22 20:59:08 espie Exp $
+--- plugins/simple_menus/parseparams.c.orig	Sat May 22 22:57:13 2010
++++ plugins/simple_menus/parseparams.c	Sat May 22 22:57:27 2010
+@@ -166,5 +166,6 @@ void parseparams(menu_t *menu, param_t *topparam) {
+ 		}
+ 		PWARN("ignoring unknown parameter type %s, under %s", param->name, topparam->name);
+ found:
++	;
+ 	}
+ }

@@ -1,0 +1,11 @@
+$OpenBSD: patch-plugins_pier_parseparams_c,v 1.1 2010/05/22 20:59:08 espie Exp $
+--- plugins/pier/parseparams.c.orig	Sat May 22 22:58:16 2010
++++ plugins/pier/parseparams.c	Sat May 22 22:58:21 2010
+@@ -161,6 +161,7 @@ void parseparams() {
+ 			}
+ 			PWARN("ignoring unknown pier item type %s", itemparam->value);
+ found:
++		;
+ 		}
+ 	}
+ }

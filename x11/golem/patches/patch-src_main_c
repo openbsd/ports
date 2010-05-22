@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_c,v 1.1 2002/12/28 23:29:13 pvalchev Exp $
---- src/main.c.orig	Sat Dec 28 15:12:59 2002
-+++ src/main.c	Sat Dec 28 15:13:47 2002
-@@ -62,7 +62,7 @@ static RETSIGTYPE handle_sigsegv(int no)
+$OpenBSD: patch-src_main_c,v 1.2 2010/05/22 20:59:08 espie Exp $
+--- src/main.c.orig	Wed May 22 01:06:25 2002
++++ src/main.c	Sat May 22 15:49:42 2010
+@@ -62,7 +62,7 @@ static RETSIGTYPE handle_sigsegv(int no) {
  	warnx("segmentation fault; dumping a corefile and restarting");
  	if (!fork())
  		abort();
