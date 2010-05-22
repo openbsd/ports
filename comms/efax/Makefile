@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/02/09 12:23:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2010/05/22 08:09:19 jasper Exp $
 
 COMMENT=	small & simple FAX send/receive program
 
 DISTNAME=	efax-0.9
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	comms
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
@@ -16,12 +16,7 @@ WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/serialcomm/fax/}
 
-# gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH:Mmips64*}
-EXTRA_CFLAGS=	-O0
-.endif
-
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" EXTRA_CFLAGS="${EXTRA_CFLAGS}"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 NO_REGRESS=	Yes
 
