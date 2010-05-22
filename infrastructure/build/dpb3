@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.15 2010/05/18 15:56:52 sthen Exp $
+# $OpenBSD: dpb3,v 1.16 2010/05/22 08:42:21 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -267,4 +267,4 @@ while (1) {
 $reporter->reset;
 DPB::Core->cleanup;
 print $engine->report;
-$engine->dump_category('tobuild');
+$engine->dump_category('tobuild', $logger->open('dump'));
