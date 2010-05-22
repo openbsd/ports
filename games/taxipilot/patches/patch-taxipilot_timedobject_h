@@ -1,0 +1,12 @@
+$OpenBSD: patch-taxipilot_timedobject_h,v 1.1 2010/05/22 12:02:28 espie Exp $
+--- taxipilot/timedobject.h.orig	Sat May 22 13:55:47 2010
++++ taxipilot/timedobject.h	Sat May 22 13:55:58 2010
+@@ -25,6 +25,8 @@ It has a virtual function timerTick (int).
+   *@author Thomas Friedrichsmeier
+   */
+ 
++class TimeManager;
++
+ class TimedObject {
+ public: 
+ 	TimedObject();

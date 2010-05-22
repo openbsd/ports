@@ -1,0 +1,11 @@
+$OpenBSD: patch-taxipilot_level_h,v 1.1 2010/05/22 12:02:28 espie Exp $
+--- taxipilot/level.h.orig	Sat May 22 13:55:06 2010
++++ taxipilot/level.h	Sat May 22 13:55:18 2010
+@@ -35,6 +35,7 @@ class State;
+ class Event;
+ class HotArea;
+ class Timer;
++class Teleporter;
+ 
+ class Level:public QCanvasSprite {
+   public:
