@@ -1,0 +1,11 @@
+$OpenBSD: patch-scsh_sleep1_c,v 1.1 2010/05/22 11:13:56 espie Exp $
+--- scsh/sleep1.c.orig	Sat May 22 13:09:13 2010
++++ scsh/sleep1.c	Sat May 22 13:09:30 2010
+@@ -10,6 +10,7 @@
+ #endif
+ #include <unistd.h>
+ #include <time.h>
++#include <string.h>
+ #include "../c/scheme48.h"
+ 
+ 

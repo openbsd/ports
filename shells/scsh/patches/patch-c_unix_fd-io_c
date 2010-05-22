@@ -1,0 +1,11 @@
+$OpenBSD: patch-c_unix_fd-io_c,v 1.1 2010/05/22 11:13:56 espie Exp $
+--- c/unix/fd-io.c.orig	Sat May 22 13:09:52 2010
++++ c/unix/fd-io.c	Sat May 22 13:10:03 2010
+@@ -9,6 +9,7 @@
+ #include <fcntl.h>
+ #include <sys/time.h>
+ #include <errno.h>              /* for errno, (POSIX?/ANSI) */
++#include <string.h>
+ #include "c-mods.h"
+ #include "scheme48vm.h"
+ #include "event.h"

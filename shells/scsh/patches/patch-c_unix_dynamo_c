@@ -1,0 +1,11 @@
+$OpenBSD: patch-c_unix_dynamo_c,v 1.1 2010/05/22 11:13:56 espie Exp $
+--- c/unix/dynamo.c.orig	Sat May 22 13:10:20 2010
++++ c/unix/dynamo.c	Sat May 22 13:10:26 2010
+@@ -5,6 +5,7 @@
+ 
+ #include <stdlib.h>
+ #include <unistd.h>
++#include <string.h>
+ #include "sysdep.h"
+ #include "scheme48.h"
+ 

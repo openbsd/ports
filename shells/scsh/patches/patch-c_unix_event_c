@@ -1,0 +1,11 @@
+$OpenBSD: patch-c_unix_event_c,v 1.1 2010/05/22 11:13:56 espie Exp $
+--- c/unix/event.c.orig	Sat May 22 13:10:07 2010
++++ c/unix/event.c	Sat May 22 13:10:14 2010
+@@ -6,6 +6,7 @@
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/times.h>
