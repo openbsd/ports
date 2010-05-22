@@ -1,0 +1,12 @@
+$OpenBSD: patch-xpp_h,v 1.1 2010/05/22 14:05:03 espie Exp $
+--- xpp.h.orig	Sat May 22 16:03:46 2010
++++ xpp.h	Sat May 22 16:04:02 2010
+@@ -177,7 +177,7 @@ class printFiles { (public)
+    */
+ 
+   int /* O - index of the record of the given option in the array */
+-  printFiles::getSpecialOptionIndex(int *num_special_opts_in_arr,
++  getSpecialOptionIndex(int *num_special_opts_in_arr,
+ 				      /* number of options in the array */
+ 				      special_opt_t **special_opts_arr,
+                                       /* array of numerical/string 
