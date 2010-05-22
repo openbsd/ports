@@ -1,7 +1,7 @@
-$OpenBSD: patch-uta_Makefile_in,v 1.2 2004/01/04 20:32:29 pvalchev Exp $
---- uta/Makefile.in.orig	2004-01-03 10:21:29.000000000 -0700
-+++ uta/Makefile.in	2004-01-03 10:21:38.000000000 -0700
-@@ -113,7 +113,7 @@ LTNONOPTCXXCOMPILE = $(LIBTOOL) --mode=c
+$OpenBSD: patch-uta_Makefile_in,v 1.3 2010/05/22 16:11:34 espie Exp $
+--- uta/Makefile.in.orig	Tue Oct 15 04:18:33 2002
++++ uta/Makefile.in	Sat May 22 18:00:00 2010
+@@ -113,7 +113,7 @@ LTNONOPTCXXCOMPILE = $(LIBTOOL) --mode=compile $(CXX) 
  
  noinst_HEADERS = blitter_macros.h
  

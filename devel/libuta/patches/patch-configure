@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2004/01/04 20:32:29 pvalchev Exp $
---- configure.orig	2004-01-03 10:20:49.000000000 -0700
-+++ configure	2004-01-03 10:20:55.000000000 -0700
+$OpenBSD: patch-configure,v 1.5 2010/05/22 16:11:34 espie Exp $
+--- configure.orig	Tue Oct 15 04:17:59 2002
++++ configure	Sat May 22 18:00:00 2010
 @@ -4450,14 +4450,14 @@ fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.4 2004/01/04 20:32:29 pvalchev Exp $
  cat > conftest.$ac_ext <<EOF
  #line 4463 "configure"
  #include "confdefs.h"
-@@ -4491,7 +4491,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+@@ -4491,7 +4491,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = ye
  #define $ac_tr_lib 1
  EOF
  

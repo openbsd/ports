@@ -1,0 +1,13 @@
+$OpenBSD: patch-uta_rootwindow_h,v 1.1 2010/05/22 16:11:34 espie Exp $
+--- uta/rootwindow.h.orig	Sat May 22 18:04:23 2010
++++ uta/rootwindow.h	Sat May 22 18:04:37 2010
+@@ -28,6 +28,9 @@
+ 
+ namespace uta {
+ 
++class Application;
++class DirectSurface;
++
+ ///
+ class RootWindow : public Widget
+ {

@@ -1,0 +1,13 @@
+$OpenBSD: patch-uta_mutex_h,v 1.1 2010/05/22 16:11:34 espie Exp $
+--- uta/mutex.h.orig	Sat May 22 18:03:17 2010
++++ uta/mutex.h	Sat May 22 18:04:01 2010
+@@ -26,6 +26,9 @@
+ 
+ namespace uta {
+ 
++class DirectSurface;
++class ScreenSurface;
++
+ ///Mutex class.
+ class Mutex
+ {

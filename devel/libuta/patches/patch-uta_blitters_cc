@@ -1,6 +1,6 @@
-$OpenBSD: patch-uta_blitters_cc,v 1.3 2004/01/04 20:32:29 pvalchev Exp $
---- uta/blitters.cc.orig	2004-01-04 15:27:06.000000000 +0100
-+++ uta/blitters.cc	2004-01-04 15:28:30.000000000 +0100
+$OpenBSD: patch-uta_blitters_cc,v 1.4 2010/05/22 16:11:34 espie Exp $
+--- uta/blitters.cc.orig	Sat Oct 12 23:11:07 2002
++++ uta/blitters.cc	Sat May 22 18:00:00 2010
 @@ -20,6 +20,7 @@
  
  #include "blitters.h"
@@ -9,7 +9,7 @@ $OpenBSD: patch-uta_blitters_cc,v 1.3 2004/01/04 20:32:29 pvalchev Exp $
  
  namespace uta {
  
-@@ -35,7 +36,7 @@ void gammablit_RGBA8888_RGBA8888(Surface
+@@ -35,7 +36,7 @@ void gammablit_RGBA8888_RGBA8888(Surface* dst, const S
  				 char g, 
  				 const Rect& srcRect, const Point& dstPoint)
  {
@@ -18,7 +18,7 @@ $OpenBSD: patch-uta_blitters_cc,v 1.3 2004/01/04 20:32:29 pvalchev Exp $
  }
  
  /** Convert RGBA8888 to RGB565 and apply const gamma value.
-@@ -45,7 +46,7 @@ void gammablit_RGBA8888_RGB565(Surface* 
+@@ -45,7 +46,7 @@ void gammablit_RGBA8888_RGB565(Surface* dst, const Sur
  			       char g, 
  			       const Rect& srcRect, const Point& dstPoint)
  {
@@ -27,7 +27,7 @@ $OpenBSD: patch-uta_blitters_cc,v 1.3 2004/01/04 20:32:29 pvalchev Exp $
  }
  
  /** Apply const gamma value.
-@@ -54,7 +55,7 @@ void gammablit_RGB565_RGB565(Surface* ds
+@@ -54,7 +55,7 @@ void gammablit_RGB565_RGB565(Surface* dst, const Surfa
  			     char g, 
  			     const Rect& srcRect, const Point& dstPoint)
  {
@@ -36,7 +36,7 @@ $OpenBSD: patch-uta_blitters_cc,v 1.3 2004/01/04 20:32:29 pvalchev Exp $
  }
  
  /** Apply per pixel gamma value.
-@@ -64,7 +65,7 @@ void gammablit_RGBA8888_RGBA8888(Surface
+@@ -64,7 +65,7 @@ void gammablit_RGBA8888_RGBA8888(Surface* dst, const S
  				 GammaFunction* func, 
  				 const Rect& srcRect, const Point& dstPoint)
  {
@@ -45,7 +45,7 @@ $OpenBSD: patch-uta_blitters_cc,v 1.3 2004/01/04 20:32:29 pvalchev Exp $
  }
  
  /** Convert RGBA8888 to RGB565 and apply per pixel gamma value.
-@@ -74,7 +75,7 @@ void gammablit_RGBA8888_RGB565(Surface* 
+@@ -74,7 +75,7 @@ void gammablit_RGBA8888_RGB565(Surface* dst, const Sur
  			       GammaFunction* func, 
  			       const Rect& srcRect, const Point& dstPoint)
  {
@@ -54,7 +54,7 @@ $OpenBSD: patch-uta_blitters_cc,v 1.3 2004/01/04 20:32:29 pvalchev Exp $
  }
  
  /** Apply per pixel gamma value.
-@@ -83,7 +84,7 @@ void gammablit_RGB565_RGB565(Surface* ds
+@@ -83,7 +84,7 @@ void gammablit_RGB565_RGB565(Surface* dst, const Surfa
  			     GammaFunction* func, 
  			     const Rect& srcRect, const Point& dstPoint)
  {
