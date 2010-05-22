@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/02/09 12:23:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/05/22 08:48:46 jasper Exp $
 
 COMMENT=		tunnel IPv4 data through DNS
 
 DISTNAME=		iodine-0.5.2
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://code.kryo.se/iodine/
@@ -20,10 +21,5 @@ WANTLIB=		c z
 MAKE_ENV=		CC=${CC}
 REGRESS_DEPENDS=	::devel/check
 REGRESS_TARGET=		test
-
-# gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH:Mmips64*}
-CFLAGS+=        -O0
-.endif
 
 .include <bsd.port.mk>
