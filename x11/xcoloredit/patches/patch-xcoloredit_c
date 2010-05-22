@@ -1,0 +1,14 @@
+$OpenBSD: patch-xcoloredit_c,v 1.1 2010/05/22 15:14:18 espie Exp $
+--- xcoloredit.c.orig	Sat May 22 17:11:35 2010
++++ xcoloredit.c	Sat May 22 17:12:05 2010
+@@ -181,8 +181,9 @@ static XtResource resources[] = {
+ };
+ #undef offset
+ 
++static int WhichButton(String);
+ 
+-void main(argc, argv)
++int main(argc, argv)
+ unsigned int argc;
+ char **argv;
+ {
