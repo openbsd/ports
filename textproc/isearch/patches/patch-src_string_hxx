@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_string_hxx,v 1.1 2010/05/22 11:54:14 espie Exp $
+--- src/string.hxx.orig	Sat May 22 13:45:31 2010
++++ src/string.hxx	Sat May 22 13:45:53 2010
+@@ -67,7 +67,7 @@ class STRING { (public)
+ 	STRING& operator=(const INT IntValue);
+ 	STRING& operator=(const DOUBLE DoubleValue);
+ 	STRING& operator=(const STRING& OtherString);
+-	void STRING::Set(const UCHR* NewBuffer, const STRINGINDEX BufferLength);
++	void Set(const UCHR* NewBuffer, const STRINGINDEX BufferLength);
+  	STRING& operator+=(const UCHR Character);
+  	STRING& operator+=(const CHR* CString);
+  	STRING& operator+=(const STRING& OtherString);
+@@ -134,7 +134,7 @@ class STRING { (public)
+ 	void StrBuffAlloc(INT BufferSizeRequest);
+ 	~STRING();
+ private:
+-	void STRING::Copy(const UCHR *CString, STRINGINDEX CLength);
++	void Copy(const UCHR *CString, STRINGINDEX CLength);
+ 	STRINGINDEX Length;
+ 	UCHR* Buffer;
+ 	static INT4 InitialBufferLength;

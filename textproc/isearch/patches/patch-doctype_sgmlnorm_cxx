@@ -1,7 +1,7 @@
-$OpenBSD: patch-doctype_sgmlnorm_cxx,v 1.1 2000/04/21 23:42:11 espie Exp $
---- doctype/sgmlnorm.cxx.orig	Sat Apr 22 01:32:03 2000
-+++ doctype/sgmlnorm.cxx	Sat Apr 22 01:32:09 2000
-@@ -528,7 +528,7 @@ PCHR *SGMLNORM::parse_tags (PCHR b, GPTY
+$OpenBSD: patch-doctype_sgmlnorm_cxx,v 1.2 2010/05/22 11:54:14 espie Exp $
+--- doctype/sgmlnorm.cxx.orig	Wed Dec  4 22:02:08 1996
++++ doctype/sgmlnorm.cxx	Sat May 22 12:55:04 2010
+@@ -528,7 +528,7 @@ PCHR *SGMLNORM::parse_tags (PCHR b, GPTYPE len) const
  #ifndef TAG_GROW_SIZE
  #define TAG_GROW_SIZE 128
  #endif

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_string_cxx,v 1.1 2002/10/06 22:31:10 naddy Exp $
---- src/string.cxx.orig	Sat Oct  5 22:16:17 2002
-+++ src/string.cxx	Sat Oct  5 22:16:33 2002
-@@ -453,7 +453,7 @@ INT STRING::CaseEquals(const CHR* CStrin
+$OpenBSD: patch-src_string_cxx,v 1.2 2010/05/22 11:54:14 espie Exp $
+--- src/string.cxx.orig	Wed Dec  4 22:02:10 1996
++++ src/string.cxx	Sat May 22 12:55:04 2010
+@@ -453,7 +453,7 @@ INT STRING::CaseEquals(const CHR* CString) const {
  }
  
  void STRING::Print() const {
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_string_cxx,v 1.1 2002/10/06 22:31:10 naddy Exp $
  }
  
  void STRING::Print(PFILE FilePointer) const {
-@@ -464,7 +464,7 @@ void STRING::Print(PFILE FilePointer) co
+@@ -464,7 +464,7 @@ void STRING::Print(PFILE FilePointer) const {
  
  // can this be const STRING& ?
  ostream& operator<<(ostream& os, const STRING& str) {
