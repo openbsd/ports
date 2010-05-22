@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_menus_c,v 1.1 2010/05/22 13:10:51 espie Exp $
+--- src/menus.c.orig	Sat May 22 15:04:38 2010
++++ src/menus.c	Sat May 22 15:04:58 2010
+@@ -219,7 +219,8 @@ a_menu_entry editor_entries[] = {
+   { N_("NEW LEVEL"),	editor_menu },
+   /* TRANS: Load an existing level for edition.  */
+   { N_("LOAD LEVEL"),	editor_selector },
+-  { N_("GO BACK"),	0 }
++  { N_("GO BACK"),	0 },
++  { 0,			0 }
+ };
+ 
+ a_menu *editor_menu_data;

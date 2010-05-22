@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_hedlite_c,v 1.1 2010/05/22 13:10:51 espie Exp $
+--- src/hedlite.c.orig	Sat May 22 14:53:05 2010
++++ src/hedlite.c	Sat May 22 14:53:16 2010
+@@ -45,7 +45,7 @@
+ #include "dirname.h"
+ 
+ static a_pcx_image heditrsc;
+-static a_pcx_image tile_set_img;
++a_pcx_image tile_set_img;
+ 
+ unsigned short int xdalles = 0;
+ unsigned short int ydalles = 0;
