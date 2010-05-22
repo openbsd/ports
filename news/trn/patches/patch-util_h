@@ -1,0 +1,17 @@
+$OpenBSD: patch-util_h,v 1.1 2010/05/22 11:44:40 espie Exp $
+--- util.h.orig	Sat May 22 13:41:28 2010
++++ util.h	Sat May 22 13:41:39 2010
+@@ -2,6 +2,8 @@
+  */
+ /* This software is copyrighted as detailed in the LICENSE file. */
+ 
++#ifndef UTIL_H
++#define UTIL_H
+ 
+ EXT bool waiting INIT(FALSE);  	/* waiting for subprocess (in doshell)? */
+ EXT bool nowait_fork INIT(FALSE);
+@@ -80,3 +82,4 @@ char* parse_ini_section _((char*,INI_WORDS*));
+ bool check_ini_cond _((char*));
+ char menu_get_char _((void));
+ int edit_file _((char*));
++#endif
