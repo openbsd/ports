@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_peer_c,v 1.3 2010/05/22 16:16:45 espie Exp $
+--- src/peer.c.orig	Sat May 22 18:12:27 2010
++++ src/peer.c	Sat May 22 18:15:28 2010
+@@ -458,11 +458,11 @@ static int rate_timer( btPeerStatus *ps, time_t now) {
+ 
+ #define SHIFT_INT32(ptr,nbo,ival) \
+     (nbo=htonl(ival), memcpy(ptr,&nbo,sizeof(int32_t)), ptr+=sizeof(int32_t))
+-#define SHIFT_BYTE(ptr,ival) ((*((unsigned char *)(ptr))++) = ival)
++#define SHIFT_BYTE(ptr,ival) ((*((unsigned char *)(ptr)) = (ival)),((ptr)++))
+ 
+ #define UNSHIFT_INT32(ptr,nbo,ival) \
+     (memcpy(&nbo,ptr,sizeof(int32_t)), ival=ntohl(nbo), ptr+=sizeof(int32_t))
+-#define UNSHIFT_BYTE(ptr,ival) (ival = (*((unsigned char *)(ptr))++)
++#define UNSHIFT_BYTE(ptr,ival) ((ival) = *((unsigned char *)(ptr)),(ptr)++)
+ /*
+  * Return 1 if there are more messages waiting
+  * Return 0 on success, 
