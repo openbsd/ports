@@ -1,0 +1,11 @@
+$OpenBSD: patch-pfbtops_pfbtops_c,v 1.1 2010/05/22 10:39:24 espie Exp $
+--- pfbtops/pfbtops.c.orig	Sat Sep 14 21:01:20 1996
++++ pfbtops/pfbtops.c	Sat May 22 12:33:38 2010
+@@ -1,6 +1,7 @@
+ /* This translates ps fonts in .pfb format to ASCII ps files. */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ 
+ /* Binary bytes per output line. */
+ #define BYTES_PER_LINE (64/2)

@@ -1,0 +1,11 @@
+$OpenBSD: patch-libbib_map_c,v 1.1 2010/05/22 10:39:24 espie Exp $
+--- libbib/map.c.orig	Sat Sep 14 21:00:53 1996
++++ libbib/map.c	Sat May 22 12:33:38 2010
+@@ -21,6 +21,7 @@ Foundation, 59 Temple Place - Suite 330, Boston, MA 02
+ 
+ #include <sys/types.h>
+ #include <sys/mman.h>
++#include <stdlib.h>
+ 
+ /* The Net-2 man pages says that a MAP_FILE flag is required. */
+ #ifndef MAP_FILE
