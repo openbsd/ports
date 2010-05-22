@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2010/01/01 11:00:49 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2010/05/22 10:37:35 landry Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
 
 SHARED_ONLY=		Yes
+
+BROKEN-hppa=		SIGILL during build
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
