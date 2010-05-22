@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2010/05/16 14:16:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2010/05/22 09:57:42 jasper Exp $
 
 COMMENT=	Common Unix Printing System
 
 VERSION=	1.4.3
 DISTNAME=	cups-${VERSION}-source
-PKGNAME=	cups-${VERSION}p2
+PKGNAME=	cups-${VERSION}p3
 
 CATEGORIES=	print sysutils
 
@@ -105,11 +105,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 		${LIBS_ENV}
-
-# gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH:Mmips64*}
-CFLAGS+=	-O0
-.endif
 
 FLAVORS=	ldap
 FLAVOR?=
