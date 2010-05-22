@@ -1,6 +1,6 @@
-$OpenBSD: patch-sound_cc,v 1.2 2002/09/08 07:43:52 mark Exp $
---- sound.cc.orig	Wed Jun  7 22:41:06 2000
-+++ sound.cc	Sun Sep  8 00:38:45 2002
+$OpenBSD: patch-sound_cc,v 1.3 2010/05/22 13:43:24 espie Exp $
+--- sound.cc.orig	Thu Jun  8 07:41:06 2000
++++ sound.cc	Sat May 22 15:26:39 2010
 @@ -34,16 +34,22 @@
  #include <fcntl.h>
  #include <unistd.h>
@@ -101,7 +101,7 @@ $OpenBSD: patch-sound_cc,v 1.2 2002/09/08 07:43:52 mark Exp $
    cdrom_subchnl subchnl;
    subchnl.cdsc_format = CDROM_MSF;
    if (-1 == ioctl(cdDevice, CDROMSUBCHNL, &subchnl)) {
-@@ -215,7 +221,7 @@ void cdGetStatus(int &track, int &frames
+@@ -215,7 +221,7 @@ void cdGetStatus(int &track, int &frames, SymbolID &st
      state = (state == Open ? Open : NoCD); /* ? */
      return;
    }
@@ -110,7 +110,7 @@ $OpenBSD: patch-sound_cc,v 1.2 2002/09/08 07:43:52 mark Exp $
    track = subchnl.cdsc_trk;
    frames  = subchnl.cdsc_reladdr.msf.minute*60*CD_FRAMES+
              subchnl.cdsc_reladdr.msf.second*CD_FRAMES+
-@@ -228,7 +234,7 @@ void cdGetStatus(int &track, int &frames
+@@ -228,7 +234,7 @@ void cdGetStatus(int &track, int &frames, SymbolID &st
  #endif
    
    SymbolID oldState = state;
@@ -119,7 +119,7 @@ $OpenBSD: patch-sound_cc,v 1.2 2002/09/08 07:43:52 mark Exp $
    switch(subchnl.cdsc_audiostatus) {
      case CDROM_AUDIO_PAUSED    : state = Pause; break;
      case CDROM_AUDIO_PLAY      : state = Play; break;
-@@ -259,38 +265,38 @@ void cdGetStatus(int &track, int &frames
+@@ -259,38 +265,38 @@ void cdGetStatus(int &track, int &frames, SymbolID &st
  
  void cdStop(void) {
    //attemptNoDie(ioctl(cdDevice, CDROMSTOP),"stopping CD");
@@ -173,7 +173,7 @@ $OpenBSD: patch-sound_cc,v 1.2 2002/09/08 07:43:52 mark Exp $
  #endif
  }
  
-@@ -379,7 +385,7 @@ void openSound(SoundSource source, int i
+@@ -379,7 +385,7 @@ void openSound(SoundSource source, int inFrequency, ch
    
      int format, stereo, fragment, fqc;
    
@@ -182,7 +182,7 @@ $OpenBSD: patch-sound_cc,v 1.2 2002/09/08 07:43:52 mark Exp $
      attempt(device = open(dspName,O_WRONLY),"opening dsp device",true);
      format = SOUNDFORMAT;
      attempt(ioctl(device,SNDCTL_DSP_SETFMT,&format),"setting format",true);
-@@ -408,7 +414,7 @@ void openSound(SoundSource source, int i
+@@ -408,7 +414,7 @@ void openSound(SoundSource source, int inFrequency, ch
      //Was 0x00010000 + m; 
    
      attemptNoDie(ioctl(device,SNDCTL_DSP_SETFRAGMENT,&fragment),"setting fragment",true);
@@ -191,7 +191,7 @@ $OpenBSD: patch-sound_cc,v 1.2 2002/09/08 07:43:52 mark Exp $
      attempt(ioctl(device,SNDCTL_DSP_SETFMT,&format),"setting format",true);
      if (format != SOUNDFORMAT) error("setting format (2)");
  #endif
-@@ -422,8 +428,12 @@ void openSound(SoundSource source, int i
+@@ -422,8 +428,12 @@ void openSound(SoundSource source, int inFrequency, ch
        close(0);
      }
    }
