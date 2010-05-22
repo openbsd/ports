@@ -1,0 +1,20 @@
+$OpenBSD: patch-stegdetect_c,v 1.1 2010/05/22 13:18:56 espie Exp $
+--- stegdetect.c.orig	Sat May 22 15:15:57 2010
++++ stegdetect.c	Sat May 22 15:16:31 2010
+@@ -78,6 +78,7 @@ char *progname;
+ float DCThist[257];
+ float scale = 1;		/* Sensitivity scaling */
+ 
++#define debug mydebug
+ static int debug = 0;
+ static int quiet = 0;
+ static int ispositive = 0;	/* Current images contain stego */
+@@ -1046,7 +1047,7 @@ detect_print(void)
+ 		}
+ 	}
+  done:
+-	fprintf(stdout, " %s(%d)<[%s][", what,
++	fprintf(stdout, " %s(%zu)<[%s][", what,
+ 	    buflen, is_random(buf, buflen) ? "random" : "nonrandom");
+ 	noprint = 0;
+ 	/* Prints to stdout */
