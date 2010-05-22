@@ -1,6 +1,6 @@
-$OpenBSD: patch-gen_h,v 1.1 2001/04/17 14:57:12 naddy Exp $
+$OpenBSD: patch-gen_h,v 1.2 2010/05/22 20:55:55 espie Exp $
 --- gen.h.orig	Thu Jan 21 21:27:33 1993
-+++ gen.h	Tue Apr 17 16:26:58 2001
++++ gen.h	Sat May 22 22:54:27 2010
 @@ -11,11 +11,11 @@ static char* sccs_gen_h = "%W%%G%";
  #include <X11/Xaw/MenuButton.h>
  #include <X11/Shell.h>
@@ -25,3 +25,16 @@ $OpenBSD: patch-gen_h,v 1.1 2001/04/17 14:57:12 naddy Exp $
  #define	HELP_VIEWER	" "		/* viewer for help file */
  
  #define	MAXPROCS	20
+@@ -76,9 +76,9 @@ typedef struct	c_id{
+ 
+ ChildInfo	ci_ptr[MAXPROCS];
+ 
+-/* forward declarations */
+-int	fprintf(), ungetc(), fclose(), fscanf();
+-char	*strcpy(), *getenv(), *malloc(); 
++#include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
+ 
+ typedef int     bool_t;
+ 

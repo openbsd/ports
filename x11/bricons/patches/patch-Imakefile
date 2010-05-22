@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.2 2004/01/01 15:20:21 espie Exp $
---- Imakefile.orig	1993-01-21 21:27:31.000000000 +0100
-+++ Imakefile	2004-01-01 16:15:19.000000000 +0100
+$OpenBSD: patch-Imakefile,v 1.3 2010/05/22 20:55:55 espie Exp $
+--- Imakefile.orig	Thu Jan 21 21:27:31 1993
++++ Imakefile	Sat May 22 17:01:29 2010
 @@ -1,43 +1,19 @@
 -/**/# static char* sccs_imake = "%W%%G%";
 -/**/# Imakefile,v 1 25 June 1991
@@ -15,7 +15,8 @@ $OpenBSD: patch-Imakefile,v 1.2 2004/01/01 15:20:21 espie Exp $
  
 -/**/# Here's what to change to customize the installation...
 -/**/# Where do you want this stuff (if the defaults aren't okay)?
--
++XCOMM Nothing to change below here
+ 
 -BINDIR = /home/cur/bri/bin/mbins/${M}bin
 -LIBDIR = /home/cur/bri/lib
 -MANDIR = /home/cur/bri/Man
@@ -34,8 +35,7 @@ $OpenBSD: patch-Imakefile,v 1.2 2004/01/01 15:20:21 espie Exp $
 -CDEBUGFLAGS = -g
 -
 -/**/# Nothing to change below here
-+XCOMM Nothing to change below here
- 
+-
  DEPLIBS = XawClientDepLibs
 -EXTRA_INCLUDES  = -I$(XPM_INCLUDE_DIR)
 -LOCAL_LIBRARIES = -L$(XPM_LIB_DIR) -lXpm XawClientLibs
