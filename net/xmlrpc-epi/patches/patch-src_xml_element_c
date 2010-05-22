@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_xml_element_c,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
---- src/xml_element.c.orig	Wed Feb  7 18:44:03 2007
-+++ src/xml_element.c	Wed Feb  7 18:44:29 2007
-@@ -88,10 +88,10 @@ static const char rcsid[] = "#(@) $Id: x
+$OpenBSD: patch-src_xml_element_c,v 1.2 2010/05/22 13:22:53 espie Exp $
+--- src/xml_element.c.orig	Thu May 23 19:46:51 2002
++++ src/xml_element.c	Sat May 22 15:19:57 2010
+@@ -88,10 +88,10 @@ static const char rcsid[] = "#(@) $Id: xml_element.c,v
  #include <stdlib.h>
  #include <string.h>
  #include <ctype.h>
@@ -13,3 +13,12 @@ $OpenBSD: patch-src_xml_element_c,v 1.1.1.1 2007/02/08 03:23:35 todd Exp $
  #include "encodings.h"
  
  #define my_free(thing)  if(thing) {free(thing); thing = 0;}
+@@ -170,7 +170,7 @@ void xml_elem_free_non_recurse(xml_element* root) {
+ 
+       Q_Destroy(&root->children);
+       Q_Destroy(&root->attrs);
+-      my_free((char*)root->name);
++      my_free(root->name);
+       simplestring_free(&root->text);
+       my_free(root);
+    }

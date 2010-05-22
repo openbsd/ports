@@ -1,7 +1,7 @@
-$OpenBSD: patch-sample_Makefile_in,v 1.2 2007/02/08 19:00:17 todd Exp $
---- sample/Makefile.in.orig	Sun Jun 23 18:48:29 2002
-+++ sample/Makefile.in	Thu Feb  8 11:22:32 2007
-@@ -82,25 +82,25 @@ INCLUDES = -I../src -I../expat/xmltok -I
+$OpenBSD: patch-sample_Makefile_in,v 1.3 2010/05/22 13:22:53 espie Exp $
+--- sample/Makefile.in.orig	Mon Jun 24 01:48:29 2002
++++ sample/Makefile.in	Sat May 22 15:16:29 2010
+@@ -82,25 +82,25 @@ INCLUDES = -I../src -I../expat/xmltok -I../expat/xmlpa
  bin_PROGRAMS = sample client server server_compliance_test memtest hello_client hello_server
  
  sample_SOURCES = sample.c
