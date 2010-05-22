@@ -1,5 +1,5 @@
 --- movelog.c.orig	Sat Sep 28 19:46:17 1991
-+++ movelog.c	Sun Aug  3 09:33:25 2008
++++ movelog.c	Sat May 22 23:29:46 2010
 @@ -17,6 +17,7 @@
  #include	"defs.h"
  #include	"globals.h"
@@ -8,7 +8,18 @@
  #include	<sys/file.h>
  #include	<ctype.h>
  #ifdef SVR4
-@@ -745,6 +746,7 @@
+@@ -31,7 +32,10 @@ static int	cache_size = 0;
+ int	deck_cache[NUM_CARDS];
+ int	deck_index = 0;
+ 
++
+ extern int	cheat_count;
++static int card_to_int(CardPtr);
++static int restore_game(char *, char *);
+ 
+ make_deck_cache()
+ {
+@@ -745,6 +749,7 @@ char	*fname;
  FILE	*fp;
  char	buf[1024], buf2[1024];
  char	*dp;
@@ -16,7 +27,7 @@
  
  	fname = remove_newlines(fname);
  	if ((fp = fopen(fname, "r")) == NULL)	{
-@@ -756,7 +758,8 @@
+@@ -756,7 +761,8 @@ char	*dp;
  
  	/* read card string */
  	dp = buf;
@@ -26,7 +37,7 @@
  		if (*dp == '\n')	/* ignore any CR */
  			continue;
  		if (*dp == '.')
-@@ -767,7 +770,8 @@
+@@ -767,7 +773,8 @@ char	*dp;
  
  	/* read moves string */
  	dp = buf2;
