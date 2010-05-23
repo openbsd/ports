@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/04/22 16:12:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.28 2010/05/23 09:34:41 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ SHARED_LIBS=	csirocsa	2.0	\
 
 PKGNAME-main=	${DISTNAME}p2
 PKGNAME-c++ =	plplot-c++-${VERSION}p2
-PKGNAME-f77=	plplot-f77-${VERSION}p3
+PKGNAME-f77=	plplot-f77-${VERSION}p4
 
 CATEGORIES=	math graphics
 
@@ -34,13 +34,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plplot/}
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		fortran
+
+MODFORTRAN_WANTG77 = Yes
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
 BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS} \
 		::graphics/gd \
-		::print/ghostscript/gnu-fonts
+		::print/ghostscript/gnu-fonts \
+		${MODFORTRAN_BUILD_DEPENDS}
+
 myRUN_DEPENDS=	::print/ghostscript/gnu-fonts
 
 MODULES+=	devel/cmake
@@ -74,7 +79,7 @@ myWANTLIB=	m z freetype Xau Xdmcp Xrender X11 Xext SM ICE expat \
 
 WANTLIB-main=		${myWANTLIB} c
 WANTLIB-c++ =		${myWANTLIB}
-WANTLIB-f77+=		${myWANTLIB} g2c
+WANTLIB-f77+=		${myWANTLIB} ${MODFORTRAN_WANTLIB}
 
 myLIB_DEPENDS=	glib-2.0,gmodule-2.0,gobject-2.0::devel/glib2 \
 		pango-1.0,pangocairo-1.0,pangoft2-1.0::devel/pango \
@@ -86,7 +91,8 @@ LIB_DEPENDS-main=	${myLIB_DEPENDS}
 LIB_DEPENDS-c++ =	plplotd,csirocsa::math/plplot,-main \
 			${myLIB_DEPENDS}
 LIB_DEPENDS-f77=	plplotd,csirocsa::math/plplot,-main \
-			${myLIB_DEPENDS}
+			${myLIB_DEPENDS} \
+			${MODFORTRAN_LIBS_DEPENDS}
 
 RUN_DEPENDS-main=	${MODLIBICONV_RUN_DEPENDS} ${myRUN_DEPENDS}
 RUN_DEPENDS-c++ =
