@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2010/05/23 16:15:50 espie Exp $
+--- src/Makefile.in.orig	Sun May 23 18:14:41 2010
++++ src/Makefile.in	Sun May 23 18:14:48 2010
+@@ -22,7 +22,7 @@ WFLAGS_GCC	= -Wshadow -Wpointer-arith -Waggregate-retu
+ 		-Wbad-function-cast -Wsign-compare -Wchar-subscripts \
+ 		-Wcomment -Wformat -Wformat-nonliteral -Wformat-security \
+ 		-Wimplicit -Wmain -Wmissing-braces -Wparentheses \
+-		-Wreturn-type -Wswitch -Wmulticharacter \
++		-Wreturn-type -Wswitch \
+ 		-Wmissing-noreturn -Wmissing-declarations @WFLAGS_3X@
+ WFLAGS_ICC	= -Wall -wd193,279,810,869,1418,1419
+ WFLAGS_3X	= -Wsequence-point -Wdiv-by-zero -W -Wunused \
