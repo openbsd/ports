@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_main_h,v 1.1 2010/05/23 01:05:38 espie Exp $
+--- src/main.h.orig	Sun May 23 02:57:48 2010
++++ src/main.h	Sun May 23 02:58:57 2010
+@@ -459,7 +459,6 @@ extern struct PlayerInfo	stored_player[], *local_playe
+ #endif
+ extern struct HiScore		highscore[];
+ extern struct TapeInfo		tape;
+-extern struct JoystickInfo	joystick[];
+ extern struct SetupInfo		setup;
+ extern struct GameInfo		game;
+ extern struct LaserInfo		laser;
