@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/05/31 20:00:22 jim Exp $
+# $OpenBSD: Makefile,v 1.7 2010/05/23 23:11:45 sthen Exp $
 
 COMMENT=		simple X screen locker
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 c Xext
 
-MASTER_SITES=		http://code.suckless.org/dl/tools/
+MASTER_SITES=		http://dl.suckless.org/tools/
 
 MAKE_ENV=		CC="${CC}" \
 			LDFLAGS="${LDFLAGS}"

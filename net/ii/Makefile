@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/25 13:11:07 jim Exp $
+# $OpenBSD: Makefile,v 1.4 2010/05/23 23:11:45 sthen Exp $
 
 COMMENT=		minimalist IRC client
 
@@ -6,7 +6,7 @@ DISTNAME=		ii-1.4
 CATEGORIES=		net
 
 HOMEPAGE=		http://tools.suckless.org/ii
-MASTER_SITES=		http://code.suckless.org/dl/tools/
+MASTER_SITES=		http://dl.suckless.org/tools/
 
 MAINTAINER=		Gleydson Soares <gsoares@trusted.com.br>
 
