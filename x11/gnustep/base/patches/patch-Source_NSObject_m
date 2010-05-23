@@ -1,13 +1,13 @@
-$OpenBSD: patch-Source_NSObject_m,v 1.5 2010/05/16 08:06:33 ajacoutot Exp $
+$OpenBSD: patch-Source_NSObject_m,v 1.6 2010/05/23 10:32:48 espie Exp $
 --- Source/NSObject.m.orig	Mon Apr 26 23:32:22 2010
-+++ Source/NSObject.m	Sun May 16 09:56:15 2010
++++ Source/NSObject.m	Fri May 21 19:55:59 2010
 @@ -57,9 +57,11 @@
  #ifdef	HAVE_SYS_SIGNAL_H
  #include	<sys/signal.h>
  #endif
 -#ifdef __FreeBSD__
 +#if __GNUC__ >= 4
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#if defined(__FreeBSD__)
  #include <fenv.h>
  #endif
 +#endif // __GNUC__
@@ -20,7 +20,7 @@ $OpenBSD: patch-Source_NSObject_m,v 1.5 2010/05/16 08:06:33 ajacoutot Exp $
  
 -#if defined(__FreeBSD__) && defined(__i386__)
 +#if __GNUC__ >= 4
-+#if defined(__FreeBSD__) || defined(__OpenBSD__) && defined(__i386__)
++#if defined(__FreeBSD__)
        // Manipulate the FPU to add the exception mask. (Fixes SIGFPE
        // problems on *BSD)
        // Note this only works on x86
