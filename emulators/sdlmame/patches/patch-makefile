@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile,v 1.1.1.1 2009/03/17 19:55:09 landry Exp $
---- makefile.orig	Thu Mar  5 15:16:35 2009
-+++ makefile	Sun Mar 15 15:05:18 2009
+$OpenBSD: patch-makefile,v 1.2 2010/05/23 09:19:45 espie Exp $
+--- makefile.orig	Sun Mar 29 01:50:01 2009
++++ makefile	Mon May 17 21:55:57 2010
 @@ -125,10 +125,10 @@ endif
  # BIGENDIAN = 1
  
@@ -55,3 +55,13 @@ $OpenBSD: patch-makefile,v 1.1.1.1 2009/03/17 19:55:09 landry Exp $
  
  # if we are optimizing, include optimization options
  # and make all errors into warnings
+@@ -355,8 +355,7 @@ CCOMFLAGS += \
+ # warnings only applicable to C compiles
+ CONLYFLAGS += \
+ 	-Wpointer-arith \
+-	-Wbad-function-cast \
+-	-Wstrict-prototypes
++	-Wbad-function-cast
+ 
+ # this warning is not supported on the os2 compilers
+ ifneq ($(TARGETOS),os2)
