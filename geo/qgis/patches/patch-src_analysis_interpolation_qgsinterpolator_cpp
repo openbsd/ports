@@ -1,12 +1,15 @@
-$OpenBSD: patch-src_analysis_interpolation_qgsinterpolator_cpp,v 1.1 2009/10/29 19:59:38 landry Exp $
---- src/analysis/interpolation/qgsinterpolator.cpp.orig	Tue Oct 27 20:45:47 2009
-+++ src/analysis/interpolation/qgsinterpolator.cpp	Tue Oct 27 20:46:01 2009
-@@ -92,7 +92,7 @@ int QgsInterpolator::cacheBaseData()
-           continue;
-         }
-         attributeValue = att_it.value().toDouble( &attributeConversionOk );
--        if ( !attributeConversionOk || isnan( attributeValue ) ) //don't consider vertices with attributes like 'nan' for the interpolation
-+        if ( !attributeConversionOk || __gnu_cxx::isnan( attributeValue ) ) //don't consider vertices with attributes like 'nan' for the interpolation
-         {
-           continue;
-         }
+$OpenBSD: patch-src_analysis_interpolation_qgsinterpolator_cpp,v 1.2 2010/05/23 17:50:56 espie Exp $
+--- src/analysis/interpolation/qgsinterpolator.cpp.orig	Sat Nov 28 18:07:29 2009
++++ src/analysis/interpolation/qgsinterpolator.cpp	Sun May 23 19:45:34 2010
+@@ -28,6 +28,11 @@
+ #define isnan(f) _isnan(f)
+ #endif
+ 
++#if __GNUC__ >= 4
++using std::isnan;
++#else
++using __gnu_cxx::isnan;
++#endif
+ QgsInterpolator::QgsInterpolator( const QList<LayerData>& layerData ): mDataIsCached( false ), mLayerData( layerData )
+ {
+ 
