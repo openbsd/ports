@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcpdpriv_0,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
+$OpenBSD: patch-tcpdpriv_0,v 1.2 2010/05/23 16:57:29 espie Exp $
 --- tcpdpriv.0.orig	Wed Jun 25 01:12:20 1997
-+++ tcpdpriv.0	Thu Feb 20 14:55:32 2003
++++ tcpdpriv.0	Sat May 22 17:23:54 2010
 @@ -210,9 +210,6 @@ BBUUGGSS
       TTccppddpprriivv supports only SLIP, PPP, Ethernet, FDDI, and the NULL data
       links.

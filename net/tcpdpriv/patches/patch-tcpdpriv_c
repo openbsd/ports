@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
+$OpenBSD: patch-tcpdpriv_c,v 1.2 2010/05/23 16:57:29 espie Exp $
 --- tcpdpriv.c.orig	Thu Aug 28 02:07:55 1997
-+++ tcpdpriv.c	Sun Mar 23 08:45:53 2003
++++ tcpdpriv.c	Sun May 23 18:56:10 2010
 @@ -93,7 +93,7 @@ static char rcsid[] =
  #if	!defined(osf1)
  #include <net/slip.h>
@@ -21,7 +21,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  
  /*
   * deal with systems in which bpf_int32 and bpf_u_int32 are not defined
-@@ -205,6 +209,10 @@ typedef u_int bpf_u_int32;
+@@ -205,10 +209,15 @@ typedef u_int bpf_u_int32;
  #endif	/* (BYTE_ORDER == LITTLE_ENDIAN) */
  #endif	/* !defined(NTOHL) */
  
@@ -32,7 +32,12 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  /*
   * function prototypes
   */
-@@ -244,6 +252,10 @@ int	statfs __P((const char *, struct sta
+ 
++static void usage(char *);
+     /* macros for ansi/non-ansi compatibility */
+ #ifndef __P
+ #if defined(_USE_PROTOTYPES) && (defined(__STDC__) || defined(__cplusplus))
+@@ -244,6 +253,10 @@ int	statfs __P((const char *, struct statfs *));
  #if	defined(sun)		/* why not defined in Solaris? */
  int	gettimeofday __P((struct timeval *, struct timezone *));
  #endif	/* defined(sun) */
@@ -43,7 +48,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  
  /*
   * typedefs...
-@@ -274,6 +286,32 @@ struct nodehdr {
+@@ -274,6 +287,32 @@ struct nodehdr {
  
  #define	NH_FL_RANDOM_PROPAGATE	1	/* propagate random number down */
  #define	NH_FL_COUNTER		2	/* bump a counter */
@@ -76,7 +81,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  
  /*
   * globally scoped variables
-@@ -299,6 +337,12 @@ nodehdr_t
+@@ -299,6 +338,12 @@ nodehdr_t
  	    addr_byte_2 = { NH_FL_COUNTER, 0x0000ff00, 0 },
  	    addr_byte_3 = { NH_FL_COUNTER, 0x000000ff, 0 };
  
@@ -89,7 +94,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
      /* trees for tcp ports */
  nodehdr_t
      tcpport_whole,
-@@ -575,6 +619,77 @@ bi_ffs(u_long value)
+@@ -575,6 +620,77 @@ bi_ffs(u_long value)
      return add+bvals[value&0xf];
  }
  
@@ -167,7 +172,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  /*
   * Subtract a quantity from a standard IP checksum (network order)
   *
-@@ -711,6 +826,36 @@ freetree(node_p node)
+@@ -711,6 +827,36 @@ freetree(node_p node)
  	node = next;
      }
  }
@@ -204,7 +209,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  
  /*
   *    M   A   S   K   I   N   G
-@@ -740,11 +885,17 @@ make_output(u_long value, int flip, node
+@@ -740,11 +886,17 @@ make_output(u_long value, int flip, nodehdr_p hdr)
  			 * bit  flip:		flip bit (XOR with 1) in value
  			 * bits (flip+1)-32:	random
  			 */
@@ -227,7 +232,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  	}
      } else if (hdr->flags&NH_FL_COUNTER) {
  	hdr->counter += hdr->bump;
-@@ -809,6 +960,127 @@ make_peer(u_long input, node_p old, node
+@@ -809,6 +961,127 @@ make_peer(u_long input, node_p old, nodehdr_p hdr)
  
      return down[bitvalue];
  }
@@ -355,7 +360,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  
  /*
   *   L   O   O   K   U   P
-@@ -945,6 +1217,86 @@ dumptable(node_p node, int level)
+@@ -945,6 +1218,86 @@ dumptable(node_p node, int level)
      }
  }
  #endif	/* DEBUG */
@@ -442,7 +447,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  
  /*
   *   H   I   D   I   N   G
-@@ -960,6 +1312,9 @@ hide_addr(u_long addr, u_int ttl)
+@@ -960,6 +1313,9 @@ hide_addr(u_long addr, u_int ttl)
  	return addr;
      }
  
@@ -452,7 +457,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
      switch (opt_ipaddr) {
      case 0:
  	addr_whole.cur_input = addr;
-@@ -1028,6 +1383,62 @@ hide_udpport(u_short udpport)
+@@ -1028,6 +1384,62 @@ hide_udpport(u_short udpport)
      return hide_port(udpport,
  	    &udpport_whole, &udpport_byte_0, &udpport_byte_1, opt_udpports);
  }
@@ -515,7 +520,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  
  /*
   *   T   C   P
-@@ -1163,6 +1574,7 @@ dumpudp(u_char *p, int caplen, int lengt
+@@ -1163,6 +1575,7 @@ dumpudp(u_char *p, int caplen, int length, u_long phof
  {
      u_short inport, outport;
      struct udphdr *udp = (struct udphdr *)p;
@@ -523,7 +528,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  
      /* source port */
      if (caplen < 2) {
-@@ -1174,7 +1586,10 @@ dumpudp(u_char *p, int caplen, int lengt
+@@ -1174,7 +1587,10 @@ dumpudp(u_char *p, int caplen, int length, u_long phof
  	phoffset = cksum_subtract(phoffset, udp->uh_sport);
  	udp->uh_sport = htons(outport);
  	phoffset = cksum_add(phoffset, udp->uh_sport);
@@ -534,7 +539,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
      caplen -= 2; length -= 2; p += 2;
  
      /* destination port */
-@@ -1187,7 +1602,10 @@ dumpudp(u_char *p, int caplen, int lengt
+@@ -1187,7 +1603,10 @@ dumpudp(u_char *p, int caplen, int length, u_long phof
  	phoffset = cksum_subtract(phoffset, udp->uh_dport);
  	udp->uh_dport = htons(outport);
  	phoffset = cksum_add(phoffset, udp->uh_dport);
@@ -545,7 +550,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
      caplen -= 2; length -= 2; p += 2;
  
      /* length */
-@@ -1207,11 +1625,187 @@ dumpudp(u_char *p, int caplen, int lengt
+@@ -1207,11 +1626,187 @@ dumpudp(u_char *p, int caplen, int length, u_long phof
      }
      caplen -= 2; length -= 2; p += 2;
  
@@ -733,24 +738,25 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
   *   I   P
   */
  
-@@ -1320,7 +1914,15 @@ dumpip(u_char *p, int caplen, int length
+@@ -1320,8 +1915,16 @@ dumpip(u_char *p, int caplen, int length)
  #define IPPROTO_IPIP 4
  #endif	/* ndef IPPROTO_IPIP */
  	case IPPROTO_IPIP:
 -	    p = dumpip(p, caplen, length);
 +	    if (caplen >= sizeof(struct ip))		
 +		p = dumpip(p, caplen, length);
-+	    break;
+ 	    break;
 +	case IPPROTO_ICMP:
 +	    p = dumpicmp(p, caplen, length, phoffset);
 +	    break;
 +	case IPPROTO_IPV6:
 +	    if (caplen >= sizeof(struct ip6_hdr))
 +		p = dumpip6(p, caplen, length);
- 	    break;
++	    break;
  	default:
  	    break;
-@@ -1329,6 +1931,109 @@ dumpip(u_char *p, int caplen, int length
+ 	}
+@@ -1329,6 +1932,109 @@ dumpip(u_char *p, int caplen, int length)
  
      return p;
  }
@@ -860,7 +866,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  
  /*
   *   D   U   M   P   E   R
-@@ -1390,6 +2095,8 @@ dumper(u_char *user, const struct pcap_p
+@@ -1390,6 +2096,8 @@ dumper(u_char *user, const struct pcap_pkthdr *inh, co
  	ether_type = ntohs(ep->ether_type);
  	if (ether_type == 0x800) {	/* oh, good! */
  	    p = dumpip(p, caplen, length);
@@ -869,7 +875,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  	} else {
  	    uncoded++;
  	    return;
-@@ -1431,6 +2138,11 @@ dumper(u_char *user, const struct pcap_p
+@@ -1431,6 +2139,11 @@ dumper(u_char *user, const struct pcap_pkthdr *inh, co
  		    length -= (sizeof SNAPHDR+2);
  		    p += (sizeof SNAPHDR+2);
  		    p = dumpip(p, caplen, length);
@@ -881,7 +887,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
  		} else {
  		    uncoded++;
  		    return;
-@@ -1454,6 +2166,39 @@ dumper(u_char *user, const struct pcap_p
+@@ -1454,6 +2167,39 @@ dumper(u_char *user, const struct pcap_pkthdr *inh, co
  	caplen -= NULL_HDRLEN;
  	p = dumpip(p, caplen, length);
  	break;
@@ -921,7 +927,7 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
      default:
  	fprintf(stderr, "unknown DLT %d\n", pcap_dlt);
  	exit(1);
-@@ -1492,6 +2237,10 @@ dlt_hdrlen(int dlt)
+@@ -1492,6 +2238,10 @@ dlt_hdrlen(int dlt)
  #endif	/* defined(FDDI_HDRLEN) */
      case DLT_NULL:
  	return NULL_HDRLEN;
@@ -932,7 +938,16 @@ $OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
      default:
  	fprintf(stderr, "unknown DLT %d\n", dlt);
  	exit(1);
-@@ -1515,6 +2264,10 @@ verify_and_print_args(char *cmd)
+@@ -1501,8 +2251,6 @@ dlt_hdrlen(int dlt)
+ static void
+ verify_and_print_args(char *cmd)
+ {
+-    static void usage(char *cmd);
+-
+     lookup_init(&addr_propagate);
+ 
+     lookup_init(&addr_whole);
+@@ -1515,6 +2263,10 @@ verify_and_print_args(char *cmd)
      lookup_init(&addr_byte_2);
      lookup_init(&addr_byte_3);
  
