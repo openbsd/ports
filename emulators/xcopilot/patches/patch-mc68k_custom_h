@@ -1,0 +1,11 @@
+$OpenBSD: patch-mc68k_custom_h,v 1.1 2010/05/23 17:39:14 espie Exp $
+--- mc68k/custom.h.orig	Sun May 23 19:32:14 2010
++++ mc68k/custom.h	Sun May 23 19:32:20 2010
+@@ -43,7 +43,6 @@ extern void dumpcustom(void);
+ extern void do_cycles(int longtime);
+ extern int do_api(int api);
+ 
+-extern unsigned long cycles;
+ extern unsigned long specialflags;
+ 
+ #define SPCFLAG_STOP 2

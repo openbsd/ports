@@ -1,0 +1,20 @@
+$OpenBSD: patch-config_h_in,v 1.1 2010/05/23 17:39:14 espie Exp $
+--- config.h.in.orig	Sun May 23 19:35:20 2010
++++ config.h.in	Sun May 23 19:35:30 2010
+@@ -68,15 +68,4 @@
+ /* Define if you have the <sys/select.h> header file.  */
+ #undef HAVE_SYS_SELECT_H
+ 
+-/* AIX requires this to be the first thing in the file.  */
+-#if HAVE_ALLOCA_H
+-# include <alloca.h>
+-#else
+-# ifdef _AIX
+- #pragma alloca
+-# else
+-#  ifndef alloca /* predefined by HP cc +Olibcalls */
+-char *alloca ();
+-#  endif
+-# endif
+-#endif
++#include <stdlib.h>

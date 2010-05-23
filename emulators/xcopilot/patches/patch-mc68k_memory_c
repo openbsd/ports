@@ -1,0 +1,29 @@
+$OpenBSD: patch-mc68k_memory_c,v 1.1 2010/05/23 17:39:14 espie Exp $
+--- mc68k/memory.c.orig	Sun May 23 19:36:04 2010
++++ mc68k/memory.c	Sun May 23 19:37:33 2010
+@@ -340,6 +340,7 @@ UWORD *rom_xlate(CPTR addr)
+ static int
+ verify_entrypoint(const void *rom)
+ {
++    char *rp = rom;
+     const unsigned char _bootsign[] = { 0x4e, 0xfa, 0x00, 0x00, 'b', 'o', 'o', 't',
+ 			       0x27, 0x10, 0xff };
+     const unsigned char _bootmask[] = { 0xff, 0xff, 0x00, 0x00, 0xff, 0xff, 0xff, 0xff,
+@@ -348,7 +349,7 @@ verify_entrypoint(const void *rom)
+     const unsigned char *bootsign = _bootsign, *bootmask = _bootmask;
+     
+     while ((*bootsign & *bootmask) == *bootsign)
+-	if ((*((char *)rom)++ & *bootmask++) != *bootsign++)
++	if ((*(rp)++ & *bootmask++) != *bootsign++)
+ 	    return 0;
+ 
+     return 1;
+@@ -446,7 +447,7 @@ static int load_rom(const char *dir, const char *romfi
+ 	  return PILOTCPU_ERROR_LOADING_ROM;
+ 
+ 	memcpy(((char *)rommemory) - offset, rommemory, 256);
+-	((char *)rommemory) -= offset;
++	rommemory = (char *)rommemory - offset;
+       }
+     }
+   }
