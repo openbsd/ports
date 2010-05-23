@@ -1,0 +1,11 @@
+$OpenBSD: patch-dweputils_dwepcrack_weakksa_c,v 1.1 2010/05/23 16:23:05 espie Exp $
+--- dweputils/dwepcrack/weakksa.c.orig	Sun May 23 18:21:52 2010
++++ dweputils/dwepcrack/weakksa.c	Sun May 23 18:21:57 2010
+@@ -161,6 +161,7 @@ weakksacrack(char *filename)
+           samples[B].s[samples[B].len++].byte = iv[4] ^ 0xaa;
+ 
+           fail:
++	  	;
+         }
+       }
+     }
