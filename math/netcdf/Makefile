@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2007/11/29 13:43:08 okan Exp $ 
+# $OpenBSD: Makefile,v 1.13 2010/05/23 10:22:33 espie Exp $ 
 # $FreeBSD: ports/math/netcdf/Makefile,v 1.7 2000/06/16 21:51:39 asami Exp $
 
 COMMENT=	library for machine-independent, array-oriented data access
@@ -13,6 +13,9 @@ SHARED_LIBS=	netcdf		4.0 \
 HOMEPAGE=	http://www.unidata.ucar.edu/packages/netcdf/
 
 MAINTAINER=	Tom Knienieder <tom@knienieder.com>
+MODULES =	fortran
+MODFORTRAN_WANTG77 =	Yes
+BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} 
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
