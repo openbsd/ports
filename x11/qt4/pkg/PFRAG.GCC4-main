@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.GCC4-main,v 1.1 2009/04/18 17:25:43 espie Exp $
+@comment $OpenBSD: PFRAG.GCC4-main,v 1.2 2010/05/23 10:36:49 espie Exp $
 include/X11/qt4/Qt/QtWebKit
 include/X11/qt4/Qt/qwebdatabase.h
 include/X11/qt4/Qt/qwebframe.h
@@ -11,23 +11,31 @@ include/X11/qt4/Qt/qwebsecurityorigin.h
 include/X11/qt4/Qt/qwebsettings.h
 include/X11/qt4/Qt/qwebview.h
 include/X11/qt4/QtWebKit/
+include/X11/qt4/QtWebKit/QGraphicsWebView
 include/X11/qt4/QtWebKit/QWebDatabase
+include/X11/qt4/QtWebKit/QWebElement
+include/X11/qt4/QtWebKit/QWebElementCollection
 include/X11/qt4/QtWebKit/QWebFrame
 include/X11/qt4/QtWebKit/QWebHistory
 include/X11/qt4/QtWebKit/QWebHistoryInterface
 include/X11/qt4/QtWebKit/QWebHistoryItem
 include/X11/qt4/QtWebKit/QWebHitTestResult
+include/X11/qt4/QtWebKit/QWebInspector
 include/X11/qt4/QtWebKit/QWebPage
 include/X11/qt4/QtWebKit/QWebPluginFactory
 include/X11/qt4/QtWebKit/QWebSecurityOrigin
 include/X11/qt4/QtWebKit/QWebSettings
 include/X11/qt4/QtWebKit/QWebView
 include/X11/qt4/QtWebKit/QtWebKit
+include/X11/qt4/QtWebKit/qgraphicswebview.h
 include/X11/qt4/QtWebKit/qwebdatabase.h
+include/X11/qt4/QtWebKit/qwebelement.h
 include/X11/qt4/QtWebKit/qwebframe.h
 include/X11/qt4/QtWebKit/qwebhistory.h
 include/X11/qt4/QtWebKit/qwebhistoryinterface.h
+include/X11/qt4/QtWebKit/qwebinspector.h
 include/X11/qt4/QtWebKit/qwebkitglobal.h
+include/X11/qt4/QtWebKit/qwebkitversion.h
 include/X11/qt4/QtWebKit/qwebpage.h
 include/X11/qt4/QtWebKit/qwebpluginfactory.h
 include/X11/qt4/QtWebKit/qwebsecurityorigin.h

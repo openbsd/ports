@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.17 2010/04/19 09:36:30 espie Exp $
+$OpenBSD: patch-configure,v 1.18 2010/05/23 10:36:49 espie Exp $
 --- configure.orig	Thu Feb 11 16:55:17 2010
-+++ configure	Mon Mar  8 13:27:00 2010
++++ configure	Mon May 17 22:38:44 2010
 @@ -2013,7 +2013,7 @@ while [ "$#" -gt 0 ]; do
      v|verbose)
          if [ "$VAL" = "yes" ]; then
@@ -10,3 +10,12 @@ $OpenBSD: patch-configure,v 1.17 2010/04/19 09:36:30 espie Exp $
              else
                  OPT_VERBOSE=yes
              fi
+@@ -4455,7 +4455,7 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
+     done
+ 
+     QMAKE_BUILD_ERROR=no
+-    (cd "$outpath/qmake"; "$MAKE") || QMAKE_BUILD_ERROR=yes
++    (cd "$outpath/qmake"; "$MAKE" $BOOTSTRAP_MAKE_FLAGS) || QMAKE_BUILD_ERROR=yes
+     [ '!' -z "$QCONFIG_H" ] && mv -f "$QCONFIG_H" "$QMAKE_QCONFIG_H" #move qmake's qconfig.h to qconfig.h.qmake
+     [ '!' -z "$OLD_QCONFIG_H" ] && mv -f "${OLD_QCONFIG_H}.old" "$OLD_QCONFIG_H" #put back qconfig.h
+     [ "$QMAKE_BUILD_ERROR" = "yes" ] && exit 2

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.5 2010/04/19 09:36:30 espie Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.6 2010/05/23 10:36:49 espie Exp $
 %%GCC4%%
 @lib lib/libQt3Support.so.${LIBQt3Support_VERSION}
 @lib lib/libQtAssistantClient.so.${LIBQtAssistantClient_VERSION}
@@ -44,6 +44,7 @@ lib/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so
 lib/qt4/plugins/accessible/libqtaccessiblewidgets.so
 lib/qt4/plugins/designer/libphononwidgets.so
 lib/qt4/plugins/designer/libqt3supportwidgets.so
+lib/qt4/plugins/designer/libqwebview.so
 lib/qt4/plugins/graphicssystems/libqglgraphicssystem.so
 lib/qt4/plugins/graphicssystems/libqtracegraphicssystem.so
 lib/qt4/plugins/iconengines/libqsvgicon.so

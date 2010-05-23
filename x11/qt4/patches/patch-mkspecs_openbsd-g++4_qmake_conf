@@ -1,6 +1,6 @@
-$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.8 2010/05/23 10:36:49 espie Exp $
---- mkspecs/openbsd-g++/qmake.conf.orig	Thu Feb 11 16:55:14 2010
-+++ mkspecs/openbsd-g++/qmake.conf	Mon May 17 22:11:13 2010
+$OpenBSD: patch-mkspecs_openbsd-g++4_qmake_conf,v 1.1 2010/05/23 10:36:49 espie Exp $
+--- mkspecs/openbsd-g++4/qmake.conf.orig	Mon May 17 22:05:26 2010
++++ mkspecs/openbsd-g++4/qmake.conf	Mon May 17 22:11:01 2010
 @@ -7,16 +7,17 @@ TEMPLATE		= app
  CONFIG			+= qt warn_on release link_prl
  QT			+= core gui
@@ -12,12 +12,12 @@ $OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.8 2010/05/23 10:36:49 espie E
  QMAKE_YACC		= yacc
  QMAKE_YACCFLAGS		= -d
 -QMAKE_CFLAGS		= -pipe
-+QMAKE_CFLAGS		= -pipe -O2 $(COPTS)
++QMAKE_CFLAGS		= -pipe -O2 -fno-wrapv $(COPTS)
  QMAKE_CFLAGS_DEPS	= -M
  QMAKE_CFLAGS_WARN_ON	= -Wall -W
  QMAKE_CFLAGS_WARN_OFF	= -w
 -QMAKE_CFLAGS_RELEASE	= -O2
-+QMAKE_CFLAGS_RELEASE	= -O2 $(COPTS)
++QMAKE_CFLAGS_RELEASE	= -O2 -fno-wrapv $(COPTS)
  QMAKE_CFLAGS_DEBUG	= -g
  QMAKE_CFLAGS_SHLIB	= -fPIC
  QMAKE_CFLAGS_STATIC_LIB	= $$QMAKE_CFLAGS_SHLIB

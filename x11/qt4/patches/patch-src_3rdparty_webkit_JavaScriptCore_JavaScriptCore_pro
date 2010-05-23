@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_3rdparty_webkit_JavaScriptCore_JavaScriptCore_pro,v 1.1 2010/05/23 10:36:49 espie Exp $
+--- src/3rdparty/webkit/JavaScriptCore/JavaScriptCore.pro.orig	Mon May 17 16:15:09 2010
++++ src/3rdparty/webkit/JavaScriptCore/JavaScriptCore.pro	Mon May 17 16:15:18 2010
+@@ -26,9 +26,9 @@ INCLUDEPATH += $$GENERATED_SOURCES_DIR
+ 
+ !CONFIG(QTDIR_build) {
+     CONFIG(debug, debug|release) {
+-        OBJECTS_DIR = obj/debug
++        OBJECTS_DIR = .obj/debug
+     } else { # Release
+-        OBJECTS_DIR = obj/release
++        OBJECTS_DIR = .obj/release
+     }
+ }
+ 

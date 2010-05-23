@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2010/04/23 13:30:42 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2010/05/23 10:36:49 espie Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 %%SHARED%%
@@ -346,6 +346,7 @@ include/X11/qt4/Qt/qgraphicssceneevent.h
 include/X11/qt4/Qt/qgraphicssvgitem.h
 include/X11/qt4/Qt/qgraphicstransform.h
 include/X11/qt4/Qt/qgraphicsview.h
+include/X11/qt4/Qt/qgraphicswebview.h
 include/X11/qt4/Qt/qgraphicswidget.h
 include/X11/qt4/Qt/qgridlayout.h
 include/X11/qt4/Qt/qgroupbox.h
@@ -705,6 +706,9 @@ include/X11/qt4/Qt/qvfbhdr.h
 include/X11/qt4/Qt/qvideoframe.h
 include/X11/qt4/Qt/qvideosurfaceformat.h
 include/X11/qt4/Qt/qwaitcondition.h
+include/X11/qt4/Qt/qwebelement.h
+include/X11/qt4/Qt/qwebinspector.h
+include/X11/qt4/Qt/qwebkitversion.h
 include/X11/qt4/Qt/qwhatsthis.h
 include/X11/qt4/Qt/qwidget.h
 include/X11/qt4/Qt/qwidgetaction.h
@@ -3187,6 +3191,11 @@ lib/qt4/mkspecs/openbsd-g++/
 lib/qt4/mkspecs/openbsd-g++/qmake.conf
 @comment lib/qt4/mkspecs/openbsd-g++/qmake.conf.orig
 lib/qt4/mkspecs/openbsd-g++/qplatformdefs.h
+lib/qt4/mkspecs/openbsd-g++4/
+lib/qt4/mkspecs/openbsd-g++4/qmake.conf
+@comment lib/qt4/mkspecs/openbsd-g++4/qmake.conf.orig
+lib/qt4/mkspecs/openbsd-g++4/qplatformdefs.h
+@comment lib/qt4/mkspecs/openbsd-g++4/qplatformdefs.h.orig
 lib/qt4/mkspecs/qconfig.pri
 lib/qt4/mkspecs/qws/
 lib/qt4/mkspecs/qws/freebsd-generic-g++/

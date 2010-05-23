@@ -1,0 +1,10 @@
+$OpenBSD: patch-mkspecs_openbsd-g++4_qplatformdefs_h,v 1.1 2010/05/23 10:36:49 espie Exp $
+--- mkspecs/openbsd-g++4/qplatformdefs.h.orig	Mon May 17 22:19:37 2010
++++ mkspecs/openbsd-g++4/qplatformdefs.h	Mon May 17 22:13:40 2010
+@@ -148,5 +148,6 @@
+ #define QT_AOUT_UNDERSCORE
+ #endif
+ 
++#define QT_GCC4_ATOMICS
+ 
+ #endif // QPLATFORMDEFS_H

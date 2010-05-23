@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_threads_waitconditions_waitconditions_pro,v 1.1 2010/05/23 10:36:49 espie Exp $
+--- examples/threads/waitconditions/waitconditions.pro.orig	Mon May 17 15:52:44 2010
++++ examples/threads/waitconditions/waitconditions.pro	Mon May 17 15:52:52 2010
+@@ -10,7 +10,7 @@ INCLUDEPATH += .
+ # Input
+ SOURCES += waitconditions.cpp
+ CONFIG += qt warn_on create_prl link_prl console
+-OBJECTS_DIR=obj/debug-shared
++OBJECTS_DIR=.obj/debug-shared
+ MOC_DIR=moc/debug-shared
+ 
+ # install
