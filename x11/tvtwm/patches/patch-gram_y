@@ -1,7 +1,7 @@
-$OpenBSD: patch-gram_y,v 1.1 2002/07/18 21:02:02 naddy Exp $
+$OpenBSD: patch-gram_y,v 1.2 2010/05/23 11:29:45 espie Exp $
 --- gram.y.orig	Mon Nov 22 21:10:49 1993
-+++ gram.y	Thu Jul 18 22:15:15 2002
-@@ -79,7 +79,7 @@ unsigned int mods_used = (ShiftMask | Co
++++ gram.y	Sat May 22 16:16:03 2010
+@@ -79,7 +79,7 @@ unsigned int mods_used = (ShiftMask | ControlMask | Mo
  extern int do_single_keyword(), do_string_keyword(), do_number_keyword();
  extern name_list **do_colorlist_keyword();
  extern int do_color_keyword(), do_string_savecolor();

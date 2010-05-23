@@ -1,7 +1,7 @@
-$OpenBSD: patch-Imakefile,v 1.1 2002/07/18 21:02:02 naddy Exp $
+$OpenBSD: patch-Imakefile,v 1.2 2010/05/23 11:29:45 espie Exp $
 --- Imakefile.orig	Fri Feb  3 01:25:44 1995
-+++ Imakefile	Thu Jul 18 22:15:15 2002
-@@ -25,7 +25,7 @@ XCOMM the maximum level of compatibility
++++ Imakefile	Sat May 22 16:16:03 2010
+@@ -25,7 +25,7 @@ XCOMM the maximum level of compatibility with AT&T lex
  XCOMM will define yylineno.  If you get an "Undefined symbol: _yylineno"
  XCOMM when linking, adjust this to work on your system.
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Imakefile,v 1.1 2002/07/18 21:02:02 naddy Exp $
  # ifdef LexCmd
  LEX = LexCmd -l
  # else
-@@ -100,7 +100,7 @@ SpecialObjectRule(vdt.o,NullParameter,$(
+@@ -100,7 +100,7 @@ SpecialObjectRule(vdt.o,NullParameter,$(XLOADIM_DEF))
  SpecialObjectRule(LocPixmap.o,NullParameter,'-DBITMAPDIR="$(INCDIR)/bitmaps"')
  SpecialObjectRule(twm.o,NullParameter,$(TWM_DEFS))
  

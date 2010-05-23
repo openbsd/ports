@@ -1,0 +1,19 @@
+$OpenBSD: patch-parse_c,v 1.1 2010/05/23 11:29:45 espie Exp $
+--- parse.c.orig	Sun May 23 13:26:33 2010
++++ parse.c	Sun May 23 13:27:06 2010
+@@ -81,6 +81,7 @@ static char **stringListSource, *currentString;
+ static int ParseUsePPosition();
+ static int ParseState();
+ static FILE *start_m4();
++static char *m4_defs(Display *, char *);
+ int m4_pid;
+ 
+ /* If you're using flex (and lex on 386 bsd boxes, which *is* flex, really)
+@@ -1627,7 +1628,6 @@ FILE *fraw;
+ 	if (fres == 0) {
+ 		extern Display *dpy;
+ 		extern char *display_name;
+-		static char *m4_defs();
+ 		char *tmp_file;
+ 
+ 		/* Child */
