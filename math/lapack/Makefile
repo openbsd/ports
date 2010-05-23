@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/02/23 20:12:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/05/23 13:04:22 espie Exp $
 
 COMMENT=	library of Fortran 77 linear algebra subroutines
 
@@ -23,6 +23,10 @@ MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	blas.>=1::math/blas
+
+MODULES=	fortran
+MODFORTRAN_WANTG77= Yes
+BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 
 MAKE_ENV=	SHLIB_MAJOR=${LIBlapack_VERSION:R} \
 		SHLIB_MINOR=${LIBlapack_VERSION:E} \
