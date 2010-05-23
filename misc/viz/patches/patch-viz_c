@@ -1,7 +1,12 @@
-$OpenBSD: patch-viz_c,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
+$OpenBSD: patch-viz_c,v 1.2 2010/05/23 16:13:33 espie Exp $
 --- viz.c.orig	Fri Apr 14 15:30:56 1995
-+++ viz.c	Fri Oct 26 23:57:18 2007
-@@ -55,14 +55,17 @@
++++ viz.c	Sun May 23 18:09:40 2010
+@@ -51,18 +51,22 @@
+ #include "string.h"
+ #include "memory.h"
+ #include <errno.h>
++#include <stdlib.h>
+ 
  #define VIZ_MAIN
  #include "viz.h"
  

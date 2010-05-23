@@ -1,0 +1,16 @@
+$OpenBSD: patch-vizgrammar_y,v 1.1 2010/05/23 16:13:33 espie Exp $
+--- vizgrammar.y.orig	Sun May 23 18:08:47 2010
++++ vizgrammar.y	Sun May 23 18:09:03 2010
+@@ -71,11 +71,10 @@
+ #include <ctype.h>
+ #include "string.h"
+ #include <errno.h>
++#include <stdlib.h>
+ 
+ #include "viz.h"
+ 
+-extern errno;
+-extern char *malloc();
+ extern int do_condense;
+ 
+ static mathreg = 0;	/* For handling multiple-term math expressions */

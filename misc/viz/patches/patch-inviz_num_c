@@ -1,0 +1,18 @@
+$OpenBSD: patch-inviz_num_c,v 1.1 2010/05/23 16:13:33 espie Exp $
+--- inviz_num.c.orig	Sun May 23 18:11:00 2010
++++ inviz_num.c	Sun May 23 18:11:38 2010
+@@ -1,5 +1,6 @@
+ #include <stdio.h>
+ #include <ctype.h>
++#include <stdlib.h>
+ #include "translate.h"
+ 
+ extern char *prog;
+@@ -30,7 +31,6 @@ int line;
+     char mode = 'I';
+     char outbuf[1000];
+ 
+-    double strtod();
+     unsigned long strtou();
+ 
+     while (*str) {
