@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_include_drawing_h,v 1.1 2010/05/23 17:22:41 espie Exp $
+--- src/include/drawing.h.orig	Sun May 23 19:15:37 2010
++++ src/include/drawing.h	Sun May 23 19:16:10 2010
+@@ -31,7 +31,7 @@
+ 
+ #define max_diwlastword (PIXEL_XPOS(maxhpos) + 16)
+ 
+-extern int lores_factor, lores_shift, sprite_width;
++extern int lores_factor, lores_shift;
+ 
+ STATIC_INLINE int coord_hw_to_window_x (int x)
+ {
+@@ -196,8 +196,6 @@ struct draw_info {
+     int first_color_change, last_color_change;
+     int nr_color_changes, nr_sprites;
+ };
+-
+-extern int next_sprite_entry;
+ 
+ extern struct decision line_decisions[2 * (MAXVPOS+1) + 1];
+ extern struct draw_info line_drawinfo[2][2 * (MAXVPOS+1) + 1];

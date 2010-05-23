@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_include_inputdevice_h,v 1.1 2010/05/23 17:22:41 espie Exp $
+--- src/include/inputdevice.h.orig	Sun May 23 19:18:47 2010
++++ src/include/inputdevice.h	Sun May 23 19:18:51 2010
+@@ -24,7 +24,6 @@ struct inputdevice_functions {
+     int (*get_widget_type)(int,int,char*,uae_u32*);
+     int (*get_widget_first)(int,int);
+ };
+-extern struct inputdevice_functions idev[3];
+ extern struct inputdevice_functions inputdevicefunc_joystick;
+ extern struct inputdevice_functions inputdevicefunc_mouse;
+ extern struct inputdevice_functions inputdevicefunc_keyboard;

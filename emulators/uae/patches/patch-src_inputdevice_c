@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_inputdevice_c,v 1.1 2010/05/23 17:22:41 espie Exp $
+--- src/inputdevice.c.orig	Sun May 23 19:19:23 2010
++++ src/inputdevice.c	Sun May 23 19:20:27 2010
+@@ -99,6 +99,8 @@ struct uae_input_device2 {
+     int states[MAX_INPUT_DEVICE_EVENTS / 2];
+ };
+ 
++static struct inputdevice_functions idev[3];
++
+ static struct uae_input_device2 joysticks2[MAX_INPUT_DEVICES];
+ static struct uae_input_device2 mice2[MAX_INPUT_DEVICES];
+ 
+@@ -1738,8 +1740,6 @@ int inputdevice_translatekeycode (int keyboard, int sc
+     }
+     return 0;
+ }
+-
+-static struct inputdevice_functions idev[3];
+ 
+ void inputdevice_init (void)
+ {
