@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_getopt_c,v 1.1 2010/05/23 16:42:07 espie Exp $
+--- src/getopt.c.orig	Thu Mar 21 17:55:54 2002
++++ src/getopt.c	Sun May 23 18:41:03 2010
+@@ -32,6 +32,7 @@
+ #undef optind
+ #undef alloca
+ 
++#if 0
+ /* The following modification was submited by Claudio Fanin.  This change *
+  * enables hexcurse to be compiled with SGI's proprietary compiler        */
+ #ifdef _SGIAPI
+@@ -39,8 +40,9 @@
+ #else
+ char *alloca ();
+ #endif
+-#define __alloca      alloca
+ /* end of modification */
++#endif
++#define __alloca      alloca
+ 
+ #ifdef HAVE_OPTIND
+ extern char* optarg;
