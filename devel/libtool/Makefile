@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2009/11/17 10:15:35 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2010/05/23 13:28:16 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT-main=	generic shared library support script
@@ -6,7 +6,7 @@ COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
 
 VERSION=	1.5.26
 DISTNAME=	libtool-${VERSION}
-PKGNAME-main=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 PKGNAME-ltdl=	libltdl-${VERSION}p0
 SHARED_LIBS=		ltdl 4.5
 MODGNU_SHARED_LIBS=	ltdl '-no-undefined'
@@ -17,7 +17,10 @@ MASTER_SITES=	${MASTER_SITE_GNU:=libtool/}
 HOMEPAGE=	http://www.gnu.org/software/libtool/
 
 AUTOCONF_VERSION= 2.61
-BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
+MODULES=	fortran
+MODFORTRAN_WANTG77=	Yes
+BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODFORTRAN_BUILD_DEPENDS}
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
