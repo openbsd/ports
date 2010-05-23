@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.3 2002/09/28 22:19:40 naddy Exp $
+$OpenBSD: patch-Makefile,v 1.4 2010/05/23 16:20:47 espie Exp $
 --- Makefile.orig	Mon Jun 12 10:19:14 2000
-+++ Makefile	Sun Sep 29 00:20:10 2002
++++ Makefile	Sat May 22 16:02:37 2010
 @@ -1,7 +1,36 @@
 -SUBDIRS= Jpeg Zlib Lib Player Plugin Kflash
 +CFLAGS+=-fno-rtti -DXP_UNIX
@@ -17,7 +17,7 @@ $OpenBSD: patch-Makefile,v 1.3 2002/09/28 22:19:40 naddy Exp $
 +	graphic24.o graphic32.o matrix.o movie.o \
 +	program.o script.o shape.o sound.o \
 +	sprite.o sqrt.o text.o
-+
+ 
 +OBJS+=	jcomapi.o jdapimin.o jdapistd.o jdatasrc.o jdcoefct.o \
 +	jdcolor.o jddctmgr.o jdhuff.o jdinput.o jdmainct.o \
 +	jdmarker.o jdmaster.o jdmerge.o jdphuff.o jdpostct.o \
@@ -38,7 +38,7 @@ $OpenBSD: patch-Makefile,v 1.3 2002/09/28 22:19:40 naddy Exp $
 +
 +swfplayer: $(PLAYEROBJS) $(OBJS)
 +	$(CXX) -o $@ main.o $(OBJS) -L/usr/X11R6/lib -lossaudio -lXext -lX11 -lm
- 
++
  clean:
 -	for subdir in $(SUBDIRS); do (cd $$subdir; $(MAKE) clean); done
 +	rm -f $(PLAYEROBJS) $(PLUGINOBJS) $(OBJS) swfplayer

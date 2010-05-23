@@ -1,6 +1,6 @@
-$OpenBSD: patch-Lib_sound_cc,v 1.1.1.1 2001/01/02 12:04:18 reinhard Exp $
---- Lib/sound.cc.orig	Wed Sep  1 15:10:03 1999
-+++ Lib/sound.cc	Mon Jan  1 18:44:57 2001
+$OpenBSD: patch-Lib_sound_cc,v 1.2 2010/05/23 16:20:47 espie Exp $
+--- Lib/sound.cc.orig	Wed Sep  1 17:10:03 1999
++++ Lib/sound.cc	Sat May 22 16:02:37 2010
 @@ -26,8 +26,12 @@
  #include <fcntl.h>
  #include <sys/ioctl.h>
@@ -13,7 +13,7 @@ $OpenBSD: patch-Lib_sound_cc,v 1.1.1.1 2001/01/02 12:04:18 reinhard Exp $
 +#endif
  
  #ifdef RCSID
- static char *rcsid = "$Id: patch-Lib_sound_cc,v 1.1.1.1 2001/01/02 12:04:18 reinhard Exp $";
+ static char *rcsid = "$Id: patch-Lib_sound_cc,v 1.2 2010/05/23 16:20:47 espie Exp $";
 @@ -162,7 +166,7 @@ SoundMixer::SoundMixer(char *device)
  	}
  
