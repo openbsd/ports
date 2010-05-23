@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/06/25 04:46:34 xsa Exp $
---- Makefile.in.orig	Wed May 24 13:53:11 2000
-+++ Makefile.in	Fri Jun 25 00:44:11 2004
+$OpenBSD: patch-Makefile_in,v 1.2 2010/05/23 15:57:34 espie Exp $
+--- Makefile.in.orig	Wed May 24 21:53:11 2000
++++ Makefile.in	Sat May 22 17:23:29 2010
 @@ -1,10 +1,12 @@
 -DEFINES = @DEFS@
 +DEFINES = @DEFS@ -DDEFAULT_DOMAIN=1 -DPIPECOMMAND='"/usr/sbin/sendmail -bs %s"'
@@ -16,7 +16,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2004/06/25 04:46:34 xsa Exp $
  bulk_mailer: bulk_mailer.o
  	$(CC) $(CFLAGS) -o bulk_mailer bulk_mailer.o $(LIBS)
  
-@@ -12,7 +14,11 @@ bulk_mailer.o: bulk_mailer.c patchlevel.
+@@ -12,7 +14,11 @@ bulk_mailer.o: bulk_mailer.c patchlevel.h
  	$(CC) -c $(CFLAGS) bulk_mailer.c
  
  install: bulk_mailer
