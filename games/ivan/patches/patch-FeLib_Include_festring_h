@@ -1,7 +1,7 @@
-$OpenBSD: patch-FeLib_Include_festring_h,v 1.1.1.1 2007/02/04 18:56:38 ajacoutot Exp $
+$OpenBSD: patch-FeLib_Include_festring_h,v 1.2 2010/05/23 15:58:02 espie Exp $
 --- FeLib/Include/festring.h.orig	Tue Oct 26 21:35:44 2004
-+++ FeLib/Include/festring.h	Thu Jan 11 15:53:34 2007
-@@ -142,7 +142,7 @@ inline festring::festring(const festring
++++ FeLib/Include/festring.h	Sat May 22 07:28:38 2010
+@@ -142,7 +142,7 @@ inline festring::festring(const festring& Str)
  inline festring::festring(sizetype N)
  : Size(N), OwnsData(true), Reserved(N|FESTRING_PAGE)
  {
