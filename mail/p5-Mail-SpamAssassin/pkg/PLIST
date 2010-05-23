@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2010/03/24 23:56:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.28 2010/05/23 21:33:28 sthen Exp $
 @pkgpath mail/p5-Mail-SpamAssassin
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
@@ -211,6 +211,7 @@ share/examples/SpamAssassin/v312.pre
 share/examples/SpamAssassin/v320.pre
 @sample ${CONFDIR}/v320.pre
 share/examples/SpamAssassin/v330.pre
+@sample ${CONFDIR}/v330.pre
 @owner _spamdaemon
 @group _spamdaemon
 @sample ${LOCALSTATEDIR}/
