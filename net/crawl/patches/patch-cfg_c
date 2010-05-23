@@ -1,7 +1,7 @@
-$OpenBSD: patch-cfg_c,v 1.1 2002/07/16 16:08:23 naddy Exp $
---- cfg.c.orig	Tue Jul 16 02:06:04 2002
-+++ cfg.c	Tue Jul 16 02:07:08 2002
-@@ -182,7 +182,8 @@ conf_set_now (char *section, char *tag, 
+$OpenBSD: patch-cfg_c,v 1.2 2010/05/23 16:25:21 espie Exp $
+--- cfg.c.orig	Wed Dec 12 23:40:45 2001
++++ cfg.c	Sat May 22 16:42:06 2010
+@@ -182,7 +182,8 @@ conf_set_now (char *section, char *tag, char *value, i
  
  	node = calloc (1, sizeof *node);
  	if (!node) {
@@ -11,7 +11,7 @@ $OpenBSD: patch-cfg_c,v 1.1 2002/07/16 16:08:23 naddy Exp $
  		return (1);
  	}
  	node->section = strdup (section);
-@@ -612,7 +613,8 @@ conf_trans_node (int transaction, enum c
+@@ -612,7 +613,8 @@ conf_trans_node (int transaction, enum conf_op op)
  
  	node = calloc (1, sizeof *node);
  	if (!node) {

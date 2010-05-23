@@ -1,7 +1,7 @@
-$OpenBSD: patch-http_c,v 1.1 2002/07/16 16:08:23 naddy Exp $
---- http.c.orig	Mon Jan 28 04:37:16 2002
-+++ http.c	Tue Jul 16 01:59:54 2002
-@@ -210,7 +210,7 @@ http_init(char *filename)
+$OpenBSD: patch-http_c,v 1.2 2010/05/23 16:25:21 espie Exp $
+--- http.c.orig	Sun May 18 03:50:24 2003
++++ http.c	Sat May 22 16:42:06 2010
+@@ -221,7 +221,7 @@ http_init(char *filename)
  
  	TAILQ_INIT(&dispatchqueue);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-http_c,v 1.1 2002/07/16 16:08:23 naddy Exp $
  
  	if (use_robots)
  		http_robots_init();
-@@ -250,19 +250,21 @@ http_print_stats(void)
+@@ -261,19 +261,21 @@ http_print_stats(void)
  	spent = time(NULL) - http_stats.start;
  	bytes = http_stats.headerbytes + http_stats.bodybytes;
  
@@ -39,7 +39,7 @@ $OpenBSD: patch-http_c,v 1.1 2002/07/16 16:08:23 naddy Exp $
  
  	if (use_robots)
  		http_robots_print_stats();
-@@ -681,7 +683,7 @@ http_savestate(void)
+@@ -677,7 +679,7 @@ http_savestate(void)
  	FILE *fpstate = NULL;
  	int linenum = 0;
  
@@ -48,7 +48,7 @@ $OpenBSD: patch-http_c,v 1.1 2002/07/16 16:08:23 naddy Exp $
  
  	fprintf(stdout, "Terminating...\n");
  
-@@ -885,11 +887,11 @@ dns_schedule(int media)
+@@ -883,11 +885,11 @@ dns_schedule(int media)
  		res = http_schedule(NULL, head);
  
  	if (res == -1 && timerisset(&tv_min) && 
@@ -62,8 +62,8 @@ $OpenBSD: patch-http_c,v 1.1 2002/07/16 16:08:23 naddy Exp $
  	}
  
  	return (res);
-@@ -919,7 +921,7 @@ http_postevent(void)
- 	}
+@@ -922,7 +924,7 @@ http_postevent(void)
+ 	in_httppostevent = 1;
  
  	/* We are calling schedule, schedule adds a new timeout if necessary */
 -	timeout_del(&ev_timeout);
