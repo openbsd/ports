@@ -1,0 +1,11 @@
+$OpenBSD: patch-html_l,v 1.1 2010/05/23 01:10:54 espie Exp $
+--- html.l.orig	Sun May 23 03:08:20 2010
++++ html.l	Sun May 23 03:08:43 2010
+@@ -640,6 +640,7 @@ static void parse_html(void)
+        break;
+ 
+       default:
++      	;
+       }
+ }
+ 

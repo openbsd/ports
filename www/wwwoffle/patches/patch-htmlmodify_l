@@ -1,0 +1,11 @@
+$OpenBSD: patch-htmlmodify_l,v 1.1 2010/05/23 01:10:54 espie Exp $
+--- htmlmodify.l.orig	Sun May 23 03:09:19 2010
++++ htmlmodify.l	Sun May 23 03:09:51 2010
+@@ -399,6 +399,7 @@ static void modify_html(void)
+        break;
+ 
+       default:
++      	;
+       }
+ 
+  if(cache_info)
