@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.996 2010/05/16 10:33:32 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.997 2010/05/23 09:22:50 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2182,9 +2182,13 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 							no) ;; \
 							*) ${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ;; \
 						esac; \
-						${_SYSTRACE_CMD} ${PATCH} ${PATCH_ARGS} < $$i || \
-							{ echo "***>   $$i did not apply cleanly"; \
-							error=true; }\
+						if [ -s $$i ]; then \
+							${_SYSTRACE_CMD} ${PATCH} ${PATCH_ARGS} < $$i || \
+								{ echo "***>   $$i did not apply cleanly"; \
+								error=true; }; \
+						else \
+							${ECHO_MSG} "===>   Ignoring empty patchfile $$i"; \
+						fi; \
 					else \
 						if [ $$i != "patch-*" ]; then \
 							echo "===>   Can't find patch matching $$i"; \
