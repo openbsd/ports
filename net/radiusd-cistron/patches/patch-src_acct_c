@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_acct_c,v 1.6 2004/07/12 13:32:11 danh Exp $
---- src/acct.c.orig	Thu Jul  3 04:09:04 2003
-+++ src/acct.c	Mon Jul 12 08:29:22 2004
-@@ -958,11 +958,11 @@ static int rad_check_ts(struct radutmp *
+$OpenBSD: patch-src_acct_c,v 1.7 2010/05/23 16:30:03 espie Exp $
+--- src/acct.c.orig	Thu Jul  3 10:09:04 2003
++++ src/acct.c	Sat May 22 16:48:14 2010
+@@ -958,11 +958,11 @@ static int rad_check_ts(struct radutmp *ut)
  
  	s = CHECKRAD2;
  	execl(CHECKRAD2, "checkrad", nas->nastype, address, port,

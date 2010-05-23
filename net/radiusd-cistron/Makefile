@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2008/07/01 16:41:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/05/23 16:30:03 espie Exp $
 
 COMMENT=	Cistron RADIUS server
 
@@ -24,7 +24,7 @@ WANTLIB=		c
 WRKSRC=		${WRKDIST}/src
 MAKE_FILE=	Makefile.BSD
 MAKE_FLAGS+=	CC="${CC}" LCRYPT="" DBM="-DUSE_DB1" DBMLIBS="" \
-		CFLAGS="${CFLAGS} -DNOSHADOW -DUSE_SYSLOG"
+		CFLAGS="${CFLAGS} -DNOSHADOW -DUSE_SYSLOG -fno-builtin-log"
 FAKE_FLAGS+=	BINDIR='${WRKINST}${PREFIX}/bin' \
 		SBINDIR='${WRKINST}${PREFIX}/sbin' \
 		MANDIR='${WRKINST}${PREFIX}/man' \
