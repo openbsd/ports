@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_ctcp_h,v 1.1 2010/05/23 16:48:05 espie Exp $
+--- include/ctcp.h.orig	Sun May 23 18:43:11 2010
++++ include/ctcp.h	Sun May 23 18:43:23 2010
+@@ -56,7 +56,6 @@
+ extern CtcpEntryDll *dll_ctcp;
+ 
+ 
+-extern		char	*ctcp_type[];
+ extern		int	sed;
+ extern		int	in_ctcp_flag;
+ 
