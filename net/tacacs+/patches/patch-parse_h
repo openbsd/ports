@@ -1,0 +1,13 @@
+$OpenBSD: patch-parse_h,v 1.1 2010/05/23 16:54:10 espie Exp $
+--- parse.h.orig	Sun May 23 18:52:23 2010
++++ parse.h	Sun May 23 18:52:28 2010
+@@ -18,9 +18,6 @@
+    FITNESS FOR A PARTICULAR PURPOSE.
+ */
+ 
+-/* Dummy password, if nopasswd is specified */
+-extern char *nopasswd_str;
+-
+ /* Keywords & values */
+ 
+ #define S_eof             99
