@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/04 15:49:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/05/23 11:09:36 espie Exp $
 
 COMMENT =		open source MPI-2 implementation
 
 V=			1.4.1
 DISTNAME =		openmpi-$V
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 
 SHARED_LIBS =		mca_common_sm 1.0 \
 			mpi 0.1 \
@@ -18,6 +18,9 @@ CATEGORIES =		devel
 HOMEPAGE =		http://www.open-mpi.org/
 
 MAINTAINER =		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
+MODULES =		fortran
+MODFORTRAN_WANTG77 =	Yes
+BUILD_DEPENDS +=	${MODFORTRAN_BUILD_DEPENDS}
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
