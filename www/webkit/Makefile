@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/05/17 20:16:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2010/05/23 10:27:46 espie Exp $
 
 COMMENT =	open source web browser engine
 
@@ -28,11 +28,17 @@ USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 
 MODULES =	converters/libiconv \
-		textproc/intltool \
-		gcc4
+		textproc/intltool
 
+.include <bsd.own.mk>
+.if ${COMPILER_VERSION:L:Mgcc4*}
+STDCPPLIB = stdc++
+.else
+MODULES += 	gcc4
 MODGCC4_ARCHES =*
 MODGCC4_LANGS =	c c++
+STDCPPLIB = estdc++
+.endif
 
 CONFIGURE_STYLE =	gnu
 
@@ -41,6 +47,7 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -
 		ac_cv_path_FLEX=${LOCALBASE}/bin/gflex
 
 MAKE_FILE =	GNUmakefile
+MAKE_FLAGS =	STDCPPLIB=${STDCPPLIB}
 
 RUN_DEPENDS =	::multimedia/gstreamer-0.10/plugins-ffmpeg \
 		::multimedia/gstreamer-0.10/plugins-good
