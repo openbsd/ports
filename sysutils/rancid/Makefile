@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/23 11:18:43 pea Exp $
+# $OpenBSD: Makefile,v 1.8 2010/05/24 06:40:41 ajacoutot Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
 DISTNAME =	rancid-2.3.3
-PKGNAME =	${DISTNAME}v0
+PKGNAME =	${DISTNAME}p0v0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.shrubbery.net/rancid/
@@ -20,7 +20,7 @@ WANTLIB =	c util
 
 MASTER_SITES =	ftp://ftp.shrubbery.net/pub/rancid/
 
-RUN_DEPENDS =	:expect-*:lang/expect
+RUN_DEPENDS =	:expect-*:lang/expect,no_tk
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 AUTOMAKE_VERSION =	 1.8
