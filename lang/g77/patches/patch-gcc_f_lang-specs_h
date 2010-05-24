@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_f_lang-specs_h,v 1.1.1.1 2010/05/24 22:43:57 espie Exp $
+--- gcc/f/lang-specs.h.orig	Sun May 23 12:06:29 2010
++++ gcc/f/lang-specs.h	Sun May 23 12:06:46 2010
+@@ -31,7 +31,7 @@ the Free Software Foundation, 59 Temple Place - Suite 
+   {"@f77-cpp-input",
+    "cc1 -E -traditional-cpp -D_LANGUAGE_FORTRAN %(cpp_options) \
+         %{E|M|MM:%(cpp_debug_options)}\
+-        %{!M:%{!MM:%{!E:%{!pipe:%g.f} |\n\
++        %{!M:%{!MM:%{!E:%{!pipe:-o %g.f} |\n\
+     f771 %{!pipe:%g.f} %(cc1_options) %{I*} %{!fsyntax-only:%(invoke_as)}}}}", 0},
+   {".r", "@ratfor", 0},
+   {"@ratfor",

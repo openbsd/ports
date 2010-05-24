@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/24 22:43:57 espie Exp $
+@bin bin/f77
+@bin bin/g77
+@comment bin/gccbug
+@info info/g77.info
+lib/gcc-lib/
+lib/gcc-lib/${CONFIG}/
+lib/gcc-lib/${CONFIG}/${V}/
+lib/gcc-lib/${CONFIG}/${V}/cc1
+@bin lib/gcc-lib/${CONFIG}/${V}/f771
+lib/gcc-lib/${CONFIG}/${V}/libgcc.a
+lib/gcc-lib/${CONFIG}/${V}/specs
+@man man/cat1/f77.0
+@man man/cat1/g77.0

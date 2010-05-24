@@ -1,0 +1,3 @@
+g77 compiler, current as of gcc 3.3.5
+Taken from the OpenBSD base tree, as a snapshot before g77 went away,
+with all useful OpenBSD patches from that point.
