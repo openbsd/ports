@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/24 17:57:03 bluhm Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/INET6Glue/
+${P5SITE}/Net/INET6Glue.pm
+${P5SITE}/Net/INET6Glue/FTP.pm
+${P5SITE}/Net/INET6Glue/INET_is_INET6.pm
+@man man/man3p/Net::INET6Glue.3p
+@man man/man3p/Net::INET6Glue::FTP.3p
+@man man/man3p/Net::INET6Glue::INET_is_INET6.3p
