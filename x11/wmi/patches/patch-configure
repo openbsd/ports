@@ -1,6 +1,6 @@
---- configure.orig	Tue Nov 14 13:11:56 2006
-+++ configure	Tue Nov 14 13:12:06 2006
-@@ -5922,7 +5922,7 @@
+--- configure.orig	Sun Oct  3 15:27:59 2004
++++ configure	Sat May 22 10:35:19 2010
+@@ -5922,7 +5922,7 @@ test x$x_includes = "x" && x_includes="/usr/include"
  test x$x_libraries = "x" && x_libraries="/usr/lib"
  
  CFLAGS=""
