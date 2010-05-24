@@ -1,0 +1,11 @@
+$OpenBSD: patch-mutella_gnushare_h,v 1.1 2010/05/24 01:42:27 espie Exp $
+--- mutella/gnushare.h.orig	Mon May 24 03:40:52 2010
++++ mutella/gnushare.h	Mon May 24 03:41:16 2010
+@@ -26,6 +26,7 @@
+ #include "mthread.h"
+ 
+ class MGnuDirector;
++class MShareThread;
+ 
+ class MGnuShare  
+ {
