@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_common_common_h,v 1.1 2010/05/24 09:14:39 espie Exp $
+--- lib/common/common.h.orig	Mon May 24 11:10:29 2010
++++ lib/common/common.h	Mon May 24 11:12:01 2010
+@@ -128,7 +128,11 @@
+ 
+ // define NULL
+ #ifndef NULL
+-#define NULL 0
++#if defined __GNUG__
++#define NULL __null
++#else
++#define NULL 0L
++#endif
+ #endif
+ 
+ // make assert available since we use it a lot
