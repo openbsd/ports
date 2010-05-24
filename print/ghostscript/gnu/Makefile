@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/05/10 18:41:49 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2010/05/24 14:25:05 kili Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -71,8 +71,6 @@ MAKE_FLAGS=	BINDIR=./obj				\
 		SHARE_JPEG=1				\
 		SHARE_LIBPNG=1				\
 		SHARE_ZLIB=1				\
-		SOBINRELDIR=../obj			\
-		SOOBJRELDIR=../obj			\
 		SOC_CFLAGS="${SOC_CFLAGS}"		\
 		SOC_LIBS="${SOC_LIBS}"			\
 		STDLIBS='-pthread -lm -liconv'		\

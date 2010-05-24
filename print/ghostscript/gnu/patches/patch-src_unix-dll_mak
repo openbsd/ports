@@ -1,18 +1,35 @@
-$OpenBSD: patch-src_unix-dll_mak,v 1.7 2009/01/19 12:46:23 kili Exp $
+$OpenBSD: patch-src_unix-dll_mak,v 1.8 2010/05/24 14:25:05 kili Exp $
 --- src/unix-dll.mak.orig	Tue Nov 27 23:58:40 2007
-+++ src/unix-dll.mak	Sun Jan 18 13:00:33 2009
-@@ -39,7 +39,9 @@ GSSOC=$(BINDIR)/$(SOBINRELDIR)/$(GSSOC_XENAME)
++++ src/unix-dll.mak	Mon May 24 15:38:18 2010
+@@ -23,10 +23,6 @@
+ #  export LD_LIBRARY_PATH=/insert-path-here/sobin
+ #  export GS_LIB=/insert-path-here/lib
+ 
+-# Location for building shared object
+-SOOBJRELDIR=../soobj
+-SOBINRELDIR=../sobin
+-
+ # ------------------- Ghostscript shared object --------------------------- #
+ 
+ # Shared object names
+@@ -34,12 +30,14 @@ SOBINRELDIR=../sobin
+ # simple loader (no support for display device)
+ GSSOC_XENAME=$(GS)c$(XE)
+ GSSOC_XE=$(BINDIR)/$(GSSOC_XENAME)
+-GSSOC=$(BINDIR)/$(SOBINRELDIR)/$(GSSOC_XENAME)
++GSSOC=$(BINDIR)/$(GSSOC_XENAME)
+ 
  # loader suporting display device using Gtk+
  GSSOX_XENAME=$(GS)x$(XE)
  GSSOX_XE=$(BINDIR)/$(GSSOX_XENAME)
 -GSSOX=$(BINDIR)/$(SOBINRELDIR)/$(GSSOX_XENAME)
-+GSSOX-Yes=$(BINDIR)/$(SOBINRELDIR)/$(GSSOX_XENAME)
++GSSOX-Yes=$(BINDIR)/$(GSSOX_XENAME)
 +GSSOX-No=
 +GSSOX=$(GSSOX-$(USE_GTK))
  
  # shared library
  GS_SONAME_BASE=lib$(GS)
-@@ -47,9 +49,9 @@ GS_SONAME_BASE=lib$(GS)
+@@ -47,9 +45,9 @@ GS_SONAME_BASE=lib$(GS)
  # GNU/Linux
  GS_SOEXT=so
  GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
@@ -25,7 +42,7 @@ $OpenBSD: patch-src_unix-dll_mak,v 1.7 2009/01/19 12:46:23 kili Exp $
  
  # MacOS X
  #GS_SOEXT=dylib
-@@ -78,11 +80,12 @@ $(GS_SO_MAJOR): $(GS_SO_MAJOR_MINOR)
+@@ -78,29 +76,30 @@ $(GS_SO_MAJOR): $(GS_SO_MAJOR_MINOR)
  
  # Build the small Ghostscript loaders, with Gtk+ and without
  
@@ -42,7 +59,24 @@ $OpenBSD: patch-src_unix-dll_mak,v 1.7 2009/01/19 12:46:23 kili Exp $
  	-L$(BINDIR) -l$(GS) $(SOC_LIBS)
  
  # ------------------------- Recursive make targets ------------------------- #
-@@ -100,7 +103,7 @@ SODEFS=LDFLAGS='$(LDFLAGS) $(LDFLAGS_SO)'\
+ 
+ SODEFS=LDFLAGS='$(LDFLAGS) $(LDFLAGS_SO)'\
+- GS_XE=$(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR_MINOR)\
++ GS_XE=$(BINDIR)/$(GS_SONAME_MAJOR_MINOR)\
+  STDIO_IMPLEMENTATION=c\
+- DISPLAY_DEV=$(DD)$(SOOBJRELDIR)/display.dev\
+- BINDIR=$(BINDIR)/$(SOBINRELDIR)\
+- GLGENDIR=$(GLGENDIR)/$(SOOBJRELDIR)\
+- GLOBJDIR=$(GLOBJDIR)/$(SOOBJRELDIR)\
+- PSGENDIR=$(PSGENDIR)/$(SOOBJRELDIR)\
+- PSOBJDIR=$(PSOBJDIR)/$(SOOBJRELDIR)
++ DISPLAY_DEV=$(DD)display.dev\
++ BINDIR=$(BINDIR)\
++ GLGENDIR=$(GLGENDIR)\
++ GLOBJDIR=$(GLOBJDIR)\
++ PSGENDIR=$(PSGENDIR)\
++ PSOBJDIR=$(PSOBJDIR)
+ 
  
  # Normal shared object
  so: SODIRS
@@ -51,17 +85,43 @@ $OpenBSD: patch-src_unix-dll_mak,v 1.7 2009/01/19 12:46:23 kili Exp $
  
  # Debug shared object
  # Note that this is in the same directory as the normal shared
-@@ -117,12 +120,9 @@ install-so: so
+@@ -117,12 +116,9 @@ install-so: so
  	-mkdir -p $(DESTDIR)$(libdir)
  	-mkdir -p $(DESTDIR)$(gsincludedir)
  	$(INSTALL_PROGRAM) $(GSSOC) $(DESTDIR)$(bindir)/$(GSSOC_XENAME)
 +	[ "$(USE_GTK)" = No ] || \
  	$(INSTALL_PROGRAM) $(GSSOX) $(DESTDIR)$(bindir)/$(GSSOX_XENAME)
- 	$(INSTALL_PROGRAM) $(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR_MINOR)
+-	$(INSTALL_PROGRAM) $(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR_MINOR)
 -	$(RM_) $(DESTDIR)$(libdir)/$(GS_SONAME)
 -	ln -s $(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME)
 -	$(RM_) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR)
 -	ln -s $(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR)
++	$(INSTALL_PROGRAM) $(BINDIR)/$(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR_MINOR)
  	$(INSTALL_DATA) $(PSSRC)iapi.h $(DESTDIR)$(gsincludedir)/iapi.h
  	$(INSTALL_DATA) $(PSSRC)ierrors.h $(DESTDIR)$(gsincludedir)/ierrors.h
  	$(INSTALL_DATA) $(PSSRC)gdevdsp.h $(DESTDIR)$(gsincludedir)/gdevdsp.h
+@@ -131,17 +127,17 @@ soinstall: install-so install-scripts install-data $(I
+ 
+ # Make the build directories
+ SODIRS: STDDIRS
+-	@if test ! -d $(BINDIR)/$(SOBINRELDIR); then mkdir -p $(BINDIR)/$(SOBINRELDIR); fi
+-	@if test ! -d $(GLGENDIR)/$(SOOBJRELDIR); then mkdir -p $(GLGENDIR)/$(SOOBJRELDIR); fi
+-	@if test ! -d $(GLOBJDIR)/$(SOOBJRELDIR); then mkdir -p $(GLOBJDIR)/$(SOOBJRELDIR); fi
+-	@if test ! -d $(PSGENDIR)/$(SOOBJRELDIR); then mkdir -p $(PSGENDIR)/$(SOOBJRELDIR); fi
+-	@if test ! -d $(PSOBJDIR)/$(SOOBJRELDIR); then mkdir -p $(PSOBJDIR)/$(SOOBJRELDIR); fi
++	@if test ! -d $(BINDIR); then mkdir -p $(BINDIR); fi
++	@if test ! -d $(GLGENDIR); then mkdir -p $(GLGENDIR); fi
++	@if test ! -d $(GLOBJDIR); then mkdir -p $(GLOBJDIR); fi
++	@if test ! -d $(PSGENDIR); then mkdir -p $(PSGENDIR); fi
++	@if test ! -d $(PSOBJDIR); then mkdir -p $(PSOBJDIR); fi
+ 
+ 
+ soclean: SODIRS
+ 	$(MAKE) $(SODEFS) clean
+-	$(RM_) $(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME)
+-	$(RM_) $(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR)
++	$(RM_) $(BINDIR)/$(GS_SONAME)
++	$(RM_) $(BINDIR)/$(GS_SONAME_MAJOR)
+ 	$(RM_) $(GSSOC)
+ 	$(RM_) $(GSSOX)
+ 
