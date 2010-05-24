@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.13 2009/07/27 15:19:15 sthen Exp $
---- scripts/mysqld_safe.sh.orig	Tue Mar 31 10:38:52 2009
-+++ scripts/mysqld_safe.sh	Wed May  6 04:27:09 2009
+$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.14 2010/05/24 20:40:41 sthen Exp $
+--- scripts/mysqld_safe.sh.orig	Thu May  6 11:26:32 2010
++++ scripts/mysqld_safe.sh	Thu May 20 20:22:17 2010
 @@ -18,7 +18,8 @@ niceness=0
  logging=init
  want_syslog=0
@@ -11,7 +11,7 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.13 2009/07/27 15:19:15 sthen Exp $
  pid_file=
  err_log=
  
-@@ -407,8 +408,8 @@ mysql_unix_port_dir=`dirname $safe_mysql_unix_port`
+@@ -412,8 +413,8 @@ mysql_unix_port_dir=`dirname $safe_mysql_unix_port`
  if [ ! -d $mysql_unix_port_dir ]
  then
    mkdir $mysql_unix_port_dir
@@ -22,7 +22,7 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.13 2009/07/27 15:19:15 sthen Exp $
  fi
  
  # If the user doesn't specify a binary, we assume name "mysqld"
-@@ -572,35 +573,6 @@ do
+@@ -577,35 +578,6 @@ do
      break
    fi
  
