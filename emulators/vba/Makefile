@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2009/09/18 10:25:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/05/24 08:48:58 espie Exp $
 
 COMMENT=		Gameboy Advance emulator
 
@@ -40,7 +40,8 @@ LIB_DEPENDS=		glademm-2.4::devel/libglademm \
 			cairo::graphics/cairo \
 			png::graphics/png
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.59
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng \
 			-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm" \

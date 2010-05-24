@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure_in,v 1.1 2010/05/24 08:48:58 espie Exp $
+--- configure.in.orig	Mon May 24 10:35:00 2010
++++ configure.in	Mon May 24 10:36:15 2010
+@@ -77,26 +77,6 @@ AC_C_CONST
+ AC_C_INLINE
+ AC_TYPE_SIZE_T
+ AC_STRUCT_TM
+-AC_MSG_CHECKING(for socklen_t)
+-AC_TRY_COMPILE([
+-#include <sys/socket.h>
+-socklen_t x;
+-],[
+-],[
+-AC_MSG_RESULT(yes)
+-],[
+-AC_TRY_COMPILE([
+-#include <sys/socket.h>
+-int accept (int, struct sockaddr *, size_t *);
+-],[
+-],[
+-AC_MSG_RESULT(size_t)
+-AC_DEFINE(socklen_t,size_t)
+-],[
+-AC_MSG_RESULT(int)
+-AC_DEFINE(socklen_t,int)
+-])
+-])
+ 
+ AC_C_BIGENDIAN
+ 
