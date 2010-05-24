@@ -1,7 +1,21 @@
-$OpenBSD: patch-jcc_c,v 1.5 2005/11/14 17:23:36 pvalchev Exp $
---- jcc.c.orig	Fri Oct 30 22:58:47 1998
-+++ jcc.c	Sat Jun  9 00:16:47 2001
-@@ -226,7 +226,7 @@ chat(struct client_state *csp)
+$OpenBSD: patch-jcc_c,v 1.6 2010/05/24 22:17:03 espie Exp $
+--- jcc.c.orig	Sat Oct 31 04:58:47 1998
++++ jcc.c	Tue May 25 00:15:28 2010
+@@ -126,9 +126,10 @@ int add_forwarded      = 0;
+ struct client_state clients[1];
+ struct file_list    files[1];
+ 
+-struct list wafer_list[1];
+-struct list xtra_list[1];
+-struct list trust_info[1];
++static struct list wafer_storage, xtra_storage, trust_storage;
++struct list *wafer_list = &wafer_storage;
++struct list *xtra_list = &xtra_storage;
++struct list *trust_info = &trust_storage;
+ 
+ struct url_spec * trust_list[64];
+ 
+@@ -226,7 +227,7 @@ chat(struct client_state *csp)
  	}
  
  	if(http->cmd == NULL) {
@@ -10,7 +24,7 @@ $OpenBSD: patch-jcc_c,v 1.5 2005/11/14 17:23:36 pvalchev Exp $
  		write_socket(csp->cfd, buf, strlen(buf));
  		return;
  	}
-@@ -369,12 +369,19 @@ chat(struct client_state *csp)
+@@ -369,12 +370,19 @@ chat(struct client_state *csp)
  		}
  
  		if(errno == EINVAL) {
@@ -34,7 +48,7 @@ $OpenBSD: patch-jcc_c,v 1.5 2005/11/14 17:23:36 pvalchev Exp $
  		}
  
  		write_socket(csp->cfd, err, strlen(err));
-@@ -406,8 +413,11 @@ chat(struct client_state *csp)
+@@ -406,8 +414,11 @@ chat(struct client_state *csp)
  			}
  
  			eno = safe_strerror(errno);
@@ -48,7 +62,7 @@ $OpenBSD: patch-jcc_c,v 1.5 2005/11/14 17:23:36 pvalchev Exp $
  			write_socket(csp->cfd, err, strlen(err));
  
  			freez(err);
-@@ -488,7 +498,7 @@ chat(struct client_state *csp)
+@@ -488,7 +499,7 @@ chat(struct client_state *csp)
  				fperror(logfp, "");
  
  				eno = safe_strerror(errno);
@@ -57,7 +71,7 @@ $OpenBSD: patch-jcc_c,v 1.5 2005/11/14 17:23:36 pvalchev Exp $
  				freez(eno);
  				write_socket(csp->cfd, buf, strlen(buf));
  				return;
-@@ -606,6 +616,14 @@ server_thread(void *data)
+@@ -606,6 +617,14 @@ server_thread(void *data)
  }
  #endif
  
@@ -72,7 +86,7 @@ $OpenBSD: patch-jcc_c,v 1.5 2005/11/14 17:23:36 pvalchev Exp $
  int
  main(int argc, char *argv[])
  {
-@@ -661,7 +679,7 @@ main(int argc, char *argv[])
+@@ -661,7 +680,7 @@ main(int argc, char *argv[])
  
  			line_num++;
  
@@ -81,7 +95,7 @@ $OpenBSD: patch-jcc_c,v 1.5 2005/11/14 17:23:36 pvalchev Exp $
  
  			if((p = strpbrk(tmp, "#\r\n"))) *p = '\0';
  
-@@ -678,7 +696,7 @@ main(int argc, char *argv[])
+@@ -678,7 +697,7 @@ main(int argc, char *argv[])
  
  			while(*p && ((*p == ' ') || (*p == '\t'))) p++;
  
@@ -90,7 +104,7 @@ $OpenBSD: patch-jcc_c,v 1.5 2005/11/14 17:23:36 pvalchev Exp $
  
  			p = arg + strlen(arg) - 1;
  
-@@ -891,8 +909,12 @@ main(int argc, char *argv[])
+@@ -891,8 +910,12 @@ main(int argc, char *argv[])
  
  #ifndef _WIN32
  	signal(SIGPIPE, SIG_IGN);
@@ -103,7 +117,7 @@ $OpenBSD: patch-jcc_c,v 1.5 2005/11/14 17:23:36 pvalchev Exp $
  
  #ifdef _WIN32
  {
-@@ -994,7 +1016,7 @@ main(int argc, char *argv[])
+@@ -994,7 +1017,7 @@ main(int argc, char *argv[])
  				fprintf(logfp, "%s: can't fork: ", prog);
  				fperror(logfp, "");
  
@@ -112,7 +126,7 @@ $OpenBSD: patch-jcc_c,v 1.5 2005/11/14 17:23:36 pvalchev Exp $
  					prog, errno);
  
  				write_socket(csp->cfd, buf, strlen(buf));
-@@ -1043,7 +1065,7 @@ safe_strerror(int err)
+@@ -1043,7 +1066,7 @@ safe_strerror(int err)
  #endif /* NOSTRERROR */
  
  	if(s == NULL) {

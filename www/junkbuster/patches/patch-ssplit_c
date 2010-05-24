@@ -1,7 +1,7 @@
-$OpenBSD: patch-ssplit_c,v 1.2 2001/06/09 02:36:49 angelos Exp $
---- ssplit.c.orig	Fri Oct 30 22:58:47 1998
-+++ ssplit.c	Fri Jun  8 22:04:40 2001
-@@ -18,6 +18,7 @@ char *ssplit_rcs = "$Id: ssplit.c,v 1.6 
+$OpenBSD: patch-ssplit_c,v 1.3 2010/05/24 22:17:03 espie Exp $
+--- ssplit.c.orig	Sat Oct 31 04:58:47 1998
++++ ssplit.c	Sat May 22 16:47:48 2010
+@@ -18,6 +18,7 @@ char *ssplit_rcs = "$Id: ssplit.c,v 1.6 1998/10/27 16:
   *      l = flag indicating whether to ignore leading field separators
   */
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-ssplit_c,v 1.2 2001/06/09 02:36:49 angelos Exp $
  #include <string.h>
  
  int ssplit(char *s, char *c, char *v[], int n, int m, int l)
-@@ -58,7 +59,10 @@ int ssplit(char *s, char *c, char *v[], 
+@@ -58,7 +59,10 @@ int ssplit(char *s, char *c, char *v[], int n, int m, 
  
      xsize = 256;
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-ssplit_c,v 1.2 2001/06/09 02:36:49 angelos Exp $
  
      x[xi++] = (char *) p;	/* first pointer is the beginning of string */
  
-@@ -73,6 +77,10 @@ int ssplit(char *s, char *c, char *v[], 
+@@ -73,6 +77,10 @@ int ssplit(char *s, char *c, char *v[], int n, int m, 
  			char **new_x = (char **)
  				zalloc((new_xsize) * sizeof(char *));
  

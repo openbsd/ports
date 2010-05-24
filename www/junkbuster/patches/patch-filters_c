@@ -1,7 +1,7 @@
-$OpenBSD: patch-filters_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
---- filters.c.orig	Fri Oct 30 22:58:47 1998
-+++ filters.c	Fri Jun  8 22:24:01 2001
-@@ -103,9 +103,12 @@ block_url(struct http_request *http, str
+$OpenBSD: patch-filters_c,v 1.3 2010/05/24 22:17:03 espie Exp $
+--- filters.c.orig	Sat Oct 31 04:58:47 1998
++++ filters.c	Sat May 22 16:47:47 2010
+@@ -103,9 +103,12 @@ block_url(struct http_request *http, struct client_sta
  					n += strlen(path);
  					n += strlen(spec);
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-filters_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
  						hostport, path, spec);
  
  					freez(hostport);
-@@ -174,9 +177,12 @@ trust_url(struct http_request *http, str
+@@ -174,9 +177,12 @@ trust_url(struct http_request *http, struct client_sta
  					n += strlen(path);
  					n += strlen(referrer);
  
@@ -58,7 +58,7 @@ $OpenBSD: patch-filters_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
  	}
  
  	return(*ret);
-@@ -562,8 +574,11 @@ ij_blocked_url(struct http_request *http
+@@ -562,8 +574,11 @@ ij_blocked_url(struct http_request *http, struct clien
  	n += strlen(path    );
  	n += strlen(pattern );
  
@@ -72,7 +72,7 @@ $OpenBSD: patch-filters_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
  	}
  
  	freez(hostport);
-@@ -618,8 +633,11 @@ ij_untrusted_url(struct http_request *ht
+@@ -618,8 +633,11 @@ ij_untrusted_url(struct http_request *http, struct cli
  	n += strlen(hostport);
  	n += strlen(path    );
  
@@ -86,7 +86,7 @@ $OpenBSD: patch-filters_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
  	}
  
  	freez(hostport);
-@@ -632,25 +650,25 @@ ij_untrusted_url(struct http_request *ht
+@@ -632,25 +650,25 @@ ij_untrusted_url(struct http_request *http, struct cli
  	p = strsav(p, "<h3>The following referrers are trusted</h3>\n");
  
  	for(tl = trust_list; (t = *tl) ; tl++) {

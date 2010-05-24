@@ -1,7 +1,7 @@
-$OpenBSD: patch-socks4_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
---- socks4.c.orig	Fri Oct 30 22:58:47 1998
-+++ socks4.c	Fri Jun  8 22:19:00 2001
-@@ -88,7 +88,7 @@ socks4_connect(struct gateway *gw, struc
+$OpenBSD: patch-socks4_c,v 1.3 2010/05/24 22:17:03 espie Exp $
+--- socks4.c.orig	Sat Oct 31 04:58:47 1998
++++ socks4.c	Sat May 22 16:47:48 2010
+@@ -88,7 +88,7 @@ socks4_connect(struct gateway *gw, struct http_request
  
  	/* build a socks request for connection to the web server */
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-socks4_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
  
  	csiz = sizeof(*c) + sizeof(socks_userid) - 1;
  
-@@ -103,7 +103,7 @@ socks4_connect(struct gateway *gw, struc
+@@ -103,7 +103,7 @@ socks4_connect(struct gateway *gw, struct http_request
  			errno = EINVAL;
  			return(-1);
  		}
@@ -19,7 +19,7 @@ $OpenBSD: patch-socks4_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
  		csiz = n;
  		break;
  	}
-@@ -162,7 +162,7 @@ socks4_connect(struct gateway *gw, struc
+@@ -162,7 +162,7 @@ socks4_connect(struct gateway *gw, struct http_request
  	default:
  		errstr = (char *) cbuf;
  		errno = ENOENT;

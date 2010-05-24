@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnu_regex_c,v 1.3 2001/06/09 03:13:18 angelos Exp $
---- gnu_regex.c.orig	Fri Oct 30 22:58:47 1998
-+++ gnu_regex.c	Fri Jun  8 23:11:28 2001
-@@ -4909,15 +4909,7 @@ regerror (errcode, preg, errbuf, errbuf_
+$OpenBSD: patch-gnu_regex_c,v 1.4 2010/05/24 22:17:03 espie Exp $
+--- gnu_regex.c.orig	Sat Oct 31 04:58:47 1998
++++ gnu_regex.c	Sat May 22 16:47:47 2010
+@@ -4909,15 +4909,7 @@ regerror (errcode, preg, errbuf, errbuf_size)
    msg_size = strlen (msg) + 1; /* Includes the null.  */
    
    if (errbuf_size != 0)
