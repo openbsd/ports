@@ -1,0 +1,13 @@
+Disable configuration option not supported by nose.
+
+$OpenBSD: patch-setup_cfg,v 1.1 2010/05/24 16:42:44 wcmaier Exp $
+--- setup.cfg.orig	Tue May  4 07:50:47 2010
++++ setup.cfg	Tue May  4 07:50:49 2010
+@@ -5,6 +5,6 @@ tag_svn_revision = 0
+ 
+ [nosetests]
+ exclude = ^examples
+-first-package-wins = true
++#first-package-wins = true
+ with-sqlalchemy = true
+ 

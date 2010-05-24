@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2009/06/04 19:49:17 wcmaier Exp $
+# $OpenBSD: Makefile,v 1.17 2010/05/24 16:42:44 wcmaier Exp $
 
 COMMENT =		database toolkit for Python
 
-MODPY_EGG_VERSION =	0.5.4p2
+MODPY_EGG_VERSION =	0.6.0
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlalchemy-${MODPY_EGG_VERSION:S/p/./}
 
@@ -24,8 +24,11 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 PKG_ARCH =		*
 
+MAKE_ENV +=		PYTHONPATH=.
+
 # Other DB connectors would work, too.
-REGRESS_DEPENDS =	::databases/py-sqlite2
+REGRESS_DEPENDS =	::databases/py-sqlite2 \
+			::devel/py-nose
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sqlalchemy
@@ -35,7 +38,7 @@ post-install:
 		pax -rw * ${PREFIX}/share/examples/py-sqlalchemy
 
 do-regress:
-	@cd ${WRKSRC} && ${MAKE_ENV} \
-	    PYTHONPATH=test ${MODPY_BIN} test/alltests.py --db sqlite
+	${_MODPY_CMD} develop -d.
+	@cd ${WRKSRC} && ${MAKE_ENV} nosetests
 
 .include <bsd.port.mk>
