@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/05/24 22:42:08 espie Exp $
+--- configure.orig	Sat May 22 20:19:27 2010
++++ configure	Sat May 22 20:19:47 2010
+@@ -1553,7 +1553,7 @@ else
+   echo "configure: failed program was:" >&5
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+-  libf2c_cv_has_g77_builtin_types=no
++  libf2c_cv_has_g77_builtin_types=yes
+ fi
+ rm -f conftest*
+ fi
