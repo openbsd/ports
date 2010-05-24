@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2010/05/09 17:00:39 kili Exp $
+# $OpenBSD: Makefile,v 1.30 2010/05/24 14:33:03 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
-DISTNAME =		darcs-2.4.3
+DISTNAME =		darcs-2.4.4
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
@@ -23,10 +23,12 @@ BUILD_DEPENDS =		:hs-zlib->=0.5.0,<0.6.0:archivers/hs-zlib \
 			${RUN_DEPENDS} \
 			::textproc/latex2html
 
+REGRESS_DEPENDS =	::shells/bash
+
 # For the documentation
 USE_GMAKE =		Yes
 
-# Weird permission alert! (Hopefully fixed in the next release)
+# Weird permission alert! (still not fixed)
 post-extract:
 	@chmod -R a+r ${WRKSRC}
 
