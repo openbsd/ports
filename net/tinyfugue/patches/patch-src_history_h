@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_history_h,v 1.1 2010/05/24 10:10:39 espie Exp $
+--- src/history.h.orig	Mon May 24 12:07:03 2010
++++ src/history.h	Mon May 24 12:07:13 2010
+@@ -31,7 +31,7 @@ extern void   NDECL(free_histories);
+ #define record_global(aline)  recordline(globalhist, (aline))
+ #define record_local(aline)   recordline(localhist, (aline))
+ 
+-extern struct History globalhist[], localhist[];
++extern struct History *globalhist, *localhist;
+ extern int log_count, norecord, nolog;
+ 
+ # else /* NO_HISTORY */

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_history_c,v 1.1 2010/05/24 10:10:39 espie Exp $
+--- src/history.c.orig	Mon May 24 12:07:15 2010
++++ src/history.c	Mon May 24 12:08:26 2010
+@@ -66,7 +66,9 @@ static Aline blankline[1] = { BLANK_ALINE };
+ static struct History input[1];
+ static int wnmatch = 4, wnlines = 5, wdmatch = 2, wdlines = 5;
+ 
+-struct History globalhist[1], localhist[1];
++static struct History globalhist_storage, localhist_storage;
++struct History 	*globalhist = &globalhist_storage, 
++		*localhist = &localhist_storage;
+ int log_count = 0;
+ int norecord = 0;	/* supress history (but not log) recording */
+ int nolog = 0;		/* supress log (but not history) recording */

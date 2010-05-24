@@ -1,7 +1,7 @@
-$OpenBSD: patch-unix_unix.mak,v 1.1 2000/09/20 22:42:12 avsm Exp $
---- unix/unix.mak.orig	Wed Sep 20 18:04:05 2000
-+++ unix/unix.mak	Wed Sep 20 18:04:53 2000
-@@ -22,7 +22,6 @@
+$OpenBSD: patch-unix_unix.mak,v 1.2 2010/05/24 10:10:39 espie Exp $
+--- unix/unix.mak.orig	Sat Mar  6 23:43:28 1999
++++ unix/unix.mak	Sat May 22 16:24:59 2010
+@@ -22,7 +22,6 @@ BUILDERS   = Makefile
  install:  _failmsg _all $(TF) LIBRARY $(MANPAGE) $(SYMLINK)
  	@echo '#####################################################' > exitmsg
  	@echo '## TinyFugue installation successful.' >> exitmsg
@@ -9,7 +9,7 @@ $OpenBSD: patch-unix_unix.mak,v 1.1 2000/09/20 22:42:12 avsm Exp $
  	@DIR=`echo $(TF) | sed 's;/[^/]*$$;;'`; \
  	echo ":$(PATH):" | egrep ":$${DIR}:" >/dev/null 2>&1 || { \
  	    echo ; \
-@@ -35,7 +34,6 @@
+@@ -35,7 +34,6 @@ install:  _failmsg _all $(TF) LIBRARY $(MANPAGE) $(SYM
  all files:  _all
  	@echo '#####################################################' > exitmsg
  	@echo '## TinyFugue build successful.' >> exitmsg
