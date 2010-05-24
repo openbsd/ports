@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2008/01/04 17:48:37 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2010/05/24 10:20:37 espie Exp $
 
 COMMENT=	enhanced printer spooler
 
@@ -29,6 +29,11 @@ CONFIGURE_ARGS=	--with-sbindir=${PREFIX}/sbin \
 		--with-cppopts=-I${LOCALBASE}/include \
 		--with-ldopts=-L${LOCALBASE}/lib \
 		--disable-nls
+
+.include <bsd.own.mk>
+.if ${COMPILER_VERSION:L:Mgcc4*}
+CFLAGS+=	-Wno-error=address
+.endif
 
 CFLAGS+=	-Dlog=mylog
 FAKE_FLAGS=	POSTINSTALL=NO prefix=${TRUEPREFIX} \

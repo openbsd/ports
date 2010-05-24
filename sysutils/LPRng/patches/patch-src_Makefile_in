@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2003/04/01 12:35:38 avsm Exp $
---- src/Makefile.in.orig	Mon Aug  5 22:45:54 2002
-+++ src/Makefile.in	Mon Jan 20 18:23:08 2003
-@@ -172,7 +172,7 @@ VPATH=..:.:${SRC}/include:${SRC}/common:
+$OpenBSD: patch-src_Makefile_in,v 1.2 2010/05/24 10:20:37 espie Exp $
+--- src/Makefile.in.orig	Mon Aug  5 23:45:54 2002
++++ src/Makefile.in	Mon May 24 12:17:44 2010
+@@ -172,7 +172,7 @@ VPATH=..:.:${SRC}/include:${SRC}/common:${SRC}
  ########################################################################
  
  .SUFFIXES: .lo .sh
