@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.635 2010/05/17 11:57:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.636 2010/05/24 18:02:54 bluhm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -270,6 +270,7 @@
      SUBDIR += p5-Net-Google
      SUBDIR += p5-Net-ICQ2000
      SUBDIR += p5-Net-ICal
+     SUBDIR += p5-Net-INET6Glue
      SUBDIR += p5-Net-IP
      SUBDIR += p5-Net-IPv4Addr
      SUBDIR += p5-Net-IRC
