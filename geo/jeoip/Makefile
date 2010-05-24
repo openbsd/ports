@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/05/01 13:39:37 ian Exp $
+# $OpenBSD: Makefile,v 1.9 2010/05/24 16:41:00 kili Exp $
 
 COMMENT=		Java interface to GeoIP database
 DISTNAME=		jeoip-0.5
@@ -21,7 +21,7 @@ MASTER_SITES=		http://www.darwinsys.com/freeware/
 MODULES=		java
 MODJAVA_VER=		1.5+
 MODJAVA_JRERUN=		Yes
-BUILD_DEPENDS=		:apache-ant->=1.6.1:devel/apache-ant:\
+BUILD_DEPENDS=		:apache-ant->=1.6.1:devel/apache-ant \
 			:junit-3.8.2:java/junit
 REGRESS_DEPENDS=	::net/GeoIP \
 			:junit-3.8.2:java/junit
