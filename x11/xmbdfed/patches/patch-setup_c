@@ -1,0 +1,11 @@
+$OpenBSD: patch-setup_c,v 1.1 2010/05/24 23:02:17 espie Exp $
+--- setup.c.orig	Tue May 25 00:59:23 2010
++++ setup.c	Tue May 25 00:59:58 2010
+@@ -92,6 +92,7 @@ typedef struct {
+     Boolean saved;
+ } MXFEditorSetup;
+ 
++#define active_editor myactive_editor
+ static unsigned long active_editor;
+ static MXFEditorSetup setup;
+ static MXFEditorOtherOptions other;
