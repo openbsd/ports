@@ -1,0 +1,47 @@
+$OpenBSD: patch-libapp_tlist_h,v 1.1 2010/05/24 01:46:12 espie Exp $
+--- libapp/tlist.h.orig	Mon May 24 03:43:14 2010
++++ libapp/tlist.h	Mon May 24 03:45:05 2010
+@@ -93,8 +93,8 @@ class TSingleList (public)
+         }
+         T& operator*( void )
+         {
+-            assert( m_pList && m_pNode );
+-            return m_pNode->GetData();
++            assert( this->m_pList && this->m_pNode );
++            return this->m_pNode->GetData();
+         }
+     protected:
+         Iterator( TSingleList<T>* pList, TSingleNode* pNode ) :
+@@ -113,8 +113,8 @@ class TSingleList (public)
+         }
+         const T& operator*( void ) const
+         {
+-            assert( m_pList && m_pNode );
+-            return m_pNode->GetData();
++            assert( this->m_pList && this->m_pNode );
++            return this->m_pNode->GetData();
+         }
+     protected:
+         ConstIterator( const TSingleList<T>* pList, TSingleNode* pNode ) :
+@@ -281,8 +281,8 @@ class TDoubleList (public)
+         }
+         T& operator*( void )
+         {
+-            assert( m_pList && m_pNode );
+-            return m_pNode->GetData();
++            assert( this->m_pList && this->m_pNode );
++            return this->m_pNode->GetData();
+         }
+     protected:
+         Iterator( const TDoubleList<T>* pList, TDoubleNode* pNode ) :
+@@ -301,8 +301,8 @@ class TDoubleList (public)
+         }
+         const T& operator*( void ) const
+         {
+-            assert( m_pList && m_pNode );
+-            return m_pNode->GetData();
++            assert( this->m_pList && this->m_pNode );
++            return this->m_pNode->GetData();
+         }
+     protected:
+         ConstIterator( const TDoubleList<T>* pList, TDoubleNode* pNode ) :

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libapp_Avl_h,v 1.1.1.1 2007/01/10 10:37:07 grunk Exp $
---- libapp/Avl.h.orig	Wed Dec 13 18:33:54 2006
-+++ libapp/Avl.h	Wed Dec 13 18:34:01 2006
-@@ -141,16 +141,6 @@ private:
+$OpenBSD: patch-libapp_Avl_h,v 1.2 2010/05/24 01:46:12 espie Exp $
+--- libapp/Avl.h.orig	Tue Jan 30 22:24:19 2001
++++ libapp/Avl.h	Sat May 22 16:25:25 2010
+@@ -141,16 +141,6 @@ class AvlTree (private)
  
  // ---------------------------------------------------------------- Definitions
  
