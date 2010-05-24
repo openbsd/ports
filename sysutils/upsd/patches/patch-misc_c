@@ -1,0 +1,21 @@
+$OpenBSD: patch-misc_c,v 1.1 2010/05/24 22:08:11 espie Exp $
+--- misc.c.orig	Tue May 25 00:03:48 2010
++++ misc.c	Tue May 25 00:04:23 2010
+@@ -105,7 +105,7 @@ whereid(id, list, size)
+ 		if(((struct ident *)list)->id == 0) {
+ 			return NULL;
+ 		}
+-		(char *)list += size;
++		list = (char *)list + size;
+ 	}
+ 	return list;
+ }
+@@ -122,7 +122,7 @@ wherename(name, list, size)
+ 	register void *list;
+ 	register size_t size;
+ {
+-	for(;((struct ident *)list)->id != 0;(char *)list += size) {
++	for(;((struct ident *)list)->id != 0;list = (char *)list + size) {
+ 		if(((struct ident *)list)->name == name) {
+ 			return list;
+ 		}

@@ -1,6 +1,6 @@
-$OpenBSD: patch-iwebstream_C,v 1.1 2002/10/17 11:25:39 naddy Exp $
---- iwebstream.C.orig	Wed Oct 16 23:57:13 2002
-+++ iwebstream.C	Wed Oct 16 23:58:06 2002
+$OpenBSD: patch-iwebstream_C,v 1.2 2010/05/24 22:12:41 espie Exp $
+--- iwebstream.C.orig	Wed Oct 17 14:05:24 2001
++++ iwebstream.C	Sat May 22 12:51:58 2010
 @@ -33,7 +33,7 @@
  //#define DEBUG_TIMEOUT
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-iwebstream_C,v 1.1 2002/10/17 11:25:39 naddy Exp $
    string origurl = url;
    string method;
    string host;
-@@ -424,8 +424,8 @@ bool iwebstream::findAndPass(const strin
+@@ -424,8 +424,8 @@ bool iwebstream::findAndPass(const string & s){
  // Case is ignored in comparisions.
  // If begin is not found, return "". Move position to point to char after end;
  // If end == "" then just find begin and place position just after it
