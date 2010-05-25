@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/26 02:56:30 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2010/05/25 00:46:39 espie Exp $
 
 COMMENT =	game programming library for C/C++ developers
 
@@ -6,9 +6,9 @@ SHARED_ONLY =	Yes
 
 V =		4.2.3
 DISTNAME =	allegro-$V
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES =	games devel multimedia
-SHARED_LIBS =	alleg	0.0	# 4.2
+SHARED_LIBS =	alleg	1.0	# 4.2
 
 HOMEPAGE =	http://alleg.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=alleg/}
