@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/24 22:43:57 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/25 05:04:29 ajacoutot Exp $
 
 .include <bsd.own.mk>
 .  if ${COMPILER_VERSION:L:Mgcc4*}
@@ -10,7 +10,7 @@ SYSV=			3.3.5
 NOT_FOR_ARCHES =	${GCC2_ARCHS}
 
 V =			3.3.5
-PKGNAME =		g77-$V
+PKGNAME =		g77-$Vp0
 DISTFILES = 		g77-openbsd.tgz
 
 CONFIG = 		${MACHINE_ARCH}-unknown-openbsd${OSREV}
