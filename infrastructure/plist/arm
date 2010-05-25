@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.25 2010/01/09 02:48:04 sthen Exp $
+# $OpenBSD: arm,v 1.26 2010/05/25 20:55:31 sthen Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -29,7 +29,7 @@ audio/libao
 audio/vorbis-tools
 audio/mpg321
 audio/mpg123
-audio/waveplay
+audio/id3lib
 net/curl
 net/ircII
 net/ircd-hybrid
@@ -105,6 +105,12 @@ devel/desktop-file-utils
 comms/jpilot
 comms/jpilot-syncmal
 comms/kermit
+comms/smstools
+comms/lrzsz
+comms/minicom
+comms/sredird
+sysutils/conserver
+converters/xlhtml
 audio/cplay
 audio/lame
 audio/lame,no_x11
@@ -112,6 +118,16 @@ net/synergy
 audio/xmms
 audio/xmms-mad
 audio/xmms-tremor
+www/p5-HTML-Parser
+www/p5-HTML-Tagset
+www/p5-URI
+www/p5-HTTP-GHTTP
+security/p5-Crypt-SSLeay
+multimedia/atomicparsley
+www/p5-libwww
+multimedia/get_iplayer
+net/flvstreamer
+net/rtmpdump
 print/ps2eps
 print/texlive/base
 misc/dtach
@@ -128,6 +144,7 @@ audio/mpd
 audio/mp3blaster
 audio/mp3cddb
 audio/mp3info,no_x11
+audio/p5-gnupod
 textproc/aspell
 textproc/catdoc
 databases/p5-DBD-Pg
@@ -339,7 +356,6 @@ www/w3mir
 x11/devilspie
 x11/evilwm
 x11/gromit
-x11/dejavu-fonts
 x11/ecoliercourt-fonts
 x11/freefonts
 x11/freefont-ttf
