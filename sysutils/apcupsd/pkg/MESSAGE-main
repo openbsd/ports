@@ -1,0 +1,20 @@
+To start apcupsd at boot time, edit ${SYSCONFDIR}/apcupsd/apcupsd.conf
+and add the following lines to ${SYSCONFDIR}/rc.local:
+
+if [ -x ${PREFIX}/sbin/apcupsd]; then
+	echo -n ' apcupsd';       ${PREFIX}/sbin/apcupsctl start
+fi
+
+To allow the system to be fully powered down (in order to preserve
+UPS battery), add the following lines to ${SYSCONFDIR}/rc.shutdown:
+
+if [ -f ${SYSCONFDIR}/apcupsd/powerfail ]; then
+  echo
+  echo "APCUPSD requested this system is powered down."
+  echo
+  powerdown=YES
+  echo
+  echo "Please ensure that the UPS has powered off before rebooting"
+  echo "Otherwise, the UPS may cut the power during the reboot!!!"
+  echo
+fi

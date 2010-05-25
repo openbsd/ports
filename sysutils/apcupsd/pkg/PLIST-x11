@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST-x11,v 1.1.1.1 2010/05/25 21:56:33 sthen Exp $
+@group bin
+@bin bin/gapcmon
+share/applications/gapcmon.desktop
+@group
+share/pixmaps/
+@group bin
+share/pixmaps/apcupsd.png
+share/pixmaps/charging.png
+share/pixmaps/gapc_prefs.png
+share/pixmaps/onbatt.png
+share/pixmaps/online.png
+share/pixmaps/unplugged.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

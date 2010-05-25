@@ -1,0 +1,27 @@
+$OpenBSD: patch-platforms_openbsd_Makefile,v 1.1.1.1 2010/05/25 21:56:33 sthen Exp $
+--- platforms/openbsd/Makefile.orig	Sun Jun  1 22:57:55 2008
++++ platforms/openbsd/Makefile	Sun May 16 15:25:58 2010
+@@ -5,8 +5,12 @@ include $(topdir)/autoconf/targets.mak
+ 
+ all-install: install-openbsd
+ all-uninstall: uninstall-openbsd
+-
++	
+ install-openbsd:
++	$(call MKDIR,$(sbindir))
++	$(call INSTPROG,744,apcupsd,$(sbindir)/apcupsctl)
++
++xx-install-openbsd:
+ 	$(call DISTINST,OpenBSD)
+ 	$(call MKDIR,/etc)
+ 	$(call INSTPROG,744,apcupsd,/etc/rc.apcupsd)
+@@ -48,6 +52,9 @@ install-openbsd:
+ 	fi
+ 
+ uninstall-openbsd:
++	$(call UNINST,$(sbindir)/apcupsctl)
++
++xx-uninstall-openbsd:
+ 	$(call DISTUNINST,OpenBSD)
+ 	-$(call UNINST,/etc/rc.apcupsd)
+ 	$(VV)-today="`date +%Y%m%d%H%M`"; \

@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST-cgi,v 1.1.1.1 2010/05/25 21:56:33 sthen Exp $
+cgi-bin/apcupsd/
+@group bin
+cgi-bin/apcupsd/README
+@mode 700
+cgi-bin/apcupsd/copy-libs.sh
+@mode
+@bin cgi-bin/apcupsd/multimon.cgi
+@bin cgi-bin/apcupsd/upsfstats.cgi
+@bin cgi-bin/apcupsd/upsimage.cgi
+@bin cgi-bin/apcupsd/upsstats.cgi

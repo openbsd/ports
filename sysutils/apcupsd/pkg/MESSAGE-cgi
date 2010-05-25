@@ -1,0 +1,10 @@
+Before using multimon and the other CGI programs, first ensure that
+apcupsd is configured to run the Network Information Server. This is
+done by setting NETSERVER on in ${SYSCONFDIR}/apcupsd/apcupsd.conf. 
+This switch is on by default.
+To run scripts in chrooted apache (default behaviour), configuration
+files must be available to the webserver:
+# mv ${SYSCONFDIR}/apcupsd /var/www/${SYSCONFDIR}/apcupsd
+# ln -s /var/www/${SYSCONFIDR}/apcupsd ${SYSCONFDIR}/
+And some libraries must be copied in:
+# ${WEB_ROOT}/cgi-bin/apcupsd/copy-libs.sh
