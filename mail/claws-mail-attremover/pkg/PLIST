@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/25 12:17:01 stephan Exp $
-lib/claws-mail/plugins/att_remover.la
+@comment $OpenBSD: PLIST,v 1.2 2010/05/25 14:05:44 ajacoutot Exp $
+@comment lib/claws-mail/plugins/att_remover.la
 lib/claws-mail/plugins/att_remover.so
