@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2010/05/04 12:54:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.201 2010/05/25 21:57:22 sthen Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -6,6 +6,7 @@
      SUBDIR += acx-firmware
      SUBDIR += anacron
      SUBDIR += apc-upsd
+     SUBDIR += apcupsd
      SUBDIR += apcd
      SUBDIR += autossh
      SUBDIR += backintime
