@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/10 09:07:07 landry Exp $
-lib/claws-mail/plugins/pdf_viewer.la
+@comment $OpenBSD: PLIST,v 1.2 2010/05/25 15:13:10 ajacoutot Exp $
+@comment lib/claws-mail/plugins/pdf_viewer.la
 lib/claws-mail/plugins/pdf_viewer.so
 share/locale/ca/LC_MESSAGES/pdf_viewer.mo
 share/locale/de/LC_MESSAGES/pdf_viewer.mo
