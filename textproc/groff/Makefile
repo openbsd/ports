@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/05/22 10:39:24 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2010/05/25 18:56:07 jasper Exp $
 
 CATEGORIES =	textproc
 COMMENT =	gnu clone of nroff
 
 # groff 1.15 as patched for OpenBSD-4.7
 DISTNAME = groff-1.15.4.7
-PKGNAME = ${DISTNAME}p0
+PKGNAME = ${DISTNAME}p1
 MASTER_SITES = http://www.bsdfrog.org/OpenBSD/distfiles/
 
 # GPLv2

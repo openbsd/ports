@@ -1,0 +1,17 @@
+$OpenBSD: patch-troff_node_h,v 1.1 2010/05/25 18:56:07 jasper Exp $
+--- troff/node.h.orig	Tue May 25 20:02:08 2010
++++ troff/node.h	Tue May 25 20:02:50 2010
+@@ -102,11 +102,11 @@ struct node {
+   virtual const char *type() = 0;
+ };
+ 
+-inline node::node() : next(0)
++inline node::node() : next(0), last(0)
+ {
+ }
+ 
+-inline node::node(node *n) : next(n)
++inline node::node(node *n) : next(n), last(0)
+ {
+ }
+ 
