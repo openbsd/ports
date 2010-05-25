@@ -1,6 +1,6 @@
-# $OpenBSD: fortran.port.mk,v 1.3 2010/05/23 09:40:19 espie Exp $
+# $OpenBSD: fortran.port.mk,v 1.4 2010/05/25 00:27:06 espie Exp $
 
-.if ${COMPILER_VERSION:L:Mgcc4*}
+.if ${COMPILER_VERSION:L:Mgcc[34]*}
 MODFORTRAN_LIB_DEPENDS77 = g2c::devel/libf2c
 MODFORTRAN_WANTLIB77 =
 MODFORTRAN_BUILD_DEPENDS77 = ::lang/g77 ::devel/libf2c
