@@ -1,0 +1,18 @@
+$OpenBSD: patch-tools_qdoc3_node_cpp,v 1.1 2010/05/25 11:00:57 espie Exp $
+--- tools/qdoc3/node.cpp.orig	Tue May 25 12:52:59 2010
++++ tools/qdoc3/node.cpp	Tue May 25 12:55:06 2010
+@@ -590,12 +590,12 @@ void InnerNode::removeChild(Node *child)
+ 	    secs.removeAll(child);
+ 	}
+         QMap<QString, Node *>::Iterator ent = childMap.find( child->name() );
+-        if ( *ent == child )
++        if ( ent != childMap.end() && *ent == child )
+             childMap.erase( ent );
+     }
+     else {
+ 	QMap<QString, Node *>::Iterator ent = childMap.find(child->name());
+-	if (*ent == child)
++	if (ent != childMap.end() && *ent == child)
+ 	    childMap.erase(ent);
+     }
+ }

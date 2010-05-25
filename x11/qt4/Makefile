@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2010/05/23 10:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2010/05/25 11:00:56 espie Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -18,7 +18,7 @@ PKGNAME-examples =	qt4-examples-${PKGVERSION}
 PKGNAME-sqlite2 =	qt4-sqlite2-${PKGVERSION}
 PKGNAME-sqlite =	qt4-sqlite-${PKGVERSION}
 PKGNAME-tds =		qt4-tds-${PKGVERSION}
-PKGNAME-main =		qt4-${VERSION}p0
+PKGNAME-main =		qt4-${VERSION}p1
 PKGNAME-debug =		qt4-debug-${PKGVERSION}p0
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
