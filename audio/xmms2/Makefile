@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/04/24 17:37:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/05/26 21:45:01 jakemsr Exp $
 
 COMMENT =		audio player daemon with library management
 
 V =			0.7
 DISTNAME =		xmms2-${V}DrNo
-PKGNAME =		xmms2-${V}
+PKGNAME =		xmms2-${V}p0
 
 SHARED_LIBS +=		xmmsclient++		1.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	0.0 # 1.0.0
@@ -31,8 +31,8 @@ MODULES =		lang/python \
 			devel/gettext \
 			perl
 
-WANTLIB  =		a52 c faac faad m mp3lame ncurses ogg oil-0.3 \
-			pthread readline schroedinger-1.0 theora \
+WANTLIB  =		c gsm faac faad m mp3lame ncurses ogg oil-0.3 \
+			pthread readline schroedinger-1.0 speex theora \
 			util vorbis vorbisenc vorbisfile x264 z
 
 NO_REGRESS =		Yes
