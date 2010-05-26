@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_decoder_ffmpeg_k3bffmpegwrapper_cpp,v 1.1 2008/07/09 02:13:01 jakemsr Exp $
---- plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp.orig	Sun Jun 22 01:24:57 2008
-+++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp	Sun Jun 22 01:25:20 2008
+$OpenBSD: patch-plugins_decoder_ffmpeg_k3bffmpegwrapper_cpp,v 1.2 2010/05/26 22:33:36 jakemsr Exp $
+--- plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp.orig	Fri Nov  2 02:55:03 2007
++++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp	Wed May 19 05:59:07 2010
 @@ -18,8 +18,8 @@
  #include "k3bffmpegwrapper.h"
  
@@ -12,3 +12,42 @@ $OpenBSD: patch-plugins_decoder_ffmpeg_k3bffmpegwrapper_cpp,v 1.1 2008/07/09 02:
  }
  
  #include <string.h>
+@@ -44,8 +44,8 @@ class K3bFFMpegFile::Private (public)
+   K3b::Msf length;
+ 
+   // for decoding
+-  char outputBuffer[AVCODEC_MAX_AUDIO_FRAME_SIZE];
+-  char* outputBufferPos;
++  DECLARE_ALIGNED(16,uint8_t,outputBuffer)[(AVCODEC_MAX_AUDIO_FRAME_SIZE*3)/2];
++  uint8_t* outputBufferPos;
+   int outputBufferSize;
+   AVPacket packet;
+   Q_UINT8* packetData;
+@@ -194,7 +194,7 @@ QString K3bFFMpegFile::typeComment() const
+     return i18n("Windows Media v1");
+   case CODEC_ID_WMAV2:
+     return i18n("Windows Media v2");
+-  case CODEC_ID_MP3LAME:
++  case CODEC_ID_MP3:
+     return i18n("MPEG 1 Layer III");
+   case CODEC_ID_AAC:
+     return i18n("Advanced Audio Coding (AAC)");
+@@ -287,13 +287,11 @@ int K3bFFMpegFile::fillOutputBuffer()
+ 
+     d->outputBufferPos = d->outputBuffer;
+ 
+-#ifdef FFMPEG_BUILD_PRE_4629
+-    int len = avcodec_decode_audio( &d->formatContext->streams[0]->codec,
+-#else
+-    int len = avcodec_decode_audio( d->formatContext->streams[0]->codec,
+-#endif
+-				    (short*)d->outputBuffer, &d->outputBufferSize,
+-				    d->packetData, d->packetSize );
++    d->outputBufferSize = sizeof(d->outputBuffer);
++
++    int len = avcodec_decode_audio3( d->formatContext->streams[0]->codec,
++				    (int16_t*)d->outputBuffer, &d->outputBufferSize,
++				    &d->packet );
+ 
+     d->packetSize -= len;
+     d->packetData += len;

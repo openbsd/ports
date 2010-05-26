@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/22 15:46:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/05/26 22:33:36 jakemsr Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-1.0.4
-PKGNAME =		${DISTNAME}p3
+PKGNAME =		${DISTNAME}p4
 
 SHARED_LIBS =		k3b	0.0	# 3.0
 SHARED_LIBS +=		k3bdevice	0.0	# 5.0
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		ICE SM X11 Xau Xdmcp Xext Xrender \
 			art_lgpl_2 c fam idn m ogg png pthread \
-			pthread-stubs rpcsvc stdc++ util xcb z
+			pthread-stubs stdc++ util xcb z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=k3b/}
 EXTRACT_SUFX =		.tar.bz2
@@ -44,7 +44,7 @@ LIB_DEPENDS =		jpeg::graphics/jpeg \
 			mpcdec::audio/libmpcdec \
 			vorbis,vorbisenc,vorbisfile::audio/libvorbis \
 			mp3lame::audio/lame \
-			avcodec,avformat::graphics/ffmpeg \
+			avcodec.>=14,avformat.>=13:ffmpeg->=20100512:graphics/ffmpeg \
 			sndfile::audio/libsndfile \
 			FLAC,FLAC++::audio/flac \
 			tag::audio/taglib \
