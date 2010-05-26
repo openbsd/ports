@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2009/05/06 20:24:15 kili Exp $
---- configure.orig	Wed Dec 17 12:13:49 2008
-+++ configure	Wed May  6 21:49:21 2009
-@@ -25174,7 +25174,7 @@ fi
+$OpenBSD: patch-configure,v 1.10 2010/05/26 22:31:23 jakemsr Exp $
+--- configure.orig	Tue Feb 23 12:43:36 2010
++++ configure	Tue May 18 17:55:59 2010
+@@ -14553,7 +14553,7 @@ fi
      VORBIS_LIBS="-L$prefix/lib"
    fi
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.9 2009/05/06 20:24:15 kili Exp $
    VORBISFILE_LIBS="-lvorbisfile"
    VORBISENC_LIBS="-lvorbisenc"
  
-@@ -25389,11 +25389,11 @@ if test "x$with_lame" != "xno"; then
+@@ -14713,11 +14713,11 @@ if test "x$with_lame" != "xno"; then
  OLD_CFLAGS=$CFLAGS
  OLD_LIBS=$LIBS
  
@@ -25,4 +25,4 @@ $OpenBSD: patch-configure,v 1.9 2009/05/06 20:24:15 kili Exp $
 +#fi
  
  
- { echo "$as_me:$LINENO: checking for lame" >&5
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for lame" >&5

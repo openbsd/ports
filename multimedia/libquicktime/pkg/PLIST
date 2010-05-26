@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/04/29 21:22:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/05/26 22:31:23 jakemsr Exp $
 @bin bin/libquicktime_config
 bin/lqt-config
 @bin bin/lqt_transcode
@@ -14,7 +14,6 @@ include/lqt/
 include/lqt/colormodels.h
 include/lqt/lqt.h
 include/lqt/lqt_atoms.h
-include/lqt/lqt_codecapi.h
 include/lqt/lqt_codecinfo.h
 include/lqt/lqt_qtvr.h
 include/lqt/lqt_version.h
@@ -40,6 +39,8 @@ lib/libquicktime/lqt_mjpeg.so
 lib/libquicktime/lqt_png.so
 @comment lib/libquicktime/lqt_rtjpeg.la
 lib/libquicktime/lqt_rtjpeg.so
+@comment lib/libquicktime/lqt_schroedinger.la
+lib/libquicktime/lqt_schroedinger.so
 @comment lib/libquicktime/lqt_videocodec.la
 lib/libquicktime/lqt_videocodec.so
 @comment lib/libquicktime/lqt_vorbis.la
@@ -53,8 +54,6 @@ share/doc/libquicktime/
 share/doc/libquicktime/apiref/
 share/doc/libquicktime/apiref/annotated.html
 share/doc/libquicktime/apiref/colormodels_8h-source.html
-share/doc/libquicktime/apiref/dir_2c23d5540d2a668b0550fa40aa20e858.html
-share/doc/libquicktime/apiref/dir_4abde00ac62fef88430208d846181602.html
 share/doc/libquicktime/apiref/dirs.html
 share/doc/libquicktime/apiref/doxygen.css
 share/doc/libquicktime/apiref/doxygen.png

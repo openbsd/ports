@@ -1,0 +1,12 @@
+$OpenBSD: patch-utils_Makefile_in,v 1.4 2010/05/26 22:31:23 jakemsr Exp $
+--- utils/Makefile.in.orig	Tue May 18 17:41:51 2010
++++ utils/Makefile.in	Tue May 18 17:42:07 2010
+@@ -416,7 +416,7 @@ qtyuv4toyuv_SOURCES = yuv4toyuv.c
+ qtyuv4toyuv_LDADD = @UTIL_LIBADD@
+ lqtplay_SOURCES = lqtplay.c common.c
+ lqtplay_LDADD = @UTIL_LIBADD@ @X_LIBS@ -lXaw -lXt @X_PRE_LIBS@ -lXext \
+-	-lXv @GL_LIBS@ -lX11 @X_EXTRA_LIBS@ -lm @ALSA_LIBS@ @OSSAUDIO_LIBS@
++	-lXv @GL_LIBS@ -lX11 @X_EXTRA_LIBS@ -lm @ALSA_LIBS@ @OSSAUDIO_LIBS@ -lsndio
+ 
+ INCLUDES = -I$(top_srcdir)/include \
+ 	    -I$(top_builddir)/include/quicktime \
