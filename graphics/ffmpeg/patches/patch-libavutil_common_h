@@ -1,0 +1,14 @@
+$OpenBSD: patch-libavutil_common_h,v 1.1 2010/05/26 21:38:52 jakemsr Exp $
+--- libavutil/common.h.orig	Wed May 19 09:31:50 2010
++++ libavutil/common.h	Wed May 19 09:32:50 2010
+@@ -36,6 +36,10 @@
+ #include <string.h>
+ #include "attributes.h"
+ 
++#ifndef UINT64_C
++#define UINT64_C(_c)	__CONCAT(_c, ULL)
++#endif
++
+ //rounded division & shift
+ #define RSHIFT(a,b) ((a) > 0 ? ((a) + ((1<<(b))>>1))>>(b) : ((a) + ((1<<(b))>>1)-1)>>(b))
+ /* assume b>0 */

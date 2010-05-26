@@ -1,26 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.16 2009/09/02 11:50:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/05/26 21:38:52 jakemsr Exp $
 %%SHARED%%
 @bin bin/ffmpeg
 @bin bin/ffplay
+@bin bin/ffprobe
 @bin bin/ffserver
 @bin bin/qt-faststart
 include/libavcodec/
 include/libavcodec/avcodec.h
+include/libavcodec/avfft.h
+include/libavcodec/dxva2.h
 include/libavcodec/opt.h
+include/libavcodec/vaapi.h
+include/libavcodec/vdpau.h
+include/libavcodec/xvmc.h
 include/libavdevice/
 include/libavdevice/avdevice.h
+include/libavfilter/
+include/libavfilter/avfilter.h
 include/libavformat/
 include/libavformat/avformat.h
 include/libavformat/avio.h
-include/libavformat/rtsp.h
-include/libavformat/rtspcodes.h
 include/libavutil/
 include/libavutil/adler32.h
+include/libavutil/attributes.h
+include/libavutil/avconfig.h
 include/libavutil/avstring.h
 include/libavutil/avutil.h
 include/libavutil/base64.h
 include/libavutil/common.h
 include/libavutil/crc.h
+include/libavutil/error.h
 include/libavutil/fifo.h
 include/libavutil/intfloat_readwrite.h
 include/libavutil/log.h
@@ -28,16 +37,17 @@ include/libavutil/lzo.h
 include/libavutil/mathematics.h
 include/libavutil/md5.h
 include/libavutil/mem.h
-include/libavutil/random.h
+include/libavutil/pixdesc.h
+include/libavutil/pixfmt.h
 include/libavutil/rational.h
 include/libavutil/sha1.h
 include/libpostproc/
 include/libpostproc/postprocess.h
 include/libswscale/
-include/libswscale/rgb2rgb.h
 include/libswscale/swscale.h
 lib/libavcodec.a
 lib/libavdevice.a
+lib/libavfilter.a
 lib/libavformat.a
 lib/libavutil.a
 lib/libpostproc.a
@@ -45,19 +55,60 @@ lib/libswscale.a
 lib/pkgconfig/
 lib/pkgconfig/libavcodec.pc
 lib/pkgconfig/libavdevice.pc
+lib/pkgconfig/libavfilter.pc
 lib/pkgconfig/libavformat.pc
 lib/pkgconfig/libavutil.pc
 lib/pkgconfig/libpostproc.pc
 lib/pkgconfig/libswscale.pc
-lib/vhook/
 @man man/man1/ffmpeg.1
 @man man/man1/ffplay.1
+@man man/man1/ffprobe.1
 @man man/man1/ffserver.1
 share/doc/ffmpeg/
+share/doc/ffmpeg/developer.html
 share/doc/ffmpeg/faq.html
 share/doc/ffmpeg/ffmpeg-doc.html
 share/doc/ffmpeg/ffplay-doc.html
+share/doc/ffmpeg/ffprobe-doc.html
 share/doc/ffmpeg/ffserver-doc.html
-share/doc/ffmpeg/hooks.html
+share/doc/ffmpeg/general.html
+share/doc/ffmpeg/libavfilter.html
 share/examples/ffmpeg/
 share/examples/ffmpeg/ffserver.conf
+share/ffmpeg/
+share/ffmpeg/libx264-baseline.ffpreset
+share/ffmpeg/libx264-default.ffpreset
+share/ffmpeg/libx264-fast.ffpreset
+share/ffmpeg/libx264-fast_firstpass.ffpreset
+share/ffmpeg/libx264-faster.ffpreset
+share/ffmpeg/libx264-faster_firstpass.ffpreset
+share/ffmpeg/libx264-fastfirstpass.ffpreset
+share/ffmpeg/libx264-hq.ffpreset
+share/ffmpeg/libx264-ipod320.ffpreset
+share/ffmpeg/libx264-ipod640.ffpreset
+share/ffmpeg/libx264-lossless_fast.ffpreset
+share/ffmpeg/libx264-lossless_max.ffpreset
+share/ffmpeg/libx264-lossless_medium.ffpreset
+share/ffmpeg/libx264-lossless_slow.ffpreset
+share/ffmpeg/libx264-lossless_slower.ffpreset
+share/ffmpeg/libx264-lossless_ultrafast.ffpreset
+share/ffmpeg/libx264-main.ffpreset
+share/ffmpeg/libx264-max.ffpreset
+share/ffmpeg/libx264-medium.ffpreset
+share/ffmpeg/libx264-medium_firstpass.ffpreset
+share/ffmpeg/libx264-normal.ffpreset
+share/ffmpeg/libx264-placebo.ffpreset
+share/ffmpeg/libx264-placebo_firstpass.ffpreset
+share/ffmpeg/libx264-slow.ffpreset
+share/ffmpeg/libx264-slow_firstpass.ffpreset
+share/ffmpeg/libx264-slower.ffpreset
+share/ffmpeg/libx264-slower_firstpass.ffpreset
+share/ffmpeg/libx264-slowfirstpass.ffpreset
+share/ffmpeg/libx264-superfast.ffpreset
+share/ffmpeg/libx264-superfast_firstpass.ffpreset
+share/ffmpeg/libx264-ultrafast.ffpreset
+share/ffmpeg/libx264-ultrafast_firstpass.ffpreset
+share/ffmpeg/libx264-veryfast.ffpreset
+share/ffmpeg/libx264-veryfast_firstpass.ffpreset
+share/ffmpeg/libx264-veryslow.ffpreset
+share/ffmpeg/libx264-veryslow_firstpass.ffpreset

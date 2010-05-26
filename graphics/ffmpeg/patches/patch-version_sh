@@ -1,16 +1,24 @@
-$OpenBSD: patch-version_sh,v 1.3 2008/01/26 01:56:02 jakemsr Exp $
---- version.sh.orig	Wed Oct 31 23:07:18 2007
-+++ version.sh	Sun Jan 20 01:12:29 2008
-@@ -1,10 +1,15 @@
+$OpenBSD: patch-version_sh,v 1.4 2010/05/26 21:38:52 jakemsr Exp $
+--- version.sh.orig	Tue May 11 19:21:00 2010
++++ version.sh	Wed May 12 19:55:32 2010
+@@ -1,14 +1,19 @@
  #!/bin/sh
  
  # check for SVN revision number
--revision=`cd "$1" && LC_ALL=C svn info 2> /dev/null | grep Revision | cut -d' ' -f2`
--test $revision || revision=`cd "$1" && grep revision .svn/entries 2>/dev/null | cut -d '"' -f2`
--test $revision || revision=`cd "$1" && sed -n -e '/^dir$/{n;p;q}' .svn/entries 2>/dev/null`
-+#revision=`cd "$1" && LC_ALL=C svn info 2> /dev/null | grep Revision | cut -d' ' -f2`
-+#test $revision || revision=`cd "$1" && grep revision .svn/entries 2>/dev/null | cut -d '"' -f2`
-+#test $revision || revision=`cd "$1" && sed -n -e '/^dir$/{n;p;q}' .svn/entries 2>/dev/null`
+-revision=$(cd "$1" && cat snapshot_version 2> /dev/null)
+-test $revision || revision=$(cd "$1" && LC_ALL=C svn info 2> /dev/null | grep "Last Changed Rev" | cut -d' ' -f4)
+-test $revision || revision=$(cd "$1" && grep committed-rev .svn/entries 2>/dev/null | head -n 1 | cut -d '"' -f2)
+-test $revision || revision=$(cd "$1" && sed -n -e '/^dir$/{n
+-p
+-q
+-}' .svn/entries 2>/dev/null)
++#revision=$(cd "$1" && cat snapshot_version 2> /dev/null)
++#test $revision || revision=$(cd "$1" && LC_ALL=C svn info 2> /dev/null | grep "Last Changed Rev" | cut -d' ' -f4)
++#test $revision || revision=$(cd "$1" && grep committed-rev .svn/entries 2>/dev/null | head -n 1 | cut -d '"' -f2)
++#test $revision || revision=$(cd "$1" && sed -n -e '/^dir$/{n
++#p
++#q
++#}' .svn/entries 2>/dev/null)
 +#test $revision && revision=SVN-r$revision
 +
 +revision=`cd "$1" && grep Revision svn-info | \
@@ -18,5 +26,5 @@ $OpenBSD: patch-version_sh,v 1.3 2008/01/26 01:56:02 jakemsr Exp $
  test $revision && revision=SVN-r$revision
 +test $revision || revision=UNKNOWN
  
- # check for git short hash
+ # check for git svn revision number
  if ! test $revision; then

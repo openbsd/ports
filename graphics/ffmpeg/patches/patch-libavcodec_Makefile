@@ -1,0 +1,27 @@
+$OpenBSD: patch-libavcodec_Makefile,v 1.18 2010/05/26 21:38:52 jakemsr Exp $
+--- libavcodec/Makefile.orig	Tue May 11 16:20:53 2010
++++ libavcodec/Makefile	Mon May 17 17:57:00 2010
+@@ -623,6 +623,23 @@ CLEANFILES = sin_tables.c cos_tables.c *_tables.h *_ta
+ 
+ include $(SUBDIR)../subdir.mak
+ 
++ifdef ARCH_X86_32
++ifeq (,$(findstring -O,$(CFLAGS)))
++libavcodec/x86/cavsdsp_mmx.o: CFLAGS += -O
++libavcodec/x86/dsputil_mmx.o: CFLAGS += -O
++libavcodec/x86/mpegvideo_mmx.o: CFLAGS += -O
++libavcodec/x86/snowdsp_mmx.o: CFLAGS += -O
++libavcodec/x86/vc1dsp_mmx.o: CFLAGS += -O
++libavcodec/x86/vp3dsp_mmx.o: CFLAGS += -O
++endif
++libavcodec/x86/cavsdsp_mmx.o: CFLAGS += -fomit-frame-pointer
++libavcodec/x86/dsputil_mmx.o: CFLAGS += -fomit-frame-pointer
++libavcodec/x86/mpegvideo_mmx.o: CFLAGS += -fomit-frame-pointer
++libavcodec/x86/snowdsp_mmx.o: CFLAGS += -fomit-frame-pointer
++libavcodec/x86/vc1dsp_mmx.o: CFLAGS += -fomit-frame-pointer
++libavcodec/x86/vp3dsp_mmx.o: CFLAGS += -fomit-frame-pointer
++endif
++
+ $(SUBDIR)dct-test$(EXESUF): $(SUBDIR)dctref.o
+ 
+ $(SUBDIR)cos_tables.c: $(SUBDIR)costablegen$(HOSTEXESUF)

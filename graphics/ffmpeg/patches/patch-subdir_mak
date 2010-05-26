@@ -1,25 +1,22 @@
-$OpenBSD: patch-subdir_mak,v 1.1 2008/07/09 01:57:44 jakemsr Exp $
---- subdir.mak.orig	Fri Jun 20 19:40:11 2008
-+++ subdir.mak	Sat Jun 21 10:06:50 2008
-@@ -29,7 +29,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
+$OpenBSD: patch-subdir_mak,v 1.2 2010/05/26 21:38:52 jakemsr Exp $
+--- subdir.mak.orig	Tue May 11 19:21:00 2010
++++ subdir.mak	Wed May 12 19:51:20 2010
+@@ -41,7 +41,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
  
- $(SUBDIR)$(SLIBNAME_WITH_MAJOR): $(OBJS)
+ $(SUBDIR)$(SLIBNAME_WITH_MAJOR): $(OBJS) $(SUBDIR)lib$(NAME).ver
  	$(SLIB_CREATE_DEF_CMD)
--	$(CC) $(SHFLAGS) $(FFLDFLAGS) -o $$@ $$^ $(FFEXTRALIBS) $(EXTRAOBJS)
-+	$(CC) $(SHFLAGS) $(FFLDFLAGS) -o $$@ $(sort $(OBJS)) $(LIB$(NAME)_EXTRALIBS) $(EXTRAOBJS)
+-	$$(LD) $(SHFLAGS) $(FFLDFLAGS) -o $$@ $$(filter %.o,$$^) $(FFEXTRALIBS) $(EXTRAOBJS)
++	$$(LD) $(SHFLAGS) $(FFLDFLAGS) -o $$@ $$(filter %.o,$$^) $(LIB$(NAME)_EXTRALIBS) $(EXTRAOBJS)
  	$(SLIB_EXTRA_CMD)
  
  ifdef SUBDIR
-@@ -39,12 +39,8 @@ endif
- 
- install-lib$(NAME)-shared: $(SUBDIR)$(SLIBNAME)
- 	install -d "$(SHLIBDIR)"
--	install -m 755 $(SUBDIR)$(SLIBNAME) "$(SHLIBDIR)/$(SLIBNAME_WITH_VERSION)"
-+	install -m 755 $(SUBDIR)$(SLIBNAME_WITH_VERSION) "$(SHLIBDIR)"
- 	$(STRIP) "$(SHLIBDIR)/$(SLIBNAME_WITH_VERSION)"
--	cd "$(SHLIBDIR)" && \
+@@ -61,10 +61,6 @@ install-lib$(NAME)-shared: $(SUBDIR)$(SLIBNAME)
+ 	$(Q)mkdir -p "$(SHLIBDIR)"
+ 	$$(INSTALL) -m 755 $$< "$(SHLIBDIR)/$(SLIBNAME_WITH_VERSION)"
+ 	$$(STRIP) "$(SHLIBDIR)/$(SLIBNAME_WITH_VERSION)"
+-	$(Q)cd "$(SHLIBDIR)" && \
 -		$(LN_S) $(SLIBNAME_WITH_VERSION) $(SLIBNAME_WITH_MAJOR)
--	cd "$(SHLIBDIR)" && \
+-	$(Q)cd "$(SHLIBDIR)" && \
 -		$(LN_S) $(SLIBNAME_WITH_VERSION) $(SLIBNAME)
  	$(SLIB_INSTALL_EXTRA_CMD)
  

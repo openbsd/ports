@@ -1,0 +1,14 @@
+$OpenBSD: patch-libpostproc_Makefile,v 1.6 2010/05/26 21:38:52 jakemsr Exp $
+--- libpostproc/Makefile.orig	Tue May 11 16:20:53 2010
++++ libpostproc/Makefile	Mon May 17 17:58:55 2010
+@@ -8,3 +8,10 @@ HEADERS = postprocess.h
+ OBJS = postprocess.o
+ 
+ include $(SUBDIR)../subdir.mak
++
++ifdef ARCH_X86_32
++ifeq (,$(findstring -O,$(CFLAGS)))
++libpostproc/postprocess.o: CFLAGS += -O
++endif
++libpostproc/postprocess.o: CFLAGS += -fomit-frame-pointer
++endif

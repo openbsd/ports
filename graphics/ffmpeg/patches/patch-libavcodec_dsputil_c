@@ -1,12 +1,12 @@
-$OpenBSD: patch-libavcodec_dsputil_c,v 1.5 2008/07/09 01:57:44 jakemsr Exp $
---- libavcodec/dsputil.c.orig	Sat May 24 22:01:01 2008
-+++ libavcodec/dsputil.c	Fri Jun 20 22:38:19 2008
-@@ -4118,7 +4118,7 @@ void dsputil_init(DSPContext* c, AVCodecContext *avctx
+$OpenBSD: patch-libavcodec_dsputil_c,v 1.6 2010/05/26 21:38:52 jakemsr Exp $
+--- libavcodec/dsputil.c.orig	Tue May 11 19:20:53 2010
++++ libavcodec/dsputil.c	Wed May 12 19:16:19 2010
+@@ -4181,7 +4181,7 @@ av_cold void dsputil_init(DSPContext* c, AVCodecContex
  {
      int i;
  
 -    ff_check_alignment();
 +    /*ff_check_alignment();*/
  
- #ifdef CONFIG_ENCODERS
+ #if CONFIG_ENCODERS
      if(avctx->dct_algo==FF_DCT_FASTINT) {

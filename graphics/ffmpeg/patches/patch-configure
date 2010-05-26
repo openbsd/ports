@@ -1,259 +1,123 @@
-$OpenBSD: patch-configure,v 1.22 2010/04/26 01:57:13 jakemsr Exp $
---- configure.orig	Fri Jun 20 19:40:11 2008
-+++ configure	Wed Apr 21 05:04:39 2010
-@@ -766,12 +766,11 @@ HAVE_LIST="
-     sdl
-     sdl_video_size
+$OpenBSD: patch-configure,v 1.23 2010/05/26 21:38:52 jakemsr Exp $
+--- configure.orig	Tue May 11 19:21:00 2010
++++ configure	Sun May 16 13:19:13 2010
+@@ -1064,7 +1064,6 @@ HAVE_LIST="
+     lzo1x_999_compress
+     machine_ioctl_bt848_h
+     machine_ioctl_meteor_h
+-    malloc_h
+     memalign
+     mkstemp
+     pld
+@@ -1076,6 +1075,7 @@ HAVE_LIST="
+     setmode
      socklen_t
--    soundcard_h
+     soundcard_h
 +    sndio_h
      poll_h
-     sys_mman_h
-     sys_resource_h
-     sys_select_h
--    sys_soundcard_h
-     termios_h
-     threads
-     winsock2_h
-@@ -877,14 +876,14 @@ libdc1394_demuxer_deps="libdc1394"
- libnut_demuxer_deps="libnut"
- libnut_muxer_deps="libnut"
- mp3_demuxer_deps="mpegaudio_parser"
--oss_demuxer_deps_any="soundcard_h sys_soundcard_h"
--oss_muxer_deps_any="soundcard_h sys_soundcard_h"
-+oss_demuxer_deps_any="sndio_h"
-+oss_muxer_deps_any="sndio_h"
- redir_demuxer_deps="network"
- rtp_muxer_deps="network rtp_protocol"
- rtsp_demuxer_deps="sdp_demuxer"
- sdp_demuxer_deps="rtp_protocol mpegts_demuxer"
- v4l_demuxer_deps="linux_videodev_h"
--v4l2_demuxer_deps="linux_videodev2_h"
-+v4l2_demuxer_deps="sys_videoio_h"
- vfwcap_demuxer_deps="capCreateCaptureWindow"
- vfwcap_demuxer_extralibs="-lvfw32"
- x11_grab_device_demuxer_deps="x11grab XShmCreateImage"
-@@ -934,6 +933,10 @@ cpu="generic"
- # OS
- target_os=$(tolower $(uname -s))
+     setrlimit
+     strerror_r
+@@ -1396,6 +1396,10 @@ jack_indev_extralibs="-ljack"
+ libdc1394_indev_deps="libdc1394"
+ oss_indev_deps_any="soundcard_h sys_soundcard_h"
+ oss_outdev_deps_any="soundcard_h sys_soundcard_h"
++sndio_indev_deps="sndio_h"
++sndio_indev_extralibs="-lsndio"
++sndio_outdev_deps="sndio_h"
++sndio_outdev_extralibs="-lsndio"
+ v4l_indev_deps="linux_videodev_h"
+ v4l2_indev_deps_any="linux_videodev2_h sys_videoio_h"
+ vfwcap_indev_deps="capCreateCaptureWindow"
+@@ -1465,6 +1469,10 @@ cpu="generic"
+ target_os_default=$(tolower $(uname -s))
+ host_os=$target_os_default
  
-+if test $target_os = openbsd; then
-+  arch=`arch -s`
++if test "$target_os_default" = "openbsd"; then
++  arch_default=$(arch -s)
 +fi
 +
- # libraries
- enable bzlib
- enable zlib
-@@ -953,9 +956,9 @@ enable stripping
- vhook="default"
+ # configurable options
+ enable avcodec
+ enable avdevice
+@@ -1489,7 +1497,7 @@ enable swscale
+ enable swscale_alpha
  
  # build settings
 -SHFLAGS='-shared -Wl,-soname,$$(@F)'
 +SHFLAGS='-shared'
- VHOOKSHFLAGS='$(SHFLAGS)'
--LDLATEFLAGS='-Wl,-rpath-link,\$(BUILD_ROOT)/libpostproc -Wl,-rpath-link,\$(BUILD_ROOT)/libswscale -Wl,-rpath-link,\$(BUILD_ROOT)/libavfilter -Wl,-rpath-link,\$(BUILD_ROOT)/libavdevice -Wl,-rpath-link,\$(BUILD_ROOT)/libavformat -Wl,-rpath-link,\$(BUILD_ROOT)/libavcodec -Wl,-rpath-link,\$(BUILD_ROOT)/libavutil'
-+LDLATEFLAGS=''
  FFSERVERLDFLAGS=-Wl,-E
  LIBPREF="lib"
  LIBSUF=".a"
-@@ -965,7 +968,7 @@ SLIBPREF="lib"
+@@ -1499,7 +1507,7 @@ SLIBPREF="lib"
  SLIBSUF=".so"
  SLIBNAME='$(SLIBPREF)$(FULLNAME)$(SLIBSUF)'
  SLIBNAME_WITH_VERSION='$(SLIBNAME).$(LIBVERSION)'
 -SLIBNAME_WITH_MAJOR='$(SLIBNAME).$(LIBMAJOR)'
 +SLIBNAME_WITH_MAJOR='$(SLIBNAME).$(LIBVERSION)'
- LIB_INSTALL_EXTRA_CMD='$(RANLIB) "$(LIBDIR)/$(LIBNAME)"'
+ LIB_INSTALL_EXTRA_CMD='$$(RANLIB) "$(LIBDIR)/$(LIBNAME)"'
  
- # gcc stupidly only outputs the basename of targets with -MM
-@@ -1130,7 +1133,7 @@ EOF
-         arch="powerpc"
-         enable fast_64bit
-     ;;
--    mips|mipsel|IP*)
-+    mips|mipsel|mips64|IP*)
-         arch="mips"
-     ;;
-     sun4u|sparc64)
-@@ -1140,13 +1143,13 @@ EOF
-     sparc)
-         arch="sparc"
-     ;;
--    sh4)
-+    sh4|sh)
-         arch="sh4"
-     ;;
--    parisc)
-+    parisc|hppa)
-         arch="parisc"
-     ;;
--    parisc64)
-+    parisc64|hppa64)
-         arch="parisc"
-         enable fast_64bit
-     ;;
-@@ -1213,11 +1216,11 @@ case $target_os in
-         disable need_memalign
-         LIBOBJFLAGS='$(PIC)'
-         SHFLAGS='-shared'
--        SLIBNAME='$(SLIBPREF)$(FULLNAME)$(SLIBSUF).$(LIBVERSION)'
--        SLIBNAME_WITH_VERSION='$(SLIBNAME)'
--        SLIBNAME_WITH_MAJOR='$(SLIBNAME)'
--        oss_demuxer_extralibs="-lossaudio"
--        oss_muxer_extralibs="-lossaudio"
-+        #SLIBNAME='$(SLIBPREF)$(FULLNAME)$(SLIBSUF).$(LIBVERSION)'
-+        #SLIBNAME_WITH_VERSION='$(SLIBNAME)'
-+        #SLIBNAME_WITH_MAJOR='$(SLIBNAME)'
-+        oss_demuxer_extralibs="-lsndio"
-+        oss_muxer_extralibs="-lsndio"
-         ;;
-     freebsd)
-         disable need_memalign
-@@ -1501,7 +1504,7 @@ fi
- check_cc <<EOF || die "Symbol mangling check failed."
- int ff_extern;
- EOF
--sym=$($nm -P -g $TMPO | grep ff_extern)
-+sym=$($nm -g $TMPO | grep ff_extern | cut -d ' ' -f 3)
- extern_prefix=${sym%%ff_extern*}
+ CC_O='-o $@'
+@@ -2605,7 +2613,7 @@ enabled libdirac   && add_cflags $(pkg-config --cflags
+                       require  libdirac libdirac_encoder/dirac_encoder.h dirac_encoder_init $(pkg-config --libs dirac)
+ enabled libfaac    && require2 libfaac "stdint.h faac.h" faacEncGetVersion -lfaac
+ enabled libfaad    && require2 libfaad faad.h faacDecOpen -lfaad
+-enabled libgsm     && require  libgsm gsm/gsm.h gsm_create -lgsm
++enabled libgsm     && require  libgsm gsm.h gsm_create -lgsm
+ enabled libmp3lame && require  libmp3lame lame/lame.h lame_init -lmp3lame -lm
+ enabled libnut     && require  libnut libnut.h nut_demuxer_init -lnut
+ enabled libopencore_amrnb  && require libopencore_amrnb opencore-amrnb/interf_dec.h Decoder_Interface_init -lopencore-amrnb -lm
+@@ -2687,11 +2695,14 @@ check_header dev/ic/bt8xx.h
  
- check_asm inline_asm '""'
-@@ -1531,16 +1534,16 @@ fi
- 
- # check for assembler specific support
- 
--if test $arch = "powerpc"; then
--check_cc <<EOF && enable dcbzl
--int main(void) {
--    register long zero = 0;
--    char data[1024];
--    asm volatile("dcbzl %0, %1" : : "b" (data), "r" (zero));
--return 0;
--}
--EOF
--fi
-+#if test $arch = "powerpc"; then
-+#check_cc <<EOF && enable dcbzl
-+#int main(void) {
-+#    register long zero = 0;
-+#    char data[1024];
-+#    asm volatile("dcbzl %0, %1" : : "b" (data), "r" (zero));
-+#return 0;
-+#}
-+#EOF
-+#fi
- 
- # check for SIMD availability
- 
-@@ -1582,10 +1585,14 @@ enabled vis && add_cflags "-mcpu=ultrasparc -mtune=ult
- 
- # ---
- # big/little-endian test
--check_cc <<EOF || die "endian test failed"
--unsigned int endian = 'B' << 24 | 'I' << 16 | 'G' << 8 | 'E';
-+check_exec <<EOF || enable bigendian
-+#include <sys/types.h>
-+int main(void) {
-+	if (_BYTE_ORDER == _BIG_ENDIAN)
-+		return 1;
-+	return 0;
-+}
- EOF
--od -A n -t x1 $TMPO | grep -q '42 *49 *47 *45' && enable bigendian
- 
- # ---
- # check availability of some header files
-@@ -1607,7 +1614,7 @@ check_func2 windows.h GetProcessTimes
- check_header byteswap.h
- check_header conio.h
- check_header dlfcn.h
--check_header malloc.h
-+#check_header malloc.h
- check_header sys/mman.h
- check_header sys/resource.h
- check_header termios.h
-@@ -1717,10 +1724,10 @@ if test "$target_os" = cygwin -o "$target_os" = mingw3
-     echo
- fi
- 
--if enabled vhook; then
--    check_ldflags -rdynamic
--    check_ldflags -export-dynamic
--fi
-+#if enabled vhook; then
-+#    check_ldflags -rdynamic
-+#    check_ldflags -export-dynamic
-+#fi
- 
- check_foo_config imlib2 imlib2 Imlib2.h imlib_load_font
- check_foo_config freetype2 freetype ft2build.h FT_Init_FreeType
-@@ -1756,7 +1763,7 @@ fi
- 
- texi2html -version > /dev/null 2>&1 && enable texi2html || disable texi2html
- 
--check_type sys/socket.h socklen_t
-+check_type sys/types.h socklen_t
- 
- ##########################################
- # Network check
-@@ -1791,6 +1798,7 @@ EOF
- 
- check_header linux/videodev.h
- check_header linux/videodev2.h
-+check_header sys/videoio.h
- 
- check_func2 "windows.h vfw.h" capCreateCaptureWindow -lvfw32
- 
-@@ -1803,8 +1811,7 @@ check_func2 "windows.h vfw.h" capCreateCaptureWindow -
-   check_header dev/video/bktr/ioctl_bt848.h; } ||
- check_header dev/ic/bt8xx.h
- 
--check_header sys/soundcard.h
--check_header soundcard.h
+ check_header sys/soundcard.h
+ check_header soundcard.h
 +check_header sndio.h
  
- # deal with the X11 frame grabber
+ enabled_any alsa_indev alsa_outdev && check_lib2 alsa/asoundlib.h snd_pcm_htimestamp -lasound
+ 
+ enabled jack_indev && check_lib2 jack/jack.h jack_client_open -ljack
+ 
++enabled_any sndio_indev sndio_outdev && check_lib2 sndio.h sio_open -lsndio
++
  enabled x11grab                         &&
-@@ -1831,7 +1838,7 @@ enabled extra_warnings && check_cflags -Winline
+ check_header X11/Xlib.h                 &&
+ check_header X11/extensions/XShm.h      &&
+@@ -2726,9 +2737,6 @@ enabled extra_warnings && check_cflags -Winline
+ 
  # add some linker flags
  check_ldflags -Wl,--warn-common
- check_ldflags $LDLATEFLAGS
+-check_ldflags -Wl,--as-needed
+-check_ldflags '-Wl,-rpath-link,\$(BUILD_ROOT)/libpostproc -Wl,-rpath-link,\$(BUILD_ROOT)/libswscale -Wl,-rpath-link,\$(BUILD_ROOT)/libavfilter -Wl,-rpath-link,\$(BUILD_ROOT)/libavdevice -Wl,-rpath-link,\$(BUILD_ROOT)/libavformat -Wl,-rpath-link,\$(BUILD_ROOT)/libavcodec -Wl,-rpath-link,\$(BUILD_ROOT)/libavutil'
 -check_ldflags -Wl,-Bsymbolic
-+# check_ldflags -Wl,-Bsymbolic
  
- if enabled small; then
-     check_cflags -Os            # not all compilers support -Os
-@@ -2204,8 +2211,7 @@ Version: $version
- Requires: $(disabled shared && echo $requires)
+ echo "X{};" > $TMPV
+ test_ldflags -Wl,--version-script,$TMPV &&
+@@ -3123,8 +3131,7 @@ Version: $version
+ Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
--Libs: -L\${libdir} -l${shortname} $(disabled shared && echo $libs)
+-Libs: -L\${libdir} -l${shortname} $(enabled shared || echo $libs)
 -Libs.private: $(enabled shared && echo $libs)
 +Libs: -L\${libdir} -l${shortname} $libs
  Cflags: -I\${includedir}
  EOF
  cat <<EOF > $name/$name-uninstalled.pc
-@@ -2224,17 +2230,17 @@ Cflags: -I\${includedir}
+@@ -3143,12 +3150,12 @@ Cflags: -I\${includedir}
  EOF
  }
  
 -pkgconfig_generate libavutil "FFmpeg utility library" "$LIBAVUTIL_VERSION"
--pkgconfig_generate libavcodec "FFmpeg codec library" "$LIBAVCODEC_VERSION" "$extralibs" "$pkg_requires libavutil = $LIBAVUTIL_VERSION"
--pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$extralibs" "$pkg_requires libavcodec = $LIBAVCODEC_VERSION"
--pkgconfig_generate libavdevice "FFmpeg device handling library" "$LIBAVDEVICE_VERSION" "$extralibs" "$pkg_requires libavformat = $LIBAVFORMAT_VERSION"
+-pkgconfig_generate libavcodec "FFmpeg codec library" "$LIBAVCODEC_VERSION" "$extralibs" "libavutil = $LIBAVUTIL_VERSION"
+-pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$extralibs" "libavcodec = $LIBAVCODEC_VERSION"
+-pkgconfig_generate libavdevice "FFmpeg device handling library" "$LIBAVDEVICE_VERSION" "$extralibs" "libavformat = $LIBAVFORMAT_VERSION"
 +pkgconfig_generate libavutil "FFmpeg utility library" "$LIBAVUTIL_VERSION" "$LIBavutil_EXTRALIBS"
 +pkgconfig_generate libavcodec "FFmpeg codec library" "$LIBAVCODEC_VERSION" "$LIBavcodec_EXTRALIBS" "libavutil"
-+pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$LIBavformat_EXTRALIBS" "libavutil libavcodec"
-+pkgconfig_generate libavdevice "FFmpeg device handling library" "$LIBAVDEVICE_VERSION" "$LIBavdevice_EXTRALIBS" "libavutil libavformat"
++pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$LIBavformat_EXTRALIBS" "libavcodec libavutil"
++pkgconfig_generate libavdevice "FFmpeg device handling library" "$LIBAVDEVICE_VERSION" "$LIBavdevice_EXTRALIBS" "libavcodec libavformat libavutil"
  enabled avfilter &&
-     pkgconfig_generate libavfilter "FFmpeg video filtering library" "$LIBAVFILTER_VERSION" "$extralibs" "$pkg_requires libavutil = $LIBAVUTIL_VERSION"
+-    pkgconfig_generate libavfilter "FFmpeg video filtering library" "$LIBAVFILTER_VERSION" "$extralibs" "libavutil = $LIBAVUTIL_VERSION"
++    pkgconfig_generate libavfilter "FFmpeg video filtering library" "$LIBAVFILTER_VERSION" "$LIBavfilter_EXTRALIBS" "libavcodec libavutil libswscale"
  enabled postproc &&
 -    pkgconfig_generate libpostproc "FFmpeg post processing library" "$LIBPOSTPROC_VERSION"
+-pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "" "libavutil = $LIBAVUTIL_VERSION"
 +    pkgconfig_generate libpostproc "FFmpeg post processing library" "$LIBPOSTPROC_VERSION" "$LIBpostproc_EXTRALIBS" "libavutil"
- if enabled swscale; then
--    pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "" "libavutil = $LIBAVUTIL_VERSION"
-+    pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBswscale_EXTRALIBS" "libavutil"
- else
--    pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "" "$pkg_requires libavcodec = $LIBAVCODEC_VERSION"
-+    pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBswscale_EXTRALIBS"
-     apply libswscale/libswscale.pc sed s/^Libs:.*$/Libs:/
- fi
++pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBswscale_EXTRALIBS" "libavutil"
