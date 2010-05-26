@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2010/03/20 16:58:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2010/05/26 21:29:10 jasper Exp $
 
 COMMENT=	extensible window manager
 
-VERSION=	1.6.2
+VERSION=	1.6.3
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
 
@@ -26,9 +26,9 @@ WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gdk_pixbuf_xlib-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0
-WANTLIB += gmp gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangox-1.0 pangoxft-1.0 pcre pixman-1
-WANTLIB += png pthread-stubs rep xcb z
+WANTLIB += gmp gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangox-1.0 pangoxft-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs rep xcb z
 
 MODULES=	devel/gettext
 
@@ -40,8 +40,6 @@ USE_GMAKE=      Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--without-audiofile \
-			--without-esd \
 			--disable-linguas
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I{X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
