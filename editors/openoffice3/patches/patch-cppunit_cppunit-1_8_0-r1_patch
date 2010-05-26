@@ -1,0 +1,37 @@
+$OpenBSD: patch-cppunit_cppunit-1_8_0-r1_patch,v 1.1 2010/05/26 15:08:55 robert Exp $
+--- cppunit/cppunit-1.8.0-r1.patch.orig.port	Wed May 26 17:02:02 2010
++++ cppunit/cppunit-1.8.0-r1.patch	Wed May 26 17:04:58 2010
+@@ -5632,7 +5632,7 @@ Nur in misc/build/cppunit-1.8.0/src/cppunit: cmdlinebi
+ Nur in misc/build/cppunit-1.8.0/src/cppunit: joblist.cxx.dummy.
+ --- misc/cppunit-1.8.0/src/cppunit/makefile.mk	2008-12-10 20:46:08.970632544 +0100
+ +++ misc/build/cppunit-1.8.0/src/cppunit/makefile.mk	2008-12-10 19:44:52.000000000 +0100
+-@@ -1 +1,113 @@
++@@ -1 +1,114 @@
+ -dummy
+ +#*************************************************************************
+ +#
+@@ -5746,6 +5746,7 @@ Nur in misc/build/cppunit-1.8.0/src/cppunit: joblist.c
+ +# --- Targets ------------------------------------------------------
+ +
+ +.INCLUDE :  target.mk
+++INCLUDE!:=-I. $(ENVINCPRE) $(INCPRE:^"-I":s/-I-I/-I/) -I$(INCLOCAL) -I$(INCPCH) -I$(INC) -I$(INCGUI) -I$(INCCOM) -I$(INCEXT) -I$(SOLARINC) $(null,$(UNOINCLUDES) $(NULL) -I$(UNOINCLUDES)) -I$(PRJ)/res -I$(INCPOST)
+ +
+ Nur in misc/build/cppunit-1.8.0/src/cppunit: makefile.mk.dummy.
+ --- misc/cppunit-1.8.0/src/cppunit/registertestfunction.cxx	2008-12-10 20:46:09.058854031 +0100
+@@ -7335,7 +7336,7 @@ Nur in misc/build/cppunit-1.8.0/src/result: emacsTestR
+ Nur in misc/build/cppunit-1.8.0/src/result: log.cxx.dummy.
+ --- misc/cppunit-1.8.0/src/result/makefile.mk	2008-12-10 20:46:09.542019008 +0100
+ +++ misc/build/cppunit-1.8.0/src/result/makefile.mk	2008-12-10 20:23:07.000000000 +0100
+-@@ -1 +1,88 @@
++@@ -1 +1,89 @@
+ -dummy
+ +#*************************************************************************
+ +#
+@@ -7424,6 +7425,7 @@ Nur in misc/build/cppunit-1.8.0/src/result: log.cxx.du
+ +# --- Targets ------------------------------------------------------
+ +
+ +.INCLUDE :  target.mk
+++INCLUDE!:=-I. $(ENVINCPRE) $(INCPRE:^"-I":s/-I-I/-I/) -I$(INCLOCAL) -I$(INCPCH) -I$(INC) -I$(INCGUI) -I$(INCCOM) -I$(INCEXT) -I$(SOLARINC) $(null,$(UNOINCLUDES) $(NULL) -I$(UNOINCLUDES)) -I$(PRJ)/res -I$(INCPOST)
+ +
+ Nur in misc/build/cppunit-1.8.0/src/result: makefile.mk.dummy.
+ --- misc/cppunit-1.8.0/src/result/optionhelper.cxx	2008-12-10 20:46:09.615952197 +0100
