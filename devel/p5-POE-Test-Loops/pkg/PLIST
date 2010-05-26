@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/11/06 02:16:59 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/05/26 08:57:49 kevlo Exp $
 bin/poe-gen-tests
 ${P5SITE}/POE/
 ${P5SITE}/POE/Test/
 ${P5SITE}/POE/Test/DondeEstan.pm
 ${P5SITE}/POE/Test/Loops/
 ${P5SITE}/POE/Test/Loops.pm
+${P5SITE}/POE/Test/Loops/00_info.pm
 ${P5SITE}/POE/Test/Loops/all_errors.pm
 ${P5SITE}/POE/Test/Loops/comp_tcp.pm
 ${P5SITE}/POE/Test/Loops/comp_tcp_concurrent.pm
@@ -35,6 +36,8 @@ ${P5SITE}/POE/Test/Loops/z_leolo_wheel_run.pm
 ${P5SITE}/POE/Test/Loops/z_merijn_sigchld_system.pm
 ${P5SITE}/POE/Test/Loops/z_rt39872_sigchld.pm
 ${P5SITE}/POE/Test/Loops/z_rt39872_sigchld_stop.pm
+${P5SITE}/POE/Test/Loops/z_rt53302_fh_watchers.pm
+${P5SITE}/POE/Test/Loops/z_rt54319_bazerka_followtail.pm
 ${P5SITE}/POE/Test/Loops/z_steinert_signal_integrity.pm
 @man man/man1/poe-gen-tests.1
 @man man/man3p/POE::Test::Loops.3p
