@@ -1,4 +1,4 @@
-$OpenBSD: patch-external_gcc3_specific_makefile_mk,v 1.4 2010/03/30 11:03:07 robert Exp $
+$OpenBSD: patch-external_gcc3_specific_makefile_mk,v 1.5 2010/05/26 20:36:31 robert Exp $
 --- external/gcc3_specific/makefile.mk.orig.port	Sun Jan 24 16:12:33 2010
 +++ external/gcc3_specific/makefile.mk	Sun Jan 24 16:44:47 2010
 @@ -45,18 +45,20 @@ $(MINGWGXXDLL) :
@@ -10,12 +10,12 @@ $OpenBSD: patch-external_gcc3_specific_makefile_mk,v 1.4 2010/03/30 11:03:07 rob
  .EXPORT : CC
  
 -all .SEQUENTIAL : $(LB)$/libstdc++.so.$(SHORTSTDCPP3) $(LB)$/libgcc_s.so.1
-+all .SEQUENTIAL : $(LB)$/libestdc++.so.$(SHORTSTDCPP3) $(LB)$/libgcc_s.so.1
++all .SEQUENTIAL : $(LB)$/lib%%STDLIB%%++.so.$(SHORTSTDCPP3) $(LB)$/libgcc_s.so.1
  
  
  $(LB)$/libstdc++.so.$(SHORTSTDCPP3) :
 -       $(GCCINSTLIB) libstdc++.so.$(SHORTSTDCPP3) $(LB)
-+       $(GCCINSTLIB) libestdc++.so.$(SHORTSTDCPP3) $(LB)
++       $(GCCINSTLIB) lib%%STDLIB%%.so.$(SHORTSTDCPP3) $(LB)
  
  $(LB)$/libgcc_s.so.1 :
         $(GCCINSTLIB) libgcc_s.so.1 $(LB)

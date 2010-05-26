@@ -11,7 +11,7 @@
 +#
 +# $RCSfile: patch-solenv_inc_unxobsd_mk,v $
 +#
-+# $Revision: 1.7 $
++# $Revision: 1.8 $
 +#
 +# This file is part of OpenOffice.org.
 +#
@@ -191,7 +191,7 @@
 +
 +# Sequence of libs does matter !
 +
-+STDLIBCPP=-lestdc++
++STDLIBCPP=-l%%STDLIB%%
 +
 +# default objectfilenames to link
 +STDOBJVCL=$(L)$/salmain.o

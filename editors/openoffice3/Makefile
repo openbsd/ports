@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/04/21 13:53:01 robert Exp $
+# $OpenBSD: Makefile,v 1.43 2010/05/26 20:36:31 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -9,10 +9,10 @@ COMMENT-java=	optional integration of OpenOffice java features
 VERSION=	3.2.0
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOO320_m12
-PKGNAME=	openoffice-${VERSION}p0
-PKGNAME-main=	openoffice-${VERSION}p2
-PKGNAME-kde=	openoffice-kde-${VERSION}p0
-PKGNAME-java=	openoffice-java-${VERSION}p1
+PKGNAME=	openoffice-${VERSION}p1
+PKGNAME-main=	openoffice-${VERSION}p3
+PKGNAME-kde=	openoffice-kde-${VERSION}p1
+PKGNAME-java=	openoffice-java-${VERSION}p2
 CATEGORIES=	editors productivity
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -92,7 +92,6 @@ MODULES+=	lang/python \
 MODGCONF2_LIBDEP=No
 LIB_DEPENDS-main=gdk-x11-2.0.>=400.14,gdk_pixbuf-2.0.>=400.14,gtk-x11-2.0.>=400.14::x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
-		estdc++.>=11:libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:lang/gcc/4.2,-estdc \
 		db.>=4:db->=4,<5:databases/db/v4 \
 		xslt.>=3::textproc/libxslt \
 		curl.>=7::net/curl \
@@ -111,11 +110,19 @@ WANTLIB-main=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		png pthread pthread-stubs ssl util xcb xml2 z
 RUN_DEPENDS-main=	:desktop-file-utils-*:devel/desktop-file-utils
 
+.include <bsd.own.mk>
+.if ${COMPILER_VERSION:L:Mgcc4}
+STDLIB=			stdc++
+.else
+STDLIB=			estdc++
+LIB_DEPENDS-main+=	estdc++.>=11:libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:lang/gcc/4.2,-estdc
+.endif
+
 MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	::editors/openoffice3
 LIB_DEPENDS-kde=	${MODQT_LIB_DEPENDS} \
 			kabc,kdecore,kdeui,kio::x11/kde/libs3
-WANTLIB-kde=		X11 Xau Xdmcp Xext Xrandr Xrender estdc++ m \
+WANTLIB-kde=		X11 Xau Xdmcp Xext Xrandr Xrender ${STDLIB} m \
 			pthread-stubs xcb
 
 .if !${FLAVOR:L:Mno_java}
@@ -128,7 +135,7 @@ LIB_DEPENDS-java=	:db-java->=4,<5:databases/db/v4,-java,java \
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			::editors/openoffice3 \
 			::java/javaPathHelper
-WANTLIB-java=		c estdc++ m pthread
+WANTLIB-java=		c ${STDLIB} m pthread
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -237,6 +244,12 @@ pre-patch:
 	@cd ${WRKSRC}/bridges/source/cpp_uno && \
 		cp -R gcc3_freebsd_${arch} gcc3_openbsd_${arch} && \
 		perl -pi -e "s,FREEBSD,OPENBSD,g" gcc3_openbsd_${arch}/makefile.mk
+.endfor
+
+post-patch:
+.for f in external/gcc3_specific/makefile.mk solenv/inc/unxobsd.mk
+	@cd ${WRKSRC} && \
+		perl -pi -e "s,%%STDLIB%%,${STDLIB},g" ${f}
 .endfor
 
 do-build:
