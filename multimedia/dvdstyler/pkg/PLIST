@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/22 15:46:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/05/26 21:56:03 jakemsr Exp $
 @bin bin/dvdstyler
 @man man/man1/dvdstyler.1
 share/applications/dvdstyler.desktop
 share/doc/dvdstyler/
+@comment share/doc/dvdstyler/AUTHORS
+@comment share/doc/dvdstyler/COPYING
+@comment share/doc/dvdstyler/ChangeLog
+@comment share/doc/dvdstyler/INSTALL
 share/doc/dvdstyler/README
 share/dvdstyler/
 share/dvdstyler/backgrounds/
-share/dvdstyler/backgrounds/01_autobahn.jpg
 share/dvdstyler/backgrounds/02_bi_domrep.jpg
 share/dvdstyler/backgrounds/03_creta.jpg
 share/dvdstyler/backgrounds/04_kiel_kanal.jpg
+share/dvdstyler/backgrounds/05_easyblue.jpg
 share/dvdstyler/backgrounds/10_turbulence_blue.jpg
 share/dvdstyler/backgrounds/11_turbulence_green.jpg
 share/dvdstyler/backgrounds/15_bordes_blue.jpg
@@ -20,6 +24,10 @@ share/dvdstyler/backgrounds/22_gold.jpg
 share/dvdstyler/backgrounds/23_lava.jpg
 share/dvdstyler/backgrounds/30_brushed_aluminiun.jpg
 share/dvdstyler/backgrounds/31_texture_border.jpg
+share/dvdstyler/backgrounds/32_blue_fractal.jpg
+share/dvdstyler/backgrounds/40_swans.jpg
+share/dvdstyler/backgrounds/45_nevado.jpg
+share/dvdstyler/backgrounds/46_paisaje.jpg
 share/dvdstyler/buttons/
 share/dvdstyler/buttons/arrow-star.xml
 share/dvdstyler/buttons/arrow.xml
@@ -38,20 +46,28 @@ share/dvdstyler/buttons/deprecated/arrow2-left.xml
 share/dvdstyler/buttons/deprecated/arrow2-right.xml
 share/dvdstyler/buttons/deprecated/arrow2-up.xml
 share/dvdstyler/buttons/deprecated/text-shadow.xml
+share/dvdstyler/buttons/deprecated/text-underlined.xml
 share/dvdstyler/buttons/deprecated/text.xml
 share/dvdstyler/buttons/ellipse.xml
 share/dvdstyler/buttons/frame.xml
 share/dvdstyler/buttons/ok.xml
 share/dvdstyler/buttons/pill.xml
+share/dvdstyler/buttons/text-circle.xml
 share/dvdstyler/buttons/text-shadow.xml
+share/dvdstyler/buttons/text-square.xml
+share/dvdstyler/buttons/text-underlined-v2.xml
 share/dvdstyler/buttons/text-v2.xml
 share/dvdstyler/data/
 share/dvdstyler/data/empty_ntsc_ac3.mpg
 share/dvdstyler/data/empty_ntsc_mp2.mpg
 share/dvdstyler/data/empty_pal_ac3.mpg
 share/dvdstyler/data/empty_pal_mp2.mpg
-share/dvdstyler/data/silence.ac3
-share/dvdstyler/data/silence.mp2
+share/dvdstyler/data/subtitles.rgb
+share/dvdstyler/docs/
+share/dvdstyler/docs/help_de.zip
+share/dvdstyler/docs/help_en.zip
+share/dvdstyler/docs/help_ja.zip
+share/dvdstyler/docs/help_ru.zip
 share/dvdstyler/objects/
 share/dvdstyler/objects/ellipse.xml
 share/dvdstyler/objects/frame.xml
@@ -60,11 +76,11 @@ share/dvdstyler/objects/rectangle.xml
 share/dvdstyler/objects/text-shadow.xml
 share/dvdstyler/objects/text.xml
 share/dvdstyler/rc/
+share/dvdstyler/rc/add.png
 share/dvdstyler/rc/dvdstyler.png
 share/dvdstyler/rc/files.png
-share/dvdstyler/rc/folder1.png
-share/dvdstyler/rc/folder2.png
 share/dvdstyler/rc/logo.png
+share/dvdstyler/rc/logoSmall.png
 share/dvdstyler/rc/minus.png
 share/dvdstyler/rc/move.cur
 share/dvdstyler/rc/nesw.cur
@@ -73,9 +89,16 @@ share/dvdstyler/rc/noaudio.png
 share/dvdstyler/rc/nwse.cur
 share/dvdstyler/rc/open.png
 share/dvdstyler/rc/plus.png
+share/dvdstyler/rc/preferences.png
 share/dvdstyler/rc/run.png
 share/dvdstyler/rc/save.png
-share/locale/ca/LC_MESSAGES/dvdstyler.mo
+share/dvdstyler/templates/
+share/dvdstyler/templates/blue.dvdt
+share/dvdstyler/templates/blue.png
+share/dvdstyler/templates/travel.dvdt
+share/dvdstyler/templates/travel.png
+share/dvdstyler/templates/turbulence.dvdt
+share/dvdstyler/templates/turbulence.png
 share/locale/cs/LC_MESSAGES/dvdstyler.mo
 share/locale/da/LC_MESSAGES/dvdstyler.mo
 share/locale/de/LC_MESSAGES/dvdstyler.mo
@@ -86,14 +109,22 @@ share/locale/fr/LC_MESSAGES/dvdstyler.mo
 share/locale/hu/LC_MESSAGES/dvdstyler.mo
 share/locale/it/LC_MESSAGES/dvdstyler.mo
 share/locale/ja/LC_MESSAGES/dvdstyler.mo
+share/locale/ko/LC_MESSAGES/dvdstyler.mo
+share/locale/mk/
+share/locale/mk/LC_MESSAGES/
+share/locale/mk/LC_MESSAGES/dvdstyler.mo
+share/locale/nb/LC_MESSAGES/dvdstyler.mo
 share/locale/nl/LC_MESSAGES/dvdstyler.mo
 share/locale/pl/LC_MESSAGES/dvdstyler.mo
 share/locale/pt/LC_MESSAGES/dvdstyler.mo
 share/locale/pt_BR/LC_MESSAGES/dvdstyler.mo
 share/locale/ru/LC_MESSAGES/dvdstyler.mo
 share/locale/sk/LC_MESSAGES/dvdstyler.mo
+share/locale/sl/LC_MESSAGES/dvdstyler.mo
 share/locale/sr/LC_MESSAGES/dvdstyler.mo
 share/locale/sv/LC_MESSAGES/dvdstyler.mo
+share/locale/vi/LC_MESSAGES/dvdstyler.mo
+share/locale/zh_TW/LC_MESSAGES/dvdstyler.mo
 share/pixmaps/dvdstyler.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
