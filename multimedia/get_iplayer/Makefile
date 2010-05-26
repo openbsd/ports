@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2010/05/01 21:17:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2010/05/26 20:13:06 sthen Exp $
 
 COMMENT =		download BBC iPlayer and ITV programmes
 
-DISTNAME =		get_iplayer-2.72
-PKGNAME =		${DISTNAME}p0
+DISTNAME =		get_iplayer-2.77
 CATEGORIES =		multimedia
 
 HOMEPAGE =		http://linuxcentre.net/get_iplayer/
@@ -18,8 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
-MASTER_SITES =		http://linuxcentre.net/get_iplayer/packages/ \
-			http://linuxcentre.net/get_iplayer/packages/archive/
+MASTER_SITES =		ftp://ftp.infradead.org/pub/get_iplayer/
 
 RUN_DEPENDS =		::audio/id3lib \
 			::multimedia/atomicparsley \
@@ -42,6 +40,5 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/get_iplayer ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/plugins/* \
 	    ${PREFIX}/share/get_iplayer/plugins
-	${INSTALL_MAN} ${WRKSRC}/get_iplayer.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

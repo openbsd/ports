@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/09/21 22:30:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/05/26 20:13:06 sthen Exp $
 bin/get_iplayer
-@man man/man1/get_iplayer.1
 share/get_iplayer/
 share/get_iplayer/options.sample
 @sample ${SYSCONFDIR}/get_iplayer/
