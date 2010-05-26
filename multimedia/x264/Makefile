@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/14 19:50:47 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2010/05/26 21:18:17 jakemsr Exp $
 
 COMMENT=	free H264/AVC encoder
 
-V=		20090204
+V=		20100511
 DISTNAME=	x264-snapshot-${V}-2245
 PKGNAME=	x264-${V}
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	x264	3.0
+SHARED_LIBS=	x264	4.0
 
 HOMEPAGE=	http://www.videolan.org/developers/x264.html
 
@@ -25,12 +25,11 @@ WANTLIB=	c m pthread
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ENV=	API=${LIBx264_VERSION}
-CONFIGURE_ARGS+=--disable-mp4-output \
+CONFIGURE_ARGS+=--disable-asm \
+		--disable-ffms-input \
+		--disable-lavf-input \
+		--disable-mp4-output \
 		--prefix=${PREFIX}
-
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	::devel/yasm
-.endif
 
 NO_REGRESS=	Yes
 

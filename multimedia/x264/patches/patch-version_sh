@@ -1,6 +1,6 @@
-$OpenBSD: patch-version_sh,v 1.1 2009/04/14 19:50:47 kili Exp $
---- version.sh.orig	Thu Jan 29 16:45:08 2009
-+++ version.sh	Thu Feb 12 01:24:30 2009
+$OpenBSD: patch-version_sh,v 1.2 2010/05/26 21:18:17 jakemsr Exp $
+--- version.sh.orig	Tue May 11 16:45:10 2010
++++ version.sh	Tue May 11 18:16:17 2010
 @@ -1,19 +1,6 @@
 -#!/bin/bash
 -git rev-list HEAD | sort > config.git-hash
@@ -12,7 +12,7 @@ $OpenBSD: patch-version_sh,v 1.1 2009/04/14 19:50:47 kili Exp $
 -    elif git status | grep -q "modified:" ; then
 -        VER="${VER}M"
 -    fi
--    VER="$VER $(git rev-list HEAD -n 1 | head -c 7)"
+-    VER="$VER $(git rev-list HEAD -n 1 | cut -c 1-7)"
 -    echo "#define X264_VERSION \" r$VER\"" >> config.h
 -else
 -    echo "#define X264_VERSION \"\"" >> config.h
