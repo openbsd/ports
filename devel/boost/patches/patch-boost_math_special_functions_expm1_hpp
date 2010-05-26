@@ -1,0 +1,13 @@
+$OpenBSD: patch-boost_math_special_functions_expm1_hpp,v 1.1 2010/05/26 12:25:23 espie Exp $
+--- boost/math/special_functions/expm1.hpp.orig	Wed May 26 11:30:30 2010
++++ boost/math/special_functions/expm1.hpp	Wed May 26 11:31:54 2010
+@@ -268,7 +268,9 @@ inline typename tools::promote_args<T>::type expm1(T x
+ #  ifdef BOOST_MATH_USE_C99
+ inline float expm1(float x, const policies::policy<>&){ return ::expm1f(x); }
+ #     ifndef BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS
++#	ifndef __OpenBSD__
+ inline long double expm1(long double x, const policies::policy<>&){ return ::expm1l(x); }
++#	endif
+ #     endif
+ #  else
+ inline float expm1(float x, const policies::policy<>&){ return ::expm1(x); }

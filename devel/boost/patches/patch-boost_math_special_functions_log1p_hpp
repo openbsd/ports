@@ -1,0 +1,19 @@
+$OpenBSD: patch-boost_math_special_functions_log1p_hpp,v 1.1 2010/05/26 12:25:23 espie Exp $
+--- boost/math/special_functions/log1p.hpp.orig	Wed May 26 11:33:17 2010
++++ boost/math/special_functions/log1p.hpp	Wed May 26 11:33:39 2010
+@@ -329,6 +329,7 @@ inline float log1p(float x, const Policy& pol)
+    return ::log1pf(x); 
+ }
+ #ifndef BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS
++#ifndef __OpenBSD__
+ template <class Policy>
+ inline long double log1p(long double x, const Policy& pol)
+ { 
+@@ -340,6 +341,7 @@ inline long double log1p(long double x, const Policy& 
+          "log1p<%1%>(%1%)", 0, pol);
+    return ::log1pl(x); 
+ }
++#endif
+ #endif
+ #else
+ template <class Policy>
