@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpage_c,v 1.1 2002/07/07 17:03:37 naddy Exp $
---- mpage.c.orig	Tue Nov 13 18:04:46 2001
-+++ mpage.c	Sun May 19 01:00:14 2002
-@@ -74,10 +74,10 @@ char **argv;
+$OpenBSD: patch-mpage_c,v 1.2 2010/05/26 13:53:16 jasper Exp $
+--- mpage.c.orig	Wed Jan  9 21:47:07 2008
++++ mpage.c	Wed Mar 24 12:13:27 2010
+@@ -79,10 +79,10 @@ char **argv;
       */
      if (doprint) {
          if (printque != NULL)

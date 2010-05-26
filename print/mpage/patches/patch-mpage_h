@@ -1,36 +1,32 @@
-$OpenBSD: patch-mpage_h,v 1.1 2010/05/19 14:55:00 espie Exp $
---- mpage.h.orig	Wed May 19 16:50:06 2010
-+++ mpage.h	Wed May 19 16:53:54 2010
-@@ -172,6 +172,16 @@ extern int errno;
- extern int ps_width;	/* number of points in the X direction (8.5 inches) */
- extern int ps_height;	/* number of points in the Y direction (11 inches) */
- extern char * media;	/* name of output page media */
-+
-+/*
-+ * Structure to describe a physical piece of paper, e.g. A4 or Letter
-+ */
-+struct page_desc {
-+    char *media;
-+    int width;
-+    int height;
-+};
-+    
- extern struct page_desc paper[];
- 
- /*
-@@ -213,15 +223,6 @@ struct pagebox {
+$OpenBSD: patch-mpage_h,v 1.2 2010/05/26 13:53:16 jasper Exp $
+--- mpage.h.orig	Mon Jan 14 23:52:30 2008
++++ mpage.h	Fri May 21 12:02:36 2010
+@@ -204,6 +204,13 @@ struct pagebox {
+ 	int thick;/* line thickness */
  };
  
++    
++/*
++ * some basic PS parameters
++ */
++extern int ps_width;	/* number of points in the X direction (8.5 inches) */
++extern int ps_height;	/* number of points in the Y direction (11 inches) */
++extern char * media;	/* name of output page media */
  
--/*
-- * Structure to describe a physical piece of paper, e.g. A4 or Letter
-- */
--struct page_desc {
--    char *media;
--    int width;
--    int height;
--};
+ /*
+  * Structure to describe a physical piece of paper, e.g. A4 or Letter
+@@ -213,14 +220,6 @@ struct page_desc {
+     int width;
+     int height;
+ };
 -    
+-/*
+- * some basic PS parameters
+- */
+-extern int ps_width;	/* number of points in the X direction (8.5 inches) */
+-extern int ps_height;	/* number of points in the Y direction (11 inches) */
+-extern char * media;	/* name of output page media */
+-
  
- /* array of sheets where pages are ordered for coli ??? */
- extern struct sheet coli[];
+ extern struct page_desc paper[];
+ 

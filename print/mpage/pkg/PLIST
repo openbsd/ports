@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:32:14 espie Exp $
-bin/mpage
+@comment $OpenBSD: PLIST,v 1.6 2010/05/26 13:53:16 jasper Exp $
+@bin bin/mpage
 @man man/man1/mpage.1
 share/mpage/
 share/mpage/CP850.PC

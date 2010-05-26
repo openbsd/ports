@@ -1,15 +1,15 @@
-$OpenBSD: patch-args_c,v 1.4 2010/05/19 14:55:00 espie Exp $
---- args.c.orig	Wed Oct 16 23:22:48 2002
-+++ args.c	Wed May 19 14:52:00 2010
-@@ -35,6 +35,7 @@ do_args(int argc, char **argv, int envflag)
-     int consumed;
+$OpenBSD: patch-args_c,v 1.5 2010/05/26 13:53:16 jasper Exp $
+--- args.c.orig	Mon May 31 05:37:45 2004
++++ args.c	Fri May 21 11:57:57 2010
+@@ -36,6 +36,7 @@ do_args(int argc, char **argv, int envflag)
+     int finished;
      int currarg;
      int opterrors;
 +    size_t len;
  
      int i;
  
-@@ -142,18 +143,17 @@ do_args(int argc, char **argv, int envflag)
+@@ -152,18 +153,17 @@ do_args(int argc, char **argv, int envflag)
                          break;
                  case 'C':    /* select character definitions */
                          consumed = 1;
