@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2009/08/11 08:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/05/26 22:15:44 jakemsr Exp $
 
-COMMENT=		C++ library to  create, manipulate and render SVG files
+COMMENT=		C++ library to create, manipulate and render SVG files
 
-DISTNAME=		wxsvg-1.0b11
-PKGNAME=		${DISTNAME}p3
+DISTNAME=		wxsvg-1.0.4
 SHARED_LIBS +=	wxsvg                0.0      # .0.0
 CATEGORIES=		x11 graphics
 
@@ -18,26 +17,22 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wxsvg/}
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += X11 Xau Xdmcp a52 bz2 c expat faac faad fontconfig
+WANTLIB += X11 Xau Xdmcp bz2 c expat faac faad fontconfig
 WANTLIB += freetype glib-2.0 gmodule-2.0 gobject-2.0 m mp3lame
 WANTLIB += ogg pango-1.0 pangoft2-1.0 pcre pthread stdc++ theora
 WANTLIB += vorbis vorbisenc x264 z oil-0.3 schroedinger-1.0
 WANTLIB += pthread-stubs xcb
+WANTLIB += gsm gthread-2.0 speex
 
 MODULES=		devel/gettext
 
-BUILD_DEPENDS=          ${MODGNU_AUTOCONF_DEPENDS} \
-                        ${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=		avcodec.>=13.1,avformat.>=12,avutil.>=6,swscale.>=1:ffmpeg->=20080620p10:graphics/ffmpeg \
 			art_lgpl_2::graphics/libart \
 			wx_base,wx_base_net,wx_base_odbc,wx_base_xml,wx_gtk2_adv,wx_gtk2_aui,wx_gtk2_core,wx_gtk2_dbgrid,wx_gtk2_html,wx_gtk2_qa,wx_gtk2_richtext,wx_gtk2_xrc::x11/wxWidgets
 
-USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
 
-AUTOMAKE_VERSION=	1.9
-AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-render=libart \
@@ -47,9 +42,5 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-extract:
 	@touch ${WRKSRC}/ltmain.sh
-
-pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>
