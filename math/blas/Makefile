@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/02/09 12:23:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/05/26 16:15:27 naddy Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
@@ -25,6 +25,10 @@ MASTER_SITES0=	${MASTER_SITES:S/blas/lapack/}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${DISTNAME}-${VERSION}
 WRKDIST=	${WRKDIR}
+
+MODULES=	fortran
+MODFORTRAN_WANTG77=	Yes
+BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBblas_VERSION:R} \
