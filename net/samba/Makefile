@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2010/05/20 18:16:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2010/05/26 08:47:43 kili Exp $
 
 SHARED_ONLY=		Yes
 
@@ -78,6 +78,11 @@ CONFIGURE_ARGS=		--disable-fam \
 
 # Uncomment to enable debugging symbols.
 #CONFIGURE_ARGS+=	--enable-debug
+
+.if ${MACHINE_ARCH:Mpowerpc}
+# XXX gcc 3.3 ICE
+MAKE_FLAGS +=		CFLAGS_smbd/smb2_create.o=-O0
+.endif
 
 LDFLAGS+=		-L${LOCALBASE}/lib -Wl,--export-dynamic -Wl,--no-as-needed
 CONFIGURE_ENV=		CPPFLAGS+="-I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
