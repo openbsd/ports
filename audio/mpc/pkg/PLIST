@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/23 14:26:41 bernd Exp $
-bin/mpc
+@comment $OpenBSD: PLIST,v 1.2 2010/05/26 13:59:38 jasper Exp $
+@bin bin/mpc
 @man man/man1/mpc.1
 share/doc/mpc/
 share/doc/mpc/AUTHORS
+share/doc/mpc/COPYING
+share/doc/mpc/NEWS
 share/doc/mpc/README
 share/examples/mpc/
-share/examples/mpc/m3u-handler.sh
-share/examples/mpc/mpc-bashrc
-share/examples/mpc/pls-handler.sh
 @comment share/mpc/
+share/examples/mpc/mpc-completion.bash
+share/examples/mpc/mpd-m3u-handler.sh
+share/examples/mpc/mpd-pls-handler.sh
+share/examples/mpc/mppledit

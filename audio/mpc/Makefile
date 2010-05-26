@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/04/02 05:18:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/05/26 13:59:37 jasper Exp $
 
 COMMENT=		command line client for mpd
 
-DISTNAME=		mpc-0.12.1
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		mpc-0.19
 CATEGORIES=		audio
 
-HOMEPAGE=		http://www.musicpd.org/mpc.shtml
+HOMEPAGE=		http://mpd.wikia.com/wiki/Client:Mpc
 
 MAINTAINER=		Tobias Ulmer <tobiasu@tmux.org>
 
@@ -17,18 +16,24 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
+LIB_DEPENDS=		mpdclient::audio/libmpdclient
 
-MASTER_SITES=		http://www.musicpd.org/uploads/files/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 
 MODULES=		converters/libiconv
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-iconv=${LOCALBASE}
+CONFIGURE_ARGS=		ac_cv_func_iconv=yes
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mpc
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/m3u-handler.sh \
-		${WRKSRC}/doc/pls-handler.sh ${PREFIX}/share/examples/mpc
-	${INSTALL_DATA} ${WRKSRC}/doc/mpc-bashrc ${PREFIX}/share/examples/mpc
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/doc/mpd-m3u-handler.sh \
+		${WRKSRC}/doc/mpd-pls-handler.sh \
+		${WRKSRC}/doc/mppledit \
+		${PREFIX}/share/examples/mpc
+	${INSTALL_DATA} ${WRKSRC}/doc/mpc-completion.bash \
+		${PREFIX}/share/examples/mpc
 
 .include <bsd.port.mk>
