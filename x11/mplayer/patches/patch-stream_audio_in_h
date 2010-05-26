@@ -1,7 +1,7 @@
-$OpenBSD: patch-stream_audio_in_h,v 1.1 2009/10/11 13:36:23 edd Exp $
---- stream/audio_in.h.orig	Tue Jul 21 14:38:27 2009
-+++ stream/audio_in.h	Tue Jul 21 15:16:02 2009
-@@ -3,6 +3,7 @@
+$OpenBSD: patch-stream_audio_in_h,v 1.2 2010/05/26 21:29:56 jakemsr Exp $
+--- stream/audio_in.h.orig	Sat Jan 30 22:26:47 2010
++++ stream/audio_in.h	Mon Mar  8 14:28:42 2010
+@@ -21,6 +21,7 @@
  
  #define AUDIO_IN_ALSA 1
  #define AUDIO_IN_OSS 2
@@ -9,7 +9,7 @@ $OpenBSD: patch-stream_audio_in_h,v 1.1 2009/10/11 13:36:23 edd Exp $
  
  #include "config.h"
  
-@@ -27,6 +28,16 @@ typedef struct {
+@@ -45,6 +46,16 @@ typedef struct {
  } ai_oss_t;
  #endif
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-stream_audio_in_h,v 1.1 2009/10/11 13:36:23 edd Exp $
  typedef struct
  {
      int type;
-@@ -49,6 +60,9 @@ typedef struct
+@@ -67,6 +78,9 @@ typedef struct
  #ifdef CONFIG_OSS_AUDIO
      ai_oss_t oss;
  #endif
@@ -36,7 +36,7 @@ $OpenBSD: patch-stream_audio_in_h,v 1.1 2009/10/11 13:36:23 edd Exp $
  } audio_in_t;
  
  int audio_in_init(audio_in_t *ai, int type);
-@@ -70,6 +84,11 @@ int ai_alsa_xrun(audio_in_t *ai);
+@@ -88,6 +102,11 @@ int ai_alsa_xrun(audio_in_t *ai);
  int ai_oss_set_samplerate(audio_in_t *ai);
  int ai_oss_set_channels(audio_in_t *ai);
  int ai_oss_init(audio_in_t *ai);

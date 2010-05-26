@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.164 2010/05/18 05:14:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.165 2010/05/26 21:29:56 jakemsr Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm mips64 mips64el
 
-SUBST_VARS += 		PREFIX
-
 COMMENT=		movie player supporting MPEG, DivX, AVI, ASF, MOV & more
 
-V=			20090708
+V=			20100308
+V_DASHED=		2010-03-08
+
+SUBST_VARS+= 		PREFIX CONFDIR
+
 N=			mplayer
 DISTNAME=		mplayer-export-snapshot-${V}
-PKGNAME=		${N}-${V}p5
+PKGNAME=		${N}-${V}
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
-WRKDIST = 		${WRKDIR}/mplayer-export-2009-07-08
+WRKDIST = 		${WRKDIR}/mplayer-export-${V_DASHED}
 
 HOMEPAGE=		http://www.mplayerhq.hu/
 
@@ -25,9 +27,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto m ncurses oil-0.3 pthread stdc++ util sndio z 
 
-# snapshot
-#MASTER_SITES = 	http://www.mplayerhq.hu/MPlayer/releases/
-MASTER_SITES =		http://students.dec.bmth.ac.uk/ebarrett/distfiles/
+# snapshot - mplayer don't do releases
+MASTER_SITES=	http://theunixzoo.co.uk/distfiles/
 
 MAINTAINER=     Edd Barrett <edd@openbsd.org>
 
@@ -49,7 +50,6 @@ LIB_DEPENDS=	png::graphics/png \
 		mpcdec::audio/libmpcdec \
 		ogg.>=5::audio/libogg \
 		xvidcore::multimedia/xvidcore \
-		x264.>=3::multimedia/x264 \
 		mp3lame:lame-*:audio/lame \
 		dv::multimedia/libdv \
 		dvdnavmini:libdvdnav->=4.1.3:multimedia/libdvdnav \
@@ -62,7 +62,9 @@ LIB_DEPENDS=	png::graphics/png \
 		bz2::archivers/bzip2 \
 		schroedinger-1.0::multimedia/schroedinger \
 		faac::audio/faad \
-		faad::audio/faac
+		faad::audio/faac \
+		a52::audio/liba52 \
+		x264.>=3::multimedia/x264
 
 BUILD_DEPENDS=	::net/livemedia \
 		:rtunes->=0.8:audio/rtunes \
@@ -74,10 +76,9 @@ BUILD_DEPENDS=	::net/livemedia \
 		::audio/ladspa
 
 CONFDIR=	${SYSCONFDIR}/mplayer
-SUBST_VARS=	CONFDIR
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= simple
+CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--disable-alsa \
 		--disable-arts \
 		--disable-esd \
@@ -97,14 +98,16 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-libdvdcss-internal \
 		--disable-faad-internal \
 		--disable-tremor-internal \
+		--disable-gui \
+		--disable-win32dll \
+		--disable-ggi \
+		--disable-libopenjpeg \
 		--enable-menu \
 		--confdir=${CONFDIR} \
 		--mandir=${LOCALBASE}/man \
 		--extra-cflags="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		--extra-ldflags="-L${LOCALBASE}/lib" \
-		--disable-gui \
-		--disable-win32dll \
-		--disable-ggi
+		--extra-libs-mplayer="-lrtunes -lcrypto" \
 
 CONFIGURE_ENV+=	TMPDIR="${WRKBUILD}"
 
@@ -178,13 +181,18 @@ CONFIGURE_ARGS+=--disable-jack
 
 NO_REGRESS=	Yes
 
+post-extract:
+	@cp ${FILESDIR}/ao_rtunes.c ${FILESDIR}/ao_sndio.c ${WRKSRC}/libao2
+	@cp ${FILESDIR}/ai_sndio.c ${WRKSRC}/stream
+
 # subst PREFIX in a patch, careful with update-patches!
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/DOCS/xml/configure
 
-post-patch:
-	@cp ${FILESDIR}/ao_rtunes.c ${FILESDIR}/ao_sndio.c ${WRKSRC}/libao2
-	@cp ${FILESDIR}/ai_sndio.c ${WRKSRC}/stream
+post-configure:
+	# Put a version.h in place so svn is not a BUILD_DEPEND
+	# (see version.sh for how this was supposed to work).
+	cp ${FILESDIR}/version.h ${WRKDIST}/version.h
 
 post-build:
 	@cd ${WRKSRC}/DOCS/xml && ${MAKE_PROGRAM}

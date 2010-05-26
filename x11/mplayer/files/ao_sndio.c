@@ -153,7 +153,7 @@ static int init(int rate, int channels, int format, int flags)
 		format = par.sig ? 
 		    (par.le ? AF_FORMAT_S16_LE : AF_FORMAT_S16_BE) :
 		    (par.le ? AF_FORMAT_U16_LE : AF_FORMAT_U16_BE);
-	} else if (par.bits == 32 && par.bps == 4) {
+	} else if ((par.bits == 32 || par.msb) && par.bps == 4) {
 		format = par.sig ? 
 		    (par.le ? AF_FORMAT_S32_LE : AF_FORMAT_S32_BE) :
 		    (par.le ? AF_FORMAT_U32_LE : AF_FORMAT_U32_BE);

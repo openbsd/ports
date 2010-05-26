@@ -1,15 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.19 2009/10/11 13:36:23 edd Exp $
---- Makefile.orig	Mon Jul  6 19:01:36 2009
-+++ Makefile	Tue Jul 21 15:13:33 2009
-@@ -29,6 +29,7 @@ COMMON_LDFLAGS += $(EXTRA_LIB)\
- 
- LDFLAGS_MPLAYER = $(EXTRALIBS_MPLAYER) \
-                   $(COMMON_LDFLAGS) \
-+                  -lrtunes -lcrypto
- 
- LDFLAGS_MENCODER = $(EXTRALIBS_MENCODER) \
-                    $(COMMON_LDFLAGS) \
-@@ -36,6 +37,7 @@ LDFLAGS_MENCODER = $(EXTRALIBS_MENCODER) \
+$OpenBSD: patch-Makefile,v 1.20 2010/05/26 21:29:56 jakemsr Exp $
+--- Makefile.orig	Fri Mar  5 23:13:08 2010
++++ Makefile	Mon Mar  8 21:24:09 2010
+@@ -28,6 +28,7 @@ include config.mak
  SRCS_AUDIO_INPUT-$(ALSA1X)           += stream/ai_alsa1x.c
  SRCS_AUDIO_INPUT-$(ALSA9)            += stream/ai_alsa.c
  SRCS_AUDIO_INPUT-$(OSS)              += stream/ai_oss.c
@@ -17,7 +9,7 @@ $OpenBSD: patch-Makefile,v 1.19 2009/10/11 13:36:23 edd Exp $
  SRCS_COMMON-$(AUDIO_INPUT)           += $(SRCS_AUDIO_INPUT-yes)
  SRCS_COMMON-$(BITMAP_FONT)           += libvo/font_load.c
  SRCS_COMMON-$(CDDA)                  += stream/stream_cdda.c \
-@@ -615,6 +617,7 @@ SRCS_MPLAYER-$(S3FB)          += libvo/vo_s3fb.c
+@@ -627,6 +628,7 @@ SRCS_MPLAYER-$(S3FB)          += libvo/vo_s3fb.c
  SRCS_MPLAYER-$(SDL)           += libao2/ao_sdl.c libvo/vo_sdl.c
  SRCS_MPLAYER-$(SGIAUDIO)      += libao2/ao_sgi.c
  SRCS_MPLAYER-$(SUNAUDIO)      += libao2/ao_sun.c
@@ -25,7 +17,7 @@ $OpenBSD: patch-Makefile,v 1.19 2009/10/11 13:36:23 edd Exp $
  SRCS_MPLAYER-$(SVGA)          += libvo/vo_svga.c
  SRCS_MPLAYER-$(TDFXFB)        += libvo/vo_tdfxfb.c
  SRCS_MPLAYER-$(TDFXVID)       += libvo/vo_tdfx_vid.c
-@@ -677,7 +680,8 @@ SRCS_MPLAYER = command.c \
+@@ -689,7 +691,8 @@ SRCS_MPLAYER = command.c \
                 libvo/video_out.c \
                 libvo/vo_mpegpes.c \
                 libvo/vo_null.c \
@@ -35,7 +27,18 @@ $OpenBSD: patch-Makefile,v 1.19 2009/10/11 13:36:23 edd Exp $
  
  
  SRCS_MENCODER-$(FAAC)             += libmpcodecs/ae_faac.c
-@@ -888,7 +892,16 @@ loader/%: CFLAGS += -Iloader -fno-omit-frame-pointer $
+@@ -901,7 +904,9 @@ version.h: version.sh
+ # Make sure all generated header files are created.
+ codec-cfg.d codec-cfg.o: codecs.conf.h
+ $(DEPS) $(MENCODER_DEPS) $(MPLAYER_DEPS): help_mp.h
+-$(call ADDSUFFIXES,.d .o,mpcommon vobsub stream/stream_cddb stream/network libmpdemux/muxer_avi gui/win32/gui osdep/mplayer.rc): version.h
++#$(call ADDSUFFIXES,.d .o,mpcommon vobsub stream/stream_cddb stream/network libmpdemux/muxer_avi gui/win32/gui osdep/mplayer.rc): version.h
++# OpenBSD - don't run version.sh, it requres SVN, see post-configure
++$(call ADDSUFFIXES,.d .o,mpcommon vobsub stream/stream_cddb stream/network libmpdemux/muxer_avi gui/win32/gui osdep/mplayer.rc): 
+ 
+ libdvdcss/%:   CFLAGS := -Ilibdvdcss -D__USE_UNIX98 -D_GNU_SOURCE -DVERSION=\"1.2.10\" $(CFLAGS_LIBDVDCSS) $(CFLAGS)
+ libdvdnav/%:   CFLAGS := -Ilibdvdnav -D__USE_UNIX98 -D_GNU_SOURCE -DHAVE_CONFIG_H -DVERSION=\"MPlayer-custom\" $(CFLAGS)
+@@ -912,7 +917,16 @@ loader/%: CFLAGS += -fno-omit-frame-pointer $(CFLAGS_N
  #loader/%: CFLAGS += -Ddbg_printf=__vprintf -DTRACE=__vprintf -DDETAILED_OUT
  loader/win32%: CFLAGS += $(CFLAGS_STACKREALIGN)
  

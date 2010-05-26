@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.24 2009/10/11 13:36:23 edd Exp $
+@comment $OpenBSD: PLIST,v 1.25 2010/05/26 21:29:56 jakemsr Exp $
 @bin bin/mencoder
 @bin bin/mplayer
 @man man/man1/mencoder.1
 @man man/man1/mplayer.1
 share/doc/mplayer/
+share/doc/mplayer/MPlayer.html
 share/doc/mplayer/README.OpenBSD
 share/doc/mplayer/aalib.html
 share/doc/mplayer/advaudio-channels.html
