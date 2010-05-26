@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.8 2010/05/26 04:51:16 lum Exp $
 
 COMMENT=	tool to impose configurable amount of load
-DISTNAME=	stress-0.18.9
+DISTNAME=	stress-1.0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${HOMEPAGE}
 
