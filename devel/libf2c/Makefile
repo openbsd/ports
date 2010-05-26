@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/25 13:45:19 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/05/26 08:18:07 espie Exp $
 
 V =		3.3.5
 CONFIG = 	${MACHINE_ARCH}-unknown-openbsd${OSREV}
 SUBST_VARS += 	CONFIG V
-PKGNAME =	libf2c-$Vp0
+PKGNAME =	libf2c-$Vp1
 DISTFILES = 	libf2c-openbsd.tgz
 MASTER_SITES =	http://spacehopper.org/mirrors/
 
@@ -23,8 +23,8 @@ WRKDIST =	${WRKDIR}/libf2c
 MAKE_FILE = ${WRKDIST}/Makefile.bsd-wrapper
 
 do-configure:
-	cd ${WRKDIST} && ${MAKE} -f ${MAKE_FILE} obj
-	cd ${WRKDIST} && ${MAKE} -f ${MAKE_FILE} depend
+	cd ${WRKDIST} && ${MAKE} -f ${MAKE_FILE} ${MAKE_FLAGS} obj
+	cd ${WRKDIST} && ${MAKE} -f ${MAKE_FILE} ${MAKE_FLAGS} depend
 
 MAKE_FLAGS = MANDIR=${TRUEPREFIX}/man/cat \
 	INSTALL_LIBGCC= LIBGCC= \
@@ -45,3 +45,6 @@ post-install:
 .endfor
 
 .include <bsd.port.mk>
+.if ${COMPILER_VERSION:L:Mgcc4*}
+MAKE_FLAGS += libf2c_cv_has_g77_builtin_types=yes
+.endif
