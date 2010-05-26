@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/23 12:01:07 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2010/05/26 21:46:50 jakemsr Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-0.9.2
+PKGNAME =	${DISTNAME}p0
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://amide.sourceforge.net/
@@ -24,8 +25,9 @@ WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread ssl stdc++ util xml2 z
 WANTLIB += avahi-client avahi-common avahi-glib
 WANTLIB += pthread-stubs xcb
-WANTLIB += a52 faac faad mp3lame ogg oil-0.3 schroedinger-1.0
+WANTLIB += faac faad mp3lame ogg oil-0.3 schroedinger-1.0
 WANTLIB += theora vorbis vorbisenc x264
+WANTLIB += gsm speex xcb-render xcb-render-util
                 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amide/}
 
@@ -42,7 +44,7 @@ LIB_DEPENDS =   gsl.>=7,gslcblas:gsl->=1.6:devel/gsl \
 		gnomecanvas-2.>=1400::x11/gnome/libgnomecanvas \
 		gnomevfs-2.>=2400::x11/gnome/vfs2 \
 		mdc.>=2::graphics/xmedcon \
-		avcodec.>=13.1,avformat.>=12,avutil.>=6,swscale.>=1:ffmpeg->=20080620p12:graphics/ffmpeg
+		avcodec.>=14,avutil.>=7:ffmpeg->=20100512:graphics/ffmpeg
 
 USE_X11 =	Yes
 USE_LIBTOOL =	Yes
