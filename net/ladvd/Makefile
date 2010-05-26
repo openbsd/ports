@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/04/21 22:57:04 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2010/05/26 17:03:59 weerd Exp $
 
 COMMENT =		link advertisement (LLDP/CDP etc) daemon
 
-DISTNAME =		ladvd-0.8
-PKGNAME =		${DISTNAME}p0
+DISTNAME =		ladvd-0.9.0
 CATEGORIES =		net
 
 HOMEPAGE =		http://blinkenlights.nl/software/ladvd/
@@ -18,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
 
-AUTOCONF_VERSION =	2.61
+AUTOCONF_VERSION =	2.64
 CONFIGURE_STYLE =	gnu autoconf
 CONFIGURE_ARGS +=	--with-user=_ladvd --with-chroot-dir=/var/empty
 
