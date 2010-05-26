@@ -1,6 +1,6 @@
 The Puppet Dashboard has been installed into ${INSTDIR}
 
-To configure your database you must first edit config/database.ymla
+To configure your database you must first edit config/database.yaml
 and then run the following command from ${INSTDIR}:
 
 	$ rake install

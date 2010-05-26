@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/12 16:25:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/05/26 20:00:02 robert Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
-V=		0.2.1
+V=		1.0.0
 DISTNAME=	puppet-dashboard-$V
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}
 CATEGORIES=	www sysutils
+EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.puppetlabs.com/puppet/related-projects/dashboard/
 
@@ -17,8 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES=	lang/ruby
 
-# Upstream only has stupid git tarballs.
-MASTER_SITES=	http://www.phil.uu.nl/~lievisse/distfiles/
+MASTER_SITES=	http://puppetlabs.com/downloads/dashboard/
 
 RUN_DEPENDS=	::databases/ruby-mysql \
 		::devel/ruby-rake \
@@ -35,7 +35,7 @@ SUBST_VARS=     INSTDIR V
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTFILES}
-	@mv ${INSTDIR}-${V} ${INSTDIR}
+	@mv ${PREFIX}/reductivelabs-puppet-dashboard-v${V}-0-gd5918df ${INSTDIR}
 	@find ${PREFIX} -type f -name "*~" -exec rm {} \;
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
