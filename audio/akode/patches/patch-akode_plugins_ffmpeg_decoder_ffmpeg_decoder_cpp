@@ -1,6 +1,6 @@
-$OpenBSD: patch-akode_plugins_ffmpeg_decoder_ffmpeg_decoder_cpp,v 1.3 2008/07/09 02:07:36 jakemsr Exp $
+$OpenBSD: patch-akode_plugins_ffmpeg_decoder_ffmpeg_decoder_cpp,v 1.4 2010/05/26 21:41:56 jakemsr Exp $
 --- akode/plugins/ffmpeg_decoder/ffmpeg_decoder.cpp.orig	Thu Aug 10 11:37:20 2006
-+++ akode/plugins/ffmpeg_decoder/ffmpeg_decoder.cpp	Sat Jun 21 10:00:47 2008
++++ akode/plugins/ffmpeg_decoder/ffmpeg_decoder.cpp	Wed May 19 03:20:55 2010
 @@ -26,9 +26,11 @@
  #include "decoder.h"
  
@@ -16,7 +16,42 @@ $OpenBSD: patch-akode_plugins_ffmpeg_decoder_ffmpeg_decoder_cpp,v 1.3 2008/07/09
  
  #include "ffmpeg_decoder.h"
  #include <iostream>
-@@ -349,7 +351,7 @@ retry:
+@@ -45,7 +47,7 @@ extern "C" {
+         aKode::File *file = (aKode::File*)opaque;
+         return file->write((char*)buf, size);
+     }
+-    static offset_t akode_seek(void* opaque, offset_t pos, int whence)
++    static int64_t akode_seek(void* opaque, int64_t pos, int whence)
+     {
+         aKode::File *file = (aKode::File*)opaque;
+         return file->seek(pos, whence);
+@@ -95,7 +97,8 @@ struct FFMPEGDecoder::private_data
+     int retries;
+ 
+     unsigned char file_buffer[FILE_BUFFER_SIZE];
+-    char buffer[AVCODEC_MAX_AUDIO_FRAME_SIZE];
++    /* DECLARE_ALIGNED magic from ffplay.c */
++    DECLARE_ALIGNED(16,uint8_t,buffer)[(AVCODEC_MAX_AUDIO_FRAME_SIZE*3)/2];
+     int buffer_size;
+ };
+ 
+@@ -313,10 +316,12 @@ bool FFMPEGDecoder::readFrame(AudioFrame* frame)
+ 
+     assert(d->packet.stream_index == d->audioStream);
+ 
++    d->buffer_size = sizeof(d->buffer);
++
+ retry:
+-    int len = avcodec_decode_audio( d->ic->streams[d->audioStream]->codec,
+-                                    (short*)d->buffer, &d->buffer_size,
+-                                    d->packetData, d->packetSize );
++    int len = avcodec_decode_audio3( d->ic->streams[d->audioStream]->codec,
++                                    (int16_t*)d->buffer, &d->buffer_size,
++                                    &d->packet );
+ 
+     if (len <= 0) {
+         d->retries++;
+@@ -349,7 +354,7 @@ retry:
              assert(false);
      }
      if (length == 0) return readFrame(frame);
