@@ -1,7 +1,34 @@
-$OpenBSD: patch-src_vid_menu_c,v 1.1 2008/05/25 02:54:58 jsg Exp $
---- src/vid_menu.c.orig	Sat May 24 21:12:38 2008
-+++ src/vid_menu.c	Sat May 24 21:13:15 2008
-@@ -164,21 +164,21 @@ static void ApplyChanges( void *unused )
+$OpenBSD: patch-src_vid_menu_c,v 1.2 2010/05/26 16:27:32 jasper Exp $
+--- src/vid_menu.c.orig	Tue Mar  9 13:59:00 2004
++++ src/vid_menu.c	Fri May 21 22:08:02 2010
+@@ -23,12 +23,10 @@
+ #include "qmenu.h"
+ 
+ /* irix/vid_menu.c defines only REF_SOFT and REF_OPENGL, we'll use REF_GLX */
+-#define REF_SOFT	0
+-#define REF_SOFTX11	1
+-#define REF_SOFTSDL	2
+-#define REF_GLX		3
+-#define REF_SDLGL	4
+-#define REF_FXGL	5
++#define REF_SOFTX11	0
++#define REF_SOFTSDL	1
++#define REF_GLX		2
++#define REF_SDLGL	3
+ 
+ #define GL_REF_START	REF_GLX
+ 
+@@ -152,9 +150,6 @@ static void ApplyChanges( void *unused )
+ 
+ 	switch ( s_ref_list[s_current_menu_index].curvalue )
+ 	{
+-	case REF_SOFT:
+-		Cvar_Set( "vid_ref", "soft" );
+-		break;
+ 	case REF_SOFTX11:
+ 		Cvar_Set( "vid_ref", "softx" );
+ 		break;
+@@ -164,24 +159,17 @@ static void ApplyChanges( void *unused )
  	case REF_GLX:
  		Cvar_Set( "vid_ref", "glx" );
  		/* below is wrong if we use different libs for different GL reflibs */
@@ -18,15 +45,30 @@ $OpenBSD: patch-src_vid_menu_c,v 1.1 2008/05/25 02:54:58 jsg Exp $
  		if (gl_driver->modified)
  			vid_ref->modified = true;
  		break;
- 	case REF_FXGL:
- 		Cvar_Set("vid_ref", "tdfx");
- 		/* below is wrong if we use different libs for different GL reflibs */
+-	case REF_FXGL:
+-		Cvar_Set("vid_ref", "tdfx");
+-		/* below is wrong if we use different libs for different GL reflibs */
 -		Cvar_Set( "gl_driver", "libGL.so.1" );
-+		Cvar_Set( "gl_driver", "libGL.so" );
- 		if (gl_driver->modified)
- 			vid_ref->modified = true;
+-		if (gl_driver->modified)
+-			vid_ref->modified = true;
+-		break;
+ 	default:
+ 	        Com_Printf("No video refresher\n");
  		break;
-@@ -260,7 +260,7 @@ void VID_MenuInit( void )
+@@ -243,12 +231,10 @@ void VID_MenuInit( void )
+ 	};
+ 	static const char *refs[] =
+ 	{
+-		"[software      ]",
+ 		"[software X11  ]",
+ 		"[software SDL  ]",
+ 		"[OpenGL GLX    ]",
+ 		"[SDL OpenGL    ]",
+-		"[3DFX OpenGL   ]",
+ 		0
+ 	};
+ 	static const char *yesno_names[] =
+@@ -260,7 +246,7 @@ void VID_MenuInit( void )
  	int i;
  
  	if ( !gl_driver )
@@ -35,3 +77,31 @@ $OpenBSD: patch-src_vid_menu_c,v 1.1 2008/05/25 02:54:58 jsg Exp $
  	if ( !gl_picmip )
  		gl_picmip = Cvar_Get( "gl_picmip", "0", 0 );
  	if ( !gl_mode )
+@@ -285,12 +271,7 @@ void VID_MenuInit( void )
+ 	s_screensize_slider[SOFTWARE_MENU].curvalue = scr_viewsize->value/10;
+ 	s_screensize_slider[OPENGL_MENU].curvalue = scr_viewsize->value/10;
+ 
+-	if ( strcmp( vid_ref->string, "soft" ) == 0)
+-	{
+-		s_current_menu_index = SOFTWARE_MENU;
+-		s_ref_list[0].curvalue = s_ref_list[1].curvalue = REF_SOFT;
+-	}
+-	else if (strcmp( vid_ref->string, "softx" ) == 0 ) 
++	if (strcmp( vid_ref->string, "softx" ) == 0 ) 
+ 	{
+ 		s_current_menu_index = SOFTWARE_MENU;
+ 		s_ref_list[0].curvalue = s_ref_list[1].curvalue = REF_SOFTX11;
+@@ -285,12 +271,7 @@ void VID_MenuInit( void )
+ 	s_screensize_slider[SOFTWARE_MENU].curvalue = scr_viewsize->value/10;
+ 	s_screensize_slider[OPENGL_MENU].curvalue = scr_viewsize->value/10;
+ 
+-	if ( strcmp( vid_ref->string, "soft" ) == 0)
+-	{
+-		s_current_menu_index = SOFTWARE_MENU;
+-		s_ref_list[0].curvalue = s_ref_list[1].curvalue = REF_SOFT;
+-	}
+-	else if (strcmp( vid_ref->string, "softx" ) == 0 ) 
++	if (strcmp( vid_ref->string, "softx" ) == 0 ) 
+ 	{
+ 		s_current_menu_index = SOFTWARE_MENU;
+ 		s_ref_list[0].curvalue = s_ref_list[1].curvalue = REF_SOFTX11;

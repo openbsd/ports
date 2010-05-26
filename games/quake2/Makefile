@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/04/26 16:37:24 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.17 2010/05/26 16:27:32 jasper Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 SHARED_ONLY=		Yes
@@ -6,7 +6,7 @@ SHARED_ONLY=		Yes
 COMMENT=		first person shooter
 
 DISTNAME=		quake2-0.3
-PKGNAME=		${DISTNAME}p10
+PKGNAME=		${DISTNAME}p11
 CATEGORIES=		games
 
 HOMEPAGE=		http://www.quakeforge.net/
@@ -31,7 +31,7 @@ USE_X11=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-opengl=${X11BASE}
+CONFIGURE_ARGS+=	--with-opengl=${X11BASE} --without-svgalib
 NO_REGRESS=		Yes
 
 CFLAGS+=                -pthread -g
