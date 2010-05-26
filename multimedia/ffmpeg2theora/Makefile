@@ -1,35 +1,38 @@
-# $OpenBSD: Makefile,v 1.9 2009/07/19 22:49:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/05/26 23:18:45 jakemsr Exp $
 
 COMMENT=	reencode many media file formats to Ogg Theora
 
-DISTNAME=	ffmpeg2theora-0.19
-PKGNAME=	${DISTNAME}p3
+N=		ffmpeg2theora
+DISTNAME=	${N}-0.26
 CATEGORIES=	multimedia
 EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=	http://www.v2v.cc/~j/ffmpeg2theora/
+HOMEPAGE=	http://www.v2v.cc/~j/${N}/
 
 MAINTAINER=	Moritz Grimm <mdgrimm@gmx.net>
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM=	patents in ffmpeg
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		bz2 c m ogg pthread a52 faac faad mp3lame x264 z \
-			oil-0.3 schroedinger-1.0
+WANTLIB=		X11 Xext Xfixes bz2 c gsm iconv m ogg pthread \
+			faac faad mp3lame oil-0.3 sndio speex \
+			schroedinger-1.0 x264 z
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${HOMEPAGE}downloads/
 
-LIB_DEPENDS=	avcodec.>=13.1,avformat.>=12,avutil.>=6,swscale.>=1:ffmpeg->=20080620p10:graphics/ffmpeg \
+LIB_DEPENDS=	avcodec.>=13.1,avdevice.>=3.0,avformat.>=12,avutil.>=6,postproc.>=13,swscale.>=1:ffmpeg->=20080620p10:graphics/ffmpeg \
 		vorbis.>=5,vorbisenc.>=2::audio/libvorbis \
-		theora.>=2::multimedia/libtheora
+		theora.>=2,theoradec.>=1,theoraenc.>=1::multimedia/libtheora
 
-SEPARATE_BUILD=	flavored
-USE_LIBTOOL=	Yes
+MODULES=	devel/scons
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ENV+=	CPPFLAGS=-pthread LDFLAGS=-pthread
+MODSCONS_FLAGS=	libkate=0
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/${N} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKBUILD}/${N}.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
