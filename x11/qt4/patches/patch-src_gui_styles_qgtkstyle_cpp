@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gui_styles_qgtkstyle_cpp,v 1.1 2010/05/26 11:34:13 dcoppa Exp $
+--- src/gui/styles/qgtkstyle.cpp.orig	Wed May 26 12:27:49 2010
++++ src/gui/styles/qgtkstyle.cpp	Wed May 26 12:28:04 2010
+@@ -3398,6 +3398,9 @@ QRect QGtkStyle::subElementRect(SubElement element, co
+     Q_D(const QGtkStyle);
+ 
+     QRect r = QCleanlooksStyle::subElementRect(element, option, widget);
++    if (!d->isThemeAvailable())
++        return r;
++
+     switch (element) {
+     case SE_ProgressBarLabel:
+     case SE_ProgressBarContents:

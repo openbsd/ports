@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gui_styles_qgtkstyle_p_cpp,v 1.1 2010/05/26 11:34:13 dcoppa Exp $
+--- src/gui/styles/qgtkstyle_p.cpp.orig	Wed May 26 12:27:53 2010
++++ src/gui/styles/qgtkstyle_p.cpp	Wed May 26 12:28:04 2010
+@@ -304,8 +304,7 @@ GtkStyle* QGtkStylePrivate::gtkStyle(const QString &pa
+  */
+ void QGtkStylePrivate::resolveGtk() const
+ {
+-    // enforce the "0" suffix, so we'll open libgtk-x11-2.0.so.0
+-    QLibrary libgtk(QLS("gtk-x11-2.0"), 0, 0);
++    QLibrary libgtk(QLS("gtk-x11-2.0"));
+ 
+     gtk_init = (Ptr_gtk_init)libgtk.resolve("gtk_init");
+     gtk_window_new = (Ptr_gtk_window_new)libgtk.resolve("gtk_window_new");
