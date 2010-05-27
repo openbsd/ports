@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpdf_Stream_cc,v 1.4 2007/11/09 07:15:12 bernd Exp $
---- xpdf/Stream.cc.orig	Thu Nov  8 09:31:28 2007
-+++ xpdf/Stream.cc	Thu Nov  8 09:31:29 2007
-@@ -4512,7 +4512,7 @@ void ASCII85Encoder::reset() {
+$OpenBSD: patch-xpdf_Stream_cc,v 1.5 2010/05/27 14:55:40 jasper Exp $
+--- xpdf/Stream.cc.orig	Thu May 27 12:16:31 2010
++++ xpdf/Stream.cc	Thu May 27 12:16:32 2010
+@@ -4516,7 +4516,7 @@ void ASCII85Encoder::reset() {
  }
  
  GBool ASCII85Encoder::fillBuf() {
