@@ -1,0 +1,12 @@
+$OpenBSD: patch-code_sys_sys_unix_c,v 1.1 2010/05/27 03:47:28 jakemsr Exp $
+--- code/sys/sys_unix.c.orig	Sat May  2 16:44:02 2009
++++ code/sys/sys_unix.c	Sat May  2 16:44:21 2009
+@@ -139,7 +139,7 @@ qboolean Sys_RandomBytes( byte *string, int len )
+ {
+ 	FILE *fp;
+ 
+-	fp = fopen( "/dev/urandom", "r" );
++	fp = fopen( "/dev/arandom", "r" );
+ 	if( !fp )
+ 		return qfalse;
+ 

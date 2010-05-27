@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/03 16:57:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/05/27 03:47:28 jakemsr Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -12,7 +12,7 @@ CATEGORIES =		games x11
 
 V =			0.8.1
 
-PKGNAME-main =		openarena-${V}p0
+PKGNAME-main =		openarena-${V}p1
 PKGNAME-server =	openarena-server-${V}p0
 PKGNAME-data =		openarena-data-${V}p1
 
@@ -33,7 +33,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB-main =		GL c m pthread
+WANTLIB-main =		GL c m pthread sndio
 WANTLIB-server =	c m
 
 LIB_DEPENDS-main =	ogg.>=5::audio/libogg \
@@ -53,6 +53,8 @@ WRKDIST =		${WRKDIR}/openarena-engine-${V}
 
 post-extract:
 	find ${WRKDIR} -name '*.orig' -print0 | xargs -0r rm -f
+	mkdir ${WRKSRC}/code/sndio
+	cp ${FILESDIR}/snd_sndio.c ${WRKSRC}/code/sndio
 
 do-install:
 	${INSTALL_PROGRAM} \

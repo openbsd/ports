@@ -1,0 +1,18 @@
+$OpenBSD: patch-code_renderer_tr_surface_c,v 1.1 2010/05/27 03:47:28 jakemsr Exp $
+--- code/renderer/tr_surface.c.orig	Mon May  3 04:42:28 2010
++++ code/renderer/tr_surface.c	Mon May  3 04:42:47 2010
+@@ -615,10 +615,10 @@ static void LerpMeshVertexes_altivec(md3Surface_t *sur
+ {
+ 	short	*oldXyz, *newXyz, *oldNormals, *newNormals;
+ 	float	*outXyz, *outNormal;
+-	float	oldXyzScale ALIGN(16);
+-	float   newXyzScale ALIGN(16);
+-	float	oldNormalScale ALIGN(16);
+-	float newNormalScale ALIGN(16);
++	float	oldXyzScale QALIGN(16);
++	float   newXyzScale QALIGN(16);
++	float	oldNormalScale QALIGN(16);
++	float newNormalScale QALIGN(16);
+ 	int		vertNum;
+ 	unsigned lat, lng;
+ 	int		numVerts;

@@ -1,0 +1,23 @@
+$OpenBSD: patch-code_client_snd_dma_c,v 1.1 2010/05/27 03:47:28 jakemsr Exp $
+--- code/client/snd_dma.c.orig	Mon May  3 05:44:09 2010
++++ code/client/snd_dma.c	Mon May  3 06:18:07 2010
+@@ -1221,7 +1221,6 @@ void S_Update_(void) {
+ 	static			float	lastTime = 0.0f;
+ 	float			ma, op;
+ 	float			thisTime, sane;
+-	static			int ot = -1;
+ 
+ 	if ( !s_soundStarted || s_soundMuted ) {
+ 		return;
+@@ -1231,11 +1230,6 @@ void S_Update_(void) {
+ 
+ 	// Updates s_soundtime
+ 	S_GetSoundtime();
+-
+-	if (s_soundtime == ot) {
+-		return;
+-	}
+-	ot = s_soundtime;
+ 
+ 	// clear any sound effects that end before the current time,
+ 	// and start any new sounds
