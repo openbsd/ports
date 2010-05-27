@@ -1,0 +1,16 @@
+$OpenBSD: patch-cache-utils_c,v 1.1 2010/05/27 18:50:16 fgsch Exp $
+--- cache-utils.c.orig	Thu May 27 19:23:46 2010
++++ cache-utils.c	Thu May 27 19:34:48 2010
+@@ -55,6 +55,12 @@
+         qemu_cache_conf.icache_bsize = cacheline;
+     }
+ }
++#elif defined __OpenBSD__
++static void ppc_init_cacheline_sizes(void)
++{
++    qemu_cache_conf.icache_bsize = 32;
++    qemu_cache_conf.dcache_bsize = 32;
++}
+ #endif
+ 
+ #ifdef __linux__
