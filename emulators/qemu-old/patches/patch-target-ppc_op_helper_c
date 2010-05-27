@@ -1,0 +1,11 @@
+$OpenBSD: patch-target-ppc_op_helper_c,v 1.1.1.1 2010/05/27 17:33:43 fgsch Exp $
+--- target-ppc/op_helper.c.orig	Sun Jan  6 14:38:45 2008
++++ target-ppc/op_helper.c	Tue Apr  1 01:33:40 2008
+@@ -17,6 +17,7 @@
+  * License along with this library; if not, write to the Free Software
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  */
++#include <math.h>
+ #include "exec.h"
+ #include "host-utils.h"
+ 

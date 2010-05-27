@@ -1,0 +1,82 @@
+$OpenBSD: patch-Makefile_target,v 1.1.1.1 2010/05/27 17:33:42 fgsch Exp $
+--- Makefile.target.orig	Sun Jan  6 14:38:41 2008
++++ Makefile.target	Wed Apr  9 23:28:03 2008
+@@ -136,11 +136,11 @@ endif
+ endif
+ endif
+ 
+-ifeq ($(ARCH),x86_64)
+-  ifneq ($(CONFIG_SOLARIS),yes)
+-    BASE_LDFLAGS+=-Wl,-T,$(SRC_PATH)/$(ARCH).ld
+-  endif
+-endif
++#ifeq ($(ARCH),x86_64)
++#  ifneq ($(CONFIG_SOLARIS),yes)
++#    BASE_LDFLAGS+=-Wl,-T,$(SRC_PATH)/$(ARCH).ld
++#  endif
++#endif
+ 
+ ifeq ($(ARCH),ppc)
+ CPPFLAGS+= -D__powerpc__
+@@ -188,7 +188,7 @@ BASE_LDFLAGS+=-Wl,-G0 -Wl,-T,$(SRC_PATH)/$(ARCH).ld
+ endif
+ 
+ ifeq ($(ARCH),arm)
+-OP_CFLAGS+=-mno-sched-prolog -fno-omit-frame-pointer
++OP_CFLAGS+=-mno-sched-prolog -fno-omit-frame-pointer -mapcs-frame
+ BASE_LDFLAGS+=-Wl,-T,$(SRC_PATH)/$(ARCH).ld
+ endif
+ 
+@@ -215,6 +215,16 @@ BASE_LDFLAGS+=-Wl,-T,$(SRC_PATH)/$(ARCH)el.ld
+ endif
+ endif
+ 
++# Very important for this 'ifeq' block to be after other
++# OP_CFLAGS= .. constructs above
++ifeq ($(shell uname -s),OpenBSD)
++OP_CFLAGS+= -fno-stack-protector
++endif
++
++ifdef CONFIG_OSS_LIBRARY
++LIBS+=-lossaudio
++endif
++
+ ifeq ($(CONFIG_DARWIN),yes)
+ LIBS+=-lmx
+ endif
+@@ -232,6 +242,7 @@ OP_LDFLAGS+=$(OS_LDFLAGS) $(ARCH_LDFLAGS)
+ #########################################################
+ 
+ CPPFLAGS+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
++#CPPFLAGS+= -DDEBUG_GDB -DDEBUG -DDEBUG_KBD -DDEBUG_MOUSE
+ LIBS+=-lm
+ ifndef CONFIG_USER_ONLY
+ LIBS+=-lz
+@@ -537,7 +548,7 @@ endif
+ ifndef CONFIG_DARWIN
+ ifndef CONFIG_WIN32
+ ifndef CONFIG_SOLARIS
+-VL_LIBS+=-lutil
++#VL_LIBS+=-lutil
+ endif
+ endif
+ endif
+@@ -557,12 +568,12 @@ ifeq ($(ARCH),sparc64)
+   endif
+ endif
+ 
+-ifeq ($(ARCH),x86_64)
+-  VL_LDFLAGS+=-m64
+-  ifneq ($(CONFIG_SOLARIS),yes)
+-    VL_LDFLAGS+=-Wl,-T,$(SRC_PATH)/$(ARCH).ld
+-  endif
+-endif
++#ifeq ($(ARCH),x86_64)
++#  VL_LDFLAGS+=-m64
++#  ifneq ($(CONFIG_SOLARIS),yes)
++#    VL_LDFLAGS+=-Wl,-T,$(SRC_PATH)/$(ARCH).ld
++#  endif
++#endif
+ 
+ ifdef CONFIG_WIN32
+ SDL_LIBS := $(filter-out -mwindows, $(SDL_LIBS)) -mconsole

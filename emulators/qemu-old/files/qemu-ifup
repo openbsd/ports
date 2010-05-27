@@ -1,0 +1,43 @@
+#! /bin/sh
+
+_ETHER=`route -n get default 2>/dev/null |awk '/interface:/ {print $2}'`
+_ETHER=${_ETHER:=trunk0}
+_BRIDGE=bridge0
+
+# Let the environment over-ride this
+[ "$BRIDGE" ] || BRIDGE=${_BRIDGE}
+[ "$ETHER" ] || ETHER=${_ETHER}
+
+if test `id -u` -ne 0; then
+	SUDO=sudo
+fi
+
+echo -n " {$1 ($BRIDGE <-> $ETHER)"
+
+# Set the tun device into layer2 mode
+$SUDO ifconfig $1 link0 up
+
+# Set up our bridge
+$SUDO ifconfig $1 group tun > /dev/null 2>&1
+$SUDO ifconfig $BRIDGE create > /dev/null 2>&1 && {
+  # Only add rules if the bridge creation succeeds; otherwise
+  # duplicate rules get loaded each time qemu starts
+  # The following two block carp packets from wasting cpu cycles inside the
+  # qemu sessions, remove if testing carp inside qemu
+  $SUDO ifconfig $BRIDGE rule block in on $ETHER dst 33:33:0:0:0:12
+  $SUDO ifconfig $BRIDGE rule block in on $ETHER dst 01:00:5e:00:00:12
+}
+# Since we can specify ETHER and BRIDGE above, its possible that
+# this tun interface or this physical interface was setup as part of
+# a different bridge earlier, and that is never cleaned up, so we have
+# to cleanup here first before we set it up; a physcal interface cannot
+# be member to more than one bridge, thankfully, or I never would have
+# caught this
+ifconfig bridge | sed -n '/^bridge[0-9]*/{s/:.*$//;p;}' | while read brif
+do
+	$SUDO ifconfig $brif del $ETHER > /dev/null 2>&1
+	$SUDO ifconfig $brif del $1 > /dev/null 2>&1
+done
+$SUDO ifconfig $BRIDGE add $ETHER up
+$SUDO ifconfig $BRIDGE add $1 up || true
+echo "}"

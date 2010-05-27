@@ -1,0 +1,238 @@
+README for OpenBSD users
+------------------------
+
+==> Quick Start
+
+NOTE: amd64 cannot use '-net user' without SEGV'ing, to work around
+      this, either run qemu as root by replacing
+	qemu -m 32 ..
+      in this quick start section with
+         sudo env ETHER=em0 qemu -net nic,model=rtl8139 -net tap -m 32 ..
+      or by reading the 'tap mode' section below.
+
+1. Get a bootable CDROM image
+
+    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/i386/cd45.iso
+
+2. Create a virtual disk image:
+
+    $ qemu-img create -f qcow2 virtual.img 10G
+
+3. Install the os:
+
+    $ qemu -m 32 -monitor stdio -no-fd-bootchk -hda virtual.img \
+	-cdrom cd45.iso -boot d
+
+   NOTE: start this inside an xterm or equivalent
+   NOTE: be sure to choose serial console during install
+   NOTE: -no-fd-bootchk permits booting faster when no floppy is in use
+
+4. Compress the virtual disk:
+
+    $ qemu-img convert -c -O qcow2 virtual.img v.tmp && mv v.tmp virtual.img
+
+   NOTE: do not do this while qemu is running / using this virtual disk
+
+5. Boot normally from the virtual disk:
+
+    $ qemu -m 32 -nographic -no-fd-bootchk -hda virtual.img 
+
+==> Networking
+
+1.  Default Settings
+
+  By default, qemu sets up the equivalent of the following networking:
+
+	-net nic,vlan=0,model=rtl8139,macaddr=52:54:00:12:34:56
+	-net user,vlan=0
+
+  Also, inside this virtual usermode network, it uses the 10.0.2.0/24 and
+  serves dhcp from inside this virtual network.  Static address can be used
+  if one cannot or does not want to do dhcp in the guest os:
+
+	Guest OS IP     : 10.0.2.15
+	Default Gateway : 10.0.2.2
+	Nameserver      : 10.0.2.3
+
+  It is sufficient for most operations, qemu itself performs NAT and then
+  makes userland network calls for tcp/udp operations. icmp and other things
+  are not possible in this mode.
+
+  NOTE: If you use one '-net' cmdline argument, qemu assumes you know what you
+	want and clears defaults for the rest of the -net defaults.
+
+  NOTE: The guest mode networking does not currently support IPv6, and
+	qemu will complain that it cannot find a dns server if
+	/etc/resolv.conf contains only IPv6 dns servers.
+
+2.  tap mode
+
+  Sometimes it is desirable to configure qemu to access a network via layer2
+  directly. One way of doing this without having to run qemu as root is to
+  let root open /dev/tunN and pass the file descriptor to qemu. The tun(4)
+  interface should preferrably be configured before starting qemu:
+
+       $ sudo ifconfig tun0 192.168.0.254 link0
+
+  The interface can also be configured as part of a bridge(4), in which case
+  the ip address can be omitted:
+
+       $ sudo ifconfig tun0 link0
+       $ sudo ifconfig bridge0 create
+       $ sudo brconfig bridge0 add tun0 add em0 up
+
+  The tunnel and bridge interfaces can also be configured at system startup by
+  editing /etc/hostname.tunN and /etc/bridgename.bridgeN,
+  respectively (see hostname.if(5)).
+
+  After configuring the virtual network we can use sudo to let root open the
+  tunnel device and then use sudo again to drop privileges and start qemu:
+
+       $ sudo sh -c "sudo -u $USER qemu -nographic -net nic -net tap,fd=3 \
+             -no-fd-bootchk -hda virtual.img 3<>/dev/tun0"
+
+  NOTE: sudo calls closefrom(2).  In order to have more than one fd passed
+	tap interface, a line to sudoers akin to:
+
+		Defaults closefrom_override
+
+        then calling sudo via 'sudo -C 5 -u $USER qemu ..' is required.
+	See sudoers(5) and sudo(8) for details.
+
+  An alternative to the procedure described above is to have qemu set up the
+  network via ${SYSCONFDIR}/qemu-ifup. This is not recommended however, since
+  you would have to run qemu as root, and there is no way to drop from root
+  privileges at this point.
+
+  ${SYSCONFDIR}/qemu-ifup contains some default settings that permit one to do
+  the following:
+
+	# qemu -net nic -net tap -no-fd-bootchk -hda virtual.img
+
+  It presumes you wish the tun(4) interface to talk to the interface
+  holding the default IPv4 route (falling back to trunk0 if no route is
+  found), and that you want 'bridge0' to be used to bridge the two.
+
+  If you wish to over-ride these settings, setting the environment variables
+  ETHER and BRIDGE will over-ride these settings, respectively.
+
+  When starting qemu, the script attempts to output useful information, but
+  there are also error messages that occur as well.  On my laptop, I want to
+  route / nat natively using pf and also have layer2 access to the qemu
+  networks.  I thus have this as /etc/hostname.trunk101:
+
+	inet6 fe80::1c 64 lladdr 00:03:25:0d:7a:2c
+	inet 10.7.255.1 255.255.255.0
+	inet6 alias 2001:240:58a:45::1c
+
+  I have dhcpd configured to run on trunk101, and also run rtadvd.  For qemu,
+  the startup looks like this:
+
+   # export ETHER=trunk101
+   # export BRIDGE=bridge101
+   # qemu -net nic,vlan=0,model=rtl8139,macaddr=52:54:00:12:35:00 \
+	-net tap,vlan=0 -vnc :0 -localtime -usb -usbdevice tablet \
+	-m 256 -no-fd-bootchk -hda virtual.img -monitor stdio
+   {tun0 (bridge101 <-> trunk101)brconfig: bridge101: No such process
+   brconfig: bridge101: No such process
+   }
+   (qemu)
+
+  The errors are normal and should be ignored.  One can verify the networking
+  is properly configured by verifying the bridge interface:
+
+   $ brconfig bridge101
+   bridge101: flags=41<UP,RUNNING>
+        priority 32768 hellotime 2 fwddelay 15 maxage 20 holdcnt 6 proto rstp
+        designated: id 00:00:00:00:00:00 priority 0
+        tun0 flags=3<LEARNING,DISCOVER>
+                port 16 ifpriority 0 ifcost 0
+        trunk101 flags=3<LEARNING,DISCOVER>
+                port 6 ifpriority 0 ifcost 0
+        Addresses (max cache: 100, timeout: 240):
+
+  NOTE: When running multiple qemu sessions simultaneously on the same bridge,
+	care must be taken because the network mac address defaults to
+	52:54:00:12:34:56 for every qemu instance.  To change this, observe
+	the macaddr= syntax in the above example and choose a unique lladdr
+	per qemu nic.
+
+==> Mice
+
+  NOTE: Certain OS's work much better with the tablet usb device than
+	the normal ps2 mouse handling.  See the above example for usage.
+
+==> Serial Console
+
+  1. Installing OpenBSD via serial console is sometimes desirable.  X may not
+     be available, and so on.  There are two ways to accomplish this, both in
+     effect the same solution:
+
+    a. qemu -vnc :0 -serial stdio .. virtual.img -cdrom install43.iso -boot d
+
+	- this option permits you to use vnc from some system to connect to
+	  the qemu instance and 'set tty com0' at the 'boot>' prompt.
+	- you may then disconnect vnc and use the terminal from which you
+	  started qemu to do the install
+
+    b. qemu -nographic .. virtual.img -fda floppy45.fs -boot a
+
+	- this maps both the serial port and the (qemu) monitor prompt to
+	  the terminal qemu was started on
+        - to flip between them, Ctrl-a c; see the qemu man page for other
+          commands that work in -nographic mode.
+	- preparation of the floppy image to force serial console mode is
+	  straightforward:
+
+		vnconfig svnd0 floppy45.fs
+		mount /dev/svnd0c /mnt
+		mkdir /mnt/etc
+		echo set tty com0 > /mnt/etc/boot.conf
+		umount /mnt
+		vnconfig -u svnd0
+
+     .. be sure to choose 'yes' for setting com0 to be the serial console.
+
+  NOTE: OpenBSD poweroff does work with qemu, which actually causes qemu
+	itself to exit.  This is a good thing, as it is currently not
+	possible to set what block device is booted from at runtime from
+	qemu.  So if you start an installation booting from a cdrom, you
+	will always boot off a cdrom every time you reboot that qemu session
+	until you exit and start qemu again booting off the virtual hard
+	drive.
+
+==> daemonized qemu
+
+   Sometimes you want qemu to start as part of a system script.
+
+   Adding to some of the above, the -daemonize option comes in handy,
+   as well as the telnet: designator for -serial and monitor.  This
+   is a complete example that may be cut-and-pasted into rc.local:
+
+    hddir=/var/vm
+    USER=qemu
+    if [ -x ${TRUEPREFIX}/bin/qemu ]; then
+        echo -n 'Qemu: vmi386'
+        (
+	    ifconfig tun0 link0
+	    ifconfig bridge101 create
+	    brconfig bridge101 add trunk101 add tun0 up
+
+            sh -c "sudo -u $USER \
+		${TRUEPREFIX}/bin/qemu \
+                -daemonize \
+                -nographic \
+                -net nic,vlan=0,model=rtl8139,macaddr=52:54:00:4e:62:8f \
+                -net tap,vlan=0,fd=3 \
+                -m 128 \
+                -hda $hddir/virtual.img \
+                -serial telnet:127.0.0.1:1080,server,nowait \
+                -monitor telnet:127.0.0.1:1081,server,nowait \
+		-no-fd-bootchk 3<>/dev/tun0"
+        )
+        echo "."
+    fi
+
+    NOTE: this presumes the user `qemu' exists, create it or set USER= to an
+          existing user to use this example.
+

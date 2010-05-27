@@ -1,0 +1,31 @@
+$OpenBSD: patch-cpu-all_h,v 1.1.1.1 2010/05/27 17:33:42 fgsch Exp $
+--- cpu-all.h.orig	Sun Jan  6 14:38:42 2008
++++ cpu-all.h	Tue Apr  1 01:43:57 2008
+@@ -1008,13 +1008,22 @@ static inline int64_t cpu_get_real_ticks(void)
+ }
+ 
+ #else
+-/* The host CPU doesn't have an easily accessible cycle counter.
+-   Just return a monotonically increasing value.  This will be
+-   totally wrong, but hopefully better than nothing.  */
++# warning non-optimized CPU
++#include <sys/time.h>
++#include <time.h>
++
+ static inline int64_t cpu_get_real_ticks (void)
+ {
+-    static int64_t ticks = 0;
+-    return ticks++;
++    struct timeval tv;
++    static int64_t i = 0;
++    int64_t j;
++
++    gettimeofday(&tv, NULL);
++    do {
++        j = (tv.tv_sec * (uint64_t) 1000000) + tv.tv_usec;
++    } while (i == j);
++    i = j;
++    return j;
+ }
+ #endif
+ 

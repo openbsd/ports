@@ -1,0 +1,202 @@
+$OpenBSD: patch-vl_c,v 1.1.1.1 2010/05/27 17:33:43 fgsch Exp $
+--- vl.c.orig	Sun Jan  6 13:38:42 2008
++++ vl.c	Tue Jun 17 19:48:00 2008
+@@ -61,7 +61,8 @@
+ #include <arpa/inet.h>
+ #ifdef _BSD
+ #include <sys/stat.h>
+-#ifndef __APPLE__
++#include <net/if.h>
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ #include <libutil.h>
+ #endif
+ #elif defined (__GLIBC__) && defined (__FreeBSD_kernel__)
+@@ -136,7 +137,7 @@ int inet_aton(const char *cp, struct in_addr *ia);
+ #ifdef __sun__
+ #define SMBD_COMMAND "/usr/sfw/sbin/smbd"
+ #else
+-#define SMBD_COMMAND "/usr/sbin/smbd"
++#define SMBD_COMMAND "${LOCALBASE}/libexec/smbd"
+ #endif
+ 
+ //#define DEBUG_UNUSED_IOPORT
+@@ -3491,7 +3492,7 @@ static int parse_macaddr(uint8_t *macaddr, const char 
+     return -1;
+ }
+ 
+-static int get_str_sep(char *buf, int buf_size, const char **pp, int sep)
++static int get_str_sep(char *buf, size_t buf_size, const char **pp, int sep)
+ {
+     const char *p, *p1;
+     int len;
+@@ -3922,11 +3923,85 @@ static int tap_open(char *ifname, int ifname_size)
+     char *dev;
+     struct stat s;
+ 
++    /* If the device was specified on the command line, use it */
++    if (ifname[0]) {
++       TFR(fd = open(ifname, O_RDWR));
++       if (fd < 0) {
++          fprintf(stderr, "warning: could not open %s: no virtual network emulation\n", ifname);
++            return -1;
++       }
++    } else {
++#ifdef __OpenBSD__
++    struct ifreq ifr;
++    int i = 0, enoentcount = 0, err = 0, sock;
++    char dname[100];
++
++    bzero(&ifr, sizeof(ifr));
++    if (ifname != NULL && ifname[0] != '\0') {
++        snprintf(dname, sizeof(dname), "/dev/%s", ifname);
++        strlcpy(ifr.ifr_name, ifname, sizeof(ifr.ifr_name));
++        fd = open(dname, O_RDWR);
++    } else {
++        for (; i != -1; i++) {
++           snprintf(dname, sizeof dname, "/dev/tun%d", i);
++           bzero(&ifr.ifr_name, sizeof(ifr.ifr_name));
++           snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "tun%d", i);
++           TFR(fd = open(dname, O_RDWR));
++           if (fd >= 0)
++               break;
++           else if (errno != ENOENT || ++enoentcount > 3) {
++                if (errno != EBUSY) {
++                    err = errno;
++                    break;
++                } 
++            } else  
++                err = errno;
++        }
++    }
++    if (fd < 0) {
++       fprintf(stderr, "warning: could not open %s (%s): no virtual "
++           "network emulation\n", dname, strerror(err));
++       return -1;
++    }
++
++    /* Set the tunnel device operation mode */
++    if ((sock = socket(PF_UNIX, SOCK_STREAM, 0)) == -1) {
++        close(fd);
++        return -1;
++    }
++
++    /* Get interface flags */
++    if (ioctl(sock, SIOCGIFFLAGS, &ifr) == -1) {
++        close(fd);
++        close(sock);
++        return -1;
++    }
++
++    /* Set interface mode */
++    ifr.ifr_flags &= ~IFF_UP;
++    ifr.ifr_flags |= IFF_LINK0;
++    if (ioctl(sock, SIOCSIFFLAGS, &ifr) == -1) {
++        close(fd);
++        close(sock);
++        return -1;
++    }
++
++    /* Bring interface up */
++    ifr.ifr_flags |= IFF_UP;
++    if (ioctl(sock, SIOCSIFFLAGS, &ifr) == -1) {
++        close(fd);
++        close(sock);
++        return -1;
++    }
++
++#else
+     TFR(fd = open("/dev/tap", O_RDWR));
+     if (fd < 0) {
+         fprintf(stderr, "warning: could not open /dev/tap: no virtual network emulation\n");
+         return -1;
+     }
++#endif
++    }
+ 
+     fstat(fd, &s);
+     dev = devname(s.st_rdev, S_IFCHR);
+@@ -4141,6 +4216,7 @@ static int net_tap_init(VLANState *vlan, const char *i
+     TAPState *s;
+     int fd;
+     char ifname[128];
++    bzero(&ifname,sizeof(ifname));
+ 
+     if (ifname1 != NULL)
+         pstrcpy(ifname, sizeof(ifname), ifname1);
+@@ -4320,7 +4396,7 @@ static int net_socket_mcast_create(struct sockaddr_in 
+     /* Force mcast msgs to loopback (eg. several QEMUs in same host */
+     val = 1;
+     ret=setsockopt(fd, IPPROTO_IP, IP_MULTICAST_LOOP,
+-                   (const char *)&val, sizeof(val));
++                   (const char *)&val, sizeof(char));
+     if (ret < 0) {
+ 	perror("setsockopt(SOL_IP, IP_MULTICAST_LOOP)");
+ 	goto fail;
+@@ -4609,7 +4685,8 @@ static const char *get_word(char *buf, int buf_size, c
+     return p;
+ }
+ 
+-static int get_param_value(char *buf, int buf_size,
++static int get_param_value(char *, size_t, const char *, const char *);
++static int get_param_value(char *buf, size_t buf_size,
+                            const char *tag, const char *str)
+ {
+     const char *p;
+@@ -4748,6 +4825,9 @@ static int net_client_init(const char *str)
+         char ifname[64];
+         char setup_script[1024], down_script[1024];
+         int fd;
++        bzero(&ifname, sizeof(ifname));
++        bzero(&setup_script, sizeof(setup_script));
++        bzero(&down_script, sizeof(down_script));
+         vlan->nb_host_devs++;
+         if (get_param_value(buf, sizeof(buf), "fd", p) > 0) {
+             fd = strtol(buf, NULL, 0);
+@@ -4755,16 +4835,16 @@ static int net_client_init(const char *str)
+             if (net_tap_fd_init(vlan, fd))
+                 ret = 0;
+         } else {
+-            if (get_param_value(ifname, sizeof(ifname), "ifname", p) <= 0) {
+-                ifname[0] = '\0';
+-            }
+             if (get_param_value(setup_script, sizeof(setup_script), "script", p) == 0) {
+                 pstrcpy(setup_script, sizeof(setup_script), DEFAULT_NETWORK_SCRIPT);
+             }
+             if (get_param_value(down_script, sizeof(down_script), "downscript", p) == 0) {
+                 pstrcpy(down_script, sizeof(down_script), DEFAULT_NETWORK_DOWN_SCRIPT);
+             }
+-            ret = net_tap_init(vlan, ifname, setup_script, down_script);
++            if (get_param_value(ifname, sizeof(ifname), "ifname", p) == 0)
++               ret = net_tap_init(vlan, NULL, setup_script, down_script);
++            else
++               ret = net_tap_init(vlan, ifname, setup_script, down_script);
+         }
+     } else
+ #endif
+@@ -8130,19 +8210,23 @@ int main(int argc, char **argv)
+     gdbstub_port = DEFAULT_GDBSTUB_PORT;
+ #endif
+     snapshot = 0;
++#if defined(CONFIG_SDL) || defined(CONFIG_COCOA)
+     nographic = 0;
++#else
++    nographic = 1;
++#endif
+     kernel_filename = NULL;
+     kernel_cmdline = "";
+     cyls = heads = secs = 0;
+     translation = BIOS_ATA_TRANSLATION_AUTO;
+-    pstrcpy(monitor_device, sizeof(monitor_device), "vc");
++    pstrcpy(monitor_device, sizeof(monitor_device), nographic ? "stdio" : "vc");
+ 
+-    pstrcpy(serial_devices[0], sizeof(serial_devices[0]), "vc");
++    pstrcpy(serial_devices[0], sizeof(serial_devices[0]), nographic ? "stdio" : "vc");
+     for(i = 1; i < MAX_SERIAL_PORTS; i++)
+         serial_devices[i][0] = '\0';
+     serial_device_index = 0;
+ 
+-    pstrcpy(parallel_devices[0], sizeof(parallel_devices[0]), "vc");
++    pstrcpy(parallel_devices[0], sizeof(parallel_devices[0]), "null");
+     for(i = 1; i < MAX_PARALLEL_PORTS; i++)
+         parallel_devices[i][0] = '\0';
+     parallel_device_index = 0;

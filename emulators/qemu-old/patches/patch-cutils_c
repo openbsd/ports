@@ -1,0 +1,21 @@
+$OpenBSD: patch-cutils_c,v 1.1.1.1 2010/05/27 17:33:42 fgsch Exp $
+--- cutils.c.orig	Sun Jan  6 14:38:42 2008
++++ cutils.c	Tue Apr  1 01:33:39 2008
+@@ -23,7 +23,7 @@
+  */
+ #include "qemu-common.h"
+ 
+-void pstrcpy(char *buf, int buf_size, const char *str)
++void pstrcpy(char *buf, size_t buf_size, const char *str)
+ {
+     int c;
+     char *q = buf;
+@@ -41,7 +41,7 @@ void pstrcpy(char *buf, int buf_size, const char *str)
+ }
+ 
+ /* strcat and truncate. */
+-char *pstrcat(char *buf, int buf_size, const char *s)
++char *pstrcat(char *buf, size_t buf_size, const char *s)
+ {
+     int len;
+     len = strlen(buf);
