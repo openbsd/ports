@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/27 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2010/05/27 12:44:19 ajacoutot Exp $
 
-COMMENT =		cross-platform IDE for use with Qt.
+COMMENT =		cross-platform IDE for use with Qt
 
 V = 			1.3.1
 DISTNAME =		qt-creator-${V}-src
-PKGNAME =		qt-creator-${V}
+PKGNAME =		qt-creator-${V}p0
 EXTRACT_SUFX = 		.zip
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
-
 
 SHARED_LIBS =		Aggregation 0.0 \
 			CPlusPlus 0.0 \
@@ -33,7 +32,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-
 WANTLIB +=	c m pthread stdc++ sqlite3
 
 MASTER_SITES =	http://get.qt.nokia.com/qtcreator/
@@ -43,9 +41,7 @@ MODULES =	x11/qt4
 LIB_DEPENDS =	QtDBus,QtWebKit,QtXmlPatterns,QtDesigner.>=7,QtDesignerComponents.>=7,QtGui.>=8,QtHelp,QtNetwork.>=7,QtScript,QtSql.>=7,QtSvg.>=7,QtXml.>=7,phonon::x11/qt4
 BUILD_DEPENDS = ::x11/qt4,-sqlite
 RUN_DEPENDS = ::x11/qt4,-sqlite ::devel/gmake
-		
 
-		
 SEPARATE_BUILD =	simple
 
 USE_X11 =		Yes
