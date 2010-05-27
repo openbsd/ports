@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/05/20 19:01:14 landry Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/05/27 22:04:17 landry Exp $
 @bin bin/midori
 include/midori-0.2/
 include/midori-0.2/extensions/
@@ -77,6 +77,9 @@ share/locale/sr/LC_MESSAGES/midori.mo
 share/locale/sr@latin/LC_MESSAGES/midori.mo
 share/locale/sv/LC_MESSAGES/midori.mo
 share/locale/tr/LC_MESSAGES/midori.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/midori.mo
 share/locale/uk/LC_MESSAGES/midori.mo
 share/locale/zh_CN/LC_MESSAGES/midori.mo
 share/locale/zh_TW/LC_MESSAGES/midori.mo

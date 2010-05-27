@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2010/05/20 19:01:14 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2010/05/27 22:04:17 landry Exp $
 
 COMMENT =	lightweight web browser
 
-XFCE_VERSION =	0.2.5
+XFCE_VERSION =	0.2.6
 XFCE_GOODIE =	midori
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
@@ -30,6 +30,7 @@ LIB_DEPENDS =	webkit-1.0:webkit->=1.1.15v0:www/webkit \
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 
 BUILD_DEPENDS =	::textproc/py-docutils \
+		::lang/vala \
 		::x11/gnome/librsvg
 
 WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
