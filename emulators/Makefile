@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/05/09 17:54:02 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.52 2010/05/27 17:47:17 fgsch Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -19,7 +19,7 @@
     SUBDIR += ines
     SUBDIR += kqemu
     SUBDIR += mastergear
-    SUBDIR += qemu
+    SUBDIR += qemu-old
     SUBDIR += redhat
     SUBDIR += sdlmame
     SUBDIR += sdlmess
