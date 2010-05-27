@@ -1,0 +1,12 @@
+$OpenBSD: patch-net_h,v 1.1 2010/05/27 17:55:05 fgsch Exp $
+--- net.h.orig	Tue Feb 23 20:54:38 2010
++++ net.h	Mon Mar 22 20:26:50 2010
+@@ -172,7 +172,7 @@ void net_host_device_remove(Monitor *mon, const QDict 
+ #ifdef __sun__
+ #define SMBD_COMMAND "/usr/sfw/sbin/smbd"
+ #else
+-#define SMBD_COMMAND "/usr/sbin/smbd"
++#define SMBD_COMMAND "${LOCALBASE}/libexec/smbd"
+ #endif
+ 
+ void qdev_set_nic_properties(DeviceState *dev, NICInfo *nd);

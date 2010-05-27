@@ -1,63 +1,73 @@
-# $OpenBSD: Makefile,v 1.45 2010/01/07 14:15:17 giovanni Exp $
+# $OpenBSD: Makefile,v 1.46 2010/05/27 17:55:05 fgsch Exp $
 
 # no success building on other archs yet
-ONLY_FOR_ARCHS=		amd64 i386 powerpc
+ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
-COMMENT=		multi system emulator
+COMMENT =		multi system emulator
 
-DISTNAME=		qemu-0.9.1
-PKGNAME=		${DISTNAME}p12
-CATEGORIES=		emulators
+DISTNAME =		qemu-0.12.3
+CATEGORIES =		emulators
 
-HOMEPAGE=		http://www.nongnu.org/qemu/
+HOMEPAGE =		http://www.qemu.org/
 
-MAINTAINER=		Todd T. Fries <todd@openbsd.org>
+MAINTAINER =		Todd T. Fries <todd@openbsd.org>
 
 # GPLv2/LGPLv2/BSD
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=		${MASTER_SITE_OPENBSD}
+WANTLIB =		c m ossaudio pthread util z
 
-BUILD_DEPENDS=		::textproc/texi2html
-USE_GMAKE=		Yes
-WANTLIB=		c m ossaudio z
-CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS+=	--prefix=${PREFIX} \
-			--disable-vnc-tls
+MASTER_SITES =		${MASTER_SITE_SAVANNAH:=qemu/}
 
-# Currently, the regression tests are utterly broken.
-REGRESS_TARGET=		test test2
+BUILD_DEPENDS =		::textproc/texi2html
 
-.if ${MACHINE_ARCH} == "amd64"
-PATCH_LIST=     patch-* misc-*
-.endif
+USE_GMAKE =		Yes
 
-FLAVORS=		no_x11
-FLAVOR?=
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS =	--prefix=${PREFIX} \
+			--disable-vnc-tls \
+			--disable-curses \
+			--disable-curl \
+			--disable-bsd-user \
+			--disable-guest-base \
+			--extra-cflags=-fno-stack-protector
+
+FLAVORS =		no_x11 O0
+FLAVOR ?=
 
 .if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+=	--disable-gfx-check \
-			--disable-sdl
+CONFIGURE_ARGS +=	--disable-sdl
 .else
-LIB_DEPENDS=    	SDL::devel/sdl
+LIB_DEPENDS =    	SDL::devel/sdl
 
-USE_X11=		Yes
-WANTLIB+=		pthread
+USE_X11 =		Yes
+WANTLIB +=		X11
 .endif
 
+.if ${FLAVOR:L:Mo0}
+CFLAGS+=		-O0
+.endif
+
+# Currently, the regression tests are utterly broken.
+REGRESS_TARGET =	test
+
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/vl.c ${WRKSRC}/qemu-doc.texi
+	@${SUBST_CMD} ${WRKSRC}/net.h ${WRKSRC}/qemu-options.hx
+	@perl -pi -e 's|/dev/dsp|/dev/audio|g' ${WRKSRC}/audio/ossaudio.c
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu
-	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup ${PREFIX}/share/examples/qemu
-	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown ${PREFIX}/share/examples/qemu
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qemu
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu
 	@${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/doc/qemu/README.OpenBSD
-	@chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/qemu/README.OpenBSD
+	    ${PREFIX}/share/doc/qemu/README.OpenBSD
+	@chown ${SHAREOWN}:${SHAREGRP} \
+	    ${PREFIX}/share/doc/qemu/README.OpenBSD
+	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup \
+	    ${PREFIX}/share/examples/qemu
+	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown \
+	    ${PREFIX}/share/examples/qemu
 
 .include <bsd.port.mk>

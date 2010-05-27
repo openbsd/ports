@@ -1,7 +1,7 @@
-$OpenBSD: patch-hw_rtl8139_c,v 1.4 2008/04/28 22:52:38 todd Exp $
---- hw/rtl8139.c.orig	Sun Jan  6 14:38:42 2008
-+++ hw/rtl8139.c	Tue Apr  1 01:33:39 2008
-@@ -60,7 +60,7 @@
+$OpenBSD: patch-hw_rtl8139_c,v 1.5 2010/05/27 17:55:05 fgsch Exp $
+--- hw/rtl8139.c.orig	Mon Mar  8 15:01:40 2010
++++ hw/rtl8139.c	Mon Mar  8 15:01:46 2010
+@@ -61,7 +61,7 @@
  #define RTL8139_CALCULATE_RXCRC 1
  
  /* Uncomment to enable on-board timer interrupts */

@@ -1,0 +1,12 @@
+$OpenBSD: patch-rules_mak,v 1.1 2010/05/27 17:55:05 fgsch Exp $
+--- rules.mak.orig	Mon Mar  8 22:53:58 2010
++++ rules.mak	Mon Mar  8 22:54:18 2010
+@@ -31,7 +31,7 @@ LINK = $(call quiet-command,$(CC) $(QEMU_CFLAGS) $(CFL
+ %.a:
+ 	$(call quiet-command,rm -f $@ && $(AR) rcs $@ $^,"  AR    $(TARGET_DIR)$@")
+ 
+-quiet-command = $(if $(V),$1,$(if $(2),@echo $2 && $1, @$1))
++quiet-command = $1
+ 
+ # cc-option
+ # Usage: CFLAGS+=$(call cc-option, -falign-functions=0, -malign-functions=0)

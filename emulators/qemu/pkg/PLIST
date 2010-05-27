@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/12/10 23:38:52 todd Exp $
+@comment $OpenBSD: PLIST,v 1.12 2010/05/27 17:55:05 fgsch Exp $
 @pkgpath emulators/qemu,kqemu
 @bin bin/qemu
 @bin bin/qemu-img
+@bin bin/qemu-io
 @bin bin/qemu-system-arm
 @bin bin/qemu-system-cris
 @bin bin/qemu-system-m68k
+@bin bin/qemu-system-microblaze
 @bin bin/qemu-system-mips
 @bin bin/qemu-system-mips64
 @bin bin/qemu-system-mips64el
@@ -15,9 +17,11 @@
 @bin bin/qemu-system-sh4
 @bin bin/qemu-system-sh4eb
 @bin bin/qemu-system-sparc
+@bin bin/qemu-system-sparc64
 @bin bin/qemu-system-x86_64
 @man man/man1/qemu-img.1
 @man man/man1/qemu.1
+@man man/man8/qemu-nbd.8
 share/doc/qemu/
 share/doc/qemu/README.OpenBSD
 share/doc/qemu/qemu-doc.html
@@ -32,6 +36,7 @@ share/examples/qemu/qemu-ifup
 @sample ${SYSCONFDIR}/qemu-ifup
 @mode
 share/qemu/
+share/qemu/bamboo.dtb
 share/qemu/bios.bin
 share/qemu/keymaps/
 share/qemu/keymaps/ar
@@ -69,11 +74,19 @@ share/qemu/keymaps/sl
 share/qemu/keymaps/sv
 share/qemu/keymaps/th
 share/qemu/keymaps/tr
+share/qemu/linuxboot.bin
+share/qemu/multiboot.bin
+share/qemu/openbios-ppc
 share/qemu/openbios-sparc32
+share/qemu/openbios-sparc64
+share/qemu/petalogix-s3adsp1800.dtb
 share/qemu/ppc_rom.bin
+share/qemu/pxe-e1000.bin
+share/qemu/pxe-i82559er.bin
 share/qemu/pxe-ne2k_pci.bin
 share/qemu/pxe-pcnet.bin
 share/qemu/pxe-rtl8139.bin
+share/qemu/pxe-virtio.bin
 share/qemu/vgabios-cirrus.bin
 share/qemu/vgabios.bin
 share/qemu/video.x

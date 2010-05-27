@@ -1,7 +1,7 @@
-$OpenBSD: patch-slirp_slirp_config_h,v 1.4 2007/05/01 12:55:14 todd Exp $
---- slirp/slirp_config.h.orig	Mon Feb  5 17:01:54 2007
-+++ slirp/slirp_config.h	Sat Mar 10 16:39:40 2007
-@@ -92,7 +92,7 @@
+$OpenBSD: patch-slirp_slirp_config_h,v 1.5 2010/05/27 17:55:05 fgsch Exp $
+--- slirp/slirp_config.h.orig	Mon Mar  8 15:02:00 2010
++++ slirp/slirp_config.h	Mon Mar  8 15:00:19 2010
+@@ -89,7 +89,7 @@
  #undef BAD_SPRINTF
  
  /* Define if you have readv */
@@ -10,7 +10,7 @@ $OpenBSD: patch-slirp_slirp_config_h,v 1.4 2007/05/01 12:55:14 todd Exp $
  
  /* Define if iovec needs to be declared */
  #undef DECLARE_IOVEC
-@@ -104,7 +104,7 @@
+@@ -101,7 +101,7 @@
  #undef DECLARE_SPRINTF
  
  /* Define if you have a POSIX.1 sys/wait.h */
@@ -19,7 +19,7 @@ $OpenBSD: patch-slirp_slirp_config_h,v 1.4 2007/05/01 12:55:14 todd Exp $
  
  /* Define if you have sys/select.h */
  #undef HAVE_SYS_SELECT_H
-@@ -122,7 +122,7 @@
+@@ -119,7 +119,7 @@
  #endif
  
  /* Define if you have sys/signal.h */
@@ -28,7 +28,7 @@ $OpenBSD: patch-slirp_slirp_config_h,v 1.4 2007/05/01 12:55:14 todd Exp $
  
  /* Define if you have sys/stropts.h */
  #undef HAVE_SYS_STROPTS_H
-@@ -200,7 +200,7 @@
+@@ -194,7 +194,7 @@
  #undef HAVE_GRANTPT
  
  /* Define if you have fchmod */

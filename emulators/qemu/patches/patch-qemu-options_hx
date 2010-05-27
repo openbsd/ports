@@ -1,0 +1,12 @@
+$OpenBSD: patch-qemu-options_hx,v 1.1 2010/05/27 17:55:05 fgsch Exp $
+--- qemu-options.hx.orig	Tue Feb 23 20:54:38 2010
++++ qemu-options.hx	Mon Mar 22 20:26:50 2010
+@@ -942,7 +942,7 @@ or @file{C:\WINNT\SYSTEM32\DRIVERS\ETC\LMHOSTS} (Windo
+ Then @file{@var{dir}} can be accessed in @file{\\smbserver\qemu}.
+ 
+ Note that a SAMBA server must be installed on the host OS in
+-@file{/usr/sbin/smbd}. QEMU was tested successfully with smbd versions from
++@file{${LOCALBASE}/libexec/smbd}. QEMU was tested successfully with smbd versions from
+ Red Hat 9, Fedora Core 3 and OpenSUSE 11.x.
+ 
+ @item hostfwd=[tcp|udp]:[@var{hostaddr}]:@var{hostport}-[@var{guestaddr}]:@var{guestport}
