@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/10/17 16:25:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/05/27 11:04:30 sthen Exp $
 @conflict clamav-<0.94
 bin/MailScanner
 bin/Quick.Peek
@@ -159,6 +159,10 @@ share/examples/MailScanner/libexec/mcafee-autoupdate.sample
 @sample libexec/MailScanner/mcafee-autoupdate
 share/examples/MailScanner/libexec/mcafee-wrapper.sample
 @sample libexec/MailScanner/mcafee-wrapper
+share/examples/MailScanner/libexec/mcafee6-autoupdate.sample
+@sample libexec/MailScanner/mcafee6-autoupdate
+share/examples/MailScanner/libexec/mcafee6-wrapper.sample
+@sample libexec/MailScanner/mcafee6-wrapper
 share/examples/MailScanner/libexec/nod32-autoupdate.sample
 @sample libexec/MailScanner/nod32-autoupdate
 share/examples/MailScanner/libexec/nod32-wrapper.sample

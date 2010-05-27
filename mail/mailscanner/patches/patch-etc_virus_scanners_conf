@@ -1,7 +1,13 @@
-$OpenBSD: patch-etc_virus_scanners_conf,v 1.3 2008/05/16 16:38:36 sthen Exp $
---- etc/virus.scanners.conf.orig	Sun May  4 10:29:47 2008
-+++ etc/virus.scanners.conf	Mon May  5 00:56:14 2008
-@@ -11,43 +11,43 @@
+$OpenBSD: patch-etc_virus_scanners_conf,v 1.4 2010/05/27 11:04:30 sthen Exp $
+--- etc/virus.scanners.conf.orig	Thu Apr 22 15:38:08 2010
++++ etc/virus.scanners.conf	Mon May 24 10:22:43 2010
+@@ -6,49 +6,49 @@
+ #  3.  Installation directory of virus scanner. This does not usually include
+ #      any "bin" directory in the path to the scanner program itself.
+ # You can test a -wrapper script with a command like this:
+-#      /opt/MailScanner/lib/f-secure-wrapper /opt/f-secure/fsav /tmp
++#      %PREFIX%/libexec/MailScanner/f-secure-wrapper /opt/f-secure/fsav /tmp
+ # That command will attempt to scan /tmp using F-Secure. If it works you
  # should see some sensible output. If it fails, you will probably just see
  # an error message such as "Command not found" or similar.
  #
@@ -11,8 +17,14 @@ $OpenBSD: patch-etc_virus_scanners_conf,v 1.3 2008/05/16 16:38:36 sthen Exp $
 -avg		/opt/MailScanner/lib/avg-wrapper	/usr/local
 -bitdefender	/opt/MailScanner/lib/bitdefender-wrapper /opt/bdc
 -clamav		/opt/MailScanner/lib/clamav-wrapper	/usr/local
--clamd		/bin/false				/usr/local
--clamavmodule	/bin/false				/tmp
++antivir		%PREFIX%/libexec/MailScanner/antivir-wrapper	/usr/lib/AntiVir
++avast		%PREFIX%/libexec/MailScanner/avast-wrapper	/usr
++avastd		%PREFIX%/libexec/MailScanner/avastd-wrapper	/usr
++avg		%PREFIX%/libexec/MailScanner/avg-wrapper	/usr/local
++bitdefender	%PREFIX%/libexec/MailScanner/bitdefender-wrapper /opt/bdc
++clamav		%PREFIX%/libexec/MailScanner/clamav-wrapper	/usr/local
+ clamd		/bin/false				/usr/local
+ clamavmodule	/bin/false				/tmp
 -command		/opt/MailScanner/lib/command-wrapper	/usr
 -css		/opt/MailScanner/lib/css-wrapper	/opt/SYMCScan
 -drweb		/opt/MailScanner/lib/drweb-wrapper	/opt/drweb
@@ -20,19 +32,6 @@ $OpenBSD: patch-etc_virus_scanners_conf,v 1.3 2008/05/16 16:38:36 sthen Exp $
 -etrust		/opt/MailScanner/lib/etrust-wrapper	/opt/eTrustAntivirus
 -f-prot		/opt/MailScanner/lib/f-prot-wrapper	/usr/local/f-prot
 -f-prot-6	/opt/MailScanner/lib/f-prot-6-wrapper	/opt/f-prot
--f-protd-6	/bin/false				/opt/f-prot
--f-secure	/opt/MailScanner/lib/f-secure-wrapper	/opt/f-secure/fsav
--generic		/opt/MailScanner/lib/generic-wrapper	/
--inoculan	/opt/MailScanner/lib/inoculan-wrapper	/usr/local/inoculan
--inoculate	/opt/MailScanner/lib/inoculate-wrapper	/usr/local/av
-+antivir		%PREFIX%/libexec/MailScanner/antivir-wrapper	/usr/lib/AntiVir
-+avast		%PREFIX%/libexec/MailScanner/avast-wrapper	/usr
-+avastd		%PREFIX%/libexec/MailScanner/avastd-wrapper	/usr
-+avg		%PREFIX%/libexec/MailScanner/avg-wrapper	/usr/local
-+bitdefender	%PREFIX%/libexec/MailScanner/bitdefender-wrapper /opt/bdc
-+clamav		%PREFIX%/libexec/MailScanner/clamav-wrapper	/usr/local
-+clamd		/bin/false					/usr/local
-+clamavmodule	/bin/false					/tmp
 +command		%PREFIX%/libexec/MailScanner/command-wrapper	/usr
 +css		%PREFIX%/libexec/MailScanner/css-wrapper	/opt/SYMCScan
 +drweb		%PREFIX%/libexec/MailScanner/drweb-wrapper	/opt/drweb
@@ -40,7 +39,11 @@ $OpenBSD: patch-etc_virus_scanners_conf,v 1.3 2008/05/16 16:38:36 sthen Exp $
 +etrust		%PREFIX%/libexec/MailScanner/etrust-wrapper	/opt/eTrustAntivirus
 +f-prot		%PREFIX%/libexec/MailScanner/f-prot-wrapper	/usr/local/f-prot
 +f-prot-6	%PREFIX%/libexec/MailScanner/f-prot-6-wrapper	/opt/f-prot
-+f-protd-6	/bin/false					/opt/f-prot
+ f-protd-6	/bin/false				/opt/f-prot
+-f-secure	/opt/MailScanner/lib/f-secure-wrapper	/opt/f-secure/fsav
+-generic		/opt/MailScanner/lib/generic-wrapper	/
+-inoculan	/opt/MailScanner/lib/inoculan-wrapper	/usr/local/inoculan
+-inoculate	/opt/MailScanner/lib/inoculate-wrapper	/usr/local/av
 +f-secure	%PREFIX%/libexec/MailScanner/f-secure-wrapper	/opt/f-secure/fsav
 +generic		%PREFIX%/libexec/MailScanner/generic-wrapper	/
 +inoculan	%PREFIX%/libexec/MailScanner/inoculan-wrapper	/usr/local/inoculan
@@ -51,33 +54,33 @@ $OpenBSD: patch-etc_virus_scanners_conf,v 1.3 2008/05/16 16:38:36 sthen Exp $
 -kaspersky	/opt/MailScanner/lib/kaspersky-wrapper	/opt/AVP
 -kavdaemonclient	/opt/MailScanner/lib/kavdaemonclient-wrapper /usr/local
 -mcafee		/opt/MailScanner/lib/mcafee-wrapper	/usr/local/uvscan
+-mcafee6		/opt/MailScanner/lib/mcafee6-wrapper	/usr/local/uvscan
 +kaspersky-4.5	%PREFIX%/libexec/MailScanner/kaspersky-wrapper	/opt/kav
 +kaspersky	%PREFIX%/libexec/MailScanner/kaspersky-wrapper	/opt/AVP
 +kavdaemonclient	%PREFIX%/libexec/MailScanner/kavdaemonclient-wrapper /usr/local
 +mcafee		%PREFIX%/libexec/MailScanner/mcafee-wrapper	/usr/local/uvscan
++mcafee6		%PREFIX%/libexec/MailScanner/mcafee6-wrapper	/usr/local/uvscan
  # Now updated to handle nod32 2.01 and upwards
 -#nod32-1.99	/opt/MailScanner/lib/nod32-wrapper	/usr/local/nod32
 -nod32-1.99	/opt/MailScanner/lib/nod32-wrapper	/usr/sbin
 -nod32		/opt/MailScanner/lib/nod32-wrapper	/usr/local/nod32
--none		/bin/false				/tmp
++#nod32-1.99	%PREFIX%/libexec/MailScanner/nod32-wrapper	/usr/local/nod32
++nod32-1.99	%PREFIX%/libexec/MailScanner/nod32-wrapper	/usr/sbin
++nod32		%PREFIX%/libexec/MailScanner/nod32-wrapper	/usr/local/nod32
+ none		/bin/false				/tmp
 -norman		/opt/MailScanner/lib/norman-wrapper	/usr/bin
 -panda		/opt/MailScanner/lib/panda-wrapper	/usr
 -rav		/opt/MailScanner/lib/rav-wrapper	/usr/local/rav8
 -sophos		/opt/MailScanner/lib/sophos-wrapper	/opt/sophos-av
--sophossavi	/bin/false				/tmp
--symscanengine	/opt/MailScanner/lib/symscanengine-wrapper /opt/SYMCScan
--trend		/opt/MailScanner/lib/trend-wrapper	/pack/trend
--vba32		/opt/MailScanner/lib/vba32-wrapper	/opt/vba/vbacl
--vexira		/opt/MailScanner/lib/vexira-wrapper	/usr/local/vexira
-+#nod32-1.99	%PREFIX%/libexec/MailScanner/nod32-wrapper	/usr/local/nod32
-+nod32-1.99	%PREFIX%/libexec/MailScanner/nod32-wrapper	/usr/sbin
-+nod32		%PREFIX%/libexec/MailScanner/nod32-wrapper	/usr/local/nod32
-+none		/bin/false					/tmp
 +norman		%PREFIX%/libexec/MailScanner/norman-wrapper	/usr/bin
 +panda		%PREFIX%/libexec/MailScanner/panda-wrapper	/usr
 +rav		%PREFIX%/libexec/MailScanner/rav-wrapper	/usr/local/rav8
 +sophos		%PREFIX%/libexec/MailScanner/sophos-wrapper	/opt/sophos-av
-+sophossavi	/bin/false					/tmp
+ sophossavi	/bin/false				/tmp
+-symscanengine	/opt/MailScanner/lib/symscanengine-wrapper /opt/SYMCScan
+-trend		/opt/MailScanner/lib/trend-wrapper	/pack/trend
+-vba32		/opt/MailScanner/lib/vba32-wrapper	/opt/vba/vbacl
+-vexira		/opt/MailScanner/lib/vexira-wrapper	/usr/local/vexira
 +symscanengine	%PREFIX%/libexec/MailScanner/symscanengine-wrapper /opt/SYMCScan
 +trend		%PREFIX%/libexec/MailScanner/trend-wrapper	/pack/trend
 +vba32		%PREFIX%/libexec/MailScanner/vba32-wrapper	/opt/vba/vbacl
