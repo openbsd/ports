@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_plugins_help_helpplugin_cpp,v 1.1.1.1 2010/05/27 12:30:14 espie Exp $
+--- src/plugins/help/helpplugin.cpp.orig	Sat Apr 24 17:20:30 2010
++++ src/plugins/help/helpplugin.cpp	Sat Apr 24 17:19:53 2010
+@@ -80,7 +80,7 @@
+ #include <QtGui/QMessageBox>
+ #include <QtHelp/QHelpEngine>
+ 
+-#ifndef QT_NO_WEBKIT
++#ifdef QT_NO_WEBKIT
+ #include <QtGui/QApplication>
+ #else
+ #include <QtWebKit/QWebSettings>

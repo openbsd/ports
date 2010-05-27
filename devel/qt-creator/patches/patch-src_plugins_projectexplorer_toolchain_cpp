@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_plugins_projectexplorer_toolchain_cpp,v 1.1.1.1 2010/05/27 12:30:14 espie Exp $
+--- src/plugins/projectexplorer/toolchain.cpp.orig	Thu May 27 13:21:24 2010
++++ src/plugins/projectexplorer/toolchain.cpp	Thu May 27 13:21:28 2010
+@@ -235,7 +235,7 @@ void GccToolChain::addToEnvironment(ProjectExplorer::E
+ 
+ QString GccToolChain::makeCommand() const
+ {
+-    return "make";
++    return "gmake";
+ }
+ 
+ bool GccToolChain::equals(ToolChain *other) const
