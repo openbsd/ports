@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.35 2010/05/26 20:24:23 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.36 2010/05/27 23:33:45 sthen Exp $
 --- get_iplayer.orig	Wed May 26 14:19:02 2010
-+++ get_iplayer	Wed May 26 21:23:26 2010
++++ get_iplayer	Fri May 28 00:00:23 2010
 @@ -327,7 +327,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-get_iplayer,v 1.35 2010/05/26 20:24:23 sthen Exp $
  			main::logger "INFO: id3 tagging $prog->{ext} file\n";
  			my @cmd = (
  				$bin->{id3v2}, 
-@@ -5611,6 +5612,24 @@ sub get_stream_data_cdn {
+@@ -5611,10 +5612,28 @@ sub get_stream_data_cdn {
  
  	my $count = 1;
  	for my $cattribs ( @{ $mattribs->{connections} } ) {
@@ -60,6 +60,11 @@ $OpenBSD: patch-get_iplayer,v 1.35 2010/05/26 20:24:23 sthen Exp $
  		# Common attributes
  		# swfurl = Default iPlayer swf version
  		my $conn = {
+-			swfurl		=> "http://www.bbc.co.uk/emp/10player.swf?revision=15501_15796",
++			swfurl		=> "http://www.bbc.co.uk/emp/10player.swf?revision=18269_19216",
+ 			ext		=> $ext,
+ 			streamer	=> $streamer,
+ 			bitrate		=> $mattribs->{bitrate},
 @@ -5643,24 +5662,29 @@ sub get_stream_data_cdn {
  				$conn->{authstring} = $cattribs->{authString};
  			}
@@ -115,3 +120,48 @@ $OpenBSD: patch-get_iplayer,v 1.35 2010/05/26 20:24:23 sthen Exp $
  		# New iphone stream
  		if ( $mattribs->{service} eq 'iplayer_streaming_http_mp4' ) {
  			# Fix/remove some audio stream attribs
+@@ -7944,12 +7972,15 @@ sub get {
+ 	my $playpath 	= $streamdata{playpath};
+ 	my $port 	= $streamdata{port} || $opt->{rtmpport} || 1935;
+ 	my $protocol	= $streamdata{protocol} || 0;
++	my $pageurl	= $prog->{player};
+ 	my $mode	= $prog->{mode};
+ 	push @cmdopts, ( split /\s+/, $streamdata{extraopts} ) if $streamdata{extraopts};
+ 
+ 	my $file_tmp;
+ 	my @cmd;
+ 	
++	my $swfarg = "--swfUrl";
++
+ 	if ( $opt->{raw} ) {
+ 		$file_tmp = $prog->{filepart};
+ 	} else {
+@@ -7967,9 +7998,13 @@ sub get {
+ 	}
+ 
+ 	# flvstreamer version detection e.g. 'FLVStreamer v1.8a'
+-	my $rtmpver;
+-	chomp( $rtmpver = (grep /^\w+\s+v?[\.\d]+.*$/i, `"$bin->{flvstreamer}" 2>&1`)[0] );
+-	$rtmpver =~ s/^\w+\s+v?([\.\d]+).*$/$1/g;
++	my $rtmpver = `"$bin->{flvstreamer}" --help 2>&1`;
++	if ( $rtmpver =~ /swfVfy/ ) {
++		$swfarg = "--swfVfy";
++	} else {
++		main::logger "WARNING: Your version of flvstreamer/rtmpdump does not support SWF Verification\n";
++	}
++	$rtmpver =~ s/^\w+\s+v?([\.\d]+)(.*\n)*$/$1/g;
+ 	main::logger "INFO: $bin->{flvstreamer} version $rtmpver\n" if $opt->{verbose};
+ 	main::logger "INFO: RTMP_URL: $url_2, tcUrl: $tcurl, application: $application, authString: $authstring, swfUrl: $swfurl, file: $prog->{filepart}, file_done: $prog->{filename}\n" if $opt->{verbose};
+ 
+@@ -8012,9 +8047,10 @@ sub get {
+ 			'--protocol', $protocol,
+ 			'--playpath', $playpath,
+ 			'--host', $server,
+-			'--swfUrl', $swfurl,
++			$swfarg, $swfurl,
+ 			'--tcUrl', $tcurl,
+ 			'--app', $application,
++			'--pageUrl', $pageurl,
+ 			@cmdopts,
+ 		);
+ 	# Using just streamurl (i.e. no playpath defined)
