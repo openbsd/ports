@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.46 2010/05/27 17:55:05 fgsch Exp $
+# $OpenBSD: Makefile,v 1.47 2010/05/27 18:49:41 fgsch Exp $
 
 # no success building on other archs yet
-ONLY_FOR_ARCHS =	amd64 i386 powerpc
+ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		multi system emulator
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--disable-guest-base \
 			--extra-cflags=-fno-stack-protector
 
-FLAVORS =		no_x11 O0
+FLAVORS =		no_x11
 FLAVOR ?=
 
 .if ${FLAVOR:L:Mno_x11}
@@ -45,10 +45,6 @@ LIB_DEPENDS =    	SDL::devel/sdl
 
 USE_X11 =		Yes
 WANTLIB +=		X11
-.endif
-
-.if ${FLAVOR:L:Mo0}
-CFLAGS+=		-O0
 .endif
 
 # Currently, the regression tests are utterly broken.
