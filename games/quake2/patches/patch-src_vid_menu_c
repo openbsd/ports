@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_vid_menu_c,v 1.2 2010/05/26 16:27:32 jasper Exp $
+$OpenBSD: patch-src_vid_menu_c,v 1.3 2010/05/28 14:58:06 jasper Exp $
 --- src/vid_menu.c.orig	Tue Mar  9 13:59:00 2004
 +++ src/vid_menu.c	Fri May 21 22:08:02 2010
 @@ -23,12 +23,10 @@
@@ -77,20 +77,6 @@ $OpenBSD: patch-src_vid_menu_c,v 1.2 2010/05/26 16:27:32 jasper Exp $
  	if ( !gl_picmip )
  		gl_picmip = Cvar_Get( "gl_picmip", "0", 0 );
  	if ( !gl_mode )
-@@ -285,12 +271,7 @@ void VID_MenuInit( void )
- 	s_screensize_slider[SOFTWARE_MENU].curvalue = scr_viewsize->value/10;
- 	s_screensize_slider[OPENGL_MENU].curvalue = scr_viewsize->value/10;
- 
--	if ( strcmp( vid_ref->string, "soft" ) == 0)
--	{
--		s_current_menu_index = SOFTWARE_MENU;
--		s_ref_list[0].curvalue = s_ref_list[1].curvalue = REF_SOFT;
--	}
--	else if (strcmp( vid_ref->string, "softx" ) == 0 ) 
-+	if (strcmp( vid_ref->string, "softx" ) == 0 ) 
- 	{
- 		s_current_menu_index = SOFTWARE_MENU;
- 		s_ref_list[0].curvalue = s_ref_list[1].curvalue = REF_SOFTX11;
 @@ -285,12 +271,7 @@ void VID_MenuInit( void )
  	s_screensize_slider[SOFTWARE_MENU].curvalue = scr_viewsize->value/10;
  	s_screensize_slider[OPENGL_MENU].curvalue = scr_viewsize->value/10;
