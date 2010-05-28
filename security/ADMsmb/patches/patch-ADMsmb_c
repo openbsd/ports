@@ -1,0 +1,12 @@
+$OpenBSD: patch-ADMsmb_c,v 1.1 2010/05/28 14:35:47 espie Exp $
+--- ADMsmb.c.orig	Fri May 28 16:34:42 2010
++++ ADMsmb.c	Fri May 28 16:34:52 2010
+@@ -139,7 +139,7 @@ int ADMsmb (u_long ip, char *netbioz)
+     {
+       usleep (100000);
+ 
+-      if (recvfrom (socket_client, buffer2,sizeof(buffer2), 0, (struct sockaddr *) &sin_dst, &(int) longueur) != -1)
++      if (recvfrom (socket_client, buffer2,sizeof(buffer2), 0, (struct sockaddr *) &sin_dst, &longueur) != -1)
+ 	{         
+ 
+ 	  if (nmb2->rep_num != 0)
