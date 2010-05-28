@@ -1,6 +1,6 @@
---- lib/libxview/base/xv_error.c.orig	1993-06-29 07:14:42.000000000 +0200
-+++ lib/libxview/base/xv_error.c	2003-12-30 01:31:11.000000000 +0100
-@@ -11,6 +11,7 @@ static char     sccsid[] = "@(#)xv_error
+--- lib/libxview/base/xv_error.c.orig	Tue Jun 29 07:14:42 1993
++++ lib/libxview/base/xv_error.c	Sun May 23 14:16:14 2010
+@@ -11,6 +11,7 @@ static char     sccsid[] = "@(#)xv_error.c 1.36 93/06/
   */
  
  #include <stdio.h>

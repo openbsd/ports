@@ -1,6 +1,6 @@
---- lib/libxview/textsw/txt_putkey.c.orig	1993-06-29 07:17:41.000000000 +0200
-+++ lib/libxview/textsw/txt_putkey.c	2003-12-30 01:31:14.000000000 +0100
-@@ -21,6 +21,8 @@ static char     sccsid[] = "@(#)txt_putk
+--- lib/libxview/textsw/txt_putkey.c.orig	Tue Jun 29 07:17:41 1993
++++ lib/libxview/textsw/txt_putkey.c	Sun May 23 14:16:14 2010
+@@ -21,6 +21,8 @@ static char     sccsid[] = "@(#)txt_putkey.c 20.19 93/
  
  extern int      errno;
  

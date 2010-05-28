@@ -1,6 +1,6 @@
---- lib/libxview/attr/attr_copy.c.orig	1993-06-29 07:14:35.000000000 +0200
-+++ lib/libxview/attr/attr_copy.c	2003-12-30 01:31:11.000000000 +0100
-@@ -12,6 +12,11 @@ static char     sccsid[] = "@(#)attr_cop
+--- lib/libxview/attr/attr_copy.c.orig	Tue Jun 29 07:14:35 1993
++++ lib/libxview/attr/attr_copy.c	Sun May 23 14:16:14 2010
+@@ -12,6 +12,11 @@ static char     sccsid[] = "@(#)attr_copy.c 20.14 93/0
  
  #include <xview/attr.h>
  

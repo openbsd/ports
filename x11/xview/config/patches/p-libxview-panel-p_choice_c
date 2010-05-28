@@ -1,6 +1,6 @@
---- lib/libxview/panel/p_choice.c.orig	1993-06-29 07:16:57.000000000 +0200
-+++ lib/libxview/panel/p_choice.c	2003-12-30 01:31:13.000000000 +0100
-@@ -106,6 +106,10 @@ static void     choice_begin_preview(), 
+--- lib/libxview/panel/p_choice.c.orig	Tue Jun 29 07:16:57 1993
++++ lib/libxview/panel/p_choice.c	Sun May 23 14:16:14 2010
+@@ -106,6 +106,10 @@ static void     choice_begin_preview(), choice_cancel_
  static int      choice_number();
  static int	choice_x_gap();
  static int	choice_y_gap();
@@ -11,11 +11,11 @@
  static unsigned int choice_value();
  static void     choice_create_menu();
  static void	choice_images_to_menu_items();
-@@ -121,7 +125,6 @@ static void     update_item_rect();
+@@ -120,7 +124,6 @@ static void     update_display();
+ static void     update_item_rect();
  static void     update_value_rect();
  static Xv_opaque choice_do_menu_item();
- 
 -
+ 
  static Panel_ops ops = {
      panel_default_handle_event,		/* handle_event() */
-     choice_begin_preview,		/* begin_preview() */

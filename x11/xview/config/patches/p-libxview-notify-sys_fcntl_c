@@ -1,6 +1,6 @@
---- lib/libxview/notify/sys_fcntl.c.orig	1993-06-29 07:18:17.000000000 +0200
-+++ lib/libxview/notify/sys_fcntl.c	2003-12-30 01:31:13.000000000 +0100
-@@ -15,7 +15,11 @@ static char     sccsid[] = "@(#)sys_fcnt
+--- lib/libxview/notify/sys_fcntl.c.orig	Tue Jun 29 07:18:17 1993
++++ lib/libxview/notify/sys_fcntl.c	Sun May 23 14:16:14 2010
+@@ -15,7 +15,11 @@ static char     sccsid[] = "@(#)sys_fcntl.c 20.13 93/0
   */
  
  #ifndef SVR4

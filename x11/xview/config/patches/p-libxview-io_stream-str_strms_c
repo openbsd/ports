@@ -1,6 +1,6 @@
---- lib/libxview/io_stream/str_strms.c.orig	1993-06-29 07:15:06.000000000 +0200
-+++ lib/libxview/io_stream/str_strms.c	2003-12-30 01:31:12.000000000 +0100
-@@ -17,7 +17,11 @@ static char     sccsid[] = "@(#)str_strm
+--- lib/libxview/io_stream/str_strms.c.orig	Tue Jun 29 07:15:06 1993
++++ lib/libxview/io_stream/str_strms.c	Sun May 23 14:16:14 2010
+@@ -17,7 +17,11 @@ static char     sccsid[] = "@(#)str_strms.c 20.17 93/0
  
  #define GetSISData struct string_input_stream_data	*data = (struct string_input_stream_data*) in->client_data
  

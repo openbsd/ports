@@ -1,5 +1,5 @@
---- clients/cmdtool/Imakefile.orig	1993-06-29 07:12:08.000000000 +0200
-+++ clients/cmdtool/Imakefile	2003-12-30 01:51:03.000000000 +0100
+--- clients/cmdtool/Imakefile.orig	Tue Jun 29 07:12:08 1993
++++ clients/cmdtool/Imakefile	Sun May 23 14:16:14 2010
 @@ -1,8 +1,8 @@
  #include <XView.tmpl>
  
@@ -12,7 +12,7 @@
  
  DEFINES = -DSTANDALONE  $(XVCLIENTDEFINES)
  INCLUDES = -I$(HEADER_DEST) -I$(TOP) $(XVCLIENTINCLUDES)
-@@ -20,7 +20,7 @@ ALLFILES = ${HEADERS} ${INFOFILES} ${MAN
+@@ -20,7 +20,7 @@ ALLFILES = ${HEADERS} ${INFOFILES} ${MANPAGES} ${ICONS
  
  ComplexProgramTarget(cmdtool)
  

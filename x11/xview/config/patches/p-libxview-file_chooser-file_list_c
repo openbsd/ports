@@ -1,6 +1,6 @@
---- lib/libxview/file_chooser/file_list.c.orig	1993-06-29 07:17:56.000000000 +0200
-+++ lib/libxview/file_chooser/file_list.c	2003-12-30 01:31:12.000000000 +0100
-@@ -23,6 +23,9 @@ static char     sccsid[] = "@(#)file_lis
+--- lib/libxview/file_chooser/file_list.c.orig	Tue Jun 29 07:17:56 1993
++++ lib/libxview/file_chooser/file_list.c	Sun May 23 14:16:14 2010
+@@ -23,6 +23,9 @@ static char     sccsid[] = "@(#)file_list.c 1.30 93/06
  #include <xview_private/flist_impl.h>
  #include <xview_private/portable.h>
  

@@ -1,5 +1,5 @@
---- config/XView.obj.orig	1993-06-29 07:13:20.000000000 +0200
-+++ config/XView.obj	2003-12-30 02:25:28.000000000 +0100
+--- config/XView.obj.orig	Tue Jun 29 07:13:20 1993
++++ config/XView.obj	Sun May 23 14:16:14 2010
 @@ -1,6 +1,6 @@
 -/**/###########################################################################
 -/**/# @(#)XView.obj	1.6 28 Jun 1993 SMI
@@ -48,7 +48,7 @@
  
  InstallMultiple($(HDRSPUBLIC),$(XVPUB_HEADER_DEST))
  # endif
-@@ -103,19 +103,19 @@ InstallMultiple($(HDRSPUBLIC),$(XVPUB_HE
+@@ -103,19 +103,19 @@ InstallMultiple($(HDRSPUBLIC),$(XVPUB_HEADER_DEST))
  
  #if SubdirHasPrivateHeaders
  # if NotLibXView

@@ -1,6 +1,6 @@
 --- lib/libxview/notify/ndet_loop.c.orig	Tue Jun 29 07:18:19 1993
-+++ lib/libxview/notify/ndet_loop.c	Sun Apr  2 03:32:17 2000
-@@ -14,13 +14,14 @@ static char     sccsid[] = "@(#)ndet_loo
++++ lib/libxview/notify/ndet_loop.c	Sun May 23 14:16:14 2010
+@@ -14,13 +14,14 @@ static char     sccsid[] = "@(#)ndet_loop.c 20.36 93/0
   * Ndet_loop.c - Notification loop.
   */
  

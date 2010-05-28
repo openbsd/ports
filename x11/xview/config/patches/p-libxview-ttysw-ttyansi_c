@@ -1,6 +1,6 @@
---- lib/libxview/ttysw/ttyansi.c.orig	1993-06-29 07:17:21.000000000 +0200
-+++ lib/libxview/ttysw/ttyansi.c	2003-12-30 01:31:14.000000000 +0100
-@@ -31,6 +31,10 @@ static char     sccsid[] = "@(#)ttyansi.
+--- lib/libxview/ttysw/ttyansi.c.orig	Tue Jun 29 07:17:21 1993
++++ lib/libxview/ttysw/ttyansi.c	Sun May 23 14:16:15 2010
+@@ -31,6 +31,10 @@ static char     sccsid[] = "@(#)ttyansi.c 20.43 93/06/
  
  #include <xview/sel_attrs.h>
  

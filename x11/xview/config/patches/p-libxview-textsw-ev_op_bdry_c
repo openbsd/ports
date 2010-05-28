@@ -1,6 +1,6 @@
---- lib/libxview/textsw/ev_op_bdry.c.orig	1993-06-29 07:17:30.000000000 +0200
-+++ lib/libxview/textsw/ev_op_bdry.c	2003-12-30 01:31:13.000000000 +0100
-@@ -28,6 +28,9 @@ Pkg_private void ev_clear_from_margins()
+--- lib/libxview/textsw/ev_op_bdry.c.orig	Tue Jun 29 07:17:30 1993
++++ lib/libxview/textsw/ev_op_bdry.c	Sun May 23 14:16:14 2010
+@@ -28,6 +28,9 @@ Pkg_private void ev_clear_from_margins();
  static Ev_finger_handle ev_insert_finger();
  static Ev_mark_object last_generated_id;
  

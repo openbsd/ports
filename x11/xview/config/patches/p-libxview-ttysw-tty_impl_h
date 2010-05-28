@@ -1,5 +1,5 @@
---- lib/libxview/ttysw/tty_impl.h.orig	1993-06-29 07:17:18.000000000 +0200
-+++ lib/libxview/ttysw/tty_impl.h	2003-12-30 01:31:14.000000000 +0100
+--- lib/libxview/ttysw/tty_impl.h.orig	Tue Jun 29 07:17:18 1993
++++ lib/libxview/ttysw/tty_impl.h	Sun May 23 14:16:14 2010
 @@ -14,6 +14,7 @@
   * terminal emulation for teletype based programs.
   */
@@ -8,7 +8,7 @@
  #include <xview_private/portable.h>	/* tty and pty configuration info */
  
  #ifdef	XV_USE_TERMIOS
-@@ -210,7 +211,13 @@ typedef Ttysw_view_object* 	Ttysw_view_h
+@@ -210,7 +211,13 @@ typedef Ttysw_view_object* 	Ttysw_view_handle;
   * Access functions for tty characteristics.
   */
  #ifdef	XV_USE_TERMIOS

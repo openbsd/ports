@@ -1,6 +1,6 @@
---- lib/libxview/io_stream/othr_strms.c.orig	1993-06-29 07:15:05.000000000 +0200
-+++ lib/libxview/io_stream/othr_strms.c	2003-12-30 01:31:12.000000000 +0100
-@@ -17,7 +17,11 @@ static char     sccsid[] = "@(#)othr_str
+--- lib/libxview/io_stream/othr_strms.c.orig	Tue Jun 29 07:15:05 1993
++++ lib/libxview/io_stream/othr_strms.c	Sun May 23 14:16:14 2010
+@@ -17,7 +17,11 @@ static char     sccsid[] = "@(#)othr_strms.c 20.20 93/
  
  #define GetFCSData struct xv_filter_comments_stream_data *data = (struct xv_filter_comments_stream_data*) in->client_data
  

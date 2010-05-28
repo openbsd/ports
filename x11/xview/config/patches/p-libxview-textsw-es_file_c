@@ -1,6 +1,6 @@
---- lib/libxview/textsw/es_file.c.orig	1993-06-29 07:17:34.000000000 +0200
-+++ lib/libxview/textsw/es_file.c	2003-12-30 01:31:13.000000000 +0100
-@@ -110,8 +110,13 @@ static char     sccsid[] = "@(#)es_file.
+--- lib/libxview/textsw/es_file.c.orig	Tue Jun 29 07:17:34 1993
++++ lib/libxview/textsw/es_file.c	Sun May 23 14:16:14 2010
+@@ -110,8 +110,13 @@ static char     sccsid[] = "@(#)es_file.c 20.49 93/06/
  
  
  extern int      errno, sys_nerr;

@@ -1,6 +1,6 @@
---- lib/libxview/ttysw/cim_change.c.orig	1993-06-29 07:17:12.000000000 +0200
-+++ lib/libxview/ttysw/cim_change.c	2003-12-30 01:31:14.000000000 +0100
-@@ -17,10 +17,10 @@ static char     sccsid[] = "@(#)cim_chan
+--- lib/libxview/ttysw/cim_change.c.orig	Tue Jun 29 07:17:12 1993
++++ lib/libxview/ttysw/cim_change.c	Sun May 23 14:16:14 2010
+@@ -17,10 +17,10 @@ static char     sccsid[] = "@(#)cim_change.c 20.19 93/
  #include <xview_private/i18n_impl.h>
  #include <sys/types.h>
  #include <pixrect/pixrect.h>

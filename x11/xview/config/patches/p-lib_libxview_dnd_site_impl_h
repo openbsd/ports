@@ -1,7 +1,7 @@
-$OpenBSD: p-lib_libxview_dnd_site_impl_h,v 1.1 2003/12/30 02:00:39 espie Exp $
---- lib/libxview/dnd/site_impl.h.orig	2003-12-30 02:54:00.000000000 +0100
-+++ lib/libxview/dnd/site_impl.h	2003-12-30 02:54:06.000000000 +0100
-@@ -81,4 +81,4 @@ Pkg_private Xv_opaque	dnd_site_set_avlis
+$OpenBSD: p-lib_libxview_dnd_site_impl_h,v 1.2 2010/05/28 01:13:54 espie Exp $
+--- lib/libxview/dnd/site_impl.h.orig	Tue Jun 29 07:15:58 1993
++++ lib/libxview/dnd/site_impl.h	Sun May 23 14:16:14 2010
+@@ -81,4 +81,4 @@ Pkg_private Xv_opaque	dnd_site_set_avlist();
  Pkg_private Xv_opaque	dnd_site_get_attr();
  Pkg_private int		dnd_site_destroy();
  

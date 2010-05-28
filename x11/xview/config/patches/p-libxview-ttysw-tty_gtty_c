@@ -1,6 +1,6 @@
---- lib/libxview/ttysw/tty_gtty.c.orig	1993-06-29 07:17:20.000000000 +0200
-+++ lib/libxview/ttysw/tty_gtty.c	2003-12-30 01:31:14.000000000 +0100
-@@ -14,6 +14,7 @@ static  char sccsid[] = "@(#)tty_gtty.c 
+--- lib/libxview/ttysw/tty_gtty.c.orig	Tue Jun 29 07:17:20 1993
++++ lib/libxview/ttysw/tty_gtty.c	Sun May 23 14:16:14 2010
+@@ -14,6 +14,7 @@ static  char sccsid[] = "@(#)tty_gtty.c 20.29 93/06/28
   * Ttysw parameter retrieval mechanism to get original tty settings to pty.
   */
  
@@ -8,7 +8,7 @@
  #include <sys/types.h>
  #include <stdio.h>
  #include <xview_private/portable.h>	/* for tty_mode_t and XV* defines */
-@@ -34,6 +35,7 @@ static  char sccsid[] = "@(#)tty_gtty.c 
+@@ -34,6 +35,7 @@ static  char sccsid[] = "@(#)tty_gtty.c 20.29 93/06/28
   */
  #ifdef	XV_USE_TERMIOS
  

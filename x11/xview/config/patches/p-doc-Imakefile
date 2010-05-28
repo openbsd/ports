@@ -1,5 +1,5 @@
---- doc/Imakefile.orig	1993-06-29 07:13:15.000000000 +0200
-+++ doc/Imakefile	2003-12-30 01:51:44.000000000 +0100
+--- doc/Imakefile.orig	Tue Jun 29 07:13:15 1993
++++ doc/Imakefile	Sun May 23 14:16:14 2010
 @@ -1,8 +1,8 @@
  #include <XView.tmpl>
  
@@ -12,7 +12,7 @@
  
  #define IHaveSubdirs 
  #define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
-@@ -17,7 +17,7 @@ DOCFILES = xview-info olgx_api.txt olgx_
+@@ -17,7 +17,7 @@ DOCFILES = xview-info olgx_api.txt olgx_api.ps sel_api
  ALLFILES = $(DOCFILES)
  
  install::

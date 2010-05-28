@@ -1,5 +1,5 @@
---- lib/libxview/server/server.c.orig	1994-06-26 20:53:40.000000000 +0200
-+++ lib/libxview/server/server.c	2003-12-30 01:31:13.000000000 +0100
+--- lib/libxview/server/server.c.orig	Sun Jun 26 20:53:40 1994
++++ lib/libxview/server/server.c	Sun May 23 14:16:14 2010
 @@ -65,6 +65,7 @@ static Notify_value 	 scheduler();
  static unsigned int 	 string_to_modmask();
  static Server_atom_type  save_atom();
@@ -8,7 +8,7 @@
  
  Xv_private char		*xv_strtok();
  
-@@ -440,7 +441,7 @@ server_init(parent, server_public, avlis
+@@ -440,7 +441,7 @@ server_init(parent, server_public, avlist)
    	/* lumpi@dobag.in-berlin.de */
      if (XrmGetDatabase((Display *)server->xdisplay)) {
  	server->db = XrmGetStringDatabase(

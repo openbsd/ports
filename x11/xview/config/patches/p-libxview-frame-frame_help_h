@@ -1,6 +1,6 @@
---- lib/libxview/frame/frame_help.h.orig	1993-06-29 07:16:10.000000000 +0200
-+++ lib/libxview/frame/frame_help.h	2003-12-30 01:31:12.000000000 +0100
-@@ -17,11 +17,16 @@ static char     sccsid[] = "@(#)frame_he
+--- lib/libxview/frame/frame_help.h.orig	Tue Jun 29 07:16:10 1993
++++ lib/libxview/frame/frame_help.h	Sun May 23 14:16:14 2010
+@@ -17,11 +17,16 @@ static char     sccsid[] = "@(#)frame_help.h 1.27 93/0
  #define _frame_help_h_already_included
  
  /* standard includes */

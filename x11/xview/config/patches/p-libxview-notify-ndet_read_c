@@ -1,6 +1,6 @@
---- lib/libxview/notify/ndet_read.c.orig	1993-06-29 07:18:04.000000000 +0200
-+++ lib/libxview/notify/ndet_read.c	2003-12-30 01:31:13.000000000 +0100
-@@ -15,6 +15,7 @@ static char     sccsid[] = "@(#)ndet_rea
+--- lib/libxview/notify/ndet_read.c.orig	Tue Jun 29 07:18:04 1993
++++ lib/libxview/notify/ndet_read.c	Sun May 23 14:16:14 2010
+@@ -15,6 +15,7 @@ static char     sccsid[] = "@(#)ndet_read.c 20.12 93/0
   * not already in the middle of it.
   */
  

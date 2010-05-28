@@ -1,6 +1,6 @@
---- lib/libxview/textsw/txt_selsvc.c.orig	1994-06-26 03:05:23.000000000 +0200
-+++ lib/libxview/textsw/txt_selsvc.c	2003-12-30 01:31:14.000000000 +0100
-@@ -24,6 +24,8 @@ static char     sccsid[] = "@(#)txt_sels
+--- lib/libxview/textsw/txt_selsvc.c.orig	Sun Jun 26 03:05:23 1994
++++ lib/libxview/textsw/txt_selsvc.c	Sun May 23 14:16:14 2010
+@@ -24,6 +24,8 @@ static char     sccsid[] = "@(#)txt_selsvc.c 20.64 93/
  #include <stdlib.h>
  #endif /* SVR4 */
  

@@ -1,5 +1,5 @@
---- lib/libxview/file_chooser/Imakefile.orig	1993-06-29 07:17:58.000000000 +0200
-+++ lib/libxview/file_chooser/Imakefile	2003-12-30 01:58:09.000000000 +0100
+--- lib/libxview/file_chooser/Imakefile.orig	Tue Jun 29 07:17:58 1993
++++ lib/libxview/file_chooser/Imakefile	Sun May 23 14:16:14 2010
 @@ -6,8 +6,8 @@
  #include <Library.tmpl>
  
@@ -11,7 +11,7 @@
  
  #ifndef SubdirHasTextObjs
  #define SubdirHasTextObjs YES
-@@ -27,35 +27,35 @@ HDRSPRIVATE=	fchsr_impl.h flist_impl.h x
+@@ -27,35 +27,35 @@ HDRSPRIVATE=	fchsr_impl.h flist_impl.h xv_path_util.h 
  		path_impl.h hist_impl.h
  
  DATA_OBJS = fchsr_data.o\

@@ -1,6 +1,6 @@
---- lib/libxview/attr/attr.c.orig	1993-06-29 07:14:36.000000000 +0200
-+++ lib/libxview/attr/attr.c	2004-03-10 17:47:04.000000000 +0100
-@@ -91,7 +91,7 @@ Xv_private Attr_avlist copy_va_to_av( va
+--- lib/libxview/attr/attr.c.orig	Tue Jun 29 07:14:36 1993
++++ lib/libxview/attr/attr.c	Sun May 23 14:16:14 2010
+@@ -91,7 +91,7 @@ Xv_private Attr_avlist copy_va_to_av( valist1, avlist1
     /* These two variables are used instead of the paramters so that the
        position in the lists is maintained after a recursive call. 
     */

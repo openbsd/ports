@@ -1,6 +1,6 @@
---- lib/libxview/panel/p_drop.c.orig	1993-06-29 07:17:04.000000000 +0200
-+++ lib/libxview/panel/p_drop.c	2003-12-30 01:31:13.000000000 +0100
-@@ -10,7 +10,12 @@ static char     sccsid[] = "@(#)p_drop.c
+--- lib/libxview/panel/p_drop.c.orig	Tue Jun 29 07:17:04 1993
++++ lib/libxview/panel/p_drop.c	Sun May 23 14:16:14 2010
+@@ -10,7 +10,12 @@ static char     sccsid[] = "@(#)p_drop.c 1.22 93/06/28
   *	file for terms of the license.
   */
  

@@ -1,6 +1,6 @@
---- lib/libxview/notify/sys_read.c.orig	1993-06-29 07:18:01.000000000 +0200
-+++ lib/libxview/notify/sys_read.c	2003-12-30 01:31:13.000000000 +0100
-@@ -15,7 +15,11 @@ static char     sccsid[] = "@(#)sys_read
+--- lib/libxview/notify/sys_read.c.orig	Tue Jun 29 07:18:01 1993
++++ lib/libxview/notify/sys_read.c	Sun May 23 14:16:14 2010
+@@ -15,7 +15,11 @@ static char     sccsid[] = "@(#)sys_read.c 20.13 93/06
   */
  
  #ifndef SVR4

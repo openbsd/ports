@@ -1,17 +1,18 @@
---- lib/libxview/selection/sel_req.c.orig	1994-06-26 03:05:21.000000000 +0200
-+++ lib/libxview/selection/sel_req.c	2003-12-30 01:31:13.000000000 +0100
-@@ -55,7 +55,10 @@ static int ProcessMultiple();
+--- lib/libxview/selection/sel_req.c.orig	Sun Jun 26 03:05:21 1994
++++ lib/libxview/selection/sel_req.c	Sun May 23 14:16:14 2010
+@@ -55,8 +55,11 @@ static int ProcessMultiple();
  static int GetSelection();
  static int ProcessReply();
  static Requestor *SelGetReq();
--
 +static int XvGetRequestedValue();
 +static int ProcessNonBlkIncr();
 +static int ProcessReq();
 +static int OldPkgIsOwner();
  
+-
  /*ARGSUSED*/
  Pkg_private int
+ sel_req_init(parent, sel_req_public, avlist)
 @@ -1226,7 +1229,7 @@ Selection_requestor  sel;
  }
  

@@ -1,5 +1,5 @@
---- lib/libxview/win/win_input.c.orig	1994-06-27 00:27:53.000000000 +0200
-+++ lib/libxview/win/win_input.c	2003-12-30 01:31:14.000000000 +0100
+--- lib/libxview/win/win_input.c.orig	Mon Jun 27 00:27:53 1994
++++ lib/libxview/win/win_input.c	Sun May 23 14:16:15 2010
 @@ -853,7 +853,9 @@ ContProcess:
  #ifdef X11R6
  	/* lumpi@dobag.in-berlin.de */
@@ -33,7 +33,7 @@
  static int
  translate_key(dpy, symbol, modifiers, buffer, nbytes)
      Display 		*dpy;
-@@ -2731,11 +2735,18 @@ translate_key(dpy, symbol, modifiers, bu
+@@ -2731,11 +2735,18 @@ translate_key(dpy, symbol, modifiers, buffer, nbytes)
      int 		 nbytes;
  {
  	/* This is _very_ rude ! */
@@ -54,7 +54,7 @@
  static int
  translate_key(dpy, symbol, modifiers, buffer, nbytes)
      Display 		*dpy;
-@@ -2761,4 +2772,4 @@ translate_key(dpy, symbol, modifiers, bu
+@@ -2761,4 +2772,4 @@ translate_key(dpy, symbol, modifiers, buffer, nbytes)
      }
      return 0;
  }

@@ -1,6 +1,6 @@
---- lib/libxview/misc/getlogindr.c.orig	1993-06-29 07:16:30.000000000 +0200
-+++ lib/libxview/misc/getlogindr.c	2003-12-30 01:31:12.000000000 +0100
-@@ -17,6 +17,7 @@ static char     sccsid[] = "@(#)getlogin
+--- lib/libxview/misc/getlogindr.c.orig	Tue Jun 29 07:16:30 1993
++++ lib/libxview/misc/getlogindr.c	Sun May 23 14:16:14 2010
+@@ -17,6 +17,7 @@ static char     sccsid[] = "@(#)getlogindr.c 20.18 93/
  
  #include <stdio.h>
  #include <pwd.h>

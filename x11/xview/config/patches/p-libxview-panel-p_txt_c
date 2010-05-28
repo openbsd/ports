@@ -1,6 +1,6 @@
---- lib/libxview/panel/p_txt.c.orig	1993-06-29 07:16:55.000000000 +0200
-+++ lib/libxview/panel/p_txt.c	2003-12-30 01:31:13.000000000 +0100
-@@ -10,7 +10,12 @@ static char     sccsid[] = "@(#)p_txt.c 
+--- lib/libxview/panel/p_txt.c.orig	Tue Jun 29 07:16:55 1993
++++ lib/libxview/panel/p_txt.c	Sun May 23 14:16:14 2010
+@@ -10,7 +10,12 @@ static char     sccsid[] = "@(#)p_txt.c 20.217 93/06/2
   *	file for terms of the license.
   */
  

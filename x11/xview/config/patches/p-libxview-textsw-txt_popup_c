@@ -1,5 +1,5 @@
---- lib/libxview/textsw/txt_popup.c.orig	1993-06-29 07:17:38.000000000 +0200
-+++ lib/libxview/textsw/txt_popup.c	2003-12-30 01:31:14.000000000 +0100
+--- lib/libxview/textsw/txt_popup.c.orig	Tue Jun 29 07:17:38 1993
++++ lib/libxview/textsw/txt_popup.c	Sun May 23 14:16:14 2010
 @@ -95,6 +95,10 @@ Pkg_private int      FC_PARENT_KEY;
  static int      TEXTSW_POPUP_KEY;  /* key data holding one of the above
  				      key names */
@@ -11,7 +11,7 @@
  Panel_item      store_panel_items[MAX_FILE_PANEL_ITEMS];
  Panel_item      load_panel_items[MAX_FILE_PANEL_ITEMS];
  Panel_item      include_panel_items[MAX_FILE_PANEL_ITEMS];
-@@ -135,7 +139,6 @@ textsw_create_popup_frame(view, popup_ty
+@@ -135,7 +139,6 @@ textsw_create_popup_frame(view, popup_type)
      Frame           popup_frame, base_frame;
      Panel           panel = NULL;
      char           *label;

@@ -1,6 +1,6 @@
---- lib/libxview/ttysw/tty_init.c.orig	1993-06-29 07:17:19.000000000 +0200
-+++ lib/libxview/ttysw/tty_init.c	2003-12-30 01:31:14.000000000 +0100
-@@ -14,6 +14,7 @@ static char     sccsid[] = "@(#)tty_init
+--- lib/libxview/ttysw/tty_init.c.orig	Tue Jun 29 07:17:19 1993
++++ lib/libxview/ttysw/tty_init.c	Sun May 23 14:16:14 2010
+@@ -14,6 +14,7 @@ static char     sccsid[] = "@(#)tty_init.c 20.71 93/06
   * Ttysw initialization, destruction and error procedures
   */
  
@@ -8,7 +8,7 @@
  #include <sys/time.h>
  #include <sys/types.h>
  #include <sys/stat.h>
-@@ -82,7 +83,11 @@ static char     sccsid[] = "@(#)tty_init
+@@ -82,7 +83,11 @@ static char     sccsid[] = "@(#)tty_init.c 20.71 93/06
  
  extern char    *strncpy();
  extern char    *strcpy();

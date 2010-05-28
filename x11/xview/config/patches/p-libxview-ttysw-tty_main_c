@@ -1,6 +1,6 @@
---- lib/libxview/ttysw/tty_main.c.orig	1993-06-29 07:17:22.000000000 +0200
-+++ lib/libxview/ttysw/tty_main.c	2003-12-30 01:31:14.000000000 +0100
-@@ -75,6 +75,11 @@ static char     sccsid[] = "@(#)tty_main
+--- lib/libxview/ttysw/tty_main.c.orig	Tue Jun 29 07:17:22 1993
++++ lib/libxview/ttysw/tty_main.c	Sun May 23 14:16:14 2010
+@@ -75,6 +75,11 @@ static char     sccsid[] = "@(#)tty_main.c 20.93 93/06
  int     committed_left = 0;
  #endif
  

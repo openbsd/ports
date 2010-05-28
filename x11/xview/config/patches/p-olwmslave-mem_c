@@ -1,6 +1,6 @@
---- clients/olwmslave/mem.c.orig	1993-06-29 07:12:12.000000000 +0200
-+++ clients/olwmslave/mem.c	2003-12-30 01:31:16.000000000 +0100
-@@ -16,7 +16,8 @@ static	char	sccsid[] = "@(#) mem.c 26.1 
+--- clients/olwmslave/mem.c.orig	Tue Jun 29 07:12:12 1993
++++ clients/olwmslave/mem.c	Sun May 23 14:16:15 2010
+@@ -16,7 +16,8 @@ static	char	sccsid[] = "@(#) mem.c 26.1 90/08/14 Cruci
   *
   */
  

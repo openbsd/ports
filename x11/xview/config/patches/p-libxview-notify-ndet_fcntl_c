@@ -1,6 +1,6 @@
---- lib/libxview/notify/ndet_fcntl.c.orig	1993-06-29 07:18:03.000000000 +0200
-+++ lib/libxview/notify/ndet_fcntl.c	2003-12-30 01:31:12.000000000 +0100
-@@ -17,23 +17,40 @@ static char     sccsid[] = "@(#)ndet_fcn
+--- lib/libxview/notify/ndet_fcntl.c.orig	Tue Jun 29 07:18:03 1993
++++ lib/libxview/notify/ndet_fcntl.c	Sun May 23 14:16:14 2010
+@@ -17,22 +17,39 @@ static char     sccsid[] = "@(#)ndet_fcntl.c 20.13 93/
  
  #include <xview_private/ntfy.h>
  #include <xview_private/ndet.h>
@@ -30,7 +30,7 @@
  {
      fd_set          bit;
      int             res;
- 
++
 +#if (defined(BSD) && (BSD >= 199103))
 +    int arg;  
 +    va_list valist;
@@ -38,7 +38,6 @@
 +    arg = va_arg(valist, int);
 +    va_end(valist);
 +#endif
-+
+ 
      /* Set fd bit */
      FD_ZERO(&bit);
-     FD_SET(fd, &bit);

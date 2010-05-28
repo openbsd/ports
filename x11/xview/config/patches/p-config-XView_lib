@@ -1,5 +1,5 @@
---- config/XView.lib.orig	1993-06-29 07:13:20.000000000 +0200
-+++ config/XView.lib	2003-12-30 02:07:36.000000000 +0100
+--- config/XView.lib.orig	Tue Jun 29 07:13:20 1993
++++ config/XView.lib	Sun May 23 14:16:14 2010
 @@ -1,12 +1,12 @@
 -/**/##########################################################################
 -/**/# @(#)XView.lib	1.3 07 Jan 1992 SMI
@@ -17,7 +17,7 @@
  
  #if DebugLibXView
  InstallLibraryNoBuild(${LIBTARGET}_d,$(LIBRARY_DEST))
-@@ -29,7 +29,7 @@ InstallSharedLibraryDataNoBuild(${LIBTAR
+@@ -29,7 +29,7 @@ InstallSharedLibraryDataNoBuild(${LIBTARGET},${SOREV},
  InstallSharedLibraryNoBuild(${LIBTARGET},${SOREV},$(LIBRARY_DEST))
  #endif
  

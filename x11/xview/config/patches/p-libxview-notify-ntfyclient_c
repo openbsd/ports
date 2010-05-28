@@ -1,6 +1,6 @@
---- lib/libxview/notify/ntfyclient.c.orig	1993-06-29 07:18:11.000000000 +0200
-+++ lib/libxview/notify/ntfyclient.c	2003-12-30 01:31:13.000000000 +0100
-@@ -18,7 +18,9 @@ static char     sccsid[] = "@(#)ntfyclie
+--- lib/libxview/notify/ntfyclient.c.orig	Tue Jun 29 07:18:11 1993
++++ lib/libxview/notify/ntfyclient.c	Sun May 23 14:16:14 2010
+@@ -18,7 +18,9 @@ static char     sccsid[] = "@(#)ntfyclient.c 20.18 93/
  #include <xview_private/ntfy.h>
  #include <xview_private/ndis.h>	/* For ndis_default_prioritizer */
  #include <xview_private/ndet.h>	
@@ -10,7 +10,7 @@
  #include <xview_private/portable.h>
  
  /* Variables used in paranoid enumerator (see ntfy_condition) */
-@@ -60,6 +62,7 @@ ntfy_find_nclient(client_list, nclient, 
+@@ -60,6 +62,7 @@ ntfy_find_nclient(client_list, nclient, client_latest)
      if (*client_latest && (*client_latest)->nclient == nclient)
  	return (*client_latest);
  
@@ -18,7 +18,7 @@
      if(( client_list == ndet_clients ) && ndet_clients ) {
         dummy_client.nclient = nclient;
         /* Find client */
-@@ -73,7 +76,9 @@ ntfy_find_nclient(client_list, nclient, 
+@@ -73,7 +76,9 @@ ntfy_find_nclient(client_list, nclient, client_latest)
             return (client);
         }
      }
@@ -29,7 +29,7 @@
      else 
          /* Search entire list */
          for (client = client_list; client; client = next) {
-@@ -100,6 +105,7 @@ ntfy_new_nclient(client_list, nclient, c
+@@ -100,6 +105,7 @@ ntfy_new_nclient(client_list, nclient, client_latest)
      register NTFY_CLIENT *client;
      static NTFY_CLIENT *new_client;
  
@@ -37,7 +37,7 @@
      if( client_list == &ndet_clients ) {
          if( new_client  == NTFY_CLIENT_NULL ) {
              if ((new_client = ntfy_alloc_client()) == NTFY_CLIENT_NULL)
-@@ -119,7 +125,9 @@ ntfy_new_nclient(client_list, nclient, c
+@@ -119,7 +125,9 @@ ntfy_new_nclient(client_list, nclient, client_latest)
          else
              return client;
      }
@@ -48,7 +48,7 @@
      else if ((client = ntfy_find_nclient(*client_list, nclient,
  				    client_latest)) != NTFY_CLIENT_NULL)
          return client;
-@@ -163,8 +171,10 @@ ntfy_remove_client(client_list, client, 
+@@ -163,8 +171,10 @@ ntfy_remove_client(client_list, client, client_latest,
  	ntfy_remove_condition(client, condition, who);
      }
      /* Remove & free client from client_list */

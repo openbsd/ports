@@ -1,6 +1,6 @@
---- lib/libxview/textsw/es_attr.c.orig	1993-06-29 07:17:31.000000000 +0200
-+++ lib/libxview/textsw/es_attr.c	2003-12-30 01:31:13.000000000 +0100
-@@ -22,7 +22,7 @@ static char     sccsid[] = "@(#)es_attr.
+--- lib/libxview/textsw/es_attr.c.orig	Tue Jun 29 07:17:31 1993
++++ lib/libxview/textsw/es_attr.c	Sun May 23 14:16:14 2010
+@@ -22,7 +22,7 @@ static char     sccsid[] = "@(#)es_attr.c 20.22 93/06/
  
  Pkg_private int
  #ifdef ANSI_FUNC_PROTO
