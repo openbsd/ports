@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_plugins_help_helpplugin_cpp,v 1.1.1.1 2010/05/27 12:30:14 espie Exp $
---- src/plugins/help/helpplugin.cpp.orig	Sat Apr 24 17:20:30 2010
-+++ src/plugins/help/helpplugin.cpp	Sat Apr 24 17:19:53 2010
+$OpenBSD: patch-src_plugins_help_helpplugin_cpp,v 1.2 2010/05/28 12:12:05 espie Exp $
+--- src/plugins/help/helpplugin.cpp.orig	Fri Jan 15 18:36:52 2010
++++ src/plugins/help/helpplugin.cpp	Fri May 28 12:10:12 2010
 @@ -80,7 +80,7 @@
  #include <QtGui/QMessageBox>
  #include <QtHelp/QHelpEngine>

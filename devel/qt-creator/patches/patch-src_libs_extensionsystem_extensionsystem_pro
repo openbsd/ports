@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libs_extensionsystem_extensionsystem_pro,v 1.1.1.1 2010/05/27 12:30:14 espie Exp $
+$OpenBSD: patch-src_libs_extensionsystem_extensionsystem_pro,v 1.2 2010/05/28 12:12:04 espie Exp $
 --- src/libs/extensionsystem/extensionsystem.pro.orig	Fri Jan 15 18:36:52 2010
-+++ src/libs/extensionsystem/extensionsystem.pro	Fri Mar 12 20:58:20 2010
++++ src/libs/extensionsystem/extensionsystem.pro	Fri May 28 12:10:12 2010
 @@ -4,7 +4,7 @@ DEFINES += EXTENSIONSYSTEM_LIBRARY
  include(../../qtcreatorlibrary.pri)
  include(extensionsystem_dependencies.pri)

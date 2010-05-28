@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/05/27 12:44:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/05/28 12:12:04 espie Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
 
 V = 			1.3.1
 DISTNAME =		qt-creator-${V}-src
-PKGNAME =		qt-creator-${V}p0
+PKGNAME =		qt-creator-${V}p1
 EXTRACT_SUFX = 		.zip
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
@@ -58,6 +58,6 @@ pre-configure:
 	ln -sf ${PREFIX}/lib/qt4/bin/qhelpgenerator ${WRKDIR}/bin/bin
 
 do-configure:
-	cd ${WRKBUILD} && QTDIR=${WRKDIR}/bin qmake4 ${WRKSRC}/qtcreator.pro
+	cd ${WRKBUILD} && QTDIR=${WRKDIR}/bin qmake4 ${WRKSRC}/qtcreator.pro CONFIG+=debug
 
 .include <bsd.port.mk>

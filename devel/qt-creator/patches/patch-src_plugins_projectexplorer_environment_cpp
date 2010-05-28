@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_plugins_projectexplorer_environment_cpp,v 1.1 2010/05/28 12:12:05 espie Exp $
+--- src/plugins/projectexplorer/environment.cpp.orig	Fri May 28 13:57:03 2010
++++ src/plugins/projectexplorer/environment.cpp	Fri May 28 13:58:22 2010
+@@ -81,6 +81,12 @@ Environment::Environment(QStringList env)
+ #endif
+         }
+     }
++    if (m_values.value("LOCALBASE").isNull()) {
++       m_values.insert("LOCALBASE", "/usr/local");
++    }
++    if (m_values.value("X11BASE").isNull()) {
++       m_values.insert("X11BASE", "/usr/X11R6");
++    }
+ }
+ 
+ QStringList Environment::toStringList() const

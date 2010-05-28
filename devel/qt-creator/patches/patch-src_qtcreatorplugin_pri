@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_qtcreatorplugin_pri,v 1.1.1.1 2010/05/27 12:30:14 espie Exp $
+$OpenBSD: patch-src_qtcreatorplugin_pri,v 1.2 2010/05/28 12:12:05 espie Exp $
 --- src/qtcreatorplugin.pri.orig	Fri Jan 15 18:36:52 2010
-+++ src/qtcreatorplugin.pri	Thu May 27 12:25:35 2010
++++ src/qtcreatorplugin.pri	Fri May 28 12:10:12 2010
 @@ -35,6 +35,13 @@ macx {
      IDE_PLUGIN_RPATH = $$join(QMAKE_RPATHDIR, ":")
      QMAKE_LFLAGS += -Wl,-z,origin \'-Wl,-rpath,$${IDE_PLUGIN_RPATH}\'
