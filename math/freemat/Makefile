@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/03/26 12:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/05/28 22:41:43 naddy Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 
 V=		3.6
 DISTNAME=	FreeMat-${V}
-PKGNAME=	freemat-${V}p1
+PKGNAME=	freemat-${V}p2
 
 CATEGORIES=	graphics math
 
@@ -16,12 +16,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL GLU amd c curses g2c m ossaudio pthread stdc++ z
+WANTLIB= 	GL GLU amd c curses m ossaudio pthread stdc++ z \
+		${MODFORTRAN_WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freemat/}
 
-MODULES=	x11/qt4 devel/gettext
+MODULES=	x11/qt4 devel/gettext fortran
+MODFORTRAN_WANTG77= Yes
 
+BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=	avcall::devel/ffcall \
 		arpack.>=1::math/arpack \
 		blas.>=1::math/blas \
@@ -31,8 +34,8 @@ LIB_DEPENDS=	avcall::devel/ffcall \
 		pcre::devel/pcre \
 		portaudio::audio/portaudio-svn \
 		umfpack::math/umfpack \
-		QtGui,QtNetwork,QtOpenGL,QtSvg,QtXml::x11/qt4
-
+		QtGui,QtNetwork,QtOpenGL,QtSvg,QtXml::x11/qt4 \
+		${MODFORTRAN_LIB_DEPENDS}
 
 USE_X11=	Yes
 USE_LIBTOOL=	Yes
