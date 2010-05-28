@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_version_cpp,v 1.1 2010/05/28 14:39:51 espie Exp $
+--- src/version.cpp.orig	Thu May 13 12:29:14 2010
++++ src/version.cpp	Thu May 13 12:30:15 2010
+@@ -45,6 +45,7 @@ namespace Exiv2 {
+         return EXIV2_MAKE_VERSION(EXIV2_MAJOR_VERSION, EXIV2_MINOR_VERSION, EXIV2_PATCH_VERSION);
+     }
+ 
++const char* version() __attribute__((visibility ("default")));
+     const char* version()
+     {
+         return EXV_PACKAGE_VERSION;
