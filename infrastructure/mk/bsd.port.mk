@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.998 2010/05/28 10:09:58 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.999 2010/05/28 12:34:22 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1698,6 +1698,8 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 		IFS=:; read pkg subdir target; \
 		extra_msg="(DEPENDS ${_i})"; \
 		${_flavor_fragment}; defaulted=false; checkinstall=true; \
+		_ignore_cookie=${@:S/.dep/.ignored/}; \
+		toset="$$toset _IGNORE_COOKIE=$${_ignore_cookie}"; \
 		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
 		case "X$$target" in \
 		Xinstall|Xreinstall) early_exit=false;; \
@@ -1745,7 +1747,8 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 				fi; \
 			fi; \
 			${ECHO_MSG} "===>  Verifying $$target for $$what in $$dir"; \
-			if (eval $$toset exec ${MAKE} $$target); then \
+			if (eval $$toset exec ${MAKE} $$target) && \
+				! test -e $${_ignore_cookie}; then \
 				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
 			else \
 				${REPORT_PROBLEM}; \
@@ -1830,7 +1833,9 @@ _internal-all _internal-build _internal-checksum _internal-configure \
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
 .  endif
-
+.  if defined(_IGNORE_COOKIE)
+	@echo "${IGNORE}" >${_IGNORE_COOKIE}
+.  endif
 .else
 
 .  if ${ELF_TOOLCHAIN:L} == "no"
