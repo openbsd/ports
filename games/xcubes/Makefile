@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2010/05/28 14:03:15 naddy Exp $
 #
 
 COMMENT=	cube puzzle for X11
 
 DISTNAME=	xcubes-5.5.2
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	games
 
 # License: BSD
