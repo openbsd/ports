@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/05/27 18:49:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.48 2010/05/28 00:04:17 fgsch Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	amd64 i386
@@ -9,8 +9,6 @@ DISTNAME =		qemu-0.12.3
 CATEGORIES =		emulators
 
 HOMEPAGE =		http://www.qemu.org/
-
-MAINTAINER =		Todd T. Fries <todd@openbsd.org>
 
 # GPLv2/LGPLv2/BSD
 PERMIT_PACKAGE_CDROM =	Yes
