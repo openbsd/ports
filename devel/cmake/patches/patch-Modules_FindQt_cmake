@@ -1,0 +1,31 @@
+$OpenBSD: patch-Modules_FindQt_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
+--- Modules/FindQt.cmake.orig	Tue Apr  6 16:45:31 2010
++++ Modules/FindQt.cmake	Fri Apr 23 12:55:11 2010
+@@ -43,6 +43,13 @@ IF(GLOB_TEMP_VAR)
+ ENDIF(GLOB_TEMP_VAR)
+ SET(GLOB_TEMP_VAR)
+ 
++FILE(GLOB GLOB_TEMP_VAR ${LOCALBASE}/lib/qt3/bin/qmake)
++IF(GLOB_TEMP_VAR)
++  SET(QT3_INSTALLED TRUE)
++ENDIF(GLOB_TEMP_VAR)
++SET(GLOB_TEMP_VAR)
++
++
+ # look for qt4 installations
+ FILE(GLOB GLOB_TEMP_VAR /usr/local/qt-x11-commercial-4*/bin/qmake)
+ IF(GLOB_TEMP_VAR)
+@@ -55,6 +62,13 @@ IF(GLOB_TEMP_VAR)
+   SET(QT4_INSTALLED TRUE)
+ ENDIF(GLOB_TEMP_VAR)
+ SET(GLOB_TEMP_VAR)
++
++FILE(GLOB GLOB_TEMP_VAR ${LOCALBASE}/lib/qt4/bin/qmake)
++IF(GLOB_TEMP_VAR)
++  SET(QT4_INSTALLED TRUE)
++ENDIF(GLOB_TEMP_VAR)
++SET(GLOB_TEMP_VAR)
++
+ 
+ # now find qmake
+ FIND_PROGRAM(QT_QMAKE_EXECUTABLE_FINDQT NAMES qmake PATHS "${QT_SEARCH_PATH}/bin" "$ENV{QTDIR}/bin")

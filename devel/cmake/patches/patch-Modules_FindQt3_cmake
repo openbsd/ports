@@ -1,0 +1,45 @@
+$OpenBSD: patch-Modules_FindQt3_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
+--- Modules/FindQt3.cmake.orig	Tue Apr  6 16:45:31 2010
++++ Modules/FindQt3.cmake	Fri Apr 23 22:50:51 2010
+@@ -60,6 +60,7 @@ FIND_PATH(QT_INCLUDE_DIR qt.h
+   /usr/share/qt3/include
+   C:/Progra~1/qt/include
+   /usr/include/qt3
++  ${LOCALBASE}/include/X11/qt3
+   )
+ 
+ # if qglobal.h is not in the qt_include_dir then set
+@@ -138,7 +139,7 @@ FIND_LIBRARY(QT_QASSISTANTCLIENT_LIBRARY
+ 
+ # qt 3 should prefer QTDIR over the PATH
+ FIND_PROGRAM(QT_MOC_EXECUTABLE
+-  NAMES moc-qt3 moc
++  NAMES moc-qt3 moc3 moc3-mt moc
+   HINTS
+   $ENV{QTDIR}/bin
+   PATHS
+@@ -147,6 +148,7 @@ FIND_PROGRAM(QT_MOC_EXECUTABLE
+   "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\3.1.0;InstallDir]/include/Qt"
+   $ENV{QTDIR}/bin
+   ${GLOB_PATHS_BIN}
++  ${LOCALBASE}/bin
+   /usr/local/qt/bin
+   /usr/lib/qt/bin
+   /usr/lib/qt3/bin
+@@ -161,7 +163,7 @@ ENDIF(QT_MOC_EXECUTABLE)
+ 
+ # qt 3 should prefer QTDIR over the PATH
+ FIND_PROGRAM(QT_UIC_EXECUTABLE
+-  NAMES uic-qt3 uic
++  NAMES uic-qt3 uic3 uic3-mt uic
+   HINTS
+   $ENV{QTDIR}/bin
+   PATHS
+@@ -169,6 +171,7 @@ FIND_PROGRAM(QT_UIC_EXECUTABLE
+   "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\3.2.0;InstallDir]/include/Qt"
+   "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\3.1.0;InstallDir]/include/Qt"
+   ${GLOB_PATHS_BIN}
++  ${LOCALBASE}/bin
+   /usr/local/qt/bin
+   /usr/lib/qt/bin
+   /usr/lib/qt3/bin

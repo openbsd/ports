@@ -1,0 +1,21 @@
+$OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
+--- Modules/FindPythonInterp.cmake.orig	Tue Apr  6 16:45:31 2010
++++ Modules/FindPythonInterp.cmake	Tue May 11 14:23:03 2010
+@@ -19,8 +19,16 @@
+ # (To distributed this file outside of CMake, substitute the full
+ #  License text for the above reference.)
+ 
++SET(MODPY_BIN $ENV{MODPY_BIN})
++
++IF(MODPY_BIN)
++  SET(_EXECUTABLES ${MODPY_BIN})
++ELSE(MODPY_BIN)
++  SET(_EXECUTABLES python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 python1.6 python1.5 python)
++ENDIF(MODPY_BIN)
++
+ FIND_PROGRAM(PYTHON_EXECUTABLE
+-  NAMES python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python2.0 python1.6 python1.5 python
++  NAMES ${_EXECUTABLES}
+   PATHS
+   [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\2.6\\InstallPath]
+   [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\2.5\\InstallPath]

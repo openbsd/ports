@@ -1,0 +1,73 @@
+$OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
+--- Modules/CMakeDetermineJavaCompiler.cmake.orig	Tue Apr  6 16:45:30 2010
++++ Modules/CMakeDetermineJavaCompiler.cmake	Tue May 11 15:47:14 2010
+@@ -16,6 +16,8 @@
+ # NOTE, a generator may set CMAKE_Java_COMPILER before
+ # loading this file to force a compiler.
+ 
++SET(MODJAVA_VER $ENV{MODJAVA_VER})
++
+ IF(NOT CMAKE_Java_COMPILER)
+   # prefer the environment variable CC
+   IF($ENV{JAVA_COMPILER} MATCHES ".+")
+@@ -42,28 +44,38 @@ IF(NOT CMAKE_Java_COMPILER)
+     ENDIF(NOT EXISTS ${CMAKE_Java_ARCHIVE_INIT})
+   ENDIF($ENV{JAVA_ARCHIVE} MATCHES ".+")
+ 
+-  SET(Java_BIN_PATH
+-    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\2.0;JavaHome]/bin"
+-    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.9;JavaHome]/bin"
+-    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.8;JavaHome]/bin"
+-    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.7;JavaHome]/bin"
+-    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.6;JavaHome]/bin"
+-    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.5;JavaHome]/bin"
+-    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.4;JavaHome]/bin"
+-    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.3;JavaHome]/bin"
+-    $ENV{JAVA_HOME}/bin
+-    /usr/bin
+-    /usr/lib/java/bin
+-    /usr/share/java/bin
+-    /usr/local/bin
+-    /usr/local/java/bin
+-    /usr/local/java/share/bin
+-    /usr/java/j2sdk1.4.2_04
+-    /usr/lib/j2sdk1.4-sun/bin
+-    /usr/java/j2sdk1.4.2_09/bin
+-    /usr/lib/j2sdk1.5-sun/bin
+-    /opt/sun-jdk-1.5.0.04/bin
+-    )
++  IF(MODJAVA_VER)
++    IF(MODJAVA_VER MATCHES "^1\\.5.*")
++      SET(Java_BIN_PATH /usr/local/jdk-1.5.0/bin)
++    ELSEIF(MODJAVA_VER MATCHES "^1\\.6.*")
++      SET(Java_BIN_PATH /usr/local/jdk-1.6.0/bin)
++    ELSE(MODJAVA_VER MATCHES "^1\\.5.*")
++      SET(Java_BIN_PATH /usr/local/jdk-1.7.0/bin)
++    ENDIF(MODJAVA_VER MATCHES "^1\\.5.*")
++  ELSE(MODJAVA_VER)
++    SET(Java_BIN_PATH
++      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\2.0;JavaHome]/bin"
++      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.9;JavaHome]/bin"
++      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.8;JavaHome]/bin"
++      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.7;JavaHome]/bin"
++      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.6;JavaHome]/bin"
++      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.5;JavaHome]/bin"
++      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.4;JavaHome]/bin"
++      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\1.3;JavaHome]/bin"
++      $ENV{JAVA_HOME}/bin
++      /usr/bin
++      /usr/lib/java/bin
++      /usr/share/java/bin
++      /usr/local/bin
++      /usr/local/java/bin
++      /usr/local/java/share/bin
++      /usr/java/j2sdk1.4.2_04
++      /usr/lib/j2sdk1.4-sun/bin
++      /usr/java/j2sdk1.4.2_09/bin
++      /usr/lib/j2sdk1.5-sun/bin
++      /opt/sun-jdk-1.5.0.04/bin
++      )
++  ENDIF(MODJAVA_VER)
+   # if no compiler has been specified yet, then look for one
+   IF(CMAKE_Java_COMPILER_INIT)
+     SET(CMAKE_Java_COMPILER ${CMAKE_Java_COMPILER_INIT} CACHE PATH "Java Compiler")

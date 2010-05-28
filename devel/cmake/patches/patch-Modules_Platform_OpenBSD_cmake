@@ -1,33 +1,20 @@
-$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.2 2010/04/22 16:10:11 dcoppa Exp $
---- Modules/Platform/OpenBSD.cmake.orig	Mon Jan 21 19:59:51 2008
-+++ Modules/Platform/OpenBSD.cmake	Fri Apr 16 10:33:28 2010
-@@ -1,2 +1,38 @@
--SET(CMAKE_DL_LIBS "")
--INCLUDE(Platform/UnixPaths)
-+IF(EXISTS /usr/include/dlfcn.h)
-+  SET(CMAKE_DL_LIBS "")
-+  SET(CMAKE_SHARED_LIBRARY_C_FLAGS "-fPIC")            # -pic 
-+  SET(CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS "-shared")       # -shared
-+  SET(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "")         # +s, flag for exe link to use shared lib
-+  SET(CMAKE_SHARED_LIBRARY_RUNTIME_C_FLAG "-Wl,-rpath,")       # -rpath
-+  SET(CMAKE_SHARED_LIBRARY_RUNTIME_C_FLAG_SEP ":")   # : or empty
-+# XXX we set these so that they will be detected
-+  SET(CMAKE_SHARED_LIBRARY_SONAME_C_FLAG "-Wl,-soname,")
-+  SET(CMAKE_SHARED_LIBRARY_SONAME_CXX_FLAG "-Wl,-soname,")
-+  SET(CMAKE_SHARED_LIBRARY_SONAME_Fortran_FLAG "-Wl,-soname,")
-+ENDIF(EXISTS /usr/include/dlfcn.h)
-+
+$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.3 2010/05/28 20:21:48 dcoppa Exp $
+--- Modules/Platform/OpenBSD.cmake.orig	Tue Apr  6 16:45:32 2010
++++ Modules/Platform/OpenBSD.cmake	Tue May 11 13:33:12 2010
+@@ -1,2 +1,37 @@
+ INCLUDE(Platform/NetBSD)
++ 
 +IF($ENV{LOCALBASE})
-+SET(OPENBSD_LOCALBASE $ENV{LOCALBASE})
++  SET(OPENBSD_LOCALBASE $ENV{LOCALBASE})
 +ELSE($ENV{LOCALBASE})
-+SET(OPENBSD_LOCALBASE /usr/local)
++  SET(OPENBSD_LOCALBASE /usr/local)
 +ENDIF($ENV{LOCALBASE})
++ 
 +IF($ENV{X11BASE})
-+SET(OPENBSD_X11BASE $ENV{X11BASE})
++  SET(OPENBSD_X11BASE $ENV{X11BASE})
 +ELSE($ENV{X11BASE})
-+SET(OPENBSD_X11BASE /usr/X11R6)
++  SET(OPENBSD_X11BASE /usr/X11R6)
 +ENDIF($ENV{X11BASE})
-+SET(CMAKE_OPENBSD_SHARED_LIBS "TRUE")
 +
 +SET(CMAKE_SYSTEM_INCLUDE_PATH ${CMAKE_SYSTEM_INCLUDE_PATH} /usr/include  
 +  ${OPENBSD_LOCALBASE}/include ${OPENBSD_X11BASE}/include)
@@ -35,10 +22,20 @@ $OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.2 2010/04/22 16:10:11 dcoppa 
 +  ${OPENBSD_LOCALBASE}/lib ${OPENBSD_X11BASE}/lib)
 +SET(CMAKE_SYSTEM_PROGRAM_PATH ${CMAKE_SYSTEM_PROGRAM_PATH} /bin /usr/bin 
 +  ${OPENBSD_LOCALBASE}/bin /sbin /usr/sbin ${OPENBSD_LOCALBASE}/sbin)
-+# somewhat klugy, but produces the correct names.
-+SET(CMAKE_CXX_CREATE_SHARED_LIBRARY
-+      "<CMAKE_CXX_COMPILER> <CMAKE_SHARED_LIBRARY_CXX_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>")
-+SET(CMAKE_C_CREATE_SHARED_LIBRARY
-+      "<CMAKE_C_COMPILER> <CMAKE_SHARED_LIBRARY_C_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <CMAKE_SHARED_LIBRARY_CREATE_C_FLAGS> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>")
-+SET(CMAKE_Fortran_CREATE_SHARED_LIBRARY
-+      "<CMAKE_Fortran_COMPILER> <CMAKE_SHARED_LIBRARY_Fortran_FLAGS> <LANGUAGE_COMPILE_FLAGS> <LINK_FLAGS> <CMAKE_SHARED_LIBRARY_CREATE_Fortran_FLAGS> -o <TARGET> <OBJECTS> <LINK_LIBRARIES>")
++
++# On OpenBSD, the compile time linker does not share it's configuration with
++# the runtime linker.  This will extract the library search paths from the
++# system's ld.so.hints file which will allow CMake to set the appropriate
++# -rpath-link flags
++IF(NOT CMAKE_PLATFORM_RUNTIME_PATH)
++  EXECUTE_PROCESS(COMMAND /sbin/ldconfig -r
++                  OUTPUT_VARIABLE LDCONFIG_HINTS
++                  ERROR_QUIET)
++  STRING(REGEX REPLACE ".*search\\ directories:\\ ([^\n]*).*" "\\1"
++         LDCONFIG_HINTS "${LDCONFIG_HINTS}")
++  STRING(REGEX REPLACE ":" ";"
++         CMAKE_PLATFORM_RUNTIME_PATH
++         "${LDCONFIG_HINTS}")
++ENDIF()
++
+ SET_PROPERTY(GLOBAL PROPERTY FIND_LIBRARY_USE_OPENBSD_VERSIONING 1)

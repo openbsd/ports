@@ -1,0 +1,14 @@
+$OpenBSD: patch-Modules_FindGLU_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
+--- Modules/FindGLU.cmake.orig	Tue Apr  6 16:45:31 2010
++++ Modules/FindGLU.cmake	Mon May  3 11:51:48 2010
+@@ -15,7 +15,9 @@
+ # Use of this file is deprecated, and is here for backwards compatibility with CMake 1.4
+ # GLU library is now found by FindOpenGL.cmake
+ #
+-#
++
++MESSAGE(STATUS
++  "WARNING: you are using the obsolete 'GLU' package, please use 'OpenGL' instead")
+ 
+ INCLUDE(FindOpenGL)
+ 

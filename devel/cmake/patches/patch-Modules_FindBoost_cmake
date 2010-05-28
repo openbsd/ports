@@ -1,0 +1,14 @@
+$OpenBSD: patch-Modules_FindBoost_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
+--- Modules/FindBoost.cmake.orig	Tue Apr  6 16:45:31 2010
++++ Modules/FindBoost.cmake	Fri Apr 23 15:55:13 2010
+@@ -70,7 +70,9 @@
+ # omit the 3rd version number from include paths if it is 0 although not all
+ # binary Boost releases do so.
+ #
+-# SET(Boost_ADDITIONAL_VERSIONS "1.78" "1.78.0" "1.79" "1.79.0")
++SET(Boost_ADDITIONAL_VERSIONS "1.50.0" "1.50" "1.49.0" "1.49" "1.48.0" "1.48"
++    "1.47.0" "1.47" "1.46.0" "1.46" "1.45.0" "1.45" "1.44.0" "1.44" "1.43.0"
++    "1.43" "1.42.0" "1.42")
+ #
+ # ===================================== ============= ========================
+ #

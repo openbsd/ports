@@ -1,0 +1,16 @@
+$OpenBSD: patch-Modules_FindwxWindows_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
+--- Modules/FindwxWindows.cmake.orig	Tue Apr  6 16:45:32 2010
++++ Modules/FindwxWindows.cmake	Fri Apr 23 12:55:11 2010
+@@ -602,9 +602,12 @@ ELSE(WIN32_STYLE_FIND)
+     FIND_PROGRAM(CMAKE_WXWINDOWS_WXCONFIG_EXECUTABLE wx-config
+       $ENV{WXWIN}
+       $ENV{WXWIN}/bin
++      ${LOCALBASE}/bin
+       ../wx/bin
+       ../../wx/bin )
+ 
++    FIND_PATH(WXWINDOWS_INCLUDE_DIR  wx/wx.h
++    "${LOCALBASE}/include" )
+     # check wether wx-config was found:
+     IF(CMAKE_WXWINDOWS_WXCONFIG_EXECUTABLE)
+ 

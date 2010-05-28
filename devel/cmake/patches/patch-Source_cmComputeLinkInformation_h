@@ -1,0 +1,13 @@
+$OpenBSD: patch-Source_cmComputeLinkInformation_h,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
+--- Source/cmComputeLinkInformation.h.orig	Tue Apr  6 16:45:33 2010
++++ Source/cmComputeLinkInformation.h	Mon Apr 19 11:06:50 2010
+@@ -163,6 +163,9 @@ class cmComputeLinkInformation (private)
+   std::set<cmStdString> ImplicitLinkDirs;
+   std::set<cmStdString> ImplicitLinkLibs;
+ 
++  // Additional paths configured by the runtime linker
++  std::vector<std::string> RuntimeLinkDirs;
++
+   // Linker search path compatibility mode.
+   std::set<cmStdString> OldLinkDirMask;
+   std::vector<std::string> OldLinkDirItems;

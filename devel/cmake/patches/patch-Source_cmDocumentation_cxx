@@ -1,18 +1,27 @@
-$OpenBSD: patch-Source_cmDocumentation_cxx,v 1.3 2007/03/20 11:23:10 espie Exp $
---- Source/cmDocumentation.cxx.orig	Wed Jan 10 18:59:12 2007
-+++ Source/cmDocumentation.cxx	Sun Mar 18 13:52:02 2007
-@@ -336,11 +336,11 @@ bool cmDocumentation::CreateSingleModule(const char* f
-         {
-         return false;
-         }
--      char* pname = strcpy(new char[strlen(moduleName)+1], moduleName);
--      char* ptext = strcpy(new char[text.length()+1], text.c_str());
-+      char* pname = cmSystemTools::dupstring(moduleName);
-+      char* ptext = cmSystemTools::dupstring(text.c_str());
-       this->ModuleStrings.push_back(pname);
-       this->ModuleStrings.push_back(ptext);
--      char* pbrief = strcpy(new char[brief.length()+1], brief.c_str());
-+      char* pbrief = cmSystemTools::dupstring(brief.c_str());
-       this->ModuleStrings.push_back(pbrief);
-       cmDocumentationEntry e = { pname, pbrief, ptext };
-       this->ModulesSection.push_back(e);
+$OpenBSD: patch-Source_cmDocumentation_cxx,v 1.4 2010/05/28 20:21:48 dcoppa Exp $
+--- Source/cmDocumentation.cxx.orig	Tue Apr  6 16:45:33 2010
++++ Source/cmDocumentation.cxx	Mon May  3 10:55:11 2010
+@@ -1177,11 +1177,18 @@ bool cmDocumentation::PrintDocumentationSingleModule(s
+                                  this->CurrentArgument.c_str(),
+                                  *this->AllSections["Modules"]))
+       {
+-      this->PrintDocumentationCommand
+-        (os,  this->AllSections["Modules"]->GetEntries()[0]);
+-      os <<  "\n       Defined in: ";
+-      os << moduleName << "\n";
+-      return true;
++      if(this->AllSections["Modules"]->GetEntries().size())
++        {
++        this->PrintDocumentationCommand
++          (os,  this->AllSections["Modules"]->GetEntries()[0]);
++        os <<  "\n       Defined in: ";
++        os << moduleName << "\n";
++        return true;
++        }
++      else
++        {
++        return false;
++        }
+       }
+     }
+ 

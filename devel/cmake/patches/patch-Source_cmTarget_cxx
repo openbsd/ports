@@ -1,50 +1,65 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.3 2008/01/26 21:26:32 espie Exp $
---- Source/cmTarget.cxx.orig	Mon Jan 21 19:59:53 2008
-+++ Source/cmTarget.cxx	Sat Jan 26 20:47:17 2008
-@@ -1480,6 +1480,46 @@ void cmTarget::GetLibraryNamesInternal(std::string& na
-   realName += suffix;
- #endif
- 
-+#if defined(__OpenBSD__)
-+  // need to tweak version for our shared libraries
-+  if (type == cmTarget::SHARED_LIBRARY) {
-+  	if (version) {
-+	    // namely, transform version from 5.0.0 -> 5.0
-+	    std::string myversion = version;
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.4 2010/05/28 20:21:48 dcoppa Exp $
+--- Source/cmTarget.cxx.orig	Tue Apr  6 16:45:35 2010
++++ Source/cmTarget.cxx	Tue May 11 16:37:04 2010
+@@ -3136,6 +3136,34 @@ void cmTarget::GetLibraryNames(std::string& name,
+   // Check for library version properties.
+   const char* version = this->GetProperty("VERSION");
+   const char* soversion = this->GetProperty("SOVERSION");
 +
-+	    int j = 0;
++  /* OpenBSD - LIBxxx_VERSION environment override.
++   * Needed for OpenBSD ports system.
++   */
++  std::string env_name = "LIB" + Name + "_VERSION";
++  char *env_vers_cstr = getenv(env_name.c_str());
 +
-+	    for (int i = 0; i < myversion.size(); i++) {
-+		    if (myversion[i] == '.') {
-+			    j++;
-+			    if (j == 2) {
-+				    myversion.erase(i);
-+				    break;
-+			    }
-+		    }
-+	    }
-+	    // if the env says so, produce a tweaked version number instead
-+	    std::string v = "LIB" +base + "_VERSION";
-+	    char *tweaked = ::getenv(v.c_str());
-+#if 0
-+	    char *logname = ::getenv("SHARED_LIBS_LOG");
-+	    if (logname) {
-+		    std::ofstream logfile(logname, std::ios_base::out | std::ios_base::app);
-+		    if (logfile)
-+			    logfile << "SHARED_LIBS += " << base << " "
-+				    << tweaked << " # " << myversion << "\n";
-+	    }
-+#endif
-+	    if (tweaked)
-+		    myversion = tweaked;
-+	    else 
-+		    tweaked = "";
-+	    // all our shared libs have major.number, no links
-+	    realName = prefix+base+".so."+myversion;
-+	    soName = realName;
-+	}
++  if (env_vers_cstr != NULL) {
++    // this means an override is present
++    std::string env_vers = std::string(env_vers_cstr);
++
++    size_t first = env_vers.find_first_of(".");
++    size_t last = env_vers.find_first_of(".");
++
++    if ((first != last) || (first == std::string::npos)) {
++      std::string msg = "Bad ";
++      msg += env_name;
++      msg += " specification: ";
++      msg += env_vers;
++      this->Makefile->IssueMessage(cmake::FATAL_ERROR, 
++                                   msg.c_str());
++    } else {
++      /* all OK, use OpenBSD override */
++      soversion = env_vers_cstr;
++      version = env_vers_cstr;
++    }
 +  }
-+#endif
-   // The import library name.
-   if(type == cmTarget::SHARED_LIBRARY)
++
+   if((this->GetType() != cmTarget::SHARED_LIBRARY &&
+       this->GetType() != cmTarget::MODULE_LIBRARY) ||
+      !this->Makefile->GetDefinition(sonameFlag.c_str()) ||
+@@ -3186,8 +3214,26 @@ void cmTarget::GetLibraryNames(std::string& name,
+   if(version)
      {
+     realName += ".";
++#if defined(__OpenBSD__)
++    // libname.so.X.X.X -> libname.so.X.X conversion
++    int j = 0;
++    for (int i = 0; i < (int)strlen(version); i++) 
++      {
++      if (version[i] == '.') 
++        {
++        j++; 
++        if (j == 2) 
++          {
++          break;
++          }
++        }
++      realName += version[i];
++      }
++    }
++#else
+     realName += version;
+     }
++#endif
+   else if(soversion)
+     {
+     realName += ".";
