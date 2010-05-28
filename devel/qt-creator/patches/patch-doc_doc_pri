@@ -1,0 +1,17 @@
+$OpenBSD: patch-doc_doc_pri,v 1.1 2010/05/28 12:49:05 espie Exp $
+--- doc/doc.pri.orig	Fri May 28 14:12:39 2010
++++ doc/doc.pri	Fri May 28 14:16:38 2010
+@@ -15,11 +15,11 @@ equals(QMAKE_DIR_SEP, /) {   # unix, mingw+msys
+ QHP_FILE = $$OUT_PWD/doc/html/qtcreator.qhp
+ QCH_FILE = $$IDE_DOC_PATH/qtcreator.qch
+ 
+-html_docs.commands = $$QDOC $$PWD/qtcreator.qdocconf
++html_docs.commands = $$QDOC $$PWD/qtcreator.qdocconf && touch $@
+ html_docs.depends += $$PWD/qtcreator.qdoc $$PWD/qtcreator.qdocconf
+ html_docs.files = $$QHP_FILE
+ 
+-qch_docs.commands = $$HELPGENERATOR -o \"$$QCH_FILE\" $$QHP_FILE
++qch_docs.commands = $$HELPGENERATOR -o \"$$QCH_FILE\" $$QHP_FILE && touch $@
+ qch_docs.depends += html_docs
+ qch_docs.files = $$QCH_FILE
+ 
