@@ -1,0 +1,17 @@
+$OpenBSD: p-clients_olwm_gettext_c,v 1.1 2010/05/28 08:32:14 espie Exp $
+--- clients/olwm/gettext.c.orig	Fri May 28 10:16:49 2010
++++ clients/olwm/gettext.c	Fri May 28 10:17:08 2010
+@@ -15,12 +15,11 @@
+ #define bzero(a,b) memset(a,0,b)
+ #endif
+ 
+-char *malloc(), *strdup();
++char *strdup();
+ char * dgettext();
+ char *_gettext();
+ char *in_path();
+ char *fgets(), *getenv();
+-caddr_t mmap(), calloc();
+ 
+ static struct domain_binding *firstbind=0, *lastbind=0;
+ 

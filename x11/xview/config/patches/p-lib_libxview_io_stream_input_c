@@ -1,0 +1,12 @@
+$OpenBSD: p-lib_libxview_io_stream_input_c,v 1.1 2010/05/28 08:32:14 espie Exp $
+--- lib/libxview/io_stream/input.c.orig	Fri May 28 03:27:32 2010
++++ lib/libxview/io_stream/input.c	Fri May 28 03:28:06 2010
+@@ -22,7 +22,7 @@ static char     sccsid[] = "@(#)input.c 20.20 93/06/28
+ 		XV_MSG("input stream not of type input"), 0); \
+ 	ops = in->ops.input_ops
+ 
+-char	*stream_getstring();
++static char    *stream_getstring(char *, int, STREAM *, Bool);
+ 
+ /* GENERIC INPUT FUNCTIONS */
+ 

@@ -1,6 +1,19 @@
---- clients/olwm/screen.c.orig	1993-06-29 07:11:56.000000000 +0200
-+++ clients/olwm/screen.c	2003-12-30 01:31:15.000000000 +0100
-@@ -214,6 +214,7 @@ isColorScreen(scrInfo,visInfo,nvisuals)
+--- clients/olwm/screen.c.orig	Tue Jun 29 07:11:56 1993
++++ clients/olwm/screen.c	Fri May 28 10:14:34 2010
+@@ -111,6 +111,12 @@ static XrmQuark reverseVideoIQ;
+ static XrmQuark stippledRubberBandsCQ;
+ static XrmQuark stippledRubberBandsIQ;
+ 
++static updateScreenWorkspaceColor(Display *, ScreenInfo *);
++static updateScreenWindowColor(Display *, ScreenInfo *);
++static updateScreenForegroundColor(Display *, ScreenInfo *);
++static updateScreenBackgroundColor(Display *, ScreenInfo *);
++static updateScreenBorderColor(Display *, ScreenInfo *);
++static updateScreenGlyphFont(Display *, ScreenInfo *);
+ 
+ /*-------------------------------------------------------------------------
+  *	Local Functions
+@@ -214,6 +220,7 @@ isColorScreen(scrInfo,visInfo,nvisuals)
  		     	case PseudoColor:
  			case GrayScale:
  		     	case DirectColor:

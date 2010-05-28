@@ -1,10 +1,26 @@
---- clients/olwmslave/helpwin.c.orig	1993-06-29 07:12:11.000000000 +0200
-+++ clients/olwmslave/helpwin.c	2003-12-30 01:31:16.000000000 +0100
-@@ -136,6 +136,7 @@ Bool		TextHelpWindow();
- Bool		ImageHelpWindow();
- void		MoreHelp();
- void		ErrorNotice();
+--- clients/olwmslave/helpwin.c.orig	Tue Jun 29 07:12:11 1993
++++ clients/olwmslave/helpwin.c	Fri May 28 10:22:54 2010
+@@ -128,14 +128,15 @@ char		*help_get_text();
+  *	Local Forward Functions
+  * ---------------------------------------------------------------------*/
+ int		ShowHelpWindow();
+-void		InitHelpWindow();
+-Bool		CreateHelpWindow();
+-Notify_value	DestroyHelpWindow();
+-void		ResetHelpWindow();
+-Bool		TextHelpWindow();
+-Bool		ImageHelpWindow();
+-void		MoreHelp();
+-void		ErrorNotice();
 +static int	ConstrainMousePos();
++static	void InitHelpWindow();
++static 	Bool CreateHelpWindow(HelpWindow *, char *);
++static	void ResetHelpWindow(HelpWindow *);
++static Notify_value DestroyHelpWindow(Notify_client, Destroy_status);
++static	Bool TextHelpWindow(HelpWindow	*, char *);
++static	Bool ImageHelpWindow(HelpWindow *, int, int);
++static void MoreHelp(Panel_item, Event *);
++static	void ErrorNotice(int, char *, char *);
  
  /* ----------------------------------------------------------------------
   *	ShowHelpWindow

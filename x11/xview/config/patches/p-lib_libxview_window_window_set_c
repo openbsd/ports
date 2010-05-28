@@ -1,0 +1,19 @@
+$OpenBSD: p-lib_libxview_window_window_set_c,v 1.1 2010/05/28 08:32:15 espie Exp $
+--- lib/libxview/window/window_set.c.orig	Fri May 28 10:02:15 2010
++++ lib/libxview/window/window_set.c	Fri May 28 10:02:37 2010
+@@ -52,6 +52,7 @@ Pkg_private	void	window_set_cmap_property();
+ Pkg_private 	void	sync_rect();
+ static     Xv_opaque 	window_set_avlist_tier2();
+ static     Xv_opaque 	window_set_avlist_tier3();
++static void             window_set_softkey_labels();
+ 
+ static Defaults_pairs setinput_pairs[] = {
+     "select",		FALSE,
+@@ -1072,7 +1073,6 @@ window_set_avlist_tier3(win_public, attrs, error, new_
+ 
+       case WIN_SOFT_FNKEY_LABELS: {
+         register Xv_Drawable_info 	*info;
+-        static void                   	 window_set_softkey_labels();
+ 
+         DRAWABLE_INFO_MACRO(win_public, info);
+         win->softkey_flag = TRUE;

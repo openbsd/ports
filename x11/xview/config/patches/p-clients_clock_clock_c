@@ -1,0 +1,14 @@
+$OpenBSD: p-clients_clock_clock_c,v 1.1 2010/05/28 08:32:14 espie Exp $
+--- clients/clock/clock.c.orig	Fri May 28 10:09:42 2010
++++ clients/clock/clock.c	Fri May 28 10:11:37 2010
+@@ -146,6 +146,10 @@ static Notify_value timer_expired ();
+ static Notify_value analog_timer_expired();
+ static Notify_value icon_timer_expired();
+ static Notify_value dig_timer_expired();
++static int min(int, int);
++static int armwidth(int);
++static int seconds_on(Options);
++static int date_on(Options);
+ 
+ typedef enum {digital, analog} Face;
+ 

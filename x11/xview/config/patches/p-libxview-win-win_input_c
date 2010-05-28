@@ -1,6 +1,14 @@
 --- lib/libxview/win/win_input.c.orig	Mon Jun 27 00:27:53 1994
-+++ lib/libxview/win/win_input.c	Sun May 23 14:16:15 2010
-@@ -853,7 +853,9 @@ ContProcess:
++++ lib/libxview/win/win_input.c	Fri May 28 10:00:54 2010
+@@ -86,6 +86,7 @@ static int      process_clientmessage_events();
+ static int      process_property_events();
+ static int      process_wm_pushpin_state();
+ Pkg_private int win_handle_compose();
++static int xevent_to_event(Display *, XEvent *, Event *, Xv_object *);
+ 
+ struct _XKeytrans {
+         struct _XKeytrans *next;/* next on list */
+@@ -853,7 +854,9 @@ ContProcess:
  #ifdef X11R6
  	/* lumpi@dobag.in-berlin.de */
  		int ksym_pcc;
@@ -11,7 +19,7 @@
  		for (index = 0; index < ksym_pcc; index++) {
  #else
  		for (index = 0; index < display->keysyms_per_keycode; index++) {
-@@ -861,7 +863,7 @@ ContProcess:
+@@ -861,7 +864,7 @@ ContProcess:
  		    if ((ksym = XLookupKeysym(ek, index)) != NoSymbol)
  			if (IsKeypadKey(ksym)) {
  			    /* See if key has been rebound. */
@@ -20,7 +28,16 @@
  					       buffer, BUFFERSIZE)) {
  			        (void)win_translate_KP_keysym(ksym, buffer);
  			    }
-@@ -2720,8 +2722,10 @@ win_translate_KP_keysym(keysym, buffer)
+@@ -2316,7 +2319,7 @@ chording(display, bEvent, timeout)
+     /* XView does a passive grab on the SELECT button! */
+     window_x_allow_events(display);
+ 
+-    return BlockForEvent(display, xevent, timeout * 1000, GetButtonEvent,
++    return BlockForEvent(display, &xevent, timeout * 1000, GetButtonEvent,
+ 			 (char *) bEvent);
+ }
+ 
+@@ -2720,8 +2723,10 @@ win_translate_KP_keysym(keysym, buffer)
   * Xlib's.
   */
  
@@ -33,7 +50,7 @@
  static int
  translate_key(dpy, symbol, modifiers, buffer, nbytes)
      Display 		*dpy;
-@@ -2731,11 +2735,18 @@ translate_key(dpy, symbol, modifiers, buffer, nbytes)
+@@ -2731,11 +2736,18 @@ translate_key(dpy, symbol, modifiers, buffer, nbytes)
      int 		 nbytes;
  {
  	/* This is _very_ rude ! */
@@ -54,7 +71,7 @@
  static int
  translate_key(dpy, symbol, modifiers, buffer, nbytes)
      Display 		*dpy;
-@@ -2761,4 +2772,4 @@ translate_key(dpy, symbol, modifiers, buffer, nbytes)
+@@ -2761,4 +2773,4 @@ translate_key(dpy, symbol, modifiers, buffer, nbytes)
      }
      return 0;
  }

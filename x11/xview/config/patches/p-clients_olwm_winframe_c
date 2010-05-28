@@ -1,0 +1,11 @@
+$OpenBSD: p-clients_olwm_winframe_c,v 1.1 2010/05/28 08:32:14 espie Exp $
+--- clients/olwm/winframe.c.orig	Fri May 28 10:16:13 2010
++++ clients/olwm/winframe.c	Fri May 28 10:16:40 2010
+@@ -72,6 +72,7 @@ void FrameUpdateShape();
+ static void setIMStatusText();
+ #endif
+ static void updateResizePositions();
++static int headerHeight(Client *, Graphics_info *);
+ 
+ /***************************************************************************
+ * sizing and decoration positioning functions

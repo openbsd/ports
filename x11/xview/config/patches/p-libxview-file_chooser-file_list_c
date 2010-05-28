@@ -1,5 +1,5 @@
 --- lib/libxview/file_chooser/file_list.c.orig	Tue Jun 29 07:17:56 1993
-+++ lib/libxview/file_chooser/file_list.c	Sun May 23 14:16:14 2010
++++ lib/libxview/file_chooser/file_list.c	Fri May 28 03:26:15 2010
 @@ -23,6 +23,9 @@ static char     sccsid[] = "@(#)file_list.c 1.30 93/06
  #include <xview_private/flist_impl.h>
  #include <xview_private/portable.h>
@@ -25,7 +25,7 @@
 +#ifndef __OpenBSD__
  	xv_free_ref( private->regex_compile );
 +#else
-+	xv_free_regex_t( (regex_t *)private->regex_compile );
++	xv_free_regex_t(private->regex_compile );
 +#endif
  	xv_free_ref( private->dotdot_string );
  	if ( private->dir_ptr )
@@ -59,7 +59,7 @@
 +      exit(-1);
 +    } 
 +    regcomp(compile_buf, private->regex_pattern, 0);
-+    xv_free_regex_t((regex_t *)private->regex_compile);
++    xv_free_regex_t(private->regex_compile);
 +    private->regex_compile = (char *)compile_buf;
 +#endif
 +

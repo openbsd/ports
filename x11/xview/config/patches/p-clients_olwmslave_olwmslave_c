@@ -1,0 +1,16 @@
+$OpenBSD: p-clients_olwmslave_olwmslave_c,v 1.1 2010/05/28 08:32:14 espie Exp $
+--- clients/olwmslave/olwmslave.c.orig	Fri May 28 10:23:03 2010
++++ clients/olwmslave/olwmslave.c	Fri May 28 10:24:00 2010
+@@ -44,9 +44,9 @@ char		cmdBuf[CMDBUFLEN];
+ /* ----------------------------------------------------------------------
+  *	Forward Definitions
+  * ----------------------------------------------------------------------*/
+-void		InitScreenInfo();
+-void		ParseScreenArgs();
+-Notify_value	InputReader();
++static void InitScreenInfo(Xv_Server);
++static void ParseScreenArgs(int *, char **);
++static Notify_value InputReader(Notify_client, int);
+ 
+ /* ----------------------------------------------------------------------
+  * 	main

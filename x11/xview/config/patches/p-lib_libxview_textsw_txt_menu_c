@@ -1,0 +1,21 @@
+$OpenBSD: p-lib_libxview_textsw_txt_menu_c,v 1.1 2010/05/28 08:32:15 espie Exp $
+--- lib/libxview/textsw/txt_menu.c.orig	Fri May 28 09:56:29 2010
++++ lib/libxview/textsw/txt_menu.c	Fri May 28 09:57:03 2010
+@@ -47,6 +47,8 @@ static char     sccsid[] = "@(#)txt_menu.c 20.91 93/06
+ 
+ Pkg_private Es_index ev_index_for_line();
+ static void textsw_done_menu();
++static int  textsw_edit_do_menu_action(), textsw_view_do_menu_action(),
++	    textsw_find_do_menu_action();
+ 
+ #define			MAX_SIZE_MENU_STRING	30
+ 
+@@ -140,8 +142,6 @@ textsw_new_menu(folio)
+     Frame           frame = xv_get(textsw, WIN_FRAME);
+     Menu_item       break_mode_item, undo_cmds_item, find_sel_cmds_item,
+                     select_field_cmds_item;
+-    static int      textsw_edit_do_menu_action(), textsw_view_do_menu_action(),
+-                    textsw_find_do_menu_action();
+     int             index;
+     Pkg_private char *textsw_get_extras_filename();
+     Pkg_private int textsw_build_extras_menu_items();

@@ -1,0 +1,16 @@
+$OpenBSD: p-clients_olwmslave_propswin_c,v 1.1 2010/05/28 08:32:14 espie Exp $
+--- clients/olwmslave/propswin.c.orig	Fri May 28 10:25:22 2010
++++ clients/olwmslave/propswin.c	Fri May 28 10:26:21 2010
+@@ -38,9 +38,9 @@ static WindowProps	*winPropsList = 0; 	/* dynamic arra
+  *      Local Forward Declarations
+  * ----------------------------------------------------------------------*/
+ int		ShowWindowProps();
+-void		InitWindowProps();
+-Bool		CreateWindowProps();
+-Notify_value	DestroyWindowProps();
++static void InitWindowProps();
++static Bool CreateWindowProps(WindowProps *);
++static Notify_value DestroyWindowProps(Notify_client, Destroy_status);
+ void		ApplyProps();
+ void		ResetProps();
+ 

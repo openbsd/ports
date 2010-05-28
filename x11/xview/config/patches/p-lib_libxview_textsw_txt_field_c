@@ -1,0 +1,28 @@
+$OpenBSD: p-lib_libxview_textsw_txt_field_c,v 1.1 2010/05/28 08:32:15 espie Exp $
+--- lib/libxview/textsw/txt_field.c.orig	Fri May 28 09:57:32 2010
++++ lib/libxview/textsw/txt_field.c	Fri May 28 09:58:30 2010
+@@ -31,6 +31,8 @@ static char     sccsid[] = "@(#)txt_field.c 20.31 93/0
+ #define    MAX_STR_LENGTH       1024
+ 
+ static void            textsw_get_match_symbol();
++static void     textsw_get_match_symbol();
++static void     textsw_get_match_symbol();
+ 
+ #ifdef OW_I18N
+ 
+@@ -121,7 +123,6 @@ check_selection(buf, buf_len, first, last_plus_one,
+ 		    CHAR            marker2[3];
+ 		    int             marker2_len;
+ 		    unsigned        direction;
+-		    static void     textsw_get_match_symbol();
+ 
+ 		    buf = buf + (buf_len - marker1_len);
+ 		    (void) textsw_get_match_symbol(marker1, marker1_len,
+@@ -152,7 +153,6 @@ check_selection(buf, buf_len, first, last_plus_one,
+ 		    CHAR            marker2[3];
+ 		    int             marker2_len;
+ 		    unsigned        direction;
+-		    static void     textsw_get_match_symbol();
+ 
+ 		    (void) textsw_get_match_symbol(marker1, marker1_len,
+ 					 marker2, &marker2_len, &direction);

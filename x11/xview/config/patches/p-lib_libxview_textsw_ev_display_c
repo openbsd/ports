@@ -1,0 +1,11 @@
+$OpenBSD: p-lib_libxview_textsw_ev_display_c,v 1.1 2010/05/28 08:32:15 espie Exp $
+--- lib/libxview/textsw/ev_display.c.orig	Fri May 28 03:36:26 2010
++++ lib/libxview/textsw/ev_display.c	Fri May 28 03:36:30 2010
+@@ -940,7 +940,6 @@ ev_scroll_lines(view, line_count, scroll_by_display_li
+ 	register int    i;
+ 	Es_index        pos, pos_to_remember;
+ 	Pkg_private void ev_lt_format();
+-	static void     ev_swap_line_table();
+ 
+ 	esbuf.esh = chain->esh;
+ 	esbuf.buf = buf;

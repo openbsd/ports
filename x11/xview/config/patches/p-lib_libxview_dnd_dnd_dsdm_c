@@ -1,0 +1,20 @@
+$OpenBSD: p-lib_libxview_dnd_dnd_dsdm_c,v 1.1 2010/05/28 08:32:14 espie Exp $
+--- lib/libxview/dnd/dnd_dsdm.c.orig	Fri May 28 03:23:47 2010
++++ lib/libxview/dnd/dnd_dsdm.c	Fri May 28 03:24:27 2010
+@@ -27,6 +27,8 @@ static char     sccsid[] = "@(#)dnd_dsdm.c 1.8 93/06/2
+ 
+ Xv_private int DndSendPreviewEvent();
+ 
++static void ReplyProc(Selection_requestor, Atom, Atom, Xv_opaque, 
++    unsigned long, int);
+ 
+ Xv_private int
+ DndContactDSDM(dnd)
+@@ -40,7 +42,6 @@ DndContactDSDM(dnd)
+     if (!dnd->sel) {
+         Xv_object  	owner,
+     			server;
+-    	static void	ReplyProc();
+ 
+     	owner = (Xv_object)xv_get(DND_PUBLIC(dnd), XV_OWNER);
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: p-build_include_xview_private_es_h,v 1.1 2010/05/28 08:32:14 espie Exp $
+--- build/include/xview_private/es.h.orig	Fri May 28 03:32:23 2010
++++ build/include/xview_private/es.h	Fri May 28 03:34:21 2010
+@@ -182,9 +182,6 @@ typedef struct es_buf_object {
+ } Es_buf_object;
+ typedef Es_buf_object *Es_buf_handle;
+ 
+-EXTERN_FUNCTION( caddr_t es_file_get, (Es_handle esh, Es_attribute attribute, DOTDOTDOT ));
+-EXTERN_FUNCTION( caddr_t es_mem_get, (Es_handle esh, Es_attribute attribute, DOTDOTDOT ));
+-
+ #define ES_READ_BUF_LEN 2047
+ #define ES_WRITE_BUF_LEN 2047
+ 

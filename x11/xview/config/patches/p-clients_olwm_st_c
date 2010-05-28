@@ -1,0 +1,20 @@
+$OpenBSD: p-clients_olwm_st_c,v 1.1 2010/05/28 08:32:14 espie Exp $
+--- clients/olwm/st.c.orig	Fri May 28 10:15:15 2010
++++ clients/olwm/st.c	Fri May 28 10:16:02 2010
+@@ -7,6 +7,7 @@
+ #include "mem.h"
+ 
+ 
++static void rehash(register st_table *);
+ #define max(a,b) ((a) > (b) ? (a) : (b))
+ #define nil(type) ((type *) 0)
+ #define alloc(type) (type *)MemAlloc((unsigned)sizeof(type))
+@@ -198,7 +199,7 @@ char ***slot;
+     }
+ }
+ 
+-static rehash(table)
++static void rehash(table)
+ register st_table *table;
+ {
+     register st_table_entry *ptr, *next, **old_bins = table->bins;
