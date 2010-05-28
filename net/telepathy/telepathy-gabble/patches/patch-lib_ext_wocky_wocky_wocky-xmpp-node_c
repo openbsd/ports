@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ext_wocky_wocky_wocky-xmpp-node_c,v 1.1 2010/05/28 09:19:53 espie Exp $
+--- lib/ext/wocky/wocky/wocky-xmpp-node.c.orig	Mon May 24 11:17:54 2010
++++ lib/ext/wocky/wocky/wocky-xmpp-node.c	Mon May 24 11:18:03 2010
+@@ -816,7 +816,7 @@ wocky_xmpp_node_append_content (WockyXmppNode *node,
+     const gchar *content)
+ {
+   gchar *t = node->content;
+-  node->content = g_strconcat (t, content, NULL);
++  node->content = g_strconcat (t, content, (void *)0);
+   g_free (t);
+ }
+ 

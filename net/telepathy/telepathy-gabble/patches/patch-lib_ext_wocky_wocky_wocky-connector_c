@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ext_wocky_wocky_wocky-connector_c,v 1.1 2010/05/28 09:19:53 espie Exp $
+--- lib/ext/wocky/wocky/wocky-connector.c.orig	Mon May 24 11:16:54 2010
++++ lib/ext/wocky/wocky/wocky-connector.c	Mon May 24 11:17:02 2010
+@@ -1062,7 +1062,7 @@ jabber_auth_try_digest (WockyConnector *self)
+ {
+   WockyConnectorPrivate *priv = WOCKY_CONNECTOR_GET_PRIVATE (self);
+   WockyXmppConnection *conn = priv->conn;
+-  gchar *hsrc = g_strconcat (priv->session_id, priv->pass, NULL);
++  gchar *hsrc = g_strconcat (priv->session_id, priv->pass, (void *)0);
+   gchar *sha1 = g_compute_checksum_for_string (G_CHECKSUM_SHA1, hsrc, -1);
+   gchar *iqid = wocky_xmpp_connection_new_id (priv->conn);
+   WockyXmppStanza *iq = wocky_xmpp_stanza_build (WOCKY_STANZA_TYPE_IQ,

@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ext_wocky_wocky_wocky-pubsub-node_c,v 1.1 2010/05/28 09:19:53 espie Exp $
+--- lib/ext/wocky/wocky/wocky-pubsub-node.c.orig	Mon May 24 11:18:37 2010
++++ lib/ext/wocky/wocky/wocky-pubsub-node.c	Mon May 24 11:18:42 2010
+@@ -166,7 +166,7 @@ wocky_pubsub_node_constructed (GObject *object)
+   g_object_get (priv->service,
+       "jid", &(priv->service_jid),
+       "session", &session,
+-      NULL);
++      (void *)0);
+   g_assert (priv->service_jid != NULL);
+ 
+   g_assert (session != NULL);

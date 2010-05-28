@@ -1,0 +1,28 @@
+$OpenBSD: patch-lib_ext_wocky_wocky_wocky-xmpp-connection_c,v 1.1 2010/05/28 09:19:53 espie Exp $
+--- lib/ext/wocky/wocky/wocky-xmpp-connection.c.orig	Mon May 24 11:17:17 2010
++++ lib/ext/wocky/wocky/wocky-xmpp-connection.c	Mon May 24 11:17:45 2010
+@@ -639,19 +639,19 @@ wocky_xmpp_connection_recv_open_finish (WockyXmppConne
+   priv->input_open = TRUE;
+ 
+   if (to != NULL)
+-    g_object_get (priv->reader, "to", to, NULL);
++    g_object_get (priv->reader, "to", to, (void *)0);
+ 
+   if (from != NULL)
+-    g_object_get (priv->reader, "from", from, NULL);
++    g_object_get (priv->reader, "from", from, (void *)0);
+ 
+   if (version != NULL)
+-    g_object_get (priv->reader, "version", version, NULL);
++    g_object_get (priv->reader, "version", version, (void *)0);
+ 
+   if (lang != NULL)
+-    g_object_get (priv->reader, "lang", lang, NULL);
++    g_object_get (priv->reader, "lang", lang, (void *)0);
+ 
+   if (id != NULL)
+-    g_object_get (priv->reader, "id", id, NULL);
++    g_object_get (priv->reader, "id", id, (void *)0);
+ 
+   return TRUE;
+ }

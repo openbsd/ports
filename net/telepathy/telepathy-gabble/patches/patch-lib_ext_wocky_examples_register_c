@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ext_wocky_examples_register_c,v 1.1 2010/05/28 09:19:53 espie Exp $
+--- lib/ext/wocky/examples/register.c.orig	Mon May 24 11:19:58 2010
++++ lib/ext/wocky/examples/register.c	Mon May 24 11:20:05 2010
+@@ -73,7 +73,7 @@ main (int argc,
+         "password"   , pass,
+         "xmpp-server", host, NULL);
+ 
+-  g_object_set (G_OBJECT (wcon), "email", email, NULL);
++  g_object_set (G_OBJECT (wcon), "email", email, (void *)0);
+   wocky_connector_register_async (wcon, connector_callback, NULL);
+   g_main_loop_run (mainloop);
+ 
