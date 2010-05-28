@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/02/07 15:25:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2010/05/28 09:20:40 espie Exp $
 
 COMMENT=	character set conversion library
 
@@ -7,7 +7,7 @@ PKGNAME=	${DISTNAME}p0
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libiconv/}
 
-SHARED_LIBS=	charset		1.0 \
+SHARED_LIBS=	charset		1.1 \
 		iconv		6.0
 
 HOMEPAGE=	http://www.gnu.org/software/libiconv/
