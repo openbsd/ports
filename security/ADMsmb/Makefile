@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/04/15 13:27:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2010/05/28 15:57:12 naddy Exp $
 
 COMMENT=		Samba security scanner
 
 DISTNAME=       	ADMsmb-v0.2
-PKGNAME=		ADMsmb-0.2p1
+PKGNAME=		ADMsmb-0.2p2
 CATEGORIES=		security
 EXTRACT_SUFX=		.tgz
 

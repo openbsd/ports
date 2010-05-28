@@ -1,0 +1,12 @@
+$OpenBSD: patch-md4_c,v 1.1 2010/05/28 15:57:12 naddy Exp $
+--- md4.c.orig	Fri May 28 17:54:52 2010
++++ md4.c	Fri May 28 17:55:07 2010
+@@ -25,6 +25,8 @@
+    It assumes that a int is at least 32 bits long
+ */
+ 
++#include <string.h>
++
+ typedef unsigned int uint32;
+ 
+ static uint32 A, B, C, D;
