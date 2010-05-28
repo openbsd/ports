@@ -1,0 +1,22 @@
+$OpenBSD: patch-lib_config_commconf_c,v 1.1 2010/05/28 09:49:21 espie Exp $
+--- lib/config/commconf.c.orig	Fri May 28 11:42:24 2010
++++ lib/config/commconf.c	Fri May 28 11:45:23 2010
+@@ -351,7 +351,8 @@ get_config_interface (interface_t * interface)
+ static int
+ config_interface (uii_connection_t * uii, char *name)
+ {
+-    interface_t *interface, *ip;
++    interface_t *interface;
++    DATA_PTR ip;
+ 
+     if ((interface = find_interface_byname (name)) == NULL) {
+ 	config_notice (TR_ERROR, uii,
+@@ -365,7 +366,7 @@ config_interface (uii_connection_t * uii, char *name)
+     uii->state = UII_CONFIG_INTERFACE;
+     Delete (name);
+ 
+-    LL_Iterate (CONFIG_MRTD->ll_interfaces, (char *) ip) {
++    LL_Iterate (CONFIG_MRTD->ll_interfaces, ip) {
+ 	if (ip == interface)
+ 	    return (0);
+     }

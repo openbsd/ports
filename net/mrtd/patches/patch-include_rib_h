@@ -1,0 +1,11 @@
+$OpenBSD: patch-include_rib_h,v 1.1 2010/05/28 09:49:21 espie Exp $
+--- include/rib.h.orig	Fri May 28 11:46:14 2010
++++ include/rib.h	Fri May 28 11:46:30 2010
+@@ -167,7 +167,6 @@ int trace_ipv6_rib (uii_connection_t *uii);
+ #endif /* HAVE_IPV6 */
+ 
+ extern rib_t *RIB;
+-extern rib_t *RIBS[AFI_MAX][SAFI_MAX];
+ extern rib_t *RIBm;
+ extern rib_t *RIBv6;
+ extern rib_t *RIBv6m;
