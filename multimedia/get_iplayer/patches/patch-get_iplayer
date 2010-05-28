@@ -1,7 +1,15 @@
-$OpenBSD: patch-get_iplayer,v 1.36 2010/05/27 23:33:45 sthen Exp $
---- get_iplayer.orig	Wed May 26 14:19:02 2010
-+++ get_iplayer	Fri May 28 00:00:23 2010
-@@ -327,7 +327,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+$OpenBSD: patch-get_iplayer,v 1.37 2010/05/28 15:46:02 sthen Exp $
+--- get_iplayer.orig	Fri May 28 15:24:50 2010
++++ get_iplayer	Fri May 28 16:43:57 2010
+@@ -294,6 +294,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
+ $opt->{quiet} = 1 if $opt_pre->{quiet};
+ $opt->{pvr} = 1 if $opt_pre->{pvr};
+ $opt->{stdout} = 1 if $opt_pre->{stdout} || $opt_pre->{stream};
++$opt->{packagemanager}= 'pkg_add';
+ 
+ # show version and exit
+ if ( $opt_pre->{showver} ) {
+@@ -330,7 +331,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -10,7 +18,7 @@ $OpenBSD: patch-get_iplayer,v 1.36 2010/05/27 23:33:45 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -645,12 +645,13 @@ sub init_search {
+@@ -658,7 +659,7 @@ sub init_search {
  	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
@@ -19,14 +27,16 @@ $OpenBSD: patch-get_iplayer,v 1.36 2010/05/27 23:33:45 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
- 
--	$bin->{flvstreamer}	= $opt->{flvstreamer} || 'flvstreamer';
-+	$bin->{flvstreamer}	= $opt->{flvstreamer} || 'rtmpdump';
-+
- 	delete $binopts->{flvstreamer};
- 	push @{ $binopts->{flvstreamer} }, ( '--timeout', 10 );
- 	push @{ $binopts->{flvstreamer}	}, '--quiet' if $opt->{quiet};
-@@ -4063,7 +4064,7 @@ sub tag_file {
+@@ -1986,7 +1987,7 @@ sub update_script {
+ 		} elsif ( $opt->{packagemanager} =~ /disable/i ) {
+ 			logger "ERROR: get_iplayer should only be updated using your local package management system, for more information see http://linuxcentre.net/installation\n";
+ 		} else {
+-			logger "ERROR: get_iplayer was installed using '$opt->{packagemanager}' package manager please refer to the update documentation at http://linuxcentre.net/getiplayer/installation/\n";
++			logger "ERROR: Please update get_iplayer using the '$opt->{packagemanager}' package manager\n";
+ 		}
+ 		exit 1;
+ 	} 
+@@ -4251,7 +4252,7 @@ sub tag_file {
  		my ( $id3_name, $id3_episode, $id3_desc, $id3_channel ) = ( $prog->{name}, $prog->{episode}, $prog->{desc}, $prog->{channel} );
  		s|"|\\"|g for ($id3_name, $id3_episode, $id3_desc, $id3_channel);
  		# Only tag if the required tool exists
@@ -35,133 +45,3 @@ $OpenBSD: patch-get_iplayer,v 1.36 2010/05/27 23:33:45 sthen Exp $
  			main::logger "INFO: id3 tagging $prog->{ext} file\n";
  			my @cmd = (
  				$bin->{id3v2}, 
-@@ -5611,10 +5612,28 @@ sub get_stream_data_cdn {
- 
- 	my $count = 1;
- 	for my $cattribs ( @{ $mattribs->{connections} } ) {
-+
-+		# Get authstring from more specific mediaselector if this mode is specified - fails sometimes otherwise
-+		if ( $cattribs->{authString} && $cattribs->{kind} =~ /^(limelight|akamai|level3|sis|iplayertok)$/ && (grep /^$mode$/, (split /,/, $mattribs->{modelist})) ) {
-+			# Build URL
-+			my $media_stream_data_prefix = 'http://www.bbc.co.uk/mediaselector/4/mtis/stream/';
-+			my $url = $media_stream_data_prefix."$mattribs->{verpid}/$mattribs->{service}/$cattribs->{kind}?cb=".( sprintf "%05.0f", 99999*rand(0) );
-+			my $xml = main::request_url_retry( main::create_ua( 'desktop' ), $url, 3, undef, undef, 1 );
-+			main::logger "\n$xml\n" if $opt->{debug};
-+			# get new set of connection attributes from the new xml data
-+			my $new_mattribs = (parse_metadata( $xml ))[0];
-+			my $new_cattribs = $new_mattribs->{connections}[0];
-+			# Override elemnts from more specific connection attribs if present
-+			for my $element ( keys %{ $new_cattribs } ) {
-+				$cattribs->{$element} = $new_cattribs->{$element} if $new_cattribs->{$element};
-+			}
-+		}
-+		decode_entities($cattribs->{authString});
-+
- 		# Common attributes
- 		# swfurl = Default iPlayer swf version
- 		my $conn = {
--			swfurl		=> "http://www.bbc.co.uk/emp/10player.swf?revision=15501_15796",
-+			swfurl		=> "http://www.bbc.co.uk/emp/10player.swf?revision=18269_19216",
- 			ext		=> $ext,
- 			streamer	=> $streamer,
- 			bitrate		=> $mattribs->{bitrate},
-@@ -5643,24 +5662,29 @@ sub get_stream_data_cdn {
- 				$conn->{authstring} = $cattribs->{authString};
- 			}
- 
-+			$conn->{playpath} = $cattribs->{identifier};
-+			$conn->{streamurl} = "rtmp://$cattribs->{server}:1935/$cattribs->{application}?_fcs_vhost=$cattribs->{server}&undefined";
-+			$conn->{application} = "$cattribs->{application}?_fcs_vhost=$cattribs->{server}&undefined";
-+
- 			if ( $cattribs->{authString} ) {
-+				if ( $cattribs->{authString} !~ /&aifp=/ ) {
-+					$cattribs->{authString} .= '&aifp=v001';
-+				}
-+
-+				if ( $cattribs->{authString} !~ /&slist=/ ) {
-+					$cattribs->{identifier} =~ s/^mp[34]://;
-+					$cattribs->{authString} .= '&slist=&cattribs->{identifier}';
-+				}
-+
- 				### ??? live and Live TV, Live EMP Video or Non-public EMP video:
--				$conn->{playpath} = "$cattribs->{identifier}?$cattribs->{authString}&aifp=v001";
-+				$conn->{playpath} .= "?$cattribs->{authString}";
-+				$conn->{streamurl} .= "&$cattribs->{authString}";
-+				$conn->{application} .= "&$cattribs->{authString}";
- 			} else {
--				$conn->{playpath} = $cattribs->{identifier};
-+				$conn->{streamurl} .= "&undefined";
-+				$conn->{application} .= "&undefined";
- 			}
--			if ( $cattribs->{authString} ) {
--				$conn->{streamurl} = "rtmp://$cattribs->{server}:1935/$cattribs->{application}?_fcs_vhost=$cattribs->{server}&auth=$cattribs->{authString}&aifp=v001&slist=$cattribs->{identifier}";
--			} else {
--				$conn->{streamurl} = "rtmp://$cattribs->{server}:1935/$cattribs->{application}?_fcs_vhost=$cattribs->{server}&undefined";
--			}
--			# Remove offending mp3/mp4: at the start of the identifier (don't remove in stream url)
--			$cattribs->{identifier} =~ s/^mp[34]://;
--			if ( $cattribs->{authString} ) {
--				$conn->{application} = "$cattribs->{application}?_fcs_vhost=$cattribs->{server}&$cattribs->{authString}&aifp=v001&slist=$cattribs->{identifier}";
--			} else {
--				$conn->{application} = "$cattribs->{application}?_fcs_vhost=$cattribs->{server}&undefined";
--			}
-+
- 			# Port 1935? for live?
- 			$conn->{tcurl} = "rtmp://$cattribs->{server}:80/$conn->{application}";
- 
-@@ -5828,6 +5852,10 @@ sub get_stream_data {
- 	my $mode;
- 	for my $mattribs ( @medias ) {
- 		
-+		# Put verpid into mattribs
-+		$mattribs->{verpid} = $verpid;
-+		$mattribs->{modelist} = $prog->modelist;
-+
- 		# New iphone stream
- 		if ( $mattribs->{service} eq 'iplayer_streaming_http_mp4' ) {
- 			# Fix/remove some audio stream attribs
-@@ -7944,12 +7972,15 @@ sub get {
- 	my $playpath 	= $streamdata{playpath};
- 	my $port 	= $streamdata{port} || $opt->{rtmpport} || 1935;
- 	my $protocol	= $streamdata{protocol} || 0;
-+	my $pageurl	= $prog->{player};
- 	my $mode	= $prog->{mode};
- 	push @cmdopts, ( split /\s+/, $streamdata{extraopts} ) if $streamdata{extraopts};
- 
- 	my $file_tmp;
- 	my @cmd;
- 	
-+	my $swfarg = "--swfUrl";
-+
- 	if ( $opt->{raw} ) {
- 		$file_tmp = $prog->{filepart};
- 	} else {
-@@ -7967,9 +7998,13 @@ sub get {
- 	}
- 
- 	# flvstreamer version detection e.g. 'FLVStreamer v1.8a'
--	my $rtmpver;
--	chomp( $rtmpver = (grep /^\w+\s+v?[\.\d]+.*$/i, `"$bin->{flvstreamer}" 2>&1`)[0] );
--	$rtmpver =~ s/^\w+\s+v?([\.\d]+).*$/$1/g;
-+	my $rtmpver = `"$bin->{flvstreamer}" --help 2>&1`;
-+	if ( $rtmpver =~ /swfVfy/ ) {
-+		$swfarg = "--swfVfy";
-+	} else {
-+		main::logger "WARNING: Your version of flvstreamer/rtmpdump does not support SWF Verification\n";
-+	}
-+	$rtmpver =~ s/^\w+\s+v?([\.\d]+)(.*\n)*$/$1/g;
- 	main::logger "INFO: $bin->{flvstreamer} version $rtmpver\n" if $opt->{verbose};
- 	main::logger "INFO: RTMP_URL: $url_2, tcUrl: $tcurl, application: $application, authString: $authstring, swfUrl: $swfurl, file: $prog->{filepart}, file_done: $prog->{filename}\n" if $opt->{verbose};
- 
-@@ -8012,9 +8047,10 @@ sub get {
- 			'--protocol', $protocol,
- 			'--playpath', $playpath,
- 			'--host', $server,
--			'--swfUrl', $swfurl,
-+			$swfarg, $swfurl,
- 			'--tcUrl', $tcurl,
- 			'--app', $application,
-+			'--pageUrl', $pageurl,
- 			@cmdopts,
- 		);
- 	# Using just streamurl (i.e. no playpath defined)
