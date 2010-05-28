@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_inputbar_cpp,v 1.1 2010/05/28 08:50:58 espie Exp $
+--- src/inputbar.cpp.orig	Fri May 28 03:01:39 2010
++++ src/inputbar.cpp	Fri May 28 03:04:44 2010
+@@ -22,6 +22,8 @@ extern "C" {
+ #include "workspace.h"
+ #include "xcore.h"
+ 
++static Sstring nothing;
++
+ InputBar::InputBar(Monitor *monitor, Rectangle *rect)
+     : Bar(monitor, rect)
+ {
+@@ -31,7 +33,7 @@ InputBar::InputBar(Monitor *monitor, Rectangle *rect)
+     prompt_ = 0;
+     promptCounter_ = 0;
+     isArgument_ = false;
+-    entryBegin_ = entryEnd_ = 0;
++    entryBegin_ = entryEnd_ = nothing.end();
+     partitionBegin_ = selected_ = entryBegin_;
+     args_ = "";
+     LOGDEBUG("creating input");
+@@ -233,7 +235,7 @@ void InputBar::queryText(string text) {
+         clearPrevPartitionsStack();
+     }
+     else {
+-        entryBegin_ = entryEnd_ = 0;
++        entryBegin_ = entryEnd_ = nothing.end();
+         partitionBegin_ = selected_ = entryBegin_;
+         text_ = text;
+     }
