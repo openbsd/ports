@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/05/23 09:34:41 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2010/05/28 14:48:34 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ SHARED_LIBS=	csirocsa	2.0	\
 
 PKGNAME-main=	${DISTNAME}p2
 PKGNAME-c++ =	plplot-c++-${VERSION}p2
-PKGNAME-f77=	plplot-f77-${VERSION}p4
+PKGNAME-f77=	plplot-f77-${VERSION}p5
 
 CATEGORIES=	math graphics
 
@@ -92,7 +92,7 @@ LIB_DEPENDS-c++ =	plplotd,csirocsa::math/plplot,-main \
 			${myLIB_DEPENDS}
 LIB_DEPENDS-f77=	plplotd,csirocsa::math/plplot,-main \
 			${myLIB_DEPENDS} \
-			${MODFORTRAN_LIBS_DEPENDS}
+			${MODFORTRAN_LIB_DEPENDS}
 
 RUN_DEPENDS-main=	${MODLIBICONV_RUN_DEPENDS} ${myRUN_DEPENDS}
 RUN_DEPENDS-c++ =
