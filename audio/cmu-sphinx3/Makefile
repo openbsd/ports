@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/23 13:11:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/05/28 14:50:04 naddy Exp $
 
 COMMENT=	acoustic decoder for CMU Sphinx3 speech recognition system
 
 DISTNAME=	sphinx3-0.8
-PKGNAME=	cmu-${DISTNAME}p2
+PKGNAME=	cmu-${DISTNAME}p3
 CATEGORIES=	audio
 
 SHARED_LIBS=	s3decoder	0.0
