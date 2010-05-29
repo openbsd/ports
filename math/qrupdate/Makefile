@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/05/14 08:45:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/05/29 15:28:50 naddy Exp $
 
 COMMENT =	library for fast updates of QR and Cholesky decompositions
 
 DISTNAME =	qrupdate-1.1.1
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 SHARED_LIBS +=  qrupdate	0.0	# .1.1
 CATEGORIES =	math
 
@@ -19,7 +19,13 @@ PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qrupdate/}
 
-WANTLIB +=		g2c m
+MODULES =		fortran
+MODFORTRAN_WANTG77 =	Yes
+
+WANTLIB =		m ${MODFORTRAN_WANTLIB}
+
+BUILD_DEPENDS =		${MODFORTRAN_BUILD_DEPENDS}
+LIB_DEPENDS =		${MODFORTRAN_LIB_DEPENDS}
 
 USE_GMAKE =		Yes
 NO_REGRESS =		Yes

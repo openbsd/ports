@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/08/10 06:31:45 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/05/29 15:27:21 naddy Exp $
 
 COMMENT=	ab initio MOLecular DENsity display program
 
 V=		4.6
 DISTNAME=	molden${V}
-PKGNAME=	molden-${V}p2
+PKGNAME=	molden-${V}p3
 CATEGORIES=	biology graphics
 
 HOMEPAGE=	http://www.cmbi.ru.nl/molden/molden.html
@@ -20,7 +20,13 @@ PERMIT_DISTFILES_FTP=	No
 
 MASTER_SITES=	ftp://ftp.cmbi.ru.nl/pub/molgraph/molden/
 
-WANTLIB=	GL GLU X11 Xmu c g2c m pthread-stubs xcb
+MODULES=	fortran
+MODFORTRAN_WANTG77=	Yes
+
+WANTLIB=	GL GLU X11 Xmu c m pthread-stubs xcb ${MODFORTRAN_WANTLIB}
+
+BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
+LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS}
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
