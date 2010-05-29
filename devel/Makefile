@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.802 2010/05/27 12:30:55 espie Exp $
+# $OpenBSD: Makefile,v 1.803 2010/05/29 23:11:03 robert Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -500,6 +500,7 @@
      SUBDIR += p5-IO-stringy
      SUBDIR += p5-IPC-Run
      SUBDIR += p5-IPC-Run3
+     SUBDIR += p5-IPC-Run-SafeHandles
      SUBDIR += p5-IPC-ShareLite
      SUBDIR += p5-IPC-Shareable
      SUBDIR += p5-Inline
