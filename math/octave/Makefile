@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/01/27 21:43:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2010/05/29 15:28:18 naddy Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -8,7 +8,7 @@ COMMENT=	high-level language for numerical computations
 
 VERSION=	3.0.5
 DISTNAME=	octave-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	math
 
 SHARED_LIBS=	cruft		5.0 \
@@ -25,19 +25,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c g2c m ncurses readline stdc++ z
+WANTLIB=	c m ncurses readline stdc++ z ${MODFORTRAN_WANTLIB}
 
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/ \
 		ftp://neacm.fe.up.pt/pub/octave/
 
-BUILD_DEPENDS=	::devel/desktop-file-utils
+MODULES=	fortran
+MODFORTRAN_WANTG77=Yes
+
+BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
+		::devel/desktop-file-utils
 RUN_DEPENDS=	::devel/gmake \
 		:desktop-file-utils-*:devel/desktop-file-utils
-LIB_DEPENDS=	fftw3.>=3::math/fftw3 \
+LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
+		fftw3.>=3::math/fftw3 \
 		lapack.>=3::math/lapack \
 		blas.>=1::math/blas \
 		amd::math/amd \
+		umfpack::math/umfpack \
 		pcre.>=1::devel/pcre \
 		curl.>=6::net/curl
 
