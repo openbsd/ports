@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/05/01 21:17:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2010/05/29 20:20:17 sthen Exp $
 
 COMMENT =		dump RTMP media streams
 
-DISTNAME =		rtmpdump-2.2d
-EXTRACT_SUFX =		.tgz
+DISTNAME =		rtmpdump-2.2e
+#EXTRACT_SUFX =		.tgz
 
 CATEGORIES =		net
 
@@ -20,7 +20,6 @@ WANTLIB =		c crypto pthread ssl z
 MASTER_SITES =		${HOMEPAGE}download/
 
 MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" OPT= THREADLIB=-pthread
-ALL_TARGET =		posix
 
 NO_REGRESS =		Yes
 
