@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2009/06/21 15:54:31 sthen Exp $
---- CMakeLists.txt.orig	Wed Jun 17 18:48:38 2009
-+++ CMakeLists.txt	Sun Jun 21 16:10:55 2009
-@@ -106,6 +106,7 @@ ENDIF(WIN32)
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2010/05/29 01:23:55 sthen Exp $
+--- CMakeLists.txt.orig	Tue Mar  2 23:17:21 2010
++++ CMakeLists.txt	Sat May  8 10:00:46 2010
+@@ -125,6 +125,7 @@ ENDIF(WIN32)
  #  finding the wxWidgets distributions of those packages (Win32 only).
  
  SET(wxWidgets_USE_LIBS base core xrc html xml adv gl net)
@@ -9,11 +9,3 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2009/06/21 15:54:31 sthen Exp $
  FIND_PACKAGE(wxWidgets REQUIRED)
  
  # hugin requires wxwidgets 2.7.0 or above
-@@ -248,6 +249,7 @@ ENDIF(${CMAKE_BUILD_TYPE} STREQUAL "Debug")
- SET(HUGINDATADIR share/hugin)
- SET(DATADIR share)
- SET(BINDIR  bin)
-+SET(MANDIR  man)
- SET(LOCALEDIR share/locale) 
- SET(ICONDIR share/icons) 
- SET(LINKDIR share/applications)

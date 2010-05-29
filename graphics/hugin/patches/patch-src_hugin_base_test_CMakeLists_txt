@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_hugin_base_test_CMakeLists_txt,v 1.1 2010/05/29 01:23:55 sthen Exp $
+--- src/hugin_base/test/CMakeLists.txt.orig	Sun Sep  6 23:25:34 2009
++++ src/hugin_base/test/CMakeLists.txt	Sun Sep  6 23:29:43 2009
+@@ -1,4 +1,4 @@
+ 
+ add_executable(open_file open_file.cpp)
+-target_link_libraries(open_file ${common_libs} ${image_libs})
++target_link_libraries(open_file ${wxWidgets_LIBRARIES} ${Boost_LIBRARIES} ${common_libs} ${image_libs})
+ 

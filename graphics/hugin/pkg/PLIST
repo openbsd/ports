@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/22 16:06:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/05/29 01:23:55 sthen Exp $
 %%SHARED%%
 @bin bin/PTBatcher
 @bin bin/PTBatcherGUI
 @bin bin/align_image_stack
 @bin bin/autooptimiser
+bin/autopano-noop.sh
+@bin bin/calibrate_lens
 @bin bin/celeste_standalone
+@bin bin/cpclean
+@bin bin/deghosting_mask
 @bin bin/fulla
 @bin bin/hugin
 @bin bin/hugin_hdrmerge
@@ -18,7 +22,10 @@
 @man man/man1/PTBatcherGUI.1
 @man man/man1/align_image_stack.1
 @man man/man1/autooptimiser.1
+@man man/man1/calibrate_lens.1
 @man man/man1/celeste_standalone.1
+@man man/man1/cpclean.1
+@man man/man1/deghosting_mask.1
 @man man/man1/fulla.1
 @man man/man1/hugin.1
 @man man/man1/hugin_hdrmerge.1
@@ -32,6 +39,8 @@ share/applications/PTBatcherGUI.desktop
 share/applications/hugin.desktop
 share/hugin/
 share/hugin/Makefile.equirect.mk
+share/hugin/data/
+share/hugin/data/celeste.model
 share/hugin/xrc/
 share/hugin/xrc/about.xrc
 share/hugin/xrc/assistant_panel.xrc
@@ -40,50 +49,31 @@ share/hugin/xrc/batch_menu.xrc
 share/hugin/xrc/batch_toolbar.xrc
 share/hugin/xrc/cp_editor_panel.xrc
 share/hugin/xrc/cp_list_frame.xrc
+share/hugin/xrc/cpdetector_dialog.xrc
 share/hugin/xrc/crop_panel.xrc
 share/hugin/xrc/data/
-share/hugin/xrc/data/1leftarrow.png
-share/hugin/xrc/data/1rightarrow.png
-share/hugin/xrc/data/CPCursor0.png
-share/hugin/xrc/data/CPCursor1.png
-share/hugin/xrc/data/CPCursor2.png
-share/hugin/xrc/data/CPCursor3.png
-share/hugin/xrc/data/CPCursor4.png
-share/hugin/xrc/data/CPCursor5.png
-share/hugin/xrc/data/CPCursor6.png
+share/hugin/xrc/data/COPYING
 share/hugin/xrc/data/about.htm
+share/hugin/xrc/data/about.txt
 share/hugin/xrc/data/add_project.png
 share/hugin/xrc/data/add_projects.png
-share/hugin/xrc/data/celeste.model
+share/hugin/xrc/data/autocrop_tool.png
 share/hugin/xrc/data/center_pano.png
-share/hugin/xrc/data/center_pano.xpm
-share/hugin/xrc/data/close.xpm
-share/hugin/xrc/data/crop_tool.png
-share/hugin/xrc/data/document-new.png
-share/hugin/xrc/data/document-open.png
-share/hugin/xrc/data/drag_tool.png
+share/hugin/xrc/data/crop_tool_small.png
+share/hugin/xrc/data/drag_tool_small.png
 share/hugin/xrc/data/druid.control.128.png
 share/hugin/xrc/data/druid.images.128.png
 share/hugin/xrc/data/druid.lenses.128.png
 share/hugin/xrc/data/druid.optimize.128.png
 share/hugin/xrc/data/druid.stitch.128.png
 share/hugin/xrc/data/edit_add.png
-share/hugin/xrc/data/editcopy.png
-share/hugin/xrc/data/editcut.png
-share/hugin/xrc/data/editdelete.png
-share/hugin/xrc/data/editpaste.png
-share/hugin/xrc/data/emblem-symbolic-link.png
-share/hugin/xrc/data/emblem-unreadable.png
 share/hugin/xrc/data/filenew.png
 share/hugin/xrc/data/fileopen.png
 share/hugin/xrc/data/filesave.png
 share/hugin/xrc/data/filesaveas.png
-share/hugin/xrc/data/find.png
 share/hugin/xrc/data/fit_pano.png
-share/hugin/xrc/data/fit_pano.xpm
-share/hugin/xrc/data/folder-saved-search.png
 share/hugin/xrc/data/gl_preview.png
-share/hugin/xrc/data/go-jump.png
+share/hugin/xrc/data/gl_preview_small.png
 share/hugin/xrc/data/help_en_EN/
 share/hugin/xrc/data/help_en_EN/0a647fdd7aa9d6bbb8633f8f034bb50e.png
 share/hugin/xrc/data/help_en_EN/100px-Big_ben_transverse_mercator.jpg
@@ -105,6 +95,7 @@ share/hugin/xrc/data/help_en_EN/150px-Ben_Orthographic.jpg
 share/hugin/xrc/data/help_en_EN/150px-Big_ben_fisheye.jpg
 share/hugin/xrc/data/help_en_EN/150px-Big_ben_rectilinear.jpg
 share/hugin/xrc/data/help_en_EN/150px-Big_ben_stereographic.jpg
+share/hugin/xrc/data/help_en_EN/16bit.html
 share/hugin/xrc/data/help_en_EN/16bit_workflow_with_hugin.html
 share/hugin/xrc/data/help_en_EN/17af7474cdfd5abe24fd07eb58810dba.png
 share/hugin/xrc/data/help_en_EN/180px-2125768589_b.jpg
@@ -114,6 +105,7 @@ share/hugin/xrc/data/help_en_EN/180px-Fast_preview_guide_identify.png
 share/hugin/xrc/data/help_en_EN/180px-Fast_preview_guide_rotate_drag.png
 share/hugin/xrc/data/help_en_EN/180px-Fast_preview_guide_start.png
 share/hugin/xrc/data/help_en_EN/180px-Focal_length.gif
+share/hugin/xrc/data/help_en_EN/180px-LagardePont-fish.jpg
 share/hugin/xrc/data/help_en_EN/180px-Lamp_enfuse.jpg
 share/hugin/xrc/data/help_en_EN/1f09c25c5247c1eaf121df644ca42f8c.png
 share/hugin/xrc/data/help_en_EN/200px-Ben_Architectural.jpg
@@ -128,26 +120,34 @@ share/hugin/xrc/data/help_en_EN/200px-Big_ben_mercator.jpg
 share/hugin/xrc/data/help_en_EN/200px-Bin_ben_sinusoidal.jpg
 share/hugin/xrc/data/help_en_EN/200px-Panoglview.png
 share/hugin/xrc/data/help_en_EN/21cb21c7c1de5b4c61da90794c62bc1a.png
+share/hugin/xrc/data/help_en_EN/220px-Ben_Equirectangular_panini.jpg
+share/hugin/xrc/data/help_en_EN/22px-Fast_preview_icon_autocrop.svg.png
 share/hugin/xrc/data/help_en_EN/22px-Fast_preview_icon_crop.svg.png
 share/hugin/xrc/data/help_en_EN/22px-Fast_preview_icon_drag.svg.png
 share/hugin/xrc/data/help_en_EN/22px-Fast_preview_icon_identify.svg.png
 share/hugin/xrc/data/help_en_EN/22px-Fast_preview_icon_photometric.svg.png
+share/hugin/xrc/data/help_en_EN/22px-Show_Control_Points_Button.svg.png
 share/hugin/xrc/data/help_en_EN/24597ccab188a3598a0828c69e380228.png
 share/hugin/xrc/data/help_en_EN/250px-Cubic.jpg
 share/hugin/xrc/data/help_en_EN/250px-Cylindrical.JPG
 share/hugin/xrc/data/help_en_EN/250px-Equirectangular.JPG
 share/hugin/xrc/data/help_en_EN/250px-Equirectangular_cut.jpg
+share/hugin/xrc/data/help_en_EN/250px-LagardePont-defish.jpg
 share/hugin/xrc/data/help_en_EN/250px-Little_planet.jpg
 share/hugin/xrc/data/help_en_EN/250px-Orientation-plate.jpg
 share/hugin/xrc/data/help_en_EN/250px-Rectlinear.JPG
+share/hugin/xrc/data/help_en_EN/250px-TKS-Mmm-obliquev120-gP70_50_50.png
+share/hugin/xrc/data/help_en_EN/250px-TKS-Mmm-obliquev120-recti.png
 share/hugin/xrc/data/help_en_EN/29e2300eb2f198d830f04682f14872e2.png
 share/hugin/xrc/data/help_en_EN/3016f25d3d1249eab1305b78b0b82d3d.png
 share/hugin/xrc/data/help_en_EN/312418a7fcf9d47adc8e5683e89c58cd.png
 share/hugin/xrc/data/help_en_EN/38d368a092f7d5a4d2b42bdf4d0dd89c.png
 share/hugin/xrc/data/help_en_EN/3d6de401d007ea0cffc99610ad623239.png
+share/hugin/xrc/data/help_en_EN/400px-220x120deg-panini-grid.png
 share/hugin/xrc/data/help_en_EN/428px-Local-analysis-window.png
 share/hugin/xrc/data/help_en_EN/44ab04cdf6dce93c3e7a7cb1d00e8c83.png
 share/hugin/xrc/data/help_en_EN/4d2df1ec22beeb53124bd8941ea0db11.png
+share/hugin/xrc/data/help_en_EN/4d4d22d9c63b47c6f8fb7825ec5cd1db.png
 share/hugin/xrc/data/help_en_EN/4e84c278c8ff9bd39bd309031bd3fab4.png
 share/hugin/xrc/data/help_en_EN/4f16f3edffeeede179fcfeedd155175c.png
 share/hugin/xrc/data/help_en_EN/531px-Smooth-edge.png
@@ -164,13 +164,16 @@ share/hugin/xrc/data/help_en_EN/600px-Tuebingen_Neckarfront_withdustspots_small1
 share/hugin/xrc/data/help_en_EN/602px-Entropy-cutoff.png
 share/hugin/xrc/data/help_en_EN/687431209ed4a8feab0c151b622ef1e0.png
 share/hugin/xrc/data/help_en_EN/6e1e330821217bd2d14c40ea21747a03.png
+share/hugin/xrc/data/help_en_EN/700px-Autopano-done.png
 share/hugin/xrc/data/help_en_EN/7410666dfcbeeaa522ddf92427bc74ba.png
 share/hugin/xrc/data/help_en_EN/7a62f58ab1c3f78523eee522e71a9416.png
 share/hugin/xrc/data/help_en_EN/7ab63d1bb57f091d55507c4c4c582f03.png
+share/hugin/xrc/data/help_en_EN/800px-C_Marchi-GrandCentral-adj.jpg
 share/hugin/xrc/data/help_en_EN/81b4c8dd7cbec41cae5ef37da5644e99.png
 share/hugin/xrc/data/help_en_EN/84aad7e0b33f2a1c47ed32902df4f3f3.png
 share/hugin/xrc/data/help_en_EN/89539baed8c394f4b6eea437f16b047d.png
 share/hugin/xrc/data/help_en_EN/8c2849b63c6f416da3d028b8f8584027.png
+share/hugin/xrc/data/help_en_EN/91ae7fc8fc2b7701135c69552e7379ed.png
 share/hugin/xrc/data/help_en_EN/98dda29ec0838b4a60698e962d90cd03.png
 share/hugin/xrc/data/help_en_EN/Aliasing.html
 share/hugin/xrc/data/help_en_EN/AliasingPScubic.jpg
@@ -182,6 +185,9 @@ share/hugin/xrc/data/help_en_EN/Align_image_stack.html
 share/hugin/xrc/data/help_en_EN/Alpha_channel.html
 share/hugin/xrc/data/help_en_EN/Aspect_Ratio.html
 share/hugin/xrc/data/help_en_EN/Autooptimiser.html
+share/hugin/xrc/data/help_en_EN/Autopano-align.png
+share/hugin/xrc/data/help_en_EN/Autopano-prefs.png
+share/hugin/xrc/data/help_en_EN/Autopano-searching.png
 share/hugin/xrc/data/help_en_EN/Autopano-sift-C.html
 share/hugin/xrc/data/help_en_EN/Autopano-sift.html
 share/hugin/xrc/data/help_en_EN/Autopano.html
@@ -221,7 +227,10 @@ share/hugin/xrc/data/help_en_EN/Celeste_standalone.html
 share/hugin/xrc/data/help_en_EN/Chromatic_aberration.html
 share/hugin/xrc/data/help_en_EN/Color_correct_tiff.html
 share/hugin/xrc/data/help_en_EN/Colour_profile.html
+share/hugin/xrc/data/help_en_EN/Contrast.html
+share/hugin/xrc/data/help_en_EN/Control_point_generators.html
 share/hugin/xrc/data/help_en_EN/Control_points.html
+share/hugin/xrc/data/help_en_EN/Cpclean.html
 share/hugin/xrc/data/help_en_EN/Crop_factor.html
 share/hugin/xrc/data/help_en_EN/Cropped_TIFF.html
 share/hugin/xrc/data/help_en_EN/Cubic.html
@@ -229,6 +238,7 @@ share/hugin/xrc/data/help_en_EN/Cubic_Projection.html
 share/hugin/xrc/data/help_en_EN/Cylindrical.html
 share/hugin/xrc/data/help_en_EN/Cylindrical_Projection.html
 share/hugin/xrc/data/help_en_EN/Cylindrical_panorama.html
+share/hugin/xrc/data/help_en_EN/DSLR_spherical_resolution.html
 share/hugin/xrc/data/help_en_EN/Depth_of_Field.html
 share/hugin/xrc/data/help_en_EN/Dust_Removal_with_Flatfield.html
 share/hugin/xrc/data/help_en_EN/Dynamic_range.html
@@ -312,6 +322,7 @@ share/hugin/xrc/data/help_en_EN/Landscape.html
 share/hugin/xrc/data/help_en_EN/Laplacian-of-gaussian.png
 share/hugin/xrc/data/help_en_EN/Lens_correction_model.html
 share/hugin/xrc/data/help_en_EN/Lens_distortion.html
+share/hugin/xrc/data/help_en_EN/Lightprobe.html
 share/hugin/xrc/data/help_en_EN/Local-analysis-window.png
 share/hugin/xrc/data/help_en_EN/MatchPoint.html
 share/hugin/xrc/data/help_en_EN/Medinet_habu_horizontal_fisheye.jpg
@@ -345,6 +356,7 @@ share/hugin/xrc/data/help_en_EN/Parallax.gif
 share/hugin/xrc/data/help_en_EN/Parallax.html
 share/hugin/xrc/data/help_en_EN/Perspective_correction.html
 share/hugin/xrc/data/help_en_EN/Perspective_distortion.html
+share/hugin/xrc/data/help_en_EN/Pfstmo.html
 share/hugin/xrc/data/help_en_EN/Pincushion-distortion.jpg
 share/hugin/xrc/data/help_en_EN/Pincushion_distortion.html
 share/hugin/xrc/data/help_en_EN/Pitch.html
@@ -352,18 +364,25 @@ share/hugin/xrc/data/help_en_EN/Portrait.html
 share/hugin/xrc/data/help_en_EN/Projections.html
 share/hugin/xrc/data/help_en_EN/Pto2mk.html
 share/hugin/xrc/data/help_en_EN/QTVR.html
+share/hugin/xrc/data/help_en_EN/Qtvr2img.html
 share/hugin/xrc/data/help_en_EN/RAW.html
 share/hugin/xrc/data/help_en_EN/RGBE.html
 share/hugin/xrc/data/help_en_EN/RatingStar_002.jpg
 share/hugin/xrc/data/help_en_EN/Rectilinear_Projection.html
 share/hugin/xrc/data/help_en_EN/Roll.html
+share/hugin/xrc/data/help_en_EN/SB_Blended.jpg
+share/hugin/xrc/data/help_en_EN/SB_Parallax.jpg
+share/hugin/xrc/data/help_en_EN/SB_Parallax_overlapped.jpg
 share/hugin/xrc/data/help_en_EN/Sharp-edge.png
+share/hugin/xrc/data/help_en_EN/SmartBlend.html
 share/hugin/xrc/data/help_en_EN/Smooth-edge.png
 share/hugin/xrc/data/help_en_EN/Spherical.html
 share/hugin/xrc/data/help_en_EN/Stereographic_Projection.html
 share/hugin/xrc/data/help_en_EN/Straight_line_control_points.html
+share/hugin/xrc/data/help_en_EN/Swing_rod.html
 share/hugin/xrc/data/help_en_EN/TIFF.html
 share/hugin/xrc/data/help_en_EN/Tca_correct.html
+share/hugin/xrc/data/help_en_EN/The_General_Panini_Projection.html
 share/hugin/xrc/data/help_en_EN/Tone_mapping.html
 share/hugin/xrc/data/help_en_EN/Using_Celeste_with_hugin.html
 share/hugin/xrc/data/help_en_EN/Vertical-fisheye.jpg
@@ -376,6 +395,7 @@ share/hugin/xrc/data/help_en_EN/Yaw.html
 share/hugin/xrc/data/help_en_EN/Zenith.html
 share/hugin/xrc/data/help_en_EN/a70d0c9b2e529c999ec05569e1638668.png
 share/hugin/xrc/data/help_en_EN/a957404c96e59f1746f97ab668c8e1f8.png
+share/hugin/xrc/data/help_en_EN/ab807c8735d25a66b577b029bc0e568f.png
 share/hugin/xrc/data/help_en_EN/b27abc434a11d07b390df859d7aa782a.png
 share/hugin/xrc/data/help_en_EN/b79407c343611ecb4ce1d32612c4450e.png
 share/hugin/xrc/data/help_en_EN/bfe8b8159acf66b3ea23c52611fb819a.png
@@ -390,6 +410,7 @@ share/hugin/xrc/data/help_en_EN/de5e907611af21c23afe7d0e24d2c1ae.png
 share/hugin/xrc/data/help_en_EN/e49f330a1a85dbab8724c8177de38cb0.png
 share/hugin/xrc/data/help_en_EN/f103730f19548bcf3e7bc170fb1f7860.png
 share/hugin/xrc/data/help_en_EN/f44fbe128fd280b77a856b2275d7a655.png
+share/hugin/xrc/data/help_en_EN/fa5313ae442c1ac7f832c141880e3e74.png
 share/hugin/xrc/data/help_en_EN/fd9eb36b9149cc4e2efebd10bdc4fdf2.png
 share/hugin/xrc/data/help_en_EN/hugin.hhc
 share/hugin/xrc/data/help_en_EN/hugin.hhk
@@ -526,57 +547,38 @@ share/hugin/xrc/data/icon_64x64.ico
 share/hugin/xrc/data/icon_72x72.ico
 share/hugin/xrc/data/icon_96x96.ico
 share/hugin/xrc/data/identify_tool.png
-share/hugin/xrc/data/image-missing.png
+share/hugin/xrc/data/identify_tool_small.png
 share/hugin/xrc/data/info.png
-share/hugin/xrc/data/info.xpm
 share/hugin/xrc/data/keyboard_pl.html
-share/hugin/xrc/data/list-add.png
-share/hugin/xrc/data/list-remove.png
 share/hugin/xrc/data/list.png
 share/hugin/xrc/data/logo.png
-share/hugin/xrc/data/manual.html
-share/hugin/xrc/data/media-floppy.png
-share/hugin/xrc/data/media-playback-pause.png
-share/hugin/xrc/data/media-playback-start.png
-share/hugin/xrc/data/media-playback-stop.png
-share/hugin/xrc/data/media-skip-forward.png
 share/hugin/xrc/data/nona_enblend.mk
 share/hugin/xrc/data/nona_multilayer.mk
 share/hugin/xrc/data/nona_smartblend.mk
 share/hugin/xrc/data/optimize.png
-share/hugin/xrc/data/optimize.xpm
 share/hugin/xrc/data/pause.png
-share/hugin/xrc/data/photometric.png
 share/hugin/xrc/data/preview.png
 share/hugin/xrc/data/preview_auto_update.png
 share/hugin/xrc/data/preview_num_transform.png
 share/hugin/xrc/data/preview_show_all.png
 share/hugin/xrc/data/preview_show_none.png
-share/hugin/xrc/data/print.xpm
-share/hugin/xrc/data/process-stop.png
-share/hugin/xrc/data/process-stop16.png
-share/hugin/xrc/data/process-stop22.png
 share/hugin/xrc/data/ptmender_enblend.mk
 share/hugin/xrc/data/ptmender_smartblend.mk
 share/hugin/xrc/data/redo.png
 share/hugin/xrc/data/reload.png
 share/hugin/xrc/data/remove_project.png
-share/hugin/xrc/data/searchfind.xpm
 share/hugin/xrc/data/skip.png
 share/hugin/xrc/data/splash.png
+share/hugin/xrc/data/sponsors.htm
 share/hugin/xrc/data/start.png
 share/hugin/xrc/data/stop.png
 share/hugin/xrc/data/straighten_pano.png
-share/hugin/xrc/data/straighten_pano.xpm
 share/hugin/xrc/data/tips.txt
+share/hugin/xrc/data/transparent.png
 share/hugin/xrc/data/undo.png
-share/hugin/xrc/data/zoomin.xpm
-share/hugin/xrc/data/zoomout.xpm
+share/hugin/xrc/data/upstream.txt
 share/hugin/xrc/edit_script_dialog.xrc
-share/hugin/xrc/edit_text.xrc
-share/hugin/xrc/help.xrc
 share/hugin/xrc/images_panel.xrc
-share/hugin/xrc/keyboard_help.xrc
 share/hugin/xrc/lens_panel.xrc
 share/hugin/xrc/main_frame.xrc
 share/hugin/xrc/main_menu.xrc
@@ -587,8 +589,6 @@ share/hugin/xrc/pano_panel.xrc
 share/hugin/xrc/pref_dialog.xrc
 share/hugin/xrc/preview_frame.xrc
 share/hugin/xrc/reset_dialog.xrc
-share/hugin/xrc/run_optimizer_frame.xrc
-share/hugin/xrc/run_stitcher_frame.xrc
 share/hugin/xrc/vig_corr_dlg.xrc
 share/icons/
 share/icons/gnome/
@@ -607,6 +607,7 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/hugin.mo
 share/locale/es/LC_MESSAGES/hugin.mo
+share/locale/fi/LC_MESSAGES/hugin.mo
 share/locale/fr/LC_MESSAGES/hugin.mo
 share/locale/hu/LC_MESSAGES/hugin.mo
 share/locale/it/LC_MESSAGES/hugin.mo
