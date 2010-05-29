@@ -1,16 +1,16 @@
-$OpenBSD: patch-config_layout,v 1.1.1.1 2007/03/19 23:42:21 msf Exp $
---- config.layout.orig	Wed Jul 19 06:51:35 2006
-+++ config.layout	Sun Dec 10 16:54:42 2006
+$OpenBSD: patch-config_layout,v 1.2 2010/05/29 13:25:06 robert Exp $
+--- config.layout.orig	Mon Oct 19 21:55:31 2009
++++ config.layout	Sun Nov  8 12:37:59 2009
 @@ -84,6 +84,28 @@
    customlibdir:		${customdir}/lib
  </Layout>
  
 +<Layout OpenBSD>
-+  prefix:		%%PREFIX%%
-+  exec_prefix:		%%PREFIX%%
++  prefix:		/usr/local
++  exec_prefix:		/usr/local
 +  bindir:		${exec_prefix}/bin
 +  sbindir:		${exec_prefix}/sbin
-+  sysconfdir:		%%SYSCONFDIR%%+
++  sysconfdir:		/etc+
 +  mandir:		${prefix}/man
 +  libdir:		${prefix}/libdata/perl5/site_perl
 +  datadir:		${prefix}/share+

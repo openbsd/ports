@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.5 2010/05/29 13:25:06 robert Exp $
 
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-3.6.3
-PKGNAME=		${DISTNAME}p1
+DISTNAME=		rt-3.8.8
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.bestpractical.com/rt/
@@ -15,12 +14,19 @@ MASTER_SITES=		http://www.fsck.com/pub/rt/release/ \
 
 RUN_DEPENDS=		::converters/p5-Calendar-Simple \
 			::databases/p5-DBIx-SearchBuilder \
+			::devel/p5-Data-ICal \
+			::devel/p5-Date-ICal \
+			::devel/p5-File-ShareDir \
+			::devel/p5-IPC-Run \
+			::devel/p5-IPC-Run-SafeHandles \
 			::devel/p5-Locale-Maketext-Fuzzy \
 			::devel/p5-Locale-Maketext-Lexicon \
 			::devel/p5-Log-Dispatch \
 			::devel/p5-MLDBM \
 			::devel/p5-Module-Refresh \
 			::devel/p5-Module-Versions-Report \
+			::devel/p5-Net-Server \
+			::devel/p5-PerlIO-eol \
 			::devel/p5-Term-ReadKey \
 			::devel/p5-Test-Inline \
 			::devel/p5-Test-WWW-Mechanize \
@@ -29,7 +35,11 @@ RUN_DEPENDS=		::converters/p5-Calendar-Simple \
 			::devel/p5-Time-TimeDate \
 			::devel/p5-Universal-require \
 			::graphics/p5-GD-Graph \
+			::mail/p5-MIME-Types \
 			::mail/p5-MIME-tools \
+			::mail/p5-Email-Address \
+			::math/p5-GraphViz \
+			::security/p5-GnuPG-Interface \
 			::textproc/p5-Regexp-Common \
 			::textproc/p5-Text-Quoted \
 			::textproc/p5-Text-Template \
@@ -37,10 +47,13 @@ RUN_DEPENDS=		::converters/p5-Calendar-Simple \
 			::textproc/p5-Text-Wrapper \
 			::textproc/p5-XML-RSS \
 			::textproc/p5-XML-Simple \
+			::www/fcgi \
 			::www/p5-Apache-DBI \
 			::www/p5-Apache-Session \
 			::www/p5-Apache-Test \
+			::www/p5-CSS-Squish \
 			::www/p5-HTML-Format \
+			::www/p5-HTML-RewriteAttributes \
 			::www/p5-HTML-Scrubber \
 			::www/p5-HTTP-Server-Simple-Mason 
 
@@ -56,8 +69,17 @@ PKG_ARCH=		*
 
 CONFIGURE_STYLE=	gnu
 
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
+
 CONFIGURE_ARGS=		--with-rt-group=bin \
-			--enable-layout=OpenBSD
+			--enable-layout=OpenBSD \
+			--enable-gpg \
+			--enable-graphviz \
+			--enable-gd
+
+LIB_DEPENDS=		::security/gnupg \
+			::graphics/gd \
+			::math/graphviz,-main
 
 FLAVORS=		pgsql sqlite
 FLAVOR?=
