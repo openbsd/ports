@@ -1,6 +1,6 @@
-$OpenBSD: p-build_include_xview_private_ps_impl_h,v 1.1 2010/05/28 08:32:14 espie Exp $
---- build/include/xview_private/ps_impl.h.orig	Fri May 28 03:35:17 2010
-+++ build/include/xview_private/ps_impl.h	Fri May 28 03:35:50 2010
+$OpenBSD: p-lib_libxview_textsw_ps_impl_h,v 1.1 2010/05/30 20:32:36 espie Exp $
+--- lib/libxview/textsw/ps_impl.h.orig	Tue Jun 29 07:17:31 1993
++++ lib/libxview/textsw/ps_impl.h	Fri May 28 10:49:21 2010
 @@ -134,7 +134,5 @@ struct deleted_piece {
  #define	SCRATCH_HAS_WRAPPED(_private)					\
  	((_private)->scratch_length > (_private)->scratch_max_len)
