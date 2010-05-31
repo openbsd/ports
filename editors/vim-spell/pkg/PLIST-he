@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-he,v 1.1.1.1 2010/05/31 23:06:46 stsp Exp $
+@comment share/vim/72/
+@comment share/vim/72/spell/
+share/vim/vim72/spell/he.iso-8859-8.spl
+share/vim/vim72/spell/he.utf-8.spl

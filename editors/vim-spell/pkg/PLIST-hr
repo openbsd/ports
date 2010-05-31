@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-hr,v 1.1.1.1 2010/05/31 23:06:46 stsp Exp $
+@comment share/vim/72/
+@comment share/vim/72/spell/
+share/vim/vim72/spell/hr.cp1250.spl
+share/vim/vim72/spell/hr.iso-8859-2.spl
+share/vim/vim72/spell/hr.utf-8.spl

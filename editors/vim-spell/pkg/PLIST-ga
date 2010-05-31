@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-ga,v 1.1.1.1 2010/05/31 23:06:46 stsp Exp $
+@comment share/vim/72/
+@comment share/vim/72/spell/
+share/vim/vim72/spell/ga.latin1.spl
+share/vim/vim72/spell/ga.utf-8.spl

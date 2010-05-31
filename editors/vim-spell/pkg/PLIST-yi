@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-yi,v 1.1.1.1 2010/05/31 23:06:46 stsp Exp $
+@comment share/vim/72/
+@comment share/vim/72/spell/
+share/vim/vim72/spell/yi-tr.utf-8.spl
+share/vim/vim72/spell/yi.latin1.spl
+share/vim/vim72/spell/yi.utf-8.spl
