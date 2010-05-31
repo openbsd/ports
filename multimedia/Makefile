@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/02/01 17:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2010/05/31 16:57:04 jasper Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -40,6 +40,7 @@
      SUBDIR += subrip
      SUBDIR += subtitleripper
      SUBDIR += transcode
+     SUBDIR += vitunes
      SUBDIR += x264
      SUBDIR += xine-lib
      SUBDIR += xine-ui
