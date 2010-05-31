@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_h,v 1.1 2009/09/24 04:57:08 form Exp $
---- test.h.orig	Tue Sep 22 07:35:46 2009
-+++ test.h	Thu Sep 24 11:05:00 2009
-@@ -348,4 +348,4 @@
+$OpenBSD: patch-test_h,v 1.2 2010/05/31 07:35:55 form Exp $
+--- test.h.orig	Wed Apr 28 19:11:15 2010
++++ test.h	Mon May 31 03:48:13 2010
+@@ -364,4 +364,4 @@ extern struct mem_info_t mem_info;
  #define CPM_SEQ    3
  
  #endif /* __ASSEMBLY__ */

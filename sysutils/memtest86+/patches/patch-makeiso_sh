@@ -1,8 +1,7 @@
-$OpenBSD: patch-makeiso_sh,v 1.2 2009/09/24 04:57:08 form Exp $
-$RuOBSD: patch-makeiso_sh,v 1.2 2009/02/08 07:32:31 form Exp $
---- makeiso.sh.orig	Thu Sep 24 11:10:56 2009
-+++ makeiso.sh	Thu Sep 24 11:16:23 2009
-@@ -1,24 +1,22 @@
+$OpenBSD: patch-makeiso_sh,v 1.3 2010/05/31 07:35:55 form Exp $
+--- makeiso.sh.orig	Wed Apr 28 19:13:14 2010
++++ makeiso.sh	Mon May 31 04:05:02 2010
+@@ -1,23 +1,19 @@
  #!/bin/sh
  
 -# check to see if the correct tools are installed
@@ -18,7 +17,6 @@ $RuOBSD: patch-makeiso_sh,v 1.2 2009/02/08 07:32:31 form Exp $
 -done
 +PATH=/bin:/usr/bin:/sbin:/usr/sbin
 +export PATH
-+set -e
  
  #check to see if memtest.bin is present
 -if [ ! -w memtest.bin ]; then 
@@ -29,15 +27,13 @@ $RuOBSD: patch-makeiso_sh,v 1.2 2009/02/08 07:32:31 form Exp $
  
 +#check to see if memtest_s.bin is present
 +if [ ! -r memtest_s.bin ]; then 
-+	echo "makeiso.sh error: cannot find memtest_s.bin, did you compile it?" >&2
++	echo "makeiso.sh error: cannot find memtest_s.bin, did you compile it?" >&2 
 +	exit 1
 +fi
  
-+
  # enlarge the size of memtest.bin
  SIZE=$(wc -c memtest.bin | awk '{print $1}')
- FILL=$((1474560 - $SIZE))
-@@ -26,20 +24,29 @@
+@@ -26,20 +22,30 @@ dd if=/dev/zero of=fill.tmp bs=$FILL count=1
  cat memtest.bin fill.tmp > memtest.img
  rm -f fill.tmp
  
@@ -60,19 +56,19 @@ $RuOBSD: patch-makeiso_sh,v 1.2 2009/02/08 07:32:31 form Exp $
 -echo -e "Just boot from this CD and Memtest86+ will launch" >> README.TXT
 +echo "There is nothing to do here!" > README.TXT
 +echo >> README.TXT
-+echo "Memtest86+ is located on the bootsector of this CD." >> README.TXT
++echo "Memtest86+ ${V-4.10} is located on the bootsector of this CD." >> README.TXT
 +echo "Just boot from this CD and Memtest86+ will launch." >> README.TXT
  
--mkisofs -A "MKISOFS 1.1.2" -p "Memtest86+ 4.00" -publisher "Samuel D. <sdemeule@memtest.org>" -b boot/memtest.img -c boot/boot.catalog -V "MT201" -o memtest.iso .
--mv memtest.iso ../mt400.iso
+-mkisofs -A "MKISOFS 1.1.2" -p "Memtest86+ 4.10" -publisher "Samuel D. <sdemeule@memtest.org>" -b boot/memtest.img -c boot/boot.catalog -V "MT410" -o memtest.iso .
+-mv memtest.iso ../mt410.iso
 -cd ..
 -rm -rf cd
--
--echo "Done! Memtest86+ 4.00 ISO is mt400.iso"
 +mv ../memtest.img boot
-+mkhybrid -J -V "Memtest86+ 2.11" -b boot/memtest.img -c boot/boot.catalog \
++mkhybrid -J -V "Memtest86+ ${V-4.10}" -b boot/memtest.img -c boot/boot.catalog \
 +    -hide boot -hide-joliet boot -o ../memtest.iso .
 +rm -f boot/*
+ 
+-echo "Done! Memtest86+ 4.10 ISO is mt410.iso"
 +mv ../memtest_s.img boot
-+mkhybrid -J -V "Memtest86+ 2.11" -b boot/memtest_s.img -c boot/boot.catalog \
++mkhybrid -J -V "Memtest86+ ${V-4.10}" -b boot/memtest_s.img -c boot/boot.catalog \
 +    -hide boot -hide-joliet boot -o ../memtest_s.iso .

@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_c,v 1.1.1.1 2009/02/09 14:54:40 form Exp $
+$OpenBSD: patch-test_c,v 1.2 2010/05/31 07:35:55 form Exp $
 $RuOBSD: patch-test_c,v 1.1.1.1 2008/07/12 19:00:53 form Exp $
---- test.c.orig	Thu Feb 21 17:26:05 2008
-+++ test.c	Mon Mar 24 22:07:16 2008
+--- test.c.orig	Wed Apr 28 19:11:15 2010
++++ test.c	Mon May 31 03:48:12 2010
 @@ -11,7 +11,7 @@
  
  #include "test.h"
@@ -9,9 +9,9 @@ $RuOBSD: patch-test_c,v 1.1.1.1 2008/07/12 19:00:53 form Exp $
 -#include <sys/io.h>
 +#include "io.h"
  #include "dmi.h"
+ #include <inttypes.h>
  
- extern int segs, bail;
-@@ -1407,18 +1407,18 @@ void beep(unsigned int frequency)
+@@ -1414,18 +1414,18 @@ void beep(unsigned int frequency)
  	unsigned int count = 1193180 / frequency;
  
  	// Switch on the speaker

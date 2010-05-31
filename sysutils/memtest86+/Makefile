@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/24 04:57:08 form Exp $
+# $OpenBSD: Makefile,v 1.3 2010/05/31 07:35:55 form Exp $
 # $RuOBSD: Makefile,v 1.4 2009/02/07 10:28:55 form Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
 COMMENT=		thorough, stand alone memory test
-VERSION=		4.00
+VERSION=		4.10
 DISTNAME=		memtest86+-${VERSION}
 CATEGORIES=		sysutils
 
@@ -22,6 +22,8 @@ MASTER_SITES=		${HOMEPAGE}/download/${VERSION}/
 
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
+
+MAKE_ENV=		V=${VERSION}
 
 post-build:
 	@cd ${WRKBUILD} && sh ${WRKDIST}/makeiso.sh
