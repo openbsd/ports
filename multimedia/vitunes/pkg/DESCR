@@ -1,0 +1,13 @@
+vitunes is a curses-based music player and playlist manager for *nix 
+whose goals are: 
+
+1. a minimalistic appearance
+2. strong vi-like bindings
+3. quick playlist creation/management.
+
+vitunes does not strive to be a full-blown media player, but rather 
+a full-blown media indexer and playlist manager.
+Additionally, vitunes never needs write-access to anything outside 
+of its work directory (default is ~/.vitunes/).
+It never touches/modifies anything outside of there and doesn't leave 
+junk files anywhere. 

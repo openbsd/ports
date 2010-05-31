@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/31 10:11:11 laurent Exp $
+@bin bin/vitunes
+@man man/man1/vitunes.1
