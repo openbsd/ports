@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2008/10/04 16:08:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2010/05/31 17:12:49 espie Exp $
 
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
@@ -10,11 +10,8 @@ COMMENT-slovak=		ispell dictionary for Slovak
 COMMENT-spanish=	ispell dictionary for Spanish
 COMMENT-swedish=	ispell dictionary for Swedish
 
-PATCHLEVEL=	p4
-
 VERSION=	3.2.06
 DISTNAME=	ispell-${VERSION}
-PKGNAME-main=	${DISTNAME}${PATCHLEVEL}
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://fmg-www.cs.ucla.edu/geoff/ispell.html
@@ -61,10 +58,11 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 
 SUBST_VARS+=	VERSION
 
+PKGNAME-main=	${DISTNAME}p5
 MULTI_PACKAGES=	-main -dutch -french -german -swedish -russian -portuguese \
 		-slovak -spanish
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i?=	ispell$i-${VERSION}${PATCHLEVEL}
+PKGNAME$i?=	ispell$i-${VERSION}p4
 .endfor
 
 # ispell: BSD-like
