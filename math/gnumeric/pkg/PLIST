@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2010/04/17 06:56:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2010/05/31 06:33:59 ajacoutot Exp $
 %%SHARED%%
 bin/gnumeric
 @bin bin/gnumeric-${VERSION}
@@ -250,6 +250,10 @@ lib/gnumeric/${VERSION}/plugins/mps/
 lib/gnumeric/${VERSION}/plugins/mps/mps.a
 lib/gnumeric/${VERSION}/plugins/mps/mps.la
 lib/gnumeric/${VERSION}/plugins/mps/plugin.xml
+lib/gnumeric/${VERSION}/plugins/nlsolve/
+lib/gnumeric/${VERSION}/plugins/nlsolve/nlsolve.a
+lib/gnumeric/${VERSION}/plugins/nlsolve/nlsolve.la
+lib/gnumeric/${VERSION}/plugins/nlsolve/plugin.xml
 lib/gnumeric/${VERSION}/plugins/oleo/
 lib/gnumeric/${VERSION}/plugins/oleo/oleo.a
 lib/gnumeric/${VERSION}/plugins/oleo/oleo.la
@@ -873,6 +877,7 @@ share/gnumeric/${VERSION}/glade/solver.glade
 share/gnumeric/${VERSION}/glade/tabulate.glade
 share/gnumeric/${VERSION}/glade/variance-tests.glade
 share/gnumeric/${VERSION}/glade/view.glade
+share/gnumeric/${VERSION}/glade/wilcoxon-mann-whitney.glade
 share/gnumeric/${VERSION}/glade/workbook-attr.glade
 share/gnumeric/${VERSION}/templates/
 share/gnumeric/${VERSION}/templates/calendar.gnumeric

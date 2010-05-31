@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2010/03/26 13:25:30 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2010/05/31 06:33:59 ajacoutot Exp $
 lib/gnumeric/${VERSION}/plugins/applix/applix.so
 lib/gnumeric/${VERSION}/plugins/dif/dif.so
 lib/gnumeric/${VERSION}/plugins/excel/excel.so
@@ -28,6 +28,7 @@ lib/gnumeric/${VERSION}/plugins/html/html.so
 lib/gnumeric/${VERSION}/plugins/lotus/lotus.so
 lib/gnumeric/${VERSION}/plugins/lpsolve/lpsolve.so
 lib/gnumeric/${VERSION}/plugins/mps/mps.so
+lib/gnumeric/${VERSION}/plugins/nlsolve/nlsolve.so
 lib/gnumeric/${VERSION}/plugins/oleo/oleo.so
 lib/gnumeric/${VERSION}/plugins/openoffice/openoffice.so
 lib/gnumeric/${VERSION}/plugins/perl-loader/perl_loader.so
