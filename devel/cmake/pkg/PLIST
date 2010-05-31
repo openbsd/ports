@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/05/28 20:21:48 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/05/31 06:29:28 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -347,6 +347,7 @@ share/cmake/Modules/KDE3Macros.cmake
 share/cmake/Modules/MacOSXBundleInfo.plist.in
 share/cmake/Modules/MacOSXFrameworkInfo.plist.in
 share/cmake/Modules/MacroAddFileDependencies.cmake
+share/cmake/Modules/MacroPushRequiredVars.cmake
 share/cmake/Modules/NSIS.InstallOptions.ini.in
 share/cmake/Modules/NSIS.template.in
 share/cmake/Modules/Platform/

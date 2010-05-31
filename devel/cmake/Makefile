@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/05/28 20:21:48 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.21 2010/05/31 06:29:27 dcoppa Exp $
 
 HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
 DISTNAME =	cmake-2.8.1
+PKGNAME =	${DISTNAME}p0
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -39,7 +40,7 @@ pre-configure:
 		${WRKSRC}/Modules/Platform/UnixPaths.cmake
 
 # Remove spurious post-build files
-post-build:
+post-install:
 	@rm -f ${WRKDIST}/Modules/*.{beforesubst,orig}
 	@rm -f ${WRKDIST}/Modules/Platform/*.beforesubst
 	@rm -f ${WRKDIST}/Modules/Platform/*.orig
