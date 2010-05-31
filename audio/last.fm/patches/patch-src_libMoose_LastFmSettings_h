@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_libMoose_LastFmSettings_h,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/libMoose/LastFmSettings.h.orig	Tue May 25 15:05:55 2010
++++ src/libMoose/LastFmSettings.h	Tue May 25 15:06:44 2010
+@@ -209,7 +209,6 @@ class MOOSE_DLLEXPORT LastFmSettings : public AppSetti
+     // NOTE private as app object has control, the LoginWidget friend is
+     // unsavoury but the code is safe as long as SettingsDialog is the only
+     // object that calls save( false ) on it. This sucks on many levels.
+-    void setCurrentUsername( QString username );
+     friend class LastFmApplication;
+     friend class LoginWidget;
+ 
+@@ -225,6 +224,8 @@ class MOOSE_DLLEXPORT LastFmSettings : public AppSetti
+ 
+     LastFmUserSettings& user( QString username ) const;
+     LastFmUserSettings& currentUser();
++
++    void setCurrentUsername( QString username );
+ 
+     bool deleteUser( QString username );
+     bool isExistingUser( QString username ) const { return UsersSettings<QSettings>().contains( username + "/Password" ); }

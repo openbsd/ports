@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- configure.orig	Thu May 20 13:11:37 2010
++++ configure	Thu May 20 13:17:12 2010
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ function header {
+     echo -e "\033[0;34m==>\033[0;0;1m $1 \033[0;0m"
+@@ -11,16 +11,10 @@ function middle {
+ header "Last.fm Configure"
+ middle "Checking for qmake..."
+ 
+-qmake-qt4 -v &> /dev/null
+-if [[ $? == 127 ]]
++qmake4 -v &> /dev/null
++if [[ $? == 0 ]]
+ then
+-    qmake -v &> /dev/null
+-    if [[ $? == 0 ]]
+-    then
+-        QMAKE=qmake
+-    fi
+-else
+-    QMAKE=qmake-qt4
++    QMAKE=qmake4
+ fi
+ 
+ if [[ $? == 127 ]]

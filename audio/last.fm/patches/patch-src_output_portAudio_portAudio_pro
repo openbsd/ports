@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_output_portAudio_portAudio_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/output/portAudio/portAudio.pro.orig	Tue Dec 18 15:18:19 2007
++++ src/output/portAudio/portAudio.pro	Tue May 25 20:02:34 2010
+@@ -10,21 +10,21 @@ QMAKE_CFLAGS_WARN_ON = ""
+ INCLUDEPATH += PortAudio/include \
+                PortAudio/common
+ 
+-SOURCES = portAudioOutput.cpp \
+-          \
+-          PortAudio/common/pa_skeleton.c \
+-          PortAudio/common/pa_process.c \
+-          PortAudio/common/pa_dither.c \
+-          PortAudio/common/pa_allocation.c \
+-          PortAudio/common/pa_converters.c \
+-          PortAudio/common/pa_cpuload.c \
+-          PortAudio/common/pa_front.c \
+-          PortAudio/common/pa_debugprint.c \
+-          PortAudio/common/pa_stream.c \
+-          PortAudio/common/pa_trace.c \
++SOURCES = portAudioOutput.cpp
+    
+ HEADERS = portAudioOutput.h
+ 
++
++unix:openbsd* {
++    INCLUDEPATH += ${LOCALBASE}/include \
++                   PortAudio/os/unix
++
++    LIBPATH += ${LOCALBASE}/lib
++
++    LIBS += -lportaudio \
++            -lsndio \
++            -lm
++}
+ 
+ unix:linux-g++ {
+     INCLUDEPATH += PortAudio/os/unix

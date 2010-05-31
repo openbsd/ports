@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_transcode_mad_mad_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/transcode/mad/mad.pro.orig	Fri May 21 11:57:11 2010
++++ src/transcode/mad/mad.pro	Fri May 21 11:58:05 2010
+@@ -11,8 +11,8 @@ win32 {
+ }
+ 
+ !linux* {
+-    LIBPATH += $$ROOT_DIR/res/mad
+-	INCLUDEPATH += $$ROOT_DIR/res/mad
++    LIBPATH += ${LOCALBASE}/lib
++	INCLUDEPATH += ${LOCALBASE}/include
+ }
+ 
+ LIBS += -lmad

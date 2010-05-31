@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_src_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/src.pro.orig	Tue Dec 18 15:18:19 2007
++++ src/src.pro	Tue May 25 12:41:36 2010
+@@ -7,10 +7,6 @@ INCLUDEPATH += lib libFingerprint/recommendation-commo
+ PRECOMPILED_HEADER = precompiled.h
+ CONFIG += precompile_header
+ 
+-unix {
+-    # precompiled headers breaks icecream builds for some reason :(
+-    system( test `ps aux | grep iceccd | wc -l` -gt 1 ): CONFIG -= precompile_header
+-}
+ 
+ #universal binaries cannot be built from precompiled headers
+ mac*:release:CONFIG -= precompile_header
+@@ -27,9 +23,8 @@ unix:!mac*{
+ 
+ include( ../definitions.pro.inc )
+ 
+-# TODO remove
+-INCLUDEPATH += $$ROOT_DIR/res/mad
+-INCLUDEPATH += $$ROOT_DIR/src/libFingerprint/libs/fftw
++INCLUDEPATH += ${X11BASE}/include
++INCLUDEPATH += ${LOCALBASE}/include
+ 
+ breakpad {
+     LIBS += -lbreakpad$$EXT
+@@ -206,6 +201,8 @@ unix:!mac* {
+ 
+     SOURCES += simplewizard_mac.cpp \
+                winstyleoverrides.cpp
++
++    LIBPATH += ${LOCALBASE}/lib
+ 
+     LIBS += -lmad -lfftw3f
+ }

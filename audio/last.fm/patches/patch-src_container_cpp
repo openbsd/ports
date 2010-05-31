@@ -1,0 +1,101 @@
+$OpenBSD: patch-src_container_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/container.cpp.orig	Fri May 28 12:41:13 2010
++++ src/container.cpp	Fri May 28 12:42:05 2010
+@@ -103,7 +103,6 @@ Container::setupUi()
+ {
+     ui.setupUi( this );
+ 
+-    ui.actionCheckForUpdates->setMenuRole( QAction::ApplicationSpecificRole );
+     ui.actionAboutLastfm->setMenuRole( QAction::AboutRole );
+     ui.actionSettings->setMenuRole( QAction::PreferencesRole );
+     ui.actionStop->setVisible( false );
+@@ -294,7 +293,6 @@ void
+ Container::applyPlatformSpecificTweaks()
+ {
+ #ifdef Q_WS_X11
+-    ui.actionCheckForUpdates->setVisible( false );
+     ui.actionQuit->setShortcut( tr( "CTRL+Q" ) );
+     ui.actionQuit->setText( tr("&Quit") );
+ 
+@@ -390,7 +388,6 @@ Container::setupConnections()
+     connect( ui.actionDashboard, SIGNAL(triggered()), SLOT(gotoProfile()) );
+     connect( ui.actionSettings, SIGNAL(triggered()), SLOT(showSettingsDialog()) );
+     connect( ui.actionGetPlugin, SIGNAL(triggered()), SLOT(getPlugin()) );
+-    connect( ui.actionCheckForUpdates, SIGNAL(triggered()), SLOT(checkForUpdates()) );
+     connect( ui.actionAddUser, SIGNAL(triggered()), SLOT(addUser()) );
+     connect( ui.actionDeleteUser, SIGNAL(triggered()), SLOT(deleteUser()) );
+     connect( ui.actionToggleScrobbling, SIGNAL(triggered()), SLOT(toggleScrobbling()) );
+@@ -416,7 +413,6 @@ Container::setupConnections()
+     connect( The::webService(), SIGNAL(failure( Request* )), SLOT(webServiceFailure( Request* )), Qt::QueuedConnection );
+     connect( &The::settings(), SIGNAL( userSettingsChanged( LastFmUserSettings& ) ), SLOT( updateUserStuff( LastFmUserSettings& ) ) );
+     connect( &The::settings(), SIGNAL( appearanceSettingsChanged() ), SLOT( updateAppearance() ) );
+-    connect( m_updater, SIGNAL( updateCheckDone( bool, bool, QString ) ), SLOT( updateCheckDone( bool, bool, QString ) ) );
+     connect( ui.stack, SIGNAL(currentChanged( int )), SIGNAL(stackIndexChanged( int )) );
+     connect( ui.actionMyProfile, SIGNAL(triggered()), SLOT(toggleSidebar()) );
+     connect( ui.actionPlaylist, SIGNAL(triggered()), SLOT(addToMyPlaylist()) );
+@@ -519,7 +515,7 @@ Container::loadExtensions()
+     // Hack to get it working with VS2005
+     QString path = qApp->applicationDirPath();
+   #else
+-    QString path = qApp->applicationDirPath() + "/extensions";
++    QString path = "${PREFIX}/lib/last.fm/extensions";
+   #endif
+ 
+   #ifndef QT_NO_DEBUG
+@@ -890,56 +886,6 @@ Container::getPlugin()
+ {
+     ConfigWizard( this, ConfigWizard::Plugin ).exec();
+     ui.restStateWidget->updatePlayerNames();
+-}
+-
+-
+-void
+-Container::checkForUpdates( bool invokedByUser )
+-{
+-    m_userCheck = invokedByUser;
+-    if ( m_userCheck )
+-    {
+-        QApplication::setOverrideCursor( QCursor( Qt::WaitCursor ) );
+-    }
+-
+-    m_updater->checkForUpdates();
+-}
+-
+-
+-void
+-Container::updateCheckDone( bool updatesAvailable, bool error, QString errorMsg )
+-{
+-    QApplication::restoreOverrideCursor();
+-
+-    if ( error )
+-    {
+-        // Can't connect to the internet
+-        LOG( 2, "Update check failed. Error: " << errorMsg << "\n" );
+-        if ( m_userCheck )
+-        {
+-            LastMessageBox::critical( tr( "Connection Problem" ),
+-                tr( "Last.fm couldn't connect to the Internet to check "
+-                    "for updates.\n\nError: %1" ).arg( errorMsg ) );
+-        }
+-        return;
+-    }
+-
+-    // No connection error, let's see if we have updates
+-    if ( !updatesAvailable )
+-    {
+-        LOG( 3, "Update check said no updates available.\n" );
+-        if ( m_userCheck )
+-        {
+-            LastMessageBox::information( tr( "Up To Date" ),
+-                tr( "No updates available. All your software is up to date!\n" ) );
+-        }
+-        return;
+-    }
+-
+-    // Go ahead and launch update wizard
+-    LOG( 3, "New updates available. Launching update wizard.\n" );
+-
+-    UpdateWizard( *m_updater, this ).exec();
+ }
+ 
+ 

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_libFingerprint_fplib_pro_qmake_fplib_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/libFingerprint/fplib/pro_qmake/fplib.pro.orig	Fri May 21 12:47:08 2010
++++ src/libFingerprint/fplib/pro_qmake/fplib.pro	Fri May 21 13:27:07 2010
+@@ -23,10 +23,9 @@ CONFIG(release, release|debug) {
+     DEFINES += NDEBUG
+ }
+ 
+-INCLUDEPATH += ../include \
+-               ../src \
+-               ../../libs/fftw/src/api \
+-               ../../../../res/libsamplerate
++INCLUDEPATH += ${LOCALBASE}/include \
++               ../include \
++               ../src
+                
+ win32 {
+     #QMAKE_LFLAGS += /NODEFAULTLIB

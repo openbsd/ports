@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_playerlistener_h,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/playerlistener.h.orig	Fri May 21 13:34:20 2010
++++ src/playerlistener.h	Fri May 21 13:34:56 2010
+@@ -22,6 +22,8 @@
+ #ifndef PLAYERLISTENER_H
+ #define PLAYERLISTENER_H
+ 
++#include <unistd.h>
++
+ #include "TrackInfo.h"
+ #include "playercommandparser.h"
+ #include "playerconnection.h"

@@ -1,0 +1,17 @@
+$OpenBSD: patch-LastFM_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- LastFM.pro.orig	Thu May 20 12:20:44 2010
++++ LastFM.pro	Fri May 21 12:20:16 2010
+@@ -12,11 +12,9 @@ SUBDIRS = src/libUnicorn \
+           src/libFingerprint/ \
+           src \
+           src/httpinput \
+-          src/mediadevices/itunes \
+           src/mediadevices/ipod \
+-          src/Helper \
+-          src/transcode/mad 
+-          #src/transcode/mpglib
++          src/transcode/mad \
++          src/output/portAudio
+ 
+ win32 {
+     SUBDIRS += src/extensions/skype \

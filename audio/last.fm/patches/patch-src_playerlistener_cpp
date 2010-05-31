@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_playerlistener_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+
+XXX THIS IS A HACK
+Our libpthread has bitten me again...
+As a workaround, disable the player listener: luckily, it's 
+kinda useless at the moment.
+
+--- src/playerlistener.cpp.orig	Tue May 25 13:22:53 2010
++++ src/playerlistener.cpp	Tue May 25 13:24:14 2010
+@@ -119,6 +119,7 @@ CPlayerListener::run()
+ void
+ CPlayerListener::RunListener()
+ {
++#if 0
+     try
+     {
+         OpenSocket();
+@@ -131,9 +132,11 @@ CPlayerListener::RunListener()
+         LOGL( 1, err );
+         throw NetworkException((err));
+     }
++#endif
+ 
+-    mbRunning = true;
++    mbRunning = false;
+ 
++#if 0
+     while (mbKeepGoing)
+     {
+         QString sClientIP;
+@@ -203,6 +206,7 @@ CPlayerListener::RunListener()
+     #ifdef WIN32
+         WSACleanup();
+     #endif
++#endif
+ 
+ }
+ 

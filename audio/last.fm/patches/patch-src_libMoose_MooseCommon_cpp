@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_libMoose_MooseCommon_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/libMoose/MooseCommon.cpp.orig	Fri May 21 17:11:55 2010
++++ src/libMoose/MooseCommon.cpp	Fri May 21 17:14:19 2010
+@@ -43,7 +43,7 @@ namespace MooseUtils
+ QString
+ dataPath( QString file )
+ {
+-    return QApplication::applicationDirPath() + "/data/" + file;
++    return "${PREFIX}/share/last.fm/" + file;
+ }
+ 
+ 
+@@ -108,7 +108,7 @@ servicePath( QString name )
+         // Hack to get it working with VS2005
+         dirPath = qApp->applicationDirPath();
+     #else
+-        dirPath = qApp->applicationDirPath() + "/services";
++        dirPath = "${PREFIX}/lib/last.fm/services";
+     #endif
+ 
+     #ifndef QT_NO_DEBUG

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_systray_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/systray.cpp.orig	Thu May 27 11:50:48 2010
++++ src/systray.cpp	Thu May 27 16:57:03 2010
+@@ -46,6 +46,8 @@ TrayIcon::setUser( LastFmUserSettings& currentUser )
+     {
+         #ifdef Q_WS_MAC
+             icon = m_pixmap;
++        #elif defined(Q_WS_X11)
++            icon = IconShack::instance().GetTrayIcon( iconColour );
+         #else
+             icon = IconShack::instance().GetGoodUserIcon( iconColour );
+         #endif
+@@ -54,6 +56,8 @@ TrayIcon::setUser( LastFmUserSettings& currentUser )
+     {
+         #ifdef Q_WS_MAC
+             icon = QIcon( m_pixmap ).pixmap( 19, 12, QIcon::Disabled );
++        #elif defined Q_WS_X11
++            icon = IconShack::instance().GetDisabledTrayIcon( iconColour );
+         #else
+             icon = IconShack::instance().GetDisabledUserIcon( iconColour );
+         #endif

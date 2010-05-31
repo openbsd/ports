@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Last.fm
+GenericName=Official Last.fm radio player
+Exec=last.fm
+Icon=${LOCALBASE}/share/last.fm/icons/as.png
+Type=Application
+Terminal=false
+StartupNotify=false
+Categories=AudioVideo;Player;

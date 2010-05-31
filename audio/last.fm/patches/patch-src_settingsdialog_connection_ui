@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_settingsdialog_connection_ui,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/settingsdialog_connection.ui.orig	Fri May 28 08:37:13 2010
++++ src/settingsdialog_connection.ui	Fri May 28 08:37:35 2010
+@@ -283,16 +283,6 @@
+         </item>
+        </layout>
+       </item>
+-      <item>
+-       <widget class="QCheckBox" name="crashReportCheck" >
+-        <property name="text" >
+-         <string>Send crash diagnostics on crashing</string>
+-        </property>
+-        <property name="checked" >
+-         <bool>true</bool>
+-        </property>
+-       </widget>
+-      </item>
+      </layout>
+     </widget>
+    </item>
+@@ -320,7 +310,6 @@
+   <tabstop>proxyPasswordEdit</tabstop>
+   <tabstop>downloadMetadataCheck</tabstop>
+   <tabstop>clearCacheButton</tabstop>
+-  <tabstop>crashReportCheck</tabstop>
+  </tabstops>
+  <resources/>
+  <connections>

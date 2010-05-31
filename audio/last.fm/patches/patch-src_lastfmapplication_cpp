@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_lastfmapplication_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/lastfmapplication.cpp.orig	Fri May 21 10:53:29 2010
++++ src/lastfmapplication.cpp	Fri May 21 11:00:25 2010
+@@ -211,8 +211,9 @@ LastFmApplication::init()
+ 
+     if ( The::settings().isFirstRun() )
+     {
++        QFile mediadevicedb( MooseUtils::savePath( "mediadevice.db" ) );
+         LOG( 3, "First run, launching config wizard\n" );
+-        QFile( MooseUtils::savePath( "mediadevice.db" ) ).remove();
++        mediadevicedb.remove();
+ 
+         ConfigWizard wiz( NULL, ConfigWizard::Login );
+         if ( wiz.exec() == QDialog::Rejected )

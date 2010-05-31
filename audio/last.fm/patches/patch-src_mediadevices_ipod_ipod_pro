@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_mediadevices_ipod_ipod_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/mediadevices/ipod/ipod.pro.orig	Tue Dec 18 15:18:20 2007
++++ src/mediadevices/ipod/ipod.pro	Fri May 21 15:02:54 2010
+@@ -8,6 +8,14 @@ include( ../../../definitions.pro.inc )
+ HEADERS = IpodDevice.h
+ SOURCES = IpodDevice.cpp
+ 
++unix:openbsd* {
++    INCLUDEPATH += ${LOCALBASE}/include/gpod-1.0 ${LOCALBASE}/include/glib-2.0 ${LOCALBASE}/lib/glib-2.0/include
++
++    LIBPATH += ${LOCALBASE}/lib
++
++    LIBS += -lgpod
++}
++
+ linux* {
+     LIBS += -lgpod
+ 

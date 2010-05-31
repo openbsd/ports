@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libUnicorn_draglabel_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/libUnicorn/draglabel.cpp.orig	Thu May 27 22:50:30 2010
++++ src/libUnicorn/draglabel.cpp	Thu May 27 22:50:51 2010
+@@ -324,6 +324,10 @@ DragLabel::calcFontProperties( DragItem& d, bool isHea
+     {
+         rect.setHeight( fm.height() );
+     }
++    if ( fm.width( d.m_text ) > rect.width() )
++    {
++        rect.setWidth( fm.width( d.m_text ) );
++    }
+ 
+     // boundingRect sometimes returns negative values so make sure it's at 0, 0
+     rect.moveTo( 0, 0 );

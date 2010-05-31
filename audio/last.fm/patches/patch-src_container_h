@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_container_h,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/container.h.orig	Fri May 28 08:55:19 2010
++++ src/container.h	Fri May 28 08:55:19 2010
+@@ -51,7 +51,6 @@ class Container : public QMainWindow
+         std::vector<class CPluginInfo>& getPluginList();
+ 
+     public slots:
+-        void checkForUpdates( bool invokedByUser = true );
+         void showSettingsDialog( int startPage = 0 );
+         void showDiagnosticsDialog();
+         void showShareDialog();
+@@ -77,7 +76,7 @@ class Container : public QMainWindow
+         bool event( QEvent* );
+ 
+     private:
+-        struct : Ui::MainWindow
++        struct tagui : Ui::MainWindow
+         {
+             class ScrobbleLabel* scrobbleLabel;
+             class RestStateWidget* restStateWidget;
+@@ -159,7 +158,6 @@ class Container : public QMainWindow
+         void inviteAFriend();
+ 
+         void onUserSelected( QAction* action );
+-        void updateCheckDone( bool updatesAvailable, bool error, QString errorMsg );
+         void updateWindowTitle( const MetaData& );
+         void updateUserStuff( LastFmUserSettings& user );
+         void updateAppearance();

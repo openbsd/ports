@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_iconshack_h,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/iconshack.h.orig	Thu May 27 16:46:15 2010
++++ src/iconshack.h	Thu May 27 16:52:31 2010
+@@ -75,6 +75,12 @@ class IconShack (public)
+     **************************************************************************/
+     QPixmap GetDisabledUserIcon( MooseEnums::UserIconColour eColour);
+ 
++#ifdef Q_WS_X11
++    QPixmap GetTrayIcon( MooseEnums::UserIconColour eColour );
++
++    QPixmap GetDisabledTrayIcon( MooseEnums::UserIconColour eColour );
++#endif
++
+ private:
+ 
+     /*********************************************************************/ /**
+@@ -89,6 +95,10 @@ class IconShack (public)
+     QPixmap maGoodIconsExpanded[5];
+     QPixmap maExclIcons[5];
+     QPixmap maDisabledIcons[5];
++#ifdef Q_WS_X11
++    QPixmap maTrayIcons[5];
++    QPixmap maDisabledTrayIcons[5];
++#endif
+ 
+     bool mbIconsLoaded;
+ };

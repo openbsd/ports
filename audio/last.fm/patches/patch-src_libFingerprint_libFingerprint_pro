@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_libFingerprint_libFingerprint_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/libFingerprint/libFingerprint.pro.orig	Tue Dec 18 15:18:19 2007
++++ src/libFingerprint/libFingerprint.pro	Fri May 21 16:05:12 2010
+@@ -1,5 +1,5 @@
+ TEMPLATE = lib
+-VERSION = 1.0.0
++VERSION = ${LIBLastFmFingerprint_VERSION}.0
+ CONFIG += dll
+ TARGET = LastFmFingerprint
+ QT += xml network sql
+@@ -12,7 +12,7 @@ DESTDIR = $$BIN_DIR
+ INCLUDEPATH +=	\
+         fplib/include \
+         ../src/ \
+-        $$ROOT_DIR/res/mad
++        ${LOCALBASE}/include
+ 
+ HEADERS += \
+         MP3_Source_Qt.h \
+@@ -40,6 +40,7 @@ unix:mac {
+ 
+ unix:!mac {
+     LIBPATH += $$BUILD_DIR/../fplib
++    LIBPATH += ${LOCALBASE}/lib
+     LIBS += $$ROOT_DIR/build/fplib/libfplib$${EXT}.a -lsamplerate -lfftw3f
+ }
+ 

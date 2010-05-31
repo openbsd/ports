@@ -1,0 +1,58 @@
+$OpenBSD: patch-src_iconshack_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/iconshack.cpp.orig	Thu May 27 11:50:48 2010
++++ src/iconshack.cpp	Thu May 27 16:48:05 2010
+@@ -73,6 +73,33 @@ IconShack::GetDisabledUserIcon( MooseEnums::UserIconCo
+ }    
+ 
+ 
++#ifdef Q_WS_X11
++QPixmap
++IconShack::GetTrayIcon( MooseEnums::UserIconColour eColour )
++{
++    if ( !mbIconsLoaded )
++        LoadIcons();
++
++    if ( maTrayIcons[ eColour ].isNull() )
++        return QPixmap( 22, 22 );
++    else
++        return maTrayIcons[ eColour ];
++}
++
++
++QPixmap
++IconShack::GetDisabledTrayIcon( MooseEnums::UserIconColour eColour )
++{
++    if ( !mbIconsLoaded )
++        LoadIcons();
++
++    if ( maDisabledTrayIcons[ eColour ].isNull() )
++        return QPixmap( 22, 22 );
++    else
++        return maDisabledTrayIcons[ eColour ];
++}
++#endif
++
+ void
+ IconShack::LoadIcons()
+ {
+@@ -105,6 +132,20 @@ IconShack::LoadIcons()
+     maDisabledIcons[MooseEnums::eGreen].load( MooseUtils::dataPath( "icons/user_disabled.png" ) );
+     maDisabledIcons[MooseEnums::eOrange].load( MooseUtils::dataPath( "icons/user_disabled.png" ) );
+     maDisabledIcons[MooseEnums::eBlack].load( MooseUtils::dataPath( "icons/user_disabled.png" ) );
++
++#ifdef Q_WS_X11
++    maTrayIcons[MooseEnums::eRed].load( MooseUtils::dataPath( "icons/user_red22.png" ) );
++    maTrayIcons[MooseEnums::eBlue].load( MooseUtils::dataPath( "icons/user_blue22.png" ) );
++    maTrayIcons[MooseEnums::eGreen].load( MooseUtils::dataPath( "icons/user_green22.png" ) );
++    maTrayIcons[MooseEnums::eOrange].load( MooseUtils::dataPath( "icons/user_orange22.png" ) );
++    maTrayIcons[MooseEnums::eBlack].load( MooseUtils::dataPath( "icons/user_black22.png" ) );
++
++    maDisabledTrayIcons[MooseEnums::eRed].load( MooseUtils::dataPath( "icons/user_disabled22.png" ) );
++    maDisabledTrayIcons[MooseEnums::eBlue].load( MooseUtils::dataPath( "icons/user_disabled22.png" ) );
++    maDisabledTrayIcons[MooseEnums::eGreen].load( MooseUtils::dataPath( "icons/user_disabled22.png" ) );
++    maDisabledTrayIcons[MooseEnums::eOrange].load( MooseUtils::dataPath( "icons/user_disabled22.png" ) );
++    maDisabledTrayIcons[MooseEnums::eBlack].load( MooseUtils::dataPath( "icons/user_disabled22.png" ) );
++#endif
+ 
+     mbIconsLoaded = true;
+ 

@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_libUnicorn_libUnicorn_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/libUnicorn/libUnicorn.pro.orig	Fri May 21 16:07:04 2010
++++ src/libUnicorn/libUnicorn.pro	Fri May 21 16:07:51 2010
+@@ -1,5 +1,5 @@
+ TEMPLATE = lib
+-VERSION = 1.0.0
++VERSION = ${LIBLastFmTools_VERSION}.0
+ CONFIG += dll
+ TARGET = LastFmTools
+ QT += xml network gui sql

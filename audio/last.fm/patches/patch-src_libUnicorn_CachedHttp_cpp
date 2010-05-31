@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_libUnicorn_CachedHttp_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+--- src/libUnicorn/CachedHttp.cpp.orig	Thu May 20 20:37:39 2010
++++ src/libUnicorn/CachedHttp.cpp	Thu May 20 20:46:36 2010
+@@ -82,7 +82,8 @@ CachedHttp::~CachedHttp()
+ void
+ CachedHttp::init()
+ {
+-    QDir( cachePath() ).mkdir( cachePath() ); //rofl@Qt.com
++    QDir cachedir( cachePath() );
++    cachedir.mkdir( cachePath() ); //rofl@Qt.com
+ 
+     applyProxy();
+ 
