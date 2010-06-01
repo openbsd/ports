@@ -1,5 +1,5 @@
 ICU (International Components for Unicode) is a set for C/C++ and Java
-librairies providing Unicode and globalization support. icu4c is the
+libraries providing Unicode and globalization support. icu4c is the
 C/C++ version.
 
 ICU services include code page conversion, collation (comparison using

@@ -1,6 +1,6 @@
-$OpenBSD: patch-wafadmin_Tools_ccroot_py,v 1.2 2010/04/24 17:37:54 jasper Exp $
+$OpenBSD: patch-wafadmin_Tools_ccroot_py,v 1.3 2010/06/01 12:47:10 dcoppa Exp $
 
-Don't create symlink for shared librairies versions.
+Don't create symlink for shared libraries versions.
 Use good version numbers for libs.
 
 --- wafadmin/Tools/ccroot.py.orig	Sun Mar 14 17:57:48 2010

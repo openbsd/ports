@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/26 13:21:21 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/01 12:47:57 dcoppa Exp $
 
 COMMENT =	suite of portable game libraries
 
 DISTNAME =	plib-1.8.5
-PKGNAME =	${DISTNAME}p2
+PKGNAME =	${DISTNAME}p3
 CATEGORIES =	devel games
 
 HOMEPAGE =	http://plib.sourceforge.net/

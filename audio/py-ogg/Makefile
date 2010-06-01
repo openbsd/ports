@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2009/03/10 22:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/01 12:46:24 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python wrapper for the Ogg libraries
 
 DISTNAME=	pyogg-1.3
-PKGNAME=	${DISTNAME:S/py/py-/}p3
+PKGNAME=	${DISTNAME:S/py/py-/}p4
 CATEGORIES=	audio
 HOMEPAGE=	http://ekyo.nerim.net/software/pyogg/
 
