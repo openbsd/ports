@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/11/23 10:16:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/01 09:46:48 kevlo Exp $
 
 COMMENT=	implementation of the OAuth protocol
 
-DISTNAME=	Net-OAuth-0.20
+DISTNAME=	Net-OAuth-0.25
 
 CATEGORIES=	net
 
