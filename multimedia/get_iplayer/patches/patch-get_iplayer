@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.37 2010/05/28 15:46:02 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.38 2010/06/01 15:05:39 sthen Exp $
 --- get_iplayer.orig	Fri May 28 15:24:50 2010
-+++ get_iplayer	Fri May 28 16:43:57 2010
++++ get_iplayer	Tue Jun  1 16:03:59 2010
 @@ -294,6 +294,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
@@ -45,3 +45,12 @@ $OpenBSD: patch-get_iplayer,v 1.37 2010/05/28 15:46:02 sthen Exp $
  			main::logger "INFO: id3 tagging $prog->{ext} file\n";
  			my @cmd = (
  				$bin->{id3v2}, 
+@@ -5860,7 +5861,7 @@ sub get_stream_data_cdn {
+ 
+ 				if ( $cattribs->{authString} !~ /&slist=/ ) {
+ 					$cattribs->{identifier} =~ s/^mp[34]://;
+-					$cattribs->{authString} .= "&slist=&cattribs->{identifier}";
++					$cattribs->{authString} .= "&slist=$cattribs->{identifier}";
+ 				}
+ 
+ 				### ??? live and Live TV, Live EMP Video or Non-public EMP video:
