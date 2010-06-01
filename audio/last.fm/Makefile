@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/01 05:21:11 dcoppa Exp $
 
 COMMENT =		official Last.fm client
 
 DISTNAME =		last.fm-1.4.2.58240.src
 EXTRACT_SUFX =		.tar.bz2
-PKGNAME =		${DISTNAME:S/.src//}
+PKGNAME =		${DISTNAME:S/.src//}p0
 
 SHARED_ONLY =		Yes
 
@@ -36,6 +36,7 @@ LIB_DEPENDS =		QtGui.>=8,QtNetwork.>=7,QtSql.>=7,QtXml.>=7::x11/qt4 \
 			mad::audio/libmad \
 			samplerate.>=1::audio/libsamplerate \
 			portaudio::audio/portaudio-svn
+RUN_DEPENDS =		::devel/desktop-file-utils
 
 USE_X11 =		Yes
 
