@@ -1,0 +1,10 @@
+$OpenBSD: patch-misc_dvdnav_pc_in,v 1.1 2010/06/02 16:55:38 ajacoutot Exp $
+--- misc/dvdnav.pc.in.orig	Wed Jun  2 15:18:41 2010
++++ misc/dvdnav.pc.in	Wed Jun  2 15:20:11 2010
+@@ -7,6 +7,5 @@ Name: libdvdnav
+ Description: DVD Navigation library
+ Version: @VERSION@
+ 
+-Requires.private: dvdread >= 4.1.2
+ Cflags: -I${includedir} @THREAD_CFLAGS@
+ Libs: -L${libdir} -ldvdnav @THREAD_LIBS@
