@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/10/09 15:57:37 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/02 19:44:50 landry Exp $
 
 COMMENT =		robust sending of e-mail to external commands
 
-DISTNAME =		extsmail-1.2
+DISTNAME =		extsmail-1.3
 CATEGORIES =		mail
 
 HOMEPAGE =		http://tratt.net/laurie/src/extsmail/
