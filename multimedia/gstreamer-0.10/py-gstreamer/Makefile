@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2009/11/29 09:18:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/06/02 13:08:32 ajacoutot Exp $
 
 COMMENT =		Python bindings for GStreamer
 
@@ -31,7 +31,8 @@ REGRESS_DEPENDS =	::$P/plugins-good
 SEPARATE_BUILD =	No
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-gcov
+CONFIGURE_ARGS =	--disable-gcov \
+			--disable-shave
 
 post-install:
 	@cd ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/ && \

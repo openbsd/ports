@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/05/26 22:39:02 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.14 2010/06/02 13:08:32 ajacoutot Exp $
 
 COMMENT =		ffmpeg element for GStreamer
 
@@ -20,6 +20,7 @@ WANTLIB += bz2 faac faad glib-2.0 gmodule-2.0 gobject-2.0 gsm
 WANTLIB += gthread-2.0 m mp3lame ogg oil-0.3 pcre schroedinger-1.0
 WANTLIB += speex theora vorbis vorbisenc x264 xml2 z
 
-CONFIGURE_ARGS +=	--with-system-ffmpeg
+CONFIGURE_ARGS +=	--with-system-ffmpeg \
+			--disable-shave
 
 .include <bsd.port.mk>
