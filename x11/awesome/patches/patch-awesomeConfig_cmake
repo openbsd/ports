@@ -1,0 +1,52 @@
+$OpenBSD: patch-awesomeConfig_cmake,v 1.1 2010/06/02 15:07:50 dcoppa Exp $
+--- awesomeConfig.cmake.orig	Tue Mar  2 16:54:05 2010
++++ awesomeConfig.cmake	Mon May 10 11:25:40 2010
+@@ -18,9 +18,9 @@ option(GENERATE_LUADOC "generate luadoc" ON)
+ link_directories(/usr/local/lib)
+ 
+ # {{{ CFLAGS
+-add_definitions(-std=gnu99 -ggdb3 -fno-strict-aliasing -Wall -Wextra
+-    -Wchar-subscripts -Wundef -Wshadow -Wcast-align -Wwrite-strings
+-    -Wsign-compare -Wunused -Wno-unused-parameter -Wuninitialized -Winit-self
++add_definitions(-std=gnu99 -ggdb3 -fno-strict-aliasing -Wall
++    -Wchar-subscripts -Wcast-align -Wwrite-strings
++    -Wsign-compare -Wunused -Wno-unused-parameter -Wuninitialized
+     -Wpointer-arith -Wredundant-decls -Wformat-nonliteral
+     -Wno-format-zero-length -Wmissing-format-attribute -Wmissing-prototypes
+     -Wstrict-prototypes)
+@@ -168,6 +168,9 @@ endmacro()
+ # Check for libev
+ a_find_library(LIB_EV ev)
+ 
++# Check for libexecinfo on non Glibc systems
++a_find_library(LIB_EXECINFO execinfo)
++
+ # Error check
+ if(NOT LUA51_FOUND AND NOT LUA50_FOUND) # This is a workaround to a cmake bug
+     message(FATAL_ERROR "lua library not found")
+@@ -177,6 +180,7 @@ set(AWESOME_REQUIRED_LIBRARIES
+     ${AWESOME_COMMON_REQUIRED_LDFLAGS}
+     ${AWESOME_REQUIRED_LIBRARIES}
+     ${LIB_EV}
++    ${LIB_EXECINFO}
+     ${LUA_LIBRARIES})
+ 
+ set(AWESOME_REQUIRED_INCLUDE_DIRS
+@@ -216,7 +220,7 @@ endif()
+ if(DEFINED SYSCONFDIR)
+     set(SYSCONFDIR ${SYSCONFDIR} CACHE PATH "config directory")
+ else()
+-    set(SYSCONFDIR ${PREFIX}/etc CACHE PATH "config directory")
++    set(SYSCONFDIR /etc CACHE PATH "config directory")
+ endif()
+ 
+ #If an XDG Config Dir is specificed, use it instead
+@@ -245,7 +249,7 @@ endif()
+ if(DEFINED AWESOME_MAN_PATH)
+    set(AWESOME_MAN_PATH ${AWESOME_MAN_PATH} CACHE PATH "awesome manpage directory")
+ else()
+-   set(AWESOME_MAN_PATH ${PREFIX}/share/man CACHE PATH "awesome manpage directory")
++   set(AWESOME_MAN_PATH ${PREFIX}/man CACHE PATH "awesome manpage directory")
+ endif()
+ 
+ # Hide to avoid confusion

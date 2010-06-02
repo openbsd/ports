@@ -1,7 +1,5 @@
-awesome is a window manager initially based on a dwm code rewriting.
-It's extremely fast, small, dynamic and awesome.
-
-It manages windows in several layouts mode: tiled, floating, etc.  Each
-layout can be applied dynamically, optimizing the environment for the
-application in use and the task performed. Every aspect of awesome is
-configurable via a configuration file: awesomerc.
+awesome is a highly configurable, next-generation window manager 
+framework for X. It is very fast, small, dynamic and it's heavily 
+extensible using the Lua programming language.
+It is primarily targeted at power users, developers and anyone who 
+wants to have fine grained control over his graphical environment.

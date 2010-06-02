@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_util_c,v 1.1 2010/06/02 15:07:50 dcoppa Exp $
+--- common/util.c.orig	Tue Mar  2 16:54:05 2010
++++ common/util.c	Mon May 10 10:46:57 2010
+@@ -194,7 +194,7 @@ a_exec(const char *cmd)
+     if(!shell && !(shell = getenv("SHELL")))
+         shell = "/bin/sh";
+ 
+-    execl(shell, shell, "-c", cmd, NULL);
++    execl(shell, shell, "-c", cmd, (char *)NULL);
+ }
+ 
+ // vim: filetype=c:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:encoding=utf-8:textwidth=80

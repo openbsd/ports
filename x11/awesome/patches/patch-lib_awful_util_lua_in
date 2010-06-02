@@ -1,0 +1,61 @@
+$OpenBSD: patch-lib_awful_util_lua_in,v 1.1 2010/06/02 15:07:50 dcoppa Exp $
+
+XXX THIS IS A HACK
+This is needed to workaround the effects of userland 
+threads which change I/O operations to non-blocking.
+
+--- lib/awful/util.lua.in.orig	Tue Mar  2 17:54:05 2010
++++ lib/awful/util.lua.in	Wed Jun  2 16:34:03 2010
+@@ -88,18 +88,46 @@ function spawn_with_shell(cmd, screen)
+     end
+ end
+ 
++local function read_all(fn)
++    local fd = io.open(fn, _OPEN_RT)
++    if not fd then return nil end
++    local str = fd:read'*a'
++    fd:close()
++    return str
++end
++
+ --- Read a program output and returns its output as a string.
+ -- @param cmd The command to run.
+ -- @return A string with the program output, or the error if one occured.
+ function pread(cmd)
+     if cmd and cmd ~= "" then
+-        local f, err = io.popen(cmd, 'r')
+-        if f then
+-            local s = f:read("*all")
+-            f:close()
+-            return s
++        local rc, sout
++        local tmp1, tmp2
++        local fd_check, serr_check
++
++        tmp1 = os.tmpname()
++        tmp2 = os.tmpname()
++
++        rc = os.execute(cmd.." > "..tmp1.." 2> "..tmp2)
++
++        if rc == 0 then
++            sout = read_all(tmp1)
+         else
+-            return err
++            return nil
++        end
++
++        fd_check = io.open(tmp2)
++        if not fd_check then return nil end
++        serr_check = fd_check:read'*l'
++        fd_check:close()
++
++        os.remove(tmp1)
++        os.remove(tmp2)
++
++	if serr_check then
++            return nil
++        else
++            return sout
+         end
+     end
+ end

@@ -1,0 +1,31 @@
+$OpenBSD: patch-globalconf_h,v 1.1 2010/06/02 15:07:50 dcoppa Exp $
+--- globalconf.h.orig	Tue Mar  2 16:54:05 2010
++++ globalconf.h	Mon May 10 10:46:57 2010
+@@ -139,5 +139,27 @@ typedef struct
+ 
+ extern awesome_t globalconf;
+ 
++#if defined(__GNUC__) && (__GNUC__ > 3 || __GNUC__ == 3 && __GNUC_MINOR__ > 0)
++#define ALWAYS_INLINE __attribute__((always_inline)) inline
++#else
++#define ALWAYS_INLINE inline
++#endif
++
++#if defined(__GNUC__) && (__GNUC__ > 3 || __GNUC__ == 3 && __GNUC_MINOR__ > 3)
++#define awesome_clz(x) __builtin_clz(x)
++#else
++static int ALWAYS_INLINE awesome_clz( uint32_t x )
++{
++    static uint8_t lut[16] = {4,3,2,2,1,1,1,1,0,0,0,0,0,0,0,0};
++    int y, z = (((x >> 16) - 1) >> 27) & 16;
++    x >>= z^16;
++    z += y = ((x - 0x100) >> 28) & 8;
++    x >>= y^8;
++    z += y = ((x - 0x10) >> 29) & 4;
++    x >>= y^4;
++    return z + lut[x];
++}
++#endif
++
+ #endif
+ // vim: filetype=c:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:encoding=utf-8:textwidth=80
