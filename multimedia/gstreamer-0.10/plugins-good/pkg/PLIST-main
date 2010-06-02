@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2010/04/06 09:21:21 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2010/06/02 12:06:54 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.18
 @conflict gstreamer-jpeg-*
 @conflict gstreamer-png-*
@@ -56,8 +56,6 @@ lib/gstreamer-${VERSION}/libgstflac.so
 lib/gstreamer-${VERSION}/libgstflv.so
 @comment lib/gstreamer-${VERSION}/libgstflxdec.la
 lib/gstreamer-${VERSION}/libgstflxdec.so
-@comment lib/gstreamer-${VERSION}/libgstgamma.la
-lib/gstreamer-${VERSION}/libgstgamma.so
 @comment lib/gstreamer-${VERSION}/libgstgconfelements.la
 lib/gstreamer-${VERSION}/libgstgconfelements.so
 @comment lib/gstreamer-${VERSION}/libgstgoom.la
@@ -68,6 +66,8 @@ lib/gstreamer-${VERSION}/libgstgoom2k1.so
 lib/gstreamer-${VERSION}/libgsticydemux.so
 @comment lib/gstreamer-${VERSION}/libgstid3demux.la
 lib/gstreamer-${VERSION}/libgstid3demux.so
+lib/gstreamer-${VERSION}/libgstimagefreeze.la
+lib/gstreamer-${VERSION}/libgstimagefreeze.so
 @comment lib/gstreamer-${VERSION}/libgstinterleave.la
 lib/gstreamer-${VERSION}/libgstinterleave.so
 @comment lib/gstreamer-${VERSION}/libgstjpeg.la
@@ -116,14 +116,12 @@ lib/gstreamer-${VERSION}/libgsttaglib.so
 lib/gstreamer-${VERSION}/libgstudp.so
 @comment lib/gstreamer-${VERSION}/libgstvideo4linux2.la
 lib/gstreamer-${VERSION}/libgstvideo4linux2.so
-@comment lib/gstreamer-${VERSION}/libgstvideobalance.la
-lib/gstreamer-${VERSION}/libgstvideobalance.so
 @comment lib/gstreamer-${VERSION}/libgstvideobox.la
 lib/gstreamer-${VERSION}/libgstvideobox.so
 @comment lib/gstreamer-${VERSION}/libgstvideocrop.la
 lib/gstreamer-${VERSION}/libgstvideocrop.so
-@comment lib/gstreamer-${VERSION}/libgstvideoflip.la
-lib/gstreamer-${VERSION}/libgstvideoflip.so
+@comment lib/gstreamer-${VERSION}/libgstvideofilter.la
+lib/gstreamer-${VERSION}/libgstvideofilter.so
 @comment lib/gstreamer-${VERSION}/libgstvideomixer.la
 lib/gstreamer-${VERSION}/libgstvideomixer.so
 @comment lib/gstreamer-${VERSION}/libgstwavenc.la

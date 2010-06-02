@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/04/28 08:03:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/06/02 12:06:54 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (good)
@@ -7,7 +7,7 @@ COMMENT-gdk =		gdk pixbuf element for GStreamer (good)
 COMMENT-caca =		libcaca element for GStreamer (good)
 COMMENT-soup =		libsoup element for GStreamer (good)
 
-V =			0.10.22
+V =			0.10.23
 DISTNAME =		gst-plugins-good-$V
 
 PKGNAME-main =		gstreamer-plugins-good-${V}v0
@@ -98,6 +98,7 @@ CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-sunaudio \
 			--disable-esd \
 			--disable-esdtest \
+			--disable-oss4 \
 			--enable-gst_v4l2 \
 			--enable-goom
 CONFIGURE_ENV +=	ac_cv_path_PYTHON=""
