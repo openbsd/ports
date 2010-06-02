@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2010/03/26 08:13:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2010/06/02 16:56:46 ajacoutot Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -25,8 +25,6 @@
 @pkgpath ${BASE_PKGPATH},-tremor
 @pkgpath ${BASE_PKGPATH},-xvid
 @pkgpath ${BASE_PKGPATH},-x264
-@bin bin/gst-camera
-@bin bin/gst-camera-perf
 include/gstreamer-${VERSION}/gst/interfaces/photography-enumtypes.h
 include/gstreamer-${VERSION}/gst/interfaces/photography.h
 include/gstreamer-${VERSION}/gst/signalprocessor/
@@ -86,6 +84,8 @@ lib/gstreamer-${VERSION}/libgsth264parse.so
 lib/gstreamer-${VERSION}/libgsthdvparse.so
 @comment lib/gstreamer-${VERSION}/libgstid3tag.la
 lib/gstreamer-${VERSION}/libgstid3tag.so
+@comment lib/gstreamer-${VERSION}/libgstinvtelecine.la
+lib/gstreamer-${VERSION}/libgstinvtelecine.so
 @comment lib/gstreamer-${VERSION}/libgstjp2k.la
 lib/gstreamer-${VERSION}/libgstjp2k.so
 @comment lib/gstreamer-${VERSION}/libgstjpegformat.la
@@ -142,6 +142,8 @@ lib/gstreamer-${VERSION}/libgstschro.so
 lib/gstreamer-${VERSION}/libgstsdl.so
 @comment lib/gstreamer-${VERSION}/libgstsdpelem.la
 lib/gstreamer-${VERSION}/libgstsdpelem.so
+@comment lib/gstreamer-${VERSION}/libgstsegmentclip.la
+lib/gstreamer-${VERSION}/libgstsegmentclip.so
 @comment lib/gstreamer-${VERSION}/libgstselector.la
 lib/gstreamer-${VERSION}/libgstselector.so
 @comment lib/gstreamer-${VERSION}/libgstsiren.la

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2010/04/28 08:03:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/06/02 16:56:46 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (bad)
 COMMENT-real =		real element for GStreamer (bad)
 COMMENT-mjpeg =		gstmplex and gstmpeg2enc elements for GStreamer (bad)
 
-V =			0.10.18
+V =			0.10.19
 DISTNAME =		gst-plugins-bad-${V}
 
-PKGNAME-main =		gstreamer-plugins-bad-${V}p1
+PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-real =		gstreamer-real-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
@@ -36,11 +36,10 @@ BUILD_DEPENDS +=        ::audio/ladspa
 WANTLIB-main =		${WANTLIB} xcb-render xcb-render-util \
 			X11 Xau Xdmcp Xext Xrandr Xrender bz2 pthread-stubs \
 			sndio usbhid xcb gstbase-0.10 gstcontroller-0.10 \
-			Xcomposite Xcursor Xdamage Xfixes Xi Xinerama atk-1.0 \
-			c cairo croco-0.6 expat fontconfig freetype \
-			gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glitz gsf-1 \
-			gtk-x11-2.0 oil-0.3 pango-1.0 pangocairo-1.0 \
-			pangoft2-1.0 pixman-1 png pthread
+			cairo croco-0.6 expat fontconfig freetype \
+			gdk_pixbuf-2.0 gio-2.0 glitz gsf-1 \
+			oil-0.3 pango-1.0 pangocairo-1.0 \
+			pangoft2-1.0 pixman-1 png pthread dvdread
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			gstaudio-0.10,gstinterfaces-0.10,gstvideo-0.10,gstriff-0.10,gstpbutils-0.10,gstrtp-0.10,gstsdp-0.10,gsttag-0.10::${P}/plugins-base \
 			sndfile.>=3::audio/libsndfile \
@@ -57,7 +56,7 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			schroedinger-1.0::multimedia/schroedinger \
 			cdaudio.>=1::audio/libcdaudio \
 			BPM,SoundTouch::audio/soundtouch \
-			dvdnav.>=6,dvdread::multimedia/libdvdnav \
+			dvdnav.>=6:libdvdnav->=4.1.3p0v0:multimedia/libdvdnav \
 			jasper.>=2::graphics/jasper
 
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
@@ -104,7 +103,6 @@ CONFIGURE_ARGS =	--disable-acm \
 			--disable-mythtv \
 			--disable-ofa \
 			--disable-nas \
-			--disable-oss4 \
 			--disable-osx_video \
 			--disable-spc \
 			--disable-vdpau \
