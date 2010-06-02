@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.85 2010/05/04 23:02:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2010/06/02 13:18:56 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			1.6.2.7
-# you can set PATCHVER=p0, p1 etc to bump everything,
-# this takes care of the subpackage/flavor maze
-#PATCHVER=		p4
-CORESOUNDS=		1.4.17
+VER=			1.6.2.8
+CORESOUNDS=		1.4.18
 DISTNAME=		asterisk-${VER:S/rc/-rc/}
-PKGNAME-main=		asterisk-${VER}${PATCHVER}
+# XXX if bumping, see FULLPKGNAME overrides below.
+PKGNAME-main=		asterisk-${VER}
 
 CATEGORIES=		telephony
 
@@ -203,18 +201,18 @@ LIB_DEPENDS-fax=	spandsp::telephony/spandsp \
 			tiff::graphics/tiff
 .endif
 
-.for i in ${MULTI_PACKAGES:N-main}
-# the subpackages aren't flavoured, so overwrite the default name/path
-FULLPKGNAME$i ?=	asterisk$i-${VER}${PATCHVER}
-FULLPKGPATH$i ?=	${PKGPATH},$i
-RUN_DEPENDS$i +=	:asterisk-${VER}:${PKGPATH}
-.endfor
-
 NO_REGRESS=		Yes
 INSTALL_TARGET=		install samples
 EXAMPLEDIR=		${PREFIX}/share/examples/asterisk
 EXAMPLEFILES=		extensions.ael extensions.conf logger.conf \
 			modules.conf musiconhold.conf sip.conf voicemail.conf
+
+.for i in ${MULTI_PACKAGES:N-main}
+# subpackages aren't flavoured, so overwrite the default name/path
+FULLPKGNAME$i ?=	asterisk$i-${VER}
+FULLPKGPATH$i ?=	${PKGPATH},$i
+RUN_DEPENDS$i +=	:asterisk-${VER}:${PKGPATH}
+.endfor
 
 # we don't really want to drag in TeX as a dependency, but at least
 # allow the icons in the HTML docs to work if you already have latex2html
@@ -228,6 +226,9 @@ post-patch:
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	    ./bootstrap.sh
+
+post-build:
+	cd ${WRKBUILD}; ${MAKE_PROGRAM} asterisk.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/asterisk

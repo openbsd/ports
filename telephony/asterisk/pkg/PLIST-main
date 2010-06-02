@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2010/05/03 21:00:34 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2010/06/02 13:18:56 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict chan_unistim-*
@@ -368,10 +368,14 @@ share/asterisk/sounds/en/conf-lockednow.gsm
 share/asterisk/sounds/en/conf-muted.gsm
 share/asterisk/sounds/en/conf-noempty.gsm
 share/asterisk/sounds/en/conf-nonextended.gsm
+share/asterisk/sounds/en/conf-now-muted.gsm
+share/asterisk/sounds/en/conf-now-recording.gsm
+share/asterisk/sounds/en/conf-now-unmuted.gsm
 share/asterisk/sounds/en/conf-onlyone.gsm
 share/asterisk/sounds/en/conf-onlyperson.gsm
 share/asterisk/sounds/en/conf-otherinparty.gsm
 share/asterisk/sounds/en/conf-placeintoconf.gsm
+share/asterisk/sounds/en/conf-roll-callcomplete.gsm
 share/asterisk/sounds/en/conf-thereare.gsm
 share/asterisk/sounds/en/conf-unlockednow.gsm
 share/asterisk/sounds/en/conf-unmuted.gsm
@@ -435,6 +439,7 @@ share/asterisk/sounds/en/digits/9.gsm
 share/asterisk/sounds/en/digits/90.gsm
 share/asterisk/sounds/en/digits/a-m.gsm
 share/asterisk/sounds/en/digits/at.gsm
+share/asterisk/sounds/en/digits/billion.gsm
 share/asterisk/sounds/en/digits/day-0.gsm
 share/asterisk/sounds/en/digits/day-1.gsm
 share/asterisk/sounds/en/digits/day-2.gsm
@@ -459,11 +464,21 @@ share/asterisk/sounds/en/digits/h-20.gsm
 share/asterisk/sounds/en/digits/h-3.gsm
 share/asterisk/sounds/en/digits/h-30.gsm
 share/asterisk/sounds/en/digits/h-4.gsm
+share/asterisk/sounds/en/digits/h-40.gsm
 share/asterisk/sounds/en/digits/h-5.gsm
+share/asterisk/sounds/en/digits/h-50.gsm
 share/asterisk/sounds/en/digits/h-6.gsm
+share/asterisk/sounds/en/digits/h-60.gsm
 share/asterisk/sounds/en/digits/h-7.gsm
+share/asterisk/sounds/en/digits/h-70.gsm
 share/asterisk/sounds/en/digits/h-8.gsm
+share/asterisk/sounds/en/digits/h-80.gsm
 share/asterisk/sounds/en/digits/h-9.gsm
+share/asterisk/sounds/en/digits/h-90.gsm
+share/asterisk/sounds/en/digits/h-billion.gsm
+share/asterisk/sounds/en/digits/h-hundred.gsm
+share/asterisk/sounds/en/digits/h-million.gsm
+share/asterisk/sounds/en/digits/h-thousand.gsm
 share/asterisk/sounds/en/digits/hundred.gsm
 share/asterisk/sounds/en/digits/million.gsm
 share/asterisk/sounds/en/digits/minus.gsm
@@ -578,6 +593,7 @@ share/asterisk/sounds/en/letters/zed.gsm
 share/asterisk/sounds/en/minutes.gsm
 share/asterisk/sounds/en/pbx-invalid.gsm
 share/asterisk/sounds/en/pbx-invalidpark.gsm
+share/asterisk/sounds/en/pbx-parkingfailed.gsm
 share/asterisk/sounds/en/pbx-transfer.gsm
 share/asterisk/sounds/en/phonetic/
 share/asterisk/sounds/en/phonetic/9_p.gsm
@@ -793,7 +809,6 @@ share/asterisk/static-http/docs/images.out
 share/asterisk/static-http/docs/images.pl
 share/asterisk/static-http/docs/images.tex
 share/asterisk/static-http/docs/img1.png
-share/asterisk/static-http/docs/img10.png
 share/asterisk/static-http/docs/img2.png
 share/asterisk/static-http/docs/img3.png
 share/asterisk/static-http/docs/img4.png
@@ -1096,6 +1111,7 @@ share/doc/asterisk/CODING-GUIDELINES
 share/doc/asterisk/COPYING
 share/doc/asterisk/CREDITS
 share/doc/asterisk/ChangeLog
+share/doc/asterisk/HOWTO_collect_debug_information.txt
 share/doc/asterisk/IAX2-security.pdf
 share/doc/asterisk/IAX2-security.txt
 share/doc/asterisk/India-CID.txt
@@ -1121,6 +1137,7 @@ share/doc/asterisk/asterisk-mib.txt
 share/doc/asterisk/asterisk.8
 share/doc/asterisk/asterisk.aux
 share/doc/asterisk/asterisk.css
+share/doc/asterisk/asterisk.dvi
 share/doc/asterisk/asterisk.html
 share/doc/asterisk/asterisk.log
 share/doc/asterisk/asterisk.out
@@ -1128,6 +1145,7 @@ share/doc/asterisk/asterisk.pdf
 share/doc/asterisk/asterisk.sgml
 share/doc/asterisk/asterisk.tex
 share/doc/asterisk/asterisk.toc
+share/doc/asterisk/asterisk.txt
 share/doc/asterisk/backtrace.tex
 share/doc/asterisk/backtrace.txt
 share/doc/asterisk/billing.tex
@@ -1163,7 +1181,6 @@ share/doc/asterisk/images.pl
 share/doc/asterisk/images.tex
 share/doc/asterisk/imapstorage.tex
 share/doc/asterisk/img1.png
-share/doc/asterisk/img10.png
 share/doc/asterisk/img2.png
 share/doc/asterisk/img3.png
 share/doc/asterisk/img4.png
