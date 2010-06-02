@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/03/21 11:26:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/06/02 12:25:59 ajacoutot Exp $
 
 COMMENT-main =		ugly elements for GStreamer
 COMMENT-sidplay =	sidplay element for GStreamer (ugly)
 COMMENT-lame =		lame element for GStreamer (ugly)
 
-V =			0.10.14
+V =			0.10.15
 DISTNAME =		gst-plugins-ugly-${V}
 
 PKGNAME-main =		gstreamer-plugins-ugly-${V}
@@ -40,7 +40,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			mad::audio/libmad \
 			mpeg2::graphics/libmpeg2 \
 			dvdread::devel/libdvdread \
-			x264.>=3::multimedia/x264
+			x264.>=4:x264->=20100511:multimedia/x264
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
 
 WANTLIB-sidplay =	${WANTLIB} gstbase-0.10 stdc++
