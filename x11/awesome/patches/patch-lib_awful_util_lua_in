@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_awful_util_lua_in,v 1.1 2010/06/02 15:07:50 dcoppa Exp $
+$OpenBSD: patch-lib_awful_util_lua_in,v 1.2 2010/06/02 15:15:11 dcoppa Exp $
 
 XXX THIS IS A HACK
 This is needed to workaround the effects of userland 
 threads which change I/O operations to non-blocking.
 
 --- lib/awful/util.lua.in.orig	Tue Mar  2 17:54:05 2010
-+++ lib/awful/util.lua.in	Wed Jun  2 16:34:03 2010
++++ lib/awful/util.lua.in	Wed Jun  2 17:13:40 2010
 @@ -88,18 +88,46 @@ function spawn_with_shell(cmd, screen)
      end
  end
@@ -52,7 +52,7 @@ threads which change I/O operations to non-blocking.
 +        os.remove(tmp1)
 +        os.remove(tmp2)
 +
-+	if serr_check then
++        if serr_check then
 +            return nil
 +        else
 +            return sout
