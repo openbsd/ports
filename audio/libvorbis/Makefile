@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2009/11/24 21:43:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2010/06/03 15:48:36 naddy Exp $
 
 COMMENT=	audio compression codec library
 
-DISTNAME=	libvorbis-1.2.3
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	libvorbis-1.3.1
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.xiph.org/vorbis/
-SHARED_LIBS +=  vorbis               7.0      # .4.3
+SHARED_LIBS +=  vorbis               8.0      # .4.4
 SHARED_LIBS +=  vorbisfile           6.0      # .6.2
-SHARED_LIBS +=  vorbisenc            3.0      # .2.6
+SHARED_LIBS +=  vorbisenc            3.1      # .2.7
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

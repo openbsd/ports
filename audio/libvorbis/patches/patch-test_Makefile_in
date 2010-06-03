@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_Makefile_in,v 1.1 2009/07/13 15:48:55 naddy Exp $
---- test/Makefile.in.orig	Mon Jul  6 17:54:48 2009
-+++ test/Makefile.in	Mon Jul  6 17:55:08 2009
-@@ -204,7 +204,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-test_Makefile_in,v 1.2 2010/06/03 15:48:36 naddy Exp $
+--- test/Makefile.in.orig	Fri Mar 26 08:00:09 2010
++++ test/Makefile.in	Fri May 21 22:33:39 2010
+@@ -205,7 +205,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign
  INCLUDES = -I$(top_srcdir)/include @OGG_CFLAGS@
  test_SOURCES = util.c util.h write_read.c write_read.h test.c

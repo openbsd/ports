@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2009/07/13 15:48:55 naddy Exp $
---- Makefile.in.orig	Mon Jul  6 17:52:04 2009
-+++ Makefile.in	Mon Jul  6 17:52:31 2009
-@@ -227,7 +227,7 @@ target_vendor = @target_vendor@
+$OpenBSD: patch-Makefile_in,v 1.10 2010/06/03 15:48:36 naddy Exp $
+--- Makefile.in.orig	Fri May 21 22:24:18 2010
++++ Makefile.in	Fri May 21 22:24:31 2010
+@@ -231,7 +231,7 @@ target_vendor = @target_vendor@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
- AUTOMAKE_OPTIONS = 1.6 foreign dist-zip dist-bzip2
--SUBDIRS = m4 include vq lib examples test doc
-+SUBDIRS = m4 include lib test doc
+ AUTOMAKE_OPTIONS = 1.7 foreign dist-zip dist-bzip2
+-SUBDIRS = m4 include vq lib test doc $(am__append_1)
++SUBDIRS = m4 include lib test doc $(am__append_1)
  m4datadir = $(datadir)/aclocal
  m4data_DATA = vorbis.m4
  pkgconfigdir = $(libdir)/pkgconfig
