@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure,v 1.11 2010/06/03 15:49:38 naddy Exp $
+--- configure.orig	Sun May 23 16:57:42 2010
++++ configure	Sun May 23 17:00:06 2010
+@@ -11616,9 +11616,9 @@ else
+                 PROFILE="-g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
+      	*)
+                 PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
+-                DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
+-                CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char"
+-                PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
++                DEBUG="-g -Wall -fsigned-char"
++                CFLAGS="-fsigned-char"
++                PROFILE="-g -pg -fsigned-char" ;;
+         esac
+ fi
+ CFLAGS="$CFLAGS $cflags_save -DAO_BUILDING_LIBAO"
+@@ -11637,8 +11637,8 @@ case $host in
+ 	;;
+ esac
+ 
++if false; then		# AC_CHECK_LIB(pthread, pthread_kill)
+ 
+-
+ # we link to libpthread just in case one of our plugins does
+ # in which case this is required to avoid problems on dlclose()
+ 
+@@ -11712,7 +11712,7 @@ _ACEOF
+ 
+ fi
+ 
+-
++fi	# AC_CHECK_LIB(pthread, pthread_kill)
+ 
+ case $host in
+     *hpux*)
