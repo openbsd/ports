@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_output_ao_plugin_c,v 1.1 2010/06/03 16:06:07 pea Exp $
+--- src/output/ao_plugin.c.orig	Fri May 14 23:58:27 2010
++++ src/output/ao_plugin.c	Fri May 14 23:58:58 2010
+@@ -169,6 +169,7 @@ ao_output_open(void *data, struct audio_format *audio_
+ 	ao_sample_format format;
+ 	struct ao_data *ad = (struct ao_data *)data;
+ 
++	memset(&format, 0, sizeof(format));
+ 	/* support for 24 bit samples in libao is currently dubious,
+ 	   and until we have sorted that out, resample everything to
+ 	   16 bit */
