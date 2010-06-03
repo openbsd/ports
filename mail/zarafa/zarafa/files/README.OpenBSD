@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.10 2009/11/21 12:09:29 ajacoutot Exp $
+$OpenBSD: README.OpenBSD,v 1.11 2010/06/03 14:01:57 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -87,9 +87,11 @@ Mail delivery agent configuration
 ---------------------------------
 
 The easiest way to use zarafa-dagent system-wide under a stock OpenBSD
-sendmail installation is to use procmail(1).
+sendmail(8) installation is to use procmail(1).
 See the following URL for other MTA integration:
     http://www.zarafa.com/?q=en/faq/61
+
+Anyway, here are the 3 ways of integrating Zarafa with sendmail(8).
 
 1. Using procmail.
 ==================
@@ -106,11 +108,25 @@ restart sendmail(8):
 
 2. Configuring sendmail to use the zarafa-dagent directly.
 ==========================================================
-To enable the Zarafa dagent for all other deliveries (including
-localhost), add the following lines to your sendmail.mc and restart
-sendmail(8):
+To enable the Zarafa dagent delivery from localhost, add the following
+lines to your sendmail.mc and restart sendmail(8):
     FEATURE(`local_zarafa')dnl
+To enable the Zarafa dagent for all other deliveries, add the following:
     MAILER(`zarafa')dnl
+
+3. Using a .forward file.
+=========================
+
+Add the following .forward file under the user(s) home directory that
+will use Zarafa:
+"|${TRUEPREFIX}/bin/zarafa-dagent <username>"
+
+You can automate this step by copying
+    ${TRUEPREFIX}/share/examples/zarafa/createuser.dotforward
+to
+    ${SYSCONFDIR}/zarafa/userscripts/createuser.d/
+The .forward will be automatically generated when a new user is added to
+Zarafa.
 
 
 The PHP mapi module and OpenBSD Apache
