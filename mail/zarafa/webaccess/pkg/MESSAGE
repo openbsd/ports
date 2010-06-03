@@ -8,9 +8,8 @@ You should point the followings to the DocumentRoot of your web-server:
 You need to edit the config.php file installed under:
 ${INSTDIR} for regular web client access
 
-You may want to edit ${PREFIX}/conf/php.ini according to
-   ${INSTDIR}/.htaccess
-In any case, short_open_tag must be "On".
+With Apache, this directory should be granted these:
+    AllowOverride Indexes Options
 
 If you want to debug the webaccess, copy the following file
    ${INSTDIR}/debug.php.disabled
