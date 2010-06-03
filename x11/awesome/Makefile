@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/02 15:07:50 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2010/06/03 15:43:18 dcoppa Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
 DISTNAME=		awesome-3.4.4
+PKGNAME=		${DISTNAME}p0
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		x11
 
@@ -48,6 +49,8 @@ RUN_DEPENDS=		::misc/rlwrap \
 MODULES=		devel/cmake
 
 CONFIGURE_STYLE=	cmake
+
+CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off
 
 USE_X11=		Yes
 

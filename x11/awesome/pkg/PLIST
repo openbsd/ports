@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/06/02 15:07:50 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/06/03 15:43:18 dcoppa Exp $
 @bin bin/awesome
 bin/awesome-client
 bin/awsetbg
-@man man/man1/awesome-client.1.gz
-@man man/man1/awesome.1.gz
-@man man/man1/awsetbg.1.gz
-@man man/man5/awesomerc.5.gz
+@man man/man1/awesome-client.1
+@man man/man1/awesome.1
+@man man/man1/awsetbg.1
+@man man/man5/awesomerc.5
 share/awesome/
 share/awesome/icons/
 share/awesome/icons/awesome16.png
