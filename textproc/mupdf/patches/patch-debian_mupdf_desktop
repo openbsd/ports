@@ -1,0 +1,14 @@
+$OpenBSD: patch-debian_mupdf_desktop,v 1.1 2010/06/03 19:38:34 sthen Exp $
+--- debian/mupdf.desktop.orig	Thu Apr 29 21:26:43 2010
++++ debian/mupdf.desktop	Thu Jun  3 11:32:28 2010
+@@ -8,8 +8,9 @@ TryExec=mupdf
+ Icon=mupdf.xpm
+ Terminal=false
+ Type=Application
+-MimeType=application/pdf;pplication/x-pdf;
++MimeType=application/pdf;application/x-pdf;
+ Categories=Viewer;Graphics;
++NoDisplay=true
+ 
+ [Desktop Action View]
+ Exec=mupdf %f

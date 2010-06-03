@@ -1,26 +1,20 @@
-Fitz is a project to create a new and modern graphics library.
-At the core of Fitz is the display tree: a scene graph of vector
-graphics, images and text making up the contents of a page.
+MuPDF is a lightweight PDF viewer and toolkit written in portable C.
 
-The standard components of Fitz are:
+The renderer in MuPDF is tailored for high quality anti-aliased graphics.
+It renders text with metrics and spacing accurate to within fractions of a
+pixel for the highest fidelity in reproducing the look of a printed page
+on screen.
 
-    * Base runtime (thin memory and error handling layer)
-    * Streams and filters (standard postscript, pdf and tiff filters)
-    * World model (display trees and resources)
-    * Drawing (draw the tree to a bitmap raster) 
+MuPDF has a small footprint.  A binary that includes the standard Roman
+fonts is only one megabyte.  A build with full CJK support (including an
+Asian font) is approximately five megabytes.
 
-MuPDF is a PDF parser that reads PDF files and creates Fitz trees.
+MuPDF has support for all non-interactive PDF 1.7 features, and the
+toolkit provides a simple API for accessing the internal structures of the
+PDF document.
 
-MuPDF also has an API to modify internal objects in the PDF files
-and write PDF files. For instance, it is possible to use the MuPDF
-library to encrypt existing PDF files, or to rearrange the pages.
-
-pdftool is a commandline demo of this functionality; it is a portable
-pdf swiss army knife for fixing broken pdf files, changing permissions,
-merging and extracting pages, and examining the internal object
-structure of a PDF file.
-
-The mupdf binary (aka pdfview) is a bare bones PDF viewer. 
-
-The optional no_cjk flavor disables CJK font metrics, giving a
-smaller binary.
+Command line utilities are included:  pdfdraw, to render pages and output
+PNM image files.  pdfshow, to print and examine the objects in a PDF file.
+pdfclean, to decompress and pretty print the streams and objects in PDF
+files and also to extract individual pages.  mu_pdfinfo, to display
+information about objects.  pdfextract, to extract individual objects.

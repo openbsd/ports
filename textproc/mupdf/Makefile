@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/03/31 13:06:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/06/03 19:38:34 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-DISTNAME =	mupdf-0.5
+DISTNAME =	mupdf-0.6-source
+PKGNAME =	${DISTNAME:S/-source//}
+WRKDIST =	${WRKDIR}/mupdf
 
 CATEGORIES =	textproc x11
 
@@ -16,55 +18,50 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	X11 Xext c freetype m pthread z
+WANTLIB =	X11 Xext c freetype m z
 
-MASTER_SITES =	${HOMEPAGE}download/
+MASTER_SITES =	${HOMEPAGE}download/source/
 
-BUILD_DEPENDS =	::devel/jam
-
+RUN_DEPENDS =	::devel/desktop-file-utils
 LIB_DEPENDS =	jbig2dec::graphics/jbig2dec \
 		jpeg.>=62::graphics/jpeg \
 		openjpeg::graphics/openjpeg
 
-USE_X11 =		Yes
+USE_X11 =	Yes
+USE_GMAKE =	Yes
 
-NO_REGRESS =		Yes
+NO_REGRESS =	Yes
 
-JAMDEBUG =	-d x	# display command-lines
-JAMDEBUG +=	-q	# die quickly on build failure
-MAKE_ENV +=	CC=${CC} CXX=${CXX}
+MAKE_ENV +=     CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CC=${CC} \
+		CXX=${CXX} build=
 
-JAMFLAGS = \
-	-sALL_LOCATE_TARGET=${WRKBUILD} \
-	-sBUILD= \
-	-sHAVE_OPENJPEG=yes \
-	-sHAVE_JBIG2DEC=yes \
-	-sOPTIM="${CFLAGS}" \
-	-sOS=LINUX \
-	-sCXXFLAGS="${CXXFLAGS} `freetype-config --cflags` -I${LOCALBASE}/include -I${X11BASE}/include" \
-	-sLDFLAGS="${LDFLAGS} `freetype-config --libs` -L${LOCALBASE}/lib"
+CFLAGS +=	-I${LOCALBASE}/include
+LDFLAGS +=	-L${LOCALBASE}/lib
+FAKE_FLAGS =	prefix=${WRKINST}${PREFIX}
 
-FLAVORS +=	no_cjk
-FLAVOR ?=
-
-.if ${FLAVOR:L:Mno_cjk}
-JAMFLAGS +=    -sDEFINES=NOCJK
-.endif
-
-SEPARATE_BUILD =	concurrent
-
+# the normal build embeds fonts into c files which take gobs of ram to
+# compile (too much for some arch, even with -O0). fontres pulls them in
+# via the assember instead.
 pre-configure:
-	cp ${FILESDIR}/fontres.c ${WRKSRC}/
-	${SUBST_CMD} ${WRKSRC}/Jamrules
+	cp ${FILESDIR}/fontres.c ${WRKSRC}/mupdf/
+	${SUBST_CMD} ${WRKSRC}/debian/mupdf.pc
 
-do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam ${JAMDEBUG} ${JAMFLAGS}
-
-do-install:
-	${INSTALL_MAN} ${FILESDIR}/mupdf.1 ${PREFIX}/man/man1
-	${INSTALL_PROGRAM} ${WRKBUILD}/mupdf ${PREFIX}/bin
-.for x in pdfclean pdfdraw pdfextract pdfinfo pdfshow
-	${INSTALL_PROGRAM} ${WRKBUILD}/$x ${PREFIX}/bin/mu_$x
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/debian/mupdf.1 ${PREFIX}/man/man1
+.for x in pdfclean pdfdraw pdfshow
+	${INSTALL_MAN} ${WRKSRC}/debian/$x.1 ${PREFIX}/man/man1/$x.1
 .endfor
+	# don't want to conflict with xpdf's pdfinfo
+	mv ${PREFIX}/bin/pdfinfo ${PREFIX}/bin/pdfinfo_mupdf
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ \
+	    ${PREFIX}/share/application-registry/ ${PREFIX}/share/pixmaps \
+	    ${PREFIX}/lib/pkgconfig/
+	${INSTALL_DATA} ${WRKSRC}/debian/mupdf.xpm ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/debian/mupdf.applications \
+	    ${PREFIX}/share/application-registry/
+	${INSTALL_DATA} ${WRKSRC}/debian/mupdf.desktop \
+	    ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/debian/mupdf.pc \
+	    ${PREFIX}/lib/pkgconfig/mupdf.pc
 
 .include <bsd.port.mk>

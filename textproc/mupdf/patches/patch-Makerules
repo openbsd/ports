@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makerules,v 1.1 2010/06/03 19:38:34 sthen Exp $
+--- Makerules.orig	Tue Jun  1 20:11:36 2010
++++ Makerules	Thu Jun  3 04:45:42 2010
+@@ -4,9 +4,9 @@ OS := $(shell uname)
+ OS := $(OS:MINGW%=MINGW)
+ 
+ LIBS := -ljbig2dec -lopenjpeg -ljpeg -lz -lm
+-CFLAGS := -Wall --std=gnu99 -Ifitz -Imupdf $(THIRD_INCS)
+-LDFLAGS =
+-CC = cc
++CFLAGS += -Wall --std=gnu99 -Ifitz -Imupdf $(THIRD_INCS)
++LDFLAGS ?=
++CC ?= cc
+ LD = $(CC)
+ AR = ar
+ 
+@@ -29,6 +29,15 @@ ifeq  "$(build)" "release"
+ CFLAGS += -mmmx -ftree-vectorize -msse -msse2 -march=k8 -DARCH_X86
+ ARCH_SRC = archx86.c
+ endif
++endif
++
++ifeq "$(OS)" "OpenBSD"
++ifeq "$(freetype_dir)" ""
++CFLAGS += `pkg-config --cflags freetype2`
++LDFLAGS += `pkg-config --libs freetype2`
++endif
++X11LIBS = -lX11 -lXext
++PDFVIEW_EXE = $(X11VIEW_EXE)
+ endif
+ 
+ ifeq "$(OS)" "Darwin"
