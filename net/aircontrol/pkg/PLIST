@@ -1,0 +1,94 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/03 23:30:45 sthen Exp $
+@newgroup _aircontrol:650
+@newuser _aircontrol:650:_aircontrol:daemon:aircontrol user:/nonexistent:/sbin/nologin
+/
+LICENSE
+NOTICE
+README
+bin/
+bin/bootstrap.jar
+bin/catalina-tasks.xml
+bin/catalina.sh
+bin/commons-daemon.jar
+bin/digest.sh
+bin/jsvc.tar.gz
+bin/setclasspath.sh
+bin/shutdown.sh
+bin/startup.sh
+bin/tomcat-juli.jar
+bin/tomcat-native.tar.gz
+bin/tool-wrapper.sh
+bin/version.sh
+@owner _aircontrol
+conf.dist/
+@sample /var/aircontrol/conf/
+conf.dist/Catalina/
+@sample /var/aircontrol/conf/Catalina/
+conf.dist/Catalina/localhost/
+@sample /var/aircontrol/conf/Catalina/localhost/
+conf.dist/catalina.policy
+@sample /var/aircontrol/conf/catalina.policy
+conf.dist/catalina.properties
+@sample /var/aircontrol/conf/catalina.properties
+conf.dist/catalina.properties.uptodate
+@sample /var/aircontrol/conf/catalina.properties.uptodate
+conf.dist/context.xml
+@sample /var/aircontrol/conf/context.xml
+conf.dist/keystore
+@sample /var/aircontrol/conf/keystore
+conf.dist/logging.properties
+@sample /var/aircontrol/conf/logging.properties
+conf.dist/server.xml
+@sample /var/aircontrol/conf/server.xml
+conf.dist/tomcat-users.xml
+@sample /var/aircontrol/conf/tomcat-users.xml
+conf.dist/web.xml
+@sample /var/aircontrol/conf/web.xml
+data.dist/
+@sample /var/aircontrol/data/
+data.dist/ConsoleDB.properties
+@sample /var/aircontrol/data/ConsoleDB.properties
+data.dist/ConsoleDB.script
+@sample /var/aircontrol/data/ConsoleDB.script
+@owner
+docs/
+docs/index.html
+docs/licenses/
+docs/licenses/license-antlr.txt
+docs/licenses/license-apache-2.0.txt
+docs/licenses/license-asm.txt
+docs/licenses/license-dom4j.txt
+docs/licenses/license-hsqldb.txt
+docs/licenses/license-j2ee.txt
+docs/licenses/license-jsch.txt
+docs/licenses/license-lgpl-2.1.txt
+docs/licenses/license-nsis
+lib/
+lib/annotations-api.jar
+lib/catalina-ant.jar
+lib/catalina-ha.jar
+lib/catalina-tribes.jar
+lib/catalina.jar
+lib/el-api.jar
+lib/hsqldb.jar
+lib/jasper-el.jar
+lib/jasper-jdt.jar
+lib/jasper.jar
+lib/jsp-api.jar
+lib/servlet-api.jar
+lib/tomcat-coyote.jar
+lib/tomcat-dbcp.jar
+lib/tomcat-i18n-es.jar
+lib/tomcat-i18n-fr.jar
+lib/tomcat-i18n-ja.jar
+@owner _aircontrol
+logs/
+temp/
+@comment temp/safeToDelete.tmp
+webapps/
+@owner
+webapps/ROOT.war
+webapps/ROOT.war.MD5
+@owner _aircontrol
+work/
+@extra /var/aircontrol

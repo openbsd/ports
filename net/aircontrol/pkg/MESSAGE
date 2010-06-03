@@ -1,0 +1,15 @@
+To start airControl, you may add something like this to /etc/rc.local:
+
+    if [ -x ${PREFIX}/bin/startup.sh ]; then
+        echo ' aircontrol'; sudo -u _aircontrol \
+        env JAVA_HOME=${LOCALBASE}/jdk-1.7.0 \
+        ${PREFIX}/bin/startup.sh
+    fi
+
+Adjust JAVA_HOME as necessary for your choice of JDK 1.6 or 1.7.
+
+If you wish to change from the default basic settings, adapt
+${PREFIX}/conf/catalina.properties as needed (${PREFIX}/README
+has more information). Otherwise you may access the user interface
+at http://hostname:9005/ or https://hostname:8443/ using username
+ubnt, password ubnt.
