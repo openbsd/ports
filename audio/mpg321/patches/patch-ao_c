@@ -1,6 +1,6 @@
-$OpenBSD: patch-ao_c,v 1.1 2008/10/30 14:46:59 naddy Exp $
---- ao.c.orig	Thu Oct 30 15:41:11 2008
-+++ ao.c	Thu Oct 30 15:41:26 2008
+$OpenBSD: patch-ao_c,v 1.2 2010/06/03 16:07:02 pea Exp $
+--- ao.c.orig	Sun Mar 24 06:49:47 2002
++++ ao.c	Fri May 14 22:52:35 2010
 @@ -94,7 +94,7 @@ void check_ao_default_play_device()
  void check_default_play_device()
  {
@@ -10,3 +10,11 @@ $OpenBSD: patch-ao_c,v 1.1 2008/10/30 14:46:59 naddy Exp $
                           | MPG321_USE_NULL | MPG321_USE_WAV | MPG321_USE_ARTS | MPG321_USE_AU 
                           | MPG321_USE_CDR | MPG321_USE_ALSA09 | MPG321_USE_USERDEF)))
      {
+@@ -229,6 +229,7 @@ void open_ao_playdevice(struct mad_header const *heade
+            and restore it afterwards */
+         signal(SIGINT, SIG_DFL);
+         
++	memset(&format, 0, sizeof(format));
+         format.bits = 16;
+         format.rate = header->samplerate;
+         format.channels = (options.opt & MPG321_FORCE_STEREO) ? 2 : MAD_NCHANNELS(header);

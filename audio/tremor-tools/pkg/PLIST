@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/03 01:04:36 jolan Exp $
-bin/igg123
+@comment $OpenBSD: PLIST,v 1.2 2010/06/03 16:11:10 pea Exp $
+@bin bin/igg123
 @man man/man1/igg123.1
 share/examples/tremor-tools/
 share/examples/tremor-tools/igg123rc

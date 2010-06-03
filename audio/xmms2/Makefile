@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/05/26 21:45:01 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/03 16:09:37 pea Exp $
 
 COMMENT =		audio player daemon with library management
 
 V =			0.7
 DISTNAME =		xmms2-${V}DrNo
-PKGNAME =		xmms2-${V}p0
+PKGNAME =		xmms2-${V}p1
 
 SHARED_LIBS +=		xmmsclient++		1.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	0.0 # 1.0.0

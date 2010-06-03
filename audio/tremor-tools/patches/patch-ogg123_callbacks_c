@@ -1,0 +1,13 @@
+$OpenBSD: patch-ogg123_callbacks_c,v 1.1 2010/06/03 16:11:10 pea Exp $
+--- ogg123/callbacks.c.orig	Sat May 15 18:00:25 2010
++++ ogg123/callbacks.c	Sat May 15 18:00:52 2010
+@@ -43,7 +43,8 @@ void audio_reopen_action (buf_t *buf, void *arg)
+   ao_sample_format format;
+ 
+   close_audio_devices (reopen_arg->devices);
+-  
++
++  memset(&format, 0, sizeof(format));  
+   /* Record audio device settings and open the devices */
+   format.rate = reopen_arg->format->rate;
+   format.channels = reopen_arg->format->channels;

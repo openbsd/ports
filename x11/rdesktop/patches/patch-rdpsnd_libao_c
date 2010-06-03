@@ -1,0 +1,19 @@
+$OpenBSD: patch-rdpsnd_libao_c,v 1.1 2010/06/03 16:12:48 pea Exp $
+--- rdpsnd_libao.c.orig	Sat May 15 17:36:37 2010
++++ rdpsnd_libao.c	Sat May 15 17:37:27 2010
+@@ -72,6 +72,7 @@ libao_open(void)
+ 		default_driver = ao_default_driver_id();
+ 	}
+ 
++	memset(&format, 0, sizeof(format));
+ 	format.bits = 16;
+ 	format.channels = 2;
+ 	format.rate = 44100;
+@@ -111,6 +112,7 @@ libao_set_format(RD_WAVEFORMATEX * pwfx)
+ {
+ 	ao_sample_format format;
+ 
++	memset(&format, 0, sizeof(format));
+ 	format.bits = pwfx->wBitsPerSample;
+ 	format.channels = pwfx->nChannels;
+ 	format.rate = 44100;

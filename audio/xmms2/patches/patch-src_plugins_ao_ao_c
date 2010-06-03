@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_plugins_ao_ao_c,v 1.1 2010/06/03 16:09:37 pea Exp $
+--- src/plugins/ao/ao.c.orig	Mon May 17 16:03:33 2010
++++ src/plugins/ao/ao.c	Mon May 17 16:07:34 2010
+@@ -162,6 +162,7 @@ xmms_ao_new (xmms_output_t *output)
+ 
+ 		/* let's just use some common format to check if the device
+ 		 * name is valid */
++		memset(&format, 0, sizeof(format));
+ 		format.bits = 16;
+ 		format.rate = 44100;
+ 		format.channels = 2;
