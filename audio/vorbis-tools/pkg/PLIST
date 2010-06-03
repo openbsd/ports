@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/03/17 21:33:06 naddy Exp $
-bin/ogg123
-bin/oggdec
-bin/oggenc
-bin/ogginfo
-bin/vcut
-bin/vorbiscomment
+@comment $OpenBSD: PLIST,v 1.12 2010/06/03 15:50:28 naddy Exp $
+@bin bin/ogg123
+@bin bin/oggdec
+@bin bin/oggenc
+@bin bin/ogginfo
+@bin bin/vcut
+@bin bin/vorbiscomment
 @man man/man1/ogg123.1
 @man man/man1/oggdec.1
 @man man/man1/oggenc.1
@@ -16,13 +16,20 @@ share/examples/vorbis-tools/ogg123rc
 share/locale/be/LC_MESSAGES/vorbis-tools.mo
 share/locale/cs/LC_MESSAGES/vorbis-tools.mo
 share/locale/da/LC_MESSAGES/vorbis-tools.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/vorbis-tools.mo
+share/locale/eo/LC_MESSAGES/vorbis-tools.mo
 share/locale/es/LC_MESSAGES/vorbis-tools.mo
 share/locale/fr/LC_MESSAGES/vorbis-tools.mo
 share/locale/hr/LC_MESSAGES/vorbis-tools.mo
 share/locale/hu/LC_MESSAGES/vorbis-tools.mo
 share/locale/nl/LC_MESSAGES/vorbis-tools.mo
+share/locale/pl/LC_MESSAGES/vorbis-tools.mo
 share/locale/ro/LC_MESSAGES/vorbis-tools.mo
 share/locale/ru/LC_MESSAGES/vorbis-tools.mo
+share/locale/sk/LC_MESSAGES/vorbis-tools.mo
 share/locale/sv/LC_MESSAGES/vorbis-tools.mo
 share/locale/uk/LC_MESSAGES/vorbis-tools.mo
+share/locale/vi/LC_MESSAGES/vorbis-tools.mo
 @extra ${SYSCONFDIR}/ogg123rc
