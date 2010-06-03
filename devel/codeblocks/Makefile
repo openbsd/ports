@@ -1,18 +1,22 @@
-# $OpenBSD: Makefile,v 1.2 2009/12/22 15:31:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/03 16:09:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Code::Blocks C/C++ IDE
 
-BASENAME=	codeblocks-8.02
-DISTNAME=	${BASENAME}-src
-PKGNAME=	${BASENAME}p0
+V=		10.05
+P=		1
+DISTNAME=	codeblocks-${V}-${P}debian-src
+PKGNAME=	codeblocks-${V}
 
 EXTRACT_SUFX=	.tar.bz2
-WRKDIST=	${WRKDIR}/${BASENAME}
+WRKDIST=	${WRKDIR}/codeblocks-${V}
 
-SHARED_LIBS +=  codeblocks	0.0 # .0.1
-SHARED_LIBS +=  wxsmithlib	0.0 # .0.1
+SHARED_LIBS +=  codeblocks           0.0      # .0.1
+SHARED_LIBS +=  wxsmithlib           0.0      # .0.1
+SHARED_LIBS +=  wxchartctrl          0.0      # .0.1
+SHARED_LIBS +=  wxflatnotebook       0.0      # .0.1
+SHARED_LIBS +=  wxcustombutton       0.0      # .0.1
 
 CATEGORIES=	devel x11
 
@@ -31,9 +35,10 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs stdc++ xcb z
+WANTLIB += gthread-2.0 xcb-render xcb-render-util pthread-stubs
+WANTLIB += stdc++ xcb z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks/}
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=codeblocks/}
 
 BUILD_DEPENDS=	::archivers/zip
 
@@ -50,10 +55,15 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib \
+			-Wl,-rpath,${TRUEPREFIX}/lib/wxSmithContribItems"
+# XXX lib_finder.cpp:302: error: syntax error before `->' token
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
-		--with-contrib-plugins=all
+		--with-contrib-plugins=all,-libfinder
+
+post-extract:
+	tar xzf ${WRKDIR}/src/codeblocks_${V}-${P}.tar.gz -C ${WRKDIR}
 
 pre-configure:
 	ln -s /usr/bin/true ${WRKDIR}/bin/svn

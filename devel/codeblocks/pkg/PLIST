@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/22 15:31:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/06/03 16:09:03 ajacoutot Exp $
 @bin bin/cb_console_runner
 @bin bin/cb_share_config
 @bin bin/codeblocks
 @bin bin/codesnippets
 include/codeblocks/
+include/codeblocks/CharDistribution.h
+include/codeblocks/JpCntx.h
 include/codeblocks/annoyingdialog.h
 include/codeblocks/autodetectcompilers.h
 include/codeblocks/backgroundthread.h
 include/codeblocks/base64.h
 include/codeblocks/blockallocated.h
+include/codeblocks/cbauibook.h
 include/codeblocks/cbeditor.h
 include/codeblocks/cbeditorprintout.h
 include/codeblocks/cbexception.h
@@ -71,12 +74,33 @@ include/codeblocks/menuitemsmanager.h
 include/codeblocks/misctreeitemdata.h
 include/codeblocks/multiselectdlg.h
 include/codeblocks/newfromtemplatedlg.h
+include/codeblocks/nsBig5Prober.h
+include/codeblocks/nsCharSetProber.h
+include/codeblocks/nsCodingStateMachine.h
+include/codeblocks/nsEUCJPProber.h
+include/codeblocks/nsEUCKRProber.h
+include/codeblocks/nsEUCTWProber.h
+include/codeblocks/nsError.h
+include/codeblocks/nsEscCharsetProber.h
+include/codeblocks/nsGB2312Prober.h
+include/codeblocks/nsHebrewProber.h
+include/codeblocks/nsLatin1Prober.h
+include/codeblocks/nsMBCSGroupProber.h
+include/codeblocks/nsPkgInt.h
+include/codeblocks/nsSBCSGroupProber.h
+include/codeblocks/nsSBCharSetProber.h
+include/codeblocks/nsSJISProber.h
+include/codeblocks/nsUTF8Prober.h
+include/codeblocks/nsUniversalDetector.h
+include/codeblocks/nscore.h
 include/codeblocks/personalitymanager.h
 include/codeblocks/pipedprocess.h
 include/codeblocks/pluginmanager.h
 include/codeblocks/pluginsconfigurationdlg.h
+include/codeblocks/prcpucfg.h
 include/codeblocks/prep.h
 include/codeblocks/printing_types.h
+include/codeblocks/prmem.h
 include/codeblocks/projectbuildtarget.h
 include/codeblocks/projectdepsdlg.h
 include/codeblocks/projectfile.h
@@ -88,6 +112,7 @@ include/codeblocks/projectmanager.h
 include/codeblocks/projectoptionsdlg.h
 include/codeblocks/projectsfilemasksdlg.h
 include/codeblocks/projecttemplateloader.h
+include/codeblocks/prtypes.h
 include/codeblocks/replacedlg.h
 include/codeblocks/safedelete.h
 include/codeblocks/scripting/
@@ -112,6 +137,7 @@ include/codeblocks/scripting/sqplus/SquirrelVM.h
 include/codeblocks/scripting/sqplus/sqplus.h
 include/codeblocks/scriptingmanager.h
 include/codeblocks/scriptsecuritywarningdlg.h
+include/codeblocks/scrollingdialog.h
 include/codeblocks/sdk.h
 include/codeblocks/sdk_common.h
 include/codeblocks/sdk_events.h
@@ -128,26 +154,243 @@ include/codeblocks/toolsmanager.h
 include/codeblocks/uservarmanager.h
 include/codeblocks/virtualbuildtargetsdlg.h
 include/codeblocks/workspaceloader.h
-include/codeblocks/wxFlatNotebook/
-include/codeblocks/wxFlatNotebook/fnb_customize_dlg.h
-include/codeblocks/wxFlatNotebook/fnb_resources.h
-include/codeblocks/wxFlatNotebook/fnb_singleton.h
-include/codeblocks/wxFlatNotebook/fnb_smart_ptr.h
-include/codeblocks/wxFlatNotebook/popup_dlg.h
-include/codeblocks/wxFlatNotebook/renderer.h
-include/codeblocks/wxFlatNotebook/wxFNBDropTarget.h
-include/codeblocks/wxFlatNotebook/wxFlatNotebook.h
-include/codeblocks/wxFlatNotebook/xh_fnb.h
 include/codeblocks/wxscintilla/
 include/codeblocks/wxscintilla/include/
 include/codeblocks/wxscintilla/include/wx/
 include/codeblocks/wxscintilla/include/wx/wxscintilla.h
 include/codeblocks/xtra_res.h
+include/wxSmithContribItems/
+include/wxSmithContribItems/wxchart/
+include/wxSmithContribItems/wxchart/wxchart-1.0/
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/axis.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/bar3dchartpoints.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/barchartpoints.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chart.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartcolors.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartctrl.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartdef.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartpoints.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartpointstypes.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartsizes.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/charttypes.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartwindow.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/legend.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/legendwindow.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/pie3dchartpoints.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/piechartpoints.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/points.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/xaxis.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/xaxiswindow.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/yaxis.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/yaxiswindow.h
+include/wxSmithContribItems/wxflatnotebook/
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/fnb_singleton.h
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/fnb_smart_ptr.h
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/renderer.h
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/wxFNBDropTarget.h
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/wxFlatNotebook.h
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/wxFlatNotebookSDK.h
+include/wxSmithContribItems/wxthings/
+include/wxSmithContribItems/wxthings/wxthings/
+include/wxSmithContribItems/wxthings/wxthings/include/
+include/wxSmithContribItems/wxthings/wxthings/include/wx/
+include/wxSmithContribItems/wxthings/wxthings/include/wx/things/
+include/wxSmithContribItems/wxthings/wxthings/include/wx/things/thingdef.h
+include/wxSmithContribItems/wxthings/wxthings/include/wx/things/toggle.h
+include/wxsmith/
+include/wxsmith/contrib/
+include/wxsmith/contrib/include/
+include/wxsmith/contrib/include/wx/
+include/wxsmith/contrib/include/wx/propgrid/
+include/wxsmith/contrib/include/wx/propgrid/advprops.h
+include/wxsmith/contrib/include/wx/propgrid/extras.h
+include/wxsmith/contrib/include/wx/propgrid/manager.h
+include/wxsmith/contrib/include/wx/propgrid/odcombo.h
+include/wxsmith/contrib/include/wx/propgrid/pg_dox_mainpage.h
+include/wxsmith/contrib/include/wx/propgrid/propdev.h
+include/wxsmith/contrib/include/wx/propgrid/propgrid.h
+include/wxsmith/properties/
+include/wxsmith/properties/wxsarraystringeditordlg.h
+include/wxsmith/properties/wxsarraystringproperty.h
+include/wxsmith/properties/wxsboolproperty.h
+include/wxsmith/properties/wxscustomeditorproperty.h
+include/wxsmith/properties/wxsemptyproperty.h
+include/wxsmith/properties/wxsenumproperty.h
+include/wxsmith/properties/wxsflagsproperty.h
+include/wxsmith/properties/wxslongproperty.h
+include/wxsmith/properties/wxsproperties.h
+include/wxsmith/properties/wxsproperty.h
+include/wxsmith/properties/wxspropertycontainer.h
+include/wxsmith/properties/wxspropertygridmanager.h
+include/wxsmith/properties/wxspropertystream.h
+include/wxsmith/properties/wxsquickpropspanel.h
+include/wxsmith/properties/wxsstringproperty.h
+include/wxsmith/wxsadvqpp.h
+include/wxsmith/wxsadvqppchild.h
+include/wxsmith/wxsautoresourcetreeimage.h
+include/wxsmith/wxscodinglang.h
+include/wxsmith/wxseditor.h
+include/wxsmith/wxsgui.h
+include/wxsmith/wxsguifactory.h
+include/wxsmith/wxsproject.h
+include/wxsmith/wxsresource.h
+include/wxsmith/wxsresourcefactory.h
+include/wxsmith/wxsresourcetree.h
+include/wxsmith/wxsresourcetreeitemdata.h
+include/wxsmith/wxwidgets/
+include/wxsmith/wxwidgets/properties/
+include/wxsmith/wxwidgets/properties/wxsarraystringcheckeditordlg.h
+include/wxsmith/wxwidgets/properties/wxsarraystringcheckproperty.h
+include/wxsmith/wxwidgets/properties/wxsbitmapiconeditordlg.h
+include/wxsmith/wxwidgets/properties/wxsbitmapiconproperty.h
+include/wxsmith/wxwidgets/properties/wxscolourproperty.h
+include/wxsmith/wxwidgets/properties/wxsdimensionproperty.h
+include/wxsmith/wxwidgets/properties/wxsfonteditordlg.h
+include/wxsmith/wxwidgets/properties/wxsfontfaceeditordlg.h
+include/wxsmith/wxwidgets/properties/wxsfontproperty.h
+include/wxsmith/wxwidgets/properties/wxspositionsizeproperty.h
+include/wxsmith/wxwidgets/properties/wxssimplefonteditordlg.h
+include/wxsmith/wxwidgets/properties/wxssizerflagsproperty.h
+include/wxsmith/wxwidgets/properties/wxsstyleproperty.h
+include/wxsmith/wxwidgets/wxsbaseproperties.h
+include/wxsmith/wxwidgets/wxscodegenerator.h
+include/wxsmith/wxwidgets/wxscodercontext.h
+include/wxsmith/wxwidgets/wxscontainer.h
+include/wxsmith/wxwidgets/wxscorrector.h
+include/wxsmith/wxwidgets/wxscustomwidgetxmlhandler.h
+include/wxsmith/wxwidgets/wxsdeleteitemres.h
+include/wxsmith/wxwidgets/wxsdialogres.h
+include/wxsmith/wxwidgets/wxsdrawingwindow.h
+include/wxsmith/wxwidgets/wxsevents.h
+include/wxsmith/wxwidgets/wxseventseditor.h
+include/wxsmith/wxwidgets/wxsexproperties.h
+include/wxsmith/wxwidgets/wxsflags.h
+include/wxsmith/wxwidgets/wxsframeres.h
+include/wxsmith/wxwidgets/wxsgridpanel.h
+include/wxsmith/wxwidgets/wxsitem.h
+include/wxsmith/wxwidgets/wxsitemeditor.h
+include/wxsmith/wxwidgets/wxsitemeditorcontent.h
+include/wxsmith/wxwidgets/wxsitemeditordragassist.h
+include/wxsmith/wxwidgets/wxsitemfactory.h
+include/wxsmith/wxwidgets/wxsiteminfo.h
+include/wxsmith/wxwidgets/wxsitemres.h
+include/wxsmith/wxwidgets/wxsitemresdata.h
+include/wxsmith/wxwidgets/wxsitemresdataobject.h
+include/wxsmith/wxwidgets/wxsitemrestreedata.h
+include/wxsmith/wxwidgets/wxsitemundobuffer.h
+include/wxsmith/wxwidgets/wxsnewwindowdlg.h
+include/wxsmith/wxwidgets/wxspanelres.h
+include/wxsmith/wxwidgets/wxsparent.h
+include/wxsmith/wxwidgets/wxspredefinedids.h
+include/wxsmith/wxwidgets/wxsscrollingdialogres.h
+include/wxsmith/wxwidgets/wxssizer.h
+include/wxsmith/wxwidgets/wxssizerparentqp.h
+include/wxsmith/wxwidgets/wxsstyle.h
+include/wxsmith/wxwidgets/wxstool.h
+include/wxsmith/wxwidgets/wxstoolspace.h
+include/wxsmith/wxwidgets/wxswidget.h
+include/wxsmith/wxwidgets/wxwidgetsgui.h
+include/wxsmith/wxwidgets/wxwidgetsguiappadoptingdlg.h
+include/wxsmith/wxwidgets/wxwidgetsguiconfigpanel.h
+include/wxsmith/wxwidgets/wxwidgetsres.h
+include/wxsmith/wxwidgets/wxwidgetsresfactory.h
+lib/codeblocks/
+lib/codeblocks/plugins/
+@comment lib/codeblocks/plugins/libAutoVersioning.la
+lib/codeblocks/plugins/libAutoVersioning.so
+@comment lib/codeblocks/plugins/libBrowseTracker.la
+lib/codeblocks/plugins/libBrowseTracker.so
+@comment lib/codeblocks/plugins/libCccc.la
+lib/codeblocks/plugins/libCccc.so
+@comment lib/codeblocks/plugins/libCppCheck.la
+lib/codeblocks/plugins/libCppCheck.so
+@comment lib/codeblocks/plugins/libHexEditor.la
+lib/codeblocks/plugins/libHexEditor.so
+@comment lib/codeblocks/plugins/libIncrementalSearch.la
+lib/codeblocks/plugins/libIncrementalSearch.so
+@comment lib/codeblocks/plugins/libMouseSap.la
+lib/codeblocks/plugins/libMouseSap.so
+@comment lib/codeblocks/plugins/libProfiler.la
+lib/codeblocks/plugins/libProfiler.so
+@comment lib/codeblocks/plugins/libRegExTestbed.la
+lib/codeblocks/plugins/libRegExTestbed.so
+@comment lib/codeblocks/plugins/libSymTab.la
+lib/codeblocks/plugins/libSymTab.so
+@comment lib/codeblocks/plugins/libThreadSearch.la
+lib/codeblocks/plugins/libThreadSearch.so
+@comment lib/codeblocks/plugins/libValgrind.la
+lib/codeblocks/plugins/libValgrind.so
+@comment lib/codeblocks/plugins/libastyle.la
+lib/codeblocks/plugins/libastyle.so
+@comment lib/codeblocks/plugins/libautosave.la
+lib/codeblocks/plugins/libautosave.so
+@comment lib/codeblocks/plugins/libbyogames.la
+lib/codeblocks/plugins/libbyogames.so
+@comment lib/codeblocks/plugins/libcb_koders.la
+lib/codeblocks/plugins/libcb_koders.so
+@comment lib/codeblocks/plugins/libclasswizard.la
+lib/codeblocks/plugins/libclasswizard.so
+@comment lib/codeblocks/plugins/libcodecompletion.la
+lib/codeblocks/plugins/libcodecompletion.so
+@comment lib/codeblocks/plugins/libcodesnippets.la
+lib/codeblocks/plugins/libcodesnippets.so
+@comment lib/codeblocks/plugins/libcodestat.la
+lib/codeblocks/plugins/libcodestat.so
+@comment lib/codeblocks/plugins/libcompiler.la
+lib/codeblocks/plugins/libcompiler.so
+@comment lib/codeblocks/plugins/libcopystrings.la
+lib/codeblocks/plugins/libcopystrings.so
+@comment lib/codeblocks/plugins/libdebugger.la
+lib/codeblocks/plugins/libdebugger.so
+@comment lib/codeblocks/plugins/libdefaultmimehandler.la
+lib/codeblocks/plugins/libdefaultmimehandler.so
+@comment lib/codeblocks/plugins/libdragscroll.la
+lib/codeblocks/plugins/libdragscroll.so
+@comment lib/codeblocks/plugins/libenvvars.la
+lib/codeblocks/plugins/libenvvars.so
+@comment lib/codeblocks/plugins/libexporter.la
+lib/codeblocks/plugins/libexporter.so
+@comment lib/codeblocks/plugins/libheaderfixup.la
+lib/codeblocks/plugins/libheaderfixup.so
+@comment lib/codeblocks/plugins/libhelp_plugin.la
+lib/codeblocks/plugins/libhelp_plugin.so
+@comment lib/codeblocks/plugins/libkeybinder.la
+lib/codeblocks/plugins/libkeybinder.so
+@comment lib/codeblocks/plugins/libopenfileslist.la
+lib/codeblocks/plugins/libopenfileslist.so
+@comment lib/codeblocks/plugins/libprojectsimporter.la
+lib/codeblocks/plugins/libprojectsimporter.so
+@comment lib/codeblocks/plugins/libscriptedwizard.la
+lib/codeblocks/plugins/libscriptedwizard.so
+@comment lib/codeblocks/plugins/libtodo.la
+lib/codeblocks/plugins/libtodo.so
+@comment lib/codeblocks/plugins/libwxSmithAui.la
+lib/codeblocks/plugins/libwxSmithAui.so
+@comment lib/codeblocks/plugins/libwxsmith.la
+lib/codeblocks/plugins/libwxsmith.so
+@comment lib/codeblocks/plugins/libwxsmithcontribitems.la
+lib/codeblocks/plugins/libwxsmithcontribitems.so
 lib/libcodeblocks.la
 @lib lib/libcodeblocks.so.${LIBcodeblocks_VERSION}
 lib/libwxsmithlib.la
 @lib lib/libwxsmithlib.so.${LIBwxsmithlib_VERSION}
 lib/pkgconfig/codeblocks.pc
+lib/pkgconfig/wxsmith-contrib.pc
+lib/pkgconfig/wxsmith.pc
+lib/pkgconfig/wxsmithaui.pc
+lib/wxSmithContribItems/
+lib/wxSmithContribItems/libwxchartctrl.la
+@lib lib/wxSmithContribItems/libwxchartctrl.so.${LIBwxchartctrl_VERSION}
+lib/wxSmithContribItems/libwxcustombutton.la
+@lib lib/wxSmithContribItems/libwxcustombutton.so.${LIBwxcustombutton_VERSION}
+lib/wxSmithContribItems/libwxflatnotebook.la
+@lib lib/wxSmithContribItems/libwxflatnotebook.so.${LIBwxflatnotebook_VERSION}
 @man man/man1/cb_console_runner.1
 @man man/man1/cb_share_config.1
 @man man/man1/codeblocks.1
@@ -156,10 +399,16 @@ share/applications/codeblocks.desktop
 share/codeblocks/
 share/codeblocks/AutoVersioning.zip
 share/codeblocks/BrowseTracker.zip
+share/codeblocks/Cccc.zip
+share/codeblocks/CppCheck.zip
+share/codeblocks/HexEditor.zip
+share/codeblocks/IncrementalSearch.zip
+share/codeblocks/MouseSap.zip
 share/codeblocks/Profiler.zip
 share/codeblocks/RegExTestbed.zip
 share/codeblocks/SymTab.zip
 share/codeblocks/ThreadSearch.zip
+share/codeblocks/Valgrind.zip
 share/codeblocks/astyle.zip
 share/codeblocks/autosave.zip
 share/codeblocks/byogames.zip
@@ -169,11 +418,13 @@ share/codeblocks/codecompletion.zip
 share/codeblocks/codesnippets.zip
 share/codeblocks/codestat.zip
 share/codeblocks/compiler.zip
+share/codeblocks/copystrings.zip
 share/codeblocks/debugger.zip
 share/codeblocks/defaultmimehandler.zip
 share/codeblocks/dragscroll.zip
 share/codeblocks/envvars.zip
 share/codeblocks/exporter.zip
+share/codeblocks/headerfixup.zip
 share/codeblocks/help_plugin.zip
 share/codeblocks/icons/
 share/codeblocks/icons/app.xpm
@@ -221,12 +472,23 @@ share/codeblocks/images/16x16/findf.png
 share/codeblocks/images/16x16/folder.png
 share/codeblocks/images/16x16/folder_new.png
 share/codeblocks/images/16x16/folder_open.png
+share/codeblocks/images/16x16/folder_yel.png
+share/codeblocks/images/16x16/folder_yel_open.png
 share/codeblocks/images/16x16/goto.png
 share/codeblocks/images/16x16/history_clear.png
 share/codeblocks/images/16x16/idea.png
 share/codeblocks/images/16x16/info.png
+share/codeblocks/images/16x16/mark.png
+share/codeblocks/images/16x16/mark_clear.png
+share/codeblocks/images/16x16/mark_next.png
+share/codeblocks/images/16x16/mark_prev.png
 share/codeblocks/images/16x16/newproject.png
+share/codeblocks/images/16x16/next.png
 share/codeblocks/images/16x16/plug.png
+share/codeblocks/images/16x16/prev.png
+share/codeblocks/images/16x16/project-readonly.png
+share/codeblocks/images/16x16/project.png
+share/codeblocks/images/16x16/projectnew.png
 share/codeblocks/images/16x16/redo.png
 share/codeblocks/images/16x16/run.png
 share/codeblocks/images/16x16/searchreplace.png
@@ -236,18 +498,119 @@ share/codeblocks/images/16x16/view_sidetree.png
 share/codeblocks/images/16x16/view_tree.png
 share/codeblocks/images/16x16/window.png
 share/codeblocks/images/16x16/window_fullscreen.png
+share/codeblocks/images/16x16/workspace-readonly.png
+share/codeblocks/images/16x16/workspace.png
 share/codeblocks/images/ThreadSearch/
-share/codeblocks/images/ThreadSearch/findf.png
-share/codeblocks/images/ThreadSearch/findfdisabled.png
-share/codeblocks/images/ThreadSearch/options.png
-share/codeblocks/images/ThreadSearch/optionsdisabled.png
-share/codeblocks/images/ThreadSearch/stop.png
-share/codeblocks/images/ThreadSearch/stopdisabled.png
+share/codeblocks/images/ThreadSearch/16x16/
+share/codeblocks/images/ThreadSearch/16x16/findf.png
+share/codeblocks/images/ThreadSearch/16x16/findfdisabled.png
+share/codeblocks/images/ThreadSearch/16x16/folder.png
+share/codeblocks/images/ThreadSearch/16x16/folderdisabled.png
+share/codeblocks/images/ThreadSearch/16x16/folderselected.png
+share/codeblocks/images/ThreadSearch/16x16/off.png
+share/codeblocks/images/ThreadSearch/16x16/offdisabled.png
+share/codeblocks/images/ThreadSearch/16x16/on.png
+share/codeblocks/images/ThreadSearch/16x16/ondisabled.png
+share/codeblocks/images/ThreadSearch/16x16/openfiles.png
+share/codeblocks/images/ThreadSearch/16x16/openfiles1.png
+share/codeblocks/images/ThreadSearch/16x16/openfiles1disabled.png
+share/codeblocks/images/ThreadSearch/16x16/openfiles1selected.png
+share/codeblocks/images/ThreadSearch/16x16/openfilesdisabled.png
+share/codeblocks/images/ThreadSearch/16x16/openfilesselected.png
+share/codeblocks/images/ThreadSearch/16x16/options.png
+share/codeblocks/images/ThreadSearch/16x16/optionsdisabled.png
+share/codeblocks/images/ThreadSearch/16x16/project.png
+share/codeblocks/images/ThreadSearch/16x16/project1.png
+share/codeblocks/images/ThreadSearch/16x16/project1disabled.png
+share/codeblocks/images/ThreadSearch/16x16/project1selected.png
+share/codeblocks/images/ThreadSearch/16x16/projectdisabled.png
+share/codeblocks/images/ThreadSearch/16x16/projectselected.png
+share/codeblocks/images/ThreadSearch/16x16/showdir.png
+share/codeblocks/images/ThreadSearch/16x16/showdirdisabled.png
+share/codeblocks/images/ThreadSearch/16x16/stop.png
+share/codeblocks/images/ThreadSearch/16x16/stopdisabled.png
+share/codeblocks/images/ThreadSearch/16x16/target.png
+share/codeblocks/images/ThreadSearch/16x16/target1.png
+share/codeblocks/images/ThreadSearch/16x16/target1disabled.png
+share/codeblocks/images/ThreadSearch/16x16/target1selected.png
+share/codeblocks/images/ThreadSearch/16x16/targetdisabled.png
+share/codeblocks/images/ThreadSearch/16x16/targetselected.png
+share/codeblocks/images/ThreadSearch/16x16/workspace.png
+share/codeblocks/images/ThreadSearch/16x16/workspacedisabled.png
+share/codeblocks/images/ThreadSearch/16x16/workspaceselected.png
+share/codeblocks/images/ThreadSearch/22x22/
+share/codeblocks/images/ThreadSearch/22x22/file.png
+share/codeblocks/images/ThreadSearch/22x22/findf.png
+share/codeblocks/images/ThreadSearch/22x22/findfdisabled.png
+share/codeblocks/images/ThreadSearch/22x22/folder.png
+share/codeblocks/images/ThreadSearch/22x22/folderdisabled.png
+share/codeblocks/images/ThreadSearch/22x22/folderselected.png
+share/codeblocks/images/ThreadSearch/22x22/lookingglass.png
+share/codeblocks/images/ThreadSearch/22x22/off.png
+share/codeblocks/images/ThreadSearch/22x22/offdisabled.png
+share/codeblocks/images/ThreadSearch/22x22/on.png
+share/codeblocks/images/ThreadSearch/22x22/ondisabled.png
+share/codeblocks/images/ThreadSearch/22x22/openfiles.png
+share/codeblocks/images/ThreadSearch/22x22/openfilesdisabled.png
+share/codeblocks/images/ThreadSearch/22x22/openfilesselected.png
+share/codeblocks/images/ThreadSearch/22x22/options.png
+share/codeblocks/images/ThreadSearch/22x22/optionsdisabled.png
+share/codeblocks/images/ThreadSearch/22x22/project.png
+share/codeblocks/images/ThreadSearch/22x22/project1.png
+share/codeblocks/images/ThreadSearch/22x22/project1disabled.png
+share/codeblocks/images/ThreadSearch/22x22/project1selected.png
+share/codeblocks/images/ThreadSearch/22x22/project2.png
+share/codeblocks/images/ThreadSearch/22x22/project2d.png
+share/codeblocks/images/ThreadSearch/22x22/project2s.png
+share/codeblocks/images/ThreadSearch/22x22/projectdisabled.png
+share/codeblocks/images/ThreadSearch/22x22/projectselected.png
+share/codeblocks/images/ThreadSearch/22x22/showdir.png
+share/codeblocks/images/ThreadSearch/22x22/showdirdisabled.png
+share/codeblocks/images/ThreadSearch/22x22/stop.png
+share/codeblocks/images/ThreadSearch/22x22/stopdisabled.png
+share/codeblocks/images/ThreadSearch/22x22/target.png
+share/codeblocks/images/ThreadSearch/22x22/target1.png
+share/codeblocks/images/ThreadSearch/22x22/target1disabled.png
+share/codeblocks/images/ThreadSearch/22x22/target1selected.png
+share/codeblocks/images/ThreadSearch/22x22/targetdisabled.png
+share/codeblocks/images/ThreadSearch/22x22/targetselected.png
+share/codeblocks/images/ThreadSearch/22x22/workspace.png
+share/codeblocks/images/ThreadSearch/22x22/workspacedisabled.png
+share/codeblocks/images/ThreadSearch/22x22/workspaceselected.png
+share/codeblocks/images/ThreadSearch/folder.png
+share/codeblocks/images/ThreadSearch/folderdisabled.png
+share/codeblocks/images/ThreadSearch/folderselected.png
+share/codeblocks/images/ThreadSearch/off.png
+share/codeblocks/images/ThreadSearch/on.png
+share/codeblocks/images/ThreadSearch/openfiles.png
+share/codeblocks/images/ThreadSearch/openfilesdisabled.png
+share/codeblocks/images/ThreadSearch/openfilesselected.png
+share/codeblocks/images/ThreadSearch/project.png
+share/codeblocks/images/ThreadSearch/project1.png
+share/codeblocks/images/ThreadSearch/project1disabled.png
+share/codeblocks/images/ThreadSearch/project1selected.png
+share/codeblocks/images/ThreadSearch/projectdisabled.png
+share/codeblocks/images/ThreadSearch/projectselected.png
+share/codeblocks/images/ThreadSearch/showdir.png
+share/codeblocks/images/ThreadSearch/showdirdisabled.png
+share/codeblocks/images/ThreadSearch/target.png
+share/codeblocks/images/ThreadSearch/target1.png
+share/codeblocks/images/ThreadSearch/target1disabled.png
+share/codeblocks/images/ThreadSearch/target1selected.png
+share/codeblocks/images/ThreadSearch/targetdisabled.png
+share/codeblocks/images/ThreadSearch/targetselected.png
+share/codeblocks/images/ThreadSearch/workspace.png
+share/codeblocks/images/ThreadSearch/workspacedisabled.png
+share/codeblocks/images/ThreadSearch/workspaceselected.png
 share/codeblocks/images/ascii.png
+share/codeblocks/images/closebutton.png
 share/codeblocks/images/codeblocks.png
 share/codeblocks/images/codecompletion/
 share/codeblocks/images/codecompletion/class.png
 share/codeblocks/images/codecompletion/class_folder.png
+share/codeblocks/images/codecompletion/class_private.png
+share/codeblocks/images/codecompletion/class_protected.png
+share/codeblocks/images/codecompletion/class_public.png
 share/codeblocks/images/codecompletion/ctor_private.png
 share/codeblocks/images/codecompletion/ctor_protected.png
 share/codeblocks/images/codecompletion/ctor_public.png
@@ -255,8 +618,23 @@ share/codeblocks/images/codecompletion/dtor_private.png
 share/codeblocks/images/codecompletion/dtor_protected.png
 share/codeblocks/images/codecompletion/dtor_public.png
 share/codeblocks/images/codecompletion/enum.png
+share/codeblocks/images/codecompletion/enum_private.png
+share/codeblocks/images/codecompletion/enum_protected.png
+share/codeblocks/images/codecompletion/enum_public.png
 share/codeblocks/images/codecompletion/enumerator.png
 share/codeblocks/images/codecompletion/enums_folder.png
+share/codeblocks/images/codecompletion/folder.png
+share/codeblocks/images/codecompletion/folder_blue.png
+share/codeblocks/images/codecompletion/folder_blue_open.png
+share/codeblocks/images/codecompletion/folder_green.png
+share/codeblocks/images/codecompletion/folder_green_open.png
+share/codeblocks/images/codecompletion/folder_open.png
+share/codeblocks/images/codecompletion/funcs_folder.png
+share/codeblocks/images/codecompletion/macro.png
+share/codeblocks/images/codecompletion/macro_folder.png
+share/codeblocks/images/codecompletion/macro_private.png
+share/codeblocks/images/codecompletion/macro_protected.png
+share/codeblocks/images/codecompletion/macro_public.png
 share/codeblocks/images/codecompletion/method_private.png
 share/codeblocks/images/codecompletion/method_protected.png
 share/codeblocks/images/codecompletion/method_public.png
@@ -266,14 +644,24 @@ share/codeblocks/images/codecompletion/preproc.png
 share/codeblocks/images/codecompletion/preproc_folder.png
 share/codeblocks/images/codecompletion/symbols_folder.png
 share/codeblocks/images/codecompletion/typedef.png
+share/codeblocks/images/codecompletion/typedef_private.png
+share/codeblocks/images/codecompletion/typedef_protected.png
+share/codeblocks/images/codecompletion/typedef_public.png
 share/codeblocks/images/codecompletion/typedefs_folder.png
 share/codeblocks/images/codecompletion/var_private.png
 share/codeblocks/images/codecompletion/var_protected.png
 share/codeblocks/images/codecompletion/var_public.png
+share/codeblocks/images/codecompletion/vars_folder.png
 share/codeblocks/images/codesnippets/
 share/codeblocks/images/codesnippets/allsnippets.png
 share/codeblocks/images/codesnippets/category.png
+share/codeblocks/images/codesnippets/findf.png
+share/codeblocks/images/codesnippets/findfdisabled.png
+share/codeblocks/images/codesnippets/options.png
+share/codeblocks/images/codesnippets/optionsdisabled.png
 share/codeblocks/images/codesnippets/snippet.png
+share/codeblocks/images/codesnippets/stop.png
+share/codeblocks/images/codesnippets/stopdisabled.png
 share/codeblocks/images/compile.png
 share/codeblocks/images/compilerun.png
 share/codeblocks/images/contents_16x16.png
@@ -366,6 +754,8 @@ share/codeblocks/images/settings/gutter-margin-off.png
 share/codeblocks/images/settings/gutter-margin.png
 share/codeblocks/images/settings/help-plugin-off.png
 share/codeblocks/images/settings/help-plugin.png
+share/codeblocks/images/settings/incsearch-off.png
+share/codeblocks/images/settings/incsearch.png
 share/codeblocks/images/settings/net-off.png
 share/codeblocks/images/settings/net.png
 share/codeblocks/images/settings/notebook-appearance-off.png
@@ -384,7 +774,8 @@ share/codeblocks/images/settings/wxsmith-off.png
 share/codeblocks/images/settings/wxsmith.png
 share/codeblocks/images/source.png
 share/codeblocks/images/splash.png
-share/codeblocks/images/splash_new.png
+share/codeblocks/images/splash_0802.png
+share/codeblocks/images/splash_1005.png
 share/codeblocks/images/stop.png
 share/codeblocks/images/undo.png
 share/codeblocks/images/vfolder_open.png
@@ -446,6 +837,8 @@ share/codeblocks/images/wxsmith/wxFlexGridSizer16.png
 share/codeblocks/images/wxsmith/wxFlexGridSizer32.png
 share/codeblocks/images/wxsmith/wxFrame16.png
 share/codeblocks/images/wxsmith/wxFrame32.png
+share/codeblocks/images/wxsmith/wxGLCanvas16.png
+share/codeblocks/images/wxsmith/wxGLCanvas32.png
 share/codeblocks/images/wxsmith/wxGauge16.png
 share/codeblocks/images/wxsmith/wxGauge32.png
 share/codeblocks/images/wxsmith/wxGenericDirCtrl16.png
@@ -478,12 +871,20 @@ share/codeblocks/images/wxsmith/wxRadioBox16.png
 share/codeblocks/images/wxsmith/wxRadioBox32.png
 share/codeblocks/images/wxsmith/wxRadioButton16.png
 share/codeblocks/images/wxsmith/wxRadioButton32.png
+share/codeblocks/images/wxsmith/wxSashLayoutWindow16.png
+share/codeblocks/images/wxsmith/wxSashLayoutWindow32.png
+share/codeblocks/images/wxsmith/wxSashWindow16.png
+share/codeblocks/images/wxsmith/wxSashWindow32.png
 share/codeblocks/images/wxsmith/wxScrollBar16.png
 share/codeblocks/images/wxsmith/wxScrollBar32.png
 share/codeblocks/images/wxsmith/wxScrolledWindow16.png
 share/codeblocks/images/wxsmith/wxScrolledWindow32.png
+share/codeblocks/images/wxsmith/wxScrollingDialog16.png
+share/codeblocks/images/wxsmith/wxScrollingDialog32.png
 share/codeblocks/images/wxsmith/wxSingleChoiceDialog16.png
 share/codeblocks/images/wxsmith/wxSingleChoiceDialog32.png
+share/codeblocks/images/wxsmith/wxSingleInstanceChecker16.png
+share/codeblocks/images/wxsmith/wxSingleInstanceChecker32.png
 share/codeblocks/images/wxsmith/wxSlider16.png
 share/codeblocks/images/wxsmith/wxSlider32.png
 share/codeblocks/images/wxsmith/wxSmith16.png
@@ -508,6 +909,10 @@ share/codeblocks/images/wxsmith/wxStatusBar16.png
 share/codeblocks/images/wxsmith/wxStatusBar32.png
 share/codeblocks/images/wxsmith/wxStdDialogButtonSizer16.png
 share/codeblocks/images/wxsmith/wxStdDialogButtonSizer32.png
+share/codeblocks/images/wxsmith/wxStopWatch16.png
+share/codeblocks/images/wxsmith/wxStopWatch32.png
+share/codeblocks/images/wxsmith/wxSymbolPickerDialog16.png
+share/codeblocks/images/wxsmith/wxSymbolPickerDialog32.png
 share/codeblocks/images/wxsmith/wxTextCtrl16.png
 share/codeblocks/images/wxsmith/wxTextCtrl32.png
 share/codeblocks/images/wxsmith/wxTimer16.png
@@ -526,12 +931,18 @@ share/codeblocks/lexers/lexer_OgreCompositor.sample
 share/codeblocks/lexers/lexer_OgreCompositor.xml
 share/codeblocks/lexers/lexer_OgreMaterial.sample
 share/codeblocks/lexers/lexer_OgreMaterial.xml
+share/codeblocks/lexers/lexer_ada.sample
+share/codeblocks/lexers/lexer_ada.xml
 share/codeblocks/lexers/lexer_angelscript.sample
 share/codeblocks/lexers/lexer_angelscript.xml
 share/codeblocks/lexers/lexer_bash.sample
+share/codeblocks/lexers/lexer_bash.sample.beforesubst
+share/codeblocks/lexers/lexer_bash.sample.orig
 share/codeblocks/lexers/lexer_bash.xml
 share/codeblocks/lexers/lexer_batch.sample
 share/codeblocks/lexers/lexer_batch.xml
+share/codeblocks/lexers/lexer_caml.sample
+share/codeblocks/lexers/lexer_caml.xml
 share/codeblocks/lexers/lexer_cg.sample
 share/codeblocks/lexers/lexer_cg.xml
 share/codeblocks/lexers/lexer_cpp.sample
@@ -550,12 +961,16 @@ share/codeblocks/lexers/lexer_glsl.sample
 share/codeblocks/lexers/lexer_glsl.xml
 share/codeblocks/lexers/lexer_gm.sample
 share/codeblocks/lexers/lexer_gm.xml
+share/codeblocks/lexers/lexer_haskell.sample
+share/codeblocks/lexers/lexer_haskell.xml
 share/codeblocks/lexers/lexer_hitasm.sample
 share/codeblocks/lexers/lexer_hitasm.xml
 share/codeblocks/lexers/lexer_html.sample
 share/codeblocks/lexers/lexer_html.xml
 share/codeblocks/lexers/lexer_latex.sample
 share/codeblocks/lexers/lexer_latex.xml
+share/codeblocks/lexers/lexer_lisp.sample
+share/codeblocks/lexers/lexer_lisp.xml
 share/codeblocks/lexers/lexer_lua.sample
 share/codeblocks/lexers/lexer_lua.xml
 share/codeblocks/lexers/lexer_make.sample
@@ -564,10 +979,15 @@ share/codeblocks/lexers/lexer_masm.sample
 share/codeblocks/lexers/lexer_masm.xml
 share/codeblocks/lexers/lexer_matlab.sample
 share/codeblocks/lexers/lexer_matlab.xml
+share/codeblocks/lexers/lexer_nassi.xml
 share/codeblocks/lexers/lexer_nsis.sample
 share/codeblocks/lexers/lexer_nsis.xml
+share/codeblocks/lexers/lexer_pascal.sample
+share/codeblocks/lexers/lexer_pascal.xml
 share/codeblocks/lexers/lexer_perl.sample
 share/codeblocks/lexers/lexer_perl.xml
+share/codeblocks/lexers/lexer_postscript.sample
+share/codeblocks/lexers/lexer_postscript.xml
 share/codeblocks/lexers/lexer_prg.sample
 share/codeblocks/lexers/lexer_prg.xml
 share/codeblocks/lexers/lexer_properties.sample
@@ -576,6 +996,12 @@ share/codeblocks/lexers/lexer_python.sample
 share/codeblocks/lexers/lexer_python.xml
 share/codeblocks/lexers/lexer_rc.sample
 share/codeblocks/lexers/lexer_rc.xml
+share/codeblocks/lexers/lexer_ruby.sample
+share/codeblocks/lexers/lexer_ruby.xml
+share/codeblocks/lexers/lexer_smalltalk.sample
+share/codeblocks/lexers/lexer_smalltalk.xml
+share/codeblocks/lexers/lexer_sql.sample
+share/codeblocks/lexers/lexer_sql.xml
 share/codeblocks/lexers/lexer_squirrel.sample
 share/codeblocks/lexers/lexer_squirrel.xml
 share/codeblocks/lexers/lexer_vbscript.sample
@@ -586,72 +1012,8 @@ share/codeblocks/lexers/lexer_vhdl.sample
 share/codeblocks/lexers/lexer_vhdl.xml
 share/codeblocks/lexers/lexer_xml.sample
 share/codeblocks/lexers/lexer_xml.xml
-share/codeblocks/lib_finder/
-share/codeblocks/lib_finder.zip
-share/codeblocks/lib_finder/codeblocks_sdk.xml
-share/codeblocks/lib_finder/glfw.xml
-share/codeblocks/lib_finder/wxwidgets.xml
 share/codeblocks/manager_resources.zip
 share/codeblocks/openfileslist.zip
-share/codeblocks/plugins/
-@comment share/codeblocks/plugins/libAutoVersioning.la
-share/codeblocks/plugins/libAutoVersioning.so
-@comment share/codeblocks/plugins/libBrowseTracker.la
-share/codeblocks/plugins/libBrowseTracker.so
-@comment share/codeblocks/plugins/libProfiler.la
-share/codeblocks/plugins/libProfiler.so
-@comment share/codeblocks/plugins/libRegExTestbed.la
-share/codeblocks/plugins/libRegExTestbed.so
-@comment share/codeblocks/plugins/libSymTab.la
-share/codeblocks/plugins/libSymTab.so
-@comment share/codeblocks/plugins/libThreadSearch.la
-share/codeblocks/plugins/libThreadSearch.so
-@comment share/codeblocks/plugins/libastyle.la
-share/codeblocks/plugins/libastyle.so
-@comment share/codeblocks/plugins/libautosave.la
-share/codeblocks/plugins/libautosave.so
-@comment share/codeblocks/plugins/libbyogames.la
-share/codeblocks/plugins/libbyogames.so
-@comment share/codeblocks/plugins/libcb_koders.la
-share/codeblocks/plugins/libcb_koders.so
-@comment share/codeblocks/plugins/libclasswizard.la
-share/codeblocks/plugins/libclasswizard.so
-@comment share/codeblocks/plugins/libcodecompletion.la
-share/codeblocks/plugins/libcodecompletion.so
-@comment share/codeblocks/plugins/libcodesnippets.la
-share/codeblocks/plugins/libcodesnippets.so
-@comment share/codeblocks/plugins/libcodestat.la
-share/codeblocks/plugins/libcodestat.so
-@comment share/codeblocks/plugins/libcompiler.la
-share/codeblocks/plugins/libcompiler.so
-@comment share/codeblocks/plugins/libdebugger.la
-share/codeblocks/plugins/libdebugger.so
-@comment share/codeblocks/plugins/libdefaultmimehandler.la
-share/codeblocks/plugins/libdefaultmimehandler.so
-@comment share/codeblocks/plugins/libdragscroll.la
-share/codeblocks/plugins/libdragscroll.so
-@comment share/codeblocks/plugins/libenvvars.la
-share/codeblocks/plugins/libenvvars.so
-@comment share/codeblocks/plugins/libexporter.la
-share/codeblocks/plugins/libexporter.so
-@comment share/codeblocks/plugins/libhelp_plugin.la
-share/codeblocks/plugins/libhelp_plugin.so
-@comment share/codeblocks/plugins/libkeybinder.la
-share/codeblocks/plugins/libkeybinder.so
-@comment share/codeblocks/plugins/liblib_finder.la
-share/codeblocks/plugins/liblib_finder.so
-@comment share/codeblocks/plugins/libopenfileslist.la
-share/codeblocks/plugins/libopenfileslist.so
-@comment share/codeblocks/plugins/libprojectsimporter.la
-share/codeblocks/plugins/libprojectsimporter.so
-@comment share/codeblocks/plugins/libscriptedwizard.la
-share/codeblocks/plugins/libscriptedwizard.so
-@comment share/codeblocks/plugins/libtodo.la
-share/codeblocks/plugins/libtodo.so
-@comment share/codeblocks/plugins/libwxsmith.la
-share/codeblocks/plugins/libwxsmith.so
-@comment share/codeblocks/plugins/libwxsmithcontribitems.la
-share/codeblocks/plugins/libwxsmithcontribitems.so
 share/codeblocks/projectsimporter.zip
 share/codeblocks/resources.zip
 share/codeblocks/scriptedwizard.zip
@@ -660,6 +1022,7 @@ share/codeblocks/scripts/edit_startup_script.script
 share/codeblocks/scripts/gdb_types.script
 share/codeblocks/scripts/make_dist.script
 share/codeblocks/scripts/startup.script
+share/codeblocks/scripts/stl-views-1.0.3.gdb
 share/codeblocks/scripts/wx_help.script
 share/codeblocks/start_here.zip
 share/codeblocks/templates/
@@ -696,6 +1059,11 @@ share/codeblocks/templates/sdl-main.cpp
 share/codeblocks/templates/sdl.png
 share/codeblocks/templates/sdlapp.cbp
 share/codeblocks/templates/sdlapp.template
+share/codeblocks/templates/sfml-cb.bmp
+share/codeblocks/templates/sfml-main.cpp
+share/codeblocks/templates/sfml.cbp
+share/codeblocks/templates/sfml.png
+share/codeblocks/templates/sfml.template
 share/codeblocks/templates/sharedlib-sample.c
 share/codeblocks/templates/sharedlib.cbp
 share/codeblocks/templates/sharedlib.template
@@ -703,6 +1071,96 @@ share/codeblocks/templates/staticlib-sample.c
 share/codeblocks/templates/staticlib.cbp
 share/codeblocks/templates/staticlib.template
 share/codeblocks/templates/wizard/
+share/codeblocks/templates/wizard/arm/
+share/codeblocks/templates/wizard/arm/files/
+share/codeblocks/templates/wizard/arm/files/ARM-eval7t/
+share/codeblocks/templates/wizard/arm/files/ARM-eval7t/h/
+share/codeblocks/templates/wizard/arm/files/ARM-eval7t/h/evaluator7t.h
+share/codeblocks/templates/wizard/arm/files/ARM-eval7t/ld/
+share/codeblocks/templates/wizard/arm/files/ARM-eval7t/ld/target.ld
+share/codeblocks/templates/wizard/arm/files/ARM-eval7t/src/
+share/codeblocks/templates/wizard/arm/files/ARM-eval7t/src/main.c
+share/codeblocks/templates/wizard/arm/files/ARM-eval7t/src/vectors.S
+share/codeblocks/templates/wizard/arm/files/ek-at91sam7a3/
+share/codeblocks/templates/wizard/arm/files/ek-at91sam7a3/h/
+share/codeblocks/templates/wizard/arm/files/ek-at91sam7a3/h/at91sam7a3.h
+share/codeblocks/templates/wizard/arm/files/ek-at91sam7a3/h/sam7a3ek.h
+share/codeblocks/templates/wizard/arm/files/ek-at91sam7a3/ld/
+share/codeblocks/templates/wizard/arm/files/ek-at91sam7a3/ld/target.ld
+share/codeblocks/templates/wizard/arm/files/ek-at91sam7a3/ld/targetRAM.ld
+share/codeblocks/templates/wizard/arm/files/ek-at91sam7a3/src/
+share/codeblocks/templates/wizard/arm/files/ek-at91sam7a3/src/main.c
+share/codeblocks/templates/wizard/arm/files/ek-at91sam7a3/src/vectors.S
+share/codeblocks/templates/wizard/arm/files/lpd-lh7a404/
+share/codeblocks/templates/wizard/arm/files/lpd-lh7a404/h/
+share/codeblocks/templates/wizard/arm/files/lpd-lh7a404/h/arm9_mm.h
+share/codeblocks/templates/wizard/arm/files/lpd-lh7a404/h/lh7a404.h
+share/codeblocks/templates/wizard/arm/files/lpd-lh7a404/h/lpd404.h
+share/codeblocks/templates/wizard/arm/files/lpd-lh7a404/ld/
+share/codeblocks/templates/wizard/arm/files/lpd-lh7a404/ld/target.ld
+share/codeblocks/templates/wizard/arm/files/lpd-lh7a404/src/
+share/codeblocks/templates/wizard/arm/files/lpd-lh7a404/src/lh7a404_mm.c
+share/codeblocks/templates/wizard/arm/files/lpd-lh7a404/src/main.c
+share/codeblocks/templates/wizard/arm/files/lpd-lh7a404/src/vectors.S
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/h/
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/h/at91sam7sx.h
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/h/sam7p64.h
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/ld/
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/ld/target_s128.ld
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/ld/target_s256.ld
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/ld/target_s32.ld
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/ld/target_s64.ld
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/src/
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/src/main.c
+share/codeblocks/templates/wizard/arm/files/olimex-at91sam7sx/src/vectors.S
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/h/
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/h/lpc-p2138.h
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/h/lpc213x.h
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/ld/
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/ld/target_2132.ld
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/ld/target_2134.ld
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/ld/target_2136.ld
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/ld/target_2138.ld
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/src/
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/src/main.c
+share/codeblocks/templates/wizard/arm/files/olimex-lpc213x/src/vectors.S
+share/codeblocks/templates/wizard/arm/files/phyCORE-AT91M55800/
+share/codeblocks/templates/wizard/arm/files/phyCORE-AT91M55800/h/
+share/codeblocks/templates/wizard/arm/files/phyCORE-AT91M55800/h/at91m55800.h
+share/codeblocks/templates/wizard/arm/files/phyCORE-AT91M55800/ld/
+share/codeblocks/templates/wizard/arm/files/phyCORE-AT91M55800/ld/target.ld
+share/codeblocks/templates/wizard/arm/files/phyCORE-AT91M55800/ld/targetRAM_1MB.ld
+share/codeblocks/templates/wizard/arm/files/phyCORE-AT91M55800/ld/targetRAM_512kB.ld
+share/codeblocks/templates/wizard/arm/files/phyCORE-AT91M55800/ld/targetROM.ld
+share/codeblocks/templates/wizard/arm/files/phyCORE-AT91M55800/src/
+share/codeblocks/templates/wizard/arm/files/phyCORE-AT91M55800/src/main.c
+share/codeblocks/templates/wizard/arm/files/phyCORE-AT91M55800/src/vectors.S
+share/codeblocks/templates/wizard/arm/files/phyCORE-LPC2294/
+share/codeblocks/templates/wizard/arm/files/phyCORE-LPC2294/h/
+share/codeblocks/templates/wizard/arm/files/phyCORE-LPC2294/h/lpc2294.h
+share/codeblocks/templates/wizard/arm/files/phyCORE-LPC2294/ld/
+share/codeblocks/templates/wizard/arm/files/phyCORE-LPC2294/ld/target.ld
+share/codeblocks/templates/wizard/arm/files/phyCORE-LPC2294/ld/targetRAM_1MB.ld
+share/codeblocks/templates/wizard/arm/files/phyCORE-LPC2294/ld/targetROM.ld
+share/codeblocks/templates/wizard/arm/files/phyCORE-LPC2294/src/
+share/codeblocks/templates/wizard/arm/files/phyCORE-LPC2294/src/main.c
+share/codeblocks/templates/wizard/arm/files/phyCORE-LPC2294/src/vectors.S
+share/codeblocks/templates/wizard/arm/files/phyCORE-PXA255/
+share/codeblocks/templates/wizard/arm/files/phyCORE-PXA255/h/
+share/codeblocks/templates/wizard/arm/files/phyCORE-PXA255/h/pxa255regs.h
+share/codeblocks/templates/wizard/arm/files/phyCORE-PXA255/h/pxa_mm.h
+share/codeblocks/templates/wizard/arm/files/phyCORE-PXA255/ld/
+share/codeblocks/templates/wizard/arm/files/phyCORE-PXA255/ld/target.ld
+share/codeblocks/templates/wizard/arm/files/phyCORE-PXA255/src/
+share/codeblocks/templates/wizard/arm/files/phyCORE-PXA255/src/irq.c
+share/codeblocks/templates/wizard/arm/files/phyCORE-PXA255/src/main.c
+share/codeblocks/templates/wizard/arm/files/phyCORE-PXA255/src/pxa_mm.c
+share/codeblocks/templates/wizard/arm/files/phyCORE-PXA255/src/vectors.S
+share/codeblocks/templates/wizard/arm/logo.png
+share/codeblocks/templates/wizard/arm/wizard.png
+share/codeblocks/templates/wizard/arm/wizard.script
 share/codeblocks/templates/wizard/avr/
 share/codeblocks/templates/wizard/avr/files/
 share/codeblocks/templates/wizard/avr/files/main.c
@@ -731,8 +1189,10 @@ share/codeblocks/templates/wizard/d/logo.png
 share/codeblocks/templates/wizard/d/wizard.png
 share/codeblocks/templates/wizard/d/wizard.script
 share/codeblocks/templates/wizard/directx/
-share/codeblocks/templates/wizard/directx/files/
-share/codeblocks/templates/wizard/directx/files/main.cpp
+share/codeblocks/templates/wizard/directx/dx8/
+share/codeblocks/templates/wizard/directx/dx8/main.cpp
+share/codeblocks/templates/wizard/directx/dx9/
+share/codeblocks/templates/wizard/directx/dx9/main.cpp
 share/codeblocks/templates/wizard/directx/logo.png
 share/codeblocks/templates/wizard/directx/wizard.png
 share/codeblocks/templates/wizard/directx/wizard.script
@@ -800,6 +1260,16 @@ share/codeblocks/templates/wizard/lf/files/structured/main.cpp
 share/codeblocks/templates/wizard/lf/logo.png
 share/codeblocks/templates/wizard/lf/wizard.png
 share/codeblocks/templates/wizard/lf/wizard.script
+share/codeblocks/templates/wizard/lf/wizard.xrc
+share/codeblocks/templates/wizard/matlab_csf/
+share/codeblocks/templates/wizard/matlab_csf/files/
+share/codeblocks/templates/wizard/matlab_csf/files/lccstub.c
+share/codeblocks/templates/wizard/matlab_csf/files/mexversion.rc
+share/codeblocks/templates/wizard/matlab_csf/files/sfuntmpl.c
+share/codeblocks/templates/wizard/matlab_csf/logo.png
+share/codeblocks/templates/wizard/matlab_csf/wizard.png
+share/codeblocks/templates/wizard/matlab_csf/wizard.script
+share/codeblocks/templates/wizard/matlab_csf/wizard.xrc
 share/codeblocks/templates/wizard/ogre/
 share/codeblocks/templates/wizard/ogre/files/
 share/codeblocks/templates/wizard/ogre/files/main.cpp
@@ -829,6 +1299,27 @@ share/codeblocks/templates/wizard/plugins/templates/wizard_template.h
 share/codeblocks/templates/wizard/plugins/wizard.png
 share/codeblocks/templates/wizard/plugins/wizard.script
 share/codeblocks/templates/wizard/plugins/wizard.xrc
+share/codeblocks/templates/wizard/ppc/
+share/codeblocks/templates/wizard/ppc/files/
+share/codeblocks/templates/wizard/ppc/files/MPC5200/
+share/codeblocks/templates/wizard/ppc/files/MPC5200/ld/
+share/codeblocks/templates/wizard/ppc/files/MPC5200/ld/target.ld
+share/codeblocks/templates/wizard/ppc/files/MPC5200/src/
+share/codeblocks/templates/wizard/ppc/files/MPC5200/src/crt0.S
+share/codeblocks/templates/wizard/ppc/files/MPC5200/src/main.c
+share/codeblocks/templates/wizard/ppc/files/MPC5200/src/traptable.S
+share/codeblocks/templates/wizard/ppc/files/MPC565/
+share/codeblocks/templates/wizard/ppc/files/MPC565/h/
+share/codeblocks/templates/wizard/ppc/files/MPC565/h/mpc5200.h
+share/codeblocks/templates/wizard/ppc/files/MPC565/h/mpc555.h
+share/codeblocks/templates/wizard/ppc/files/MPC565/ld/
+share/codeblocks/templates/wizard/ppc/files/MPC565/ld/target.ld
+share/codeblocks/templates/wizard/ppc/files/MPC565/src/
+share/codeblocks/templates/wizard/ppc/files/MPC565/src/crt0.S
+share/codeblocks/templates/wizard/ppc/files/MPC565/src/main.c
+share/codeblocks/templates/wizard/ppc/logo.png
+share/codeblocks/templates/wizard/ppc/wizard.png
+share/codeblocks/templates/wizard/ppc/wizard.script
 share/codeblocks/templates/wizard/qt4/
 share/codeblocks/templates/wizard/qt4/files/
 share/codeblocks/templates/wizard/qt4/files/main.cpp
@@ -842,9 +1333,18 @@ share/codeblocks/templates/wizard/sdl/files/main.cpp
 share/codeblocks/templates/wizard/sdl/logo.png
 share/codeblocks/templates/wizard/sdl/wizard.png
 share/codeblocks/templates/wizard/sdl/wizard.script
+share/codeblocks/templates/wizard/sfml/
+share/codeblocks/templates/wizard/sfml/files/
+share/codeblocks/templates/wizard/sfml/files/cb.bmp
+share/codeblocks/templates/wizard/sfml/files/main.cpp
+share/codeblocks/templates/wizard/sfml/logo.png
+share/codeblocks/templates/wizard/sfml/wizard.png
+share/codeblocks/templates/wizard/sfml/wizard.script
 share/codeblocks/templates/wizard/sharedlib/
-share/codeblocks/templates/wizard/sharedlib/files/
-share/codeblocks/templates/wizard/sharedlib/files/main.c
+share/codeblocks/templates/wizard/sharedlib/c/
+share/codeblocks/templates/wizard/sharedlib/c/main.c
+share/codeblocks/templates/wizard/sharedlib/cpp/
+share/codeblocks/templates/wizard/sharedlib/cpp/main.cpp
 share/codeblocks/templates/wizard/sharedlib/logo.png
 share/codeblocks/templates/wizard/sharedlib/wizard.png
 share/codeblocks/templates/wizard/sharedlib/wizard.script
@@ -860,12 +1360,102 @@ share/codeblocks/templates/wizard/staticlib/files/main.c
 share/codeblocks/templates/wizard/staticlib/logo.png
 share/codeblocks/templates/wizard/staticlib/wizard.png
 share/codeblocks/templates/wizard/staticlib/wizard.script
+share/codeblocks/templates/wizard/stlport/
+share/codeblocks/templates/wizard/stlport/files/
+share/codeblocks/templates/wizard/stlport/files/main.cpp
+share/codeblocks/templates/wizard/stlport/logo.png
+share/codeblocks/templates/wizard/stlport/wizard.png
+share/codeblocks/templates/wizard/stlport/wizard.script
 share/codeblocks/templates/wizard/sys/
 share/codeblocks/templates/wizard/sys/files/
 share/codeblocks/templates/wizard/sys/files/driver.c
 share/codeblocks/templates/wizard/sys/logo.png
 share/codeblocks/templates/wizard/sys/wizard.png
 share/codeblocks/templates/wizard/sys/wizard.script
+share/codeblocks/templates/wizard/tricore/
+share/codeblocks/templates/wizard/tricore/logo.png
+share/codeblocks/templates/wizard/tricore/templates/
+share/codeblocks/templates/wizard/tricore/templates/EasyKit-TC1767/
+share/codeblocks/templates/wizard/tricore/templates/EasyKit-TC1767/target.ld
+share/codeblocks/templates/wizard/tricore/templates/EasyKit-TC1767/targetIntResources.ld
+share/codeblocks/templates/wizard/tricore/templates/EasyRun-TC1796/
+share/codeblocks/templates/wizard/tricore/templates/EasyRun-TC1796/h/
+share/codeblocks/templates/wizard/tricore/templates/EasyRun-TC1796/h/easyrun_setup.h
+share/codeblocks/templates/wizard/tricore/templates/EasyRun-TC1796/memoryROM.x
+share/codeblocks/templates/wizard/tricore/templates/EasyRun-TC1796/src/
+share/codeblocks/templates/wizard/tricore/templates/EasyRun-TC1796/src/setup.c
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1130/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1130/h/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1130/h/triboard_setup.h
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1130/memoryROM.x
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1130/src/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1130/src/setup.c
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1161/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1161/target.ld
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1161/targetIntResources.ld
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1162/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1162/target.ld
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1162/targetIntResources.ld
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1762/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1762/target.ld
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1762/targetIntResources.ld
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1765/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1765/h/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1765/h/triboard_setup.h
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1765/memoryROM.x
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1765/src/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1765/src/setup.c
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1766/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1766/target.ld
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1766/targetIntResources.ld
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1775/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1775/h/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1775/h/triboard_setup.h
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1775/memoryROM.x
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1775/src/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1775/src/setup.c
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1792/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1792/h/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1792/h/triboard_setup.h
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1792/memoryROM.x
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1792/src/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1792/src/setup.c
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1796/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1796/h/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1796/h/triboard_setup.h
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1796/memoryROM-intern.x
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1796/memoryROM.x
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1796/src/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1796/src/setup.c
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1797/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1797/h/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1797/h/triboard_setup.h
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1797/memoryROM-intern.x
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1797/memoryROM.x
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1797/src/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1797/src/setup.c
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1920/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1920/h/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1920/h/triboard_setup.h
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1920/memoryROM.x
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1920/src/
+share/codeblocks/templates/wizard/tricore/templates/TriBoard-TC1920/src/setup.c
+share/codeblocks/templates/wizard/tricore/templates/main.c
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1130/
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1130/h/
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1130/h/phycore_setup.h
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1130/memoryROM.x
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1130/src/
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1130/src/setup.c
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1775/
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1775/h/
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1775/h/phycore_setup.h
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1775/memoryROM.x
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1775/src/
+share/codeblocks/templates/wizard/tricore/templates/phyCORE-TC1775/src/setup.c
+share/codeblocks/templates/wizard/tricore/wizard.png
+share/codeblocks/templates/wizard/tricore/wizard.script
+share/codeblocks/templates/wizard/tricore/wizard.xrc
 share/codeblocks/templates/wizard/win32gui/
 share/codeblocks/templates/wizard/win32gui/files/
 share/codeblocks/templates/wizard/win32gui/files/dialog/
@@ -918,18 +1508,16 @@ share/codeblocks/templates/wxwidgets.png
 share/codeblocks/templates/wxwidgets.template
 share/codeblocks/tips.txt
 share/codeblocks/todo.zip
+share/codeblocks/wxSmithAui.zip
 share/codeblocks/wxsmith.zip
 share/codeblocks/wxsmithcontribitems.zip
-share/icons/gnome/
-share/icons/gnome/48x48/
-share/icons/gnome/48x48/mimetypes/
-share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-codeblocks-workspace.png
-share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-codeblocks.png
+share/icons/hicolor/48x48/mimetypes/application-x-codeblocks-workspace.png
+share/icons/hicolor/48x48/mimetypes/application-x-codeblocks.png
 share/mime/packages/codeblocks.xml
 share/pixmaps/
 share/pixmaps/codeblocks.png
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database

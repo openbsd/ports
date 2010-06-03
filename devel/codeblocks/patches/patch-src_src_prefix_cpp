@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_src_prefix_cpp,v 1.1.1.1 2009/09/06 17:23:34 ajacoutot Exp $
---- src/src/prefix.cpp.orig	Wed Sep  2 15:21:14 2009
-+++ src/src/prefix.cpp	Wed Sep  2 15:21:30 2009
-@@ -231,7 +231,7 @@ br_prepend_prefix (void *symbol, char *path)
+$OpenBSD: patch-src_src_prefix_cpp,v 1.2 2010/06/03 16:09:03 ajacoutot Exp $
+--- src/src/prefix.cpp.orig	Sat May 22 12:37:59 2010
++++ src/src/prefix.cpp	Tue Jun  1 19:33:44 2010
+@@ -230,7 +230,7 @@ br_prepend_prefix (void *symbol, char *path)
  #include <pthread.h>
  
  static pthread_key_t br_thread_key;
