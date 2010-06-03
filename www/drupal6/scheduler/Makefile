@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2009/10/23 10:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/03 16:25:23 espie Exp $
 
 COMMENT =	publish/unpublish nodes on schedule
 
-DISTNAME = 	scheduler-6.x-1.6
-PKGNAME =	drupal6-scheduler-1.6
+DISTNAME = 	scheduler-6.x-1.7
+PKGNAME =	drupal6-scheduler-1.7
 
 .include <bsd.port.mk>

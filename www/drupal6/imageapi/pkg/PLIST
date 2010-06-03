@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/07/26 12:20:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/06/03 16:25:23 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}imageapi/
@@ -15,4 +15,9 @@ ${DRUPAL_MODS}imageapi/imageapi_imagemagick.module
 ${DRUPAL_MODS}imageapi/imagefilter.inc
 ${DRUPAL_MODS}imageapi/imagerotate.inc
 ${DRUPAL_MODS}imageapi/translations/
+${DRUPAL_MODS}imageapi/translations/ar.po
+${DRUPAL_MODS}imageapi/translations/fr.po
+${DRUPAL_MODS}imageapi/translations/hu.po
 ${DRUPAL_MODS}imageapi/translations/ja.po
+${DRUPAL_MODS}imageapi/translations/uk-ua.po
+${DRUPAL_MODS}imageapi/translations/uk.po

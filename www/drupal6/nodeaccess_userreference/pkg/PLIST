@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/09/20 12:26:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/06/03 16:25:23 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}nodeaccess_userreference/
@@ -7,3 +7,6 @@ ${DRUPAL_MODS}nodeaccess_userreference/README.txt
 ${DRUPAL_MODS}nodeaccess_userreference/nodeaccess_userreference.info
 ${DRUPAL_MODS}nodeaccess_userreference/nodeaccess_userreference.install
 ${DRUPAL_MODS}nodeaccess_userreference/nodeaccess_userreference.module
+${DRUPAL_MODS}nodeaccess_userreference/translations/
+${DRUPAL_MODS}nodeaccess_userreference/translations/nodeaccess_userreference.pot
+${DRUPAL_MODS}nodeaccess_userreference/translations/nodeaccess_userreference.sv.po
