@@ -2,3 +2,9 @@ nfprofile is a netflow profiler, which works with the nfdump tools.
 It reads the netflow data from the files stored by nfcapd, filters
 the netflow data according to the specified filter sets (profiles)
 and stores the filtered data into files for later use.
+
+nftrack is prototype software normally distributed with the NfSen
+PortTracker plugin; it's included here as it depends on nfdump
+sources. In combination with PortTracker it allows tracking of
+each TCP/UDP port to provide insight into the activity observed
+on the most active ports.
