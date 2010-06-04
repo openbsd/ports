@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2009/08/10 17:31:07 kili Exp $
+# $OpenBSD: Makefile,v 1.43 2010/06/04 13:58:18 avsm Exp $
 
 NOT_FOR_ARCHS=	hppa
 
 COMMENT=	ML language based on complete class-based objective system
 
 BASENAME=	ocaml-3.11
-DISTNAME=	${BASENAME}.1
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	${BASENAME}.2
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman.html.tar.gz
@@ -20,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 c curses m pthread pthread-stubs xcb
+WANTLIB=		X11 c curses m pthread
 
 MODULES+= lang/tcl x11/tk
 

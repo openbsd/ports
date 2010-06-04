@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.11 2009/06/20 22:05:11 avsm Exp $
+# $OpenBSD: ocaml.port.mk,v 1.12 2010/06/04 13:58:18 avsm Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -9,7 +9,7 @@
 # PFRAG.foo-native    -- nativecode files for FLAVOR == foo
 # PFRAG.no-foo-native -- nativecode files for FLAVOR != foo
 
-OCAML_VERSION=3.11.1
+OCAML_VERSION=3.11.2
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "i386" || \
 	${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "amd64" || \

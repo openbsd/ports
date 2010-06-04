@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.11 2009/03/11 21:19:49 avsm Exp $
---- configure.orig	Wed Dec 10 09:41:04 2008
-+++ configure	Wed Dec 10 09:50:14 2008
-@@ -635,9 +635,12 @@ case "$host" in
+$OpenBSD: patch-configure,v 1.12 2010/06/04 13:58:18 avsm Exp $
+--- configure.orig	Tue Nov 17 14:28:44 2009
++++ configure	Wed Jun  2 20:23:28 2010
+@@ -648,9 +648,12 @@ case "$host" in
    powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
    powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
    powerpc-*-darwin*)            arch=power; system=rhapsody
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.11 2009/03/11 21:19:49 avsm Exp $
    ia64-*-linux*)                arch=ia64; system=linux;;
    ia64-*-gnu*)                  arch=ia64; system=gnu;;
    ia64-*-freebsd*)              arch=ia64; system=freebsd;;
-@@ -647,6 +650,7 @@ case "$host" in
+@@ -660,6 +663,7 @@ case "$host" in
    x86_64-*-netbsd*)             arch=amd64; system=netbsd;;
    x86_64-*-openbsd*)            arch=amd64; system=openbsd;;
    x86_64-*-darwin9.5)           arch=amd64; system=macosx;;
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.11 2009/03/11 21:19:49 avsm Exp $
  esac
  
  # Some platforms exist both in 32-bit and 64-bit variants, not distinguished
-@@ -734,11 +738,15 @@ if test -n "$asppoption"; then aspp="$asppoption"; fi
+@@ -750,11 +754,15 @@ if test -n "$asppoption"; then aspp="$asppoption"; fi
  cc_profile='-pg'
  case "$arch,$model,$system" in
    alpha,*,digital) profiling='prof';;
