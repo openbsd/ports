@@ -1,2 +1,0 @@
-Before using lyx(1), make sure you have `python' in your PATH.
-    e.g. ln -sf ${MODPY_BIN} ${PREFIX}/bin/python

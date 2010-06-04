@@ -1,68 +1,55 @@
-# $OpenBSD: Makefile,v 1.52 2010/05/27 13:01:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2010/06/04 22:43:33 sthen Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
-DISTNAME=	lyx-1.4.3
-PKGNAME=	${DISTNAME}p6
-CATEGORIES=	print
+DISTNAME=	lyx-1.6.6.1
+CATEGORIES=	print editors
 
 HOMEPAGE=	http://www.lyx.org/
 
-EXTRACT_SUFX?=	.tar.bz2
-MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/1.4.x/ \
-		ftp://ftp.lip6.fr/pub/lyx/stable/1.4.x/
+MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/1.6.x/ \
+		ftp://ftp.lip6.fr/pub/lyx/stable/1.6.x/
 
-# In XForms flavor: quasi-GPL (linked to closed source library)
-# In Qt flavor: GPL (this should be preferred for CD distribution)
-# see http://www.lyx.org/about/license.php3 for additional info
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	devel/gettext lang/python
+MODULES=	devel/gettext lang/python x11/qt4
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::print/texlive/base \
 		::graphics/ImageMagick
 
-LIB_DEPENDS=	aspell::textproc/aspell/core
+LIB_DEPENDS=	QtGui.>=8:qt4->=4.5.3:x11/qt4 \
+		boost_filesystem-mt.>=1,boost_iostreams-mt.>=1,boost_regex-mt.>=1,boost_signals-mt.>=1:boost->=1.41.0:devel/boost \
+		aspell::textproc/aspell/core
 
-WANTLIB += ICE SM X11 Xau Xdmcp c m pthread-stubs stdc++ xcb z
+WANTLIB += X11 c m pthread stdc++ z
 
+SEPARATE_BUILD=	concurrent
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
-FLAVORS=	qt xforms
-FLAVOR?=	qt
-
-.if ${FLAVOR:L} == "qt"
-MODULES+=	x11/qt3
-MODQT_MT=	Yes
-WANTLIB += pthread
-CONFIGURE_ARGS=	--with-frontend=qt ${MODQT_CONFIGURE_ARGS}
-CONFIGURE_ENV+=	LIBS=-pthread QTDIR=${MODQT_QTDIR}
-.elif ${FLAVOR:L} == "xforms"
-LIB_DEPENDS+=	forms,flimage::x11/xforms
-WANTLIB += Xpm jpeg
-CONFIGURE_ARGS=	--with-frontend=xforms
-.else
-ERRORS+= "Fatal: Conflicting flavor: ${FLAVOR}"
-.endif
-
 CONFIGURE_STYLE=		gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
-CONFIGURE_ARGS+=--with-extra-lib=${LOCALBASE}/lib \
-		--with-extra-inc="${LOCALBASE}/include \
-		${LOCALBASE}/include/X11" \
-		--disable-dependency-tracking
+CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
+		--with-extra-inc="${X11BASE}/include ${LOCALBASE}/include" \
+		--without-aiksaurus \
+		--without-included-boost \
+		--enable-threads=posix
+CONFIGURE_ENV+=	PYTHON=${MODPY_BIN} MOC4=${MODQT4_MOC} UIC4=${MODQT4_UIC} \
+		ac_cv_func_fork=yes LIBS=-pthread
 
-# Necessary because of compilation error.  See:
-# http://www.boost.org/libs/graph/doc/trouble_shooting.html
-CXXFLAGS+=	-ftemplate-depth-30
-
-INSTALL_TARGET=	install-strip
+pre-configure:
+	perl -pi -e "s,python -tt,${MODPY_BIN} -tt," \
+		${WRKSRC}/src/support/os.cpp
+	perl -pi -e "s,#! ?/usr/bin/(env )?python,#!${MODPY_BIN}," \
+		${WRKSRC}/lib/lyx2lyx/lyx2lyx \
+		${WRKSRC}/lib/scripts/listerrors \
+		${WRKSRC}/src/graphics/GraphicsConverter.cpp
+	find ${WRKSRC} -name "*.py" -print0 | xargs -0 \
+		perl -pi -e "s,#! ?/usr/bin/(env )?python,#!${MODPY_BIN},"
 
 .include <bsd.port.mk>
