@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/10/24 10:23:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/04 06:06:42 ajacoutot Exp $
 
 COMMENT=		C++ interface to GConf
 
 GNOME_PROJECT=		gconfmm
-GNOME_VERSION=		2.28.0
+GNOME_VERSION=		2.28.1
 
 SHARED_LIBS +=		gconfmm-2.6	0.1	# .1.6
 
@@ -30,7 +30,11 @@ LIB_DEPENDS=		ORBit-2::devel/ORBit2 \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_path_DOT= \
+			ac_cv_path_XSLTPROC= \
+			ac_cv_path_DOXYGEN=
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--enable-documentation
 
 .include <bsd.port.mk>
