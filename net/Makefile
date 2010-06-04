@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.636 2010/05/24 18:02:54 bluhm Exp $
+# $OpenBSD: Makefile,v 1.637 2010/06/04 09:04:38 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -12,6 +12,7 @@
      SUBDIR += aguri
      SUBDIR += aiccu
      SUBDIR += aimsniff
+     SUBDIR += aircontrol
      SUBDIR += amsn
      SUBDIR += amule
      SUBDIR += angst
