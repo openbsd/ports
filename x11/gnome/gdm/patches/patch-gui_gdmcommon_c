@@ -1,0 +1,16 @@
+$OpenBSD: patch-gui_gdmcommon_c,v 1.1 2010/06/04 07:45:56 ajacoutot Exp $
+
+Make sure user password does not end-up in /var/log/messages.
+GNOME bug #571846
+
+--- gui/gdmcommon.c.orig	Fri Jun  4 08:32:39 2010
++++ gui/gdmcommon.c	Fri Jun  4 08:32:54 2010
+@@ -812,7 +812,7 @@ ve_strftime (struct tm *the_tm, const char *format)
+ 
+ 	loc_format = g_locale_from_utf8 (format, -1, NULL, NULL, NULL);
+ 	if (loc_format == NULL) {
+-		g_warning ("string not in proper utf8 encoding: \"%s\"", format);
++		g_warning ("string not in proper utf8 encoding");
+ 		return NULL;
+ 	}
+ 

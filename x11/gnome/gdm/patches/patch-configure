@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.16 2009/02/04 18:50:02 ajacoutot Exp $
---- configure.orig	Wed Dec 10 23:26:30 2008
-+++ configure	Sat Jan 31 10:48:03 2009
-@@ -31009,7 +31009,6 @@ fi
+$OpenBSD: patch-configure,v 1.17 2010/06/04 07:45:56 ajacoutot Exp $
+--- configure.orig	Thu Jun  3 22:34:33 2010
++++ configure	Fri Jun  4 08:07:19 2010
+@@ -32153,7 +32153,6 @@ fi
  if test x$with_tcp_wrappers = xno ; then
  	echo "TCP wrappers disabled"
  else
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.16 2009/02/04 18:50:02 ajacoutot Exp $
    case "$host" in
      *-*-solaris*)
  	if test -f /usr/lib/libwrap.so; then
-@@ -31064,6 +31063,8 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -32208,6 +32207,8 @@ cat >>conftest.$ac_ext <<_ACEOF
  #ifdef __cplusplus
  extern "C"
  #endif
@@ -18,15 +18,15 @@ $OpenBSD: patch-configure,v 1.16 2009/02/04 18:50:02 ajacoutot Exp $
  char hosts_ctl ();
  int
  main ()
-@@ -31219,7 +31220,6 @@ else
-   echo "$as_me: failed program was:" >&5
+@@ -32373,7 +32374,6 @@ else
+   $as_echo "$as_me: failed program was:" >&5
  sed 's/^/| /' conftest.$ac_ext >&5
  
 -	LIBWRAP_PATH=""
  fi
  
- rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-@@ -33715,9 +33715,9 @@ case "$host" in
+ rm -rf conftest.dSYM
+@@ -34956,9 +34956,9 @@ case "$host" in
  	;;
  *openbsd*)
  	HOST_GDM_USER_PATH="/bin:/usr/bin"
@@ -39,7 +39,7 @@ $OpenBSD: patch-configure,v 1.16 2009/02/04 18:50:02 ajacoutot Exp $
  	HOST_XSESSION_SHELL=/bin/sh
  	HOST_SOUND_PROGRAM="$real_gdm_prefix/bin/play"
  	HOST_GDMGNOMESESSIONCMD=gnome-session
-@@ -33834,6 +33834,12 @@ else
+@@ -35075,6 +35075,12 @@ else
     GDM_USER_PATH="$GDM_USER_PATH:/usr/bin/X11:/usr/X11R6/bin:/usr/local/bin:/opt/X11R6/bin"
     X_CONFIG_OPTIONS="-audit 0"
  fi
