@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.29 2010/03/30 08:03:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.30 2010/06/04 17:28:51 avsm Exp $
 
 COMMENT =	e-donkey client
-DISTNAME =	mldonkey-3.0.1
-PKGNAME =	${DISTNAME}p1
+DISTNAME =	mldonkey-3.0.2
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
