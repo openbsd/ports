@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/02/01 20:28:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2010/06/04 11:45:37 sthen Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.5.9
@@ -30,5 +30,9 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/mpi2c++
 CONFIGURE_ARGS+=	--with-rsh="ssh -x"
+
+MODULES=		fortran
+MODFORTRAN_WANTG77=	Yes
+BUILD_DEPENDS=		${MODFORTRAN_BUILD_DEPENDS}
 
 .include <bsd.port.mk>
