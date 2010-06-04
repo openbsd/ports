@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_core_icb-servers_c,v 1.1 2010/06/04 14:16:22 phessler Exp $
+
+Break lines longer than 255 chars
+
+--- src/core/icb-servers.c.orig	Tue May 28 18:56:34 2002
++++ src/core/icb-servers.c	Fri Jun  4 10:12:25 2010
+@@ -113,7 +113,6 @@ static void send_message(SERVER_REC *server, const cha
+ 			 const char *msg, int target_type)
+ {
+ 	ICB_SERVER_REC *icbserver;
+-        char *str;
+ 
+         icbserver = ICB_SERVER(server);
+ 	g_return_if_fail(server != NULL);
+@@ -125,9 +124,7 @@ static void send_message(SERVER_REC *server, const cha
+                 icb_send_open_msg(icbserver, msg);
+ 	} else {
+ 		/* private message */
+-                str = g_strconcat(target, " ", msg, NULL);
+-		icb_command(icbserver, "m", str, NULL);
+-                g_free(str);
++		icb_send_private_msg(icbserver, target, msg);
+ 	}
+ }
+ 

@@ -1,0 +1,99 @@
+$OpenBSD: patch-src_core_icb-protocol_c,v 1.1 2010/06/04 14:16:22 phessler Exp $
+
+Break lines longer than 255 chars
+
+--- src/core/icb-protocol.c.orig	Sat May  4 19:21:44 2002
++++ src/core/icb-protocol.c	Fri Jun  4 10:12:25 2010
+@@ -121,7 +121,91 @@ static void icb_login(ICB_SERVER_REC *server)
+ 
+ void icb_send_open_msg(ICB_SERVER_REC *server, const char *text)
+ {
+-        icb_send_cmd(server, 'b', text, NULL);
++	size_t remain;
++
++	/*
++	 * ICB has 255 byte line length limit, and public messages are sent
++	 * out with our nickname, so split text accordingly.
++	 *
++	 * 250 = 255 - 'b' - 1 space after nick - ^A - nul - extra
++	 *
++	 * Taken from ircII's icb.c, thanks phone :-)
++	 */
++	remain = 250 - strlen(server->connrec->nick);
++
++	while(*text) {
++		char buf[256], *sendbuf;
++		size_t len, copylen;
++
++		len = strlen(text);
++		copylen = remain;
++		if (len > remain) {
++			int i;
++
++			/* try to split on a word boundary */
++			for (i = 1; i < 128 && i < len; i++) {
++				if (isspace(text[remain - i])) {
++					copylen -= i - 1;
++					break;
++				}
++			}
++			strncpy(buf, text, copylen);
++			buf[copylen] = 0;
++			sendbuf = buf;
++		} else {
++			sendbuf = (char *)text;
++		}
++		icb_send_cmd(server, 'b', sendbuf, NULL);
++		text += len > copylen ? copylen : len;
++	}
++}
++
++void icb_send_private_msg(ICB_SERVER_REC *server, const char *target,
++		const char *text)
++{
++	size_t mylen, targlen, remain;
++
++	/*
++	 * ICB has 255 byte line length limit.  Private messages are sent
++	 * out with our nickname, but received with the target nickname,
++	 * so deduct the larger of the two in addition to other parts.
++	 *
++	 * 248 = 255 - 'hm' - 1 space after nick - ^A's - nul - extra
++	 *
++	 * Taken from ircII's icb.c, thanks phone :-)
++	 */
++	mylen = strlen(server->connrec->nick);
++	targlen = strlen(target);
++	if (mylen > targlen) {
++		remain = 248 - mylen;
++	} else {
++		remain = 248 - targlen;
++	}
++	while(*text) {
++		char buf[256], *sendbuf;
++		size_t len, copylen;
++
++		len = strlen(text);
++		copylen = remain;
++		if (len > remain) {
++			int i;
++
++			/* try to split on a word boundary */
++			for (i = 1; i < 128 && i < len; i++) {
++				if (isspace(text[remain - i])) {
++					copylen -= i - 1;
++					break;
++				}
++			}
++			strncpy(buf, text, copylen);
++			buf[copylen] = 0;
++			sendbuf = g_strconcat(target, " ", buf, NULL);
++		} else {
++			sendbuf = g_strconcat(target, " ", text, NULL);
++		}
++		icb_send_cmd(server, 'h', "m", sendbuf, NULL);
++		text += len > copylen ? copylen : len;
++	}
+ }
+ 
+ void icb_command(ICB_SERVER_REC *server, const char *cmd,
