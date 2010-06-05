@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/12/21 16:07:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/06/05 15:30:29 landry Exp $
 @bin bin/xfwm4
 @bin bin/xfwm4-settings
 @bin bin/xfwm4-tweaks-settings
@@ -27,6 +27,9 @@ share/locale/am/LC_MESSAGES/xfwm4.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfwm4.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/xfwm4.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/xfwm4.mo
@@ -73,6 +76,9 @@ share/locale/ja/LC_MESSAGES/xfwm4.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/xfwm4.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/xfwm4.mo
 share/locale/ko/LC_MESSAGES/xfwm4.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
@@ -106,10 +112,16 @@ share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/xfwm4.mo
 share/locale/tr/LC_MESSAGES/xfwm4.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/xfwm4.mo
 share/locale/uk/LC_MESSAGES/xfwm4.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/xfwm4.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/xfwm4.mo
 share/locale/vi/LC_MESSAGES/xfwm4.mo
 share/locale/zh_CN/LC_MESSAGES/xfwm4.mo
 share/locale/zh_TW/LC_MESSAGES/xfwm4.mo
