@@ -1,0 +1,29 @@
+$OpenBSD: patch-libjsonevt_jsonevt_utils_h,v 1.1 2010/06/05 13:52:55 kevlo Exp $
+--- libjsonevt/jsonevt_utils.h.orig	Sun Mar  7 13:40:19 2010
++++ libjsonevt/jsonevt_utils.h	Tue May 25 17:19:12 2010
+@@ -27,11 +27,11 @@
+ 
+ #include <sys/types.h>
+ #include <stdlib.h>
++#include <stdint.h>
+ 
+ /* #define JSONEVT_PTR2UL(p) ( (unsigned long)(p) ) */
+ #define JSONEVT_PTR2UL(p) ( (uintptr_t)(p) )
+ 
+-/*
+ #if JSONEVT_ULONG_SIZE == 4
+ #define JSONEVT_PTRSPEC "10"
+ #else
+@@ -41,11 +41,8 @@
+ #define JSONEVT_PTRSPEC "034"
+ #endif
+ #endif
+-*/
+ 
+-/* #define JSONEVT_PTR_xf JSONEVT_PTRSPEC"lx" */
+-/* uintptr_t */
+-#define JSONEVT_PTR_xf PRIxPTR
++#define JSONEVT_PTR_xf JSONEVT_PTRSPEC"lx"
+ 
+ #if defined(DO_DEBUG) && defined(__GNUC__)
+ #define JSONEVT_FREE_MEM(p)                                             \
