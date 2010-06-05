@@ -1,7 +1,7 @@
-$OpenBSD: patch-xfce4-tips_Makefile_in,v 1.1 2009/03/08 17:16:53 landry Exp $
---- xfce4-tips/Makefile.in.orig	Mon Jan 12 22:18:46 2009
-+++ xfce4-tips/Makefile.in	Mon Jan 19 22:11:56 2009
-@@ -309,7 +309,7 @@ xfce4_tips_CFLAGS = \
+$OpenBSD: patch-xfce4-tips_Makefile_in,v 1.2 2010/06/05 15:26:33 landry Exp $
+--- xfce4-tips/Makefile.in.orig	Fri May 21 18:58:41 2010
++++ xfce4-tips/Makefile.in	Wed Jun  2 20:43:04 2010
+@@ -338,7 +338,7 @@ xfce4_tips_CFLAGS = \
  xfce4_tips_LDADD = \
  	@LIBXFCEGUI4_LIBS@
  

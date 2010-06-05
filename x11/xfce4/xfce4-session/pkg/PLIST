@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/12/21 16:07:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/06/05 15:26:33 landry Exp $
 @conflict xfce4-toys-*
 %%SHARED%%
 @bin bin/xfce4-session
@@ -70,6 +70,9 @@ share/locale/am/LC_MESSAGES/xfce4-session.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce4-session.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/xfce4-session.mo
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/xfce4-session.mo
@@ -115,6 +118,9 @@ share/locale/ja/LC_MESSAGES/xfce4-session.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/xfce4-session.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/xfce4-session.mo
 share/locale/ko/LC_MESSAGES/xfce4-session.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
@@ -151,10 +157,16 @@ share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/xfce4-session.mo
 share/locale/tr/LC_MESSAGES/xfce4-session.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/xfce4-session.mo
 share/locale/uk/LC_MESSAGES/xfce4-session.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/xfce4-session.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/xfce4-session.mo
 share/locale/vi/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
