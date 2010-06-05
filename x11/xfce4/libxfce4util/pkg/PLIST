@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/04/28 19:43:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/06/05 15:21:25 landry Exp $
 @pkgpath devel/libxfce4util
 %%SHARED%%
 include/xfce4/
@@ -61,6 +61,9 @@ share/locale/am/LC_MESSAGES/libxfce4util.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libxfce4util.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/libxfce4util.mo
 share/locale/ca/LC_MESSAGES/libxfce4util.mo
 share/locale/cs/LC_MESSAGES/libxfce4util.mo
 share/locale/cy/
@@ -81,11 +84,16 @@ share/locale/fi/LC_MESSAGES/libxfce4util.mo
 share/locale/fr/LC_MESSAGES/libxfce4util.mo
 share/locale/gl/LC_MESSAGES/libxfce4util.mo
 share/locale/he/LC_MESSAGES/libxfce4util.mo
+share/locale/hu/LC_MESSAGES/libxfce4util.mo
 share/locale/id/LC_MESSAGES/libxfce4util.mo
+share/locale/it/LC_MESSAGES/libxfce4util.mo
 share/locale/ja/LC_MESSAGES/libxfce4util.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/libxfce4util.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/libxfce4util.mo
 share/locale/ko/LC_MESSAGES/libxfce4util.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
@@ -100,6 +108,7 @@ share/locale/pl/LC_MESSAGES/libxfce4util.mo
 share/locale/pt/LC_MESSAGES/libxfce4util.mo
 share/locale/pt_BR/LC_MESSAGES/libxfce4util.mo
 share/locale/ro/LC_MESSAGES/libxfce4util.mo
+share/locale/ru/LC_MESSAGES/libxfce4util.mo
 share/locale/si/
 share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/libxfce4util.mo
@@ -109,8 +118,14 @@ share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/libxfce4util.mo
 share/locale/sv/LC_MESSAGES/libxfce4util.mo
 share/locale/tr/LC_MESSAGES/libxfce4util.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/libxfce4util.mo
 share/locale/uk/LC_MESSAGES/libxfce4util.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/libxfce4util.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/libxfce4util.mo
 share/locale/zh_CN/LC_MESSAGES/libxfce4util.mo
