@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/05/29 01:23:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2010/06/05 12:38:48 sthen Exp $
 
 VMEM_WARNING =		Yes
 
@@ -6,7 +6,7 @@ COMMENT =		panorama image stitcher
 
 DISTNAME =		hugin-2010.0.0
 
-PKGNAME =		${DISTNAME:S/_//:L}
+PKGNAME =		${DISTNAME:S/_//:L}p0
 WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
 SHARED_LIBS =		celeste 0.0 \
@@ -29,7 +29,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =patents
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		GL GLU ICE SM X11 Xext Xi Xmu c glut m pthread stdc++ z
+WANTLIB =		GL GLU ICE SM X11 Xext Xi Xmu c m pthread stdc++ z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
@@ -42,6 +42,7 @@ RUN_DEPENDS =		:desktop-file-utils-*:devel/desktop-file-utils \
 LIB_DEPENDS =		boost_thread-mt::devel/boost \
 			exiv2.>=0.1:exiv2->=0.12:graphics/exiv2 \
 			GLEW::graphics/glew \
+			glut.>=4.1::graphics/freeglut \
 			Half,Iex,Imath,IlmThread::graphics/ilmbase \
 			jpeg::graphics/jpeg \
 			pano13::graphics/libpano13 \
