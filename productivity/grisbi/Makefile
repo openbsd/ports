@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/04/02 20:53:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/05 14:37:42 landry Exp $
 
 COMMENT=	personal accounting application
+SHARED_ONLY =	Yes
 
-DISTNAME=	grisbi-0.5.9
-PKGNAME=	${DISTNAME}p6
+DISTNAME=	grisbi-0.6.0
 
 CATEGORIES=	productivity x11
 
@@ -25,7 +25,7 @@ WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
 WANTLIB += m osp pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs stdc++ xcb z
+WANTLIB += pthread pthread-stubs stdc++ xcb z pcre crypto ssl
 
 MODULES=	devel/gettext
 
@@ -37,15 +37,14 @@ RUN_DEPENDS=	::devel/desktop-file-utils
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		OpenSSL_CFLAGS="-I/usr/include " \
+		OpenSSL_LIBS="-lssl -lcrypto"
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${FILESDIR}/grisbi.desktop \
-		${PREFIX}/share/applications/grisbi.desktop
-	${SUBST_CMD} ${PREFIX}/share/applications/grisbi.desktop
+CONFIGURE_ARGS=	--with-balance-estimate
 
 .include <bsd.port.mk>

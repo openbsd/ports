@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Grisbi
-Comment=Personal account manager
-Exec=grisbi
-Icon=${TRUEPREFIX}/share/pixmaps/grisbi/grisbi.png
-Terminal=false
-Type=Application
-MimeType=application/x-grisbi;
-Categories=Office;
