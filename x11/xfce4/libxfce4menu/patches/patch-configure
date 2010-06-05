@@ -1,23 +1,23 @@
-$OpenBSD: patch-configure,v 1.1 2009/04/09 07:44:37 landry Exp $
---- configure.orig	Wed Apr  8 12:04:27 2009
-+++ configure	Wed Apr  8 12:04:49 2009
-@@ -17499,19 +17499,6 @@ echo "${ECHO_T}$enable_debug" >&6; }
+$OpenBSD: patch-configure,v 1.2 2010/06/05 15:20:58 landry Exp $
+--- configure.orig	Fri May 21 18:53:28 2010
++++ configure	Sat May 22 11:00:42 2010
+@@ -14558,19 +14558,6 @@ $as_echo "$enable_debug" >&6; }
    fi
  fi
  
--{ echo "$as_me:$LINENO: checking whether $LD accepts --as-needed" >&5
--echo $ECHO_N "checking whether $LD accepts --as-needed... $ECHO_C" >&6; }
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether $LD accepts --as-needed" >&5
+-$as_echo_n "checking whether $LD accepts --as-needed... " >&6; }
 -case `$LD --as-needed -v 2>&1 </dev/null` in
 -*GNU* | *'with BFD'*)
 -  LDFLAGS="$LDFLAGS -Wl,--as-needed"
--  { echo "$as_me:$LINENO: result: yes" >&5
--echo "${ECHO_T}yes" >&6; }
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
 -  ;;
 -*)
--  { echo "$as_me:$LINENO: result: no" >&5
--echo "${ECHO_T}no" >&6; }
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
 -  ;;
 -esac
- { echo "$as_me:$LINENO: checking whether $LD accepts -O1" >&5
- echo $ECHO_N "checking whether $LD accepts -O1... $ECHO_C" >&6; }
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether $LD accepts -O1" >&5
+ $as_echo_n "checking whether $LD accepts -O1... " >&6; }
  case `$LD -O1 -v 2>&1 </dev/null` in
