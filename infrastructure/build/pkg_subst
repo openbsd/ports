@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.4 2010/04/06 09:39:51 espie Exp $
+# $OpenBSD: pkg_subst,v 1.5 2010/06/05 07:48:00 landry Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -23,17 +23,31 @@ use warnings;
 use OpenBSD::Getopt;
 use OpenBSD::Subst;
 use OpenBSD::Error;
+use OpenBSD::IdCache;
 
 my $subst = OpenBSD::Subst->new;
 
 our $opt_c;
+my ($fuid, $fgid);
 set_usage(
-'pkg_subst [-c] [-Dvar=value ...] [file ...]');
+'pkg_subst [-c] [-o owner] [-g group] [-Dvar=value ...] [file ...]');
 try { 
-	getopts('D:ch',
+	getopts('D:o:g:ch',
 	    {'D' =>
 		    sub { 
 			    $subst->parse_option(shift);
+		    },
+	     'o' => sub {
+			    my $uidc = OpenBSD::UidCache->new;
+			    my $owner = shift;
+			    $fuid = $uidc->lookup($owner,-1);
+			    die "$owner is not a valid user" if ($fuid == -1);
+		    },
+	     'g' => sub {
+			    my $gidc = OpenBSD::GidCache->new;
+			    my $group = shift;
+			    $fgid = $gidc->lookup($group,-1);
+			    die "$group is not a valid group" if ($fgid == -1);
 		    },
 	     'h' => sub {	Usage(); },
 	    });
@@ -63,7 +77,7 @@ while (my $src = shift) {
 	# copy rights as well (and owner/group if we're root)
 	my ($uid, $gid, $mode) = (stat $src)[4, 5, 2];
 	if ($< == 0) {
-		chown $uid, $gid, $dest; # not checked
+		chown $fuid // $uid, $fgid // $gid, $dest; # not checked
 	}
 	chmod $mode & 07777, $dest; # not checked
 }
