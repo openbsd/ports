@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2009/04/28 19:52:38 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/05 15:27:44 landry Exp $
 
 COMMENT=	Xfce4 settings daemon
 
@@ -17,6 +17,6 @@ LIB_DEPENDS=	xfce4util::x11/xfce4/libxfce4util \
 
 CONFIGURE_ARGS=	--disable-perl-bindings
 
-WANTLIB=	c dbus-1 glib-2.0 gobject-2.0 pcre pthread
+WANTLIB=	c dbus-1 glib-2.0 gobject-2.0 gthread-2.0 pcre pthread
 
 .include <bsd.port.mk>

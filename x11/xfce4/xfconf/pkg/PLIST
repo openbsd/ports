@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/04/28 19:52:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/06/05 15:27:44 landry Exp $
 %%SHARED%%
 @bin bin/xfconf-query
 include/xfce4/
@@ -38,6 +38,12 @@ share/gtk-doc/html/xfconf/xfconf-xfconf-types.html
 share/gtk-doc/html/xfconf/xfconf-xfconf.html
 share/gtk-doc/html/xfconf/xfconf.devhelp
 share/gtk-doc/html/xfconf/xfconf.devhelp2
+share/locale/am/
+share/locale/am/LC_MESSAGES/
+share/locale/am/LC_MESSAGES/xfconf.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/xfconf.mo
 share/locale/ca/LC_MESSAGES/xfconf.mo
 share/locale/cs/LC_MESSAGES/xfconf.mo
 share/locale/da/LC_MESSAGES/xfconf.mo
@@ -51,6 +57,10 @@ share/locale/hu/LC_MESSAGES/xfconf.mo
 share/locale/id/LC_MESSAGES/xfconf.mo
 share/locale/it/LC_MESSAGES/xfconf.mo
 share/locale/ja/LC_MESSAGES/xfconf.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/xfconf.mo
+share/locale/lv/LC_MESSAGES/xfconf.mo
 share/locale/nb/LC_MESSAGES/xfconf.mo
 share/locale/nl/LC_MESSAGES/xfconf.mo
 share/locale/pl/LC_MESSAGES/xfconf.mo
@@ -60,5 +70,14 @@ share/locale/ro/LC_MESSAGES/xfconf.mo
 share/locale/ru/LC_MESSAGES/xfconf.mo
 share/locale/sv/LC_MESSAGES/xfconf.mo
 share/locale/tr/LC_MESSAGES/xfconf.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/xfconf.mo
 share/locale/uk/LC_MESSAGES/xfconf.mo
+share/locale/ur/
+share/locale/ur/LC_MESSAGES/
+share/locale/ur/LC_MESSAGES/xfconf.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/xfconf.mo
 share/locale/zh_CN/LC_MESSAGES/xfconf.mo
