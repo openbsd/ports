@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2009/12/21 16:07:44 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2010/06/05 15:24:07 landry Exp $
 
 COMMENT=	Xfce4 file manager
 
-XFCE_VERSION=	1.0.1
+XFCE_VERSION=	1.0.2
 XFCE_PROJECT=	Thunar
 # :L is here for a reason
-PKGNAME=	${DISTNAME:L}p4
+PKGNAME=	${DISTNAME:L}
 
 SHARED_LIBS=	thunarx-1	5.1 \
 		thunar-vfs-1	5.1
@@ -24,6 +24,9 @@ CONFIGURE_ARGS=	--disable-gnome-thumbnailers \
 		--enable-startup-notification \
 		--enable-exif \
 		--enable-pcre
+
+CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \
+		ac_cv_header_sys_mount_h=yes
 
 FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/Thunar
 
@@ -45,6 +48,6 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs startup-notification-1
-WANTLIB += xcb xcb-atom xcb-aux xcb-event xfce4util z
+WANTLIB += xcb xcb-atom xcb-aux xcb-event xfce4util z xcb-render xcb-render-util
 
 .include <bsd.port.mk>

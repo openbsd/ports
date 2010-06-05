@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/12/21 16:07:44 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/06/05 15:24:07 landry Exp $
 @conflict xffm-*
 %%SHARED%%
 @bin bin/Thunar
@@ -103,6 +103,29 @@ share/doc/Thunar/html/C/support.html
 share/doc/Thunar/html/C/the-file-manager-window.html
 share/doc/Thunar/html/C/using-removable-media.html
 share/doc/Thunar/html/C/working-with-files-and-folders.html
+share/doc/Thunar/html/am/
+share/doc/Thunar/html/am/advanced-topics.html
+share/doc/Thunar/html/am/copyright.html
+share/doc/Thunar/html/am/customizing-thunar.html
+share/doc/Thunar/html/am/faq.html
+share/doc/Thunar/html/am/images/
+share/doc/Thunar/html/am/images/bulk-rename.png
+share/doc/Thunar/html/am/images/file-manager-window.png
+share/doc/Thunar/html/am/images/file-properties.png
+share/doc/Thunar/html/am/images/preferences-advanced.png
+share/doc/Thunar/html/am/images/preferences-behavior.png
+share/doc/Thunar/html/am/images/preferences-side-pane.png
+share/doc/Thunar/html/am/images/preferences-views.png
+share/doc/Thunar/html/am/images/removable-drives-and-media.png
+share/doc/Thunar/html/am/images/removable-media-unmount.png
+share/doc/Thunar/html/am/images/sendto-menu.png
+share/doc/Thunar/html/am/images/visible-columns.png
+share/doc/Thunar/html/am/index.html
+share/doc/Thunar/html/am/preferences.html
+share/doc/Thunar/html/am/support.html
+share/doc/Thunar/html/am/the-file-manager-window.html
+share/doc/Thunar/html/am/using-removable-media.html
+share/doc/Thunar/html/am/working-with-files-and-folders.html
 share/doc/Thunar/html/da/
 share/doc/Thunar/html/da/advanced-topics.html
 share/doc/Thunar/html/da/copyright.html
@@ -200,6 +223,18 @@ share/doc/Thunar/html/gl/advanced-topics.html
 share/doc/Thunar/html/gl/copyright.html
 share/doc/Thunar/html/gl/customizing-thunar.html
 share/doc/Thunar/html/gl/faq.html
+share/doc/Thunar/html/gl/images/
+share/doc/Thunar/html/gl/images/bulk-rename.png
+share/doc/Thunar/html/gl/images/file-manager-window.png
+share/doc/Thunar/html/gl/images/file-properties.png
+share/doc/Thunar/html/gl/images/preferences-advanced.png
+share/doc/Thunar/html/gl/images/preferences-behavior.png
+share/doc/Thunar/html/gl/images/preferences-side-pane.png
+share/doc/Thunar/html/gl/images/preferences-views.png
+share/doc/Thunar/html/gl/images/removable-drives-and-media.png
+share/doc/Thunar/html/gl/images/removable-media-unmount.png
+share/doc/Thunar/html/gl/images/sendto-menu.png
+share/doc/Thunar/html/gl/images/visible-columns.png
 share/doc/Thunar/html/gl/index.html
 share/doc/Thunar/html/gl/preferences.html
 share/doc/Thunar/html/gl/support.html
@@ -461,10 +496,19 @@ share/icons/hicolor/48x48/apps/Thunar.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/Thunar.svg
+share/locale/am/
+share/locale/am/LC_MESSAGES/
+share/locale/am/LC_MESSAGES/Thunar.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/Thunar.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/Thunar.mo
 share/locale/be/LC_MESSAGES/Thunar.mo
+share/locale/bn/
+share/locale/bn/LC_MESSAGES/
+share/locale/bn/LC_MESSAGES/Thunar.mo
 share/locale/ca/LC_MESSAGES/Thunar.mo
 share/locale/cs/LC_MESSAGES/Thunar.mo
 share/locale/da/LC_MESSAGES/Thunar.mo
@@ -491,6 +535,9 @@ share/locale/ja/LC_MESSAGES/Thunar.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/Thunar.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/Thunar.mo
 share/locale/ko/LC_MESSAGES/Thunar.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
@@ -519,10 +566,16 @@ share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/Thunar.mo
 share/locale/sv/LC_MESSAGES/Thunar.mo
 share/locale/tr/LC_MESSAGES/Thunar.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/Thunar.mo
 share/locale/uk/LC_MESSAGES/Thunar.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/Thunar.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/Thunar.mo
 share/locale/zh_CN/LC_MESSAGES/Thunar.mo
 share/locale/zh_TW/LC_MESSAGES/Thunar.mo
 share/pixmaps/
