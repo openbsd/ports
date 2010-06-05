@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/01/02 15:15:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.16 2010/06/05 15:26:03 landry Exp $
 @conflict xfce4-datetime-*
 @conflict xfce4-iconbox-*
 @conflict xfce4-showdesktop-*
@@ -224,6 +224,9 @@ share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/xfce4-panel.mo
 share/locale/tr/LC_MESSAGES/xfce4-panel.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/xfce4-panel.mo
 share/locale/uk/LC_MESSAGES/xfce4-panel.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
