@@ -1,6 +1,17 @@
-$OpenBSD: patch-Amaya_configure_in,v 1.2 2003/12/20 01:17:43 espie Exp $
---- Amaya/configure.in.orig	2001-07-03 13:23:50.000000000 +0200
-+++ Amaya/configure.in	2003-12-20 02:05:54.000000000 +0100
+$OpenBSD: patch-Amaya_configure_in,v 1.3 2010/06/06 12:27:26 kili Exp $
+--- Amaya/configure.in.orig	Tue Jul  3 13:23:50 2001
++++ Amaya/configure.in	Sat Jun  5 14:30:06 2010
+@@ -55,8 +55,8 @@ AC_PATH_PROG(DIFF, diff, /usr/bin/diff, $PATH:/bin:/us
+ AC_ARG_WITH(graphic-libs, [  --without-graphic-libs    doesn't use provided libjpeg, libpng.])
+ if test "$withval" = "no" ; then
+ dnl
+-    AC_MSG_CHECKING([for libjpeg version = 6b])
+-    AC_EGREP_CPP([x 62 *x],
++    AC_MSG_CHECKING([for libjpeg version = 7])
++    AC_EGREP_CPP([x 70 *x],
+         [#include <jpeglib.h>
+          x JPEG_LIB_VERSION x],
+ dnl
 @@ -69,8 +69,8 @@ dnl
          )
  dnl    
@@ -45,7 +56,7 @@ $OpenBSD: patch-Amaya_configure_in,v 1.2 2003/12/20 01:17:43 espie Exp $
 -      break
 -    fi
 -  done
-+
+ 
 +motif_includes_with=
 +AC_ARG_WITH(motif-includes,
 +[  --with-motif-includes=DIR
@@ -61,7 +72,7 @@ $OpenBSD: patch-Amaya_configure_in,v 1.2 2003/12/20 01:17:43 espie Exp $
 +	use_gtk="$withval")
 +no_gtk=yes
 +if test "$use_gtk" != "no" ; then
- 
++
  GTK_INCLUDES="`gtk-config --cflags`"
  AC_SUBST(GTK_INCLUDES)
  GTK_LIBRARIES="`gtk-config --libs` -lgdk_imlib -ltiff -lgif"
