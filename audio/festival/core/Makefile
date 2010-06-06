@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/26 01:32:38 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/06 07:45:31 espie Exp $
 
 COMMENT=	general multi-lingual speech synthesis system
 V=		1.95
 DISTNAME=	festival-${V}-beta
-PKGNAME=	${DISTNAME:S/-beta/beta/}p3
+PKGNAME=	${DISTNAME:S/-beta/beta/}p4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cstr.ed.ac.uk/downloads/festival/${V}/ \
 		http://festvox.org/packed/festival/${V}/

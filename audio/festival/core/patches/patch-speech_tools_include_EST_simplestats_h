@@ -1,0 +1,36 @@
+$OpenBSD: patch-speech_tools_include_EST_simplestats_h,v 1.1 2010/06/06 07:45:31 espie Exp $
+--- speech_tools/include/EST_simplestats.h.orig	Sun Jun  6 09:33:27 2010
++++ speech_tools/include/EST_simplestats.h	Sun Jun  6 09:36:59 2010
+@@ -193,7 +193,7 @@ enum EST_tprob_type {tprob_string, tprob_int, tprob_di
+     Methods are provided to iterate over the values in a distribution,
+     for example
+     \begin{verbatim}
+-       EST_DiscreteProbistribution pdf;
++       EST_DiscreteProbDistribution pdf;
+        for (int i=pdf.item_start(); i < pdf.item_end(); i=pdf.item_next(i))
+        {
+           EST_String name;
+@@ -265,17 +265,17 @@ class EST_DiscreteProbDistribution { (public)
+     /// 
+     double frequency(const int i) const; 
+     /// Used for iterating through members of the distribution
+-    int item_start() const;
++    long item_start() const;
+     /// Used for iterating through members of the distribution
+-    int item_next(int idx) const;
++    long item_next(long idx) const;
+     /// Used for iterating through members of the distribution
+-    int item_end(int idx) const;
++    long item_end(long idx) const;
+     /// During iteration returns name given index 
+-    const EST_String &item_name(int idx) const;
++    const EST_String &item_name(long idx) const;
+     /// During iteration returns name and frequency given index  
+-    void item_freq(int idx,EST_String &s,double &freq) const;
++    void item_freq(long idx,EST_String &s,double &freq) const;
+     /// During iteration returns name and probability given index
+-    void item_prob(int idx,EST_String &s,double &prob) const;
++    void item_prob(long idx,EST_String &s,double &prob) const;
+ 
+     /// Returns discrete vocabulary of distribution
+     inline const EST_Discrete *const get_discrete() const { return discrete; };

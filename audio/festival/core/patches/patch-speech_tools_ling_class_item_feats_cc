@@ -1,0 +1,12 @@
+$OpenBSD: patch-speech_tools_ling_class_item_feats_cc,v 1.1 2010/06/06 07:45:31 espie Exp $
+--- speech_tools/ling_class/item_feats.cc.orig	Sun Jun  6 09:28:22 2010
++++ speech_tools/ling_class/item_feats.cc	Sun Jun  6 09:29:00 2010
+@@ -78,7 +78,7 @@ EST_String get_featname(const EST_Item_featfunc func)
+    EST_String name = EST_FeatureFunctionContext::global->get_featfunc_name(func, found);
+ 
+    if (!found)
+-	EST_error("featfunc 0x%x has no name", (int)func);
++	EST_error("featfunc 0x%lx has no name", (long)func);
+ 
+     return name;
+ }
