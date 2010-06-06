@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.261 2010/04/30 17:07:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.262 2010/06/06 13:43:47 sthen Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -122,6 +122,7 @@
      SUBDIR += libmpeg2
      SUBDIR += libpano13
      SUBDIR += libungif
+     SUBDIR += libvidcap
      SUBDIR += libwmf
      SUBDIR += libxmi
      SUBDIR += lsys
