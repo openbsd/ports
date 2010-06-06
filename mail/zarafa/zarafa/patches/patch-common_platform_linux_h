@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_platform_linux_h,v 1.5 2010/04/22 10:06:18 ajacoutot Exp $
---- common/platform.linux.h.orig	Wed Apr 14 13:39:51 2010
-+++ common/platform.linux.h	Thu Apr 22 10:57:22 2010
+$OpenBSD: patch-common_platform_linux_h,v 1.6 2010/06/06 20:10:21 espie Exp $
+--- common/platform.linux.h.orig	Tue Apr 27 21:07:02 2010
++++ common/platform.linux.h	Sun Jun  6 21:25:25 2010
 @@ -63,8 +63,15 @@
  #include <dlfcn.h>
  #include <stddef.h>
@@ -17,3 +17,12 @@ $OpenBSD: patch-common_platform_linux_h,v 1.5 2010/04/22 10:06:18 ajacoutot Exp 
  #include <errno.h>
  
  #ifdef HAVE_UNISTD_H
+@@ -669,7 +676,7 @@ time_t GetProcessTime();
+ #endif
+ 
+ #define OutputDebugString(dstr) fprintf(stderr,"%s",dstr)
+-#define GetCurrentThreadId() (int)pthread_self()
++#define GetCurrentThreadId() (long)pthread_self()
+ #define GetTickCount() 0L
+ 
+ #define TICKS_PER_SEC (sysconf(_SC_CLK_TCK))
