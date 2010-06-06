@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2010/05/05 05:32:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/06/06 09:03:10 benoit Exp $
 
 COMMENT=		Advanced Intrusion Detection Environment
 
-DISTNAME=		aide-0.14
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		aide-0.14.2
 CATEGORIES=		security
 
 HOMEPAGE=		http://sourceforge.net/projects/aide
