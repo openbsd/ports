@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.34 2010/05/19 15:04:27 kili Exp $
+# $OpenBSD: Makefile,v 1.35 2010/06/06 09:54:20 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
-PKGNAME-main =		ghc-${MODGHC_VER}p3
+PKGNAME-main =		ghc-${MODGHC_VER}p4
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}p0
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		6.12.2.20100513
+BIN_VER =		6.12.2.20100530
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regress.
