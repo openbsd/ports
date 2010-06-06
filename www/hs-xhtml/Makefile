@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/05/19 15:58:22 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/06 10:06:45 kili Exp $
 
 COMMENT =		XHTML combinator library
 
 DISTNAME =		xhtml-3000.2.0.1
-PKGNAME =		hs-${DISTNAME}p1
+PKGNAME =		hs-${DISTNAME}p2
 CATEGORIES =		www devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

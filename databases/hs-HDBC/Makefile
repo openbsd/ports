@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/05/19 15:58:18 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/06 10:06:44 kili Exp $
 
 COMMENT =		abstraction layer between Haskell and SQL
 
 DISTNAME =		HDBC-2.2.4
-PKGNAME =		hs-${DISTNAME}p1
+PKGNAME =		hs-${DISTNAME}p2
 CATEGORIES =		databases
 HOMEPAGE =		http://software.complete.org/hdbc
 
