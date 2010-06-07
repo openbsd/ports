@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/11/16 10:37:31 giovanni Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/07 09:58:00 ajacoutot Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
 DISTNAME=		amavisd-new-2.6.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		mail security
 
 HOMEPAGE=		http://www.ijs.si/software/amavisd/
@@ -32,7 +32,7 @@ RUN_DEPENDS=		::archivers/arc \
 			::archivers/unzip \
 			::archivers/zoo \
 			::converters/p5-Convert-TNEF \
-			::converters/rpm2cpio \
+			:rpm2cpio-*|rpm-*:converters/rpm2cpio \
 			:p5-Convert-UUlib->=1.05:converters/p5-Convert-UUlib \
 			::databases/p5-BerkeleyDB \
 			::devel/p5-Net-Server \
