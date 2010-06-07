@@ -1,0 +1,14 @@
+$OpenBSD: patch-libjack_intclient_c,v 1.3 2010/06/07 01:44:38 jakemsr Exp $
+--- libjack/intclient.c.orig	Wed May 19 20:43:00 2010
++++ libjack/intclient.c	Wed May 19 20:45:49 2010
+@@ -166,8 +166,9 @@ jack_internal_client_load (jack_client_t *client,
+ 			   jack_status_t *status, ...)
+ {
+     va_list ap;
++    jack_intclient_t res;
+     va_start(ap, status);
+-    jack_intclient_t res = jack_internal_client_load_aux(client, client_name, options, status, ap);
++    res = jack_internal_client_load_aux(client, client_name, options, status, ap);
+     va_end(ap);
+     return res;
+ }

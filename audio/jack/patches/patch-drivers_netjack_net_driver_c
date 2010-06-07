@@ -1,7 +1,53 @@
-$OpenBSD: patch-drivers_netjack_net_driver_c,v 1.1 2009/01/11 10:51:46 jakemsr Exp $
---- drivers/netjack/net_driver.c.orig	Sat Dec  6 02:43:36 2008
-+++ drivers/netjack/net_driver.c	Fri Dec 19 05:27:28 2008
-@@ -493,7 +493,7 @@ net_driver_write (net_driver_t* driver, jack_nframes_t
+$OpenBSD: patch-drivers_netjack_net_driver_c,v 1.2 2010/06/07 01:44:38 jakemsr Exp $
+--- drivers/netjack/net_driver.c.orig	Sat Dec  6 11:43:36 2008
++++ drivers/netjack/net_driver.c	Wed May 19 21:19:00 2010
+@@ -334,14 +334,17 @@ net_driver_null_cycle (net_driver_t* driver, jack_nfra
+     // TODO: talk to paul about this.
+     //       do i wait here ?
+     //       just sending out a packet marked with junk ?
++    jacknet_packet_header *tx_pkthdr;
++    jacknet_packet_header *rx_pkthdr;
++    int payload_size;
+ 
+     //int rx_size = get_sample_size(driver->bitdepth) * driver->capture_channels * driver->net_period_down + sizeof(jacknet_packet_header);
+     int tx_size = get_sample_size(driver->bitdepth) * driver->playback_channels * driver->net_period_up + sizeof(jacknet_packet_header);
+     unsigned int *packet_buf, *packet_bufX;
+ 
+     packet_buf = alloca( tx_size);
+-    jacknet_packet_header *tx_pkthdr = (jacknet_packet_header *)packet_buf;
+-    jacknet_packet_header *rx_pkthdr = (jacknet_packet_header *)driver->rx_buf;
++    tx_pkthdr = (jacknet_packet_header *)packet_buf;
++    rx_pkthdr = (jacknet_packet_header *)driver->rx_buf;
+ 
+     //framecnt = rx_pkthdr->framecnt;
+ 
+@@ -355,7 +358,7 @@ net_driver_null_cycle (net_driver_t* driver, jack_nfra
+     tx_pkthdr->framecnt = driver->expected_framecnt;
+ 
+     // memset 0 the payload.
+-    int payload_size = get_sample_size(driver->bitdepth) * driver->playback_channels * driver->net_period_up;
++    payload_size = get_sample_size(driver->bitdepth) * driver->playback_channels * driver->net_period_up;
+     memset(packet_bufX, 0, payload_size);
+ 
+     packet_header_hton(tx_pkthdr);
+@@ -387,6 +390,7 @@ net_driver_read (net_driver_t* driver, jack_nframes_t 
+ {
+     jack_position_t local_trans_pos;
+     jack_transport_state_t local_trans_state;
++    jacknet_packet_header *pkthdr;
+ 
+     unsigned int *packet_buf, *packet_bufX;
+ 
+@@ -396,7 +400,7 @@ net_driver_read (net_driver_t* driver, jack_nframes_t 
+     }
+     packet_buf = driver->rx_buf;
+ 
+-    jacknet_packet_header *pkthdr = (jacknet_packet_header *)packet_buf;
++    pkthdr = (jacknet_packet_header *)packet_buf;
+ 
+     packet_bufX = packet_buf + sizeof(jacknet_packet_header) / sizeof(jack_default_audio_sample_t);
+ 
+@@ -493,7 +497,7 @@ net_driver_write (net_driver_t* driver, jack_nframes_t
      {
  	int r;
  

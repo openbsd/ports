@@ -26,7 +26,7 @@
 #include <jack/driver.h>
 #include <jack/jack.h>
 
-#define SNDIO_DRIVER_DEF_DEV		"/dev/audio"
+#define SNDIO_DRIVER_DEF_DEV		"default"
 #define SNDIO_DRIVER_DEF_FS		44100
 #define SNDIO_DRIVER_DEF_BLKSIZE	1024
 #define SNDIO_DRIVER_DEF_NPERIODS	2
@@ -44,44 +44,31 @@ typedef struct _sndio_driver
 	jack_nframes_t period_size;
 	jack_nframes_t orig_period_size;
 	unsigned int nperiods;
-	unsigned int orig_nperiods;
 	int bits;
-	int sample_bytes;
 	unsigned int capture_channels;
 	unsigned int playback_channels;
-
-	char *dev;
-	struct sio_hdl *hdl;
-	int format;
-	int ignorehwbuf;
-
-	size_t capbufsize;
-	size_t playbufsize;
-	size_t portbufsize;
-	void *capbuf;
-	void *playbuf;
-	size_t buffer_fill;
-
-	int poll_timeout;
-	jack_time_t poll_last;
-	jack_time_t poll_next;
-	float iodelay;
-
-	long long realpos, playpos, cappos;
-
 	jack_nframes_t sys_cap_latency;
 	jack_nframes_t sys_play_latency;
+	int ignorehwbuf;
 
+	struct sio_hdl *hdl;
+	char *dev;
+
+	void *capbuf;
+	size_t capbufsize;
+	void *playbuf;
+	size_t playbufsize;
 	JSList *capture_ports;
 	JSList *playback_ports;
 
-	jack_client_t *client;
+	int sample_bytes;
+	size_t pprime;
 
-	int playback_drops;
-	int capture_drops;
+	int poll_timeout;
+	jack_time_t poll_next;
+
+	jack_client_t *client;
 
 } sndio_driver_t;
 
-
 #endif
-

@@ -23,23 +23,16 @@
 #define _THREAD_SAFE
 #endif
 
-#include <sys/stat.h>
 #include <sys/types.h>
 
+#include <errno.h>
+#include <getopt.h>
+#include <poll.h>
+#include <sndio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <poll.h>
 #include <unistd.h>
-#include <pthread.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <math.h>
-#include <float.h>
-#include <stdarg.h>
-#include <getopt.h>
-
-#include <sndio.h>
 
 #include <jack/types.h>
 #include <jack/internal.h>
@@ -127,13 +120,6 @@ const static jack_driver_param_desc_t sndio_params[SNDIO_DRIVER_N_PARAMS] = {
 
 /* internal functions */
 
-static void
-sndio_movecb(void *arg, int delta)
-{
-	sndio_driver_t *driver = (sndio_driver_t *)arg;
-	driver->realpos += delta;
-}
-
 
 static void
 set_period_size (sndio_driver_t *driver, jack_nframes_t new_period_size)
@@ -141,10 +127,9 @@ set_period_size (sndio_driver_t *driver, jack_nframes_t new_period_size)
 	driver->period_size = new_period_size;
 
 	driver->period_usecs = 
-		((double) driver->period_size /
-		(double) driver->sample_rate) * 1e6;
+		((double)driver->period_size /
+		(double)driver->sample_rate) * 1e6;
 	driver->last_wait_ust = 0;
-	driver->iodelay = 0.0F;
 	driver->poll_timeout = (int)(driver->period_usecs / 666);
 }
 
@@ -163,13 +148,13 @@ sndio_driver_write_silence (sndio_driver_t *driver, jack_nframes_t nframes)
 			__FILE__, __LINE__);
 		return;
 	}
+	bzero(localbuf, localsize);
 
 	offset = 0;
-	bzero(localbuf, localsize);
 	nbytes = localsize;
 	while (nbytes > 0)
 	{
-		io_res = sio_write(driver->hdl, localbuf, nbytes);
+		io_res = sio_write(driver->hdl, localbuf + offset, nbytes);
 		if (io_res == 0)
 		{
 			jack_error("sndio_driver: sio_write() failed: "
@@ -179,7 +164,6 @@ sndio_driver_write_silence (sndio_driver_t *driver, jack_nframes_t nframes)
 		offset += io_res;
 		nbytes -= io_res;
 	}
-	driver->playpos += nframes;
 	free(localbuf);
 }
 
@@ -200,7 +184,6 @@ sndio_driver_read_silence (sndio_driver_t *driver, jack_nframes_t nframes)
 	}
 
 	offset = 0;
-	bzero(localbuf, localsize);
 	nbytes = localsize;
 	while (nbytes > 0) {
 		io_res = sio_read(driver->hdl, localbuf + offset, nbytes);
@@ -213,7 +196,6 @@ sndio_driver_read_silence (sndio_driver_t *driver, jack_nframes_t nframes)
 		offset +=- io_res;
 		nbytes -= io_res;
 	}
-	driver->cappos += nframes;
 	free(localbuf);
 }
 
@@ -222,15 +204,12 @@ static int
 sndio_driver_start (sndio_driver_t *driver)
 {
 	if (!sio_start(driver->hdl))
-	{
 		jack_error("sio_start failed: %s@%i",
 			__FILE__, __LINE__);
-	}
 
 	/* prime playback buffers */
-	if (driver->playback_channels > 0) {
-		sndio_driver_write_silence(driver, driver->buffer_fill);
-	}
+	if (driver->playback_channels > 0)
+		sndio_driver_write_silence(driver, driver->pprime);
 
 	return 0;
 }
@@ -273,6 +252,7 @@ sndio_driver_set_parameters (sndio_driver_t *driver)
 	par.rate = driver->sample_rate;
 	par.appbufsz = driver->period_size * driver->nperiods;
 	par.round = driver->period_size;
+	par.xrun = SIO_SYNC;
 
 	if (!sio_setpar(driver->hdl, &par))
 	{
@@ -283,7 +263,7 @@ sndio_driver_set_parameters (sndio_driver_t *driver)
 
 	if (!sio_getpar(driver->hdl, &par))
 	{
-		jack_error("sndio_driver: sio_getpar failed: %s@%i",
+		jack_error("sndio_driver: sio_getpar() failed: %s@%i",
 			__FILE__, __LINE__);
 		return -1;
 	}
@@ -300,8 +280,8 @@ sndio_driver_set_parameters (sndio_driver_t *driver)
 
 	period_size = par.round;
 	nperiods = par.appbufsz / par.round;
-	driver->buffer_fill = par.appbufsz;
 	driver->sample_bytes = par.bps;
+	driver->pprime = par.bufsz;
 
 	if (period_size != 0 && !driver->ignorehwbuf &&
 		(period_size != driver->period_size || 
@@ -318,6 +298,8 @@ sndio_driver_set_parameters (sndio_driver_t *driver)
 				driver->period_size);
 	}
 
+	driver->capbufsize = 0;
+	driver->capbuf = NULL;
 	if (driver->capture_channels != 0)
 	{
 		driver->capbufsize = driver->period_size * 
@@ -325,18 +307,15 @@ sndio_driver_set_parameters (sndio_driver_t *driver)
 		driver->capbuf = malloc(driver->capbufsize);
 		if (driver->capbuf == NULL)
 		{
-			jack_error( "sndio_driver: malloc() failed: %s@%i", 
+			jack_error("sndio_driver: malloc() failed: %s@%i", 
 				__FILE__, __LINE__);
 			return -1;
 		}
 		bzero(driver->capbuf, driver->capbufsize);
 	}
-	else
-	{
-		driver->capbufsize = 0;
-		driver->capbuf = NULL;
-	}
 
+	driver->playbufsize = 0;
+	driver->playbuf = NULL;
 	if (driver->playback_channels > 0)
 	{
 		driver->playbufsize = driver->period_size * 
@@ -350,14 +329,6 @@ sndio_driver_set_parameters (sndio_driver_t *driver)
 		}
 		bzero(driver->playbuf, driver->playbufsize);
 	}
-	else
-	{
-		driver->playbufsize = 0;
-		driver->playbuf = NULL;
-	}
-
-	driver->realpos = driver->playpos = driver->cappos = 0;
-	sio_onmove(driver->hdl, sndio_movecb, driver);
 
 	printf("sndio_driver: capbuf %zd B, playbuf %zd B\n",
 		driver->capbufsize, driver->playbufsize);
@@ -369,10 +340,8 @@ sndio_driver_set_parameters (sndio_driver_t *driver)
 static int
 sndio_driver_stop (sndio_driver_t *driver)
 {
-	if (driver->hdl != NULL) {
-		sio_close(driver->hdl);
-		driver->hdl = NULL;
-	}
+	if (driver->hdl != NULL)
+		sio_stop(driver->hdl);
 
 	return 0;
 }
@@ -383,26 +352,22 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 {
 	struct pollfd pfd;
 	nfds_t snfds, nfds;
-	jack_time_t poll_enter;
 	jack_time_t poll_ret;
 	int need_capture, need_playback;
-	long long cap_avail, play_avail, used;
 	int events, revents;
 
 	*status = 0;
 	*iodelay = 0;
 
 	need_capture = need_playback = 0;
-	cap_avail = play_avail = 0;
 
-	if (driver->capture_channels != 0)
+	if (driver->capture_channels > 0)
 		need_capture = 1;
 
-	if (driver->playback_channels != 0)
+	if (driver->playback_channels > 0)
 		need_playback = 1;
 
-	poll_enter = jack_get_microseconds();
-	if (poll_enter > driver->poll_next)
+	if (jack_get_microseconds() > driver->poll_next)
 	{
 		/* late. don't count as wakeup delay. */
 		driver->poll_next = 0;
@@ -413,24 +378,31 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 	while (need_capture || need_playback)
 	{
 		events = 0;
-		if (need_capture != 0)
+		if (need_capture)
 			events |= POLLIN;
 
-		if (need_playback != 0)
+		if (need_playback)
 			events |= POLLOUT;
 
 		if (snfds != sio_pollfd(driver->hdl, &pfd, events)) {
 			jack_error("sndio_driver: sio_pollfd failed: %s@%i",
 				__FILE__, __LINE__);
-			*status = -3;
+			*status = -1;
 			return 0;
 		}
-		nfds = poll(&pfd, snfds, driver->poll_timeout);
+		nfds = poll(&pfd, snfds, 1000);
 		if (nfds == -1)
 		{
 			jack_error("sndio_driver: poll() error: %s: %s@%i",  
 				strerror(errno), __FILE__, __LINE__);
-			*status = -3;
+			*status = -1;
+			return 0;
+		}
+		else if (nfds == 0)
+		{
+			jack_error("sndio_driver: poll() time out: %s@%i",  
+				__FILE__, __LINE__);
+			*status = -1;
 			return 0;
 		}
 		revents = sio_revents(driver->hdl, &pfd);
@@ -438,7 +410,7 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 		{
 			jack_error("sndio_driver: poll() error: %s@%i",  
 				__FILE__, __LINE__);
-			*status = -3;
+			*status = -1;
 			return 0;
 		}
 
@@ -450,46 +422,17 @@ sndio_driver_wait (sndio_driver_t *driver, int *status, float *iodelay)
 
 		if (sio_eof(driver->hdl))
 		{
-			jack_error("sndio_driver: sndio error");
-			*status = -5;	/* restart */
+			jack_error("sndio_driver: sio_eof(): %s@%i",
+				__FILE__, __LINE__);
+			*status = -1;
 			return 0;
 		}
-
-		if (driver->capture_channels > 0)
-		{
-			used = 0;
-			if (driver->realpos > driver->cappos)
-				used = driver->realpos - driver->cappos;
-			cap_avail = used;
-
-			if (cap_avail >= driver->period_size)
-				need_capture = 0;
-
-			if (cap_avail > driver->buffer_fill)
-				jack_error("sndio_driver: capture xrun");
-		}
-
-		if (driver->playback_channels > 0)
-		{
-			used = 0;
-			if (driver->playpos > driver->realpos)
-				used = driver->playpos - driver->realpos;
-			play_avail = driver->buffer_fill - used;
-
-			if (play_avail >= driver->period_size)
-				need_playback = 0;
-
-			if (play_avail > driver->buffer_fill)
-				jack_error("sndio_driver: playback xrun");
-		}
 	}
-
 	poll_ret = jack_get_microseconds();
 
 	if (driver->poll_next && poll_ret > driver->poll_next)
 		*iodelay = poll_ret - driver->poll_next;
 
-	driver->poll_last = poll_ret;
 	driver->poll_next = poll_ret + driver->period_usecs;
 	driver->engine->transport_cycle_start(driver->engine, poll_ret);
 
@@ -503,42 +446,13 @@ static inline int
 sndio_driver_run_cycle (sndio_driver_t *driver)
 {
 	jack_nframes_t nframes;
-	jack_time_t now;
 	int wait_status;
 	float iodelay;
 
-	nframes = sndio_driver_wait (driver, &wait_status, &iodelay);
+	nframes = sndio_driver_wait(driver, &wait_status, &iodelay);
 
 	if (wait_status < 0)
-	{
-		switch (wait_status)
-		{
-		case -3:
-			/* poll() error */
-			return -1;
-		case -5:
-			/* xrun, restart */
-			sndio_driver_stop(driver);
-			driver->period_size = driver->orig_period_size;
-			driver->nperiods = driver->orig_nperiods;
-			sndio_driver_set_parameters(driver);
-			sndio_driver_start(driver);
-
-			if (driver->poll_next &&
-				(now = jack_get_microseconds()) > driver->poll_next)
-			{
-				iodelay = now - driver->poll_next;
-				driver->poll_next = now + driver->period_usecs;
-				driver->engine->delay(driver->engine, iodelay);
-				printf("sndio_driver: iodelay = %f\n", iodelay);
-			}
-
-			break;
-		default:
-			/* any other fatal error */
-			return -1;
-		}
-	}
+		return -1;
 
 	return driver->engine->run_cycle(driver->engine, nframes, iodelay);
 }
@@ -548,11 +462,9 @@ static void
 copy_and_convert_in (jack_sample_t *dst, void *src, 
 	size_t nframes,	int channel, int chcount, int bits)
 {
-	int srcidx;
-	int dstidx;
-	signed short *s16src = (signed short *) src;
-	signed int *s32src = (signed int *) src;
-	double *f64src = (double *) src;
+	int srcidx, dstidx;
+	signed short *s16src = (signed short *)src;
+	signed int *s32src = (signed int *)src;
 	jack_sample_t scale;
 
 	srcidx = channel;
@@ -577,13 +489,6 @@ copy_and_convert_in (jack_sample_t *dst, void *src,
 				srcidx += chcount;
 			}
 			break;
-		case 64:
-			for (dstidx = 0; dstidx < nframes; dstidx++)
-			{
-				dst[dstidx] = (jack_sample_t) f64src[srcidx];
-				srcidx += chcount;
-			}
-			break;
 	}
 }
 
@@ -594,9 +499,8 @@ copy_and_convert_out (void *dst, jack_sample_t *src,
 {
 	int srcidx;
 	int dstidx;
-	signed short *s16dst = (signed short *) dst;
-	signed int *s32dst = (signed int *) dst;
-	double *f64dst = (double *) dst;
+	signed short *s16dst = (signed short *)dst;
+	signed int *s32dst = (signed int *)dst;
 	jack_sample_t scale;
 
 	dstidx = channel;
@@ -625,19 +529,11 @@ copy_and_convert_out (void *dst, jack_sample_t *src,
 				dstidx += chcount;
 			}
 			break;
-		case 64:
-			for (srcidx = 0; srcidx < nframes; srcidx++)
-			{
-				f64dst[dstidx] = (double) src[srcidx];
-				dstidx += chcount;
-			}
-			break;
 	}
 }
 
 
 /* jack driver interface */
-
 
 static int
 sndio_driver_attach (sndio_driver_t *driver)
@@ -756,7 +652,7 @@ sndio_driver_read (sndio_driver_t *driver, jack_nframes_t nframes)
 	channel = 0;
 	while (node != NULL)
 	{
-		port = (jack_port_t *) node->data;
+		port = (jack_port_t *)node->data;
 
 		if (jack_port_connected(port))
 		{
@@ -785,8 +681,6 @@ sndio_driver_read (sndio_driver_t *driver, jack_nframes_t nframes)
 		offset += io_res;
 		nbytes -= io_res;
 	}
-	driver->cappos += nframes;
-
 	return 0;
 }
 
@@ -801,7 +695,6 @@ sndio_driver_write (sndio_driver_t *driver, jack_nframes_t nframes)
 	JSList *node;
 	jack_port_t *port;
 
-
 	if (driver->engine->freewheeling || driver->playback_channels == 0)
 		return 0;
 
@@ -813,13 +706,11 @@ sndio_driver_write (sndio_driver_t *driver, jack_nframes_t nframes)
 		return -1;
 	}
 
-	bzero(driver->playbuf, driver->playbufsize);
-
 	node = driver->playback_ports;
 	channel = 0;
 	while (node != NULL)
 	{
-		port = (jack_port_t *) node->data;
+		port = (jack_port_t *)node->data;
 
 		if (jack_port_connected(port))
 		{
@@ -834,8 +725,8 @@ sndio_driver_write (sndio_driver_t *driver, jack_nframes_t nframes)
 		channel++;
 	}
 
-	nbytes = nframes * driver->playback_channels * driver->sample_bytes;
 	io_res = offset = 0;
+	nbytes = nframes * driver->playback_channels * driver->sample_bytes;
 	while (nbytes > 0)
 	{
 		io_res = sio_write(driver->hdl, driver->playbuf + offset, nbytes);
@@ -848,8 +739,7 @@ sndio_driver_write (sndio_driver_t *driver, jack_nframes_t nframes)
 		offset += io_res;
 		nbytes -= io_res;
 	}
-	driver->playpos += nframes;
-
+	bzero(driver->playbuf, driver->playbufsize);
 	return 0;
 }
 
@@ -867,10 +757,10 @@ sndio_driver_null_cycle (sndio_driver_t *driver, jack_nframes_t nframes)
 
 	printf("sndio_driver: running null cycle\n");
 
-	if (driver->playback_channels != 0)
+	if (driver->playback_channels > 0)
 		sndio_driver_write_silence (driver, nframes);
 
-	if (driver->capture_channels != 0)
+	if (driver->capture_channels > 0)
 		sndio_driver_read_silence (driver, nframes);
 
 	return 0;
@@ -923,7 +813,7 @@ sndio_driver_delete (sndio_driver_t *driver)
 void
 driver_finish (jack_driver_t *driver)
 {
-	sndio_driver_delete ((sndio_driver_t *)driver);
+	sndio_driver_delete((sndio_driver_t *)driver);
 }
 
 
@@ -937,7 +827,7 @@ sndio_driver_new (char *dev, jack_client_t *client,
 {
 	sndio_driver_t *driver;
 
-	driver = (sndio_driver_t *) malloc(sizeof(sndio_driver_t));
+	driver = (sndio_driver_t *)malloc(sizeof(sndio_driver_t));
 	if (driver == NULL)
 	{
 		jack_error("sndio_driver: malloc() failed: %s: %s@%i",
@@ -945,18 +835,17 @@ sndio_driver_new (char *dev, jack_client_t *client,
 		return NULL;
 	}
 	driver->engine = NULL;
-	jack_driver_nt_init((jack_driver_nt_t *) driver);
+	jack_driver_nt_init((jack_driver_nt_t *)driver);
 
-	driver->nt_attach = (JackDriverNTAttachFunction) sndio_driver_attach;
-	driver->nt_detach = (JackDriverNTDetachFunction) sndio_driver_detach;
-	driver->read = (JackDriverReadFunction) sndio_driver_read;
-	driver->write = (JackDriverWriteFunction) sndio_driver_write;
-	driver->null_cycle = (JackDriverNullCycleFunction) 
-		sndio_driver_null_cycle;
-	driver->nt_bufsize = (JackDriverNTBufSizeFunction) sndio_driver_bufsize;
-	driver->nt_start = (JackDriverNTStartFunction) sndio_driver_start;
-	driver->nt_stop = (JackDriverNTStopFunction) sndio_driver_stop;
-	driver->nt_run_cycle = (JackDriverNTRunCycleFunction) sndio_driver_run_cycle;
+	driver->nt_attach = (JackDriverNTAttachFunction)sndio_driver_attach;
+	driver->nt_detach = (JackDriverNTDetachFunction)sndio_driver_detach;
+	driver->read = (JackDriverReadFunction)sndio_driver_read;
+	driver->write = (JackDriverWriteFunction)sndio_driver_write;
+	driver->null_cycle = (JackDriverNullCycleFunction)sndio_driver_null_cycle;
+	driver->nt_bufsize = (JackDriverNTBufSizeFunction)sndio_driver_bufsize;
+	driver->nt_start = (JackDriverNTStartFunction)sndio_driver_start;
+	driver->nt_stop = (JackDriverNTStopFunction)sndio_driver_stop;
+	driver->nt_run_cycle = (JackDriverNTRunCycleFunction)sndio_driver_run_cycle;
 
 	if (dev != NULL)
 		driver->dev = strdup(dev);
@@ -969,7 +858,6 @@ sndio_driver_new (char *dev, jack_client_t *client,
 	driver->period_size = period_size;
 	driver->orig_period_size = period_size;
 	driver->nperiods = nperiods;
-	driver->orig_nperiods = nperiods;
 	driver->bits = bits;
 	driver->capture_channels = capture_channels;
 	driver->playback_channels = playback_channels;
@@ -977,15 +865,14 @@ sndio_driver_new (char *dev, jack_client_t *client,
 	driver->sys_play_latency = play_latency;
 
 	set_period_size(driver, period_size);
-	
+
 	driver->hdl = NULL;
 	driver->capbuf = driver->playbuf = NULL;
 	driver->capture_ports = driver->playback_ports = NULL;
 
-	driver->iodelay = 0.0F;
-	driver->poll_last = driver->poll_next = 0;
+	driver->poll_next = 0;
 
-	if (sndio_driver_set_parameters (driver) < 0)
+	if (sndio_driver_set_parameters(driver) < 0)
 	{
 		free(driver);
 		return NULL;
@@ -993,7 +880,7 @@ sndio_driver_new (char *dev, jack_client_t *client,
 
 	driver->client = client;
 
-	return (jack_driver_t *) driver;
+	return (jack_driver_t *)driver;
 }
 
 
@@ -1009,14 +896,14 @@ driver_get_descriptor ()
 	jack_driver_desc_t *desc;
 	jack_driver_param_desc_t *params;
 
-	desc = (jack_driver_desc_t *) calloc(1, sizeof(jack_driver_desc_t));
+	desc = (jack_driver_desc_t *)calloc(1, sizeof(jack_driver_desc_t));
 	if (desc == NULL)
 	{
 		jack_error("sndio_driver: calloc() failed: %s: %s@%i",
 			strerror(errno), __FILE__, __LINE__);
 		return NULL;
 	}
-	strcpy(desc->name, driver_client_name);
+	strlcpy(desc->name, driver_client_name, sizeof(desc->name));
 	desc->nparams = SNDIO_DRIVER_N_PARAMS;
 
 	params = calloc(desc->nparams, sizeof(jack_driver_param_desc_t));
@@ -1053,7 +940,7 @@ driver_initialize (jack_client_t *client, JSList * params)
 	pnode = params;
 	while (pnode != NULL)
 	{
-		param = (const jack_driver_param_t *) pnode->data;
+		param = (const jack_driver_param_t *)pnode->data;
 
 		switch (param->character)
 		{
@@ -1091,7 +978,7 @@ driver_initialize (jack_client_t *client, JSList * params)
 		pnode = jack_slist_next(pnode);
 	}
 
-	return sndio_driver_new (dev, client, sample_rate, period_size,
+	return sndio_driver_new(dev, client, sample_rate, period_size,
 		nperiods, bits, capture_channels, playback_channels,
 		cap_latency, play_latency, ignorehwbuf);
 }

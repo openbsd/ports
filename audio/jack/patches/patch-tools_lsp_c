@@ -1,0 +1,20 @@
+$OpenBSD: patch-tools_lsp_c,v 1.1 2010/06/07 01:44:38 jakemsr Exp $
+--- tools/lsp.c.orig	Wed May 19 21:32:57 2010
++++ tools/lsp.c	Wed May 19 21:35:37 2010
+@@ -139,6 +139,7 @@ main (int argc, char *argv[])
+ 
+ 	for (i = 0; ports[i]; ++i) {
+ 		// skip over any that don't match ALL of the strings presented at command line
++		jack_port_t *port;
+ 		skip_port = 0;
+ 		for(k=optind; k < argc; k++){
+ 			if(strstr(ports[i], argv[k]) == NULL ){
+@@ -149,7 +150,7 @@ main (int argc, char *argv[])
+ 
+ 		printf ("%s\n", ports[i]);
+ 
+-		jack_port_t *port = jack_port_by_name (client, ports[i]);
++		port = jack_port_by_name (client, ports[i]);
+ 
+ 		if (show_aliases) {
+ 			int cnt;

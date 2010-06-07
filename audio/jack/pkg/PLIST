@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/12/09 10:15:08 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/06/07 01:44:38 jakemsr Exp $
 @bin bin/jack_alias
 @bin bin/jack_connect
 @bin bin/jack_disconnect
@@ -40,8 +40,6 @@ lib/jack/jack_net.la
 lib/jack/jack_net.so
 lib/jack/jack_sndio.la
 lib/jack/jack_sndio.so
-lib/jack/jack_sun.la
-lib/jack/jack_sun.so
 lib/libjack.la
 @lib lib/libjack.so.${LIBjack_VERSION}
 lib/libjackserver.la

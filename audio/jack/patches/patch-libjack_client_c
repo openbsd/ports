@@ -1,6 +1,6 @@
-$OpenBSD: patch-libjack_client_c,v 1.4 2009/02/04 00:02:16 merdely Exp $
---- libjack/client.c.orig	Thu Dec  4 03:30:27 2008
-+++ libjack/client.c	Tue Feb  3 16:49:16 2009
+$OpenBSD: patch-libjack_client_c,v 1.5 2010/06/07 01:44:38 jakemsr Exp $
+--- libjack/client.c.orig	Thu Dec  4 11:30:27 2008
++++ libjack/client.c	Wed May 19 20:27:23 2010
 @@ -974,10 +974,7 @@ jack_client_open_aux (const char *client_name,
  	}
  
@@ -12,7 +12,18 @@ $OpenBSD: patch-libjack_client_c,v 1.4 2009/02/04 00:02:16 merdely Exp $
  
  	/* External clients need to know where the tmpdir used for
  	   communication with the server lives
-@@ -1119,10 +1116,11 @@ jack_client_t* jack_client_open(const char* ext_client
+@@ -1110,8 +1107,9 @@ jack_client_open_aux (const char *client_name,
+ jack_client_t* jack_client_open(const char* ext_client_name, jack_options_t options, jack_status_t* status, ...)
+ {
+ 	va_list ap;
++	 jack_client_t* res;
+ 	va_start(ap, status);
+-	jack_client_t* res = jack_client_open_aux(ext_client_name, options, status, ap);
++	res = jack_client_open_aux(ext_client_name, options, status, ap);
+ 	va_end(ap);
+ 	return res;
+ }
+@@ -1119,10 +1117,11 @@ jack_client_t* jack_client_open(const char* ext_client
  jack_client_t *
  jack_client_new (const char *client_name)
  {
@@ -25,3 +36,20 @@ $OpenBSD: patch-libjack_client_c,v 1.4 2009/02/04 00:02:16 merdely Exp $
  }
  
  char *
+@@ -1694,6 +1693,7 @@ jack_client_thread_aux (void *arg)
+ {
+ 	jack_client_t *client = (jack_client_t *) arg;
+ 	jack_client_control_t *control = client->control;
++	int status;
+ 
+ 	pthread_mutex_lock (&client_lock);
+ 	client->thread_ok = TRUE;
+@@ -1723,7 +1723,7 @@ jack_client_thread_aux (void *arg)
+ 
+ 			while (1) {
+ 				DEBUG("client calls process()");
+-				int status = (client->process (control->nframes, 
++				status = (client->process (control->nframes, 
+ 								client->process_arg) ==
+ 					      control->nframes);
+ 				control->state = Finished;

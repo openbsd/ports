@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/12/09 10:15:08 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/07 01:44:38 jakemsr Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ COMMENT =		low latency sound server
 
 V =			0.116.1
 DISTNAME =		jack-audio-connection-kit-${V}
-PKGNAME =		jack-${V}p3
+PKGNAME =		jack-${V}p4
 
 SHARED_LIBS +=		jack		0.0	# 0.28
 SHARED_LIBS +=		jackserver	0.0	# 0.28
@@ -34,11 +34,10 @@ LIBTOOL_FLAGS +=	--tag=disable-static
 
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf automake
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-default-tmpdir=/var/tmp \
+			--disable-sun \
 			--disable-portaudio \
 			--disable-optimize
 
@@ -56,15 +55,14 @@ post-extract:
 	cp ${FILESDIR}/Makefile.am ${FILESDIR}/sndio_driver.{c,h} \
 		${WRKSRC}/drivers/sndio 
 
+AUTO_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION}
+
 post-patch:
-	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} aclocal
-	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoheader
-	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} automake --add-missing --foreign
-	cd ${WRKSRC} && AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
+	cd ${WRKSRC}; ${AUTO_ENV} aclocal
+
+pre-configure:
+	cd ${WRKSRC}; ${AUTO_ENV} automake --add-missing --foreign
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jack

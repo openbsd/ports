@@ -1,0 +1,37 @@
+$OpenBSD: patch-tools_netsource_c,v 1.4 2010/06/07 01:44:38 jakemsr Exp $
+--- tools/netsource.c.orig	Wed May 19 21:35:48 2010
++++ tools/netsource.c	Wed May 19 21:38:07 2010
+@@ -230,6 +230,7 @@ process (jack_nframes_t nframes, void *arg)
+ 
+     uint32_t *packet_buf, *packet_bufX;
+     jack_time_t packet_recv_timestamp;
++    jacknet_packet_header *pkthdr;
+ 
+     if( bitdepth == 1000 )
+ 	net_period = factor;
+@@ -243,7 +244,7 @@ process (jack_nframes_t nframes, void *arg)
+     /* Allocate a buffer where both In and Out Buffer will fit */
+     packet_buf = alloca ((rx_bufsize > tx_bufsize) ? rx_bufsize : tx_bufsize);
+ 
+-    jacknet_packet_header *pkthdr = (jacknet_packet_header *) packet_buf;
++    pkthdr = (jacknet_packet_header *) packet_buf;
+ 
+     /*
+      * ok... SEND code first.
+@@ -453,6 +454,7 @@ main (int argc, char *argv[])
+     extern char *optarg;
+     extern int optind, optopt;
+     int errflg=0, c;
++    int rx_bufsize;
+ 
+     if (argc < 3)
+     {
+@@ -574,7 +576,7 @@ main (int argc, char *argv[])
+     else
+ 	net_period = ceilf((float) jack_get_buffer_size (client) / (float) factor);
+ 
+-    int rx_bufsize =  get_sample_size (bitdepth) * capture_channels * net_period + sizeof (jacknet_packet_header);
++    rx_bufsize =  get_sample_size (bitdepth) * capture_channels * net_period + sizeof (jacknet_packet_header);
+     global_packcache = packet_cache_new (latency + 50, rx_bufsize, mtu);
+ 
+     /* tell the JACK server that we are ready to roll */
