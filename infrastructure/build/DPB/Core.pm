@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.12 2010/05/04 09:45:41 espie Exp $
+# $OpenBSD: Core.pm,v 1.13 2010/06/07 15:27:52 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -171,14 +171,10 @@ sub reap_kid
 	return $kid;
 }
 
-my $inited = 0;
 sub reap
 {
 	my ($class, $all) = @_;
 	my $reaped = 0;
-	if (!$inited) {
-		DPB::Core::Factory->init_cores;
-	}
 	$class->handle_events;
 	$reaped++ while $class->reap_kid(waitpid(-1, WNOHANG)) > 0;
 	return $reaped;
@@ -358,6 +354,7 @@ sub new
 sub finalize
 {
 	my ($self, $core) = @_;
+	$self->{signature}->print_out($core, $self->{logger});
 	if ($self->{signature}->matches($core, $self->{logger})) {
 		for my $i (1 .. $core->prop->{jobs}) {
 			ref($core)->new($core->hostname, $core->prop)->mark_ready;
@@ -384,9 +381,13 @@ sub new
 	}
 }
 
+my $inited = 0;
+
 sub init_cores
 {
 	my ($self, $logger, $startup) = @_;
+	return if $inited;
+
 	for my $core (values %$init) {
 		my $job = DPB::Job::Init->new($logger);
 		if (!defined $core->prop->{jobs}) {

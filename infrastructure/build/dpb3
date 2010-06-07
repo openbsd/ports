@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.16 2010/05/22 08:42:21 espie Exp $
+# $OpenBSD: dpb3,v 1.17 2010/06/07 15:27:52 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -181,6 +181,7 @@ if (@build_files > 0) {
 	$heuristics->finished_parsing;
 }
 
+DPB::Core::Factory->init_cores($logger);
 my $builder = DPB::PortBuilder->new(
     $opt_c, $opt_s, $opt_u, $opt_U, $fullrepo, $logger, $ports, $make,
     $heuristics);

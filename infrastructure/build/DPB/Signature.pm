@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.8 2010/05/06 15:50:13 espie Exp $
+# $OpenBSD: Signature.pm,v 1.9 2010/06/07 15:27:52 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -55,6 +55,21 @@ sub compare1
 		}
 	}
 	return $r;
+}
+
+sub print_out
+{
+	my ($self, $dir, $fh) = @_;
+	for my $k (sort keys %$self) {
+		next if $k eq 'la';
+		next if !defined $self->{$k};
+		print $fh "\t", $self->{$k}->to_string, "\n";
+	}
+	if (defined $self->{la}) {
+		for my $v (sort keys %{$self->{la}}) {
+			print $fh "\t$dir/$v.la\n";
+		}
+	}
 }
 
 sub compare
@@ -144,10 +159,21 @@ sub matches
 			my $log = $logger->open('signature');
 			print $log "$r\n";
 			return 0;
-			clsoe $log;
+			close $log;
 		} else {
 			return 1;
 		}
 	}
 }
+
+sub print_out
+{
+	my ($self, $core, $logger) = @_;
+	my $log = $logger->create($core->hostname.".sig");
+	for my $dir (OpenBSD::Paths->library_dirs) {
+		print $log "$dir: \n";
+		$self->{$dir}->print_out("$dir/lib", $log);
+	}
+}
+
 1;

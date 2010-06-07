@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.3 2010/05/04 09:45:41 espie Exp $
+# $OpenBSD: Logger.pm,v 1.4 2010/06/07 15:27:52 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -36,12 +36,24 @@ sub logfile
 	return $log;
 }
 
+sub _open
+{
+	my ($self, $mode, $name) = @_;
+	my $log = $self->logfile($name);
+	open my $fh, $mode, $log or die "Can't write to $log: $!\n";
+	return $fh;
+}
+
 sub open
 {
 	my ($self, $name) = @_;
-	my $log = $self->logfile($name);
-	open my $fh, ">>", $log or die "Can't write to $log: $!\n";
-	return $fh;
+	return $self->_open('>>', $name);
+}
+
+sub create
+{
+	my ($self, $name) = @_;
+	return $self->_open('>', $name);
 }
 
 sub log_pkgpath
