@@ -1,6 +1,6 @@
-.\"	$OpenBSD: dpb3.1,v 1.8 2010/05/09 10:47:34 espie Exp $
+.\"	$OpenBSD: dpb3.1,v 1.9 2010/06/07 15:13:52 espie Exp $
 .\"
-.Dd $Mdocdate: May 9 2010 $
+.Dd $Mdocdate: June 7 2010 $
 .Dt DPB3 1
 .Os
 .Sh NAME
@@ -140,16 +140,17 @@ This is followed by a two-line display:
 .Bl -tag -width BB=
 .It P=
 number of built packages, that could be installable, but are not needed
-by anything yet to build.
+by anything that has yet to build.
 .It I=
 number of packages that can be installed, and can be needed for other builds.
 .It B=
-number of built packages, not yet known to be installable.
+number of built packages, not yet known to be installable, 
+because of possibly run depends that still need to be built.
 .It Q=
 number of packages in the queue, e.g., stuff that can be built now, assuming
 we have a free slot.
 .It T=
-number of packages to_build, where dependencies are not yet resolved.
+number of packages to build, where dependencies are not yet resolved.
 .It !=
 number of ignored packages.
 .It E=
