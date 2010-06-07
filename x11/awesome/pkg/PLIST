@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/06/03 15:43:18 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/06/07 06:13:56 dcoppa Exp $
 @bin bin/awesome
 bin/awesome-client
 bin/awsetbg
@@ -68,7 +68,9 @@ share/awesome/lib/beautiful.lua
 share/awesome/lib/naughty.lua
 share/awesome/themes/
 share/awesome/themes/default/
+share/awesome/themes/default/README
 share/awesome/themes/default/background.png
+share/awesome/themes/default/background_white.png
 share/awesome/themes/default/layouts/
 share/awesome/themes/default/layouts/dwindle.png
 share/awesome/themes/default/layouts/dwindlew.png
