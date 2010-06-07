@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/06/05 12:38:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/06/07 20:36:33 edd Exp $
 
 VMEM_WARNING =		Yes
 
@@ -33,7 +33,6 @@ WANTLIB =		GL GLU ICE SM X11 Xext Xi Xmu c m pthread stdc++ z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
-BUILD_DEPENDS =		:cmake->=2.8.1:devel/cmake
 RUN_DEPENDS =		:desktop-file-utils-*:devel/desktop-file-utils \
 			::graphics/autopano-sift-c \
 			::graphics/enblend-enfuse \
