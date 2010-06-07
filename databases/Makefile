@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2010/04/29 05:33:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.176 2010/06/07 08:18:20 jasper Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -100,6 +100,7 @@
      SUBDIR += p5-SQL-ReservedWords
      SUBDIR += p5-SQL-Statement
      SUBDIR += p5-SQL-Translator
+     SUBDIR += p5-Search-Xapian
      SUBDIR += p5-Sort-SQL
      SUBDIR += p5-Tangram
      SUBDIR += p5-Tie-DBI
