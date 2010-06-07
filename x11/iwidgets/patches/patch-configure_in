@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure_in,v 1.1 2010/06/07 14:40:47 sthen Exp $
+--- configure.in.orig	Thu Nov 29 21:51:34 2001
++++ configure.in	Mon Jun  7 15:26:46 2010
+@@ -5,8 +5,10 @@ dnl installation to configure the system for the local
+ AC_INIT(generic/buttonbox.itk)
+ # RCS: $Id: patch-configure_in,v 1.1 2010/06/07 14:40:47 sthen Exp $
+ 
+-ITCL_VERSION=3.2
++ITCL_VERSION=3.4
++ITK_VERSION=3.3
+ AC_SUBST(ITCL_VERSION)
++AC_SUBST(ITK_VERSION)
+ 
+ PACKAGE=iwidgets
+ MAJOR_VERSION=4
+@@ -72,9 +74,9 @@ if test -r $itcl_search/itcl/library/itcl.tcl; then
+     fi
+ fi
+ 
+-if test -z "$ITCL_LIB_DIR"; then
+-    AC_MSG_ERROR(Can't find Itcl source.  Use --with-itcl to specify the the toplevel [incr Tcl] directory on your system.  (This directory should contain itcl/library/itcl.tcl, itk/library/itk.tcl, and config/mkinstalldirs.))
+-fi
++dnl if test -z "$ITCL_LIB_DIR"; then
++dnl     AC_MSG_ERROR(Can't find Itcl source.  Use --with-itcl to specify the the toplevel [incr Tcl] directory on your system.  (This directory should contain itcl/library/itcl.tcl, itk/library/itk.tcl, and config/mkinstalldirs.))
++dnl fi
+ 
+ 
+ #--------------------------------------------------------------------

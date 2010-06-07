@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/03/13 14:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/07 14:40:47 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -25,24 +25,22 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 MODULES=	x11/tk
 BUILD_DEPENDS=	${MODTK_RUN_DEPENDS}
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		::x11/itk
+		:itcl->=3.4,<3.5:devel/itcl \
+		:itk->=3.3,<3.4:x11/itk
 REGRESS_DEPENDS=${RUN_DEPENDS}
 # This regression test wants an X11 display
 REGRESS_IS_INTERACTIVE=	Yes
 
 NO_BUILD=	Yes
 
-MODTCL_VERSION=	8.4
-MODTK_VERSION=	8.4
-ITK_VERSION=	3.3
-ITCL_VERSION=	3.3
-
-CONFIGURE_STYLE=gnu dest
+AUTOCONF_VERSION=2.13
+CONFIGURE_STYLE=autoconf dest
 
 CONFIGURE_ARGS=	--with-tcl=${MODTCL_LIBDIR} \
-		--with-tk=${MODTK_LIBDIR}
+		--with-tk=${MODTK_LIBDIR} \
+		--with-itcl=${LOCALBASE}/itcl3.4
 
-CONFIGURE_ENV=	ITCL_VERSION=${ITCL_VERSION}
+CONFIGURE_ENV=	ITCL_VERSION=3.4
 
 pre-configure:
 	@perl -pi -e 's,^\.HS,\.TH,' ${WRKBUILD}/doc/*.n
