@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/03/11 21:26:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/07 14:39:46 sthen Exp $
 
 COMMENT=	object-oriented extensions to Tcl
 
-VERSION=	3.3
-DISTNAME=	itcl${VERSION}
-PKGNAME=	itcl-${VERSION}p2
-SHARED_LIBS=	itcl33	0.0
+VERSION=	3.4
+DISTNAME=	itcl${VERSION}b1
+PKGNAME=	itcl-${VERSION}b1
+SHARED_LIBS=	itcl34	0.0
 
 CATEGORIES=	devel
 
@@ -22,12 +22,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 
 MODULES=	lang/tcl
-MODTCL_VERSION=	8.4
 
 RUN_DEPENDS=	${MODTCL_RUN_DEPENDS}
 BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
 
 SUBST_VARS=	VERSION
+
+WRKDIST=	${WRKDIR}/itcl${VERSION}
 
 CONFIGURE_STYLE=gnu
 
@@ -38,11 +39,13 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${MODTCL_INCDIR}/generic \
 		-I${MODTCL_INCDIR}/unix" \
-		LIBitcl33_VERSION=${LIBitcl33_VERSION}
+		LIBitcl34_VERSION=${LIBitcl34_VERSION}
+
+SUBST_VARS=VERSION
 
 do-regress:
 	@cd ${WRKSRC} && ${SETENV} ITCL_LIBRARY=${WRKSRC}/library \
 		${MODTCL_BIN} tests/all.tcl -load \
-		"load ./libitcl33.so.${LIBitcl33_VERSION}"
+		"load ./libitcl34.so.${LIBitcl34_VERSION}"
 
 .include <bsd.port.mk>
