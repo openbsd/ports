@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/04/14 15:43:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/07 09:50:25 sthen Exp $
 
 COMMENT=	solve large scale eigenvalue problems
 
@@ -18,6 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}SRC/
 DISTFILES=	${DISTNAME}.tar.gz patch.tar.gz ug.ps.gz
 DIST_SUBDIR=	arpack
+
+MODULES=		fortran
+MODFORTRAN_WANTG77=	Yes
+BUILD_DEPENDS=		${MODFORTRAN_BUILD_DEPENDS}
 
 # See bsd.lib.mk:162
 .if ${MACHINE_ARCH:Mmips64*}
