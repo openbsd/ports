@@ -1,0 +1,21 @@
+$OpenBSD: patch-FeLib_Include_save_h,v 1.1 2010/06/07 14:48:32 espie Exp $
+--- FeLib/Include/save.h.orig	Mon Jun  7 16:39:39 2010
++++ FeLib/Include/save.h	Mon Jun  7 16:40:07 2010
+@@ -36,7 +36,7 @@ class outputfile
+   void Put(char What) { fputc(What, Buffer); }
+   void Write(const char* Offset, long Size)
+   { fwrite(Offset, 1, Size, Buffer); }
+-  truth IsOpen() { return truth(Buffer); }
++  truth IsOpen() { return truth(Buffer != NULL); }
+   void Close() { fclose(Buffer); }
+   void Flush() { fflush(Buffer); }
+   void ReOpen();
+@@ -58,7 +58,7 @@ class inputfile
+   rect ReadRect();
+   int Get() { return fgetc(Buffer); }
+   void Read(char* Offset, long Size) { fread(Offset, 1, Size, Buffer); }
+-  truth IsOpen() { return truth(Buffer); }
++  truth IsOpen() { return truth(Buffer != NULL); }
+   truth Eof() { return feof(Buffer); }
+   void ClearFlags() { clearerr(Buffer); }
+   void SeekPosBegin(long Offset) { fseek(Buffer, Offset, SEEK_SET); }
