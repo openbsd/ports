@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2010/05/24 20:40:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.167 2010/06/07 21:52:34 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,8 +8,8 @@ COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
 VERSION=	5.1.47
 DISTNAME=	mysql-${VERSION}
-PKGNAME-main=	mysql-client-${VERSION}
-PKGNAME-server=	mysql-server-${VERSION}
+PKGNAME-main=	mysql-client-${VERSION}p0
+PKGNAME-server=	mysql-server-${VERSION}p0
 PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.1
@@ -64,9 +64,7 @@ CONFIGURE_ARGS+= --localstatedir="${DB_DIR}" \
 
 .include <bsd.own.mk>
 
-USE_GCC3?= No
-
-.if ${USE_GCC3:L} == "yes"
+.if ${COMPILER_VERSION:L:Mgcc[34]*}
 CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++ \
 		 --with-mysqld-ldflags=-lsupc++
 .endif
@@ -81,7 +79,7 @@ RUN_DEPENDS-server=	:mysql-client->=5.1,<5.2:${BASE_PKGPATH} \
 			:p5-DBD-mysql-*:databases/p5-DBD-mysql
 LIB_DEPENDS-server=	mysqlclient:mysql-client->=5.1,<5.2:${BASE_PKGPATH}
 
-WANTLIB-server=		${WANTLIB} crypto ssl wrap z
+WANTLIB-server=		${WANTLIB} crypto ssl stdc++ wrap z
 WANTLIB-main=		${WANTLIB} crypto ncurses readline ssl z
 WANTLIB-tests=		${WANTLIB}
 
