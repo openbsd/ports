@@ -1,0 +1,43 @@
+$OpenBSD: patch-unix_tkUnixWm_c,v 1.1 2010/06/07 18:13:43 jasper Exp $
+--- unix/tkUnixWm.c.orig	Thu Jun  3 05:19:50 2010
++++ unix/tkUnixWm.c	Thu Jun  3 05:28:26 2010
+@@ -2335,7 +2335,7 @@ WmIconphotoCmd(
+     Tk_PhotoHandle photo;
+     Tk_PhotoImageBlock block;
+     int i, size = 0, width, height, index = 0, x, y, isDefault = 0;
+-    unsigned int *iconPropertyData;
++    unsigned long *iconPropertyData;
+
+     if (objc < 4) {
+ 	Tcl_WrongNumArgs(interp, 2, objv,
+@@ -2375,15 +2375,17 @@ WmIconphotoCmd(
+
+     /*
+      * We have calculated the size of the data. Try to allocate the needed
+-     * memory space.
++     * memory space. This is an unsigned long array (despite this being twice
++     * as much as is really needed on LP64 platforms) because that's what X
++     * defines CARD32 arrays to use. [Bug 2902814]
+      */
+
+-    iconPropertyData = (unsigned int *)
+-	    Tcl_AttemptAlloc(sizeof(unsigned int) * size);
++    iconPropertyData = (unsigned long *)
++	    Tcl_AttemptAlloc(sizeof(unsigned long) * size);
+     if (iconPropertyData == NULL) {
+ 	return TCL_ERROR;
+     }
+-    memset(iconPropertyData, 0, sizeof(unsigned int) * size);
++    memset(iconPropertyData, 0, sizeof(unsigned long) * size);
+
+     for (i = 3 + isDefault; i < objc; i++) {
+ 	photo = Tk_FindPhoto(interp, Tcl_GetString(objv[i]));
+@@ -2421,7 +2423,7 @@ WmIconphotoCmd(
+ 	    for (x = 0; x < width; x++) {
+ 		register unsigned char *pixelPtr =
+ 			block.pixelPtr + x*block.pixelSize + y*block.pitch;
+-		register unsigned int R, G, B, A;
++		register unsigned long R, G, B, A;
+
+ 		R = pixelPtr[block.offset[0]];
+ 		G = pixelPtr[block.offset[1]];

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/11/21 02:50:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/07 18:13:43 jasper Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
 DISTNAME =		tk8.5.8
-PKGNAME =		tk-8.5.8
+PKGNAME =		tk-8.5.8p0
 SHARED_LIBS =		tk85 0.5
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
@@ -15,13 +15,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig freetype m z \
-			pthread-stubs xcb
+WANTLIB =		X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig freetype m z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
 
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+WANTLIB +=		pthread-stubs xcb
 MAKE_FLAGS +=		TK_BUILD_EXP_FILE="libtk85.a" \
 			TK_EXP_FILE="libtk85.a"
 .endif
@@ -56,9 +56,9 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
-LIB_DEPENDS =		tcl85:tcl->=8.5.8,<8.5.9-${FLAVOR}:lang/tcl/8.5
+LIB_DEPENDS =		tcl85:tcl->=8.5.8p0,<8.5.9-${FLAVOR}:lang/tcl/8.5
 .else
-LIB_DEPENDS =		tcl85:tcl->=8.5.8,<8.5.9:lang/tcl/8.5
+LIB_DEPENDS =		tcl85:tcl->=8.5.8p0,<8.5.9:lang/tcl/8.5
 .endif
 
 WRKSRC =		${WRKDIST}/unix
