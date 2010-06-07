@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2009/10/04 10:56:20 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2010/06/07 08:41:38 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -16,7 +16,7 @@ MASTER_SITE_FEDORA=http://archive.fedoraproject.org/pub/archive/fedora/linux/cor
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 
-BUILD_DEPENDS+=	::converters/rpm2cpio
+BUILD_DEPENDS+=	:rpm-*|rpm2cpio-*:converters/rpm2cpio
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
