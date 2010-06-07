@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.17 2009/08/10 06:30:30 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2010/06/07 20:08:09 kili Exp $
 
 COMMENT=	Qt-based 2D CAD system
 
 V=		2.0.5.0
 DISTNAME=	qcad-${V}-1-community.src
-PKGNAME=	qcad-${V}p0
+PKGNAME=	qcad-${V}p1
 CATEGORIES=	cad graphics
 
 HOMEPAGE=	http://www.ribbonsoft.com/qcad.html
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext c m pthread pthread-stubs stdc++ xcb
+WANTLIB=		X11 Xext c m pthread stdc++
 
 MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
 
@@ -30,13 +30,12 @@ PORTHOME=	${WRKDIR}
 MAKE_ENV+=	QTDIR=${MODQT_LIBDIR} \
 		MAKE=${MAKE_PROGRAM}
 
+SUBST_VARS=	CXXFLAGS LOCALBASE MODQT_LIBDIR
+
 pre-configure:
-	@perl -pi -e 's,!!CXXFLAGS!!,${CXXFLAGS},' ${WRKSRC}/mkspecs/defs.pro
-	@perl -pi -e 's,!!DOCDIR!!,${PREFIX}/share/doc/qcad,' \
-		${WRKSRC}/qcadlib/src/engine/rs_system.h
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},' \
-		${WRKSRC}/qcadlib/src/engine/rs_system.cpp
-	@perl -pi -e 's,!!QTDIR!!,${MODQT_LIBDIR},' \
+	${SUBST_CMD} ${WRKSRC}/mkspecs/defs.pro \
+		${WRKSRC}/qcadlib/src/engine/rs_system.h \
+		${WRKSRC}/qcadlib/src/engine/rs_system.cpp \
 		${WRKSRC}/qcad/src/qc_applicationwindow.cpp
 
 do-build:

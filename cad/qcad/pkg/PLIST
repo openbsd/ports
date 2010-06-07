@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/01/09 16:30:38 steven Exp $
-bin/qcad
+@comment $OpenBSD: PLIST,v 1.6 2010/06/07 20:08:09 kili Exp $
+@bin bin/qcad
 share/doc/qcad/
 share/doc/qcad/appendix.html
 share/doc/qcad/appendix_bib.html
