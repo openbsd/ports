@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Iindex_cxx,v 1.1 2010/06/07 20:49:34 espie Exp $
+--- src/Iindex.cxx.orig	Mon Jun  7 22:29:38 2010
++++ src/Iindex.cxx	Mon Jun  7 22:30:50 2010
+@@ -149,7 +149,7 @@ void AddFile(PIDB IdbPtr, STRING& PathName, STRING& Fi
+ 	   }
+ 	 }
+ 	 if (Found) {
+-	   Offset = (GPTYPE)((UINT4)Found - (UINT4)Buffer);
++	   Offset = (GPTYPE)((UINT8)Found - (UINT8)Buffer);
+ 	   /* the separator marks the beginning of the next 
+ 	      record. (offset - 1), then marks the end of 
+ 	      the current record. we must make sure that the
