@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/12/23 11:42:09 pirofti Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/07 07:24:00 landry Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
-DISTNAME =	surf-0.3
-PKGNAME =	${DISTNAME}p1
+DISTNAME =	surf-0.4
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
 
@@ -24,7 +23,7 @@ WANTLIB =	c X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		freetype m pixman-1 pthread pthread-stubs xcb z \
 		atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glib-2.0 glitz gmodule-2.0 gnutls gobject-2.0 \
-		gthread-2.0 gtk-x11-2.0 pango-1.0 \
+		gthread-2.0 gtk-x11-2.0 pango-1.0 xcb-render xcb-render-util \
 		pangocairo-1.0 pangoft2-1.0 png soup-2.4 xml2
 
 NO_REGRESS =	Yes

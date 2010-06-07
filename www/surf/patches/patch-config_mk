@@ -1,8 +1,8 @@
-$OpenBSD: patch-config_mk,v 1.2 2009/12/17 21:06:20 landry Exp $
+$OpenBSD: patch-config_mk,v 1.3 2010/06/07 07:24:00 landry Exp $
 use TRUEPREFIX instead of patching Makefile to remove DESTDIR
---- config.mk.orig	Fri Oct 30 13:41:02 2009
-+++ config.mk	Thu Dec 17 21:43:56 2009
-@@ -4,20 +4,20 @@ VERSION = 0.3
+--- config.mk.orig	Sun May 30 22:05:25 2010
++++ config.mk	Mon Jun  7 09:20:47 2010
+@@ -4,20 +4,20 @@ VERSION = 0.4
  # Customize below to fit your system
  
  # paths
@@ -27,10 +27,10 @@ use TRUEPREFIX instead of patching Makefile to remove DESTDIR
  CPPFLAGS = -DVERSION=\"${VERSION}\"
 -CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 +CFLAGS += -std=c99 ${INCS} ${CPPFLAGS}
- LDFLAGS = -s ${LIBS}
+ LDFLAGS = -g ${LIBS}
  
  # Solaris
-@@ -25,4 +25,4 @@ LDFLAGS = -s ${LIBS}
+@@ -25,4 +25,4 @@ LDFLAGS = -g ${LIBS}
  #LDFLAGS = ${LIBS}
  
  # compiler and linker
