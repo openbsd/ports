@@ -1,0 +1,54 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/07 08:15:28 jasper Exp $
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Search/
+${P5ARCH}/Search/Xapian/
+${P5ARCH}/Search/Xapian.pm
+${P5ARCH}/Search/Xapian/BM25Weight.pm
+${P5ARCH}/Search/Xapian/BoolWeight.pm
+${P5ARCH}/Search/Xapian/Database.pm
+${P5ARCH}/Search/Xapian/Document.pm
+${P5ARCH}/Search/Xapian/ESet.pm
+${P5ARCH}/Search/Xapian/ESetIterator.pm
+${P5ARCH}/Search/Xapian/Enquire.pm
+${P5ARCH}/Search/Xapian/MSet/
+${P5ARCH}/Search/Xapian/MSet.pm
+${P5ARCH}/Search/Xapian/MSet/Tied.pm
+${P5ARCH}/Search/Xapian/MSetIterator.pm
+${P5ARCH}/Search/Xapian/MultiValueSorter.pm
+${P5ARCH}/Search/Xapian/PerlStopper.pm
+${P5ARCH}/Search/Xapian/PositionIterator.pm
+${P5ARCH}/Search/Xapian/PostingIterator.pm
+${P5ARCH}/Search/Xapian/Query.pm
+${P5ARCH}/Search/Xapian/QueryParser.pm
+${P5ARCH}/Search/Xapian/RSet.pm
+${P5ARCH}/Search/Xapian/SimpleStopper.pm
+${P5ARCH}/Search/Xapian/Stem.pm
+${P5ARCH}/Search/Xapian/Stopper.pm
+${P5ARCH}/Search/Xapian/TermGenerator.pm
+${P5ARCH}/Search/Xapian/TermIterator.pm
+${P5ARCH}/Search/Xapian/TradWeight.pm
+${P5ARCH}/Search/Xapian/ValueIterator.pm
+${P5ARCH}/Search/Xapian/Weight.pm
+${P5ARCH}/Search/Xapian/WritableDatabase.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Search/
+${P5ARCH}/auto/Search/Xapian/
+${P5ARCH}/auto/Search/Xapian/Xapian.bs
+@man man/man3p/Search::Xapian.3p
+@man man/man3p/Search::Xapian::BM25Weight.3p
+@man man/man3p/Search::Xapian::BoolWeight.3p
+@man man/man3p/Search::Xapian::Database.3p
+@man man/man3p/Search::Xapian::Document.3p
+@man man/man3p/Search::Xapian::Enquire.3p
+@man man/man3p/Search::Xapian::MultiValueSorter.3p
+@man man/man3p/Search::Xapian::PositionIterator.3p
+@man man/man3p/Search::Xapian::PostingIterator.3p
+@man man/man3p/Search::Xapian::QueryParser.3p
+@man man/man3p/Search::Xapian::Stem.3p
+@man man/man3p/Search::Xapian::TermGenerator.3p
+@man man/man3p/Search::Xapian::TermIterator.3p
+@man man/man3p/Search::Xapian::TradWeight.3p
+@man man/man3p/Search::Xapian::ValueIterator.3p
+@man man/man3p/Search::Xapian::Weight.3p
+@man man/man3p/Search::Xapian::WritableDatabase.3p
