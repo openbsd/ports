@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/04/27 18:09:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/06/07 06:14:14 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -136,8 +136,8 @@ lib/anjuta/file-manager.plugin
 lib/anjuta/gbf-am.plugin
 lib/anjuta/gbf-mkfile.plugin
 lib/anjuta/git.plugin
+lib/anjuta/js-support-plugin.plugin
 lib/anjuta/js_debugger.plugin
-lib/anjuta/js_support_plugin.plugin
 lib/anjuta/language-manager.plugin
 @comment lib/anjuta/libanjuta-build-basic-autotools.la
 lib/anjuta/libanjuta-build-basic-autotools.so
