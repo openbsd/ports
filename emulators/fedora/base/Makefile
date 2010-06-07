@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/06/07 09:18:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/07 09:18:38 ajacoutot Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core 4
 
@@ -63,8 +63,6 @@ MASTER_SITES=	${MASTER_SITE_FEDORA:=4/i386/os/Fedora/RPMS/}
 MASTER_SITES0=	${MASTER_SITE_FEDORA:=updates/4/i386/}
 
 DISTFILES=	${RPMS}
-
-BUILD_DEPENDS=	:gcpio-*:archivers/gcpio
 
 RPMDIR=		${FULLDISTDIR}
 
