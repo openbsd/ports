@@ -1,10 +1,10 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.11 2010/04/08 16:18:00 sthen Exp $
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.12 2010/06/07 20:03:55 sthen Exp $
 
 - more useful defaults
 - create /var/run/asterisk with sane ownership/perms
 
 --- contrib/scripts/safe_asterisk.orig	Tue Jan 12 03:25:20 2010
-+++ contrib/scripts/safe_asterisk	Fri Apr  2 00:55:43 2010
++++ contrib/scripts/safe_asterisk	Mon Jun  7 17:32:16 2010
 @@ -2,9 +2,9 @@
  # vim:textwidth=80:tabstop=4:shiftwidth=4:smartindent:autoindent
  
@@ -32,11 +32,10 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.11 2010/04/08 16:18:00 sthen E
  
  # run asterisk with this priority
  PRIORITY=0
-@@ -42,6 +43,19 @@ message() {
- 	    echo "safe_asterisk[$$]: $1" >> "$LOGFILE"
+@@ -43,6 +44,19 @@ message() {
  	fi
  }
-+
+ 
 +# Create the directory for the control socket if required. As of 1.6.0.26,
 +# Asterisk tries to create this itself at startup but doesn't give suitable
 +# ownership. This must be created before the 'check if asterisk is already
@@ -49,6 +48,29 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.11 2010/04/08 16:18:00 sthen E
 +		chmod 770 $varrundir
 +	fi
 +fi
- 
++
  # Check if Asterisk is already running.  If it is, then bug out, because
  # starting safe_asterisk when Asterisk is running is very bad.
+ VERSION=`${ASTSBINDIR}/asterisk -rx 'core show version'`
+@@ -71,7 +85,7 @@ else
+ 			fi
+ 		fi
+ 		SYSCTL_MAXFILES="fs.file-max"
+-	elif `uname -s | grep Darwin /dev/null 2>&1`; then
++	elif `uname -s | grep -E '(BSD|Darwin)' /dev/null 2>&1`; then
+ 		SYSCTL_MAXFILES="kern.maxfiles"
+ 	fi
+ 
+@@ -82,8 +96,10 @@ else
+ 		fi
+ 	fi
+ 
+-	# set the process's filemax to whatever set above
+-	ulimit -n $MAXFILES
++	if ! test "x$MAXFILES" = "x" ; then
++		# set the process's filemax to whatever set above
++		ulimit -n $MAXFILES
++	fi
+ 
+ 	if test ! -d ${ASTVARRUNDIR} ; then
+ 		mkdir -p ${ASTVARRUNDIR}
