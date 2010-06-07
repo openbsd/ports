@@ -1,4 +1,8 @@
-# $OpenBSD: README.OpenBSD,v 1.6 2008/12/23 15:25:04 ajacoutot Exp $
+# $OpenBSD: README.OpenBSD,v 1.7 2010/06/07 06:28:13 ajacoutot Exp $
+
+Running GNUstep on OpenBSD
+==========================
+
 
 #
 # post-install optionnal steps

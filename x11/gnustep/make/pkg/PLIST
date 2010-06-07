@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/23 15:25:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/06/07 06:28:13 ajacoutot Exp $
 bin/debugapp
 bin/gnustep-config
 bin/openapp
@@ -54,7 +54,6 @@ share/GNUstep/Makefiles/Instance/test-library.make
 share/GNUstep/Makefiles/Instance/test-tool.make
 share/GNUstep/Makefiles/Instance/tool.make
 share/GNUstep/Makefiles/Master/
-share/GNUstep/Makefiles/Master/aggregate.make
 share/GNUstep/Makefiles/Master/application.make
 share/GNUstep/Makefiles/Master/bundle.make
 share/GNUstep/Makefiles/Master/clibrary.make
@@ -69,9 +68,11 @@ share/GNUstep/Makefiles/Master/library.make
 share/GNUstep/Makefiles/Master/nsis.make
 share/GNUstep/Makefiles/Master/objc.make
 share/GNUstep/Makefiles/Master/palette.make
+share/GNUstep/Makefiles/Master/parallel-subdirectories.make
 share/GNUstep/Makefiles/Master/resource-set.make
 share/GNUstep/Makefiles/Master/rpm.make
 share/GNUstep/Makefiles/Master/rules.make
+share/GNUstep/Makefiles/Master/serial-subdirectories.make
 share/GNUstep/Makefiles/Master/service.make
 share/GNUstep/Makefiles/Master/source-distribution.make
 share/GNUstep/Makefiles/Master/subproject.make
@@ -120,10 +121,12 @@ share/GNUstep/Makefiles/nsi-app.template
 share/GNUstep/Makefiles/objc.make
 share/GNUstep/Makefiles/os.sh
 share/GNUstep/Makefiles/palette.make
+share/GNUstep/Makefiles/parallel-subdirectories.make
 share/GNUstep/Makefiles/print_unique_pathlist.sh
 share/GNUstep/Makefiles/relative_path.sh
 share/GNUstep/Makefiles/resource-set.make
 share/GNUstep/Makefiles/rules.make
+share/GNUstep/Makefiles/serial-subdirectories.make
 share/GNUstep/Makefiles/service.make
 share/GNUstep/Makefiles/spec-rules.template
 share/GNUstep/Makefiles/strip_makefiles.sh
