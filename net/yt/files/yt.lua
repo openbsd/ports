@@ -1,5 +1,5 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.27 2010/04/05 15:13:27 jsg Exp $
+-- $OpenBSD: yt.lua,v 1.28 2010/06/07 22:43:26 jsg Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -119,11 +119,13 @@ for i = 1, table.getn(urls) do
 
    -- Check for error such as "This video is not available in your country."
    error_pattern = "class=\"yt%-alert%-content\">%s+(.-)%s*\n*</div>"
+--[[
    err = string.match(body, error_pattern)
    if err then
       io.stderr:write(err .. "\n")
       return
    end
+]]--
 
    if video_id then
       --- Look for the additional video ID.
