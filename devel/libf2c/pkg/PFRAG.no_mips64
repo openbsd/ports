@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.no_mips64,v 1.1 2010/06/07 14:25:47 jasper Exp $
+lib/gcc-lib/${CONFIG}/${V}/libfrtbegin_pic.a
+lib/gcc-lib/${CONFIG}/${V}/libg2c_pic.a
+lib/libfrtbegin_pic.a
+lib/libg2c_pic.a
