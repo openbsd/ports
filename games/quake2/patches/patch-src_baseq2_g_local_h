@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_baseq2_g_local_h,v 1.1 2010/06/07 16:03:40 espie Exp $
+--- src/baseq2/g_local.h.orig	Mon Jun  7 17:57:55 2010
++++ src/baseq2/g_local.h	Mon Jun  7 17:58:55 2010
+@@ -505,10 +505,11 @@ extern	int	meansOfDeath;
+ 
+ extern	edict_t			*g_edicts;
+ 
+-#define	FOFS(x) (int)&(((edict_t *)0)->x)
+-#define	STOFS(x) (int)&(((spawn_temp_t *)0)->x)
+-#define	LLOFS(x) (int)&(((level_locals_t *)0)->x)
+-#define	CLOFS(x) (int)&(((gclient_t *)0)->x)
++#include <stddef.h>
++#define	FOFS(x) offsetof(edict_t, x)
++#define	STOFS(x) offsetof(spawn_temp_t, x)
++#define	LLOFS(x) offsetof(level_locals_t, x)
++#define	CLOFS(x) offsetof(gclient_t, x)
+ 
+ #define random()	((rand () & 0x7fff) / ((float)0x7fff))
+ #define crandom()	(2.0 * (random() - 0.5))

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_sv_world_c,v 1.1 2010/06/07 16:03:40 espie Exp $
+--- src/sv_world.c.orig	Mon Jun  7 17:49:42 2010
++++ src/sv_world.c	Mon Jun  7 17:56:40 2010
+@@ -30,10 +30,12 @@ FIXME: this use of "area" is different from the bsp fi
+ ===============================================================================
+ */
+ 
++#include <stddef.h>
++
+ // (type *)STRUCT_FROM_LINK(link_t *link, type, member)
+ // ent = STRUCT_FROM_LINK(link,entity_t,order)
+ // FIXME: remove this mess!
+-#define	STRUCT_FROM_LINK(l,t,m) ((t *)((byte *)l - (int)&(((t *)0)->m)))
++#define	STRUCT_FROM_LINK(l,t,m) ((t *)((byte *)l - offsetof(t, m)))
+ 
+ #define	EDICT_FROM_AREA(l) STRUCT_FROM_LINK(l,edict_t,area)
+ 
