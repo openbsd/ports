@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/05/09 15:22:43 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2010/06/07 09:26:41 sthen Exp $
 
 COMMENT=		several programs to handle macintosh files and archives
 DISTNAME=		macutil2.0b3
@@ -12,7 +12,9 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 WANTLIB=		c
 
-MASTER_SITES=		ftp://ftp.rz.hu-berlin.de/pub/mirrors/www.ibiblio.org/distfiles/
+MASTER_SITES=	http://spacehopper.org/mirrors/ \
+		ftp://ftp.rz.hu-berlin.de/pub/mirrors/www.ibiblio.org/distfiles/
+# XXX hu-berlin fails with EPSV
 EXTRACT_SUFX=		.shar.Z
 
 MAKE_FILE=		makefile
