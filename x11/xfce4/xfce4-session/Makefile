@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/06/05 15:26:33 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2010/06/07 07:24:47 landry Exp $
 
 COMMENT=	Xfce4 session manager
 
@@ -33,9 +33,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfce4-session
 
 post-install:
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
-		${PREFIX}/share/xfce4/README.OpenBSD
-	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/xfce4/README.OpenBSD
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
+		${FILESDIR}/README.OpenBSD ${PREFIX}/share/xfce4/README.OpenBSD
 
 .include <bsd.port.mk>
