@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/06/23 11:00:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/06/07 06:52:46 ajacoutot Exp $
 bin/Calculator
 bin/CurrencyConverter
 bin/Finger
@@ -45,6 +45,11 @@ lib/GNUstep/ApplicationSupport/GSTest/NSBox-test.bundle/NSBox-test.so
 lib/GNUstep/ApplicationSupport/GSTest/NSBox-test.bundle/Resources/
 lib/GNUstep/ApplicationSupport/GSTest/NSBox-test.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GSTest/NSBox-test.bundle/stamp.make
+lib/GNUstep/ApplicationSupport/GSTest/NSButton-test.bundle/
+lib/GNUstep/ApplicationSupport/GSTest/NSButton-test.bundle/NSButton-test.so
+lib/GNUstep/ApplicationSupport/GSTest/NSButton-test.bundle/Resources/
+lib/GNUstep/ApplicationSupport/GSTest/NSButton-test.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/ApplicationSupport/GSTest/NSButton-test.bundle/stamp.make
 lib/GNUstep/ApplicationSupport/GSTest/NSColorList-test.bundle/
 lib/GNUstep/ApplicationSupport/GSTest/NSColorList-test.bundle/NSColorList-test.so
 lib/GNUstep/ApplicationSupport/GSTest/NSColorList-test.bundle/Resources/
@@ -60,6 +65,11 @@ lib/GNUstep/ApplicationSupport/GSTest/NSForm-test.bundle/NSForm-test.so
 lib/GNUstep/ApplicationSupport/GSTest/NSForm-test.bundle/Resources/
 lib/GNUstep/ApplicationSupport/GSTest/NSForm-test.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GSTest/NSForm-test.bundle/stamp.make
+lib/GNUstep/ApplicationSupport/GSTest/NSOpenPanel-test.bundle/
+lib/GNUstep/ApplicationSupport/GSTest/NSOpenPanel-test.bundle/NSOpenPanel-test.so
+lib/GNUstep/ApplicationSupport/GSTest/NSOpenPanel-test.bundle/Resources/
+lib/GNUstep/ApplicationSupport/GSTest/NSOpenPanel-test.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/ApplicationSupport/GSTest/NSOpenPanel-test.bundle/stamp.make
 lib/GNUstep/ApplicationSupport/GSTest/NSOutlineView-test.bundle/
 lib/GNUstep/ApplicationSupport/GSTest/NSOutlineView-test.bundle/NSOutlineView-test.so
 lib/GNUstep/ApplicationSupport/GSTest/NSOutlineView-test.bundle/Resources/
@@ -186,6 +196,7 @@ libexec/GNUstep/Ink.app/Resources/FileIcon_rtf.tiff
 libexec/GNUstep/Ink.app/Resources/FileIcon_txt.tiff
 libexec/GNUstep/Ink.app/Resources/Info-gnustep.plist
 libexec/GNUstep/Ink.app/Resources/Ink.desktop
+libexec/GNUstep/Ink.app/Resources/Ink_app.ico
 libexec/GNUstep/Ink.app/Resources/Ink_app.tiff
 libexec/GNUstep/Ink.app/stamp.make
 libexec/GNUstep/MyGL.app/

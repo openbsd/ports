@@ -1,16 +1,17 @@
-$OpenBSD: patch-gui_GNUmakefile,v 1.1.1.1 2007/05/29 03:03:52 ajacoutot Exp $
---- gui/GNUmakefile.orig	Wed May 23 22:11:28 2007
-+++ gui/GNUmakefile	Mon May 28 18:57:42 2007
-@@ -31,7 +31,11 @@ SUBPROJECTS =             \
+$OpenBSD: patch-gui_GNUmakefile,v 1.2 2010/06/07 06:52:46 ajacoutot Exp $
+--- gui/GNUmakefile.orig	Mon Mar  8 00:15:58 2010
++++ gui/GNUmakefile	Thu Jun  3 09:58:19 2010
+@@ -30,7 +30,12 @@ SUBPROJECTS =             \
+ 	CurrencyConverter \
  	Ink               \
  	ExampleService    \
- 	MyGL		  \
 -	GSTest
-+	GSTest		  \
-+	ToolbarExample	  \
-+	Finger		  \
-+	GFractal	  \
-+	HostAddress
++	GSTest            \
++	ToolbarExample    \
++	Finger            \
++	GFractal          \
++	HostAddress	  \
++	MyGL
  
- include GNUmakefile.preamble
- 
+ # MyGL commented out because it required OpenGL which some people
+ # don't have.

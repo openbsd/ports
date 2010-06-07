@@ -1,7 +1,7 @@
-$OpenBSD: patch-gui_MyGL_AppController_m,v 1.1 2007/06/04 11:09:13 ajacoutot Exp $
---- gui/MyGL/AppController.m.orig	Sun Jun  3 15:47:05 2007
-+++ gui/MyGL/AppController.m	Sun Jun  3 15:47:48 2007
-@@ -418,7 +418,7 @@ static char initialized = 0;
+$OpenBSD: patch-gui_MyGL_AppController_m,v 1.2 2010/06/07 06:52:46 ajacoutot Exp $
+--- gui/MyGL/AppController.m.orig	Thu Apr 15 01:01:19 2010
++++ gui/MyGL/AppController.m	Thu Jun  3 09:44:46 2010
+@@ -410,7 +410,7 @@ static void Normalize (Vector *v)
  
  	h = [MySAX new];
  	p = [GSXMLParser parserWithSAXHandler:h

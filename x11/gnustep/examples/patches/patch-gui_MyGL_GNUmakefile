@@ -1,15 +1,20 @@
-$OpenBSD: patch-gui_MyGL_GNUmakefile,v 1.2 2007/06/04 11:09:13 ajacoutot Exp $
---- gui/MyGL/GNUmakefile.orig	Thu May 24 06:11:28 2007
-+++ gui/MyGL/GNUmakefile	Sun Jun  3 16:12:34 2007
-@@ -7,8 +7,9 @@ MyGL_MAIN_MODEL_FILE=MyGL.gorm
+$OpenBSD: patch-gui_MyGL_GNUmakefile,v 1.3 2010/06/07 06:52:46 ajacoutot Exp $
+--- gui/MyGL/GNUmakefile.orig	Sat Mar 13 02:20:22 2010
++++ gui/MyGL/GNUmakefile	Thu Jun  3 09:55:30 2010
+@@ -7,13 +7,14 @@ MyGL_MAIN_MODEL_FILE=MyGL.gorm
  MyGL_APPLICATION_ICON=MyGL.tiff
  
  MyGL_OBJC_FILES = main.m AppController.m
 -MyGL_RESOURCE_FILES = MyGL.gorm MyGL.tiff
 +MyGL_RESOURCE_FILES = MyGL.gorm MyGL.tiff girl.dae
  
+ 
+ ifeq ($(GNUSTEP_TARGET_OS), mingw32)
+ ADDITIONAL_TOOL_LIBS += -lopengl32 -lglu32 -lm
+ else
 -ADDITIONAL_TOOL_LIBS += -lGL -lGLU -lm
 +ADDITIONAL_TOOL_LIBS += -L!!X11BASE!!/lib -lGL -lGLU -lm
 +ADDITIONAL_INCLUDE_DIRS += -I!!X11BASE!!/include
+ endif
  
  include $(GNUSTEP_MAKEFILES)/application.make
