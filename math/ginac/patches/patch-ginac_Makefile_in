@@ -1,7 +1,7 @@
-$OpenBSD: patch-ginac_Makefile_in,v 1.2 2009/03/17 11:53:01 pirofti Exp $
---- ginac/Makefile.in.orig	Wed Feb 25 15:02:39 2009
-+++ ginac/Makefile.in	Tue Mar 10 16:12:26 2009
-@@ -299,7 +299,7 @@ polynomial/primpart_content.cpp \
+$OpenBSD: patch-ginac_Makefile_in,v 1.3 2010/06/07 13:47:44 espie Exp $
+--- ginac/Makefile.in.orig	Thu Jul 30 19:06:05 2009
++++ ginac/Makefile.in	Mon Jun  7 03:59:36 2010
+@@ -316,7 +316,7 @@ polynomial/primpart_content.cpp \
  polynomial/smod_helpers.h \
  polynomial/debug.h
  

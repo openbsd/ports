@@ -1,6 +1,6 @@
---- configure.orig	Wed Feb 25 15:02:36 2009
-+++ configure	Tue Mar 10 16:12:26 2009
-@@ -11745,7 +11745,7 @@ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+--- configure.orig	Thu Jul 30 19:06:02 2009
++++ configure	Mon Jun  7 03:59:36 2010
+@@ -11835,7 +11835,7 @@ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -12067,7 +12067,7 @@ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+@@ -12157,7 +12157,7 @@ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,7 +18,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -12203,7 +12203,7 @@ if test "${ac_cv_lib_dld_dld_link+set}" = set; then
+@@ -12293,7 +12293,7 @@ if test "${ac_cv_lib_dld_dld_link+set}" = set; then
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
