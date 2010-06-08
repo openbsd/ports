@@ -1,0 +1,13 @@
+$OpenBSD: patch-exec_c,v 1.8 2010/06/08 01:08:20 fgsch Exp $
+--- exec.c.orig	Sun May  9 23:33:36 2010
++++ exec.c	Sun May  9 23:34:16 2010
+@@ -463,7 +463,8 @@ static void code_gen_alloc(unsigned long tb_size)
+             exit(1);
+         }
+     }
+-#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__DragonFly__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || \
++      defined(__DragonFly__) || defined(__OpenBSD__)
+     {
+         int flags;
+         void *addr = NULL;
