@@ -1,0 +1,8 @@
+To use this package, refer to mirmon(1), adapt ${SYSCONFDIR}/mirmon.conf
+as necessary, and create a file listing the mirrors in the specified
+format.
+
+mirmon should be run from cron, you may add an entry like this to
+root's crontab:
+
+@hourly ${LOCALBASE}/bin/mirmon -u _mirmon -get update

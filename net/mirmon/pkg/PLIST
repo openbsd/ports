@@ -1,0 +1,233 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/08 00:03:55 sthen Exp $
+@newgroup _mirmon:651
+@newuser _mirmon:651:_mirmon::mirmon user:/nonexistent:/sbin/nologin
+bin/mirmon
+bin/mirmon-probe
+${P5SITE}/Mirmon.pm
+@man man/man1/mirmon.1
+@man man/man1/mirmon.pm.1
+share/doc/mirmon/
+share/doc/mirmon/RELEASE-NOTES
+share/examples/mirmon/
+share/examples/mirmon/countries.list
+@owner _mirmon
+@sample /var/db/mirmon/
+@sample /var/www/htdocs/mirmon/
+@owner
+@sample /var/db/mirmon/countries.list
+share/examples/mirmon/icons/
+@sample /var/www/htdocs/mirmon/icons/
+share/examples/mirmon/icons/bar.gif
+@sample /var/www/htdocs/mirmon/icons/bar.gif
+share/examples/mirmon/icons/icons/
+share/examples/mirmon/icons/mirmon.gif
+@sample /var/www/htdocs/mirmon/icons/mirmon.gif
+share/examples/mirmon/icons/mirmon_b.gif
+@sample /var/www/htdocs/mirmon/icons/mirmon_b.gif
+share/examples/mirmon/icons/mirmon_f.gif
+@sample /var/www/htdocs/mirmon/icons/mirmon_f.gif
+share/examples/mirmon/icons/mirmon_s.gif
+@sample /var/www/htdocs/mirmon/icons/mirmon_s.gif
+share/examples/mirmon/icons/mirmon_z.gif
+@sample /var/www/htdocs/mirmon/icons/mirmon_z.gif
+share/examples/mirmon/icons/mmb01.gif
+@sample /var/www/htdocs/mirmon/icons/mmb01.gif
+share/examples/mirmon/icons/mmb02.gif
+@sample /var/www/htdocs/mirmon/icons/mmb02.gif
+share/examples/mirmon/icons/mmb03.gif
+@sample /var/www/htdocs/mirmon/icons/mmb03.gif
+share/examples/mirmon/icons/mmb04.gif
+@sample /var/www/htdocs/mirmon/icons/mmb04.gif
+share/examples/mirmon/icons/mmb05.gif
+@sample /var/www/htdocs/mirmon/icons/mmb05.gif
+share/examples/mirmon/icons/mmb06.gif
+@sample /var/www/htdocs/mirmon/icons/mmb06.gif
+share/examples/mirmon/icons/mmb07.gif
+@sample /var/www/htdocs/mirmon/icons/mmb07.gif
+share/examples/mirmon/icons/mmb08.gif
+@sample /var/www/htdocs/mirmon/icons/mmb08.gif
+share/examples/mirmon/icons/mmb09.gif
+@sample /var/www/htdocs/mirmon/icons/mmb09.gif
+share/examples/mirmon/icons/mmb10.gif
+@sample /var/www/htdocs/mirmon/icons/mmb10.gif
+share/examples/mirmon/icons/mmb11.gif
+@sample /var/www/htdocs/mirmon/icons/mmb11.gif
+share/examples/mirmon/icons/mmb12.gif
+@sample /var/www/htdocs/mirmon/icons/mmb12.gif
+share/examples/mirmon/icons/mmb13.gif
+@sample /var/www/htdocs/mirmon/icons/mmb13.gif
+share/examples/mirmon/icons/mmb14.gif
+@sample /var/www/htdocs/mirmon/icons/mmb14.gif
+share/examples/mirmon/icons/mmf01.gif
+@sample /var/www/htdocs/mirmon/icons/mmf01.gif
+share/examples/mirmon/icons/mmf02.gif
+@sample /var/www/htdocs/mirmon/icons/mmf02.gif
+share/examples/mirmon/icons/mmf03.gif
+@sample /var/www/htdocs/mirmon/icons/mmf03.gif
+share/examples/mirmon/icons/mmf04.gif
+@sample /var/www/htdocs/mirmon/icons/mmf04.gif
+share/examples/mirmon/icons/mmf05.gif
+@sample /var/www/htdocs/mirmon/icons/mmf05.gif
+share/examples/mirmon/icons/mmf06.gif
+@sample /var/www/htdocs/mirmon/icons/mmf06.gif
+share/examples/mirmon/icons/mmf07.gif
+@sample /var/www/htdocs/mirmon/icons/mmf07.gif
+share/examples/mirmon/icons/mmf08.gif
+@sample /var/www/htdocs/mirmon/icons/mmf08.gif
+share/examples/mirmon/icons/mmf09.gif
+@sample /var/www/htdocs/mirmon/icons/mmf09.gif
+share/examples/mirmon/icons/mmf10.gif
+@sample /var/www/htdocs/mirmon/icons/mmf10.gif
+share/examples/mirmon/icons/mmf11.gif
+@sample /var/www/htdocs/mirmon/icons/mmf11.gif
+share/examples/mirmon/icons/mmf12.gif
+@sample /var/www/htdocs/mirmon/icons/mmf12.gif
+share/examples/mirmon/icons/mmf13.gif
+@sample /var/www/htdocs/mirmon/icons/mmf13.gif
+share/examples/mirmon/icons/mmf14.gif
+@sample /var/www/htdocs/mirmon/icons/mmf14.gif
+share/examples/mirmon/icons/mms01.gif
+@sample /var/www/htdocs/mirmon/icons/mms01.gif
+share/examples/mirmon/icons/mms02.gif
+@sample /var/www/htdocs/mirmon/icons/mms02.gif
+share/examples/mirmon/icons/mms03.gif
+@sample /var/www/htdocs/mirmon/icons/mms03.gif
+share/examples/mirmon/icons/mms04.gif
+@sample /var/www/htdocs/mirmon/icons/mms04.gif
+share/examples/mirmon/icons/mms05.gif
+@sample /var/www/htdocs/mirmon/icons/mms05.gif
+share/examples/mirmon/icons/mms06.gif
+@sample /var/www/htdocs/mirmon/icons/mms06.gif
+share/examples/mirmon/icons/mms07.gif
+@sample /var/www/htdocs/mirmon/icons/mms07.gif
+share/examples/mirmon/icons/mms08.gif
+@sample /var/www/htdocs/mirmon/icons/mms08.gif
+share/examples/mirmon/icons/mms09.gif
+@sample /var/www/htdocs/mirmon/icons/mms09.gif
+share/examples/mirmon/icons/mms10.gif
+@sample /var/www/htdocs/mirmon/icons/mms10.gif
+share/examples/mirmon/icons/mms11.gif
+@sample /var/www/htdocs/mirmon/icons/mms11.gif
+share/examples/mirmon/icons/mms12.gif
+@sample /var/www/htdocs/mirmon/icons/mms12.gif
+share/examples/mirmon/icons/mms13.gif
+@sample /var/www/htdocs/mirmon/icons/mms13.gif
+share/examples/mirmon/icons/mms14.gif
+@sample /var/www/htdocs/mirmon/icons/mms14.gif
+share/examples/mirmon/icons/mmsb01.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb01.gif
+share/examples/mirmon/icons/mmsb02.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb02.gif
+share/examples/mirmon/icons/mmsb03.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb03.gif
+share/examples/mirmon/icons/mmsb04.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb04.gif
+share/examples/mirmon/icons/mmsb05.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb05.gif
+share/examples/mirmon/icons/mmsb06.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb06.gif
+share/examples/mirmon/icons/mmsb07.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb07.gif
+share/examples/mirmon/icons/mmsb08.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb08.gif
+share/examples/mirmon/icons/mmsb09.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb09.gif
+share/examples/mirmon/icons/mmsb10.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb10.gif
+share/examples/mirmon/icons/mmsb11.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb11.gif
+share/examples/mirmon/icons/mmsb12.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb12.gif
+share/examples/mirmon/icons/mmsb13.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb13.gif
+share/examples/mirmon/icons/mmsb14.gif
+@sample /var/www/htdocs/mirmon/icons/mmsb14.gif
+share/examples/mirmon/icons/mmsbf01.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf01.gif
+share/examples/mirmon/icons/mmsbf02.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf02.gif
+share/examples/mirmon/icons/mmsbf03.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf03.gif
+share/examples/mirmon/icons/mmsbf04.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf04.gif
+share/examples/mirmon/icons/mmsbf05.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf05.gif
+share/examples/mirmon/icons/mmsbf06.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf06.gif
+share/examples/mirmon/icons/mmsbf07.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf07.gif
+share/examples/mirmon/icons/mmsbf08.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf08.gif
+share/examples/mirmon/icons/mmsbf09.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf09.gif
+share/examples/mirmon/icons/mmsbf10.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf10.gif
+share/examples/mirmon/icons/mmsbf11.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf11.gif
+share/examples/mirmon/icons/mmsbf12.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf12.gif
+share/examples/mirmon/icons/mmsbf13.gif
+@sample /var/www/htdocs/mirmon/icons/mmsbf13.gif
+share/examples/mirmon/icons/mmsf01.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf01.gif
+share/examples/mirmon/icons/mmsf02.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf02.gif
+share/examples/mirmon/icons/mmsf03.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf03.gif
+share/examples/mirmon/icons/mmsf04.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf04.gif
+share/examples/mirmon/icons/mmsf05.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf05.gif
+share/examples/mirmon/icons/mmsf06.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf06.gif
+share/examples/mirmon/icons/mmsf07.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf07.gif
+share/examples/mirmon/icons/mmsf08.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf08.gif
+share/examples/mirmon/icons/mmsf09.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf09.gif
+share/examples/mirmon/icons/mmsf10.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf10.gif
+share/examples/mirmon/icons/mmsf11.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf11.gif
+share/examples/mirmon/icons/mmsf12.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf12.gif
+share/examples/mirmon/icons/mmsf13.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf13.gif
+share/examples/mirmon/icons/mmsf14.gif
+@sample /var/www/htdocs/mirmon/icons/mmsf14.gif
+share/examples/mirmon/icons/mmz01.gif
+@sample /var/www/htdocs/mirmon/icons/mmz01.gif
+share/examples/mirmon/icons/mmz02.gif
+@sample /var/www/htdocs/mirmon/icons/mmz02.gif
+share/examples/mirmon/icons/mmz03.gif
+@sample /var/www/htdocs/mirmon/icons/mmz03.gif
+share/examples/mirmon/icons/mmz04.gif
+@sample /var/www/htdocs/mirmon/icons/mmz04.gif
+share/examples/mirmon/icons/mmz05.gif
+@sample /var/www/htdocs/mirmon/icons/mmz05.gif
+share/examples/mirmon/icons/mmz06.gif
+@sample /var/www/htdocs/mirmon/icons/mmz06.gif
+share/examples/mirmon/icons/mmz07.gif
+@sample /var/www/htdocs/mirmon/icons/mmz07.gif
+share/examples/mirmon/icons/mmz08.gif
+@sample /var/www/htdocs/mirmon/icons/mmz08.gif
+share/examples/mirmon/icons/mmz09.gif
+@sample /var/www/htdocs/mirmon/icons/mmz09.gif
+share/examples/mirmon/icons/mmz10.gif
+@sample /var/www/htdocs/mirmon/icons/mmz10.gif
+share/examples/mirmon/icons/mmz11.gif
+@sample /var/www/htdocs/mirmon/icons/mmz11.gif
+share/examples/mirmon/icons/mmz12.gif
+@sample /var/www/htdocs/mirmon/icons/mmz12.gif
+share/examples/mirmon/icons/mmz13.gif
+@sample /var/www/htdocs/mirmon/icons/mmz13.gif
+share/examples/mirmon/icons/mmz14.gif
+@sample /var/www/htdocs/mirmon/icons/mmz14.gif
+share/examples/mirmon/icons/vbrb.gif
+@sample /var/www/htdocs/mirmon/icons/vbrb.gif
+share/examples/mirmon/icons/vbrw.gif
+@sample /var/www/htdocs/mirmon/icons/vbrw.gif
+share/examples/mirmon/mirmon.conf
+@sample /etc/mirmon.conf
+@extraunexec rm -rf /var/db/mirmon

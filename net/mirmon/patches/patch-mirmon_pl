@@ -1,0 +1,16 @@
+$OpenBSD: patch-mirmon_pl,v 1.1.1.1 2010/06/08 00:03:55 sthen Exp $
+--- mirmon.pl.orig	Wed Mar 17 09:35:27 2010
++++ mirmon.pl	Tue Jun  8 01:02:50 2010
+@@ -59,6 +59,12 @@ Mirmon::verbose ( $opt{v} ) ;
+ Mirmon::debug   ( $opt{d} ) ;
+ Mirmon::quiet   ( $opt{q} ) ;
+ 
++use POSIX qw(setuid setgid getpwnam);
++print "Dropping privileges to _mirmon ...\n" if Mirmon::debug;
++my (undef, undef, $uid, $gid) = POSIX::getpwnam("_mirmon");
++POSIX::setgid($uid) or die "setgid() to $gid failed, abort\n";
++POSIX::setuid($uid) or die "setuid() to $uid failed, abort\n";
++
+ my $M = Mirmon -> new ( $opt{c} ) ;
+ $M -> conf -> timeout ( $opt{t} ) if $opt{t} ;
+ if ( $get ) { $M -> get_dates ( $get ) ; $M -> put_state ; }
