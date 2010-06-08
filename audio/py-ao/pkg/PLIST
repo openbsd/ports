@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:16:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/06/08 19:56:36 pea Exp $
 lib/python${MODPY_VERSION}/site-packages/aomodule.so
+lib/python${MODPY_VERSION}/site-packages/pyao-0.82-py${MODPY_VERSION}.egg-info
 share/examples/py-ao/
 share/examples/py-ao/test.py
