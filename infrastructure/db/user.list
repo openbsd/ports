@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.136 2010/06/03 23:28:38 sthen Exp $
+$OpenBSD: user.list,v 1.137 2010/06/08 00:04:34 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -159,3 +159,4 @@ id  user		group		port options
 648 _sympa		_sympa		mail/sympa
 649 _nfcapd		_nfcapd		net/nfdump
 650 _aircontrol		_aircontrol	net/aircontrol
+651 _mirmon		_mirmon		net/mirmon
