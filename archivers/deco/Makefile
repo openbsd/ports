@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/20 10:25:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/08 08:14:46 ajacoutot Exp $
 
 COMMENT=	extract various archive file formats
 
 V=		1.6.1.1
 ARCHIVE_V=	1.5.1
 DISTNAME=	deco-${V}
-PKGNAME=	deco-archive-${V}
+PKGNAME=	deco-archive-${V}p0
 
 CATEGORIES=	archivers
 
@@ -41,7 +41,7 @@ RUN_DEPENDS=	::archivers/arc \
 		::archivers/unzip \
 		::archivers/zoo \
 		::audio/flac \
-		::misc/rpm
+		:rpm2cpio-*|rpm-*:converters/rpm2cpio \
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -D_BSD_SOURCE"
 
