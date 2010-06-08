@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.141 2010/04/26 18:03:37 ajacoutot Exp $
+# $OpenBSD: network.conf.template,v 1.142 2010/06/08 14:29:39 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -10,7 +10,7 @@
 
 # List of OpenBSD sites
 MASTER_SITE_OPENBSD ?= \
-	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/ \
+	http://ftp.openbsd.org/pub/OpenBSD/distfiles/ \
 	ftp://ftp.usa.openbsd.org/pub/OpenBSD/distfiles/
 
 # Default OpenBSD backup site
