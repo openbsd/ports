@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/08 00:03:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/08 00:26:45 sthen Exp $
 
 COMMENT=	monitors the status of mirrors
 
 DISTNAME=	mirmon-2.3
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	net
 HOMEPAGE=	http://people.cs.uu.nl/henkp/mirmon/
@@ -29,7 +30,8 @@ do-build:
 	    ${WRKSRC}/[Mm]irmon* ${WRKSRC}/probe
 	perl -pi -e 's,/etc/mirmon.conf,${SYSCONFDIR}/mirmon.conf,' \
 	    ${WRKSRC}/[Mm]irmon*
-	${SUBST_CMD} -c ${FILESDIR}/mirmon.conf ${WRKBUILD}/mirmon.conf
+	${SUBST_CMD} -c ${FILESDIR}/mirmon.conf ${WRKSRC}/mirmon.conf
+	touch ${WRKSRC}/mirmon.db
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mirmon/ \
@@ -41,7 +43,7 @@ do-install:
 	    ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/RELEASE-NOTES ${PREFIX}/share/doc/mirmon/
 	${INSTALL_DATA} ${WRKSRC}/countries.list ${WRKSRC}/mirmon.conf \
-	    ${PREFIX}/share/examples/mirmon/
+	    ${WRKSRC}/mirmon.db ${PREFIX}/share/examples/mirmon/
 	${INSTALL_DATA} ${WRKSRC}/icons/* ${ICONDIR}/
 
 .include <bsd.port.mk>

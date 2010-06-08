@@ -5,4 +5,4 @@ format.
 mirmon should be run from cron, you may add an entry like this to
 root's crontab:
 
-@hourly ${LOCALBASE}/bin/mirmon -u _mirmon -get update
+@hourly ${LOCALBASE}/bin/mirmon -get update

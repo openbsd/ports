@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/08 00:03:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/06/08 00:26:45 sthen Exp $
 @newgroup _mirmon:651
 @newuser _mirmon:651:_mirmon::mirmon user:/nonexistent:/sbin/nologin
 bin/mirmon
@@ -15,6 +15,10 @@ share/examples/mirmon/countries.list
 @sample /var/www/htdocs/mirmon/
 @owner
 @sample /var/db/mirmon/countries.list
+share/examples/mirmon/mirmon.db
+@owner _mirmon
+@sample /var/db/mirmon/mirmon.db
+@owner
 share/examples/mirmon/icons/
 @sample /var/www/htdocs/mirmon/icons/
 share/examples/mirmon/icons/bar.gif
