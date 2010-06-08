@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.637 2010/06/04 09:04:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.638 2010/06/08 00:04:11 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -185,6 +185,7 @@
      SUBDIR += mcabber
      SUBDIR += meanwhile
      SUBDIR += micq
+     SUBDIR += mirmon
      SUBDIR += mirror
      SUBDIR += mldonkey
      SUBDIR += mon
