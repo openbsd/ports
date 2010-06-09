@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_core_modules_ConstellationMgr_cpp,v 1.1 2010/06/09 08:04:28 ajacoutot Exp $
+
+From pkgsrc:
+-prefix uses of "exception" with "std::" to avoid conflict with
+a similar definition in new "boost".
+
+--- src/core/modules/ConstellationMgr.cpp.orig	Tue Jun  8 20:03:10 2010
++++ src/core/modules/ConstellationMgr.cpp	Tue Jun  8 20:03:49 2010
+@@ -390,7 +390,7 @@ void ConstellationMgr::loadLinesAndArt(const QString &
+ 				{
+ 					texturePath = StelFileMgr::findFile(QString("textures/")+texfile);
+ 				}
+-				catch(exception& e2)
++				catch(std::exception& e2)
+ 				{
+ 					qWarning() << "ERROR: could not find texture, " << texfile << ": " << e2.what();
+ 				}

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/30 17:07:06 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/09 08:04:28 ajacoutot Exp $
 
 COMMENT=	free open source planetarium
 
-DISTNAME=	stellarium-0.10.2
-PKGNAME=	${DISTNAME}p2
+DISTNAME=	stellarium-0.10.5
 
 CATEGORIES=	astro x11
 
@@ -19,10 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=stellarium/}
 
-WANTLIB += GL GLU ICE SM X11 Xext Xi Xinerama Xrender c
-WANTLIB += fontconfig freetype glib-2.0 gthread-2.0 jpeg m png
-WANTLIB += pthread stdc++ z
-WANTLIB += pthread-stubs xcb
+WANTLIB += GL GLU ICE SM X11 Xext c m pthread stdc++ z
 
 USE_X11=	Yes
 
@@ -30,8 +26,11 @@ MODULES=	devel/gettext \
 		devel/cmake \
 		x11/qt4
 
-BUILD_DEPENDS=	::devel/boost
-LIB_DEPENDS=	QtGui,QtNetwork,QtOpenGL,QtScript::x11/qt4
+LIB_DEPENDS=	QtSql,QtGui,QtNetwork,QtOpenGL,QtScript::x11/qt4
+
+# used to download more stars definitions
+RUN_DEPENDS=	::net/curl \
+		:desktop-file-utils-*:devel/desktop-file-utils
 
 CONFIGURE_STYLE=cmake
 CONFIGURE_ENV=	HOME=${WRKDIR}
@@ -41,6 +40,13 @@ NO_REGRESS=	Yes
 MODCMAKE_WANTCOLOR=No
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/cmake/FindFreeType2.cmake
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt \
+		${WRKSRC}/cmake/FindIconv.cmake \
+		${WRKSRC}/data/stellarium.desktop
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/data/stellarium.desktop \
+		${PREFIX}/share/applications
 
 .include <bsd.port.mk>

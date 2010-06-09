@@ -1,8 +1,8 @@
-$OpenBSD: patch-data_default_config_ini,v 1.5 2009/03/13 18:39:09 ajacoutot Exp $
---- data/default_config.ini.orig	Mon Mar  9 12:28:33 2009
-+++ data/default_config.ini	Fri Mar 13 18:20:48 2009
-@@ -2,9 +2,9 @@
- version                        = 0.10.2
+$OpenBSD: patch-data_default_config_ini,v 1.6 2010/06/09 08:04:28 ajacoutot Exp $
+--- data/default_config.ini.orig	Wed Jun  2 16:23:45 2010
++++ data/default_config.ini	Tue Jun  8 18:35:57 2010
+@@ -3,9 +3,9 @@ version                        = 0.10.5
+ invert_screenshots_colors      = false
  
  [video]
 -fullscreen                     = true

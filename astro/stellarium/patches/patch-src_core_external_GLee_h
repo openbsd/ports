@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_core_external_GLee_h,v 1.1 2010/06/09 08:04:28 ajacoutot Exp $
+--- src/core/external/GLee.h.orig	Wed Jun  2 16:23:47 2010
++++ src/core/external/GLee.h	Tue Jun  8 20:07:06 2010
+@@ -814,10 +814,9 @@ GLEE_EXTERN GLboolean _GLEE_SGIX_texture_range;
+ 
+ 	/* GLX */
+ 
+-	typedef void (*__GLXextFuncPtr)(void);
+-
+ 	#ifndef GLX_ARB_get_proc_address 
+ 	#define GLX_ARB_get_proc_address 1
++	    typedef void (*__GLXextFuncPtr)(void);
+ 	    extern __GLXextFuncPtr glXGetProcAddressARB (const GLubyte *);
+ 	    extern void ( * glXGetProcAddressARB (const GLubyte *procName))(void);
+ 	    typedef __GLXextFuncPtr ( * PFNGLXGETPROCADDRESSARBPROC) (const GLubyte *procName);

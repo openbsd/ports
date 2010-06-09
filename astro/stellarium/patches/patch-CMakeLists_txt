@@ -1,14 +1,44 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2009/03/13 18:39:09 ajacoutot Exp $
---- CMakeLists.txt.orig	Fri Mar 13 18:32:10 2009
-+++ CMakeLists.txt	Fri Mar 13 18:32:30 2009
-@@ -22,8 +22,8 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
- ENDIF()
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2010/06/09 08:04:28 ajacoutot Exp $
+--- CMakeLists.txt.orig	Wed Jun  2 16:23:55 2010
++++ CMakeLists.txt	Tue Jun  8 19:49:55 2010
+@@ -32,8 +32,8 @@ ENDIF()
+ 
  
  IF(UNIX AND NOT WIN32)
 - SET(CMAKE_C_FLAGS "-Wall -Wextra -Wno-unused-parameter")       # additional C compile flags
-- SET(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-unused-parameter")     # additional CPP compile flags
+- SET(CMAKE_CXX_FLAGS "-Wall -Wextra")     # additional CPP compile flags
 + SET(CMAKE_C_FLAGS "-Wall -Wno-unused-parameter")       # additional C compile flags
-+ SET(CMAKE_CXX_FLAGS "-Wall -Wno-unused-parameter")     # additional CPP compile flags
++ SET(CMAKE_CXX_FLAGS "-Wall")     # additional CPP compile flags
  ELSE()
   SET(CMAKE_C_FLAGS "-Wall -fexceptions -fident -mthreads")
   SET(CMAKE_CXX_FLAGS "-Wall -Wsign-promo -fexceptions -fident -mthreads")
+@@ -151,12 +151,12 @@ IF (BUILD_STATIC_PLUGINS)
+ 	## Library for loading FITS image files
+ 	FIND_PATH(CFITSIO_INCLUDE_DIR fitsio.h
+ 	  /usr/include
+-	  /usr/local/include
++	  ${LOCALBASE}/include
+ 	  DOC "Should point to the directory where the include files for libcfitsio are installed")
+ 	FIND_LIBRARY(CFITSIO_LIBRARIES cfitsio
+ 	  PATHS
+ 	  /usr/lib/
+-	  /usr/local/lib
++	  ${LOCALBASE}/lib
+ 	  /opt/local/lib
+ 	  DOC "cfitsio link options")
+ 	SET(QT_USE_QTXML TRUE) # For VirGO we also need QtXml module
+@@ -195,12 +195,12 @@ IF(ENABLE_NLS)
+ 	PATHS
+ 	/usr/include
+ 	/sw/include
+-	/usr/local/include)
++	${LOCALBASE}/include)
+   FIND_LIBRARY(INTL_LIBRARIES intl c
+ 	PATHS
+ 	/usr/lib/
+ 	/sw/lib
+-	/usr/local/lib) # NO_DEFAULT_PATH
++	${LOCALBASE}/lib) # NO_DEFAULT_PATH
+   FIND_PACKAGE(Gettext REQUIRED)
+   FIND_PACKAGE(XGettext REQUIRED)
+ ENDIF()

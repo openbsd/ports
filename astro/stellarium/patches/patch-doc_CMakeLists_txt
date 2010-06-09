@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.1 2009/02/09 18:25:25 ajacoutot Exp $
---- doc/CMakeLists.txt.orig	Mon Feb  9 10:33:16 2009
-+++ doc/CMakeLists.txt	Mon Feb  9 10:33:22 2009
-@@ -20,7 +20,7 @@ ADD_CUSTOM_COMMAND(
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.2 2010/06/09 08:04:28 ajacoutot Exp $
+--- doc/CMakeLists.txt.orig	Wed Jun  2 16:23:53 2010
++++ doc/CMakeLists.txt	Tue Jun  8 18:35:57 2010
+@@ -24,7 +24,7 @@ ADD_CUSTOM_COMMAND(
    DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/stellarium.1
  )
  

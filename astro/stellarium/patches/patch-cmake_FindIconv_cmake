@@ -1,0 +1,19 @@
+$OpenBSD: patch-cmake_FindIconv_cmake,v 1.1 2010/06/09 08:04:28 ajacoutot Exp $
+--- cmake/FindIconv.cmake.orig	Tue Jun  8 19:48:53 2010
++++ cmake/FindIconv.cmake	Tue Jun  8 19:49:16 2010
+@@ -15,13 +15,13 @@ ENDIF (ICONV_INCLUDE_DIR AND ICONV_LIBRARIES)
+ 
+ FIND_PATH(ICONV_INCLUDE_DIR iconv.h 
+   /usr/include 
+-  /usr/local/include 
++  ${LOCALBASE}/include 
+ ) 
+  
+ FIND_LIBRARY(ICONV_LIBRARIES NAMES iconv c
+   PATHS 
+   /usr/lib/
+-  /usr/local/lib
++  ${LOCALBASE}/lib
+   ) 
+  
+ IF(ICONV_INCLUDE_DIR AND ICONV_LIBRARIES) 
