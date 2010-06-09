@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.6 2010/06/05 07:59:05 espie Exp $
+# $OpenBSD: pkg_subst,v 1.7 2010/06/09 11:30:51 espie Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -77,11 +77,11 @@ while (my $src = shift) {
 		$src .= $bak;
 		rename($dest, $src) or die "Can't rename $dest: $!";
 	}
-	$subst->copy($src, $dest);
+	my $fh = $subst->copy($src, $dest);
 	# copy rights, owner, group as well
 	my ($uid, $gid, $mode) = (stat $src)[4, 5, 2];
-	my $r1 = chown $fuid // $uid, $fgid // $gid, $dest;
-	my $r2 = chmod $mode & 07777, $dest;
+	my $r1 = chown $fuid // $uid, $fgid // $gid, $fh;
+	my $r2 = chmod $mode & 07777, $fh;
 	if (defined $fuid || defined $fgid || $< == 0) {
 		if ($r1 == 0) {
 			die "chown on $dest failed";

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb3,v 1.17 2010/06/07 15:27:52 espie Exp $
+# $OpenBSD: dpb3,v 1.18 2010/06/09 11:30:51 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -36,6 +36,7 @@ use DPB::PortBuilder;
 use DPB::Reporter;
 use OpenBSD::Getopt;
 use OpenBSD::Error;
+use OpenBSD::State;
 use DPB::Heuristics;
 use DPB::Locks;
 use DPB::Logger;
@@ -91,7 +92,8 @@ sub parse_build_file
 
 my @build_files = ();
 my $heuristics = DPB::Heuristics->new;
-set_usage("dpb3 [-acersuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
+my $ui = OpenBSD::State->new('dpb3');
+$ui->usage_is("[-acersuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
 	"[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
 try {
 getopts('acersuUh:xA:f:j:m:P:b:L:S:t:T:', {
@@ -114,7 +116,7 @@ getopts('acersuUh:xA:f:j:m:P:b:L:S:t:T:', {
 	}
 	);
 } catchall {
-	Usage($_);
+	$ui->usage($_);
 };
 
 if ($opt_r) {
@@ -135,7 +137,7 @@ for my $arg (@ARGV) {
 		($path, $weight) = ($1, $2);
 	}
 	if ($arg =~ m/^\./) {
-		Usage("Invalid pkgpath: $arg");
+		$ui->usage("Invalid pkgpath: #1",  $arg);
 	}
 	my $pkgpath = DPB::PkgPath->new($path);
 	$heuristics->set_weight($pkgpath, $weight);
@@ -153,11 +155,11 @@ my $logger = DPB::Logger->new($logdir, $opt_c);
 $heuristics->set_logger($logger);
 
 if (defined $opt_j && $localarch ne $arch) {
-	Usage("Can't use -j if -A arch is not local architecture");
+	$ui->usage("Can't use -j if -A arch is not local architecture");
 }
 
 if (defined $opt_j && $opt_j !~ m/^\d+$/) {
-	Usage("-j takes a numerical argument");
+	$ui->usage("-j takes a numerical argument");
 }
 
 my $fullrepo = "$repo/$arch/all";
