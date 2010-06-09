@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.7 2010/06/09 11:30:51 espie Exp $
+# $OpenBSD: pkg_subst,v 1.8 2010/06/09 11:33:12 espie Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -22,6 +22,7 @@ use strict;
 use warnings;
 use OpenBSD::Getopt;
 use OpenBSD::Subst;
+use OpenBSD::State;
 use OpenBSD::Error;
 use OpenBSD::IdCache;
 
@@ -31,8 +32,8 @@ our $opt_c;
 my ($fuid, $fgid);
 my ($uidc, $gidc);
 
-set_usage(
-'pkg_subst [-c] [-Dvar=value ...] [-g group] [-o owner] [file ...]');
+my $ui = OpenBSD::State->new('pkg_subst');
+$ui->usage_is( '[-c] [-Dvar=value ...] [-g group] [-o owner] [file ...]');
 try { 
 	getopts('D:g:o:ch',
 	    {'D' =>
@@ -53,7 +54,7 @@ try {
 			    $fgid = $gidc->lookup($group, -1);
 			    die "$group is not a valid group" if $fgid == -1;
 		    },
-	     'h' => sub {	Usage(); },
+	     'h' => sub {	$ui->usage; },
 	    });
 } catchall {
 	Usage($_);
