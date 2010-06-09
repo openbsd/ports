@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/07 08:40:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/09 19:50:38 ajacoutot Exp $
 
 COMMENT=	web search application
 
 V=		1.2.0
 DISTNAME=	xapian-omega-${V}
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	www textproc
 
@@ -21,7 +22,8 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 
 USE_LIBTOOL=	Yes
 
-LIB_DEPENDS=	xapian.>=1:xapian-core->=1.2.0:databases/xapian-core
+LIB_DEPENDS=	xapian.>=1:xapian-core->=1.2.0:databases/xapian-core \
+		pcre.>=2::devel/pcre
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
