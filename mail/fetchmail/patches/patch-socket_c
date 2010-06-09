@@ -1,0 +1,17 @@
+$OpenBSD: patch-socket_c,v 1.2 2010/06/09 08:34:59 stsp Exp $
+
+http://gitorious.org/fetchmail/fetchmail/commit/8476bffcb54f81d028bcd86e2a9090161738a980
+
+--- socket.c.orig	Fri Apr 30 01:29:05 2010
++++ socket.c	Tue Jun  8 00:45:09 2010
+@@ -1009,8 +1009,8 @@ int SSLOpen(int sock, char *mycert, char *mykey, const
+ 		}
+ 	}
+ 
+-	if (!certck && (SSL_get_verify_result(_ssl_context[sock]) != X509_V_OK
+-|| !_verify_ok)) {
++	if (!certck && !fingerprint &&
++		(SSL_get_verify_result(_ssl_context[sock]) != X509_V_OK || !_verify_ok)) {
+ 		report(stderr, GT_("Warning: the connection is insecure, continuing anyways. (Better use --sslcertck!)\n"));
+ 	}
+ 

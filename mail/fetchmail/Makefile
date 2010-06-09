@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.121 2010/05/19 15:27:18 giovanni Exp $
+# $OpenBSD: Makefile,v 1.122 2010/06/09 08:34:59 stsp Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
 DISTNAME=	fetchmail-6.3.17
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=fetchmail/}
 
