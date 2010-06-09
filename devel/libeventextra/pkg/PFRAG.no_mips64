@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no_mips64,v 1.1 2010/06/09 08:52:14 jasper Exp $
+lib/libeventextra_pic.a

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/21 22:55:34 nicm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/06/09 08:52:14 jasper Exp $
 %%SHARED%%
 include/evdns.h
 include/evhttp.h
 include/evrpc.h
 lib/libeventextra.a
-lib/libeventextra_pic.a
+%%no_mips64%%
