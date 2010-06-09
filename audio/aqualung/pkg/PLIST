@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/22 15:43:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/06/09 08:32:35 sthen Exp $
 @bin bin/aqualung
 @man man/man1/aqualung.1
 @owner root
@@ -164,8 +164,10 @@ share/doc/aqualung/systray.png
 share/doc/aqualung/timer.eps
 share/doc/aqualung/timer.png
 share/locale/de/LC_MESSAGES/aqualung.mo
+share/locale/fr/LC_MESSAGES/aqualung.mo
 share/locale/hu/LC_MESSAGES/aqualung.mo
 share/locale/it/LC_MESSAGES/aqualung.mo
+share/locale/ja/LC_MESSAGES/aqualung.mo
 share/locale/ru/LC_MESSAGES/aqualung.mo
 share/locale/sv/LC_MESSAGES/aqualung.mo
 share/locale/uk/LC_MESSAGES/aqualung.mo

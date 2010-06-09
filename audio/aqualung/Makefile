@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2009/12/22 15:43:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/06/09 08:32:35 sthen Exp $
 
 COMMENT=	advanced music player
 
-DISTNAME=	aqualung-0.9beta10
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	aqualung-0.9beta11
+PKGNAME=	${DISTNAME}
 CATEGORIES=	audio
 
 HOMEPAGE=	http://aqualung.factorial.hu/
@@ -39,7 +39,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gobject-2.0 gthread-2.0 m mp3lame ogg pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread \
 		pthread-stubs samplerate sndfile sndio stdc++ vorbis \
-		vorbisenc vorbisfile xcb z
+		vorbisenc vorbisfile xcb xcb-render xcb-render-util z
 
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
