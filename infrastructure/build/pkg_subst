@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.9 2010/06/09 11:34:13 espie Exp $
+# $OpenBSD: pkg_subst,v 1.10 2010/06/09 12:01:08 espie Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -23,7 +23,6 @@ use warnings;
 use OpenBSD::Getopt;
 use OpenBSD::Subst;
 use OpenBSD::State;
-use OpenBSD::Error;
 use OpenBSD::IdCache;
 
 my $subst = OpenBSD::Subst->new;
@@ -34,7 +33,8 @@ my ($uidc, $gidc);
 
 my $ui = OpenBSD::State->new('pkg_subst');
 $ui->usage_is( '[-c] [-Dvar=value ...] [-g group] [-o owner] [file ...]');
-try { 
+$ui->do_options(
+    sub {
 	getopts('D:g:o:ch',
 	    {'D' =>
 		    sub { 
@@ -56,9 +56,7 @@ try {
 		    },
 	     'h' => sub {	$ui->usage; },
 	    });
-} catchall {
-	$ui->usage("#1", $_);
-};
+    });
 
 my $bak = $subst->value('BAK');
 if (!defined $bak) {
