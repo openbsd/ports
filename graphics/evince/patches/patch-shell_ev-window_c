@@ -1,0 +1,12 @@
+$OpenBSD: patch-shell_ev-window_c,v 1.5 2010/06/09 08:48:13 kevlo Exp $
+--- shell/ev-window.c.orig	Wed Jun  9 11:30:27 2010
++++ shell/ev-window.c	Wed Jun  9 11:31:30 2010
+@@ -6107,7 +6107,7 @@ ev_window_create_last_settings_metadata (EvWindow *win
+ 	GFile *file;
+ 	gchar *path;
+ 
+-	path = g_build_filename (ev_application_get_dot_dir (EV_APP, FALSE), "last_settings", NULL);
++	path = g_build_filename (ev_application_get_dot_dir (EV_APP, TRUE), "last_settings", NULL);
+ 	file = g_file_new_for_path (path);
+ 	g_free (path);
+ 
