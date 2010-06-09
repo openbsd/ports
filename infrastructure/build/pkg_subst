@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_subst,v 1.8 2010/06/09 11:33:12 espie Exp $
+# $OpenBSD: pkg_subst,v 1.9 2010/06/09 11:34:13 espie Exp $
 #
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
@@ -57,7 +57,7 @@ try {
 	     'h' => sub {	$ui->usage; },
 	    });
 } catchall {
-	Usage($_);
+	$ui->usage("#1", $_);
 };
 
 my $bak = $subst->value('BAK');
