@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2010/06/06 09:54:20 kili Exp $
+# $OpenBSD: Makefile,v 1.36 2010/06/09 10:06:29 sthen Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -19,7 +19,7 @@ MODULES =		lang/ghc lang/python converters/libiconv
 MULTI_PACKAGES =	-main -doc
 
 # BSD w/o advertising clause.
-# Distfile is bundled with ofther stuff like libffi, libgmp, mingw
+# Distfile is bundled with other stuff like libffi, libgmp, mingw
 # binaries, with BSD, GPLv2 and Perl artistic license.
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
@@ -30,7 +30,8 @@ PKG_ARCH-doc =		*
 BUILD_DEPENDS =		::textproc/dblatex \
 			::textproc/docbook \
 			::textproc/docbook-xsl \
-			::textproc/libxslt
+			::textproc/libxslt \
+			::devel/gmp
 LIB_DEPENDS-doc =
 RUN_DEPENDS-doc =
 RUN_DEPENDS-main =
