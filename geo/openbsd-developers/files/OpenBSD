@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.60 2010/06/03 03:45:01 jcs Exp $
+# $OpenBSD: OpenBSD,v 1.61 2010/06/10 05:57:19 sebastia Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -90,6 +90,7 @@
 52.35447	4.630657	"otto"		# Otto Moerbeek
 52.3667		9.71667		"reyk"		# Reyk Floeter
 52.3717		9.73416		"phessler"	# Peter Hessler
+52.4144		12.5524		"sebastia"	# Sebastian Reitenbach
 52.5		21		"alek"		# Aleksander Piotrowski
 53.08566	8.13058		"fkr"		# Felix Kronlage
 53.13		9		"jufi"		# Jan-Uwe Finck
