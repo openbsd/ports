@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.18 2009/06/04 23:37:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2010/06/10 21:24:23 jasper Exp $
 
 COMMENT=	minimal window manager
 
-DISTNAME=	wmx-6
-PKGNAME=	${DISTNAME}p0
+DISTNAME=	wmx-7
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.all-day-breakfast.com/wmx/
 MASTER_SITES=	${HOMEPAGE}
 
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
-
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
-WANTLIB=		X11 Xext Xpm c m stdc++
+
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender c expat fontconfig
+WANTLIB += freetype m pthread-stubs stdc++ xcb z
 
 USE_X11=	Yes
 CONFIGURE_STYLE=	gnu
