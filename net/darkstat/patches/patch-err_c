@@ -1,0 +1,12 @@
+$OpenBSD: patch-err_c,v 1.1 2010/06/10 03:51:39 lum Exp $
+--- err.c.orig	Fri Jun  4 04:46:38 2010
++++ err.c	Fri Jun  4 04:41:44 2010
+@@ -47,7 +47,7 @@ to_syslog(const char *type, const int want_err,
+       strlcat(buf, ": ", sizeof(buf));
+       strlcat(buf, strerror(saved_errno), sizeof(buf));
+    }
+-   syslog(LOG_DEBUG, "%s", buf);
++   syslog(LOG_INFO, "%s", buf);
+ }
+ 
+ void
