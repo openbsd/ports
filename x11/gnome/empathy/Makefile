@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/06/09 15:31:33 ajacoutot Exp $
-
-# XXX
-# (empathy:10245): Gtk-WARNING **: could not load image: Icon 'im-xmpp' not present in theme
-# make a symlink from im-jabber to im-xmpp if needed?
+# $OpenBSD: Makefile,v 1.38 2010/06/10 13:47:53 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
