@@ -10,3 +10,8 @@ for your database environment and then run
 Once the database has been initialized you will need to configure httpd.  
 Instructions for configuring httpd can be found in 
 ${PREFIX}/share/doc/rt3/README
+
+
+If you are upgrading your installation, don't forget to run:
+# rt-setup-database --dba <yourdbauser> --prompt-for-dba-password \
+	--action upgrade
