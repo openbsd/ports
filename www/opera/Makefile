@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/03/20 16:51:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2010/06/10 06:12:57 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -8,7 +8,7 @@ COMMENT=	fast and customizable WWW browser
 V=		10.10
 OPERA_BUILD=	4742
 DISTNAME=	opera-${V}.gcc4-shared-qt3.i386
-PKGNAME=	opera-${V}p1
+PKGNAME=	opera-${V}p2
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.opera.com/

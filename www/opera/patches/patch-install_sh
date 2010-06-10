@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_sh,v 1.23 2009/11/03 05:50:21 sturm Exp $
---- install.sh.orig	Mon Oct 19 17:55:07 2009
-+++ install.sh	Mon Nov  2 14:11:30 2009
+$OpenBSD: patch-install_sh,v 1.24 2010/06/10 06:12:57 ajacoutot Exp $
+--- install.sh.orig	Fri Nov 20 20:11:15 2009
++++ install.sh	Wed Jun  9 19:33:20 2010
 @@ -870,7 +870,7 @@ generate_wrapper()
      wrapper_contain="#!/bin/sh
  
@@ -30,3 +30,16 @@ $OpenBSD: patch-install_sh,v 1.23 2009/11/03 05:50:21 sturm Exp $
  # To disable the first workaround, comment the next line.
  JAVA_WORKAROUND=\`\${OPERA_BINARYDIR}/works 2>/dev/null\`
  
+@@ -1125,6 +1119,12 @@ test -d /usr/sfw/lib/ && LD_LIBRARY_PATH=\"\${LD_LIBRA
+ esac
+ 
+ wrapper_contain="${wrapper_contain}
++
++# lock file is not needed as Opera will open a new tab if already
++# running ; this helps recovering from a crash/hang with compat_linux(8)
++if [ -f \${HOME}/.opera/lock ]; then
++	rm -f \${HOME}/.opera/lock
++fi
+ 
+ # Running Opera
+ exec \"\${OPERA_BINARYDIR}opera\" \"\$@\"
