@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/06/07 20:36:33 edd Exp $
+# $OpenBSD: Makefile,v 1.18 2010/06/10 08:24:49 sthen Exp $
 
 VMEM_WARNING =		Yes
 
@@ -6,7 +6,7 @@ COMMENT =		panorama image stitcher
 
 DISTNAME =		hugin-2010.0.0
 
-PKGNAME =		${DISTNAME:S/_//:L}p0
+PKGNAME =		${DISTNAME:S/_//:L}p1
 WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
 SHARED_LIBS =		celeste 0.0 \
@@ -22,11 +22,9 @@ HOMEPAGE =		http://hugin.sourceforge.net/
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-# see post at http://permalink.gmane.org/gmane.comp.misc.ptx/15757 
-# (http://www.faqs.org/patents/app/20080267494 in the deghosting code)
-PERMIT_PACKAGE_CDROM =	patents
+PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =patents
+PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		GL GLU ICE SM X11 Xext Xi Xmu c m pthread stdc++ z
@@ -52,6 +50,7 @@ LIB_DEPENDS =		boost_thread-mt::devel/boost \
 
 USE_X11=		Yes
 MODULES +=		devel/cmake
+SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ENV =		MANDIR=man
 NO_REGRESS =		Yes
