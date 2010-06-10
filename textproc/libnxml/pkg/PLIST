@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/10 20:15:36 landry Exp $
+%%SHARED%%
+include/nxml.h
+lib/libnxml.a
+lib/libnxml.la
+lib/pkgconfig/
+lib/pkgconfig/nxml.pc
