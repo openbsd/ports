@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.7 2010/02/14 20:01:00 naddy Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.8 2010/06/10 20:13:33 steven Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @pkgpath net/pidgin,-libpurple,gtkspell
@@ -37,8 +37,13 @@ include/libpurple/idle.h
 include/libpurple/imgstore.h
 include/libpurple/log.h
 include/libpurple/marshallers.h
+include/libpurple/media/
 include/libpurple/media-gst.h
 include/libpurple/media.h
+include/libpurple/media/backend-iface.h
+include/libpurple/media/candidate.h
+include/libpurple/media/codec.h
+include/libpurple/media/enum-types.h
 include/libpurple/mediamanager.h
 include/libpurple/mime.h
 include/libpurple/nat-pmp.h

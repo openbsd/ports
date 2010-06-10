@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/04/03 00:21:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2010/06/10 20:13:33 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,20 +6,20 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.6.6
+VERSION=	2.7.1
 DISTNAME=	pidgin-${VERSION}
-PKGNAME-main=	pidgin-${VERSION}p0
-PKGNAME-finch=	finch-${VERSION}p0
-FULLPKGNAME-libpurple= libpurple-${VERSION}p0
+PKGNAME-main=	pidgin-${VERSION}
+PKGNAME-finch=	finch-${VERSION}
+FULLPKGNAME-libpurple= libpurple-${VERSION}
 FULLPKGPATH-libpurple= ${PKGPATH},-libpurple
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \
-		purple		5.0 \
-		purple-client	5.0 \
-		gnt		5.0 \
+		purple		5.1 \
+		purple-client	5.1 \
+		gnt		5.1 \
 		ymsg		0.0
 
 HOMEPAGE=	http://pidgin.im/
@@ -40,7 +40,7 @@ WANTLIB-main=	X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
 		execinfo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glitz gtk-x11-2.0 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 png pthread-stubs stdc++ xcb-atom \
-		xcb-aux xcb-event xcb ${WANTLIB}
+		xcb-aux xcb-event xcb-render xcb-render-util xcb ${WANTLIB}
 
 WANTLIB-libpurple= crypto ssl ${WANTLIB}
 
