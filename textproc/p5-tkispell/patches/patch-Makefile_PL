@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2010/06/10 13:17:29 jasper Exp $
+
+We don't really need ispell to be installed at build time,
+so trick the test into believing it's there.
+
+--- Makefile.PL.orig	Thu Jun 10 15:14:53 2010
++++ Makefile.PL	Thu Jun 10 15:15:46 2010
+@@ -1,6 +1,6 @@
+ use ExtUtils::MakeMaker;
+ 
+-my $ispell_bin = `which ispell`;
++my $ispell_bin = "oohlala, rata rata ra!";
+ # The first match is for Solaris which.  The second is for 
+ # Linux which.
+ if (($ispell_bin =~ /no ispell/) || (length($ispell_bin) == 0)) {
