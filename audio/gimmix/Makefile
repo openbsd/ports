@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/05/26 09:29:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/10 20:56:35 landry Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
-DISTNAME=		gimmix-0.4.1
-PKGNAME=		${DISTNAME}p5
+DISTNAME=		gimmix-0.5.7.1
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://gimmix.berlios.de/
@@ -20,12 +19,12 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png stdc++
 WANTLIB += xml2 z gthread-2.0 pthread xcb-render xcb-render-util
-WANTLIB += pthread-stubs xcb
+WANTLIB += pthread-stubs xcb crypto ssl curl idn
 
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=gimmix/}
 EXTRACT_SUFX=		.tar.bz2
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext textproc/intltool
 
 USE_X11=		Yes
 USE_LIBTOOL=		Yes
@@ -34,9 +33,14 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS=		mpd:libmpd->=0.14:audio/libmpd \
+LIB_DEPENDS=		mpd:libmpd->=0.17:audio/libmpd \
+			nxml::textproc/libnxml \
 			tag,tag_c::audio/taglib \
 			glade-2.0::devel/libglade2
 RUN_DEPENDS=		::devel/desktop-file-utils
+
+post-extract:
+	rm ${WRKSRC}/po/Makefile.in.in
+	ln -s ${LOCALBASE}/share/intltool/Makefile.in.in ${WRKSRC}/po
 
 .include <bsd.port.mk>

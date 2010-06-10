@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/05/26 09:29:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/06/10 20:56:35 landry Exp $
 @bin bin/gimmix
+@man man/man1/gimmix.1
 share/applications/gimmix.desktop
 share/gimmix/
 share/gimmix/gimmix.glade
 share/gimmix/gimmix_firstrun.png
-share/locale/zh_TW/LC_MESSAGES/gimmix.mo
 share/pixmaps/
+share/pixmaps/gimmix-album.png
 share/pixmaps/gimmix.png
 share/pixmaps/gimmix_logo_small.png
 share/pixmaps/gimmix_playlist.png
