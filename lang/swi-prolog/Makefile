@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2010/01/27 21:43:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2010/06/10 18:18:31 landry Exp $
+
+BROKEN-hppa =		build stalls during bootstrap in packages/chr 
 
 CATEGORIES =		lang
 V =			5.6.59
