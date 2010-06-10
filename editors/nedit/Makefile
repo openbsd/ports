@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2010/05/21 22:39:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2010/06/10 14:16:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
 DISTNAME=		nedit-5.5
-PKGNAME=		${DISTNAME}p10
-P_V=			0.1
+PKGNAME=		${DISTNAME}p11
+P_V=			0.2
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
 			nedit_patterns-${P_V}.tgz:1
 PATCHFILES=		wrapmark.diff:0
