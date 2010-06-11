@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2010/04/15 14:58:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2010/06/11 21:10:28 landry Exp $
 
 SHARED_ONLY = 		Yes
 
 COMMENT =		highly flexible sniffer/NIDS
 
 DISTNAME = 		snort-2.8.4.1
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 CATEGORIES =		net security
 MASTER_SITES = 		http://dl.snort.org/snort-current/
 
@@ -41,11 +41,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 MAKE_FLAGS =		mandir=${TRUEPREFIX}/man
 
 LIB_DEPENDS =		pcre::devel/pcre
-
-# gcc 3.3.5, Bus errors
-.if ${MACHINE_ARCH} == "sparc64"
-CFLAGS +=		-O0
-.endif
 
 FLAVORS =		postgresql mysql flexresp prelude
 FLAVOR ?=	
