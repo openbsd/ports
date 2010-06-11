@@ -1,0 +1,40 @@
+$OpenBSD: patch-configure_in,v 1.1 2010/06/11 13:56:33 dcoppa Exp $
+--- configure.in.orig	Sun Nov 24 14:17:32 2002
++++ configure.in	Wed Jun  9 16:23:05 2010
+@@ -9,7 +9,6 @@ AC_ISC_POSIX
+ AC_PROG_CC
+ AC_PROG_CPP
+ AC_STDC_HEADERS
+-AC_ARG_PROGRAM
+ AM_DISABLE_STATIC
+ AM_PROG_LIBTOOL
+ 
+@@ -20,11 +19,11 @@ AC_ARG_WITH(irssi,
+ 
+ if test x$IRSSI_INCLUDE = x; then
+   dnl * --with-irssi not given, try to find irssi
+-  if test -f ../irssi-config; then
++  if test -f ../irssi-version.h; then
+     IRSSI_INCLUDE=".."
+-  elif test -f ../irssi/irssi-config; then
++  elif test -f ../irssi/irssi-version.h; then
+     IRSSI_INCLUDE="../irssi"
+-  elif test -f ../../irssi/irssi-config; then
++  elif test -f ../../irssi/irssi-version.h; then
+     IRSSI_INCLUDE="../../irssi"
+   fi
+ fi
+@@ -36,11 +35,11 @@ cd $old
+ 
+ AC_SUBST(IRSSI_INCLUDE)
+ 
+-if test ! -f $IRSSI_INCLUDE/irssi-config; then
++if test ! -f $IRSSI_INCLUDE/irssi-version.h; then
+   AC_ERROR(Not irssi directory: $IRSSI_INCLUDE)
+ fi
+ 
+-AM_PATH_GLIB(1.2.0,,, gmodule)
++AM_PATH_GLIB_2_0(2.6.0,,, gmodule)
+ 
+ # gcc specific options
+ if test "x$ac_cv_prog_gcc" = "xyes"; then

@@ -1,9 +1,30 @@
-$OpenBSD: patch-src_core_icb-servers_c,v 1.1 2010/06/04 14:16:22 phessler Exp $
+$OpenBSD: patch-src_core_icb-servers_c,v 1.2 2010/06/11 13:56:33 dcoppa Exp $
 
 Break lines longer than 255 chars
 
 --- src/core/icb-servers.c.orig	Tue May 28 18:56:34 2002
-+++ src/core/icb-servers.c	Fri Jun  4 10:12:25 2010
++++ src/core/icb-servers.c	Fri Jun 11 12:46:29 2010
+@@ -93,17 +93,17 @@ static void channels_join(SERVER_REC *server, const ch
+ 	icb_change_channel(ICB_SERVER(server), channel, automatic);
+ }
+ 
+-static int isnickflag_func(char flag)
++static int isnickflag_func(SERVER_REC *server, char flag)
+ {
+         return flag == '*';
+ }
+ 
+ static int ischannel_func(SERVER_REC *server, const char *data)
+ {
+-        return g_strcasecmp(ICB_SERVER(server)->group->name, data) == 0;
++        return g_ascii_strcasecmp(ICB_SERVER(server)->group->name, data) == 0;
+ }
+ 
+-static const char *get_nick_flags(void)
++static const char *get_nick_flags(SERVER_REC *server)
+ {
+ 	static const char flags[] = { '*', '\0', '\0' };
+         return flags;
 @@ -113,7 +113,6 @@ static void send_message(SERVER_REC *server, const cha
  			 const char *msg, int target_type)
  {

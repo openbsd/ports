@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_core_icb-channels_c,v 1.1 2010/06/11 13:56:33 dcoppa Exp $
+--- src/core/icb-channels.c.orig	Wed Jun  9 15:44:50 2010
++++ src/core/icb-channels.c	Wed Jun  9 15:45:33 2010
+@@ -42,7 +42,7 @@ ICB_CHANNEL_REC *icb_channel_create(ICB_SERVER_REC *se
+ void icb_change_channel(ICB_SERVER_REC *server, const char *channel,
+ 			int automatic)
+ {
+-	if (g_strcasecmp(server->group->name, channel) == 0)
++	if (g_ascii_strcasecmp(server->group->name, channel) == 0)
+ 		return;
+ 
+ 	channel_destroy(CHANNEL(server->group));

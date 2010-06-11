@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_core_icb-protocol_c,v 1.1 2010/06/04 14:16:22 phessler Exp $
+$OpenBSD: patch-src_core_icb-protocol_c,v 1.2 2010/06/11 13:56:33 dcoppa Exp $
 
 Break lines longer than 255 chars
 
 --- src/core/icb-protocol.c.orig	Sat May  4 19:21:44 2002
-+++ src/core/icb-protocol.c	Fri Jun  4 10:12:25 2010
++++ src/core/icb-protocol.c	Fri Jun 11 12:39:54 2010
 @@ -121,7 +121,91 @@ static void icb_login(ICB_SERVER_REC *server)
  
  void icb_send_open_msg(ICB_SERVER_REC *server, const char *text)
@@ -87,9 +87,9 @@ Break lines longer than 255 chars
 +			}
 +			strncpy(buf, text, copylen);
 +			buf[copylen] = 0;
-+			sendbuf = g_strconcat(target, " ", buf, NULL);
++			sendbuf = g_strconcat(target, " ", buf, (char *) NULL);
 +		} else {
-+			sendbuf = g_strconcat(target, " ", text, NULL);
++			sendbuf = g_strconcat(target, " ", text, (char *) NULL);
 +		}
 +		icb_send_cmd(server, 'h', "m", sendbuf, NULL);
 +		text += len > copylen ? copylen : len;
