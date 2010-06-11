@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/03/25 20:54:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/11 19:56:35 landry Exp $
 
 COMMENT=		Desktop wallpaper manager and X11 screensaver
 
 DISTNAME=		chbg-2.0.1
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=     	x11
 
 HOMEPAGE=		http://www.beebgames.com/sw/gtk-ports.html
@@ -38,10 +39,6 @@ CONFIGURE_STYLE=	gnu
 MODULES=		devel/gettext
 
 SEPARATE_BUILD=		concurrent
-
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=		patch-* gcc-*
-.endif
 
 post-extract:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} distclean
