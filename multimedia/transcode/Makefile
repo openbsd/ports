@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2010/05/26 22:18:22 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.31 2010/06/11 20:06:50 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.5
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2
@@ -28,10 +28,6 @@ FLAVOR?=
 PKG_ARGS+=	-Di386=1
 .else
 PKG_ARGS+=	-Di386=0
-.endif
-
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	patch-* gcc-*
 .endif
 
 MODULES=	converters/libiconv
