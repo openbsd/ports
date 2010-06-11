@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.20 2010/06/11 11:20:27 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.21 2010/06/11 23:49:22 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -263,7 +263,7 @@ sub print
 	my $self = shift;
 	print $self->message, "\n";
 }
-package Issue::system_lib;
+package Issue::SystemLib;
 our @ISA=(qw(Issue));
 
 sub message
@@ -276,7 +276,7 @@ sub record_wantlib
 {
 	&Issue::do_record_wantlib;
 }
-package Issue::direct_dependency;
+package Issue::DirectDependency;
 our @ISA=(qw(Issue));
 sub message
 {
@@ -284,7 +284,7 @@ sub message
 	return "LIB_DEPENDS:   ". $self->stringize;
 }
 
-package Issue::indirect_dependency;
+package Issue::IndirectDependency;
 our @ISA=(qw(Issue));
 sub message
 {
@@ -297,7 +297,7 @@ sub record_wantlib
 	&Issue::do_record_wantlib;
 }
 
-package Issue::not_reachable;
+package Issue::NotReachable;
 our @ISA=(qw(Issue));
 sub message
 {
@@ -570,7 +570,7 @@ sub report_lib_issue
 	for my $dir (qw(/usr /usr/X11R6)) {
 		my @r = lookup_library($dir, $libspec);
 		if (grep { $_ eq 'system' } @r) {
-			return Issue::system_lib->new($lib, $binary);
+			return Issue::SystemLib->new($lib, $binary);
 		}
 	}
 
@@ -583,7 +583,7 @@ sub report_lib_issue
 	if (@r > 0) {
 		for my $p (@r) {
 			if (defined $dependencies->{$plist->pkgname}->{$p}) {
-				return Issue::direct_dependency->new($lib, $binary, $p);
+				return Issue::DirectDependency->new($lib, $binary, $p);
 			}
 		}
 	}
@@ -604,10 +604,10 @@ sub report_lib_issue
 	@r = lookup_library(OpenBSD::Paths->localbase, $libspec);
 	for my $p (@r) {
 		if (defined $done->{$p}) {
-			return Issue::indirect_dependency->new($lib, $binary, $p);
+			return Issue::IndirectDependency->new($lib, $binary, $p);
 		}
 	}
-	return Issue::not_reachable->new($lib,, $binary, @r);
+	return Issue::NotReachable->new($lib,, $binary, @r);
 }
 
 sub print_list
