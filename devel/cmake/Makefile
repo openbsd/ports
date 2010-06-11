@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/05/31 06:29:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2010/06/11 08:07:17 dcoppa Exp $
 
 HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
@@ -27,6 +27,10 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 SEPARATE_BUILD =	simple
 
 REGRESS_TARGET =	test
+
+.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "sparc64"
+CFLAGS +=		-O0
+.endif
 
 pre-configure:
 	@cp ${FILESDIR}/*.cmake ${WRKSRC}/Modules/
