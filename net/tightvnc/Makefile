@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2010/04/24 20:18:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2010/06/11 19:22:32 landry Exp $
 
 COMMENT-main=	cross-platform remote desktop access
 COMMENT-viewer=	client for cross-platform remote desktop access
 
 VERSION=	1.3.10
-PKGNAME-main=	tightvnc-${VERSION}
+PKGNAME-main=	tightvnc-${VERSION}p0
 PKGNAME-viewer=	tightvnc-viewer-${VERSION}p0
 DISTNAME=	tightvnc-${VERSION}_unixsrc
 CATEGORIES=	net
@@ -45,10 +45,6 @@ MAKE_FLAGS=		CC=${CC} \
 
 DOCUMENTATION=	vncserver.man vncpasswd/vncpasswd.man vncconnect/vncconnect.man \
 		Xvnc/programs/Xserver/Xvnc.man vncviewer/vncviewer.man
-
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	patch-* gcc-*
-.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Xvnc/programs/Xserver/Xvnc ${PREFIX}/bin/Xvnc
