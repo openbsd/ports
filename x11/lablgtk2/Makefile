@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/06 13:40:42 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2010/06/11 10:20:42 giovanni Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
-V =		2.14.0
+V =		2.14.1
 DISTNAME =	lablgtk-$V
-PKGNAME =	lablgtk2-$Vp1
+PKGNAME =	lablgtk2-$V
 CATEGORIES =	x11 devel
 
 HOMEPAGE =	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html

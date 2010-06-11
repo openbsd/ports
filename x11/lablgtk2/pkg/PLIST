@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/01/26 13:00:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/06/11 10:20:43 giovanni Exp $
 %%SHARED%%
 bin/gdk_pixbuf_mlsource
 bin/lablgladecc2
@@ -168,6 +168,9 @@ lib/ocaml/lablgtk2/gtkTree.ml
 lib/ocaml/lablgtk2/gtkWindow.cmi
 lib/ocaml/lablgtk2/gtkWindow.ml
 lib/ocaml/lablgtk2/gtk_tags.h
+lib/ocaml/lablgtk2/gutf8.cmi
+lib/ocaml/lablgtk2/gutf8.ml
+lib/ocaml/lablgtk2/gutf8.mli
 lib/ocaml/lablgtk2/lablglade.cma
 lib/ocaml/lablgtk2/lablgtk.cma
 lib/ocaml/lablgtk2/lablrsvg.cma
