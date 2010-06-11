@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.18 2010/03/20 17:05:44 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.19 2010/06/11 10:09:37 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -39,8 +39,8 @@ my $errors = 0;
 # FileSource: where we get the files to analyze
 package FileSource;
 
-# FakeFileSource : file system
-package FakeFileSource;
+# file system
+package FsFileSource;
 our @ISA=(qw(FileSource));
 sub new
 {
@@ -62,8 +62,8 @@ sub clean
 {
 }
 
-# RealFileSource: package archive
-package RealFileSource;
+# package archive
+package PkgFileSource;
 our @ISA=(qw(FileSource));
 sub new
 {
@@ -650,10 +650,10 @@ sub do_pkg
 	return 0 unless -d $dir;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
 	if ($opt_B) {
-		analyze($plist, FakeFileSource->new($opt_B));
+		analyze($plist, FsFileSource->new($opt_B));
 	} else {
 		my $temp = File::Temp::mkdtemp("/tmp/zoinx.XXXXXXXXXX");
-		analyze($plist, RealFileSource->new($true_package, $temp));
+		analyze($plist, PkgFileSource->new($true_package, $temp));
 		rmtree($temp);
 	}
 	$true_package->close;
@@ -671,14 +671,14 @@ sub do_plist
 	} else {
 		my $pkgname = $plist->pkgname;
 		print "\n$pkgname:\n";
-		analyze($plist, FakeFileSource->new($opt_B));
+		analyze($plist, FsFileSource->new($opt_B));
 	}
 }
 
 if ($opt_F) {
 	my $recorder = DumpRecorder->new;
 	my $cwd = $opt_F;
-	my $source = FakeFileSource->new($opt_F);
+	my $source = FsFileSource->new($opt_F);
 	File::Find::find({
 		wanted => sub {
 		    return if -l $_;
