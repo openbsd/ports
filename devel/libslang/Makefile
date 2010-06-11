@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2009/10/25 11:48:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2010/06/11 21:48:09 sthen Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
 DISTNAME=	slang-2.2.1
-PKGNAME=	lib${DISTNAME}p1
+PKGNAME=	lib${DISTNAME}p2
 SHARED_LIBS=	slang 15.0
 
 CATEGORIES=	devel
@@ -34,11 +34,6 @@ REGRESS_FLAGS=		TCAPLIB="-ltermlib"
 
 MAKE_ENV=		LIBslang_MAJOR=${LIBslang_VERSION:R} \
 			LIBslang_MINOR=${LIBslang_VERSION:E}
-
-# GCC 3.3 optimizer problems: http://marc.info/?m=125562659714004
-.if ${MACHINE_ARCH} == "amd64"
-MAKE_ENV+=		slarrfun_C_FLAGS=-O0
-.endif
 
 pre-configure:
 	cd ${AUTOCONF_DIR}; cp configure ..
