@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/04/16 17:36:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/06/11 08:54:16 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,7 +29,6 @@ SEPARATE_BUILD=	simple
 MODULES=	devel/cmake \
 		devel/gettext
 
-MODCMAKE_WANTCOLOR=No
 CFLAGS+=	-pthread
 
 LIB_DEPENDS=	sqlite3.>=8::databases/sqlite3 \

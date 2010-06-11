@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/09 08:04:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/06/11 08:53:52 dcoppa Exp $
 
 COMMENT=	free open source planetarium
 
@@ -37,7 +37,6 @@ CONFIGURE_ENV=	HOME=${WRKDIR}
 PORTHOME=	${WRKDIR}
 
 NO_REGRESS=	Yes
-MODCMAKE_WANTCOLOR=No
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt \
