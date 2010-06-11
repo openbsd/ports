@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/05/05 17:03:19 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/06/11 10:01:26 giovanni Exp $
 bin/mysql-zrm
 bin/mysql-zrm-abort-backup
 bin/mysql-zrm-backup
@@ -31,21 +31,21 @@ lib/mysql-zrm/ZRM/Common.pm
 lib/mysql-zrm/ZRM/MySQL.pm
 lib/mysql-zrm/ZRM/Replication.pm
 lib/mysql-zrm/ZRM/SnapshotCommon.pm
-man/cat1/mysql-zrm-abort-backup.1
-man/cat1/mysql-zrm-backup.1
-man/cat1/mysql-zrm-check.1
-man/cat1/mysql-zrm-extract-backup.1
-man/cat1/mysql-zrm-list.1
-man/cat1/mysql-zrm-manage-backup.1
-man/cat1/mysql-zrm-parse-binlogs.1
-man/cat1/mysql-zrm-purge.1
-man/cat1/mysql-zrm-reporter.1
-man/cat1/mysql-zrm-restore.1
-man/cat1/mysql-zrm-scheduler.1
-man/cat1/mysql-zrm-verify-backup.1
-man/cat1/mysql-zrm.1
-man/cat5/mysql-zrm-reporter.conf.5
-man/cat5/mysql-zrm.conf.5
+@man man/cat1/mysql-zrm-abort-backup.0
+@man man/cat1/mysql-zrm-backup.0
+@man man/cat1/mysql-zrm-check.0
+@man man/cat1/mysql-zrm-extract-backup.0
+@man man/cat1/mysql-zrm-list.0
+@man man/cat1/mysql-zrm-manage-backup.0
+@man man/cat1/mysql-zrm-parse-binlogs.0
+@man man/cat1/mysql-zrm-purge.0
+@man man/cat1/mysql-zrm-reporter.0
+@man man/cat1/mysql-zrm-restore.0
+@man man/cat1/mysql-zrm-scheduler.0
+@man man/cat1/mysql-zrm-verify-backup.0
+@man man/cat1/mysql-zrm.0
+@man man/cat5/mysql-zrm-reporter.conf.0
+@man man/cat5/mysql-zrm.conf.0
 share/doc/mysql-zrm/
 share/doc/mysql-zrm/README-plugin-encrypt
 share/doc/mysql-zrm/README-plugin-parse-binlogs

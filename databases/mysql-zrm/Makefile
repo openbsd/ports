@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/05/05 17:03:19 giovanni Exp $
+# $OpenBSD: Makefile,v 1.5 2010/06/11 10:01:26 giovanni Exp $
 
 COMMENT =	MySQL backup scripts
 
 V =		2.2
 DISTNAME =	MySQL-zrm-$V.0
-PKGNAME =	${DISTNAME:L}
+PKGNAME =	${DISTNAME:L}p0
 CATEGORIES =	databases perl5
 
 HOMEPAGE =	http://www.zmanda.com/
@@ -32,7 +32,7 @@ pre-configure:
 	@perl -pi -e 's,/usr/lib,${PREFIX}/lib,g;' \
 	    -e 's,/usr/bin/mysql-,${PREFIX}/bin/mysql-,g;' \
 	    -e 's,/usr/bin/zrm-,${PREFIX}/bin/zrm-,g;' \
-	    ${WRKSRC}/usr/bin/mysql-zrm-*
+	    ${WRKSRC}/usr/bin/mysql-zrm*
 
 do-install:
 	@find ${WRKSRC} \( -name "*.bak" -o -name "*.orig" -o -name "*.beforesubst" \) -exec rm -f {} \;
@@ -46,7 +46,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/usr/share/doc/${DISTNAME}/README-* ${PREFIX}/share/doc/mysql-zrm/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mysql-zrm/
 	${INSTALL_DATA} ${WRKSRC}/etc/mysql-zrm/* ${PREFIX}/share/examples/mysql-zrm/
-	${INSTALL_MAN} ${WRKSRC}/usr/share/man/man1/* ${PREFIX}/man/cat1/
-	${INSTALL_MAN} ${WRKSRC}/usr/share/man/man5/* ${PREFIX}/man/cat5/
+.for s in 1 5
+	for i in ${WRKSRC}/usr/share/man/man$s/*.$s; do \
+		${INSTALL_MAN} $$i \
+		${PREFIX}/man/cat$s/`basename $${i%%.$s}`.0; \
+	done
+.endfor
 
 .include <bsd.port.mk>
