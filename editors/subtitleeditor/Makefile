@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2009/12/22 15:08:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2010/06/11 08:42:52 landry Exp $
 
 SHARED_ONLY=   	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GTK+2 subtitles editor
 
 V=		0.33.0
 DISTNAME=	subtitleeditor-${V}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 CATEGORIES=	graphics editors
 
@@ -22,6 +22,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://download.gna.org/subtitleeditor/${V:R}/
 
+.include <bsd.own.mk>
+.if ${COMPILER_VERSION:L:Mgcc4*}
+WANTLIB +=	stdc++
+.else
+MODULES += 	gcc4
+MODGCC4_ARCHES =*
+MODGCC4_LANGS =	c++ 
+WANTLIB +=	estdc++
+.endif
+
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atkmm-1.6 c cairo
 WANTLIB += cairomm-1.0 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
@@ -29,7 +39,7 @@ WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glade-2.0 glib-2.0 glibmm-2.4
 WANTLIB += glitz gmodule-2.0 gobject-2.0 gstbase-0.10 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pixman-1 png pthread sigc-2.0
-WANTLIB += stdc++ xml2 z pthread-stubs xcb
+WANTLIB += xml2 z pthread-stubs xcb xcb-render xcb-render-util
 
 BUILD_DEPENDS=	:gstreamer-plugins-good-*:multimedia/gstreamer-0.10/plugins-good \
 		:iso-codes-*:devel/iso-codes
@@ -42,12 +52,8 @@ RUN_DEPENDS=	:gstreamer-plugins-good-*:multimedia/gstreamer-0.10/plugins-good \
 		:iso-codes-*:devel/iso-codes \
 		:desktop-file-utils-*:devel/desktop-file-utils
 
-MODULES=	devel/gettext \
-		textproc/intltool \
-		gcc4
-
-MODGCC4_ARCHES=	*
-MODGCC4_LANGS=	c++
+MODULES+=	devel/gettext \
+		textproc/intltool
 
 USE_X11=	Yes
 USE_GMAKE=      Yes
