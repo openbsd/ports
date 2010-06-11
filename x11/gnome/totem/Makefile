@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/05/12 17:28:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2010/06/11 09:41:42 dcoppa Exp $
 
 COMMENT=	official media player for GNOME
 
@@ -79,7 +79,8 @@ TOTEM_PLUGINS=	"galago gromit media-player-keys ontop properties \
 
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include "
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include " \
+		GST_REGISTRY=${WRKDIR}/registry.${MACHINE_ARCH}.bin
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-plugins=${TOTEM_PLUGINS} \
 		--with-dbus \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2009/10/14 12:51:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/06/11 09:40:43 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -62,7 +62,8 @@ CONFIGURE_ARGS+=--with-npapi-plugindir=${LOCALBASE}/lib/mozilla-plugins \
 		--with-libintl-prefix=${LOCALBASE}
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		GST_REGISTRY=${WRKDIR}/registry.${MACHINE_ARCH}.bin
 
 INSTALL_TARGET=	install install-plugins
 
