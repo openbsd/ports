@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2009/04/18 14:42:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2010/06/11 12:41:13 sthen Exp $
 
 COMMENT =	content scanning web filter
-DISTNAME =	dansguardian-2.10.0.3
+DISTNAME =	dansguardian-2.10.1.1
 CATEGORIES =	www net
 
 HOMEPAGE =	http://www.dansguardian.org/
@@ -21,6 +21,7 @@ WANTLIB =		c m stdc++ z
 # grants commercial users permission to download it *once* from
 # official sources. http://dansguardian.org/?page=copyright2
 MASTER_SITES =		http://spacehopper.org/mirrors/
+#MASTER_SITES =		http://dansguardian.org/downloads/2/Stable/
 
 LIB_DEPENDS =		pcre.>=1,pcreposix.>=1::devel/pcre \
 			execinfo::devel/libexecinfo

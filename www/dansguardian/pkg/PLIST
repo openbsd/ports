@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/04/18 14:42:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/06/11 12:41:13 sthen Exp $
 @conflict dansguardian-*-clamav
 @pkgpath www/dansguardian,clamav
 @newgroup _dansguardian:588
@@ -304,6 +304,8 @@ share/examples/dansguardian/lists/phraselists/goodphrases/weighted_general_polis
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/goodphrases/weighted_general_polish
 share/examples/dansguardian/lists/phraselists/goodphrases/weighted_general_portuguese
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/goodphrases/weighted_general_portuguese
+share/examples/dansguardian/lists/phraselists/goodphrases/weighted_general_swedish
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/goodphrases/weighted_general_swedish
 share/examples/dansguardian/lists/phraselists/goodphrases/weighted_news
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/goodphrases/weighted_news
 share/examples/dansguardian/lists/phraselists/googlesearches/
@@ -400,6 +402,8 @@ share/examples/dansguardian/lists/phraselists/pornography/weighted_russian
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_russian
 share/examples/dansguardian/lists/phraselists/pornography/weighted_spanish
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_spanish
+share/examples/dansguardian/lists/phraselists/pornography/weighted_swedish
+@sample ${SYSCONFDIR}/dansguardian/lists/phraselists/pornography/weighted_swedish
 share/examples/dansguardian/lists/phraselists/proxies/
 @sample ${SYSCONFDIR}/dansguardian/lists/phraselists/proxies/
 share/examples/dansguardian/lists/phraselists/proxies/weighted
