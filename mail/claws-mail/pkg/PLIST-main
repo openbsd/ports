@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2009/12/21 22:20:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2010/06/11 17:08:32 landry Exp $
 @pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
 @pkgpath mail/sylpheed-claws${FLAVOR_STRING}
 @bin bin/claws-mail
@@ -89,7 +89,6 @@ include/claws-mail/folder_item_prefs.h
 include/claws-mail/foldersel.h
 include/claws-mail/folderutils.h
 include/claws-mail/folderview.h
-include/claws-mail/gedit-print.h
 include/claws-mail/grouplistdialog.h
 include/claws-mail/gtk/
 include/claws-mail/gtk/about.h
@@ -107,7 +106,6 @@ include/claws-mail/gtk/gtkcmctree.h
 include/claws-mail/gtk/gtkcmoptionmenu.h
 include/claws-mail/gtk/gtksctree.h
 include/claws-mail/gtk/gtkshruler.h
-include/claws-mail/gtk/gtksourceprintjob.h
 include/claws-mail/gtk/gtkutils.h
 include/claws-mail/gtk/gtkvscrollbutton.h
 include/claws-mail/gtk/headers.h
@@ -247,6 +245,7 @@ lib/claws-mail/plugins/trayicon.la
 lib/claws-mail/plugins/trayicon.so
 lib/pkgconfig/claws-mail.pc
 @man man/man1/claws-mail.1
+share/applications/
 share/applications/claws-mail.desktop
 share/claws-mail/
 share/claws-mail/tools/
@@ -289,9 +288,17 @@ share/claws-mail/tools/thunderbird-filters-convertor.pl
 share/claws-mail/tools/uudec
 share/claws-mail/tools/uuooffice
 share/claws-mail/tools/vcard2xml.py
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/claws-mail.png
-share/icons/hicolor/48x48/apps/claws-mail.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/claws-mail.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/claws-mail.png
 share/locale/bg/LC_MESSAGES/claws-mail.mo
 share/locale/ca/LC_MESSAGES/claws-mail.mo
 share/locale/cs/LC_MESSAGES/claws-mail.mo
@@ -307,12 +314,11 @@ share/locale/ja/LC_MESSAGES/claws-mail.mo
 share/locale/nl/LC_MESSAGES/claws-mail.mo
 share/locale/pl/LC_MESSAGES/claws-mail.mo
 share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
-share/locale/pt_PT/
-share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/claws-mail.mo
 share/locale/ru/LC_MESSAGES/claws-mail.mo
 share/locale/sk/LC_MESSAGES/claws-mail.mo
 share/locale/sv/LC_MESSAGES/claws-mail.mo
+share/locale/uk/LC_MESSAGES/claws-mail.mo
 share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
