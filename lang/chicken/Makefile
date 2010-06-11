@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2009/10/09 13:03:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/11 21:09:49 landry Exp $
 
 COMMENT=	practical and portable Scheme system
 
 DISTNAME=	chicken-2.6
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS +=	chicken              1.0      # .0.0
 SHARED_LIBS +=	uchicken             1.0      # .0.0
@@ -38,13 +38,6 @@ REGRESS_TARGET=		bench
 REGRESS_DEPENDS=	:${PKGNAME}:lang/chicken
 
 CFLAGS+=		-I${LOCALBASE}/include
-
-# gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH} == "sparc64"
-EXTRA_CFLAGS=	-O0
-.endif
-
-MAKE_FLAGS+=		EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cscbench.scm

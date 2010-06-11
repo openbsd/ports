@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2007/04/24 17:07:19 martynas Exp $
---- Makefile.in.orig	Thu Mar  1 12:49:50 2007
-+++ Makefile.in	Sun Apr 22 00:11:29 2007
+$OpenBSD: patch-Makefile_in,v 1.7 2010/06/11 21:09:49 landry Exp $
+--- Makefile.in.orig	Thu Mar  1 05:49:50 2007
++++ Makefile.in	Sat May 29 22:57:51 2010
 @@ -25,9 +25,9 @@ SOURCES = $(libchicken_la_SOURCES) $(libuchicken_la_SO
  srcdir = @srcdir@
  top_srcdir = @top_srcdir@
@@ -39,22 +39,6 @@ $OpenBSD: patch-Makefile_in,v 1.6 2007/04/24 17:07:19 martynas Exp $
  	rm -f stamp-h1
  	touch $@
  
-@@ -717,13 +715,13 @@ libchicken_la-extras.lo: extras.c
- 	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-extras.lo `test -f 'extras.c' || echo '$(srcdir)/'`extras.c
- 
- libchicken_la-library.o: library.c
--	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-library.o `test -f 'library.c' || echo '$(srcdir)/'`library.c
-+	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) $(EXTRA_CFLAGS) -c -o libchicken_la-library.o `test -f 'library.c' || echo '$(srcdir)/'`library.c
- 
- libchicken_la-library.obj: library.c
- 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-library.obj `if test -f 'library.c'; then $(CYGPATH_W) 'library.c'; else $(CYGPATH_W) '$(srcdir)/library.c'; fi`
- 
- libchicken_la-library.lo: library.c
--	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-library.lo `test -f 'library.c' || echo '$(srcdir)/'`library.c
-+	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) $(EXTRA_CFLAGS) -c -o libchicken_la-library.lo `test -f 'library.c' || echo '$(srcdir)/'`library.c
- 
- libchicken_la-lolevel.o: lolevel.c
- 	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libchicken_la_CFLAGS) $(CFLAGS) -c -o libchicken_la-lolevel.o `test -f 'lolevel.c' || echo '$(srcdir)/'`lolevel.c
 @@ -1415,8 +1413,8 @@ install-pkgdataDATA: $(pkgdata_DATA)
  	@list='$(pkgdata_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
