@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/07 09:50:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2010/06/12 18:00:13 steven Exp $
 
 COMMENT=	solve large scale eigenvalue problems
 
@@ -37,7 +37,8 @@ WRKDIST=	${WRKDIR}/ARPACK
 WRKSRC=		${WRKDIST}/SRC
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBarpack_VERSION:R} \
-		SHLIB_MINOR=${LIBarpack_VERSION:E}
+		SHLIB_MINOR=${LIBarpack_VERSION:E} \
+		FC=${FC}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 
 post-extract:

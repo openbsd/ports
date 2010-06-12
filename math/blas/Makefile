@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/05/26 16:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/12 18:00:13 steven Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
@@ -32,7 +32,8 @@ BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBblas_VERSION:R} \
-		SHLIB_MINOR=${LIBblas_VERSION:E}
+		SHLIB_MINOR=${LIBblas_VERSION:E} \
+		FC=${FC}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 
 MANSRC=		${WRKDIR}/${DISTNAME}/man/manl
