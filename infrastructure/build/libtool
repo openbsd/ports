@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.118 2010/06/12 13:58:27 steven Exp $
+# $OpenBSD: libtool,v 1.119 2010/06/12 16:35:15 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1162,6 +1162,8 @@ Trace::debug {"ARGV = @ARGV\n"};
 while (@ARGV) {
 	# just read arguments until the next option...
 	if ($ARGV[0] =~ m/^\-/) { last; }
+	# XXX improve checks
+	if ($ARGV[0] =~ m/^\S+\.la/) { last; }
 	my $arg = shift @ARGV;
 	push @$ltprog, $arg;
 	Trace::debug {"arg = \"$arg\"\n"};
