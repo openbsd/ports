@@ -1,29 +1,47 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/02 19:07:43 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2010/06/12 15:16:47 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
-VERSION=		1.9.1.7
-PATCHLEVEL=		p1
+VERSION=		1.9.2.3
+#PATCHLEVEL=		p1
 DIRECTORY=		xulrunner1.9
-DISTNAME=		mozilla-1.9.1
-DISTFILES=		xulrunner-${VERSION}.source.tar.bz2
+DISTNAME=		mozilla-1.9.2
+DISTFILES=		firefox-3.6.3.source.tar.bz2
 
-SO_VERSION=		2.0
+MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.3/source/
+
+SO_VERSION=		3.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in imgicon mozjs xpcom xul nullplugin unixprintplugin
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
+.if ${MACHINE_ARCH} == "i386"
+PKG_ARGS+=	-Djit=1 -Damd64=0
+.elif ${MACHINE_ARCH} == "amd64"
+PKG_ARGS+=	-Djit=1 -Damd64=1
+.else
+PKG_ARGS+=	-Djit=0 -Damd64=0
+.endif
+
+# use files and patches from www/mozilla-firefox
+PATCHDIR=		${PORTSDIR}/www/mozilla-firefox/patches
+FILESDIR=		${PORTSDIR}/www/mozilla-firefox/files
+
 MODULES+=		lang/python
 MODPY_RUNDEP=		No
 
-CONFIGURE_ARGS+=	--enable-default-toolkit=cairo-gtk2
+CONFIGURE_ARGS+=	--enable-default-toolkit=cairo-gtk2 \
+			--disable-crashreporter \
+			--disable-libnotify \
+			--disable-necko-wifi
 LIB_DEPENDS+=		sqlite3.>=13.0:sqlite3->=3.6.10:databases/sqlite3
 WANTLIB-devel+=		gobject-2.0
 
 MOB=			${WRKSRC}/dist/bin
 MOZ=			${PREFIX}/${DIRECTORY}
+SUBST_VARS+=		DIRECTORY
 
 DATADIRS=		chrome components defaults dictionaries greprefs \
 			icons modules plugins res
@@ -45,7 +63,8 @@ post-extract:
 pre-configure:
 	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	${SUBST_CMD} \
+	${SUBST_CMD} ${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
+		${WRKSRC}/config/autoconf.mk.in \
 		${WRKSRC}/build/unix/mozilla.in \
 		${WRKSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
 		${WRKSRC}/js/src/xpconnect/shell/Makefile.in \
@@ -62,8 +81,7 @@ do-install:
 			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
 		find ${DISTDIRS} ! -type d \
 			-exec ${INSTALL_DATA} {} ${MOZ}/{} \;
-	mv ${MOZ}/include/xpcom/* ${MOZ}/include
-	rmdir ${MOZ}/include/xpcom
+	cd ${MOZ} && ln -s xulrunner-bin xulrunner1.9-bin
 	cd ${MOB} && \
 		find ${DATADIRS} -type d \
 			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \

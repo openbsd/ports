@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2010/04/24 16:08:01 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2010/06/12 15:16:48 landry Exp $
 @option no-default-conflict
 @conflict xulrunner->=1.9,<1.9.1
 @unexec xulrunner1.9 --unregister-global
@@ -23,6 +23,7 @@ xulrunner1.9/chrome/toolkit.jar
 xulrunner1.9/chrome/toolkit.manifest
 xulrunner1.9/components/
 xulrunner1.9/components/FeedProcessor.js
+xulrunner1.9/components/GPSDGeolocationProvider.js
 xulrunner1.9/components/NetworkGeolocationProvider.js
 xulrunner1.9/components/accessibility.xpt
 xulrunner1.9/components/alerts.xpt
@@ -35,8 +36,10 @@ xulrunner1.9/components/chardet.xpt
 xulrunner1.9/components/chrome.xpt
 xulrunner1.9/components/commandhandler.xpt
 xulrunner1.9/components/commandlines.xpt
+xulrunner1.9/components/components.list
 xulrunner1.9/components/composer.xpt
 xulrunner1.9/components/content_base.xpt
+xulrunner1.9/components/content_events.xpt
 xulrunner1.9/components/content_html.xpt
 xulrunner1.9/components/content_htmldoc.xpt
 xulrunner1.9/components/content_xmldoc.xpt
@@ -119,12 +122,14 @@ xulrunner1.9/components/nsDefaultCLH.js
 xulrunner1.9/components/nsDownloadManagerUI.js
 xulrunner1.9/components/nsExtensionManager.js
 xulrunner1.9/components/nsFilePicker.js
+xulrunner1.9/components/nsFormAutoComplete.js
 xulrunner1.9/components/nsHandlerService.js
 xulrunner1.9/components/nsHelperAppDlg.js
 xulrunner1.9/components/nsLivemarkService.js
 xulrunner1.9/components/nsLoginInfo.js
 xulrunner1.9/components/nsLoginManager.js
 xulrunner1.9/components/nsLoginManagerPrompter.js
+xulrunner1.9/components/nsPlacesAutoComplete.js
 xulrunner1.9/components/nsPlacesDBFlush.js
 xulrunner1.9/components/nsProgressDialog.js
 xulrunner1.9/components/nsProxyAutoConfig.js
@@ -133,10 +138,9 @@ xulrunner1.9/components/nsSearchSuggestions.js
 xulrunner1.9/components/nsTaggingService.js
 xulrunner1.9/components/nsTryToClose.js
 xulrunner1.9/components/nsURLFormatter.js
-xulrunner1.9/components/nsUpdateService.js
+xulrunner1.9/components/nsUpdateTimerManager.js
 xulrunner1.9/components/nsWebHandlerApp.js
 xulrunner1.9/components/nsXULAppInstall.js
-xulrunner1.9/components/oji.xpt
 xulrunner1.9/components/parentalcontrols.xpt
 xulrunner1.9/components/pipboot.xpt
 xulrunner1.9/components/pipnss.xpt
@@ -212,21 +216,25 @@ xulrunner1.9/greprefs/security-prefs.js
 xulrunner1.9/greprefs/xpinstall.js
 xulrunner1.9/icons/
 xulrunner1.9/icons/document.png
-xulrunner1.9/icons/mozicon16.xpm
-xulrunner1.9/icons/mozicon50.xpm
 @lib xulrunner1.9/libmozjs.so.${LIBmozjs_VERSION}
 @lib xulrunner1.9/libxpcom.so.${LIBxpcom_VERSION}
 @lib xulrunner1.9/libxul.so.${LIBxul_VERSION}
 xulrunner1.9/modules/
+xulrunner1.9/modules/CertUtils.jsm
 xulrunner1.9/modules/DownloadLastDir.jsm
 xulrunner1.9/modules/DownloadUtils.jsm
+xulrunner1.9/modules/FileUtils.jsm
 xulrunner1.9/modules/ISO8601DateUtils.jsm
+xulrunner1.9/modules/LightweightThemeConsumer.jsm
+xulrunner1.9/modules/LightweightThemeManager.jsm
 xulrunner1.9/modules/Microformats.js
+xulrunner1.9/modules/NetUtil.jsm
 xulrunner1.9/modules/PlacesDBUtils.jsm
 xulrunner1.9/modules/PluralForm.jsm
 xulrunner1.9/modules/SpatialNavigation.js
 xulrunner1.9/modules/WindowDraggingUtils.jsm
 xulrunner1.9/modules/XPCOMUtils.jsm
+xulrunner1.9/modules/ctypes.jsm
 xulrunner1.9/modules/debug.js
 xulrunner1.9/modules/utils.js
 @bin xulrunner1.9/mozilla-xremote-client
@@ -240,7 +248,7 @@ xulrunner1.9/res/
 xulrunner1.9/res/EditorOverride.css
 xulrunner1.9/res/arrow.gif
 xulrunner1.9/res/arrowd.gif
-xulrunner1.9/res/broken-image.gif
+xulrunner1.9/res/broken-image.png
 xulrunner1.9/res/charsetData.properties
 xulrunner1.9/res/charsetalias.properties
 xulrunner1.9/res/contenteditable.css
@@ -269,7 +277,7 @@ xulrunner1.9/res/html.css
 xulrunner1.9/res/html/folder.png
 xulrunner1.9/res/langGroups.properties
 xulrunner1.9/res/language.properties
-xulrunner1.9/res/loading-image.gif
+xulrunner1.9/res/loading-image.png
 xulrunner1.9/res/mathml.css
 xulrunner1.9/res/quirk.css
 xulrunner1.9/res/svg.css
@@ -297,6 +305,7 @@ xulrunner1.9/res/viewsource.css
 xulrunner1.9/run-mozilla.sh
 @bin xulrunner1.9/xulrunner-bin
 @bin xulrunner1.9/xulrunner-stub
+xulrunner1.9/xulrunner1.9-bin
 @sample ${SYSCONFDIR}/gre.d/
 @exec xulrunner1.9 --register-global
 @exec TEMP=`mktemp -d` && cd %D/xulrunner1.9 && env HOME=$TEMP LD_LIBRARY_PATH=%D/xulrunner1.9 ./regxpcom && rm -fr $TEMP
