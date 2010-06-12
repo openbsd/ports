@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/08 09:42:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/12 18:13:25 steven Exp $
 
 COMMENT=	C interface to the BLAS library
 
@@ -36,7 +36,8 @@ LIB_DEPENDS=	blas.>=1.0::math/blas
 CFLAGS+=	-DADD_
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBcblas_VERSION:R} \
-		SHLIB_MINOR=${LIBcblas_VERSION:E}
+		SHLIB_MINOR=${LIBcblas_VERSION:E} \
+		FC=${FC}
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 
 REGRESS_FLAGS=	LOADER=${FC} CFLAGS="${CFLAGS}" INC="-I${WRKSRC}" \
