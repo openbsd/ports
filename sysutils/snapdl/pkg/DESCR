@@ -1,0 +1,3 @@
+snapdl helps you to find mirrors with snapshots of -current synced with
+the main mirror http://ftp.OpenBSD.org and to download the sets from the
+fastest one.
