@@ -1,0 +1,16 @@
+$OpenBSD: gcc3-tools_clang_lib_Driver_Tools_cpp,v 1.1 2010/06/12 12:15:08 sthen Exp $
+--- tools/clang/lib/Driver/Tools.cpp.orig	Sun Mar  7 05:46:18 2010
++++ tools/clang/lib/Driver/Tools.cpp	Wed Apr 28 21:14:33 2010
+@@ -2581,6 +2586,12 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+ 
+   if (!Args.hasArg(options::OPT_nostdlib) &&
+       !Args.hasArg(options::OPT_nodefaultlibs)) {
++    if (D.CCCIsCXX) {
++      CmdArgs.push_back("-L/usr/local/lib");
++      CmdArgs.push_back("-lestdc++");
++      CmdArgs.push_back("-lm");
++    }
++
+     // FIXME: For some reason GCC passes -lgcc before adding
+     // the default system libraries. Just mimic this for now.
+     CmdArgs.push_back("-lgcc");

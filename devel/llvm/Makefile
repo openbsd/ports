@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/04/29 16:37:09 jsg Exp $
+# $OpenBSD: Makefile,v 1.21 2010/06/12 12:15:08 sthen Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
 LLVM_V =	2.7
 DISTNAME =	llvm-${LLVM_V}
+PKGNAME =	${DISTNAME}p0
 
 CATEGORIES =	devel
 
@@ -64,10 +65,23 @@ CONFIGURE_ARGS =	--enable-bindings=no \
 
 MODGNU_CONFIG_GUESS_DIRS =  ${WRKSRC}/autoconf
 
+.include <bsd.own.mk>
+
+.if ${COMPILER_VERSION} == "gcc3"
+PATCH_LIST +=		patch-* gcc3-*
+.endif
+
 pre-configure:
 	@perl -pi -e s,-lpthread,-pthread,g ${WRKSRC}/configure
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/scan-build/scan-build
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+.if ${COMPILER_VERSION:L} == "gcc3"
+	@perl -pi -e 's,-L/usr/lib/gcc-lib/,-L${LOCALBASE}/lib/gcc/,;' \
+	    -e 's,  "/4.2.1,  "/4.2.4,;' \
+	    ${WRKSRC}/tools/clang/lib/Driver/Tools.cpp
+	@perl -pi -e 's,/usr/include/g\+\+,${LOCALBASE}/include/c++/4.2.4,' \
+	    ${WRKSRC}/tools/clang/lib/Frontend/InitHeaderSearch.cpp
+.endif
 
 post-install:
 	@ln -s ${TRUEPREFIX}/libexec/clang-cc ${PREFIX}/bin

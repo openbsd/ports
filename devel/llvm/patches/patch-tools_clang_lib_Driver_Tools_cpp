@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.4 2010/04/29 16:37:09 jsg Exp $
---- tools/clang/lib/Driver/Tools.cpp.orig	Sun Mar  7 05:46:18 2010
-+++ tools/clang/lib/Driver/Tools.cpp	Wed Apr 28 21:14:33 2010
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.5 2010/06/12 12:15:08 sthen Exp $
+--- tools/clang/lib/Driver/Tools.cpp.orig	Sun Mar  7 04:46:18 2010
++++ tools/clang/lib/Driver/Tools.cpp	Thu Jun 10 16:12:25 2010
 @@ -576,6 +576,11 @@ void Clang::AddX86TargetArgs(const ArgList &Args,
          CPUName = "core2";
        else if (getToolChain().getArchName() == "i386")
@@ -13,27 +13,12 @@ $OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.4 2010/04/29 16:37:09 jsg E
      } else {
        if (getToolChain().getArchName() == "x86_64")
          CPUName = "x86-64";
-@@ -2550,8 +2555,8 @@ void openbsd::Link::ConstructJob(Compilation &C, const
-   std::string Triple = getToolChain().getTripleString();
+@@ -2551,7 +2556,7 @@ void openbsd::Link::ConstructJob(Compilation &C, const
    if (Triple.substr(0, 6) == "x86_64")
      Triple.replace(0, 6, "amd64");
--  CmdArgs.push_back(Args.MakeArgString("-L/usr/lib/gcc-lib/" + Triple +
+   CmdArgs.push_back(Args.MakeArgString("-L/usr/lib/gcc-lib/" + Triple +
 -                                       "/3.3.5"));
-+  CmdArgs.push_back(Args.MakeArgString("-L/usr/local/lib/gcc/" + Triple +
-+                                       "/4.2.4"));
++                                       "/4.2.1"));
  
    Args.AddAllArgs(CmdArgs, options::OPT_L);
    Args.AddAllArgs(CmdArgs, options::OPT_T_Group);
-@@ -2576,6 +2581,12 @@ void openbsd::Link::ConstructJob(Compilation &C, const
- 
-   if (!Args.hasArg(options::OPT_nostdlib) &&
-       !Args.hasArg(options::OPT_nodefaultlibs)) {
-+    if (D.CCCIsCXX) {
-+      CmdArgs.push_back("-L/usr/local/lib");
-+      CmdArgs.push_back("-lestdc++");
-+      CmdArgs.push_back("-lm");
-+    }
-+
-     // FIXME: For some reason GCC passes -lgcc before adding
-     // the default system libraries. Just mimic this for now.
-     CmdArgs.push_back("-lgcc");
