@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/11/01 18:25:21 landry Exp $
-lib/mozilla-plugins/
-lib/mozilla-plugins/gecko-mediaplayer-dvx.so
-lib/mozilla-plugins/gecko-mediaplayer-qt.so
-lib/mozilla-plugins/gecko-mediaplayer-rm.so
-lib/mozilla-plugins/gecko-mediaplayer-wmp.so
-lib/mozilla-plugins/gecko-mediaplayer.so
+@comment $OpenBSD: PLIST,v 1.4 2010/06/12 15:27:34 landry Exp $
+lib/mozilla/
+lib/mozilla/plugins/
+lib/mozilla/plugins/gecko-mediaplayer-dvx.so
+lib/mozilla/plugins/gecko-mediaplayer-qt.so
+lib/mozilla/plugins/gecko-mediaplayer-rm.so
+lib/mozilla/plugins/gecko-mediaplayer-wmp.so
+lib/mozilla/plugins/gecko-mediaplayer.so
 share/doc/gecko-mediaplayer/
 share/doc/gecko-mediaplayer/AUTHORS
 share/doc/gecko-mediaplayer/COPYING

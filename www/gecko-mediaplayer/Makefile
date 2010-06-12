@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/04/24 16:11:05 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/12 15:27:34 landry Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
 V =			0.9.9.2
 DISTNAME =		gecko-mediaplayer-$V
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 CATEGORIES =		www
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -30,20 +30,20 @@ RUN_DEPENDS =		:gnome-mplayer->=$V:x11/gnome-mplayer
 USE_X11 =		Yes
 USE_LIBTOOL =		Yes
 USE_GMAKE =		Yes
+SHARED_ONLY =		Yes
+
 MODGCONF2_SCHEMAS_DIR =	gecko-mediaplayer
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
 			-I${X11BASE}/include \
 			-I${LOCALBASE}/include/nspr \
-			-I${LOCALBASE}/xulrunner1.9/include \
-			-I${LOCALBASE}/xulrunner1.9/include/java \
-			-I${LOCALBASE}/xulrunner1.9/include/plugin -DOPENBSD \
-			-I${LOCALBASE}/xulrunner1.9/include/pref" \
+			-I${LOCALBASE}/xulrunner1.9/include -DOPENBSD" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 CONFIGURE_ARGS =	--with-gconf \
+			--enable-new-libxul \
 			--with-xulrunner-sdk=${LOCALBASE}/xulrunner-1.9 \
-			--with-plugin-dir=${LOCALBASE}/lib/mozilla-plugins
+			--with-plugin-dir=${LOCALBASE}/lib/mozilla/plugins
 
 .include <bsd.port.mk>
