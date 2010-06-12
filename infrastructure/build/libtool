@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.117 2010/04/26 17:49:00 steven Exp $
+# $OpenBSD: libtool,v 1.118 2010/06/12 13:58:27 steven Exp $
 
 # Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
 #
@@ -1299,8 +1299,7 @@ if ($mode eq 'compile') {
 				if ($staticlib);
 			$toinstall->{"$srcdir/$ltdir/$sharedlib"} = "$dstdir/$sharedlib"
 				if ($sharedlib);
-			$toinstall->{"$laipath"} = "$dstdir/$dstfile"
-				if ($sharedlib);
+			$toinstall->{"$laipath"} = "$dstdir/$dstfile";
 			foreach my $n (@libnames) {
 				$tosymlink->{$n} = $sharedlib if ($n ne $sharedlib);
 			}
@@ -1556,17 +1555,17 @@ if ($mode eq 'compile') {
 			unlink("$odir/$ltdir/$ofile");
 			symlink("../$ofile", "$odir/$ltdir/$ofile");
 		}
+		my $lai = "$odir/$ltdir/$ofile".'i';
 		if ($shared) {
-			my $lai = "$odir/$ltdir/$ofile".'i';
 			my $pdeplibs = process_deplibs($finaldeplibs);
 			if (defined $pdeplibs) {
 				$lainfo->set('dependency_libs', "@$pdeplibs");
 			}
-			$lainfo->{'installed'} = 'yes';
-			# write .lai file (.la file that will be installed)
-			$lainfo->write($lai, $ofile);
 			$lainfo->write_shared_libs_log($origver);
 		}
+		$lainfo->{'installed'} = 'yes';
+		# write .lai file (.la file that will be installed)
+		$lainfo->write($lai, $ofile);
 	}
 } elsif ($mode eq 'finish' || $mode eq 'clean' || $mode eq 'uninstall') {
 	# don't do anything
