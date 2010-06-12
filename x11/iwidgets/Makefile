@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/12 20:56:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/12 21:34:26 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -6,7 +6,7 @@ COMMENT=	Iwidgets Mega Widget Set
 
 VERSION=	4.0.1
 DISTNAME=	iwidgets${VERSION}
-PKGNAME=	iwidgets-${VERSION}p1
+PKGNAME=	iwidgets-${VERSION}p2
 
 CATEGORIES=	x11 devel
 
@@ -24,7 +24,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 
 MODULES=	x11/tk
 BUILD_DEPENDS=	${MODTK_RUN_DEPENDS}
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS=	${MODTK_RUN_DEPENDS} \
 		:itcl->=3.4,<3.5:devel/itcl \
 		:itk->=3.3,<3.4:x11/itk
 REGRESS_DEPENDS=${RUN_DEPENDS}
