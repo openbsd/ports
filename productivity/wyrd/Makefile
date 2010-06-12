@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2009/06/20 22:05:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/12 15:49:41 naddy Exp $
 
 COMMENT=		curses calendar front-end to remind
 
 DISTNAME=		wyrd-1.4.4
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://pessimization.com/software/wyrd/
@@ -23,8 +23,8 @@ MODULES=		lang/ocaml
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		::misc/remind
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		::misc/remind
 
 NO_REGRESS=		Yes
 
