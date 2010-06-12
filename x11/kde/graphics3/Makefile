@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2010/05/15 08:48:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2010/06/12 14:33:01 landry Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -14,7 +14,7 @@ SEPARATE_BUILD =	flavored
 MULTI_PACKAGES =	-main -kpov -kamera -sane
 PKGNAME =		${DISTNAME}
 
-PKGNAME-main =		${DISTNAME}p6
+PKGNAME-main =		${DISTNAME}p7
 PKGNAME-kamera =	kamera-${VERSION}p3
 PKGNAME-kpov =		kpovmodeller-${VERSION}p3
 PKGNAME-sane =		ksane-${VERSION}p5
@@ -78,10 +78,6 @@ CONFIGURE_ENV +=	\
 
 post-patch:
 	@cp ${FILESDIR}/part_init.cpp ${WRKSRC}/kghostview
-
-.if ${MACHINE_ARCH} == "sparc64"
-SUP_PATCH_LIST =	gcc-*
-.endif
 
 CONFIGURE_ENV +=	TIFF_LIBS='-L${LOCALBASE}/lib -ltiff -ljpeg -lz' \
 			TIFF_CFLAGS='-I${LOCALBASE}/include'
