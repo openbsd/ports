@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2010/05/09 09:35:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.138 2010/06/12 15:00:12 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,13 +7,12 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.6.3
 DISTNAME=	mozilla-1.9.2
-PKGNAME=	mozilla-firefox-${VER}p2
-SO_VERSION=	21.0
+PKGNAME=	mozilla-firefox-${VER}p3
+SO_VERSION=	21.1
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-.for _lib in browsercomps browserdirprovider imgicon freebl3 mozjs \
-	nspr4 nss3 nssckbi nssdbm3 nssutil3 plc4 plds4 smime3 \
-	softokn3 ssl3 xpcom xul nullplugin unixprintplugin
+.for _lib in browsercomps browserdirprovider imgicon mozjs \
+	xpcom xul nullplugin unixprintplugin
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
@@ -39,6 +38,8 @@ BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		::graphics/netpbm \
 		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+		nspr4.>=21,plc4.>=21,plds4.>=21:nspr->=4.8:devel/nspr \
+		nss3.>=25,smime3.>=25,softokn3.>=25,ssl3.>=25:nss->=3.12.6:security/nss \
 		sqlite3.>=13.3:sqlite3->=3.6.16:databases/sqlite3
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
@@ -62,6 +63,8 @@ AUTOCONF_VERSION= 2.13
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
+		--with-system-nspr		\
+		--with-system-nss		\
 		--with-pthreads			\
 		--enable-xft			\
 		--disable-optimize		\
@@ -113,12 +116,13 @@ CONFIGURE_ENV=	${MAKE_ENV} \
 MODPY_RUNDEP=	No
 
 MOB=		${WRKSRC}/dist/bin
-MOZ=		${PREFIX}/mozilla-firefox
+DIRECTORY=	mozilla-firefox
+MOZ=		${PREFIX}/${DIRECTORY}
 
 DATADIRS=	chrome components defaults dictionaries extensions \
 		greprefs icons modules plugins res searchplugins
 
-SUBST_VARS+=	VER
+SUBST_VARS+=	VER DIRECTORY
 
 post-extract:
 	@find ${WRKSRC} -name "*.orig" -exec rm -f {} \;
@@ -130,6 +134,7 @@ pre-configure:
 	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	${SUBST_CMD} ${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
+		${WRKSRC}/config/autoconf.mk.in \
 		${WRKSRC}/build/unix/mozilla.in \
 		${WRKSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
 		${WRKSRC}/js/src/xpconnect/shell/Makefile.in \

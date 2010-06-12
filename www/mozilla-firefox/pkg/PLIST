@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2010/04/26 22:14:37 landry Exp $
+@comment $OpenBSD: PLIST,v 1.27 2010/06/12 15:00:12 landry Exp $
 @conflict firefox3-*
 @conflict mozilla-firebird-*
 @pkgpath www/firefox3
@@ -263,18 +263,7 @@ mozilla-firefox/greprefs/xpinstall.js
 mozilla-firefox/icons/
 mozilla-firefox/icons/document.png
 mozilla-firefox/icons/mozicon128.png
-@lib mozilla-firefox/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib mozilla-firefox/libmozjs.so.${LIBmozjs_VERSION}
-@lib mozilla-firefox/libnspr4.so.${LIBnspr4_VERSION}
-@lib mozilla-firefox/libnss3.so.${LIBnss3_VERSION}
-@lib mozilla-firefox/libnssckbi.so.${LIBnssckbi_VERSION}
-@lib mozilla-firefox/libnssdbm3.so.${LIBnssdbm3_VERSION}
-@lib mozilla-firefox/libnssutil3.so.${LIBnssutil3_VERSION}
-@lib mozilla-firefox/libplc4.so.${LIBplc4_VERSION}
-@lib mozilla-firefox/libplds4.so.${LIBplds4_VERSION}
-@lib mozilla-firefox/libsmime3.so.${LIBsmime3_VERSION}
-@lib mozilla-firefox/libsoftokn3.so.${LIBsoftokn3_VERSION}
-@lib mozilla-firefox/libssl3.so.${LIBssl3_VERSION}
 @lib mozilla-firefox/libxpcom.so.${LIBxpcom_VERSION}
 @lib mozilla-firefox/libxul.so.${LIBxul_VERSION}
 mozilla-firefox/modules/

@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_autoconf_mk_in,v 1.7 2010/04/26 19:55:58 landry Exp $
+$OpenBSD: patch-config_autoconf_mk_in,v 1.8 2010/06/12 15:00:12 landry Exp $
 --- config/autoconf.mk.in.orig	Wed Jan  6 05:35:11 2010
 +++ config/autoconf.mk.in	Sun Jan 10 17:47:23 2010
 @@ -58,14 +58,14 @@ MOZ_PKG_SPECIAL = @MOZ_PKG_SPECIAL@
@@ -6,17 +6,17 @@ $OpenBSD: patch-config_autoconf_mk_in,v 1.7 2010/04/26 19:55:58 landry Exp $
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@
 -includedir	= @includedir@/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
-+includedir	= $(prefix)/mozilla-firefox/include
++includedir	= $(prefix)/${DIRECTORY}/include
  libdir		= @libdir@
  datadir		= @datadir@
  mandir		= @mandir@
 -idldir		= $(datadir)/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
-+idldir		= $(prefix)/mozilla-firefox/idl
++idldir		= $(prefix)/${DIRECTORY}/idl
  
 -installdir	= $(libdir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
 -sdkdir		= $(libdir)/$(MOZ_APP_NAME)-devel-$(MOZ_APP_VERSION)
-+installdir	= $(prefix)/mozilla-firefox
-+sdkdir		= $(prefix)/mozilla-firefox
++installdir	= $(prefix)/${DIRECTORY}
++sdkdir		= $(prefix)/${DIRECTORY}
  
  DIST		= $(DEPTH)/dist
  LIBXUL_SDK      = @LIBXUL_SDK@
