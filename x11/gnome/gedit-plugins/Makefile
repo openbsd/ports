@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/04/22 21:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2010/06/12 14:57:50 steven Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -35,6 +35,7 @@ RUN_DEPENDS=		::devel/vte,-python \
 			:py-gtk2->=2.12.0:x11/py-gtk2
 
 USE_X11=		Yes
+USE_LIBTOOL=		gnu
 MODGCONF2_SCHEMAS_DIR=	gedit
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

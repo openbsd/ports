@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/06/04 07:45:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2010/06/12 14:57:50 steven Exp $
 
 COMMENT=		GNOME display manager
 
@@ -34,6 +34,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 USE_X11=		Yes
+USE_LIBTOOL=		gnu
 MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_STYLE=	gnu old
