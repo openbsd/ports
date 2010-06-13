@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.21 2010/06/11 23:49:22 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.22 2010/06/13 22:02:43 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -660,7 +660,7 @@ sub analyze
 			my $issue = $self->report_lib_issue($state, $plist, 
 			    $lib, $fullname);
 			if ($issue->not_reachable) {
-				$issue->error("#1", $issue->not_reachable);
+				$state->error("#1", $issue->not_reachable);
 			}
 		}
 		$has_libs->{$lib} = 2;
