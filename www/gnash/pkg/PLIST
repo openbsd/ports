@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/06/28 15:46:33 deanna Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/06/13 14:35:28 landry Exp $
 @bin bin/dumpshm
 bin/gnash
 @bin bin/gprocessor
@@ -21,8 +21,9 @@ lib/gnash/libgnashserver.la
 lib/gnash/libgnashserver.so
 lib/gnash/libmozsdk.la
 @lib lib/gnash/libmozsdk.so.${LIBmozsdk_VERSION}
-lib/mozilla-plugins/
-lib/mozilla-plugins/libgnashplugin.so
+lib/mozilla/
+lib/mozilla/plugins/
+lib/mozilla/plugins/libgnashplugin.so
 @man man/man1/cygnal.1
 @man man/man1/dumpshm.1
 @man man/man1/gnash.1

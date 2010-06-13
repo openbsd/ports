@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/06/11 09:40:43 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.26 2010/06/13 14:35:28 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	flash player with firefox browser plugin
 
 VER=		0.8.3
 DISTNAME=	gnash-${VER}
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 
 CATEGORIES=	www
 MASTER_SITES=	http://getgnash.org/packages/releases/
@@ -54,7 +54,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/libbase/{gnashpluginrc,gnashrc} \
 	${PREFIX}/share/examples/gnash
 
-CONFIGURE_ARGS+=--with-npapi-plugindir=${LOCALBASE}/lib/mozilla-plugins \
+CONFIGURE_ARGS+=--with-npapi-plugindir=${LOCALBASE}/lib/mozilla/plugins \
 		--disable-cygnal \
 		--disable-debugger \
 		--enable-renderer=agg \
