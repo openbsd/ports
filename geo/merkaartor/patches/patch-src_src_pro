@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_src_pro,v 1.2 2010/04/21 15:06:16 landry Exp $
+$OpenBSD: patch-src_src_pro,v 1.3 2010/06/13 10:57:35 landry Exp $
 Properly set translations/plugins paths
---- src/src.pro.orig	Sun Mar  7 16:54:00 2010
-+++ src/src.pro	Wed Apr 21 14:01:52 2010
-@@ -131,7 +131,7 @@ unix {
+--- src/src.pro.orig	Sun Jun  6 16:41:25 2010
++++ src/src.pro	Sat Jun 12 16:50:12 2010
+@@ -150,7 +150,7 @@ unix {
      isEmpty( LIBDIR ) {
          LIBDIR = $${PREFIX}/lib${LIB_SUFFIX}
      }
@@ -11,7 +11,7 @@ Properly set translations/plugins paths
      target.path = $${PREFIX}/bin
      SHARE_DIR = $${PREFIX}/share/merkaartor
  
-@@ -160,7 +160,7 @@ win32-msvc* {
+@@ -179,7 +179,7 @@ win32-msvc* {
  
  translations.path =  $${TRANSDIR_MERKAARTOR}
  translations.files = $${BINTRANSLATIONS}
@@ -20,12 +20,12 @@ Properly set translations/plugins paths
  INSTALLS += translations
  
  count(TRANSDIR_SYSTEM, 1) {
-@@ -205,7 +205,7 @@ world_shp.files = $$PWD/../share/world_background.osb
+@@ -224,7 +224,7 @@ world_shp.files = $$PWD/../share/world_background.osb
  macx {
- 	DEFINES += WORLD_SHP=world_background.osb
+     DEFINES += WORLD_SHP=world_background.osb
  } else {
--	DEFINES += WORLD_SHP=$$world_shp.path/world_background.osb
-+	DEFINES += WORLD_SHP=${TRUEPREFIX}/share/merkaartor/world_background.osb
+-    DEFINES += WORLD_SHP=$$world_shp.path/world_background.osb
++    DEFINES += WORLD_SHP=${TRUEPREFIX}/share/merkaartor/world_background.osb
  }
  INSTALLS += world_shp
  

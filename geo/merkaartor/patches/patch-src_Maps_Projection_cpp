@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_Maps_Projection_cpp,v 1.2 2010/04/21 15:06:16 landry Exp $
+$OpenBSD: patch-src_Maps_Projection_cpp,v 1.3 2010/06/13 10:57:35 landry Exp $
 Confuses g++3
---- src/Maps/Projection.cpp.orig	Tue Jan 26 11:20:32 2010
-+++ src/Maps/Projection.cpp	Wed Apr 21 09:53:42 2010
-@@ -74,7 +74,7 @@ void Projection::projTransformToWGS84(long point_count
+--- src/Maps/Projection.cpp.orig	Sun Jun  6 16:41:25 2010
++++ src/Maps/Projection.cpp	Sat Jun 12 16:44:28 2010
+@@ -178,7 +178,7 @@ void Projection::projTransformToWGS84(long point_count
  QPointF Projection::projProject(const Coord & Map) const
  {
- 	try {
--		point_ll_deg in(longitude<>(intToAng(Map.lon())), latitude<>(intToAng(Map.lat())));
-+		point_ll_deg in = point_ll_deg(longitude<>(intToAng(Map.lon())), latitude<>(intToAng(Map.lat())));
- 		point_2d out;
+     try {
+-        point_ll_deg in(longitude<>(coordToAng(Map.lon())), latitude<>(coordToAng(Map.lat())));
++        point_ll_deg in = point_ll_deg(longitude<>(coordToAng(Map.lon())), latitude<>(coordToAng(Map.lat())));
+         point_2d out;
  
- 		theProj->forward(in, out);
+         theProj->forward(in, out);

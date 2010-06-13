@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/04/21 15:06:16 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/13 10:57:35 landry Exp $
 
 COMMENT =	OpenStreetMap editor
 
-DISTNAME =	merkaartor-0.15.3
+DISTNAME =	merkaartor-0.16.0
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	geo x11
