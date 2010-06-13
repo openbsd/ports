@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/02/07 01:30:29 ratchov Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/13 15:46:13 jakemsr Exp $
 
 COMMENT=		portable cross-platform audio API
 DISTNAME=		portaudio-svn-1406
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 
-SHARED_LIBS=		portaudio	0.0
+SHARED_LIBS=		portaudio	1.0
 
 CATEGORIES=		audio
 HOMEPAGE=		http://www.portaudio.com/
@@ -20,13 +20,11 @@ WANTLIB=		m sndio
 
 MASTER_SITES=		http://jakemsr.trancell.org/distfiles/
 
-LIB_DEPENDS=		jack::audio/jack
-
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf no-autoheader
-CONFIGURE_ARGS=		--without-alsa --without-oss
+CONFIGURE_ARGS=		--without-alsa --without-oss --without-jack
 
 # builds non-automated, interactive tests in ${WRKBUILD}/bin
 REGRESS_TARGET=		tests
