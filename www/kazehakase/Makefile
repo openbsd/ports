@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2010/05/06 19:25:51 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2010/06/13 08:26:38 landry Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
 COMMENT-webkit=	kazehakase webkit backend
 CATEGORIES=	www
+
+BROKEN =	does not compile
 
 SHARED_LIBS=	kazehakase 1.0 #.1.0
 SHARED_ONLY=	Yes
