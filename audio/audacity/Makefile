@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2009/12/22 15:43:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2010/06/13 15:49:10 jakemsr Exp $
 
 COMMENT=	free audio editor
 
 V=		1.3.9
 DISTNAME=	audacity-minsrc-${V}
-PKGNAME=	audacity-${V}p0
+PKGNAME=	audacity-${V}p1
 CATEGORIES=	audio
 
 EXTRACT_SUFX=	.tar.bz2
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	c expat glib-2.0 gobject-2.0 gtk-x11-2.0 \
-		jack m ogg pthread sndfile sndio stdc++
+		m ogg pthread sndfile sndio stdc++
 
 BUILD_DEPENDS=	::archivers/zip
 LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_aui,wx_gtk2_html,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_gtk2_dbgrid,wx_gtk2_qa,wx_base,wx_gtk2_core,wx_gtk2_richtext:wxWidgets-gtk2->=2.8.6:x11/wxWidgets \
@@ -31,7 +31,7 @@ LIB_DEPENDS=	wx_base_xml,wx_base_odbc,wx_gtk2_aui,wx_gtk2_html,wx_gtk2_adv,wx_gt
 		vorbis.>=5,vorbisfile.>=4,vorbisenc.>=2::audio/libvorbis \
 		id3tag.>=2::audio/libid3tag \
 		mad.>=2::audio/libmad \
-		portaudio::audio/portaudio-svn \
+		portaudio.>=1:portaudio-svn->=1406p1:audio/portaudio-svn \
 		SoundTouch::audio/soundtouch \
 		vamp-hostsdk.>=1::audio/vamp-plugin-sdk \
 		tag::audio/taglib
