@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/05/07 13:16:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/06/13 21:02:20 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	plugins and utilities for seahorse
 
 GNOME_PROJECT=	seahorse-plugins
 GNOME_VERSION=	2.30.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 CATEGORIES=	security
 
@@ -30,8 +30,7 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
 WANTLIB += ssl util xcb xcb-render xcb-render-util xml2 z
 
-BUILD_DEPENDS=	:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel \
-		::x11/gnome/gedit
+BUILD_DEPENDS=	::x11/gnome/gedit
 
 LIB_DEPENDS=	cryptui::x11/gnome/seahorse \
 		gtksourceview-2.0.>=2::x11/gtksourceview \
