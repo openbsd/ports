@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/12/22 13:02:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/06/13 14:17:43 landry Exp $
 @pkgpath graphics/swfdec,plugin
-lib/mozilla-plugins/
-lib/mozilla-plugins/libswfdecmozilla.a
-lib/mozilla-plugins/libswfdecmozilla.la
-lib/mozilla-plugins/libswfdecmozilla.so
+lib/mozilla/
+lib/mozilla/plugins/
+@comment lib/mozilla/plugins/libswfdecmozilla.a
+@comment lib/mozilla/plugins/libswfdecmozilla.la
+lib/mozilla/plugins/libswfdecmozilla.so
 share/icons/hicolor/16x16/apps/swfdec-mozilla.png
 share/icons/hicolor/22x22/apps/swfdec-mozilla.png
 share/icons/hicolor/24x24/apps/swfdec-mozilla.png

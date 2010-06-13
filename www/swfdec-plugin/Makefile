@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/22 13:02:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2010/06/13 14:17:43 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		Flash plugin for Mozilla browsers
 
 V=			0.8.2
 DISTNAME=		swfdec-mozilla-$V
-PKGNAME=		swfdec-plugin-$Vp1
+PKGNAME=		swfdec-plugin-$Vp2
 CATEGORIES=		graphics www
 
 HOMEPAGE=		http://swfdec.freedesktop.org/
@@ -35,7 +35,7 @@ USE_X11=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-plugin-dir="${LOCALBASE}/lib/mozilla-plugins/"
+CONFIGURE_ARGS+=	--with-plugin-dir="${LOCALBASE}/lib/mozilla/plugins/"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
