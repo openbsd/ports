@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/26 15:33:11 jasper Exp $
-bin/mozplugger-controller
-bin/mozplugger-helper
-lib/mozilla-plugins/
-lib/mozilla-plugins/mozplugger.so
+@comment $OpenBSD: PLIST,v 1.2 2010/06/13 14:16:19 landry Exp $
+@bin bin/mozplugger-controller
+@bin bin/mozplugger-helper
+lib/mozilla/
+lib/mozilla/plugins/
+lib/mozilla/plugins/mozplugger.so
 @man man/man7/mozplugger.7
 share/examples/mozplugger/
 share/examples/mozplugger/mozpluggerrc

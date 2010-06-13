@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/10 06:34:56 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/13 14:16:19 landry Exp $
 
 SHARED_ONLY=		Yes
 COMMENT=		load programs inside browser to view movies, pdfs, etc
 DISTNAME=		mozplugger-1.8.1
-PKGNAME=		${DISTNAME}p2
+PKGNAME=		${DISTNAME}p3
 CATEGORIES=		www
 
 HOMEPAGE=		http://mozplugger.mozdev.org
@@ -34,8 +34,8 @@ CFLAGS+=	-DDEBUG
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mozplugger-helper ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/mozplugger-controller ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/mozilla-plugins
-	${INSTALL_DATA} ${WRKBUILD}/mozplugger.so ${PREFIX}/lib/mozilla-plugins
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/mozilla/plugins
+	${INSTALL_DATA} ${WRKBUILD}/mozplugger.so ${PREFIX}/lib/mozilla/plugins
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mozplugger
 	${INSTALL_DATA} ${WRKSRC}/mozpluggerrc \
 		${PREFIX}/share/examples/mozplugger
