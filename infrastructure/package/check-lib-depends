@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.22 2010/06/13 22:02:43 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.23 2010/06/14 11:36:40 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -34,7 +34,7 @@ package FileSource;
 
 # file system
 package FsFileSource;
-our @ISA=(qw(FileSource));
+our @ISA = qw(FileSource);
 sub new
 {
 	my ($class, $location) = @_;
@@ -57,7 +57,7 @@ sub clean
 
 # package archive
 package PkgFileSource;
-our @ISA=(qw(FileSource));
+our @ISA = qw(FileSource);
 sub new
 {
 	my ($class, $handle, $location) = @_;
@@ -131,7 +131,7 @@ sub record_rpath
 
 # SimpleRecorder: remember one single binary for each library
 package SimpleRecorder;
-our @ISA=(qw(Recorder));
+our @ISA = qw(Recorder);
 sub record
 {
 	my ($self, $lib, $filename) = @_;
@@ -146,7 +146,7 @@ sub binary
 
 # AllRecorder: remember all binaries for each library
 package AllRecorder;
-our @ISA=(qw(Recorder));
+our @ISA = qw(Recorder);
 sub record
 {
 	my ($self, $lib, $filename) = @_;
@@ -176,7 +176,7 @@ sub dump
 }
 
 package DumpRecorder;
-our @ISA=(qw(Recorder));
+our @ISA = qw(Recorder);
 sub record
 {
 	my ($self, $lib, $filename) = @_;
@@ -264,7 +264,7 @@ sub print
 	print $self->message, "\n";
 }
 package Issue::SystemLib;
-our @ISA=(qw(Issue));
+our @ISA = qw(Issue);
 
 sub message
 {
@@ -277,7 +277,7 @@ sub record_wantlib
 	&Issue::do_record_wantlib;
 }
 package Issue::DirectDependency;
-our @ISA=(qw(Issue));
+our @ISA = qw(Issue);
 sub message
 {
 	my $self = shift;
@@ -285,7 +285,7 @@ sub message
 }
 
 package Issue::IndirectDependency;
-our @ISA=(qw(Issue));
+our @ISA = qw(Issue);
 sub message
 {
 	my $self = shift;
@@ -298,7 +298,7 @@ sub record_wantlib
 }
 
 package Issue::NotReachable;
-our @ISA=(qw(Issue));
+our @ISA = qw(Issue);
 sub message
 {
 	my $self = shift;
@@ -312,7 +312,7 @@ sub not_reachable
 }
 
 package MyFile;
-our @ISA=(qw(OpenBSD::PackingElement::FileBase));
+our @ISA = qw(OpenBSD::PackingElement::FileBase);
 
 sub fullname
 {
@@ -629,7 +629,7 @@ sub print_list
 
 sub analyze 
 {
-	my ($self, $state, $plist, $source, @l) = @_;
+	my ($self, $state, $plist, $source) = @_;
 
 	my $pkgname = $plist->pkgname;
 	$state->context($pkgname);
@@ -640,7 +640,7 @@ sub analyze
 		$special->retrieve($state->{source});
 		$plist->find_libs($needed_libs, $special);
 	} else {
-		$plist->record_needed_libs($state, $needed_libs, $source, @l);
+		$plist->record_needed_libs($state, $needed_libs, $source);
 	}
 	$plist->register_libs($has_libs);
 
@@ -686,9 +686,11 @@ sub do_pkg
 	# twice read
 	return 0 unless -d $dir;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
-	if ($state->{builddir}) {
+	if ($state->{source}) {
+		$self->analyze($state, $plist);
+	} elsif ($state->{destdir} ne '/') {
 		$self->analyze($state, $plist, 
-		    FsFileSource->new($state->{builddir}));
+		    FsFileSource->new($state->{destdir}));
 	} else {
 		my $temp = OpenBSD::Temp->dir;
 		$self->analyze($state, $plist,
@@ -708,10 +710,10 @@ sub do_plist
 	my $plist = OpenBSD::PackingList->read(\*STDIN);
 	if (!defined $plist->{name}) {
 		$state->error("Error reading plist");
+		return;
 	} else {
-		my $pkgname = $plist->pkgname;
 		$self->analyze($state, $plist, 
-		    FsFileSource->new($state->{builddir}));
+		    FsFileSource->new($state->{destdir}));
 	}
 }
 
@@ -720,16 +722,18 @@ sub main
 	my $self = shift;
 	my $state = CheckLibDepends::State->new('check-lib-depends');
 	$self->handle_options('od:fB:F:s:O:', $state,
-		'[-o] [-d pkgrepo] [-F fs] [-s source] [-O dest]');
+		'[-o] [-d pkgrepo] [-B destdir] [-s source] [-O dest]');
 
-	my $fs = $state->opt('F');
-	$state->{builddir} = $state->opt('B');
+	$state->{destdir} = $state->opt('B') // $state->opt('F');
+	$state->{destdir} //= '/';
+	$state->{destdir}.= '/' unless $state->{destdir} =~ m|/$|;
 	$state->{dest} = $state->opt('O');
 	$state->{source} = $state->opt('s');
 	$state->{full} = $state->opt('f');
 	$state->{repository} = $state->opt('d');
 	$state->{old} = $state->opt('o');
-	if ($fs) {
+	my $fs = $state->{destdir};
+	if ($state->{dest}) {
 		my $recorder = DumpRecorder->new;
 		my $cwd = $fs;
 		my $source = FsFileSource->new($fs);
@@ -738,7 +742,7 @@ sub main
 			    return if -l $_;
 			    return unless -f _;
 			    my $name = $_;
-			    $name =~ s/^\Q$fs\E//;
+			    $name =~ s/^\Q$fs\E/\//;
 			    # XXX hack FileBase object;
 			    my $i = bless {name => $name}, "MyFile";
 			    $i->record_needed_libs($state, $recorder, $source);
@@ -755,7 +759,8 @@ sub main
 		}
 		exit(0);
 	}
-	if (@ARGV == 0 && $state->{builddir}) {
+
+	if (@ARGV == 0 && ($state->{destdir} ne '/' || $state->{source})) {
 		$self->do_plist($state);
 	} else {
 		my $i = 0;
