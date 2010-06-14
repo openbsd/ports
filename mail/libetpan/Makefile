@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/11 17:12:37 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/14 19:52:23 kili Exp $
 
 COMMENT=	mail purpose library
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	converters/libiconv
 
-WANTLIB=	crypto expat ssl z intl
+WANTLIB=	crypto expat intl m ssl stdc++ z
 
 LIB_DEPENDS+=	curl::net/curl \
 		idn::devel/libidn \
