@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2010/05/26 21:29:56 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.166 2010/06/14 15:06:49 edd Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64 arm mips64 mips64el
@@ -12,7 +12,7 @@ SUBST_VARS+= 		PREFIX CONFDIR
 
 N=			mplayer
 DISTNAME=		mplayer-export-snapshot-${V}
-PKGNAME=		${N}-${V}
+PKGNAME=		${N}-${V}p0
 CATEGORIES=		x11 multimedia
 EXTRACT_SUFX=		.tar.bz2
 
@@ -72,8 +72,11 @@ BUILD_DEPENDS=	::net/livemedia \
 		:libxslt-*:textproc/libxslt \
 		::textproc/docbook \
 		::textproc/docbook-xsl \
-		::devel/yasm \
 		::audio/ladspa
+
+.if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
+BUILD_DEPENDS+=	::devel/yasm
+.endif
 
 CONFDIR=	${SYSCONFDIR}/mplayer
 
@@ -107,7 +110,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--mandir=${LOCALBASE}/man \
 		--extra-cflags="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		--extra-ldflags="-L${LOCALBASE}/lib" \
-		--extra-libs-mplayer="-lrtunes -lcrypto" \
+		--extra-libs-mplayer="-lrtunes -lcrypto"
 
 CONFIGURE_ENV+=	TMPDIR="${WRKBUILD}"
 
