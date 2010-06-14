@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.23 2010/06/14 11:36:40 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.24 2010/06/14 12:29:39 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -525,7 +525,7 @@ sub handle_dependency
 	my $plist = $self->get_plist($state, $pkgname, $pkgpath);
 
 	if (!defined $plist || !defined $plist->pkgname) {
-		$state->errsay("Error: can't solve dependency for #1/#2",
+		$state->errsay("Error: can't solve dependency for #1(#2)",
 		    $pkgname, $pkgpath);
 		return;
 	}
@@ -632,7 +632,11 @@ sub analyze
 	my ($self, $state, $plist, $source) = @_;
 
 	my $pkgname = $plist->pkgname;
-	$state->context($pkgname);
+	if ($plist->fullpkgpath) {
+		$state->context($pkgname."(".$plist->fullpkgpath.")");
+	} else {
+		$state->context($pkgname);
+	}
 	my $needed_libs = $state->{full} ? AllRecorder->new : SimpleRecorder->new;
 	my $has_libs = {};
 	if ($state->{source}) {
