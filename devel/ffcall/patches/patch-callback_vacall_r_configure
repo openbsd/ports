@@ -1,0 +1,12 @@
+$OpenBSD: patch-callback_vacall_r_configure,v 1.1 2010/06/14 08:22:19 jasper Exp $
+--- callback/vacall_r/configure.orig	Mon Jun 14 10:11:14 2010
++++ callback/vacall_r/configure	Mon Jun 14 10:11:18 2010
+@@ -3026,7 +3026,7 @@ case "$host_cpu" in
+   arm* )
+     host_cpu=arm
+     ;;
+-  mips )
++  mips* )
+     echo "$as_me:$LINENO: checking for 64-bit MIPS" >&5
+ echo $ECHO_N "checking for 64-bit MIPS... $ECHO_C" >&6
+ if test "${cl_cv_host_mips64+set}" = set; then

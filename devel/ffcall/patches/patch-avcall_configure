@@ -1,0 +1,12 @@
+$OpenBSD: patch-avcall_configure,v 1.1 2010/06/14 08:22:19 jasper Exp $
+--- avcall/configure.orig	Mon Jun 14 09:58:37 2010
++++ avcall/configure	Mon Jun 14 09:58:43 2010
+@@ -3026,7 +3026,7 @@ case "$host_cpu" in
+   arm* )
+     host_cpu=arm
+     ;;
+-  mips )
++  mips* )
+     echo "$as_me:$LINENO: checking for 64-bit MIPS" >&5
+ echo $ECHO_N "checking for 64-bit MIPS... $ECHO_C" >&6
+ if test "${cl_cv_host_mips64+set}" = set; then
