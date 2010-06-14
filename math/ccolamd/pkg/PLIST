@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/11 17:14:01 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/06/14 07:32:30 jasper Exp $
 %%SHARED%%
 include/ccolamd/
 include/ccolamd/UFconfig.h
 include/ccolamd/ccolamd.h
 lib/libccolamd.a
 lib/libccolamd_p.a
-lib/libccolamd_pic.a
+%%no_mips64%%
