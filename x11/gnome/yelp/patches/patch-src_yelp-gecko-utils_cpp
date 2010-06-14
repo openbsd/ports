@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_yelp-gecko-utils_cpp,v 1.1 2010/06/14 08:08:55 landry Exp $
+From FreeBSD
+--- src/yelp-gecko-utils.cpp.orig	Fri Mar 19 15:11:01 2010
++++ src/yelp-gecko-utils.cpp	Sun Jun 13 20:03:01 2010
+@@ -28,7 +28,9 @@
+ #include <nsStringAPI.h>
+ 
+ #ifdef HAVE_GECKO_1_9
++#ifdef XPCOM_GLUE
+ #include <gtkmozembed_glue.cpp>
++#endif
+ #endif
+ 
+ #include <gtkmozembed.h>
