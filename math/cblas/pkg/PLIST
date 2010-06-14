@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/02 21:58:25 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/06/14 05:42:00 jasper Exp $
 %%SHARED%%
 include/cblas.h
 include/cblas_f77.h
 lib/libcblas.a
 lib/libcblas_p.a
-lib/libcblas_pic.a
+%%no_mips64%%
