@@ -1,0 +1,45 @@
+$OpenBSD: patch-plugins_xmms_src_mp4_utils_c,v 1.1 2010/06/14 17:44:46 sebastia Exp $
+reorder variables, fixing build with gcc-2.95
+--- plugins/xmms/src/mp4_utils.c.orig	Sun Oct 17 22:44:51 2004
++++ plugins/xmms/src/mp4_utils.c	Mon Jun 14 18:31:29 2010
+@@ -103,6 +103,10 @@ void create_mp4_info_dialog (char *filename, FILE *mp4
+   static GtkWidget *genre_entry, *year_entry, *track_entry, *comment_entry;
+   static GtkWidget *mp4_info_label;
+ 
++  double track_duration;
++  int min, sec, filesize;
++  unsigned long bitrate, samplerate, channels, audio_type, time_scale, length;
++
+   if (!mp4_info_dialog)
+   {
+     GtkWidget *dialog_vbox1, *vbox1, *hbox2, *hbox3, *hbox4;
+@@ -377,19 +381,19 @@ void create_mp4_info_dialog (char *filename, FILE *mp4
+   }
+ 
+   // Get the length of the track.
+-  double track_duration = mp4ff_get_track_duration(infile, mp4track);
+-  unsigned long time_scale = mp4ff_time_scale(infile, mp4track);
+-  unsigned long length = (track_duration / time_scale);
+-  int min = length / 60;
+-  int sec = length % 60;
++  track_duration = mp4ff_get_track_duration(infile, mp4track);
++  time_scale = mp4ff_time_scale(infile, mp4track);
++  length = (track_duration / time_scale);
++  min = length / 60;
++  sec = length % 60;
+ 
+   // Get other info about the track.
+-  unsigned long bitrate = mp4ff_get_avg_bitrate(infile, mp4track) / 1000;
+-  unsigned long samplerate = mp4ff_get_sample_rate(infile, mp4track);
+-  unsigned long channels = mp4ff_get_channel_count(infile, mp4track);
+-  unsigned long audio_type = mp4ff_get_audio_type(infile, mp4track);
++  bitrate = mp4ff_get_avg_bitrate(infile, mp4track) / 1000;
++  samplerate = mp4ff_get_sample_rate(infile, mp4track);
++  channels = mp4ff_get_channel_count(infile, mp4track);
++  audio_type = mp4ff_get_audio_type(infile, mp4track);
+   fseek(mp4file, 0, SEEK_END);
+-  int filesize = ftell(mp4file) / 1024;
++  filesize = ftell(mp4file) / 1024;
+ 
+   value = g_strdup_printf("Length: %d:%d\nAvg. Bitrate: %ld kbps\nSample Rate: %ld Hz\nChannels: %ld\nAudio Type: %ld\nFile Size: %d KB", min, sec, bitrate, samplerate, channels, audio_type, filesize);
+   gtk_label_set_text (GTK_LABEL(mp4_info_label), value);

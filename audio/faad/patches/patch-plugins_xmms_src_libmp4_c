@@ -1,7 +1,29 @@
-$OpenBSD: patch-plugins_xmms_src_libmp4_c,v 1.2 2008/09/15 21:58:19 jakemsr Exp $
---- plugins/xmms/src/libmp4.c.orig	Tue Jun  5 12:00:18 2007
-+++ plugins/xmms/src/libmp4.c	Wed Jul 16 00:12:57 2008
-@@ -290,7 +290,7 @@ static void *mp4Decode(void *args)
+$OpenBSD: patch-plugins_xmms_src_libmp4_c,v 1.3 2010/06/14 17:44:46 sebastia Exp $
+Some reordering of variable initialization fixes build with gcc-2.95
+--- plugins/xmms/src/libmp4.c.orig	Tue Jun  5 21:00:18 2007
++++ plugins/xmms/src/libmp4.c	Mon Jun 14 18:30:32 2010
+@@ -207,15 +207,17 @@ static void	mp4_getSongTitle(char *filename, char **ti
+       mp4ff_callback_t*	mp4cb;
+       mp4ff_t*		infile;
+       gint		mp4track;
++      double 		track_duration;
++      unsigned long 	time_scale, length;
+ 
+       mp4cb = getMP4FF_cb(mp4file);
+       if ((infile = mp4ff_open_read_metaonly(mp4cb)) &&
+           ((mp4track = getAACTrack(infile)) >= 0)){
+         (*title) = getMP4title(infile, filename);
+ 
+-        double track_duration = mp4ff_get_track_duration(infile, mp4track);
+-        unsigned long time_scale = mp4ff_time_scale(infile, mp4track);
+-        unsigned long length = (track_duration * 1000 / time_scale);
++        track_duration = mp4ff_get_track_duration(infile, mp4track);
++        time_scale = mp4ff_time_scale(infile, mp4track);
++        length = (track_duration * 1000 / time_scale);
+         (*len) = length;
+       }
+       if(infile) mp4ff_close(infile);
+@@ -290,7 +292,7 @@ static void *mp4Decode(void *args)
        NeAACDecHandle	decoder;
        unsigned char	*buffer	= NULL;
        guint		bufferSize = 0;
@@ -10,7 +32,7 @@ $OpenBSD: patch-plugins_xmms_src_libmp4_c,v 1.2 2008/09/15 21:58:19 jakemsr Exp 
        guchar		channels;
        //guint		avgBitrate;
        //MP4Duration	duration;
-@@ -339,7 +339,7 @@ static void *mp4Decode(void *args)
+@@ -339,7 +341,7 @@ static void *mp4Decode(void *args)
        mp4_ip.output->open_audio(FMT_S16_NE, samplerate, channels);
        mp4_ip.output->flush(0);
        mp4_ip.set_info(xmmstitle, msDuration, -1, samplerate/1000, channels);
@@ -19,7 +41,7 @@ $OpenBSD: patch-plugins_xmms_src_libmp4_c,v 1.2 2008/09/15 21:58:19 jakemsr Exp 
  
        while(bPlaying){
  	void*			sampleBuffer;
-@@ -414,8 +414,8 @@ end:
+@@ -414,8 +416,8 @@ end:
      FILE		*file = NULL;
      NeAACDecHandle	decoder = 0;
      guchar		*buffer = 0;
