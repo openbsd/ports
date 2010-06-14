@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.6 2010/06/07 20:33:20 edd Exp $
+# $OpenBSD: cmake.port.mk,v 1.7 2010/06/14 12:34:29 espie Exp $
 
 BUILD_DEPENDS+=	:cmake->=2.8.0:devel/cmake
 
@@ -31,13 +31,8 @@ MODCMAKE_configure=	cd ${WRKBUILD} && ${_SYSTRACE_CMD} ${SETENV} \
 
 REGRESS_TARGET?=	test
 
-.if defined(BATCH)
 MODCMAKE_WANTCOLOR ?= No
-MODCMAKE_VERBOSE ?= No
-.else
-MODCMAKE_WANTCOLOR ?= Yes
 MODCMAKE_VERBOSE ?= Yes
-.endif
 
 .if ${MODCMAKE_WANTCOLOR:L} == "yes" && defined(TERM)
 MAKE_ENV += TERM=${TERM}
