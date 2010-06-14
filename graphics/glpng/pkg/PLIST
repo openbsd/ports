@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/20 09:35:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/06/14 05:37:55 jasper Exp $
 %%SHARED%%
 include/GL/
 include/GL/glpng.h
 lib/libglpng.a
 lib/libglpng_p.a
-lib/libglpng_pic.a
+%%no_mips64%%
 share/doc/glpng/
 share/doc/glpng/glpng.html
