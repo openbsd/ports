@@ -1,0 +1,11 @@
+@comment $OpenBSD: PFRAG.shared-plugins,v 1.1 2010/06/14 12:36:34 sebastia Exp $
+lib/olsrd-plugins/olsrd_dot_draw.so
+lib/olsrd-plugins/olsrd_dyn_gw.so
+lib/olsrd-plugins/olsrd_dyn_gw_plain.so
+lib/olsrd-plugins/olsrd_httpinfo.so
+lib/olsrd-plugins/olsrd_mini.so
+lib/olsrd-plugins/olsrd_nameservice.so
+lib/olsrd-plugins/olsrd_pgraph.so
+lib/olsrd-plugins/olsrd_secure.so
+lib/olsrd-plugins/olsrd_txtinfo.so
+lib/olsrd-plugins/olsrd_watchdog.so

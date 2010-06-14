@@ -1,0 +1,24 @@
+$OpenBSD: patch-make_Makefile_obsd,v 1.1 2010/06/14 12:36:34 sebastia Exp $
+--- make/Makefile.obsd.orig	Wed Mar 31 19:03:53 2010
++++ make/Makefile.obsd	Sun Jun 13 13:42:51 2010
+@@ -3,7 +3,7 @@
+ #
+ 
+ DESTDIR ?=
+-LIBDIR =	$(DESTDIR)/usr/lib
++LIBDIR =	$(DESTDIR)/usr/lib/olsrd-plugins
+ 
+ SRCS +=		$(wildcard src/bsd/*.c src/unix/*.c)
+ HDRS +=		$(wildcard src/bsd/*.h src/unix/*.h)
+@@ -11,9 +11,8 @@ HDRS +=		$(wildcard src/bsd/*.h src/unix/*.h)
+ CPPFLAGS +=	-D__OpenBSD__
+ LIBS +=		
+ 
+-PLUGIN_FULLNAME ?= $(PLUGIN_NAME).so.$(PLUGIN_VER)
+-INSTALL_LIB =	install -m 755 $(PLUGIN_FULLNAME) $(LIBDIR)/$(PLUGIN_FULLNAME); \
+-		/sbin/ldconfig
++PLUGIN_FULLNAME ?= $(PLUGIN_NAME).so
++INSTALL_LIB =	install -m 755 $(PLUGIN_FULLNAME) $(LIBDIR)/$(PLUGIN_FULLNAME); 
+ 
+ ifdef OLSRD_PLUGIN
+ CFLAGS +=	-fPIC

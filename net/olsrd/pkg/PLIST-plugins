@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-plugins,v 1.1 2010/06/14 12:36:34 sebastia Exp $
+%%SHARED%%
+bin/olsr-topology-view.pl
+lib/olsrd-plugins/

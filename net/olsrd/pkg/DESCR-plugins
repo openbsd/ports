@@ -1,0 +1,11 @@
+Plugins for the olsrd routing daemon:
+txtinfo: provides text status informations about the olsrd
+dyn_gw and dyn_gw_plain: automatically detects whether a uplink
+			is available and announces it in the net
+httpinfo: provides status information about the running olsrd 
+			in html format
+mini: minimal example plugin
+nameservice: this plugin distributes DNS via the network
+pgraph: allows any host to connect to the network
+secure: allows to use a shared secret in the network
+watchdog: a watchdog for the olsrd via extenal tools
