@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1000 2010/06/14 11:49:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1001 2010/06/14 12:01:19 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -172,16 +172,29 @@ CLEANDEPENDS_${PKGPATH} ?= ${CLEANDEPENDS}
 PKG_DBDIR ?= /var/db/pkg
 
 FTP_KEEPALIVE ?= 0
-FETCH_CMD ?= /usr/bin/ftp -V -m -k ${FTP_KEEPALIVE}
+
+PROGRESS_METER ?= Yes
+.if ${PROGRESS_METER:L} == "yes"
+_PROGRESS = -m
+.else
+_PROGRESS =
+.endif
+ 
+FETCH_CMD ?= /usr/bin/ftp -V ${_PROGRESS} -k ${FTP_KEEPALIVE}
 
 PKG_TMPDIR ?= /var/tmp
 
 PKGDB_LOCK ?=
-_PKG_QUERY = pkg_info ${PKGDB_LOCK} -e
 PKG_CMD ?= /usr/sbin/pkg_create
 PKG_DELETE ?= /usr/sbin/pkg_delete
-PKG_CMD += ${PKGDB_LOCK}
-PKG_DELETE += ${PKGDB_LOCK}
+
+_PKG_ADD = /usr/sbin/pkg_add ${_PROGRESS}
+_PKG_CREATE = ${PKG_CMD} ${_PROGRESS}
+_PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
+_PKG_QUERY = /usr/sbin/pkg_info ${PKGDB_LOCK} -q -e
+_PKG_ADD += ${PKG_DBLOCK}
+_PKG_CREATE += ${PKGDB_LOCK}
+_PKG_DELETE += ${PKGDB_LOCK}
 
 # remount those mount points ro before fake.
 # XXX tends to panic the OS
@@ -910,9 +923,6 @@ ERRORS += "Fatal: DEINSTALL script support is obsolete"
 .    if exists(${PKGDIR}/REQ${_S})
 ERRORS += "Fatal: REQ script support is obsolete"
 .    endif
-.    if exists(${PKGDIR}/MODULE${_S}.pm)
-PKG_ARGS${_S} += -m ${PKGDIR}/MODULE${_S}.pm
-.    endif
 .  endfor
 .endif
 
@@ -1505,7 +1515,7 @@ _grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 ${_CACHE_REPO}/${_PKGFILE${_S}}:
 	@mkdir -p ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
-	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} pkg_add -n -q ${_PKG_ADD_FORCE} -D installed -D downgrade ${_PKGFILE${_S}} >/dev/null 2>&1; then \
+	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -D installed -D downgrade ${_PKGFILE${_S}} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
@@ -1536,7 +1546,7 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
       deps=`SUBPACKAGE=${_S} ${MAKE} _print-package-args` && \
-	  if ${SUDO} ${PKG_CMD} $$deps ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; then \
+	  if ${SUDO} ${_PKG_CREATE} $$deps ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; then \
 	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE${_S}}; \
 		if ${_check_lib_depends} ${_PACKAGE_COOKIE${_S}} && \
 			${_register_plist} ${_PACKAGE_COOKIE${_S}}; then \
@@ -1578,10 +1588,10 @@ ${_INSTALL_COOKIE${_S}}:
 	@if ${_PKG_QUERY} ${FULLPKGNAME${_S}}; then \
 		echo "Package ${FULLPKGNAME${_S}} is already installed"; \
 	else \
-		${SUDO} ${SETENV} ${_TERM_ENV} PKG_PATH=${_PKG_REPO} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE${_S}}; \
+		${SUDO} ${SETENV} ${_TERM_ENV} PKG_PATH=${_PKG_REPO} ${_PKG_ADD} ${_PKG_ADD_AUTO} ${PKGFILE${_S}}; \
 	fi
 .  else
-	@${SUDO} ${SETENV} ${_TERM_ENV} PKG_PATH=${_PKG_REPO} pkg_add ${_PKG_ADD_AUTO} ${PKGFILE${_S}}
+	@${SUDO} ${SETENV} ${_TERM_ENV} PKG_PATH=${_PKG_REPO} ${_PKG_ADD} ${_PKG_ADD_AUTO} ${PKGFILE${_S}}
 .  endif
 	@-${SUDO} ${_MAKE_COOKIE} $@
 
@@ -1601,7 +1611,7 @@ ${_UPDATE_COOKIE${_S}}:
 		     ${MAKE} _internal-run-depends _internal-runlib-depends \
 			   _internal-runwantlib-depends; \
 		   ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
+		   ${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} ${_PKG_ADD} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
 	esac
 	@${_MAKE_COOKIE} $@
 
@@ -1616,7 +1626,7 @@ ${_FUPDATE_COOKIE${_S}}:
 	@mkdir -p ${UPDATE_COOKIES_DIR}
 .  endif
 	@${ECHO_MSG} "===> Updating/installing for ${FULLPKGNAME${_S}}"
-	@${SUDO} ${SETENV} ${_TERM_ENV} PKG_PATH=${_PKG_REPO} pkg_add ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}}
+	@${SUDO} ${SETENV} ${_TERM_ENV} PKG_PATH=${_PKG_REPO} ${_PKG_ADD} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}}
 	@${_MAKE_COOKIE} $@
 .endfor
 
@@ -1738,7 +1748,7 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 			what=$$pkg; \
 			if $$checkinstall; then \
 				$$early_exit || ${_force_update_fragment}; \
-				if ${_PKG_QUERY} "$$pkg" -q; then \
+				if ${_PKG_QUERY} "$$pkg"; then \
 					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what - found"; \
 					break; \
 				else \
@@ -2392,13 +2402,13 @@ _plist_footer=:
 .endif
 
 print-plist:
-	@${_plist_header}; ${PKG_CMD} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; ${_plist_footer}
+	@${_plist_header}; ${_PKG_CREATE} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; ${_plist_footer}
 
 print-plist-with-depends:
 	@${_plist_header}; \
 	if a=`SUBPACKAGE=${SUBPACKAGE} ${MAKE} _print-package-args`; \
 	then \
-		${PKG_CMD} -n -q $$a ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
+		${_PKG_CREATE} -n -q $$a ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
 	else \
 		exit 1; \
 	fi ; \
@@ -2407,7 +2417,7 @@ print-plist-with-depends:
 print-plist-all:
 .for _S in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
-	@${_plist_header}; ${PKG_CMD} -n -q ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}};${_plist_footer}
+	@${_plist_header}; ${_PKG_CREATE} -n -q ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}};${_plist_footer}
 .endfor
 
 print-plist-all-with-depends:
@@ -2416,7 +2426,7 @@ print-plist-all-with-depends:
 	@${_plist_header}; \
 	if a=`SUBPACKAGE=${_S} ${MAKE} _print-package-args`; \
 	then \
-		${PKG_CMD} -n -q $$a ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; \
+		${_PKG_CREATE} -n -q $$a ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; \
 	else \
 		exit 1; \
 	fi; \
@@ -2424,7 +2434,7 @@ print-plist-all-with-depends:
 .endfor
 
 print-plist-contents:
-	@${_plist_header}; ${PKG_CMD} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}};${_plist_footer}
+	@${_plist_header}; ${_PKG_CREATE} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}};${_plist_footer}
 
 _internal-package-only: ${_PACKAGE_COOKIES}
 
@@ -2520,9 +2530,9 @@ _internal-clean:
 .endif
 .if ${_clean:L:Minstall}
 .  if ${_clean:L:Msub}
-	-${SUDO} ${PKG_DELETE} ${PKGNAMES}
+	-${SUDO} ${_PKG_DELETE} ${PKGNAMES}
 .  else
-	-${SUDO} ${PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
+	-${SUDO} ${_PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
 .  endif
 .endif
 .if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
@@ -2836,7 +2846,7 @@ _print-package-args:
 		if default=`eval $$toset ${MAKE} _print-packagename`; then \
 			case "X$$pkg" in X) pkg=`echo "$$default" |${_version2default}`;; \
 			esac; \
-			if ${_PKG_QUERY} "$$pkg" -q; then \
+			if ${_PKG_QUERY} "$$pkg"; then \
 				listlibs='echo ${DEPDIR}$$shdir/lib*'; \
 				case "$$dir" in ${PKGPATH}) \
 					listlibs="$$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; $$listlibs";; \
@@ -3086,7 +3096,7 @@ rebuild:
 
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME${SUBPACKAGE}}"
-	@${SUDO} ${PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
+	@${SUDO} ${_PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
 
 .if defined(ERRORS)
 .BEGIN:
