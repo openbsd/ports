@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/10/15 08:30:01 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/14 05:49:26 jasper Exp $
 
 COMMENT=		Python bindings to TagLib audio file tag library
 
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://pypi.python.org/packages/source/t/tagpy/
+
+VMEM_WARNING=		Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
