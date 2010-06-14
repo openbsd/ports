@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no_mips64,v 1.1 2010/06/14 07:15:10 jasper Exp $
+lib/libcolamd_pic.a

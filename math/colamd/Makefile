@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/05/11 17:11:32 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/14 07:15:10 jasper Exp $
 
 COMMENT =	library for column approximate minimum degree ordering
 
 DISTNAME =	COLAMD-2.7.2
-PKGNAME = ${DISTNAME:L}
+PKGNAME = ${DISTNAME:L}p0
 SHARED_LIBS +=  colamd	0.0
 CATEGORIES =	math
 
@@ -31,6 +31,13 @@ CFLAGS +=	-I${WRKDIST}/Include -I${WRKDIR}/UFconfig
 FAKE_FLAGS =	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 
 MAKE_FILE=	${FILESDIR}/Makefile
+
+# See bsd.lib.mk:162
+.if ${MACHINE_ARCH:Mmips64*}
+PKG_ARGS+=	-Dno_mips64=0
+.else
+PKG_ARGS+=	-Dno_mips64=1
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/colamd
