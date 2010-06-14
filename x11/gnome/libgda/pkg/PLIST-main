@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2010/03/21 09:54:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2010/06/14 05:45:32 ajacoutot Exp $
 @conflict libgda-db4-*
 bin/gda-list-config
 @bin bin/gda-list-config-${GDA_MAJOR}
@@ -113,7 +113,6 @@ include/libgda-${GDA_MAJOR}/libgda/virtual/gda-virtual-provider.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-data-model.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-hub.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/libgda-virtual.h
-lib/girepository-1.0/
 lib/libgda-${GDA_MAJOR}/
 lib/libgda-${GDA_MAJOR}.la
 @lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-4.0_VERSION}
@@ -139,7 +138,6 @@ share/examples/libgda/config
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/config
 share/examples/libgda/sales_test.db
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/sales_test.db
-share/gir-1.0/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/DataModels.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaBatch.html
@@ -179,6 +177,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaServerProvider.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaSet.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaSqlParser.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaStatement.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaStatement.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaTransactionStatus.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaVconnectionDataModel.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaVconnectionHub.html
@@ -229,6 +228,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/ch40s04.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch40s05.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch40s06.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch40s07.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch40s08.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/compiling.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/connection.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/connections.html
@@ -287,26 +287,26 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/installation.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/introduction.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ix01.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/left.png
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Attributes-manager.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Configuration.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Convenience-functions.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Default-Data-handlers.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Gda-Value.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaDataComparator.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaMutex.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaServerOperation-individual-nodes.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaServerOperation-sequences.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaSqlStatement.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaXaTransaction.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Libgda-Initialization.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Logging.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Misc-API.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Quark-lists.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-SQL-rendering-API.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Subclassing-GdaDataSelect.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Utility-functions.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}.devhelp
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}.devhelp2
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-Attributes-manager.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-Configuration.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-Convenience-functions.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-Default-Data-handlers.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-Gda-Value.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-GdaDataComparator.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-GdaMutex.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-GdaServerOperation-individual-nodes.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-GdaServerOperation-sequences.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-GdaSqlStatement.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-GdaXaTransaction.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-Libgda-Initialization.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-Logging.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-Misc-API.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-Quark-lists.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-SQL-rendering-API.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-Subclassing-GdaDataSelect.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-40-Utility-functions.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-list-server-op.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-packaging.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-provider-blobop.html
