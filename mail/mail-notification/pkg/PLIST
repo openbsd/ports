@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/12/21 22:20:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/06/15 19:35:38 jasper Exp $
 @bin bin/mail-notification
 share/applications/mail-notification-properties.desktop
 share/examples/mail-notification/
@@ -15,23 +15,11 @@ share/gnome/help/mail-notification/C/figures/
 share/gnome/help/mail-notification/C/figures/mail.png
 share/gnome/help/mail-notification/C/mail-notification.xml
 share/gnome/help/mail-notification/C/software-license.xml
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/mail-notification.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/mail-notification.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/mail-notification.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/mail-notification.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/mail-notification.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/mail-notification.svg
 share/locale/bg/LC_MESSAGES/mail-notification.mo
 share/locale/ca/LC_MESSAGES/mail-notification.mo
@@ -46,6 +34,8 @@ share/locale/pt/LC_MESSAGES/mail-notification.mo
 share/locale/pt_BR/LC_MESSAGES/mail-notification.mo
 share/locale/ru/LC_MESSAGES/mail-notification.mo
 share/locale/sr/LC_MESSAGES/mail-notification.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/mail-notification.mo
 share/locale/sv/LC_MESSAGES/mail-notification.mo
 share/mail-notification/

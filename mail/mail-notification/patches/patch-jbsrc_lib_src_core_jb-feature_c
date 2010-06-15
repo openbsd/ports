@@ -1,0 +1,51 @@
+$OpenBSD: patch-jbsrc_lib_src_core_jb-feature_c,v 1.1 2010/06/15 19:35:38 jasper Exp $
+
+- fix build with gcc4.
+
+--- jbsrc/lib/src/core/jb-feature.c.orig	Tue Jun 15 21:20:22 2010
++++ jbsrc/lib/src/core/jb-feature.c	Tue Jun 15 21:20:24 2010
+@@ -131,7 +131,7 @@ intltool_configure (void)
+       gboolean result;
+ 
+       jb_message_checking("for XML::Parser");
+-      result = jb_exec_expand(NULL, NULL, "$perl -e 'require XML::Parser'", NULL);
++      result = jb_exec_expand(NULL, NULL, "$perl -e 'require XML::Parser'", (void *)NULL);
+       jb_message_result_bool(result);
+ 
+       if (! result)
+@@ -172,7 +172,7 @@ gconf_configure (void)
+     {
+       char *config_source;
+ 
+-      if (! jb_exec_expand(&config_source, NULL, "$gconftool-2 --get-default-source", NULL))
++      if (! jb_exec_expand(&config_source, NULL, "$gconftool-2 --get-default-source", (void *)NULL))
+ 	jb_error("unable to detect the GConf configuration source address");
+ 
+       jb_variable_set_string("gconf-config-source", config_source);
+@@ -186,7 +186,7 @@ gconf_configure (void)
+       static const char *ubuntu_dir = "$datadir/gconf/schemas";
+       char *expanded;
+ 
+-      expanded = jb_variable_expand(ubuntu_dir, NULL);
++      expanded = jb_variable_expand(ubuntu_dir, (void *)NULL);
+ 
+       if (g_file_test(expanded, G_FILE_TEST_IS_DIR))
+ 	jb_variable_set_string("gconf-schemas-dir", ubuntu_dir);
+@@ -238,7 +238,7 @@ gnome_help_check_dir (const char *name,
+ 
+   if (jb_exec_expand(&result, NULL, "$scrollkeeper-config $arg",
+ 		     "arg", scrollkeeper_config_arg,
+-		     NULL))
++		     (void *)NULL))
+     {
+       jb_message_result_string(result);
+       jb_variable_set_string(name, result);
+@@ -358,7 +358,7 @@ gob2_configure (void)
+ 
+       jb_message_checking("for gob2 >= %s", minversion_string);
+ 
+-      if (jb_exec_expand(NULL, &output, "$gob2 --version", NULL))
++      if (jb_exec_expand(NULL, &output, "$gob2 --version", (void *)NULL))
+ 	{
+ 	  char *version_string;
+ 	  Version version;

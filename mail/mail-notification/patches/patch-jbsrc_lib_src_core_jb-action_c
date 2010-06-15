@@ -1,0 +1,123 @@
+$OpenBSD: patch-jbsrc_lib_src_core_jb-action_c,v 1.1 2010/06/15 19:35:38 jasper Exp $
+
+- fix build with gcc4.
+
+--- jbsrc/lib/src/core/jb-action.c.orig	Tue Jun 15 21:17:17 2010
++++ jbsrc/lib/src/core/jb-action.c	Tue Jun 15 21:18:50 2010
+@@ -176,7 +176,7 @@ print_configure_report (void)
+   GSList *l;
+ 
+   jb_message("");
+-  jb_message_expand("$human-package $version was configured successfully.", NULL);
++  jb_message_expand("$human-package $version was configured successfully.", (void *)NULL);
+   jb_message("The following variables are in effect:");
+ 
+   varname_len = get_longest_displayable_variable_name_len();
+@@ -185,7 +185,7 @@ print_configure_report (void)
+     report_variable_group(l->data, varname_len);
+ 
+   jb_message("");
+-  jb_message_expand("Type \"./jb build\" to build $human-package $version.", NULL);
++  jb_message_expand("Type \"./jb build\" to build $human-package $version.", (void *)NULL);
+ }
+ 
+ static void
+@@ -269,7 +269,7 @@ ensure_configure (void)
+     jb_config_load();
+   else
+     {
+-      jb_message_expand("configuring $human-package $version with default values since \"./jb configure\" was not run...", NULL);
++      jb_message_expand("configuring $human-package $version with default values since \"./jb configure\" was not run...", (void *)NULL);
+       configure_real();
+     }
+ }
+@@ -296,8 +296,8 @@ jb_action_build (GSList *group_names)
+   build_real(groups);
+ 
+   jb_message("");
+-  jb_message_expand("$human-package $version was built successfully.", NULL);
+-  jb_message_expand("Type \"sudo ./jb install\" to install $human-package $version.", NULL);
++  jb_message_expand("$human-package $version was built successfully.", (void *)NULL);
++  jb_message_expand("Type \"sudo ./jb install\" to install $human-package $version.", (void *)NULL);
+ 
+   g_slist_free(groups);
+ }
+@@ -324,7 +324,7 @@ jb_action_install (GSList *group_names)
+   install_real(groups);
+ 
+   jb_message("");
+-  jb_message_expand("$human-package $version was installed successfully.", NULL);
++  jb_message_expand("$human-package $version was installed successfully.", (void *)NULL);
+ 
+   g_slist_free(groups);
+ }
+@@ -380,13 +380,13 @@ jb_action_makedist (void)
+   build_real(groups);
+   makedist_real(groups);
+ 
+-  tarball = jb_variable_expand("${package}-$version.tar.bz2", NULL);
++  tarball = jb_variable_expand("${package}-$version.tar.bz2", (void *)NULL);
+ 
+   jb_message("creating build/%s", tarball);
+ 
+   jb_action_exec("cd build && tar -chof - ${package}-$version | bzip2 -9 -c >$tarball",
+ 		 "tarball", tarball,
+-		 NULL);
++		 (void *)NULL);
+ 
+   jb_rmtree(jb_action_get_distdir());
+ 
+@@ -418,7 +418,7 @@ jb_action_clean (GSList *group_names)
+   clean_real(groups);
+ 
+   jb_message("");
+-  jb_message_expand("$human-package $version was cleaned successfully.", NULL);
++  jb_message_expand("$human-package $version was cleaned successfully.", (void *)NULL);
+ 
+   g_slist_free(groups);
+ }
+@@ -447,7 +447,7 @@ jb_action_distclean (GSList *group_names)
+   distclean_real(groups);
+ 
+   jb_message("");
+-  jb_message_expand("$human-package $version was dist-cleaned successfully.", NULL);
++  jb_message_expand("$human-package $version was dist-cleaned successfully.", (void *)NULL);
+ 
+   g_slist_free(groups);
+ }
+@@ -477,7 +477,7 @@ jb_action_maintainerclean (GSList *group_names)
+   maintainerclean_real(groups);
+ 
+   jb_message("");
+-  jb_message_expand("$human-package $version was maintainer-cleaned successfully.", NULL);
++  jb_message_expand("$human-package $version was maintainer-cleaned successfully.", (void *)NULL);
+ 
+   g_slist_free(groups);
+ }
+@@ -690,7 +690,7 @@ jb_action_install_to_file (const char *srcfile,
+ 
+   real_dstfile = jb_variable_expand("$destdir$dstfile",
+ 				    "dstfile", dstfile,
+-				    NULL);
++				    (void *)NULL);
+ 
+   jb_message("installing %s", real_dstfile);
+ 
+@@ -900,7 +900,7 @@ jb_action_add_to_dist (const char *file)
+   jb_action_exec("cp -p $file $distdir",
+ 		 "file", file,
+ 		 "distdir", distdir,
+-		 NULL);
++		 (void *)NULL);
+ 
+   g_free(distdir);
+ }
+@@ -945,7 +945,7 @@ jb_action_get_distdir (void)
+   static char *distdir = NULL;
+ 
+   if (distdir == NULL)
+-    distdir = jb_variable_expand("build/${package}-$version", NULL);
++    distdir = jb_variable_expand("build/${package}-$version", (void *)NULL);
+ 
+   return distdir;
+ }

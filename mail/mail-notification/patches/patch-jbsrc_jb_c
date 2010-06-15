@@ -1,6 +1,55 @@
-$OpenBSD: patch-jbsrc_jb_c,v 1.1 2008/12/02 09:11:15 ajacoutot Exp $
---- jbsrc/jb.c.orig	Sun Nov 30 21:49:07 2008
-+++ jbsrc/jb.c	Sun Nov 30 21:49:30 2008
+$OpenBSD: patch-jbsrc_jb_c,v 1.2 2010/06/15 19:35:38 jasper Exp $
+
+- fix build with gcc4
+- fix gtk-update-icon-cache line
+
+--- jbsrc/jb.c.orig	Thu May 22 17:47:04 2008
++++ jbsrc/jb.c	Tue Jun 15 21:14:15 2010
+@@ -176,7 +176,7 @@ jb_package_configure (void)
+ 				"pop3",
+ 				"sylpheed",
+ 				"yahoo",
+-				NULL);
++				(void *)NULL);
+ 
+   jb_check_packages_for_options("GNOME Keyring", "gnome-keyring", "gnome-keyring-1",
+ 				"pop3",
+@@ -184,7 +184,7 @@ jb_package_configure (void)
+ 				"gmail",
+ 				"yahoo",
+ 				"hotmail",
+-				NULL);
++				(void *)NULL);
+ 
+   if (jb_variable_get_bool("pop3") || jb_variable_get_bool("imap"))
+     {
+@@ -276,7 +276,7 @@ add_vfs_test (JBGroup *group, const char *name, int bl
+   jb_object_add_sources(object,
+ 			"../src/mn-vfs.c",
+ 			"test-vfs-read-line.c",
+-			NULL);
++			(void *)NULL);
+ 
+   cppflags = g_strdup_printf("-Isrc -DREAD_LINE_BLOCK_SIZE=%i -DMN_REGRESSION_TEST", block_size);
+   jb_compile_options_add_cppflags(object->compile_options, cppflags);
+@@ -315,7 +315,7 @@ add_vfs_test (JBGroup *group, const char *name, int bl
+ 
+       jb_group_add_resource(group, JB_GROUP_RESOURCE(rule));
+ 
+-      jb_group_add_dist_files(group, infile, expected, NULL);
++      jb_group_add_dist_files(group, infile, expected, (void *)NULL);
+ 
+       g_free(outfile);
+       g_free(infile);
+@@ -351,7 +351,7 @@ jb_package_add_resources (void)
+ 			  "32x32/apps/mail-notification.png", "$datadir/icons/hicolor/32x32/apps",
+ 			  "48x48/apps/mail-notification.png", "$datadir/icons/hicolor/48x48/apps",
+ 			  "scalable/apps/mail-notification.svg", "$datadir/icons/hicolor/scalable/apps",
+-			  NULL);
++			  (void *)NULL);
+ 
+   jb_group_add_data_file(group, "logo.png", "$pkgdatadir");
+ 
 @@ -365,8 +365,6 @@ jb_package_add_resources (void)
      jb_group_add_data_file(group, "hotmail.png", "$pkgdatadir");
  
@@ -10,3 +59,155 @@ $OpenBSD: patch-jbsrc_jb_c,v 1.1 2008/12/02 09:11:15 ajacoutot Exp $
    jb_group_add_resource(group, JB_GROUP_RESOURCE(rule));
  
    jb_group_add(group);
+@@ -409,7 +407,7 @@ jb_package_add_resources (void)
+ 
+   jb_compile_options_add_string_defines(group->compile_options,
+ 					"GETTEXT_PACKAGE", "$package",
+-					NULL);
++					(void *)NULL);
+ 
+   object = JB_OBJECT(jb_program_new("mail-notification"));
+ 
+@@ -434,7 +432,7 @@ jb_package_add_resources (void)
+ 					"PKGDATADIR", "$pkgdatadir",
+ 					"LIBDIR", "$libdir",
+ 					"GNOMELOCALEDIR", "$datadir/locale",
+-					NULL);
++					(void *)NULL);
+ 
+   /*
+    * We need --export-dynamic because because libglade needs to
+@@ -492,7 +490,7 @@ jb_package_add_resources (void)
+ 			"mn-vfs",
+ 			"mn-xml",
+ 			"nautilus-cell-renderer-pixbuf-emblem",
+-			NULL);
++			(void *)NULL);
+ 
+   if (jb_variable_get_bool("mbox"))
+     jb_object_add_source(object, "MN:Mbox:Mailbox:Backend");
+@@ -510,20 +508,20 @@ jb_package_add_resources (void)
+     jb_object_add_sources(object,
+ 			  "MN:Maildir:Mailbox:Backend",
+ 			  "MN:Maildir:Message",
+-			  NULL);
++			  (void *)NULL);
+ 
+   if (jb_variable_get_bool("pop3"))
+     jb_object_add_sources(object,
+ 			  "MN:POP3:Mailbox",
+ 			  "MN:POP3:Mailbox:Properties",
+ 			  "mn-md5",
+-			  NULL);
++			  (void *)NULL);
+ 
+   if (jb_variable_get_bool("imap"))
+     jb_object_add_sources(object,
+ 			  "MN:IMAP:Mailbox",
+ 			  "MN:IMAP:Mailbox:Properties",
+-			  NULL);
++			  (void *)NULL);
+ 
+   if (jb_variable_get_bool("pop3") || jb_variable_get_bool("imap"))
+     jb_object_add_sources(object,
+@@ -531,7 +529,7 @@ jb_package_add_resources (void)
+ 			  "MN:PI:Mailbox",
+ 			  "MN:PI:Mailbox:Properties",
+ 			  "mn-client-session",
+-			  NULL);
++			  (void *)NULL);
+ 
+   if (jb_variable_get_bool("pop3")
+       || jb_variable_get_bool("imap")
+@@ -544,14 +542,14 @@ jb_package_add_resources (void)
+ 			    "MN:Authenticated:Mailbox",
+ 			    "MN:Authenticated:Mailbox:Properties",
+ 			    "mn-keyring",
+-			    NULL);
++			    (void *)NULL);
+     }
+ 
+   if (jb_variable_get_bool("sylpheed"))
+     jb_object_add_sources(object,
+ 			  "MN:Sylpheed:Mailbox:Backend",
+ 			  "MN:Sylpheed:Message",
+-			  NULL);
++			  (void *)NULL);
+ 
+   if (jb_variable_get_bool("maildir") || jb_variable_get_bool("sylpheed"))
+     jb_object_add_source(object, "MN:VFS:Message");
+@@ -560,25 +558,25 @@ jb_package_add_resources (void)
+     jb_object_add_sources(object,
+ 			  "MN:Gmail:Mailbox",
+ 			  "MN:Gmail:Mailbox:Properties",
+-			  NULL);
++			  (void *)NULL);
+ 
+   if (jb_variable_get_bool("yahoo"))
+     jb_object_add_sources(object,
+ 			  "MN:Yahoo:Mailbox",
+ 			  "MN:Yahoo:Mailbox:Properties",
+-			  NULL);
++			  (void *)NULL);
+ 
+   if (jb_variable_get_bool("hotmail"))
+     jb_object_add_sources(object,
+ 			  "MN:Hotmail:Mailbox",
+ 			  "MN:Hotmail:Mailbox:Properties",
+-			  NULL);
++			  (void *)NULL);
+ 
+   if (jb_variable_get_bool("yahoo") || jb_variable_get_bool("hotmail"))
+     jb_object_add_sources(object,
+ 			  "MN:Webmail:Mailbox",
+ 			  "MN:Webmail:Mailbox:Properties",
+-			  NULL);
++			  (void *)NULL);
+ 
+   if (jb_variable_get_bool("mbox")
+       || jb_variable_get_bool("mozilla")
+@@ -592,7 +590,7 @@ jb_package_add_resources (void)
+ 			  "MN:System:VFS:Mailbox:Properties",
+ 			  "MN:VFS:Mailbox",
+ 			  "MN:VFS:Mailbox:Backend",
+-			  NULL);
++			  (void *)NULL);
+ 
+   if (jb_variable_get_bool("hotmail")
+       || jb_variable_get_bool("imap")
+@@ -609,7 +607,7 @@ jb_package_add_resources (void)
+       jb_object_add_sources(object,
+ 			    "mn-message-mime",
+ 			    "MN:GMime:Stream:VFS",
+-			    NULL);
++			    (void *)NULL);
+     }
+ 
+   if (jb_variable_get_bool("ssl"))
+@@ -651,7 +649,7 @@ jb_package_add_resources (void)
+ 			    "MN:Evolution:Mailbox:Properties",
+ 			    "MN:Evolution:Message",
+ 			    "mn-evolution.h",
+-			    NULL);
++			    (void *)NULL);
+ 
+       plugin = JB_OBJECT(jb_module_new("liborg-jylefort-mail-notification"));
+ 
+@@ -677,7 +675,7 @@ jb_package_add_resources (void)
+ 			    "MN:Evolution:Server",
+ 			    "mn-evolution-plugin",
+ 			    "mn-evolution.h",
+-			    NULL);
++			    (void *)NULL);
+ 
+       jb_group_add_resource(group, JB_GROUP_RESOURCE(plugin));
+     }
+@@ -693,7 +691,7 @@ jb_package_add_resources (void)
+   jb_group_add_data_files(group,
+ 			  "mailbox-properties-dialog.glade", "$pkgdatadir",
+ 			  "properties-dialog.glade", "$pkgdatadir",
+-			  NULL);
++			  (void *)NULL);
+ 
+   jb_group_add(group);
+ 

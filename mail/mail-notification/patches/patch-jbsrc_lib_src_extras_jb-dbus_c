@@ -1,0 +1,24 @@
+$OpenBSD: patch-jbsrc_lib_src_extras_jb-dbus_c,v 1.1 2010/06/15 19:35:38 jasper Exp $
+
+- fix build with gcc4.
+
+--- jbsrc/lib/src/extras/jb-dbus.c.orig	Tue Jun 15 21:24:28 2010
++++ jbsrc/lib/src/extras/jb-dbus.c	Tue Jun 15 21:24:54 2010
+@@ -102,7 +102,7 @@ dbus_interface_client_pre_build (JBResource *res)
+       jb_action_exec("$dbus-binding-tool --mode=glib-client $xmlfile > $clientfile.tmp && mv -f $clientfile.tmp $clientfile",
+ 		     "xmlfile", xmlfile,
+ 		     "clientfile", clientfile,
+-		     NULL);
++		     (void *)NULL);
+     }
+ 
+   g_free(xmlfile);
+@@ -218,7 +218,7 @@ dbus_interface_server_pre_build (JBResource *res)
+ 		     "server-prefix", self->server_prefix,
+ 		     "xmlfile", xmlfile,
+ 		     "serverfile", serverfile,
+-		     NULL);
++		     (void *)NULL);
+     }
+ 
+   g_free(xmlfile);

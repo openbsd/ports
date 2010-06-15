@@ -1,0 +1,15 @@
+$OpenBSD: patch-jbsrc_lib_src_core_jb-compile-options_c,v 1.1 2010/06/15 19:35:38 jasper Exp $
+
+- fix build with gcc4.
+
+--- jbsrc/lib/src/core/jb-compile-options.c.orig	Tue Jun 15 21:24:07 2010
++++ jbsrc/lib/src/core/jb-compile-options.c	Tue Jun 15 21:24:19 2010
+@@ -265,7 +265,7 @@ jb_compile_options_add_string_defines (JBCompileOption
+       g_assert(value != NULL);
+ 
+       /* expand variables since we need to quote the value */
+-      evaluated = jb_variable_expand(value, NULL);
++      evaluated = jb_variable_expand(value, (void *)NULL);
+ 
+       c_quoted = jb_c_quote(evaluated);
+       g_free(evaluated);

@@ -1,0 +1,130 @@
+$OpenBSD: patch-jbsrc_lib_src_core_jb-resource_c,v 1.1 2010/06/15 19:35:38 jasper Exp $
+
+- fix build with gcc4.
+
+--- jbsrc/lib/src/core/jb-resource.c.orig	Tue Jun 15 21:21:03 2010
++++ jbsrc/lib/src/core/jb-resource.c	Tue Jun 15 21:23:21 2010
+@@ -559,7 +559,7 @@ object_file_build (JBObject *object, const char *ofile
+     depsflags = jb_variable_expand(" -MT $ofile -MD -MP -MF $depsfile",
+ 				   "ofile", ofile,
+ 				   "depsfile", depsfile,
+-				   NULL);
++				   (void *)NULL);
+ 
+   jb_mkdir_of_file(ofile);
+ 
+@@ -578,7 +578,7 @@ object_file_build (JBObject *object, const char *ofile
+ 		 "depsflags", depsflags,
+ 		 "ofile", ofile,
+ 		 "cfile", cfile,
+-		 NULL);
++		 (void *)NULL);
+ 
+   g_free(depsfile);
+   g_free(depsflags);
+@@ -783,11 +783,11 @@ gob_class_pre_build (JBResource *res)
+ 		     "group-gob2flags", jb_compile_options_get_gob2flags(gres->group->compile_options),
+ 		     "object-gob2flags", jb_compile_options_get_gob2flags(ores->object->compile_options),
+ 		     "gobfile", gobfile,
+-		     NULL);
++		     (void *)NULL);
+ 
+       jb_action_exec("touch $stamp",
+ 		     "stamp", stamp,
+-		     NULL);
++		     (void *)NULL);
+     }
+ 
+   g_free(gobfile);
+@@ -1003,8 +1003,8 @@ intltool_file_build (JBResource *res)
+       jb_mkdir_of_file(INTLTOOL_MERGE_OUT);
+ 
+       variables = g_hash_table_new_full(g_str_hash, g_str_equal, NULL, g_free);
+-      g_hash_table_insert(variables, "INTLTOOL_PERL", jb_variable_expand("$perl", NULL));
+-      g_hash_table_insert(variables, "INTLTOOL_LIBDIR", jb_variable_expand("$perl", NULL));
++      g_hash_table_insert(variables, "INTLTOOL_PERL", jb_variable_expand("$perl", (void *)NULL));
++      g_hash_table_insert(variables, "INTLTOOL_LIBDIR", jb_variable_expand("$perl", (void *)NULL));
+ 
+       jb_subst(INTLTOOL_MERGE_IN, INTLTOOL_MERGE_OUT, variables);
+ 
+@@ -1030,7 +1030,7 @@ intltool_file_build (JBResource *res)
+ 		     "merge-flags", self->merge_flags,
+ 		     "infile", infile,
+ 		     "outfile", outfile,
+-		     NULL);
++		     (void *)NULL);
+     }
+ 
+   g_free(infile);
+@@ -1147,7 +1147,7 @@ gconf_schemas_install (JBResource *res)
+ 
+       jb_action_exec("GCONF_CONFIG_SOURCE=$gconf-config-source $gconftool-2 --makefile-install-rule $outfile",
+ 		     "outfile", outfile,
+-		     NULL);
++		     (void *)NULL);
+ 
+       g_free(outfile);
+     }
+@@ -1221,7 +1221,7 @@ gnome_help_get_files (JBGnomeHelp *self,
+     *helpdir = jb_variable_expand("$help-dir/$name/$lang",
+ 				  "name", self->name,
+ 				  "lang", self->lang,
+-				  NULL);
++				  (void *)NULL);
+   if (xmlfile != NULL)
+     *xmlfile = g_strdup_printf("%s/%s/%s.xml",
+ 			       gres->group->srcdir,
+@@ -1275,7 +1275,7 @@ gnome_help_build (JBResource *res)
+ 		     "helpname", self->name,
+ 		     "inomf", inomf,
+ 		     "outomf", outomf,
+-		     NULL);
++		     (void *)NULL);
+     }
+ 
+   g_free(inomf);
+@@ -1311,7 +1311,7 @@ gnome_help_install (JBResource *res)
+ 
+   jb_action_exec("-$scrollkeeper-update -p \"$destdir$scrollkeeper-dir\" -o \"$destdir$omfdir\"",
+ 		 "omfdir", omfdir,
+-		 NULL);
++		 (void *)NULL);
+ 
+   g_free(outomf);
+   g_free(helpdir);
+@@ -1427,7 +1427,7 @@ translations_build (JBResource *res)
+       jb_action_exec("$msgfmt -o $outfile.tmp $infile && mv -f $outfile.tmp $outfile",
+ 		     "outfile", outfile,
+ 		     "infile", infile,
+-		     NULL);
++		     (void *)NULL);
+     }
+ 
+   g_free(infile);
+@@ -1599,7 +1599,7 @@ rule_expand_variables (JBRule *self, GSList *strings)
+       expanded = jb_variable_expand(str,
+ 				    "srcdir", gres->group->srcdir,
+ 				    "builddir", gres->group->builddir,
+-				    NULL);
++				    (void *)NULL);
+ 
+       result = g_slist_append(result, expanded);
+     }
+@@ -1625,7 +1625,7 @@ rule_perform (JBRule *self, const char *message, GSLis
+       jb_action_exec(command,
+ 		     "srcdir", gres->group->srcdir,
+ 		     "builddir", gres->group->builddir,
+-		     NULL);
++		     (void *)NULL);
+     }
+ }
+ 
+@@ -1824,7 +1824,7 @@ object_build (JBResource *res)
+ 		     "stock-libs", object_class->stock_libs,
+ 		     "outfile", outfile,
+ 		     "object-files", object_files,
+-		     NULL);
++		     (void *)NULL);
+ 
+       g_free(object_files);
+     }
