@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2009/12/30 13:49:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/15 16:08:21 lum Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.3.0.1
-PKGNAME=	filezilla-$Vp4
+V=		3.3.2.1
+PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
 
@@ -19,12 +19,18 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c gcrypt gpg-error m pthread stdc++ tasn1 z
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += glitz gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread-stubs xcb xcb-render xcb-render-util
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	idn::devel/libidn \
 		gnutls.>=13::security/gnutls \
 		dbus-1::x11/dbus \
-		wx_gtk2_aui,wx_base_xml,wx_gtk2_html,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_base,wx_gtk2_core:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
+		wx_gtk2_aui,wx_base_xml,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_base,wx_gtk2_core:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
 
 BUILD_DEPENDS=	::devel/cppunit
 RUN_DEPENDS=	::devel/desktop-file-utils

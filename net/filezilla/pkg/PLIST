@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/30 13:49:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/06/15 16:08:21 lum Exp $
 @bin bin/filezilla
 @bin bin/fzputtygen
 @bin bin/fzsftp
@@ -37,6 +37,11 @@ share/filezilla/resources/16x16/refresh.png
 share/filezilla/resources/16x16/remotetreeview.png
 share/filezilla/resources/16x16/server.png
 share/filezilla/resources/16x16/sitemanager.png
+share/filezilla/resources/16x16/sort_down_dark.png
+share/filezilla/resources/16x16/sort_down_light.png
+share/filezilla/resources/16x16/sort_up_dark.png
+share/filezilla/resources/16x16/sort_up_light.png
+share/filezilla/resources/16x16/speedlimits.png
 share/filezilla/resources/16x16/symlink.png
 share/filezilla/resources/16x16/synchronize.png
 share/filezilla/resources/16x16/unknown.png
@@ -47,6 +52,7 @@ share/filezilla/resources/32x32/file.png
 share/filezilla/resources/32x32/filezilla.png
 share/filezilla/resources/48x48/
 share/filezilla/resources/48x48/filezilla.png
+share/filezilla/resources/48x48/speedlimits.png
 share/filezilla/resources/blukis/
 share/filezilla/resources/blukis/16x16/
 share/filezilla/resources/blukis/16x16/ascii.png
@@ -476,6 +482,9 @@ share/locale/hu_HU/LC_MESSAGES/filezilla.mo
 share/locale/id_ID/
 share/locale/id_ID/LC_MESSAGES/
 share/locale/id_ID/LC_MESSAGES/filezilla.mo
+share/locale/is/
+share/locale/is/LC_MESSAGES/
+share/locale/is/LC_MESSAGES/filezilla.mo
 share/locale/it/LC_MESSAGES/filezilla.mo
 share/locale/ja_JP/
 share/locale/ja_JP/LC_MESSAGES/
