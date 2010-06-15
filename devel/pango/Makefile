@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2010/05/09 09:34:11 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.42 2010/06/15 16:59:45 ajacoutot Exp $
 
 COMMENT=		library for layout and rendering of text
 
-V=			1.28.0
+V=			1.28.1
 DISTNAME=		pango-${V}
-PKGNAME=		${DISTNAME}p1
 
 SHARED_LIBS +=  pango-1.0            1802.0   # .2800.0
 SHARED_LIBS +=  pangox-1.0           1802.0   # .2800.0
