@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2010/04/26 09:44:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2010/06/15 10:47:08 sthen Exp $
 
 COMMENT-main=		active monitoring tool
-V=			2.79
+V=			2.82
 DISTNAME=		symon-${V}
-PKGNAME-main=		${DISTNAME}p3
-FULLPKGNAME-mon=	symon-mon-${V}p3
-FULLPKGNAME-mux=        symon-mux-${V}p0
+PKGNAME-main=		${DISTNAME}
+FULLPKGNAME-mon=	symon-mon-${V}
+FULLPKGNAME-mux=        symon-mux-${V}
 CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.xs4all.nl/~wpd/symon
