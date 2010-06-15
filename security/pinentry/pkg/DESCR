@@ -1,4 +1,2 @@
 pinentry is a small collection of dialog programs that allow GnuPG to
-read passphrases and PIN numbers in a secure manner. There are versions
-for the common GTK and Qt toolkits as well as for the text terminal
-(Curses).
+read passphrases and PIN numbers in a secure manner.

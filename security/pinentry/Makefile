@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/15 13:11:25 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/15 13:27:25 pea Exp $
 
 # pinentry builds against it's own stripped version of libassuan
 # I will see with upstream how to change this behavior
@@ -6,6 +6,7 @@
 COMMENT = 	collection of simple PIN or passphrase entry dialogs
 
 DISTNAME = 	pinentry-0.8.0
+PKGNAME = 	${DISTNAME}p0
 CATEGORIES = 	security
 
 MASTER_SITES = 	ftp://ftp.gnupg.org/gcrypt/pinentry/
