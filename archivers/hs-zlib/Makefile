@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/06/06 10:06:44 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/06/15 17:18:50 kili Exp $
 
 COMMENT =		zlib bindings for Haskell
 
 DISTNAME =		zlib-0.5.2.0
-PKGNAME =		hs-${DISTNAME}p2
+PKGNAME =		hs-${DISTNAME}p3
 CATEGORIES =		archivers devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
