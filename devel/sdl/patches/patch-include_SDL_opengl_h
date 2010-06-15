@@ -1,0 +1,26 @@
+$OpenBSD: patch-include_SDL_opengl_h,v 1.1 2010/06/15 15:29:29 espie Exp $
+--- include/SDL_opengl.h.orig	Thu May 13 13:54:28 2010
++++ include/SDL_opengl.h	Thu May 13 13:56:19 2010
+@@ -33,7 +33,11 @@
+ #endif
+ #ifndef NO_SDL_GLEXT
+ #define __glext_h_  /* Don't let gl.h include glext.h */
++#ifndef GL_ARB_shader_objects
++#define GL_ARB_shader_objects 0
++#define undef_GL_ARB
+ #endif
++#endif
+ #if defined(__MACOSX__)
+ #include <OpenGL/gl.h>	/* Header File For The OpenGL Library */
+ #include <OpenGL/glu.h>	/* Header File For The GLU Library */
+@@ -46,6 +50,10 @@
+ #endif
+ #ifndef NO_SDL_GLEXT
+ #undef __glext_h_
++#ifdef undef_GL_ARB
++#undef GL_ARB_shader_objects
++#undef undef_GL_ARB
++#endif
+ #endif
+ 
+ /* This file taken from "GLext.h" from the Jeff Molofee OpenGL tutorials.
