@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1002 2010/06/14 12:02:43 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1003 2010/06/15 11:42:21 kili Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -191,7 +191,7 @@ PKG_DELETE ?= /usr/sbin/pkg_delete
 _PKG_ADD = /usr/sbin/pkg_add ${_PROGRESS}
 _PKG_CREATE = ${PKG_CMD} ${_PROGRESS}
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
-_PKG_QUERY = /usr/sbin/pkg_info ${PKGDB_LOCK} -q -e
+_PKG_QUERY = /usr/sbin/pkg_info ${PKGDB_LOCK} -e
 _PKG_ADD += ${PKG_DBLOCK}
 _PKG_CREATE += ${PKGDB_LOCK}
 _PKG_DELETE += ${PKGDB_LOCK}
@@ -1748,7 +1748,7 @@ ${WRKDIR}/.dep${_i:C,[|:/<=>*],-,g}: ${_WRKDIR_COOKIE}
 			what=$$pkg; \
 			if $$checkinstall; then \
 				$$early_exit || ${_force_update_fragment}; \
-				if ${_PKG_QUERY} "$$pkg"; then \
+				if ${_PKG_QUERY} "$$pkg" -q; then \
 					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what - found"; \
 					break; \
 				else \
@@ -2846,7 +2846,7 @@ _print-package-args:
 		if default=`eval $$toset ${MAKE} _print-packagename`; then \
 			case "X$$pkg" in X) pkg=`echo "$$default" |${_version2default}`;; \
 			esac; \
-			if ${_PKG_QUERY} "$$pkg"; then \
+			if ${_PKG_QUERY} "$$pkg" -q; then \
 				listlibs='echo ${DEPDIR}$$shdir/lib*'; \
 				case "$$dir" in ${PKGPATH}) \
 					listlibs="$$toset ${MAKE} print-plist-contents|${_grab_libs_from_plist}; $$listlibs";; \
