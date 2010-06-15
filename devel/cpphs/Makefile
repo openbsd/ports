@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/05/06 20:05:24 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/15 17:59:24 kili Exp $
 
 COMMENT =	liberalised reimplementation of cpp in Haskell
 
 DISTNAME =	cpphs-1.11
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES =	devel
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 HOMEPAGE =	http://haskell.org/cpphs/
@@ -22,6 +22,7 @@ WANTLIB +=	c m
 WANTLIB +=	util
 MODULES =	lang/ghc converters/libiconv
 MODGHC_BUILD =	nort
+LIB_DEPENDS =	gmp::devel/gmp
 HC =		ghc
 HC_OPTS =	-O -o cpphs --make
 .else

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/05/06 20:05:24 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/15 17:59:24 kili Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
 DISTNAME =	cabal-install-0.8.0
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/cabal/
@@ -26,5 +26,7 @@ VMEM_WARNING =		Yes
 BUILD_DEPENDS +=	:hs-network->=1,<3:devel/hs-network \
 			:hs-HTTP->=4000.0.2,<4001:net/hs-HTTP \
 			:hs-zlib->=0.4,<0.6:archivers/hs-zlib
+
+LIB_DEPENDS =		gmp::devel/gmp
 
 .include <bsd.port.mk>

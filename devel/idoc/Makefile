@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/05/06 20:05:24 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/15 17:59:24 kili Exp $
 
 COMMENT =		minimalist documentation tool for Haskell
 
 DISTNAME =		idoc-0.2.6
-PKGNAME =		${DISTNAME}p3
+PKGNAME =		${DISTNAME}p4
 CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 HOMEPAGE =		http://www.cse.unsw.edu.au/~chak/haskell/idoc/
@@ -22,6 +22,7 @@ WANTLIB =		c m
 WANTLIB +=		util
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		nort
+LIB_DEPENDS =		gmp::devel/gmp
 .else
 BUILD_DEPENDS +=	::lang/nhc98
 MAKE_FLAGS =		HC=nhc98

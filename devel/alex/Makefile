@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/05/06 20:05:24 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/15 17:59:24 kili Exp $
 
 COMMENT =	lexical analyser generator for Haskell
 
 DISTNAME =	alex-2.3.2
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/alex/
@@ -29,6 +29,8 @@ WRKCONF =		${AUTOCONF_DIR}
 BUILD_DEPENDS +=	::textproc/docbook \
 			::textproc/docbook-xsl \
 			::textproc/libxslt
+
+LIB_DEPENDS =		gmp::devel/gmp
 
 post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html

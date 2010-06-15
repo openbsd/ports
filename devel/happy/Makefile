@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/05/06 20:05:24 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2010/06/15 17:59:24 kili Exp $
 
 COMMENT=		parser generator for Haskell
 
 DISTNAME=		happy-1.18.4
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.haskell.org/happy/
@@ -29,6 +29,8 @@ CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.61
 AUTOCONF_DIR=		${WRKSRC}/doc
 WRKCONF=		${AUTOCONF_DIR}
+
+LIB_DEPENDS =		gmp::devel/gmp
 
 post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} \
