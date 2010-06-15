@@ -1,15 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/04/19 13:55:56 edd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/06/15 10:10:06 edd Exp $
 @bin bin/tint2
+@bin bin/tint2conf
+bin/tintwizard.py
 @man man/man1/tint2.1
+share/applications/tint2conf.desktop
 share/doc/tint2/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/tint2/
 share/doc/tint2/AUTHORS
 share/doc/tint2/ChangeLog
-share/doc/tint2/NEWS
 share/doc/tint2/README
 share/examples/tint2/
 share/examples/tint2/tint2rc
 @sample ${SYSCONFDIR}/xdg/tint2/tint2rc
+share/pixmaps/
+share/pixmaps/tint2conf.png
+share/pixmaps/tint2conf.svg
 share/tint2/
 share/tint2/default_icon.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
