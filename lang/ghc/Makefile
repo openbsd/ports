@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2010/06/09 10:06:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2010/06/15 15:34:03 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
-PKGNAME-main =		ghc-${MODGHC_VER}p4
-PKGNAME-doc =		ghc-doc-${MODGHC_VER}p0
+PKGNAME-main =		ghc-${MODGHC_VER}
+PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
@@ -30,14 +30,15 @@ PKG_ARCH-doc =		*
 BUILD_DEPENDS =		::textproc/dblatex \
 			::textproc/docbook \
 			::textproc/docbook-xsl \
-			::textproc/libxslt \
-			::devel/gmp
+			::textproc/libxslt
 LIB_DEPENDS-doc =
+LIB_DEPENDS-main =	${LIB_DEPENDS} gmp::devel/gmp
 RUN_DEPENDS-doc =
 RUN_DEPENDS-main =
-WANTLIB-main =		c m ncurses pthread util
+WANTLIB-main =		c m ncurses util
 
-MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
+MASTER_SITES =		http://darcs.haskell.org/download/dist/${MODGHC_VER}/ \
+			${HOMEPAGE}dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/stable/dist/
 MASTER_SITES0 =		http://openbsd.dead-parrot.de/distfiles/
 
@@ -60,13 +61,14 @@ USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu autoconf
 AUTOCONF_VERSION =	2.61
-CONFIGURE_ARGS +=	--with-iconv-includes=${LOCALBASE}/include \
+CONFIGURE_ARGS +=	--with-gmp-includes=${LOCALBASE}/include \
+			--with-gmp-libraries=${LOCALBASE}/lib \
+			--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib
 
 MAKE_FLAGS +=		StripLibraries=YES \
 			INSTALL_BIN_OPTS=-s \
-			HSCOLOUR_SRCS=NO \
-			INTEGER_LIBRARY=integer-simple
+			HSCOLOUR_SRCS=NO
 
 FAKE_FLAGS +=		CREATE_DATA="${INSTALL_DATA} /dev/null " \
 			CREATE_SCRIPT="${INSTALL_SCRIPT} /dev/null " \
@@ -90,6 +92,7 @@ post-extract:
 	cd ${WRKDIR}/ghc-${BIN_VER} && \
 	./configure --prefix=${WRKDIR} && \
 	${MAKE_PROGRAM} install
+	rm -rf ${WRKDIR}/ghc-${BIN_VER}
 	mv ${WRKSRC}/utils/haddock{,-ghcdist}
 	mv ${WRKDIR}/devel/haddock/haddock-* ${WRKSRC}/utils/haddock
 . for f in ghc.mk doc/ghc.mk haddock.wrapper
