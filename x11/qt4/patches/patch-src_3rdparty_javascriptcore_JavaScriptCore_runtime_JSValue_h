@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_runtime_JSValue_h,v 1.1 2010/06/15 21:27:57 landry Exp $
+Fix build on sparc64, from netbsd x11/qt4-libs/patches/path-au
+--- src/3rdparty/javascriptcore/JavaScriptCore/runtime/JSValue.h.orig	Thu Jun 10 13:39:11 2010
++++ src/3rdparty/javascriptcore/JavaScriptCore/runtime/JSValue.h	Thu Jun 10 13:39:29 2010
+@@ -468,7 +468,7 @@ namespace JSC {
+             u.asBits.tag = CellTag;
+         else
+             u.asBits.tag = EmptyValueTag;
+-        u.asBits.payload = reinterpret_cast<int32_t>(ptr);
++        u.asBits.payload = reinterpret_cast<intptr_t>(ptr);
+     }
+ 
+     inline JSValue::JSValue(const JSCell* ptr)
+@@ -477,7 +477,7 @@ namespace JSC {
+             u.asBits.tag = CellTag;
+         else
+             u.asBits.tag = EmptyValueTag;
+-        u.asBits.payload = reinterpret_cast<int32_t>(const_cast<JSCell*>(ptr));
++        u.asBits.payload = reinterpret_cast<intptr_t>(const_cast<JSCell*>(ptr));
+     }
+ 
+     inline JSValue::operator bool() const
