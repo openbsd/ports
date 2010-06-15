@@ -1,0 +1,15 @@
+$OpenBSD: patch-help_Makefile_in,v 1.4 2010/06/15 10:51:38 ajacoutot Exp $
+
+From upstream GIT:
+Do not ship evo_mail_notifier.png, it's unused in evolution.
+
+--- help/Makefile.in.orig	Tue Apr 27 14:14:39 2010
++++ help/Makefile.in	Tue Jun 15 09:18:39 2010
+@@ -561,7 +561,6 @@ DOC_FIGURES = \
+ 	figures/evo_mboxreceive_a.png 		\
+ 	figures/evo_memo_a.png 			\
+ 	figures/evo_mhreceive_a.png 		\
+-	figures/evo_mail_notifier.png		\
+ 	figures/evo_memo_a.png			\
+ 	figures/evo_newmess_a.png 		\
+ 	figures/evo_newmail.png			\

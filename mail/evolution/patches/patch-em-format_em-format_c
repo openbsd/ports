@@ -1,0 +1,21 @@
+$OpenBSD: patch-em-format_em-format_c,v 1.1 2010/06/15 10:51:38 ajacoutot Exp $
+
+GNOME bug 612082 - Crash in em_format_snoop_type
+(workaround to prevent a NULL pointer dereference)
+
+--- em-format/em-format.c.orig	Mon Apr 26 15:13:16 2010
++++ em-format/em-format.c	Tue Jun 15 09:20:25 2010
+@@ -2015,10 +2015,11 @@ em_format_snoop_type (CamelMimePart *part)
+ 
+ 	dw = camel_medium_get_content_object((CamelMedium *)part);
+ 	if (!camel_data_wrapper_is_offline(dw)) {
+-		CamelStreamMem *mem = (CamelStreamMem *)camel_stream_mem_new();
++		GByteArray *buffer = g_byte_array_new ();
++		CamelStreamMem *mem = (CamelStreamMem *)camel_stream_mem_new_with_byte_array(buffer);
+ 
+ 		if (camel_data_wrapper_decode_to_stream(dw, (CamelStream *)mem) > 0) {
+-			gchar *ct = g_content_type_guess (filename, mem->buffer->data, mem->buffer->len, NULL);
++			gchar *ct = g_content_type_guess (filename, buffer->data, buffer->len, NULL);
+ 
+ 			if (ct)
+ 				magic_type = g_content_type_get_mime_type (ct);

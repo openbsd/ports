@@ -1,0 +1,111 @@
+$OpenBSD: patch-mail_e-mail-reader_c,v 1.1 2010/06/15 10:51:38 ajacoutot Exp $
+
+From pstream GIT 4a2343cb34498c701e71679e3c50c9fc81dd5b80
+Bug 618902 - Crash when viewing/closing messages quickly
+Closing an EMailBrowser window causes it to be disposed immediately, but
+ongoing async operations still hold an EMailBrowser reference -- in
+particular, regenerating the internal message list and fetching a mail
+message. The callback functions for these operations were not equipped
+to deal with the disposed-but-not-yet-finalized object.
+
+--- mail/e-mail-reader.c.orig	Mon Apr 26 15:13:17 2010
++++ mail/e-mail-reader.c	Tue Jun 15 09:19:15 2010
+@@ -52,7 +52,8 @@
+ #include "mail/message-list.h"
+ 
+ #define E_MAIL_READER_GET_PRIVATE(obj) \
+-	(mail_reader_get_private (G_OBJECT (obj)))
++	((EMailReaderPrivate *) g_object_get_qdata \
++	(G_OBJECT (obj), quark_private))
+ 
+ typedef struct _EMailReaderPrivate EMailReaderPrivate;
+ 
+@@ -92,33 +93,26 @@ static GQuark quark_private;
+ static guint signals[LAST_SIGNAL];
+ 
+ static void
+-mail_reader_finalize (EMailReaderPrivate *priv)
++mail_reader_destroy (GObject *object)
+ {
++	/* This will free the private struct. */
++	g_object_set_qdata (object, quark_private, NULL);
++}
++
++static void
++mail_reader_private_free (EMailReaderPrivate *priv)
++{
+ 	if (priv->message_selected_timeout_id > 0)
+ 		g_source_remove (priv->message_selected_timeout_id);
+ 
++	if (priv->retrieving_message_operation_id > 0)
++		mail_msg_cancel (priv->retrieving_message_operation_id);
++
+ 	g_free (priv->mark_read_message_uid);
+ 
+ 	g_slice_free (EMailReaderPrivate, priv);
+ }
+ 
+-static EMailReaderPrivate *
+-mail_reader_get_private (GObject *object)
+-{
+-	EMailReaderPrivate *priv;
+-
+-	priv = g_object_get_qdata (object, quark_private);
+-
+-	if (G_UNLIKELY (priv == NULL)) {
+-		priv = g_slice_new0 (EMailReaderPrivate);
+-		g_object_set_qdata_full (
+-			object, quark_private, priv,
+-			(GDestroyNotify) mail_reader_finalize);
+-	}
+-
+-	return priv;
+-}
+-
+ static void
+ action_mail_add_sender_cb (GtkAction *action,
+                            EMailReader *reader)
+@@ -1830,6 +1824,14 @@ mail_reader_message_loaded_cb (CamelFolder *folder,
+ 
+ 	priv = E_MAIL_READER_GET_PRIVATE (reader);
+ 
++	/* If the private struct is NULL, the EMailReader was destroyed
++	 * while we were loading the message and we're likely holding the
++	 * last reference.  Nothing to do but drop the reference. */
++	if (priv == NULL) {
++		g_object_unref (reader);
++		return;
++	}
++
+ 	html_display = e_mail_reader_get_html_display (reader);
+ 	message_list = e_mail_reader_get_message_list (reader);
+ 
+@@ -2551,7 +2553,7 @@ e_mail_reader_get_type (void)
+ 		type = g_type_register_static (
+ 			G_TYPE_INTERFACE, "EMailReader", &type_info, 0);
+ 
+-		g_type_interface_add_prerequisite (type, G_TYPE_OBJECT);
++		g_type_interface_add_prerequisite (type, GTK_TYPE_OBJECT);
+ 	}
+ 
+ 	return type;
+@@ -2726,6 +2728,19 @@ e_mail_reader_init (EMailReader *reader)
+ 	g_signal_connect_swapped (
+ 		message_list, "selection-change",
+ 		G_CALLBACK (e_mail_reader_changed), reader);
++
++	/* Install a private struct for storing things like flags and
++	 * timeout and asynchronous operation IDs.  We delete it when
++	 * the EMailReader is destroyed rather than finalized so that
++	 * asynchronous callbacks holding a reference can detect that
++	 * the reader has been destroyed and drop their reference. */
++	g_object_set_qdata_full (
++		G_OBJECT (reader), quark_private,
++		g_slice_new0 (EMailReaderPrivate),
++		(GDestroyNotify) mail_reader_private_free);
++	g_signal_connect (
++		reader, "destroy",
++		G_CALLBACK (mail_reader_destroy), NULL);
+ }
+ 
+ void

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2010/06/09 11:43:22 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2010/06/15 10:51:38 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
@@ -941,7 +941,6 @@ share/gnome/help/evolution/C/figures/evo_label_a.png
 share/gnome/help/evolution/C/figures/evo_labels_a.png
 share/gnome/help/evolution/C/figures/evo_mail_a.png
 share/gnome/help/evolution/C/figures/evo_mail_callout_a.png
-@comment share/gnome/help/evolution/C/figures/evo_mail_notifier.png
 share/gnome/help/evolution/C/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/C/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/C/figures/evo_memo_a.png
@@ -1010,7 +1009,6 @@ share/gnome/help/evolution/cs/figures/evo_label_a.png
 share/gnome/help/evolution/cs/figures/evo_labels_a.png
 share/gnome/help/evolution/cs/figures/evo_mail_a.png
 share/gnome/help/evolution/cs/figures/evo_mail_callout_a.png
-@comment share/gnome/help/evolution/cs/figures/evo_mail_notifier.png
 share/gnome/help/evolution/cs/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/cs/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/cs/figures/evo_memo_a.png
@@ -1079,7 +1077,6 @@ share/gnome/help/evolution/de/figures/evo_label_a.png
 share/gnome/help/evolution/de/figures/evo_labels_a.png
 share/gnome/help/evolution/de/figures/evo_mail_a.png
 share/gnome/help/evolution/de/figures/evo_mail_callout_a.png
-@comment share/gnome/help/evolution/de/figures/evo_mail_notifier.png
 share/gnome/help/evolution/de/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/de/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/de/figures/evo_memo_a.png
@@ -1148,7 +1145,6 @@ share/gnome/help/evolution/el/figures/evo_label_a.png
 share/gnome/help/evolution/el/figures/evo_labels_a.png
 share/gnome/help/evolution/el/figures/evo_mail_a.png
 share/gnome/help/evolution/el/figures/evo_mail_callout_a.png
-@comment share/gnome/help/evolution/el/figures/evo_mail_notifier.png
 share/gnome/help/evolution/el/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/el/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/el/figures/evo_memo_a.png
@@ -1217,7 +1213,6 @@ share/gnome/help/evolution/en_GB/figures/evo_label_a.png
 share/gnome/help/evolution/en_GB/figures/evo_labels_a.png
 share/gnome/help/evolution/en_GB/figures/evo_mail_a.png
 share/gnome/help/evolution/en_GB/figures/evo_mail_callout_a.png
-@comment share/gnome/help/evolution/en_GB/figures/evo_mail_notifier.png
 share/gnome/help/evolution/en_GB/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/en_GB/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/en_GB/figures/evo_memo_a.png
@@ -1286,7 +1281,6 @@ share/gnome/help/evolution/es/figures/evo_label_a.png
 share/gnome/help/evolution/es/figures/evo_labels_a.png
 share/gnome/help/evolution/es/figures/evo_mail_a.png
 share/gnome/help/evolution/es/figures/evo_mail_callout_a.png
-@comment share/gnome/help/evolution/es/figures/evo_mail_notifier.png
 share/gnome/help/evolution/es/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/es/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/es/figures/evo_memo_a.png
@@ -1355,7 +1349,6 @@ share/gnome/help/evolution/eu/figures/evo_label_a.png
 share/gnome/help/evolution/eu/figures/evo_labels_a.png
 share/gnome/help/evolution/eu/figures/evo_mail_a.png
 share/gnome/help/evolution/eu/figures/evo_mail_callout_a.png
-share/gnome/help/evolution/eu/figures/evo_mail_notifier.png
 share/gnome/help/evolution/eu/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/eu/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/eu/figures/evo_memo_a.png
@@ -1424,7 +1417,6 @@ share/gnome/help/evolution/fr/figures/evo_label_a.png
 share/gnome/help/evolution/fr/figures/evo_labels_a.png
 share/gnome/help/evolution/fr/figures/evo_mail_a.png
 share/gnome/help/evolution/fr/figures/evo_mail_callout_a.png
-share/gnome/help/evolution/fr/figures/evo_mail_notifier.png
 share/gnome/help/evolution/fr/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/fr/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/fr/figures/evo_memo_a.png
@@ -1493,7 +1485,6 @@ share/gnome/help/evolution/mk/figures/evo_label_a.png
 share/gnome/help/evolution/mk/figures/evo_labels_a.png
 share/gnome/help/evolution/mk/figures/evo_mail_a.png
 share/gnome/help/evolution/mk/figures/evo_mail_callout_a.png
-@comment share/gnome/help/evolution/mk/figures/evo_mail_notifier.png
 share/gnome/help/evolution/mk/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/mk/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/mk/figures/evo_memo_a.png
@@ -1562,7 +1553,6 @@ share/gnome/help/evolution/oc/figures/evo_label_a.png
 share/gnome/help/evolution/oc/figures/evo_labels_a.png
 share/gnome/help/evolution/oc/figures/evo_mail_a.png
 share/gnome/help/evolution/oc/figures/evo_mail_callout_a.png
-@comment share/gnome/help/evolution/oc/figures/evo_mail_notifier.png
 share/gnome/help/evolution/oc/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/oc/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/oc/figures/evo_memo_a.png
@@ -1631,7 +1621,6 @@ share/gnome/help/evolution/ru/figures/evo_label_a.png
 share/gnome/help/evolution/ru/figures/evo_labels_a.png
 share/gnome/help/evolution/ru/figures/evo_mail_a.png
 share/gnome/help/evolution/ru/figures/evo_mail_callout_a.png
-@comment share/gnome/help/evolution/ru/figures/evo_mail_notifier.png
 share/gnome/help/evolution/ru/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/ru/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/ru/figures/evo_memo_a.png
@@ -1700,7 +1689,6 @@ share/gnome/help/evolution/sv/figures/evo_label_a.png
 share/gnome/help/evolution/sv/figures/evo_labels_a.png
 share/gnome/help/evolution/sv/figures/evo_mail_a.png
 share/gnome/help/evolution/sv/figures/evo_mail_callout_a.png
-@comment share/gnome/help/evolution/sv/figures/evo_mail_notifier.png
 share/gnome/help/evolution/sv/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/sv/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/sv/figures/evo_memo_a.png

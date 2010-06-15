@@ -1,26 +1,29 @@
-$OpenBSD: patch-mail_message-list_c,v 1.10 2010/04/26 19:52:25 ajacoutot Exp $
---- mail/message-list.c.orig	Thu Apr  8 16:17:42 2010
-+++ mail/message-list.c	Mon Apr 26 09:09:25 2010
-@@ -2835,6 +2835,11 @@ clear_tree (MessageList *ml, gboolean tfree)
- 	ml->tree_root = e_tree_memory_node_insert (E_TREE_MEMORY(etm), NULL, 0, NULL);
- 	if (tfree)
- 		e_tree_model_rebuilt (E_TREE_MODEL(etm));
-+
-+#ifdef BROKEN_ETREE
-+	GPtrArray *selected;
-+#endif
-+
- #ifdef TIMEIT
- 	gettimeofday(&end, NULL);
- 	diff = end.tv_sec * 1000 + end.tv_usec/1000;
-@@ -3453,6 +3458,10 @@ mail_folder_hide_by_flag (CamelFolder *folder, Message
- 	CamelFolderChangeInfo *newchanges, *oldchanges = *changes;
- 	CamelMessageInfo *info;
- 	gint i;
-+
-+#ifdef BROKEN_ETREE
-+	GPtrArray *selected;
-+#endif
+$OpenBSD: patch-mail_message-list_c,v 1.11 2010/06/15 10:51:38 ajacoutot Exp $
+
+From pstream GIT 4a2343cb34498c701e71679e3c50c9fc81dd5b80
+Bug 618902 - Crash when viewing/closing messages quickly
+Closing an EMailBrowser window causes it to be disposed immediately, but
+ongoing async operations still hold an EMailBrowser reference -- in
+particular, regenerating the internal message list and fetching a mail
+message. The callback functions for these operations were not equipped
+to deal with the disposed-but-not-yet-finalized object.
+
+--- mail/message-list.c.orig	Tue Jun 15 09:15:42 2010
++++ mail/message-list.c	Tue Jun 15 09:19:16 2010
+@@ -4909,7 +4909,7 @@ mail_regen_list (MessageList *ml, const gchar *search,
+ #endif
  
- 	newchanges = camel_folder_change_info_new ();
- 
+ 	m = mail_msg_new (&regen_list_info);
+-	m->ml = ml;
++	m->ml = g_object_ref (ml);
+ 	m->search = g_strdup (search);
+ 	m->hideexpr = g_strdup (hideexpr);
+ 	m->changes = changes;
+@@ -4917,7 +4917,6 @@ mail_regen_list (MessageList *ml, const gchar *search,
+ 	m->hidedel = ml->hidedeleted;
+ 	m->hidejunk = ml->hidejunk;
+ 	m->thread_subject = gconf_client_get_bool (gconf, "/apps/evolution/mail/display/thread_subject", NULL);
+-	g_object_ref(ml);
+ 	m->folder = ml->folder;
+ 	camel_object_ref(m->folder);
+ 	m->last_row = -1;
