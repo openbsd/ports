@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/05/26 21:18:17 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/15 10:07:41 sebastia Exp $
 
 COMMENT=	free H264/AVC encoder
 
@@ -21,6 +21,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c m pthread
+
+MODULES=	gcc3
+MODGCC3_ARCHES=	sparc
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple

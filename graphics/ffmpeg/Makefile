@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2010/05/26 21:38:52 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.53 2010/06/15 10:07:41 sebastia Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
@@ -25,6 +25,9 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MODULES=	gcc3
+MODGCC3_ARCHES=	sparc
 
 WANTLIB=	X11 Xext Xfixes c m ogg oil-0.3 pthread sndio z
 
