@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/03 11:14:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/06/15 17:16:13 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/dpkt/
 lib/python${MODPY_VERSION}/site-packages/dpkt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/dpkt/__init__.py
@@ -45,6 +45,8 @@ lib/python${MODPY_VERSION}/site-packages/dpkt/icmp.py
 lib/python${MODPY_VERSION}/site-packages/dpkt/icmp.pyc
 lib/python${MODPY_VERSION}/site-packages/dpkt/icmp6.py
 lib/python${MODPY_VERSION}/site-packages/dpkt/icmp6.pyc
+lib/python${MODPY_VERSION}/site-packages/dpkt/ieee80211.py
+lib/python${MODPY_VERSION}/site-packages/dpkt/ieee80211.pyc
 lib/python${MODPY_VERSION}/site-packages/dpkt/igmp.py
 lib/python${MODPY_VERSION}/site-packages/dpkt/igmp.pyc
 lib/python${MODPY_VERSION}/site-packages/dpkt/ip.py
@@ -77,14 +79,20 @@ lib/python${MODPY_VERSION}/site-packages/dpkt/pppoe.py
 lib/python${MODPY_VERSION}/site-packages/dpkt/pppoe.pyc
 lib/python${MODPY_VERSION}/site-packages/dpkt/qq.py
 lib/python${MODPY_VERSION}/site-packages/dpkt/qq.pyc
+lib/python${MODPY_VERSION}/site-packages/dpkt/radiotap.py
+lib/python${MODPY_VERSION}/site-packages/dpkt/radiotap.pyc
 lib/python${MODPY_VERSION}/site-packages/dpkt/radius.py
 lib/python${MODPY_VERSION}/site-packages/dpkt/radius.pyc
+lib/python${MODPY_VERSION}/site-packages/dpkt/rfb.py
+lib/python${MODPY_VERSION}/site-packages/dpkt/rfb.pyc
 lib/python${MODPY_VERSION}/site-packages/dpkt/rip.py
 lib/python${MODPY_VERSION}/site-packages/dpkt/rip.pyc
 lib/python${MODPY_VERSION}/site-packages/dpkt/rpc.py
 lib/python${MODPY_VERSION}/site-packages/dpkt/rpc.pyc
 lib/python${MODPY_VERSION}/site-packages/dpkt/rtp.py
 lib/python${MODPY_VERSION}/site-packages/dpkt/rtp.pyc
+lib/python${MODPY_VERSION}/site-packages/dpkt/rx.py
+lib/python${MODPY_VERSION}/site-packages/dpkt/rx.pyc
 lib/python${MODPY_VERSION}/site-packages/dpkt/sccp.py
 lib/python${MODPY_VERSION}/site-packages/dpkt/sccp.pyc
 lib/python${MODPY_VERSION}/site-packages/dpkt/sctp.py
