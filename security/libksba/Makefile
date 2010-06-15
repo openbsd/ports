@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/15 12:01:53 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/15 12:10:03 ajacoutot Exp $
 
-COMMENT = 	X.509 Library
+COMMENT = 	X.509 library
 
 DISTNAME = 	libksba-1.0.7
+PKGNAME =	${DISTNAME}p0
 CATEGORIES = 	security
 
 SHARED_LIBS = 	ksba 0.0	#17.6
@@ -24,8 +25,9 @@ EXTRACT_SUFX = 		.tar.bz2
 USE_LIBTOOL = 		Yes
 MODULES = 		devel/gettext
 
-LIB_DEPENDS = 		 gpg-error.>=1::security/libgpg-error
+LIB_DEPENDS = 		gpg-error.>=1::security/libgpg-error
 
 CONFIGURE_STYLE = 	gnu
+CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
