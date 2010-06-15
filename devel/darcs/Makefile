@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2010/05/24 14:33:03 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2010/06/15 18:00:33 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
 DISTNAME =		darcs-2.4.4
+PKGNAME =		${DISTNAME}p0
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
@@ -11,7 +12,8 @@ WANTLIB =		c m ncurses util z
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage nort
 MODGHC_SETUP_CONF_ARGS =-f '-threaded'
-LIB_DEPENDS =		curl.>=2::net/curl
+LIB_DEPENDS =		gmp::devel/gmp \
+			curl.>=2::net/curl
 
 # Yes, build dependencies, because GHC libs are still static and we
 # don't want to pull in all of ghc.
@@ -28,7 +30,8 @@ REGRESS_DEPENDS =	::shells/bash
 # For the documentation
 USE_GMAKE =		Yes
 
-# Weird permission alert! (still not fixed)
+# Weird permission alert!
+# http://bugs.darcs.net/issue1815 (it's a bug in Cabal, not in darcs)
 post-extract:
 	@chmod -R a+r ${WRKSRC}
 
