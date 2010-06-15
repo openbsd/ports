@@ -1,0 +1,10 @@
+$OpenBSD: patch-format_cc,v 1.1 2010/06/15 16:20:42 landry Exp $
+--- format.cc.orig	Tue Jun 15 18:14:46 2010
++++ format.cc	Tue Jun 15 18:15:04 2010
+@@ -405,5 +405,5 @@ void fdisplay(char *type, int server, int arguments, .
+ }
+ 
+ int fexists(const char *type) {
+-  return (int)hash_get(&formats,type);
++  return (NULL != hash_get(&formats,type));
+ }

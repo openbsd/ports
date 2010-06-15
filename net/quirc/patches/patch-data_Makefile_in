@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_Makefile_in,v 1.6 2004/05/01 16:29:41 sturm Exp $
---- data/Makefile.in.orig	2004-05-01 18:23:45.000000000 +0200
-+++ data/Makefile.in	2004-05-01 18:24:02.000000000 +0200
-@@ -316,7 +316,7 @@ uninstall-am: uninstall-info-am uninstal
+$OpenBSD: patch-data_Makefile_in,v 1.7 2010/06/15 16:20:42 landry Exp $
+--- data/Makefile.in.orig	Tue Jan 13 08:23:10 2004
++++ data/Makefile.in	Tue Jun 15 18:14:35 2010
+@@ -316,7 +316,7 @@ uninstall-am: uninstall-info-am uninstall-pkgdataDATA
  
  
  install-exec-local:

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2009/08/10 06:33:43 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2010/06/15 16:20:42 landry Exp $
 
 COMMENT=	irc client that uses Tcl/Tk
 
 DISTNAME=	quirc-0.9.84
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	net
 
 HOMEPAGE=	http://quirc.sourceforge.net/
