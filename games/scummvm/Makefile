@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2010/04/15 07:10:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2010/06/15 13:11:17 landry Exp $
 
 BROKEN-hppa=	gcc bug
 
 COMMENT=	graphical adventure game interpreter
 DISTNAME=	scummvm-1.0.0
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -49,7 +49,7 @@ MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}"
 
 # XXX gcc3 compiling compact.cpp with -O2 gobbles 800MB
 # ICE on sparc with >= -O1
-.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "sparc"
+.if ${MACHINE_ARCH} == "sparc"
 CXXFLAGS+=	-O0
 .endif
 
