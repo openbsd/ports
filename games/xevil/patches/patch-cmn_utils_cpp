@@ -1,6 +1,6 @@
-$OpenBSD: patch-cmn_utils_cpp,v 1.2 2010/05/22 11:38:57 espie Exp $
+$OpenBSD: patch-cmn_utils_cpp,v 1.3 2010/06/15 19:04:05 landry Exp $
 --- cmn/utils.cpp.orig	Wed Mar 19 10:05:12 2003
-+++ cmn/utils.cpp	Sat May 22 13:36:31 2010
++++ cmn/utils.cpp	Tue Jun 15 20:42:21 2010
 @@ -30,18 +30,21 @@
  
  // Include Files
@@ -29,6 +29,15 @@ $OpenBSD: patch-cmn_utils_cpp,v 1.2 2010/05/22 11:38:57 espie Exp $
  #ifdef WIN32
  // For file manipulation routines.
  #include <direct.h>
+@@ -605,7 +608,7 @@ void PtrList::write(OutStreamP out) const{
+   // Not tested.
+   out->write_int(len);
+   for (int n = 0; n < len; n++) {
+-    out->write_int((int)data[n]);
++    out->write_int((intptr_t)data[n]);
+   }
+ }
+ 
 @@ -761,7 +764,7 @@ class HashTable: public IDictionary { (public)
  
  
@@ -38,3 +47,12 @@ $OpenBSD: patch-cmn_utils_cpp,v 1.2 2010/05/22 11:38:57 espie Exp $
    /* MODIFIES: index */
    /* EFFECTS: Internal helper function.  Return the Bucket containing key
       or NULL if not found.  Set index to the bucket list for key whether
+@@ -944,7 +947,7 @@ Bucket* HashTable::_get(int &index,void* key) {  
+ // Pretty crappy hash function, I know.
+ // Careful if bucketsNum is a power of 2.
+ int HashTable::defaultHash(void* key,int bucketsNum) {
+-  return ((unsigned int)key) % bucketsNum;
++  return ((unsigned intptr_t)key) % bucketsNum;
+ }
+ 
+ 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-cmn_actual_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
+$OpenBSD: patch-cmn_actual_cpp,v 1.2 2010/06/15 19:04:05 landry Exp $
 --- cmn/actual.cpp.orig	Wed Jan 19 12:54:36 2000
-+++ cmn/actual.cpp	Fri Dec  7 14:14:44 2007
++++ cmn/actual.cpp	Tue Jun 15 20:44:16 2010
 @@ -32,7 +32,9 @@
  
  // Include Files
@@ -12,3 +12,12 @@ $OpenBSD: patch-cmn_actual_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
  #endif
  #if WIN32
  #include <strstrea.h>
+@@ -1534,7 +1536,7 @@ Boolean Transmogifier::transmogify_target_filter(const
+                                                  void *closure) {
+   // notThis is used to prevent transmogifying into the same class an object
+   // already is.
+-  ClassId notThis = (ClassId)closure;
++  ClassId notThis = (intptr_t)closure;
+   if (pc->classId == notThis) {
+     return False;
+   }

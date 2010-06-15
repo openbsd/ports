@@ -1,6 +1,6 @@
-$OpenBSD: patch-cmn_game_style_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
+$OpenBSD: patch-cmn_game_style_cpp,v 1.2 2010/06/15 19:04:05 landry Exp $
 --- cmn/game_style.cpp.orig	Sat Mar 22 20:47:42 2003
-+++ cmn/game_style.cpp	Fri Dec  7 14:24:57 2007
++++ cmn/game_style.cpp	Tue Jun 15 20:48:55 2010
 @@ -29,12 +29,10 @@
  
  // Include Files
@@ -16,3 +16,12 @@ $OpenBSD: patch-cmn_game_style_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
  #endif
  
  #if WIN32
+@@ -2680,7 +2678,7 @@ int ZigZag::new_level_check(int,WorldP world,LocatorP 
+     HumanP human = locator->get_human(n);
+     if (human) {
+       // previous depth
+-      int depthOld = (int)human->get_data();
++      intptr_t depthOld = (intptr_t)human->get_data();
+       Id id = human->get_id();
+ 
+       // Get physical for intelligence

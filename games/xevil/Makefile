@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2009/08/10 06:31:43 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2010/06/15 19:04:05 landry Exp $
 #
 
 COMMENT=	side-view, fast-action, kill everything type of game
 
 V=		2.02r2
 DISTNAME=	xevilsrc${V}
-PKGNAME=	xevil-${V}p0
+PKGNAME=	xevil-${V}p1
 
 CATEGORIES=	games
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.xevil.com/
 MASTER_SITES=	${HOMEPAGE}download/stable/
 EXTRACT_SUFX=	.zip
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

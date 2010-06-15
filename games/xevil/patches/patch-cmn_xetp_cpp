@@ -1,6 +1,6 @@
-$OpenBSD: patch-cmn_xetp_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
---- cmn/xetp.cpp.orig	Fri Dec  7 14:03:22 2007
-+++ cmn/xetp.cpp	Fri Dec  7 14:03:37 2007
+$OpenBSD: patch-cmn_xetp_cpp,v 1.2 2010/06/15 19:04:05 landry Exp $
+--- cmn/xetp.cpp.orig	Wed Jan 19 12:54:30 2000
++++ cmn/xetp.cpp	Tue Jun 15 20:46:20 2010
 @@ -29,9 +29,12 @@
  
  #include "stdafx.h"
@@ -16,3 +16,12 @@ $OpenBSD: patch-cmn_xetp_cpp,v 1.1 2007/12/07 15:54:56 ajacoutot Exp $
  #endif
  #if WIN32
  #include <strstrea.h>
+@@ -159,7 +162,7 @@ void XETP::send_objects(OutStreamP out,const PtrList &
+   for (n = 0; n < physicals.length(); n++) {
+     PhysicalP p = (PhysicalP)physicals.get(n);
+     // computing object_length twice, but who cares.
+-    _send_object(out,p,turn,(TickType)tickTypes.get(n),
++    _send_object(out,p,turn,(intptr_t)tickTypes.get(n),
+                  compute_object_length(p));
+   }
+   
