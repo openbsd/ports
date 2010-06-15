@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/05/06 20:05:24 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2010/06/15 17:38:17 kili Exp $
 
 COMMENT =	documentation-generation tool for Haskell libraries
 
 DISTNAME =	haddock-2.7.2
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/haddock/
@@ -27,10 +27,11 @@ MODULES =		lang/ghc converters/libiconv
 # No haddock library (yet).
 MODGHC_BUILD =		cabal hackage nort
 
-RUN_DEPENDS +=		::devel/hs-ghc-paths
+LIB_DEPENDS +=		gmp::devel/gmp
 
 BUILD_DEPENDS +=	::devel/alex \
 			::devel/happy \
+			::devel/hs-ghc-paths \
 			::textproc/docbook \
 			::textproc/docbook-xsl \
 			::textproc/libxslt \
