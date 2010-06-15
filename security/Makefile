@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.231 2010/06/15 12:04:35 pea Exp $
+# $OpenBSD: Makefile,v 1.232 2010/06/15 13:18:01 pea Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -161,6 +161,7 @@
      SUBDIR += pgp5
      SUBDIR += pgpdump
      SUBDIR += pidgin-otr
+     SUBDIR += pinentry
      SUBDIR += portscanner
      SUBDIR += portsentry
      SUBDIR += ppgen
