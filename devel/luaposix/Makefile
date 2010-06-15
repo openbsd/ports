@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/09/06 15:39:21 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2010/06/15 22:05:58 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,8 +25,8 @@ do-build:
 	${WRKDIST}/lposix.c -o ${WRKDIST}/posix.so
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1
-	${INSTALL_DATA} ${WRKSRC}/posix.so ${PREFIX}/lib/lua/5.1
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/posix.so ${MODLUA_LIBDIR}
 
 do-regress:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/lua *.lua
