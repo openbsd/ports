@@ -1,14 +1,14 @@
-$OpenBSD: patch-configure,v 1.8 2009/08/22 12:02:31 ajacoutot Exp $
---- configure.orig	Sat Aug 22 10:42:39 2009
-+++ configure	Sat Aug 22 14:00:26 2009
-@@ -7455,13 +7455,13 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+$OpenBSD: patch-configure,v 1.9 2010/06/15 07:29:39 ajacoutot Exp $
+--- configure.orig	Sat May 29 09:27:35 2010
++++ configure	Tue Jun 15 09:26:01 2010
+@@ -8071,13 +8071,13 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  #define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
  
--    echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
-+    echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
+-    { echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
++    { echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
  if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
