@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/06/06 10:06:44 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/06/15 18:01:57 kili Exp $
 
 COMMENT =		Haskell binding for the OpenGL Utility Toolkit
 
 DISTNAME =		GLUT-2.1.2.1
-PKGNAME =		hs-${DISTNAME}p2
+PKGNAME =		hs-${DISTNAME}p3
 CATEGORIES =		graphics devel
 HOMEPAGE =		http://www.haskell.org/HOpenGL/
 
@@ -28,9 +28,7 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 
 USE_X11 =		Yes
 
-# XXX improve ghc.port.mk to avoid this uglyness
 MODGHC_SETUP_CONF_ENV =	CPPFLAGS=-I${LOCALBASE}/include \
-			LDFLAGS=-L${LOCALBASE}/lib \
-			HOME=${PORTHOME} PATH=${PATH}
+			LDFLAGS=-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
