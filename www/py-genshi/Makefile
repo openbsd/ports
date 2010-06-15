@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2009/03/25 13:52:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/06/15 11:25:02 sthen Exp $
 
 COMMENT =	toolkit for generation of output for the web
 
-MODPY_EGG_VERSION =	0.5.1
+MODPY_EGG_VERSION =	0.6
 DISTNAME =	Genshi-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME:L}p1
+PKGNAME =	py-${DISTNAME:L}
 
 CATEGORIES =   	www
 
@@ -21,6 +21,7 @@ MASTER_SITES =	ftp://ftp.edgewall.com/pub/genshi/
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_SETUP =		setup.py --with-speedups
 
 REGRESS_DEPENDS =	${BUILD_DEPENDS}
 
