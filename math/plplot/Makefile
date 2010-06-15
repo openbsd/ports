@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/05/28 14:48:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2010/06/15 20:47:38 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -53,6 +53,8 @@ MODULES+=	devel/cmake
 CONFIGURE_STYLE=cmake
 
 CONFIGURE_ARGS=	-D ENABLE_java=OFF \
+		-D ENABLE_f77=ON \
+		-D ENABLE_f95=OFF \
 		-D ENABLE_itcl=OFF \
 		-D ENABLE_pdl=OFF \
 		-D ENABLE_python=OFF \
