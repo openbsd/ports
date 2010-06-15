@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/05/17 08:18:59 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.38 2010/06/15 20:27:23 jasper Exp $
 
 COMMENT=	powerful, light-weight programming language
 
@@ -9,7 +9,6 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		http://www.tecgraf.puc-rio.br/lua/ftp/ \
 		http://ftp.gwdg.de/pub/languages/lua/ \
-		http://mirrors.sunsite.dk/lua/ \
 		http://ftp.ntua.gr/pub/lang/lua/ \
 		http://ftp.chg.ru/pub/lang/lua/
 
