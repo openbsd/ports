@@ -1,0 +1,20 @@
+$OpenBSD: patch-Client_C,v 1.1 2010/06/15 20:22:49 landry Exp $
+--- Client.C.orig	Tue Jun 15 22:19:31 2010
++++ Client.C	Tue Jun 15 22:21:01 2010
+@@ -3,6 +3,7 @@
+ #include "Client.h"
+ 
+ #include <X11/Xutil.h>
++#include <sys/stdint.h>
+ 
+ const char *const Client::m_defaultLabel = "incognito";
+ 
+@@ -410,7 +411,7 @@ int Client::getAtomProperty(Atom a, Atom type)
+ 
+     x = *p;
+     XFree((void *)p);
+-    return (int)x;
++    return (intptr_t)x;
+ }
+ 
+ 
