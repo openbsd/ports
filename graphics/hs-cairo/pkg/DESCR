@@ -1,0 +1,4 @@
+Cairo is a library to render high quality vector graphics. There
+exist various backends that allows rendering to Gtk windows, PDF,
+PS, PNG and SVG documents, amongst others. This package provides
+Haskell bindings to cairo.
