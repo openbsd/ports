@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/06/04 22:43:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2010/06/16 18:47:50 landry Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -26,6 +26,11 @@ LIB_DEPENDS=	QtGui.>=8:qt4->=4.5.3:x11/qt4 \
 		aspell::textproc/aspell/core
 
 WANTLIB += X11 c m pthread stdc++ z
+
+#eats gazillions of memory
+.if ${MACHINE_ARCH} == "hppa"
+CFLAGS+=	-O0
+.endif
 
 SEPARATE_BUILD=	concurrent
 USE_LIBTOOL=	Yes
