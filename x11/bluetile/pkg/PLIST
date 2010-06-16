@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/16 14:08:18 kili Exp $
+@bin bin/bluetile
+@bin bin/bluetiledock
+@bin bin/bluetilegreet
+@bin bin/bluetilemockwin
+@man man/man1/bluetile.1
+share/${DISTNAME}/
+share/${DISTNAME}/bluetiledock/
+share/${DISTNAME}/bluetiledock/bluetiledock.glade
+share/${DISTNAME}/bluetiledock/floating.svg
+share/${DISTNAME}/bluetiledock/fullscreen.svg
+share/${DISTNAME}/bluetiledock/tiled1.svg
+share/${DISTNAME}/bluetiledock/tiled2.svg
+share/${DISTNAME}/bluetilegreet/
+share/${DISTNAME}/bluetilegreet/bluetilegreet.glade
+share/${DISTNAME}/logo/
+share/${DISTNAME}/logo/bluetile-icon-48x48.png
+share/${DISTNAME}/logo/bluetile-icon.svg
+@comment share/doc/${DISTNAME}/
+@comment share/doc/${DISTNAME}/LICENSE

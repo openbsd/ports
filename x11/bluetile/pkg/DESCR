@@ -1,0 +1,7 @@
+Bluetile is a tiling window manager for X based on xmonad. Windows
+are arranged to use the entire screen without overlapping. Bluetile's
+focus lies on making the tiling paradigm easily accessible to users
+coming from traditional window managers by drawing on known conventions
+and providing both mouse and keyboard access for all features. It
+also tries to be usable 'out of the box', requiring minimal to no
+configuration in most cases.
