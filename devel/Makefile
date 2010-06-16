@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.803 2010/05/29 23:11:03 robert Exp $
+# $OpenBSD: Makefile,v 1.804 2010/06/16 14:05:44 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -121,6 +121,7 @@
      SUBDIR += grcs
      SUBDIR += gsl
      SUBDIR += gtest
+     SUBDIR += gtk2hs-buildtools
      SUBDIR += gtkparasite
      SUBDIR += guichan
      SUBDIR += guilib
@@ -139,11 +140,15 @@
      SUBDIR += hs-deepseq
      SUBDIR += hs-fgl
      SUBDIR += hs-ghc-paths
+     SUBDIR += hs-gio
+     SUBDIR += hs-glade
+     SUBDIR += hs-glib
      SUBDIR += hs-hashed-storage
      SUBDIR += hs-hslogger
      SUBDIR += hs-language-c
      SUBDIR += hs-mmap
      SUBDIR += hs-network
+     SUBDIR += hs-pango
      SUBDIR += hs-parallel
      SUBDIR += hs-parsec
      SUBDIR += hs-readline
