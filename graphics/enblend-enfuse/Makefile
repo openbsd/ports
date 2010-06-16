@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/16 09:19:07 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2010/06/16 09:26:28 sthen Exp $
 
 VMEM_WARNING =	Yes
 # and I'm not joking! - don't waste build time on the following arch
 # where MAXDSIZ is simply too low to compile this software:
 NOT_FOR_ARCHS = m68k m88k sparc vax
 # and restrict to -O0 for the largest files, except on selected arch
+# (needs approx 1.3GB datasize to build with -O2 on 64-bit gcc4 arch)
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64")
 MAKE_ENV +=	CXXNOOPT=-O0
 .endif
