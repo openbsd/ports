@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2009/08/10 06:34:08 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2010/06/16 10:13:40 fgsch Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		vector font editor/converter
 
 DISTNAME=		fontforge_full-20090408
-PKGNAME=		${DISTNAME:S,_full,,}p0
+PKGNAME=		${DISTNAME:S,_full,,}p1
 EXTRACT_SUFX=		.tar.bz2
 SHARED_LIBS=		fontforge	2.0 \
 			gdraw		4.0 \
@@ -33,7 +33,6 @@ WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xft Xi Xrender c \
                         pthread pthread-stubs util xcb xkbfile xkbui z
  
 MODULES=		devel/gettext lang/python
-MODPY_VERSION=		2.5
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS}		\
 			cairo.>=9::graphics/cairo	\
