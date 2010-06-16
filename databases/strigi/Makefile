@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/15 20:49:13 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/16 13:35:43 espie Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	document indexer
 CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	http://strigi.sourceforge.net
-DISTNAME =	strigi-0.5.10
-PKGNAME =	${DISTNAME}p1
+DISTNAME =	strigi-0.6.4
+PKGNAME =	${DISTNAME}
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=strigi/}
 
@@ -25,11 +25,13 @@ SHARED_LIBS +=  strigiqtdbusclient 0.0 # .0.5
 LIB_DEPENDS =		clucene::textproc/clucene \
 			bz2::archivers/bzip2 \
 			xml2::textproc/libxml \
-			lib/qt4/QtCore,lib/qt4/QtGui,lib/qt4/QtDBus::x11/qt4
+			lib/qt4/QtCore,lib/qt4/QtGui,lib/qt4/QtDBus::x11/qt4 \
+			dbus-1::x11/dbus \
+			exiv2::graphics/exiv2
 
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xrandr Xrender
-WANTLIB += c dbus-1 fontconfig freetype glib-2.0 gthread-2.0 iconv
-WANTLIB += m png pthread pthread-stubs stdc++ xcb z
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender
+WANTLIB += c fontconfig freetype glib-2.0 gthread-2.0 iconv
+WANTLIB += m png pthread stdc++ z
 
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake

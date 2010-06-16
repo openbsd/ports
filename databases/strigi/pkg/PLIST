@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/15 20:49:13 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/06/16 13:35:43 espie Exp $
 @bin bin/deepfind
 @bin bin/deepgrep
 @bin bin/luceneindexer
@@ -25,6 +25,7 @@ include/strigi/fileinputstream.h
 include/strigi/indexeddocument.h
 include/strigi/indexmanager.h
 include/strigi/indexplugin.h
+include/strigi/indexpluginloader.h
 include/strigi/indexreader.h
 include/strigi/indexwriter.h
 include/strigi/inputstream.h
@@ -64,6 +65,7 @@ lib/pkgconfig/libstreamanalyzer.pc
 lib/pkgconfig/libstreams.pc
 lib/strigi/
 lib/strigi/StrigiConfig.cmake
+lib/strigi/strigiea_jpeg.so
 lib/strigi/strigiindex_clucene.so
 lib/strigi/strigila_cpp.so
 lib/strigi/strigila_deb.so
@@ -80,8 +82,6 @@ lib/strigi/strigita_rgb.so
 lib/strigi/strigita_sid.so
 lib/strigi/strigita_wav.so
 lib/strigi/strigita_xbm.so
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.xesam.searcher.service
 share/dbus-1/services/vandenoever.strigi.service
 share/strigi/
