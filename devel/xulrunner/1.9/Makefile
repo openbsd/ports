@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/06/12 15:16:47 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2010/06/16 19:06:26 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
 VERSION=		1.9.2.3
-#PATCHLEVEL=		p1
+PATCHLEVEL=		p0
 DIRECTORY=		xulrunner1.9
 DISTNAME=		mozilla-1.9.2
 DISTFILES=		firefox-3.6.3.source.tar.bz2
@@ -53,8 +53,7 @@ PCFILES=		libxul.pc libxul-embedding.pc mozilla-js.pc \
 			mozilla-gtkmozembed-embedding.pc
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
-				${WRKSRC}/js/src/build/autoconf \
-				${WRKSRC}/nsprpub/build/autoconf
+				${WRKSRC}/js/src/build/autoconf
 post-extract:
 	cp -f ${FILESDIR}/sydney_audio_sndio.c \
 		${WRKSRC}/media/libsydneyaudio/src/
@@ -62,7 +61,6 @@ post-extract:
 
 pre-configure:
 	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	${SUBST_CMD} ${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${WRKSRC}/config/autoconf.mk.in \
 		${WRKSRC}/build/unix/mozilla.in \
