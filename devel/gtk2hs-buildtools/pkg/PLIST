@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/16 13:57:39 kili Exp $
+@bin bin/gtk2hsC2hs
+@bin bin/gtk2hsHookGenerator
+@bin bin/gtk2hsTypeGen
+@comment share/doc/${DISTNAME}/
+@comment share/doc/${DISTNAME}/COPYING
+share/${DISTNAME}/
+share/${DISTNAME}/callbackGen/
+share/${DISTNAME}/callbackGen/Signal.chs.template
+share/${DISTNAME}/hierarchyGen/
+share/${DISTNAME}/hierarchyGen/Hierarchy.chs.template
+share/${DISTNAME}/hierarchyGen/hierarchy.list
