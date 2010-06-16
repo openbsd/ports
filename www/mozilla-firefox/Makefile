@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2010/06/12 15:00:12 landry Exp $
+# $OpenBSD: Makefile,v 1.139 2010/06/16 19:05:40 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	redesign of Mozilla's browser component
 
 VER=		3.6.3
 DISTNAME=	mozilla-1.9.2
-PKGNAME=	mozilla-firefox-${VER}p3
+PKGNAME=	mozilla-firefox-${VER}p4
 SO_VERSION=	21.1
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -56,8 +56,7 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
-				${WRKSRC}/js/src/build/autoconf \
-				${WRKSRC}/nsprpub/build/autoconf
+				${WRKSRC}/js/src/build/autoconf
 
 AUTOCONF_VERSION= 2.13
 CONFIGURE_STYLE= autoconf no-autoheader
@@ -132,7 +131,6 @@ post-extract:
 
 pre-configure:
 	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	${SUBST_CMD} ${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${WRKSRC}/config/autoconf.mk.in \
 		${WRKSRC}/build/unix/mozilla.in \
