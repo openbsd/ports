@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: dolock,v 1.4 2010/06/16 12:08:42 espie Exp $
+# $OpenBSD: dolock,v 1.5 2010/06/16 12:09:22 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -31,6 +31,7 @@ unless (-e $dname) {
 	File::Path::mkpath($dname);
 }
 if (!-d $dname) {
+	print STDERR "lock directory location $dname is not a directory\n";
 	exit(1);
 }
 
