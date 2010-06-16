@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1003 2010/06/15 11:42:21 kili Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1004 2010/06/16 12:06:46 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -185,13 +185,15 @@ FETCH_CMD ?= /usr/bin/ftp -V ${_PROGRESS} -k ${FTP_KEEPALIVE}
 PKG_TMPDIR ?= /var/tmp
 
 PKGDB_LOCK ?=
-PKG_CMD ?= /usr/sbin/pkg_create
+PKG_ADD ?= /usr/sbin/pkg_add
+PKG_INFO ?= /usr/sbin/pkg_info
+PKG_CREATE ?= /usr/sbin/pkg_create
 PKG_DELETE ?= /usr/sbin/pkg_delete
 
-_PKG_ADD = /usr/sbin/pkg_add ${_PROGRESS}
-_PKG_CREATE = ${PKG_CMD} ${_PROGRESS}
+_PKG_ADD = ${PKG_ADD} ${_PROGRESS}
+_PKG_CREATE = ${PKG_CREATE} ${_PROGRESS}
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
-_PKG_QUERY = /usr/sbin/pkg_info ${PKGDB_LOCK} -e
+_PKG_QUERY = ${PKG_INFO} ${PKGDB_LOCK} -e
 _PKG_ADD += ${PKG_DBLOCK}
 _PKG_CREATE += ${PKGDB_LOCK}
 _PKG_DELETE += ${PKGDB_LOCK}
