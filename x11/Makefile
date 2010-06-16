@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.421 2010/06/16 14:06:21 kili Exp $
+# $OpenBSD: Makefile,v 1.422 2010/06/16 14:08:48 kili Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -28,6 +28,7 @@
      SUBDIR += bgs
      SUBDIR += blackbox
      SUBDIR += blast
+     SUBDIR += bluetile
      SUBDIR += bricons
      SUBDIR += bwidget
      SUBDIR += chbg
