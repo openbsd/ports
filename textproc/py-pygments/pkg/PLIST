@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/01/15 23:10:17 djm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/06/16 07:40:30 sthen Exp $
 bin/pygmentize
-lib/python${MODPY_VERSION}/site-packages/Pygments-1.0-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/Pygments-1.0-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/Pygments-1.0-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/Pygments-1.0-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/Pygments-1.0-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/Pygments-1.0-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/Pygments-1.0-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pygments/
 lib/python${MODPY_VERSION}/site-packages/pygments/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygments/__init__.pyc
@@ -49,6 +49,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexer.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_asybuiltins.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_asybuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_clbuiltins.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_clbuiltins.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/_luabuiltins.py
@@ -73,6 +75,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/math.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/math.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/other.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/other.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/parsers.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/parsers.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/special.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/special.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/templates.py
@@ -108,6 +112,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/styles/fruity.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/fruity.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/manni.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/manni.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/styles/monokai.py
+lib/python${MODPY_VERSION}/site-packages/pygments/styles/monokai.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/murphy.py
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/murphy.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/styles/native.py
