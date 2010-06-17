@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2010/05/17 16:39:25 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2010/06/17 13:40:08 pea Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -397,6 +397,8 @@ share/examples/freeradius/sites-available/README
 @sample ${SYSCONFDIR}/raddb/sites-available/README
 share/examples/freeradius/sites-available/buffered-sql
 @sample ${SYSCONFDIR}/raddb/sites-available/buffered-sql
+share/examples/freeradius/sites-available/coa
+@sample ${SYSCONFDIR}/raddb/sites-available/coa
 share/examples/freeradius/sites-available/control-socket
 @sample ${SYSCONFDIR}/raddb/sites-available/control-socket
 share/examples/freeradius/sites-available/copy-acct-to-home-server
@@ -576,6 +578,7 @@ share/freeradius/dictionary.versanet
 share/freeradius/dictionary.vqp
 share/freeradius/dictionary.walabi
 share/freeradius/dictionary.waverider
+share/freeradius/dictionary.wichorus
 share/freeradius/dictionary.wimax
 share/freeradius/dictionary.wispr
 share/freeradius/dictionary.xedia
