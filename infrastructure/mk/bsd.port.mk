@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1005 2010/06/16 12:22:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1006 2010/06/17 03:31:33 william Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2514,6 +2514,9 @@ _internal-clean:
 .  else
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
 	@rm -rf ${WRKDIR}
+.   if !empty(WRKDIR_LINKNAME)
+	@if [ -L ${WRKDIR_LINKNAME} ]; then rm -f ${.CURDIR}/${WRKDIR_LINKNAME}; fi
+.   endif
 .  endif
 .elif ${_clean:L:Mbuild} && ${SEPARATE_BUILD:L} != "no"
 	@rm -rf ${WRKBUILD} ${_CONFIGURE_COOKIE} ${_BUILD_COOKIE}
