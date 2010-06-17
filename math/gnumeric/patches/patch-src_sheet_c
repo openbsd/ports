@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_sheet_c,v 1.2 2010/05/09 15:31:38 ajacoutot Exp $
+$OpenBSD: patch-src_sheet_c,v 1.3 2010/06/17 08:17:41 ajacoutot Exp $
 
 gcc3 doesn't like function names that end with a numeral right after
 alphabetical characters.
 
---- src/sheet.c.orig	Tue May  4 00:26:31 2010
-+++ src/sheet.c	Sun May  9 12:38:58 2010
-@@ -1058,7 +1058,7 @@ gnm_sheet_visibility_get_type (void)
+--- src/sheet.c.orig	Thu Jun 10 22:07:38 2010
++++ src/sheet.c	Thu Jun 17 09:09:45 2010
+@@ -1067,7 +1067,7 @@ gnm_sheet_visibility_get_type (void)
  /* ------------------------------------------------------------------------- */
  
  static gboolean
@@ -14,7 +14,7 @@ alphabetical characters.
  {
  	return i > 0 && (i & (i - 1)) == 0;
  }
-@@ -1068,10 +1068,10 @@ gnm_sheet_valid_size (int cols, int rows)
+@@ -1077,10 +1077,10 @@ gnm_sheet_valid_size (int cols, int rows)
  {
  	return (cols >= GNM_MIN_COLS &&
  		cols <= GNM_MAX_COLS &&
