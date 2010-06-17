@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2010/06/17 07:42:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.92 2010/06/17 09:17:52 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 
 V=		1.0.6
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}p2
+PKGNAME-main=	${DISTNAME}p3
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
@@ -166,6 +166,7 @@ PKG_ARGS+=-Di386=0
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure.ac
+	@perl -pi -e 's/grep -v /grep -av /' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .for _img in 16x16 32x32 48x48 128x128
