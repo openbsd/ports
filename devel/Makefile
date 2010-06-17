@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.804 2010/06/16 14:05:44 kili Exp $
+# $OpenBSD: Makefile,v 1.805 2010/06/17 22:11:23 bluhm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -389,6 +389,8 @@
      SUBDIR += p5-Data-Types
      SUBDIR += p5-Data-UUID
      SUBDIR += p5-Data-VString
+     SUBDIR += p5-Data-Validate
+     SUBDIR += p5-Data-Validate-Struct
      SUBDIR += p5-Data-Visitor
      SUBDIR += p5-Date-Calc
      SUBDIR += p5-Date-Handler
