@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/06/08 01:08:20 fgsch Exp $
+# $OpenBSD: Makefile,v 1.50 2010/06/17 09:57:55 fgsch Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	amd64 i386 sparc64
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	amd64 i386 sparc64
 COMMENT =		multi system emulator
 
 DISTNAME =		qemu-0.12.4
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		emulators
 
 HOMEPAGE =		http://www.qemu.org/
@@ -33,7 +34,7 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--disable-guest-base \
 			--extra-cflags=-fno-stack-protector
 
-FLAVORS =		no_x11
+FLAVORS =		debug no_x11
 FLAVOR ?=
 
 .if ${FLAVOR:L:Mno_x11}
@@ -43,6 +44,9 @@ LIB_DEPENDS =    	SDL::devel/sdl
 
 USE_X11 =		Yes
 WANTLIB +=		X11
+.endif
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS +=	--enable-debug
 .endif
 
 # Currently, the regression tests are utterly broken.

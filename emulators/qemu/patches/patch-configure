@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.13 2010/05/27 17:55:05 fgsch Exp $
---- configure.orig	Tue Feb 23 20:54:38 2010
-+++ configure	Tue Mar  9 08:12:32 2010
+$OpenBSD: patch-configure,v 1.14 2010/06/17 09:57:55 fgsch Exp $
+--- configure.orig	Tue May  4 16:27:48 2010
++++ configure	Wed Jun 16 21:24:04 2010
 @@ -34,12 +34,12 @@ interp_prefix="/usr/gnemul/qemu-%M"
  static="no"
  sparc_cpu=""
@@ -25,16 +25,18 @@ $OpenBSD: patch-configure,v 1.13 2010/05/27 17:55:05 fgsch Exp $
  QEMU_CFLAGS="-Wall -Wundef -Wendif-labels -Wwrite-strings -Wmissing-prototypes $QEMU_CFLAGS"
  QEMU_CFLAGS="-Wstrict-prototypes -Wredundant-decls $QEMU_CFLAGS"
  QEMU_CFLAGS="-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE $QEMU_CFLAGS"
-@@ -1788,7 +1788,7 @@ fi
+@@ -1788,7 +1788,9 @@ fi
  # After here, no more $cc or $ld runs
  
  if test "$debug" = "no" ; then
 -  CFLAGS="-O2 $CFLAGS"
 +  CFLAGS="$CFLAGS"
++else
++  CFLAGS="-g $CFLAGS"
  fi
  
  # Consult white-list to determine whether to enable werror
-@@ -1836,7 +1836,7 @@ else
+@@ -1836,7 +1838,7 @@ else
    if test -z "$prefix" ; then
        prefix="/usr/local"
    fi
@@ -43,7 +45,7 @@ $OpenBSD: patch-configure,v 1.13 2010/05/27 17:55:05 fgsch Exp $
    datasuffix="/share/qemu"
    docsuffix="/share/doc/qemu"
    binsuffix="/bin"
-@@ -2167,7 +2167,7 @@ echo "datadir=\${prefix}$datasuffix" >> $config_host_m
+@@ -2167,7 +2169,7 @@ echo "datadir=\${prefix}$datasuffix" >> $config_host_m
  echo "docdir=\${prefix}$docsuffix" >> $config_host_mak
  echo "MAKE=$make" >> $config_host_mak
  echo "INSTALL=$install" >> $config_host_mak
@@ -52,7 +54,7 @@ $OpenBSD: patch-configure,v 1.13 2010/05/27 17:55:05 fgsch Exp $
  echo "INSTALL_DATA=$install -m0644 -p" >> $config_host_mak
  echo "INSTALL_PROG=$install -m0755 -p" >> $config_host_mak
  echo "CC=$cc" >> $config_host_mak
-@@ -2575,7 +2575,11 @@ if test "$gprof" = "yes" ; then
+@@ -2575,7 +2577,11 @@ if test "$gprof" = "yes" ; then
    fi
  fi
  
