@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.18 2010/02/16 20:50:32 espie Exp $
+# $OpenBSD: out-of-date,v 1.19 2010/06/17 10:30:39 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -23,26 +23,28 @@ use OpenBSD::Error;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
 use OpenBSD::PackageName;
-use OpenBSD::ProgressMeter;
 use File::Temp;
+use OpenBSD::AddCreateDelete;
 
 our $opt_q;
-set_usage('out-of-date [-q]');
-try {
-	getopts('q');
-} catchall {
-	Usage($_);
-};
+my $state = OpenBSD::AddCreateDelete::State->new("out-of-date");
+OpenBSD::AddCreateDelete->handle_options('q', $state, "[-q]");
 
 sub collect_installed
 {
 	my $pkg = {};
-	for my $name (installed_packages(1)) {
+
+	$state->progress->set_header("Collecting installed packages");
+	my @l = installed_packages(1);
+	my $i = 0;
+	for my $name (@l) {
+		$state->progress->show(++$i, scalar(@l));
 		my ($stem, $version) = OpenBSD::PackageName::splitname($name);
 		my $plist = OpenBSD::PackingList->from_installation($name,
 		    \&OpenBSD::PackingList::UpdateInfoOnly);
 		if (!defined $plist or !defined $plist->{extrainfo}->{subdir}) {
-			print STDERR "Package $name has no valid packing-list\n";
+			$state->errsay("Package #1has no valid packing-list", 
+			    $name);
 			next;
 		}
 			
@@ -102,8 +104,7 @@ sub collect_port_versions
 	my $count = 0;
 	my $total = scalar @subdirs;
 
-	my $progress = OpenBSD::ProgressMeter->new;
-	$progress->set_header("Collecting port versions");
+	$state->progress->set_header("Collecting port versions");
 	my ($fh, $old) = fh_open($cmd);
 	my $subdir     = "";
 	while (<$fh>) {
@@ -111,7 +112,7 @@ sub collect_port_versions
 		if (/^\=\=\=\>\s+(\S+)/) {
 			$subdir = $1;
 			$count++;
-			$progress->show($count, $total);
+			$state->progress->show($count, $total);
 			next;
 		}
 		next unless $_ or $subdir;
@@ -128,7 +129,7 @@ sub collect_port_versions
 		$port->{$subdir}->{version} = $version;
 	}
 	fh_close($fh, $old);
-	$progress->next;
+	$state->progress->next;
 
 	return $port, $error;
 }
@@ -159,8 +160,7 @@ sub collect_port_signatures
 
 	my $count = 0;
 	my $total = scalar @subdirs;
-	my $progress = OpenBSD::ProgressMeter->new;
-	$progress->set_header("Collecting port signatures");
+	$state->progress->set_header("Collecting port signatures");
 	my ($fh, $old) = fh_open($cmd);
 	my $subdir     = "";
 	while (<$fh>) {
@@ -168,14 +168,14 @@ sub collect_port_signatures
 		if (/^\=\=\=\>\s+(\S+)/) {
 			$subdir = $1;
 			$count++;
-			$progress->show($count, $total);
+			$state->progress->show($count, $total);
 			next;
 		}
 		next unless $_ or $subdir;
 		$port->{$subdir}->{signature} = $_;
 	}
 	fh_close($fh, $old);
-	$progress->next;
+	$state->progress->next;
 }
 
 sub split_sig
@@ -228,7 +228,7 @@ sub find_outdated
 
 my $portsdir = $ENV{PORTSDIR} || "/usr/ports";
 
-print STDERR "Collecting installed packages\n";
+
 my $pkg = collect_installed();
 
 my @output   = ();
@@ -238,27 +238,27 @@ my ($port, $errors) = collect_port_versions($pkg, $portsdir, \@notfound);
 collect_port_signatures($pkg, $port, $portsdir, \@output) unless $opt_q;
 find_outdated($pkg, $port, \@output);
 
-print STDERR "Outdated ports:\n\n";
-print $_ for sort @output;
+$state->errsay("Outdated ports:\n");
+$state->print("#1", $_) for sort @output;
 
 if ($opt_q) {
-	print STDERR "\nWARNING: You've used the -q option. With this,\n"
+	$state->errsay("\nWARNING: You've used the -q option. With this,\n"
 	    . "out-of-date only looks for changed package names\nbut not "
 	    . "for changed package signatures. If you\nwant to see ALL "
-	    . "of your outdated packages,\ndon't use -q.\n";
+	    . "of your outdated packages,\ndon't use -q.");
 }
 
 if (@notfound > 0) {
-	print STDERR "\nPorts that can't be found in the official "
-	    . "ports tree:\n";
+	$state->errsay("\nPorts that can't be found in the official "
+	    . "ports tree:");
 	for (sort @notfound) {
-		print STDERR "  $_\n";
+		$state->errsay("#1", $_);
 	}
 }
 if ((keys %$errors) > 0) {
-	print STDERR "\nErrors:\n";
+	$state->errsay("\nErrors:");
 	for (sort keys %$errors) {
-		print STDERR "  $_\n";
-		print STDERR "    $_\n" for @{$errors->{$_}};
+		$state->errsay("  #1", $_);
+		$state->errsay("    #1", $_) for @{$errors->{$_}};
 	}
 }
