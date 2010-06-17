@@ -1,7 +1,7 @@
 To start apcupsd at boot time, edit ${SYSCONFDIR}/apcupsd/apcupsd.conf
 and add the following lines to /etc/rc.local:
 
-if [ -x ${PREFIX}/sbin/apcupsd]; then
+if [ -x ${PREFIX}/sbin/apcupsd ]; then
 	echo -n ' apcupsd';       ${PREFIX}/sbin/apcupsctl start
 fi
 
