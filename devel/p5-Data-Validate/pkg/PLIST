@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/17 21:49:36 bluhm Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/Validate.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Data/
+${P5SITE}/auto/Data/Validate/
+${P5SITE}/auto/Data/Validate/autosplit.ix
+${P5SITE}/auto/Data/Validate/is_alphanumeric.al
+${P5SITE}/auto/Data/Validate/is_between.al
+${P5SITE}/auto/Data/Validate/is_equal_to.al
+${P5SITE}/auto/Data/Validate/is_even.al
+${P5SITE}/auto/Data/Validate/is_greater_than.al
+${P5SITE}/auto/Data/Validate/is_hex.al
+${P5SITE}/auto/Data/Validate/is_integer.al
+${P5SITE}/auto/Data/Validate/is_less_than.al
+${P5SITE}/auto/Data/Validate/is_numeric.al
+${P5SITE}/auto/Data/Validate/is_oct.al
+${P5SITE}/auto/Data/Validate/is_odd.al
+${P5SITE}/auto/Data/Validate/is_printable.al
+${P5SITE}/auto/Data/Validate/length_is_between.al
+${P5SITE}/auto/Data/Validate/new.al
+@man man/man3p/Data::Validate.3p

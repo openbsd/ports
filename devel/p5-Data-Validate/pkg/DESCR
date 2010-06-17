@@ -1,0 +1,5 @@
+This module collects common validation routines to make input
+validation, and untainting easier and more readable.  Most of the
+functions are not much shorter than their direct perl equivalent
+(and are much longer in some cases), but their names make it clear
+what you're trying to test for.
