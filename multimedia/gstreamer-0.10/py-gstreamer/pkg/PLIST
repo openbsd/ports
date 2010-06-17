@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/11/29 09:18:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/06/17 15:30:18 giovanni Exp $
 @comment lib/gstreamer-${VERSION}/libgstpython.la
 lib/gstreamer-${VERSION}/libgstpython.so
 lib/pkgconfig/gst-python-${VERSION}.pc
@@ -70,6 +70,7 @@ share/gst-python/${VERSION}/examples/filesrc.py
 share/gst-python/${VERSION}/examples/fvumeter.py
 share/gst-python/${VERSION}/examples/gst-discover
 share/gst-python/${VERSION}/examples/gstfile.py
+share/gst-python/${VERSION}/examples/maemogst.py
 share/gst-python/${VERSION}/examples/mixer.py
 share/gst-python/${VERSION}/examples/pipeline-tester
 share/gst-python/${VERSION}/examples/play.py

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/02 13:08:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/17 15:30:18 giovanni Exp $
 
 COMMENT =		Python bindings for GStreamer
 
-V =			0.10.17
+V =			0.10.18
 DISTNAME =		gst-python-$V
 PKGNAME =		py-gstreamer-$V
 
