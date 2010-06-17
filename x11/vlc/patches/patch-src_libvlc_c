@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_libvlc_c,v 1.1 2010/05/05 08:43:35 edd Exp $
---- src/libvlc.c.orig	Sun Mar  7 13:38:03 2010
-+++ src/libvlc.c	Tue Apr 27 19:14:30 2010
+$OpenBSD: patch-src_libvlc_c,v 1.2 2010/06/17 07:42:16 dcoppa Exp $
+--- src/libvlc.c.orig	Sun Mar  7 19:38:03 2010
++++ src/libvlc.c	Wed May 26 16:42:36 2010
 @@ -906,21 +906,25 @@ int libvlc_InternalInit( libvlc_int_t *p_libvlc, int i
               && config_GetInt( p_libvlc, "started-from-file" ) ) )
          libvlc_InternalAddIntf( p_libvlc, "dbus,none" );
  
-+#ifdef __i386__
++#if 0
      /* Prevents the power management daemon from suspending the system
       * when VLC is active */
      if( config_GetInt( p_libvlc, "inhibit" ) > 0 )
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_libvlc_c,v 1.1 2010/05/05 08:43:35 edd Exp $
       * Currently, only for X
       */
  #ifdef HAVE_X11_XLIB_H
-+#ifdef __i386__
++#if 0
      if( config_GetInt( p_libvlc, "disable-screensaver" ) )
      {
          libvlc_InternalAddIntf( p_libvlc, "screensaver,none" );

@@ -1,0 +1,11 @@
+$OpenBSD: patch-projects_mozilla_vlcshell_h,v 1.1 2010/06/17 07:42:16 dcoppa Exp $
+--- projects/mozilla/vlcshell.h.orig	Sun Mar  7 19:38:03 2010
++++ projects/mozilla/vlcshell.h	Sat Jun 12 22:52:43 2010
+@@ -27,7 +27,6 @@
+ char * NPP_GetMIMEDescription( void );
+ 
+ NPError NPP_Initialize( void );
+-jref NPP_GetJavaClass( void );
+ void NPP_Shutdown( void );
+ 
+ NPError NPP_New( NPMIMEType pluginType, NPP instance, uint16 mode, int16 argc,

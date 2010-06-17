@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-web,v 1.2 2010/05/05 08:43:35 edd Exp $
-lib/mozilla-plugins/
-@comment lib/mozilla-plugins/libvlcplugin.a
-lib/mozilla-plugins/libvlcplugin.la
-lib/mozilla-plugins/libvlcplugin.so
+@comment $OpenBSD: PLIST-web,v 1.3 2010/06/17 07:42:16 dcoppa Exp $
+lib/mozilla/
+lib/mozilla/plugins/
+@comment lib/mozilla/plugins/libvlcplugin.a
+@comment lib/mozilla/plugins/libvlcplugin.la
+lib/mozilla/plugins/libvlcplugin.so
 share/vlc/mozilla/
 share/vlc/mozilla/fullscreen.xpm
 share/vlc/mozilla/pause.xpm

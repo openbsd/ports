@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2010/05/16 08:37:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2010/06/17 07:42:16 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 
 V=		1.0.6
 DISTNAME=	vlc-${V}
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}p2
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
@@ -47,8 +47,10 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
 		x264::multimedia/x264 \
 		schroedinger-1.0::multimedia/schroedinger \
 		dvbpsi.>=3::graphics/libdvbpsi \
+		gsm.>=1.0::audio/gsm \
 		speex::audio/speex \
 		tag::audio/taglib \
+		vorbis.>=6,vorbisenc.>=2::audio/libvorbis \
 		dca::audio/libdca \
 		proxy::net/libproxy \
 		notify::devel/libnotify
@@ -60,8 +62,8 @@ WANTLIB-main=	GL GLU ICE SM SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 gtk-x11-2.0 jpeg m mp3lame oil-0.3 ogg pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 pthread-stubs pthread \
-		stdc++.>=46.0 sndio tiff usbhid vorbis vorbisenc xcb-keysyms \
-		xcb-render xcb-render-util xcb z
+		stdc++.>=46.0 sndio tiff usbhid xcb-keysyms xcb-render \
+		xcb-render-util xcb z
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
@@ -116,17 +118,23 @@ FLAVOR?=
 .if !${FLAVOR:L:Mno_web}
 MULTI_PACKAGES+=-web
 COMMENT-web=	Mozilla plugin for embedded media playback
-PKGNAME-web=	vlc-web-${V}
-BUILD_DEPENDS+=	:xulrunner-devel->=1.8,<1.9:devel/xulrunner/1.8,-devel
-CONFIGURE_ARGS+=--enable-mozilla
-CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/bin/xulrunner-config" \
-		with_mozilla_pkg="xulrunner-plugin"
-PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/xulrunner
+PKGNAME-web=	vlc-web-${V}p0
+BUILD_DEPENDS+=	:xulrunner-devel->=1.9:devel/xulrunner/1.9,-devel
+CONFIGURE_ARGS+=--enable-mozilla --with-mozilla-sdk-path=${LOCALBASE}/xulrunner1.9
+CONFIGURE_ENV+=	CPPFLAGS="-I${WRKSRC}/include -I${X11BASE}/include -I${LOCALBASE}/include \
+			  -I${LOCALBASE}/include/libpng \
+			  -I${LOCALBASE}/include/nspr \
+			  -I${LOCALBASE}/xulrunner1.9/include -DOPENBSD" \
+		with_mozilla_pkg="libxul" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt4/pkgconfig" \
+		LOCALBASE=${LOCALBASE}
+PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/xulrunner1.9
 LIB_DEPENDS-web=${LIB_DEPENDS} \
 		vlc,vlccore::${BASE_PKGPATH} \
 		nspr4,plc4,plds4::devel/nspr
 RUN_DEPENDS-web=::${BUILD_PKGPATH}
-WANTLIB-web=	ICE SM X11 Xau Xdmcp Xt Xpm m pthread-stubs xcb
+WANTLIB-web=	ICE SM X11 Xau Xdmcp Xt Xpm m pthread-stubs stdc++.>=46.0 xcb
 .endif
 
 .if !${FLAVOR:L:Mno_jack}
@@ -155,6 +163,9 @@ PKG_ARGS+=-Di386=1
 .else
 PKG_ARGS+=-Di386=0
 .endif
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure.ac
 
 post-install:
 .for _img in 16x16 32x32 48x48 128x128

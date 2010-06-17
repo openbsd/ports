@@ -1,0 +1,21 @@
+$OpenBSD: patch-projects_mozilla_control_npolibvlc_cpp,v 1.1 2010/06/17 07:42:16 dcoppa Exp $
+--- projects/mozilla/control/npolibvlc.cpp.orig	Sun Mar  7 19:38:03 2010
++++ projects/mozilla/control/npolibvlc.cpp	Sat Jun 12 22:45:02 2010
+@@ -949,7 +949,7 @@ LibvlcPlaylistNPObject::invoke(int index, const NPVari
+ void LibvlcPlaylistNPObject::parseOptions(const NPString &nps,
+                                          int *i_options, char*** ppsz_options)
+ {
+-    if( nps.utf8length )
++    if( nps.UTF8Length )
+     {
+         char *s = stringValue(nps);
+         char *val = s;
+@@ -961,7 +961,7 @@ void LibvlcPlaylistNPObject::parseOptions(const NPStri
+             {
+                 int nOptions = 0;
+ 
+-                char *end = val + nps.utf8length;
++                char *end = val + nps.UTF8Length;
+                 while( val < end )
+                 {
+                     // skip leading blanks

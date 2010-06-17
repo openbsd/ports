@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2010/06/17 07:42:16 dcoppa Exp $
+--- src/Makefile.in.orig	Mon Jun  7 11:22:23 2010
++++ src/Makefile.in	Mon Jun  7 11:22:30 2010
+@@ -3609,7 +3609,7 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-pkgco
+ 	cat $(top_srcdir)/COPYING | sed s/'"'/'\\"'/g | $(AWK) '{ print "\""$$0"\\n\"" }' >> "$@.tmp"
+ 	echo ";" >> "$@.tmp"
+ 	echo "static const char psz_thanks[] =" >> "$@.tmp"
+-	grep -v '$$Id: patch-src_Makefile_in,v 1.1 2010/06/17 07:42:16 dcoppa Exp $(top_srcdir)/THANKS | sed s/'"'/'\\"'/g | $(AWK) '{ print "\""$$0"\\n\"" }'|sed s/"<.*.> "// >> "$@.tmp"
++	grep -av '$$Id: patch-src_Makefile_in,v 1.1 2010/06/17 07:42:16 dcoppa Exp $(top_srcdir)/THANKS | sed s/'"'/'\\"'/g | $(AWK) '{ print "\""$$0"\\n\"" }'|sed s/"<.*.> "// >> "$@.tmp"
+ 	echo ";" >> "$@.tmp"
+ 	echo "static const char psz_authors[] =" >> "$@.tmp"
+ 	grep N: $(top_srcdir)/AUTHORS | cut -d" " -f 2- | sed s/'"'/'\\"'/g | $(AWK) '{ print "\""$$0"\\n\"" }' >> "$@.tmp"

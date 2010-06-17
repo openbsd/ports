@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.16 2010/05/09 00:16:26 sthen Exp $
---- configure.ac.orig	Sun Apr 18 09:03:54 2010
-+++ configure.ac	Wed May  5 18:37:05 2010
+$OpenBSD: patch-configure_ac,v 1.17 2010/06/17 07:42:16 dcoppa Exp $
+--- configure.ac.orig	Sun Apr 18 15:03:54 2010
++++ configure.ac	Sun Jun 13 11:21:06 2010
 @@ -826,6 +826,9 @@ if test "${SYS}" != "mingw32" -a "${SYS}" != "mingwce"
  dnl Check for pthreads - borrowed from XMMS
  THREAD_LIB=error
@@ -38,3 +38,12 @@ $OpenBSD: patch-configure_ac,v 1.16 2010/05/09 00:16:26 sthen Exp $
      LDFLAGS="${LDFLAGS_save}"
    ])
  fi
+@@ -5746,7 +5749,7 @@ then
+     PLUGINS_BINDINGS="${PLUGINS_BINDINGS} mozilla"
+     VLC_ADD_CPPFLAGS([mozilla],[-DXPCOM_GLUE -DHAVE_CPP_MODERN_SPECIALIZE_TEMPLATE_SYNTAX -I${real_mozilla_sdk} -I${real_mozilla_sdk}/include -I${real_mozilla_sdk}/embedstring/include -I${real_mozilla_sdk}/xpcom/include -I${real_mozilla_sdk}/nspr/include -I${real_mozilla_sdk}/string/include -I${real_mozilla_sdk}/plugin/include -I${real_mozilla_sdk}/java/include])
+     if ${need_xpcom_libs}; then
+-       VLC_ADD_LIBS([mozilla],[-L${real_mozilla_sdk}/embedstring/bin -L${real_mozilla_sdk}/xpcom/bin -L${real_mozilla_sdk}/nspr/bin -L${real_mozilla_sdk}/string/bin -L${real_mozilla_sdk}/lib -lnspr4 -lplds4 -lplc4 -lxpcomglue])
++       VLC_ADD_LIBS([mozilla],[-L${real_mozilla_sdk}/embedstring/bin -L${real_mozilla_sdk}/xpcom/bin -L${real_mozilla_sdk}/nspr/bin -L${real_mozilla_sdk}/string/bin -L${real_mozilla_sdk}/lib -lnspr4 -lplds4 -lplc4 ${LOCALBASE}/xulrunner1.9/libxpcomglue.a -L${X11BASE}/lib -lXt -lX11 -lSM -lICE -lXpm])
+       if test "${SYS}" = "mingw32"; then
+         dnl latest gecko sdk does not have embedstring
+         if test -d "${real_mozilla_sdk}/embedstring/bin"
