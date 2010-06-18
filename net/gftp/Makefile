@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/03/20 17:07:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/06/18 10:41:03 ajacoutot Exp $
 
 COMMENT=	multithreaded gtk2 file transfer client
 
 DISTNAME=	gftp-2.0.19
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	net
 
 HOMEPAGE=	http://gftp.seul.org/
@@ -37,19 +37,18 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	::devel/bison
 
 .if ${FLAVOR:L:Mno_x11}
-BUILD_DEPENDS=	::devel/gettext
-LIB_DEPENDS=	glib.>=1::devel/glib
-CONFIGURE_ARGS+=--disable-gtkport --disable-gtk20
+LIB_DEPENDS+=	glib-2.0.>=1803::devel/glib2
+CONFIGURE_ARGS+=--disable-gtkport
 .else
 USE_X11=	Yes
-LIB_DEPENDS=	gtk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.0,gdk-x11-2.0.>=600.0::x11/gtk+2
+LIB_DEPENDS+=	gtk-x11-2.0.>=600.10,gdk_pixbuf-2.0.>=600.0,gdk-x11-2.0.>=600.0::x11/gtk+2
 RUN_DEPENDS+=	:desktop-file-utils-*:devel/desktop-file-utils
-WANTLIB+=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
-		Xcomposite Xdamage pixman-1 gio-2.0 \
-		Xrender atk-1.0 cairo expat fontconfig freetype \
-		glib-2.0 glitz gmodule-2.0 gobject-2.0 gthread-2.0 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread \
-		pthread-stubs xcb z
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
+WANTLIB += freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
+WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-render-util
+WANTLIB += z
 .endif
 
 .include <bsd.port.mk>

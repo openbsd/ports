@@ -1,7 +1,6 @@
 gFTP is a free multithreaded file transfer client for *NIX based
 machines. It has the following features:
-- Distributed under the terms of the GNU Public License Agreement
-- Written in C and has a text interface and a GTK+ 1.2/2.x interface
+- Written in C and has a text interface and a GTK+2 interface
 - Supports the FTP, FTPS (control connection only), HTTP, HTTPS, SSH and
   FSP protocols
 - FTP and HTTP proxy server support
@@ -11,3 +10,6 @@ machines. It has the following features:
   directory listings
 - Bookmarks menu to allow you to quickly connect to remote sites
 - Fully Internationalized
+
+Available flavor:
+	no_x11 - Only build the CLI client (no graphical interface)
