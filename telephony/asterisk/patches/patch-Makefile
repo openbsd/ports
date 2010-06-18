@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.26 2010/06/02 13:18:56 sthen Exp $
---- Makefile.orig	Mon May  3 18:42:36 2010
-+++ Makefile	Tue Jun  1 22:23:41 2010
+$OpenBSD: patch-Makefile,v 1.27 2010/06/18 22:10:44 sthen Exp $
+--- Makefile.orig	Tue May 25 00:52:48 2010
++++ Makefile	Wed Jun  9 21:31:32 2010
 @@ -121,7 +121,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
  OVERWRITE=y
  
@@ -41,14 +41,14 @@ $OpenBSD: patch-Makefile,v 1.26 2010/06/02 13:18:56 sthen Exp $
    endif
  endif
  
-@@ -730,18 +736,18 @@ samples: adsi
- 		echo "                        ; to the device.  It is for this reason that this is optional, as it may result in requiring a" ; \
+@@ -731,18 +737,18 @@ samples: adsi
  		echo "                        ; temporary codec translation path for a channel that may not otherwise require one." ; \
  		echo ";transcode_via_sln = yes ; Build transcode paths via SLINEAR, instead of directly" ; \
+ 		echo ";sendfullybooted = yes  ; Send the FullyBooted AMI event on AMI login and when all modules are finished loading" ; \
 -		echo ";runuser = asterisk ; The user to run as" ; \
 -		echo ";rungroup = asterisk ; The group to run as" ; \
-+		echo "runuser = _asterisk ; The user to run as" ; \
-+		echo "rungroup = _asterisk ; The group to run as" ; \
++		echo "runuser = asterisk ; The user to run as" ; \
++		echo "rungroup = asterisk ; The group to run as" ; \
  		echo ";lightbackground = yes ; If your terminal is set for a light-colored background" ; \
  		echo "documentation_language = en_US ; Set the Language you want Documentation displayed in. Value is in the same format as locale names" ; \
  		echo ";hideconnect = yes ; Hide messages displayed when a remote console connects and disconnects" ; \

@@ -1,24 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.9 2010/06/02 13:18:56 sthen Exp $
---- configure.ac.orig	Wed Apr 28 21:34:07 2010
-+++ configure.ac	Tue Jun  1 22:23:41 2010
-@@ -528,6 +528,8 @@ AC_MSG_RESULT(no)
- )
- 
- AC_MSG_CHECKING(for pthread_rwlock_timedwrlock() in pthread.h)
-+saved_LIBS="${LIBS}"
-+LIBS="${PTHREAD_CFLAGS}"
- AC_LINK_IFELSE(
-   [AC_LANG_PROGRAM(
-     [#include <pthread.h>
-@@ -541,6 +543,7 @@ AC_LINK_IFELSE(
-     ac_cv_pthread_rwlock_timedwrlock="no"
-   ]
- )
-+LIBS="${saved_LIBS}"
- if test "${ac_cv_pthread_rwlock_timedwrlock}" = "yes"; then
-   AC_DEFINE([HAVE_PTHREAD_RWLOCK_TIMEDWRLOCK], 1, [Define if your system has pthread_rwlock_timedwrlock()])
- fi
-@@ -1415,7 +1418,7 @@ AST_EXT_TOOL_CHECK([NETSNMP], [net-snmp], , [--agent-l
+$OpenBSD: patch-configure_ac,v 1.10 2010/06/18 22:10:44 sthen Exp $
+--- configure.ac.orig	Wed May 26 01:33:49 2010
++++ configure.ac	Wed Jun  9 15:03:28 2010
+@@ -1423,7 +1423,7 @@ AST_EXT_TOOL_CHECK([NETSNMP], [net-snmp], , [--agent-l
  
  AST_EXT_LIB_CHECK([NEWT], [newt], [newtBell], [newt.h])
  
@@ -27,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.9 2010/06/02 13:18:56 sthen Exp $
  
  AST_EXT_LIB_CHECK([OGG], [ogg], [ogg_sync_init], [])
  
-@@ -1540,7 +1543,8 @@ if test "${PBX_PWLIB}" = "1" -a "${USE_OPENH323}" != "
+@@ -1548,7 +1548,8 @@ if test "${PBX_PWLIB}" = "1" -a "${USE_OPENH323}" != "
  	AST_CHECK_OPENH323()
  	AST_CHECK_PWLIB_VERSION([OpenH323], [OPENH323], [openh323buildopts.h], [1], [17], [3])
  	AST_CHECK_OPENH323_BUILD()
@@ -37,7 +20,7 @@ $OpenBSD: patch-configure_ac,v 1.9 2010/06/02 13:18:56 sthen Exp $
  	AST_CHECK_PWLIB_BUILD([OpenH323], [OPENH323],
  		[Define if your system has the OpenH323 libraries.],
  		[#include "ptlib.h"
-@@ -1639,7 +1643,8 @@ AST_EXT_LIB_CHECK([USB], [usb], [usb_init], [usb.h], [
+@@ -1651,7 +1652,8 @@ AST_EXT_LIB_CHECK([USB], [usb], [usb_init], [usb.h], [
  
  if test "${OSARCH}" = "OpenBSD";
  then

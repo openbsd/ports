@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2010/06/02 13:18:56 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2010/06/18 22:10:44 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict chan_unistim-*
@@ -317,7 +317,7 @@ share/asterisk/keys/
 share/asterisk/keys/freeworlddialup.pub
 share/asterisk/keys/iaxtel.pub
 share/asterisk/moh/
-share/asterisk/moh/.asterisk-moh-opsound-wav
+share/asterisk/moh/.asterisk-moh-opsound-wav-2.03
 share/asterisk/moh/CHANGES-asterisk-moh-opsound-wav
 share/asterisk/moh/CREDITS-asterisk-moh-opsound-wav
 share/asterisk/moh/LICENSE-asterisk-moh-opsound-wav
@@ -345,6 +345,7 @@ share/asterisk/sounds/en/agent-loginok.gsm
 share/asterisk/sounds/en/agent-newlocation.gsm
 share/asterisk/sounds/en/agent-pass.gsm
 share/asterisk/sounds/en/agent-user.gsm
+share/asterisk/sounds/en/ascending-2tone.gsm
 share/asterisk/sounds/en/auth-incorrect.gsm
 share/asterisk/sounds/en/auth-thankyou.gsm
 share/asterisk/sounds/en/beep.gsm
@@ -395,6 +396,7 @@ share/asterisk/sounds/en/demo-moreinfo.gsm
 share/asterisk/sounds/en/demo-nogo.gsm
 share/asterisk/sounds/en/demo-nomatch.gsm
 share/asterisk/sounds/en/demo-thanks.gsm
+share/asterisk/sounds/en/descending-2tone.gsm
 share/asterisk/sounds/en/dictate/
 share/asterisk/sounds/en/dictate/both_help.gsm
 share/asterisk/sounds/en/dictate/enter_filename.gsm
@@ -634,6 +636,7 @@ share/asterisk/sounds/en/privacy-unident.gsm
 share/asterisk/sounds/en/queue-callswaiting.gsm
 share/asterisk/sounds/en/queue-holdtime.gsm
 share/asterisk/sounds/en/queue-less-than.gsm
+share/asterisk/sounds/en/queue-minute.gsm
 share/asterisk/sounds/en/queue-minutes.gsm
 share/asterisk/sounds/en/queue-periodic-announce.gsm
 share/asterisk/sounds/en/queue-quantity1.gsm
@@ -1025,6 +1028,7 @@ share/asterisk/static-http/docs/node280.html
 share/asterisk/static-http/docs/node281.html
 share/asterisk/static-http/docs/node282.html
 share/asterisk/static-http/docs/node283.html
+share/asterisk/static-http/docs/node284.html
 share/asterisk/static-http/docs/node29.html
 share/asterisk/static-http/docs/node3.html
 share/asterisk/static-http/docs/node30.html
@@ -1406,6 +1410,7 @@ share/doc/asterisk/node280.html
 share/doc/asterisk/node281.html
 share/doc/asterisk/node282.html
 share/doc/asterisk/node283.html
+share/doc/asterisk/node284.html
 share/doc/asterisk/node29.html
 share/doc/asterisk/node3.html
 share/doc/asterisk/node30.html
