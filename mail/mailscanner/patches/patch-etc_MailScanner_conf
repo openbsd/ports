@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_MailScanner_conf,v 1.11 2010/05/27 11:04:30 sthen Exp $
---- etc/MailScanner.conf.orig	Sat Apr 24 18:54:47 2010
-+++ etc/MailScanner.conf	Mon May 24 10:21:05 2010
+$OpenBSD: patch-etc_MailScanner_conf,v 1.12 2010/06/18 21:48:23 sthen Exp $
+--- etc/MailScanner.conf.orig	Wed Jun  2 04:17:25 2010
++++ etc/MailScanner.conf	Tue Jun 15 18:46:32 2010
 @@ -43,7 +43,7 @@
  #       normal shell wildcard characters such as "*".
  #       For each setting, the last value read will be used by MailScanner.
@@ -297,7 +297,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.11 2010/05/27 11:04:30 sthen Exp $
  SpamAssassin Default Rules Dir =
  
  #
-@@ -2757,9 +2759,9 @@ MCP Actions = deliver
+@@ -2842,9 +2844,9 @@ MCP Actions = deliver
  High Scoring MCP Actions = deliver
  Bounce MCP As Attachment = no
  
@@ -309,7 +309,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.11 2010/05/27 11:04:30 sthen Exp $
  High Scoring MCP Subject Text = {MCP?}
  
  Is Definitely MCP = no
-@@ -2928,7 +2930,7 @@ Lockfile Dir = /var/spool/MailScanner/incoming/Locks
+@@ -3013,7 +3015,7 @@ Lockfile Dir = /var/spool/MailScanner/incoming/Locks
  # directory should be over-written by the installation or upgrade process.
  # All files starting with "." or ending with ".rpmnew" will be ignored,
  # all other files will be compiled and may be used with Custom Functions.
@@ -318,7 +318,7 @@ $OpenBSD: patch-etc_MailScanner_conf,v 1.11 2010/05/27 11:04:30 sthen Exp $
  
  # How to lock spool files.
  # Don't set this unless you *know* you need to.
-@@ -2987,5 +2989,5 @@ Minimum Code Status = supported
+@@ -3072,5 +3074,5 @@ Minimum Code Status = supported
  # They will be read and processed in alphabetical order.
  #
  #

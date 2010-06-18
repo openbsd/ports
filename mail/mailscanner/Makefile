@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2010/05/27 11:04:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2010/06/18 21:48:23 sthen Exp $
 
 COMMENT=	virus/spam scanning framework
 
 V=		4.80
-Vs=		4
+Vs=		7
 Vss=		${Vs}-1
 CATEGORIES=	mail
 MASTER_SITES=	http://mailscanner.info/files/4/tar/
@@ -31,6 +31,7 @@ RUN_DEPENDS+=	::databases/p5-DBI \
 		::archivers/zoo \
 		::net/wget \
 		::devel/p5-OLE-Storage_Lite \
+		::devel/p5-Sys-SigAction \
 		::textproc/antiword
 
 # GPLv2+

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/05/27 11:04:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/06/18 21:48:23 sthen Exp $
 @conflict clamav-<0.94
 bin/MailScanner
 bin/Quick.Peek
@@ -26,6 +26,7 @@ lib/MailScanner/MailScanner/Antiword.pm
 lib/MailScanner/MailScanner/BinHex.pm
 lib/MailScanner/MailScanner/Config.pm
 lib/MailScanner/MailScanner/ConfigDefs.pl
+lib/MailScanner/MailScanner/ConfigSQL.pm
 lib/MailScanner/MailScanner/CustomConfig.pm
 lib/MailScanner/MailScanner/CustomFunctions/
 lib/MailScanner/MailScanner/CustomFunctions/CustomAction.pm

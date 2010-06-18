@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_MailScanner,v 1.9 2009/10/07 20:59:29 sthen Exp $
---- bin/MailScanner.orig	Thu Aug 13 06:18:29 2009
-+++ bin/MailScanner	Thu Aug 13 11:39:04 2009
+$OpenBSD: patch-bin_MailScanner,v 1.10 2010/06/18 21:48:23 sthen Exp $
+--- bin/MailScanner.orig	Wed Jun  2 04:17:25 2010
++++ bin/MailScanner	Tue Jun 15 18:46:32 2010
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -I/opt/MailScanner/lib
 +#!/usr/bin/perl -I%PREFIX%/lib/MailScanner
@@ -32,9 +32,9 @@ $OpenBSD: patch-bin_MailScanner,v 1.9 2009/10/07 20:59:29 sthen Exp $
 -$ConfFile = '/opt/MailScanner/etc/MailScanner.conf' if $ConfFile eq "" ||
 +$ConfFile = '%SYSCONFDIR%/MailScanner/MailScanner.conf' if $ConfFile eq "" ||
                                                         !(-f $ConfFile);
- 
- # Do they just want a dump of the processing-database table?
-@@ -335,7 +333,7 @@ if (MailScanner::Config::QuickPeek($ConfFile, 'virussc
+ # Tell ConfigSQL where the configuration file is. 
+ $MailScanner::ConfigSQL::ConfFile = $ConfFile;
+@@ -337,7 +335,7 @@ if (MailScanner::Config::QuickPeek($ConfFile, 'virussc
  Currently you are using no virus scanners.
  This is probably not what you want.
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.9 2009/10/07 20:59:29 sthen Exp $
      Virus Scanners = clamav
  Then download
      http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/install-Clam-SA.tar.gz
-@@ -422,7 +420,7 @@ if ($WantLintOnly || $WantLintLiteOnly) {
+@@ -424,7 +422,7 @@ if ($WantLintOnly || $WantLintLiteOnly) {
    }
    my $cluid = MailScanner::Config::QuickPeek($ConfFile, 'runasuser');
    my $clgid = MailScanner::Config::QuickPeek($ConfFile, 'runasgroup');
@@ -52,7 +52,7 @@ $OpenBSD: patch-bin_MailScanner,v 1.9 2009/10/07 20:59:29 sthen Exp $
    print STDERR "Error: Attempt to create locks in $lockdir failed!\n"
      if ($clr>>8) != 0;
  
-@@ -719,7 +717,7 @@ if ($locksdir eq "" || $locksdir =~ /tmp$/i) {
+@@ -721,7 +719,7 @@ if ($locksdir eq "" || $locksdir =~ /tmp$/i) {
    print STDERR "Please move your \"Lockfile Dir\" setting in MailScanner.conf.\n";
    print STDERR "It should point outside /tmp, preferably /var/spool/MailScanner/incoming/Locks\n";
  }
