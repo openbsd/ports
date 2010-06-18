@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2010/06/18 09:21:38 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2010/06/18 09:32:15 espie Exp $
 
 FLAVOR ?=
 FLAVORS ?=		debug
@@ -14,7 +14,6 @@ SHARED_ONLY ?=		Yes
 ONLY_FOR_ARCHES ?=	${GCC4_ARCHES}
 
 MODULES +=		devel/cmake
-BUILD_DEPENDS +=	:cmake->=2.6:devel/cmake
 CONFIGURE_STYLE ?=	cmake
 
 EXTRACT_SUFX?=		.tar.bz2
