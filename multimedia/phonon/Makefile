@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/18 12:53:38 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/18 14:02:01 espie Exp $
 
 COMMENT =	multimedia layer from qt4/kde4
 CATEGORIES =	multimedia devel
@@ -18,10 +18,7 @@ PERMIT_PACKAGE_FTP =     Yes
 SHARED_LIBS +=		phonon 5.0
 SHARED_LIBS +=		phononexperimental 0.0
 
-MODULES =		devel/cmake
-CONFIGURE_STYLE = 	cmake
-
-MODULES = x11/qt4
+MODULES =		x11/qt4 devel/cmake
 
 LIB_DEPENDS +=	xine::multimedia/xine-lib
 WANTLIB += 	GL glib-2.0 gmodule-2.0 gthread-2.0 gobject-2.0
