@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/03/21 10:25:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/18 22:20:03 sebastia Exp $
 
 COMMENT=	implementation of basic iCAL protocols
 
 DISTNAME=	libical-0.44
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS +=  ical                 1.0      # .44.0
 SHARED_LIBS +=  icalss               1.0      # .44.0
@@ -15,7 +15,7 @@ HOMEPAGE=	http://freeassociation.sf.net/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeassociation/}
 
-MAINTAINER=	Sebastian Reitenbach <sebastia@l00-bugdead-prods.de>
+MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
