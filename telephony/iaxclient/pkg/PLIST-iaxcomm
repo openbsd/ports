@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST-iaxcomm,v 1.1 2010/06/18 17:32:21 sebastia Exp $
+@bin bin/iaxcomm
+share/iaxcomm/
+share/iaxcomm/iaxcomm.htb
+share/iaxcomm/rc/
+share/iaxcomm/rc/accounts.xrc
+share/iaxcomm/rc/application.ico
+share/iaxcomm/rc/bitmaps/
+share/iaxcomm/rc/bitmaps/KP0.bmp
+share/iaxcomm/rc/bitmaps/KP1.bmp
+share/iaxcomm/rc/bitmaps/KP2.bmp
+share/iaxcomm/rc/bitmaps/KP3.bmp
+share/iaxcomm/rc/bitmaps/KP4.bmp
+share/iaxcomm/rc/bitmaps/KP5.bmp
+share/iaxcomm/rc/bitmaps/KP6.bmp
+share/iaxcomm/rc/bitmaps/KP7.bmp
+share/iaxcomm/rc/bitmaps/KP8.bmp
+share/iaxcomm/rc/bitmaps/KP9.bmp
+share/iaxcomm/rc/bitmaps/KPPOUND.bmp
+share/iaxcomm/rc/bitmaps/KPSTAR.bmp
+share/iaxcomm/rc/devices.xrc
+share/iaxcomm/rc/directory.xrc
+share/iaxcomm/rc/frame.xrc
+share/iaxcomm/rc/logo.xpm
+share/iaxcomm/rc/menubar.xrc
+share/iaxcomm/rc/panel.xrc
+share/iaxcomm/rc/prefs.xrc

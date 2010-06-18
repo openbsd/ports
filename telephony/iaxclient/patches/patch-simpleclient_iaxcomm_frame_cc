@@ -1,0 +1,12 @@
+$OpenBSD: patch-simpleclient_iaxcomm_frame_cc,v 1.1 2010/06/18 17:32:21 sebastia Exp $
+--- simpleclient/iaxcomm/frame.cc.orig	Sun Jun  6 13:46:27 2010
++++ simpleclient/iaxcomm/frame.cc	Sun Jun  6 13:46:41 2010
+@@ -425,7 +425,7 @@ void MyFrame::ShowDirectoryControls()
+     config->SetPath(_T("/OT"));
+     bCont = config->GetFirstGroup(OTName, dummy);
+     while ( bCont ) {
+-#if defined(__UNICODE__)
++#if defined(wxUSE_UNICODE)
+         ot = ((wxButton *)((*aPanel).FindWindow(wxXmlResource::GetXRCID(OTName))));
+ #else
+         ot = XRCCTRL(*aPanel, OTName, wxButton);

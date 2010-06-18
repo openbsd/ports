@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_portmixer_px_unix_oss_px_unix_oss_c,v 1.1 2010/06/18 17:32:21 sebastia Exp $
+--- lib/portmixer/px_unix_oss/px_unix_oss.c.orig	Sat Nov 14 13:57:56 2009
++++ lib/portmixer/px_unix_oss/px_unix_oss.c	Sat Nov 14 13:58:45 2009
+@@ -39,6 +39,8 @@
+ #include <linux/soundcard.h>
+ #elif defined(__FreeBSD__)
+ #include <sys/soundcard.h>
++#elif defined(__OpenBSD__)
++#include <soundcard.h>
+ #else
+ #include <machine/soundcard.h> /* JH20010905 */
+ #endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-simpleclient_iaxcomm_calls_cc,v 1.1 2010/06/18 17:32:21 sebastia Exp $
+--- simpleclient/iaxcomm/calls.cc.orig	Sun Jun  6 13:46:43 2010
++++ simpleclient/iaxcomm/calls.cc	Sun Jun  6 13:46:55 2010
+@@ -85,7 +85,7 @@ CallList::CallList(wxWindow *parent, int nCalls, wxWin
+ 
+     Hide();
+ 
+-#if !defined(__UNICODE__)
++#if !defined(wxUSE_UNICODE)
+     wxFont font   = GetFont();
+     font.SetPointSize(11);
+     font.SetFamily(wxSWISS);

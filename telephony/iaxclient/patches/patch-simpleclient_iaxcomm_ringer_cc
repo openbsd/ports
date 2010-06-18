@@ -1,0 +1,23 @@
+$OpenBSD: patch-simpleclient_iaxcomm_ringer_cc,v 1.1 2010/06/18 17:32:21 sebastia Exp $
+--- simpleclient/iaxcomm/ringer.cc.orig	Sun Jun  6 14:01:31 2010
++++ simpleclient/iaxcomm/ringer.cc	Sun Jun  6 14:03:06 2010
+@@ -58,14 +58,18 @@
+ #ifdef __WXGTK__
+   #include <sys/ioctl.h>
+   #include <sys/fcntl.h>
++ #ifdef __OpenBSD__
++  #include <dev/wscons/wsdisplay_usl_io.h>
++ #else
+   #include <linux/kd.h>
++ #endif
+ 
+ static void Beep(int freq, int dur)
+ {
+    int fd;
+    int arg;
+ 
+-   fd = open("/dev/tty0", O_RDONLY);
++   fd = open("/dev/tty", O_RDONLY);
+    arg = (dur<<16)+(1193180/freq);
+    ioctl(fd,KDMKTONE,arg);
+ }

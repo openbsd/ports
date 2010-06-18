@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-tcl,v 1.1 2010/06/18 17:32:21 sebastia Exp $
+@lib lib/tcliaxclient0.2/libtcliaxclient02.so.${LIBtcliaxclient02_VERSION}
