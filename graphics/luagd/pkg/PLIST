@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/07/30 04:46:42 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/06/18 18:08:57 jasper Exp $
 %%SHARED%%
 share/doc/luagd/
 share/doc/luagd/cat.png
@@ -39,6 +39,4 @@ share/examples/luagd/ttftext.lua
 share/examples/luagd/ttftextex.lua
 share/examples/luagd/utf-8.lua
 share/examples/luagd/utf-8.png
-share/lua/
-share/lua/5.1/
 share/lua/5.1/gd.lua
