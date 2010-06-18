@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/01/08 12:17:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/18 19:36:38 sthen Exp $
 
 COMMENT=		Executable Uniform Command-Line Interface Descriptions
 
 V=			0.2.0
 DISTNAME=		Getopt-Euclid-v$V
-PKGNAME=		Getopt-Euclid-$V
+PKGNAME=		p5-Getopt-Euclid-$V
 CATEGORIES=		devel
 
 # perl
