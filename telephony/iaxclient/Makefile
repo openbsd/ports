@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2010/06/18 17:32:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/18 17:37:46 sebastia Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -27,8 +27,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=	-main -tcl -iaxcomm
 MODULES=	devel/gettext x11/tk
 
-WANTLIB-main 	+= c faac faad m mp3lame ogg oil-0.3 ossaudio pthread                
-WANTLIB-main 	+= schroedinger-1.0 sndio theora vorbis vorbisenc x264               
+WANTLIB-main 	+= c faac faad m mp3lame ogg oil-0.3 ossaudio pthread
+WANTLIB-main 	+= schroedinger-1.0 sndio theora vorbis vorbisenc x264
 WANTLIB-main 	+= z
 
 WANTLIB-tcl 	+= X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
