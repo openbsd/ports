@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/02/01 17:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/06/18 17:44:46 sebastia Exp $
 
      SUBDIR =
      SUBDIR += appkonference
@@ -10,6 +10,7 @@
      SUBDIR += astmanproxy
      SUBDIR += fobbit
      SUBDIR += gsutil
+     SUBDIR += iaxclient
      SUBDIR += iaxmodem
      SUBDIR += kamailio
      SUBDIR += libosip2
