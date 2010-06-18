@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.19 2010/06/17 10:30:39 espie Exp $
+# $OpenBSD: out-of-date,v 1.20 2010/06/18 09:08:57 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -28,24 +28,22 @@ use OpenBSD::AddCreateDelete;
 
 our $opt_q;
 my $state = OpenBSD::AddCreateDelete::State->new("out-of-date");
-OpenBSD::AddCreateDelete->handle_options('q', $state, "[-q]");
+OpenBSD::AddCreateDelete->handle_options('q', $state, "[-mvxq]");
 
 sub collect_installed
 {
 	my $pkg = {};
 
-	$state->progress->set_header("Collecting installed packages");
-	my @l = installed_packages(1);
-	my $i = 0;
-	for my $name (@l) {
-		$state->progress->show(++$i, scalar(@l));
+	$state->progress->for_list("Collecting installed packages",
+	    [installed_packages(1)], sub {
+		my $name = shift;
 		my ($stem, $version) = OpenBSD::PackageName::splitname($name);
 		my $plist = OpenBSD::PackingList->from_installation($name,
 		    \&OpenBSD::PackingList::UpdateInfoOnly);
 		if (!defined $plist or !defined $plist->{extrainfo}->{subdir}) {
 			$state->errsay("Package #1has no valid packing-list", 
 			    $name);
-			next;
+			return;
 		}
 			
 		my $subdir = $plist->{extrainfo}->{subdir};
@@ -61,7 +59,7 @@ sub collect_installed
 		if (defined $plist->{'always-update'}) {
 			$pkg->{$subdir}->{signature} = 'always-update';
 		}
-	}
+	    });
 	return $pkg;
 }
 
