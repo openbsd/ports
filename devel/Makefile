@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.805 2010/06/17 22:11:23 bluhm Exp $
+# $OpenBSD: Makefile,v 1.806 2010/06/18 20:30:00 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -647,6 +647,7 @@
      SUBDIR += p5-Sub-Name
      SUBDIR += p5-Sub-Override
      SUBDIR += p5-Sub-Uplevel
+     SUBDIR += p5-Sys-SigAction
      SUBDIR += p5-TAP-Parser
      SUBDIR += p5-Taint-Runtime
      SUBDIR += p5-Task-Weaken
