@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/06/18 20:42:03 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2010/06/18 21:05:06 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -55,7 +55,9 @@ MASTER_SITES =		http://hackage.haskell.org/packages/archive/${DISTNAME:S,-,/,}/
 post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} haddock
+		${MODGHC_SETUP_PROG} \
+		--with-haddock=${WRKBUILD}/dist/build/haddock/haddock \
+		haddock --haddock-option=-l${WRKBUILD}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc
