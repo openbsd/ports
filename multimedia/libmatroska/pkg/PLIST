@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/22 01:30:20 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/06/18 23:25:49 sthen Exp $
 %%SHARED%%
 include/matroska/
 include/matroska/FileKax.h
@@ -14,6 +14,7 @@ include/matroska/KaxContentEncoding.h
 include/matroska/KaxContexts.h
 include/matroska/KaxCues.h
 include/matroska/KaxCuesData.h
+include/matroska/KaxDefines.h
 include/matroska/KaxInfo.h
 include/matroska/KaxInfoData.h
 include/matroska/KaxSeekHead.h
