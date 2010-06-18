@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.15 2010/06/15 17:38:17 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2010/06/18 20:42:03 kili Exp $
 
-COMMENT =	documentation-generation tool for Haskell libraries
+COMMENT-main =	documentation-generation tool for Haskell libraries
+COMMENT-lib =	haddock library
 
 DISTNAME =	haddock-2.7.2
-PKGNAME =	${DISTNAME}p1
+PKGNAME-main =	${DISTNAME}p2
+PKGNAME-lib =	hs-${DISTNAME}
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/haddock/
+
+MULTI_PACKAGES =		-main -lib
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,14 +24,15 @@ PERMIT_DISTFILES_FTP =	Yes
 PSEUDO_FLAVORS =	no_deps
 FLAVOR ?=
 
-WANTLIB =		c m util
+WANTLIB-main =		c m util
 
 .if ! ${FLAVOR:L:Mno_deps}
 MODULES =		lang/ghc converters/libiconv
-# No haddock library (yet).
-MODGHC_BUILD =		cabal hackage nort
+MODGHC_BUILD =		cabal hackage register
 
-LIB_DEPENDS +=		gmp::devel/gmp
+LIB_DEPENDS-lib =
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			gmp::devel/gmp
 
 BUILD_DEPENDS +=	::devel/alex \
 			::devel/happy \
@@ -49,6 +54,8 @@ MASTER_SITES =		http://hackage.haskell.org/packages/archive/${DISTNAME:S,-,/,}/
 
 post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
+	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+		${MODGHC_SETUP_PROG} haddock
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc

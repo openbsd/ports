@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2010/06/18 20:42:03 kili Exp $
+@pkgpath devel/haddock
+@bin bin/haddock
+share/doc/haddock/
+@comment share/doc/${DISTNAME}/
+@comment share/doc/${DISTNAME}/LICENSE
+share/doc/haddock/ch01s03.html
+share/doc/haddock/ch03s02.html
+share/doc/haddock/ch03s03.html
+share/doc/haddock/ch03s04.html
+share/doc/haddock/ch03s05.html
+share/doc/haddock/ch03s08.html
+share/doc/haddock/fptools.css
+share/doc/haddock/hyperlinking.html
+share/doc/haddock/index.html
+share/doc/haddock/introduction.html
+share/doc/haddock/invoking.html
+share/doc/haddock/ix01.html
+share/doc/haddock/license.html
+share/doc/haddock/markup.html
+share/doc/haddock/module-attributes.html
+share/${DISTNAME}/
+share/${DISTNAME}/html/
+share/${DISTNAME}/html/frames.html
+share/${DISTNAME}/html/haddock-DEBUG.css
+share/${DISTNAME}/html/haddock-util.js
+share/${DISTNAME}/html/haddock.css
+share/${DISTNAME}/html/haskell_icon.gif
+share/${DISTNAME}/html/minus.gif
+share/${DISTNAME}/html/plus.gif
