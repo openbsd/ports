@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.9 2010/06/15 15:34:03 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.10 2010/06/18 21:37:16 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -50,7 +50,8 @@ MODGHC_SETUP_CONF_ARGS ?=
 MODGHC_SETUP_CONF_ENV ?=
 
 .  if ${MODGHC_BUILD:L:Mhaddock}
-BUILD_DEPENDS +=		::devel/haddock
+BUILD_DEPENDS +=		::devel/haddock \
+				::lang/ghc,-doc
 .  endif
 
 # Little hack to let ports still add CONFIGURE_STYLE = autoconf and go
