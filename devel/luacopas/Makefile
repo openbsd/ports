@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/09/06 19:35:40 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/18 18:03:13 jasper Exp $
 
 PKG_ARCH=	*
 
@@ -23,8 +23,8 @@ RUN_DEPENDS+=	::devel/coxpcall \
 		::net/luasocket
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/lua/5.1
-	${INSTALL_DATA} ${WRKSRC}/src/copas/copas.lua ${PREFIX}/share/lua/5.1
+	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/copas/copas.lua ${MODLUA_DATADIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luacopas
 	${INSTALL_DATA} ${WRKSRC}/doc/us/*.html ${WRKSRC}/doc/us/*.png \
 		${PREFIX}/share/doc/luacopas

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/16 14:59:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/18 18:03:13 jasper Exp $
 
 COMMENT =	lua binding of libevent
 SHARED_ONLY =	Yes
@@ -31,9 +31,9 @@ do-build:
 	cd ${WRKDIST}/src && ${LINK} core.so luaevent.c event_buffer.c event_callback.c -levent
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/lua/5.1
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1/luaevent
-	${INSTALL_DATA} ${WRKSRC}/lua/luaevent.lua ${PREFIX}/share/lua/5.1
-	${INSTALL_DATA} ${WRKSRC}/src/*.so ${PREFIX}/lib/lua/5.1/luaevent
+	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}/luaevent
+	${INSTALL_DATA} ${WRKSRC}/lua/luaevent.lua ${MODLUA_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/*.so ${MODLUA_LIBDIR}/luaevent
                                         
 .include <bsd.port.mk>

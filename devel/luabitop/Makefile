@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/09/09 19:39:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/18 18:03:13 jasper Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	library for bitwise operations in lua
@@ -24,9 +24,9 @@ MAKE_ENV+=	INCLUDES=-I${LOCALBASE}/include
 DOCDIR=		${PREFIX}/share/doc/luabitop
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKBUILD}/bit.so ${PREFIX}/lib/lua/5.1
+	${INSTALL_DATA} ${WRKBUILD}/bit.so ${MODLUA_LIBDIR}
 	cd ${WRKSRC}/doc && \
 		find . -type d \
 			-exec ${INSTALL_DATA_DIR} ${DOCDIR}/{} \; && \

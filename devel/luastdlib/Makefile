@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2009/09/09 18:31:33 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/18 18:06:56 jasper Exp $
 
 PKG_ARCH=	*
 COMMENT=	lua library of common programming tasks
@@ -21,9 +21,9 @@ NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}/stdlib
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/lua/5.1
+	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/luastdlib
-	${INSTALL_DATA} ${WRKSRC}/modules/*.lua ${PREFIX}/share/lua/5.1
+	${INSTALL_DATA} ${WRKSRC}/modules/*.lua ${MODLUA_DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/modules/*.html ${PREFIX}/share/luastdlib
 
 .include <bsd.port.mk>

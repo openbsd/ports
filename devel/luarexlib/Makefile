@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/03/04 08:20:47 giovanni Exp $
+# $OpenBSD: Makefile,v 1.9 2010/06/18 18:06:56 jasper Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	lua binding of posix and pcre regex libraries
@@ -27,12 +27,12 @@ LIB_DEPENDS=	pcre.>=1.0::devel/pcre \
 REGRESS_DEPENDS+=::devel/luarexlib
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luarexlib
 	${INSTALL_DATA} ${WRKSRC}/src/oniguruma/*.so \
 		${WRKSRC}/src/pcre/*.so \
 		${WRKSRC}/src/posix/*.so \
-		${PREFIX}/lib/lua/5.1
+		${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/luarexlib
 
 do-regress:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/15 20:24:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/06/18 18:06:56 jasper Exp $
 
 COMMENT=	library for packing and unpacking binary data
 DISTNAME=	luapack-20061124
@@ -23,10 +23,10 @@ do-build:
 		${WRKSRC}/lpack.c -o ${WRKDIST}/pack.so
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luapack
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/luapack
-	${INSTALL_DATA} ${WRKBUILD}/pack.so ${PREFIX}/lib/lua/5.1
+	${INSTALL_DATA} ${WRKBUILD}/pack.so ${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/luapack
 	${INSTALL_DATA} ${WRKSRC}/test.lua ${PREFIX}/share/examples/luapack
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/06/11 05:04:37 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/18 18:09:45 jasper Exp $
 
 COMMENT=	lua text classification module and anti-spam solution
 
@@ -28,9 +28,9 @@ do-build:
 		${WRKDIST}/osbf_aux.o -L${LOCALBASE}/lib -o ${WRKDIST}/osbf.so
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/osbf-lua
-	${INSTALL_DATA} ${WRKSRC}/osbf.so ${PREFIX}/lib/lua/5.1
+	${INSTALL_DATA} ${WRKSRC}/osbf.so ${MODLUA_LIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/spamfilter/*.lua ${PREFIX}/share/osbf-lua
 	${INSTALL_DATA} ${WRKSRC}/spamfilter/*sample ${PREFIX}/share/osbf-lua
 	${INSTALL_DATA} ${WRKSRC}/spamfilter/*help ${PREFIX}/share/osbf-lua

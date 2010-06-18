@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2009/09/06 13:46:58 jolan Exp $
+# $OpenBSD: Makefile,v 1.19 2010/06/18 18:11:34 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,25 +19,23 @@ MODULES=	lang/lua
 NO_REGRESS=	Yes
 
 MAKE_FILE=	makefile
-SHAREDIR=	${PREFIX}/share/lua/5.1
-LIBDIR=		${PREFIX}/lib/lua/5.1
 
 do-install:
-	${INSTALL_DATA_DIR} ${SHAREDIR}/socket ${SHAREDIR}/mime
-	${INSTALL_DATA_DIR} ${LIBDIR}/socket ${LIBDIR}/mime
+	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}/socket ${MODLUA_DATADIR}/mime
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}/socket ${MODLUA_LIBDIR}/mime
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luasocket
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/luasocket
-	${INSTALL_DATA} ${WRKSRC}/src/socket.so ${LIBDIR}/socket/core.so
-	${INSTALL_DATA} ${WRKSRC}/src/unix.so ${LIBDIR}/socket/unix.so
-	${INSTALL_DATA} ${WRKSRC}/src/mime.so ${LIBDIR}/mime/core.so
-	${INSTALL_DATA} ${WRKSRC}/src/socket.lua ${SHAREDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/ltn12.lua ${SHAREDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/mime.lua ${SHAREDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/ftp.lua ${SHAREDIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/http.lua ${SHAREDIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/smtp.lua ${SHAREDIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/tp.lua ${SHAREDIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/src/url.lua ${SHAREDIR}/socket
+	${INSTALL_DATA} ${WRKSRC}/src/socket.so ${MODLUA_LIBDIR}/socket/core.so
+	${INSTALL_DATA} ${WRKSRC}/src/unix.so ${MODLUA_LIBDIR}/socket/unix.so
+	${INSTALL_DATA} ${WRKSRC}/src/mime.so ${MODLUA_LIBDIR}/mime/core.so
+	${INSTALL_DATA} ${WRKSRC}/src/socket.lua ${MODLUA_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/ltn12.lua ${MODLUA_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/mime.lua ${MODLUA_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/ftp.lua ${MODLUA_DATADIR}/socket
+	${INSTALL_DATA} ${WRKSRC}/src/http.lua ${MODLUA_DATADIR}/socket
+	${INSTALL_DATA} ${WRKSRC}/src/smtp.lua ${MODLUA_DATADIR}/socket
+	${INSTALL_DATA} ${WRKSRC}/src/tp.lua ${MODLUA_DATADIR}/socket
+	${INSTALL_DATA} ${WRKSRC}/src/url.lua ${MODLUA_DATADIR}/socket
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/luasocket
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${PREFIX}/share/examples/luasocket
 

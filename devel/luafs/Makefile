@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2009/09/06 19:25:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2010/06/18 18:06:56 jasper Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	file system library for the lua language
@@ -19,10 +19,10 @@ MODULES=	lang/lua
 ALL_TARGET=	lib
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luafs
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/luafs
-	${INSTALL_DATA} ${WRKSRC}/lfs.so ${PREFIX}/lib/lua/5.1
+	${INSTALL_DATA} ${WRKSRC}/lfs.so ${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/us/*.html ${WRKSRC}/doc/us/*.png \
 		${PREFIX}/share/doc/luafs
 	${INSTALL_DATA} ${WRKSRC}/tests/*.lua ${PREFIX}/share/examples/luafs

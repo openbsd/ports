@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2008/06/11 05:04:37 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/18 18:03:13 jasper Exp $
 
 COMMENT=	alarm library for the lua language
 SHARED_ONLY=	Yes
@@ -23,8 +23,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/lua
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1
-	${INSTALL_DATA} ${WRKSRC}/alarm.so ${PREFIX}/lib/lua/5.1
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/alarm.so ${MODLUA_LIBDIR}
 
 do-regress:
 	rm -f ${WRKDIST}/alarm.lua
