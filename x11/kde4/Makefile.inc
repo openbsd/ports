@@ -1,39 +1,40 @@
+# $OpenBSD: Makefile.inc,v 1.9 2010/06/18 09:21:38 espie Exp $
 
 FLAVOR ?=
 FLAVORS ?=		debug
 SEPARATE_BUILD =	flavored
-CATEGORIES?=		x11 x11/kde
-VERSION?=		4.0.1
-DIST_SUBDIR?=		kde
+CATEGORIES ?=		x11 x11/kde
+VERSION ?=		4.4.4
+DIST_SUBDIR ?=		kde
 PKGNAME?=		${DISTNAME}
-MODULES+=		x11/qt4
-MODQT_MT?=		Yes
-MODQT_OVERRIDE_UIC?=	No
-SHARED_ONLY?=		Yes
+MODULES +=		x11/qt4
+MODQT_MT ?=		Yes
+MODQT_OVERRIDE_UIC ?=	No
+SHARED_ONLY ?=		Yes
+ONLY_FOR_ARCHES ?=	${GCC4_ARCHES}
 
-MODULES+=		devel/cmake
-BUILD_DEPENDS+=		:cmake->=2.4.8p0:devel/cmake
-CONFIGURE_STYLE?=	cmake
+MODULES +=		devel/cmake
+BUILD_DEPENDS +=	:cmake->=2.6:devel/cmake
+CONFIGURE_STYLE ?=	cmake
 
 EXTRACT_SUFX?=		.tar.bz2
-MASTER_SITES?=	${MASTER_SITE_KDE:=stable/${VERSION}/src/} \
-		http://openbsddistfiles.org/martynas/kde/${VERSION}/
+MASTER_SITES?=		${MASTER_SITE_KDE:=stable/${VERSION}/src/}
 
-PORTHOME?=		${WRKDIR}
+PORTHOME ?=		${WRKDIR}
 
 # GPL (LGPL for the central libraries)
-PERMIT_DISTFILES_CDROM?=	Yes
-PERMIT_DISTFILES_FTP?=		Yes
-PERMIT_PACKAGE_CDROM?=		Yes
-PERMIT_PACKAGE_FTP?=		Yes
-CONFIGURE_ENV+=		QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR}
-SEPARATE_BUILD=		simple
-#MAKE_FLAGS=	VERBOSE=2
+PERMIT_DISTFILES_CDROM ?=	Yes
+PERMIT_DISTFILES_FTP ?=		Yes
+PERMIT_PACKAGE_CDROM ?=		Yes
+PERMIT_PACKAGE_FTP ?=		Yes
+CONFIGURE_ENV +=		QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR}
+SEPARATE_BUILD =		simple
+MAKE_FLAGS =	VERBOSE=2
 
-#CONFIGURE_ARGS+=	--debug-output --debug-trycompile
+#CONFIGURE_ARGS +=	--debug-output --debug-trycompile
 .if ${FLAVOR:L:Mdebug}
-CONFIGURE_ARGS+=-DCMAKE_BUILD_TYPE:String=Debug
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Debug
 .else
-CONFIGURE_ARGS+=	-DCMAKE_BUILD_TYPE:String=Release
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
 .endif
 
