@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/16 13:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/06/18 15:09:41 sthen Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	document indexer
 CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	http://strigi.sourceforge.net
-DISTNAME =	strigi-0.6.4
+DISTNAME =	strigi-0.7.2
 PKGNAME =	${DISTNAME}
 EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=strigi/}
+MASTER_SITES =	http://www.vandenoever.info/software/strigi/ \
+		http://spacehopper.org/mirrors/
 
+# LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-SHARED_LIBS +=  cluceneindex       0.0 # .0.5
-SHARED_LIBS +=  searchclient       0.0 # .0.5
-SHARED_LIBS +=  streamanalyzer     0.0 # .0.5
-SHARED_LIBS +=  streams            0.0 # .0.5
-SHARED_LIBS +=  strigihtmlgui      0.0 # .0.5
-SHARED_LIBS +=  strigiqtdbusclient 0.0 # .0.5
+SHARED_LIBS +=  cluceneindex       1.0 # .0.5
+SHARED_LIBS +=  searchclient       1.0 # .0.5
+SHARED_LIBS +=  streamanalyzer     1.0 # .0.5
+SHARED_LIBS +=  streams            1.0 # .0.5
+SHARED_LIBS +=  strigihtmlgui      1.0 # .0.5
+SHARED_LIBS +=  strigiqtdbusclient 1.0 # .0.5
 
-LIB_DEPENDS =		clucene::textproc/clucene \
+LIB_DEPENDS =		clucene->=1:clucene->=0.9.21:textproc/clucene \
 			bz2::archivers/bzip2 \
 			xml2::textproc/libxml \
 			lib/qt4/QtCore,lib/qt4/QtGui,lib/qt4/QtDBus::x11/qt4 \

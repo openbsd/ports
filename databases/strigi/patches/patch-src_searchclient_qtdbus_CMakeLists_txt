@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_searchclient_qtdbus_CMakeLists_txt,v 1.3 2010/06/16 13:35:43 espie Exp $
---- src/searchclient/qtdbus/CMakeLists.txt.orig	Sun Feb  1 20:56:02 2009
-+++ src/searchclient/qtdbus/CMakeLists.txt	Fri May 28 22:32:13 2010
+$OpenBSD: patch-src_searchclient_qtdbus_CMakeLists_txt,v 1.4 2010/06/18 15:09:41 sthen Exp $
+--- src/searchclient/qtdbus/CMakeLists.txt.orig	Wed Feb  3 19:03:07 2010
++++ src/searchclient/qtdbus/CMakeLists.txt	Fri Jun 18 13:51:02 2010
 @@ -20,7 +20,7 @@ qt4_wrap_cpp(strigiqtdbusclient_MOC_SRCS ${strigiqtdbu
  add_library(strigiqtdbusclient SHARED ${strigiqtdbusclient_SRCS}
    ${strigiqtdbusclient_MOC_SRCS})
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_searchclient_qtdbus_CMakeLists_txt,v 1.3 2010/06/16 13:35:43
  set_target_properties(strigiqtdbusclient
                   PROPERTIES VERSION ${STRIGI_VERSION_STRING}
                   SOVERSION ${STRIGI_VERSION_MAJOR}
-@@ -38,4 +38,4 @@ set(strigiasynctest_SRCS strigiasynctest.cpp strigiasy
+@@ -40,4 +40,4 @@ set(strigiasynctest_SRCS strigiasynctest.cpp strigiasy
  set(strigiasynctest_MOC_HDRS strigiasyncwidget.h)
  qt4_wrap_cpp(strigiasynctest_MOC_SRCS ${strigiasynctest_MOC_HDRS})
  add_executable(strigiasynctest ${strigiasynctest_SRCS} ${strigiasynctest_MOC_SRCS})

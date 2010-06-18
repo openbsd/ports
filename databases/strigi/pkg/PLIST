@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/06/16 13:35:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/06/18 15:09:41 sthen Exp $
 @bin bin/deepfind
 @bin bin/deepgrep
 @bin bin/luceneindexer
+@bin bin/rdfindexer
 @bin bin/strigiclient
 @bin bin/strigicmd
 @bin bin/strigidaemon
@@ -86,6 +87,13 @@ share/dbus-1/services/org.freedesktop.xesam.searcher.service
 share/dbus-1/services/vandenoever.strigi.service
 share/strigi/
 share/strigi/fieldproperties/
+share/strigi/fieldproperties/homeless.rdfs
+share/strigi/fieldproperties/nao_data.rdfs
+share/strigi/fieldproperties/ncal_data.rdfs
+share/strigi/fieldproperties/nco_data.rdfs
+share/strigi/fieldproperties/nexif_data.rdfs
+share/strigi/fieldproperties/nfo_data.rdfs
+share/strigi/fieldproperties/nid3_data.rdfs
+share/strigi/fieldproperties/nie_data.rdfs
+share/strigi/fieldproperties/nmo_data.rdfs
 share/strigi/fieldproperties/strigi.rdfs
-share/strigi/fieldproperties/xesam-convenience.rdfs
-share/strigi/fieldproperties/xesam.rdfs
