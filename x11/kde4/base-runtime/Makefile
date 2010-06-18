@@ -1,23 +1,28 @@
-# $OpenBSD: Makefile,v 1.2 2008/02/09 13:18:16 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/18 13:30:17 espie Exp $
 
 COMMENT =		K Desktop Environment, base runtime
 DISTNAME =		kdebase-runtime-${VERSION}
 PKGNAME =		${DISTNAME}
 
-LIB_DEPENDS +=	kdecore.>=8,kaudiodevicelist,kde3support,kdesu,kdeui,kdnssd,kfile,khtml,kio,kjs,kmediaplayer,knewstuff2,knotifyconfig,kparts,kpty,ktexteditor,kutils,phonon,solid::x11/kde4/libs \
-	    xine::multimedia/xine-lib
+LIB_DEPENDS +=	kdecore.>=8,kde3support,kdesu,kdeui,kdnssd,kfile,khtml,kio,kjs,kmediaplayer,knewstuff2,knewstuff3,plasma,knotifyconfig,kparts,kpty,kutils,phonon,solid::x11/kde4/libs \
+		phonon.>=5::multimedia/phonon \
+		smbclient::net/samba
 
+BUILD_DEPENDS +=	::databases/soprano
+RUN_DEPENDS +=		::databases/soprano
 
+SHARED_LIBS +=	kwalletbackend 		0.0	# 4.4
+SHARED_LIBS +=	molletnetwork 		0.0	# 4.4
+
+WANTLIB += IlmThread
 WANTLIB += ICE SM X11 Xau Xcursor Xdmcp
-WANTLIB += Xext Xfixes Xft Xi Xinerama Xpm Xrandr Xrender
-WANTLIB += Xtst c fontconfig freetype jpeg m png pthread
-WANTLIB += stdc++ util z
-WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtSvg QtXml
-WANTLIB += Half Iex IlmImf Imath gif bz2 pcre pcreposix
-WANTLIB += dbus-1 fam glib-2.0 gthread-2.0 iconv intl
-WANTLIB += streamanalyzer streams
-WANTLIB += clucene soprano sopranoclient sopranoindex sopranoserver
-WANTLIB += strigiqtdbusclient
+WANTLIB += Xext Xft Xpm
+WANTLIB += c jpeg m pthread
+WANTLIB += stdc++ util
+WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtSvg QtXml QtScript
+WANTLIB += Half Iex IlmImf Imath IlmThread
+WANTLIB += attica exiv2
+WANTLIB += xine
 
 
 .include <bsd.port.mk>
