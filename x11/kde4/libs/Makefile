@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2008/07/25 20:25:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/18 11:14:41 espie Exp $
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
-PKGNAME =		${DISTNAME}p1
+PKGNAME =		${DISTNAME}
 
 SHARED_LIBS +=	kaudiodevicelist     4.0      # .4.0
 SHARED_LIBS +=	kde3support          0.0      # .4.0
@@ -47,10 +47,21 @@ SHARED_LIBS +=	phononexperimental   0.0      # .4.0
 SHARED_LIBS +=  kpty                 0.0      # .4.0
 SHARED_LIBS +=  nepomuk              0.0      # .0.0
 
-BUILD_DEPENDS += ::misc/shared-mime-info
-RUN_DEPENDS += ::misc/shared-mime-info
+SHARED_LIBS += 	krossqtsplugin 		0.0
+SHARED_LIBS +=  kjsapi 			0.0
+SHARED_LIBS +=	kdewebkit		0.0
+SHARED_LIBS +=	knewstuff3		0.0
+SHARED_LIBS +=	kunitconversion		0.0
+SHARED_LIBS +=	plasma			0.0
 
-LIB_DEPENDS +=	Half,Iex,IlmImf,Imath::graphics/openexr \
+
+BUILD_DEPENDS += ::misc/shared-mime-info \
+		::x11/kde4/automoc \
+		::databases/soprano
+RUN_DEPENDS +=  ::misc/shared-mime-info \
+		::databases/soprano
+
+LIB_DEPENDS +=	Half,Iex,IlmImf,Imath,IlmThread::graphics/openexr \
 		gif::graphics/libungif \
 		jasper::graphics/jasper \
 		bz2::archivers/bzip2 \
@@ -58,10 +69,9 @@ LIB_DEPENDS +=	Half,Iex,IlmImf,Imath::graphics/openexr \
 		enchant::textproc/enchant \
 		xslt::textproc/libxslt \
 		pcre,pcreposix::devel/pcre \
-		dbus-1::x11/dbus \
-		fam::sysutils/fam \
 		streams,streamanalyzer::databases/strigi \
-		soprano,sopranoclient::databases/soprano
+		attica::x11/kde4/attica \
+		lzma::archivers/xz
 
 # we don't have krb5-config
 CONFIGURE_ARGS += -DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err"
@@ -70,14 +80,22 @@ CONFIGURE_ARGS += -DGSSAPI_FLAVOR:STRING="HEIMDAL"
 CONFIGURE_ARGS += -DGSSAPI_FOUND:BOOL=TRUE
 
 post-extract:
-	cd ${WRKDIST}/cmake/modules && rm FindQt4.cmake MacroPushRequiredVars.cmake
+#	cd ${WRKDIST}/cmake/modules && rm FindQt4.cmake MacroPushRequiredVars.cmake
 
-WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xft Xi Xinerama Xpm
-WANTLIB += Xrandr Xrender Xfixes Xtst c fontconfig freetype jpeg m png
+post-extract:
+	@if pkg_info -e 'kdelibs-<4'; then \
+		echo "Error: don't try to build with kde3 around"; \
+		exit 1; \
+	fi
+
+WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xft Xpm
+WANTLIB += Xrender Xfixes Xtst c jpeg m png
 WANTLIB += pthread stdc++ util z
-WANTLIB += Qt3Support QtDBus QtDesigner QtGui QtSvg QtXml QtTest
-WANTLIB += QtNetwork xml2 ssl glib-2.0 gthread-2.0 intl iconv
+WANTLIB += Qt3Support QtDBus QtDesigner QtGui QtSvg QtXml
+WANTLIB += QtNetwork xml2 intl
 WANTLIB += asn1 com_err gssapi krb5
+WANTLIB += QtOpenGL QtScript QtWebKit phonon
+WANTLIB += Xss GL fam
 
 
 
