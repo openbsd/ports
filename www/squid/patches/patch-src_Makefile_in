@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.16 2009/10/30 00:56:57 sthen Exp $
---- src/Makefile.in.orig	Thu Apr 30 21:24:42 2009
-+++ src/Makefile.in	Thu Oct 29 18:44:21 2009
+$OpenBSD: patch-src_Makefile_in,v 1.17 2010/06/18 10:32:17 sthen Exp $
+--- src/Makefile.in.orig	Sun Mar 14 16:27:27 2010
++++ src/Makefile.in	Thu Jun 17 22:13:15 2010
 @@ -238,7 +238,7 @@ CPP = @CPP@
  CPPFLAGS = @CPPFLAGS@
  CRYPTLIB = @CRYPTLIB@
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.16 2009/10/30 00:56:57 sthen Exp $
  target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
-@@ -610,8 +610,8 @@ EXTRA_DIST = \
+@@ -609,8 +609,8 @@ EXTRA_DIST = \
  DEFAULT_HTTP_PORT = @CACHE_HTTP_PORT@
  DEFAULT_ICP_PORT = @CACHE_ICP_PORT@
  DEFAULT_PREFIX = $(prefix)
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.16 2009/10/30 00:56:57 sthen Exp $
  DEFAULT_DNSSERVER = $(libexecdir)/`echo dnsserver | sed '$(transform);s/$$/$(EXEEXT)/'`
  DEFAULT_LOG_PREFIX = $(localstatedir)/logs
  DEFAULT_CACHE_LOG = $(DEFAULT_LOG_PREFIX)/cache.log
-@@ -885,37 +885,37 @@ distclean-compile:
+@@ -884,37 +884,37 @@ distclean-compile:
  @am__fastdepCC_FALSE@	$(COMPILE) -c `$(CYGPATH_W) '$<'`
  install-dataDATA: $(data_DATA)
  	@$(NORMAL_INSTALL)
@@ -78,7 +78,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.16 2009/10/30 00:56:57 sthen Exp $
  	done
  
  # This directory's subdirectories are mostly independent; you can cd
-@@ -1097,7 +1097,7 @@ check: $(BUILT_SOURCES)
+@@ -1096,7 +1096,7 @@ check: $(BUILT_SOURCES)
  all-am: Makefile $(PROGRAMS) $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:
@@ -87,7 +87,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.16 2009/10/30 00:56:57 sthen Exp $
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: $(BUILT_SOURCES)
-@@ -1244,7 +1244,7 @@ cf.data: cf.data.pre Makefile
+@@ -1243,7 +1243,7 @@ cf.data: cf.data.pre Makefile
  	sed "\
  	s%@DEFAULT_HTTP_PORT@%$(DEFAULT_HTTP_PORT)%g;\
  	s%@DEFAULT_ICP_PORT@%$(DEFAULT_ICP_PORT)%g;\

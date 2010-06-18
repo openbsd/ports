@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.28 2008/08/20 16:35:15 brad Exp $
---- configure.in.orig	Fri Aug  8 15:21:03 2008
-+++ configure.in	Fri Aug  8 22:44:09 2008
-@@ -2293,18 +2293,6 @@ dnl during compile.
+$OpenBSD: patch-configure_in,v 1.29 2010/06/18 10:32:17 sthen Exp $
+--- configure.in.orig	Tue Mar 16 20:10:12 2010
++++ configure.in	Thu Jun 17 22:13:14 2010
+@@ -2350,18 +2350,6 @@ dnl during compile.
  		;;
  esac
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-configure_in,v 1.28 2008/08/20 16:35:15 brad Exp $
  # Recommended by Balint Nagy Endre <bne@CareNet.hu>
  case "$host" in
  	*-univel-sysv4.2MP)
-@@ -2844,12 +2832,14 @@ AC_ARG_WITH(maxfd,
+@@ -2906,12 +2894,14 @@ AC_ARG_WITH(maxfd,
      ;;
    esac
  ])
