@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2010/06/07 21:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.168 2010/06/18 11:31:11 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,10 +6,10 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	5.1.47
+VERSION=	5.1.48
 DISTNAME=	mysql-${VERSION}
-PKGNAME-main=	mysql-client-${VERSION}p0
-PKGNAME-server=	mysql-server-${VERSION}p0
+PKGNAME-main=	mysql-client-${VERSION}
+PKGNAME-server=	mysql-server-${VERSION}
 PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.1
@@ -45,7 +45,6 @@ CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
 
 VMEM_WARNING=	Yes
 
-USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63
