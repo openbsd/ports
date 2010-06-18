@@ -1,0 +1,15 @@
+$OpenBSD: patch-cmake_FindGObject_cmake,v 1.1.1.1 2010/06/18 12:53:38 espie Exp $
+--- cmake/FindGObject.cmake.orig	Fri Jun 18 14:16:09 2010
++++ cmake/FindGObject.cmake	Fri Jun 18 14:16:20 2010
+@@ -49,11 +49,7 @@ FIND_LIBRARY(_GLibs NAMES glib-2.0
+    ${PKG_GOBJECT2_LIBRARY_DIRS}
+    )
+ 
+-IF (WIN32)
+ SET (GOBJECT_LIBRARIES ${_GObjectLibs} ${_GModuleLibs} ${_GThreadLibs} ${_GLibs})
+-ELSE (WIN32)
+-SET (GOBJECT_LIBRARIES ${PKG_GOBJECT2_LIBRARIES})
+-ENDIF (WIN32)
+ 
+ IF (GOBJECT_INCLUDE_DIR AND GOBJECT_LIBRARIES)
+    SET(GOBJECT_FOUND TRUE)

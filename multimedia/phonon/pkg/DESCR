@@ -1,0 +1,3 @@
+phonon is the chosen multimedia backend for kde4.
+A version of phonon ships with qt4. Unfortunately, it's not quite enough
+for kde4, so there is a more recent version provided as an external package.
