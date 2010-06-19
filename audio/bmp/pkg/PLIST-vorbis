@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-vorbis,v 1.1.1.1 2004/12/19 07:59:24 jolan Exp $
-lib/bmp/Input/libvorbis.a
-lib/bmp/Input/libvorbis.la
-%%SHARED%%
+@comment $OpenBSD: PLIST-vorbis,v 1.2 2010/06/19 20:21:14 sthen Exp $
+@comment lib/bmp/Input/libvorbis.la
+lib/bmp/Input/libvorbis.so

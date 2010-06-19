@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/12/22 15:43:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/06/19 20:21:14 sthen Exp $
 @pkgpath audio/bmp
 @pkgpath audio/bmp,no_mp3
 @pkgpath audio/bmp,no_vorbis
 @pkgpath audio/bmp,no_mp3,no_vorbis
-bin/beep-media-player
+@bin bin/beep-media-player
 include/bmp/
 include/bmp/beepctrl.h
 include/bmp/configdb.h
@@ -18,46 +18,41 @@ include/bmp/util.h
 include/bmp/vfs.h
 lib/bmp/
 lib/bmp/Input/
-@comment lib/bmp/Input/libcdaudio.a
 @comment lib/bmp/Input/libcdaudio.la
-lib/bmp/Input/libwav.a
-lib/bmp/Input/libwav.la
+lib/bmp/Input/libcdaudio.so
+@comment lib/bmp/Input/libwav.la
+lib/bmp/Input/libwav.so
 lib/bmp/Output/
-lib/bmp/Output/libesdout.a
-lib/bmp/Output/libesdout.la
+@comment lib/bmp/Output/libesdout.la
+lib/bmp/Output/libesdout.so
 lib/bmp/Visualization/
-lib/bmp/Visualization/libbscope.a
-lib/bmp/Visualization/libbscope.la
-lib/libbeep.a
-lib/libbeep.la
-lib/pkgconfig/
+@comment lib/bmp/Visualization/libbscope.la
+lib/bmp/Visualization/libbscope.so
+@comment lib/libbeep.la
+@lib lib/libbeep.so.${LIBbeep_VERSION}
 lib/pkgconfig/bmp.pc
 @man man/man1/beep-media-player.1
-share/applications/
 share/applications/bmp.desktop
 share/bmp/
 share/bmp/Skins/
 share/bmp/Skins/Default/
-share/bmp/Skins/Default/Avs.bmp
-share/bmp/Skins/Default/Balance.bmp
-share/bmp/Skins/Default/Eq_ex.bmp
-share/bmp/Skins/Default/Eqmain.bmp
-share/bmp/Skins/Default/Main.bmp
-share/bmp/Skins/Default/Mb.bmp
-share/bmp/Skins/Default/Monoster.bmp
-share/bmp/Skins/Default/Nums_ex.bmp
-share/bmp/Skins/Default/Pledit.bmp
-share/bmp/Skins/Default/Posbar.bmp
-share/bmp/Skins/Default/Shufrep.bmp
-share/bmp/Skins/Default/Text.bmp
-share/bmp/Skins/Default/Titlebar.bmp
-share/bmp/Skins/Default/Volume.bmp
-share/bmp/Skins/Default/cButtons.bmp
-share/bmp/Skins/Default/pLaypaus.bmp
-share/bmp/Skins/Default/pLedit.txt
-share/bmp/Skins/Default/readme.txt
-share/bmp/Skins/Default/screenshot.bmp
-share/bmp/Skins/Default/vIscolor.txt
+share/bmp/Skins/Default/README
+share/bmp/Skins/Default/balance.bmp
+share/bmp/Skins/Default/cbuttons.bmp
+share/bmp/Skins/Default/eq_ex.bmp
+share/bmp/Skins/Default/eqmain.bmp
+share/bmp/Skins/Default/main.bmp
+share/bmp/Skins/Default/monoster.bmp
+share/bmp/Skins/Default/nums_ex.bmp
+share/bmp/Skins/Default/playpaus.bmp
+share/bmp/Skins/Default/pledit.bmp
+share/bmp/Skins/Default/pledit.txt
+share/bmp/Skins/Default/posbar.bmp
+share/bmp/Skins/Default/shufrep.bmp
+share/bmp/Skins/Default/text.bmp
+share/bmp/Skins/Default/titlebar.bmp
+share/bmp/Skins/Default/viscolor.txt
+share/bmp/Skins/Default/volume.bmp
 share/bmp/glade/
 share/bmp/glade/addfiles.glade
 share/bmp/glade/prefswin.glade
@@ -67,28 +62,21 @@ share/bmp/images/eq.png
 share/bmp/images/mouse.png
 share/bmp/images/playlist.png
 share/bmp/images/plugins.png
-share/icons/
-share/icons/bmp.svg
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/bmp.mo
 share/locale/cs/LC_MESSAGES/bmp.mo
-share/locale/cy/
-share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/bmp.mo
 share/locale/de/LC_MESSAGES/bmp.mo
 share/locale/el/LC_MESSAGES/bmp.mo
 share/locale/es/LC_MESSAGES/bmp.mo
+share/locale/fi/LC_MESSAGES/bmp.mo
 share/locale/fr/LC_MESSAGES/bmp.mo
+share/locale/hi/LC_MESSAGES/bmp.mo
 share/locale/hu/LC_MESSAGES/bmp.mo
 share/locale/it/LC_MESSAGES/bmp.mo
 share/locale/ja/LC_MESSAGES/bmp.mo
+share/locale/ka/LC_MESSAGES/bmp.mo
 share/locale/ko/LC_MESSAGES/bmp.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/bmp.mo
-share/locale/mk/
-share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/bmp.mo
 share/locale/nl/LC_MESSAGES/bmp.mo
 share/locale/pl/LC_MESSAGES/bmp.mo
@@ -97,7 +85,10 @@ share/locale/ro/LC_MESSAGES/bmp.mo
 share/locale/ru/LC_MESSAGES/bmp.mo
 share/locale/sk/LC_MESSAGES/bmp.mo
 share/locale/sv/LC_MESSAGES/bmp.mo
+share/locale/uk/LC_MESSAGES/bmp.mo
 share/locale/zh_CN/LC_MESSAGES/bmp.mo
-%%SHARED%%
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+share/locale/zh_TW/LC_MESSAGES/bmp.mo
+share/pixmaps/
+share/pixmaps/bmp.png

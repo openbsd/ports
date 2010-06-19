@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-mp3,v 1.1.1.1 2004/12/19 07:59:24 jolan Exp $
-lib/bmp/Input/libmpg123.a
-lib/bmp/Input/libmpg123.la
-%%SHARED%%
+@comment $OpenBSD: PLIST-mp3,v 1.2 2010/06/19 20:21:14 sthen Exp $
+@comment lib/bmp/Input/libmpg123.la
+lib/bmp/Input/libmpg123.so
