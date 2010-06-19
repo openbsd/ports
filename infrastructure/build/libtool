@@ -1,7 +1,7 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.119 2010/06/12 16:35:15 steven Exp $
+# $OpenBSD: libtool,v 1.120 2010/06/19 09:41:07 steven Exp $
 
-# Copyright (c) 2007-2009 Steven Mestdagh <steven@openbsd.org>
+# Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -169,7 +169,7 @@ my $calls = 0;
 
 sub internal_resolve_la
 {
-	my ($self, $level, $result, $rdeplibs, $args) = @_;
+	my ($self, $level, $result, $rdeplibs, $rlibdirs, $args) = @_;
 	Trace::debug {"resolve level: $level\n"};
 	my $seen_pthread = 0;
 	foreach my $a (@$args) {
@@ -183,15 +183,22 @@ sub internal_resolve_la
 		if (!exists $lainfo->{'cached_deplibs'}) {
 		    $lainfo->{'cached_deplibs'} = [];
 		    $lainfo->{'cached_result'} = [];
+		    $lainfo->{'cached_libdirs'} = [];
 		    $lainfo->{'cached_pthread'} =
 			$self->internal_resolve_la($level+1,
 			    $lainfo->{'cached_result'},
 			    $lainfo->{'cached_deplibs'},
+			    $lainfo->{'cached_libdirs'},
 			    $lainfo->deplib_list);
 		    push(@{$lainfo->{'cached_deplibs'}},
 			@{$lainfo->deplib_list});
+		    push(@{$lainfo->{'cached_libdirs'}},
+			$lainfo->{'libdir'});
 		    if (@{$lainfo->{'cached_deplibs'}} > 50) {
 		    	$lainfo->{'cached_deplibs'} = main::reverse_zap_duplicates_ref($lainfo->{'cached_deplibs'});
+		    }
+		    if (@{$lainfo->{'cached_libdirs'}} > 50) {
+		    	$lainfo->{'cached_libdirs'} = main::reverse_zap_duplicates_ref($lainfo->{'cached_libdirs'});
 		    }
 		    if (@{$lainfo->{'cached_result'}} > 50) {
 		    	$lainfo->{'cached_result'} = main::reverse_zap_duplicates_ref($lainfo->{'cached_result'});
@@ -200,6 +207,7 @@ sub internal_resolve_la
 		$seen_pthread += $lainfo->{'cached_pthread'};
 		push(@$result, @{$lainfo->{'cached_result'}});
 		push(@$rdeplibs, @{$lainfo->{'cached_deplibs'}});
+		push(@$rlibdirs, @{$lainfo->{'cached_libdirs'}});
 	}
 	$calls++;
 	return $seen_pthread;
@@ -213,9 +221,9 @@ END
 # resolve .la files until a level with empty dependency_libs is reached.
 sub resolve_la
 {
-	my ($self, $deplibs) = @_;
+	my ($self, $deplibs, $libdirs) = @_;
 	$self->{result} = [];
-	if ($self->internal_resolve_la(0, $self->{result}, $deplibs, $self->{args})) {
+	if ($self->internal_resolve_la(0, $self->{result}, $deplibs, $libdirs, $self->{args})) {
 		unshift(@{$self->{result}}, '-pthread');
 		unshift(@$deplibs, '-pthread');
 	}
@@ -631,6 +639,7 @@ sub link
 	my $dirs = shift;
 	my $libs = shift;
 	my $deplibs = shift;
+	my $libdirs = shift;
 	my $parser = shift;
 	my $opts = shift;
 
@@ -648,7 +657,7 @@ sub link
 	mkdir "$odir/$ltdir" if (! -d "$odir/$ltdir");
 
 	Trace::debug {"argvstring (pre resolve_la): @{$parser->{args}}\n"};
-	my $args = $parser->resolve_la($deplibs);
+	my $args = $parser->resolve_la($deplibs, $libdirs);
 	Trace::debug {"argvstring (post resolve_la): @{$parser->{args}}\n"};
 	my $orderedlibs = [];
 	my $staticlibs = [];
@@ -875,6 +884,7 @@ sub link
 	my $dirs = shift;
 	my $libs = shift;
 	my $deplibs = shift;
+	my $libdirs = shift;
 	my $parser = shift;
 	my $opts = shift;
 	my $seen_la_shared = shift;
@@ -900,7 +910,7 @@ sub link
 	}
 
 	Trace::debug {"argvstring (pre resolve_la): @{$parser->{args}}\n"};
-	my $args = $parser->resolve_la($deplibs);
+	my $args = $parser->resolve_la($deplibs, $libdirs);
 	Trace::debug {"argvstring (post resolve_la): @{$parser->{args}}\n"};
 	my $orderedlibs = [];
 	my $staticlibs = [];
@@ -918,6 +928,15 @@ sub link
 	} elsif ($opts->{'export-symbols-regex'}) {
 		($symbolsfile = "$odir/$ltdir/$fname") =~ s/\.la$/.exp/;
 		main::get_symbollist($symbolsfile, $opts->{'export-symbols-regex'}, $self->{objlist});
+	}
+	$libdirs = main::reverse_zap_duplicates_ref($libdirs);
+	# add libdirs to rpath if they are not in standard lib path
+	for my $l (@$libdirs) {
+		my $found = 0;
+		for my $d (@main::libsearchdirs) {
+			if ($l eq $d) { $found = 1; last; }
+		}
+		if (!$found) { push @$RPdirs, $l; }
 	}
 	$RPdirs = main::reverse_zap_duplicates_ref($RPdirs);
 	map { $_ = "-Wl,-rpath,$_" } @$RPdirs;
@@ -1332,6 +1351,7 @@ if ($mode eq 'compile') {
 	my @Rresolved;		# -R options originating from .la resolution
 	my @RPopts;		# -rpath options
 	my $deplibs = [];	# list of dependent libraries (both -L and -l flags)
+	my $libdirs = [];	# list of libdirs
 	my $libs = {};		# libraries
 	my $dirs = {};		# paths to find libraries
 	# put a priority in the dir hash
@@ -1445,7 +1465,7 @@ if ($mode eq 'compile') {
 		@$RPdirs = (@Ropts, @RPopts, @Rresolved);
 		$program->{RPdirs} = $RPdirs;
 
-		$program->link($ltprog, $dirs, $libs, $deplibs, $parser, \%opts, $seen_la_shared);
+		$program->link($ltprog, $dirs, $libs, $deplibs, $libdirs, $parser, \%opts, $seen_la_shared);
 		if ($program->{shared} && $seen_la_shared) {
 			$program->write_wrapper();
 		}
@@ -1527,7 +1547,7 @@ if ($mode eq 'compile') {
 			$lainfo->{'library_names'} = $sharedlib;
 			$lainfo->{'library_names'} .= " $sharedlib_symlink"
 				if (defined $opts{'release'});
-			$lainfo->link($ltprog, $ofile, $sharedlib, $odir, 1, \@sobjs, $dirs, $libs, $deplibs, $parser, \%opts);
+			$lainfo->link($ltprog, $ofile, $sharedlib, $odir, 1, \@sobjs, $dirs, $libs, $deplibs, $libdirs, $parser, \%opts);
 			Trace::debug {"sharedlib: $sharedlib\n"};
 			$lainfo->{'current'} = $current;
 			$lainfo->{'revision'} = $revision;
@@ -1535,7 +1555,7 @@ if ($mode eq 'compile') {
 		}
 		if ($static) {
 			$lainfo->{'old_library'} = $staticlib;
-			$lainfo->link($ltprog, $ofile, $staticlib, $odir, 0, ($allpicobj) ? \@sobjs : \@objs, $dirs, $libs, $deplibs, $parser, \%opts);
+			$lainfo->link($ltprog, $ofile, $staticlib, $odir, 0, ($allpicobj) ? \@sobjs : \@objs, $dirs, $libs, $deplibs, $libdirs, $parser, \%opts);
 			Trace::debug {($convenience ? "convenience" : "static")." lib: $staticlib\n"};
 		}
 		$lainfo->{'installed'} = 'no';
