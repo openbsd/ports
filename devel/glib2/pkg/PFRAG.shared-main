@@ -1,7 +1,9 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.3 2009/12/04 08:08:31 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.4 2010/06/19 10:32:50 ajacoutot Exp $
 lib/gio/modules/libgiofam.so
 @lib lib/libgio-2.0.so.${LIBgio-2.0_VERSION}
 @lib lib/libglib-2.0.so.${LIBglib-2.0_VERSION}
 @lib lib/libgmodule-2.0.so.${LIBgmodule-2.0_VERSION}
 @lib lib/libgobject-2.0.so.${LIBgobject-2.0_VERSION}
 @lib lib/libgthread-2.0.so.${LIBgthread-2.0_VERSION}
+@exec %D/bin/gio-querymodules %D/lib/gio/modules/
+@unexec-delete rm -f %D/lib/gio/modules/giomodule.cache
