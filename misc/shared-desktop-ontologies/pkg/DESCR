@@ -1,0 +1,22 @@
+woah dude. Like, here's some text.
+
+(okay, in reality, this is just stuff kde4 really wants otherwise some
+stuff won't build)
+
+The vision of the Social Semantic Desktop defines a user's personal
+information environment as a source and end-point of the Semantic
+Web: Knowledge workers comprehensively express their information
+and data with respect to their own conceptualizations. Semantic Web
+languages and protocols are used to formalize these conceptualizations
+and for coordinating local and global information access. The
+Resource Description Framework RDF serves as a common data
+representation format. We identified several additional requirements
+for high-level knowledge representation on the social semantic
+desktop. With a particular focus on addressing certain limitations
+of RDF, we engineered a novel representational language akin to RDF
+and the Web Ontology Language OWL, plus a number of other high-level
+ontologies. Together, they provide a means to build the semantic
+bridges necessary for data exchange and application integration on
+distributed social semantic desktops. Although initially designed
+to fulfill requirements for the NEPOMUK project, these ontologies
+are useful for the semantic web community in general.
