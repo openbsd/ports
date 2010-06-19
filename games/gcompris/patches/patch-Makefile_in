@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2009/12/17 23:28:05 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.8 2010/06/19 13:57:10 ajacoutot Exp $
 --- Makefile.in.orig	Fri Oct 16 23:54:03 2009
 +++ Makefile.in	Thu Dec 17 19:32:06 2009
 @@ -885,9 +885,9 @@ install-data-local:
@@ -9,7 +9,7 @@ $OpenBSD: patch-Makefile_in,v 1.7 2009/12/17 23:28:05 ajacoutot Exp $
 +	    gtar cf -  -h --exclude "Makefile*" --exclude "*.in" --exclude "*~" --exclude ".*" --mode 644 * \
  	    | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; \
 -	        tar xf - ; find -type d -exec chmod 755 '{}' \;) ; cd .. ; ) ; \
-+	        gtar xf - ; find -type d -exec chmod 755 '{}' \;) ; cd .. ; ) ; \
++	        gtar xf - ; find . -type d -exec chmod 755 '{}' \;) ; cd .. ; ) ; \
  	fi
  	@if test ! -d $(PACKAGE_DATA_DIR)/voices; then \
  	  echo -e $(missing_voice_error); \
