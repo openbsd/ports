@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2010/05/18 20:44:13 kili Exp $
+# $OpenBSD: Makefile,v 1.132 2010/06/19 19:33:11 espie Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -82,6 +82,7 @@
      SUBDIR += screen,shm
      SUBDIR += screen,static
      SUBDIR += sh-utils
+     SUBDIR += shared-desktop-ontologies
      SUBDIR += shared-mime-info
      SUBDIR += splitvt
      SUBDIR += supercat
