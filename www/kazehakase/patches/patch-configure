@@ -1,10 +1,43 @@
-$OpenBSD: patch-configure,v 1.5 2010/05/06 19:25:51 landry Exp $
---- configure.orig	Mon May  3 21:56:13 2010
-+++ configure	Mon May  3 21:56:48 2010
-@@ -20796,77 +20796,6 @@ fi
+$OpenBSD: patch-configure,v 1.6 2010/06/19 10:34:41 landry Exp $
+XXX we know our xl has webprogresslistener2 but nspr headers not in -I during configure
+--- configure.orig	Tue Sep 29 05:44:00 2009
++++ configure	Fri Jun 18 22:02:55 2010
+@@ -16296,13 +16296,13 @@ fi
+ 
+   if test x"$enable_gtkmozembed" = "xyes"; then
+     if test x"$GECKO" = "xlibxul"; then
+-      GECKO_MODULE=$GECKO-unstable
++      GECKO_MODULE=$GECKO
+     else
+       GECKO_MODULE=$GECKO-xpcom
+     fi
+   else
+     if test x"$GECKO" = "xlibxul"; then
+-      GECKO_MODULE=$GECKO-embedding-unstable
++      GECKO_MODULE=$GECKO-embedding
+     else
+       GECKO_MODULE=$GECKO-gtkmozembed
+     fi
+@@ -16669,14 +16669,9 @@ nsIWebProgressListener2 *listener;
+   return 0;
+ }
+ _ACEOF
+-if ac_fn_cxx_try_compile "$LINENO"; then :
+ 
+ $as_echo "#define HAVE_NSIWEBPROGRESSLISTENER2_ONREFRESHATTEMPTED 1" >>confdefs.h
+ 
+-         result=yes
+-else
+-  result=no
+-fi
+ rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $result" >&5
+@@ -20795,77 +20790,6 @@ fi
+ 
  
  anthy_exists=no
- 
+-
 -pkg_failed=no
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ANTHY" >&5
 -$as_echo_n "checking for ANTHY... " >&6; }
@@ -75,7 +108,6 @@ $OpenBSD: patch-configure,v 1.5 2010/05/06 19:25:51 landry Exp $
 -$as_echo "yes" >&6; }
 -	anthy_exists=yes
 -fi
--
+ 
  # Extract the first word of "mecab-config", so it can be a program name with args.
  set dummy mecab-config; ac_word=$2
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5

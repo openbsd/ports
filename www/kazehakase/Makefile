@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/06/13 08:26:38 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2010/06/19 10:34:41 landry Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
 COMMENT-webkit=	kazehakase webkit backend
 CATEGORIES=	www
-
-BROKEN =	does not compile
 
 SHARED_LIBS=	kazehakase 1.0 #.1.0
 SHARED_ONLY=	Yes
@@ -37,15 +35,17 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--with-gecko-engine=xulrunner \
+CONFIGURE_ARGS =	--with-gecko-engine=libxul \
 			--disable-heyper-estraier \
 			--disable-shave \
 			--without-ruby \
 			--without-rgettext
 
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/xulrunner1.9" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+			CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/nspr"
 USE_LIBTOOL =		Yes
+LIBTOOL =		${PORTSDIR}/infrastructure/build/libtool
+
 USE_GMAKE =		Yes
 
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples

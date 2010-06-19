@@ -1,0 +1,49 @@
+$OpenBSD: patch-module_embed_gecko_kz-mozwrapper_cpp,v 1.1 2010/06/19 10:34:41 landry Exp $
+Backport of svn r3779 + r3872, fix for xl 1.9.2
+--- module/embed/gecko/kz-mozwrapper.cpp.orig	Tue Sep 29 05:38:19 2009
++++ module/embed/gecko/kz-mozwrapper.cpp	Tue Jun 15 23:48:03 2010
+@@ -99,13 +99,6 @@
+ 
+ typedef nsString              nsAFlatString;
+ typedef nsCString             nsAFlatCString;
+-#ifndef G_OS_WIN32
+-#  define nsString_h___
+-#  define nsAString_h___
+-#  include <nsPresContext.h>
+-#  undef nsAString_h___
+-#  undef nsString_h___
+-#endif
+ 
+ #include "kz-mozprogresslistener.h"
+ #include "kz-mozutils.h"
+@@ -2152,29 +2145,5 @@ KzMozWrapper::GetSelectedRange (nsIDOMDocument *domDoc
+ gboolean
+ KzMozWrapper::SetZoomOnDocShell (float aZoom, nsIDocShell *DocShell)
+ {
+-#ifndef G_OS_WIN32
+-	nsCOMPtr<nsPresContext> PresContext;
+-	nsresult rv = DocShell->GetPresContext (getter_AddRefs(PresContext));
+-	if (NS_FAILED(rv) || !PresContext) return FALSE;
+-
+-	nsIDeviceContext *DeviceContext(nsnull);
+-	DeviceContext = PresContext->DeviceContext();
+-	if (!DeviceContext) return FALSE;
+-
+-	nsCOMPtr<nsIContentViewer> ContentViewer;
+-	
+-	rv = DocShell->GetContentViewer(getter_AddRefs(ContentViewer));
+-	if (NS_FAILED(rv) || !ContentViewer) return FALSE;
+-
+-	nsCOMPtr<nsIMarkupDocumentViewer> mdv = do_QueryInterface(ContentViewer);
+-	if (!mdv) return FALSE;
+-
+-	rv = mdv->SetTextZoom (aZoom);
+-
+-	if NS_FAILED(rv) return FALSE;
+-	
+-	return TRUE;
+-#else
+-	return FALSE;
+-#endif
++	return NS_SUCCEEDED(mDOMWindow->SetTextZoom(aZoom));
+ }
