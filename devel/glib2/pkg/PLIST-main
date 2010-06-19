@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2010/05/03 11:41:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2010/06/19 11:05:34 ajacoutot Exp $
 @conflict glib2-fam-*
 @pkgpath devel/glib2
 @pkgpath devel/glib2,-fam
-%%SHARED%%
 @bin bin/gio-querymodules
 @bin bin/glib-genmarshal
 bin/glib-gettextize
@@ -412,3 +411,4 @@ share/locale/yi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
+%%SHARED%%
