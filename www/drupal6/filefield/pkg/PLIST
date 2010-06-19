@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/05/06 09:03:56 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/06/19 20:53:19 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}filefield/
@@ -18,6 +18,7 @@ ${DRUPAL_MODS}filefield/filefield.token.inc
 ${DRUPAL_MODS}filefield/filefield_field.inc
 ${DRUPAL_MODS}filefield/filefield_formatter.inc
 ${DRUPAL_MODS}filefield/filefield_meta/
+${DRUPAL_MODS}filefield/filefield_meta/fielfield_meta.token.inc
 ${DRUPAL_MODS}filefield/filefield_meta/filefield_meta.info
 ${DRUPAL_MODS}filefield/filefield_meta/filefield_meta.install
 ${DRUPAL_MODS}filefield/filefield_meta/filefield_meta.module
@@ -26,10 +27,11 @@ ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta.views.inc
 ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_bitrate.inc
 ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_duration.inc
 ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_samplerate.inc
+${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_tags.inc
 ${DRUPAL_MODS}filefield/filefield_meta/translations/
-${DRUPAL_MODS}filefield/filefield_meta/translations/filefield_meta.de.po
-${DRUPAL_MODS}filefield/filefield_meta/translations/filefield_meta.ja.po
+${DRUPAL_MODS}filefield/filefield_meta/translations/de.po
 ${DRUPAL_MODS}filefield/filefield_meta/translations/filefield_meta.pot
+${DRUPAL_MODS}filefield/filefield_meta/translations/ja.po
 ${DRUPAL_MODS}filefield/filefield_widget.inc
 ${DRUPAL_MODS}filefield/icons/
 ${DRUPAL_MODS}filefield/icons/protocons/
@@ -52,8 +54,9 @@ ${DRUPAL_MODS}filefield/icons/protocons/16x16/mimetypes/x-office-spreadsheet.png
 ${DRUPAL_MODS}filefield/tests/
 ${DRUPAL_MODS}filefield/tests/filefield.test
 ${DRUPAL_MODS}filefield/translations/
+${DRUPAL_MODS}filefield/translations/cs.po
 ${DRUPAL_MODS}filefield/translations/da.po
-${DRUPAL_MODS}filefield/translations/filefield.de.po
+${DRUPAL_MODS}filefield/translations/de.po
 ${DRUPAL_MODS}filefield/translations/filefield.pot
 ${DRUPAL_MODS}filefield/translations/fr-ca.po
 ${DRUPAL_MODS}filefield/translations/fr.po
@@ -64,8 +67,6 @@ ${DRUPAL_MODS}filefield/translations/pt-br.po
 ${DRUPAL_MODS}filefield/translations/sv.po
 ${DRUPAL_MODS}filefield/translations/uk-ua.po
 ${DRUPAL_MODS}filefield/translations/uk.po
-${DRUPAL_MODS}filefield/translations/views.de.po
-${DRUPAL_MODS}filefield/translations/views.pot
 ${DRUPAL_MODS}filefield/views/
 ${DRUPAL_MODS}filefield/views/filefield.views.inc
 ${DRUPAL_MODS}filefield/views/filefield.views_convert.inc
