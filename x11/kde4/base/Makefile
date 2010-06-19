@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/04/15 14:34:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/19 08:59:06 espie Exp $
 
 COMMENT =		K Desktop Environment, base
 DISTNAME =		kdebase-${VERSION}
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}
 
 SHARED_LIBS +=	kateinterfaces       2.0      # .4.0
 SHARED_LIBS +=	kdecorations         3.0      # .4.0
@@ -21,17 +21,17 @@ SHARED_LIBS +=	taskmanager          3.0      # .4.0
 SHARED_LIBS +=	dolphinprivate       0.0      # .1.0
 SHARED_LIBS +=	konquerorprivate     0.0      # .4.0
 
-LIB_DEPENDS +=	kdecore.>=8,kde3support,kdesu,kdeui,kfile,khtml,kio,kjs,knotifyconfig,kparts,kpty,ktexteditor,kutils,phonon,solid,nepomuk::x11/kde4/libs \
-		qimageblitz::x11/kde4/qimageblitz
+LIB_DEPENDS +=	kdecore.>=8,kde3support,kdesu,kdeui,kfile,khtml,kio,kjs,knotifyconfig,kparts,kpty,ktexteditor,kutils,solid,knewstuff3,plasma::x11/kde4/libs \
+	phonon.>=5::multimedia/phonon \
+	qimageblitz::x11/kde4/qimageblitz
 
-WANTLIB += ICE SM X11 Xau Xcursor Xdmcp
-WANTLIB += Xext Xfixes Xft Xi Xinerama Xpm Xrandr Xrender
-WANTLIB += Xt Xtst c fontconfig freetype jpeg m png pthread
-WANTLIB += stdc++ util z
+WANTLIB += ICE SM X11 Xau Xdmcp
+WANTLIB += Xext Xft Xpm Xrender
+WANTLIB += Xt c m pthread
+WANTLIB += stdc++ z
 WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtSvg QtXml
-WANTLIB += gif bz2 pcre pcreposix
-WANTLIB += dbus-1 fam glib-2.0 gthread-2.0 iconv intl
-WANTLIB += streams streamanalyzer soprano
+WANTLIB += glib-2.0
+WANTLIB += GL GLU
 
 
 .include <bsd.port.mk>
