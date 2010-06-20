@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/04/27 21:03:25 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2010/06/20 19:15:03 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
@@ -7,7 +7,7 @@ COMMENT=	integrated mozilla application suite
 
 VER=		2.0.4
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p0
+PKGNAME=	seamonkey-${VER}p1
 EXTRACT_SUFX=	.tar.bz2
 
 # must be in sync with SO_VERSION in mail/mozilla-thunderbird
@@ -95,7 +95,6 @@ NO_REGRESS=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/mozilla/build/autoconf \
 				${WRKSRC}/mozilla/js/src/build/autoconf \
-				${WRKSRC}/mozilla/nsprpub/build/autoconf \
 				${WRKSRC}/directory/c-sdk/config/autoconf
 
 AUTOCONF_VERSION= 2.13
@@ -155,7 +154,6 @@ pre-configure:
 	cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/mozilla && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/mozilla/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	cd ${WRKSRC}/mozilla/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	${SUBST_CMD} ${WRKSRC}/mozilla/js/src/xpconnect/shell/Makefile.in \
 		${WRKSRC}/mozilla/xpcom/io/nsAppFileLocationProvider.cpp \
 		${WRKSRC}/mozilla/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
