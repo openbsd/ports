@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/04/27 21:00:50 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2010/06/20 19:59:16 landry Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,9 +8,9 @@ COMMENT-seamonkey =	Mozilla Seamonkey calendar extension
 
 VER =			1.0b1
 DISTNAME =		lightning-sunbird-1.0b1.source
-PKGNAME-main =		sunbird-${VER}p0
-PKGNAME-lightning =	lightning-${VER}
-PKGNAME-seamonkey =	lightning-seamonkey-${VER}
+PKGNAME-main =		sunbird-${VER}p1
+PKGNAME-lightning =	lightning-${VER}p0
+PKGNAME-seamonkey =	lightning-seamonkey-${VER}p0
 
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	productivity mail
@@ -75,7 +75,6 @@ NO_REGRESS =	Yes
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/mozilla/build/autoconf \
 				${WRKSRC}/mozilla/js/src/build/autoconf \
-				${WRKSRC}/mozilla/nsprpub/build/autoconf \
 				${WRKSRC}/directory/c-sdk/config/autoconf
 
 AUTOCONF_VERSION =	2.13
@@ -136,7 +135,6 @@ pre-configure:
 	cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/mozilla && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	cd ${WRKSRC}/mozilla/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	cd ${WRKSRC}/mozilla/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	${SUBST_CMD} ${WRKSRC}/mozilla/js/src/xpconnect/shell/Makefile.in \
 		${WRKSRC}/mozilla/xpcom/io/nsAppFileLocationProvider.cpp \
 		${WRKSRC}/mozilla/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
