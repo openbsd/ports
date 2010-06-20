@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/06/18 13:30:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/06/20 11:48:17 espie Exp $
 @bin bin/bomber
 @bin bin/bovo
 @bin bin/granatier
@@ -174,8 +174,6 @@ lib/libpala/
 lib/libpala/libpala-config.cmake
 lib/libpala/pala-targets-release.cmake
 lib/libpala/pala-targets.cmake
-share/applications/
-share/applications/kde4/
 share/applications/kde4/KGoldrunner.desktop
 share/applications/kde4/bomber.desktop
 share/applications/kde4/bovo.desktop
@@ -1317,7 +1315,6 @@ share/apps/palapeli/palapeli-puzzletableui.rc
 share/apps/palapeli/palapeli.kcfg
 share/apps/palapeli/palapeli.notifyrc
 share/apps/palapeli/palapeliui.rc
-share/config.kcfg/
 share/config.kcfg/bomber.kcfg
 share/config.kcfg/granatier.kcfg
 share/config.kcfg/kblocks.kcfg
@@ -1572,8 +1569,6 @@ share/doc/HTML/en/palapeli/common
 share/doc/HTML/en/palapeli/index.cache.bz2
 share/doc/HTML/en/palapeli/index.docbook
 share/doc/HTML/en/palapeli/puzzletable1.png
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/bomber.png
 share/icons/hicolor/128x128/apps/bovo.png
 share/icons/hicolor/128x128/apps/granatier.png
@@ -1612,7 +1607,6 @@ share/icons/hicolor/128x128/apps/kubrick.png
 share/icons/hicolor/128x128/apps/lskat.png
 share/icons/hicolor/128x128/mimetypes/
 share/icons/hicolor/128x128/mimetypes/application-x-tuberling.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/bovo.png
 share/icons/hicolor/16x16/apps/granatier.png
 share/icons/hicolor/16x16/apps/kapman.png
@@ -1650,8 +1644,6 @@ share/icons/hicolor/16x16/apps/kubrick.png
 share/icons/hicolor/16x16/apps/lskat.png
 share/icons/hicolor/16x16/mimetypes/
 share/icons/hicolor/16x16/mimetypes/application-x-tuberling.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/bovo.png
 share/icons/hicolor/22x22/apps/granatier.png
 share/icons/hicolor/22x22/apps/kapman.png
@@ -1691,7 +1683,6 @@ share/icons/hicolor/22x22/mimetypes/application-x-tuberling.png
 share/icons/hicolor/256x256/
 share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/kdesnake.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/bomber.png
 share/icons/hicolor/32x32/apps/bovo.png
 share/icons/hicolor/32x32/apps/granatier.png
@@ -1730,7 +1721,6 @@ share/icons/hicolor/32x32/apps/kubrick.png
 share/icons/hicolor/32x32/apps/lskat.png
 share/icons/hicolor/32x32/mimetypes/
 share/icons/hicolor/32x32/mimetypes/application-x-tuberling.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/bomber.png
 share/icons/hicolor/48x48/apps/bovo.png
 share/icons/hicolor/48x48/apps/granatier.png
@@ -1768,8 +1758,6 @@ share/icons/hicolor/48x48/apps/kubrick.png
 share/icons/hicolor/48x48/apps/lskat.png
 share/icons/hicolor/48x48/mimetypes/
 share/icons/hicolor/48x48/mimetypes/application-x-tuberling.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/bomber.png
 share/icons/hicolor/64x64/apps/bovo.png
 share/icons/hicolor/64x64/apps/granatier.png
@@ -1815,42 +1803,27 @@ share/icons/hicolor/scalable/apps/kdiamond.svgz
 share/icons/hicolor/scalable/apps/killbots.svgz
 share/icons/hicolor/scalable/apps/kmahjongg.svgz
 share/icons/hicolor/scalable/apps/knetwalk.svgz
-share/icons/oxygen/
-share/icons/oxygen/128x128/
-share/icons/oxygen/128x128/apps/
 share/icons/oxygen/128x128/apps/kollision.png
-share/icons/oxygen/16x16/
 share/icons/oxygen/16x16/actions/
 share/icons/oxygen/16x16/actions/lastmoves.png
 share/icons/oxygen/16x16/actions/legalmoves.png
-share/icons/oxygen/16x16/apps/
 share/icons/oxygen/16x16/apps/kollision.png
-share/icons/oxygen/22x22/
 share/icons/oxygen/22x22/actions/
 share/icons/oxygen/22x22/actions/lastmoves.png
 share/icons/oxygen/22x22/actions/legalmoves.png
-share/icons/oxygen/22x22/apps/
 share/icons/oxygen/22x22/apps/kollision.png
-share/icons/oxygen/32x32/
 share/icons/oxygen/32x32/actions/
 share/icons/oxygen/32x32/actions/lastmoves.png
 share/icons/oxygen/32x32/actions/legalmoves.png
-share/icons/oxygen/32x32/apps/
 share/icons/oxygen/32x32/apps/kollision.png
-share/icons/oxygen/48x48/
 share/icons/oxygen/48x48/actions/
 share/icons/oxygen/48x48/actions/lastmoves.png
 share/icons/oxygen/48x48/actions/legalmoves.png
-share/icons/oxygen/48x48/apps/
 share/icons/oxygen/48x48/apps/kollision.png
-share/icons/oxygen/64x64/
-share/icons/oxygen/64x64/apps/
 share/icons/oxygen/64x64/apps/kollision.png
-share/icons/oxygen/scalable/
 share/icons/oxygen/scalable/actions/
 share/icons/oxygen/scalable/actions/lastmoves.svgz
 share/icons/oxygen/scalable/actions/legalmoves.svgz
-share/icons/oxygen/scalable/apps/
 share/icons/oxygen/scalable/apps/kollision.svgz
 share/kde4/services/ServiceMenus/
 share/kde4/services/ServiceMenus/palapeli_servicemenu.desktop
@@ -1860,7 +1833,6 @@ share/kde4/services/palapeli_rectslicer.desktop
 share/kde4/services/palathumbcreator.desktop
 share/kde4/servicetypes/libpala-slicerplugin.desktop
 share/mime/packages/palapeli-mimetypes.xml
-share/sounds/
 share/sounds/KDiamond-Stone-Drop.ogg
 share/sounds/KDiamond-Stone-Swap.ogg
 share/sounds/KDiamond-Stone-Touch.ogg
