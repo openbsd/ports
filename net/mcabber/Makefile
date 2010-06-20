@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2009/12/22 00:31:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/20 14:08:32 sthen Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		console jabber client
-DISTNAME=		mcabber-0.9.10
-PKGNAME=		${DISTNAME}p0
+DISTNAME=		mcabber-0.10.0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.lilotux.net/~mikael/mcabber/
 
 MAINTAINER=		Markus Hennecke <markus-hennecke@markus-hennecke.de>
 
-# GPL
+# GPLv2+ with SSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -20,10 +21,12 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
-WANTLIB=		c crypto gpg-error ncurses panel ssl
+WANTLIB=		c crypto gcrypt gpg-error ncurses panel pcre pthread ssl
 
-LIB_DEPENDS=		glib-2.0::devel/glib2 \
+LIB_DEPENDS=		glib-2.0,gmodule-2.0::devel/glib2 \
 			gpgme::security/gpgme \
+			loudmouth-1.>=3::net/loudmouth \
+			idn::devel/libidn \
 			otr::security/libotr
 RUN_DEPENDS=		::devel/desktop-file-utils
 
@@ -31,7 +34,6 @@ USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--enable-gpgme \
-			--with-ssl \
 			--disable-aspell \
 			--disable-enchant \
 			--enable-otr \

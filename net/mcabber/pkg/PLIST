@@ -1,5 +1,45 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/22 00:31:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/06/20 14:08:32 sthen Exp $
 @bin bin/mcabber
+include/mcabber/
+include/mcabber/api.h
+include/mcabber/caps.h
+include/mcabber/commands.h
+include/mcabber/compl.h
+include/mcabber/config.h
+include/mcabber/events.h
+include/mcabber/fifo.h
+include/mcabber/hbuf.h
+include/mcabber/help.h
+include/mcabber/hgcset.h
+include/mcabber/histolog.h
+include/mcabber/hooks.h
+include/mcabber/logprint.h
+include/mcabber/main.h
+include/mcabber/modules.h
+include/mcabber/nohtml.h
+include/mcabber/otr.h
+include/mcabber/pgp.h
+include/mcabber/roster.h
+include/mcabber/screen.h
+include/mcabber/settings.h
+include/mcabber/utf8.c
+include/mcabber/utf8.h
+include/mcabber/utils.h
+include/mcabber/xmpp.h
+include/mcabber/xmpp_defines.h
+include/mcabber/xmpp_helper.h
+include/mcabber/xmpp_iq.h
+include/mcabber/xmpp_iqrequest.h
+include/mcabber/xmpp_muc.h
+include/mcabber/xmpp_s10n.h
+lib/mcabber/
+lib/mcabber/libbeep.a
+lib/mcabber/libbeep.la
+lib/mcabber/libbeep.so
+lib/mcabber/libxttitle.a
+lib/mcabber/libxttitle.la
+lib/mcabber/libxttitle.so
+lib/pkgconfig/mcabber.pc
 @man man/man1/mcabber.1
 share/applications/mcabber.desktop
 share/examples/mcabber/
@@ -25,6 +65,7 @@ share/mcabber/help/cs/hlp_group.txt
 share/mcabber/help/cs/hlp_help.txt
 share/mcabber/help/cs/hlp_iline.txt
 share/mcabber/help/cs/hlp_info.txt
+share/mcabber/help/cs/hlp_module.txt
 share/mcabber/help/cs/hlp_move.txt
 share/mcabber/help/cs/hlp_msay.txt
 share/mcabber/help/cs/hlp_otr.txt
@@ -63,6 +104,7 @@ share/mcabber/help/de/hlp_group.txt
 share/mcabber/help/de/hlp_help.txt
 share/mcabber/help/de/hlp_iline.txt
 share/mcabber/help/de/hlp_info.txt
+share/mcabber/help/de/hlp_module.txt
 share/mcabber/help/de/hlp_move.txt
 share/mcabber/help/de/hlp_msay.txt
 share/mcabber/help/de/hlp_otr.txt
@@ -101,6 +143,7 @@ share/mcabber/help/en/hlp_group.txt
 share/mcabber/help/en/hlp_help.txt
 share/mcabber/help/en/hlp_iline.txt
 share/mcabber/help/en/hlp_info.txt
+share/mcabber/help/en/hlp_module.txt
 share/mcabber/help/en/hlp_move.txt
 share/mcabber/help/en/hlp_msay.txt
 share/mcabber/help/en/hlp_otr.txt
@@ -139,6 +182,7 @@ share/mcabber/help/fr/hlp_group.txt
 share/mcabber/help/fr/hlp_help.txt
 share/mcabber/help/fr/hlp_iline.txt
 share/mcabber/help/fr/hlp_info.txt
+share/mcabber/help/fr/hlp_module.txt
 share/mcabber/help/fr/hlp_move.txt
 share/mcabber/help/fr/hlp_msay.txt
 share/mcabber/help/fr/hlp_otr.txt
@@ -177,6 +221,7 @@ share/mcabber/help/it/hlp_group.txt
 share/mcabber/help/it/hlp_help.txt
 share/mcabber/help/it/hlp_iline.txt
 share/mcabber/help/it/hlp_info.txt
+share/mcabber/help/it/hlp_module.txt
 share/mcabber/help/it/hlp_move.txt
 share/mcabber/help/it/hlp_msay.txt
 share/mcabber/help/it/hlp_otr.txt
@@ -215,6 +260,7 @@ share/mcabber/help/nl/hlp_group.txt
 share/mcabber/help/nl/hlp_help.txt
 share/mcabber/help/nl/hlp_iline.txt
 share/mcabber/help/nl/hlp_info.txt
+share/mcabber/help/nl/hlp_module.txt
 share/mcabber/help/nl/hlp_move.txt
 share/mcabber/help/nl/hlp_msay.txt
 share/mcabber/help/nl/hlp_otr.txt
@@ -253,6 +299,7 @@ share/mcabber/help/pl/hlp_group.txt
 share/mcabber/help/pl/hlp_help.txt
 share/mcabber/help/pl/hlp_iline.txt
 share/mcabber/help/pl/hlp_info.txt
+share/mcabber/help/pl/hlp_module.txt
 share/mcabber/help/pl/hlp_move.txt
 share/mcabber/help/pl/hlp_msay.txt
 share/mcabber/help/pl/hlp_otr.txt
@@ -291,6 +338,7 @@ share/mcabber/help/ru/hlp_group.txt
 share/mcabber/help/ru/hlp_help.txt
 share/mcabber/help/ru/hlp_iline.txt
 share/mcabber/help/ru/hlp_info.txt
+share/mcabber/help/ru/hlp_module.txt
 share/mcabber/help/ru/hlp_move.txt
 share/mcabber/help/ru/hlp_msay.txt
 share/mcabber/help/ru/hlp_otr.txt
@@ -329,6 +377,7 @@ share/mcabber/help/uk/hlp_group.txt
 share/mcabber/help/uk/hlp_help.txt
 share/mcabber/help/uk/hlp_iline.txt
 share/mcabber/help/uk/hlp_info.txt
+share/mcabber/help/uk/hlp_module.txt
 share/mcabber/help/uk/hlp_move.txt
 share/mcabber/help/uk/hlp_msay.txt
 share/mcabber/help/uk/hlp_otr.txt
