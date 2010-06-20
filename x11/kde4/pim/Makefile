@@ -1,67 +1,65 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:04:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/20 20:29:10 espie Exp $
 
 COMMENT=		K Desktop Environment, pim
 DISTNAME=		kdepim-${VERSION}
 PKGNAME=		${DISTNAME}
 HOMEPAGE=		http://pim.kde.org/
 
-SHARED_LIBS +=	akonadi              0.0      # .1.0
-SHARED_LIBS +=	akonadicomponents    0.0      # .1.0
-SHARED_LIBS +=	akonadiprivate       0.0      # .1.0
-SHARED_LIBS +=	akonadiresources     0.0      # .1.0
-SHARED_LIBS +=	akonadisearchprovider 0.0     # .1.0
+SHARED_LIBS +=	akonadi-kcal_next 0.0
+SHARED_LIBS +=	akonadi_next 0.0
+SHARED_LIBS +=	akregatorinterfaces 0.0
+SHARED_LIBS +=	gwsoap 0.0
+SHARED_LIBS +=	kabc_groupdav 0.0
+SHARED_LIBS +=	kabcgroupwise 0.0
+SHARED_LIBS +=	kabckolab 0.0
+SHARED_LIBS +=	kaddressbookprivate 0.0
+SHARED_LIBS +=	kalarm_calendar 0.0
+SHARED_LIBS +=	kcal_groupdav 0.0
+SHARED_LIBS +=	kcal_resourceblog 0.0
+SHARED_LIBS +=	kcalgroupwise 0.0
+SHARED_LIBS +=	kcalkolab 0.0
+SHARED_LIBS +=	kleo 0.0
+SHARED_LIBS +=	knoteskolab 0.0
+SHARED_LIBS +=	kontactprivate 0.0
+SHARED_LIBS +=	korganizer_core 0.0
+SHARED_LIBS +=	korganizerprivate 0.0
+SHARED_LIBS +=	messagecore 0.0
+SHARED_LIBS +=	messagelist 0.0
+SHARED_LIBS +=	messageviewer 0.0
 SHARED_LIBS +=	akregatorprivate     0.0      # .1.0
-SHARED_LIBS +=	gpgme++              4.0      # .1.0
-SHARED_LIBS +=	index                2.0      # .1.0
 SHARED_LIBS +=	kabc_slox            2.0      # .1.0
-SHARED_LIBS +=	kabc_xmlrpc          3.0      # .1.0
-SHARED_LIBS +=	kabinterfaces        3.0      # .1.0
-SHARED_LIBS +=	kaddressbook         2.0      # .1.0
 SHARED_LIBS +=	kalarm_resources     0.0      # .1.0
 SHARED_LIBS +=	kcal_resourceremote  3.0      # .1.0
 SHARED_LIBS +=	kcal_slox            2.0      # .1.0
-SHARED_LIBS +=	kcal_xmlrpc          3.0      # .1.0
 SHARED_LIBS +=	kdepim               3.0      # .1.0
 SHARED_LIBS +=	kgroupwarebase       2.0      # .1.0
 SHARED_LIBS +=	kgroupwaredav        2.0      # .1.0
-SHARED_LIBS +=	kholidays            3.0      # .1.0
-SHARED_LIBS +=	kholidays_ng         0.0      # .1.0
-SHARED_LIBS +=	kleopatra            3.0      # .1.0
 SHARED_LIBS +=	kmailprivate         0.0      # .1.0
 SHARED_LIBS +=	knodecommon          0.0      # .1.0
-SHARED_LIBS +=	knotes_xmlrpc        0.0      # .1.0
-SHARED_LIBS +=	kocorehelper         3.0      # .1.0
-SHARED_LIBS +=	kode                 3.0      # .1.0
-SHARED_LIBS +=	kontact              3.0      # .1.0
 SHARED_LIBS +=	korg_stdprinting     3.0      # .1.0
-SHARED_LIBS +=	korganizer           3.0      # .1.0
 SHARED_LIBS +=	korganizer_calendar  3.0      # .1.0
 SHARED_LIBS +=	korganizer_eventviewer 3.0    # .1.0
 SHARED_LIBS +=	korganizer_interfaces  0.0    # .1.0
 SHARED_LIBS +=	kpgp                 6.0      # .2.2
-SHARED_LIBS +=	kpimidentities       3.0      # .1.0
-SHARED_LIBS +=	kpinterfaces         3.0      # .1.0
-SHARED_LIBS +=	kschema              0.0      # .1.0
-SHARED_LIBS +=	kschemawidgets       0.0      # .1.0
 SHARED_LIBS +=	ksieve               2.0      # .0.0
 SHARED_LIBS +=	kslox                2.0      # .1.0
-SHARED_LIBS +=	kxmlcommon           0.0      # .1.0
-SHARED_LIBS +=	mailtransport        0.0      # .1.0
 SHARED_LIBS +=	mimelib              0.0      # .1.1
-SHARED_LIBS +=	qgpgme               2.0      # .1.0
-SHARED_LIBS +=	schema               0.0      # .1.0
-SHARED_LIBS +=	wscl                 0.0      # .1.0
-SHARED_LIBS +=	wsdl                 0.0      # .1.0
 
-LIB_DEPENDS+=	kdecore.>=8,kde3support,kdefakes,kdefx,kdeprint,kdesu,kdeui,khtml,kimproxy,kio,kjs,knewstuff,knotifyconfig,kparts,ktexteditor,phononcore,sonnetcore,sonnetui,threadweaver::x11/kde4/libs \
-		kabc.>=5,emailfunctions,kabc_file_core,kcal,kldap,kmime,kresources,ktnef,kutils,kwalletclient,syndication::x11/kde4/pimlibs \
-		gpgme::security/gpgme
+BUILD_DEPENDS +=	::x11/kde4/automoc
+LIB_DEPENDS+=	kdecore.>=8,kde3support,kdeui,khtml,kimproxy,kio,kjs,knotifyconfig,kparts,ktexteditor,threadweaver,solid,nepomuk,kdnssd,kfile,knewstuff2::x11/kde4/libs \
+		kabc.>=5,kcal,kldap,kmime,kresources,ktnef,kutils,syndication,qgpgme,mailtransport,akonadi-contact,akonadi-kcal,akonadi-kde,akonadi-kmime,gpgme++,gpgme++-pthread,kblog,kholidays,kimap,kontactinterface,kpimidentities,kpimtextedit,kpimutils::x11/kde4/pimlibs
 
-WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xft Xi Xinerama Xpm
-WANTLIB += Xrandr Xrender Xss Xtst bz2 c fontconfig freetype gif
-WANTLIB += gpg-error iconv intl jpeg m pcre pcreposix png pthread
-WANTLIB += sasl2 stdc++ util z
+WANTLIB += X11
+WANTLIB += Xss c
+WANTLIB += gpg-error iconv intl m pthread
+WANTLIB += stdc++ z
 WANTLIB += Qt3Support QtDBus QtDesigner QtGui QtNetwork QtSql QtSvg QtXml
+WANTLIB += akonadiprotocolinternals streamanalyzer streams phonon
+WANTLIB += gpgme-pthread
+
+# these come from libs in real case
+pre-install:
+	mkdir -p ${PREFIX}/share/doc/HTML/en/common
 
 
 .include <bsd.port.mk>
