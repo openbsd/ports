@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.146 2010/06/20 07:36:38 espie Exp $
+# $OpenBSD: make-plist,v 1.147 2010/06/20 08:22:40 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1137,5 +1137,5 @@ if (($default->{wantshared} || (defined $default->{shared}) && $default->{shared
 # and rechecking libraries
 for my $name (sort keys %{$subst->{l}}) {
 	next if $subst->{found}{$name};
-	print STDERR "WARNING: didn't find $name library\n";
+	print STDERR "WARNING: didn't find any library to match SHARED_LIBS $name\n";
 }
