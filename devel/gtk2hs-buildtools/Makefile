@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/16 13:57:39 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/20 13:54:19 kili Exp $
 
 COMMENT =		tools to build Gtk2Hs
+
+BROKEN-i386 =		does not work with gcc3
 
 DISTNAME =		gtk2hs-buildtools-0.9
 CATEGORIES =		devel
