@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Apr  1 06:29:23 2010
-+++ Makefile	Fri Apr  2 11:36:32 2010
-@@ -234,7 +234,7 @@ endif
+--- Makefile.orig	Sat Apr 24 04:38:35 2010
++++ Makefile	Mon Apr 26 10:22:14 2010
+@@ -244,7 +244,7 @@ endif
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -9,7 +9,7 @@
  LDFLAGS =
  ALL_CFLAGS = $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
-@@ -252,22 +252,16 @@ STRIP ?= strip
+@@ -262,38 +262,32 @@ STRIP ?= strip
  # runtime figures out where they are based on the path to the executable.
  # This can help installing the suite in a relocatable way.
  
@@ -36,7 +36,6 @@
  lib = lib
  # DESTDIR=
  pathsep = :
-@@ -277,16 +271,16 @@ JSMIN =
  
  export prefix bindir sharedir sysconfdir
  
@@ -57,8 +56,8 @@
  
  export TCL_PATH TCLTK_PATH
  
-@@ -833,12 +827,13 @@ ifeq ($(uname_S),FreeBSD)
- 	endif
+@@ -869,12 +863,13 @@ ifeq ($(uname_S),FreeBSD)
+ 	PYTHON_PATH = /usr/local/bin/python
  endif
  ifeq ($(uname_S),OpenBSD)
 -	NO_STRCASESTR = YesPlease
@@ -74,8 +73,8 @@
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -1110,7 +1105,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
- 	PROGRAMS += git-daemon$X
+@@ -1153,7 +1148,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
+ 	PROGRAM_OBJS += daemon.o
  endif
  ifndef NO_OPENSSL
 -	OPENSSL_LIBSSL = -lssl
@@ -83,9 +82,9 @@
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -1753,7 +1748,7 @@ bin-wrappers/%: wrap-for-bin.sh
+@@ -1909,7 +1904,7 @@ export NO_SVN_TESTS
  
- export NO_SVN_TESTS
+ ### Testing rules
  
 -test: all
 +test:

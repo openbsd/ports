@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.45 2010/04/13 21:35:04 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.46 2010/06/20 11:49:41 bernd Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -94,7 +94,7 @@ libexec/git/git-mergetool--lib
 @bin libexec/git/git-mktree
 @bin libexec/git/git-mv
 @bin libexec/git/git-name-rev
-libexec/git/git-notes
+@bin libexec/git/git-notes
 @bin libexec/git/git-pack-objects
 @bin libexec/git/git-pack-redundant
 @bin libexec/git/git-pack-refs
@@ -404,7 +404,9 @@ share/doc/git/RelNotes-1.7.0.2.txt
 share/doc/git/RelNotes-1.7.0.3.txt
 share/doc/git/RelNotes-1.7.0.4.txt
 share/doc/git/RelNotes-1.7.0.5.txt
+share/doc/git/RelNotes-1.7.0.6.txt
 share/doc/git/RelNotes-1.7.0.txt
+share/doc/git/RelNotes-1.7.1.txt
 share/doc/git/blame-options.txt
 share/doc/git/cmds-ancillaryinterrogators.txt
 share/doc/git/cmds-ancillarymanipulators.txt
