@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.145 2010/04/26 12:00:57 espie Exp $
+# $OpenBSD: make-plist,v 1.146 2010/06/20 07:36:38 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -37,7 +37,7 @@ our @ISA = (qw(OpenBSD::Subst));
 
 sub new
 {
-	bless {h => {}, r => [], l => {}}, shift;
+	bless {h => {}, r => [], l => {}, found => {}}, shift;
 }
 
 sub hash
@@ -93,6 +93,7 @@ sub reverse_with_lib
 			print STDERR "WARNING: version mismatch for lib: $name "
 			. "($version vs. $self->{l}->{$name})\n";
 		}
+		$self->{found}->{$name} = 1;
 		return $self->reverse("${path}lib$name.so.")."\${LIB${name}_VERSION}";
 	} else {
 		return $self->reverse($_);
@@ -1131,4 +1132,10 @@ if (($default->{wantshared} || (defined $default->{shared}) && $default->{shared
 			    die "Can't write plist: ", prettify($plist), "\n";
 		}
 	}
+}
+
+# and rechecking libraries
+for my $name (sort keys %{$subst->{l}}) {
+	next if $subst->{found}{$name};
+	print STDERR "WARNING: didn't find $name library\n";
 }
