@@ -1,26 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/19 08:59:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2010/06/20 09:07:43 espie Exp $
 
 COMMENT =		K Desktop Environment, base
 DISTNAME =		kdebase-${VERSION}
 PKGNAME =		${DISTNAME}
 
-SHARED_LIBS +=	kateinterfaces       2.0      # .4.0
-SHARED_LIBS +=	kdecorations         3.0      # .4.0
-SHARED_LIBS +=	kfontinst            2.0      # .4.0
-SHARED_LIBS +=	kfontinstui          0.0      # .4.0
-SHARED_LIBS +=	kickermain           3.0      # .2.0
 SHARED_LIBS +=	konq                 8.0      # .6.0
 SHARED_LIBS +=	konqsidebarplugin    5.0      # .4.0
-SHARED_LIBS +=	kscreensaver         8.0      # .5.0
-SHARED_LIBS +=	ksgrd                5.0      # .4.0
-SHARED_LIBS +=	ksplashthemes        2.0      # .4.0
-SHARED_LIBS +=	kworkspace           0.0      # .1.0
-SHARED_LIBS +=	plasma               0.0      # .1.0
-SHARED_LIBS +=	taskbar              5.0      # .4.0
-SHARED_LIBS +=	taskmanager          3.0      # .4.0
 SHARED_LIBS +=	dolphinprivate       0.0      # .1.0
 SHARED_LIBS +=	konquerorprivate     0.0      # .4.0
 
+BUILD_DEPENDS +=	::x11/kde4/automoc
 LIB_DEPENDS +=	kdecore.>=8,kde3support,kdesu,kdeui,kfile,khtml,kio,kjs,knotifyconfig,kparts,kpty,ktexteditor,kutils,solid,knewstuff3,plasma::x11/kde4/libs \
 	phonon.>=5::multimedia/phonon \
 	qimageblitz::x11/kde4/qimageblitz
@@ -33,5 +22,8 @@ WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtSvg QtXml
 WANTLIB += glib-2.0
 WANTLIB += GL GLU
 
+# these come from libs in real case
+pre-install:
+	mkdir -p ${PREFIX}/share/doc/HTML/en/common
 
 .include <bsd.port.mk>

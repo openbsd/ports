@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/06/19 08:59:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/06/20 09:07:43 espie Exp $
 @newgroup _kdesud:583
 @bin bin/dolphin
 @bin bin/kappfinder
@@ -654,9 +654,6 @@ share/icons/hicolor/64x64/apps/kappfinder.png
 share/icons/hicolor/64x64/apps/kfind.png
 share/icons/hicolor/64x64/apps/konqueror.png
 share/icons/hicolor/scalable/apps/konqueror.svgz
-share/icons/oxygen/
-share/icons/oxygen/128x128/
-share/icons/oxygen/128x128/apps/
 share/icons/oxygen/128x128/apps/applixware.png
 share/icons/oxygen/128x128/apps/clanbomber.png
 share/icons/oxygen/128x128/apps/email.png
@@ -671,8 +668,6 @@ share/icons/oxygen/128x128/apps/wp.png
 share/icons/oxygen/128x128/apps/xclock.png
 share/icons/oxygen/128x128/apps/xfmail.png
 share/icons/oxygen/128x128/apps/xmag.png
-share/icons/oxygen/16x16/
-share/icons/oxygen/16x16/apps/
 share/icons/oxygen/16x16/apps/abiword.png
 share/icons/oxygen/16x16/apps/alevt.png
 share/icons/oxygen/16x16/apps/applixware.png
@@ -724,11 +719,7 @@ share/icons/oxygen/16x16/apps/xmms.png
 share/icons/oxygen/16x16/apps/xosview.png
 share/icons/oxygen/16x16/apps/xpaint.png
 share/icons/oxygen/16x16/apps/xv.png
-share/icons/oxygen/22x22/
-share/icons/oxygen/22x22/apps/
 share/icons/oxygen/22x22/apps/email.png
-share/icons/oxygen/32x32/
-share/icons/oxygen/32x32/apps/
 share/icons/oxygen/32x32/apps/abiword.png
 share/icons/oxygen/32x32/apps/alevt.png
 share/icons/oxygen/32x32/apps/applixware.png
@@ -783,8 +774,6 @@ share/icons/oxygen/32x32/apps/xmms.png
 share/icons/oxygen/32x32/apps/xosview.png
 share/icons/oxygen/32x32/apps/xpaint.png
 share/icons/oxygen/32x32/apps/xv.png
-share/icons/oxygen/48x48/
-share/icons/oxygen/48x48/apps/
 share/icons/oxygen/48x48/apps/abiword.png
 share/icons/oxygen/48x48/apps/applixware.png
 share/icons/oxygen/48x48/apps/blender.png
@@ -822,8 +811,6 @@ share/icons/oxygen/48x48/apps/xemacs.png
 share/icons/oxygen/48x48/apps/xfmail.png
 share/icons/oxygen/48x48/apps/xmag.png
 share/icons/oxygen/48x48/apps/xv.png
-share/icons/oxygen/64x64/
-share/icons/oxygen/64x64/apps/
 share/icons/oxygen/64x64/apps/applixware.png
 share/icons/oxygen/64x64/apps/clanbomber.png
 share/icons/oxygen/64x64/apps/email.png
@@ -839,8 +826,6 @@ share/icons/oxygen/64x64/apps/wp.png
 share/icons/oxygen/64x64/apps/xclock.png
 share/icons/oxygen/64x64/apps/xfmail.png
 share/icons/oxygen/64x64/apps/xmag.png
-share/icons/oxygen/scalable/
-share/icons/oxygen/scalable/apps/
 share/icons/oxygen/scalable/apps/aim.svgz
 share/icons/oxygen/scalable/apps/antivirus.svgz
 share/icons/oxygen/scalable/apps/applixware.svgz
