@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/06/18 11:14:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/06/20 08:19:56 espie Exp $
 bin/checkXML
 @bin bin/kbuildsycoca4
 @bin bin/kconfig_compiler
@@ -16,6 +16,7 @@ bin/checkXML
 @bin bin/kwrapper4
 @bin bin/makekdewidgets
 @bin bin/meinproc4
+@bin bin/nepomuk-rcgen
 bin/preparetips
 etc/
 etc/dbus-1/
@@ -1637,6 +1638,48 @@ include/kxmlguiwindow.h
 include/kxutils.h
 include/kxyselector.h
 include/kzip.h
+include/nepomuk/
+include/nepomuk/andterm.h
+include/nepomuk/class.h
+include/nepomuk/comparisonterm.h
+include/nepomuk/desktopontologyloader.h
+include/nepomuk/entity.h
+include/nepomuk/fileontologyloader.h
+include/nepomuk/filequery.h
+include/nepomuk/global.h
+include/nepomuk/groupterm.h
+include/nepomuk/kmetadatatagcloud.h
+include/nepomuk/kmetadatatagwidget.h
+include/nepomuk/kratingpainter.h
+include/nepomuk/kratingwidget.h
+include/nepomuk/ktagcloudwidget.h
+include/nepomuk/ktagdisplaywidget.h
+include/nepomuk/literal.h
+include/nepomuk/literalterm.h
+include/nepomuk/negationterm.h
+include/nepomuk/nepomuk_export.h
+include/nepomuk/nepomukontologyloader.h
+include/nepomuk/nepomukquery_export.h
+include/nepomuk/nepomukservice.h
+include/nepomuk/ontology.h
+include/nepomuk/ontologyloader.h
+include/nepomuk/ontologymanager.h
+include/nepomuk/orterm.h
+include/nepomuk/property.h
+include/nepomuk/query.h
+include/nepomuk/queryparser.h
+include/nepomuk/queryserviceclient.h
+include/nepomuk/resource.h
+include/nepomuk/resourcemanager.h
+include/nepomuk/resourceterm.h
+include/nepomuk/resourcetypeterm.h
+include/nepomuk/result.h
+include/nepomuk/simpleterm.h
+include/nepomuk/tag.h
+include/nepomuk/term.h
+include/nepomuk/thing.h
+include/nepomuk/tools.h
+include/nepomuk/variant.h
 include/netwm.h
 include/netwm_def.h
 include/passdlg.h
@@ -1891,6 +1934,8 @@ lib/libkdeinit4_klauncher.so
 @lib lib/libkunitconversion.so.${LIBkunitconversion_VERSION}
 @lib lib/libkunittest.so.${LIBkunittest_VERSION}
 @lib lib/libkutils.so.${LIBkutils_VERSION}
+@lib lib/libnepomuk.so.${LIBnepomuk_VERSION}
+@lib lib/libnepomukquery.so.${LIBnepomukquery_VERSION}
 @lib lib/libplasma.so.${LIBplasma_VERSION}
 @lib lib/libsolid.so.${LIBsolid_VERSION}
 @lib lib/libthreadweaver.so.${LIBthreadweaver_VERSION}
@@ -4005,6 +4050,9 @@ share/apps/ktexteditor_insertfile/
 share/apps/ktexteditor_insertfile/ktexteditor_insertfileui.rc
 share/apps/ktexteditor_kdatatool/
 share/apps/ktexteditor_kdatatool/ktexteditor_kdatatoolui.rc
+share/apps/nepomuk/
+share/apps/nepomuk/pics/
+share/apps/nepomuk/pics/rating.png
 share/apps/plasma/
 share/apps/plasma/services/
 share/apps/plasma/services/dataengineservice.operations
