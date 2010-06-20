@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_chess_computer-activity_chess_c,v 1.1 2010/06/20 16:44:54 ajacoutot Exp $
+--- src/chess_computer-activity/chess.c.orig	Sun Jun 20 18:40:54 2010
++++ src/chess_computer-activity/chess.c	Sun Jun 20 18:41:32 2010
+@@ -160,7 +160,7 @@ static gchar *gnuchess_path[] =
+     GNUCHESS,
+     "/usr/bin/gnuchess",
+     "/usr/games/gnuchess",
+-    "/usr/local/bin/gnuchess",
++    "${LOCALBASE}/bin/gnuchess",
+     "bin/gnuchess",
+     "gnuchess",
+     "gnuchess.exe",

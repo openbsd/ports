@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2010/06/20 16:31:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2010/06/20 16:44:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	educational game for children
 
 DISTNAME=	gcompris-9.3
+PKGNAME=	${DISTNAME}p0
 
 CATEGORIES=	games education
 
@@ -70,6 +71,10 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-gnet \
 		--enable-py-build-only \
 		--with-python=${MODPY_BIN}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/chess_computer-activity/chess.c \
+		${WRKSRC}/src/electric-activity/electric.py
 
 post-install:
 	find ${PREFIX}/share/gcompris -type f -perm 755 -exec chmod 644 {} \;

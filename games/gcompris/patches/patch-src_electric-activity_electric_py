@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_electric-activity_electric_py,v 1.1 2010/06/20 16:44:54 ajacoutot Exp $
+--- src/electric-activity/electric.py.orig	Sun Jun 20 18:41:36 2010
++++ src/electric-activity/electric.py	Sun Jun 20 18:42:03 2010
+@@ -87,7 +87,7 @@ class Gcompris_electric:
+     #
+     for binary in (os.path.join(gcompris.PYTHON_PLUGIN_DIR, 'bin', 'gnucap'),
+                    "/usr/bin/gnucap",
+-                   "/usr/local/bin/gnucap",
++                   "${LOCALBASE}/bin/gnucap",
+                    "gnucap.exe",
+ 		   os.path.join(gcompris.DATA_DIR, '..' , '..', '..', 'bin', 'gnucap')):
+       if(os.path.exists(binary)):
+@@ -95,7 +95,7 @@ class Gcompris_electric:
+         break
+ 
+     if not self.gnucap_binary:
+-      gcompris.utils.dialog(_("Cannot find the 'gnucap' electric simulator.\nYou can download and install it from:\n<http://geda.seul.org/tools/gnucap/>\nTo be detected, it must be installed in\n/usr/bin/gnucap or /usr/local/bin/gnucap.\nYou can still use this activity to draw schematics without computer simulation."),
++      gcompris.utils.dialog(_("Cannot find the 'gnucap' electric simulator.\nYou can download and install it from:\n<http://geda.seul.org/tools/gnucap/>\nTo be detected, it must be installed in\n/usr/bin/gnucap or ${LOCALBASE}/bin/gnucap.\nYou can still use this activity to draw schematics without computer simulation."),
+                             None)
+ 
+ 
