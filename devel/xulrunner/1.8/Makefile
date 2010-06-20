@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2009/08/10 06:31:08 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/20 19:44:40 landry Exp $
 
 VERSION=		1.8.1.19
-PATCHLEVEL=		p4
+PATCHLEVEL=		p5
 DIRECTORY=		xulrunner
 
 SO_VERSION=		2.0
@@ -24,6 +24,8 @@ DISTDIRS=		idl include
 TOOLS=			TestGtkEmbed xpcshell xpt_link mozilla-xremote-client \
 			xpicleanup xulrunner-bin nsinstall xpidl \
 			xulrunner-stub regxpcom xpt_dump
+
+WANTLIB-main+=		Xft
 
 pre-configure:
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \

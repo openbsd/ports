@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2010/04/24 16:08:01 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2010/06/20 19:44:40 landry Exp $
 
 #
 # For legacy reasons (smooth updates), directory is xulrunner.
@@ -40,10 +40,11 @@ LIB_DEPENDS+=		gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
 WANTLIB+=		c glib-2.0 m pthread stdc++
 
 WANTLIB-main+=		${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-			Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xt atk-1.0 \
+			Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 \
 			cairo expat fontconfig freetype glitz gmodule-2.0 \
 			gobject-2.0 gthread-2.0 jpeg pango-1.0 pangocairo-1.0 \
-			pangoft2-1.0 pixman-1 png pthread-stubs xcb z gio-2.0
+			pangoft2-1.0 pixman-1 png pthread-stubs xcb z gio-2.0 \
+			xcb-render xcb-render-util
 
 LIB_DEPENDS-devel+=	${MODGETTEXT_LIB_DEPENDS} IDL-2::devel/libIDL \
 			${DIRECTORY}/mozjs,${DIRECTORY}/xpcom,${DIRECTORY}/xul:${PKGNAME-main}:devel/xulrunner/${VERSION:R:R},-main
