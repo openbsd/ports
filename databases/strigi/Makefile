@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/06/18 15:09:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/06/20 09:49:59 espie Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	document indexer
@@ -24,7 +24,7 @@ SHARED_LIBS +=  streams            1.0 # .0.5
 SHARED_LIBS +=  strigihtmlgui      1.0 # .0.5
 SHARED_LIBS +=  strigiqtdbusclient 1.0 # .0.5
 
-LIB_DEPENDS =		clucene->=1:clucene->=0.9.21:textproc/clucene \
+LIB_DEPENDS =		clucene.>=1:clucene-core->=0.9.21:textproc/clucene \
 			bz2::archivers/bzip2 \
 			xml2::textproc/libxml \
 			lib/qt4/QtCore,lib/qt4/QtGui,lib/qt4/QtDBus::x11/qt4 \
