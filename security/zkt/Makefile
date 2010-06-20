@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2009/08/11 10:38:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/20 14:01:35 jakob Exp $
 
 COMMENT=	DNSsec Zone Key Tool
 
-DISTNAME=	zkt-0.99c
+DISTNAME=	zkt-1.0
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.hznet.de/dns/zkt/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c
+WANTLIB=	c ncurses
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -24,11 +24,15 @@ CONFIGURE_ARGS+=	--enable-configpath=/var/named/etc
 
 NO_REGRESS=		Yes
 
+PROGRAMS=		zkt-conf zkt-keyman zkt-ls zkt-signer zkt-soaserial
+MAN8=			zkt-conf.8 zkt-keyman.8 zkt-ls.8 zkt-signer.8
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/dnssec-signer ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKBUILD}/dnssec-zkt ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKBUILD}/zkt-soaserial ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKBUILD}/man/dnssec-signer.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKBUILD}/man/dnssec-zkt.8 ${PREFIX}/man/man8
+.for p in ${PROGRAMS}
+	${INSTALL_PROGRAM} ${WRKBUILD}/${p} ${PREFIX}/sbin
+.endfor
+.for p in ${MAN8}
+	${INSTALL_MAN} ${WRKBUILD}/man/${p} ${PREFIX}/man/man8
+.endfor
 
 .include <bsd.port.mk>

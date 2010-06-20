@@ -1,0 +1,27 @@
+$OpenBSD: patch-man_zkt-conf_8,v 1.1 2010/06/20 14:01:35 jakob Exp $
+--- man/zkt-conf.8.orig	Fri Jun 11 10:48:56 2010
++++ man/zkt-conf.8	Fri Jun 11 11:21:50 2010
+@@ -64,7 +64,7 @@ b)
+ The side wide config file or the file specified with option -c
+ overloads the built-in vars.
+ The file is 
+-.I /var/named/dnssec.conf
++.I /var/named/etc/dnssec.conf
+ or the one set by the environment variable ZKT_CONFFILE.
+ .IP
+ c)
+@@ -215,12 +215,12 @@ Specifies the name of the default global configuration
+ 
+ .SH FILES
+ .TP
+-.I /var/named/dnssec.conf
++.I /var/named/etc/dnssec.conf
+ Default global configuration file.
+ The name of the default global config file is settable via
+ the environment variable ZKT_CONFFILE.
+ .TP
+-.I /var/named/dnssec-<view>.conf
++.I /var/named/etc/dnssec-<view>.conf
+ View specific global configuration file.
+ .TP
+ .I ./dnssec.conf
