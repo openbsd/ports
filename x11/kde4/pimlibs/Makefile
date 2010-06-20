@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/18 11:50:29 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/20 08:40:00 espie Exp $
 
 COMMENT =		K Desktop Environment, pimlibs
 DISTNAME =		kdepimlibs-${VERSION}
 PKGNAME =		${DISTNAME}
 
-SHARED_LIBS +=	emailfunctions       0.0      # .4.0
 SHARED_LIBS +=	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0
 SHARED_LIBS +=	kcal                 5.0      # .4.0
@@ -47,6 +46,10 @@ LIB_DEPENDS +=	kdecore.>=8,kdeui,kio,kparts,kutils,solid::x11/kde4/libs \
 		gpgme,gpgme-pthread:gpgme->=0.4.5:security/gpgme \
 		akonadiprotocolinternals::x11/kde4/akonadi \
 		ical,icalss::textproc/libical
+
+# these come from libs in real case
+pre-install:
+	mkdir -p ${PREFIX}/share/doc/HTML/en/common
 
 WANTLIB += c m pthread
 WANTLIB += QtSql QtDBus QtGui QtSvg QtXml QtNetwork phonon
