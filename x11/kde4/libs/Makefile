@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/06/20 08:19:56 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/20 16:20:16 espie Exp $
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
@@ -45,7 +45,8 @@ BUILD_DEPENDS += ::misc/shared-mime-info \
 		::misc/shared-desktop-ontologies
 
 RUN_DEPENDS +=  ::misc/shared-mime-info \
-		::misc/shared-desktop-ontologies
+		::misc/shared-desktop-ontologies \
+		::x11/kde4/oxygen-icons
 
 LIB_DEPENDS +=	Half,Iex,IlmImf,Imath,IlmThread::graphics/openexr \
 		gif::graphics/libungif \
@@ -67,12 +68,9 @@ CONFIGURE_ARGS += -DGSSAPI_INCS:STRING="/usr/include/kerberosV"
 CONFIGURE_ARGS += -DGSSAPI_FLAVOR:STRING="HEIMDAL"
 CONFIGURE_ARGS += -DGSSAPI_FOUND:BOOL=TRUE
 
-CONFIGURE_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=/usr/local/include
-CONFIGURE_ARGS +=	-DKDE4_LIB_INSTALL_DIR:String=/usr/local/lib
+CONFIGURE_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include
+CONFIGURE_ARGS +=	-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib
 
-
-post-extract:
-#	cd ${WRKDIST}/cmake/modules && rm FindQt4.cmake MacroPushRequiredVars.cmake
 
 post-extract:
 	@if pkg_info -e 'kdelibs-<4'; then \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/06/18 11:10:36 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/06/20 16:20:16 espie Exp $
 
      SUBDIR =
 # don't even try to keep these sorted
@@ -6,8 +6,10 @@
      SUBDIR += automoc
      SUBDIR += attica
      SUBDIR += akonadi
+     SUBDIR += oxygen-icons
 
 # libraries
+
      SUBDIR += libs
      SUBDIR += pimlibs
      SUBDIR += qimageblitz
