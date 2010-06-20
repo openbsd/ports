@@ -1,17 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2009/12/17 23:28:05 ajacoutot Exp $
---- configure.orig	Fri Oct 16 23:53:45 2009
-+++ configure	Thu Dec 17 20:16:11 2009
-@@ -17532,9 +17532,6 @@ fi
- 
- 
- XLIBADD=
--if test "x$x_libraries" != "x"; then
--  XLIBADD=" -L$x_libraries "
--fi
- 
- # Check whether --enable-xf86vidmode was given.
- if test "${enable_xf86vidmode+set}" = set; then
-@@ -19316,9 +19313,9 @@ cat >>confdefs.h <<_ACEOF
+$OpenBSD: patch-configure,v 1.8 2010/06/20 16:31:02 ajacoutot Exp $
+--- configure.orig	Mon Apr 26 22:28:37 2010
++++ configure	Sat Jun 19 16:51:23 2010
+@@ -15368,9 +15368,9 @@ cat >>confdefs.h <<_ACEOF
  #define DEBUG 1
  _ACEOF
  
@@ -22,8 +12,8 @@ $OpenBSD: patch-configure,v 1.7 2009/12/17 23:28:05 ajacoutot Exp $
 +    CFLAGS="$CFLAGS $OSX_CFLAGS -Wall"
  fi
  
- { $as_echo "$as_me:$LINENO: checking for Win32 platform in general" >&5
-@@ -20162,7 +20159,7 @@ if test  "x$PYTHON_LIBS" = "x" ; then
+ # Check whether --enable-disable-activation-code was given.
+@@ -16421,7 +16421,7 @@ if test  "x$PYTHON_LIBS" = "x" ; then
  
     python_libdir=`$PYTHON -c "import distutils.sysconfig ; print distutils.sysconfig.get_config_var(\"LIBDIR\")"`
  

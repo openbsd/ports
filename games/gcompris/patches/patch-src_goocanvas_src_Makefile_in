@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_goocanvas_src_Makefile_in,v 1.1 2010/06/20 16:31:02 ajacoutot Exp $
+
+We need the bundled libgoocanvas because the one in ports misses some
+functions. However, we need to rename it to prevent undefined refs.
+
+--- src/goocanvas/src/Makefile.in.orig	Mon Apr 26 22:29:01 2010
++++ src/goocanvas/src/Makefile.in	Sun Jun 20 11:27:41 2010
+@@ -86,7 +86,7 @@ AM_V_lt = $(am__v_lt_$(V))
+ am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
+ am__v_lt_0 = --silent
+ libgoocanvas_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+-	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
++	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) -avoid-version \
+ 	$(AM_CFLAGS) $(CFLAGS) $(libgoocanvas_la_LDFLAGS) $(LDFLAGS) \
+ 	-o $@
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+@@ -317,7 +317,7 @@ INCLUDES = \
+ 	-DG_LOG_DOMAIN=\"GooCanvas\" \
+ 	@GCOMPRIS_CFLAGS@
+ 
+-lib_LTLIBRARIES = libgoocanvas.la
++lib_LTLIBRARIES = libgoocanvas-gc.la
+ libgoocanvas_la_LIBADD = @GCOMPRIS_LIBS@ $(INTLLIBS)
+ @PLATFORM_WIN32_TRUE@no_undefined = -no-undefined
+ libtool_opts = \
+@@ -455,7 +455,7 @@ clean-libLTLIBRARIES:
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libgoocanvas.la: $(libgoocanvas_la_OBJECTS) $(libgoocanvas_la_DEPENDENCIES) 
++libgoocanvas-gc.la: $(libgoocanvas_la_OBJECTS) $(libgoocanvas_la_DEPENDENCIES) 
+ 	$(AM_V_CCLD)$(libgoocanvas_la_LINK) -rpath $(libdir) $(libgoocanvas_la_OBJECTS) $(libgoocanvas_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:

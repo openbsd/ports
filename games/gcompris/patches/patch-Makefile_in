@@ -1,15 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2010/06/19 13:57:10 ajacoutot Exp $
---- Makefile.in.orig	Fri Oct 16 23:54:03 2009
-+++ Makefile.in	Thu Dec 17 19:32:06 2009
-@@ -885,9 +885,9 @@ install-data-local:
+$OpenBSD: patch-Makefile_in,v 1.9 2010/06/20 16:31:02 ajacoutot Exp $
+--- Makefile.in.orig	Mon Apr 26 22:29:22 2010
++++ Makefile.in	Sat Jun 19 16:54:42 2010
+@@ -925,7 +925,7 @@ install-data-local:
+ 	@$(NORMAL_INSTALL)
  	if test -d $(srcdir)/$(PACKAGE_DATA_DIR); then \
  	  $(mkinstalldirs) $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR); \
- 	  ( cd $(srcdir)/$(PACKAGE_DATA_DIR) ; \
--	    tar cf -  -h --exclude "Makefile*" --exclude "*.in" --exclude "*~" --exclude ".*" --mode 644 * \
-+	    gtar cf -  -h --exclude "Makefile*" --exclude "*.in" --exclude "*~" --exclude ".*" --mode 644 * \
- 	    | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; \
--	        tar xf - ; find -type d -exec chmod 755 '{}' \;) ; cd .. ; ) ; \
-+	        gtar xf - ; find . -type d -exec chmod 755 '{}' \;) ; cd .. ; ) ; \
+-	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; tar cf -  --exclude "Makefile.in" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude .git * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; tar xf -) ; cd .. ; \
++	  cd $(srcdir)/$(PACKAGE_DATA_DIR) ; gtar cf -  --exclude "Makefile.in" --exclude "*.in" --exclude "*~" --exclude "Makefile" --exclude "Makefile.am" --exclude .git * | ( cd $(DESTDIR)/$(pkgdatadir)/$(PACKAGE_DATA_DIR) ; gtar xf -) ; cd .. ; \
  	fi
- 	@if test ! -d $(PACKAGE_DATA_DIR)/voices; then \
- 	  echo -e $(missing_voice_error); \
+ 
+ dist-hook:
