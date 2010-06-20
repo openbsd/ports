@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/06/18 18:15:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/06/20 11:17:57 espie Exp $
 @group wheel
 @bin bin/genkdmconf
 @bin bin/kaccess
@@ -29,11 +29,11 @@ bin/krdb
 @bin bin/kwin
 @bin bin/kwin_killer_helper
 @bin bin/kwin_rules_dialog
-@owner root
 @mode u+s
+@owner root
 @bin bin/kwrited
-@owner
 @mode
+@owner
 @bin bin/kxkb
 @bin bin/plasma-desktop
 @bin bin/plasma-netbook
@@ -230,6 +230,7 @@ lib/kde4/krunner_bookmarksrunner.so
 lib/kde4/krunner_calculatorrunner.so
 lib/kde4/krunner_kill.so
 lib/kde4/krunner_locations.so
+lib/kde4/krunner_nepomuksearchrunner.so
 lib/kde4/krunner_placesrunner.so
 lib/kde4/krunner_plasma-desktop.so
 lib/kde4/krunner_powerdevil.so
@@ -335,6 +336,7 @@ lib/kde4/plasma_engine_filebrowser.so
 lib/kde4/plasma_engine_geolocation.so
 lib/kde4/plasma_engine_hotplug.so
 lib/kde4/plasma_engine_keystate.so
+lib/kde4/plasma_engine_metadata.so
 lib/kde4/plasma_engine_mouse.so
 lib/kde4/plasma_engine_network.so
 lib/kde4/plasma_engine_notifications.so
@@ -2066,6 +2068,7 @@ share/kde4/services/plasma-dataengine-tasks.desktop
 share/kde4/services/plasma-dataengine-time.desktop
 share/kde4/services/plasma-dataengine-weather.desktop
 share/kde4/services/plasma-engine-akonadi.desktop
+share/kde4/services/plasma-engine-metadata.desktop
 share/kde4/services/plasma-engine-searchlaunch.desktop
 share/kde4/services/plasma-geolocation-gps.desktop
 share/kde4/services/plasma-geolocation-ip.desktop
@@ -2077,6 +2080,7 @@ share/kde4/services/plasma-runner-calculator.desktop
 share/kde4/services/plasma-runner-kill.desktop
 share/kde4/services/plasma-runner-kill_config.desktop
 share/kde4/services/plasma-runner-locations.desktop
+share/kde4/services/plasma-runner-nepomuksearch.desktop
 share/kde4/services/plasma-runner-places.desktop
 share/kde4/services/plasma-runner-plasma-desktop.desktop
 share/kde4/services/plasma-runner-powerdevil.desktop

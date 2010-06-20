@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/18 18:15:51 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/20 11:17:57 espie Exp $
 
 COMMENT =		K Desktop Environment, base workspace
 DISTNAME =		kdebase-workspace-${VERSION}
 PKGNAME =		${DISTNAME}
 
-LIB_DEPENDS +=	kdecore.>=8,kde3support,kdefakes,kdesu,kdeui,kfile,kio,knewstuff2,knotifyconfig,kparts,kpty,kutils,solid,threadweaver,khtml,kjs,knewstuff3,ktexteditor,kunitconversion,plasma::x11/kde4/libs \
+LIB_DEPENDS +=	kdecore.>=8,kde3support,kdefakes,kdesu,kdeui,kfile,kio,knewstuff2,knotifyconfig,kparts,kpty,kutils,solid,threadweaver,khtml,kjs,knewstuff3,ktexteditor,kunitconversion,plasma,nepomuk,nepomukquery::x11/kde4/libs \
 		xklavier::x11/gnome/libxklavier \
 		usb::devel/libusb \
 		phonon.>=5::multimedia/phonon \
@@ -12,8 +12,9 @@ LIB_DEPENDS +=	kdecore.>=8,kde3support,kdefakes,kdesu,kdeui,kfile,kio,knewstuff2
 		::x11/kde4/akonadi \
 		akonadi-kde,akonadi-kmime,kabc,kholidays,kmime,kpimutils,kresources,microblog,syndication::x11/kde4/pimlibs \
 		gps::misc/gpsd \
-		xmms::audio/xmms
+		xmms::audio/xmms \
 
+BUILD_DEPENDS +=	::x11/kde4/automoc
 
 
 SHARED_LIBS += kdecorations          3.0                # .4.0
@@ -24,7 +25,6 @@ SHARED_LIBS += ksgrd                 5.0                # .4.0
 SHARED_LIBS += kwineffects           0.0                # .1.0
 SHARED_LIBS += kwinnvidiahack        0.0                # .4.0
 SHARED_LIBS += kworkspace            0.0                # .4.0
-SHARED_LIBS += plasma                0.0                # .1.0
 SHARED_LIBS += processcore           0.0                # .4.0
 SHARED_LIBS += processui             0.0                # .4.0
 SHARED_LIBS += solidcontrol          0.0		# .4.0
@@ -37,7 +37,6 @@ SHARED_LIBS += khotkeysprivate 0.0
 SHARED_LIBS += ksignalplotter 0.0
 SHARED_LIBS += lsofui 0.0
 SHARED_LIBS += plasma-geolocation-interface 0.0
-SHARED_LIBS += plasma-applet-system-monitor 0.0
 SHARED_LIBS += plasmaclock 0.0
 SHARED_LIBS += plasmagenericshell 0.0
 SHARED_LIBS += plasma_applet-system-monitor 0.0
@@ -54,4 +53,7 @@ WANTLIB += Xxf86misc Xdamage glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 iconv intl streamanalyzer strigiqtdbusclient
 WANTLIB += GL soprano xml2
 
+# these come from libs in real case
+pre-install:
+	mkdir -p ${PREFIX}/share/doc/HTML/en/common
 .include <bsd.port.mk>
