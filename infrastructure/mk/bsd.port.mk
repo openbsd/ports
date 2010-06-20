@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1006 2010/06/17 03:31:33 william Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1007 2010/06/20 07:48:20 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1452,9 +1452,9 @@ REORDER_DEPENDENCIES ?=
 ECHO_REORDER ?= :
 
 # Lock infrastructure:
-# nothing happens unless LOCKDIR is defined to a non-empty value
+# to remove locks handling, define LOCKDIR to an empty value
 
-LOCKDIR ?=
+LOCKDIR ?= ${TMPDIR}/portslocks
 LOCK_CMD ?= perl ${PORTSDIR}/infrastructure/build/dolock
 UNLOCK_CMD ?= rm -f
 _LOCKS_HELD ?=
