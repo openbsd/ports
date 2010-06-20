@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/06/20 11:49:41 bernd Exp $
+# $OpenBSD: Makefile,v 1.68 2010/06/20 15:04:39 bernd Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -6,9 +6,9 @@ COMMENT-x11 =	GIT - graphical tools
 
 V =		1.7.1
 DISTNAME =	git-${V}
-PKGNAME-main =	${DISTNAME}
-PKGNAME-svn =	git-svn-${V}
-PKGNAME-x11 =	git-x11-${V}
+PKGNAME-main =	${DISTNAME}p0
+PKGNAME-svn =	git-svn-${V}p0
+PKGNAME-x11 =	git-x11-${V}p0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://git-scm.com/
@@ -35,7 +35,9 @@ TAR =			${LOCALBASE}/bin/gtar
 MODULES =		converters/libiconv x11/tk
 
 BUILD_DEPENDS =		::archivers/gtar \
-			::devel/p5-Error
+			::devel/p5-Error \
+			::textproc/asciidoc \
+			::textproc/xmlto
 
 MULTI_PACKAGES =	-main -svn -x11
 
@@ -90,13 +92,16 @@ post-extract:
 		doc/man1/git-clone.1 doc/man1/git-init.1 doc/git-clone.txt \
 		doc/git-init.txt doc/git-clone.html doc/git-init.html
 
+post-build:
+	@cd ${WRKBUILD}/Documentation && ${MAKE_ENV} ${MAKE_PROGRAM} man
+
 post-install:
 	${INSTALL_DATA} ${WRKBUILD}/libgit.a ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKBUILD}/contrib/emacs/*.el \
 		${PREFIX}/share/emacs/site-lisp
-	cd ${WRKBUILD}/doc && \
-		pax -rw -s,man7/git.7,man1/git.1, man* ${PREFIX}/man
+	cd ${WRKBUILD}/Documentation && \
+		${MAKE_ENV} ${MAKE_PROGRAM} mandir=${TRUEPREFIX}/man install-man
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/git
 	cd ${WRKBUILD}/doc && \
 		pax -rw *.html howto/*.html *.txt howto/*.txt \
