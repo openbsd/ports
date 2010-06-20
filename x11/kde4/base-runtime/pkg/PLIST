@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/06/18 13:30:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/06/20 09:36:14 espie Exp $
 @conflict kdebase-<4
 @group wheel
 @bin bin/kcmshell4
@@ -27,6 +27,8 @@ bin/kde4
 @bin bin/kuiserver
 @bin bin/kwalletd
 @bin bin/kwriteconfig
+@bin bin/nepomukserver
+@bin bin/nepomukservicestub
 @bin bin/plasmapkg
 @bin bin/solid-hardware
 etc/xdg/menus/kde-information.menu
@@ -53,6 +55,7 @@ lib/kde4/kcm_kded.so
 lib/kde4/kcm_kdnssd.so
 lib/kde4/kcm_knotify.so
 lib/kde4/kcm_locale.so
+lib/kde4/kcm_nepomuk.so
 lib/kde4/kcm_phonon.so
 lib/kde4/kcm_phononxine.so
 lib/kde4/kcm_trash.so
@@ -61,6 +64,7 @@ lib/kde4/kded_desktopnotifier.so
 lib/kde4/kded_device_automounter.so
 lib/kde4/kded_kpasswdserver.so
 lib/kde4/kded_ktimezoned.so
+lib/kde4/kded_nepomuksearchmodule.so
 lib/kde4/kded_networkwatcher.so
 lib/kde4/kded_phononserver.so
 lib/kde4/kded_remotedirnotify.so
@@ -78,12 +82,15 @@ lib/kde4/kio_fish.so
 lib/kde4/kio_floppy.so
 lib/kde4/kio_info.so
 lib/kde4/kio_man.so
+lib/kde4/kio_nepomuk.so
+lib/kde4/kio_nepomuksearch.so
 lib/kde4/kio_network.so
 lib/kde4/kio_nfs.so
 lib/kde4/kio_remote.so
 lib/kde4/kio_settings.so
 lib/kde4/kio_smb.so
 lib/kde4/kio_thumbnail.so
+lib/kde4/kio_timeline.so
 lib/kde4/kio_trash.so
 lib/kde4/kshorturifilter.so
 lib/kde4/kstyle_oxygen_config.so
@@ -107,6 +114,13 @@ lib/kde4/libkmanpart.so
 lib/kde4/librenaudioplugin.so
 lib/kde4/librenimageplugin.so
 lib/kde4/localdomainurifilter.so
+lib/kde4/nepomukfilewatch.so
+lib/kde4/nepomukmigration1.so
+lib/kde4/nepomukontologyloader.so
+lib/kde4/nepomukqueryservice.so
+lib/kde4/nepomukremovablestorageservice.so
+lib/kde4/nepomukstorage.so
+lib/kde4/nepomukstrigiservice.so
 lib/kde4/plasma_appletscript_simple_javascript.so
 lib/kde4/plasma_dataenginescript_javascript.so
 lib/kde4/plasma_runnerscript_javascript.so
@@ -123,8 +137,10 @@ lib/libkdeinit4_kglobalaccel.so
 lib/libkdeinit4_khelpcenter.so
 lib/libkdeinit4_kuiserver.so
 lib/libkdeinit4_kwalletd.so
+lib/libkdeinit4_nepomukserver.so
 @lib lib/libkwalletbackend.so.${LIBkwalletbackend_VERSION}
 @lib lib/libmolletnetwork.so.${LIBmolletnetwork_VERSION}
+lib/strigi/strigiindex_nepomukbackend.so
 share/applications/
 share/applications/kde4/
 share/applications/kde4/Help.desktop
@@ -349,11 +365,17 @@ share/apps/kwalletd/
 share/apps/kwalletd/kwalletd.notifyrc
 share/apps/libphonon/
 share/apps/libphonon/hardwaredatabase
+share/apps/nepomukstorage/
+share/apps/nepomukstorage/nepomukstorage.notifyrc
+share/apps/nepomukstrigiservice/
+share/apps/nepomukstrigiservice/nepomukstrigiservice.notifyrc
 share/apps/phonon/
 share/apps/phonon/phonon.notifyrc
 share/apps/remoteview/
 share/apps/remoteview/network.desktop
 share/apps/remoteview/smb-network.desktop
+share/autostart/
+share/autostart/nepomukserver.desktop
 share/config.kcfg/
 share/config.kcfg/khelpcenter.kcfg
 share/config/emoticons.knsrc
@@ -362,7 +384,16 @@ share/config/khotnewstuff.knsrc
 share/config/khotnewstuff_upload.knsrc
 share/config/kshorturifilterrc
 share/dbus-1/interfaces/org.kde.KTimeZoned.xml
+share/dbus-1/interfaces/org.kde.NepomukServer.xml
 share/dbus-1/interfaces/org.kde.khelpcenter.kcmhelpcenter.xml
+share/dbus-1/interfaces/org.kde.nepomuk.OntologyManager.xml
+share/dbus-1/interfaces/org.kde.nepomuk.Query.xml
+share/dbus-1/interfaces/org.kde.nepomuk.QueryService.xml
+share/dbus-1/interfaces/org.kde.nepomuk.RemovableStorage.xml
+share/dbus-1/interfaces/org.kde.nepomuk.ServiceControl.xml
+share/dbus-1/interfaces/org.kde.nepomuk.ServiceManager.xml
+share/dbus-1/interfaces/org.kde.nepomuk.Storage.xml
+share/dbus-1/interfaces/org.kde.nepomuk.Strigi.xml
 share/dbus-1/interfaces/org.kde.network.kioslavenotifier.xml
 share/dbus-1/services/org.kde.knotify.service
 share/desktop-directories/
@@ -883,6 +914,7 @@ share/kde4/services/info.protocol
 share/kde4/services/jpegthumbnail.desktop
 share/kde4/services/kcm_attica.desktop
 share/kde4/services/kcm_kdnssd.desktop
+share/kde4/services/kcm_nepomuk.desktop
 share/kde4/services/kcm_phonon.desktop
 share/kde4/services/kcm_phononxine.desktop
 share/kde4/services/kcmcgi.desktop
@@ -893,6 +925,7 @@ share/kde4/services/kded/desktopnotifier.desktop
 share/kde4/services/kded/device_automounter.desktop
 share/kde4/services/kded/kpasswdserver.desktop
 share/kde4/services/kded/ktimezoned.desktop
+share/kde4/services/kded/nepomuksearchmodule.desktop
 share/kde4/services/kded/networkwatcher.desktop
 share/kde4/services/kded/phononserver.desktop
 share/kde4/services/kded/remotedirnotify.desktop
@@ -911,6 +944,15 @@ share/kde4/services/language.desktop
 share/kde4/services/localdomainurifilter.desktop
 share/kde4/services/lzma.protocol
 share/kde4/services/man.protocol
+share/kde4/services/nepomuk.protocol
+share/kde4/services/nepomukfilewatch.desktop
+share/kde4/services/nepomukmigration1.desktop
+share/kde4/services/nepomukontologyloader.desktop
+share/kde4/services/nepomukqueryservice.desktop
+share/kde4/services/nepomukremovablestorageservice.desktop
+share/kde4/services/nepomuksearch.protocol
+share/kde4/services/nepomukstorage.desktop
+share/kde4/services/nepomukstrigiservice.desktop
 share/kde4/services/network.protocol
 share/kde4/services/nfs.protocol
 share/kde4/services/plasma-scriptengine-applet-simple-javascript.desktop
@@ -1025,11 +1067,13 @@ share/kde4/services/svgthumbnail.desktop
 share/kde4/services/tar.protocol
 share/kde4/services/textthumbnail.desktop
 share/kde4/services/thumbnail.protocol
+share/kde4/services/timeline.protocol
 share/kde4/services/trash.protocol
 share/kde4/services/windowsexethumbnail.desktop
 share/kde4/services/windowsimagethumbnail.desktop
 share/kde4/services/xz.protocol
 share/kde4/services/zip.protocol
+share/kde4/servicetypes/nepomukservice.desktop
 share/kde4/servicetypes/phononbackend.desktop
 share/kde4/servicetypes/searchprovider.desktop
 share/kde4/servicetypes/thumbcreator.desktop
