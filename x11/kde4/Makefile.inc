@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2010/06/18 09:32:15 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2010/06/20 21:09:52 espie Exp $
 
 FLAVOR ?=
 FLAVORS ?=		debug
@@ -11,7 +11,7 @@ MODULES +=		x11/qt4
 MODQT_MT ?=		Yes
 MODQT_OVERRIDE_UIC ?=	No
 SHARED_ONLY ?=		Yes
-ONLY_FOR_ARCHES ?=	${GCC4_ARCHES}
+ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
 
 MODULES +=		devel/cmake
 CONFIGURE_STYLE ?=	cmake
@@ -28,7 +28,6 @@ PERMIT_PACKAGE_CDROM ?=		Yes
 PERMIT_PACKAGE_FTP ?=		Yes
 CONFIGURE_ENV +=		QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR}
 SEPARATE_BUILD =		simple
-MAKE_FLAGS =	VERBOSE=2
 
 #CONFIGURE_ARGS +=	--debug-output --debug-trycompile
 .if ${FLAVOR:L:Mdebug}
