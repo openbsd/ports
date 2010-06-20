@@ -1,10 +1,31 @@
-@comment $OpenBSD: PFRAG.amd64-main,v 1.1 2010/05/05 08:43:35 edd Exp $
+@comment $OpenBSD: PFRAG.amd64-main,v 1.2 2010/06/20 13:56:11 sthen Exp $
+@comment lib/vlc/misc/libmemcpy3dn_plugin.a
+lib/vlc/misc/libmemcpy3dn_plugin.la
+lib/vlc/misc/libmemcpy3dn_plugin.so
+@comment lib/vlc/misc/libmemcpymmx_plugin.a
+lib/vlc/misc/libmemcpymmx_plugin.la
+lib/vlc/misc/libmemcpymmx_plugin.so
+@comment lib/vlc/misc/libmemcpymmxext_plugin.a
+lib/vlc/misc/libmemcpymmxext_plugin.la
+lib/vlc/misc/libmemcpymmxext_plugin.so
+@comment lib/vlc/video_chroma/libi420_rgb_mmx_plugin.a
+lib/vlc/video_chroma/libi420_rgb_mmx_plugin.la
+lib/vlc/video_chroma/libi420_rgb_mmx_plugin.so
 @comment lib/vlc/video_chroma/libi420_rgb_sse2_plugin.a
 lib/vlc/video_chroma/libi420_rgb_sse2_plugin.la
 lib/vlc/video_chroma/libi420_rgb_sse2_plugin.so
+@comment lib/vlc/video_chroma/libi420_ymga_mmx_plugin.a
+lib/vlc/video_chroma/libi420_ymga_mmx_plugin.la
+lib/vlc/video_chroma/libi420_ymga_mmx_plugin.so
+@comment lib/vlc/video_chroma/libi420_yuy2_mmx_plugin.a
+lib/vlc/video_chroma/libi420_yuy2_mmx_plugin.la
+lib/vlc/video_chroma/libi420_yuy2_mmx_plugin.so
 @comment lib/vlc/video_chroma/libi420_yuy2_sse2_plugin.a
 lib/vlc/video_chroma/libi420_yuy2_sse2_plugin.la
 lib/vlc/video_chroma/libi420_yuy2_sse2_plugin.so
+@comment lib/vlc/video_chroma/libi422_yuy2_mmx_plugin.a
+lib/vlc/video_chroma/libi422_yuy2_mmx_plugin.la
+lib/vlc/video_chroma/libi422_yuy2_mmx_plugin.so
 @comment lib/vlc/video_chroma/libi422_yuy2_sse2_plugin.a
 lib/vlc/video_chroma/libi422_yuy2_sse2_plugin.la
 lib/vlc/video_chroma/libi422_yuy2_sse2_plugin.so
