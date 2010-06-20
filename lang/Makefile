@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2010/05/27 08:38:47 espie Exp $
+# $OpenBSD: Makefile,v 1.98 2010/06/20 09:50:10 kili Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -25,6 +25,7 @@
      SUBDIR += gprolog
      SUBDIR += guile
      SUBDIR += hs-haskell-src
+     SUBDIR += hs-HsParrot
      SUBDIR += hugs
      SUBDIR += icon
      SUBDIR += intel2gas
@@ -47,6 +48,7 @@
      SUBDIR += petite-chez
      SUBDIR += pfe
      SUBDIR += pm3
+     SUBDIR += pugs
      SUBDIR += python
      SUBDIR += ruby
      SUBDIR += sbcl
