@@ -1,0 +1,4 @@
+This module locates the full directory to the running program, to
+allow the use of paths relative to it.  FindBin supports invocation
+of Haskell programs via "ghci", via "runhaskell/runghc", as well
+as compiled as an executable.
