@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2010/05/02 22:42:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.139 2010/06/20 13:53:56 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,13 @@ COMMENT-server= compact IMAP/POP3 server
 COMMENT-sieve=	Sieve mail filtering for Dovecot
 
 V_MAJOR=	1.2
-V_DOVECOT=	1.2.11
-V_SIEVE=	0.1.16
+V_DOVECOT=	1.2.12
+V_SIEVE=	0.1.17
 V_MANAGESIEVE=	0.11.11
 
 PKGNAME=	dovecot-${V_DOVECOT}
-PKGNAME-server=	dovecot-${V_DOVECOT}p4
-FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}p0v0
+PKGNAME-server=	dovecot-${V_DOVECOT}
+FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}v0
 FULLPKGPATH-sieve= ${PKGPATH},-sieve
 
 DISTNAME=	dovecot-${V_DOVECOT}
@@ -105,16 +105,16 @@ LIB_DEPENDS+=		sqlite3::databases/sqlite3
 
 .if !${FLAVOR:L:Mno_sieve}
 pre-patch:
-	cd ${WRKSRC} && \
+	@cd ${WRKSRC} && \
 	gunzip -c ${DISTDIR}/${DIST_MANAGESIEVE} | \
 		patch -z.managesieve.orig -p1 2> /dev/null
 
 post-configure:
-	(cd ${WRKSRC}; ${MAKE_PROGRAM} dovecot-config)
-	(cd ${SIEVE_DIR}; ${SETENV} ${CONFIGURE_ENV} \
+	@(cd ${WRKSRC}; ${MAKE_PROGRAM} dovecot-config)
+	@(cd ${SIEVE_DIR}; ${SETENV} ${CONFIGURE_ENV} \
 		./configure --with-dovecot=${WRKSRC} \
 		--mandir=${PREFIX}/man --docdir=${PREFIX}/share/doc/)
-	(cd ${MANAGESIEVE_DIR}; ${SETENV} ${CONFIGURE_ENV} \
+	@(cd ${MANAGESIEVE_DIR}; ${SETENV} ${CONFIGURE_ENV} \
 		./configure --with-dovecot=${WRKSRC} \
 		--with-dovecot-sieve=${SIEVE_DIR})
 .endif
