@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.84 2010/06/19 11:05:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2010/06/20 18:34:44 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
 VERSION=		2.24.1
 DISTNAME=		glib-${VERSION}
-PKGNAME-main=		glib2-${VERSION}p1
+PKGNAME-main=		glib2-${VERSION}p2
 PKGNAME-docs=		glib2-docs-${VERSION}
 
 CATEGORIES=		devel
@@ -65,6 +65,11 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-silent-rules
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# XXX gcc3 only -- remove when i386 moves to gcc4
+.if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+=	--build=i486-unknown-openbsd${OSREV}
+.endif
 
 # don't hardcode (+fix) paths
 pre-configure:
