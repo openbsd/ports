@@ -1,7 +1,7 @@
-$OpenBSD: patch-kscreensaver_kxsconfig_CMakeLists_txt,v 1.1 2008/02/09 13:18:16 espie Exp $
---- kscreensaver/kxsconfig/CMakeLists.txt.orig	Mon Jan 28 12:16:09 2008
-+++ kscreensaver/kxsconfig/CMakeLists.txt	Mon Jan 28 12:16:39 2008
-@@ -41,12 +41,12 @@ foreach(_currentdesktopfile ${_desktopfiles})
+$OpenBSD: patch-kscreensaver_kxsconfig_CMakeLists_txt,v 1.2 2010/06/20 21:01:36 espie Exp $
+--- kscreensaver/kxsconfig/CMakeLists.txt.orig	Fri Dec 11 00:15:09 2009
++++ kscreensaver/kxsconfig/CMakeLists.txt	Sun Jun 20 22:33:58 2010
+@@ -40,10 +40,10 @@ foreach(_currentdesktopfile ${_desktopfiles})
  	GET_FILENAME_COMPONENT(_screensaverName ${_newitem} NAME_WE)
  	#MESSAGE(STATUS "name without extension <${_screensaverName}>")
  	find_file(XSCREENSAVER_FILE_FOUND ${_screensaverName}.xml PATHS ${XSCREENSAVER_CONFIG_DIR} )
@@ -17,5 +17,3 @@ $OpenBSD: patch-kscreensaver_kxsconfig_CMakeLists_txt,v 1.1 2008/02/09 13:18:16 
 +#		MESSAGE(STATUS "xscreensaver name ${_screensaverName} not found")
 +#	endif(XSCREENSAVER_FILE_FOUND)
  endforeach(_currentdesktopfile ${_desktopfiles})
- 
- 
