@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2009/05/05 21:01:55 martynas Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/21 17:51:27 bernd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Mozilla's C implementation of JavaScript
 
 V=		1.7.0
 DISTNAME=	js-${V}
-PKGNAME=	spidermonkey-${V}v0
+PKGNAME=	spidermonkey-${V}p0v0
 SHARED_LIBS=	js 2.0
 CATEGORIES=     lang
 
@@ -41,15 +41,11 @@ MAKE_FLAGS=	SO_SUFFIX=so.${LIBjs_VERSION} \
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
-HEADERS=	jsapi.h jsconfig.h jscompat.h jslong.h jsosdep.h \
-		jsotypes.h jspubtd.h jstypes.h jsstr.h jshash.h jsprvtd.h \
-		jsproto.tbl
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Linux_All_DBG.OBJ/js ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Linux_All_DBG.OBJ/libjs.so.${LIBjs_VERSION} ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/include/js
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${HEADERS} \
+	@cd ${WRKSRC} && ${INSTALL_DATA} js*.{h,tbl} \
 		${WRKSRC}/Linux_All_DBG.OBJ/jsautocfg.h ${PREFIX}/include/js/
 	
 .include <bsd.port.mk>
