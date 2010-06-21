@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/04/26 20:29:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2010/06/21 15:32:59 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-keyring
 @bin bin/gnome-keyring-daemon
@@ -36,6 +36,7 @@ lib/libgp11.la
 lib/pkgconfig/gcr-0.pc
 lib/pkgconfig/gp11-0.pc
 @bin libexec/gnome-keyring-prompt
+share/dbus-1/services/org.freedesktop.secrets.service
 share/dbus-1/services/org.gnome.keyring.service
 share/examples/xdg/
 @sample ${SYSCONFDIR}/xdg/
