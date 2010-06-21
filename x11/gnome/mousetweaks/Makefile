@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/04/26 17:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2010/06/21 18:31:38 ajacoutot Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
 GNOME_PROJECT=	mousetweaks
-GNOME_VERSION=	2.30.1
+GNOME_VERSION=	2.30.2
 
 HOMEPAGE=	http://live.gnome.org/Mousetweaks/Home
 
