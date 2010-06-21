@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2010/04/29 06:59:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2010/06/21 18:42:49 ajacoutot Exp $
 @conflict gtk2-clearlooks-engine-<0.6.2p7
 share/icons/Crux/
 share/icons/Crux/16x16/
@@ -700,6 +700,7 @@ share/icons/HighContrast-SVG/scalable/apps/accessories-calculator.svg
 share/icons/HighContrast-SVG/scalable/apps/accessories-character-map.svg
 share/icons/HighContrast-SVG/scalable/apps/accessories-text-editor.svg
 share/icons/HighContrast-SVG/scalable/apps/arts.svg
+share/icons/HighContrast-SVG/scalable/apps/brasero.svg
 share/icons/HighContrast-SVG/scalable/apps/bug-buddy.svg
 share/icons/HighContrast-SVG/scalable/apps/calc.svg
 share/icons/HighContrast-SVG/scalable/apps/config-language.svg
@@ -742,12 +743,15 @@ share/icons/HighContrast-SVG/scalable/apps/preferences-system-network-proxy.svg
 share/icons/HighContrast-SVG/scalable/apps/preferences-system-session.svg
 share/icons/HighContrast-SVG/scalable/apps/preferences-system-windows.svg
 share/icons/HighContrast-SVG/scalable/apps/redhat-filemanager.svg
+share/icons/HighContrast-SVG/scalable/apps/rhythmbox.svg
 share/icons/HighContrast-SVG/scalable/apps/screensaver.svg
+share/icons/HighContrast-SVG/scalable/apps/sound-juicer.svg
 share/icons/HighContrast-SVG/scalable/apps/susehelpcenter.svg
 share/icons/HighContrast-SVG/scalable/apps/system-file-manager.svg
 share/icons/HighContrast-SVG/scalable/apps/terminal.svg
 share/icons/HighContrast-SVG/scalable/apps/text-editor.svg
 share/icons/HighContrast-SVG/scalable/apps/tomboy.svg
+share/icons/HighContrast-SVG/scalable/apps/totem.svg
 share/icons/HighContrast-SVG/scalable/apps/utilities-system-monitor.svg
 share/icons/HighContrast-SVG/scalable/apps/utilities-terminal.svg
 share/icons/HighContrast-SVG/scalable/apps/volume-knob.svg
@@ -1228,12 +1232,14 @@ share/icons/HighContrastLargePrint/48x48/apps/access.png
 share/icons/HighContrastLargePrint/48x48/apps/accessibility-directory.png
 share/icons/HighContrastLargePrint/48x48/apps/accessories-calculator.png
 share/icons/HighContrastLargePrint/48x48/apps/accessories-character-map.png
+share/icons/HighContrastLargePrint/48x48/apps/accessories-dictionary.png
 share/icons/HighContrastLargePrint/48x48/apps/accessories-text-editor.png
 share/icons/HighContrastLargePrint/48x48/apps/advanced-directory.png
 share/icons/HighContrastLargePrint/48x48/apps/applets-screenshooter.png
 share/icons/HighContrastLargePrint/48x48/apps/arts.png
 share/icons/HighContrastLargePrint/48x48/apps/ax-applet.png
 share/icons/HighContrastLargePrint/48x48/apps/background.png
+share/icons/HighContrastLargePrint/48x48/apps/brasero.png
 share/icons/HighContrastLargePrint/48x48/apps/calc.png
 share/icons/HighContrastLargePrint/48x48/apps/charpick.png
 share/icons/HighContrastLargePrint/48x48/apps/clock.png
@@ -1244,8 +1250,8 @@ share/icons/HighContrastLargePrint/48x48/apps/evince.png
 share/icons/HighContrastLargePrint/48x48/apps/evolution.png
 share/icons/HighContrastLargePrint/48x48/apps/file-manager.png
 share/icons/HighContrastLargePrint/48x48/apps/file-roller.png
+share/icons/HighContrastLargePrint/48x48/apps/firefox-icon.png
 share/icons/HighContrastLargePrint/48x48/apps/fonts.png
-share/icons/HighContrastLargePrint/48x48/apps/gdict.png
 share/icons/HighContrastLargePrint/48x48/apps/ghex.png
 share/icons/HighContrastLargePrint/48x48/apps/gimp.png
 share/icons/HighContrastLargePrint/48x48/apps/gkb.png
@@ -1268,6 +1274,7 @@ share/icons/HighContrastLargePrint/48x48/apps/gnome-mailcheck.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-mini-commander.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-mixer-applet.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-mixer.png
+share/icons/HighContrastLargePrint/48x48/apps/gnome-monitor.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-panel.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-searchtool-animation-rest.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-searchtool-animation.png
@@ -1299,6 +1306,7 @@ share/icons/HighContrastLargePrint/48x48/apps/kfm.png
 share/icons/HighContrastLargePrint/48x48/apps/khelpcenter.png
 share/icons/HighContrastLargePrint/48x48/apps/knotify.png
 share/icons/HighContrastLargePrint/48x48/apps/konsole.png
+share/icons/HighContrastLargePrint/48x48/apps/ksysguard.png
 share/icons/HighContrastLargePrint/48x48/apps/kwin.png
 share/icons/HighContrastLargePrint/48x48/apps/launcher-program.png
 share/icons/HighContrastLargePrint/48x48/apps/locale.png
@@ -1321,6 +1329,7 @@ share/icons/HighContrastLargePrint/48x48/apps/preferences-desktop-wallpaper.png
 share/icons/HighContrastLargePrint/48x48/apps/preferences-system-session.png
 share/icons/HighContrastLargePrint/48x48/apps/preferences-system-windows.png
 share/icons/HighContrastLargePrint/48x48/apps/redhat-filemanager.png
+share/icons/HighContrastLargePrint/48x48/apps/rhythmbox.png
 share/icons/HighContrastLargePrint/48x48/apps/session-properties.png
 share/icons/HighContrastLargePrint/48x48/apps/smc.png
 share/icons/HighContrastLargePrint/48x48/apps/sound-juicer.png
@@ -1330,6 +1339,8 @@ share/icons/HighContrastLargePrint/48x48/apps/susehelpcenter.png
 share/icons/HighContrastLargePrint/48x48/apps/system-file-manager.png
 share/icons/HighContrastLargePrint/48x48/apps/terminal.png
 share/icons/HighContrastLargePrint/48x48/apps/text-editor.png
+share/icons/HighContrastLargePrint/48x48/apps/totem.png
+share/icons/HighContrastLargePrint/48x48/apps/utilities-system-monitor.png
 share/icons/HighContrastLargePrint/48x48/apps/utilities-terminal.png
 share/icons/HighContrastLargePrint/48x48/apps/volume-knob.png
 share/icons/HighContrastLargePrint/48x48/apps/wallpaper.png
@@ -1694,12 +1705,14 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/access.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/accessibility-directory.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/accessories-calculator.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/accessories-character-map.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/accessories-dictionary.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/accessories-text-editor.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/advanced-directory.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/applets-screenshooter.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/arts.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/ax-applet.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/background.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/brasero.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/calc.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/charpick.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/clock.png
@@ -1710,8 +1723,8 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/evince.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/evolution.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/file-manager.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/file-roller.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/firefox-icon.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/fonts.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/gdict.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/ghex.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gimp.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gkb.png
@@ -1734,6 +1747,7 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-mailcheck.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-mini-commander.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-mixer-applet.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-mixer.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-monitor.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-panel.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-searchtool-animation-rest.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-searchtool-animation.png
@@ -1765,6 +1779,7 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/kfm.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/khelpcenter.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/knotify.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/konsole.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/ksysguard.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/kwin.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/launcher-program.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/locale.png
@@ -1787,6 +1802,7 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/preferences-desktop-wallpap
 share/icons/HighContrastLargePrintInverse/48x48/apps/preferences-system-session.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/preferences-system-windows.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/redhat-filemanager.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/rhythmbox.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/session-properties.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/smc.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/sound-juicer.png
@@ -1796,6 +1812,8 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/susehelpcenter.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/system-file-manager.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/terminal.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/text-editor.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/totem.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/utilities-system-monitor.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/utilities-terminal.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/volume-knob.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/wallpaper.png
