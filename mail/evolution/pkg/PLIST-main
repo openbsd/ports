@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2010/06/15 10:51:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2010/06/21 05:17:04 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
-@bin bin/evolution-alarm-notify
 @bin bin/evolution-settings
 include/evolution-${R}/
 include/evolution-${R}/addressbook/
@@ -521,6 +520,7 @@ libexec/evolution/${R}/
 libexec/evolution/${R}/csv2vcard
 libexec/evolution/${R}/evolution-addressbook-clean
 @bin libexec/evolution/${R}/evolution-addressbook-export
+@bin libexec/evolution/${R}/evolution-alarm-notify
 @bin libexec/evolution/${R}/killev
 share/applications/evolution-settings.desktop
 share/applications/evolution.desktop
@@ -677,6 +677,8 @@ share/evolution/${R}/icons/hicolor/16x16/actions/mail-move.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_bell.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_contact-list.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_insert-note.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_insert-rule.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_insert-table.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_mail-filters-apply.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_mail-flag-for-followup-done.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_mail-flag-for-followup.png
@@ -693,6 +695,7 @@ share/evolution/${R}/icons/hicolor/16x16/actions/stock_task-assigned-to.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_task-assigned.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_task-recurring.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_task.png
+share/evolution/${R}/icons/hicolor/16x16/actions/stock_text-monospaced.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_timezone.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_todo.png
 share/evolution/${R}/icons/hicolor/16x16/actions/stock_video-conferencing.png
@@ -741,6 +744,8 @@ share/evolution/${R}/icons/hicolor/24x24/actions/go-today.png
 share/evolution/${R}/icons/hicolor/24x24/actions/query-free-busy.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_contact-list.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_insert-note.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_insert-rule.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_insert-table.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_mail-filters-apply.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_mail-open-multiple.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_mail-unread-multiple.png
@@ -755,6 +760,7 @@ share/evolution/${R}/icons/hicolor/24x24/actions/stock_task-assigned-to.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_task-assigned.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_task-recurring.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_task.png
+share/evolution/${R}/icons/hicolor/24x24/actions/stock_text-monospaced.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_timezone.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_todo.png
 share/evolution/${R}/icons/hicolor/24x24/actions/stock_video-conferencing.png
@@ -1881,7 +1887,6 @@ share/locale/zh_CN/LC_MESSAGES/evolution-${R}.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-${R}.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-${R}.mo
 share/mime-info/
-share/mime-info/evolution.keys
 share/mime-info/evolution.mime
 share/omf/evolution/
 share/omf/evolution/evolution-C.omf

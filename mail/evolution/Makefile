@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.105 2010/06/15 10:51:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2010/06/21 05:17:04 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		2.30.1.2
+GNOME_VERSION=		2.30.2
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -17,7 +17,7 @@ SUBST_VARS=		R
 
 # -plugins depends on the exact version of -main, so whenever -main is
 # bumped, -plugins needs a bump too
-PATCH_NUMBER=		p3
+#PATCH_NUMBER=		p0
 PKGNAME-main=		${DISTNAME}${PATCH_NUMBER}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}${PATCH_NUMBER}
 
@@ -87,7 +87,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			::x11/gnome/icon-theme
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			pst::converters/libpst \
-			camel-1.2,camel-provider-1.2,ebackend-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2,egroupwise-1.2,gdata-1.2,gdata-google-1.2::databases/evolution-data-server \
+			camel-1.2,camel-provider-1.2,ebackend-1.2,ebook-1.2,ecal-1.2,edataserver-1.2,edataserverui-1.2,egroupwise-1.2,gdata-1.2,gdata-google-1.2:evolution-data-server->=2.30.2:databases/evolution-data-server \
 			ldap.>=7::databases/openldap \
 			notify.>=2::devel/libnotify \
 			soup-2.4::devel/libsoup \
