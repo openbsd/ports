@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/06/09 08:48:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.42 2010/06/21 19:15:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,11 +8,11 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	2.30.1
+GNOME_VERSION=	2.30.2
 
 CATEGORIES=	graphics print
 
-PKGNAME-main=	${DISTNAME}p1
+PKGNAME-main=	${DISTNAME}
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
