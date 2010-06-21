@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2010/04/26 20:45:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2010/06/21 21:52:00 ajacoutot Exp $
 @bin bin/eog
 include/eog-2.20/
 include/eog-2.20/eog/
@@ -141,6 +141,12 @@ share/gnome/help/eog/eu/figures/
 share/gnome/help/eog/eu/figures/eog_save_as_window.png
 share/gnome/help/eog/eu/figures/eog_start_window.png
 share/gnome/help/eog/eu/figures/eog_toolbar_editor_window.png
+share/gnome/help/eog/fi/
+share/gnome/help/eog/fi/eog.xml
+share/gnome/help/eog/fi/figures/
+share/gnome/help/eog/fi/figures/eog_save_as_window.png
+share/gnome/help/eog/fi/figures/eog_start_window.png
+share/gnome/help/eog/fi/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/fr/
 share/gnome/help/eog/fr/eog.xml
 share/gnome/help/eog/fr/figures/
@@ -392,6 +398,7 @@ share/omf/eog/eog-el.omf
 share/omf/eog/eog-en_GB.omf
 share/omf/eog/eog-es.omf
 share/omf/eog/eog-eu.omf
+share/omf/eog/eog-fi.omf
 share/omf/eog/eog-fr.omf
 share/omf/eog/eog-it.omf
 share/omf/eog/eog-ja.omf
