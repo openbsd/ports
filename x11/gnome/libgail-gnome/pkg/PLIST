@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/19 18:29:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/06/21 18:33:24 ajacoutot Exp $
 %%SHARED%%
 lib/gtk-2.0/
 lib/gtk-2.0/modules/
 lib/gtk-2.0/modules/libgail-gnome.a
 lib/gtk-2.0/modules/libgail-gnome.la
-lib/pkgconfig/
 lib/pkgconfig/libgail-gnome.pc
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/libgail-gnome.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
