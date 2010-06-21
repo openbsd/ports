@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/12/21 18:03:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2010/06/21 16:08:02 ajacoutot Exp $
 @bin bin/devhelp
 include/devhelp-1.0/
 include/devhelp-1.0/devhelp/
@@ -44,6 +44,7 @@ share/icons/hicolor/48x48/apps/devhelp.png
 share/icons/hicolor/scalable/apps/devhelp.svg
 share/locale/am/LC_MESSAGES/devhelp.mo
 share/locale/ar/LC_MESSAGES/devhelp.mo
+share/locale/ast/LC_MESSAGES/devhelp.mo
 share/locale/az/LC_MESSAGES/devhelp.mo
 share/locale/be/LC_MESSAGES/devhelp.mo
 share/locale/be@latin/LC_MESSAGES/devhelp.mo
@@ -57,8 +58,10 @@ share/locale/da/LC_MESSAGES/devhelp.mo
 share/locale/de/LC_MESSAGES/devhelp.mo
 share/locale/dz/LC_MESSAGES/devhelp.mo
 share/locale/el/LC_MESSAGES/devhelp.mo
+share/locale/en@shaw/LC_MESSAGES/devhelp.mo
 share/locale/en_CA/LC_MESSAGES/devhelp.mo
 share/locale/en_GB/LC_MESSAGES/devhelp.mo
+share/locale/eo/LC_MESSAGES/devhelp.mo
 share/locale/es/LC_MESSAGES/devhelp.mo
 share/locale/et/LC_MESSAGES/devhelp.mo
 share/locale/fi/LC_MESSAGES/devhelp.mo
@@ -69,6 +72,8 @@ share/locale/he/LC_MESSAGES/devhelp.mo
 share/locale/hi/LC_MESSAGES/devhelp.mo
 share/locale/hr/LC_MESSAGES/devhelp.mo
 share/locale/hu/LC_MESSAGES/devhelp.mo
+share/locale/hy/LC_MESSAGES/devhelp.mo
+share/locale/id/LC_MESSAGES/devhelp.mo
 share/locale/is/LC_MESSAGES/devhelp.mo
 share/locale/it/LC_MESSAGES/devhelp.mo
 share/locale/ja/LC_MESSAGES/devhelp.mo
@@ -104,6 +109,9 @@ share/locale/ta/LC_MESSAGES/devhelp.mo
 share/locale/te/LC_MESSAGES/devhelp.mo
 share/locale/th/LC_MESSAGES/devhelp.mo
 share/locale/tr/LC_MESSAGES/devhelp.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/devhelp.mo
 share/locale/uk/LC_MESSAGES/devhelp.mo
 share/locale/vi/LC_MESSAGES/devhelp.mo
 share/locale/zh_CN/LC_MESSAGES/devhelp.mo
