@@ -1,0 +1,24 @@
+$OpenBSD: patch-ext_nginx_StaticContentHandler_c,v 1.1 2010/06/21 03:56:02 william Exp $
+
+Fix build with nginx->=0.7.66
+from upstream commit e973b93e8998edbbb4c6
+
+
+--- ext/nginx/StaticContentHandler.c.orig	Sat Jun 19 21:41:10 2010
++++ ext/nginx/StaticContentHandler.c	Sat Jun 19 21:46:41 2010
+@@ -66,9 +66,12 @@ passenger_static_content_handler(ngx_http_request_t *r
+         return NGX_DECLINED;
+     }
+ 
+-    if (r->zero_in_uri) {
+-        return NGX_DECLINED;
+-    }
++    #if (PASSENGER_NGINX_MINOR_VERSION == 8 && PASSENGER_NGINX_MICRO_VERSION < 38 ) || \
++        (PASSENGER_NGINX_MINOR_VERSION == 7 && PASSENGER_NGINX_MICRO_VERSION < 66)
++        if (r->zero_in_uri) {
++             return NGX_DECLINED;
++        }
++    #endif
+ 
+     log = r->connection->log;
+ 
