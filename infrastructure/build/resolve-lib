@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.19 2010/05/02 20:54:25 espie Exp $
+# $OpenBSD: resolve-lib,v 1.20 2010/06/21 09:16:01 espie Exp $
 #
 # Copyright (c) 2001-2010 Marc Espie <espie@openbsd.org>
 #
@@ -62,7 +62,7 @@ while(<STDIN>) {
 	for my $s (split(/\s+/, $_)) {
 		my $lib = OpenBSD::Library::Build->from_string($s);
 		next if !$lib->is_valid;
-		next if $noshared and !lib->is_static;
+		next if $noshared and !$lib->is_static;
 		$repo->register($lib, 1);
 	}
 }
