@@ -1,0 +1,13 @@
+$OpenBSD: patch-demos_spectrum_app_waveform_cpp,v 1.1 2010/06/21 16:40:52 espie Exp $
+--- demos/spectrum/app/waveform.cpp.orig	Mon Jun 21 18:06:57 2010
++++ demos/spectrum/app/waveform.cpp	Mon Jun 21 18:07:13 2010
+@@ -100,7 +100,8 @@ void Waveform::paintEvent(QPaintEvent * /*event*/)
+                     destRect.setLeft(destLeft);
+                     destRect.setRight(destRight);
+ 
+-                    QRect sourceRect(QPoint(), m_pixmapSize);
++		    QPoint p;
++                    QRect sourceRect(p, m_pixmapSize);
+                     sourceRect.setLeft(point.pixelOffset);
+                     sourceRect.setRight(sourceRight);
+ 

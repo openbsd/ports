@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_qdbus_qdbuscpp2xml_qdbuscpp2xml_cpp,v 1.2 2009/04/18 17:25:43 espie Exp $
---- tools/qdbus/qdbuscpp2xml/qdbuscpp2xml.cpp.orig	Wed Feb 25 22:09:26 2009
-+++ tools/qdbus/qdbuscpp2xml/qdbuscpp2xml.cpp	Tue Mar  3 19:37:56 2009
+$OpenBSD: patch-tools_qdbus_qdbuscpp2xml_qdbuscpp2xml_cpp,v 1.3 2010/06/21 16:40:52 espie Exp $
+--- tools/qdbus/qdbuscpp2xml/qdbuscpp2xml.cpp.orig	Thu Feb 11 16:55:15 2010
++++ tools/qdbus/qdbuscpp2xml/qdbuscpp2xml.cpp	Fri Jun 18 18:56:27 2010
 @@ -396,7 +396,7 @@ int main(int argc, char **argv)
          else {
              // run moc on this file
@@ -10,3 +10,12 @@ $OpenBSD: patch-tools_qdbus_qdbuscpp2xml_qdbuscpp2xml_cpp,v 1.2 2009/04/18 17:25
  
              if (!proc.waitForStarted()) {
                  fprintf(stderr, PROGRAMNAME ": could not execute moc! Aborting.\n");
+@@ -405,7 +405,7 @@ int main(int argc, char **argv)
+ 
+             proc.closeWriteChannel();
+ 
+-            if (!proc.waitForFinished() || proc.exitStatus() != QProcess::NormalExit ||
++            if (!proc.waitForFinished(-1) || proc.exitStatus() != QProcess::NormalExit ||
+                 proc.exitCode() != 0) {
+                 // output the moc errors:
+                 fprintf(stderr, "%s", proc.readAllStandardError().constData());

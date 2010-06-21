@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_3rdparty_webkit_WebCore_WebCore_pro,v 1.1 2010/05/23 10:36:49 espie Exp $
---- src/3rdparty/webkit/WebCore/WebCore.pro.orig	Mon May 17 16:15:37 2010
-+++ src/3rdparty/webkit/WebCore/WebCore.pro	Mon May 17 16:15:49 2010
-@@ -46,10 +46,10 @@ CONFIG(QTDIR_build) {
+$OpenBSD: patch-src_3rdparty_webkit_WebCore_WebCore_pro,v 1.2 2010/06/21 16:40:52 espie Exp $
+--- src/3rdparty/webkit/WebCore/WebCore.pro.orig	Wed Jun  2 04:03:11 2010
++++ src/3rdparty/webkit/WebCore/WebCore.pro	Mon Jun 21 11:32:32 2010
+@@ -49,10 +49,10 @@ CONFIG(QTDIR_build) {
  
      CONFIG(debug, debug|release) {
          isEmpty(GENERATED_SOURCES_DIR):GENERATED_SOURCES_DIR = generated$${QMAKE_DIR_SEP}debug

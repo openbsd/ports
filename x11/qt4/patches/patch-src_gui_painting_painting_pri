@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gui_painting_painting_pri,v 1.1 2010/06/21 16:40:52 espie Exp $
+--- src/gui/painting/painting.pri.orig	Mon Jun 21 12:56:33 2010
++++ src/gui/painting/painting.pri	Mon Jun 21 13:01:10 2010
+@@ -221,7 +221,7 @@ contains(QMAKE_MAC_XARCH, no) {
+ 
+         DEFINES += QT_HAVE_MMXEXT
+     }
+-    sse2 {
++    sse2:!openbsd-g++ {
+         DEFINES += QT_HAVE_SSE2
+         SSE2_SOURCES += painting/qdrawhelper_sse2.cpp
+     }

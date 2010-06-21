@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2010/06/15 21:27:57 landry Exp $
+# $OpenBSD: Makefile,v 1.74 2010/06/21 16:40:52 espie Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -18,8 +18,8 @@ PKGNAME-examples =	qt4-examples-${PKGVERSION}
 PKGNAME-sqlite2 =	qt4-sqlite2-${PKGVERSION}
 PKGNAME-sqlite =	qt4-sqlite-${PKGVERSION}
 PKGNAME-tds =		qt4-tds-${PKGVERSION}
-PKGNAME-main =		qt4-${VERSION}p3
-PKGNAME-debug =		qt4-debug-${PKGVERSION}p0
+PKGNAME-main =		qt4-${VERSION}
+PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
@@ -46,10 +46,9 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		phonon 4.1
 
 
-VERSION =	4.6.2
-PKGVERSION =	4.6.2
+VERSION =	4.6.3
+PKGVERSION =	4.6.3
 DISTNAME =	qt-everywhere-opensource-src-${VERSION}
-
 
 CATEGORIES =	x11
 MASTER_SITES =	ftp://ftp.qt.nokia.com/qt/source/ \
@@ -58,6 +57,7 @@ MASTER_SITES =	ftp://ftp.qt.nokia.com/qt/source/ \
 		ftp://ftp.ntua.gr/pub/X11/Qt/qt/source/ \
 		ftp://ftp.tu-chemnitz.de/pub/Qt/qt/source/ \
 		http://ftp.silug.org/pub/qt/source/
+
 
 HOMEPAGE =	http://qt.nokia.com/
 
@@ -177,32 +177,34 @@ PROGRAMS +=		qtdemo pixeltool
 .endif
 
 
-LIB_DEPENDS =		glib-2.0,gthread-2.0::devel/glib2
-WANTLIB =		iconv intl
+LIB_DEPENDS =
+WANTLIB =
 
 commonWANTLIB =		ICE Xrender c GLU SM freetype pthread Xinerama \
 			Xext GL Xi m X11.>=10 z fontconfig \
 			expat
 commonLIB_DEPENDS =	png.>=2::graphics/png
 
-sqlWANTLIB =		m z
+sqlWANTLIB =		m
 sqlLIB_DEPENDS = 	QtCore.>=4,QtSql::${BASE_PKGPATH}
 
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
+			glib-2.0,gthread-2.0::devel/glib2 \
 			jpeg::graphics/jpeg \
 			mng::graphics/libmng \
 			gstaudio-0.10,gstinterfaces-0.10,gstvideo-0.10::multimedia/gstreamer-0.10/plugins-base
 WANTLIB-main =		${WANTLIB} ${commonWANTLIB} \
-			lcms tiff gobject-2.0 Xrandr \
+			lcms tiff gobject-2.0 \
 			gstbase-0.10 gstreamer-0.10 xml2 \
-			gobject-2.0 gmodule-2.0 
+			gobject-2.0 gmodule-2.0 \
+			iconv intl
 
 
 LIB_DEPENDS-mysql =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
 			mysqlclient_r::databases/mysql
 WANTLIB-mysql =		${WANTLIB} ${sqlWANTLIB} \
-			crypto ssl pthread
+			crypto ssl pthread z
 
 
 LIB_DEPENDS-postgresql =${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
@@ -225,8 +227,8 @@ LIB_DEPENDS-tds =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
 WANTLIB-tds =		${WANTLIB} ${sqlWANTLIB}
 
 LIB_DEPENDS-examples =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			QtDesigner,QtCore.>=4,QtGui,QtNetwork,QtOpenGL,QtSql,QtXml,QtSvg,QtTest,Qt3Support,QtAssistantClient,QtDBus,QtScript,QtScriptTools,QtHelp,QtCLucene,phonon,QtMultimedia::${BASE_PKGPATH}
-WANTLIB-examples =	${WANTLIB} ${commonWANTLIB} gobject-2.0 Xrandr
+			lib/qt4/QtDesigner,lib/qt4/QtCore.>=4,lib/qt4/QtGui,lib/qt4/QtNetwork,lib/qt4/QtOpenGL,lib/qt4/QtSql,lib/qt4/QtXml,lib/qt4/QtSvg,lib/qt4/QtTest,lib/qt4/Qt3Support,lib/qt4/QtAssistantClient,lib/qt4/QtDBus,lib/qt4/QtScript,lib/qt4/QtScriptTools,lib/qt4/QtHelp,lib/qt4/QtCLucene,lib/qt4/phonon,lib/qt4/QtMultimedia::${BASE_PKGPATH}
+WANTLIB-examples =	${WANTLIB} ${commonWANTLIB}
 
 
 LIB_DEPENDS-html =
@@ -238,6 +240,7 @@ PKG_ARCH-html =	*
 .if ${COMPILER_VERSION:L:Mgcc4*}
 CONFIGURE_ARGS +=	-platform openbsd-g++4
 PKG_ARGS += -DGCC4=1
+WANTLIB += stdc++
 LIB_DEPENDS-examples +=	QtWebKit,QtXmlPatterns::${BASE_PKGPATH}
 WANTLIB-examples +=	sqlite3
 LIB_DEPENDS-main += sqlite3::databases/sqlite3

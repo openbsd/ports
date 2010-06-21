@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.18 2010/05/23 10:36:49 espie Exp $
---- configure.orig	Thu Feb 11 16:55:17 2010
-+++ configure	Mon May 17 22:38:44 2010
-@@ -2013,7 +2013,7 @@ while [ "$#" -gt 0 ]; do
+$OpenBSD: patch-configure,v 1.19 2010/06/21 16:40:52 espie Exp $
+--- configure.orig	Wed Jun  2 04:03:10 2010
++++ configure	Mon Jun 21 11:32:32 2010
+@@ -2015,7 +2015,7 @@ while [ "$#" -gt 0 ]; do
      v|verbose)
          if [ "$VAL" = "yes" ]; then
              if [ "$OPT_VERBOSE" = "$VAL" ]; then            # takes two verboses to turn on qmake debugs
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.18 2010/05/23 10:36:49 espie Exp $
              else
                  OPT_VERBOSE=yes
              fi
-@@ -4455,7 +4455,7 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
+@@ -4445,7 +4445,7 @@ if true; then ###[ '!' -f "$outpath/bin/qmake" ];
      done
  
      QMAKE_BUILD_ERROR=no

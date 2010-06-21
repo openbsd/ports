@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.22 2010/04/19 09:36:30 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.23 2010/06/21 16:40:52 espie Exp $
 share/doc/qt4/html/
 share/doc/qt4/html/3rdparty.html
 share/doc/qt4/html/abstractwidgets.html
@@ -4667,6 +4667,7 @@ share/doc/qt4/html/qpolygon.html
 share/doc/qt4/html/qpolygonf-members.html
 share/doc/qt4/html/qpolygonf.html
 share/doc/qt4/html/qprintdialog-members.html
+share/doc/qt4/html/qprintdialog-qt3.html
 share/doc/qt4/html/qprintdialog.html
 share/doc/qt4/html/qprintengine-members.html
 share/doc/qt4/html/qprintengine.html
@@ -4752,6 +4753,8 @@ share/doc/qt4/html/qs60maindocument-members.html
 share/doc/qt4/html/qs60maindocument.html
 share/doc/qt4/html/qs60style-members.html
 share/doc/qt4/html/qs60style.html
+share/doc/qt4/html/qscopedarraypointer-members.html
+share/doc/qt4/html/qscopedarraypointer.html
 share/doc/qt4/html/qscopedpointer-members.html
 share/doc/qt4/html/qscopedpointer.html
 share/doc/qt4/html/qscreen-members.html
