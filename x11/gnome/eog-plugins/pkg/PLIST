@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/04/22 10:54:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/06/22 04:46:58 ajacoutot Exp $
 lib/eog/plugins/console.py
 lib/eog/plugins/console.pyc
 lib/eog/plugins/console.pyo
@@ -54,6 +54,7 @@ share/locale/fr/LC_MESSAGES/eog-plugins.mo
 share/locale/gl/LC_MESSAGES/eog-plugins.mo
 share/locale/gu/LC_MESSAGES/eog-plugins.mo
 share/locale/hu/LC_MESSAGES/eog-plugins.mo
+share/locale/id/LC_MESSAGES/eog-plugins.mo
 share/locale/it/LC_MESSAGES/eog-plugins.mo
 share/locale/ja/LC_MESSAGES/eog-plugins.mo
 share/locale/kn/LC_MESSAGES/eog-plugins.mo
@@ -72,6 +73,7 @@ share/locale/sq/LC_MESSAGES/eog-plugins.mo
 share/locale/sv/LC_MESSAGES/eog-plugins.mo
 share/locale/ta/LC_MESSAGES/eog-plugins.mo
 share/locale/te/LC_MESSAGES/eog-plugins.mo
+share/locale/uk/LC_MESSAGES/eog-plugins.mo
 share/locale/vi/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/eog-plugins.mo
