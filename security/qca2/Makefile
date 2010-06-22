@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/15 20:44:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/22 00:35:42 espie Exp $
 
 COMMENT =	Qt Cryptographic Architecture
 SHARED_ONLY =	Yes
 
-DISTNAME =	qca-2.0.0
-PKGNAME =	qca2-2.0.0p1
+DISTNAME =	qca-2.0.2
+PKGNAME =	qca2-2.0.2
 CATEGORIES =	security
 SHARED_LIBS +=	qca	3.0
 
@@ -19,18 +19,15 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://delta.affinix.com/download/qca/2.0/
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		x11/qt4 devel/cmake
+MODULES =		x11/qt4
 
-post-extract:
-	cd ${WRKDIST}/cmake/modules && rm FindQt4.cmake
+CONFIGURE_STYLE =	simple
+CONFIGURE_ENV +=	QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 
-CONFIGURE_STYLE =	cmake
-SEPARATE_BUILD =	simple
-CONFIGURE_ENV +=	QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR}
+MAKE_FLAGS =	LIBqca_VERSION=${LIBqca_VERSION}
+FAKE_FLAGS =	INSTALL_ROOT=${WRKINST}
 
-WANTLIB += QtGui
-WANTLIB += ICE SM X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += c fontconfig freetype glib-2.0 gthread-2.0 iconv m
-WANTLIB += png pthread pthread-stubs stdc++ xcb z
+WANTLIB += c m
+WANTLIB += pthread stdc++
 			
 .include <bsd.port.mk>

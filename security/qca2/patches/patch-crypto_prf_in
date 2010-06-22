@@ -1,0 +1,12 @@
+$OpenBSD: patch-crypto_prf_in,v 1.1 2010/06/22 00:35:42 espie Exp $
+--- crypto.prf.in.orig	Tue Jun 22 02:20:10 2010
++++ crypto.prf.in	Tue Jun 22 02:21:19 2010
+@@ -28,7 +28,7 @@ mac: {
+ # else, link normally
+ isEmpty(LINKAGE) {
+ 	INCLUDEPATH += $$QCA_INCDIR/QtCrypto
+-	LIBS += -L$$QCA_LIBDIR
++	QMAKE_LFLAGS += -L$$QCA_LIBDIR
+ 	LINKAGE = -lqca
+ 	CONFIG(debug, debug|release) {
+ 		windows:LINKAGE = -lqcad
