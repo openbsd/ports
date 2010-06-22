@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/05/11 07:19:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/06/22 18:32:04 ajacoutot Exp $
 timetrex/
 timetrex/INSTALL.txt
 timetrex/LICENSE
@@ -475,6 +475,7 @@ timetrex/classes/modules/install/InstallSchema_1013T.class.php
 timetrex/classes/modules/install/InstallSchema_1014A.class.php
 timetrex/classes/modules/install/InstallSchema_1014T.class.php
 timetrex/classes/modules/install/InstallSchema_1015A.class.php
+timetrex/classes/modules/install/InstallSchema_1015T.class.php
 timetrex/classes/modules/install/InstallSchema_1016A.class.php
 timetrex/classes/modules/install/InstallSchema_1017A.class.php
 timetrex/classes/modules/install/InstallSchema_1018A.class.php
@@ -531,6 +532,7 @@ timetrex/classes/modules/install/sql/mysql/1013T.sql
 timetrex/classes/modules/install/sql/mysql/1014A.sql
 timetrex/classes/modules/install/sql/mysql/1014T.sql
 timetrex/classes/modules/install/sql/mysql/1015A.sql
+timetrex/classes/modules/install/sql/mysql/1015T.sql
 timetrex/classes/modules/install/sql/mysql/1016A.sql
 timetrex/classes/modules/install/sql/mysql/1017A.sql
 timetrex/classes/modules/install/sql/mysql/1018A.sql
@@ -585,6 +587,7 @@ timetrex/classes/modules/install/sql/postgresql/1013T.sql
 timetrex/classes/modules/install/sql/postgresql/1014A.sql
 timetrex/classes/modules/install/sql/postgresql/1014T.sql
 timetrex/classes/modules/install/sql/postgresql/1015A.sql
+timetrex/classes/modules/install/sql/postgresql/1015T.sql
 timetrex/classes/modules/install/sql/postgresql/1016A.sql
 timetrex/classes/modules/install/sql/postgresql/1017A.sql
 timetrex/classes/modules/install/sql/postgresql/1018A.sql
