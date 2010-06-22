@@ -1,11 +1,11 @@
-$OpenBSD: patch-applets_clock_Makefile_in,v 1.4 2010/04/22 18:36:33 ajacoutot Exp $
+$OpenBSD: patch-applets_clock_Makefile_in,v 1.5 2010/06/22 18:22:57 ajacoutot Exp $
 
 Because we don't have PolicyKit-GNOME there's no point in
 installing the directory for it.
 
---- applets/clock/Makefile.in.orig	Tue Mar 30 02:52:45 2010
-+++ applets/clock/Makefile.in	Thu Apr 22 19:30:45 2010
-@@ -1556,8 +1556,7 @@ info: info-recursive
+--- applets/clock/Makefile.in.orig	Tue Jun 22 19:29:08 2010
++++ applets/clock/Makefile.in	Tue Jun 22 20:04:24 2010
+@@ -1557,8 +1557,7 @@ info: info-recursive
  info-am:
  
  install-data-am: install-clock_appletlibLTLIBRARIES install-data-local \

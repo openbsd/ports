@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2010/04/22 18:36:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2010/06/22 18:22:57 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
@@ -297,7 +297,6 @@ share/gnome/help/fish/zh_CN/figures/fish_applet.png
 share/gnome/help/fish/zh_CN/fish.xml
 share/gnome/help/fish/zh_CN/legal.xml
 share/gtk-doc/html/panel-applet/
-share/gtk-doc/html/panel-applet/PanelApplet.html
 share/gtk-doc/html/panel-applet/applet-popups.html
 share/gtk-doc/html/panel-applet/applet-porting.html
 share/gtk-doc/html/panel-applet/applet-writing.html
@@ -307,6 +306,7 @@ share/gtk-doc/html/panel-applet/index.sgml
 share/gtk-doc/html/panel-applet/left.png
 share/gtk-doc/html/panel-applet/multi-applets.html
 share/gtk-doc/html/panel-applet/panel-applet-Panel-Applet-GConf-Utilities.html
+share/gtk-doc/html/panel-applet/panel-applet-panel-applet.html
 share/gtk-doc/html/panel-applet/panel-applet.devhelp
 share/gtk-doc/html/panel-applet/panel-applet.devhelp2
 share/gtk-doc/html/panel-applet/panel-applet.html
@@ -390,8 +390,6 @@ share/locale/br/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-panel-2.0.mo
-share/locale/crh/
-share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/cy/LC_MESSAGES/gnome-panel-2.0.mo
