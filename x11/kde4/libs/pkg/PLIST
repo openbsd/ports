@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/06/20 08:19:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/06/22 23:31:55 espie Exp $
 bin/checkXML
 @bin bin/kbuildsycoca4
 @bin bin/kconfig_compiler
@@ -26,7 +26,6 @@ etc/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
 etc/xdg/
 etc/xdg/menus/
 etc/xdg/menus/applications.menu
-include/KDE/
 include/KDE/ConversionCheck/
 include/KDE/ConversionCheck/QVconvertible
 include/KDE/ConversionCheck/type_toQString
@@ -1825,7 +1824,6 @@ include/threadweaver/ThreadWeaver.h
 include/threadweaver/WeaverInterface.h
 include/threadweaver/WeaverObserver.h
 include/threadweaver/threadweaver_export.h
-lib/kde4/
 lib/kde4/emoticonstheme_adium.so
 lib/kde4/emoticonstheme_kde.so
 lib/kde4/emoticonstheme_pidgin.so
@@ -1881,7 +1879,6 @@ lib/kde4/libexec/fileshareset
 lib/kde4/libkhtmlpart.so
 lib/kde4/libkmultipart.so
 lib/kde4/notepadpart.so
-lib/kde4/plugins/
 lib/kde4/plugins/designer/
 lib/kde4/plugins/designer/kde3supportwidgets.so
 lib/kde4/plugins/designer/kdewidgets.so
@@ -4185,7 +4182,6 @@ share/doc/HTML/en/sonnet/
 share/doc/HTML/en/sonnet/common
 share/doc/HTML/en/sonnet/index.cache.bz2
 share/doc/HTML/en/sonnet/index.docbook
-share/icons/
 share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/actions/
@@ -4207,8 +4203,6 @@ share/icons/hicolor/48x48/actions/presence_online.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/ktexteditorautobrace.svgz
-share/kde4/
-share/kde4/services/
 share/kde4/services/data.protocol
 share/kde4/services/emoticonstheme_adium.desktop
 share/kde4/services/emoticonstheme_kde.desktop
@@ -4321,8 +4315,6 @@ share/kde4/servicetypes/qimageio_plugin.desktop
 share/kde4/servicetypes/renamedialogplugin.desktop
 share/kde4/servicetypes/sonnetspeller.desktop
 share/locale/all_languages
-share/man/
-share/man/man1/
 @man share/man/man1/checkXML.1
 @man share/man/man1/kde4-config.1
 @man share/man/man1/kdecmake.1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/06/20 09:07:43 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/06/22 23:31:55 espie Exp $
 
 COMMENT =		K Desktop Environment, base
 DISTNAME =		kdebase-${VERSION}
@@ -10,14 +10,14 @@ SHARED_LIBS +=	dolphinprivate       0.0      # .1.0
 SHARED_LIBS +=	konquerorprivate     0.0      # .4.0
 
 BUILD_DEPENDS +=	::x11/kde4/automoc
-LIB_DEPENDS +=	kdecore.>=8,kde3support,kdesu,kdeui,kfile,khtml,kio,kjs,knotifyconfig,kparts,kpty,ktexteditor,kutils,solid,knewstuff3,plasma::x11/kde4/libs \
+LIB_DEPENDS +=	kdecore.>=8,kde3support,kdesu,kdeui,kfile,khtml,kio,kjs,knotifyconfig,kparts,kpty,ktexteditor,kutils,solid,knewstuff3,plasma,nepomuk,nepomukquery::x11/kde4/libs \
 	phonon.>=5::multimedia/phonon \
 	qimageblitz::x11/kde4/qimageblitz
 
 WANTLIB += ICE SM X11 Xau Xdmcp
 WANTLIB += Xext Xft Xpm Xrender
 WANTLIB += Xt c m pthread
-WANTLIB += stdc++ z
+WANTLIB += stdc++ z soprano
 WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtSvg QtXml
 WANTLIB += glib-2.0
 WANTLIB += GL GLU

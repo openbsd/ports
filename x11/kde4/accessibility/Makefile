@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/20 21:09:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/06/22 23:31:55 espie Exp $
 
 COMMENT =		K Desktop Environment, accessibility
 DISTNAME =		kdeaccessibility-${VERSION}
 PKGNAME =		${DISTNAME}
 
-SHARED_LIBS +=  kttsd             3.0 # .4.0
+#SHARED_LIBS +=  kttsd             3.0 # .4.0
 
-LIB_DEPENDS += 	kdecore.>=8,kde3support,kdeui,kio,kparts,kutils,kfile,kpty,phonon,solid::x11/kde4/libs
+LIB_DEPENDS += 	kdecore.>=8,kde3support,kdeui,kio::x11/kde4/libs
 
-WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xft Xi Xinerama Xpm
-WANTLIB += Xrandr Xrender Xtst c fontconfig freetype m png pthread
-WANTLIB += stdc++ util z
+WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm
+WANTLIB += Xtst c m pthread
+WANTLIB += stdc++ phonon
 WANTLIB += Qt3Support QtDBus QtGui QtSvg QtXml QtNetwork
-WANTLIB += bz2
-WANTLIB += Xfixes fam glib-2.0 gthread-2.0 iconv intl streamanalyzer
-WANTLIB += streams
-
 
 CONFIGURE_ARGS += -DKDE4_KTTSD_ALSA:BOOL=OFF
+
+# these come from libs in real case
+pre-install:
+	mkdir -p ${PREFIX}/share/doc/HTML/en/common
 
 .include <bsd.port.mk>

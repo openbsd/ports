@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/06/20 21:09:52 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2010/06/22 23:31:55 espie Exp $
 
      SUBDIR =
 # don't even try to keep these sorted
@@ -20,8 +20,8 @@
      SUBDIR += base-workspace
 
 # actual apps
-#     SUBDIR += accessibility
-#     SUBDIR += admin
+     SUBDIR += accessibility
+     SUBDIR += admin
      SUBDIR += artwork
      SUBDIR += edu
      SUBDIR += games

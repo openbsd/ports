@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/20 11:48:17 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/06/22 23:31:55 espie Exp $
 
 COMMENT =		K Desktop Environment, games
 DISTNAME =		kdegames-${VERSION}
@@ -11,6 +11,7 @@ SHARED_LIBS +=	kggzmod              0.0      # .4.0
 SHARED_LIBS +=	kggznet              0.0      # .4.0
 SHARED_LIBS +=	kolfprivate          0.0      # .4.0
 SHARED_LIBS +=	pala          	     0.0      # .0.1
+SHARED_LIBS +=	iris_ksirk    	     0.0      # .2.0
 
 
 BUILD_DEPENDS += ::x11/kde4/automoc
@@ -24,7 +25,7 @@ WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm
 WANTLIB += c m pthread
 WANTLIB += stdc++
 WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtOpenGL QtSvg QtXml QtScript 
-WANTLIB += GL GLU
+WANTLIB += GL GLU qca z
 
 # these come from libs in real case
 pre-install:

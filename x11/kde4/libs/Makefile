@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/06/20 16:20:16 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/06/22 23:31:55 espie Exp $
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
@@ -60,7 +60,8 @@ LIB_DEPENDS +=	Half,Iex,IlmImf,Imath,IlmThread::graphics/openexr \
 		attica::x11/kde4/attica \
 		lzma::archivers/xz \
 		soprano,sopranoclient::databases/soprano \
-		phonon::multimedia/phonon
+		phonon::multimedia/phonon \
+		qca.>=3.0::security/qca2
 
 # we don't have krb5-config
 CONFIGURE_ARGS += -DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err"
@@ -70,6 +71,7 @@ CONFIGURE_ARGS += -DGSSAPI_FOUND:BOOL=TRUE
 
 CONFIGURE_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include
 CONFIGURE_ARGS +=	-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib
+CONFIGURE_ARGS +=	-DKDESU_USE_SUDO_DEFAULT:BOOL=TRUE
 
 
 post-extract:

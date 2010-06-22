@@ -1,0 +1,12 @@
+$OpenBSD: patch-ksirk_ksirk_iris_src_xmpp_xmpp-core_simplesasl_cpp,v 1.1 2010/06/22 23:31:55 espie Exp $
+--- ksirk/ksirk/iris/src/xmpp/xmpp-core/simplesasl.cpp.orig	Wed Jun 23 00:34:49 2010
++++ ksirk/ksirk/iris/src/xmpp/xmpp-core/simplesasl.cpp	Wed Jun 23 00:34:57 2010
+@@ -23,7 +23,7 @@
+ #include <qhostaddress.h>
+ #include <qstringlist.h>
+ #include <QList>
+-#include <qca.h>
++#include <QtCrypto/qca.h>
+ #include <QByteArray>
+ #include <stdlib.h>
+ #include <QtCrypto>
