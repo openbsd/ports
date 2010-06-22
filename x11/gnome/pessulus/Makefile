@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/04/23 12:27:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/22 17:46:18 ajacoutot Exp $
 
 COMMENT=		lockdown editor for GNOME
 
 GNOME_PROJECT=		pessulus
-GNOME_VERSION=		2.30.0
+GNOME_VERSION=		2.30.2
 
 HOMEPAGE=		http://live.gnome.org/Pessulus
 
