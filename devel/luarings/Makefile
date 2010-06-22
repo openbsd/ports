@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/18 18:06:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2010/06/22 18:59:51 jasper Exp $
 
 COMMENT =	multiple states library for the lua language
 SHARED_ONLY =	Yes
@@ -28,11 +28,11 @@ do-build:
 	cd ${WRKDIST}/src && ${LINK} rings.so rings.o
 
 do-install:
-	${INSTALL_DATA_DIR} ${LUA_DATADIR}
-	${INSTALL_DATA_DIR} ${LUA_LIBDIR}
+	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/doc/luarings
-	${INSTALL_DATA} ${WRKSRC}/src/stable.lua ${LUA_DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/src/*.so ${LUA_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/stable.lua ${MODLUA_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/*.so ${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/us/* ${PREFIX}/doc/luarings
 
 do-regress:
