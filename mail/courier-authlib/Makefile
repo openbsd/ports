@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/04/21 07:14:59 giovanni Exp $
+# $OpenBSD: Makefile,v 1.13 2010/06/23 16:31:22 steven Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -39,7 +39,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=courier/}
 EXTRACT_SUFX=		.tar.bz2
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
+USE_LIBTOOL=		gnu
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib" \
