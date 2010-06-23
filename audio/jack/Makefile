@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/06/07 01:44:38 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.12 2010/06/23 17:06:44 landry Exp $
 
 SHARED_ONLY =		Yes
 
@@ -29,6 +29,8 @@ MASTER_SITES =		${HOMEPAGE}downloads/
 LIB_DEPENDS =		sndfile.>=1::audio/libsndfile \
 			samplerate.>=1::audio/libsamplerate
 
+# uses macros from libtool.m4
+BUILD_DEPENDS =		::devel/libtool
 USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS +=	--tag=disable-static
 
