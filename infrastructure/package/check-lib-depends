@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.24 2010/06/14 12:29:39 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.25 2010/06/23 15:02:45 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -669,11 +669,13 @@ sub analyze
 		}
 		$has_libs->{$lib} = 2;
 	}
-	for my $k (sort keys %$has_libs) {
+	my $extra = {};
+	for my $k (keys %$has_libs) {
 		my $v = $has_libs->{$k};
 		next if $v == 2;
-		$state->say_with_context("Extra:         #1", $k);
+		$extra->{$k} = 1;
 	}
+	$self->print_list($state, "Extra: ", $extra);
 	$self->print_list($state, "\tWANTLIB +=", $r->{wantlib});
 	if ($state->{full}) {
 		$needed_libs->dump(\*STDOUT);
@@ -755,7 +757,7 @@ sub main
 		if ($state->{dest}) {
 			open my $fh, '>', $state->{dest} or 
 			    $state->fatal("Can't write to #1: #2", 
-			    $state->{dest}, $!);
+				$state->{dest}, $!);
 			$recorder->dump($fh);
 			close $fh;
 		} else {
