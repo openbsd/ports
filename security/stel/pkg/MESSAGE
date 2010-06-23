@@ -1,7 +1,0 @@
-It is recommended that you add the following lines to /etc/services
-stel            10005/tcp               # Secure Telnet
-
-and
-
-something like this to /etc/inetd.conf
-stel            stream  tcp     nowait  root    ${PREFIX}/sbin/steld   steld -t 28800
