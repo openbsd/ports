@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2010/06/12 09:19:54 landry Exp $
+# $OpenBSD: Makefile,v 1.203 2010/06/23 18:05:00 landry Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -22,6 +22,7 @@
      SUBDIR += checkbashisms
      SUBDIR += clusterit
      SUBDIR += clusterit,no_x11
+     SUBDIR += collectd
      SUBDIR += colorls
      SUBDIR += colortail
      SUBDIR += conky
