@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/12/21 21:25:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/23 15:48:28 steven Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	smart common input method platform
 
 DISTNAME=	scim-1.4.9
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 SHARED_LIBS +=  scim-1.0           0.0           # .10.4
 SHARED_LIBS +=  scim-x11utils-1.0  0.0           # .10.4
