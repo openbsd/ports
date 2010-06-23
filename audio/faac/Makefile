@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2008/09/15 22:00:38 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/23 16:57:30 landry Exp $
 
 COMMENT=	MPEG-2 and MPEG-4 AAC encoder
 DISTNAME=	faac-1.26
@@ -15,7 +15,9 @@ PERMIT_DISTFILES_CDROM=	Patents
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m stdc++
 
-BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
+# uses macros from libtool.m4
+BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
+		::devel/libtool
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
