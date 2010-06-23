@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.93 2010/06/16 19:07:23 landry Exp $
+# $OpenBSD: Makefile,v 1.94 2010/06/23 17:10:48 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	e-mail, rss and usenet client based on Mozilla codebase
 
-VER=		3.0.4
+VER=		3.0.5
 DISTNAME=	comm-1.9.1
-PKGNAME=	mozilla-thunderbird-${VER}p1
+PKGNAME=	mozilla-thunderbird-${VER}
 
 # need to be in synch with SO_VERSION in www/seamonkey
 # for productivity/sunbird,-lighting and mail/enigmail to work ine
-SO_VERSION=	15.0
+SO_VERSION=	16.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
 # bumped and/or SO_VERSION changes, remember to update enigmail's
 # and sunbird SO_VERSION and LIB_DEPENDS to match.
 
 .for _lib in accessibility appcomps auth autoconfig caps chardet chrome commandlines \
-	composer cookie dbusservice docshell embedcomponents fileview \
+	composer cookie docshell embedcomponents fileview \
 	gkgfxthebes gklayout gkplugin htmlpars i18n imgicon imglib2 import \
 	intlapp jar50 jsd mail mailcomps mork mozfind mozldap msgsmime necko \
 	nsappshell permissions pipboot pipnss pippki pref rdf remoteservice \
@@ -45,7 +45,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 glitz gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += xcb sndio stdc++ z
+WANTLIB += xcb sndio stdc++ z xcb-render xcb-render-util
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${VER}/source/
 DISTFILES=	thunderbird-${VER}.source.tar.bz2
@@ -144,13 +144,10 @@ do-install:
 	${INSTALL_PROGRAM} ${MOB}/regxpcom \
 		${MOB}/thunderbird-bin \
 		${MOB}/mozilla-xremote-client ${MOZ}
-	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/README.OpenBSD \
 		${MOZ}/README.OpenBSD
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_CMD} -c ${FILESDIR}/thunderbird.desktop \
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/thunderbird.desktop \
 		${PREFIX}/share/applications/thunderbird.desktop
-	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/applications/thunderbird.desktop \
-		${MOZ}/README.OpenBSD
 
 .include <bsd.port.mk>
