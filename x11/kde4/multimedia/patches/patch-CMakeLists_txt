@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2010/06/23 16:23:59 espie Exp $
+--- CMakeLists.txt.orig	Wed Jun 23 18:14:10 2010
++++ CMakeLists.txt	Wed Jun 23 18:14:13 2010
+@@ -53,7 +53,7 @@ macro_optional_add_subdirectory(strigi-analyzer)
+ macro_optional_add_subdirectory(kioslave)
+ 
+ if(NOT WIN32)
+-  macro_optional_add_subdirectory(kmix)
++#  macro_optional_add_subdirectory(kmix)
+ endif(NOT WIN32)
+ macro_optional_add_subdirectory(dragonplayer)
+ 
