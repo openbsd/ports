@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/04/03 09:46:09 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2010/06/23 17:11:50 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,15 +7,15 @@ COMMENT-seamonkey=	GnuPG extension for Seamonkey
 
 VER=		1.0.1
 DISTNAME=	enigmail-${VER}
-PKGNAME-main=	enigmail-${VER}
-PKGNAME-seamonkey=	enigmail-seamonkey-${VER}
+PKGNAME-main=	enigmail-${VER}p0
+PKGNAME-seamonkey=	enigmail-seamonkey-${VER}p0
 CATEGORIES=	mail security
 
 MULTI_PACKAGES=	-main -seamonkey
 
 # must be in sync with SO_VERSION in
 # mail/mozilla-thunderbird and www/seamonkey
-SHARED_LIBS=	enigmime	15.0
+SHARED_LIBS=	enigmime	16.0
 
 HOMEPAGE=	http://enigmail.mozdev.org/
 

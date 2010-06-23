@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/20 19:59:16 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/23 17:11:50 landry Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,9 +8,9 @@ COMMENT-seamonkey =	Mozilla Seamonkey calendar extension
 
 VER =			1.0b1
 DISTNAME =		lightning-sunbird-1.0b1.source
-PKGNAME-main =		sunbird-${VER}p1
-PKGNAME-lightning =	lightning-${VER}p0
-PKGNAME-seamonkey =	lightning-seamonkey-${VER}p0
+PKGNAME-main =		sunbird-${VER}p2
+PKGNAME-lightning =	lightning-${VER}p1
+PKGNAME-seamonkey =	lightning-seamonkey-${VER}p1
 
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	productivity mail
@@ -19,7 +19,7 @@ MULTI_PACKAGES =	-main -lightning -seamonkey
 
 # need to be in synch with SO_VERSION in
 # mail/mozilla-thunderbird and www/seamonkey for lighting to work
-SO_VERSION =	15.0
+SO_VERSION =	16.0
 
 .for _lib in calbasecomps accessibility auth autoconfig caps chardet chrome \
 	commandlines cookie docshell embedcomponents fileview gkgfxthebes \
