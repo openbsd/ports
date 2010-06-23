@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/06/14 17:44:46 sebastia Exp $
+# $OpenBSD: Makefile,v 1.42 2010/06/23 17:02:46 landry Exp $
 
 COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
 COMMENT-xmms=	XMMS input plugin for AAC files
@@ -20,7 +20,9 @@ PERMIT_DISTFILES_CDROM=	Patents
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m
 
-BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
+# bootstrap checks for libtoolize
+BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
+		::devel/libtool
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
