@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/04/22 12:23:00 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/06/23 08:00:42 kili Exp $
 @bin bin/fontforge
 bin/fontimage
 bin/fontlint
@@ -6,6 +6,7 @@ bin/sfddiff
 include/fontforge/
 include/fontforge/PfEd.h
 include/fontforge/autowidth.h
+include/fontforge/autowidth2.h
 include/fontforge/baseviews.h
 include/fontforge/basics.h
 include/fontforge/bezctx_ff.h
@@ -14,6 +15,7 @@ include/fontforge/chardata.h
 include/fontforge/charset.h
 include/fontforge/config.h
 include/fontforge/configure-pfaedit.h
+include/fontforge/delta.h
 include/fontforge/dynamic.h
 include/fontforge/edgelist.h
 include/fontforge/edgelist2.h
@@ -41,11 +43,11 @@ include/fontforge/intl.h
 include/fontforge/libffstamp.h
 include/fontforge/lookups.h
 include/fontforge/mm.h
+include/fontforge/namehash.h
 include/fontforge/nonlineartrans.h
 include/fontforge/ofl.h
 include/fontforge/pfaedit.h
 include/fontforge/plugins.h
-include/fontforge/prefpage.h
 include/fontforge/print.h
 include/fontforge/psfont.h
 include/fontforge/savefont.h
@@ -210,6 +212,24 @@ share/fontforge/pixmaps/stylesshadow.png
 share/fontforge/pixmaps/stylessmallcaps.png
 share/fontforge/pixmaps/stylessubsuper.png
 share/fontforge/pixmaps/styleswireframe.png
+share/fontforge/pixmaps/tools3drotate.png
+share/fontforge/pixmaps/toolselipse.png
+share/fontforge/pixmaps/toolsflip.png
+share/fontforge/pixmaps/toolsfreehand.png
+share/fontforge/pixmaps/toolsknife.png
+share/fontforge/pixmaps/toolsmagnify.png
+share/fontforge/pixmaps/toolspen.png
+share/fontforge/pixmaps/toolsperspective.png
+share/fontforge/pixmaps/toolspointer.png
+share/fontforge/pixmaps/toolspoly.png
+share/fontforge/pixmaps/toolsrect.png
+share/fontforge/pixmaps/toolsrotate.png
+share/fontforge/pixmaps/toolsruler.png
+share/fontforge/pixmaps/toolsscale.png
+share/fontforge/pixmaps/toolsscroll.png
+share/fontforge/pixmaps/toolsskew.png
+share/fontforge/pixmaps/toolsspiro.png
+share/fontforge/pixmaps/toolsstar.png
 share/fontforge/pixmaps/transformfliphor.png
 share/fontforge/pixmaps/transformflipvert.png
 share/fontforge/pixmaps/transformrotate180.png
@@ -246,6 +266,7 @@ share/locale/mal/LC_MESSAGES/
 share/locale/mal/LC_MESSAGES/FontForge.mo
 share/locale/pl/LC_MESSAGES/FontForge.mo
 share/locale/ru/LC_MESSAGES/FontForge.mo
+share/locale/uk/LC_MESSAGES/FontForge.mo
 share/locale/vi/LC_MESSAGES/FontForge.mo
 share/locale/zh_CN/LC_MESSAGES/FontForge.mo
 share/locale/zh_TW/LC_MESSAGES/FontForge.mo

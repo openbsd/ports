@@ -1,0 +1,18 @@
+$OpenBSD: patch-fontforge_Makefile_dynamic_in,v 1.1 2010/06/23 08:00:42 kili Exp $
+--- fontforge/Makefile.dynamic.in.orig	Tue Feb  2 06:23:06 2010
++++ fontforge/Makefile.dynamic.in	Sun Jun 20 15:24:37 2010
+@@ -135,12 +135,12 @@ splinerefigure.lo: $(srcdir)/splinerefigure.c $(srcdir
+ %.o: %.c
+ 
+ %.o: %.c $(srcdir)/splinefont.h $(srcdir)/views.h $(srcdir)/stemdb.h $(srcdir)/ttf.h $(srcdir)/unicoderange.h $(srcdir)/psfont.h $(srcdir)/groups.h $(srcdir)/edgelist.h $(srcdir)/edgelist2.h $(srcdir)/uiinterface.h $(srcdir)/fontforgevw.h
+-	$(CC) $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) $(CFLAGS_$<) -c $<
+ 
+ %.lo: %.c
+ 
+ %.lo: %.c $(srcdir)/splinefont.h $(srcdir)/views.h $(srcdir)/stemdb.h $(srcdir)/ttf.h $(srcdir)/unicoderange.h $(srcdir)/psfont.h $(srcdir)/groups.h $(srcdir)/edgelist.h $(srcdir)/edgelist2.h $(srcdir)/uiinterface.h $(srcdir)/fontforgevw.h
+-	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) -c $<
++	$(LIBTOOL) --mode=compile $(CC) $(CFLAGS) $(CFLAGS_$<) -c $<
+ 
+ clean:
+ 	-rm -f fontforge sfddiff fontimage acorn2sfd fontimage fontlint \
