@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2009/09/24 06:40:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2010/06/23 02:13:06 kevlo Exp $
 @bin bin/lftp
 bin/lftpget
 @comment lib/charset.alias
@@ -9,6 +9,7 @@ lib/liblftp-tasks.a
 lib/liblftp-tasks.la
 @man man/man1/lftp.1
 @man man/man1/lftpget.1
+@man man/man5/lftp.conf.5
 share/examples/lftp/
 share/examples/lftp/lftp.conf
 @sample ${SYSCONFDIR}/lftp.conf

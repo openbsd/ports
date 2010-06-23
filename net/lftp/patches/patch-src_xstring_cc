@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_xstring_cc,v 1.1 2010/06/23 02:13:06 kevlo Exp $
+--- src/xstring.cc.orig	Tue Jun 22 17:05:43 2010
++++ src/xstring.cc	Tue Jun 22 17:31:27 2010
+@@ -379,7 +379,7 @@ const char *xstring::dump_to(xstring& buf) const
+ 	    buf.appendf("%02X",(unsigned char)*s++);
+ 	 buf.append('>');
+       } else {
+-	 buf.appendf("<long binary, %d bytes>",length());
++	 buf.appendf("<long binary, %d bytes>",(int)length());
+       }
+    } else {
+       while(len>0) {
