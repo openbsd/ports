@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2009/05/25 09:19:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/23 16:53:20 landry Exp $
 
 COMMENT =		library for processing panoramic images
 DISTNAME =		libpano13-2.9.14
@@ -27,7 +27,9 @@ CONFIGURE_STYLE =	automake
 AUTOCONF_VERSION =	2.59
 AUTOMAKE_VERSION =	1.9
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS}
+# bootstrap needs libtoolize
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			::devel/libtool
 LIB_DEPENDS =		jpeg::graphics/jpeg \
 			png::graphics/png \
 			tiff::graphics/tiff
