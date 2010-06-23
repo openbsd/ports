@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_collectd_conf_in,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
+--- src/collectd.conf.in.orig	Sun Jun 20 15:33:30 2010
++++ src/collectd.conf.in	Sun Jun 20 15:34:29 2010
+@@ -12,8 +12,8 @@
+ 
+ #Hostname    "localhost"
+ FQDNLookup   true
+-#BaseDir     "@prefix@/var/lib/@PACKAGE_NAME@"
+-#PIDFile     "@prefix@/var/run/@PACKAGE_NAME@.pid"
++#BaseDir     "/var/@PACKAGE_NAME@"
++#PIDFile     "/var/@PACKAGE_NAME@/@PACKAGE_NAME@.pid"
+ #PluginDir   "@prefix@/lib/@PACKAGE_NAME@"
+ #TypesDB     "@prefix@/share/@PACKAGE_NAME@/types.db"
+ #Interval     10

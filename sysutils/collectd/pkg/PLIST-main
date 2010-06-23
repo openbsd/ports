@@ -1,0 +1,183 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
+@newgroup _collectd:652
+@newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
+@bin bin/collectd-nagios
+include/collectd/
+include/collectd/client.h
+include/collectd/lcc_features.h
+lib/collectd/
+lib/collectd/apache.a
+lib/collectd/apache.la
+lib/collectd/apache.so
+lib/collectd/apcups.a
+lib/collectd/apcups.la
+lib/collectd/apcups.so
+lib/collectd/ascent.a
+lib/collectd/ascent.la
+lib/collectd/ascent.so
+lib/collectd/bind.a
+lib/collectd/bind.la
+lib/collectd/bind.so
+lib/collectd/cpu.a
+lib/collectd/cpu.la
+lib/collectd/cpu.so
+lib/collectd/csv.a
+lib/collectd/csv.la
+lib/collectd/csv.so
+lib/collectd/curl.a
+lib/collectd/curl.la
+lib/collectd/curl.so
+lib/collectd/curl_xml.a
+lib/collectd/curl_xml.la
+lib/collectd/curl_xml.so
+lib/collectd/df.a
+lib/collectd/df.la
+lib/collectd/df.so
+lib/collectd/disk.a
+lib/collectd/disk.la
+lib/collectd/disk.so
+lib/collectd/dns.a
+lib/collectd/dns.la
+lib/collectd/dns.so
+lib/collectd/email.a
+lib/collectd/email.la
+lib/collectd/email.so
+lib/collectd/exec.a
+lib/collectd/exec.la
+lib/collectd/exec.so
+lib/collectd/filecount.a
+lib/collectd/filecount.la
+lib/collectd/filecount.so
+lib/collectd/interface.a
+lib/collectd/interface.la
+lib/collectd/interface.so
+lib/collectd/load.a
+lib/collectd/load.la
+lib/collectd/load.so
+lib/collectd/logfile.a
+lib/collectd/logfile.la
+lib/collectd/logfile.so
+lib/collectd/match_empty_counter.a
+lib/collectd/match_empty_counter.la
+lib/collectd/match_empty_counter.so
+lib/collectd/match_hashed.a
+lib/collectd/match_hashed.la
+lib/collectd/match_hashed.so
+lib/collectd/match_regex.a
+lib/collectd/match_regex.la
+lib/collectd/match_regex.so
+lib/collectd/match_timediff.a
+lib/collectd/match_timediff.la
+lib/collectd/match_timediff.so
+lib/collectd/match_value.a
+lib/collectd/match_value.la
+lib/collectd/match_value.so
+lib/collectd/memcached.a
+lib/collectd/memcached.la
+lib/collectd/memcached.so
+lib/collectd/memory.a
+lib/collectd/memory.la
+lib/collectd/memory.so
+lib/collectd/network.a
+lib/collectd/network.la
+lib/collectd/network.so
+lib/collectd/nginx.a
+lib/collectd/nginx.la
+lib/collectd/nginx.so
+lib/collectd/ntpd.a
+lib/collectd/ntpd.la
+lib/collectd/ntpd.so
+lib/collectd/olsrd.a
+lib/collectd/olsrd.la
+lib/collectd/olsrd.so
+lib/collectd/openvpn.a
+lib/collectd/openvpn.la
+lib/collectd/openvpn.so
+lib/collectd/powerdns.a
+lib/collectd/powerdns.la
+lib/collectd/powerdns.so
+lib/collectd/swap.a
+lib/collectd/swap.la
+lib/collectd/swap.so
+lib/collectd/syslog.a
+lib/collectd/syslog.la
+lib/collectd/syslog.so
+lib/collectd/table.a
+lib/collectd/table.la
+lib/collectd/table.so
+lib/collectd/tail.a
+lib/collectd/tail.la
+lib/collectd/tail.so
+lib/collectd/target_notification.a
+lib/collectd/target_notification.la
+lib/collectd/target_notification.so
+lib/collectd/target_replace.a
+lib/collectd/target_replace.la
+lib/collectd/target_replace.so
+lib/collectd/target_scale.a
+lib/collectd/target_scale.la
+lib/collectd/target_scale.so
+lib/collectd/target_set.a
+lib/collectd/target_set.la
+lib/collectd/target_set.so
+lib/collectd/tcpconns.a
+lib/collectd/tcpconns.la
+lib/collectd/tcpconns.so
+lib/collectd/teamspeak2.a
+lib/collectd/teamspeak2.la
+lib/collectd/teamspeak2.so
+lib/collectd/ted.a
+lib/collectd/ted.la
+lib/collectd/ted.so
+lib/collectd/unixsock.a
+lib/collectd/unixsock.la
+lib/collectd/unixsock.so
+lib/collectd/uptime.a
+lib/collectd/uptime.la
+lib/collectd/uptime.so
+lib/collectd/users.a
+lib/collectd/users.la
+lib/collectd/users.so
+lib/collectd/uuid.a
+lib/collectd/uuid.la
+lib/collectd/uuid.so
+lib/collectd/write_http.a
+lib/collectd/write_http.la
+lib/collectd/write_http.so
+lib/libcollectdclient.a
+lib/libcollectdclient.la
+@lib lib/libcollectdclient.so.${LIBcollectdclient_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libcollectdclient.pc
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.1/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.10.1/perllocal.pod
+libdata/perl5/site_perl/Collectd/
+libdata/perl5/site_perl/Collectd.pm
+libdata/perl5/site_perl/Collectd/Plugins/
+libdata/perl5/site_perl/Collectd/Plugins/Monitorus.pm
+libdata/perl5/site_perl/Collectd/Plugins/OpenVZ.pm
+libdata/perl5/site_perl/Collectd/Unixsock.pm
+@man man/man1/collectd-nagios.1
+@man man/man1/collectd.1
+@man man/man1/collectdmon.1
+@man man/man3p/Collectd::Unixsock.3p
+@man man/man5/collectd-email.5
+@man man/man5/collectd-exec.5
+@man man/man5/collectd-java.5
+@man man/man5/collectd-perl.5
+@man man/man5/collectd-python.5
+@man man/man5/collectd-snmp.5
+@man man/man5/collectd-unixsock.5
+@man man/man5/collectd.conf.5
+@man man/man5/types.db.5
+@bin sbin/collectd
+@bin sbin/collectdmon
+share/collectd/
+share/collectd/postgresql_default.conf
+share/collectd/types.db
+share/examples/collectd.conf
+@sample ${SYSCONFDIR}/collectd.conf
+@owner _collectd
+@group _collectd
+@sample /var/collectd/

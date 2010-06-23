@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
+dont create var/{run,lib,log}
+--- Makefile.in.orig	Sat Jun 19 16:51:23 2010
++++ Makefile.in	Sat Jun 19 16:51:33 2010
+@@ -813,9 +813,6 @@ uninstall-am:
+ 
+ 
+ install-exec-hook:
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/run
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/lib/$(PACKAGE_NAME)
+-	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/log
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

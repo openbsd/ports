@@ -1,0 +1,122 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
+Install config file in examples/
+--- src/Makefile.in.orig	Sat May  1 11:16:00 2010
++++ src/Makefile.in	Sat Jun 19 17:43:52 2010
+@@ -37,7 +37,7 @@ build_triplet = @build@
+ host_triplet = @host@
+ @BUILD_WITH_OWN_LIBIPTC_TRUE@am__append_1 = owniptc
+ @BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_2 = liboconfig
+-@BUILD_FEATURE_DAEMON_TRUE@am__append_3 = -DPIDFILE='"${localstatedir}/run/${PACKAGE_NAME}.pid"'
++@BUILD_FEATURE_DAEMON_TRUE@am__append_3 = -DPIDFILE='"${localstatedir}/${PACKAGE_NAME}/${PACKAGE_NAME}.pid"'
+ sbin_PROGRAMS = collectd$(EXEEXT) collectdmon$(EXEEXT)
+ bin_PROGRAMS = collectd-nagios$(EXEEXT)
+ 
+@@ -46,7 +46,7 @@ bin_PROGRAMS = collectd-nagios$(EXEEXT)
+ @BUILD_WITH_LIBPOSIX4_TRUE@am__append_5 = -lposix4
+ @BUILD_WITH_LIBSOCKET_TRUE@am__append_6 = -lsocket
+ @BUILD_WITH_LIBRESOLV_TRUE@am__append_7 = -lresolv
+-@BUILD_WITH_LIBPTHREAD_TRUE@am__append_8 = -lpthread
++@BUILD_WITH_LIBPTHREAD_TRUE@am__append_8 = -pthread
+ @BUILD_WITH_LIBKSTAT_TRUE@am__append_9 = -lkstat
+ @BUILD_WITH_LIBDEVINFO_TRUE@am__append_10 = -ldevinfo
+ @BUILD_AIX_TRUE@am__append_11 = -Wl,-bexpall,-brtllib
+@@ -57,7 +57,7 @@ bin_PROGRAMS = collectd-nagios$(EXEEXT)
+ @BUILD_WITH_LIBSTATGRAB_TRUE@am__append_13 = $(BUILD_WITH_LIBSTATGRAB_CFLAGS)
+ @BUILD_WITH_LIBSTATGRAB_TRUE@am__append_14 = $(BUILD_WITH_LIBSTATGRAB_LDFLAGS)
+ @BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_15 = $(LIBLTDL) liboconfig/liboconfig.la
+-@BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_16 = $(LIBLTDL) liboconfig/liboconfig.la
++@BUILD_WITH_OWN_LIBOCONFIG_TRUE@am__append_16 = liboconfig/liboconfig.la
+ @BUILD_WITH_OWN_LIBOCONFIG_FALSE@am__append_17 = -loconfig
+ @BUILD_WITH_LIBSOCKET_TRUE@am__append_18 = -lsocket
+ @BUILD_AIX_TRUE@am__append_19 = -lm
+@@ -333,7 +333,7 @@ bin_PROGRAMS = collectd-nagios$(EXEEXT)
+ @BUILD_PLUGIN_SNMP_TRUE@am__append_287 = snmp.la
+ @BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBNETSNMP_TRUE@am__append_288 = $(BUILD_WITH_LIBSNMP_CFLAGS)
+ @BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBNETSNMP_TRUE@am__append_289 = $(BUILD_WITH_LIBSNMP_LIBS)
+-@BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBPTHREAD_TRUE@am__append_290 = -lpthread
++@BUILD_PLUGIN_SNMP_TRUE@@BUILD_WITH_LIBPTHREAD_TRUE@am__append_290 = -pthread
+ @BUILD_PLUGIN_SNMP_TRUE@am__append_291 = "-dlopen" snmp.la
+ @BUILD_PLUGIN_SNMP_TRUE@am__append_292 = snmp.la
+ @BUILD_PLUGIN_SWAP_TRUE@am__append_293 = swap.la
+@@ -1836,7 +1836,7 @@ SUBDIRS = libcollectdclient $(am__append_1) $(am__appe
+ AM_CPPFLAGS = -DPREFIX='"${prefix}"' \
+ 	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
+ 	-DLOCALSTATEDIR='"${localstatedir}"' \
+-	-DPKGLOCALSTATEDIR='"${localstatedir}/lib/${PACKAGE_NAME}"' \
++	-DPKGLOCALSTATEDIR='"${localstatedir}/${PACKAGE_NAME}"' \
+ 	$(am__append_3) -DPLUGINDIR='"${pkglibdir}"' \
+ 	-DPKGDATADIR='"${pkgdatadir}"'
+ collectd_SOURCES = collectd.c collectd.h \
+@@ -2047,10 +2047,10 @@ BUILT_SOURCES = $(am__append_249)
+ @BUILD_PLUGIN_DISK_TRUE@	$(am__append_86) $(am__append_87)
+ @BUILD_PLUGIN_DNS_TRUE@dns_la_SOURCES = dns.c utils_dns.c utils_dns.h
+ @BUILD_PLUGIN_DNS_TRUE@dns_la_LDFLAGS = -module -avoid-version
+-@BUILD_PLUGIN_DNS_TRUE@dns_la_LIBADD = -lpcap -lpthread
++@BUILD_PLUGIN_DNS_TRUE@dns_la_LIBADD = -lpcap -pthread
+ @BUILD_PLUGIN_EMAIL_TRUE@email_la_SOURCES = email.c
+ @BUILD_PLUGIN_EMAIL_TRUE@email_la_LDFLAGS = -module -avoid-version
+-@BUILD_PLUGIN_EMAIL_TRUE@email_la_LIBADD = -lpthread
++@BUILD_PLUGIN_EMAIL_TRUE@email_la_LIBADD = -pthread
+ @BUILD_PLUGIN_ENTROPY_TRUE@entropy_la_SOURCES = entropy.c
+ @BUILD_PLUGIN_ENTROPY_TRUE@entropy_la_LDFLAGS = -module -avoid-version
+ @BUILD_PLUGIN_EXEC_TRUE@exec_la_SOURCES = exec.c \
+@@ -2058,7 +2058,7 @@ BUILT_SOURCES = $(am__append_249)
+ @BUILD_PLUGIN_EXEC_TRUE@		  utils_cmd_putval.c utils_cmd_putval.h
+ 
+ @BUILD_PLUGIN_EXEC_TRUE@exec_la_LDFLAGS = -module -avoid-version
+-@BUILD_PLUGIN_EXEC_TRUE@exec_la_LIBADD = -lpthread
++@BUILD_PLUGIN_EXEC_TRUE@exec_la_LIBADD = -pthread
+ @BUILD_PLUGIN_FILECOUNT_TRUE@filecount_la_SOURCES = filecount.c
+ @BUILD_PLUGIN_FILECOUNT_TRUE@filecount_la_LDFLAGS = -module -avoid-version
+ @BUILD_PLUGIN_GMOND_TRUE@gmond_la_SOURCES = gmond.c
+@@ -2165,7 +2165,7 @@ BUILT_SOURCES = $(am__append_249)
+ @BUILD_PLUGIN_NETWORK_TRUE@	$(am__append_203)
+ @BUILD_PLUGIN_NETWORK_TRUE@network_la_LDFLAGS = -module -avoid-version \
+ @BUILD_PLUGIN_NETWORK_TRUE@	$(am__append_204)
+-@BUILD_PLUGIN_NETWORK_TRUE@network_la_LIBADD = -lpthread \
++@BUILD_PLUGIN_NETWORK_TRUE@network_la_LIBADD = -pthread \
+ @BUILD_PLUGIN_NETWORK_TRUE@	$(am__append_202) $(am__append_205)
+ @BUILD_PLUGIN_NFS_TRUE@nfs_la_SOURCES = nfs.c
+ @BUILD_PLUGIN_NFS_TRUE@nfs_la_LDFLAGS = -module -avoid-version
+@@ -2182,14 +2182,14 @@ BUILT_SOURCES = $(am__append_249)
+ @BUILD_PLUGIN_NOTIFY_DESKTOP_TRUE@notify_desktop_la_LIBADD = $(LIBNOTIFY_LIBS)
+ @BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@notify_email_la_SOURCES = notify_email.c
+ @BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@notify_email_la_LDFLAGS = -module -avoid-version
+-@BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@notify_email_la_LIBADD = -lesmtp -lssl -lcrypto -lpthread -ldl
++@BUILD_PLUGIN_NOTIFY_EMAIL_TRUE@notify_email_la_LIBADD = -lesmtp -lssl -lcrypto -pthread
+ @BUILD_PLUGIN_NTPD_TRUE@ntpd_la_SOURCES = ntpd.c
+ @BUILD_PLUGIN_NTPD_TRUE@ntpd_la_LDFLAGS = -module -avoid-version
+ @BUILD_PLUGIN_NTPD_TRUE@ntpd_la_LIBADD = $(am__append_226)
+ @BUILD_PLUGIN_NUT_TRUE@nut_la_SOURCES = nut.c
+ @BUILD_PLUGIN_NUT_TRUE@nut_la_CFLAGS = $(AM_CFLAGS) $(BUILD_WITH_LIBUPSCLIENT_CFLAGS)
+ @BUILD_PLUGIN_NUT_TRUE@nut_la_LDFLAGS = -module -avoid-version
+-@BUILD_PLUGIN_NUT_TRUE@nut_la_LIBADD = -lpthread $(BUILD_WITH_LIBUPSCLIENT_LIBS)
++@BUILD_PLUGIN_NUT_TRUE@nut_la_LIBADD = -pthread $(BUILD_WITH_LIBUPSCLIENT_LIBS)
+ @BUILD_PLUGIN_OLSRD_TRUE@olsrd_la_SOURCES = olsrd.c
+ @BUILD_PLUGIN_OLSRD_TRUE@olsrd_la_LDFLAGS = -module -avoid-version
+ @BUILD_PLUGIN_OLSRD_TRUE@olsrd_la_LIBADD = $(am__append_233)
+@@ -2316,7 +2316,7 @@ BUILT_SOURCES = $(am__append_249)
+ @BUILD_PLUGIN_UNIXSOCK_TRUE@		      utils_cmd_putnotif.h utils_cmd_putnotif.c
+ 
+ @BUILD_PLUGIN_UNIXSOCK_TRUE@unixsock_la_LDFLAGS = -module -avoid-version
+-@BUILD_PLUGIN_UNIXSOCK_TRUE@unixsock_la_LIBADD = -lpthread
++@BUILD_PLUGIN_UNIXSOCK_TRUE@unixsock_la_LIBADD = -pthread
+ @BUILD_PLUGIN_UPTIME_TRUE@uptime_la_SOURCES = uptime.c
+ @BUILD_PLUGIN_UPTIME_TRUE@uptime_la_CFLAGS = $(AM_CFLAGS)
+ @BUILD_PLUGIN_UPTIME_TRUE@uptime_la_LDFLAGS = -module -avoid-version
+@@ -4032,13 +4032,8 @@ uninstall-man: uninstall-man1 uninstall-man5
+ @HAVE_PROTOC_C_TRUE@	protoc-c --c_out $(builddir) pinba.proto
+ 
+ install-exec-hook:
+-	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
+-	if test -e $(DESTDIR)$(sysconfdir)/collectd.conf; \
+-	then \
+-		$(INSTALL) -m 0640 collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf.pkg-orig; \
+-	else \
+-		$(INSTALL) -m 0640 collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf; \
+-	fi; \
++	$(mkinstalldirs) ${PREFIX}/share/examples
++	$(INSTALL) -m 0640 collectd.conf ${PREFIX}/share/examples/collectd.conf; \
+ 	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)
+ 	$(INSTALL) -m 0644 $(srcdir)/types.db $(DESTDIR)$(pkgdatadir)/types.db;
+ 	$(INSTALL) -m 0644 $(srcdir)/postgresql_default.conf \

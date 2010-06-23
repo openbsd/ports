@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
+lib/collectd/mysql.a
+lib/collectd/mysql.la
+lib/collectd/mysql.so

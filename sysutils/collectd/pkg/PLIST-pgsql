@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-pgsql,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
+lib/collectd/postgresql.a
+lib/collectd/postgresql.la
+lib/collectd/postgresql.so
