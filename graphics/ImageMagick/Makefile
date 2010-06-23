@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2009/08/10 06:31:44 kili Exp $
+# $OpenBSD: Makefile,v 1.106 2010/06/23 16:09:10 steven Exp $
 
 COMMENT=		image processing tools
 
@@ -40,7 +40,7 @@ LIB_DEPENDS=		bz2.>=10::archivers/bzip2 \
 RUN_DEPENDS=		:netpbm-*:graphics/netpbm
 BUILD_DEPENDS=		:netpbm-*:graphics/netpbm
 
-USE_LIBTOOL=		Yes
+USE_LIBTOOL=		gnu
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-quantum-depth=16 \
