@@ -1,0 +1,15 @@
+$OpenBSD: patch-cmake_modules_UnixAuth_cmake,v 1.1 2010/06/23 13:11:34 espie Exp $
+--- cmake/modules/UnixAuth.cmake.orig	Thu Feb  7 14:19:25 2008
++++ cmake/modules/UnixAuth.cmake	Wed Jun 23 11:46:40 2010
+@@ -35,6 +35,11 @@ check_library_exists(crypt crypt "" HAVE_CRYPT)
+ if (HAVE_CRYPT)
+     set(CRYPT_LIBRARIES crypt)
+     check_include_files(crypt.h HAVE_CRYPT_H)
++else (HAVE_CRYPT)
++	check_function_exists(crypt found_crypt)
++    if (found_crypt)
++    	set(HAVE_CRYPT 1)
++    endif (found_crypt)
+ endif (HAVE_CRYPT)
+ 
+ if (PAM_FOUND)

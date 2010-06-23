@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/20 14:36:23 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/23 13:11:34 espie Exp $
 
 COMMENT =		K Desktop Environment, graphics
 DISTNAME =		kdegraphics-${VERSION}
@@ -31,7 +31,7 @@ WANTLIB += Qt3Support QtDBus QtGui QtSvg QtXml QtNetwork
 WANTLIB += gphoto2 gphoto2_port
 WANTLIB += soprano lcms exiv2 jpeg
 WANTLIB += Xxf86vm phonon
-WANTLIB += streamanalyzer streams
+WANTLIB += streamanalyzer streams qca
 
 # these come from libs in real case
 pre-install:
