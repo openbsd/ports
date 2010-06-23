@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/06/22 23:31:55 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/06/23 14:53:01 espie Exp $
 
      SUBDIR =
 # don't even try to keep these sorted
@@ -29,7 +29,7 @@
 #     SUBDIR += multimedia
      SUBDIR += network
      SUBDIR += pim
-#     SUBDIR += sdk
+     SUBDIR += sdk
 #     SUBDIR += toys
 #     SUBDIR += utils
 #     SUBDIR += webdev
