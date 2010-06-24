@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/24 06:53:36 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -8,11 +8,11 @@ COMMENT-snmp =		collectd snmp plugin
 
 V =			4.10.0
 DISTNAME =		collectd-$V
-PKGNAME-main =		collectd-$V
-PKGNAME-mysql =		collectd-mysql-$V
-PKGNAME-pgsql =		collectd-pgsql-$V
-PKGNAME-rrdtool =	collectd-rrdtool-$V
-PKGNAME-snmp=		collectd-snmp-$V
+PKGNAME-main =		collectd-$Vp0
+PKGNAME-mysql =		collectd-mysql-$Vp0
+PKGNAME-pgsql =		collectd-pgsql-$Vp0
+PKGNAME-rrdtool =	collectd-rrdtool-$Vp0
+PKGNAME-snmp=		collectd-snmp-$Vp0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.collectd.org/
@@ -55,6 +55,7 @@ WANTLIB += m pcap pthread ssl xml2 z
 
 CONFIGURE_STYLE =	gnu
 USE_LIBTOOL =		Yes
+LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_ARGS +=--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib \
 		--with-librrd=${LOCALBASE} \

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-snmp,v 1.1.1.1 2010/06/23 18:04:26 landry Exp $
-lib/collectd/snmp.a
-lib/collectd/snmp.la
+@comment $OpenBSD: PLIST-snmp,v 1.2 2010/06/24 06:53:37 landry Exp $
+@comment lib/collectd/snmp.la
 lib/collectd/snmp.so
 @man man/man5/collectd-snmp.5
