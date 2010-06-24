@@ -1,17 +1,23 @@
-# $OpenBSD: Makefile,v 1.5 2008/02/09 13:18:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/24 07:45:06 espie Exp $
 
 COMMENT =		K Desktop Environment, web development
 DISTNAME =		kdewebdev-${VERSION}
 PKGNAME =		${DISTNAME}
 
-LIB_DEPENDS +=	kdecore.>=8,kde3support,kdeui,kfile,khtml,kio,kjs,kparts,kpty,ktexteditor,phonon,solid,threadweaver::x11/kde4/libs \
+SHARED_LIBS +=	klinkstatuscommon	0.0
+SHARED_LIBS +=	kommandercore		0.0
+SHARED_LIBS +=	kommanderwidgets	0.0
+
+LIB_DEPENDS +=	kdecore.>=8,kde3support,kdeui,khtml,kio,kjs,kparts,krossui,threadweaver,knewstuff2,kutils::x11/kde4/libs \
+		mailtransport,kmime,kpimidentities::x11/kde4/pimlibs \
 		tidy.>=1::www/tidy
 
-WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xft Xi Xinerama Xpm
-WANTLIB += Xrandr Xrender Xtst bz2 c fontconfig freetype
-WANTLIB += gif jpeg m pcre pcreposix png pthread stdc++ util xml2
-WANTLIB += streams xslt z
+WANTLIB += c xml2 xslt
+WANTLIB += m pthread stdc++ z
 WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtSvg QtXml
-WANTLIB += Xfixes dbus-1 fam glib-2.0 gthread-2.0 iconv intl streamanalyzer
+
+# these come from libs in real case
+pre-install:
+	mkdir -p ${PREFIX}/share/doc/HTML/en/common
 
 .include <bsd.port.mk>

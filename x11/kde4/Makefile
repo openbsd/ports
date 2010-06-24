@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/06/23 16:23:59 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/06/24 07:45:06 espie Exp $
 
      SUBDIR =
 # don't even try to keep these sorted
@@ -32,7 +32,7 @@
      SUBDIR += sdk
      SUBDIR += toys
      SUBDIR += utils
-#     SUBDIR += webdev
+     SUBDIR += webdev
 #     SUBDIR += extragear-plasma
 
 .include <bsd.port.subdir.mk>
