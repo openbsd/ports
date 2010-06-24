@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.31 2010/06/02 16:56:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2010/06/24 20:50:40 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (bad)
-COMMENT-real =		real element for GStreamer (bad)
 COMMENT-mjpeg =		gstmplex and gstmpeg2enc elements for GStreamer (bad)
 
 V =			0.10.19
@@ -10,7 +9,6 @@ DISTNAME =		gst-plugins-bad-${V}
 
 PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
-PKGNAME-real =		gstreamer-real-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
 MULTI_PACKAGES =	-main -neon -mjpeg
@@ -67,14 +65,6 @@ WANTLIB-neon =		${WANTLIB} \
 LIB_DEPENDS-neon =	${LIB_DEPENDS} \
 			neon::net/neon
 
-.if ${MACHINE_ARCH} == i386 || ${MACHINE_ARCH} == amd64
-MULTI_PACKAGES +=	-real
-WANTLIB-real =		${WANTLIB} \
-			gstbase-0.10
-LIB_DEPENDS-real =	${LIB_DEPENDS} \
-			gstaudio-0.10,gstinterfaces-0.10::${P}/plugins-base
-.endif
-
 WANTLIB-mjpeg =		${WANTLIB} \
 			gstbase-0.10
 LIB_DEPENDS-mjpeg =	${LIB_DEPENDS} \
@@ -104,6 +94,7 @@ CONFIGURE_ARGS =	--disable-acm \
 			--disable-ofa \
 			--disable-nas \
 			--disable-osx_video \
+			--disable-real \
 			--disable-spc \
 			--disable-vdpau \
 			--disable-wildmidi \
