@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/11/17 11:11:20 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/06/24 16:20:49 sthen Exp $
 @newgroup _munin:644
 @newgroup _munin-plugin:645
 @newuser _munin:644:_munin:daemon:munin user:/nonexistent:/sbin/nologin
@@ -47,6 +47,7 @@ libexec/munin/plugins/hddtempd
 libexec/munin/plugins/if_
 libexec/munin/plugins/if_errcoll_
 libexec/munin/plugins/if_pps_
+libexec/munin/plugins/intr
 @comment libexec/munin/plugins/ipac-ng
 libexec/munin/plugins/ircu
 libexec/munin/plugins/load
@@ -70,6 +71,9 @@ libexec/munin/plugins/ntp_states
 libexec/munin/plugins/nut_misc
 libexec/munin/plugins/nut_volts
 libexec/munin/plugins/open_files
+libexec/munin/plugins/pf_changes
+libexec/munin/plugins/pf_searches
+libexec/munin/plugins/pf_states
 libexec/munin/plugins/ping_
 libexec/munin/plugins/plugin.sh
 libexec/munin/plugins/plugins.history
