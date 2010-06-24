@@ -1,19 +1,19 @@
---- texi2html.pl.orig	Thu Sep  6 13:36:51 2001
-+++ texi2html.pl	Thu Sep  6 13:38:08 2001
-@@ -1,6 +1,4 @@
- #@BANGPERL@
+--- texi2html.pl.orig	Mon Jan  5 20:14:05 2009
++++ texi2html.pl	Sat Jun 19 12:19:54 2010
+@@ -1,7 +1,5 @@
+ #! @PERL@ --
+ # perl
 -'di ';
 -'ig 00 ';
  #+##############################################################################
  #
  # texi2html: Program to transform Texinfo documents to HTML
-@@ -57,9 +55,6 @@
- $THISVERSION = '@T2H_VERSION@';
- $THISPROG = "texi2html $THISVERSION";	# program name and version
-   
+@@ -27,8 +25,6 @@
+ #    02110-1301  USA
+ #
+ #-##############################################################################
 -# The man page for this program is included at the end of this file and can be
 -# viewed using the command 'nroff -man texi2html'.
--
- # Identity:
  
- $T2H_TODAY = &pretty_date;		# like "20 September 1993"
+ # for POSIX::setlocale and File::Spec
+ require 5.00405;
