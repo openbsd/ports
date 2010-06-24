@@ -1,7 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2010/06/17 09:57:55 fgsch Exp $
+# $OpenBSD: Makefile,v 1.51 2010/06/24 09:48:06 sthen Exp $
 
 # no success building on other archs yet
-ONLY_FOR_ARCHS =	amd64 i386 sparc64
+ONLY_FOR_ARCHS =	amd64 sparc64
+.include <bsd.own.mk>
+.if ${COMPILER_VERSION:L:Mgcc4}
+ONLY_FOR_ARCHS +=	i386
+.endif
 
 COMMENT =		multi system emulator
 
