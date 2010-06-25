@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/03 23:30:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/06/25 12:29:03 sthen Exp $
 @newgroup _aircontrol:650
 @newuser _aircontrol:650:_aircontrol:daemon:aircontrol user:/nonexistent:/sbin/nologin
-/
 LICENSE
 NOTICE
 README
@@ -91,4 +90,4 @@ webapps/ROOT.war
 webapps/ROOT.war.MD5
 @owner _aircontrol
 work/
-@extra /var/aircontrol
+@extraunexec rm -rf ${PREFIX}
