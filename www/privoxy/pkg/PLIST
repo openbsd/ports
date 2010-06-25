@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/10/04 19:27:27 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/06/25 13:50:47 merdely Exp $
 @newgroup _privoxy:516
 @newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/nonexistent:/sbin/nologin
 @man man/man1/privoxy.1
@@ -103,6 +103,7 @@ share/examples/privoxy/templates/connect-failed
 @sample ${SYSCONFDIR}/privoxy/templates/connect-failed
 @owner
 @group
+share/examples/privoxy/templates/connection-timeout
 share/examples/privoxy/templates/default
 @owner _privoxy
 @group _privoxy
@@ -193,6 +194,7 @@ share/examples/privoxy/templates/mod-unstable-warning
 @sample ${SYSCONFDIR}/privoxy/templates/mod-unstable-warning
 @owner
 @group
+share/examples/privoxy/templates/no-server-data
 share/examples/privoxy/templates/no-such-domain
 @owner _privoxy
 @group _privoxy
