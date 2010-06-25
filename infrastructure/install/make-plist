@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.147 2010/06/20 08:22:40 espie Exp $
+# $OpenBSD: make-plist,v 1.148 2010/06/25 12:02:18 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -885,6 +885,10 @@ sub handle_file
 		    return;
 		}
 		my $short = short_name($file, $p);
+		if (!defined $short) {
+			print STDERR $file->path, " does not belong\n";
+			return;
+		}
 		my $o = create_object($file->type, $short, $item);
 		if (!defined $o) {
 		    next;
