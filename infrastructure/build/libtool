@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.120 2010/06/19 09:41:07 steven Exp $
+# $OpenBSD: libtool,v 1.121 2010/06/25 05:21:35 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -287,7 +287,6 @@ sub parse_linkargs1
 				} else {
 					$libs->{$key}->find($dirs, 1, $libsearchdirs);
 					my @deps = $libs->{$key}->inspect;
-					# push @$rdeplibs, @deps;
 					foreach my $d (@deps) {
 						my $k = main::basename $d;
 						$k =~ s/^(\S+)\.so.*$/$1/;
@@ -298,7 +297,8 @@ sub parse_linkargs1
 				}
 			}
 			push(@$result, $a);
-			$self->parse_linkargs1($deplibs, $Rresolved,
+			my $dummy = []; # no need to add deplibs recursively
+			$self->parse_linkargs1($dummy, $Rresolved,
 				$libsearchdirs, $dirs, $libs,
 			       	\@largs, $level+1) if @largs;
 		} elsif ($a =~ m/(\S+\/)*(\S+)\.a$/) {
