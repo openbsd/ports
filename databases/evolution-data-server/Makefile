@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/06/21 17:50:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2010/06/25 13:54:34 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -61,7 +61,7 @@ LIB_DEPENDS= 		db:db->=4,<5:databases/db/v4 \
 
 USE_X11=		Yes
 YACC=			bison
-AUTOCONF_VERSION=	2.65
+AUTOCONF_VERSION=	2.64
 CONFIGURE_STYLE= 	autoconf gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-gnome-keyring=yes \
