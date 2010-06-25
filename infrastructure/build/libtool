@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.124 2010/06/25 20:59:33 steven Exp $
+# $OpenBSD: libtool,v 1.125 2010/06/25 21:39:35 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -719,9 +719,16 @@ sub link
 		($symbolsfile = "$odir/$ltdir/$la") =~ s/\.la$/.exp/;
 		main::get_symbollist($symbolsfile, $opts->{'export-symbols-regex'}, $objs);
 	}
+	my $i = 0;
 	foreach my $k (@$finalorderedlibs) {
 		my $l = $libs->{$k};
 		$l->find($dirs, 1, $what);
+		if ($l->{dropped}) {
+			# remove library if dependency on it has been dropped
+			delete $libs->{$k};
+			splice(@$finalorderedlibs, $i, 1);
+		}
+		$i++;
 	}
 
 	my @libobjects = values %$libs;
@@ -1072,7 +1079,12 @@ sub find
 	}
 	if (!$libfile) {
 		if (defined $self->{fullpath}) { delete $self->{fullpath}; }
-		die "$libtofind not found!\n";
+		if ($linkmode eq 'LaFile') {
+			say "warning: dependency on $libtofind dropped";
+			$self->{dropped} = 1;
+		} elsif ($linkmode eq 'Program') {
+			die "$libtofind not found!\n";
+		}
 	}
 	$self->{fullpath} = $libfile;
 	Trace::debug {"\$libs->{$self->{key}}->{fullpath} = ", $self->{fullpath}, "\n"};
