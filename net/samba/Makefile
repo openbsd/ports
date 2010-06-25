@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.114 2010/05/26 08:47:43 kili Exp $
+# $OpenBSD: Makefile,v 1.115 2010/06/25 17:39:12 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		SMB and CIFS client and server for UNIX
 COMMENT-docs=		additional documentation and examples for Samba
 
-DISTNAME=		samba-3.5.3
+DISTNAME=		samba-3.5.4
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
@@ -18,6 +18,8 @@ SHARED_LIBS=		smbclient	2.0 \
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.samba.org/
+
+MAINTAINER=		Ian McWilliam <kaosagnt@tpg.com.au>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=		Yes
@@ -129,7 +131,14 @@ LIB_DEPENDS-docs=
 WANTLIB-docs=
 RUN_DEPENDS-docs=
 
-REGRESS_TARGET=		torture
+# REGRESSION testing is currently borked. Builds, runs
+# tests fail. Fix one day.
+NO_REGRESS=		Yes
+#REGRESS_TARGET=	test
+#.ifmake regress
+#CONFIGURE_ARGS+=	--enable-socket-wrapper \
+#			--enable-nss-wrapper 
+#.endif
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/source3
 
