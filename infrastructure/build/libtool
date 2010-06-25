@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.121 2010/06/25 05:21:35 steven Exp $
+# $OpenBSD: libtool,v 1.122 2010/06/25 20:03:54 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -691,9 +691,7 @@ sub link
 			next if (!defined $l->{lafile});
 			my $lainfo = LaFile->parse($l->{lafile});
 			next if ($lainfo->stringize('dlname') ne '');
-			if (!defined $l->{fullpath}) {
-				$l->find($dirs, 0);
-			}
+			$l->find($dirs, 0);
 			my $a = $l->{fullpath};
 			if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
 				# extract objects from archive
@@ -722,9 +720,7 @@ sub link
 	}
 	foreach my $k (@$finalorderedlibs) {
 		my $l = $libs->{$k};
-		if (!defined $l->{fullpath}) {
-			$l->find($dirs, 1);
-		}
+		$l->find($dirs, 1);
 	}
 
 	my @libobjects = values %$libs;
@@ -949,12 +945,7 @@ sub link
 			$libs->{$k} = Library->new($k);
 		}
 		my $l = $libs->{$k};
-		# here we find shared or static libraries
-		if (defined $l->{fullpath} && $l->{fullpath} =~ m/\.a$/) {
-			# static library was registered already, don't search
-		} else {
-			$l->find($dirs, $self->{shared});
-		}
+		$l->find($dirs, $self->{shared});
 	}
 
 	my @libobjects = values %$libs;
@@ -1071,6 +1062,7 @@ sub find
 		}
 	}
 	if (!$libfile) {
+		if (defined $self->{fullpath}) { delete $self->{fullpath}; }
 		die "$libtofind not found!\n";
 	}
 	$self->{fullpath} = $libfile;
