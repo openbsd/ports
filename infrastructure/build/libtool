@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.123 2010/06/25 20:29:11 steven Exp $
+# $OpenBSD: libtool,v 1.124 2010/06/25 20:59:33 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -285,7 +285,7 @@ sub parse_linkargs1
 					push @$result, $lafile;
 					next;
 				} else {
-					$libs->{$key}->find($dirs, 1, $libsearchdirs);
+					$libs->{$key}->find($dirs, 1, 'notyet', $libsearchdirs);
 					my @deps = $libs->{$key}->inspect;
 					foreach my $d (@deps) {
 						my $k = main::basename $d;
@@ -646,6 +646,7 @@ sub link
 	Trace::debug {"creating link command for library (linked ",
 		($shared) ? "dynam" : "stat", "ically)\n"};
 
+	my $what = ref($self);
 	my @libflags;
 	my @cmd;
 	my $ltdir = $main::ltdir;
@@ -691,7 +692,7 @@ sub link
 			next if (!defined $l->{lafile});
 			my $lainfo = LaFile->parse($l->{lafile});
 			next if ($lainfo->stringize('dlname') ne '');
-			$l->find($dirs, 0);
+			$l->find($dirs, 0, $what);
 			my $a = $l->{fullpath};
 			if ($a =~ m/\.a$/ && $a !~ m/_pic\.a/) {
 				# extract objects from archive
@@ -720,7 +721,7 @@ sub link
 	}
 	foreach my $k (@$finalorderedlibs) {
 		my $l = $libs->{$k};
-		$l->find($dirs, 1);
+		$l->find($dirs, 1, $what);
 	}
 
 	my @libobjects = values %$libs;
@@ -889,6 +890,7 @@ sub link
 	Trace::debug {"linking program (",
 		($self->{shared}) ? "dynam" : "stat", "ically)\n"};
 
+	my $what = ref($self);
 	my $fpath  = $self->{outfilepath};
 	my $RPdirs = $self->{RPdirs};
 
@@ -945,7 +947,7 @@ sub link
 			$libs->{$k} = Library->new($k);
 		}
 		my $l = $libs->{$k};
-		$l->find($dirs, $self->{shared});
+		$l->find($dirs, $self->{shared}, $what);
 	}
 
 	my @libobjects = values %$libs;
@@ -988,12 +990,17 @@ package Library;
 # XXX pick the right one if multiple are found!
 sub find
 {
-	my ($self, $dirs, $shared, $ldconfigdirs) = @_;
+	my ($self, $dirs, $shared, $linkmode, $ldconfigdirs) = @_;
 
 	my $libtofind = $self->{key};
 	my $libfile = 0;
 	my @globbedlib;
 	my $ltdir = $main::ltdir;
+
+	my $pic = '';	# used when finding static libraries
+	if ($linkmode eq 'LaFile') {
+		$pic = '_pic';
+	}
 
 	if (defined $self->{lafile}) {
 		# if there is a .la file, use the info from there
@@ -1045,7 +1052,7 @@ sub find
 				$libfile = $globbedlib[0];
 				last;
 			} else {	# XXX find static library instead?
-				my $spath = "$sd/lib$libtofind.a";
+				my $spath = "$sd/lib$libtofind$pic.a";
 				if (-f $spath) {
 					Trace::debug {"found static $libtofind in $sd\n"};
 					$libfile = $spath;
