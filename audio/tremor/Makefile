@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/23 14:44:42 steven Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/25 08:16:51 landry Exp $
 
 COMMENT=	integer-only, fully Ogg Vorbis compliant decoder library
 
@@ -29,7 +29,7 @@ CONFIGURE_STYLE=gnu
 WRKDIST=	${WRKDIR}/Tremor
 
 # autogen.sh needs libtoolize
-BUILD_DEPENDS =	::devel/libtool
+BUILD_DEPENDS +=	::devel/libtool
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
