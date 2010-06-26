@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.25 2010/06/23 15:02:45 espie Exp $
-# Copyright (c) 2004 Marc Espie <espie@openbsd.org>
+# $OpenBSD: check-lib-depends,v 1.26 2010/06/26 10:24:34 espie Exp $
+# Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -43,7 +43,7 @@ sub new
 
 sub retrieve
 {
-	my ($self, $item) = @_;
+	my ($self, $state, $item) = @_;
 	return $self->{location}.$item->fullname;
 }
 
@@ -85,7 +85,7 @@ sub extracted_name
 }
 sub retrieve
 {
-	my ($self, $item) = @_;
+	my ($self, $state, $item) = @_;
 	my $o = $self->prepare_to_extract($item);
 	$o->create;
 	return $self->extracted_name($item);
@@ -203,8 +203,9 @@ sub dump
 
 sub retrieve
 {
-	my ($self, $filename) = @_;
-	open(my $fh, '<', $filename) or die "Can't read $filename: $!";
+	my ($self, $state, $filename) = @_;
+	open(my $fh, '<', $filename) or 
+	    $state->fatal("Can't read #1: #2", $filename, $!);
 	my $_;
 	while (<$fh>) {
 		chomp;
@@ -216,7 +217,7 @@ sub retrieve
 			my @libs = split(/,/, $libs);
 			$self->{$binary}= \@libs;
 		} else {
-			print "Can't parse $_\n";
+			$state->errsay("Can't parse #1", $_);
 		}
 	}
 	close $fh;
@@ -368,6 +369,52 @@ sub find_libs
 	}
 }
 
+sub run_objdump
+{
+	my ($state, $n) = @_;
+	my $cmd;
+
+	if ($state->{old}) {
+		open($cmd, "-|", "ldd", "-f", "NEEDED lib%o.so.%m.%n\n", $n) or 
+		    $state->fatal("run ldd: #1", $!);
+	} else {
+		unless (open($cmd, '-|')) {
+			open(STDERR, '>', '/dev/null');
+			exec('objdump', '-p', $n) or 
+			    $state->fatal("exec objdump: #!", $!);
+		}
+	}
+	return $cmd;
+}
+
+sub parse_objdump
+{
+	my ($cmd, $dest, $fullname) = @_;
+	my @l = ();
+	while (my $line = <$cmd>) {
+		if ($line =~ m/^\s+NEEDED\s+(.*?)\s*$/) {
+			my $lib = $1;
+			push(@l, $lib);
+			# detect linux binaries
+			if ($lib eq 'libc.so.6') {
+				return ();
+			}
+		} elsif ($line =~ m/^\s+RPATH\s+(.*)\s*$/) {
+			my $p = {};
+			for my $path (split /\:/, $1) {
+				next if $path eq '/usr/local/lib';
+				next if $path eq '/usr/X11R6/lib';
+				next if $path eq '/usr/lib';
+				$p->{$path} = 1;
+			}
+			for my $path (keys %$p) {
+				$dest->record_rpath($path, $fullname);
+			}
+		}
+	}
+	return @l;
+}
+
 sub record_needed_libs
 {
 	my ($item, $state, $dest, $source) = @_;
@@ -385,49 +432,14 @@ sub record_needed_libs
 		$source->skip($item);
 		return;
 	}
-	my $n = $source->retrieve($item);
-	my $cmd;
-	if ($state->{old}) {
-		open($cmd, "-|", "ldd", "-f", "NEEDED lib%o.so.%m.%n\n", $n) or 
-		    $state->fatal("run ldd: #1", $!);
-	} else {
-		unless (open($cmd, '-|')) {
-			open(STDERR, '>', '/dev/null');
-			exec('objdump', '-p', $n) or 
-			    state->fatal("exec objdump: #!", $!);
-		}
-	}
-	my @l;
-	while(my $line = <$cmd>) {
-		if ($line =~ m/^\s+NEEDED\s+(.*?)\s*$/) {
-			my $lib = $1;
-			push(@l, $lib);
-			# detect linux binaries
-			if ($lib eq 'libc.so.6') {
-				$linux_bin = 1;
-			}
-		} elsif ($line =~ m/^\s+RPATH\s+(.*)\s*$/) {
-			my $p = {};
-			for my $path (split /\:/, $1) {
-				next if $path eq '/usr/local/lib';
-				next if $path eq '/usr/X11R6/lib';
-				next if $path eq '/usr/lib';
-				$p->{$path} = 1;
-			}
-			for my $path (keys %$p) {
-				$dest->record_rpath($path, $fullname);
-			}
-		}
+	my $n = $source->retrieve($state, $item);
+	my $cmd = run_objdump($state, $n);
+	for my $lib (parse_objdump($cmd, $dest, $fullname)) {
+		# don't look for modules
+		next if $lib =~ m/\.so$/;
+		$dest->record($lib, $fullname);
 	}
 	close($cmd);
-	# okay, we are not OpenBSD, we don't have sensible names
-	unless ($linux_bin or $freebsd_bin) {
-		for my $lib (@l) {
-			# don't look for modules
-			next if $lib =~ m/\.so$/;
-			$dest->record($lib, $fullname);
-		}
-	}
 	$source->clean($item);
 }
 
@@ -441,6 +453,23 @@ sub depwalk
 
 package CheckLibDepends::State;
 our @ISA = qw(OpenBSD::AddCreateDelete::State);
+
+sub handle_options
+{
+	my $state = shift;
+
+	$state->SUPER::handle_options('od:fB:F:s:O:',
+		'[-o] [-d pkgrepo] [-B destdir] [-s source] [-O dest]');
+
+	$state->{destdir} = $state->opt('B') // $state->opt('F');
+	$state->{destdir} //= '/';
+	$state->{destdir}.= '/' unless $state->{destdir} =~ m|/$|;
+	$state->{dest} = $state->opt('O');
+	$state->{source} = $state->opt('s');
+	$state->{full} = $state->opt('f');
+	$state->{repository} = $state->opt('d');
+	$state->{old} = $state->opt('o');
+}
 
 sub init
 {
@@ -473,7 +502,6 @@ sub say_with_context
 }
 
 package CheckLibDepends;
-our @ISA = qw(OpenBSD::AddCreateDelete);
 
 use OpenBSD::PackageInfo;
 use File::Path;
@@ -641,7 +669,7 @@ sub analyze
 	my $has_libs = {};
 	if ($state->{source}) {
 		my $special = DumpRecorder->new;
-		$special->retrieve($state->{source});
+		$special->retrieve($state, $state->{source});
 		$plist->find_libs($needed_libs, $special);
 	} else {
 		$plist->record_needed_libs($state, $needed_libs, $source);
@@ -727,17 +755,7 @@ sub main
 {
 	my $self = shift;
 	my $state = CheckLibDepends::State->new('check-lib-depends');
-	$self->handle_options('od:fB:F:s:O:', $state,
-		'[-o] [-d pkgrepo] [-B destdir] [-s source] [-O dest]');
-
-	$state->{destdir} = $state->opt('B') // $state->opt('F');
-	$state->{destdir} //= '/';
-	$state->{destdir}.= '/' unless $state->{destdir} =~ m|/$|;
-	$state->{dest} = $state->opt('O');
-	$state->{source} = $state->opt('s');
-	$state->{full} = $state->opt('f');
-	$state->{repository} = $state->opt('d');
-	$state->{old} = $state->opt('o');
+	$state->handle_options;
 	my $fs = $state->{destdir};
 	if ($state->{dest}) {
 		my $recorder = DumpRecorder->new;
