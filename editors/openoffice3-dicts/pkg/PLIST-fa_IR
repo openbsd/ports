@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-fa_IR,v 1.1 2010/06/26 14:46:00 robert Exp $
+@pkgpath editors/openoffice3-dicts
+@pkgpath editors/openoffice3-dicts,-main
+openoffice.org3/share/extension/install/fa_IR.oxt
+@exec %D/openoffice.org3/program/unopkg add --shared %D/openoffice.org3/share/extension/install/fa_IR.oxt > /dev/null 2>&1
+@unexec %D/openoffice.org3/program/unopkg remove --shared org.openoffice.fa.dictionaries.fa > /dev/null 2>&1
