@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.4 2010/05/22 14:03:24 espie Exp $
---- lib/Makefile.in.orig	Wed May 28 12:02:27 2003
-+++ lib/Makefile.in	Sat May 22 15:50:39 2010
-@@ -104,7 +104,7 @@ USE_INCLUDED_LIBINTL = @USE_INCLUDED_LIBINTL@
- USE_NLS = @USE_NLS@
- VERSION = @VERSION@
+$OpenBSD: patch-lib_Makefile_in,v 1.5 2010/06/26 14:32:15 ckuethe Exp $
+--- lib/Makefile.in.orig	Sun Mar  6 15:36:29 2005
++++ lib/Makefile.in	Fri Jun 25 18:23:26 2010
+@@ -155,7 +155,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  
 -INCLUDES = -I../intl
 +INCLUDES = 
  noinst_LIBRARIES = libap.a
- libap_a_SOURCES = ap-utils.h reset.c snmp.c
+ libap_a_SOURCES = ap-utils.h ap-curses.h reset.c snmp.c oui.c input.c menu.c scr.c wep.c wlan.c test.c stat.c set_community.c cmd.c radio.c aps.c ap_search.c sysinfo.c set_oeminfo.c common.c file.c
  EXTRA_libap_a_SOURCES = ber.c
