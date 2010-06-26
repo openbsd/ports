@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2010/02/26 14:45:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2010/06/26 16:38:55 ckuethe Exp $
 
 COMMENT=	Apache Kerberos authentication module
 
 DISTNAME=	mod_auth_kerb-5.3
-PKGNAME=	${DISTNAME}p3
+PKGNAME=	${DISTNAME}p4
 CATEGORIES=	www
 
 HOMEPAGE=	http://modauthkerb.sourceforge.net/
 
 MODULES+=	apache-module
-MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
+MAINTAINER=	Jason Meltzer <jmeltzer@openbsd.org>
 
 # combination of 2- and 3-clause BSD, MIT, and export crypto warnings
 PERMIT_PACKAGE_CDROM=	Yes
