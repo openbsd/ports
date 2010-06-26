@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/01/06 18:29:19 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2010/06/26 03:53:36 ajacoutot Exp $
 
 COMMENT=	graphical diff and merge tool
 
-DISTNAME=	meld-1.3.1
+DISTNAME=	meld-1.3.2
 CATEGORIES=	textproc x11
 
 HOMEPAGE=	http://meld.sourceforge.net/
@@ -28,12 +28,11 @@ RUN_DEPENDS=	::x11/gnome/py-gnome \
 		::x11/py-gtksourceview
 
 SUBST_VARS+=	MODPY_SITEPKG
-MAKE_FILE=	GNUmakefile
 CONFIGURE_STYLE=none
 NO_REGRESS=	yes
 MAKE_ENV=	PYTHON=${MODPY_BIN}
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/meld ${WRKSRC}/INSTALL
+	${SUBST_CMD} ${WRKSRC}/bin/meld ${WRKSRC}/INSTALL
 
 .include <bsd.port.mk>

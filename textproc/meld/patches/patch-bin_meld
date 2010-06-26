@@ -1,0 +1,9 @@
+$OpenBSD: patch-bin_meld,v 1.1 2010/06/26 03:53:36 ajacoutot Exp $
+--- bin/meld.orig	Sat Jun 26 05:45:18 2010
++++ bin/meld	Sat Jun 26 05:45:24 2010
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#!${MODPY_BIN}
+ 
+ ### Copyright (C) 2002-2006 Stephen Kennedy <stevek@gnome.org>
+ 
