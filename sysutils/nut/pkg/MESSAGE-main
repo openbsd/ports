@@ -8,3 +8,7 @@ if [ -x ${PREFIX}/bin/upsdrvctl ]; then
     ${PREFIX}/sbin/upsd > /dev/null 2>&1
     ${PREFIX}/sbin/upsmon > /dev/null 2>&1
 fi
+
+For USB-connected devices, the userid running NUT (normally _nut unless
+set otherwise with the -u option) must have write access to the relevant
+devices: /dev/usbX to detect the UPS, and /dev/ugenX.XX to control it.
