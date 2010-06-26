@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.263 2010/06/16 14:06:03 kili Exp $
+# $OpenBSD: Makefile,v 1.264 2010/06/26 03:41:42 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -215,7 +215,6 @@
      SUBDIR += vcdimager
      SUBDIR += vid
      SUBDIR += videod
-     SUBDIR += win32-codecs
      SUBDIR += wmgrabimage
      SUBDIR += wmicons
      SUBDIR += wmphoto
