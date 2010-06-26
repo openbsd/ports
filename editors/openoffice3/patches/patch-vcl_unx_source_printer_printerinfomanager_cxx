@@ -1,7 +1,7 @@
-$OpenBSD: patch-vcl_unx_source_printer_printerinfomanager_cxx,v 1.1 2010/03/30 11:03:07 robert Exp $
---- vcl/unx/source/printer/printerinfomanager.cxx.orig.port	Fri Feb 12 00:34:30 2010
-+++ vcl/unx/source/printer/printerinfomanager.cxx	Fri Feb 12 00:35:07 2010
-@@ -1207,7 +1207,7 @@ struct SystemCommandParameters
+$OpenBSD: patch-vcl_unx_source_printer_printerinfomanager_cxx,v 1.2 2010/06/26 15:48:12 robert Exp $
+--- vcl/unx/source/printer/printerinfomanager.cxx.orig.port	Wed May 26 20:34:32 2010
++++ vcl/unx/source/printer/printerinfomanager.cxx	Fri Jun 25 23:56:15 2010
+@@ -1204,7 +1204,7 @@ struct SystemCommandParameters
      tokenHandler    pHandler;
  };
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-vcl_unx_source_printer_printerinfomanager_cxx,v 1.1 2010/03/30 1
  static void lpgetSysQueueTokenHandler(
      const std::list< rtl::OString >& i_rLines,
      std::list< PrinterInfoManager::SystemPrintQueue >& o_rQueues,
-@@ -1352,7 +1352,7 @@ static void standardSysQueueTokenHandler(
+@@ -1349,7 +1349,7 @@ static void standardSysQueueTokenHandler(
  
  static const struct SystemCommandParameters aParms[] =
  {

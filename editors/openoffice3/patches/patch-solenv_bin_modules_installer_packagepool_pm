@@ -1,6 +1,6 @@
---- solenv/bin/modules/installer/packagepool.pm.orig.port	Thu Feb 26 12:06:13 2009
-+++ solenv/bin/modules/installer/packagepool.pm	Mon Feb 15 23:25:15 2010
-@@ -840,9 +840,9 @@ sub determine_new_packagename
+--- solenv/bin/modules/installer/packagepool.pm.orig.port	Wed May 26 20:30:08 2010
++++ solenv/bin/modules/installer/packagepool.pm	Fri Jun 25 23:56:14 2010
+@@ -832,9 +832,9 @@ sub determine_new_packagename
  	my $newentriesnumber = $#{$newcontent} + 1;
  	if ( $newentriesnumber > 1 )
  	{

@@ -1,7 +1,7 @@
-$OpenBSD: patch-stoc_source_corereflection_criface_cxx,v 1.1 2010/03/30 11:03:07 robert Exp $
---- stoc/source/corereflection/criface.cxx.orig.port	Mon Jan 25 19:12:22 2010
-+++ stoc/source/corereflection/criface.cxx	Mon Jan 25 19:12:59 2010
-@@ -35,7 +35,7 @@
+$OpenBSD: patch-stoc_source_corereflection_criface_cxx,v 1.2 2010/06/26 15:48:12 robert Exp $
+--- stoc/source/corereflection/criface.cxx.orig.port	Wed May 26 20:30:18 2010
++++ stoc/source/corereflection/criface.cxx	Fri Jun 25 23:56:14 2010
+@@ -32,7 +32,7 @@
  #ifdef SAL_UNX
  #include <sal/alloca.h>
  #endif

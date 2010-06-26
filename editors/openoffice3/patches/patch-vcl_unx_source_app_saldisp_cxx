@@ -1,7 +1,7 @@
-$OpenBSD: patch-vcl_unx_source_app_saldisp_cxx,v 1.4 2010/03/30 11:03:07 robert Exp $
---- vcl/unx/source/app/saldisp.cxx.orig.port	Sun Jan 24 16:12:33 2010
-+++ vcl/unx/source/app/saldisp.cxx	Sun Jan 24 19:22:13 2010
-@@ -898,7 +898,7 @@ void SalDisplay::Init()
+$OpenBSD: patch-vcl_unx_source_app_saldisp_cxx,v 1.5 2010/06/26 15:48:12 robert Exp $
+--- vcl/unx/source/app/saldisp.cxx.orig.port	Wed May 26 20:34:29 2010
++++ vcl/unx/source/app/saldisp.cxx	Fri Jun 25 23:56:14 2010
+@@ -895,7 +895,7 @@ void SalDisplay::Init()
          sscanf( pProperties, "%li", &nProperties_ );
      else
      {
@@ -10,7 +10,7 @@ $OpenBSD: patch-vcl_unx_source_app_saldisp_cxx,v 1.4 2010/03/30 11:03:07 robert 
          nProperties_ |= PROPERTY_FEATURE_Maximize;
  #endif
          // Server Bugs & Properties
-@@ -924,7 +924,7 @@ void SalDisplay::Init()
+@@ -921,7 +921,7 @@ void SalDisplay::Init()
          if( GetServerVendor() == vendor_xfree )
          {
              nProperties_ |= PROPERTY_BUG_XCopyArea_GXxor;

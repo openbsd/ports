@@ -1,6 +1,6 @@
---- tools/inc/tools/stream.hxx.orig.port	Fri Aug  1 07:38:04 2008
-+++ tools/inc/tools/stream.hxx	Thu Jan 15 14:47:51 2009
-@@ -293,7 +293,7 @@ class TOOLS_DLLPUBLIC SvStream (private)
+--- tools/inc/tools/stream.hxx.orig.port	Wed May 26 20:33:52 2010
++++ tools/inc/tools/stream.hxx	Fri Jun 25 23:56:14 2010
+@@ -290,7 +290,7 @@ class TOOLS_DLLPUBLIC SvStream (private)
  	void			CreateFormatString();
  	TOOLS_DLLPRIVATE void			ImpInit();
  
@@ -9,7 +9,7 @@
  	SvStream&		operator=( const SvStream& rStream ); // not implemented
  
  protected:
-@@ -732,7 +732,7 @@ class TOOLS_DLLPUBLIC SvFileStream : public SvStream (
+@@ -729,7 +729,7 @@ class TOOLS_DLLPUBLIC SvFileStream : public SvStream (
  	sal_uInt32		GetFileHandle() const;
  
  	// Forbidden and not implemented.

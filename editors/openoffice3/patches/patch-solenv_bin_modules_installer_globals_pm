@@ -1,7 +1,7 @@
-$OpenBSD: patch-solenv_bin_modules_installer_globals_pm,v 1.5 2010/03/30 11:03:07 robert Exp $
---- solenv/bin/modules/installer/globals.pm.orig.port	Tue Nov 24 15:40:24 2009
-+++ solenv/bin/modules/installer/globals.pm	Tue Feb 16 19:37:42 2010
-@@ -125,7 +125,7 @@ BEGIN
+$OpenBSD: patch-solenv_bin_modules_installer_globals_pm,v 1.6 2010/06/26 15:48:12 robert Exp $
+--- solenv/bin/modules/installer/globals.pm.orig.port	Wed May 26 20:30:08 2010
++++ solenv/bin/modules/installer/globals.pm	Fri Jun 25 23:56:14 2010
+@@ -122,7 +122,7 @@ BEGIN
  	$servicesrdb_can_be_created = 0;
  	$islinux = 0;	
  	$issolaris = 0;
@@ -10,7 +10,7 @@ $OpenBSD: patch-solenv_bin_modules_installer_globals_pm,v 1.5 2010/03/30 11:03:0
  	$iswindowsbuild = 0;
  	$islinuxbuild = 0;
  	$islinuxrpmbuild = 0;
-@@ -242,7 +242,7 @@ BEGIN
+@@ -241,7 +241,7 @@ BEGIN
  	$jdklib = "";
  	$jrepath = "";
  	

@@ -1,7 +1,7 @@
-$OpenBSD: patch-solenv_inc_libs_mk,v 1.4 2010/03/30 11:03:07 robert Exp $
---- solenv/inc/libs.mk.orig.port	Sun Jan 24 16:12:33 2010
-+++ solenv/inc/libs.mk	Sun Jan 24 16:44:53 2010
-@@ -205,7 +205,7 @@ ZLIB3RDLIB=-lz
+$OpenBSD: patch-solenv_inc_libs_mk,v 1.5 2010/06/26 15:48:12 robert Exp $
+--- solenv/inc/libs.mk.orig.port	Wed May 26 20:30:10 2010
++++ solenv/inc/libs.mk	Fri Jun 25 23:56:14 2010
+@@ -201,7 +201,7 @@ ZLIB3RDLIB=-lz
  ZLIB3RDLIB=-lzlib
  .ENDIF
  .IF "$(SYSTEM_JPEG)"=="YES"
@@ -10,7 +10,7 @@ $OpenBSD: patch-solenv_inc_libs_mk,v 1.4 2010/03/30 11:03:07 robert Exp $
  #i34482# Blackdown/Sun jdk is in the libsearch patch and has a libjpeg :-(
  .IF "$(OS)" == "FREEBSD"
  JPEG3RDLIB=/usr/local/lib/libjpeg.so
-@@ -327,7 +327,7 @@ USED_RCLIENT_LIBS =	$(VCLLIB) $(SOTLIB) $(TOOLSLIB) \
+@@ -323,7 +323,7 @@ USED_RCLIENT_LIBS =	$(VCLLIB) $(SOTLIB) $(TOOLSLIB) \
  SABLOT3RDLIB=-lsablot
  APP3RDLIB=-lapp
  SAMPLE3RDLIB=-lsample

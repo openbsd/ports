@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/06/09 12:50:23 robert Exp $
+# $OpenBSD: Makefile,v 1.45 2010/06/26 15:48:11 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,13 +6,13 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of OpenOffice to the KDE environment
 COMMENT-java=	optional integration of OpenOffice java features
 
-VERSION=	3.2.0
+VERSION=	3.2.1
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/OOO320_m12
-PKGNAME=	openoffice-${VERSION}p1
-PKGNAME-main=	openoffice-${VERSION}p4
-PKGNAME-kde=	openoffice-kde-${VERSION}p1
-PKGNAME-java=	openoffice-java-${VERSION}p2
+WRKDIST=	${WRKDIR}/OOO320_m19
+PKGNAME=	openoffice-${VERSION}
+PKGNAME-main=	openoffice-${VERSION}
+PKGNAME-kde=	openoffice-kde-${VERSION}
+PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -68,7 +68,7 @@ LANGS=			bg ca de es fa fi fr hu it ja ko \
 
 .for l in ${LANGS:L}
 MULTI_PACKAGES+=	-i18n-$l
-PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}p0
+PKGNAME-i18n-$l=	openoffice-i18n-$l-${VERSION}
 COMMENT-i18n-$l=	$l language pack for OpenOffice.Org
 RUN_DEPENDS-i18n-$l=	::editors/openoffice3
 WANTLIB-i18n-$l=
@@ -198,11 +198,11 @@ CONFIGURE_ARGS+=	--enable-minimizer \
 			--enable-pdfimport \
 			--enable-report-builder \
 			--enable-wiki-publisher
-EXTENSIONS=		minimizer/sun-presentation-minimizer.oxt \
+EXTENSIONS=		minimizer/presentation-minimizer.oxt \
 			presenter/presenter-screen.oxt \
 			pdfimport/pdfimport.oxt \
 			swext/wiki-publisher.oxt \
-			sun-report-builder.oxt
+			report-builder.oxt
 
 
 .if ${FLAVOR:L:Mdebug}
@@ -234,7 +234,8 @@ BUILD_CMD=	cd instsetoo_native && build.pl ${NCPUFLAG} --all --dlv_switch -link 
 
 post-extract:
 	@mkdir -p ${WRKDIST}/xpdf/unxobsd.pro/misc
-	@echo mv ${WRKDIR}/textproc/xpdf/xpdf-3.02 . > ${WRKDIST}/xpdf/unxobsd.pro/misc/xpdf-3.02.unpack
+	@mv ${WRKDIR}/textproc/xpdf/xpdf-3.02 ${WRKDIST}/xpdf/unxobsd.pro/misc/ > \
+		${WRKDIST}/xpdf/unxobsd.pro/misc/so_unpacked_xpdflib
 
 pre-patch:
 .if ${FLAVOR:L:Mparallel}

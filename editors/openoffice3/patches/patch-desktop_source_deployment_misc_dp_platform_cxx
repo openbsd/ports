@@ -1,6 +1,6 @@
---- desktop/source/deployment/misc/dp_platform.cxx.orig.port	Fri Apr 10 10:36:58 2009
-+++ desktop/source/deployment/misc/dp_platform.cxx	Fri Apr 10 10:37:09 2009
-@@ -64,6 +64,8 @@
+--- desktop/source/deployment/misc/dp_platform.cxx.orig.port	Wed May 26 20:21:55 2010
++++ desktop/source/deployment/misc/dp_platform.cxx	Fri Jun 25 23:56:13 2010
+@@ -60,6 +60,8 @@
  #define PLATFORM_MACOSX_X86         "macosx_x86"
  #define PLATFORM_MACOSX_PPC         "macosx_powerpc"
  #define PLATFORM_OS2_X86            "os2_x86"
@@ -9,7 +9,7 @@
  
  
  
-@@ -166,6 +168,10 @@ namespace 
+@@ -162,6 +164,10 @@ namespace 
              ret = checkOSandCPU(OUSTR("MacOSX"), OUSTR("PowerPC"));
          else if (token.equals(OUSTR(PLATFORM_OS2_X86)))
              ret = checkOSandCPU(OUSTR("OS2"), OUSTR("x86"));

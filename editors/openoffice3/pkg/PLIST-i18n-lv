@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-lv,v 1.6 2010/03/30 11:03:07 robert Exp $
+@comment $OpenBSD: PLIST-i18n-lv,v 1.7 2010/06/26 15:48:12 robert Exp $
 @pkgpath editors/openoffice,-i18n-lv
 !%%no_java%%
 openoffice.org/basis3.2/help/lv/
@@ -91,12 +91,12 @@ openoffice.org/basis3.2/help/lv/swriter.idxl/segments_3
 openoffice.org/basis3.2/help/lv/swriter.jar
 openoffice.org/basis3.2/help/lv/swriter.key
 openoffice.org/basis3.2/help/lv/swriter.tree
-openoffice.org/basis3.2/presets/config/arrowhd_en-US_lv.soe
-openoffice.org/basis3.2/presets/config/classic_en-US_lv.sog
-openoffice.org/basis3.2/presets/config/hatching_en-US_lv.soh
-openoffice.org/basis3.2/presets/config/modern_en-US_lv.sog
-openoffice.org/basis3.2/presets/config/palette_en-US_lv.soc
-openoffice.org/basis3.2/presets/config/styles_en-US_lv.sod
+openoffice.org/basis3.2/presets/config/arrowhd_lv.soe
+openoffice.org/basis3.2/presets/config/classic_lv.sog
+openoffice.org/basis3.2/presets/config/hatching_lv.soh
+openoffice.org/basis3.2/presets/config/modern_lv.sog
+openoffice.org/basis3.2/presets/config/palette_lv.soc
+openoffice.org/basis3.2/presets/config/styles_lv.sod
 openoffice.org/basis3.2/program/resource/abplv.res
 openoffice.org/basis3.2/program/resource/acclv.res
 openoffice.org/basis3.2/program/resource/adabasuilv.res
@@ -410,7 +410,6 @@ openoffice.org/basis3.2/share/template/lv/wizard/styles/nostalgic.ots
 openoffice.org/basis3.2/share/template/lv/wizard/styles/pastell.ots
 openoffice.org/basis3.2/share/template/lv/wizard/styles/pool.ots
 openoffice.org/basis3.2/share/template/lv/wizard/styles/pumpkin.ots
-openoffice.org/basis3.2/share/template/lv/wizard/styles/sunstyle.ots
 openoffice.org/basis3.2/share/template/lv/wizard/styles/xos.ots
 openoffice.org/basis3.2/share/wordbook/lv/
 openoffice.org/basis3.2/share/wordbook/lv/soffice.dic

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2010/06/09 12:50:23 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2010/06/26 15:48:12 robert Exp $
 @pkgpath editors/openoffice
 @pkgpath editors/openoffice,-main
 %%SHARED%%
@@ -103,7 +103,6 @@ openoffice.org/basis3.2/presets/config/standard.soe
 openoffice.org/basis3.2/presets/config/standard.sog
 openoffice.org/basis3.2/presets/config/standard.soh
 openoffice.org/basis3.2/presets/config/styles_en-US.sod
-openoffice.org/basis3.2/presets/config/sun-color.soc
 openoffice.org/basis3.2/presets/config/web.soc
 openoffice.org/basis3.2/presets/database/
 openoffice.org/basis3.2/presets/database/biblio/
@@ -432,6 +431,7 @@ openoffice.org/basis3.2/share/config/soffice.cfg/global/accelerator/
 openoffice.org/basis3.2/share/config/soffice.cfg/global/accelerator/default.xml
 openoffice.org/basis3.2/share/config/soffice.cfg/global/accelerator/en-US/
 openoffice.org/basis3.2/share/config/soffice.cfg/global/accelerator/en-US/default.xml
+openoffice.org/basis3.2/share/config/soffice.cfg/global/accelerator/es/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/BasicIDE/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/BasicIDE/accelerator/
@@ -501,8 +501,6 @@ openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbrelation/toolbar/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbrelation/toolbar/toolbar.xml
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbreport/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbreport/accelerator/
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbreport/accelerator/de-DE/
-openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbreport/accelerator/de-DE/default.xml
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbreport/accelerator/en-GB/
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbreport/accelerator/en-GB/default.xml
 openoffice.org/basis3.2/share/config/soffice.cfg/modules/dbreport/accelerator/en-US/
@@ -1451,7 +1449,6 @@ openoffice.org/basis3.2/share/gallery/rulers/redrulr5.gif
 openoffice.org/basis3.2/share/gallery/rulers/striped.gif
 openoffice.org/basis3.2/share/gallery/rulers/whtballs.gif
 openoffice.org/basis3.2/share/gallery/rulers/ylwrulr1.gif
-openoffice.org/basis3.2/share/gallery/sdddndx1
 openoffice.org/basis3.2/share/gallery/sg1.sdg
 openoffice.org/basis3.2/share/gallery/sg1.sdv
 openoffice.org/basis3.2/share/gallery/sg1.thm
@@ -2406,11 +2403,9 @@ openoffice.org/basis3.2/share/template/en-US/wizard/styles/nostalgic.ots
 openoffice.org/basis3.2/share/template/en-US/wizard/styles/pastell.ots
 openoffice.org/basis3.2/share/template/en-US/wizard/styles/pool.ots
 openoffice.org/basis3.2/share/template/en-US/wizard/styles/pumpkin.ots
-openoffice.org/basis3.2/share/template/en-US/wizard/styles/sunstyle.ots
 openoffice.org/basis3.2/share/template/en-US/wizard/styles/xos.ots
 openoffice.org/basis3.2/share/template/wizard/
 openoffice.org/basis3.2/share/template/wizard/letter/
-openoffice.org/basis3.2/share/template/wizard/letter/bg/
 openoffice.org/basis3.2/share/template/wizard/letter/cs/
 openoffice.org/basis3.2/share/template/wizard/letter/cs/bus-elegant_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/cs/bus-modern_l.ott
@@ -2433,7 +2428,6 @@ openoffice.org/basis3.2/share/template/wizard/letter/da/pri-bottle_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/da/pri-mail_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/da/pri-marine_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/da/pri-redline_l.ott
-openoffice.org/basis3.2/share/template/wizard/letter/de/
 openoffice.org/basis3.2/share/template/wizard/letter/en-GB/
 openoffice.org/basis3.2/share/template/wizard/letter/en-GB/bus-elegant_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/en-GB/bus-modern_l.ott
@@ -2456,7 +2450,6 @@ openoffice.org/basis3.2/share/template/wizard/letter/en-US/pri-bottle_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/en-US/pri-mail_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/en-US/pri-marine_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/en-US/pri-redline_l.ott
-openoffice.org/basis3.2/share/template/wizard/letter/es/
 openoffice.org/basis3.2/share/template/wizard/letter/eu/
 openoffice.org/basis3.2/share/template/wizard/letter/eu/bus-elegant_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/eu/bus-modern_l.ott
@@ -2468,10 +2461,6 @@ openoffice.org/basis3.2/share/template/wizard/letter/eu/pri-bottle_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/eu/pri-mail_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/eu/pri-marine_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/eu/pri-redline_l.ott
-openoffice.org/basis3.2/share/template/wizard/letter/fr/
-openoffice.org/basis3.2/share/template/wizard/letter/hu/
-openoffice.org/basis3.2/share/template/wizard/letter/it/
-openoffice.org/basis3.2/share/template/wizard/letter/ja/
 openoffice.org/basis3.2/share/template/wizard/letter/km/
 openoffice.org/basis3.2/share/template/wizard/letter/km/bus-elegant_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/km/bus-modern_l.ott
@@ -2483,11 +2472,7 @@ openoffice.org/basis3.2/share/template/wizard/letter/km/pri-bottle_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/km/pri-mail_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/km/pri-marine_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/km/pri-redline_l.ott
-openoffice.org/basis3.2/share/template/wizard/letter/ko/
-openoffice.org/basis3.2/share/template/wizard/letter/nl/
-openoffice.org/basis3.2/share/template/wizard/letter/pl/
 openoffice.org/basis3.2/share/template/wizard/letter/pt/
-openoffice.org/basis3.2/share/template/wizard/letter/pt-BR/
 openoffice.org/basis3.2/share/template/wizard/letter/pt/bus-elegant_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/pt/bus-modern_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/pt/bus-office_l.ott
@@ -2498,7 +2483,6 @@ openoffice.org/basis3.2/share/template/wizard/letter/pt/pri-bottle_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/pt/pri-mail_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/pt/pri-marine_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/pt/pri-redline_l.ott
-openoffice.org/basis3.2/share/template/wizard/letter/ru/
 openoffice.org/basis3.2/share/template/wizard/letter/sk/
 openoffice.org/basis3.2/share/template/wizard/letter/sk/bus-elegant_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/sk/bus-modern_l.ott
@@ -2510,8 +2494,6 @@ openoffice.org/basis3.2/share/template/wizard/letter/sk/pri-bottle_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/sk/pri-mail_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/sk/pri-marine_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/sk/pri-redline_l.ott
-openoffice.org/basis3.2/share/template/wizard/letter/sl/
-openoffice.org/basis3.2/share/template/wizard/letter/sv/
 openoffice.org/basis3.2/share/template/wizard/letter/tr/
 openoffice.org/basis3.2/share/template/wizard/letter/tr/bus-elegant_l.ott
 openoffice.org/basis3.2/share/template/wizard/letter/tr/bus-modern_l.ott
@@ -2657,10 +2639,10 @@ openoffice.org3/licenses/
 openoffice.org3/licenses/LICENSE_en-US
 openoffice.org3/licenses/LICENSE_en-US.html
 openoffice.org3/program/
-openoffice.org3/program/about.bmp
+openoffice.org3/program/about.png
 openoffice.org3/program/bootstraprc
 openoffice.org3/program/fundamentalrc
-openoffice.org3/program/intro.bmp
+openoffice.org3/program/intro.png
 openoffice.org3/program/redirectrc
 openoffice.org3/program/resource/
 openoffice.org3/program/resource/oooen-US.res
@@ -2688,12 +2670,10 @@ openoffice.org3/share/config/images_brand.zip
 openoffice.org3/share/extension/
 openoffice.org3/share/extension/install/
 openoffice.org3/share/extension/install/dict-en.oxt
-openoffice.org3/share/extension/install/dict-es.oxt
-openoffice.org3/share/extension/install/dict-fr.oxt
 openoffice.org3/share/extension/install/pdfimport.oxt
+openoffice.org3/share/extension/install/presentation-minimizer.oxt
 openoffice.org3/share/extension/install/presenter-screen.oxt
-openoffice.org3/share/extension/install/sun-presentation-minimizer.oxt
-openoffice.org3/share/extension/install/sun-report-builder.oxt
+openoffice.org3/share/extension/install/report-builder.oxt
 openoffice.org3/share/extension/install/wiki-publisher.oxt
 openoffice.org3/share/readme/
 openoffice.org3/share/readme/LICENSE_en-US

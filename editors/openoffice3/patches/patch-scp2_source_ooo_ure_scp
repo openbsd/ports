@@ -1,7 +1,7 @@
-$OpenBSD: patch-scp2_source_ooo_ure_scp,v 1.1 2010/03/30 11:03:07 robert Exp $
---- scp2/source/ooo/ure.scp.orig.port	Mon Jan 25 19:13:43 2010
-+++ scp2/source/ooo/ure.scp	Mon Jan 25 19:14:01 2010
-@@ -885,7 +885,7 @@ File gid_File_Dl_Stlport
+$OpenBSD: patch-scp2_source_ooo_ure_scp,v 1.2 2010/06/26 15:48:12 robert Exp $
+--- scp2/source/ooo/ure.scp.orig.port	Wed May 26 20:29:07 2010
++++ scp2/source/ooo/ure.scp	Fri Jun 25 23:56:14 2010
+@@ -882,7 +882,7 @@ File gid_File_Dl_Stlport
  End
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-scp2_source_ooo_ure_scp,v 1.1 2010/03/30 11:03:07 robert Exp $
  	|| defined MACOSX || defined SYSTEM_STDLIBS || defined(WNT))
  File gid_File_Dl_GccS
      TXT_FILE_BODY;
-@@ -896,7 +896,7 @@ File gid_File_Dl_GccS
+@@ -893,7 +893,7 @@ File gid_File_Dl_GccS
  End
  #endif
  

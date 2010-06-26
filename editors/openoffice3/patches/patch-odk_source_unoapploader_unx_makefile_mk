@@ -1,7 +1,7 @@
-$OpenBSD: patch-odk_source_unoapploader_unx_makefile_mk,v 1.2 2009/01/22 17:44:39 robert Exp $
---- odk/source/unoapploader/unx/makefile.mk.orig.port	Fri Aug  1 07:27:16 2008
-+++ odk/source/unoapploader/unx/makefile.mk	Thu Jan 15 14:47:50 2009
-@@ -47,7 +47,7 @@ LIBSALCPPRT=
+$OpenBSD: patch-odk_source_unoapploader_unx_makefile_mk,v 1.3 2010/06/26 15:48:12 robert Exp $
+--- odk/source/unoapploader/unx/makefile.mk.orig.port	Wed May 26 20:25:03 2010
++++ odk/source/unoapploader/unx/makefile.mk	Fri Jun 25 23:56:14 2010
+@@ -43,7 +43,7 @@ LIBSALCPPRT=
  LINK=$(CC)
  .ENDIF
  

@@ -1,8 +1,8 @@
-$OpenBSD: patch-xpdf_makefile_mk,v 1.4 2010/03/30 11:03:07 robert Exp $
+$OpenBSD: patch-xpdf_makefile_mk,v 1.5 2010/06/26 15:48:12 robert Exp $
 
---- xpdf/makefile.mk.orig.port	Sun Jan 24 16:12:34 2010
-+++ xpdf/makefile.mk	Sun Jan 24 19:24:36 2010
-@@ -81,7 +81,14 @@ LDFLAGS:=$(ARCH_FLAGS)
+--- xpdf/makefile.mk.orig.port	Wed May 26 20:35:11 2010
++++ xpdf/makefile.mk	Fri Jun 25 23:56:15 2010
+@@ -77,7 +77,14 @@ LDFLAGS:=$(ARCH_FLAGS)
  .ENDIF
  
  CONFIGURE_ACTION=configure

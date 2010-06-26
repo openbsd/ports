@@ -1,7 +1,7 @@
-$OpenBSD: patch-vcl_unx_source_dtrans_X11_selection_cxx,v 1.1 2010/03/30 11:03:07 robert Exp $
---- vcl/unx/source/dtrans/X11_selection.cxx.orig.port	Mon Jan 25 19:02:10 2010
-+++ vcl/unx/source/dtrans/X11_selection.cxx	Mon Jan 25 19:04:29 2010
-@@ -40,7 +40,7 @@
+$OpenBSD: patch-vcl_unx_source_dtrans_X11_selection_cxx,v 1.2 2010/06/26 15:48:12 robert Exp $
+--- vcl/unx/source/dtrans/X11_selection.cxx.orig.port	Wed May 26 20:34:30 2010
++++ vcl/unx/source/dtrans/X11_selection.cxx	Fri Jun 25 23:56:14 2010
+@@ -37,7 +37,7 @@
  #include <X11/Xlib.h>
  #include <X11/X.h>
  #include <X11/Xutil.h>

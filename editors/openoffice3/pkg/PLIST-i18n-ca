@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ca,v 1.6 2010/03/30 11:03:07 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ca,v 1.7 2010/06/26 15:48:12 robert Exp $
 @pkgpath editors/openoffice,-i18n-ca
 !%%no_java%%
 openoffice.org/basis3.2/help/ca/
@@ -91,12 +91,12 @@ openoffice.org/basis3.2/help/ca/swriter.idxl/segments_3
 openoffice.org/basis3.2/help/ca/swriter.jar
 openoffice.org/basis3.2/help/ca/swriter.key
 openoffice.org/basis3.2/help/ca/swriter.tree
-openoffice.org/basis3.2/presets/config/arrowhd_en-US_ca.soe
-openoffice.org/basis3.2/presets/config/classic_en-US_ca.sog
-openoffice.org/basis3.2/presets/config/hatching_en-US_ca.soh
-openoffice.org/basis3.2/presets/config/modern_en-US_ca.sog
-openoffice.org/basis3.2/presets/config/palette_en-US_ca.soc
-openoffice.org/basis3.2/presets/config/styles_en-US_ca.sod
+openoffice.org/basis3.2/presets/config/arrowhd_ca.soe
+openoffice.org/basis3.2/presets/config/classic_ca.sog
+openoffice.org/basis3.2/presets/config/hatching_ca.soh
+openoffice.org/basis3.2/presets/config/modern_ca.sog
+openoffice.org/basis3.2/presets/config/palette_ca.soc
+openoffice.org/basis3.2/presets/config/styles_ca.sod
 openoffice.org/basis3.2/program/resource/abpca.res
 openoffice.org/basis3.2/program/resource/accca.res
 openoffice.org/basis3.2/program/resource/adabasuica.res
@@ -410,7 +410,6 @@ openoffice.org/basis3.2/share/template/ca/wizard/styles/nostalgic.ots
 openoffice.org/basis3.2/share/template/ca/wizard/styles/pastell.ots
 openoffice.org/basis3.2/share/template/ca/wizard/styles/pool.ots
 openoffice.org/basis3.2/share/template/ca/wizard/styles/pumpkin.ots
-openoffice.org/basis3.2/share/template/ca/wizard/styles/sunstyle.ots
 openoffice.org/basis3.2/share/template/ca/wizard/styles/xos.ots
 openoffice.org/basis3.2/share/wordbook/ca/
 openoffice.org/basis3.2/share/wordbook/ca/soffice.dic

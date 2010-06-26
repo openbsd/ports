@@ -1,6 +1,6 @@
---- tools/source/fsys/unx.cxx.orig.port	Fri Aug  1 07:38:06 2008
-+++ tools/source/fsys/unx.cxx	Thu Jan 15 14:47:51 2009
-@@ -47,7 +47,7 @@
+--- tools/source/fsys/unx.cxx.orig.port	Wed May 26 20:33:52 2010
++++ tools/source/fsys/unx.cxx	Fri Jun 25 23:56:14 2010
+@@ -44,7 +44,7 @@
  extern "C" int mntctl( int cmd, size_t size, char* buf );
  #elif defined(NETBSD) 
  #include <sys/mount.h>
@@ -9,7 +9,7 @@
  #elif defined DECUNIX
  struct mnttab
  {
-@@ -97,7 +97,7 @@ struct mymnttab
+@@ -94,7 +94,7 @@ struct mymnttab
  };
  
  

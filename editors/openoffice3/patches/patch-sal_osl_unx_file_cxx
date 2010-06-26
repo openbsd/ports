@@ -1,6 +1,6 @@
---- sal/osl/unx/file.cxx.orig.port	Sun Jan 24 16:12:33 2010
-+++ sal/osl/unx/file.cxx	Sun Jan 24 19:12:56 2010
-@@ -274,7 +274,7 @@ void FileHandle_Impl::operator delete (void * p, size_
+--- sal/osl/unx/file.cxx.orig.port	Wed May 26 20:28:29 2010
++++ sal/osl/unx/file.cxx	Fri Jun 25 23:56:14 2010
+@@ -271,7 +271,7 @@ void FileHandle_Impl::operator delete (void * p, size_
  
  size_t FileHandle_Impl::getpagesize()
  {

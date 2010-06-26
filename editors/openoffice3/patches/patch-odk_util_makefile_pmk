@@ -1,7 +1,7 @@
-$OpenBSD: patch-odk_util_makefile_pmk,v 1.4 2010/03/30 11:03:07 robert Exp $
---- odk/util/makefile.pmk.orig.port	Sun Jan 24 16:12:34 2010
-+++ odk/util/makefile.pmk	Sun Jan 24 16:44:49 2010
-@@ -74,7 +74,7 @@ CONVERTTAGFLAG = $(MISC)$/$(CONVERTTAGFLAGNAME)
+$OpenBSD: patch-odk_util_makefile_pmk,v 1.5 2010/06/26 15:48:12 robert Exp $
+--- odk/util/makefile.pmk.orig.port	Wed May 26 20:25:03 2010
++++ odk/util/makefile.pmk	Fri Jun 25 23:56:14 2010
+@@ -70,7 +70,7 @@ CONVERTTAGFLAG = $(MISC)$/$(CONVERTTAGFLAGNAME)
  
  MY_AUTODOC=$(AUGMENT_LIBRARY_PATH) $(WRAPCMD) $(SOLARBINDIR)$/autodoc
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-odk_util_makefile_pmk,v 1.4 2010/03/30 11:03:07 robert Exp $
  MY_COPY=$(GNUCOPY)
  MY_COPY_RECURSIVE=$(GNUCOPY) -r
  .ELSE
-@@ -161,6 +161,12 @@ DESTPLATFROM=netbsd
+@@ -157,6 +157,12 @@ DESTPLATFROM=netbsd
  # FREEBSD
  ###########
  DESTPLATFROM=freebsd

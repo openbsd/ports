@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-fa,v 1.7 2010/03/30 11:03:07 robert Exp $
+@comment $OpenBSD: PLIST-i18n-fa,v 1.8 2010/06/26 15:48:12 robert Exp $
 @pkgpath editors/openoffice,-i18n-fa
 !%%no_java%%
 openoffice.org/basis3.2/help/fa/
@@ -91,12 +91,12 @@ openoffice.org/basis3.2/help/fa/swriter.idxl/segments_3
 openoffice.org/basis3.2/help/fa/swriter.jar
 openoffice.org/basis3.2/help/fa/swriter.key
 openoffice.org/basis3.2/help/fa/swriter.tree
-openoffice.org/basis3.2/presets/config/arrowhd_en-US_fa.soe
-openoffice.org/basis3.2/presets/config/classic_en-US_fa.sog
-openoffice.org/basis3.2/presets/config/hatching_en-US_fa.soh
-openoffice.org/basis3.2/presets/config/modern_en-US_fa.sog
-openoffice.org/basis3.2/presets/config/palette_en-US_fa.soc
-openoffice.org/basis3.2/presets/config/styles_en-US_fa.sod
+openoffice.org/basis3.2/presets/config/arrowhd_fa.soe
+openoffice.org/basis3.2/presets/config/classic_fa.sog
+openoffice.org/basis3.2/presets/config/hatching_fa.soh
+openoffice.org/basis3.2/presets/config/modern_fa.sog
+openoffice.org/basis3.2/presets/config/palette_fa.soc
+openoffice.org/basis3.2/presets/config/styles_fa.sod
 openoffice.org/basis3.2/program/resource/abpfa.res
 openoffice.org/basis3.2/program/resource/accfa.res
 openoffice.org/basis3.2/program/resource/adabasuifa.res
@@ -411,7 +411,6 @@ openoffice.org/basis3.2/share/template/fa/wizard/styles/nostalgic.ots
 openoffice.org/basis3.2/share/template/fa/wizard/styles/pastell.ots
 openoffice.org/basis3.2/share/template/fa/wizard/styles/pool.ots
 openoffice.org/basis3.2/share/template/fa/wizard/styles/pumpkin.ots
-openoffice.org/basis3.2/share/template/fa/wizard/styles/sunstyle.ots
 openoffice.org/basis3.2/share/template/fa/wizard/styles/xos.ots
 openoffice.org/basis3.2/share/wordbook/fa/
 openoffice.org/basis3.2/share/wordbook/fa/soffice.dic

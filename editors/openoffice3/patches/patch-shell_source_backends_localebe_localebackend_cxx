@@ -1,6 +1,6 @@
---- shell/source/backends/localebe/localebackend.cxx.orig.port	Fri Aug  1 07:34:17 2008
-+++ shell/source/backends/localebe/localebackend.cxx	Thu Jan 15 14:47:50 2009
-@@ -39,7 +39,7 @@
+--- shell/source/backends/localebe/localebackend.cxx.orig.port	Wed May 26 20:29:56 2010
++++ shell/source/backends/localebe/localebackend.cxx	Fri Jun 25 23:56:14 2010
+@@ -36,7 +36,7 @@
  
  #include <stdio.h>
  
@@ -9,7 +9,7 @@
  
  #include <rtl/ustrbuf.hxx>
  #include <locale.h>
-@@ -256,7 +256,7 @@ LocaleBackend* LocaleBackend::createInstance(
+@@ -253,7 +253,7 @@ LocaleBackend* LocaleBackend::createInstance(
  
  rtl::OUString LocaleBackend::getLocale(void)
  {
@@ -18,7 +18,7 @@
      return ImplGetLocale(LC_CTYPE);
  #elif defined (MACOSX)
  	return ImplGetLocale("AppleLocale");
-@@ -269,7 +269,7 @@ rtl::OUString LocaleBackend::getLocale(void)
+@@ -266,7 +266,7 @@ rtl::OUString LocaleBackend::getLocale(void)
  
  rtl::OUString LocaleBackend::getUILocale(void)
  {

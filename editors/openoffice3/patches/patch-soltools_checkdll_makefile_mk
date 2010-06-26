@@ -1,7 +1,7 @@
-$OpenBSD: patch-soltools_checkdll_makefile_mk,v 1.2 2009/01/22 17:44:39 robert Exp $
---- soltools/checkdll/makefile.mk.orig.port	Fri Aug  1 07:34:46 2008
-+++ soltools/checkdll/makefile.mk	Sat Jan 17 19:21:15 2009
-@@ -49,7 +49,7 @@ LIBSALCPPRT=$(0)
+$OpenBSD: patch-soltools_checkdll_makefile_mk,v 1.3 2010/06/26 15:48:12 robert Exp $
+--- soltools/checkdll/makefile.mk.orig.port	Wed May 26 20:30:13 2010
++++ soltools/checkdll/makefile.mk	Fri Jun 25 23:56:14 2010
+@@ -45,7 +45,7 @@ LIBSALCPPRT=$(0)
  APP1TARGET	= 	checkdll
  APP1OBJS	=	$(OBJ)$/checkdll.obj
  DEPOBJFILES	=	$(APP1OBJS) 

@@ -1,6 +1,6 @@
---- cppu/source/uno/data.cxx.orig.port	Fri Apr 11 12:39:24 2008
-+++ cppu/source/uno/data.cxx	Mon Jan 25 18:58:43 2010
-@@ -362,7 +362,7 @@ sal_Bool SAL_CALL uno_type_isAssignableFromData(
+--- cppu/source/uno/data.cxx.orig.port	Wed May 26 20:21:19 2010
++++ cppu/source/uno/data.cxx	Fri Jun 25 23:56:13 2010
+@@ -359,7 +359,7 @@ sal_Bool SAL_CALL uno_type_isAssignableFromData(
  #endif
  
  #if defined(INTEL) \
@@ -9,7 +9,7 @@
          || defined(__SUNPRO_CC) && defined(SOLARIS))
  #define MAX_ALIGNMENT_4
  #endif
-@@ -375,7 +375,7 @@ sal_Bool SAL_CALL uno_type_isAssignableFromData(
+@@ -372,7 +372,7 @@ sal_Bool SAL_CALL uno_type_isAssignableFromData(
      if (OFFSET_OF(s, m) != n) { fprintf( stderr, "### OFFSET_OF(" #s ", "  #m ") = %d instead of expected %d!!!\n", OFFSET_OF(s, m), n ); abort(); }
  
  #if OSL_DEBUG_LEVEL > 1

@@ -1,6 +1,6 @@
---- scp2/source/ooo/file_library_ooo.scp.orig.port	Sun Jan 24 16:12:33 2010
-+++ scp2/source/ooo/file_library_ooo.scp	Sun Jan 24 16:44:53 2010
-@@ -36,7 +36,7 @@ File gid_File_Lib_Accessbridge
+--- scp2/source/ooo/file_library_ooo.scp.orig.port	Wed May 26 20:29:06 2010
++++ scp2/source/ooo/file_library_ooo.scp	Fri Jun 25 23:56:14 2010
+@@ -34,7 +34,7 @@ File gid_File_Lib_Accessbridge
      Name = "java_uno_accessbridge.dll";
  End
  #endif

@@ -1,6 +1,6 @@
---- sal/osl/unx/socket.c.orig.port	Wed Oct  1 11:19:55 2008
-+++ sal/osl/unx/socket.c	Fri Apr 10 10:22:47 2009
-@@ -48,7 +48,7 @@
+--- sal/osl/unx/socket.c.orig.port	Wed May 26 20:28:29 2010
++++ sal/osl/unx/socket.c	Fri Jun 25 23:56:14 2010
+@@ -45,7 +45,7 @@
  #undef HAVE_POLL_H
  #endif
  

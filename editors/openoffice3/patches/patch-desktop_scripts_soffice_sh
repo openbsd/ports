@@ -1,6 +1,6 @@
---- desktop/scripts/soffice.sh.orig.port	Mon Apr 27 14:24:10 2009
-+++ desktop/scripts/soffice.sh	Sun Jan 24 16:37:46 2010
-@@ -43,6 +43,11 @@ export SAL_ENABLE_FILE_LOCKING
+--- desktop/scripts/soffice.sh.orig.port	Wed May 26 20:21:55 2010
++++ desktop/scripts/soffice.sh	Fri Jun 25 23:56:13 2010
+@@ -39,6 +39,11 @@ export SAL_ENABLE_FILE_LOCKING
  # working on your system.
  # SAL_NOOPENGL=true; export SAL_NOOPENGL
  
@@ -12,7 +12,7 @@
  # the following test is needed on Linux PPC with IBM j2sdk142
  if [ "`uname -s`" = "Linux" -a "`uname -m`" = "ppc" ] ; then
      JITC_PROCESSOR_TYPE=6
-@@ -97,6 +102,16 @@ for sd_arg in "$@"; do
+@@ -93,6 +98,16 @@ for sd_arg in "$@"; do
  done
  "$sd_prog/../basis-link/program/pagein" -L"$sd_prog/../basis-link/program" \
      ${sd_pagein_args}

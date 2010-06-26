@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_inc_tools_inetdef_hxx,v 1.2 2009/01/22 17:44:39 robert Exp $
---- tools/inc/tools/inetdef.hxx.orig.port	Fri Aug  1 07:38:04 2008
-+++ tools/inc/tools/inetdef.hxx	Thu Jan 15 14:47:51 2009
-@@ -59,6 +59,8 @@
+$OpenBSD: patch-tools_inc_tools_inetdef_hxx,v 1.3 2010/06/26 15:48:12 robert Exp $
+--- tools/inc/tools/inetdef.hxx.orig.port	Wed May 26 20:33:52 2010
++++ tools/inc/tools/inetdef.hxx	Fri Jun 25 23:56:14 2010
+@@ -56,6 +56,8 @@
  #define TOOLS_INETDEF_OS "FreeBSD/i386"
  #elif defined FREEBSD && defined X86_64
  #define TOOLS_INETDEF_OS "FreeBSD/amd64"

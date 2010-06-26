@@ -1,7 +1,7 @@
-$OpenBSD: patch-sal_osl_unx_file_error_transl_cxx,v 1.2 2009/01/22 17:44:39 robert Exp $
---- sal/osl/unx/file_error_transl.cxx.orig.port	Fri Aug  1 07:32:17 2008
-+++ sal/osl/unx/file_error_transl.cxx	Thu Jan 15 14:47:50 2009
-@@ -217,19 +217,19 @@ oslFileError oslTranslateFileError(sal_Bool bIsError, 
+$OpenBSD: patch-sal_osl_unx_file_error_transl_cxx,v 1.3 2010/06/26 15:48:12 robert Exp $
+--- sal/osl/unx/file_error_transl.cxx.orig.port	Wed May 26 20:28:29 2010
++++ sal/osl/unx/file_error_transl.cxx	Fri Jun 25 23:56:14 2010
+@@ -214,19 +214,19 @@ oslFileError oslTranslateFileError(sal_Bool bIsError, 
              osl_error = osl_File_E_LOOP;
              break;
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-sal_osl_unx_file_error_transl_cxx,v 1.2 2009/01/22 17:44:39 robe
          case EMULTIHOP:
              osl_error = osl_File_E_MULTIHOP;
              break;
-@@ -239,9 +239,11 @@ oslFileError oslTranslateFileError(sal_Bool bIsError, 
+@@ -236,9 +236,11 @@ oslFileError oslTranslateFileError(sal_Bool bIsError, 
              osl_error = osl_File_E_USERS;
              break;
  

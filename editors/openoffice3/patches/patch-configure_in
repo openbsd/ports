@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
---- configure.in.orig.port	Sun Jan 24 16:14:31 2010
-+++ configure.in	Sun Jan 24 16:24:10 2010
-@@ -1036,6 +1036,18 @@ case "$build_os" in
+$OpenBSD: patch-configure_in,v 1.3 2010/06/26 15:48:11 robert Exp $
+--- configure.in.orig.port	Wed May 26 20:21:11 2010
++++ configure.in	Fri Jun 25 23:57:08 2010
+@@ -1053,6 +1053,18 @@ case "$build_os" in
  		echo "AIX is an alpha port --- Use at own risk" >> warn
  		_os=AIX
  		;;
@@ -20,7 +20,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
     *)
     AC_MSG_ERROR([$_os operating system is not suitable to build OpenOffice.org!])
     ;;
-@@ -2482,6 +2494,8 @@ dnl ==================================================
+@@ -2499,6 +2511,8 @@ dnl ==================================================
        DEFAULT_TO_STLPORT="yes" 
     elif test "$_os" = "FreeBSD"; then
        DEFAULT_TO_STLPORT="yes"
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
     fi
     if test "$DEFAULT_TO_STLPORT" = "yes"; then
        AC_MSG_RESULT([stlport])
-@@ -3345,6 +3359,9 @@ if test "$_os" != "WINNT" -a \( "z$enable_epm" = "z" -
+@@ -3362,6 +3376,9 @@ if test "$_os" != "WINNT" -a \( "z$enable_epm" = "z" -
  	AIX)
  		PKGFORMAT=aix
  		;;
@@ -39,7 +39,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
  	*BSD)
  		PKGFORMAT=bsd
  		;;
-@@ -3674,7 +3691,7 @@ if test -n "$with_system_libwpd" -o -n "$with_system_l
+@@ -3691,7 +3708,7 @@ if test -n "$with_system_libwpd" -o -n "$with_system_l
          test "$with_system_libwpd" != "no"; then
      AC_MSG_RESULT([external])
      SYSTEM_LIBWPD=YES
@@ -48,7 +48,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
  else
      AC_MSG_RESULT([internal])
      SYSTEM_LIBWPD=NO
-@@ -3794,12 +3811,13 @@ if test -n "$with_system_python" -o -n "$with_system_l
+@@ -3811,12 +3828,13 @@ if test -n "$with_system_python" -o -n "$with_system_l
  
     python_include=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('INCLUDEPY');"`
     python_version=`$PYTHON -c "import distutils.sysconfig; print distutils.sysconfig.get_config_var('VERSION');"`
@@ -63,7 +63,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
     fi
     
     dnl check if the headers really work:
-@@ -3838,16 +3856,13 @@ if test -n "$with_system_db" -o -n "$with_system_libs"
+@@ -3855,16 +3873,13 @@ if test -n "$with_system_db" -o -n "$with_system_libs"
  	test "$with_system_db" != "no"; then
      SYSTEM_DB=YES
      AC_MSG_RESULT([external])
@@ -85,7 +85,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
         AC_TRY_RUN([
  #include <db.h>
  
-@@ -3857,6 +3872,7 @@ int main(int argc, char **argv) {
+@@ -3874,6 +3889,7 @@ int main(int argc, char **argv) {
  }
         ], [DB_VERSION_MINOR=$v], [])
      done
@@ -93,7 +93,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
      if test "$DB_VERSION_MINOR" -gt "1"; then
         AC_MSG_RESULT([OK])
         DB_VERSION=4.$DB_VERSION_MINOR
-@@ -4522,11 +4538,11 @@ if test -n "$with_system_icu" -o -n "$with_system_libs
+@@ -4661,11 +4677,11 @@ if test -n "$with_system_icu" -o -n "$with_system_libs
     if test -z "$SYSTEM_GENBRK"; then
        AC_MSG_ERROR([\"genbrk\" not found in \$PATH, install the icu development tool \"genbrk"\])
     fi
@@ -107,7 +107,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
     if test -z "$SYSTEM_GENCMN"; then
        AC_MSG_ERROR([\"gencmn\" not found in \$PATH, install the icu development tool \"gencmn"\])
     fi
-@@ -4641,7 +4657,7 @@ elif test "$_os" != "WINNT" ; then
+@@ -4780,7 +4796,7 @@ elif test "$_os" != "WINNT" ; then
        AC_MSG_ERROR([No X includes found]) # Exit
     fi
     CFLAGS=$X_CFLAGS
@@ -116,7 +116,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
     AC_CHECK_LIB(X11, XOpenDisplay, x_libs="-lX11 $X_EXTRA_LIBS", [AC_MSG_ERROR([X Development libraries not found])])
     dnl Check if the XauDisposeAuth symbol is provided by libXau.
     AC_CHECK_LIB(Xau, XauDisposeAuth, XAU_LIBS="-lXau", [])
-@@ -4818,7 +4834,7 @@ if test -n "$with_system_openssl" -o -n "$with_system_
+@@ -4957,7 +4973,7 @@ if test -n "$with_system_openssl" -o -n "$with_system_
      AC_MSG_RESULT([external])
      # Mac OS builds should get out without extra stuff is the Mac porters'
      # wish. And pkg-config is although Xcode ships a .pc for openssl
@@ -125,7 +125,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
          OPENSSL_CFLAGS=
          OPENSSL_LIBS="-lssl -lcrypto"
      else
-@@ -5986,42 +6002,24 @@ KDE_LIBS=""
+@@ -6125,42 +6141,24 @@ KDE_LIBS=""
  MOC="moc"
  if test "$test_kde" = "yes" -a "$ENABLE_KDE" = "TRUE" ; then
      dnl Search paths for Qt and KDE
@@ -176,7 +176,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
  
      dnl Check for Qt headers
      AC_MSG_CHECKING([for Qt headers])
-@@ -6042,7 +6040,7 @@ your Qt installation by exporting QTDIR before running
+@@ -6181,7 +6179,7 @@ your Qt installation by exporting QTDIR before running
      AC_MSG_CHECKING([for Qt libraries])
      qt_libdir="no"
      for qt_check in $qt_libdirs ; do
@@ -185,7 +185,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
              qt_libdir="$qt_check"
              break
          fi
-@@ -6079,7 +6077,7 @@ your KDE installation by exporting KDEDIR before runni
+@@ -6218,7 +6216,7 @@ your KDE installation by exporting KDEDIR before runni
      AC_MSG_CHECKING([for KDE libraries])
      kde_libdir="no"
      for kde_check in $kde_libdirs ; do
@@ -194,7 +194,7 @@ $OpenBSD: patch-configure_in,v 1.2 2010/03/30 11:03:07 robert Exp $
              kde_libdir="$kde_check"
              break
          fi
-@@ -6320,7 +6318,7 @@ AC_SUBST(WITHOUT_AFMS)
+@@ -6459,7 +6457,7 @@ AC_SUBST(WITHOUT_AFMS)
  AC_SUBST(SCPDEFS)
  
  AC_MSG_CHECKING([whether and how to use Xinerama])

@@ -1,7 +1,7 @@
-$OpenBSD: patch-jvmfwk_plugins_sunmajor_pluginlib_sunversion_hxx,v 1.2 2009/01/22 17:44:39 robert Exp $
---- jvmfwk/plugins/sunmajor/pluginlib/sunversion.hxx.orig.port	Fri Aug  1 07:26:49 2008
-+++ jvmfwk/plugins/sunmajor/pluginlib/sunversion.hxx	Thu Jan 15 14:47:50 2009
-@@ -79,7 +79,7 @@ class SunVersion (protected)
+$OpenBSD: patch-jvmfwk_plugins_sunmajor_pluginlib_sunversion_hxx,v 1.3 2010/06/26 15:48:12 robert Exp $
+--- jvmfwk/plugins/sunmajor/pluginlib/sunversion.hxx.orig.port	Wed May 26 20:23:38 2010
++++ jvmfwk/plugins/sunmajor/pluginlib/sunversion.hxx	Fri Jun 25 23:56:13 2010
+@@ -76,7 +76,7 @@ class SunVersion (protected)
          Rel_RC1,
          Rel_RC2,
          Rel_RC3

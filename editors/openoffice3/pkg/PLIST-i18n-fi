@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-fi,v 1.6 2010/03/30 11:03:07 robert Exp $
+@comment $OpenBSD: PLIST-i18n-fi,v 1.7 2010/06/26 15:48:12 robert Exp $
 @pkgpath editors/openoffice,-i18n-fi
 !%%no_java%%
 openoffice.org/basis3.2/help/fi/
@@ -91,12 +91,12 @@ openoffice.org/basis3.2/help/fi/swriter.idxl/segments_3
 openoffice.org/basis3.2/help/fi/swriter.jar
 openoffice.org/basis3.2/help/fi/swriter.key
 openoffice.org/basis3.2/help/fi/swriter.tree
-openoffice.org/basis3.2/presets/config/arrowhd_en-US_fi.soe
-openoffice.org/basis3.2/presets/config/classic_en-US_fi.sog
-openoffice.org/basis3.2/presets/config/hatching_en-US_fi.soh
-openoffice.org/basis3.2/presets/config/modern_en-US_fi.sog
-openoffice.org/basis3.2/presets/config/palette_en-US_fi.soc
-openoffice.org/basis3.2/presets/config/styles_en-US_fi.sod
+openoffice.org/basis3.2/presets/config/arrowhd_fi.soe
+openoffice.org/basis3.2/presets/config/classic_fi.sog
+openoffice.org/basis3.2/presets/config/hatching_fi.soh
+openoffice.org/basis3.2/presets/config/modern_fi.sog
+openoffice.org/basis3.2/presets/config/palette_fi.soc
+openoffice.org/basis3.2/presets/config/styles_fi.sod
 openoffice.org/basis3.2/program/resource/abpfi.res
 openoffice.org/basis3.2/program/resource/accfi.res
 openoffice.org/basis3.2/program/resource/adabasuifi.res
@@ -410,7 +410,6 @@ openoffice.org/basis3.2/share/template/fi/wizard/styles/nostalgic.ots
 openoffice.org/basis3.2/share/template/fi/wizard/styles/pastell.ots
 openoffice.org/basis3.2/share/template/fi/wizard/styles/pool.ots
 openoffice.org/basis3.2/share/template/fi/wizard/styles/pumpkin.ots
-openoffice.org/basis3.2/share/template/fi/wizard/styles/sunstyle.ots
 openoffice.org/basis3.2/share/template/fi/wizard/styles/xos.ots
 openoffice.org/basis3.2/share/wordbook/fi/
 openoffice.org/basis3.2/share/wordbook/fi/soffice.dic

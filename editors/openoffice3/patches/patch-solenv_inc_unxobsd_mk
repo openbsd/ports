@@ -1,5 +1,5 @@
---- solenv/inc/unxobsd.mk.orig.port	Thu Feb 11 12:28:02 2010
-+++ solenv/inc/unxobsd.mk	Thu Feb 11 13:39:37 2010
+--- solenv/inc/unxobsd.mk.orig.port	Fri Jun 25 23:56:14 2010
++++ solenv/inc/unxobsd.mk	Fri Jun 25 23:56:15 2010
 @@ -0,0 +1,248 @@
 +#*************************************************************************
 +#
@@ -11,7 +11,7 @@
 +#
 +# $RCSfile: patch-solenv_inc_unxobsd_mk,v $
 +#
-+# $Revision: 1.8 $
++# $Revision: 1.9 $
 +#
 +# This file is part of OpenOffice.org.
 +#
@@ -191,7 +191,7 @@
 +
 +# Sequence of libs does matter !
 +
-+STDLIBCPP=-l%%STDLIB%%
++STDLIBCPP=-lstdc++
 +
 +# default objectfilenames to link
 +STDOBJVCL=$(L)$/salmain.o

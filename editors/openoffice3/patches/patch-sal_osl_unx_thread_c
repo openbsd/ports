@@ -1,6 +1,6 @@
---- sal/osl/unx/thread.c.orig.port	Wed Oct  1 12:04:58 2008
-+++ sal/osl/unx/thread.c	Thu May  7 23:14:17 2009
-@@ -30,6 +30,7 @@
+--- sal/osl/unx/thread.c.orig.port	Wed May 26 20:28:29 2010
++++ sal/osl/unx/thread.c	Fri Jun 25 23:56:14 2010
+@@ -27,6 +27,7 @@
  
  #include "system.h"
  #include <string.h>
@@ -8,7 +8,7 @@
  #include <osl/diagnose.h>
  #include <osl/thread.h>
  #include <osl/nlsupport.h>
-@@ -284,6 +285,7 @@ static oslThread osl_thread_create_Impl (
+@@ -281,6 +282,7 @@ static oslThread osl_thread_create_Impl (
  {
  	Thread_Impl* pImpl;
      int nRet=0;
@@ -16,7 +16,7 @@
  
  	pImpl = osl_thread_construct_Impl();
      if (!pImpl)
-@@ -295,9 +297,18 @@ static oslThread osl_thread_create_Impl (
+@@ -292,9 +294,18 @@ static oslThread osl_thread_create_Impl (
  
      pthread_mutex_lock (&(pImpl->m_Lock));
  
@@ -36,7 +36,7 @@
  		osl_thread_start_Impl,
  		(void*)(pImpl))) != 0)
  	{
-@@ -309,6 +320,8 @@ static oslThread osl_thread_create_Impl (
+@@ -306,6 +317,8 @@ static oslThread osl_thread_create_Impl (
  
  		return (0);
  	}

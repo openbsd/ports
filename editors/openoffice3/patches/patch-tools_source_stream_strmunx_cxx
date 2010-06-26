@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_source_stream_strmunx_cxx,v 1.2 2009/01/22 17:44:39 robert Exp $
---- tools/source/stream/strmunx.cxx.orig.port	Fri Aug  1 07:38:07 2008
-+++ tools/source/stream/strmunx.cxx	Thu Jan 15 14:47:51 2009
-@@ -212,7 +212,7 @@ static sal_uInt32 GetSvError( int nErrno )
+$OpenBSD: patch-tools_source_stream_strmunx_cxx,v 1.3 2010/06/26 15:48:12 robert Exp $
+--- tools/source/stream/strmunx.cxx.orig.port	Wed May 26 20:33:53 2010
++++ tools/source/stream/strmunx.cxx	Fri Jun 25 23:56:14 2010
+@@ -209,7 +209,7 @@ static sal_uInt32 GetSvError( int nErrno )
          { 0,            SVSTREAM_OK },
          { EACCES,       SVSTREAM_ACCESS_DENIED },
          { EBADF,        SVSTREAM_INVALID_HANDLE },
@@ -10,7 +10,7 @@ $OpenBSD: patch-tools_source_stream_strmunx_cxx,v 1.2 2009/01/22 17:44:39 robert
          { EDEADLK,      SVSTREAM_LOCKING_VIOLATION },
  #else
          { EDEADLOCK,    SVSTREAM_LOCKING_VIOLATION },
-@@ -226,7 +226,7 @@ static sal_uInt32 GetSvError( int nErrno )
+@@ -223,7 +223,7 @@ static sal_uInt32 GetSvError( int nErrno )
          { EAGAIN,       SVSTREAM_LOCKING_VIOLATION },
          { EISDIR,       SVSTREAM_PATH_NOT_FOUND },
          { ELOOP,        SVSTREAM_PATH_NOT_FOUND },

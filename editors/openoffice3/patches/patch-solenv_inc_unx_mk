@@ -1,8 +1,8 @@
 # i100395
-$OpenBSD: patch-solenv_inc_unx_mk,v 1.3 2010/03/30 11:03:07 robert Exp $
---- solenv/inc/unx.mk.orig.port	Fri Oct  2 10:24:56 2009
-+++ solenv/inc/unx.mk	Fri Feb 12 15:57:26 2010
-@@ -32,6 +32,9 @@
+$OpenBSD: patch-solenv_inc_unx_mk,v 1.4 2010/06/26 15:48:12 robert Exp $
+--- solenv/inc/unx.mk.orig.port	Wed May 26 20:30:12 2010
++++ solenv/inc/unx.mk	Fri Jun 25 23:56:14 2010
+@@ -28,6 +28,9 @@
  # --- Unix-Environment ---------------------------------------
  # Used if "$(GUI)" == "UNX"
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-solenv_inc_unx_mk,v 1.3 2010/03/30 11:03:07 robert Exp $
  
  # Dieses Define gilt fuer alle  WNT- Plattformen
  # fuer Compiler, wo kein Java unterstuetzt wird, muss dies ge'undeft werden
-@@ -220,7 +223,13 @@ SOLARLIB+=-L$(KDE_ROOT)/lib
+@@ -216,7 +219,13 @@ SOLARLIB+=-L$(KDE_ROOT)/lib
  AUGMENT_LIBRARY_PATH *= : && \
      LD_LIBRARY_PATH=$${{LD_LIBRARY_PATH+$${{LD_LIBRARY_PATH}}:}}$(SOLARLIBDIR)
  .ELSE
