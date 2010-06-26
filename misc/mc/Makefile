@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2010/03/28 18:28:47 robert Exp $
+# $OpenBSD: Makefile,v 1.33 2010/06/26 16:34:28 robert Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
-DISTNAME=		mc-4.7.0.3
+DISTNAME=		mc-4.7.0.6
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.midnight-commander.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m pcre termcap
+WANTLIB=		c m pcre pthread termcap
 
 USE_GMAKE=		Yes
 

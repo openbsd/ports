@@ -1,9 +1,42 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/01/01 19:21:05 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2010/06/26 16:34:28 robert Exp $
 @bin bin/mc
 bin/mcedit
 @bin bin/mcmfmt
 bin/mcview
 libexec/mc/
+libexec/mc/extfs.d/
+libexec/mc/extfs.d/README
+libexec/mc/extfs.d/README.extfs
+libexec/mc/extfs.d/a+
+libexec/mc/extfs.d/apt+
+libexec/mc/extfs.d/audio
+libexec/mc/extfs.d/bpp
+libexec/mc/extfs.d/deb
+libexec/mc/extfs.d/deba
+libexec/mc/extfs.d/debd
+libexec/mc/extfs.d/dpkg+
+libexec/mc/extfs.d/hp48+
+libexec/mc/extfs.d/iso9660
+libexec/mc/extfs.d/lslR
+libexec/mc/extfs.d/mailfs
+libexec/mc/extfs.d/patchfs
+libexec/mc/extfs.d/rpm
+libexec/mc/extfs.d/rpms+
+libexec/mc/extfs.d/s3+
+libexec/mc/extfs.d/trpm
+libexec/mc/extfs.d/u7z
+libexec/mc/extfs.d/uace
+libexec/mc/extfs.d/ualz
+libexec/mc/extfs.d/uar
+libexec/mc/extfs.d/uarc
+libexec/mc/extfs.d/uarj
+libexec/mc/extfs.d/uc1541
+libexec/mc/extfs.d/ucab
+libexec/mc/extfs.d/uha
+libexec/mc/extfs.d/ulha
+libexec/mc/extfs.d/urar
+libexec/mc/extfs.d/uzip
+libexec/mc/extfs.d/uzoo
 libexec/mc/mc-wrapper.csh
 libexec/mc/mc-wrapper.sh
 libexec/mc/mc.csh
@@ -40,12 +73,7 @@ share/examples/mc/edit.indent.rc
 @sample ${SYSCONFDIR}/mc/edit.indent.rc
 share/examples/mc/edit.spell.rc
 @sample ${SYSCONFDIR}/mc/edit.spell.rc
-share/examples/mc/extfs/
 @sample ${SYSCONFDIR}/mc/extfs/
-share/examples/mc/extfs/extfs.ini
-@sample ${SYSCONFDIR}/mc/extfs/extfs.ini
-share/examples/mc/extfs/sfs.ini
-@sample ${SYSCONFDIR}/mc/extfs/sfs.ini
 share/examples/mc/filehighlight.ini
 @sample ${SYSCONFDIR}/mc/filehighlight.ini
 share/examples/mc/mc.charsets
@@ -64,6 +92,7 @@ share/examples/mc/mc.menu
 @sample ${SYSCONFDIR}/mc/mc.menu
 share/examples/mc/mc.menu.sr
 @sample ${SYSCONFDIR}/mc/mc.menu.sr
+share/examples/mc/sfs.ini
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/mc.mo
@@ -115,38 +144,6 @@ share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_CN/LC_MESSAGES/mc.mo
 share/locale/zh_TW/LC_MESSAGES/mc.mo
 share/mc/
-share/mc/extfs/
-share/mc/extfs/README
-share/mc/extfs/a
-share/mc/extfs/apt
-share/mc/extfs/audio
-share/mc/extfs/bpp
-share/mc/extfs/deb
-share/mc/extfs/deba
-share/mc/extfs/debd
-share/mc/extfs/dpkg
-share/mc/extfs/hp48
-share/mc/extfs/iso9660
-share/mc/extfs/lslR
-share/mc/extfs/mailfs
-share/mc/extfs/patchfs
-share/mc/extfs/rpm
-share/mc/extfs/rpms
-share/mc/extfs/s3
-share/mc/extfs/trpm
-share/mc/extfs/u7z
-share/mc/extfs/uace
-share/mc/extfs/ualz
-share/mc/extfs/uar
-share/mc/extfs/uarc
-share/mc/extfs/uarj
-share/mc/extfs/uc1541
-share/mc/extfs/ucab
-share/mc/extfs/uha
-share/mc/extfs/ulha
-share/mc/extfs/urar
-share/mc/extfs/uzip
-share/mc/extfs/uzoo
 share/mc/mc.hint
 share/mc/mc.hint.cs
 share/mc/mc.hint.es
@@ -199,6 +196,7 @@ share/mc/syntax/fortran.syntax
 share/mc/syntax/haskell.syntax
 share/mc/syntax/html.syntax
 share/mc/syntax/idl.syntax
+share/mc/syntax/ini.syntax
 share/mc/syntax/j.syntax
 share/mc/syntax/java.syntax
 share/mc/syntax/js.syntax
