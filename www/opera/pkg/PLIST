@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2010/03/20 16:51:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2010/06/26 06:18:08 sturm Exp $
 bin/opera
 lib/opera/
 lib/opera/plugins/
@@ -192,6 +192,8 @@ share/opera/locale/uk/bookmarks.adr
 share/opera/locale/uk/search.ini
 share/opera/locale/uk/standard_speeddial.ini
 share/opera/locale/uk/uk.lng
+share/opera/locale/vi/
+share/opera/locale/vi/vi.lng
 share/opera/locale/zh-cn/
 share/opera/locale/zh-cn/bookmarks.adr
 share/opera/locale/zh-cn/browser.js
