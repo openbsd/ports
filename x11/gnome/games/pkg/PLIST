@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/05/17 16:35:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2010/06/26 04:42:51 ajacoutot Exp $
 bin/glchess
 @mode g+s
 @group games
@@ -1606,6 +1606,7 @@ share/gnome/help/gnomine/zh_CN/gnomine.xml
 share/gnome/help/gnotravex/
 share/gnome/help/gnotravex/C/
 share/gnome/help/gnotravex/C/figures/
+share/gnome/help/gnotravex/C/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/C/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/C/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/C/gameplay.page
@@ -1620,6 +1621,7 @@ share/gnome/help/gnotravex/C/usage.page
 share/gnome/help/gnotravex/C/winning.page
 share/gnome/help/gnotravex/ca/
 share/gnome/help/gnotravex/ca/figures/
+share/gnome/help/gnotravex/ca/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/ca/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/ca/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/ca/gameplay.page
@@ -1634,6 +1636,7 @@ share/gnome/help/gnotravex/ca/usage.page
 share/gnome/help/gnotravex/ca/winning.page
 share/gnome/help/gnotravex/cs/
 share/gnome/help/gnotravex/cs/figures/
+share/gnome/help/gnotravex/cs/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/cs/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/cs/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/cs/gameplay.page
@@ -1648,6 +1651,7 @@ share/gnome/help/gnotravex/cs/usage.page
 share/gnome/help/gnotravex/cs/winning.page
 share/gnome/help/gnotravex/da/
 share/gnome/help/gnotravex/da/figures/
+share/gnome/help/gnotravex/da/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/da/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/da/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/da/gameplay.page
@@ -1662,6 +1666,7 @@ share/gnome/help/gnotravex/da/usage.page
 share/gnome/help/gnotravex/da/winning.page
 share/gnome/help/gnotravex/de/
 share/gnome/help/gnotravex/de/figures/
+share/gnome/help/gnotravex/de/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/de/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/de/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/de/gameplay.page
@@ -1676,6 +1681,7 @@ share/gnome/help/gnotravex/de/usage.page
 share/gnome/help/gnotravex/de/winning.page
 share/gnome/help/gnotravex/el/
 share/gnome/help/gnotravex/el/figures/
+share/gnome/help/gnotravex/el/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/el/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/el/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/el/gameplay.page
@@ -1690,6 +1696,7 @@ share/gnome/help/gnotravex/el/usage.page
 share/gnome/help/gnotravex/el/winning.page
 share/gnome/help/gnotravex/en_GB/
 share/gnome/help/gnotravex/en_GB/figures/
+share/gnome/help/gnotravex/en_GB/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/en_GB/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/en_GB/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/en_GB/gameplay.page
@@ -1704,6 +1711,7 @@ share/gnome/help/gnotravex/en_GB/usage.page
 share/gnome/help/gnotravex/en_GB/winning.page
 share/gnome/help/gnotravex/es/
 share/gnome/help/gnotravex/es/figures/
+share/gnome/help/gnotravex/es/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/es/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/es/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/es/gameplay.page
@@ -1718,6 +1726,7 @@ share/gnome/help/gnotravex/es/usage.page
 share/gnome/help/gnotravex/es/winning.page
 share/gnome/help/gnotravex/eu/
 share/gnome/help/gnotravex/eu/figures/
+share/gnome/help/gnotravex/eu/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/eu/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/eu/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/eu/gameplay.page
@@ -1732,6 +1741,7 @@ share/gnome/help/gnotravex/eu/usage.page
 share/gnome/help/gnotravex/eu/winning.page
 share/gnome/help/gnotravex/fr/
 share/gnome/help/gnotravex/fr/figures/
+share/gnome/help/gnotravex/fr/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/fr/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/fr/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/fr/gameplay.page
@@ -1746,6 +1756,7 @@ share/gnome/help/gnotravex/fr/usage.page
 share/gnome/help/gnotravex/fr/winning.page
 share/gnome/help/gnotravex/it/
 share/gnome/help/gnotravex/it/figures/
+share/gnome/help/gnotravex/it/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/it/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/it/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/it/gameplay.page
@@ -1760,6 +1771,7 @@ share/gnome/help/gnotravex/it/usage.page
 share/gnome/help/gnotravex/it/winning.page
 share/gnome/help/gnotravex/oc/
 share/gnome/help/gnotravex/oc/figures/
+share/gnome/help/gnotravex/oc/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/oc/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/oc/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/oc/gameplay.page
@@ -1774,6 +1786,7 @@ share/gnome/help/gnotravex/oc/usage.page
 share/gnome/help/gnotravex/oc/winning.page
 share/gnome/help/gnotravex/ru/
 share/gnome/help/gnotravex/ru/figures/
+share/gnome/help/gnotravex/ru/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/ru/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/ru/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/ru/gameplay.page
@@ -1788,6 +1801,7 @@ share/gnome/help/gnotravex/ru/usage.page
 share/gnome/help/gnotravex/ru/winning.page
 share/gnome/help/gnotravex/sl/
 share/gnome/help/gnotravex/sl/figures/
+share/gnome/help/gnotravex/sl/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/sl/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/sl/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/sl/gameplay.page
@@ -1802,6 +1816,7 @@ share/gnome/help/gnotravex/sl/usage.page
 share/gnome/help/gnotravex/sl/winning.page
 share/gnome/help/gnotravex/sr/
 share/gnome/help/gnotravex/sr/figures/
+share/gnome/help/gnotravex/sr/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/sr/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/sr/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/sr/gameplay.page
@@ -1816,6 +1831,7 @@ share/gnome/help/gnotravex/sr/usage.page
 share/gnome/help/gnotravex/sr/winning.page
 share/gnome/help/gnotravex/sr@latin/
 share/gnome/help/gnotravex/sr@latin/figures/
+share/gnome/help/gnotravex/sr@latin/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/sr@latin/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/sr@latin/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/sr@latin/gameplay.page
@@ -1830,6 +1846,7 @@ share/gnome/help/gnotravex/sr@latin/usage.page
 share/gnome/help/gnotravex/sr@latin/winning.page
 share/gnome/help/gnotravex/sv/
 share/gnome/help/gnotravex/sv/figures/
+share/gnome/help/gnotravex/sv/figures/gnotravex-logo.png
 share/gnome/help/gnotravex/sv/figures/gnotravex-main-window.png
 share/gnome/help/gnotravex/sv/figures/gnotravex-video.ogv
 share/gnome/help/gnotravex/sv/gameplay.page
@@ -1859,6 +1876,11 @@ share/gnome/help/gnotski/cs/figures/
 share/gnome/help/gnotski/cs/figures/gnotski_start_window.png
 share/gnome/help/gnotski/cs/figures/gnotski_win.png
 share/gnome/help/gnotski/cs/gnotski.xml
+share/gnome/help/gnotski/da/
+share/gnome/help/gnotski/da/figures/
+share/gnome/help/gnotski/da/figures/gnotski_start_window.png
+share/gnome/help/gnotski/da/figures/gnotski_win.png
+share/gnome/help/gnotski/da/gnotski.xml
 share/gnome/help/gnotski/de/
 share/gnome/help/gnotski/de/figures/
 share/gnome/help/gnotski/de/figures/gnotski_start_window.png
@@ -2573,6 +2595,7 @@ share/omf/gnotski/
 share/omf/gnotski/gnotski-C.omf
 share/omf/gnotski/gnotski-ca.omf
 share/omf/gnotski/gnotski-cs.omf
+share/omf/gnotski/gnotski-da.omf
 share/omf/gnotski/gnotski-de.omf
 share/omf/gnotski/gnotski-el.omf
 share/omf/gnotski/gnotski-en_GB.omf
