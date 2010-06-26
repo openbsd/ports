@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/06/21 19:15:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2010/06/26 03:43:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	2.30.2
+GNOME_VERSION=	2.30.3
 
 CATEGORIES=	graphics print
 
