@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/27 20:37:19 ckuethe Exp $
+${P5SITE}/WWW/Tumblr.pm
+@man man/man3p/WWW::Tumblr.3p
