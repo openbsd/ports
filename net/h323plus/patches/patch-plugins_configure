@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_configure,v 1.2 2010/03/27 14:58:50 ajacoutot Exp $
+$OpenBSD: patch-plugins_configure,v 1.3 2010/06/27 01:30:33 ajacoutot Exp $
 --- plugins/configure.orig	Mon Oct 22 09:40:39 2007
-+++ plugins/configure	Sat Mar 27 15:49:58 2010
++++ plugins/configure	Sun Jun 27 03:22:08 2010
 @@ -3156,7 +3156,7 @@ case "$target_os" in
            esac
  	  PLUGINEXT=dylib
@@ -45,3 +45,21 @@ $OpenBSD: patch-plugins_configure,v 1.2 2010/03/27 14:58:50 ajacoutot Exp $
    	     #ifdef LIBAVCODEC_VERSION_INT
                 #if LIBAVCODEC_VERSION_INT >= ((51<<16)+(11<<8)+0)
                   yes
+@@ -6321,7 +6321,7 @@ if test "x${enable_x264}" != "xno" ; then
+     enable_x264=yes
+ 
+     saved_LIBS="$LIBS"
+-    LIBS="$LIBS -lm -lz -lpthread"
++    LIBS="$LIBS -lm -lz -pthread"
+     echo "$as_me:$LINENO: checking for x264_encoder_open in -lx264" >&5
+ echo $ECHO_N "checking for x264_encoder_open in -lx264... $ECHO_C" >&6
+ if test "${ac_cv_lib_x264_x264_encoder_open+set}" = set; then
+@@ -6621,7 +6621,7 @@ if test "x${enable_theora}" != "xno" ; then
+     enable_theora=yes
+ 
+     saved_LIBS="$LIBS"
+-    LIBS="$LIBS -lm -lz -lpthread"
++    LIBS="$LIBS -lm -lz -pthread"
+     echo "$as_me:$LINENO: checking for theora_encode_init in -ltheora" >&5
+ echo $ECHO_N "checking for theora_encode_init in -ltheora... $ECHO_C" >&6
+ if test "${ac_cv_lib_theora_theora_encode_init+set}" = set; then
