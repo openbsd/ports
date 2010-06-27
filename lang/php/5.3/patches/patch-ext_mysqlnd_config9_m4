@@ -1,0 +1,10 @@
+--- ext/mysqlnd/config9.m4.orig	Fri Nov 20 23:52:11 2009
++++ ext/mysqlnd/config9.m4	Fri Nov 20 23:53:48 2009
+@@ -9,6 +9,7 @@
+                             Note: This forces ZTS on!], no, no)
+ 
+ dnl If some extension uses mysqlnd it will get compiled in PHP core
++PHP_MYSQLND_ENABLED="yes"
+ if test "$PHP_MYSQLND_ENABLED" = "yes"; then
+   mysqlnd_sources="mysqlnd.c mysqlnd_charset.c mysqlnd_wireprotocol.c \
+                    mysqlnd_ps.c mysqlnd_loaddata.c mysqlnd_palloc.c \

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-xmlrpc,v 1.1.1.1 2010/06/27 20:28:45 robert Exp $
+@conflict php4-xmlrpc-*
+@pkgpath www/php5/extensions,-xmlrpc,hardened
+@pkgpath www/php5/extensions,-xmlrpc,no_x11
+lib/php-${PV}/modules/xmlrpc.so
+share/examples/php-${PV}/xmlrpc.ini

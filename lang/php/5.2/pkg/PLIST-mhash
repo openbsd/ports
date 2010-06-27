@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-mhash,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+@conflict php4-mhash-*
+@pkgpath www/php5/extensions,-mhash,hardened
+@pkgpath www/php5/extensions,-mhash,no_x11
+lib/php-${PV}/modules/mhash.so
+share/examples/php-${PV}/mhash.ini

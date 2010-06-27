@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-dba,v 1.1.1.1 2010/06/27 20:28:45 robert Exp $
+@conflict php4-dba-*
+@pkgpath www/php5/extensions,-dba,hardened
+@pkgpath www/php5/extensions,-dba,no_x11
+lib/php-${PV}/modules/dba.so
+share/examples/php-${PV}/dba.ini

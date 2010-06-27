@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-mbstring,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+@conflict php4-mbstring-*
+@pkgpath www/php5/extensions,-mbstring,hardened
+@pkgpath www/php5/extensions,-mbstring,no_x11
+share/examples/php-${PV}/mbstring.ini
+lib/php-${PV}/modules/mbstring.so

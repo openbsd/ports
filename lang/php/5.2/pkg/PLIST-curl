@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-curl,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+@conflict php4-curl-*
+@pkgpath www/php5/extensions,-curl,hardened
+@pkgpath www/php5/extensions,-curl,no_x11
+lib/php-${PV}/modules/curl.so
+share/examples/php-${PV}/curl.ini

@@ -1,0 +1,7 @@
+SOAP (Simple Object Access Protocol) is a method for access remote
+XML resources on another machine.  It is a standard defined by The
+World Wide Web consortium (W3C).  Information about XSLT and related
+technologies can be found at http://www.w3.org/TR/soap.
+
+This PHP extension provides a processor independent API to SOAP
+protocol.

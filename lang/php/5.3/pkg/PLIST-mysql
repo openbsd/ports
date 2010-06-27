@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-mysql,v 1.1.1.1 2010/06/27 20:28:45 robert Exp $
+@conflict php4-mysql-*
+@pkgpath www/php5/extensions,-mysql,hardened
+@pkgpath www/php5/extensions,-mysql,no_x11
+lib/php-${PV}/modules/mysql.so
+share/examples/php-${PV}/mysql.ini

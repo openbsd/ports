@@ -1,0 +1,14 @@
+$OpenBSD: patch-scripts_Makefile_frag,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+--- scripts/Makefile.frag.orig	Tue Jun  7 23:57:06 2005
++++ scripts/Makefile.frag	Wed Sep 14 16:48:56 2005
+@@ -3,8 +3,8 @@
+ # Build environment install
+ #
+ 
+-phpincludedir = $(includedir)/php
+-phpbuilddir = $(libdir)/build
++phpincludedir = $(peardir)/include
++phpbuilddir = $(peardir)/build
+ 
+ BUILD_FILES = \
+ 	scripts/phpize.m4 \

@@ -1,0 +1,16 @@
+--- scripts/phpize.in.orig	Fri Jun 29 03:10:35 2007
++++ scripts/phpize.in	Wed Sep  5 10:38:43 2007
+@@ -1,10 +1,10 @@
+ #!/bin/sh
+ 
+ # Variable declaration
+-prefix='@prefix@'
++prefix=@PEAR_INSTALLDIR@
+ exec_prefix="`eval echo @exec_prefix@`"
+-phpdir="`eval echo @libdir@`/build"
+-includedir="`eval echo @includedir@`/php"
++phpdir="$prefix/build"
++includedir="$prefix/include"
+ builddir="`pwd`"
+ SED="@SED@"
+ 

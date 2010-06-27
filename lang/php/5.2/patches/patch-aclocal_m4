@@ -1,0 +1,63 @@
+--- aclocal.m4.orig	Wed Feb 24 13:27:25 2010
++++ aclocal.m4	Sat Jun 26 16:34:46 2010
+@@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
+ dnl
+ dnl which array to append to?
+ AC_DEFUN([PHP_ADD_SOURCES],[
+-  PHP_ADD_SOURCES_X($1, $2, $3, ifelse($4,cli,PHP_CLI_OBJS,ifelse($4,sapi,PHP_SAPI_OBJS,PHP_GLOBAL_OBJS)))
++  PHP_ADD_SOURCES_X($1, $2, $3, ifelse($4,cli,PHP_CLI_OBJS,ifelse($4,sapi,PHP_SAPI_OBJS,ifelse($4,cgi,PHP_CGI_OBJS,PHP_GLOBAL_OBJS))))
+ ])
+ 
+ dnl
+@@ -968,15 +968,7 @@ dnl ---------------------------------------------- Sha
+   if test "$3" != "shared" && test "$3" != "yes" && test "$4" = "cli"; then
+ dnl ---------------------------------------------- CLI static module
+     [PHP_]translit($1,a-z_-,A-Z__)[_SHARED]=no
+-    case "$PHP_SAPI" in
+-      cgi|embed[)]
+-        PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,)
+-        EXT_STATIC="$EXT_STATIC $1"
+-        ;;
+-      *[)]
+-        PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,cli)
+-        ;;
+-    esac
++    PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,cgi)
+     EXT_CLI_STATIC="$EXT_CLI_STATIC $1"
+   fi
+   PHP_ADD_BUILD_DIR($ext_builddir)
+@@ -1026,12 +1018,6 @@ You either need to build $1 shared or build $2 statica
+ build to be successful.
+ ])
+   fi
+-  if test "x$is_it_enabled" = "xno" && test "x$3" != "xtrue"; then
+-    AC_MSG_ERROR([
+-You've configured extension $1, which depends on extension $2,
+-but you've either not enabled $2, or have disabled it.
+-])
+-  fi
+   dnl Some systems require that we link $2 to $1 when building
+ ])
+ 
+@@ -2274,10 +2260,9 @@ AC_DEFUN([PHP_SETUP_KERBEROS],[
+     if test "$PHP_KERBEROS_DIR"; then
+       found_kerberos=yes
+       PHP_ADD_LIBPATH($PHP_KERBEROS_DIR/$PHP_LIBDIR, $1)
+-      PHP_ADD_LIBRARY(gssapi_krb5, 1, $1)
+       PHP_ADD_LIBRARY(krb5, 1, $1)
+-      PHP_ADD_LIBRARY(k5crypto, 1, $1)
+-      PHP_ADD_LIBRARY(com_err,  1, $1)
++      PHP_ADD_LIBRARY(crypto, 1, $1)
++      PHP_ADD_LIBRARY(gssapi, 1, $1)
+       PHP_ADD_INCLUDE($PHP_KERBEROS_DIR/include)
+     fi
+   fi
+@@ -4316,7 +4301,7 @@ bsdi[[45]]*)
+   need_version=no
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major $libname${shared_ext}'
+   soname_spec='${libname}${release}${shared_ext}$major'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig $libdir'
++  finish_cmds=
+   shlibpath_var=LD_LIBRARY_PATH
+   sys_lib_search_path_spec="/shlib /usr/lib /usr/X11/lib /usr/contrib/lib /lib /usr/local/lib"
+   sys_lib_dlsearch_path_spec="/shlib /usr/lib /usr/local/lib"

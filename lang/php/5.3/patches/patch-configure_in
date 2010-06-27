@@ -1,0 +1,59 @@
+--- configure.in.orig	Fri Jun 19 01:01:03 2009
++++ configure.in	Tue Jun 30 13:00:08 2009
+@@ -983,7 +983,7 @@
+ 
+ case $php_build_target in
+   program|static)
+-    standard_libtool_flag='-prefer-non-pic -static'
++    standard_libtool_flag=''
+     if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
+         enable_shared=no
+     fi
+@@ -992,10 +992,10 @@
+     enable_static=no
+     case $with_pic in
+       yes)
+-        standard_libtool_flag='-prefer-pic'
++        standard_libtool_flag=''
+         ;;
+       no)
+-        standard_libtool_flag='-prefer-non-pic'
++        standard_libtool_flag=''
+         ;;
+     esac
+     EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version -module"
+@@ -1184,7 +1184,7 @@
+ EXPANDED_DATADIR=$datadir
+ EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
+ EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
+-INCLUDE_PATH=.:$EXPANDED_PEAR_INSTALLDIR
++INCLUDE_PATH=.:$libdir
+ 
+ exec_prefix=$old_exec_prefix
+ libdir=$old_libdir
+@@ -1392,7 +1392,7 @@
+   pharcmd_install=
+ fi;
+ 
+-all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET) $pharcmd"
++all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET) $pharcmd"
+ install_targets="$install_modules install-build install-headers install-programs $install_pear $pharcmd_install"
+ 
+ case $PHP_SAPI in
+@@ -1437,7 +1437,7 @@
+ PHP_ADD_SOURCES(Zend, \
+     zend_language_parser.c zend_language_scanner.c \
+     zend_ini_parser.c zend_ini_scanner.c \
+-    zend_alloc.c zend_compile.c zend_constants.c zend_dynamic_array.c \
++    zend_compile.c zend_constants.c zend_dynamic_array.c \
+     zend_execute_API.c zend_highlight.c zend_llist.c \
+     zend_opcode.c zend_operators.c zend_ptr_stack.c zend_stack.c \
+     zend_variables.c zend.c zend_API.c zend_extensions.c zend_hash.c \
+@@ -1459,6 +1459,7 @@
+ fi
+ 
+ PHP_ADD_SOURCES_X(Zend, zend_execute.c,,PHP_GLOBAL_OBJS,,$flag)
++PHP_ADD_SOURCES_X(Zend, zend_alloc.c,,PHP_GLOBAL_OBJS,,"-O0")
+ 
+ PHP_ADD_BUILD_DIR(main main/streams)
+ PHP_ADD_BUILD_DIR(sapi/$PHP_SAPI sapi/cli)

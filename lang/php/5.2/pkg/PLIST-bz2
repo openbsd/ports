@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-bz2,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+@conflict php4-bz2-*
+@pkgpath www/php5/extensions,-bz2,hardened
+@pkgpath www/php5/extensions,-bz2,no_x11
+lib/php-${PV}/modules/bz2.so
+share/examples/php-${PV}/bz2.ini

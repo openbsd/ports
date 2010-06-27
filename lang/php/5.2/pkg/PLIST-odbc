@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-odbc,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+@conflict php4-odbc-*
+@pkgpath www/php5/extensions,-odbc,hardened
+@pkgpath www/php5/extensions,-odbc,no_x11
+lib/php-${PV}/modules/odbc.so
+share/examples/php-${PV}/odbc.ini

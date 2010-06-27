@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-mssql,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+@pkgpath www/php5/extensions,-mssql,hardened
+@pkgpath www/php5/extensions,-mssql,no_x11
+lib/php-${PV}/modules/mssql.so
+share/examples/php-${PV}/mssql.ini

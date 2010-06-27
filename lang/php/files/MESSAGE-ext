@@ -1,0 +1,6 @@
+You can enable this module by creating a symbolic
+link from ${SYSCONFDIR}/php-${PV}.sample/${MODULE_NAME}.ini to
+${SYSCONFDIR}/php-${PV}/${MODULE_NAME}.ini.
+
+ln -fs ${SYSCONFDIR}/php-${PV}.sample/${MODULE_NAME}.ini \
+	${SYSCONFDIR}/php-${PV}/${MODULE_NAME}.ini

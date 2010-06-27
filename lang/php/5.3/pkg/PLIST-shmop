@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-shmop,v 1.1.1.1 2010/06/27 20:28:45 robert Exp $
+@conflict php4-shmop-*
+@pkgpath www/php5/extensions,-shmop,hardened
+@pkgpath www/php5/extensions,-shmop,no_x11
+lib/php-${PV}/modules/shmop.so
+share/examples/php-${PV}/shmop.ini

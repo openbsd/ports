@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-imap,v 1.1.1.1 2010/06/27 20:28:45 robert Exp $
+@conflict php4-imap-*
+@pkgpath www/php5/extensions,-imap,hardened
+@pkgpath www/php5/extensions,-imap,no_x11
+lib/php-${PV}/modules/imap.so
+share/examples/php-${PV}/imap.ini
+@comment etc/master.passwd
+@comment etc/spwd.db

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-snmp,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+@conflict php4-snmp-*
+@pkgpath www/php5/extensions,-snmp,hardened
+@pkgpath www/php5/extensions,-snmp,no_x11
+lib/php-${PV}/modules/snmp.so
+share/examples/php-${PV}/snmp.ini

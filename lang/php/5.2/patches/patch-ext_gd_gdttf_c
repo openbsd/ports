@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_gd_gdttf_c,v 1.1.1.1 2010/06/27 20:28:45 robert Exp $
+--- ext/gd/gdttf.c.orig	Sun Jan  9 22:05:05 2005
++++ ext/gd/gdttf.c	Mon Jul  2 10:38:20 2007
+@@ -712,7 +712,7 @@ gdttfchar(gdImage *im, int fg, font_t *font,
+ 				}
+ #if HAVE_LIBGD20
+ 				if (im->trueColor) {
+-					pixel = &im->tpixels[y3][x3];
++					pixel = (unsigned char *)&im->tpixels[y3][x3];
+ 				} else
+ #endif
+ 				{

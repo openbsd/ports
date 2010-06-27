@@ -1,0 +1,11 @@
+--- ext/gd/libgd/gdcache.h.orig	Sun Dec 28 21:11:08 2003
++++ ext/gd/libgd/gdcache.h	Tue Jul 27 02:21:28 2004
+@@ -41,7 +41,7 @@
+ /*********************************************************/
+ 
+ #include <stdlib.h>
+-#ifdef HAVE_MALLOC_H
++#if (!defined(__OpenBSD__)) && HAVE_MALLOC_H
+  #include <malloc.h>
+ #endif
+ #ifndef NULL

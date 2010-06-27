@@ -1,0 +1,9 @@
+To enable the php-${PV} module please create a symbolic
+link from ${PHP_CONFIG_PATH}/modules.sample/php-${PV}.conf
+to ${PHP_CONFIG_PATH}/modules/php-${PV}.conf.
+
+ln -s ${PHP_CONFIG_PATH}/modules.sample/php-${PV}.conf \
+	${PHP_CONFIG_PATH}/modules/php.conf
+
+The recommended php configuration has been installed
+to ${SYSCONFDIR}/php-${PV}.ini.

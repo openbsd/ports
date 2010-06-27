@@ -1,0 +1,16 @@
+$OpenBSD: patch-ext_standard_config_m4,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+--- ext/standard/config.m4.orig	Sat Nov 28 00:41:13 2009
++++ ext/standard/config.m4	Sat Jun 26 16:34:42 2010
+@@ -311,9 +311,9 @@ dnl
+ dnl Detect library functions needed by php dns_xxx functions
+ dnl ext/standard/php_dns.h will collect these in a single define: HAVE_DNS_FUNCS
+ dnl
+-PHP_CHECK_FUNC(res_nmkquery, resolv, bind, socket)
+-PHP_CHECK_FUNC(res_nsend, resolv, bind, socket)
+-PHP_CHECK_FUNC(dn_expand, resolv, bind, socket)
++PHP_CHECK_FUNC(res_nmkquery, resolv, socket)
++PHP_CHECK_FUNC(res_nsend, resolv, socket)
++PHP_CHECK_FUNC(dn_expand, resolv, socket)
+ 
+ dnl OSX has the dns functions in libc but remaps them in resolv.h for bind so linking fails
+ case $host_alias in

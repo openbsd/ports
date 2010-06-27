@@ -1,0 +1,9 @@
+These improved functions allow you to access the functionality provided
+by MySQL 4.1 and above. 
+More information about the mysqli extension can be found at
+http://www.php.net/mysqli.
+
+Information about MySQL can be found at http://www.mysql.com/.
+
+Documentation for MySQL can be found at
+http://www.mysql.com/documentation/.
