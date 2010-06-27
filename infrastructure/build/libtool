@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.125 2010/06/25 21:39:35 steven Exp $
+# $OpenBSD: libtool,v 1.126 2010/06/27 14:29:54 steven Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -281,7 +281,8 @@ sub parse_linkargs1
 				my $lafile = LaFile->find($key, $dirs);
 				if ($lafile) {
 					$libs->{$key}->{lafile} = $lafile;
-					push @$deplibs, $lafile;
+					my $absla = main::abs_path($lafile);
+					push @$deplibs, $absla;
 					push @$result, $lafile;
 					next;
 				} else {
