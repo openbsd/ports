@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.30 2009/12/06 21:43:11 naddy Exp $
---- scripts/makefile.openbsd.orig	Thu Aug 13 13:13:23 2009
-+++ scripts/makefile.openbsd	Sun Aug 23 16:21:58 2009
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.31 2010/06/27 19:55:04 kili Exp $
+--- scripts/makefile.openbsd.orig	Sat Jun 26 02:31:16 2010
++++ scripts/makefile.openbsd	Sun Jun 27 08:39:13 2010
 @@ -7,11 +7,12 @@
  # and license in png.h
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.30 2009/12/06 21:43:11 naddy Exp $
 +DOCDIR= ${PREFIX}/share/doc/png
  
 -SHLIB_MAJOR=	0
--SHLIB_MINOR=	1.2.41
+-SHLIB_MINOR=	1.2.44
  
  LIB=	png
  SRCS=	png.c pngerror.c pngget.c pngmem.c pngpread.c \
@@ -25,7 +25,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.30 2009/12/06 21:43:11 naddy Exp $
  
  MAN=	libpng.3 libpngpf.3 png.5
 -DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO libpng.txt
-+DOCS = libpng-1.2.41.txt
++DOCS = libpng-1.2.44.txt
  
 +all: ${_LIBS} libpng-config libpng.pc
 +
@@ -58,7 +58,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.30 2009/12/06 21:43:11 naddy Exp $
  
  beforeinstall:
 -	if [ ! -d ${DESTDIR}${PREFIX}/include/libpng ]; then \
--	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${PREFIX}/include/libpng; \
+-	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${PREFIX}/include; \
 +	if [ ! -d ${DESTDIR}${INCDIR} ]; then \
 +	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${INCDIR}; \
  	fi
@@ -86,7 +86,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.30 2009/12/06 21:43:11 naddy Exp $
 +	${INSTALL} ${INSTALL_COPY} -o ${BINOWN} -g ${BINGRP} \
 +		-m ${BINMODE} libpng-config ${DESTDIR}${BINDIR}
  	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
--		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include/libpng
+-		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include
 +		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${INCDIR}
  	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
 -		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include
