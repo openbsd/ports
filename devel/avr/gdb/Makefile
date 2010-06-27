@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2009/12/09 16:34:06 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.7 2010/06/27 20:58:10 ckuethe Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' GNU gdb
 
-VER=		6.3
+VER=		6.8
 DISTNAME=	gdb-${VER}
 PKGNAME=	avr-gdb-${VER}p3
 
@@ -18,6 +18,11 @@ WANTLIB=		c m ncurses
 MASTER_SITES=   	${MASTER_SITE_GNU:=gdb/}
 
 REGRESS_DEPENDS=	::devel/dejagnu
+
+RUN_DEPENDS=		::devel/avr/binutils \
+			::devel/avr/gcc
+
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared

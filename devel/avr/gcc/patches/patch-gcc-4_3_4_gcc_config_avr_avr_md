@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
---- gcc/config/avr/avr.md.orig	Sat Sep  1 08:28:30 2007
-+++ gcc/config/avr/avr.md	Sat Sep 27 16:29:43 2008
+$OpenBSD: patch-gcc-4_3_4_gcc_config_avr_avr_md,v 1.1 2010/06/27 20:58:10 ckuethe Exp $
+--- gcc-4.3.4/gcc/config/avr/avr.md.orig	Mon Mar  9 14:49:28 2009
++++ gcc-4.3.4/gcc/config/avr/avr.md	Sat Jun 26 11:58:40 2010
 @@ -32,6 +32,7 @@
  ;;  p  POST_INC or PRE_DEC address as a pointer (X, Y, Z)
  ;;  r  POST_INC or PRE_DEC address as a register (r26, r28, r30)
@@ -9,19 +9,46 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
  
  ;; UNSPEC usage:
  ;;  0  Length of a string, see "strlenhi".
-@@ -46,7 +47,8 @@
+@@ -46,17 +47,29 @@
     (TMP_REGNO	0)	; temporary register r0
     (ZERO_REGNO	1)	; zero register r1
+    
+-   (SREG_ADDR   0x5F)
+-   (RAMPZ_ADDR  0x5B)
+-   
     (UNSPEC_STRLEN	0)
--   (UNSPEC_INDEX_JMP	1)])
-+   (UNSPEC_INDEX_JMP	1)
-+   (UNSPEC_SWAP		4)])
+    (UNSPEC_INDEX_JMP	1)
+-   (UNSPEC_SEI		2)
+-   (UNSPEC_CLI		3)
+-
++   (UNSPEC_SWAP		2)
++   (UNSPEC_FMUL		3)
++   (UNSPEC_FMULS	4)
++   (UNSPEC_FMULSU	5)
++  
+    (UNSPECV_PROLOGUE_SAVES	0)
+-   (UNSPECV_EPILOGUE_RESTORES	1)])
++   (UNSPECV_EPILOGUE_RESTORES	1)
++   (UNSPECV_SEI			2)
++   (UNSPECV_CLI			3)   
++   (UNSPECV_NOP			4)   
++   (UNSPECV_NOP2		5)   
++   (UNSPECV_SLEEP		6)   
++   (UNSPECV_WDR			7)   
  
++   (UNSPECV_DELAY_CYCLES	100)
++   (UNSPECV_DELAY_CYCLES_1	101)
++   (UNSPECV_DELAY_CYCLES_2	102)
++   (UNSPECV_DELAY_CYCLES_3	103)
++   (UNSPECV_DELAY_CYCLES_4	104)])
++
++
  (include "predicates.md")
  (include "constraints.md")
-@@ -1051,6 +1053,19 @@
+   
+@@ -1182,6 +1195,19 @@
    [(set_attr "length" "4,4")
-    (set_attr "cc" "set_n,set_n")])
+    (set_attr "cc" "set_n,clobber")])
  
 +(define_peephole2 ; andi
 +  [(set (match_operand:QI 0 "d_register_operand" "")
@@ -39,7 +66,7 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
  ;;|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
  ;; ior
  
-@@ -1179,10 +1194,57 @@
+@@ -1310,10 +1336,57 @@
    [(set_attr "length" "4")
     (set_attr "cc" "set_n")])
  
@@ -98,7 +125,7 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
    [(set (match_operand:QI 0 "register_operand"           "=r,r,r,r,!d,r,r")
  	(ashift:QI (match_operand:QI 1 "register_operand" "0,0,0,0,0,0,0")
  		   (match_operand:QI 2 "general_operand"  "r,L,P,K,n,n,Qm")))]
-@@ -1212,6 +1274,47 @@
+@@ -1343,6 +1416,47 @@
  ;; Optimize if a scratch register from LD_REGS happens to be available.
  
  (define_peephole2
@@ -146,7 +173,7 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
    [(match_scratch:QI 3 "d")
     (set (match_operand:HI 0 "register_operand" "")
  	(ashift:HI (match_operand:HI 1 "register_operand" "")
-@@ -1330,7 +1433,49 @@
+@@ -1461,7 +1575,49 @@
  ;; >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >> >>
  ;; logical shift right
  
@@ -197,7 +224,7 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
    [(set (match_operand:QI 0 "register_operand"             "=r,r,r,r,!d,r,r")
  	(lshiftrt:QI (match_operand:QI 1 "register_operand" "0,0,0,0,0,0,0")
  		     (match_operand:QI 2 "general_operand"  "r,L,P,K,n,n,Qm")))]
-@@ -1360,6 +1505,47 @@
+@@ -1491,6 +1647,47 @@
  ;; Optimize if a scratch register from LD_REGS happens to be available.
  
  (define_peephole2
@@ -245,132 +272,7 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
    [(match_scratch:QI 3 "d")
     (set (match_operand:HI 0 "register_operand" "")
  	(lshiftrt:HI (match_operand:HI 1 "register_operand" "")
-@@ -1543,40 +1729,96 @@
- ;; xx<---x xx<---x xx<---x xx<---x xx<---x xx<---x xx<---x xx<---x xx<---x
- ;; zero extend
- 
--(define_insn "zero_extendqihi2"
--  [(set (match_operand:HI 0 "register_operand" "=r,r")
--        (zero_extend:HI (match_operand:QI 1 "register_operand" "0,*r")))]
-+(define_insn_and_split "zero_extendqihi2"
-+  [(set (match_operand:HI 0 "register_operand" "=r")
-+        (zero_extend:HI (match_operand:QI 1 "register_operand" "r")))]
-   ""
--  "@
--	clr %B0
--	mov %A0,%A1\;clr %B0"
--  [(set_attr "length" "1,2")
--   (set_attr "cc" "set_n,set_n")])
-+  "#"
-+  "reload_completed"
-+  [(set (match_dup 2) (match_dup 1))
-+   (set (match_dup 3) (const_int 0))]
-+  "unsigned int low_off = subreg_lowpart_offset (QImode, HImode);
-+   unsigned int high_off = subreg_highpart_offset (QImode, HImode);
-+   
-+   operands[2] = simplify_gen_subreg (QImode, operands[0], HImode, low_off);
-+   operands[3] = simplify_gen_subreg (QImode, operands[0], HImode, high_off);
-+  ")
- 
--(define_insn "zero_extendqisi2"
--  [(set (match_operand:SI 0 "register_operand" "=r,r")
--        (zero_extend:SI (match_operand:QI 1 "register_operand" "0,*r")))]
-+(define_insn_and_split "zero_extendqisi2"
-+  [(set (match_operand:SI 0 "register_operand" "=r")
-+        (zero_extend:SI (match_operand:QI 1 "register_operand" "r")))]
-   ""
--  "@
--	clr %B0\;clr %C0\;clr %D0
--	mov %A0,%A1\;clr %B0\;clr %C0\;clr %D0"
--  [(set_attr "length" "3,4")
--   (set_attr "cc" "set_n,set_n")])
-+  "#"
-+  "reload_completed"
-+  [(set (match_dup 2) (zero_extend:HI (match_dup 1)))
-+   (set (match_dup 3) (const_int 0))]
-+  "unsigned int low_off = subreg_lowpart_offset (HImode, SImode);
-+   unsigned int high_off = subreg_highpart_offset (HImode, SImode);
-+   
-+   operands[2] = simplify_gen_subreg (HImode, operands[0], SImode, low_off);
-+   operands[3] = simplify_gen_subreg (HImode, operands[0], SImode, high_off);
-+  ")
- 
--(define_insn "zero_extendhisi2"
--  [(set (match_operand:SI 0 "register_operand" "=r,&r")
--        (zero_extend:SI (match_operand:HI 1 "register_operand" "0,*r")))]
-+(define_insn_and_split "zero_extendhisi2"
-+  [(set (match_operand:SI 0 "register_operand" "=r")
-+        (zero_extend:SI (match_operand:HI 1 "register_operand" "r")))]
-   ""
--  "@
--	clr %C0\;clr %D0
--	{mov %A0,%A1\;mov %B0,%B1|movw %A0,%A1}\;clr %C0\;clr %D0"
--  [(set_attr_alternative "length"
--			 [(const_int 2)
--			  (if_then_else (eq_attr "mcu_have_movw" "yes")
--					(const_int 3)
--					(const_int 4))])
--   (set_attr "cc" "set_n,set_n")])
-+  "#"
-+  "reload_completed"
-+  [(set (match_dup 2) (match_dup 1))
-+   (set (match_dup 3) (const_int 0))]
-+  "unsigned int low_off = subreg_lowpart_offset (HImode, SImode);
-+   unsigned int high_off = subreg_highpart_offset (HImode, SImode);
-+   
-+   operands[2] = simplify_gen_subreg (HImode, operands[0], SImode, low_off);
-+   operands[3] = simplify_gen_subreg (HImode, operands[0], SImode, high_off);
-+  ")
- 
-+(define_insn_and_split "zero_extendqidi2"
-+  [(set (match_operand:DI 0 "register_operand" "=r")
-+        (zero_extend:DI (match_operand:QI 1 "register_operand" "r")))]
-+  ""
-+  "#"
-+  "reload_completed"
-+  [(set (match_dup 2) (zero_extend:SI (match_dup 1)))
-+   (set (match_dup 3) (const_int 0))]
-+  "unsigned int low_off = subreg_lowpart_offset (SImode, DImode);
-+   unsigned int high_off = subreg_highpart_offset (SImode, DImode);
-+   
-+   operands[2] = simplify_gen_subreg (SImode, operands[0], DImode, low_off);
-+   operands[3] = simplify_gen_subreg (SImode, operands[0], DImode, high_off);
-+  ")
-+
-+(define_insn_and_split "zero_extendhidi2"
-+  [(set (match_operand:DI 0 "register_operand" "=r")
-+        (zero_extend:DI (match_operand:HI 1 "register_operand" "r")))]
-+  ""
-+  "#"
-+  "reload_completed"
-+  [(set (match_dup 2) (zero_extend:SI (match_dup 1)))
-+   (set (match_dup 3) (const_int 0))]
-+  "unsigned int low_off = subreg_lowpart_offset (SImode, DImode);
-+   unsigned int high_off = subreg_highpart_offset (SImode, DImode);
-+   
-+   operands[2] = simplify_gen_subreg (SImode, operands[0], DImode, low_off);
-+   operands[3] = simplify_gen_subreg (SImode, operands[0], DImode, high_off);
-+  ")
-+
-+(define_insn_and_split "zero_extendsidi2"
-+  [(set (match_operand:DI 0 "register_operand" "=r")
-+        (zero_extend:DI (match_operand:SI 1 "register_operand" "r")))]
-+  ""
-+  "#"
-+  "reload_completed"
-+  [(set (match_dup 2) (match_dup 1))
-+   (set (match_dup 3) (const_int 0))]
-+  "unsigned int low_off = subreg_lowpart_offset (SImode, DImode);
-+   unsigned int high_off = subreg_highpart_offset (SImode, DImode);
-+   
-+   operands[2] = simplify_gen_subreg (SImode, operands[0], DImode, low_off);
-+   operands[3] = simplify_gen_subreg (SImode, operands[0], DImode, high_off);
-+  ")
-+
- ;;<=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=><=>
- ;; compare
- 
-@@ -2099,22 +2341,22 @@
+@@ -2290,22 +2487,22 @@
    "(register_operand (operands[0], HImode) || CONSTANT_P (operands[0]))"
    "*{
    if (which_alternative==0)
@@ -397,7 +299,7 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
  }"
    [(set_attr "cc" "clobber,clobber,clobber,clobber")
     (set_attr_alternative "length"
-@@ -2136,22 +2378,22 @@
+@@ -2327,22 +2524,22 @@
    "(register_operand (operands[0], VOIDmode) || CONSTANT_P (operands[0]))"
    "*{
    if (which_alternative==0)
@@ -424,7 +326,17 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
  }"
    [(set_attr "cc" "clobber,clobber,clobber,clobber")
     (set_attr_alternative "length"
-@@ -2181,13 +2423,20 @@
+@@ -2355,23 +2552,23 @@
+ 					(const_int 1))
+ 			  (const_int 3)])])
+ 
+-(define_insn "nop"
+-  [(const_int 0)]
+-  ""
+-  "nop"
+-  [(set_attr "cc" "none")
+-   (set_attr "length" "1")])
+-
  ; indirect jump
  (define_insn "indirect_jump"
    [(set (pc) (match_operand:HI 0 "register_operand" "!z,*r"))]
@@ -446,7 +358,7 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
  ;; table jump
  
  ;; Table made from "rjmp" instructions for <=8K devices.
-@@ -2196,7 +2445,7 @@
+@@ -2380,7 +2577,7 @@
  			UNSPEC_INDEX_JMP))
     (use (label_ref (match_operand 1 "" "")))
     (clobber (match_dup 0))]
@@ -455,7 +367,7 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
    "@
  	ijmp
  	push %A0\;push %B0\;ret"
-@@ -2225,7 +2474,7 @@
+@@ -2409,7 +2606,7 @@
  	lpm __tmp_reg__,Z+
  	lpm r31,Z
  	mov r30,__tmp_reg__
@@ -464,7 +376,7 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
    [(set_attr "length" "6")
     (set_attr "cc" "clobber")])
  
-@@ -2234,7 +2483,7 @@
+@@ -2418,7 +2615,7 @@
  			UNSPEC_INDEX_JMP))
     (use (label_ref (match_operand 1 "" "")))
     (clobber (match_dup 0))]
@@ -473,3 +385,272 @@ $OpenBSD: patch-gcc_config_avr_avr_md,v 1.1 2008/10/01 04:52:19 ckuethe Exp $
    "lsl r30
  	rol r31
  	lpm
+@@ -2477,7 +2674,8 @@
+   "(optimize > 0)"
+ {
+   operands[2] = GEN_INT (exact_log2 (~INTVAL (operands[1]) & 0xff));
+-  return AS2 (cbi,%0-0x20,%2);
++  operands[3] = GEN_INT(AVR_IO_OFFSET);
++  return AS2 (cbi,%0-%3,%2);
+ }
+   [(set_attr "length" "1")
+    (set_attr "cc" "none")])
+@@ -2489,7 +2687,8 @@
+   "(optimize > 0)"
+ {
+   operands[2] = GEN_INT (exact_log2 (INTVAL (operands[1]) & 0xff));
+-  return AS2 (sbi,%0-0x20,%2);
++  operands[3] = GEN_INT(AVR_IO_OFFSET);
++  return AS2 (sbi,%0-%3,%2);
+ }
+   [(set_attr "length" "1")
+    (set_attr "cc" "none")])
+@@ -2732,7 +2931,7 @@
+ 
+ ;; Enable Interrupts
+ (define_insn "enable_interrupt"
+-  [(unspec [(const_int 0)] UNSPEC_SEI)]
++  [(unspec_volatile [(const_int 0)] UNSPECV_SEI)]
+   ""
+   "sei"
+   [(set_attr "length" "1")
+@@ -2741,7 +2940,7 @@
+ 
+ ;; Disable Interrupts
+ (define_insn "disable_interrupt"
+-  [(unspec [(const_int 0)] UNSPEC_CLI)]
++  [(unspec_volatile [(const_int 0)] UNSPECV_CLI)]
+   ""
+   "cli"
+   [(set_attr "length" "1")
+@@ -2758,8 +2957,8 @@
+    (use (reg:HI REG_X))
+    (clobber (reg:HI REG_Z))]
+   ""
+-  "ldi r30,pm_lo8(1f)
+-	ldi r31,pm_hi8(1f)
++  "ldi r30,lo8(gs(1f))
++	ldi r31,hi8(gs(1f))
+ 	%~jmp __prologue_saves__+((18 - %0) * 2)
+ 1:"
+   [(set_attr_alternative "length"
+@@ -2841,3 +3040,219 @@
+     expand_epilogue (); 
+     DONE;
+   }")
++
++;;delay_cycles_delay_cycles_delay_cycles_delay_cycles_delay_cycles_delay
++;; delay_cycles
++
++(define_expand "delay_cycles"
++  [(unspec_volatile [(match_operand:SI 0 "const_int_operand" "i")]
++                    UNSPECV_DELAY_CYCLES)]
++  ""
++  "
++  rtx loop_reg;
++  unsigned int cycles = INTVAL (operands[0]);
++  if (IN_RANGE(cycles, 83886082, 0xFFFFFFFF))
++    {
++      unsigned int loop_count = ((cycles - 9) / 6) + 1;
++      unsigned int cycles_used = (((loop_count - 1) * 6) + 9);
++      emit_insn (gen_delay_cycles_4 (gen_int_mode (loop_count, SImode)));
++      cycles -= cycles_used;
++    }
++  if (IN_RANGE(cycles, 262145, 83886081))
++    {
++      unsigned int loop_count = ((cycles - 7) / 5) + 1;
++      if (loop_count > 0xFFFFFF)
++        loop_count = 0xFFFFFF;
++      unsigned int cycles_used = (((loop_count - 1) * 5) + 7);
++      emit_insn (gen_delay_cycles_3 (gen_int_mode (loop_count, SImode)));
++      cycles -= cycles_used;
++    }
++  if (IN_RANGE(cycles, 768, 262144))
++    {
++      unsigned int loop_count = ((cycles - 5) / 4) + 1;
++      if (loop_count > 0xFFFF)
++        loop_count = 0xFFFF;
++      unsigned int cycles_used = (((loop_count - 1) * 4) + 5);
++      emit_insn (gen_delay_cycles_2 (gen_int_mode (loop_count, HImode)));
++      cycles -= cycles_used;
++    }
++  if (IN_RANGE(cycles, 6, 767))
++    {
++      unsigned int loop_count = (cycles/ 3);
++      if (loop_count > 255) 
++        loop_count = 255;
++      unsigned int cycles_used = (loop_count * 3);
++      emit_insn (gen_delay_cycles_1 (gen_int_mode (loop_count, QImode)));
++      cycles -= cycles_used;
++    }
++  while (cycles >= 2)
++    {
++      emit_insn (gen_nop2 ());
++      cycles -= 2;
++    }
++  if (cycles == 1)
++    {
++      emit_insn (gen_nop ());
++      cycles--;
++    }
++  DONE;
++  ")
++
++(define_insn "delay_cycles_1"
++[(unspec_volatile [(const_int 0)] UNSPECV_DELAY_CYCLES_1)
++  (match_operand:QI 0 "immediate_operand" "")
++  (clobber (match_scratch:QI 1 "=&d"))]
++  ""
++  " ldi %1,lo8(%0)
++    1:dec %1
++    brne 1b"
++  [(set_attr "length" "3")
++   (set_attr "cc" "clobber")]) 
++
++(define_insn "delay_cycles_2"
++  [(unspec_volatile [(const_int 0)] UNSPECV_DELAY_CYCLES_2)
++   (match_operand:HI 0 "immediate_operand" "")
++   (clobber (match_scratch:HI 1 "=&w"))]
++  ""
++  " ldi %A1,lo8(%0)
++    ldi %B1,hi8(%0)
++    1:sbiw %A1,1
++    brne 1b"
++  [(set_attr "length" "4")
++   (set_attr "cc" "clobber")])
++
++(define_insn "delay_cycles_3"
++  [(unspec_volatile [(const_int 0)] UNSPECV_DELAY_CYCLES_3)
++   (match_operand:SI 0 "immediate_operand" "")
++   (clobber (match_scratch:SI 1 "=&d"))]
++  ""
++  " ldi %A1,lo8(%0)
++    ldi %B1,hi8(%0)
++    ldi %C1,hlo8(%0)
++    1:subi %A1,1
++    sbci %B1,0
++    sbci %C1,0
++    brne 1b"
++  [(set_attr "length" "7")
++   (set_attr "cc" "clobber")])
++
++(define_insn "delay_cycles_4"
++  [(unspec_volatile [(const_int 0)] UNSPECV_DELAY_CYCLES_4)
++   (match_operand:SI 0 "immediate_operand" "")
++   (clobber (match_scratch:SI 1 "=&d"))]
++  ""
++  " ldi %A1,lo8(%0)
++    ldi %B1,hi8(%0)
++    ldi %C1,hlo8(%0)
++    ldi %D1,hhi8(%0)
++    1:subi %A1,1
++    sbci %B1,0
++    sbci %C1,0
++    sbci %D1,0
++    brne 1b"
++  [(set_attr "length" "9")
++   (set_attr "cc" "clobber")])
++
++;; CPU instructions
++
++;; NOP
++(define_insn "nop"
++  [(unspec_volatile [(const_int 0)] UNSPECV_NOP)]
++  ""
++  "nop"
++  [(set_attr "length" "1")
++  (set_attr "cc" "none")])
++
++;; NOP2
++(define_insn "nop2"
++  [(unspec_volatile [(const_int 0)] UNSPECV_NOP2)]
++  ""
++  "rjmp ."
++  [(set_attr "length" "1")
++  (set_attr "cc" "none")])
++
++;; SEI, Enable Interrupts
++;(define_insn "sei"
++;  [(unspec_volatile [(const_int 0)] UNSPECV_SEI)]
++;  ""
++;  "sei"
++;  [(set_attr "length" "1")
++;  (set_attr "cc" "none")
++;  ])
++
++;; CLI, Disable Interrupts
++;(define_insn "cli"
++;  [(unspec_volatile [(const_int 0)] UNSPECV_CLI)]
++;  ""
++;  "cli"
++;  [(set_attr "length" "1")
++;  (set_attr "cc" "none")
++;  ])
++
++;; SLEEP
++(define_insn "sleep"
++  [(unspec_volatile [(const_int 0)] UNSPECV_SLEEP)]
++  ""
++  "sleep"
++  [(set_attr "length" "1")
++  (set_attr "cc" "none")
++  ])
++ 
++;; WDR
++(define_insn "wdr"
++  [(unspec_volatile [(const_int 0)] UNSPECV_WDR)]
++  ""
++  "wdr"
++  [(set_attr "length" "1")
++  (set_attr "cc" "none")
++  ])
++  
++;; SWAP
++(define_insn "swap"
++  [(set (match_operand:QI 0 "register_operand" "=r")
++	(unspec:QI [(match_operand:QI 1 "register_operand" "0")]
++		   UNSPEC_SWAP))]
++  ""
++  "swap %0"
++  [(set_attr "length" "1")
++   (set_attr "cc" "none")])
++
++;; FMUL
++(define_insn "fmul"
++  [(set (match_operand:HI 0 "a_register_operand" "=r")
++	(unspec:HI [(match_operand:QI 1 "a_register_operand" "r")
++		    (match_operand:QI 2 "a_register_operand" "r")]
++		    UNSPEC_FMUL))]
++  "AVR_HAVE_MUL"
++  "fmul %1,%2
++	movw %0,r0
++	clr r1"
++  [(set_attr "length" "3")
++   (set_attr "cc" "clobber")])
++
++;; FMULS
++(define_insn "fmuls"
++  [(set (match_operand:HI 0 "a_register_operand" "=r")
++	(unspec:HI [(match_operand:QI 1 "a_register_operand" "r")
++		    (match_operand:QI 2 "a_register_operand" "r")]
++		    UNSPEC_FMULS))]
++  "AVR_HAVE_MUL"
++  "fmuls %1,%2
++	movw %0,r0
++	clr r1"
++  [(set_attr "length" "3")
++   (set_attr "cc" "clobber")])
++
++;; FMULSU
++(define_insn "fmulsu"
++  [(set (match_operand:HI 0 "a_register_operand" "=r")
++	(unspec:HI [(match_operand:QI 1 "a_register_operand" "r")
++		    (match_operand:QI 2 "a_register_operand" "r")]
++		    UNSPEC_FMULSU))]
++  "AVR_HAVE_MUL"
++  "fmulsu %1,%2
++	movw %0,r0
++	clr r1"
++  [(set_attr "length" "3")
++   (set_attr "cc" "clobber")])
++

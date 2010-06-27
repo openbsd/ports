@@ -1,0 +1,11 @@
+$OpenBSD: patch-gcc-4_3_4_gcc_rtl_h,v 1.1 2010/06/27 20:58:10 ckuethe Exp $
+--- gcc-4.3.4/gcc/rtl.h.orig	Tue Jul 14 03:32:55 2009
++++ gcc-4.3.4/gcc/rtl.h	Sat Jun 26 11:58:40 2010
+@@ -2145,6 +2145,7 @@ extern void print_inline_rtx (FILE *, const_rtx, int);
+ 
+ /* In function.c */
+ extern void reposition_prologue_and_epilogue_notes (void);
++extern int prologue_contains (const_rtx);
+ extern int prologue_epilogue_contains (const_rtx);
+ extern int sibcall_epilogue_contains (const_rtx);
+ extern void mark_temp_addr_taken (rtx);

@@ -1,0 +1,28 @@
+$OpenBSD: patch-gcc-4_3_4_gcc_config_avr_avr-protos_h,v 1.1 2010/06/27 20:58:10 ckuethe Exp $
+--- gcc-4.3.4/gcc/config/avr/avr-protos.h.orig	Sun Jun 15 15:32:29 2008
++++ gcc-4.3.4/gcc/config/avr/avr-protos.h	Sat Jun 26 11:58:40 2010
+@@ -38,6 +38,8 @@ extern int avr_simple_epilogue (void);
+ extern void gas_output_limited_string (FILE *file, const char *str);
+ extern void gas_output_ascii (FILE *file, const char *str, size_t length);
+ extern int avr_hard_regno_rename_ok (unsigned int, unsigned int);
++extern void avr_asm_output_common (FILE *stream, const char *name, unsigned HOST_WIDE_INT size, unsigned HOST_WIDE_INT rounded);
++extern void avr_asm_output_local (FILE *stream, const char *name, unsigned HOST_WIDE_INT size, unsigned HOST_WIDE_INT rounded);
+ 
+ #ifdef TREE_CODE
+ extern void asm_output_external (FILE *file, tree decl, char *name);
+@@ -112,6 +114,7 @@ extern int reg_unused_after (rtx insn, rtx reg);
+ extern int _reg_unused_after (rtx insn, rtx reg);
+ extern int avr_jump_mode (rtx x, rtx insn);
+ extern int byte_immediate_operand (rtx op, enum machine_mode mode);
++extern int text_segment_operand (rtx op, enum machine_mode mode);
+ extern int test_hard_reg_class (enum reg_class class, rtx x);
+ extern int jump_over_one_insn_p (rtx insn, rtx dest);
+ 
+@@ -123,6 +126,7 @@ extern RTX_CODE avr_normalize_condition (RTX_CODE cond
+ extern int compare_eq_p (rtx insn);
+ extern void out_shift_with_cnt (const char *template, rtx insn,
+ 				rtx operands[], int *len, int t_len);
++extern rtx avr_return_addr_rtx (int count, rtx tem);
+ extern int avr_io_address_p (rtx x, int size);
+ extern int avr_peep2_scratch_safe (rtx reg_rtx);
+ #endif /* RTX_CODE */

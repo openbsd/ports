@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_elf_avr_h,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
---- include/elf/avr.h.orig	Fri Aug  8 22:35:13 2008
-+++ include/elf/avr.h	Sun Dec  6 21:48:53 2009
+$OpenBSD: patch-include_elf_avr_h,v 1.3 2010/06/27 20:58:10 ckuethe Exp $
+--- include/elf/avr.h.orig	Sat Jun 26 11:23:48 2010
++++ include/elf/avr.h	Sat Jun 26 11:31:17 2010
 @@ -40,6 +40,13 @@
  #define E_AVR_MACH_AVR5 5
  #define E_AVR_MACH_AVR51 51

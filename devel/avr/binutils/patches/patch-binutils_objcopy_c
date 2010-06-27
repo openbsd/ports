@@ -1,26 +1,24 @@
-$OpenBSD: patch-binutils_objcopy_c,v 1.2 2009/12/09 16:55:51 ckuethe Exp $
---- binutils/objcopy.c.orig	Tue Aug  5 17:42:17 2008
-+++ binutils/objcopy.c	Sun Dec  6 21:48:53 2009
+$OpenBSD: patch-binutils_objcopy_c,v 1.3 2010/06/27 20:58:10 ckuethe Exp $
+--- binutils/objcopy.c.orig	Sat Jun 26 11:22:44 2010
++++ binutils/objcopy.c	Sat Jun 26 11:31:17 2010
 @@ -32,6 +32,7 @@
  #include "elf-bfd.h"
  #include <sys/stat.h>
  #include "libbfd.h"
 +#include "debug.h"
+ #include "coff/internal.h"
+ #include "libcoff.h"
  
- struct is_specified_symbol_predicate_data
- {
-@@ -270,7 +271,9 @@ enum command_line_switch
-     OPTION_PURE,
+@@ -297,6 +298,8 @@ enum command_line_switch
      OPTION_IMPURE,
      OPTION_EXTRACT_SYMBOL,
--    OPTION_REVERSE_BYTES
-+    OPTION_REVERSE_BYTES,
+     OPTION_REVERSE_BYTES,
 +    OPTION_CHANGE_PATHNAME,
-+    OPTION_BASENAME
-   };
- 
- /* Options to handle if running as "strip".  */
-@@ -314,10 +317,12 @@ static struct option copy_options[] =
++    OPTION_BASENAME,
+     OPTION_FILE_ALIGNMENT,
+     OPTION_HEAP,
+     OPTION_IMAGE_BASE,
+@@ -346,10 +349,12 @@ static struct option copy_options[] =
    {"adjust-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
    {"adjust-warnings", no_argument, 0, OPTION_CHANGE_WARNINGS},
    {"alt-machine-code", required_argument, 0, OPTION_ALT_MACH_CODE},
@@ -33,16 +31,16 @@ $OpenBSD: patch-binutils_objcopy_c,v 1.2 2009/12/09 16:55:51 ckuethe Exp $
    {"change-section-address", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
    {"change-section-lma", required_argument, 0, OPTION_CHANGE_SECTION_LMA},
    {"change-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_VMA},
-@@ -502,6 +507,8 @@ copy_usage (FILE *stream, int exit_status)
+@@ -543,6 +548,8 @@ copy_usage (FILE *stream, int exit_status)
       --prefix-alloc-sections <prefix>\n\
                                     Add <prefix> to start of every allocatable\n\
                                       section name\n\
 +     --change-pathname <old>=<new> Change debug pathnames from <old> to <new>\n\
 +     --basename                    Strip directory part from debug pathnames\n\
-   -v --verbose                     List all object files modified\n\
-   @<file>                          Read options from <file>\n\
-   -V --version                     Display this program's version number\n\
-@@ -948,6 +955,8 @@ filter_symbols (bfd *abfd, bfd *obfd, asymbol **osyms,
+      --file-alignment <num>        Set PE file alignment to <num>\n\
+      --heap <reserve>[,<commit>]   Set PE reserve/commit heap to <reserve>/\n\
+                                    <commit>\n\
+@@ -999,6 +1006,8 @@ filter_symbols (bfd *abfd, bfd *obfd, asymbol **osyms,
    asymbol **from = isyms, **to = osyms;
    long src_count = 0, dst_count = 0;
    int relocatable = (abfd->flags & (EXEC_P | DYNAMIC)) == 0;
@@ -51,21 +49,17 @@ $OpenBSD: patch-binutils_objcopy_c,v 1.2 2009/12/09 16:55:51 ckuethe Exp $
  
    for (; src_count < symcount; src_count++)
      {
-@@ -1047,9 +1056,10 @@ filter_symbols (bfd *abfd, bfd *obfd, asymbol **osyms,
+@@ -1099,7 +1108,8 @@ filter_symbols (bfd *abfd, bfd *obfd, asymbol **osyms,
  	       || bfd_is_com_section (bfd_get_section (sym)))
  	keep = strip_symbols != STRIP_UNNEEDED;
        else if ((flags & BSF_DEBUGGING) != 0)	/* Debugging symbol.  */
 -	keep = (strip_symbols != STRIP_DEBUG
--		&& strip_symbols != STRIP_UNNEEDED
--		&& ! convert_debugging);
 +	keep = need_for_debugging
 +		|| (strip_symbols != STRIP_DEBUG
-+		    && strip_symbols != STRIP_UNNEEDED
-+		    && ! convert_debugging);
+ 		&& strip_symbols != STRIP_UNNEEDED
+ 		&& ! convert_debugging);
        else if (bfd_coff_get_comdat_section (abfd, bfd_get_section (sym)))
- 	/* COMDAT sections store special information in local
- 	   symbols, so we cannot risk stripping any of them.  */
-@@ -2659,6 +2669,10 @@ write_debugging_info (bfd *obfd, void *dhandle,
+@@ -2817,6 +2827,10 @@ write_debugging_info (bfd *obfd, void *dhandle,
      return write_ieee_debugging_info (obfd, dhandle);
  
    if (bfd_get_flavour (obfd) == bfd_target_coff_flavour
@@ -76,7 +70,7 @@ $OpenBSD: patch-binutils_objcopy_c,v 1.2 2009/12/09 16:55:51 ckuethe Exp $
        || bfd_get_flavour (obfd) == bfd_target_elf_flavour)
      {
        bfd_byte *syms, *strings;
-@@ -3357,6 +3371,30 @@ copy_main (int argc, char *argv[])
+@@ -3639,6 +3653,30 @@ copy_main (int argc, char *argv[])
  
  	case OPTION_PREFIX_ALLOC_SECTIONS:
  	  prefix_alloc_sections_string = optarg;

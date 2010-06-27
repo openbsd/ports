@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdb_xml-tdesc_c,v 1.1 2010/06/27 20:58:10 ckuethe Exp $
+--- gdb/xml-tdesc.c.orig	Sat Jun 26 15:38:34 2010
++++ gdb/xml-tdesc.c	Sat Jun 26 15:38:49 2010
+@@ -443,7 +443,7 @@ fetch_xml_from_file (const char *filename, void *baton
+ 
+   if (dirname && *dirname)
+     {
+-      char *fullname = concat (dirname, "/", filename, NULL);
++      char *fullname = concat (dirname, "/", filename, (void *)NULL);
+       if (fullname == NULL)
+ 	nomem (0);
+       file = fopen (fullname, FOPEN_RT);

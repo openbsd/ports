@@ -1,7 +1,7 @@
-$OpenBSD: patch-binutils_Makefile_in,v 1.3 2009/12/09 16:55:51 ckuethe Exp $
---- binutils/Makefile.in.orig	Sun Aug 24 21:38:13 2008
-+++ binutils/Makefile.in	Sun Dec  6 21:48:53 2009
-@@ -133,7 +133,7 @@ am_nm_new_OBJECTS = nm.$(OBJEXT) $(am__objects_1)
+$OpenBSD: patch-binutils_Makefile_in,v 1.4 2010/06/27 20:58:10 ckuethe Exp $
+--- binutils/Makefile.in.orig	Sat Jun 26 11:22:43 2010
++++ binutils/Makefile.in	Sat Jun 26 11:31:17 2010
+@@ -126,7 +126,7 @@ am_nm_new_OBJECTS = nm.$(OBJEXT) $(am__objects_1)
  nm_new_OBJECTS = $(am_nm_new_OBJECTS)
  nm_new_LDADD = $(LDADD)
  am__objects_2 = rddbg.$(OBJEXT) debug.$(OBJEXT) stabs.$(OBJEXT) \
@@ -10,7 +10,7 @@ $OpenBSD: patch-binutils_Makefile_in,v 1.3 2009/12/09 16:55:51 ckuethe Exp $
  am__objects_3 = $(am__objects_2) wrstabs.$(OBJEXT)
  am_objcopy_OBJECTS = objcopy.$(OBJEXT) not-strip.$(OBJEXT) \
  	rename.$(OBJEXT) $(am__objects_3) $(am__objects_1)
-@@ -421,7 +421,7 @@ CFILES = \
+@@ -439,7 +439,7 @@ CFILES = \
  	resbin.c rescoff.c resrc.c resres.c \
  	size.c srconv.c stabs.c strings.c sysdump.c \
  	unwind-ia64.c version.c \
@@ -19,7 +19,7 @@ $OpenBSD: patch-binutils_Makefile_in,v 1.3 2009/12/09 16:55:51 ckuethe Exp $
  	windmc.c mclex.c
  
  GENERATED_CFILES = \
-@@ -429,7 +429,7 @@ GENERATED_CFILES = \
+@@ -447,7 +447,7 @@ GENERATED_CFILES = \
  	defparse.c deflex.c nlmheader.c rcparse.c mcparse.c
  
  DEBUG_SRCS = rddbg.c debug.c stabs.c ieee.c rdcoff.c

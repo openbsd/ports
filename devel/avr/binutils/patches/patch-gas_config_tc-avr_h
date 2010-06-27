@@ -1,0 +1,10 @@
+$OpenBSD: patch-gas_config_tc-avr_h,v 1.1 2010/06/27 20:58:10 ckuethe Exp $
+--- gas/config/tc-avr.h.orig	Sat Jun 26 11:23:23 2010
++++ gas/config/tc-avr.h	Sat Jun 26 11:31:17 2010
+@@ -147,3 +147,6 @@ extern long md_pcrel_from_section (struct fix *, segT)
+ 
+ /* This target is buggy, and sets fix size too large.  */
+ #define TC_FX_SIZE_SLACK(FIX) 2
++
++/* keep DWARF2_ADDR_SIZE in consistency with C compiler produced information */
++#define DWARF2_ADDR_SIZE(bfd) 4

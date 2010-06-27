@@ -1,9 +1,9 @@
-$OpenBSD: patch-opcodes_Makefile_in,v 1.3 2009/12/09 16:55:52 ckuethe Exp $
---- opcodes/Makefile.in.orig	Tue Sep  9 01:02:19 2008
-+++ opcodes/Makefile.in	Sun Dec  6 21:48:54 2009
-@@ -879,7 +879,8 @@ installdirs-am:
- 	for dir in "$(DESTDIR)$(bfdlibdir)"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+$OpenBSD: patch-opcodes_Makefile_in,v 1.4 2010/06/27 20:58:10 ckuethe Exp $
+--- opcodes/Makefile.in.orig	Sat Jun 26 11:22:38 2010
++++ opcodes/Makefile.in	Sat Jun 26 11:31:17 2010
+@@ -1051,7 +1051,8 @@ installdirs-am:
+ 	for dir in "$(DESTDIR)$(bfdlibdir)" "$(DESTDIR)$(bfdincludedir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
 -install: install-recursive
 +#install: install-recursive

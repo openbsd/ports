@@ -1,6 +1,6 @@
-$OpenBSD: patch-gas_config_tc-avr_c,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
---- gas/config/tc-avr.c.orig	Fri Aug 29 09:58:02 2008
-+++ gas/config/tc-avr.c	Sun Dec  6 21:48:53 2009
+$OpenBSD: patch-gas_config_tc-avr_c,v 1.3 2010/06/27 20:58:10 ckuethe Exp $
+--- gas/config/tc-avr.c.orig	Sat Jun 26 11:23:23 2010
++++ gas/config/tc-avr.c	Sat Jun 26 11:31:17 2010
 @@ -27,20 +27,21 @@
  
  struct avr_opcodes_s
@@ -43,16 +43,85 @@ $OpenBSD: patch-gas_config_tc-avr_c,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
    {"at90s1200",  AVR_ISA_1200,    bfd_mach_avr1},
    {"attiny11",   AVR_ISA_AVR1,    bfd_mach_avr1},
    {"attiny12",   AVR_ISA_AVR1,    bfd_mach_avr1},
-@@ -173,6 +181,7 @@ static struct mcu_type_s mcu_types[] =
-   {"atmega32c1", AVR_ISA_AVR5,    bfd_mach_avr5},
-   {"atmega32m1", AVR_ISA_AVR5,    bfd_mach_avr5},
-   {"atmega32u4", AVR_ISA_AVR5,    bfd_mach_avr5},
-+  {"atmega32u6", AVR_ISA_AVR5,    bfd_mach_avr5},
-   {"at90usb646", AVR_ISA_AVR5,    bfd_mach_avr5},
-   {"at90usb647", AVR_ISA_AVR5,    bfd_mach_avr5},
-   {"at94k",      AVR_ISA_94K,     bfd_mach_avr5},
-@@ -185,6 +194,16 @@ static struct mcu_type_s mcu_types[] =
-   {"at90usb1287",AVR_ISA_AVR51,   bfd_mach_avr51},
+@@ -133,9 +141,12 @@ static struct mcu_type_s mcu_types[] =
+   {"atmega32u2", AVR_ISA_AVR35,   bfd_mach_avr35},
+   {"atmega8",    AVR_ISA_M8,      bfd_mach_avr4},
+   {"atmega48",   AVR_ISA_AVR4,    bfd_mach_avr4},
++  {"atmega48a",  AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"atmega48p",  AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"atmega88",   AVR_ISA_AVR4,    bfd_mach_avr4},
++  {"atmega88a",  AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"atmega88p",  AVR_ISA_AVR4,    bfd_mach_avr4},
++  {"atmega88pa", AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"atmega8515", AVR_ISA_M8,      bfd_mach_avr4},
+   {"atmega8535", AVR_ISA_M8,      bfd_mach_avr4},
+   {"atmega8hva", AVR_ISA_AVR4,    bfd_mach_avr4},
+@@ -150,40 +161,63 @@ static struct mcu_type_s mcu_types[] =
+   {"at90pwm3b",  AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"at90pwm81",  AVR_ISA_AVR4,    bfd_mach_avr4},
+   {"atmega16",   AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega16a",  AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega161",  AVR_ISA_M161,    bfd_mach_avr5},
+   {"atmega162",  AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega163",  AVR_ISA_M161,    bfd_mach_avr5},
++  {"atmega164a", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega164p", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega165",  AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega165p", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega168",  AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega168a", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega168p", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega169",  AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega169a", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega169p", AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega169pa",AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega16hva",AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega16hvb",AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega16c1", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega32",   AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega323",  AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega324a", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega324p", AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega324pa",AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega325",  AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega325p", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega3250", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega3250p",AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega328",  AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega328p", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega329",  AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega329p", AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega329pa",AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega3290", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega3290p",AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega32hvb",AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega406",  AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega64",   AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega640",  AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega644",  AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega644a", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega644p", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega644pa",AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega645",  AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega645a", AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega645p", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega649",  AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega649p", AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega649a", AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega6450", AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega6450a",AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega6450p",AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega6490", AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega6490a",AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega6490p",AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega64hve",AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega16hva",AVR_ISA_AVR5,    bfd_mach_avr5},
++  {"atmega16hva2",AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega16hvb",AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"atmega32hvb",AVR_ISA_AVR5,    bfd_mach_avr5},
+   {"at90can32" , AVR_ISA_AVR5,    bfd_mach_avr5},
+@@ -215,6 +249,21 @@ static struct mcu_type_s mcu_types[] =
+   {"m3001b",     AVR_ISA_AVR51,   bfd_mach_avr51},
    {"atmega2560", AVR_ISA_AVR6,    bfd_mach_avr6},
    {"atmega2561", AVR_ISA_AVR6,    bfd_mach_avr6},
 +  {"atxmega16a4", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
@@ -60,15 +129,20 @@ $OpenBSD: patch-gas_config_tc-avr_c,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
 +  {"atxmega32d4", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
 +  {"atxmega32a4", AVR_ISA_XMEGA,  bfd_mach_avrxmega3},
 +  {"atxmega64a3", AVR_ISA_XMEGA,  bfd_mach_avrxmega4},
++  {"atxmega64d3", AVR_ISA_XMEGA,  bfd_mach_avrxmega4},
 +  {"atxmega64a1", AVR_ISA_XMEGA,  bfd_mach_avrxmega5},
 +  {"atxmega128a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
++  {"atxmega128d3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
++  {"atxmega192a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
++  {"atxmega192d3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
 +  {"atxmega256a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
 +  {"atxmega256a3b",AVR_ISA_XMEGA, bfd_mach_avrxmega6},
++  {"atxmega256d3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
 +  {"atxmega128a1", AVR_ISA_XMEGA, bfd_mach_avrxmega7},
    {NULL, 0, 0}
  };
  
-@@ -362,6 +381,11 @@ md_show_usage (FILE *stream)
+@@ -392,6 +441,11 @@ md_show_usage (FILE *stream)
  	"                   avr5  - enhanced AVR core with up to 64K program memory\n"
  	"                   avr51 - enhanced AVR core with up to 128K program memory\n"
  	"                   avr6  - enhanced AVR core with up to 256K program memory\n"
@@ -80,7 +154,7 @@ $OpenBSD: patch-gas_config_tc-avr_c,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
  	"                   or immediate microcontroller name.\n"));
    fprintf (stream,
        _("  -mall-opcodes    accept all AVR opcodes, even if not supported by MCU\n"
-@@ -789,7 +813,12 @@ avr_operand (struct avr_opcodes_s *opcode,
+@@ -819,7 +873,12 @@ avr_operand (struct avr_opcodes_s *opcode,
        if (*str == '+')
  	{
  	  ++str;
@@ -94,7 +168,7 @@ $OpenBSD: patch-gas_config_tc-avr_c,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
  	}
  
        /* attiny26 can do "lpm" and "lpm r,Z" but not "lpm r,Z+".  */
-@@ -906,6 +935,16 @@ avr_operand (struct avr_opcodes_s *opcode,
+@@ -936,6 +995,16 @@ avr_operand (struct avr_opcodes_s *opcode,
        }
        break;
  

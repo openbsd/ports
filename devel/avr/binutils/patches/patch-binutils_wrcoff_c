@@ -1,6 +1,6 @@
-$OpenBSD: patch-binutils_wrcoff_c,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
---- binutils/wrcoff.c.orig	Sun Dec  6 21:48:53 2009
-+++ binutils/wrcoff.c	Sun Dec  6 21:48:53 2009
+$OpenBSD: patch-binutils_wrcoff_c,v 1.3 2010/06/27 20:58:10 ckuethe Exp $
+--- binutils/wrcoff.c.orig	Sat Jun 26 11:31:17 2010
++++ binutils/wrcoff.c	Sat Jun 26 11:31:17 2010
 @@ -0,0 +1,3410 @@
 +/* wrcoff.c -- Generate (AVR) COFF debugging information
 +   Copyright 2003 Free Software Foundation, Inc.

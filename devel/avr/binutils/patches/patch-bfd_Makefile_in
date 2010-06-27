@@ -1,60 +1,33 @@
-$OpenBSD: patch-bfd_Makefile_in,v 1.3 2009/12/09 16:55:51 ckuethe Exp $
---- bfd/Makefile.in.orig	Mon Feb  2 02:44:39 2009
-+++ bfd/Makefile.in	Sun Dec  6 21:48:53 2009
-@@ -462,6 +462,8 @@ BFD32_BACKENDS = \
+$OpenBSD: patch-bfd_Makefile_in,v 1.4 2010/06/27 20:58:10 ckuethe Exp $
+--- bfd/Makefile.in.orig	Sat Jun 26 11:23:54 2010
++++ bfd/Makefile.in	Sat Jun 26 11:31:17 2010
+@@ -524,6 +524,8 @@ BFD32_BACKENDS = \
  	coff-apollo.lo \
  	coff-arm.lo \
  	coff-aux.lo \
 +	coff-avr.lo \
-+	coff-ext-avr.lo \
++        coff-ext-avr.lo \
+ 	coff-go32.lo \
  	coff-h8300.lo \
  	coff-h8500.lo \
- 	coff-i386.lo \
-@@ -643,6 +645,8 @@ BFD32_BACKENDS_CFILES = \
+@@ -707,6 +709,8 @@ BFD32_BACKENDS_CFILES = \
  	coff-apollo.c \
  	coff-arm.c \
  	coff-aux.c \
 +	coff-avr.c \
 +	coff-ext-avr.c \
+ 	coff-go32.c \
  	coff-h8300.c \
  	coff-h8500.c \
- 	coff-i386.c \
-@@ -1222,7 +1226,8 @@ installdirs-am:
- 	for dir in "$(DESTDIR)$(bfdlibdir)"; do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+@@ -1673,8 +1677,9 @@ installdirs-am:
+ 	for dir in "$(DESTDIR)$(bfdlibdir)" "$(DESTDIR)$(bfdincludedir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
--install: install-recursive
-+#install: install-recursive
+-install: $(BUILT_SOURCES)
+-	$(MAKE) $(AM_MAKEFLAGS) install-recursive
++#install: $(BUILT_SOURCES)
++#	$(MAKE) $(AM_MAKEFLAGS) install-recursive
 +install:
  install-exec: install-exec-recursive
  install-data: install-data-recursive
  uninstall: uninstall-recursive
-@@ -1572,13 +1577,13 @@ stmp-lcoff-h: $(LIBCOFF_H_FILES)
- bfdver.h: $(srcdir)/version.h $(srcdir)/Makefile.in
- 	@echo "creating $@"
- 	@bfd_version=`echo "$(VERSION)" | sed -e 's/\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\).*/\1.00\2.00\3.00\4.00\5/' -e 's/\([^\.]*\)\..*\(..\)\..*\(..\)\..*\(..\)\..*\(..\)$$/\1\2\3\4\5/'` ;\
--	bfd_version_string="\"$(VERSION)\"" ;\
-+	bfd_version_string="\"$(VERSION) + coff-avr-patch (20050630)\"" ;\
- 	bfd_soversion="$(VERSION)" ;\
- 	bfd_version_package="\"$(PKGVERSION)\"" ;\
- 	report_bugs_to="\"$(REPORT_BUGS_TO)\"" ;\
- 	if test "x$(RELEASE)" = x ; then \
- 	  bfd_version_date=`sed -n -e 's/.*DATE //p' < $(srcdir)/version.h` ;\
--	  bfd_version_string="\"$(VERSION).$${bfd_version_date}\"" ;\
-+	  bfd_version_string="\"$(VERSION).$${bfd_version_date} + coff-avr-patch (20050630)\"" ;\
- 	  bfd_soversion="$(VERSION).$${bfd_version_date}" ;\
- 	fi ;\
- 	sed -e "s,@bfd_version@,$$bfd_version," \
-@@ -1782,6 +1787,12 @@ coff-aux.lo: coff-aux.c $(INCDIR)/filenames.h $(INCDIR
-   $(INCDIR)/coff/internal.h $(INCDIR)/coff/m68k.h $(INCDIR)/coff/external.h \
-   coff-m68k.c $(INCDIR)/hashtab.h libcoff.h $(INCDIR)/bfdlink.h \
-   coffcode.h coffswap.h
-+coff-avr.lo: coff-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
-+  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
-+  libcoff.h $(INCDIR)/bfdlink.h coffcode.h coffswap.h
-+coff-ext-avr.lo: coff-ext-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
-+  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
-+  libcoff.h $(INCDIR)/bfdlink.h coffcode.h coffswap.h
- coff-h8300.lo: coff-h8300.c $(INCDIR)/filenames.h $(INCDIR)/hashtab.h \
-   $(INCDIR)/bfdlink.h genlink.h $(INCDIR)/coff/h8300.h \
-   $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \

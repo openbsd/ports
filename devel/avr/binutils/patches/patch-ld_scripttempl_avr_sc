@@ -1,16 +1,10 @@
-$OpenBSD: patch-ld_scripttempl_avr_sc,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
---- ld/scripttempl/avr.sc.orig	Thu Oct  9 05:18:31 2008
-+++ ld/scripttempl/avr.sc	Sun Dec  6 21:48:54 2009
-@@ -4,9 +4,12 @@ OUTPUT_ARCH(${ARCH})
- 
- MEMORY
- {
--  text   (rx)   : ORIGIN = 0, LENGTH = $TEXT_LENGTH
--  data   (rw!x) : ORIGIN = 0x800060, LENGTH = $DATA_LENGTH
--  eeprom (rw!x) : ORIGIN = 0x810000, LENGTH = 64K
-+  text      (rx)   : ORIGIN = 0, LENGTH = $TEXT_LENGTH
-+  data      (rw!x) : ORIGIN = $DATA_ORIGIN, LENGTH = $DATA_LENGTH
-+  eeprom    (rw!x) : ORIGIN = 0x810000, LENGTH = 64K
+$OpenBSD: patch-ld_scripttempl_avr_sc,v 1.3 2010/06/27 20:58:10 ckuethe Exp $
+--- ld/scripttempl/avr.sc.orig	Sat Jun 26 11:23:26 2010
++++ ld/scripttempl/avr.sc	Sat Jun 26 11:31:17 2010
+@@ -7,6 +7,9 @@ MEMORY
+   text   (rx)   : ORIGIN = 0, LENGTH = $TEXT_LENGTH
+   data   (rw!x) : ORIGIN = $DATA_ORIGIN, LENGTH = $DATA_LENGTH
+   eeprom (rw!x) : ORIGIN = 0x810000, LENGTH = 64K
 +  fuse      (rw!x) : ORIGIN = 0x820000, LENGTH = 1K
 +  lock      (rw!x) : ORIGIN = 0x830000, LENGTH = 1K
 +  signature (rw!x) : ORIGIN = 0x840000, LENGTH = 1K

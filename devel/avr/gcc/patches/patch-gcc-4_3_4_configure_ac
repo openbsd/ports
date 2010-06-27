@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc-4_3_4_configure_ac,v 1.1 2010/06/27 20:58:10 ckuethe Exp $
+--- gcc-4.3.4/configure.ac.orig	Fri Apr 24 23:55:24 2009
++++ gcc-4.3.4/configure.ac	Sat Jun 26 11:58:40 2010
+@@ -554,7 +554,7 @@ case "${target}" in
+     noconfigdirs="$noconfigdirs ld target-libgloss ${libgcj}"
+     ;;
+   avr-*-*)
+-    noconfigdirs="$noconfigdirs target-libiberty target-libstdc++-v3 ${libgcj}"
++    noconfigdirs="$noconfigdirs target-libiberty target-libstdc++-v3 ${libgcj} target-libssp"
+     ;;
+   bfin-*-*)
+     noconfigdirs="$noconfigdirs gdb"

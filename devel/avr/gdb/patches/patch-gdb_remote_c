@@ -1,0 +1,15 @@
+$OpenBSD: patch-gdb_remote_c,v 1.1 2010/06/27 20:58:10 ckuethe Exp $
+--- gdb/remote.c.orig	Mon Feb 25 02:59:06 2008
++++ gdb/remote.c	Sat Jun 26 15:31:40 2010
+@@ -6102,8 +6102,9 @@ remote_xfer_partial (struct target_ops *ops, enum targ
+ 				     [PACKET_qXfer_spu_write]);
+     }
+ 
+-  /* Only handle flash writes.  */
+-  if (writebuf != NULL)
++  /* Only handle flash writes.  Zero OFFSET and LENGTH is just a size
++   * query only, so proceed anyway. */
++  if (writebuf != NULL && !(offset == 0 && len == 0))
+     {
+       LONGEST xfered;
+ 

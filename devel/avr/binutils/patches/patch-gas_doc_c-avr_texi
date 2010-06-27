@@ -1,16 +1,59 @@
-$OpenBSD: patch-gas_doc_c-avr_texi,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
---- gas/doc/c-avr.texi.orig	Fri Aug 29 09:58:02 2008
-+++ gas/doc/c-avr.texi	Sun Dec  6 21:48:53 2009
-@@ -67,7 +67,7 @@ atmega323, atmega324p, atmega325, atmega325p, atmega32
- atmega328p, atmega329, atmega329p, atmega3290, atmega3290p, atmega406, atmega64,
- atmega640, atmega644, atmega644p, atmega645, atmega6450, atmega649, atmega6490,
- atmega16hva, at90can32, at90can64, at90pwm216, at90pwm316, atmega16u4,
--atmega32c1, atmega32m1, atmega32u4, at90usb646, at90usb647, at94k).
-+atmega32c1, atmega32m1, atmega32u4, atmega32u6, at90usb646, at90usb647, at94k).
+$OpenBSD: patch-gas_doc_c-avr_texi,v 1.3 2010/06/27 20:58:10 ckuethe Exp $
+--- gas/doc/c-avr.texi.orig	Sat Jun 26 11:22:45 2010
++++ gas/doc/c-avr.texi	Sat Jun 26 11:31:17 2010
+@@ -43,9 +43,10 @@ at90s8535).
+ 
+ Instruction set avr25 is for the classic AVR core with up to 8K program memory
+ space plus the MOVW instruction (MCU types: attiny13, attiny13a, attiny2313,
+-attiny2313a, attiny24, attiny24a, attiny4313, attiny44, attiny44a, attiny84,
+-attiny25, attiny45, attiny85, attiny261, attiny261a, attiny461, attiny861,
+-attiny861a, attiny87, attiny43u, attiny48, attiny88, at86rf401, ata6289).
++attiny2313a, attiny24, attiny24a, attiny4313, attiny43u, attiny44, attiny44a, 
++attiny84, attiny25, attiny45, attiny85, attiny261, attiny261a, attiny461, 
++attiny461a, attiny861, attiny861a, attiny87, attiny43u, attiny48, attiny88, 
++at86rf401, ata6289).
+ 
+ Instruction set avr3 is for the classic AVR core with up to 128K program
+ memory space (MCU types: at43usb355, at76c711).
+@@ -58,20 +59,25 @@ instructions (MCU types: attiny167, attiny327, at90usb
+ atmega16u2, atmega32u2).
+ 
+ Instruction set avr4 is for the enhanced AVR core with up to 8K program
+-memory space (MCU types: atmega48, atmega48p,atmega8, atmega88, atmega88p,
+-atmega8515, atmega8535, atmega8hva, atmega4hvd, atmega8hvd, at90pwm1,
+-at90pwm2, at90pwm2b, at90pwm3, at90pwm3b, at90pwm81, atmega8m1, atmega8c1).
++memory space (MCU types: atmega48, atmega48a, atmega48p,atmega8, atmega88, 
++atmega88a, atmega88p, atmega88pa, atmega8515, atmega8535, atmega8hva, 
++atmega4hvd, atmega8hvd, at90pwm1,at90pwm2, at90pwm2b, at90pwm3, at90pwm3b,
++at90pwm81, atmega8m1, atmega8c1).
+ 
+ Instruction set avr5 is for the enhanced AVR core with up to 128K program
+-memory space (MCU types: atmega16, atmega161, atmega162, atmega163, atmega164p,
+-atmega165, atmega165p, atmega168, atmega168p, atmega169, atmega169p, atmega16c1,
+-atmega32, atmega323, atmega324p, atmega325, atmega325p, atmega3250, atmega3250p,
+-atmega328p, atmega329, atmega329p, atmega3290, atmega3290p, atmega406, atmega64,
+-atmega640, atmega644, atmega644p, atmega644pa, atmega645, atmega6450, atmega649,
+-atmega6490, atmega16hva, atmega16hvb, atmega32hvb, at90can32, at90can64,
+-at90pwm216, at90pwm316, atmega32c1, atmega64c1, atmega16m1, atmega32m1,
+-atmega64m1, atmega16u4, atmega32u4, atmega32u6, at90usb646, at90usb647, at94k,
+-at90scr100).
++memory space (MCU types: atmega16, atmega16a, atmega161, atmega162, atmega163,
++atmega164a, atmega164p, atmega165, atmega165a, atmega165p, atmega168, 
++atmega168a, atmega168p, atmega169, atmega169p, atmega169pa, atmega16c1,
++atmega32, atmega323, atmega324a, atmega324p, atmega324pa, atmega325, 
++atmega325p, atmega3250, atmega3250p, atmega328, atmega328p, atmega329,
++atmega329p, atmega329pa, atmega3290, atmega3290p, atmega406, atmega64,
++atmega640, atmega644, atmega644a, atmega644p, atmega644pa, atmega645, 
++atmega645a, atmega645p, atmega6450, atmega6450a, atmega6450p, atmega649,
++atmega649a, atmega649p, atmega6490, atmega6490a, atmega6490p, atmega64hve,
++atmega16hva, atmega16hva2, atmega16hvb, atmega32hvb, at90can32, at90can64,
++at90pwm216, at90pwm316, atmega16u4, atmega32c1, atmega64c1, atmega64m1,
++atmega16m1, atmega32m1, atmega64m1, atmega16u4, atmega32u4, atmega32u6,
++at90usb646, at90usb647, at94k, at90scr100).
  
  Instruction set avr51 is for the enhanced AVR core with exactly 128K program
  memory space (MCU types: atmega128, atmega1280, atmega1281, atmega1284p,
-@@ -75,6 +75,26 @@ at90can128, at90usb1286, at90usb1287).
+@@ -79,6 +85,27 @@ atmega128rfa1, at90can128, at90usb1286, at90usb1287, m
  
  Instruction set avr6 is for the enhanced AVR core with a 3-byte PC (MCU types:
  atmega2560, atmega2561).
@@ -23,14 +66,15 @@ $OpenBSD: patch-gas_doc_c-avr_texi,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
 +memory space and greater than 64K data space (MCU types: atxmega32a4).
 +
 +Instruction set avrxmega4 is for the XMEGA AVR core with up to 64K program
-+memory space and less than 64K data space (MCU types: atxmega64a3).
++memory space and less than 64K data space (MCU types: atxmega64a3, atxmega64d3).
 +
 +Instruction set avrxmega5 is for the XMEGA AVR core with up to 64K program 
 +memory space and greater than 64K data space (MCU types: atxmega64a1).
 +
 +Instruction set avrxmega6 is for the XMEGA AVR core with up to 256K program
 +memory space and less than 64K data space (MCU types: atxmega128a3,
-+atxmega256a3, atxmega256a3b).
++atxmega128d3, atxmega192a3, atxmega192d3, atxmega256a3, atxmega256a3b,
++atxmega192d3).
 +
 +Instruction set avrxmega7 is for the XMEGA AVR core with up to 256K program
 +memory space and greater than 64K data space (MCU types: atxmega128a1).

@@ -1,20 +1,7 @@
-$OpenBSD: patch-bfd_elf32-avr_c,v 1.1 2009/12/09 16:55:51 ckuethe Exp $
---- bfd/elf32-avr.c.orig	Tue Dec 23 05:54:49 2008
-+++ bfd/elf32-avr.c	Sun Dec  6 21:48:53 2009
-@@ -854,10 +854,11 @@ avr_final_link_relocate (reloc_howto_type *           
- 	{
-           /* Relative distance is too large.  */
- 
--	  /* Always apply WRAPAROUND for avr2 and avr4.  */
-+	  /* Always apply WRAPAROUND for avr2, avr25, and avr4.  */
- 	  switch (bfd_get_mach (input_bfd))
- 	    {
- 	    case bfd_mach_avr2:
-+	    case bfd_mach_avr25:
- 	    case bfd_mach_avr4:
- 	      break;
- 
-@@ -1327,6 +1328,34 @@ bfd_elf_avr_final_write_processing (bfd *abfd,
+$OpenBSD: patch-bfd_elf32-avr_c,v 1.2 2010/06/27 20:58:10 ckuethe Exp $
+--- bfd/elf32-avr.c.orig	Sat Jun 26 11:23:53 2010
++++ bfd/elf32-avr.c	Sat Jun 26 11:31:17 2010
+@@ -1328,6 +1328,34 @@ bfd_elf_avr_final_write_processing (bfd *abfd,
      case bfd_mach_avr6:
        val = E_AVR_MACH_AVR6;
        break;
@@ -49,7 +36,7 @@ $OpenBSD: patch-bfd_elf32-avr_c,v 1.1 2009/12/09 16:55:51 ckuethe Exp $
      }
  
    elf_elfheader (abfd)->e_machine = EM_AVR;
-@@ -1388,6 +1417,34 @@ elf32_avr_object_p (bfd *abfd)
+@@ -1389,6 +1417,34 @@ elf32_avr_object_p (bfd *abfd)
  
  	case E_AVR_MACH_AVR6:
  	  e_set = bfd_mach_avr6;

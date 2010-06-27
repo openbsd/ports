@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/10/01 04:52:19 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/06/27 20:58:10 ckuethe Exp $
 avr/
 avr/lib/
 @bin bin/avr-c++
@@ -21,6 +21,9 @@ lib/gcc/avr/${V}/avr25/libgcov.a
 lib/gcc/avr/${V}/avr3/
 lib/gcc/avr/${V}/avr3/libgcc.a
 lib/gcc/avr/${V}/avr3/libgcov.a
+lib/gcc/avr/${V}/avr31/
+lib/gcc/avr/${V}/avr31/libgcc.a
+lib/gcc/avr/${V}/avr31/libgcov.a
 lib/gcc/avr/${V}/avr35/
 lib/gcc/avr/${V}/avr35/libgcc.a
 lib/gcc/avr/${V}/avr35/libgcov.a
@@ -30,35 +33,51 @@ lib/gcc/avr/${V}/avr4/libgcov.a
 lib/gcc/avr/${V}/avr5/
 lib/gcc/avr/${V}/avr5/libgcc.a
 lib/gcc/avr/${V}/avr5/libgcov.a
+lib/gcc/avr/${V}/avr51/
+lib/gcc/avr/${V}/avr51/libgcc.a
+lib/gcc/avr/${V}/avr51/libgcov.a
 lib/gcc/avr/${V}/avr6/
 lib/gcc/avr/${V}/avr6/libgcc.a
 lib/gcc/avr/${V}/avr6/libgcov.a
+lib/gcc/avr/${V}/avrxmega2/
+lib/gcc/avr/${V}/avrxmega2/libgcc.a
+lib/gcc/avr/${V}/avrxmega2/libgcov.a
+lib/gcc/avr/${V}/avrxmega3/
+lib/gcc/avr/${V}/avrxmega3/libgcc.a
+lib/gcc/avr/${V}/avrxmega3/libgcov.a
+lib/gcc/avr/${V}/avrxmega4/
+lib/gcc/avr/${V}/avrxmega4/libgcc.a
+lib/gcc/avr/${V}/avrxmega4/libgcov.a
+lib/gcc/avr/${V}/avrxmega5/
+lib/gcc/avr/${V}/avrxmega5/libgcc.a
+lib/gcc/avr/${V}/avrxmega5/libgcov.a
+lib/gcc/avr/${V}/avrxmega6/
+lib/gcc/avr/${V}/avrxmega6/libgcc.a
+lib/gcc/avr/${V}/avrxmega6/libgcov.a
+lib/gcc/avr/${V}/avrxmega7/
+lib/gcc/avr/${V}/avrxmega7/libgcc.a
+lib/gcc/avr/${V}/avrxmega7/libgcov.a
 lib/gcc/avr/${V}/include/
-lib/gcc/avr/${V}/include/README
-lib/gcc/avr/${V}/include/decfloat.h
-lib/gcc/avr/${V}/include/fixed
+lib/gcc/avr/${V}/include-fixed/
+lib/gcc/avr/${V}/include-fixed/README
+lib/gcc/avr/${V}/include-fixed/fixed
+lib/gcc/avr/${V}/include-fixed/limits.h
+lib/gcc/avr/${V}/include-fixed/syslimits.h
 lib/gcc/avr/${V}/include/float.h
 lib/gcc/avr/${V}/include/iso646.h
-lib/gcc/avr/${V}/include/limits.h
 lib/gcc/avr/${V}/include/stdarg.h
 lib/gcc/avr/${V}/include/stdbool.h
 lib/gcc/avr/${V}/include/stddef.h
-lib/gcc/avr/${V}/include/syslimits.h
+lib/gcc/avr/${V}/include/stdfix.h
+lib/gcc/avr/${V}/include/tgmath.h
 lib/gcc/avr/${V}/include/unwind.h
 lib/gcc/avr/${V}/include/varargs.h
 lib/gcc/avr/${V}/install-tools/
+lib/gcc/avr/${V}/install-tools/fixinc_list
 lib/gcc/avr/${V}/install-tools/gsyslimits.h
 lib/gcc/avr/${V}/install-tools/include/
 lib/gcc/avr/${V}/install-tools/include/README
-lib/gcc/avr/${V}/install-tools/include/decfloat.h
-lib/gcc/avr/${V}/install-tools/include/float.h
-lib/gcc/avr/${V}/install-tools/include/iso646.h
 lib/gcc/avr/${V}/install-tools/include/limits.h
-lib/gcc/avr/${V}/install-tools/include/stdarg.h
-lib/gcc/avr/${V}/install-tools/include/stdbool.h
-lib/gcc/avr/${V}/install-tools/include/stddef.h
-lib/gcc/avr/${V}/install-tools/include/unwind.h
-lib/gcc/avr/${V}/install-tools/include/varargs.h
 lib/gcc/avr/${V}/install-tools/macro_list
 lib/gcc/avr/${V}/install-tools/mkheaders.conf
 lib/gcc/avr/${V}/libgcc.a
@@ -75,6 +94,7 @@ libexec/gcc/avr/${V}/install-tools/fixinc.sh
 @bin libexec/gcc/avr/${V}/install-tools/fixincl
 libexec/gcc/avr/${V}/install-tools/fixproto
 libexec/gcc/avr/${V}/install-tools/mkheaders
+libexec/gcc/avr/${V}/install-tools/mkinstalldirs
 @man man/man1/avr-cpp.1
 @man man/man1/avr-g++.1
 @man man/man1/avr-gcc.1

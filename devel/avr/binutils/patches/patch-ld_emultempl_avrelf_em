@@ -1,6 +1,6 @@
-$OpenBSD: patch-ld_emultempl_avrelf_em,v 1.2 2009/12/09 16:55:52 ckuethe Exp $
---- ld/emultempl/avrelf.em.orig	Sun Jul  6 17:46:51 2008
-+++ ld/emultempl/avrelf.em	Sun Dec  6 21:48:54 2009
+$OpenBSD: patch-ld_emultempl_avrelf_em,v 1.3 2010/06/27 20:58:10 ckuethe Exp $
+--- ld/emultempl/avrelf.em.orig	Sat Jun 26 11:23:28 2010
++++ ld/emultempl/avrelf.em	Sat Jun 26 11:31:17 2010
 @@ -71,8 +71,10 @@ avr_elf_${EMULATION_NAME}_before_allocation (void)
  
    gld${EMULATION_NAME}_before_allocation ();
