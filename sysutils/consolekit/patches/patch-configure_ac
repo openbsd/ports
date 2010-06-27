@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.3 2009/11/13 14:52:33 ajacoutot Exp $
---- configure.ac.orig	Thu Jul 31 02:35:53 2008
-+++ configure.ac	Fri Nov 13 12:40:53 2009
+$OpenBSD: patch-configure_ac,v 1.4 2010/06/27 22:15:38 ajacoutot Exp $
+--- configure.ac.orig	Thu Sep 24 08:22:12 2009
++++ configure.ac	Sun Jun 27 20:50:10 2010
 @@ -176,6 +176,14 @@ dnl --------------------------------------------------
  CK_BACKEND=""
  KVM_LIBS=""
@@ -16,7 +16,7 @@ $OpenBSD: patch-configure_ac,v 1.3 2009/11/13 14:52:33 ajacoutot Exp $
          *-*-freebsd*)
          CK_BACKEND="freebsd"
          AC_CHECK_LIB(kvm, kvm_openfiles, have_kvm=yes,
-@@ -196,6 +204,7 @@ AC_SUBST(KVM_LIBS)
+@@ -199,6 +207,7 @@ AC_SUBST(KVM_LIBS)
  
  AM_CONDITIONAL(CK_COMPILE_LINUX, test x$CK_BACKEND = xlinux, [Compiling for Linux])
  AM_CONDITIONAL(CK_COMPILE_FREEBSD, test x$CK_BACKEND = xfreebsd, [Compiling for FreeBSD])
@@ -24,7 +24,7 @@ $OpenBSD: patch-configure_ac,v 1.3 2009/11/13 14:52:33 ajacoutot Exp $
  AM_CONDITIONAL(CK_COMPILE_SOLARIS, test x$CK_BACKEND = xsolaris, [Compiling for Solaris])
  AC_SUBST(CK_BACKEND)
  
-@@ -393,6 +402,7 @@ src/Makefile
+@@ -399,6 +408,7 @@ src/Makefile
  tools/Makefile
  tools/linux/Makefile
  tools/freebsd/Makefile

@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_org_freedesktop_ConsoleKit_service_in,v 1.1 2010/06/27 22:15:38 ajacoutot Exp $
+
+http://bugs.freedesktop.org/show_bug.cgi?id=25642
+
+--- data/org.freedesktop.ConsoleKit.service.in.orig	Wed Apr 29 21:07:29 2009
++++ data/org.freedesktop.ConsoleKit.service.in	Sun Jun 27 23:15:50 2010
+@@ -1,4 +1,4 @@
+ [D-BUS Service]
+ Name=org.freedesktop.ConsoleKit
+-Exec=@sbindir@/console-kit-daemon
++Exec=@sbindir@/console-kit-daemon --no-daemon
+ User=root

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2009/11/13 14:52:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/27 22:15:38 ajacoutot Exp $
 
 BROKEN=		WIP does not work yet
 
 COMMENT=	Framework for defining and tracking users
 
-DISTNAME=	ConsoleKit-0.3.0
-PKGNAME=	${DISTNAME:L}p3
+DISTNAME=	ConsoleKit-0.4.1
+PKGNAME=	${DISTNAME:L}
 
 CATEGORIES=	sysutils	
 
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS+=	ck-connector	0.0
 
-HOMEPAGE=	http://freedesktop.org/wiki/Software/ConsoleKit
+HOMEPAGE=	http://www.freedesktop.org/wiki/Software/ConsoleKit
 
 MANTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -23,21 +23,23 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += X11 Xau Xdmcp c dbus-1 glib-2.0 gobject-2.0 gthread-2.0
-WANTLIB += kvm pcre pthread pthread-stubs xcb z
+WANTLIB += X11 Xau Xdmcp c dbus-1 dbus-glib-1 eggdbus-1 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 kvm pcre
+WANTLIB += pthread pthread-stubs xcb z
 
-MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/
+MASTER_SITES=	http://www.freedesktop.org/software/ConsoleKit/dist/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	dbus-glib-1.>=4::x11/dbus-glib
+LIB_DEPENDS=	polkit-gobject-1::sysutils/polkit
 
-AUTOCONF_VERSION= 2.61
+AUTOCONF_VERSION= 2.63
 CONFIGURE_STYLE= autoconf
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--localstatedir=/var \
-		--with-pid-file=/var/run/consolekit.pid
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+		--with-pid-file=/var/run/ConsoleKit/pid \
+		--enable-pam-module=no
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
@@ -56,5 +58,7 @@ post-install:
 		${PREFIX}/libexec/ck-get-x11-display-device
 	${INSTALL_SCRIPT} ${FILESDIR}/ck-get-x11-server-pid \
 		${PREFIX}/libexec/ck-get-x11-server-pid
+	${INSTALL_SCRIPT} ${FILESDIR}/pam-foreground-compat.ck \
+		${PREFIX}/lib/ConsoleKit/run-session.d/pam-foreground-compat.ck
 
 .include <bsd.port.mk>

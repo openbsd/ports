@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/11/13 14:52:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/06/27 22:15:39 ajacoutot Exp $
 %%SHARED%%
 @bin bin/ck-history
 @bin bin/ck-launch-session
@@ -7,7 +7,9 @@ include/ConsoleKit/
 include/ConsoleKit/ck-connector/
 include/ConsoleKit/ck-connector/ck-connector.h
 lib/ConsoleKit/
+lib/ConsoleKit/run-seat.d/
 lib/ConsoleKit/run-session.d/
+lib/ConsoleKit/run-session.d/pam-foreground-compat.ck
 lib/ConsoleKit/scripts/
 lib/ConsoleKit/scripts/ck-system-restart
 lib/ConsoleKit/scripts/ck-system-stop
@@ -32,6 +34,8 @@ share/dbus-1/system-services/org.freedesktop.ConsoleKit.service
 share/examples/consolekit/
 share/examples/consolekit/ConsoleKit/
 @sample ${SYSCONFDIR}/ConsoleKit/
+share/examples/consolekit/ConsoleKit/run-seat.d/
+@sample ${SYSCONFDIR}/ConsoleKit/run-seat.d/
 share/examples/consolekit/ConsoleKit/run-session.d/
 @sample ${SYSCONFDIR}/ConsoleKit/run-session.d/
 share/examples/consolekit/ConsoleKit/seats.d/
@@ -42,4 +46,7 @@ share/examples/consolekit/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/
 share/examples/consolekit/dbus-1/ConsoleKit.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/ConsoleKit.conf
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.freedesktop.consolekit.policy
 @sample /var/log/ConsoleKit/

@@ -1,23 +1,18 @@
-$OpenBSD: patch-src_ck-manager_c,v 1.1 2009/11/13 14:52:33 ajacoutot Exp $
+$OpenBSD: patch-src_ck-manager_c,v 1.2 2010/06/27 22:15:38 ajacoutot Exp $
 
-Allow shutdown on systems not using policykit.
-https://bugzilla.gnome.org/show_bug.cgi?id=549150
+Don't segfault if the seats file is invalid.
+http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=561106
 
---- src/ck-manager.c.orig	Wed Jul 30 23:53:07 2008
-+++ src/ck-manager.c	Fri Nov 13 12:41:12 2009
-@@ -1349,7 +1349,6 @@ ck_manager_restart (CkManager             *manager,
-         }
- #else
-         g_warning ("Compiled without PolicyKit or RBAC support!");
--        goto out;
- #endif
+--- src/ck-manager.c.orig	Thu Sep 24 07:10:07 2009
++++ src/ck-manager.c	Sun Jun 27 23:11:30 2010
+@@ -2434,6 +2434,10 @@ add_seat_for_file (CkManager  *manager,
  
-         g_debug ("ConsoleKit preforming Restart: %s", action);
-@@ -1409,7 +1408,6 @@ ck_manager_stop (CkManager             *manager,
-         }
- #else
-         g_warning ("Compiled without PolicyKit or RBAC support!");
--        goto out;
- #endif
+         seat = ck_seat_new_from_file (sid, filename);
  
-         g_debug ("Stopping system");
++        if (seat == NULL) {
++                return;
++        }
++
+         connect_seat_signals (manager, seat);
+         if (!ck_seat_register (seat)) {
+                 /* returns false if connection to bus fails */
