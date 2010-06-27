@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2009/10/11 13:30:38 jim Exp $
+# $OpenBSD: Makefile,v 1.16 2010/06/27 01:03:55 jim Exp $
 
 COMMENT=		dynamic window manager
 
-DISTNAME=		dwm-5.7.2
+DISTNAME=		dwm-5.8.2
 
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.suckless.org/dwm/index.html
+HOMEPAGE=		http://dwm.suckless.org/
 
 MAINTAINER=		Jim Razmus <jim@bonetruck.org>
 
@@ -20,7 +20,7 @@ WANTLIB=		X11 Xinerama c
 
 MASTER_SITES=		http://dl.suckless.org/dwm/
 
-RUN_DEPENDS=		:dmenu->=3.9:x11/dmenu \
+RUN_DEPENDS=		:dmenu->=4.1.1:x11/dmenu \
 			::x11/terminus-font
 
 MAKE_ENV=		LDFLAGS="${LDFLAGS}"
