@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2009/12/01 13:38:23 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/06/27 17:27:03 robert Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -99,6 +99,7 @@ lib/apache2/mod_proxy_connect.so
 lib/apache2/mod_proxy_ftp.so
 lib/apache2/mod_proxy_http.so
 lib/apache2/mod_proxy_scgi.so
+lib/apache2/mod_reqtimeout.so
 lib/apache2/mod_rewrite.so
 lib/apache2/mod_setenvif.so
 lib/apache2/mod_speling.so
@@ -607,6 +608,8 @@ share/doc/apache2/mod/mod_proxy_http.html
 share/doc/apache2/mod/mod_proxy_http.html.en
 share/doc/apache2/mod/mod_proxy_scgi.html
 share/doc/apache2/mod/mod_proxy_scgi.html.en
+share/doc/apache2/mod/mod_reqtimeout.html
+share/doc/apache2/mod/mod_reqtimeout.html.en
 share/doc/apache2/mod/mod_rewrite.html
 share/doc/apache2/mod/mod_rewrite.html.en
 share/doc/apache2/mod/mod_setenvif.html
