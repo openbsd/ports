@@ -1,6 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:11 espie Exp $
-bin/vcdimager
-bin/vcdrip
+@comment $OpenBSD: PLIST,v 1.3 2010/06/27 21:20:43 ajacoutot Exp $
+%%SHARED%%
+@bin bin/cdxa2mpeg
+@bin bin/vcd-info
+@bin bin/vcdimager
+@bin bin/vcdxbuild
+@bin bin/vcdxgen
+@bin bin/vcdxminfo
+@bin bin/vcdxrip
+include/libvcd/
+include/libvcd/files.h
+include/libvcd/files_private.h
+include/libvcd/inf.h
+include/libvcd/info.h
+include/libvcd/logging.h
+include/libvcd/sector.h
+include/libvcd/types.h
+include/libvcd/version.h
+@info info/vcd-info.info
 @info info/vcdimager.info
+@info info/vcdxrip.info
+lib/libvcdinfo.a
+lib/libvcdinfo.la
+lib/pkgconfig/
+lib/pkgconfig/libvcdinfo.pc
+@man man/man1/cdxa2mpeg.1
+@man man/man1/vcd-info.1
 @man man/man1/vcdimager.1
-@man man/man1/vcdrip.1
+@man man/man1/vcdxbuild.1
+@man man/man1/vcdxgen.1
+@man man/man1/vcdxminfo.1
+@man man/man1/vcdxrip.1

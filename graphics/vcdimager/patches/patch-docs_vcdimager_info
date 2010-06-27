@@ -1,0 +1,11 @@
+$OpenBSD: patch-docs_vcdimager_info,v 1.1 2010/06/27 21:20:43 ajacoutot Exp $
+--- docs/vcdimager.info.orig	Mon Jul 11 14:47:58 2005
++++ docs/vcdimager.info	Sat Jun 26 17:30:33 2010
+@@ -20,7 +20,6 @@ INFO-DIR-SECTION Video CD Tools
+ START-INFO-DIR-ENTRY
+ * VCDImager: (vcdimager).                       GNU Video CD imaging utilities
+ * vcdimager: (vcdimager)vcdimager.              Video CD simple formatter
+-* vcd-info:  (vcdimager)vcd-info.               Video CD diagnostic tool
+ * cdxa2mpeg: (vcdimager)cdxa2mpeg.              Strip RIFF/CD-XA container
+ * vcdxminfo: (vcdimager)vcdxminfo.              Display MPEG stream properties
+ * vcdxgen: (vcdimager)vcdxgen.                  Video CD XML template generator
