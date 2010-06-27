@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.807 2010/06/20 09:49:04 kili Exp $
+# $OpenBSD: Makefile,v 1.808 2010/06/27 21:05:06 ckuethe Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -295,6 +295,7 @@
      SUBDIR += p5-AppConfig
      SUBDIR += p5-AppConfig-Std
      SUBDIR += p5-Array-Compare
+     SUBDIR += p5-Array-Diff
      SUBDIR += p5-Array-Window
      SUBDIR += p5-AutoXS-Header
      SUBDIR += p5-B-Deobfuscate
