@@ -1,7 +1,7 @@
-$OpenBSD: patch-memtester_c,v 1.1.1.1 2007/03/15 15:49:06 ckuethe Exp $
---- memtester.c.orig	Mon Mar 14 07:02:30 2005
-+++ memtester.c	Fri Oct 14 17:08:38 2005
-@@ -153,7 +153,8 @@ int main(int argc, char **argv) {
+$OpenBSD: patch-memtester_c,v 1.2 2010/06/27 04:59:13 ckuethe Exp $
+--- memtester.c.orig	Sun Feb 28 09:24:56 2010
++++ memtester.c	Thu Mar 25 16:25:03 2010
+@@ -285,7 +285,8 @@ int main(int argc, char **argv) {
                          wantbytes = wantbytes_orig;
                          break;
                      default:

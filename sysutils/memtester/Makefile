@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2008/01/16 08:43:31 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.6 2010/06/27 04:59:13 ckuethe Exp $
 
 COMMENT=	utility to test for memory faults
 
-DISTNAME=	memtester-4.0.8
+DISTNAME=	memtester-4.1.3
 
 CATEGORIES=	sysutils
 
