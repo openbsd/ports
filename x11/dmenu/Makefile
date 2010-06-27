@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/29 20:14:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/06/27 01:01:49 jim Exp $
 
 COMMENT=		dynamic menu for X11
-DISTNAME=		dmenu-4.0
+DISTNAME=		dmenu-4.1.1
 
 CATEGORIES=		x11
-HOMEPAGE=		http://www.suckless.org/programs/dmenu.html
+HOMEPAGE=		http://tools.suckless.org/dmenu
 
 MAINTAINER=		Jim Razmus II <jim@bonetruck.org>
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xinerama c
 
-MASTER_SITES=		http://code.suckless.org/dl/tools/
+MASTER_SITES=		http://dl.suckless.org/tools/
 
 FAKE_FLAGS=		DESTDIR=""
 
