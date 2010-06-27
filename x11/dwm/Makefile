@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/06/27 01:03:55 jim Exp $
+# $OpenBSD: Makefile,v 1.17 2010/06/27 15:22:12 jim Exp $
 
 COMMENT=		dynamic window manager
 
@@ -8,7 +8,7 @@ CATEGORIES=		x11
 
 HOMEPAGE=		http://dwm.suckless.org/
 
-MAINTAINER=		Jim Razmus <jim@bonetruck.org>
+MAINTAINER=		Jim Razmus <jim@openbsd.org>
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes

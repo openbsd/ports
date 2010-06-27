@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/06/27 01:01:49 jim Exp $
+# $OpenBSD: Makefile,v 1.11 2010/06/27 15:23:00 jim Exp $
 
 COMMENT=		dynamic menu for X11
 DISTNAME=		dmenu-4.1.1
@@ -6,7 +6,7 @@ DISTNAME=		dmenu-4.1.1
 CATEGORIES=		x11
 HOMEPAGE=		http://tools.suckless.org/dmenu
 
-MAINTAINER=		Jim Razmus II <jim@bonetruck.org>
+MAINTAINER=		Jim Razmus II <jim@openbsd.org>
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
