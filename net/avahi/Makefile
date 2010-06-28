@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/06/28 19:30:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2010/06/28 19:50:10 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -12,7 +12,7 @@ CATEGORIES=	net devel
 
 PKGNAME-main=	avahi-${V}p9
 PKGNAME-gtk=	avahi-gtk-${V}p6
-PKGNAME-mono=	mono-avahi-${V}p4
+PKGNAME-mono=	mono-avahi-${V}p5
 PKGNAME-qt3=	avahi-qt3-${V}p3
 PKGNAME-qt4=	avahi-qt4-${V}p2
 
@@ -67,7 +67,7 @@ MODULES+=	lang/mono
 BUILD_DEPENDS+=	${MODMONO_BUILD_DEPENDS} \
 		::x11/mono-gtk2
 RUN_DEPENDS-mono= ${MODMONO_RUN_DEPENDS} \
-		::net/avahi,-main \
+		::net/avahi,-gtk,no_qt3,no_qt4 \
 		::x11/mono-gtk2
 LIB_DEPENDS-mono= # empty
 WANTLIB-mono=	# empty
