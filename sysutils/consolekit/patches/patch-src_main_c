@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_main_c,v 1.1 2010/06/27 22:15:38 ajacoutot Exp $
+$OpenBSD: patch-src_main_c,v 1.2 2010/06/28 15:55:21 ajacoutot Exp $
 
 From Debian:
 Cleanup console tag files on application startup and shutdown.
@@ -85,7 +85,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=25744
          }
  
 -        g_debug ("initializing console-kit-daemon %s", VERSION);
-+	delete_console_tags ();
++        delete_console_tags ();
  
          create_pid_file ();
 -

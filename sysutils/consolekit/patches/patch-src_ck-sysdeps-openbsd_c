@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.3 2009/11/13 14:52:33 ajacoutot Exp $
---- src/ck-sysdeps-openbsd.c.orig	Sun May 31 04:10:36 2009
-+++ src/ck-sysdeps-openbsd.c	Sun May 31 19:24:53 2009
-@@ -0,0 +1,412 @@
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.4 2010/06/28 15:55:21 ajacoutot Exp $
+--- src/ck-sysdeps-openbsd.c.orig	Mon Jun 28 17:04:12 2010
++++ src/ck-sysdeps-openbsd.c	Mon Jun 28 17:05:11 2010
+@@ -0,0 +1,414 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
 + *
 + * Copyright (C) 2006 William Jon McCann <mccann@jhu.edu>
@@ -42,6 +42,10 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.3 2009/11/13 14:52:33 ajacoutot Exp
 +#include <sys/sysctl.h>
 +#include <sys/user.h>
 +#include <sys/ioctl.h>
++
++#ifdef __OpenBSD__
++#include <sys/stdint.h>
++#endif
 +
 +#include <dev/wscons/wsdisplay_usl_io.h>
 +
@@ -93,7 +97,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.3 2009/11/13 14:52:33 ajacoutot Exp
 +        int tpgid;                      /* stat            terminal process group id */
 +        int exit_signal;                /* stat            might not be SIGCHLD */
 +        int processor;                  /* stat            current (or most recent?) CPU */
-+        unsigned long penv;             /* stat            address of initial environment vector */
++        uintptr_t penv;                 /* stat            address of initial environment vector */
 +        char tty_text[16];              /* stat            device name */
 +
 +};
@@ -214,8 +218,6 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.3 2009/11/13 14:52:33 ajacoutot Exp
 +{
 +        gboolean       res;
 +        CkProcessStat *proc;
-+
-+        g_debug ("ck_process_stat_new_for_unix_pid");
 +
 +        g_return_val_if_fail (pid > 1, FALSE);
 +

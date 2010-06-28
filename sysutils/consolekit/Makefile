@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/06/27 22:15:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/06/28 15:55:21 ajacoutot Exp $
 
 BROKEN=		WIP does not work yet
 
-COMMENT=	Framework for defining and tracking users
+COMMENT=	framework for defining and tracking users
 
 DISTNAME=	ConsoleKit-0.4.1
 PKGNAME=	${DISTNAME:L}
