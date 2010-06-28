@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/10/15 23:27:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/06/28 07:24:30 landry Exp $
 %%SHARED%%
 bin/caca-config
 @bin bin/cacademo
@@ -9,14 +9,17 @@ bin/caca-config
 @bin bin/img2txt
 include/caca.h
 include/caca0.h
+include/caca_conio.h
 include/caca_types.h
 include/cucul.h
 lib/libcaca.a
 lib/libcaca.la
+lib/libcucul.la
 lib/pkgconfig/
 lib/pkgconfig/caca.pc
 lib/pkgconfig/cucul.pc
 @man man/man1/caca-config.1
+@man man/man1/cacademo.1
 @man man/man1/cacafire.1
 @man man/man1/cacaplay.1
 @man man/man1/cacaserver.1

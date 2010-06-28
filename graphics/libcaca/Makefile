@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2009/10/15 23:27:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2010/06/28 07:24:30 landry Exp $
 
 COMMENT=		color ascii art library
 
-DISTNAME=		libcaca-0.99.beta16
-PKGNAME=		libcaca-0.99.16
-SHARED_LIBS +=  caca           0.0               # .0.99
+DISTNAME=		libcaca-0.99.beta17
+PKGNAME=		libcaca-0.99.17
+SHARED_LIBS +=  caca           1.0               # .0.99
 CATEGORIES=		graphics
 
 # LGPLv2.1/Do What The Fuck You Want To Public License
@@ -41,7 +41,7 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	--disable-doc \
 			--disable-slang \
 			--disable-ruby \
-			--disable-python \
+			--disable-java \
 			--disable-csharp \
 			--disable-cxx
 
