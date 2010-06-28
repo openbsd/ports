@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2007/07/29 16:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/28 19:22:50 ckuethe Exp $
 
 COMMENT=	print information about the content and structure of a DVD
 
 DISTNAME=	lsdvd-0.16
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	multimedia
 
-HOMEPAGE=	http://untrepid.com/lsdvd.html
+HOMEPAGE=	http://untrepid.com/lsdvd/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
