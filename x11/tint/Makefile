@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/15 10:10:06 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/28 14:08:03 edd Exp $
 
 COMMENT=	lightweight freedesktop-compliant panel/taskbar/clock
 
-DISTNAME=	tint2-0.11-beta
+DISTNAME=	tint2-0.11
 EXTRACT_SUFX=	.tar.bz2
-PKGNAME=	tint-0.11beta
+PKGNAME=	tint-0.11
 CATEGORIES=	x11
 
 HOMEPAGE=	http://code.google.com/p/tint2/
