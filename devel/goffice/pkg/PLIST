@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/06/17 07:05:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/06/28 23:05:39 ajacoutot Exp $
 include/libgoffice-0.8/
 include/libgoffice-0.8/goffice/
 include/libgoffice-0.8/goffice/app/
@@ -192,6 +192,8 @@ lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/distrib.a
 lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/distrib.la
 lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/distrib.so
 lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/gog-boxplot-prefs.ui
+lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/gog-double-histogram-prefs.ui
+lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/gog-histogram-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/plot-types.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_distrib/plugin.xml
 lib/goffice/${GNOME_VERSION}/plugins/plot_pie/
@@ -522,6 +524,9 @@ share/pixmaps/goffice/${GNOME_VERSION}/chart_cylinder_3_1.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_dropbar_1_1.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_dropbar_1_2.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_histogram_1_1.png
+share/pixmaps/goffice/${GNOME_VERSION}/chart_histogram_1_3.png
+share/pixmaps/goffice/${GNOME_VERSION}/chart_histogram_1_4.png
+share/pixmaps/goffice/${GNOME_VERSION}/chart_histogram_2_1.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_line_1_1.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_line_1_2.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_line_1_3.png
