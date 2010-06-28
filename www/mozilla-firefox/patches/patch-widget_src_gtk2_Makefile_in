@@ -1,7 +1,7 @@
-$OpenBSD: patch-widget_src_gtk2_Makefile_in,v 1.1 2010/04/26 19:55:58 landry Exp $
---- widget/src/gtk2/Makefile.in.orig	Wed Jan  6 05:35:35 2010
-+++ widget/src/gtk2/Makefile.in	Sun Jan 10 17:47:30 2010
-@@ -183,6 +183,8 @@ DEFINES         += -DUSE_POSTSCRIPT
+$OpenBSD: patch-widget_src_gtk2_Makefile_in,v 1.2 2010/06/28 21:24:22 landry Exp $
+--- widget/src/gtk2/Makefile.in.orig	Fri Jun 11 22:41:24 2010
++++ widget/src/gtk2/Makefile.in	Thu Jun 24 10:08:45 2010
+@@ -184,6 +184,8 @@ DEFINES         += -DUSE_POSTSCRIPT
  EXTRA_DSO_LDOPTS += -lgfxpsshar
  endif
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2010/06/12 15:00:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.28 2010/06/28 21:24:22 landry Exp $
 @conflict firefox3-*
 @conflict mozilla-firebird-*
 @pkgpath www/firefox3
@@ -152,6 +152,7 @@ mozilla-firefox/components/nsFilePicker.js
 mozilla-firefox/components/nsFormAutoComplete.js
 mozilla-firefox/components/nsHandlerService.js
 mozilla-firefox/components/nsHelperAppDlg.js
+mozilla-firefox/components/nsINIProcessor.js
 mozilla-firefox/components/nsLivemarkService.js
 mozilla-firefox/components/nsLoginInfo.js
 mozilla-firefox/components/nsLoginManager.js

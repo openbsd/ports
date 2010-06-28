@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.17 2010/04/26 19:55:58 landry Exp $
---- configure.in.orig	Tue Mar 16 10:53:59 2010
-+++ configure.in	Sat Mar 27 16:32:01 2010
-@@ -1063,7 +1063,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT
+$OpenBSD: patch-configure_in,v 1.18 2010/06/28 21:24:22 landry Exp $
+--- configure.in.orig	Fri Jun 11 22:41:30 2010
++++ configure.in	Thu Jun 24 10:08:43 2010
+@@ -1059,7 +1059,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT
  
  MOZ_JS_LIBS='-L$(LIBXUL_DIST)/bin -lmozjs'
  DYNAMIC_XPCOM_LIBS='-L$(LIBXUL_DIST)/bin -lxpcom -lxpcom_core'
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.17 2010/04/26 19:55:58 landry Exp $
  XPCOM_FROZEN_LDOPTS='-L$(LIBXUL_DIST)/bin -lxpcom'
  LIBXUL_LIBS='$(XPCOM_FROZEN_LDOPTS) -lxul'
  XPCOM_GLUE_LDOPTS='$(LIBXUL_DIST)/lib/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) $(XPCOM_FROZEN_LDOPTS)'
-@@ -2404,7 +2404,7 @@ case "$target" in
+@@ -2403,7 +2403,7 @@ case "$target" in
  	;;
  
  *-openbsd*)
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_in,v 1.17 2010/04/26 19:55:58 landry Exp $
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -4133,9 +4133,9 @@ AC_CACHE_CHECK(for __thread keyword for TLS variables,
+@@ -4132,9 +4132,9 @@ AC_CACHE_CHECK(for __thread keyword for TLS variables,
                              ac_cv_thread_keyword=yes,
                              ac_cv_thread_keyword=no)])
  LDFLAGS=$_SAVE_LDFLAGS

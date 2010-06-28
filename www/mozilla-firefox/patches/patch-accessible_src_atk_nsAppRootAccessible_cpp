@@ -1,7 +1,7 @@
-$OpenBSD: patch-accessible_src_atk_nsAppRootAccessible_cpp,v 1.3 2010/05/10 12:36:09 espie Exp $
---- accessible/src/atk/nsAppRootAccessible.cpp.orig	Wed Mar 17 19:32:26 2010
-+++ accessible/src/atk/nsAppRootAccessible.cpp	Mon May 10 09:47:01 2010
-@@ -55,7 +55,7 @@ typedef GType (* AtkGetTypeType) (void);
+$OpenBSD: patch-accessible_src_atk_nsAppRootAccessible_cpp,v 1.4 2010/06/28 21:24:22 landry Exp $
+--- accessible/src/atk/nsAppRootAccessible.cpp.orig	Fri Jun 11 22:40:50 2010
++++ accessible/src/atk/nsAppRootAccessible.cpp	Thu Jun 24 10:08:30 2010
+@@ -56,7 +56,7 @@ typedef GType (* AtkGetTypeType) (void);
  GType g_atk_hyperlink_impl_type = G_TYPE_INVALID;
  static PRBool sATKChecked = PR_FALSE;
  static PRLibrary *sATKLib = nsnull;
@@ -10,7 +10,7 @@ $OpenBSD: patch-accessible_src_atk_nsAppRootAccessible_cpp,v 1.3 2010/05/10 12:3
  static const char sATKHyperlinkImplGetTypeSymbol[] =
      "atk_hyperlink_impl_get_type";
  static const char sAccEnv [] = "GNOME_ACCESSIBILITY";
-@@ -117,8 +117,8 @@ static GHashTable *key_listener_list = NULL;
+@@ -118,8 +118,8 @@ static GHashTable *key_listener_list = NULL;
  static guint key_snooper_id = 0;
  
  G_BEGIN_DECLS
@@ -21,7 +21,7 @@ $OpenBSD: patch-accessible_src_atk_nsAppRootAccessible_cpp,v 1.3 2010/05/10 12:3
  G_END_DECLS
  
  struct MaiUtil
-@@ -757,9 +757,11 @@ LoadGtkModule(GnomeAccessibilityModule& aModule)
+@@ -762,9 +762,11 @@ LoadGtkModule(GnomeAccessibilityModule& aModule)
      }
  
      //we have loaded the library, try to get the function ptrs

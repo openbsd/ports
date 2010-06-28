@@ -1,7 +1,7 @@
-$OpenBSD: patch-xulrunner_app_Makefile_in,v 1.1 2010/06/12 15:00:12 landry Exp $
---- xulrunner/app/Makefile.in.orig	Thu Apr 22 08:57:25 2010
-+++ xulrunner/app/Makefile.in	Thu Apr 22 08:57:56 2010
-@@ -114,6 +114,7 @@ endif
+$OpenBSD: patch-xulrunner_app_Makefile_in,v 1.2 2010/06/28 21:24:22 landry Exp $
+--- xulrunner/app/Makefile.in.orig	Fri Jun 11 22:41:27 2010
++++ xulrunner/app/Makefile.in	Thu Jun 24 10:08:44 2010
+@@ -118,6 +118,7 @@ endif
  LIBS += \
  	$(EXTRA_DSO_LIBS) \
  	$(MOZ_JS_LIBS) \

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.139 2010/06/16 19:05:40 landry Exp $
+# $OpenBSD: Makefile,v 1.140 2010/06/28 21:24:22 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's browser component
 
-VER=		3.6.3
+VER=		3.6.6
 DISTNAME=	mozilla-1.9.2
-PKGNAME=	mozilla-firefox-${VER}p4
-SO_VERSION=	21.1
+PKGNAME=	mozilla-firefox-${VER}
+SO_VERSION=	22.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in browsercomps browserdirprovider imgicon mozjs \
@@ -80,6 +80,7 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--disable-gnomeui		\
 		--disable-gnomevfs		\
 		--disable-dbus			\
+		--disable-ipc			\
 		--enable-xinerama		\
 		--enable-svg			\
 		--enable-svg-renderer=cairo	\
