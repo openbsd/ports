@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/12/22 13:02:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/06/28 21:32:05 landry Exp $
 bin/firefox35
 firefox35/
 firefox35/LICENSE
@@ -307,22 +307,11 @@ firefox35/icons/document.png
 firefox35/icons/mozicon128.png
 firefox35/icons/mozicon16.xpm
 firefox35/icons/mozicon50.xpm
-@lib firefox35/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib firefox35/libgfxpsshar.so.${LIBgfxpsshar_VERSION}
 @lib firefox35/libgkgfx.so.${LIBgkgfx_VERSION}
 @lib firefox35/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
 @lib firefox35/libjsj.so.${LIBjsj_VERSION}
 @lib firefox35/libmozjs.so.${LIBmozjs_VERSION}
-@lib firefox35/libnspr4.so.${LIBnspr4_VERSION}
-@lib firefox35/libnss3.so.${LIBnss3_VERSION}
-@lib firefox35/libnssckbi.so.${LIBnssckbi_VERSION}
-@lib firefox35/libnssdbm3.so.${LIBnssdbm3_VERSION}
-@lib firefox35/libnssutil3.so.${LIBnssutil3_VERSION}
-@lib firefox35/libplc4.so.${LIBplc4_VERSION}
-@lib firefox35/libplds4.so.${LIBplds4_VERSION}
-@lib firefox35/libsmime3.so.${LIBsmime3_VERSION}
-@lib firefox35/libsoftokn3.so.${LIBsoftokn3_VERSION}
-@lib firefox35/libssl3.so.${LIBssl3_VERSION}
 @lib firefox35/libthebes.so.${LIBthebes_VERSION}
 @lib firefox35/libxpcom.so.${LIBxpcom_VERSION}
 @lib firefox35/libxpcom_core.so.${LIBxpcom_core_VERSION}

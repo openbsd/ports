@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.38 2010/04/28 06:50:23 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2010/06/28 21:32:04 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc sparc64
 
 COMMENT=	redesign of Mozilla's browser component
 
-VER=		3.5.9
+VER=		3.5.10
 DISTNAME=	mozilla-1.9.1
-PKGNAME=	firefox35-${VER}p0
-SO_VERSION=	22.0
+PKGNAME=	firefox35-${VER}
+SO_VERSION=	23.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 .for _lib in accessibility appcomps auth autoconfig browsercomps \
@@ -19,9 +19,8 @@ SO_VERSION=	22.0
 	pippki places pref rdf remoteservice satchel spellchecker \
 	storagecomps system-pref tkautocomplete toolkitcomps txmgr \
 	uconv ucvmath universalchardet unixproxy webbrwsr widget_gtk2 \
-	windowds xpconnect xpinstall zipwriter freebl3 gfxpsshar \
-	gkgfx gtkxtbin jsj mozjs nspr4 nss3 nssckbi nssdbm3 nssutil3 \
-	plc4 plds4 smime3 softokn3 ssl3 thebes xpcom xpcom_core xul \
+	windowds xpconnect xpinstall zipwriter gfxpsshar \
+	gkgfx gtkxtbin jsj mozjs thebes xpcom xpcom_core xul \
 	nullplugin unixprintplugin
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
@@ -47,12 +46,15 @@ RUN_DEPENDS=	:desktop-file-utils-*:devel/desktop-file-utils
 BUILD_DEPENDS=	:libIDL-*:devel/libIDL \
 		:zip->=2.3:archivers/zip
 LIB_DEPENDS=	gdk-x11-2.0,gdk_pixbuf-2.0,gtk-x11-2.0::x11/gtk+2 \
+		nspr4.>=21,plc4.>=21,plds4.>=21:nspr->=4.8:devel/nspr \
+		nss3.>=25,smime3.>=25,softokn3.>=25,ssl3.>=25:nss->=3.12.6:security/nss \
 		sqlite3.>=13.3:sqlite3->=3.6.16.1:databases/sqlite3
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 \
 		gthread-2.0 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread pthread-stubs sndio stdc++ xcb z
+		pixman-1 png pthread pthread-stubs sndio stdc++ xcb z \
+		xcb-render xcb-render-util
 
 VMEM_WARNING=	Yes
 
@@ -62,13 +64,14 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
-				${WRKSRC}/js/src/build/autoconf \
-				${WRKSRC}/nsprpub/build/autoconf
+				${WRKSRC}/js/src/build/autoconf
 
 AUTOCONF_VERSION= 2.13
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
+		--with-system-nspr		\
+		--with-system-nss		\
 		--with-pthreads			\
 		--enable-xft			\
 		--disable-optimize		\
@@ -129,7 +132,6 @@ post-extract:
 
 pre-configure:
 	cd ${WRKSRC}/js/src && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	${SUBST_CMD} ${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${WRKSRC}/build/unix/mozilla.in \
 		${WRKSRC}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
@@ -142,17 +144,14 @@ do-install:
 			-exec ${INSTALL_DATA_DIR} ${MOZ}/{} \; && \
 		find ${DATADIRS} ! -type d \
 			-exec ${INSTALL_DATA} -m 644 {} ${MOZ}/{} \;
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD \
-		${FILESDIR}/browserconfig.properties ${MOB}/*.so.${SO_VERSION} \
+	${INSTALL_DATA} ${FILESDIR}/browserconfig.properties ${MOB}/*.so.${SO_VERSION} \
 		${MOB}/LICENSE ${MOB}/application.ini ${MOB}/blocklist.xml \
 		${MOB}/platform.ini ${MOZ}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FILESDIR}/firefox.desktop \
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/README.OpenBSD \
+		${MOZ}/README.OpenBSD
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/firefox.desktop \
 		${PREFIX}/share/applications/firefox35.desktop
-	${SUBST_CMD} ${MOZ}/README.OpenBSD \
-		${PREFIX}/share/applications/firefox35.desktop
-	rm -f ${MOZ}/README.OpenBSD.beforesubst \
-		${PREFIX}/share/applications/firefox35.desktop.beforesubst
 	${INSTALL_SCRIPT} ${MOB}/firefox ${PREFIX}/bin/firefox35
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/mozilla-xremote-client ${MOB}/regxpcom ${MOZ}
