@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2010/06/12 15:16:48 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/06/28 21:25:28 landry Exp $
 @option no-default-conflict
 @conflict xulrunner->=1.9,<1.9.1
 @unexec xulrunner1.9 --unregister-global
@@ -125,6 +125,7 @@ xulrunner1.9/components/nsFilePicker.js
 xulrunner1.9/components/nsFormAutoComplete.js
 xulrunner1.9/components/nsHandlerService.js
 xulrunner1.9/components/nsHelperAppDlg.js
+xulrunner1.9/components/nsINIProcessor.js
 xulrunner1.9/components/nsLivemarkService.js
 xulrunner1.9/components/nsLoginInfo.js
 xulrunner1.9/components/nsLoginManager.js

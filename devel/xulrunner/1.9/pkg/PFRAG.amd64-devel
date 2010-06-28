@@ -1,2 +1,2 @@
-@comment
+@comment $OpenBSD: PFRAG.amd64-devel,v 1.2 2010/06/28 21:25:28 landry Exp $
 xulrunner1.9/include/NativeX64.h

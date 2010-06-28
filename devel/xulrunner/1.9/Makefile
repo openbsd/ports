@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2010/06/20 19:44:40 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2010/06/28 21:25:28 landry Exp $
 
 ONLY_FOR_ARCHS=		alpha amd64 arm i386 powerpc sparc sparc64
 
-VERSION=		1.9.2.3
-PATCHLEVEL=		p1
+VERSION=		1.9.2.6
+#PATCHLEVEL=		p1
 DIRECTORY=		xulrunner1.9
 DISTNAME=		mozilla-1.9.2
-DISTFILES=		firefox-3.6.3.source.tar.bz2
+DISTFILES=		firefox-3.6.6.source.tar.bz2
 
-MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.3/source/
+MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.6/source/
 
 SO_VERSION=		3.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -34,6 +34,7 @@ MODPY_RUNDEP=		No
 
 CONFIGURE_ARGS+=	--enable-default-toolkit=cairo-gtk2 \
 			--disable-crashreporter \
+			--disable-ipc \
 			--disable-libnotify \
 			--disable-necko-wifi
 LIB_DEPENDS+=		sqlite3.>=13.0:sqlite3->=3.6.10:databases/sqlite3
