@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2009/11/23 10:13:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/28 21:35:26 jim Exp $
 
 SHARED_ONLY =		Yes
 
-COMMENT =		tetrieve names of code references
+COMMENT =		retrieve names of code references
 
 DISTNAME =		Sub-Identify-0.04
+PKGNAME =		p5-${DISTNAME}p0
 CATEGORIES =		devel
 
 # perl
