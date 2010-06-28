@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/06/28 18:52:31 robert Exp $
+# $OpenBSD: Makefile,v 1.22 2010/06/28 19:30:13 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -10,9 +10,9 @@ V=		0.6.25
 DISTNAME=	avahi-${V}
 CATEGORIES=	net devel
 
-PKGNAME-main=	avahi-${V}p8
-PKGNAME-gtk=	avahi-gtk-${V}p5
-PKGNAME-mono=	mono-avahi-${V}p3
+PKGNAME-main=	avahi-${V}p9
+PKGNAME-gtk=	avahi-gtk-${V}p6
+PKGNAME-mono=	mono-avahi-${V}p4
 PKGNAME-qt3=	avahi-qt3-${V}p3
 PKGNAME-qt4=	avahi-qt4-${V}p2
 
@@ -52,7 +52,7 @@ WANTLIB=	c expat glib-2.0 gobject-2.0 pcre pthread
 BUILD_DEPENDS=	::converters/xmltoman
 
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
-		glib-2.0.>=1800,gobject-2.0::devel/glib2 \
+		glib-2.0.>=1800,gobject-2.0,gthread-2.0::devel/glib2 \
 		gdbm::databases/gdbm \
 		daemon::devel/libdaemon \
 		dbus-1::x11/dbus
@@ -80,7 +80,7 @@ CONFIGURE_ARGS+= --disable-mono \
 		--disable-monodoc
 .endif
 
-.if !${FLAVOR:L:Mno_gtk}
+.if !${FLAVOR:L:Mno_gtk} || !${FLAVOR:L:Mno_mono}
 MULTI_PACKAGES+= -gtk
 MODULES+=	lang/python
 BUILD_DEPENDS+=	:python-gdbm-*:lang/python/${MODPY_VERSION},-gdbm \
@@ -100,7 +100,8 @@ WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		expat fontconfig freetype gdbm gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 glitz gmodule-2.0 \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb xml2 z
+		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb xml2 z \
+		xcb-render xcb-render-util
 .else
 CONFIGURE_ARGS+= -disable-gtk \
 		--disable-python \
@@ -199,5 +200,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	mv ${WRKINST}${SYSCONFDIR}/dbus-1 ${PREFIX}/share/examples/
 	mv ${WRKINST}${SYSCONFDIR}/avahi ${PREFIX}/share/examples/
+# DLLMAP_FILES won't work here since the files are generated during the build process
+	find ${PREFIX} -name avahi-sharp.dll.config -or -name avahi-ui-sharp.dll.config | \
+		xargs perl -pi -e 's,\.so\.[0-9]+,\.so,g'
 
 .include <bsd.port.mk>
