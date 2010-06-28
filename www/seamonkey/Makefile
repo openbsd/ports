@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.47 2010/06/23 17:11:50 landry Exp $
+# $OpenBSD: Makefile,v 1.48 2010/06/28 21:34:39 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
 COMMENT=	integrated mozilla application suite
 
-VER=		2.0.4
+VER=		2.0.5
 DISTNAME=	seamonkey-${VER}.source
-PKGNAME=	seamonkey-${VER}p2
+PKGNAME=	seamonkey-${VER}
 EXTRACT_SUFX=	.tar.bz2
 
 # must be in sync with SO_VERSION in mail/mozilla-thunderbird
@@ -85,7 +85,8 @@ WANTLIB=	c glib-2.0 m pthread stdc++ sndio \
 		Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 \
 		cairo expat fontconfig freetype glitz gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 png pthread-stubs xcb z gio-2.0
+		pangoft2-1.0 pixman-1 png pthread-stubs xcb z gio-2.0 \
+		xcb-render xcb-render-util
 
 VMEM_WARNING=	Yes
 
