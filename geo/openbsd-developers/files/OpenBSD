@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.61 2010/06/10 05:57:19 sebastia Exp $
+# $OpenBSD: OpenBSD,v 1.62 2010/06/28 06:03:23 matthew Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -16,6 +16,7 @@
 36.134		-86.70		"david"		# David Krause
 37.3706		-122.0138	"ckuethe"	# Chris Kuethe
 37.515049	-122.339528	"marc"		# Marco S. Hyman
+37.75		-122.41		"matthew"	# Matthew Dempsky
 38.9693		-77.3863	"jason"		# Jason L. Wright
 39.179910	-77.058420	"merdely"	# Michael Erdely
 39.5565		-77.0300	"jdixon"	# Jason Dixon
