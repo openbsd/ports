@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2009/09/14 17:19:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/28 22:51:25 ajacoutot Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-3.c
-PKGNAME =	i3-3.3p0
+PKGNAME =	i3-3.3p1
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -26,6 +26,8 @@ RUN_DEPENDS =	::x11/dmenu
 
 USE_GMAKE =	Yes
 USE_X11 =	Yes
+
+NO_REGRESS =	Yes
 
 pre-configure:
 		${SUBST_CMD} ${WRKSRC}/i3.config ${WRKSRC}/src/config.c
