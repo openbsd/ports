@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.148 2010/06/25 12:02:18 espie Exp $
+# $OpenBSD: make-plist,v 1.149 2010/06/28 11:24:01 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -80,14 +80,19 @@ sub reverse
 	return $_;
 }
 
+my $first_warn = 1;
 sub reverse_with_lib
 {
 	my ($self, $_) = @_;
 	if (m/^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$/) {
 		my ($path, $name, $version) = ($1, $2, $3);
 		if (!defined $self->{l}->{$name}) {
-			print STDERR "WARNING: unregistered shared lib: $name "
-			. "(version: $version)\n";
+			if ($first_warn) {
+				print STDERR "WARNING: unregistered shared lib(s)\n";
+				$first_warn = 0;
+			}
+			print STDERR "SHARED_LIBS +=\t$name ", 
+			    ' 'x (25-length($name)), "0.0 # $version\n";
 		    $self->{l}->{$name} = $version;
 		} elsif ($self->{l}->{$name} ne $version) {
 			print STDERR "WARNING: version mismatch for lib: $name "
