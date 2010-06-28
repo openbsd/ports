@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.244 2010/05/31 19:39:48 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.245 2010/06/28 18:20:56 robert Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -84,6 +84,7 @@
      SUBDIR += milkytracker
      SUBDIR += mixer.app
      SUBDIR += mkplaylist
+     SUBDIR += mono-taglib
      SUBDIR += morseplayer
      SUBDIR += mp3blaster
      SUBDIR += mp3cddb
