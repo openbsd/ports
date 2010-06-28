@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-mysqli,v 1.1.1.1 2010/06/27 20:28:45 robert Exp $
+@comment $OpenBSD: PLIST-mysqli,v 1.2 2010/06/28 22:45:55 robert Exp $
 @pkgpath www/php5/extensions,-mysqli,hardened
 @pkgpath www/php5/extensions,-mysqli,no_x11
 lib/php-${PV}/modules/mysqli.so
 share/examples/php-${PV}/mysqli.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/mysqli.ini

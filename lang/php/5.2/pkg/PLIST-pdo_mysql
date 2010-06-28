@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-pdo_mysql,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+@comment $OpenBSD: PLIST-pdo_mysql,v 1.2 2010/06/28 22:45:54 robert Exp $
 @pkgpath www/php5/extensions,-pdo_mysql,no_x11
 lib/php-${PV}/modules/pdo_mysql.so
 share/examples/php-${PV}/pdo_mysql.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/pdo_mysql.ini

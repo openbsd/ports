@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-sqlite,v 1.1.1.1 2010/06/27 20:28:45 robert Exp $
+@comment $OpenBSD: PLIST-sqlite,v 1.2 2010/06/28 22:45:55 robert Exp $
 @pkgpath www/php5/extensions,-sqlite,hardened
 @pkgpath www/php5/extensions,-sqlite,no_x11
 lib/php-${PV}/modules/sqlite.so
 share/examples/php-${PV}/sqlite.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/sqlite.ini

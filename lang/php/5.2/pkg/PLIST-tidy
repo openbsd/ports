@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-tidy,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+@comment $OpenBSD: PLIST-tidy,v 1.2 2010/06/28 22:45:54 robert Exp $
 @pkgpath www/php5/extensions,-tidy,no_x11
 lib/php-${PV}/modules/tidy.so
 share/examples/php-${PV}/tidy.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/tidy.ini
