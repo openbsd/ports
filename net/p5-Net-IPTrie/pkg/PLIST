@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/28 13:31:32 jasper Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/IPTrie/
+${P5SITE}/Net/IPTrie.pm
+${P5SITE}/Net/IPTrie/Node.pm
+@man man/man3p/Net::IPTrie.3p
+@man man/man3p/Net::IPTrie::Node.3p
