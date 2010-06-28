@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2010/06/15 15:34:03 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2010/06/28 21:27:36 kili Exp $
 @pkgpath lang/ghc
 bin/ghc
 bin/ghc-${MODGHC_VER}
@@ -2195,6 +2195,10 @@ lib/ghc/libHSrts.a
 lib/ghc/libHSrts_debug.a
 lib/ghc/libHSrts_l.a
 lib/ghc/libHSrts_p.a
+lib/ghc/libHSrts_thr.a
+lib/ghc/libHSrts_thr_debug.a
+lib/ghc/libHSrts_thr_l.a
+lib/ghc/libHSrts_thr_p.a
 lib/ghc/libHSrtsmain.a
 lib/ghc/mtl-1.1.0.2/
 lib/ghc/mtl-1.1.0.2/Control/
@@ -2459,6 +2463,8 @@ lib/ghc/unix-2.4.0.2/System/Posix/Process/Internals.hi
 lib/ghc/unix-2.4.0.2/System/Posix/Process/Internals.p_hi
 lib/ghc/unix-2.4.0.2/System/Posix/Resource.hi
 lib/ghc/unix-2.4.0.2/System/Posix/Resource.p_hi
+lib/ghc/unix-2.4.0.2/System/Posix/Semaphore.hi
+lib/ghc/unix-2.4.0.2/System/Posix/Semaphore.p_hi
 lib/ghc/unix-2.4.0.2/System/Posix/SharedMem.hi
 lib/ghc/unix-2.4.0.2/System/Posix/SharedMem.p_hi
 lib/ghc/unix-2.4.0.2/System/Posix/Signals/

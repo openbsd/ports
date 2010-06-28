@@ -1,0 +1,17 @@
+$OpenBSD: patch-rts_sm_Storage_h,v 1.1 2010/06/28 21:27:36 kili Exp $
+
+during shutdown, only free the heap if we waited for foreign calls to exit
+
+From Simon Marlow.
+
+--- rts/sm/Storage.h.orig	Wed Jun  9 20:10:14 2010
++++ rts/sm/Storage.h	Mon Jun 28 19:04:59 2010
+@@ -17,7 +17,7 @@ BEGIN_RTS_PRIVATE
+ 
+ void initStorage(void);
+ void exitStorage(void);
+-void freeStorage(void);
++void freeStorage(rtsBool free_heap);
+ 
+ /* -----------------------------------------------------------------------------
+    Storage manager state

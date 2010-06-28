@@ -1,0 +1,22 @@
+$OpenBSD: patch-rts_RtsStartup_c,v 1.3 2010/06/28 21:27:36 kili Exp $
+
+during shutdown, only free the heap if we waited for foreign calls to exit
+
+From Simon Marlow.
+
+--- rts/RtsStartup.c.orig	Wed Jun  9 20:10:13 2010
++++ rts/RtsStartup.c	Mon Jun 28 19:04:59 2010
+@@ -440,8 +440,11 @@ hs_exit_(rtsBool wait_foreign)
+     /* free hash table storage */
+     exitHashTable();
+ 
+-    // Finally, free all our storage
+-    freeStorage();
++    // Finally, free all our storage.  However, we only free the heap
++    // memory if we have waited for foreign calls to complete;
++    // otherwise a foreign call in progress may still be referencing
++    // heap memory (e.g. by being passed a ByteArray#).
++    freeStorage(wait_foreign);
+ 
+ #if defined(DEBUG)
+     /* and shut down the allocator debugging */

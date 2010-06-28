@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2010/06/15 15:34:03 kili Exp $
+# $OpenBSD: Makefile,v 1.38 2010/06/28 21:27:36 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
-PKGNAME-main =		ghc-${MODGHC_VER}
-PKGNAME-doc =		ghc-doc-${MODGHC_VER}
+PKGNAME-main =		ghc-${MODGHC_VER}p0
+PKGNAME-doc =		ghc-doc-${MODGHC_VER}p0
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
@@ -35,7 +35,7 @@ LIB_DEPENDS-doc =
 LIB_DEPENDS-main =	${LIB_DEPENDS} gmp::devel/gmp
 RUN_DEPENDS-doc =
 RUN_DEPENDS-main =
-WANTLIB-main =		c m ncurses util
+WANTLIB-main =		c m ncurses pthread util
 
 MASTER_SITES =		http://darcs.haskell.org/download/dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/${MODGHC_VER}/ \

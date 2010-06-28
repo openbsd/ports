@@ -1,0 +1,22 @@
+$OpenBSD: patch-rts_sm_Storage_c,v 1.1 2010/06/28 21:27:36 kili Exp $
+
+during shutdown, only free the heap if we waited for foreign calls to exit
+
+From Simon Marlow.
+
+--- rts/sm/Storage.c.orig	Wed Jun  9 20:10:14 2010
++++ rts/sm/Storage.c	Mon Jun 28 19:04:59 2010
+@@ -272,11 +272,11 @@ exitStorage (void)
+ }
+ 
+ void
+-freeStorage (void)
++freeStorage (rtsBool free_heap)
+ {
+     stgFree(g0s0); // frees all the steps
+     stgFree(generations);
+-    freeAllMBlocks();
++    if (free_heap) freeAllMBlocks();
+ #if defined(THREADED_RTS)
+     closeMutex(&sm_mutex);
+ #endif
