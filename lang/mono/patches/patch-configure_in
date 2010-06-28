@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.6 2010/04/28 17:06:26 robert Exp $
---- configure.in.orig	Tue Apr 27 11:43:09 2010
-+++ configure.in	Tue Apr 27 11:45:24 2010
+$OpenBSD: patch-configure_in,v 1.7 2010/06/28 18:15:24 robert Exp $
+--- configure.in.orig	Thu Apr 22 17:37:47 2010
++++ configure.in	Mon Jun 28 19:36:58 2010
+@@ -147,7 +147,7 @@ case "$host" in
+ 		;;
+ 	*-*-*openbsd*)
+ 		platform_win32=no
+-		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE -DGC_OPENBSD_THREADS -DPLATFORM_BSD -D_GNU_SOURCE -D_REENTRANT -DUSE_MMAP"
++		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE -DGC_OPENBSD_THREADS -DPLATFORM_BSD -D_REENTRANT -DUSE_MMAP"
+ 		if test "x$disable_munmap" != "xyes"; then
+ 		CPPFLAGS="$CPPFLAGS -DUSE_MUNMAP"
+ 		fi
 @@ -328,7 +328,7 @@ fi
  
  AM_CONDITIONAL(NO_VERSION_SCRIPT, test x$no_version_script = xyes)
