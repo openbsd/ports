@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/06/28 18:33:59 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2010/06/28 18:52:31 robert Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -10,9 +10,9 @@ V=		0.6.25
 DISTNAME=	avahi-${V}
 CATEGORIES=	net devel
 
-PKGNAME-main=	avahi-${V}p9
+PKGNAME-main=	avahi-${V}p8
 PKGNAME-gtk=	avahi-gtk-${V}p5
-PKGNAME-mono=	mono-avahi-${V}p4
+PKGNAME-mono=	mono-avahi-${V}p3
 PKGNAME-qt3=	avahi-qt3-${V}p3
 PKGNAME-qt4=	avahi-qt4-${V}p2
 
