@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/29 13:56:06 jim Exp $
+${P5SITE}/Package/
+${P5SITE}/Package/Stash.pm
+@man man/man3p/Package::Stash.3p
