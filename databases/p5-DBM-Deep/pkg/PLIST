@@ -1,14 +1,51 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/29 08:33:33 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/06/29 13:43:48 jim Exp $
 ${P5SITE}/DBM/
 ${P5SITE}/DBM/Deep/
 ${P5SITE}/DBM/Deep.pm
 ${P5SITE}/DBM/Deep.pod
 ${P5SITE}/DBM/Deep/Array.pm
 ${P5SITE}/DBM/Deep/Cookbook.pod
+${P5SITE}/DBM/Deep/Engine/
 ${P5SITE}/DBM/Deep/Engine.pm
-${P5SITE}/DBM/Deep/File.pm
+${P5SITE}/DBM/Deep/Engine/DBI.pm
+${P5SITE}/DBM/Deep/Engine/File.pm
 ${P5SITE}/DBM/Deep/Hash.pm
 ${P5SITE}/DBM/Deep/Internals.pod
+${P5SITE}/DBM/Deep/Iterator/
+${P5SITE}/DBM/Deep/Iterator.pm
+${P5SITE}/DBM/Deep/Iterator/DBI.pm
+${P5SITE}/DBM/Deep/Iterator/File/
+${P5SITE}/DBM/Deep/Iterator/File.pm
+${P5SITE}/DBM/Deep/Iterator/File/BucketList.pm
+${P5SITE}/DBM/Deep/Iterator/File/Index.pm
+${P5SITE}/DBM/Deep/Null.pm
+${P5SITE}/DBM/Deep/Sector/
+${P5SITE}/DBM/Deep/Sector.pm
+${P5SITE}/DBM/Deep/Sector/DBI/
+${P5SITE}/DBM/Deep/Sector/DBI.pm
+${P5SITE}/DBM/Deep/Sector/DBI/Reference.pm
+${P5SITE}/DBM/Deep/Sector/DBI/Scalar.pm
+${P5SITE}/DBM/Deep/Sector/File/
+${P5SITE}/DBM/Deep/Sector/File.pm
+${P5SITE}/DBM/Deep/Sector/File/BucketList.pm
+${P5SITE}/DBM/Deep/Sector/File/Data.pm
+${P5SITE}/DBM/Deep/Sector/File/Index.pm
+${P5SITE}/DBM/Deep/Sector/File/Null.pm
+${P5SITE}/DBM/Deep/Sector/File/Reference.pm
+${P5SITE}/DBM/Deep/Sector/File/Scalar.pm
+${P5SITE}/DBM/Deep/Storage/
+${P5SITE}/DBM/Deep/Storage.pm
+${P5SITE}/DBM/Deep/Storage/DBI.pm
+${P5SITE}/DBM/Deep/Storage/File.pm
 @man man/man3p/DBM::Deep.3p
 @man man/man3p/DBM::Deep::Cookbook.3p
+@man man/man3p/DBM::Deep::Engine.3p
+@man man/man3p/DBM::Deep::Engine::File.3p
 @man man/man3p/DBM::Deep::Internals.3p
+@man man/man3p/DBM::Deep::Iterator.3p
+@man man/man3p/DBM::Deep::Iterator::File::BucketList.3p
+@man man/man3p/DBM::Deep::Iterator::File::Index.3p
+@man man/man3p/DBM::Deep::Null.3p
+@man man/man3p/DBM::Deep::Sector::File.3p
+@man man/man3p/DBM::Deep::Storage.3p
+@man man/man3p/DBM::Deep::Storage::File.3p
