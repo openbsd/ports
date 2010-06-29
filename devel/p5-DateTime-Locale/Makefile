@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2009/08/17 09:36:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2010/06/29 16:42:23 jim Exp $
 
 COMMENT=		localization data for perl DateTime.pm
 
 MODULES=		cpan
-DISTNAME=		DateTime-Locale-0.43
+DISTNAME=		DateTime-Locale-0.45
 CATEGORIES=		devel
 
 # Perl
@@ -19,4 +19,4 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 CONFIGURE_STYLE=	modbuild
 REGRESS_DEPENDS=	::devel/p5-Test-Output
 
-.include <bsd.port.mk>	
+.include <bsd.port.mk>
