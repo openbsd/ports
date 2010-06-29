@@ -1,4 +1,4 @@
-$OpenBSD: patch-server_gam_channel_c,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+$OpenBSD: patch-server_gam_channel_c,v 1.2 2010/06/29 04:27:11 ajacoutot Exp $
 
 Adapt socket credentials code to OpenBSD.
 
@@ -29,7 +29,7 @@ prevent gam_server from starting.
 +        gid_t egid;
 +        if (getpeereid (fd, &euid, &egid) == 0)
 +            {
-+                c_pid = getpid();
++                c_pid = -1;
 +                c_uid = euid;
 +                c_gid = egid;
 +            }
