@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/09/04 03:11:47 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/06/29 16:45:34 jim Exp $
 ${P5SITE}/DateTime/
 ${P5SITE}/DateTime/TimeZone/
 ${P5SITE}/DateTime/TimeZone.pm
@@ -77,6 +77,7 @@ ${P5SITE}/DateTime/TimeZone/America/Aruba.pm
 ${P5SITE}/DateTime/TimeZone/America/Asuncion.pm
 ${P5SITE}/DateTime/TimeZone/America/Atikokan.pm
 ${P5SITE}/DateTime/TimeZone/America/Bahia.pm
+${P5SITE}/DateTime/TimeZone/America/Bahia_Banderas.pm
 ${P5SITE}/DateTime/TimeZone/America/Barbados.pm
 ${P5SITE}/DateTime/TimeZone/America/Belem.pm
 ${P5SITE}/DateTime/TimeZone/America/Belize.pm
@@ -140,6 +141,7 @@ ${P5SITE}/DateTime/TimeZone/America/Maceio.pm
 ${P5SITE}/DateTime/TimeZone/America/Managua.pm
 ${P5SITE}/DateTime/TimeZone/America/Manaus.pm
 ${P5SITE}/DateTime/TimeZone/America/Martinique.pm
+${P5SITE}/DateTime/TimeZone/America/Matamoros.pm
 ${P5SITE}/DateTime/TimeZone/America/Mazatlan.pm
 ${P5SITE}/DateTime/TimeZone/America/Menominee.pm
 ${P5SITE}/DateTime/TimeZone/America/Merida.pm
@@ -158,6 +160,7 @@ ${P5SITE}/DateTime/TimeZone/America/Noronha.pm
 ${P5SITE}/DateTime/TimeZone/America/North_Dakota/
 ${P5SITE}/DateTime/TimeZone/America/North_Dakota/Center.pm
 ${P5SITE}/DateTime/TimeZone/America/North_Dakota/New_Salem.pm
+${P5SITE}/DateTime/TimeZone/America/Ojinaga.pm
 ${P5SITE}/DateTime/TimeZone/America/Panama.pm
 ${P5SITE}/DateTime/TimeZone/America/Pangnirtung.pm
 ${P5SITE}/DateTime/TimeZone/America/Paramaribo.pm
@@ -172,6 +175,7 @@ ${P5SITE}/DateTime/TimeZone/America/Recife.pm
 ${P5SITE}/DateTime/TimeZone/America/Regina.pm
 ${P5SITE}/DateTime/TimeZone/America/Resolute.pm
 ${P5SITE}/DateTime/TimeZone/America/Rio_Branco.pm
+${P5SITE}/DateTime/TimeZone/America/Santa_Isabel.pm
 ${P5SITE}/DateTime/TimeZone/America/Santarem.pm
 ${P5SITE}/DateTime/TimeZone/America/Santiago.pm
 ${P5SITE}/DateTime/TimeZone/America/Santo_Domingo.pm
@@ -198,6 +202,7 @@ ${P5SITE}/DateTime/TimeZone/Antarctica/
 ${P5SITE}/DateTime/TimeZone/Antarctica/Casey.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Davis.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/DumontDUrville.pm
+${P5SITE}/DateTime/TimeZone/Antarctica/Macquarie.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Mawson.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/McMurdo.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Palmer.pm
@@ -252,6 +257,7 @@ ${P5SITE}/DateTime/TimeZone/Asia/Makassar.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Manila.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Muscat.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Nicosia.pm
+${P5SITE}/DateTime/TimeZone/Asia/Novokuznetsk.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Novosibirsk.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Omsk.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Oral.pm
