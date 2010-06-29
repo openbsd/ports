@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/05/29 15:28:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/29 05:01:34 steven Exp $
 
 COMMENT =	library for fast updates of QR and Cholesky decompositions
 
 DISTNAME =	qrupdate-1.1.1
-PKGNAME =	${DISTNAME}p1
+PKGNAME =	${DISTNAME}p2
 SHARED_LIBS +=  qrupdate	0.0	# .1.1
 CATEGORIES =	math
 
@@ -27,15 +27,19 @@ WANTLIB =		m ${MODFORTRAN_WANTLIB}
 BUILD_DEPENDS =		${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS =		${MODFORTRAN_LIB_DEPENDS}
 
+ALL_TARGET =		lib solib
+MAKE_FLAGS =		FC="${FC}" FFLAGS="${FFLAGS}" \
+			VERSION=${LIBqrupdate_VERSION} \
+			MAJOR=${LIBqrupdate_VERSION:R} \
+			BLAS= LAPACK=
 USE_GMAKE =		Yes
-NO_REGRESS =		Yes
+
+REGRESS_TARGET =	test
+REGRESS_FLAGS =		BLAS="-lblas" LAPACK="-llapack"
 
 SUBST_VARS =		MAKE_PROGRAM
 
 pre-configure:
-	perl -pi -e 's,!!LIBqrupdate_version!!,${LIBqrupdate_VERSION},;' \
-		-e 's,!!LIBqrupdate_version_R!!,${LIBqrupdate_VERSION:R},' \
-		${WRKSRC}/Makeconf
 	${SUBST_CMD} ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
