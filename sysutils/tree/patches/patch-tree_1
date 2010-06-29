@@ -1,0 +1,31 @@
+$OpenBSD: patch-tree_1,v 1.1 2010/06/29 14:21:23 stsp Exp $
+--- tree.1.orig	Thu Jun 24 00:13:32 2010
++++ tree.1	Thu Jun 24 00:13:35 2010
+@@ -14,9 +14,7 @@
+ .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .\"
+-
+ .\" options that are common to ls are ripped off ls(1)
+-
+ .Dd Jun 20, 2006
+ .Dt TREE 1
+ .Os
+@@ -24,7 +22,7 @@
+ .Nm tree
+ .Nd display an ascii tree of a directory's contents
+ .Sh SYNOPSIS
+-.Nm tree
++.Nm
+ .Op Fl adfFilrstx
+ .Op Fl L Ar depth
+ .Ar path ...
+@@ -67,7 +65,7 @@ Sort by time modified (most recently modified first).
+ Prevents
+ .Nm
+ from descending into directories that have a device number different than that of the file from which the descent began.
+-
++.El
+ .Sh SEE ALSO
+ .Xr find 1 ,
+ .Xr ls 1
