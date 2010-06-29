@@ -1,0 +1,5 @@
+LibWapcaplet provides a reference counted string internment system
+designed to store small strings and allow rapid comparison of them in
+terms of equality. It supports a caseless comparison where it will
+automatically intern a lowercased variant of the string and use that
+for comparison if needed.

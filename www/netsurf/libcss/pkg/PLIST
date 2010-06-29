@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/29 20:11:13 landry Exp $
+%%SHARED%%
+include/libcss/
+include/libcss/computed.h
+include/libcss/errors.h
+include/libcss/fpmath.h
+include/libcss/functypes.h
+include/libcss/hint.h
+include/libcss/libcss.h
+include/libcss/properties.h
+include/libcss/select.h
+include/libcss/stylesheet.h
+include/libcss/types.h
+lib/pkgconfig/
+lib/pkgconfig/libcss.pc
