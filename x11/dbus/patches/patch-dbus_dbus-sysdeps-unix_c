@@ -1,11 +1,11 @@
-$OpenBSD: patch-dbus_dbus-sysdeps-unix_c,v 1.3 2010/06/29 02:14:57 ajacoutot Exp $
---- dbus/dbus-sysdeps-unix.c.orig	Tue Jun 29 04:12:50 2010
-+++ dbus/dbus-sysdeps-unix.c	Tue Jun 29 04:13:23 2010
-@@ -1256,6 +1256,7 @@ _dbus_read_credentials_socket  (int              clien
+$OpenBSD: patch-dbus_dbus-sysdeps-unix_c,v 1.4 2010/06/29 03:36:30 ajacoutot Exp $
+--- dbus/dbus-sysdeps-unix.c.orig	Tue Mar 23 20:01:27 2010
++++ dbus/dbus-sysdeps-unix.c	Tue Jun 29 05:35:34 2010
+@@ -1255,6 +1255,7 @@ _dbus_read_credentials_socket  (int              clien
+     gid_t egid;
      if (getpeereid (client_fd, &euid, &egid) == 0)
        {
++        pid_read = DBUS_PID_UNSET;
          uid_read = euid;
-+        pid_read = getpid();
        }
      else
-       {
