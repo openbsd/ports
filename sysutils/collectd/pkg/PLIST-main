@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2010/06/24 06:53:37 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2010/06/29 20:17:18 landry Exp $
 @newgroup _collectd:652
 @newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
 @bin bin/collectd-nagios
@@ -119,7 +119,6 @@ libdata/perl5/site_perl/Collectd/Unixsock.pm
 @man man/man5/collectd-java.5
 @man man/man5/collectd-perl.5
 @man man/man5/collectd-python.5
-@man man/man5/collectd-snmp.5
 @man man/man5/collectd-unixsock.5
 @man man/man5/collectd.conf.5
 @man man/man5/types.db.5
