@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2010/06/17 08:17:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2010/06/29 00:10:21 ajacoutot Exp $
 %%SHARED%%
 bin/gnumeric
 @bin bin/gnumeric-${VERSION}
@@ -120,6 +120,7 @@ include/libspreadsheet-1.10/spreadsheet/style.h
 include/libspreadsheet-1.10/spreadsheet/symbol.h
 include/libspreadsheet-1.10/spreadsheet/tools/
 include/libspreadsheet-1.10/spreadsheet/tools/gnm-solver.h
+include/libspreadsheet-1.10/spreadsheet/undo.h
 include/libspreadsheet-1.10/spreadsheet/validation-combo.h
 include/libspreadsheet-1.10/spreadsheet/validation.h
 include/libspreadsheet-1.10/spreadsheet/value.h
