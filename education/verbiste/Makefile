@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2009/11/01 19:02:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/29 04:17:31 lum Exp $
 
 COMMENT=	French conjugation system
 
-DISTNAME=	verbiste-0.1.28
+DISTNAME=	verbiste-0.1.29
 SHARED_LIBS +=  verbiste-0.1         1.0      # .0.0
 CATEGORIES=	education
 HOMEPAGE=	http://sarrazip.com/dev/verbiste.html
@@ -27,7 +27,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 glitz gmodule-2.0 gobject-2.0 m \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
-		pthread-stubs stdc++ xcb z
+		pthread-stubs stdc++ xcb z gthread-2.0 pthread xcb-render \
+		xcb-render-util
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
