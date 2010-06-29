@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-tidy,v 1.2 2010/06/28 22:45:54 robert Exp $
-@pkgpath www/php5/extensions,-tidy,no_x11
+@comment $OpenBSD: PLIST-tidy,v 1.3 2010/06/29 01:10:45 robert Exp $
+@conflict php5-tidy->=5.2
+@pkgpath www/php5/extensions,-tidy
 lib/php-${PV}/modules/tidy.so
 share/examples/php-${PV}/tidy.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/tidy.ini

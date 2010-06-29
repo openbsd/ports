@@ -1,9 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2010/06/27 20:28:45 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2010/06/29 01:10:45 robert Exp $
 @option no-default-conflict
 @conflict php->=5.3,<5.4
 @conflict php-fastcgi->=5.3,<5.4
+@conflict php5-core->=5.2
+@conflict php5-core-fastcgi->=5.2
 @pkgpath lang/php/5.3
 @pkgpath lang/php/5.3,-fastcgi
+@pkgpath www/php5/core
+@pkgpath www/php5/core,-fastcgi
+@pkgpath www/php5/extensions,-mbstring
 %%SHARED%%
 @comment @exec install -d ${PHP_CONFIG_PATH}/php-${PV}/
 @comment @exec install -d ${PHP_CONFIG_PATH}/php-${PV}.sample/
