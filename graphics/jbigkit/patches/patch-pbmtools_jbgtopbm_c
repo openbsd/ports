@@ -1,0 +1,86 @@
+$OpenBSD: patch-pbmtools_jbgtopbm_c,v 1.1 2010/06/29 22:40:45 naddy Exp $
+--- pbmtools/jbgtopbm.c.orig	Fri Jun 11 08:17:57 2004
++++ pbmtools/jbgtopbm.c	Tue Jun 29 16:28:35 2010
+@@ -112,7 +112,7 @@ void diagnose_bie(FILE *f)
+   /* read BIH */
+   read_file(&bie, &buflen, &len, f);
+   if (len < 20) {
+-    fprintf(d, "Error: Input file is %d < 20 bytes long and therefore "
++    fprintf(d, "Error: Input file is %zd < 20 bytes long and therefore "
+ 	    "does not contain an intact BIE header!\n", len);
+     return;
+   }
+@@ -158,30 +158,30 @@ void diagnose_bie(FILE *f)
+       == (JBG_DPON | JBG_DPPRIV))
+     p += 1728;  /* skip DPTABLE */
+   if (p > bie + len) {
+-    fprintf(d, "Error: Input file is %d < 20+1728 bytes long and therefore "
++    fprintf(d, "Error: Input file is %zd < 20+1728 bytes long and therefore "
+ 	    "does not contain an intact BIE header with DPTABLE!\n", len);
+     return;
+   }
+   while (p != bie + len) {
+     if (p > bie + len - 2) {
+-      fprintf(d, "%06x: Error: single byte 0x%02x left\n", p - bie, *p);
++      fprintf(d, "%06tx: Error: single byte 0x%02x left\n", p - bie, *p);
+       return;
+     }
+     if (p[0] != MARKER_ESC || p[1] == MARKER_STUFF) {
+-      fprintf(d, "%06x: PSCD\n", p - bie);
++      fprintf(d, "%06tx: PSCD\n", p - bie);
+     } else
+       switch (p[1]) {
+       case MARKER_SDNORM:
+-	fprintf(d, "%06x: ESC SDNORM #%d\n", p - bie, sde++);
++	fprintf(d, "%06tx: ESC SDNORM #%d\n", p - bie, sde++);
+ 	break;
+       case MARKER_SDRST:
+-	fprintf(d, "%06x: ESC SDRST #%d\n", p - bie, sde++);
++	fprintf(d, "%06tx: ESC SDRST #%d\n", p - bie, sde++);
+ 	break;
+       case MARKER_ABORT:
+-	fprintf(d, "%06x: ESC ABORT\n", p - bie);
++	fprintf(d, "%06tx: ESC ABORT\n", p - bie);
+ 	break;
+       case MARKER_NEWLEN:
+-	fprintf(d, "%06x: ESC NEWLEN ", p - bie);
++	fprintf(d, "%06tx: ESC NEWLEN ", p - bie);
+ 	if (p + 5 < bie + len)
+ 	  fprintf(d, "YD = %lu\n",
+ 		  (((long) p[2] << 24) | ((long) p[3] << 16) |
+@@ -190,7 +190,7 @@ void diagnose_bie(FILE *f)
+ 	  fprintf(d, "unexpected EOF\n");
+ 	break;
+       case MARKER_ATMOVE:
+-	fprintf(d, "%06x: ESC ATMOVE ", p - bie);
++	fprintf(d, "%06tx: ESC ATMOVE ", p - bie);
+ 	if (p + 7 < bie + len)
+ 	  fprintf(d, "YAT = %lu, tX = %d, tY = %d\n",
+ 		  (((long) p[2] << 24) | ((long) p[3] << 16) |
+@@ -199,7 +199,7 @@ void diagnose_bie(FILE *f)
+ 	  fprintf(d, "unexpected EOF\n");
+ 	break;
+       case MARKER_COMMENT:
+-	fprintf(d, "%06x: ESC COMMENT ", p - bie);
++	fprintf(d, "%06tx: ESC COMMENT ", p - bie);
+ 	if (p + 5 < bie + len)
+ 	  fprintf(d, "LC = %lu\n",
+ 		  (((long) p[2] << 24) | ((long) p[3] << 16) |
+@@ -208,7 +208,7 @@ void diagnose_bie(FILE *f)
+ 	  fprintf(d, "unexpected EOF\n");
+ 	break;
+       default:
+-	fprintf(d, "%06x: ESC 0x%02x\n", p - bie, p[1]);
++	fprintf(d, "%06tx: ESC 0x%02x\n", p - bie, p[1]);
+       }
+     p = jbg_next_pscdms(p, len - (p - bie));
+     if (!p) {
+@@ -319,7 +319,7 @@ int main (int argc, char **argv)
+   /* read BIH first to check VLENGTH */
+   len = fread(buffer, 1, 20, fin);
+   if (len < 20) {
+-    fprintf(stderr, "Input file '%s' (%d bytes) must be at least "
++    fprintf(stderr, "Input file '%s' (%zd bytes) must be at least "
+ 	    "20 bytes long\n", fnin, len);
+     if (fout != stdout) {
+       fclose(fout);
