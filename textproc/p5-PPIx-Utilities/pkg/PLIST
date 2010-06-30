@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/30 17:06:08 jim Exp $
+${P5SITE}/PPIx/
+${P5SITE}/PPIx/Utilities/
+${P5SITE}/PPIx/Utilities.pm
+${P5SITE}/PPIx/Utilities/Exception/
+${P5SITE}/PPIx/Utilities/Exception/Bug.pm
+${P5SITE}/PPIx/Utilities/Node.pm
+${P5SITE}/PPIx/Utilities/Statement.pm
+@man man/man3p/PPIx::Utilities.3p
+@man man/man3p/PPIx::Utilities::Exception::Bug.3p
+@man man/man3p/PPIx::Utilities::Node.3p
+@man man/man3p/PPIx::Utilities::Statement.3p
