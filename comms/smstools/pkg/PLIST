@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/05/06 23:01:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/06/30 22:23:44 sthen Exp $
 @conflict gnokii-*
 @newgroup _smsd:590
 @newuser _smsd:590:_smsd:daemon:smsd user:/nonexistent:/sbin/nologin
@@ -51,7 +51,43 @@ share/doc/smstools/statusmonitor.html
 share/doc/smstools/udh.html
 share/doc/smstools/windows.html
 share/examples/smstools/
+share/examples/smstools/README
+share/examples/smstools/language-ISO-8859-15.fi
+share/examples/smstools/language-UTF-8.fi
+share/examples/smstools/operator_logo1.sms
+share/examples/smstools/operator_logo2.sms
+share/examples/smstools/received_report.sms
+share/examples/smstools/received_sms.sms
+share/examples/smstools/scripts/
+share/examples/smstools/scripts/README
+share/examples/smstools/scripts/callhandler
+share/examples/smstools/scripts/checkhandler-utf-8
+share/examples/smstools/scripts/email2sms
+share/examples/smstools/scripts/eventhandler-utf-8
+share/examples/smstools/scripts/eventhandler_report
+share/examples/smstools/scripts/forwardsms
+share/examples/smstools/scripts/hex2bin
+share/examples/smstools/scripts/hex2dec
+share/examples/smstools/scripts/load_balancing.sh
+share/examples/smstools/scripts/mysmsd
+share/examples/smstools/scripts/pkill
+share/examples/smstools/scripts/regular_run
+share/examples/smstools/scripts/sendsms
+share/examples/smstools/scripts/sms2html
+share/examples/smstools/scripts/sms2unicode
+share/examples/smstools/scripts/sms2xml
+share/examples/smstools/scripts/sms3
+share/examples/smstools/scripts/smsevent
+share/examples/smstools/scripts/smsresend
+share/examples/smstools/scripts/smstest.php
+share/examples/smstools/scripts/sql_demo
+share/examples/smstools/scripts/unicode2sms
+share/examples/smstools/send_sms.sms
+share/examples/smstools/send_sms_unicode.sms
+share/examples/smstools/smsd.conf.easy
 share/examples/smstools/smsd.conf.full
+share/examples/smstools/smsd.conf.net
+share/examples/smstools/smsd.conf.non-root
 share/examples/smstools/smsd.conf.openbsd
 @sample ${SYSCONFDIR}/smsd.conf
 @sample /var/spool/sms/

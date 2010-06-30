@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/06/30 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2010/06/30 22:23:44 sthen Exp $
 
 COMMENT =	gateway to send and receive SMS through GSM mobile phones
 
 DISTNAME =	smstools3-3.1.11
-PKGNAME =	${DISTNAME}p0
+PKGNAME =	${DISTNAME}p1
 
 CATEGORIES =	comms
 
@@ -39,9 +39,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/scripts/{sendsms,sms2html} \
 		${WRKDIST}/scripts/{sms2unicode,unicode2sms} \
 		${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/smstools
-	${INSTALL_DATA} ${WRKDIST}/examples/smsd.conf.full \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/smstools \
+		${PREFIX}/share/examples/smstools/scripts
+	${INSTALL_DATA} ${WRKDIST}/examples/* \
 		${PREFIX}/share/examples/smstools
+	${INSTALL_DATA} ${WRKDIST}/scripts/* \
+		${PREFIX}/share/examples/smstools/scripts
+	rm ${PREFIX}/share/examples/smstools/scripts/*.orig
 	${SUBST_CMD} -c ${FILESDIR}/smsd.conf.openbsd \
 	       ${WRKDIR}/smsd.conf.openbsd
 	${INSTALL_DATA} ${WRKDIR}/smsd.conf.openbsd \
