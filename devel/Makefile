@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.811 2010/06/30 16:46:55 jim Exp $
+# $OpenBSD: Makefile,v 1.812 2010/06/30 19:02:51 robert Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -259,6 +259,7 @@
      SUBDIR += mk
      SUBDIR += mm
      SUBDIR += mono-addins
+     SUBDIR += mono-flickrnet
      SUBDIR += mono-notify
      SUBDIR += monodevelop
      SUBDIR += monotone
