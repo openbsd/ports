@@ -105,6 +105,30 @@ static int init(int rate, int channels, int format, int flags)
 		par.sig = 1;
 		par.le = 0;
 		break;
+	case AF_FORMAT_U24_LE:
+		par.bits = 24;
+		par.bps = 3;
+		par.sig = 0;
+		par.le = 1;
+		break;
+	case AF_FORMAT_S24_LE:
+		par.bits = 24;
+		par.bps = 3;
+		par.sig = 1;
+		par.le = 1;
+		break;
+	case AF_FORMAT_U24_BE:
+		par.bits = 24;
+		par.bps = 3;
+		par.sig = 0;
+		par.le = 0;
+		break;
+	case AF_FORMAT_S24_BE:
+		par.bits = 24;
+		par.bps = 3;
+		par.sig = 1;
+		par.le = 0;
+		break;
 	case AF_FORMAT_U32_LE:
 		par.bits = 32;
 		par.sig = 0;
@@ -153,6 +177,10 @@ static int init(int rate, int channels, int format, int flags)
 		format = par.sig ? 
 		    (par.le ? AF_FORMAT_S16_LE : AF_FORMAT_S16_BE) :
 		    (par.le ? AF_FORMAT_U16_LE : AF_FORMAT_U16_BE);
+	} else if ((par.bits == 24 || par.msb) && par.bps == 3) {
+		format = par.sig ? 
+		    (par.le ? AF_FORMAT_S24_LE : AF_FORMAT_S24_BE) :
+		    (par.le ? AF_FORMAT_U24_LE : AF_FORMAT_U24_BE);
 	} else if ((par.bits == 32 || par.msb) && par.bps == 4) {
 		format = par.sig ? 
 		    (par.le ? AF_FORMAT_S32_LE : AF_FORMAT_S32_BE) :
