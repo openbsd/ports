@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/04/24 16:50:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/06/30 00:15:03 ajacoutot Exp $
 
 COMMENT=	monitor kerberos tickets
 
 GNOME_PROJECT=	krb5-auth-dialog
-GNOME_VERSION=	0.14
-PKGNAME=	${DISTNAME}p1
+GNOME_VERSION=	0.16
 
 CATEGORIES=	security
 
