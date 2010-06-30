@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2008/10/04 17:58:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/30 16:56:18 jim Exp $
 
-COMMENT=	lists of Perl keywords for use in backend modules 
+COMMENT=	lists of Perl keywords for use in backend modules
 
 MODULES=	cpan
 
-DISTNAME=	B-Keywords-1.08
+DISTNAME=	B-Keywords-1.09
 CATEGORIES=	devel perl5
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
