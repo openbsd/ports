@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2010/06/23 18:13:55 landry Exp $
+# $OpenBSD: Makefile,v 1.234 2010/06/30 15:15:20 jim Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -17,7 +17,6 @@
      SUBDIR += bsd-airtools
      SUBDIR += bunny
      SUBDIR += ccrypt
-     SUBDIR += ccrypt,emacs21
      SUBDIR += cfs
      SUBDIR += cgichk
      SUBDIR += chrootuid
