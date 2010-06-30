@@ -1,37 +1,31 @@
-$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.4 2010/06/28 15:55:21 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.5 2010/06/30 22:51:33 ajacoutot Exp $
 --- src/ck-sysdeps-unix.c.orig	Wed Apr 29 21:07:29 2009
-+++ src/ck-sysdeps-unix.c	Mon Jun 28 16:36:43 2010
-@@ -35,6 +35,11 @@
++++ src/ck-sysdeps-unix.c	Thu Jul  1 00:35:56 2010
+@@ -35,6 +35,10 @@
  #include <linux/kd.h>
  #endif
  
 +#if defined(__OpenBSD__)
 +#include <dev/wscons/wsdisplay_usl_io.h>
-+#include <sys/un.h>
 +#endif
 +
  #ifdef HAVE_SYS_VT_H
  #include <sys/vt.h>
  #endif
-@@ -99,6 +104,17 @@ ck_get_socket_peer_credentials   (int      socket_fd,
-         if (ucred != NULL) {
-                 ucred_free (ucred);
-         }
-+#elif defined(__OpenBSD__)
-+	uid_t euid;
-+	gid_t egid;
-+	if (getpeereid (socket_fd, &euid, &egid) == 0) {
-+		pid_read = getpid();
-+		uid_read = euid;
-+		ret = TRUE;
-+	} else {
-+		g_warning ("Failed to getpeereid() credentials: %s\n",
-+                           g_strerror (errno));
-+	}
- #else /* !SO_PEERCRED && !HAVE_GETPEERUCRED */
-         g_warning ("Socket credentials not supported on this OS\n");
- #endif
-@@ -126,7 +142,7 @@ ck_get_socket_peer_credentials   (int      socket_fd,
+@@ -69,7 +73,11 @@ ck_get_socket_peer_credentials   (int      socket_fd,
+         ret = FALSE;
+ 
+ #ifdef SO_PEERCRED
+-        struct ucred cr;
++#ifndef __OpenBSD__
++        struct uncred cr;
++#else
++	struct sockpeercred cr;
++#endif
+         socklen_t    cr_len;
+ 
+         cr_len = sizeof (cr);
+@@ -126,7 +134,7 @@ ck_get_socket_peer_credentials   (int      socket_fd,
  gboolean
  ck_fd_is_a_console (int fd)
  {
@@ -40,7 +34,7 @@ $OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.4 2010/06/28 15:55:21 ajacoutot Exp $
          struct vt_stat vts;
  #elif defined(__FreeBSD__)
          int vers;
-@@ -134,7 +150,7 @@ ck_fd_is_a_console (int fd)
+@@ -134,7 +142,7 @@ ck_fd_is_a_console (int fd)
          int  kb_ok;
  
          errno = 0;
@@ -49,17 +43,27 @@ $OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.4 2010/06/28 15:55:21 ajacoutot Exp $
          kb_ok = (ioctl (fd, VT_GETSTATE, &vts) == 0);
  #elif defined(__FreeBSD__)
          kb_ok = (ioctl (fd, CONS_GETVERS, &vers) == 0);
-@@ -182,6 +198,13 @@ ck_get_a_console_fd (void)
-         if (fd >= 0) {
-                 goto done;
+@@ -184,6 +192,13 @@ ck_get_a_console_fd (void)
          }
-+#endif
-+
+ #endif
+ 
 +#if defined(__OpenBSD__)
 +	fd = open_a_console ("/dev/ttyC0");
 +	if (fd >= 0) {
 +		goto done;
 +	}
- #endif
- 
++#endif
++
  #ifdef _PATH_TTY
+         fd = open_a_console (_PATH_TTY);
+         if (fd >= 0) {
+@@ -261,7 +276,8 @@ ck_wait_for_active_console_num (int   console_fd,
+         ret = FALSE;
+ 
+         errno = 0;
+-#ifdef VT_WAITACTIVE
++// XXX hangs forever, pthread bug?
++#if defined VT_WAITACTIVE && !defined (__OpenBSD__)
+         g_debug ("VT_WAITACTIVE for vt %d", num);
+         res = ioctl (console_fd, VT_WAITACTIVE, num);
+         g_debug ("VT_WAITACTIVE for vt %d returned %d", num, res);

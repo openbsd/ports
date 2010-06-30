@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2010/06/28 15:55:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/06/30 22:51:33 ajacoutot Exp $
+
+# XXX rotate /var/log/ConsoleKit/history
 
 BROKEN=		WIP does not work yet
 
