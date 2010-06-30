@@ -1,6 +1,6 @@
-$OpenBSD: patch-bulk_mailer_c,v 1.2 2010/05/23 15:57:34 espie Exp $
---- bulk_mailer.c.orig	Wed May 24 21:34:33 2000
-+++ bulk_mailer.c	Sun May 23 17:56:30 2010
+$OpenBSD: patch-bulk_mailer_c,v 1.3 2010/06/30 01:55:08 kevlo Exp $
+--- bulk_mailer.c.orig	Thu May 25 03:34:33 2000
++++ bulk_mailer.c	Tue Jun 29 14:23:23 2010
 @@ -95,6 +95,8 @@
  #include <sysexits.h>
  #include <errno.h>
@@ -20,23 +20,31 @@ $OpenBSD: patch-bulk_mailer_c,v 1.2 2010/05/23 15:57:34 espie Exp $
  
  /*
   * (default) max different domains per envelope.
-@@ -296,6 +295,7 @@ char *str;
-  * memory, appending a NUL to the copy.
-  */
+@@ -292,23 +291,6 @@ char *str;
  
-+/*
- static char *
- strndup (str, len)
- char *str;
-@@ -307,6 +307,7 @@ int len;
-     result[len] = '\0';
-     return result;
- }
-+*/
  
  /*
+- * copy the first 'len' characters of a string into malloc'ed
+- * memory, appending a NUL to the copy.
+- */
+-
+-static char *
+-strndup (str, len)
+-char *str;
+-int len;
+-{
+-    char *result = malloc_or_else (len + 1);
+-
+-    strncpy (result, str, len);
+-    result[len] = '\0';
+-    return result;
+-}
+-
+-/*
   * sort by case-folded reversed domain
-@@ -337,15 +338,15 @@ char *addr;
+  */
+ 
+@@ -337,15 +319,15 @@ char *addr;
  {
      char *at;
      char *ptr;
@@ -55,7 +63,16 @@ $OpenBSD: patch-bulk_mailer_c,v 1.2 2010/05/23 15:57:34 espie Exp $
  	
  	num_addr_slots += 1000;
  	if (address_list == NULL)
-@@ -985,7 +986,7 @@ static int
+@@ -353,7 +335,7 @@ char *addr;
+ 		malloc_or_else (num_addr_slots * sizeof (struct address));
+ 	else
+ 	    address_list = (struct address *)
+-		realloc_or_else (address_list,
++		realloc_or_else ((char *) address_list,
+ 				 num_addr_slots * sizeof (struct address));
+     }
+ 
+@@ -985,7 +967,7 @@ static int
  copy_message (out, in)
  FILE *out, *in;
  {
@@ -64,7 +81,7 @@ $OpenBSD: patch-bulk_mailer_c,v 1.2 2010/05/23 15:57:34 espie Exp $
      char linebuf[32*1024];
      int has_valid_approved_hdr = 0;
      int has_resent_to_hdr = 0;
-@@ -1218,14 +1219,14 @@ FILE *out, *in;
+@@ -1218,14 +1200,14 @@ FILE *out, *in;
       */
      lines = 0;
      while (fgets (linebuf, sizeof (linebuf), in) != NULL) {
@@ -81,7 +98,7 @@ $OpenBSD: patch-bulk_mailer_c,v 1.2 2010/05/23 15:57:34 espie Exp $
  	    saw_command = 1;
  	++lines;
  	fputs (linebuf, out);
-@@ -1326,13 +1327,13 @@ main (argc, argv)
+@@ -1326,13 +1308,13 @@ main (argc, argv)
  int argc;
  char *argv[];
  {
@@ -98,7 +115,7 @@ $OpenBSD: patch-bulk_mailer_c,v 1.2 2010/05/23 15:57:34 espie Exp $
  
      while (argc > 1 && (*argv[1] == '-' || *argv[1] == '+')) {
  	if (strcmp (argv[1], "-comment") == 0 && argc > 2) {
-@@ -1513,8 +1514,8 @@ char *argv[];
+@@ -1513,8 +1495,8 @@ char *argv[];
  	exit (EX_OSFILE);
      }
  
@@ -109,7 +126,7 @@ $OpenBSD: patch-bulk_mailer_c,v 1.2 2010/05/23 15:57:34 espie Exp $
      switch (copy_message (tmp, stdin)) {
  
      case HAS_EMBEDDED_COMMAND:
-@@ -1592,4 +1593,5 @@ char *argv[];
+@@ -1592,4 +1574,5 @@ char *argv[];
  	
  	exit (EX_OK);
      }

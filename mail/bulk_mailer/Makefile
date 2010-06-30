@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2007/09/16 00:17:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.15 2010/06/30 01:55:08 kevlo Exp $
 
 COMMENT=	speed mail delivery by sorting & batching addresses
 
 DISTNAME=	bulk_mailer-1.13
+PKGNAME=	${DISTNAME}p0
+
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
