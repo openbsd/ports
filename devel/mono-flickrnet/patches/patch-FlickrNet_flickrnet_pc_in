@@ -1,6 +1,6 @@
-$OpenBSD: patch-FlickrNet_flickrnet_pc_in,v 1.1.1.1 2010/06/30 19:02:28 robert Exp $
---- FlickrNet/flickrnet.pc.in.orig	Wed Jun 30 07:09:01 2010
-+++ FlickrNet/flickrnet.pc.in	Wed Jun 30 07:09:07 2010
+$OpenBSD: patch-FlickrNet_flickrnet_pc_in,v 1.2 2010/06/30 19:18:07 robert Exp $
+--- FlickrNet/flickrnet.pc.in.orig	Wed Jun 30 21:16:36 2010
++++ FlickrNet/flickrnet.pc.in	Wed Jun 30 21:16:53 2010
 @@ -0,0 +1,8 @@
 +prefix=@prefix@
 +exec_prefix=${prefix}
@@ -8,5 +8,5 @@ $OpenBSD: patch-FlickrNet_flickrnet_pc_in,v 1.1.1.1 2010/06/30 19:02:28 robert E
 +
 +Name: Flickr .Net API Library
 +Description: FlickrNet
-+Version: 2.1.5
++Version: @version@
 +Libs: -r:${libdir}/mono/flickrnet/FlickrNet.dll
