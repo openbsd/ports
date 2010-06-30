@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.297 2010/06/10 20:16:17 landry Exp $
+# $OpenBSD: Makefile,v 1.298 2010/06/30 17:09:32 jim Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -119,6 +119,8 @@
      SUBDIR += p5-POE-Filter-XML
      SUBDIR += p5-PPI
      SUBDIR += p5-PPI-HTML
+     SUBDIR += p5-PPIx-Regexp
+     SUBDIR += p5-PPIx-Utilities
      SUBDIR += p5-PatchReader
      SUBDIR += p5-Pod-POM
      SUBDIR += p5-Pod-Spell
