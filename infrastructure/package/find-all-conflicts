@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: find-all-conflicts,v 1.19 2010/06/25 10:37:03 espie Exp $
+# $OpenBSD: find-all-conflicts,v 1.20 2010/06/30 11:11:19 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -31,10 +31,8 @@ use strict;
 
 use File::Spec;
 use File::Path;
-use OpenBSD::PackageLocator;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
-use OpenBSD::Getopt;
 use OpenBSD::AddCreateDelete;
 use OpenBSD::PkgCfl;
 
@@ -234,8 +232,7 @@ sub handle_portsdir
 }
 
 my $ui = OpenBSD::AddCreateDelete::State->new('find-all-conflicts');
-OpenBSD::AddCreateDelete->handle_options('d:p:', $ui, 
-	'[-v] [-d plist_dir] [-p ports_dir] [pkgname ...]');
+$ui->handle_options('d:p:', '[-v] [-d plist_dir] [-p ports_dir] [pkgname ...]');
 
 $ui->progress->set_header("Scanning");
 $opt_d = $ui->opt('d');
@@ -245,29 +242,28 @@ if ($opt_d) {
 	my @l = readdir $dir;
 	closedir($dir);
 
-	my $total = scalar(@l);
-	my $i = 0;
-	for my $pkgname (@l) {
-		$ui->progress->show(++$i, $total);
-		next if $pkgname eq '.' or $pkgname eq '..';
+	$ui->progress->for_list("Scanning", \@l,
+	    sub {
+	    	my $pkgname = shift;
+		return if $pkgname eq '.' or $pkgname eq '..';
 		handle_file($ui, "$opt_d/$pkgname");
-    	}
+	    });
 } elsif ($opt_p) {
 	handle_portsdir($ui, $opt_p);
 } elsif (@ARGV==0) {
 	@ARGV=(<*.tgz>);
 }
 
-my $i = 0;
-for my $pkgname (@ARGV) {
-	$ui->progress->show(++$i, scalar(@ARGV));
-	my $true_package = OpenBSD::PackageLocator->find($pkgname);
-	next unless $true_package;
+$ui->progress->for_list("Scanning", \@ARGV,
+    sub {
+	my $pkgname = shift;
+	my $true_package = $ui->repo->find($pkgname);
+	return unless $true_package;
 	my $dir = $true_package->info;
 	$true_package->close;
 	handle_file($ui, $dir.CONTENTS);
 	rmtree($dir);
-}
+    });
 
 $ui->progress->next;
 $ui->progress->set_header("File problems");

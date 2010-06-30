@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: check-manpages,v 1.6 2010/03/20 17:06:16 espie Exp $
+# $OpenBSD: check-manpages,v 1.7 2010/06/30 11:11:19 espie Exp $
 #
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
@@ -17,26 +17,30 @@
 #
 # check all manpages in existing packages
 
-use OpenBSD::PackageLocator;
+use OpenBSD::AddCreateDelete;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
 use OpenBSD::Ustar;
 use File::Temp;
 
-print "Scanning packages\n";
-print "-----------------\n";
+my $state = OpenBSD::AddCreateDelete::State->new('check-manpages');
+$state->handle_options('[-mnx]');
+
+$state->progress->set_header("Scanning packages");
+
 if (@ARGV==0) {
 	@ARGV=(<*.tgz>);
 }
 
 my $extract_dir = File::Temp::tempdir("manpages.XXXXXXXXXXXX", DIR => '.');
-print "Extracting all documentation into $extract_dir\n";
+$state->say("Extracting all documentation into #1", $extract_dir);
 
 my %mandirs=();
-for my $pkgname (@ARGV) {
-	print STDERR "$pkgname\n";
-	my $true_package = OpenBSD::PackageLocator->find($pkgname);
-	next unless $true_package;
+$state->progress->for_list("Scanning packages", \@ARGV,
+    sub {
+    	my $pkgname = shift;
+	my $true_package = $state->repo->find($pkgname);
+	return unless $true_package;
 	my $dir = $true_package->info;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
 	for my $item (@{$plist->{items}}) {
@@ -58,7 +62,7 @@ for my $pkgname (@ARGV) {
 	$true_package->close;
 	$true_package->wipe_info;
 	$plist->forget;
-}
+    });
 
-print STDERR "Running makewhatis in ", join(' ', keys(%mandirs)), "\n";
-system("/usr/libexec/makewhatis -p ".join(' ', keys(%mandirs)));
+$state->errsay("Running makewhatis in #1", join(' ', keys(%mandirs)));
+$state->system("/usr/libexec/makewhatis -p ".join(' ', keys(%mandirs)));

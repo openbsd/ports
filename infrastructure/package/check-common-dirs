@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.9 2010/03/20 18:04:28 espie Exp $
+# $OpenBSD: check-common-dirs,v 1.10 2010/06/30 11:11:19 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -24,10 +24,10 @@ use warnings;
 use File::Spec;
 use File::Path;
 use File::Basename;
-use OpenBSD::PackageLocator;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
 use OpenBSD::Mtree;
+use OpenBSD::AddCreateDelete;
 
 sub register_dir
 {
@@ -135,7 +135,7 @@ sub build_results
 
 sub show_results
 {
-	my ($db, $mtree) = @_;
+	my ($state, $db, $mtree) = @_;
 
 	for my $pkgname (sort keys %$db) {
 		my @l=();
@@ -145,13 +145,13 @@ sub show_results
 			push(@l, $dir);
 		}
 		if (@l != 0) {
-			print "$pkgname: ", join(', ', sort @l), "\n";
+			$state->say("#1: #2", $pkgname, join(', ', sort @l));
 		}
 	}
 }
 
-print "Scanning packages\n";
-print "-----------------\n";
+my $state = OpenBSD::AddCreateDelete::State->new('check-common-dirs');
+$state->handle_options('', '[-mx]');
 if (@ARGV==0) {
 	@ARGV=(<*.tgz>);
 }
@@ -165,16 +165,17 @@ $mtree->{'/usr/local/lib/X11'} = 1;
 $mtree->{'/usr/local/include/X11'} = 1;
 $mtree->{'/usr/local/lib/X11/app-defaults'} = 1;
 
-for my $pkgname (@ARGV) {
-	print STDERR "$pkgname\n";
-	my $true_package = OpenBSD::PackageLocator->find($pkgname);
-	next unless $true_package;
+$state->progress->for_list("Scanning packages", \@ARGV,
+    sub {
+    	my $pkgname = shift;
+	my $true_package = $state->repo->find($pkgname);
+	return unless $true_package;
 	my $dir = $true_package->info;
 	$true_package->close;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
 	rmtree($dir);
 	analyze($plist, $db);
-}
+    });
 
 build_results($db, $mtree);
-show_results($db);
+show_results($state, $db);

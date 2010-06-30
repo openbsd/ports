@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.20 2010/06/11 11:20:48 espie Exp $
+# $OpenBSD: register-plist,v 1.21 2010/06/30 11:11:19 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -26,7 +26,7 @@
 
 use strict;
 
-use OpenBSD::PackageLocator;
+use OpenBSD::State;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
 use OpenBSD::Paths;
@@ -285,21 +285,23 @@ sub my_compare
 	return $final;
 }
 
+my $state = OpenBSD::State->new('register-plist');
+$state->handle_options('', 'dir pkg ...');
 if (@ARGV < 2) {
-	die "usage issue";
+	$state->usage;
 }
 
 my @dirs = split(/:/, shift);
 if (!-d $dirs[0]) {
-	die "not a directory: ", $dirs[0];
+	$state->usage("not a directory: #1", $dirs[0]);
 }
 
 my $error =0;
 
 for my $pkgfile (@ARGV) {
-	my $pkg = OpenBSD::PackageLocator->find($pkgfile);
+	my $pkg = $state->repo->find($pkgfile);
 	if (!$pkg) {
-		die "Bad package $pkgfile";
+		$state->fatal("Bad package #1", $pkgfile);
 	}
 
 	my $plist = $pkg->plist;
@@ -324,13 +326,13 @@ for my $pkgfile (@ARGV) {
 			if ($r == 1) {
 				my $t = "$result-new";
 				$plist->tofile($t);
-				print STDERR "Error: change in plist between $result and $t\n";
+				$state->errsay("Error: change in plist between #1 and #2", $result, $t);
 				system {OpenBSD::Paths->diff} ('diff', '-u', $result, $t);
 				$error++;
 			}
 			if ($r == 2) {
 				$plist->tofile($result);
-				print STDERR "$result was updated\n";
+				$state->errsay("#1 was updated", $result);
 			}
 		}
 	}

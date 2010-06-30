@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.26 2010/06/26 10:24:34 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.27 2010/06/30 11:11:19 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -21,7 +21,6 @@ use strict;
 use warnings;
 
 use File::Spec;
-use OpenBSD::PackageLocator;
 use OpenBSD::PackingList;
 use OpenBSD::SharedLibs;
 use OpenBSD::LibSpec;
@@ -526,7 +525,7 @@ sub get_plist
 	if (defined $state->{repository}) {
 		my $location = "$state->{repository}/$pkgname.tgz";
 
-		my $true_package = OpenBSD::PackageLocator->find($location);
+		my $true_package = $state->repo->find($location);
 		if ($true_package) {
 			my $dir = $true_package->info;
 			if (-d $dir) {
@@ -714,7 +713,7 @@ sub do_pkg
 {
 	my ($self, $state, $pkgname) = @_;
 
-	my $true_package = OpenBSD::PackageLocator->find($pkgname);
+	my $true_package = $state->repo->find($pkgname);
 	return 0 unless $true_package;
 	my $dir = $true_package->info;
 	# twice read
