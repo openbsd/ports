@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/09/27 17:06:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/06/30 17:41:03 ajacoutot Exp $
 z-push/
 z-push/INSTALL
 z-push/LICENSE
@@ -9,6 +9,8 @@ z-push/backend/ics.php
 z-push/backend/imap.php
 z-push/backend/maildir.php
 z-push/backend/vcarddir.php
+z-push/backend/zarafa/
+z-push/backend/zarafa/z-push-admin.php
 z-push/compat.php
 z-push/config.php.dist
 @sample z-push/config.php
