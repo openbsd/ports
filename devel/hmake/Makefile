@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/06/15 17:59:24 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2010/06/30 15:41:01 kili Exp $
 
 COMMENT =	compilation manager for Haskell programs
  
 DISTNAME =	hmake-3.14
-PKGNAME =	${DISTNAME}p1
+PKGNAME =	${DISTNAME}p2
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/hmake/
@@ -23,7 +23,7 @@ NO_REGRESS =		Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
 
-WANTLIB +=		c m
+WANTLIB +=		c m pthread
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 WANTLIB +=		util

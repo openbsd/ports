@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/20 09:47:00 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2010/06/30 15:41:02 kili Exp $
 
 COMMENT =		Perl 6 Implementation
 
 DISTNAME =		Pugs-6.2.13.15
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		lang devel
 HOMEPAGE =		http://pugscode.org/
 
@@ -14,7 +15,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 VMEM_WARNING =		Yes
 
-WANTLIB =		c m ncurses perl util
+WANTLIB =		c m ncurses perl pthread util
 
 MODULES =		lang/ghc converters/libiconv
 

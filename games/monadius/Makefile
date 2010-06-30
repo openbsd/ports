@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/06/15 17:59:24 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2010/06/30 15:41:01 kili Exp $
 
 COMMENT =		Gradius clone
 
 DISTNAME =		Monadius-0.93
-PKGNAME =		${DISTNAME:L}p1
+PKGNAME =		${DISTNAME:L}p2
 CATEGORIES =		games
 HOMEPAGE =		http://www.geocities.jp/takascience/haskell/monadius_en.html
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		GL GLU ICE SM X11 Xi Xmu c m util
+WANTLIB =		GL GLU ICE SM X11 Xi Xmu c m pthread util
 
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage nort

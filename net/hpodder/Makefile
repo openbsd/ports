@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/06/15 17:59:24 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2010/06/30 15:41:02 kili Exp $
 
 COMMENT =		podcast aggregator written in Haskell
 
 DISTNAME =		hpodder-1.1.5
-PKGNAME =		${DISTNAME}p1
+PKGNAME =		${DISTNAME}p2
 CATEGORIES =		net
 HOMEPAGE =		http://software.complete.org/hpodder
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m util
+WANTLIB =		c m pthread util
 
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage nort

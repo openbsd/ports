@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2010/06/15 18:00:33 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2010/06/30 15:41:01 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
 DISTNAME =		darcs-2.4.4
-PKGNAME =		${DISTNAME}p0
+PKGNAME =		${DISTNAME}p1
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
 
-WANTLIB =		c m ncurses util z
+WANTLIB =		c m ncurses pthread util z
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage nort
 MODGHC_SETUP_CONF_ARGS =-f '-threaded'

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/06/20 13:54:19 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2010/06/30 15:41:01 kili Exp $
 
 COMMENT =		tools to build Gtk2Hs
 
 BROKEN-i386 =		does not work with gcc3
 
 DISTNAME =		gtk2hs-buildtools-0.9
+PKGNAME =		${DISTNAME}p0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m util
+WANTLIB =		c m pthread util
 
 MODULES =		lang/ghc converters/libiconv
 
