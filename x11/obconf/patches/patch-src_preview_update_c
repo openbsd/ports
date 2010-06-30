@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_preview_update_c,v 1.1 2010/06/30 08:45:44 kevlo Exp $
+--- src/preview_update.c.orig	Wed Jun 30 13:56:28 2010
++++ src/preview_update.c	Wed Jun 30 13:56:45 2010
+@@ -1,4 +1,5 @@
+ #include "preview_update.h"
++#include "preview.h"
+ #include "main.h"
+ 
+ static gboolean restart_theme_preview_update = TRUE;
