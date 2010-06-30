@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/03 10:33:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/06/30 16:50:02 jim Exp $
 ${P5SITE}/PPI/
 ${P5SITE}/PPI.pm
 ${P5SITE}/PPI/Cache.pm
@@ -11,6 +11,7 @@ ${P5SITE}/PPI/Dumper.pm
 ${P5SITE}/PPI/Element.pm
 ${P5SITE}/PPI/Exception/
 ${P5SITE}/PPI/Exception.pm
+${P5SITE}/PPI/Exception/ParserRejection.pm
 ${P5SITE}/PPI/Exception/ParserTimeout.pm
 ${P5SITE}/PPI/Find.pm
 ${P5SITE}/PPI/Lexer.pm
@@ -25,6 +26,7 @@ ${P5SITE}/PPI/Statement/Compound.pm
 ${P5SITE}/PPI/Statement/Data.pm
 ${P5SITE}/PPI/Statement/End.pm
 ${P5SITE}/PPI/Statement/Expression.pm
+${P5SITE}/PPI/Statement/Given.pm
 ${P5SITE}/PPI/Statement/Include/
 ${P5SITE}/PPI/Statement/Include.pm
 ${P5SITE}/PPI/Statement/Include/Perl6.pm
@@ -35,19 +37,23 @@ ${P5SITE}/PPI/Statement/Sub.pm
 ${P5SITE}/PPI/Statement/Unknown.pm
 ${P5SITE}/PPI/Statement/UnmatchedBrace.pm
 ${P5SITE}/PPI/Statement/Variable.pm
+${P5SITE}/PPI/Statement/When.pm
 ${P5SITE}/PPI/Structure/
 ${P5SITE}/PPI/Structure.pm
 ${P5SITE}/PPI/Structure/Block.pm
 ${P5SITE}/PPI/Structure/Condition.pm
 ${P5SITE}/PPI/Structure/Constructor.pm
-${P5SITE}/PPI/Structure/ForLoop.pm
+${P5SITE}/PPI/Structure/For.pm
+${P5SITE}/PPI/Structure/Given.pm
 ${P5SITE}/PPI/Structure/List.pm
 ${P5SITE}/PPI/Structure/Subscript.pm
 ${P5SITE}/PPI/Structure/Unknown.pm
+${P5SITE}/PPI/Structure/When.pm
 ${P5SITE}/PPI/Token/
 ${P5SITE}/PPI/Token.pm
 ${P5SITE}/PPI/Token/ArrayIndex.pm
 ${P5SITE}/PPI/Token/Attribute.pm
+${P5SITE}/PPI/Token/BOM.pm
 ${P5SITE}/PPI/Token/Cast.pm
 ${P5SITE}/PPI/Token/Comment.pm
 ${P5SITE}/PPI/Token/DashedWord.pm
@@ -96,8 +102,11 @@ ${P5SITE}/PPI/Token/_QuoteEngine.pm
 ${P5SITE}/PPI/Token/_QuoteEngine/Full.pm
 ${P5SITE}/PPI/Token/_QuoteEngine/Simple.pm
 ${P5SITE}/PPI/Tokenizer.pm
+${P5SITE}/PPI/Transform/
 ${P5SITE}/PPI/Transform.pm
+${P5SITE}/PPI/Transform/UpdateCopyright.pm
 ${P5SITE}/PPI/Util.pm
+${P5SITE}/PPI/XSAccessor.pm
 @man man/man3p/PPI.3p
 @man man/man3p/PPI::Cache.3p
 @man man/man3p/PPI::Document.3p
@@ -117,6 +126,7 @@ ${P5SITE}/PPI/Util.pm
 @man man/man3p/PPI::Statement::Data.3p
 @man man/man3p/PPI::Statement::End.3p
 @man man/man3p/PPI::Statement::Expression.3p
+@man man/man3p/PPI::Statement::Given.3p
 @man man/man3p/PPI::Statement::Include.3p
 @man man/man3p/PPI::Statement::Include::Perl6.3p
 @man man/man3p/PPI::Statement::Null.3p
@@ -126,17 +136,21 @@ ${P5SITE}/PPI/Util.pm
 @man man/man3p/PPI::Statement::Unknown.3p
 @man man/man3p/PPI::Statement::UnmatchedBrace.3p
 @man man/man3p/PPI::Statement::Variable.3p
+@man man/man3p/PPI::Statement::When.3p
 @man man/man3p/PPI::Structure.3p
 @man man/man3p/PPI::Structure::Block.3p
 @man man/man3p/PPI::Structure::Condition.3p
 @man man/man3p/PPI::Structure::Constructor.3p
-@man man/man3p/PPI::Structure::ForLoop.3p
+@man man/man3p/PPI::Structure::For.3p
+@man man/man3p/PPI::Structure::Given.3p
 @man man/man3p/PPI::Structure::List.3p
 @man man/man3p/PPI::Structure::Subscript.3p
 @man man/man3p/PPI::Structure::Unknown.3p
+@man man/man3p/PPI::Structure::When.3p
 @man man/man3p/PPI::Token.3p
 @man man/man3p/PPI::Token::ArrayIndex.3p
 @man man/man3p/PPI::Token::Attribute.3p
+@man man/man3p/PPI::Token::BOM.3p
 @man man/man3p/PPI::Token::Cast.3p
 @man man/man3p/PPI::Token::Comment.3p
 @man man/man3p/PPI::Token::DashedWord.3p
@@ -181,3 +195,4 @@ ${P5SITE}/PPI/Util.pm
 @man man/man3p/PPI::Token::_QuoteEngine::Simple.3p
 @man man/man3p/PPI::Tokenizer.3p
 @man man/man3p/PPI::Transform.3p
+@man man/man3p/PPI::Transform::UpdateCopyright.3p
