@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/11/23 00:28:10 fgsch Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2010/06/30 21:49:37 jim Exp $
 @lib lib/libvarnish.so.${LIBvarnish_VERSION}
 @lib lib/libvarnishapi.so.${LIBvarnishapi_VERSION}
 @lib lib/libvarnishcompat.so.${LIBvarnishcompat_VERSION}

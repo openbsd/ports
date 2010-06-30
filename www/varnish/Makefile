@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.4 2009/12/12 17:38:19 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2010/06/30 21:49:37 jim Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-2.0.5
-PKGNAME =		${DISTNAME}p0
+DISTNAME =		varnish-2.1.2
 CATEGORIES =		www
 
-SHARED_LIBS =		varnish		0.0 \
-			varnishapi	0.0 \
-			varnishcompat	0.0 \
-			vcl		0.0
+MAINTAINER =		Jim Razmus II <jim@openbsd.org>
 
-HOMEPAGE =		http://varnish.projects.linpro.no/
+SHARED_LIBS +=		varnish		0.0
+SHARED_LIBS +=		varnishapi	0.0
+SHARED_LIBS +=		varnishcompat	0.0
+SHARED_LIBS +=		vcl		0.0
+
+HOMEPAGE =		http://www.varnish-cache.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,6 +21,7 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 		c curses m pthread
+LIB_DEPENDS = 		pcre::devel/pcre
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=varnish/}
 

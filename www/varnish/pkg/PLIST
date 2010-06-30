@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/23 00:28:10 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/06/30 21:49:37 jim Exp $
 @newgroup _varnish:625
-@newuser _varnish:625:_varnish:daemon:Varnish account:/var/varnish:/bin/sh
+@newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 %%SHARED%%
 @bin bin/varnishadm
 @bin bin/varnishhist
 @bin bin/varnishlog
 @bin bin/varnishncsa
 @bin bin/varnishreplay
+@bin bin/varnishsizes
 @bin bin/varnishstat
 @bin bin/varnishtest
 @bin bin/varnishtop
@@ -17,13 +18,13 @@ include/varnish/stat_field.h
 include/varnish/stats.h
 include/varnish/varnishapi.h
 lib/libvarnish.a
-@comment lib/libvarnish.la
+lib/libvarnish.la
 lib/libvarnishapi.a
-@comment lib/libvarnishapi.la
+lib/libvarnishapi.la
 lib/libvarnishcompat.a
-@comment lib/libvarnishcompat.la
+lib/libvarnishcompat.la
 lib/libvcl.a
-@comment lib/libvcl.la
+lib/libvcl.la
 lib/pkgconfig/
 lib/pkgconfig/varnishapi.pc
 @man man/man1/varnishadm.1
@@ -32,6 +33,7 @@ lib/pkgconfig/varnishapi.pc
 @man man/man1/varnishlog.1
 @man man/man1/varnishncsa.1
 @man man/man1/varnishreplay.1
+@man man/man1/varnishsizes.1
 @man man/man1/varnishstat.1
 @man man/man1/varnishtest.1
 @man man/man1/varnishtop.1
