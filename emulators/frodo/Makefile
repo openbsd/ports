@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2008/06/12 20:36:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2010/06/30 22:25:57 jakemsr Exp $
 
 COMMENT=	Commodore 64 emulator
 
 DISTNAME=	FrodoV4_1b.Src
-PKGNAME=	frodo-4.1bp4
+PKGNAME=	frodo-4.1bp5
 DISTFILES=	FrodoV4_1b.Src${EXTRACT_SUFX}
 
 CATEGORIES=	emulators games
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		c m pthread stdc++
+WANTLIB=		c m pthread sndio stdc++
 
 CONFIGURE_STYLE=	gnu
 USE_X11=		Yes
@@ -28,7 +28,8 @@ LIB_DEPENDS=	SDL:sdl-*-!no_x11:devel/sdl
 WISH=wish8.4
 FRODOLIBDIR=${PREFIX}/lib/frodo
 
-CONFIGURE_ENV=		CFLAGS='${CFLAGS} -O3 -D__unix -DX_USE_SHM -fno-exceptions'
+CONFIGURE_ENV=		CFLAGS='${CFLAGS} -O3 -D__unix -DX_USE_SHM -DUSE_SNDIO -fno-exceptions' \
+			LIBS='-lsndio'
 
 
 MAKE_ENV=WISH=${WISH} FRODOLIBDIR=${FRODOLIBDIR}
@@ -40,7 +41,7 @@ WRKDIST=${WRKDIR}/Frodo-4.1b
 WRKSRC=${WRKDIST}/Src
 
 post-patch:
-	cp ${FILESDIR}/SID_openbsd.i	${WRKSRC}
+	cp ${FILESDIR}/SID_sndio.i	${WRKSRC}
 
 NO_REGRESS=	Yes
 

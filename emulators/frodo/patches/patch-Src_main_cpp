@@ -1,7 +1,7 @@
-$OpenBSD: patch-Src_main_cpp,v 1.1.1.1 2000/07/07 14:29:51 espie Exp $
---- Src/main.cpp.orig	Wed Aug  6 20:56:31 1997
-+++ Src/main.cpp	Thu Jul  6 19:07:47 2000
-@@ -36,7 +36,7 @@ char AppDirPath[1024];	// Path of applic
+$OpenBSD: patch-Src_main_cpp,v 1.2 2010/06/30 22:25:57 jakemsr Exp $
+--- Src/main.cpp.orig	Wed Jan  2 13:19:06 2002
++++ Src/main.cpp	Thu Jan 14 08:50:09 2010
+@@ -36,7 +36,7 @@ char AppDirPath[1024];	// Path of application director
   */
  
  #ifndef __PSXOS__

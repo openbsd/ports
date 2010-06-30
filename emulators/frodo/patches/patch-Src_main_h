@@ -1,7 +1,7 @@
-$OpenBSD: patch-Src_main_h,v 1.1.1.1 2000/07/07 14:29:51 espie Exp $
---- Src/main.h.orig	Wed Aug  6 20:56:31 1997
-+++ Src/main.h	Thu Jul  6 19:09:54 2000
-@@ -119,6 +119,7 @@ public:
+$OpenBSD: patch-Src_main_h,v 1.2 2010/06/30 22:25:57 jakemsr Exp $
+--- Src/main.h.orig	Wed Jan  2 13:14:55 2002
++++ Src/main.h	Thu Jan 14 08:50:10 2010
+@@ -119,6 +119,7 @@ class Frodo { (public)
  
  private:
  	bool load_rom_files(void);

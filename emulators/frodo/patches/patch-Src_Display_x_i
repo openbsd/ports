@@ -1,6 +1,6 @@
-$OpenBSD: patch-Src_Display_x_i,v 1.3 2002/03/22 00:23:24 espie Exp $
---- Src/Display_x.i.orig	Wed Jan  2 22:17:29 2002
-+++ Src/Display_x.i	Thu Mar 14 01:48:46 2002
+$OpenBSD: patch-Src_Display_x_i,v 1.4 2010/06/30 22:25:57 jakemsr Exp $
+--- Src/Display_x.i.orig	Wed Jan  2 13:17:29 2002
++++ Src/Display_x.i	Thu Jan 14 08:50:09 2010
 @@ -4,6 +4,7 @@
   *
   *  Frodo (C) 1994-1997,2002 Christian Bauer
@@ -83,7 +83,7 @@ $OpenBSD: patch-Src_Display_x_i,v 1.3 2002/03/22 00:23:24 espie Exp $
  }
  
  
-@@ -770,14 +804,32 @@ void C64Display::InitColors(uint8 *color
+@@ -770,14 +804,32 @@ void C64Display::InitColors(uint8 *colors)
  	int i;
  	XColor col;
  	char str[20];
