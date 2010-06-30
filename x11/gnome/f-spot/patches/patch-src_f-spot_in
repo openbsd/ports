@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_f-spot_in,v 1.5 2010/05/17 11:30:23 ajacoutot Exp $
---- src/f-spot.in.orig	Fri May 14 20:38:21 2010
-+++ src/f-spot.in	Mon May 17 12:41:39 2010
+$OpenBSD: patch-src_f-spot_in,v 1.6 2010/06/30 19:08:37 robert Exp $
+--- src/f-spot.in.orig	Tue Jun 15 20:23:10 2010
++++ src/f-spot.in	Wed Jun 30 21:07:45 2010
 @@ -1,10 +1,11 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_f-spot_in,v 1.5 2010/05/17 11:30:23 ajacoutot Exp $
  EXE_TO_RUN="$libdir/f-spot/f-spot.exe"
  
  if test "x$DBUS_SESSION_BUS_ADDRESS" == "x"; then
-@@ -94,5 +95,5 @@ elif $run_valgrind; then
+@@ -95,5 +96,5 @@ elif $run_valgrind; then
  elif $run_strace; then
  	strace -ttt -f -o /tmp/f-spot.strace mono $MONO_OPTIONS $EXE_TO_RUN "$@"
  else

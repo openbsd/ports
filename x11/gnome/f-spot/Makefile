@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2010/05/17 11:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2010/06/30 19:08:37 robert Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		personal photo management application for GNOME
 
-GNOME_VERSION=		0.6.2
+GNOME_VERSION=		0.7.0
 GNOME_PROJECT=		f-spot
-PKGNAME=		${DISTNAME}p0
 
 CATEGORIES=		graphics
-
-SHARED_LIBS +=  gphoto2glue 0.0 # .0.0
 
 HOMEPAGE=		http://www.f-spot.org/
 
@@ -29,9 +26,9 @@ WANTLIB += crypto dbus-1 dbus-glib-1 eggdbus-1 expat fontconfig
 WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 glitz gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error
-WANTLIB += gthread-2.0 gtk-x11-2.0 jpeg ltdl m pango-1.0 pangocairo-1.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread-stubs ssl
-WANTLIB += usb util xcb xcb-render xcb-render-util xml2 z
+WANTLIB += util xcb xcb-render xcb-render-util xml2 z
 
 MODULES=		devel/gettext \
 			lang/mono \
@@ -46,14 +43,13 @@ MODGNOME_HELP_FILES=	Yes
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			::shells/bash \
 			::x11/gnome/screensaver
-RUN_DEPENDS=		::graphics/libgphoto2 \
+RUN_DEPENDS=		::devel/mono-addins \
 			::x11/gnome/mono-gnome \
 			::sysutils/ndesk-dbus-glib \
 			::devel/mono-addins \
-			::devel/libunique
+			::devel/mono-flickrnet
 LIB_DEPENDS+=		exif::graphics/libexif \
-			lcms::graphics/lcms \
-			gphoto2.>=3,gphoto2_port.>=6::graphics/libgphoto2
+			lcms::graphics/lcms
 
 MODGCONF2_SCHEMAS_DIR=	f-spot
 
@@ -66,13 +62,21 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 DLLMAP_FILES=		lib/unique-sharp/unique/unique-sharp.dll.config \
-			lib/gio-sharp/gio/gio-sharp.dll.config \
 			lib/gtk-sharp-beans/gtk-sharp-beans.dll.config \
-			lib/libgphoto2-sharp/libgphoto2-sharp.dll.config \
-			src/Cms.dll.config \
-			src/FSpot.Utils.dll.config \
-			src/FSpot.Widgets.dll.config \
-			src/f-spot.exe.config
+			lib/gio-sharp/gio/gio-sharp.dll.config \
+			lib/Hyena/src/Hyena.Gui/Hyena.Gui.dll.config \
+			src/Core/FSpot.Core.dll.config \
+			src/Widgets/FSpot.Widgets.dll.config \
+			src/Utils/FSpot.Utils.dll.config \
+			src/f-spot.exe.config \
+			src/Cms/FSpot.Cms.dll.config \
+			bin/Hyena.Gui.dll.config \
+			bin/FSpot.Cms.dll.config \
+			bin/FSpot.Utils.dll.config \
+			bin/FSpot.Core.dll.config \
+			bin/FSpot.Widgets.dll.config \
+			bin/f-spot.exe.config
+
 
 FAKE_FLAGS=		schemadir=${PREFIX}/${SCHEMAS_INSTDIR}
 
