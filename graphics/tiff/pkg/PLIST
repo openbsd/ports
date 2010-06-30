@@ -1,4 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.16 2006/03/31 20:38:29 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.17 2010/06/30 17:10:08 naddy Exp $
+@bin bin/bmp2tiff
+@bin bin/fax2ps
+@bin bin/fax2tiff
+@bin bin/gif2tiff
+@bin bin/pal2rgb
+@bin bin/ppm2tiff
+@bin bin/ras2tiff
+@bin bin/raw2tiff
+@bin bin/rgb2ycbcr
+@bin bin/thumbnail
+@bin bin/tiff2bw
+@bin bin/tiff2pdf
+@bin bin/tiff2ps
+@bin bin/tiff2rgba
+@bin bin/tiffcmp
+@bin bin/tiffcp
+@bin bin/tiffcrop
+@bin bin/tiffdither
+@bin bin/tiffdump
+@bin bin/tiffinfo
+@bin bin/tiffmedian
+@bin bin/tiffset
+@bin bin/tiffsplit
 include/tiff.h
 include/tiffconf.h
 include/tiffio.h
@@ -9,29 +32,6 @@ lib/libtiff.a
 lib/libtiff.la
 lib/libtiffxx.a
 lib/libtiffxx.la
-@endfake
-bin/bmp2tiff
-bin/fax2ps
-bin/fax2tiff
-bin/gif2tiff
-bin/pal2rgb
-bin/ppm2tiff
-bin/ras2tiff
-bin/raw2tiff
-bin/rgb2ycbcr
-bin/thumbnail
-bin/tiff2bw
-bin/tiff2pdf
-bin/tiff2ps
-bin/tiff2rgba
-bin/tiffcmp
-bin/tiffcp
-bin/tiffdither
-bin/tiffdump
-bin/tiffinfo
-bin/tiffmedian
-bin/tiffset
-bin/tiffsplit
 @man man/man1/bmp2tiff.1
 @man man/man1/fax2ps.1
 @man man/man1/fax2tiff.1
@@ -49,6 +49,7 @@ bin/tiffsplit
 @man man/man1/tiff2rgba.1
 @man man/man1/tiffcmp.1
 @man man/man1/tiffcp.1
+@man man/man1/tiffcrop.1
 @man man/man1/tiffdither.1
 @man man/man1/tiffdump.1
 @man man/man1/tiffgt.1
@@ -180,6 +181,7 @@ share/doc/tiff/man/tiff2ps.1.html
 share/doc/tiff/man/tiff2rgba.1.html
 share/doc/tiff/man/tiffcmp.1.html
 share/doc/tiff/man/tiffcp.1.html
+share/doc/tiff/man/tiffcrop.1.html
 share/doc/tiff/man/tiffdither.1.html
 share/doc/tiff/man/tiffdump.1.html
 share/doc/tiff/man/tiffgt.1.html
@@ -223,3 +225,6 @@ share/doc/tiff/v3.7.4.html
 share/doc/tiff/v3.8.0.html
 share/doc/tiff/v3.8.1.html
 share/doc/tiff/v3.8.2.html
+share/doc/tiff/v3.9.0beta.html
+share/doc/tiff/v3.9.1.html
+share/doc/tiff/v3.9.2.html

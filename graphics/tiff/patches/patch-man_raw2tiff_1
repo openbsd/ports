@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_raw2tiff_1,v 1.1 2008/10/25 09:39:29 naddy Exp $
---- man/raw2tiff.1.orig	Fri Oct 24 18:21:07 2008
-+++ man/raw2tiff.1	Fri Oct 24 18:21:17 2008
-@@ -184,7 +184,7 @@ There is no magic, it is just a mathematical statistic
+$OpenBSD: patch-man_raw2tiff_1,v 1.2 2010/06/30 17:10:08 naddy Exp $
+--- man/raw2tiff.1.orig	Thu Apr 20 14:17:19 2006
++++ man/raw2tiff.1	Sun Oct 11 15:07:53 2009
+@@ -187,7 +187,7 @@ There is no magic, it is just a mathematical statistic
  in some cases. But for most ordinary images guessing method will work fine.
  .SH "SEE ALSO"
  .BR pal2rgb (1),

@@ -1,0 +1,26 @@
+$OpenBSD: patch-libtiff_tif_open_c,v 1.1 2010/06/30 17:10:08 naddy Exp $
+--- libtiff/tif_open.c.orig	Sun Jun 27 01:10:42 2010
++++ libtiff/tif_open.c	Sun Jun 27 01:11:52 2010
+@@ -154,18 +154,20 @@ TIFFClientOpen(
+ 	TIFF *tif;
+ 	int m;
+ 	const char* cp;
++	size_t namelen;
+ 
+ 	m = _TIFFgetMode(mode, module);
+ 	if (m == -1)
+ 		goto bad2;
+-	tif = (TIFF *)_TIFFmalloc(sizeof (TIFF) + strlen(name) + 1);
++	namelen = strlen(name);
++	tif = (TIFF *)_TIFFmalloc(sizeof (TIFF) + namelen + 1);
+ 	if (tif == NULL) {
+ 		TIFFErrorExt(clientdata, module, "%s: Out of memory (TIFF structure)", name);
+ 		goto bad2;
+ 	}
+ 	_TIFFmemset(tif, 0, sizeof (*tif));
+ 	tif->tif_name = (char *)tif + sizeof (TIFF);
+-	strcpy(tif->tif_name, name);
++	strlcpy(tif->tif_name, name, namelen+1);
+ 	tif->tif_mode = m &~ (O_CREAT|O_TRUNC);
+ 	tif->tif_curdir = (tdir_t) -1;		/* non-existent directory */
+ 	tif->tif_curoff = 0;

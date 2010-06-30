@@ -1,0 +1,21 @@
+$OpenBSD: patch-libtiff_tif_compress_c,v 1.3 2010/06/30 17:10:08 naddy Exp $
+--- libtiff/tif_compress.c.orig	Sun Jun 27 01:04:02 2010
++++ libtiff/tif_compress.c	Sun Jun 27 01:10:03 2010
+@@ -193,14 +193,15 @@ TIFFFindCODEC(uint16 scheme)
+ TIFFCodec*
+ TIFFRegisterCODEC(uint16 scheme, const char* name, TIFFInitMethod init)
+ {
++	size_t namelen = strlen(name);
+ 	codec_t* cd = (codec_t*)
+-	    _TIFFmalloc(sizeof (codec_t) + sizeof (TIFFCodec) + strlen(name)+1);
++	    _TIFFmalloc(sizeof (codec_t) + sizeof (TIFFCodec) + namelen+1);
+ 
+ 	if (cd != NULL) {
+ 		cd->info = (TIFFCodec*) ((tidata_t) cd + sizeof (codec_t));
+ 		cd->info->name = (char*)
+ 		    ((tidata_t) cd->info + sizeof (TIFFCodec));
+-		strcpy(cd->info->name, name);
++		strlcpy(cd->info->name, name, namelen+1);
+ 		cd->info->scheme = scheme;
+ 		cd->info->init = init;
+ 		cd->next = registeredCODECS;
