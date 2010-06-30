@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/30 19:02:28 robert Exp $
+lib/mono/flickrnet/
+lib/mono/flickrnet/FlickrNet.dll
+lib/pkgconfig/flickrnet.pc

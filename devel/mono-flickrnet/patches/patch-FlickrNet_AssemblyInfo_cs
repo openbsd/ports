@@ -1,0 +1,17 @@
+$OpenBSD: patch-FlickrNet_AssemblyInfo_cs,v 1.1.1.1 2010/06/30 19:02:28 robert Exp $
+--- FlickrNet/AssemblyInfo.cs.orig	Wed Jun 30 07:08:21 2010
++++ FlickrNet/AssemblyInfo.cs	Wed Jun 30 07:08:38 2010
+@@ -61,10 +61,10 @@ using System.Runtime.InteropServices;
+ [assembly: AssemblyKeyName("")]
+ 
+ #if !WindowsCE
+-[assembly: AssemblyKeyFile("..\\..\\FlickrNet.snk")]
++[assembly: AssemblyKeyFile("FlickrNet.snk")]
+ [assembly: AllowPartiallyTrustedCallers()]
+ [assembly: SecurityPermission(SecurityAction.RequestMinimum, Execution = true)]
+ #endif
+ 
+ [assembly: CLSCompliantAttribute(true)]
+-[assembly: ComVisible(false)]
+\ No newline at end of file
++[assembly: ComVisible(false)]
