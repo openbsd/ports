@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2008/01/04 17:48:33 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/06/30 11:50:51 jakemsr Exp $
 
 COMMENT=	MOD player
 DISTNAME=	tracker-5.3
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 
 MASTER_SITES=	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
@@ -16,11 +16,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m
+WANTLIB=		c m sndio
 
 WRKDIST=		${WRKDIR}/tracker
 MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		CFLAGS_openbsd='-O3 -funroll-loops -finline-functions ${COPTS}' \
+		LIBS_openbsd='-lm -lsndio' \
 		INST_BIN_OPT="-c -s -m $(BINMODE) -o $(BINOWN) -g $(BINGRP)" \
 		INST_MAN_OPT="-c -m 644 -o $(BINOWN) -g $(BINGRP)" \
 		COMPRESSION_FILE='$${DESTDIR}${SYSCONFDIR}/compression_methods' \

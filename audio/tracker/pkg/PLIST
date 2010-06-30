@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2005/12/23 15:08:37 espie Exp $
-bin/randomize
-bin/tracker
+@comment $OpenBSD: PLIST,v 1.10 2010/06/30 11:50:51 jakemsr Exp $
+@bin bin/randomize
+@bin bin/tracker
 @info info/tracker.info
 lib/tracker/
 lib/tracker/compression_methods.sample
