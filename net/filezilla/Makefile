@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/06/15 16:08:21 lum Exp $
+# $OpenBSD: Makefile,v 1.9 2010/06/30 14:58:58 lum Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.3.2.1
+V=		3.3.3
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
@@ -32,8 +32,10 @@ LIB_DEPENDS=	idn::devel/libidn \
 		dbus-1::x11/dbus \
 		wx_gtk2_aui,wx_base_xml,wx_gtk2_adv,wx_gtk2_xrc,wx_base_net,wx_base,wx_gtk2_core:wxWidgets-gtk2->=2.8.6:x11/wxWidgets
 
-BUILD_DEPENDS=	::devel/cppunit
-RUN_DEPENDS=	::devel/desktop-file-utils
+BUILD_DEPENDS=	::devel/cppunit \
+		::devel/xdg-utils
+RUN_DEPENDS=	::devel/desktop-file-utils \
+		::devel/xdg-utils
 
 SEPARATE_BUILD= concurrent
 CONFIGURE_STYLE=gnu
@@ -41,7 +43,9 @@ CONFIGURE_ARGS+=--with-dbus \
 		--with-tinyxml=builtin \
 		--disable-autoupdatecheck
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		GREP=/usr/bin/grep \
+		SED=/usr/bin/sed
 
 USE_GMAKE=	Yes
 WRKDIST=	${WRKDIR}/filezilla-$V
