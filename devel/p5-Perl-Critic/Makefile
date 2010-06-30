@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2008/11/07 15:08:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2010/06/30 18:35:52 jim Exp $
 
 COMMENT=	critique perl source code for best practices
 
 MODULES=	cpan
-DISTNAME=	Perl-Critic-1.092
-PKGNAME=	p5-${DISTNAME}p1
+DISTNAME=	Perl-Critic-1.108
 CATEGORIES=	devel
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@kisoku.net> 
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,12 +17,19 @@ RUN_DEPENDS=	::devel/p5-B-Keywords \
 		::devel/p5-Config-Tiny \
 		:p5-Exception-Class->=1.23:devel/p5-Exception-Class \
 		::devel/p5-File-HomeDir \
-		:p5-PPI->=1.203:textproc/p5-PPI \
+		:p5-PPI->=1.208:textproc/p5-PPI \
+		::devel/p5-Readonly-XS \
 		::devel/p5-Set-Scalar \
 		::devel/p5-String-Format \
 		::devel/p5-Readonly \
 		::devel/perltidy \
-		::sysutils/p5-File-Which
+		::mail/p5-Email-Address \
+		::sysutils/p5-File-Which \
+		::textproc/p5-PPIx-Regexp \
+		::textproc/p5-PPIx-Utilities \
+		::textproc/p5-Pod-Spell
+REGRESS_DEPENDS=::devel/p5-PadWalker \
+		::devel/p5-Test-Memory-Cycle
 
 MAKE_ENV+=	TEST_POD=Yes
 
